@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Changed
+- Stat words in item and spell tooltips read like the character sheet: 体力, マナ, アーマー, スタミナ, 筋力 and the rest, where tooltips used the English words.
+
 ## 0.1.0-alpha.1 - 2026-09-30
 
 ### Added

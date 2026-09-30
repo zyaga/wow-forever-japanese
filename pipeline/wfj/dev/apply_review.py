@@ -28,7 +28,10 @@ line (`trusted` / `stale` / `unaligned`) whose winner is hand-written, and the d
 ruled on is applied: machine text never replaces a human translation without a recorded ruling.
 
 `--scope templates`: as `audit`, for the hand-written lines on included / branching templates that kept the
-translator's numbers; the ruling rewrites them with `$N` / `$D` placeholders."""
+translator's numbers; the ruling rewrites them with `$N` / `$D` placeholders.
+
+`--scope stat-words`: as `audit`, for the hand-written item and spell lines that keep a stat word in English
+letters (`dev/draft_stat_words --corrections`); the ruling swaps in the interface's Japanese (ADR-048)."""
 
 from __future__ import annotations
 
@@ -48,10 +51,11 @@ from wfj.paths import data_root
 
 DECISIONS = ("keep", "correct")
 AUDIT_DECISIONS = ("correct", "redraft")
-SCOPES = ("stale", "audit", "templates")
+SCOPES = ("stale", "audit", "templates", "stat-words")
 # the scopes that take any shipped hand-written line (not only a stale one)
-ANY_SHIPPED = frozenset({"audit", "templates"})
-SUPERSEDED_BY = {"stale": "for the new English", "audit": "from the audit", "templates": "with placeholders"}
+ANY_SHIPPED = frozenset({"audit", "templates", "stat-words"})
+SUPERSEDED_BY = {"stale": "for the new English", "audit": "from the audit", "templates": "with placeholders",
+                 "stat-words": "with the settled stat words"}
 
 
 def _capital(note: str) -> str:
@@ -59,7 +63,8 @@ def _capital(note: str) -> str:
     return note[:1].upper() + note[1:] if note[:1].islower() else note
 
 WHY = {"stale": "to update stale lines", "audit": "on the audit of the hand-written lines",
-       "templates": "to write the baked numbers of included / branching templates as placeholders"}
+       "templates": "to write the baked numbers of included / branching templates as placeholders",
+       "stat-words": "that tooltip stat words use the interface's Japanese"}
 
 
 def read_decisions(path: Path, scope: str = "stale") -> list[dict[str, Any]]:
@@ -193,8 +198,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--by", required=True)
     ap.add_argument("--model", required=True)
     ap.add_argument("--scope", choices=SCOPES, default="stale",
-                    help="stale (the default), audit (any shipped hand-written line) or "
-                         "templates (the same, baked numbers on included / branching templates)")
+                    help="stale (the default), audit (any shipped hand-written line), "
+                         "templates (the same, baked numbers on included / branching templates) or "
+                         "stat-words (the same, stat words kept in English letters)")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args(argv)
     rows = read_decisions(a.decisions, a.scope)

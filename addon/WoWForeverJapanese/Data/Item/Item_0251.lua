@@ -163,6 +163,6 @@ WFJ.Data.add("item", {
   [251759] = { "Earthweaver's Adaptive Plateの作り方を習得します。", 0x068f67c8, "u" },
   [251760] = { "Earthweaver's Adaptive Linksの作り方を習得します。", 0xe590b308, "u" },
   [251761] = { "Earthweaver's Adaptive Waistguardの作り方を習得します。", 0xb26f93a8, "u" },
-  [251917] = { "$D1かけてhealthを$N1回復します。食事中は座っている必要があります。", 0xe5e04206, "u" },
+  [251917] = { "$D1かけて体力を$N1回復します。食事中は座っている必要があります。", 0xe5e04206, "u" },
   [251918] = { "この爪は本来よりも弱く、もろくなっているようです。", 0x3fb3a139, "u" },
 })

@@ -2,6 +2,6 @@
 local _, WFJ = ...
 WFJ.Data.add("spell", {
   [450105] = { "Imbiberから、Curse、Disease、Poisonをそれぞれ一つずつ取り除こうと試みます。", nil, 0x28825c19, nil, "um" },
-  [450106] = { "healthを$N1回復します。", nil, 0x4d16029e, nil, "um" },
-  [450107] = { "healthを$N1回復します。", nil, 0x4d16029e, nil, "um" },
+  [450106] = { "体力を$N1回復します。", nil, 0x4d16029e, nil, "um" },
+  [450107] = { "体力を$N1回復します。", nil, 0x4d16029e, nil, "um" },
 })

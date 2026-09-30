@@ -9,7 +9,7 @@ WFJ.Data.add("spell", {
   [1230643] = { "Enchanted Luteを作製します。", nil, 0xd4b0a8cf, nil, "um" },
   [1230656] = { "Reagent Botを作製します。", nil, 0x8ca2797f, nil, "um" },
   [1230671] = { "Emblem of the Ashbringer、Reforged Blade of the Ashbringer、Hilt of the Ashbringerを組み合わせます。", nil, 0xabb8282b, nil, "um" },
-  [1230942] = { "$D1の間、最大healthを$N1増加させます。", "Healthが$N1増加しています。", 0x173c41c4, 0x9cba3d80, "uu" },
+  [1230942] = { "$D1の間、最大体力を$N1増加させます。", "体力が$N1増加しています。", 0x173c41c4, 0x9cba3d80, "uu" },
   [1230944] = { "ディジュリドゥを吹くとランダムな野獣がそばに呼び出され、$D1の間、身体能力が上昇します。戦闘中にのみ使用できます。", "ディジュリドゥを演奏しました。獣を召喚しました。", 0x7883db33, 0x61299cf6, "uu" },
-  [1230980] = { "Standard of Stiltzを投げ立て、$D1の間、近くにいるすべての味方の最大healthを$N1増加させます。", "Standardによって士気が高まっています。", 0x94a7136d, 0xb6fa816c, "uu" },
+  [1230980] = { "Standard of Stiltzを投げ立て、$D1の間、近くにいるすべての味方の最大体力を$N1増加させます。", "Standardによって士気が高まっています。", 0x94a7136d, 0xb6fa816c, "uu" },
 })

@@ -4,7 +4,7 @@ WFJ.Data.add("spell", {
   [473384] = { "手引書を使ってArgent Squireを呼び出し、Silithidとの戦闘訓練を行います。従者のいる前でSilithidを倒すと、Argent Dawnとの評判が上昇します。", "従者が同行しています。Silithidsを倒すとArgent Dawnの評判を得られます。", 0xec5a51f0, 0x70ae3586, "uu" },
   [473466] = { "$D1の間、Firewaterの大釜を召喚します。パーティーまたはレイドの全メンバーが使用でき、$D2の間、近接攻撃力が$N2上昇し、体が大きくなります。", nil, 0x0fcd9860, nil, "um" },
   [473482] = { "SilithusにいるAbyssal CouncilのElementalのメンバーを弱らせ、彼らが与えるすべてのダメージを$N1%減少させます。効果時間は$D1です。", "与えるダメージが$N1%減少しています。", 0x093a0b91, 0x618d76ee, "uu" },
-  [473493] = { "近くの場所に罠を設置し、Hive'Ashi、Hive'Regal、Hive'ZoraのSilithidが近づくと爆発して、そのSilithidに$D2の間、$N2秒ごとにhealthの$N1%のダメージを与えます。", nil, 0xc93b98f4, nil, "um" },
+  [473493] = { "近くの場所に罠を設置し、Hive'Ashi、Hive'Regal、Hive'ZoraのSilithidが近づくと爆発して、そのSilithidに$D2の間、$N2秒ごとに体力の$N1%のダメージを与えます。", nil, 0xc93b98f4, nil, "um" },
   [473525] = { "Hive'Ashi、Hive'Regal、Hive'Zoraの巣の中にいるSilithidを$D1凍りつかせます。ダメージを受けると効果は解除されます。", nil, 0x3bfe5a1c, nil, "um" },
   [473544] = { "この香を吸い込むと影の中に溶け込み、Hive'Ashi、Hive'Regal、Hive'Zoraの中を忍び歩けるようになりますが、速度が$N1%低下します。効果時間は$D1です。", "隠密状態です。移動速度が$N1%低下しています。", 0x2b7ea238, 0xbaa2cba7, "uu" },
   [473561] = { "古代のロープを投げてHive'Ashi、Hive'Regal、Hive'Zoraのsilithidを拘束し、自分のほうへ引き寄せます。レベル$N1より高い敵や、ボスとされている敵には使用できません。", nil, 0xcf940655, nil, "um" },

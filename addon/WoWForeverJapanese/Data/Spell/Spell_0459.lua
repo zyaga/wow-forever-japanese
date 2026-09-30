@@ -9,7 +9,7 @@ WFJ.Data.add("spell", {
   [459261] = { "Stratholmeに棲む強大な者の残響を捕らえます。死体にのみ使用できます。", nil, 0x1cb2d8f8, nil, "um" },
   [459313] = { "指輪にDefense Specializationのルーンを刻みます：\n\n$I1\nDefenseのスキルが$N1上昇します。他の指輪のルーンとは重複しません。", nil, 0xef86bf94, nil, "um" },
   [459593] = { "Multi-Shotのダメージを$N1%増加させます。", nil, 0x6c155d83, nil, "um" },
-  [459594] = { "変身のmanaコストを$N1減少させます。", nil, 0xd3e6c51b, nil, "um" },
+  [459594] = { "変身のマナコストを$N1減少させます。", nil, 0xd3e6c51b, nil, "um" },
   [459595] = { "Wrathの詠唱中に、ダメージによる詠唱の中断を$N1%の確率で防ぎます。", nil, 0x62fc2171, nil, "um" },
   [459596] = { "Barkskinの効果時間を$N1秒延長します。", nil, 0x8598ff6f, nil, "um" },
   [459598] = { "Raptor Strikeのダメージを$N1%増加させます。", nil, 0xef4467a5, nil, "um" },
@@ -22,7 +22,7 @@ WFJ.Data.add("spell", {
   [459605] = { "Sprintの効果時間を$N1秒延長します。", nil, 0x6fa7b448, nil, "um" },
   [459606] = { "Ghost Wolfの移動速度が$N1%上昇します。", nil, 0xfb6a1db0, nil, "um" },
   [459607] = { "Searing Painの詠唱中、ダメージによる詠唱妨害を$N1%の確率で回避します。", nil, 0x326fd977, nil, "um" },
-  [459608] = { "HamstringのRageコストが$N1減少します。", nil, 0x1c20335d, nil, "um" },
+  [459608] = { "Hamstringの怒りコストが$N1減少します。", nil, 0x1c20335d, nil, "um" },
   [459613] = { "$D1の間、泳ぐ速度を$N1%上げます。", "泳ぐ速度が$N1%上昇します。", 0x9b1abba6, 0xe184d52a, "uu" },
   [459695] = { "他の種族のプリースト呪文を習得すると、このスロットのアビリティが有効になります。", nil, 0x50ae5b37, nil, "um" },
 })

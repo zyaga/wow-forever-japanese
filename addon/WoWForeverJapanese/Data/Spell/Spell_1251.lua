@@ -2,7 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("spell", {
   [1251286] = { "取り扱い注意。", "異国の品の積み荷を運んでいます。危ない目に遭わないよう、慎重に扱ってください。", 0x50bc26a8, 0xa2d7f6a8, "uu" },
-  [1251692] = { "$D1の間、Galeforce Windの効果を高めます。", "$I1 Charged Stoneを持っている間、$D1の間Intellectが$N1上昇します。", 0x8a355429, 0x92f3b92a, "uu" },
+  [1251692] = { "$D1の間、Galeforce Windの効果を高めます。", "$I1 Charged Stoneを持っている間、$D1の間知力が$N1上昇します。", 0x8a355429, 0x92f3b92a, "uu" },
   [1251919] = { "$D1の間、Spell Damageを$N1増加させます。", "Spell Damageが$N1増加しています。", 0xe3e0c85c, 0x3823be45, "uu" },
   [1251922] = { "$D1の間、Spell Damageを$N1増加させます。", "Spell Damageが$N1増加しています。", 0xe3e0c85c, 0x3823be45, "uu" },
   [1251923] = { "$D1の間、Spell Damageを$N1増加させます。", "Spell Damageが$N1増加しています。", 0xe3e0c85c, 0x3823be45, "uu" },

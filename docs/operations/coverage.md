@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-09-30 at commit `f1d730c7`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-09-30 at commit `77cb083`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves; spells are the player-visible set; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -20,7 +20,7 @@
 | **All** | **65,456** | | | **97.5%** | **1,638** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
-professions, internal strings): quest 329, gossip 81, item 880, spell 279, ui 4.
+professions, internal strings): quest 329, gossip 81, item 880, spell 280, ui 4.
 
 ### Nothing to translate (counted as done)
 

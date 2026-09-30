@@ -10,7 +10,7 @@ WFJ.Data.add("spell", {
   [1297455] = { "自分に対するCharm効果の命中率を$N1%低下させます。", nil, 0x7e411fc2, nil, "um" },
   [1297608] = { "Right Clickでslimelingを召喚、または解放します。", nil, 0x744e4a9c, nil, "um" },
   [1297659] = { "術者をDalaranへテレポートさせます。", nil, 0xa416287d, nil, "um" },
-  [1297671] = { "最大healthの$N1%を、最大mana、energy、rageの$N2%に変換します。", nil, 0x966cc7f8, nil, "um" },
+  [1297671] = { "最大体力の$N1%を、最大マナ、エネルギー、怒りの$N2%に変換します。", nil, 0x966cc7f8, nil, "um" },
   [1297705] = { "Syndicateの一員に変装します。怪しい行動をすると変装が解けます。", "Syndicateの一員に変装しています。", 0xd22bf96d, 0xca912f9d, "uu" },
   [1297762] = { "Propellerstormを行い、$D1の間落下速度を下げ、着地時に近くの敵に武器ダメージの$N2%を与えます。", "落下速度が遅くなります。", 0x4a646b85, 0x48e6f892, "uu" },
   [1297774] = { "魔力を全身にみなぎらせ、特定の呪文使いや強力な敵からMotes of Unstable Magicを探知して入手できるようにします。", "Motes of Unstable Magicを入手できます。", 0xebca25f0, 0x294a8fcd, "uu" },

@@ -22,5 +22,5 @@ WFJ.Data.add("spell", {
   [428856] = { "Spiced Wolf Meatを$N1個追加して、出荷を完了させます。", nil, 0x0eea74a2, nil, "um" },
   [428857] = { "Brilliant Smallfishを$N1個追加して、出荷を完了させます。", nil, 0x277cbe9e, nil, "um" },
   [428858] = { "Heavy Linen Bandageを$N1個追加して、出荷を完了させます。", nil, 0x0da3bb2e, nil, "um" },
-  [428878] = { "現実を歪める純粋な魔法の奔流を敵に放ち、$N1のChimericダメージを与えます。\n\nBalefire BoltとPyroblastのダメージが$N2%増加し、Spiritが$N3%減少します。最大$N4回までスタックし、効果時間は$D1です。Spiritが0になると死亡します。\n\nこの呪文は、対象のArcane、Fire、Frostの耐性のうち最も低いものに対して判定されます。", "Balefire BoltとPyroblastが与えるダメージが$N1%増加しますが、Spiritが$N2%低下します。Spiritが$N3になると死亡します。", 0x607fa16e, 0xee03cbbc, "uu" },
+  [428878] = { "現実を歪める純粋な魔法の奔流を敵に放ち、$N1のChimericダメージを与えます。\n\nBalefire BoltとPyroblastのダメージが$N2%増加し、精神が$N3%減少します。最大$N4回までスタックし、効果時間は$D1です。精神が0になると死亡します。\n\nこの呪文は、対象のArcane、Fire、Frostの耐性のうち最も低いものに対して判定されます。", "Balefire BoltとPyroblastが与えるダメージが$N1%増加しますが、精神が$N2%低下します。精神が$N3になると死亡します。", 0x607fa16e, 0xee03cbbc, "uu" },
 })

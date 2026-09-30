@@ -5,7 +5,7 @@ WFJ.Data.add("spell", {
   [1224422] = { "対象の武器または盾に塗布している間、アンデッドに対する攻撃力が100増加します。効果時間は1時間です。", nil, 0x1020c5f4, nil, "um" },
   [1224553] = { "Holy ShockとHoly Lightの呪文のクリティカル率を$N1%上昇させます。", nil, 0x0a423554, nil, "um" },
   [1224692] = { "呪文によるすべての回復量を$N1%、受けるすべての回復量を$N2%増加させます。", nil, 0x4065c70b, nil, "um" },
-  [1224697] = { "Staminaの合計を$N1%増加させ、Divine Shield、Divine Protection、Templar's Bulwarkの呪文のクールダウンを$N2秒短縮します。", nil, 0x6ff8c6b6, nil, "um" },
+  [1224697] = { "スタミナの合計を$N1%増加させ、Divine Shield、Divine Protection、Templar's Bulwarkの呪文のクールダウンを$N2秒短縮します。", nil, 0x6ff8c6b6, nil, "um" },
   [1224716] = { "Backstabのクリティカル率を$N1%、Mutilateのクリティカル率を$N2%上昇させ、Backstabに$N3%の確率でCombo Pointを追加で一つ加える効果を与えます。", nil, 0xdad38dd6, nil, "um" },
-  [1224782] = { "SapとBlindのアビリティのEnergyコストを$N1%減少させます。", nil, 0x0a58f6d1, nil, "um" },
+  [1224782] = { "SapとBlindのアビリティのエネルギーコストを$N1%減少させます。", nil, 0x0a58f6d1, nil, "um" },
 })

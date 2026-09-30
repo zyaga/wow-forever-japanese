@@ -180,3 +180,12 @@ def test_templates_scope_corrects_a_shipped_line_and_names_its_scope(tmp_path):
     lines, c = _apply(tmp_path, [row], scope="templates")
     assert c["correct"] == 1 and lines[0]["provenance"]["note"].startswith("$N1")
     assert "placeholders" in lines[0]["provenance"]["note"]
+
+
+def test_stat_words_scope_corrects_a_shipped_line_and_names_its_reason(tmp_path):
+    _store(tmp_path, status="trusted", en=OLD)
+    row = {"type": "quest", "id": 175, "field": "title", "decision": "correct", "ja": "星を見よ",
+           "note": "Stat words written with the interface's Japanese"}
+    lines, c = _apply(tmp_path, [row], scope="stat-words")
+    assert c["correct"] == 1 and lines[0]["provenance"]["class"] == "correction"
+    assert "that tooltip stat words use the interface's Japanese" in lines[0]["provenance"]["note"]

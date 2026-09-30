@@ -9,7 +9,7 @@ WFJ.Data.add("spell", {
   [1232079] = { "新たな発見を求めて、Mote of PossibilityのそばでIllusion Dust $N1個とRighteous Orb $N2個を組み合わせます。", nil, 0xa1186a22, nil, "um" },
   [1232103] = { { "武器によらないダメージ呪文によるGlobal Cooldownは、Spell Hasteによって最大$N1秒まで短縮できます。装備中は、有効なTemporal Beaconsを持つことはできません。", "武器によらないダメージ呪文によるGlobal Cooldownは、Spell Hasteによって最大$N1秒まで短縮できます（Metamorphosis中でない場合）。", "武器によらないダメージ呪文によるGlobal Cooldownは、Spell Hasteによって最大$N1秒まで短縮できます。ただし、この効果はPenanceには適用されません。", "武器によらないダメージ呪文によるGlobal Cooldownは、Spell Hasteによって最大$N1秒まで短縮できます（Way of Earthが有効でない場合）。", "武器によらないダメージ呪文によるGlobal Cooldownは、Spell Hasteによって最大$N1秒まで短縮できます。この効果はHoly Shockには適用されず、有効なBeacons of Lightを持つこともできません。", "武器によらないダメージ呪文によるGlobal Cooldownは、Spell Hasteによって最大$N1秒まで短縮できます。", shape = { "1/0", "1/0", "1/0", "1/0", "1/0", "1/0" } }, "攻撃呪文のGlobal Cooldownが$N1秒短縮されます。", 0xc8290a18, 0xa6d72f7b, "uu" },
   [1232150] = { "Cat、Bear、Dire Bearフォームでのみ、Attack Powerが+$N1されます。", nil, 0xa798bce2, nil, "um" },
-  [1232172] = { "両手の近接武器に永続的なエンチャントを施し、近接攻撃時にしばしば$N1回復し、$D1の間、Strengthを$N2上昇させます。", nil, 0xb4dcb38a, nil, "um" },
+  [1232172] = { "両手の近接武器に永続的なエンチャントを施し、近接攻撃時にしばしば$N1回復し、$D1の間、筋力を$N2上昇させます。", nil, 0xb4dcb38a, nil, "um" },
   [1232176] = { "新たな発見を求めて、Mote of PossibilityのそばでIllusion Dust $N1個とRighteous Orb $N2個を組み合わせます。", nil, 0xa1186a22, nil, "um" },
   [1232181] = { { "Bloodthirst、Mortal Strike、Shield Slam、Heroic Strike、Cleaveのクリティカルヒットで、対象のRendの持続時間が$D1に設定されます。", "Backstab、Mutilate、Saber Slashのクリティカルヒットで、対象のRuptureの持続時間が$D1に、Crimson Tempestの持続時間が$D2に設定されます。", "Raptor StrikeとMongoose Biteのクリティカルヒットで、対象のSerpent Stingの持続時間が$D1に設定されます。", "あなたはこの刃の恩恵を受けるに値しません。", shape = { "1/1", "2/2", "1/1", "0/0" } }, nil, 0x2936d8d5, nil, "um" },
   [1232193] = { "Wing and StringをInescapable Fateと組み合わせて安定させます。", nil, 0xfbd74f3d, nil, "um" },
@@ -23,7 +23,7 @@ WFJ.Data.add("spell", {
   [1232356] = { "Putress' DiaryにSixth, and Final, Pageを加えます。", nil, 0x388c36b0, nil, "um" },
   [1232438] = { "破片を$N1個組み合わせて、Crusader's Chaliceを修復します。", nil, 0x73b5e8ae, nil, "um" },
   [1232896] = { "Cat Formの間でも、RebirthとInnervateを唱えられます。", nil, 0x3159b7f2, nil, "um" },
-  [1232946] = { { "近接攻撃時に$N1%の確率でStrand of Fateを生成し、Strengthが$N2増加します。最大$N3回までスタックし、$D1持続します。", "遠隔攻撃時に$N1%の確率でStrand of Fateを生成し、移動しながら遠隔攻撃を使えるようになります。Strandsは最大$N2回までスタックし、$D1持続します。", shape = { "4/1", "3/1" } }, nil, 0x2245bceb, nil, "um" },
+  [1232946] = { { "近接攻撃時に$N1%の確率でStrand of Fateを生成し、筋力が$N2増加します。最大$N3回までスタックし、$D1持続します。", "遠隔攻撃時に$N1%の確率でStrand of Fateを生成し、移動しながら遠隔攻撃を使えるようになります。Strandsは最大$N2回までスタックし、$D1持続します。", shape = { "4/1", "3/1" } }, nil, 0x2245bceb, nil, "um" },
   [1232989] = { "疫病のサンプルを検査します。", nil, 0x49fa376d, nil, "um" },
   [1232990] = { "疫病のサンプルを検査します。", nil, 0x49fa376d, nil, "um" },
 })

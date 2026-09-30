@@ -5,7 +5,7 @@ WFJ.Data.add("spell", {
   [463006] = { "騎乗用のGolden Saber Catを呼び出したり戻したりします。", "地上での移動速度が$N1%上昇します。", 0x3745fb1e, 0x2195529a, "uu" },
   [463007] = { "騎乗できるRaptorを呼び出し、または帰します。", "地上での移動速度が$N1%上昇します。", 0x7d1c7f75, 0x2195529a, "uu" },
   [463008] = { "Eye of ShadowとEye of Divinityと組み合わせると、Benedictionになります。", nil, 0x449c37a0, nil, "um" },
-  [463105] = { "発動中、$D1の間、使用者に防御$N1とarmor $N2を付与します。", "Armorが$N1増加しています。\nDefenseが$N2上昇しています。", 0x275cde53, 0xf094e7b1, "uu" },
+  [463105] = { "発動中、$D1の間、使用者に防御$N1とアーマー $N2を付与します。", "アーマーが$N1増加しています。\nDefenseが$N2上昇しています。", 0x275cde53, 0xf094e7b1, "uu" },
   [463146] = { "Crusader Strike呪文を使うと、次のConsecration呪文のコストが$N1%減少します。", nil, 0x48dc6691, nil, "um" },
   [463448] = { "近くの敵にFrostダメージを与え、最大$D1の間、動けなくします。", "移動できません。", 0x1eb0ef79, 0x18deeb81, "uu" },
   [463556] = { "Copper Slaughter Coin 100枚をSilver Slaughter Coin 1枚に変換します。", nil, 0xd353ba95, nil, "um" },

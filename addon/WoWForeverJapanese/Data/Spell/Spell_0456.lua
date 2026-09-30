@@ -2,6 +2,6 @@
 local _, WFJ = ...
 WFJ.Data.add("spell", {
   [456223] = { nil, "ひらめきに満ちています。", nil, 0x12978998, "mu" },
-  [456485] = { "$D1かけてhealthを$N1回復し、$D2の間Temporal Beaconを付与します。\r\n\nTemporal Beacon\r\n$I1\r\n対象の時空間の位置を記録します。術者が与えたArcaneダメージの$N4%が、術者の現在のTemporal Beaconの対象それぞれへのクロノマンシーの治療に変換されます。この治療は自分に対しては$N5%減少し、複数の対象にダメージを与えるArcane呪文によるダメージの場合はさらに$N6%減少します。", nil, 0x7470eeff, nil, "um" },
+  [456485] = { "$D1かけて体力を$N1回復し、$D2の間Temporal Beaconを付与します。\r\n\nTemporal Beacon\r\n$I1\r\n対象の時空間の位置を記録します。術者が与えたArcaneダメージの$N4%が、術者の現在のTemporal Beaconの対象それぞれへのクロノマンシーの治療に変換されます。この治療は自分に対しては$N5%減少し、複数の対象にダメージを与えるArcane呪文によるダメージの場合はさらに$N6%減少します。", nil, 0x7470eeff, nil, "um" },
   [456937] = { "集めたTorn Spell Notesを組み合わせて、新しいEngraving呪文を習得できる巻物を作ります。", nil, 0x4b522d6c, nil, "um" },
 })
