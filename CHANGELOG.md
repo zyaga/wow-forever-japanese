@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.1.0-alpha.1 - 2026-09-30
+
 ### Added
 - Quest text in Japanese: the quest window, the quest log and quest objectives.
 - NPC dialogue in Japanese: the talk window, speech bubbles, NPC chat and boss emotes.
