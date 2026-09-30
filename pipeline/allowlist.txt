@@ -2,16 +2,19 @@
 # One per line: term  # justification. A test rejects lines without a justification and terms no
 # corpus line uses. Compared case-insensitively. Terms under 3 letters are never extracted as
 # names (align.NAME_RUN), so they do not belong here.
-Health  # stat word kept in English by the WoWJapanizer translators ("Healthを70回復")
-Mana  # stat word kept in English
-Stamina  # stat word kept in English
-Spirit  # stat word kept in English
-Intellect  # stat word kept in English
-Agility  # stat word kept in English
-Strength  # stat word kept in English
-Armor  # stat word kept in English
-Rage  # resource word kept in English
-Energy  # resource word kept in English
+# Stat and resource words: the human corpus keeps them in English letters ("Healthを70回復"), and its lines
+# still ship, so the name check must not read them as names. Machine lines write the interface's Japanese
+# instead (体力, マナ …; the style guide's Settled interface terms, core/stat_words.py).
+Health  # stat word the human corpus keeps in English letters
+Mana  # stat word the human corpus keeps in English letters
+Stamina  # stat word the human corpus keeps in English letters
+Spirit  # stat word the human corpus keeps in English letters
+Intellect  # stat word the human corpus keeps in English letters
+Agility  # stat word the human corpus keeps in English letters
+Strength  # stat word the human corpus keeps in English letters
+Armor  # stat word the human corpus keeps in English letters
+Rage  # resource word the human corpus keeps in English letters
+Energy  # resource word the human corpus keeps in English letters
 NPC  # abbreviation
 PvP  # abbreviation
 # World / faction / reputation words the translators add for context even when the English line omits them

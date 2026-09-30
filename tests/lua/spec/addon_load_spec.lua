@@ -370,12 +370,12 @@ describe("addon loads in TOC order and answers /wfj version", function()
       WFJ.BuildUIIndex()
     end)
     -- item 117 Tough Jerky, with the value and the duration as placeholders:
-    --   "$D1かけてhealthを$N1回復します。回復中は座っている必要があります。"
+    --   "$D1かけて体力を$N1回復します。回復中は座っている必要があります。"
     -- The value and the duration both come out of the line the client is showing, so ONE stored translation
     -- serves every food item at any value, where the baked line it replaced only fitted this one.
     Stub.setItemTooltip(tt, "|Hitem:117:0:0:0:0:0:0:0|h[Tough Jerky]|h",
       { "Tough Jerky", "Use: Restores 61 health over 18 sec. Must remain seated while eating.", "Sell Price: 5c" })
-    assert.are.equal("18秒かけてhealthを61回復します。回復中は座っている必要があります。",
+    assert.are.equal("18秒かけて体力を61回復します。回復中は座っている必要があります。",
       _G.GameTooltipTextLeft2:GetText())
     assert.are.equal("Tough Jerky", _G.GameTooltipTextLeft1:GetText())
     assert.are.equal("Sell Price: 5c", _G.GameTooltipTextLeft3:GetText()) -- the stub client defines no SELL_PRICE
@@ -385,13 +385,13 @@ describe("addon loads in TOC order and answers /wfj version", function()
     -- a different value is not a mismatch: it fills, so one stored line serves every value
     Stub.setItemTooltip(tt, "|Hitem:117:0:0:0:0:0:0:0|h[Tough Jerky]|h",
       { "Tough Jerky", "Use: Restores 70 health over 18 sec. Must remain seated while eating." })
-    assert.are.equal("18秒かけてhealthを70回復します。回復中は座っている必要があります。",
+    assert.are.equal("18秒かけて体力を70回復します。回復中は座っている必要があります。",
       _G.GameTooltipTextLeft2:GetText())
     tt:Hide()
     -- and a different UNIT follows the client, never the corpus (ADR-028)
     Stub.setItemTooltip(tt, "|Hitem:117:0:0:0:0:0:0:0|h[Tough Jerky]|h",
       { "Tough Jerky", "Use: Restores 70 health over 2 min. Must remain seated while eating." })
-    assert.are.equal("2分かけてhealthを70回復します。回復中は座っている必要があります。",
+    assert.are.equal("2分かけて体力を70回復します。回復中は座っている必要があります。",
       _G.GameTooltipTextLeft2:GetText())
     tt:Hide()
   end)

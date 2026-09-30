@@ -586,23 +586,23 @@ def test_the_value_placeholder_passes_but_a_baked_number_does_not():
     # The duration takes `$D1` rather than `$N2` plus a unit: `test_a_duration_must_be_carried_as_a_
     # placeholder_not_a_named_unit` is why.
     row = _tooltip("Restores $o1 health over $d. Must remain seated while eating.")
-    assert _reasons(row, "$D1かけてhealthを$N1回復します。回復中は座っている必要があります。") == []
-    baked = _reasons(row, "18秒かけてhealthを61回復します。回復中は座っている必要があります。")
+    assert _reasons(row, "$D1かけて体力を$N1回復します。回復中は座っている必要があります。") == []
+    baked = _reasons(row, "18秒かけて体力を61回復します。回復中は座っている必要があります。")
     assert any(r.startswith("numbers_changed:") for r in baked), baked
 
 
 def test_any_other_dollar_code_left_in_a_draft_still_fails():
     row = _tooltip("Restores $o1 health over $d.")
-    assert "leftover:$o" in _reasons(row, "$d秒かけてhealthを$o1回復します。")
-    assert "leftover:$B" in _reasons(row, "$D1かけてhealthを$N1回復します。$B")
+    assert "leftover:$o" in _reasons(row, "$d秒かけて体力を$o1回復します。")
+    assert "leftover:$B" in _reasons(row, "$D1かけて体力を$N1回復します。$B")
 
 
 def test_a_placeholder_past_the_templates_slots_is_refused():
     """`Align.fill` is closed-ended: one unfillable `$N<k>` drops the whole line back to English."""
     row = _tooltip("Restores $s1 health.")
-    assert _reasons(row, "healthを$N1回復します。") == []
-    assert "value_index:2>1" in _reasons(row, "$N2秒でhealthを$N1回復します。")
-    assert "value_index:3,4>1" in _reasons(row, "healthを$N1、$N3、$N4回復します。")
+    assert _reasons(row, "体力を$N1回復します。") == []
+    assert "value_index:2>1" in _reasons(row, "$N2秒で体力を$N1回復します。")
+    assert "value_index:3,4>1" in _reasons(row, "体力を$N1、$N3、$N4回復します。")
 
 
 def test_the_index_is_not_checked_when_the_template_makes_it_unknowable():
@@ -629,13 +629,13 @@ def test_a_literal_the_template_shows_may_be_written_as_a_literal():
 def test_a_duration_must_be_carried_as_a_placeholder_not_a_named_unit():
     """The unit is the client's choice, and `Align.check` cannot catch a wrong one; this is the only gate."""
     row = _tooltip("Restores $o1 health over $d. Must remain seated while eating.")
-    good = "$D1かけてhealthを$N1回復します。回復中は座っている必要があります。"
+    good = "$D1かけて体力を$N1回復します。回復中は座っている必要があります。"
     assert _reasons(row, good) == []
     # a bare number with a unit written by hand: right in seconds, wrong the moment the client says minutes
-    named = _reasons(row, "$N2秒かけてhealthを$N1回復します。回復中は座っている必要があります。")
+    named = _reasons(row, "$N2秒かけて体力を$N1回復します。回復中は座っている必要があります。")
     assert "duration_missing:D1" in named
     # baking both the number and the unit fails twice over
-    baked = _reasons(row, "18秒かけてhealthを61回復します。回復中は座っている必要があります。")
+    baked = _reasons(row, "18秒かけて体力を61回復します。回復中は座っている必要があります。")
     assert "duration_missing:D1" in baked
     assert any(r.startswith("numbers_changed:") for r in baked)
 
@@ -649,8 +649,8 @@ def test_every_duration_of_a_template_needs_its_own_placeholder():
 
 def test_a_template_with_no_duration_needs_no_placeholder():
     row = _tooltip("Restores $s1 health.")
-    assert _reasons(row, "healthを$N1回復します。") == []
-    assert not [r for r in _reasons(row, "healthを$N1回復します。") if r.startswith("duration")]
+    assert _reasons(row, "体力を$N1回復します。") == []
+    assert not [r for r in _reasons(row, "体力を$N1回復します。") if r.startswith("duration")]
 
 
 def test_the_duration_rule_is_skipped_when_the_template_is_uncountable():
@@ -727,10 +727,10 @@ def test_a_placeholder_with_english_glued_to_it_is_refused():
     assert _reasons(row, "Attack Powerを$N1付与します。") == []
     proc = _tooltip("Restores $s1 mana. This effect cannot occur more than once every $proccooldown sec.",
                     kind="spell_description")
-    bad = _reasons(proc, "manaを$N1回復します。$N2roccooldown秒に一度までです。")
+    bad = _reasons(proc, "マナを$N1回復します。$N2roccooldown秒に一度までです。")
     assert "placeholder_run:$N2roccooldown" in bad
     # a placeholder ending at its digits is fine, next to Japanese or punctuation
-    assert _reasons(proc, "manaを$N1回復します。$N2秒に一度までです。") == []
+    assert _reasons(proc, "マナを$N1回復します。$N2秒に一度までです。") == []
 
 
 def test_the_precision_digit_cannot_vouch_for_a_number_in_the_japanese():
@@ -965,3 +965,42 @@ def test_a_name_inside_a_gender_code_may_be_kept():
     en = "$g Hey there, need a ride? : Come to the jungles of Stranglethorn with my brother Frezza!;"
     assert _check(en, "Stranglethornのジャングルへおいで。兄弟のFrezzaも待ってるよ！") == []
     assert "alignment_failed:Hey" in _check(en, "Hey、Stranglethornのジャングルへおいで！")
+
+
+@pytest.mark.parametrize(
+    ("en", "ja", "reason"),
+    [
+        ("Restores $s1 health.", "healthを$N1回復します。", "stat_word:health"),
+        ("Increases Stamina by $s1.", "Staminaが$N1増加します。", "stat_word:stamina"),
+        ("Restores $s1 health.", "ヘルスを$N1回復します。", "stat_word:ヘルス"),
+    ],
+)
+def test_a_tooltip_keeping_a_stat_word_in_english_fails(en, ja, reason):
+    assert reason in _check(en, ja, kind="spell_description")
+
+
+def test_a_tooltip_stat_word_in_japanese_passes_and_is_no_name_to_keep():
+    assert _check("Increases Stamina by $s1.", "スタミナが$N1増加します。", kind="item_description") == []
+    assert _check("Increases your Spirit by $s1.", "精神が$N1増加します。", kind="spell_aura") == []
+
+
+def test_a_stat_word_inside_a_name_is_still_a_name():
+    en = "Absorbs $s1 damage while your Mana Shield lasts."
+    assert _check(en, "Mana Shieldが持続する間、$N1のダメージを吸収します。", kind="spell_description") == []
+    assert "name_missing:Mana" in _check(en, "マナShieldが持続する間、$N1のダメージを吸収します。",
+                                         kind="spell_description")
+
+
+def test_the_stat_word_rule_is_for_tooltips_only():
+    assert not any(r.startswith("stat_word") for r in _check("Take the mana potions.", "manaの薬を持っていけ。"))
+
+
+def test_a_stat_word_joined_by_of_is_still_a_name():
+    en = "Drink an Elixir of Agility."
+    assert "name_missing:Agility" in _check(en, "敏捷性のElixirを飲みます。", kind="item_description")
+    assert _check(en, "Elixir of Agilityを飲みます。", kind="item_description") == []
+
+
+def test_a_stat_word_leading_a_capitalised_word_is_no_new_name():
+    reasons = _check("Strength Increased by $s1.", "筋力が$N1増加しています。", kind="spell_aura")
+    assert "name_missing:Strength" not in reasons

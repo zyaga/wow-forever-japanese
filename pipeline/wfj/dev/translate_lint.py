@@ -70,6 +70,11 @@ reason per problem:
   row and word at a time).
 - `markup_changed:<difference>`: an HTML book page (`<HTML…`) whose Japanese does not carry the English's
   tags in the same order (`markup.html_mismatch`, the rule `wfj check` applies to book pages)
+- `stat_word:<word>`: an item or spell row keeps a stat word (`health`, `Stamina`, …) in English letters on
+  its own, or writes another spelling (`ヘルス`); a tooltip uses the interface's Japanese
+  (`core/stat_words.STAT_WORDS`: 体力, スタミナ, …). A stat word inside a name (`Mana Shield`, `Elixir of
+  Agility`) is not read. On these rows a stat word the English uses on its own (`Increases Stamina by $s1`)
+  is no name to keep; one inside a name in the English (`Elixir of Agility`) still is.
 - `glossary:<term>`: the English has a `required` glossary term (a race or class word, or its plural) and
   the Japanese neither uses the glossary's rendering nor keeps the word in English letters (part of a name,
   `Skeletal Warrior`). A term listed in lower case for the row's ref in `pipeline/translation_not_names.tsv`
@@ -100,10 +105,10 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from wfj.core import align, language, markup, paragraphs, placeholders, readings
+from wfj.core import align, language, markup, paragraphs, placeholders, readings, stat_words
 from wfj.dev.glossary import GLOSSARY, read_glossary, read_required, term_pattern
 from wfj.dev.lint_names import GENDER_CODE, english_names, exempt_words, forms, titles_before_names
-from wfj.dev.translate_batch import KINDS, TITLE_CASE_KINDS, read_jsonl, write_jsonl
+from wfj.dev.translate_batch import KINDS, TEMPLATE_KINDS, TITLE_CASE_KINDS, read_jsonl, write_jsonl
 
 ALLOWLIST = Path("pipeline/allowlist.txt")
 NOT_NAMES = Path("pipeline/translation_not_names.tsv")
@@ -223,11 +228,17 @@ def check_row(
     if bad_html := markup.html_mismatch(en, ja):  # an HTML book page keeps its tags in order
         reasons.append(f"markup_changed:{bad_html}")
     kept = ja.casefold()
+    names = english_names(_COLOUR.sub(" ", en), glossary)
     # Japanese has no plural: "Gnolls" kept as `Gnollども` is kept
-    missing = [
-        w for w in english_names(_COLOUR.sub(" ", en), glossary)
-        if w not in not_names and not any(f in kept for f in forms(w))
-    ]
+    missing = [w for w in names if w not in not_names and not any(f in kept for f in forms(w))]
+    # A tooltip's stat word is written with the interface's Japanese, never kept in English letters: the
+    # English capitalises it (`Increases Stamina by $s1`), so where it stands on its own it is no name to
+    # keep either. Inside a name (`Elixir of Agility`, `Mana Shield`) it still is one.
+    if row["kind"] in TEMPLATE_KINDS:
+        reasons += [f"stat_word:{w}" for w in dict.fromkeys(stat_words.find(ja))]
+        reasons += [f"stat_word:{s}" for s in stat_words.not_spellings(ja)]
+        free = stat_words.free_in_english(en, names)
+        missing = [w for w in missing if not any(f in free for f in forms(w))]
     # A quest TITLE is written in title case ("The Alliance Needs Copper Bars", "Keeper of the Flame"). Every
     # word is capitalised by convention, so capitalisation carries none of the signal this check reads it
     # for, and it would flag "Needs" and "Flame" as names. The check is skipped here rather than drowned:

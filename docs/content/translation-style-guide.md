@@ -1,6 +1,6 @@
 # Translation style guide: server-only text, client tooltips and interface text
 
-version: sg11
+version: sg12
 
 > What a drafting model is given, with `pipeline/translation_glossary.tsv` and one batch file, to write the Japanese for quest progress text, quest completion (turn-in) text and NPC gossip, for book, letter and plaque pages, and for item and spell tooltip descriptions (the **Tooltips** section: a different register and different placeholder rules; read it instead of **Voice**). The rules come from the project's name policy ([principle 2](../architecture/principles.md#2-names-stay-in-english)) and from how the human quest corpus (WoWJapanizer / QuestJapanizer translators) writes these lines. Changing a rule or an example is a new version: bump `version:` (to the next `sg` number), and draft names end in the new `-sg<N>`. The **Interface text** section is the exception: it governs the UI dictionary drafts, which carry no version, so changing it bumps nothing.
 
@@ -86,7 +86,7 @@ These rows are **not** dialogue. Nobody is speaking: the text is what the game p
 
 ```
 EN   Restores $s1 health.                     slots 1
-JA   healthを$N1回復します。
+JA   体力を$N1回復します。
 ```
 
 A number written out instead (`61`) is refused (`numbers_changed`): the template holds `$s1`, not the value, and a written number stops the whole line from shipping as soon as the game shows a different one. This is why 919 of the 927 item descriptions the predecessor corpus shipped no longer display.
@@ -99,7 +99,7 @@ A duration is the one value whose **unit** the game chooses: `$d` prints through
 
 ```
 EN   Restores $o1 health over $d.  Must remain seated while eating.    slots 2
-JA   $D1かけてhealthを$N1回復します。回復中は坐っている必要があります。
+JA   $D1かけて体力を$N1回復します。回復中は坐っている必要があります。
 
 EN   Stuns for $d and slows for $d1.
 JA   $D1スタンさせ、$D2の間スローにします。
@@ -109,7 +109,7 @@ JA   $D1スタンさせ、$D2の間スローにします。
 
 ```
 EN   Regenerate $s1 health every 5 sec for $d.    slots 3 · durations 2
-JA   $D2の間、5秒ごとにhealthを$N1回復します。
+JA   $D2の間、5秒ごとに体力を$N1回復します。
 ```
 
 The written `5 sec` may be written out (`5秒`) or taken as `$D1`; the `$d` must be `$D2`. Each code slot needs the placeholder that points at **it**: `$N2` for the `$d`'s number is refused (`duration_as_value`), and a `$N<k>` that points at another slot does not carry a dropped one (`slot_missing`).
@@ -159,7 +159,7 @@ A row whose branches could not be told apart on screen (Tiger's Fury: the same "
 
 - Spell, item, zone and creature names stay in English letters, as everywhere (see **Names stay in English letters**). `Teaches Frost Ward (Rank 5).` → `Frost Ward（Rank 5）を習得します。`
 - **`Rank` stays in English letters for now.** It reads as part of the spell's name beside one, and whether words like it become Japanese belongs with the names and titles work, not here. The same goes for any capitalised word inside an English sentence that the glossary does not list.
-- A stat word the allowlist carries (`health`, `mana`, `armor`, `rage`) is kept as the corpus keeps it, in English letters: `healthを$N1回復`.
+- **Stat words are Japanese, the interface's words**: `armor` アーマー, `health` 体力, `mana` マナ, `stamina` スタミナ, `strength` 筋力, `agility` 敏捷性, `intellect` 知力, `spirit` 精神, `rage` 怒り, `energy` エネルギー, in lower or upper case alike (`Increases Stamina by $s1.` → `スタミナが$N1増加します。`). They are what the character sheet and an item's stat lines show on the same screen (the interface terms table under **Interface text**). Never keep one in English letters, and never write ヘルス. A stat word inside a name stays English with the name: `Mana Shield`, `Elixir of Agility`, `Spirit of Zandalar`.
 - **Say exactly what the English says, no wider.** `while drinking` is drinking, not `飲食中` ("eating and drinking"); `one ally` has no number to write, because the English writes none; a digit the English does not have is refused (`numbers_changed`).
 - `%` stays `%`. A percentage reads `$N1%`.
 
@@ -215,7 +215,7 @@ Labels, buttons, tabs and headers are bare nouns or verb stems, with no `です`
 
 One English, one Japanese: every key whose English another key already ships takes that Japanese (`Accept` is `承諾` on all four of its keys), unless the key owns its Japanese on one screen (`UIStrings.OWN`, [ADR-037](../adr/037-staticpopup-dialogs-and-owned-keys.md)). Game terms follow `pipeline/translation_glossary.tsv`, and the interface's own terms follow the table below (the glossary is the quest translators' usage; these are the words the windows use). A tab and the window it opens agree, and so do a button and the dialog it raises.
 
-Settled interface terms (a test holds every shipped UI line whose English has the term to the Japanese, never the other spellings):
+Settled interface terms (a test holds every shipped UI line whose English has the term to the Japanese, never the other spellings; the stat words, `armor` to `energy`, also hold every shipped machine item and spell tooltip line, where they are never kept in English letters in either case, see **Tooltips**):
 
 | English | Japanese | Not |
 |---|---|---|
@@ -227,6 +227,16 @@ Settled interface terms (a test holds every shipped UI line whose English has th
 | specialization | 専門化 | スペシャライゼーション |
 | crafting order | 製作依頼 | 製作注文 |
 | role | ロール | 役割 |
+| armor | アーマー | armor |
+| health | 体力 | health, ヘルス |
+| mana | マナ | mana |
+| stamina | スタミナ | stamina |
+| strength | 筋力 | strength |
+| agility | 敏捷性 | agility |
+| intellect | 知力 | intellect |
+| spirit | 精神 | spirit |
+| rage | 怒り | rage |
+| energy | エネルギー | energy |
 
 A banker, the NPC, is `銀行員`: a person, not the bank window. `戦場` is shorter than `バトルグラウンド` and fits a button (`Leave Battleground` is `戦場から離脱`).
 

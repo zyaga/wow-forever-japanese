@@ -147,6 +147,11 @@ A spell's `AuraDescription_lang`: the text shown on the buff or debuff the spell
 _Avoid_: aura description (in prose), debuff tooltip
 → [Data model](architecture/data-model.md)
 
+**Stat word**:
+One of ten stat and resource words in [[Tooltip text]] and [[Buff text]]: armor, health, mana, stamina, strength, agility, intellect, spirit, rage, energy. A machine-drafted tooltip line writes each as the interface does on the character sheet (アーマー, 体力, マナ, スタミナ, 筋力, 敏捷性, 知力, 精神, 怒り, エネルギー), never in English letters and never as ヘルス; lint reason `stat_word:<word>`. [[Hand-written]] lines keep them in English letters (`Healthを70回復`), so the words stay on the name-check allowlist. A stat word inside a name stays English with it (`Mana Shield`, `Elixir of Agility`).
+_Avoid_: attribute, resource word (energy and rage are stat words here too), stat name
+→ [Pipeline](systems/pipeline.md) · [ADR-048](adr/048-stat-words-in-tooltips.md)
+
 **Area text**:
 A quest's area description in the [[Quest cache]]: the text of an exploration or event objective ("Scout the gazebo on Mystral Lake…", "Kernobee Rescue"). Its own translation type `area` (field `text`, keyed by the quest id). Checked as prose against its own English like [[Objective text]], and found in the addon the same way (by the text the client writes as an objective line, in one index with objective text), so the Japanese appears wherever the client writes it. It takes no word readings.
 _Avoid_: exploration text, zone text, quest area field. Not a translation *area* (the `quests` / `books` / … groups

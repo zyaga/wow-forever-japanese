@@ -148,6 +148,28 @@ When a client build rewords a string, `make check` marks its line `stale` (the E
 
 `--reverify` records on every line the draft names exactly the baseline a fresh `make check` would record for the current English, because the draft was written against it. The summary ends `re-verified N`. It refuses, writing nothing, a row with no English, a line with a hand-written variant not ruled `reject` (that needs a ruling first), and a row whose Japanese loses to a variant ruled `accept` (move the ruling to the redraft first). `make test-py` includes a test that fails while any shipped UI line is mismatched or ambiguous against Forever's English.
 
+## Scripted redraft (a word swap)
+
+When a style rule changes only which word the Japanese uses (a stat word in tooltips: `health` → 体力), the lines already drafted are not sent back to a model. A tool swaps the words, and each line keeps the model that wrote the rest of it. The stat-word tool is `dev/draft_stat_words.py` ([ADR-048](../adr/048-stat-words-in-tooltips.md)). It takes every shipped machine item and spell line that keeps a stat word in English letters on its own.
+
+1. **Draft** (from `pipeline/`):
+   ```sh
+   python -m wfj.dev.draft_stat_words ../batches/<folder> --tag <model id>=<tag> [--tag …] [--skip <file>]
+   ```
+   `--tag` gives each drafting model a short tag for its file and draft name. It writes one draft file per drafting model and type (`<tag>.item.jsonl`, `<tag>.spell.jsonl`), `contexts.txt` (every distinct stretch of text around a swapped word, with its count) and `lint.txt` (lines where the swap brought a lint problem the old line did not have; exit 1 when there is one). It stops if a line's model has no draft tag, or if a row differs from its line by more than the swapped words.
+2. **Read `contexts.txt`** for a stat word that is really part of a name. List any such line in the skip file (`<type> <id> <field>` per line, `#` comments) and run step 1 again.
+3. **Read `lint.txt`.** Review each new problem by hand. Keep the swap only when the Japanese is right (a new `name_missing:Mana` on `マナコスト` for "Mana cost" is right).
+4. **Import each file under its own model**, one draft name per model, ending in the current style version (repository root):
+   ```sh
+   make import-draft DRAFT=batches/<folder>/<tag>.item.jsonl TYPE=item NAME=stat-words-<tag>-sg<N> MODEL=<model id> DATE=<YYYY-MM-DD>
+   ```
+   The old variants stay in `conflicts`. The new ones win on the style-version tiebreak.
+5. **Move the accept rulings.** A machine line the maintainer accepted in place of rejected hand-written text keeps winning over its redraft, because an accept beats every tiebreak. This moves each accept onto the redraft of the same text. The ruling keeps who made it, its date and its reason, and its note adds the move (the hand-written variants stay ruled `reject`):
+   ```sh
+   cd pipeline && python -m wfj.dev.draft_stat_words --move-accepts <YYYY-MM-DD>
+   ```
+6. **Check**: `make check`, `make generate`, `make validate VALIDATE_FLAGS="--base origin/main"`, `make coverage`. No line should change status, and no `human` or `correction` variant should change. `test_style_guide.py` fails while any shipped machine tooltip line keeps a stat word in English letters.
+
 ## Drafting prompt
 
 ```text
@@ -179,6 +201,7 @@ A draft row fails with one reason per problem (`translate_lint.py`; the name rul
 - `name_missing:<word>`: a capitalised word inside an English sentence (a name) that the Japanese does not keep in English letters. Glossary terms (titles and common nouns such as `the Captain`, races, classes), their plurals and hyphenated words led by one are translated, except directly before a capitalised name (`Captain Althea`, `King Magni`) or directly after one (`Dark Lady`, `Lion's Pride Inn`), where the title is part of the name. A profession name (`Skinning`) stays in English letters but does not make the title after it a name: `Skinning Trainer` → `Skinningのトレーナー`. A place or group word (`Temple`, `Bank`, `Council`, `Brotherhood`, …: `PLACES` in `lint_names.py`) joined to a capitalised word by `of` / `of the` makes one name (`Temple of the Moon`); a person title with `of` stays translatable (`the King of Stormwind` → `Stormwindの王`). A word after a quote, a dash, `<`, `>`, `)` or a line break starts a sentence and is not read as a name, unless it is a glossary word or a profession. A capitalised common noun used for emphasis (`for the Love of the Light`) cannot be told from a name: the row fails and ships English unless the word is reviewed onto the [not-names list](#not-names-list). Do not keep the word in English letters just to pass.
 - `name_missing:<word>` on a title-case row: a word from the row's `names` that the Japanese does not keep in English letters. It also covers a glossary title word directly before a listed name (`Baron Aquanis`): `男爵Aquanis` fails `name_missing:Baron`. The title used on its own ("The Baron's Demise" → `男爵の最期`) is still translated.
 - `markup_changed:<difference>`: an HTML book page whose Japanese does not carry the English's tags, with their attributes, in the same order.
+- `stat_word:<word>`: on an item or spell row, a stat word (`health`, `Stamina`, …) kept in English letters on its own, or another spelling (`ヘルス`). Tooltips use the interface's Japanese (体力, スタミナ, …; the style guide's settled interface terms, `core/stat_words.py`). A stat word inside a name (`Mana Shield`, `Elixir of Agility`) is not read. On these rows a stat word the English uses on its own (`Increases Stamina by $s1`) is no name to keep, while one inside a name in the English still is.
 - `slash:<a>/<b>`: a `/` between two Japanese words (`師匠/主人`): two renderings where one must be chosen.
 - `counters:<english>→<japanese>`: the server counters (`$1997w`) differ.
 - `placeholder_run:<text>`: a `$N<k>`, `$D<k>` or `$I<k>` with letters glued to its end (`$N1c1`).
@@ -304,4 +327,4 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 
 - [Pipeline → Translation batches](../systems/pipeline.md#translation-batches) · [Translation style guide](../content/translation-style-guide.md) · [Readings](../systems/readings.md) · [Fix reports](fix-reports.md) · [Coverage](coverage.md)
 - [Local setup → Machine drafts](local-setup.md#machine-drafts) · [Testing strategy](../testing/strategy.md) · [Release](release.md) · [Glossary](../glossary.md)
-- [ADR-014](../adr/014-machine-drafted-text-and-ui-dictionary.md) · [ADR-023](../adr/023-server-only-text-drafted-in-measured-batches.md) · [ADR-028](../adr/028-a-duration-is-copied-not-named.md) · [ADR-043](../adr/043-included-text-icons-and-branch-variants.md)
+- [ADR-014](../adr/014-machine-drafted-text-and-ui-dictionary.md) · [ADR-023](../adr/023-server-only-text-drafted-in-measured-batches.md) · [ADR-028](../adr/028-a-duration-is-copied-not-named.md) · [ADR-043](../adr/043-included-text-icons-and-branch-variants.md) · [ADR-048](../adr/048-stat-words-in-tooltips.md)

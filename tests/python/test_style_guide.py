@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from wfj.core import align, language
+from wfj.core import align, language, stat_words
 from wfj.core.report import SHIPPED
 from wfj.dev import translate_lint as tl
 from wfj.dev.translate_batch import STYLE_GUIDE, model_english, style_version
@@ -181,4 +181,30 @@ def test_settled_interface_terms_hold_on_every_shipped_ui_line(guide, root: Path
         word = re.compile(r"\b(" + "|".join(re.escape(t.strip()) for t in english.split(",")) + r")s?\b", re.I)
         wrong = [o.strip() for o in others.split(",")]
         bad += [(k, english) for k, j in ja.items() if k in en and word.search(en[k]) and any(w in j for w in wrong)]
+    assert bad == []
+
+
+def _stat_rows(guide: str) -> dict[str, tuple[str, list[str]]]:
+    table = guide.split("Settled interface terms", 1)[1].split("\n\n", 2)[1]
+    rows = {en: (ja, [o.strip() for o in others.split(",")]) for en, ja, others in TERMS_ROW.findall(table)}
+    return {en: rows[en] for en in stat_words.STAT_WORDS if en in rows}
+
+
+def test_stat_word_rows_match_the_code(guide):
+    rows = _stat_rows(guide)
+    assert {en: ja for en, (ja, _) in rows.items()} == stat_words.STAT_WORDS
+    for en, (_, others) in rows.items():
+        assert en in others, en  # never kept in English letters
+        assert set(others) - {en} == set(stat_words.NOT_SPELLINGS.get(en, ())), en
+
+
+def test_machine_tooltips_use_the_settled_stat_words(root: Path):
+    # Hand-written lines (`human`, `correction`) keep the translators' spelling: the no-overwrite rule
+    bad = [
+        (type_, ln["id"], ln["field"], stat_words.find(ln["ja"]) + stat_words.not_spellings(ln["ja"]))
+        for type_ in ("item", "spell")
+        for ln in Store(root / "data").load(type_)
+        if ln["provenance"]["class"] == "machine" and ln["status"] in SHIPPED
+        and (stat_words.find(ln["ja"]) or stat_words.not_spellings(ln["ja"]))
+    ]
     assert bad == []
