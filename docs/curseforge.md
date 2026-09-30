@@ -18,6 +18,8 @@ branch; leave them out until the repository is public.
 
 **WoW Forever Japanese** shows World of Warcraft: Forever in Japanese. The game's own <span style="color:#8CB8E8;">English</span> is always one key away: hold <span style="color:#E0605A;">**Alt**</span> and it comes back, let go and the Japanese returns. It is for players who read Japanese, and for learners who want to play in it.
 
+**Website:** https://foreverjapanese.com (screenshots and a short guide to how it works).
+
 ### <span style="color:#E8C77E;">What it translates</span>
 
 - **Quests:** the quest window, the quest log and the objective lines in the tracker.
@@ -65,6 +67,8 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 ## <span style="color:#E8C77E;">日本語</span>
 
 **WoW Forever Japanese** は、World of Warcraft: Forever を日本語で遊べるようにするアドオンです。<span style="color:#E0605A;">**Alt**</span> キーを押している間だけゲーム本来の<span style="color:#8CB8E8;">英語</span>が表示され、離すと日本語に戻ります。日本語で遊びたい方にも、日本語を勉強中の方にもおすすめです。
+
+**ウェブサイト:** https://foreverjapanese.com （スクリーンショットと使い方の紹介）
 
 ### <span style="color:#E8C77E;">翻訳される内容</span>
 
