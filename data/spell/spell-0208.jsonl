@@ -1,0 +1,1 @@
+{"id": 208065, "field": "description", "ja": "Naaruの光によって味方を$N1回復し、\nその味方へのヒール力を$N3秒間の間、$N2%増やす\n最大$N4チャージ", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3453"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

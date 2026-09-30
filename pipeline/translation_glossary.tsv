@@ -1,0 +1,147 @@
+# Recurring English words that are translated, not kept in English letters (style guide sg3).
+# `<English>\t<Japanese>[\trequired]` per line. Every entry in this first block is what the human quest corpus
+# uses most for that word
+# (counts over trusted human lines whose English has the word). Names never go here: a name stays
+# in English letters. A capitalised entry ("Light") is also exempt from translate_lint's
+# name_missing check, because it is a translated word, not a name.
+adventurer	冒険者
+hero	英雄
+reward	報酬
+quest	クエスト
+friend	友
+demon	悪魔
+Light	光
+goblin	ゴブリン
+# Titles and common nouns used on their own: translated, even when capitalised
+# ("the Captain", "His Majesty"). Directly in front of a name they are part of the name and stay in English
+# letters ("Captain Althea", "King Magni"); translate_lint checks that. Renderings are chosen, not corpus
+# counts. One rendering per term: a Japanese `/` pair fails translate_lint (`slash`).
+captain	隊長
+king	王
+kingdom	王国
+his majesty	陛下
+guard	衛兵
+master	師匠
+township	町
+messenger	使者
+daughter	娘
+warchief	大族長
+inn	宿屋
+chief	族長
+chieftain	族長
+colonel	大佐
+lady	奥方
+professor	教授
+highlord	大君主
+stable master	厩舎長
+# More titles used on their own, same rule: "the Mayor of Darkshire" → Darkshireの町長, "Mayor Oakley" stays English.
+mayor	町長
+clerk	書記
+baron	男爵
+princess	王女
+necromancer	死霊術師
+executioner	処刑人
+city architect	都市建築家
+magus	魔導師
+quartermaster	補給係
+archbishop	大司教
+chambermaid	客室係
+# A profession trainer keeps the skill name in English, as the
+# interface shows it, and translates the role: "Skinning Trainer" → Skinningのトレーナー. "the Arch Druid" alone is
+# 大ドルイド; before a name it stays English with the name ("Arch Druid Hamuul").
+trainer	トレーナー
+arch druid	大ドルイド
+creators	創造主
+# More titles and common nouns used on their own. "Commendation
+# Officer" is one role, so both words are listed. "the Holy Light" is the faith in quest and gossip text (the
+# paladin spell is only in spell tooltips, which are not drafted): 聖なる光. "Bank" in a sentence is 銀行; a bare
+# "Bank" label ships as the English.
+officer	士官
+commendation officer	表彰官
+commander	司令官
+queen	女王
+prince	王子
+emperor	皇帝
+duke	公爵
+council	評議会
+general	将軍
+private	二等兵
+lieutenant	副官
+marshal	元帥
+cap'n	船長
+grand crusader	大十字軍長
+guardian	守護者
+guild master	ギルドマスター
+flamekeeper	炎の守り手
+lorekeeper	伝承の守り手
+battlemaster	戦場指揮官
+goddess	女神
+foreman	現場監督
+prospector	探鉱者
+alchemist	錬金術師
+fisherman	釣り人
+skinner	皮はぎ職人
+temple	神殿
+bank	銀行
+southeast	南東
+holy light	聖なる光
+creator	創造主
+lord	主
+# Races and classes are written in katakana in prose, with exactly the spellings
+# the addon uses when it fills `{race}` / `{class}` (Core/Placeholders.lua), so a drafted word and a filled
+# token read the same. Interface labels (character sheet, "Level 60 Tauren Druid") stay in English.
+# `required`: translate_lint fails a draft whose English has the word (or its plural) and whose Japanese lacks it.
+human	人間	required
+orc	オーク	required
+dwarf	ドワーフ	required
+night elf	ナイトエルフ	required
+undead	アンデッド	required
+tauren	トーレン	required
+gnome	ノーム	required
+troll	トロール	required
+warrior	ウォリアー	required
+paladin	パラディン	required
+hunter	ハンター	required
+rogue	ローグ	required
+priest	プリースト	required
+shaman	シャーマン	required
+mage	メイジ	required
+warlock	ウォーロック	required
+druid	ドルイド	required
+# adjective forms of the same words
+dwarven	ドワーフ	required
+orcish	オーク	required
+gnomish	ノーム	required
+# More lone titles and nouns. "Father"
+# is a priest addressed by his title (神父); a lower-case "father" is a parent (父) and is never flagged, so
+# only the address is meant here. "the Auction House" in a sentence is オークションハウス (the interface
+# writes オークション); a bare "Auction House" label ships as the English. Before a name these all stay in
+# English letters with the name, as every other glossary term does.
+ambassador	大使
+father	神父
+templar	テンプル騎士
+grunt	兵卒
+blacksmith	鍛冶屋
+tradesman	商人
+earthshaper	大地の形成者
+auction house	オークションハウス
+# A day of the week is not a name: it is translated.
+sunday	日曜日
+monday	月曜日
+tuesday	火曜日
+wednesday	水曜日
+thursday	木曜日
+friday	金曜日
+saturday	土曜日
+# Ordinary words book headings, letters and plaques capitalise; they recurred
+# on 3+ pages in the name review ("Dear Diary,", "Uldaman, Day 4", "The Fate of Carlin Redpath", "State of the
+# Cult, Volume 233", "Deathstalker Mission Report", "the Army", "By Blood and Honor We Serve"). Preferred
+# renderings, not required.
+diary	日記
+day	日
+fate	運命
+state	状況
+volume	巻
+report	報告
+army	軍
+honor	名誉

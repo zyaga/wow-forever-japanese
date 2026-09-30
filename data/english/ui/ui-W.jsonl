@@ -1,0 +1,165 @@
+{"id": "WAISTSLOT", "field": "text", "en": "Waist", "hash": "0444175ef6f6e5f7", "src": "db2@1.60.1.70009"}
+{"id": "WARDROBE", "field": "text", "en": "Appearances", "hash": "41e1cef6c0b33eee", "src": "db2@1.60.1.70009"}
+{"id": "WARDROBE_ITEMS", "field": "text", "en": "Items", "hash": "110ed23534f93bbc", "src": "db2@1.60.1.70009"}
+{"id": "WARDROBE_NO_SEARCH", "field": "text", "en": "Search is not available for this category.", "hash": "1243854b76526627", "src": "db2@1.60.1.70009"}
+{"id": "WARDROBE_SETS", "field": "text", "en": "Sets", "hash": "0b39d79d69b54c58", "src": "db2@1.60.1.70009"}
+{"id": "WARDROBE_SHORTCUTS_TUTORIAL_1", "field": "text", "en": "Interface Shortcuts|n|n|cFFFFD200[Right Click]|r|nFavorite an appearance|n|n|cFFFFD200[Ctrl Click]|r|nPreview appearance|n|n", "hash": "c1adb1d7fbb96ef6", "src": "db2@1.60.1.70009"}
+{"id": "WARDROBE_SHORTCUTS_TUTORIAL_2", "field": "text", "en": "|cFFFFD200[Shift Click]|r", "hash": "b8f08f336fa2e83d", "src": "db2@1.60.1.70009"}
+{"id": "WARDROBE_SHORTCUTS_TUTORIAL_3", "field": "text", "en": "Track or untrack an item|n", "hash": "8510b4805ac5c5ca", "src": "db2@1.60.1.70009"}
+{"id": "WARDROBE_TRACKING_TUTORIAL", "field": "text", "en": "You have not collected this appearance yet! Shift Click to begin tracking it.", "hash": "6faff71a4a88c161", "src": "db2@1.60.1.70009"}
+{"id": "WARFRONTS_LEAVE", "field": "text", "en": "Leave Warfront", "hash": "ecd9b5b9fa91ab59", "src": "db2@1.60.1.70009"}
+{"id": "WARGAME_CHALLENGED", "field": "text", "en": "|cffffd200%s|r has challenged your group to a War Game in |cffffd200%s|r!", "hash": "3212894c69c275ee", "src": "db2@1.60.1.70009"}
+{"id": "WARGAME_IS_READY", "field": "text", "en": "Your War Game is ready!", "hash": "cd78e51a3603513b", "src": "db2@1.60.1.70009"}
+{"id": "WARN_LEAVE_RESTRICTED_CHALLENGE_MODE", "field": "text", "en": "Penalty Timer|n|n|cffffd200If you don't return to the instance within the remaining time, you will be kicked from the instance group and receive a penalty for leaving.|r|n|nTime Remaining: %d sec", "hash": "617a93e58738970e", "src": "db2@1.60.1.70009"}
+{"id": "WARRIOR_AGILITY_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFCritical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFRanged Attack Power|r by %d\nIncreases |cFFFFFFFFArmor|r by %d\nIncreases |cFFFFFFFFDodge|r chance by %.1f%%", "hash": "3734bd75c4fb046d", "src": "db2@1.60.1.70009"}
+{"id": "WARRIOR_INTELLECT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFWeapon Skill|r improvement rate", "hash": "f79f01e1188490d5", "src": "db2@1.60.1.70009"}
+{"id": "WARRIOR_SPIRIT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFHealth Regeneration|r by %d per 5 sec while not in combat", "hash": "11847c42cb6d1b29", "src": "db2@1.60.1.70009"}
+{"id": "WARRIOR_STRENGTH_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFAttack Power|r by %d\nIncreases |cFFFFFFFFBlock Value|r by %d", "hash": "be95ff635ef2ba7a", "src": "db2@1.60.1.70009"}
+{"id": "WAR_WITHIN_LANDING_PAGE_ALERT_MAJOR_FACTION_UNLOCKED", "field": "text", "en": "Major Faction Unlocked", "hash": "0689f3cd4c0bc4b4", "src": "db2@1.60.1.70009"}
+{"id": "WATER_COLLISION", "field": "text", "en": "Water Collision", "hash": "4984ce6279b988e6", "src": "db2@1.60.1.70009"}
+{"id": "WEAPON_ENCHANTMENT", "field": "text", "en": "Weapon Enchantment", "hash": "c3d8433bb9a5018f", "src": "db2@1.60.1.70009"}
+{"id": "WEAPON_SKILL_DETAIL_BOSS", "field": "text", "en": "Chance to |cFFFFFFFFHit|r, and to avoid being |cFFFFFFFFDodged|r or |cFFFFFFFFParried|r: %s\n\nChance to |cFFFFFFFFCritically Hit|r: %s\n\n|cFFFFFFFFGlancing Blows|r occur %s of the time and deal %s less damage", "hash": "c91c0fc64408380e", "src": "db2@1.60.1.70009"}
+{"id": "WEAPON_SKILL_DETAIL_BOSS_HEADER", "field": "text", "en": "|cFFFFFFFFAgainst Raid Bosses|r", "hash": "d531c100573a157e", "src": "db2@1.60.1.70009"}
+{"id": "WEAPON_SKILL_DETAIL_BOSS_RANGED", "field": "text", "en": "Chance to |cFFFFFFFFHit|r: %s\n\nChance to |cFFFFFFFFCritically Hit|r: %s", "hash": "327552194dd99557", "src": "db2@1.60.1.70009"}
+{"id": "WEAPON_SKILL_DETAIL_SAME_LEVEL", "field": "text", "en": "Chance to |cFFFFFFFFHit|r, and to avoid being |cFFFFFFFFDodged|r or |cFFFFFFFFParried|r: %s\n\nChance to |cFFFFFFFFCritically Hit|r: %s", "hash": "56b7a689aed64574", "src": "db2@1.60.1.70009"}
+{"id": "WEAPON_SKILL_DETAIL_SAME_LEVEL_HEADER", "field": "text", "en": "|cFFFFFFFFEqual-Level Enemy|r", "hash": "57c40581134d1bf0", "src": "db2@1.60.1.70009"}
+{"id": "WEAPON_SKILL_DETAIL_SAME_LEVEL_RANGED", "field": "text", "en": "Chance to |cFFFFFFFFHit|r: %s\n\nChance to |cFFFFFFFFCritically Hit|r: %s", "hash": "327552194dd99557", "src": "db2@1.60.1.70009"}
+{"id": "WEAPON_SPEED", "field": "text", "en": "Attack Speed", "hash": "7331371677dbb1b8", "src": "db2@1.60.1.70009"}
+{"id": "WEB_ERROR", "field": "text", "en": "Error: %d.|nThe browser could not complete your request. Please try again", "hash": "3d11a7b668899875", "src": "db2@1.60.1.70009"}
+{"id": "WEB_PROXY_FAILED", "field": "text", "en": "There was a problem configuring the browser. Please restart World of Warcraft and try again.", "hash": "2276c7dee36c17ee", "src": "db2@1.60.1.70009"}
+{"id": "WEEKDAY_FRIDAY", "field": "text", "en": "Friday", "hash": "a57414231cbae836", "src": "db2@1.60.1.70009"}
+{"id": "WEEKDAY_MONDAY", "field": "text", "en": "Monday", "hash": "521486977dc6d469", "src": "db2@1.60.1.70009"}
+{"id": "WEEKDAY_SATURDAY", "field": "text", "en": "Saturday", "hash": "3e9aaf7ed7f9fc23", "src": "db2@1.60.1.70009"}
+{"id": "WEEKDAY_SUNDAY", "field": "text", "en": "Sunday", "hash": "a080923da07fcda4", "src": "db2@1.60.1.70009"}
+{"id": "WEEKDAY_THURSDAY", "field": "text", "en": "Thursday", "hash": "6dec8c55e6b335e1", "src": "db2@1.60.1.70009"}
+{"id": "WEEKDAY_TUESDAY", "field": "text", "en": "Tuesday", "hash": "3a856a2a5e9121ef", "src": "db2@1.60.1.70009"}
+{"id": "WEEKDAY_WEDNESDAY", "field": "text", "en": "Wednesday", "hash": "554d457000e6e622", "src": "db2@1.60.1.70009"}
+{"id": "WEEKLY_REWARDS_CONFIRM_SELECT", "field": "text", "en": "You will be unable to change this reward once it is selected.|n|nAre you sure you wish to select this item?", "hash": "e04f0f8a017179f5", "src": "db2@1.60.1.70009"}
+{"id": "WHISPER", "field": "text", "en": "Whisper", "hash": "d91fab3ce6a4e8ed", "src": "db2@1.60.1.70009"}
+{"id": "WHISPER_MESSAGE", "field": "text", "en": "Whisper", "hash": "d91fab3ce6a4e8ed", "src": "db2@1.60.1.70009"}
+{"id": "WHISPER_MODE", "field": "text", "en": "New Whispers", "hash": "978509b673f65437", "src": "db2@1.60.1.70009"}
+{"id": "WHO", "field": "text", "en": "Who", "hash": "0016fdb6596bfa7f", "src": "db2@1.60.1.70009"}
+{"id": "WHO_FRAME_SHOWN_TEMPLATE", "field": "text", "en": "(%d displayed)", "hash": "5bc1dd3971129795", "src": "db2@1.60.1.70009"}
+{"id": "WHO_FRAME_TOTAL_TEMPLATE", "field": "text", "en": "%d |4Person:People; Found", "hash": "3c6f4b0641874a06", "src": "db2@1.60.1.70009"}
+{"id": "WHO_LIST", "field": "text", "en": "Who List", "hash": "4a8a6e8d7f9cd9f2", "src": "db2@1.60.1.70009"}
+{"id": "WHO_LIST_LEVEL_TOOLTIP", "field": "text", "en": "Level %d", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70009"}
+{"id": "WHO_LIST_SEARCH_INSTRUCTIONS", "field": "text", "en": "Search Name, Guilds, Levels", "hash": "ba241027d29debb3", "src": "db2@1.60.1.70009"}
+{"id": "WHO_PARTY_BUTTON_TOOLTIP", "field": "text", "en": "Invite to Group", "hash": "36db2de9f846c335", "src": "db2@1.60.1.70009"}
+{"id": "WHO_SORT_ASCENDING_LABEL", "field": "text", "en": "Ascending", "hash": "41413e97d3a7f15e", "src": "db2@1.60.1.70009"}
+{"id": "WHO_SORT_DESCENDING_LABEL", "field": "text", "en": "Descending", "hash": "4ebb4eed1f501b91", "src": "db2@1.60.1.70009"}
+{"id": "WHO_SORT_LABEL", "field": "text", "en": "Sort By", "hash": "84fba310f11b21ea", "src": "db2@1.60.1.70009"}
+{"id": "WIDE", "field": "text", "en": "Wide", "hash": "0bc411efaf342d5c", "src": "db2@1.60.1.70009"}
+{"id": "WINDOW_SIZE", "field": "text", "en": "Resolution", "hash": "d7b55619d8b955aa", "src": "db2@1.60.1.70009"}
+{"id": "WITHDRAW", "field": "text", "en": "Withdraw", "hash": "dbe77b05844ea031", "src": "db2@1.60.1.70009"}
+{"id": "WORLD", "field": "text", "en": "World", "hash": "0626ad84d65fc103", "src": "db2@1.60.1.70009"}
+{"id": "WORLDMAP_BUTTON", "field": "text", "en": "World Map", "hash": "cdc6abf08f3d4114", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP", "field": "text", "en": "Map", "hash": "00145bc831b875cf", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_CROSSHAIR_COORDS", "field": "text", "en": "Crosshair: %.1f, %.1f", "hash": "2f238e3fd01c608f", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_CROSSHAIR_COORDS_INTEGER", "field": "text", "en": "Crosshair: %d, %d", "hash": "455639a13d0c6e9e", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_CURSOR_COORDS", "field": "text", "en": "Cursor: %.1f, %.1f", "hash": "fcd38b51bd6b8b22", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_CURSOR_COORDS_INTEGER", "field": "text", "en": "Cursor: %d, %d", "hash": "577e8d02b73fd13f", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_FILTER_LABEL_SHOW", "field": "text", "en": "Show:", "hash": "befef15a70f6aa29", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_FILTER_LABEL_WORLD_QUESTS_SUBMENU_TYPE", "field": "text", "en": "Type:", "hash": "d2d408c9b7be641b", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_PLAYER_COORDS", "field": "text", "en": "Player: %.1f, %.1f", "hash": "0bc5357cbd9eb124", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_PLAYER_COORDS_INTEGER", "field": "text", "en": "Player: %d, %d", "hash": "291f458899ca2d17", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_PLAYER_COORDS_MAP_NAME", "field": "text", "en": "Player: %.1f, %.1f (%s)", "hash": "7ff1bec7008c704d", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_PLAYER_COORDS_MAP_NAME_INTEGER", "field": "text", "en": "Player (%3$s): %1$d, %2$d", "hash": "e2843c3095e740f4", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_TUTORIAL2", "field": "text", "en": "Your quests will be listed here based on the Current Map.", "hash": "49370e17e2180fed", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_MAP_TUTORIAL5", "field": "text", "en": "Hover over icons for more information and to highlight them on the map.", "hash": "f14e3add6078f254", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_DESERTER", "field": "text", "en": "You cannot enter %s until your deserter debuff wears off.", "hash": "89dd1780216b5909", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_ENTER", "field": "text", "en": "You have been called to join the %s battle! Join now?|nTime remaining: %d %s", "hash": "600b4872646f44da", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_EXITED_BATTLE", "field": "text", "en": "You have exited the battle for %s.", "hash": "8146c5936d774a8c", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_FAIL", "field": "text", "en": "You cannot queue for %s at this time.", "hash": "496cf60570f8dcc5", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_INVITED", "field": "text", "en": "Would you like to join the %s battle?", "hash": "42816f8c60581f49", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_INVITED_WARMUP", "field": "text", "en": "The battle for %s is about to begin! Would you like to join the queue?", "hash": "30eeb5531478895f", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_LOW_LEVEL", "field": "text", "en": "You are too low level to do battle in %s.", "hash": "d8db7c590d43d26a", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_NOT_WHILE_IN_RAID", "field": "text", "en": "You cannot enter %s while in a raid group.", "hash": "7a0fde5b14c61461", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_PENDING", "field": "text", "en": "You are queued for %s but have not yet been called to battle. You will be ported out in a few moments.", "hash": "81d7a9ece3d3580e", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_PENDING_REMOTE", "field": "text", "en": "You are queued for %s but have not yet been called to battle.", "hash": "815d106f95ca93c7", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_QUEUED", "field": "text", "en": "You are queued for %s. Please wait.", "hash": "96ad8b4d32d6650a", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_PVP_QUEUED_WARMUP", "field": "text", "en": "You are in the queue for the upcoming %s battle.", "hash": "a30af3976730e4a8", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_QUESTS_FILTER_DESCRIPTION", "field": "text", "en": "Open world activities that give varying rewards", "hash": "71ad2dc75da70d79", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_QUEST_BANNER", "field": "text", "en": "World Quest", "hash": "83df2c24ce857505", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_QUEST_CANT_COMPLETE_BY_SPELL", "field": "text", "en": "You can't use that on this quest type.", "hash": "e183ce3d360113e1", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_QUEST_COMPLETE", "field": "text", "en": "World Quest Complete!", "hash": "3a356b1d56011193", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_QUEST_REWARD_FILTERS_TITLE", "field": "text", "en": "Rewards:", "hash": "2d6ea58b43389134", "src": "db2@1.60.1.70009"}
+{"id": "WORLD_QUEST_TOOLTIP_DESCRIPTION", "field": "text", "en": "Completing this world quest will reward you with:", "hash": "a31bf9488d79780a", "src": "db2@1.60.1.70009"}
+{"id": "WOW_FRIEND_DESCRIPTION", "field": "text", "en": "Send an invite by entering their character name. If the character is on a different realm, you must include the realm name: 'character-realm'. These friends are restricted by character and game. The recipient must accept the request to become friends.", "hash": "9fe4713677890960", "src": "db2@1.60.1.70009"}
+{"id": "WOW_LABS_LEAVE_QUEUE", "field": "text", "en": "Leave Queue", "hash": "a75e8ce8c1374309", "src": "db2@1.60.1.70009"}
+{"id": "WOW_LABS_PLUNDERSTORM_FORMED", "field": "text", "en": "A lobby has been found for:", "hash": "eab87ed3b6702cca", "src": "db2@1.60.1.70009"}
+{"id": "WOW_MOUSE_NOT_FOUND", "field": "text", "en": "World of Warcraft Gaming Mouse could not be found. Re-enable the option in Interface Options when you have one connected.", "hash": "9299daab1f08ac21", "src": "db2@1.60.1.70009"}
+{"id": "WRISTSLOT", "field": "text", "en": "Wrist", "hash": "068b3ea95ade1a90", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14849", "field": "text", "en": "Kill enemy creatures and players to progress.", "hash": "a6830335fb227dd2", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14850", "field": "text", "en": "Alliance Kill Progress", "hash": "80a7cfec23e41a96", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14853", "field": "text", "en": "Horde Kill Progress", "hash": "a7eaa8b347064622", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14866", "field": "text", "en": "Battle for Ashenvale Progress", "hash": "35e6db230dc0ce7a", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14867", "field": "text", "en": "The Battle for Ashenvale occurs at 1pm and every 3 hours after.", "hash": "7a90d6c988332b5e", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14868", "field": "text", "en": "Preparation Progress", "hash": "3315d0085a4a6af9", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14870", "field": "text", "en": "Alliance Keepers of the Grove Remaining", "hash": "679b434cde877cf5", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14871", "field": "text", "en": "Alliance Lieutenants Remaining", "hash": "2ee851572a84b71a", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14873", "field": "text", "en": "Horde Blademasters Remaining", "hash": "f219819c8adaeb74", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14874", "field": "text", "en": "Horde Lieutenants Remaining", "hash": "3cab78a2750e7641", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14876", "field": "text", "en": "The Battle for Ashenvale will end when the Alliance Priestess of the Moon or Horde Far Seer is defeated or time runs out.", "hash": "d6493ef2f0875c4f", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:14877", "field": "text", "en": "Battle Progress", "hash": "3ce82e122d429aa9", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:15130", "field": "text", "en": "%25394w minutes remaining", "hash": "95e32bd5453948b1", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:15131", "field": "text", "en": "The battle will end immediately when time runs out.", "hash": "69938c04be96b6fa", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:15132", "field": "text", "en": "Time Remaining", "hash": "92bcdba769b2b417", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:15825", "field": "text", "en": "Blood Moon: %25765w min remaining", "hash": "733c64d962c2a35b", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:15826", "field": "text", "en": "Deliver blood to the Blood Loa's altars before time is up.", "hash": "9045699ca994f608", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:15828", "field": "text", "en": "The Blood Moon returns at midnight and every 3 hours after.", "hash": "5a394c2599579c2f", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:15829", "field": "text", "en": "The Blood Loa's thirst for blood will resume soon.", "hash": "0e0c09d56a851060", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:15830", "field": "text", "en": "Next Blood Moon", "hash": "0450475a909815a0", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:17098", "field": "text", "en": "Blackrock Eruption: %26786w min remaining", "hash": "24ffdd3466ca70cf", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:17099", "field": "text", "en": "Defend against the minions of Ragnaros!", "hash": "f7a3cc1d20273b0c", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:17101", "field": "text", "en": "The Blackrock Eruption occurs at midnight and every 2 hours after.", "hash": "78440bea4437ea96", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:17102", "field": "text", "en": "The minions of Ragnaros will return soon.", "hash": "dc01f5d89550e956", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:17103", "field": "text", "en": "Next Blackrock Eruption", "hash": "2085885fbf0940be", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:18043", "field": "text", "en": "Player Lives Remaining: %27725w", "hash": "12aafb5638fbe08d", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:18044", "field": "text", "en": "Player Deaths available", "hash": "f265175c1e45d006", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:18234", "field": "text", "en": "Player Lives Remaining: %27726w", "hash": "12aafbd938fc006e", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:21040", "field": "text", "en": "The forces of Valanaar are preparing to attack! Get ready for Battle.", "hash": "0c4c938c4c99f553", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:21041", "field": "text", "en": "The assault on Rohaashi Spires begins in", "hash": "b2067ce508b59ea9", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22115", "field": "text", "en": "Alliance has taken the flag", "hash": "82d5adfd7bc68824", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22116", "field": "text", "en": "Horde has captured Ruins", "hash": "ce9f5f6fdc294b90", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22117", "field": "text", "en": "Alliance has captured Ruins", "hash": "cf29aae62d7c4e29", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22118", "field": "text", "en": "Alliance has captured Abandoned Tower", "hash": "959c11e514dfd314", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22119", "field": "text", "en": "Horde has assaulted Shipwreck Cove", "hash": "e5301e37ce2a0ae4", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22120", "field": "text", "en": "Alliance has assaulted Camp", "hash": "d0f3f559e396a001", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22121", "field": "text", "en": "Alliance has assaulted Abandoned Tower", "hash": "0c29444e79b1c8a8", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22122", "field": "text", "en": "Horde has taken the flag", "hash": "824b62862a73859c", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22123", "field": "text", "en": "Alliance has assaulted Ruins", "hash": "f6d140c650bfdc0f", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22124", "field": "text", "en": "Alliance has captured Camp", "hash": "2896d4f3eb9d4c5b", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22125", "field": "text", "en": "Horde has captured Abandoned Tower", "hash": "4960900ab13520e8", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22126", "field": "text", "en": "Horde has assaulted Abandoned Tower", "hash": "09b5d07a351926f4", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22127", "field": "text", "en": "Horde has assaulted Camp", "hash": "d069a9e292439d79", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22130", "field": "text", "en": "Horde has captured Shipwreck Cove", "hash": "10aa94f20eeca859", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22131", "field": "text", "en": "Alliance has assaulted Shipwreck Cove", "hash": "316ba01731d4bd10", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22132", "field": "text", "en": "Horde has assaulted Ruins", "hash": "b00ca2e1c97b7e56", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22133", "field": "text", "en": "Alliance has captured Shipwreck Cove", "hash": "e44d3c071656f4a8", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:22134", "field": "text", "en": "Horde has captured Camp", "hash": "c4ebc2c6a96aa0b1", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:3679", "field": "text", "en": "Horde Flag has been picked up", "hash": "629b66ff2555e4ef", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:3681", "field": "text", "en": "Alliance Flag has been picked up", "hash": "d37652553007468f", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4401", "field": "text", "en": "Towers Controlled: %2327w", "hash": "94c5f38612ccaf5e", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4402", "field": "text", "en": "Alliance Towers Controlled", "hash": "6acc5ea670de878a", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4404", "field": "text", "en": "Towers Controlled: %2328w", "hash": "94c5f40912cccf3f", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4405", "field": "text", "en": "Horde Towers Controlled", "hash": "07214c7e2eabdbe0", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4432", "field": "text", "en": "Alliance flag captures", "hash": "8dadb3501f2a102b", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4435", "field": "text", "en": "Horde flag captures", "hash": "b4f08c17424c3bb7", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4437", "field": "text", "en": "Bases: %1779w  Resources: %1776w/%1780w", "hash": "0f47b2a983cdf5bd", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4438", "field": "text", "en": "Alliance status", "hash": "ce6125fd03e9183b", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4440", "field": "text", "en": "Bases: %1778w  Resources: %1777w/%1780w", "hash": "619f1d9283248026", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4441", "field": "text", "en": "Horde status", "hash": "182e8b010d9a5ce2", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4444", "field": "text", "en": "Alliance Silithyst Collected", "hash": "471d4d467fe28320", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:4447", "field": "text", "en": "Horde Silithyst Collected", "hash": "0058af61f89e2567", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:7436", "field": "text", "en": "Farm - Contested", "hash": "62bd94698455c09e", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:7437", "field": "text", "en": "Lumber Mill - Contested", "hash": "dc02bfeee51a72a1", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:7438", "field": "text", "en": "Blacksmith - Contested", "hash": "347e61902e8f6514", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:7439", "field": "text", "en": "Gold Mine - Contested", "hash": "c4dbefb941a23d6f", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:7440", "field": "text", "en": "Stables - Contested", "hash": "5ff8a2fee97b7ced", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:7446", "field": "text", "en": "Farm - Captured", "hash": "3b5546525d218436", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:7447", "field": "text", "en": "Lumber Mill - Captured", "hash": "78d6c7a0a095e313", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:7448", "field": "text", "en": "Blacksmith - Captured", "hash": "d1740f34a1f17f7a", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:7449", "field": "text", "en": "Gold Mine - Captured", "hash": "14ff858e2f530e9b", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:7450", "field": "text", "en": "Stables - Captured", "hash": "87869498458dd655", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:9402", "field": "text", "en": "Time until Ragnaros withdraws: %21428w min.", "hash": "8c843410abee23fd", "src": "db2@1.60.1.70009"}
+{"id": "WidgetText:9409", "field": "text", "en": "Ragnaros has withdrawn", "hash": "e250e318c1bdd193", "src": "db2@1.60.1.70009"}

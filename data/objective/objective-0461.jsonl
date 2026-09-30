@@ -1,0 +1,1 @@
+{"id": 461780, "field": "text", "ja": "Injured Deathguardを癒す", "status": "trusted", "checks": ["names"], "provenance": {"class": "machine", "model": "claude-opus-5", "source": "draft-objective-followups-sg9@2026-09-19", "imported": "2026-09-19"}, "english": {"hash": "7b83ef0ac11da6ec", "src": "wdb@1.60.1.70009"}, "reasons": [], "conflicts": []}

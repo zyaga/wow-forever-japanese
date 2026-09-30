@@ -1,0 +1,6 @@
+# <table> <src>@<build> — written by make tables-extract / make wago-fetch; do not edit
+GlobalStrings wago@1.15.9.69722
+ItemSparse wago@1.15.9.69722
+ItemSubClass wago@1.15.9.69722
+SpellItemEnchantment wago@1.15.9.69722
+SpellName wago@1.15.9.69722

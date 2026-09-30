@@ -1,0 +1,33 @@
+{"id": 1313252, "field": "name", "en": "Lava", "hash": "0a48ad307bfcd0c7", "src": "db2@1.60.1.70009"}
+{"id": 1313291, "field": "name", "en": "Dual Wield Specialization", "hash": "42d34dcf2ff20d11", "src": "db2@1.60.1.70009"}
+{"id": 1313342, "field": "name", "en": "Flash of Light", "hash": "a5c4251e6cb6cef6", "src": "db2@1.60.1.70009"}
+{"id": 1313342, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70009"}
+{"id": 1313343, "field": "name", "en": "Flash of Light", "hash": "a5c4251e6cb6cef6", "src": "db2@1.60.1.70009"}
+{"id": 1313343, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70009"}
+{"id": 1313344, "field": "name", "en": "Flash of Light", "hash": "a5c4251e6cb6cef6", "src": "db2@1.60.1.70009"}
+{"id": 1313344, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70009"}
+{"id": 1313345, "field": "name", "en": "Flash of Light", "hash": "a5c4251e6cb6cef6", "src": "db2@1.60.1.70009"}
+{"id": 1313345, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70009"}
+{"id": 1313346, "field": "name", "en": "Flash of Light", "hash": "a5c4251e6cb6cef6", "src": "db2@1.60.1.70009"}
+{"id": 1313346, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70009"}
+{"id": 1313348, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70009"}
+{"id": 1313348, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70009"}
+{"id": 1313349, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70009"}
+{"id": 1313349, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70009"}
+{"id": 1313350, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70009"}
+{"id": 1313350, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70009"}
+{"id": 1313351, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70009"}
+{"id": 1313351, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70009"}
+{"id": 1313352, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70009"}
+{"id": 1313352, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70009"}
+{"id": 1313374, "field": "name", "en": "Melt Key", "hash": "4c08f17c541c140e", "src": "db2@1.60.1.70009"}
+{"id": 1313374, "field": "description", "en": "Melt the key at a forge for $s1 Bronze Bars.", "hash": "8a94dcd76d227f33", "src": "db2@1.60.1.70009"}
+{"id": 1313379, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
+{"id": 1313379, "field": "description", "en": "Places a spell on the target that heals them the next time they take damage.  When the heal occurs, Prayer of Mending jumps to a party or raid member within $41635a1 yards. Jumps up to $48113n times and lasts $48111d after each jump. This spell can only be placed on one target at a time.\r\n", "hash": "5562ca1ae96237b9", "src": "db2@1.60.1.70009"}
+{"id": 1313381, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
+{"id": 1313381, "field": "description", "en": "Places a spell on the target that heals them the next time they take damage.  When the heal occurs, Prayer of Mending jumps to a party or raid member within $41635a1 yards. Jumps up to $48113n times and lasts $48111d after each jump. This spell can only be placed on one target at a time.\r\n", "hash": "5562ca1ae96237b9", "src": "db2@1.60.1.70009"}
+{"id": 1313382, "field": "name", "en": "[DNT] Test Sound", "hash": "41005e118dd5e7ff", "src": "db2@1.60.1.70009"}
+{"id": 1313470, "field": "name", "en": "Generic Sound Squisher - Creature Crusher", "hash": "9532fff067b98ad2", "src": "db2@1.60.1.70009"}
+{"id": 1313503, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70009"}
+{"id": 1313503, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70009"}
+{"id": 1313618, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70009"}

@@ -1,0 +1,16 @@
+{"id": 78124, "field": "title", "en": "Nar'thalas Almanac", "hash": "3a40adb9eca0a3d5", "src": "wdb@1.60.1.70009"}
+{"id": 78127, "field": "title", "en": "The Dalaran Digest", "hash": "3c34dd7c2d8bd947", "src": "wdb@1.60.1.70009"}
+{"id": 78142, "field": "title", "en": "Bewitchments and Glamours", "hash": "311bffccc04e61cb", "src": "wdb@1.60.1.70009"}
+{"id": 78143, "field": "title", "en": "Secrets of the Dreamers", "hash": "8a43574039e9fa4e", "src": "wdb@1.60.1.70009"}
+{"id": 78145, "field": "title", "en": "Arcanic Systems Manual", "hash": "309e1889187d86bd", "src": "wdb@1.60.1.70009"}
+{"id": 78146, "field": "title", "en": "Goaz Scrolls", "hash": "f3f227382b6acb10", "src": "wdb@1.60.1.70009"}
+{"id": 78147, "field": "title", "en": "Crimes Against Anatomy", "hash": "8c93dda3bec0876f", "src": "wdb@1.60.1.70009"}
+{"id": 78148, "field": "title", "en": "Runes of the Sorcerer-Kings", "hash": "7777a31c3caa27e2", "src": "wdb@1.60.1.70009"}
+{"id": 78149, "field": "title", "en": "Fury of the Land", "hash": "53dc86ff12e2ae24", "src": "wdb@1.60.1.70009"}
+{"id": 78150, "field": "title", "en": "Friend of the Library", "hash": "9626da4d9c0634be", "src": "wdb@1.60.1.70009"}
+{"id": 78261, "field": "title", "en": "The Horn of Xelthos", "hash": "8ef63440175fd422", "src": "wdb@1.60.1.70009"}
+{"id": 78261, "field": "objectives", "en": "Find The Horn of Xelthos inside of Shadowfang Keep. Then, return it to C's dead drop near Pyrewood Village. You must complete the job alone.", "hash": "a04dc89a6c58c818", "src": "wdb@1.60.1.70009"}
+{"id": 78261, "field": "description", "en": "<A note sits in the chest>\r\n\r\nHello, $n.\r\n\r\nI desire a treasure known as The Horn of Xelthos, which is somewhere within Shadowfang Keep.\r\n\r\nVenturing inside the keep usually calls for backup. However, for this job, a low profile is of utmost importance.\r\n\r\nYou must go alone.\r\n\r\nI have a contact, by the name of Veenix, in the Stonetalon Mountains. He should be able to help you get past the courtyard gate. The rest is up to you. \r\n\r\nReturn the horn here, and your payment will be sent soon after.\r\n\r\n- C", "hash": "3eb0aa8fc4c04846", "src": "wdb@1.60.1.70009"}
+{"id": 78307, "field": "title", "en": "The Horn of Xelthos", "hash": "8ef63440175fd422", "src": "wdb@1.60.1.70009"}
+{"id": 78307, "field": "objectives", "en": "Log", "hash": "00141fe02dc1f053", "src": "wdb@1.60.1.70009"}
+{"id": 78307, "field": "description", "en": "Description", "hash": "6173958c6c516f23", "src": "wdb@1.60.1.70009"}

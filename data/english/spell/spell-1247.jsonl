@@ -1,0 +1,86 @@
+{"id": 1247087, "field": "name", "en": "Fear", "hash": "097bdd043b6b8a3a", "src": "db2@1.60.1.70009"}
+{"id": 1247087, "field": "description", "en": "Strikes fear in an enemy, causing it to flee in terror for $d. Only 1 target can be feared at a time.", "hash": "790d3c3066703ee4", "src": "db2@1.60.1.70009"}
+{"id": 1247087, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70009"}
+{"id": 1247168, "field": "name", "en": "Read Label", "hash": "3086320266ef64a7", "src": "db2@1.60.1.70009"}
+{"id": 1247168, "field": "description", "en": "Read the label to identify the shipment.", "hash": "ef5de1733eb2f405", "src": "db2@1.60.1.70009"}
+{"id": 1247169, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.70009"}
+{"id": 1247169, "field": "description", "en": "Immune to damage from all sources.", "hash": "23497f7199799bd9", "src": "db2@1.60.1.70009"}
+{"id": 1247169, "field": "aura", "en": "Immune to all damage.", "hash": "ec662d6c9a23e268", "src": "db2@1.60.1.70009"}
+{"id": 1247183, "field": "name", "en": "Quenched", "hash": "340bba04843b6614", "src": "db2@1.60.1.70009"}
+{"id": 1247224, "field": "name", "en": "Mark of the Satyr", "hash": "9098bc613352c3d7", "src": "db2@1.60.1.70009"}
+{"id": 1247237, "field": "name", "en": "Profane Protection", "hash": "0f56b3e1686ae33c", "src": "db2@1.60.1.70009"}
+{"id": 1247237, "field": "description", "en": "The magic of the profane totems protects the Unbound Spirit, reducing damage by $S1%.", "hash": "ad46888d0211e771", "src": "db2@1.60.1.70009"}
+{"id": 1247237, "field": "aura", "en": "Damage reduced by $S1%.", "hash": "2391512336f1d82f", "src": "db2@1.60.1.70009"}
+{"id": 1247252, "field": "name", "en": "Purify", "hash": "ae7e3785f55c91b7", "src": "db2@1.60.1.70009"}
+{"id": 1247252, "field": "description", "en": "Purifying the totem, making it vulnerable and dealing heavy damage over time.\r\n", "hash": "c242caff968a6e05", "src": "db2@1.60.1.70009"}
+{"id": 1247252, "field": "aura", "en": "Removing the Profane Totem's damage immunity and dealing $S2% of its maximum health every $t2 sec.", "hash": "412e19cd019076cc", "src": "db2@1.60.1.70009"}
+{"id": 1247426, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247426, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\n- $M3 Peacebloom\n- $M4 Silverleaf\n- $M5 Earthroot\n- $M6 Mageroyal\n- $M7 Briarthorn|r", "hash": "66153d7630a9e70c", "src": "db2@1.60.1.70009"}
+{"id": 1247427, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247427, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Copper Ore\r\n- $M4 Tin Ore|r", "hash": "7983c5c68342eac8", "src": "db2@1.60.1.70009"}
+{"id": 1247428, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247428, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Linen Cloth\r\n- $M4 Light Leather", "hash": "a7a4d894bea33802", "src": "db2@1.60.1.70009"}
+{"id": 1247429, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247429, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Strange Dust\r\n- $M4 Greater Magic Essence\r\n- $M5 Small Glimmering Shard\r\n- $M6 Large Glimmering Shard|r", "hash": "179b884a9c45df10", "src": "db2@1.60.1.70009"}
+{"id": 1247430, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247430, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Stranglekelp\r\n- $M4 Bruiseweed\r\n- $M5 Wild Steelbloom\r\n- $M6 Grave Moss\r\n- $M7 Kingsblood", "hash": "fca2bae6805f3b28", "src": "db2@1.60.1.70009"}
+{"id": 1247431, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247431, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Silver Ore\r\n- $M4 Iron Ore", "hash": "cf09ae817b671dae", "src": "db2@1.60.1.70009"}
+{"id": 1247432, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247432, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Wool Cloth\r\n- $M4 Silk Cloth\r\n- $M5 Medium Leather", "hash": "c7ad40ca5794f667", "src": "db2@1.60.1.70009"}
+{"id": 1247433, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247433, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Soul Dust\r\n- $M4 Greater Astral Essence\r\n- $M5 Small Glowing Shard\r\n- $M6 Large Glowing Shard", "hash": "92f4af49754805be", "src": "db2@1.60.1.70009"}
+{"id": 1247434, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247434, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Liferoot\r\n- $M4 Fadeleaf\r\n- $M5 Goldthorn\r\n- $M6 Khadgar's Whisker", "hash": "fbba70d3c3e30935", "src": "db2@1.60.1.70009"}
+{"id": 1247435, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247435, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Wintersbite\r\n- $M4 Firebloom\r\n- $M5 Purple Lotus\r\n- $M6 Arthas' Tears", "hash": "e4f527271208da56", "src": "db2@1.60.1.70009"}
+{"id": 1247436, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247436, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Gold Ore\r\n- $M4 Mithril Ore", "hash": "15a2a13863ed6b79", "src": "db2@1.60.1.70009"}
+{"id": 1247437, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247437, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Mageweave Cloth\r\n- $M4 Heavy Leather", "hash": "3df4ff4c4be31930", "src": "db2@1.60.1.70009"}
+{"id": 1247438, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247438, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Vision Dust\r\n- $M4 Greater Mystic Essence\r\n- $M5 Small Radiant Shard\r\n- $M6 Large Radiant Shard", "hash": "9fa6383d8fe5aa60", "src": "db2@1.60.1.70009"}
+{"id": 1247439, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247439, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Golden Sansam\r\n- $M4 Sungrass\r\n- $M5 Blindweed\r\n- $M6 Ghost Mushroom\r\n- $M7 Gromsblood", "hash": "5745d12cded481a0", "src": "db2@1.60.1.70009"}
+{"id": 1247440, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247440, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Dreamfoil\r\n- $M4 Mountain Silversage\r\n- $M5 Plaguebloom\r\n- $M6 Icecap", "hash": "86c5d525dfa6fff7", "src": "db2@1.60.1.70009"}
+{"id": 1247441, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247441, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Truesilver Ore\r\n- $M4 Thorium Ore\r\n- $M5 Dark Iron Ore", "hash": "82ba0bf23c6994ba", "src": "db2@1.60.1.70009"}
+{"id": 1247442, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247442, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Runecloth\r\n- $M4 Thick Leather\r\n- $M5 Rugged Leather", "hash": "20e1f34a42809728", "src": "db2@1.60.1.70009"}
+{"id": 1247443, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247443, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Dream Dust\r\n- $M4 Greater Nether Essence\r\n- $M5 Small Brilliant Shard\r\n- $M6 Large Brilliant Shard", "hash": "170f9f60c3a28e2f", "src": "db2@1.60.1.70009"}
+{"id": 1247446, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247446, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Cured Light Hide\r\n- $M4 Bolt of Linen Cloth", "hash": "d0ab91ccb4e1cd5e", "src": "db2@1.60.1.70009"}
+{"id": 1247447, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247447, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Copper Bar\r\n- $M4 Tin Bar\r\n- $M5 Bronze Bar", "hash": "2b9fb06b670e1136", "src": "db2@1.60.1.70009"}
+{"id": 1247448, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247448, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Handful of Copper Bolts\r\n- $M4 Copper Tube\r\n- $M5 Copper Modulator", "hash": "262b3ebba50f618f", "src": "db2@1.60.1.70009"}
+{"id": 1247449, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247449, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bolt of Woolen Cloth\r\n- $M4 Bolt of Silk Cloth\r\n- $M5 Cured Medium Hide", "hash": "e6b9dfbe963ba3dc", "src": "db2@1.60.1.70009"}
+{"id": 1247450, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247450, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Silver Bar\r\n- $M4 Iron Bar", "hash": "fddbc4bdf579ee61", "src": "db2@1.60.1.70009"}
+{"id": 1247451, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247451, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bronze Tube\r\n- $M4 Whirring Bronze Gizmo\r\n- $M5 Bronze Framework\r\n- $M6 Gold Power Core", "hash": "b57e956247e1fc60", "src": "db2@1.60.1.70009"}
+{"id": 1247452, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247452, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bolt of Mageweave\r\n- $M4 Cured Heavy Hide", "hash": "142238fc352f65d9", "src": "db2@1.60.1.70009"}
+{"id": 1247453, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247453, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Mithril Bar\r\n- $M4 Steel Bar\r\n- $M5 Gold Bar", "hash": "463a150445276aba", "src": "db2@1.60.1.70009"}
+{"id": 1247454, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247454, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Iron Strut\r\n- $M4 Mithril Tube\r\n- $M5 Unstable Trigger\r\n- $M6 Mithril Casing", "hash": "88268837401e81ad", "src": "db2@1.60.1.70009"}
+{"id": 1247455, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247455, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bolt of Runecloth\r\n- $M4 Cured Thick Hide", "hash": "f5d562a7dd2555b4", "src": "db2@1.60.1.70009"}
+{"id": 1247456, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247456, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Dark Iron Bar\r\n- $M4 Truesilver Bar\r\n- $M5 Thorium Bar", "hash": "75656bc171b5f3c6", "src": "db2@1.60.1.70009"}
+{"id": 1247457, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1247457, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Thorium Widget\r\n- $M4 Truesilver Transformer\r\n- $M5 Thorium Tube", "hash": "83d2d58cd702b9c7", "src": "db2@1.60.1.70009"}
+{"id": 1247526, "field": "name", "en": "Open Letter", "hash": "c337cd3bc61e2377", "src": "db2@1.60.1.70009"}
+{"id": 1247526, "field": "description", "en": "Tear open the envelope to reveal the writ.", "hash": "151f263b16de59c2", "src": "db2@1.60.1.70009"}
+{"id": 1247613, "field": "name", "en": "Equip Transmog Outfit", "hash": "fc32132a6c7f99a7", "src": "db2@1.60.1.70009"}
+{"id": 1247613, "field": "description", "en": "|cnNORMAL_FONT_COLOR:Transmogrify the appearance of your weapons and armor|r\r\n\r\nLock Appearance:\r\n|cnNORMAL_FONT_COLOR:Prevent this appearance from being replaced by a Situation|r\r\n\r\n|cnGREEN_FONT_COLOR:<Right Click to toggle lock appearance>|r", "hash": "fe473db758d1dd4f", "src": "db2@1.60.1.70009"}
+{"id": 1247741, "field": "name", "en": "Spinefin Halibut", "hash": "d5257184c4e8fdfc", "src": "db2@1.60.1.70009"}
+{"id": 1247916, "field": "name", "en": "(DNT) Profane Totem Death Visuals", "hash": "7b3d9f3afbc17bf5", "src": "db2@1.60.1.70009"}
+{"id": 1247917, "field": "name", "en": "Clear Current Transmogrifications", "hash": "f9481d2b6ef0d3b4", "src": "db2@1.60.1.70009"}
+{"id": 1247917, "field": "description", "en": "|cnNORMAL_FONT_COLOR:Resets all equipped gear to their original appearance|r\r\n\r\n|cnWHITE_FONT_COLOR:Lock Appearance:|r\r\n|cnNORMAL_FONT_COLOR:Prevent this appearance from being replaced by a Situation|r\r\n\r\n|cnGREEN_FONT_COLOR:<Right Click to toggle lock appearance>|r", "hash": "64e44e1aa91c9e91", "src": "db2@1.60.1.70009"}
+{"id": 1247998, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70009"}
+{"id": 1247998, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70009"}

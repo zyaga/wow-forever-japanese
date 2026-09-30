@@ -1,0 +1,26 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+build/
+dist/
+*.zip
+# pipeline scratch and raw batch result files
+pipeline/.cache/
+pipeline/batches/
+.env
+
+# working folder of the fix-report tool
+/batches
+
+# Python packaging artifacts
+*.egg-info/
+.ruff_cache/
+
+# import inputs (predecessor clones, pfQuest file, wago CSVs)
+predecessors/
+luacov.stats.out
+luacov.report.out
+.coverage
+htmlcov/

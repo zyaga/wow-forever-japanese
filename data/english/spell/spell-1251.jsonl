@@ -1,0 +1,138 @@
+{"id": 1251214, "field": "name", "en": "Upgrade the Cloth", "hash": "ca24460044840342", "src": "db2@1.60.1.70009"}
+{"id": 1251231, "field": "name", "en": "Taxi", "hash": "0b5b1b16e73cb0cd", "src": "db2@1.60.1.70009"}
+{"id": 1251232, "field": "name", "en": "Ride Vehicle", "hash": "615b1691886a3aac", "src": "db2@1.60.1.70009"}
+{"id": 1251286, "field": "name", "en": "Unstable Package", "hash": "722bd86ae8dbe6d4", "src": "db2@1.60.1.70009"}
+{"id": 1251286, "field": "description", "en": "Handle with care.", "hash": "50bc26a86a920dda", "src": "db2@1.60.1.70009"}
+{"id": 1251286, "field": "aura", "en": "Carrying a shipment of exotic goods. Handle with care to avoid an unsafe trip.", "hash": "a2d7f6a8c760e725", "src": "db2@1.60.1.70009"}
+{"id": 1251362, "field": "name", "en": "Unstable Fuel Cell", "hash": "864dc181048312ec", "src": "db2@1.60.1.70009"}
+{"id": 1251362, "field": "description", "en": "Reckless handling! Something popped open!", "hash": "48085a08da6732ca", "src": "db2@1.60.1.70009"}
+{"id": 1251362, "field": "aura", "en": "Reckless handling! Something popped open in the crate!", "hash": "4457adb994ad5487", "src": "db2@1.60.1.70009"}
+{"id": 1251364, "field": "name", "en": "Misfire", "hash": "73725a3a4b6619d4", "src": "db2@1.60.1.70009"}
+{"id": 1251364, "field": "aura", "en": "Something popped open!", "hash": "48c7d8b3c759ef7b", "src": "db2@1.60.1.70009"}
+{"id": 1251380, "field": "name", "en": "Increase Fire Dam 73", "hash": "13df1d09e126dc39", "src": "db2@1.60.1.70009"}
+{"id": 1251380, "field": "description", "en": "Increases damage done by Fire spells and effects by up to $s1.", "hash": "6e8982e7361bae50", "src": "db2@1.60.1.70009"}
+{"id": 1251381, "field": "name", "en": "Elemental Campfire area", "hash": "539ff8233adae5e3", "src": "db2@1.60.1.70009"}
+{"id": 1251394, "field": "name", "en": "Parachute", "hash": "956b8756c8854e1c", "src": "db2@1.60.1.70009"}
+{"id": 1251394, "field": "description", "en": "Protects the caster from falling damage.", "hash": "3dc398867a54887b", "src": "db2@1.60.1.70009"}
+{"id": 1251394, "field": "aura", "en": "Falling...", "hash": "a76648d8846bb4bd", "src": "db2@1.60.1.70009"}
+{"id": 1251474, "field": "name", "en": "Paeonia's Melody", "hash": "ff273ed3a989253b", "src": "db2@1.60.1.70009"}
+{"id": 1251474, "field": "description", "en": "Causing nearby critters to follow you for $d.", "hash": "d89b30051d165710", "src": "db2@1.60.1.70009"}
+{"id": 1251474, "field": "aura", "en": "Entranced.", "hash": "6e6c210982ac2b9d", "src": "db2@1.60.1.70009"}
+{"id": 1251535, "field": "name", "en": "(DNT) Far Sight Trap Aura", "hash": "5ff1347b5e36fc00", "src": "db2@1.60.1.70009"}
+{"id": 1251536, "field": "name", "en": "(DNT) Far Sight Trap Cosmetic Equipment", "hash": "0def28a4b4ee2e6b", "src": "db2@1.60.1.70009"}
+{"id": 1251563, "field": "name", "en": "Paeonia's Melody", "hash": "ff273ed3a989253b", "src": "db2@1.60.1.70009"}
+{"id": 1251563, "field": "description", "en": "Causing nearby critters to follow you for $d.", "hash": "d89b30051d165710", "src": "db2@1.60.1.70009"}
+{"id": 1251563, "field": "aura", "en": "Causing nearby critters to follow you for $d.", "hash": "d89b30051d165710", "src": "db2@1.60.1.70009"}
+{"id": 1251657, "field": "name", "en": "Stoneskin", "hash": "9c4bd3760736fcff", "src": "db2@1.60.1.70009"}
+{"id": 1251684, "field": "name", "en": "(DNT) Far Sight Trap Cosmetic Equipment", "hash": "0def28a4b4ee2e6b", "src": "db2@1.60.1.70009"}
+{"id": 1251688, "field": "name", "en": "(DNT) Bloodmane's Sight Time Limit", "hash": "36ba8940ae73db5e", "src": "db2@1.60.1.70009"}
+{"id": 1251688, "field": "aura", "en": "Something is watching you closely.", "hash": "aace33ff0a63d538", "src": "db2@1.60.1.70009"}
+{"id": 1251691, "field": "name", "en": "Dry", "hash": "001209330e003200", "src": "db2@1.60.1.70009"}
+{"id": 1251691, "field": "description", "en": "Boosts effect of $@spellname1269958 for $d.", "hash": "e02af3eb39f7fcbd", "src": "db2@1.60.1.70009"}
+{"id": 1251691, "field": "aura", "en": "Spirit increased by an additional $w1 for $d from drying off from the rain.", "hash": "bedb776355b8cf3f", "src": "db2@1.60.1.70009"}
+{"id": 1251692, "field": "name", "en": "Grounded", "hash": "bb07bff438bdf976", "src": "db2@1.60.1.70009"}
+{"id": 1251692, "field": "description", "en": "Boosts effect of $@spellname1269966 for $d.", "hash": "8a355429044047c7", "src": "db2@1.60.1.70009"}
+{"id": 1251692, "field": "aura", "en": "Intellect increased by $w1 for $d while carrying the $@spellicon1270060 $@spellname1270060.", "hash": "92f3b92a3138969d", "src": "db2@1.60.1.70009"}
+{"id": 1251693, "field": "name", "en": "Cooled", "hash": "7f0dfa31fb90c134", "src": "db2@1.60.1.70009"}
+{"id": 1251693, "field": "description", "en": "Boosts the effect of $@spellname1269962 for $d.", "hash": "48161734725a5e2e", "src": "db2@1.60.1.70009"}
+{"id": 1251693, "field": "aura", "en": "Damage and healing done by magical spells and effects increased by $w1% for $d from cooling off from the sun.", "hash": "0be6624ed1ec44a0", "src": "db2@1.60.1.70009"}
+{"id": 1251705, "field": "name", "en": "(DNT) Bloodmane's Sight Time Limit", "hash": "36ba8940ae73db5e", "src": "db2@1.60.1.70009"}
+{"id": 1251705, "field": "aura", "en": "Something is watching you closely.", "hash": "aace33ff0a63d538", "src": "db2@1.60.1.70009"}
+{"id": 1251729, "field": "name", "en": "Minor Spellblasting Potion", "hash": "c8202e0239ebafae", "src": "db2@1.60.1.70009"}
+{"id": 1251730, "field": "name", "en": "Lesser Spellblasting Potion", "hash": "251828e119a02da7", "src": "db2@1.60.1.70009"}
+{"id": 1251731, "field": "name", "en": "Spellblasting Potion", "hash": "9a8f5b2654b522f4", "src": "db2@1.60.1.70009"}
+{"id": 1251732, "field": "name", "en": "Greater Spellblasting Potion", "hash": "dbbe12e42d2abe60", "src": "db2@1.60.1.70009"}
+{"id": 1251733, "field": "name", "en": "Superior Spellblasting Potion", "hash": "6a04c06cc1655b6d", "src": "db2@1.60.1.70009"}
+{"id": 1251734, "field": "name", "en": "Major Spellblasting Potion", "hash": "6bb444f2223f4277", "src": "db2@1.60.1.70009"}
+{"id": 1251735, "field": "name", "en": "Minor Frenzy Potion", "hash": "d6e8db649d2be954", "src": "db2@1.60.1.70009"}
+{"id": 1251736, "field": "name", "en": "Lesser Frenzy Potion", "hash": "fb58eddc51169526", "src": "db2@1.60.1.70009"}
+{"id": 1251737, "field": "name", "en": "Frenzy Potion", "hash": "b65d7aa02b95fad2", "src": "db2@1.60.1.70009"}
+{"id": 1251738, "field": "name", "en": "Greater Frenzy Potion", "hash": "c8696980380c2178", "src": "db2@1.60.1.70009"}
+{"id": 1251739, "field": "name", "en": "Superior Frenzy Potion", "hash": "6fb611cc00c2150e", "src": "db2@1.60.1.70009"}
+{"id": 1251740, "field": "name", "en": "Major Frenzy Potion", "hash": "33a36c7cd663a7d6", "src": "db2@1.60.1.70009"}
+{"id": 1251741, "field": "name", "en": "Minor Mender's Potion", "hash": "558db6668d522c7b", "src": "db2@1.60.1.70009"}
+{"id": 1251742, "field": "name", "en": "Lesser Mender's Potion", "hash": "f253f45071971674", "src": "db2@1.60.1.70009"}
+{"id": 1251743, "field": "name", "en": "Mender's Potion", "hash": "b653d8e4fbfbdbae", "src": "db2@1.60.1.70009"}
+{"id": 1251744, "field": "name", "en": "Greater Mender's Potion", "hash": "7843f666b3456c6a", "src": "db2@1.60.1.70009"}
+{"id": 1251745, "field": "name", "en": "Superior Mender's Potion", "hash": "6a0150f04fef0dcd", "src": "db2@1.60.1.70009"}
+{"id": 1251747, "field": "name", "en": "Major Mender's Potion", "hash": "6c1542796a3a3cee", "src": "db2@1.60.1.70009"}
+{"id": 1251748, "field": "name", "en": "Potion of Venomous Blood", "hash": "2bd0c5572f39ab4b", "src": "db2@1.60.1.70009"}
+{"id": 1251749, "field": "name", "en": "Caustic Smog Potion", "hash": "52ed896f18367044", "src": "db2@1.60.1.70009"}
+{"id": 1251750, "field": "name", "en": "Disorienting Smog Potion", "hash": "471958b23f2cdf9a", "src": "db2@1.60.1.70009"}
+{"id": 1251751, "field": "name", "en": "Dragonfire Potion", "hash": "d13b5266ead57173", "src": "db2@1.60.1.70009"}
+{"id": 1251752, "field": "name", "en": "Potion of Elemental Purging", "hash": "2072950bb4b67899", "src": "db2@1.60.1.70009"}
+{"id": 1251753, "field": "name", "en": "Potion of Beast Slaying", "hash": "ebd97780ec1b549e", "src": "db2@1.60.1.70009"}
+{"id": 1251791, "field": "name", "en": "Drying Off", "hash": "3f54a0c5853cb7d8", "src": "db2@1.60.1.70009"}
+{"id": 1251791, "field": "aura", "en": "Need to dry off more.", "hash": "c2932127f751ecc8", "src": "db2@1.60.1.70009"}
+{"id": 1251890, "field": "name", "en": "Increase Spell Dam 94", "hash": "4f9bcf27d4601d59", "src": "db2@1.60.1.70009"}
+{"id": 1251890, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70009"}
+{"id": 1251919, "field": "name", "en": "Minor Spellblasting Potion", "hash": "c8202e0239ebafae", "src": "db2@1.60.1.70009"}
+{"id": 1251919, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70009"}
+{"id": 1251919, "field": "aura", "en": "Spell Damage increased by $w1.", "hash": "3823be4577e7997a", "src": "db2@1.60.1.70009"}
+{"id": 1251922, "field": "name", "en": "Lesser Spellblasting Potion", "hash": "251828e119a02da7", "src": "db2@1.60.1.70009"}
+{"id": 1251922, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70009"}
+{"id": 1251922, "field": "aura", "en": "Spell Damage increased by $w1.", "hash": "3823be4577e7997a", "src": "db2@1.60.1.70009"}
+{"id": 1251923, "field": "name", "en": "Spellblasting Potion", "hash": "9a8f5b2654b522f4", "src": "db2@1.60.1.70009"}
+{"id": 1251923, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70009"}
+{"id": 1251923, "field": "aura", "en": "Spell Damage increased by $w1.", "hash": "3823be4577e7997a", "src": "db2@1.60.1.70009"}
+{"id": 1251924, "field": "name", "en": "Greater Spellblasting Potion", "hash": "dbbe12e42d2abe60", "src": "db2@1.60.1.70009"}
+{"id": 1251924, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70009"}
+{"id": 1251924, "field": "aura", "en": "Spell Damage increased by $w1.", "hash": "3823be4577e7997a", "src": "db2@1.60.1.70009"}
+{"id": 1251931, "field": "name", "en": "Superior Spellblasting Potion", "hash": "6a04c06cc1655b6d", "src": "db2@1.60.1.70009"}
+{"id": 1251931, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70009"}
+{"id": 1251931, "field": "aura", "en": "Spell Damage increased by $w1.", "hash": "3823be4577e7997a", "src": "db2@1.60.1.70009"}
+{"id": 1251932, "field": "name", "en": "Major Spellblasting Potion", "hash": "6bb444f2223f4277", "src": "db2@1.60.1.70009"}
+{"id": 1251932, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70009"}
+{"id": 1251932, "field": "aura", "en": "Spell Damage increased by $w1.", "hash": "3823be4577e7997a", "src": "db2@1.60.1.70009"}
+{"id": 1251933, "field": "name", "en": "Minor Frenzy Potion", "hash": "d6e8db649d2be954", "src": "db2@1.60.1.70009"}
+{"id": 1251933, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70009"}
+{"id": 1251933, "field": "aura", "en": "Attack Power increased by $w1.", "hash": "2906fd7f0069ecce", "src": "db2@1.60.1.70009"}
+{"id": 1251935, "field": "name", "en": "Lesser Frenzy Potion", "hash": "fb58eddc51169526", "src": "db2@1.60.1.70009"}
+{"id": 1251935, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70009"}
+{"id": 1251935, "field": "aura", "en": "Attack Power increased by $w1.", "hash": "2906fd7f0069ecce", "src": "db2@1.60.1.70009"}
+{"id": 1251936, "field": "name", "en": "Frenzy Potion", "hash": "b65d7aa02b95fad2", "src": "db2@1.60.1.70009"}
+{"id": 1251936, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70009"}
+{"id": 1251936, "field": "aura", "en": "Attack Power increased by $w1.", "hash": "2906fd7f0069ecce", "src": "db2@1.60.1.70009"}
+{"id": 1251937, "field": "name", "en": "Greater Frenzy Potion", "hash": "c8696980380c2178", "src": "db2@1.60.1.70009"}
+{"id": 1251937, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70009"}
+{"id": 1251937, "field": "aura", "en": "Attack Power increased by $w1.", "hash": "2906fd7f0069ecce", "src": "db2@1.60.1.70009"}
+{"id": 1251938, "field": "name", "en": "Superior Frenzy Potion", "hash": "6fb611cc00c2150e", "src": "db2@1.60.1.70009"}
+{"id": 1251938, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70009"}
+{"id": 1251938, "field": "aura", "en": "Attack Power increased by $w1.", "hash": "2906fd7f0069ecce", "src": "db2@1.60.1.70009"}
+{"id": 1251940, "field": "name", "en": "Major Frenzy Potion", "hash": "33a36c7cd663a7d6", "src": "db2@1.60.1.70009"}
+{"id": 1251940, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70009"}
+{"id": 1251940, "field": "aura", "en": "Attack Power increased by $w1.", "hash": "2906fd7f0069ecce", "src": "db2@1.60.1.70009"}
+{"id": 1251942, "field": "name", "en": "Minor Mender's Potion", "hash": "558db6668d522c7b", "src": "db2@1.60.1.70009"}
+{"id": 1251942, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70009"}
+{"id": 1251942, "field": "aura", "en": "Spell Healing increased by $w1.", "hash": "ad9f770ff388b439", "src": "db2@1.60.1.70009"}
+{"id": 1251944, "field": "name", "en": "Lesser Mender's Potion", "hash": "f253f45071971674", "src": "db2@1.60.1.70009"}
+{"id": 1251944, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70009"}
+{"id": 1251944, "field": "aura", "en": "Spell Healing increased by $w1.", "hash": "ad9f770ff388b439", "src": "db2@1.60.1.70009"}
+{"id": 1251945, "field": "name", "en": "Mender's Potion", "hash": "b653d8e4fbfbdbae", "src": "db2@1.60.1.70009"}
+{"id": 1251945, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70009"}
+{"id": 1251945, "field": "aura", "en": "Spell Healing increased by $w1.", "hash": "ad9f770ff388b439", "src": "db2@1.60.1.70009"}
+{"id": 1251946, "field": "name", "en": "Greater Mender's Potion", "hash": "7843f666b3456c6a", "src": "db2@1.60.1.70009"}
+{"id": 1251946, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70009"}
+{"id": 1251946, "field": "aura", "en": "Spell Healing increased by $w1.", "hash": "ad9f770ff388b439", "src": "db2@1.60.1.70009"}
+{"id": 1251947, "field": "name", "en": "Superior Mender's Potion", "hash": "6a0150f04fef0dcd", "src": "db2@1.60.1.70009"}
+{"id": 1251947, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70009"}
+{"id": 1251947, "field": "aura", "en": "Spell Healing increased by $w1.", "hash": "ad9f770ff388b439", "src": "db2@1.60.1.70009"}
+{"id": 1251948, "field": "name", "en": "Major Mender's Potion", "hash": "6c1542796a3a3cee", "src": "db2@1.60.1.70009"}
+{"id": 1251948, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70009"}
+{"id": 1251948, "field": "aura", "en": "Spell Healing increased by $w1.", "hash": "ad9f770ff388b439", "src": "db2@1.60.1.70009"}
+{"id": 1251984, "field": "name", "en": "Increase Strength 20 - Imperial Set", "hash": "15473b6b516cb9e5", "src": "db2@1.60.1.70009"}
+{"id": 1251984, "field": "description", "en": "+$s1 Strength.", "hash": "7dbddd018496c4c5", "src": "db2@1.60.1.70009"}
+{"id": 1251986, "field": "name", "en": "Venomous Blood", "hash": "1979977d6403f0a3", "src": "db2@1.60.1.70009"}
+{"id": 1251986, "field": "description", "en": "Gain $U doses of Venomous Blood. Whenever you suffer Bleed damage, one dose is spread to a nearby enemy within $s2 yds. Lasts up to $d.\r\n\r\nVenomous Blood deals $s1 Nature damage per dose when it expires.", "hash": "8b8489255b4ecbbe", "src": "db2@1.60.1.70009"}
+{"id": 1251986, "field": "aura", "en": "Whenever you suffer Bleed damage, one dose is splashed to a nearby enemy within $s~2 yds.\r\n\r\nWhen this effect expires, you will suffer $w1 Nature damage.", "hash": "b70e5371af757cc9", "src": "db2@1.60.1.70009"}
+{"id": 1251987, "field": "name", "en": "Increase Agility 18 - Imperial Set", "hash": "3309e1c6e478f355", "src": "db2@1.60.1.70009"}
+{"id": 1251987, "field": "description", "en": "Increases Agility by $s1.", "hash": "c1ec13c7d4997ba5", "src": "db2@1.60.1.70009"}
+{"id": 1251990, "field": "name", "en": "Increased Hit Chance 1 - Imperial Set", "hash": "706a838ba9221768", "src": "db2@1.60.1.70009"}
+{"id": 1251990, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70009"}
+{"id": 1251991, "field": "name", "en": "Increased Critical 1 - All - Imperial Set", "hash": "860990826d94a210", "src": "db2@1.60.1.70009"}
+{"id": 1251991, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%.", "hash": "ff9a12de55e3926a", "src": "db2@1.60.1.70009"}
+{"id": 1251993, "field": "name", "en": "Venomous Blood", "hash": "1979977d6403f0a3", "src": "db2@1.60.1.70009"}
+{"id": 1251993, "field": "description", "en": "$@spelldesc1251986", "hash": "b84218b3d6de0325", "src": "db2@1.60.1.70009"}
+{"id": 1251993, "field": "aura", "en": "A nearby bleeding target has splashed Venomous Blood onto you.\r\n\r\nWhen this effect expires, you will suffer $w1 Nature damage.", "hash": "65387091ecb87834", "src": "db2@1.60.1.70009"}
+{"id": 1251995, "field": "name", "en": "Venomous Blood", "hash": "1979977d6403f0a3", "src": "db2@1.60.1.70009"}
+{"id": 1251995, "field": "description", "en": "$@spelldesc1251986", "hash": "b84218b3d6de0325", "src": "db2@1.60.1.70009"}

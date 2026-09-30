@@ -1,0 +1,3 @@
+{"id": 58597, "field": "name", "en": "Sacred Shield", "hash": "101af0745c3d3df8", "src": "db2@1.60.1.70009"}
+{"id": 58597, "field": "description", "en": "Each time the target takes damage they gain a Sacred Shield, absorbing $58597s1 damage and increasing the paladin's chance to critically hit with Flash of Light by $58597s2% for up to $58597d.  They cannot gain this effect more than once every 6 sec.  Lasts $d.", "hash": "56cad033ba81a23b", "src": "db2@1.60.1.70009"}
+{"id": 58597, "field": "aura", "en": "Absorbs damage and increases the casting paladin's chance to critically hit with Flash of Light by $s2%.", "hash": "c8eb5579ca7a3849", "src": "db2@1.60.1.70009"}

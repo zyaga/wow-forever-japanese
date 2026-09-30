@@ -1,0 +1,92 @@
+{"id": 209027, "field": "name", "en": "Crab Treats", "hash": "4f7be8e7fbf3e81b", "src": "db2@1.60.1.70009"}
+{"id": 209027, "field": "description", "en": "Feed treat to target.\nThe furbolgs catch young reef crawlers with these", "hash": "5b4e7a4dc42fabf6", "src": "db2@1.60.1.70009"}
+{"id": 209028, "field": "name", "en": "Spell Notes: BIVOLG NIMB", "hash": "82ebbf5354c1756d", "src": "db2@1.60.1.70009"}
+{"id": 209028, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70009"}
+{"id": 209029, "field": "name", "en": "Message from Emily", "hash": "96b9137ea0ad337e", "src": "db2@1.60.1.70009"}
+{"id": 209030, "field": "name", "en": "Equipment Stash Key", "hash": "973a24c3f891ed3f", "src": "db2@1.60.1.70009"}
+{"id": 209031, "field": "name", "en": "Discreet Envelope", "hash": "dcea053f8a3b8ae9", "src": "db2@1.60.1.70009"}
+{"id": 209041, "field": "name", "en": "Magic Pumpkin Seeds", "hash": "23116dd1488cf370", "src": "db2@1.60.1.70009"}
+{"id": 209041, "field": "description", "en": "Plant Pumpkin Seeds\nNeeds special soil and food to grow.", "hash": "4b6ce60452b40d73", "src": "db2@1.60.1.70009"}
+{"id": 209042, "field": "name", "en": "Fishy Bonemeal", "hash": "47cda2c97f0ba052", "src": "db2@1.60.1.70009"}
+{"id": 209042, "field": "description", "en": "As nutritious as it is stinky! Makes for good fertilizer.", "hash": "0deaabc48de6b7f1", "src": "db2@1.60.1.70009"}
+{"id": 209043, "field": "name", "en": "Fertile Soil Sample", "hash": "89db9296be176b63", "src": "db2@1.60.1.70009"}
+{"id": 209043, "field": "description", "en": "Harvested by someone who really knows their dirt.", "hash": "e00cf2e876602a07", "src": "db2@1.60.1.70009"}
+{"id": 209045, "field": "name", "en": "Soul of the Sea", "hash": "9f8ba557afa2a22c", "src": "db2@1.60.1.70009"}
+{"id": 209047, "field": "name", "en": "Gnarled Harpoon", "hash": "cbc91ac3d42b0eae", "src": "db2@1.60.1.70009"}
+{"id": 209047, "field": "description", "en": "Throw harpoon at target (40 yd. range)\nOnly the blood of the largest thresher will slake its thirst", "hash": "df6c6b75026b0207", "src": "db2@1.60.1.70009"}
+{"id": 209056, "field": "name", "en": "Spare Reaper Parts", "hash": "2320da8176d4b814", "src": "db2@1.60.1.70009"}
+{"id": 209056, "field": "description", "en": "Combine spare reaper parts with an elemental core to create a prototype engine.", "hash": "9e0358e6015a406d", "src": "db2@1.60.1.70009"}
+{"id": 209057, "field": "name", "en": "Prototype Engine", "hash": "d4e38c53f1bc82ba", "src": "db2@1.60.1.70009"}
+{"id": 209057, "field": "description", "en": "Install into a harvest reaper prototype.", "hash": "8cfaa23caf66a688", "src": "db2@1.60.1.70009"}
+{"id": 209058, "field": "name", "en": "Elemental Core", "hash": "f81bc43b332f4b89", "src": "db2@1.60.1.70009"}
+{"id": 209058, "field": "description", "en": "Combine spare reaper parts with an elemental core to create a prototype engine.", "hash": "9e0358e6015a406d", "src": "db2@1.60.1.70009"}
+{"id": 209059, "field": "name", "en": "Goretusk Haunch", "hash": "ef5c7e00c2ee6032", "src": "db2@1.60.1.70009"}
+{"id": 209059, "field": "description", "en": "Place as bait near a coyote dwelling", "hash": "80f8c7e82c92508d", "src": "db2@1.60.1.70009"}
+{"id": 209608, "field": "name", "en": "Captain's Skeleton Key", "hash": "3fe467773002972e", "src": "db2@1.60.1.70009"}
+{"id": 209608, "field": "description", "en": "Open the Waterlogged Captain's Chest.", "hash": "97ea925d484ce220", "src": "db2@1.60.1.70009"}
+{"id": 209611, "field": "name", "en": "Insignia of the Alliance", "hash": "25632d3e5f46cf50", "src": "db2@1.60.1.70009"}
+{"id": 209611, "field": "description", "en": "Dispels all Immobilizing, Slowing and Stun effects.", "hash": "97568864d171bc0b", "src": "db2@1.60.1.70009"}
+{"id": 209612, "field": "name", "en": "Insignia of the Alliance", "hash": "25632d3e5f46cf50", "src": "db2@1.60.1.70009"}
+{"id": 209612, "field": "description", "en": "Dispels all Charm, Fear and Polymorph effects.", "hash": "591d61cc73056614", "src": "db2@1.60.1.70009"}
+{"id": 209613, "field": "name", "en": "Insignia of the Alliance", "hash": "25632d3e5f46cf50", "src": "db2@1.60.1.70009"}
+{"id": 209613, "field": "description", "en": "Dispels all Fear, Polymorph and Stun effects.", "hash": "81d8a6cce84141ba", "src": "db2@1.60.1.70009"}
+{"id": 209614, "field": "name", "en": "Insignia of the Alliance", "hash": "25632d3e5f46cf50", "src": "db2@1.60.1.70009"}
+{"id": 209614, "field": "description", "en": "Dispels all Fear, Polymorph and Stun effects.", "hash": "81d8a6cce84141ba", "src": "db2@1.60.1.70009"}
+{"id": 209615, "field": "name", "en": "Insignia of the Alliance", "hash": "25632d3e5f46cf50", "src": "db2@1.60.1.70009"}
+{"id": 209615, "field": "description", "en": "Dispels all Charm, Fear and Polymorph effects.", "hash": "591d61cc73056614", "src": "db2@1.60.1.70009"}
+{"id": 209616, "field": "name", "en": "Insignia of the Alliance", "hash": "25632d3e5f46cf50", "src": "db2@1.60.1.70009"}
+{"id": 209616, "field": "description", "en": "Dispels all Immobilizing, Slowing and Stun effects.", "hash": "97568864d171bc0b", "src": "db2@1.60.1.70009"}
+{"id": 209617, "field": "name", "en": "Insignia of the Alliance", "hash": "25632d3e5f46cf50", "src": "db2@1.60.1.70009"}
+{"id": 209617, "field": "description", "en": "Dispels all Charm, Fear and Stun effects.", "hash": "c7a577028c7195a6", "src": "db2@1.60.1.70009"}
+{"id": 209618, "field": "name", "en": "Insignia of the Alliance", "hash": "25632d3e5f46cf50", "src": "db2@1.60.1.70009"}
+{"id": 209618, "field": "description", "en": "Dispels all Fear, Polymorph and Slowing effects.", "hash": "0fc15458fad303e1", "src": "db2@1.60.1.70009"}
+{"id": 209619, "field": "name", "en": "Insignia of the Horde", "hash": "2b4f260e55faddeb", "src": "db2@1.60.1.70009"}
+{"id": 209619, "field": "description", "en": "Dispels all Immobilizing, Slowing and Stun effects.", "hash": "97568864d171bc0b", "src": "db2@1.60.1.70009"}
+{"id": 209620, "field": "name", "en": "Insignia of the Horde", "hash": "2b4f260e55faddeb", "src": "db2@1.60.1.70009"}
+{"id": 209620, "field": "description", "en": "Dispels all Charm, Fear and Polymorph effects.", "hash": "591d61cc73056614", "src": "db2@1.60.1.70009"}
+{"id": 209621, "field": "name", "en": "Insignia of the Horde", "hash": "2b4f260e55faddeb", "src": "db2@1.60.1.70009"}
+{"id": 209621, "field": "description", "en": "Dispels all Fear, Polymorph and Stun effects.", "hash": "81d8a6cce84141ba", "src": "db2@1.60.1.70009"}
+{"id": 209622, "field": "name", "en": "Insignia of the Horde", "hash": "2b4f260e55faddeb", "src": "db2@1.60.1.70009"}
+{"id": 209622, "field": "description", "en": "Dispels all Charm, Fear and Polymorph effects.", "hash": "591d61cc73056614", "src": "db2@1.60.1.70009"}
+{"id": 209623, "field": "name", "en": "Insignia of the Horde", "hash": "2b4f260e55faddeb", "src": "db2@1.60.1.70009"}
+{"id": 209623, "field": "description", "en": "Dispels all Fear, Polymorph and Slowing effects.", "hash": "0fc15458fad303e1", "src": "db2@1.60.1.70009"}
+{"id": 209624, "field": "name", "en": "Insignia of the Horde", "hash": "2b4f260e55faddeb", "src": "db2@1.60.1.70009"}
+{"id": 209624, "field": "description", "en": "Dispels all Charm, Fear and Stun effects.", "hash": "c7a577028c7195a6", "src": "db2@1.60.1.70009"}
+{"id": 209625, "field": "name", "en": "Insignia of the Horde", "hash": "2b4f260e55faddeb", "src": "db2@1.60.1.70009"}
+{"id": 209625, "field": "description", "en": "Dispels all Immobilizing, Slowing and Stun effects.", "hash": "97568864d171bc0b", "src": "db2@1.60.1.70009"}
+{"id": 209626, "field": "name", "en": "Insignia of the Horde", "hash": "2b4f260e55faddeb", "src": "db2@1.60.1.70009"}
+{"id": 209626, "field": "description", "en": "Dispels all Immobilizing, Slowing and Stun effects.", "hash": "97568864d171bc0b", "src": "db2@1.60.1.70009"}
+{"id": 209748, "field": "name", "en": "Althalaxx Orb", "hash": "7b7415744167a31e", "src": "db2@1.60.1.70009"}
+{"id": 209778, "field": "name", "en": "Summoner's Salt", "hash": "a282d95e7b0f4d9c", "src": "db2@1.60.1.70009"}
+{"id": 209779, "field": "name", "en": "Mote of Mannoroth", "hash": "21e1008505fdbf99", "src": "db2@1.60.1.70009"}
+{"id": 209800, "field": "name", "en": "Orb Fragments", "hash": "32b6eb5713119e20", "src": "db2@1.60.1.70009"}
+{"id": 209819, "field": "name", "en": "Wyvern Taming Wand", "hash": "e93a50b5597c43ea", "src": "db2@1.60.1.70009"}
+{"id": 209819, "field": "description", "en": "Enables taming of Young Pridewings in Stonetalon Mountains.", "hash": "38730ef696e514b3", "src": "db2@1.60.1.70009"}
+{"id": 209836, "field": "name", "en": "Althalaxx Orb", "hash": "7b7415744167a31e", "src": "db2@1.60.1.70009"}
+{"id": 209838, "field": "name", "en": "Hypnotic Crystal", "hash": "331ce7a12104e49b", "src": "db2@1.60.1.70009"}
+{"id": 209840, "field": "name", "en": "Gnarled Wand of Wild Magic", "hash": "3f53f046603c7bf1", "src": "db2@1.60.1.70009"}
+{"id": 209841, "field": "name", "en": "Wild Magic Essence", "hash": "91e5d1d91a3dc890", "src": "db2@1.60.1.70009"}
+{"id": 209841, "field": "description", "en": "Imbue a Greater Magic Wand with wild magic.", "hash": "40589d5ee490fc42", "src": "db2@1.60.1.70009"}
+{"id": 209843, "field": "name", "en": "Nar'thalas Almanac, Vol. 74", "hash": "34c9b71fa4f8ca4a", "src": "db2@1.60.1.70009"}
+{"id": 209843, "field": "description", "en": "Arcane research of the ancient quel'dorei. A fine addition to any library's collection.", "hash": "65af4cd3843f844c", "src": "db2@1.60.1.70009"}
+{"id": 209844, "field": "name", "en": "The Dalaran Digest, Vol. 23", "hash": "e3243f6a11e16761", "src": "db2@1.60.1.70009"}
+{"id": 209844, "field": "description", "en": "Arcane research of the Kirin Tor. A fine addition to any library's collection.", "hash": "134172e654fc1852", "src": "db2@1.60.1.70009"}
+{"id": 209845, "field": "name", "en": "Bewitchments and Glamours", "hash": "311bffccc04e61cb", "src": "db2@1.60.1.70009"}
+{"id": 209845, "field": "description", "en": "Spells for manipulation and deception. A fine addition to any library's collection.", "hash": "365df5021044076a", "src": "db2@1.60.1.70009"}
+{"id": 209846, "field": "name", "en": "Secrets of the Dreamers", "hash": "8a43574039e9fa4e", "src": "db2@1.60.1.70009"}
+{"id": 209846, "field": "description", "en": "Observations and insights on the Emerald Dream. A fine addition to any library's collection.", "hash": "e113ee9a48d0d662", "src": "db2@1.60.1.70009"}
+{"id": 209847, "field": "name", "en": "Arcanic Systems Manual", "hash": "309e1889187d86bd", "src": "db2@1.60.1.70009"}
+{"id": 209847, "field": "description", "en": "Poorly-organized troubleshooting tips for goblin technology. A fine addition to any library's collection.", "hash": "4d5be60d617935cd", "src": "db2@1.60.1.70009"}
+{"id": 209848, "field": "name", "en": "Goaz Scrolls", "hash": "f3f227382b6acb10", "src": "db2@1.60.1.70009"}
+{"id": 209848, "field": "description", "en": "Written in lost Titan script, but nevertheless a fine addition to any library's collection.", "hash": "0624dc14e805ca6e", "src": "db2@1.60.1.70009"}
+{"id": 209849, "field": "name", "en": "Crimes Against Anatomy", "hash": "8c93dda3bec0876f", "src": "db2@1.60.1.70009"}
+{"id": 209849, "field": "description", "en": "Written by Doctor Krastinov. A questionable addition to any library's collection.", "hash": "9f13b0284ee6c44e", "src": "db2@1.60.1.70009"}
+{"id": 209850, "field": "name", "en": "Runes of the Sorcerer-Kings", "hash": "7777a31c3caa27e2", "src": "db2@1.60.1.70009"}
+{"id": 209850, "field": "description", "en": "A relic of the mighty ogre empires of Draenor. A fine addition to any library's collection.", "hash": "0d39aa5646445ebf", "src": "db2@1.60.1.70009"}
+{"id": 209851, "field": "name", "en": "Fury of the Land", "hash": "53dc86ff12e2ae24", "src": "db2@1.60.1.70009"}
+{"id": 209851, "field": "description", "en": "Closely guarded shamanistic secrets of the Grimtotem clan. A fine addition to any library's collection.", "hash": "3407a7ddb43071af", "src": "db2@1.60.1.70009"}
+{"id": 209852, "field": "name", "en": "Rune of Kill Command", "hash": "2cde2674bb988222", "src": "db2@1.60.1.70009"}
+{"id": 209852, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 209872, "field": "name", "en": "Dragonslayer's Helm", "hash": "979b839cc95b4edf", "src": "db2@1.60.1.70009"}
+{"id": 209873, "field": "name", "en": "Dragonslayer's Shield", "hash": "0ad9d45d4354ebdc", "src": "db2@1.60.1.70009"}
+{"id": 209874, "field": "name", "en": "Dragonslayer's Lance", "hash": "da427e8655c8741c", "src": "db2@1.60.1.70009"}

@@ -1,0 +1,1 @@
+{"id": 86541, "field": "description", "ja": "Confessionが使用できるようになります。\n秘密の告白をさせます。", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#9373"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

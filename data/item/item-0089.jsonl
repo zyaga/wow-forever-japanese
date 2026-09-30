@@ -1,0 +1,1 @@
+{"id": 89868, "field": "description", "ja": "Travelフォーム時チーターの姿になります。\nこのグリフはGlyph of the Stagの\n効果を上書きします。", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#9404"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

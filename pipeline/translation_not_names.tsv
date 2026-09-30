@@ -1,0 +1,569 @@
+# Capitalised English words that are not names on one translation batch row (translate_lint `name_missing`).
+# `<ref>\t<word>\t<the English around it>` per line. A ref is the batch row's ref (first 10 hex of the hash of the
+# English as the drafter sees it), so an entry holds only while that English does. Each word was classified by a reviewing model (when in doubt: a name)
+# and applies to that row only; a word that recurs on many rows belongs in the glossary instead.
+# A lower-case `required` glossary term listed here is used in another sense on that row ("a rogue spark") and
+# is not checked there by translate_lint's `glossary:<term>`.
+02e705989c	Lay	The Lay of Ameth'Aran
+033bff1e4f	Scribes	the time I spent on that ship cursing that I was stuck with a boatload of Alchemists and Scribes.
+040344596f	Path	I shall not be the one to start you on that Path.
+0465fa9e36	Overdue	An Overdue Package -
+0465fa9e36	Package	An Overdue Package -
+04bb1caf3a	Roundup	Kodo Roundup (quest title: not a name)
+04c2f9ac6c	Paragons	Paragons of Power: The Vindicator's Armguards (quest title: not a name)
+058b4f5cdf	Roundup	Deeprun Rat Roundup (quest title: not a name)
+07a14cd08b	Paragons	Paragons of Power: The Confessor's Mantle (quest title: not a name)
+08cdaa41b4	Requiem	Staghelm's Requiem (quest title: an ordinary word, not a name)
+0911ed1f42	Melee	Improves your chance to get a Critical Strike with Melee and Ranged attacks by ${$s1}.1%.
+0911ed1f42	Ranged	Improves your chance to get a Critical Strike with Melee and Ranged attacks by ${$s1}.1%.
+091595e083	Culpa	Mea Culpa, Lord Valthalak (quest title: not a name)
+091595e083	Mea	Mea Culpa, Lord Valthalak (quest title: not a name)
+0a63ad6859	Aids	Aids the translation of scrolls and spell notes.
+0a641b7861	Aid	Aid us in this time of need. Aid us Loa. Give us the power to strike down our enemies. Give u
+0a7320b6d8	Boast	A Hunter's Boast (quest title: an ordinary word, not a name)
+0a859cb22a	Striker	The Decisive Striker (quest title: an ordinary word, not a name)
+0b996e8299	North	Now from this here barrel, face ye North.
+0bacb2c999	Conscription	Crossroads Conscription (quest title: not a name)
+0c0100f840	Earth	The Earth trembled as the ancient trees in the enchanted forest were uprooted and toppled. The grov
+0c0100f840	Fall	The Fall of Ameth'Aran
+0ce1d54374	Report	Report To Thork at The Crossroads in The Barrens.
+0d61fa9992	Paragons	Paragons of Power: The Predator's Bracers (quest title: not a name)
+0d8914f12a	Conscription	<H1>Horde Conscription Registration</H1>
+0d8914f12a	Registration	<H1>Horde Conscription Registration</H1>
+0de4f14b5e	Dismantling	The How-to Guide On Dismantling the Stormpike
+0de4f14b5e	Guide	The How-to Guide On Dismantling the Stormpike
+0de4f14b5e	How	The How-to Guide On Dismantling the Stormpike
+0de4f14b5e	Onion	Peeling the Onion
+0e422b185e	rogue	the actions of a rogue apothecary are not my concern (a renegade, not the class)
+0f794cc881	Divine	I know I have but few and small claims upon Divine Providence but something whispers to me - perhaps it is the wafted prayer of my little Ed
+0f794cc881	Providence	I know I have but few and small claims upon Divine Providence but something whispers to me - perhaps it is the wafted prayer of my little Edgar - that
+0ff50e480b	Deputy	The bearer of these documents is to be awarded Deputy status with the Stormwind Army, having served Northshire with eagerness and distinction.
+125afe7466	Sparring	Sparring Match (quest title: an ordinary word, not a name)
+12814fe450	Unfortunately	Unfortunately, it dries too quickly!
+13b76bcf99	Moonglow	Moonglow Vest (quest title: not a name)
+14a7ecda04	Bell	The Bell, the Wheel and the Candle
+14a7ecda04	Candle	The Bell, the Wheel and the Candle
+14a7ecda04	Wheel	The Bell, the Wheel and the Candle
+14e3c64bfe	II	Enchanted Thorium Platemail: Volume II (quest title: not a name)
+150d033ec9	Aid	Aid us in the defense of Azeroth!
+1617e5a400	Fancypants	Well hello there Fancypants, aren't you a sight for sore eyes.
+16e79f6f7c	Dragons	Alexstrasza, the ancient and powerful Queen of the Dragons, was named the Life-Binder by the titans. She was first to be created by the titans to pr
+1821b05c3b	Dolanaar Delivery	Dolanaar Delivery (quest title: not a name)
+1829389220	Mayor	Greetings Ello Ebonlocke, Mayor of Darkshire. I'm afraid I have news for your town. Grave news.
+18e364df15	Ignition	Ignition (quest title: not a name)
+1c65cc0b26	Siren	The Siren's Coral (quest title: not a name)
+1d7e7289b4	Controls	IV. Flow Controls
+1d7e7289b4	Gauge	V. Temperature Gauge
+1da1bd153e	Paragons	Paragons of Power: The Augur's Hauberk (quest title: not a name)
+2069567bef	Shakedown	Southsea Shakedown (quest title: not a name)
+21125223ed	Masquerade	The Great Masquerade (quest title: an ordinary word, not a name)
+21b4fb0508	North	Follow it North
+2225321de4	Agent	Renowned Troll Hunter of Quel'Thalas. Lead Scout and Intelligence Agent for the Alliance Expedition that marched into the orc homeworld of Draenor. Presumed dece
+2225321de4	Intelligence	Renowned Troll Hunter of Quel'Thalas. Lead Scout and Intelligence Agent for the Alliance Expedition that marched into the orc homeworld of Draenor. Presume
+2225321de4	Scout	Renowned Troll Hunter of Quel'Thalas. Lead Scout and Intelligence Agent for the Alliance Expedition that marched into the orc homeworld of
+22df469412	Avast	Avast Ye, Admiral! (quest title: not a name)
+2329b2ef55	Paragons	Paragons of Power: The Madcap's Bracers (quest title: not a name)
+2350d0d64c	Bungle	Bungle in the Jungle (quest title: not a name)
+269464e3e1	Wakening	The Relics of Wakening (quest title: not a name)
+26a3bfdf1e	Ritual	Implements of the Ritual
+26bafb02d1	Daddy	That was fun, but mixing a few flowers doesn't seem like the kind of alchemy Daddy does.
+26e1428c1f	Wabbits	Waskily Wabbits! (quest title: not a name)
+26e1428c1f	Waskily	Waskily Wabbits! (quest title: not a name)
+26effe33fc	Junkboxes	Junkboxes Needed (quest title: not a name)
+27337735f6	Magistrate	By order of the Magistrate:
+28576edc47	Destroy	Demon Pick to Destroy Demon Crystal.
+297178e6f5	Beast	The Conjuring of the Beast:
+297178e6f5	Conjuring	The Conjuring of the Beast:
+2ad62d6ad1	Shredding	Shredding Machines (quest title: not a name)
+2b07f86afc	King	ng with various rogue elements out here leads me to believe we will need support from the King's Army. Not only will the excavation require military support, it would seem to my novice
+2b86fffa93	West	Now that ye found me ol' whiskey jug, you're almost to the treasure! Just face West from the bottle and walk down to the shore. Once ye get to the water, keep going! Swim st
+2bad6541da	Oculus	Oculus Illusions (quest title: not a name)
+2bebdc51cc	Commander	ate nations of Arathor were once again united under a common banner. Appointed as Supreme Commander of the Alliance forces, Lord Lothar prepared his armies for the coming of the Horde.
+2bebdc51cc	Supreme	e disparate nations of Arathor were once again united under a common banner. Appointed as Supreme Commander of the Alliance forces, Lord Lothar prepared his armies for the coming of the H
+2e04015502	Majesty	From the hand of Baros Alexston, Office of the City Architect Stormwind Your Majesty, There are many reasons as to why I felt that a report should be compiled and presented o
+2e04015502	There	From the hand of Baros Alexston, Office of the City Architect Stormwind Your Majesty, There are many reasons as to why I felt that a report should be compiled and presented on the r
+2e04015502	Your	From the hand of Baros Alexston, Office of the City Architect Stormwind Your Majesty, There are many reasons as to why I felt that a report should be compiled and pre
+2e56839326	Legend	The Legend of Greatfather Winter
+2ec708ec58	Hoarders	Data Hoarders (quest title: an ordinary word, not a name)
+2f829659fb	Day	--Day One--
+2f829659fb	One	--Day One--
+2f8e775ae4	Enemy	The Enemy has invaded our lands.
+3102869ddf	Arcane	To: New Students of the Arcane Arts:
+3102869ddf	Arts	To: New Students of the Arcane Arts:
+3102869ddf	Students	To: New Students of the Arcane Arts:
+3108485c1f	Humanity	til such help arrives, I beg of you to lend support. Once the Kingdom is breeched, all of Humanity is in peril.
+3108485c1f	Militia	The Township of Lakeshire humbly requests the aid of your Militia. As I write this, we find ourselves under siege from both the Blackrock Orcs and Morganth
+31d86d5a15	rogue	the rogue Thorium Brotherhood agent (a renegade, not the class)
+32fba198f4	Equation	The Elemental Equation (quest title: an ordinary word, not a name)
+3377bb75b8	Concern	To Whom It May Concern,
+3377bb75b8	May	To Whom It May Concern,
+3377bb75b8	Whom	To Whom It May Concern,
+35aa9cd8ae	Consultation	Explosive Consultation (quest title: an ordinary word, not a name)
+35b94d5e3e	Infliction	The Totem of Infliction (quest title: not a name)
+364aa100ca	Paragons	Paragons of Power: The Augur's Bracers (quest title: not a name)
+37267b3360	Paragons	Paragons of Power: The Illusionist's Wraps (quest title: not a name)
+375b73abc5	Snowy	Improves your chance to get a critical strike by ${$s1}.1%. This effect is doubled in Snowy areas.
+3948b6152b	Aids	Aids in healing and growth of verdant vegetation.
+3a663e0ce1	Grand	Grand Admiral of the Scarlet Fleet
+3b828f3818	Defenders	The Defenders weakened, but were relieved by paladins, disciples of the Silver Hand. Their leader, Davi
+3c02381f76	Abbot	High Abbot of the Scarlet Monastery
+3cdbf5d2f3	Paragons	Paragons of Power: The Illusionist's Mantle (quest title: not a name)
+3d6338bfe0	Paragons	Paragons of Power: The Demoniac's Mantle (quest title: not a name)
+3d976c2965	Noble	Draconid Noble and former General of Blackrock Spire
+3e5e1f8ece	Goblin	Goblin Sponsorship (quest title: not a name)
+3e5e1f8ece	Sponsorship	Goblin Sponsorship (quest title: not a name)
+3e9df62f70	Battlegear	Cenarion Battlegear (quest title: not a name)
+3ef89823ea	Unwelcome	Unwelcome Visitors (quest title: an ordinary word, not a name)
+3f0cde759d	Concerted	Concerted Efforts (quest title: not a name)
+3f20976e77	Day	--Day Three--
+3f20976e77	Three	--Day Three--
+3f56ea07c7	Leader	Wanted! Incinerator, Leader of the incursion in Render's Valley.
+3f8f08fefc	Guildmaster	and salaries left unpaid and unspoken for. At that time, Edwin VanCleef had been elected Guildmaster of the Stonemasons, and spoke out, demanding restitution for our works. In response, the
+3fd32b4aae	Manhunt	Manhunt (quest title: not a name)
+402a974b77	Aids	Aids in translation of elementary spell notes.
+40abb8ba70	Front	Chapter 1 - The Front Line
+40abb8ba70	Line	Chapter 1 - The Front Line
+41066648a4	King	ng with various rogue elements out here leads me to believe we will need support from the King's Army. Not only will the excavation require military support, it would seem to my novice
+41be4c43aa	Ka-Boom	Ka-Boom! (quest title: not a name)
+435bdad7ac	Ops	Covert Ops - Beta (quest title: an ordinary word, not a name)
+44de0f035f	Wavethrashing	Wavethrashing (quest title: not a name)
+45890d3e6a	Regards	Best Regards,  Ambassador Malcin (a letter sign-off)
+458f2e71a2	Lever	I. Main Power Lever
+458f2e71a2	Power	I. Main Power Lever
+45abf6fc56	Front	Chapter 1 - The Front Line
+45abf6fc56	Line	Chapter 1 - The Front Line
+45c0b4e029	High	The Bronzebeard clan, ruled by Thane Madoran Bronzebeard, held close ties to the High King and stood as the traditional defenders of Ironforge Mountain. The Wildhammer clan, r
+45c0b4e029	King	The Bronzebeard clan, ruled by Thane Madoran Bronzebeard, held close ties to the High King and stood as the traditional defenders of Ironforge Mountain. The Wildhammer clan, ruled
+4625a79b0a	Husband	Father, Husband, Paladin.
+495ac7e25d	Homeward	Homeward Bound (quest title: not a name)
+4aad9ddd46	Bump	A Bump in the Road (quest title: not a name)
+4b9dafa6d3	Fleets	Commander of the Alliance Fleets
+4f4a02b299	Unwelcome	Unwelcome Spirits (quest title: an ordinary word, not a name)
+4f711b140b	Grandmaster	Arena Grandmaster (quest title: not a name)
+4ff1e88bb0	Journal	My Journal
+508f1617c7	Paragons	Paragons of Power: The Demoniac's Wraps (quest title: not a name)
+5112d862ce	Charge	Blue Charge: lumber mill
+51393b00aa	Scramble	(quest title: an ordinary word, not a name)
+51cfab459b	Fishing Pole	The Family and the Fishing Pole (quest title: not a name)
+5295b2aa67	Larders	Restocking the Larders (quest title: not a name)
+536d95c338	Hunting	ld, allowing new owners to return to their point of purchase and replace lost pets. Happy Hunting!
+53e7f396ff	Wizard	High Wizard of the Scarlet Crusade
+53e8500ced	Encroachment	Encroachment (quest title: not a name)
+540e95440c	Paragons	Paragons of Power: The Confessor's Wraps (quest title: not a name)
+56bf3780f4	Basted	Beer Basted Boar Ribs (quest title: not a name)
+56bf3780f4	Boar Ribs	Beer Basted Boar Ribs (quest title: not a name)
+56f9259f1c	End	--The End--
+57afe43e9f	Bone-Bladed	Bone-Bladed Weapons (quest title: not a name)
+57b8ef6f15	Commanders	Chapter 3 - The Four Commanders
+57b8ef6f15	Four	Chapter 3 - The Four Commanders
+57e8067ff9	Know	How Do We Know They Love Us?
+57e8067ff9	Love	How Do We Know They Love Us?
+57e8067ff9	They	How Do We Know They Love Us?
+582c189255	Increased	Movement speed Increased by $s1% in Snowy areas.
+582c189255	Snowy	Movement speed Increased by $s1% in Snowy areas.
+58a10398c0	Increases	Gives your melee weapon attacks a benefit depending on the weapon. |CFFFFFFFFAxe/Sword:|R Your successful melee attacks have a $s3% chance to trigger an extra attack on the target. |CFFFFFFFFDagger/Fist:|R Increases your critical strike chance by $s1%. |CFFFFFFFFMace:|R Your attacks ignore $s2% of your target's armor.
+58a10398c0	Your	Gives your melee weapon attacks a benefit depending on the weapon. |CFFFFFFFFAxe/Sword:|R Your successful melee attacks have a $s3% chance to trigger an extra attack on the target. |CFFFFFFFFDagger/Fist:|R Increases your critical strike chance by $s1%. |CFFFFFFFFMace:|R Your attacks ignore $s2% of your target's armor.
+593c5783f9	Spirituality	Garments of Spirituality (quest title: not a name)
+59cb407d1d	Towers	Chapter 2 - The Twin Towers
+59cb407d1d	Twin	Chapter 2 - The Twin Towers
+5a21001c95	Assassin	The first Chief Assassin of the Scarlet Crusade
+5a21001c95	Chief	The first Chief Assassin of the Scarlet Crusade
+5a84ea63b6	Dear	My Dear Sara,
+5bd910514c	Aid	sentence-initial "Aid"
+5c809bb5c8	Unwelcome	An Unwelcome Guest (quest title: an ordinary word, not a name)
+5cfa1b4b5c	rogue	a rogue spark (a stray spark, not the class)
+5d10a53135	Cleanup	Kobold Camp Cleanup (quest title: not a name)
+5ecfe12864	Rascally	Rascally Rodents (quest title: an ordinary word, not a name)
+5f390f38fd	Cathedral	This Cathedral stands not only as a bastion of the Holy Light, but as a lasting testament to one man's n
+5f9768a4ac	Ritual	Completing the Ritual
+5ff4d8e474	Paragons	Paragons of Power: The Vindicator's Breastplate (quest title: not a name)
+60da7d13d1	Haunted	Where to find Haunted Loci
+60da7d13d1	Loci	Where to find Haunted Loci
+610a1fbcd8	Blood	Esarus thar no'Darador' - By Blood and Honor We Serve.
+610a1fbcd8	Honor	Esarus thar no'Darador' - By Blood and Honor We Serve.
+610a1fbcd8	Serve	Esarus thar no'Darador' - By Blood and Honor We Serve.
+61389337a1	Mirages	Mirages (quest title: an ordinary word, not a name)
+617304a756	Report	Report To Gryan Stoutmantle at Sentinel Hill in Westfall.
+6199c50d0b	Study	Discipline Study
+61fd623ddc	Love	Oh for the Love of the Light (an oath, not a name)
+630660d160	Colleagues	Honorable Colleagues and Truthseekers
+630660d160	Truthseekers	Honorable Colleagues and Truthseekers
+637928117f	Hunting	Happy Hunting!
+63df1028dc	Magecraft	Magecraft (quest title: not a name)
+64e41d7656	Rhymes	Mold Rhymes With... (quest title: not a name)
+6518f606dc	Rumormonger	The Rumormonger (quest title: not a name)
+6560db1177	She	May She reign supreme,
+65736a3063	Honorable	To My Honorable King:
+65736a3063	King	To My Honorable King:
+666adc1e00	Increased	Movement speed Increased by $s1%.
+67625d6df7	Ops	Covert Ops - Alpha (quest title: an ordinary word, not a name)
+6a0aeaf26d	Moon	A Moon over the Vale shines
+6a0aeaf26d	Nation	To defend our Nation and sacred grounds.
+6aedeade91	Archmage	defeated for good, some remained highly skeptical that peace would last. Khadgar, now an Archmage of some renown, convinced the Alliance high command to build the fortress of Nethergarde
+6c23d61c9c	Paragons	Paragons of Power: The Haruspex's Tunic (quest title: not a name)
+6c247e44ec	Recieve	Recieve Instructions from Randal Emerson
+6cbfce473a	Cult	State of the Cult, Volume 233
+6fd8cbcf2e	True	Here lies King Terenas Menethil II -- Last True King of Lordaeron.
+708f58cacf	Afternoon	Sunday Afternoon - 2pm to 4pm.
+708f58cacf	Sunday	Sunday Afternoon - 2pm to 4pm.
+70de9b61f7	Consultant	Mining Consultant (quest title: an ordinary word, not a name)
+713170e1fb	Warrior	Warrior of the Scarlet Crusade
+71a4d2099d	Affray	The Affray (quest title: not a name)
+71d0c0b4b3	Arguement	(quest title: an ordinary word, not a name)
+71d0c0b4b3	Nondisclosure	(quest title: an ordinary word, not a name)
+71d49aac71	Refugee	A Refugee's Quandary (quest title: not a name)
+7219b30d79	Snowbound	(quest title: an ordinary word, not a name)
+72d7ae6f6b	Rooted	You may … Rooted at a time (the root effect, not a name)
+72e67e4149	Orders	Bloodsail Orders
+7300d76e34	Spells	Improves your chance to get a Critical Strike with Spells by ${$s1}.1%.
+73f11518b9	Disciplines	The Engineering Disciplines
+75516e3bdf	Date	Entry Date: Unknown
+75516e3bdf	Human	Name: Nathanos Marris, Human Ranger Lord of Lordaeron.
+75516e3bdf	Ranger	Name: Nathanos Marris, Human Ranger Lord of Lordaeron.
+75688b1485	What	You'll learn more 'bout them later, but What you need to know now is that I'm here to help ya.
+777021ddd9	Mother	Beloved Wife and Mother
+777021ddd9	Wife	Beloved Wife and Mother
+78c0ed12fd	Melding	Melding of Influences (quest title: not a name)
+79d60ba468	Paragons	Paragons of Power: The Freethinker's Breastplate (quest title: not a name)
+7c58b5beb9	Boldness	a little payback for His Boldness?
+7c58b5beb9	His	a little payback for His Boldness?
+7c5f5ac87e	Paragons	Paragons of Power: The Predator's Belt (quest title: not a name)
+7cfcedd832	Northeast	orts shortly after their wretched victory. The Warlock constructed an arcane tower in the Northeast, and has used his powers to build a small army of Shadowhide Gnolls to serve his maliciou
+7fee92667e	Bloodrobe	Components for the Enchanted Gold Bloodrobe (quest title: not a name)
+809826c822	Zapping	Fuel for the Zapping (quest title: not a name)
+82fc276987	Glyphic	Glyphic Rune (quest title: an ordinary word, not a name)
+844143944b	Pirate	Perhaps the Pirate washed ashore will know.
+85f4f4ecac	Enemy	ormwind take action lest we seek to become fading memories to the living or slaves to the Enemy.
+8703cbbe0e	Assuming	Inflicts $s1 Fire damage in a 5 yard radius (Assuming that it gets to the target, some restrictions may apply.) The dynamite for Non-Engineers that rarely* blows up in your hand with over twice the blasting power of standard EZ-Thro.
+8703cbbe0e	Non	Inflicts $s1 Fire damage in a 5 yard radius (Assuming that it gets to the target, some restrictions may apply.) The dynamite for Non-Engineers that rarely* blows up in your hand with over twice the blasting power of standard EZ-Thro.
+87356f78c1	Which	The goblin Nazz Steamboil is really the son of a goblin merchant prince (Which prince? The price of that information is high).
+87954fb439	Commanders	Chapter 3 - The Four Commanders
+87954fb439	Four	Chapter 3 - The Four Commanders
+87f5d54e22	Ahoy	Pirate Hats Ahoy! (quest title: not a name)
+889d9a1094	Probable	Mission: Possible But Not Probable (quest title: not a name)
+8a55a964c1	Alpha	Plan Alpha- the lumber mill:
+8ab5734698	Moss-twined	The Moss-twined Heart (quest title: not a name)
+8b16de8c91	Noble	Dear Noble Sir,
+8b16de8c91	Sir	Dear Noble Sir,
+8c06c05c9d	Cheese	ng dead and possibly the best chili I've ever had, got one chapter. Stormwind, capital of Cheese, the other. Diary, have you ever put cheese from Stormwind on Undercity chili? HELLO? Tha
+8cc6871412	Silent	Remain Silent! Don't look around at anyone! Someone could be watching you this very moment.
+8d244fb9d9	Increased	Movement speed Increased by $s1% in The Barrens, Thousand Needles, Razorfen Kraul, and Razorfen Downs.
+8d25e1c95d	Mountainous	Increases your chance to Block attacks with a shield by ${$s1/5}.1%. This effect is doubled in Mountainous areas.
+8d78f15ec3	Registry	Hillsbrad Town Registry
+8d78f15ec3	Town	Hillsbrad Town Registry
+8db602c0b4	Easternmost	t is my duty to report the recent Military activity that has taken place in His Majesty's Easternmost colony.
+8db602c0b4	Magistrate	As Magistrate of the township of Lakeshire it is my duty to report the recent Military activity that ha
+8db602c0b4	Majesty	akeshire it is my duty to report the recent Military activity that has taken place in His Majesty's Easternmost colony.
+8db602c0b4	Military	As Magistrate of the township of Lakeshire it is my duty to report the recent Military activity that has taken place in His Majesty's Easternmost colony.
+8dcbc1114f	Increases	Gives your melee weapon attacks a benefit depending on the weapon. |CFFFFFFFFAxe/Polearm:|R Increases your critical strike chance by $s1%. |CFFFFFFFFMace/Staff:|R Your attacks ignore $s2% of your target's armor. |CFFFFFFFFSword:|R Your successful melee attacks have a $s3% chance to trigger an extra attack on the target.
+8dcbc1114f	Your	Gives your melee weapon attacks a benefit depending on the weapon. |CFFFFFFFFAxe/Polearm:|R Increases your critical strike chance by $s1%. |CFFFFFFFFMace/Staff:|R Your attacks ignore $s2% of your target's armor. |CFFFFFFFFSword:|R Your successful melee attacks have a $s3% chance to trigger an extra attack on the target.
+8efbe8e1cb	Corrupter	The Corrupter (quest title: an ordinary word, not a name)
+906665cf49	Headhunting	Headhunting (quest title: not a name)
+923884f7c4	His	aeron. He gave them to Kel'Thuzad, and ordered the wizard to spread them across the land. His Cult followers were to protect the artifacts at all costs.
+925ac13145	Vendetta	Falrin's Vendetta (quest title: not a name)
+92dc475999	Salutations	Greetings and Salutations, Adventurers!
+93eb4d02be	Emperor	traveled to Zul'Gurub, to the heart of the empire, to show his newfound abilities to the Emperor. He easily gained a court audience after demonstrating his powers in the center of the Im
+93eb4d02be	Imperial	or. He easily gained a court audience after demonstrating his powers in the center of the Imperial capital. His powers easily amazed the Gurubashi Emperor, who immediately gave him a place
+941a320dad	Harrassment	Hippogryph Harrassment (quest title: an ordinary word, not a name)
+9420beb348	Cult	State of the Cult, Volume 127
+948b62aa3a	North	Now from this here barrel, face ye North. Straight as the crow flies, keep ye walkin' till you see the empty jug next to the lone
+95026363e4	God	know that your God smiles down upon you, mortal.
+968dfd4f73	West	just West of the bluff
+979fd73caf	Assassin	The Second Chief Assassin of the Scarlet Crusade
+979fd73caf	Chief	The Second Chief Assassin of the Scarlet Crusade
+979fd73caf	Second	The Second Chief Assassin of the Scarlet Crusade
+97d1256c70	Eradication	Deviate Eradication (quest title: not a name)
+9880306162	Leader	Wanted! Gath'Ilzogg, Leader of the Blackrock attacks on Stonewatch.
+990c852afc	Anxiety	Separation Anxiety (quest title: an ordinary word, not a name)
+9bf82bcce1	Area	A Report on the State of the Frostmane Trolls in the General Area of Dun Morogh
+9bf82bcce1	General	A Report on the State of the Frostmane Trolls in the General Area of Dun Morogh
+9cccf1f5d8	Conscription	<H1>Horde Conscription Registration</H1>
+9cccf1f5d8	Registration	<H1>Horde Conscription Registration</H1>
+9da0579526	Aid	Aid the Sentinels in protecting the lands.
+9ec01b259e	Excavation	The Excavation of Bael Modan
+9ed275498b	Paragons	Paragons of Power: The Freethinker's Belt (quest title: not a name)
+9efd3da895	Concern	To Whom It May Concern:
+9efd3da895	May	To Whom It May Concern:
+9efd3da895	Whom	To Whom It May Concern:
+a0d16ead7c	Dearest	My Dearest Tarrel -
+a0ecd82149	Increase	Chance on hit to Increase your Strength by $1223342s1 and movement speed by $1223342s2% for $1223342d.
+a22f9fd5ea	Paragons	Paragons of Power: The Haruspex's Bracers (quest title: not a name)
+a26822bc9b	Forest	Movement speed Increased by $s1% in Forest and Grassland areas.
+a26822bc9b	Grassland	Movement speed Increased by $s1% in Forest and Grassland areas.
+a26822bc9b	Increased	Movement speed Increased by $s1% in Forest and Grassland areas.
+a28b603f4e	Omnipotence	Sara, my love for you is deathless, it seems to bind me in mighty cables that nothing but Omnipotence could break and my love of Kingdom comes over me like a strong wind and bears me irresist
+a361495a96	For	Official Orders For The Kul Tiras Fleet
+a361495a96	Orders	Official Orders For The Kul Tiras Fleet
+a36a70734a	Pictures	<IMG src="Interface\Pictures\11482_crystals_mini_east" align="left"/>
+a46e802b35	Avast	Avast Ye, Scallywag (quest title: not a name)
+a4f7595fc7	Kills	Instantly Kills the target. I hope you feel good about yourself now.....
+a70309ea45	Gem	The Gem
+a70309ea45	Northwestern	The first part of the rod, a glowing gem, was hidden in a shrine in Northwestern Ashenvale. I believe now this shrine is the ruins at the center of Lake Falathim. The Sen
+a8134a87b3	Encroachment	Aggressive Encroachment (quest title: an ordinary word, not a name)
+a8557f4e94	Day	Modern Day Observation
+a8557f4e94	Observation	Modern Day Observation
+a8a34eec2d	North	The Sea awaits us. We need your supplies from the North. Strip everything: every railroad pike, every waterbucket. We need metal. A shipment is d
+a8a34eec2d	Sea	The Sea awaits us. We need your supplies from the North. Strip everything: every railroad pike, e
+a8fc6a6ed0	Tithe	Blood Tithe (quest title: an ordinary word, not a name)
+a97fcc78cb	Day	--Day Two--
+a97fcc78cb	Two	--Day Two--
+a980b06f5b	Shadoweaver	Shadoweaver (quest title: not a name)
+a9ba516f81	Cometh	The Blightcaller Cometh (quest title: an ordinary word, not a name)
+aa562d095a	Sleeper	The Sleeper Has Awakened (quest title: an ordinary word, not a name)
+ab61fa9d6b	Takeover	Hostile Takeover (quest title: an ordinary word, not a name)
+aea9b7a4c0	Prodigal	The Prodigal Lich Returns (quest title: not a name)
+aedbb4a0d6	Unwelcome	Unwelcome Guests (quest title: an ordinary word, not a name)
+af4ac45764	Blockade	(quest title: an ordinary word, not a name)
+b03aaf3504	Paragons	Paragons of Power: The Haruspex's Belt (quest title: not a name)
+b08e78dc9b	III	Enchanted Thorium Platemail: Volume III (quest title: not a name)
+b105c059c5	God	the faceless blood God, Hakkar
+b1af00f0c4	Khans	Throughout the caverns of Maraudon roam the spirits of our first Khans. Our Mother and Father's first children, and our greatest leaders--they are Gelk, Kolk, M
+b1d305e0be	Leader	Mission Leader
+b1d68b2ab4	Matron	As for Leagrem, his aunt became the Orphanage Matron in Stormwind, an admirable position to hold.
+b1d68b2ab4	Orphanage	As for Leagrem, his aunt became the Orphanage Matron in Stormwind, an admirable position to hold.
+b2150b2345	Unrequited	Unrequited Love (quest title: an ordinary word, not a name)
+b238907e39	Cookery	Krazek's Cookery (quest title: an ordinary word, not a name)
+b49d9e7304	Instigator	The Instigator's Enchantment (quest title: not a name)
+b5265fe391	Bolts	Repeater Bolts (50)
+b57951a707	With	Excellent, {name} With one more healthy guard out there to help the town
+b5a1b5e86d	Graverobbers	Graverobbers (quest title: not a name)
+b60386665b	Windwatcher	The Windwatcher (quest title: not a name)
+b84a70d7a3	Legging	(quest title: an ordinary word, not a name)
+bc702ceaa0	Engineer	-- Nixx Sprocketspring, Master Goblin Engineer of Gadgetzan
+bc702ceaa0	Master	-- Nixx Sprocketspring, Master Goblin Engineer of Gadgetzan
+bc702ceaa0	Quotes	More Quotes!
+bca7d0f080	Dig Rat	Dig Rat Stew (quest title: not a name)
+bdcb650817	Aid	Aid me, and both our ends might be satisfied.
+be7697173a	Diver	Holy Diver (quest title: an ordinary word, not a name)
+be9d4fa6f6	En-Ay-Es-Tee-Why	En-Ay-Es-Tee-Why (quest title: not a name)
+bef51e4711	Advert	Wine Shop Advert (quest title: not a name)
+bf6e1df85d	Mission	Deathstalker Mission Report
+bf6e1df85d	Report	Deathstalker Mission Report
+bf91965a67	Borrower	The Borrower (quest title: an ordinary word, not a name)
+bfa1db6170	Loyal	Your Loyal Subject,
+bfa1db6170	Subject	Your Loyal Subject,
+bffde32a19	Combinations	Eastern Crystal Combinations
+c2e1895b30	Tramping	Tramping Paws (quest title: an ordinary word, not a name)
+c34a099a32	Subterfugin	Simple Subterfugin' (quest title: not a name)
+c39768280c	High	Tyrande, who had become the High Priestess of Elune, asked her love, Malfurion, not to leave her for Ysera's Emerald Dream
+c39768280c	Priestess	Tyrande, who had become the High Priestess of Elune, asked her love, Malfurion, not to leave her for Ysera's Emerald Dream. But Malf
+c492652c06	Manaweave	Manaweave Robe (quest title: not a name)
+c4f385d0a0	Area	A Report on the State of the Frostmane Trolls in the General Area of Coldridge Valley
+c4f385d0a0	General	A Report on the State of the Frostmane Trolls in the General Area of Coldridge Valley
+c5d84128ad	Fall	Tauren Druid and First to Fall
+c5d84128ad	First	Tauren Druid and First to Fall
+c6cccc8964	Islander	The Islander (quest title: not a name)
+c7539c95e6	West	Just face West from the bottle and walk down to the shore.
+c78c40c6fa	Annals	The Annals of Darrowshire
+c7db2f1fe9	Gauge	III. Flow Gauge
+c7db2f1fe9	Gauges	II. Fuel Gauges
+c995ac52cb	Decisions	Permanent Decisions
+c9df141e03	Witchery	Troll Witchery (quest title: an ordinary word, not a name)
+ccca4f3743	Shhh	Shhh! We're Hunting Kobolds (quest title: not a name)
+cd35e5f729	Admiral	The Grand Admiral forced Jaina to make a terrible decision: support him in battle against the orcs and betr
+cd35e5f729	Grand	The Grand Admiral forced Jaina to make a terrible decision: support him in battle against the orcs
+cd95c960fe	Cooldown	Damaging spell casts on enemies Condemns them for $1231695d. Whenever they deal damage, their target is healed for $s1% of their maximum health. Lasts $1231695d or up to $1231695u hits. ($proccooldown Secs Cooldown)
+cd95c960fe	Secs	Damaging spell casts on enemies Condemns them for $1231695d. Whenever they deal damage, their target is healed for $s1% of their maximum health. Lasts $1231695d or up to $1231695u hits. ($proccooldown Secs Cooldown)
+ced3129385	Spirituality	In Favor of Spirituality (quest title: not a name)
+d0dc7bf8de	Schedule	Collection Schedule:
+d0e25230fc	Aid	Aid me by gathering the intact Atal'ai Tablets.
+d34d657278	Paragons	Paragons of Power: The Madcap's Tunic (quest title: not a name)
+d423e365ef	Knot	Astral Knot Garment (quest title: not a name)
+d5e985408f	Elven	Night Elven Priestess of the Moon
+d5e985408f	Night	Night Elven Priestess of the Moon
+d607718d76	Espionage	Moonbrook Espionage (quest title: an ordinary word, not a name)
+d7957bbec8	Repelling	Repelling Invaders (quest title: an ordinary word, not a name)
+d8ed9e90f1	Paragons	Paragons of Power: The Vindicator's Belt (quest title: not a name)
+d942bb738a	Kingly	Kingly Shakedown (quest title: not a name)
+d942bb738a	Shakedown	Kingly Shakedown (quest title: not a name)
+d9e24f05d5	Clerist	High Clerist of Stormwind
+d9e24f05d5	Refugees	Patron of the Refugees who fled to Lordaeron after the First War.
+da0b575127	They	After the Scythe was freed, They came at us from everywhere, clawing from hidden holes at our feet and dropping upon us fr
+da5f364a80	Increases	While applied to the target weapon restores 12 mana per 5 sec and Increases Spell Hit by 2% for $t1 minutes. This effect only applies within Blackfathom Deeps.
+dbca40f0ba	Whuut	Whuut's the Rush (quest title: not a name)
+dbfb58280e	Assuming	Inflicts $s1 Fire damage in a 5 yard radius (Assuming that it gets to the target, some restrictions may apply.)
+dcda655313	Paragons	Paragons of Power: The Predator's Mantle (quest title: not a name)
+dd2bf35f85	North	Turn left at the T intersection and continue North.
+de27fd77be	Paragons	Paragons of Power: The Augur's Belt (quest title: not a name)
+de2be37667	Paragons	Paragons of Power: The Freethinker's Armguards (quest title: not a name)
+de7fa3a867	Kinship	Warrior Kinship (quest title: not a name)
+de7fa3a867	Warrior	Warrior Kinship (quest title: not a name)
+defb403061	Paragons	Paragons of Power: The Illusionist's Robes (quest title: not a name)
+e016a26478	God	the faceless blood God
+e0ed82173b	Paragons	Paragons of Power: The Madcap's Mantle (quest title: not a name)
+e121e2550e	Archbishop	The Archbishop's Mercy (quest title: an ordinary word, not a name)
+e16773a5d5	Cushion	(quest title: an ordinary word, not a name)
+e1de8387e9	Wrongly	(quest title: an ordinary word, not a name)
+e325b9fa8a	Combinations	Western Crystal Combinations
+e3393badf6	Water	Improves your chance to get a critical strike by ${$s1/14}.1%. This effect is doubled while in or on Water.
+e4195b0d8c	Moon	A Moon over the Vale shines.
+e423945fd5	Paladins	Days later, the company of Scourge who possessed the head were defeated by Silver Hand Paladins. Horgus' head was cast into Blackwood Lake.
+e4f3fc325f	Arrows	1000 Arrows
+e4f3fc325f	Axes	15 Axes
+e4f3fc325f	Dagggers	9 Dagggers
+e4f3fc325f	Long	12 Long swords
+e4f3fc325f	Round	8 Round Shields
+e4f3fc325f	Shields	8 Round Shields
+e63b683179	Paragons	Paragons of Power: The Confessor's Bindings (quest title: not a name)
+e7514a513c	Rolls	Keeper of the Rolls
+e7d8245fc2	Brotherly	Brotherly Love (quest title: an ordinary word, not a name)
+e86145e049	Bride	Bride of the Embalmer (quest title: not a name)
+e86145e049	Embalmer	Bride of the Embalmer (quest title: not a name)
+e9495a9883	Ex-B	Stewvul, Ex-B.F.F. (quest title: not a name)
+e9be8e282b	Redo	Nogg's Ring Redo (quest title: not a name)
+e9ee443023	Combinations	Northern Crystal Combinations
+eaa7c08990	Ranger	ded Quel'Thalas and laid siege to the elves' crumbling defenses. Sylvanas Windrunner, the Ranger-General of Silvermoon, put up a valiant fight, but Arthas eventually eradicated the high
+eae654246d	Shifty	A Shifty Merchant (quest title: not a name)
+eb51823c96	Recombobulation	Operation Recombobulation (quest title: not a name)
+eb760caa89	Disdain	In Disdain,  Omarion (a letter sign-off)
+ed07848416	Prescription	The Only Prescription (quest title: not a name)
+ed4870959c	Increases	Heal self for $s2 and Increases Strength by $s1 for $d.
+ee0bd7f05c	Beta	Plan Beta- Windshear Mine:
+ee44180f3d	High	ht elves fought the Legion in their own secretive ways. Tyrande Whisperwind, the immortal High Priestess of the night elf Sentinels, battled desperately to keep the demons and undead f
+ee44180f3d	Priestess	ves fought the Legion in their own secretive ways. Tyrande Whisperwind, the immortal High Priestess of the night elf Sentinels, battled desperately to keep the demons and undead from overru
+f176d1292b	Enemy	lease, my Lord, help us keep the final bastion between Man and wretched Orc thriving. The Enemy must be kept out of the Kingdom of Stormwind.
+f176d1292b	Man	uilding supplies run low as well. Please, my Lord, help us keep the final bastion between Man and wretched Orc thriving. The Enemy must be kept out of the Kingdom of Stormwind.
+f2e725935b	Disposal	The Disposal of the Beast:
+f3eadae259	Aid	Aid me! Face Urok and steal back my magic! It will not be easy, for Urok stays in the shadows
+f778a1c0af	Curls	TC = "Toe Curls"
+f778a1c0af	Grams	IBG = "Itty-Bitty Grams"
+f778a1c0af	Rating	Combobule Rating: "Super stout" or higher
+f778a1c0af	Strength	Shear Strength: 98 or higher
+f778a1c0af	Width	Width: 12 WW
+f863db14c8	Paragons	Paragons of Power: The Demoniac's Robes (quest title: not a name)
+f903562c02	Equine	Ancient Equine Spirit (quest title: not a name)
+f9fd95ddcf	Taboo	Fire Taboo (quest title: an ordinary word, not a name)
+fa680a05f0	Advisor	Militia Commander of Stromgarde.Tactical Advisor to General Turalyon, Force Commander of the Alliance Expedition that marched into the orc
+fa680a05f0	Commander	Militia Commander of Stromgarde.Tactical Advisor to General Turalyon, Force Commander of the Alliance Exped
+fa680a05f0	Force	Militia Commander of Stromgarde.Tactical Advisor to General Turalyon, Force Commander of the Alliance Expedition that marched into the orc homeworld of Draenor. Pres
+fa9cefe758	Increased	Movement speed Increased by $s1% in Elwynn Forest, Westfall, Redridge Mountains, and the Deadmines.
+fc6cabc43b	Increased	Movement speed Increased by $s1% in Tirisfal Glades, Silverpine Forest, and Shadowfang Keep.
+fd0cc63c99	Mountainous	In a Mountainous area, chance to Block attacks with a shield increased by an additional ${$s1/5}.1%.
+fee82a33df	Prodigal	The Prodigal Lich (quest title: not a name)
+# NPC speech: capitalised ordinary words, titles used alone, exclamations
+28afe4876c	Way	Make Way! Make Way!
+2936e2597e	Mom	Awww Mom! It's hardly dark yet! Can we play for a bit longer please?
+2bee2e3caf	Wretch	Stay down, Wretch!
+366207c702	Nature	All of Nature's might is at my disposal, puny mortals. Let us see which of my many forms it will be 
+3cde6c4ddf	Wasn't	Down goes Frazier! Down goes Frazier! Down goes...huh? That Wasn't Frazier?
+58c5dde92a	Nobody	It's just so horrible. Our three top guns were shot down over Alliance territory during an air assau
+3f1723567d	Citizens	Greetings Citizens! Soon perhaps the tide will turn in our favor and the plague will end.
+405040b0da	Enabled	Major Domo Enabled.
+4611564be7	Magistrate	Protect the Magistrate at all costs. They could come from any direction!
+476af8c4b5	Papa	Can I go collect more rocks for my necklace, Papa?
+4b300e4499	Aid	Aid me my brood!
+4cd8286800	Throne	Come to the aid of the Throne!
+4d16eb5070	Magistrate	Guards to your posts! They must be after the Magistrate again. He must be protected! They could come
+4eb869a4cb	Lord	Lord Mayor! Our scouts report strange activity to the west.
+4eb869a4cb	Mayor	Lord Mayor! Our scouts report strange activity to the west.
+4fce2898e3	Warlord	You heard the Warlord, maggots! MARCH!
+5388132562	People	All hail, {name}! Defender of The People!
+8a3be8e34b	All	|cffff0000All four towers are now in control of the Horde!|r
+5d148aaa21	Hail	All Hail {name}, slayer of Hakkar, and hero of Azeroth!
+5da2aaa561	Holy	Holy Krakle! The temperature is 428,000 degrees Kraklenheit!
+5f2212f497	Magistrate	The Magistrate is too well protected. Retreat!
+60010ac12b	Stone	How interesting... the Stone possesses great magical potential, but in a purely raw form...
+6422990d71	Rly	Oh Rly? <PH>
+7fdfc75ee6	It	Ahh... food It's 'bout time.
+8e2182bacb	Daddy	Let's go play! No, tell me a story, Daddy! No... let's go pick flowers! And play tea time! I found m
+93b1972baa	Fishing	Let the Fishing Tournament BEGIN!
+93b1972baa	Tournament	Let the Fishing Tournament BEGIN!
+9aacb88697	Rly	Ya Rly! <PH>
+9da4aa5030	East	Where are those reinforcements from Stormwind? Heavy Blackrock activity has been reported in the Eas
+a11e30da2a	Ma'am	Yes, Ma'am!
+a301a9bfb0	Engineer	Another Engineer! Hey, this is a great chance for me to show off some new gadgets I've been building
+a53afb061e	Bloodletting	Let the Bloodletting Begin!
+a53afb061e	Begin	Let the Bloodletting Begin!
+a7be1464a8	Fox	That's right, we're stupid. Stupid like a Fox!
+aaea8bacc7	Chain	Question 2, Chain 1?
+b2dfbc391e	Rat	Rat-kabobs! Get your tasty Rat-kabobs here! Get them while they last!
+b421a96b43	Magistrate	Haha! Alterac and Hillsbrad shall come under our rightful rule once again now that the Magistrate ha
+b4acc52743	Drag	The Drag race will start in 1 minute!
+b5f06963db	Bone	and Bone.
+b6158f832f	Altar	Channel your energies into the Altar!
+b7520c0374	Order	Your death will not have been in vain, Taelan. A new Order is born on this day... an Order which wil
+b7b1d4ae20	Servitor	Right away, Servitor.
+b9dca4c04a	Lord	Yes My Lord.
+ba71fe0a2a	Bacon	Where's My Bacon?
+bb5b66e082	Overseer	%s sees the Overseer die and runs in fear!
+bd4a8c1d1c	Takes	%s Takes a Deep Beath
+bd4a8c1d1c	Deep	%s Takes a Deep Beath
+bd4a8c1d1c	Beath	%s Takes a Deep Beath
+bf92474e52	Leatherworker	Hey Knot - I'm a Leatherworker. Think you could teach me how to make the ogre suit?
+bfd9b08f0f	Mom	Wheeee! Thanks Mom!
+c3b06fdacf	This	[PH] This is a placeholder action until i can cancel channeling my spell.
+c5f4bf6adb	God	Minions of Hakkar, hear your God. The sanctity of this temple has been compromised. Invaders encroac
+c79de958b2	Scroll	There we are, {name}. The Scroll is fixed! Hooray!
+cbbfb3488d	Magistrate	The assassins are over here! Quickly, before they reach the Magistrate!
+ce468fad24	Aid	Aid me! {name} draws near!
+cfb61ffc8b	Bring	Guard, Bring forth the prisoner. Place him in the Circle of Binding.
+d2a58e9fb6	Tailor	Hey Knot - I'm a Tailor. Think you could teach me how to make the ogre suit?
+d3ba96cec1	Gods	Where are your Gods now? WHERE, SERVITOR?
+d72ee89a04	Chain	Question 1, Chain 1?
+d75d730365	Warden	Kill the guards, take the Warden alive!
+d7ff280c53	Warden	Death to the Warden!
+de9f262bad	Winner	Blue team, Winner!
+e4cac66fe2	Praise	Death and Praise for the Lich King!
+e51e9ac879	Muting	If you have been muted, or have questions about the Muting/UnMuting process, please visit...zzzzttt!
+e51e9ac879	UnMuting	If you have been muted, or have questions about the Muting/UnMuting process, please visit...zzzzttt!
+ea8b6f1f7d	Tailor	Welcome to my shop, it's good to see another Tailor here in Stormwind. Are you here for a lesson per
+ec0adc78b5	Leatherworkers	I don't get too many Leatherworkers in here looking for training, but I guess I could teach you some
+ec509ed11c	Forging	Tell me more about Forging Weapons.
+ec509ed11c	Weapons	Tell me more about Forging Weapons.
+efa7482dd7	Warden	More of the Warden's errand boys!
+f112d04bfd	Holy	Holy Cow! That is Mushgog down there in The Maul.
+f112d04bfd	Cow	Holy Cow! That is Mushgog down there in The Maul.
+f2682c8eb0	Northeast	Still no sign of the 2nd Battalion from Stormwind. Reports are coming in of Shadowhide movement in t
+f681118120	Done	Well Done!
+f9867c6f18	Mommy	I'm telling Mommy!
+fd751c2bf9	Magistrate	The deed is done! The Magistrate is dead-- to the shadows, my brethren.
+ae682c046b	Water	Spirits of Water, I give you praise, and I beg of you a favor. You have heard {name}'s pleas, and I 
+9fbc7b0390	Master	We have a winner! {name} is the Master Angler!
+9fbc7b0390	Angler	We have a winner! {name} is the Master Angler!
+a5e1058c3d	High	The High Priestess will feast on your bones!
+a5e1058c3d	Priestess	The High Priestess will feast on your bones!
+b64cafa436	Dwarves	The Dark Iron Dwarves shall reclaim their rightful lands!
+e4ea055c69	Lands	The night elf army was pushed back through Un'Goro, to the borders of the Tanaris desert. Something 
+e4ea055c69	God	The night elf army was pushed back through Un'Goro, to the borders of the Tanaris desert. Something 
+d31fdf6cf9	Champion	Hail {name}! New Champion of The Affray!
+b0e2fb5c34	Champion	{name}, Champion of the Bronze Dragonflight, has rung the Scarab Gong. The ancient gates of Ahn'Qira
+99fd246e78	Supreme	You know me to be the Supreme Commander of the Might of Kalimdor.
+99fd246e78	Commander	You know me to be the Supreme Commander of the Might of Kalimdor.
+feecef0a9c	Twenty	Value Be Twenty Silver Coins...
+feecef0a9c	Silver	Value Be Twenty Silver Coins...
+feecef0a9c	Coins	Value Be Twenty Silver Coins...
+2f66ba8051	Click	Right Click to summon and dismiss Spawn of Grubthor.
+2c5a8af0ca	Underrated	An Underrated Talent
+7cc383faa1	Healing	Permanently adds +8 to your Healing and Damage from spells to a leg or head slot item.
+7cc383faa1	Damage	Permanently adds +8 to your Healing and Damage from spells to a leg or head slot item.
+be061ac6cc	The	Grom's full name - Grommash - means "The Giant's Heart"; it took that and more to stand alone
+be061ac6cc	Giant's	Grom's full name - Grommash - means "The Giant's Heart"; it took that and more to stand alone
+be061ac6cc	Heart	Grom's full name - Grommash - means "The Giant's Heart"; it took that and more to stand alone
+be061ac6cc	Giant	Grom's full name - Grommash - means "The Giant's Heart"; it took that and more to stand alone
+c21c7dc28e	rogue	is road daily. We cannot afford to have a rogue band of heathens terrorizing peopl
+eb0f77c30b	Wolves	Deals $s2 times as much damage to Wolves and Worgen. (real animals are Japanese)
+2bf3bbacc0	Blood	The Blood of Drakkisath Flows Within...
+2bf3bbacc0	Flows	The Blood of Drakkisath Flows Within...
+2bf3bbacc0	Within	The Blood of Drakkisath Flows Within...
+3fe36c246f	Left	The Left Half of Thunderaan's Eternal Prison
+3fe36c246f	Half	The Left Half of Thunderaan's Eternal Prison
+7f488c1fc5	Right	The Right Half of Thunderaan's Eternal Prison
+7f488c1fc5	Half	The Right Half of Thunderaan's Eternal Prison
+8b666a760a	Ten	Value Be Ten Silver Coins...
+8b666a760a	Silver	Value Be Ten Silver Coins...
+8b666a760a	Coins	Value Be Ten Silver Coins...
+01dd0bc320	Priest	another Priest's Renew (a class word: katakana in prose)
+aec4ca00ba	Rogue	another Rogue's Deadly Poison (a class word: katakana in prose)
+6b7733fd8a	Winner	Blue is the Winner! Congratulations Blue! (a common word, not a name)
+# NPC speech and book pages
+328373bce1	Manor	The Manor has been abuzz with talk of your arrival (the Manor on its own, like "the Inn": 館)
+9f4b42691a	Battle	The Battle for Arathi Basin has begun! (common noun: Arathi Basinの戦い)
+b5af214d71	Monastery	overwhelmed with work at the Monastery (on its own, like "the Temple": 修道院)
+010bacffd9	dwarf	a mighty empire which would dwarf that of their Kaldorei cousins (verb "surpass", not the race: しのぐ)
+# Exploration / event objective text (area)
+88ce388c41	Diagnosis	Diagnosis Complete (title-case status line); "diagnosis" is an ordinary noun (診断), not a name
+dfd10e14a1	Overlook	Overlook Hearthglen from a high vantage point: "Overlook" is the verb (look out over), not the place Overlook Cliff
+90c6ecf997	Makers	For the Makers! (the corpus's 創造主, as in the 20 shipped Uldaman / Titan lines)
+d46a9242be	Makers	Who dares the wrath of the Makers? (the corpus's 創造主)
+2b07f86afc	rogue	various rogue elements out here: "renegade", not the class (ならず者), not ローグ
+b7de9bc46d	rogue	Only one rogue clan still operated in secret: "renegade", not the class (無法者)

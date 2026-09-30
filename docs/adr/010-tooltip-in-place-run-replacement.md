@@ -1,0 +1,35 @@
+# ADR-010: Tooltips replace the description run in place, blank its companions, and fill value placeholders from the live line
+
+- **Status:** Accepted. Implemented in `UI/Tooltip.lua`, `Core/Align.lua` and the `follow` rule in `UI/Render.lua`. The blank-companion rule is provisional until in-game checklist 4 decides it (see Consequences).
+- **Date:** 2026-09-13
+
+## Context
+The corpus holds one Japanese block per item / spell, translated from the rendered tooltip's description (ADR-007), with the translator's own line breaks and, for 293 spells, `$N1…` value placeholders. A tooltip renders that description as one or several left-aligned lines (`Use:` + `Equip:` + a flavour quote for items; one line for spells, with rank / cost / range lines above and sometimes a `Next rank:` block below). The predecessor appended the Japanese under the English, the "show both" shape that [principle 3](../architecture/principles.md#3-japanese-by-default-english-one-key-away) forbids. Replacing in place needs a rule for which lines the block owns, and the value placeholders need their numbers from somewhere: no English is stored, so the only source is the line being replaced.
+
+The hook points are XML-bound frame scripts that fire after the client has written every line [verified for `GameTooltip` (both scripts), `ShoppingTooltip1/2` and `ItemRefTooltip` (`OnTooltipSetItem`): classic_era `Blizzard_GameTooltip/Classic/GameTooltip.xml:5–24`, `Blizzard_UIPanels_Game/Classic/ItemRef.xml:58`; likely for the remaining frame/script pairs, where `HookScript` installs the handler as the predecessor did on 1.15.5], so `HookScript` is the ADR-009 frame-script rule applied to tooltips. `TooltipDataProcessor` exists in `SharedXMLGame` but Classic's `GameTooltip.lua` does not use it, so there is no forward-compat branch. The tooltip lines are only reachable as the `<FrameName>TextLeft<i>` FontStrings, the documented exception to "English from the API" (ADR-002 / [Addon Modules](../architecture/addon-modules.md)).
+
+## Decision
+- **Description run.** Items: the maximal contiguous run of lines, scanning from line 2, that start with a trigger string (`ITEM_SPELL_TRIGGER_ONUSE` / `_ONEQUIP` / `_ONPROC`, read from the client's globals with the enUS fallbacks `Use:` / `Equip:` / `Chance on hit:` [likely; checklist 4 confirms]) or form a flavour quote (`"…"`). Spells: the line whose text equals `GetSpellDescription(id)` [likely on Classic Era; checklist 4], matched by content so a line another addon appended or an aura's remaining-time line is never taken; without the API, the last non-empty non-hint line, or that rule applied above `Next rank:`. Blank lines inside an item run belong to it. Line 1 (the name) is never a candidate. No run → the tooltip is untouched.
+- **One primary, blank companions.** The block replaces the run's first line (record `desc`); the run's other lines are companion records (`desc.<i>`, `ctx.follow = "desc"`) that show one space (never `""`: a client-cleared line reads `""`, so the addon's own blank stays distinguishable) in their original font while the primary is applied and their own English otherwise. The modifier, area and master switches restore and re-apply all of them together through `Render.refresh`; `frame:Show()` refits once per run, guarded by an in-refit flag so a script re-fired by `Show()` does nothing. A new hover on the same frame forgets the previous run first. Release on the frame's `OnHide`.
+- **One surface per frame.** `GameTooltip`, `ItemRefTooltip`, `ShoppingTooltip1/2`, `ItemRefShoppingTooltip1/2` are six independent surfaces (`tooltip.<FrameName>`), so a comparison tooltip closing does not touch the main one; a frame the client does not have is a `/wfj debug` unresolved line.
+- **Live values.** `$N<k>` is filled with the k-th number token of the run's English (reading order; `[%d%.,]+` with commas stripped and edge dots trimmed, so `1,200` → `1200`) before the gate runs; a placeholder with no value fails closed. The Translator applies the filled text, not the stored one.
+- **Gate on exactly the replaced text.** Every name and number of the filled block must occur in the run's lines (ADR-007; the substituted values count as evidence for themselves); any miss leaves the tooltip untouched. The gate is `Core/Align.lua`, the Lua twin of `pipeline/wfj/core/align.py`, proven by the shared `vectors/align_vectors.{jsonl,lua}`.
+
+## Consequences
+- No English is stored; a hover that fails the gate looks exactly like a hover without the addon. Name, binding, slot / type, stat, durability and sell-price lines are never candidates, so they stay English by construction.
+- Blank companions may leave vertical gaps in a multi-line run (`Use:` + `Equip:` + quote). In-game checklist 4 decides whether per-line keys split at import replace this rule. That change is data + generator work; the surface, the companion mechanism and the gate stay.
+- Mis-numbered placeholders in the corpus show correct numbers in the wrong slots; every number is present, so the gate cannot see it. Flagged for the audit pass (ADR-007).
+- Aura / buff tooltips are out of scope: the corpus's short buff text is not shipped, and the live aura line is not the description. Unit tooltips and the structural lines (binding, stats) are left to the interface-text surfaces ([ADR-015](015-ui-text-surfaces.md)). Numbers are shown verbatim, with no `k` formatting.
+- Coupling to six frame names, three global strings and the `TextLeft<i>` widget naming, all through `Compat`. Forever parity is checklist 11.
+
+## Alternatives considered
+- **Append below the English** (the predecessor): forbidden "show both".
+- **Replace the last line only**: wrong for `Use:` + `Equip:` items: the block covers both and the second would stay English beside its own translation.
+- **Per-line keys at import**: the right shape long-term, but the corpus does not split cleanly without the English; kept as the fallback that checklist 4 can promote.
+- **`TooltipDataProcessor.AddTooltipPostCall`**: the retail path; Classic's `GameTooltip.lua` does not run it, so a branch for it would be dead code on the target client.
+- **Aura tooltips through the same run rule**: the corpus text for buffs is the short description, not the rendered aura line; the gate would fail every hover. Left out rather than shipped as a guaranteed miss.
+
+## Related
+- [ADR-002: Live English only](002-live-english-only.md) · [ADR-007: Unaligned ships with a runtime gate](007-unaligned-ships-with-runtime-gate.md) · [ADR-009: Surfaces post-hook the writer](009-surfaces-post-hook-the-writer.md)
+- [Addon Modules](../architecture/addon-modules.md): Surfaces table, `Core/Align.lua`, the render mechanism · [Pipeline](../systems/pipeline.md): the align rule and vectors · [Testing](../testing/strategy.md): checklist 4
+- Implementation: `addon/WoWForeverJapanese/UI/Tooltip.lua`, `addon/WoWForeverJapanese/Core/Align.lua`, `addon/WoWForeverJapanese/UI/Render.lua` (`follow`), `addon/WoWForeverJapanese/Core/Translator.lua` (`align → ok[, text]`)

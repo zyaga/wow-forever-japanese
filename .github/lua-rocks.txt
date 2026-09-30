@@ -1,0 +1,19 @@
+# Lua test toolchain for CI (busted + luacheck), one rock per line: <name> <version>-<revision>.
+# Every rock is pinned, transitive dependencies included, in dependency order (a rock after what it needs).
+# .github/scripts/lua-rocks.sh installs exactly these and fails if the tree holds anything else.
+# To bump: change the version on one line. The CI cache key hashes this file, so the next run reinstalls once.
+lua_cliargs 3.0.2-1
+luasystem 0.7.1-1
+dkjson 2.11-1
+say 1.4.1-3
+luassert 1.9.0-1
+lua-term 0.8-1
+luafilesystem 1.9.0-1
+penlight 1.15.0-1
+mediator_lua 1.1.2-0
+busted 2.3.0-1
+argparse 0.7.2-1
+luacheck 1.2.0-1
+datafile 0.11-1
+luacov 0.17.0-1
+cluacov 1.0.0-1

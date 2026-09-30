@@ -1,0 +1,118 @@
+{"id": 410001, "field": "name", "en": "Engrave Gloves - Hand of Reckoning", "hash": "2204513470d5cdcb", "src": "db2@1.60.1.70009"}
+{"id": 410001, "field": "description", "en": "Engrave your gloves with the Hand of Reckoning rune:\r\n\r\n$@spellicon407631\r\n$@spelldesc407631", "hash": "41d6f5c2b825893e", "src": "db2@1.60.1.70009"}
+{"id": 410002, "field": "name", "en": "Engrave Gloves - Crusader Strike", "hash": "bc634f319fe571cf", "src": "db2@1.60.1.70009"}
+{"id": 410002, "field": "description", "en": "Engrave your gloves with the Crusader Strike rune:\r\n\r\n$@spellicon407676\r\n$@spelldesc407676", "hash": "d008f6ae4e1e05d3", "src": "db2@1.60.1.70009"}
+{"id": 410005, "field": "name", "en": "Engrave Pants - Aura Mastery", "hash": "2965a5f3542015a2", "src": "db2@1.60.1.70009"}
+{"id": 410005, "field": "description", "en": "Engrave your pants with the Aura Mastery rune:\r\n\r\n$@spellicon407624\r\n$@spelldesc407624", "hash": "345f39fc0defa48b", "src": "db2@1.60.1.70009"}
+{"id": 410008, "field": "name", "en": "Engrave Pants - Avenger's Shield", "hash": "a9b8c2c997bfde1e", "src": "db2@1.60.1.70009"}
+{"id": 410008, "field": "description", "en": "Engrave your pants with the Avenger's Shield rune:\r\n\r\n$@spellicon407669\r\n$@spelldesc407669", "hash": "24430af1d25ed6ff", "src": "db2@1.60.1.70009"}
+{"id": 410010, "field": "name", "en": "Engrave Pants - Hand of Sacrifice", "hash": "d14378d700fc2cae", "src": "db2@1.60.1.70009"}
+{"id": 410010, "field": "description", "en": "Engrave your pants with the Hand of Sacrifice rune:\r\n\r\n$@spellicon462853\r\n$@spelldesc462853", "hash": "daa134e6becdbf5c", "src": "db2@1.60.1.70009"}
+{"id": 410011, "field": "name", "en": "Engrave Pants - Inspiration Exemplar", "hash": "2718803295f2396a", "src": "db2@1.60.1.70009"}
+{"id": 410011, "field": "description", "en": "Engrave your pants with the Inspiration Exemplar rune:\r\n\r\n$@spellicon407880\r\n$@spelldesc407880", "hash": "e2484e7403b8da5b", "src": "db2@1.60.1.70009"}
+{"id": 410013, "field": "name", "en": "Engrave Bracers - Hammer of the Righteous", "hash": "52eb2a1d27bf45a4", "src": "db2@1.60.1.70009"}
+{"id": 410013, "field": "description", "en": "Engrave your bracers with the Hammer of the Righteous rune:\r\n\r\n$@spellicon407632\r\n$@spelldesc407632", "hash": "827a4325aac80ace", "src": "db2@1.60.1.70009"}
+{"id": 410014, "field": "name", "en": "Engrave Chest - Divine Storm", "hash": "ca86f4ad7f389c26", "src": "db2@1.60.1.70009"}
+{"id": 410014, "field": "description", "en": "Engrave your chest with the Divine Storm rune:\r\n\r\n$@spellicon407778\r\n$@spelldesc407778", "hash": "c83fa68f57efe0be", "src": "db2@1.60.1.70009"}
+{"id": 410015, "field": "name", "en": "Engrave Cloak - Divine Light", "hash": "97f8afc02e12b239", "src": "db2@1.60.1.70009"}
+{"id": 410015, "field": "description", "en": "Engrave your cloak with the Divine Light rune:\r\n\r\n$@spellicon458856\r\n$@spelldesc458856", "hash": "f2c34b967d567290", "src": "db2@1.60.1.70009"}
+{"id": 410021, "field": "name", "en": "Engrave Chest - Wild Strikes", "hash": "4540f6ac092cb375", "src": "db2@1.60.1.70009"}
+{"id": 410021, "field": "description", "en": "Engrave your chest or robe with the Wild Strikes rune:\r\n\r\n$@spellicon407977\r\n$@spelldesc407977", "hash": "279a79a2020e9e1a", "src": "db2@1.60.1.70009"}
+{"id": 410023, "field": "name", "en": "Engrave Pants - Savage Roar", "hash": "cc1c87b5ac8b415f", "src": "db2@1.60.1.70009"}
+{"id": 410023, "field": "description", "en": "Engrave your pants with the Savage Roar rune:\r\n\r\n$@spellicon407988\r\n$@spelldesc407988", "hash": "292d7b714b6eb9a5", "src": "db2@1.60.1.70009"}
+{"id": 410025, "field": "name", "en": "Engrave Gloves - Mangle", "hash": "6da6db4da7853a80", "src": "db2@1.60.1.70009"}
+{"id": 410025, "field": "description", "en": "Engrave your gloves with the Mangle rune:\r\n\r\n$@spellicon407995\r\n$@spelldesc407995", "hash": "07e7bc101043ca64", "src": "db2@1.60.1.70009"}
+{"id": 410027, "field": "name", "en": "Engrave Boots - Survival Instincts", "hash": "74158a2434983c1e", "src": "db2@1.60.1.70009"}
+{"id": 410027, "field": "description", "en": "Engrave your boots with the Survival Instincts rune:\r\n\r\n$@spellicon408024\r\n$@spelldesc408024", "hash": "b1a4b58356d9a831", "src": "db2@1.60.1.70009"}
+{"id": 410028, "field": "name", "en": "Engrave Gloves - Wild Growth", "hash": "97b484b8741669da", "src": "db2@1.60.1.70009"}
+{"id": 410028, "field": "description", "en": "Engrave your gloves with the Wild Growth rune:\r\n\r\n$@spellicon408120\r\n$@spelldesc408120", "hash": "f3ff628ed48d0349", "src": "db2@1.60.1.70009"}
+{"id": 410029, "field": "name", "en": "Engrave Belt - Eclipse", "hash": "aa7cb7bcea9748ce", "src": "db2@1.60.1.70009"}
+{"id": 410029, "field": "description", "en": "Engrave your belt with the Eclipse rune:\r\n\r\n$@spellicon408248\r\n$@spelldesc408248", "hash": "f6c8a77f2b19736b", "src": "db2@1.60.1.70009"}
+{"id": 410033, "field": "name", "en": "Engrave Pants - Lifebloom", "hash": "6b458729ae909a41", "src": "db2@1.60.1.70009"}
+{"id": 410033, "field": "description", "en": "Engrave your pants with the Lifebloom rune:\r\n\r\n$@spelldesc409824", "hash": "cebd1350c007cda4", "src": "db2@1.60.1.70009"}
+{"id": 410059, "field": "name", "en": "Engrave Belt - Nourish", "hash": "6e26dac87272b55a", "src": "db2@1.60.1.70009"}
+{"id": 410059, "field": "description", "en": "Engrave your belt with the Nourish rune:\r\n\r\n$@spellicon408247\r\n$@spelldesc408247", "hash": "4c436437f9b88d65", "src": "db2@1.60.1.70009"}
+{"id": 410060, "field": "name", "en": "Engrave Boots - Dreamstate", "hash": "9125859472eab404", "src": "db2@1.60.1.70009"}
+{"id": 410060, "field": "description", "en": "Engrave your boots with the Dreamstate rune:\r\n\r\n$@spellicon408258\r\n$@spelldesc408258", "hash": "ddd238a5f04829ef", "src": "db2@1.60.1.70009"}
+{"id": 410061, "field": "name", "en": "Engrave Chest - Fury of Stormrage", "hash": "fe4f232aba11e30a", "src": "db2@1.60.1.70009"}
+{"id": 410061, "field": "description", "en": "Engrave your chest or robe with the Fury of Stormrage rune:\r\n\r\n$@spellicon414799\r\n$@spelldesc414799", "hash": "ec987f0e59c8f01f", "src": "db2@1.60.1.70009"}
+{"id": 410093, "field": "name", "en": "Engrave Belt - Fire Nova", "hash": "5b1c2f0e16d453eb", "src": "db2@1.60.1.70009"}
+{"id": 410093, "field": "description", "en": "Engrave your belt with the Fire Nova rune:\r\n\r\n$@spellicon408339\r\n$@spelldesc408339", "hash": "579f11e5bd0d6a87", "src": "db2@1.60.1.70009"}
+{"id": 410094, "field": "name", "en": "Engrave Chest - Overload", "hash": "cdbe85cdd850dbb4", "src": "db2@1.60.1.70009"}
+{"id": 410094, "field": "description", "en": "Engrave your chest or robe with the Overload rune:\r\n\r\n$@spellicon408438\r\n$@spelldesc408438", "hash": "aaca07194c9b67ff", "src": "db2@1.60.1.70009"}
+{"id": 410095, "field": "name", "en": "Engrave Gloves - Lava Burst", "hash": "f2ffe6a4619ab2d8", "src": "db2@1.60.1.70009"}
+{"id": 410095, "field": "description", "en": "Engrave your gloves with the Lava Burst rune:\r\n\r\n$@spellicon408490\r\n$@spelldesc408490", "hash": "5526c59e227cecb5", "src": "db2@1.60.1.70009"}
+{"id": 410096, "field": "name", "en": "Engrave Chest - Dual Wield Specialization", "hash": "8c82ddd08009b720", "src": "db2@1.60.1.70009"}
+{"id": 410096, "field": "description", "en": "Engrave your chest or robe with the Dual Wield Specialization rune:\r\n\r\n$@spellicon408496\r\n$@spelldesc408496", "hash": "74d5756deec5398e", "src": "db2@1.60.1.70009"}
+{"id": 410097, "field": "name", "en": "Engrave Gloves - Water Shield", "hash": "2da3a2421245246e", "src": "db2@1.60.1.70009"}
+{"id": 410097, "field": "description", "en": "Engrave your gloves with the Water Shield rune:\r\n\r\n$@spellicon408510\r\n$@spelldesc408510", "hash": "ba523d1ef1d246e3", "src": "db2@1.60.1.70009"}
+{"id": 410098, "field": "name", "en": "Engrave Chest - Shield Mastery", "hash": "e34934639996314d", "src": "db2@1.60.1.70009"}
+{"id": 410098, "field": "description", "en": "Engrave your chest or robe with the Shield Mastery rune:\r\n\r\n$@spellicon408524\r\n$@spelldesc408524", "hash": "fc4a3b79ebdc7835", "src": "db2@1.60.1.70009"}
+{"id": 410099, "field": "name", "en": "Engrave Pants - Ancestral Guidance", "hash": "fae6c80b70bbcc6f", "src": "db2@1.60.1.70009"}
+{"id": 410099, "field": "description", "en": "Engrave your pants with the Ancestral Guidance rune:\r\n\r\n$@spellicon409324\r\n$@spelldesc409324", "hash": "0077127109350737", "src": "db2@1.60.1.70009"}
+{"id": 410100, "field": "name", "en": "Engrave Belt - Maelstrom Weapon", "hash": "dd8c4882038f6f7c", "src": "db2@1.60.1.70009"}
+{"id": 410100, "field": "description", "en": "Engrave your belt with the Maelstrom Weapon rune:\r\n\r\n$@spellicon408498\r\n$@spelldesc408498", "hash": "127a4c8a8ecb5bc8", "src": "db2@1.60.1.70009"}
+{"id": 410101, "field": "name", "en": "Engrave Pants - Earth Shield", "hash": "a225ff590bc68f2f", "src": "db2@1.60.1.70009"}
+{"id": 410101, "field": "description", "en": "Engrave your pants with the Earth Shield rune:\r\n\r\n$@spellicon408514\r\n$@spelldesc408514", "hash": "639cc53dc870d106", "src": "db2@1.60.1.70009"}
+{"id": 410103, "field": "name", "en": "Engrave Boots - Spirit of the Alpha", "hash": "dfcbcb1a1e8b4541", "src": "db2@1.60.1.70009"}
+{"id": 410103, "field": "description", "en": "Engrave your boots with the Spirit of the Alpha rune:\r\n\r\n$@spellicon408696\r\n$@spelldesc408696", "hash": "1e19e35c39621b5f", "src": "db2@1.60.1.70009"}
+{"id": 410104, "field": "name", "en": "Engrave Gloves - Lava Lash", "hash": "1c943cf7e19b02f8", "src": "db2@1.60.1.70009"}
+{"id": 410104, "field": "description", "en": "Engrave your gloves with the Lava Lash rune:\r\n\r\n$@spellicon408507\r\n$@spelldesc408507", "hash": "98cf6597461586b9", "src": "db2@1.60.1.70009"}
+{"id": 410105, "field": "name", "en": "Engrave Bracers - Riptide", "hash": "e22c737031b45836", "src": "db2@1.60.1.70009"}
+{"id": 410105, "field": "description", "en": "Engrave your bracers with the Riptide\r\n rune:\r\n\r\n$@spellicon408521\r\n$@spelldesc408521", "hash": "a6711e367ca4b9f3", "src": "db2@1.60.1.70009"}
+{"id": 410107, "field": "name", "en": "Engrave Pants - Way of Earth", "hash": "34ee69bd35685bda", "src": "db2@1.60.1.70009"}
+{"id": 410107, "field": "description", "en": "Engrave your pants with the Way of Earth rune:\r\n\r\n$@spellicon408531\r\n$@spelldesc408531", "hash": "c958e370acc58ce7", "src": "db2@1.60.1.70009"}
+{"id": 410109, "field": "name", "en": "Engrave Belt - Steady Shot", "hash": "ac8dbc1e3c9916db", "src": "db2@1.60.1.70009"}
+{"id": 410109, "field": "description", "en": "Engrave your belt with the Steady Shot rune:\r\n\r\n$@spellicon437123\r\n$@spelldesc437123", "hash": "78ab738166c45181", "src": "db2@1.60.1.70009"}
+{"id": 410110, "field": "name", "en": "Engrave Chest - Beast Mastery", "hash": "d4d5c79372869b27", "src": "db2@1.60.1.70009"}
+{"id": 410110, "field": "description", "en": "Engrave your chest or robe with the Beast Mastery rune:\r\n\r\n$@spellicon409368\r\n$@spelldesc409368", "hash": "b471819e6434ecd2", "src": "db2@1.60.1.70009"}
+{"id": 410111, "field": "name", "en": "Engrave Pants - Kill Shot", "hash": "df19763f9e6f925f", "src": "db2@1.60.1.70009"}
+{"id": 410111, "field": "description", "en": "Engrave your pants with the Kill Shot rune:\r\n\r\n$@spellicon409593\r\n$@spelldesc409593", "hash": "54750420423ccc58", "src": "db2@1.60.1.70009"}
+{"id": 410113, "field": "name", "en": "Engrave Chest - Master Marksman", "hash": "3ee8a99a953dcc09", "src": "db2@1.60.1.70009"}
+{"id": 410113, "field": "description", "en": "Engrave your chest or robe with the Master Marksman rune:\r\n\r\n$@spellicon409428\r\n$@spelldesc409428", "hash": "05d24437dba15863", "src": "db2@1.60.1.70009"}
+{"id": 410114, "field": "name", "en": "Engrave Belt - Expose Weakness", "hash": "30c3beafe25b90ee", "src": "db2@1.60.1.70009"}
+{"id": 410114, "field": "description", "en": "Engrave your belt with the Expose Weakness rune:\r\n\r\n$@spellicon409504\r\n$@spelldesc409504", "hash": "79930c44a5abbe4b", "src": "db2@1.60.1.70009"}
+{"id": 410115, "field": "name", "en": "Cobra Slayer", "hash": "b02c0309970530cb", "src": "db2@1.60.1.70009"}
+{"id": 410115, "field": "description", "en": "Engrave your gloves with the Cobra Slayer rune:\r\n\r\n$@spellicon458393\r\n$@spelldesc458393", "hash": "ff8b8fc8b60be0b2", "src": "db2@1.60.1.70009"}
+{"id": 410116, "field": "name", "en": "Engrave Boots - Dual Wield Specialization", "hash": "fda615d8788ee760", "src": "db2@1.60.1.70009"}
+{"id": 410116, "field": "description", "en": "Engrave your boots with the Dual Wield Specialization rune:\r\n\r\n$@spellicon409687\r\n$@spelldesc409687", "hash": "977a0a798a8d8d79", "src": "db2@1.60.1.70009"}
+{"id": 410118, "field": "name", "en": "Engrave Boots - Trap Launcher", "hash": "5145b7b78dee4ed6", "src": "db2@1.60.1.70009"}
+{"id": 410118, "field": "description", "en": "Engrave your boots with the Trap Launcher rune:\r\n\r\n$@spellicon409541\r\n$@spelldesc409541", "hash": "ee25a502bf2d40d7", "src": "db2@1.60.1.70009"}
+{"id": 410121, "field": "name", "en": "Engrave Gloves - Chimera Shot", "hash": "a0aff437014060b1", "src": "db2@1.60.1.70009"}
+{"id": 410121, "field": "description", "en": "Engrave your gloves with the Chimera Shot rune:\r\n\r\n$@spellicon409433\r\n$@spelldesc409433", "hash": "58d16ab29c8b3e76", "src": "db2@1.60.1.70009"}
+{"id": 410122, "field": "name", "en": "Engrave Chest - Lone Wolf", "hash": "026ce6889f403910", "src": "db2@1.60.1.70009"}
+{"id": 410122, "field": "description", "en": "Engrave your chest or robe with the Lone Wolf rune:\r\n\r\n$@spellicon415370\r\n$@spelldesc415370", "hash": "1ee57669b24b4bba", "src": "db2@1.60.1.70009"}
+{"id": 410123, "field": "name", "en": "Engrave Gloves - Explosive Shot", "hash": "153565d91c47f170", "src": "db2@1.60.1.70009"}
+{"id": 410123, "field": "description", "en": "Engrave your gloves with the Explosive Shot rune:\r\n\r\n$@spellicon409552\r\n$@spelldesc409552", "hash": "a2f8d2754545d058", "src": "db2@1.60.1.70009"}
+{"id": 410140, "field": "name", "en": "Spider Venom", "hash": "dc78556d09965524", "src": "db2@1.60.1.70009"}
+{"id": 410140, "field": "aura", "en": "Incapacitated by the venom of a cave spider", "hash": "49beb142d57d5a1a", "src": "db2@1.60.1.70009"}
+{"id": 410144, "field": "name", "en": "Savage Defense", "hash": "fb7c03f5799e2973", "src": "db2@1.60.1.70009"}
+{"id": 410144, "field": "aura", "en": "Absorbs Physical damage equal to ${$m1/$m2}% of your attack power for $s2 $Lhit:hits;.", "hash": "bbc73bf1d96c4c59", "src": "db2@1.60.1.70009"}
+{"id": 410156, "field": "name", "en": "Stormstrike", "hash": "798dcab8280d30f5", "src": "db2@1.60.1.70009"}
+{"id": 410156, "field": "description", "en": "Gives you an extra attack.  In addition, the next 2 sources of Nature damage dealt to the target are increased by $17364s2%.  Lasts $17364d.", "hash": "cf85f05a088fdc31", "src": "db2@1.60.1.70009"}
+{"id": 410163, "field": "name", "en": "Necrotic Infection", "hash": "ab367f92d4e521b2", "src": "db2@1.60.1.70009"}
+{"id": 410163, "field": "aura", "en": "His wounds are badly infected", "hash": "faf5d9bedcf36bd5", "src": "db2@1.60.1.70009"}
+{"id": 410169, "field": "name", "en": "Wounded Adventurer Periodic Dummy", "hash": "ccc5e795e2d1aab6", "src": "db2@1.60.1.70009"}
+{"id": 410176, "field": "name", "en": "Skull Bash", "hash": "7077234713595aa1", "src": "db2@1.60.1.70009"}
+{"id": 410176, "field": "description", "en": "Charge to a target within 13 yards and bash the target's skull, interrupting spellcasting and preventing any spell in that school from being cast for $414621d. Shares a cooldown with Feral Charge.", "hash": "f9555e0069e543bc", "src": "db2@1.60.1.70009"}
+{"id": 410262, "field": "name", "en": "Liv Bradford - Give Paladin Rune", "hash": "cc5a90f8400d9f52", "src": "db2@1.60.1.70009"}
+{"id": 410272, "field": "name", "en": "Purified Wounded Adventurer", "hash": "45a42003fb970d40", "src": "db2@1.60.1.70009"}
+{"id": 410275, "field": "name", "en": "Wounded Adventurer - Give Paladin Rune", "hash": "c71ad8a57cb925dc", "src": "db2@1.60.1.70009"}
+{"id": 410412, "field": "name", "en": "Tease", "hash": "d022127b7015199e", "src": "db2@1.60.1.70009"}
+{"id": 410412, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70009"}
+{"id": 410657, "field": "name", "en": "Duel to the Death", "hash": "c247f7d5f0c3b234", "src": "db2@1.60.1.70009"}
+{"id": 410659, "field": "name", "en": "Banish Spirit", "hash": "bb035d67ba806db0", "src": "db2@1.60.1.70009"}
+{"id": 410662, "field": "name", "en": "Delayed Banish", "hash": "3d9cb805c47672f9", "src": "db2@1.60.1.70009"}
+{"id": 410718, "field": "name", "en": "Ada Gelhardt - Give Note", "hash": "7238295e7baa9684", "src": "db2@1.60.1.70009"}
+{"id": 410738, "field": "name", "en": "Fight Ada Gelhardt", "hash": "2bffcc7477b1bb11", "src": "db2@1.60.1.70009"}
+{"id": 410829, "field": "name", "en": "Ada Gelhardt - Give Rewards", "hash": "bf18a98e3add2b47", "src": "db2@1.60.1.70009"}
+{"id": 410881, "field": "name", "en": "Sanctified Area", "hash": "64d03465e55ff288", "src": "db2@1.60.1.70009"}
+{"id": 410881, "field": "aura", "en": "The Light infuses this place, calming your thoughts.", "hash": "201a790ef31fe9df", "src": "db2@1.60.1.70009"}
+{"id": 410935, "field": "name", "en": "Meditation on the Light", "hash": "464fb6a5bf8ce677", "src": "db2@1.60.1.70009"}
+{"id": 410935, "field": "aura", "en": "Your mind is expanded by your meditation, granting you the clarity to learn new spells from Memories found throughout the world.", "hash": "0f1e11e98a8d9c57", "src": "db2@1.60.1.70009"}
+{"id": 410958, "field": "name", "en": "Learn Rune From Memory", "hash": "60e0f63196c72ad0", "src": "db2@1.60.1.70009"}
+{"id": 410958, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70009"}
+{"id": 410970, "field": "name", "en": "Meditation on the Void", "hash": "a7fd5e1e9fe14ae3", "src": "db2@1.60.1.70009"}
+{"id": 410970, "field": "aura", "en": "The shadows of the Void grant you dark precognition, allowing you to learn new spells from Prophecies found throughout the world.", "hash": "78f5bc216fe7f306", "src": "db2@1.60.1.70009"}
+{"id": 410971, "field": "name", "en": "Learn Rune From Prophecy", "hash": "e2f9d28c43112457", "src": "db2@1.60.1.70009"}
+{"id": 410971, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70009"}

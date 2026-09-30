@@ -1,0 +1,1 @@
+{"id": 164856, "field": "description", "ja": "敵を倒した後、$N2秒間でペットの最大ヘルスの\n$N1%が回復します。", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3185"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

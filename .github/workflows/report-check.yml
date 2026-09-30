@@ -1,0 +1,68 @@
+name: report-check
+
+# Reads a player's fix report when the issue is opened or edited and comments whether it could be
+# read: the paste is whole, every fix names a real line, and whether a line changed since. It never judges a
+# translation and never writes data. The issue body reaches the parser through an env var and a file, never through
+# the script text (ADR-045).
+on:
+  issues:
+    types: [opened, edited] # an issue opened from the form carries its label already; the bot's own edits trigger nothing
+
+# read-only by default (the repository's workflow policy, ADR-046); only the check job may write, to the issue it
+# comments on and labels, nothing else
+permissions:
+  contents: read
+
+# one run per issue at a time; a newer edit cancels an older run, so the label always follows the latest body
+concurrency:
+  group: report-check-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    if: contains(github.event.issue.labels.*.name, 'translation-report')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false # the gh steps use GH_TOKEN; no token is left in .git/config
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: pipeline/pyproject.toml
+      - run: pip install -e pipeline
+
+      - name: Read the report
+        id: read
+        env:
+          BODY: ${{ github.event.issue.body }}
+        run: |
+          printf '%s' "$BODY" > "$RUNNER_TEMP/body.txt"
+          set +e
+          (cd pipeline && python -m wfj report check --body-file "$RUNNER_TEMP/body.txt") > "$RUNNER_TEMP/summary.md"
+          code=$?
+          set -e
+          # 0 reads · 1 does not read · anything else (3: internal error) fails the job with no comment or label
+          if [ "$code" -eq 0 ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; elif [ "$code" -eq 1 ]; then echo "ok=false" >> "$GITHUB_OUTPUT"; else exit "$code"; fi
+          [ -s "$RUNNER_TEMP/summary.md" ] || { echo "empty summary"; exit 3; }
+
+      - name: Comment and label
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE: ${{ github.event.issue.number }}
+          OK: ${{ steps.read.outputs.ok }}
+        run: |
+          gh label create report-ok --color 0e8a16 --description "The fix report reads" --force
+          gh label create report-broken --color d93f0b --description "The fix report could not be read" --force
+          # one comment per issue: an edit of the issue rewrites it
+          gh issue comment "$ISSUE" --edit-last --create-if-none --body-file "$RUNNER_TEMP/summary.md"
+          if [ "$OK" = "true" ]; then add=report-ok; drop=report-broken; else add=report-broken; drop=report-ok; fi
+          gh issue edit "$ISSUE" --add-label "$add"
+          gh issue edit "$ISSUE" --remove-label "$drop" || true # not on the issue: nothing to remove

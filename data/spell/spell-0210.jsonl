@@ -1,0 +1,1 @@
+{"id": 210000, "field": "description", "ja": "Petを起こします。", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3459"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

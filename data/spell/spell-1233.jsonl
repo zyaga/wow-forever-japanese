@@ -1,0 +1,1 @@
+{"id": 1233908, "field": "description", "ja": "自分を大砲に装填します。まあ、安全そうです。", "status": "unaligned", "checks": [], "provenance": {"class": "machine", "model": "claude-opus-5", "source": "draft-tooltip-run2-spell-04-sg5@2026-09-18", "imported": "2026-09-18"}, "english": {"hash": "03f6f963f82ac298", "src": "db2@1.60.1.70009"}, "reasons": [], "conflicts": []}

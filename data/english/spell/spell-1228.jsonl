@@ -1,0 +1,87 @@
+{"id": 1228000, "field": "name", "en": "Lock On", "hash": "8b965ca591999fd6", "src": "db2@1.60.1.70009"}
+{"id": 1228001, "field": "name", "en": "Lock On 2", "hash": "42893820795c8293", "src": "db2@1.60.1.70009"}
+{"id": 1228002, "field": "name", "en": "Divine Bulwark", "hash": "b3a486ba0c888198", "src": "db2@1.60.1.70009"}
+{"id": 1228002, "field": "aura", "en": "Protected by divine fire.", "hash": "9306a944d52f7841", "src": "db2@1.60.1.70009"}
+{"id": 1228005, "field": "name", "en": "Ritual", "hash": "d329fffa6fe461e7", "src": "db2@1.60.1.70009"}
+{"id": 1228006, "field": "name", "en": "Ritual Burst", "hash": "4d387ab0d44af917", "src": "db2@1.60.1.70009"}
+{"id": 1228007, "field": "name", "en": "Ritual Light", "hash": "fb230f92bce83b73", "src": "db2@1.60.1.70009"}
+{"id": 1228008, "field": "name", "en": "Divine Reach", "hash": "00f28a85b8ff2561", "src": "db2@1.60.1.70009"}
+{"id": 1228009, "field": "name", "en": "Resurrection", "hash": "4e95d3bcfd7d75d3", "src": "db2@1.60.1.70009"}
+{"id": 1228010, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70009"}
+{"id": 1228025, "field": "name", "en": "Will of the Mountain", "hash": "8a9af8f98284f342", "src": "db2@1.60.1.70009"}
+{"id": 1228044, "field": "name", "en": "Cremation", "hash": "6b75e873ec5d8fc3", "src": "db2@1.60.1.70009"}
+{"id": 1228046, "field": "name", "en": "Cremation", "hash": "6b75e873ec5d8fc3", "src": "db2@1.60.1.70009"}
+{"id": 1228049, "field": "name", "en": "Shadowflame", "hash": "bc8240b7fa3eb332", "src": "db2@1.60.1.70009"}
+{"id": 1228049, "field": "description", "en": "Burns the enemy for ${$m1*$<power>/100*$<mult>} Shadowflame damage and then an additional ${$m2*5*$<power>/100} Shadowflame damage over $d.\r\n\r\nShadowflame triggers and benefits from all effects that modify or interact with Immolate, or with Affliction, Destruction, Fire, or Shadow spells, but only one of Immolate or Shadowflame per Warlock can be active on any target. In addition, Shadowflame can trigger your Improved Shadow Bolt talent and causes it to have $426454s2 additional charges.", "hash": "ae243044743eec43", "src": "db2@1.60.1.70009"}
+{"id": 1228049, "field": "aura", "en": "${$m1*$<power>/100} Shadowflame damage every $t1 seconds.", "hash": "aa8a9cd1d4fe17d4", "src": "db2@1.60.1.70009"}
+{"id": 1228058, "field": "name", "en": "Cremation", "hash": "6b75e873ec5d8fc3", "src": "db2@1.60.1.70009"}
+{"id": 1228058, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70009"}
+{"id": 1228061, "field": "name", "en": "Cremation", "hash": "6b75e873ec5d8fc3", "src": "db2@1.60.1.70009"}
+{"id": 1228063, "field": "name", "en": "Cremation", "hash": "6b75e873ec5d8fc3", "src": "db2@1.60.1.70009"}
+{"id": 1228063, "field": "description", "en": "Deals $s1  Radiant damage every $t1 second.", "hash": "289b33a9d0ca860f", "src": "db2@1.60.1.70009"}
+{"id": 1228063, "field": "aura", "en": "Deals $s1  Radiant damage every $t1 second.", "hash": "289b33a9d0ca860f", "src": "db2@1.60.1.70009"}
+{"id": 1228083, "field": "name", "en": "Cremation", "hash": "6b75e873ec5d8fc3", "src": "db2@1.60.1.70009"}
+{"id": 1228088, "field": "name", "en": "Pop-Up Shrub", "hash": "94b6f3c87910812b", "src": "db2@1.60.1.70009"}
+{"id": 1228129, "field": "name", "en": "Beatrix Ability Cycle - Step 01", "hash": "5a8ee5e2acf040ce", "src": "db2@1.60.1.70009"}
+{"id": 1228130, "field": "name", "en": "Beatrix Ability Cycle - Step 02", "hash": "5a8ee5e3acf040cf", "src": "db2@1.60.1.70009"}
+{"id": 1228131, "field": "name", "en": "Beatrix Ability Cycle - Step 03", "hash": "5a8ee5e4acf040d0", "src": "db2@1.60.1.70009"}
+{"id": 1228134, "field": "name", "en": "Beatrix Ability Cycle - Step 04", "hash": "5a8ee5e5acf040d1", "src": "db2@1.60.1.70009"}
+{"id": 1228165, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70009"}
+{"id": 1228170, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70009"}
+{"id": 1228237, "field": "name", "en": "Shadow of Death", "hash": "dd0beb41b5cdee07", "src": "db2@1.60.1.70009"}
+{"id": 1228237, "field": "description", "en": "Your ability to heal wounds is significantly reduced. ", "hash": "470109a8b86eacd0", "src": "db2@1.60.1.70009"}
+{"id": 1228237, "field": "aura", "en": "Healing effects reduced by $s1%.", "hash": "2574590189e5ac01", "src": "db2@1.60.1.70009"}
+{"id": 1228262, "field": "name", "en": "Rend", "hash": "0b1786e1dc4c98f3", "src": "db2@1.60.1.70009"}
+{"id": 1228262, "field": "description", "en": "Strikes at an enemy, inflicting increased melee damage and causing them to bleed.", "hash": "f0003fcb645197dc", "src": "db2@1.60.1.70009"}
+{"id": 1228262, "field": "aura", "en": "Bleeding for $s2 damage every $t2seconds.", "hash": "13ef99ecbb4d42da", "src": "db2@1.60.1.70009"}
+{"id": 1228267, "field": "name", "en": "Righteous Fire", "hash": "daedc194d761a5c7", "src": "db2@1.60.1.70009"}
+{"id": 1228267, "field": "aura", "en": "$o2 Fire damage inflicted over $d.", "hash": "884f40051679b622", "src": "db2@1.60.1.70009"}
+{"id": 1228268, "field": "name", "en": "Righteous Fire", "hash": "daedc194d761a5c7", "src": "db2@1.60.1.70009"}
+{"id": 1228283, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70009"}
+{"id": 1228285, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70009"}
+{"id": 1228287, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70009"}
+{"id": 1228288, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70009"}
+{"id": 1228294, "field": "name", "en": "Triangulate", "hash": "cf0cdd7e626821ce", "src": "db2@1.60.1.70009"}
+{"id": 1228294, "field": "description", "en": "Use the device at a designated triangulation point to aid Fizzlefuse in his teleporter's calibration.", "hash": "3fe0358d1d402e5a", "src": "db2@1.60.1.70009"}
+{"id": 1228295, "field": "name", "en": "Stomp", "hash": "c09a8fb611d4dc00", "src": "db2@1.60.1.70009"}
+{"id": 1228295, "field": "description", "en": "Inflicts normal damage plus $s3 to nearby enemies, stunning them for $d.", "hash": "4d4b9c186056251c", "src": "db2@1.60.1.70009"}
+{"id": 1228295, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
+{"id": 1228298, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70009"}
+{"id": 1228304, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70009"}
+{"id": 1228331, "field": "name", "en": "Blade Dance", "hash": "6eac5b36eaf0159d", "src": "db2@1.60.1.70009"}
+{"id": 1228331, "field": "description", "en": "Allows the caster to move at extremely high speeds and perform devastating weapon attacks for a short time.\r\n", "hash": "2d233bae5db3b143", "src": "db2@1.60.1.70009"}
+{"id": 1228332, "field": "name", "en": "Arsenal: Spirit-Touched Collection", "hash": "237a70e76d63df46", "src": "db2@1.60.1.70009"}
+{"id": 1228332, "field": "description", "en": "Collect the appearances of this weapon set.", "hash": "da02ac3901860bd1", "src": "db2@1.60.1.70009"}
+{"id": 1228339, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70009"}
+{"id": 1228365, "field": "name", "en": "Sweeping Strikes", "hash": "efe80818d7ec0d24", "src": "db2@1.60.1.70009"}
+{"id": 1228365, "field": "description", "en": "Causes the caster's next $n melee attacks to strike an additional nearby enemy. This battle frenzy is tiring, however, and lasts $d. at most.", "hash": "be2d712bb58c4433", "src": "db2@1.60.1.70009"}
+{"id": 1228365, "field": "aura", "en": "Melee attacks are striking an additional nearby enemy.", "hash": "2b3ea3918f73b9f5", "src": "db2@1.60.1.70009"}
+{"id": 1228366, "field": "name", "en": "Double Strike", "hash": "2bef6edfb89d452a", "src": "db2@1.60.1.70009"}
+{"id": 1228366, "field": "description", "en": "Gives the caster $s1 extra $lattack:attacks;.", "hash": "2dd42c6d6d4866c3", "src": "db2@1.60.1.70009"}
+{"id": 1228369, "field": "name", "en": "Blade Dance", "hash": "6eac5b36eaf0159d", "src": "db2@1.60.1.70009"}
+{"id": 1228369, "field": "description", "en": "Charges a target.", "hash": "b0946f245422e769", "src": "db2@1.60.1.70009"}
+{"id": 1228370, "field": "name", "en": "Blade Dance", "hash": "6eac5b36eaf0159d", "src": "db2@1.60.1.70009"}
+{"id": 1228370, "field": "description", "en": "Deals weapon damage to all enemy targets within $a1 yards.\r\n", "hash": "dce002758a4afc01", "src": "db2@1.60.1.70009"}
+{"id": 1228371, "field": "name", "en": "Blade Dance", "hash": "6eac5b36eaf0159d", "src": "db2@1.60.1.70009"}
+{"id": 1228372, "field": "name", "en": "Oil Spill", "hash": "014e2f25223eabeb", "src": "db2@1.60.1.70009"}
+{"id": 1228372, "field": "description", "en": "Drops a pool of tar for $d that slows the movement speed of enemies within.", "hash": "cb473c66a9805e08", "src": "db2@1.60.1.70009"}
+{"id": 1228373, "field": "name", "en": "Oil Spill", "hash": "014e2f25223eabeb", "src": "db2@1.60.1.70009"}
+{"id": 1228374, "field": "name", "en": "Oil Spill", "hash": "014e2f25223eabeb", "src": "db2@1.60.1.70009"}
+{"id": 1228374, "field": "aura", "en": "Movement slowed by $s1%.", "hash": "bd9406b84a62a739", "src": "db2@1.60.1.70009"}
+{"id": 1228375, "field": "name", "en": "Fuse Lit", "hash": "2c6a3327a6a52e96", "src": "db2@1.60.1.70009"}
+{"id": 1228376, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70009"}
+{"id": 1228431, "field": "name", "en": "Sleeping", "hash": "2c6945b8c8c47f62", "src": "db2@1.60.1.70009"}
+{"id": 1228444, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70009"}
+{"id": 1228457, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70009"}
+{"id": 1228460, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70009"}
+{"id": 1228463, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70009"}
+{"id": 1228463, "field": "aura", "en": "Deals $w1 Fire damage every $t1 sec.", "hash": "e06497998c1ce50b", "src": "db2@1.60.1.70009"}
+{"id": 1228467, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70009"}
+{"id": 1228479, "field": "name", "en": "(DNT) Power Bar Manager", "hash": "664f185d34921f7a", "src": "db2@1.60.1.70009"}
+{"id": 1228493, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70009"}
+{"id": 1228495, "field": "name", "en": "Burning Pitch", "hash": "eda5ff9e398e4408", "src": "db2@1.60.1.70009"}
+{"id": 1228503, "field": "name", "en": "Burning Oil", "hash": "2633a554bf6422e8", "src": "db2@1.60.1.70009"}
+{"id": 1228509, "field": "name", "en": "Burning Oil", "hash": "2633a554bf6422e8", "src": "db2@1.60.1.70009"}
+{"id": 1228509, "field": "aura", "en": "Deals $w1 Fire damage every $t1 sec.", "hash": "e06497998c1ce50b", "src": "db2@1.60.1.70009"}
+{"id": 1228664, "field": "name", "en": "Nemesis Aura", "hash": "c75ca5e887433657", "src": "db2@1.60.1.70009"}
+{"id": 1228664, "field": "aura", "en": "Affected targets explode for Holy damage when killed.", "hash": "24332711cd6332c9", "src": "db2@1.60.1.70009"}

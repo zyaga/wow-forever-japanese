@@ -1,0 +1,62 @@
+{
+ "build": 69722,
+ "placeholders": [
+  490
+ ],
+ "quests": [
+  {
+   "id": 25,
+   "title": "Stonetalon Standstill",
+   "objectives": "Dispatch 12 Befouled Water Elementals at Mystral Lake, due east of the Talondeep Path and southwest of Splintertree Post.$B$BScout the gazebo on Mystral Lake that overlooks the nearby Alliance outpost.$B$BReturn to Mastok Wrilehiss at Splintertree Post, Ashenvale.",
+   "description": "If you want to be useful, then why don't you do something about the situation near Talondeep Path?$B$BThe transports between Ashenvale and Stonetalon are at a standstill because of the lake coming alive and attacking anything that gets close... which means anyone on the path.  What'd be even more useful than just putting the hammer down on the water elementals there is someone scouting the gazebo on Mystral Lake - the one that has a solid view of the Alliance outpost there.$B$BYou up for being useful?",
+   "area": "Scout the gazebo on Mystral Lake that overlooks the nearby Alliance outpost.",
+   "objective_texts": [],
+   "conditional": []
+  },
+  {
+   "id": 170,
+   "title": "A New Threat",
+   "objectives": "Balir Frosthammer wants you to kill 6 Rockjaw Troggs and 6 Burly Rockjaw Troggs.",
+   "description": "I hope you're here to lend us a hand, $c. After the last trogg attack, we could use all the help we can get.$b$bI hear the buggers have been popping up all across the lands, and it seems Coldridge Valley is no exception. They've been spotted all over the hills to the southeast and near the frozen lake.$b$bAnd that's not all, just a few nights ago, they attacked and overran our camp to the west! $b$bWe're a bit shorthanded here, $g lad : lass;, and we need strong arms to help drive the troggs back.",
+   "area": "",
+   "objective_texts": [],
+   "conditional": []
+  },
+  {
+   "id": 172,
+   "title": "Children's Week",
+   "objectives": "Use the Orcish Orphan Whistle to talk with the child you will be looking after during Children's Week.",
+   "description": "You're willing to help us here at the orphanage?  Bless you, friend; your aid during Children's Week will be invaluable.$B$BTake this whistle.  You will only be able to use it for a short amount of time - typically not longer than Children's Week itself.  When you use it, you will be able to talk with the child you've agreed to look after.  Using it again will dismiss the child.$B$BBy all means $N - use the whistle and meet your ward!  I'm sure the child will be most eager to meet you.",
+   "area": "",
+   "objective_texts": [],
+   "conditional": []
+  },
+  {
+   "id": 247,
+   "title": "The Hunt Completed",
+   "objectives": "",
+   "description": "",
+   "area": "",
+   "objective_texts": [],
+   "conditional": []
+  },
+  {
+   "id": 498,
+   "title": "The Rescue",
+   "objectives": "Krusk in Tarren Mill needs you to free Drull and Tog'thar from Durnholde Keep.",
+   "description": "Me and some other warriors were sent by the Warchief to retrieve an object from Durnholde and to investigate this so-called Syndicate.$b$bWe went to Durnholde to take a look around, but we were taken by surprise by a large number of the humans. We fought bravely, but their sheer numbers were enough to defeat us. They took a few of us captive, but I was able to escape.$b$bDurnholde is just southeast of here, across the river. Drull and Tog'thar are being held there, you must go and rescue them.",
+   "area": "",
+   "objective_texts": [
+    [
+     381177,
+     "Rescue Drull"
+    ],
+    [
+     381178,
+     "Rescue Tog'thar"
+    ]
+   ],
+   "conditional": []
+  }
+ ]
+}

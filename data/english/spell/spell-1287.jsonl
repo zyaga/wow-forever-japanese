@@ -1,0 +1,70 @@
+{"id": 1287051, "field": "name", "en": "[DNT] Enraged Hyjal Owl", "hash": "de79c37ae108f18c", "src": "db2@1.60.1.70009"}
+{"id": 1287080, "field": "name", "en": "Webbed!", "hash": "6968c2a34a0c3067", "src": "db2@1.60.1.70009"}
+{"id": 1287080, "field": "aura", "en": "Trapped in a web!", "hash": "83394f550231c655", "src": "db2@1.60.1.70009"}
+{"id": 1287099, "field": "name", "en": "Toss Enchanted Seeds", "hash": "d11f27efbd1f5185", "src": "db2@1.60.1.70009"}
+{"id": 1287099, "field": "description", "en": "Sprinkle enchanted seeds on a ruined war machine to speed its reclamation by nature.", "hash": "e5fbb7ab6a20b4a9", "src": "db2@1.60.1.70009"}
+{"id": 1287162, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70009"}
+{"id": 1287162, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70009"}
+{"id": 1287171, "field": "name", "en": "Reset Talents", "hash": "2b3a887cea9d2f33", "src": "db2@1.60.1.70009"}
+{"id": 1287171, "field": "description", "en": "Reset your spent class talent points.", "hash": "7f63c1b0be716107", "src": "db2@1.60.1.70009"}
+{"id": 1287234, "field": "name", "en": "Stomping", "hash": "319783269c2dc91f", "src": "db2@1.60.1.70009"}
+{"id": 1287321, "field": "name", "en": "Placing Candle", "hash": "6836112fb63802b1", "src": "db2@1.60.1.70009"}
+{"id": 1287321, "field": "description", "en": "Places a candle at a nearby grave.", "hash": "597d60a53f5d42bb", "src": "db2@1.60.1.70009"}
+{"id": 1287327, "field": "name", "en": "Place Sacred Stag Bundle", "hash": "7a9160dd60f29b10", "src": "db2@1.60.1.70009"}
+{"id": 1287327, "field": "description", "en": "Place the last remains of the stag as an offering to return to nature.", "hash": "159829e018b713f0", "src": "db2@1.60.1.70009"}
+{"id": 1287329, "field": "name", "en": "[DNT] Spirit of the Stag", "hash": "403d9d201b0a0628", "src": "db2@1.60.1.70009"}
+{"id": 1287455, "field": "name", "en": "Brimstone Flare", "hash": "a2ffd06bcd338be4", "src": "db2@1.60.1.70009"}
+{"id": 1287455, "field": "description", "en": "Victory!", "hash": "84cae0122b39c1e4", "src": "db2@1.60.1.70009"}
+{"id": 1287496, "field": "name", "en": "Summon Poison Cloud", "hash": "8d583ce0a96b2ef0", "src": "db2@1.60.1.70009"}
+{"id": 1287496, "field": "description", "en": "Inflicts $s1 Nature damage to nearby enemies every $t1 sec. for $d.", "hash": "a5f95a74ea4b7d7a", "src": "db2@1.60.1.70009"}
+{"id": 1287496, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70009"}
+{"id": 1287541, "field": "name", "en": "[DNT] Give loot", "hash": "c8410b3e67d6f0e4", "src": "db2@1.60.1.70009"}
+{"id": 1287557, "field": "name", "en": "Channeling", "hash": "5c3701c41cfc8ef1", "src": "db2@1.60.1.70009"}
+{"id": 1287557, "field": "description", "en": "Absorb Twilight magic from Empowered Brutes, Twilight Ritualists, or Twilight Ritual Circles.", "hash": "da1fd62fa876dccc", "src": "db2@1.60.1.70009"}
+{"id": 1287561, "field": "name", "en": "Stolen Power", "hash": "5a97a2ce22e75119", "src": "db2@1.60.1.70009"}
+{"id": 1287561, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1. This effect is tripled in Forest and Grassland areas.", "hash": "c854c672fc2bd1b6", "src": "db2@1.60.1.70009"}
+{"id": 1287571, "field": "name", "en": "Monkey Business", "hash": "ae366a4c1ceb9d57", "src": "db2@1.60.1.70009"}
+{"id": 1287571, "field": "description", "en": "Increases all attributes by $s1 for $d. Effect and duration are doubled in Forest and Grassland areas.", "hash": "11ac73fe9caa705b", "src": "db2@1.60.1.70009"}
+{"id": 1287571, "field": "aura", "en": "All attributes increased by $w1.", "hash": "8e6b210326950581", "src": "db2@1.60.1.70009"}
+{"id": 1287573, "field": "name", "en": "Tapped", "hash": "3d3a611dd22b16d1", "src": "db2@1.60.1.70009"}
+{"id": 1287573, "field": "aura", "en": "This creature has been drained of its power.", "hash": "ea7290a86cc945d2", "src": "db2@1.60.1.70009"}
+{"id": 1287664, "field": "name", "en": "Unstable Possession", "hash": "a19698d2b4640e83", "src": "db2@1.60.1.70009"}
+{"id": 1287664, "field": "description", "en": "Gharalis' body decays and crumbles, increasing damage dealt by $S2% and damage taken by $S1%. ", "hash": "62ac6933ba15e0cc", "src": "db2@1.60.1.70009"}
+{"id": 1287664, "field": "aura", "en": "Increased damage dealt by $S2% and damage taken by $S1%.", "hash": "24c5cbd9a9dedbc8", "src": "db2@1.60.1.70009"}
+{"id": 1287669, "field": "name", "en": "Safe Fall", "hash": "cbb3c805581ccbf5", "src": "db2@1.60.1.70009"}
+{"id": 1287672, "field": "name", "en": "On Break", "hash": "8743d9903510885f", "src": "db2@1.60.1.70009"}
+{"id": 1287672, "field": "aura", "en": "Currently on break.\r\n\r\nImmune to new work assignments.\r\nChance to care significantly reduced.", "hash": "45070bdfc505b484", "src": "db2@1.60.1.70009"}
+{"id": 1287704, "field": "name", "en": "Authority", "hash": "35fcff06fcb17a6f", "src": "db2@1.60.1.70009"}
+{"id": 1287704, "field": "aura", "en": "In a Forest or Grassland area, Attack Power increased by an additional $w1.", "hash": "c5b620c2d0b27a59", "src": "db2@1.60.1.70009"}
+{"id": 1287735, "field": "name", "en": "Piercing Wail", "hash": "b1717570fc4c5733", "src": "db2@1.60.1.70009"}
+{"id": 1287735, "field": "description", "en": "Stuns all players for %d. ", "hash": "ed8be9442df16dc7", "src": "db2@1.60.1.70009"}
+{"id": 1287735, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
+{"id": 1287760, "field": "name", "en": "(DNT) Moonbeam Cosmetic", "hash": "b0673bd93272934a", "src": "db2@1.60.1.70009"}
+{"id": 1287768, "field": "name", "en": "Unholy Might", "hash": "ec4e2ed723092af2", "src": "db2@1.60.1.70009"}
+{"id": 1287768, "field": "description", "en": "Increases attack power by $s1 for $d.", "hash": "760ba7f2b0db0a3c", "src": "db2@1.60.1.70009"}
+{"id": 1287768, "field": "aura", "en": "Increases attack power by $s1.", "hash": "7d819cdcf45419f1", "src": "db2@1.60.1.70009"}
+{"id": 1287773, "field": "name", "en": "Blessed Water", "hash": "f498aaceac1f1ae8", "src": "db2@1.60.1.70009"}
+{"id": 1287773, "field": "description", "en": "The power of Elune blesses the waters, increasing swim speed by $S1% per application.", "hash": "3b824c9e89828b18", "src": "db2@1.60.1.70009"}
+{"id": 1287773, "field": "aura", "en": "Swim speed increased by $S1%.", "hash": "c722fcc2169a3746", "src": "db2@1.60.1.70009"}
+{"id": 1287801, "field": "name", "en": "Preternatural Evasion", "hash": "62123ca1f109a540", "src": "db2@1.60.1.70009"}
+{"id": 1287801, "field": "description", "en": "Increases your chance to Dodge by $s1% for $d.", "hash": "a3828625958eb311", "src": "db2@1.60.1.70009"}
+{"id": 1287801, "field": "aura", "en": "Increases Dodge chance by $s1%.", "hash": "db1261dcf0dbffb9", "src": "db2@1.60.1.70009"}
+{"id": 1287808, "field": "name", "en": "Blood of the Broodmother", "hash": "9841242e7a2a4603", "src": "db2@1.60.1.70009"}
+{"id": 1287808, "field": "description", "en": "Reduces your magic damage taken from Dragon Breath spells by $s2% for $d.", "hash": "c0fdbbbda5719851", "src": "db2@1.60.1.70009"}
+{"id": 1287808, "field": "aura", "en": "Magic damage taken from Dragon Breath spells reduced by $s2%.", "hash": "3b18454375a28abc", "src": "db2@1.60.1.70009"}
+{"id": 1287813, "field": "name", "en": "Burying", "hash": "6af640bd102dc78e", "src": "db2@1.60.1.70009"}
+{"id": 1287839, "field": "name", "en": "Fury of Blackhand", "hash": "d742726607fa4ac7", "src": "db2@1.60.1.70009"}
+{"id": 1287839, "field": "description", "en": "Melee and ranged attacks against Orcs and Ogres deal $s1% additional damage as Physical damage.", "hash": "78f056d71fe585da", "src": "db2@1.60.1.70009"}
+{"id": 1287840, "field": "name", "en": "Eye of the Beast", "hash": "4c894e181ab61fbd", "src": "db2@1.60.1.70009"}
+{"id": 1287840, "field": "description", "en": "Increases your Spell Hit chance by $s1% for $d.", "hash": "18dbbc83959a5c92", "src": "db2@1.60.1.70009"}
+{"id": 1287840, "field": "aura", "en": "Spell Hit chance increased by $w1%.", "hash": "daedfbaa863f694c", "src": "db2@1.60.1.70009"}
+{"id": 1287842, "field": "name", "en": "Bastion of Tyranny", "hash": "4c8e30a998520111", "src": "db2@1.60.1.70009"}
+{"id": 1287842, "field": "description", "en": "Increases maximum health by $s1 for $d. This effect is doubled in Strongholds and Cities.", "hash": "2ff64b557d961bcc", "src": "db2@1.60.1.70009"}
+{"id": 1287842, "field": "aura", "en": "Health increased by $w1.", "hash": "9cbb49a4032a90f7", "src": "db2@1.60.1.70009"}
+{"id": 1287900, "field": "name", "en": "Create Sapta", "hash": "92efbfd1ddcb6a5a", "src": "db2@1.60.1.70009"}
+{"id": 1287963, "field": "name", "en": "Beacon of Moonlight", "hash": "8dcb770f5108da61", "src": "db2@1.60.1.70009"}
+{"id": 1287963, "field": "description", "en": "Summon a ring of light on a specific location that lasts for $d. Reveals ghosts of the past.", "hash": "0773cb4c20bc7f55", "src": "db2@1.60.1.70009"}
+{"id": 1287973, "field": "name", "en": "[DNT] Summon Forlorn Ghost", "hash": "36d9ad20b6f7afc6", "src": "db2@1.60.1.70009"}
+{"id": 1287976, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70009"}
+{"id": 1287976, "field": "description", "en": "Fires a poisoned arrow at a target inflicting $s1 Nature and $s2 Nature damage every $t2 sec for $d.", "hash": "56c193d721127510", "src": "db2@1.60.1.70009"}
+{"id": 1287976, "field": "aura", "en": "$s2 Nature damage inflicted every $t2 seconds.", "hash": "5693b63dd8c180eb", "src": "db2@1.60.1.70009"}

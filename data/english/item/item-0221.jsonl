@@ -1,0 +1,233 @@
+{"id": 221008, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70009"}
+{"id": 221008, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70009"}
+{"id": 221009, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70009"}
+{"id": 221009, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70009"}
+{"id": 221010, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70009"}
+{"id": 221010, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70009"}
+{"id": 221017, "field": "name", "en": "Keldara's Log", "hash": "32650d9ed8d5e769", "src": "db2@1.60.1.70009"}
+{"id": 221018, "field": "name", "en": "Field Medicine Kit", "hash": "f57f4b9682adaba3", "src": "db2@1.60.1.70009"}
+{"id": 221018, "field": "description", "en": "Combine 3 Satyrweed samples to brew a tincture.", "hash": "ab7e29b3c02b74f0", "src": "db2@1.60.1.70009"}
+{"id": 221019, "field": "name", "en": "Satyrweed Sample", "hash": "cf56f6b8c64cd9f6", "src": "db2@1.60.1.70009"}
+{"id": 221020, "field": "name", "en": "Rune of the Moon Goddess", "hash": "c5bf2814e2a33b2c", "src": "db2@1.60.1.70009"}
+{"id": 221020, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221191, "field": "name", "en": "Dreamstone", "hash": "274aef4ab2ed7120", "src": "db2@1.60.1.70009"}
+{"id": 221192, "field": "name", "en": "Dream Journal", "hash": "39e2a897309a20c7", "src": "db2@1.60.1.70009"}
+{"id": 221199, "field": "name", "en": "Satyrweed Tincture", "hash": "4211def5a62330cb", "src": "db2@1.60.1.70009"}
+{"id": 221199, "field": "description", "en": "Cure a creature of Satyr corruption.", "hash": "cbba2d5f798b076d", "src": "db2@1.60.1.70009"}
+{"id": 221256, "field": "name", "en": "Right Arm of the Obliterator", "hash": "6d996e77ea94d770", "src": "db2@1.60.1.70009"}
+{"id": 221256, "field": "description", "en": "Combine with 4 other pieces to rebuild Iodax.", "hash": "b2af2a6daf1b8075", "src": "db2@1.60.1.70009"}
+{"id": 221257, "field": "name", "en": "Left Arm of the Obliterator", "hash": "e118bf5fb605e107", "src": "db2@1.60.1.70009"}
+{"id": 221257, "field": "description", "en": "Combine with 4 other pieces to rebuild Iodax.", "hash": "b2af2a6daf1b8075", "src": "db2@1.60.1.70009"}
+{"id": 221258, "field": "name", "en": "Right Foot of the Obliterator", "hash": "99c67149f15e64c0", "src": "db2@1.60.1.70009"}
+{"id": 221258, "field": "description", "en": "Combine with 4 other pieces to rebuild Iodax.", "hash": "b2af2a6daf1b8075", "src": "db2@1.60.1.70009"}
+{"id": 221259, "field": "name", "en": "Left Foot of the Obliterator", "hash": "b3ecd9286fe0ac3c", "src": "db2@1.60.1.70009"}
+{"id": 221259, "field": "description", "en": "Combine with 4 other pieces to rebuild Iodax.", "hash": "b2af2a6daf1b8075", "src": "db2@1.60.1.70009"}
+{"id": 221260, "field": "name", "en": "Head of the Obliterator", "hash": "5d215c202ed6a1c2", "src": "db2@1.60.1.70009"}
+{"id": 221261, "field": "name", "en": "Wildwhisper Draught", "hash": "f02f62c5baa2859e", "src": "db2@1.60.1.70009"}
+{"id": 221261, "field": "description", "en": "Summon the Spirit of Agamaggan. May only be used at the top of the Spiral of Thorns in Razorfen Downs, after defeating all nearby enemies.", "hash": "73b83410b54fef73", "src": "db2@1.60.1.70009"}
+{"id": 221262, "field": "name", "en": "Wild Offering", "hash": "7efd00fbc05f2c3a", "src": "db2@1.60.1.70009"}
+{"id": 221267, "field": "name", "en": "Rune of the Bloodthirsty", "hash": "8d0bd6cb1174461a", "src": "db2@1.60.1.70009"}
+{"id": 221267, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221271, "field": "name", "en": "Ace of Wilds", "hash": "3b1b809cbac8f363", "src": "db2@1.60.1.70009"}
+{"id": 221271, "field": "description", "en": "Combine the Ace through Eight of Wilds to complete the set.", "hash": "33491bbd062a9b86", "src": "db2@1.60.1.70009"}
+{"id": 221272, "field": "name", "en": "Wilds Deck", "hash": "db749aea4aaf0dfe", "src": "db2@1.60.1.70009"}
+{"id": 221272, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70009"}
+{"id": 221273, "field": "name", "en": "Two of Wilds", "hash": "7336a48b78c4e3d7", "src": "db2@1.60.1.70009"}
+{"id": 221273, "field": "description", "en": "Combine the Ace through Eight of Wilds to complete the set.", "hash": "33491bbd062a9b86", "src": "db2@1.60.1.70009"}
+{"id": 221274, "field": "name", "en": "Three of Wilds", "hash": "e734518575cbaaa6", "src": "db2@1.60.1.70009"}
+{"id": 221274, "field": "description", "en": "Combine the Ace through Eight of Wilds to complete the set.", "hash": "33491bbd062a9b86", "src": "db2@1.60.1.70009"}
+{"id": 221275, "field": "name", "en": "Four of Wilds", "hash": "890d2db26239784c", "src": "db2@1.60.1.70009"}
+{"id": 221275, "field": "description", "en": "Combine the Ace through Eight of Wilds to complete the set.", "hash": "33491bbd062a9b86", "src": "db2@1.60.1.70009"}
+{"id": 221276, "field": "name", "en": "Five of Wilds", "hash": "7bed9adbfba856ad", "src": "db2@1.60.1.70009"}
+{"id": 221276, "field": "description", "en": "Combine the Ace through Eight of Wilds to complete the set.", "hash": "33491bbd062a9b86", "src": "db2@1.60.1.70009"}
+{"id": 221277, "field": "name", "en": "Six of Wilds", "hash": "afd70abb956eb659", "src": "db2@1.60.1.70009"}
+{"id": 221277, "field": "description", "en": "Combine the Ace through Eight of Wilds to complete the set.", "hash": "33491bbd062a9b86", "src": "db2@1.60.1.70009"}
+{"id": 221278, "field": "name", "en": "Seven of Wilds", "hash": "826cb712bcf6f697", "src": "db2@1.60.1.70009"}
+{"id": 221278, "field": "description", "en": "Combine the Ace through Eight of Wilds to complete the set.", "hash": "33491bbd062a9b86", "src": "db2@1.60.1.70009"}
+{"id": 221279, "field": "name", "en": "Eight of Wilds", "hash": "53b025633519473f", "src": "db2@1.60.1.70009"}
+{"id": 221279, "field": "description", "en": "Combine the Ace through Eight of Wilds to complete the set.", "hash": "33491bbd062a9b86", "src": "db2@1.60.1.70009"}
+{"id": 221280, "field": "name", "en": "Plagues Deck", "hash": "bba36263c2045757", "src": "db2@1.60.1.70009"}
+{"id": 221280, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70009"}
+{"id": 221281, "field": "name", "en": "Ace of Plagues", "hash": "879b737344f83ca7", "src": "db2@1.60.1.70009"}
+{"id": 221281, "field": "description", "en": "Combine the Ace through Eight of Plagues to complete the set.", "hash": "1f74b4b2b86e366f", "src": "db2@1.60.1.70009"}
+{"id": 221282, "field": "name", "en": "Two of Plagues", "hash": "9af78d4faacfb514", "src": "db2@1.60.1.70009"}
+{"id": 221282, "field": "description", "en": "Combine the Ace through Eight of Plagues to complete the set.", "hash": "1f74b4b2b86e366f", "src": "db2@1.60.1.70009"}
+{"id": 221283, "field": "name", "en": "Three of Plagues", "hash": "1328a7f937b317ff", "src": "db2@1.60.1.70009"}
+{"id": 221283, "field": "description", "en": "Combine the Ace through Eight of Plagues to complete the set.", "hash": "1f74b4b2b86e366f", "src": "db2@1.60.1.70009"}
+{"id": 221284, "field": "name", "en": "Four of Plagues", "hash": "8567b14658f4cc5f", "src": "db2@1.60.1.70009"}
+{"id": 221284, "field": "description", "en": "Combine the Ace through Eight of Plagues to complete the set.", "hash": "1f74b4b2b86e366f", "src": "db2@1.60.1.70009"}
+{"id": 221285, "field": "name", "en": "Five of Plagues", "hash": "cbdd3187c32878fe", "src": "db2@1.60.1.70009"}
+{"id": 221285, "field": "description", "en": "Combine the Ace through Eight of Plagues to complete the set.", "hash": "1f74b4b2b86e366f", "src": "db2@1.60.1.70009"}
+{"id": 221286, "field": "name", "en": "Six of Plagues", "hash": "b75a045f346dd1c8", "src": "db2@1.60.1.70009"}
+{"id": 221286, "field": "description", "en": "Combine the Ace through Eight of Plagues to complete the set.", "hash": "1f74b4b2b86e366f", "src": "db2@1.60.1.70009"}
+{"id": 221287, "field": "name", "en": "Seven of Plagues", "hash": "4ab79cfaab725d0b", "src": "db2@1.60.1.70009"}
+{"id": 221287, "field": "description", "en": "Combine the Ace through Eight of Plagues to complete the set.", "hash": "1f74b4b2b86e366f", "src": "db2@1.60.1.70009"}
+{"id": 221288, "field": "name", "en": "Eight of Plagues", "hash": "4bf573a22f5c0b9e", "src": "db2@1.60.1.70009"}
+{"id": 221288, "field": "description", "en": "Combine the Ace through Eight of Plagues to complete the set.", "hash": "1f74b4b2b86e366f", "src": "db2@1.60.1.70009"}
+{"id": 221289, "field": "name", "en": "Dunes Deck", "hash": "b80b868cdd0dc10c", "src": "db2@1.60.1.70009"}
+{"id": 221289, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70009"}
+{"id": 221290, "field": "name", "en": "Ace of Dunes", "hash": "ef332268d8319532", "src": "db2@1.60.1.70009"}
+{"id": 221290, "field": "description", "en": "Combine the Ace through Eight of Dunes to complete the set.", "hash": "58c1438cf71ae155", "src": "db2@1.60.1.70009"}
+{"id": 221291, "field": "name", "en": "Two of Dunes", "hash": "274e465c962d85a6", "src": "db2@1.60.1.70009"}
+{"id": 221291, "field": "description", "en": "Combine the Ace through Eight of Dunes to complete the set.", "hash": "58c1438cf71ae155", "src": "db2@1.60.1.70009"}
+{"id": 221292, "field": "name", "en": "Three of Dunes", "hash": "9b4bf35693344c75", "src": "db2@1.60.1.70009"}
+{"id": 221292, "field": "description", "en": "Combine the Ace through Eight of Dunes to complete the set.", "hash": "58c1438cf71ae155", "src": "db2@1.60.1.70009"}
+{"id": 221293, "field": "name", "en": "Four of Dunes", "hash": "3d24cf837fa21a1b", "src": "db2@1.60.1.70009"}
+{"id": 221293, "field": "description", "en": "Combine the Ace through Eight of Dunes to complete the set.", "hash": "58c1438cf71ae155", "src": "db2@1.60.1.70009"}
+{"id": 221294, "field": "name", "en": "Five of Dunes", "hash": "30053cac1910f88d", "src": "db2@1.60.1.70009"}
+{"id": 221294, "field": "description", "en": "Combine the Ace through Eight of Dunes to complete the set.", "hash": "58c1438cf71ae155", "src": "db2@1.60.1.70009"}
+{"id": 221295, "field": "name", "en": "Six of Dunes", "hash": "63eeac8cb2d75828", "src": "db2@1.60.1.70009"}
+{"id": 221295, "field": "description", "en": "Combine the Ace through Eight of Dunes to complete the set.", "hash": "58c1438cf71ae155", "src": "db2@1.60.1.70009"}
+{"id": 221296, "field": "name", "en": "Seven of Dunes", "hash": "368458e3da5f9866", "src": "db2@1.60.1.70009"}
+{"id": 221296, "field": "description", "en": "Combine the Ace through Eight of Dunes to complete the set.", "hash": "58c1438cf71ae155", "src": "db2@1.60.1.70009"}
+{"id": 221297, "field": "name", "en": "Eight of Dunes", "hash": "07c7c7345281e90e", "src": "db2@1.60.1.70009"}
+{"id": 221297, "field": "description", "en": "Combine the Ace through Eight of Dunes to complete the set.", "hash": "58c1438cf71ae155", "src": "db2@1.60.1.70009"}
+{"id": 221298, "field": "name", "en": "Ace of Nightmares", "hash": "14c4fcedda0fff4d", "src": "db2@1.60.1.70009"}
+{"id": 221298, "field": "description", "en": "Combine the Ace through Eight of Nightmares to complete the set.", "hash": "0dbb49e97104904f", "src": "db2@1.60.1.70009"}
+{"id": 221299, "field": "name", "en": "Nightmares Deck", "hash": "d9c8ba4cf99dd5fa", "src": "db2@1.60.1.70009"}
+{"id": 221299, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70009"}
+{"id": 221300, "field": "name", "en": "Two of Nightmares", "hash": "f094c99e0c2cf4ab", "src": "db2@1.60.1.70009"}
+{"id": 221300, "field": "description", "en": "Combine the Ace through Eight of Nightmares to complete the set.", "hash": "0dbb49e97104904f", "src": "db2@1.60.1.70009"}
+{"id": 221301, "field": "name", "en": "Three of Nightmares", "hash": "058e13533c3100cd", "src": "db2@1.60.1.70009"}
+{"id": 221301, "field": "description", "en": "Combine the Ace through Eight of Nightmares to complete the set.", "hash": "0dbb49e97104904f", "src": "db2@1.60.1.70009"}
+{"id": 221302, "field": "name", "en": "Four of Nightmares", "hash": "640b68f765c495a9", "src": "db2@1.60.1.70009"}
+{"id": 221302, "field": "description", "en": "Combine the Ace through Eight of Nightmares to complete the set.", "hash": "0dbb49e97104904f", "src": "db2@1.60.1.70009"}
+{"id": 221303, "field": "name", "en": "Five of Nightmares", "hash": "6d94d22528546cd5", "src": "db2@1.60.1.70009"}
+{"id": 221303, "field": "description", "en": "Combine the Ace through Eight of Nightmares to complete the set.", "hash": "0dbb49e97104904f", "src": "db2@1.60.1.70009"}
+{"id": 221304, "field": "name", "en": "Six of Nightmares", "hash": "8e35b4b98eb2a4ba", "src": "db2@1.60.1.70009"}
+{"id": 221304, "field": "description", "en": "Combine the Ace through Eight of Nightmares to complete the set.", "hash": "0dbb49e97104904f", "src": "db2@1.60.1.70009"}
+{"id": 221305, "field": "name", "en": "Seven of Nightmares", "hash": "3314f112b8fa1a33", "src": "db2@1.60.1.70009"}
+{"id": 221305, "field": "description", "en": "Combine the Ace through Eight of Nightmares to complete the set.", "hash": "0dbb49e97104904f", "src": "db2@1.60.1.70009"}
+{"id": 221306, "field": "name", "en": "Eight of Nightmares", "hash": "0f6745bd9663f7b3", "src": "db2@1.60.1.70009"}
+{"id": 221306, "field": "description", "en": "Combine the Ace through Eight of Nightmares to complete the set.", "hash": "0dbb49e97104904f", "src": "db2@1.60.1.70009"}
+{"id": 221314, "field": "name", "en": "Wanted Notice", "hash": "c17514609e924b8a", "src": "db2@1.60.1.70009"}
+{"id": 221314, "field": "description", "en": "A crude sketch of a Dark Iron dwarf", "hash": "8015c35e72636654", "src": "db2@1.60.1.70009"}
+{"id": 221315, "field": "name", "en": "Traveler's Symbols", "hash": "a31c1c560d717de5", "src": "db2@1.60.1.70009"}
+{"id": 221315, "field": "description", "en": "Place a Traveler's Sign that lasts for 1 min. A message can be written on the sign, causing it to last for 1 hour and making it visible to other players.", "hash": "4a7551751d699b56", "src": "db2@1.60.1.70009"}
+{"id": 221316, "field": "name", "en": "Premo's Poise-Demanding Uniform", "hash": "bebf94e0ec00145b", "src": "db2@1.60.1.70009"}
+{"id": 221316, "field": "description", "en": "Focus.", "hash": "70019c12730a6ef0", "src": "db2@1.60.1.70009"}
+{"id": 221317, "field": "name", "en": "Feralas Leycryst", "hash": "b429e002c460fe08", "src": "db2@1.60.1.70009"}
+{"id": 221317, "field": "description", "en": "Use 4 leycrysts to attune with Azeroth and learn a new ability.", "hash": "1be877eddccb5c48", "src": "db2@1.60.1.70009"}
+{"id": 221318, "field": "name", "en": "Azshara Leycryst", "hash": "bb4879647ce2fd87", "src": "db2@1.60.1.70009"}
+{"id": 221318, "field": "description", "en": "Use 4 leycrysts to attune with Azeroth and learn a new ability.", "hash": "1be877eddccb5c48", "src": "db2@1.60.1.70009"}
+{"id": 221319, "field": "name", "en": "Blackrock Leycryst", "hash": "3cf86027102b0479", "src": "db2@1.60.1.70009"}
+{"id": 221319, "field": "description", "en": "Use 4 leycrysts to attune with Azeroth and learn a new ability.", "hash": "1be877eddccb5c48", "src": "db2@1.60.1.70009"}
+{"id": 221320, "field": "name", "en": "Hinterlands Leycryst", "hash": "094c463858513b1d", "src": "db2@1.60.1.70009"}
+{"id": 221320, "field": "description", "en": "Use 4 leycrysts to attune with Azeroth and learn a new ability.", "hash": "1be877eddccb5c48", "src": "db2@1.60.1.70009"}
+{"id": 221324, "field": "name", "en": "Brittle Key", "hash": "cbfd8c45b64c7c46", "src": "db2@1.60.1.70009"}
+{"id": 221324, "field": "description", "en": "Attaching this crumbling key to your keyring would be impossible.", "hash": "14711a22f14fa0fb", "src": "db2@1.60.1.70009"}
+{"id": 221325, "field": "name", "en": "EZ-Splode Blasting Charge", "hash": "6d5577bc481f39b5", "src": "db2@1.60.1.70009"}
+{"id": 221325, "field": "description", "en": "Blasts open difficult locked doors.\nThe slow-burning fuse is already lit!", "hash": "6f75d8fad173c116", "src": "db2@1.60.1.70009"}
+{"id": 221326, "field": "name", "en": "Sacred Stag Heart", "hash": "029e27dd3e08245a", "src": "db2@1.60.1.70009"}
+{"id": 221326, "field": "description", "en": "Present as an offering at the Shrine of the Beast.", "hash": "3ef6807826706a01", "src": "db2@1.60.1.70009"}
+{"id": 221336, "field": "name", "en": "Schematic: Goblin Mining Helmet", "hash": "68afa93cde00d311", "src": "db2@1.60.1.70009"}
+{"id": 221336, "field": "description", "en": "Teaches you how to craft Goblin Mining Helmet.", "hash": "76ec60a1ac5d7fc9", "src": "db2@1.60.1.70009"}
+{"id": 221344, "field": "name", "en": "Personal Spellbook", "hash": "775669de3965e29a", "src": "db2@1.60.1.70009"}
+{"id": 221344, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nConjure $s1 Comprehension Charms.", "hash": "d8a4118a482a4494", "src": "wago@1.15.9.69722"}
+{"id": 221345, "field": "name", "en": "Corrupted Blood of Eranikus", "hash": "39bcd3c3200c19bc", "src": "db2@1.60.1.70009"}
+{"id": 221347, "field": "name", "en": "Murky Fire Sapta", "hash": "12fe68c34e203826", "src": "db2@1.60.1.70009"}
+{"id": 221347, "field": "description", "en": "Allows the shaman to see elemental spirits.\nA murky concoction. Strange ill-gotten influence taints the otherwise recognizable magic.", "hash": "30414fb112d10418", "src": "db2@1.60.1.70009"}
+{"id": 221348, "field": "name", "en": "Murky Water Sapta", "hash": "923e61d11a7d5b54", "src": "db2@1.60.1.70009"}
+{"id": 221348, "field": "description", "en": "Allows the shaman to see elemental spirits.\nA murky concoction. Strange ill-gotten influence taints the otherwise recognizable magic.", "hash": "30414fb112d10418", "src": "db2@1.60.1.70009"}
+{"id": 221349, "field": "name", "en": "Murky Earth Sapta", "hash": "618cc5c71672d1b5", "src": "db2@1.60.1.70009"}
+{"id": 221349, "field": "description", "en": "Allows the shaman to see elemental spirits.\nA murky concoction. Strange ill-gotten influence taints the otherwise recognizable magic.", "hash": "30414fb112d10418", "src": "db2@1.60.1.70009"}
+{"id": 221353, "field": "name", "en": "Fragment of Fire", "hash": "13382e72f3c550e6", "src": "db2@1.60.1.70009"}
+{"id": 221353, "field": "description", "en": "Combine the Fragment of Fire with Elemental Essences. May help with finding the corrupted shrine.", "hash": "5699791ab024b68d", "src": "db2@1.60.1.70009"}
+{"id": 221354, "field": "name", "en": "Fragment of Water", "hash": "ff16f9958f7d56e1", "src": "db2@1.60.1.70009"}
+{"id": 221354, "field": "description", "en": "Combine the Fragment of Water with Elemental Essences. May help with finding the corrupted shrine.", "hash": "7e54ef73d444029a", "src": "db2@1.60.1.70009"}
+{"id": 221355, "field": "name", "en": "Fragment of Earth", "hash": "c31fa96fdb11b700", "src": "db2@1.60.1.70009"}
+{"id": 221355, "field": "description", "en": "Combine the Fragment of Earth with Elemental Essences. May help with finding the corrupted shrine.", "hash": "3a20730ff7fc865a", "src": "db2@1.60.1.70009"}
+{"id": 221356, "field": "name", "en": "Glowing Fragment of Fire", "hash": "72d0036b9e0bc854", "src": "db2@1.60.1.70009"}
+{"id": 221357, "field": "name", "en": "Glowing Fragment of Water", "hash": "e9c8f5f5bfe1eb12", "src": "db2@1.60.1.70009"}
+{"id": 221358, "field": "name", "en": "Glowing Fragment of Earth", "hash": "add1a5cf0b764b42", "src": "db2@1.60.1.70009"}
+{"id": 221359, "field": "name", "en": "Pristine Owlbeast Quill", "hash": "c8f8be8a2a915624", "src": "db2@1.60.1.70009"}
+{"id": 221360, "field": "name", "en": "Farraki Papyrus", "hash": "7e9eab37fe8b62a6", "src": "db2@1.60.1.70009"}
+{"id": 221361, "field": "name", "en": "Zukk'ash Resin", "hash": "f2f2509869828fa6", "src": "db2@1.60.1.70009"}
+{"id": 221370, "field": "name", "en": "Precious Medallion", "hash": "4eebe449ff2903fb", "src": "db2@1.60.1.70009"}
+{"id": 221370, "field": "description", "en": "The back reads: 'Jabbey + Enie'", "hash": "4facdad7f7be2362", "src": "db2@1.60.1.70009"}
+{"id": 221371, "field": "name", "en": "Kidnapper's Coin Purse", "hash": "6222d2bebe8f1689", "src": "db2@1.60.1.70009"}
+{"id": 221372, "field": "name", "en": "Mangled Coin Purse", "hash": "7f028b60249d928c", "src": "db2@1.60.1.70009"}
+{"id": 221372, "field": "description", "en": "The contents were likely damaged in combat.", "hash": "d4899206f9c8da8d", "src": "db2@1.60.1.70009"}
+{"id": 221418, "field": "name", "en": "Agamaggan's Roar", "hash": "853601397062cab3", "src": "db2@1.60.1.70009"}
+{"id": 221418, "field": "description", "en": "Catch the attention of a Delirious Ancient, drawing it into combat.", "hash": "0be31d045163672a", "src": "db2@1.60.1.70009"}
+{"id": 221428, "field": "name", "en": "Rune of Foul Play", "hash": "63559eb29b66dc17", "src": "db2@1.60.1.70009"}
+{"id": 221428, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221433, "field": "name", "en": "Rune of Focus", "hash": "7ff2d741b7a5440f", "src": "db2@1.60.1.70009"}
+{"id": 221433, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221445, "field": "name", "en": "Rune of Focused Fire", "hash": "f20d83c7f2d6847b", "src": "db2@1.60.1.70009"}
+{"id": 221445, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221461, "field": "name", "en": "Rune of Carnage", "hash": "34e50e90748c9c99", "src": "db2@1.60.1.70009"}
+{"id": 221461, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221470, "field": "name", "en": "Dream Emerald", "hash": "a27dcc3dbf53d915", "src": "db2@1.60.1.70009"}
+{"id": 221471, "field": "name", "en": "Emerald Wardens Chest", "hash": "9827e505d33102f6", "src": "db2@1.60.1.70009"}
+{"id": 221473, "field": "name", "en": "Rune of the Watchman", "hash": "16943788f2afbc6d", "src": "db2@1.60.1.70009"}
+{"id": 221473, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221480, "field": "name", "en": "Spell Notes: Molten Armor", "hash": "0524a1021870b219", "src": "db2@1.60.1.70009"}
+{"id": 221480, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221481, "field": "name", "en": "Nihilist Epiphany", "hash": "758e0b7e6d097f23", "src": "db2@1.60.1.70009"}
+{"id": 221481, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221482, "field": "name", "en": "Rune of Affliction", "hash": "3ba7faef40aa31e2", "src": "db2@1.60.1.70009"}
+{"id": 221482, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221483, "field": "name", "en": "Rune of Burn", "hash": "0c2c1300832d5391", "src": "db2@1.60.1.70009"}
+{"id": 221483, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221487, "field": "name", "en": "Spell Notes: Advanced Warding", "hash": "e861c87722acbca6", "src": "db2@1.60.1.70009"}
+{"id": 221487, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221488, "field": "name", "en": "Resolute Epiphany", "hash": "36f63028345dd0c6", "src": "db2@1.60.1.70009"}
+{"id": 221488, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221489, "field": "name", "en": "Rune of Vengeance", "hash": "8d46865a27f4a305", "src": "db2@1.60.1.70009"}
+{"id": 221489, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221490, "field": "name", "en": "Rune of Riptide", "hash": "853461c0b709222a", "src": "db2@1.60.1.70009"}
+{"id": 221490, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221491, "field": "name", "en": "Shadowtooth Bag", "hash": "60940458b0546ad3", "src": "db2@1.60.1.70009"}
+{"id": 221491, "field": "description", "en": "Contains a random Darkmoon card.", "hash": "57ac2b1b20a1f13d", "src": "db2@1.60.1.70009"}
+{"id": 221497, "field": "name", "en": "Old Key", "hash": "beadd9fab9ec80f4", "src": "db2@1.60.1.70009"}
+{"id": 221497, "field": "description", "en": "An old key.", "hash": "f21ba4b04a31ef35", "src": "db2@1.60.1.70009"}
+{"id": 221498, "field": "name", "en": "Old Toolbox", "hash": "6487efe0309fdfe4", "src": "db2@1.60.1.70009"}
+{"id": 221499, "field": "name", "en": "Rune of the Felguard", "hash": "66a4a5646b13ae96", "src": "db2@1.60.1.70009"}
+{"id": 221499, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221510, "field": "name", "en": "Rune of the Knight", "hash": "e63d477d442df13b", "src": "db2@1.60.1.70009"}
+{"id": 221510, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221511, "field": "name", "en": "Rune of the Protector", "hash": "99191235e7e4503d", "src": "db2@1.60.1.70009"}
+{"id": 221511, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221512, "field": "name", "en": "Rune of Alacrity", "hash": "7368f83aa6d55263", "src": "db2@1.60.1.70009"}
+{"id": 221512, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221513, "field": "name", "en": "Rune of Potency", "hash": "451e5dc63b81d8a8", "src": "db2@1.60.1.70009"}
+{"id": 221513, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221514, "field": "name", "en": "Rune of Firepower", "hash": "1869a6e793f31e02", "src": "db2@1.60.1.70009"}
+{"id": 221514, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221515, "field": "name", "en": "Rune of Detonation", "hash": "41fbf4da73019e93", "src": "db2@1.60.1.70009"}
+{"id": 221515, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221516, "field": "name", "en": "Rune of Primal Energy", "hash": "4e3d1cdb3935b224", "src": "db2@1.60.1.70009"}
+{"id": 221516, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221517, "field": "name", "en": "Rune of Bloodshed", "hash": "e55a243505c66ecd", "src": "db2@1.60.1.70009"}
+{"id": 221517, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 221518, "field": "name", "en": "Whisper", "hash": "d91fab3ce6a4e8ed", "src": "db2@1.60.1.70009"}
+{"id": 221518, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
+{"id": 221519, "field": "name", "en": "Mannoroc Orb", "hash": "4176dd4c0007d946", "src": "db2@1.60.1.70009"}
+{"id": 221544, "field": "name", "en": "Stormcrow Egg", "hash": "7aab83034ab1441d", "src": "db2@1.60.1.70009"}
+{"id": 221545, "field": "name", "en": "Deciphered Warlock Notes", "hash": "9867ec3656722c4a", "src": "db2@1.60.1.70009"}
+{"id": 221545, "field": "description", "en": "Hurried scribbles about a ritual of summoning.", "hash": "123e1bf2759e766f", "src": "db2@1.60.1.70009"}
+{"id": 221547, "field": "name", "en": "Coded Warlock Notes", "hash": "08ba2e294441b61c", "src": "db2@1.60.1.70009"}
+{"id": 221547, "field": "description", "en": "Scrawled notes written in code.", "hash": "f60fe733de6fe92e", "src": "db2@1.60.1.70009"}
+{"id": 221549, "field": "name", "en": "Wastewander Cipher", "hash": "8ccd40caea2c9c0b", "src": "db2@1.60.1.70009"}
+{"id": 221549, "field": "description", "en": "A partial cipher written by the Wastewander.", "hash": "9c0fb87e04ddbe9c", "src": "db2@1.60.1.70009"}
+{"id": 221971, "field": "name", "en": "Dreamsworn Horn", "hash": "b2d48a44cdb8c940", "src": "db2@1.60.1.70009"}
+{"id": 221971, "field": "description", "en": "Combine the collected reagents into a rune that will teach a new Engraving spell.\nA unique reagent that carries a fiery essence. A new rune may be crafted if you find other similar components.", "hash": "c77e61fe3391c031", "src": "db2@1.60.1.70009"}
+{"id": 221972, "field": "name", "en": "Dreampyre Fire", "hash": "04c105e04a5ac416", "src": "db2@1.60.1.70009"}
+{"id": 221972, "field": "description", "en": "Combine the collected reagents into a rune that will teach a new Engraving spell.\nA unique reagent that carries a fiery essence. A new rune may be crafted if you find other similar components.", "hash": "c77e61fe3391c031", "src": "db2@1.60.1.70009"}
+{"id": 221973, "field": "name", "en": "Dreamhunter Fang", "hash": "db840b3bf2b95504", "src": "db2@1.60.1.70009"}
+{"id": 221973, "field": "description", "en": "Combine the collected reagents into a rune that will teach a new Engraving spell.\nA unique reagent that carries a fiery essence. A new rune may be crafted if you find other similar components.", "hash": "c77e61fe3391c031", "src": "db2@1.60.1.70009"}
+{"id": 221974, "field": "name", "en": "Grimtotem Necklace", "hash": "b036704c9a0b4387", "src": "db2@1.60.1.70009"}
+{"id": 221974, "field": "description", "en": "Combine the collected reagents into a fragile staff that can end Undying Slumber.\nA necklace collected from a diseased Grimtotem Shaman.", "hash": "5c7f9a2f37f2c9bc", "src": "db2@1.60.1.70009"}
+{"id": 221975, "field": "name", "en": "Broken Woodpaw Staff", "hash": "3c2e8e00b94e1e60", "src": "db2@1.60.1.70009"}
+{"id": 221975, "field": "description", "en": "Combine the collected reagents into a fragile staff that can end Undying Slumber.\nPart of a staff collected from a diseased Woodpaw Mystic.", "hash": "c6358defa2bbdec2", "src": "db2@1.60.1.70009"}
+{"id": 221976, "field": "name", "en": "Diseased Nature Staff", "hash": "af21b0911e2651f5", "src": "db2@1.60.1.70009"}
+{"id": 221976, "field": "description", "en": "The staff is barely held together, but the ancient magic within may still be of use.", "hash": "6bcd19fcfc25d2a0", "src": "db2@1.60.1.70009"}
+{"id": 221978, "field": "name", "en": "Explorer's Soul", "hash": "a26a9715bb8df713", "src": "db2@1.60.1.70009"}
+{"id": 221978, "field": "description", "en": "Learn to summon an Explorer Imp.", "hash": "8cccca2eae998da1", "src": "db2@1.60.1.70009"}
+{"id": 221979, "field": "name", "en": "Prophecy of Verdant Winter", "hash": "68f97683e850254c", "src": "db2@1.60.1.70009"}
+{"id": 221979, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70009"}
+{"id": 221980, "field": "name", "en": "Prophecy of Awakened Chaos", "hash": "0e90887ffe37a4ac", "src": "db2@1.60.1.70009"}
+{"id": 221980, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70009"}
+{"id": 221981, "field": "name", "en": "Prophecy of the Lost Tribe", "hash": "81fccf5bfea7d20a", "src": "db2@1.60.1.70009"}
+{"id": 221981, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70009"}

@@ -1,0 +1,1 @@
+{"id": 179057, "field": "description", "ja": "Felエネルギーを爆発的に解放し、近くの敵すべてを$N1秒間スタンさせ、\n$N2 Chaosダメージを与える", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3197"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

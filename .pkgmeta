@@ -1,0 +1,30 @@
+# Packaging instructions for the BigWigsMods packager (release.sh).
+# The shipped zip is WoWForeverJapanese/ = the contents of addon/WoWForeverJapanese/ plus LICENSE and
+# ATTRIBUTION.md. `wfj package-check` verifies that before anything is published (docs/operations/release.md).
+package-as: WoWForeverJapanese
+
+enable-nolib-creation: no
+
+# The release run writes this version's notes here from CHANGELOG.md (a dotfile, so it is never packaged).
+manual-changelog:
+  filename: .release-notes.md
+  markup-type: markdown
+
+# The addon lives in a subfolder of the repo: lift it to the top of the package. LICENSE and
+# ATTRIBUTION.md stay where they are, at the top of the package, next to the addon's files.
+move-folders:
+  WoWForeverJapanese/addon/WoWForeverJapanese: WoWForeverJapanese
+
+# Everything else in the repo is development material.
+ignore:
+  - CHANGELOG.md
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - Makefile
+  - README.md
+  - SECURITY.md
+  - data
+  - docs
+  - pipeline
+  - tests
+  - vectors

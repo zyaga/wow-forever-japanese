@@ -1,0 +1,111 @@
+name: pr
+
+on:
+  pull_request:
+    # `edited` re-runs the text job when the title or body changes; the code checks skip that event.
+    types: [opened, edited, synchronize, reopened]
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call: # the Release workflow runs these same checks before it publishes
+
+# Read-only: no step here writes to the repo, and pull requests from forks run this too.
+permissions:
+  contents: read
+
+# A newer push to a pull request replaces the run of the older one, and a newer edit of its text replaces the
+# older text run; the two never cancel each other. Every other run (a push to main, a release) is a group of its
+# own and is never cancelled.
+concurrency:
+  group: pr-${{ github.event.pull_request.number || github.run_id }}-${{ github.event.action == 'edited' && 'text' || 'code' }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    # The Python checks and the data gate. An edit of the pull request's title or body changes no code, so it
+    # runs the text job alone. Lint and validate need both toolchains (luacheck, luac).
+    if: github.event.action != 'edited'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # `make validate --base origin/<base>` needs the base branch on pull requests
+          persist-credentials: false # the job runs the pull request's own code; no token stays in .git/config
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: pipeline/pyproject.toml
+      - run: pip install -e "pipeline[dev]"
+
+      # Pull requests only. A change that reaches the game (addon/ or data/) adds a line for players under
+      # "## Unreleased" in CHANGELOG.md; released sections stay as they were (docs/operations/release.md).
+      - name: Changelog
+        if: github.event_name == 'pull_request'
+        run: wfj release changelog-gate --base "origin/$BASE_REF"
+        env:
+          BASE_REF: ${{ github.base_ref }}
+      # Pull requests that change data/: what the English source gained, lost or changed, and which translation
+      # lines moved status, in the run's summary. A summary needs no write permission (a PR comment would).
+      - name: Data delta
+        if: github.event_name == 'pull_request'
+        run: |
+          changed=$(git diff --name-only "origin/$BASE_REF...HEAD" -- data/)
+          if [ -n "$changed" ]; then
+            {
+              echo "## Data delta against $BASE_REF"
+              echo '```'
+              wfj stats --delta "origin/$BASE_REF" || echo "(the delta could not be computed; see this step's log)"
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+        env:
+          BASE_REF: ${{ github.base_ref }}
+
+      - uses: ./.github/actions/lua-toolchain
+
+      - run: make lint LUA=lua
+      # The Python suite runs under coverage and fails below the floor set in the Makefile; the Lua suite runs
+      # the same way in the lua job, beside this one.
+      - run: make coverage-py
+      - run: make luac LUA=lua
+      - run: make toc-check
+      - run: make validate LUA=lua VALIDATE_FLAGS="${BASE_REF:+--base origin/$BASE_REF}"
+        env:
+          BASE_REF: ${{ github.base_ref }} # set on pull_request only; an env value, not an expression in the script text
+
+  lua:
+    # The addon's tests under coverage (busted + luacov), in a job of their own so they run beside the Python
+    # suite instead of after it. Same skip of text edits as validate. Needs no Python.
+    if: github.event.action != 'edited'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/lua-toolchain
+      - run: make coverage-lua LUA=lua
+
+  text:
+    # Pull requests only, on every edit of the text too. The title, body, branch name and commit messages are
+    # public: no path on someone's machine, no tracker id, a noreply address on every commit, and nothing the
+    # private rules name when the checkout has them. The check reads the title and body from the event file and
+    # the branch from GITHUB_HEAD_REF, so none of it passes through the script text.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # the commit messages since the base branch
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.14"
+      - name: Pull request text
+        run: cd pipeline && python -m wfj public-check pr
+        env:
+          BASE_REF: ${{ github.base_ref }}

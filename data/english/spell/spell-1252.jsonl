@@ -1,0 +1,198 @@
+{"id": 1252000, "field": "name", "en": "Test Bleed", "hash": "0409f4a5a49d898f", "src": "db2@1.60.1.70009"}
+{"id": 1252000, "field": "description", "en": "Bleeding, for testing purposes.", "hash": "945c9ecb82308548", "src": "db2@1.60.1.70009"}
+{"id": 1252000, "field": "aura", "en": "Bleeding, for testing purposes. Suffering $w1% damage every $t1 sec.", "hash": "092186dc81787ae7", "src": "db2@1.60.1.70009"}
+{"id": 1252009, "field": "name", "en": "Increase Strength 20 - Blessed Plate Set", "hash": "fca008cede5d6826", "src": "db2@1.60.1.70009"}
+{"id": 1252009, "field": "description", "en": "+$s1 Strength.", "hash": "7dbddd018496c4c5", "src": "db2@1.60.1.70009"}
+{"id": 1252010, "field": "name", "en": "Increased Critical 1 - All - Blessed Plate Set", "hash": "c7ff557022dfe510", "src": "db2@1.60.1.70009"}
+{"id": 1252010, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%.", "hash": "ff9a12de55e3926a", "src": "db2@1.60.1.70009"}
+{"id": 1252012, "field": "name", "en": "Increase Spell Dam 21 - Blessed Plate Set", "hash": "d04972f14877fa70", "src": "db2@1.60.1.70009"}
+{"id": 1252012, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70009"}
+{"id": 1252013, "field": "name", "en": "Increased Hit Chance 2 - Blessed Plate Set", "hash": "47c5509fb8b8e339", "src": "db2@1.60.1.70009"}
+{"id": 1252013, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70009"}
+{"id": 1252017, "field": "name", "en": "Drying Off", "hash": "3f54a0c5853cb7d8", "src": "db2@1.60.1.70009"}
+{"id": 1252026, "field": "name", "en": "Fireworks", "hash": "682f427fdbf1928e", "src": "db2@1.60.1.70009"}
+{"id": 1252030, "field": "name", "en": "Torrential Rain", "hash": "221e363e513d4f8b", "src": "db2@1.60.1.70009"}
+{"id": 1252083, "field": "name", "en": "1d6", "hash": "000d081bc2916c0b", "src": "db2@1.60.1.70009"}
+{"id": 1252100, "field": "name", "en": "(DNT) TEST Mini Visuals", "hash": "d294708b72036c23", "src": "db2@1.60.1.70009"}
+{"id": 1252106, "field": "name", "en": "Cooling Down", "hash": "f6c61429d50b9ccd", "src": "db2@1.60.1.70009"}
+{"id": 1252110, "field": "name", "en": "Frosty", "hash": "a645dd05a8b8f665", "src": "db2@1.60.1.70009"}
+{"id": 1252154, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70009"}
+{"id": 1252180, "field": "name", "en": "Cable", "hash": "a530001d70da3711", "src": "db2@1.60.1.70009"}
+{"id": 1252183, "field": "name", "en": "Cable", "hash": "a530001d70da3711", "src": "db2@1.60.1.70009"}
+{"id": 1252188, "field": "name", "en": "(DNT) TEST Skeleton Mini Visuals", "hash": "e4b5d0f5e4426d13", "src": "db2@1.60.1.70009"}
+{"id": 1252189, "field": "name", "en": "Gears", "hash": "ebefcfe41e2c80ae", "src": "db2@1.60.1.70009"}
+{"id": 1252229, "field": "name", "en": "Gemmed Copper Boots", "hash": "683ef97a54675cce", "src": "db2@1.60.1.70009"}
+{"id": 1252230, "field": "name", "en": "Strange Copper Boots", "hash": "a10aebfb42cab98a", "src": "db2@1.60.1.70009"}
+{"id": 1252231, "field": "name", "en": "Glowing Copper Boots", "hash": "5dc042fbd3024767", "src": "db2@1.60.1.70009"}
+{"id": 1252232, "field": "name", "en": "Sterling Silver Boots", "hash": "c09279c1c9b8bdcf", "src": "db2@1.60.1.70009"}
+{"id": 1252233, "field": "name", "en": "Sterling Silver Leggings", "hash": "ad574517a15de1da", "src": "db2@1.60.1.70009"}
+{"id": 1252234, "field": "name", "en": "Sterling Silver Gauntlet", "hash": "c2e9d988996dedd4", "src": "db2@1.60.1.70009"}
+{"id": 1252235, "field": "name", "en": "Sterling Silver Shoulders", "hash": "8db9916f2242fb16", "src": "db2@1.60.1.70009"}
+{"id": 1252236, "field": "name", "en": "Sterling Silver Breastplate", "hash": "6cf1daad2d6d2c78", "src": "db2@1.60.1.70009"}
+{"id": 1252237, "field": "name", "en": "Veteran's Chain Shirt", "hash": "99bb09ae8737445d", "src": "db2@1.60.1.70009"}
+{"id": 1252238, "field": "name", "en": "Guard's Chain Shirt", "hash": "f726fd113c38107b", "src": "db2@1.60.1.70009"}
+{"id": 1252239, "field": "name", "en": "Protector's Chain Shirt", "hash": "6111e8607ca59d91", "src": "db2@1.60.1.70009"}
+{"id": 1252240, "field": "name", "en": "Acolyte's Chain Shirt", "hash": "e0a0f50acb45982c", "src": "db2@1.60.1.70009"}
+{"id": 1252241, "field": "name", "en": "Crusader's Chain Shirt", "hash": "5ac326ce9039f1a1", "src": "db2@1.60.1.70009"}
+{"id": 1252242, "field": "name", "en": "Veteran's Chain Leggings", "hash": "83fcc667098b0230", "src": "db2@1.60.1.70009"}
+{"id": 1252243, "field": "name", "en": "Guard's Chain Leggings", "hash": "dff281a0fceb8e52", "src": "db2@1.60.1.70009"}
+{"id": 1252244, "field": "name", "en": "Protector's Chain Leggings", "hash": "ea0f2ff965cf7cb0", "src": "db2@1.60.1.70009"}
+{"id": 1252245, "field": "name", "en": "Acolyte's Chain Leggings", "hash": "db64733ea7b6eded", "src": "db2@1.60.1.70009"}
+{"id": 1252246, "field": "name", "en": "Crusader's Chain Leggings", "hash": "b2bed8b80ca56895", "src": "db2@1.60.1.70009"}
+{"id": 1252247, "field": "name", "en": "Veteran's Chain Helm", "hash": "01a694a7fd784311", "src": "db2@1.60.1.70009"}
+{"id": 1252248, "field": "name", "en": "Guard's Chain Helm", "hash": "69efb5c501a1f38b", "src": "db2@1.60.1.70009"}
+{"id": 1252249, "field": "name", "en": "Protector's Chain Helm", "hash": "d639cf0297bd6180", "src": "db2@1.60.1.70009"}
+{"id": 1252250, "field": "name", "en": "Acolyte's Chain Helm", "hash": "15bbe0b5e2682bef", "src": "db2@1.60.1.70009"}
+{"id": 1252251, "field": "name", "en": "Crusader's Chain Helm", "hash": "7a5490f5b2d03861", "src": "db2@1.60.1.70009"}
+{"id": 1252252, "field": "name", "en": "Veteran's Boots", "hash": "4c36b28e3ba74e43", "src": "db2@1.60.1.70009"}
+{"id": 1252253, "field": "name", "en": "Guard's Boots", "hash": "08ec2eb4e63a20a6", "src": "db2@1.60.1.70009"}
+{"id": 1252254, "field": "name", "en": "Protector's Boots", "hash": "9cddf63f12d1011d", "src": "db2@1.60.1.70009"}
+{"id": 1252255, "field": "name", "en": "Acolyte's Boots", "hash": "18a61fe72545be31", "src": "db2@1.60.1.70009"}
+{"id": 1252256, "field": "name", "en": "Crusader's Boots", "hash": "a88d7c49bfa081cd", "src": "db2@1.60.1.70009"}
+{"id": 1252257, "field": "name", "en": "Veteran's Gloves", "hash": "b4ea35f0b36601b4", "src": "db2@1.60.1.70009"}
+{"id": 1252258, "field": "name", "en": "Guard's Gloves", "hash": "45c8bcb865ec50d5", "src": "db2@1.60.1.70009"}
+{"id": 1252259, "field": "name", "en": "Protector's Gloves", "hash": "fa81da50dbb442d8", "src": "db2@1.60.1.70009"}
+{"id": 1252260, "field": "name", "en": "Acolyte's Gloves", "hash": "51ef29f937340489", "src": "db2@1.60.1.70009"}
+{"id": 1252261, "field": "name", "en": "Crusader's Gloves", "hash": "f553718cdeab1b5d", "src": "db2@1.60.1.70009"}
+{"id": 1252262, "field": "name", "en": "Veteran's Chain Belt", "hash": "00d8c30cad088aeb", "src": "db2@1.60.1.70009"}
+{"id": 1252263, "field": "name", "en": "Guard's Chain Belt", "hash": "6921e42ab1323b54", "src": "db2@1.60.1.70009"}
+{"id": 1252264, "field": "name", "en": "Protector's Chain Belt", "hash": "d56bfd67474da95a", "src": "db2@1.60.1.70009"}
+{"id": 1252265, "field": "name", "en": "Acolyte's Chain Belt", "hash": "14ee0f1a91f873c9", "src": "db2@1.60.1.70009"}
+{"id": 1252266, "field": "name", "en": "Crusader's Chain Belt", "hash": "7986bf5a6260803b", "src": "db2@1.60.1.70009"}
+{"id": 1252267, "field": "name", "en": "Veteran's Silvered Chain Shirt", "hash": "53c1556111aba354", "src": "db2@1.60.1.70009"}
+{"id": 1252268, "field": "name", "en": "Guard's Silvered Chain Shirt", "hash": "c9bbac9b569c3b51", "src": "db2@1.60.1.70009"}
+{"id": 1252269, "field": "name", "en": "Protector's Silvered Chain Shirt", "hash": "edf2053cddbe0e42", "src": "db2@1.60.1.70009"}
+{"id": 1252270, "field": "name", "en": "Acolyte's Silvered Chain Shirt", "hash": "538a7a44a69b70f5", "src": "db2@1.60.1.70009"}
+{"id": 1252271, "field": "name", "en": "Crusader's Silvered Chain Shirt", "hash": "c64615e975b177c9", "src": "db2@1.60.1.70009"}
+{"id": 1252272, "field": "name", "en": "Veteran's Silvered Chain Leggings", "hash": "182890e85a333d7c", "src": "db2@1.60.1.70009"}
+{"id": 1252273, "field": "name", "en": "Guard's Silvered Chain Leggings", "hash": "68fade156d476f6a", "src": "db2@1.60.1.70009"}
+{"id": 1252274, "field": "name", "en": "Protector's Silvered Chain Leggings", "hash": "7405378ab416dac4", "src": "db2@1.60.1.70009"}
+{"id": 1252275, "field": "name", "en": "Acolyte's Silvered Chain Leggings", "hash": "5d30089734955e02", "src": "db2@1.60.1.70009"}
+{"id": 1252276, "field": "name", "en": "Crusader's Silvered Chain Leggings", "hash": "eecec4f81bfcfc1d", "src": "db2@1.60.1.70009"}
+{"id": 1252277, "field": "name", "en": "Veteran's Silvered Chain Helm", "hash": "011dd5b848fdc011", "src": "db2@1.60.1.70009"}
+{"id": 1252278, "field": "name", "en": "Guard's Silvered Chain Helm", "hash": "dce32a66b4901d59", "src": "db2@1.60.1.70009"}
+{"id": 1252279, "field": "name", "en": "Protector's Silvered Chain Helm", "hash": "bde588e117a45205", "src": "db2@1.60.1.70009"}
+{"id": 1252280, "field": "name", "en": "Acolyte's Silvered Chain Helm", "hash": "e5c191962b2d85d9", "src": "db2@1.60.1.70009"}
+{"id": 1252281, "field": "name", "en": "Crusader's Silvered Chain Helm", "hash": "ee72e0f1c813fdc3", "src": "db2@1.60.1.70009"}
+{"id": 1252282, "field": "name", "en": "Hard Gold Cuirass", "hash": "b21bf597a8b6a3ea", "src": "db2@1.60.1.70009"}
+{"id": 1252283, "field": "name", "en": "Hard Gold Boots", "hash": "2ef7cf1cb6ae99ce", "src": "db2@1.60.1.70009"}
+{"id": 1252284, "field": "name", "en": "Hard Gold Bracers", "hash": "7c6d2ce52df8b775", "src": "db2@1.60.1.70009"}
+{"id": 1252285, "field": "name", "en": "Hard Gold Leggings", "hash": "5512c4ca4de6afdc", "src": "db2@1.60.1.70009"}
+{"id": 1252286, "field": "name", "en": "Hard Gold Coif", "hash": "19e5a5f3c381536a", "src": "db2@1.60.1.70009"}
+{"id": 1252287, "field": "name", "en": "Hard Gold Gauntlet", "hash": "6aa5593b45f6bbd6", "src": "db2@1.60.1.70009"}
+{"id": 1252288, "field": "name", "en": "Hard Gold Pauldrons", "hash": "9b4e4baa763c9243", "src": "db2@1.60.1.70009"}
+{"id": 1252289, "field": "name", "en": "Shining Mithril Breastplate", "hash": "a57932e07e0d084e", "src": "db2@1.60.1.70009"}
+{"id": 1252290, "field": "name", "en": "Shining Mithril Pauldrons", "hash": "5bb78a26fdfc9c93", "src": "db2@1.60.1.70009"}
+{"id": 1252291, "field": "name", "en": "Shining Mithril Boots", "hash": "e7ec8c29065cb05f", "src": "db2@1.60.1.70009"}
+{"id": 1252292, "field": "name", "en": "Shining Mithril Helm", "hash": "7bb97538d47b4672", "src": "db2@1.60.1.70009"}
+{"id": 1252293, "field": "name", "en": "Shining Mithril Pants", "hash": "dbcc031977880cbc", "src": "db2@1.60.1.70009"}
+{"id": 1252294, "field": "name", "en": "Shining Mithril Gauntlet", "hash": "1fe6a3f95d71b8fa", "src": "db2@1.60.1.70009"}
+{"id": 1252295, "field": "name", "en": "Officer's Boots", "hash": "8e4a9618cd5da456", "src": "db2@1.60.1.70009"}
+{"id": 1252296, "field": "name", "en": "Sentinel's Boots", "hash": "d7064d28922238a1", "src": "db2@1.60.1.70009"}
+{"id": 1252297, "field": "name", "en": "Warder's Boots", "hash": "31b23a0ed1dcb228", "src": "db2@1.60.1.70009"}
+{"id": 1252298, "field": "name", "en": "Prefect's Boots", "hash": "e665c9b32a493c87", "src": "db2@1.60.1.70009"}
+{"id": 1252299, "field": "name", "en": "Justicar's Boots", "hash": "5813c885ac247488", "src": "db2@1.60.1.70009"}
+{"id": 1252300, "field": "name", "en": "Officer's Gloves", "hash": "8517a638d91529dc", "src": "db2@1.60.1.70009"}
+{"id": 1252301, "field": "name", "en": "Sentinel's Gloves", "hash": "bd26542197d01767", "src": "db2@1.60.1.70009"}
+{"id": 1252302, "field": "name", "en": "Warder's Gloves", "hash": "23208c2f2f6cc6fe", "src": "db2@1.60.1.70009"}
+{"id": 1252303, "field": "name", "en": "Prefect's Gloves", "hash": "9b030f6a0b9282bf", "src": "db2@1.60.1.70009"}
+{"id": 1252304, "field": "name", "en": "Justicar's Gloves", "hash": "c70c7373b907ed7b", "src": "db2@1.60.1.70009"}
+{"id": 1252305, "field": "name", "en": "Officer's Belt", "hash": "b8c545e2f31d5f8f", "src": "db2@1.60.1.70009"}
+{"id": 1252306, "field": "name", "en": "Sentinel's Belt", "hash": "2aab58e183f7d961", "src": "db2@1.60.1.70009"}
+{"id": 1252307, "field": "name", "en": "Warder's Belt", "hash": "eec804b0f99bce02", "src": "db2@1.60.1.70009"}
+{"id": 1252308, "field": "name", "en": "Prefect's Belt", "hash": "4fea9c45926291fb", "src": "db2@1.60.1.70009"}
+{"id": 1252309, "field": "name", "en": "Justicar's Belt", "hash": "d993ffea885ceb5c", "src": "db2@1.60.1.70009"}
+{"id": 1252310, "field": "name", "en": "Officer's Sabatons", "hash": "7fa48d082cc0f6e5", "src": "db2@1.60.1.70009"}
+{"id": 1252311, "field": "name", "en": "Sentinel's Sabatons", "hash": "4facee9f924c9bc8", "src": "db2@1.60.1.70009"}
+{"id": 1252312, "field": "name", "en": "Warder's Sabatons", "hash": "6223c774a524bf57", "src": "db2@1.60.1.70009"}
+{"id": 1252313, "field": "name", "en": "Prefect's Sabatons", "hash": "e173727b9a3f3f5c", "src": "db2@1.60.1.70009"}
+{"id": 1252314, "field": "name", "en": "Justicar's Sabatons", "hash": "e2f68b74e28e0180", "src": "db2@1.60.1.70009"}
+{"id": 1252315, "field": "name", "en": "Officer's Gauntlet", "hash": "75557d43ff0addb7", "src": "db2@1.60.1.70009"}
+{"id": 1252316, "field": "name", "en": "Sentinel's Gauntlet", "hash": "455ddeda649682ab", "src": "db2@1.60.1.70009"}
+{"id": 1252317, "field": "name", "en": "Warder's Gauntlet", "hash": "57d4b7af776ea63a", "src": "db2@1.60.1.70009"}
+{"id": 1252318, "field": "name", "en": "Prefect's Gauntlet", "hash": "d72462b66c89263f", "src": "db2@1.60.1.70009"}
+{"id": 1252319, "field": "name", "en": "Justicar's Gauntlet", "hash": "d8a77bafb4d7e863", "src": "db2@1.60.1.70009"}
+{"id": 1252320, "field": "name", "en": "Officer's Waistguard", "hash": "9bb493cf71a550dd", "src": "db2@1.60.1.70009"}
+{"id": 1252321, "field": "name", "en": "Sentinel's Waistguard", "hash": "1d8a48530bc0f787", "src": "db2@1.60.1.70009"}
+{"id": 1252322, "field": "name", "en": "Warder's Waistguard", "hash": "de77bef9f681eeaf", "src": "db2@1.60.1.70009"}
+{"id": 1252323, "field": "name", "en": "Prefect's Waistguard", "hash": "32083debbff6645e", "src": "db2@1.60.1.70009"}
+{"id": 1252324, "field": "name", "en": "Justicar's Waistguard", "hash": "8f2d4ba57215f498", "src": "db2@1.60.1.70009"}
+{"id": 1252325, "field": "name", "en": "Officer's Pauldrons", "hash": "1370bbe0910a1fd0", "src": "db2@1.60.1.70009"}
+{"id": 1252326, "field": "name", "en": "Sentinel's Pauldrons", "hash": "87baaba8b9be5f48", "src": "db2@1.60.1.70009"}
+{"id": 1252327, "field": "name", "en": "Warder's Pauldrons", "hash": "fa8ba0d4760418e0", "src": "db2@1.60.1.70009"}
+{"id": 1252328, "field": "name", "en": "Prefect's Pauldrons", "hash": "205026b317cf213a", "src": "db2@1.60.1.70009"}
+{"id": 1252329, "field": "name", "en": "Justicar's Pauldrons", "hash": "e665ee1e2e8ab7ef", "src": "db2@1.60.1.70009"}
+{"id": 1252330, "field": "name", "en": "Officer's Wristguards", "hash": "1900f8a048c626ee", "src": "db2@1.60.1.70009"}
+{"id": 1252331, "field": "name", "en": "Sentinel's Wristguards", "hash": "895c56e7144160a8", "src": "db2@1.60.1.70009"}
+{"id": 1252332, "field": "name", "en": "Warder's Wristguards", "hash": "42e00fc8c5ca63bb", "src": "db2@1.60.1.70009"}
+{"id": 1252333, "field": "name", "en": "Prefect's Wristguards", "hash": "05d103e6ef65900f", "src": "db2@1.60.1.70009"}
+{"id": 1252334, "field": "name", "en": "Justicar's Wristguards", "hash": "afc70aff4f99b437", "src": "db2@1.60.1.70009"}
+{"id": 1252335, "field": "name", "en": "Blessed Plate Pauldrons", "hash": "88d71fae2977068f", "src": "db2@1.60.1.70009"}
+{"id": 1252336, "field": "name", "en": "Blessed Plate Boots", "hash": "8c167c11913452a0", "src": "db2@1.60.1.70009"}
+{"id": 1252337, "field": "name", "en": "Blessed Plate Gauntlet", "hash": "ff062613862a87d3", "src": "db2@1.60.1.70009"}
+{"id": 1252338, "field": "name", "en": "Imperial Plate Gauntlets", "hash": "88c000400512d1c8", "src": "db2@1.60.1.70009"}
+{"id": 1252339, "field": "name", "en": "Blessed Plate Bracers", "hash": "c9c5da6c63b6c931", "src": "db2@1.60.1.70009"}
+{"id": 1252340, "field": "name", "en": "Blessed Plate Leggings", "hash": "e97391a28e1a7bd9", "src": "db2@1.60.1.70009"}
+{"id": 1252341, "field": "name", "en": "Blessed Plate Belt", "hash": "bab53ddef48ce24b", "src": "db2@1.60.1.70009"}
+{"id": 1252342, "field": "name", "en": "Blessed Plate Helm", "hash": "bb830f7944fc9a82", "src": "db2@1.60.1.70009"}
+{"id": 1252343, "field": "name", "en": "Blessed Plate Chest", "hash": "9cb174496a946074", "src": "db2@1.60.1.70009"}
+{"id": 1252344, "field": "name", "en": "Enriched Thorium Breastplate", "hash": "5fe1aa1cb7c58f23", "src": "db2@1.60.1.70009"}
+{"id": 1252345, "field": "name", "en": "Enriched Thorium Leggings", "hash": "1ce4c3f5edc922dd", "src": "db2@1.60.1.70009"}
+{"id": 1252346, "field": "name", "en": "Enriched Thorium Helm", "hash": "783fb8446b67c9de", "src": "db2@1.60.1.70009"}
+{"id": 1252347, "field": "name", "en": "Champion's Legplates", "hash": "349df624a3034e3d", "src": "db2@1.60.1.70009"}
+{"id": 1252348, "field": "name", "en": "Stalwart Helm", "hash": "b4ec87b08f4ee9fa", "src": "db2@1.60.1.70009"}
+{"id": 1252349, "field": "name", "en": "Martyr's Legplates", "hash": "4ae60ee72005c333", "src": "db2@1.60.1.70009"}
+{"id": 1252350, "field": "name", "en": "Breastplate of Salvation", "hash": "3b471144b6e8db17", "src": "db2@1.60.1.70009"}
+{"id": 1252351, "field": "name", "en": "Brass Knuckles", "hash": "b4913e5af999258d", "src": "db2@1.60.1.70009"}
+{"id": 1252352, "field": "name", "en": "Bronze Dory", "hash": "5f144abd8f1712de", "src": "db2@1.60.1.70009"}
+{"id": 1252353, "field": "name", "en": "Iron Fists", "hash": "c9b00854f622c441", "src": "db2@1.60.1.70009"}
+{"id": 1252354, "field": "name", "en": "Steel Spear", "hash": "adcda8ff6b503b74", "src": "db2@1.60.1.70009"}
+{"id": 1252355, "field": "name", "en": "Iron Morningstar", "hash": "23c8f4d3f86c6977", "src": "db2@1.60.1.70009"}
+{"id": 1252356, "field": "name", "en": "Mithril Shortsword", "hash": "2b43a482942970e8", "src": "db2@1.60.1.70009"}
+{"id": 1252357, "field": "name", "en": "Mithril Warhammer", "hash": "025a9e6b92fc35d8", "src": "db2@1.60.1.70009"}
+{"id": 1252358, "field": "name", "en": "Mithril Claws", "hash": "6fe2006c03edb799", "src": "db2@1.60.1.70009"}
+{"id": 1252359, "field": "name", "en": "Mithril Claymore", "hash": "e90499acfd9be529", "src": "db2@1.60.1.70009"}
+{"id": 1252360, "field": "name", "en": "Mithril Stiletto", "hash": "fc915aa8e3dfb755", "src": "db2@1.60.1.70009"}
+{"id": 1252361, "field": "name", "en": "Charged Mithril Battleaxe", "hash": "623d9da03cbab707", "src": "db2@1.60.1.70009"}
+{"id": 1252362, "field": "name", "en": "Thorium Greatmace", "hash": "bcbb327ec1557534", "src": "db2@1.60.1.70009"}
+{"id": 1252363, "field": "name", "en": "Thorium Cestus", "hash": "923cf070beda514f", "src": "db2@1.60.1.70009"}
+{"id": 1252364, "field": "name", "en": "Thorium Poleaxe", "hash": "588551c004dc5f1a", "src": "db2@1.60.1.70009"}
+{"id": 1252365, "field": "name", "en": "Bold Dirk", "hash": "83dddc3fff5b36b2", "src": "db2@1.60.1.70009"}
+{"id": 1252366, "field": "name", "en": "Stormcarver", "hash": "73c7ed20b7a5cb75", "src": "db2@1.60.1.70009"}
+{"id": 1252367, "field": "name", "en": "Bagh Nakh", "hash": "63915234941f2d0c", "src": "db2@1.60.1.70009"}
+{"id": 1252368, "field": "name", "en": "Legionite Glaive", "hash": "93c31b6f8bdd34dc", "src": "db2@1.60.1.70009"}
+{"id": 1252460, "field": "name", "en": "Wind Rush", "hash": "af49b058f2f019b8", "src": "db2@1.60.1.70009"}
+{"id": 1252482, "field": "name", "en": "Lower Lift", "hash": "77c6697c93dafea5", "src": "db2@1.60.1.70009"}
+{"id": 1252512, "field": "name", "en": "Lower Lift", "hash": "77c6697c93dafea5", "src": "db2@1.60.1.70009"}
+{"id": 1252525, "field": "name", "en": "Caustic Smog Potion", "hash": "52ed896f18367044", "src": "db2@1.60.1.70009"}
+{"id": 1252525, "field": "description", "en": "Throw a fragile concoction at the target area, revealing a cloud of Caustic Smog for $1252526d. Enemies standing within the cloud suffer $1252543s1 Nature damage every $1252543t1 sec.", "hash": "a6d056008637f824", "src": "db2@1.60.1.70009"}
+{"id": 1252526, "field": "name", "en": "Caustic Smog Potion", "hash": "52ed896f18367044", "src": "db2@1.60.1.70009"}
+{"id": 1252526, "field": "description", "en": "$@spelldesc1252525", "hash": "b8635717546428ea", "src": "db2@1.60.1.70009"}
+{"id": 1252543, "field": "name", "en": "Caustic Smog Potion", "hash": "52ed896f18367044", "src": "db2@1.60.1.70009"}
+{"id": 1252543, "field": "description", "en": "$@spelldesc1252525", "hash": "b8635717546428ea", "src": "db2@1.60.1.70009"}
+{"id": 1252543, "field": "aura", "en": "Suffering $w1 Nature damage every $t1 sec.", "hash": "0c4dce3beae64d3f", "src": "db2@1.60.1.70009"}
+{"id": 1252544, "field": "name", "en": "Disorienting Smog Potion", "hash": "471958b23f2cdf9a", "src": "db2@1.60.1.70009"}
+{"id": 1252544, "field": "description", "en": "Throw a fragile concoction at the target area, revealing a cloud of Disorienting Smog for $1252545d. Enemies standing within the cloud have their Hit Chance reduced by $1252546s1%. Ineffective against targets above level $1252546s2.", "hash": "9e622abad513a446", "src": "db2@1.60.1.70009"}
+{"id": 1252545, "field": "name", "en": "Disorienting Smog Potion", "hash": "471958b23f2cdf9a", "src": "db2@1.60.1.70009"}
+{"id": 1252545, "field": "description", "en": "$@spelldesc1252544", "hash": "b863581c546468ab", "src": "db2@1.60.1.70009"}
+{"id": 1252546, "field": "name", "en": "Disorienting Smog Potion", "hash": "471958b23f2cdf9a", "src": "db2@1.60.1.70009"}
+{"id": 1252546, "field": "description", "en": "$@spelldesc1252544", "hash": "b863581c546468ab", "src": "db2@1.60.1.70009"}
+{"id": 1252546, "field": "aura", "en": "Chance to hit with attacks reduced by $w1%.", "hash": "0aca2743ba01789e", "src": "db2@1.60.1.70009"}
+{"id": 1252554, "field": "name", "en": "Dragonfire Potion", "hash": "d13b5266ead57173", "src": "db2@1.60.1.70009"}
+{"id": 1252554, "field": "description", "en": "Unleash a belch of dragonfire, dealing $s1 Fire damage instantly in a narrow cone in front of you. Affected targets will suffer $s2 additional damage every $t2 sec for $d.", "hash": "416cdf8142f57470", "src": "db2@1.60.1.70009"}
+{"id": 1252554, "field": "aura", "en": "Suffering $w2 Fire damage every $t2 sec.", "hash": "2ca459b738c57e3b", "src": "db2@1.60.1.70009"}
+{"id": 1252558, "field": "name", "en": "Potion of Elemental Purging", "hash": "2072950bb4b67899", "src": "db2@1.60.1.70009"}
+{"id": 1252558, "field": "description", "en": "Increases Spell Damage by $s1 against Elementals.  Lasts $d.", "hash": "6b5184209264faaa", "src": "db2@1.60.1.70009"}
+{"id": 1252558, "field": "aura", "en": "Spell Damage increased by $s1 against Elementals.", "hash": "84aaaa3716b23900", "src": "db2@1.60.1.70009"}
+{"id": 1252559, "field": "name", "en": "Potion of Beast Slaying", "hash": "ebd97780ec1b549e", "src": "db2@1.60.1.70009"}
+{"id": 1252559, "field": "description", "en": "Increases Attack Power by $s1 against Beasts.  Lasts $d.", "hash": "c2c3cf7e34839b30", "src": "db2@1.60.1.70009"}
+{"id": 1252559, "field": "aura", "en": "Attack Power increased by $w1 against Beasts.", "hash": "65f19e6b238ef26e", "src": "db2@1.60.1.70009"}
+{"id": 1252566, "field": "name", "en": "Savory Whimsyfin Delight", "hash": "22aa4d6461f905d6", "src": "db2@1.60.1.70009"}
+{"id": 1252576, "field": "name", "en": "Savory Whimsyfin Delight", "hash": "22aa4d6461f905d6", "src": "db2@1.60.1.70009"}
+{"id": 1252576, "field": "description", "en": "Eat me.", "hash": "f9e7e9c956c15591", "src": "db2@1.60.1.70009"}
+{"id": 1252576, "field": "aura", "en": "You feel funny.", "hash": "4def52118abea917", "src": "db2@1.60.1.70009"}
+{"id": 1252716, "field": "name", "en": "Soothed", "hash": "50656c7972330d91", "src": "db2@1.60.1.70009"}
+{"id": 1252794, "field": "name", "en": "Flames", "hash": "3b11bebc9bb72c5f", "src": "db2@1.60.1.70009"}
+{"id": 1252807, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70009"}
+{"id": 1252879, "field": "name", "en": "Cooking Shortcut", "hash": "0a68af0c39ea1b4e", "src": "db2@1.60.1.70009"}
+{"id": 1252890, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70009"}

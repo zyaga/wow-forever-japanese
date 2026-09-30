@@ -1,0 +1,171 @@
+{"id": 1300001, "field": "name", "en": "Resist Sleep 03", "hash": "21a353ddd778df52", "src": "db2@1.60.1.70009"}
+{"id": 1300001, "field": "description", "en": "Reduces the hit chance of Sleep effects against you by $s1%.", "hash": "7614236eef4c7d7e", "src": "db2@1.60.1.70009"}
+{"id": 1300087, "field": "name", "en": "Grow", "hash": "09a19943fc70ad59", "src": "db2@1.60.1.70009"}
+{"id": 1300087, "field": "aura", "en": "Will finish growing in $d.", "hash": "aa7844ec142cd5db", "src": "db2@1.60.1.70009"}
+{"id": 1300108, "field": "name", "en": "[DNT] Node Check", "hash": "56a76c850d178e94", "src": "db2@1.60.1.70009"}
+{"id": 1300128, "field": "name", "en": "Frostburn", "hash": "07ea9e66b2491d22", "src": "db2@1.60.1.70009"}
+{"id": 1300128, "field": "description", "en": "Melee attacks deal $1300130s1 Fire additional damage against Frozen targets.", "hash": "64478aea7b88e272", "src": "db2@1.60.1.70009"}
+{"id": 1300130, "field": "name", "en": "Frostburn", "hash": "07ea9e66b2491d22", "src": "db2@1.60.1.70009"}
+{"id": 1300130, "field": "description", "en": "Deal $s2 Fire damage.", "hash": "c6d10f584dce0de0", "src": "db2@1.60.1.70009"}
+{"id": 1300130, "field": "aura", "en": "Deals $s2 Fire damage.", "hash": "f41e714782a4bfe2", "src": "db2@1.60.1.70009"}
+{"id": 1300140, "field": "name", "en": "Wit's End", "hash": "a7263c0f6fd66970", "src": "db2@1.60.1.70009"}
+{"id": 1300140, "field": "aura", "en": "Your next damage spell has its mana cost reduced by $/10;s1%.", "hash": "ec1aeca82d3ff92a", "src": "db2@1.60.1.70009"}
+{"id": 1300141, "field": "name", "en": "Wit's End", "hash": "a7263c0f6fd66970", "src": "db2@1.60.1.70009"}
+{"id": 1300141, "field": "description", "en": "Melee attacks have a $h% chance to grant a Clearcasting state, reducing the mana cost of your next damage spell by 100%.", "hash": "51187bc191c83fc7", "src": "db2@1.60.1.70009"}
+{"id": 1300151, "field": "name", "en": "[DNT] Node Check", "hash": "56a76c850d178e94", "src": "db2@1.60.1.70009"}
+{"id": 1300176, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70009"}
+{"id": 1300176, "field": "description", "en": "Blasts the target with energy, dealing Arcane damage.  Each time you cast Arcane Blast, the damage of all other spells is increased by $400573s1% and mana cost of Arcane Blast is increased by $400573s2%.  Effect stacks up to $400573u times and lasts $400573d.", "hash": "187a62d20aceb166", "src": "db2@1.60.1.70009"}
+{"id": 1300176, "field": "aura", "en": "Non-Arcane Blast spell damage increased by $s1% and mana cost of Arcane Blast increased by $s2%.", "hash": "c1ca0c659d366ac3", "src": "db2@1.60.1.70009"}
+{"id": 1300177, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70009"}
+{"id": 1300177, "field": "description", "en": "Blasts the target with energy, dealing Arcane damage.  Each time you cast Arcane Blast, the damage of all other spells is increased by $400573s1% and mana cost of Arcane Blast is increased by $400573s2%.  Effect stacks up to $400573u times and lasts $400573d.", "hash": "187a62d20aceb166", "src": "db2@1.60.1.70009"}
+{"id": 1300177, "field": "aura", "en": "Non-Arcane Blast spell damage increased by $s1% and mana cost of Arcane Blast increased by $s2%.", "hash": "c1ca0c659d366ac3", "src": "db2@1.60.1.70009"}
+{"id": 1300180, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70009"}
+{"id": 1300180, "field": "description", "en": "Stealth to sneak around, but reduce your movement speed by $s2%.  Can only be used when out of combat.  Lasts $d.", "hash": "98d637d281a9c96b", "src": "db2@1.60.1.70009"}
+{"id": 1300180, "field": "aura", "en": "Stealthed.  Movement slowed by $s2%.", "hash": "baa2cba737f8a41f", "src": "db2@1.60.1.70009"}
+{"id": 1300185, "field": "name", "en": "Fatal Wound", "hash": "ebdc0703e5b14cb5", "src": "db2@1.60.1.70009"}
+{"id": 1300185, "field": "description", "en": "Delivers a fatal wound for $s1 Physical damage. Deals $s2% increased damage to targets below $s3% health.", "hash": "bbacb8064ada61da", "src": "db2@1.60.1.70009"}
+{"id": 1300209, "field": "name", "en": "Bludgeon", "hash": "e360d47e2df2b882", "src": "db2@1.60.1.70009"}
+{"id": 1300209, "field": "description", "en": "Bludgeon the target, dealing $s1 Physical damage.  Canines and Hyaenidae are stunned and sit for $1293483d.", "hash": "94af7e4d9a1edd02", "src": "db2@1.60.1.70009"}
+{"id": 1300211, "field": "name", "en": "Bludgeon", "hash": "e360d47e2df2b882", "src": "db2@1.60.1.70009"}
+{"id": 1300211, "field": "aura", "en": "Stunned and being a good dog.", "hash": "68bbc6daaf85596b", "src": "db2@1.60.1.70009"}
+{"id": 1300240, "field": "name", "en": "Cloud of Chained Essence", "hash": "eaaddda95a46199e", "src": "db2@1.60.1.70009"}
+{"id": 1300240, "field": "description", "en": "Deals $s1 Nature damage per $t1 sec. Deaks $s2 times as much damage to Trolls.", "hash": "7fa6d43fb1f439db", "src": "db2@1.60.1.70009"}
+{"id": 1300240, "field": "aura", "en": "Taking $w1 Nature damage per $t1 sec.", "hash": "9fe1679de185c99d", "src": "db2@1.60.1.70009"}
+{"id": 1300241, "field": "name", "en": "Essence Chained", "hash": "1ffb345237e11df7", "src": "db2@1.60.1.70009"}
+{"id": 1300241, "field": "description", "en": "Put to sleep for up to $d.  Any damage caused will awaken you.", "hash": "2c554492fea8592f", "src": "db2@1.60.1.70009"}
+{"id": 1300241, "field": "aura", "en": "Sleeping.", "hash": "b9deadc440227c50", "src": "db2@1.60.1.70009"}
+{"id": 1300344, "field": "name", "en": "Dual Wield", "hash": "d6ada926229d2b48", "src": "db2@1.60.1.70009"}
+{"id": 1300344, "field": "description", "en": "Allows one-hand and off-hand weapons to be equipped in the off-hand.", "hash": "8a696461303313c8", "src": "db2@1.60.1.70009"}
+{"id": 1300356, "field": "name", "en": "Lifeforce", "hash": "7fe936938176e523", "src": "db2@1.60.1.70009"}
+{"id": 1300356, "field": "description", "en": "Heals wielder of $s1 damage.", "hash": "ced77ef4c4784f4e", "src": "db2@1.60.1.70009"}
+{"id": 1300356, "field": "aura", "en": "Heals $s1 damage.", "hash": "ac953362fbd9bf00", "src": "db2@1.60.1.70009"}
+{"id": 1300361, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70009"}
+{"id": 1300361, "field": "description", "en": "$@spelldesc1300354", "hash": "5bddf362289945b1", "src": "db2@1.60.1.70009"}
+{"id": 1300361, "field": "aura", "en": "$@spellaura1300354", "hash": "56153d56d038f49b", "src": "db2@1.60.1.70009"}
+{"id": 1300364, "field": "name", "en": "Guarded", "hash": "c7193073fcda1c57", "src": "db2@1.60.1.70009"}
+{"id": 1300364, "field": "description", "en": "Reduces the range enemies detect you by $s1 yards for $d.", "hash": "c92b353854ed841f", "src": "db2@1.60.1.70009"}
+{"id": 1300364, "field": "aura", "en": "Detection range of enemies reduced by $s1 yards.", "hash": "05d8ed1a760b9bda", "src": "db2@1.60.1.70009"}
+{"id": 1300424, "field": "name", "en": "Dark Channeling", "hash": "b8dcec79c0f0a477", "src": "db2@1.60.1.70009"}
+{"id": 1300435, "field": "name", "en": "Moonshadow", "hash": "ece774aa105fef9e", "src": "db2@1.60.1.70009"}
+{"id": 1300435, "field": "description", "en": "Harmful spell casts have a chance to deal $1300437s1 Arcane or Shadow damage.", "hash": "3db75b923dc54304", "src": "db2@1.60.1.70009"}
+{"id": 1300437, "field": "name", "en": "Moonshadow", "hash": "ece774aa105fef9e", "src": "db2@1.60.1.70009"}
+{"id": 1300437, "field": "description", "en": "Deals $s1 Shadow damage.", "hash": "b56abc3d42c42942", "src": "db2@1.60.1.70009"}
+{"id": 1300437, "field": "aura", "en": "Deals $s1 Shadow damage.", "hash": "b56abc3d42c42942", "src": "db2@1.60.1.70009"}
+{"id": 1300438, "field": "name", "en": "Moonshadow", "hash": "ece774aa105fef9e", "src": "db2@1.60.1.70009"}
+{"id": 1300438, "field": "description", "en": "Deals $s1 Arcane damage.", "hash": "14797f2fd977bd4e", "src": "db2@1.60.1.70009"}
+{"id": 1300438, "field": "aura", "en": "Deals $s1 Arcane damage.", "hash": "14797f2fd977bd4e", "src": "db2@1.60.1.70009"}
+{"id": 1300441, "field": "name", "en": "DNT Grow Pine Tree Visual", "hash": "dbe982854726c67f", "src": "db2@1.60.1.70009"}
+{"id": 1300493, "field": "name", "en": "Devilsaur Glare", "hash": "6aa7d089cf827df9", "src": "db2@1.60.1.70009"}
+{"id": 1300493, "field": "description", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70009"}
+{"id": 1300493, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70009"}
+{"id": 1300496, "field": "name", "en": "Devilsaur Glare", "hash": "6aa7d089cf827df9", "src": "db2@1.60.1.70009"}
+{"id": 1300496, "field": "description", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70009"}
+{"id": 1300496, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70009"}
+{"id": 1300620, "field": "name", "en": "Rank Points", "hash": "f0cddc8a88045b0d", "src": "db2@1.60.1.70009"}
+{"id": 1300620, "field": "description", "en": "Honor gains increased by $s1%.\r\n", "hash": "9b9bce7b18d154aa", "src": "db2@1.60.1.70009"}
+{"id": 1300620, "field": "aura", "en": "|cFF00AA99Bonus Event: Honor|r\r\n\r\nHonor gains increased by $s1%.", "hash": "6c62c9e99c848a6b", "src": "db2@1.60.1.70009"}
+{"id": 1300621, "field": "name", "en": "Rank Points", "hash": "f0cddc8a88045b0d", "src": "db2@1.60.1.70009"}
+{"id": 1300621, "field": "description", "en": "Honor gains increased by $s1%.\r\n", "hash": "9b9bce7b18d154aa", "src": "db2@1.60.1.70009"}
+{"id": 1300621, "field": "aura", "en": "|cFF00AA99Bonus Event: Honor|r\r\n\r\nHonor gains increased by $s1%.", "hash": "6c62c9e99c848a6b", "src": "db2@1.60.1.70009"}
+{"id": 1300663, "field": "name", "en": "Safe Fall 08", "hash": "fa3e900fd5500d1d", "src": "db2@1.60.1.70009"}
+{"id": 1300663, "field": "description", "en": "Reduces damage from falling.", "hash": "879f36ddea9501a1", "src": "db2@1.60.1.70009"}
+{"id": 1300664, "field": "name", "en": "Heal Health 1.0 Coeffecient", "hash": "fd4400a7fe65ce17", "src": "db2@1.60.1.70009"}
+{"id": 1300667, "field": "name", "en": "Mana Spring Totem", "hash": "20de7e6174186899", "src": "db2@1.60.1.70009"}
+{"id": 1300668, "field": "name", "en": "Summon Scarlet Cannon", "hash": "233678cf80e50303", "src": "db2@1.60.1.70009"}
+{"id": 1300678, "field": "name", "en": "Lunar Suffusion", "hash": "1761d67d044ff97e", "src": "db2@1.60.1.70009"}
+{"id": 1300680, "field": "name", "en": "Razorsteel", "hash": "61758d838600aa97", "src": "db2@1.60.1.70009"}
+{"id": 1300680, "field": "description", "en": "When struck in combat inflicts $s1 Physical damage to the attacker.", "hash": "956c147ec0144381", "src": "db2@1.60.1.70009"}
+{"id": 1300692, "field": "name", "en": "First Ward", "hash": "d10bdbd76dab2435", "src": "db2@1.60.1.70009"}
+{"id": 1300739, "field": "name", "en": "Signal Jurgens", "hash": "1ea244d210c820b4", "src": "db2@1.60.1.70009"}
+{"id": 1300739, "field": "description", "en": "Turn the gizmo on and send the signal to Jurgens.", "hash": "1a89811d934cc6dd", "src": "db2@1.60.1.70009"}
+{"id": 1300740, "field": "name", "en": "Signal Jurgens", "hash": "1ea244d210c820b4", "src": "db2@1.60.1.70009"}
+{"id": 1300744, "field": "name", "en": "Liberating Soul", "hash": "8002f9f1134f4cd8", "src": "db2@1.60.1.70009"}
+{"id": 1300744, "field": "description", "en": "Reclaim the lost soul of the death knight's charger, transforming it into a spirit of retribution.", "hash": "775bfb520833c192", "src": "db2@1.60.1.70009"}
+{"id": 1300752, "field": "name", "en": "Heart of the Mountain", "hash": "9187787c2bf5eadd", "src": "db2@1.60.1.70009"}
+{"id": 1300752, "field": "description", "en": "Increases armor by $s1 for $d.", "hash": "92291afa4ecdce72", "src": "db2@1.60.1.70009"}
+{"id": 1300752, "field": "aura", "en": "Armor increased by $s1.", "hash": "97d970899e28bd76", "src": "db2@1.60.1.70009"}
+{"id": 1300753, "field": "name", "en": "Firebolt", "hash": "c166b34851cb13db", "src": "db2@1.60.1.70009"}
+{"id": 1300753, "field": "description", "en": "Blasts a target for $s1 Fire damage.", "hash": "9d8bd0af55935a2e", "src": "db2@1.60.1.70009"}
+{"id": 1300754, "field": "name", "en": "Enthralled Sphere", "hash": "fa85cbd3be0c0617", "src": "db2@1.60.1.70009"}
+{"id": 1300754, "field": "description", "en": "Charm target Dark Iron Dwarf for $d.", "hash": "a985c50b7ed51c79", "src": "db2@1.60.1.70009"}
+{"id": 1300754, "field": "aura", "en": "Charmed.", "hash": "d83f67a36f817254", "src": "db2@1.60.1.70009"}
+{"id": 1300755, "field": "name", "en": "Resist Bleed 10", "hash": "317e02426aa029b3", "src": "db2@1.60.1.70009"}
+{"id": 1300755, "field": "description", "en": "Reduces the hit chance of Bleed effects against you by $s1%.", "hash": "e30722cf215e87f8", "src": "db2@1.60.1.70009"}
+{"id": 1300763, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70009"}
+{"id": 1300763, "field": "description", "en": "Skin a Humanoid target.", "hash": "583e970ab9804162", "src": "db2@1.60.1.70009"}
+{"id": 1300763, "field": "aura", "en": "Skins a Humanoid target.", "hash": "4f21540fca69427c", "src": "db2@1.60.1.70009"}
+{"id": 1300764, "field": "name", "en": "Skinned to the Bone", "hash": "633a876333f98c75", "src": "db2@1.60.1.70009"}
+{"id": 1300764, "field": "description", "en": "Cannot be skinned.", "hash": "8fc0b3ba7562f7cc", "src": "db2@1.60.1.70009"}
+{"id": 1300764, "field": "aura", "en": "Cannot be skinned.", "hash": "8fc0b3ba7562f7cc", "src": "db2@1.60.1.70009"}
+{"id": 1300766, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70009"}
+{"id": 1300781, "field": "name", "en": "Ignition", "hash": "18e364df15da42b0", "src": "db2@1.60.1.70009"}
+{"id": 1300781, "field": "description", "en": "Harmful spell casts have a chance to deal $1300782s1 Fire damage. Deals $1300782s2 times as much damage to Plants.", "hash": "c95653dd4e6f7c84", "src": "db2@1.60.1.70009"}
+{"id": 1300782, "field": "name", "en": "Ignition", "hash": "18e364df15da42b0", "src": "db2@1.60.1.70009"}
+{"id": 1300782, "field": "description", "en": "Harmful spell casts have a chance to deal $s1 Fire damage. Deals $s2 times as much damage to Plants.", "hash": "d66e28e17d51e172", "src": "db2@1.60.1.70009"}
+{"id": 1300782, "field": "aura", "en": "Deal $s1 Fire damage.", "hash": "7be291f205fe9a46", "src": "db2@1.60.1.70009"}
+{"id": 1300783, "field": "name", "en": "Slaughter", "hash": "013c7771b68db07e", "src": "db2@1.60.1.70009"}
+{"id": 1300783, "field": "description", "en": "Deal $s1 Physical damage. Trolls and Orcs take $s2 times damage and are horrified for $1300784d.", "hash": "3bdde73c52702f0d", "src": "db2@1.60.1.70009"}
+{"id": 1300784, "field": "name", "en": "Crippling Dread", "hash": "d5c8302bd13c753a", "src": "db2@1.60.1.70009"}
+{"id": 1300784, "field": "description", "en": "Horrified.\r\nDamage may break this effect.", "hash": "2f4c15ea60fa722c", "src": "db2@1.60.1.70009"}
+{"id": 1300784, "field": "aura", "en": "Horrified.\r\nDamage may break this effect.", "hash": "2f4c15ea60fa722c", "src": "db2@1.60.1.70009"}
+{"id": 1300787, "field": "name", "en": "Rend", "hash": "0b1786e1dc4c98f3", "src": "db2@1.60.1.70009"}
+{"id": 1300787, "field": "description", "en": "Wounds the target causing them to bleed for $o1 damage over $d. Deals $s2 times as much damage if applied while behind the target.", "hash": "83cd3efac1ccbbde", "src": "db2@1.60.1.70009"}
+{"id": 1300787, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec.", "hash": "980052f1df197db9", "src": "db2@1.60.1.70009"}
+{"id": 1300821, "field": "name", "en": "Lucent Beam", "hash": "f91f85d079807e63", "src": "db2@1.60.1.70009"}
+{"id": 1300821, "field": "description", "en": "Burns the enemy for Arcane damage and inflicts additional damage over $d.", "hash": "ba2c738b36f59f68", "src": "db2@1.60.1.70009"}
+{"id": 1300821, "field": "aura", "en": "Arcane damage inflicted every $t1 sec.", "hash": "91a112e842fa9bcb", "src": "db2@1.60.1.70009"}
+{"id": 1300844, "field": "name", "en": "Lunar Effusion", "hash": "11904e213006849b", "src": "db2@1.60.1.70009"}
+{"id": 1300844, "field": "aura", "en": "The light of Elune is empowering the first ward.", "hash": "8bffee44186971f7", "src": "db2@1.60.1.70009"}
+{"id": 1300846, "field": "name", "en": "Lunar Effusion", "hash": "11904e213006849b", "src": "db2@1.60.1.70009"}
+{"id": 1300875, "field": "name", "en": "Lunar Saturation", "hash": "7afc405f0f191f0f", "src": "db2@1.60.1.70009"}
+{"id": 1300875, "field": "aura", "en": "The light of Elune is fully saturated.", "hash": "3b7900aa40e4eec6", "src": "db2@1.60.1.70009"}
+{"id": 1300890, "field": "name", "en": "Grace of the Seven", "hash": "f2c4d97d9bb635dd", "src": "db2@1.60.1.70009"}
+{"id": 1300890, "field": "description", "en": "Dying heals all party members within $1300891r yards for $1300891s1.", "hash": "b4a4303f7b113796", "src": "db2@1.60.1.70009"}
+{"id": 1300890, "field": "aura", "en": "Dying heals all party members within $1300891r yards for $1300891s1.", "hash": "b4a4303f7b113796", "src": "db2@1.60.1.70009"}
+{"id": 1300891, "field": "name", "en": "Grace of the Seven", "hash": "f2c4d97d9bb635dd", "src": "db2@1.60.1.70009"}
+{"id": 1300891, "field": "description", "en": "Dying heals all party members within $r yards for $s1.\r\n", "hash": "e29aca5fcd4a752c", "src": "db2@1.60.1.70009"}
+{"id": 1300891, "field": "aura", "en": "Dying heals all party members within $r yards for $s1.", "hash": "e29aca5fcd4a752c", "src": "db2@1.60.1.70009"}
+{"id": 1300925, "field": "name", "en": "Resist Charm 10", "hash": "cd7a87c38e184029", "src": "db2@1.60.1.70009"}
+{"id": 1300925, "field": "description", "en": "Reduces the hit chance of Charm effects against you by $s1%.", "hash": "7e411fc29be68a2d", "src": "db2@1.60.1.70009"}
+{"id": 1300934, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Feral 2P Bonus - Haste", "hash": "9dece5b1fe4504aa", "src": "db2@1.60.1.70009"}
+{"id": 1300934, "field": "description", "en": "Increases your attack speed and casting speed by $s1%.", "hash": "a11af6cb656455f0", "src": "db2@1.60.1.70009"}
+{"id": 1300940, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Balance 2P Bonus - Hit", "hash": "32cd995655a65619", "src": "db2@1.60.1.70009"}
+{"id": 1300940, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70009"}
+{"id": 1300942, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Guardian 2P Bonus - Defense", "hash": "c8f27b68af5192be", "src": "db2@1.60.1.70009"}
+{"id": 1300942, "field": "description", "en": "Increased Defense +$s1", "hash": "20bf1b30ff9854be", "src": "db2@1.60.1.70009"}
+{"id": 1300943, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Restoration 2P Bonus - Spirit", "hash": "a1628a53514c8faf", "src": "db2@1.60.1.70009"}
+{"id": 1300943, "field": "description", "en": "Increased Spirit +$s1", "hash": "b9cafc8353ee403f", "src": "db2@1.60.1.70009"}
+{"id": 1300945, "field": "name", "en": "1.60.0 - Item - Tier 1 - Hunter 2P Bonus - Haste", "hash": "6b7743acbb8b8cd7", "src": "db2@1.60.1.70009"}
+{"id": 1300945, "field": "description", "en": "Increases your attack speed and casting speed by $s1%.", "hash": "a11af6cb656455f0", "src": "db2@1.60.1.70009"}
+{"id": 1300947, "field": "name", "en": "1.60.0 - Item - Tier 1 - Mage 2P Bonus - Hit", "hash": "5e4fec091cbe1c11", "src": "db2@1.60.1.70009"}
+{"id": 1300947, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70009"}
+{"id": 1300948, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Holy 2P Bonus - Spirit", "hash": "daa1c5237ba4c805", "src": "db2@1.60.1.70009"}
+{"id": 1300948, "field": "description", "en": "Increased Spirit +$s1", "hash": "b9cafc8353ee403f", "src": "db2@1.60.1.70009"}
+{"id": 1300949, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Protection 2P Bonus - Defense", "hash": "06c3d04ac998c69c", "src": "db2@1.60.1.70009"}
+{"id": 1300949, "field": "description", "en": "Increased Defense +$s1", "hash": "20bf1b30ff9854be", "src": "db2@1.60.1.70009"}
+{"id": 1300951, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Retribution 2P Bonus - Haste", "hash": "5882b1961b262066", "src": "db2@1.60.1.70009"}
+{"id": 1300951, "field": "description", "en": "Increases your attack speed and casting speed by $s1%.", "hash": "a11af6cb656455f0", "src": "db2@1.60.1.70009"}
+{"id": 1300952, "field": "name", "en": "Heal Health 1.0 Coeffecient Over Time", "hash": "9490630b4e30a00f", "src": "db2@1.60.1.70009"}
+{"id": 1300954, "field": "name", "en": "1.60.0 - Item - Tier 1 - Priest - Discipline/Holy 2P Bonus - Spirit", "hash": "2fe6bca3be369646", "src": "db2@1.60.1.70009"}
+{"id": 1300954, "field": "description", "en": "Increased Spirit +$s1", "hash": "b9cafc8353ee403f", "src": "db2@1.60.1.70009"}
+{"id": 1300955, "field": "name", "en": "1.60.0 - Item - Tier 1 - Priest - Shadow 2P Bonus - Hit", "hash": "626434ef879c04af", "src": "db2@1.60.1.70009"}
+{"id": 1300955, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70009"}
+{"id": 1300956, "field": "name", "en": "1.60.0 - Item - Tier 1 - Rogue 2P Bonus - Hit", "hash": "9a282194a2909138", "src": "db2@1.60.1.70009"}
+{"id": 1300956, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70009"}
+{"id": 1300957, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Enhancement 2P Bonus - Haste", "hash": "5efe0ffa50750590", "src": "db2@1.60.1.70009"}
+{"id": 1300957, "field": "description", "en": "Increases your attack speed and casting speed by $s1%.", "hash": "a11af6cb656455f0", "src": "db2@1.60.1.70009"}
+{"id": 1300959, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Elemental 2P Bonus - Hit", "hash": "3aa5655fa627052c", "src": "db2@1.60.1.70009"}
+{"id": 1300959, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70009"}
+{"id": 1300960, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Restoration 2P Bonus - Spirit", "hash": "bd7e3c208afb3b83", "src": "db2@1.60.1.70009"}
+{"id": 1300960, "field": "description", "en": "Increased Spirit +$s1", "hash": "b9cafc8353ee403f", "src": "db2@1.60.1.70009"}
+{"id": 1300966, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warlock 2P Bonus - Hit", "hash": "37cfde7b4ae7080b", "src": "db2@1.60.1.70009"}
+{"id": 1300966, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70009"}
+{"id": 1300968, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warrior - Arms/Fury 2P Bonus - Haste", "hash": "49a3cef0c6f88938", "src": "db2@1.60.1.70009"}
+{"id": 1300968, "field": "description", "en": "Increases your attack speed and casting speed by $s1%.", "hash": "a11af6cb656455f0", "src": "db2@1.60.1.70009"}
+{"id": 1300970, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warrior - Protection 2P Bonus - Defense", "hash": "996cf25be0cbeedc", "src": "db2@1.60.1.70009"}
+{"id": 1300970, "field": "description", "en": "Increased Defense +$s1", "hash": "20bf1b30ff9854be", "src": "db2@1.60.1.70009"}
+{"id": 1300975, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Balance 3P Bonus - Nature's Grasp", "hash": "e28f90594fcc306e", "src": "db2@1.60.1.70009"}
+{"id": 1300975, "field": "description", "en": "Reduces the cooldown on your Nature's Grasp spell by ${$m1/-1000} sec.", "hash": "8118377046ee3bf9", "src": "db2@1.60.1.70009"}
+{"id": 1300988, "field": "name", "en": "First Ward Successful", "hash": "474b77e900dbf80f", "src": "db2@1.60.1.70009"}
+{"id": 1300999, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Feral 3P Bonus - Hibernate", "hash": "c01e8f6eba2d8368", "src": "db2@1.60.1.70009"}
+{"id": 1300999, "field": "description", "en": "Your Hibernate spell is now castable in Cat Form and its cast time is reduced by ${$m1/-1000}.1 sec while you are in Cat Form, but Hibernate gains a cooldown of ${$m2/1000} sec.", "hash": "f187378353055f30", "src": "db2@1.60.1.70009"}

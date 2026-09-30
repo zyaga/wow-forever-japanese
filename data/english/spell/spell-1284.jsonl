@@ -1,0 +1,40 @@
+{"id": 1284017, "field": "name", "en": "Track Beasts", "hash": "d5f0316591341dc7", "src": "db2@1.60.1.70009"}
+{"id": 1284017, "field": "description", "en": "Shows the location of all nearby beasts on the minimap. Only one form of tracking can be active at a time.", "hash": "7a0f6d82dfd45d1e", "src": "db2@1.60.1.70009"}
+{"id": 1284017, "field": "aura", "en": "Tracking Beasts.", "hash": "5bdf0ba637ffb47a", "src": "db2@1.60.1.70009"}
+{"id": 1284035, "field": "name", "en": "Sprinkle Concoction", "hash": "6ffd0bc65cc0c814", "src": "db2@1.60.1.70009"}
+{"id": 1284035, "field": "description", "en": "Cure a sickly animal afflicted by fel taint.", "hash": "c145bd63a373ffc9", "src": "db2@1.60.1.70009"}
+{"id": 1284040, "field": "name", "en": "Portal to Stormwind", "hash": "f7bca2a219341cac", "src": "db2@1.60.1.70009"}
+{"id": 1284041, "field": "name", "en": "Portal to Stormwind", "hash": "f7bca2a219341cac", "src": "db2@1.60.1.70009"}
+{"id": 1284169, "field": "name", "en": "Summon Hippogryph", "hash": "ccca34d89da3f0a0", "src": "db2@1.60.1.70009"}
+{"id": 1284191, "field": "name", "en": "Ride Hippogryph", "hash": "419036c7b00df602", "src": "db2@1.60.1.70009"}
+{"id": 1284192, "field": "name", "en": "Force Summoner to Ride Vehicle", "hash": "51ee77d4a3a36700", "src": "db2@1.60.1.70009"}
+{"id": 1284193, "field": "name", "en": "Eject All Passengers", "hash": "4fc70def21641fcb", "src": "db2@1.60.1.70009"}
+{"id": 1284194, "field": "name", "en": "Summon Hippogryph", "hash": "ccca34d89da3f0a0", "src": "db2@1.60.1.70009"}
+{"id": 1284195, "field": "name", "en": "Summon Hippogryph", "hash": "ccca34d89da3f0a0", "src": "db2@1.60.1.70009"}
+{"id": 1284376, "field": "name", "en": "Frost Aura", "hash": "7f8f155767220e97", "src": "db2@1.60.1.70009"}
+{"id": 1284377, "field": "name", "en": "Frost Aura", "hash": "7f8f155767220e97", "src": "db2@1.60.1.70009"}
+{"id": 1284377, "field": "description", "en": "Deals $s1 frost damage a second.", "hash": "eb1e7372de55f54e", "src": "db2@1.60.1.70009"}
+{"id": 1284377, "field": "aura", "en": "Deals $s1 frost damage a second.", "hash": "eb1e7372de55f54e", "src": "db2@1.60.1.70009"}
+{"id": 1284381, "field": "name", "en": "Heavy Stomp", "hash": "9961b293bbee51ac", "src": "db2@1.60.1.70009"}
+{"id": 1284381, "field": "description", "en": "Inflicts normal damage plus $s3 to nearby enemies, knocking them back and stunning them for $d.", "hash": "476b69d800556dfe", "src": "db2@1.60.1.70009"}
+{"id": 1284381, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
+{"id": 1284382, "field": "name", "en": "Drain Soul", "hash": "3540acca5b1ac2a0", "src": "db2@1.60.1.70009"}
+{"id": 1284384, "field": "name", "en": "Self Stun", "hash": "e2f13eccfa87976b", "src": "db2@1.60.1.70009"}
+{"id": 1284384, "field": "description", "en": "The subject dies", "hash": "0fda4706bbd0e77b", "src": "db2@1.60.1.70009"}
+{"id": 1284385, "field": "name", "en": "[DNT] Death of Jereman", "hash": "dfae685661fa0993", "src": "db2@1.60.1.70009"}
+{"id": 1284435, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70009"}
+{"id": 1284435, "field": "aura", "en": "Physical damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "bc6c8e1d090dadea", "src": "db2@1.60.1.70009"}
+{"id": 1284450, "field": "name", "en": "Stasis", "hash": "8d38dca6cedae110", "src": "db2@1.60.1.70009"}
+{"id": 1284536, "field": "name", "en": "Holy Purpose", "hash": "b98d2a26028db0e1", "src": "db2@1.60.1.70009"}
+{"id": 1284536, "field": "aura", "en": "Your next Holy Nova costs no Mana.", "hash": "3b7cd96de16a4222", "src": "db2@1.60.1.70009"}
+{"id": 1284560, "field": "name", "en": "Darkspear Islands Flag", "hash": "6d7516642002394d", "src": "db2@1.60.1.70009"}
+{"id": 1284560, "field": "description", "en": "You are holding the Darkspear Flag.\r\nTake this flag to any controlled point to gain Victory Points.\r\n", "hash": "4d8866b3b603440d", "src": "db2@1.60.1.70009"}
+{"id": 1284560, "field": "aura", "en": "You are holding the Darkspear Flag.\r\nTake this flag to any controlled point to gain Victory Points.", "hash": "4d8866b3b603440d", "src": "db2@1.60.1.70009"}
+{"id": 1284659, "field": "name", "en": "Collect Grovewalker Sap", "hash": "0958ba969be38e17", "src": "db2@1.60.1.70009"}
+{"id": 1284701, "field": "name", "en": "Sprinkle Concoction", "hash": "6ffd0bc65cc0c814", "src": "db2@1.60.1.70009"}
+{"id": 1284701, "field": "description", "en": "Use the Concoction of Cleansing on animals that have been experimented on with fel ash.", "hash": "8ab34ce534500f90", "src": "db2@1.60.1.70009"}
+{"id": 1284734, "field": "name", "en": "Mod Speed 05", "hash": "2a1fccb1738d75a1", "src": "db2@1.60.1.70009"}
+{"id": 1284734, "field": "description", "en": "Increases running and swimming speed by $s1%.", "hash": "8cde9701f0951402", "src": "db2@1.60.1.70009"}
+{"id": 1284734, "field": "aura", "en": "Running and swimming speed increased by $s1%.", "hash": "9f1cfad87a097a9f", "src": "db2@1.60.1.70009"}
+{"id": 1284783, "field": "name", "en": "Increase Reputation", "hash": "5b39825024f3b628", "src": "db2@1.60.1.70009"}
+{"id": 1284783, "field": "description", "en": "Increase your reputation permanently with furbolg of Barkskin Burrow.", "hash": "3bb4bd5cd096f475", "src": "db2@1.60.1.70009"}

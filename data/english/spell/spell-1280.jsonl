@@ -1,0 +1,65 @@
+{"id": 1280003, "field": "name", "en": "Tame Crawler", "hash": "82e5cfd9e666d009", "src": "db2@1.60.1.70009"}
+{"id": 1280003, "field": "description", "en": "Begins taming a Windsong Crawler to be your companion for 10 minutes.  If you lose the beast's attention for any reason, the taming process will fail.", "hash": "0ce34286f20f9ff1", "src": "db2@1.60.1.70009"}
+{"id": 1280003, "field": "aura", "en": "Taming Crawler", "hash": "167046fafb12168e", "src": "db2@1.60.1.70009"}
+{"id": 1280004, "field": "name", "en": "Tame Crawler", "hash": "82e5cfd9e666d009", "src": "db2@1.60.1.70009"}
+{"id": 1280004, "field": "aura", "en": "Tamed.", "hash": "3cd09630fe483150", "src": "db2@1.60.1.70009"}
+{"id": 1280044, "field": "name", "en": "Tame Galestrider", "hash": "6bfb384ac8e0ba1d", "src": "db2@1.60.1.70009"}
+{"id": 1280044, "field": "aura", "en": "Tamed.", "hash": "3cd09630fe483150", "src": "db2@1.60.1.70009"}
+{"id": 1280046, "field": "name", "en": "Tame Galestrider", "hash": "6bfb384ac8e0ba1d", "src": "db2@1.60.1.70009"}
+{"id": 1280046, "field": "description", "en": "Begins taming an Ornery Galestrider to be your companion for 10 minutes. If you lose the beast's attention for any reason, the taming process will fail.", "hash": "c9301e21f7c9e197", "src": "db2@1.60.1.70009"}
+{"id": 1280046, "field": "aura", "en": "Taming Ornery Galestrider", "hash": "f63b003604ea6dab", "src": "db2@1.60.1.70009"}
+{"id": 1280322, "field": "name", "en": "Carry Tool", "hash": "5439858f21eaa9dc", "src": "db2@1.60.1.70009"}
+{"id": 1280341, "field": "name", "en": "Uncommon Fishing", "hash": "fc30020ba2434aa8", "src": "db2@1.60.1.70009"}
+{"id": 1280341, "field": "aura", "en": "Fishing boosted from time spent near Fishing Rack. Additional rewards while fishing for $d.", "hash": "91488389947cdd5f", "src": "db2@1.60.1.70009"}
+{"id": 1280342, "field": "name", "en": "Rare Fishing", "hash": "da50d7c405fc11e3", "src": "db2@1.60.1.70009"}
+{"id": 1280342, "field": "aura", "en": "Fishing boosted from time spent near Fishing Hut. Greater additional rewards while fishing for $d.", "hash": "e8686bb729d8225e", "src": "db2@1.60.1.70009"}
+{"id": 1280345, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70009"}
+{"id": 1280346, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70009"}
+{"id": 1280347, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70009"}
+{"id": 1280348, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70009"}
+{"id": 1280349, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70009"}
+{"id": 1280353, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70009"}
+{"id": 1280353, "field": "description", "en": "Taking increased damage from Consecration.", "hash": "c3c764fb14a6129e", "src": "db2@1.60.1.70009"}
+{"id": 1280353, "field": "aura", "en": "Taking increased damage from Consecration.", "hash": "c3c764fb14a6129e", "src": "db2@1.60.1.70009"}
+{"id": 1280354, "field": "name", "en": "Holy Strike", "hash": "f3fe690d41758a44", "src": "db2@1.60.1.70009"}
+{"id": 1280354, "field": "description", "en": "Consecrates the caster's weapon, inflicting $s1 additional damage on its next attack. All damage inflicted is based on Holy magic.", "hash": "d04665c0cd6af27f", "src": "db2@1.60.1.70009"}
+{"id": 1280356, "field": "name", "en": "Shadow Bolt Volley", "hash": "62ed89ea2de9d24d", "src": "db2@1.60.1.70009"}
+{"id": 1280356, "field": "description", "en": "Hurls missiles of dark magic, inflicting Shadow damage to nearby enemies.", "hash": "ff49863129e1fd03", "src": "db2@1.60.1.70009"}
+{"id": 1280445, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70009"}
+{"id": 1280445, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70009"}
+{"id": 1280455, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70009"}
+{"id": 1280455, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70009"}
+{"id": 1280468, "field": "name", "en": "Moonfire", "hash": "eda7a4c188a2324b", "src": "db2@1.60.1.70009"}
+{"id": 1280468, "field": "description", "en": "Burns the enemy for Arcane damage and inflicts additional damage over $d.", "hash": "ba2c738b36f59f68", "src": "db2@1.60.1.70009"}
+{"id": 1280468, "field": "aura", "en": "Arcane damage inflicted every $t1 sec. Upon expiry a well of Arcane energy is left behind.", "hash": "64f5d4cdb522ba07", "src": "db2@1.60.1.70009"}
+{"id": 1280471, "field": "name", "en": "Arcane Wrath", "hash": "8c4b7a9d202e23ab", "src": "db2@1.60.1.70009"}
+{"id": 1280471, "field": "description", "en": "Causes $s1 Arcane damage to the target.", "hash": "f284a03526db7647", "src": "db2@1.60.1.70009"}
+{"id": 1280472, "field": "name", "en": "Starsurge", "hash": "9e9da22f068df835", "src": "db2@1.60.1.70009"}
+{"id": 1280472, "field": "description", "en": "Deals $s1 Arcane damage to the current target.", "hash": "c426cfb2e7a59d14", "src": "db2@1.60.1.70009"}
+{"id": 1280481, "field": "name", "en": "Fox-Catching Net", "hash": "4cd3b55fa9dd4626", "src": "db2@1.60.1.70009"}
+{"id": 1280481, "field": "description", "en": "Immobilizes a tool-stealing fox for $d.", "hash": "40fc8f06baca4019", "src": "db2@1.60.1.70009"}
+{"id": 1280481, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70009"}
+{"id": 1280530, "field": "name", "en": "Lunar Call", "hash": "2b4aab467a8e47f6", "src": "db2@1.60.1.70009"}
+{"id": 1280530, "field": "description", "en": "Calls upon the fury of Elune, marking two targets. After 5s each target detonates, dealing damage that is split among nearby allies.", "hash": "295cba362dbf3158", "src": "db2@1.60.1.70009"}
+{"id": 1280532, "field": "name", "en": "Ping Crowd", "hash": "6f9c5ce98abe4350", "src": "db2@1.60.1.70009"}
+{"id": 1280533, "field": "name", "en": "Lunar Trace", "hash": "53e30258f792b05a", "src": "db2@1.60.1.70009"}
+{"id": 1280533, "field": "aura", "en": "Marked.", "hash": "866cb76b9353406b", "src": "db2@1.60.1.70009"}
+{"id": 1280540, "field": "name", "en": "Lunar Strike", "hash": "170a11d9434ed0d1", "src": "db2@1.60.1.70009"}
+{"id": 1280540, "field": "description", "en": "Do damage divided up evenly among all affected targets", "hash": "4e9595300a1e8390", "src": "db2@1.60.1.70009"}
+{"id": 1280553, "field": "name", "en": "Trevan's Weapon Notes", "hash": "32ead44eb701fdc0", "src": "db2@1.60.1.70009"}
+{"id": 1280564, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
+{"id": 1280564, "field": "description", "en": "Heals an ally every $t1 sec. for $d.", "hash": "61f0e6eb9544de7b", "src": "db2@1.60.1.70009"}
+{"id": 1280564, "field": "aura", "en": "Restoring $s1 Health every $t1 sec.", "hash": "1f2cc31571c43e75", "src": "db2@1.60.1.70009"}
+{"id": 1280586, "field": "name", "en": "Take Tool from Fox", "hash": "2e208ca42bd40f77", "src": "db2@1.60.1.70009"}
+{"id": 1280634, "field": "name", "en": "Tranquility", "hash": "f3d301a233979744", "src": "db2@1.60.1.70009"}
+{"id": 1280634, "field": "description", "en": "Regenerates all nearby group members for $?$p456322[${$m1*2}][$s1] every $t1 seconds for $d.  Druid must channel to maintain the spell.", "hash": "614958310fd6d32c", "src": "db2@1.60.1.70009"}
+{"id": 1280634, "field": "aura", "en": "Heals nearby party members for $w1 every $t1 seconds.", "hash": "5687ff3d9464fea3", "src": "db2@1.60.1.70009"}
+{"id": 1280662, "field": "name", "en": "Boar's Delight", "hash": "8d1512b864a76b33", "src": "db2@1.60.1.70009"}
+{"id": 1280662, "field": "description", "en": "Great sustenance fills the caster, increasing Physical damage dealt by $s1% and size by $s2%.", "hash": "44d52c98818f3895", "src": "db2@1.60.1.70009"}
+{"id": 1280662, "field": "aura", "en": "Damage increased by $s1%.", "hash": "b556e36189b38b27", "src": "db2@1.60.1.70009"}
+{"id": 1280669, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70009"}
+{"id": 1280669, "field": "description", "en": "Causes $s1 Fire damage to the target.", "hash": "1967a50e6ab5f141", "src": "db2@1.60.1.70009"}
+{"id": 1280856, "field": "name", "en": "For Bolder'ok!", "hash": "3de589483998dd77", "src": "db2@1.60.1.70009"}
+{"id": 1280857, "field": "name", "en": "Champion of the Bloodmaster's Ring", "hash": "f5ad74ebf9baddec", "src": "db2@1.60.1.70009"}
+{"id": 1280857, "field": "description", "en": "Earned the respect of the Bolder'ok.", "hash": "15ba29d22fdcd2be", "src": "db2@1.60.1.70009"}
+{"id": 1280857, "field": "aura", "en": "Highly respected by the Bolder'ok.", "hash": "14f84f461c121efc", "src": "db2@1.60.1.70009"}

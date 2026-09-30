@@ -1,0 +1,17 @@
+version: 2
+updates:
+  # the workflows pin every action to a commit; an update arrives as a pull request with the new one
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  # the root entry reads .github/workflows only; a composite action's own folder needs an entry of its own
+  - package-ecosystem: github-actions
+    directory: /.github/actions/lua-toolchain
+    schedule:
+      interval: weekly
+  # the pipeline's test and lint tools are pinned to exact versions in pipeline/pyproject.toml
+  - package-ecosystem: pip
+    directory: /pipeline
+    schedule:
+      interval: weekly

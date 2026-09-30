@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contributing
+    url: https://github.com/zyaga/wow-forever-japanese/blob/main/CONTRIBUTING.md
+    about: Code changes start with an issue. Read this first.
+  - name: Security problem / セキュリティ上の問題
+    url: https://github.com/zyaga/wow-forever-japanese/security/advisories/new
+    about: Report it in private, not in a public issue. / 公開の Issue ではなく、非公開で報告してください。

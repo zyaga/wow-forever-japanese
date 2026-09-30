@@ -1,0 +1,131 @@
+{"id": 1271000, "field": "name", "en": "Crushing Brambles", "hash": "ccc07c81af2d9ca3", "src": "db2@1.60.1.70009"}
+{"id": 1271000, "field": "aura", "en": "Crushed by powerful vines, suffering Nature damage every $T1 sec and unable to move or act.", "hash": "f63fa5c117ebb486", "src": "db2@1.60.1.70009"}
+{"id": 1271001, "field": "name", "en": "Crushing Brambles", "hash": "ccc07c81af2d9ca3", "src": "db2@1.60.1.70009"}
+{"id": 1271002, "field": "name", "en": "Crushing Brambles", "hash": "ccc07c81af2d9ca3", "src": "db2@1.60.1.70009"}
+{"id": 1271007, "field": "name", "en": "Umbral Decay", "hash": "1715b7e7f0e7de59", "src": "db2@1.60.1.70009"}
+{"id": 1271008, "field": "name", "en": "Umbral Expulsion", "hash": "630072254cb0946d", "src": "db2@1.60.1.70009"}
+{"id": 1271010, "field": "name", "en": "(DNT) Crushing Bramble Cosmetic Dummy", "hash": "18e5628a2c11c969", "src": "db2@1.60.1.70009"}
+{"id": 1271019, "field": "name", "en": "Gliding on Air", "hash": "76254a6f4a30863c", "src": "db2@1.60.1.70009"}
+{"id": 1271020, "field": "name", "en": "Gliding on Air", "hash": "76254a6f4a30863c", "src": "db2@1.60.1.70009"}
+{"id": 1271020, "field": "description", "en": "Glide downward through the air for $d while controlling your direction of travel.", "hash": "31bc45ebd8c05dcd", "src": "db2@1.60.1.70009"}
+{"id": 1271020, "field": "aura", "en": "Gliding on air.", "hash": "795ecb87c1e65cf8", "src": "db2@1.60.1.70009"}
+{"id": 1271044, "field": "name", "en": "Jammed Mechanism", "hash": "540f528674beab0e", "src": "db2@1.60.1.70009"}
+{"id": 1271044, "field": "description", "en": "TRANSPORTER FAILURE!!! SPATIAL LOCK NOT ACHIEVED!! LOCATION UNDETERMINED!", "hash": "4bca4efa1bd52f1d", "src": "db2@1.60.1.70009"}
+{"id": 1271044, "field": "aura", "en": "TRANSPORTER FAILURE!!! SPATIAL LOCK NOT ACHIEVED!! LOCATION UNDETERMINED!", "hash": "4bca4efa1bd52f1d", "src": "db2@1.60.1.70009"}
+{"id": 1271047, "field": "name", "en": "Umbral Venting", "hash": "f7143d66d6a44e85", "src": "db2@1.60.1.70009"}
+{"id": 1271047, "field": "description", "en": "$s1 Shadow damage inflicted to players within $a1 yards.", "hash": "f29d2757b23cabfc", "src": "db2@1.60.1.70009"}
+{"id": 1271049, "field": "name", "en": "Gliding on Air", "hash": "76254a6f4a30863c", "src": "db2@1.60.1.70009"}
+{"id": 1271049, "field": "description", "en": "Glide downward through the air for $1271020d while controlling your direction of travel.", "hash": "0e9703cc3cf54963", "src": "db2@1.60.1.70009"}
+{"id": 1271049, "field": "aura", "en": "Gliding on air.", "hash": "795ecb87c1e65cf8", "src": "db2@1.60.1.70009"}
+{"id": 1271091, "field": "name", "en": "Anguished Outburst", "hash": "9a2edaccbcb70f0a", "src": "db2@1.60.1.70009"}
+{"id": 1271091, "field": "description", "en": "Inflicts $S1 nature damage to all players.", "hash": "891c8696a9254865", "src": "db2@1.60.1.70009"}
+{"id": 1271100, "field": "name", "en": "Lunar Venting", "hash": "e6c0c7b47d2043e1", "src": "db2@1.60.1.70009"}
+{"id": 1271100, "field": "description", "en": "$s1 Arcane damage inflicted to players within $a1 yards.", "hash": "d0d014d5b06bae15", "src": "db2@1.60.1.70009"}
+{"id": 1271102, "field": "name", "en": "Tame Vuldren", "hash": "9d429dae625ed460", "src": "db2@1.60.1.70009"}
+{"id": 1271102, "field": "aura", "en": "Tamed.", "hash": "3cd09630fe483150", "src": "db2@1.60.1.70009"}
+{"id": 1271103, "field": "name", "en": "Tame Vuldren", "hash": "9d429dae625ed460", "src": "db2@1.60.1.70009"}
+{"id": 1271103, "field": "description", "en": "Begins taming a Vuldren Alpha to be your companion for 10 minutes.  If you lose the beast's attention for any reason, the taming process will fail.", "hash": "012ea3a2c1159d65", "src": "db2@1.60.1.70009"}
+{"id": 1271103, "field": "aura", "en": "Taming Vuldren", "hash": "30cd14cf770a1ae5", "src": "db2@1.60.1.70009"}
+{"id": 1271266, "field": "name", "en": "Stealth Field", "hash": "9a13e334d077673d", "src": "db2@1.60.1.70009"}
+{"id": 1271266, "field": "description", "en": "Cloaks the user in a stealth field for up to $d. Cannot be used in combat. The field lasts for up to ${$m4/1000} sec after moving.", "hash": "5c7a2b92e121c75a", "src": "db2@1.60.1.70009"}
+{"id": 1271266, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70009"}
+{"id": 1271280, "field": "name", "en": "Stealthman Tracker", "hash": "50dabd086631ff95", "src": "db2@1.60.1.70009"}
+{"id": 1271338, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70009"}
+{"id": 1271338, "field": "description", "en": "$@spelldesc1270940", "hash": "db3b35a8074a8e92", "src": "db2@1.60.1.70009"}
+{"id": 1271344, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70009"}
+{"id": 1271344, "field": "description", "en": "$@spelldesc1270940", "hash": "db3b35a8074a8e92", "src": "db2@1.60.1.70009"}
+{"id": 1271346, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70009"}
+{"id": 1271346, "field": "description", "en": "$@spelldesc1270940", "hash": "db3b35a8074a8e92", "src": "db2@1.60.1.70009"}
+{"id": 1271347, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70009"}
+{"id": 1271347, "field": "description", "en": "$@spelldesc1270940", "hash": "db3b35a8074a8e92", "src": "db2@1.60.1.70009"}
+{"id": 1271348, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70009"}
+{"id": 1271348, "field": "description", "en": "$@spelldesc1270940", "hash": "db3b35a8074a8e92", "src": "db2@1.60.1.70009"}
+{"id": 1271349, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70009"}
+{"id": 1271349, "field": "description", "en": "$@spelldesc1270940", "hash": "db3b35a8074a8e92", "src": "db2@1.60.1.70009"}
+{"id": 1271350, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70009"}
+{"id": 1271350, "field": "description", "en": "$@spelldesc1270940", "hash": "db3b35a8074a8e92", "src": "db2@1.60.1.70009"}
+{"id": 1271351, "field": "name", "en": "Lunar Mark", "hash": "2ca1b665009e8f97", "src": "db2@1.60.1.70009"}
+{"id": 1271351, "field": "description", "en": "Anara Chillwind channels the grace of Elune infusing random enemies with the might of a star inflicting $s1 Arcane damage every $t1 sec for $d. Upon removal, a collapsing star is formed. Enemies within the star suffer $1271414s2 Arcane damage every $1271414t2 sec and have their movement speed reduced by $1271414s1%.", "hash": "1426572d9e9f9b43", "src": "db2@1.60.1.70009"}
+{"id": 1271351, "field": "aura", "en": "$s1 Arcane damage inflicted every $t1 sec.\r\n\r\nUpon removal, a collapsing star forms. Enemies within the star suffer $1271414s2 Arcane damage every $1271414t2 sec and have their movement speed reduced by $1271414s1%.", "hash": "e0982b7bf312eac2", "src": "db2@1.60.1.70009"}
+{"id": 1271352, "field": "name", "en": "Umbral Mark", "hash": "12f74bf1a069cf14", "src": "db2@1.60.1.70009"}
+{"id": 1271352, "field": "description", "en": "Anara Chillwind channels the rage of Elune infusing random enemies with the weight of a singularity inflicting $s1 Shadow damage every $t1 sec for $d. Upon removal, a black hole is formed. Enemies within the void suffer $1271414s2 Shadow damage every $1271414t2 sec and are slowly pulled toward the center. ", "hash": "2fbab7b54a47b46c", "src": "db2@1.60.1.70009"}
+{"id": 1271352, "field": "aura", "en": "$s1 Shadow damage inflicted every $t1 sec. Upon removal an Umbral Void forms. Enemies within 20 yards suffer $1294914s2 Shadow damage $1294914t2 sec, have their movement speed reduced by $1294914s1% and are slowly pulled toward the void. Any player that touches the Void is instantly killed.", "hash": "1a8720152d1e4661", "src": "db2@1.60.1.70009"}
+{"id": 1271357, "field": "name", "en": "Collapsing Star", "hash": "89be1f6370461b99", "src": "db2@1.60.1.70009"}
+{"id": 1271357, "field": "description", "en": "$@spelldesc1271351", "hash": "db5bf1917ce10bed", "src": "db2@1.60.1.70009"}
+{"id": 1271393, "field": "name", "en": "Test Dissolve", "hash": "77e65813f87a8687", "src": "db2@1.60.1.70009"}
+{"id": 1271396, "field": "name", "en": "Portal to Rohaashi Spires", "hash": "82ce5121124aa3c6", "src": "db2@1.60.1.70009"}
+{"id": 1271412, "field": "name", "en": "Lunar Mark Protection", "hash": "44da3600d3e887a2", "src": "db2@1.60.1.70009"}
+{"id": 1271412, "field": "description", "en": "Bounce Protection", "hash": "84727607c217b635", "src": "db2@1.60.1.70009"}
+{"id": 1271412, "field": "aura", "en": "Bounce Protection", "hash": "84727607c217b635", "src": "db2@1.60.1.70009"}
+{"id": 1271414, "field": "name", "en": "Collapsing Star", "hash": "89be1f6370461b99", "src": "db2@1.60.1.70009"}
+{"id": 1271414, "field": "description", "en": "$@spelldesc1271351", "hash": "db5bf1917ce10bed", "src": "db2@1.60.1.70009"}
+{"id": 1271414, "field": "aura", "en": "Movement speed reduced by $s1%.\r\n$s2 Arcane damage inflicted every $t2 sec.", "hash": "a51d44bd686c50b2", "src": "db2@1.60.1.70009"}
+{"id": 1271421, "field": "name", "en": "Forge Craftsman's Writ", "hash": "ea25e95459b07223", "src": "db2@1.60.1.70009"}
+{"id": 1271421, "field": "description", "en": "Rewrite an undesired Craftsman's Writ, resulting in a random writ from the same tier.", "hash": "03dc560aa783bb8d", "src": "db2@1.60.1.70009"}
+{"id": 1271422, "field": "name", "en": "Forge Journeyman Writ", "hash": "0733e16c9b7c6534", "src": "db2@1.60.1.70009"}
+{"id": 1271422, "field": "description", "en": "Rewrite the contents of an undesired Craftsman's Writ, resulting in another writ of Journeyman skill.", "hash": "c5f5c3b3c7bf5fd2", "src": "db2@1.60.1.70009"}
+{"id": 1271423, "field": "name", "en": "Forge Expert Writ", "hash": "44f6dbb3cacb0050", "src": "db2@1.60.1.70009"}
+{"id": 1271423, "field": "description", "en": "Rewrite the contents of an undesired Craftsman's Writ, resulting in another writ of Expert skill.", "hash": "82d406834fbf2c4a", "src": "db2@1.60.1.70009"}
+{"id": 1271424, "field": "name", "en": "Forge Artisan Writ", "hash": "f47a82f1cab29140", "src": "db2@1.60.1.70009"}
+{"id": 1271424, "field": "description", "en": "Rewrite the contents of an undesired Craftsman's Writ, resulting in another writ of Artisan skill.", "hash": "91332b1f73374b5d", "src": "db2@1.60.1.70009"}
+{"id": 1271427, "field": "name", "en": "Lunar Mark Search Periodic", "hash": "bbd0162ca1625855", "src": "db2@1.60.1.70009"}
+{"id": 1271430, "field": "name", "en": "(DNT) Ancient Wisp Test Spawn Visuals", "hash": "2f32247315f1ccbb", "src": "db2@1.60.1.70009"}
+{"id": 1271443, "field": "name", "en": "(DNT) Ancient Wisp Test Mount Vehicle", "hash": "f109b368a572e7da", "src": "db2@1.60.1.70009"}
+{"id": 1271485, "field": "name", "en": "Loot-A-Rang", "hash": "e6238b37bbd59db0", "src": "db2@1.60.1.70009"}
+{"id": 1271485, "field": "description", "en": "Retrieves the loot from a nearby corpse.", "hash": "eb0158d63b90dd2c", "src": "db2@1.60.1.70009"}
+{"id": 1271487, "field": "name", "en": "Loot-A-Rang", "hash": "e6238b37bbd59db0", "src": "db2@1.60.1.70009"}
+{"id": 1271487, "field": "description", "en": "Retrieves the loot from a nearby corpse.", "hash": "eb0158d63b90dd2c", "src": "db2@1.60.1.70009"}
+{"id": 1271513, "field": "name", "en": "Venom Spit", "hash": "466324912e1269be", "src": "db2@1.60.1.70009"}
+{"id": 1271513, "field": "description", "en": "Spits poison at an enemy, inflicting Nature damage, then additional damage every $t2 sec. for $d.", "hash": "f250210df49709f8", "src": "db2@1.60.1.70009"}
+{"id": 1271513, "field": "aura", "en": "Nature damage inflicted every $t2 sec.", "hash": "aae6fcde14863898", "src": "db2@1.60.1.70009"}
+{"id": 1271514, "field": "name", "en": "Rupture", "hash": "925da3d1185e038e", "src": "db2@1.60.1.70009"}
+{"id": 1271514, "field": "description", "en": "Inflicts Physical damage to an enemy every $t1 sec. for $d.", "hash": "922b603531dadde0", "src": "db2@1.60.1.70009"}
+{"id": 1271514, "field": "aura", "en": "Physical damage inflicted every $t1 sec.", "hash": "c8fd5ef350c4cc8c", "src": "db2@1.60.1.70009"}
+{"id": 1271520, "field": "name", "en": "Eviscerate", "hash": "54fc33c01b019cc5", "src": "db2@1.60.1.70009"}
+{"id": 1271521, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70009"}
+{"id": 1271521, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70009"}
+{"id": 1271522, "field": "name", "en": "Thundercrack", "hash": "82cd8841ae621ac1", "src": "db2@1.60.1.70009"}
+{"id": 1271522, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70009"}
+{"id": 1271565, "field": "name", "en": "Umbral Mark Protection", "hash": "549e7640f1497c42", "src": "db2@1.60.1.70009"}
+{"id": 1271565, "field": "description", "en": "Bounce Protection", "hash": "84727607c217b635", "src": "db2@1.60.1.70009"}
+{"id": 1271565, "field": "aura", "en": "Bounce Protection", "hash": "84727607c217b635", "src": "db2@1.60.1.70009"}
+{"id": 1271567, "field": "name", "en": "Umbral Collapse", "hash": "1c618b962f4e5d1e", "src": "db2@1.60.1.70009"}
+{"id": 1271573, "field": "name", "en": "Zephras Windshapers Conversation", "hash": "a1af2567cb640a28", "src": "db2@1.60.1.70009"}
+{"id": 1271575, "field": "name", "en": "Zephras High Order Conversation", "hash": "8a48fe5352ce7cdb", "src": "db2@1.60.1.70009"}
+{"id": 1271593, "field": "name", "en": "Fear", "hash": "097bdd043b6b8a3a", "src": "db2@1.60.1.70009"}
+{"id": 1271593, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70009"}
+{"id": 1271632, "field": "name", "en": "Astral Bulwark", "hash": "25ffe6919c865145", "src": "db2@1.60.1.70009"}
+{"id": 1271632, "field": "description", "en": "Absorbs $s1 damage, draining mana instead.  Drains $e mana per damage absorbed.  Lasts $d.", "hash": "03cabc72a14b1eb4", "src": "db2@1.60.1.70009"}
+{"id": 1271632, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70009"}
+{"id": 1271688, "field": "name", "en": "Copper Lode", "hash": "7c47d73cdb1b331f", "src": "db2@1.60.1.70009"}
+{"id": 1271688, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70009"}
+{"id": 1271688, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70009"}
+{"id": 1271691, "field": "name", "en": "Mining Lode", "hash": "59a9adc24b7aa0c0", "src": "db2@1.60.1.70009"}
+{"id": 1271691, "field": "description", "en": "Mining.\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70009"}
+{"id": 1271759, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70009"}
+{"id": 1271816, "field": "name", "en": "Unnerving Mist", "hash": "2b3d36f9c9040bfe", "src": "db2@1.60.1.70009"}
+{"id": 1271816, "field": "aura", "en": "The heavy mist conceals units unless they're nearby.", "hash": "724c0bd66ecb1ebe", "src": "db2@1.60.1.70009"}
+{"id": 1271819, "field": "name", "en": "(DNT) Fog of War Visual", "hash": "e9a09961d5532a05", "src": "db2@1.60.1.70009"}
+{"id": 1271844, "field": "name", "en": "Revolting Strike", "hash": "0f3d1b6d29119bd7", "src": "db2@1.60.1.70009"}
+{"id": 1271844, "field": "description", "en": "Inflicts $S1 physical damage to the current target and increases their damage physical damage taken by $S2% for $d.", "hash": "17647b2b210f26de", "src": "db2@1.60.1.70009"}
+{"id": 1271844, "field": "aura", "en": "Physical damage taken increased by $S2%.", "hash": "355b081f7f904355", "src": "db2@1.60.1.70009"}
+{"id": 1271848, "field": "name", "en": "Gruesome Wail", "hash": "5e677b6dac001528", "src": "db2@1.60.1.70009"}
+{"id": 1271848, "field": "description", "en": "Inflicts $S1 physical damage to all players within $r1 yards.", "hash": "b3598d7e9e8e5266", "src": "db2@1.60.1.70009"}
+{"id": 1271853, "field": "name", "en": "Beseech the Mists", "hash": "2e5adcbb02f02e5a", "src": "db2@1.60.1.70009"}
+{"id": 1271853, "field": "description", "en": "Summons a Mist-Forgotten Horror at a random location.", "hash": "f0755ac24d151263", "src": "db2@1.60.1.70009"}
+{"id": 1271864, "field": "name", "en": "Renewing Fog", "hash": "e1aa6f64109d23e2", "src": "db2@1.60.1.70009"}
+{"id": 1271865, "field": "name", "en": "Renewing Fog", "hash": "e1aa6f64109d23e2", "src": "db2@1.60.1.70009"}
+{"id": 1271865, "field": "description", "en": "$@spelldesc<1289927>", "hash": "67f17ec3111d333e", "src": "db2@1.60.1.70009"}
+{"id": 1271866, "field": "name", "en": "Writhing Agony", "hash": "e4463f07dcd1ce0a", "src": "db2@1.60.1.70009"}
+{"id": 1271866, "field": "description", "en": "$@spelldesc<1271867>", "hash": "dfde3f1f4ab8a85f", "src": "db2@1.60.1.70009"}
+{"id": 1271867, "field": "name", "en": "Writhing Agony", "hash": "e4463f07dcd1ce0a", "src": "db2@1.60.1.70009"}
+{"id": 1271867, "field": "description", "en": "Conjures the power of mist, dealing $S1 nature damage every $1271866t1 sec.", "hash": "f4ddc61da8c025e1", "src": "db2@1.60.1.70009"}
+{"id": 1271868, "field": "name", "en": "Writhing Agony", "hash": "e4463f07dcd1ce0a", "src": "db2@1.60.1.70009"}
+{"id": 1271868, "field": "description", "en": "$@spelldesc<1271867>", "hash": "dfde3f1f4ab8a85f", "src": "db2@1.60.1.70009"}
+{"id": 1271898, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70009"}
+{"id": 1271952, "field": "name", "en": "Ley Line Convergence", "hash": "db74b93592584e2a", "src": "db2@1.60.1.70009"}
+{"id": 1271952, "field": "description", "en": "A powerful ley line is nearby...\r\n", "hash": "a04e8597c96704c7", "src": "db2@1.60.1.70009"}
+{"id": 1271952, "field": "aura", "en": "A powerful ley line is nearby...", "hash": "a04e8597c96704c7", "src": "db2@1.60.1.70009"}
+{"id": 1271953, "field": "name", "en": "Elemental Convergence", "hash": "5f7d35f97ad3ea81", "src": "db2@1.60.1.70009"}
+{"id": 1271953, "field": "description", "en": "A powerful elemental convergence is nearby...\r\n", "hash": "4dedb3a754b37953", "src": "db2@1.60.1.70009"}
+{"id": 1271953, "field": "aura", "en": "A powerful elemental convergence is nearby...", "hash": "4dedb3a754b37953", "src": "db2@1.60.1.70009"}

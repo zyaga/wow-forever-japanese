@@ -1,0 +1,1 @@
+{"id": 81956, "field": "description", "ja": "Seal of Insight利用時にMelee攻撃を実施した場合、\nPaladinを除く30ヤード以内の傷ついた味方を、\nダメージの30%分回復させる。", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#9335"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

@@ -1,0 +1,8 @@
+DisplayName_lang,VerboseName_lang,ID,ClassID,SubClassID,AuctionHouseSortOrder,PrerequisiteProficiency,Flags,DisplayFlags,WeaponSwingSize,PostrequisiteProficiency
+NewItem,,1,0,-1,0,-1,0,1,0,-1
+Axe,One-Handed Axes,3,2,0,0,-1,3,0,1,1
+Axe,Two-Handed Axes,4,2,1,0,0,3,0,2,-1
+Cloth,Cloth,20,4,1,0,-1,512,0,0,-1
+Leather,Leather,21,4,2,0,-1,512,0,0,-1
+Bag,,2,1,0,0,-1,0,0,0,-1
+"Soul Bag",,107,1,1,0,-1,0,4,0,-1

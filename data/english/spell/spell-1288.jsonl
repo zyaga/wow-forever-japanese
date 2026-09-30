@@ -1,0 +1,107 @@
+{"id": 1288007, "field": "name", "en": "Phase Transition Primer", "hash": "5245a23bcfef76bd", "src": "db2@1.60.1.70009"}
+{"id": 1288008, "field": "name", "en": "Phase Transition Primer", "hash": "5245a23bcfef76bd", "src": "db2@1.60.1.70009"}
+{"id": 1288015, "field": "name", "en": "Royal Mandate", "hash": "3457906c750cb457", "src": "db2@1.60.1.70009"}
+{"id": 1288015, "field": "description", "en": "Increases your melee and ranged Attack Power by $s1 for $d.", "hash": "8d4ff871b5e511b0", "src": "db2@1.60.1.70009"}
+{"id": 1288015, "field": "aura", "en": "Increases Attack Power by $s1.", "hash": "ac12282c289227e9", "src": "db2@1.60.1.70009"}
+{"id": 1288016, "field": "name", "en": "Royal Mandate", "hash": "3457906c750cb457", "src": "db2@1.60.1.70009"}
+{"id": 1288016, "field": "description", "en": "Increases your Armor by $s1 for $d.", "hash": "9e9857ebb960cf89", "src": "db2@1.60.1.70009"}
+{"id": 1288016, "field": "aura", "en": "Increases Armor by $s1.", "hash": "f863a34dcfd47f8d", "src": "db2@1.60.1.70009"}
+{"id": 1288020, "field": "name", "en": "Royal Mandate", "hash": "3457906c750cb457", "src": "db2@1.60.1.70009"}
+{"id": 1288020, "field": "description", "en": "Increases your spell damage and healing by up to $s1 for $d.", "hash": "fa6b992b3ca860c1", "src": "db2@1.60.1.70009"}
+{"id": 1288020, "field": "aura", "en": "Increases spell damage and healing by up to $s1.", "hash": "7b2e7b634af52404", "src": "db2@1.60.1.70009"}
+{"id": 1288021, "field": "name", "en": "Royal Mandate", "hash": "3457906c750cb457", "src": "db2@1.60.1.70009"}
+{"id": 1288021, "field": "description", "en": "Increases your healing by up to $s1 for $d.", "hash": "8b59b2865054cb6d", "src": "db2@1.60.1.70009"}
+{"id": 1288021, "field": "aura", "en": "Increases healing by up to $s1.", "hash": "95b9a75ee0e4ad45", "src": "db2@1.60.1.70009"}
+{"id": 1288024, "field": "name", "en": "Royal Mandate", "hash": "3457906c750cb457", "src": "db2@1.60.1.70009"}
+{"id": 1288024, "field": "description", "en": "Increases your ranged Attack Power by $s1 for $d.", "hash": "118d7e0b38606cc7", "src": "db2@1.60.1.70009"}
+{"id": 1288024, "field": "aura", "en": "Increases ranged Attack Power by $s1.", "hash": "978934f6e54c8d8c", "src": "db2@1.60.1.70009"}
+{"id": 1288047, "field": "name", "en": "[DNT] Summon Enraged Ghost", "hash": "3dccf50274453f0e", "src": "db2@1.60.1.70009"}
+{"id": 1288099, "field": "name", "en": "Dreambound", "hash": "fc37e20d3a24cc7f", "src": "db2@1.60.1.70009"}
+{"id": 1288105, "field": "name", "en": "Test Sign", "hash": "b42345bd8486f200", "src": "db2@1.60.1.70009"}
+{"id": 1288136, "field": "name", "en": "[DNT] Quercus Nearby Aura", "hash": "9f9b008d3aedce87", "src": "db2@1.60.1.70009"}
+{"id": 1288142, "field": "name", "en": "[DNT] Quercus Nearby Focus", "hash": "034424dc65a0a53e", "src": "db2@1.60.1.70009"}
+{"id": 1288184, "field": "name", "en": "DNT Kill Credit", "hash": "c2ff79355f5256a4", "src": "db2@1.60.1.70009"}
+{"id": 1288237, "field": "name", "en": "Orcish Tradeskill Signpost", "hash": "dc785a946bfcdd9b", "src": "db2@1.60.1.70009"}
+{"id": 1288237, "field": "description", "en": "Display a sign you have collected for a profession you have learned for $d.", "hash": "16306bbe85d9b293", "src": "db2@1.60.1.70009"}
+{"id": 1288242, "field": "name", "en": "Orcish Tradeskill Signpost", "hash": "dc785a946bfcdd9b", "src": "db2@1.60.1.70009"}
+{"id": 1288243, "field": "name", "en": "Orcish Tradeskill Signpost", "hash": "dc785a946bfcdd9b", "src": "db2@1.60.1.70009"}
+{"id": 1288244, "field": "name", "en": "Orcish Tradeskill Signpost", "hash": "dc785a946bfcdd9b", "src": "db2@1.60.1.70009"}
+{"id": 1288245, "field": "name", "en": "Orcish Tradeskill Signpost", "hash": "dc785a946bfcdd9b", "src": "db2@1.60.1.70009"}
+{"id": 1288246, "field": "name", "en": "Orcish Tradeskill Signpost", "hash": "dc785a946bfcdd9b", "src": "db2@1.60.1.70009"}
+{"id": 1288247, "field": "name", "en": "Orcish Tradeskill Signpost", "hash": "dc785a946bfcdd9b", "src": "db2@1.60.1.70009"}
+{"id": 1288248, "field": "name", "en": "Orcish Tradeskill Signpost", "hash": "dc785a946bfcdd9b", "src": "db2@1.60.1.70009"}
+{"id": 1288249, "field": "name", "en": "Dwarven Tradeskill Signpost", "hash": "025b57e4b428d67b", "src": "db2@1.60.1.70009"}
+{"id": 1288250, "field": "name", "en": "Dwarven Tradeskill Signpost", "hash": "025b57e4b428d67b", "src": "db2@1.60.1.70009"}
+{"id": 1288251, "field": "name", "en": "Dwarven Tradeskill Signpost", "hash": "025b57e4b428d67b", "src": "db2@1.60.1.70009"}
+{"id": 1288252, "field": "name", "en": "Dwarven Tradeskill Signpost", "hash": "025b57e4b428d67b", "src": "db2@1.60.1.70009"}
+{"id": 1288253, "field": "name", "en": "Dwarven Tradeskill Signpost", "hash": "025b57e4b428d67b", "src": "db2@1.60.1.70009"}
+{"id": 1288254, "field": "name", "en": "Dwarven Tradeskill Signpost", "hash": "025b57e4b428d67b", "src": "db2@1.60.1.70009"}
+{"id": 1288255, "field": "name", "en": "Dwarven Tradeskill Signpost", "hash": "025b57e4b428d67b", "src": "db2@1.60.1.70009"}
+{"id": 1288261, "field": "name", "en": "Dwarven Tradeskill Signpost", "hash": "025b57e4b428d67b", "src": "db2@1.60.1.70009"}
+{"id": 1288261, "field": "description", "en": "Display a sign you have collected for a profession you have learned for $d.", "hash": "16306bbe85d9b293", "src": "db2@1.60.1.70009"}
+{"id": 1288298, "field": "name", "en": "Add Sign", "hash": "663f3fd16f27e15c", "src": "db2@1.60.1.70009"}
+{"id": 1288298, "field": "description", "en": "Add this profession's sign to your $?pc923[Orcish Tradeskill Sign][Dwarven Tradeskill Sign] toy for all characters on your account.\r\n\r\nCharacters that wish to display this sign must have that profession.", "hash": "414b01b3fef866ee", "src": "db2@1.60.1.70009"}
+{"id": 1288322, "field": "name", "en": "Sign Form", "hash": "139ce7186e66ff28", "src": "db2@1.60.1.70009"}
+{"id": 1288322, "field": "description", "en": "Sign, initial, and date a long list of pages that are definitely not worth your time to read.\r\n\r\nThey're from a trustworthy source, so it's probably fine.", "hash": "a2e6d836cf762ef7", "src": "db2@1.60.1.70009"}
+{"id": 1288387, "field": "name", "en": "Umbral Bulwark", "hash": "6eac64c30a1c8721", "src": "db2@1.60.1.70009"}
+{"id": 1288387, "field": "description", "en": "Absorbs $s1 damage, draining mana instead.  Drains $e mana per damage absorbed.  Lasts $d.", "hash": "03cabc72a14b1eb4", "src": "db2@1.60.1.70009"}
+{"id": 1288387, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70009"}
+{"id": 1288388, "field": "name", "en": "Lunar Cascade", "hash": "e4e79e52b3b6758a", "src": "db2@1.60.1.70009"}
+{"id": 1288388, "field": "description", "en": "Calls forth three powerful stars to impact Anara's location inflicting $123456s1 Arcane damage to all players within $123456a1yards and knocking them back.", "hash": "d5565a4e48ba66e6", "src": "db2@1.60.1.70009"}
+{"id": 1288389, "field": "name", "en": "Lunar Bombardment", "hash": "7726212aa8fcb9d1", "src": "db2@1.60.1.70009"}
+{"id": 1288390, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70009"}
+{"id": 1288391, "field": "name", "en": "Lunar Bombardment", "hash": "7726212aa8fcb9d1", "src": "db2@1.60.1.70009"}
+{"id": 1288392, "field": "name", "en": "Lunar Bombardment", "hash": "7726212aa8fcb9d1", "src": "db2@1.60.1.70009"}
+{"id": 1288447, "field": "name", "en": "Debilitate", "hash": "275e1753ebcb4036", "src": "db2@1.60.1.70009"}
+{"id": 1288447, "field": "aura", "en": "Ala'ro is being drained of his vitality.", "hash": "a41679743e3e900b", "src": "db2@1.60.1.70009"}
+{"id": 1288462, "field": "name", "en": "Spectral Rend", "hash": "2c8049f8a81dc92a", "src": "db2@1.60.1.70009"}
+{"id": 1288462, "field": "description", "en": "Inflicts Shadow damage to an enemy every $t1 sec. for $d.", "hash": "527e08d373fd1fee", "src": "db2@1.60.1.70009"}
+{"id": 1288462, "field": "aura", "en": "Shadow damage inflicted every $t1 sec.", "hash": "1bf495341e2228a5", "src": "db2@1.60.1.70009"}
+{"id": 1288471, "field": "name", "en": "Glaive", "hash": "369506dddd61e54a", "src": "db2@1.60.1.70009"}
+{"id": 1288471, "field": "description", "en": "Throws a glaive at an enemy, inflicting Physical damage and then bouncing to nearby targets.\r\n", "hash": "2da9572ca186e083", "src": "db2@1.60.1.70009"}
+{"id": 1288479, "field": "name", "en": "Strength of the Moon", "hash": "3594622ac5a2947b", "src": "db2@1.60.1.70009"}
+{"id": 1288479, "field": "description", "en": "The Huntress is empowered by the might of Elune, granting nearby allies increased Attack speed and Damage.", "hash": "cc892c3875061852", "src": "db2@1.60.1.70009"}
+{"id": 1288490, "field": "name", "en": "Lucent Beam", "hash": "f91f85d079807e63", "src": "db2@1.60.1.70009"}
+{"id": 1288524, "field": "name", "en": "Spinning Glaive", "hash": "f5348698c9eb6d85", "src": "db2@1.60.1.70009"}
+{"id": 1288524, "field": "description", "en": "Victims caught in the path of the glaive suffer Physical damage.\r\n", "hash": "9bde4a41abcd8e2f", "src": "db2@1.60.1.70009"}
+{"id": 1288524, "field": "aura", "en": "$s2 Physical damage every $t2 sec until the victim is above 90% health remaining.", "hash": "bb3b3619256026a4", "src": "db2@1.60.1.70009"}
+{"id": 1288525, "field": "name", "en": "Chakram", "hash": "2daa1743dc3dadb0", "src": "db2@1.60.1.70009"}
+{"id": 1288525, "field": "description", "en": "Throws a glaive that will circle around the caster for a brief period of time. Enemies caught in the missile's path take Physical damage.", "hash": "46f7529f78b0a091", "src": "db2@1.60.1.70009"}
+{"id": 1288536, "field": "name", "en": "Orbiting Chakram", "hash": "7bc10161af4d1cc2", "src": "db2@1.60.1.70009"}
+{"id": 1288537, "field": "name", "en": "Chakram", "hash": "2daa1743dc3dadb0", "src": "db2@1.60.1.70009"}
+{"id": 1288546, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70009"}
+{"id": 1288548, "field": "name", "en": "Thorns Aura", "hash": "5664420de6b87ced", "src": "db2@1.60.1.70009"}
+{"id": 1288548, "field": "aura", "en": "Surrounded by magical thorns reducing damage taken by 99% and reflecting $S1 of all incoming damage.", "hash": "4d187653fa74f546", "src": "db2@1.60.1.70009"}
+{"id": 1288558, "field": "name", "en": "Enfeeble", "hash": "07a2a47f2a7b6a1f", "src": "db2@1.60.1.70009"}
+{"id": 1288558, "field": "description", "en": "Afflicts the target with a deadly curse that takes 6s to take effect. Upon expiration it deals $1290040s1 Shadow damage and reduces their damage dealt by $1290040s2%.", "hash": "dc501a1c393cdeb7", "src": "db2@1.60.1.70009"}
+{"id": 1288558, "field": "aura", "en": "Inflicts $1290040s1 Shadow damage after $1290040d and reduces damage dealt by $1290040s2%.", "hash": "eeb4377976c89297", "src": "db2@1.60.1.70009"}
+{"id": 1288559, "field": "name", "en": "Bloom", "hash": "951f087bd9030469", "src": "db2@1.60.1.70009"}
+{"id": 1288559, "field": "description", "en": "Inflicts the target with a poison that takes root after 10s. When Bloom expires it roots the target in place, dealing intense Nature damage over $d.", "hash": "74ad95525b5de095", "src": "db2@1.60.1.70009"}
+{"id": 1288559, "field": "aura", "en": "$s1 Nature damage every $t1 seconds. If not dispelled, the target is rooted in place for $d.", "hash": "f687e0ce8c095c15", "src": "db2@1.60.1.70009"}
+{"id": 1288560, "field": "name", "en": "Wither", "hash": "bcbc14b7d3f9c2f1", "src": "db2@1.60.1.70009"}
+{"id": 1288560, "field": "description", "en": "Slows the target, reducing their movement speed by $s1% and their Mana, Rage, and Energy generation.", "hash": "3bd0fdb497c757ba", "src": "db2@1.60.1.70009"}
+{"id": 1288560, "field": "aura", "en": "Movement slowed by $s1%. Your Mana,  Rage, and Energy generation is reduced.", "hash": "03fbd6cc73ecc92e", "src": "db2@1.60.1.70009"}
+{"id": 1288561, "field": "name", "en": "Faerie Fire", "hash": "e9b99dcf49f432d1", "src": "db2@1.60.1.70009"}
+{"id": 1288561, "field": "description", "en": "Reduces an enemy's armor and resistances by $s1 for $d. While affected, the target cannot use stealth or invisibility.", "hash": "1decc69033f5ecda", "src": "db2@1.60.1.70009"}
+{"id": 1288561, "field": "aura", "en": "Armor reduced by $s1.\r\nCannot use stealth or invisibility.", "hash": "0730b87ee0dcc680", "src": "db2@1.60.1.70009"}
+{"id": 1288607, "field": "name", "en": "Prismatic Affliction", "hash": "a80725756a04f1d9", "src": "db2@1.60.1.70009"}
+{"id": 1288700, "field": "name", "en": "[DNT] Anim Replacement Template", "hash": "407dcaa290166f75", "src": "db2@1.60.1.70009"}
+{"id": 1288702, "field": "name", "en": "[DNT] Anim Replacement Despawn -> Stand", "hash": "c773eae0d90e1d79", "src": "db2@1.60.1.70009"}
+{"id": 1288793, "field": "name", "en": "[DNT] Shadow Bolt Visual", "hash": "03b3eb604c286fae", "src": "db2@1.60.1.70009"}
+{"id": 1288793, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70009"}
+{"id": 1288845, "field": "name", "en": "Freezing Arrow", "hash": "73a93b27f30a9acf", "src": "db2@1.60.1.70009"}
+{"id": 1288847, "field": "name", "en": "Freezing Arrow", "hash": "73a93b27f30a9acf", "src": "db2@1.60.1.70009"}
+{"id": 1288849, "field": "name", "en": "Freezing Trap", "hash": "4db0317569a02ad0", "src": "db2@1.60.1.70009"}
+{"id": 1288850, "field": "name", "en": "Freezing Arrow", "hash": "73a93b27f30a9acf", "src": "db2@1.60.1.70009"}
+{"id": 1288850, "field": "description", "en": "Fires freezing arrow traps at multiple targets. After 3s these traps arm and freeze any target struck by them, stunning them for $12945353d and inflicting $1294353s1 Frost damage. A large patch of ice forms at their location, slowing enemy movement speed by $1294444s2% and inflicting $1294444s1 Frost damage every $1294444t1 sec.", "hash": "b21a7b51b8a11040", "src": "db2@1.60.1.70009"}
+{"id": 1288851, "field": "name", "en": "Freezing Trap", "hash": "4db0317569a02ad0", "src": "db2@1.60.1.70009"}
+{"id": 1288852, "field": "name", "en": "Freezing Trap", "hash": "4db0317569a02ad0", "src": "db2@1.60.1.70009"}
+{"id": 1288899, "field": "name", "en": "RAF No AI Re-evaluate", "hash": "f78c154e33dbac7b", "src": "db2@1.60.1.70009"}
+{"id": 1288908, "field": "name", "en": "Pierce Armor", "hash": "8ecb1e30806a56bd", "src": "db2@1.60.1.70009"}
+{"id": 1288908, "field": "description", "en": "Hacks at the current target reducing their armor by $s1 and dealing $s2 Physical damage.  Lasts $d.", "hash": "b442e8899cba165e", "src": "db2@1.60.1.70009"}
+{"id": 1288908, "field": "aura", "en": "Armor reduced by $s1%.", "hash": "7bc8160feb000a50", "src": "db2@1.60.1.70009"}
+{"id": 1288961, "field": "name", "en": "Multi-Shot", "hash": "9c9367a3ec99d445", "src": "db2@1.60.1.70009"}
+{"id": 1288961, "field": "description", "en": "Unleashes a barrage of bolts at a targets location inflicting Physical damage to players in a cone in front of the caster every sec for$d.", "hash": "3b89af9e8fd6c947", "src": "db2@1.60.1.70009"}
+{"id": 1288961, "field": "aura", "en": "Unleashing a barrage of bolts inflicting  $1289053s1 Physical damage to players in a cone every sec.", "hash": "d6a4ce91c04f3e27", "src": "db2@1.60.1.70009"}
+{"id": 1288972, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70009"}
+{"id": 1288972, "field": "aura", "en": "Physical damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "bc6c8e1d090dadea", "src": "db2@1.60.1.70009"}

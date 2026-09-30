@@ -1,0 +1,788 @@
+{"id": 12001, "field": "name", "en": "Onyx Ring", "hash": "75d2674fd25e145b", "src": "db2@1.60.1.70009"}
+{"id": 12002, "field": "name", "en": "Marble Circle", "hash": "509920cb11d19f1c", "src": "db2@1.60.1.70009"}
+{"id": 12003, "field": "name", "en": "Dark Dwarven Lager", "hash": "82a95898086702c3", "src": "db2@1.60.1.70009"}
+{"id": 12003, "field": "description", "en": "An extremely potent alcoholic beverage.", "hash": "7af31672b21c4d6f", "src": "db2@1.60.1.70009"}
+{"id": 12004, "field": "name", "en": "Obsidian Band", "hash": "ef37d3be2ee33498", "src": "db2@1.60.1.70009"}
+{"id": 12005, "field": "name", "en": "Granite Ring", "hash": "a8461a46379ef0d7", "src": "db2@1.60.1.70009"}
+{"id": 12006, "field": "name", "en": "Meadow Ring", "hash": "3d4034d76091b69b", "src": "db2@1.60.1.70009"}
+{"id": 12007, "field": "name", "en": "Prairie Ring", "hash": "9d50773273fc448b", "src": "db2@1.60.1.70009"}
+{"id": 12008, "field": "name", "en": "Savannah Ring", "hash": "aded6c69558fbd07", "src": "db2@1.60.1.70009"}
+{"id": 12009, "field": "name", "en": "Tundra Ring", "hash": "9f9b38c3513b9bd2", "src": "db2@1.60.1.70009"}
+{"id": 12010, "field": "name", "en": "Fen Ring", "hash": "43322a9fb1c52404", "src": "db2@1.60.1.70009"}
+{"id": 12011, "field": "name", "en": "Forest Hoop", "hash": "ec0b221b0736b663", "src": "db2@1.60.1.70009"}
+{"id": 12012, "field": "name", "en": "Marsh Ring", "hash": "66faf9d0f612d97a", "src": "db2@1.60.1.70009"}
+{"id": 12013, "field": "name", "en": "Desert Ring", "hash": "9e2e926166f76b03", "src": "db2@1.60.1.70009"}
+{"id": 12014, "field": "name", "en": "Arctic Ring", "hash": "edf2ffcbf1bcdd63", "src": "db2@1.60.1.70009"}
+{"id": 12015, "field": "name", "en": "Swamp Ring", "hash": "358aa81965726d62", "src": "db2@1.60.1.70009"}
+{"id": 12016, "field": "name", "en": "Jungle Ring", "hash": "727c5fe155299df2", "src": "db2@1.60.1.70009"}
+{"id": 12017, "field": "name", "en": "Prismatic Band", "hash": "55d5bfc44727f3ae", "src": "db2@1.60.1.70009"}
+{"id": 12018, "field": "name", "en": "Conservator Helm", "hash": "380e2ea945f3b50b", "src": "db2@1.60.1.70009"}
+{"id": 12019, "field": "name", "en": "Cerulean Talisman", "hash": "09aced4a2f2ffa56", "src": "db2@1.60.1.70009"}
+{"id": 12020, "field": "name", "en": "Thallium Choker", "hash": "a5f4036df75ac614", "src": "db2@1.60.1.70009"}
+{"id": 12021, "field": "name", "en": "Shieldplate Sabatons", "hash": "34e832530ae9ead1", "src": "db2@1.60.1.70009"}
+{"id": 12022, "field": "name", "en": "Iridium Chain", "hash": "d7bebd65f2e97696", "src": "db2@1.60.1.70009"}
+{"id": 12023, "field": "name", "en": "Tellurium Necklace", "hash": "a026c1f3999e04b7", "src": "db2@1.60.1.70009"}
+{"id": 12024, "field": "name", "en": "Vanadium Talisman", "hash": "99b36afbb9aca93f", "src": "db2@1.60.1.70009"}
+{"id": 12025, "field": "name", "en": "Selenium Chain", "hash": "43d43af719849d3a", "src": "db2@1.60.1.70009"}
+{"id": 12026, "field": "name", "en": "Quicksilver Pendant", "hash": "2bd16a9091faf710", "src": "db2@1.60.1.70009"}
+{"id": 12027, "field": "name", "en": "Vermilion Necklace", "hash": "cd5e97ded368392c", "src": "db2@1.60.1.70009"}
+{"id": 12028, "field": "name", "en": "Basalt Necklace", "hash": "0eb8c1c0ba8cf327", "src": "db2@1.60.1.70009"}
+{"id": 12029, "field": "name", "en": "Greenstone Talisman", "hash": "963126cbd1e292a2", "src": "db2@1.60.1.70009"}
+{"id": 12030, "field": "name", "en": "Jet Chain", "hash": "13c0425ef2840262", "src": "db2@1.60.1.70009"}
+{"id": 12031, "field": "name", "en": "Lodestone Necklace", "hash": "53f2a0a97e4ef5c2", "src": "db2@1.60.1.70009"}
+{"id": 12032, "field": "name", "en": "Onyx Choker", "hash": "6745523830383850", "src": "db2@1.60.1.70009"}
+{"id": 12033, "field": "name", "en": "Thaurissan Family Jewels", "hash": "f1168bb5a8ec0dc6", "src": "db2@1.60.1.70009"}
+{"id": 12034, "field": "name", "en": "Marble Necklace", "hash": "07b9efbc9d170615", "src": "db2@1.60.1.70009"}
+{"id": 12035, "field": "name", "en": "Obsidian Pendant", "hash": "914a34f76e30ea90", "src": "db2@1.60.1.70009"}
+{"id": 12036, "field": "name", "en": "Granite Necklace", "hash": "42a4350ba6e5ddfd", "src": "db2@1.60.1.70009"}
+{"id": 12037, "field": "name", "en": "Mystery Meat", "hash": "f55316c7475fc4cb", "src": "db2@1.60.1.70009"}
+{"id": 12039, "field": "name", "en": "Tundra Necklace", "hash": "1d1ffe446927a4d6", "src": "db2@1.60.1.70009"}
+{"id": 12040, "field": "name", "en": "Forest Pendant", "hash": "8b8ed279c9db2f83", "src": "db2@1.60.1.70009"}
+{"id": 12041, "field": "name", "en": "Windshear Leggings", "hash": "d46b092055f8ae6f", "src": "db2@1.60.1.70009"}
+{"id": 12042, "field": "name", "en": "Marsh Chain", "hash": "aafa7414be28565e", "src": "db2@1.60.1.70009"}
+{"id": 12043, "field": "name", "en": "Desert Choker", "hash": "f1c8c0af27f06b4b", "src": "db2@1.60.1.70009"}
+{"id": 12044, "field": "name", "en": "Arctic Pendant", "hash": "cae27d1b70a85467", "src": "db2@1.60.1.70009"}
+{"id": 12045, "field": "name", "en": "Swamp Pendant", "hash": "1b354d8b476d6319", "src": "db2@1.60.1.70009"}
+{"id": 12046, "field": "name", "en": "Jungle Necklace", "hash": "623a921f082e5b21", "src": "db2@1.60.1.70009"}
+{"id": 12047, "field": "name", "en": "Spectral Necklace", "hash": "6b0483f852fa34d7", "src": "db2@1.60.1.70009"}
+{"id": 12048, "field": "name", "en": "Prismatic Pendant", "hash": "8b4b26fbbfca5c24", "src": "db2@1.60.1.70009"}
+{"id": 12050, "field": "name", "en": "Hazecover Boots", "hash": "1c06129dcf326c31", "src": "db2@1.60.1.70009"}
+{"id": 12051, "field": "name", "en": "Brazen Gauntlets", "hash": "006f62ef9aa132dc", "src": "db2@1.60.1.70009"}
+{"id": 12052, "field": "name", "en": "Ring of the Moon", "hash": "b75468daf7b02ec5", "src": "db2@1.60.1.70009"}
+{"id": 12053, "field": "name", "en": "Volcanic Rock Ring", "hash": "78c5c614400fdb51", "src": "db2@1.60.1.70009"}
+{"id": 12054, "field": "name", "en": "Demon Band", "hash": "745b55506cbc9267", "src": "db2@1.60.1.70009"}
+{"id": 12055, "field": "name", "en": "Stardust Band", "hash": "e05377b90f4cc920", "src": "db2@1.60.1.70009"}
+{"id": 12056, "field": "name", "en": "Ring of the Heavens", "hash": "01d88f364d1c969c", "src": "db2@1.60.1.70009"}
+{"id": 12057, "field": "name", "en": "Dragonscale Band", "hash": "ceb5d50f5c925bb3", "src": "db2@1.60.1.70009"}
+{"id": 12058, "field": "name", "en": "Demonic Bone Ring", "hash": "b7d1e26c8a3c83b9", "src": "db2@1.60.1.70009"}
+{"id": 12060, "field": "name", "en": "Shindrell's Note", "hash": "69e0d760bc993bd1", "src": "db2@1.60.1.70009"}
+{"id": 12063, "field": "name", "en": "Monster - Trident, Wicked", "hash": "2111d6af7f0572a4", "src": "db2@1.60.1.70009"}
+{"id": 12064, "field": "name", "en": "Gamemaster Hood", "hash": "d56ebb1528272dba", "src": "db2@1.60.1.70009"}
+{"id": 12102, "field": "name", "en": "Ring of the Aristocrat", "hash": "eabbfa5a18e75051", "src": "db2@1.60.1.70009"}
+{"id": 12104, "field": "name", "en": "Brindlethorn Tunic", "hash": "afabae459475e3b0", "src": "db2@1.60.1.70009"}
+{"id": 12104, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
+{"id": 12105, "field": "name", "en": "Pridemail Leggings", "hash": "6c9dd006648355cf", "src": "db2@1.60.1.70009"}
+{"id": 12105, "field": "description", "en": "Increases damage done by Nature spells and effects by up to $s1.", "hash": "679f95b352a617b7", "src": "wago@1.15.9.69722"}
+{"id": 12106, "field": "name", "en": "Boulderskin Breastplate", "hash": "87d2ca5bf4952985", "src": "db2@1.60.1.70009"}
+{"id": 12107, "field": "name", "en": "Whispersilk Leggings", "hash": "0f512d58b77a9dde", "src": "db2@1.60.1.70009"}
+{"id": 12107, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 12122, "field": "name", "en": "Kum'isha's Junk", "hash": "8b2c15510e7fb1e7", "src": "db2@1.60.1.70009"}
+{"id": 12122, "field": "description", "en": "A chest full of \"junk\"", "hash": "8ed251de5bad92f9", "src": "db2@1.60.1.70009"}
+{"id": 12142, "field": "name", "en": "Monster - Sword, Thick/Fat Blade", "hash": "65d5d6be89c11752", "src": "db2@1.60.1.70009"}
+{"id": 12143, "field": "name", "en": "Dragonspine Key", "hash": "08dcc736bbd27b1a", "src": "db2@1.60.1.70009"}
+{"id": 12144, "field": "name", "en": "Eggscilloscope", "hash": "223bbda411bd24c4", "src": "db2@1.60.1.70009"}
+{"id": 12144, "field": "description", "en": "Freeze a nearby Rookery Egg.", "hash": "dd315e9b12e8e0a1", "src": "db2@1.60.1.70009"}
+{"id": 12162, "field": "name", "en": "Plans: Hardened Iron Shortsword", "hash": "59467abc35ddc4ad", "src": "db2@1.60.1.70009"}
+{"id": 12162, "field": "description", "en": "Teaches you how to make a Hardened Iron Shortsword.", "hash": "2e53129174f08f7b", "src": "db2@1.60.1.70009"}
+{"id": 12163, "field": "name", "en": "Plans: Moonsteel Broadsword", "hash": "987a43b8a6bf7276", "src": "db2@1.60.1.70009"}
+{"id": 12163, "field": "description", "en": "Teaches you how to make a Moonsteel Broadsword.", "hash": "d6cc506dd6d493df", "src": "db2@1.60.1.70009"}
+{"id": 12164, "field": "name", "en": "Plans: Massive Iron Axe", "hash": "73f3ad041992706c", "src": "db2@1.60.1.70009"}
+{"id": 12164, "field": "description", "en": "Teaches you how to make a Massive Iron Axe.", "hash": "3d049198915eb651", "src": "db2@1.60.1.70009"}
+{"id": 12182, "field": "name", "en": "Monster - Staff of Jordan", "hash": "d3d961b7a8be6dbe", "src": "db2@1.60.1.70009"}
+{"id": 12183, "field": "name", "en": "Monster - Mace, Thrall's Hammer", "hash": "870a1f6460a24bf1", "src": "db2@1.60.1.70009"}
+{"id": 12184, "field": "name", "en": "Raptor Flesh", "hash": "f8d0bfae1c445a1c", "src": "db2@1.60.1.70009"}
+{"id": 12185, "field": "name", "en": "Bloodsail Admiral's Hat", "hash": "84bae263b9047386", "src": "db2@1.60.1.70009"}
+{"id": 12185, "field": "description", "en": "Right Click to summon and dismiss your Blood Parrot.", "hash": "679c4a2ade7a69c7", "src": "db2@1.60.1.70009"}
+{"id": 12186, "field": "name", "en": "Drakefire Amulet (OLD) (UNUSED)", "hash": "ab0f809bb2ba7dfa", "src": "db2@1.60.1.70009"}
+{"id": 12187, "field": "name", "en": "Test Defense Chest", "hash": "95207520af99f3a8", "src": "db2@1.60.1.70009"}
+{"id": 12187, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
+{"id": 12188, "field": "name", "en": "Test Armor Chest", "hash": "9e4ea1c1ee1213f0", "src": "db2@1.60.1.70009"}
+{"id": 12188, "field": "description", "en": "+$s1 Armor.", "hash": "5e762e7689d7caee", "src": "wago@1.15.9.69722"}
+{"id": 12189, "field": "name", "en": "Test Strength Chest", "hash": "979b79d382511468", "src": "db2@1.60.1.70009"}
+{"id": 12190, "field": "name", "en": "Dreamless Sleep Potion", "hash": "abb1b1f7bb83fa59", "src": "db2@1.60.1.70009"}
+{"id": 12190, "field": "description", "en": "Puts the imbiber in a dreamless sleep for $d.  During that time the imbiber heals 1200 health and 1200 mana.", "hash": "6caebbed251f1720", "src": "db2@1.60.1.70009"}
+{"id": 12191, "field": "name", "en": "Silver Dawning's Lockbox", "hash": "9992ac1daa5b5d4f", "src": "db2@1.60.1.70009"}
+{"id": 12192, "field": "name", "en": "Mist Veil's Lockbox", "hash": "2a89f8df4d0ff6dd", "src": "db2@1.60.1.70009"}
+{"id": 12202, "field": "name", "en": "Tiger Meat", "hash": "87fd978327558846", "src": "db2@1.60.1.70009"}
+{"id": 12203, "field": "name", "en": "Red Wolf Meat", "hash": "2436e290368935ee", "src": "db2@1.60.1.70009"}
+{"id": 12204, "field": "name", "en": "Heavy Kodo Meat", "hash": "c30210be8ab01ee4", "src": "db2@1.60.1.70009"}
+{"id": 12205, "field": "name", "en": "White Spider Meat", "hash": "59f158d37d6d6831", "src": "db2@1.60.1.70009"}
+{"id": 12206, "field": "name", "en": "Tender Crab Meat", "hash": "31ff52a07c6c47a4", "src": "db2@1.60.1.70009"}
+{"id": 12207, "field": "name", "en": "Giant Egg", "hash": "1fc3137b01571114", "src": "db2@1.60.1.70009"}
+{"id": 12208, "field": "name", "en": "Tender Wolf Meat", "hash": "eb1fda9e4454dcbe", "src": "db2@1.60.1.70009"}
+{"id": 12209, "field": "name", "en": "Lean Wolf Steak", "hash": "eb37b248654f7444", "src": "db2@1.60.1.70009"}
+{"id": 12209, "field": "description", "en": "$@spelldesc435 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "4303c872a178b1f7", "src": "db2@1.60.1.70009"}
+{"id": 12210, "field": "name", "en": "Roast Raptor", "hash": "412139a879ed3ea1", "src": "db2@1.60.1.70009"}
+{"id": 12210, "field": "description", "en": "$@spelldesc435 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "bf8833eab91fcfbd", "src": "db2@1.60.1.70009"}
+{"id": 12212, "field": "name", "en": "Jungle Stew", "hash": "72a18a540e3b5c74", "src": "db2@1.60.1.70009"}
+{"id": 12212, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "21148a5f8eba1721", "src": "db2@1.60.1.70009"}
+{"id": 12213, "field": "name", "en": "Carrion Surprise", "hash": "2109c87a1d315f07", "src": "db2@1.60.1.70009"}
+{"id": 12213, "field": "description", "en": "$@spelldesc434 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "d9709707efe30854", "src": "db2@1.60.1.70009"}
+{"id": 12214, "field": "name", "en": "Mystery Stew", "hash": "f624d7ffd35bf4ce", "src": "db2@1.60.1.70009"}
+{"id": 12214, "field": "description", "en": "$@spelldesc435 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "9d68bf0e040443aa", "src": "db2@1.60.1.70009"}
+{"id": 12215, "field": "name", "en": "Heavy Kodo Stew", "hash": "c3d3d1f616ac4ef8", "src": "db2@1.60.1.70009"}
+{"id": 12215, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "f38930edc9033239", "src": "db2@1.60.1.70009"}
+{"id": 12216, "field": "name", "en": "Spiced Chili Crab", "hash": "b59fdc627f4cd453", "src": "db2@1.60.1.70009"}
+{"id": 12216, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "447a0287f1379cd2", "src": "db2@1.60.1.70009"}
+{"id": 12217, "field": "name", "en": "Dragonbreath Chili", "hash": "ffb280c9c980090e", "src": "db2@1.60.1.70009"}
+{"id": 12217, "field": "description", "en": "Occasionally belch flame at enemies struck in melee for the next $d.", "hash": "2095742c31df9f62", "src": "db2@1.60.1.70009"}
+{"id": 12218, "field": "name", "en": "Monster Omelet", "hash": "90463eb0fa4904c3", "src": "db2@1.60.1.70009"}
+{"id": 12218, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "7b7980fbf145a8c3", "src": "db2@1.60.1.70009"}
+{"id": 12219, "field": "name", "en": "Unadorned Seal of Ascension", "hash": "8eff33acec3230bc", "src": "db2@1.60.1.70009"}
+{"id": 12219, "field": "description", "en": "Three empty sockets cover the face.", "hash": "baebb802f1a0d112", "src": "db2@1.60.1.70009"}
+{"id": 12220, "field": "name", "en": "Intact Elemental Bracer", "hash": "c8ea3284b6a68837", "src": "db2@1.60.1.70009"}
+{"id": 12223, "field": "name", "en": "Meaty Bat Wing", "hash": "0ee6188bfe092b02", "src": "db2@1.60.1.70009"}
+{"id": 12224, "field": "name", "en": "Crispy Bat Wing", "hash": "16820b06c9fbe1d0", "src": "db2@1.60.1.70009"}
+{"id": 12224, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "132256a17bb15a65", "src": "db2@1.60.1.70009"}
+{"id": 12225, "field": "name", "en": "Blump Family Fishing Pole", "hash": "eede70ddc47e6b64", "src": "db2@1.60.1.70009"}
+{"id": 12225, "field": "description", "en": "Increased Fishing +$s1.", "hash": "325349e2fba78797", "src": "wago@1.15.9.69722"}
+{"id": 12226, "field": "name", "en": "Recipe: Crispy Bat Wing", "hash": "1ef9e5b849657804", "src": "db2@1.60.1.70009"}
+{"id": 12226, "field": "description", "en": "Teaches you how to cook up a Crispy Bat Wing.", "hash": "67b92fd73b1a9197", "src": "db2@1.60.1.70009"}
+{"id": 12227, "field": "name", "en": "Recipe: Lean Wolf Steak", "hash": "f3af8cfae4b90a67", "src": "db2@1.60.1.70009"}
+{"id": 12227, "field": "description", "en": "Teaches you how to cook Lean Wolf Steak.", "hash": "d72b6f78c10e64d2", "src": "db2@1.60.1.70009"}
+{"id": 12228, "field": "name", "en": "Recipe: Roast Raptor", "hash": "c1369be9f504fd1b", "src": "db2@1.60.1.70009"}
+{"id": 12228, "field": "description", "en": "Teaches you how to cook Roast Raptor.", "hash": "7044cbbcd88b46a4", "src": "db2@1.60.1.70009"}
+{"id": 12229, "field": "name", "en": "Recipe: Hot Wolf Ribs", "hash": "e0fd31c6d52007aa", "src": "db2@1.60.1.70009"}
+{"id": 12229, "field": "description", "en": "Teaches you how to cook Hot Wolf Ribs.", "hash": "7f0a325d9748be7e", "src": "db2@1.60.1.70009"}
+{"id": 12230, "field": "name", "en": "Felwood Slime Sample", "hash": "ea14d1fefdd39370", "src": "db2@1.60.1.70009"}
+{"id": 12231, "field": "name", "en": "Recipe: Jungle Stew", "hash": "7d61370c46fe31ed", "src": "db2@1.60.1.70009"}
+{"id": 12231, "field": "description", "en": "Teaches you how to cook Jungle Stew.", "hash": "b68ef3e65422c5fa", "src": "db2@1.60.1.70009"}
+{"id": 12232, "field": "name", "en": "Recipe: Carrion Surprise", "hash": "765eb1a4e22d9e77", "src": "db2@1.60.1.70009"}
+{"id": 12232, "field": "description", "en": "Teaches you how to cook Carrion Surprise.", "hash": "2a9c3b7559d5012c", "src": "db2@1.60.1.70009"}
+{"id": 12233, "field": "name", "en": "Recipe: Mystery Stew", "hash": "763a3a454e73b359", "src": "db2@1.60.1.70009"}
+{"id": 12233, "field": "description", "en": "Teaches you how to cook Mystery Stew.", "hash": "111ed412dae99484", "src": "db2@1.60.1.70009"}
+{"id": 12234, "field": "name", "en": "Corrupted Felwood Sample", "hash": "77199b91537dddc1", "src": "db2@1.60.1.70009"}
+{"id": 12235, "field": "name", "en": "Un'Goro Slime Sample", "hash": "2aa3aefe60dae140", "src": "db2@1.60.1.70009"}
+{"id": 12236, "field": "name", "en": "Pure Un'Goro Sample", "hash": "8b49d7d9d12ea14c", "src": "db2@1.60.1.70009"}
+{"id": 12237, "field": "name", "en": "Fine Crab Chunks", "hash": "b694317569c488ad", "src": "db2@1.60.1.70009"}
+{"id": 12238, "field": "name", "en": "Darkshore Grouper", "hash": "d8def30623dc2327", "src": "db2@1.60.1.70009"}
+{"id": 12238, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70009"}
+{"id": 12239, "field": "name", "en": "Recipe: Dragonbreath Chili", "hash": "38b5210048b3fdad", "src": "db2@1.60.1.70009"}
+{"id": 12239, "field": "description", "en": "Teaches you how to cook Dragonbreath Chili.", "hash": "a8d6956c00e5e153", "src": "db2@1.60.1.70009"}
+{"id": 12240, "field": "name", "en": "Recipe: Heavy Kodo Stew", "hash": "cc4baca89615e51b", "src": "db2@1.60.1.70009"}
+{"id": 12240, "field": "description", "en": "Teaches you how to cook Heavy Kodo Stew.", "hash": "af0fa51ee225c28b", "src": "db2@1.60.1.70009"}
+{"id": 12241, "field": "name", "en": "Collected Dragon Egg", "hash": "03abcd4aa60455af", "src": "db2@1.60.1.70009"}
+{"id": 12242, "field": "name", "en": "Sea Creature Bones", "hash": "fbe6fe044016d462", "src": "db2@1.60.1.70009"}
+{"id": 12244, "field": "name", "en": "Test Agility Chest", "hash": "6dfee83d7f545538", "src": "db2@1.60.1.70009"}
+{"id": 12245, "field": "name", "en": "Test Spirit Chest", "hash": "84f51604e5a8072c", "src": "db2@1.60.1.70009"}
+{"id": 12247, "field": "name", "en": "Broad Bladed Knife", "hash": "5df9579017898518", "src": "db2@1.60.1.70009"}
+{"id": 12248, "field": "name", "en": "Daring Dirk", "hash": "21a30d39ac37dc61", "src": "db2@1.60.1.70009"}
+{"id": 12249, "field": "name", "en": "Merciless Axe", "hash": "0535b63438405e53", "src": "db2@1.60.1.70009"}
+{"id": 12250, "field": "name", "en": "Midnight Axe", "hash": "86a6a3c9ec5437e7", "src": "db2@1.60.1.70009"}
+{"id": 12250, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70009"}
+{"id": 12251, "field": "name", "en": "Big Stick", "hash": "e63d0eacd696450d", "src": "db2@1.60.1.70009"}
+{"id": 12252, "field": "name", "en": "Staff of Protection", "hash": "4f7fa662abc9f2ef", "src": "db2@1.60.1.70009"}
+{"id": 12253, "field": "name", "en": "Brilliant Red Cloak", "hash": "07c28a7d3fcb2b60", "src": "db2@1.60.1.70009"}
+{"id": 12254, "field": "name", "en": "Well Oiled Cloak", "hash": "0ed1141339fb0d84", "src": "db2@1.60.1.70009"}
+{"id": 12255, "field": "name", "en": "Pale Leggings", "hash": "c4892d8f6d0181c2", "src": "db2@1.60.1.70009"}
+{"id": 12256, "field": "name", "en": "Cindercloth Leggings", "hash": "d4f3649faa3a4eb6", "src": "db2@1.60.1.70009"}
+{"id": 12256, "field": "description", "en": "Increases damage done by Fire spells and effects by up to $s1.", "hash": "6e8982e7361bae50", "src": "wago@1.15.9.69722"}
+{"id": 12257, "field": "name", "en": "Heavy Notched Belt", "hash": "1606f1b973def43b", "src": "db2@1.60.1.70009"}
+{"id": 12258, "field": "name", "en": "Serpent Clasp Belt", "hash": "3a55ce425b37d6bb", "src": "db2@1.60.1.70009"}
+{"id": 12258, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 12259, "field": "name", "en": "Glinting Steel Dagger", "hash": "d901466cab753abb", "src": "db2@1.60.1.70009"}
+{"id": 12259, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
+{"id": 12260, "field": "name", "en": "Searing Golden Blade", "hash": "2731274d66ca49a7", "src": "db2@1.60.1.70009"}
+{"id": 12260, "field": "description", "en": "Increases damage done by Fire spells and effects by up to $s1.", "hash": "6e8982e7361bae50", "src": "wago@1.15.9.69722"}
+{"id": 12261, "field": "name", "en": "Plans: Searing Golden Blade", "hash": "2b0bcd5eea5ad7db", "src": "db2@1.60.1.70009"}
+{"id": 12261, "field": "description", "en": "Teaches you how to make a Searing Golden Blade.", "hash": "d745bf4713b07bd0", "src": "db2@1.60.1.70009"}
+{"id": 12262, "field": "name", "en": "Empty Worg Pup Cage", "hash": "c193997c7583fb7e", "src": "db2@1.60.1.70009"}
+{"id": 12262, "field": "description", "en": "Use when near a Bloodaxe Worg Pup. Don't worry, it is G.E.T.A. approved.", "hash": "31deef2cfed2a550", "src": "db2@1.60.1.70009"}
+{"id": 12263, "field": "name", "en": "Caged Worg Pup", "hash": "1c1b9a8bdee5b1d5", "src": "db2@1.60.1.70009"}
+{"id": 12263, "field": "description", "en": "The cage rattles and shakes.", "hash": "a3d1f32fe040c90f", "src": "db2@1.60.1.70009"}
+{"id": 12264, "field": "name", "en": "Worg Carrier", "hash": "5f64a51b2576d7fc", "src": "db2@1.60.1.70009"}
+{"id": 12264, "field": "description", "en": "Right Click to summon and dismiss your worg pup.", "hash": "481c18dba0194a74", "src": "wago@1.15.9.69722"}
+{"id": 12282, "field": "name", "en": "Worn Battleaxe", "hash": "f1ded26ea8b7ab12", "src": "db2@1.60.1.70009"}
+{"id": 12283, "field": "name", "en": "Broodling Essence", "hash": "f3512895f04d56a8", "src": "db2@1.60.1.70009"}
+{"id": 12284, "field": "name", "en": "Draco-Incarcinatrix 900", "hash": "222394788ed0bf78", "src": "db2@1.60.1.70009"}
+{"id": 12284, "field": "description", "en": "Fire at a dragonkin Broodling in the Burning Steppes.", "hash": "b023e04ebe5c4331", "src": "db2@1.60.1.70009"}
+{"id": 12285, "field": "name", "en": "Monster - Axe, 2H Rev. Bearded Single Bladed - Red", "hash": "c8f9039666ad5f4c", "src": "db2@1.60.1.70009"}
+{"id": 12286, "field": "name", "en": "Eggscilloscope Prototype", "hash": "f2dbebfd53f40ae4", "src": "db2@1.60.1.70009"}
+{"id": 12286, "field": "description", "en": "Use on a Rookery Egg, then return to Tinkee.", "hash": "ec8492496537e5d8", "src": "db2@1.60.1.70009"}
+{"id": 12287, "field": "name", "en": "Collectronic Module", "hash": "752544f25c44fd12", "src": "db2@1.60.1.70009"}
+{"id": 12287, "field": "description", "en": "Collect a nearby dragon egg.", "hash": "6ecc629564a16e7e", "src": "db2@1.60.1.70009"}
+{"id": 12288, "field": "name", "en": "Encased Corrupt Ooze", "hash": "edb5946f344cda3f", "src": "db2@1.60.1.70009"}
+{"id": 12288, "field": "description", "en": "Releases a captured Felwood ooze so it can interact with a primal ooze in Un'Goro Crater.", "hash": "0086e63d3b85fe4f", "src": "db2@1.60.1.70009"}
+{"id": 12289, "field": "name", "en": "Sea Turtle Remains", "hash": "b69c0b7c9ecc4ee4", "src": "db2@1.60.1.70009"}
+{"id": 12290, "field": "name", "en": "Monster - Axe, Horde Badass Copper 01", "hash": "d7909d2ce06e203a", "src": "db2@1.60.1.70009"}
+{"id": 12291, "field": "name", "en": "Merged Ooze Sample", "hash": "f37717f952212e61", "src": "db2@1.60.1.70009"}
+{"id": 12292, "field": "name", "en": "Strangely Marked Box", "hash": "a4f43bf7f64a3c82", "src": "db2@1.60.1.70009"}
+{"id": 12293, "field": "name", "en": "Fine Gold Thread", "hash": "4513eb822e3af16c", "src": "db2@1.60.1.70009"}
+{"id": 12294, "field": "name", "en": "Monster - Axe, 2H Horde Green War Axe", "hash": "f4d5e00a12521903", "src": "db2@1.60.1.70009"}
+{"id": 12295, "field": "name", "en": "Leggings of the People's Militia", "hash": "90d73a857e71f999", "src": "db2@1.60.1.70009"}
+{"id": 12296, "field": "name", "en": "Spark of the People's Militia", "hash": "20032262b5c1e3cd", "src": "db2@1.60.1.70009"}
+{"id": 12297, "field": "name", "en": "Monster - Sword, Horde Jagged Brown", "hash": "e0c60d3fc28fee73", "src": "db2@1.60.1.70009"}
+{"id": 12298, "field": "name", "en": "Monster - Dagger, Dark Pronged", "hash": "5491d3a7d5ceaca1", "src": "db2@1.60.1.70009"}
+{"id": 12299, "field": "name", "en": "Netted Gloves", "hash": "0e8568f959495105", "src": "db2@1.60.1.70009"}
+{"id": 12300, "field": "name", "en": "Orb of Draconic Energy", "hash": "b70aa7229082c4f5", "src": "db2@1.60.1.70009"}
+{"id": 12300, "field": "description", "en": "Controls Emberstrife's mind when his will falters.", "hash": "13a54a0ccbd019d9", "src": "db2@1.60.1.70009"}
+{"id": 12301, "field": "name", "en": "Bamboo Cage Key", "hash": "901a87708186e052", "src": "db2@1.60.1.70009"}
+{"id": 12302, "field": "name", "en": "Reins of the Frostsaber", "hash": "90941ac1a64dfa2a", "src": "db2@1.60.1.70009"}
+{"id": 12302, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 12303, "field": "name", "en": "Reins of the Nightsaber", "hash": "3b46b5fffefe21ad", "src": "db2@1.60.1.70009"}
+{"id": 12303, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 12304, "field": "name", "en": "Monster - Sword, Horde Broad Pointed", "hash": "517230f8ad2fc3c4", "src": "db2@1.60.1.70009"}
+{"id": 12322, "field": "name", "en": "Monster - Staff, Green Feathered", "hash": "818cfadd855dcf38", "src": "db2@1.60.1.70009"}
+{"id": 12323, "field": "name", "en": "Unforged Seal of Ascension", "hash": "2dd117fab16da7e6", "src": "db2@1.60.1.70009"}
+{"id": 12323, "field": "description", "en": "Places the Unforged Seal of Ascension. Use in front of Emberstrife.", "hash": "ebbded6d80356c5d", "src": "db2@1.60.1.70009"}
+{"id": 12324, "field": "name", "en": "Forged Seal of Ascension", "hash": "5322da6a8eb22e3b", "src": "db2@1.60.1.70009"}
+{"id": 12325, "field": "name", "en": "Reins of the Primal Leopard", "hash": "933637e3de256acd", "src": "db2@1.60.1.70009"}
+{"id": 12325, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 12326, "field": "name", "en": "Reins of the Tawny Sabercat", "hash": "9648b0f5b2a13482", "src": "db2@1.60.1.70009"}
+{"id": 12326, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 12327, "field": "name", "en": "Reins of the Golden Sabercat", "hash": "ee618283d0d29b18", "src": "db2@1.60.1.70009"}
+{"id": 12327, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 12328, "field": "name", "en": "Monster - Staff, 3 Piece Taped Staff Green", "hash": "ca01bb91a3a4d6c4", "src": "db2@1.60.1.70009"}
+{"id": 12329, "field": "name", "en": "Monster - Staff, Crooked Green", "hash": "a96f94b138e76b5e", "src": "db2@1.60.1.70009"}
+{"id": 12330, "field": "name", "en": "Horn of the Red Wolf", "hash": "6480a09f5066295c", "src": "db2@1.60.1.70009"}
+{"id": 12330, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 12331, "field": "name", "en": "Monster - Sword2H, Horde Massive Green", "hash": "4b5d542e8c395ac5", "src": "db2@1.60.1.70009"}
+{"id": 12332, "field": "name", "en": "Monster - Dagger, Green Pronged", "hash": "bea503896db96bc9", "src": "db2@1.60.1.70009"}
+{"id": 12334, "field": "name", "en": "Frostmaul Shards", "hash": "281708200a2f61c6", "src": "db2@1.60.1.70009"}
+{"id": 12335, "field": "name", "en": "Gemstone of Smolderthorn", "hash": "2ebbbaa49113aed1", "src": "db2@1.60.1.70009"}
+{"id": 12336, "field": "name", "en": "Gemstone of Spirestone", "hash": "1c29c69d981c8d56", "src": "db2@1.60.1.70009"}
+{"id": 12337, "field": "name", "en": "Gemstone of Bloodaxe", "hash": "bf48646dbf2501dd", "src": "db2@1.60.1.70009"}
+{"id": 12338, "field": "name", "en": "Monster - Polearm, Rend Blackhand", "hash": "d042e2b67554d75b", "src": "db2@1.60.1.70009"}
+{"id": 12339, "field": "name", "en": "Vaelan's Gift", "hash": "893af44c0a4c6ab1", "src": "db2@1.60.1.70009"}
+{"id": 12341, "field": "name", "en": "Blackwood Fruit Sample", "hash": "8f18c90bff6a1eb3", "src": "db2@1.60.1.70009"}
+{"id": 12342, "field": "name", "en": "Blackwood Grain Sample", "hash": "f7384047bc859414", "src": "db2@1.60.1.70009"}
+{"id": 12343, "field": "name", "en": "Blackwood Nut Sample", "hash": "14f5f33f6cd4123f", "src": "db2@1.60.1.70009"}
+{"id": 12345, "field": "name", "en": "Bijou's Belongings", "hash": "b62123b7a33d6164", "src": "db2@1.60.1.70009"}
+{"id": 12346, "field": "name", "en": "Empty Cleansing Bowl", "hash": "6569ddefa1598658", "src": "db2@1.60.1.70009"}
+{"id": 12346, "field": "description", "en": "Fill with moonwell water to prepare the bowl to cleanse food placed in it.", "hash": "9f1749be458e7efa", "src": "db2@1.60.1.70009"}
+{"id": 12347, "field": "name", "en": "Filled Cleansing Bowl", "hash": "1f5629a69c7cb5d9", "src": "db2@1.60.1.70009"}
+{"id": 12347, "field": "description", "en": "Creates a bowl of purified food that the furbolg are sure to enjoy.  It requires fruit, grain, and nuts from the Blackwood camp.", "hash": "b3d76e508b9d0a7a", "src": "db2@1.60.1.70009"}
+{"id": 12348, "field": "name", "en": "Monster - Axe, Horde Badass Copper 01 (Special1H)", "hash": "b9081f18a8e5f303", "src": "db2@1.60.1.70009"}
+{"id": 12349, "field": "name", "en": "Cliffspring River Sample", "hash": "3c3a6d65fdc73916", "src": "db2@1.60.1.70009"}
+{"id": 12350, "field": "name", "en": "Empty Sampling Tube", "hash": "d3d3d64f6ab4eaf5", "src": "db2@1.60.1.70009"}
+{"id": 12351, "field": "name", "en": "Horn of the Arctic Wolf", "hash": "5f6bc2765bf0d12a", "src": "db2@1.60.1.70009"}
+{"id": 12351, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 12352, "field": "name", "en": "Doomrigger's Clasp", "hash": "2d327b90cc499413", "src": "db2@1.60.1.70009"}
+{"id": 12353, "field": "name", "en": "White Stallion Bridle", "hash": "01bbda23b12d38e4", "src": "db2@1.60.1.70009"}
+{"id": 12353, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 12354, "field": "name", "en": "Palomino Bridle", "hash": "f29219cd364092ad", "src": "db2@1.60.1.70009"}
+{"id": 12354, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 12355, "field": "name", "en": "Talisman of Corruption", "hash": "9b623a7c46840239", "src": "db2@1.60.1.70009"}
+{"id": 12356, "field": "name", "en": "Highperch Wyvern Egg", "hash": "024fe57307768499", "src": "db2@1.60.1.70009"}
+{"id": 12358, "field": "name", "en": "Darkstone Tablet", "hash": "32bfb9198ccd558f", "src": "db2@1.60.1.70009"}
+{"id": 12359, "field": "name", "en": "Thorium Bar", "hash": "0915cd37e5852c25", "src": "db2@1.60.1.70009"}
+{"id": 12360, "field": "name", "en": "Arcanite Bar", "hash": "d13a0b6da22881d7", "src": "db2@1.60.1.70009"}
+{"id": 12361, "field": "name", "en": "Blue Sapphire", "hash": "364a036b76ec1e02", "src": "db2@1.60.1.70009"}
+{"id": 12363, "field": "name", "en": "Arcane Crystal", "hash": "36f34619c5c1f878", "src": "db2@1.60.1.70009"}
+{"id": 12364, "field": "name", "en": "Huge Emerald", "hash": "356c6e4babab69c7", "src": "db2@1.60.1.70009"}
+{"id": 12365, "field": "name", "en": "Dense Stone", "hash": "5a457a07741a9cbb", "src": "db2@1.60.1.70009"}
+{"id": 12366, "field": "name", "en": "Thick Yeti Fur", "hash": "50f3defc5a80cd94", "src": "db2@1.60.1.70009"}
+{"id": 12367, "field": "name", "en": "Pristine Yeti Horn", "hash": "4b09a382c923cb71", "src": "db2@1.60.1.70009"}
+{"id": 12368, "field": "name", "en": "Dawn's Gambit", "hash": "e69ac5eb17f45042", "src": "db2@1.60.1.70009"}
+{"id": 12368, "field": "description", "en": "Place within the Viewing Room of the Scholomance.", "hash": "658af99460f7aaf1", "src": "db2@1.60.1.70009"}
+{"id": 12369, "field": "name", "en": "Scepter of Vectus", "hash": "0d9ed6ba485c4d91", "src": "db2@1.60.1.70009"}
+{"id": 12382, "field": "name", "en": "Key to the City", "hash": "c31a2dd3fff47306", "src": "db2@1.60.1.70009"}
+{"id": 12382, "field": "description", "en": "Master Key to the City of Stratholme", "hash": "94faeb11e48e4db9", "src": "db2@1.60.1.70009"}
+{"id": 12383, "field": "name", "en": "Moontouched Feather", "hash": "e6529925d6f9d213", "src": "db2@1.60.1.70009"}
+{"id": 12384, "field": "name", "en": "Cache of Mau'ari", "hash": "77f0c3b34365e47c", "src": "db2@1.60.1.70009"}
+{"id": 12385, "field": "name", "en": "test", "hash": "0fa5d816a41ba189", "src": "db2@1.60.1.70009"}
+{"id": 12385, "field": "description", "en": "test", "hash": "0fa5d816a41ba189", "src": "db2@1.60.1.70009"}
+{"id": 12402, "field": "name", "en": "Ancient Egg", "hash": "e2e14735972d24e5", "src": "db2@1.60.1.70009"}
+{"id": 12403, "field": "name", "en": "Monster - Polearm, Black", "hash": "4e03869d6f730ada", "src": "db2@1.60.1.70009"}
+{"id": 12404, "field": "name", "en": "Dense Sharpening Stone", "hash": "78ba09fc537f7276", "src": "db2@1.60.1.70009"}
+{"id": 12404, "field": "description", "en": "Increase sharp weapon damage by 8 for 30 minutes.", "hash": "b5b3435d3baa18b1", "src": "db2@1.60.1.70009"}
+{"id": 12405, "field": "name", "en": "Thorium Armor", "hash": "f73202dbc47ea5d4", "src": "db2@1.60.1.70009"}
+{"id": 12406, "field": "name", "en": "Thorium Belt", "hash": "a6290cbfea467d8b", "src": "db2@1.60.1.70009"}
+{"id": 12408, "field": "name", "en": "Thorium Bracers", "hash": "a7f2056aac3a2295", "src": "db2@1.60.1.70009"}
+{"id": 12409, "field": "name", "en": "Thorium Boots", "hash": "0859590203227029", "src": "db2@1.60.1.70009"}
+{"id": 12410, "field": "name", "en": "Thorium Helm", "hash": "a6f6de5a3ab635c2", "src": "db2@1.60.1.70009"}
+{"id": 12411, "field": "name", "en": "Third Mosh'aru Tablet", "hash": "4b9bc301e08d7523", "src": "db2@1.60.1.70009"}
+{"id": 12412, "field": "name", "en": "Fourth Mosh'aru Tablet", "hash": "46ad1df641f6722c", "src": "db2@1.60.1.70009"}
+{"id": 12414, "field": "name", "en": "Thorium Leggings", "hash": "9a0d9147315fc245", "src": "db2@1.60.1.70009"}
+{"id": 12415, "field": "name", "en": "Radiant Breastplate", "hash": "df575c3c9c1afcd6", "src": "db2@1.60.1.70009"}
+{"id": 12416, "field": "name", "en": "Radiant Belt", "hash": "4c1473c87a2e20d3", "src": "db2@1.60.1.70009"}
+{"id": 12417, "field": "name", "en": "Radiant Circlet", "hash": "a1e3b6db826b816c", "src": "db2@1.60.1.70009"}
+{"id": 12418, "field": "name", "en": "Radiant Gloves", "hash": "6be2e700f54a3c6d", "src": "db2@1.60.1.70009"}
+{"id": 12419, "field": "name", "en": "Radiant Boots", "hash": "efcf11b28a7dbd1b", "src": "db2@1.60.1.70009"}
+{"id": 12420, "field": "name", "en": "Radiant Leggings", "hash": "aedc66d8e5c15fb7", "src": "db2@1.60.1.70009"}
+{"id": 12421, "field": "name", "en": "Monster - Staff, White Jeweled", "hash": "98a53d01960b3283", "src": "db2@1.60.1.70009"}
+{"id": 12422, "field": "name", "en": "Imperial Plate Chest", "hash": "b8c48c88a1164e7a", "src": "db2@1.60.1.70009"}
+{"id": 12424, "field": "name", "en": "Imperial Plate Belt", "hash": "c0c8edee2fa7d886", "src": "db2@1.60.1.70009"}
+{"id": 12425, "field": "name", "en": "Imperial Plate Bracers", "hash": "c5ca56653325512d", "src": "db2@1.60.1.70009"}
+{"id": 12426, "field": "name", "en": "Imperial Plate Boots", "hash": "a8299450c7b640a6", "src": "db2@1.60.1.70009"}
+{"id": 12427, "field": "name", "en": "Imperial Plate Helm", "hash": "c196bf89801790ac", "src": "db2@1.60.1.70009"}
+{"id": 12428, "field": "name", "en": "Imperial Plate Shoulders", "hash": "58cf3eb5fde9d43b", "src": "db2@1.60.1.70009"}
+{"id": 12429, "field": "name", "en": "Imperial Plate Leggings", "hash": "dfbf020340b71d89", "src": "db2@1.60.1.70009"}
+{"id": 12430, "field": "name", "en": "Frostsaber E'ko", "hash": "f7f72ea8f7fd8570", "src": "db2@1.60.1.70009"}
+{"id": 12431, "field": "name", "en": "Winterfall E'ko", "hash": "d99053085f2134c0", "src": "db2@1.60.1.70009"}
+{"id": 12432, "field": "name", "en": "Shardtooth E'ko", "hash": "a40eeec8f1e5db18", "src": "db2@1.60.1.70009"}
+{"id": 12433, "field": "name", "en": "Wildkin E'ko", "hash": "8b7a4d0d2259c8b3", "src": "db2@1.60.1.70009"}
+{"id": 12434, "field": "name", "en": "Chillwind E'ko", "hash": "5dfe7474e5494825", "src": "db2@1.60.1.70009"}
+{"id": 12435, "field": "name", "en": "Ice Thistle E'ko", "hash": "488b6978f166e80d", "src": "db2@1.60.1.70009"}
+{"id": 12436, "field": "name", "en": "Frostmaul E'ko", "hash": "c013dbbbd14a4b98", "src": "db2@1.60.1.70009"}
+{"id": 12437, "field": "name", "en": "Ridgewell's Crate", "hash": "3e562ddb9e0d3549", "src": "db2@1.60.1.70009"}
+{"id": 12438, "field": "name", "en": "Tinkee's Letter", "hash": "511c21d1ef51da24", "src": "db2@1.60.1.70009"}
+{"id": 12440, "field": "name", "en": "Magic Knucklebone (DND)", "hash": "d88d011dd98dfd5c", "src": "db2@1.60.1.70009"}
+{"id": 12440, "field": "description", "en": "Place 7 Magic Knucklebones in the Charm Pouch to create a Knucklebone Pouch.", "hash": "35af1ff21466861e", "src": "db2@1.60.1.70009"}
+{"id": 12442, "field": "name", "en": "Charm Pouch (DND)", "hash": "fbdfa546e3a15ff3", "src": "db2@1.60.1.70009"}
+{"id": 12443, "field": "name", "en": "Knucklebone Pouch (DND)", "hash": "5e4c648ef1865355", "src": "db2@1.60.1.70009"}
+{"id": 12443, "field": "description", "en": "Empty to create a Charm Pouch.", "hash": "aa076dd796058a2c", "src": "db2@1.60.1.70009"}
+{"id": 12444, "field": "name", "en": "Uncracked Chillwind Horn", "hash": "6858dc7469e5179c", "src": "db2@1.60.1.70009"}
+{"id": 12445, "field": "name", "en": "Felnok's Package", "hash": "a400732d26038330", "src": "db2@1.60.1.70009"}
+{"id": 12446, "field": "name", "en": "Anvilmar Musket", "hash": "aabf7d1e95355d76", "src": "db2@1.60.1.70009"}
+{"id": 12447, "field": "name", "en": "Thistlewood Bow", "hash": "3bdfc459888c92ac", "src": "db2@1.60.1.70009"}
+{"id": 12448, "field": "name", "en": "Light Hunting Rifle", "hash": "5213c8938f49bb31", "src": "db2@1.60.1.70009"}
+{"id": 12449, "field": "name", "en": "Primitive Bow", "hash": "5deb67e527ac1980", "src": "db2@1.60.1.70009"}
+{"id": 12450, "field": "name", "en": "Juju Flurry", "hash": "9f0cbd097afca309", "src": "db2@1.60.1.70009"}
+{"id": 12450, "field": "description", "en": "Increases the target's attack speed by $s1% for $d.", "hash": "ebc6a7f8f198b07e", "src": "db2@1.60.1.70009"}
+{"id": 12451, "field": "name", "en": "Juju Power", "hash": "5b2b408a6f150ee9", "src": "db2@1.60.1.70009"}
+{"id": 12451, "field": "description", "en": "Increases the target's Strength by $s1 for $d.", "hash": "62a781c2ecd71042", "src": "db2@1.60.1.70009"}
+{"id": 12452, "field": "name", "en": "Monster - Shield, Horde A02 Silver", "hash": "e7ffd195b6da36e7", "src": "db2@1.60.1.70009"}
+{"id": 12453, "field": "name", "en": "Monster - Shield, Horde A03 Triangle", "hash": "73cec47caf185f45", "src": "db2@1.60.1.70009"}
+{"id": 12454, "field": "name", "en": "Monster - Shield, Horde B01 Brown", "hash": "5c5c90c2dd0dd5ea", "src": "db2@1.60.1.70009"}
+{"id": 12455, "field": "name", "en": "Juju Ember", "hash": "99ca50176cd41dcd", "src": "db2@1.60.1.70009"}
+{"id": 12455, "field": "description", "en": "Increases Fire resistance by $s1 for $d.", "hash": "f6b7274a2f37f4f3", "src": "db2@1.60.1.70009"}
+{"id": 12456, "field": "name", "en": "Monster - Shield, Horde B02 Brown", "hash": "110f439832a46b1e", "src": "db2@1.60.1.70009"}
+{"id": 12457, "field": "name", "en": "Juju Chill", "hash": "7605383c07c21422", "src": "db2@1.60.1.70009"}
+{"id": 12457, "field": "description", "en": "Increase Frost resistance by $s1 for $d.", "hash": "c97ccc5face77130", "src": "db2@1.60.1.70009"}
+{"id": 12458, "field": "name", "en": "Juju Guile", "hash": "bdfa0258b1b37660", "src": "db2@1.60.1.70009"}
+{"id": 12458, "field": "description", "en": "Increases the target's Intellect by $M1 for $d.", "hash": "1e5884f6c567ebd3", "src": "db2@1.60.1.70009"}
+{"id": 12459, "field": "name", "en": "Juju Escape", "hash": "1bfa840c0d108d0a", "src": "db2@1.60.1.70009"}
+{"id": 12459, "field": "description", "en": "Increases your chance to dodge by $s1% for $d.", "hash": "71bb8ed02d669fa0", "src": "db2@1.60.1.70009"}
+{"id": 12460, "field": "name", "en": "Juju Might", "hash": "25b01cf04261fbe0", "src": "db2@1.60.1.70009"}
+{"id": 12460, "field": "description", "en": "Increases attack power by $s1 for $d.", "hash": "760ba7f2b0db0a3c", "src": "db2@1.60.1.70009"}
+{"id": 12461, "field": "name", "en": "Monster - Axe, 2H Horde Brown Tombstone", "hash": "8cbcb91d1daac064", "src": "db2@1.60.1.70009"}
+{"id": 12467, "field": "name", "en": "Alien Egg", "hash": "3030ce4480c90e25", "src": "db2@1.60.1.70009"}
+{"id": 12467, "field": "description", "en": "Something seems to shake from within", "hash": "1ee2004d87a2ca76", "src": "db2@1.60.1.70009"}
+{"id": 12468, "field": "name", "en": "Chilton Wand", "hash": "7518e7fbb6fe5228", "src": "db2@1.60.1.70009"}
+{"id": 12472, "field": "name", "en": "Krakle's Thermometer", "hash": "6cb5ea8b2ae7b50e", "src": "db2@1.60.1.70009"}
+{"id": 12472, "field": "description", "en": "Take a reading of the temperature at a hot spot.\nQuality Guaranteed by Kraklenheit Industries", "hash": "3beb0195feff9373", "src": "db2@1.60.1.70009"}
+{"id": 12482, "field": "name", "en": "Monster - Glaive - Demonhunter Black", "hash": "b29a87272ff58977", "src": "db2@1.60.1.70009"}
+{"id": 12502, "field": "name", "en": "Monster - Glaive - Demonhunter Black Offhand", "hash": "46536ff3e13ebaa4", "src": "db2@1.60.1.70009"}
+{"id": 12522, "field": "name", "en": "Bingles' Flying Gloves", "hash": "80b85cf9fda4af2a", "src": "db2@1.60.1.70009"}
+{"id": 12523, "field": "name", "en": "Monster - Gun, Silver Musket", "hash": "d0f9cfd0646f65b9", "src": "db2@1.60.1.70009"}
+{"id": 12524, "field": "name", "en": "Blue-feathered Amulet", "hash": "4372d0779eebc383", "src": "db2@1.60.1.70009"}
+{"id": 12525, "field": "name", "en": "Jaron's Supplies", "hash": "972f70d227ee4529", "src": "db2@1.60.1.70009"}
+{"id": 12526, "field": "name", "en": "TEST Challenge to Urok", "hash": "3b45dac715b75f5d", "src": "db2@1.60.1.70009"}
+{"id": 12526, "field": "description", "en": "At Urok's Tribute Pile, combine Omokk's Head with the Roughshod Pike.", "hash": "c638a4767477cf73", "src": "db2@1.60.1.70009"}
+{"id": 12529, "field": "name", "en": "Smolderweb Carrier", "hash": "15da934c3c64a2d1", "src": "db2@1.60.1.70009"}
+{"id": 12529, "field": "description", "en": "Right Click to summon and dismiss your Smolderweb hatchling.", "hash": "25931e9e6dec1215", "src": "wago@1.15.9.69722"}
+{"id": 12530, "field": "name", "en": "Spire Spider Egg", "hash": "8ef0c98d53d38581", "src": "db2@1.60.1.70009"}
+{"id": 12533, "field": "name", "en": "Roughshod Pike", "hash": "ca09db0263a45aad", "src": "db2@1.60.1.70009"}
+{"id": 12534, "field": "name", "en": "Omokk's Head", "hash": "f87bbf27e6e3fae0", "src": "db2@1.60.1.70009"}
+{"id": 12534, "field": "description", "en": "At Urok's Tribute Pile, combine Omokk's Head with the Roughshod Pike.", "hash": "c638a4767477cf73", "src": "db2@1.60.1.70009"}
+{"id": 12558, "field": "name", "en": "Blue-feathered Necklace", "hash": "16d72fbbdf35d515", "src": "db2@1.60.1.70009"}
+{"id": 12562, "field": "name", "en": "Important Blackrock Documents", "hash": "d0c432a4f0c2815e", "src": "db2@1.60.1.70009"}
+{"id": 12563, "field": "name", "en": "Warlord Goretooth's Command", "hash": "9f5a4124296549b0", "src": "db2@1.60.1.70009"}
+{"id": 12563, "field": "description", "en": "Bears the seal of the K.E.F.", "hash": "753a1ebcbe631ca7", "src": "db2@1.60.1.70009"}
+{"id": 12564, "field": "name", "en": "Assassination Note", "hash": "c819edd3a378c936", "src": "db2@1.60.1.70009"}
+{"id": 12565, "field": "name", "en": "Winna's Kitten Carrier", "hash": "9ad0ae6ae8ef0f64", "src": "db2@1.60.1.70009"}
+{"id": 12565, "field": "description", "en": "Release the kitten near the Jadefire Satyrs' corrupted moonwell.", "hash": "6eead185bf79ea48", "src": "db2@1.60.1.70009"}
+{"id": 12566, "field": "name", "en": "Hardened Flasket", "hash": "a4a555586c76d4e5", "src": "db2@1.60.1.70009"}
+{"id": 12566, "field": "description", "en": "Fill at the Jadefire Satyrs' corrupted moonwell.", "hash": "6b1f30900d87cf6f", "src": "db2@1.60.1.70009"}
+{"id": 12567, "field": "name", "en": "Filled Flasket", "hash": "3b10fbbf49fa115c", "src": "db2@1.60.1.70009"}
+{"id": 12584, "field": "name", "en": "Grand Marshal's Longsword", "hash": "4b0376fe1576c1ef", "src": "db2@1.60.1.70009"}
+{"id": 12584, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\n+$s1 Attack Power.", "hash": "c0dede9a4cc49524", "src": "wago@1.15.9.69722"}
+{"id": 12585, "field": "name", "en": "Stormwind Medallion", "hash": "ce8da4665121428a", "src": "db2@1.60.1.70009"}
+{"id": 12585, "field": "description", "en": "Creates a portal, teleporting group members that use it to Stormwind.", "hash": "69006ae247c96b0e", "src": "db2@1.60.1.70009"}
+{"id": 12586, "field": "name", "en": "Immature Venom Sac", "hash": "aebe9dd318c31a3f", "src": "db2@1.60.1.70009"}
+{"id": 12586, "field": "description", "en": "Cures $s1 poison $leffect:effects;.\nProtects the brood against Mother's Milk. Efficacy decays over time.", "hash": "dc92d37fcea9a3d7", "src": "db2@1.60.1.70009"}
+{"id": 12591, "field": "name", "en": "Monster - Staff, Holy Staff", "hash": "c1bd045cda1d2f4f", "src": "db2@1.60.1.70009"}
+{"id": 12593, "field": "name", "en": "Monster - Sword, Horde Sword Bronze", "hash": "0684b0a289e11fb2", "src": "db2@1.60.1.70009"}
+{"id": 12607, "field": "name", "en": "Brilliant Chromatic Scale", "hash": "7185e1b6a6f65298", "src": "db2@1.60.1.70009"}
+{"id": 12610, "field": "name", "en": "Runic Plate Shoulders", "hash": "979abaec9d166fa3", "src": "db2@1.60.1.70009"}
+{"id": 12611, "field": "name", "en": "Runic Plate Boots", "hash": "cd17d47aa9f87250", "src": "db2@1.60.1.70009"}
+{"id": 12612, "field": "name", "en": "Runic Plate Helm", "hash": "c7bbbe1255553679", "src": "db2@1.60.1.70009"}
+{"id": 12613, "field": "name", "en": "Runic Breastplate", "hash": "d93fccdd30f09ee0", "src": "db2@1.60.1.70009"}
+{"id": 12614, "field": "name", "en": "Runic Plate Leggings", "hash": "6af93ba4fbe96fa1", "src": "db2@1.60.1.70009"}
+{"id": 12615, "field": "name", "en": "Savage Mail Tunic", "hash": "5d0ade370750b122", "src": "db2@1.60.1.70009"}
+{"id": 12616, "field": "name", "en": "Savage Mail Boots", "hash": "204683980e5da4ed", "src": "db2@1.60.1.70009"}
+{"id": 12617, "field": "name", "en": "Savage Mail Shoulders", "hash": "5025a3becd300f1e", "src": "db2@1.60.1.70009"}
+{"id": 12618, "field": "name", "en": "Enchanted Thorium Breastplate", "hash": "290d6655e1152fbe", "src": "db2@1.60.1.70009"}
+{"id": 12618, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
+{"id": 12619, "field": "name", "en": "Enchanted Thorium Leggings", "hash": "81ecc5819fb6f97e", "src": "db2@1.60.1.70009"}
+{"id": 12619, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
+{"id": 12620, "field": "name", "en": "Enchanted Thorium Helm", "hash": "16cadaa63c9e6749", "src": "db2@1.60.1.70009"}
+{"id": 12620, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
+{"id": 12622, "field": "name", "en": "Shardtooth Meat", "hash": "a53192b55344a56f", "src": "db2@1.60.1.70009"}
+{"id": 12623, "field": "name", "en": "Chillwind Meat", "hash": "5f21186146a8127c", "src": "db2@1.60.1.70009"}
+{"id": 12624, "field": "name", "en": "Wildthorn Mail", "hash": "16400bc0973b058d", "src": "db2@1.60.1.70009"}
+{"id": 12624, "field": "description", "en": "Increases damage done by Nature spells and effects by up to $s1.", "hash": "679f95b352a617b7", "src": "wago@1.15.9.69722"}
+{"id": 12625, "field": "name", "en": "Dawnbringer Shoulders", "hash": "dc87e8797794163a", "src": "db2@1.60.1.70009"}
+{"id": 12625, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
+{"id": 12627, "field": "name", "en": "Temporal Displacer", "hash": "e983b50c70184f8e", "src": "db2@1.60.1.70009"}
+{"id": 12627, "field": "description", "en": "Reveal temporal parasites near grain silos in Andorhal.", "hash": "d28984fcb47292ec", "src": "db2@1.60.1.70009"}
+{"id": 12628, "field": "name", "en": "Demon Forged Breastplate", "hash": "f4115c02db319514", "src": "db2@1.60.1.70009"}
+{"id": 12628, "field": "description", "en": "When struck has a $h% chance of stealing $16608o1 life from the attacker over $16608d.\r\n", "hash": "927fd27415fc33d5", "src": "db2@1.60.1.70009"}
+{"id": 12629, "field": "name", "en": "Monster - Axe, Horde Hatchet 01", "hash": "bc38a6f392c0549c", "src": "db2@1.60.1.70009"}
+{"id": 12630, "field": "name", "en": "Head of Rend Blackhand", "hash": "6789e0f839deb758", "src": "db2@1.60.1.70009"}
+{"id": 12630, "field": "description", "en": "Sickening, bloody, foulness.", "hash": "c3bad4017fded9c1", "src": "db2@1.60.1.70009"}
+{"id": 12631, "field": "name", "en": "Fiery Plate Gauntlets", "hash": "4cbb6a5ef8fc141c", "src": "db2@1.60.1.70009"}
+{"id": 12631, "field": "description", "en": "Adds 4 Fire damage to your weapon attack.", "hash": "3a02ba10e4ef833e", "src": "db2@1.60.1.70009"}
+{"id": 12632, "field": "name", "en": "Storm Gauntlets", "hash": "1ed8f92475f90e29", "src": "db2@1.60.1.70009"}
+{"id": 12632, "field": "description", "en": "Adds 3 Lightning damage to your melee attacks.", "hash": "fde1a144ad51941a", "src": "db2@1.60.1.70009"}
+{"id": 12633, "field": "name", "en": "Whitesoul Helm", "hash": "9acfcd7bf39d70cd", "src": "db2@1.60.1.70009"}
+{"id": 12633, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
+{"id": 12635, "field": "name", "en": "Simple Parchment", "hash": "1d01cad6492389ca", "src": "db2@1.60.1.70009"}
+{"id": 12636, "field": "name", "en": "Helm of the Great Chief", "hash": "3d154cff54c91ee3", "src": "db2@1.60.1.70009"}
+{"id": 12638, "field": "name", "en": "Andorhal Watch", "hash": "4a113a822d5df99c", "src": "db2@1.60.1.70009"}
+{"id": 12638, "field": "description", "en": "The hands of this watch are frozen at 3:00.", "hash": "b5db95ee328a4af5", "src": "db2@1.60.1.70009"}
+{"id": 12639, "field": "name", "en": "Stronghold Gauntlets", "hash": "a1a04de2c6f437a3", "src": "db2@1.60.1.70009"}
+{"id": 12639, "field": "description", "en": "Immune to Disarm.", "hash": "a67c30b0b70e4486", "src": "db2@1.60.1.70009"}
+{"id": 12640, "field": "name", "en": "Lionheart Helm", "hash": "4ad0711cfa3dfc9f", "src": "db2@1.60.1.70009"}
+{"id": 12640, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\nImproves your chance to hit by $s1%.", "hash": "4b843fecfd5749a4", "src": "wago@1.15.9.69722"}
+{"id": 12641, "field": "name", "en": "Invulnerable Mail", "hash": "c615727b6d57ae25", "src": "db2@1.60.1.70009"}
+{"id": 12641, "field": "description", "en": "When struck in combat has a $H% chance to make you invulnerable to melee damage for $16621d. This effect can only occur once every $proccooldown sec.", "hash": "c3a625dda67e172c", "src": "db2@1.60.1.70009"}
+{"id": 12642, "field": "name", "en": "Cleansed Infernal Orb", "hash": "8ab7d92f4ca2fd7e", "src": "db2@1.60.1.70009"}
+{"id": 12643, "field": "name", "en": "Dense Weightstone", "hash": "c2861abff7bc4824", "src": "db2@1.60.1.70009"}
+{"id": 12643, "field": "description", "en": "Increase the damage of a blunt weapon by 8 for 30 minutes.", "hash": "2d416b6cd9533392", "src": "db2@1.60.1.70009"}
+{"id": 12644, "field": "name", "en": "Dense Grinding Stone", "hash": "042e42d7c9a3cfad", "src": "db2@1.60.1.70009"}
+{"id": 12645, "field": "name", "en": "Thorium Shield Spike", "hash": "432160a4e174f887", "src": "db2@1.60.1.70009"}
+{"id": 12645, "field": "description", "en": "Attaches a Thorium Spike to your shield that deals damage every time you block with it.", "hash": "633092787d8bd85c", "src": "db2@1.60.1.70009"}
+{"id": 12646, "field": "name", "en": "Infus Emerald", "hash": "b3461e31a02dda73", "src": "db2@1.60.1.70009"}
+{"id": 12646, "field": "description", "en": "Captures the spirit of an Infernal to be used in the creation of a warlockian orb.", "hash": "05bbb5f1f0257b7c", "src": "db2@1.60.1.70009"}
+{"id": 12647, "field": "name", "en": "Felhas Ruby", "hash": "d701f4dd1db1d707", "src": "db2@1.60.1.70009"}
+{"id": 12647, "field": "description", "en": "Captures the spirit of a Felhound to be used in the creation of a warlockian orb.", "hash": "6416cf2514d26f85", "src": "db2@1.60.1.70009"}
+{"id": 12648, "field": "name", "en": "Imprisoned Felhound Spirit", "hash": "4275a79dc454aeeb", "src": "db2@1.60.1.70009"}
+{"id": 12649, "field": "name", "en": "Imprisoned Infernal Spirit", "hash": "db6abd253a448717", "src": "db2@1.60.1.70009"}
+{"id": 12650, "field": "name", "en": "Attuned Dampener", "hash": "29c6d42dd48effcc", "src": "db2@1.60.1.70009"}
+{"id": 12650, "field": "description", "en": "Inflict $s2 arcane damage on the attuned target, and lower the damage it deals by $s1%.\nThis object has been attuned to work against a specific being.", "hash": "1f89a2391da7fac6", "src": "db2@1.60.1.70009"}
+{"id": 12652, "field": "name", "en": "Bijou's Reconnaissance Report", "hash": "25549b860b84c869", "src": "db2@1.60.1.70009"}
+{"id": 12652, "field": "description", "en": "TOP SECRET", "hash": "03811dda655c36f0", "src": "db2@1.60.1.70009"}
+{"id": 12655, "field": "name", "en": "Enchanted Thorium Bar", "hash": "67bd86d4ecf46f2f", "src": "db2@1.60.1.70009"}
+{"id": 12662, "field": "name", "en": "Demonic Rune", "hash": "78d62b0a973e29bb", "src": "db2@1.60.1.70009"}
+{"id": 12662, "field": "description", "en": "Restores $s1 mana at the cost of $s2 life.", "hash": "0d360ce25a5c6ffc", "src": "db2@1.60.1.70009"}
+{"id": 12663, "field": "name", "en": "Glyphed Oaken Branch", "hash": "c8244b3c1f86d596", "src": "db2@1.60.1.70009"}
+{"id": 12663, "field": "description", "en": "Glyphs of a druidic nature adorn the branch.", "hash": "318ea597298ac5cc", "src": "db2@1.60.1.70009"}
+{"id": 12682, "field": "name", "en": "Plans: Thorium Armor", "hash": "76c3cf5552c9c237", "src": "db2@1.60.1.70009"}
+{"id": 12682, "field": "description", "en": "Teaches you how to make Thorium Armor.", "hash": "3c6c1f8e3abd7313", "src": "db2@1.60.1.70009"}
+{"id": 12683, "field": "name", "en": "Plans: Thorium Belt", "hash": "204b6259065e26df", "src": "db2@1.60.1.70009"}
+{"id": 12683, "field": "description", "en": "Teaches you how to make a Thorium Belt.", "hash": "e47d3b773a9c890e", "src": "db2@1.60.1.70009"}
+{"id": 12684, "field": "name", "en": "Plans: Thorium Bracers", "hash": "4c957b8f2636ce49", "src": "db2@1.60.1.70009"}
+{"id": 12684, "field": "description", "en": "Teaches you how to make Thorium Bracers.", "hash": "44fd1917b085e120", "src": "db2@1.60.1.70009"}
+{"id": 12685, "field": "name", "en": "Plans: Radiant Belt", "hash": "c636c95d9645ca16", "src": "db2@1.60.1.70009"}
+{"id": 12685, "field": "description", "en": "Teaches you how to make a Radiant Belt.", "hash": "cbf2f42cc1f7d600", "src": "db2@1.60.1.70009"}
+{"id": 12687, "field": "name", "en": "Plans: Imperial Plate Shoulders", "hash": "9cbd2415dd665019", "src": "db2@1.60.1.70009"}
+{"id": 12687, "field": "description", "en": "Teaches you how to make Imperial Plate Shoulders.", "hash": "8206df959e41ebe0", "src": "db2@1.60.1.70009"}
+{"id": 12688, "field": "name", "en": "Plans: Imperial Plate Belt", "hash": "768e04b356314a2e", "src": "db2@1.60.1.70009"}
+{"id": 12688, "field": "description", "en": "Teaches you how to make Imperial Plate Belt.", "hash": "2acb84cf6d12e4da", "src": "db2@1.60.1.70009"}
+{"id": 12689, "field": "name", "en": "Plans: Radiant Breastplate", "hash": "951c7301c2a46e7e", "src": "db2@1.60.1.70009"}
+{"id": 12689, "field": "description", "en": "Teaches you how to make a Radiant Breastplate.", "hash": "4b3d3c36729bc6b9", "src": "db2@1.60.1.70009"}
+{"id": 12690, "field": "name", "en": "Plans: Imperial Plate Bracers", "hash": "21f0a50db966f347", "src": "db2@1.60.1.70009"}
+{"id": 12690, "field": "description", "en": "Teaches you how to make Imperial Plate Bracers.", "hash": "ff3dd32feb18791c", "src": "db2@1.60.1.70009"}
+{"id": 12691, "field": "name", "en": "Pattern: Wildthorn Mail", "hash": "96eaa6291f73335c", "src": "db2@1.60.1.70009"}
+{"id": 12691, "field": "description", "en": "Teaches you how to make Wildthorn Mail.", "hash": "8697640603eb312e", "src": "db2@1.60.1.70009"}
+{"id": 12692, "field": "name", "en": "Plans: Thorium Shield Spike", "hash": "46fc06b5650586cc", "src": "db2@1.60.1.70009"}
+{"id": 12692, "field": "description", "en": "Teaches you how to make a Thorium Shield Spike.", "hash": "233317178ee25256", "src": "db2@1.60.1.70009"}
+{"id": 12693, "field": "name", "en": "Plans: Thorium Boots", "hash": "87eb2577916d8c7b", "src": "db2@1.60.1.70009"}
+{"id": 12693, "field": "description", "en": "Teaches you how to make Thorium Boots.", "hash": "038d33211e30f974", "src": "db2@1.60.1.70009"}
+{"id": 12694, "field": "name", "en": "Plans: Thorium Helm", "hash": "211933f456cddf05", "src": "db2@1.60.1.70009"}
+{"id": 12694, "field": "description", "en": "Teaches you how to make a Thorium Helm.", "hash": "4dcf7dcd741aa6b8", "src": "db2@1.60.1.70009"}
+{"id": 12695, "field": "name", "en": "Plans: Radiant Gloves", "hash": "b37e88241dbd3bc8", "src": "db2@1.60.1.70009"}
+{"id": 12695, "field": "description", "en": "Teaches you how to make Radiant Gloves.", "hash": "58ed96a286f05324", "src": "db2@1.60.1.70009"}
+{"id": 12696, "field": "name", "en": "Plans: Demon Forged Breastplate", "hash": "37ff4167baae10f2", "src": "db2@1.60.1.70009"}
+{"id": 12696, "field": "description", "en": "Teaches you how to make a Demon Forged Breastplate.", "hash": "26e0bbbd69410c4a", "src": "db2@1.60.1.70009"}
+{"id": 12697, "field": "name", "en": "Plans: Radiant Boots", "hash": "6f60de2c18c8d97e", "src": "db2@1.60.1.70009"}
+{"id": 12697, "field": "description", "en": "Teaches you how to make Radiant Boots.", "hash": "74cab77f23c206b1", "src": "db2@1.60.1.70009"}
+{"id": 12698, "field": "name", "en": "Plans: Dawnbringer Shoulders", "hash": "d56ae3369ada7470", "src": "db2@1.60.1.70009"}
+{"id": 12698, "field": "description", "en": "Teaches you how to make Dawnbringer Shoulders.", "hash": "db142e3c66308440", "src": "db2@1.60.1.70009"}
+{"id": 12699, "field": "name", "en": "Plans: Fiery Plate Gauntlets", "hash": "459e651b1c427263", "src": "db2@1.60.1.70009"}
+{"id": 12699, "field": "description", "en": "Teaches you how to make Fiery Plate Gauntlets.", "hash": "456fa4feba5617cf", "src": "db2@1.60.1.70009"}
+{"id": 12700, "field": "name", "en": "Plans: Imperial Plate Boots", "hash": "ac043a614b46ceeb", "src": "db2@1.60.1.70009"}
+{"id": 12700, "field": "description", "en": "Teaches you how to make Imperial Plate Boots.", "hash": "961521d384bbdf1d", "src": "db2@1.60.1.70009"}
+{"id": 12701, "field": "name", "en": "Plans: Imperial Plate Helm", "hash": "775bd64ea6a10254", "src": "db2@1.60.1.70009"}
+{"id": 12701, "field": "description", "en": "Teaches you how to make an Imperial Plate Helm.", "hash": "40ff4ec75c7359de", "src": "db2@1.60.1.70009"}
+{"id": 12702, "field": "name", "en": "Plans: Radiant Circlet", "hash": "46872d00fc682d0f", "src": "db2@1.60.1.70009"}
+{"id": 12702, "field": "description", "en": "Teaches you how to make a Radiant Circlet.", "hash": "0b4229296501dd92", "src": "db2@1.60.1.70009"}
+{"id": 12703, "field": "name", "en": "Pattern: Storm Gauntlets", "hash": "f625fe24fce4647d", "src": "db2@1.60.1.70009"}
+{"id": 12703, "field": "description", "en": "Teaches you how to make Storm Gauntlets.", "hash": "1d2bcfe71fd96763", "src": "db2@1.60.1.70009"}
+{"id": 12704, "field": "name", "en": "Plans: Thorium Leggings", "hash": "d9b3054b013c5bc9", "src": "db2@1.60.1.70009"}
+{"id": 12704, "field": "description", "en": "Teaches you how to make Thorium Leggings.", "hash": "e3874e57ddf9f022", "src": "db2@1.60.1.70009"}
+{"id": 12705, "field": "name", "en": "Plans: Imperial Plate Chest", "hash": "bc9f329924a6dcbf", "src": "db2@1.60.1.70009"}
+{"id": 12705, "field": "description", "en": "Teaches you how to make an Imperial Plate Chest.", "hash": "8cca904678566fe1", "src": "db2@1.60.1.70009"}
+{"id": 12706, "field": "name", "en": "Plans: Runic Plate Shoulders", "hash": "907db5a9c05ccdd9", "src": "db2@1.60.1.70009"}
+{"id": 12706, "field": "description", "en": "Teaches you how to make Runic Plate Shoulders.", "hash": "95b5de6626951ff5", "src": "db2@1.60.1.70009"}
+{"id": 12707, "field": "name", "en": "Plans: Runic Plate Boots", "hash": "5ec2332b1171f576", "src": "db2@1.60.1.70009"}
+{"id": 12707, "field": "description", "en": "Teaches you how to make Runic Plate Boots.", "hash": "69ee43b67e0c3fbf", "src": "db2@1.60.1.70009"}
+{"id": 12708, "field": "name", "en": "Crossroads' Supply Crates", "hash": "cd0ef49376e28b29", "src": "db2@1.60.1.70009"}
+{"id": 12710, "field": "name", "en": "Glowing Hunk of the Beast's Flesh", "hash": "7e03b62134bd787f", "src": "db2@1.60.1.70009"}
+{"id": 12710, "field": "description", "en": "It Glows!", "hash": "cb7df43b29f1d98b", "src": "db2@1.60.1.70009"}
+{"id": 12711, "field": "name", "en": "Plans: Whitesoul Helm", "hash": "e26b6e9f1c107028", "src": "db2@1.60.1.70009"}
+{"id": 12711, "field": "description", "en": "Teaches you how to make a Whitesoul Helm.", "hash": "61c505a0af1e0439", "src": "db2@1.60.1.70009"}
+{"id": 12712, "field": "name", "en": "Warosh's Mojo", "hash": "f35bc04014b5556f", "src": "db2@1.60.1.70009"}
+{"id": 12713, "field": "name", "en": "Plans: Radiant Leggings", "hash": "ee81dadcb59df93b", "src": "db2@1.60.1.70009"}
+{"id": 12713, "field": "description", "en": "Teaches you how to make Radiant Leggings.", "hash": "895e97c139d79d3b", "src": "db2@1.60.1.70009"}
+{"id": 12714, "field": "name", "en": "Plans: Runic Plate Helm", "hash": "0761321b2531cffd", "src": "db2@1.60.1.70009"}
+{"id": 12714, "field": "description", "en": "Teaches you how to make a Runic Plate Helm.", "hash": "ae0fab4515045c65", "src": "db2@1.60.1.70009"}
+{"id": 12715, "field": "name", "en": "Plans: Imperial Plate Leggings", "hash": "0759405c3308d89b", "src": "db2@1.60.1.70009"}
+{"id": 12715, "field": "description", "en": "Teaches you how to make Imperial Plate Leggings.", "hash": "32a68a7f193984aa", "src": "db2@1.60.1.70009"}
+{"id": 12716, "field": "name", "en": "Pattern: Helm of the Great Chief", "hash": "1eefb71eb61caba4", "src": "db2@1.60.1.70009"}
+{"id": 12716, "field": "description", "en": "Teaches you how to make a Helm of the Great Chief.", "hash": "cd26e1adb22c77e1", "src": "db2@1.60.1.70009"}
+{"id": 12717, "field": "name", "en": "Plans: Lionheart Helm", "hash": "926c124022b0fbfa", "src": "db2@1.60.1.70009"}
+{"id": 12717, "field": "description", "en": "Teaches you how to make a Lionheart Helm.", "hash": "7218c036f32763ce", "src": "db2@1.60.1.70009"}
+{"id": 12718, "field": "name", "en": "Plans: Runic Breastplate", "hash": "6aea2b8e986a21f5", "src": "db2@1.60.1.70009"}
+{"id": 12718, "field": "description", "en": "Teaches you how to make a Runic Breastplate.", "hash": "1550fbcf3d82831c", "src": "db2@1.60.1.70009"}
+{"id": 12719, "field": "name", "en": "Plans: Runic Plate Leggings", "hash": "6ed3e1b57f79fde6", "src": "db2@1.60.1.70009"}
+{"id": 12719, "field": "description", "en": "Teaches you how to make Runic Plate Leggings.", "hash": "4657c1349868fd38", "src": "db2@1.60.1.70009"}
+{"id": 12720, "field": "name", "en": "Plans: Stronghold Gauntlets", "hash": "a57af3f34a84c5e8", "src": "db2@1.60.1.70009"}
+{"id": 12720, "field": "description", "en": "Teaches you how to make Stronghold Gauntlets.", "hash": "3dd6177a5b1a94e2", "src": "db2@1.60.1.70009"}
+{"id": 12721, "field": "name", "en": "Good Luck Half-Charm", "hash": "b81aa25c8049e853", "src": "db2@1.60.1.70009"}
+{"id": 12722, "field": "name", "en": "Good Luck Other-Half-Charm", "hash": "00accf9715db480a", "src": "db2@1.60.1.70009"}
+{"id": 12722, "field": "description", "en": "Combine the Good Luck Half-Charm with the Good Luck Other-Half-Charm.", "hash": "4360b550b7922c26", "src": "db2@1.60.1.70009"}
+{"id": 12723, "field": "name", "en": "Good Luck Charm", "hash": "5a377e712a679d65", "src": "db2@1.60.1.70009"}
+{"id": 12724, "field": "name", "en": "Janice's Parcel", "hash": "d7539bdbd29f242c", "src": "db2@1.60.1.70009"}
+{"id": 12725, "field": "name", "en": "Plans: Enchanted Thorium Helm", "hash": "72f12949c2e00963", "src": "db2@1.60.1.70009"}
+{"id": 12725, "field": "description", "en": "Teaches you how to make Enchanted Thorium Helm.", "hash": "72817eb5e8325fc6", "src": "db2@1.60.1.70009"}
+{"id": 12726, "field": "name", "en": "Plans: Enchanted Thorium Leggings", "hash": "28524ed341793a5d", "src": "db2@1.60.1.70009"}
+{"id": 12726, "field": "description", "en": "Teaches you how to make Enchanted Thorium Leggings.", "hash": "6b42a3859928bdca", "src": "db2@1.60.1.70009"}
+{"id": 12727, "field": "name", "en": "Plans: Enchanted Thorium Breastplate", "hash": "af7d2c95dcedc4bc", "src": "db2@1.60.1.70009"}
+{"id": 12727, "field": "description", "en": "Teaches you how to make an Enchanted Thorium Breastplate.", "hash": "7f53e7ff220642b9", "src": "db2@1.60.1.70009"}
+{"id": 12728, "field": "name", "en": "Pattern: Invulnerable Mail", "hash": "801ab9607d4cf46d", "src": "db2@1.60.1.70009"}
+{"id": 12728, "field": "description", "en": "Teaches you how to make Invulnerable Mail.", "hash": "d3b61e25bcfe2097", "src": "db2@1.60.1.70009"}
+{"id": 12730, "field": "name", "en": "Warosh's Scroll", "hash": "a5139f5409981391", "src": "db2@1.60.1.70009"}
+{"id": 12732, "field": "name", "en": "Incendia Agave", "hash": "5c7586c5dbe9e3dc", "src": "db2@1.60.1.70009"}
+{"id": 12733, "field": "name", "en": "Sacred Frostsaber Meat", "hash": "9ab80abf0996ab8b", "src": "db2@1.60.1.70009"}
+{"id": 12733, "field": "description", "en": "Place at the Stone of Shy-Rotam.", "hash": "91a21566e154b337", "src": "db2@1.60.1.70009"}
+{"id": 12734, "field": "name", "en": "Enchanted Scarlet Thread", "hash": "03d6a7a4d776a268", "src": "db2@1.60.1.70009"}
+{"id": 12735, "field": "name", "en": "Frayed Abomination Stitching", "hash": "ced63bed116c08bd", "src": "db2@1.60.1.70009"}
+{"id": 12736, "field": "name", "en": "Frostwhisper's Embalming Fluid", "hash": "adc7a8c6842fbd1a", "src": "db2@1.60.1.70009"}
+{"id": 12737, "field": "name", "en": "Gloom Weed", "hash": "fcc76943e39af851", "src": "db2@1.60.1.70009"}
+{"id": 12738, "field": "name", "en": "Dalson Outhouse Key", "hash": "f8dfc21098ff2d6f", "src": "db2@1.60.1.70009"}
+{"id": 12739, "field": "name", "en": "Dalson Cabinet Key", "hash": "b4e4359368e0bc51", "src": "db2@1.60.1.70009"}
+{"id": 12740, "field": "name", "en": "Fifth Mosh'aru Tablet", "hash": "29921bec7c98e5a3", "src": "db2@1.60.1.70009"}
+{"id": 12741, "field": "name", "en": "Sixth Mosh'aru Tablet", "hash": "5a39c21f2f6efe02", "src": "db2@1.60.1.70009"}
+{"id": 12742, "field": "name", "en": "Monster - Item, Book - Brown", "hash": "39a8261db2ebc730", "src": "db2@1.60.1.70009"}
+{"id": 12743, "field": "name", "en": "Monster - Item, Book - Brown Offhand", "hash": "b7cba63c169be752", "src": "db2@1.60.1.70009"}
+{"id": 12744, "field": "name", "en": "Monster - Item, Bag - Brown", "hash": "fbd475f891e9f017", "src": "db2@1.60.1.70009"}
+{"id": 12745, "field": "name", "en": "Monster - Item, Bag - Brown Offhand", "hash": "ed3747bdfaea9d6a", "src": "db2@1.60.1.70009"}
+{"id": 12746, "field": "name", "en": "Monster - Item, Orb - Lava", "hash": "db4fb837579ad05a", "src": "db2@1.60.1.70009"}
+{"id": 12747, "field": "name", "en": "Monster - Item, Orb - Lava Offhand", "hash": "6244ad0be172b566", "src": "db2@1.60.1.70009"}
+{"id": 12748, "field": "name", "en": "Monster - Item, Scepter - Gold", "hash": "114e7da114567106", "src": "db2@1.60.1.70009"}
+{"id": 12749, "field": "name", "en": "Monster - Item, Scepter - Gold Offhand", "hash": "0515159cc33503a0", "src": "db2@1.60.1.70009"}
+{"id": 12750, "field": "name", "en": "Monster - Item, Book - Black Skull Glowing", "hash": "528ebf19e45f2a79", "src": "db2@1.60.1.70009"}
+{"id": 12751, "field": "name", "en": "Monster - Item, Book - Blue", "hash": "e31efdc36d5dc52b", "src": "db2@1.60.1.70009"}
+{"id": 12753, "field": "name", "en": "Skin of Shadow", "hash": "3e85c575357f4ee4", "src": "db2@1.60.1.70009"}
+{"id": 12754, "field": "name", "en": "Monster - Axe, 2H War Green - Mulgore Protector", "hash": "7560bcf102d487cb", "src": "db2@1.60.1.70009"}
+{"id": 12755, "field": "name", "en": "Monster - Sword2H, Blackblade of Shahram", "hash": "ab5cd2b836c14528", "src": "db2@1.60.1.70009"}
+{"id": 12762, "field": "name", "en": "Secrecy of Plans", "hash": "5102885fccef7e18", "src": "db2@1.60.1.70009"}
+{"id": 12763, "field": "name", "en": "Un'Goro Etherfruit", "hash": "d5033ec89f8e134d", "src": "db2@1.60.1.70009"}
+{"id": 12763, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70009"}
+{"id": 12764, "field": "name", "en": "Thorium Greatsword", "hash": "0012f50ed561a95b", "src": "db2@1.60.1.70009"}
+{"id": 12765, "field": "name", "en": "Secret Note #1", "hash": "7e63da19034ba680", "src": "db2@1.60.1.70009"}
+{"id": 12766, "field": "name", "en": "Secret Note #2", "hash": "7e63da1a034ba681", "src": "db2@1.60.1.70009"}
+{"id": 12768, "field": "name", "en": "Secret Note #3", "hash": "7e63da1b034ba682", "src": "db2@1.60.1.70009"}
+{"id": 12769, "field": "name", "en": "Bleakwood Hew", "hash": "4b071ce33a145147", "src": "db2@1.60.1.70009"}
+{"id": 12769, "field": "description", "en": "Enemy is inflicted with the Bleakwood Curse that reduces their magic resistances by $s1.  Can be applied up to 3 times.", "hash": "d162e0069224fcc9", "src": "db2@1.60.1.70009"}
+{"id": 12770, "field": "name", "en": "Bijou's Information", "hash": "98c03fd7e8451631", "src": "db2@1.60.1.70009"}
+{"id": 12771, "field": "name", "en": "Empty Firewater Flask", "hash": "e756b8d785d21320", "src": "db2@1.60.1.70009"}
+{"id": 12772, "field": "name", "en": "Inlaid Thorium Hammer", "hash": "e2b74631d1974c08", "src": "db2@1.60.1.70009"}
+{"id": 12773, "field": "name", "en": "Ornate Thorium Handaxe", "hash": "71edc4b310736fcf", "src": "db2@1.60.1.70009"}
+{"id": 12774, "field": "name", "en": "Dawn's Edge", "hash": "bf0d12fa13a3fcbd", "src": "db2@1.60.1.70009"}
+{"id": 12774, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 12775, "field": "name", "en": "Huge Thorium Battleaxe", "hash": "216a3168b00a7927", "src": "db2@1.60.1.70009"}
+{"id": 12775, "field": "description", "en": "Increased Two-handed Axes +$s1.", "hash": "f33d3334cf2e39f5", "src": "wago@1.15.9.69722"}
+{"id": 12776, "field": "name", "en": "Enchanted Battlehammer", "hash": "7d1aa956b1339ff0", "src": "db2@1.60.1.70009"}
+{"id": 12776, "field": "description", "en": "Increases your chance to parry an attack by $s1%.\nImproves your chance to hit by $s1%.", "hash": "e3a8e890975c56e7", "src": "wago@1.15.9.69722"}
+{"id": 12777, "field": "name", "en": "Blazing Rapier", "hash": "120d314c4a51ec62", "src": "db2@1.60.1.70009"}
+{"id": 12777, "field": "description", "en": "Burns the enemy for $o1 damage over $d.", "hash": "f61ae3fef7e17d78", "src": "db2@1.60.1.70009"}
+{"id": 12778, "field": "name", "en": "Document Chest", "hash": "c766cbc636eb4437", "src": "db2@1.60.1.70009"}
+{"id": 12780, "field": "name", "en": "General Drakkisath's Command", "hash": "f8941430d7f99202", "src": "db2@1.60.1.70009"}
+{"id": 12781, "field": "name", "en": "Serenity", "hash": "00f9a0f67ad4e574", "src": "db2@1.60.1.70009"}
+{"id": 12781, "field": "description", "en": "Dispels a magic effect on the current foe.", "hash": "3a8c2eca73aea453", "src": "db2@1.60.1.70009"}
+{"id": 12782, "field": "name", "en": "Corruption", "hash": "99ec2eb2d8959128", "src": "db2@1.60.1.70009"}
+{"id": 12783, "field": "name", "en": "Heartseeker", "hash": "f9f5e3a7fd7f0fac", "src": "db2@1.60.1.70009"}
+{"id": 12783, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 12784, "field": "name", "en": "Arcanite Reaper", "hash": "a4ecd5b381d5bbed", "src": "db2@1.60.1.70009"}
+{"id": 12784, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
+{"id": 12785, "field": "name", "en": "Incendia Powder", "hash": "9c400dc43909e244", "src": "db2@1.60.1.70009"}
+{"id": 12785, "field": "description", "en": "Toss the Incendia Powder into the sacred fire of life.", "hash": "369aa7d217458d73", "src": "db2@1.60.1.70009"}
+{"id": 12786, "field": "name", "en": "Monster - Mace, Horde Skull Club", "hash": "c4e1f884749db9ef", "src": "db2@1.60.1.70009"}
+{"id": 12787, "field": "name", "en": "Monster - Mace, Horde Bone Claw Hammer", "hash": "efa74e671dc54061", "src": "db2@1.60.1.70009"}
+{"id": 12788, "field": "name", "en": "Monster - Mace, Horde Bone Spike Hammer", "hash": "e19bdfcf50d406b2", "src": "db2@1.60.1.70009"}
+{"id": 12789, "field": "name", "en": "Horn of Uber Buffing (test)", "hash": "43fd2116705b7c23", "src": "db2@1.60.1.70009"}
+{"id": 12790, "field": "name", "en": "Arcanite Champion", "hash": "b381b3ff3bcb9e98", "src": "db2@1.60.1.70009"}
+{"id": 12790, "field": "description", "en": "Heal yourself for $s2 and increase your Strength by $s1 for $d.", "hash": "17449b4725cd4e4e", "src": "db2@1.60.1.70009"}
+{"id": 12792, "field": "name", "en": "Volcanic Hammer", "hash": "1264887267abb66a", "src": "db2@1.60.1.70009"}
+{"id": 12792, "field": "description", "en": "Hurls a fiery ball that causes $s1 Fire damage and an additional $o2 damage over $d.", "hash": "a6bc16f5251f44d2", "src": "db2@1.60.1.70009"}
+{"id": 12794, "field": "name", "en": "Masterwork Stormhammer", "hash": "e75056ab2435bbaf", "src": "db2@1.60.1.70009"}
+{"id": 12794, "field": "description", "en": "Blasts up to 3 targets for $s1 Nature damage.", "hash": "d382b11fc55599c5", "src": "db2@1.60.1.70009"}
+{"id": 12795, "field": "name", "en": "Blood Talon", "hash": "a7e7e8ec45f27fe4", "src": "db2@1.60.1.70009"}
+{"id": 12795, "field": "description", "en": "Wounds the target causing them to bleed for $o1 damage over $d.", "hash": "47f171f505d2c468", "src": "db2@1.60.1.70009"}
+{"id": 12796, "field": "name", "en": "Hammer of the Titans", "hash": "eafe10e1f4435a10", "src": "db2@1.60.1.70009"}
+{"id": 12796, "field": "description", "en": "Stuns target for $d.", "hash": "9d6107dd66823445", "src": "db2@1.60.1.70009"}
+{"id": 12797, "field": "name", "en": "Frostguard", "hash": "64cf2cb2a3e3afb2", "src": "db2@1.60.1.70009"}
+{"id": 12797, "field": "description", "en": "Slows the target's movement speed by $s2% and increases the time between their attacks by $s1% for $d.", "hash": "a2142d054ee41899", "src": "db2@1.60.1.70009"}
+{"id": 12798, "field": "name", "en": "Annihilator", "hash": "e9a93c6eae2fe7fd", "src": "db2@1.60.1.70009"}
+{"id": 12798, "field": "description", "en": "Reduces an enemy's armor by $s1.  Stacks up to 3 times.", "hash": "81252116f49ab62c", "src": "db2@1.60.1.70009"}
+{"id": 12799, "field": "name", "en": "Large Opal", "hash": "137268aed5a1aff0", "src": "db2@1.60.1.70009"}
+{"id": 12800, "field": "name", "en": "Azerothian Diamond", "hash": "866fb9e4c247623c", "src": "db2@1.60.1.70009"}
+{"id": 12801, "field": "name", "en": "Monster - Item, Bucket - Wood", "hash": "e7459b0ec65db163", "src": "db2@1.60.1.70009"}
+{"id": 12802, "field": "name", "en": "Darkspear", "hash": "0d79281a25f763c5", "src": "db2@1.60.1.70009"}
+{"id": 12802, "field": "description", "en": "$@spelldesc16939", "hash": "d6c07a6874219b86", "src": "db2@1.60.1.70009"}
+{"id": 12803, "field": "name", "en": "Living Essence", "hash": "e8cdac25d575b25b", "src": "db2@1.60.1.70009"}
+{"id": 12804, "field": "name", "en": "Powerful Mojo", "hash": "25162a94e835d1e8", "src": "db2@1.60.1.70009"}
+{"id": 12805, "field": "name", "en": "Orb of Fire", "hash": "5f028d00859d57fa", "src": "db2@1.60.1.70009"}
+{"id": 12805, "field": "description", "en": "Grants a chance on striking the enemy for $13441s1 Fire damage.", "hash": "44bb768a56ad8ba6", "src": "db2@1.60.1.70009"}
+{"id": 12806, "field": "name", "en": "Unforged Rune Covered Breastplate", "hash": "520e2597f4a4fa0d", "src": "db2@1.60.1.70009"}
+{"id": 12806, "field": "description", "en": "Covered in demonic runes.", "hash": "fc3b494d3a6918d7", "src": "db2@1.60.1.70009"}
+{"id": 12807, "field": "name", "en": "Scourge Banner", "hash": "78e2f258ec7e6706", "src": "db2@1.60.1.70009"}
+{"id": 12807, "field": "description", "en": "Plant the Scourge banner at the Scarlet Crusade's forward base camp in the Western Plaguelands.", "hash": "8b1486e89dd7481a", "src": "db2@1.60.1.70009"}
+{"id": 12808, "field": "name", "en": "Essence of Undeath", "hash": "06d99d3c3b9e4e8c", "src": "db2@1.60.1.70009"}
+{"id": 12809, "field": "name", "en": "Guardian Stone", "hash": "ea917569c2808dba", "src": "db2@1.60.1.70009"}
+{"id": 12810, "field": "name", "en": "Enchanted Leather", "hash": "68e0cfa1677c4014", "src": "db2@1.60.1.70009"}
+{"id": 12811, "field": "name", "en": "Righteous Orb", "hash": "b3833654f4645f39", "src": "db2@1.60.1.70009"}
+{"id": 12812, "field": "name", "en": "Unfired Plate Gauntlets", "hash": "5563736364fe004b", "src": "db2@1.60.1.70009"}
+{"id": 12813, "field": "name", "en": "Flask of Mystery Goo", "hash": "2eb3752ceae34f3d", "src": "db2@1.60.1.70009"}
+{"id": 12814, "field": "name", "en": "Flame in a Bottle", "hash": "937416b7c521dc0b", "src": "db2@1.60.1.70009"}
+{"id": 12814, "field": "description", "en": "It's got enough juice to set a large tent on fire!", "hash": "0d2452a830e8f057", "src": "db2@1.60.1.70009"}
+{"id": 12815, "field": "name", "en": "Beacon Torch", "hash": "2f363d8af93b87f5", "src": "db2@1.60.1.70009"}
+{"id": 12815, "field": "description", "en": "Place in the doorway at one of Andorhal's ruined towers as a magical marker for future troop movement.", "hash": "374c884c261aee77", "src": "db2@1.60.1.70009"}
+{"id": 12819, "field": "name", "en": "Plans: Ornate Thorium Handaxe", "hash": "ce14135696b511e9", "src": "db2@1.60.1.70009"}
+{"id": 12819, "field": "description", "en": "Teaches you how to make an Ornate Thorium Handaxe.", "hash": "9baff129e714d4a9", "src": "db2@1.60.1.70009"}
+{"id": 12820, "field": "name", "en": "Winterfall Firewater", "hash": "15a9986bd634d661", "src": "db2@1.60.1.70009"}
+{"id": 12820, "field": "description", "en": "Increases your melee attack power by $s1 and size for $d.", "hash": "1f3c4cc7717a4e8e", "src": "db2@1.60.1.70009"}
+{"id": 12821, "field": "name", "en": "Plans: Dawn's Edge", "hash": "3f019c6f4960ec7f", "src": "db2@1.60.1.70009"}
+{"id": 12821, "field": "description", "en": "Teaches you how to make Dawn's Edge.", "hash": "898d82c70e01be23", "src": "db2@1.60.1.70009"}
+{"id": 12822, "field": "name", "en": "Toxic Horror Droplet", "hash": "64309f8f8f357890", "src": "db2@1.60.1.70009"}
+{"id": 12823, "field": "name", "en": "Plans: Huge Thorium Battleaxe", "hash": "7d90800b364c1b52", "src": "db2@1.60.1.70009"}
+{"id": 12823, "field": "description", "en": "Teaches you how to make a Huge Thorium Battleaxe.", "hash": "2fe66ecbec977e89", "src": "db2@1.60.1.70009"}
+{"id": 12824, "field": "name", "en": "Plans: Enchanted Battlehammer", "hash": "d940f7f93775421b", "src": "db2@1.60.1.70009"}
+{"id": 12824, "field": "description", "en": "Teaches you how to make an Enchanted Battlehammer.", "hash": "53a8f0b075d474ff", "src": "db2@1.60.1.70009"}
+{"id": 12825, "field": "name", "en": "Plans: Blazing Rapier", "hash": "59a8d27072c4ebac", "src": "db2@1.60.1.70009"}
+{"id": 12825, "field": "description", "en": "Teaches you how to make a Blazing Rapier.", "hash": "662f1835beb446c9", "src": "db2@1.60.1.70009"}
+{"id": 12827, "field": "name", "en": "Plans: Serenity", "hash": "8496f771bd0583d6", "src": "db2@1.60.1.70009"}
+{"id": 12827, "field": "description", "en": "Teaches you how to make Serenity.", "hash": "ff3d6d8b5dba3e9d", "src": "db2@1.60.1.70009"}
+{"id": 12828, "field": "name", "en": "Plans: Volcanic Hammer", "hash": "b707fe92e1a8620d", "src": "db2@1.60.1.70009"}
+{"id": 12828, "field": "description", "en": "Teaches you how to make a Volcanic Hammer.", "hash": "9d2d67fca8dafa2b", "src": "db2@1.60.1.70009"}
+{"id": 12829, "field": "name", "en": "Winterfall Crate", "hash": "3bc933a42980dfe1", "src": "db2@1.60.1.70009"}
+{"id": 12830, "field": "name", "en": "Plans: Corruption", "hash": "681716581f138924", "src": "db2@1.60.1.70009"}
+{"id": 12830, "field": "description", "en": "Teaches you how to make Corruption.", "hash": "c36a4a0c9a12a927", "src": "db2@1.60.1.70009"}
+{"id": 12833, "field": "name", "en": "Plans: Hammer of the Titans", "hash": "eed8b6f277d3e855", "src": "db2@1.60.1.70009"}
+{"id": 12833, "field": "description", "en": "Teaches you how to make a Hammer of the Titans.", "hash": "092147fc1415ca97", "src": "db2@1.60.1.70009"}
+{"id": 12834, "field": "name", "en": "Plans: Arcanite Champion", "hash": "452c12b0a34521ad", "src": "db2@1.60.1.70009"}
+{"id": 12834, "field": "description", "en": "Teaches you how to make an Arcanite Champion.", "hash": "eb8010d40be4be94", "src": "db2@1.60.1.70009"}
+{"id": 12835, "field": "name", "en": "Plans: Annihilator", "hash": "699dc5e3e3ecd7bf", "src": "db2@1.60.1.70009"}
+{"id": 12835, "field": "description", "en": "Teaches you how to make an Annihilator.", "hash": "ec86cdcf9aee29ce", "src": "db2@1.60.1.70009"}
+{"id": 12836, "field": "name", "en": "Plans: Frostguard", "hash": "32fa1458ea61a79d", "src": "db2@1.60.1.70009"}
+{"id": 12836, "field": "description", "en": "Teaches you how to make a Frostguard.", "hash": "7e28f40e3f85f44f", "src": "db2@1.60.1.70009"}
+{"id": 12837, "field": "name", "en": "Plans: Masterwork Stormhammer", "hash": "4376a553aa775dc9", "src": "db2@1.60.1.70009"}
+{"id": 12837, "field": "description", "en": "Teaches you how to make a Masterwork Stormhammer.", "hash": "74ab820d43aa4818", "src": "db2@1.60.1.70009"}
+{"id": 12838, "field": "name", "en": "Plans: Arcanite Reaper", "hash": "49904bd8fbd26790", "src": "db2@1.60.1.70009"}
+{"id": 12838, "field": "description", "en": "Teaches you how to make an Arcanite Reaper.", "hash": "c91114d230b63dc8", "src": "db2@1.60.1.70009"}
+{"id": 12839, "field": "name", "en": "Plans: Heartseeker", "hash": "79ea6d1c333bff7f", "src": "db2@1.60.1.70009"}
+{"id": 12839, "field": "description", "en": "Teaches you how to make Heartseeker.", "hash": "aeb04be41eda4241", "src": "db2@1.60.1.70009"}
+{"id": 12840, "field": "name", "en": "Minion's Scourgestone", "hash": "9ab343cc317e713d", "src": "db2@1.60.1.70009"}
+{"id": 12841, "field": "name", "en": "Invader's Scourgestone", "hash": "d75e2b3f059b0405", "src": "db2@1.60.1.70009"}
+{"id": 12842, "field": "name", "en": "Crudely-written Log", "hash": "cecf1263ec4afacc", "src": "db2@1.60.1.70009"}
+{"id": 12843, "field": "name", "en": "Corruptor's Scourgestone", "hash": "5339194e99432ad2", "src": "db2@1.60.1.70009"}
+{"id": 12844, "field": "name", "en": "Argent Dawn Valor Token", "hash": "47b2b6a2415ab70b", "src": "db2@1.60.1.70009"}
+{"id": 12844, "field": "description", "en": "Increase your reputation permanently with the Argent Dawn.", "hash": "713bd3d420178c79", "src": "db2@1.60.1.70009"}
+{"id": 12845, "field": "name", "en": "Medallion of Faith", "hash": "c14268ed755a00c2", "src": "db2@1.60.1.70009"}
+{"id": 12846, "field": "name", "en": "Argent Dawn Commission", "hash": "1122fda41c270cc4", "src": "db2@1.60.1.70009"}
+{"id": 12846, "field": "description", "en": "Equipping this badge is an indication of service to the Argent Dawn.", "hash": "c4af1a06624f258c", "src": "db2@1.60.1.70009"}
+{"id": 12847, "field": "name", "en": "Soul Stained Pike", "hash": "b98b5c1af308e587", "src": "db2@1.60.1.70009"}
+{"id": 12848, "field": "name", "en": "Blood Stained Pike", "hash": "85f8c6a3a55086ec", "src": "db2@1.60.1.70009"}
+{"id": 12848, "field": "description", "en": "Claim the promised soul.\nFel energies pulse across the pike.", "hash": "2e99e658928bf49d", "src": "db2@1.60.1.70009"}
+{"id": 12849, "field": "name", "en": "Demon Kissed Sack", "hash": "2eb5ac50f2e88411", "src": "db2@1.60.1.70009"}
+{"id": 12850, "field": "name", "en": "Monster - Item, Bag - Black", "hash": "fb02ef9909e405c5", "src": "db2@1.60.1.70009"}
+{"id": 12851, "field": "name", "en": "Monster - Item, Bag - Black Offhand", "hash": "c15c0d67218c6688", "src": "db2@1.60.1.70009"}
+{"id": 12852, "field": "name", "en": "Monster - Item, Bag - Gray", "hash": "54ab27c7b9512df0", "src": "db2@1.60.1.70009"}
+{"id": 12853, "field": "name", "en": "Monster - Item, Bag - Gray Offhand", "hash": "5771a36ba14507ad", "src": "db2@1.60.1.70009"}
+{"id": 12854, "field": "name", "en": "Monster - Item, Bag - Green", "hash": "53965e02c4c98a11", "src": "db2@1.60.1.70009"}
+{"id": 12855, "field": "name", "en": "Monster - Item, Bag - Green Offhand", "hash": "167279aa9db55bfa", "src": "db2@1.60.1.70009"}
+{"id": 12856, "field": "name", "en": "Monster - Item, Bag - Red", "hash": "8b67d3380d61c01e", "src": "db2@1.60.1.70009"}
+{"id": 12857, "field": "name", "en": "Monster - Item, Bag - Red Offhand", "hash": "16b816b0e845ce58", "src": "db2@1.60.1.70009"}
+{"id": 12858, "field": "name", "en": "Monster - Item, Bag - White", "hash": "6b1bced13d44e67e", "src": "db2@1.60.1.70009"}
+{"id": 12859, "field": "name", "en": "Monster - Item, Bag - White Offhand", "hash": "42ffce269dab394b", "src": "db2@1.60.1.70009"}
+{"id": 12860, "field": "name", "en": "Monster - Item, Book - Blue Offhand", "hash": "29380bdb87e9d435", "src": "db2@1.60.1.70009"}
+{"id": 12861, "field": "name", "en": "Monster - Item, Book - Black Skull Glowing Offhand", "hash": "f89c870127096e13", "src": "db2@1.60.1.70009"}
+{"id": 12862, "field": "name", "en": "Monster - Item, Book - Black Simple", "hash": "22c9c03dbc684132", "src": "db2@1.60.1.70009"}
+{"id": 12863, "field": "name", "en": "Monster - Item, Book - Black Simple Offhand", "hash": "5f737f0df58e9c32", "src": "db2@1.60.1.70009"}
+{"id": 12864, "field": "name", "en": "Monster - Item, Book - B01 Black Glowing", "hash": "5be7e8143ea7a394", "src": "db2@1.60.1.70009"}
+{"id": 12865, "field": "name", "en": "Monster - Item, Book - B01 Black Glowing Offhand", "hash": "3de814484d0410ea", "src": "db2@1.60.1.70009"}
+{"id": 12866, "field": "name", "en": "Monster - Item, Book - B02 Black Glowing", "hash": "b3f214047afc7bef", "src": "db2@1.60.1.70009"}
+{"id": 12867, "field": "name", "en": "Monster - Item, Book - B02 Black Glowing Offhand", "hash": "2f5242b752ca3dec", "src": "db2@1.60.1.70009"}
+{"id": 12868, "field": "name", "en": "Monster - Item, Book - B02 Blue Glowing", "hash": "e428b865b0d501b1", "src": "db2@1.60.1.70009"}
+{"id": 12869, "field": "name", "en": "Monster - Item, Book - B02 Blue Glowing Offhand", "hash": "df51b42a594cd5a1", "src": "db2@1.60.1.70009"}
+{"id": 12870, "field": "name", "en": "Monster - Item, Potion Red Offhand", "hash": "f28aea694dfd5a79", "src": "db2@1.60.1.70009"}
+{"id": 12882, "field": "name", "en": "Monster - Sword2H, Horde Curved Silver", "hash": "78c5df1105117455", "src": "db2@1.60.1.70009"}
+{"id": 12883, "field": "name", "en": "Monster - Mace, Thaurissan Silver", "hash": "7529377dd371801f", "src": "db2@1.60.1.70009"}
+{"id": 12884, "field": "name", "en": "Arnak's Hoof", "hash": "1dd90fd94cedcfd2", "src": "db2@1.60.1.70009"}
+{"id": 12885, "field": "name", "en": "Pamela's Doll", "hash": "c2bf6af3d8c6c0c9", "src": "db2@1.60.1.70009"}
+{"id": 12886, "field": "name", "en": "Pamela's Doll's Head", "hash": "30d4523d4823752f", "src": "db2@1.60.1.70009"}
+{"id": 12886, "field": "description", "en": "Attach the pieces into a whole.", "hash": "29321cf81e2193df", "src": "db2@1.60.1.70009"}
+{"id": 12887, "field": "name", "en": "Pamela's Doll's Left Side", "hash": "e4043625c8c64265", "src": "db2@1.60.1.70009"}
+{"id": 12887, "field": "description", "en": "Attach the pieces into a whole.", "hash": "29321cf81e2193df", "src": "db2@1.60.1.70009"}
+{"id": 12888, "field": "name", "en": "Pamela's Doll's Right Side", "hash": "a011ca537e20bdb5", "src": "db2@1.60.1.70009"}
+{"id": 12888, "field": "description", "en": "Attach the pieces into a whole.", "hash": "29321cf81e2193df", "src": "db2@1.60.1.70009"}
+{"id": 12889, "field": "name", "en": "Monster - Sword2H, Horde Curved Black", "hash": "f62b4b951b00ef2d", "src": "db2@1.60.1.70009"}
+{"id": 12890, "field": "name", "en": "Monster - Sword, Militia Long Sword", "hash": "a0e05cac65430e20", "src": "db2@1.60.1.70009"}
+{"id": 12891, "field": "name", "en": "Jaron's Pick", "hash": "eafc1dd68e9622e7", "src": "db2@1.60.1.70009"}
+{"id": 12891, "field": "description", "en": "Recover Highborne Relic Fragments.", "hash": "f3bc8d9be328a43a", "src": "db2@1.60.1.70009"}
+{"id": 12892, "field": "name", "en": "Monster - Sword1H, Dark Short Sword", "hash": "defa3ef6d60c058c", "src": "db2@1.60.1.70009"}
+{"id": 12893, "field": "name", "en": "Monster - Shield, Black Skull", "hash": "9fa78bd1787595a1", "src": "db2@1.60.1.70009"}
+{"id": 12894, "field": "name", "en": "Joseph's Wedding Ring", "hash": "3b0187e20e4ab64a", "src": "db2@1.60.1.70009"}
+{"id": 12896, "field": "name", "en": "First Relic Fragment", "hash": "5d499437d48f2f4e", "src": "db2@1.60.1.70009"}
+{"id": 12897, "field": "name", "en": "Second Relic Fragment", "hash": "b598176d94027d4f", "src": "db2@1.60.1.70009"}
+{"id": 12898, "field": "name", "en": "Third Relic Fragment", "hash": "d2cb226191eb7c00", "src": "db2@1.60.1.70009"}
+{"id": 12899, "field": "name", "en": "Fourth Relic Fragment", "hash": "a5cf2cd960bee418", "src": "db2@1.60.1.70009"}
+{"id": 12900, "field": "name", "en": "Annals of Darrowshire", "hash": "14f8e6aca50d22ae", "src": "db2@1.60.1.70009"}
+{"id": 12901, "field": "name", "en": "Monster - Mace2H, Golden Stone Hammer", "hash": "8ac54d77dec0afb3", "src": "db2@1.60.1.70009"}
+{"id": 12902, "field": "name", "en": "Monster - Sword2H, Luminous Evil Blade", "hash": "a19a6da31bdef3db", "src": "db2@1.60.1.70009"}
+{"id": 12904, "field": "name", "en": "Shawn's Super Special Swami Hat", "hash": "c92ca9a20952c21b", "src": "db2@1.60.1.70009"}
+{"id": 12906, "field": "name", "en": "Purified Moonwell Water", "hash": "f45801359c23e26a", "src": "db2@1.60.1.70009"}
+{"id": 12906, "field": "description", "en": "Douses the flames off the braziers found within Jaedenar and dispels their protective magic.", "hash": "f62f0b95154957cf", "src": "db2@1.60.1.70009"}
+{"id": 12907, "field": "name", "en": "Corrupt Moonwell Water", "hash": "c76f638a346ef2a4", "src": "db2@1.60.1.70009"}
+{"id": 12922, "field": "name", "en": "Empty Canteen", "hash": "a7728b66e896ca5b", "src": "db2@1.60.1.70009"}
+{"id": 12922, "field": "description", "en": "This container should be filled with water from the corrupt moon well in Jaedenar.", "hash": "0d070f9ea433d04d", "src": "db2@1.60.1.70009"}
+{"id": 12923, "field": "name", "en": "Awbee's Scale", "hash": "bc2a8e607dbf846e", "src": "db2@1.60.1.70009"}
+{"id": 12924, "field": "name", "en": "Ritual Candle", "hash": "1fcbae74201b6529", "src": "db2@1.60.1.70009"}
+{"id": 12924, "field": "description", "en": "A ritual candle from the depths of Jaedenar, new home of the Shadow Council.", "hash": "5bfe76147953092b", "src": "db2@1.60.1.70009"}
+{"id": 12925, "field": "name", "en": "Arikara Serpent Skin", "hash": "263f0d150fd0b7c2", "src": "db2@1.60.1.70009"}
+{"id": 12928, "field": "name", "en": "Umi's Mechanical Yeti", "hash": "42b439f191aa0164", "src": "db2@1.60.1.70009"}
+{"id": 12928, "field": "description", "en": "Select Umi's friend and click to release the Mechanical Yeti.", "hash": "d542b508259e298c", "src": "db2@1.60.1.70009"}
+{"id": 12931, "field": "name", "en": "Monster - Shield, Scarlet Crusade A01/A02 Model", "hash": "1437c630996454eb", "src": "db2@1.60.1.70009"}
+{"id": 12932, "field": "name", "en": "Monster - Shield, Scarlet Crusade A02", "hash": "63777fe557c68373", "src": "db2@1.60.1.70009"}
+{"id": 12933, "field": "name", "en": "Monster - Shield, Scarlet Crusade B03", "hash": "6377c2ef5bbec735", "src": "db2@1.60.1.70009"}
+{"id": 12934, "field": "name", "en": "Monster - Mace, Maul B03 Red", "hash": "116cd79962f6817a", "src": "db2@1.60.1.70009"}
+{"id": 12937, "field": "name", "en": "Monster - Staff, Basic Red", "hash": "9c2343d1437d8651", "src": "db2@1.60.1.70009"}
+{"id": 12938, "field": "name", "en": "Blood of Heroes", "hash": "4740243ed2825427", "src": "db2@1.60.1.70009"}
+{"id": 12941, "field": "name", "en": "Monster - Wand, Jeweled - B02 Red", "hash": "e35b83c07156257e", "src": "db2@1.60.1.70009"}
+{"id": 12942, "field": "name", "en": "Panther Cage Key", "hash": "8e2d9752a3202fca", "src": "db2@1.60.1.70009"}
+{"id": 12942, "field": "description", "en": "Opens Panther Cage", "hash": "0410894e38a8ac17", "src": "db2@1.60.1.70009"}
+{"id": 12943, "field": "name", "en": "Monster - Staff, 3 Piece Taped Staff Red", "hash": "45bf5e1572bcd6ac", "src": "db2@1.60.1.70009"}
+{"id": 12944, "field": "name", "en": "Monster - Sword, Golden Long", "hash": "828d8ef89bf66bc8", "src": "db2@1.60.1.70009"}
+{"id": 12946, "field": "name", "en": "Hypercapacitor Gizmo", "hash": "0f8bf73d2eb56f86", "src": "db2@1.60.1.70009"}
+{"id": 12947, "field": "name", "en": "Alex's Ring of Audacity", "hash": "59a1047ea9bec30a", "src": "db2@1.60.1.70009"}
+{"id": 12947, "field": "description", "en": "Defense +1000. Consider yourself born again hardcore!", "hash": "25c4a426f65843ea", "src": "wago@1.15.9.69722"}
+{"id": 12949, "field": "name", "en": "Monster - Sword2H, Red White Broad", "hash": "6ca7db0c00224d3a", "src": "db2@1.60.1.70009"}
+{"id": 12950, "field": "name", "en": "Monster - Mace2H, Warhammer Ebony", "hash": "2454d07eb2b0b0b1", "src": "db2@1.60.1.70009"}
+{"id": 12951, "field": "name", "en": "Monster - Axe, 2H War - Red", "hash": "59dbff5a0fb90ff8", "src": "db2@1.60.1.70009"}
+{"id": 12954, "field": "name", "en": "Davil's Libram", "hash": "2c246d6f12b28134", "src": "db2@1.60.1.70009"}
+{"id": 12955, "field": "name", "en": "Redpath's Shield", "hash": "c2bba1406646af10", "src": "db2@1.60.1.70009"}
+{"id": 12956, "field": "name", "en": "Skull of Horgus", "hash": "66fab240a1664341", "src": "db2@1.60.1.70009"}
+{"id": 12957, "field": "name", "en": "Shattered Sword of Marduk", "hash": "b824475dfed32bdb", "src": "db2@1.60.1.70009"}
+{"id": 12958, "field": "name", "en": "Recipe: Transmute Arcanite", "hash": "fbbefbc285e35fe9", "src": "db2@1.60.1.70009"}
+{"id": 12958, "field": "description", "en": "Teaches you how to transmute Thorium and Arcane Crystals into Arcanite.", "hash": "9ea96f635b7b6bd2", "src": "db2@1.60.1.70009"}
+{"id": 12959, "field": "name", "en": "Monster - Staff, Demon Skull Staff", "hash": "fdf3b4dae94109e7", "src": "db2@1.60.1.70009"}
+{"id": 12961, "field": "name", "en": "JEFF TEST SHIELD", "hash": "3c588ee2bb41d78c", "src": "db2@1.60.1.70009"}
+{"id": 12962, "field": "name", "en": "JEFF TEST GLOVES", "hash": "b92e1e5bf863358a", "src": "db2@1.60.1.70009"}
+{"id": 12970, "field": "name", "en": "General's Ceremonial Plate", "hash": "9a1039ff8c69e991", "src": "db2@1.60.1.70009"}
+{"id": 12971, "field": "name", "en": "JEFF TEST SWORD", "hash": "d9704d121738f77a", "src": "db2@1.60.1.70009"}
+{"id": 12972, "field": "name", "en": "JEFF TEST SWORD II", "hash": "ab2b48ce51df9445", "src": "db2@1.60.1.70009"}
+{"id": 12973, "field": "name", "en": "Scarlet Cannonball", "hash": "308ac57f1925259b", "src": "db2@1.60.1.70009"}
+{"id": 12974, "field": "name", "en": "The Black Knight", "hash": "6624e6b653d7f8e2", "src": "db2@1.60.1.70009"}
+{"id": 12974, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70009"}
+{"id": 12975, "field": "name", "en": "Prospector Axe", "hash": "db0feba6ce01169b", "src": "db2@1.60.1.70009"}
+{"id": 12976, "field": "name", "en": "Ironpatch Blade", "hash": "4e26492acc558657", "src": "db2@1.60.1.70009"}
+{"id": 12977, "field": "name", "en": "Magefist Gloves", "hash": "55816bd8ac384a2a", "src": "db2@1.60.1.70009"}
+{"id": 12978, "field": "name", "en": "Stormbringer Belt", "hash": "13353a90ff82bdd0", "src": "db2@1.60.1.70009"}
+{"id": 12979, "field": "name", "en": "Firebane Cloak", "hash": "fc8e783c9d48e2f7", "src": "db2@1.60.1.70009"}
+{"id": 12980, "field": "name", "en": "Monster - Shield, Wall Metal Silver", "hash": "008962bffeda547a", "src": "db2@1.60.1.70009"}
+{"id": 12981, "field": "name", "en": "Monster - Shield, Wall Metal Gold", "hash": "d0b4ad0461ca9d8c", "src": "db2@1.60.1.70009"}
+{"id": 12982, "field": "name", "en": "Silver-linked Footguards", "hash": "a201b4855998cfb2", "src": "db2@1.60.1.70009"}
+{"id": 12983, "field": "name", "en": "Rakzur Club", "hash": "8a46e9261da3f69e", "src": "db2@1.60.1.70009"}
+{"id": 12984, "field": "name", "en": "Skycaller", "hash": "62733f9867f3666a", "src": "db2@1.60.1.70009"}
+{"id": 12985, "field": "name", "en": "Ring of Defense", "hash": "32ae19eae30912b8", "src": "db2@1.60.1.70009"}
+{"id": 12985, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
+{"id": 12986, "field": "name", "en": "Monster - Spear, Broad Notched", "hash": "cc27d906ce277e50", "src": "db2@1.60.1.70009"}
+{"id": 12987, "field": "name", "en": "Darkweave Breeches", "hash": "abb2eb40311d8161", "src": "db2@1.60.1.70009"}
+{"id": 12988, "field": "name", "en": "Starsight Tunic", "hash": "323242d78182b459", "src": "db2@1.60.1.70009"}
+{"id": 12989, "field": "name", "en": "Gargoyle's Bite", "hash": "1490408eef795218", "src": "db2@1.60.1.70009"}
+{"id": 12990, "field": "name", "en": "Razor's Edge", "hash": "d11ca4fec19b5fcd", "src": "db2@1.60.1.70009"}
+{"id": 12991, "field": "name", "en": "Monster - Dagger, Curvey Green Blade", "hash": "9c048dcde7672dc6", "src": "db2@1.60.1.70009"}
+{"id": 12992, "field": "name", "en": "Searing Blade", "hash": "5b0d8144e0bc3d3e", "src": "db2@1.60.1.70009"}
+{"id": 12992, "field": "description", "en": "Hurls a fiery ball that causes $s1 Fire damage and an additional $o2 damage over $d.", "hash": "a6bc16f5251f44d2", "src": "db2@1.60.1.70009"}
+{"id": 12993, "field": "name", "en": "Monster - Sword, Green Gold Scimitar", "hash": "29b6e70fe2aaa424", "src": "db2@1.60.1.70009"}
+{"id": 12994, "field": "name", "en": "Thorbia's Gauntlets", "hash": "e26f4ee4b7ef494c", "src": "db2@1.60.1.70009"}
+{"id": 12995, "field": "name", "en": "Monster - Shield, Wall Metal Red", "hash": "78cf79e2fb6dfef2", "src": "db2@1.60.1.70009"}
+{"id": 12996, "field": "name", "en": "Band of Purification", "hash": "17b6301155ea1680", "src": "db2@1.60.1.70009"}
+{"id": 12997, "field": "name", "en": "Redbeard Crest", "hash": "d3b3837252042d39", "src": "db2@1.60.1.70009"}
+{"id": 12998, "field": "name", "en": "Magician's Mantle", "hash": "f5496335128ebf08", "src": "db2@1.60.1.70009"}
+{"id": 12998, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 12999, "field": "name", "en": "Drakewing Bands", "hash": "c26e5437dafe182d", "src": "db2@1.60.1.70009"}

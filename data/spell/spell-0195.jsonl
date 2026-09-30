@@ -1,0 +1,1 @@
+{"id": 195072, "field": "description", "ja": "前方に突進し、通り道の敵すべてを焼き尽くし $N1 Chaosダメージを与える", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3268"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

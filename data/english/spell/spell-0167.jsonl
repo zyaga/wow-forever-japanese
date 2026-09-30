@@ -1,0 +1,3 @@
+{"id": 167152, "field": "name", "en": "Refreshment", "hash": "79f956bd17e857ee", "src": "db2@1.60.1.70009"}
+{"id": 167152, "field": "description", "en": "Restores $o3% health and $o1% Mana over $d. Must remain seated while drinking.", "hash": "c98bf5195be81742", "src": "db2@1.60.1.70009"}
+{"id": 167152, "field": "aura", "en": "Restores $w3% health and $w1% Mana per second.", "hash": "6e474eda19c2ca84", "src": "db2@1.60.1.70009"}

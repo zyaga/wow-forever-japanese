@@ -1,0 +1,28 @@
+{"id": 369077, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70009"}
+{"id": 369079, "field": "name", "en": "Thrash", "hash": "b85b1231c9da412f", "src": "db2@1.60.1.70009"}
+{"id": 369079, "field": "description", "en": "Gives the caster $s1 extra attacks.", "hash": "0f6e178acdb48dd2", "src": "db2@1.60.1.70009"}
+{"id": 369080, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70009"}
+{"id": 369080, "field": "description", "en": "Inflicts $s2 damage to enemies in a cone in front of the caster, knocking them back.", "hash": "fed85586daab0da2", "src": "db2@1.60.1.70009"}
+{"id": 369103, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70009"}
+{"id": 369105, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70009"}
+{"id": 369292, "field": "name", "en": "Static Electricity", "hash": "8bcb268d3d5ece30", "src": "db2@1.60.1.70009"}
+{"id": 369298, "field": "name", "en": "BWL - Double Dragons - Force Player to Kill Dragons", "hash": "7897d0b357ad76af", "src": "db2@1.60.1.70009"}
+{"id": 369303, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70009"}
+{"id": 369330, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70009"}
+{"id": 369330, "field": "description", "en": "Calls down a molten rain, burning all enemies in a selected area for $s1 Fire damage every $t1 sec. for $d.", "hash": "ee6af47d1336b3b2", "src": "db2@1.60.1.70009"}
+{"id": 369330, "field": "aura", "en": "$s1 Fire damage inflicted every $t1 sec.", "hash": "5a5656deae0c1567", "src": "db2@1.60.1.70009"}
+{"id": 369371, "field": "name", "en": "Transparent", "hash": "e801fd08904e5d54", "src": "db2@1.60.1.70009"}
+{"id": 369378, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70009"}
+{"id": 369463, "field": "name", "en": "Light Torch", "hash": "44dcce5dc0b2a1ce", "src": "db2@1.60.1.70009"}
+{"id": 369481, "field": "name", "en": "Favor of Nozdormu", "hash": "db108d4e1a8a48f6", "src": "db2@1.60.1.70009"}
+{"id": 369484, "field": "name", "en": "Favor of Nozdormu", "hash": "db108d4e1a8a48f6", "src": "db2@1.60.1.70009"}
+{"id": 369525, "field": "name", "en": "[DNT] Adventure Awaits", "hash": "3958ac3b7adde0fe", "src": "db2@1.60.1.70009"}
+{"id": 369530, "field": "name", "en": "Frost Tomb", "hash": "82194314ce06f544", "src": "db2@1.60.1.70009"}
+{"id": 369531, "field": "name", "en": "Frost Tomb", "hash": "82194314ce06f544", "src": "db2@1.60.1.70009"}
+{"id": 369532, "field": "name", "en": "Hiding Behind Ice", "hash": "c424f8d7c53c7b3e", "src": "db2@1.60.1.70009"}
+{"id": 369532, "field": "aura", "en": "Hiding behind an Ice Block from Chromaggus.", "hash": "baf588accc611160", "src": "db2@1.60.1.70009"}
+{"id": 369533, "field": "name", "en": "Hiding Behind Ice", "hash": "c424f8d7c53c7b3e", "src": "db2@1.60.1.70009"}
+{"id": 369533, "field": "aura", "en": "Hiding behind an Ice Block from Chromaggus.", "hash": "baf588accc611160", "src": "db2@1.60.1.70009"}
+{"id": 369534, "field": "name", "en": "Frost Tomb", "hash": "82194314ce06f544", "src": "db2@1.60.1.70009"}
+{"id": 369982, "field": "name", "en": "Touch of Madness", "hash": "9589fa2c0aeab7a9", "src": "db2@1.60.1.70009"}
+{"id": 369982, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70009"}

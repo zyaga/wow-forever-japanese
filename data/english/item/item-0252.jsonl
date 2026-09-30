@@ -1,0 +1,540 @@
+{"id": 252022, "field": "name", "en": "Galestrider Jerky", "hash": "1aa55df87de40014", "src": "db2@1.60.1.70009"}
+{"id": 252022, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70009"}
+{"id": 252023, "field": "name", "en": "Zaalanarr Sharp", "hash": "0dc036c4204d4bc5", "src": "db2@1.60.1.70009"}
+{"id": 252023, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70009"}
+{"id": 252026, "field": "name", "en": "Gustberry Pie", "hash": "025d7e5406479c7a", "src": "db2@1.60.1.70009"}
+{"id": 252026, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70009"}
+{"id": 252027, "field": "name", "en": "Gustberry Juice", "hash": "25a40c9af71688ad", "src": "db2@1.60.1.70009"}
+{"id": 252027, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70009"}
+{"id": 252028, "field": "name", "en": "Fresh Gustberry Bread", "hash": "9b3ff50f2afd0bb7", "src": "db2@1.60.1.70009"}
+{"id": 252028, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70009"}
+{"id": 252029, "field": "name", "en": "Hippogryph Flank", "hash": "43052edad6b21cab", "src": "db2@1.60.1.70009"}
+{"id": 252029, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70009"}
+{"id": 252030, "field": "name", "en": "Pungent Skycheddar", "hash": "9fd9021868f8fdc0", "src": "db2@1.60.1.70009"}
+{"id": 252030, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70009"}
+{"id": 252031, "field": "name", "en": "Crisp Spring Water", "hash": "575e519c70b9c1ca", "src": "db2@1.60.1.70009"}
+{"id": 252031, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70009"}
+{"id": 252032, "field": "name", "en": "Red Delicious Stormapple", "hash": "31b9c57b8217cf30", "src": "db2@1.60.1.70009"}
+{"id": 252032, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70009"}
+{"id": 252264, "field": "name", "en": "\"Gold\"", "hash": "54dbbd1aa42dc9f8", "src": "db2@1.60.1.70009"}
+{"id": 252264, "field": "description", "en": "It's actual, genuine, completely worthless \"Gold\"!", "hash": "be8018c9eade15f6", "src": "db2@1.60.1.70009"}
+{"id": 252424, "field": "name", "en": "Black Whelp Slippers", "hash": "e45a5ceb550a5465", "src": "db2@1.60.1.70009"}
+{"id": 252425, "field": "name", "en": "Dark Leather Boots", "hash": "ece8c7e2559345f9", "src": "db2@1.60.1.70009"}
+{"id": 252426, "field": "name", "en": "Murloc Scale Shoes", "hash": "732ff3d0b0aa7be9", "src": "db2@1.60.1.70009"}
+{"id": 252427, "field": "name", "en": "Moonglow Boots", "hash": "b91fe91e2b2bf3cc", "src": "db2@1.60.1.70009"}
+{"id": 252428, "field": "name", "en": "Brawler's Leather Belt", "hash": "297050f53a6774da", "src": "db2@1.60.1.70009"}
+{"id": 252429, "field": "name", "en": "Trapper's Leather Belt", "hash": "8c9d062c583de239", "src": "db2@1.60.1.70009"}
+{"id": 252430, "field": "name", "en": "Defender's Leather Belt", "hash": "2af9c2fb58544116", "src": "db2@1.60.1.70009"}
+{"id": 252431, "field": "name", "en": "Totemic Leather Belt", "hash": "825973af1c13e562", "src": "db2@1.60.1.70009"}
+{"id": 252432, "field": "name", "en": "Stormrider's Leather Belt", "hash": "a38e90e5d09ce487", "src": "db2@1.60.1.70009"}
+{"id": 252433, "field": "name", "en": "Wisdom's Leather Belt", "hash": "443397d289819b24", "src": "db2@1.60.1.70009"}
+{"id": 252434, "field": "name", "en": "Defender's Leather Armor", "hash": "edff425429442313", "src": "db2@1.60.1.70009"}
+{"id": 252435, "field": "name", "en": "Totemic Leather Armor", "hash": "a3f6af5169983e4e", "src": "db2@1.60.1.70009"}
+{"id": 252436, "field": "name", "en": "Mystic Medium Armor Kit", "hash": "d7d53864d048be79", "src": "db2@1.60.1.70009"}
+{"id": 252436, "field": "description", "en": "Permanently increase the Spell Power value by 2 and the armor value by 16 of an item worn on the chest, legs, hands or feet.", "hash": "7ff8cde2ef6e168a", "src": "db2@1.60.1.70009"}
+{"id": 252437, "field": "name", "en": "Forceful Medium Armor Kit", "hash": "7e9c9ee4f8e5c757", "src": "db2@1.60.1.70009"}
+{"id": 252437, "field": "description", "en": "Permanently increase the Attack Power value by 4 and the armor value by 16 of an item worn on the chest, legs, hands or feet.", "hash": "cb33dec3dfd5324a", "src": "db2@1.60.1.70009"}
+{"id": 252439, "field": "name", "en": "Brawler's Leather Boots", "hash": "35d13f646e0ce941", "src": "db2@1.60.1.70009"}
+{"id": 252440, "field": "name", "en": "Trapper's Leather Boots", "hash": "f5b1fb839ec1c9e7", "src": "db2@1.60.1.70009"}
+{"id": 252441, "field": "name", "en": "Defender's Leather Boots", "hash": "ff26987667e7ed57", "src": "db2@1.60.1.70009"}
+{"id": 252442, "field": "name", "en": "Totemic Leather Boots", "hash": "b51e0573a83c0892", "src": "db2@1.60.1.70009"}
+{"id": 252443, "field": "name", "en": "Stormrider's Leather Boots", "hash": "b34bf86aeb8b4142", "src": "db2@1.60.1.70009"}
+{"id": 252444, "field": "name", "en": "Wisdom's Leather Boots", "hash": "e7be82bc1eac2dc5", "src": "db2@1.60.1.70009"}
+{"id": 252445, "field": "name", "en": "Defender's Leather Pants", "hash": "f3060f66d91349b4", "src": "db2@1.60.1.70009"}
+{"id": 252446, "field": "name", "en": "Totemic Leather Pants", "hash": "a8fd7c6319676500", "src": "db2@1.60.1.70009"}
+{"id": 252447, "field": "name", "en": "Defender's Leather Hood", "hash": "2bca3470d076fe60", "src": "db2@1.60.1.70009"}
+{"id": 252448, "field": "name", "en": "Totemic Leather Hood", "hash": "8329e5249436a2ac", "src": "db2@1.60.1.70009"}
+{"id": 252449, "field": "name", "en": "Hillman's Leather Boots", "hash": "9babee377d43a3d8", "src": "db2@1.60.1.70009"}
+{"id": 252450, "field": "name", "en": "Defender's Leather Tunic", "hash": "3beaf31a60daf98c", "src": "db2@1.60.1.70009"}
+{"id": 252451, "field": "name", "en": "Totemic Leather Tunic", "hash": "f1e26012a12f14c7", "src": "db2@1.60.1.70009"}
+{"id": 252452, "field": "name", "en": "Mystic Heavy Armor Kit", "hash": "c9148ef3dcfbcfb5", "src": "db2@1.60.1.70009"}
+{"id": 252452, "field": "description", "en": "Permanently increase the Spell Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands or feet. Only usable on items level $ecim and above.", "hash": "9f61083dd4d02697", "src": "db2@1.60.1.70009"}
+{"id": 252453, "field": "name", "en": "Forceful Heavy Armor Kit", "hash": "a539419150a520ad", "src": "db2@1.60.1.70009"}
+{"id": 252453, "field": "description", "en": "Permanently increase the Attack Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands or feet. Only usable on items level $ecim and above.", "hash": "c81e31978ba49b20", "src": "db2@1.60.1.70009"}
+{"id": 252455, "field": "name", "en": "Defender's Leather Helm", "hash": "2bc79496a8c3f93c", "src": "db2@1.60.1.70009"}
+{"id": 252456, "field": "name", "en": "Totemic Leather Helm", "hash": "8327454a6c839d88", "src": "db2@1.60.1.70009"}
+{"id": 252457, "field": "name", "en": "Defender's Leather Kilt", "hash": "2c2f899260dce466", "src": "db2@1.60.1.70009"}
+{"id": 252458, "field": "name", "en": "Totemic Leather Leggings", "hash": "4475b72d271d9b7c", "src": "db2@1.60.1.70009"}
+{"id": 252459, "field": "name", "en": "Prowler's Leather Belt", "hash": "e65ec91c72432bd7", "src": "db2@1.60.1.70009"}
+{"id": 252460, "field": "name", "en": "Warden's Leather Belt", "hash": "dcd44ca148dfa9cf", "src": "db2@1.60.1.70009"}
+{"id": 252461, "field": "name", "en": "Skirmisher's Leather Belt", "hash": "e7cd2b153f84438c", "src": "db2@1.60.1.70009"}
+{"id": 252462, "field": "name", "en": "Mystic Thick Armor Kit", "hash": "04f4775e7c457426", "src": "db2@1.60.1.70009"}
+{"id": 252462, "field": "description", "en": "Permanently increase the Spell Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands or feet. Only usable on items level $ecim and above.", "hash": "9f61083dd4d02697", "src": "db2@1.60.1.70009"}
+{"id": 252463, "field": "name", "en": "Forceful Thick Armor Kit", "hash": "e11929f7efeec50d", "src": "db2@1.60.1.70009"}
+{"id": 252463, "field": "description", "en": "Permanently increase the Attack Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands or feet. Only usable on items level $ecim and above.", "hash": "c81e31978ba49b20", "src": "db2@1.60.1.70009"}
+{"id": 252465, "field": "name", "en": "Prowler's Leather Shoes", "hash": "0d51b1ba110ac380", "src": "db2@1.60.1.70009"}
+{"id": 252466, "field": "name", "en": "Warden's Leather Shoes", "hash": "2b73feb0a3d62ad0", "src": "db2@1.60.1.70009"}
+{"id": 252467, "field": "name", "en": "Blue Suede Shoes", "hash": "d4b3d7ccf32a8704", "src": "db2@1.60.1.70009"}
+{"id": 252468, "field": "name", "en": "Prowler's Leather Boots", "hash": "e3d8bd392151d6e3", "src": "db2@1.60.1.70009"}
+{"id": 252469, "field": "name", "en": "Skulker's Leather Boots", "hash": "83621925fe5e0c46", "src": "db2@1.60.1.70009"}
+{"id": 252470, "field": "name", "en": "Warden's Leather Boots", "hash": "01fb0a34b41d3e33", "src": "db2@1.60.1.70009"}
+{"id": 252471, "field": "name", "en": "Skycaller's Leather Boots", "hash": "f099f171aac66611", "src": "db2@1.60.1.70009"}
+{"id": 252472, "field": "name", "en": "Mender's Leather Boots", "hash": "03dd8389055aa71b", "src": "db2@1.60.1.70009"}
+{"id": 252473, "field": "name", "en": "Prowler's Leather Waistguard", "hash": "3a89e27a918e06fb", "src": "db2@1.60.1.70009"}
+{"id": 252474, "field": "name", "en": "Skulker's Leather Waistguard", "hash": "0073cfa79b72b545", "src": "db2@1.60.1.70009"}
+{"id": 252475, "field": "name", "en": "Warden's Leather Waistguard", "hash": "faba91a33a580bcb", "src": "db2@1.60.1.70009"}
+{"id": 252476, "field": "name", "en": "Skycaller's Leather Waistguard", "hash": "a15904507ffbd512", "src": "db2@1.60.1.70009"}
+{"id": 252477, "field": "name", "en": "Mender's Leather Waistguard", "hash": "687c0e96aac8b9f0", "src": "db2@1.60.1.70009"}
+{"id": 252478, "field": "name", "en": "Blue Suede Pants", "hash": "9f1a5a40749cf6d5", "src": "db2@1.60.1.70009"}
+{"id": 252479, "field": "name", "en": "Wicked Leather Boots", "hash": "abbd96b65afe0e1d", "src": "db2@1.60.1.70009"}
+{"id": 252480, "field": "name", "en": "Blue Suede Armor", "hash": "9a138d2ec4cdd023", "src": "db2@1.60.1.70009"}
+{"id": 252481, "field": "name", "en": "Blue Suede Belt", "hash": "209063ccc82d77c9", "src": "db2@1.60.1.70009"}
+{"id": 252482, "field": "name", "en": "Blue Suede Hat", "hash": "5060778b3351fd53", "src": "db2@1.60.1.70009"}
+{"id": 252483, "field": "name", "en": "Dawn Armor", "hash": "9527421ea08f602a", "src": "db2@1.60.1.70009"}
+{"id": 252484, "field": "name", "en": "Timbermaw Tunic", "hash": "8b265de47a0142ac", "src": "db2@1.60.1.70009"}
+{"id": 252485, "field": "name", "en": "Warbear Helm", "hash": "9d003c13574b81d9", "src": "db2@1.60.1.70009"}
+{"id": 252486, "field": "name", "en": "Ironfeather Leggings", "hash": "fd1961fc81421c69", "src": "db2@1.60.1.70009"}
+{"id": 252487, "field": "name", "en": "Mystic Rugged Armor Kit", "hash": "5edd97ef4a84599f", "src": "db2@1.60.1.70009"}
+{"id": 252487, "field": "description", "en": "Permanently increase the Spell Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands or feet. Only usable on items level $ecim and above.", "hash": "9f61083dd4d02697", "src": "db2@1.60.1.70009"}
+{"id": 252488, "field": "name", "en": "Forceful Rugged Armor Kit", "hash": "05a4fe6f7321627d", "src": "db2@1.60.1.70009"}
+{"id": 252488, "field": "description", "en": "Permanently increase the Attack Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands or feet. Only usable on items level $ecim and above.", "hash": "c81e31978ba49b20", "src": "db2@1.60.1.70009"}
+{"id": 252490, "field": "name", "en": "Brawler's Leather Armor", "hash": "24a9e9422f691efd", "src": "db2@1.60.1.70009"}
+{"id": 252491, "field": "name", "en": "Trapper's Leather Armor", "hash": "e48aa561601dffa3", "src": "db2@1.60.1.70009"}
+{"id": 252492, "field": "name", "en": "Stormrider's Leather Armor", "hash": "a224a248ace776fe", "src": "db2@1.60.1.70009"}
+{"id": 252493, "field": "name", "en": "Wisdom's Leather Armor", "hash": "d6972c9ae0086370", "src": "db2@1.60.1.70009"}
+{"id": 252494, "field": "name", "en": "Brawler's Leather Gloves", "hash": "3f00473b4c7867a9", "src": "db2@1.60.1.70009"}
+{"id": 252495, "field": "name", "en": "Trapper's Leather Gloves", "hash": "6f008d0202a65ab0", "src": "db2@1.60.1.70009"}
+{"id": 252496, "field": "name", "en": "Defender's Leather Gloves", "hash": "45acdd746b759bfb", "src": "db2@1.60.1.70009"}
+{"id": 252497, "field": "name", "en": "Totemic Leather Gloves", "hash": "6349a22d24ae3809", "src": "db2@1.60.1.70009"}
+{"id": 252498, "field": "name", "en": "Stormrider's Leather Gloves", "hash": "74ccf68de52ce92a", "src": "db2@1.60.1.70009"}
+{"id": 252499, "field": "name", "en": "Wisdom's Leather Gloves", "hash": "4b69bf0ad1bef39a", "src": "db2@1.60.1.70009"}
+{"id": 252500, "field": "name", "en": "Brawler's Leather Pants", "hash": "29b0b654df38459e", "src": "db2@1.60.1.70009"}
+{"id": 252501, "field": "name", "en": "Trapper's Leather Pants", "hash": "e99172730fed2655", "src": "db2@1.60.1.70009"}
+{"id": 252502, "field": "name", "en": "Stormrider's Leather Pants", "hash": "a72b6f5a5cb69db0", "src": "db2@1.60.1.70009"}
+{"id": 252503, "field": "name", "en": "Wisdom's Leather Pants", "hash": "db9df9ac8fd78a22", "src": "db2@1.60.1.70009"}
+{"id": 252504, "field": "name", "en": "Brawler's Leather Hood", "hash": "2a40c26ab28a3224", "src": "db2@1.60.1.70009"}
+{"id": 252505, "field": "name", "en": "Trapper's Leather Hood", "hash": "8d6d77a1d0609f83", "src": "db2@1.60.1.70009"}
+{"id": 252506, "field": "name", "en": "Stormrider's Leather Hood", "hash": "a45f025a48bfa1e2", "src": "db2@1.60.1.70009"}
+{"id": 252507, "field": "name", "en": "Wisdom's Leather Hood", "hash": "4504094701a4587f", "src": "db2@1.60.1.70009"}
+{"id": 252508, "field": "name", "en": "Brawler's Leather Tunic", "hash": "72959a0366fff576", "src": "db2@1.60.1.70009"}
+{"id": 252509, "field": "name", "en": "Trapper's Leather Tunic", "hash": "3276562797b4d61c", "src": "db2@1.60.1.70009"}
+{"id": 252510, "field": "name", "en": "Stormrider's Leather Tunic", "hash": "f0105309e47e4d77", "src": "db2@1.60.1.70009"}
+{"id": 252511, "field": "name", "en": "Wisdom's Leather Tunic", "hash": "2482dd60179f39fa", "src": "db2@1.60.1.70009"}
+{"id": 252512, "field": "name", "en": "Brawler's Leather Helm", "hash": "2a3e22908ad72d00", "src": "db2@1.60.1.70009"}
+{"id": 252513, "field": "name", "en": "Trapper's Leather Helm", "hash": "8d6ad7c7a8ad9a5f", "src": "db2@1.60.1.70009"}
+{"id": 252514, "field": "name", "en": "Stormrider's Leather Helm", "hash": "a45c6280210c9cbe", "src": "db2@1.60.1.70009"}
+{"id": 252515, "field": "name", "en": "Wisdom's Leather Helm", "hash": "4501696dd9f1534a", "src": "db2@1.60.1.70009"}
+{"id": 252516, "field": "name", "en": "Brawler's Leather Legguards", "hash": "bc250790b3d6bc94", "src": "db2@1.60.1.70009"}
+{"id": 252517, "field": "name", "en": "Trapper's Leather Legguards", "hash": "25da4b00b6eb1a16", "src": "db2@1.60.1.70009"}
+{"id": 252518, "field": "name", "en": "Stormrider's Leather Kilt", "hash": "a4c4577cd92587d7", "src": "db2@1.60.1.70009"}
+{"id": 252519, "field": "name", "en": "Wisdom's Leather Leggings", "hash": "d52472ad96e98263", "src": "db2@1.60.1.70009"}
+{"id": 252520, "field": "name", "en": "Skulker's Leather Belt", "hash": "2bfc2b89e397de3e", "src": "db2@1.60.1.70009"}
+{"id": 252521, "field": "name", "en": "Stalker's Leather Belt", "hash": "7c92e68905def767", "src": "db2@1.60.1.70009"}
+{"id": 252522, "field": "name", "en": "Skycaller's Leather Belt", "hash": "713738e81494b680", "src": "db2@1.60.1.70009"}
+{"id": 252523, "field": "name", "en": "Mender's Leather Belt", "hash": "d6fb286d11acba66", "src": "db2@1.60.1.70009"}
+{"id": 252524, "field": "name", "en": "Prowler's Leather Gloves", "hash": "4cd5acf734d33e9d", "src": "db2@1.60.1.70009"}
+{"id": 252525, "field": "name", "en": "Skulker's Leather Gloves", "hash": "f01fb5c1f706fb86", "src": "db2@1.60.1.70009"}
+{"id": 252526, "field": "name", "en": "Stalker's Leather Gloves", "hash": "385db2480a7b75cd", "src": "db2@1.60.1.70009"}
+{"id": 252527, "field": "name", "en": "Warden's Leather Gloves", "hash": "b8630f24db1cf2a4", "src": "db2@1.60.1.70009"}
+{"id": 252528, "field": "name", "en": "Skirmisher's Leather Gloves", "hash": "3d5b4b980511d87a", "src": "db2@1.60.1.70009"}
+{"id": 252529, "field": "name", "en": "Skycaller's Leather Gloves", "hash": "d3b365bd219ccb09", "src": "db2@1.60.1.70009"}
+{"id": 252530, "field": "name", "en": "Mender's Leather Gloves", "hash": "af4725a8b1c8cc99", "src": "db2@1.60.1.70009"}
+{"id": 252531, "field": "name", "en": "Skulker's Leather Shoes", "hash": "acdb0da1ee16f8e3", "src": "db2@1.60.1.70009"}
+{"id": 252532, "field": "name", "en": "Skycaller's Leather Shoes", "hash": "1a12e5f29a7f52ae", "src": "db2@1.60.1.70009"}
+{"id": 252533, "field": "name", "en": "Mender's Leather Shoes", "hash": "2d567805f51393a7", "src": "db2@1.60.1.70009"}
+{"id": 252534, "field": "name", "en": "Prowler's Leather Shoulder", "hash": "55ae238a97aa00ce", "src": "db2@1.60.1.70009"}
+{"id": 252535, "field": "name", "en": "Skulker's Leather Shoulder", "hash": "7396266e7b0663f3", "src": "db2@1.60.1.70009"}
+{"id": 252536, "field": "name", "en": "Warden's Leather Shoulder", "hash": "1e58eaf1e6f6b7ea", "src": "db2@1.60.1.70009"}
+{"id": 252537, "field": "name", "en": "Skycaller's Leather Shoulder", "hash": "1ad6251522ec8a0a", "src": "db2@1.60.1.70009"}
+{"id": 252538, "field": "name", "en": "Mender's Leather Shoulder", "hash": "7e4235a6b2040948", "src": "db2@1.60.1.70009"}
+{"id": 252539, "field": "name", "en": "Prowler's Leather Bracers", "hash": "b6a80fbb8ffe58bc", "src": "db2@1.60.1.70009"}
+{"id": 252540, "field": "name", "en": "Skulker's Leather Bracers", "hash": "458a90bd835933a4", "src": "db2@1.60.1.70009"}
+{"id": 252541, "field": "name", "en": "Warden's Leather Bracers", "hash": "c0014dd5a393cbe8", "src": "db2@1.60.1.70009"}
+{"id": 252542, "field": "name", "en": "Skycaller's Leather Bracers", "hash": "ba1d9e661523af04", "src": "db2@1.60.1.70009"}
+{"id": 252543, "field": "name", "en": "Mender's Leather Bracers", "hash": "16b8d34d2002afc8", "src": "db2@1.60.1.70009"}
+{"id": 252544, "field": "name", "en": "Tooled Leather Belt", "hash": "830ff17dd0a80cda", "src": "db2@1.60.1.70009"}
+{"id": 252545, "field": "name", "en": "Tooled Leather Boots", "hash": "128065e24f3bbf57", "src": "db2@1.60.1.70009"}
+{"id": 252546, "field": "name", "en": "Blue Suede Gloves", "hash": "540f2a2bcb6cf049", "src": "db2@1.60.1.70009"}
+{"id": 252547, "field": "name", "en": "Prowler's Leather Gauntlets", "hash": "080cf278e9ade5ff", "src": "db2@1.60.1.70009"}
+{"id": 252548, "field": "name", "en": "Skulker's Leather Gauntlets", "hash": "55c66d6fede247e3", "src": "db2@1.60.1.70009"}
+{"id": 252549, "field": "name", "en": "Warden's Leather Gauntlets", "hash": "b770fb9ce647e17b", "src": "db2@1.60.1.70009"}
+{"id": 252550, "field": "name", "en": "Skycaller's Leather Gauntlets", "hash": "eb85bbfe5dc5d0a2", "src": "db2@1.60.1.70009"}
+{"id": 252551, "field": "name", "en": "Mender's Leather Gauntlets", "hash": "cbd23730f9d65701", "src": "db2@1.60.1.70009"}
+{"id": 252552, "field": "name", "en": "Tooled Leather Armor", "hash": "01590fc01097f513", "src": "db2@1.60.1.70009"}
+{"id": 252553, "field": "name", "en": "Tooled Leather Gauntlets", "hash": "d350b330b08afc47", "src": "db2@1.60.1.70009"}
+{"id": 252554, "field": "name", "en": "Blue Suede Shoulder", "hash": "a2782fd2a55c6e9f", "src": "db2@1.60.1.70009"}
+{"id": 252555, "field": "name", "en": "Tooled Leather Crown", "hash": "24750688d65e7a7e", "src": "db2@1.60.1.70009"}
+{"id": 252556, "field": "name", "en": "Wicked Leather Shoulder", "hash": "151cd428ca86b233", "src": "db2@1.60.1.70009"}
+{"id": 252557, "field": "name", "en": "Tooled Leather Bracers", "hash": "3bb02697fda78039", "src": "db2@1.60.1.70009"}
+{"id": 252558, "field": "name", "en": "Tooled Leather Epaulets", "hash": "c4f66ceb4487ebd2", "src": "db2@1.60.1.70009"}
+{"id": 252559, "field": "name", "en": "Blue Suede Bracers", "hash": "6913216b899893b9", "src": "db2@1.60.1.70009"}
+{"id": 252560, "field": "name", "en": "Tooled Leather Pants", "hash": "065fdcd2c0671bb4", "src": "db2@1.60.1.70009"}
+{"id": 252561, "field": "name", "en": "Living Crown", "hash": "2cef752e5c517945", "src": "db2@1.60.1.70009"}
+{"id": 252562, "field": "name", "en": "Stalker's Mail Boots", "hash": "c77e123ae697cb31", "src": "db2@1.60.1.70009"}
+{"id": 252563, "field": "name", "en": "Skycaller's Mail Boots", "hash": "f81f7d157c02e483", "src": "db2@1.60.1.70009"}
+{"id": 252564, "field": "name", "en": "Skirmisher's Mail Boots", "hash": "7f726c8c6b6355c4", "src": "db2@1.60.1.70009"}
+{"id": 252565, "field": "name", "en": "Mender's Mail Boots", "hash": "2200a2bc7c4f6aff", "src": "db2@1.60.1.70009"}
+{"id": 252566, "field": "name", "en": "Stalker's Mail Shoulder", "hash": "2f68e8f6fd123351", "src": "db2@1.60.1.70009"}
+{"id": 252567, "field": "name", "en": "Skycaller's Mail Shoulder", "hash": "5f7f0f75ecf34e6f", "src": "db2@1.60.1.70009"}
+{"id": 252568, "field": "name", "en": "Skirmisher's Mail Shoulder", "hash": "0e39fdadab9314e4", "src": "db2@1.60.1.70009"}
+{"id": 252569, "field": "name", "en": "Mender's Mail Shoulder", "hash": "72c2a18847878f79", "src": "db2@1.60.1.70009"}
+{"id": 252570, "field": "name", "en": "Stalker's Mail Bracers", "hash": "fcb72aa3623d30e2", "src": "db2@1.60.1.70009"}
+{"id": 252571, "field": "name", "en": "Skycaller's Mail Bracers", "hash": "f15b7d0270f2effb", "src": "db2@1.60.1.70009"}
+{"id": 252572, "field": "name", "en": "Skirmisher's Mail Bracers", "hash": "67f16f349be27d07", "src": "db2@1.60.1.70009"}
+{"id": 252573, "field": "name", "en": "Mender's Mail Bracers", "hash": "571f6c8c6e0af3e1", "src": "db2@1.60.1.70009"}
+{"id": 252574, "field": "name", "en": "Supple Scorpid Boots", "hash": "02fcea0cf4e8d2e8", "src": "db2@1.60.1.70009"}
+{"id": 252575, "field": "name", "en": "Charged Scorpid Belt", "hash": "c11c023955641a34", "src": "db2@1.60.1.70009"}
+{"id": 252576, "field": "name", "en": "Stalker's Mail Sabatons", "hash": "1ad14284ae902f62", "src": "db2@1.60.1.70009"}
+{"id": 252577, "field": "name", "en": "Skycaller's Mail Sabatons", "hash": "4ae769039e714a80", "src": "db2@1.60.1.70009"}
+{"id": 252578, "field": "name", "en": "Skirmisher's Mail Sabatons", "hash": "f9a257365d1110f5", "src": "db2@1.60.1.70009"}
+{"id": 252579, "field": "name", "en": "Mender's Mail Sabatons", "hash": "5e2afb16f9058b79", "src": "db2@1.60.1.70009"}
+{"id": 252580, "field": "name", "en": "Supple Scorpid Leggings", "hash": "d106ccd221e3f814", "src": "db2@1.60.1.70009"}
+{"id": 252581, "field": "name", "en": "Charged Scorpid Helm", "hash": "c1e9d3d4a5d3d25a", "src": "db2@1.60.1.70009"}
+{"id": 252582, "field": "name", "en": "Supple Scorpid Bracers", "hash": "46a7b5c10467124a", "src": "db2@1.60.1.70009"}
+{"id": 252583, "field": "name", "en": "Charged Scorpid Shoulder", "hash": "675a8619d52cb99e", "src": "db2@1.60.1.70009"}
+{"id": 252584, "field": "name", "en": "Stalker's Mail Gauntlets", "hash": "729ff858a860fed3", "src": "db2@1.60.1.70009"}
+{"id": 252585, "field": "name", "en": "Skycaller's Mail Gauntlets", "hash": "0df5abd2bf82540f", "src": "db2@1.60.1.70009"}
+{"id": 252586, "field": "name", "en": "Skirmisher's Mail Gauntlets", "hash": "779d91a8a2f76180", "src": "db2@1.60.1.70009"}
+{"id": 252587, "field": "name", "en": "Mender's Mail Gauntlets", "hash": "e9896bb84fae55b0", "src": "db2@1.60.1.70009"}
+{"id": 252588, "field": "name", "en": "Stalker's Mail Belt", "hash": "dc62007ad5615b3e", "src": "db2@1.60.1.70009"}
+{"id": 252589, "field": "name", "en": "Skycaller's Mail Belt", "hash": "1184749baf390f90", "src": "db2@1.60.1.70009"}
+{"id": 252590, "field": "name", "en": "Skirmisher's Mail Belt", "hash": "976f97a5a9fb76e8", "src": "db2@1.60.1.70009"}
+{"id": 252591, "field": "name", "en": "Mender's Mail Belt", "hash": "44a570fb21aff52c", "src": "db2@1.60.1.70009"}
+{"id": 252592, "field": "name", "en": "Supple Scorpid Shoulder", "hash": "0580177f962c211a", "src": "db2@1.60.1.70009"}
+{"id": 252593, "field": "name", "en": "Charged Scorpid Bracers", "hash": "a7286678215d18a3", "src": "db2@1.60.1.70009"}
+{"id": 252594, "field": "name", "en": "Heavy Scorpid Boots", "hash": "2c075749ad9ab55b", "src": "db2@1.60.1.70009"}
+{"id": 252595, "field": "name", "en": "Supple Scorpid Belt", "hash": "138df66ae4d8c978", "src": "db2@1.60.1.70009"}
+{"id": 252596, "field": "name", "en": "Charged Scorpid Gauntlets", "hash": "134361d2cdf40708", "src": "db2@1.60.1.70009"}
+{"id": 252597, "field": "name", "en": "Supple Scorpid Helm", "hash": "145bc805354881af", "src": "db2@1.60.1.70009"}
+{"id": 252598, "field": "name", "en": "Charged Scorpid Vest", "hash": "c3ca15ea61840a02", "src": "db2@1.60.1.70009"}
+{"id": 252599, "field": "name", "en": "Supple Scorpid Vest", "hash": "163c0a1bf0f8b946", "src": "db2@1.60.1.70009"}
+{"id": 252600, "field": "name", "en": "Charged Scorpid Leggings", "hash": "32e13b7160e49098", "src": "db2@1.60.1.70009"}
+{"id": 252601, "field": "name", "en": "Supple Scorpid Sabatons", "hash": "f0e8710847aa1d2b", "src": "db2@1.60.1.70009"}
+{"id": 252602, "field": "name", "en": "Charged Scorpid Boots", "hash": "d2acf6b1be205c77", "src": "db2@1.60.1.70009"}
+{"id": 252603, "field": "name", "en": "Red Dragonscale Leggings", "hash": "3ca0554fd1f71899", "src": "db2@1.60.1.70009"}
+{"id": 252604, "field": "name", "en": "Blue Dragonscale Helm", "hash": "d0b0465decf221bd", "src": "db2@1.60.1.70009"}
+{"id": 252605, "field": "name", "en": "Black Dragonscale Helm", "hash": "30333766437b1300", "src": "db2@1.60.1.70009"}
+{"id": 252606, "field": "name", "en": "Pristine Scorpid Leggings", "hash": "973ea1eda8cac68f", "src": "db2@1.60.1.70009"}
+{"id": 252661, "field": "name", "en": "Commander Cyclas's Head", "hash": "0fcdddf4bfeb4e45", "src": "db2@1.60.1.70009"}
+{"id": 252665, "field": "name", "en": "Head of Urs'anah", "hash": "3435e0a156516567", "src": "db2@1.60.1.70009"}
+{"id": 252670, "field": "name", "en": "Prideclaw Pelt", "hash": "3166f84c977b0ed9", "src": "db2@1.60.1.70009"}
+{"id": 252671, "field": "name", "en": "Hoarder's Foot", "hash": "40fc584e91950f10", "src": "db2@1.60.1.70009"}
+{"id": 252673, "field": "name", "en": "Shen'dar Village Offering Coffer", "hash": "36f1dcd22af0f4aa", "src": "db2@1.60.1.70009"}
+{"id": 252674, "field": "name", "en": "Indari's Offering", "hash": "ab91106bf3b784f2", "src": "db2@1.60.1.70009"}
+{"id": 252675, "field": "name", "en": "Taleen's Offering", "hash": "d0e9576cda7d285d", "src": "db2@1.60.1.70009"}
+{"id": 252678, "field": "name", "en": "Demon Dust", "hash": "74a52fd9d6f264ff", "src": "db2@1.60.1.70009"}
+{"id": 252760, "field": "name", "en": "Stolen Shen'dar Supplies", "hash": "08d84a6482a4dfa1", "src": "db2@1.60.1.70009"}
+{"id": 252761, "field": "name", "en": "Pattern: Black Whelp Slippers", "hash": "861a480390e36a68", "src": "db2@1.60.1.70009"}
+{"id": 252761, "field": "description", "en": "Teaches you how to craft Black Whelp Slippers.", "hash": "042894d228ebb383", "src": "db2@1.60.1.70009"}
+{"id": 252762, "field": "name", "en": "Pattern: Dark Leather Boots", "hash": "1d9c0e620fa8e50e", "src": "db2@1.60.1.70009"}
+{"id": 252762, "field": "description", "en": "Teaches you how to craft Dark Leather Boots.", "hash": "4d01c52809d63fb6", "src": "db2@1.60.1.70009"}
+{"id": 252763, "field": "name", "en": "Pattern: Murloc Scale Shoes", "hash": "a3e33a4b6ac01afe", "src": "db2@1.60.1.70009"}
+{"id": 252763, "field": "description", "en": "Teaches you how to craft Murloc Scale Shoes.", "hash": "036d3ebce8c5786d", "src": "db2@1.60.1.70009"}
+{"id": 252764, "field": "name", "en": "Pattern: Moonglow Boots", "hash": "39ca838cb364218a", "src": "db2@1.60.1.70009"}
+{"id": 252764, "field": "description", "en": "Teaches you how to craft Moonglow Boots.", "hash": "7c86acc94a5a166a", "src": "db2@1.60.1.70009"}
+{"id": 252765, "field": "name", "en": "Pattern: Brawler's Leather Belt", "hash": "13b661679582c1e3", "src": "db2@1.60.1.70009"}
+{"id": 252765, "field": "description", "en": "Teaches you how to craft Brawler's Leather Belt.", "hash": "3055a9c2f241ea67", "src": "db2@1.60.1.70009"}
+{"id": 252766, "field": "name", "en": "Pattern: Trapper's Leather Belt", "hash": "76e3169eb3592f42", "src": "db2@1.60.1.70009"}
+{"id": 252766, "field": "description", "en": "Teaches you how to craft Trapper's Leather Belt.", "hash": "f03665e122f6cb1e", "src": "db2@1.60.1.70009"}
+{"id": 252767, "field": "name", "en": "Pattern: Defender's Leather Belt", "hash": "0cd42d1ab9a7cdd7", "src": "db2@1.60.1.70009"}
+{"id": 252767, "field": "description", "en": "Teaches you how to craft Defender's Leather Belt.", "hash": "df816062d113bc30", "src": "db2@1.60.1.70009"}
+{"id": 252768, "field": "name", "en": "Pattern: Totemic Leather Belt", "hash": "24195ec757ecfb65", "src": "db2@1.60.1.70009"}
+{"id": 252768, "field": "description", "en": "Teaches you how to craft Totemic Leather Belt.", "hash": "ddb13a1f40e24c48", "src": "db2@1.60.1.70009"}
+{"id": 252769, "field": "name", "en": "Pattern: Stormrider's Leather Belt", "hash": "be024183c610b7f1", "src": "db2@1.60.1.70009"}
+{"id": 252769, "field": "description", "en": "Teaches you how to craft Stormrider's Leather Belt.", "hash": "5f5df17b01b8ad1d", "src": "db2@1.60.1.70009"}
+{"id": 252770, "field": "name", "en": "Pattern: Wisdom's Leather Belt", "hash": "0968e42a6cf8cf7b", "src": "db2@1.60.1.70009"}
+{"id": 252770, "field": "description", "en": "Teaches you how to craft Wisdom's Leather Belt.", "hash": "59aad10a3670fa89", "src": "db2@1.60.1.70009"}
+{"id": 252777, "field": "name", "en": "Pattern: Brawler's Leather Gloves", "hash": "d1c494c8f4f34a48", "src": "db2@1.60.1.70009"}
+{"id": 252777, "field": "description", "en": "Teaches you how to craft Brawler's Leather Gloves.", "hash": "bb88ecbde558955e", "src": "db2@1.60.1.70009"}
+{"id": 252778, "field": "name", "en": "Pattern: Trapper's Leather Gloves", "hash": "01c4da94ab213d4f", "src": "db2@1.60.1.70009"}
+{"id": 252778, "field": "description", "en": "Teaches you how to craft Trapper's Leather Gloves.", "hash": "4baca20f94286b44", "src": "db2@1.60.1.70009"}
+{"id": 252779, "field": "name", "en": "Pattern: Defender's Leather Gloves", "hash": "60208e1260e96f65", "src": "db2@1.60.1.70009"}
+{"id": 252779, "field": "description", "en": "Teaches you how to craft Defender's Leather Gloves.", "hash": "54df1db858681fe8", "src": "db2@1.60.1.70009"}
+{"id": 252780, "field": "name", "en": "Pattern: Totemic Leather Gloves", "hash": "4d8fb29f7fc98512", "src": "db2@1.60.1.70009"}
+{"id": 252780, "field": "description", "en": "Teaches you how to craft Totemic Leather Gloves.", "hash": "ca8a39fb6c15f9c2", "src": "db2@1.60.1.70009"}
+{"id": 252781, "field": "name", "en": "Pattern: Stormrider's Leather Gloves", "hash": "aa17a8bc4bbc3949", "src": "db2@1.60.1.70009"}
+{"id": 252781, "field": "description", "en": "Teaches you how to craft Stormrider's Leather Gloves.", "hash": "8d991ad325be1d00", "src": "db2@1.60.1.70009"}
+{"id": 252782, "field": "name", "en": "Pattern: Wisdom's Leather Gloves", "hash": "2d4429293312806c", "src": "db2@1.60.1.70009"}
+{"id": 252782, "field": "description", "en": "Teaches you how to craft Wisdom's Leather Gloves.", "hash": "78cf5c6473799f43", "src": "db2@1.60.1.70009"}
+{"id": 252783, "field": "name", "en": "Pattern: Mystic Medium Armor Kit", "hash": "b9afa283319c4b4b", "src": "db2@1.60.1.70009"}
+{"id": 252783, "field": "description", "en": "Teaches you how to craft Mystic Medium Armor Kit.", "hash": "53ce76dada25eb23", "src": "db2@1.60.1.70009"}
+{"id": 252784, "field": "name", "en": "Pattern: Forceful Medium Armor Kit", "hash": "99104f82ee599ac1", "src": "db2@1.60.1.70009"}
+{"id": 252784, "field": "description", "en": "Teaches you how to craft Forceful Medium Armor Kit.", "hash": "778f1a993d3f8b31", "src": "db2@1.60.1.70009"}
+{"id": 252786, "field": "name", "en": "Pattern: Brawler's Leather Boots", "hash": "17aba983cf607602", "src": "db2@1.60.1.70009"}
+{"id": 252786, "field": "description", "en": "Teaches you how to craft Brawler's Leather Boots.", "hash": "6bc60a3b44bced00", "src": "db2@1.60.1.70009"}
+{"id": 252787, "field": "name", "en": "Pattern: Trapper's Leather Boots", "hash": "d78c65a2001556b9", "src": "db2@1.60.1.70009"}
+{"id": 252787, "field": "description", "en": "Teaches you how to craft Trapper's Leather Boots.", "hash": "9bc65002faeadff6", "src": "db2@1.60.1.70009"}
+{"id": 252788, "field": "name", "en": "Pattern: Defender's Leather Boots", "hash": "91eae6081062d007", "src": "db2@1.60.1.70009"}
+{"id": 252788, "field": "description", "en": "Teaches you how to craft Defender's Leather Boots.", "hash": "0f247fdd838d5f67", "src": "db2@1.60.1.70009"}
+{"id": 252789, "field": "name", "en": "Pattern: Totemic Leather Boots", "hash": "7a5351cb8bb33ce9", "src": "db2@1.60.1.70009"}
+{"id": 252789, "field": "description", "en": "Teaches you how to craft Totemic Leather Boots.", "hash": "21a0eb8fcb8bbb3a", "src": "db2@1.60.1.70009"}
+{"id": 252790, "field": "name", "en": "Pattern: Stormrider's Leather Boots", "hash": "3c7f598aacf1d11c", "src": "db2@1.60.1.70009"}
+{"id": 252790, "field": "description", "en": "Teaches you how to craft Stormrider's Leather Boots.", "hash": "7d02be5e3db01bc2", "src": "db2@1.60.1.70009"}
+{"id": 252791, "field": "name", "en": "Pattern: Wisdom's Leather Boots", "hash": "d204932e79c77ace", "src": "db2@1.60.1.70009"}
+{"id": 252791, "field": "description", "en": "Teaches you how to craft Wisdom's Leather Boots.", "hash": "9259247ce50cab3e", "src": "db2@1.60.1.70009"}
+{"id": 252798, "field": "name", "en": "Pattern: Brawler's Leather Hood", "hash": "1486d2dc0da57f3e", "src": "db2@1.60.1.70009"}
+{"id": 252798, "field": "description", "en": "Teaches you how to craft Brawler's Leather Hood.", "hash": "9affb8a1bdb73cc7", "src": "db2@1.60.1.70009"}
+{"id": 252799, "field": "name", "en": "Pattern: Trapper's Leather Hood", "hash": "77b388132b7bec9d", "src": "db2@1.60.1.70009"}
+{"id": 252799, "field": "description", "en": "Teaches you how to craft Trapper's Leather Hood.", "hash": "5ae074c5ee6c1d6d", "src": "db2@1.60.1.70009"}
+{"id": 252800, "field": "name", "en": "Pattern: Defender's Leather Hood", "hash": "0da49e8f31ca8b32", "src": "db2@1.60.1.70009"}
+{"id": 252800, "field": "description", "en": "Teaches you how to craft Defender's Leather Hood.", "hash": "4a2b6f469c890e90", "src": "db2@1.60.1.70009"}
+{"id": 252801, "field": "name", "en": "Pattern: Totemic Leather Hood", "hash": "24e9d03cd00fb8af", "src": "db2@1.60.1.70009"}
+{"id": 252801, "field": "description", "en": "Teaches you how to craft Totemic Leather Hood.", "hash": "485b49030c579ea8", "src": "db2@1.60.1.70009"}
+{"id": 252802, "field": "name", "en": "Pattern: Stormrider's Leather Hood", "hash": "bed2b2f83e33754c", "src": "db2@1.60.1.70009"}
+{"id": 252802, "field": "description", "en": "Teaches you how to craft Stormrider's Leather Hood.", "hash": "ca08005acd2dff6c", "src": "db2@1.60.1.70009"}
+{"id": 252803, "field": "name", "en": "Pattern: Wisdom's Leather Hood", "hash": "0a39559fe51b8cc5", "src": "db2@1.60.1.70009"}
+{"id": 252803, "field": "description", "en": "Teaches you how to craft Wisdom's Leather Hood.", "hash": "c454dfe901e64ce9", "src": "db2@1.60.1.70009"}
+{"id": 252804, "field": "name", "en": "Pattern: Hillman's Leather Boots", "hash": "7d865856de973099", "src": "db2@1.60.1.70009"}
+{"id": 252804, "field": "description", "en": "Teaches you how to craft Hillman's Leather Boots.", "hash": "8aad8138446f54ec", "src": "db2@1.60.1.70009"}
+{"id": 252805, "field": "name", "en": "Pattern: Brawler's Leather Tunic", "hash": "54700422c8538237", "src": "db2@1.60.1.70009"}
+{"id": 252805, "field": "description", "en": "Teaches you how to craft Brawler's Leather Tunic.", "hash": "84406a3380d503a4", "src": "db2@1.60.1.70009"}
+{"id": 252806, "field": "name", "en": "Pattern: Trapper's Leather Tunic", "hash": "1450c046f90862dd", "src": "db2@1.60.1.70009"}
+{"id": 252806, "field": "description", "en": "Teaches you how to craft Trapper's Leather Tunic.", "hash": "b440affa3702f6ab", "src": "db2@1.60.1.70009"}
+{"id": 252807, "field": "name", "en": "Pattern: Defender's Leather Tunic", "hash": "ceaf40a70955dc3c", "src": "db2@1.60.1.70009"}
+{"id": 252807, "field": "description", "en": "Teaches you how to craft Defender's Leather Tunic.", "hash": "279edfd5bfa5760b", "src": "db2@1.60.1.70009"}
+{"id": 252808, "field": "name", "en": "Pattern: Totemic Leather Tunic", "hash": "b717ac6a84a6491e", "src": "db2@1.60.1.70009"}
+{"id": 252808, "field": "description", "en": "Teaches you how to craft Totemic Leather Tunic.", "hash": "3a1b4b8707a3d1ef", "src": "db2@1.60.1.70009"}
+{"id": 252809, "field": "name", "en": "Pattern: Stormrider's Leather Tunic", "hash": "7943b429a5e4dd51", "src": "db2@1.60.1.70009"}
+{"id": 252809, "field": "description", "en": "Teaches you how to craft Stormrider's Leather Tunic.", "hash": "957d1e5679c83266", "src": "db2@1.60.1.70009"}
+{"id": 252810, "field": "name", "en": "Pattern: Wisdom's Leather Tunic", "hash": "0ec8edd272ba8703", "src": "db2@1.60.1.70009"}
+{"id": 252810, "field": "description", "en": "Teaches you how to craft Wisdom's Leather Tunic.", "hash": "aad384742124c1f3", "src": "db2@1.60.1.70009"}
+{"id": 252811, "field": "name", "en": "Pattern: Mystic Heavy Armor Kit", "hash": "b35a9f6538171ccf", "src": "db2@1.60.1.70009"}
+{"id": 252811, "field": "description", "en": "Teaches you how to craft Mystic Heavy Armor Kit.", "hash": "e1616451cda7a211", "src": "db2@1.60.1.70009"}
+{"id": 252812, "field": "name", "en": "Pattern: Forceful Heavy Armor Kit", "hash": "37fd8f23f920034c", "src": "db2@1.60.1.70009"}
+{"id": 252812, "field": "description", "en": "Teaches you how to craft Forceful Heavy Armor Kit.", "hash": "0ab107c8fb0eb6b7", "src": "db2@1.60.1.70009"}
+{"id": 252820, "field": "name", "en": "Pattern: Brawler's Leather Legguards", "hash": "f16fb9bf1a660cb3", "src": "db2@1.60.1.70009"}
+{"id": 252820, "field": "description", "en": "Teaches you how to craft Brawler's Leather Legguards.", "hash": "0fa9d015599a5ab5", "src": "db2@1.60.1.70009"}
+{"id": 252821, "field": "name", "en": "Pattern: Trapper's Leather Legguards", "hash": "5b24fd2f1d7a6a35", "src": "db2@1.60.1.70009"}
+{"id": 252821, "field": "description", "en": "Teaches you how to craft Trapper's Leather Legguards.", "hash": "276b50e485d34e79", "src": "db2@1.60.1.70009"}
+{"id": 252822, "field": "name", "en": "Pattern: Defender's Leather Kilt", "hash": "0e09f3b1c2307127", "src": "db2@1.60.1.70009"}
+{"id": 252822, "field": "description", "en": "Teaches you how to craft Defender's Leather Kilt.", "hash": "7e05ffacdcf20790", "src": "db2@1.60.1.70009"}
+{"id": 252823, "field": "name", "en": "Pattern: Totemic Leather Leggings", "hash": "d73a04bacf987e1b", "src": "db2@1.60.1.70009"}
+{"id": 252823, "field": "description", "en": "Teaches you how to craft Totemic Leather Leggings.", "hash": "86a135a211d15fcb", "src": "db2@1.60.1.70009"}
+{"id": 252824, "field": "name", "en": "Pattern: Stormrider's Leather Kilt", "hash": "bf38081ace995b41", "src": "db2@1.60.1.70009"}
+{"id": 252824, "field": "description", "en": "Teaches you how to craft Stormrider's Leather Kilt.", "hash": "fde290c00d96f87d", "src": "db2@1.60.1.70009"}
+{"id": 252825, "field": "name", "en": "Pattern: Wisdom's Leather Leggings", "hash": "ef98234b8c5d55cd", "src": "db2@1.60.1.70009"}
+{"id": 252825, "field": "description", "en": "Teaches you how to craft Wisdom's Leather Leggings.", "hash": "bf107b50922c9549", "src": "db2@1.60.1.70009"}
+{"id": 252826, "field": "name", "en": "Pattern: Prowler's Leather Belt", "hash": "d0a4d98ecd5e78e0", "src": "db2@1.60.1.70009"}
+{"id": 252826, "field": "description", "en": "Teaches you how to craft Prowler's Leather Belt.", "hash": "de5d2797a586d809", "src": "db2@1.60.1.70009"}
+{"id": 252827, "field": "name", "en": "Pattern: Skulker's Leather Belt", "hash": "16423bfb3eb32b58", "src": "db2@1.60.1.70009"}
+{"id": 252827, "field": "description", "en": "Teaches you how to craft Skulker's Leather Belt.", "hash": "7de6838382930d7d", "src": "db2@1.60.1.70009"}
+{"id": 252828, "field": "name", "en": "Pattern: Stalker's Leather Belt", "hash": "66d8f6fb60fa4470", "src": "db2@1.60.1.70009"}
+{"id": 252828, "field": "description", "en": "Teaches you how to craft Stalker's Leather Belt.", "hash": "bb0835503f1a4c2a", "src": "db2@1.60.1.70009"}
+{"id": 252829, "field": "name", "en": "Pattern: Warden's Leather Belt", "hash": "a20998f92c56de26", "src": "db2@1.60.1.70009"}
+{"id": 252829, "field": "description", "en": "Teaches you how to craft Warden's Leather Belt.", "hash": "73e7587dcbe20af7", "src": "db2@1.60.1.70009"}
+{"id": 252830, "field": "name", "en": "Pattern: Skirmisher's Leather Belt", "hash": "0240dbb834f816f6", "src": "db2@1.60.1.70009"}
+{"id": 252830, "field": "description", "en": "Teaches you how to craft Skirmisher's Leather Belt.", "hash": "4b66d8ba7f939850", "src": "db2@1.60.1.70009"}
+{"id": 252831, "field": "name", "en": "Pattern: Skycaller's Leather Belt", "hash": "03fb867abd0f991f", "src": "db2@1.60.1.70009"}
+{"id": 252831, "field": "description", "en": "Teaches you how to craft Skycaller's Leather Belt.", "hash": "6da698c633c57310", "src": "db2@1.60.1.70009"}
+{"id": 252832, "field": "name", "en": "Pattern: Mender's Leather Belt", "hash": "9c3074c5f523eeac", "src": "db2@1.60.1.70009"}
+{"id": 252832, "field": "description", "en": "Teaches you how to craft Mender's Leather Belt.", "hash": "75c9d1d21d1f73df", "src": "db2@1.60.1.70009"}
+{"id": 252833, "field": "name", "en": "Pattern: Mystic Thick Armor Kit", "hash": "ef3a87cbd760c12f", "src": "db2@1.60.1.70009"}
+{"id": 252833, "field": "description", "en": "Teaches you how to craft Mystic Thick Armor Kit.", "hash": "84f5511eb84a0ba7", "src": "db2@1.60.1.70009"}
+{"id": 252834, "field": "name", "en": "Pattern: Forceful Thick Armor Kit", "hash": "73dd77899869a7bd", "src": "db2@1.60.1.70009"}
+{"id": 252834, "field": "description", "en": "Teaches you how to craft Forceful Thick Armor Kit.", "hash": "ae44f490e5b1204d", "src": "db2@1.60.1.70009"}
+{"id": 252836, "field": "name", "en": "Pattern: Prowler's Leather Gloves", "hash": "df99fa84dd4e213c", "src": "db2@1.60.1.70009"}
+{"id": 252836, "field": "description", "en": "Teaches you how to craft Prowler's Leather Gloves.", "hash": "cfbbfc141d36dbd1", "src": "db2@1.60.1.70009"}
+{"id": 252837, "field": "name", "en": "Pattern: Skulker's Leather Gloves", "hash": "82e403539f81de36", "src": "db2@1.60.1.70009"}
+{"id": 252837, "field": "description", "en": "Teaches you how to craft Skulker's Leather Gloves.", "hash": "5e9e7d161091b6b9", "src": "db2@1.60.1.70009"}
+{"id": 252838, "field": "name", "en": "Pattern: Stalker's Leather Gloves", "hash": "cb21ffd5b2f6586c", "src": "db2@1.60.1.70009"}
+{"id": 252838, "field": "description", "en": "Teaches you how to craft Stalker's Leather Gloves.", "hash": "5656b45544bdd35b", "src": "db2@1.60.1.70009"}
+{"id": 252839, "field": "name", "en": "Pattern: Warden's Leather Gloves", "hash": "9a3d79433c707f76", "src": "db2@1.60.1.70009"}
+{"id": 252839, "field": "description", "en": "Teaches you how to craft Warden's Leather Gloves.", "hash": "3c635aca10f910e8", "src": "db2@1.60.1.70009"}
+{"id": 252840, "field": "name", "en": "Pattern: Skirmisher's Leather Gloves", "hash": "72a5fdc76ba12888", "src": "db2@1.60.1.70009"}
+{"id": 252840, "field": "description", "en": "Teaches you how to craft Skirmisher's Leather Gloves.", "hash": "2e6e9ee8e6ed47d7", "src": "db2@1.60.1.70009"}
+{"id": 252841, "field": "name", "en": "Pattern: Skycaller's Leather Gloves", "hash": "5ce6c6dde3035ad2", "src": "db2@1.60.1.70009"}
+{"id": 252841, "field": "description", "en": "Teaches you how to craft Skycaller's Leather Gloves.", "hash": "11efb02ce2c7a123", "src": "db2@1.60.1.70009"}
+{"id": 252842, "field": "name", "en": "Pattern: Mender's Leather Gloves", "hash": "91218fc7131c596b", "src": "db2@1.60.1.70009"}
+{"id": 252842, "field": "description", "en": "Teaches you how to craft Mender's Leather Gloves.", "hash": "931ae03d8d67f4b7", "src": "db2@1.60.1.70009"}
+{"id": 252843, "field": "name", "en": "Pattern: Prowler's Leather Shoes", "hash": "ef2c1bd4725e5041", "src": "db2@1.60.1.70009"}
+{"id": 252843, "field": "description", "en": "Teaches you how to craft Prowler's Leather Shoes.", "hash": "b2808bd443469a7a", "src": "db2@1.60.1.70009"}
+{"id": 252844, "field": "name", "en": "Pattern: Skulker's Leather Shoes", "hash": "8eb577c04f6a85b5", "src": "db2@1.60.1.70009"}
+{"id": 252844, "field": "description", "en": "Teaches you how to craft Skulker's Leather Shoes.", "hash": "55ca94a3057a5774", "src": "db2@1.60.1.70009"}
+{"id": 252845, "field": "name", "en": "Pattern: Warden's Leather Shoes", "hash": "15ba0f22fef177d9", "src": "db2@1.60.1.70009"}
+{"id": 252845, "field": "description", "en": "Teaches you how to craft Warden's Leather Shoes.", "hash": "38379078049980df", "src": "db2@1.60.1.70009"}
+{"id": 252846, "field": "name", "en": "Pattern: Skycaller's Leather Shoes", "hash": "348696908ff32618", "src": "db2@1.60.1.70009"}
+{"id": 252846, "field": "description", "en": "Teaches you how to craft Skycaller's Leather Shoes.", "hash": "051575c4dd11c3c6", "src": "db2@1.60.1.70009"}
+{"id": 252847, "field": "name", "en": "Pattern: Mender's Leather Shoes", "hash": "179c8877502ee0c1", "src": "db2@1.60.1.70009"}
+{"id": 252847, "field": "description", "en": "Teaches you how to craft Mender's Leather Shoes.", "hash": "2f1ba6fcdb455ac3", "src": "db2@1.60.1.70009"}
+{"id": 252848, "field": "name", "en": "Pattern: Prowler's Leather Shoulder", "hash": "dee184a5591090a8", "src": "db2@1.60.1.70009"}
+{"id": 252848, "field": "description", "en": "Teaches you how to craft Prowler's Leather Shoulder.", "hash": "953ecece3de7b83c", "src": "db2@1.60.1.70009"}
+{"id": 252849, "field": "name", "en": "Pattern: Skulker's Leather Shoulder", "hash": "fcc987893c6cf3cd", "src": "db2@1.60.1.70009"}
+{"id": 252849, "field": "description", "en": "Teaches you how to craft Skulker's Leather Shoulder.", "hash": "e2f849c5421c1a20", "src": "db2@1.60.1.70009"}
+{"id": 252850, "field": "name", "en": "Pattern: Warden's Leather Shoulder", "hash": "38cc9b8fdc6a8b54", "src": "db2@1.60.1.70009"}
+{"id": 252850, "field": "description", "en": "Teaches you how to craft Warden's Leather Shoulder.", "hash": "34ea044b8744a368", "src": "db2@1.60.1.70009"}
+{"id": 252851, "field": "name", "en": "Pattern: Skycaller's Leather Shoulder", "hash": "600f53a9a194716d", "src": "db2@1.60.1.70009"}
+{"id": 252851, "field": "description", "en": "Teaches you how to craft Skycaller's Leather Shoulder.", "hash": "713173276535e977", "src": "db2@1.60.1.70009"}
+{"id": 252852, "field": "name", "en": "Pattern: Mender's Leather Shoulder", "hash": "98b5e644a777dcb2", "src": "db2@1.60.1.70009"}
+{"id": 252852, "field": "description", "en": "Teaches you how to craft Mender's Leather Shoulder.", "hash": "494b3fdf9ad318ee", "src": "db2@1.60.1.70009"}
+{"id": 252853, "field": "name", "en": "Pattern: Prowler's Leather Bracers", "hash": "d11bc05985722c26", "src": "db2@1.60.1.70009"}
+{"id": 252853, "field": "description", "en": "Teaches you how to craft Prowler's Leather Bracers.", "hash": "2569d92f0371b1e6", "src": "db2@1.60.1.70009"}
+{"id": 252854, "field": "name", "en": "Pattern: Skulker's Leather Bracers", "hash": "5ffe415b78cd070e", "src": "db2@1.60.1.70009"}
+{"id": 252854, "field": "description", "en": "Teaches you how to craft Skulker's Leather Bracers.", "hash": "4351dc13e6ce14fa", "src": "db2@1.60.1.70009"}
+{"id": 252855, "field": "name", "en": "Pattern: Warden's Leather Bracers", "hash": "52c59b674c0eae98", "src": "db2@1.60.1.70009"}
+{"id": 252855, "field": "description", "en": "Teaches you how to craft Warden's Leather Bracers.", "hash": "bf0f4ed5c5900a26", "src": "db2@1.60.1.70009"}
+{"id": 252856, "field": "name", "en": "Pattern: Skycaller's Leather Bracers", "hash": "ef6850957bb2ff12", "src": "db2@1.60.1.70009"}
+{"id": 252856, "field": "description", "en": "Teaches you how to craft Skycaller's Leather Bracers.", "hash": "05deff922f95af32", "src": "db2@1.60.1.70009"}
+{"id": 252857, "field": "name", "en": "Pattern: Mender's Leather Bracers", "hash": "a97d20dac87d9267", "src": "db2@1.60.1.70009"}
+{"id": 252857, "field": "description", "en": "Teaches you how to craft Mender's Leather Bracers.", "hash": "1ef8998f909d5b84", "src": "db2@1.60.1.70009"}
+{"id": 252858, "field": "name", "en": "Pattern: Tooled Leather Belt", "hash": "6ecd02ebfbebd54a", "src": "db2@1.60.1.70009"}
+{"id": 252858, "field": "description", "en": "Teaches you how to craft Tooled Leather Belt.", "hash": "388ffe067a23b9b8", "src": "db2@1.60.1.70009"}
+{"id": 252859, "field": "name", "en": "Pattern: Blue Suede Shoes", "hash": "011d68f70776b086", "src": "db2@1.60.1.70009"}
+{"id": 252859, "field": "description", "en": "Teaches you how to craft Blue Suede Shoes.", "hash": "d20882371087521a", "src": "db2@1.60.1.70009"}
+{"id": 252860, "field": "name", "en": "Pattern: Prowler's Leather Boots", "hash": "c5b3275882a563a4", "src": "db2@1.60.1.70009"}
+{"id": 252860, "field": "description", "en": "Teaches you how to craft Prowler's Leather Boots.", "hash": "799b6ff72d17c3f4", "src": "db2@1.60.1.70009"}
+{"id": 252861, "field": "name", "en": "Pattern: Skulker's Leather Boots", "hash": "653c83445fb19918", "src": "db2@1.60.1.70009"}
+{"id": 252861, "field": "description", "en": "Teaches you how to craft Skulker's Leather Boots.", "hash": "1ce578c6ef4b80dd", "src": "db2@1.60.1.70009"}
+{"id": 252862, "field": "name", "en": "Pattern: Warden's Leather Boots", "hash": "ec411aa10f388b4d", "src": "db2@1.60.1.70009"}
+{"id": 252862, "field": "description", "en": "Teaches you how to craft Warden's Leather Boots.", "hash": "ff527496ee6aaa48", "src": "db2@1.60.1.70009"}
+{"id": 252863, "field": "name", "en": "Pattern: Skycaller's Leather Boots", "hash": "0b0da214a03a397b", "src": "db2@1.60.1.70009"}
+{"id": 252863, "field": "description", "en": "Teaches you how to craft Skycaller's Leather Boots.", "hash": "cc3059e2c6e2ed40", "src": "db2@1.60.1.70009"}
+{"id": 252864, "field": "name", "en": "Pattern: Mender's Leather Boots", "hash": "ee2393f66075f424", "src": "db2@1.60.1.70009"}
+{"id": 252864, "field": "description", "en": "Teaches you how to craft Mender's Leather Boots.", "hash": "f6368b1ac516843d", "src": "db2@1.60.1.70009"}
+{"id": 252865, "field": "name", "en": "Pattern: Tooled Leather Boots", "hash": "b44050f58b14d55a", "src": "db2@1.60.1.70009"}
+{"id": 252865, "field": "description", "en": "Teaches you how to craft Tooled Leather Boots.", "hash": "a19f291b0a4df3ec", "src": "db2@1.60.1.70009"}
+{"id": 252866, "field": "name", "en": "Pattern: Blue Suede Gloves", "hash": "0e147110db623691", "src": "db2@1.60.1.70009"}
+{"id": 252866, "field": "description", "en": "Teaches you how to craft Blue Suede Gloves.", "hash": "f24f110d595433ff", "src": "db2@1.60.1.70009"}
+{"id": 252867, "field": "name", "en": "Pattern: Prowler's Leather Gauntlets", "hash": "3d57a4a7503d361e", "src": "db2@1.60.1.70009"}
+{"id": 252867, "field": "description", "en": "Teaches you how to craft Prowler's Leather Gauntlets.", "hash": "e75702fcb9ba28b4", "src": "db2@1.60.1.70009"}
+{"id": 252868, "field": "name", "en": "Pattern: Skulker's Leather Gauntlets", "hash": "8b111f9e54719802", "src": "db2@1.60.1.70009"}
+{"id": 252868, "field": "description", "en": "Teaches you how to craft Skulker's Leather Gauntlets.", "hash": "ad40f029c39ed6fe", "src": "db2@1.60.1.70009"}
+{"id": 252869, "field": "name", "en": "Pattern: Warden's Leather Gauntlets", "hash": "40a45cbca7ae7155", "src": "db2@1.60.1.70009"}
+{"id": 252869, "field": "description", "en": "Teaches you how to craft Warden's Leather Gauntlets.", "hash": "9bf360fe74dfc9b3", "src": "db2@1.60.1.70009"}
+{"id": 252870, "field": "name", "en": "Pattern: Skycaller's Leather Gauntlets", "hash": "57c8926e045e37cb", "src": "db2@1.60.1.70009"}
+{"id": 252870, "field": "description", "en": "Teaches you how to craft Skycaller's Leather Gauntlets.", "hash": "74811c2dbd69e5c4", "src": "db2@1.60.1.70009"}
+{"id": 252871, "field": "name", "en": "Pattern: Mender's Leather Gauntlets", "hash": "55059850bb3ce6db", "src": "db2@1.60.1.70009"}
+{"id": 252871, "field": "description", "en": "Teaches you how to craft Mender's Leather Gauntlets.", "hash": "09b4ddf1e55077d8", "src": "db2@1.60.1.70009"}
+{"id": 252872, "field": "name", "en": "Pattern: Prowler's Leather Waistguard", "hash": "7fc3110e1035ee6f", "src": "db2@1.60.1.70009"}
+{"id": 252872, "field": "description", "en": "Teaches you how to craft Prowler's Leather Waistguard.", "hash": "aa2b5e262f46d27f", "src": "db2@1.60.1.70009"}
+{"id": 252873, "field": "name", "en": "Pattern: Skulker's Leather Waistguard", "hash": "45acfe3b1a1a9cb9", "src": "db2@1.60.1.70009"}
+{"id": 252873, "field": "description", "en": "Teaches you how to craft Skulker's Leather Waistguard.", "hash": "f0dfbb97925f0c74", "src": "db2@1.60.1.70009"}
+{"id": 252874, "field": "name", "en": "Pattern: Warden's Leather Waistguard", "hash": "300543d7a0e75bd9", "src": "db2@1.60.1.70009"}
+{"id": 252874, "field": "description", "en": "Teaches you how to craft Warden's Leather Waistguard.", "hash": "162f786e39d7a1db", "src": "db2@1.60.1.70009"}
+{"id": 252875, "field": "name", "en": "Pattern: Skycaller's Leather Waistguard", "hash": "078cbe29606bb9d9", "src": "db2@1.60.1.70009"}
+{"id": 252875, "field": "description", "en": "Teaches you how to craft Skycaller's Leather Waistguard.", "hash": "e6b64112b4a0f554", "src": "db2@1.60.1.70009"}
+{"id": 252876, "field": "name", "en": "Pattern: Mender's Leather Waistguard", "hash": "9dc6c0c511580a0f", "src": "db2@1.60.1.70009"}
+{"id": 252876, "field": "description", "en": "Teaches you how to craft Mender's Leather Waistguard.", "hash": "40326750b1f81960", "src": "db2@1.60.1.70009"}
+{"id": 252877, "field": "name", "en": "Pattern: Tooled Leather Armor", "hash": "a318fad34c710b16", "src": "db2@1.60.1.70009"}
+{"id": 252877, "field": "description", "en": "Teaches you how to craft Tooled Leather Armor.", "hash": "da7e158826da6d8b", "src": "db2@1.60.1.70009"}
+{"id": 252878, "field": "name", "en": "Pattern: Blue Suede Pants", "hash": "cb83eb6688e92046", "src": "db2@1.60.1.70009"}
+{"id": 252878, "field": "description", "en": "Teaches you how to craft Blue Suede Pants.", "hash": "647d430cb1a4dbd8", "src": "db2@1.60.1.70009"}
+{"id": 252879, "field": "name", "en": "Pattern: Wicked Leather Boots", "hash": "4d7d81ce96d72420", "src": "db2@1.60.1.70009"}
+{"id": 252879, "field": "description", "en": "Teaches you how to craft Wicked Leather Boots.", "hash": "0bef2722e79f42c8", "src": "db2@1.60.1.70009"}
+{"id": 252880, "field": "name", "en": "Pattern: Tooled Leather Gauntlets", "hash": "661500c25905def7", "src": "db2@1.60.1.70009"}
+{"id": 252880, "field": "description", "en": "Teaches you how to craft Tooled Leather Gauntlets.", "hash": "a0b02c9819ad2a23", "src": "db2@1.60.1.70009"}
+{"id": 252881, "field": "name", "en": "Pattern: Blue Suede Shoulder", "hash": "8e354140d0a0370f", "src": "db2@1.60.1.70009"}
+{"id": 252881, "field": "description", "en": "Teaches you how to craft Blue Suede Shoulder.", "hash": "4ae7e3d544842739", "src": "db2@1.60.1.70009"}
+{"id": 252882, "field": "name", "en": "Pattern: Tooled Leather Crown", "hash": "c634f19b12379092", "src": "db2@1.60.1.70009"}
+{"id": 252882, "field": "description", "en": "Teaches you how to craft Tooled Leather Crown.", "hash": "d1cd5e3a047f4847", "src": "db2@1.60.1.70009"}
+{"id": 252883, "field": "name", "en": "Pattern: Blue Suede Armor", "hash": "c67d1e54d919f994", "src": "db2@1.60.1.70009"}
+{"id": 252883, "field": "description", "en": "Teaches you how to craft Blue Suede Armor.", "hash": "d20252c716e4f533", "src": "db2@1.60.1.70009"}
+{"id": 252884, "field": "name", "en": "Pattern: Wicked Leather Shoulder", "hash": "f6f73e422bda3f05", "src": "db2@1.60.1.70009"}
+{"id": 252884, "field": "description", "en": "Teaches you how to craft Wicked Leather Shoulder.", "hash": "af732a324b1c9b76", "src": "db2@1.60.1.70009"}
+{"id": 252885, "field": "name", "en": "Pattern: Tooled Leather Bracers", "hash": "25f6370958c2cd53", "src": "db2@1.60.1.70009"}
+{"id": 252885, "field": "description", "en": "Teaches you how to craft Tooled Leather Bracers.", "hash": "86fffbd54eee0747", "src": "db2@1.60.1.70009"}
+{"id": 252886, "field": "name", "en": "Pattern: Blue Suede Belt", "hash": "f7dd68cc4f18ce2e", "src": "db2@1.60.1.70009"}
+{"id": 252886, "field": "description", "en": "Teaches you how to craft Blue Suede Belt.", "hash": "86aa68030966024a", "src": "db2@1.60.1.70009"}
+{"id": 252887, "field": "name", "en": "Pattern: Tooled Leather Epaulets", "hash": "a6d0d70aa5db7893", "src": "db2@1.60.1.70009"}
+{"id": 252887, "field": "description", "en": "Teaches you how to craft Tooled Leather Epaulets.", "hash": "abcc57bdac296585", "src": "db2@1.60.1.70009"}
+{"id": 252888, "field": "name", "en": "Pattern: Blue Suede Bracers", "hash": "99c667e643ae32ce", "src": "db2@1.60.1.70009"}
+{"id": 252888, "field": "description", "en": "Teaches you how to craft Blue Suede Bracers.", "hash": "d6ad94ef66ea4390", "src": "db2@1.60.1.70009"}
+{"id": 252889, "field": "name", "en": "Pattern: Tooled Leather Pants", "hash": "a81fc7e5fc4031b7", "src": "db2@1.60.1.70009"}
+{"id": 252889, "field": "description", "en": "Teaches you how to craft Tooled Leather Pants.", "hash": "6cf905cdc19a5430", "src": "db2@1.60.1.70009"}
+{"id": 252890, "field": "name", "en": "Pattern: Blue Suede Hat", "hash": "d10b11f4bb8a2b11", "src": "db2@1.60.1.70009"}
+{"id": 252890, "field": "description", "en": "Teaches you how to craft Blue Suede Hat.", "hash": "e28f8d820eefe055", "src": "db2@1.60.1.70009"}
+{"id": 252891, "field": "name", "en": "Pattern: Living Crown", "hash": "8f849cff929c2217", "src": "db2@1.60.1.70009"}
+{"id": 252891, "field": "description", "en": "Teaches you how to craft Living Crown.", "hash": "75057c3309c1ca5d", "src": "db2@1.60.1.70009"}
+{"id": 252892, "field": "name", "en": "Pattern: Dawn Armor", "hash": "cd067a6a781ddfc6", "src": "db2@1.60.1.70009"}
+{"id": 252892, "field": "description", "en": "Teaches you how to craft Dawn Armor.", "hash": "bcfb19baf4330c4a", "src": "db2@1.60.1.70009"}
+{"id": 252893, "field": "name", "en": "Pattern: Timbermaw Tunic", "hash": "627362e900ec9911", "src": "db2@1.60.1.70009"}
+{"id": 252893, "field": "description", "en": "Teaches you how to craft Timbermaw Tunic.", "hash": "1169635efa1c2b40", "src": "db2@1.60.1.70009"}
+{"id": 252894, "field": "name", "en": "Pattern: Warbear Helm", "hash": "ff9563e48d962aab", "src": "db2@1.60.1.70009"}
+{"id": 252894, "field": "description", "en": "Teaches you how to craft Warbear Helm.", "hash": "cd9b447fe68d35c0", "src": "db2@1.60.1.70009"}
+{"id": 252895, "field": "name", "en": "Pattern: Ironfeather Leggings", "hash": "9ed94d14bd1b326c", "src": "db2@1.60.1.70009"}
+{"id": 252895, "field": "description", "en": "Teaches you how to craft Ironfeather Leggings.", "hash": "ade82cc1c72b5898", "src": "db2@1.60.1.70009"}
+{"id": 252896, "field": "name", "en": "Pattern: Stalker's Mail Boots", "hash": "693dfd522270e145", "src": "db2@1.60.1.70009"}
+{"id": 252896, "field": "description", "en": "Teaches you how to craft Stalker's Mail Boots.", "hash": "3f6e5bf437a504ef", "src": "db2@1.60.1.70009"}
+{"id": 252897, "field": "name", "en": "Pattern: Skycaller's Mail Boots", "hash": "e2658d87d71e318c", "src": "db2@1.60.1.70009"}
+{"id": 252897, "field": "description", "en": "Teaches you how to craft Skycaller's Mail Boots.", "hash": "f3f9402f6e650fdc", "src": "db2@1.60.1.70009"}
+{"id": 252898, "field": "name", "en": "Pattern: Skirmisher's Mail Boots", "hash": "614cd6abccb6e285", "src": "db2@1.60.1.70009"}
+{"id": 252898, "field": "description", "en": "Teaches you how to craft Skirmisher's Mail Boots.", "hash": "1940267164d6237e", "src": "db2@1.60.1.70009"}
+{"id": 252899, "field": "name", "en": "Pattern: Mender's Mail Boots", "hash": "0dbdb42aa793336f", "src": "db2@1.60.1.70009"}
+{"id": 252899, "field": "description", "en": "Teaches you how to craft Mender's Mail Boots.", "hash": "8dbab0499ca340ac", "src": "db2@1.60.1.70009"}
+{"id": 252900, "field": "name", "en": "Pattern: Stalker's Mail Shoulder", "hash": "114353155e65c023", "src": "db2@1.60.1.70009"}
+{"id": 252900, "field": "description", "en": "Teaches you how to craft Stalker's Mail Shoulder.", "hash": "2461cfe29c5c23cf", "src": "db2@1.60.1.70009"}
+{"id": 252901, "field": "name", "en": "Pattern: Skycaller's Mail Shoulder", "hash": "79f2c013e26721d9", "src": "db2@1.60.1.70009"}
+{"id": 252901, "field": "description", "en": "Teaches you how to craft Skycaller's Mail Shoulder.", "hash": "8b6eb47c607f15fc", "src": "db2@1.60.1.70009"}
+{"id": 252902, "field": "name", "en": "Pattern: Skirmisher's Mail Shoulder", "hash": "976d5ec86cf9a4be", "src": "db2@1.60.1.70009"}
+{"id": 252902, "field": "description", "en": "Teaches you how to craft Skirmisher's Mail Shoulder.", "hash": "04cf6e03f73133ac", "src": "db2@1.60.1.70009"}
+{"id": 252903, "field": "name", "en": "Pattern: Mender's Mail Shoulder", "hash": "5d08b1faa2a2dc82", "src": "db2@1.60.1.70009"}
+{"id": 252903, "field": "description", "en": "Teaches you how to craft Mender's Mail Shoulder.", "hash": "b574e5b45eb2acf9", "src": "db2@1.60.1.70009"}
+{"id": 252904, "field": "name", "en": "Pattern: Stalker's Mail Bracers", "hash": "e6fd3b15bd587deb", "src": "db2@1.60.1.70009"}
+{"id": 252904, "field": "description", "en": "Teaches you how to craft Stalker's Mail Bracers.", "hash": "4d970fe8d6e179c5", "src": "db2@1.60.1.70009"}
+{"id": 252905, "field": "name", "en": "Pattern: Skycaller's Mail Bracers", "hash": "841fca94196dd2ab", "src": "db2@1.60.1.70009"}
+{"id": 252905, "field": "description", "en": "Teaches you how to craft Skycaller's Mail Bracers.", "hash": "0035735ecb8ca0ab", "src": "db2@1.60.1.70009"}
+{"id": 252906, "field": "name", "en": "Pattern: Skirmisher's Mail Bracers", "hash": "82651fd291565071", "src": "db2@1.60.1.70009"}
+{"id": 252906, "field": "description", "en": "Teaches you how to craft Skirmisher's Mail Bracers.", "hash": "ddf5b34d175ac5fc", "src": "db2@1.60.1.70009"}
+{"id": 252907, "field": "name", "en": "Pattern: Mender's Mail Bracers", "hash": "1c54b8e451822838", "src": "db2@1.60.1.70009"}
+{"id": 252907, "field": "description", "en": "Teaches you how to craft Mender's Mail Bracers.", "hash": "0858ac6ab4e6a17a", "src": "db2@1.60.1.70009"}
+{"id": 252908, "field": "name", "en": "Pattern: Supple Scorpid Boots", "hash": "a4bcd51f30c1e8fc", "src": "db2@1.60.1.70009"}
+{"id": 252908, "field": "description", "en": "Teaches you how to craft Supple Scorpid Boots.", "hash": "b156ca719ccc140e", "src": "db2@1.60.1.70009"}
+{"id": 252909, "field": "name", "en": "Pattern: Charged Scorpid Belt", "hash": "62dbed51913d3037", "src": "db2@1.60.1.70009"}
+{"id": 252909, "field": "description", "en": "Teaches you how to craft Charged Scorpid Belt.", "hash": "fb402b5d56c6a02d", "src": "db2@1.60.1.70009"}
+{"id": 252910, "field": "name", "en": "Pattern: Stalker's Mail Sabatons", "hash": "fcabac9e0fe3bc34", "src": "db2@1.60.1.70009"}
+{"id": 252910, "field": "description", "en": "Teaches you how to craft Stalker's Mail Sabatons.", "hash": "9ac7a355dd9c1789", "src": "db2@1.60.1.70009"}
+{"id": 252911, "field": "name", "en": "Pattern: Skycaller's Mail Sabatons", "hash": "655b19a193e51dea", "src": "db2@1.60.1.70009"}
+{"id": 252911, "field": "description", "en": "Teaches you how to craft Skycaller's Mail Sabatons.", "hash": "01d487f4a1bf09b6", "src": "db2@1.60.1.70009"}
+{"id": 252912, "field": "name", "en": "Pattern: Skirmisher's Mail Sabatons", "hash": "82d5b8561e77a0cf", "src": "db2@1.60.1.70009"}
+{"id": 252912, "field": "description", "en": "Teaches you how to craft Skirmisher's Mail Sabatons.", "hash": "7b35417638712777", "src": "db2@1.60.1.70009"}
+{"id": 252913, "field": "name", "en": "Pattern: Mender's Mail Sabatons", "hash": "48710b885420d893", "src": "db2@1.60.1.70009"}
+{"id": 252913, "field": "description", "en": "Teaches you how to craft Mender's Mail Sabatons.", "hash": "2bdab92c9ff2a0b3", "src": "db2@1.60.1.70009"}
+{"id": 252914, "field": "name", "en": "Pattern: Supple Scorpid Leggings", "hash": "b2e136f1833784d5", "src": "db2@1.60.1.70009"}
+{"id": 252914, "field": "description", "en": "Teaches you how to craft Supple Scorpid Leggings.", "hash": "d82d6b105f8be037", "src": "db2@1.60.1.70009"}
+{"id": 252915, "field": "name", "en": "Pattern: Charged Scorpid Helm", "hash": "63a9beece1ace85d", "src": "db2@1.60.1.70009"}
+{"id": 252915, "field": "description", "en": "Teaches you how to craft Charged Scorpid Helm.", "hash": "64926db39044bdd7", "src": "db2@1.60.1.70009"}
+{"id": 252916, "field": "name", "en": "Pattern: Supple Scorpid Bracers", "hash": "30edc6335f825f53", "src": "db2@1.60.1.70009"}
+{"id": 252916, "field": "description", "en": "Teaches you how to craft Supple Scorpid Bracers.", "hash": "23ae3e716ffb678e", "src": "db2@1.60.1.70009"}
+{"id": 252917, "field": "name", "en": "Pattern: Charged Scorpid Shoulder", "hash": "fa1ed3a67da79c4e", "src": "db2@1.60.1.70009"}
+{"id": 252917, "field": "description", "en": "Teaches you how to craft Charged Scorpid Shoulder.", "hash": "61b718c0e1c26a19", "src": "db2@1.60.1.70009"}
+{"id": 252918, "field": "name", "en": "Pattern: Stalker's Mail Gauntlets", "hash": "056445ea50dbe183", "src": "db2@1.60.1.70009"}
+{"id": 252918, "field": "description", "en": "Teaches you how to craft Stalker's Mail Gauntlets.", "hash": "26408f1bd71449da", "src": "db2@1.60.1.70009"}
+{"id": 252919, "field": "name", "en": "Pattern: Skycaller's Mail Gauntlets", "hash": "97290ced80e8e3e9", "src": "db2@1.60.1.70009"}
+{"id": 252919, "field": "description", "en": "Teaches you how to craft Skycaller's Mail Gauntlets.", "hash": "e1d98aed751e17b3", "src": "db2@1.60.1.70009"}
+{"id": 252920, "field": "name", "en": "Pattern: Skirmisher's Mail Gauntlets", "hash": "ace843d70986b19f", "src": "db2@1.60.1.70009"}
+{"id": 252920, "field": "description", "en": "Teaches you how to craft Skirmisher's Mail Gauntlets.", "hash": "fe5879a97943be67", "src": "db2@1.60.1.70009"}
+{"id": 252921, "field": "name", "en": "Pattern: Mender's Mail Gauntlets", "hash": "cb63d5d7b101e271", "src": "db2@1.60.1.70009"}
+{"id": 252921, "field": "description", "en": "Teaches you how to craft Mender's Mail Gauntlets.", "hash": "6304bb031fbe6b47", "src": "db2@1.60.1.70009"}
+{"id": 252922, "field": "name", "en": "Pattern: Stalker's Mail Belt", "hash": "c81f11e800a523bf", "src": "db2@1.60.1.70009"}
+{"id": 252922, "field": "description", "en": "Teaches you how to craft Stalker's Mail Belt.", "hash": "ed8daa5e117fc5a3", "src": "db2@1.60.1.70009"}
+{"id": 252923, "field": "name", "en": "Pattern: Skycaller's Mail Belt", "hash": "d6b9c0ee92b043e7", "src": "db2@1.60.1.70009"}
+{"id": 252923, "field": "description", "en": "Teaches you how to craft Skycaller's Mail Belt.", "hash": "6a0bcb6393c7b147", "src": "db2@1.60.1.70009"}
+{"id": 252924, "field": "name", "en": "Pattern: Skirmisher's Mail Belt", "hash": "81b5a8170516c402", "src": "db2@1.60.1.70009"}
+{"id": 252924, "field": "description", "en": "Teaches you how to craft Skirmisher's Mail Belt.", "hash": "79f6d6eaef9856ea", "src": "db2@1.60.1.70009"}
+{"id": 252925, "field": "name", "en": "Pattern: Mender's Mail Belt", "hash": "7558b776dbc59430", "src": "db2@1.60.1.70009"}
+{"id": 252925, "field": "description", "en": "Teaches you how to craft Mender's Mail Belt.", "hash": "328c4b45e842faa2", "src": "db2@1.60.1.70009"}
+{"id": 252926, "field": "name", "en": "Pattern: Supple Scorpid Shoulder", "hash": "e75a8199f77faddb", "src": "db2@1.60.1.70009"}
+{"id": 252926, "field": "description", "en": "Teaches you how to craft Supple Scorpid Shoulder.", "hash": "b23e9f8f4ff09ea8", "src": "db2@1.60.1.70009"}
+{"id": 252927, "field": "name", "en": "Pattern: Charged Scorpid Bracers", "hash": "8902d09782b0a564", "src": "db2@1.60.1.70009"}
+{"id": 252927, "field": "description", "en": "Teaches you how to craft Charged Scorpid Bracers.", "hash": "6b5f0a9993f2cdc5", "src": "db2@1.60.1.70009"}
+{"id": 252928, "field": "name", "en": "Pattern: Heavy Scorpid Boots", "hash": "17c468b7d8de7dcb", "src": "db2@1.60.1.70009"}
+{"id": 252928, "field": "description", "en": "Teaches you how to craft Heavy Scorpid Boots.", "hash": "af2914890dd127ec", "src": "db2@1.60.1.70009"}
+{"id": 252929, "field": "name", "en": "Pattern: Supple Scorpid Belt", "hash": "ff4b07d3101c91f9", "src": "db2@1.60.1.70009"}
+{"id": 252929, "field": "description", "en": "Teaches you how to craft Supple Scorpid Belt.", "hash": "290c82301fd0cd5a", "src": "db2@1.60.1.70009"}
+{"id": 252930, "field": "name", "en": "Pattern: Charged Scorpid Gauntlets", "hash": "2db71270c367da72", "src": "db2@1.60.1.70009"}
+{"id": 252930, "field": "description", "en": "Teaches you how to craft Charged Scorpid Gauntlets.", "hash": "88e4d950387b99d9", "src": "db2@1.60.1.70009"}
+{"id": 252931, "field": "name", "en": "Pattern: Supple Scorpid Helm", "hash": "0018d973608c4a1f", "src": "db2@1.60.1.70009"}
+{"id": 252931, "field": "description", "en": "Teaches you how to craft Supple Scorpid Helm.", "hash": "925ec481594eeb04", "src": "db2@1.60.1.70009"}
+{"id": 252932, "field": "name", "en": "Pattern: Charged Scorpid Vest", "hash": "658a01029d5d2005", "src": "db2@1.60.1.70009"}
+{"id": 252932, "field": "description", "en": "Teaches you how to craft Charged Scorpid Vest.", "hash": "5a543efadce26fdd", "src": "db2@1.60.1.70009"}
+{"id": 252933, "field": "name", "en": "Pattern: Supple Scorpid Vest", "hash": "01f91b891c3c81c7", "src": "db2@1.60.1.70009"}
+{"id": 252933, "field": "description", "en": "Teaches you how to craft Supple Scorpid Vest.", "hash": "882095c8a5ec9d0a", "src": "db2@1.60.1.70009"}
+{"id": 252934, "field": "name", "en": "Pattern: Charged Scorpid Leggings", "hash": "c5a588fe095f7348", "src": "db2@1.60.1.70009"}
+{"id": 252934, "field": "description", "en": "Teaches you how to craft Charged Scorpid Leggings.", "hash": "87a5e441f15daba8", "src": "db2@1.60.1.70009"}
+{"id": 252935, "field": "name", "en": "Pattern: Supple Scorpid Sabatons", "hash": "d2c2db27a8fda9ec", "src": "db2@1.60.1.70009"}
+{"id": 252935, "field": "description", "en": "Teaches you how to craft Supple Scorpid Sabatons.", "hash": "28a4730791309262", "src": "db2@1.60.1.70009"}
+{"id": 252936, "field": "name", "en": "Pattern: Charged Scorpid Boots", "hash": "97e24309a19790ce", "src": "db2@1.60.1.70009"}
+{"id": 252936, "field": "description", "en": "Teaches you how to craft Charged Scorpid Boots.", "hash": "41c65e94af6260d9", "src": "db2@1.60.1.70009"}
+{"id": 252937, "field": "name", "en": "Pattern: Red Dragonscale Leggings", "hash": "cf64a2dc7a71fb49", "src": "db2@1.60.1.70009"}
+{"id": 252937, "field": "description", "en": "Teaches you how to craft Red Dragonscale Leggings.", "hash": "847020f4912042ee", "src": "db2@1.60.1.70009"}
+{"id": 252938, "field": "name", "en": "Pattern: Blue Dragonscale Helm", "hash": "95e592b5d0695614", "src": "db2@1.60.1.70009"}
+{"id": 252938, "field": "description", "en": "Teaches you how to craft Blue Dragonscale Helm.", "hash": "3d7823933ca4a084", "src": "db2@1.60.1.70009"}
+{"id": 252939, "field": "name", "en": "Pattern: Black Dragonscale Helm", "hash": "1a7947d89e966009", "src": "db2@1.60.1.70009"}
+{"id": 252939, "field": "description", "en": "Teaches you how to craft Black Dragonscale Helm.", "hash": "a61195a44ca6970f", "src": "db2@1.60.1.70009"}
+{"id": 252940, "field": "name", "en": "Pattern: Pristine Scorpid Leggings", "hash": "b1b2528b9e3e99f9", "src": "db2@1.60.1.70009"}
+{"id": 252940, "field": "description", "en": "Teaches you how to craft Pristine Scorpid Leggings.", "hash": "1276a875906af9cf", "src": "db2@1.60.1.70009"}
+{"id": 252941, "field": "name", "en": "Pattern: Mystic Rugged Armor Kit", "hash": "40b8020eabd7e660", "src": "db2@1.60.1.70009"}
+{"id": 252941, "field": "description", "en": "Teaches you how to craft Mystic Rugged Armor Kit.", "hash": "6d1759c58051c661", "src": "db2@1.60.1.70009"}
+{"id": 252942, "field": "name", "en": "Pattern: Forceful Rugged Armor Kit", "hash": "2018af0d689535e7", "src": "db2@1.60.1.70009"}
+{"id": 252942, "field": "description", "en": "Teaches you how to craft Forceful Rugged Armor Kit.", "hash": "90d7fd84e36b665e", "src": "db2@1.60.1.70009"}
+{"id": 252948, "field": "name", "en": "Cleansed Felbloom", "hash": "1757a4ace66e8e56", "src": "db2@1.60.1.70009"}
+{"id": 252948, "field": "description", "en": "It needs to be prepared before it can be consumed.", "hash": "47a526d3a7d6f750", "src": "db2@1.60.1.70009"}

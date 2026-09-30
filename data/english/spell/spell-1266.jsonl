@@ -1,0 +1,80 @@
+{"id": 1266011, "field": "name", "en": "Life Drain", "hash": "bb5c1d816a47c130", "src": "db2@1.60.1.70009"}
+{"id": 1266011, "field": "description", "en": "Drains $s1 health, transferring it to the caster.", "hash": "f3f92efbafe80339", "src": "db2@1.60.1.70009"}
+{"id": 1266011, "field": "aura", "en": "Periodically every $t2  health is drained to the caster.", "hash": "bb27362b1c2e5a40", "src": "db2@1.60.1.70009"}
+{"id": 1266050, "field": "name", "en": "Apparition", "hash": "8c67eeb5e218a9b6", "src": "db2@1.60.1.70009"}
+{"id": 1266084, "field": "name", "en": "Rohashi Spires", "hash": "72f599e09af45f6d", "src": "db2@1.60.1.70009"}
+{"id": 1266240, "field": "name", "en": "Corroding Spit", "hash": "b0fa56feed560d80", "src": "db2@1.60.1.70009"}
+{"id": 1266240, "field": "description", "en": "Spit corrosive acid at an enemy, reducing its armor by $s1 per stack. Can be applied up to $U times. Lasts $d.", "hash": "9758fef44960c261", "src": "db2@1.60.1.70009"}
+{"id": 1266240, "field": "aura", "en": "Armor reduced by $w1.", "hash": "aedf6639961a6e99", "src": "db2@1.60.1.70009"}
+{"id": 1266271, "field": "name", "en": "Bone Volley", "hash": "80e1792fa90e3b28", "src": "db2@1.60.1.70009"}
+{"id": 1266271, "field": "description", "en": "Hurl bones at nearby targets, dealing physical damage.", "hash": "f520d7c1baab6aa1", "src": "db2@1.60.1.70009"}
+{"id": 1266339, "field": "name", "en": "Restore Journal Page", "hash": "b2923193ef5820ad", "src": "db2@1.60.1.70009"}
+{"id": 1266339, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70009"}
+{"id": 1266349, "field": "name", "en": "Zephras Finale Convo Trigger", "hash": "0228edc812e7ba81", "src": "db2@1.60.1.70009"}
+{"id": 1266359, "field": "name", "en": "Collect Courier's Shipment", "hash": "f18de5da3ae87469", "src": "db2@1.60.1.70009"}
+{"id": 1266369, "field": "name", "en": "Grow", "hash": "09a19943fc70ad59", "src": "db2@1.60.1.70009"}
+{"id": 1266369, "field": "aura", "en": "All grown up.", "hash": "4c47bacba40293ea", "src": "db2@1.60.1.70009"}
+{"id": 1266395, "field": "name", "en": "Zephras Finale Convo Trigger", "hash": "0228edc812e7ba81", "src": "db2@1.60.1.70009"}
+{"id": 1266401, "field": "name", "en": "Elemental Smite", "hash": "0ec9e34c66d6f302", "src": "db2@1.60.1.70009"}
+{"id": 1266453, "field": "name", "en": "Knockback", "hash": "6f4cb8c92b85e539", "src": "db2@1.60.1.70009"}
+{"id": 1266456, "field": "name", "en": "Dummy Aura", "hash": "cae6af9094e19eec", "src": "db2@1.60.1.70009"}
+{"id": 1266626, "field": "name", "en": "Suicide", "hash": "c9e6078ac1fefc72", "src": "db2@1.60.1.70009"}
+{"id": 1266640, "field": "name", "en": "Injured", "hash": "ee4680e7234dac27", "src": "db2@1.60.1.70009"}
+{"id": 1266641, "field": "name", "en": "Frost Breath", "hash": "b3bb9f9f3387d03a", "src": "db2@1.60.1.70009"}
+{"id": 1266641, "field": "description", "en": "Inflicts $s1 Frost damage to an enemy.", "hash": "e9a78e076de58778", "src": "db2@1.60.1.70009"}
+{"id": 1266641, "field": "aura", "en": "Time between attacks increased by $s2%\r\nMovement speed slowed by $s3%.", "hash": "c42f1bbc21935296", "src": "db2@1.60.1.70009"}
+{"id": 1266642, "field": "name", "en": "Frostbolt Volley", "hash": "d4a94c82b55f152f", "src": "db2@1.60.1.70009"}
+{"id": 1266642, "field": "description", "en": "Inflicts $s2 Frost damage to nearby enemies, reducing their movement speed by $s1% for $d.", "hash": "e513fa9266cd5c3a", "src": "db2@1.60.1.70009"}
+{"id": 1266642, "field": "aura", "en": "Movement speed reduced by $s1%.", "hash": "08fe36e785e78519", "src": "db2@1.60.1.70009"}
+{"id": 1266644, "field": "name", "en": "Zephras Alvarion Conversation", "hash": "6b0c4a846b1f60b0", "src": "db2@1.60.1.70009"}
+{"id": 1266680, "field": "name", "en": "Bone Armor", "hash": "eaa7b8b10344a125", "src": "db2@1.60.1.70009"}
+{"id": 1266680, "field": "description", "en": "Encases the caster in bone armor, absorbing $s1 damage for $d. While the armor holds, spellcasting cannot be interrupted by Physical attacks.", "hash": "94214c39a501df4a", "src": "db2@1.60.1.70009"}
+{"id": 1266680, "field": "aura", "en": "Damage is absorbed by bone armor.", "hash": "c6778006db39b898", "src": "db2@1.60.1.70009"}
+{"id": 1266681, "field": "name", "en": "Summon Skeletal Servant", "hash": "4b7bfb2e55e60278", "src": "db2@1.60.1.70009"}
+{"id": 1266681, "field": "description", "en": "Summons $s1 $lSkeletal Servant:Skeletal Servants; to accompany the caster until dismissed.", "hash": "2e4fdb3c6f182639", "src": "db2@1.60.1.70009"}
+{"id": 1266692, "field": "name", "en": "Safety Goggles", "hash": "f5af02f48988a50f", "src": "db2@1.60.1.70009"}
+{"id": 1266742, "field": "name", "en": "(DNT) Pearl Death Dummy", "hash": "8ca566e7125b91d5", "src": "db2@1.60.1.70009"}
+{"id": 1266744, "field": "name", "en": "(DNT) Kill Pearls", "hash": "e77a3cfa552cdef4", "src": "db2@1.60.1.70009"}
+{"id": 1266753, "field": "name", "en": "(DNT) Combat Pulse", "hash": "1b7357f578a16622", "src": "db2@1.60.1.70009"}
+{"id": 1266840, "field": "name", "en": "DNT Windshapers", "hash": "f98a44be802f9ffd", "src": "db2@1.60.1.70009"}
+{"id": 1266893, "field": "name", "en": "SAF-T Tabs", "hash": "5f103d968651390e", "src": "db2@1.60.1.70009"}
+{"id": 1266905, "field": "name", "en": "SAF-T Dynamite", "hash": "b8bdba31a3b25721", "src": "db2@1.60.1.70009"}
+{"id": 1266906, "field": "name", "en": "SAF-T Copper Bomb", "hash": "69d50df5d806557d", "src": "db2@1.60.1.70009"}
+{"id": 1266907, "field": "name", "en": "EZ-Thro Wrap", "hash": "bc6bfc440997e240", "src": "db2@1.60.1.70009"}
+{"id": 1266908, "field": "name", "en": "EZ-Thro Copper Bomb XL", "hash": "f30c7e05dbeea927", "src": "db2@1.60.1.70009"}
+{"id": 1266909, "field": "name", "en": "No Slip SAF-T Padding", "hash": "626aa09cbd594916", "src": "db2@1.60.1.70009"}
+{"id": 1266910, "field": "name", "en": "SAF-T Bronze Bomb", "hash": "4db3e710f7401716", "src": "db2@1.60.1.70009"}
+{"id": 1266911, "field": "name", "en": "SAF-T Jumbo Dynamite", "hash": "afbde7f157557a61", "src": "db2@1.60.1.70009"}
+{"id": 1266912, "field": "name", "en": "SAF-T Bell", "hash": "5ca7d9eba4e45e3d", "src": "db2@1.60.1.70009"}
+{"id": 1266913, "field": "name", "en": "Shafety Sheep", "hash": "b2536eca724174d0", "src": "db2@1.60.1.70009"}
+{"id": 1266914, "field": "name", "en": "EZ-Thro Fireproof Fuse", "hash": "93ffcdf823d5ba1a", "src": "db2@1.60.1.70009"}
+{"id": 1266915, "field": "name", "en": "EZ-Thro Bronze Mortar", "hash": "bf4f90940da5d3f1", "src": "db2@1.60.1.70009"}
+{"id": 1266916, "field": "name", "en": "EZ-Thro Grenade", "hash": "0ca9193be4715c40", "src": "db2@1.60.1.70009"}
+{"id": 1266917, "field": "name", "en": "SAF-T Casing", "hash": "e62ca4bcea4138c6", "src": "db2@1.60.1.70009"}
+{"id": 1266918, "field": "name", "en": "SAF-T Bomb", "hash": "5caa78becc97239e", "src": "db2@1.60.1.70009"}
+{"id": 1266919, "field": "name", "en": "Emergency Field Cloak", "hash": "9ce19f0a0d2193ef", "src": "db2@1.60.1.70009"}
+{"id": 1266920, "field": "name", "en": "Compact Critter Carrier", "hash": "13b08ca8e879e38c", "src": "db2@1.60.1.70009"}
+{"id": 1266921, "field": "name", "en": "EZ-Thro Tru-Trigger", "hash": "54a30ed69db3753f", "src": "db2@1.60.1.70009"}
+{"id": 1266922, "field": "name", "en": "Tru-Trigger Frag Bomb", "hash": "19922d57bc6e181a", "src": "db2@1.60.1.70009"}
+{"id": 1266923, "field": "name", "en": "SAF-T Disposable Parachute", "hash": "3b938c8933406a7c", "src": "db2@1.60.1.70009"}
+{"id": 1266924, "field": "name", "en": "Gnomish Army Knife", "hash": "526c421c487b1df7", "src": "db2@1.60.1.70009"}
+{"id": 1266925, "field": "name", "en": "Loot-A-Rang", "hash": "e6238b37bbd59db0", "src": "db2@1.60.1.70009"}
+{"id": 1266926, "field": "name", "en": "SAF-T Tube", "hash": "5f157a3cd5b68414", "src": "db2@1.60.1.70009"}
+{"id": 1266927, "field": "name", "en": "SAF-T Clever Dynamite", "hash": "27656d47c8dafc7f", "src": "db2@1.60.1.70009"}
+{"id": 1266928, "field": "name", "en": "EZ-Thro Shell", "hash": "23b541dee10ab836", "src": "db2@1.60.1.70009"}
+{"id": 1266929, "field": "name", "en": "EZ-Thro Thorium Grenade", "hash": "c12c35ced5e8f142", "src": "db2@1.60.1.70009"}
+{"id": 1266930, "field": "name", "en": "EZ-Thro Dark Bomb", "hash": "28c06a34e236ceb7", "src": "db2@1.60.1.70009"}
+{"id": 1266931, "field": "name", "en": "EZ-Thro Mana Bomb", "hash": "9a8fdb048db77f48", "src": "db2@1.60.1.70009"}
+{"id": 1266932, "field": "name", "en": "EZ-Thro Field Transporter: Gadgetzan", "hash": "16607a54bea93eed", "src": "db2@1.60.1.70009"}
+{"id": 1266933, "field": "name", "en": "SAF-T Emergency Ripper: Everlook", "hash": "d748982e7accdc46", "src": "db2@1.60.1.70009"}
+{"id": 1266934, "field": "name", "en": "EZ and SAF Field Transporter: Mt. Hyjal", "hash": "0d55e08bdf030715", "src": "db2@1.60.1.70009"}
+{"id": 1266935, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70009"}
+{"id": 1266936, "field": "name", "en": "Dimensional Transporter - Mt. Hyjal", "hash": "3fe3553d619798e1", "src": "db2@1.60.1.70009"}
+{"id": 1266937, "field": "name", "en": "Gnomish Poultryizer", "hash": "2193b63ceff2e18c", "src": "db2@1.60.1.70009"}
+{"id": 1266938, "field": "name", "en": "Ultralight Goblin Glider", "hash": "dcdf53dbc18205ca", "src": "db2@1.60.1.70009"}
+{"id": 1266939, "field": "name", "en": "Gnomish Weather Machine", "hash": "f836e8027d7af451", "src": "db2@1.60.1.70009"}
+{"id": 1266940, "field": "name", "en": "Stealthman 52", "hash": "1b6a33278ab1a7c6", "src": "db2@1.60.1.70009"}
+{"id": 1266941, "field": "name", "en": "SAF-T Nitro Boosts", "hash": "2a8457a05789ce28", "src": "db2@1.60.1.70009"}
+{"id": 1266942, "field": "name", "en": "EZ-Thro Magnetic Displacer", "hash": "ed811ca6ec37b4c9", "src": "db2@1.60.1.70009"}
+{"id": 1266943, "field": "name", "en": "SAF-T Teleport", "hash": "6176a9c3e31eebca", "src": "db2@1.60.1.70009"}
+{"id": 1266970, "field": "name", "en": "(DNT) Summon Adds", "hash": "7b8fa0d81fc81e06", "src": "db2@1.60.1.70009"}

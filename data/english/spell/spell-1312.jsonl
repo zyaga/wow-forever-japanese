@@ -1,0 +1,50 @@
+{"id": 1312002, "field": "name", "en": "Ice Lance", "hash": "0c5d877246da1893", "src": "db2@1.60.1.70009"}
+{"id": 1312002, "field": "description", "en": "Deals $s1 Frost damage to an enemy target. Deals $s2% increased damage to Frozen targets.", "hash": "3353dc3d98d751ef", "src": "db2@1.60.1.70009"}
+{"id": 1312009, "field": "name", "en": "Eating...", "hash": "45e4141be97ee0bb", "src": "db2@1.60.1.70009"}
+{"id": 1312010, "field": "name", "en": "Eating...", "hash": "45e4141be97ee0bb", "src": "db2@1.60.1.70009"}
+{"id": 1312052, "field": "name", "en": "Infernal Lasso", "hash": "07a60fe4118ca704", "src": "db2@1.60.1.70009"}
+{"id": 1312052, "field": "description", "en": "Deals $443265o1 Fire damage over $443265d to target Demon or Beast and Roots them in place for $d.  Damage caused may interrupt the effect.", "hash": "62cdb37b49731c6a", "src": "db2@1.60.1.70009"}
+{"id": 1312052, "field": "aura", "en": "Rooted.", "hash": "9bb1efcf10b38d14", "src": "db2@1.60.1.70009"}
+{"id": 1312128, "field": "name", "en": "Ranshalla's Torch Trap", "hash": "a73708a74d58e901", "src": "db2@1.60.1.70009"}
+{"id": 1312152, "field": "name", "en": "Tiger's Fury", "hash": "ae4896c360bd4329", "src": "db2@1.60.1.70009"}
+{"id": 1312176, "field": "name", "en": "Forge Blast", "hash": "cb6107b2c8d0d67b", "src": "db2@1.60.1.70009"}
+{"id": 1312176, "field": "description", "en": "Blast the target with the fires of a forge, inflicting $s1 Fire damage.", "hash": "05f874c39b416974", "src": "db2@1.60.1.70009"}
+{"id": 1312233, "field": "name", "en": "Open Care Package", "hash": "ee7fba29c01ea5d2", "src": "db2@1.60.1.70009"}
+{"id": 1312233, "field": "description", "en": "Open to receive level appropriate goods and equipment to aid your travels.\r\n\r\nEnsure you have ample inventory space before opening. Excess items can be retrieved from a mailbox.", "hash": "391fa0ec1766e1d3", "src": "db2@1.60.1.70009"}
+{"id": 1312330, "field": "name", "en": "Holy Smite", "hash": "c64a1c724bcc4e5c", "src": "db2@1.60.1.70009"}
+{"id": 1312330, "field": "description", "en": "Smite your target with the power of the holy spring, inflicting $s1 Holy damage.", "hash": "9b566f35a35c4398", "src": "db2@1.60.1.70009"}
+{"id": 1312340, "field": "name", "en": "Rooted", "hash": "3bd080d9e263d645", "src": "db2@1.60.1.70009"}
+{"id": 1312364, "field": "name", "en": "Awakening", "hash": "fe1748e19729e859", "src": "db2@1.60.1.70009"}
+{"id": 1312416, "field": "name", "en": "Send Event", "hash": "b171372686a1b1c8", "src": "db2@1.60.1.70009"}
+{"id": 1312438, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70009"}
+{"id": 1312438, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70009"}
+{"id": 1312637, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70009"}
+{"id": 1312637, "field": "description", "en": "Summons a hawk.", "hash": "69b2fb24573cc1a6", "src": "db2@1.60.1.70009"}
+{"id": 1312639, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70009"}
+{"id": 1312639, "field": "description", "en": "Summons a hawk.", "hash": "69b2fb24573cc1a6", "src": "db2@1.60.1.70009"}
+{"id": 1312643, "field": "name", "en": "Cultivation", "hash": "8a2d4345ed1f59e4", "src": "db2@1.60.1.70009"}
+{"id": 1312643, "field": "description", "en": "Cultivate a nearby herb to grow a duplicate you can harvest without requiring Herbalism skill.", "hash": "a74c67404905614e", "src": "db2@1.60.1.70009"}
+{"id": 1312650, "field": "name", "en": "Cultivation", "hash": "8a2d4345ed1f59e4", "src": "db2@1.60.1.70009"}
+{"id": 1312670, "field": "name", "en": "Crumbling Hearthstone", "hash": "b161ced11576e04a", "src": "db2@1.60.1.70009"}
+{"id": 1312670, "field": "description", "en": "Returns you to $?pc923[Orgrimmar][Stormwind]. Single-use.", "hash": "5a5581335fabb81e", "src": "db2@1.60.1.70009"}
+{"id": 1312698, "field": "name", "en": "Restored Healing Potion", "hash": "87cf6dc5ff413e48", "src": "db2@1.60.1.70009"}
+{"id": 1312698, "field": "description", "en": "Restores $s1% health.", "hash": "bfc764d330bfd9d0", "src": "db2@1.60.1.70009"}
+{"id": 1312702, "field": "name", "en": "Restored Mana Potion", "hash": "d9f41339d9aa86ee", "src": "db2@1.60.1.70009"}
+{"id": 1312702, "field": "description", "en": "Restores $s1% mana.", "hash": "ce81cf6a181687ba", "src": "db2@1.60.1.70009"}
+{"id": 1312719, "field": "name", "en": "Restorative Bread", "hash": "461748477038cf26", "src": "db2@1.60.1.70009"}
+{"id": 1312719, "field": "description", "en": "Restores $o3% health and $o1% Mana over $d. Must remain seated while drinking.", "hash": "c98bf5195be81742", "src": "db2@1.60.1.70009"}
+{"id": 1312719, "field": "aura", "en": "Restores $w3% health and $w1% Mana per second.", "hash": "6e474eda19c2ca84", "src": "db2@1.60.1.70009"}
+{"id": 1312745, "field": "name", "en": "BB Shot", "hash": "ab1f0257693db44c", "src": "db2@1.60.1.70009"}
+{"id": 1312745, "field": "description", "en": "Attempt to Stun other players who also have a Replica Ironforge Air Rifle equipped.", "hash": "71aea935c4e3039d", "src": "db2@1.60.1.70009"}
+{"id": 1312869, "field": "name", "en": "Leech Poison", "hash": "f9a147b2ab6ccdbb", "src": "db2@1.60.1.70009"}
+{"id": 1312869, "field": "description", "en": "Drains $s1 health from an enemy every $t1 sec. over $d., transferring it to the caster.", "hash": "b0cef2f4bde026b7", "src": "db2@1.60.1.70009"}
+{"id": 1312869, "field": "aura", "en": "$s1 health leeched every $t1 sec.", "hash": "b1b7cf5ffd1f2ce0", "src": "db2@1.60.1.70009"}
+{"id": 1312870, "field": "name", "en": "Poison Shock", "hash": "735a5606201c18a9", "src": "db2@1.60.1.70009"}
+{"id": 1312870, "field": "description", "en": "Inflicts $s1 Nature damage to enemies within $a1 yards of the current target.", "hash": "65f21cadd3b97990", "src": "db2@1.60.1.70009"}
+{"id": 1312880, "field": "name", "en": "Summon Baby Crocolisk", "hash": "5b3f7bb69c77b931", "src": "db2@1.60.1.70009"}
+{"id": 1312880, "field": "description", "en": "Right Click to summon and dismiss your baby crocolisk.", "hash": "14ea2ea0d9938dc7", "src": "db2@1.60.1.70009"}
+{"id": 1312934, "field": "name", "en": "Wake of Fire", "hash": "867d0a29f79403be", "src": "db2@1.60.1.70009"}
+{"id": 1312934, "field": "description", "en": "Fire Blast critical strike chance increased by $s1%.", "hash": "f62811d0799a743f", "src": "db2@1.60.1.70009"}
+{"id": 1312934, "field": "aura", "en": "Fire Blast critical strike chance increased by $w1%.", "hash": "f6b1483caf3a445d", "src": "db2@1.60.1.70009"}
+{"id": 1312955, "field": "name", "en": "Thorns", "hash": "b7f89a75651e4598", "src": "db2@1.60.1.70009"}
+{"id": 1312955, "field": "description", "en": "When struck in combat inflicts $s1 Fire damage to the attacker.", "hash": "d317fdaa94442904", "src": "db2@1.60.1.70009"}

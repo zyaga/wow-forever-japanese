@@ -1,0 +1,386 @@
+{"id": 23001, "field": "name", "en": "Eye of Diminution", "hash": "57d2166c7d73ea2e", "src": "db2@1.60.1.70009"}
+{"id": 23001, "field": "description", "en": "Reduces the threat you generate by $s1% for $d.", "hash": "bebe7ef8b672f7b9", "src": "db2@1.60.1.70009"}
+{"id": 23002, "field": "name", "en": "Turtle Box", "hash": "85653256e8c008c3", "src": "db2@1.60.1.70009"}
+{"id": 23002, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70009"}
+{"id": 23004, "field": "name", "en": "Idol of Longevity", "hash": "b702ad8b8c82a832", "src": "db2@1.60.1.70009"}
+{"id": 23004, "field": "description", "en": "Gain up to $28848s1 mana each time you cast Healing Touch.", "hash": "811b6c2804c8ffbb", "src": "db2@1.60.1.70009"}
+{"id": 23005, "field": "name", "en": "Totem of Flowing Water", "hash": "1487d8032403aa27", "src": "db2@1.60.1.70009"}
+{"id": 23005, "field": "description", "en": "Regain up to $28850s1 mana each time you cast Lesser Healing Wave.", "hash": "7048356f6b790a2a", "src": "db2@1.60.1.70009"}
+{"id": 23006, "field": "name", "en": "Libram of Light", "hash": "11cf3aa5ee81bb5a", "src": "db2@1.60.1.70009"}
+{"id": 23006, "field": "description", "en": "Increases healing done by Flash of Light by up to $s1.", "hash": "abe174b55fffb920", "src": "db2@1.60.1.70009"}
+{"id": 23007, "field": "name", "en": "Piglet's Collar", "hash": "df073cf46526148c", "src": "db2@1.60.1.70009"}
+{"id": 23007, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70009"}
+{"id": 23008, "field": "name", "en": "Sealed Research Report", "hash": "331ad29a7f6394dd", "src": "db2@1.60.1.70009"}
+{"id": 23010, "field": "name", "en": "Sealed Research Report", "hash": "331ad29a7f6394dd", "src": "db2@1.60.1.70009"}
+{"id": 23011, "field": "name", "en": "Sealed Research Report", "hash": "331ad29a7f6394dd", "src": "db2@1.60.1.70009"}
+{"id": 23012, "field": "name", "en": "Sealed Research Report", "hash": "331ad29a7f6394dd", "src": "db2@1.60.1.70009"}
+{"id": 23013, "field": "name", "en": "Sealed Research Report", "hash": "331ad29a7f6394dd", "src": "db2@1.60.1.70009"}
+{"id": 23015, "field": "name", "en": "Rat Cage", "hash": "ecce9e255cb6c980", "src": "db2@1.60.1.70009"}
+{"id": 23015, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70009"}
+{"id": 23016, "field": "name", "en": "Sealed Research Report", "hash": "331ad29a7f6394dd", "src": "db2@1.60.1.70009"}
+{"id": 23018, "field": "name", "en": "Signet of the Fallen Defender", "hash": "36040a5da0d47aef", "src": "db2@1.60.1.70009"}
+{"id": 23018, "field": "description", "en": "Improves your chance to hit by $s1%.", "hash": "8e26e0349a4f376b", "src": "wago@1.15.9.69722"}
+{"id": 23019, "field": "name", "en": "Icebane Helmet", "hash": "f3844bf2d8ebcaf1", "src": "db2@1.60.1.70009"}
+{"id": 23019, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
+{"id": 23020, "field": "name", "en": "Polar Helmet", "hash": "dd7feb2a76ae1da5", "src": "db2@1.60.1.70009"}
+{"id": 23022, "field": "name", "en": "Curmudgeon's Payoff", "hash": "cf35b41e64c31266", "src": "db2@1.60.1.70009"}
+{"id": 23022, "field": "description", "en": "A bag of 5 gold.  For those who like telling children there's no Great Father Winter...", "hash": "ec30f1fe9839dff1", "src": "db2@1.60.1.70009"}
+{"id": 23023, "field": "name", "en": "Sadist's Collar", "hash": "7114c42babf4e2b7", "src": "db2@1.60.1.70009"}
+{"id": 23023, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\n+$s1 Attack Power.", "hash": "c0dede9a4cc49524", "src": "wago@1.15.9.69722"}
+{"id": 23024, "field": "name", "en": "Prepared Field Duty Papers", "hash": "fdaec274e2a88411", "src": "db2@1.60.1.70009"}
+{"id": 23025, "field": "name", "en": "Seal of the Damned", "hash": "f452b7e032d1760d", "src": "db2@1.60.1.70009"}
+{"id": 23025, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to hit with spells by $s1%.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "8bf82b75dfbe81a5", "src": "wago@1.15.9.69722"}
+{"id": 23027, "field": "name", "en": "Warmth of Forgiveness", "hash": "54ce1b8c477c15b3", "src": "db2@1.60.1.70009"}
+{"id": 23027, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70009"}
+{"id": 23028, "field": "name", "en": "Hailstone Band", "hash": "bbcaaa846535207d", "src": "db2@1.60.1.70009"}
+{"id": 23028, "field": "description", "en": "Increases your chance to dodge an attack by $s1%.", "hash": "40869ada6166419a", "src": "wago@1.15.9.69722"}
+{"id": 23031, "field": "name", "en": "Band of the Inevitable", "hash": "fa93c59f58938c23", "src": "db2@1.60.1.70009"}
+{"id": 23031, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to hit with spells by $s1%.", "hash": "0900cf74bcfd1099", "src": "wago@1.15.9.69722"}
+{"id": 23032, "field": "name", "en": "Glacial Headdress", "hash": "32acef5eb20bca9f", "src": "db2@1.60.1.70009"}
+{"id": 23032, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23033, "field": "name", "en": "Icy Scale Coif", "hash": "cd28f8c12176868f", "src": "db2@1.60.1.70009"}
+{"id": 23034, "field": "name", "en": "Nax PH Crit Plate Shoulders", "hash": "3f32198187bc71c2", "src": "db2@1.60.1.70009"}
+{"id": 23034, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 23036, "field": "name", "en": "Necklace of Necropsy", "hash": "e8736eabee3efe2a", "src": "db2@1.60.1.70009"}
+{"id": 23036, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
+{"id": 23037, "field": "name", "en": "Ring of Spiritual Fervor", "hash": "5078792e3c18f6e1", "src": "db2@1.60.1.70009"}
+{"id": 23037, "field": "description", "en": "Restores $s1 mana per 5 sec.", "hash": "9ac76902e577cf95", "src": "wago@1.15.9.69722"}
+{"id": 23038, "field": "name", "en": "Band of Unnatural Forces", "hash": "e996f5145e76a14a", "src": "db2@1.60.1.70009"}
+{"id": 23038, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\nImproves your chance to hit by $s1%.\n+$s1 Attack Power.", "hash": "5b0e9439198be4d7", "src": "wago@1.15.9.69722"}
+{"id": 23040, "field": "name", "en": "Glyph of Deflection", "hash": "a740b0d61c167e1a", "src": "db2@1.60.1.70009"}
+{"id": 23040, "field": "description", "en": "Increases the block value of your shield by $s1 for $d.", "hash": "e7882b6ec45701df", "src": "db2@1.60.1.70009"}
+{"id": 23041, "field": "name", "en": "Slayer's Crest", "hash": "9f077b78e2b56631", "src": "db2@1.60.1.70009"}
+{"id": 23041, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70009"}
+{"id": 23042, "field": "name", "en": "Loatheb's Reflection", "hash": "5d795e2329cbe550", "src": "db2@1.60.1.70009"}
+{"id": 23042, "field": "description", "en": "Increases resistances to all schools of magic by $s1 for $d.", "hash": "94929c8c332bf787", "src": "db2@1.60.1.70009"}
+{"id": 23046, "field": "name", "en": "The Restrained Essence of Sapphiron", "hash": "b063ab09586e5752", "src": "db2@1.60.1.70009"}
+{"id": 23046, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1 for $d.", "hash": "c0d351812af879f2", "src": "db2@1.60.1.70009"}
+{"id": 23047, "field": "name", "en": "Eye of the Dead", "hash": "3791de2f594d4721", "src": "db2@1.60.1.70009"}
+{"id": 23047, "field": "description", "en": "Increases healing done by the next 5 spells by up to $s1 for $d.", "hash": "9695f8e365640e31", "src": "db2@1.60.1.70009"}
+{"id": 23053, "field": "name", "en": "Stormrage's Talisman of Seething", "hash": "377707fd4418b078", "src": "db2@1.60.1.70009"}
+{"id": 23053, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\n+$s1 Attack Power.", "hash": "c0dede9a4cc49524", "src": "wago@1.15.9.69722"}
+{"id": 23055, "field": "name", "en": "Word of Thawing", "hash": "bedf132f7515792e", "src": "db2@1.60.1.70009"}
+{"id": 23055, "field": "description", "en": "Use on a Frozen Rune to melt it free.", "hash": "c00443a2e16c1bcf", "src": "db2@1.60.1.70009"}
+{"id": 23057, "field": "name", "en": "Gem of Trapped Innocents", "hash": "b8e90c4bcbd2cebc", "src": "db2@1.60.1.70009"}
+{"id": 23057, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23058, "field": "name", "en": "Life Channeling Necklace", "hash": "17af1f107cb7b805", "src": "db2@1.60.1.70009"}
+{"id": 23058, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
+{"id": 23059, "field": "name", "en": "Ring of the Dreadnaught", "hash": "4daec212a1ab1be8", "src": "db2@1.60.1.70009"}
+{"id": 23059, "field": "description", "en": "Increases your chance to dodge an attack by $s1%.\nIncreased Defense +$s1.", "hash": "c1d8dbcf31791222", "src": "wago@1.15.9.69722"}
+{"id": 23060, "field": "name", "en": "Bonescythe Ring", "hash": "9e98559bb5c7995d", "src": "db2@1.60.1.70009"}
+{"id": 23060, "field": "description", "en": "Improves your chance to hit by $s1%.", "hash": "8e26e0349a4f376b", "src": "wago@1.15.9.69722"}
+{"id": 23061, "field": "name", "en": "Ring of Faith", "hash": "224b396bd96aec16", "src": "db2@1.60.1.70009"}
+{"id": 23061, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
+{"id": 23062, "field": "name", "en": "Frostfire Ring", "hash": "a51fa4151625e977", "src": "db2@1.60.1.70009"}
+{"id": 23062, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23063, "field": "name", "en": "Plagueheart Ring", "hash": "405fd0d2c0f5c8f1", "src": "db2@1.60.1.70009"}
+{"id": 23063, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23064, "field": "name", "en": "Ring of the Dreamwalker", "hash": "7e6a044f99067008", "src": "db2@1.60.1.70009"}
+{"id": 23064, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
+{"id": 23065, "field": "name", "en": "Ring of the Earthshatterer", "hash": "7e15779ca43686d8", "src": "db2@1.60.1.70009"}
+{"id": 23065, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
+{"id": 23066, "field": "name", "en": "Ring of Redemption", "hash": "146f946c944cf225", "src": "db2@1.60.1.70009"}
+{"id": 23066, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
+{"id": 23067, "field": "name", "en": "Ring of the Cryptstalker", "hash": "a8eebcd56ded7105", "src": "db2@1.60.1.70009"}
+{"id": 23067, "field": "description", "en": "Restores $s1 mana per 5 sec.", "hash": "9ac76902e577cf95", "src": "wago@1.15.9.69722"}
+{"id": 23078, "field": "name", "en": "Gauntlets of Undead Slaying", "hash": "a00e07a1e27ae031", "src": "db2@1.60.1.70009"}
+{"id": 23078, "field": "description", "en": "+$s1 Attack Power when fighting Undead.", "hash": "4e9aabb6e6cebf0e", "src": "wago@1.15.9.69722"}
+{"id": 23081, "field": "name", "en": "Handwraps of Undead Slaying", "hash": "fdfbe796819452fe", "src": "db2@1.60.1.70009"}
+{"id": 23081, "field": "description", "en": "+$s1 Attack Power when fighting Undead.", "hash": "4e9aabb6e6cebf0e", "src": "wago@1.15.9.69722"}
+{"id": 23082, "field": "name", "en": "Handguards of Undead Slaying", "hash": "3754524781df5bef", "src": "db2@1.60.1.70009"}
+{"id": 23082, "field": "description", "en": "+$s1 Attack Power when fighting Undead.", "hash": "4e9aabb6e6cebf0e", "src": "wago@1.15.9.69722"}
+{"id": 23083, "field": "name", "en": "Captured Flame", "hash": "00f64fcdcea6a3f3", "src": "db2@1.60.1.70009"}
+{"id": 23083, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70009"}
+{"id": 23084, "field": "name", "en": "Gloves of Undead Cleansing", "hash": "5d8a92e89ebe49a9", "src": "db2@1.60.1.70009"}
+{"id": 23084, "field": "description", "en": "Increases damage done to Undead by magical spells and effects by up to $s1.", "hash": "0674bbf7651ef656", "src": "wago@1.15.9.69722"}
+{"id": 23086, "field": "name", "en": "[UNUSED] Letter Cookie", "hash": "17d49ffb8a82bf10", "src": "db2@1.60.1.70009"}
+{"id": 23122, "field": "name", "en": "Consecrated Sharpening Stone", "hash": "3fc8cbf9acbc81f9", "src": "db2@1.60.1.70009"}
+{"id": 23122, "field": "description", "en": "While applied to target weapon it increases attack power against undead by 100. Lasts for 1 hour.", "hash": "c677f88b7e4e2b0e", "src": "db2@1.60.1.70009"}
+{"id": 23123, "field": "name", "en": "Blessed Wizard Oil", "hash": "628992afd80741cd", "src": "db2@1.60.1.70009"}
+{"id": 23123, "field": "description", "en": "While applied to target weapon it increases spell damage against undead by up to 60. Lasts for 1 hour.", "hash": "39d7c1a971d260e1", "src": "db2@1.60.1.70009"}
+{"id": 23125, "field": "name", "en": "Chains of the Lich", "hash": "56fc5b18cf56ce7e", "src": "db2@1.60.1.70009"}
+{"id": 23125, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23160, "field": "name", "en": "Friendship Bread", "hash": "420b4f2d21e6424a", "src": "db2@1.60.1.70009"}
+{"id": 23160, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70009"}
+{"id": 23161, "field": "name", "en": "Freshly-Squeezed Lemonade", "hash": "b5a5d6370929829a", "src": "db2@1.60.1.70009"}
+{"id": 23161, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70009"}
+{"id": 23162, "field": "name", "en": "A Very Large Bag", "hash": "1a721cf0e50b86f7", "src": "db2@1.60.1.70009"}
+{"id": 23163, "field": "name", "en": "Performer's Wand", "hash": "7b78bbd8689e5039", "src": "db2@1.60.1.70009"}
+{"id": 23163, "field": "description", "en": "Transforms target party memeber into a dancer!", "hash": "495123fe7913d548", "src": "db2@1.60.1.70009"}
+{"id": 23164, "field": "name", "en": "Bubbly Beverage", "hash": "12bf5135760918d4", "src": "db2@1.60.1.70009"}
+{"id": 23164, "field": "description", "en": "Raise a toast to your friend!", "hash": "00f6962db5131fc2", "src": "db2@1.60.1.70009"}
+{"id": 23169, "field": "name", "en": "Scorn's Icy Choker", "hash": "0fd10aae1e604694", "src": "db2@1.60.1.70009"}
+{"id": 23169, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23172, "field": "name", "en": "Refreshing Red Apple", "hash": "00da7c03da8a41ca", "src": "db2@1.60.1.70009"}
+{"id": 23172, "field": "description", "en": "Restores $s1% of your health and mana per second for $d.  Must remain seated while eating.\nThe perfect snack on a warm summer day.", "hash": "1e2b98bc9364dcc5", "src": "db2@1.60.1.70009"}
+{"id": 23175, "field": "name", "en": "Tasty Summer Treat", "hash": "d5a33d79f2ae2c21", "src": "db2@1.60.1.70009"}
+{"id": 23175, "field": "description", "en": "It's so good, you'll glow.", "hash": "1d7b63160d3df88b", "src": "db2@1.60.1.70009"}
+{"id": 23176, "field": "name", "en": "Fizzy Energy Drink", "hash": "f8bf2d1966009f4a", "src": "db2@1.60.1.70009"}
+{"id": 23176, "field": "description", "en": "Restores $25888o1 health and $25889o1 mana over $25888d.  Must remain seated while eating.  If you spend at least 10 seconds eating you will become refreshed and gain $25941s1 Mana every 5 seconds for $25941d.", "hash": "47b43b351bb51ef1", "src": "db2@1.60.1.70009"}
+{"id": 23179, "field": "name", "en": "Flame of Orgrimmar", "hash": "4dd0bca19a304f97", "src": "db2@1.60.1.70009"}
+{"id": 23180, "field": "name", "en": "Flame of Thunder Bluff", "hash": "090fa96d4be8232d", "src": "db2@1.60.1.70009"}
+{"id": 23181, "field": "name", "en": "Flame of the Undercity", "hash": "488b0f14e917d4db", "src": "db2@1.60.1.70009"}
+{"id": 23182, "field": "name", "en": "Flame of Stormwind", "hash": "a62dd849c7ab9eb2", "src": "db2@1.60.1.70009"}
+{"id": 23183, "field": "name", "en": "Flame of Ironforge", "hash": "166e79a31c8105b2", "src": "db2@1.60.1.70009"}
+{"id": 23184, "field": "name", "en": "Flame of Darnassus", "hash": "535447b6a32f8f6c", "src": "db2@1.60.1.70009"}
+{"id": 23193, "field": "name", "en": "Skeletal Steed Reins", "hash": "351e48fade0fb270", "src": "db2@1.60.1.70009"}
+{"id": 23193, "field": "description", "en": "Summons and dismisses a skeletal steed.  This is a very fast mount.", "hash": "ee22e62b3690edc9", "src": "wago@1.15.9.69722"}
+{"id": 23194, "field": "name", "en": "Lesser Mark of the Dawn", "hash": "c8a5162baf1e5f32", "src": "db2@1.60.1.70009"}
+{"id": 23194, "field": "description", "en": "Increases Stamina for 1 hour.", "hash": "6b6d247c3abdb731", "src": "db2@1.60.1.70009"}
+{"id": 23195, "field": "name", "en": "Mark of the Dawn", "hash": "14970d518592e228", "src": "db2@1.60.1.70009"}
+{"id": 23195, "field": "description", "en": "Increases Stamina for 1 hour.", "hash": "6b6d247c3abdb731", "src": "db2@1.60.1.70009"}
+{"id": 23196, "field": "name", "en": "Greater Mark of the Dawn", "hash": "5276263785c14176", "src": "db2@1.60.1.70009"}
+{"id": 23196, "field": "description", "en": "Increases Stamina for 1 hour.", "hash": "6b6d247c3abdb731", "src": "db2@1.60.1.70009"}
+{"id": 23197, "field": "name", "en": "Idol of the Moon", "hash": "9596beaea09f3bbb", "src": "db2@1.60.1.70009"}
+{"id": 23197, "field": "description", "en": "Increases the damage of your Moonfire spell by up to $s1.", "hash": "f093d9c6b172e768", "src": "db2@1.60.1.70009"}
+{"id": 23199, "field": "name", "en": "Totem of the Storm", "hash": "4edbc3cc2a2e4e1d", "src": "db2@1.60.1.70009"}
+{"id": 23199, "field": "description", "en": "Increases damage done by Chain Lightning and Lightning Bolt by up to $s1.", "hash": "64a6c301f6dec75d", "src": "db2@1.60.1.70009"}
+{"id": 23203, "field": "name", "en": "Libram of Fervor", "hash": "f337619d3bde20ae", "src": "db2@1.60.1.70009"}
+{"id": 23203, "field": "description", "en": "Increases the melee attack power bonus of your Seal of the Crusader by $s1 and the Holy damage increase of your Judgement of the Crusader by $s2.", "hash": "61d51513dd9e94b0", "src": "db2@1.60.1.70009"}
+{"id": 23206, "field": "name", "en": "Mark of the Champion", "hash": "7e91c813ce3137cb", "src": "db2@1.60.1.70009"}
+{"id": 23206, "field": "description", "en": "+$s1 Attack Power when fighting Undead and Demons.  It also allows the acquisition of Scourgestones on behalf of the Argent Dawn.", "hash": "dbacf565a46f2e1f", "src": "wago@1.15.9.69722"}
+{"id": 23207, "field": "name", "en": "Mark of the Champion", "hash": "7e91c813ce3137cb", "src": "db2@1.60.1.70009"}
+{"id": 23207, "field": "description", "en": "Increases damage done to Undead and Demons by magical spells and effects by up to $s1.  It also allows the acquisition of Scourgestones on behalf of the Argent Dawn.", "hash": "9bc563beb9de093b", "src": "wago@1.15.9.69722"}
+{"id": 23211, "field": "name", "en": "Toasted Smorc", "hash": "7a20c8583c54818b", "src": "db2@1.60.1.70009"}
+{"id": 23211, "field": "description", "en": "Increases healing done by magical spells by up to $s1 for $d.\nGooey, melty, good.", "hash": "2b05349034260143", "src": "db2@1.60.1.70009"}
+{"id": 23215, "field": "name", "en": "Bag of Smorc Ingredients", "hash": "016b6b111757d44a", "src": "db2@1.60.1.70009"}
+{"id": 23215, "field": "description", "en": "Creates 5 Toasted Smorcs when used at a cooking fire.\nSweet honey crackers, marshmallow and chocolate.", "hash": "d36a0c4f103e6648", "src": "db2@1.60.1.70009"}
+{"id": 23224, "field": "name", "en": "Summer Gift Package", "hash": "9cc1ab4f20904daf", "src": "db2@1.60.1.70009"}
+{"id": 23227, "field": "name", "en": "iCoke Gift Box Voucher", "hash": "51baef1a2becf2f8", "src": "db2@1.60.1.70009"}
+{"id": 23227, "field": "description", "en": "Return to the iCoke redemption vendor to receive a gift box", "hash": "a89eb554db467025", "src": "db2@1.60.1.70009"}
+{"id": 23237, "field": "name", "en": "Ring of the Eternal Flame", "hash": "46f05a398cea3d84", "src": "db2@1.60.1.70009"}
+{"id": 23237, "field": "description", "en": "Increases damage done by Fire spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "edbcaa38d9adfbcf", "src": "wago@1.15.9.69722"}
+{"id": 23243, "field": "name", "en": "Champion's Plate Shoulders", "hash": "b4838ccf37dfa2aa", "src": "db2@1.60.1.70009"}
+{"id": 23243, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 23244, "field": "name", "en": "Champion's Plate Helm", "hash": "11ea20d6f09e78ce", "src": "db2@1.60.1.70009"}
+{"id": 23244, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\nImproves your chance to hit by $s1%.", "hash": "4b843fecfd5749a4", "src": "wago@1.15.9.69722"}
+{"id": 23245, "field": "name", "en": "[PH] Everburning Elixir", "hash": "973ed46a42851518", "src": "db2@1.60.1.70009"}
+{"id": 23246, "field": "name", "en": "Fiery Festival Brew", "hash": "2b3b16378254e7d5", "src": "db2@1.60.1.70009"}
+{"id": 23246, "field": "description", "en": "Sets your breath aflame!", "hash": "1b3cf3191561c29c", "src": "db2@1.60.1.70009"}
+{"id": 23247, "field": "name", "en": "Burning Blossom", "hash": "87e80da89cfff0e1", "src": "db2@1.60.1.70009"}
+{"id": 23247, "field": "description", "en": "Toss into a Fire Festival Bonfire!", "hash": "7a8d34abc69fb079", "src": "db2@1.60.1.70009"}
+{"id": 23250, "field": "name", "en": "Prismatic Shell", "hash": "17b805fee850956a", "src": "db2@1.60.1.70009"}
+{"id": 23251, "field": "name", "en": "Champion's Chain Helm", "hash": "decaeb498c8a5a80", "src": "db2@1.60.1.70009"}
+{"id": 23251, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 23252, "field": "name", "en": "Champion's Chain Shoulders", "hash": "aead3411272d4ebb", "src": "db2@1.60.1.70009"}
+{"id": 23252, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 23253, "field": "name", "en": "Champion's Dragonhide Headguard", "hash": "cbb58588f4f64fd2", "src": "db2@1.60.1.70009"}
+{"id": 23253, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23254, "field": "name", "en": "Champion's Dragonhide Shoulders", "hash": "730851cb77691903", "src": "db2@1.60.1.70009"}
+{"id": 23254, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23255, "field": "name", "en": "Champion's Dreadweave Cowl", "hash": "efa6b5ab3beb4b4e", "src": "db2@1.60.1.70009"}
+{"id": 23255, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23256, "field": "name", "en": "Champion's Dreadweave Spaulders", "hash": "0dffdc22af7b00b9", "src": "db2@1.60.1.70009"}
+{"id": 23256, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23257, "field": "name", "en": "Champion's Leather Helm", "hash": "57cc39e724e70a05", "src": "db2@1.60.1.70009"}
+{"id": 23257, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\nImproves your chance to hit by $s1%.\n+$s1 Attack Power.", "hash": "5b0e9439198be4d7", "src": "wago@1.15.9.69722"}
+{"id": 23258, "field": "name", "en": "Champion's Leather Shoulders", "hash": "30d0b020aa17f7d0", "src": "db2@1.60.1.70009"}
+{"id": 23258, "field": "description", "en": "+$s1 Attack Power.\nImproves your chance to get a critical strike by $s1%.\nImproves your chance to hit by $s1%.", "hash": "cc660641f7478fd3", "src": "wago@1.15.9.69722"}
+{"id": 23259, "field": "name", "en": "Champion's Mail Headguard", "hash": "6c19d232be88ad72", "src": "db2@1.60.1.70009"}
+{"id": 23259, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "68bc8486471be505", "src": "wago@1.15.9.69722"}
+{"id": 23260, "field": "name", "en": "Champion's Mail Pauldrons", "hash": "4c0f00f85fc670c3", "src": "db2@1.60.1.70009"}
+{"id": 23260, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23261, "field": "name", "en": "Champion's Satin Hood", "hash": "66040291d1333c72", "src": "db2@1.60.1.70009"}
+{"id": 23261, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
+{"id": 23262, "field": "name", "en": "Champion's Satin Mantle", "hash": "96882bf2550fa31f", "src": "db2@1.60.1.70009"}
+{"id": 23262, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
+{"id": 23263, "field": "name", "en": "Champion's Silk Cowl", "hash": "4fcce5681872df5d", "src": "db2@1.60.1.70009"}
+{"id": 23263, "field": "description", "en": "Improves your chance to get a critical strike with spells by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "e90f8d5758c9972a", "src": "wago@1.15.9.69722"}
+{"id": 23264, "field": "name", "en": "Champion's Silk Mantle", "hash": "4a77426c244f598c", "src": "db2@1.60.1.70009"}
+{"id": 23264, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23271, "field": "name", "en": "QATest Darkmoon Faire Tickets", "hash": "068231371daf5228", "src": "db2@1.60.1.70009"}
+{"id": 23272, "field": "name", "en": "Knight-Captain's Lamellar Breastplate", "hash": "2b42f521ba3a538f", "src": "db2@1.60.1.70009"}
+{"id": 23272, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23273, "field": "name", "en": "Knight-Captain's Lamellar Leggings", "hash": "71fad7ce7f44f243", "src": "db2@1.60.1.70009"}
+{"id": 23273, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23274, "field": "name", "en": "Knight-Lieutenant's Lamellar Gauntlets", "hash": "a3a2ffbced365cf7", "src": "db2@1.60.1.70009"}
+{"id": 23274, "field": "description", "en": "Increases the Holy damage bonus of your Judgement of the Crusader by $s1.", "hash": "1ec269cf07ac0080", "src": "db2@1.60.1.70009"}
+{"id": 23275, "field": "name", "en": "Knight-Lieutenant's Lamellar Sabatons", "hash": "c340ac1676c44889", "src": "db2@1.60.1.70009"}
+{"id": 23275, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23276, "field": "name", "en": "Lieutenant Commander's Lamellar Headguard", "hash": "9e4cafb1f80ee1a5", "src": "db2@1.60.1.70009"}
+{"id": 23276, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23277, "field": "name", "en": "Lieutenant Commander's Lamellar Shoulders", "hash": "459f7bf47a81aad6", "src": "db2@1.60.1.70009"}
+{"id": 23277, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23278, "field": "name", "en": "Knight-Lieutenant's Chain Greaves", "hash": "22482d40ef8b510e", "src": "db2@1.60.1.70009"}
+{"id": 23279, "field": "name", "en": "Knight-Lieutenant's Chain Vices", "hash": "c3948310322159af", "src": "db2@1.60.1.70009"}
+{"id": 23279, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70009"}
+{"id": 23280, "field": "name", "en": "Knight-Lieutenant's Dragonhide Grips", "hash": "5ea1b679b8a76534", "src": "db2@1.60.1.70009"}
+{"id": 23280, "field": "description", "en": "Increases your effective stealth detection level by ${$s1/5}.", "hash": "56868fcba461b542", "src": "db2@1.60.1.70009"}
+{"id": 23281, "field": "name", "en": "Knight-Lieutenant's Dragonhide Treads", "hash": "31eb0cce4332c249", "src": "db2@1.60.1.70009"}
+{"id": 23281, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23282, "field": "name", "en": "Knight-Lieutenant's Dreadweave Handwraps", "hash": "9799d14eee2043ba", "src": "db2@1.60.1.70009"}
+{"id": 23282, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70009"}
+{"id": 23283, "field": "name", "en": "Knight-Lieutenant's Dreadweave Walkers", "hash": "00807cb92b6d19ce", "src": "db2@1.60.1.70009"}
+{"id": 23283, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23284, "field": "name", "en": "Knight-Lieutenant's Leather Grips", "hash": "3d67f50a4fbf4f5d", "src": "db2@1.60.1.70009"}
+{"id": 23284, "field": "description", "en": "+$s1 Attack Power.\nImproves your chance to get a critical strike by $s1%.", "hash": "508ab5e45e005408", "src": "wago@1.15.9.69722"}
+{"id": 23285, "field": "name", "en": "Knight-Lieutenant's Leather Walkers", "hash": "2925e2a1d0954608", "src": "db2@1.60.1.70009"}
+{"id": 23285, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70009"}
+{"id": 23286, "field": "name", "en": "Knight-Lieutenant's Plate Gauntlets", "hash": "1e62765ca7920a2f", "src": "db2@1.60.1.70009"}
+{"id": 23286, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70009"}
+{"id": 23287, "field": "name", "en": "Knight-Lieutenant's Plate Greaves", "hash": "9579becc8b7ec5f0", "src": "db2@1.60.1.70009"}
+{"id": 23288, "field": "name", "en": "Knight-Lieutenant's Satin Handwraps", "hash": "995d87fb6be9a4d3", "src": "db2@1.60.1.70009"}
+{"id": 23288, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70009"}
+{"id": 23289, "field": "name", "en": "Knight-Lieutenant's Satin Walkers", "hash": "520e64efd020f64c", "src": "db2@1.60.1.70009"}
+{"id": 23289, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23290, "field": "name", "en": "Knight-Lieutenant's Silk Handwraps", "hash": "318a195a5955c3ba", "src": "db2@1.60.1.70009"}
+{"id": 23290, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70009"}
+{"id": 23291, "field": "name", "en": "Knight-Lieutenant's Silk Walkers", "hash": "23bb2fd3d07f33c6", "src": "db2@1.60.1.70009"}
+{"id": 23291, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to hit with spells by $s1%.", "hash": "0900cf74bcfd1099", "src": "wago@1.15.9.69722"}
+{"id": 23292, "field": "name", "en": "Knight-Captain's Chain Hauberk", "hash": "19722b3010125e9c", "src": "db2@1.60.1.70009"}
+{"id": 23292, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 23293, "field": "name", "en": "Knight-Captain's Chain Legguards", "hash": "3ed4dde875c29f2c", "src": "db2@1.60.1.70009"}
+{"id": 23293, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 23294, "field": "name", "en": "Knight-Captain's Dragonhide Chestpiece", "hash": "bf37f32f9dfe4a6d", "src": "db2@1.60.1.70009"}
+{"id": 23294, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "e2031290ca3d6b8b", "src": "wago@1.15.9.69722"}
+{"id": 23295, "field": "name", "en": "Knight-Captain's Dragonhide Leggings", "hash": "c8e9139de29a06bf", "src": "db2@1.60.1.70009"}
+{"id": 23295, "field": "description", "en": "Improves your chance to get a critical strike with spells by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "e90f8d5758c9972a", "src": "wago@1.15.9.69722"}
+{"id": 23296, "field": "name", "en": "Knight-Captain's Dreadweave Legguards", "hash": "615fbc5b7b986fb7", "src": "db2@1.60.1.70009"}
+{"id": 23296, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23297, "field": "name", "en": "Knight-Captain's Dreadweave Tunic", "hash": "41269c7a6b5182c8", "src": "db2@1.60.1.70009"}
+{"id": 23297, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23298, "field": "name", "en": "Knight-Captain's Leather Chestpiece", "hash": "d194b375a4cfc0d8", "src": "db2@1.60.1.70009"}
+{"id": 23298, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\nImproves your chance to hit by $s1%.\n+$s1 Attack Power.", "hash": "5b0e9439198be4d7", "src": "wago@1.15.9.69722"}
+{"id": 23299, "field": "name", "en": "Knight-Captain's Leather Legguards", "hash": "541baaf30df9c1e6", "src": "db2@1.60.1.70009"}
+{"id": 23299, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\nImproves your chance to hit by $s1%.\n+$s1 Attack Power.", "hash": "5b0e9439198be4d7", "src": "wago@1.15.9.69722"}
+{"id": 23300, "field": "name", "en": "Knight-Captain's Plate Hauberk", "hash": "8ca3bcbcac05d36d", "src": "db2@1.60.1.70009"}
+{"id": 23300, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 23301, "field": "name", "en": "Knight-Captain's Plate Leggings", "hash": "3f6b01791c8450d7", "src": "db2@1.60.1.70009"}
+{"id": 23301, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 23302, "field": "name", "en": "Knight-Captain's Satin Legguards", "hash": "2f2851020af6fd62", "src": "db2@1.60.1.70009"}
+{"id": 23302, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
+{"id": 23303, "field": "name", "en": "Knight-Captain's Satin Tunic", "hash": "2e102d3f37de24e7", "src": "db2@1.60.1.70009"}
+{"id": 23303, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
+{"id": 23304, "field": "name", "en": "Knight-Captain's Silk Legguards", "hash": "a34e4362f605de6e", "src": "db2@1.60.1.70009"}
+{"id": 23304, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23305, "field": "name", "en": "Knight-Captain's Silk Tunic", "hash": "5949b0af4c520da3", "src": "db2@1.60.1.70009"}
+{"id": 23305, "field": "description", "en": "Improves your chance to get a critical strike with spells by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "e90f8d5758c9972a", "src": "wago@1.15.9.69722"}
+{"id": 23306, "field": "name", "en": "Lieutenant Commander's Chain Helm", "hash": "7a5b0a3b6989b37d", "src": "db2@1.60.1.70009"}
+{"id": 23306, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 23307, "field": "name", "en": "Lieutenant Commander's Chain Shoulders", "hash": "6564d983031bfe05", "src": "db2@1.60.1.70009"}
+{"id": 23307, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 23308, "field": "name", "en": "Lieutenant Commander's Dragonhide Headguard", "hash": "e72808d839dccf57", "src": "db2@1.60.1.70009"}
+{"id": 23308, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23309, "field": "name", "en": "Lieutenant Commander's Dragonhide Shoulders", "hash": "8e7ad51bbc4f9877", "src": "db2@1.60.1.70009"}
+{"id": 23309, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23310, "field": "name", "en": "Lieutenant Commander's Dreadweave Cowl", "hash": "a65e5b1d17d9fa98", "src": "db2@1.60.1.70009"}
+{"id": 23310, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23311, "field": "name", "en": "Lieutenant Commander's Dreadweave Spaulders", "hash": "29725f72f461802d", "src": "db2@1.60.1.70009"}
+{"id": 23311, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23312, "field": "name", "en": "Lieutenant Commander's Leather Helm", "hash": "87f622e8b8912637", "src": "db2@1.60.1.70009"}
+{"id": 23312, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\nImproves your chance to hit by $s1%.\n+$s1 Attack Power.", "hash": "5b0e9439198be4d7", "src": "wago@1.15.9.69722"}
+{"id": 23313, "field": "name", "en": "Lieutenant Commander's Leather Shoulders", "hash": "ad91f72d95186a16", "src": "db2@1.60.1.70009"}
+{"id": 23313, "field": "description", "en": "+$s1 Attack Power.\nImproves your chance to get a critical strike by $s1%.\nImproves your chance to hit by $s1%.", "hash": "cc660641f7478fd3", "src": "wago@1.15.9.69722"}
+{"id": 23314, "field": "name", "en": "Lieutenant Commander's Plate Helm", "hash": "ad7a3fc3cd9dd1cb", "src": "db2@1.60.1.70009"}
+{"id": 23314, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\nImproves your chance to hit by $s1%.", "hash": "4b843fecfd5749a4", "src": "wago@1.15.9.69722"}
+{"id": 23315, "field": "name", "en": "Lieutenant Commander's Plate Shoulders", "hash": "6b3b324113ce51f4", "src": "db2@1.60.1.70009"}
+{"id": 23315, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
+{"id": 23316, "field": "name", "en": "Lieutenant Commander's Satin Hood", "hash": "01942183ae32956f", "src": "db2@1.60.1.70009"}
+{"id": 23316, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
+{"id": 23317, "field": "name", "en": "Lieutenant Commander's Satin Mantle", "hash": "c6b214f3e8b9bf51", "src": "db2@1.60.1.70009"}
+{"id": 23317, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
+{"id": 23318, "field": "name", "en": "Lieutenant Commander's Silk Cowl", "hash": "56d9b8b2011b2a62", "src": "db2@1.60.1.70009"}
+{"id": 23318, "field": "description", "en": "Improves your chance to get a critical strike with spells by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "e90f8d5758c9972a", "src": "wago@1.15.9.69722"}
+{"id": 23319, "field": "name", "en": "Lieutenant Commander's Silk Mantle", "hash": "e537173e4c82e8cd", "src": "db2@1.60.1.70009"}
+{"id": 23319, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23320, "field": "name", "en": "Tablet of Flame Shock VI", "hash": "8ee2b63a25935bc8", "src": "db2@1.60.1.70009"}
+{"id": 23320, "field": "description", "en": "Teaches Flame Shock (Rank 6).", "hash": "b1c14582fa5debd0", "src": "db2@1.60.1.70009"}
+{"id": 23323, "field": "name", "en": "Crown of the Fire Festival", "hash": "cd317f34e7c8476b", "src": "db2@1.60.1.70009"}
+{"id": 23324, "field": "name", "en": "Mantle of the Fire Festival", "hash": "4ad64cd09fd5ab2d", "src": "db2@1.60.1.70009"}
+{"id": 23325, "field": "name", "en": "[PH] Picnic Parcel", "hash": "19da608bccb2707c", "src": "db2@1.60.1.70009"}
+{"id": 23326, "field": "name", "en": "Midsummer Sausage", "hash": "c14b664c13265167", "src": "db2@1.60.1.70009"}
+{"id": 23326, "field": "description", "en": "Increases damage done from spells by up to $s1 for $d.", "hash": "9493fcf3c727b08b", "src": "db2@1.60.1.70009"}
+{"id": 23327, "field": "name", "en": "Fire-toasted Bun", "hash": "84e7d7add46eadc1", "src": "db2@1.60.1.70009"}
+{"id": 23327, "field": "description", "en": "Improves your chance to hit with attacks by $s1% for $d.", "hash": "1ec673b1fe5dc19b", "src": "db2@1.60.1.70009"}
+{"id": 23328, "field": "name", "en": "Monster - Sword2H, Instructor Razuvious", "hash": "a269f1874c212808", "src": "db2@1.60.1.70009"}
+{"id": 23356, "field": "name", "en": "Monster - Shield, Skullflame", "hash": "bcc35bdc79ed6ade", "src": "db2@1.60.1.70009"}
+{"id": 23360, "field": "name", "en": "Head of Instructor Razuvious", "hash": "5d04c8463b9d147f", "src": "db2@1.60.1.70009"}
+{"id": 23369, "field": "name", "en": "Monster - Dagger, Claw of Chromaggus", "hash": "e88240ce2b8bc331", "src": "db2@1.60.1.70009"}
+{"id": 23379, "field": "name", "en": "Cinder Bracers", "hash": "31cca0c323a3a3b7", "src": "db2@1.60.1.70009"}
+{"id": 23379, "field": "description", "en": "Summons a Cinder Elemental that will protect you for $d.", "hash": "f1360f592a06d7d3", "src": "db2@1.60.1.70009"}
+{"id": 23435, "field": "name", "en": "Elderberry Pie", "hash": "51d079facef1e02c", "src": "db2@1.60.1.70009"}
+{"id": 23435, "field": "description", "en": "Increases Defense by $s1 for $d.", "hash": "d0d42e0befba0272", "src": "db2@1.60.1.70009"}
+{"id": 23451, "field": "name", "en": "Grand Marshal's Mageblade", "hash": "ce129b917fee4139", "src": "db2@1.60.1.70009"}
+{"id": 23451, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23452, "field": "name", "en": "Grand Marshal's Tome of Power", "hash": "6ff65dbafdc45a1c", "src": "db2@1.60.1.70009"}
+{"id": 23452, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23453, "field": "name", "en": "Grand Marshal's Tome of Restoration", "hash": "e599a258d6acf1a1", "src": "db2@1.60.1.70009"}
+{"id": 23453, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
+{"id": 23454, "field": "name", "en": "Grand Marshal's Warhammer", "hash": "a9c0032b1a66b4b5", "src": "db2@1.60.1.70009"}
+{"id": 23454, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
+{"id": 23455, "field": "name", "en": "Grand Marshal's Demolisher", "hash": "4285ddb21b902bf3", "src": "db2@1.60.1.70009"}
+{"id": 23455, "field": "description", "en": "Restores $s1 mana per 5 sec.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "eac6e2c74569368f", "src": "wago@1.15.9.69722"}
+{"id": 23456, "field": "name", "en": "Grand Marshal's Swiftblade", "hash": "357f4534495d9d7a", "src": "db2@1.60.1.70009"}
+{"id": 23456, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\n+$s1 Attack Power.", "hash": "c0dede9a4cc49524", "src": "wago@1.15.9.69722"}
+{"id": 23464, "field": "name", "en": "High Warlord's Battle Mace", "hash": "ebe26bfafa65c9dd", "src": "db2@1.60.1.70009"}
+{"id": 23464, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
+{"id": 23465, "field": "name", "en": "High Warlord's Destroyer", "hash": "dad81ff6b70c8175", "src": "db2@1.60.1.70009"}
+{"id": 23465, "field": "description", "en": "Restores $s1 mana per 5 sec.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "eac6e2c74569368f", "src": "wago@1.15.9.69722"}
+{"id": 23466, "field": "name", "en": "High Warlord's Spellblade", "hash": "f4e085ed00390530", "src": "db2@1.60.1.70009"}
+{"id": 23466, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with spells by $s1%.", "hash": "36f3777079f5887a", "src": "wago@1.15.9.69722"}
+{"id": 23467, "field": "name", "en": "High Warlord's Quickblade", "hash": "47db2453d67e3f79", "src": "db2@1.60.1.70009"}
+{"id": 23467, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\n+$s1 Attack Power.", "hash": "c0dede9a4cc49524", "src": "wago@1.15.9.69722"}
+{"id": 23468, "field": "name", "en": "High Warlord's Tome of Destruction", "hash": "ca97ed81115a2df2", "src": "db2@1.60.1.70009"}
+{"id": 23468, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 23469, "field": "name", "en": "High Warlord's Tome of Mending", "hash": "7090097587900e05", "src": "db2@1.60.1.70009"}
+{"id": 23469, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
+{"id": 23545, "field": "name", "en": "Power of the Scourge", "hash": "adf9c7febf62a92d", "src": "db2@1.60.1.70009"}
+{"id": 23545, "field": "description", "en": "Permanently adds to a shoulder slot item increased damage and healing done by magical spells and effects up to 15 and also increases your chance to land a critical strike with spells by 1%.", "hash": "2deb93236377e60e", "src": "db2@1.60.1.70009"}
+{"id": 23547, "field": "name", "en": "Resilience of the Scourge", "hash": "32795d5fac9c1c2d", "src": "db2@1.60.1.70009"}
+{"id": 23547, "field": "description", "en": "Permanently adds to a shoulder slot item increased healing done by magical spells and effects up to 31 and also increases your mana regen by 5 mana per 5 sec.", "hash": "25ae565707903206", "src": "db2@1.60.1.70009"}
+{"id": 23548, "field": "name", "en": "Might of the Scourge", "hash": "f3847b29d71225b3", "src": "db2@1.60.1.70009"}
+{"id": 23548, "field": "description", "en": "Permanently adds to a shoulder slot item increased Attack Power by 26 and also increases your chance to land a critical strike by 1%.", "hash": "51ea091ce013249d", "src": "db2@1.60.1.70009"}
+{"id": 23549, "field": "name", "en": "Fortitude of the Scourge", "hash": "9808ba77334d09f8", "src": "db2@1.60.1.70009"}
+{"id": 23549, "field": "description", "en": "Permanently adds to a shoulder slot item increased Stamina by 16 and also grants 100 armor. ", "hash": "71e030cbaaddce1f", "src": "db2@1.60.1.70009"}
+{"id": 23557, "field": "name", "en": "Larvae of the Great Worm", "hash": "36cf40c069bfd877", "src": "db2@1.60.1.70009"}
+{"id": 23557, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\n+$s1 Attack Power.", "hash": "c0dede9a4cc49524", "src": "wago@1.15.9.69722"}
+{"id": 23558, "field": "name", "en": "The Burrower's Shell", "hash": "57a0821ba30f1ad6", "src": "db2@1.60.1.70009"}
+{"id": 23558, "field": "description", "en": "Absorbs $s1 damage.  Lasts $d.", "hash": "f34dd2e9c1727a0f", "src": "db2@1.60.1.70009"}
+{"id": 23567, "field": "name", "en": "DEPRECATED ITEM", "hash": "eacdc418b023f226", "src": "db2@1.60.1.70009"}
+{"id": 23570, "field": "name", "en": "Jom Gabbar", "hash": "817420c0a60ec08a", "src": "db2@1.60.1.70009"}
+{"id": 23570, "field": "description", "en": "Increases attack power by $29604s1 and an additional $29604s1 every $t1 sec.  Lasts $d.", "hash": "621677b5d2744a75", "src": "db2@1.60.1.70009"}
+{"id": 23578, "field": "name", "en": "Diet McWeaksauce", "hash": "06fcc01fe97c3f8a", "src": "db2@1.60.1.70009"}
+{"id": 23578, "field": "description", "en": "Restores $s1 mana.\nFood for the Mind", "hash": "8007fce9ff2a7f7d", "src": "db2@1.60.1.70009"}
+{"id": 23579, "field": "name", "en": "The McWeaksauce Classic", "hash": "bb623f2ca7a9bf9a", "src": "db2@1.60.1.70009"}
+{"id": 23579, "field": "description", "en": "Restores $s1 health.\nThe Original.", "hash": "b20d85a005885ca7", "src": "db2@1.60.1.70009"}
+{"id": 23582, "field": "name", "en": "Monster - Lady Blameux", "hash": "628d0bcbe05c0fa9", "src": "db2@1.60.1.70009"}
+{"id": 23583, "field": "name", "en": "Monster - Sir Zeliek", "hash": "ef868fe32eeb41dd", "src": "db2@1.60.1.70009"}
+{"id": 23656, "field": "name", "en": "Promotion Test Item", "hash": "6bdc2eb1227ea63d", "src": "db2@1.60.1.70009"}
+{"id": 23684, "field": "name", "en": "Crystal Infused Bandage", "hash": "6a5cd60f4e341e8f", "src": "db2@1.60.1.70009"}
+{"id": 23684, "field": "description", "en": "Heals $o1 damage over $d.", "hash": "cb31688fb831630b", "src": "db2@1.60.1.70009"}
+{"id": 23696, "field": "name", "en": "[PH] Potion of Heightened Senses [DEP]", "hash": "36df13e8bcea3244", "src": "db2@1.60.1.70009"}
+{"id": 23696, "field": "description", "en": "Decreases your chance to be crit by $s1%.", "hash": "1c1c96f6c784f584", "src": "db2@1.60.1.70009"}
+{"id": 23698, "field": "name", "en": "[PH] Nature Resist Potion [DEP]", "hash": "818d92edc05b5a20", "src": "db2@1.60.1.70009"}
+{"id": 23699, "field": "name", "en": "[PH] Light Consumable [DEP]", "hash": "53d3e9d52b6b9b84", "src": "db2@1.60.1.70009"}
+{"id": 23700, "field": "name", "en": "[PH] Glorious Standard of the Alliance [DEP]", "hash": "cfba859db4bdb69f", "src": "db2@1.60.1.70009"}
+{"id": 23701, "field": "name", "en": "[PH] Victorious Standard of the Horde [DEP]", "hash": "06fc1a524442cb50", "src": "db2@1.60.1.70009"}
+{"id": 23705, "field": "name", "en": "Tabard of Flame", "hash": "0e0245576a4015a5", "src": "db2@1.60.1.70009"}
+{"id": 23709, "field": "name", "en": "Tabard of Frost", "hash": "0ed3c498f24441b5", "src": "db2@1.60.1.70009"}
+{"id": 23710, "field": "name", "en": "Upperdeck Tabard #3", "hash": "ab6cf0b63909b303", "src": "db2@1.60.1.70009"}
+{"id": 23712, "field": "name", "en": "White Tiger Cub", "hash": "294361888a8b22dd", "src": "db2@1.60.1.70009"}
+{"id": 23712, "field": "description", "en": "Right Click to summon and dismiss your tiger cub.", "hash": "f9a3ddc75bc83cc6", "src": "wago@1.15.9.69722"}
+{"id": 23713, "field": "name", "en": "Hippogryph Hatchling", "hash": "d3c992b9763571fc", "src": "db2@1.60.1.70009"}
+{"id": 23713, "field": "description", "en": "Right Click to summon and dismiss your hippogryph hatchling.", "hash": "6a69107e66f1ab89", "src": "wago@1.15.9.69722"}
+{"id": 23714, "field": "name", "en": "Perpetual Purple Firework", "hash": "87c17c0515a62090", "src": "db2@1.60.1.70009"}
+{"id": 23714, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand purple stars.", "hash": "1b689c11fbd4a3c4", "src": "db2@1.60.1.70009"}
+{"id": 23715, "field": "name", "en": "Permanent Lung Juice Cocktail", "hash": "d509b0e066314069", "src": "db2@1.60.1.70009"}
+{"id": 23715, "field": "description", "en": "Increases Stamina by $s1 when consumed.\n100% Grade A Lung Juice - Freshly Squeezed", "hash": "16a3fd0ce41fb02c", "src": "db2@1.60.1.70009"}
+{"id": 23716, "field": "name", "en": "Carved Ogre Idol", "hash": "bcc8ed6fb42c02fa", "src": "db2@1.60.1.70009"}
+{"id": 23716, "field": "description", "en": "Become a hulking purple ogre for $d!", "hash": "eb8f41378d195280", "src": "db2@1.60.1.70009"}
+{"id": 23718, "field": "name", "en": "Permanent Ground Scorpok Assay", "hash": "9bfd1600086c402f", "src": "db2@1.60.1.70009"}
+{"id": 23718, "field": "description", "en": "Increases Agility by $s1 when consumed.", "hash": "fe3c93a784fa300e", "src": "db2@1.60.1.70009"}
+{"id": 23719, "field": "name", "en": "Permanent Cerebral Cortex Compound", "hash": "5ee48815d2bf4cfd", "src": "db2@1.60.1.70009"}
+{"id": 23719, "field": "description", "en": "Increases Intellect by $s1 when consumed.\nBest Served Chilled", "hash": "6589bb302fccc303", "src": "db2@1.60.1.70009"}
+{"id": 23720, "field": "name", "en": "Riding Turtle", "hash": "53d5157b6b4efbca", "src": "db2@1.60.1.70009"}
+{"id": 23720, "field": "description", "en": "Summons and dismisses a rideable turtle. It may be slow, but it gets you off your feet!", "hash": "8e1d1387e836e4d6", "src": "wago@1.15.9.69722"}
+{"id": 23721, "field": "name", "en": "Permanent Gizzard Gum", "hash": "7b3a2400dd48ea33", "src": "db2@1.60.1.70009"}
+{"id": 23721, "field": "description", "en": "Increases Spirit by $s1 when consumed.\nStrawberry Flavor", "hash": "a26c88b8a2224b98", "src": "db2@1.60.1.70009"}
+{"id": 23722, "field": "name", "en": "Permanent R.O.I.D.S.", "hash": "9f2873cad694ae3c", "src": "db2@1.60.1.70009"}
+{"id": 23722, "field": "description", "en": "Increases Strength by $s1 when consumed.\nRobust Operational Imbue Derived From Snickerfang", "hash": "f6979e69f5222747", "src": "db2@1.60.1.70009"}
+{"id": 23743, "field": "name", "en": "Monster - Sword 1H - Widow's Remorse", "hash": "1ace220bee3f3ad7", "src": "db2@1.60.1.70009"}
+{"id": 23794, "field": "name", "en": "Permanent Sheen of Zanza", "hash": "5f616bc544617060", "src": "db2@1.60.1.70009"}
+{"id": 23794, "field": "description", "en": "Increases the chance that the player will reflect hostile spells cast on them by $s1% for $d. Will automatically reflect the first offensive spell cast against the user. Only one type of Zanza potion may be active at any given time.\nBlessed with the mojo of Zanza!", "hash": "92c023c43f7f150e", "src": "db2@1.60.1.70009"}
+{"id": 23795, "field": "name", "en": "Permanent Spirit of Zanza", "hash": "7b3c6f6c78531e8b", "src": "db2@1.60.1.70009"}
+{"id": 23795, "field": "description", "en": "Increases the player's Spirit by $s1 and Stamina by $s2 for $d.  You can only have the effect of one Zanza potion at a time.\nBlessed with the mojo of Zanza!", "hash": "ef95e1d70e208328", "src": "db2@1.60.1.70009"}
+{"id": 23796, "field": "name", "en": "Permanent Swiftness of Zanza", "hash": "44ae61b586f8d685", "src": "db2@1.60.1.70009"}
+{"id": 23796, "field": "description", "en": "Increases the player's run speed by $s1% for $d.  You can only have the effect of one Zanza potion at a time.\nBlessed with the mojo of Zanza!", "hash": "bac16bb63c2a907f", "src": "db2@1.60.1.70009"}

@@ -1,0 +1,129 @@
+{
+ "build": 69913,
+ "placeholders": [
+  802
+ ],
+ "quests": [
+  {
+   "id": 1665,
+   "title": "Bartleby's Mug",
+   "objectives": "Bring Bartleby's Mug to Burlguard",
+   "description": "Ok, here's my mug.  Wait!  Let me finish what's in it first... there we go.",
+   "area": "",
+   "objective_texts": [],
+   "conditional": []
+  },
+  {
+   "id": 5679,
+   "title": "Dark Sacrifice",
+   "objectives": "",
+   "description": "",
+   "area": "",
+   "objective_texts": [],
+   "conditional": []
+  },
+  {
+   "id": 6843,
+   "title": "Da Foo",
+   "objectives": "",
+   "description": "",
+   "area": "",
+   "objective_texts": [],
+   "conditional": []
+  },
+  {
+   "id": 76160,
+   "title": "Stalk With The Earthmother",
+   "objectives": "Gather 8 Windfury Cones north of Thunder Bluff, use them with the Mortar and Pestle, then return to Boarton Shadetotem in Thunder Bluff with the result.",
+   "description": "Maybe your skills lie with poisons, not disguises. The Harpies to the north nest in a tree which produces a resin of potent toxicity. Gather the fallen cones around the nests, then crush them into a salve. When applied to a blade this salve will sear your opponent's wounds into their flesh and turn their blood to salt.",
+   "area": "",
+   "objective_texts": [],
+   "conditional": []
+  },
+  {
+   "id": 84399,
+   "title": "Ka-Boom!",
+   "objectives": "",
+   "description": "",
+   "area": "",
+   "objective_texts": [],
+   "conditional": []
+  },
+  {
+   "id": 91900,
+   "title": "A Sealed Crate",
+   "objectives": "",
+   "description": "",
+   "area": "",
+   "objective_texts": [],
+   "conditional": []
+  },
+  {
+   "id": 92596,
+   "title": "The High Order",
+   "objectives": "Have a seat and speak with Rathiril Sunlance.",
+   "description": "The aura of arcane energy that surrounds you is strong, even though you are not initiated as a mage. I am quite sure that you are going to be a capable adventurer, and your connection with our ancient magic will only ever be a boon to you even if you were to never utter a single word of power in spellcasting.\r\n\r\nCome, let us sit and speak some on my order, the nature of the arcane here on Zephras, and the plight of our people.",
+   "area": "",
+   "objective_texts": [
+    [
+     465191,
+     "Listen to Rathiril Sunlance"
+    ]
+   ],
+   "conditional": [
+    [
+     137886,
+     0,
+     "The aura of arcane energy that surrounds you is strong, even for a mage such as yourself. \r\n\r\nCome, let us sit and speak some on the nature of the arcane and the plight of our homeland."
+    ]
+   ]
+  },
+  {
+   "id": 92709,
+   "title": "A Grand Adventure",
+   "objectives": "Listen to what Elaadrin Evengale in Valanaar has to say.",
+   "description": "Your highborne lineage shines as clearly in your eyes as the sky above. You are one of us, and its youth like yourself that will help us save our home. But first, let me tell you more of our mission and plans here on Zephras... and beyond.",
+   "area": "",
+   "objective_texts": [
+    [
+     478338,
+     "Listen to Elaadrin"
+    ]
+   ],
+   "conditional": []
+  },
+  {
+   "id": 93165,
+   "title": "Mercy Falls on Deaf Ears",
+   "objectives": "Collect 10 Al'Aketh Cultist's Ears from the Al'Aketh cultists in Shadowgale Forest, the Shine of Akir, or Gustberry Lowlands.",
+   "description": "The Al'Aketh have visited great tragedy upon our enclave, and blood must be repaid with blood.\r\n\r\nI have an offer for you, stranger. Should you find conflict with these accursed cultists, bring me the ears of those you kill. I will reward you for each that you return with in both coin and, in time, access to the Nightclaw's secrets should you prove yourself to be a true friend.",
+   "area": "",
+   "objective_texts": [],
+   "conditional": []
+  },
+  {
+   "id": 94978,
+   "title": "Taming the Beast",
+   "objectives": "Use the Taming Rod to tame a Windsong Crawler found near bodies of water. \r\nPractice your skills, then return the Taming Rod to Quel'ana Quickgale in Valanaar.",
+   "description": "Every hunter begins by learning the bond between beast and master. This is your first challenge. In time, you'll tame creatures from every corner of the world, but for now, start with our rivers and lakes on Zephras. \r\n\r\nTake this Taming Rod and seek out a Windsong Crawler.\r\n\r\nShow that you can earn its trust, and begin your path toward true mastery.",
+   "area": "Tame a Windsong Crawler",
+   "objective_texts": [],
+   "conditional": [
+    [
+     0,
+     0,
+     ""
+    ]
+   ]
+  },
+  {
+   "id": 95771,
+   "title": "A Taste of Darkness",
+   "objectives": "",
+   "description": "",
+   "area": "Scout through the Fargodeep Mine",
+   "objective_texts": [],
+   "conditional": []
+  }
+ ]
+}

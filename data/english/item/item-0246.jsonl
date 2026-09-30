@@ -1,0 +1,40 @@
+{"id": 246055, "field": "name", "en": "Inquisition Grips", "hash": "9c3f2191bede9a48", "src": "db2@1.60.1.70009"}
+{"id": 246055, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.", "hash": "6e7b75d96ee64b17", "src": "wago@1.15.9.69722"}
+{"id": 246056, "field": "name", "en": "Inquisition Armbraces", "hash": "f7dc26409f2a7fb9", "src": "db2@1.60.1.70009"}
+{"id": 246056, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all Holy spells by $s1%.", "hash": "07dca1ece31ce098", "src": "wago@1.15.9.69722"}
+{"id": 246057, "field": "name", "en": "Inquisition Stompers", "hash": "bfd88c9188d2eb6a", "src": "db2@1.60.1.70009"}
+{"id": 246057, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "1bd1913616bf5b94", "src": "wago@1.15.9.69722"}
+{"id": 246058, "field": "name", "en": "Inquisition Plate Pants", "hash": "e4b5ea5869ad392a", "src": "db2@1.60.1.70009"}
+{"id": 246058, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d50216388a114100", "src": "wago@1.15.9.69722"}
+{"id": 246059, "field": "name", "en": "Inquisition Cord", "hash": "d5a94f8730d54444", "src": "db2@1.60.1.70009"}
+{"id": 246059, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.", "hash": "b5076406ec660751", "src": "wago@1.15.9.69722"}
+{"id": 246060, "field": "name", "en": "Inquisition Cuirass", "hash": "2404251819f05e5b", "src": "db2@1.60.1.70009"}
+{"id": 246060, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.\nImproves your chance to hit with all Holy spells by $s1%.", "hash": "3fe1bb92cda989f5", "src": "wago@1.15.9.69722"}
+{"id": 246061, "field": "name", "en": "Inquisition Epaulets", "hash": "2f80f51512e761fb", "src": "db2@1.60.1.70009"}
+{"id": 246061, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "d4e6c356e3b10b99", "src": "wago@1.15.9.69722"}
+{"id": 246062, "field": "name", "en": "Inquisition Faceguard", "hash": "c9e8a5c96d2a1807", "src": "db2@1.60.1.70009"}
+{"id": 246062, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d4dcbd0ed7146a0a", "src": "wago@1.15.9.69722"}
+{"id": 246164, "field": "name", "en": "Skullthumper", "hash": "20f9065916b06177", "src": "db2@1.60.1.70009"}
+{"id": 246165, "field": "name", "en": "Driftwood Smasher", "hash": "afebdb26c9082aa6", "src": "db2@1.60.1.70009"}
+{"id": 246213, "field": "name", "en": "Sturdy Lumber", "hash": "3ff744bb71bdd97a", "src": "db2@1.60.1.70009"}
+{"id": 246213, "field": "description", "en": "A shipment of lumber from Stranglethorn Vale that can be of use to your faction in Arathi Highlands.", "hash": "2b313da58c3b640d", "src": "db2@1.60.1.70009"}
+{"id": 246265, "field": "name", "en": "Salvaged Wooden Tower Shield", "hash": "ba668288560cd46b", "src": "db2@1.60.1.70009"}
+{"id": 246377, "field": "name", "en": "Monster - Sword, 1h - Kirin Tor", "hash": "81b4ebf7770b28c3", "src": "db2@1.60.1.70009"}
+{"id": 246680, "field": "name", "en": "Mana-Siphoning Wand", "hash": "0388d7d3d4ee6f97", "src": "db2@1.60.1.70009"}
+{"id": 246683, "field": "name", "en": "Treasure Trowel 3000", "hash": "f23d6926dada2738", "src": "db2@1.60.1.70009"}
+{"id": 246683, "field": "description", "en": "Dig up treasure.", "hash": "954d90f3819ca76f", "src": "db2@1.60.1.70009"}
+{"id": 246684, "field": "name", "en": "Highborne Treasure Fragment", "hash": "58cce1c984c8b388", "src": "db2@1.60.1.70009"}
+{"id": 246721, "field": "name", "en": "Seal of the Warrior", "hash": "c7e6380d01a88da6", "src": "db2@1.60.1.70009"}
+{"id": 246722, "field": "name", "en": "Seal of the Ranger", "hash": "b5af530a19f6dcd0", "src": "db2@1.60.1.70009"}
+{"id": 246725, "field": "name", "en": "Seal of the Warden", "hash": "9fcd3a77db5e33f4", "src": "db2@1.60.1.70009"}
+{"id": 246770, "field": "name", "en": "Sin'dorei Tome of Summoning", "hash": "48bef3b200ce955f", "src": "db2@1.60.1.70009"}
+{"id": 246778, "field": "name", "en": "Sin'dorei Tome of Summoning", "hash": "48bef3b200ce955f", "src": "db2@1.60.1.70009"}
+{"id": 246778, "field": "description", "en": "Summon Vek'zol.", "hash": "98732f71ddc7689e", "src": "db2@1.60.1.70009"}
+{"id": 246780, "field": "name", "en": "Heart of Vek'zol", "hash": "d91aa28c2ebd2816", "src": "db2@1.60.1.70009"}
+{"id": 246885, "field": "name", "en": "Soft Cow Doll", "hash": "a060c58baf8aebb2", "src": "db2@1.60.1.70009"}
+{"id": 246885, "field": "description", "en": "You can tell that this doll was well-loved.", "hash": "c2c629ba9df837d6", "src": "db2@1.60.1.70009"}
+{"id": 246888, "field": "name", "en": "Humongous Crystal", "hash": "88db9385acbe592f", "src": "db2@1.60.1.70009"}
+{"id": 246888, "field": "description", "en": "A fist-sized hunk of crystal with a pale blue luster.", "hash": "f7d2875540d067ae", "src": "db2@1.60.1.70009"}
+{"id": 246938, "field": "name", "en": "Tear of Mennar", "hash": "a89792433660588f", "src": "db2@1.60.1.70009"}
+{"id": 246948, "field": "name", "en": "Distilled Firewater", "hash": "16a0280c50b653a5", "src": "db2@1.60.1.70009"}
+{"id": 246948, "field": "description", "en": "Increases your melee attack power by $s1 and size for $d.", "hash": "1f3c4cc7717a4e8e", "src": "db2@1.60.1.70009"}

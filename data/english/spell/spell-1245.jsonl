@@ -1,0 +1,64 @@
+{"id": 1245010, "field": "name", "en": "Shadow Bolts", "hash": "d11a8c02626c276f", "src": "db2@1.60.1.70009"}
+{"id": 1245011, "field": "name", "en": "Shadow Bolts", "hash": "d11a8c02626c276f", "src": "db2@1.60.1.70009"}
+{"id": 1245086, "field": "name", "en": "Frost Bolts", "hash": "56f6496f3b5f84ec", "src": "db2@1.60.1.70009"}
+{"id": 1245088, "field": "name", "en": "Frost Bolts", "hash": "56f6496f3b5f84ec", "src": "db2@1.60.1.70009"}
+{"id": 1245095, "field": "name", "en": "Best Served Cold", "hash": "df556102a39e8ce7", "src": "db2@1.60.1.70009"}
+{"id": 1245095, "field": "description", "en": "Absorbs Clawbert's unusual powers, modifying certain abilities.", "hash": "0829e231221579a1", "src": "db2@1.60.1.70009"}
+{"id": 1245095, "field": "aura", "en": "Enraged.", "hash": "8be4b6b8a7fd191a", "src": "db2@1.60.1.70009"}
+{"id": 1245113, "field": "name", "en": "Lightning Bolts", "hash": "64ebcf9542cc8dda", "src": "db2@1.60.1.70009"}
+{"id": 1245114, "field": "name", "en": "Lightning Bolts", "hash": "64ebcf9542cc8dda", "src": "db2@1.60.1.70009"}
+{"id": 1245119, "field": "name", "en": "Bestial Roar", "hash": "b057ec2634215a78", "src": "db2@1.60.1.70009"}
+{"id": 1245119, "field": "description", "en": "Reduces damage dealt by $s1% for $d.\r\n", "hash": "de4730734e20e94e", "src": "db2@1.60.1.70009"}
+{"id": 1245119, "field": "aura", "en": "Damage reduced by $s1% for $d.", "hash": "8f49b409ee92fd6d", "src": "db2@1.60.1.70009"}
+{"id": 1245130, "field": "name", "en": "Flame Roar", "hash": "462b664708b6fef1", "src": "db2@1.60.1.70009"}
+{"id": 1245130, "field": "description", "en": "Dealis fire damage every $p for $d to all players within $rad# yards.", "hash": "d301ea39803c5fe9", "src": "db2@1.60.1.70009"}
+{"id": 1245130, "field": "aura", "en": "Dealing fire damage every $p for $d.", "hash": "3e796639882835b2", "src": "db2@1.60.1.70009"}
+{"id": 1245154, "field": "name", "en": "Thunder Roar", "hash": "e670c714e197b1ea", "src": "db2@1.60.1.70009"}
+{"id": 1245154, "field": "description", "en": "Delivers a powerful roar, stunning all players within $R1 for $d. ", "hash": "9134fedce85c58c3", "src": "db2@1.60.1.70009"}
+{"id": 1245154, "field": "aura", "en": "Stunned for $d.", "hash": "de1d20c53673ead4", "src": "db2@1.60.1.70009"}
+{"id": 1245158, "field": "name", "en": "Item Script Test [DNT]", "hash": "744e283729dbe848", "src": "db2@1.60.1.70009"}
+{"id": 1245158, "field": "description", "en": "Attempt to fetch info about the target item. DNT", "hash": "66547e3fec7b9e1d", "src": "db2@1.60.1.70009"}
+{"id": 1245164, "field": "name", "en": "Vicious Maul", "hash": "e4d92e223e1bf6b6", "src": "db2@1.60.1.70009"}
+{"id": 1245164, "field": "description", "en": "Causes the target to bleed, inflicting $s1 physical damage every $t2 sec for $d.", "hash": "12a48d0422574153", "src": "db2@1.60.1.70009"}
+{"id": 1245164, "field": "aura", "en": "Inflicts $s1 physical damage every $t2 sec for $d.", "hash": "a90998c645092f56", "src": "db2@1.60.1.70009"}
+{"id": 1245244, "field": "name", "en": "Minor Arcane Elixir", "hash": "d39f0349d6691e73", "src": "db2@1.60.1.70009"}
+{"id": 1245244, "field": "description", "en": "Increases spell damage by up to $s1 for $d.", "hash": "bfd948e79e2ad268", "src": "db2@1.60.1.70009"}
+{"id": 1245244, "field": "aura", "en": "Magical damage dealt by spells and abilities is increased by up to $s1.", "hash": "a5bf5341273beb75", "src": "db2@1.60.1.70009"}
+{"id": 1245246, "field": "name", "en": "Minor Arcane Elixir", "hash": "d39f0349d6691e73", "src": "db2@1.60.1.70009"}
+{"id": 1245249, "field": "name", "en": "Elixir of Minor Force", "hash": "021d6fb7e86d32a0", "src": "db2@1.60.1.70009"}
+{"id": 1245249, "field": "description", "en": "Increases Physical damage by $s1 for $d.", "hash": "aefc85daf80886f1", "src": "db2@1.60.1.70009"}
+{"id": 1245249, "field": "aura", "en": "Increased melee damage by $s1.", "hash": "3366aaa788a954ae", "src": "db2@1.60.1.70009"}
+{"id": 1245250, "field": "name", "en": "Elixir of Minor Force", "hash": "021d6fb7e86d32a0", "src": "db2@1.60.1.70009"}
+{"id": 1245287, "field": "name", "en": "Copper Rod", "hash": "a132f97526668fb0", "src": "db2@1.60.1.70009"}
+{"id": 1245288, "field": "name", "en": "[DNT] Summon Large Noxious Slimes", "hash": "1238ffa6c2ce3117", "src": "db2@1.60.1.70009"}
+{"id": 1245320, "field": "name", "en": "Dust to Motes", "hash": "ae572984d582e4f2", "src": "db2@1.60.1.70009"}
+{"id": 1245320, "field": "description", "en": "Divides 1 pile of Strange Dust into $s1 Motes of Magic.", "hash": "5b1b13eb336b8b67", "src": "db2@1.60.1.70009"}
+{"id": 1245321, "field": "name", "en": "Novice's Practice Wand", "hash": "c05ed3592eb44cff", "src": "db2@1.60.1.70009"}
+{"id": 1245321, "field": "description", "en": "Creates a lesser magic wand.", "hash": "a031b8d50eac8aca", "src": "db2@1.60.1.70009"}
+{"id": 1245324, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70009"}
+{"id": 1245324, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70009"}
+{"id": 1245338, "field": "name", "en": "Feral Spirit", "hash": "51fbb4a935668193", "src": "db2@1.60.1.70009"}
+{"id": 1245338, "field": "description", "en": "Summons two spirit wolves.", "hash": "8de3676954029186", "src": "db2@1.60.1.70009"}
+{"id": 1245340, "field": "name", "en": "Feral Spirit", "hash": "51fbb4a935668193", "src": "db2@1.60.1.70009"}
+{"id": 1245340, "field": "description", "en": "$@spelldesc<1245338>", "hash": "32dbe8e902d53886", "src": "db2@1.60.1.70009"}
+{"id": 1245536, "field": "name", "en": "Instakill Self", "hash": "8c969d552a09c24e", "src": "db2@1.60.1.70009"}
+{"id": 1245608, "field": "name", "en": "Mining Skill", "hash": "5c2c042526e3070c", "src": "db2@1.60.1.70009"}
+{"id": 1245608, "field": "description", "en": "Increases your Mining skill by $m1. Cannot raise Mining skill over $m2. You will learn Mining if it is not already trained and you do not already know two other professions.", "hash": "85844474093e58ac", "src": "db2@1.60.1.70009"}
+{"id": 1245609, "field": "name", "en": "Herbalism Skill", "hash": "08e03c0cddeab411", "src": "db2@1.60.1.70009"}
+{"id": 1245609, "field": "description", "en": "Increases your Herbalism skill by $m1. Cannot raise Herbalism skill over $m2. You will learn Herbalism if it is not already trained and you do not already know two other professions.", "hash": "0f7bd4a7f904c674", "src": "db2@1.60.1.70009"}
+{"id": 1245610, "field": "name", "en": "Skinning Skill", "hash": "92fe92bfdbb34210", "src": "db2@1.60.1.70009"}
+{"id": 1245610, "field": "description", "en": "Increases your Skinning skill by $m1. Cannot raise Skinning skill over $m2. You will learn Skinning if it is not already trained and you do not already know two other professions.\r\n", "hash": "0f033a921108c5d6", "src": "db2@1.60.1.70009"}
+{"id": 1245683, "field": "name", "en": "Fel Pervasion Visual", "hash": "26951ade6fa5c67c", "src": "db2@1.60.1.70009"}
+{"id": 1245705, "field": "name", "en": "Summon Minimus Tentaculus", "hash": "94af9d39d704a97d", "src": "db2@1.60.1.70009"}
+{"id": 1245705, "field": "description", "en": "Right Click to summon and dismiss Minimus Tentaculus. Minimus Tentaculus enjoys devouring other tiny creatures to absorb their power.", "hash": "caa0df459b686ab3", "src": "db2@1.60.1.70009"}
+{"id": 1245713, "field": "name", "en": "Critter-Killer", "hash": "5b2896279fec8234", "src": "db2@1.60.1.70009"}
+{"id": 1245714, "field": "name", "en": "Find Target", "hash": "fb1d48d4ff7f4890", "src": "db2@1.60.1.70009"}
+{"id": 1245747, "field": "name", "en": "Shadow Channeling - Channel Cast Visual", "hash": "1f290b8cf7396718", "src": "db2@1.60.1.70009"}
+{"id": 1245883, "field": "name", "en": "Purge", "hash": "8c14805c0e655d91", "src": "db2@1.60.1.70009"}
+{"id": 1245883, "field": "description", "en": "Stuns an enemy, preventing it from moving or taking action for $d. Also removes one random buff from the affected enemy.", "hash": "8c5bf7025297a655", "src": "db2@1.60.1.70009"}
+{"id": 1245883, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
+{"id": 1245940, "field": "name", "en": "Bloodlust", "hash": "b9545f229ef97d79", "src": "db2@1.60.1.70009"}
+{"id": 1245940, "field": "description", "en": "Increases haste by $S1%. ", "hash": "8d6292037c92c340", "src": "db2@1.60.1.70009"}
+{"id": 1245940, "field": "aura", "en": "Haste increased by $S1%.", "hash": "225377971a650b8c", "src": "db2@1.60.1.70009"}
+{"id": 1245956, "field": "name", "en": "Flame Shock", "hash": "f8d691540a59fd4f", "src": "db2@1.60.1.70009"}
+{"id": 1245956, "field": "description", "en": "Inflicts $S1 Fire damage to the current target.", "hash": "8f3e70f069ee8557", "src": "db2@1.60.1.70009"}

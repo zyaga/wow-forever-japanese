@@ -1,0 +1,6 @@
+# Client targets. `wfj toc-check` asserts the TOC's `## Interface` equals [forever].interface.
+# Read from the client itself: the beta's `GetBuildInfo()` returns interface 16001 on build 1.60.1.69893.
+# Forever is the only target (ADR-034); Classic Era is an input to the import, not a target.
+[forever]
+interface = 16001
+tested = "in-game GetBuildInfo(), build 1.60.1.70009, 2026-09-25 (16001 since 1.60.1.69893)"

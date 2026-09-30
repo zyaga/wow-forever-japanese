@@ -1,0 +1,166 @@
+{"id": 1250013, "field": "name", "en": "Summon Lashling", "hash": "6a7520c843a9d7bf", "src": "db2@1.60.1.70009"}
+{"id": 1250013, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70009"}
+{"id": 1250014, "field": "name", "en": "Summon Lashling", "hash": "6a7520c843a9d7bf", "src": "db2@1.60.1.70009"}
+{"id": 1250014, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70009"}
+{"id": 1250015, "field": "name", "en": "Summon Lashling", "hash": "6a7520c843a9d7bf", "src": "db2@1.60.1.70009"}
+{"id": 1250015, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70009"}
+{"id": 1250016, "field": "name", "en": "Summon Lashling", "hash": "6a7520c843a9d7bf", "src": "db2@1.60.1.70009"}
+{"id": 1250016, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70009"}
+{"id": 1250053, "field": "name", "en": "Self Explosion", "hash": "2d81b3ec8f355250", "src": "db2@1.60.1.70009"}
+{"id": 1250056, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70009"}
+{"id": 1250060, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70009"}
+{"id": 1250142, "field": "name", "en": "Savory Stag Sliders", "hash": "849b291e08f1a581", "src": "db2@1.60.1.70009"}
+{"id": 1250143, "field": "name", "en": "Soaring Pamplona", "hash": "2f2668268779d663", "src": "db2@1.60.1.70009"}
+{"id": 1250144, "field": "name", "en": "Bat Hachee", "hash": "cc52939f31a8653c", "src": "db2@1.60.1.70009"}
+{"id": 1250145, "field": "name", "en": "Savory Turtle Stew", "hash": "f1b5c85817c78f54", "src": "db2@1.60.1.70009"}
+{"id": 1250146, "field": "name", "en": "Flank au Poivre", "hash": "359b561f692d7335", "src": "db2@1.60.1.70009"}
+{"id": 1250147, "field": "name", "en": "Bear Bruscitti", "hash": "b77e35a5d0f2239d", "src": "db2@1.60.1.70009"}
+{"id": 1250148, "field": "name", "en": "Steaming Stag Steak", "hash": "04f0f44150edd125", "src": "db2@1.60.1.70009"}
+{"id": 1250149, "field": "name", "en": "Swiftstrike Steak", "hash": "76e49ee40fd9d07f", "src": "db2@1.60.1.70009"}
+{"id": 1250150, "field": "name", "en": "Raging Raptor Ribs", "hash": "a70c891961138d34", "src": "db2@1.60.1.70009"}
+{"id": 1250151, "field": "name", "en": "Bear Brisket", "hash": "18485d79307fa3aa", "src": "db2@1.60.1.70009"}
+{"id": 1250152, "field": "name", "en": "Prehistoric Pulled Raptor", "hash": "29d080e8d18152d2", "src": "db2@1.60.1.70009"}
+{"id": 1250153, "field": "name", "en": "Raptor Rouladen", "hash": "d9c753cff162023f", "src": "db2@1.60.1.70009"}
+{"id": 1250154, "field": "name", "en": "Twice-Spiced Raptor Slice", "hash": "d0ccd6dd59b6db9d", "src": "db2@1.60.1.70009"}
+{"id": 1250155, "field": "name", "en": "Giant Scrambled Eggs", "hash": "752a4b15c180cdfe", "src": "db2@1.60.1.70009"}
+{"id": 1250156, "field": "name", "en": "Tasty Raptor Bites", "hash": "f17982245d465090", "src": "db2@1.60.1.70009"}
+{"id": 1250157, "field": "name", "en": "Breakfast Omelette", "hash": "36c652105aca8d07", "src": "db2@1.60.1.70009"}
+{"id": 1250158, "field": "name", "en": "Clam Linguine", "hash": "48ce009f83e33f1d", "src": "db2@1.60.1.70009"}
+{"id": 1250201, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70009"}
+{"id": 1250207, "field": "name", "en": "Tracking [DNT]", "hash": "a82f31540bfdb189", "src": "db2@1.60.1.70009"}
+{"id": 1250226, "field": "name", "en": "Quest", "hash": "9d9ed56bb9b5eac9", "src": "db2@1.60.1.70009"}
+{"id": 1250226, "field": "description", "en": "Are you ready to begin your quest?", "hash": "beaadd0480ee78c1", "src": "db2@1.60.1.70009"}
+{"id": 1250226, "field": "aura", "en": "Are you ready to begin your quest?", "hash": "beaadd0480ee78c1", "src": "db2@1.60.1.70009"}
+{"id": 1250228, "field": "name", "en": "[DNT] Stage Spawn", "hash": "76f3bb5f17e85180", "src": "db2@1.60.1.70009"}
+{"id": 1250266, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70009"}
+{"id": 1250266, "field": "description", "en": "Shoots at an enemy, inflicting Physical damage.", "hash": "75634826c9339361", "src": "db2@1.60.1.70009"}
+{"id": 1250313, "field": "name", "en": "(DNT) Frozen Treant Visuals", "hash": "7bac769832dafc51", "src": "db2@1.60.1.70009"}
+{"id": 1250418, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70009"}
+{"id": 1250419, "field": "name", "en": "Nether Grip", "hash": "435ab95865aeb5dd", "src": "db2@1.60.1.70009"}
+{"id": 1250421, "field": "name", "en": "Withering Link", "hash": "48ce2ffe787109e9", "src": "db2@1.60.1.70009"}
+{"id": 1250421, "field": "aura", "en": "Disintegrating.", "hash": "647bcd37f78cbf61", "src": "db2@1.60.1.70009"}
+{"id": 1250423, "field": "name", "en": "Demonic Frenzy", "hash": "4cbcf0e0ccbec173", "src": "db2@1.60.1.70009"}
+{"id": 1250423, "field": "aura", "en": "Movement speed increased by $s1%\r\nAttack speed increased by $s2%\r\nDamage done increased by $s3%", "hash": "6f225003dea15859", "src": "db2@1.60.1.70009"}
+{"id": 1250425, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70009"}
+{"id": 1250426, "field": "name", "en": "Cripple", "hash": "8dedc199be0ae971", "src": "db2@1.60.1.70009"}
+{"id": 1250426, "field": "description", "en": "Increases the time between an enemy's attacks by $s2% and its movement by $s1%, in addition to reducing its Strength by $s3%. Lasts $d.", "hash": "5f3a2ed984fa8e4a", "src": "db2@1.60.1.70009"}
+{"id": 1250426, "field": "aura", "en": "Movement speed reduced by $s1%.\r\nTime between attacks increased by $s2%.\r\nStrength reduced by $s3%.", "hash": "b1c19d7ab8fde7a1", "src": "db2@1.60.1.70009"}
+{"id": 1250535, "field": "name", "en": "Eclipse Landing", "hash": "8043b29257feed08", "src": "db2@1.60.1.70009"}
+{"id": 1250617, "field": "name", "en": "The Allfur", "hash": "dbc1cf5af7bc4022", "src": "db2@1.60.1.70009"}
+{"id": 1250618, "field": "name", "en": "The Allfur", "hash": "dbc1cf5af7bc4022", "src": "db2@1.60.1.70009"}
+{"id": 1250775, "field": "name", "en": "Revealing Draught", "hash": "4e7c9c5222f1a25a", "src": "db2@1.60.1.70009"}
+{"id": 1250776, "field": "name", "en": "Draught of Predatory Senses", "hash": "4492affcff128d8f", "src": "db2@1.60.1.70009"}
+{"id": 1250777, "field": "name", "en": "Elixir of Cunning", "hash": "f3f9a6b27d4594f2", "src": "db2@1.60.1.70009"}
+{"id": 1250778, "field": "name", "en": "Elixir of the Phalanx", "hash": "feb0f3c6c799b153", "src": "db2@1.60.1.70009"}
+{"id": 1250779, "field": "name", "en": "Minor Cleric's Elixir", "hash": "87677f3aafab7212", "src": "db2@1.60.1.70009"}
+{"id": 1250780, "field": "name", "en": "Lesser Cleric's Elixir", "hash": "242dbd2993f05c0b", "src": "db2@1.60.1.70009"}
+{"id": 1250781, "field": "name", "en": "Cleric's Elixir", "hash": "e82da1b81e552156", "src": "db2@1.60.1.70009"}
+{"id": 1250782, "field": "name", "en": "Greater Cleric's Elixir", "hash": "aa1dbf3ad59eb201", "src": "db2@1.60.1.70009"}
+{"id": 1250783, "field": "name", "en": "Elixir of Fortitude", "hash": "33b79cb6ab28b455", "src": "db2@1.60.1.70009"}
+{"id": 1250784, "field": "name", "en": "Elixir of Greater Fortitude", "hash": "ca5857b9ee0fa7ef", "src": "db2@1.60.1.70009"}
+{"id": 1250785, "field": "name", "en": "Elixir of Wicked Regeneration", "hash": "73aa3b3899b02c01", "src": "db2@1.60.1.70009"}
+{"id": 1250786, "field": "name", "en": "Elixir of the Owl", "hash": "1c0031e567f9e65a", "src": "db2@1.60.1.70009"}
+{"id": 1250787, "field": "name", "en": "Elixir of Sages", "hash": "1e135075f0b9d475", "src": "db2@1.60.1.70009"}
+{"id": 1250788, "field": "name", "en": "Minor Mageblood Elixir", "hash": "c2152ec813e20eda", "src": "db2@1.60.1.70009"}
+{"id": 1250789, "field": "name", "en": "Lesser Mageblood Elixir", "hash": "fb86df160cc89eff", "src": "db2@1.60.1.70009"}
+{"id": 1250790, "field": "name", "en": "Greater Mageblood Elixir", "hash": "8557ef22e36b8132", "src": "db2@1.60.1.70009"}
+{"id": 1250791, "field": "name", "en": "Lesser Arcane Elixir", "hash": "f80f15c18a53ca45", "src": "db2@1.60.1.70009"}
+{"id": 1250792, "field": "name", "en": "Elixir of Nature Power", "hash": "39fc601ddb1ee306", "src": "db2@1.60.1.70009"}
+{"id": 1250793, "field": "name", "en": "Elixir of Minor Spirit", "hash": "eb24edaac6e9d0f7", "src": "db2@1.60.1.70009"}
+{"id": 1250794, "field": "name", "en": "Elixir of Lesser Spirit", "hash": "d0670d95147218ca", "src": "db2@1.60.1.70009"}
+{"id": 1250795, "field": "name", "en": "Elixir of Spirit", "hash": "6b77d8ef72377608", "src": "db2@1.60.1.70009"}
+{"id": 1250796, "field": "name", "en": "Elixir of Greater Spirit", "hash": "deb809def9230064", "src": "db2@1.60.1.70009"}
+{"id": 1250797, "field": "name", "en": "Elixir of the Whale", "hash": "9379516f9de8695c", "src": "db2@1.60.1.70009"}
+{"id": 1250798, "field": "name", "en": "Elixir of Strength", "hash": "ebe5443d9f53bf9a", "src": "db2@1.60.1.70009"}
+{"id": 1250799, "field": "name", "en": "Elixir of Ferocity", "hash": "f2b9759f4ecdbad8", "src": "db2@1.60.1.70009"}
+{"id": 1250800, "field": "name", "en": "Elixir of the Grizzly", "hash": "05e81a720af0c9fa", "src": "db2@1.60.1.70009"}
+{"id": 1250801, "field": "name", "en": "Elixir of Lesser Intellect", "hash": "07b9bf7ced5741de", "src": "db2@1.60.1.70009"}
+{"id": 1250802, "field": "name", "en": "Elixir of Intellect", "hash": "f9bf511fc6eb4737", "src": "db2@1.60.1.70009"}
+{"id": 1250834, "field": "name", "en": "Upgrade the Well", "hash": "e6e7206873ae3964", "src": "db2@1.60.1.70009"}
+{"id": 1250840, "field": "name", "en": "Upgrade the Tents", "hash": "f39cff2b30468a58", "src": "db2@1.60.1.70009"}
+{"id": 1250887, "field": "name", "en": "Revealing Draught", "hash": "4e7c9c5222f1a25a", "src": "db2@1.60.1.70009"}
+{"id": 1250887, "field": "description", "en": "Drink to improve your spatial awareness which allows you to see hidden Mining and Herbalism gathering nodes for $d.\r\n\r\nThis effect persists through death.", "hash": "51b15b21a5a2f761", "src": "db2@1.60.1.70009"}
+{"id": 1250887, "field": "aura", "en": "Seeing hidden Mining and Herbalism gathering nodes.", "hash": "39e250fcb7cbec72", "src": "db2@1.60.1.70009"}
+{"id": 1250889, "field": "name", "en": "Draught of Predatory Senses", "hash": "4492affcff128d8f", "src": "db2@1.60.1.70009"}
+{"id": 1250889, "field": "description", "en": "Drink to slightly increase your stealth detection. While you are not moving for $s2 sec, nearby moving stealthed enemies may reveal a heat trail. Lasts for $d.\r\n\r\nThis effect persists through death.", "hash": "15f9f95fd9341965", "src": "db2@1.60.1.70009"}
+{"id": 1250889, "field": "aura", "en": "While standing still, your stealth detection is increased and you may see heat trails from moving stealthed enemies.", "hash": "31b5ac1310d3a01a", "src": "db2@1.60.1.70009"}
+{"id": 1250900, "field": "name", "en": "Draught of Predatory Senses", "hash": "4492affcff128d8f", "src": "db2@1.60.1.70009"}
+{"id": 1250900, "field": "description", "en": "$@spelldesc1250889", "hash": "b81f8812457dcb68", "src": "db2@1.60.1.70009"}
+{"id": 1250918, "field": "name", "en": "Elixir of Cunning", "hash": "f3f9a6b27d4594f2", "src": "db2@1.60.1.70009"}
+{"id": 1250918, "field": "description", "en": "Drink to gain $s1 Agility and Intellect for $d. Lasts for $d.", "hash": "0069140525ba5020", "src": "db2@1.60.1.70009"}
+{"id": 1250918, "field": "aura", "en": "Agility and Intellect increased by $w1.", "hash": "e3aafd14616e5485", "src": "db2@1.60.1.70009"}
+{"id": 1250920, "field": "name", "en": "Elixir of the Phalanx", "hash": "feb0f3c6c799b153", "src": "db2@1.60.1.70009"}
+{"id": 1250920, "field": "description", "en": "Drink to gain $s1 maximum health and $s2 armor for $d. Lasts for $d.", "hash": "53817e50753c871e", "src": "db2@1.60.1.70009"}
+{"id": 1250920, "field": "aura", "en": "Maximum health increased by $w1 and Armor increased by $w2.", "hash": "5aff930a7bb0036d", "src": "db2@1.60.1.70009"}
+{"id": 1250922, "field": "name", "en": "Minor Cleric's Elixir", "hash": "87677f3aafab7212", "src": "db2@1.60.1.70009"}
+{"id": 1250922, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70009"}
+{"id": 1250922, "field": "aura", "en": "Healing done increased by spells and effects increased by up to $w1.", "hash": "2a6efd6d8e102ec8", "src": "db2@1.60.1.70009"}
+{"id": 1250924, "field": "name", "en": "Lesser Cleric's Elixir", "hash": "242dbd2993f05c0b", "src": "db2@1.60.1.70009"}
+{"id": 1250924, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70009"}
+{"id": 1250924, "field": "aura", "en": "Healing done increased by spells and effects increased by up to $w1.", "hash": "2a6efd6d8e102ec8", "src": "db2@1.60.1.70009"}
+{"id": 1250925, "field": "name", "en": "Cleric's Elixir", "hash": "e82da1b81e552156", "src": "db2@1.60.1.70009"}
+{"id": 1250925, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70009"}
+{"id": 1250925, "field": "aura", "en": "Healing done increased by spells and effects increased by up to $w1.", "hash": "2a6efd6d8e102ec8", "src": "db2@1.60.1.70009"}
+{"id": 1250926, "field": "name", "en": "Greater Cleric's Elixir", "hash": "aa1dbf3ad59eb201", "src": "db2@1.60.1.70009"}
+{"id": 1250926, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70009"}
+{"id": 1250926, "field": "aura", "en": "Healing done increased by spells and effects increased by up to $w1.", "hash": "2a6efd6d8e102ec8", "src": "db2@1.60.1.70009"}
+{"id": 1250928, "field": "name", "en": "Elixir of Fortitude", "hash": "33b79cb6ab28b455", "src": "db2@1.60.1.70009"}
+{"id": 1250928, "field": "description", "en": "Drink to increase your maximum health by $s1. Lasts for $d.", "hash": "ea92604eb5440eaa", "src": "db2@1.60.1.70009"}
+{"id": 1250928, "field": "aura", "en": "Maximum health is increased by $w1.", "hash": "77b46bd2d9b1fb0e", "src": "db2@1.60.1.70009"}
+{"id": 1250931, "field": "name", "en": "Elixir of Greater Fortitude", "hash": "ca5857b9ee0fa7ef", "src": "db2@1.60.1.70009"}
+{"id": 1250931, "field": "description", "en": "Drink to increase your maximum health by $s1. Lasts for $d.", "hash": "ea92604eb5440eaa", "src": "db2@1.60.1.70009"}
+{"id": 1250931, "field": "aura", "en": "Maximum health is increased by $w1.", "hash": "77b46bd2d9b1fb0e", "src": "db2@1.60.1.70009"}
+{"id": 1250932, "field": "name", "en": "Elixir of Wicked Regeneration", "hash": "73aa3b3899b02c01", "src": "db2@1.60.1.70009"}
+{"id": 1250932, "field": "description", "en": "Drink to restore $s1 health and $s2 mana every 5 sec. Lasts for $d.", "hash": "02bd932a8009927d", "src": "db2@1.60.1.70009"}
+{"id": 1250932, "field": "aura", "en": "Regenerate $w1 health and $w2 mana every 5 sec.", "hash": "da541ae2fe75e848", "src": "db2@1.60.1.70009"}
+{"id": 1250940, "field": "name", "en": "Elixir of the Owl", "hash": "1c0031e567f9e65a", "src": "db2@1.60.1.70009"}
+{"id": 1250940, "field": "description", "en": "Drink to increase your Intellect by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "b485271efb1d9691", "src": "db2@1.60.1.70009"}
+{"id": 1250940, "field": "aura", "en": "Your intellect is increased by $w1 and your chance to critically hit is increased by $w2%.", "hash": "37a95ca1badca7a7", "src": "db2@1.60.1.70009"}
+{"id": 1250941, "field": "name", "en": "Elixir of Sages", "hash": "1e135075f0b9d475", "src": "db2@1.60.1.70009"}
+{"id": 1250941, "field": "description", "en": "Drink to increase your Spirit by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "39d4b1c4cf27ff6a", "src": "db2@1.60.1.70009"}
+{"id": 1250941, "field": "aura", "en": "Your spirit is increased by $w1 and your chance to critically hit is increased by $w2%.", "hash": "cd4ad1094cf15460", "src": "db2@1.60.1.70009"}
+{"id": 1250942, "field": "name", "en": "Minor Mageblood Elixir", "hash": "c2152ec813e20eda", "src": "db2@1.60.1.70009"}
+{"id": 1250942, "field": "description", "en": "Drink to regenerate $s1 mana every 5 seconds. Lasts for $d.", "hash": "74badc36a6578f87", "src": "db2@1.60.1.70009"}
+{"id": 1250942, "field": "aura", "en": "Regenerating $w1 mana every 5 seconds.", "hash": "12b18b2bdac7c88a", "src": "db2@1.60.1.70009"}
+{"id": 1250944, "field": "name", "en": "Lesser Mageblood Elixir", "hash": "fb86df160cc89eff", "src": "db2@1.60.1.70009"}
+{"id": 1250944, "field": "description", "en": "Drink to regenerate $s1 mana every 5 seconds. Lasts for $d.", "hash": "74badc36a6578f87", "src": "db2@1.60.1.70009"}
+{"id": 1250944, "field": "aura", "en": "Regenerating $w1 mana every 5 seconds.", "hash": "12b18b2bdac7c88a", "src": "db2@1.60.1.70009"}
+{"id": 1250948, "field": "name", "en": "Greater Mageblood Elixir", "hash": "8557ef22e36b8132", "src": "db2@1.60.1.70009"}
+{"id": 1250948, "field": "description", "en": "Drink to regenerate $s1 mana every 5 seconds. Lasts for $d.", "hash": "74badc36a6578f87", "src": "db2@1.60.1.70009"}
+{"id": 1250948, "field": "aura", "en": "Regenerating $w1 mana every 5 seconds.", "hash": "12b18b2bdac7c88a", "src": "db2@1.60.1.70009"}
+{"id": 1250971, "field": "name", "en": "Lesser Arcane Elixir", "hash": "f80f15c18a53ca45", "src": "db2@1.60.1.70009"}
+{"id": 1250971, "field": "description", "en": "Drink to increase spell damage by up to $s1. Lasts for $d.", "hash": "fc832a6e4126203b", "src": "db2@1.60.1.70009"}
+{"id": 1250971, "field": "aura", "en": "Magical damage dealt by spells and abilities is increased by up to $w1.", "hash": "a5c05f65371cfa79", "src": "db2@1.60.1.70009"}
+{"id": 1250972, "field": "name", "en": "Elixir of Nature Power", "hash": "39fc601ddb1ee306", "src": "db2@1.60.1.70009"}
+{"id": 1250972, "field": "description", "en": "Drink to increase nature spell damage by up to $s1. Lasts for $d.", "hash": "a293594aede2905f", "src": "db2@1.60.1.70009"}
+{"id": 1250972, "field": "aura", "en": "Nature damage dealt by spells and abilities is increased by up to $w1.", "hash": "5c95a521cf308f97", "src": "db2@1.60.1.70009"}
+{"id": 1250974, "field": "name", "en": "Elixir of Minor Spirit", "hash": "eb24edaac6e9d0f7", "src": "db2@1.60.1.70009"}
+{"id": 1250974, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70009"}
+{"id": 1250974, "field": "aura", "en": "Your Spirit is increased by $w1.", "hash": "50181c56ea3b5866", "src": "db2@1.60.1.70009"}
+{"id": 1250976, "field": "name", "en": "Elixir of Lesser Spirit", "hash": "d0670d95147218ca", "src": "db2@1.60.1.70009"}
+{"id": 1250976, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70009"}
+{"id": 1250976, "field": "aura", "en": "Your Spirit is increased by $w1.", "hash": "50181c56ea3b5866", "src": "db2@1.60.1.70009"}
+{"id": 1250978, "field": "name", "en": "Elixir of Spirit", "hash": "6b77d8ef72377608", "src": "db2@1.60.1.70009"}
+{"id": 1250978, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70009"}
+{"id": 1250978, "field": "aura", "en": "Your Spirit is increased by $w1.", "hash": "50181c56ea3b5866", "src": "db2@1.60.1.70009"}
+{"id": 1250979, "field": "name", "en": "Elixir of Greater Spirit", "hash": "deb809def9230064", "src": "db2@1.60.1.70009"}
+{"id": 1250979, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70009"}
+{"id": 1250979, "field": "aura", "en": "Your Spirit is increased by $w1.", "hash": "50181c56ea3b5866", "src": "db2@1.60.1.70009"}
+{"id": 1250981, "field": "name", "en": "Elixir of the Whale", "hash": "9379516f9de8695c", "src": "db2@1.60.1.70009"}
+{"id": 1250981, "field": "description", "en": "Drink to increase your Spirit by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "39d4b1c4cf27ff6a", "src": "db2@1.60.1.70009"}
+{"id": 1250981, "field": "aura", "en": "Your spirit is increased by $w1 and your chance to critically hit is increased by $w2%.", "hash": "cd4ad1094cf15460", "src": "db2@1.60.1.70009"}
+{"id": 1250984, "field": "name", "en": "Elixir of Strength", "hash": "ebe5443d9f53bf9a", "src": "db2@1.60.1.70009"}
+{"id": 1250984, "field": "description", "en": "Drink to increase your Strength by $s1. Lasts for $d.", "hash": "02a96a9595f151bb", "src": "db2@1.60.1.70009"}
+{"id": 1250984, "field": "aura", "en": "Your Strength is increased by $w1.", "hash": "5c76833734b04778", "src": "db2@1.60.1.70009"}
+{"id": 1250985, "field": "name", "en": "Elixir of Ferocity", "hash": "f2b9759f4ecdbad8", "src": "db2@1.60.1.70009"}
+{"id": 1250985, "field": "description", "en": "Drink to increase your Strength and Agility by $s1. Lasts for $d.", "hash": "11af8b9a19cd71e6", "src": "db2@1.60.1.70009"}
+{"id": 1250985, "field": "aura", "en": "Your Strength and Agility are increased by $w1.", "hash": "cb47fc3f2fa2db5c", "src": "db2@1.60.1.70009"}
+{"id": 1250986, "field": "name", "en": "Elixir of the Grizzly", "hash": "05e81a720af0c9fa", "src": "db2@1.60.1.70009"}
+{"id": 1250986, "field": "description", "en": "Drink to increase your Strength by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "81682e2402502346", "src": "db2@1.60.1.70009"}
+{"id": 1250986, "field": "aura", "en": "Your strength is increased by $w1 and your chance to critically hit is increased by $w2%.", "hash": "74599d8d98010f79", "src": "db2@1.60.1.70009"}
+{"id": 1250988, "field": "name", "en": "Elixir of Lesser Intellect", "hash": "07b9bf7ced5741de", "src": "db2@1.60.1.70009"}
+{"id": 1250988, "field": "description", "en": "Drink to increase your Intellect by $s1. Lasts for $d.", "hash": "8848828403984a62", "src": "db2@1.60.1.70009"}
+{"id": 1250988, "field": "aura", "en": "Your Intellect is increased by $w1.", "hash": "b17e29ad6a8486a6", "src": "db2@1.60.1.70009"}
+{"id": 1250989, "field": "name", "en": "Elixir of Intellect", "hash": "f9bf511fc6eb4737", "src": "db2@1.60.1.70009"}
+{"id": 1250989, "field": "description", "en": "Drink to increase your Intellect by $s1. Lasts for $d.", "hash": "8848828403984a62", "src": "db2@1.60.1.70009"}
+{"id": 1250989, "field": "aura", "en": "Your Intellect is increased by $w1.", "hash": "b17e29ad6a8486a6", "src": "db2@1.60.1.70009"}

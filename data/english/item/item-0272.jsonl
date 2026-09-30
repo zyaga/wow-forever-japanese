@@ -1,0 +1,576 @@
+{"id": 272000, "field": "name", "en": "Golden Statue", "hash": "89b5b7f85df8775f", "src": "db2@1.60.1.70009"}
+{"id": 272000, "field": "description", "en": "Only a goblin could love this, but they'd love it A LOT.", "hash": "df6df02e02ed99ca", "src": "db2@1.60.1.70009"}
+{"id": 272001, "field": "name", "en": "Gold Ring", "hash": "212ba554482b3526", "src": "db2@1.60.1.70009"}
+{"id": 272001, "field": "description", "en": "Oooh! Sparkly.", "hash": "c4966c5d4976d9bb", "src": "db2@1.60.1.70009"}
+{"id": 272004, "field": "name", "en": "Marsh Gas Vial", "hash": "dd54bf0b3c123f60", "src": "db2@1.60.1.70009"}
+{"id": 272011, "field": "name", "en": "Activated Ogre Lightning Rod", "hash": "22329850fe098920", "src": "db2@1.60.1.70009"}
+{"id": 272011, "field": "description", "en": "The lightning rod is humming with nature energy despite the damage it took.", "hash": "2d8e34682d272510", "src": "db2@1.60.1.70009"}
+{"id": 272014, "field": "name", "en": "Silver Necklace", "hash": "14bd8dc871d54161", "src": "db2@1.60.1.70009"}
+{"id": 272014, "field": "description", "en": "Solid dwarven craftsmanship.", "hash": "3892afa124e5a90e", "src": "db2@1.60.1.70009"}
+{"id": 272015, "field": "name", "en": "Huge Quartz Gem", "hash": "30e87ac5ba250307", "src": "db2@1.60.1.70009"}
+{"id": 272015, "field": "description", "en": "Shiny!", "hash": "bba5765eb34532a3", "src": "db2@1.60.1.70009"}
+{"id": 272016, "field": "name", "en": "Gold Nugget", "hash": "7a716996085ea4e8", "src": "db2@1.60.1.70009"}
+{"id": 272016, "field": "description", "en": "Eureka!", "hash": "8660c8430cc15f30", "src": "db2@1.60.1.70009"}
+{"id": 272017, "field": "name", "en": "Nefarion's Remit", "hash": "27a1396ee11219db", "src": "db2@1.60.1.70009"}
+{"id": 272017, "field": "description", "en": "A draconic language document with Nefarion's seal", "hash": "04ab1204ba455da5", "src": "db2@1.60.1.70009"}
+{"id": 272018, "field": "name", "en": "Overseer's License", "hash": "61a3fbdc8bfcc7d8", "src": "db2@1.60.1.70009"}
+{"id": 272018, "field": "description", "en": "A draconic language document with General Drakkisath's seal", "hash": "a78cfa8dcaa2a544", "src": "db2@1.60.1.70009"}
+{"id": 272019, "field": "name", "en": "Bronzebeard Wedding Contract", "hash": "28f04e14b4f934c6", "src": "db2@1.60.1.70009"}
+{"id": 272019, "field": "description", "en": "A detailed contract stipulating dowry and inheritance rights for the marriage of Dagran Thaurissan and Moira Bronzebeard.", "hash": "86865bff627ee216", "src": "db2@1.60.1.70009"}
+{"id": 272020, "field": "name", "en": "Felvine Seed", "hash": "45aedb1014720034", "src": "db2@1.60.1.70009"}
+{"id": 272020, "field": "description", "en": "The seed of a fel-infused plant, glowing with demonic energies.", "hash": "846b8b4c7301eb1f", "src": "db2@1.60.1.70009"}
+{"id": 272021, "field": "name", "en": "Ancient Memento", "hash": "2265e5d0cd0db393", "src": "db2@1.60.1.70009"}
+{"id": 272021, "field": "description", "en": "A shattered pendant with the broken seal of Shen'dralas.", "hash": "3d4f1bc8c93e85e1", "src": "db2@1.60.1.70009"}
+{"id": 272022, "field": "name", "en": "Earthstone Diamond Pinky Ring", "hash": "761d36f0218d05a8", "src": "db2@1.60.1.70009"}
+{"id": 272022, "field": "description", "en": "An ogre's pinky ring set with a fabled Draenic earthstone diamond", "hash": "ceb2d15c6902dc0b", "src": "db2@1.60.1.70009"}
+{"id": 272023, "field": "name", "en": "Headmaster's Records", "hash": "08519fd1890f9b2d", "src": "db2@1.60.1.70009"}
+{"id": 272023, "field": "description", "en": "Scholomance enrollment records during the time of the great plague", "hash": "027f309e55ddf6b5", "src": "db2@1.60.1.70009"}
+{"id": 272024, "field": "name", "en": "Grain Shipment Records", "hash": "a51c0a32e0e1f10d", "src": "db2@1.60.1.70009"}
+{"id": 272024, "field": "description", "en": "Detailed grain shipment orders written by Baron Rivendare during the great plague", "hash": "c694a66a4a4b3117", "src": "db2@1.60.1.70009"}
+{"id": 272025, "field": "name", "en": "Dathrohan's Correspondance", "hash": "848b60f5cce8e4fb", "src": "db2@1.60.1.70009"}
+{"id": 272025, "field": "description", "en": "Saidan Dathrohan's correspondance before and during the third war", "hash": "1d846794bc0d7d52", "src": "db2@1.60.1.70009"}
+{"id": 272026, "field": "name", "en": "Ysera's Tear", "hash": "87b5f48bd3c75029", "src": "db2@1.60.1.70009"}
+{"id": 272026, "field": "description", "en": "A crystallized tear from the great dragon Ysera.", "hash": "f4362f885615e2b9", "src": "db2@1.60.1.70009"}
+{"id": 272027, "field": "name", "en": "Mark of Xavius", "hash": "0facecd93c39efe2", "src": "db2@1.60.1.70009"}
+{"id": 272027, "field": "description", "en": "A mark of service to the burning legion, in the name of the satyr Xavius.", "hash": "4f0dc1e446e33616", "src": "db2@1.60.1.70009"}
+{"id": 272028, "field": "name", "en": "Freya's Sigil", "hash": "e559fdb57eed2d94", "src": "db2@1.60.1.70009"}
+{"id": 272028, "field": "description", "en": "A stone marked with the sigil of the titan Freya", "hash": "87fad030bd7450ee", "src": "db2@1.60.1.70009"}
+{"id": 272053, "field": "name", "en": "Darkspear Islands Field Ration", "hash": "5a4836a96f9ac2c0", "src": "db2@1.60.1.70009"}
+{"id": 272053, "field": "description", "en": "Restores $26472o1 health and $26473o2 mana over $26472d.  Must remain seated while eating.  Usable only inside Darkspear Islands.", "hash": "c9e5c5ccb718ba12", "src": "db2@1.60.1.70009"}
+{"id": 272054, "field": "name", "en": "Darkspear Islands Iron Ration", "hash": "3e0d3b7ffc2dfa40", "src": "db2@1.60.1.70009"}
+{"id": 272054, "field": "description", "en": "Restores $26474o1 health and $26475o2 mana over $26474d.  Must remain seated while eating.  Usable only inside Darkspear Islands.", "hash": "f40fa69005386fa7", "src": "db2@1.60.1.70009"}
+{"id": 272055, "field": "name", "en": "Darkspear Islands Enriched Ration", "hash": "3d158dc1cfedd7e7", "src": "db2@1.60.1.70009"}
+{"id": 272055, "field": "description", "en": "Restores $25695o1 health and $25696o2 mana over $25695d.  Must remain seated while eating.  Usable only inside Darkspear Islands.", "hash": "10d1e09515b7fd39", "src": "db2@1.60.1.70009"}
+{"id": 272056, "field": "name", "en": "Darkspear Islands Silk Bandage", "hash": "fe4832ae45047d8a", "src": "db2@1.60.1.70009"}
+{"id": 272056, "field": "description", "en": "Heals $o1 damage over $d.  Usable only inside Darkspear Islands.", "hash": "aa1d1278d959f527", "src": "db2@1.60.1.70009"}
+{"id": 272057, "field": "name", "en": "Darkspear Islands Mageweave Bandage", "hash": "12c515a52a13d156", "src": "db2@1.60.1.70009"}
+{"id": 272057, "field": "description", "en": "Heals $o1 damage over $d. Usable only inside Darkspear Islands.", "hash": "aa1d1278d959f527", "src": "db2@1.60.1.70009"}
+{"id": 272058, "field": "name", "en": "Darkspear Islands Runecloth Bandage", "hash": "d32c1509f770b8d1", "src": "db2@1.60.1.70009"}
+{"id": 272058, "field": "description", "en": "Heals $o1 damage over $d.  Usable only inside Darkspear Islands.", "hash": "aa1d1278d959f527", "src": "db2@1.60.1.70009"}
+{"id": 272059, "field": "name", "en": "Darkspear Voodoo Seal", "hash": "211211ea4c70de0d", "src": "db2@1.60.1.70009"}
+{"id": 272059, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1316054s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "cc097fdd7f6b88b0", "src": "db2@1.60.1.70009"}
+{"id": 272060, "field": "name", "en": "Relentless Raider's Seal", "hash": "20b491c16257da24", "src": "db2@1.60.1.70009"}
+{"id": 272060, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1318103s1 to all Resistances in Forest and Grassland areas.", "hash": "fc42b0533dace83f", "src": "db2@1.60.1.70009"}
+{"id": 272061, "field": "name", "en": "Darkspear Voodoo Seal", "hash": "211211ea4c70de0d", "src": "db2@1.60.1.70009"}
+{"id": 272061, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1318125s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "922e24ed4d04a37f", "src": "db2@1.60.1.70009"}
+{"id": 272062, "field": "name", "en": "Relentless Raider's Seal", "hash": "20b491c16257da24", "src": "db2@1.60.1.70009"}
+{"id": 272062, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1316052s1 to all Resistances in Forest and Grassland areas.", "hash": "f0b47016864934c3", "src": "db2@1.60.1.70009"}
+{"id": 272063, "field": "name", "en": "Darkspear Raider's Cloak", "hash": "2740ee1adf2b2d5b", "src": "db2@1.60.1.70009"}
+{"id": 272064, "field": "name", "en": "Insurgent's Band", "hash": "7d9439fad397769a", "src": "db2@1.60.1.70009"}
+{"id": 272065, "field": "name", "en": "Insurgent's Band", "hash": "7d9439fad397769a", "src": "db2@1.60.1.70009"}
+{"id": 272066, "field": "name", "en": "Insurgent's Band", "hash": "7d9439fad397769a", "src": "db2@1.60.1.70009"}
+{"id": 272067, "field": "name", "en": "Insurgent's Band", "hash": "7d9439fad397769a", "src": "db2@1.60.1.70009"}
+{"id": 272068, "field": "name", "en": "Darkspear Signet", "hash": "dfef7889f60c43d2", "src": "db2@1.60.1.70009"}
+{"id": 272069, "field": "name", "en": "Darkspear Signet", "hash": "dfef7889f60c43d2", "src": "db2@1.60.1.70009"}
+{"id": 272070, "field": "name", "en": "Darkspear Signet", "hash": "dfef7889f60c43d2", "src": "db2@1.60.1.70009"}
+{"id": 272071, "field": "name", "en": "Darkspear Signet", "hash": "dfef7889f60c43d2", "src": "db2@1.60.1.70009"}
+{"id": 272072, "field": "name", "en": "Darkspear Warding Pendant", "hash": "ea5cef5d278b0913", "src": "db2@1.60.1.70009"}
+{"id": 272073, "field": "name", "en": "Darkspear Warding Pendant", "hash": "ea5cef5d278b0913", "src": "db2@1.60.1.70009"}
+{"id": 272074, "field": "name", "en": "Darkspear Warding Pendant", "hash": "ea5cef5d278b0913", "src": "db2@1.60.1.70009"}
+{"id": 272075, "field": "name", "en": "Darkspear Warding Pendant", "hash": "ea5cef5d278b0913", "src": "db2@1.60.1.70009"}
+{"id": 272076, "field": "name", "en": "Darkspear Raider's Cloak", "hash": "2740ee1adf2b2d5b", "src": "db2@1.60.1.70009"}
+{"id": 272077, "field": "name", "en": "Darkspear Raider's Cloak", "hash": "2740ee1adf2b2d5b", "src": "db2@1.60.1.70009"}
+{"id": 272078, "field": "name", "en": "Darkspear Raider's Cloak", "hash": "2740ee1adf2b2d5b", "src": "db2@1.60.1.70009"}
+{"id": 272079, "field": "name", "en": "Darkspear Raider's Reaper", "hash": "563df6438df61623", "src": "db2@1.60.1.70009"}
+{"id": 272080, "field": "name", "en": "Darkspear Raider's Reaper", "hash": "563df6438df61623", "src": "db2@1.60.1.70009"}
+{"id": 272081, "field": "name", "en": "Darkspear Raider's Reaper", "hash": "563df6438df61623", "src": "db2@1.60.1.70009"}
+{"id": 272082, "field": "name", "en": "Darkspear Raider's Reaper", "hash": "563df6438df61623", "src": "db2@1.60.1.70009"}
+{"id": 272083, "field": "name", "en": "Darkspear Insurgent's Spellblade", "hash": "07fcae9ecf1c0800", "src": "db2@1.60.1.70009"}
+{"id": 272084, "field": "name", "en": "Darkspear Insurgent's Spellblade", "hash": "07fcae9ecf1c0800", "src": "db2@1.60.1.70009"}
+{"id": 272085, "field": "name", "en": "Darkspear Insurgent's Spellblade", "hash": "07fcae9ecf1c0800", "src": "db2@1.60.1.70009"}
+{"id": 272086, "field": "name", "en": "Darkspear Insurgent's Spellblade", "hash": "07fcae9ecf1c0800", "src": "db2@1.60.1.70009"}
+{"id": 272087, "field": "name", "en": "Tome of the Darkspear Prophecy", "hash": "aa546a2b0640a7e6", "src": "db2@1.60.1.70009"}
+{"id": 272088, "field": "name", "en": "Tome of the Darkspear Prophecy", "hash": "aa546a2b0640a7e6", "src": "db2@1.60.1.70009"}
+{"id": 272089, "field": "name", "en": "Tome of the Darkspear Prophecy", "hash": "aa546a2b0640a7e6", "src": "db2@1.60.1.70009"}
+{"id": 272090, "field": "name", "en": "Tome of the Darkspear Prophecy", "hash": "aa546a2b0640a7e6", "src": "db2@1.60.1.70009"}
+{"id": 272091, "field": "name", "en": "Darkspear Skirmisher's Bludgeon", "hash": "117392d0b6ec6157", "src": "db2@1.60.1.70009"}
+{"id": 272092, "field": "name", "en": "Darkspear Skirmisher's Bludgeon", "hash": "117392d0b6ec6157", "src": "db2@1.60.1.70009"}
+{"id": 272093, "field": "name", "en": "Darkspear Skirmisher's Bludgeon", "hash": "117392d0b6ec6157", "src": "db2@1.60.1.70009"}
+{"id": 272094, "field": "name", "en": "Darkspear Skirmisher's Bludgeon", "hash": "117392d0b6ec6157", "src": "db2@1.60.1.70009"}
+{"id": 272095, "field": "name", "en": "Raider Gauntlets", "hash": "7d63f19b2963c848", "src": "db2@1.60.1.70009"}
+{"id": 272096, "field": "name", "en": "Raider Gauntlets", "hash": "7d63f19b2963c848", "src": "db2@1.60.1.70009"}
+{"id": 272097, "field": "name", "en": "Raider Handwraps", "hash": "0de1e8e3693958a5", "src": "db2@1.60.1.70009"}
+{"id": 272098, "field": "name", "en": "Raider Handwraps", "hash": "0de1e8e3693958a5", "src": "db2@1.60.1.70009"}
+{"id": 272099, "field": "name", "en": "Raider Gloves", "hash": "cb4e83d3cbd790ed", "src": "db2@1.60.1.70009"}
+{"id": 272100, "field": "name", "en": "Raider Gloves", "hash": "cb4e83d3cbd790ed", "src": "db2@1.60.1.70009"}
+{"id": 272101, "field": "name", "en": "Raider Handguards", "hash": "96ff1417f93749d0", "src": "db2@1.60.1.70009"}
+{"id": 272102, "field": "name", "en": "Raider Handguards", "hash": "96ff1417f93749d0", "src": "db2@1.60.1.70009"}
+{"id": 272103, "field": "name", "en": "Darkspear Shoulderpads", "hash": "e9cd68b2ddfdb4a9", "src": "db2@1.60.1.70009"}
+{"id": 272104, "field": "name", "en": "Darkspear Shoulders", "hash": "279f2d87f983afc7", "src": "db2@1.60.1.70009"}
+{"id": 272105, "field": "name", "en": "Darkspear Pauldrons", "hash": "6041900a184ea9f8", "src": "db2@1.60.1.70009"}
+{"id": 272106, "field": "name", "en": "Darkspear Epaulets", "hash": "8b589e3cdc355cdb", "src": "db2@1.60.1.70009"}
+{"id": 272107, "field": "name", "en": "Darkspear Mantle", "hash": "6f59b53a0b286d8d", "src": "db2@1.60.1.70009"}
+{"id": 272108, "field": "name", "en": "Darkspear Spaulders", "hash": "01657bf3f68fb724", "src": "db2@1.60.1.70009"}
+{"id": 272124, "field": "name", "en": "Translated Tale of I'lalai", "hash": "1c6c17eccef6262e", "src": "db2@1.60.1.70009"}
+{"id": 272124, "field": "description", "en": "A compilation of the translated workings by Loremaster Dibbs, recounting the tale of the lost troll city, I'lalai the Drowned City.", "hash": "62e50a0a6c867455", "src": "db2@1.60.1.70009"}
+{"id": 272126, "field": "name", "en": "Makeshift Bandages", "hash": "77fca7463b385c9c", "src": "db2@1.60.1.70009"}
+{"id": 272126, "field": "description", "en": "Dress the injuries of a wounded soldier.", "hash": "eacfd796a3e55fa9", "src": "db2@1.60.1.70009"}
+{"id": 272127, "field": "name", "en": "Drinking Water Sample", "hash": "1f1c8cc7b1a9db18", "src": "db2@1.60.1.70009"}
+{"id": 272151, "field": "name", "en": "Damaged Undermine Supply Crate", "hash": "07f156371d2c4ab0", "src": "db2@1.60.1.70009"}
+{"id": 272151, "field": "description", "en": "This dented and damaged crate looks like it quite literally fell off the back of a zeppelin.", "hash": "b6dbb51f88b947ba", "src": "db2@1.60.1.70009"}
+{"id": 272156, "field": "name", "en": "Monster - Sword1H, Skyborne (Blue)", "hash": "67055651c6f521cc", "src": "db2@1.60.1.70009"}
+{"id": 272157, "field": "name", "en": "Monster - Sword1H, Skyborne (Green)", "hash": "087e364a8744b3e6", "src": "db2@1.60.1.70009"}
+{"id": 272158, "field": "name", "en": "Monster - Sword 2H, Skyborne (Blue)", "hash": "69dd5d44d046c17a", "src": "db2@1.60.1.70009"}
+{"id": 272159, "field": "name", "en": "Monster - Sword 2H, Skyborne (White)", "hash": "86527ed16ef4817a", "src": "db2@1.60.1.70009"}
+{"id": 272160, "field": "name", "en": "Monster - Sword1H, Skyborne (Blue)", "hash": "67055651c6f521cc", "src": "db2@1.60.1.70009"}
+{"id": 272161, "field": "name", "en": "Monster - Sword1H, Skyborne (Blue)", "hash": "67055651c6f521cc", "src": "db2@1.60.1.70009"}
+{"id": 272162, "field": "name", "en": "Monster - Sword 2H, Skyborne (Green)", "hash": "7d09c4a89a58318d", "src": "db2@1.60.1.70009"}
+{"id": 272163, "field": "name", "en": "Monster - Sword 2H, Skyborne (Gray)", "hash": "c26a8c032be8298e", "src": "db2@1.60.1.70009"}
+{"id": 272164, "field": "name", "en": "Monster - Dagger 1H, Skyborne (Blue)", "hash": "46de4d69688e59f1", "src": "db2@1.60.1.70009"}
+{"id": 272165, "field": "name", "en": "Monster - Mace1H, Skyborne (Blue)", "hash": "2476a284a3a104d0", "src": "db2@1.60.1.70009"}
+{"id": 272166, "field": "name", "en": "Monster - Mace1H, Skyborne (Gray)", "hash": "7d03d143ff426cd3", "src": "db2@1.60.1.70009"}
+{"id": 272167, "field": "name", "en": "Monster - Mace1H, Skyborne (Green)", "hash": "f97833b44ad46ba4", "src": "db2@1.60.1.70009"}
+{"id": 272168, "field": "name", "en": "Monster - Mace1H, Skyborne (White)", "hash": "02c0ede21f70bb91", "src": "db2@1.60.1.70009"}
+{"id": 272169, "field": "name", "en": "Monster - Mace 2H, Skyborne (Blue)", "hash": "5ad75ab393d67938", "src": "db2@1.60.1.70009"}
+{"id": 272170, "field": "name", "en": "Monster - Mace 2H, Skyborne (Gray)", "hash": "b3648972ef77e13b", "src": "db2@1.60.1.70009"}
+{"id": 272171, "field": "name", "en": "Monster - Mace 2H, Skyborne (Green)", "hash": "ccf6744de2e83194", "src": "db2@1.60.1.70009"}
+{"id": 272172, "field": "name", "en": "Monster - Mace 2H, Skyborne (White)", "hash": "d63f2e76b7848181", "src": "db2@1.60.1.70009"}
+{"id": 272179, "field": "name", "en": "Greatsword of Great Pasts", "hash": "5c4ed9969e43eeeb", "src": "db2@1.60.1.70009"}
+{"id": 272180, "field": "name", "en": "Spectral Magister's Commission", "hash": "7a06a355179e2e93", "src": "db2@1.60.1.70009"}
+{"id": 272181, "field": "name", "en": "Phantasmal Shiv", "hash": "4bc6e6c46932d4fd", "src": "db2@1.60.1.70009"}
+{"id": 272184, "field": "name", "en": "Amulet of Vengeance", "hash": "1b1891a81ee45316", "src": "db2@1.60.1.70009"}
+{"id": 272185, "field": "name", "en": "Amulet of Forgiveness", "hash": "8cdac990a207a97f", "src": "db2@1.60.1.70009"}
+{"id": 272186, "field": "name", "en": "Overgrown Cuffs", "hash": "6bd6154fb3309292", "src": "db2@1.60.1.70009"}
+{"id": 272187, "field": "name", "en": "Thornplated Cord", "hash": "049e4ba70bd42500", "src": "db2@1.60.1.70009"}
+{"id": 272190, "field": "name", "en": "Gronok's Key", "hash": "8dca6283f3c0f9e7", "src": "db2@1.60.1.70009"}
+{"id": 272313, "field": "name", "en": "Ancient Hilt", "hash": "19aee449064f6bc2", "src": "db2@1.60.1.70009"}
+{"id": 272313, "field": "description", "en": "The hilt is unfathomably ancient, but the metal that peeks through the dust and grime still shines brightly. This weapon was clearly a masterwork before it was broken.", "hash": "f7c48cda3afe8898", "src": "db2@1.60.1.70009"}
+{"id": 272314, "field": "name", "en": "Neutralizing Concoction", "hash": "80e135eb5e243e1a", "src": "db2@1.60.1.70009"}
+{"id": 272314, "field": "description", "en": "The liquid inside the vial seems to churn violently, and sticks to the glass in a way that suggests a certain amount of elasticity.", "hash": "64ddc24c10048f6f", "src": "db2@1.60.1.70009"}
+{"id": 272319, "field": "name", "en": "Tattered Note", "hash": "79f4ec28407ac764", "src": "db2@1.60.1.70009"}
+{"id": 272393, "field": "name", "en": "Magician's Cord", "hash": "31d37644d3f02aa1", "src": "db2@1.60.1.70009"}
+{"id": 272394, "field": "name", "en": "Penitent's Cinch", "hash": "32533dc81adfc135", "src": "db2@1.60.1.70009"}
+{"id": 272395, "field": "name", "en": "Assassin's Waistguard", "hash": "aafb459e2f2ca80e", "src": "db2@1.60.1.70009"}
+{"id": 272396, "field": "name", "en": "Shifter's Belt", "hash": "fa7f6aa5c79c23f1", "src": "db2@1.60.1.70009"}
+{"id": 272397, "field": "name", "en": "Ranger's Belt", "hash": "961cf85a7fb64634", "src": "db2@1.60.1.70009"}
+{"id": 272398, "field": "name", "en": "Caretaker's Cord", "hash": "bce91c52d0fdcaa6", "src": "db2@1.60.1.70009"}
+{"id": 272399, "field": "name", "en": "Stormseeker's Girdle", "hash": "490a746c4890d47d", "src": "db2@1.60.1.70009"}
+{"id": 272401, "field": "name", "en": "Elunite Cord", "hash": "2212568140c690ed", "src": "db2@1.60.1.70009"}
+{"id": 272402, "field": "name", "en": "Prophet's Waistcord", "hash": "2d9e8040b91a49d2", "src": "db2@1.60.1.70009"}
+{"id": 272403, "field": "name", "en": "Valiant's Waistguard", "hash": "4627ba6b995682f1", "src": "db2@1.60.1.70009"}
+{"id": 272404, "field": "name", "en": "Vindicator's Belt", "hash": "de6facdec4796733", "src": "db2@1.60.1.70009"}
+{"id": 272405, "field": "name", "en": "Redeemer's Waistcord", "hash": "5341a23da9d9fcfc", "src": "db2@1.60.1.70009"}
+{"id": 272406, "field": "name", "en": "Channeler's Ring", "hash": "45dcfcbc96e883c8", "src": "db2@1.60.1.70009"}
+{"id": 272407, "field": "name", "en": "Blessed Band of Light", "hash": "5df0edbcac621176", "src": "db2@1.60.1.70009"}
+{"id": 272408, "field": "name", "en": "Cutthroat's Signet", "hash": "2051806fb0daf19e", "src": "db2@1.60.1.70009"}
+{"id": 272409, "field": "name", "en": "Ring of Awareness", "hash": "013487c274fa6257", "src": "db2@1.60.1.70009"}
+{"id": 272410, "field": "name", "en": "Windseeker's Belt", "hash": "c53e3be98dfdf67a", "src": "db2@1.60.1.70009"}
+{"id": 272411, "field": "name", "en": "Arcanoweave Cloak", "hash": "18859818e8ca2548", "src": "db2@1.60.1.70009"}
+{"id": 272413, "field": "name", "en": "Drape of Recovery", "hash": "154919afd96c4b8f", "src": "db2@1.60.1.70009"}
+{"id": 272414, "field": "name", "en": "Howler's Furs", "hash": "ead22482383b42ae", "src": "db2@1.60.1.70009"}
+{"id": 272415, "field": "name", "en": "Stalwart Cloak", "hash": "3e35c3e611dc961b", "src": "db2@1.60.1.70009"}
+{"id": 272427, "field": "name", "en": "Howling Idol", "hash": "f6367c57d457093f", "src": "db2@1.60.1.70009"}
+{"id": 272427, "field": "description", "en": "Reduces the cooldown of your Tiger's Fury ability by ${$m1/-1000} sec.", "hash": "069a4c9413d13ad5", "src": "db2@1.60.1.70009"}
+{"id": 272428, "field": "name", "en": "Enraged Idol", "hash": "fcb5555c019b5bff", "src": "db2@1.60.1.70009"}
+{"id": 272428, "field": "description", "en": "Your Enrage ability generates an additional $s1 Rage over its duration.", "hash": "f4b8a9e3bb9ac3ee", "src": "db2@1.60.1.70009"}
+{"id": 272429, "field": "name", "en": "Idol of Synthesis", "hash": "3327931c06527efc", "src": "db2@1.60.1.70009"}
+{"id": 272429, "field": "description", "en": "Each of your heal over time effects on the target reduces Swiftmend's cooldown by ${$m1/1000} sec when you cast it.", "hash": "44c7ce668001e946", "src": "db2@1.60.1.70009"}
+{"id": 272430, "field": "name", "en": "Swarming Idol", "hash": "1d8f6ffcf6301a68", "src": "db2@1.60.1.70009"}
+{"id": 272430, "field": "description", "en": "Increases the duration of your Insect Swarm ability by ${$m1/1000} sec.", "hash": "a194f248ca0984e2", "src": "db2@1.60.1.70009"}
+{"id": 272431, "field": "name", "en": "Tidal Totem", "hash": "9bc88948455246f5", "src": "db2@1.60.1.70009"}
+{"id": 272431, "field": "description", "en": "Reduces the Mana cost of your Healing Wave ability by $s1%.", "hash": "9264c4a6dfbec9e4", "src": "db2@1.60.1.70009"}
+{"id": 272432, "field": "name", "en": "Totem of the Storm", "hash": "4edbc3cc2a2e4e1d", "src": "db2@1.60.1.70009"}
+{"id": 272432, "field": "description", "en": "Your Lightning Bolt ability can now also trigger the Maelstrom Weapon talent, but with a $s1% reduced chance.", "hash": "b06eebe232245407", "src": "db2@1.60.1.70009"}
+{"id": 272433, "field": "name", "en": "Burning Totem", "hash": "34aaab9405a839e8", "src": "db2@1.60.1.70009"}
+{"id": 272433, "field": "description", "en": "Increases the duration of your Flame Shock ability by ${$m1/1000} sec.", "hash": "07523bbd691b6716", "src": "db2@1.60.1.70009"}
+{"id": 272434, "field": "name", "en": "Sentinel's Libram", "hash": "7053ac395497f85c", "src": "db2@1.60.1.70009"}
+{"id": 272434, "field": "description", "en": "Reduces the cooldown of your Swift Judgement talent by ${$m1/-1000} sec.", "hash": "9082ce9d88bbbd22", "src": "db2@1.60.1.70009"}
+{"id": 272435, "field": "name", "en": "Libram of Law", "hash": "33cb71196c7721b0", "src": "db2@1.60.1.70009"}
+{"id": 272435, "field": "description", "en": "Increases the damage  of your Judgement ability by $s1%.", "hash": "b53ba568cf6b2cbd", "src": "db2@1.60.1.70009"}
+{"id": 272436, "field": "name", "en": "Libram of Economy", "hash": "93e019cc8386a2bd", "src": "db2@1.60.1.70009"}
+{"id": 272436, "field": "description", "en": "Reduces the Mana cost of your Holy Light ability by $s1%.", "hash": "588bf781973f2cfc", "src": "db2@1.60.1.70009"}
+{"id": 272437, "field": "name", "en": "Adaptive Combat Assistant", "hash": "434643dd4daef7a0", "src": "db2@1.60.1.70009"}
+{"id": 272437, "field": "description", "en": "Absorbs $s1 damage for $d. If this shield expires before $d, $1291099s1 Nature damage will be dealt to all enemies in melee range.", "hash": "1a00eddc8f02128a", "src": "db2@1.60.1.70009"}
+{"id": 272438, "field": "name", "en": "Weakness Analyzer", "hash": "a619a20a2bcf46e2", "src": "db2@1.60.1.70009"}
+{"id": 272438, "field": "description", "en": "Increases your critical strike chance with all spells and attacks by $s1% for $d or until you deal a non-periodic critical effect.", "hash": "a474208cc7b38802", "src": "db2@1.60.1.70009"}
+{"id": 272439, "field": "name", "en": "Serenity Field", "hash": "8faa42f91ab73e86", "src": "db2@1.60.1.70009"}
+{"id": 272439, "field": "description", "en": "Increases Spirit by $s1 for $d.", "hash": "b9a2a05585121e7f", "src": "db2@1.60.1.70009"}
+{"id": 272440, "field": "name", "en": "Defender's Grip Stabilizer", "hash": "5ad1ccfbab277001", "src": "db2@1.60.1.70009"}
+{"id": 272440, "field": "description", "en": "Increases your Block chance by $s1% for $d. This effect is doubled in Strongholds and Cities.", "hash": "32cb675b2d3a5782", "src": "db2@1.60.1.70009"}
+{"id": 272448, "field": "name", "en": "Purified Kor Gem", "hash": "8118e875b54d4552", "src": "db2@1.60.1.70009"}
+{"id": 272449, "field": "name", "en": "Scout's Tabard", "hash": "b9b88e943674410d", "src": "db2@1.60.1.70009"}
+{"id": 272450, "field": "name", "en": "Stone Guard's Herald", "hash": "a1cc9f636510a503", "src": "db2@1.60.1.70009"}
+{"id": 272451, "field": "name", "en": "Sergeant's Cloak", "hash": "e5542e28aef88e92", "src": "db2@1.60.1.70009"}
+{"id": 272452, "field": "name", "en": "Premier High Warlord's Blade", "hash": "242bfd6b4a61e1ed", "src": "db2@1.60.1.70009"}
+{"id": 272453, "field": "name", "en": "Premier Magus Footwraps", "hash": "257c4d8c448621e9", "src": "db2@1.60.1.70009"}
+{"id": 272454, "field": "name", "en": "Premier Magus Cuffs", "hash": "394c86abfc5481d9", "src": "db2@1.60.1.70009"}
+{"id": 272455, "field": "name", "en": "Premier Magus Gloves", "hash": "a3779400aa13bc65", "src": "db2@1.60.1.70009"}
+{"id": 272455, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70009"}
+{"id": 272456, "field": "name", "en": "Premier Magus Belt", "hash": "2b4789e3fd808a66", "src": "db2@1.60.1.70009"}
+{"id": 272457, "field": "name", "en": "Premier Magus Hood", "hash": "2c17fb5875a347c1", "src": "db2@1.60.1.70009"}
+{"id": 272458, "field": "name", "en": "Premier Magus Pants", "hash": "1ad2d82361e1c6b6", "src": "db2@1.60.1.70009"}
+{"id": 272459, "field": "name", "en": "Premier Magus Robes", "hash": "3fcb5726abc112da", "src": "db2@1.60.1.70009"}
+{"id": 272461, "field": "name", "en": "Premier Kodohide Armguards", "hash": "1b3ae82db7231a99", "src": "db2@1.60.1.70009"}
+{"id": 272462, "field": "name", "en": "Premier Dragonhide Boots", "hash": "d5ca56f0b6992c2f", "src": "db2@1.60.1.70009"}
+{"id": 272463, "field": "name", "en": "Premier Dragonhide Waistband", "hash": "85fb8f712ce02c58", "src": "db2@1.60.1.70009"}
+{"id": 272464, "field": "name", "en": "Premier Kodohide Gauntlets", "hash": "5d50970349bd55f6", "src": "db2@1.60.1.70009"}
+{"id": 272464, "field": "description", "en": "Increases your effective stealth detection level by ${$s1/5}.", "hash": "56868fcba461b542", "src": "db2@1.60.1.70009"}
+{"id": 272465, "field": "name", "en": "Premier Shadowhide Armguards", "hash": "6a3d996de838143f", "src": "db2@1.60.1.70009"}
+{"id": 272467, "field": "name", "en": "Premier Shadowhide Vices", "hash": "537f4318e1b2b29b", "src": "db2@1.60.1.70009"}
+{"id": 272468, "field": "name", "en": "Premier Shadowhide Girdle", "hash": "ff612d967fbecff3", "src": "db2@1.60.1.70009"}
+{"id": 272469, "field": "name", "en": "Premier Dragonhide Spaulders", "hash": "ce958c8f93a926e9", "src": "db2@1.60.1.70009"}
+{"id": 272470, "field": "name", "en": "Premier Dragonhide Trousers", "hash": "6fd3bd755622eb26", "src": "db2@1.60.1.70009"}
+{"id": 272471, "field": "name", "en": "Premier Dragonhide Helm", "hash": "21b16147fa9db9b3", "src": "db2@1.60.1.70009"}
+{"id": 272472, "field": "name", "en": "Premier Dragonhide Breastplate", "hash": "b8e88ff74fe9b8ba", "src": "db2@1.60.1.70009"}
+{"id": 272473, "field": "name", "en": "Premier Shadowhide Hauberk", "hash": "bbad65b29154df7e", "src": "db2@1.60.1.70009"}
+{"id": 272474, "field": "name", "en": "Premier Shadowhide Headguard", "hash": "d50fba75f13688ef", "src": "db2@1.60.1.70009"}
+{"id": 272475, "field": "name", "en": "Premier Shadowhide Mantle", "hash": "57883af27b893c88", "src": "db2@1.60.1.70009"}
+{"id": 272476, "field": "name", "en": "Premier Shadowhide Leggings", "hash": "515c77d33973c245", "src": "db2@1.60.1.70009"}
+{"id": 272477, "field": "name", "en": "Premier Mortarplate Boots", "hash": "903dbd0cdc80a325", "src": "db2@1.60.1.70009"}
+{"id": 272478, "field": "name", "en": "Premier Mortarplate Gloves", "hash": "8484951963b24ede", "src": "db2@1.60.1.70009"}
+{"id": 272478, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70009"}
+{"id": 272479, "field": "name", "en": "Premier Mortarplate Armor", "hash": "7f1666ea9ddcd8e1", "src": "db2@1.60.1.70009"}
+{"id": 272480, "field": "name", "en": "Premier Mortarplate Headguard", "hash": "582b79ccdbfa2d93", "src": "db2@1.60.1.70009"}
+{"id": 272481, "field": "name", "en": "Premier Mortarplate Legguards", "hash": "f6568633de67d8a7", "src": "db2@1.60.1.70009"}
+{"id": 272483, "field": "name", "en": "Premier Chain Bracers", "hash": "818481946253015c", "src": "db2@1.60.1.70009"}
+{"id": 272484, "field": "name", "en": "Premier Mail Walkers", "hash": "ff97d9a8d2b0df35", "src": "db2@1.60.1.70009"}
+{"id": 272484, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70009"}
+{"id": 272485, "field": "name", "en": "Premier Linked Grips", "hash": "a7f381e55d4000fe", "src": "db2@1.60.1.70009"}
+{"id": 272486, "field": "name", "en": "Premier Mail Helm", "hash": "8aad97cde0dfb8f8", "src": "db2@1.60.1.70009"}
+{"id": 272487, "field": "name", "en": "Premier Mail Chestpiece", "hash": "05a4a6232f518b32", "src": "db2@1.60.1.70009"}
+{"id": 272488, "field": "name", "en": "Premier Linked Leggings", "hash": "c14280c103483c34", "src": "db2@1.60.1.70009"}
+{"id": 272489, "field": "name", "en": "Premier Linked Shoulders", "hash": "bf19199f922bfb80", "src": "db2@1.60.1.70009"}
+{"id": 272490, "field": "name", "en": "Premier Chain Breastplate", "hash": "ce23eba3307588cd", "src": "db2@1.60.1.70009"}
+{"id": 272491, "field": "name", "en": "Premier Chain Headguard", "hash": "0454eab948fd125a", "src": "db2@1.60.1.70009"}
+{"id": 272492, "field": "name", "en": "Premier Chain Leggings", "hash": "f0031a6140350bb8", "src": "db2@1.60.1.70009"}
+{"id": 272494, "field": "name", "en": "Premier Chain Girdle", "hash": "83a204fcd93faf20", "src": "db2@1.60.1.70009"}
+{"id": 272495, "field": "name", "en": "Premier Chain Gauntlets", "hash": "db987882d298d8f6", "src": "db2@1.60.1.70009"}
+{"id": 272495, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70009"}
+{"id": 272496, "field": "name", "en": "Premier Chain Boots", "hash": "5fc74c6bf31c1602", "src": "db2@1.60.1.70009"}
+{"id": 272497, "field": "name", "en": "Premier Linked Wristguards", "hash": "aff42bd5f0334b51", "src": "db2@1.60.1.70009"}
+{"id": 272498, "field": "name", "en": "Premier Warlord's Magus Cowl", "hash": "4250d4fe5f3b9b49", "src": "db2@1.60.1.70009"}
+{"id": 272499, "field": "name", "en": "Premier General's Magus Trousers", "hash": "b283fad280e90528", "src": "db2@1.60.1.70009"}
+{"id": 272500, "field": "name", "en": "Premier Warlord's Magus Raiment", "hash": "a0a322211a4857e7", "src": "db2@1.60.1.70009"}
+{"id": 272501, "field": "name", "en": "Premier General's Magus Amice", "hash": "87b095cd9e876a49", "src": "db2@1.60.1.70009"}
+{"id": 272502, "field": "name", "en": "Premier Legionnaire's Magus Sash", "hash": "fa69a21f836e3158", "src": "db2@1.60.1.70009"}
+{"id": 272503, "field": "name", "en": "Premier Legionnaire's Magus Cuffs", "hash": "0ddd3b5cc5af8582", "src": "db2@1.60.1.70009"}
+{"id": 272504, "field": "name", "en": "Premier Centurion's Magus Boots", "hash": "77c34fc321cd1733", "src": "db2@1.60.1.70009"}
+{"id": 272505, "field": "name", "en": "Premier Champion's Magus Handguards", "hash": "85e15fd26789425f", "src": "db2@1.60.1.70009"}
+{"id": 272505, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70009"}
+{"id": 272506, "field": "name", "en": "Premier Warlord's Mortarplate Armor", "hash": "d0934dae9f645228", "src": "db2@1.60.1.70009"}
+{"id": 272507, "field": "name", "en": "Premier Warlord's Mortarplate Headpiece", "hash": "c304a3a07c03d7aa", "src": "db2@1.60.1.70009"}
+{"id": 272508, "field": "name", "en": "Premier General's Mortarplate Leggings", "hash": "5e257b13e1ac23c0", "src": "db2@1.60.1.70009"}
+{"id": 272509, "field": "name", "en": "Premier General's Mortarplate Shoulders", "hash": "073f309b2106485e", "src": "db2@1.60.1.70009"}
+{"id": 272510, "field": "name", "en": "Premier Centurion's Mortarplate Boots", "hash": "5b34b07585f102bb", "src": "db2@1.60.1.70009"}
+{"id": 272511, "field": "name", "en": "Premier Legionnaire's Mortarplate Armguards", "hash": "086b6394be6a1141", "src": "db2@1.60.1.70009"}
+{"id": 272512, "field": "name", "en": "Premier Legionnaire's Mortarplate Girdle", "hash": "07c36256d8997aa1", "src": "db2@1.60.1.70009"}
+{"id": 272513, "field": "name", "en": "Premier Champion's Mortarplate Gauntlets", "hash": "f2a4cee4ca627a00", "src": "db2@1.60.1.70009"}
+{"id": 272513, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70009"}
+{"id": 272514, "field": "name", "en": "Premier Warlord's Dragonhide Hauberk", "hash": "0da27cf7a7213841", "src": "db2@1.60.1.70009"}
+{"id": 272515, "field": "name", "en": "Premier Warlord's Dragonhide Helmet", "hash": "ed2f47807a900f90", "src": "db2@1.60.1.70009"}
+{"id": 272516, "field": "name", "en": "Premier General's Dragonhide Epaulets", "hash": "320cd79b51b7e076", "src": "db2@1.60.1.70009"}
+{"id": 272517, "field": "name", "en": "Premier General's Dragonhide Leggings", "hash": "a16ef4e60e068c71", "src": "db2@1.60.1.70009"}
+{"id": 272518, "field": "name", "en": "Premier Legionnaire's Dragonhide Bracers", "hash": "2ae7043e23f58214", "src": "db2@1.60.1.70009"}
+{"id": 272519, "field": "name", "en": "Premier Centurion's Dragonhide Boots", "hash": "6dd0221696e7c3d7", "src": "db2@1.60.1.70009"}
+{"id": 272520, "field": "name", "en": "Premier Champion's Dragonhide Gloves", "hash": "be2bbe6a0ae98535", "src": "db2@1.60.1.70009"}
+{"id": 272520, "field": "description", "en": "Increases your effective stealth detection level by ${$s1/5}.", "hash": "56868fcba461b542", "src": "db2@1.60.1.70009"}
+{"id": 272521, "field": "name", "en": "Premier Legionnaire's Dragonhide Belt", "hash": "7abb6581ee412e2f", "src": "db2@1.60.1.70009"}
+{"id": 272522, "field": "name", "en": "Premier Legionnaire's Shadowhide Girdle", "hash": "a4eee6b60bc3fc13", "src": "db2@1.60.1.70009"}
+{"id": 272523, "field": "name", "en": "Premier Centurion's Shadowhide Treads", "hash": "2c4ca2f9e93a1ef3", "src": "db2@1.60.1.70009"}
+{"id": 272523, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70009"}
+{"id": 272524, "field": "name", "en": "Premier Legionnaire's Shadowhide Armsplints", "hash": "c74730d6fdab079b", "src": "db2@1.60.1.70009"}
+{"id": 272525, "field": "name", "en": "Premier Champion's Shadowhide Mitts", "hash": "35cc276906ecc847", "src": "db2@1.60.1.70009"}
+{"id": 272526, "field": "name", "en": "Premier Warlord's Shadowhide Helm", "hash": "1a7a9ce6c8eee303", "src": "db2@1.60.1.70009"}
+{"id": 272527, "field": "name", "en": "Premier General's Shadowhide Spaulders", "hash": "d7321f3ae94034c4", "src": "db2@1.60.1.70009"}
+{"id": 272528, "field": "name", "en": "Premier Warlord's Shadowhide Breastplate", "hash": "b0ad80df48ab4b6e", "src": "db2@1.60.1.70009"}
+{"id": 272529, "field": "name", "en": "Premier General's Shadowhide Legguards", "hash": "f44410f76c2f0f5b", "src": "db2@1.60.1.70009"}
+{"id": 272530, "field": "name", "en": "Premier Warlord's Chain Chestpiece", "hash": "1e6d860d3c0c0f2c", "src": "db2@1.60.1.70009"}
+{"id": 272531, "field": "name", "en": "Premier Warlord's Chain Helmet", "hash": "c99b286c06a343e4", "src": "db2@1.60.1.70009"}
+{"id": 272532, "field": "name", "en": "Premier General's Chain Legguards", "hash": "0971c95a81a60495", "src": "db2@1.60.1.70009"}
+{"id": 272533, "field": "name", "en": "Premier General's Chain Shoulders", "hash": "1299893101ab22b2", "src": "db2@1.60.1.70009"}
+{"id": 272534, "field": "name", "en": "Premier Centurion's Chain Sabatons", "hash": "37e1a45d3c4e7a04", "src": "db2@1.60.1.70009"}
+{"id": 272535, "field": "name", "en": "Premier Legionnaire's Chain Wristguards", "hash": "f9b35b95634b5e04", "src": "db2@1.60.1.70009"}
+{"id": 272536, "field": "name", "en": "Premier Champion's Chain Gloves", "hash": "c46a70e9ef5d0652", "src": "db2@1.60.1.70009"}
+{"id": 272536, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70009"}
+{"id": 272537, "field": "name", "en": "Premier Legionnaire's Chain Girdle", "hash": "49ae7b21d7aee9fb", "src": "db2@1.60.1.70009"}
+{"id": 272538, "field": "name", "en": "Premier Centurion's Linked Boots", "hash": "aa30b23e5622771a", "src": "db2@1.60.1.70009"}
+{"id": 272538, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70009"}
+{"id": 272539, "field": "name", "en": "Premier Champion's Linked Gauntlets", "hash": "6f4dad13514f2bd9", "src": "db2@1.60.1.70009"}
+{"id": 272540, "field": "name", "en": "Premier Legionnaire's Linked Waistband", "hash": "49b7d7d24fb170c8", "src": "db2@1.60.1.70009"}
+{"id": 272541, "field": "name", "en": "Premier Legionnaire's Linked Bracers", "hash": "c63e5516901790f7", "src": "db2@1.60.1.70009"}
+{"id": 272542, "field": "name", "en": "Premier Warlord's Linked Armor", "hash": "d019728ab7dc114d", "src": "db2@1.60.1.70009"}
+{"id": 272543, "field": "name", "en": "Premier Warlord's Linked Helm", "hash": "0e3d084181a28596", "src": "db2@1.60.1.70009"}
+{"id": 272544, "field": "name", "en": "Premier General's Linked Leggings", "hash": "283452fb3983835b", "src": "db2@1.60.1.70009"}
+{"id": 272545, "field": "name", "en": "Premier General's Linked Spaulders", "hash": "469dfa3366efb7f5", "src": "db2@1.60.1.70009"}
+{"id": 272548, "field": "name", "en": "Premier Felweave Robe", "hash": "9db23557fec63601", "src": "db2@1.60.1.70009"}
+{"id": 272549, "field": "name", "en": "Premier Felweave Shoulders", "hash": "baabf127292324d5", "src": "db2@1.60.1.70009"}
+{"id": 272550, "field": "name", "en": "Premier Felweave Belt", "hash": "9b8ac27a00958ed8", "src": "db2@1.60.1.70009"}
+{"id": 272551, "field": "name", "en": "Premier Felweave Bracers", "hash": "c0932f6dbef8960b", "src": "db2@1.60.1.70009"}
+{"id": 272552, "field": "name", "en": "Premier Felweave Boots", "hash": "9959579531b7091c", "src": "db2@1.60.1.70009"}
+{"id": 272553, "field": "name", "en": "Premier Felweave Gloves", "hash": "2da4a94dded96c60", "src": "db2@1.60.1.70009"}
+{"id": 272553, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70009"}
+{"id": 272554, "field": "name", "en": "Premier Centurion's Felweave Boots", "hash": "c1563d56080a5251", "src": "db2@1.60.1.70009"}
+{"id": 272555, "field": "name", "en": "Premier Legionnaire's Felweave Bracers", "hash": "ba059c52e63afe87", "src": "db2@1.60.1.70009"}
+{"id": 272556, "field": "name", "en": "Premier Champion's Felweave Gloves", "hash": "868faece7033fbf4", "src": "db2@1.60.1.70009"}
+{"id": 272556, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70009"}
+{"id": 272557, "field": "name", "en": "Premier Legionnaire's Felweave Belt", "hash": "f3eb36d31878cb01", "src": "db2@1.60.1.70009"}
+{"id": 272558, "field": "name", "en": "Premier General's Felweave Mantle", "hash": "b8769b9cd4e39951", "src": "db2@1.60.1.70009"}
+{"id": 272559, "field": "name", "en": "Premier Warlord's Felweave Hood", "hash": "0c562ba7b96f8247", "src": "db2@1.60.1.70009"}
+{"id": 272560, "field": "name", "en": "Premier Warlord's Felweave Robe", "hash": "0dad2d0f3f7d6c37", "src": "db2@1.60.1.70009"}
+{"id": 272561, "field": "name", "en": "Premier General's Felweave Pants", "hash": "f788d21245d1ef67", "src": "db2@1.60.1.70009"}
+{"id": 272562, "field": "name", "en": "Premier Satin Cowl", "hash": "4b7f6fc5b833cf04", "src": "db2@1.60.1.70009"}
+{"id": 272563, "field": "name", "en": "Premier Satin Trousers", "hash": "192a0f637ef0c2c5", "src": "db2@1.60.1.70009"}
+{"id": 272564, "field": "name", "en": "Premier Satin Vestments", "hash": "7be13c8f505acac2", "src": "db2@1.60.1.70009"}
+{"id": 272565, "field": "name", "en": "Premier Satin Shoulderpads", "hash": "9316c7b6b08a9c43", "src": "db2@1.60.1.70009"}
+{"id": 272566, "field": "name", "en": "Premier Satin Sash", "hash": "4da09ce7571edb77", "src": "db2@1.60.1.70009"}
+{"id": 272567, "field": "name", "en": "Premier Satin Cuffs", "hash": "a2ff8df7388e6dfd", "src": "db2@1.60.1.70009"}
+{"id": 272568, "field": "name", "en": "Premier Satin Boots", "hash": "90a6687f2cf0566c", "src": "db2@1.60.1.70009"}
+{"id": 272569, "field": "name", "en": "Premier Satin Gloves", "hash": "ba1450f29c930598", "src": "db2@1.60.1.70009"}
+{"id": 272569, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70009"}
+{"id": 272570, "field": "name", "en": "Premier Centurion's Satin Boots", "hash": "e176570f5e070346", "src": "db2@1.60.1.70009"}
+{"id": 272571, "field": "name", "en": "Premier Legionnaire's Satin Bracers", "hash": "f6166e9d1088b82c", "src": "db2@1.60.1.70009"}
+{"id": 272572, "field": "name", "en": "Premier Champion's Satin Gloves", "hash": "c695cfa276b4d5ff", "src": "db2@1.60.1.70009"}
+{"id": 272572, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70009"}
+{"id": 272573, "field": "name", "en": "Premier Legionnaire's Satin Cinch", "hash": "75f6b61880cbbf95", "src": "db2@1.60.1.70009"}
+{"id": 272574, "field": "name", "en": "Premier General's Satin Mantle", "hash": "7e38617b135efca6", "src": "db2@1.60.1.70009"}
+{"id": 272575, "field": "name", "en": "Premier Warlord's Satin Cowl", "hash": "6263c95264d2e7aa", "src": "db2@1.60.1.70009"}
+{"id": 272576, "field": "name", "en": "Premier Warlord's Satin Robes", "hash": "605831d5e3cb1251", "src": "db2@1.60.1.70009"}
+{"id": 272577, "field": "name", "en": "Premier General's Satin Leggings", "hash": "c7a3e049fe7bbba3", "src": "db2@1.60.1.70009"}
+{"id": 272578, "field": "name", "en": "Premier Sergeant's Cloak", "hash": "269296888d833b6f", "src": "db2@1.60.1.70009"}
+{"id": 272579, "field": "name", "en": "Premier Mortarplate Bracers", "hash": "3528d9b2c503e413", "src": "db2@1.60.1.70009"}
+{"id": 272580, "field": "name", "en": "First Sergeant's Plate Bracers", "hash": "0397c5b724d27ff0", "src": "db2@1.60.1.70009"}
+{"id": 272581, "field": "name", "en": "First Sergeant's Mail Wristguards", "hash": "93a2f516c02b3917", "src": "db2@1.60.1.70009"}
+{"id": 272582, "field": "name", "en": "Premier Dragonhide Armguards", "hash": "e2aa50d80b2be1bc", "src": "db2@1.60.1.70009"}
+{"id": 272589, "field": "name", "en": "Premier Sergeant's Cape", "hash": "5c216a8a521372f6", "src": "db2@1.60.1.70009"}
+{"id": 272591, "field": "name", "en": "Premier High Warlord's Shield Wall", "hash": "5af43cb7be687537", "src": "db2@1.60.1.70009"}
+{"id": 272591, "field": "description", "en": "When struck in combat has a $h% chance of inflicting $16782s1 Nature damage to the attacker.", "hash": "fb53f46d659b1de4", "src": "db2@1.60.1.70009"}
+{"id": 272592, "field": "name", "en": "Premier High Warlord's Cleaver", "hash": "c366641ed6b1f04d", "src": "db2@1.60.1.70009"}
+{"id": 272593, "field": "name", "en": "Premier High Warlord's Battle Axe", "hash": "b446bc42dd7de576", "src": "db2@1.60.1.70009"}
+{"id": 272594, "field": "name", "en": "Premier High Warlord's Recurve", "hash": "58d26d30de2c27ca", "src": "db2@1.60.1.70009"}
+{"id": 272595, "field": "name", "en": "Premier High Warlord's Crossbow", "hash": "484f814167c360be", "src": "db2@1.60.1.70009"}
+{"id": 272596, "field": "name", "en": "Premier High Warlord's Razor", "hash": "3b949e6688d259b1", "src": "db2@1.60.1.70009"}
+{"id": 272597, "field": "name", "en": "Premier High Warlord's Right Claw", "hash": "cce12b9b68a74cee", "src": "db2@1.60.1.70009"}
+{"id": 272598, "field": "name", "en": "Premier High Warlord's Left Claw", "hash": "f3d25da6f40b4371", "src": "db2@1.60.1.70009"}
+{"id": 272599, "field": "name", "en": "Premier High Warlord's Street Sweeper", "hash": "3fe5ab1a57cea06c", "src": "db2@1.60.1.70009"}
+{"id": 272600, "field": "name", "en": "Premier High Warlord's Bludgeon", "hash": "70df0a4d3558bb05", "src": "db2@1.60.1.70009"}
+{"id": 272601, "field": "name", "en": "Premier High Warlord's Pulverizer", "hash": "90383135eaa35090", "src": "db2@1.60.1.70009"}
+{"id": 272602, "field": "name", "en": "Premier High Warlord's Pig Sticker", "hash": "6e0bf422afd74eab", "src": "db2@1.60.1.70009"}
+{"id": 272603, "field": "name", "en": "Premier High Warlord's War Staff", "hash": "e2be345ab186189b", "src": "db2@1.60.1.70009"}
+{"id": 272604, "field": "name", "en": "Premier High Warlord's Greatsword", "hash": "c276fd2aab559463", "src": "db2@1.60.1.70009"}
+{"id": 272606, "field": "name", "en": "Premier Kodohide Treads", "hash": "5bdacd7583f77340", "src": "db2@1.60.1.70009"}
+{"id": 272608, "field": "name", "en": "Premier Shadowhide Walkers", "hash": "b55f31c5b790b5f2", "src": "db2@1.60.1.70009"}
+{"id": 272608, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70009"}
+{"id": 272609, "field": "name", "en": "Premier Linked Greaves", "hash": "5a56f3d35d5c6866", "src": "db2@1.60.1.70009"}
+{"id": 272609, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70009"}
+{"id": 272611, "field": "name", "en": "Premier Silken Walkers", "hash": "ff43566c500cc48d", "src": "db2@1.60.1.70009"}
+{"id": 272614, "field": "name", "en": "Premier Dragonhide Grips", "hash": "2df43b19a1936f9a", "src": "db2@1.60.1.70009"}
+{"id": 272614, "field": "description", "en": "Increases your effective stealth detection level by ${$s1/5}.", "hash": "56868fcba461b542", "src": "db2@1.60.1.70009"}
+{"id": 272617, "field": "name", "en": "Premier Mail Vices", "hash": "ed1b7f2efec0de50", "src": "db2@1.60.1.70009"}
+{"id": 272619, "field": "name", "en": "Premier Silken Handwraps", "hash": "8b6e9f2703df9419", "src": "db2@1.60.1.70009"}
+{"id": 272619, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Flash Heal.", "hash": "000f033d05b937da", "src": "db2@1.60.1.70009"}
+{"id": 272625, "field": "name", "en": "Premier Linked Hauberk", "hash": "7439e6bf8163bc89", "src": "db2@1.60.1.70009"}
+{"id": 272626, "field": "name", "en": "Premier Kodohide Chestpiece", "hash": "501f4a0775c688bc", "src": "db2@1.60.1.70009"}
+{"id": 272627, "field": "name", "en": "Premier Kodohide Leggings", "hash": "f6dd6cb0516167d4", "src": "db2@1.60.1.70009"}
+{"id": 272630, "field": "name", "en": "Premier Felweave Legguards", "hash": "b1843150a91e06b8", "src": "db2@1.60.1.70009"}
+{"id": 272634, "field": "name", "en": "Premier Silken Tunic", "hash": "3a3bacdd7833ec96", "src": "db2@1.60.1.70009"}
+{"id": 272636, "field": "name", "en": "Premier Mail Legguards", "hash": "e32978079abe7478", "src": "db2@1.60.1.70009"}
+{"id": 272637, "field": "name", "en": "Premier Mortarplate Shoulders", "hash": "ff7e460a5e6cf6c4", "src": "db2@1.60.1.70009"}
+{"id": 272640, "field": "name", "en": "Premier Chain Shoulders", "hash": "aba7b6f7cb6fdb7a", "src": "db2@1.60.1.70009"}
+{"id": 272641, "field": "name", "en": "Premier Kodohide Headguard", "hash": "860d0935c0218f49", "src": "db2@1.60.1.70009"}
+{"id": 272642, "field": "name", "en": "Premier Kodohide Shoulders", "hash": "2d5fd5784294587a", "src": "db2@1.60.1.70009"}
+{"id": 272643, "field": "name", "en": "Premier Felweave Cowl", "hash": "9bafb408b5b18704", "src": "db2@1.60.1.70009"}
+{"id": 272647, "field": "name", "en": "Premier Linked Headguard", "hash": "17c64d610fb93260", "src": "db2@1.60.1.70009"}
+{"id": 272648, "field": "name", "en": "Premier Mail Pauldrons", "hash": "24f39a66398e8cb5", "src": "db2@1.60.1.70009"}
+{"id": 272649, "field": "name", "en": "Premier Silken Hood", "hash": "b6866c9061e49b5f", "src": "db2@1.60.1.70009"}
+{"id": 272650, "field": "name", "en": "Premier Silken Mantle", "hash": "8cdc0c5275e084f7", "src": "db2@1.60.1.70009"}
+{"id": 272656, "field": "name", "en": "Premier Lunarhide Leggings", "hash": "166b27596153a5a1", "src": "db2@1.60.1.70009"}
+{"id": 272657, "field": "name", "en": "Premier Dreadweave Legguards", "hash": "acd8ba37519de1d9", "src": "db2@1.60.1.70009"}
+{"id": 272663, "field": "name", "en": "Premier Silken Legguards", "hash": "c1d8267d3cdbe823", "src": "db2@1.60.1.70009"}
+{"id": 272669, "field": "name", "en": "Premier Lunarhide Headguard", "hash": "ab938b711985d543", "src": "db2@1.60.1.70009"}
+{"id": 272670, "field": "name", "en": "Premier Lunarhide Shoulders", "hash": "52e657b49bf89e63", "src": "db2@1.60.1.70009"}
+{"id": 272671, "field": "name", "en": "Premier Dreadweave Cowl", "hash": "eca13891e02dd80d", "src": "db2@1.60.1.70009"}
+{"id": 272677, "field": "name", "en": "Premier Mooncloth Hood", "hash": "ff1d4a044c46fa79", "src": "db2@1.60.1.70009"}
+{"id": 272678, "field": "name", "en": "Premier Mooncloth Mantle", "hash": "961f9070526b4152", "src": "db2@1.60.1.70009"}
+{"id": 272680, "field": "name", "en": "Premier Magus Mantle", "hash": "c757b41a69e2a22f", "src": "db2@1.60.1.70009"}
+{"id": 272681, "field": "name", "en": "Premier High Warlord's Battle Mace", "hash": "41c7f4663002e641", "src": "db2@1.60.1.70009"}
+{"id": 272682, "field": "name", "en": "Premier High Warlord's Destroyer", "hash": "cd83512bed128431", "src": "db2@1.60.1.70009"}
+{"id": 272683, "field": "name", "en": "Premier High Warlord's Spellblade", "hash": "227ab3ee35d6a2c6", "src": "db2@1.60.1.70009"}
+{"id": 272684, "field": "name", "en": "Premier High Warlord's Quickblade", "hash": "7575524f0c1bdd20", "src": "db2@1.60.1.70009"}
+{"id": 272685, "field": "name", "en": "Premier High Warlord's Tome of Destruction", "hash": "8733d0c83545e540", "src": "db2@1.60.1.70009"}
+{"id": 272686, "field": "name", "en": "Premier High Warlord's Tome of Mending", "hash": "e257614fa32dfe21", "src": "db2@1.60.1.70009"}
+{"id": 272693, "field": "name", "en": "Premier Grand Marshal's Longsword", "hash": "789da4fa4b145f85", "src": "db2@1.60.1.70009"}
+{"id": 272694, "field": "name", "en": "Private's Tabard", "hash": "ae3535013c929881", "src": "db2@1.60.1.70009"}
+{"id": 272695, "field": "name", "en": "Knight's Colors", "hash": "7626c5c7efc47f2c", "src": "db2@1.60.1.70009"}
+{"id": 272698, "field": "name", "en": "Premier Sergeant's Cloak", "hash": "269296888d833b6f", "src": "db2@1.60.1.70009"}
+{"id": 272699, "field": "name", "en": "Premier Sergeant's Cape", "hash": "5c216a8a521372f6", "src": "db2@1.60.1.70009"}
+{"id": 272700, "field": "name", "en": "Premier Silk Sash", "hash": "24c93d64b5211106", "src": "db2@1.60.1.70009"}
+{"id": 272701, "field": "name", "en": "Premier Silk Boots", "hash": "aa70880d115e8120", "src": "db2@1.60.1.70009"}
+{"id": 272702, "field": "name", "en": "Premier Silk Cuffs", "hash": "bcc9ad851cfc98b1", "src": "db2@1.60.1.70009"}
+{"id": 272703, "field": "name", "en": "Premier Silk Gloves", "hash": "ec8276ddb8921f6d", "src": "db2@1.60.1.70009"}
+{"id": 272703, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70009"}
+{"id": 272704, "field": "name", "en": "Premier Leather Boots", "hash": "11ee8e6327d29d41", "src": "db2@1.60.1.70009"}
+{"id": 272704, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70009"}
+{"id": 272705, "field": "name", "en": "Premier Beasthide Footwraps", "hash": "ea0134a6cc4a3136", "src": "db2@1.60.1.70009"}
+{"id": 272706, "field": "name", "en": "Premier Leather Bracers", "hash": "0b29556271c55d26", "src": "db2@1.60.1.70009"}
+{"id": 272707, "field": "name", "en": "Premier Beasthide Armsplints", "hash": "a65c8bafe53890cc", "src": "db2@1.60.1.70009"}
+{"id": 272708, "field": "name", "en": "Premier Leather Gauntlets", "hash": "d5d239cab3985b63", "src": "db2@1.60.1.70009"}
+{"id": 272709, "field": "name", "en": "Premier Beasthide Gloves", "hash": "eb5156018fa909aa", "src": "db2@1.60.1.70009"}
+{"id": 272709, "field": "description", "en": "Increases your effective stealth detection level by ${$s1/5}.", "hash": "56868fcba461b542", "src": "db2@1.60.1.70009"}
+{"id": 272710, "field": "name", "en": "Premier Leather Belt", "hash": "9e6aad66dbc99a11", "src": "db2@1.60.1.70009"}
+{"id": 272711, "field": "name", "en": "Premier Beasthide Girdle", "hash": "b70a68c453ad82df", "src": "db2@1.60.1.70009"}
+{"id": 272712, "field": "name", "en": "Premier Chainmail Girdle", "hash": "f205506949422761", "src": "db2@1.60.1.70009"}
+{"id": 272713, "field": "name", "en": "Premier Chainmail Boots", "hash": "2dcfdf909a296b06", "src": "db2@1.60.1.70009"}
+{"id": 272715, "field": "name", "en": "Premier Chainmail Gauntlets", "hash": "942ae1c4a440782d", "src": "db2@1.60.1.70009"}
+{"id": 272715, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70009"}
+{"id": 272716, "field": "name", "en": "Premier Plate Boots", "hash": "88bfb1855876fe77", "src": "db2@1.60.1.70009"}
+{"id": 272717, "field": "name", "en": "Premier Plate Gauntlets", "hash": "e16ed140e34b2ce5", "src": "db2@1.60.1.70009"}
+{"id": 272717, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70009"}
+{"id": 272718, "field": "name", "en": "Premier Chevalier Sabatons", "hash": "2a8e439035b2c82c", "src": "db2@1.60.1.70009"}
+{"id": 272719, "field": "name", "en": "Premier Chevalier Gauntlets", "hash": "805781a49e48be80", "src": "db2@1.60.1.70009"}
+{"id": 272719, "field": "description", "en": "Increases the duration of your Repentance by ${$m1/1000} sec.", "hash": "6cf4f47da880c362", "src": "db2@1.60.1.70009"}
+{"id": 272720, "field": "name", "en": "Premier Chevalier Cinch", "hash": "a73e11993a4a85d8", "src": "db2@1.60.1.70009"}
+{"id": 272721, "field": "name", "en": "Premier Chevalier Armsplints", "hash": "2a5e823b94c20cbc", "src": "db2@1.60.1.70009"}
+{"id": 272722, "field": "name", "en": "Premier Silk Raiment", "hash": "913a423ee4a44267", "src": "db2@1.60.1.70009"}
+{"id": 272723, "field": "name", "en": "Premier Silk Leggings", "hash": "f71ff503c75acba2", "src": "db2@1.60.1.70009"}
+{"id": 272724, "field": "name", "en": "Premier Silk Spaulders", "hash": "2931e65d22e803a6", "src": "db2@1.60.1.70009"}
+{"id": 272725, "field": "name", "en": "Premier Silk Crown", "hash": "bc6528b398813c47", "src": "db2@1.60.1.70009"}
+{"id": 272726, "field": "name", "en": "Premier Leather Armor", "hash": "00c73841e92ed2ec", "src": "db2@1.60.1.70009"}
+{"id": 272727, "field": "name", "en": "Premier Leather Veil", "hash": "a118bbf1e7e84b0d", "src": "db2@1.60.1.70009"}
+{"id": 272728, "field": "name", "en": "Premier Leather Legguards", "hash": "9cb9b8682c6a3fdb", "src": "db2@1.60.1.70009"}
+{"id": 272729, "field": "name", "en": "Premier Leather Spaulders", "hash": "7fa7c6aba97b6544", "src": "db2@1.60.1.70009"}
+{"id": 272730, "field": "name", "en": "Premier Beasthide Tunic", "hash": "cbd6b57ab5fe95a1", "src": "db2@1.60.1.70009"}
+{"id": 272731, "field": "name", "en": "Premier Beasthide Leggings", "hash": "10cc37bc863e749d", "src": "db2@1.60.1.70009"}
+{"id": 272732, "field": "name", "en": "Premier Beasthide Epaulets", "hash": "a16a1a6cc9efc8a2", "src": "db2@1.60.1.70009"}
+{"id": 272733, "field": "name", "en": "Premier Beasthide Shroud", "hash": "6fb323f072e3046b", "src": "db2@1.60.1.70009"}
+{"id": 272734, "field": "name", "en": "Premier Chainmail Hauberk", "hash": "e5ab3788955a95d3", "src": "db2@1.60.1.70009"}
+{"id": 272735, "field": "name", "en": "Premier Chainmail Leggings", "hash": "ce3ed8be738d567a", "src": "db2@1.60.1.70009"}
+{"id": 272736, "field": "name", "en": "Premier Chainmail Pauldrons", "hash": "9cdc82bcbbe274d1", "src": "db2@1.60.1.70009"}
+{"id": 272737, "field": "name", "en": "Premier Chainmail Helmet", "hash": "a68748eef26b9e05", "src": "db2@1.60.1.70009"}
+{"id": 272738, "field": "name", "en": "Premier Plate Helm", "hash": "f8110dec9aa5d07e", "src": "db2@1.60.1.70009"}
+{"id": 272739, "field": "name", "en": "Premier Plate Chestguard", "hash": "4f364e80533a6b2d", "src": "db2@1.60.1.70009"}
+{"id": 272740, "field": "name", "en": "Premier Plate Leggings", "hash": "e260962ccc555084", "src": "db2@1.60.1.70009"}
+{"id": 272741, "field": "name", "en": "Premier Plate Pauldrons", "hash": "ea207238faed2989", "src": "db2@1.60.1.70009"}
+{"id": 272742, "field": "name", "en": "Premier Chevalier Breastplate", "hash": "983eac5cb70a4bf5", "src": "db2@1.60.1.70009"}
+{"id": 272743, "field": "name", "en": "Premier Chevalier Headguard", "hash": "a913f3d614acf7e4", "src": "db2@1.60.1.70009"}
+{"id": 272744, "field": "name", "en": "Premier Chevalier Leggings", "hash": "0aac9f5a0feca315", "src": "db2@1.60.1.70009"}
+{"id": 272745, "field": "name", "en": "Premier Chevalier Shoulders", "hash": "5066c019971fc104", "src": "db2@1.60.1.70009"}
+{"id": 272746, "field": "name", "en": "Premier Knight-Champion's Silk Footwraps", "hash": "576058bf0732162f", "src": "db2@1.60.1.70009"}
+{"id": 272747, "field": "name", "en": "Premier Knight-Captain's Silk Bracers", "hash": "0aa0cd504020c260", "src": "db2@1.60.1.70009"}
+{"id": 272748, "field": "name", "en": "Premier Knight-Captain's Silk Sash", "hash": "bff35410c624c8c6", "src": "db2@1.60.1.70009"}
+{"id": 272749, "field": "name", "en": "Premier Lieutenant Commander's Silk Gloves", "hash": "7df2da6bb09fba51", "src": "db2@1.60.1.70009"}
+{"id": 272749, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70009"}
+{"id": 272750, "field": "name", "en": "Premier Field Marshal's Silk Coronet", "hash": "a59cd6d32e18b22e", "src": "db2@1.60.1.70009"}
+{"id": 272751, "field": "name", "en": "Premier Marshal's Silk Leggings", "hash": "cec82be2582ec208", "src": "db2@1.60.1.70009"}
+{"id": 272752, "field": "name", "en": "Premier Field Marshal's Silk Vestments", "hash": "0fa7eda415f43d85", "src": "db2@1.60.1.70009"}
+{"id": 272753, "field": "name", "en": "Premier Marshal's Silk Spaulders", "hash": "8445fa11180901f4", "src": "db2@1.60.1.70009"}
+{"id": 272754, "field": "name", "en": "Premier Knight-Captain's Beasthide Bracers", "hash": "43ed67404ef85bd2", "src": "db2@1.60.1.70009"}
+{"id": 272755, "field": "name", "en": "Premier Knight-Champion's Leather Footguards", "hash": "75d9efb5000ac5cf", "src": "db2@1.60.1.70009"}
+{"id": 272755, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70009"}
+{"id": 272756, "field": "name", "en": "Premier Knight-Captain's Beasthide Waistguard", "hash": "3e36032716c90d24", "src": "db2@1.60.1.70009"}
+{"id": 272757, "field": "name", "en": "Premier Lieutenant Commander's Beasthide Gauntlets", "hash": "ccbd763e75d53183", "src": "db2@1.60.1.70009"}
+{"id": 272757, "field": "description", "en": "Increases your effective stealth detection level by ${$s1/5}.", "hash": "56868fcba461b542", "src": "db2@1.60.1.70009"}
+{"id": 272758, "field": "name", "en": "Premier Marshal's Beasthide Spaulders", "hash": "b78075956bc23153", "src": "db2@1.60.1.70009"}
+{"id": 272759, "field": "name", "en": "Premier Marshal's Beasthide Legguards", "hash": "d4926752eeb10bd9", "src": "db2@1.60.1.70009"}
+{"id": 272760, "field": "name", "en": "Premier Field Marshal's Beasthide Helmet", "hash": "e22b73affe6187ca", "src": "db2@1.60.1.70009"}
+{"id": 272761, "field": "name", "en": "Premier Field Marshal's Beasthide Breastplate", "hash": "3d41de3c818427ef", "src": "db2@1.60.1.70009"}
+{"id": 272762, "field": "name", "en": "Premier Field Marshal's Leather Chestpiece", "hash": "c7de89f31bd13c4c", "src": "db2@1.60.1.70009"}
+{"id": 272763, "field": "name", "en": "Premier Lieutenant Commander's Leather Handgrips", "hash": "b9fa23c041f8478c", "src": "db2@1.60.1.70009"}
+{"id": 272764, "field": "name", "en": "Premier Field Marshal's Leather Mask", "hash": "eb3f8bf8a2592081", "src": "db2@1.60.1.70009"}
+{"id": 272765, "field": "name", "en": "Premier Marshal's Leather Leggings", "hash": "d438c0305ff5cadd", "src": "db2@1.60.1.70009"}
+{"id": 272766, "field": "name", "en": "Premier Marshal's Leather Epaulets", "hash": "64d6a2e5a3a71ee2", "src": "db2@1.60.1.70009"}
+{"id": 272767, "field": "name", "en": "Premier Knight-Captain's Leather Cinch", "hash": "450c0cac07631af9", "src": "db2@1.60.1.70009"}
+{"id": 272768, "field": "name", "en": "Premier Knight-Champion's Beasthide Boots", "hash": "83456820a96e4f40", "src": "db2@1.60.1.70009"}
+{"id": 272769, "field": "name", "en": "Premier Knight-Captain's Leather Armsplints", "hash": "430f2797b0f9d42e", "src": "db2@1.60.1.70009"}
+{"id": 272770, "field": "name", "en": "Premier Knight-Captain's Chainmail Bracers", "hash": "7251f14526889a08", "src": "db2@1.60.1.70009"}
+{"id": 272771, "field": "name", "en": "Premier Knight-Champion's Chainmail Boots", "hash": "2202ecd5868c30da", "src": "db2@1.60.1.70009"}
+{"id": 272772, "field": "name", "en": "Premier Lieutenant Commander's Chainmail Grips", "hash": "8e9e8580d161be65", "src": "db2@1.60.1.70009"}
+{"id": 272772, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70009"}
+{"id": 272773, "field": "name", "en": "Premier Knight-Captain's Chainmail Girdle", "hash": "75d665989cab20e7", "src": "db2@1.60.1.70009"}
+{"id": 272774, "field": "name", "en": "Premier Field Marshal's Chainmail Helm", "hash": "cfe48256b613c219", "src": "db2@1.60.1.70009"}
+{"id": 272775, "field": "name", "en": "Premier Field Marshal's Chainmail Breastplate", "hash": "ced9e1b5ace17a84", "src": "db2@1.60.1.70009"}
+{"id": 272776, "field": "name", "en": "Premier Marshal's Chainmail Legguards", "hash": "c63acd3d0e5f2a93", "src": "db2@1.60.1.70009"}
+{"id": 272777, "field": "name", "en": "Premier Marshal's Chainmail Spaulders", "hash": "a928db808b704ffc", "src": "db2@1.60.1.70009"}
+{"id": 272778, "field": "name", "en": "Premier Knight-Captain's Chevalier Armguards", "hash": "c12395de0840f4bc", "src": "db2@1.60.1.70009"}
+{"id": 272779, "field": "name", "en": "Premier Knight-Captain's Chevalier Belt", "hash": "8d6a79b23bed41aa", "src": "db2@1.60.1.70009"}
+{"id": 272780, "field": "name", "en": "Premier Lieutenant Commander's Chevalier Gloves", "hash": "23f3c61483eb3bf1", "src": "db2@1.60.1.70009"}
+{"id": 272780, "field": "description", "en": "Increases the duration of your Repentance by ${$m1/1000} sec.", "hash": "6cf4f47da880c362", "src": "db2@1.60.1.70009"}
+{"id": 272781, "field": "name", "en": "Premier Knight-Champion's Chevalier Boots", "hash": "8ab185f69c2ce61b", "src": "db2@1.60.1.70009"}
+{"id": 272782, "field": "name", "en": "Premier Field Marshal's Chevalier Chestplate", "hash": "ed51b9fa53fa7dfb", "src": "db2@1.60.1.70009"}
+{"id": 272783, "field": "name", "en": "Premier Field Marshal's Chevalier Faceguard", "hash": "0ec01370dfcd89d2", "src": "db2@1.60.1.70009"}
+{"id": 272784, "field": "name", "en": "Premier Marshal's Chevalier Legplates", "hash": "ec13337417f097a6", "src": "db2@1.60.1.70009"}
+{"id": 272785, "field": "name", "en": "Premier Marshal's Chevalier Pauldrons", "hash": "f4318f77a7378912", "src": "db2@1.60.1.70009"}
+{"id": 272786, "field": "name", "en": "Premier Field Marshal's Plate Armor", "hash": "d5f8d1beeb1402af", "src": "db2@1.60.1.70009"}
+{"id": 272787, "field": "name", "en": "Premier Field Marshal's Plate Helm", "hash": "d98516a5e665bc6c", "src": "db2@1.60.1.70009"}
+{"id": 272788, "field": "name", "en": "Premier Marshal's Plate Legguards", "hash": "439c65e5cce7eee0", "src": "db2@1.60.1.70009"}
+{"id": 272789, "field": "name", "en": "Premier Marshal's Plate Shoulderguards", "hash": "7c8b19ed0e5e4f12", "src": "db2@1.60.1.70009"}
+{"id": 272790, "field": "name", "en": "Premier Knight-Captain's Plate Bracers", "hash": "1713f88653568e65", "src": "db2@1.60.1.70009"}
+{"id": 272791, "field": "name", "en": "Premier Knight-Captain's Plate Girdle", "hash": "194b2cfcb86f6d7f", "src": "db2@1.60.1.70009"}
+{"id": 272792, "field": "name", "en": "Premier Knight-Champion's Plate Boots", "hash": "5fc5f8f18e5ec0a4", "src": "db2@1.60.1.70009"}
+{"id": 272793, "field": "name", "en": "Premier Lieutenant Commander's Plate Gauntlets", "hash": "ea13930c2f893cea", "src": "db2@1.60.1.70009"}
+{"id": 272793, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70009"}
+{"id": 272794, "field": "name", "en": "Premier Dreadweave Boots", "hash": "04f02a8296cab2ef", "src": "db2@1.60.1.70009"}
+{"id": 272795, "field": "name", "en": "Premier Dreadweave Bracers", "hash": "0213de76304b2499", "src": "db2@1.60.1.70009"}
+{"id": 272796, "field": "name", "en": "Premier Dreadweave Gloves", "hash": "3bd2971816b311da", "src": "db2@1.60.1.70009"}
+{"id": 272796, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70009"}
+{"id": 272797, "field": "name", "en": "Premier Dreadweave Belt", "hash": "ec7c47032b11dfe1", "src": "db2@1.60.1.70009"}
+{"id": 272800, "field": "name", "en": "Premier Dreadweave Robe", "hash": "eea3b9e02942871b", "src": "db2@1.60.1.70009"}
+{"id": 272801, "field": "name", "en": "Premier Dreadweave Mantle", "hash": "5fb2b732d681f793", "src": "db2@1.60.1.70009"}
+{"id": 272802, "field": "name", "en": "Premier Field Marshal's Dreadweave Coronal", "hash": "bda9b28e3a50c270", "src": "db2@1.60.1.70009"}
+{"id": 272803, "field": "name", "en": "Premier Marshal's Dreadweave Leggings", "hash": "24880da244dccb58", "src": "db2@1.60.1.70009"}
+{"id": 272804, "field": "name", "en": "Premier Marshal's Dreadweave Shoulders", "hash": "8bb02f323313b0ff", "src": "db2@1.60.1.70009"}
+{"id": 272805, "field": "name", "en": "Premier Field Marshal's Dreadweave Robe", "hash": "bac81daf537372d1", "src": "db2@1.60.1.70009"}
+{"id": 272806, "field": "name", "en": "Premier Knight-Captain's Dreadweave Cuffs", "hash": "9b1a6524f5d1c406", "src": "db2@1.60.1.70009"}
+{"id": 272807, "field": "name", "en": "Premier Knight-Champion's Dreadweave Boots", "hash": "fb0ff4ae4f8f14c2", "src": "db2@1.60.1.70009"}
+{"id": 272808, "field": "name", "en": "Premier Lieutenant Commander's Dreadweave Gloves", "hash": "a855d6933423471b", "src": "db2@1.60.1.70009"}
+{"id": 272808, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70009"}
+{"id": 272809, "field": "name", "en": "Premier Knight-Captain's Dreadweave Sash", "hash": "b718061cc7c1e37a", "src": "db2@1.60.1.70009"}
+{"id": 272810, "field": "name", "en": "Premier Voidcloth Boots", "hash": "71347115fb9c423a", "src": "db2@1.60.1.70009"}
+{"id": 272811, "field": "name", "en": "Premier Voidcloth Cuffs", "hash": "838d968d073a59dc", "src": "db2@1.60.1.70009"}
+{"id": 272812, "field": "name", "en": "Premier Voidcloth Gloves", "hash": "a2c2b564133ced33", "src": "db2@1.60.1.70009"}
+{"id": 272812, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70009"}
+{"id": 272813, "field": "name", "en": "Premier Voidcloth Cord", "hash": "456526e5351aa539", "src": "db2@1.60.1.70009"}
+{"id": 272814, "field": "name", "en": "Premier Voidcloth Diadem", "hash": "79a7ba6f7ebc547b", "src": "db2@1.60.1.70009"}
+{"id": 272815, "field": "name", "en": "Premier Voidcloth Leggings", "hash": "2fbf1c3754350bf7", "src": "db2@1.60.1.70009"}
+{"id": 272816, "field": "name", "en": "Premier Voidcloth Robes", "hash": "8a0c6708b6a6eacc", "src": "db2@1.60.1.70009"}
+{"id": 272817, "field": "name", "en": "Premier Voidcloth Amice", "hash": "5f608497ea0e262b", "src": "db2@1.60.1.70009"}
+{"id": 272818, "field": "name", "en": "Premier Field Marshal's Voidcloth Headdress", "hash": "892f256e1e0a0119", "src": "db2@1.60.1.70009"}
+{"id": 272819, "field": "name", "en": "Premier Marshal's Voidcloth Pants", "hash": "0059fe0cdd927c2b", "src": "db2@1.60.1.70009"}
+{"id": 272820, "field": "name", "en": "Premier Marshal's Voidcloth Mantle", "hash": "3b801a14862c4edb", "src": "db2@1.60.1.70009"}
+{"id": 272821, "field": "name", "en": "Premier Field Marshal's Voidcloth Vestments", "hash": "4577033dc54986d6", "src": "db2@1.60.1.70009"}
+{"id": 272822, "field": "name", "en": "Premier Knight-Captain's Voidcloth Bracers", "hash": "22f13630dc7fe6cc", "src": "db2@1.60.1.70009"}
+{"id": 272823, "field": "name", "en": "Premier Knight-Champion's Voidcloth Sandals", "hash": "d1a0325c17c0d992", "src": "db2@1.60.1.70009"}
+{"id": 272824, "field": "name", "en": "Premier Lieutenant Commander's Voidcloth Gloves", "hash": "0f11e0e199b82005", "src": "db2@1.60.1.70009"}
+{"id": 272824, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70009"}
+{"id": 272825, "field": "name", "en": "Premier Knight-Captain's Voidcloth Sash", "hash": "dd92b7968a18f867", "src": "db2@1.60.1.70009"}
+{"id": 272828, "field": "name", "en": "Premier Plate Wristguards", "hash": "a1e882cb3a9dd0cc", "src": "db2@1.60.1.70009"}
+{"id": 272830, "field": "name", "en": "Premier Chainmail Armguards", "hash": "521532ee11a63ce1", "src": "db2@1.60.1.70009"}
+{"id": 272834, "field": "name", "en": "Premier Dreamhide Armsplints", "hash": "ceaccd9b8fbdb7a9", "src": "db2@1.60.1.70009"}
+{"id": 272835, "field": "name", "en": "Premier Lunarhide Armsplints", "hash": "71a916911a2b2886", "src": "db2@1.60.1.70009"}
+{"id": 272838, "field": "name", "en": "Premier Grand Marshal's Aegis", "hash": "57f536b5ca63edda", "src": "db2@1.60.1.70009"}
+{"id": 272838, "field": "description", "en": "When struck in combat has a $h% chance of inflicting $16782s1 Nature damage to the attacker.", "hash": "fb53f46d659b1de4", "src": "db2@1.60.1.70009"}
+{"id": 272839, "field": "name", "en": "Premier Grand Marshal's Handaxe", "hash": "c1f273300a144652", "src": "db2@1.60.1.70009"}
+{"id": 272840, "field": "name", "en": "Premier Grand Marshal's Sunderer", "hash": "7f6f2f0f296af40e", "src": "db2@1.60.1.70009"}
+{"id": 272841, "field": "name", "en": "Premier Grand Marshal's Bullseye", "hash": "28277cb939c89bbd", "src": "db2@1.60.1.70009"}
+{"id": 272842, "field": "name", "en": "Premier Grand Marshal's Repeater", "hash": "c4e01c3baee72684", "src": "db2@1.60.1.70009"}
+{"id": 272843, "field": "name", "en": "Premier Grand Marshal's Dirk", "hash": "af0052efddc51a56", "src": "db2@1.60.1.70009"}
+{"id": 272844, "field": "name", "en": "Premier Grand Marshal's Right Hand Blade", "hash": "264b375d20ba2a19", "src": "db2@1.60.1.70009"}
+{"id": 272845, "field": "name", "en": "Premier Grand Marshal's Left Hand Blade", "hash": "9786cbff7b1c668d", "src": "db2@1.60.1.70009"}
+{"id": 272846, "field": "name", "en": "Premier Grand Marshal's Hand Cannon", "hash": "74695818926f5dc6", "src": "db2@1.60.1.70009"}
+{"id": 272847, "field": "name", "en": "Premier Grand Marshal's Punisher", "hash": "72bcd682b7c11271", "src": "db2@1.60.1.70009"}
+{"id": 272848, "field": "name", "en": "Premier Grand Marshal's Battle Hammer", "hash": "d00195c2328c9872", "src": "db2@1.60.1.70009"}
+{"id": 272849, "field": "name", "en": "Premier Grand Marshal's Glaive", "hash": "61a6f1c3acd73f8e", "src": "db2@1.60.1.70009"}
+{"id": 272850, "field": "name", "en": "Premier Grand Marshal's Stave", "hash": "95ed08e4a82838b0", "src": "db2@1.60.1.70009"}
+{"id": 272851, "field": "name", "en": "Premier Grand Marshal's Claymore", "hash": "5a08816655269bd6", "src": "db2@1.60.1.70009"}
+{"id": 272852, "field": "name", "en": "Premier Luminous Breastplate", "hash": "e522538a208d95b3", "src": "db2@1.60.1.70009"}
+{"id": 272853, "field": "name", "en": "Premier Luminous Leggings", "hash": "86e54cd33805c8bc", "src": "db2@1.60.1.70009"}
+{"id": 272854, "field": "name", "en": "Premier Luminous Headguard", "hash": "3a14ba015e569d89", "src": "db2@1.60.1.70009"}
+{"id": 272855, "field": "name", "en": "Premier Luminous Shoulders", "hash": "e167863fe0c966a9", "src": "db2@1.60.1.70009"}
+{"id": 272856, "field": "name", "en": "Premier Grand Marshal's Mageblade", "hash": "fbacc98db58bdecf", "src": "db2@1.60.1.70009"}
+{"id": 272857, "field": "name", "en": "Premier Grand Marshal's Warhammer", "hash": "d75a31275004524b", "src": "db2@1.60.1.70009"}
+{"id": 272858, "field": "name", "en": "Premier Grand Marshal's Demolisher", "hash": "986b6619512d4846", "src": "db2@1.60.1.70009"}
+{"id": 272859, "field": "name", "en": "Premier Grand Marshal's Swiftblade", "hash": "8b64cd9b7efab9cd", "src": "db2@1.60.1.70009"}
+{"id": 272925, "field": "name", "en": "Ketharas' Note", "hash": "dad358a278df8c20", "src": "db2@1.60.1.70009"}
+{"id": 272932, "field": "name", "en": "Parcel of Supplies", "hash": "0eda422893cdcc6f", "src": "db2@1.60.1.70009"}
+{"id": 272936, "field": "name", "en": "Deadwood Key", "hash": "1ca2663325df4254", "src": "db2@1.60.1.70009"}
+{"id": 272941, "field": "name", "en": "Thick Logs", "hash": "0da790e1dd7b9305", "src": "db2@1.60.1.70009"}
+{"id": 272957, "field": "name", "en": "Theramore Shoulderguards", "hash": "377a57b254c1053c", "src": "db2@1.60.1.70009"}
+{"id": 272958, "field": "name", "en": "Darkspear Shoulderguards", "hash": "81a513dddc2219b0", "src": "db2@1.60.1.70009"}
+{"id": 272973, "field": "name", "en": "Drop of Stolen Life", "hash": "557dbf872bab12bc", "src": "db2@1.60.1.70009"}
+{"id": 272974, "field": "name", "en": "The Jewel of the Horizon", "hash": "169e65219474884d", "src": "db2@1.60.1.70009"}
+{"id": 272976, "field": "name", "en": "Bent Wire", "hash": "fda4a2d2abbfe33d", "src": "db2@1.60.1.70009"}
+{"id": 272977, "field": "name", "en": "Spare Part", "hash": "1478d676f6b91a2f", "src": "db2@1.60.1.70009"}
+{"id": 272977, "field": "description", "en": "Unusually well-preserved, this odd piece must have been forged from an alloy resistant to corrosion.", "hash": "15dfe8003faebb25", "src": "db2@1.60.1.70009"}
+{"id": 272996, "field": "name", "en": "Trogg Scepter", "hash": "81528b05491aa34e", "src": "db2@1.60.1.70009"}
+{"id": 272998, "field": "name", "en": "Bone Knuckles", "hash": "ee87c54fe3e68644", "src": "db2@1.60.1.70009"}
+{"id": 272999, "field": "name", "en": "Barbaric Crossbow", "hash": "4d718a466553df2a", "src": "db2@1.60.1.70009"}
+{"id": 272999, "field": "description", "en": "Wounds the target for $s1 Physical damage.", "hash": "4c07068542af90b8", "src": "db2@1.60.1.70009"}

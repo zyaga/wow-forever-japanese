@@ -1,0 +1,7 @@
+return {
+  default = {
+    ROOT = { "tests/lua/spec" },
+    pattern = "_spec",
+    verbose = true,
+  },
+}

@@ -1,0 +1,51 @@
+{"id": 1305047, "field": "name", "en": "Recently Bandaged", "hash": "2a1eb3ed845c16e0", "src": "db2@1.60.1.70009"}
+{"id": 1305047, "field": "aura", "en": "Cannot be bandaged again.", "hash": "1a380a5402b765ee", "src": "db2@1.60.1.70009"}
+{"id": 1305116, "field": "name", "en": "Release Tomb Dust", "hash": "87fcb6001fbc6ae6", "src": "db2@1.60.1.70009"}
+{"id": 1305116, "field": "description", "en": "Throw the loosely tied pouch of tomb dust into The Great Sea.", "hash": "ce53b4ddf1e71a45", "src": "db2@1.60.1.70009"}
+{"id": 1305122, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70009"}
+{"id": 1305136, "field": "name", "en": "Area", "hash": "08d3c26dabffb64c", "src": "db2@1.60.1.70009"}
+{"id": 1305136, "field": "description", "en": "Another mug, aye.", "hash": "da214a55eca81d01", "src": "db2@1.60.1.70009"}
+{"id": 1305137, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70009"}
+{"id": 1305189, "field": "name", "en": "Soul of Stromgarde", "hash": "98dd9cf92f6618d7", "src": "db2@1.60.1.70009"}
+{"id": 1305189, "field": "description", "en": "Increases the damage of nearby allies by $s1% for $d.", "hash": "9dd27ffb9847425e", "src": "db2@1.60.1.70009"}
+{"id": 1305189, "field": "aura", "en": "Damage increased by $s1%.", "hash": "b556e36189b38b27", "src": "db2@1.60.1.70009"}
+{"id": 1305356, "field": "name", "en": "Mirage", "hash": "e94ab0fb6dff9ba5", "src": "db2@1.60.1.70009"}
+{"id": 1305394, "field": "name", "en": "Fatal Wound", "hash": "ebdc0703e5b14cb5", "src": "db2@1.60.1.70009"}
+{"id": 1305394, "field": "description", "en": "Delivers a fatal wound for $s1 Physical damage. Deals $s2% increased damage to targets below $s3% health.", "hash": "bbacb8064ada61da", "src": "db2@1.60.1.70009"}
+{"id": 1305398, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70009"}
+{"id": 1305398, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70009"}
+{"id": 1305400, "field": "name", "en": "Key to the Kingdom", "hash": "511f316f0580d11f", "src": "db2@1.60.1.70009"}
+{"id": 1305400, "field": "description", "en": "Open a difficult lock.", "hash": "66957a86e99924ef", "src": "db2@1.60.1.70009"}
+{"id": 1305405, "field": "name", "en": "Ancient Cornerstone Grimoire", "hash": "a92598f830a18c64", "src": "db2@1.60.1.70009"}
+{"id": 1305416, "field": "name", "en": "Deceit", "hash": "c96bb03bdb48a576", "src": "db2@1.60.1.70009"}
+{"id": 1305416, "field": "description", "en": "Deceive enemies with a look-alike, causing nearby creatures to attack it for $d.", "hash": "96d3cac53236dd93", "src": "db2@1.60.1.70009"}
+{"id": 1305418, "field": "name", "en": "Deceit", "hash": "c96bb03bdb48a576", "src": "db2@1.60.1.70009"}
+{"id": 1305418, "field": "aura", "en": "Deceiving nearby enemies.", "hash": "60683e13917d27ac", "src": "db2@1.60.1.70009"}
+{"id": 1305419, "field": "name", "en": "Deceit Passive", "hash": "934b14e188edc318", "src": "db2@1.60.1.70009"}
+{"id": 1305419, "field": "description", "en": "Causes nearby monsters to attack the caster.", "hash": "db048e37be47d120", "src": "db2@1.60.1.70009"}
+{"id": 1305420, "field": "name", "en": "Deceit", "hash": "c96bb03bdb48a576", "src": "db2@1.60.1.70009"}
+{"id": 1305422, "field": "name", "en": "Deceived", "hash": "43ea64ee432e639b", "src": "db2@1.60.1.70009"}
+{"id": 1305422, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70009"}
+{"id": 1305424, "field": "name", "en": "Shard of the Scale", "hash": "a75012ee7e77a2fb", "src": "db2@1.60.1.70009"}
+{"id": 1305424, "field": "description", "en": "Restores $1305426s1 Mana when you kill a Dragonkin that gives experience. This effect cannot occur more than once every $proccooldown sec.", "hash": "a1ad9f9e73f9744e", "src": "db2@1.60.1.70009"}
+{"id": 1305426, "field": "name", "en": "Shard of the Scale", "hash": "a75012ee7e77a2fb", "src": "db2@1.60.1.70009"}
+{"id": 1305426, "field": "description", "en": "$s1 Mana restored.", "hash": "35080e3ce93145ba", "src": "db2@1.60.1.70009"}
+{"id": 1305426, "field": "aura", "en": "$s1 Mana restored.", "hash": "35080e3ce93145ba", "src": "db2@1.60.1.70009"}
+{"id": 1305718, "field": "name", "en": "Matron's Call", "hash": "1dae2b384b8e794b", "src": "db2@1.60.1.70009"}
+{"id": 1305718, "field": "description", "en": "While in combat, your healing spells have a chance to call forth an Onyxia Whelpling to protect you in battle for $d.", "hash": "137e0bb807f56f8b", "src": "db2@1.60.1.70009"}
+{"id": 1305729, "field": "name", "en": "Trigger Aura", "hash": "d3b069d8e37a7661", "src": "db2@1.60.1.70009"}
+{"id": 1305732, "field": "name", "en": "Matron's Call", "hash": "1dae2b384b8e794b", "src": "db2@1.60.1.70009"}
+{"id": 1305732, "field": "description", "en": "Healing spells have a chance to call forth an Onyxia Whelpling to protect you in battle for $1305718d.", "hash": "9d00a5a64827d794", "src": "db2@1.60.1.70009"}
+{"id": 1305748, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70009"}
+{"id": 1305748, "field": "description", "en": "Inflicts Nature damage to an enemy.", "hash": "6878f321f28a86b5", "src": "db2@1.60.1.70009"}
+{"id": 1305819, "field": "name", "en": "Curse of Twilight", "hash": "86a9ef9f44b27c70", "src": "db2@1.60.1.70009"}
+{"id": 1305819, "field": "description", "en": "Reduces all of an enemy's attributes by $s1 for $d.", "hash": "fa49afb983c4c311", "src": "db2@1.60.1.70009"}
+{"id": 1305819, "field": "aura", "en": "All attributes reduced by $s1.", "hash": "fb83ad315897ccfd", "src": "db2@1.60.1.70009"}
+{"id": 1305855, "field": "name", "en": "Blind", "hash": "951d75b9c1314df9", "src": "db2@1.60.1.70009"}
+{"id": 1305855, "field": "description", "en": "Kargra's eyes see beyond the mortal realms, reducing her chance to hit with attacks by $S1%.", "hash": "f8386eb1ac429e94", "src": "db2@1.60.1.70009"}
+{"id": 1305855, "field": "aura", "en": "Chance to hit with attacks reduced by $S1%.", "hash": "05f73d77d763276e", "src": "db2@1.60.1.70009"}
+{"id": 1305943, "field": "name", "en": "Carrying Unstable Potion", "hash": "0146ca88a4f38d3f", "src": "db2@1.60.1.70009"}
+{"id": 1305943, "field": "aura", "en": "Carrying an unstable potion. It will destabilize and become inert in 5 minutes.", "hash": "867171930cda72b9", "src": "db2@1.60.1.70009"}
+{"id": 1305964, "field": "name", "en": "Give Potion", "hash": "46eda6728dd6287c", "src": "db2@1.60.1.70009"}
+{"id": 1305967, "field": "name", "en": "[DNT] Initialize Currency - Class Talent Reset Charges", "hash": "f225232e01c790b9", "src": "db2@1.60.1.70009"}
+{"id": 1305992, "field": "name", "en": "[DNT] Initialize Currency - Legacy Talent Reset Charges", "hash": "f73415b6f04638fc", "src": "db2@1.60.1.70009"}

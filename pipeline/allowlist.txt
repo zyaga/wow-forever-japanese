@@ -1,0 +1,27 @@
+# Latin-script words the human corpus writes inside Japanese prose that are game terms, not names.
+# One per line: term  # justification. A test rejects lines without a justification and terms no
+# corpus line uses. Compared case-insensitively. Terms under 3 letters are never extracted as
+# names (align.NAME_RUN), so they do not belong here.
+Health  # stat word kept in English by the WoWJapanizer translators ("Healthを70回復")
+Mana  # stat word kept in English
+Stamina  # stat word kept in English
+Spirit  # stat word kept in English
+Intellect  # stat word kept in English
+Agility  # stat word kept in English
+Strength  # stat word kept in English
+Armor  # stat word kept in English
+Rage  # resource word kept in English
+Energy  # resource word kept in English
+NPC  # abbreviation
+PvP  # abbreviation
+# World / faction / reputation words the translators add for context even when the English line omits them
+Azeroth  # world name used as context ("Azerothの英雄")
+Horde  # faction word added for context
+Alliance  # faction word added for context
+Forsaken  # faction word added for context
+Elune  # deity name added in night elf dialogue
+Neutral  # reputation level
+Friendly  # reputation level
+Honored  # reputation level
+Revered  # reputation level
+Exalted  # reputation level

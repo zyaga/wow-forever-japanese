@@ -1,0 +1,9 @@
+{"id": 43308, "field": "name", "en": "Find Fish", "hash": "9d3670d0a8fcc9a9", "src": "db2@1.60.1.70009"}
+{"id": 43308, "field": "description", "en": "Nearby fishing nodes appear on the minimap.", "hash": "dd2472bd6f7f3cff", "src": "db2@1.60.1.70009"}
+{"id": 43308, "field": "aura", "en": "Finding Fish.", "hash": "e5f3a7f3e6459722", "src": "db2@1.60.1.70009"}
+{"id": 43680, "field": "name", "en": "Idle", "hash": "09e28860dfac8125", "src": "db2@1.60.1.70009"}
+{"id": 43680, "field": "description", "en": "Your teammates have reported you for laziness!  Enter PvP combat or you will be marked Inactive and unable to receive Honor Points.", "hash": "bce38590e1c1317b", "src": "db2@1.60.1.70009"}
+{"id": 43680, "field": "aura", "en": "Your teammates have reported you for laziness!  Enter PvP combat or you will be marked Inactive and unable to receive Honor Points.", "hash": "bce38590e1c1317b", "src": "db2@1.60.1.70009"}
+{"id": 43681, "field": "name", "en": "Inactive", "hash": "dabc2f300f7c9634", "src": "db2@1.60.1.70009"}
+{"id": 43681, "field": "description", "en": "Cannot receive Honor Points until you enter PvP combat.\r\nYou will be kicked from the battleground if you remain Inactive.", "hash": "152fece1ba84eb52", "src": "db2@1.60.1.70009"}
+{"id": 43681, "field": "aura", "en": "Cannot receive Honor Points until you enter PvP combat.\r\nYou will be kicked from the battleground if you remain Inactive.", "hash": "152fece1ba84eb52", "src": "db2@1.60.1.70009"}

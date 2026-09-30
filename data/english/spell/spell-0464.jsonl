@@ -1,0 +1,36 @@
+{"id": 464241, "field": "name", "en": "Tactician", "hash": "8ebfe140bcd66259", "src": "db2@1.60.1.70009"}
+{"id": 464241, "field": "description", "en": "Reduces the rage cost of your next offensive ability by $/10;s1.", "hash": "ce88804123c622d1", "src": "db2@1.60.1.70009"}
+{"id": 464241, "field": "aura", "en": "Reduces the rage cost of your next offensive ability by $/10;s1.", "hash": "ce88804123c622d1", "src": "db2@1.60.1.70009"}
+{"id": 464250, "field": "name", "en": "Surge", "hash": "c0bda34fab24dbf1", "src": "db2@1.60.1.70009"}
+{"id": 464250, "field": "description", "en": "Charges an enemy, inflicting $s3 damage to the target and any of its nearby allies, as well as knocking them all back.", "hash": "ad69abce528aa3ae", "src": "db2@1.60.1.70009"}
+{"id": 464251, "field": "name", "en": "[DNT] Teleport to Storm Cliffs Exterior", "hash": "9c2e846d1361982e", "src": "db2@1.60.1.70009"}
+{"id": 464279, "field": "name", "en": "Trample", "hash": "00f7065dcd7ef944", "src": "db2@1.60.1.70009"}
+{"id": 464279, "field": "description", "en": "Inflicts normal damage plus $s1 to nearby enemies.", "hash": "301ad2a40024a3c5", "src": "db2@1.60.1.70009"}
+{"id": 464312, "field": "name", "en": "(DNT) Greater Fire Protection - Raid Buff", "hash": "39baafad3b2da042", "src": "db2@1.60.1.70009"}
+{"id": 464396, "field": "name", "en": "(DNT) Greater Frost Protection - Raid Buff", "hash": "574c9b49998d95a8", "src": "db2@1.60.1.70009"}
+{"id": 464418, "field": "name", "en": "(DNT) Greater Nature Protection - Raid Buff", "hash": "79e4486d83632406", "src": "db2@1.60.1.70009"}
+{"id": 464437, "field": "name", "en": "(DNT) Greater Shadow Protection - Raid Buff", "hash": "208c2cc98d252f11", "src": "db2@1.60.1.70009"}
+{"id": 464439, "field": "name", "en": "(DNT) Greater Arcane Protection - Raid Buff", "hash": "b9d3f0a0203469f8", "src": "db2@1.60.1.70009"}
+{"id": 464558, "field": "name", "en": "Flame Burst", "hash": "d02c382176f9b40c", "src": "db2@1.60.1.70009"}
+{"id": 464591, "field": "name", "en": "Servant of Flame and Scale", "hash": "3c82e3ccd1fd229b", "src": "db2@1.60.1.70009"}
+{"id": 464592, "field": "name", "en": "Fireball Volley", "hash": "21ed0071a1c80493", "src": "db2@1.60.1.70009"}
+{"id": 464592, "field": "description", "en": "Inflicts Fire damage to nearby enemies.", "hash": "209abb758c56cb46", "src": "db2@1.60.1.70009"}
+{"id": 464611, "field": "name", "en": "[DNT] Drained of Blood (Instance)", "hash": "ce3cacaf21849e0b", "src": "db2@1.60.1.70009"}
+{"id": 464614, "field": "name", "en": "[DNT] Drained of Blood (Instance - Cast)", "hash": "c87eb6a40aff6878", "src": "db2@1.60.1.70009"}
+{"id": 464629, "field": "name", "en": "Manastorm", "hash": "7fd4765e2ecca7ea", "src": "db2@1.60.1.70009"}
+{"id": 464630, "field": "name", "en": "Manastorm", "hash": "7fd4765e2ecca7ea", "src": "db2@1.60.1.70009"}
+{"id": 464630, "field": "description", "en": "Calls down a mana storm that lasts $d., inflicting $s1 Frost damage and draining $s2 mana every $t1 sec. to all enemies in a selected area.", "hash": "e9d8553814096d1a", "src": "db2@1.60.1.70009"}
+{"id": 464645, "field": "name", "en": "[DNT] Complete Syndicate Gossip", "hash": "fef2877e9a832ac5", "src": "db2@1.60.1.70009"}
+{"id": 464650, "field": "name", "en": "Frozen Solid", "hash": "15bf964ba47b5e0b", "src": "db2@1.60.1.70009"}
+{"id": 464650, "field": "aura", "en": "Stunned and very cold.", "hash": "9cb407ec9dd2c6d4", "src": "db2@1.60.1.70009"}
+{"id": 464658, "field": "name", "en": "Frozen Solid", "hash": "15bf964ba47b5e0b", "src": "db2@1.60.1.70009"}
+{"id": 464730, "field": "name", "en": "[DNT] Storm Cliffs Graveyard", "hash": "da305f2baf2dee62", "src": "db2@1.60.1.70009"}
+{"id": 464731, "field": "name", "en": "[DNT] Storm Cliffs Graveyard", "hash": "da305f2baf2dee62", "src": "db2@1.60.1.70009"}
+{"id": 464732, "field": "name", "en": "[DNT] Teleport to Storm Cliffs Exterior", "hash": "9c2e846d1361982e", "src": "db2@1.60.1.70009"}
+{"id": 464743, "field": "name", "en": "Force Dampeners", "hash": "ef8760065be37b38", "src": "db2@1.60.1.70009"}
+{"id": 464743, "field": "description", "en": "Reduces the melee and ranged attack power of nearby enemies by $s1 for $d.", "hash": "2eacb3df1ae5d59f", "src": "db2@1.60.1.70009"}
+{"id": 464743, "field": "aura", "en": "Melee and ranged attack power reduced by $s1.", "hash": "25ffd6c8bc7ae7f2", "src": "db2@1.60.1.70009"}
+{"id": 464945, "field": "name", "en": "Summon Thunderstrike", "hash": "8bcbea930f53ce25", "src": "db2@1.60.1.70009"}
+{"id": 464945, "field": "description", "en": "Transforms Shadowstrike into Thunderstrike.", "hash": "e0d5f71b32a0ac2f", "src": "db2@1.60.1.70009"}
+{"id": 464946, "field": "name", "en": "Summon Shadowstrike", "hash": "fd62d41f3a7e227e", "src": "db2@1.60.1.70009"}
+{"id": 464946, "field": "description", "en": "Transforms Thunderstrike into Shadowstrike.", "hash": "144434fec1a739fc", "src": "db2@1.60.1.70009"}

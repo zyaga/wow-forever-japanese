@@ -1,0 +1,3806 @@
+{
+ "build": "16001",
+ "rows": [
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "candidates",
+   "surface": "compat",
+   "key": "key",
+   "file": "Core/Compat.lua",
+   "line": 39,
+   "verdict": "unknown",
+   "evidence": "dynamic: candidates"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "function Compat.resolve(name)",
+   "surface": "compat",
+   "key": "resolve",
+   "file": "Core/Compat.lua",
+   "line": 47,
+   "verdict": "unknown",
+   "evidence": "dynamic: function Compat.resolve(name)"
+  },
+  {
+   "kind": "api",
+   "name": "C_AddOns.GetAddOnMetadata",
+   "surface": "const",
+   "key": "call",
+   "file": "Core/Const.lua",
+   "line": 4,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "English",
+   "surface": "const",
+   "key": "call",
+   "file": "Core/Const.lua",
+   "line": 46,
+   "suspect": true,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the const window was never opened"
+  },
+  {
+   "kind": "api",
+   "name": "IsAltKeyDown",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 15,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "IsControlKeyDown",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 16,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "IsShiftKeyDown",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 17,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "IsLeftAltKeyDown",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 18,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "IsRightAltKeyDown",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 19,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "IsLeftControlKeyDown",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 20,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "IsRightControlKeyDown",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 21,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "IsLeftShiftKeyDown",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 22,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "IsRightShiftKeyDown",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 23,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "BUTTON",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 57,
+   "suspect": true,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the modifier window was never opened"
+  },
+  {
+   "kind": "api",
+   "name": "IsMouseButtonDown",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 87,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "IsKeyDown",
+   "surface": "modifier",
+   "key": "call",
+   "file": "Core/Modifier.lua",
+   "line": 89,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "GetBindingKey",
+   "surface": "settings",
+   "key": "resolve",
+   "file": "Core/Settings.lua",
+   "line": 157,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetBuildInfo",
+   "surface": "main",
+   "key": "call",
+   "file": "Main.lua",
+   "line": 112,
+   "lod": [
+    "Blizzard_AddOnList"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "C_AddOns.IsAddOnLoaded",
+   "surface": "main",
+   "key": "call",
+   "file": "Main.lua",
+   "line": 139,
+   "lod": [
+    "Blizzard_AddOnList"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "UIParent",
+   "surface": "main",
+   "key": "resolve",
+   "file": "Main.lua",
+   "line": 231,
+   "lod": [
+    "Blizzard_AddOnList"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetTime",
+   "surface": "main",
+   "key": "call",
+   "file": "Main.lua",
+   "line": 232,
+   "lod": [
+    "Blizzard_AddOnList"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "C_Timer.NewTicker",
+   "surface": "main",
+   "key": "call",
+   "file": "Main.lua",
+   "line": 235,
+   "lod": [
+    "Blizzard_AddOnList"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "C_AddOns.GetAddOnName",
+   "surface": "addonlistbutton",
+   "key": "call",
+   "file": "UI/AddonListButton.lua",
+   "line": 44,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "function",
+   "name": "AddonList_InitAddon",
+   "surface": "addonlistbutton",
+   "key": "hooksecurefunc",
+   "file": "UI/AddonListButton.lua",
+   "line": 74,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "ContainerFrame_GenerateFrame",
+   "surface": "bags",
+   "key": "key",
+   "file": "UI/Bags.lua",
+   "line": 98,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "KEYRING_CONTAINER",
+   "surface": "bags",
+   "key": "key",
+   "file": "UI/Bags.lua",
+   "line": 98,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MainMenuBarBackpackButton",
+   "surface": "bags",
+   "key": "key",
+   "file": "UI/Bags.lua",
+   "line": 98,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "KeyRingButton",
+   "surface": "bags",
+   "key": "key",
+   "file": "UI/Bags.lua",
+   "line": 98,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "local fs = Compat.resolve(name .. \"Name\")",
+   "surface": "bags",
+   "key": "resolve",
+   "file": "UI/Bags.lua",
+   "line": 58,
+   "verdict": "unknown",
+   "evidence": "dynamic: local fs = Compat.resolve(name .. \"Name\")"
+  },
+  {
+   "kind": "function",
+   "name": "ContainerFrame_GenerateFrame",
+   "surface": "bags",
+   "key": "hooksecurefunc",
+   "file": "UI/Bags.lua",
+   "line": 101,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "BankFrame",
+   "surface": "bank",
+   "key": "key",
+   "file": "UI/Bank.lua",
+   "line": 72,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "BankFramePurchaseInfo",
+   "surface": "bank",
+   "key": "key",
+   "file": "UI/Bank.lua",
+   "line": 72,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the bank window was never opened"
+  },
+  {
+   "kind": "global",
+   "name": "BankFrameSlotCost",
+   "surface": "bank",
+   "key": "key",
+   "file": "UI/Bank.lua",
+   "line": 72,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the bank window was never opened"
+  },
+  {
+   "kind": "global",
+   "name": "BankFramePurchaseButton",
+   "surface": "bank",
+   "key": "key",
+   "file": "UI/Bank.lua",
+   "line": 72,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the bank window was never opened"
+  },
+  {
+   "kind": "global",
+   "name": "BankSlotsFrame",
+   "surface": "bank",
+   "key": "key",
+   "file": "UI/Bank.lua",
+   "line": 72,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the bank window was never opened"
+  },
+  {
+   "kind": "global",
+   "name": "PanelTemplates_SelectTab",
+   "surface": "buttontext",
+   "key": "name",
+   "file": "UI/ButtonText.lua",
+   "line": 93,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "PanelTemplates_DeselectTab",
+   "surface": "buttontext",
+   "key": "name",
+   "file": "UI/ButtonText.lua",
+   "line": 93,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "PanelTemplates_SetDisabledTabState",
+   "surface": "buttontext",
+   "key": "name",
+   "file": "UI/ButtonText.lua",
+   "line": 93,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "PanelTemplates_UpdateTabs",
+   "surface": "buttontext",
+   "key": "name",
+   "file": "UI/ButtonText.lua",
+   "line": 93,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "script",
+   "name": null,
+   "dynamic": "HookScript(script)",
+   "surface": "buttontext",
+   "key": "HookScript",
+   "file": "UI/ButtonText.lua",
+   "line": 29,
+   "verdict": "unknown",
+   "evidence": "dynamic: HookScript(script)"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "item[2]",
+   "surface": "character",
+   "key": "item[2]",
+   "file": "UI/Character.lua",
+   "line": 82,
+   "verdict": "unknown",
+   "evidence": "dynamic: item[2]"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "name",
+   "surface": "character",
+   "key": "name",
+   "file": "UI/Character.lua",
+   "line": 84,
+   "verdict": "unknown",
+   "evidence": "dynamic: name"
+  },
+  {
+   "kind": "global",
+   "name": "CharacterLevelText",
+   "surface": "character",
+   "key": "CharacterLevelText",
+   "file": "UI/Character.lua",
+   "line": 86,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "FriendsFrame",
+   "surface": "friends",
+   "key": "key",
+   "file": "UI/Friends.lua",
+   "line": 187,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "function",
+   "name": "FriendsFrame_Update",
+   "surface": "friends",
+   "key": "hooksecurefunc",
+   "file": "UI/Friends.lua",
+   "line": 192,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "function",
+   "name": "FriendsFrame_UpdateFriendButton",
+   "surface": "friends",
+   "key": "hooksecurefunc",
+   "file": "UI/Friends.lua",
+   "line": 193,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "function",
+   "name": "WhoList_Update",
+   "surface": "friends",
+   "key": "hooksecurefunc",
+   "file": "UI/Friends.lua",
+   "line": 194,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GameMenuFrame",
+   "surface": "gamemenu",
+   "key": "frame",
+   "file": "UI/GameMenu.lua",
+   "line": 52,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "method",
+   "name": "InitButtons",
+   "surface": "gamemenu",
+   "key": "hooksecurefunc",
+   "file": "UI/GameMenu.lua",
+   "line": 57,
+   "verdict": "unknown",
+   "evidence": "method hook on a client object; judged by its surface's frames"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "gamemenu",
+   "key": "HookScript",
+   "file": "UI/GameMenu.lua",
+   "line": 58,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "GossipFrame",
+   "surface": "gossip",
+   "key": "frame",
+   "file": "UI/Gossip.lua",
+   "line": 313,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "ScrollUtil",
+   "surface": "gossip",
+   "key": "scrollUtil",
+   "file": "UI/Gossip.lua",
+   "line": 314,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "C_GossipInfo",
+   "surface": "gossip",
+   "key": "gossipInfo",
+   "file": "UI/Gossip.lua",
+   "line": 315,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "local v = Compat.resolve(name)",
+   "surface": "gossip",
+   "key": "resolve",
+   "file": "UI/Gossip.lua",
+   "line": 68,
+   "verdict": "unknown",
+   "evidence": "dynamic: local v = Compat.resolve(name)"
+  },
+  {
+   "kind": "method",
+   "name": "SetText",
+   "surface": "gossip",
+   "key": "hooksecurefunc",
+   "file": "UI/Gossip.lua",
+   "line": 259,
+   "verdict": "unknown",
+   "evidence": "method hook on a client object; judged by its surface's frames"
+  },
+  {
+   "kind": "method",
+   "name": "Setup",
+   "surface": "gossip",
+   "key": "hooksecurefunc",
+   "file": "UI/Gossip.lua",
+   "line": 265,
+   "verdict": "unknown",
+   "evidence": "method hook on a client object; judged by its surface's frames"
+  },
+  {
+   "kind": "api",
+   "name": "UnitGUID",
+   "surface": "gossip",
+   "key": "call",
+   "file": "UI/Gossip.lua",
+   "line": 282,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "method",
+   "name": "Update",
+   "surface": "gossip",
+   "key": "hooksecurefunc",
+   "file": "UI/Gossip.lua",
+   "line": 325,
+   "verdict": "unknown",
+   "evidence": "method hook on a client object; judged by its surface's frames"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "gossip",
+   "key": "HookScript",
+   "file": "UI/Gossip.lua",
+   "line": 326,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "GossipFrame",
+   "surface": "gossipchrome",
+   "key": "frame",
+   "file": "UI/GossipChrome.lua",
+   "line": 74,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "ScrollUtil",
+   "surface": "gossipchrome",
+   "key": "scrollUtil",
+   "file": "UI/GossipChrome.lua",
+   "line": 75,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "GOSSIP_BUTTON_TYPE_ACTIVE_QUEST",
+   "surface": "gossipchrome",
+   "key": "activeQuest",
+   "file": "UI/GossipChrome.lua",
+   "line": 76,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "GOSSIP_BUTTON_TYPE_AVAILABLE_QUEST",
+   "surface": "gossipchrome",
+   "key": "availableQuest",
+   "file": "UI/GossipChrome.lua",
+   "line": 77,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "gossipchrome",
+   "key": "HookScript",
+   "file": "UI/GossipChrome.lua",
+   "line": 93,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrame",
+   "surface": "guild",
+   "key": "frame",
+   "file": "UI/Guild.lua",
+   "line": 125,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildStatus_Update",
+   "surface": "guild",
+   "key": "status",
+   "file": "UI/Guild.lua",
+   "line": 126,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlPopupFrame",
+   "surface": "guild",
+   "key": "popup",
+   "file": "UI/Guild.lua",
+   "line": 127,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlPopupFrameEditBox",
+   "surface": "guild",
+   "key": "rankEditBox",
+   "file": "UI/Guild.lua",
+   "line": 128,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildNameChangeAlertFrame",
+   "surface": "guild",
+   "key": "renameAlert",
+   "file": "UI/Guild.lua",
+   "line": 129,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrame_CheckName",
+   "surface": "guild",
+   "key": "checkName",
+   "file": "UI/Guild.lua",
+   "line": 130,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildNameChangeFrameButton",
+   "surface": "guild",
+   "key": "renameButton",
+   "file": "UI/Guild.lua",
+   "line": 131,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameTotals",
+   "surface": "guild",
+   "key": "totals",
+   "file": "UI/Guild.lua",
+   "line": 132,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameOnlineTotals",
+   "surface": "guild",
+   "key": "onlineTotals",
+   "file": "UI/Guild.lua",
+   "line": 133,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildMemberDetailLevel",
+   "surface": "guild",
+   "key": "detailLevel",
+   "file": "UI/Guild.lua",
+   "line": 134,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildMemberDetailOnlineText",
+   "surface": "guild",
+   "key": "detailOnline",
+   "file": "UI/Guild.lua",
+   "line": 135,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "PersonalNoteText",
+   "surface": "guild",
+   "key": "personalNote",
+   "file": "UI/Guild.lua",
+   "line": 136,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "OfficerNoteText",
+   "surface": "guild",
+   "key": "officerNote",
+   "file": "UI/Guild.lua",
+   "line": 137,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "\"GuildFrameGuildStatusButton\" .. i .. \"Online\"",
+   "surface": "guild",
+   "key": "online",
+   "file": "UI/Guild.lua",
+   "line": 138,
+   "verdict": "unknown",
+   "evidence": "dynamic: \"GuildFrameGuildStatusButton\" .. i .. \"Online\""
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameNotesLabel",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameLFGButtonText",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameColumnHeader1",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameColumnHeader2",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameColumnHeader3",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameColumnHeader4",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameGuildStatusColumnHeader1",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameGuildStatusColumnHeader2",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameGuildStatusColumnHeader3",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameGuildStatusColumnHeader4",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameControlButton",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameAddMemberButton",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameGuildInformationButton",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildMemberDetailZoneLabel",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildMemberDetailRankLabel",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildMemberDetailOnlineLabel",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildMemberDetailNoteLabel",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildMemberDetailOfficerNoteLabel",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildMemberRemoveButton",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildMemberGroupInviteButton",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildInfoTitle",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildInfoSaveButton",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildInfoCancelButton",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildInfoGuildEventButton",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildEventLogTitle",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildEventLogCancelButton",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlTabPermissionsViewTabText",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlTabPermissionsDepositItemsText",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlTabPermissionsUpdateTextText",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlWithdrawGoldText",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlWithdrawGoldAmountText",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildBankTabLabel",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlTabPermissionsWithdrawItemsText",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlPopupFrameCancelButton",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlPopupAcceptButton",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildNameChangeFrameError",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildNameChangeFrameGMText",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildNameChangeFrameMemberText",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildNameChangeFrameRename",
+   "surface": "guild",
+   "key": "key",
+   "file": "UI/Guild.lua",
+   "line": 139,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameGuildListToggleButton",
+   "surface": "guild",
+   "key": "help",
+   "file": "UI/Guild.lua",
+   "line": 140,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameImpeachButton",
+   "surface": "guild",
+   "key": "help",
+   "file": "UI/Guild.lua",
+   "line": 140,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFramePromoteButton",
+   "surface": "guild",
+   "key": "help",
+   "file": "UI/Guild.lua",
+   "line": 140,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildFrameDemoteButton",
+   "surface": "guild",
+   "key": "help",
+   "file": "UI/Guild.lua",
+   "line": 140,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlPopupFrameAddRankButton",
+   "surface": "guild",
+   "key": "help",
+   "file": "UI/Guild.lua",
+   "line": 140,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlPopupFrameRemoveRankButton",
+   "surface": "guild",
+   "key": "help",
+   "file": "UI/Guild.lua",
+   "line": 140,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlPopupFrameCheckbox15",
+   "surface": "guild",
+   "key": "help",
+   "file": "UI/Guild.lua",
+   "line": 140,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GuildControlPopupFrameCheckbox16",
+   "surface": "guild",
+   "key": "help",
+   "file": "UI/Guild.lua",
+   "line": 140,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "function",
+   "name": "GuildStatus_Update",
+   "surface": "guild",
+   "key": "hooksecurefunc",
+   "file": "UI/Guild.lua",
+   "line": 148,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "function",
+   "name": "GuildFrame_CheckName",
+   "surface": "guild",
+   "key": "hooksecurefunc",
+   "file": "UI/Guild.lua",
+   "line": 149,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GameTooltip",
+   "surface": "helptooltip",
+   "key": "tooltip",
+   "file": "UI/HelpTooltip.lua",
+   "line": 139,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "local fs = Compat.resolve(name .. \"Text\" .. side .. i)",
+   "surface": "helptooltip",
+   "key": "resolve",
+   "file": "UI/HelpTooltip.lua",
+   "line": 85,
+   "verdict": "unknown",
+   "evidence": "dynamic: local fs = Compat.resolve(name .. \"Text\" .. side .. i)"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "helptooltip",
+   "key": "HookScript",
+   "file": "UI/HelpTooltip.lua",
+   "line": 147,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "item[2]",
+   "surface": "honor",
+   "key": "item[2]",
+   "file": "UI/Honor.lua",
+   "line": 46,
+   "verdict": "unknown",
+   "evidence": "dynamic: item[2]"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "name",
+   "surface": "honor",
+   "key": "name",
+   "file": "UI/Honor.lua",
+   "line": 48,
+   "verdict": "unknown",
+   "evidence": "dynamic: name"
+  },
+  {
+   "kind": "function",
+   "name": "HonorFrame_SetLevel",
+   "surface": "honor",
+   "key": "hooksecurefunc",
+   "file": "UI/Honor.lua",
+   "line": 77,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "function",
+   "name": "HonorFrame_Update",
+   "surface": "honor",
+   "key": "hooksecurefunc",
+   "file": "UI/Honor.lua",
+   "line": 78,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "ItemTextFrame",
+   "surface": "itemtext",
+   "key": "frame",
+   "file": "UI/ItemText.lua",
+   "line": 220,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "ItemTextPageText",
+   "surface": "itemtext",
+   "key": "page",
+   "file": "UI/ItemText.lua",
+   "line": 221,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "ItemTextScrollFrame",
+   "surface": "itemtext",
+   "key": "scroll",
+   "file": "UI/ItemText.lua",
+   "line": 222,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "ItemTextGetText",
+   "surface": "itemtext",
+   "key": "getText",
+   "file": "UI/ItemText.lua",
+   "line": 223,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "ItemTextGetCreator",
+   "surface": "itemtext",
+   "key": "getCreator",
+   "file": "UI/ItemText.lua",
+   "line": 224,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "method",
+   "name": "SetText",
+   "surface": "itemtext",
+   "key": "hooksecurefunc",
+   "file": "UI/ItemText.lua",
+   "line": 234,
+   "verdict": "unknown",
+   "evidence": "method hook on a client object; judged by its surface's frames"
+  },
+  {
+   "kind": "script",
+   "name": "OnEvent",
+   "surface": "itemtext",
+   "key": "HookScript",
+   "file": "UI/ItemText.lua",
+   "line": 235,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "itemtext",
+   "key": "HookScript",
+   "file": "UI/ItemText.lua",
+   "line": 236,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "InCombatLockdown",
+   "surface": "keycapture",
+   "key": "call",
+   "file": "UI/KeyCapture.lua",
+   "line": 45,
+   "suspect": true,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetConvertedKeyOrButton",
+   "surface": "keycapture",
+   "key": "call",
+   "file": "UI/KeyCapture.lua",
+   "line": 68,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "IsMetaKey",
+   "surface": "keycapture",
+   "key": "call",
+   "file": "UI/KeyCapture.lua",
+   "line": 74,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "CreateKeyChordStringUsingMetaKeyState",
+   "surface": "keycapture",
+   "key": "call",
+   "file": "UI/KeyCapture.lua",
+   "line": 75,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "keycapture",
+   "key": "HookScript",
+   "file": "UI/KeyCapture.lua",
+   "line": 84,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetBindingAction",
+   "surface": "keycapture",
+   "key": "call",
+   "file": "UI/KeyCapture.lua",
+   "line": 93,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetBindingText",
+   "surface": "keycapture",
+   "key": "call",
+   "file": "UI/KeyCapture.lua",
+   "line": 95,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetBindingKey",
+   "surface": "keycapture",
+   "key": "call",
+   "file": "UI/KeyCapture.lua",
+   "line": 100,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "SetBinding",
+   "surface": "keycapture",
+   "key": "call",
+   "file": "UI/KeyCapture.lua",
+   "line": 115,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "SaveBindings",
+   "surface": "keycapture",
+   "key": "call",
+   "file": "UI/KeyCapture.lua",
+   "line": 120,
+   "suspect": true,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetCurrentBindingSet",
+   "surface": "keycapture",
+   "key": "call",
+   "file": "UI/KeyCapture.lua",
+   "line": 120,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "local w = head and Compat.resolve(head)",
+   "surface": "labels",
+   "key": "resolve",
+   "file": "UI/Labels.lua",
+   "line": 38,
+   "verdict": "unknown",
+   "evidence": "dynamic: local w = head and Compat.resolve(head)"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "local en = Compat.resolve(key)",
+   "surface": "labels",
+   "key": "resolve",
+   "file": "UI/Labels.lua",
+   "line": 93,
+   "verdict": "unknown",
+   "evidence": "dynamic: local en = Compat.resolve(key)"
+  },
+  {
+   "kind": "method",
+   "name": "UpdateText",
+   "surface": "labels",
+   "key": "hooksecurefunc",
+   "file": "UI/Labels.lua",
+   "line": 115,
+   "verdict": "unknown",
+   "evidence": "method hook on a client object; judged by its surface's frames"
+  },
+  {
+   "kind": "global",
+   "name": "InboxTitleText",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "SendMailTitleText",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "OpenMailTitleText",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "MailFrameTab1",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MailFrameTab2",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MailFrameTrialError",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "InboxTooMuchMailText",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "SendMailSendMoneyButtonText",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "SendMailCODButtonText",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "SendMailCancelButton",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "SendMailMailButton",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "OpenMailSenderLabel",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "OpenMailSubjectLabel",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "OpenMailReportSpamButton",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "OpenMailCancelButton",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "OpenMailReplyButton",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "OpenMailInvoiceSalePrice",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "OpenMailInvoiceDeposit",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "OpenMailInvoiceHouseCut",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "OpenMailInvoiceNotYetSent",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 155,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "r[1]",
+   "surface": "mail",
+   "key": "region.",
+   "file": "UI/Mail.lua",
+   "line": 156,
+   "verdict": "unknown",
+   "evidence": "dynamic: r[1]"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "d[1]",
+   "surface": "mail",
+   "key": "recKey",
+   "file": "UI/Mail.lua",
+   "line": 157,
+   "verdict": "unknown",
+   "evidence": "dynamic: d[1]"
+  },
+  {
+   "kind": "global",
+   "name": "INBOX_TOO_MUCH_MAIL_TOOLTIP",
+   "surface": "mail",
+   "key": "help.",
+   "file": "UI/Mail.lua",
+   "line": 158,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "name",
+   "surface": "mail",
+   "key": "name",
+   "file": "UI/Mail.lua",
+   "line": 160,
+   "verdict": "unknown",
+   "evidence": "dynamic: name"
+  },
+  {
+   "kind": "script",
+   "name": "OnShow",
+   "surface": "mail",
+   "key": "HookScript",
+   "file": "UI/Mail.lua",
+   "line": 175,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantFrame",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantFrameTab1",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantFrameTab2",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantRepairText",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the merchant window was never opened"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantPrevPageButton",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantNextPageButton",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantPageText",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantNameText",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the merchant window was never opened"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantRepairAllButton",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantRepairItemButton",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantFrame_UpdateMerchantInfo",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "MerchantFrame_UpdateBuybackInfo",
+   "surface": "merchant",
+   "key": "key",
+   "file": "UI/Merchant.lua",
+   "line": 84,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "function",
+   "name": "MerchantFrame_UpdateMerchantInfo",
+   "surface": "merchant",
+   "key": "hooksecurefunc",
+   "file": "UI/Merchant.lua",
+   "line": 91,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "function",
+   "name": "MerchantFrame_UpdateBuybackInfo",
+   "surface": "merchant",
+   "key": "hooksecurefunc",
+   "file": "UI/Merchant.lua",
+   "line": 94,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "merchant",
+   "key": "HookScript",
+   "file": "UI/Merchant.lua",
+   "line": 98,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "name",
+   "surface": "micromenu",
+   "key": "name",
+   "file": "UI/MicroMenu.lua",
+   "line": 70,
+   "verdict": "unknown",
+   "evidence": "dynamic: name"
+  },
+  {
+   "kind": "global",
+   "name": "StatusTrackingBarInfo",
+   "surface": "micromenu",
+   "key": "barInfo",
+   "file": "UI/MicroMenu.lua",
+   "line": 71,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "InCombatLockdown",
+   "surface": "options",
+   "key": "call",
+   "file": "UI/Options.lua",
+   "line": 83,
+   "suspect": true,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetTime",
+   "surface": "options",
+   "key": "call",
+   "file": "UI/Options.lua",
+   "line": 216,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "options",
+   "key": "HookScript",
+   "file": "UI/Options.lua",
+   "line": 229,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrame",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestInfo_Display",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrameProgressPanel",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestDetailScrollChildFrame",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestRewardScrollChildFrame",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestDetailScrollFrame",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestRewardScrollFrame",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestProgressScrollFrame",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestInfoTitleHeader",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestInfoDescriptionText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestInfoObjectivesText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestInfoRewardText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestProgressTitleText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestProgressText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrameGreetingPanel",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestInfoRewardsFrame",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestInfoDescriptionHeader",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestInfoObjectivesHeader",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestInfoSpellObjectiveLearnLabel",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestInfoRequiredMoneyText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestInfoGroupSize",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestProgressRequiredItemsText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestProgressRequiredMoneyText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "CurrentQuestsText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "AvailableQuestsText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrameAcceptButton",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrameDeclineButton",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrameCompleteButton",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrameGoodbyeButton",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrameCompleteQuestButton",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrameCancelButton",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the questframe window was never opened"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrameGreetingGoodbyeButton",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "GreetingText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestGreetingScrollFrame",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrameGreetingPanel_OnShow",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "GetGreetingText",
+   "surface": "questframe",
+   "key": "key",
+   "file": "UI/QuestFrame.lua",
+   "line": 244,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetTitleText",
+   "surface": "questframe",
+   "key": "call",
+   "file": "UI/QuestFrame.lua",
+   "line": 92,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetQuestText",
+   "surface": "questframe",
+   "key": "call",
+   "file": "UI/QuestFrame.lua",
+   "line": 96,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetObjectiveText",
+   "surface": "questframe",
+   "key": "call",
+   "file": "UI/QuestFrame.lua",
+   "line": 97,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetRewardText",
+   "surface": "questframe",
+   "key": "call",
+   "file": "UI/QuestFrame.lua",
+   "line": 100,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetProgressText",
+   "surface": "questframe",
+   "key": "call",
+   "file": "UI/QuestFrame.lua",
+   "line": 103,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "GetQuestID",
+   "surface": "questframe",
+   "key": "call",
+   "file": "UI/QuestFrame.lua",
+   "line": 157,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "UnitGUID",
+   "surface": "questframe",
+   "key": "call",
+   "file": "UI/QuestFrame.lua",
+   "line": 183,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "UnitName",
+   "surface": "questframe",
+   "key": "call",
+   "file": "UI/QuestFrame.lua",
+   "line": 183,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "function",
+   "name": "QuestInfo_Display",
+   "surface": "questframe",
+   "key": "hooksecurefunc",
+   "file": "UI/QuestFrame.lua",
+   "line": 247,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "script",
+   "name": "OnShow",
+   "surface": "questframe",
+   "key": "HookScript",
+   "file": "UI/QuestFrame.lua",
+   "line": 249,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "function",
+   "name": "QuestFrameGreetingPanel_OnShow",
+   "surface": "questframe",
+   "key": "hooksecurefunc",
+   "file": "UI/QuestFrame.lua",
+   "line": 254,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "questframe",
+   "key": "HookScript",
+   "file": "UI/QuestFrame.lua",
+   "line": 257,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogFrame",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLog_UpdateQuestDetails",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogDetailScrollFrame",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GetQuestLogSelectedID",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GetQuestLogSelection",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GetQuestLogTitle",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "GetQuestLogQuestText",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogQuestTitle",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogObjectivesText",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogQuestDescription",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogTitleText",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogDescriptionTitle",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogRewardTitleText",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogItemChooseText",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogItemReceiveText",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogSpellLearnText",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogRequiredMoneyText",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogTrackTitle",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogNoQuestsText",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogFrameAbandonButton",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFramePushQuestButton",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestFrameExitButton",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "QuestLogCollapseAllButton",
+   "surface": "questlog",
+   "key": "key",
+   "file": "UI/QuestLog.lua",
+   "line": 119,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "function",
+   "name": "QuestLog_UpdateQuestDetails",
+   "surface": "questlog",
+   "key": "hooksecurefunc",
+   "file": "UI/QuestLog.lua",
+   "line": 122,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "questlog",
+   "key": "HookScript",
+   "file": "UI/QuestLog.lua",
+   "line": 125,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "script",
+   "name": "OnShow",
+   "surface": "questlog",
+   "key": "HookScript",
+   "file": "UI/QuestLog.lua",
+   "line": 126,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "RaidFrame",
+   "surface": "raid",
+   "key": "frame",
+   "file": "UI/Raid.lua",
+   "line": 102,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "RaidInfoFrame",
+   "surface": "raid",
+   "key": "infoFrame",
+   "file": "UI/Raid.lua",
+   "line": 103,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "RaidFrameAllAssistCheckButton",
+   "surface": "raid",
+   "key": "allAssist",
+   "file": "UI/Raid.lua",
+   "line": 104,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "ScrollUtil",
+   "surface": "raid",
+   "key": "scrollUtil",
+   "file": "UI/Raid.lua",
+   "line": 105,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "RaidFrameRaidDescription",
+   "surface": "raid",
+   "key": "key",
+   "file": "UI/Raid.lua",
+   "line": 106,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_RaidUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "RaidFrameConvertToRaidButton",
+   "surface": "raid",
+   "key": "key",
+   "file": "UI/Raid.lua",
+   "line": 106,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "RaidFrameRaidInfoButton",
+   "surface": "raid",
+   "key": "key",
+   "file": "UI/Raid.lua",
+   "line": 106,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "RaidInfoHeader",
+   "surface": "raid",
+   "key": "key",
+   "file": "UI/Raid.lua",
+   "line": 106,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_RaidUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "RaidInfoSubheader",
+   "surface": "raid",
+   "key": "key",
+   "file": "UI/Raid.lua",
+   "line": 106,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_RaidUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "RaidInfoInstanceLabel",
+   "surface": "raid",
+   "key": "key",
+   "file": "UI/Raid.lua",
+   "line": 106,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "RaidInfoIDLabel",
+   "surface": "raid",
+   "key": "key",
+   "file": "UI/Raid.lua",
+   "line": 106,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "items[#items + 1] = { \"ui.group\" .. g, Compat.resolve(\"RaidGroup\" .. g .. \"Label\"), { only = { \"GROUP\" } } }",
+   "surface": "raid",
+   "key": "resolve",
+   "file": "UI/Raid.lua",
+   "line": 82,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "dynamic: items[#items + 1] = { \"ui.group\" .. g, Compat.resolve(\"RaidGroup\" .. g .. \"Label\"), { only = { \"GROUP\" } } }"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "local slot = Compat.resolve(\"RaidGroup\" .. g .. \"Slot\" .. s)",
+   "surface": "raid",
+   "key": "resolve",
+   "file": "UI/Raid.lua",
+   "line": 84,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "dynamic: local slot = Compat.resolve(\"RaidGroup\" .. g .. \"Slot\" .. s)"
+  },
+  {
+   "kind": "global",
+   "name": "RaidFrameReadyCheckButton",
+   "surface": "raid",
+   "key": "resolve",
+   "file": "UI/Raid.lua",
+   "line": 88,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_RaidUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "local owner = Compat.resolve(\"RaidGroupButton\" .. i .. part)",
+   "surface": "raid",
+   "key": "resolve",
+   "file": "UI/Raid.lua",
+   "line": 91,
+   "lod": [
+    "Blizzard_RaidUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "dynamic: local owner = Compat.resolve(\"RaidGroupButton\" .. i .. part)"
+  },
+  {
+   "kind": "global",
+   "name": "ReputationFrame_Update",
+   "surface": "reputation",
+   "key": "update",
+   "file": "UI/Reputation.lua",
+   "line": 50,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the reputation window was never opened"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "item[2]",
+   "surface": "reputation",
+   "key": "item[2]",
+   "file": "UI/Reputation.lua",
+   "line": 51,
+   "verdict": "unknown",
+   "evidence": "dynamic: item[2]"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "name",
+   "surface": "reputation",
+   "key": "name",
+   "file": "UI/Reputation.lua",
+   "line": 53,
+   "verdict": "unknown",
+   "evidence": "dynamic: name"
+  },
+  {
+   "kind": "function",
+   "name": "ReputationFrame_Update",
+   "surface": "reputation",
+   "key": "hooksecurefunc",
+   "file": "UI/Reputation.lua",
+   "line": 93,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the reputation window was never opened"
+  },
+  {
+   "kind": "script",
+   "name": "OnEnter",
+   "surface": "reputation",
+   "key": "HookScript",
+   "file": "UI/Reputation.lua",
+   "line": 98,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "script",
+   "name": "OnLeave",
+   "surface": "reputation",
+   "key": "HookScript",
+   "file": "UI/Reputation.lua",
+   "line": 99,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "InCombatLockdown",
+   "surface": "revealbinding",
+   "key": "call",
+   "file": "UI/RevealBinding.lua",
+   "line": 22,
+   "suspect": true,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "ClearOverrideBindings",
+   "surface": "revealbinding",
+   "key": "call",
+   "file": "UI/RevealBinding.lua",
+   "line": 30,
+   "suspect": true,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "api",
+   "name": "SetOverrideBinding",
+   "surface": "revealbinding",
+   "key": "call",
+   "file": "UI/RevealBinding.lua",
+   "line": 31,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "EnumerateFrames",
+   "surface": "scan",
+   "key": "enumerate",
+   "file": "UI/Scan.lua",
+   "line": 73,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "name",
+   "surface": "skills",
+   "key": "name",
+   "file": "UI/Skills.lua",
+   "line": 37,
+   "verdict": "unknown",
+   "evidence": "dynamic: name"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "\"SkillRankFrame\" .. i .. \"SkillName\"",
+   "surface": "skills",
+   "key": "row",
+   "file": "UI/Skills.lua",
+   "line": 40,
+   "verdict": "unknown",
+   "evidence": "dynamic: \"SkillRankFrame\" .. i .. \"SkillName\""
+  },
+  {
+   "kind": "function",
+   "name": "SkillFrame_UpdateSkills",
+   "surface": "skills",
+   "key": "hooksecurefunc",
+   "file": "UI/Skills.lua",
+   "line": 64,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "api",
+   "name": "GetTime",
+   "surface": "slash",
+   "key": "call",
+   "file": "UI/Slash.lua",
+   "line": 150,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "SpellBookFrame",
+   "surface": "spellbook",
+   "key": "frame",
+   "file": "UI/SpellBook.lua",
+   "line": 111,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "SpellBookTitleText",
+   "surface": "spellbook",
+   "key": "title",
+   "file": "UI/SpellBook.lua",
+   "line": 112,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "SpellBookFrameTabButton1",
+   "surface": "spellbook",
+   "key": "tab1",
+   "file": "UI/SpellBook.lua",
+   "line": 113,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "SpellBookFrameTabButton2",
+   "surface": "spellbook",
+   "key": "tab2",
+   "file": "UI/SpellBook.lua",
+   "line": 114,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "SpellBookPageText",
+   "surface": "spellbook",
+   "key": "pageText",
+   "file": "UI/SpellBook.lua",
+   "line": 115,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "ShowAllSpellRanksCheckbox",
+   "surface": "spellbook",
+   "key": "checkbox",
+   "file": "UI/SpellBook.lua",
+   "line": 116,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": "ShowAllSpellRanksCheckboxText",
+   "surface": "spellbook",
+   "key": "showAllRanksText",
+   "file": "UI/SpellBook.lua",
+   "line": 117,
+   "verdict": "rework",
+   "evidence": "probe: absent"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "\"SpellButton\" .. i .. \"SubSpellName\"",
+   "surface": "spellbook",
+   "key": "sub",
+   "file": "UI/SpellBook.lua",
+   "line": 118,
+   "verdict": "unknown",
+   "evidence": "dynamic: \"SpellButton\" .. i .. \"SubSpellName\""
+  },
+  {
+   "kind": "method",
+   "name": "Update",
+   "surface": "spellbook",
+   "key": "hooksecurefunc",
+   "file": "UI/SpellBook.lua",
+   "line": 129,
+   "verdict": "unknown",
+   "evidence": "method hook on a client object; judged by its surface's frames"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "spellbook",
+   "key": "HookScript",
+   "file": "UI/SpellBook.lua",
+   "line": 130,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "method",
+   "name": "UpdatePages",
+   "surface": "spellbook",
+   "key": "hooksecurefunc",
+   "file": "UI/SpellBook.lua",
+   "line": 133,
+   "verdict": "unknown",
+   "evidence": "method hook on a client object; judged by its surface's frames"
+  },
+  {
+   "kind": "method",
+   "name": "SetText",
+   "surface": "spellbook",
+   "key": "hooksecurefunc",
+   "file": "UI/SpellBook.lua",
+   "line": 138,
+   "verdict": "unknown",
+   "evidence": "method hook on a client object; judged by its surface's frames"
+  },
+  {
+   "kind": "global",
+   "name": "PlayerTalentFrame",
+   "surface": "talents",
+   "key": "frame",
+   "file": "UI/Talents.lua",
+   "line": 83,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TalentUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "TalentFrame_Update",
+   "surface": "talents",
+   "key": "update",
+   "file": "UI/Talents.lua",
+   "line": 84,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "PlayerTalentFrame_PostUpdateActiveSpec",
+   "surface": "talents",
+   "key": "postActiveSpec",
+   "file": "UI/Talents.lua",
+   "line": 85,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TalentUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "PlayerTalentFrameTitleText",
+   "surface": "talents",
+   "key": "title",
+   "file": "UI/Talents.lua",
+   "line": 86,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TalentUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "PlayerTalentFrameTalentPointsText",
+   "surface": "talents",
+   "key": "points",
+   "file": "UI/Talents.lua",
+   "line": 87,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TalentUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "PlayerTalentFrameSpentPointsText",
+   "surface": "talents",
+   "key": "spent",
+   "file": "UI/Talents.lua",
+   "line": 88,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TalentUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "PlayerTalentFrameStatusText",
+   "surface": "talents",
+   "key": "status",
+   "file": "UI/Talents.lua",
+   "line": 89,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TalentUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "PlayerTalentFrameCancelButton",
+   "surface": "talents",
+   "key": "cancel",
+   "file": "UI/Talents.lua",
+   "line": 90,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TalentUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "PlayerTalentFrameActivateButton",
+   "surface": "talents",
+   "key": "activate",
+   "file": "UI/Talents.lua",
+   "line": 91,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TalentUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "PlayerTalentFrameResetButton",
+   "surface": "talents",
+   "key": "reset",
+   "file": "UI/Talents.lua",
+   "line": 92,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TalentUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "PlayerTalentFrameLearnButton",
+   "surface": "talents",
+   "key": "learn",
+   "file": "UI/Talents.lua",
+   "line": 93,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TalentUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "\"PlayerTalentFrameTalent\" .. i",
+   "surface": "talents",
+   "key": "talent",
+   "file": "UI/Talents.lua",
+   "line": 94,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "dynamic: \"PlayerTalentFrameTalent\" .. i"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "\"PlayerSpecTab\" .. i",
+   "surface": "talents",
+   "key": "specTab",
+   "file": "UI/Talents.lua",
+   "line": 95,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "dynamic: \"PlayerSpecTab\" .. i"
+  },
+  {
+   "kind": "function",
+   "name": "TalentFrame_Update",
+   "surface": "talents",
+   "key": "hooksecurefunc",
+   "file": "UI/Talents.lua",
+   "line": 109,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "function",
+   "name": "PlayerTalentFrame_PostUpdateActiveSpec",
+   "surface": "talents",
+   "key": "hooksecurefunc",
+   "file": "UI/Talents.lua",
+   "line": 111,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TalentUI was not loaded"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "talents",
+   "key": "HookScript",
+   "file": "UI/Talents.lua",
+   "line": 113,
+   "lod": [
+    "Blizzard_TalentUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "name",
+   "surface": "tooltip",
+   "key": "name",
+   "file": "UI/Tooltip.lua",
+   "line": 329,
+   "verdict": "unknown",
+   "evidence": "dynamic: name"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "t.global",
+   "surface": "tooltip",
+   "key": "t.key",
+   "file": "UI/Tooltip.lua",
+   "line": 330,
+   "verdict": "unknown",
+   "evidence": "dynamic: t.global"
+  },
+  {
+   "kind": "global",
+   "name": "GetSpellDescription",
+   "surface": "tooltip",
+   "key": "spellDescription",
+   "file": "UI/Tooltip.lua",
+   "line": 333,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the tooltip window was never opened"
+  },
+  {
+   "kind": "global",
+   "name": "C_Spell.GetSpellDescription",
+   "surface": "tooltip",
+   "key": "spellDescription",
+   "file": "UI/Tooltip.lua",
+   "line": 333,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "local fs = Compat.resolve(name .. \"Text\" .. (side or \"Left\") .. i)",
+   "surface": "tooltip",
+   "key": "resolve",
+   "file": "UI/Tooltip.lua",
+   "line": 79,
+   "verdict": "unknown",
+   "evidence": "dynamic: local fs = Compat.resolve(name .. \"Text\" .. (side or \"Left\") .. i)"
+  },
+  {
+   "kind": "global",
+   "name": "TooltipDataProcessor",
+   "surface": "tooltip",
+   "key": "resolve",
+   "file": "UI/Tooltip.lua",
+   "line": 297,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "Enum.TooltipDataType",
+   "surface": "tooltip",
+   "key": "resolve",
+   "file": "UI/Tooltip.lua",
+   "line": 299,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "script",
+   "name": "OnTooltipSetItem",
+   "surface": "tooltip",
+   "key": "HookScript",
+   "file": "UI/Tooltip.lua",
+   "line": 356,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the tooltip window was never opened"
+  },
+  {
+   "kind": "script",
+   "name": "OnTooltipSetSpell",
+   "surface": "tooltip",
+   "key": "HookScript",
+   "file": "UI/Tooltip.lua",
+   "line": 357,
+   "verdict": "unknown",
+   "evidence": "probe: absent, but the tooltip window was never opened"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "tooltip",
+   "key": "HookScript",
+   "file": "UI/Tooltip.lua",
+   "line": 359,
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": "ClassTrainerFrame",
+   "surface": "trainer",
+   "key": "frame",
+   "file": "UI/Trainer.lua",
+   "line": 106,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "ClassTrainer_SetSelection",
+   "surface": "trainer",
+   "key": "setSelection",
+   "file": "UI/Trainer.lua",
+   "line": 107,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "ClassTrainerFrame_Update",
+   "surface": "trainer",
+   "key": "update",
+   "file": "UI/Trainer.lua",
+   "line": 108,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "ClassTrainerSubSkillName",
+   "surface": "trainer",
+   "key": "subSkill",
+   "file": "UI/Trainer.lua",
+   "line": 109,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "ClassTrainerSkillRequirements",
+   "surface": "trainer",
+   "key": "requirements",
+   "file": "UI/Trainer.lua",
+   "line": 110,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "ClassTrainerTrainButton",
+   "surface": "trainer",
+   "key": "train",
+   "file": "UI/Trainer.lua",
+   "line": 111,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "ClassTrainerCancelButton",
+   "surface": "trainer",
+   "key": "exit",
+   "file": "UI/Trainer.lua",
+   "line": 112,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "ClassTrainerCollapseAllButton",
+   "surface": "trainer",
+   "key": "collapseAll",
+   "file": "UI/Trainer.lua",
+   "line": 113,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "ClassTrainerCostLabel",
+   "surface": "trainer",
+   "key": "costLabel",
+   "file": "UI/Trainer.lua",
+   "line": 114,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "ClassTrainerGreetingText",
+   "surface": "trainer",
+   "key": "greeting",
+   "file": "UI/Trainer.lua",
+   "line": 115,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "global",
+   "name": "GetTrainerGreetingText",
+   "surface": "trainer",
+   "key": "greetingText",
+   "file": "UI/Trainer.lua",
+   "line": 116,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  },
+  {
+   "kind": "global",
+   "name": null,
+   "dynamic": "\"ClassTrainerSkill\" .. i .. \"SubText\"",
+   "surface": "trainer",
+   "key": "row",
+   "file": "UI/Trainer.lua",
+   "line": 117,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "dynamic: \"ClassTrainerSkill\" .. i .. \"SubText\""
+  },
+  {
+   "kind": "function",
+   "name": "ClassTrainer_SetSelection",
+   "surface": "trainer",
+   "key": "hooksecurefunc",
+   "file": "UI/Trainer.lua",
+   "line": 131,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "function",
+   "name": "ClassTrainerFrame_Update",
+   "surface": "trainer",
+   "key": "hooksecurefunc",
+   "file": "UI/Trainer.lua",
+   "line": 132,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "unknown",
+   "evidence": "probe: absent, but Blizzard_TrainerUI was not loaded"
+  },
+  {
+   "kind": "script",
+   "name": "OnHide",
+   "surface": "trainer",
+   "key": "HookScript",
+   "file": "UI/Trainer.lua",
+   "line": 133,
+   "lod": [
+    "Blizzard_TrainerUI"
+   ],
+   "verdict": "works",
+   "evidence": "probe: present"
+  }
+ ],
+ "asked": {
+  "trainer": 1,
+  "guild": 1,
+  "honor": 1,
+  "questlog": 1,
+  "spellbook": 1,
+  "friends": 1,
+  "mail": 1,
+  "raid": 1,
+  "skills": 1,
+  "talents": 1
+ },
+ "unopened": [
+  "addonlistbutton",
+  "bags",
+  "bank",
+  "buttontext",
+  "character",
+  "compat",
+  "const",
+  "gamemenu",
+  "gossip",
+  "gossipchrome",
+  "helptooltip",
+  "itemtext",
+  "keycapture",
+  "labels",
+  "main",
+  "merchant",
+  "micromenu",
+  "modifier",
+  "options",
+  "questframe",
+  "reputation",
+  "revealbinding",
+  "scan",
+  "settings",
+  "slash",
+  "tooltip"
+ ]
+}

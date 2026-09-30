@@ -1,0 +1,1 @@
+{"id": 26055, "field": "description", "ja": "【使用】10秒以内に殺した敵から経験\n値かhonorを獲得した時、manaを900\n回復する。(クールダウン2分)", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3095"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

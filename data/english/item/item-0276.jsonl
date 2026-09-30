@@ -1,0 +1,271 @@
+{"id": 276063, "field": "name", "en": "Black Skeletal Horse", "hash": "aa878919b2629377", "src": "db2@1.60.1.70009"}
+{"id": 276063, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 276064, "field": "name", "en": "War Paint Wrap", "hash": "4a1a9fc32ed88b03", "src": "db2@1.60.1.70009"}
+{"id": 276065, "field": "name", "en": "Fizzgrimble's Mysterious Crate", "hash": "02666ef210809547", "src": "db2@1.60.1.70009"}
+{"id": 276066, "field": "name", "en": "Frazzlespark's Crate", "hash": "7845f90e0e15c7c8", "src": "db2@1.60.1.70009"}
+{"id": 276066, "field": "description", "en": "The package is sealed tight with what appears to be a makeshift bow comprised of damp dock line.", "hash": "3da235c4dbcac382", "src": "db2@1.60.1.70009"}
+{"id": 276067, "field": "name", "en": "Lost Shipping Crate", "hash": "c2fa676d395784bb", "src": "db2@1.60.1.70009"}
+{"id": 276068, "field": "name", "en": "Cask of Powderfuse Port", "hash": "9f351bbae47509ae", "src": "db2@1.60.1.70009"}
+{"id": 276070, "field": "name", "en": "Chol'aruk's Head", "hash": "62625c936711a362", "src": "db2@1.60.1.70009"}
+{"id": 276087, "field": "name", "en": "Nail", "hash": "0a8d41ca96cb1a74", "src": "db2@1.60.1.70009"}
+{"id": 276088, "field": "name", "en": "Bracket", "hash": "4b0e18a92efec240", "src": "db2@1.60.1.70009"}
+{"id": 276099, "field": "name", "en": "Sawyer Family Ledger", "hash": "669188318e918690", "src": "db2@1.60.1.70009"}
+{"id": 276100, "field": "name", "en": "Felhound Spike", "hash": "c9b4f1a08800dd84", "src": "db2@1.60.1.70009"}
+{"id": 276101, "field": "name", "en": "Zizplink's Grocery List", "hash": "0e8edbb985cc73e6", "src": "db2@1.60.1.70009"}
+{"id": 276102, "field": "name", "en": "Bladewind", "hash": "1be33c96329135d8", "src": "db2@1.60.1.70009"}
+{"id": 276105, "field": "name", "en": "Scoutmaster's Eyepatch", "hash": "fad647c09d5ecddb", "src": "db2@1.60.1.70009"}
+{"id": 276145, "field": "name", "en": "Explosive Runeshard", "hash": "eba7a083af8040c6", "src": "db2@1.60.1.70009"}
+{"id": 276145, "field": "description", "en": "Sling the Explosive Runeshard at a target location to signal Maerion to attack.", "hash": "f4e4982b5b0ec433", "src": "db2@1.60.1.70009"}
+{"id": 276158, "field": "name", "en": "Crystalized Shard", "hash": "e94793f7cd2df32e", "src": "db2@1.60.1.70009"}
+{"id": 276160, "field": "name", "en": "Mana Fragment", "hash": "9f2c217a8212f579", "src": "db2@1.60.1.70009"}
+{"id": 276199, "field": "name", "en": "Haughty Fellow's Monocle", "hash": "62f07043306cb716", "src": "db2@1.60.1.70009"}
+{"id": 276200, "field": "name", "en": "Crawler's Clackers", "hash": "d0109d0fe6354930", "src": "db2@1.60.1.70009"}
+{"id": 276201, "field": "name", "en": "Misplaced Pantaloons", "hash": "b9f05cc75493a2ed", "src": "db2@1.60.1.70009"}
+{"id": 276202, "field": "name", "en": "Disengagement Ring", "hash": "a24cde430a0c6361", "src": "db2@1.60.1.70009"}
+{"id": 276203, "field": "name", "en": "Primitive Fishing Pole", "hash": "49b65f11d0ef048b", "src": "db2@1.60.1.70009"}
+{"id": 276204, "field": "name", "en": "Thrash's Trash", "hash": "6b1511ed02865a12", "src": "db2@1.60.1.70009"}
+{"id": 276235, "field": "name", "en": "Seeping Slime Essence", "hash": "a26e503087f6da81", "src": "db2@1.60.1.70009"}
+{"id": 276236, "field": "name", "en": "Holstered Replica Ironforge Air Rifle", "hash": "c35e8e15caa699a9", "src": "db2@1.60.1.70009"}
+{"id": 276236, "field": "description", "en": "Unholster your Replica Ironforge Air Rifle for a friendly shootout.\nThe official version, with a compass in the stock and a gnomish contraption that keeps score.", "hash": "79a634c060e5061c", "src": "db2@1.60.1.70009"}
+{"id": 276242, "field": "name", "en": "Replica Dartol's Rod of Transformation", "hash": "552c0f07c779a50b", "src": "db2@1.60.1.70009"}
+{"id": 276242, "field": "description", "en": "Transforms you into a Furbolg for $d.", "hash": "9565f3eefa78ad88", "src": "db2@1.60.1.70009"}
+{"id": 276271, "field": "name", "en": "Monster - Staff, Skyborne (White)", "hash": "ae88b2474e6087cb", "src": "db2@1.60.1.70009"}
+{"id": 276272, "field": "name", "en": "Master Angler's Fishing Hat", "hash": "981574457a855901", "src": "db2@1.60.1.70009"}
+{"id": 276273, "field": "name", "en": "Empty Fish Bucket", "hash": "60eeb1c6e2ccde51", "src": "db2@1.60.1.70009"}
+{"id": 276274, "field": "name", "en": "Surfer Shoes", "hash": "32f41d573a8b0d75", "src": "db2@1.60.1.70009"}
+{"id": 276274, "field": "description", "en": "Gain the ability to walk on water for $d.\r\n\r\nAttacking or taking damage will cancel this effect.", "hash": "a68ec1ffe367b034", "src": "db2@1.60.1.70009"}
+{"id": 276275, "field": "name", "en": "Bitter Baitling", "hash": "0b33dcbc126b9b0b", "src": "db2@1.60.1.70009"}
+{"id": 276275, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70009"}
+{"id": 276278, "field": "name", "en": "Handful of Coins", "hash": "6bacf19e156c504e", "src": "db2@1.60.1.70009"}
+{"id": 276278, "field": "description", "en": "A disappointing handful of coins.", "hash": "b6b96c4dc6d8c44d", "src": "db2@1.60.1.70009"}
+{"id": 276279, "field": "name", "en": "Small Bag of Coins", "hash": "04c6e5922660f643", "src": "db2@1.60.1.70009"}
+{"id": 276279, "field": "description", "en": "An unimpressive payout of coin.", "hash": "0ab98c53590aac2e", "src": "db2@1.60.1.70009"}
+{"id": 276280, "field": "name", "en": "Hefty Sack of Coins", "hash": "735b4d0dae9eddef", "src": "db2@1.60.1.70009"}
+{"id": 276280, "field": "description", "en": "A reasonable award of coin.", "hash": "e3c2097741b26e4f", "src": "db2@1.60.1.70009"}
+{"id": 276332, "field": "name", "en": "Abigail's Hope", "hash": "ae4a3babbdab1e4e", "src": "db2@1.60.1.70009"}
+{"id": 276333, "field": "name", "en": "Sawyer Family Seal", "hash": "f4cd117afdb2a1bf", "src": "db2@1.60.1.70009"}
+{"id": 276334, "field": "name", "en": "Hand-Hewn Buckler", "hash": "a4712f599fe27bb5", "src": "db2@1.60.1.70009"}
+{"id": 276335, "field": "name", "en": "Polished Doomguard Edge", "hash": "deb2687f38fd7361", "src": "db2@1.60.1.70009"}
+{"id": 276336, "field": "name", "en": "Yashiro's Spirit Bead", "hash": "071448cddac0e652", "src": "db2@1.60.1.70009"}
+{"id": 276337, "field": "name", "en": "Thaelemaches' Talisman", "hash": "86bb6ad1a08d923d", "src": "db2@1.60.1.70009"}
+{"id": 276337, "field": "description", "en": "Fear all Demons within $r yards for $d.", "hash": "5275deddb98345a2", "src": "db2@1.60.1.70009"}
+{"id": 276338, "field": "name", "en": "Claw of Shalla'kal", "hash": "edad3e48e0dce6c1", "src": "db2@1.60.1.70009"}
+{"id": 276339, "field": "name", "en": "Cured Staghide Leggings", "hash": "c74e1886067fbcf3", "src": "db2@1.60.1.70009"}
+{"id": 276340, "field": "name", "en": "Blademaster Hakama", "hash": "b7a2ecc1c88b5502", "src": "db2@1.60.1.70009"}
+{"id": 276341, "field": "name", "en": "Plaguecrusher Greaves", "hash": "11cb7423c895283b", "src": "db2@1.60.1.70009"}
+{"id": 276423, "field": "name", "en": "Unstable Elemental Core", "hash": "c5715baa70e17bac", "src": "db2@1.60.1.70009"}
+{"id": 276423, "field": "description", "en": "Mazu'kon of the Earthen Ring would be very interested in this fragment of elemental energy.", "hash": "3131fb8e6a9f5fbd", "src": "db2@1.60.1.70009"}
+{"id": 276467, "field": "name", "en": "Jorin's List", "hash": "c43264fc90e80d59", "src": "db2@1.60.1.70009"}
+{"id": 276468, "field": "name", "en": "Consecrated Holy Salts", "hash": "95809d35c49d3245", "src": "db2@1.60.1.70009"}
+{"id": 276469, "field": "name", "en": "Monster - 2H Mace, Barrow Deeps - Dark", "hash": "167ce5eff3abb7b6", "src": "db2@1.60.1.70009"}
+{"id": 276471, "field": "name", "en": "Level 23 Hunter Supplies", "hash": "ce9d3237da340122", "src": "db2@1.60.1.70009"}
+{"id": 276471, "field": "description", "en": "Contains supplies needed by a level 23 Hunter.", "hash": "3e5842747420dc02", "src": "db2@1.60.1.70009"}
+{"id": 276472, "field": "name", "en": "Level 38 Hunter Supplies", "hash": "cb630242ee7a2bda", "src": "db2@1.60.1.70009"}
+{"id": 276472, "field": "description", "en": "Contains supplies needed by a level 38 Hunter.", "hash": "c1fc01349d978eb1", "src": "db2@1.60.1.70009"}
+{"id": 276473, "field": "name", "en": "Level 57 Hunter Supplies", "hash": "707cc0958cdf4957", "src": "db2@1.60.1.70009"}
+{"id": 276473, "field": "description", "en": "Contains supplies needed by a level 57 Hunter.", "hash": "73527c7aed3c0802", "src": "db2@1.60.1.70009"}
+{"id": 276474, "field": "name", "en": "Level 60 Hunter Supplies", "hash": "56f4e027ad57c29e", "src": "db2@1.60.1.70009"}
+{"id": 276474, "field": "description", "en": "Contains supplies needed by a level 60 Hunter.", "hash": "81ef500d2a632d9b", "src": "db2@1.60.1.70009"}
+{"id": 276502, "field": "name", "en": "Darkspear Battle Tabard", "hash": "50620c251ccad745", "src": "db2@1.60.1.70009"}
+{"id": 276504, "field": "name", "en": "Theramore Battle Tabard", "hash": "74f254f77f8641c5", "src": "db2@1.60.1.70009"}
+{"id": 276538, "field": "name", "en": "Spiritcaller Kilt", "hash": "49eec4f53b11c00f", "src": "db2@1.60.1.70009"}
+{"id": 276539, "field": "name", "en": "Spiritcaller Gloves", "hash": "5df103e17f8de59b", "src": "db2@1.60.1.70009"}
+{"id": 276540, "field": "name", "en": "Spiritcaller Mantle", "hash": "81d123fb3f5ccb65", "src": "db2@1.60.1.70009"}
+{"id": 276541, "field": "name", "en": "Spiritcaller Boots", "hash": "3801fc6f96f623db", "src": "db2@1.60.1.70009"}
+{"id": 276542, "field": "name", "en": "Pattern: Spiritcaller Kilt", "hash": "03f40bda4b070657", "src": "db2@1.60.1.70009"}
+{"id": 276542, "field": "description", "en": "Teaches you how to craft Spiritcaller Kilt.", "hash": "c3bb46526e56996b", "src": "db2@1.60.1.70009"}
+{"id": 276543, "field": "name", "en": "Pattern: Spiritcaller Gloves", "hash": "49ae154faad1ae0b", "src": "db2@1.60.1.70009"}
+{"id": 276543, "field": "description", "en": "Teaches you how to craft Spiritcaller Gloves.", "hash": "39bc66d30765eeb0", "src": "db2@1.60.1.70009"}
+{"id": 276544, "field": "name", "en": "Pattern: Spiritcaller Mantle", "hash": "6d8e35696aa093d5", "src": "db2@1.60.1.70009"}
+{"id": 276544, "field": "description", "en": "Teaches you how to craft Spiritcaller Mantle.", "hash": "956cd47baa10d34b", "src": "db2@1.60.1.70009"}
+{"id": 276545, "field": "name", "en": "Pattern: Spiritcaller Boots", "hash": "68b542ea510bc2f0", "src": "db2@1.60.1.70009"}
+{"id": 276545, "field": "description", "en": "Teaches you how to craft Spiritcaller Boots.", "hash": "bae7a77e7a9a2bbc", "src": "db2@1.60.1.70009"}
+{"id": 276561, "field": "name", "en": "Black Tome", "hash": "7bb6089f438a5971", "src": "db2@1.60.1.70009"}
+{"id": 276561, "field": "description", "en": "Use at the Ambermill Leyline Focus to create the Tome of Dalaran.", "hash": "901081738f9e77f6", "src": "db2@1.60.1.70009"}
+{"id": 276614, "field": "name", "en": "Zayus's Exorcism Censer", "hash": "71408e955d6fda8b", "src": "db2@1.60.1.70009"}
+{"id": 276631, "field": "name", "en": "Coldflame Saber", "hash": "56c53bb2de06cc75", "src": "db2@1.60.1.70009"}
+{"id": 276631, "field": "description", "en": "Melee attacks deal $1300130s1 Fire additional damage against Frozen targets.", "hash": "64478aea7b88e272", "src": "db2@1.60.1.70009"}
+{"id": 276637, "field": "name", "en": "Currency Wallet", "hash": "66ec5f8791d41111", "src": "db2@1.60.1.70009"}
+{"id": 276637, "field": "description", "en": "Currency wallet for attaching currency amounts to immediate item containers", "hash": "8055e2d051cba8ad", "src": "db2@1.60.1.70009"}
+{"id": 276685, "field": "name", "en": "Militia Bow", "hash": "bdc0d53fb712139e", "src": "db2@1.60.1.70009"}
+{"id": 276686, "field": "name", "en": "Junior's Hunting Bow", "hash": "e041506952b1f394", "src": "db2@1.60.1.70009"}
+{"id": 276694, "field": "name", "en": "Captain Sander's Lucky Shooter", "hash": "c21bd9e410cb4c78", "src": "db2@1.60.1.70009"}
+{"id": 276695, "field": "name", "en": "Harvester's Pestslayer", "hash": "01dbe94b830dfbaf", "src": "db2@1.60.1.70009"}
+{"id": 276719, "field": "name", "en": "DNT HEAD", "hash": "8b70d949b971c180", "src": "db2@1.60.1.70009"}
+{"id": 276720, "field": "name", "en": "Criminal's Pauldrons", "hash": "6f02807d57fdd68c", "src": "db2@1.60.1.70009"}
+{"id": 276721, "field": "name", "en": "DNT CHEST", "hash": "03629f1f20f16657", "src": "db2@1.60.1.70009"}
+{"id": 276722, "field": "name", "en": "Gnoll Shackles", "hash": "89c833d6e869b304", "src": "db2@1.60.1.70009"}
+{"id": 276723, "field": "name", "en": "Wise Gauntlets", "hash": "820a903adbcd61ee", "src": "db2@1.60.1.70009"}
+{"id": 276724, "field": "name", "en": "Trophy Belt", "hash": "22a6e05b4cd36b71", "src": "db2@1.60.1.70009"}
+{"id": 276725, "field": "name", "en": "DNT LEGS", "hash": "8bfa12d6ef1250f3", "src": "db2@1.60.1.70009"}
+{"id": 276727, "field": "name", "en": "Glistening Stompers", "hash": "ada9aa9219f4e977", "src": "db2@1.60.1.70009"}
+{"id": 276754, "field": "name", "en": "Sunderbark Vigil", "hash": "167cc4e868f4800a", "src": "db2@1.60.1.70009"}
+{"id": 276765, "field": "name", "en": "Leafre's Ring of Precise Spell Power", "hash": "db48f9cd5a79e569", "src": "db2@1.60.1.70009"}
+{"id": 276782, "field": "name", "en": "Distant Communication Device", "hash": "5cb5198a57f45f09", "src": "db2@1.60.1.70009"}
+{"id": 276782, "field": "description", "en": "Turn the gizmo on and send the signal to Jurgens.", "hash": "1a89811d934cc6dd", "src": "db2@1.60.1.70009"}
+{"id": 276783, "field": "name", "en": "Spirit of Retribution", "hash": "811e0811a96bce1f", "src": "db2@1.60.1.70009"}
+{"id": 276784, "field": "name", "en": "Charger's Lost Soul", "hash": "3affff47a73bf635", "src": "db2@1.60.1.70009"}
+{"id": 276784, "field": "description", "en": "Reclaim the lost soul of the death knight's charger, transforming it into a spirit of retribution.", "hash": "775bfb520833c192", "src": "db2@1.60.1.70009"}
+{"id": 276785, "field": "name", "en": "Danitha's Satchel", "hash": "a11f037a08e5453f", "src": "db2@1.60.1.70009"}
+{"id": 276785, "field": "description", "en": "Your finished Divination Scryer and Blessed Arcanite Barding are inside the satchel.", "hash": "f58f943b440f00a6", "src": "db2@1.60.1.70009"}
+{"id": 276886, "field": "name", "en": "Chol'aruk's Trophy Sword", "hash": "70faca5be183b4c0", "src": "db2@1.60.1.70009"}
+{"id": 276887, "field": "name", "en": "Big Bad Basher", "hash": "fdccce5b9f892a24", "src": "db2@1.60.1.70009"}
+{"id": 276888, "field": "name", "en": "Quilboar Toothpick", "hash": "ed67bdfb2d1df173", "src": "db2@1.60.1.70009"}
+{"id": 276889, "field": "name", "en": "Thornwoven Shield", "hash": "5907808bd02e5f54", "src": "db2@1.60.1.70009"}
+{"id": 276890, "field": "name", "en": "Zarla's Journal", "hash": "ada485bcf00a5c8d", "src": "db2@1.60.1.70009"}
+{"id": 276890, "field": "description", "en": "The text in this journal is written in a jagged draconic script.", "hash": "85f2a8609190575f", "src": "db2@1.60.1.70009"}
+{"id": 276891, "field": "name", "en": "Spidersilk Pouch", "hash": "16c033eb0c2ffa81", "src": "db2@1.60.1.70009"}
+{"id": 276892, "field": "name", "en": "Spidersilk Sack", "hash": "895ae75cafb76804", "src": "db2@1.60.1.70009"}
+{"id": 276893, "field": "name", "en": "Blackmaw Ritual Totem", "hash": "8a4cea1a8e459ec0", "src": "db2@1.60.1.70009"}
+{"id": 276894, "field": "name", "en": "Ancient Gurubashi Idol", "hash": "5f76897dcf82cc96", "src": "db2@1.60.1.70009"}
+{"id": 276895, "field": "name", "en": "Transformative Cocoon", "hash": "2fdfe48d0e37035d", "src": "db2@1.60.1.70009"}
+{"id": 276895, "field": "description", "en": "Absorb up to $1316048s1 damage and Stun yourself for $d. When the Stun expires, gain $1301168s1% increased movement speed for $1301168d.", "hash": "584acd6f884b4f13", "src": "db2@1.60.1.70009"}
+{"id": 276896, "field": "name", "en": "Everlasting Silvermoon Shimmerwine", "hash": "6324bfa5db2cd914", "src": "db2@1.60.1.70009"}
+{"id": 276896, "field": "description", "en": "Pour a glass of Silvermoon Shimmerwine.", "hash": "40582d15373dc73e", "src": "db2@1.60.1.70009"}
+{"id": 276897, "field": "name", "en": "A Lesson in Destruction", "hash": "441f73d1e2ef9b3e", "src": "db2@1.60.1.70009"}
+{"id": 276898, "field": "name", "en": "Salve and Salvation", "hash": "ae4880e5829a3089", "src": "db2@1.60.1.70009"}
+{"id": 276899, "field": "name", "en": "Knucklebound Thimble", "hash": "2b73e17db6bb5aef", "src": "db2@1.60.1.70009"}
+{"id": 276900, "field": "name", "en": "Denric's Dog Tags", "hash": "3cc9af2d5525eb23", "src": "db2@1.60.1.70009"}
+{"id": 276901, "field": "name", "en": "Uncle's Heroism", "hash": "59bda5c87c895cee", "src": "db2@1.60.1.70009"}
+{"id": 276902, "field": "name", "en": "Youngster's First Bow", "hash": "f6e577ff8e6ba9d0", "src": "db2@1.60.1.70009"}
+{"id": 276903, "field": "name", "en": "Shimmerwine Shanker", "hash": "270bb59b742c5b57", "src": "db2@1.60.1.70009"}
+{"id": 276904, "field": "name", "en": "Shimmerwine Spirits", "hash": "90247d2b257ece7d", "src": "db2@1.60.1.70009"}
+{"id": 276909, "field": "name", "en": "Corrupted Cat Figurine", "hash": "77b93d8a0c74476a", "src": "db2@1.60.1.70009"}
+{"id": 276909, "field": "description", "en": "This once beautiful figurine has been stained by the felbood. It looks like it belonged to a set.", "hash": "660f112d969ba5b4", "src": "db2@1.60.1.70009"}
+{"id": 276916, "field": "name", "en": "The Coldbringer's Eye", "hash": "807d643a5503c738", "src": "db2@1.60.1.70009"}
+{"id": 276928, "field": "name", "en": "Plans: Cloudy Skyforged Chainmail", "hash": "ebbdc9d64ced3176", "src": "db2@1.60.1.70009"}
+{"id": 276928, "field": "description", "en": "Teaches you how to craft Cloudy Skyforged Chainmail.", "hash": "394ba523ff43f822", "src": "db2@1.60.1.70009"}
+{"id": 276929, "field": "name", "en": "Plans: Cloudy Skyforged Wristguards", "hash": "ea7d6714de18c63b", "src": "db2@1.60.1.70009"}
+{"id": 276929, "field": "description", "en": "Teaches you how to craft Cloudy Skyforged Wristguards.", "hash": "2d5874764689b6c9", "src": "db2@1.60.1.70009"}
+{"id": 276930, "field": "name", "en": "Plans: Cloudy Skyforged Gauntlets", "hash": "94b7571cbe95fc35", "src": "db2@1.60.1.70009"}
+{"id": 276930, "field": "description", "en": "Teaches you how to craft Cloudy Skyforged Gauntlets.", "hash": "b0feef14552c3ba9", "src": "db2@1.60.1.70009"}
+{"id": 276931, "field": "name", "en": "Plans: Cloudy Skyforged Chain", "hash": "fad651ec2bc88113", "src": "db2@1.60.1.70009"}
+{"id": 276931, "field": "description", "en": "Teaches you how to craft Cloudy Skyforged Chain.", "hash": "2fedebeae6b6b57c", "src": "db2@1.60.1.70009"}
+{"id": 276932, "field": "name", "en": "Plans: Cloudy Skyforged Legguards", "hash": "5b9ed5ba3767e0ad", "src": "db2@1.60.1.70009"}
+{"id": 276932, "field": "description", "en": "Teaches you how to craft Cloudy Skyforged Legguards.", "hash": "7974b95df04f72eb", "src": "db2@1.60.1.70009"}
+{"id": 276933, "field": "name", "en": "Plans: Cloudy Skyforged Greaves", "hash": "d417661b80d81641", "src": "db2@1.60.1.70009"}
+{"id": 276933, "field": "description", "en": "Teaches you how to craft Cloudy Skyforged Greaves.", "hash": "43a15a0f042d649b", "src": "db2@1.60.1.70009"}
+{"id": 276934, "field": "name", "en": "Pattern: Cloudy Gustwoven Harness", "hash": "7e4e53ef72eb8fd7", "src": "db2@1.60.1.70009"}
+{"id": 276934, "field": "description", "en": "Teaches you how to craft Cloudy Gustwoven Harness.", "hash": "0605bce0acf8f5cc", "src": "db2@1.60.1.70009"}
+{"id": 276935, "field": "name", "en": "Pattern: Cloudy Gustwoven Bracers", "hash": "ca04b6fefa7e48bf", "src": "db2@1.60.1.70009"}
+{"id": 276935, "field": "description", "en": "Teaches you how to craft Cloudy Gustwoven Bracers.", "hash": "c45a6e4b9952b0b6", "src": "db2@1.60.1.70009"}
+{"id": 276936, "field": "name", "en": "Pattern: Cloudy Gustwoven Gloves", "hash": "a8d46dbf924114fe", "src": "db2@1.60.1.70009"}
+{"id": 276936, "field": "description", "en": "Teaches you how to craft Cloudy Gustwoven Gloves.", "hash": "b3a27661bf68ab0f", "src": "db2@1.60.1.70009"}
+{"id": 276937, "field": "name", "en": "Pattern: Cloudy Gustwoven Belt", "hash": "7c48334c0f30a204", "src": "db2@1.60.1.70009"}
+{"id": 276937, "field": "description", "en": "Teaches you how to craft Cloudy Gustwoven Belt.", "hash": "21f050978bfed564", "src": "db2@1.60.1.70009"}
+{"id": 276938, "field": "name", "en": "Pattern: Cloudy Gustwoven Trousers", "hash": "c574a2ff5f4999dd", "src": "db2@1.60.1.70009"}
+{"id": 276938, "field": "description", "en": "Teaches you how to craft Cloudy Gustwoven Trousers.", "hash": "2ee5d4039011f7ec", "src": "db2@1.60.1.70009"}
+{"id": 276939, "field": "name", "en": "Pattern: Cloudy Gustwoven Boots", "hash": "9a4a12bbcf5555a9", "src": "db2@1.60.1.70009"}
+{"id": 276939, "field": "description", "en": "Teaches you how to craft Cloudy Gustwoven Boots.", "hash": "0de96917443b3fe1", "src": "db2@1.60.1.70009"}
+{"id": 276940, "field": "name", "en": "Pattern: Cloudy Windraveled Jerkin", "hash": "a6e5e294d0173ce1", "src": "db2@1.60.1.70009"}
+{"id": 276940, "field": "description", "en": "Teaches you how to craft Cloudy Windraveled Jerkin.", "hash": "8bd95cf29b8ca93c", "src": "db2@1.60.1.70009"}
+{"id": 276941, "field": "name", "en": "Pattern: Cloudy Windraveled Armguards", "hash": "9ee2f4943fcf8e4a", "src": "db2@1.60.1.70009"}
+{"id": 276941, "field": "description", "en": "Teaches you how to craft Cloudy Windraveled Armguards.", "hash": "977ccc089fa83bb7", "src": "db2@1.60.1.70009"}
+{"id": 276942, "field": "name", "en": "Pattern: Cloudy Windraveled Mitts", "hash": "461b3dc068914401", "src": "db2@1.60.1.70009"}
+{"id": 276942, "field": "description", "en": "Teaches you how to craft Cloudy Windraveled Mitts.", "hash": "43e16242a46d4ecc", "src": "db2@1.60.1.70009"}
+{"id": 276943, "field": "name", "en": "Pattern: Cloudy Windraveled Strap", "hash": "b0e64981ad94d7f5", "src": "db2@1.60.1.70009"}
+{"id": 276943, "field": "description", "en": "Teaches you how to craft Cloudy Windraveled Strap.", "hash": "e9c86713bb7d7658", "src": "db2@1.60.1.70009"}
+{"id": 276944, "field": "name", "en": "Pattern: Cloudy Windraveled Pants", "hash": "79b061a5823f8b9f", "src": "db2@1.60.1.70009"}
+{"id": 276944, "field": "description", "en": "Teaches you how to craft Cloudy Windraveled Pants.", "hash": "a932c0f35146990d", "src": "db2@1.60.1.70009"}
+{"id": 276945, "field": "name", "en": "Pattern: Cloudy Windraveled Footwraps", "hash": "28775c3c1a21a159", "src": "db2@1.60.1.70009"}
+{"id": 276945, "field": "description", "en": "Teaches you how to craft Cloudy Windraveled Footwraps.", "hash": "fe6dd5cf72197d25", "src": "db2@1.60.1.70009"}
+{"id": 276946, "field": "name", "en": "Pattern: Cloudy Stormsewn Vest", "hash": "999575caa279565e", "src": "db2@1.60.1.70009"}
+{"id": 276946, "field": "description", "en": "Teaches you how to craft Cloudy Stormsewn Vest.", "hash": "2079575cccbd7645", "src": "db2@1.60.1.70009"}
+{"id": 276947, "field": "name", "en": "Pattern: Cloudy Stormsewn Cuffs", "hash": "4c182b6095963e6b", "src": "db2@1.60.1.70009"}
+{"id": 276947, "field": "description", "en": "Teaches you how to craft Cloudy Stormsewn Cuffs.", "hash": "0a6004be5f76d622", "src": "db2@1.60.1.70009"}
+{"id": 276948, "field": "name", "en": "Pattern: Cloudy Stormsewn Handwraps", "hash": "eb25fab356f388bc", "src": "db2@1.60.1.70009"}
+{"id": 276948, "field": "description", "en": "Teaches you how to craft Cloudy Stormsewn Handwraps.", "hash": "dc473816de6e294c", "src": "db2@1.60.1.70009"}
+{"id": 276949, "field": "name", "en": "Pattern: Cloudy Stormsewn Cord", "hash": "970c51104b74bf60", "src": "db2@1.60.1.70009"}
+{"id": 276949, "field": "description", "en": "Teaches you how to craft Cloudy Stormsewn Cord.", "hash": "d44b8c24c36b46d1", "src": "db2@1.60.1.70009"}
+{"id": 276950, "field": "name", "en": "Pattern: Cloudy Stormsewn Leggings", "hash": "0e4b86f04d0397f8", "src": "db2@1.60.1.70009"}
+{"id": 276950, "field": "description", "en": "Teaches you how to craft Cloudy Stormsewn Leggings.", "hash": "74dc7680064f6c01", "src": "db2@1.60.1.70009"}
+{"id": 276951, "field": "name", "en": "Pattern: Cloudy Stormsewn Shoes", "hash": "6337fa6479b11377", "src": "db2@1.60.1.70009"}
+{"id": 276951, "field": "description", "en": "Teaches you how to craft Cloudy Stormsewn Shoes.", "hash": "dfa6f4011ad84ea5", "src": "db2@1.60.1.70009"}
+{"id": 276952, "field": "name", "en": "Plans: Azure Skyforged Chainmail", "hash": "01a5171c086b143c", "src": "db2@1.60.1.70009"}
+{"id": 276952, "field": "description", "en": "Teaches you how to craft Azure Skyforged Chainmail.", "hash": "de7f14af63f39d85", "src": "db2@1.60.1.70009"}
+{"id": 276953, "field": "name", "en": "Plans: Azure Skyforged Wristguards", "hash": "38d73e0e1a1b30ac", "src": "db2@1.60.1.70009"}
+{"id": 276953, "field": "description", "en": "Teaches you how to craft Azure Skyforged Wristguards.", "hash": "7259dcac5f34bf39", "src": "db2@1.60.1.70009"}
+{"id": 276954, "field": "name", "en": "Plans: Azure Skyforged Gauntlets", "hash": "aa9ea45d7a13defb", "src": "db2@1.60.1.70009"}
+{"id": 276954, "field": "description", "en": "Teaches you how to craft Azure Skyforged Gauntlets.", "hash": "56325ea5b9dbe0fb", "src": "db2@1.60.1.70009"}
+{"id": 276955, "field": "name", "en": "Plans: Azure Skyforged Chain", "hash": "d8efaaaf12fe3973", "src": "db2@1.60.1.70009"}
+{"id": 276955, "field": "description", "en": "Teaches you how to craft Azure Skyforged Chain.", "hash": "19c22afa9de111eb", "src": "db2@1.60.1.70009"}
+{"id": 276956, "field": "name", "en": "Plans: Azure Skyforged Legguards", "hash": "718622fbf2e5c362", "src": "db2@1.60.1.70009"}
+{"id": 276956, "field": "description", "en": "Teaches you how to craft Azure Skyforged Legguards.", "hash": "1ea828ee54ff184e", "src": "db2@1.60.1.70009"}
+{"id": 276957, "field": "name", "en": "Plans: Azure Skyforged Greaves", "hash": "4536619696103785", "src": "db2@1.60.1.70009"}
+{"id": 276957, "field": "description", "en": "Teaches you how to craft Azure Skyforged Greaves.", "hash": "0898a499f6a2cb91", "src": "db2@1.60.1.70009"}
+{"id": 276958, "field": "name", "en": "Pattern: Azure Gustwoven Harness", "hash": "5ad713032e271c09", "src": "db2@1.60.1.70009"}
+{"id": 276958, "field": "description", "en": "Teaches you how to craft Azure Gustwoven Harness.", "hash": "cafd07659f6e5cd3", "src": "db2@1.60.1.70009"}
+{"id": 276959, "field": "name", "en": "Pattern: Azure Gustwoven Bracers", "hash": "a68d7612b5b9d4f1", "src": "db2@1.60.1.70009"}
+{"id": 276959, "field": "description", "en": "Teaches you how to craft Azure Gustwoven Bracers.", "hash": "8951b8d58bc817bd", "src": "db2@1.60.1.70009"}
+{"id": 276960, "field": "name", "en": "Pattern: Azure Gustwoven Gloves", "hash": "23ac6f37afa36617", "src": "db2@1.60.1.70009"}
+{"id": 276960, "field": "description", "en": "Teaches you how to craft Azure Gustwoven Gloves.", "hash": "5b3ebb5adcd4bf6c", "src": "db2@1.60.1.70009"}
+{"id": 276961, "field": "name", "en": "Pattern: Azure Gustwoven Belt", "hash": "2a6bf497ba6d18f3", "src": "db2@1.60.1.70009"}
+{"id": 276961, "field": "description", "en": "Teaches you how to craft Azure Gustwoven Belt.", "hash": "19f3e3a35711489a", "src": "db2@1.60.1.70009"}
+{"id": 276962, "field": "name", "en": "Pattern: Azure Gustwoven Trousers", "hash": "9f6e69e124994e3f", "src": "db2@1.60.1.70009"}
+{"id": 276962, "field": "description", "en": "Teaches you how to craft Azure Gustwoven Trousers.", "hash": "f970f806e0bb4163", "src": "db2@1.60.1.70009"}
+{"id": 276963, "field": "name", "en": "Pattern: Azure Gustwoven Boots", "hash": "b695fb4aa1e2393b", "src": "db2@1.60.1.70009"}
+{"id": 276963, "field": "description", "en": "Teaches you how to craft Azure Gustwoven Boots.", "hash": "f7bda822fb659c3f", "src": "db2@1.60.1.70009"}
+{"id": 276964, "field": "name", "en": "Pattern: Azure Windraveled Jerkin", "hash": "80dfa9769566f143", "src": "db2@1.60.1.70009"}
+{"id": 276964, "field": "description", "en": "Teaches you how to craft Azure Windraveled Jerkin.", "hash": "566480faec35f2b3", "src": "db2@1.60.1.70009"}
+{"id": 276965, "field": "name", "en": "Pattern: Azure Windraveled Armguards", "hash": "23dadfa8d8c16af1", "src": "db2@1.60.1.70009"}
+{"id": 276965, "field": "description", "en": "Teaches you how to craft Azure Windraveled Armguards.", "hash": "dc7e343eb8534427", "src": "db2@1.60.1.70009"}
+{"id": 276966, "field": "name", "en": "Pattern: Azure Windraveled Mitts", "hash": "22a3fcd423ccd033", "src": "db2@1.60.1.70009"}
+{"id": 276966, "field": "description", "en": "Teaches you how to craft Azure Windraveled Mitts.", "hash": "08d8accc96e2b5d3", "src": "db2@1.60.1.70009"}
+{"id": 276967, "field": "name", "en": "Pattern: Azure Windraveled Strap", "hash": "8d6f089568d06427", "src": "db2@1.60.1.70009"}
+{"id": 276967, "field": "description", "en": "Teaches you how to craft Azure Windraveled Strap.", "hash": "aebfb19dadf2dd5f", "src": "db2@1.60.1.70009"}
+{"id": 276968, "field": "name", "en": "Pattern: Azure Windraveled Pants", "hash": "563920b93d7b17d1", "src": "db2@1.60.1.70009"}
+{"id": 276968, "field": "description", "en": "Teaches you how to craft Azure Windraveled Pants.", "hash": "6e2a0b7d43bc0014", "src": "db2@1.60.1.70009"}
+{"id": 276969, "field": "name", "en": "Pattern: Azure Windraveled Footwraps", "hash": "ad6f474bb3137e00", "src": "db2@1.60.1.70009"}
+{"id": 276969, "field": "description", "en": "Teaches you how to craft Azure Windraveled Footwraps.", "hash": "436f3e0a8ac48595", "src": "db2@1.60.1.70009"}
+{"id": 276970, "field": "name", "en": "Pattern: Azure Stormsewn Vest", "hash": "47b937154db5cd5e", "src": "db2@1.60.1.70009"}
+{"id": 276970, "field": "description", "en": "Teaches you how to craft Azure Stormsewn Vest.", "hash": "187cea6897cfe97b", "src": "db2@1.60.1.70009"}
+{"id": 276971, "field": "name", "en": "Pattern: Azure Stormsewn Cuffs", "hash": "686413ef682321fd", "src": "db2@1.60.1.70009"}
+{"id": 276971, "field": "description", "en": "Teaches you how to craft Azure Stormsewn Cuffs.", "hash": "f43443c916a13291", "src": "db2@1.60.1.70009"}
+{"id": 276972, "field": "name", "en": "Pattern: Azure Stormsewn Handwraps", "hash": "75f6bffa68d8749f", "src": "db2@1.60.1.70009"}
+{"id": 276972, "field": "description", "en": "Teaches you how to craft Azure Stormsewn Handwraps.", "hash": "817aa7a7431dceaf", "src": "db2@1.60.1.70009"}
+{"id": 276973, "field": "name", "en": "Pattern: Azure Stormsewn Cord", "hash": "4530125bf6b1364f", "src": "db2@1.60.1.70009"}
+{"id": 276973, "field": "description", "en": "Teaches you how to craft Azure Stormsewn Cord.", "hash": "cc4f1f308e7dba07", "src": "db2@1.60.1.70009"}
+{"id": 276974, "field": "name", "en": "Pattern: Azure Stormsewn Leggings", "hash": "e8454dcd12534c5a", "src": "db2@1.60.1.70009"}
+{"id": 276974, "field": "description", "en": "Teaches you how to craft Azure Stormsewn Leggings.", "hash": "3f679a8856f8b578", "src": "db2@1.60.1.70009"}
+{"id": 276975, "field": "name", "en": "Pattern: Azure Stormsewn Shoes", "hash": "7f83e2f34c3df709", "src": "db2@1.60.1.70009"}
+{"id": 276975, "field": "description", "en": "Teaches you how to craft Azure Stormsewn Shoes.", "hash": "c97b3311d202ab03", "src": "db2@1.60.1.70009"}
+{"id": 276976, "field": "name", "en": "Plans: Cloudy Skyforged Helm", "hash": "79c9b380ccfee565", "src": "db2@1.60.1.70009"}
+{"id": 276976, "field": "description", "en": "Teaches you how to craft Cloudy Skyforged Helm.", "hash": "6954acf82d4c0967", "src": "db2@1.60.1.70009"}
+{"id": 276977, "field": "name", "en": "Plans: Cloudy Skyforged Pauldrons", "hash": "9d68f814d637f8d9", "src": "db2@1.60.1.70009"}
+{"id": 276977, "field": "description", "en": "Teaches you how to craft Cloudy Skyforged Pauldrons.", "hash": "23e44e15b82355ce", "src": "db2@1.60.1.70009"}
+{"id": 276978, "field": "name", "en": "Pattern: Cloudy Gustwoven Hood", "hash": "7d18a4c187535f4e", "src": "db2@1.60.1.70009"}
+{"id": 276978, "field": "description", "en": "Teaches you how to craft Cloudy Gustwoven Hood.", "hash": "8c9a5f76577427c4", "src": "db2@1.60.1.70009"}
+{"id": 276979, "field": "name", "en": "Pattern: Cloudy Gustwoven Spaulders", "hash": "9feb03094dd0f224", "src": "db2@1.60.1.70009"}
+{"id": 276979, "field": "description", "en": "Teaches you how to craft Cloudy Gustwoven Spaulders.", "hash": "5d1a7b5aa6cb5261", "src": "db2@1.60.1.70009"}
+{"id": 276980, "field": "name", "en": "Pattern: Cloudy Windraveled Cover", "hash": "97606e970bc6aad4", "src": "db2@1.60.1.70009"}
+{"id": 276980, "field": "description", "en": "Teaches you how to craft Cloudy Windraveled Cover.", "hash": "da4961148dcf76d1", "src": "db2@1.60.1.70009"}
+{"id": 276981, "field": "name", "en": "Pattern: Cloudy Windraveled Drapes", "hash": "a3b884d1e8b75852", "src": "db2@1.60.1.70009"}
+{"id": 276981, "field": "description", "en": "Teaches you how to craft Cloudy Windraveled Drapes.", "hash": "eba2621fa397aaae", "src": "db2@1.60.1.70009"}
+{"id": 276982, "field": "name", "en": "Pattern: Cloudy Stormsewn Cowl", "hash": "970c53a74b755ecd", "src": "db2@1.60.1.70009"}
+{"id": 276982, "field": "description", "en": "Teaches you how to craft Cloudy Stormsewn Cowl.", "hash": "d44cdf69d745989e", "src": "db2@1.60.1.70009"}
+{"id": 276983, "field": "name", "en": "Pattern: Cloudy Stormsewn Epaulets", "hash": "9ee969a090b4ebfd", "src": "db2@1.60.1.70009"}
+{"id": 276983, "field": "description", "en": "Teaches you how to craft Cloudy Stormsewn Epaulets.", "hash": "75a77802fe576ea3", "src": "db2@1.60.1.70009"}
+{"id": 276984, "field": "name", "en": "Plans: Azure Skyforged Helm", "hash": "565a815f8023aab7", "src": "db2@1.60.1.70009"}
+{"id": 276984, "field": "description", "en": "Teaches you how to craft Azure Skyforged Helm.", "hash": "61584004f85e7c8c", "src": "db2@1.60.1.70009"}
+{"id": 276985, "field": "name", "en": "Plans: Azure Skyforged Pauldrons", "hash": "b350455591b5db9f", "src": "db2@1.60.1.70009"}
+{"id": 276985, "field": "description", "en": "Teaches you how to craft Azure Skyforged Pauldrons.", "hash": "c917bda11cd2fb31", "src": "db2@1.60.1.70009"}
+{"id": 276986, "field": "name", "en": "Pattern: Azure Gustwoven Hood", "hash": "2b3c660c328fd64e", "src": "db2@1.60.1.70009"}
+{"id": 276986, "field": "description", "en": "Teaches you how to craft Azure Gustwoven Hood.", "hash": "849df28222869afa", "src": "db2@1.60.1.70009"}
+{"id": 276987, "field": "name", "en": "Pattern: Azure Gustwoven Spaulders", "hash": "2abbc8505fb5de07", "src": "db2@1.60.1.70009"}
+{"id": 276987, "field": "description", "en": "Teaches you how to craft Azure Gustwoven Spaulders.", "hash": "024deaeb0b7af7c4", "src": "db2@1.60.1.70009"}
+{"id": 276988, "field": "name", "en": "Pattern: Azure Windraveled Cover", "hash": "73e92dabc70236f5", "src": "db2@1.60.1.70009"}
+{"id": 276988, "field": "description", "en": "Teaches you how to craft Azure Windraveled Cover.", "hash": "9f40ab9e8044ddd8", "src": "db2@1.60.1.70009"}
+{"id": 276989, "field": "name", "en": "Pattern: Azure Windraveled Drapes", "hash": "7db24bb3ae070cb4", "src": "db2@1.60.1.70009"}
+{"id": 276989, "field": "description", "en": "Teaches you how to craft Azure Windraveled Drapes.", "hash": "b62d8627f440f425", "src": "db2@1.60.1.70009"}
+{"id": 276990, "field": "name", "en": "Pattern: Azure Stormsewn Cowl", "hash": "453014f2f6b1d5bc", "src": "db2@1.60.1.70009"}
+{"id": 276990, "field": "description", "en": "Teaches you how to craft Azure Stormsewn Cowl.", "hash": "cc507275a2580bd4", "src": "db2@1.60.1.70009"}
+{"id": 276991, "field": "name", "en": "Pattern: Azure Stormsewn Epaulets", "hash": "78e330825604a05f", "src": "db2@1.60.1.70009"}
+{"id": 276991, "field": "description", "en": "Teaches you how to craft Azure Stormsewn Epaulets.", "hash": "40329c0a4f00b82b", "src": "db2@1.60.1.70009"}
+{"id": 276992, "field": "name", "en": "Cloudy Skyforged Chainmail", "hash": "45584089ab2af097", "src": "db2@1.60.1.70009"}
+{"id": 276993, "field": "name", "en": "Cloudy Skyforged Wristguards", "hash": "7dfb9285b77b7f1c", "src": "db2@1.60.1.70009"}
+{"id": 276994, "field": "name", "en": "Cloudy Skyforged Gauntlets", "hash": "ee51cdca1cd3bb67", "src": "db2@1.60.1.70009"}
+{"id": 276995, "field": "name", "en": "Cloudy Skyforged Chain", "hash": "9eb00349a586dee8", "src": "db2@1.60.1.70009"}
+{"id": 276996, "field": "name", "en": "Cloudy Skyforged Legguards", "hash": "b5394c6895a59fce", "src": "db2@1.60.1.70009"}
+{"id": 276997, "field": "name", "en": "Cloudy Skyforged Greaves", "hash": "902980bba15b9a63", "src": "db2@1.60.1.70009"}
+{"id": 276998, "field": "name", "en": "Cloudy Gustwoven Harness", "hash": "eb8a065dca70ad27", "src": "db2@1.60.1.70009"}
+{"id": 276999, "field": "name", "en": "Cloudy Gustwoven Bracers", "hash": "3740697152036620", "src": "db2@1.60.1.70009"}

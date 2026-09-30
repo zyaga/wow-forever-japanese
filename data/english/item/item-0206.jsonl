@@ -1,0 +1,70 @@
+{"id": 206032, "field": "name", "en": "Rune of Carve", "hash": "496d63d09ac28557", "src": "db2@1.60.1.70009"}
+{"id": 206032, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 206155, "field": "name", "en": "Rune of Marksmanship", "hash": "4379289cbc1b6b1c", "src": "db2@1.60.1.70009"}
+{"id": 206155, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 206157, "field": "name", "en": "Seaforium Mining Charge", "hash": "8f0b4f49b10e89d7", "src": "db2@1.60.1.70009"}
+{"id": 206159, "field": "name", "en": "Venture Co Disguise", "hash": "80e1f07c88261c17", "src": "db2@1.60.1.70009"}
+{"id": 206159, "field": "description", "en": "It doesn't seem like much of a disguise...", "hash": "619151a0b97d1026", "src": "db2@1.60.1.70009"}
+{"id": 206168, "field": "name", "en": "Rune of the Chimera", "hash": "477942c12b2fc20d", "src": "db2@1.60.1.70009"}
+{"id": 206168, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 206169, "field": "name", "en": "Rune of Explosive Shot", "hash": "5731d48b195e01c9", "src": "db2@1.60.1.70009"}
+{"id": 206169, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 206170, "field": "name", "en": "Windfury Cone", "hash": "c3008eb48929ca9a", "src": "db2@1.60.1.70009"}
+{"id": 206175, "field": "name", "en": "Pine Salve", "hash": "1cca6b6f5e68f0dc", "src": "db2@1.60.1.70009"}
+{"id": 206176, "field": "name", "en": "Mortar and Pestle", "hash": "00ea4ab135286ecd", "src": "db2@1.60.1.70009"}
+{"id": 206176, "field": "description", "en": "Grind 8 Windfury Cones together to create a venomous weapon salve.  In theory.", "hash": "1536ef812020f7b8", "src": "db2@1.60.1.70009"}
+{"id": 206177, "field": "name", "en": "Pine Nut Butter", "hash": "22363fd04a55b1f7", "src": "db2@1.60.1.70009"}
+{"id": 206177, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.  If you spend at least 10 seconds eating you will become well fed and gain $19705s1 Stamina and Spirit for $19705d.", "hash": "7cf6aa9dd88a673c", "src": "db2@1.60.1.70009"}
+{"id": 206264, "field": "name", "en": "Rune of Inspiration", "hash": "491a9c1650ed897f", "src": "db2@1.60.1.70009"}
+{"id": 206264, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 206344, "field": "name", "en": "Knife Set", "hash": "b37b795f38bc08b3", "src": "db2@1.60.1.70009"}
+{"id": 206344, "field": "description", "en": "Attempt to fillet a Raw Brilliant Smallfish.", "hash": "18bbd6e4c6f269ad", "src": "db2@1.60.1.70009"}
+{"id": 206345, "field": "name", "en": "Fish Chunks", "hash": "3bd09842d48c2ca5", "src": "db2@1.60.1.70009"}
+{"id": 206376, "field": "name", "en": "Bulwark Icon", "hash": "376e200d67709445", "src": "db2@1.60.1.70009"}
+{"id": 206376, "field": "description", "en": "Learn a new ability after hitting enemies 25 times with Rockbiter Weapon.", "hash": "4348c1c269eac14d", "src": "db2@1.60.1.70009"}
+{"id": 206381, "field": "name", "en": "Dyadic Icon", "hash": "0c26fda448dd852c", "src": "db2@1.60.1.70009"}
+{"id": 206381, "field": "description", "en": "Learn a new ability after receiving Nature damage 10 times.", "hash": "d05b538494c0fce3", "src": "db2@1.60.1.70009"}
+{"id": 206382, "field": "name", "en": "Tempest Icon", "hash": "b6c028da25879228", "src": "db2@1.60.1.70009"}
+{"id": 206382, "field": "description", "en": "Learn a new ability after hitting 10 non-player enemies with 3 different elements (Nature, Frost, Fire).", "hash": "2662afe984405b68", "src": "db2@1.60.1.70009"}
+{"id": 206383, "field": "name", "en": "Lithic Icon", "hash": "5307494ebefd5252", "src": "db2@1.60.1.70009"}
+{"id": 206383, "field": "description", "en": "Learn a new ability after blocking 20 attacks with your shield.", "hash": "1ad42b138749f7d6", "src": "db2@1.60.1.70009"}
+{"id": 206384, "field": "name", "en": "Astral Icon", "hash": "28956a1a3d5a57cd", "src": "db2@1.60.1.70009"}
+{"id": 206384, "field": "description", "en": "Learn a new ability after hitting enemies 25 times with Rockbiter Weapon.", "hash": "4348c1c269eac14d", "src": "db2@1.60.1.70009"}
+{"id": 206385, "field": "name", "en": "Clastic Icon", "hash": "4f3019450a7b1b6c", "src": "db2@1.60.1.70009"}
+{"id": 206385, "field": "description", "en": "Learn a new ability after defeating 20 enemies with Earth Shock.", "hash": "41200e2f38aaf6d1", "src": "db2@1.60.1.70009"}
+{"id": 206386, "field": "name", "en": "Galvanic Icon", "hash": "fc6d8a03b2b643c0", "src": "db2@1.60.1.70009"}
+{"id": 206386, "field": "description", "en": "Learn a new ability after defeating enemies 10 times with Lightning Bolt.", "hash": "0f6ef321d57814e0", "src": "db2@1.60.1.70009"}
+{"id": 206387, "field": "name", "en": "Kajaric Icon", "hash": "09be024c7a01b236", "src": "db2@1.60.1.70009"}
+{"id": 206387, "field": "description", "en": "Learn a new ability after taking damage from lava 5 times. (Reduces damage from some sources of lava)", "hash": "599fc96e546c4304", "src": "db2@1.60.1.70009"}
+{"id": 206388, "field": "name", "en": "Sulfurous Icon", "hash": "577e291f24173049", "src": "db2@1.60.1.70009"}
+{"id": 206388, "field": "description", "en": "Learn a new ability after defeating 10 enemies with Earth Shock.", "hash": "7ba592228227c577", "src": "db2@1.60.1.70009"}
+{"id": 206389, "field": "name", "en": "Brimstone Icon", "hash": "3089b580a54d69e9", "src": "db2@1.60.1.70009"}
+{"id": 206389, "field": "description", "en": "Learn a new ability after hitting enemies 25 times with Rockbiter Weapon.", "hash": "4348c1c269eac14d", "src": "db2@1.60.1.70009"}
+{"id": 206390, "field": "name", "en": "Ichthyan Icon", "hash": "ce3b927f94f9993c", "src": "db2@1.60.1.70009"}
+{"id": 206390, "field": "description", "en": "Learn a new ability after hitting enemies 25 times with Rockbiter Weapon.", "hash": "4348c1c269eac14d", "src": "db2@1.60.1.70009"}
+{"id": 206391, "field": "name", "en": "Syzygic Icon", "hash": "f70933b1fd7f259f", "src": "db2@1.60.1.70009"}
+{"id": 206391, "field": "description", "en": "Learn a new ability after hitting enemies 25 times with Rockbiter Weapon.", "hash": "4348c1c269eac14d", "src": "db2@1.60.1.70009"}
+{"id": 206466, "field": "name", "en": "Prairie Crown", "hash": "7a14577c69ea6724", "src": "db2@1.60.1.70009"}
+{"id": 206466, "field": "description", "en": "Awaken a spirit of the plains ", "hash": "6a4a51d5e2b7f5da", "src": "db2@1.60.1.70009"}
+{"id": 206469, "field": "name", "en": "Prairie Flower", "hash": "01a35e7b349fc5c1", "src": "db2@1.60.1.70009"}
+{"id": 206469, "field": "description", "en": "Combine 3 Prairie Flowers to make a crown.", "hash": "26d07a9cd7d41a93", "src": "db2@1.60.1.70009"}
+{"id": 206954, "field": "name", "en": "Idol of Ursine Rage", "hash": "779232e4d6d6552f", "src": "db2@1.60.1.70009"}
+{"id": 206954, "field": "description", "en": "Learn a new ability after keeping your rage in Bear Form at 50 or higher for 60 seconds", "hash": "aec2404395a04572", "src": "db2@1.60.1.70009"}
+{"id": 206963, "field": "name", "en": "Rune of Natural Potential", "hash": "1b1e321df15fbe66", "src": "db2@1.60.1.70009"}
+{"id": 206963, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 206966, "field": "name", "en": "Satyrweed Bulb", "hash": "fc974d00a8e6f56e", "src": "db2@1.60.1.70009"}
+{"id": 206966, "field": "description", "en": "The seedling of an invasive plant species.", "hash": "57d20a70b4664770", "src": "db2@1.60.1.70009"}
+{"id": 206970, "field": "name", "en": "Rune of Life", "hash": "0d7ff075d998303b", "src": "db2@1.60.1.70009"}
+{"id": 206970, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 206975, "field": "name", "en": "Artifact Storage Key", "hash": "179e17e52356779a", "src": "db2@1.60.1.70009"}
+{"id": 206975, "field": "description", "en": "Opens Artifact Storage chest", "hash": "4cbc1ef4406b61df", "src": "db2@1.60.1.70009"}
+{"id": 206985, "field": "name", "en": "Echo of the Alpha", "hash": "1cf8ed559aaf0532", "src": "db2@1.60.1.70009"}
+{"id": 206985, "field": "description", "en": "Learn a new ability.", "hash": "81eecd3fefdf66bc", "src": "db2@1.60.1.70009"}
+{"id": 206989, "field": "name", "en": "Rune of the Sun", "hash": "bd0dcff471fc05f1", "src": "db2@1.60.1.70009"}
+{"id": 206989, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 206992, "field": "name", "en": "Rune of Skull Bash", "hash": "7e4ca3c48c24f7dd", "src": "db2@1.60.1.70009"}
+{"id": 206992, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 206994, "field": "name", "en": "Severed Quilboar Head", "hash": "43530a2e09051608", "src": "db2@1.60.1.70009"}
+{"id": 206994, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70009"}
+{"id": 206995, "field": "name", "en": "Severed Harpy Head", "hash": "c9192dac18e89f93", "src": "db2@1.60.1.70009"}
+{"id": 206995, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70009"}

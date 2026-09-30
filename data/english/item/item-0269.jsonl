@@ -1,0 +1,79 @@
+{"id": 269000, "field": "name", "en": "SI:7 Disguise Kit", "hash": "43bb52286e0f7fa0", "src": "db2@1.60.1.70009"}
+{"id": 269008, "field": "name", "en": "Corrupted Grovewalker Sap", "hash": "a7b558a503199cac", "src": "db2@1.60.1.70009"}
+{"id": 269008, "field": "description", "en": "Thick and almost gellationous in consistancy, this sap seems to be as acrid as it is thick.", "hash": "1a7f447faf50d12d", "src": "db2@1.60.1.70009"}
+{"id": 269011, "field": "name", "en": "Ash-tainted Sap", "hash": "0a3d6b8825ed0abe", "src": "db2@1.60.1.70009"}
+{"id": 269011, "field": "description", "en": "The sap leaves a painful burn with any skin it comes in contact with.", "hash": "d70f5186d250afe9", "src": "db2@1.60.1.70009"}
+{"id": 269013, "field": "name", "en": "Altered Concoction of Cleansing", "hash": "24c6f1c88ebd6d2e", "src": "db2@1.60.1.70009"}
+{"id": 269013, "field": "description", "en": "Use the Concoction of Cleansing on animals that have been experimented on with fel ash.\nThis concoction alters the corruption in animals afflicted by fel energies.", "hash": "274605a29ac5e5e7", "src": "db2@1.60.1.70009"}
+{"id": 269025, "field": "name", "en": "Ceremonial Mastic", "hash": "ce140aad904f6cf9", "src": "db2@1.60.1.70009"}
+{"id": 269025, "field": "description", "en": "Increase your reputation permanently with furbolg of Barkskin Burrow.", "hash": "3bb4bd5cd096f475", "src": "db2@1.60.1.70009"}
+{"id": 269233, "field": "name", "en": "Ashen Infused Crystal", "hash": "2067b01fae6fc918", "src": "db2@1.60.1.70009"}
+{"id": 269233, "field": "description", "en": "As you hold this crystal, it almost feels as if somthing is writhing within it.", "hash": "769f7cbf175110e3", "src": "db2@1.60.1.70009"}
+{"id": 269244, "field": "name", "en": "Calcified Excrement", "hash": "617ede71585bf416", "src": "db2@1.60.1.70009"}
+{"id": 269246, "field": "name", "en": "Warped Metal Scrap", "hash": "47ebf4408057dd7f", "src": "db2@1.60.1.70009"}
+{"id": 269247, "field": "name", "en": "Inert Phylactery", "hash": "e79f2d08c14ddd45", "src": "db2@1.60.1.70009"}
+{"id": 269247, "field": "description", "en": "The soul of the lich no longer stirs within.", "hash": "6c8b6f69ee1afa74", "src": "db2@1.60.1.70009"}
+{"id": 269257, "field": "name", "en": "Skullbasher", "hash": "87a233f29d0977a3", "src": "db2@1.60.1.70009"}
+{"id": 269326, "field": "name", "en": "NOT USED", "hash": "ec5445120afe2ab3", "src": "db2@1.60.1.70009"}
+{"id": 269326, "field": "description", "en": "NOT USED", "hash": "ec5445120afe2ab3", "src": "db2@1.60.1.70009"}
+{"id": 269327, "field": "name", "en": "Edge of Oblivion", "hash": "94512e36cc620198", "src": "db2@1.60.1.70009"}
+{"id": 269327, "field": "description", "en": "Umbrinoth", "hash": "9ce792bc596ad21f", "src": "db2@1.60.1.70009"}
+{"id": 269351, "field": "name", "en": "Executioner's Mace", "hash": "900718d1c6eb6c8e", "src": "db2@1.60.1.70009"}
+{"id": 269501, "field": "name", "en": "Elven Chain Wristguards", "hash": "e01dd15c1535dc91", "src": "db2@1.60.1.70009"}
+{"id": 269502, "field": "name", "en": "Dwarven Plate", "hash": "9e025dbd04aee932", "src": "db2@1.60.1.70009"}
+{"id": 269503, "field": "name", "en": "Poacher Boots", "hash": "043f256484c3a8d4", "src": "db2@1.60.1.70009"}
+{"id": 269504, "field": "name", "en": "Smoking Satchel", "hash": "dd0c80c608d9bef0", "src": "db2@1.60.1.70009"}
+{"id": 269671, "field": "name", "en": "Swift Empyrean Galestrider", "hash": "1eb42c9727c44f53", "src": "db2@1.60.1.70009"}
+{"id": 269671, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 269673, "field": "name", "en": "Swift Regal Galestrider", "hash": "a47c6782c36724d2", "src": "db2@1.60.1.70009"}
+{"id": 269673, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 269678, "field": "name", "en": "Swift Stormy Galestrider", "hash": "8cfe3986516a3ff4", "src": "db2@1.60.1.70009"}
+{"id": 269678, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 269681, "field": "name", "en": "Empyrean Galestrider", "hash": "5ff1ed00cc160f8b", "src": "db2@1.60.1.70009"}
+{"id": 269681, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 269682, "field": "name", "en": "Regal Galestrider", "hash": "ceda62808803ce07", "src": "db2@1.60.1.70009"}
+{"id": 269682, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 269683, "field": "name", "en": "Stormy Galestrider", "hash": "3b15a9ee1797e4d4", "src": "db2@1.60.1.70009"}
+{"id": 269683, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 269715, "field": "name", "en": "Savannah Lion Hide", "hash": "23555cac02ea1e24", "src": "db2@1.60.1.70009"}
+{"id": 269716, "field": "name", "en": "Keen Skinning Knife", "hash": "3af0612b23e36516", "src": "db2@1.60.1.70009"}
+{"id": 269717, "field": "name", "en": "Wildgore Greatsword", "hash": "116b9b2ddbae4713", "src": "db2@1.60.1.70009"}
+{"id": 269718, "field": "name", "en": "Bundle of Hides", "hash": "76ca946813804c62", "src": "db2@1.60.1.70009"}
+{"id": 269719, "field": "name", "en": "Trapped Game", "hash": "1c4e11e3de3d6cd0", "src": "db2@1.60.1.70009"}
+{"id": 269739, "field": "name", "en": "Bloody Tuft of Fur", "hash": "e47b89ca42f81711", "src": "db2@1.60.1.70009"}
+{"id": 269741, "field": "name", "en": "Scented Runewood Brooch", "hash": "6452f42bd132880a", "src": "db2@1.60.1.70009"}
+{"id": 269741, "field": "description", "en": "Harmful spell casts and attacks against Furbolg have a chance to deal $1318324s1 Nature damage.\nCharm target Furbolg for $d.  Only works on targets not in combat.", "hash": "4234197991f7fdbe", "src": "db2@1.60.1.70009"}
+{"id": 269742, "field": "name", "en": "Walton's Second-Favorite Gun", "hash": "7b047093816fe792", "src": "db2@1.60.1.70009"}
+{"id": 269749, "field": "name", "en": "Headhunter's Head", "hash": "d697f396472496d9", "src": "db2@1.60.1.70009"}
+{"id": 269757, "field": "name", "en": "Battered Zeppelin Parcel", "hash": "10184fcc6e70357b", "src": "db2@1.60.1.70009"}
+{"id": 269757, "field": "description", "en": "Fragile.", "hash": "8bf0b60d79b5079a", "src": "db2@1.60.1.70009"}
+{"id": 269758, "field": "name", "en": "Quest Reward Placeholder", "hash": "52bddbe93c8772dc", "src": "db2@1.60.1.70009"}
+{"id": 269758, "field": "description", "en": "Some day I'll be a real item...", "hash": "68b4e7ec66835f54", "src": "db2@1.60.1.70009"}
+{"id": 269759, "field": "name", "en": "Quest Reward Placeholder", "hash": "52bddbe93c8772dc", "src": "db2@1.60.1.70009"}
+{"id": 269759, "field": "description", "en": "Some day I'll be a real item...", "hash": "68b4e7ec66835f54", "src": "db2@1.60.1.70009"}
+{"id": 269773, "field": "name", "en": "Twilight Missive", "hash": "1a08153e97f03728", "src": "db2@1.60.1.70009"}
+{"id": 269774, "field": "name", "en": "Unusual Ooze Vial", "hash": "8db56ce14f2dffa0", "src": "db2@1.60.1.70009"}
+{"id": 269774, "field": "description", "en": "A highly viscous and slightly luminous green ooze clings to the glass.", "hash": "54b4fa6c8389108a", "src": "db2@1.60.1.70009"}
+{"id": 269777, "field": "name", "en": "Quicklatch Sparker", "hash": "a2b99843a5313e9a", "src": "db2@1.60.1.70009"}
+{"id": 269777, "field": "description", "en": "A small contraption to quickly conjure sparks and a flame with the flick of a finger.", "hash": "178c21073cb87711", "src": "db2@1.60.1.70009"}
+{"id": 269810, "field": "name", "en": "Scrapper's Salvage", "hash": "8574be0466d9e13f", "src": "db2@1.60.1.70009"}
+{"id": 269810, "field": "description", "en": "Pick your part!", "hash": "03af697db663ffbf", "src": "db2@1.60.1.70009"}
+{"id": 269830, "field": "name", "en": "Snowy Wolf Pup", "hash": "b8b3ea2708846565", "src": "db2@1.60.1.70009"}
+{"id": 269830, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70009"}
+{"id": 269900, "field": "name", "en": "Centaur Banner Deployment Device", "hash": "273a2c0dc1eea404", "src": "db2@1.60.1.70009"}
+{"id": 269900, "field": "description", "en": "Deploy a banner representing your chosen faction in the Desolace centaur war for $d.", "hash": "d98e181b401358d8", "src": "db2@1.60.1.70009"}
+{"id": 269901, "field": "name", "en": "Schematic: Centaur Banner Deployment Device", "hash": "bb50a0e16ec33a17", "src": "db2@1.60.1.70009"}
+{"id": 269901, "field": "description", "en": "Teaches you how to craft Centaur Banner Deployment Device.", "hash": "d7ebe72ee7682fad", "src": "db2@1.60.1.70009"}
+{"id": 269902, "field": "name", "en": "Hoof-Shaped Foot Pedal", "hash": "e81023e1175c6bf8", "src": "db2@1.60.1.70009"}
+{"id": 269902, "field": "description", "en": "Transform into a centaur for $d or until you enter combat.\r\n\r\nWhile in Desolace, your movement speed is also increased by $s2% and this transformation persists through combat.", "hash": "41bf7428bb0a43ef", "src": "db2@1.60.1.70009"}
+{"id": 269903, "field": "name", "en": "Schematic: Hoof-Shaped Foot Pedal", "hash": "27d717c16c51f4c6", "src": "db2@1.60.1.70009"}
+{"id": 269903, "field": "description", "en": "Teaches you how to craft Hoof-Shaped Foot Pedal.", "hash": "bc1e9a6bcf7b7398", "src": "db2@1.60.1.70009"}
+{"id": 269920, "field": "name", "en": "Hyjal Owl Egg", "hash": "9c4bc7507b21d0b7", "src": "db2@1.60.1.70009"}
+{"id": 269944, "field": "name", "en": "Bag of Enchanted Seeds", "hash": "20d253655f096fbf", "src": "db2@1.60.1.70009"}
+{"id": 269944, "field": "description", "en": "Sprinkle enchanted seeds on a ruined war machine to speed its reclamation by nature.", "hash": "e5fbb7ab6a20b4a9", "src": "db2@1.60.1.70009"}
+{"id": 269990, "field": "name", "en": "Crystal Catalyst", "hash": "5be71021a9f32643", "src": "db2@1.60.1.70009"}
+{"id": 269990, "field": "description", "en": "Absorb Twilight magic from Empowered Brutes, Twilight Ritualists, or Twilight Ritual Circles.", "hash": "da1fd62fa876dccc", "src": "db2@1.60.1.70009"}
+{"id": 269997, "field": "name", "en": "Bundle of Candles", "hash": "7dbc607d4590d205", "src": "db2@1.60.1.70009"}
+{"id": 269997, "field": "description", "en": "Places a candle at a nearby grave.", "hash": "597d60a53f5d42bb", "src": "db2@1.60.1.70009"}
+{"id": 269998, "field": "name", "en": "Sacred Stag Bundle", "hash": "8c6a481f7db008c0", "src": "db2@1.60.1.70009"}
+{"id": 269998, "field": "description", "en": "Place the last remains of the stag as an offering to return to nature.", "hash": "159829e018b713f0", "src": "db2@1.60.1.70009"}

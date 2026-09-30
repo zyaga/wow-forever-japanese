@@ -1,0 +1,1 @@
+{"id": 69773, "field": "description", "ja": "Frost Armor、Mage Armor、Molten Armorの\n詠唱時間を1.5秒短縮します。さらにそれぞれの\n防御的効果を10%上昇します。", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#9320"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

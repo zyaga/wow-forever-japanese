@@ -1,0 +1,71 @@
+{"id": 1238069, "field": "name", "en": "Primal Bite", "hash": "fc46ab75fe0b9ff5", "src": "db2@1.60.1.70009"}
+{"id": 1238069, "field": "description", "en": "Bite the target for $s2% normal damage plus $s1.", "hash": "6fd658218c8e6101", "src": "db2@1.60.1.70009"}
+{"id": 1238070, "field": "name", "en": "Primal Bite", "hash": "fc46ab75fe0b9ff5", "src": "db2@1.60.1.70009"}
+{"id": 1238070, "field": "description", "en": "Bite the target for $s2% normal damage plus $s1.", "hash": "6fd658218c8e6101", "src": "db2@1.60.1.70009"}
+{"id": 1238073, "field": "name", "en": "Primal Bite", "hash": "fc46ab75fe0b9ff5", "src": "db2@1.60.1.70009"}
+{"id": 1238073, "field": "description", "en": "Bite the target for $s2% normal damage plus $s1.", "hash": "6fd658218c8e6101", "src": "db2@1.60.1.70009"}
+{"id": 1238096, "field": "name", "en": "Stun", "hash": "0b3dc5a2a5416483", "src": "db2@1.60.1.70009"}
+{"id": 1238096, "field": "description", "en": "Adds a chance to stun an enemy on attack. Lasts $d.", "hash": "bfb871a9a729249b", "src": "db2@1.60.1.70009"}
+{"id": 1238096, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
+{"id": 1238097, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70009"}
+{"id": 1238097, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70009"}
+{"id": 1238122, "field": "name", "en": "Feral Charge", "hash": "0c36da34ba380499", "src": "db2@1.60.1.70009"}
+{"id": 1238122, "field": "description", "en": "$?a5487|a9634[|CFFFFFFFFRequires Bear Form, Dire Bear Form|R][|CFFFF2020Requires Bear Form, Dire Bear Form|R]\r\nCharge an enemy, immobilizing them and interrupting any spell they are casting for $19675d.\r\n\r\n$@spelltooltip414924", "hash": "24276080d7103e73", "src": "db2@1.60.1.70009"}
+{"id": 1238122, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70009"}
+{"id": 1238124, "field": "name", "en": "Feral Charge", "hash": "0c36da34ba380499", "src": "db2@1.60.1.70009"}
+{"id": 1238149, "field": "name", "en": "S03 - Item - Naxxramas - Shaman - Enhancement 2P Bonus", "hash": "8b1060419c609fe5", "src": "db2@1.60.1.70009"}
+{"id": 1238149, "field": "description", "en": "Increases damage done by your Lightning Shield by $s1%.", "hash": "2932070327b23cf0", "src": "db2@1.60.1.70009"}
+{"id": 1238181, "field": "name", "en": "Furor", "hash": "dc8b6552593d61e9", "src": "db2@1.60.1.70009"}
+{"id": 1238214, "field": "name", "en": "Wild Growth", "hash": "30b5dec6664d133b", "src": "db2@1.60.1.70009"}
+{"id": 1238214, "field": "description", "en": "Heals the target and their party for $o1 over $d. Party members must be within $a1 yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.", "hash": "1cb536f674efa343", "src": "db2@1.60.1.70009"}
+{"id": 1238214, "field": "aura", "en": "Heals $w1 damage every $t1 second.", "hash": "cf751a776967db26", "src": "db2@1.60.1.70009"}
+{"id": 1238215, "field": "name", "en": "Wild Growth", "hash": "30b5dec6664d133b", "src": "db2@1.60.1.70009"}
+{"id": 1238215, "field": "description", "en": "Heals the target and their party for $o1 over $d. Party members must be within $a1 yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.", "hash": "1cb536f674efa343", "src": "db2@1.60.1.70009"}
+{"id": 1238215, "field": "aura", "en": "Heals $w1 damage every $t1 second.", "hash": "cf751a776967db26", "src": "db2@1.60.1.70009"}
+{"id": 1238289, "field": "name", "en": "Earthbound", "hash": "646b0bc915dbb41b", "src": "db2@1.60.1.70009"}
+{"id": 1238289, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70009"}
+{"id": 1238299, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70009"}
+{"id": 1238299, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst deals $s2% increased damage.", "hash": "c9c1c7830a12da5b", "src": "db2@1.60.1.70009"}
+{"id": 1238300, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70009"}
+{"id": 1238300, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst deals $s2% increased damage.", "hash": "c9c1c7830a12da5b", "src": "db2@1.60.1.70009"}
+{"id": 1238307, "field": "name", "en": "Shadow Cleave", "hash": "c67bb8cb255bc204", "src": "db2@1.60.1.70009"}
+{"id": 1238309, "field": "name", "en": "Void Blast", "hash": "15b6246af828103f", "src": "db2@1.60.1.70009"}
+{"id": 1238310, "field": "name", "en": "Void Blast", "hash": "15b6246af828103f", "src": "db2@1.60.1.70009"}
+{"id": 1238311, "field": "name", "en": "Void Blast", "hash": "15b6246af828103f", "src": "db2@1.60.1.70009"}
+{"id": 1238315, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
+{"id": 1238316, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
+{"id": 1238317, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
+{"id": 1238318, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
+{"id": 1238319, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
+{"id": 1238319, "field": "description", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70009"}
+{"id": 1238319, "field": "aura", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70009"}
+{"id": 1238320, "field": "name", "en": "Shadow Barrier", "hash": "f463a18e9dd7a9fa", "src": "db2@1.60.1.70009"}
+{"id": 1238321, "field": "name", "en": "Piercing Shadow", "hash": "7a74db1ecc99acef", "src": "db2@1.60.1.70009"}
+{"id": 1238322, "field": "name", "en": "Piercing Shadow", "hash": "7a74db1ecc99acef", "src": "db2@1.60.1.70009"}
+{"id": 1238323, "field": "name", "en": "Class Call", "hash": "88eef2bb2a1b80c6", "src": "db2@1.60.1.70009"}
+{"id": 1238324, "field": "name", "en": "Blood Infusion", "hash": "ea73b3f876d1f635", "src": "db2@1.60.1.70009"}
+{"id": 1238358, "field": "name", "en": "Ghostly", "hash": "f747d39bd69c816b", "src": "db2@1.60.1.70009"}
+{"id": 1238366, "field": "name", "en": "Cripple", "hash": "8dedc199be0ae971", "src": "db2@1.60.1.70009"}
+{"id": 1238373, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70009"}
+{"id": 1238373, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst deals $408490s2% increased damage.", "hash": "2838b0c83e1f6039", "src": "db2@1.60.1.70009"}
+{"id": 1238376, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70009"}
+{"id": 1238376, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst deals $408490s2% increased damage.", "hash": "2838b0c83e1f6039", "src": "db2@1.60.1.70009"}
+{"id": 1238584, "field": "name", "en": "Corrupted Molten Fury", "hash": "fefd3fc1e4814ccd", "src": "db2@1.60.1.70009"}
+{"id": 1238640, "field": "name", "en": "Ghost Wolf", "hash": "33db442ff851f3c0", "src": "db2@1.60.1.70009"}
+{"id": 1238640, "field": "description", "en": "Turns the Shaman into a Ghost Wolf, increasing speed by $s2%.", "hash": "2e704fc774bb0470", "src": "db2@1.60.1.70009"}
+{"id": 1238640, "field": "aura", "en": "Increases movement speed by $s2%.", "hash": "f1529318cb1318ed", "src": "db2@1.60.1.70009"}
+{"id": 1238678, "field": "name", "en": "Threat", "hash": "b85c152bd9b9126d", "src": "db2@1.60.1.70009"}
+{"id": 1238785, "field": "name", "en": "Void Zone", "hash": "d67031da71dc1ce1", "src": "db2@1.60.1.70009"}
+{"id": 1238787, "field": "name", "en": "Meteor", "hash": "a35983361d0793f2", "src": "db2@1.60.1.70009"}
+{"id": 1238787, "field": "description", "en": "Do damage divided up evenly among all affected targets", "hash": "4e9595300a1e8390", "src": "db2@1.60.1.70009"}
+{"id": 1238788, "field": "name", "en": "Call Meteor", "hash": "2175f52cfff44b77", "src": "db2@1.60.1.70009"}
+{"id": 1238817, "field": "name", "en": "Holy Wrath", "hash": "0d2a617d6abbf260", "src": "db2@1.60.1.70009"}
+{"id": 1238818, "field": "name", "en": "Holy Wrath", "hash": "0d2a617d6abbf260", "src": "db2@1.60.1.70009"}
+{"id": 1238819, "field": "name", "en": "Holy Wrath", "hash": "0d2a617d6abbf260", "src": "db2@1.60.1.70009"}
+{"id": 1238821, "field": "name", "en": "Holy Wrath", "hash": "0d2a617d6abbf260", "src": "db2@1.60.1.70009"}
+{"id": 1238891, "field": "name", "en": "Shadow Barrier", "hash": "f463a18e9dd7a9fa", "src": "db2@1.60.1.70009"}
+{"id": 1238910, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
+{"id": 1238912, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
+{"id": 1238926, "field": "name", "en": "Void Zone", "hash": "d67031da71dc1ce1", "src": "db2@1.60.1.70009"}
+{"id": 1238931, "field": "name", "en": "Improved Stormstrike", "hash": "b3834bc4a2420c34", "src": "db2@1.60.1.70009"}
+{"id": 1238931, "field": "aura", "en": "Regenerating $s1% of your normal Mana regeneration while casting spells.", "hash": "6cf2fbcb395739c5", "src": "db2@1.60.1.70009"}

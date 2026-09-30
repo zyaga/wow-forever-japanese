@@ -1,0 +1,177 @@
+{"id": 215112, "field": "name", "en": "UNUSED - Cloak of Arcane Insulation", "hash": "18c95e376ae2bacf", "src": "db2@1.60.1.70009"}
+{"id": 215113, "field": "name", "en": "UNUSED - Razor-Lined Shoulderpads", "hash": "a85054ef1ac98eed", "src": "db2@1.60.1.70009"}
+{"id": 215126, "field": "name", "en": "UNUSED Flask of Merciless Pursuit", "hash": "44749827d4d3827b", "src": "db2@1.60.1.70009"}
+{"id": 215126, "field": "description", "en": "Increases damage done by magical spells and effects by up to $s1 for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "866d214be8128dc3", "src": "db2@1.60.1.70009"}
+{"id": 215127, "field": "name", "en": "High-Yield Radiation Bomb", "hash": "b4810dcc6a322f3e", "src": "db2@1.60.1.70009"}
+{"id": 215127, "field": "description", "en": "Inflicts $s1 fire damage to those in the blast radius plus an additional $443813s1 nature damage every 2 sec for 10 seconds. Also reduces the movement speed of affected targets by 25% for $d. ", "hash": "832b5fccdf88646b", "src": "db2@1.60.1.70009"}
+{"id": 215129, "field": "name", "en": "Formula: Enchant Weapon - Dismantle", "hash": "fff6dd1622f8f90d", "src": "db2@1.60.1.70009"}
+{"id": 215129, "field": "description", "en": "Permanently enchant a Weapon to cause all spells and attacks to sometimes deal $439164s1 additional damage to mechanical creatures.\r\n", "hash": "7694b78d5311a52f", "src": "db2@1.60.1.70009"}
+{"id": 215138, "field": "name", "en": "Formula: Enchant Chest - Retricutioner", "hash": "054b3563aa5e780b", "src": "db2@1.60.1.70009"}
+{"id": 215138, "field": "description", "en": "Teaches you how to permanently enchant a piece of chest armor to reflect 9 damage back to the attacker when the bearer is struck in Melee.", "hash": "4e034784b6fb99bf", "src": "db2@1.60.1.70009"}
+{"id": 215141, "field": "name", "en": "Enchanted Sigil: Innovation", "hash": "347591c36cf1140e", "src": "db2@1.60.1.70009"}
+{"id": 215141, "field": "description", "en": "Teaches you how to conjure a sigil of innovation. ", "hash": "c518b03be004e0e2", "src": "db2@1.60.1.70009"}
+{"id": 215149, "field": "name", "en": "Pattern: Gneuro-Linked Arcano-Filament Monocle", "hash": "c918d3b77a6c684d", "src": "db2@1.60.1.70009"}
+{"id": 215149, "field": "description", "en": "Teaches you how to craft a Gneuro-Linked Arcano-Filament Monocle.", "hash": "53d1a2ea43b1a9c8", "src": "db2@1.60.1.70009"}
+{"id": 215152, "field": "name", "en": "Pattern: Glowing Gneuro-Linked Cowl", "hash": "1457dc2deb415616", "src": "db2@1.60.1.70009"}
+{"id": 215152, "field": "description", "en": "Teaches you how to craft a Glowing Gneuro-Linked Cowl.", "hash": "c75234330d72d43e", "src": "db2@1.60.1.70009"}
+{"id": 215153, "field": "name", "en": "Schematic: Whirling Truesilver Gearwall", "hash": "296925ff9adca741", "src": "db2@1.60.1.70009"}
+{"id": 215153, "field": "description", "en": "Teaches you how to make a Whirling Truesilver Gearwall.", "hash": "8828af4589f76cfd", "src": "db2@1.60.1.70009"}
+{"id": 215155, "field": "name", "en": "Plans: Tempered Interference-Negating Helmet", "hash": "84bfd84a9b84ca5d", "src": "db2@1.60.1.70009"}
+{"id": 215155, "field": "description", "en": "Teaches you how to make a Tempered Interference-Negating Helmet", "hash": "3d4f380b88b798b6", "src": "db2@1.60.1.70009"}
+{"id": 215156, "field": "name", "en": "Schematic: Hyperconductive Goldwrap", "hash": "a55702302f457aab", "src": "db2@1.60.1.70009"}
+{"id": 215156, "field": "description", "en": "Teaches you how to make a Hyperconductive Goldwap", "hash": "e46719174f682186", "src": "db2@1.60.1.70009"}
+{"id": 215163, "field": "name", "en": "Recipe: Mildly-Irradiated Rejuvenation Potion", "hash": "a185349785f53d3d", "src": "db2@1.60.1.70009"}
+{"id": 215163, "field": "description", "en": "Teaches you how to brew a Mildly Irradiated Rejuvenation Potion.", "hash": "c381fd6b8e06ed63", "src": "db2@1.60.1.70009"}
+{"id": 215168, "field": "name", "en": "Ez-Thro Radiation Bomb", "hash": "9dd2b0b66fb3e945", "src": "db2@1.60.1.70009"}
+{"id": 215168, "field": "description", "en": "Inflicts $s1 fire damage to those in the blast radius plus an additional $s3 nature damage every 2 sec for 10 seconds. Also reduces the movement speed of affected targets by 25% for $d. \nA tune-downed but no less deadly version of its more complex counterpart for those that lack competence but have an abundance of confidence.", "hash": "ec83c81e81d77b64", "src": "db2@1.60.1.70009"}
+{"id": 215235, "field": "name", "en": "2hander Animation as 1hander test copy", "hash": "486a2d769e75b0b6", "src": "db2@1.60.1.70009"}
+{"id": 215257, "field": "name", "en": "Scroll of Comprehension", "hash": "be2923883c9d3db0", "src": "db2@1.60.1.70009"}
+{"id": 215257, "field": "description", "en": "Increases your Comprehension skill by $s1 for $d.", "hash": "b588fed350ae6d61", "src": "db2@1.60.1.70009"}
+{"id": 215365, "field": "name", "en": "Invoker's Mantle", "hash": "e0beec614ff88528", "src": "db2@1.60.1.70009"}
+{"id": 215365, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 215366, "field": "name", "en": "Invoker's Cord", "hash": "29e38154b69813d0", "src": "db2@1.60.1.70009"}
+{"id": 215366, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 215367, "field": "name", "en": "Pattern: Faintly Glowing Leather", "hash": "720302b1d966130c", "src": "db2@1.60.1.70009"}
+{"id": 215367, "field": "description", "en": "Teaches you how to craft a bundle of Faintly Glowing Leather. ", "hash": "ae6f728b4bece8d5", "src": "db2@1.60.1.70009"}
+{"id": 215368, "field": "name", "en": "Pattern: Hyperconductive Arcano-Filament", "hash": "293f3554655295ca", "src": "db2@1.60.1.70009"}
+{"id": 215368, "field": "description", "en": "Teaches you how to craft a spool of Hyperconductive Arcano-Filament. ", "hash": "7b1ff21e7f55ec1f", "src": "db2@1.60.1.70009"}
+{"id": 215369, "field": "name", "en": "Pattern: Invoker's Cord", "hash": "aa8e1bbd3ed0419f", "src": "db2@1.60.1.70009"}
+{"id": 215369, "field": "description", "en": "Teaches you how to sew Invoker's Cord.", "hash": "9003042c4bcceb56", "src": "db2@1.60.1.70009"}
+{"id": 215370, "field": "name", "en": "Pattern: Invoker's Mantle", "hash": "0d287d8c6444ae99", "src": "db2@1.60.1.70009"}
+{"id": 215370, "field": "description", "en": "Teaches you how to sew Invoker's Mantle.", "hash": "e3f0b0190bbd3290", "src": "db2@1.60.1.70009"}
+{"id": 215374, "field": "name", "en": "Ancestral Sword", "hash": "2a830fbd0658b46d", "src": "db2@1.60.1.70009"}
+{"id": 215374, "field": "description", "en": "Passed down by a noble Lordaeron family. Once thought to be lost in the swamps around Kyross along with the last warrior to wield it.", "hash": "fd4ed6c499b606dc", "src": "db2@1.60.1.70009"}
+{"id": 215376, "field": "name", "en": "Crusader's Mace", "hash": "1a3253d600bbf916", "src": "db2@1.60.1.70009"}
+{"id": 215376, "field": "description", "en": "Flecked with dried bits of insect carapace.", "hash": "96d94dcc8015871c", "src": "db2@1.60.1.70009"}
+{"id": 215383, "field": "name", "en": "Plans: Reflective Truesilver Braincage", "hash": "fa34882c84241b75", "src": "db2@1.60.1.70009"}
+{"id": 215383, "field": "description", "en": "Teaches you how to make a Reflective Truesilver Braincage.", "hash": "6c971b4765ef4488", "src": "db2@1.60.1.70009"}
+{"id": 215384, "field": "name", "en": "Plans: Low-Background Truesilver Plates", "hash": "ac5fd81b59fbe9d3", "src": "db2@1.60.1.70009"}
+{"id": 215384, "field": "description", "en": "Teaches you how to make Low-Background Truesilver Plates.", "hash": "356c6b08a2811e90", "src": "db2@1.60.1.70009"}
+{"id": 215385, "field": "name", "en": "Waylaid Supplies: Gold Bars", "hash": "d2004162c935577d", "src": "db2@1.60.1.70009"}
+{"id": 215385, "field": "description", "en": "Add $q2 Gold Bars to complete the shipment.", "hash": "5e72f467816a6789", "src": "db2@1.60.1.70009"}
+{"id": 215386, "field": "name", "en": "Waylaid Supplies: Mithril Bars", "hash": "b989902ed80444c7", "src": "db2@1.60.1.70009"}
+{"id": 215386, "field": "description", "en": "Add $q2 Mithril Bars to complete the shipment.", "hash": "47bcfc4fc1b036b7", "src": "db2@1.60.1.70009"}
+{"id": 215387, "field": "name", "en": "Waylaid Supplies: Heavy Hide", "hash": "d2fca1b493764d12", "src": "db2@1.60.1.70009"}
+{"id": 215387, "field": "description", "en": "Add $q2 Heavy Hide to complete the shipment.", "hash": "027ba49b6016a93b", "src": "db2@1.60.1.70009"}
+{"id": 215388, "field": "name", "en": "Waylaid Supplies: Thick Leather", "hash": "41397246beee34c1", "src": "db2@1.60.1.70009"}
+{"id": 215388, "field": "description", "en": "Add $q2 Thick Leather to complete the shipment.", "hash": "462b79926b7c7e27", "src": "db2@1.60.1.70009"}
+{"id": 215389, "field": "name", "en": "Waylaid Supplies: Fadeleaf", "hash": "9fb87a581da99d0f", "src": "db2@1.60.1.70009"}
+{"id": 215389, "field": "description", "en": "Add $q2 Fadeleaf to complete the shipment.", "hash": "041e9564099dc515", "src": "db2@1.60.1.70009"}
+{"id": 215390, "field": "name", "en": "Waylaid Supplies: Khadgar's Whisker", "hash": "d97e9f67e72c1718", "src": "db2@1.60.1.70009"}
+{"id": 215390, "field": "description", "en": "Add $q2 Khadgar's Whisker to complete the shipment.", "hash": "b9225cb586ea3aab", "src": "db2@1.60.1.70009"}
+{"id": 215391, "field": "name", "en": "Waylaid Supplies: Wintersbite", "hash": "09a0fe84d1489085", "src": "db2@1.60.1.70009"}
+{"id": 215391, "field": "description", "en": "Add $q2 Wintersbite to complete the shipment.", "hash": "0a59c18546b48c9c", "src": "db2@1.60.1.70009"}
+{"id": 215392, "field": "name", "en": "Waylaid Supplies: Purple Lotus", "hash": "995313a75724350c", "src": "db2@1.60.1.70009"}
+{"id": 215392, "field": "description", "en": "Add $q2 Purple Lotus to complete the shipment.", "hash": "f56f98a720ce7fa0", "src": "db2@1.60.1.70009"}
+{"id": 215393, "field": "name", "en": "Waylaid Supplies: Greater Healing Potions", "hash": "499dfc229a03decd", "src": "db2@1.60.1.70009"}
+{"id": 215393, "field": "description", "en": "Add $q2 Greater Healing Potions to complete the shipment.", "hash": "274ae74a7b4d52d9", "src": "db2@1.60.1.70009"}
+{"id": 215394, "field": "name", "en": "Waylaid Supplies: Lesser Stoneshield Potions", "hash": "99c31850a0ea3d34", "src": "db2@1.60.1.70009"}
+{"id": 215394, "field": "description", "en": "Add $q2 Copper Bars to complete the shipment.", "hash": "470409ea2717c857", "src": "db2@1.60.1.70009"}
+{"id": 215395, "field": "name", "en": "Waylaid Supplies: Elixirs of Agility", "hash": "f74d5d5eaa8ef780", "src": "db2@1.60.1.70009"}
+{"id": 215395, "field": "description", "en": "Add $q2 Elixirs of Agility to complete the shipment.", "hash": "4239f8f27e978af6", "src": "db2@1.60.1.70009"}
+{"id": 215396, "field": "name", "en": "Waylaid Supplies: Elixirs of Greater Defense", "hash": "c0d7ffc905587ada", "src": "db2@1.60.1.70009"}
+{"id": 215396, "field": "description", "en": "Add $q2 Elixirs of Greater Defense to complete the shipment.", "hash": "8171d316f2c2d0be", "src": "db2@1.60.1.70009"}
+{"id": 215397, "field": "name", "en": "Waylaid Supplies: Massive Iron Axes", "hash": "d9e3d8648160064d", "src": "db2@1.60.1.70009"}
+{"id": 215397, "field": "description", "en": "Add $q2 Massive Iron Axes to complete the shipment.", "hash": "7489aa61e3a57f91", "src": "db2@1.60.1.70009"}
+{"id": 215398, "field": "name", "en": "Waylaid Supplies: Green Iron Bracers", "hash": "87ce7bcd6402687f", "src": "db2@1.60.1.70009"}
+{"id": 215398, "field": "description", "en": "Add $q2 Green Iron Bracers to complete the shipment.", "hash": "1bba3cf1d1f64e9b", "src": "db2@1.60.1.70009"}
+{"id": 215399, "field": "name", "en": "Waylaid Supplies: Heavy Mithril Gauntlets", "hash": "7ae166519975ad05", "src": "db2@1.60.1.70009"}
+{"id": 215399, "field": "description", "en": "Add $q2 Heavy Mithril Gauntlets to complete the shipment.", "hash": "5d6fedc8a00866db", "src": "db2@1.60.1.70009"}
+{"id": 215400, "field": "name", "en": "Waylaid Supplies: Solid Grinding Stones", "hash": "39c81f527dbf705f", "src": "db2@1.60.1.70009"}
+{"id": 215400, "field": "description", "en": "Add $q2 Solid Grinding Stones to complete the shipment.", "hash": "1a2a638588ebf590", "src": "db2@1.60.1.70009"}
+{"id": 215401, "field": "name", "en": "Waylaid Supplies: Compact Harvest Reaper Kits", "hash": "79eeaccc35084d7e", "src": "db2@1.60.1.70009"}
+{"id": 215401, "field": "description", "en": "Add $q2 Compact Harvest Reaper Kits to complete the shipment.", "hash": "4f2d90654727a7fc", "src": "db2@1.60.1.70009"}
+{"id": 215402, "field": "name", "en": "Waylaid Supplies: Big Iron Bombs", "hash": "100ecf1506ae0930", "src": "db2@1.60.1.70009"}
+{"id": 215402, "field": "description", "en": "Add $q2 Big Iron Bombs to complete the shipment.", "hash": "b7020a18a858f54c", "src": "db2@1.60.1.70009"}
+{"id": 215403, "field": "name", "en": "Waylaid Supplies: Deadly Scopes", "hash": "b61c0cfe822b783a", "src": "db2@1.60.1.70009"}
+{"id": 215403, "field": "description", "en": "Add $q2 Deadly Scopes to complete the shipment.", "hash": "164bcaa18adb793c", "src": "db2@1.60.1.70009"}
+{"id": 215404, "field": "name", "en": "Waylaid Supplies: Mithril Blunderbuss", "hash": "b1b7c80b16b167ad", "src": "db2@1.60.1.70009"}
+{"id": 215404, "field": "description", "en": "Add $q2 Mithril Blunderbuss to complete the shipment.", "hash": "9bcbd22948630f67", "src": "db2@1.60.1.70009"}
+{"id": 215405, "field": "name", "en": "Waylaid Supplies: Gnomish Rocket Boots", "hash": "3bb31b3df098e235", "src": "db2@1.60.1.70009"}
+{"id": 215405, "field": "description", "en": "Add $q2 Copper Bars to complete the shipment.", "hash": "470409ea2717c857", "src": "db2@1.60.1.70009"}
+{"id": 215406, "field": "name", "en": "Waylaid Supplies: Goblin Mortars", "hash": "4166e631906125f9", "src": "db2@1.60.1.70009"}
+{"id": 215406, "field": "description", "en": "Add $q2 Copper Bars to complete the shipment.", "hash": "470409ea2717c857", "src": "db2@1.60.1.70009"}
+{"id": 215407, "field": "name", "en": "Waylaid Supplies: Barbaric Shoulders", "hash": "946008bddf6bd142", "src": "db2@1.60.1.70009"}
+{"id": 215407, "field": "description", "en": "Add $q2 Barbaric Shoulders to complete the shipment.", "hash": "cb7b0d8aff0d9a4c", "src": "db2@1.60.1.70009"}
+{"id": 215408, "field": "name", "en": "Waylaid Supplies: Guardian Gloves", "hash": "d3a1b2a978be8471", "src": "db2@1.60.1.70009"}
+{"id": 215408, "field": "description", "en": "Add $q2 Guardian Gloves to complete the shipment.", "hash": "0f1b412a4a2a048e", "src": "db2@1.60.1.70009"}
+{"id": 215409, "field": "name", "en": "Waylaid Supplies: Turtle Scale Bracers", "hash": "2a454d095ad771e0", "src": "db2@1.60.1.70009"}
+{"id": 215409, "field": "description", "en": "Add $q2 Turtle Scale Bracers to complete the shipment.", "hash": "cdb4cd0ce35e4f1b", "src": "db2@1.60.1.70009"}
+{"id": 215410, "field": "name", "en": "Waylaid Supplies: Dusky Belts", "hash": "cf8bbd14ae16ee64", "src": "db2@1.60.1.70009"}
+{"id": 215410, "field": "description", "en": "Add $q2 Copper Bars to complete the shipment.", "hash": "470409ea2717c857", "src": "db2@1.60.1.70009"}
+{"id": 215411, "field": "name", "en": "Waylaid Supplies: Frost Leather Cloaks", "hash": "4f9b501ceaf82c46", "src": "db2@1.60.1.70009"}
+{"id": 215411, "field": "description", "en": "Add $q2 Frost Leather Cloaks to complete the shipment.", "hash": "249fc46380974e98", "src": "db2@1.60.1.70009"}
+{"id": 215412, "field": "name", "en": "Waylaid Supplies: Shadowskin Gloves", "hash": "9e7ceb725725dd49", "src": "db2@1.60.1.70009"}
+{"id": 215412, "field": "description", "en": "Add $q2 Copper Bars to complete the shipment.", "hash": "470409ea2717c857", "src": "db2@1.60.1.70009"}
+{"id": 215413, "field": "name", "en": "Waylaid Supplies: Formal White Shirts", "hash": "7b1e27546b24488e", "src": "db2@1.60.1.70009"}
+{"id": 215413, "field": "description", "en": "Add $q2 Formal White Shirts to complete the shipment.", "hash": "08887f5671b3e95a", "src": "db2@1.60.1.70009"}
+{"id": 215414, "field": "name", "en": "Waylaid Supplies: Crimson Silk Pantaloons", "hash": "2d2a74bae3baaebb", "src": "db2@1.60.1.70009"}
+{"id": 215414, "field": "description", "en": "Add $q2 Crimson Silk Pantaloons to complete the shipment.", "hash": "79af8d074cf94a80", "src": "db2@1.60.1.70009"}
+{"id": 215415, "field": "name", "en": "Waylaid Supplies: Rich Purple Silk Shirts", "hash": "8ad3d02171bd31cb", "src": "db2@1.60.1.70009"}
+{"id": 215415, "field": "description", "en": "Add $q2 Rich Purple Silk Shirts to complete the shipment.", "hash": "35a9803607de840a", "src": "db2@1.60.1.70009"}
+{"id": 215416, "field": "name", "en": "Waylaid Supplies: White Bandit Masks", "hash": "b4d87d0be402c72c", "src": "db2@1.60.1.70009"}
+{"id": 215416, "field": "description", "en": "Add $q2 White Bandit Masks to complete the shipment.", "hash": "10762fdf28a2d6d0", "src": "db2@1.60.1.70009"}
+{"id": 215417, "field": "name", "en": "Waylaid Supplies: Soothing Turtle Bisque", "hash": "d56f37721b7f39c2", "src": "db2@1.60.1.70009"}
+{"id": 215417, "field": "description", "en": "Add $q2 Soothing Turtle Bisque to complete the shipment.", "hash": "d4d79e3d5733c4bc", "src": "db2@1.60.1.70009"}
+{"id": 215418, "field": "name", "en": "Waylaid Supplies: Spider Sausages", "hash": "15a2198845981177", "src": "db2@1.60.1.70009"}
+{"id": 215418, "field": "description", "en": "Add $q2 Spider Sausages to complete the shipment.", "hash": "5775b6e5549ca4e1", "src": "db2@1.60.1.70009"}
+{"id": 215419, "field": "name", "en": "Waylaid Supplies: Heavy Silk Bandages", "hash": "e15a0818444c5d9c", "src": "db2@1.60.1.70009"}
+{"id": 215419, "field": "description", "en": "Add $q2 Heavy Silk Bandages to complete the shipment.", "hash": "1b73e8b679673dd1", "src": "db2@1.60.1.70009"}
+{"id": 215420, "field": "name", "en": "Waylaid Supplies: Rockscale Cod", "hash": "0aaed1bd4069c99e", "src": "db2@1.60.1.70009"}
+{"id": 215420, "field": "description", "en": "Add $q2 Rockscale Cod to complete the shipment.", "hash": "df5ec740c91e3e54", "src": "db2@1.60.1.70009"}
+{"id": 215421, "field": "name", "en": "Waylaid Supplies: Fire Oil", "hash": "fc556b0dedb44d2f", "src": "db2@1.60.1.70009"}
+{"id": 215421, "field": "description", "en": "Add $q2 Fire Oil to complete the shipment.", "hash": "97478cc9cde4ae7a", "src": "db2@1.60.1.70009"}
+{"id": 215422, "field": "name", "en": "Pattern: Glowing Hyperconductive Scale Coif", "hash": "31238e5baa9529d8", "src": "db2@1.60.1.70009"}
+{"id": 215422, "field": "description", "en": "Teaches you how to craft a Glowing Hyperconductive Scale Coif.", "hash": "e1384ef32789dde3", "src": "db2@1.60.1.70009"}
+{"id": 215423, "field": "name", "en": "Pattern: Gneuro-Conductive Channeler's Hood", "hash": "8bbe7cf5c6ceda20", "src": "db2@1.60.1.70009"}
+{"id": 215423, "field": "description", "en": "Teaches you how to craft a Gneuro-Conductive Channeler's Hood.", "hash": "3e8068acf296c0de", "src": "db2@1.60.1.70009"}
+{"id": 215424, "field": "name", "en": "Pattern: Rad-Resistant Scale Hood", "hash": "7033901731572356", "src": "db2@1.60.1.70009"}
+{"id": 215424, "field": "description", "en": "Teaches you how to craft a Rad-Resistant Scale Hood.", "hash": "5ff6bdab014ac57e", "src": "db2@1.60.1.70009"}
+{"id": 215425, "field": "name", "en": "Swamp Echo", "hash": "33cb21fa1f58b334", "src": "db2@1.60.1.70009"}
+{"id": 215425, "field": "description", "en": "Honor the archivists.", "hash": "a62056ef39d00548", "src": "db2@1.60.1.70009"}
+{"id": 215426, "field": "name", "en": "Graveyard Echo", "hash": "87a6445babdc1bf9", "src": "db2@1.60.1.70009"}
+{"id": 215426, "field": "description", "en": "Honor the archivists.", "hash": "a62056ef39d00548", "src": "db2@1.60.1.70009"}
+{"id": 215427, "field": "name", "en": "Arathi Echo", "hash": "de6ebaba6d394848", "src": "db2@1.60.1.70009"}
+{"id": 215427, "field": "description", "en": "Honor the archivists.", "hash": "a62056ef39d00548", "src": "db2@1.60.1.70009"}
+{"id": 215428, "field": "name", "en": "Theramore Echo", "hash": "54016f49f168a6e9", "src": "db2@1.60.1.70009"}
+{"id": 215428, "field": "description", "en": "Honor the archivists.", "hash": "a62056ef39d00548", "src": "db2@1.60.1.70009"}
+{"id": 215429, "field": "name", "en": "Schematic: Polished Truesilver Gears", "hash": "47cd128914a96c29", "src": "db2@1.60.1.70009"}
+{"id": 215429, "field": "description", "en": "Teaches you how to make a set of Polished Truesilver Gears.", "hash": "ad146b537b962181", "src": "db2@1.60.1.70009"}
+{"id": 215430, "field": "name", "en": "Gnomeregan Fallout", "hash": "04b25711ec1603e3", "src": "db2@1.60.1.70009"}
+{"id": 215431, "field": "name", "en": "Schematic: High-Yield Radiation Bomb", "hash": "8c904d2fba4c7c90", "src": "db2@1.60.1.70009"}
+{"id": 215431, "field": "description", "en": "Teaches you how to make a bundle of High-Yield Radiation Bombs.", "hash": "0fb2592525c3e93c", "src": "db2@1.60.1.70009"}
+{"id": 215432, "field": "name", "en": "Schematic: Ez-Thro Radiation Bomb", "hash": "dd99a491c4a97213", "src": "db2@1.60.1.70009"}
+{"id": 215432, "field": "description", "en": "Teaches you how to make an Ez-Thro Radiation Bombs.", "hash": "1fd9db9973eb8710", "src": "db2@1.60.1.70009"}
+{"id": 215433, "field": "name", "en": "Recipe: Insulating Gniodine", "hash": "681c1cc6ae2216a1", "src": "db2@1.60.1.70009"}
+{"id": 215433, "field": "description", "en": "Teaches you how to distill a vial of Insulating Gniodine.", "hash": "a7779daa235014b9", "src": "db2@1.60.1.70009"}
+{"id": 215434, "field": "name", "en": "UNUSED", "hash": "e7944cd23b32e4ee", "src": "db2@1.60.1.70009"}
+{"id": 215434, "field": "description", "en": "Teaches you how to distill a vial of Insulating Gniodine.", "hash": "a7779daa235014b9", "src": "db2@1.60.1.70009"}
+{"id": 215441, "field": "name", "en": "Broken Hammer", "hash": "8c783cc641f89d74", "src": "db2@1.60.1.70009"}
+{"id": 215441, "field": "description", "en": "This ornate warhammer is stamped with the insigina of the Silver Hand", "hash": "559e6d1044e43f35", "src": "db2@1.60.1.70009"}
+{"id": 215443, "field": "name", "en": "Shattered Orb Fragment", "hash": "6c8a1ec616244c84", "src": "db2@1.60.1.70009"}
+{"id": 215443, "field": "description", "en": "The remains of the shattered orb glow faintly and are warm to the touch.", "hash": "30f7c04458d765e3", "src": "db2@1.60.1.70009"}
+{"id": 215450, "field": "name", "en": "Tabard Project (Aidan)", "hash": "c6a9e7216e194d06", "src": "db2@1.60.1.70009"}
+{"id": 215456, "field": "name", "en": "Singed Message", "hash": "e4c514f628b314f3", "src": "db2@1.60.1.70009"}
+{"id": 215456, "field": "description", "en": "Told you so.", "hash": "8e6d2e7ca011bc91", "src": "db2@1.60.1.70009"}
+{"id": 215458, "field": "name", "en": "Enclosed Message", "hash": "e4d426aae033103a", "src": "db2@1.60.1.70009"}
+{"id": 215458, "field": "description", "en": "Seriously, DO NOT try to open the final box. You already got what you wanted.", "hash": "d1375f790ec21636", "src": "db2@1.60.1.70009"}
+{"id": 215459, "field": "name", "en": "Enclosed Message", "hash": "e4d426aae033103a", "src": "db2@1.60.1.70009"}
+{"id": 215459, "field": "description", "en": "Stop now. This is your final warning.", "hash": "5a456103c8771a23", "src": "db2@1.60.1.70009"}
+{"id": 215460, "field": "name", "en": "Enclosed Message", "hash": "e4d426aae033103a", "src": "db2@1.60.1.70009"}
+{"id": 215460, "field": "description", "en": "BEWARE! The box beside this note should never be opened.", "hash": "f43f9d9d43554d53", "src": "db2@1.60.1.70009"}
+{"id": 215468, "field": "name", "en": "Orders from the Grand Crusader", "hash": "d45bad7f23c222d6", "src": "db2@1.60.1.70009"}
+{"id": 215468, "field": "description", "en": "The letter is crumpled and there are flecks of dried blood on it.", "hash": "e2f2005ba4955a5a", "src": "db2@1.60.1.70009"}
+{"id": 215683, "field": "name", "en": "Geomancy: The Stone-Cold Truth", "hash": "19d978d89be22e4c", "src": "db2@1.60.1.70009"}
+{"id": 215683, "field": "description", "en": "Theories on the origin and usage of elemental magic. A fine addition to any library's collection.", "hash": "3b9d9dc54f3b8a01", "src": "db2@1.60.1.70009"}
+{"id": 215815, "field": "name", "en": "Defensive Magics 101", "hash": "5bc13f46576d9197", "src": "db2@1.60.1.70009"}
+{"id": 215815, "field": "description", "en": "An introductory guide to defensive magic and barriers. A fine addition to any library's collection.", "hash": "ed157bb844495ef2", "src": "db2@1.60.1.70009"}
+{"id": 215816, "field": "name", "en": "A Web of Lies: Debunking Myths and Legends", "hash": "efc18e04a3a23acb", "src": "db2@1.60.1.70009"}
+{"id": 215816, "field": "description", "en": "An incomplete thesis claiming spiders are harmless, but nevertheless a fine addition to any library's collection.", "hash": "47e29bf8de20c906", "src": "db2@1.60.1.70009"}
+{"id": 215817, "field": "name", "en": "Demons and You", "hash": "6fe9a1ef040c438f", "src": "db2@1.60.1.70009"}
+{"id": 215817, "field": "description", "en": "A strange text defending demons, yet nevertheless a fine addition to any library's collection.", "hash": "2686007fa1432a3f", "src": "db2@1.60.1.70009"}
+{"id": 215820, "field": "name", "en": "Mummies: A Guide to the Unsavory Undead", "hash": "99295356cea4dd84", "src": "db2@1.60.1.70009"}
+{"id": 215820, "field": "description", "en": "Tales frightening enough to scare even the most hardy of warriors. A fine addition to any library's collection.", "hash": "cffa9914cc3ed768", "src": "db2@1.60.1.70009"}
+{"id": 215822, "field": "name", "en": "RwlRwlRwlRwl!", "hash": "6bc7959f37aeabcb", "src": "db2@1.60.1.70009"}
+{"id": 215822, "field": "description", "en": "The strange passages are faint but somewhat readable despite water damage. A fine addition to any library's collection.", "hash": "cdd80368428fa9bf", "src": "db2@1.60.1.70009"}
+{"id": 215824, "field": "name", "en": "A Luddite's Guide to Caring for Your Demonic Pet", "hash": "1ca3a62bf6a5b806", "src": "db2@1.60.1.70009"}
+{"id": 215824, "field": "description", "en": "Contains useful tips for keeping pet imps out of your reagents. A fine addition to any library's collection.", "hash": "c04a8d536e1d1b79", "src": "db2@1.60.1.70009"}

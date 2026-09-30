@@ -1,0 +1,185 @@
+{"id": 429125, "field": "name", "en": "Icy Veins", "hash": "da648c24cd8e9684", "src": "db2@1.60.1.70009"}
+{"id": 429125, "field": "description", "en": "Hastens your spellcasting, increasing spell casting speed by $s1% and reduces the pushback suffered from damaging attacks while casting by $s2%.  Lasts $d.", "hash": "a582f7cdd09ff94b", "src": "db2@1.60.1.70009"}
+{"id": 429125, "field": "aura", "en": "Casting speed of all spells increased by $s1% and reduces pushback suffered by damaging attacks while casting by $s2%.", "hash": "f27759c8e0f21c1f", "src": "db2@1.60.1.70009"}
+{"id": 429133, "field": "name", "en": "Improved Sanctuary", "hash": "edbd7c33cfc62e29", "src": "db2@1.60.1.70009"}
+{"id": 429133, "field": "description", "en": "Increases the damage prevented by your Blessing of Sanctuary by $s1%, and increases damage done by your Blessing of Sanctuary by $s2% of your shield block value.", "hash": "209165ce65bf370c", "src": "db2@1.60.1.70009"}
+{"id": 429139, "field": "name", "en": "Wrath", "hash": "068926d83b1c1c5d", "src": "db2@1.60.1.70009"}
+{"id": 429139, "field": "description", "en": "Your Consecration damage can now be critical strikes, and damage from your Exorcism, Holy Shock, Sunlight, Holy Wrath, and Consecration spells gains additional critical strike chance equal to your melee critical strike chance.", "hash": "32d40b31d9e26ca2", "src": "db2@1.60.1.70009"}
+{"id": 429142, "field": "name", "en": "Fanaticism", "hash": "490cafb89cbb8e92", "src": "db2@1.60.1.70009"}
+{"id": 429142, "field": "description", "en": "Increases your critical strike chance with spells by $s1%. In addition, your critical healing spells heal the target for $s2% of the healed amount over $426162d.", "hash": "0f4bf44b1284f52b", "src": "db2@1.60.1.70009"}
+{"id": 429144, "field": "name", "en": "Purifying Power", "hash": "0f1f44b96ff9ed6e", "src": "db2@1.60.1.70009"}
+{"id": 429144, "field": "description", "en": "Reduces the mana cost of your Cleanse and Purify spells by $m1% and reduces the cooldown of your Exorcism and Holy Wrath spells by $m2%.", "hash": "427809ffc3819100", "src": "db2@1.60.1.70009"}
+{"id": 429145, "field": "name", "en": "Holy Wrath", "hash": "0d2a617d6abbf260", "src": "db2@1.60.1.70009"}
+{"id": 429145, "field": "description", "en": "Sends bolts of holy power in all directions, causing $s1 Holy damage to all targets within $a1 yds and Stunning Demon and Undead targets for $429147d.", "hash": "81ff68334cfc4e61", "src": "db2@1.60.1.70009"}
+{"id": 429146, "field": "name", "en": "Holy Wrath", "hash": "0d2a617d6abbf260", "src": "db2@1.60.1.70009"}
+{"id": 429146, "field": "description", "en": "Sends bolts of holy power in all directions, causing $s1 Holy damage to all targets within $a1 yds and Stunning Demon and Undead targets for $429147d.", "hash": "81ff68334cfc4e61", "src": "db2@1.60.1.70009"}
+{"id": 429147, "field": "name", "en": "Stun", "hash": "0b3dc5a2a5416483", "src": "db2@1.60.1.70009"}
+{"id": 429147, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
+{"id": 429151, "field": "name", "en": "Hammer of Wrath", "hash": "496855ce8cfff7d3", "src": "db2@1.60.1.70009"}
+{"id": 429151, "field": "description", "en": "Hurls a hammer that strikes an enemy for ${$m1*$<damagepower>+0.15*$SPH+0.15*$AP} to ${$M1*$<damagepower>+0.15*$SPH+0.15*$AP} Holy damage.  Only usable on enemies that have 20% or less health.", "hash": "d7d2c907973b47bd", "src": "db2@1.60.1.70009"}
+{"id": 429152, "field": "name", "en": "Improved Hammer of Wrath", "hash": "1d4fa1ef7a433ce4", "src": "db2@1.60.1.70009"}
+{"id": 429152, "field": "description", "en": "Hammer of Wrath is now instant and the cooldown on Hammer of Wrath is reset each time it damages an enemy below $s1% health.", "hash": "7de718d6e25d03fc", "src": "db2@1.60.1.70009"}
+{"id": 429154, "field": "name", "en": "Corrosive Blast", "hash": "5279bb740a701ad3", "src": "db2@1.60.1.70009"}
+{"id": 429165, "field": "name", "en": "Corrosive Blast", "hash": "5279bb740a701ad3", "src": "db2@1.60.1.70009"}
+{"id": 429167, "field": "name", "en": "Corrosive Blast", "hash": "5279bb740a701ad3", "src": "db2@1.60.1.70009"}
+{"id": 429168, "field": "name", "en": "Corrosive Blast", "hash": "5279bb740a701ad3", "src": "db2@1.60.1.70009"}
+{"id": 429207, "field": "name", "en": "Corrosive Bite", "hash": "2f8705681eab22e4", "src": "db2@1.60.1.70009"}
+{"id": 429237, "field": "name", "en": "Siphon Corruption", "hash": "ccdcec61eb905db7", "src": "db2@1.60.1.70009"}
+{"id": 429242, "field": "name", "en": "Engrave Bracers - Light's Grace", "hash": "2cc134c7fc91ed89", "src": "db2@1.60.1.70009"}
+{"id": 429242, "field": "description", "en": "Engrave your bracers with the Light's Grace rune:\r\n\r\n$@spellicon428909\r\n$@spelldesc428909", "hash": "c71d8de2384bbe57", "src": "db2@1.60.1.70009"}
+{"id": 429243, "field": "name", "en": "Light's Grace", "hash": "cce4215188f778e1", "src": "db2@1.60.1.70009"}
+{"id": 429243, "field": "description", "en": "Gain the Light's Grace ability:\r\n\r\n$@spellicon428909\r\n$@spelldesc428909", "hash": "e2a5703df9c9c7f1", "src": "db2@1.60.1.70009"}
+{"id": 429245, "field": "name", "en": "Improved Sanctuary", "hash": "edbd7c33cfc62e29", "src": "db2@1.60.1.70009"}
+{"id": 429245, "field": "description", "en": "Gain the Improved Sanctuary ability:\r\n\r\n$@spellicon429133\r\n$@spelldesc429133", "hash": "bbf11e4c4b128cc0", "src": "db2@1.60.1.70009"}
+{"id": 429247, "field": "name", "en": "Engrave Helm - Improved Sanctuary", "hash": "bae27647013a12a9", "src": "db2@1.60.1.70009"}
+{"id": 429247, "field": "description", "en": "Engrave your helm with the Improved Sanctuary rune:\r\n\r\n$@spellicon429133\r\n$@spelldesc429133", "hash": "58782ca0101d2889", "src": "db2@1.60.1.70009"}
+{"id": 429248, "field": "name", "en": "Wrath", "hash": "068926d83b1c1c5d", "src": "db2@1.60.1.70009"}
+{"id": 429248, "field": "description", "en": "Gain the Wrath ability:\r\n\r\n$@spellicon429139\r\n$@spelldesc429139", "hash": "94927efc1d40f050", "src": "db2@1.60.1.70009"}
+{"id": 429249, "field": "name", "en": "Engrave Helm - Wrath", "hash": "8b743f3bb7c1ba75", "src": "db2@1.60.1.70009"}
+{"id": 429249, "field": "description", "en": "Engrave your helm with the Wrath rune:\r\n\r\n$@spellicon429139\r\n$@spelldesc429139", "hash": "561fc0406747fa06", "src": "db2@1.60.1.70009"}
+{"id": 429250, "field": "name", "en": "Fanaticism", "hash": "490cafb89cbb8e92", "src": "db2@1.60.1.70009"}
+{"id": 429250, "field": "description", "en": "Gain the Fanaticism ability:\r\n\r\n$@spellicon429142\r\n$@spelldesc429142", "hash": "13e5fa0b2deb3a48", "src": "db2@1.60.1.70009"}
+{"id": 429251, "field": "name", "en": "Engrave Helm - Fanaticism", "hash": "d4896ba2453d3d88", "src": "db2@1.60.1.70009"}
+{"id": 429251, "field": "description", "en": "Engrave your helm with the Fanaticism rune:\r\n\r\n$@spellicon429142\r\n$@spelldesc429142", "hash": "3e638f205816af06", "src": "db2@1.60.1.70009"}
+{"id": 429254, "field": "name", "en": "Purifying Power", "hash": "0f1f44b96ff9ed6e", "src": "db2@1.60.1.70009"}
+{"id": 429254, "field": "description", "en": "Gain the Purifying Power ability:\r\n\r\n$@spellicon429144\r\n$@spelldesc429144", "hash": "9769f25cd5ea1c40", "src": "db2@1.60.1.70009"}
+{"id": 429255, "field": "name", "en": "Engrave Bracers - Purifying Power", "hash": "49fc04341d2d7d2e", "src": "db2@1.60.1.70009"}
+{"id": 429255, "field": "description", "en": "Engrave your bracers with the Purifying Power rune:\r\n\r\n$@spellicon429144\r\n$@spelldesc429144", "hash": "90f0bff63552eb5a", "src": "db2@1.60.1.70009"}
+{"id": 429259, "field": "name", "en": "Improved Hammer of Wrath", "hash": "1d4fa1ef7a433ce4", "src": "db2@1.60.1.70009"}
+{"id": 429259, "field": "description", "en": "Gain the Improved Hammer of Wrath ability:\r\n\r\n$@spellicon429152\r\n$@spelldesc429152", "hash": "fff4bf8a0c8f158b", "src": "db2@1.60.1.70009"}
+{"id": 429261, "field": "name", "en": "Engrave Bracers - Improved Hammer of Wrath", "hash": "f5b9ef12b1ac025f", "src": "db2@1.60.1.70009"}
+{"id": 429261, "field": "description", "en": "Engrave your bracers with the Hammer of Wrath rune:\r\n\r\n$@spellicon429152\r\n$@spelldesc429152", "hash": "d1838ce5822400ab", "src": "db2@1.60.1.70009"}
+{"id": 429283, "field": "name", "en": "Pandemic", "hash": "c707b485b666732f", "src": "db2@1.60.1.70009"}
+{"id": 429283, "field": "description", "en": "Gain the Pandemic ability:\r\n\r\n$@spellicon427712\r\n$@spelldesc427712", "hash": "ad528115bd106202", "src": "db2@1.60.1.70009"}
+{"id": 429303, "field": "name", "en": "Deep Freeze", "hash": "9bc8b7617919e7c7", "src": "db2@1.60.1.70009"}
+{"id": 429303, "field": "description", "en": "Gain the Deep Freeze ability:\r\n\r\n$@spellicon428739\r\n$@spelldesc428739", "hash": "d3f53482dc23a9af", "src": "db2@1.60.1.70009"}
+{"id": 429304, "field": "name", "en": "Engrave Helm - Deep Freeze", "hash": "fc9ce1824743bec8", "src": "db2@1.60.1.70009"}
+{"id": 429304, "field": "description", "en": "Engrave your helm with the Deep Freeze rune:\r\n\r\n$@spellicon428739\r\n$@spelldesc428739", "hash": "ee3fd969b4a5e2c0", "src": "db2@1.60.1.70009"}
+{"id": 429305, "field": "name", "en": "Temporal Anomaly", "hash": "515228b0328c504b", "src": "db2@1.60.1.70009"}
+{"id": 429305, "field": "description", "en": "Gain the Temporal Anomaly ability:\r\n\r\n$@spellicon428885\r\n$@spelldesc428885", "hash": "950f9c7118923214", "src": "db2@1.60.1.70009"}
+{"id": 429306, "field": "name", "en": "Engrave Helm - Temporal Anomaly", "hash": "09cda236f7f98396", "src": "db2@1.60.1.70009"}
+{"id": 429306, "field": "description", "en": "Engrave your helm with the Temporal Anomaly rune:\r\n\r\n$@spellicon428885\r\n$@spelldesc428885", "hash": "463a9f729d4ff320", "src": "db2@1.60.1.70009"}
+{"id": 429307, "field": "name", "en": "Molten Armor", "hash": "5af61ad5fceacaa0", "src": "db2@1.60.1.70009"}
+{"id": 429307, "field": "description", "en": "Gain the Molten Armor ability:\r\n\r\n$@spellicon428741\r\n$@spelldesc428741", "hash": "a5a12b2739ec7d4c", "src": "db2@1.60.1.70009"}
+{"id": 429308, "field": "name", "en": "Engrave Bracers - Molten Armor", "hash": "26ee057dd6f19e13", "src": "db2@1.60.1.70009"}
+{"id": 429308, "field": "description", "en": "Engrave your bracers with the Molten Armor rune:\r\n\r\n$@spellicon428741\r\n$@spelldesc428741", "hash": "4406c7f1e6b398da", "src": "db2@1.60.1.70009"}
+{"id": 429309, "field": "name", "en": "Engrave Bracers - Displacement", "hash": "4e6b3e1c39985edc", "src": "db2@1.60.1.70009"}
+{"id": 429309, "field": "description", "en": "Engrave your bracers with the Displacement rune:\r\n\r\n$@spellicon428861\r\n$@spelldesc428861", "hash": "19928642e044a18c", "src": "db2@1.60.1.70009"}
+{"id": 429310, "field": "name", "en": "Balefire Bolt", "hash": "650f033b488ab926", "src": "db2@1.60.1.70009"}
+{"id": 429310, "field": "description", "en": "Gain the Balefire Bolt ability:\r\n\r\n$@spellicon428878\r\n$@spelldesc428878", "hash": "4a4f1ae7c92755a6", "src": "db2@1.60.1.70009"}
+{"id": 429311, "field": "name", "en": "Engrave Bracers - Balefire Bolt", "hash": "c4ec16acbc252dce", "src": "db2@1.60.1.70009"}
+{"id": 429311, "field": "description", "en": "Engrave your bracers with the Balefire Bolt rune:\r\n\r\n$@spellicon428878\r\n$@spelldesc428878", "hash": "3f054c1ade81915d", "src": "db2@1.60.1.70009"}
+{"id": 429314, "field": "name", "en": "Aku'mai Phase Transition", "hash": "17723dea3cba5733", "src": "db2@1.60.1.70009"}
+{"id": 429315, "field": "name", "en": "Aku'mai Phase Transition", "hash": "17723dea3cba5733", "src": "db2@1.60.1.70009"}
+{"id": 429327, "field": "name", "en": "Aku'mai Phase Transition", "hash": "17723dea3cba5733", "src": "db2@1.60.1.70009"}
+{"id": 429328, "field": "name", "en": "Aku'mai Phase Transition", "hash": "17723dea3cba5733", "src": "db2@1.60.1.70009"}
+{"id": 429329, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70009"}
+{"id": 429336, "field": "name", "en": "S03 - Flag Tracking Quest - Twilight Artisan 01", "hash": "6b769b7589585697", "src": "db2@1.60.1.70009"}
+{"id": 429337, "field": "name", "en": "S03 - Give Item - Twilight Artisan 02 - Shadow Scales", "hash": "334e2108787769c2", "src": "db2@1.60.1.70009"}
+{"id": 429338, "field": "name", "en": "S03 - Flag Tracking Quest - Twilight Artisan 02", "hash": "6b769b7689585698", "src": "db2@1.60.1.70009"}
+{"id": 429339, "field": "name", "en": "Shifting Scale Talisman", "hash": "7cf7cae2c4b47032", "src": "db2@1.60.1.70009"}
+{"id": 429339, "field": "description", "en": "Protects the bearer from the effects of Crushing Darkness.", "hash": "d0dc6bd9021e969e", "src": "db2@1.60.1.70009"}
+{"id": 429340, "field": "name", "en": "Shifting Scale Talisman", "hash": "7cf7cae2c4b47032", "src": "db2@1.60.1.70009"}
+{"id": 429347, "field": "name", "en": "Destroy The Box", "hash": "c199072c5d0acef4", "src": "db2@1.60.1.70009"}
+{"id": 429347, "field": "description", "en": "Attempt to use a powerful source of The Light to destroy The Box.", "hash": "cc06a1c6a91535bf", "src": "db2@1.60.1.70009"}
+{"id": 429347, "field": "aura", "en": "You've destroyed The Box. You should feel relief but you feel a sense of unease. It's as if you are being watched.", "hash": "dd2d7419f2e49b8e", "src": "db2@1.60.1.70009"}
+{"id": 429348, "field": "name", "en": "Shifting Silver Breastplate", "hash": "5c43de2c74deefaf", "src": "db2@1.60.1.70009"}
+{"id": 429349, "field": "name", "en": "Teach Void Armaments", "hash": "2f16bfaf06eaa653", "src": "db2@1.60.1.70009"}
+{"id": 429350, "field": "name", "en": "Destroy The Box - After Phase", "hash": "2c5fff1c444a207f", "src": "db2@1.60.1.70009"}
+{"id": 429350, "field": "description", "en": "Attempt to counter the Void with the Light and destroy The Box.", "hash": "6b9a9054b3461974", "src": "db2@1.60.1.70009"}
+{"id": 429351, "field": "name", "en": "Extraplanar Spidersilk Boots", "hash": "24f41933c3fb0d96", "src": "db2@1.60.1.70009"}
+{"id": 429352, "field": "name", "en": "Siphon Shadows", "hash": "a44a12adc23ee626", "src": "db2@1.60.1.70009"}
+{"id": 429353, "field": "name", "en": "Void Fang", "hash": "d3be77422e2957ae", "src": "db2@1.60.1.70009"}
+{"id": 429354, "field": "name", "en": "Void-Touched Leather Gloves", "hash": "eeed77200b65c593", "src": "db2@1.60.1.70009"}
+{"id": 429355, "field": "name", "en": "S03 - Flag Tracking Quest - Twilight Artisan 03", "hash": "6b769b7789585699", "src": "db2@1.60.1.70009"}
+{"id": 429356, "field": "name", "en": "Void Blast", "hash": "15b6246af828103f", "src": "db2@1.60.1.70009"}
+{"id": 429357, "field": "name", "en": "Void Blast", "hash": "15b6246af828103f", "src": "db2@1.60.1.70009"}
+{"id": 429358, "field": "name", "en": "Void Blast", "hash": "15b6246af828103f", "src": "db2@1.60.1.70009"}
+{"id": 429359, "field": "name", "en": "Void Blast", "hash": "15b6246af828103f", "src": "db2@1.60.1.70009"}
+{"id": 429387, "field": "name", "en": "Pool of Shadow", "hash": "0176906d1261687b", "src": "db2@1.60.1.70009"}
+{"id": 429390, "field": "name", "en": "Elemental Instability", "hash": "b3321d942d6ee69b", "src": "db2@1.60.1.70009"}
+{"id": 429391, "field": "name", "en": "Pool of Shadow", "hash": "0176906d1261687b", "src": "db2@1.60.1.70009"}
+{"id": 429394, "field": "name", "en": "Pool of Shadow", "hash": "0176906d1261687b", "src": "db2@1.60.1.70009"}
+{"id": 429394, "field": "aura", "en": "The watery shadows pull at you.", "hash": "fa3e75452a1d9e57", "src": "db2@1.60.1.70009"}
+{"id": 429407, "field": "name", "en": "Bough of Shadows", "hash": "c3c2cc26e79627f0", "src": "db2@1.60.1.70009"}
+{"id": 429407, "field": "aura", "en": "Your heart and mind feel heavy with doubt, you can feel the darkness spreading within you.", "hash": "b4a1212135db894d", "src": "db2@1.60.1.70009"}
+{"id": 429429, "field": "name", "en": "Shadow Bolt Volley", "hash": "62ed89ea2de9d24d", "src": "db2@1.60.1.70009"}
+{"id": 429432, "field": "name", "en": "S03 - Ashenvale PvP Event - Alliance Leader Death", "hash": "491aedf999d64c37", "src": "db2@1.60.1.70009"}
+{"id": 429432, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427116s1% increased health and $427116s2% increased damage per living Keeper of the Grove in her army.", "hash": "270bb4b9586f7133", "src": "db2@1.60.1.70009"}
+{"id": 429434, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70009"}
+{"id": 429434, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70009"}
+{"id": 429436, "field": "name", "en": "S03 - Ashenvale PvP Event - Horde Leader Death", "hash": "ec9006d304cd06ab", "src": "db2@1.60.1.70009"}
+{"id": 429436, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427116s1% increased health and $427116s2% increased damage per living Keeper of the Grove in her army.", "hash": "270bb4b9586f7133", "src": "db2@1.60.1.70009"}
+{"id": 429541, "field": "name", "en": "Dark Protection", "hash": "852e40c60864b420", "src": "db2@1.60.1.70009"}
+{"id": 429541, "field": "aura", "en": "All damage taken reduced by $s1%.", "hash": "bd0656aa9b8dd371", "src": "db2@1.60.1.70009"}
+{"id": 429543, "field": "name", "en": "Elemental Instability", "hash": "b3321d942d6ee69b", "src": "db2@1.60.1.70009"}
+{"id": 429543, "field": "aura", "en": "The elemental's binding magics are unravelling, radiating raw mana on nearby players.", "hash": "d7aae66fd9bb7bfa", "src": "db2@1.60.1.70009"}
+{"id": 429547, "field": "name", "en": "Elemental Instability", "hash": "b3321d942d6ee69b", "src": "db2@1.60.1.70009"}
+{"id": 429578, "field": "name", "en": "Libram of Banishment", "hash": "fcfb4b5248fb63a1", "src": "db2@1.60.1.70009"}
+{"id": 429578, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70009"}
+{"id": 429593, "field": "name", "en": "Libram of Banishment Turn Undead  Dummy", "hash": "772c628b3c0f5f08", "src": "db2@1.60.1.70009"}
+{"id": 429660, "field": "name", "en": "Demolition Explosives", "hash": "cf829cb1c423780f", "src": "db2@1.60.1.70009"}
+{"id": 429671, "field": "name", "en": "Shatterspear Blessing", "hash": "9745a78ec352132c", "src": "db2@1.60.1.70009"}
+{"id": 429687, "field": "name", "en": "Dominate Mind", "hash": "7a6e724a1d25e571", "src": "db2@1.60.1.70009"}
+{"id": 429687, "field": "description", "en": "Takes control of a humanoid enemy up to level $s1 for $d.", "hash": "5446600622f441eb", "src": "db2@1.60.1.70009"}
+{"id": 429687, "field": "aura", "en": "Charmed.", "hash": "d83f67a36f817254", "src": "db2@1.60.1.70009"}
+{"id": 429688, "field": "name", "en": "Dominate Mind", "hash": "7a6e724a1d25e571", "src": "db2@1.60.1.70009"}
+{"id": 429688, "field": "description", "en": "Takes control of a humanoid enemy up to level $s1 for $d., but increases the time between its attacks by $s2%.", "hash": "a2a4015cb7357ae0", "src": "db2@1.60.1.70009"}
+{"id": 429688, "field": "aura", "en": "Charmed.\r\nTime between attacks increased by $s2%.", "hash": "d198bff7fa808140", "src": "db2@1.60.1.70009"}
+{"id": 429701, "field": "name", "en": "Shatterspear Blessing Meditation", "hash": "03918716c8fac764", "src": "db2@1.60.1.70009"}
+{"id": 429723, "field": "name", "en": "Lunar Idol Moonfire Dummy", "hash": "b68c0c6f33e76cb1", "src": "db2@1.60.1.70009"}
+{"id": 429732, "field": "name", "en": "Demolition Explosives", "hash": "cf829cb1c423780f", "src": "db2@1.60.1.70009"}
+{"id": 429732, "field": "description", "en": "Place a bomb with a short fuse on the ground in front of you.", "hash": "07e8c561e6d24a83", "src": "db2@1.60.1.70009"}
+{"id": 429743, "field": "name", "en": "Demolition Explosives", "hash": "cf829cb1c423780f", "src": "db2@1.60.1.70009"}
+{"id": 429748, "field": "name", "en": "Quick Strike", "hash": "45228ec457144e2d", "src": "db2@1.60.1.70009"}
+{"id": 429748, "field": "description", "en": "Replaces your Heroic Strike ability with Quick Strike:\r\n\r\n$@spellicon429765\r\n$@spelldesc429765\r\n", "hash": "cc47287cf6361db1", "src": "db2@1.60.1.70009"}
+{"id": 429765, "field": "name", "en": "Quick Strike", "hash": "45228ec457144e2d", "src": "db2@1.60.1.70009"}
+{"id": 429765, "field": "description", "en": "A reckless instant melee attack with your two-handed weapon dealing ${$AP*$m1/100} to ${$AP*$M1/100} physical damage. This ability benefits from and triggers all effects associated with Heroic Strike.\r\n\r\n\r\n", "hash": "b7bd959a7398d490", "src": "db2@1.60.1.70009"}
+{"id": 429820, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70009"}
+{"id": 429820, "field": "description", "en": "Inflicts $s1 Arcane damage to enemies in a selected area every $t1 sec. for $d.", "hash": "4453f7955532b659", "src": "db2@1.60.1.70009"}
+{"id": 429821, "field": "name", "en": "Searing Arrow", "hash": "4a5215e195bf548f", "src": "db2@1.60.1.70009"}
+{"id": 429821, "field": "description", "en": "Shoots a flaming arrow at an enemy, inflicting weapon damage plus $s1. All damage inflicted is based upon Fire magic.", "hash": "c91c8900d7db3f56", "src": "db2@1.60.1.70009"}
+{"id": 429822, "field": "name", "en": "Cleave", "hash": "490af681ad18ef1f", "src": "db2@1.60.1.70009"}
+{"id": 429822, "field": "description", "en": "Inflicts normal damage to an enemy and its nearest allies, affecting up to $x1 targets.", "hash": "b729fad4e35e4215", "src": "db2@1.60.1.70009"}
+{"id": 429823, "field": "name", "en": "Moonfire", "hash": "eda7a4c188a2324b", "src": "db2@1.60.1.70009"}
+{"id": 429823, "field": "description", "en": "Inflicts $s2 Arcane damage to an enemy, then an additional $s1 damage every $t1 sec. for $d.", "hash": "59824b40f0671407", "src": "db2@1.60.1.70009"}
+{"id": 429823, "field": "aura", "en": "$s1 Arcane damage inflicted every $t1 sec.", "hash": "d8708d964c16c02d", "src": "db2@1.60.1.70009"}
+{"id": 429825, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70009"}
+{"id": 429825, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70009"}
+{"id": 429827, "field": "name", "en": "Shock", "hash": "befee74f70f42cc6", "src": "db2@1.60.1.70009"}
+{"id": 429827, "field": "description", "en": "Instantly throws a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "40d9deb75ef49ffa", "src": "db2@1.60.1.70009"}
+{"id": 429836, "field": "name", "en": "Anointed By Light", "hash": "e139df8aafd8eb77", "src": "db2@1.60.1.70009"}
+{"id": 429836, "field": "aura", "en": "A nearby shrine is dedicated to the Light, increasing your Spirit by $s1%.", "hash": "4abbd339252bc97d", "src": "db2@1.60.1.70009"}
+{"id": 429838, "field": "name", "en": "Incinerate", "hash": "f030e7b8acb5204d", "src": "db2@1.60.1.70009"}
+{"id": 429838, "field": "description", "en": "Deals $s1 Fire damage to your target.", "hash": "7dd4df980a0cff69", "src": "db2@1.60.1.70009"}
+{"id": 429856, "field": "name", "en": "Summon Sentinel Nightsaber", "hash": "23db294cb4f0ba94", "src": "db2@1.60.1.70009"}
+{"id": 429856, "field": "description", "en": "Summons a Trainee's Sentinel Nightsaber. Only usable in Ashenvale.", "hash": "43dc9742d534c738", "src": "db2@1.60.1.70009"}
+{"id": 429856, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
+{"id": 429857, "field": "name", "en": "Summon Outrider Wolf", "hash": "510bfab4195e853e", "src": "db2@1.60.1.70009"}
+{"id": 429857, "field": "description", "en": "Summons a Trainee's Outrider Wolf. Only usable in Ashenvale.", "hash": "7c4049a65f22b219", "src": "db2@1.60.1.70009"}
+{"id": 429857, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
+{"id": 429863, "field": "name", "en": "Battlegear of Might", "hash": "b89091d03852b001", "src": "db2@1.60.1.70009"}
+{"id": 429863, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70009"}
+{"id": 429864, "field": "name", "en": "Battlegear of Might", "hash": "b89091d03852b001", "src": "db2@1.60.1.70009"}
+{"id": 429864, "field": "description", "en": "Increases your Strength by $s. ", "hash": "187fee9a82926f93", "src": "db2@1.60.1.70009"}
+{"id": 429865, "field": "name", "en": "Battlegear of Might", "hash": "b89091d03852b001", "src": "db2@1.60.1.70009"}
+{"id": 429865, "field": "description", "en": "While Recklessness is active, your Execute deals damage as if you had 5 additional rage. ", "hash": "3aea0a95c90f2af7", "src": "db2@1.60.1.70009"}
+{"id": 429867, "field": "name", "en": "Void Madness", "hash": "97e77e1918b01684", "src": "db2@1.60.1.70009"}
+{"id": 429867, "field": "description", "en": "Descend into madness, increasing attack speed by $M% as well as increasing the threat you generate for $d. ", "hash": "3fc95c84caed5c47", "src": "db2@1.60.1.70009"}
+{"id": 429867, "field": "aura", "en": "You have descended into a dark madness. Attack speed and threat generation increased.", "hash": "9c65a36566fff330", "src": "db2@1.60.1.70009"}
+{"id": 429868, "field": "name", "en": "Void Madness", "hash": "97e77e1918b01684", "src": "db2@1.60.1.70009"}
+{"id": 429868, "field": "description", "en": "Descend into madness, increasing spell damage by $M% as well as increasing the threat you generate for $d. ", "hash": "e37df8b48b7082e6", "src": "db2@1.60.1.70009"}
+{"id": 429868, "field": "aura", "en": "You have descended into a dark madness. Spell damage and threat generation increased.", "hash": "13d39e042426ad3a", "src": "db2@1.60.1.70009"}
+{"id": 429869, "field": "name", "en": "Void-Touched Leather Gauntlets", "hash": "2e2147c701b3d5a6", "src": "db2@1.60.1.70009"}
+{"id": 429898, "field": "name", "en": "Anoint Shrine", "hash": "f95bd346361fd5d2", "src": "db2@1.60.1.70009"}
+{"id": 429953, "field": "name", "en": "Tim's Test Spell Visual", "hash": "4d88780e5e4f9f35", "src": "db2@1.60.1.70009"}
+{"id": 429958, "field": "name", "en": "Blackfathom Teleporter Activation Visual", "hash": "8f6e4779725c90fb", "src": "db2@1.60.1.70009"}
+{"id": 429959, "field": "name", "en": "Well-Rested", "hash": "6381a492519b9d4e", "src": "db2@1.60.1.70009"}
+{"id": 429959, "field": "description", "en": "Experience gains increased by $429959s0%. ", "hash": "1022f4a8345ee9b9", "src": "db2@1.60.1.70009"}
+{"id": 429959, "field": "aura", "en": "Experience gains increased by $429959s0%.", "hash": "1022f4a8345ee9b9", "src": "db2@1.60.1.70009"}
+{"id": 429960, "field": "name", "en": "Well-Rested Tracking Aura", "hash": "ca25c91403f7408b", "src": "db2@1.60.1.70009"}
+{"id": 429961, "field": "name", "en": "Unroll Bag", "hash": "87647cc1925e0278", "src": "db2@1.60.1.70009"}
+{"id": 429961, "field": "description", "en": "Unfurl a sleeping bag. Resting inside for at least one minute will provide a bonus to experience earned, stacking up to 3 times.", "hash": "bc2bd5a6c38ad70e", "src": "db2@1.60.1.70009"}
+{"id": 429972, "field": "name", "en": "Dark Insight", "hash": "be656bbbbe85c43a", "src": "db2@1.60.1.70009"}
+{"id": 429972, "field": "description", "en": "Consider at a certain secluded grave in Duskwood to receive a prophecy.", "hash": "df05057e61c3f442", "src": "db2@1.60.1.70009"}
+{"id": 429984, "field": "name", "en": "Torrential Downpour", "hash": "79e3b9234db1aa37", "src": "db2@1.60.1.70009"}

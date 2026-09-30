@@ -1,0 +1,1 @@
+{"id": 225092, "field": "description", "ja": "Aspect系スキルのクールダウンを$N1%短縮します。", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3528"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

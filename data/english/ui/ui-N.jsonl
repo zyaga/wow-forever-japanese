@@ -1,0 +1,77 @@
+{"id": "NAME", "field": "text", "en": "Name", "hash": "0a8d43cf96cb99f1", "src": "db2@1.60.1.70009"}
+{"id": "NAMEPLATES_LABEL", "field": "text", "en": "Nameplates", "hash": "2c6dbc93c7cb6014", "src": "db2@1.60.1.70009"}
+{"id": "NAMEPLATE_OPTIONS_LABEL", "field": "text", "en": "Nameplates", "hash": "2c6dbc93c7cb6014", "src": "db2@1.60.1.70009"}
+{"id": "NAMES_LABEL", "field": "text", "en": "Names", "hash": "6649b3793097bb7b", "src": "db2@1.60.1.70009"}
+{"id": "NAME_CHAT_WINDOW", "field": "text", "en": "Enter chat window name", "hash": "bd4d2bbe38737396", "src": "db2@1.60.1.70009"}
+{"id": "NARRATION_OBJECT_CLEAR_BUTTON", "field": "text", "en": "Clear", "hash": "a6aa194d90392011", "src": "db2@1.60.1.70009"}
+{"id": "NARROW", "field": "text", "en": "Narrow", "hash": "5865c1d60bb2c8e6", "src": "db2@1.60.1.70009"}
+{"id": "NAVIGATION_DESTINATION_REACHED_MESSAGE", "field": "text", "en": "Reached destination", "hash": "f4720e586c0227fa", "src": "db2@1.60.1.70009"}
+{"id": "NECKSLOT", "field": "text", "en": "Neck", "hash": "0a8e4adba6ab6a31", "src": "db2@1.60.1.70009"}
+{"id": "NEED", "field": "text", "en": "Need", "hash": "0a8e4bdaa6aba9ec", "src": "db2@1.60.1.70009"}
+{"id": "NETWORK_LABEL", "field": "text", "en": "Network", "hash": "4dea4e68b5795145", "src": "db2@1.60.1.70009"}
+{"id": "NEW", "field": "text", "en": "New", "hash": "0014a0e435b1391b", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_BANDWIDTH", "field": "text", "en": "Indicates your effective Bandwidth", "hash": "60daa5c568a596fe", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_CHATMENU", "field": "text", "en": "Commands used for communicating with others. With the Chat menu, you can talk to people standing nearby, send a private message to one person, chat with party members, wave at a friend, or create a macro.", "hash": "e2fbe5aa2c76247a", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_DOWNLOAD_PERCENT", "field": "text", "en": "Indicates the percentage of the game that is downloaded", "hash": "2c0509f595886fd7", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_FRAMERATE", "field": "text", "en": "Indicates how smoothly the game animates. Low framerate can be improved by changing your video options.", "hash": "89342243722064ce", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_GUILDTAB", "field": "text", "en": "Allows you to view information about your guild, and players in it. If you are an officer, you can also manage your guild from this tab.", "hash": "7cd32ab76ef77214", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_LATENCY", "field": "text", "en": "The time it takes to talk with the game server. Consistently high (red) latencies may indicate a problem with your Internet connection.", "hash": "a22e1634f270813f", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_LFGPARENT", "field": "text", "en": "A tool to find a group to complete a dungeon.", "hash": "d05fc90fe30366d1", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_LOOKINGFORGUILDTAB", "field": "text", "en": "Allows you to find a guild.", "hash": "0d270ade785b7769", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_MAINMENU", "field": "text", "en": "Modify your settings, change your hotkeys or exit the game.", "hash": "97dbb009b743c4e4", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_MEMORY", "field": "text", "en": "How much memory your AddOns are using. You can get to the addon management page from the character select screen.", "hash": "68f4dc9017b552d6", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_PROTOCOLS", "field": "text", "en": "The protocol versions the game has chosen to connect to the servers. IPv6 is the latest technology available, but might cause issues as it isn't widely supported yet.", "hash": "fbf6a5b59ef8b2f1", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_QUESTLOG", "field": "text", "en": "A list of all the active quests you currently have. You can have up to 25 active quests at one time.", "hash": "be69249f564b07fe", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_SPELLBOOK", "field": "text", "en": "To prepare a spell or ability for use, open the Spellbook & Abilities window, left-click the spell or ability and drag it down to your action bar.", "hash": "ab9bc79664c85db0", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_TALENTS", "field": "text", "en": "The array of talents available to enhance and specialize your character.", "hash": "0ff69c8e384d7cf7", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_UNIT_FREE_FOR_ALL", "field": "text", "en": "Under free-for-all rules, all group members may loot a monster that they help the group to kill. Money is automatically divided between group members.", "hash": "c16b9348f458b1b2", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_UNIT_GROUP_LOOT", "field": "text", "en": "Under group loot rules, players take turns looting just like in round-robin with the exception that all group members will be eligible to roll for items over the loot threshold.", "hash": "b1401a54aef3fff6", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_UNIT_MASTER_LOOTER", "field": "text", "en": "Under master-looter rules, the group leader is the only group member allowed to loot items at or above the threshold. Items below threshold and money are distributed via the round robin rules.", "hash": "b83526e3c714bb5f", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_UNIT_NEED_BEFORE_GREED", "field": "text", "en": "Under need-before-greed rules, loot is distributed round-robin style.  Any items over the loot threshold can only be rolled on by group members that can use the item.", "hash": "d60d2ead9fb8446e", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_UNIT_OPT_OUT_LOOT", "field": "text", "en": "If enabled, you will only be able to receive loot by looting quest items, looting items that everyone passes on, or being given loot by the master looter.", "hash": "a28943527390c2c8", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_UNIT_ROUND_ROBIN", "field": "text", "en": "Under round-robin rules, group members take turns looting the monsters that they help the group to kill. Money is automatically divided between group members.", "hash": "e487fce6a489d95a", "src": "db2@1.60.1.70009"}
+{"id": "NEWBIE_TOOLTIP_XPBAR", "field": "text", "en": "The amount of experience (XP) you have earned. The color of the XP bar indicates your rest state: light blue for Rested, and purple for Normal. Rested players earn twice the experience they would normally gain from slaying a monster. Characters become less rested when they kill monsters, and more rested by spending time at or logging out at an inn or city.", "hash": "69eb07915501ad59", "src": "db2@1.60.1.70009"}
+{"id": "NEW_CAPS", "field": "text", "en": "NEW", "hash": "0014906435ad3cdb", "src": "db2@1.60.1.70009"}
+{"id": "NEW_CHAT_WINDOW", "field": "text", "en": "Create New Window", "hash": "347d824ed4a74442", "src": "db2@1.60.1.70009"}
+{"id": "NEW_RECIPE_LEARNED_TITLE", "field": "text", "en": "New Recipe Learned!", "hash": "cd75947ca14e365a", "src": "db2@1.60.1.70009"}
+{"id": "NEW_SPOKEN_LANGUAGE_HELPTIP", "field": "text", "en": "You have learned a new language. Change your spoken language here.", "hash": "d867169a869f9d71", "src": "db2@1.60.1.70009"}
+{"id": "NEXT", "field": "text", "en": "Next", "hash": "0a8e55a3a6ae07af", "src": "db2@1.60.1.70009"}
+{"id": "NEXT_BATTLE", "field": "text", "en": "Next Battle: %1$02d:%2$02d:%3$02d", "hash": "f8c5b65dc01564fe", "src": "db2@1.60.1.70009"}
+{"id": "NO", "field": "text", "en": "No", "hash": "000028590009b6fd", "src": "db2@1.60.1.70009"}
+{"id": "NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
+{"id": "NONE_KEY", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
+{"id": "NOTCH_MODE", "field": "text", "en": "Notch Mode", "hash": "a571ca3e36f68301", "src": "db2@1.60.1.70009"}
+{"id": "NOTCH_MODE_OVERLAP", "field": "text", "en": "Overlap", "hash": "ae6c024596840c2a", "src": "db2@1.60.1.70009"}
+{"id": "NOTCH_MODE_SHIFT_UI", "field": "text", "en": "Shift UI Down", "hash": "4c3da8278fc3f5c9", "src": "db2@1.60.1.70009"}
+{"id": "NOTCH_MODE_WINDOW_BELOW", "field": "text", "en": "Window Below", "hash": "d25176d96101838f", "src": "db2@1.60.1.70009"}
+{"id": "NOTE_COLON", "field": "text", "en": "Note:", "hash": "682bc6f90810ee03", "src": "db2@1.60.1.70009"}
+{"id": "NOT_APPLICABLE", "field": "text", "en": "N/A", "hash": "0014850c35aa7f6f", "src": "db2@1.60.1.70009"}
+{"id": "NOT_BOUND", "field": "text", "en": "Not Bound", "hash": "29eea9ca7b0bd97e", "src": "db2@1.60.1.70009"}
+{"id": "NOT_COLLECTED", "field": "text", "en": "Not Collected", "hash": "da90f878a0bf8d21", "src": "db2@1.60.1.70009"}
+{"id": "NOT_ENOUGH_CURRENCY", "field": "text", "en": "Not enough %s", "hash": "9d77f78a3031360d", "src": "db2@1.60.1.70009"}
+{"id": "NOT_ENOUGH_GOLD", "field": "text", "en": "Not enough gold.", "hash": "d3f1289553b5b934", "src": "db2@1.60.1.70009"}
+{"id": "NOT_READY", "field": "text", "en": "Not Ready", "hash": "416dc514943dbee7", "src": "db2@1.60.1.70009"}
+{"id": "NOT_YET_SIGNED", "field": "text", "en": "<not yet signed>", "hash": "b8095cf2e652fd11", "src": "db2@1.60.1.70009"}
+{"id": "NO_ATTACHMENTS", "field": "text", "en": "No Attachments", "hash": "1fa3edef72014608", "src": "db2@1.60.1.70009"}
+{"id": "NO_COMPLETED_ACHIEVEMENTS", "field": "text", "en": "You have not earned any achievements recently", "hash": "1d49ba4b8322f95a", "src": "db2@1.60.1.70009"}
+{"id": "NO_ENVIRONMENT_INTERACTION", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
+{"id": "NO_GUILDBANK_TABS", "field": "text", "en": "Your guild has not purchased any guild bank space.", "hash": "3d3315834be71661", "src": "db2@1.60.1.70009"}
+{"id": "NO_RAID_INSTANCES_SAVED", "field": "text", "en": "You are not saved to any instances", "hash": "3b50d9275ceee39b", "src": "db2@1.60.1.70009"}
+{"id": "NO_ROLE", "field": "text", "en": "No Role", "hash": "59a035774fe11dd4", "src": "db2@1.60.1.70009"}
+{"id": "NO_VIEWABLE_GUILDBANK_LOGS", "field": "text", "en": "You do not have any permission to view any Guild Bank logs.", "hash": "644060d08569e538", "src": "db2@1.60.1.70009"}
+{"id": "NO_VIEWABLE_GUILDBANK_TABS", "field": "text", "en": "You do not have permission to view any Guild Bank tabs.", "hash": "b5ceb36208a1487f", "src": "db2@1.60.1.70009"}
+{"id": "NPC_NAMES_DROPDOWN_ALL", "field": "text", "en": "All NPCs", "hash": "e745112381defd83", "src": "db2@1.60.1.70009"}
+{"id": "NPC_NAMES_DROPDOWN_ALL_TOOLTIP", "field": "text", "en": "Display names for all NPCs", "hash": "6c852ca907d30311", "src": "db2@1.60.1.70009"}
+{"id": "NPC_NAMES_DROPDOWN_HOSTILE", "field": "text", "en": "Hostile and Quest NPCs", "hash": "1ab338cecdfba3fe", "src": "db2@1.60.1.70009"}
+{"id": "NPC_NAMES_DROPDOWN_HOSTILE_TOOLTIP", "field": "text", "en": "Display names for hostile NPC's and those NPCs involved with quests or being tracked.", "hash": "cb956cd74d0e60a5", "src": "db2@1.60.1.70009"}
+{"id": "NPC_NAMES_DROPDOWN_INTERACTIVE", "field": "text", "en": "Hostile, Quest, and Interactive NPCs", "hash": "3973176425a408ad", "src": "db2@1.60.1.70009"}
+{"id": "NPC_NAMES_DROPDOWN_INTERACTIVE_TOOLTIP", "field": "text", "en": "Display names for hostile NPC's, those NPCs involved with quests or being tracked, and NPC's you can interact with.", "hash": "15c7cb08948672ad", "src": "db2@1.60.1.70009"}
+{"id": "NPC_NAMES_DROPDOWN_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
+{"id": "NPC_NAMES_DROPDOWN_NONE_TOOLTIP", "field": "text", "en": "Do not display names for any NPCs", "hash": "b23d5a4c62142db0", "src": "db2@1.60.1.70009"}
+{"id": "NPC_NAMES_DROPDOWN_TRACKED", "field": "text", "en": "Quest NPCs", "hash": "2e6a0447df2886ff", "src": "db2@1.60.1.70009"}
+{"id": "NPC_NAMES_DROPDOWN_TRACKED_TOOLTIP", "field": "text", "en": "Display names for NPCs involved with quests, as well as tracked NPCs using the minimap tracker.", "hash": "f9c9b36f8a3c9ead", "src": "db2@1.60.1.70009"}
+{"id": "NPEV2_SELECT_TALENTS_TAB", "field": "text", "en": "Select the |cFF00FFFFTalents|r Tab", "hash": "a183d3f96d233a10", "src": "db2@1.60.1.70009"}
+{"id": "NPEV2_SPEC_TUTORIAL_GOSSIP_CLOSED", "field": "text", "en": "View your |cFF00FFFFcombat specializations|r", "hash": "461e4352d6558384", "src": "db2@1.60.1.70009"}
+{"id": "NPE_ABANDON_LEAVE_TUTORIAL", "field": "text", "en": "End Tutorial", "hash": "fb6c9f3f89523e6c", "src": "db2@1.60.1.70009"}
+{"id": "NUM_FREE_SLOTS", "field": "text", "en": "%d Empty |4Slot:Slots; (Total)", "hash": "add4fc8ae4bdbc37", "src": "db2@1.60.1.70009"}
+{"id": "NUM_GUILDBANK_TABS_PURCHASED", "field": "text", "en": "(%d/%d tabs purchased)", "hash": "4c227a9c18eccf38", "src": "db2@1.60.1.70009"}

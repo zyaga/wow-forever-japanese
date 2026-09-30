@@ -1,0 +1,41 @@
+{"id": 1258367, "field": "name", "en": "Throw Bone", "hash": "81e212994da11616", "src": "db2@1.60.1.70009"}
+{"id": 1258367, "field": "description", "en": "Throws a bone at an enemy, inflicting Physical damage.", "hash": "26b57c004ef72d14", "src": "db2@1.60.1.70009"}
+{"id": 1258381, "field": "name", "en": "(DNT) Mushrooms Visual Aura", "hash": "23f5ea722a8a83df", "src": "db2@1.60.1.70009"}
+{"id": 1258428, "field": "name", "en": "Saving Fillion Flamebreeze", "hash": "a8d69e6b94fab5ef", "src": "db2@1.60.1.70009"}
+{"id": 1258429, "field": "name", "en": "Saving Fillion Flamebreeze", "hash": "a8d69e6b94fab5ef", "src": "db2@1.60.1.70009"}
+{"id": 1258429, "field": "description", "en": "You are carrying Fillion Flamebreeze. You are encumbered and you may be forced to drop Fillion and flee if you are attacked!\r\n\r\nAvoid combat at all costs.\r\n", "hash": "4132f51bfff728cc", "src": "db2@1.60.1.70009"}
+{"id": 1258429, "field": "aura", "en": "You are carrying Fillion Flamebreeze. You are encumbered and you may be forced to drop Fillion and flee if you are attacked!\r\n\r\nAvoid combat at all costs.", "hash": "4132f51bfff728cc", "src": "db2@1.60.1.70009"}
+{"id": 1258446, "field": "name", "en": "Saving Fillion Flamebreeze", "hash": "a8d69e6b94fab5ef", "src": "db2@1.60.1.70009"}
+{"id": 1258447, "field": "name", "en": "Standing Stone Study", "hash": "6992b8282b697868", "src": "db2@1.60.1.70009"}
+{"id": 1258447, "field": "aura", "en": "Gathering data...", "hash": "6e783355e506eb0b", "src": "db2@1.60.1.70009"}
+{"id": 1258478, "field": "name", "en": "Data Gathered", "hash": "d0fdea934d9c9c74", "src": "db2@1.60.1.70009"}
+{"id": 1258478, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70009"}
+{"id": 1258483, "field": "name", "en": "Summon Index Esoteria", "hash": "43396503059af5a3", "src": "db2@1.60.1.70009"}
+{"id": 1258483, "field": "description", "en": "Activate the Index Esoteria to gather magical data at the Overlook Standing Stones in the Shen'dar Highlands.", "hash": "d78474f5cf567534", "src": "db2@1.60.1.70009"}
+{"id": 1258494, "field": "name", "en": "Increase Healing 22/ Dam 8", "hash": "d9241899d95ca152", "src": "db2@1.60.1.70009"}
+{"id": 1258494, "field": "description", "en": "Increases healing done by spells and effects by up to $s1 and damage done by spells and effects by up to $s2.", "hash": "0d145ac0981f7543", "src": "db2@1.60.1.70009"}
+{"id": 1258496, "field": "name", "en": "Increased Spirit 10", "hash": "2be224e6490556c1", "src": "db2@1.60.1.70009"}
+{"id": 1258496, "field": "description", "en": "+$s1 Spirit.", "hash": "ce2f9b3cb29cadc9", "src": "db2@1.60.1.70009"}
+{"id": 1258510, "field": "name", "en": "Blessing of Zephras", "hash": "89eeea09f84d262e", "src": "db2@1.60.1.70009"}
+{"id": 1258510, "field": "description", "en": "Increases run speed by $s1% for $d1.", "hash": "61fe647b7084b69c", "src": "db2@1.60.1.70009"}
+{"id": 1258510, "field": "aura", "en": "You have been touched by energizing winds. Increases run speed by $s1%.\r\n\r\nTaking hostile action will end this effect.", "hash": "7d501c7c4d16553b", "src": "db2@1.60.1.70009"}
+{"id": 1258518, "field": "name", "en": "Flee to Safety", "hash": "7c3c0f0f7e149e16", "src": "db2@1.60.1.70009"}
+{"id": 1258518, "field": "description", "en": "Pass through the druidic wards to enter Mount Hyjal.", "hash": "f9ad16b6012fdc61", "src": "db2@1.60.1.70009"}
+{"id": 1258519, "field": "name", "en": "Taken Down", "hash": "7dd11bb79dabbd91", "src": "db2@1.60.1.70009"}
+{"id": 1258520, "field": "name", "en": "Pounce", "hash": "4594280077ee6413", "src": "db2@1.60.1.70009"}
+{"id": 1258520, "field": "description", "en": "Pounce, stunning the target for $d and causing $9826o1 damage over $9826d.  Must be prowling and behind the target.  Awards $s3 combo $lpoint:points;.", "hash": "97420bb276fee973", "src": "db2@1.60.1.70009"}
+{"id": 1258520, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
+{"id": 1258764, "field": "name", "en": "Create Water Sample", "hash": "82235f4a072c6ee4", "src": "db2@1.60.1.70009"}
+{"id": 1258773, "field": "name", "en": "Take Water Sample", "hash": "a122b1e7349bc250", "src": "db2@1.60.1.70009"}
+{"id": 1258773, "field": "description", "en": "Take a water sample from a well at a Westfall farm.", "hash": "345ca8159ef84ac4", "src": "db2@1.60.1.70009"}
+{"id": 1258777, "field": "name", "en": "Create Water Sample", "hash": "82235f4a072c6ee4", "src": "db2@1.60.1.70009"}
+{"id": 1258784, "field": "name", "en": "Create Staff", "hash": "95778da620f4d06a", "src": "db2@1.60.1.70009"}
+{"id": 1258784, "field": "description", "en": "Combine Imbued Tears with Petrified Bark to create a Rudimentary Necromancy Staff.", "hash": "67cc52ab03a3dded", "src": "db2@1.60.1.70009"}
+{"id": 1258812, "field": "name", "en": "Necromancy", "hash": "41713106a4003b31", "src": "db2@1.60.1.70009"}
+{"id": 1258812, "field": "description", "en": "Attempt to infuse necromantic energy into Orgrul's Skeletons.", "hash": "bb88d2234a25a95d", "src": "db2@1.60.1.70009"}
+{"id": 1258819, "field": "name", "en": "Skeleton Spawn Visual", "hash": "b4bdbe6bcc63d29d", "src": "db2@1.60.1.70009"}
+{"id": 1258822, "field": "name", "en": "Place Explosives", "hash": "868fc8d73a126607", "src": "db2@1.60.1.70009"}
+{"id": 1258822, "field": "description", "en": "Place the explosives by the foundry in Deadmines.", "hash": "c291176bc364e335", "src": "db2@1.60.1.70009"}
+{"id": 1258824, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70009"}
+{"id": 1258832, "field": "name", "en": "Faladiel's Note", "hash": "267162db5d5f219d", "src": "db2@1.60.1.70009"}
+{"id": 1258969, "field": "name", "en": "Bone Burrow", "hash": "44ad3f8eec0e7c1e", "src": "db2@1.60.1.70009"}

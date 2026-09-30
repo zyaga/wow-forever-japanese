@@ -1,0 +1,39 @@
+name: Translation report / 翻訳の報告
+description: Paste the report from the game (minimap button → Send report) to fix wrong or awkward Japanese. / ゲーム内の報告（ミニマップのボタン →「報告を送る」）を貼り付けて、誤訳や不自然な日本語を直します。
+title: "Translation report"
+labels: ["translation-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping. In the game, open the report window (the 字 minimap button, or `/wfj fix`), go to
+        **Send report**, click the report, press **Ctrl+C**, and paste below. Paste it as it is: a check reads it within a minute
+        and comments here if anything is missing. This issue is public, and so is the credit name you give below: if
+        your Japanese ships, that name is listed in `ATTRIBUTION.md`.
+
+        ありがとうございます。ゲーム内の報告ウィンドウ（ミニマップの「字」ボタン、または `/wfj fix`）で
+        「報告を送る」を開き、報告をクリックして **Ctrl+C** でコピーし、下にそのまま貼り付けてください。
+        1 分以内に自動チェックが読み取り、足りないものがあればここにコメントします。
+        この Issue は公開されます。採用された場合、下のクレジット名も `ATTRIBUTION.md` に公開で記載されます。
+  - type: textarea
+    id: report
+    attributes:
+      label: Report
+      description: The whole block, from `WFJ-REPORT 1` to `end`. / `WFJ-REPORT 1` から `end` まで、全体を貼り付けてください。
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: credit
+    attributes:
+      label: Credit me as
+      description: The name to thank in the public credits if your Japanese ships. Leave it empty to use your GitHub name. / あなたの日本語が採用された場合に、公開のクレジットに載せる名前です。空欄の場合は GitHub の名前を使います。
+    validations:
+      required: false
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Permission
+      options:
+        - label: Japanese I wrote in this report may ship in the addon under the project's license (GPL-2.0-or-later). / この報告に書いた日本語を、プロジェクトのライセンス（GPL-2.0-or-later）でアドオンに収録してかまいません。
+          required: true

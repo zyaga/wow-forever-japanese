@@ -1,0 +1,14 @@
+{"id": 1276042, "field": "name", "en": "Blood Puddle", "hash": "5b97f36f64e01bad", "src": "db2@1.60.1.70009"}
+{"id": 1276042, "field": "aura", "en": "Bleeding out from a vicious wound.", "hash": "d1b3d02bbedce9bd", "src": "db2@1.60.1.70009"}
+{"id": 1276047, "field": "name", "en": "Apply Poultice", "hash": "d6964cfc77784332", "src": "db2@1.60.1.70009"}
+{"id": 1276061, "field": "name", "en": "Blood Puddle", "hash": "5b97f36f64e01bad", "src": "db2@1.60.1.70009"}
+{"id": 1276061, "field": "aura", "en": "Bleeding out from a vicious wound.", "hash": "d1b3d02bbedce9bd", "src": "db2@1.60.1.70009"}
+{"id": 1276379, "field": "name", "en": "Deprave", "hash": "f8094c53e752868a", "src": "db2@1.60.1.70009"}
+{"id": 1276429, "field": "name", "en": "Spear Fish", "hash": "b6c3e92bdb0da2b6", "src": "db2@1.60.1.70009"}
+{"id": 1276442, "field": "name", "en": "Resting", "hash": "0ebee6536cdf344b", "src": "db2@1.60.1.70009"}
+{"id": 1276442, "field": "description", "en": "Resting.", "hash": "8bafdccab782f187", "src": "db2@1.60.1.70009"}
+{"id": 1276442, "field": "aura", "en": "Resting.", "hash": "8bafdccab782f187", "src": "db2@1.60.1.70009"}
+{"id": 1276443, "field": "name", "en": "Resting", "hash": "0ebee6536cdf344b", "src": "db2@1.60.1.70009"}
+{"id": 1276954, "field": "name", "en": "Water Sample", "hash": "ff00d1f7dbb3e195", "src": "db2@1.60.1.70009"}
+{"id": 1276954, "field": "description", "en": "This container needs to be filled with water from the brackish lake near the southern Wetlands waterfall.", "hash": "8adbc028759f723e", "src": "db2@1.60.1.70009"}
+{"id": 1276963, "field": "name", "en": "(DNT) Burned Cosmetic", "hash": "4d0a7e26e035646e", "src": "db2@1.60.1.70009"}

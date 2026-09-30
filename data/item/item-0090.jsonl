@@ -1,0 +1,1 @@
+{"id": 90715, "field": "description", "ja": "Blackout Kickは位置取りに関係なく\n20%の追加ダメージを4秒間に渡って\n与えるが、回復効果が発動しなくなる。", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#9405"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

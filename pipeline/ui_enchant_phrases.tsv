@@ -1,0 +1,34 @@
+# English words of an enchantment stat line → Japanese label (machine-drafted, model in data provenance)
+Fire Resistance	炎耐性
+Frost Resistance	冷気耐性
+Nature Resistance	自然耐性
+Shadow Resistance	暗黒耐性
+Arcane Resistance	秘術耐性
+All Resistances	全耐性
+Resist Shadow	暗黒耐性
+Attack Power	攻撃力
+Ranged Attack Power	遠隔攻撃力
+Attack Power vs Undead	対アンデッド攻撃力
+Stamina	スタミナ
+Agility	敏捷性
+Strength	筋力
+Intellect	知力
+Spirit	精神
+Healing Spells	回復量
+Defense	防御
+Arcane Spell Damage	秘術呪文ダメージ
+Shadow Spell Damage	暗黒呪文ダメージ
+Fire Spell Damage	炎呪文ダメージ
+Holy Spell Damage	神聖呪文ダメージ
+Frost Spell Damage	冷気呪文ダメージ
+Nature Spell Damage	自然呪文ダメージ
+Armor	アーマー
+Damage and Healing Spells	呪文ダメージ・回復
+Damage	ダメージ
+Beast Slaying	対野獣ダメージ
+Weapon Fire Damage	武器の炎ダメージ
+Spell Damage and Healing	呪文ダメージ・回復
+Spell Damage vs Undead	対アンデッド呪文ダメージ
+to all attributes	全能力値
+HP	体力
+Spell Damage	呪文ダメージ

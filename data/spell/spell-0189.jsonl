@@ -1,0 +1,1 @@
+{"id": 189110, "field": "description", "ja": "指定した位置へ跳躍し、\n$N2 yard内のすべての敵に$N1 Fireダメージ", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3217"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

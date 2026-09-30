@@ -1,0 +1,182 @@
+# WoW Forever Japanese: App Capabilities
+
+> What the addon does, surface by surface, and what stays English. The addon targets the World of Warcraft: Forever client only ([ADR-034](adr/034-forever-is-the-only-target.md)). Forever's game type, `camelot`, belongs to the mainline family: it runs the retail interface with its own overrides, so every surface hooks the frames Forever loads ([ADR-029](adr/029-camelot-targets-the-mainline-family.md)). How much of each surface ships in Japanese: [Coverage](operations/coverage.md). What has been checked in game and what is still pending: [Testing strategy](testing/strategy.md).
+>
+> Each feature lists a **feature-id**, its **status**, and **regen-triggers**: the files whose change means its screenshots and this entry need a fresh look (addon paths are relative to `addon/WoWForeverJapanese/`). Screenshots for the CurseForge listing are taken in game by hand.
+
+## Translation surfaces
+
+### Quest windows
+Quest accept, progress and turn-in windows show the quest title (header only), description, objectives, progress and completion text in Japanese. Where the text names the reader's own character, it is rendered per player: `{name}` → the character name as the game spells it, `{class}` / `{race}` → the class or race word in katakana (`若きドルイドよ`), `<lad/lass>`-style pairs → the form for the character's sex. A female character's gendered text and a very short character name match too ([ADR-024](adr/024-gender-variants-and-short-name-candidates.md)). The stale marker follows the client's live English: a translation whose live English differs from the English it was checked against still shows the Japanese, under the `[要更新 / English Changed]` banner; one whose live English matches shows no banner ([ADR-019](adr/019-quest-english-per-field-and-live-check.md)). A count the server fills in (`Collect $1oa Lady's Tear Moss.`) is carried as `$N<k>` and filled from the line the player is shown ([Live values](#live-values-in-translated-text)).
+
+Quest text comes from two sources: hand-written translations from the predecessor addons, each read against its English and corrected or redrafted where it did not say what the English says, and machine-drafted text with its model and style version recorded per line ([ADR-023](adr/023-server-only-text-drafted-in-measured-batches.md)). A title that is only a name ships that name in English letters. Placeholder quests (`<UNUSED>`, `<NYI>`, `REUSE`) are never drafted. Tiger's Fury (spell 5217) stays English by rule: its text changes by form in a way one Japanese text cannot follow.
+- **feature-id:** `quest-windows`
+- **status:** shipped; the English is the Forever quest cache where the server has answered, Classic Era's otherwise
+- **regen-triggers:** `UI/QuestFrame.lua`, `Core/Translator.lua`, `Data/Quest/Quest_NNNN.lua`
+
+### Quest log detail
+The quest log is the **quest map** inside the world map. Its details pane shows the selected quest's title, objectives and description in Japanese, and so does the tracker's popup detail window. The quest list's titles and the objective tracker's quest headers are Japanese when the row shows exactly the quest's English, or Forever's level prefix followed by it (`[12] ` kept as written); a row with any other decoration (a party count, a dungeon tag, a failed suffix) stays English. The pane's buttons and headers are [Interface text](#interface-text). The quest window and the map write the same text widgets; the addon keeps each window's Japanese its own, so closing one never writes stale English onto another.
+- **feature-id:** `quest-log`
+- **status:** implemented; in-game check pending
+- **regen-triggers:** `UI/QuestMap.lua`, `UI/QuestFrame.lua` (the shared `QuestInfo_Display` hook), `Data/Quest/*.lua`
+
+### Quest objective lines
+The progress lines under a quest are Japanese in the objective tracker, the quest list's objective rows and the map details' objectives ([ADR-031](adr/031-objective-lines-menus-and-helptips.md)). A kill, faction or player line is built by the client from its own template ("3/10 Kobold Vermin slain"), so it goes through the interface dictionary: the mob, faction or player group stays as the client wrote it, counts are kept, a faction standing is Japanese. A collect line ("3/10 Linen Cloth") has no words besides the item name and stays as written. An event line carries the server's own text ("Rescue Drull", "0/1 Archive Burned"): the addon finds the Japanese by the text with the count set aside, and puts the count back where the client wrote it. Exploration and event objectives from the quest cache ("Scout through the Fargodeep Mine") are found the same way, in one index with the objective texts ([ADR-044](adr/044-area-text-and-book-word-cards.md)). A count with thousands separators ("0/1,200 …") is kept as written; the quest list title's tooltip shows its objective lines in Japanese; the list's title button grows when a Japanese title wraps. Stays English: an objective whose whole text is a name ("Flame of Azel"), a line that matches no shipped text, and a text two objectives share with different Japanese. Objective lines take no word card. `/wfj debug objective` prints the index counts.
+- **feature-id:** `quest-objective-lines`
+- **status:** implemented; in-game check pending (including whether an event objective's count comes before or after the text on Forever; both are handled)
+- **regen-triggers:** `Core/Objectives.lua`, `UI/QuestMap.lua`, `UI/MapPins.lua`, `Core/UIStrings.lua`, `Data/Objective/*.lua`, `Data/Area/*.lua`, `Data/UI/UI_Q.lua`
+
+### NPC talk window (gossip)
+The NPC greeting and the option lines are Japanese, with row heights following the Japanese as the list scrolls. The quest window's greeting panel shows the NPC's greeting prose the same way. Quest titles listed in the window, the NPC name and the Goodbye button are not this feature. Markers show on a banner in the stone band above the parchment (inline while an NPC's friendship bar occupies that band). Almost every gossip line ships machine-drafted Japanese, for example Conservator Ilthalaine's greeting in Shadowglen ("Ah, the beauty of Shadowglen never ceases to delight my senses!" → 「ああ、Shadowglenの美しさには、いつまでも心を奪われる！」). Bare labels with nothing to translate (`Inn`, `Cooking`) show the English. `/wfj debug gossip` prints each open line's gossip key.
+- **feature-id:** `gossip`
+- **status:** shipped
+- **regen-triggers:** `UI/Gossip.lua`, `UI/QuestFrame.lua` (greeting prose), `Data/Gossip/*.lua`
+
+### NPC speech (chat, speech bubbles, boss emotes)
+What NPCs say, yell, whisper and emote is Japanese: in the chat window (the line is rewritten once when it arrives, the speaker's name as the client wrote it and the prefix's words, "says:" and "yells:", in Japanese), in the NPC's speech bubble for a say or yell, and for a boss emote in the middle of the screen. The text is the server's, found by the same key as the NPC talk window, so the NPC talk area switch covers it. Emotes keep the speaker's name where the game puts it (`%s laughs.` → `%sは笑った。`). No marker is shown: a stale or missing line shows the English ([ADR-035](adr/035-ui-errors-frame-surface.md)).
+
+**Stays English:** lines in dungeons, raids and encounters while chat lockdown makes the text secret; instance speech bubbles; a player's own bubble; a new line while the chat histories already hold 4,096 of the addon's lines; text from a chat addon that replaces `AddMessage`; a few lines whose names the drafter translated. Combat log lines are not this feature: Forever hands addons a sealed string with no readable English.
+- **feature-id:** `speech`
+- **status:** implemented; in-game check pending (boss emotes and instance lines cannot be checked at level 1)
+- **regen-triggers:** `UI/Speech.lua`, `UI/ChatSystem.lua`, `pipeline/wfj/io/vmangos.py`, `Data/Gossip/*.lua`
+
+### Book, letter and plaque window
+The page text of books, letters and plaques is Japanese for a page whose translation ships: headings and paragraphs keep the page's own HTML layout, `$B` breaks become line breaks, and the reader's name, class and race render per player. The title (the item or object name), the page number and the Prev / Next buttons stay English. Each page turn shows that page's own Japanese, or its untouched English when it has none. A letter another player wrote is never touched. The addon finds a page by the hash of its live English (the client gives no page id), so a page whose live text differs from the source text shows English; `/wfj debug book` prints the open page's keys ([ADR-022](adr/022-book-and-trainer-greeting-surfaces.md)). Pages that stay English: bare labels (`Missing Text`), picture-only pages, and a few pages where the English word does not mean what the class word would (a `rogue` that means renegade).
+
+**Word card:** a plain-text page showing Japanese is drawn by the addon in the page's own font and colour, so pointing at a word shows its [word card](#word-card) ([ADR-044](adr/044-area-text-and-book-word-cards.md)). An HTML page (headings, images) keeps the client's layout and takes no card. Each heading keeps its own size.
+- **feature-id:** `books`
+- **status:** shipped; word cards on book pages implemented, in-game check pending
+- **regen-triggers:** `UI/ItemText.lua`, `UI/Readings.lua`, `Data/Book/*.lua`, `Data/Reading/Reading_book_*.lua`
+
+### Item tooltips
+Per-item effect and flavour text, the **description run** (the contiguous `Use:` / `Equip:` / `Chance on hit:` lines and the flavour quote), is replaced **in place** with Japanese on every tooltip frame (`GameTooltip`, `ItemRefTooltip`, the shopping and comparison tooltips: bags, character sheet, merchant, loot, chat links, comparison). The run's first line carries the Japanese and the other lines go blank while it is applied ([ADR-010](adr/010-tooltip-in-place-run-replacement.md)). The item name stays English; binding, slot, type, stat, durability and sell-price lines are [Interface text](#interface-text). The surface takes Forever's `TooltipDataProcessor` path ([ADR-025](adr/025-guarded-surface-init-and-runtime-tooltip-path.md)).
+
+Tooltip English is the Forever client's own, and a translation carries placeholders instead of values: `$N<k>` for a number and `$D<k>` for a duration, whose phrase is copied from the live line so the Japanese never names the unit (`18秒` on one item, `2分` on another; [Live values](#live-values-in-translated-text)). Every translation is checked against the live lines when it is shown ([ADR-007](adr/007-unaligned-ships-with-runtime-gate.md)): a mismatch leaves the tooltip untouched. A stale translation still passes through the same check and shows the stale marker when names and numbers match. For example, the Shiny Red Apple reads `18秒かけてhealthを58回復します`.
+
+**Included text, inline icons and branches** ([ADR-043](adr/043-included-text-icons-and-branch-variants.md)): a description that prints another spell's text (Westfall Stew: the food effect and the speed buff in one line), a spell's icon inside the text, or a clause the client adds or drops by talent, aura, faction or level translates too. The included text is part of the one Japanese sentence; an inline icon is copied from the live line; a branch line ships one Japanese per branch and shows the one that matches the live line, the English when none or more than one matches. Whether the client prints an inline icon the way the addon expects is not yet verified, so until it is, lines with an icon may stay English. Some item descriptions still wait for the Forever client's own English ([Coverage](operations/coverage.md)).
+- **feature-id:** `item-tooltips`
+- **status:** shipped; branch and icon lines in-game check pending
+- **regen-triggers:** `UI/Tooltip.lua`, `Core/Align.lua`, `Data/Item/*.lua`
+
+### Spell tooltips
+The spell or ability description line in Japanese (spellbook, action bars, talents, chat links), with the live numbers and durations filled in from the English line. Rank, cost, range and cast-time lines are [Interface text](#interface-text); the spell name stays English. **Languages** and **Armor Proficiency**: the description's first part is Japanese, and the list under it (one line per language or armor type the character knows) stays the client's English, because those are names ([ADR-033](adr/033-level-1-gaps-name-list-tails-and-untagged-menus.md)). Included text, icons and branches work as on [Item tooltips](#item-tooltips). The set of spells translated is the player-visible set (`pipeline/visible_spells.txt`): spells whose text prints in an item tooltip, that a class or profession can learn, or that a talent grants.
+- **feature-id:** `spell-tooltips`
+- **status:** shipped
+- **regen-triggers:** `UI/Tooltip.lua`, `Core/Align.lua`, `Data/Spell/*.lua`
+
+### Live values in translated text
+A translation stores placeholders, not numbers, so one line serves every item, spell or quest that shares its English at any value. `$N<k>` is the k-th number of the line the player is shown; `$D<k>` is the k-th **duration**, copied whole from that line (the client picks seconds, minutes, hours or days; "1 hr 30 min" is one duration, and "1.5 sec" is never read as "5 sec"); `$I<k>` is the k-th spell icon inside a tooltip's text. On item and spell tooltips the filled Japanese still has to pass the names-and-numbers check against the live lines. On quest, gossip, book and interface lines, which were checked offline, the placeholders are filled with no further check. A placeholder that cannot be filled shows the untouched English, never a partial line ([ADR-028](adr/028-a-duration-is-copied-not-named.md)).
+- **feature-id:** `live-values`
+- **status:** shipped
+- **regen-triggers:** `Core/Align.lua`, `Core/Translator.lua`, `Main.lua`, `pipeline/wfj/core/align.py`
+
+### Spell aura text (buff / debuff tooltips)
+A spell's buff or debuff wording is a different string from its description under the same spell id, and ships as the spell's second field, `aura`. It shows on the buff or debuff tooltip wherever the game puts one on `GameTooltip`: the buff frame, target, focus, party, raid, compact and arena frames, nameplates. The aura line (line 2, under the English name) is replaced with Japanese, with the same live values, check, stale marker and reveal key as spell tooltips; the time-remaining and dispel-type lines are [Interface text](#interface-text). It follows the Spells area switch. The hook is a `UnitAura` tooltip post-call, which also catches the client's rebuilds mid-hover (a stack or timer change). Nameplate and restricted-unit auras may stay English (the client hides their text from addons). Not covered: the buff frame's own helper tooltip and private auras. `/wfj debug spell <id>` prints both fields; `/wfj debug` prints `aura hooks: N · aura errors: N`.
+- **feature-id:** `spell-aura-data`
+- **status:** shipped
+- **regen-triggers:** `UI/Tooltip.lua`, `Core/Const.lua`, `pipeline/wfj/emit/schema.py`, `Data/Spell/*.lua`
+
+### Interface text
+Blizzard's own interface words in Japanese, from one dictionary keyed by the client's string names: global strings, item subclass words, enchantment stat lines and text from the client's data tables. All of it is machine-drafted, with the model recorded per line ([ADR-014](adr/014-machine-drafted-text-and-ui-dictionary.md), [ADR-015](adr/015-ui-text-surfaces.md), [ADR-016](adr/016-whole-window-interface-coverage.md)). Numbers, names, icons and colour codes are kept exactly as the client shows them. What it covers:
+
+- **Tooltip structural lines**: binding, slot and type, armor, stats, resistances, durability, "Requires Level N", speed and damage, sell price, cost, range, cast time, cooldown, reagents, rank; bag types inside "16 Slot Soul Bag"; enchantment and random-suffix stat lines ("+3 Fire Spell Damage", the Japanese label before the number); the item comparison lines.
+- **Quest windows and the quest map**: headers, buttons, the greeting panel's headers, the list's empty, search and count words, the tracker's headers.
+- **Every window**: the character sheet and its panes (stats, reputation, skills, currency, statistics), spellbook and talents, trainer, merchant, bank and bags, mail, friends and the who list, the guild view of Communities and the rest of the Communities window, raid, the micro menu and game menu, professions and crafting orders, the auction house, the Options window, Edit Mode, calendar, collections, the group finder, achievements and about 90 more windows. The list is read from the client's own TOCs, and a test fails when a new client build adds a window nobody has read ([ADR-030](adr/030-every-window-the-forever-client-loads.md)). Window titles are Japanese where the title is a dictionary word, and follow the window when it re-titles itself.
+- **Help tooltips and callouts**: the micro buttons (with their key binding), stat and slot hovers, the XP and latency bars, HelpTip tutorial callouts and help plates, sized to the Japanese.
+- **Menus**: dropdown, filter, settings and context menus of every window, and the right-click unit menus, submenus included ([ADR-038](adr/038-menus-callouts-and-composite-forms.md)). The menu's title (a unit's, channel's or addon's name) is never touched, even when it equals a menu word (a player named "Duel").
+- **Dialogs**: StaticPopup dialogs ("Delete this item?", the release countdown, logout timers) with names copied exactly as the English showed them, and the special dialogs (add friend, group invite, battle ready, role check). Some words take their own Japanese on one screen (the auction house's Back is 戻る while the equipment slot is 背中; [ADR-037](adr/037-staticpopup-dialogs-and-owned-keys.md)).
+- **Error and info lines**: the red and yellow lines in the middle of the screen ("Out of range.", "Inventory is full.", "Kobold Vermin slain: 3/10"), each matched only against the interface string its message id names.
+- **Chat**: every system chat type (loot, money, experience, honor, reputation, skill-ups, level-up lines, away and busy, `/played`, the guild message of the day, instance resets, `/roll`) and the words of a player chat line's prefix ("says:", "whispers:"). The player's own text is never touched. Lines are rewritten once, when they arrive; holding the reveal key shows the English on the lines in view.
+- **Composite lines**: the auction house's seller and time-left lines, the guild event and bank logs, calendar dates in Japanese (2026年9月25日(金曜日)), floating combat text trailers ("(3 blocked)"), the death recap, unit mouseover lines ("Level 10 Humanoid"), buff timers.
+- **Text from the client's tables** ([ADR-042](adr/042-client-table-text-families.md)): faction, skill and currency descriptions, achievement titles, descriptions and rewards, emote lines in chat (every name kept), creature and dispel types, holiday descriptions, the auction house's categories, the barber shop's options, the PvP scoreboard's columns, the group finder's categories, the UI widgets' status lines ("Towers Controlled: 3").
+- **The gamepad-mode HUD** ([ADR-040](adr/040-gamepad-hud.md)): the button prompts along the bottom of every window, the controller legend, the radial menu, the "More Actions" menus, the cinematic skip button.
+- **Tutorials**: the tutorial popup for the tutorials Forever draws (whispers, grouping, friends, fatigue, swimming, broken items, raids, companions) and the class tutorial's pointer arrows.
+
+Hold the modifier for the live English; `/wfj area interface off` turns the whole area off without a reload (item and spell descriptions have their own switches). A line whose client English differs from the English it was drafted against shows English with no marker. `/wfj debug ui` counts the index, and `/wfj debug ui scan` lists the English still showing on open windows. Coverage is enforced from the client's source: every string the hooked surfaces can show is translated or excluded with a reason, against one inventory built from a Forever UI extract (`pipeline/ui_inventory.txt`). Window labels are Japanese before the window first opens, so tabs size to the Japanese.
+
+**Stays English:**
+- names: characters, pets, guilds and ranks, races and classes in lists, factions, skills, talent trees, spells, items, zones, NPCs, PvP rank titles, professions, recipes, channels, macros, addons, achievements, mounts ([Principles §2](architecture/principles.md#2-names-stay-in-english));
+- names in dropdown and menu entries, and font, locale and Edit Mode layout names;
+- what players type, chat prefixes that carry a channel link ("[Party]"), system chat lines whose English carries a link (loot rolls), combat log lines (a sealed string on Forever), and another addon's own lines;
+- dialogs whose text the client computes, and the confirmation words a player must type in English;
+- the collection's "NEW" badge and the frame-rate slider's "%d FPS" (kept in English letters);
+- a few composites the dictionary cannot reach, each listed with its reason in `pipeline/ui_exclusions.txt`: the trainer's "- Pet Spell" suffix, the pet XP bar, the "\<rank> of \<guild>" line, raid pullout labels and multi-unit reset times, the friends list's broadcast "(… ago)" tail;
+- the Store, catalog shop, WoW Token redemption and the authenticator, which run in Blizzard's secure environment where no addon can reach;
+- retail systems with no content on Forever (covenants, garrisons, azerite, archaeology, pet battles, the Great Vault and the like), Party Sync and SocialUI (both off on Forever), and the new-player experience and boost tutorial, which never run there.
+- **feature-id:** `interface-text`
+- **status:** shipped; the later windows, menus, dialogs, chat, table text, gamepad HUD and tutorials await their in-game checks
+- **regen-triggers:** `Core/UIStrings.lua`, `UI/*.lua` (the window modules in Main's list), `UI/{ButtonText,Labels,LabelTree,TooltipLines,SettingsKeys,HelpTooltip,LoadOnDemand}.lua`, `pipeline/wfj/core/numbered.py`, `pipeline/wfj/core/markup.py`, `pipeline/ui_keys.txt`, `pipeline/ui_inventory.txt`, `pipeline/forever_addons.txt`, `pipeline/forever_addon_dispositions.txt`, `pipeline/forever_titles.txt`, `Data/UI/UI_*.lua`
+
+## Control
+
+### Hold-to-see-English
+Holding the modifier key (default Alt) reveals the game's live English on every translated element; releasing restores the Japanese. No stored English, no dual display ([Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away)). The key can be Alt, Ctrl or Shift (either side), a left or right Alt / Ctrl / Shift only, any other single key, or mouse button 3–5, set by pressing it on the settings page or with `/wfj modifier <key>`. A key that already does something (an action button) is taken over while the addon is loaded; its own action comes back when the key changes or the addon is disabled ([ADR-018](adr/018-reveal-key-override-binding.md)). It cannot be the same key as the toggle key.
+- **feature-id:** `modifier-english`
+- **status:** shipped
+
+### Master switch and per-area toggles
+Translation on / off (slash command, settings page, or a bindable key set on the settings page or with `/wfj togglekey <key>`), and per-area toggles for quests, NPC talk (the talk window and NPC speech), item tooltips, spell tooltips, interface text and books & letters. New areas register as one entry.
+- **feature-id:** `settings`
+- **status:** shipped
+
+### Markers
+`[要更新 / English Changed]` for a translation whose English has changed since it was checked, and `[未翻訳 / Not Translated]` for text with no usable translation (none shipped, or the in-game check refused it). Both are on by default. Compact rows never carry the missing marker (the quest list's titles, tracker headers and objective lines), and an item whose generic `Equip:` lines translate shows none on its tooltip. In the quest window both show on a banner in the stone strip beside the portrait; the NPC talk window has its own banner above its parchment; in the quest map's details, on tooltips and in the book window they are inline above the text ([ADR-003](adr/003-ship-stale-with-marker.md)).
+- **feature-id:** `markers`
+- **status:** shipped
+
+### Word readings on hover
+Pointing at a Japanese word in quest or NPC-talk prose, on a plain-text book page or in a plain-text window label shows its reading (少し → すこし, 生き物 → いきもの) in a small box above it and tints the word; moving off hides it. Nothing is drawn until the mouse is on a word, and the box never shows while English shows. Where: the quest window (detail, progress, reward, greeting), the quest map's details pane and popup, the NPC talk window's greeting (not its option buttons), plain-text book and letter pages, and plain-text labels in windows. Not on tooltips (they cannot be hovered), objective lines, buttons, tabs, menus or the HUD. Readings are their own data, written per line and keyed to the Japanese they annotate: a line whose translation changes loses its reading until it is written again. Text holding a colour code or other `|` escape gets none. On by default: "Show readings when hovering a word" / 「単語にカーソルを合わせると読み方を表示」; turning it off takes effect at once, or `/wfj readings on|off` ([Readings](systems/readings.md), [ADR-036](adr/036-readings-hover-word-lists.md)).
+- **feature-id:** `readings`
+- **status:** shipped; every shipped quest, gossip, interface and plain-text book line with a word to annotate has its word list ([Coverage](operations/coverage.md))
+
+### Word card
+A word that carries a meaning shows a **word card** instead of the reading-only box: the word and its reading (a kana word shown once), the dictionary form `倒す　たおす` when it differs, then a short English meaning of the whole word as this sentence uses it (減らしてやって欲しい → "I want you to reduce (them) for me"), in a card built on the game's tooltip frame above the word, kept on screen. A verb or adjective with all its endings is one hover target; kana words that carry meaning (まだ, いる) are hover targets too. Meanings are written by the drafting model with the sentence in front of it, as part of the line's readings ([ADR-039](adr/039-word-meanings-written-in-context.md)). Where a Japanese word translates a word of the game's English line, the meaning uses the game's word, but never repeats the whole English line. The card shows on quest and NPC-talk prose, on plain-text book and letter pages, and on plain-text labels in every window (the quest window's 報酬, the character sheet, the spellbook, mail); never on buttons, tabs, menus, dropdowns, tooltips or the HUD ([ADR-041](adr/041-word-cards-on-window-labels.md)). The class and race words the addon fills in get a card with the English name. "Show word meanings in the reading box" on the main settings page, or `/wfj glosses on|off`, turns the meanings off (the reading-only box everywhere); `/wfj glosses` prints the state and how many meanings are loaded.
+- **feature-id:** `word-card`
+- **status:** shipped
+- **regen-triggers:** `UI/Readings.lua`, `Data/Reading/*.lua`, `Data/Gloss/*.lua`
+
+### Settings panel and `/wfj`
+Three settings pages on the game's own settings widgets, every label in one language: Japanese, or English while the reveal key is held or translation is off.
+- **WoW Forever Japanese**: version, memory and data counts; translation on / off, word readings, word meanings and the minimap button; the modifier (a list of Alt / Ctrl / Shift and their sides, plus a press-a-key button); the toggle key (Set key, Unbind, and Replace when the key is already used); what to translate; markers.
+- **English Collector**: on / off, status, clear (a second click confirms), the SavedVariables path and the issue link in copyable boxes.
+- **About & Help**: how it works, how to open the settings, every slash command, a **Report a line** button that opens the fix window, and the issue tracker's link.
+
+Opened from Esc → Options → AddOns, from a **設定** (Settings) button on the addon's row in the AddOn List, or with `/wfj config [collector|about]`. Slash commands: bare `/wfj` for status; `on|off|toggle`; `<setting> <value>` for any setting (`area quests off`, `modifier ctrl`); `config [collector|about]`; `readings [on|off]`; `glosses [on|off]`; `togglekey [<key>|none]` (refused in combat, on the modifier's key, or for a key name the page could not capture; a key used by another action binds when the command is repeated within 5 s); `fix`; `version`; `collector [on|off|status|path|clear]` (`clear` only when repeated within 5 s); and `debug` with `hash`, `quest|item|spell <id>`, `gossip`, `book`, `objective`, `ui`, `ui scan` and `fonts`. A bindable "Toggle translation" key.
+- **feature-id:** `options-panel`
+- **status:** shipped
+- **regen-triggers:** `UI/Options.lua`, `UI/OptionsText.lua`, `UI/OptionsWidgets.lua`, `UI/KeyCapture.lua`, `UI/AddonListButton.lua`, `UI/Slash.lua`, `Core/Settings.lua`
+
+### Report a line (fix reports)
+A player who finds a wrong, awkward or broken Japanese line reports it with clicks only. A **minimap button** (on by default; drag it around the minimap's edge) opens the **fix window** on left-click; right-click opens a menu: Translation on / off, Report a line, Settings, Hide this button. The addon's entry in Blizzard's addon dropdown on the minimap does the same, so a hidden button never locks anyone out. The About page's **Report a line** button and `/wfj fix` open the window too.
+
+The **Translations** tab lists the Japanese lines the addon showed this session as the player saw them, newest group first, filtered by **All**, **Quests & NPCs**, **Tooltips** or **Windows**. Clicking a line opens a box holding the line, which the player may rewrite, five reasons (Wrong meaning · Awkward / unnatural · Typo / broken text · A name was changed · Other) and an optional note. **Save** keeps it under **Pending** (up to 25, kept across logout). **Send report** walks through the steps: open the *Translation report* issue form (its address is in a copy box, since the game cannot open a browser), copy the report, paste and submit, then **Clear sent reports**. A check on GitHub reads the paste within a minute and comments whether it is whole; it never judges the translation. The window shows no English game text. The maintainer turns accepted reports into data: the fixed lines ship in the next release with their readings and meanings, and a player whose own Japanese ships is credited in `ATTRIBUTION.md` ([Fix reports](systems/fix-reports.md), [runbook](operations/fix-reports.md), [ADR-045](adr/045-player-fix-reports.md)).
+- **feature-id:** `fix-reports`
+- **status:** implemented; in-game check pending
+- **regen-triggers:** `Core/RecentLines.lua`, `Core/Reports.lua`, `Core/ReportText.lua`, `UI/FixWindow.lua`, `UI/MinimapButton.lua`, `pipeline/wfj/core/fix_report.py`, `pipeline/wfj/cmd/fix_report.py`, `.github/ISSUE_TEMPLATE/translation-report.yml`, `.github/workflows/report-check.yml`
+
+## Data
+
+### Collector
+Records English the addon does not recognise by its shipped hash (quest text, NPC dialogue with the ids of the NPCs that said each line, item and spell descriptions, quest-giver names) to its own SavedVariables (`WFJ_Collector`), in Blizzard's own tokens (the player's name as `$N`, class and race as `$C` / `$R`). It records no character, account, realm, location or time data, and refuses text naming the player elsewhere, the bind location or the addon's own Japanese. Capped at 4 MB. On by default ("Record English for future translations"), announced once in chat. `/wfj collector path` prints where the file is and the link to the `collector-dump` issue form; hand-off is manual, with no upload. `wfj import english collector <file>` validates a dump and adds its English to `data/english/` without overwriting other sources; `check`, `validate` and `stats` do not consult that English yet ([Collector](systems/collector.md), [ADR-013](adr/013-collector-english.md)).
+- **feature-id:** `collector`
+- **status:** shipped
+- **regen-triggers:** `Core/Collector.lua`, `pipeline/wfj/io/collector_dump.py`, `pipeline/wfj/core/report.py`, `.github/ISSUE_TEMPLATE/collector-dump.yml`
+
+### Trusted data build
+The pipeline imports the predecessor corpus and its lineage sources, keeps entries that pass ID alignment and are complete, and adds machine-drafted text with its model recorded; a machine variant never wins over a hand-written one without a logged ruling ([Principles §6](architecture/principles.md#6-provenance-on-every-line-people-over-machines)). Duplicates are resolved by a stated rule: a hand correction first, then human, then machine, then completeness and source priority. Hand corrections, machine drafts and rulings are carried across a rebuild ([ADR-012](adr/012-human-decisions-survive-regeneration.md)); each line tracks the English it was checked against, so a changed English makes it stale. `wfj generate` writes the addon's data files (id-range Lua shards keyed by game id, UI string shards keyed by string name, book pages by the hash of their English, readings and meanings, `Meta.lua` and the TOC's generated block), and `wfj validate` regenerates and diffs them on every pull request, with the schema, provenance, hash-collision, referential-integrity and UI-string rules ([Principles §5, §7](architecture/principles.md)). The English import ends with the **served** step: English is kept only for ids the Forever client lists, so the download carries only what Forever can show ([ADR-034](adr/034-forever-is-the-only-target.md)). `make stats` counts shipped lines per type by provenance; `wfj stats --stale` lists every shipped quest line that is stale or whose English differs across sources. The translation tooling is in [Translation batches](operations/translation-batches.md).
+- **feature-id:** `pipeline`
+- **status:** shipped
+- **regen-triggers:** `pipeline/wfj/**`, `data/SCHEMA`, `Makefile`
+
+### Client English (local tooling)
+Pipeline tooling, not part of the addon, that reads the client's English from the installed client.
+- **Quest cache:** `make wdb-copy` copies the client's quest cache out (read-only on the game folder) and `wfj import english wdb` imports title, objectives, description, area and objective text as `wdb@<build>` ([ADR-020](adr/020-quest-cache-harvest.md)). The cache's layout is pinned per client build; an unpinned build is refused by name. Filling the cache is the maintainer's step, with tooling kept outside the repository.
+- **Client tables:** `make tables-extract` reads items, spells, tooltip and buff text, UI strings and QuestV2 straight from the installed game's local archive with its hotfix cache applied, read-only and offline ([ADR-021](adr/021-client-tables-from-the-local-archive.md)). `make wago-fetch` downloads the same tables from wago.tools as a cross-check.
+- **Scope:** `make visible-spells` derives which spells a player can be shown, so translation work is scoped to text someone will read.
+- **Delta:** `wfj stats --delta REF [--capture PATH]` reports which lines changed status and what `data/english/` gained, lost or changed since a git ref.
+- **feature-id:** `harvest`
+- **status:** in use on the Forever beta client (build 1.60.1.70009)
+- **regen-triggers:** `pipeline/wfj/io/{wdb,casc,blte,db2,client_tables,dbcache,vmangos,tables_stamp}.py`, `pipeline/wfj/dev/{wdb_layout,client_tables,tables_stamp}.py`, `pipeline/wfj/cmd/{import_,import_english,import_predecessor,served,stats}.py`, `Makefile`
+
+## Not in v1 (by decision)
+Nameplates and unit names · Japanese names of people, places or things (names stay English) · a "show both" mode · readings above every word, or inline `漢字(かんじ)` (hover only) · readings on tooltips, HTML book pages and objective lines · font choice or size · per-character profiles · any cloud or upload feature.

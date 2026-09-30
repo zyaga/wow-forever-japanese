@@ -1,0 +1,41 @@
+{"id": 236002, "field": "name", "en": "List of Components", "hash": "fe5efa1c7bbf279c", "src": "db2@1.60.1.70009"}
+{"id": 236354, "field": "name", "en": "Aspirant's Seal of the Dawn", "hash": "c0b069918bdb8cea", "src": "db2@1.60.1.70009"}
+{"id": 236354, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your damage by ${$m1/100}.2% and your health by ${$m2/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "239ff9c8795547b9", "src": "db2@1.60.1.70009"}
+{"id": 236355, "field": "name", "en": "Initiate's Seal of the Dawn", "hash": "e634e35b733186e3", "src": "db2@1.60.1.70009"}
+{"id": 236355, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your damage by ${$m1/100}.2% and your health by ${$m2/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "239ff9c8795547b9", "src": "db2@1.60.1.70009"}
+{"id": 236356, "field": "name", "en": "Squire's Seal of the Dawn", "hash": "06b491be77e8ded8", "src": "db2@1.60.1.70009"}
+{"id": 236356, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your damage by ${$m1/100}.2% and your health by ${$m2/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "239ff9c8795547b9", "src": "db2@1.60.1.70009"}
+{"id": 236357, "field": "name", "en": "Knight's Seal of the Dawn", "hash": "2cce70108ecb37c0", "src": "db2@1.60.1.70009"}
+{"id": 236357, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your damage by ${$m1/100}.2% and your health by ${$m2/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "239ff9c8795547b9", "src": "db2@1.60.1.70009"}
+{"id": 236382, "field": "name", "en": "Knight's Seal of the Dawn", "hash": "2cce70108ecb37c0", "src": "db2@1.60.1.70009"}
+{"id": 236382, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your healing by ${$m1/100}.2% and your health by ${$m2/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "fb50752c3156e444", "src": "db2@1.60.1.70009"}
+{"id": 236383, "field": "name", "en": "Squire's Seal of the Dawn", "hash": "06b491be77e8ded8", "src": "db2@1.60.1.70009"}
+{"id": 236383, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your healing by ${$m1/100}.2% and your health by ${$m2/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "fb50752c3156e444", "src": "db2@1.60.1.70009"}
+{"id": 236384, "field": "name", "en": "Initiate's Seal of the Dawn", "hash": "e634e35b733186e3", "src": "db2@1.60.1.70009"}
+{"id": 236384, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your healing by ${$m1/100}.2% and your health by ${$m2/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "fb50752c3156e444", "src": "db2@1.60.1.70009"}
+{"id": 236385, "field": "name", "en": "Aspirant's Seal of the Dawn", "hash": "c0b069918bdb8cea", "src": "db2@1.60.1.70009"}
+{"id": 236385, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your healing by ${$m1/100}.2% and your health by ${$m2/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "fb50752c3156e444", "src": "db2@1.60.1.70009"}
+{"id": 236393, "field": "name", "en": "Knight's Seal of the Dawn", "hash": "2cce70108ecb37c0", "src": "db2@1.60.1.70009"}
+{"id": 236393, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your threat caused by ${$m1/100}.2%, your damage by ${$m2/100}.2%, and your health by ${$m3/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "3ac5cc8cfadf3a8b", "src": "db2@1.60.1.70009"}
+{"id": 236394, "field": "name", "en": "Squire's Seal of the Dawn", "hash": "06b491be77e8ded8", "src": "db2@1.60.1.70009"}
+{"id": 236394, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your threat caused by ${$m1/100}.2%, your damage by ${$m2/100}.2%, and your health by ${$m3/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "3ac5cc8cfadf3a8b", "src": "db2@1.60.1.70009"}
+{"id": 236395, "field": "name", "en": "Initiate's Seal of the Dawn", "hash": "e634e35b733186e3", "src": "db2@1.60.1.70009"}
+{"id": 236395, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your threat caused by ${$m1/100}.2%, your damage by ${$m2/100}.2%, and your health by ${$m3/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "3ac5cc8cfadf3a8b", "src": "db2@1.60.1.70009"}
+{"id": 236396, "field": "name", "en": "Aspirant's Seal of the Dawn", "hash": "c0b069918bdb8cea", "src": "db2@1.60.1.70009"}
+{"id": 236396, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your threat caused by ${$m1/100}.2%, your damage by ${$m2/100}.2%, and your health by ${$m3/100}.2% for each Sanctified item equipped.  (Equipping more than $1223336s2 Sanctified items provides no additional benefit)", "hash": "3ac5cc8cfadf3a8b", "src": "db2@1.60.1.70009"}
+{"id": 236414, "field": "name", "en": "Damaged Undermine Supply Crate", "hash": "07f156371d2c4ab0", "src": "db2@1.60.1.70009"}
+{"id": 236414, "field": "description", "en": "This dented and damaged crate looks like it quite literally fell off the back of a zeppelin", "hash": "68f7e7f87fe82eaf", "src": "db2@1.60.1.70009"}
+{"id": 236631, "field": "name", "en": "Bloodmaw's Basher", "hash": "013a0ae7093fe572", "src": "db2@1.60.1.70009"}
+{"id": 236754, "field": "name", "en": "Recipe: Distilled Firewater", "hash": "42f8223367fe83ba", "src": "db2@1.60.1.70009"}
+{"id": 236754, "field": "description", "en": "Teaches you how to craft Distilled Firewater.", "hash": "bb5be81bc1417844", "src": "db2@1.60.1.70009"}
+{"id": 236755, "field": "name", "en": "[TMP] Funerary Headdress", "hash": "e3b2efb112a509cc", "src": "db2@1.60.1.70009"}
+{"id": 236759, "field": "name", "en": "[TMP] Furbolg Ritual Stave", "hash": "d3817e04bcfc18a7", "src": "db2@1.60.1.70009"}
+{"id": 236760, "field": "name", "en": "[TMP] Satyrbane", "hash": "1a45ede371880577", "src": "db2@1.60.1.70009"}
+{"id": 236872, "field": "name", "en": "Schematic: Creepy Censor Sensors", "hash": "51faf32095f17be2", "src": "db2@1.60.1.70009"}
+{"id": 236872, "field": "description", "en": "Teaches you how to craft Creepy Censor Sensors.", "hash": "26e7963c5c071505", "src": "db2@1.60.1.70009"}
+{"id": 236878, "field": "name", "en": "Mysterious Relic", "hash": "444ff0726e6f47d2", "src": "db2@1.60.1.70009"}
+{"id": 236878, "field": "description", "en": "Shadowy, yet unbroken. A relic of encroaching darkness.", "hash": "dfa5e521ba90a7b2", "src": "db2@1.60.1.70009"}
+{"id": 236879, "field": "name", "en": "Mysterious Relic", "hash": "444ff0726e6f47d2", "src": "db2@1.60.1.70009"}
+{"id": 236879, "field": "description", "en": "Discordant withering screams echo a harmonius bloom. The silvered edge outpours horror.", "hash": "3aa67a5b307a525c", "src": "db2@1.60.1.70009"}
+{"id": 236880, "field": "name", "en": "Mysterious Relic", "hash": "444ff0726e6f47d2", "src": "db2@1.60.1.70009"}
+{"id": 236880, "field": "description", "en": "False eidolons cling to the unexposed hilt clamoring for the grip of an ancient king.", "hash": "046d5b50c6562baf", "src": "db2@1.60.1.70009"}

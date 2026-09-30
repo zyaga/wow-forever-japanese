@@ -1,0 +1,455 @@
+{"id": 274000, "field": "name", "en": "Pattern: Spiritcaller Leggings", "hash": "a81f87d60b089d0b", "src": "db2@1.60.1.70009"}
+{"id": 274000, "field": "description", "en": "Teaches you how to craft Spiritcaller Leggings.", "hash": "912093a30c3846c7", "src": "db2@1.60.1.70009"}
+{"id": 274001, "field": "name", "en": "Pattern: Spiritcaller Grips", "hash": "c0df270e3c06065b", "src": "db2@1.60.1.70009"}
+{"id": 274001, "field": "description", "en": "Teaches you how to craft Spiritcaller Grips.", "hash": "d85766cb4eb93549", "src": "db2@1.60.1.70009"}
+{"id": 274002, "field": "name", "en": "Pattern: Spiritcaller Spaulders", "hash": "bbfa0789ab07393b", "src": "db2@1.60.1.70009"}
+{"id": 274002, "field": "description", "en": "Teaches you how to craft Spiritcaller Spaulders.", "hash": "4af3aed6e622a44d", "src": "db2@1.60.1.70009"}
+{"id": 274003, "field": "name", "en": "Pattern: Spiritcaller Treads", "hash": "775baa072ee116bb", "src": "db2@1.60.1.70009"}
+{"id": 274003, "field": "description", "en": "Teaches you how to craft Spiritcaller Treads.", "hash": "998f816ef69d3af0", "src": "db2@1.60.1.70009"}
+{"id": 274004, "field": "name", "en": "Pattern: Spiritcaller Pants", "hash": "5c94b9dac2371f4d", "src": "db2@1.60.1.70009"}
+{"id": 274004, "field": "description", "en": "Teaches you how to craft Spiritcaller Pants.", "hash": "8641843031e68c11", "src": "db2@1.60.1.70009"}
+{"id": 274005, "field": "name", "en": "Pattern: Spiritcaller Gauntlets", "hash": "12247aadb5242f5a", "src": "db2@1.60.1.70009"}
+{"id": 274005, "field": "description", "en": "Teaches you how to craft Spiritcaller Gauntlets.", "hash": "62ac988f4b64cbff", "src": "db2@1.60.1.70009"}
+{"id": 274006, "field": "name", "en": "Pattern: Spiritcaller Epaulets", "hash": "38bd6a8b4eb9f110", "src": "db2@1.60.1.70009"}
+{"id": 274006, "field": "description", "en": "Teaches you how to craft Spiritcaller Epaulets.", "hash": "91eb95250440497a", "src": "db2@1.60.1.70009"}
+{"id": 274007, "field": "name", "en": "Pattern: Spiritcaller Greaves", "hash": "e6d99de26463753d", "src": "db2@1.60.1.70009"}
+{"id": 274007, "field": "description", "en": "Teaches you how to craft Spiritcaller Greaves.", "hash": "861186e48dc4a57d", "src": "db2@1.60.1.70009"}
+{"id": 274008, "field": "name", "en": "Pattern: Demonheart Leggings", "hash": "05da6211b297e3ec", "src": "db2@1.60.1.70009"}
+{"id": 274008, "field": "description", "en": "Teaches you how to craft Demonheart Leggings.", "hash": "8467ad6add2198d8", "src": "db2@1.60.1.70009"}
+{"id": 274009, "field": "name", "en": "Pattern: Demonheart Gloves", "hash": "9164e4cade866956", "src": "db2@1.60.1.70009"}
+{"id": 274009, "field": "description", "en": "Teaches you how to craft Demonheart Gloves.", "hash": "247a4a8f7e4ab4c8", "src": "db2@1.60.1.70009"}
+{"id": 274010, "field": "name", "en": "Pattern: Demonheart Spaulders", "hash": "b297b21b498b26ba", "src": "db2@1.60.1.70009"}
+{"id": 274010, "field": "description", "en": "Teaches you how to craft Demonheart Spaulders.", "hash": "c855df88c4258e82", "src": "db2@1.60.1.70009"}
+{"id": 274011, "field": "name", "en": "Pattern: Demonheart Boots", "hash": "53c261d046e3899f", "src": "db2@1.60.1.70009"}
+{"id": 274011, "field": "description", "en": "Teaches you how to craft Demonheart Boots.", "hash": "1c73da19fd7cae48", "src": "db2@1.60.1.70009"}
+{"id": 274012, "field": "name", "en": "Plans: Legplates of Glory", "hash": "801bd739fb35f016", "src": "db2@1.60.1.70009"}
+{"id": 274012, "field": "description", "en": "Teaches you how to craft Legplates of Glory.", "hash": "ea5d86d029df332b", "src": "db2@1.60.1.70009"}
+{"id": 274013, "field": "name", "en": "Plans: Gauntlets of Glory", "hash": "1a4568c9de87af1d", "src": "db2@1.60.1.70009"}
+{"id": 274013, "field": "description", "en": "Teaches you how to craft Gauntlets of Glory.", "hash": "cda3027cdad9b48f", "src": "db2@1.60.1.70009"}
+{"id": 274014, "field": "name", "en": "Plans: Shoulders of Glory", "hash": "80f8b68d043484eb", "src": "db2@1.60.1.70009"}
+{"id": 274014, "field": "description", "en": "Teaches you how to craft Shoulders of Glory.", "hash": "5b63ced1e5a3c26d", "src": "db2@1.60.1.70009"}
+{"id": 274015, "field": "name", "en": "Plans: Greaves of Glory", "hash": "206f930093c8d04b", "src": "db2@1.60.1.70009"}
+{"id": 274015, "field": "description", "en": "Teaches you how to craft Greaves of Glory.", "hash": "016eed5bff0b056a", "src": "db2@1.60.1.70009"}
+{"id": 274016, "field": "name", "en": "Plans: Legguards of Glory", "hash": "845e2dc236b9501e", "src": "db2@1.60.1.70009"}
+{"id": 274016, "field": "description", "en": "Teaches you how to craft Legguards of Glory.", "hash": "184fcefa60f5f23b", "src": "db2@1.60.1.70009"}
+{"id": 274017, "field": "name", "en": "Plans: Handguards of Glory", "hash": "45a5d2d0ee3296de", "src": "db2@1.60.1.70009"}
+{"id": 274017, "field": "description", "en": "Teaches you how to craft Handguards of Glory.", "hash": "c767a4ceb40d3385", "src": "db2@1.60.1.70009"}
+{"id": 274018, "field": "name", "en": "Plans: Pauldrons of Glory", "hash": "5e06225d05f3c428", "src": "db2@1.60.1.70009"}
+{"id": 274018, "field": "description", "en": "Teaches you how to craft Pauldrons of Glory.", "hash": "7941f9e79762bdc2", "src": "db2@1.60.1.70009"}
+{"id": 274019, "field": "name", "en": "Plans: Sabatons of Glory", "hash": "766038980a574eca", "src": "db2@1.60.1.70009"}
+{"id": 274019, "field": "description", "en": "Teaches you how to craft Sabatons of Glory.", "hash": "f79affb35e14ae1d", "src": "db2@1.60.1.70009"}
+{"id": 274020, "field": "name", "en": "Seal of Armorcrafting", "hash": "31f41d5e30ff67f3", "src": "db2@1.60.1.70009"}
+{"id": 274020, "field": "description", "en": "Redeem with Aisarra Nightmeadow for an armorcrafting recipe of your choice from her current selection.", "hash": "6ae32dc557a8531a", "src": "db2@1.60.1.70009"}
+{"id": 274021, "field": "name", "en": "Barrens Headband", "hash": "6f768a95117945a3", "src": "db2@1.60.1.70009"}
+{"id": 274022, "field": "name", "en": "Tough Guy's Eyepatch", "hash": "95fcc7502ff90db0", "src": "db2@1.60.1.70009"}
+{"id": 274023, "field": "name", "en": "Stolen Wastewander Cowl", "hash": "cbdd81e4864978b1", "src": "db2@1.60.1.70009"}
+{"id": 274024, "field": "name", "en": "Fizzbolt's Fashionable Fedora", "hash": "8ac7d21a998fc275", "src": "db2@1.60.1.70009"}
+{"id": 274025, "field": "name", "en": "Guardians of Hyjal Tabard", "hash": "c468e0a363313353", "src": "db2@1.60.1.70009"}
+{"id": 274026, "field": "name", "en": "Extravagant Extravaganza Coin", "hash": "1f26d0cb94cb9976", "src": "db2@1.60.1.70009"}
+{"id": 274026, "field": "description", "en": "Awarded to the winners of the Stranglethorn Fishing Extravaganza. Exchange for a prize of your choosing from Jang.", "hash": "60a0554de3fb5380", "src": "db2@1.60.1.70009"}
+{"id": 274027, "field": "name", "en": "Placeholder", "hash": "3cf7606b6f7ee78f", "src": "db2@1.60.1.70009"}
+{"id": 274028, "field": "name", "en": "Blood Red Bandana", "hash": "846fa90602a465a8", "src": "db2@1.60.1.70009"}
+{"id": 274029, "field": "name", "en": "Ornate Shackle Key", "hash": "9854b7f8147c67f7", "src": "db2@1.60.1.70009"}
+{"id": 274029, "field": "description", "en": "The Questioner had a variety of keys on his person, but this one is particularly ornate.", "hash": "43ace8e1a76b938a", "src": "db2@1.60.1.70009"}
+{"id": 274030, "field": "name", "en": "Malleable Essence of Nature", "hash": "935e95cbbaec2936", "src": "db2@1.60.1.70009"}
+{"id": 274030, "field": "description", "en": "Acquired from disenchanting items from Hyjal Summit or Barrow Deeps. Its power can be harnessed in the creation of powerful crafted items.", "hash": "30c15756cf1fdf9c", "src": "db2@1.60.1.70009"}
+{"id": 274035, "field": "name", "en": "Staghide Drape", "hash": "6cb8309be8cf8ca6", "src": "db2@1.60.1.70009"}
+{"id": 274041, "field": "name", "en": "Document Box", "hash": "a6c24c4e045063d5", "src": "db2@1.60.1.70009"}
+{"id": 274041, "field": "description", "en": "A strange collection of maps, pictures, and official-looking documents. This might be worth a bit of gold at a merchant... or it might be worth a lot more to the right person.", "hash": "eb0f5d1acaa5b716", "src": "db2@1.60.1.70009"}
+{"id": 274042, "field": "name", "en": "Skullduggery Belt", "hash": "ffc0e28c8a76d992", "src": "db2@1.60.1.70009"}
+{"id": 274042, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70009"}
+{"id": 274044, "field": "name", "en": "Twisted Fire Totem", "hash": "e2673e329815dbb8", "src": "db2@1.60.1.70009"}
+{"id": 274045, "field": "name", "en": "Twisted Earth Totem", "hash": "a5d765d8042def63", "src": "db2@1.60.1.70009"}
+{"id": 274046, "field": "name", "en": "Twisted Water Totem", "hash": "d68901e208387902", "src": "db2@1.60.1.70009"}
+{"id": 274047, "field": "name", "en": "Twisted Air Totem", "hash": "ff3221b457a58064", "src": "db2@1.60.1.70009"}
+{"id": 274048, "field": "name", "en": "9-60 Battery Pack", "hash": "f4f5a8e0aeeff50f", "src": "db2@1.60.1.70009"}
+{"id": 274048, "field": "description", "en": "Restore $s1 charges to a Manual Crowd Pummeler device in your possession.", "hash": "aac732e36c7464f8", "src": "db2@1.60.1.70009"}
+{"id": 274049, "field": "name", "en": "Schematic: 9-60 Battery Pack", "hash": "811a5228d805877a", "src": "db2@1.60.1.70009"}
+{"id": 274049, "field": "description", "en": "Teaches you how to make a 9-60 Battery Pack.", "hash": "4360919ee65dfe1b", "src": "db2@1.60.1.70009"}
+{"id": 274068, "field": "name", "en": "Thermaplugg Medal of Honor", "hash": "a29224f3fe0288d5", "src": "db2@1.60.1.70009"}
+{"id": 274068, "field": "description", "en": "Azeroth's Best Pummeler", "hash": "4d08b39008afbaf7", "src": "db2@1.60.1.70009"}
+{"id": 274077, "field": "name", "en": "Mason's Note", "hash": "ddfca4eb44b160a8", "src": "db2@1.60.1.70009"}
+{"id": 274077, "field": "description", "en": "A few nonsensical letters and numbers are scribbled onto the parchment.", "hash": "36e036dc9d754d8d", "src": "db2@1.60.1.70009"}
+{"id": 274092, "field": "name", "en": "Sharpened Cutlery", "hash": "cae4f99abd1fcc31", "src": "db2@1.60.1.70009"}
+{"id": 274093, "field": "name", "en": "Glowing Kaleidoscope", "hash": "8f2ef57cad368f93", "src": "db2@1.60.1.70009"}
+{"id": 274093, "field": "description", "en": "Rainbow power!\r\n", "hash": "372b319f042b39cc", "src": "db2@1.60.1.70009"}
+{"id": 274149, "field": "name", "en": "Thornweaver Drape", "hash": "33e028f870990b3b", "src": "db2@1.60.1.70009"}
+{"id": 274151, "field": "name", "en": "Tender Nightsaber Haunch", "hash": "666ed38d5cf59312", "src": "db2@1.60.1.70009"}
+{"id": 274151, "field": "description", "en": "Place on the hills along the north-western ridge of the summit.", "hash": "2077dc4bcbfd1988", "src": "db2@1.60.1.70009"}
+{"id": 274152, "field": "name", "en": "Roogug's Severed Head", "hash": "a5f188ff36b9b218", "src": "db2@1.60.1.70009"}
+{"id": 274152, "field": "description", "en": "Raise the severed head of Roogug, Horrifying and Silencing all Swine within $r yards for $d.", "hash": "06c56e7ee794cc3b", "src": "db2@1.60.1.70009"}
+{"id": 274155, "field": "name", "en": "Geomancer Headdress", "hash": "786a0e8ee79624fd", "src": "db2@1.60.1.70009"}
+{"id": 274158, "field": "name", "en": "Death Prophet Spine", "hash": "37e66c7a344dccd6", "src": "db2@1.60.1.70009"}
+{"id": 274159, "field": "name", "en": "Thorncursed Grips", "hash": "dc7e833945198967", "src": "db2@1.60.1.70009"}
+{"id": 274159, "field": "description", "en": "Your melee weapon attacks deal $1293333s1 Nature damage to both you and your target.\r\n", "hash": "ccaa519be3780358", "src": "db2@1.60.1.70009"}
+{"id": 274162, "field": "name", "en": "Venom-dripping Heart", "hash": "19aeba67ee435811", "src": "db2@1.60.1.70009"}
+{"id": 274163, "field": "name", "en": "Vacant Heart", "hash": "579fd575b7510730", "src": "db2@1.60.1.70009"}
+{"id": 274165, "field": "name", "en": "Eternity Cloth", "hash": "c4ca93a3e9401d1a", "src": "db2@1.60.1.70009"}
+{"id": 274165, "field": "description", "en": "Dunk the venomous heart in the Well of Eternity. Wait a second...\nRunecloth waterlogged with the Well of Eternity", "hash": "c8157966577bf65e", "src": "db2@1.60.1.70009"}
+{"id": 274176, "field": "name", "en": "Premier Scalemail Walkers", "hash": "a46702966a72c844", "src": "db2@1.60.1.70009"}
+{"id": 274176, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70009"}
+{"id": 274177, "field": "name", "en": "Premier Flatmail Grips", "hash": "a1dbc59719eb246c", "src": "db2@1.60.1.70009"}
+{"id": 274178, "field": "name", "en": "Premier Scalemail Helm", "hash": "2d62258abbcce6f3", "src": "db2@1.60.1.70009"}
+{"id": 274179, "field": "name", "en": "Premier Scalemail Chestpiece", "hash": "8dc0eb939eddf756", "src": "db2@1.60.1.70009"}
+{"id": 274180, "field": "name", "en": "Premier Flatmail Leggings", "hash": "eadff287c3618ee5", "src": "db2@1.60.1.70009"}
+{"id": 274181, "field": "name", "en": "Premier Flatmail Shoulders", "hash": "0aaa525f7972aebd", "src": "db2@1.60.1.70009"}
+{"id": 274182, "field": "name", "en": "Premier Flatmail Wristguards", "hash": "59e87e5a20fcde2b", "src": "db2@1.60.1.70009"}
+{"id": 274183, "field": "name", "en": "Premier Knight-Champion's Flatmail Boots", "hash": "da3727e4c16625a8", "src": "db2@1.60.1.70009"}
+{"id": 274183, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70009"}
+{"id": 274184, "field": "name", "en": "Premier Lieutenant Commander's Flatmail Gauntlets", "hash": "c1c490eef6ad97a4", "src": "db2@1.60.1.70009"}
+{"id": 274185, "field": "name", "en": "Premier Knight-Captain's Flatmail Waistband", "hash": "f6bb0cb6ccf4f550", "src": "db2@1.60.1.70009"}
+{"id": 274186, "field": "name", "en": "Premier Knight-Captain's Flatmail Bracers", "hash": "a395cf1ef29b0c5b", "src": "db2@1.60.1.70009"}
+{"id": 274187, "field": "name", "en": "Premier Field Marshal's Flatmail Armor", "hash": "18e0ce86f0aec6d6", "src": "db2@1.60.1.70009"}
+{"id": 274188, "field": "name", "en": "Premier Field Marshal's Flatmail Helm", "hash": "765dd23b9b14f304", "src": "db2@1.60.1.70009"}
+{"id": 274189, "field": "name", "en": "Premier Marshal's Flatmail Leggings", "hash": "b81a09e621efca42", "src": "db2@1.60.1.70009"}
+{"id": 274190, "field": "name", "en": "Premier Marshal's Flatmail Spaulders", "hash": "e92a95e1caafd00c", "src": "db2@1.60.1.70009"}
+{"id": 274192, "field": "name", "en": "Premier Flatmail Greaves", "hash": "ed38e318ef77f3d6", "src": "db2@1.60.1.70009"}
+{"id": 274192, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70009"}
+{"id": 274193, "field": "name", "en": "Premier Scalemail Vices", "hash": "2f8005fa21c75e7e", "src": "db2@1.60.1.70009"}
+{"id": 274194, "field": "name", "en": "Premier Flatmail Hauberk", "hash": "071bd609137f480a", "src": "db2@1.60.1.70009"}
+{"id": 274195, "field": "name", "en": "Premier Scalemail Legguards", "hash": "e627bb009bfb23a5", "src": "db2@1.60.1.70009"}
+{"id": 274196, "field": "name", "en": "Premier Flatmail Headguard", "hash": "6357861cf6ffe58c", "src": "db2@1.60.1.70009"}
+{"id": 274197, "field": "name", "en": "Premier Scalemail Pauldrons", "hash": "27f1dd5f3acb3be2", "src": "db2@1.60.1.70009"}
+{"id": 274198, "field": "name", "en": "Premier Knight-Champion's Scalemail Boots", "hash": "c571d29c23ecf251", "src": "db2@1.60.1.70009"}
+{"id": 274198, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70009"}
+{"id": 274199, "field": "name", "en": "Premier Lieutenant Commander's Scalemail Gauntlets", "hash": "497b36cc146c173d", "src": "db2@1.60.1.70009"}
+{"id": 274200, "field": "name", "en": "Premier Knight-Captain's Scalemail Waistband", "hash": "035d8f3aaed5c005", "src": "db2@1.60.1.70009"}
+{"id": 274201, "field": "name", "en": "Premier Knight-Captain's Scalemail Bracers", "hash": "375bf040d564f5f4", "src": "db2@1.60.1.70009"}
+{"id": 274202, "field": "name", "en": "Premier Field Marshal's Scalemail Armor", "hash": "8c3bd30423174def", "src": "db2@1.60.1.70009"}
+{"id": 274203, "field": "name", "en": "Premier Field Marshal's Scalemail Helm", "hash": "0db868bfbc2e971d", "src": "db2@1.60.1.70009"}
+{"id": 274204, "field": "name", "en": "Premier Marshal's Scalemail Leggings", "hash": "a71647b4268e410f", "src": "db2@1.60.1.70009"}
+{"id": 274205, "field": "name", "en": "Premier Marshal's Scalemail Spaulders", "hash": "343e36230a59170d", "src": "db2@1.60.1.70009"}
+{"id": 274206, "field": "name", "en": "Premier Knight-Champion's Linkmail Boots", "hash": "079c7cb2f8dfe9df", "src": "db2@1.60.1.70009"}
+{"id": 274206, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70009"}
+{"id": 274207, "field": "name", "en": "Premier Lieutenant Commander's Linkmail Gauntlets", "hash": "4460956598eb19cf", "src": "db2@1.60.1.70009"}
+{"id": 274208, "field": "name", "en": "Premier Knight-Captain's Linkmail Waistband", "hash": "7957112d6f32777b", "src": "db2@1.60.1.70009"}
+{"id": 274209, "field": "name", "en": "Premier Knight-Captain's Linkmail Bracers", "hash": "c156a09e6caa37e4", "src": "db2@1.60.1.70009"}
+{"id": 274210, "field": "name", "en": "Premier Field Marshal's Linkmail Armor", "hash": "4646234f28288b1e", "src": "db2@1.60.1.70009"}
+{"id": 274211, "field": "name", "en": "Premier Field Marshal's Linkmail Helm", "hash": "51954ff36c314242", "src": "db2@1.60.1.70009"}
+{"id": 274212, "field": "name", "en": "Premier Marshal's Linkmail Leggings", "hash": "f1c53eb13f89891d", "src": "db2@1.60.1.70009"}
+{"id": 274213, "field": "name", "en": "Premier Marshal's Linkmail Spaulders", "hash": "6bc69a586ced5237", "src": "db2@1.60.1.70009"}
+{"id": 274214, "field": "name", "en": "Premier Flatmail Girdle", "hash": "36ac47dd33d95b02", "src": "db2@1.60.1.70009"}
+{"id": 274215, "field": "name", "en": "Premier Scalemail Wristguards", "hash": "9d4f7ded1e689f54", "src": "db2@1.60.1.70009"}
+{"id": 274217, "field": "name", "en": "Premier Linkmail Walkers", "hash": "1e8e739cb3ca49f6", "src": "db2@1.60.1.70009"}
+{"id": 274217, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70009"}
+{"id": 274218, "field": "name", "en": "Premier Linkmail Helm", "hash": "c136da2d010168e1", "src": "db2@1.60.1.70009"}
+{"id": 274219, "field": "name", "en": "Premier Linkmail Chestpiece", "hash": "63137b87a674c112", "src": "db2@1.60.1.70009"}
+{"id": 274220, "field": "name", "en": "Premier Linkmail Vices", "hash": "d55876da50a7d739", "src": "db2@1.60.1.70009"}
+{"id": 274221, "field": "name", "en": "Premier Linkmail Legguards", "hash": "841e96fa9bab12cb", "src": "db2@1.60.1.70009"}
+{"id": 274222, "field": "name", "en": "Premier Linkmail Pauldrons", "hash": "c5e8b9543a7b2b08", "src": "db2@1.60.1.70009"}
+{"id": 274223, "field": "name", "en": "Premier Linkmail Wristguards", "hash": "c68f275b0c5dc1a2", "src": "db2@1.60.1.70009"}
+{"id": 274224, "field": "name", "en": "Premier Linkmail Girdle", "hash": "7186ab2bb4a1edc1", "src": "db2@1.60.1.70009"}
+{"id": 274225, "field": "name", "en": "Premier Scalemail Girdle", "hash": "93c4e6e252b8c930", "src": "db2@1.60.1.70009"}
+{"id": 274226, "field": "name", "en": "Premier Scaled Sabatons", "hash": "b44806269044afb3", "src": "db2@1.60.1.70009"}
+{"id": 274227, "field": "name", "en": "Premier Scaled Gauntlets", "hash": "fa6615c4e38f54de", "src": "db2@1.60.1.70009"}
+{"id": 274227, "field": "description", "en": "Increases the duration of your Repentance by ${$m1/1000} sec.", "hash": "6cf4f47da880c362", "src": "db2@1.60.1.70009"}
+{"id": 274228, "field": "name", "en": "Premier Scaled Cinch", "hash": "2d97de474f781308", "src": "db2@1.60.1.70009"}
+{"id": 274229, "field": "name", "en": "Premier Scaled Armsplints", "hash": "9fd44fd104022a0b", "src": "db2@1.60.1.70009"}
+{"id": 274230, "field": "name", "en": "Premier Scaled Breastplate", "hash": "b386e14a41ef6cfe", "src": "db2@1.60.1.70009"}
+{"id": 274231, "field": "name", "en": "Premier Scaled Headguard", "hash": "232287fb59f38e42", "src": "db2@1.60.1.70009"}
+{"id": 274232, "field": "name", "en": "Premier Scaled Leggings", "hash": "946661f06a7e8a9c", "src": "db2@1.60.1.70009"}
+{"id": 274233, "field": "name", "en": "Premier Scaled Shoulders", "hash": "ca755439dc665762", "src": "db2@1.60.1.70009"}
+{"id": 274234, "field": "name", "en": "Premier Legionnaire's Scaled Armguards", "hash": "b1c2d3d37837820e", "src": "db2@1.60.1.70009"}
+{"id": 274235, "field": "name", "en": "Premier Legionnaire's Scaled Belt", "hash": "67570f754bdb079f", "src": "db2@1.60.1.70009"}
+{"id": 274236, "field": "name", "en": "Premier Champion's Scaled Gloves", "hash": "dddc2a99ee867071", "src": "db2@1.60.1.70009"}
+{"id": 274236, "field": "description", "en": "Increases the duration of your Repentance by ${$m1/1000} sec.", "hash": "6cf4f47da880c362", "src": "db2@1.60.1.70009"}
+{"id": 274237, "field": "name", "en": "Premier Centurion's Scaled Boots", "hash": "773f59dca8d466fe", "src": "db2@1.60.1.70009"}
+{"id": 274238, "field": "name", "en": "Premier Warlord's Scaled Chestplate", "hash": "0401f483af17548e", "src": "db2@1.60.1.70009"}
+{"id": 274239, "field": "name", "en": "Premier Warlord's Scaled Faceguard", "hash": "9ba0332497724a58", "src": "db2@1.60.1.70009"}
+{"id": 274240, "field": "name", "en": "Premier General's Scaled Legplates", "hash": "a8b7ece143a2152e", "src": "db2@1.60.1.70009"}
+{"id": 274241, "field": "name", "en": "Premier General's Scaled Pauldrons", "hash": "b0d648e4d2e9069a", "src": "db2@1.60.1.70009"}
+{"id": 274244, "field": "name", "en": "Premier Lamellar Breastplate", "hash": "76bbf2fd903fc5b1", "src": "db2@1.60.1.70009"}
+{"id": 274245, "field": "name", "en": "Premier Lamellar Leggings", "hash": "ba98e5439db57038", "src": "db2@1.60.1.70009"}
+{"id": 274246, "field": "name", "en": "Premier Lamellar Headguard", "hash": "aefbbbd30301accf", "src": "db2@1.60.1.70009"}
+{"id": 274247, "field": "name", "en": "Premier Lamellar Shoulders", "hash": "564e8816857475ef", "src": "db2@1.60.1.70009"}
+{"id": 274248, "field": "name", "en": "Premier Legionnaire's Lamellar Armguards", "hash": "fbaf5540aae5eaad", "src": "db2@1.60.1.70009"}
+{"id": 274249, "field": "name", "en": "Premier Legionnaire's Lamellar Belt", "hash": "4df4039a1825b383", "src": "db2@1.60.1.70009"}
+{"id": 274250, "field": "name", "en": "Premier Champion's Lamellar Gloves", "hash": "fe761d7f3643646b", "src": "db2@1.60.1.70009"}
+{"id": 274250, "field": "description", "en": "Increases the critical strike chance of your Flash of Light by $s1%.\r\n", "hash": "04fb7529ce96c7d6", "src": "db2@1.60.1.70009"}
+{"id": 274251, "field": "name", "en": "Premier Centurion's Lamellar Boots", "hash": "d3d70582af2a69d8", "src": "db2@1.60.1.70009"}
+{"id": 274252, "field": "name", "en": "Premier Warlord's Lamellar Chestplate", "hash": "d0746a3ce6ba46c8", "src": "db2@1.60.1.70009"}
+{"id": 274253, "field": "name", "en": "Premier Warlord's Lamellar Faceguard", "hash": "aadda75617c85ad8", "src": "db2@1.60.1.70009"}
+{"id": 274254, "field": "name", "en": "Premier General's Lamellar Legplates", "hash": "82c5be4c777ecaf8", "src": "db2@1.60.1.70009"}
+{"id": 274255, "field": "name", "en": "Premier General's Lamellar Pauldrons", "hash": "8ae41a4f06c5bc75", "src": "db2@1.60.1.70009"}
+{"id": 274256, "field": "name", "en": "Premier Lamellar Gauntlets", "hash": "863f49a18c9d736b", "src": "db2@1.60.1.70009"}
+{"id": 274256, "field": "description", "en": "Increases the critical strike chance of your Flash of Light by $s1%.\r\n", "hash": "04fb7529ce96c7d6", "src": "db2@1.60.1.70009"}
+{"id": 274257, "field": "name", "en": "Premier Lamellar Armsplints", "hash": "2ff9d8c14f1d5ee4", "src": "db2@1.60.1.70009"}
+{"id": 274258, "field": "name", "en": "Premier Lamellar Sabatons", "hash": "da7a8979c37b954f", "src": "db2@1.60.1.70009"}
+{"id": 274259, "field": "name", "en": "Premier Lamellar Cinch", "hash": "bc99b8a963578634", "src": "db2@1.60.1.70009"}
+{"id": 274268, "field": "name", "en": "Dark Iron Map", "hash": "a0d9adc56e180907", "src": "db2@1.60.1.70009"}
+{"id": 274268, "field": "description", "en": "The map is heavily annotated with Dark Iron runes.", "hash": "b5ae133e5262ff11", "src": "db2@1.60.1.70009"}
+{"id": 274273, "field": "name", "en": "Flask of Natural Accuracy", "hash": "a3763d1cd24c7c3b", "src": "db2@1.60.1.70009"}
+{"id": 274273, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% Hit Chance.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "3336d46843019e4c", "src": "db2@1.60.1.70009"}
+{"id": 274274, "field": "name", "en": "Flask of Natural Aggression", "hash": "658cc3356a486bc5", "src": "db2@1.60.1.70009"}
+{"id": 274274, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% Critical Strike Chance.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "70f583bf71e06f35", "src": "db2@1.60.1.70009"}
+{"id": 274275, "field": "name", "en": "Flask of Natural Precision", "hash": "95f8443dc3311644", "src": "db2@1.60.1.70009"}
+{"id": 274275, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% reduced chance to be dodged or parried.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "99f5b5d7da5d76c4", "src": "db2@1.60.1.70009"}
+{"id": 274276, "field": "name", "en": "Flask of Natural Swiftness", "hash": "ce338265d57490ac", "src": "db2@1.60.1.70009"}
+{"id": 274276, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% Haste.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "8dfaab825412b800", "src": "db2@1.60.1.70009"}
+{"id": 274277, "field": "name", "en": "Recipe: Flask of Natural Accuracy", "hash": "fad6a520aec88f2e", "src": "db2@1.60.1.70009"}
+{"id": 274277, "field": "description", "en": "Teaches you how to craft Flask of Natural Accuracy.", "hash": "52eb11a0c06bd1d6", "src": "db2@1.60.1.70009"}
+{"id": 274278, "field": "name", "en": "Recipe: Flask of Natural Aggression", "hash": "b329e9be47d3814d", "src": "db2@1.60.1.70009"}
+{"id": 274278, "field": "description", "en": "Teaches you how to craft Flask of Natural Aggression.", "hash": "bfbed4a377bba80d", "src": "db2@1.60.1.70009"}
+{"id": 274279, "field": "name", "en": "Recipe: Flask of Natural Precision", "hash": "4c4d7f2a9288dfab", "src": "db2@1.60.1.70009"}
+{"id": 274279, "field": "description", "en": "Teaches you how to craft Flask of Natural Precision.", "hash": "7b2d8b0cdb3b3b0d", "src": "db2@1.60.1.70009"}
+{"id": 274280, "field": "name", "en": "Recipe: Flask of Natural Swiftness", "hash": "8488bd52a4cc5a13", "src": "db2@1.60.1.70009"}
+{"id": 274280, "field": "description", "en": "Teaches you how to craft Flask of Natural Swiftness.", "hash": "417e5a15145c8f2c", "src": "db2@1.60.1.70009"}
+{"id": 274286, "field": "name", "en": "Durgen Dirgehammer's Head", "hash": "bbb6d61e53f30bdd", "src": "db2@1.60.1.70009"}
+{"id": 274287, "field": "name", "en": "Grand Hippogryph Feather", "hash": "bedfe5215f45fd1d", "src": "db2@1.60.1.70009"}
+{"id": 274288, "field": "name", "en": "Oily Chimaera Hair", "hash": "b44675d6f3e295ca", "src": "db2@1.60.1.70009"}
+{"id": 274289, "field": "name", "en": "Dwarven Heirloom", "hash": "e2c9d75d9d49be68", "src": "db2@1.60.1.70009"}
+{"id": 274373, "field": "name", "en": "Leather-bound Flask", "hash": "dc5fd3fbd99a5fd0", "src": "db2@1.60.1.70009"}
+{"id": 274373, "field": "description", "en": "Empty the contents of the leather-bound flask into the shallows of the pool of water inside Deadwood Den.\nThe pure hyjal springwater shimmers with pinecone resin.", "hash": "1552c607dd89662c", "src": "db2@1.60.1.70009"}
+{"id": 274379, "field": "name", "en": "Rousing Seed Pod", "hash": "09fb3269589f5bab", "src": "db2@1.60.1.70009"}
+{"id": 274379, "field": "description", "en": "Call upon newly awakened power to increase the limit of Artisan's Tier items you can equip to $s2.\nOne of many seeds fallen from the boughs of Nordrassil. This one has been closely guarded for quite some time.", "hash": "3c8486d18dcbe42e", "src": "db2@1.60.1.70009"}
+{"id": 274383, "field": "name", "en": "Kanai's Knife", "hash": "d7df2cad19d27dfa", "src": "db2@1.60.1.70009"}
+{"id": 274384, "field": "name", "en": "Illegible Dogtags", "hash": "4c4bd948cd646e13", "src": "db2@1.60.1.70009"}
+{"id": 274386, "field": "name", "en": "Toy Soldier", "hash": "e2345e8db1d4c2ab", "src": "db2@1.60.1.70009"}
+{"id": 274386, "field": "description", "en": "Increases your chance to Dodge by $s1% for $d. This effect is doubled in Strongholds and Cities.", "hash": "7d85baf7dd6c6506", "src": "db2@1.60.1.70009"}
+{"id": 274387, "field": "name", "en": "Swiftfeather Arrow", "hash": "492fb5b6b3e3dde4", "src": "db2@1.60.1.70009"}
+{"id": 274388, "field": "name", "en": "Swiftstrike Shot", "hash": "ba8b534f76c7c6fc", "src": "db2@1.60.1.70009"}
+{"id": 274389, "field": "name", "en": "Schematic: Swiftfeather Arrow", "hash": "fff254626c94d9ed", "src": "db2@1.60.1.70009"}
+{"id": 274389, "field": "description", "en": "Teaches you how to craft Swiftfeather Arrows.", "hash": "36a409d1cf17b49e", "src": "db2@1.60.1.70009"}
+{"id": 274390, "field": "name", "en": "Schematic: Swiftstrike Shot", "hash": "9e4d1229bbc3e3e0", "src": "db2@1.60.1.70009"}
+{"id": 274390, "field": "description", "en": "Teaches you how to craft Swiftstrike Shots.", "hash": "f44146120aa9d56e", "src": "db2@1.60.1.70009"}
+{"id": 274391, "field": "name", "en": "Formula: Enchant Off-Hand - Superior Intellect", "hash": "0d5710f2a6d4a3a1", "src": "db2@1.60.1.70009"}
+{"id": 274391, "field": "description", "en": "Teaches you how to permanently enchant an off-hand to give +9 Intellect.", "hash": "7103d4fcb365f413", "src": "db2@1.60.1.70009"}
+{"id": 274392, "field": "name", "en": "Formula: Enchant Off-Hand - Excellent Spirit", "hash": "8a3a2e56b3d246a0", "src": "db2@1.60.1.70009"}
+{"id": 274392, "field": "description", "en": "Teaches you how to permanently enchant an off-hand to give +12 Spirit.", "hash": "5fa1e47c462f8b58", "src": "db2@1.60.1.70009"}
+{"id": 274393, "field": "name", "en": "Formula: Enchant Off-Hand - Wisdom", "hash": "67b5536cd3dbd653", "src": "db2@1.60.1.70009"}
+{"id": 274393, "field": "description", "en": "Teaches you how to permanently enchant an off-hand to give +6 Intellect and +5 Spirit.", "hash": "40fcd3c74b9b1baf", "src": "db2@1.60.1.70009"}
+{"id": 274394, "field": "name", "en": "Formula: Enchant 2H Weapon - Spellblasting", "hash": "7e49f947cba19e35", "src": "db2@1.60.1.70009"}
+{"id": 274394, "field": "description", "en": "Teaches you how to permanently enchant a Two-Handed Melee Weapon to increase Spell Power by 65.", "hash": "942a508e4b43c0dd", "src": "db2@1.60.1.70009"}
+{"id": 274395, "field": "name", "en": "Formula: Enchant Shield - Excellent Stamina", "hash": "c6ea13eb838843c0", "src": "db2@1.60.1.70009"}
+{"id": 274395, "field": "description", "en": "Teaches you how to permanently enchant a shield to give +12 Stamina.", "hash": "9a5a7d5bc96bf034", "src": "db2@1.60.1.70009"}
+{"id": 274396, "field": "name", "en": "Fel Ash Experimentation Notes", "hash": "21bc1e25527eb006", "src": "db2@1.60.1.70009"}
+{"id": 274396, "field": "description", "en": "Both runes and script dance across the surface of the page like spiders. Something about the this note feels sinister and unnatural.", "hash": "361d070f9e8b0ff3", "src": "db2@1.60.1.70009"}
+{"id": 274398, "field": "name", "en": "Formula: Enchant Gloves - Superior Strength", "hash": "ce8eb00bf08a99bc", "src": "db2@1.60.1.70009"}
+{"id": 274398, "field": "description", "en": "Teaches you how to permanently enchant gloves to give +15 Strength.", "hash": "4bc2885bada53d5d", "src": "db2@1.60.1.70009"}
+{"id": 274399, "field": "name", "en": "Formula: Enchant Cloak - Agility", "hash": "f0fc113a306bf32d", "src": "db2@1.60.1.70009"}
+{"id": 274399, "field": "description", "en": "Teaches you how to permanently enchant cloaks to give +5 Agility.", "hash": "eaaaea30db05e6cc", "src": "db2@1.60.1.70009"}
+{"id": 274400, "field": "name", "en": "Formula: Enchant Shield - Critical Strike", "hash": "f39e34f5f324a491", "src": "db2@1.60.1.70009"}
+{"id": 274400, "field": "description", "en": "Teaches you how to permanently enchant a shield to give +1% Critical Strike Chance.", "hash": "65c2277fb6d8874d", "src": "db2@1.60.1.70009"}
+{"id": 274401, "field": "name", "en": "Formula: Enchant Bracer - Greater Spellpower", "hash": "3348350664f3ac3b", "src": "db2@1.60.1.70009"}
+{"id": 274401, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +16 Spell Power.", "hash": "5972ec9d2e0c349d", "src": "db2@1.60.1.70009"}
+{"id": 274408, "field": "name", "en": "Ashen Crystal Vial", "hash": "5afc44dc1cb9cb61", "src": "db2@1.60.1.70009"}
+{"id": 274408, "field": "description", "en": "This vial has been meticulously carved from one of the fel ash crystals nearby giving it a pale greenish hue. As the light catches it, it seems to have ash trapped in the crystalline walls that glimmer faintly with fel energy.", "hash": "368ac42ab861e6dc", "src": "db2@1.60.1.70009"}
+{"id": 274411, "field": "name", "en": "Survivor's Torch", "hash": "446586735b983831", "src": "db2@1.60.1.70009"}
+{"id": 274411, "field": "description", "en": "Tosses a torch at the target location, starting a fire.", "hash": "069f4ed7615dce8c", "src": "db2@1.60.1.70009"}
+{"id": 274412, "field": "name", "en": "Fel-Slime Crystal", "hash": "73b9e3c9d4674ea2", "src": "db2@1.60.1.70009"}
+{"id": 274413, "field": "name", "en": "Bag of Ashen Warlock Bones", "hash": "37160af309372d6f", "src": "db2@1.60.1.70009"}
+{"id": 274414, "field": "name", "en": "Pristine Fel-Slime Crystal", "hash": "c89a31f736bbc87d", "src": "db2@1.60.1.70009"}
+{"id": 274414, "field": "description", "en": "Use the crystal to temporarily stun the Master of Vessels.", "hash": "ee7bc8b09553e1f5", "src": "db2@1.60.1.70009"}
+{"id": 274415, "field": "name", "en": "Recipe: Sweetpaw Jam", "hash": "51c0e6404da3018c", "src": "db2@1.60.1.70009"}
+{"id": 274415, "field": "description", "en": "Teaches you how to cook Sweetpaw Jam.", "hash": "6708d524ddf57a9d", "src": "db2@1.60.1.70009"}
+{"id": 274417, "field": "name", "en": "Barkskin Baubles", "hash": "28666f1ab2a01399", "src": "db2@1.60.1.70009"}
+{"id": 274418, "field": "name", "en": "Burrow Barricade", "hash": "f6368f87156d2337", "src": "db2@1.60.1.70009"}
+{"id": 274419, "field": "name", "en": "Bear Poking Stick", "hash": "39673c32638e1c9a", "src": "db2@1.60.1.70009"}
+{"id": 274419, "field": "description", "en": "Do NOT.", "hash": "4a13951f435404a5", "src": "db2@1.60.1.70009"}
+{"id": 274420, "field": "name", "en": "Wisepaw Totem", "hash": "5d0cafafe0701beb", "src": "db2@1.60.1.70009"}
+{"id": 274424, "field": "name", "en": "Formula: Enchant Gloves - Lotus Claw", "hash": "3ec33f670d344451", "src": "db2@1.60.1.70009"}
+{"id": 274424, "field": "description", "en": "Teaches you how to enchant gloves to grant a small chance to acquire a Death Lotus when gathering herbs in Hyjal.", "hash": "1eb40ec989efb668", "src": "db2@1.60.1.70009"}
+{"id": 274426, "field": "name", "en": "Enchant Gloves - Lotus Claw", "hash": "9b9df7af92fa35f1", "src": "db2@1.60.1.70009"}
+{"id": 274426, "field": "description", "en": "Permanently enchant a pair of gloves to give a small chance to acquire Death Lotus when gathering any herb in Hyjal.", "hash": "4be535c6126b3b2e", "src": "db2@1.60.1.70009"}
+{"id": 274429, "field": "name", "en": "Monster Weapon", "hash": "df72c3f36984d739", "src": "db2@1.60.1.70009"}
+{"id": 274444, "field": "name", "en": "Greater Insignia of the Horde", "hash": "86372cedd32a381a", "src": "db2@1.60.1.70009"}
+{"id": 274444, "field": "description", "en": "Removes all movement impairing effects and all effects which cause loss of control of your character.", "hash": "5922de690eb48ff3", "src": "db2@1.60.1.70009"}
+{"id": 274445, "field": "name", "en": "Greater Insignia of the Alliance", "hash": "e3cb511ec779cc0f", "src": "db2@1.60.1.70009"}
+{"id": 274445, "field": "description", "en": "Removes all movement impairing effects and all effects which cause loss of control of your character.", "hash": "5922de690eb48ff3", "src": "db2@1.60.1.70009"}
+{"id": 274460, "field": "name", "en": "Monster - Shield, Night Elf Huntress", "hash": "53a9e84cb3876d65", "src": "db2@1.60.1.70009"}
+{"id": 274461, "field": "name", "en": "Monster - Glaive, Night Elf Huntress", "hash": "335ad7a533642d60", "src": "db2@1.60.1.70009"}
+{"id": 274463, "field": "name", "en": "Tattered Note", "hash": "79f4ec28407ac764", "src": "db2@1.60.1.70009"}
+{"id": 274466, "field": "name", "en": "Monster - Polearm, 2H NightElf", "hash": "9ac42f1a43c11be2", "src": "db2@1.60.1.70009"}
+{"id": 274480, "field": "name", "en": "Monster - Staff, Druid of the Talon", "hash": "39cbd0bfec5945c0", "src": "db2@1.60.1.70009"}
+{"id": 274483, "field": "name", "en": "The Walks of Shaman", "hash": "8296ded017d1aae8", "src": "db2@1.60.1.70009"}
+{"id": 274490, "field": "name", "en": "Centaur Hoofwarmers", "hash": "b2bafef0c8872d21", "src": "db2@1.60.1.70009"}
+{"id": 274491, "field": "name", "en": "Pattern: Centaur Hoofwarmers", "hash": "9e78105ef3caf591", "src": "db2@1.60.1.70009"}
+{"id": 274491, "field": "description", "en": "Teaches you how to craft Centaur Hoofwarmers.", "hash": "9d17e0575a279fec", "src": "db2@1.60.1.70009"}
+{"id": 274501, "field": "name", "en": "Monster - Sword, Golden Long", "hash": "828d8ef89bf66bc8", "src": "db2@1.60.1.70009"}
+{"id": 274559, "field": "name", "en": "Level 23 Cloth Gear", "hash": "3820f60c9bcebdd7", "src": "db2@1.60.1.70009"}
+{"id": 274559, "field": "description", "en": "Contains a random set of gear for a level 23 cloth-wearing character.", "hash": "9a03d87f6c08cf85", "src": "db2@1.60.1.70009"}
+{"id": 274560, "field": "name", "en": "Hyjal Summit Trash Weapon", "hash": "082a678c5abd6b88", "src": "db2@1.60.1.70009"}
+{"id": 274561, "field": "name", "en": "Level 23 Leather Gear", "hash": "724f8d0eb9d6bbe3", "src": "db2@1.60.1.70009"}
+{"id": 274561, "field": "description", "en": "Contains a random set of gear for a level 23 leather-wearing character.", "hash": "d0b45a77132c6961", "src": "db2@1.60.1.70009"}
+{"id": 274562, "field": "name", "en": "Level 23 Mail Gear", "hash": "83d3f200c991c548", "src": "db2@1.60.1.70009"}
+{"id": 274562, "field": "description", "en": "Contains a random set of gear for a level 23 mail-wearing character.", "hash": "c5c9f68302031097", "src": "db2@1.60.1.70009"}
+{"id": 274563, "field": "name", "en": "Level 38 Cloth Gear", "hash": "827d668f616a790b", "src": "db2@1.60.1.70009"}
+{"id": 274563, "field": "description", "en": "Contains a random set of gear for a level 38 cloth-wearing character.", "hash": "c48efb90c377ba90", "src": "db2@1.60.1.70009"}
+{"id": 274564, "field": "name", "en": "Level 38 Leather Gear", "hash": "41022c065d38d662", "src": "db2@1.60.1.70009"}
+{"id": 274564, "field": "description", "en": "Contains a random set of gear for a level 38 leather-wearing character.", "hash": "b9c640c4f0040a84", "src": "db2@1.60.1.70009"}
+{"id": 274565, "field": "name", "en": "Level 38 Mail Gear", "hash": "ff8293184e488336", "src": "db2@1.60.1.70009"}
+{"id": 274565, "field": "description", "en": "Contains a random set of gear for a level 38 mail-wearing character.", "hash": "6e2cbc298b62e0d7", "src": "db2@1.60.1.70009"}
+{"id": 274566, "field": "name", "en": "Level 57 Cloth Gear", "hash": "440564252ddb0044", "src": "db2@1.60.1.70009"}
+{"id": 274566, "field": "description", "en": "Contains a random set of gear for a level 57 cloth-wearing character.", "hash": "18163cff4db1bd7d", "src": "db2@1.60.1.70009"}
+{"id": 274567, "field": "name", "en": "Level 57 Leather Gear", "hash": "a62806808e13137e", "src": "db2@1.60.1.70009"}
+{"id": 274567, "field": "description", "en": "Contains a random set of gear for a level 57 leather-wearing character.", "hash": "0fa6b8ded2102e41", "src": "db2@1.60.1.70009"}
+{"id": 274568, "field": "name", "en": "Level 57 Mail Gear", "hash": "ddcfd391f37ef36c", "src": "db2@1.60.1.70009"}
+{"id": 274568, "field": "description", "en": "Contains a random set of gear for a level 57 mail-wearing character.", "hash": "b3359592440a14a6", "src": "db2@1.60.1.70009"}
+{"id": 274569, "field": "name", "en": "Level 57 Plate Gear", "hash": "9403e5fdbdd7da8f", "src": "db2@1.60.1.70009"}
+{"id": 274569, "field": "description", "en": "Contains a random set of gear for a level 57 plate-wearing character.", "hash": "b27c93054a3d573a", "src": "db2@1.60.1.70009"}
+{"id": 274570, "field": "name", "en": "Level 60 Cloth Gear", "hash": "622c7f70806f2ae3", "src": "db2@1.60.1.70009"}
+{"id": 274570, "field": "description", "en": "Contains a random set of gear for a level 60 cloth-wearing character.", "hash": "fb1ca0b83756aad9", "src": "db2@1.60.1.70009"}
+{"id": 274571, "field": "name", "en": "Level 60 Leather Gear", "hash": "f1acc49cd3bbc281", "src": "db2@1.60.1.70009"}
+{"id": 274571, "field": "description", "en": "Contains a random set of gear for a level 60 leather-wearing character.", "hash": "b6face9920c17f81", "src": "db2@1.60.1.70009"}
+{"id": 274572, "field": "name", "en": "Level 60 Mail Gear", "hash": "6cb2cfe050b3d351", "src": "db2@1.60.1.70009"}
+{"id": 274572, "field": "description", "en": "Contains a random set of gear for a level 60 mail-wearing character.", "hash": "08f90d8d99ac56f8", "src": "db2@1.60.1.70009"}
+{"id": 274573, "field": "name", "en": "Level 60 Plate Gear", "hash": "b22b0148106c053f", "src": "db2@1.60.1.70009"}
+{"id": 274573, "field": "description", "en": "Contains a random set of gear for a level 60 plate-wearing character.", "hash": "9582f6c333e24496", "src": "db2@1.60.1.70009"}
+{"id": 274586, "field": "name", "en": "Rustleaf Fox Tail", "hash": "22709bf272ff9798", "src": "db2@1.60.1.70009"}
+{"id": 274616, "field": "name", "en": "Aetherstill Spirits", "hash": "746ffca7eb8dfdc7", "src": "db2@1.60.1.70009"}
+{"id": 274616, "field": "description", "en": "Drink me.  I'm delicious!\nConsume immediately! Evaporates faster than you can uncork a flask.", "hash": "c3543b60a53c3679", "src": "db2@1.60.1.70009"}
+{"id": 274617, "field": "name", "en": "Sturdy Tree Branch", "hash": "839edaca5af8bbe2", "src": "db2@1.60.1.70009"}
+{"id": 274683, "field": "name", "en": "QA Tabard of Weighted Dice", "hash": "048a4b3344194995", "src": "db2@1.60.1.70009"}
+{"id": 274683, "field": "description", "en": "The only thing you'll miss is this tabard!", "hash": "5247af2662d7c226", "src": "db2@1.60.1.70009"}
+{"id": 274684, "field": "name", "en": "Level 23 Mining Supplies", "hash": "a7b5de2411503596", "src": "db2@1.60.1.70009"}
+{"id": 274684, "field": "description", "en": "Contains mining resources that would have been gathered by level 23.", "hash": "51ef88fe69ecfa50", "src": "db2@1.60.1.70009"}
+{"id": 274686, "field": "name", "en": "Level 38 Mining Supplies", "hash": "a47bae2f2596604e", "src": "db2@1.60.1.70009"}
+{"id": 274686, "field": "description", "en": "Contains mining resources that would have been gathered by level 38.", "hash": "51efce966de5dd76", "src": "db2@1.60.1.70009"}
+{"id": 274687, "field": "name", "en": "Level 57 Mining Supplies", "hash": "49956c82c3fb7dba", "src": "db2@1.60.1.70009"}
+{"id": 274687, "field": "description", "en": "Contains mining resources that would have been gathered by level 57.", "hash": "51f0542575d64517", "src": "db2@1.60.1.70009"}
+{"id": 274688, "field": "name", "en": "Level 60 Mining Supplies", "hash": "300d8c14e473f701", "src": "db2@1.60.1.70009"}
+{"id": 274688, "field": "description", "en": "Contains mining resources that would have been gathered by level 60.", "hash": "51f0939979cda9b1", "src": "db2@1.60.1.70009"}
+{"id": 274689, "field": "name", "en": "Level 23 Herbalism Supplies", "hash": "cc9a788f023f3417", "src": "db2@1.60.1.70009"}
+{"id": 274689, "field": "description", "en": "Contains herbalism resources that would have been gathered by level 23.", "hash": "8c1b91a0622921a8", "src": "db2@1.60.1.70009"}
+{"id": 274690, "field": "name", "en": "Level 38 Herbalism Supplies", "hash": "f96694af15195bd5", "src": "db2@1.60.1.70009"}
+{"id": 274690, "field": "description", "en": "Contains herbalism resources that would have been gathered by level 38.", "hash": "8c1bd738662204ce", "src": "db2@1.60.1.70009"}
+{"id": 274691, "field": "name", "en": "Level 57 Herbalism Supplies", "hash": "f504e141f8915f49", "src": "db2@1.60.1.70009"}
+{"id": 274691, "field": "description", "en": "Contains herbalism resources that would have been gathered by level 57.", "hash": "8c1c5cc76e126c6f", "src": "db2@1.60.1.70009"}
+{"id": 274692, "field": "name", "en": "Level 60 Herbalism Supplies", "hash": "d291cdbac329bfcb", "src": "db2@1.60.1.70009"}
+{"id": 274692, "field": "description", "en": "Contains herbalism resources that would have been gathered by level 60.", "hash": "8c1c9c3b7209d109", "src": "db2@1.60.1.70009"}
+{"id": 274693, "field": "name", "en": "Level 23 Skinning Supplies", "hash": "533933483ccc39f9", "src": "db2@1.60.1.70009"}
+{"id": 274693, "field": "description", "en": "Contains skinning resources that would have been gathered by level 23.", "hash": "62f3db8e40d22b46", "src": "db2@1.60.1.70009"}
+{"id": 274694, "field": "name", "en": "Level 38 Skinning Supplies", "hash": "fba0606e7278cff8", "src": "db2@1.60.1.70009"}
+{"id": 274694, "field": "description", "en": "Contains skinning resources that would have been gathered by level 38.", "hash": "62f4212644cb0e6c", "src": "db2@1.60.1.70009"}
+{"id": 274695, "field": "name", "en": "Level 57 Skinning Supplies", "hash": "8657535841c8c12d", "src": "db2@1.60.1.70009"}
+{"id": 274695, "field": "description", "en": "Contains skinning resources that would have been gathered by level 57.", "hash": "62f4a6b54cbb760d", "src": "db2@1.60.1.70009"}
+{"id": 274696, "field": "name", "en": "Level 60 Skinning Supplies", "hash": "10d3840f9eb116fd", "src": "db2@1.60.1.70009"}
+{"id": 274696, "field": "description", "en": "Contains skinning resources that would have been gathered by level 60.", "hash": "62f4e62950b2daa7", "src": "db2@1.60.1.70009"}
+{"id": 274697, "field": "name", "en": "Level 23 Cloth Supplies", "hash": "21eb6e6d3b073c29", "src": "db2@1.60.1.70009"}
+{"id": 274697, "field": "description", "en": "Contains cloth resources that would have been gathered by level 23.", "hash": "aec812b703380f78", "src": "db2@1.60.1.70009"}
+{"id": 274698, "field": "name", "en": "Level 38 Cloth Supplies", "hash": "25cdac98248a151e", "src": "db2@1.60.1.70009"}
+{"id": 274698, "field": "description", "en": "Contains cloth resources that would have been gathered by level 38.", "hash": "aec8584f0730f29e", "src": "db2@1.60.1.70009"}
+{"id": 274699, "field": "name", "en": "Level 57 Cloth Supplies", "hash": "9c50cd4eab115b4a", "src": "db2@1.60.1.70009"}
+{"id": 274699, "field": "description", "en": "Contains cloth resources that would have been gathered by level 57.", "hash": "aec8ddde0f215a3f", "src": "db2@1.60.1.70009"}
+{"id": 274700, "field": "name", "en": "Level 60 Cloth Supplies", "hash": "01bd332dfb501bd3", "src": "db2@1.60.1.70009"}
+{"id": 274700, "field": "description", "en": "Contains cloth resources that would have been gathered by level 60.", "hash": "aec91d521318bed9", "src": "db2@1.60.1.70009"}
+{"id": 274701, "field": "name", "en": "Level 23 Enchanting Supplies", "hash": "965fb469ee18c3c3", "src": "db2@1.60.1.70009"}
+{"id": 274701, "field": "description", "en": "Contains enchanting resources that would have been gathered by level 23.", "hash": "f46e1dd4a89b41cc", "src": "db2@1.60.1.70009"}
+{"id": 274702, "field": "name", "en": "Level 38 Enchanting Supplies", "hash": "82d2193ceaa5dbaa", "src": "db2@1.60.1.70009"}
+{"id": 274702, "field": "description", "en": "Contains enchanting resources that would have been gathered by level 38.", "hash": "f46e636cac9424f2", "src": "db2@1.60.1.70009"}
+{"id": 274703, "field": "name", "en": "Level 57 Enchanting Supplies", "hash": "44d347e85f8dd232", "src": "db2@1.60.1.70009"}
+{"id": 274703, "field": "description", "en": "Contains enchanting resources that would have been gathered by level 57.", "hash": "f46ee8fbb4848c93", "src": "db2@1.60.1.70009"}
+{"id": 274704, "field": "name", "en": "Level 60 Enchanting Supplies", "hash": "a3f04979e329f15d", "src": "db2@1.60.1.70009"}
+{"id": 274704, "field": "description", "en": "Contains enchanting resources that would have been gathered by level 60.", "hash": "f46f286fb87bf12d", "src": "db2@1.60.1.70009"}
+{"id": 274706, "field": "name", "en": "Reins of the Striped Dawnsaber", "hash": "9421cd8943431950", "src": "db2@1.60.1.70009"}
+{"id": 274706, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 274709, "field": "name", "en": "Potion of Experience - Level 23", "hash": "b79b13ebc9a415b8", "src": "db2@1.60.1.70009"}
+{"id": 274709, "field": "description", "en": "Increases your level to $s1 and grants you gear and supplies appropriate to that level for your class and tradeskills.", "hash": "86ca056d4de72c8f", "src": "db2@1.60.1.70009"}
+{"id": 274710, "field": "name", "en": "Potion of Experience - Level 38", "hash": "b79b1473c9a4359e", "src": "db2@1.60.1.70009"}
+{"id": 274710, "field": "description", "en": "Increases your level to $s1 and grants you gear and supplies appropriate to that level for your class and tradeskills.", "hash": "86ca056d4de72c8f", "src": "db2@1.60.1.70009"}
+{"id": 274711, "field": "name", "en": "Potion of Experience - Level 57", "hash": "b79b1578c9a4755f", "src": "db2@1.60.1.70009"}
+{"id": 274711, "field": "description", "en": "Increases your level to $s1 and grants you gear and supplies appropriate to that level for your class and tradeskills.", "hash": "86ca056d4de72c8f", "src": "db2@1.60.1.70009"}
+{"id": 274712, "field": "name", "en": "Potion of Experience - Level 60", "hash": "b79b15f4c9a49539", "src": "db2@1.60.1.70009"}
+{"id": 274712, "field": "description", "en": "Increases your level to $s1 and grants you gear and supplies appropriate to that level for your class and tradeskills.", "hash": "86ca056d4de72c8f", "src": "db2@1.60.1.70009"}
+{"id": 274718, "field": "name", "en": "Lost Veteran's Sabatons", "hash": "350db81765885997", "src": "db2@1.60.1.70009"}
+{"id": 274719, "field": "name", "en": "Forgotten Trompers", "hash": "b945d56f07f2a84f", "src": "db2@1.60.1.70009"}
+{"id": 274720, "field": "name", "en": "Abandoned Boots", "hash": "4d4080704b28c7d2", "src": "db2@1.60.1.70009"}
+{"id": 274721, "field": "name", "en": "Tattered Sandals", "hash": "3cdb1fbb60e90dd0", "src": "db2@1.60.1.70009"}
+{"id": 274725, "field": "name", "en": "Blackthorne Documents", "hash": "e6f9846e12a214f0", "src": "db2@1.60.1.70009"}
+{"id": 274725, "field": "description", "en": "Property of SI:7", "hash": "ae93c3fb5315a66e", "src": "db2@1.60.1.70009"}
+{"id": 274740, "field": "name", "en": "Quilted Cloak", "hash": "13ccca6b0cbc3af8", "src": "db2@1.60.1.70009"}
+{"id": 274741, "field": "name", "en": "Rumpled Kilt", "hash": "eac7b3f6935cf6bd", "src": "db2@1.60.1.70009"}
+{"id": 274742, "field": "name", "en": "Ratchet Wristwraps", "hash": "10972ae9a1b9d11c", "src": "db2@1.60.1.70009"}
+{"id": 274743, "field": "name", "en": "Defective Samophlange", "hash": "c52d2f8327ea4634", "src": "db2@1.60.1.70009"}
+{"id": 274744, "field": "name", "en": "Barrens Basher", "hash": "8c1286d8ffb2ba48", "src": "db2@1.60.1.70009"}
+{"id": 274745, "field": "name", "en": "Deckswabber's Mitts", "hash": "c5348b701cbc8a11", "src": "db2@1.60.1.70009"}
+{"id": 274746, "field": "name", "en": "Sea Giant's Toe Ring", "hash": "489c9960ea5b9a7c", "src": "db2@1.60.1.70009"}
+{"id": 274747, "field": "name", "en": "Soggy Boots", "hash": "5457d9be3fe3f2bc", "src": "db2@1.60.1.70009"}
+{"id": 274748, "field": "name", "en": "Booty Bay Bruiser's Buckshot", "hash": "af5b4a1f332ef919", "src": "db2@1.60.1.70009"}
+{"id": 274748, "field": "description", "en": "Take steady aim and fire a round to knock your target away.", "hash": "0759cb8d1698fa93", "src": "db2@1.60.1.70009"}
+{"id": 274749, "field": "name", "en": "Souvenier Sea Shell", "hash": "a5fac9218fe9feed", "src": "db2@1.60.1.70009"}
+{"id": 274750, "field": "name", "en": "Reflective Wristguards", "hash": "a5b589939deec22b", "src": "db2@1.60.1.70009"}
+{"id": 274751, "field": "name", "en": "Sunburn Spaulders", "hash": "d39e49f658e863a3", "src": "db2@1.60.1.70009"}
+{"id": 274752, "field": "name", "en": "Sandstorm Cover", "hash": "722c5eb9d6b184f1", "src": "db2@1.60.1.70009"}
+{"id": 274753, "field": "name", "en": "Jhordy's Misplaced Screwdriver", "hash": "d2ef7b56c13a2691", "src": "db2@1.60.1.70009"}
+{"id": 274753, "field": "description", "en": "Perhaps he should stop blaming all of his mishaps on the teleporter.", "hash": "4f80dcdfec60979c", "src": "db2@1.60.1.70009"}
+{"id": 274754, "field": "name", "en": "Suspicious Spare Part", "hash": "f75af872cdf6f874", "src": "db2@1.60.1.70009"}
+{"id": 274754, "field": "description", "en": "Eh, it's probably not important.", "hash": "9527db0e31985f99", "src": "db2@1.60.1.70009"}
+{"id": 274755, "field": "name", "en": "Steamwheedle Grips", "hash": "2e8a77adb534e988", "src": "db2@1.60.1.70009"}
+{"id": 274756, "field": "name", "en": "Impractical Headwarmer", "hash": "c9492a3b52b45724", "src": "db2@1.60.1.70009"}
+{"id": 274757, "field": "name", "en": "Substandard Belt Chain", "hash": "799c0026b464416c", "src": "db2@1.60.1.70009"}
+{"id": 274758, "field": "name", "en": "Coldmetal Guard", "hash": "9da5a6c7a595e4a4", "src": "db2@1.60.1.70009"}
+{"id": 274759, "field": "name", "en": "Everlook Pathcarver", "hash": "2db18aad402d8870", "src": "db2@1.60.1.70009"}
+{"id": 274759, "field": "description", "en": "Deal $s1 Physical damage split between up to $s3 nearby enemies. Deals $s2 times as much damage to Plants.", "hash": "26c57258bca4da02", "src": "db2@1.60.1.70009"}
+{"id": 274760, "field": "name", "en": "Everlook Delivery Bot", "hash": "ee3c517b4953daa6", "src": "db2@1.60.1.70009"}
+{"id": 274760, "field": "description", "en": "Marks a target for delivery. After landing $s1 to $s2 spells or attacks, deal $1295633s1 Fire damage. Number of spells or attacks is halved in Snowy areas.", "hash": "4503caffc93582bf", "src": "db2@1.60.1.70009"}
+{"id": 274761, "field": "name", "en": "Parachute-Priest Pager", "hash": "879b81ce6326d804", "src": "db2@1.60.1.70009"}
+{"id": 274761, "field": "description", "en": "Page Everlook Emergency Services for a Parachute-Priest that will assist in healing allies for $1295661d.", "hash": "d33f204b5b75e45c", "src": "db2@1.60.1.70009"}
+{"id": 274776, "field": "name", "en": "Uninfected Root Sample", "hash": "481aefc6b3ea1acf", "src": "db2@1.60.1.70009"}
+{"id": 274795, "field": "name", "en": "Embroidered Scabbard", "hash": "bfdde1a315a21f95", "src": "db2@1.60.1.70009"}
+{"id": 274795, "field": "description", "en": "Hold the scabbard and beckon the Veteran of the Third War to your side at a place from his memory.", "hash": "73a96bf109bbd7d5", "src": "db2@1.60.1.70009"}
+{"id": 274799, "field": "name", "en": "Ochre Skeletal Warhorse", "hash": "ade4ecc3a56d6b4c", "src": "db2@1.60.1.70009"}
+{"id": 274799, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 274800, "field": "name", "en": "Fishing Trip", "hash": "321457630dae8ff1", "src": "db2@1.60.1.70009"}
+{"id": 274800, "field": "description", "en": "A dusty informal invitation to a fishing challenge between a group of friends.", "hash": "a99e11bcbd91fbc2", "src": "db2@1.60.1.70009"}
+{"id": 274895, "field": "name", "en": "Darkspear Islands Mark of Honor", "hash": "f8137f919118ad85", "src": "db2@1.60.1.70009"}
+{"id": 274895, "field": "description", "en": "Medal awarded for fighting in Darkspear Islands", "hash": "76c22985d73de8fe", "src": "db2@1.60.1.70009"}
+{"id": 274915, "field": "name", "en": "Sacristan Band", "hash": "a2ec796ea13c9f13", "src": "db2@1.60.1.70009"}
+{"id": 274916, "field": "name", "en": "Verger Greaves", "hash": "391fea2ce1cfc553", "src": "db2@1.60.1.70009"}
+{"id": 274917, "field": "name", "en": "Brittle Trap", "hash": "63f6df67a8873dda", "src": "db2@1.60.1.70009"}
+{"id": 274917, "field": "description", "en": "Renders a target unable to move for $d.", "hash": "73de166ed1b6b8c8", "src": "db2@1.60.1.70009"}
+{"id": 274918, "field": "name", "en": "Warding Candle", "hash": "1fbe4bbaa4ab56bf", "src": "db2@1.60.1.70009"}
+{"id": 274918, "field": "description", "en": "Attempts to remove $s1 Curse or Bane, and $s2 Disease from the igniter.", "hash": "ab343404fb9957f6", "src": "db2@1.60.1.70009"}
+{"id": 274919, "field": "name", "en": "Neophyte's Wand", "hash": "5342d704b5326953", "src": "db2@1.60.1.70009"}
+{"id": 274920, "field": "name", "en": "Twilight Carver", "hash": "5e0759a4c8bde14c", "src": "db2@1.60.1.70009"}
+{"id": 274922, "field": "name", "en": "Riverglades Marsh Gas", "hash": "85433bde3827c313", "src": "db2@1.60.1.70009"}
+{"id": 274922, "field": "description", "en": "Reduces movement speed by $s1% and increases Fire damage taken by all targets in a $a1 yard radius by $s2 for $d.", "hash": "2091a05c946add25", "src": "db2@1.60.1.70009"}
+{"id": 274926, "field": "name", "en": "Matriarch Quiver", "hash": "21c54548b5e9863b", "src": "db2@1.60.1.70009"}
+{"id": 274926, "field": "description", "en": "Increases ranged attack speed by $s1%.", "hash": "3009bf393dc16067", "src": "db2@1.60.1.70009"}
+{"id": 274928, "field": "name", "en": "Curly's Chopper", "hash": "3ddc5a8e91641819", "src": "db2@1.60.1.70009"}
+{"id": 274929, "field": "name", "en": "Hurley's Felling Axe", "hash": "d0dd152f6d0fb3a9", "src": "db2@1.60.1.70009"}
+{"id": 274930, "field": "name", "en": "Umber Galestrider", "hash": "413e1c1d9ecdae5e", "src": "db2@1.60.1.70009"}
+{"id": 274930, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 274933, "field": "name", "en": "Swift Umber Galestrider", "hash": "16e0211fda310529", "src": "db2@1.60.1.70009"}
+{"id": 274933, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
+{"id": 274935, "field": "name", "en": "Tessa's Tonic", "hash": "4f525dad2bb75d77", "src": "db2@1.60.1.70009"}
+{"id": 274935, "field": "description", "en": "Restores $s1 mana and health.", "hash": "d20116d1fbae313e", "src": "db2@1.60.1.70009"}
+{"id": 274938, "field": "name", "en": "Gnollhide Tunic", "hash": "0b7348bf4f354c4d", "src": "db2@1.60.1.70009"}
+{"id": 274939, "field": "name", "en": "Southern Watch Leggings", "hash": "f674b255a50e03b2", "src": "db2@1.60.1.70009"}
+{"id": 274940, "field": "name", "en": "Unbalanced Fighting Stick", "hash": "4b08ae324069974b", "src": "db2@1.60.1.70009"}
+{"id": 274941, "field": "name", "en": "Bristle Hills Mystic Robe", "hash": "998a7869d3935b11", "src": "db2@1.60.1.70009"}
+{"id": 274942, "field": "name", "en": "Bristlepelt Vest", "hash": "3f0604b505b557dc", "src": "db2@1.60.1.70009"}
+{"id": 274943, "field": "name", "en": "Gnoll Crusher Leggings", "hash": "438abb997a9f2f69", "src": "db2@1.60.1.70009"}
+{"id": 274944, "field": "name", "en": "Bloodsnout Striker", "hash": "50945db47a933e7a", "src": "db2@1.60.1.70009"}
+{"id": 274946, "field": "name", "en": "Gnollblood Robe", "hash": "61f622c5d35d44d4", "src": "db2@1.60.1.70009"}
+{"id": 274947, "field": "name", "en": "Scroll of Imbue Lesser Flame", "hash": "bc914f572d3174a0", "src": "db2@1.60.1.70009"}
+{"id": 274947, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done by Fire spells and effects by up to $1306515s1.", "hash": "046a7061fde3d4e1", "src": "db2@1.60.1.70009"}
+{"id": 274948, "field": "name", "en": "Bottle of Powderfuse Port", "hash": "5aaba906460be95b", "src": "db2@1.60.1.70009"}
+{"id": 274949, "field": "name", "en": "Scrap of Horde Heraldry", "hash": "ce807473cf6feb88", "src": "db2@1.60.1.70009"}
+{"id": 274955, "field": "name", "en": "Clobrok's Block Rock", "hash": "180864ed83723350", "src": "db2@1.60.1.70009"}
+{"id": 274956, "field": "name", "en": "Wild Chicken Egg", "hash": "87c04e5fdfd1f551", "src": "db2@1.60.1.70009"}
+{"id": 274956, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70009"}
+{"id": 274957, "field": "name", "en": "Lumber Luggers", "hash": "de6149162edd0031", "src": "db2@1.60.1.70009"}
+{"id": 274958, "field": "name", "en": "Especially Delicious Berries", "hash": "0ba9ebfc49039ce8", "src": "db2@1.60.1.70009"}
+{"id": 274961, "field": "name", "en": "Brute Slayer Band", "hash": "48bda10b6b33a766", "src": "db2@1.60.1.70009"}
+{"id": 274963, "field": "name", "en": "Rot-Covered Harpoon", "hash": "5c52e9f96efd5a88", "src": "db2@1.60.1.70009"}
+{"id": 274963, "field": "description", "en": "Disease target for $s1 Nature damage every $t1 sec for $d. Deals $s2 times as much damage to Aquatic enemies.", "hash": "123233793cbb7ec4", "src": "db2@1.60.1.70009"}
+{"id": 274964, "field": "name", "en": "Mote of Unstable Magic", "hash": "ee477e5d41702ee1", "src": "db2@1.60.1.70009"}
+{"id": 274966, "field": "name", "en": "Silvermoon Shimmerwine", "hash": "e4e0f83e7a3fb55a", "src": "db2@1.60.1.70009"}
+{"id": 274968, "field": "name", "en": "Premier Senior Sergeant's Insignia", "hash": "a5842c7f62b3cfad", "src": "db2@1.60.1.70009"}
+{"id": 274969, "field": "name", "en": "Premier Master Sergeant's Insignia", "hash": "da3556f2d1a0eab8", "src": "db2@1.60.1.70009"}
+{"id": 274971, "field": "name", "en": "Briny Seafood Stew", "hash": "5100cdba6efb9e01", "src": "db2@1.60.1.70009"}
+{"id": 274971, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "d95ce7d45e182aa9", "src": "db2@1.60.1.70009"}
+{"id": 274972, "field": "name", "en": "Recipe: Briny Seafood Stew", "hash": "8a036decee2f928f", "src": "db2@1.60.1.70009"}
+{"id": 274972, "field": "description", "en": "Teaches you how to cook Briny Seafood Stew.", "hash": "43e7f302698c7840", "src": "db2@1.60.1.70009"}
+{"id": 274974, "field": "name", "en": "Message in a Bottle", "hash": "fc040a849c7a19ab", "src": "db2@1.60.1.70009"}
+{"id": 274974, "field": "description", "en": "A ship in a bottle would be far more impressive.", "hash": "5454b42cd9fa8bbe", "src": "db2@1.60.1.70009"}
+{"id": 274975, "field": "name", "en": "Rog'mar Supply Crate", "hash": "54d696849443eb1a", "src": "db2@1.60.1.70009"}
+{"id": 274976, "field": "name", "en": "Plain Ol' Paletusk", "hash": "c9817e53e06bc1bd", "src": "db2@1.60.1.70009"}
+{"id": 274976, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "0694303c6c7b246c", "src": "db2@1.60.1.70009"}
+{"id": 274977, "field": "name", "en": "Recipe: Plain Ol' Paletusk", "hash": "02841e8a5f9fb65c", "src": "db2@1.60.1.70009"}
+{"id": 274977, "field": "description", "en": "Teaches you how to cook Plain Ol' Paletusk.", "hash": "edc2527eb170949c", "src": "db2@1.60.1.70009"}
+{"id": 274978, "field": "name", "en": "Leafre's Ring of Great Resistance", "hash": "bf6ebd74d6bebb44", "src": "db2@1.60.1.70009"}
+{"id": 274979, "field": "name", "en": "Hyjal Silphium", "hash": "77c166297ed8072e", "src": "db2@1.60.1.70009"}
+{"id": 274979, "field": "description", "en": "This herb gives off a faint minty smell and feels cool when rubbed between two fingers.", "hash": "e397cd0d627dd20d", "src": "db2@1.60.1.70009"}
+{"id": 274981, "field": "name", "en": "Rog'mar Report", "hash": "4de17f92ab94e687", "src": "db2@1.60.1.70009"}

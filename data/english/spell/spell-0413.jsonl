@@ -1,0 +1,50 @@
+{"id": 413031, "field": "name", "en": "Dual Wield", "hash": "d6ada926229d2b48", "src": "db2@1.60.1.70009"}
+{"id": 413045, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70009"}
+{"id": 413052, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
+{"id": 413247, "field": "name", "en": "Serendipity", "hash": "6175caa4a36bdb82", "src": "db2@1.60.1.70009"}
+{"id": 413247, "field": "aura", "en": "Cast time of next Lesser Heal, Heal, Greater Heal, or Prayer of Healing reduced by $s1%.", "hash": "f4e533a66ab73128", "src": "db2@1.60.1.70009"}
+{"id": 413248, "field": "name", "en": "Serendipity", "hash": "6175caa4a36bdb82", "src": "db2@1.60.1.70009"}
+{"id": 413248, "field": "description", "en": "Healing with Flash Heal reduces the cast time of your next Lesser Heal, Heal, Greater Heal, or Prayer of Healing by $413247s1% for $413247d, stacking up to $413247u times.", "hash": "b17ae14de3bdb164", "src": "db2@1.60.1.70009"}
+{"id": 413251, "field": "name", "en": "Pain and Suffering", "hash": "8822de6daf4bdcf9", "src": "db2@1.60.1.70009"}
+{"id": 413251, "field": "description", "en": "Mind Blast, Mind Spike, and Mind Flay refresh the duration of your one of your Shadow Word: Pain, Void Plague, or Vampiric Touch abilities on the target back to its maximum duration. The ability with the shortest remaining duration will always be the one refreshed.", "hash": "4a90a79c4150a5c3", "src": "db2@1.60.1.70009"}
+{"id": 413259, "field": "name", "en": "Mind Sear", "hash": "788caae6268f48fd", "src": "db2@1.60.1.70009"}
+{"id": 413259, "field": "description", "en": "Causes an explosion of shadow magic damaging the enemy target and other nearby enemies, causing ${$413260m1/100*$<damagepower>} to ${$413260M1/100*$<damagepower>} Shadow damage every $T1 sec for $d to all enemies within $413260a1 yards of the target.", "hash": "7be62c434e748acc", "src": "db2@1.60.1.70009"}
+{"id": 413259, "field": "aura", "en": "Causing shadow damage to all targets within $413260a1 yards.", "hash": "cd4e304c7310bd8f", "src": "db2@1.60.1.70009"}
+{"id": 413260, "field": "name", "en": "Mind Sear", "hash": "788caae6268f48fd", "src": "db2@1.60.1.70009"}
+{"id": 413260, "field": "description", "en": "Causes an explosion of shadow magic around the enemy target, causing $s1 Shadow damage every 1 sec for $48045d to all enemies within $a1 yards around the target.", "hash": "0c1e5ae9d21cd1d9", "src": "db2@1.60.1.70009"}
+{"id": 413260, "field": "aura", "en": "Causing shadow damage to all targets within $a1 yards.", "hash": "5403259acb61f788", "src": "db2@1.60.1.70009"}
+{"id": 413301, "field": "name", "en": "War Machine", "hash": "35f8aa3cf82cc14d", "src": "db2@1.60.1.70009"}
+{"id": 413301, "field": "description", "en": "Killing an enemy worth experience or Honor generates ${$413302s1/10} Rage.\r\n", "hash": "713e91f04b68e35c", "src": "db2@1.60.1.70009"}
+{"id": 413302, "field": "name", "en": "War Machine Rage Effect", "hash": "6f0d71d7586afd5c", "src": "db2@1.60.1.70009"}
+{"id": 413338, "field": "name", "en": "Bulwark Icon", "hash": "376e200d67709445", "src": "db2@1.60.1.70009"}
+{"id": 413338, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70009"}
+{"id": 413380, "field": "name", "en": "Blood Surge", "hash": "9909d0cc8af7a885", "src": "db2@1.60.1.70009"}
+{"id": 413380, "field": "description", "en": "Heroic Strike, Bloodthirst, and Whirlwind have a $h% chance to make your next Slam within $413399d instant, strike with both melee weapons, and cost no Rage.\r\n", "hash": "1d6d805ae1236d31", "src": "db2@1.60.1.70009"}
+{"id": 413399, "field": "name", "en": "Blood Surge", "hash": "9909d0cc8af7a885", "src": "db2@1.60.1.70009"}
+{"id": 413399, "field": "aura", "en": "Your next Slam is instant cast and costs no Rage.", "hash": "1b6ef95aa125a2f9", "src": "db2@1.60.1.70009"}
+{"id": 413404, "field": "name", "en": "Single-Minded Fury", "hash": "028500e614f8949d", "src": "db2@1.60.1.70009"}
+{"id": 413404, "field": "description", "en": "While dual-wielding, your movement speed is increased by $430472s2% and you gain $461470s1% attack speed each time your melee auto-attack strikes the same target as your previous auto-attack, stacking up to $461470u times. Lasts $461470d or until your auto-attack strikes a different target.", "hash": "441338695d829cda", "src": "db2@1.60.1.70009"}
+{"id": 413429, "field": "name", "en": "Dyadic Icon", "hash": "0c26fda448dd852c", "src": "db2@1.60.1.70009"}
+{"id": 413429, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70009"}
+{"id": 413432, "field": "name", "en": "Lithic Icon", "hash": "5307494ebefd5252", "src": "db2@1.60.1.70009"}
+{"id": 413432, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70009"}
+{"id": 413446, "field": "name", "en": "Auto Shot", "hash": "a7b821e749885a7e", "src": "db2@1.60.1.70009"}
+{"id": 413446, "field": "description", "en": "Automatically shoots the target with your bow until cancelled.", "hash": "8366a950668b5ef0", "src": "db2@1.60.1.70009"}
+{"id": 413446, "field": "aura", "en": "Firing at the target.", "hash": "3ea92453d49bd445", "src": "db2@1.60.1.70009"}
+{"id": 413476, "field": "name", "en": "Gladiator Stance Passive", "hash": "a15c3febb75e6577", "src": "db2@1.60.1.70009"}
+{"id": 413479, "field": "name", "en": "Gladiator Stance Shield Passive", "hash": "e660ccee5ebc7976", "src": "db2@1.60.1.70009"}
+{"id": 413548, "field": "name", "en": "Degreelessness Mode", "hash": "d69ded26693ecf62", "src": "db2@1.60.1.70009"}
+{"id": 413548, "field": "description", "en": "Degreelessness enabled. Immune to all CC.\r\nFatal damage is absorbed.\r\n$s2% Health healed every $t2 sec.", "hash": "4759384eb9bd3db4", "src": "db2@1.60.1.70009"}
+{"id": 413548, "field": "aura", "en": "Degreelessness enabled. Immune to all CC.\r\nFatal damage is absorbed.\r\n$s2% Health healed every $t2 sec.", "hash": "4759384eb9bd3db4", "src": "db2@1.60.1.70009"}
+{"id": 413589, "field": "name", "en": "Thunder Clap", "hash": "e46d71e28c979a2c", "src": "db2@1.60.1.70009"}
+{"id": 413589, "field": "aura", "en": "Time between attacks increased by $s2%.", "hash": "4f44ee2e0129ea50", "src": "db2@1.60.1.70009"}
+{"id": 413651, "field": "name", "en": "Combine Prairie Flowers", "hash": "d417e4e771c8a11c", "src": "db2@1.60.1.70009"}
+{"id": 413651, "field": "description", "en": "Combine 3 Prairie Flowers to make a crown.", "hash": "26d07a9cd7d41a93", "src": "db2@1.60.1.70009"}
+{"id": 413664, "field": "name", "en": "Bubble Beam", "hash": "083ae1ef1d147118", "src": "db2@1.60.1.70009"}
+{"id": 413671, "field": "name", "en": "Bubble Beam", "hash": "083ae1ef1d147118", "src": "db2@1.60.1.70009"}
+{"id": 413685, "field": "name", "en": "Path of Arthas", "hash": "b88fc6f08db29c07", "src": "db2@1.60.1.70009"}
+{"id": 413685, "field": "description", "en": "Your connection to the Light has been damaged. All Holy healing you deal decreased by $s2%, but all non-Holy damage you deal increased by $s1%.", "hash": "819978440917cf68", "src": "db2@1.60.1.70009"}
+{"id": 413685, "field": "aura", "en": "All Holy healing you deal decreased by $s2%, but all non-Holy damage you deal increased by $s1%.", "hash": "0dacdc92b53dde54", "src": "db2@1.60.1.70009"}
+{"id": 413698, "field": "name", "en": "Greater Frostbolt", "hash": "4086bc81e263cca2", "src": "db2@1.60.1.70009"}
+{"id": 413839, "field": "name", "en": "Kajaric Icon", "hash": "09be024c7a01b236", "src": "db2@1.60.1.70009"}
+{"id": 413839, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70009"}

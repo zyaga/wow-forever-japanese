@@ -1,0 +1,1 @@
+{"id": 154904, "field": "description", "ja": "Kidney Shotは、同時にbleedを与え、\n1コンボポイントにつき$N1ダメージを、\n$N2秒にわたって与えます。", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3143"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

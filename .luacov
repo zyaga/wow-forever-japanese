@@ -1,0 +1,7 @@
+-- luacov settings for `make coverage-lua`: count the addon's own code, not the generated data or the tests.
+return {
+  include = { "addon/WoWForeverJapanese/Core/", "addon/WoWForeverJapanese/UI/", "addon/WoWForeverJapanese/Main" },
+  exclude = { "addon/WoWForeverJapanese/Data/", "tests/" },
+  statsfile = "luacov.stats.out",
+  reportfile = "luacov.report.out",
+}

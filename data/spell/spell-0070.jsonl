@@ -1,0 +1,1 @@
+{"id": 70613, "field": "description", "ja": "右クリックでパグを召喚/退散します。", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#2327"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

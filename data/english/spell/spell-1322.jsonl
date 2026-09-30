@@ -1,0 +1,11 @@
+{"id": 1322000, "field": "name", "en": "Flame Buffet", "hash": "8501a903f9c8ef69", "src": "db2@1.60.1.70009"}
+{"id": 1322000, "field": "description", "en": "Grants the caster a chance on hit to increase Fire damage taken by an enemy by $s1 for $d.\r\n", "hash": "0e7c457d0557bb1e", "src": "db2@1.60.1.70009"}
+{"id": 1322001, "field": "name", "en": "Flame Buffet", "hash": "8501a903f9c8ef69", "src": "db2@1.60.1.70009"}
+{"id": 1322001, "field": "description", "en": "Increases Fire damage taken by an enemy by $s1 for $d.\r\n", "hash": "6ca87730eb20f2c2", "src": "db2@1.60.1.70009"}
+{"id": 1322001, "field": "aura", "en": "Fire damage taken is increased by $s1.", "hash": "be4d5e705fcb6f1b", "src": "db2@1.60.1.70009"}
+{"id": 1322004, "field": "name", "en": "Infernal", "hash": "e729bf315e08b4bf", "src": "db2@1.60.1.70009"}
+{"id": 1322004, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
+{"id": 1322005, "field": "name", "en": "Infernal", "hash": "e729bf315e08b4bf", "src": "db2@1.60.1.70009"}
+{"id": 1322005, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
+{"id": 1322007, "field": "name", "en": "Summon Voidwalker", "hash": "efc807f53254d107", "src": "db2@1.60.1.70009"}
+{"id": 1322007, "field": "description", "en": "Summons a Voidwalker under the command of the Warlock.", "hash": "e766a608e584028d", "src": "db2@1.60.1.70009"}

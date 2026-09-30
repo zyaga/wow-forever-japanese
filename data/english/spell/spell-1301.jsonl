@@ -1,0 +1,231 @@
+{"id": 1301005, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Guardian 3P Bonus - Rebirth", "hash": "9886735c2b6a879d", "src": "db2@1.60.1.70009"}
+{"id": 1301005, "field": "description", "en": "Your Rebirth spell is now castable in Bear Form and Dire Bear Form and its cast time is reduced by ${$m1/-1000}.1 sec while you are in Bear Form or Dire Bear Form.", "hash": "2126ec9cdd3c88fb", "src": "db2@1.60.1.70009"}
+{"id": 1301006, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Restoration 3P Bonus - Barkskin", "hash": "a798643f3d084e9a", "src": "db2@1.60.1.70009"}
+{"id": 1301006, "field": "description", "en": "Reduces the cooldown on your Barkskin spell by ${$m1/-1000} sec.", "hash": "85c209a286f01608", "src": "db2@1.60.1.70009"}
+{"id": 1301012, "field": "name", "en": "1.60.0 - Item - Tier 1 - Hunter 3P Bonus - Frost and Freezing Trap", "hash": "29f893515a174d99", "src": "db2@1.60.1.70009"}
+{"id": 1301012, "field": "description", "en": "Reduces the cooldown on your Frost Trap and Freezing Trap abilities by ${$m1/-1000} sec.", "hash": "ffa203db4c70819a", "src": "db2@1.60.1.70009"}
+{"id": 1301013, "field": "name", "en": "1.60.0 - Item - Tier 1 - Mage 3P Bonus - Counterspell", "hash": "c14528b6457c3890", "src": "db2@1.60.1.70009"}
+{"id": 1301013, "field": "description", "en": "Reduces the cooldown on your Counterspell spell by ${$m1/-1000} sec.", "hash": "685f658858d3dabc", "src": "db2@1.60.1.70009"}
+{"id": 1301014, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Holy 3P Bonus - Blessing of Protection", "hash": "7b1d3a93de3f59f0", "src": "db2@1.60.1.70009"}
+{"id": 1301014, "field": "description", "en": "Reduces the cooldown on your Blessing of Protection spell by ${$m1/-1000} sec.", "hash": "218fd58c8457bc0f", "src": "db2@1.60.1.70009"}
+{"id": 1301015, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Protection 3P Bonus - Turn Undead", "hash": "26019785fc4e8217", "src": "db2@1.60.1.70009"}
+{"id": 1301015, "field": "description", "en": "Reduces the cast time on your Turn Undead spell by ${$m1/-1000}.1 sec.", "hash": "47714f7fde84c728", "src": "db2@1.60.1.70009"}
+{"id": 1301036, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Retribution 3P Bonus - Hammer of Justice", "hash": "e22e6c3bd4fcc9ba", "src": "db2@1.60.1.70009"}
+{"id": 1301036, "field": "description", "en": "Reduces the cooldown on your Hammer of Justice spell by ${$m1/-1000} sec.", "hash": "ab9f2db8f8de94f2", "src": "db2@1.60.1.70009"}
+{"id": 1301041, "field": "name", "en": "1.60.0 - Item - Tier 1 - Priest - Discipline/Holy 3P Bonus - Fear Ward", "hash": "05b769cfab46934e", "src": "db2@1.60.1.70009"}
+{"id": 1301041, "field": "description", "en": "Reduces the cooldown on your Fear Ward spell by ${$m1/-1000} sec.", "hash": "d2ad4d88583d0513", "src": "db2@1.60.1.70009"}
+{"id": 1301045, "field": "name", "en": "1.60.0 - Item - Tier 1 - Priest - Shadow 3P Bonus - Shackle Undead", "hash": "f8ec7f75ddf6d6f4", "src": "db2@1.60.1.70009"}
+{"id": 1301045, "field": "description", "en": "Increases the duration of your Shackle Undead spell by ${$m1/1000} sec.", "hash": "a54ca81c8628ae08", "src": "db2@1.60.1.70009"}
+{"id": 1301046, "field": "name", "en": "Fury of Forgewright", "hash": "95624a625a717ded", "src": "db2@1.60.1.70009"}
+{"id": 1301046, "field": "description", "en": "Attacks have a chance to grant $15494s1 extra attacks on your next swing. Attacks against Orcs are $s2 times as likely to activate this effect.", "hash": "eafe5bcebd59dfb4", "src": "db2@1.60.1.70009"}
+{"id": 1301046, "field": "aura", "en": "Infused with the spirit of Franclorn Forgewright. You may only speak in Dwarvish.", "hash": "bc49dc4f30885c5a", "src": "db2@1.60.1.70009"}
+{"id": 1301047, "field": "name", "en": "1.60.0 - Item - Tier 1 - Rogue 3P Bonus - Kidney Shot", "hash": "9c47554cd821ac64", "src": "db2@1.60.1.70009"}
+{"id": 1301047, "field": "description", "en": "Reduces the cooldown on your Kidney Shot ability by ${$m1/-1000} sec.", "hash": "c973525dced3704a", "src": "db2@1.60.1.70009"}
+{"id": 1301051, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Enhancement 3P Bonus - Earth and Wind Totems", "hash": "66faadb9595dbead", "src": "db2@1.60.1.70009"}
+{"id": 1301051, "field": "description", "en": "Increases the radius of effect of your beneficial Air and Earth totems by $s1 yards.", "hash": "655845cc4f798598", "src": "db2@1.60.1.70009"}
+{"id": 1301053, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Elemental 3P Bonus - Earthbind Totem", "hash": "1cd48f43cac0af31", "src": "db2@1.60.1.70009"}
+{"id": 1301053, "field": "description", "en": "Reduces the cooldown on your Earthbind Totem spell by ${$m1/-1000} sec.", "hash": "cf3d4383b674e9e7", "src": "db2@1.60.1.70009"}
+{"id": 1301059, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Restoration 3P Bonus - Fire and Water Totems", "hash": "2a47a752df70f971", "src": "db2@1.60.1.70009"}
+{"id": 1301059, "field": "description", "en": "Increases the radius of effect of your beneficial Fire and Water totems by $s1 yards.", "hash": "dfb77ae65e38bdf1", "src": "db2@1.60.1.70009"}
+{"id": 1301068, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warlock 3P Bonus - Banish", "hash": "2ce456d5cd15a012", "src": "db2@1.60.1.70009"}
+{"id": 1301068, "field": "description", "en": "Reduces the cast time of your Banish spell by ${$m1/-1000}.1 sec.", "hash": "dacbc58fb62641aa", "src": "db2@1.60.1.70009"}
+{"id": 1301069, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warrior - Arms/Fury 3P Bonus - Intimidating Shout", "hash": "5821819be5eb196a", "src": "db2@1.60.1.70009"}
+{"id": 1301069, "field": "description", "en": "Reduces the cooldown on your Intimidating Shout ability by ${$m1/-1000} sec.", "hash": "4a69e44ffa888d8d", "src": "db2@1.60.1.70009"}
+{"id": 1301071, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warrior - Protection 3P Bonus - Intervene", "hash": "d0574ae293a8e5f0", "src": "db2@1.60.1.70009"}
+{"id": 1301071, "field": "description", "en": "Reduces the cooldown on your Intervene ability by ${$m1/-1000} sec.", "hash": "6ce6dfc269e93a7d", "src": "db2@1.60.1.70009"}
+{"id": 1301073, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Balance 4P Bonus - SP vs. Demons", "hash": "03ff3e5ed355de44", "src": "db2@1.60.1.70009"}
+{"id": 1301073, "field": "description", "en": "Increases damage done by your spells and effects by up to $s1 when fighting Demons.", "hash": "e2919cf4db420151", "src": "db2@1.60.1.70009"}
+{"id": 1301075, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Feral 4P Bonus - AP vs. Demons", "hash": "2a8bdcfdf20fa89d", "src": "db2@1.60.1.70009"}
+{"id": 1301075, "field": "description", "en": "+$s1 Attack Power against Demons.", "hash": "69f48d9a7e4e7117", "src": "db2@1.60.1.70009"}
+{"id": 1301076, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Guardian 4P Bonus - Expertise", "hash": "bb36258632ef2759", "src": "db2@1.60.1.70009"}
+{"id": 1301076, "field": "description", "en": "Reduces the chance for your melee attacks to be Dodged or Parried by ${$m1/10}.1%.", "hash": "a672a9a422c5c9aa", "src": "db2@1.60.1.70009"}
+{"id": 1301077, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Restoration 4P Bonus - Healing/Damage", "hash": "a93c66bf888d546d", "src": "db2@1.60.1.70009"}
+{"id": 1301077, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70009"}
+{"id": 1301078, "field": "name", "en": "1.60.0 - Item - Tier 1 - Hunter 4P Bonus - AP vs. Beasts", "hash": "a9abb81edea6ba44", "src": "db2@1.60.1.70009"}
+{"id": 1301078, "field": "description", "en": "+$s1 Attack Power against Beasts.", "hash": "2e7564c4ad94b3c2", "src": "db2@1.60.1.70009"}
+{"id": 1301079, "field": "name", "en": "1.60.0 - Item - Tier 1 - Mage 4P Bonus - SP vs. Elementals", "hash": "8c3640697c1c255a", "src": "db2@1.60.1.70009"}
+{"id": 1301079, "field": "description", "en": "Increases damage done by your spells and effects by up to $s1 when fighting Elementals.", "hash": "055c4a1c199f5d2f", "src": "db2@1.60.1.70009"}
+{"id": 1301080, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Holy 4P Bonus - Healing/Damage", "hash": "55235c1da85b0940", "src": "db2@1.60.1.70009"}
+{"id": 1301080, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70009"}
+{"id": 1301083, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Protection 4P Bonus - Expertise", "hash": "b0c8493b852dc5e1", "src": "db2@1.60.1.70009"}
+{"id": 1301083, "field": "description", "en": "Reduces the chance for your melee attacks to be Dodged or Parried by ${$m1/10}.1%.", "hash": "a672a9a422c5c9aa", "src": "db2@1.60.1.70009"}
+{"id": 1301084, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Retribution 4P Bonus - AP vs. Undead", "hash": "fdc800eeb04cd673", "src": "db2@1.60.1.70009"}
+{"id": 1301084, "field": "description", "en": "+$s1 Attack Power against Demons.", "hash": "69f48d9a7e4e7117", "src": "db2@1.60.1.70009"}
+{"id": 1301085, "field": "name", "en": "1.60.0 - Item - Tier 1 - Priest - Discipline/Holy 4P Bonus - Healing/Damage", "hash": "81652785b6d77911", "src": "db2@1.60.1.70009"}
+{"id": 1301085, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70009"}
+{"id": 1301087, "field": "name", "en": "1.60.0 - Item - Tier 1 - Priest - Shadow 4P Bonus - SP vs. Undead", "hash": "2cd3b0f8612b93c3", "src": "db2@1.60.1.70009"}
+{"id": 1301087, "field": "description", "en": "Increases damage done by your spells and effects by up to $s1 when fighting Undead.", "hash": "1ac045a8d82d910f", "src": "db2@1.60.1.70009"}
+{"id": 1301088, "field": "name", "en": "1.60.0 - Item - Tier 1 - Rogue 4P Bonus - AP vs. Humanoids", "hash": "4d5fee8d842a261b", "src": "db2@1.60.1.70009"}
+{"id": 1301088, "field": "description", "en": "+$s1 Attack Power against Humanoids.", "hash": "f6a10ee80ea10520", "src": "db2@1.60.1.70009"}
+{"id": 1301090, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Enhancement 4P Bonus - AP vs. Elementals", "hash": "f22f5c1db8ef9eef", "src": "db2@1.60.1.70009"}
+{"id": 1301090, "field": "description", "en": "+$s1 Attack Power against Elementals.", "hash": "9ad47681473ec35e", "src": "db2@1.60.1.70009"}
+{"id": 1301092, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Elemental 4P Bonus - SP vs. Elementals", "hash": "87c145aad075fe45", "src": "db2@1.60.1.70009"}
+{"id": 1301092, "field": "description", "en": "Increases damage done by your spells and effects by up to $s1 when fighting Elementals.", "hash": "055c4a1c199f5d2f", "src": "db2@1.60.1.70009"}
+{"id": 1301093, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Restoration 4P Bonus - Healing/Damage", "hash": "5dff473ae152b829", "src": "db2@1.60.1.70009"}
+{"id": 1301093, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70009"}
+{"id": 1301094, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warlock 4P Bonus - SP vs. Demons", "hash": "cce1066d41325de5", "src": "db2@1.60.1.70009"}
+{"id": 1301094, "field": "description", "en": "Increases damage done by your spells and effects by up to $s1 when fighting Demons.", "hash": "e2919cf4db420151", "src": "db2@1.60.1.70009"}
+{"id": 1301095, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warrior - Arms/Fury 4P Bonus - AP vs. Humanoids", "hash": "e25dacee0bc561f2", "src": "db2@1.60.1.70009"}
+{"id": 1301095, "field": "description", "en": "+$s1 Attack Power against Humanoids.", "hash": "f6a10ee80ea10520", "src": "db2@1.60.1.70009"}
+{"id": 1301096, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warrior - Protection 4P Bonus - Expertise", "hash": "1ca5aedc2a658a0d", "src": "db2@1.60.1.70009"}
+{"id": 1301096, "field": "description", "en": "Reduces the chance for your melee attacks to be Dodged or Parried by ${$m1/10}.1%.", "hash": "a672a9a422c5c9aa", "src": "db2@1.60.1.70009"}
+{"id": 1301106, "field": "name", "en": "Splatter", "hash": "9a275c613f821736", "src": "db2@1.60.1.70009"}
+{"id": 1301121, "field": "name", "en": "Reduce Mechanic Duration - Snare/Root 20", "hash": "858bfaa2aabe3d57", "src": "db2@1.60.1.70009"}
+{"id": 1301121, "field": "description", "en": "Reduces the duration of all movement impairing effects on you by $m2%.", "hash": "3922f0dae78c43b1", "src": "db2@1.60.1.70009"}
+{"id": 1301123, "field": "name", "en": "Roar of the Crowd", "hash": "30058c58ccd20a50", "src": "db2@1.60.1.70009"}
+{"id": 1301123, "field": "description", "en": "Chance on hit to gain $s1% attack speed for $1301124d. Attacks while no allies are within $s3 yards are $s2 times as likely to activate this effect.", "hash": "8d2d7349a927f99b", "src": "db2@1.60.1.70009"}
+{"id": 1301124, "field": "name", "en": "Roar of the Crowd", "hash": "30058c58ccd20a50", "src": "db2@1.60.1.70009"}
+{"id": 1301124, "field": "description", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70009"}
+{"id": 1301124, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70009"}
+{"id": 1301125, "field": "name", "en": "Increased Hit Chance - Ranged - 02", "hash": "5fe9344a02aac877", "src": "db2@1.60.1.70009"}
+{"id": 1301125, "field": "description", "en": "Improves your chance to hit with ranged weapons by ${$s1}.1%.", "hash": "24c1db5c8a063617", "src": "db2@1.60.1.70009"}
+{"id": 1301126, "field": "name", "en": "Resist Fear 08", "hash": "40935f6a755eda5e", "src": "db2@1.60.1.70009"}
+{"id": 1301126, "field": "description", "en": "Reduces the hit chance of Fear effects against you by $s1%.", "hash": "d3bb670ecca93f07", "src": "db2@1.60.1.70009"}
+{"id": 1301127, "field": "name", "en": "Increased Hit Chance - Ranged - 03", "hash": "5fe9344b02aac878", "src": "db2@1.60.1.70009"}
+{"id": 1301127, "field": "description", "en": "Improves your chance to hit with ranged weapons by ${$s1}.1%.", "hash": "24c1db5c8a063617", "src": "db2@1.60.1.70009"}
+{"id": 1301167, "field": "name", "en": "Transformative Cocoon", "hash": "2fdfe48d0e37035d", "src": "db2@1.60.1.70009"}
+{"id": 1301167, "field": "description", "en": "Absorb up to $1316048s1 damage and Stun yourself for $d. When the Stun expires, gain $1301168s1% increased movement speed for $1301168d.", "hash": "584acd6f884b4f13", "src": "db2@1.60.1.70009"}
+{"id": 1301167, "field": "aura", "en": "Stunned", "hash": "a280ed130ac43b19", "src": "db2@1.60.1.70009"}
+{"id": 1301168, "field": "name", "en": "Transformative Cocoon", "hash": "2fdfe48d0e37035d", "src": "db2@1.60.1.70009"}
+{"id": 1301168, "field": "description", "en": "$@spelldesc1301167", "hash": "5bffbb71ae10d212", "src": "db2@1.60.1.70009"}
+{"id": 1301168, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70009"}
+{"id": 1301195, "field": "name", "en": "Everlasting Silvermoon Shimmerwine", "hash": "6324bfa5db2cd914", "src": "db2@1.60.1.70009"}
+{"id": 1301195, "field": "description", "en": "Pour a glass of Silvermoon Shimmerwine.", "hash": "40582d15373dc73e", "src": "db2@1.60.1.70009"}
+{"id": 1301195, "field": "aura", "en": "Enjoying a glass of Silvermoon Shimmerwine.", "hash": "f294aedebec6e664", "src": "db2@1.60.1.70009"}
+{"id": 1301234, "field": "name", "en": "Corrupted Cat Figurine", "hash": "77b93d8a0c74476a", "src": "db2@1.60.1.70009"}
+{"id": 1301242, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Balance 5P Bonus - Insect Swarm", "hash": "701f837fc3fcb122", "src": "db2@1.60.1.70009"}
+{"id": 1301242, "field": "description", "en": "Increases the duration of your Insect Swarm spell by ${$m1/1000} sec.", "hash": "d8cbc54d7a932f6f", "src": "db2@1.60.1.70009"}
+{"id": 1301247, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Feral 5P Bonus - Tiger's Fury", "hash": "f40faf6db952073d", "src": "db2@1.60.1.70009"}
+{"id": 1301247, "field": "description", "en": "Reduces the cooldown on your Tiger's Fury ability by ${$m1/-1000}.1 sec.", "hash": "59c20c32eb2de1f4", "src": "db2@1.60.1.70009"}
+{"id": 1301249, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Guardian 5P Bonus - Berserk", "hash": "ce7fd7c41b289b4f", "src": "db2@1.60.1.70009"}
+{"id": 1301249, "field": "description", "en": "Reduces the cooldown on your Berserk ability by ${$m1/-1000}.1 sec.", "hash": "57059ce07eabf18a", "src": "db2@1.60.1.70009"}
+{"id": 1301250, "field": "name", "en": "1.60.0 - Item - Tier 1 - Druid - Restoration 5P Bonus - Swiftmend", "hash": "c7af0c7c923230b0", "src": "db2@1.60.1.70009"}
+{"id": 1301250, "field": "description", "en": "Reduces the cooldown on your Swiftmend spell by ${$m1/-1000}.1 sec.", "hash": "da7aba76107cfaef", "src": "db2@1.60.1.70009"}
+{"id": 1301252, "field": "name", "en": "1.60.0 - Item - Tier 1 - Hunter 5P Bonus - Aimed and Multi-Shot", "hash": "ca5cb0e5a793673e", "src": "db2@1.60.1.70009"}
+{"id": 1301252, "field": "description", "en": "Reduces the cooldown on your Aimed Shot and Multi-Shot abilities by ${$m1/-1000} sec.", "hash": "952392e30a3dadc9", "src": "db2@1.60.1.70009"}
+{"id": 1301404, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70009"}
+{"id": 1301404, "field": "aura", "en": "$s1 Nature damage every $t1 sec.", "hash": "c85cbfd4b28e1f68", "src": "db2@1.60.1.70009"}
+{"id": 1301421, "field": "name", "en": "Cloudy Skyforged Chainmail", "hash": "45584089ab2af097", "src": "db2@1.60.1.70009"}
+{"id": 1301422, "field": "name", "en": "Cloudy Skyforged Wristguards", "hash": "7dfb9285b77b7f1c", "src": "db2@1.60.1.70009"}
+{"id": 1301423, "field": "name", "en": "Cloudy Skyforged Gauntlets", "hash": "ee51cdca1cd3bb67", "src": "db2@1.60.1.70009"}
+{"id": 1301424, "field": "name", "en": "Cloudy Skyforged Chain", "hash": "9eb00349a586dee8", "src": "db2@1.60.1.70009"}
+{"id": 1301425, "field": "name", "en": "Cloudy Skyforged Legguards", "hash": "b5394c6895a59fce", "src": "db2@1.60.1.70009"}
+{"id": 1301426, "field": "name", "en": "Cloudy Skyforged Greaves", "hash": "902980bba15b9a63", "src": "db2@1.60.1.70009"}
+{"id": 1301427, "field": "name", "en": "Cloudy Gustwoven Harness", "hash": "eb8a065dca70ad27", "src": "db2@1.60.1.70009"}
+{"id": 1301428, "field": "name", "en": "Cloudy Gustwoven Bracers", "hash": "3740697152036620", "src": "db2@1.60.1.70009"}
+{"id": 1301429, "field": "name", "en": "Cloudy Gustwoven Gloves", "hash": "c6fa03a030ed883d", "src": "db2@1.60.1.70009"}
+{"id": 1301430, "field": "name", "en": "Cloudy Gustwoven Belt", "hash": "b712e6f42bb96dad", "src": "db2@1.60.1.70009"}
+{"id": 1301431, "field": "name", "en": "Cloudy Gustwoven Trousers", "hash": "ab00f26169d5c673", "src": "db2@1.60.1.70009"}
+{"id": 1301432, "field": "name", "en": "Cloudy Gustwoven Boots", "hash": "b0040249743a08a0", "src": "db2@1.60.1.70009"}
+{"id": 1301433, "field": "name", "en": "Cloudy Windraveled Jerkin", "hash": "8c7231f6daa36977", "src": "db2@1.60.1.70009"}
+{"id": 1301434, "field": "name", "en": "Cloudy Windraveled Armguards", "hash": "59a9c600c127a6d6", "src": "db2@1.60.1.70009"}
+{"id": 1301435, "field": "name", "en": "Cloudy Windraveled Mitts", "hash": "b356f02ec0166151", "src": "db2@1.60.1.70009"}
+{"id": 1301436, "field": "name", "en": "Cloudy Windraveled Strap", "hash": "1e21fbf40519f556", "src": "db2@1.60.1.70009"}
+{"id": 1301437, "field": "name", "en": "Cloudy Windraveled Pants", "hash": "e6ec1413d9c4a8ef", "src": "db2@1.60.1.70009"}
+{"id": 1301438, "field": "name", "en": "Cloudy Windraveled Footwraps", "hash": "e33e2da39b79b9e5", "src": "db2@1.60.1.70009"}
+{"id": 1301439, "field": "name", "en": "Cloudy Stormsewn Vest", "hash": "d4602972bf022207", "src": "db2@1.60.1.70009"}
+{"id": 1301440, "field": "name", "en": "Cloudy Stormsewn Cuffs", "hash": "61d21aee3a7af162", "src": "db2@1.60.1.70009"}
+{"id": 1301441, "field": "name", "en": "Cloudy Stormsewn Handwraps", "hash": "61f29998958cf8e2", "src": "db2@1.60.1.70009"}
+{"id": 1301442, "field": "name", "en": "Cloudy Stormsewn Cord", "hash": "d1d704b867fd8b09", "src": "db2@1.60.1.70009"}
+{"id": 1301443, "field": "name", "en": "Cloudy Stormsewn Leggings", "hash": "f3d7d64d578fc48e", "src": "db2@1.60.1.70009"}
+{"id": 1301444, "field": "name", "en": "Cloudy Stormsewn Shoes", "hash": "78f1e9f21e95c66e", "src": "db2@1.60.1.70009"}
+{"id": 1301445, "field": "name", "en": "Azure Skyforged Chainmail", "hash": "3ee8b64d890298ea", "src": "db2@1.60.1.70009"}
+{"id": 1301446, "field": "name", "en": "Azure Skyforged Wristguards", "hash": "12e1f9fe6885f329", "src": "db2@1.60.1.70009"}
+{"id": 1301447, "field": "name", "en": "Azure Skyforged Gauntlets", "hash": "e7e2438efaab63a9", "src": "db2@1.60.1.70009"}
+{"id": 1301448, "field": "name", "en": "Azure Skyforged Chain", "hash": "e00caff2efb7db2c", "src": "db2@1.60.1.70009"}
+{"id": 1301449, "field": "name", "en": "Azure Skyforged Legguards", "hash": "aec9c22c737d4821", "src": "db2@1.60.1.70009"}
+{"id": 1301450, "field": "name", "en": "Azure Skyforged Greaves", "hash": "1d9c2342a3be7c73", "src": "db2@1.60.1.70009"}
+{"id": 1301451, "field": "name", "en": "Azure Gustwoven Harness", "hash": "78fca8e4ccd38f37", "src": "db2@1.60.1.70009"}
+{"id": 1301452, "field": "name", "en": "Azure Gustwoven Bracers", "hash": "c4b30bf354664830", "src": "db2@1.60.1.70009"}
+{"id": 1301453, "field": "name", "en": "Azure Gustwoven Gloves", "hash": "39665ec55488190e", "src": "db2@1.60.1.70009"}
+{"id": 1301454, "field": "name", "en": "Azure Gustwoven Belt", "hash": "88ac097f7e9402f0", "src": "db2@1.60.1.70009"}
+{"id": 1301455, "field": "name", "en": "Azure Gustwoven Trousers", "hash": "0caa1c547c1e6b8f", "src": "db2@1.60.1.70009"}
+{"id": 1301456, "field": "name", "en": "Azure Gustwoven Boots", "hash": "f160aef2be6b04e4", "src": "db2@1.60.1.70009"}
+{"id": 1301457, "field": "name", "en": "Azure Windraveled Jerkin", "hash": "ee1b5be4ecec0e93", "src": "db2@1.60.1.70009"}
+{"id": 1301458, "field": "name", "en": "Azure Windraveled Armguards", "hash": "ee902d7472321ae3", "src": "db2@1.60.1.70009"}
+{"id": 1301459, "field": "name", "en": "Azure Windraveled Mitts", "hash": "40c992b5c2794361", "src": "db2@1.60.1.70009"}
+{"id": 1301460, "field": "name", "en": "Azure Windraveled Strap", "hash": "ab949e76077cd766", "src": "db2@1.60.1.70009"}
+{"id": 1301461, "field": "name", "en": "Azure Windraveled Pants", "hash": "745eb69adc278aff", "src": "db2@1.60.1.70009"}
+{"id": 1301462, "field": "name", "en": "Azure Windraveled Footwraps", "hash": "7824951c4c842df2", "src": "db2@1.60.1.70009"}
+{"id": 1301463, "field": "name", "en": "Azure Stormsewn Vest", "hash": "a5f94bfd11dcb75b", "src": "db2@1.60.1.70009"}
+{"id": 1301464, "field": "name", "en": "Azure Stormsewn Cuffs", "hash": "a32ec79784abeda6", "src": "db2@1.60.1.70009"}
+{"id": 1301465, "field": "name", "en": "Azure Stormsewn Handwraps", "hash": "5b830f5c7364a135", "src": "db2@1.60.1.70009"}
+{"id": 1301466, "field": "name", "en": "Azure Stormsewn Cord", "hash": "a3702743bad8204c", "src": "db2@1.60.1.70009"}
+{"id": 1301468, "field": "name", "en": "Azure Stormsewn Leggings", "hash": "5581004069d869aa", "src": "db2@1.60.1.70009"}
+{"id": 1301469, "field": "name", "en": "Azure Stormsewn Shoes", "hash": "ba4e969b68c6c2b2", "src": "db2@1.60.1.70009"}
+{"id": 1301488, "field": "name", "en": "1.60.0 - Item - Tier 1 - Mage 5P Bonus - Frostfire Bolt", "hash": "afee67e80b82b1e6", "src": "db2@1.60.1.70009"}
+{"id": 1301488, "field": "description", "en": "Your Frostfire Bolt spell has a $s1% increased chance to trigger Missile Barrage, gains $s2% increased critical strike chance while your Combustion spell is active, and has a $s3% increased chance to trigger Fingers of Frost.", "hash": "1e92821e4f8ce34d", "src": "db2@1.60.1.70009"}
+{"id": 1301526, "field": "name", "en": "Cloudy Skyforged Helm", "hash": "80e6b8c3a9b8872f", "src": "db2@1.60.1.70009"}
+{"id": 1301527, "field": "name", "en": "Cloudy Skyforged Pauldrons", "hash": "f7036ec23475b80b", "src": "db2@1.60.1.70009"}
+{"id": 1301528, "field": "name", "en": "Cloudy Gustwoven Hood", "hash": "b7e35869a3dc2af7", "src": "db2@1.60.1.70009"}
+{"id": 1301529, "field": "name", "en": "Cloudy Gustwoven Spaulders", "hash": "16b7a1ee8c6a624a", "src": "db2@1.60.1.70009"}
+{"id": 1301530, "field": "name", "en": "Cloudy Windraveled Cover", "hash": "049c210a634bc824", "src": "db2@1.60.1.70009"}
+{"id": 1301531, "field": "name", "en": "Cloudy Windraveled Drapes", "hash": "8944d433f34384e8", "src": "db2@1.60.1.70009"}
+{"id": 1301532, "field": "name", "en": "Cloudy Stormsewn Cowl", "hash": "d1d7074f67fe2a76", "src": "db2@1.60.1.70009"}
+{"id": 1301533, "field": "name", "en": "Cloudy Stormsewn Epaulets", "hash": "8475b9029b411893", "src": "db2@1.60.1.70009"}
+{"id": 1301534, "field": "name", "en": "Azure Skyforged Helm", "hash": "527fdb4efc931c72", "src": "db2@1.60.1.70009"}
+{"id": 1301535, "field": "name", "en": "Azure Skyforged Pauldrons", "hash": "f093e486124d605e", "src": "db2@1.60.1.70009"}
+{"id": 1301536, "field": "name", "en": "Azure Gustwoven Hood", "hash": "897c7af4f6b6c03a", "src": "db2@1.60.1.70009"}
+{"id": 1301537, "field": "name", "en": "Azure Gustwoven Spaulders", "hash": "104817b26a420a9d", "src": "db2@1.60.1.70009"}
+{"id": 1301538, "field": "name", "en": "Azure Windraveled Cover", "hash": "920ec38c65aeaa34", "src": "db2@1.60.1.70009"}
+{"id": 1301539, "field": "name", "en": "Azure Windraveled Drapes", "hash": "eaedfe21058c2a15", "src": "db2@1.60.1.70009"}
+{"id": 1301540, "field": "name", "en": "Azure Stormsewn Cowl", "hash": "a37029dabad8bfb9", "src": "db2@1.60.1.70009"}
+{"id": 1301541, "field": "name", "en": "Azure Stormsewn Epaulets", "hash": "e61ee2f0ad89bdaf", "src": "db2@1.60.1.70009"}
+{"id": 1301544, "field": "name", "en": "[DNT] Play Sound - Open Trapdoor", "hash": "514c35624883115b", "src": "db2@1.60.1.70009"}
+{"id": 1301625, "field": "name", "en": "Flame Walker", "hash": "c898bf92a40af863", "src": "db2@1.60.1.70009"}
+{"id": 1301625, "field": "description", "en": "Ignore all damage taken from standing or swimming in Lava for $d.", "hash": "f0ba0a531cb551e1", "src": "db2@1.60.1.70009"}
+{"id": 1301625, "field": "aura", "en": "Ignoring all damage taken from Lava.", "hash": "087e5fb4df7fef81", "src": "db2@1.60.1.70009"}
+{"id": 1301635, "field": "name", "en": "Anti-Magic Shield", "hash": "0c3ae6374536e9db", "src": "db2@1.60.1.70009"}
+{"id": 1301635, "field": "description", "en": "Creates an anti-magic shell around the caster, giving it magic immunity for $d.", "hash": "c5aec1005f488de1", "src": "db2@1.60.1.70009"}
+{"id": 1301635, "field": "aura", "en": "Immune to magic.", "hash": "cb10624481d2a870", "src": "db2@1.60.1.70009"}
+{"id": 1301636, "field": "name", "en": "Pack Kodo", "hash": "3622e4ee80199f4e", "src": "db2@1.60.1.70009"}
+{"id": 1301636, "field": "description", "en": "Summons and dismisses a rideable pack kodo.", "hash": "fbdfeb5dfce1494c", "src": "db2@1.60.1.70009"}
+{"id": 1301636, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
+{"id": 1301659, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70009"}
+{"id": 1301683, "field": "name", "en": "Harvester Override Signalcaster", "hash": "cc39dfb4adbc0f99", "src": "db2@1.60.1.70009"}
+{"id": 1301683, "field": "description", "en": "Override control of the target mechanical creature for up to $d. The target will attack slower while under your control. Ineffective on targets above level $m1.", "hash": "7f04cd90560a9eec", "src": "db2@1.60.1.70009"}
+{"id": 1301683, "field": "aura", "en": "Overridden.", "hash": "5dc664dbfba2fbdf", "src": "db2@1.60.1.70009"}
+{"id": 1301694, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Holy 5P Bonus - Holy Shock", "hash": "14c3894765a68bb5", "src": "db2@1.60.1.70009"}
+{"id": 1301694, "field": "description", "en": "Reduces the cooldown on your Holy Shock spell by ${$m1/-1000} sec.", "hash": "51ea644b8224ccb0", "src": "db2@1.60.1.70009"}
+{"id": 1301697, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Protection 5P Bonus - Forbearance", "hash": "83ca616e68270e69", "src": "db2@1.60.1.70009"}
+{"id": 1301697, "field": "description", "en": "Reduces the duration of Forbearance any time you gain it by ${$m1/-1000}.1 sec.", "hash": "7f1dde64fa505c84", "src": "db2@1.60.1.70009"}
+{"id": 1301702, "field": "name", "en": "1.60.0 - Item - Tier 1 - Paladin - Retribution 5P Bonus - Judgement", "hash": "e8f06e1a79bffac0", "src": "db2@1.60.1.70009"}
+{"id": 1301702, "field": "description", "en": "Reduces the cooldown on your Judgement spell by ${$m1/-1000}.1 sec.", "hash": "4c8f90a0f2a45230", "src": "db2@1.60.1.70009"}
+{"id": 1301703, "field": "name", "en": "1.60.0 - Item - Tier 1 - Priest - Discipline/Holy 5P Bonus - Penance and Prayer of Mending", "hash": "19cda42109b89a2d", "src": "db2@1.60.1.70009"}
+{"id": 1301703, "field": "description", "en": "Reduces the cooldown on your Penance and Prayer of Mending spells by ${$m1/-1000} sec.", "hash": "06fe852612bce231", "src": "db2@1.60.1.70009"}
+{"id": 1301706, "field": "name", "en": "1.60.0 - Item - Tier 1 - Priest - Shadow 5P Bonus - Devouring Plague", "hash": "ebff4288cdf87c1e", "src": "db2@1.60.1.70009"}
+{"id": 1301706, "field": "description", "en": "Reduces the cooldown on your Devouring Plague spell by ${$m1/-1000} sec.", "hash": "73970dc14d529c18", "src": "db2@1.60.1.70009"}
+{"id": 1301707, "field": "name", "en": "Briarwood Reed", "hash": "732d3bf5a12daa01", "src": "db2@1.60.1.70009"}
+{"id": 1301707, "field": "description", "en": "Unable to be tracked.", "hash": "9bd2adf26d3f2e71", "src": "db2@1.60.1.70009"}
+{"id": 1301707, "field": "aura", "en": "Untrackable.", "hash": "90c3da9a4f53a910", "src": "db2@1.60.1.70009"}
+{"id": 1301708, "field": "name", "en": "1.60.0 - Item - Tier 1 - Rogue 5P Bonus - Envenom and Eviscerate", "hash": "407e742e6d2a906f", "src": "db2@1.60.1.70009"}
+{"id": 1301708, "field": "description", "en": "Reduces the cost of your Envenom and Eviscerate abilities by $s1 Energy.", "hash": "8f9d8c39a7f6e379", "src": "db2@1.60.1.70009"}
+{"id": 1301709, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Enhancement 5P Bonus - Stormstrike", "hash": "cbbf8e4eeefd4815", "src": "db2@1.60.1.70009"}
+{"id": 1301709, "field": "description", "en": "Reduces the cooldown on your Stormstrike ability by ${$m1/-1000}.1 sec.", "hash": "638e74d518b5f4a1", "src": "db2@1.60.1.70009"}
+{"id": 1301711, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Elemental 5P Bonus - Lava Burst", "hash": "a895f32f0272ae9d", "src": "db2@1.60.1.70009"}
+{"id": 1301711, "field": "description", "en": "Reduces the cooldown on your Lava Burst spell by ${$m1/-1000} sec.", "hash": "07e8e60c95a5d220", "src": "db2@1.60.1.70009"}
+{"id": 1301713, "field": "name", "en": "1.60.0 - Item - Tier 1 - Shaman - Restoration 5P Bonus - Riptide", "hash": "77dce53c41f3dec7", "src": "db2@1.60.1.70009"}
+{"id": 1301713, "field": "description", "en": "Reduces the cooldown on your Riptide spell by ${$m1/-1000} sec.", "hash": "4f2fc448c701a8ad", "src": "db2@1.60.1.70009"}
+{"id": 1301715, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warlock 5P Bonus - Life Tap", "hash": "28ef79614ff31538", "src": "db2@1.60.1.70009"}
+{"id": 1301715, "field": "description", "en": "Your Life Tap generates $s1% more Mana at no additional Health cost.", "hash": "fa0cca36c3f7ebd9", "src": "db2@1.60.1.70009"}
+{"id": 1301721, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warrior - Arms/Fury 5P Bonus - Recklessness", "hash": "32c37fd9b4b2f0b4", "src": "db2@1.60.1.70009"}
+{"id": 1301721, "field": "description", "en": "Reduces the cooldown on your Recklessness ability by ${$m1/-1000} sec.", "hash": "2056cecddbe219a0", "src": "db2@1.60.1.70009"}
+{"id": 1301722, "field": "name", "en": "1.60.0 - Item - Tier 1 - Warrior - Protection 5P Bonus - Shield Wall", "hash": "38778bf204a48911", "src": "db2@1.60.1.70009"}
+{"id": 1301722, "field": "description", "en": "Reduces the cooldown on your Shield Wall ability by ${$m1/-1000} sec.", "hash": "8c214a98e2a687e7", "src": "db2@1.60.1.70009"}
+{"id": 1301784, "field": "name", "en": "Gatehouse Shipment Placed", "hash": "9e24c00b3debdbda", "src": "db2@1.60.1.70009"}
+{"id": 1301784, "field": "description", "en": "Place outside the door on the second floor of Trias' Cheese.", "hash": "0ae35f9101f5fe81", "src": "db2@1.60.1.70009"}
+{"id": 1301805, "field": "name", "en": "Crafting Rings", "hash": "ba75c30828ec125a", "src": "db2@1.60.1.70009"}
+{"id": 1301806, "field": "name", "en": "Enchanting Rings", "hash": "94e8d9655777d45f", "src": "db2@1.60.1.70009"}
+{"id": 1301818, "field": "name", "en": "Carrying Smoldering Incense", "hash": "31d4162d4068134f", "src": "db2@1.60.1.70009"}
+{"id": 1301824, "field": "name", "en": "Call the North Wind", "hash": "80995c148999cf62", "src": "db2@1.60.1.70009"}
+{"id": 1301833, "field": "name", "en": "Gather Power", "hash": "56f75567f13db343", "src": "db2@1.60.1.70009"}
+{"id": 1301922, "field": "name", "en": "Fury of Blackhand", "hash": "d742726607fa4ac7", "src": "db2@1.60.1.70009"}
+{"id": 1301922, "field": "description", "en": "Melee and ranged attacks against Orcs and Ogres deal $1287839s1% additional damage as Physical damage.", "hash": "624a22247138805f", "src": "db2@1.60.1.70009"}
+{"id": 1301922, "field": "aura", "en": "Melee and ranged attacks against Orcs and Ogres deal $1287839s1% additional damage as Physical damage.", "hash": "624a22247138805f", "src": "db2@1.60.1.70009"}
+{"id": 1301928, "field": "name", "en": "Flammable", "hash": "f95ab9e0691d9dd7", "src": "db2@1.60.1.70009"}
+{"id": 1301928, "field": "description", "en": "Increases fire damage taken by $s1%.", "hash": "1cf7aacb454e65bd", "src": "db2@1.60.1.70009"}
+{"id": 1301928, "field": "aura", "en": "$s1% increased fire damage recieved.", "hash": "9dcc8dc9cccc3db1", "src": "db2@1.60.1.70009"}
+{"id": 1301947, "field": "name", "en": "Mischevious Zephyr", "hash": "9291f33cecc614e5", "src": "db2@1.60.1.70009"}
+{"id": 1301967, "field": "name", "en": "Punt!", "hash": "8c137a9bfe85eca5", "src": "db2@1.60.1.70009"}
+{"id": 1301968, "field": "name", "en": "Wind Spike", "hash": "c394d4a38c565ac3", "src": "db2@1.60.1.70009"}
+{"id": 1301968, "field": "description", "en": "Summons a spike of corrupted wind, inflicting nature damage.", "hash": "ee6b33f0f9231019", "src": "db2@1.60.1.70009"}

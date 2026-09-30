@@ -1,0 +1,113 @@
+{"id": 1298225, "field": "name", "en": "Undead Slayer 18", "hash": "7cdd754971ee2fdf", "src": "db2@1.60.1.70009"}
+{"id": 1298225, "field": "description", "en": "+$s1 Attack Power against Undead.", "hash": "a22336497b3a00d5", "src": "db2@1.60.1.70009"}
+{"id": 1298230, "field": "name", "en": "Stoneform Shoulders", "hash": "8eabecfd0ed0bff6", "src": "db2@1.60.1.70009"}
+{"id": 1298230, "field": "description", "en": "After entering combat, reduce the next instance of physical damage taken within $1298231d by $1298231s1.", "hash": "50af63243074b13a", "src": "db2@1.60.1.70009"}
+{"id": 1298231, "field": "name", "en": "Stoneform Shoulders", "hash": "8eabecfd0ed0bff6", "src": "db2@1.60.1.70009"}
+{"id": 1298231, "field": "description", "en": "After entering combat, reduce the next instance of physical damage taken within $1298231d by $1298231s1.", "hash": "50af63243074b13a", "src": "db2@1.60.1.70009"}
+{"id": 1298231, "field": "aura", "en": "Physical damage taken reduced by $s1.", "hash": "3a997cf65cd4bf59", "src": "db2@1.60.1.70009"}
+{"id": 1298325, "field": "name", "en": "Toss Enchanted Seeds", "hash": "d11f27efbd1f5185", "src": "db2@1.60.1.70009"}
+{"id": 1298325, "field": "description", "en": "Sprinkle enchanted seeds on a ruined war machine to speed its reclamation by nature.", "hash": "e5fbb7ab6a20b4a9", "src": "db2@1.60.1.70009"}
+{"id": 1298392, "field": "name", "en": "Wave Fox Fur Tuft", "hash": "0e92db7429538998", "src": "db2@1.60.1.70009"}
+{"id": 1298392, "field": "description", "en": "Use the fox fur to temporaily transform a demon in Dae'gun.", "hash": "9620c5b8d5e3b845", "src": "db2@1.60.1.70009"}
+{"id": 1298406, "field": "name", "en": "Undead Slayer 15", "hash": "7cdd754671ee2fdc", "src": "db2@1.60.1.70009"}
+{"id": 1298406, "field": "description", "en": "+$s1 Attack Power against Undead.", "hash": "a22336497b3a00d5", "src": "db2@1.60.1.70009"}
+{"id": 1298407, "field": "name", "en": "Undead Slayer 30", "hash": "7cdd764771ee6f99", "src": "db2@1.60.1.70009"}
+{"id": 1298407, "field": "description", "en": "+$s1 Attack Power against Undead.", "hash": "a22336497b3a00d5", "src": "db2@1.60.1.70009"}
+{"id": 1298413, "field": "name", "en": "Iceblade Hacker", "hash": "812fd5fcc68654ff", "src": "db2@1.60.1.70009"}
+{"id": 1298413, "field": "description", "en": "Melee attacks with this weapon deal $1298414s1 Frost damage.", "hash": "ca9338f9841ab9c6", "src": "db2@1.60.1.70009"}
+{"id": 1298414, "field": "name", "en": "Iceblade Hacker", "hash": "812fd5fcc68654ff", "src": "db2@1.60.1.70009"}
+{"id": 1298414, "field": "description", "en": "Melee attacks with this weapon deal $1298414s1 Frost damage.", "hash": "ca9338f9841ab9c6", "src": "db2@1.60.1.70009"}
+{"id": 1298416, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70009"}
+{"id": 1298416, "field": "description", "en": "Deal an additional $s2 Frost damage and slow movement speed by $s1% for $d.", "hash": "812b1db0b455ff5e", "src": "db2@1.60.1.70009"}
+{"id": 1298416, "field": "aura", "en": "Movement slowed by $s1%.", "hash": "bd9406b84a62a739", "src": "db2@1.60.1.70009"}
+{"id": 1298427, "field": "name", "en": "Summon Lair Guard", "hash": "cb1508a07e3974a9", "src": "db2@1.60.1.70009"}
+{"id": 1298428, "field": "name", "en": "Blast Nova", "hash": "9dba117b2a5c0d4d", "src": "db2@1.60.1.70009"}
+{"id": 1298428, "field": "description", "en": "Inflicts $s1 Fire damage to enemies within $a1 yards.", "hash": "c643acc7d1999c7b", "src": "db2@1.60.1.70009"}
+{"id": 1298437, "field": "name", "en": "Ignite Weapon", "hash": "92b2578b7e1f98d8", "src": "db2@1.60.1.70009"}
+{"id": 1298437, "field": "description", "en": "Melee attacks cause an additional $68960s1 Fire damage to all enemies within $68960a1 yards of the target.\r\n", "hash": "71bcc1b5e9d1ba81", "src": "db2@1.60.1.70009"}
+{"id": 1298437, "field": "aura", "en": "Melee attacks cause an additional $68960s1 Fire damage to all enemies within $68960a1 yards of the target.", "hash": "71bcc1b5e9d1ba81", "src": "db2@1.60.1.70009"}
+{"id": 1298438, "field": "name", "en": "Ignite Weapon", "hash": "92b2578b7e1f98d8", "src": "db2@1.60.1.70009"}
+{"id": 1298438, "field": "description", "en": "Melee attacks cause an additional $s1 Fire damage to all enemies within $a1 yards of the target.", "hash": "56286795b855227f", "src": "db2@1.60.1.70009"}
+{"id": 1298445, "field": "name", "en": "Refilling Drinking Gourd", "hash": "22d270d0d6a7116c", "src": "db2@1.60.1.70009"}
+{"id": 1298450, "field": "name", "en": "White Kodo", "hash": "e0ebf25fead9d246", "src": "db2@1.60.1.70009"}
+{"id": 1298450, "field": "description", "en": "Summons and dismisses a rideable white kodo.", "hash": "b45b1d87588b5f9a", "src": "db2@1.60.1.70009"}
+{"id": 1298450, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
+{"id": 1298478, "field": "name", "en": "Humanoid Slaying 30", "hash": "1a247649d1f9f47b", "src": "db2@1.60.1.70009"}
+{"id": 1298478, "field": "description", "en": "+$s1 Attack Power against Humanoids.", "hash": "f6a10ee80ea10520", "src": "db2@1.60.1.70009"}
+{"id": 1298494, "field": "name", "en": "Poisons", "hash": "c8da9a5fc6535675", "src": "db2@1.60.1.70009"}
+{"id": 1298494, "field": "description", "en": "$@spelldesc2842", "hash": "e282166d76ddf714", "src": "db2@1.60.1.70009"}
+{"id": 1298496, "field": "name", "en": "Black Skeletal Horse", "hash": "aa878919b2629377", "src": "db2@1.60.1.70009"}
+{"id": 1298496, "field": "description", "en": "Summons and dismisses a rideable skeletal horse.", "hash": "0c4c86cf538dd8cf", "src": "db2@1.60.1.70009"}
+{"id": 1298496, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
+{"id": 1298497, "field": "name", "en": "Restore Essence", "hash": "992210d479e3b532", "src": "db2@1.60.1.70009"}
+{"id": 1298497, "field": "description", "en": "Releases the spirit from an Undead corpse within $a1 yds, laying it to rest and restoring $1298498s1 Health.", "hash": "b0c273c50a96d225", "src": "db2@1.60.1.70009"}
+{"id": 1298498, "field": "name", "en": "Restore Essence", "hash": "992210d479e3b532", "src": "db2@1.60.1.70009"}
+{"id": 1298498, "field": "description", "en": "Redeem an Undead corpse, laying its spirit to rest and restoring $s1 Health. Only usable on Undead corpses within $1298497a1 yds.", "hash": "bd89e11437a262ca", "src": "db2@1.60.1.70009"}
+{"id": 1298498, "field": "aura", "en": "Restore $s1 Health.", "hash": "a576673979025992", "src": "db2@1.60.1.70009"}
+{"id": 1298499, "field": "name", "en": "Warblade of Caer Darrow", "hash": "b6040386f30a2117", "src": "db2@1.60.1.70009"}
+{"id": 1298499, "field": "description", "en": "Melee attacks with this weapon deal $s1 Frost damage.", "hash": "765018c3b697b1d6", "src": "db2@1.60.1.70009"}
+{"id": 1298500, "field": "name", "en": "Warblade of Caer Darrow", "hash": "b6040386f30a2117", "src": "db2@1.60.1.70009"}
+{"id": 1298500, "field": "description", "en": "Melee attacks with this weapon deal $1298499s1 Frost damage.", "hash": "2fb4769cb48974b1", "src": "db2@1.60.1.70009"}
+{"id": 1298501, "field": "name", "en": "Decrease Threat All 01", "hash": "ac0831eeed7ad159", "src": "db2@1.60.1.70009"}
+{"id": 1298501, "field": "description", "en": "Decreases all threat generated by $s1%.", "hash": "1d5e0373124c8e6a", "src": "db2@1.60.1.70009"}
+{"id": 1298502, "field": "name", "en": "Decrease Threat All 02", "hash": "ac0831efed7ad15a", "src": "db2@1.60.1.70009"}
+{"id": 1298502, "field": "description", "en": "Decreases all threat generated by $s1%.", "hash": "1d5e0373124c8e6a", "src": "db2@1.60.1.70009"}
+{"id": 1298503, "field": "name", "en": "Drain Blood", "hash": "1546d765c27ba5d1", "src": "db2@1.60.1.70009"}
+{"id": 1298503, "field": "aura", "en": "Your blood is being drained, dealing $S1 damage and healing the caster every $T1 sec.", "hash": "e3b10cedc37e41c7", "src": "db2@1.60.1.70009"}
+{"id": 1298504, "field": "name", "en": "Decrease Threat All 03", "hash": "ac0831f0ed7ad15b", "src": "db2@1.60.1.70009"}
+{"id": 1298504, "field": "description", "en": "Decreases all threat generated by $s1%.", "hash": "1d5e0373124c8e6a", "src": "db2@1.60.1.70009"}
+{"id": 1298505, "field": "name", "en": "Decrease Threat All 04", "hash": "ac0831f1ed7ad15c", "src": "db2@1.60.1.70009"}
+{"id": 1298505, "field": "description", "en": "Decreases all threat generated by $s1%.", "hash": "1d5e0373124c8e6a", "src": "db2@1.60.1.70009"}
+{"id": 1298506, "field": "name", "en": "Drain Blood", "hash": "1546d765c27ba5d1", "src": "db2@1.60.1.70009"}
+{"id": 1298508, "field": "name", "en": "Barov Peasant Caller", "hash": "234d468b58d60fc5", "src": "db2@1.60.1.70009"}
+{"id": 1298517, "field": "name", "en": "Book of the Dead", "hash": "7319a18bbe28426d", "src": "db2@1.60.1.70009"}
+{"id": 1298518, "field": "name", "en": "Increase Spell Dam Undead 32", "hash": "ca9da887e6525e66", "src": "db2@1.60.1.70009"}
+{"id": 1298518, "field": "description", "en": "Increases damage done to Undead by magical spells and effects by up to $s1.", "hash": "0674bbf7651ef656", "src": "db2@1.60.1.70009"}
+{"id": 1298519, "field": "name", "en": "Undead Slayer 09", "hash": "7cdd74c771ee0fff", "src": "db2@1.60.1.70009"}
+{"id": 1298519, "field": "description", "en": "+$s1 Attack Power against Undead.", "hash": "a22336497b3a00d5", "src": "db2@1.60.1.70009"}
+{"id": 1298520, "field": "name", "en": "Increase Shadow Dam 88", "hash": "a9550c38c8348ed0", "src": "db2@1.60.1.70009"}
+{"id": 1298520, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "db2@1.60.1.70009"}
+{"id": 1298533, "field": "name", "en": "Many", "hash": "0a6af6cb0963c5e7", "src": "db2@1.60.1.70009"}
+{"id": 1298533, "field": "description", "en": "Crazed.", "hash": "02d4316d211a8d7c", "src": "db2@1.60.1.70009"}
+{"id": 1298546, "field": "name", "en": "Sprinkle Refined Concoction", "hash": "edaa5cb93e918e8d", "src": "db2@1.60.1.70009"}
+{"id": 1298546, "field": "description", "en": "Cure a sickly animal afflicted by fel taint.", "hash": "c145bd63a373ffc9", "src": "db2@1.60.1.70009"}
+{"id": 1298593, "field": "name", "en": "Delirious Whispers", "hash": "d29fb3b8b4c1f4ea", "src": "db2@1.60.1.70009"}
+{"id": 1298593, "field": "aura", "en": "You feel strange...", "hash": "bff6eb85b5f30b9f", "src": "db2@1.60.1.70009"}
+{"id": 1298627, "field": "name", "en": "Reeking Miasma", "hash": "80f509d1a2bd49a4", "src": "db2@1.60.1.70009"}
+{"id": 1298627, "field": "description", "en": "Reduces movement speed by $S2%. \r\n\r\nInflicts $1298630s1 Nature damage to self and nearby players every $t1 sec.", "hash": "949b1695a436f9e6", "src": "db2@1.60.1.70009"}
+{"id": 1298627, "field": "aura", "en": "Movement speed reduced by $s2%.\r\n\r\n$1298630s1 nature damage inflicted to self and nearby players every $t1 sec.\r\n\r\nCan be washed off.", "hash": "00c0c27b4c1b5dde", "src": "db2@1.60.1.70009"}
+{"id": 1298630, "field": "name", "en": "Reeking Miasma", "hash": "80f509d1a2bd49a4", "src": "db2@1.60.1.70009"}
+{"id": 1298630, "field": "description", "en": "Inflicts $S1 nature damage to the player and all players within $r yards.", "hash": "03fcdf1ab44172a9", "src": "db2@1.60.1.70009"}
+{"id": 1298671, "field": "name", "en": "Reeking Miasma", "hash": "80f509d1a2bd49a4", "src": "db2@1.60.1.70009"}
+{"id": 1298672, "field": "name", "en": "Reeking Miasma", "hash": "80f509d1a2bd49a4", "src": "db2@1.60.1.70009"}
+{"id": 1298707, "field": "name", "en": "Explosive Runeshard", "hash": "eba7a083af8040c6", "src": "db2@1.60.1.70009"}
+{"id": 1298707, "field": "description", "en": "Sling the Explosive Runeshard at a target location to signal Maerion to attack.", "hash": "f4e4982b5b0ec433", "src": "db2@1.60.1.70009"}
+{"id": 1298722, "field": "name", "en": "Increase Spell Dam Undead 11", "hash": "ca9da780e6521ea3", "src": "db2@1.60.1.70009"}
+{"id": 1298722, "field": "description", "en": "Increases damage done to Undead by magical spells and effects by up to $s1.", "hash": "0674bbf7651ef656", "src": "db2@1.60.1.70009"}
+{"id": 1298750, "field": "name", "en": "Glowy (Undead Warhorse)", "hash": "6ef63f15d3928e82", "src": "db2@1.60.1.70009"}
+{"id": 1298750, "field": "description", "en": "Crazed.", "hash": "02d4316d211a8d7c", "src": "db2@1.60.1.70009"}
+{"id": 1298757, "field": "name", "en": "(DNT) Inactive Cosmetic Aura", "hash": "64e046b0f65a0ae3", "src": "db2@1.60.1.70009"}
+{"id": 1298774, "field": "name", "en": "Begin Ritual", "hash": "663de63f952a2182", "src": "db2@1.60.1.70009"}
+{"id": 1298776, "field": "name", "en": "Craft From Bank", "hash": "bc0bfff3a838a580", "src": "db2@1.60.1.70009"}
+{"id": 1298776, "field": "description", "en": "Allows you to magically use reagents stored in your bank while crafting.", "hash": "378ecc611083d187", "src": "db2@1.60.1.70009"}
+{"id": 1298776, "field": "aura", "en": "You may use reagents stored in your bank while crafting.", "hash": "1ae14158b436f993", "src": "db2@1.60.1.70009"}
+{"id": 1298802, "field": "name", "en": "Begin Ritual", "hash": "663de63f952a2182", "src": "db2@1.60.1.70009"}
+{"id": 1298827, "field": "name", "en": "Ghost Visual", "hash": "d1aba3d3da714c83", "src": "db2@1.60.1.70009"}
+{"id": 1298841, "field": "name", "en": "Decaying Spirit", "hash": "ea0ca304c2fa8261", "src": "db2@1.60.1.70009"}
+{"id": 1298841, "field": "description", "en": "The spirit struggles to maintain its form, suffering $s1% of maximum health as damage every $t1 sec.\r\n", "hash": "0e6eda17a7a03ce4", "src": "db2@1.60.1.70009"}
+{"id": 1298841, "field": "aura", "en": "Suffering $s1% of maximum health as damage every $t1 sec.", "hash": "f41e3926e0ea1cc8", "src": "db2@1.60.1.70009"}
+{"id": 1298845, "field": "name", "en": "Decaying Spirit", "hash": "ea0ca304c2fa8261", "src": "db2@1.60.1.70009"}
+{"id": 1298845, "field": "description", "en": "The spirit struggles to maintain its form, suffering $s1% of maximum health as damage every $t1 sec.\r\n", "hash": "0e6eda17a7a03ce4", "src": "db2@1.60.1.70009"}
+{"id": 1298845, "field": "aura", "en": "Suffering $s1% of maximum health as damage every $t1 sec.", "hash": "f41e3926e0ea1cc8", "src": "db2@1.60.1.70009"}
+{"id": 1298847, "field": "name", "en": "Decaying Spirit", "hash": "ea0ca304c2fa8261", "src": "db2@1.60.1.70009"}
+{"id": 1298847, "field": "description", "en": "The spirit struggles to maintain its form, suffering $s1% of maximum health as damage every $t1 sec.", "hash": "0e6eda17a7a03ce4", "src": "db2@1.60.1.70009"}
+{"id": 1298847, "field": "aura", "en": "Suffering $s1% of maximum health as damage every $t1 sec.", "hash": "f41e3926e0ea1cc8", "src": "db2@1.60.1.70009"}
+{"id": 1298856, "field": "name", "en": "Explosive Runeshard", "hash": "eba7a083af8040c6", "src": "db2@1.60.1.70009"}
+{"id": 1298856, "field": "description", "en": "Sling the Explosive Runeshard at a target location, signalling Maerion to attack.", "hash": "74a2d204ac6c7857", "src": "db2@1.60.1.70009"}
+{"id": 1298874, "field": "name", "en": "Royal Defiance", "hash": "e43cba0c56207741", "src": "db2@1.60.1.70009"}
+{"id": 1298874, "field": "description", "en": "The Wild King draws on the power of Nordrassil, increasing damage dealt by $S1% and haste by $S2%. ", "hash": "b71a1cd57604990d", "src": "db2@1.60.1.70009"}
+{"id": 1298874, "field": "aura", "en": "Damage dealt increased by $S1%.\r\n\r\nHaste increased by $S2%.", "hash": "405b78726a456246", "src": "db2@1.60.1.70009"}
+{"id": 1298896, "field": "name", "en": "Burning", "hash": "697ceb14fcb64b22", "src": "db2@1.60.1.70009"}
+{"id": 1298896, "field": "description", "en": "Burning!", "hash": "faec4c662f533dfb", "src": "db2@1.60.1.70009"}
+{"id": 1298896, "field": "aura", "en": "Burning!", "hash": "faec4c662f533dfb", "src": "db2@1.60.1.70009"}
+{"id": 1298956, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70009"}

@@ -1,0 +1,33 @@
+name: Idea or change / 提案
+description: Something the addon could do, or a change to the code you would like to make. / アドオンへの要望や、コードの変更の提案です。
+title: "Idea: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. Code changes start here: describe the change before writing it, so nobody writes something
+        that cannot go in. Some ideas are declined because they do not fit the project's
+        [principles](https://github.com/zyaga/wow-forever-japanese/blob/main/docs/architecture/principles.md)
+        (for example anything that hides English names, adds a dependency, or puts stored English text in the
+        addon). For a wrong or awkward translation, use the translation report. This issue is public. English or
+        Japanese, either is fine.
+
+        ありがとうございます。コードの変更はここから始めます。書き始める前に内容を説明してください。
+        プロジェクトの[原則](https://github.com/zyaga/wow-forever-japanese/blob/main/docs/architecture/principles.md)（英語）に合わない提案
+        （英語の名前を隠す、依存ライブラリを増やす、英語のテキストをアドオンに保存する、など）はお断りすることがあります。
+        誤訳や不自然な訳は、翻訳の報告をご利用ください。この Issue は公開されます。英語でも日本語でも大丈夫です。
+  - type: textarea
+    id: what
+    attributes:
+      label: What and why / 内容と理由
+      description: What should change, and what it would make better. / 何を変えたいか、それで何が良くなるかを書いてください。
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: How (optional) / 方法（任意）
+      description: If you plan to write it yourself, the parts of the code you would change. / 自分で書く予定がある場合は、変更するコードの場所を書いてください。
+    validations:
+      required: false

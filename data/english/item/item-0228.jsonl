@@ -1,0 +1,113 @@
+{"id": 228105, "field": "name", "en": "Everburning Flame Core", "hash": "01150d26314237c1", "src": "db2@1.60.1.70009"}
+{"id": 228105, "field": "description", "en": "This thing is hot. Like, HOT hot.", "hash": "2cfc335fe5b9ac38", "src": "db2@1.60.1.70009"}
+{"id": 228114, "field": "name", "en": "Plans: Refined Arcanite Reaper", "hash": "56bd0721ada72daa", "src": "db2@1.60.1.70009"}
+{"id": 228114, "field": "description", "en": "Teaches you how to make an Arcanite Reaper.", "hash": "c91114d230b63dc8", "src": "db2@1.60.1.70009"}
+{"id": 228117, "field": "name", "en": "Plans: Refined Arcanite Champion", "hash": "70c2d480871bf529", "src": "db2@1.60.1.70009"}
+{"id": 228117, "field": "description", "en": "Teaches you how to make an Arcanite Champion.", "hash": "eb8010d40be4be94", "src": "db2@1.60.1.70009"}
+{"id": 228118, "field": "name", "en": "Plans: Stronger-hold Gauntlets", "hash": "65a40fabfc9186bf", "src": "db2@1.60.1.70009"}
+{"id": 228118, "field": "description", "en": "Teaches you how to make Stronghold Gauntlets.", "hash": "3dd6177a5b1a94e2", "src": "db2@1.60.1.70009"}
+{"id": 228119, "field": "name", "en": "Pattern: Devilcore Gauntlets", "hash": "755d3d108e2f3828", "src": "db2@1.60.1.70009"}
+{"id": 228119, "field": "description", "en": "Teaches you how to craft Devilcore Gauntlets.", "hash": "945dbf043055988c", "src": "db2@1.60.1.70009"}
+{"id": 228120, "field": "name", "en": "Pattern: Devilcore Leggings", "hash": "3d6650a88a9afb26", "src": "db2@1.60.1.70009"}
+{"id": 228120, "field": "description", "en": "Teaches you how to craft Devilcore Leggings.", "hash": "9181af4a6949970d", "src": "db2@1.60.1.70009"}
+{"id": 228121, "field": "name", "en": "Pattern: Leather-Reinforced Runecloth Bag", "hash": "cd9ec3bbf4aad158", "src": "db2@1.60.1.70009"}
+{"id": 228121, "field": "description", "en": "Teaches you how to sew a Leather-Reinforced Runecloth Bag.", "hash": "78ddc8d8f7975b78", "src": "db2@1.60.1.70009"}
+{"id": 228123, "field": "name", "en": "Jubilant Epiphany", "hash": "1189e3d6833b77f0", "src": "db2@1.60.1.70009"}
+{"id": 228123, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 228124, "field": "name", "en": "Oneiric Epiphany", "hash": "ba2b1efa4d9d8d2a", "src": "db2@1.60.1.70009"}
+{"id": 228124, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 228126, "field": "name", "en": "Aperitive Epiphany", "hash": "ccb76289c679ddd4", "src": "db2@1.60.1.70009"}
+{"id": 228126, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 228130, "field": "name", "en": "Altruist Ward", "hash": "5a1fd041f7a6dfc3", "src": "db2@1.60.1.70009"}
+{"id": 228130, "field": "description", "en": "Summons a ward that lasts $d. and periodically heals Horde members in an area around it.", "hash": "0860d6822b6d341c", "src": "db2@1.60.1.70009"}
+{"id": 228131, "field": "name", "en": "Altruist Ward", "hash": "5a1fd041f7a6dfc3", "src": "db2@1.60.1.70009"}
+{"id": 228131, "field": "description", "en": "Summons a ward that lasts $d. and periodically heals Alliance members in an area around it.", "hash": "e97fd87276f143c3", "src": "db2@1.60.1.70009"}
+{"id": 228132, "field": "name", "en": "Undead Potatoes", "hash": "e94bc43757269bf6", "src": "db2@1.60.1.70009"}
+{"id": 228132, "field": "description", "en": "Notes on the impact of the scourge on farming. A fine addition to any library's collection.", "hash": "4bdbb671c4bd04b2", "src": "db2@1.60.1.70009"}
+{"id": 228133, "field": "name", "en": "Magma or Lava?", "hash": "ddd086e3d25b0c63", "src": "db2@1.60.1.70009"}
+{"id": 228133, "field": "description", "en": "Well-versed notes on the difference between different fire elementals. A fine addition to any library's collection.", "hash": "6fb2b91e1e6dfda0", "src": "db2@1.60.1.70009"}
+{"id": 228134, "field": "name", "en": "Northern Kalimdor - A Comprehensive Guide", "hash": "1b1a6b97146fe621", "src": "db2@1.60.1.70009"}
+{"id": 228134, "field": "description", "en": "The definitive guidebook for touring the northern reaches of Kalimdor. A fine addition to any library's collection.", "hash": "7daef4f49a08b8f3", "src": "db2@1.60.1.70009"}
+{"id": 228135, "field": "name", "en": "A Study of the Light", "hash": "ddb1ac8377b3c3f5", "src": "db2@1.60.1.70009"}
+{"id": 228135, "field": "description", "en": "Teachings of the Light with notes from the perspective of a famous mage. A fine addition to any library's collection.", "hash": "b3ee5dfcfa8c6369", "src": "db2@1.60.1.70009"}
+{"id": 228136, "field": "name", "en": "Ka-Boom!", "hash": "41be4c43aa40c813", "src": "db2@1.60.1.70009"}
+{"id": 228136, "field": "description", "en": "Scrawlings from an enterprising engineer on integrating explosives into technology. A fine addition to any library's collection.", "hash": "ae435349e98b94da", "src": "db2@1.60.1.70009"}
+{"id": 228138, "field": "name", "en": "The Knight and the Lady", "hash": "ec2c7ac866b88b9c", "src": "db2@1.60.1.70009"}
+{"id": 228138, "field": "description", "en": "A well-worn fictional novel with handwritten notes in the margins. An interesting addition to any library's collection.", "hash": "de96d1d438b6c1e5", "src": "db2@1.60.1.70009"}
+{"id": 228140, "field": "name", "en": "Scourge: Undead Menace or Misunderstood?", "hash": "d1d7a21a1478ee64", "src": "db2@1.60.1.70009"}
+{"id": 228140, "field": "description", "en": "A controversial collection of notes questioning the dangers of the Scourge. A fine addition to any library's collection.", "hash": "7079326e51379ea8", "src": "db2@1.60.1.70009"}
+{"id": 228141, "field": "name", "en": "Necromancy 101", "hash": "aebf1ec4897e8522", "src": "db2@1.60.1.70009"}
+{"id": 228141, "field": "description", "en": "A beginner's guide to one's first foray into raising the dead. A fine addition to any library's collection.", "hash": "26a1bec9f22f60a4", "src": "db2@1.60.1.70009"}
+{"id": 228144, "field": "name", "en": "Strange Note", "hash": "7b0c0d0c922e6925", "src": "db2@1.60.1.70009"}
+{"id": 228175, "field": "name", "en": "Libram of Holy Alacrity", "hash": "22c21ceb448da7f8", "src": "db2@1.60.1.70009"}
+{"id": 228175, "field": "description", "en": "Causes Holy Shock to reduce the cast time of your next Holy Light cast within $449982d by ${$449982m1/-1000}.1 sec.", "hash": "c809364f87a9f862", "src": "db2@1.60.1.70009"}
+{"id": 228176, "field": "name", "en": "Totem of Thunder", "hash": "1e27eb5a2489c310", "src": "db2@1.60.1.70009"}
+{"id": 228176, "field": "description", "en": "Increases the critical strike chance of Lightning Bolt by $s1%.", "hash": "3efa577711f03fd7", "src": "db2@1.60.1.70009"}
+{"id": 228189, "field": "name", "en": "Gift of Gob", "hash": "20f52244faeb7a8c", "src": "db2@1.60.1.70009"}
+{"id": 228189, "field": "description", "en": "Turns target party member into a friend.", "hash": "4617e15e6f737639", "src": "db2@1.60.1.70009"}
+{"id": 228190, "field": "name", "en": "Knowledge of the Timbermaw", "hash": "caf80d984b962358", "src": "db2@1.60.1.70009"}
+{"id": 228190, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
+{"id": 228191, "field": "name", "en": "Shimmering Molten Mineral", "hash": "122452b724b3e6b1", "src": "db2@1.60.1.70009"}
+{"id": 228227, "field": "name", "en": "Scroll of Overwhelming Power", "hash": "d4e5a306a80732b7", "src": "db2@1.60.1.70009"}
+{"id": 228227, "field": "description", "en": "Grants the target a variety of world buff effects.\nPOWER OVERWHELMING (PTR Only)", "hash": "ac14648cda46a1b5", "src": "db2@1.60.1.70009"}
+{"id": 228250, "field": "name", "en": "Plans: Stronger-hold Gauntlets", "hash": "65a40fabfc9186bf", "src": "db2@1.60.1.70009"}
+{"id": 228250, "field": "description", "en": "Teaches you how to make Stronghold Gauntlets.", "hash": "3dd6177a5b1a94e2", "src": "db2@1.60.1.70009"}
+{"id": 228251, "field": "name", "en": "Pattern: Living Green Dragonscale Gauntlets", "hash": "9ba9a67c93282a08", "src": "db2@1.60.1.70009"}
+{"id": 228251, "field": "description", "en": "Teaches you how to craft Green Dragonscale Gauntlets.", "hash": "801206f3aa9f1a56", "src": "db2@1.60.1.70009"}
+{"id": 228276, "field": "name", "en": "Pattern: Mastercrafted Shifting Cloak", "hash": "acdd5f50a5ce6797", "src": "db2@1.60.1.70009"}
+{"id": 228276, "field": "description", "en": "Teaches you how to craft a Shifting Cloak.", "hash": "f4a9cca9a585abcf", "src": "db2@1.60.1.70009"}
+{"id": 228301, "field": "name", "en": "Pattern: Swift Flight Vambraces", "hash": "623eb061cda200d7", "src": "db2@1.60.1.70009"}
+{"id": 228301, "field": "description", "en": "Teaches you how to craft Swift Flight Bracers.", "hash": "b7cbd34659d1a089", "src": "db2@1.60.1.70009"}
+{"id": 228303, "field": "name", "en": "Pattern: Incandescent Mooncloth Robe", "hash": "e7dc94a3e796a9d2", "src": "db2@1.60.1.70009"}
+{"id": 228303, "field": "description", "en": "Teaches you how to sew a Mooncloth Robe.", "hash": "70c5b413d7c4a8c9", "src": "db2@1.60.1.70009"}
+{"id": 228309, "field": "name", "en": "Pattern: Living Green Dragonscale Breastplate", "hash": "0dc6a3bc8d70054e", "src": "db2@1.60.1.70009"}
+{"id": 228309, "field": "description", "en": "Teaches you how to craft a Green Dragonscale Breastplate.", "hash": "7b0814970bdab67c", "src": "db2@1.60.1.70009"}
+{"id": 228310, "field": "name", "en": "Plans: Hardened Frostguard", "hash": "b4602a8c4cbb2ce2", "src": "db2@1.60.1.70009"}
+{"id": 228310, "field": "description", "en": "Teaches you how to make a Frostguard.", "hash": "7e28f40e3f85f44f", "src": "db2@1.60.1.70009"}
+{"id": 228311, "field": "name", "en": "Plans: Finely-Enchanted Battlehammer", "hash": "94d05c604db30939", "src": "db2@1.60.1.70009"}
+{"id": 228311, "field": "description", "en": "Teaches you how to make an Enchanted Battlehammer.", "hash": "53a8f0b075d474ff", "src": "db2@1.60.1.70009"}
+{"id": 228312, "field": "name", "en": "Plans: Invincible Mail", "hash": "86f1430e335b1dd9", "src": "db2@1.60.1.70009"}
+{"id": 228312, "field": "description", "en": "Teaches you how to make Invincible Mail.", "hash": "21f42faaa3125a83", "src": "db2@1.60.1.70009"}
+{"id": 228313, "field": "name", "en": "Plans: Tempest Gauntlets", "hash": "e60e987c5b465123", "src": "db2@1.60.1.70009"}
+{"id": 228313, "field": "description", "en": "Teaches you how to make Tempest Gauntlets.", "hash": "a6061d8218cb621e", "src": "db2@1.60.1.70009"}
+{"id": 228314, "field": "name", "en": "Plans: Warcrest of the Great Chief", "hash": "9863b6461649d4dd", "src": "db2@1.60.1.70009"}
+{"id": 228314, "field": "description", "en": "Teaches you how to make a Warcrest of the Great Chief.", "hash": "e6693c997a791f5c", "src": "db2@1.60.1.70009"}
+{"id": 228315, "field": "name", "en": "Plans: Sageblade of the Archmagus", "hash": "4f986144e70e5b13", "src": "db2@1.60.1.70009"}
+{"id": 228315, "field": "description", "en": "Teaches you how to make a Sageblade of the Archmagus.", "hash": "8beae5f239ecd3d6", "src": "db2@1.60.1.70009"}
+{"id": 228316, "field": "name", "en": "Pattern: Incandescent Mooncloth Vest", "hash": "e8633577f585f266", "src": "db2@1.60.1.70009"}
+{"id": 228316, "field": "description", "en": "Teaches you how to sew a Mooncloth Vest.", "hash": "b5aa008f10dd7c6a", "src": "db2@1.60.1.70009"}
+{"id": 228317, "field": "name", "en": "Pattern: Incandescent Mooncloth Circlet", "hash": "16a56337c2046221", "src": "db2@1.60.1.70009"}
+{"id": 228317, "field": "description", "en": "Teaches you how to sew a Mooncloth Circlet.", "hash": "0b6b3967695cd7a8", "src": "db2@1.60.1.70009"}
+{"id": 228318, "field": "name", "en": "Pattern: Incandescent Mooncloth Leggings", "hash": "6df798894e555078", "src": "db2@1.60.1.70009"}
+{"id": 228318, "field": "description", "en": "Teaches you how to sew Mooncloth Leggings.", "hash": "6077a1b6a90a5037", "src": "db2@1.60.1.70009"}
+{"id": 228319, "field": "name", "en": "Pattern: Girdle of Arcane Insight", "hash": "d0143a24d15991fd", "src": "db2@1.60.1.70009"}
+{"id": 228319, "field": "description", "en": "Teaches you how to craft a Girdle of Insight.", "hash": "3ed3c4e7f1b41b8b", "src": "db2@1.60.1.70009"}
+{"id": 228324, "field": "name", "en": "Gold Slaughter Coin", "hash": "b92b3caf1c61a516", "src": "db2@1.60.1.70009"}
+{"id": 228324, "field": "description", "en": "An icon of your great service to the Blood Loa.", "hash": "2d99cb2ae0f48a52", "src": "db2@1.60.1.70009"}
+{"id": 228327, "field": "name", "en": "Satchel of Silver Slaughter Coins", "hash": "5a748e269456fa95", "src": "db2@1.60.1.70009"}
+{"id": 228327, "field": "description", "en": "Contains 100 Silver Massacre Coins", "hash": "671ed6c808ee16e2", "src": "db2@1.60.1.70009"}
+{"id": 228477, "field": "name", "en": "Pattern: Embroidered Belt of the Archmage", "hash": "bc6e59aee2eab0af", "src": "db2@1.60.1.70009"}
+{"id": 228477, "field": "description", "en": "Teaches you how to sew an Embroidered Belt of the Archmage.", "hash": "e93853ac9d830c3c", "src": "db2@1.60.1.70009"}
+{"id": 228615, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70009"}
+{"id": 228659, "field": "name", "en": "Ancient Rune Etched Stave", "hash": "86543f5f8f50bbc7", "src": "db2@1.60.1.70009"}
+{"id": 228659, "field": "description", "en": "Forms Rhok'delar, Longbow of the Ancient Keepers, when combined with Enchanted Black Dragon Sinew.\nA Gift from the Ancients.", "hash": "673b1dc2e3e3dda4", "src": "db2@1.60.1.70009"}
+{"id": 228695, "field": "name", "en": "A Dull and Flat Elven Blade", "hash": "d276d70789bce060", "src": "db2@1.60.1.70009"}
+{"id": 228696, "field": "name", "en": "Heated Ancient Blade", "hash": "8e2260f64eeb3c68", "src": "db2@1.60.1.70009"}
+{"id": 228696, "field": "description", "en": "Drive into the heart of the brood mother to temper the heated blade.", "hash": "ee536910fc7f6af1", "src": "db2@1.60.1.70009"}
+{"id": 228697, "field": "name", "en": "Treated Ancient Blade", "hash": "00d53e859a6842ab", "src": "db2@1.60.1.70009"}
+{"id": 228697, "field": "description", "en": "Tempered in the blood of Onyxia.", "hash": "f16048a95bf427b4", "src": "db2@1.60.1.70009"}
+{"id": 228749, "field": "name", "en": "Splinter of Nordrassil", "hash": "eefeff81fc18b061", "src": "db2@1.60.1.70009"}
+{"id": 228749, "field": "description", "en": "Forms Benediction when combined with the Eye of Shadow and the Eye of Divinity.\nA tiny fragment of the World Tree", "hash": "382eb2eb6465e9eb", "src": "db2@1.60.1.70009"}
+{"id": 228912, "field": "name", "en": "Artifact Storage Key", "hash": "179e17e52356779a", "src": "db2@1.60.1.70009"}
+{"id": 228978, "field": "name", "en": "Enchanted Sigil: Flowing Waters", "hash": "4070c44224b6af24", "src": "db2@1.60.1.70009"}
+{"id": 228978, "field": "description", "en": "Gain an enchanted sigil of Flowing Waters, empowering your raid to deal up to $s1 increased damage and healing with spells, and increasing attack power by $s2 for $d.", "hash": "dd734e9a0da6ffd6", "src": "db2@1.60.1.70009"}
+{"id": 228979, "field": "name", "en": "Enchanted Sigil: Flowing Waters", "hash": "4070c44224b6af24", "src": "db2@1.60.1.70009"}
+{"id": 228979, "field": "description", "en": "Teaches you how to conjure a Sigil of Flowing Waters. ", "hash": "3f47fa9479413b5c", "src": "db2@1.60.1.70009"}
+{"id": 228980, "field": "name", "en": "Conductive Shield Coating", "hash": "9bad656104712b5d", "src": "db2@1.60.1.70009"}
+{"id": 228980, "field": "description", "en": "While applied to target shield it increases spell damage and healing by up to 24.  Lasts for 30 minutes.", "hash": "ec9710d4277b3e46", "src": "db2@1.60.1.70009"}
+{"id": 228981, "field": "name", "en": "Formula: Conductive Shield Coating", "hash": "995fe6cb3ae50656", "src": "db2@1.60.1.70009"}
+{"id": 228981, "field": "description", "en": "Teaches you how to create Conductive Shield Coating.", "hash": "c2049c0f01f751d4", "src": "db2@1.60.1.70009"}
+{"id": 228982, "field": "name", "en": "Formula: Enchant Shield - Law of Nature", "hash": "b04ab787a267cb73", "src": "db2@1.60.1.70009"}
+{"id": 228982, "field": "description", "en": "Teaches you how to permanently enchant a shield to add up to 30 damage to spells and up to 55 healing to healing spells.", "hash": "d5f328eadb6d6063", "src": "db2@1.60.1.70009"}
+{"id": 228993, "field": "name", "en": "Pattern: Bottomless Bag", "hash": "d84c2f16e229b034", "src": "db2@1.60.1.70009"}
+{"id": 228993, "field": "description", "en": "Teaches you how to sew a Bottomless Bag.", "hash": "d4c5b6479709f68a", "src": "db2@1.60.1.70009"}

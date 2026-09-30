@@ -1,0 +1,6 @@
+# Quest exploration / event objective texts (area) that are only a name (an event, an item). There is nothing to
+# translate (names stay in English), so no Japanese line is drafted and the client's English stays. `<quest id>  # <the English>`
+# per line. tests/python/test_objective_pipeline.py: every data/english/area id has a data/area line or is listed here,
+# never both.
+2843  # Goblin Transponder
+8519  # The War of the Shifting Sands

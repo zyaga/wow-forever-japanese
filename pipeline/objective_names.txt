@@ -1,0 +1,41 @@
+# Quest objective texts that are only a name (an object, a place, an item). There is nothing to translate (names
+# stay in English), so no Japanese line is drafted and the client's English stays. `<QuestObjective id>  # <the English>` per line.
+# tests/python/test_objective_pipeline.py: every data/english/objective id has a data/objective line or is listed here,
+# never both.
+381485  # Flame of Hillsbrad
+381486  # Flame of Silverpine
+381487  # Flame of Westfall
+381488  # Flame of the Wetlands
+381732  # Flame of Azshara
+381733  # Flame of Silithus
+381734  # Flame of Un'Goro
+381735  # Flame of Winterspring
+381984  # Flame of Dire Maul
+381985  # Flame of Blackrock Spire
+381986  # Flame of Stratholme
+381987  # Flame of the Scholomance
+382065  # Gelkak's First Mate
+382155  # Flame of the Blasted Lands
+382156  # Flame of the Plaguelands
+382157  # Flame of the Hinterlands
+382158  # Flame of Searing Gorge
+382291  # The Fate of Mistress Natalia Mar'alith
+382365  # Flame of Stormwind
+382366  # Flame of Ironforge
+382367  # Flame of Darnassus
+382421  # Flame of Orgrimmar
+382422  # Flame of Thunder Bluff
+382423  # Flame of the Undercity
+383311  # Flame of Ashenvale
+383312  # Flame of the Barrens
+383313  # Flame of Darkshore
+383314  # Flame of Stonetalon
+383420  # Rite of Cunning
+467962  # Raani's Favorite Feather
+467963  # Shadowsong Family Signet
+468817  # Pristine Shriekling Feathers
+476834  # Cenarion Hold depths entrance
+476835  # Darnassus Bank
+476836  # Craftsman's Terrace Inn
+476837  # City Gate
+477503  # Stolen Supplies

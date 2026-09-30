@@ -1,0 +1,75 @@
+name: Collector dump / 収集した英語の送付
+description: Send the English text your game recorded, so it can be translated. / ゲームが記録した英語のテキストを送って、翻訳に役立てます。
+title: "Collector dump: "
+labels: ["collector-dump"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. The file you attach is **WoWForeverJapanese.lua** from
+        `World of Warcraft\<client folder>\WTF\Account\<ACCOUNT>\SavedVariables\` (`/wfj collector path` in game
+        prints it). The game writes it when you log out or type `/reload`.
+
+        **What the file contains:** the addon's settings (`WFJ_DB`) and the English game text the addon
+        recorded (`WFJ_Collector`): quest text, NPC dialogue with the ids of the NPCs who said it, item and spell
+        descriptions, and NPC names, keyed by game id.
+        Your character's name is replaced by a placeholder. It holds **no character, account, realm, location,
+        chat or time data.** One thing is kept as your game shows it: wording that depends on your character's
+        gender ("sir" / "madam"). If you saved translation reports and have not sent them yet, they are in the
+        file too, under the settings: the line's id, the reason you chose, your note and your Japanese. You can
+        open the file in a text editor and check before sending.
+
+        GitHub does not accept `.lua` attachments: zip the file (or rename it to `.txt`) and drag it into the box
+        below.
+
+        ありがとうございます。添付するのは
+        `World of Warcraft\<クライアントのフォルダ>\WTF\Account\<アカウント>\SavedVariables\` にある
+        **WoWForeverJapanese.lua** です（ゲーム内で `/wfj collector path` を実行すると場所が表示されます）。ログアウト時または
+        `/reload` でゲームが書き出します。
+
+        **ファイルの中身:** アドオンの設定（`WFJ_DB`）と、アドオンが記録したゲームの英語テキスト（`WFJ_Collector`）です。
+        クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前が、ゲーム内 ID ごとに入っています。
+        キャラクター名はプレースホルダーに置き換えられます。**キャラクター・アカウント・レルム・位置・チャット・時刻の情報は含まれません。**
+        キャラクターの性別で変わる言い回し（"sir" / "madam"）だけはゲームの表示どおりに残ります。
+        保存したまま未送信の翻訳の報告がある場合は、それも設定の中に含まれます（行の ID、選んだ理由、メモ、あなたが書いた日本語）。
+        送る前にテキストエディタで確認できます。
+
+        GitHub は `.lua` の添付を受け付けないので、zip にする（または拡張子を `.txt` に変える）かして、下の欄にドラッグしてください。
+  - type: dropdown
+    id: client
+    attributes:
+      label: Client / クライアント
+      options:
+        - World of Warcraft Forever (beta)
+        - World of Warcraft Forever
+    validations:
+      required: true
+  - type: input
+    id: client-build
+    attributes:
+      label: Client build / クライアントのビルド
+      description: Shown on the login screen, bottom left (for example 1.60.1.70009). / ログイン画面の左下に表示されます（例 1.60.1.70009）。
+      placeholder: 1.60.1.70009
+    validations:
+      required: true
+  - type: input
+    id: addon-version
+    attributes:
+      label: Addon version / アドオンのバージョン
+      description: "`/wfj version` in game. / ゲーム内で `/wfj version` を実行すると表示されます。"
+    validations:
+      required: true
+  - type: textarea
+    id: dump
+    attributes:
+      label: The file / ファイル
+      description: Drag the zipped WoWForeverJapanese.lua here. / zip にした WoWForeverJapanese.lua をここにドラッグしてください。
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Permission / 確認
+      options:
+        - label: I opened the file, it contains only what is described above, and I am fine with it being public in this issue. / ファイルを開いて、上の説明どおりの内容であることを確認しました。この Issue で公開されてかまいません。
+          required: true

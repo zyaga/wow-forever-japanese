@@ -1,0 +1,73 @@
+{"id": 1320093, "field": "name", "en": "Blooming Heart", "hash": "6627d5d3b379a543", "src": "db2@1.60.1.70009"}
+{"id": 1320093, "field": "description", "en": "$?pc164873[$@spelldesc1320097][$@spelldesc1320096]", "hash": "f327873f07355375", "src": "db2@1.60.1.70009"}
+{"id": 1320095, "field": "name", "en": "Entangling Roots", "hash": "2c0883989bcc14e2", "src": "db2@1.60.1.70009"}
+{"id": 1320095, "field": "description", "en": "Entangles an enemy in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "ed46cb1a9bc2abfc", "src": "db2@1.60.1.70009"}
+{"id": 1320095, "field": "aura", "en": "Immobilized.\r\nNature damage inflicted every $t2 sec.", "hash": "e6768e6a91f2334b", "src": "db2@1.60.1.70009"}
+{"id": 1320096, "field": "name", "en": "They love me...", "hash": "5d2047f07372cb7f", "src": "db2@1.60.1.70009"}
+{"id": 1320096, "field": "description", "en": "They love me...", "hash": "5d2047f07372cb7f", "src": "db2@1.60.1.70009"}
+{"id": 1320097, "field": "name", "en": "They love me not...", "hash": "9d5894e7a9039387", "src": "db2@1.60.1.70009"}
+{"id": 1320097, "field": "description", "en": "They love me not...", "hash": "9d5894e7a9039387", "src": "db2@1.60.1.70009"}
+{"id": 1320105, "field": "name", "en": "They Love Me!", "hash": "61aad481c743bca5", "src": "db2@1.60.1.70009"}
+{"id": 1320105, "field": "description", "en": "$@spelldesc1320096", "hash": "7ef898f7da85f8d9", "src": "db2@1.60.1.70009"}
+{"id": 1320105, "field": "aura", "en": "Feeling confident! Make the most out of this moment.", "hash": "a0da54789f6ca879", "src": "db2@1.60.1.70009"}
+{"id": 1320107, "field": "name", "en": "They Love Me Not", "hash": "bdaf3ef6875bd5f8", "src": "db2@1.60.1.70009"}
+{"id": 1320107, "field": "description", "en": "$@spelldesc1320096", "hash": "7ef898f7da85f8d9", "src": "db2@1.60.1.70009"}
+{"id": 1320107, "field": "aura", "en": "Feeling down. You'll get over it soon enough.", "hash": "bc39ff4bd871df86", "src": "db2@1.60.1.70009"}
+{"id": 1320162, "field": "name", "en": "[DNT] Wriggle Away!", "hash": "b6e6c36b26ef10fd", "src": "db2@1.60.1.70009"}
+{"id": 1320183, "field": "name", "en": "Summon Imp", "hash": "e79eae9190e45da9", "src": "db2@1.60.1.70009"}
+{"id": 1320183, "field": "description", "en": "Summons an Imp to accompany the caster until dismissed.", "hash": "4f2b9349ab80ec9d", "src": "db2@1.60.1.70009"}
+{"id": 1320227, "field": "name", "en": "[DNT] Tim's Test Visual 4", "hash": "14664b5aa3e3ad62", "src": "db2@1.60.1.70009"}
+{"id": 1320269, "field": "name", "en": "Toofbreak", "hash": "553acac0d6e927bb", "src": "db2@1.60.1.70009"}
+{"id": 1320269, "field": "description", "en": "Bash the target, causing $s1 Physical damage. Deals $s2 times as much damage if the target is facing you.", "hash": "04e243bcfaff8358", "src": "db2@1.60.1.70009"}
+{"id": 1320330, "field": "name", "en": "Black Horn Necklace", "hash": "b64d2f8c320dce1f", "src": "db2@1.60.1.70009"}
+{"id": 1320330, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects. This effect is doubled in Strongholds and Cities.", "hash": "df4764d4d61a2532", "src": "db2@1.60.1.70009"}
+{"id": 1320332, "field": "name", "en": "Black Horn Necklace", "hash": "b64d2f8c320dce1f", "src": "db2@1.60.1.70009"}
+{"id": 1320332, "field": "aura", "en": "In a Stronghold or City, healing done increased by up to $w1 and spell damage done increased by up to $w2.", "hash": "f6167773a5398ccf", "src": "db2@1.60.1.70009"}
+{"id": 1320379, "field": "name", "en": "Polymorph", "hash": "265007345ebb7046", "src": "db2@1.60.1.70009"}
+{"id": 1320379, "field": "description", "en": "$@spelldesc12826", "hash": "d637006d3a8967c3", "src": "db2@1.60.1.70009"}
+{"id": 1320379, "field": "aura", "en": "$@auradesc12826", "hash": "b17131eee20eaece", "src": "db2@1.60.1.70009"}
+{"id": 1320446, "field": "name", "en": "[DNT] Test Spell", "hash": "411e7a1edbb96034", "src": "db2@1.60.1.70009"}
+{"id": 1320496, "field": "name", "en": "Carrying Unstable Potion", "hash": "0146ca88a4f38d3f", "src": "db2@1.60.1.70009"}
+{"id": 1320498, "field": "name", "en": "Thunderstomp", "hash": "9bf1382def6eedbb", "src": "db2@1.60.1.70009"}
+{"id": 1320498, "field": "description", "en": "Thunderstomp nearby enemies, inflicting $s1 Nature damage.", "hash": "96e923c538f5df6b", "src": "db2@1.60.1.70009"}
+{"id": 1320509, "field": "name", "en": "Shadow Shock", "hash": "fa94488b5e0d9f85", "src": "db2@1.60.1.70009"}
+{"id": 1320509, "field": "description", "en": "Instantly lashes an enemy with dark magic, inflicting Shadow damage.", "hash": "7fb44ff4dfff1700", "src": "db2@1.60.1.70009"}
+{"id": 1320512, "field": "name", "en": "Cosmetic Lightning", "hash": "0e2f2049d11b2727", "src": "db2@1.60.1.70009"}
+{"id": 1320579, "field": "name", "en": "Desert Winds", "hash": "499977b7cfff62bb", "src": "db2@1.60.1.70009"}
+{"id": 1320579, "field": "description", "en": "Slows nearby enemies by $s1% for $d, increased to $s2% in Desert areas.", "hash": "124abd593924b8c7", "src": "db2@1.60.1.70009"}
+{"id": 1320579, "field": "aura", "en": "Movement speed reduced by $w1%.", "hash": "09876d53bb875537", "src": "db2@1.60.1.70009"}
+{"id": 1320580, "field": "name", "en": "Desert Winds", "hash": "499977b7cfff62bb", "src": "db2@1.60.1.70009"}
+{"id": 1320580, "field": "description", "en": "Call upon the winds of Tanaris to slow nearby enemies by $1320579s1. While in a desert, the winds intensify, increasing the slow to $1320580s1.", "hash": "a6add0fd0b7fb568", "src": "db2@1.60.1.70009"}
+{"id": 1320580, "field": "aura", "en": "Movement speed reduced by $w1.", "hash": "ec87dfa1ae067277", "src": "db2@1.60.1.70009"}
+{"id": 1320643, "field": "name", "en": "Water Breathing", "hash": "90cec953998174b4", "src": "db2@1.60.1.70009"}
+{"id": 1320643, "field": "description", "en": "Underwater breath lasts $s1% longer than normal.", "hash": "8f8e90b191cb5bf7", "src": "db2@1.60.1.70009"}
+{"id": 1320643, "field": "aura", "en": "Waterbreathing.", "hash": "37a59b8c87987cac", "src": "db2@1.60.1.70009"}
+{"id": 1320658, "field": "name", "en": "Unleash Swarm", "hash": "222ed862650c4ddb", "src": "db2@1.60.1.70009"}
+{"id": 1320658, "field": "description", "en": "Open a silithid hive, unleashing the swarm.", "hash": "22f9e3787914b5cb", "src": "db2@1.60.1.70009"}
+{"id": 1320726, "field": "name", "en": "Increased Feral Combat", "hash": "c03920d2ce5d1f04", "src": "db2@1.60.1.70009"}
+{"id": 1320726, "field": "description", "en": "Increased Feral Combat +$s1.", "hash": "3029c093ccc747e6", "src": "db2@1.60.1.70009"}
+{"id": 1320726, "field": "aura", "en": "Increased Feral Combat +$w1.", "hash": "302accb7dca856ea", "src": "db2@1.60.1.70009"}
+{"id": 1320758, "field": "name", "en": "Summon Spawn of Grubthor", "hash": "c954d1b2e8d01144", "src": "db2@1.60.1.70009"}
+{"id": 1320758, "field": "description", "en": "Right Click to summon and dismiss Spawn of Grubthor.", "hash": "2f66ba80519cf56b", "src": "db2@1.60.1.70009"}
+{"id": 1320808, "field": "name", "en": "Wound", "hash": "062777a5e248cc08", "src": "db2@1.60.1.70009"}
+{"id": 1320808, "field": "description", "en": "Wounds the target for $s1 damage.", "hash": "daa3fed400b216c9", "src": "db2@1.60.1.70009"}
+{"id": 1320824, "field": "name", "en": "Rend", "hash": "0b1786e1dc4c98f3", "src": "db2@1.60.1.70009"}
+{"id": 1320824, "field": "description", "en": "Wounds the target causing them to bleed for $o1 damage over $d.", "hash": "47f171f505d2c468", "src": "db2@1.60.1.70009"}
+{"id": 1320824, "field": "aura", "en": "Bleeding for $s1 damage every $t1 sec.", "hash": "72a94853949619d1", "src": "db2@1.60.1.70009"}
+{"id": 1320864, "field": "name", "en": "Repair the Atal'ai Spear", "hash": "f8631cf6e7593416", "src": "db2@1.60.1.70009"}
+{"id": 1320864, "field": "description", "en": "The spear must be reforged before it can be used. Reforging the spear requires 40 Mithril Bars, 10 Truesilver Bars, 8 Aquamarine, 4 Solid Grinding Stone, and 2 Elemental Fire.", "hash": "b280519c1ff37db3", "src": "db2@1.60.1.70009"}
+{"id": 1320898, "field": "name", "en": "Toss Crystal Heart", "hash": "ce4b8527b44fb206", "src": "db2@1.60.1.70009"}
+{"id": 1320898, "field": "description", "en": "Throw into an Unstable Mana Rift.", "hash": "ee05b862c92525ca", "src": "db2@1.60.1.70009"}
+{"id": 1320904, "field": "name", "en": "Conjure Pylon Protector", "hash": "3ee90edd0bc3dce0", "src": "db2@1.60.1.70009"}
+{"id": 1320922, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70009"}
+{"id": 1320922, "field": "description", "en": "$@spelldesc1247451", "hash": "a780e3493489897b", "src": "db2@1.60.1.70009"}
+{"id": 1320925, "field": "name", "en": "Ablaze", "hash": "a369615b32b4cc0b", "src": "db2@1.60.1.70009"}
+{"id": 1320925, "field": "description", "en": "Burns the target for $s1 Fire damage every $t1 sec for $d.", "hash": "9a11784e89af553a", "src": "db2@1.60.1.70009"}
+{"id": 1320925, "field": "aura", "en": "$s1 Fire damage inflicted every $t1 sec.", "hash": "5a5656deae0c1567", "src": "db2@1.60.1.70009"}
+{"id": 1320930, "field": "name", "en": "Shock", "hash": "befee74f70f42cc6", "src": "db2@1.60.1.70009"}
+{"id": 1320930, "field": "description", "en": "Instantly throws a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "40d9deb75ef49ffa", "src": "db2@1.60.1.70009"}
+{"id": 1320965, "field": "name", "en": "Mend Windstone", "hash": "a7330e392cfd2289", "src": "db2@1.60.1.70009"}
+{"id": 1320965, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70009"}
+{"id": 1320971, "field": "name", "en": "Gather Data", "hash": "d7f5249fb199c221", "src": "db2@1.60.1.70009"}
+{"id": 1320972, "field": "name", "en": "Gather Data", "hash": "d7f5249fb199c221", "src": "db2@1.60.1.70009"}
+{"id": 1320972, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70009"}

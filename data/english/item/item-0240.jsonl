@@ -1,0 +1,251 @@
+{"id": 240020, "field": "name", "en": "Inquisition Legguards", "hash": "1f1bddd01a9248ba", "src": "db2@1.60.1.70009"}
+{"id": 240020, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
+{"id": 240021, "field": "name", "en": "Inquisition Spaulders", "hash": "0209ec1397a36e23", "src": "db2@1.60.1.70009"}
+{"id": 240021, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
+{"id": 240022, "field": "name", "en": "Inquisition Boots", "hash": "44153d6dd3e456dd", "src": "db2@1.60.1.70009"}
+{"id": 240022, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
+{"id": 240023, "field": "name", "en": "Inquisition Vambraces", "hash": "961e92fef0bc5196", "src": "db2@1.60.1.70009"}
+{"id": 240023, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "279f5c853a7d5d51", "src": "wago@1.15.9.69722"}
+{"id": 240024, "field": "name", "en": "Inquisition Belt", "hash": "d58460907bb9eb74", "src": "db2@1.60.1.70009"}
+{"id": 240024, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.", "hash": "b5076406ec660751", "src": "wago@1.15.9.69722"}
+{"id": 240025, "field": "name", "en": "Inquisition Shoulderplates", "hash": "7f61e8262b9b7219", "src": "db2@1.60.1.70009"}
+{"id": 240025, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "d4e6c356e3b10b99", "src": "wago@1.15.9.69722"}
+{"id": 240026, "field": "name", "en": "Inquisition Leggings", "hash": "9ee31260cf360de5", "src": "db2@1.60.1.70009"}
+{"id": 240026, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d50216388a114100", "src": "wago@1.15.9.69722"}
+{"id": 240027, "field": "name", "en": "Inquisition Helmet", "hash": "0c0651415244693d", "src": "db2@1.60.1.70009"}
+{"id": 240027, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d4dcbd0ed7146a0a", "src": "wago@1.15.9.69722"}
+{"id": 240028, "field": "name", "en": "Inquisition Gloves", "hash": "8bcb45f9e5167953", "src": "db2@1.60.1.70009"}
+{"id": 240028, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.", "hash": "6e7b75d96ee64b17", "src": "wago@1.15.9.69722"}
+{"id": 240029, "field": "name", "en": "Inquisition Greaves", "hash": "bbc9858aef7852d6", "src": "db2@1.60.1.70009"}
+{"id": 240029, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "1bd1913616bf5b94", "src": "wago@1.15.9.69722"}
+{"id": 240030, "field": "name", "en": "Inquisition Breastplate", "hash": "fcfe6bcb7f7a094c", "src": "db2@1.60.1.70009"}
+{"id": 240030, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d4dcbd0ed7146a0a", "src": "wago@1.15.9.69722"}
+{"id": 240031, "field": "name", "en": "Inquisition Bracers", "hash": "ee555c619f3271d5", "src": "db2@1.60.1.70009"}
+{"id": 240031, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "dd113eba1aac18bf", "src": "wago@1.15.9.69722"}
+{"id": 240032, "field": "name", "en": "Inquisition Waistguard", "hash": "3eb6867597188499", "src": "db2@1.60.1.70009"}
+{"id": 240032, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your chance to block attacks with a shield by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "d532333a6e269335", "src": "wago@1.15.9.69722"}
+{"id": 240033, "field": "name", "en": "Inquisition Pauldrons", "hash": "60e6002ab96260e6", "src": "db2@1.60.1.70009"}
+{"id": 240033, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your chance to block attacks with a shield by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "d532333a6e269335", "src": "wago@1.15.9.69722"}
+{"id": 240034, "field": "name", "en": "Inquisition Legplates", "hash": "58c7a4272a1b6f7a", "src": "db2@1.60.1.70009"}
+{"id": 240034, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your chance to block attacks with a shield by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "d532333a6e269335", "src": "wago@1.15.9.69722"}
+{"id": 240035, "field": "name", "en": "Inquisition Crown", "hash": "5609de135b071215", "src": "db2@1.60.1.70009"}
+{"id": 240035, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "bc850d83ada9c7c0", "src": "wago@1.15.9.69722"}
+{"id": 240036, "field": "name", "en": "Inquisition Gauntlets", "hash": "58345f32a1c06442", "src": "db2@1.60.1.70009"}
+{"id": 240036, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "dd113eba1aac18bf", "src": "wago@1.15.9.69722"}
+{"id": 240037, "field": "name", "en": "Inquisition Sabatons", "hash": "bec4b696f4fc32fc", "src": "db2@1.60.1.70009"}
+{"id": 240037, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your chance to block attacks with a shield by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "d532333a6e269335", "src": "wago@1.15.9.69722"}
+{"id": 240038, "field": "name", "en": "Inquisition Chestguard", "hash": "164deff8e9f3cc20", "src": "db2@1.60.1.70009"}
+{"id": 240038, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "bc850d83ada9c7c0", "src": "wago@1.15.9.69722"}
+{"id": 240039, "field": "name", "en": "Inquisition Tunic", "hash": "80d9980cccd76312", "src": "db2@1.60.1.70009"}
+{"id": 240039, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
+{"id": 240040, "field": "name", "en": "Inquisition Headpiece", "hash": "1d519b765d62d953", "src": "db2@1.60.1.70009"}
+{"id": 240040, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
+{"id": 240041, "field": "name", "en": "Inquisition Handguards", "hash": "8fa727fdf980a557", "src": "db2@1.60.1.70009"}
+{"id": 240041, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "43b4846da4b75f78", "src": "wago@1.15.9.69722"}
+{"id": 240042, "field": "name", "en": "Inquisition Wristguards", "hash": "830022a2264ab274", "src": "db2@1.60.1.70009"}
+{"id": 240042, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "43b4846da4b75f78", "src": "wago@1.15.9.69722"}
+{"id": 240043, "field": "name", "en": "Inquisition Girdle", "hash": "578458bca91af288", "src": "db2@1.60.1.70009"}
+{"id": 240043, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
+{"id": 240044, "field": "name", "en": "Fireleaf Wristwraps", "hash": "f23828c4887d9d35", "src": "db2@1.60.1.70009"}
+{"id": 240044, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240045, "field": "name", "en": "Fireleaf Waistguard", "hash": "c94f359fc89d0ed0", "src": "db2@1.60.1.70009"}
+{"id": 240045, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240046, "field": "name", "en": "Fireleaf Mantle", "hash": "18602aa71c3454bb", "src": "db2@1.60.1.70009"}
+{"id": 240046, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "cd6f10d72a214307", "src": "wago@1.15.9.69722"}
+{"id": 240047, "field": "name", "en": "Fireleaf Pants", "hash": "11abd32ef6774a11", "src": "db2@1.60.1.70009"}
+{"id": 240047, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "cd6f10d72a214307", "src": "wago@1.15.9.69722"}
+{"id": 240048, "field": "name", "en": "Fireleaf Hood", "hash": "31e2ebac13308d4f", "src": "db2@1.60.1.70009"}
+{"id": 240048, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "cd6f10d72a214307", "src": "wago@1.15.9.69722"}
+{"id": 240049, "field": "name", "en": "Fireleaf Mitts", "hash": "de16af44dcc90273", "src": "db2@1.60.1.70009"}
+{"id": 240049, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240050, "field": "name", "en": "Fireleaf Boots", "hash": "1dcc5c3e854bedb4", "src": "db2@1.60.1.70009"}
+{"id": 240050, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240051, "field": "name", "en": "Fireleaf Garb", "hash": "31bcf51a4e354452", "src": "db2@1.60.1.70009"}
+{"id": 240051, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240052, "field": "name", "en": "Fireleaf Bindings", "hash": "71008faf71510585", "src": "db2@1.60.1.70009"}
+{"id": 240052, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
+{"id": 240053, "field": "name", "en": "Fireleaf Belt", "hash": "31127a379b0dcff4", "src": "db2@1.60.1.70009"}
+{"id": 240053, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "c0972dc02a8c3a6f", "src": "wago@1.15.9.69722"}
+{"id": 240054, "field": "name", "en": "Fireleaf Shoulderpads", "hash": "7c8e36303c02bb4e", "src": "db2@1.60.1.70009"}
+{"id": 240054, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240055, "field": "name", "en": "Fireleaf Leggings", "hash": "9caff17e130cc455", "src": "db2@1.60.1.70009"}
+{"id": 240055, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240056, "field": "name", "en": "Fireleaf Circlet", "hash": "8a4ce6d16c6f9fc6", "src": "db2@1.60.1.70009"}
+{"id": 240056, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240057, "field": "name", "en": "Fireleaf Gloves", "hash": "f4800a885c656ef1", "src": "db2@1.60.1.70009"}
+{"id": 240057, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240058, "field": "name", "en": "Fireleaf Sandals", "hash": "b33e4da01f9f8dc8", "src": "db2@1.60.1.70009"}
+{"id": 240058, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240059, "field": "name", "en": "Fireleaf Robe", "hash": "3339ed14993e772e", "src": "db2@1.60.1.70009"}
+{"id": 240059, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240060, "field": "name", "en": "Waywatcher Wraps", "hash": "170dffe793887c64", "src": "db2@1.60.1.70009"}
+{"id": 240060, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\n+$s1 Weapon Damage.", "hash": "5cfedbedeaf54c47", "src": "wago@1.15.9.69722"}
+{"id": 240061, "field": "name", "en": "Waywatcher Sash", "hash": "fdab2677db8c8b71", "src": "db2@1.60.1.70009"}
+{"id": 240061, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\n+$s1 Weapon Damage.", "hash": "5cfedbedeaf54c47", "src": "wago@1.15.9.69722"}
+{"id": 240062, "field": "name", "en": "Waywatcher Shoulderpads", "hash": "ed3ee215ff2d7a3f", "src": "db2@1.60.1.70009"}
+{"id": 240062, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\n+$s1 Weapon Damage.", "hash": "0e8e76643795c47e", "src": "wago@1.15.9.69722"}
+{"id": 240063, "field": "name", "en": "Waywatcher Trousers", "hash": "daf6b57e0d83e008", "src": "db2@1.60.1.70009"}
+{"id": 240063, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\n+$s1 Weapon Damage.", "hash": "d5b36a03635be4c4", "src": "wago@1.15.9.69722"}
+{"id": 240064, "field": "name", "en": "Waywatcher Cowl", "hash": "fb89f9553ca17f0f", "src": "db2@1.60.1.70009"}
+{"id": 240064, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Weapon Damage.", "hash": "02a63976a54fb8b8", "src": "wago@1.15.9.69722"}
+{"id": 240065, "field": "name", "en": "Waywatcher Grips", "hash": "fe34b315c4a2a2de", "src": "db2@1.60.1.70009"}
+{"id": 240065, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\n+$s1 Weapon Damage.", "hash": "7c3afdaf3dd3dbe1", "src": "wago@1.15.9.69722"}
+{"id": 240066, "field": "name", "en": "Waywatcher Stompers", "hash": "4015fd0da3bc2c7d", "src": "db2@1.60.1.70009"}
+{"id": 240066, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\n+$s1 Weapon Damage.", "hash": "5cfedbedeaf54c47", "src": "wago@1.15.9.69722"}
+{"id": 240067, "field": "name", "en": "Waywatcher Vest", "hash": "fe131b7893a576a0", "src": "db2@1.60.1.70009"}
+{"id": 240067, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Weapon Damage.", "hash": "1eacbe75b6f7e804", "src": "wago@1.15.9.69722"}
+{"id": 240068, "field": "name", "en": "Waywatcher Bindings", "hash": "f371210848639039", "src": "db2@1.60.1.70009"}
+{"id": 240068, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
+{"id": 240069, "field": "name", "en": "Waywatcher Cord", "hash": "fb89f6be3ca0dfa2", "src": "db2@1.60.1.70009"}
+{"id": 240069, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
+{"id": 240070, "field": "name", "en": "Waywatcher Mantle", "hash": "d054dd99733b212b", "src": "db2@1.60.1.70009"}
+{"id": 240070, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "9c3d16346da207a2", "src": "wago@1.15.9.69722"}
+{"id": 240071, "field": "name", "en": "Waywatcher Kilt", "hash": "fc9ace5e900e2a22", "src": "db2@1.60.1.70009"}
+{"id": 240071, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "9c3d16346da207a2", "src": "wago@1.15.9.69722"}
+{"id": 240072, "field": "name", "en": "Waywatcher Hood", "hash": "fc35793cffa8441c", "src": "db2@1.60.1.70009"}
+{"id": 240072, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
+{"id": 240073, "field": "name", "en": "Waywatcher Mitts", "hash": "665521fc31257443", "src": "db2@1.60.1.70009"}
+{"id": 240073, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "9c3d16346da207a2", "src": "wago@1.15.9.69722"}
+{"id": 240074, "field": "name", "en": "Waywatcher Sandals", "hash": "d575e14c6f5b846e", "src": "db2@1.60.1.70009"}
+{"id": 240074, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "9c3d16346da207a2", "src": "wago@1.15.9.69722"}
+{"id": 240075, "field": "name", "en": "Waywatcher Leathers", "hash": "1e145bf3a1acd48e", "src": "db2@1.60.1.70009"}
+{"id": 240075, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
+{"id": 240076, "field": "name", "en": "Waywatcher Bracers", "hash": "a50d86485b114904", "src": "db2@1.60.1.70009"}
+{"id": 240076, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "666a1b06db11e847", "src": "wago@1.15.9.69722"}
+{"id": 240077, "field": "name", "en": "Waywatcher Waistguard", "hash": "d54f4788377aaf66", "src": "db2@1.60.1.70009"}
+{"id": 240077, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreased Defense +$s1.", "hash": "096089c41924dbe0", "src": "wago@1.15.9.69722"}
+{"id": 240078, "field": "name", "en": "Waywatcher Pauldrons", "hash": "00568e599f461893", "src": "db2@1.60.1.70009"}
+{"id": 240078, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "666a1b06db11e847", "src": "wago@1.15.9.69722"}
+{"id": 240079, "field": "name", "en": "Waywatcher Leggings", "hash": "1f2082dcea1f4ef8", "src": "db2@1.60.1.70009"}
+{"id": 240079, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreased Defense +$s1.", "hash": "096089c41924dbe0", "src": "wago@1.15.9.69722"}
+{"id": 240080, "field": "name", "en": "Waywatcher Headdress", "hash": "eb526080c8f229b7", "src": "db2@1.60.1.70009"}
+{"id": 240080, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreased Defense +$s1.", "hash": "096089c41924dbe0", "src": "wago@1.15.9.69722"}
+{"id": 240081, "field": "name", "en": "Waywatcher Gauntlets", "hash": "f7a4ed5c87a41bef", "src": "db2@1.60.1.70009"}
+{"id": 240081, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreased Defense +$s1.", "hash": "d946aae488ba60f2", "src": "wago@1.15.9.69722"}
+{"id": 240082, "field": "name", "en": "Waywatcher Sabatons", "hash": "3f0227120fe57420", "src": "db2@1.60.1.70009"}
+{"id": 240082, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.\nIncreased Defense +$s1.", "hash": "3234dfe3321d18db", "src": "wago@1.15.9.69722"}
+{"id": 240083, "field": "name", "en": "Waywatcher Armor", "hash": "94e378cf9b04952f", "src": "db2@1.60.1.70009"}
+{"id": 240083, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreased Defense +$s1.", "hash": "096089c41924dbe0", "src": "wago@1.15.9.69722"}
+{"id": 240084, "field": "name", "en": "Waywatcher Wristguards", "hash": "932af0dcffc05928", "src": "db2@1.60.1.70009"}
+{"id": 240084, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
+{"id": 240085, "field": "name", "en": "Waywatcher Girdle", "hash": "782dd0427770b496", "src": "db2@1.60.1.70009"}
+{"id": 240085, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
+{"id": 240086, "field": "name", "en": "Waywatcher Spaulders", "hash": "a17a7a3d7d8725d0", "src": "db2@1.60.1.70009"}
+{"id": 240086, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
+{"id": 240087, "field": "name", "en": "Waywatcher Legguards", "hash": "be8c6bfa00760067", "src": "db2@1.60.1.70009"}
+{"id": 240087, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
+{"id": 240088, "field": "name", "en": "Waywatcher Headpiece", "hash": "bcc229a043469100", "src": "db2@1.60.1.70009"}
+{"id": 240088, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
+{"id": 240089, "field": "name", "en": "Waywatcher Handguards", "hash": "263fe91599e2d024", "src": "db2@1.60.1.70009"}
+{"id": 240089, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
+{"id": 240090, "field": "name", "en": "Waywatcher Boots", "hash": "a60acef1d9a85f73", "src": "db2@1.60.1.70009"}
+{"id": 240090, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
+{"id": 240091, "field": "name", "en": "Waywatcher Tunic", "hash": "e2cf2990d29b6ba8", "src": "db2@1.60.1.70009"}
+{"id": 240091, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
+{"id": 240092, "field": "name", "en": "Soulcrusher Tunic", "hash": "439be8abd137ccf2", "src": "db2@1.60.1.70009"}
+{"id": 240092, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
+{"id": 240093, "field": "name", "en": "Soulcrusher Boots", "hash": "06d78e0cd844c0bd", "src": "db2@1.60.1.70009"}
+{"id": 240093, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "43b4846da4b75f78", "src": "wago@1.15.9.69722"}
+{"id": 240095, "field": "name", "en": "Soulcrusher Handguards", "hash": "b310e900d4e6f7e8", "src": "db2@1.60.1.70009"}
+{"id": 240095, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
+{"id": 240096, "field": "name", "en": "Soulcrusher Headpiece", "hash": "c3b22b94495e5022", "src": "db2@1.60.1.70009"}
+{"id": 240096, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
+{"id": 240097, "field": "name", "en": "Soulcrusher Legguards", "hash": "c57c6dee068dbf89", "src": "db2@1.60.1.70009"}
+{"id": 240097, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
+{"id": 240098, "field": "name", "en": "Soulcrusher Spaulders", "hash": "a86a7c31839ee4f2", "src": "db2@1.60.1.70009"}
+{"id": 240098, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "43b4846da4b75f78", "src": "wago@1.15.9.69722"}
+{"id": 240099, "field": "name", "en": "Soulcrusher Girdle", "hash": "00f3997e2eaa29b4", "src": "db2@1.60.1.70009"}
+{"id": 240099, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
+{"id": 240100, "field": "name", "en": "Soulcrusher Wristguards", "hash": "a21de7855f388566", "src": "db2@1.60.1.70009"}
+{"id": 240100, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "43b4846da4b75f78", "src": "wago@1.15.9.69722"}
+{"id": 240101, "field": "name", "en": "Soulcrusher Chestguard", "hash": "39b7b0fbc55a1eb1", "src": "db2@1.60.1.70009"}
+{"id": 240101, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "a6a43c024c3a2cea", "src": "wago@1.15.9.69722"}
+{"id": 240102, "field": "name", "en": "Soulcrusher Sabatons", "hash": "d1a05211f7be3ed3", "src": "db2@1.60.1.70009"}
+{"id": 240102, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your chance to block attacks with a shield by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "35c02a6e55a7c5ff", "src": "wago@1.15.9.69722"}
+{"id": 240103, "field": "name", "en": "Soulcrusher Gloves", "hash": "353a86bb6aa5b07f", "src": "db2@1.60.1.70009"}
+{"id": 240103, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your chance to block attacks with a shield by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "35c02a6e55a7c5ff", "src": "wago@1.15.9.69722"}
+{"id": 240104, "field": "name", "en": "Soulcrusher Faceguard", "hash": "704935ec59258ed6", "src": "db2@1.60.1.70009"}
+{"id": 240104, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "a6a43c024c3a2cea", "src": "wago@1.15.9.69722"}
+{"id": 240105, "field": "name", "en": "Soulcrusher Legplates", "hash": "ff2834451616e649", "src": "db2@1.60.1.70009"}
+{"id": 240105, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your chance to block attacks with a shield by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "35c02a6e55a7c5ff", "src": "wago@1.15.9.69722"}
+{"id": 240106, "field": "name", "en": "Soulcrusher Pauldrons", "hash": "0746904da55dd7b5", "src": "db2@1.60.1.70009"}
+{"id": 240106, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your chance to block attacks with a shield by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "35c02a6e55a7c5ff", "src": "wago@1.15.9.69722"}
+{"id": 240107, "field": "name", "en": "Soulcrusher Waistguard", "hash": "62204778727ed72a", "src": "db2@1.60.1.70009"}
+{"id": 240107, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "a6a43c024c3a2cea", "src": "wago@1.15.9.69722"}
+{"id": 240108, "field": "name", "en": "Soulcrusher Bracers", "hash": "a2437ecb59bf4052", "src": "db2@1.60.1.70009"}
+{"id": 240108, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your chance to block attacks with a shield by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "35c02a6e55a7c5ff", "src": "wago@1.15.9.69722"}
+{"id": 240109, "field": "name", "en": "Soulcrusher Embrace", "hash": "ea554bafdaf18c21", "src": "db2@1.60.1.70009"}
+{"id": 240109, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "f1cc150784cc9ba0", "src": "wago@1.15.9.69722"}
+{"id": 240110, "field": "name", "en": "Soulcrusher Greaves", "hash": "6fb7a7f4aa052153", "src": "db2@1.60.1.70009"}
+{"id": 240110, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "c0972dc02a8c3a6f", "src": "wago@1.15.9.69722"}
+{"id": 240122, "field": "name", "en": "Soulcrusher Mitts", "hash": "c721e1122fc1d58d", "src": "db2@1.60.1.70009"}
+{"id": 240122, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240123, "field": "name", "en": "Soulcrusher Crown", "hash": "18cc2eb25f677bf5", "src": "db2@1.60.1.70009"}
+{"id": 240123, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240124, "field": "name", "en": "Soulcrusher Kilt", "hash": "2856049b8379ef6d", "src": "db2@1.60.1.70009"}
+{"id": 240124, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "c0972dc02a8c3a6f", "src": "wago@1.15.9.69722"}
+{"id": 240125, "field": "name", "en": "Soulcrusher Mantle", "hash": "591aa6d52a749649", "src": "db2@1.60.1.70009"}
+{"id": 240125, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "f1cc150784cc9ba0", "src": "wago@1.15.9.69722"}
+{"id": 240126, "field": "name", "en": "Soulcrusher Cord", "hash": "27452cfb300ca4ed", "src": "db2@1.60.1.70009"}
+{"id": 240126, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "cd6f10d72a214307", "src": "wago@1.15.9.69722"}
+{"id": 240127, "field": "name", "en": "Soulcrusher Bindings", "hash": "860f4c0c303c5afd", "src": "db2@1.60.1.70009"}
+{"id": 240127, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "cd6f10d72a214307", "src": "wago@1.15.9.69722"}
+{"id": 240128, "field": "name", "en": "Soulcrusher Armor", "hash": "f5b037e599a0f679", "src": "db2@1.60.1.70009"}
+{"id": 240128, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d50216388a114100", "src": "wago@1.15.9.69722"}
+{"id": 240129, "field": "name", "en": "Soulcrusher Treads", "hash": "62e81b73eeb5191e", "src": "db2@1.60.1.70009"}
+{"id": 240129, "field": "description", "en": "Increases your attack speed by $s1%.", "hash": "dd436c29dbcc4bee", "src": "wago@1.15.9.69722"}
+{"id": 240130, "field": "name", "en": "Soulcrusher Grips", "hash": "5f017230c33f0428", "src": "db2@1.60.1.70009"}
+{"id": 240130, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "ffd58529f1cacae8", "src": "wago@1.15.9.69722"}
+{"id": 240131, "field": "name", "en": "Soulcrusher Helmet", "hash": "b57591fed7d3a058", "src": "db2@1.60.1.70009"}
+{"id": 240131, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.", "hash": "eb0cfee942df6878", "src": "wago@1.15.9.69722"}
+{"id": 240132, "field": "name", "en": "Test Staff", "hash": "2f847144cd8eb1b3", "src": "db2@1.60.1.70009"}
+{"id": 240134, "field": "name", "en": "Soulcrusher Leggings", "hash": "b1beaddbd1f819bc", "src": "db2@1.60.1.70009"}
+{"id": 240134, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "ffd58529f1cacae8", "src": "wago@1.15.9.69722"}
+{"id": 240135, "field": "name", "en": "Soulcrusher Epaulets", "hash": "425c909015a96dd2", "src": "db2@1.60.1.70009"}
+{"id": 240135, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "e06e77eda6b60909", "src": "wago@1.15.9.69722"}
+{"id": 240136, "field": "name", "en": "Soulcrusher Belt", "hash": "27203e047af14c1d", "src": "db2@1.60.1.70009"}
+{"id": 240136, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.", "hash": "6e7b75d96ee64b17", "src": "wago@1.15.9.69722"}
+{"id": 240137, "field": "name", "en": "Soulcrusher Vambraces", "hash": "3c7f2321dcb7c865", "src": "db2@1.60.1.70009"}
+{"id": 240137, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "2a496c468cb2904f", "src": "wago@1.15.9.69722"}
+{"id": 240138, "field": "name", "en": "Heretic Robe", "hash": "fbc34b76044d3506", "src": "db2@1.60.1.70009"}
+{"id": 240138, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
+{"id": 240139, "field": "name", "en": "Heretic Sandals", "hash": "f9584823a4cf8ba3", "src": "db2@1.60.1.70009"}
+{"id": 240139, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "c0972dc02a8c3a6f", "src": "wago@1.15.9.69722"}
+{"id": 240140, "field": "name", "en": "Heretic Gloves", "hash": "f5090889382e833f", "src": "db2@1.60.1.70009"}
+{"id": 240140, "field": "description", "en": "Increases your casting speed by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "df238261b430322d", "src": "wago@1.15.9.69722"}
+{"id": 240141, "field": "name", "en": "Heretic Cowl", "hash": "f9c0ca27bb3885f8", "src": "db2@1.60.1.70009"}
+{"id": 240141, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "f1cc150784cc9ba0", "src": "wago@1.15.9.69722"}
+{"id": 240142, "field": "name", "en": "Heretic Leggings", "hash": "7bfb233bf1f980b5", "src": "db2@1.60.1.70009"}
+{"id": 240142, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "f1cc150784cc9ba0", "src": "wago@1.15.9.69722"}
+{"id": 240143, "field": "name", "en": "Heretic Shoulderpads", "hash": "7f97c21e4f31c5ce", "src": "db2@1.60.1.70009"}
+{"id": 240143, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "f1cc150784cc9ba0", "src": "wago@1.15.9.69722"}
+{"id": 240144, "field": "name", "en": "Heretic Belt", "hash": "f99bd899061c8dcc", "src": "db2@1.60.1.70009"}
+{"id": 240144, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "9c3d16346da207a2", "src": "wago@1.15.9.69722"}
+{"id": 240145, "field": "name", "en": "Heretic Bindings", "hash": "504bc16c503dc1f6", "src": "db2@1.60.1.70009"}
+{"id": 240145, "field": "description", "en": "Increases your casting speed by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "df238261b430322d", "src": "wago@1.15.9.69722"}
+{"id": 240146, "field": "name", "en": "Heretic Garb", "hash": "fa46537cb9440219", "src": "db2@1.60.1.70009"}
+{"id": 240146, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "6687f2a36d6ddf98", "src": "wago@1.15.9.69722"}
+{"id": 240147, "field": "name", "en": "Heretic Handguards", "hash": "a1e8e2fc0890b34b", "src": "db2@1.60.1.70009"}
+{"id": 240147, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "9a8d36f7d393e971", "src": "wago@1.15.9.69722"}
+{"id": 240148, "field": "name", "en": "Heretic Hood", "hash": "fa6c4a0e7e3f4b16", "src": "db2@1.60.1.70009"}
+{"id": 240148, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "9a8d36f7d393e971", "src": "wago@1.15.9.69722"}
+{"id": 240149, "field": "name", "en": "Heretic Pants", "hash": "aff72152d768119d", "src": "db2@1.60.1.70009"}
+{"id": 240149, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "6687f2a36d6ddf98", "src": "wago@1.15.9.69722"}
+{"id": 240150, "field": "name", "en": "Heretic Mantle", "hash": "18e928a8f7fd68f8", "src": "db2@1.60.1.70009"}
+{"id": 240150, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "9a8d36f7d393e971", "src": "wago@1.15.9.69722"}
+{"id": 240151, "field": "name", "en": "Heretic Waistguard", "hash": "50f84174a628927c", "src": "db2@1.60.1.70009"}
+{"id": 240151, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "a6a43c024c3a2cea", "src": "wago@1.15.9.69722"}
+{"id": 240152, "field": "name", "en": "Heretic Wristguards", "hash": "daa2d34c551583d7", "src": "db2@1.60.1.70009"}
+{"id": 240152, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "a6a43c024c3a2cea", "src": "wago@1.15.9.69722"}
+{"id": 240153, "field": "name", "en": "Heretic Boots", "hash": "bc17aa62663cb540", "src": "db2@1.60.1.70009"}
+{"id": 240153, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "9a8d36f7d393e971", "src": "wago@1.15.9.69722"}
+{"id": 240742, "field": "name", "en": "Monster - 1H, Shortsword, Red", "hash": "d7e768cadbcb6fa0", "src": "db2@1.60.1.70009"}
+{"id": 240836, "field": "name", "en": "Thisalee's Whistle", "hash": "60dd90587c61afa8", "src": "db2@1.60.1.70009"}
+{"id": 240845, "field": "name", "en": "Prototype Magnet", "hash": "ccd4f1d23ff98e1b", "src": "db2@1.60.1.70009"}
+{"id": 240845, "field": "description", "en": "Briefly reveal and supercharge your prototype magnet in attempt to catch stray metallic objects.", "hash": "2133869e06031add", "src": "db2@1.60.1.70009"}
+{"id": 240846, "field": "name", "en": "Magnetic Scrap", "hash": "9d976127dc386440", "src": "db2@1.60.1.70009"}
+{"id": 240846, "field": "description", "en": "One person's trash is another person's treasure, whether they like it or not!", "hash": "4843a396449c522d", "src": "db2@1.60.1.70009"}
+{"id": 240945, "field": "name", "en": "Slice of Carrie's Apple Pie", "hash": "c313f7a20a527e61", "src": "db2@1.60.1.70009"}
+{"id": 240945, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.\nDespite the pie having been cut into three pieces of equal size, you somehow managed to get the smallest slice.", "hash": "fd1ba045f3cf2101", "src": "db2@1.60.1.70009"}
+{"id": 240993, "field": "name", "en": "Tim's Test Ranged Weapon", "hash": "ebfa88838df6cbd2", "src": "db2@1.60.1.70009"}
+{"id": 240994, "field": "name", "en": "Tim's Test Ranged Weapon 2", "hash": "dd8a5b1fad483d5f", "src": "db2@1.60.1.70009"}

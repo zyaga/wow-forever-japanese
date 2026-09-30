@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wfj"
+version = "0.1.0"
+description = "WoW Forever Japanese: data pipeline (import, check, generate)"
+requires-python = ">=3.11"
+license = { text = "GPL-2.0-or-later" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1", "ruff==0.16.9", "coverage==7.16.2"] # exact: a new release never changes CI on its own; bump deliberately
+
+[project.scripts]
+wfj = "wfj.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["wfj*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "I", "B", "UP",
+    "ERA",      # commented-out code
+    "ARG",      # unused arguments
+    "SIM",      # simpler forms
+    "RET",      # returns
+    "C90",      # complexity
+    "PIE",
+    "PLR0911", "PLR0912", "PLR0913", "PLR0915",  # too many returns / branches / arguments / statements
+    "PLW",
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 15
+
+[tool.ruff.lint.pylint]
+max-args = 8
+max-branches = 15
+max-returns = 8
+max-statements = 60
+
+[tool.ruff.lint.per-file-ignores]
+# pytest fixtures are requested by name and stub callbacks keep the real signature; fixture literals and
+# assertion messages are kept on one line so a failure reads as the data it checks; a fixture builder takes
+# the whole record it writes
+"../tests/**" = ["ARG001", "ARG002", "ARG005", "E501", "C901", "PLR0913"]
+
+[tool.coverage.run]
+source = ["wfj"]
+
+[tool.coverage.report]
+skip_empty = true
+
+[tool.pytest.ini_options]
+testpaths = ["../tests/python"]

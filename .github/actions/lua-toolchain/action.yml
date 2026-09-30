@@ -1,0 +1,90 @@
+name: Lua toolchain
+description: >
+  PUC Lua 5.1 and luarocks with the rocks pinned in .github/lua-rocks.txt, restored from cache or built once,
+  then put on PATH and verified. Used by every job that runs the Lua tests or luacheck.
+# CI runs PUC Lua 5.1 (same semantics + double numbers as the WoW client for everything we do).
+# LuaJIT is the local interpreter on macOS, but under LuaJIT luarocks cannot load the luarocks.org
+# manifest ("main function has more than 65536 constants"), so CI uses PUC 5.1.
+# The whole toolchain (.lua + .luarocks) is cached under a key of the runner image, the pinned versions
+# and this file: a run with nothing changed downloads nothing; any change rebuilds once per job that runs this
+# action (both save the same key; the second save is refused and that is fine).
+# A broken cache: `gh cache delete <key>` (docs/operations/local-setup.md).
+inputs:
+  lua-version:
+    description: The PUC Lua version to build
+    default: "5.1"
+  luarocks-version:
+    description: The luarocks version to build
+    default: "3.8.0"
+runs:
+  using: composite
+  steps:
+    - name: Runner image
+      id: image
+      shell: bash
+      run: echo "os=${ImageOS:-unknown}" >> "$GITHUB_OUTPUT" # e.g. ubuntu24: the C rocks link against the image's libs
+    - name: Restore Lua toolchain
+      id: lua-toolchain
+      uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: |
+          .lua
+          .luarocks
+        key: lua-toolchain-${{ runner.os }}-${{ steps.image.outputs.os }}-${{ runner.arch }}-lua${{ inputs.lua-version }}-luarocks${{ inputs.luarocks-version }}-${{ hashFiles('.github/lua-rocks.txt', '.github/scripts/lua-rocks.sh', '.github/actions/lua-toolchain/action.yml') }}
+    # A miss starts from a clean slate: a failed restore can leave a partial .lua / .luarocks behind, which
+    # gh-actions-lua would reuse and lua-rocks.sh would trust.
+    - if: steps.lua-toolchain.outputs.cache-hit != 'true'
+      shell: bash
+      run: rm -rf .lua .luarocks
+    # The actions retry their tarball downloads themselves, but not their apt-get step, a 4xx or a failed
+    # build. Actions has no step retry, so each runs with continue-on-error and, only if it failed, once more
+    # after removing its partial install. The calling job's time limit bounds the whole build.
+    - if: steps.lua-toolchain.outputs.cache-hit != 'true'
+      id: lua
+      continue-on-error: true
+      uses: leafo/gh-actions-lua@6919171ccf181b826f44b9bca76307b577217377 # v13.0.0
+      with:
+        luaVersion: ${{ inputs.lua-version }}
+        buildCache: false # skips its own cache restore (that cache service answers 400); the toolchain cache replaces it
+    - if: steps.lua-toolchain.outputs.cache-hit != 'true' && steps.lua.outcome == 'failure'
+      shell: bash
+      run: rm -rf .lua "$RUNNER_TOOL_CACHE/lua" && sleep 15
+    - if: steps.lua-toolchain.outputs.cache-hit != 'true' && steps.lua.outcome == 'failure'
+      uses: leafo/gh-actions-lua@6919171ccf181b826f44b9bca76307b577217377 # v13.0.0
+      with:
+        luaVersion: ${{ inputs.lua-version }}
+        buildCache: false # skips its own cache restore (that cache service answers 400); the toolchain cache replaces it
+    - if: steps.lua-toolchain.outputs.cache-hit != 'true'
+      id: luarocks
+      continue-on-error: true
+      uses: leafo/gh-actions-luarocks@35d062def313a7699a0d513e996bcf4352f05389 # v6.1.0
+      with:
+        luaRocksVersion: ${{ inputs.luarocks-version }}
+    - if: steps.lua-toolchain.outputs.cache-hit != 'true' && steps.luarocks.outcome == 'failure'
+      shell: bash
+      run: rm -rf .luarocks && sleep 15
+    - if: steps.lua-toolchain.outputs.cache-hit != 'true' && steps.luarocks.outcome == 'failure'
+      uses: leafo/gh-actions-luarocks@35d062def313a7699a0d513e996bcf4352f05389 # v6.1.0
+      with:
+        luaRocksVersion: ${{ inputs.luarocks-version }}
+    - if: steps.lua-toolchain.outputs.cache-hit != 'true'
+      shell: bash
+      run: .github/scripts/lua-rocks.sh install
+    - if: steps.lua-toolchain.outputs.cache-hit != 'true'
+      uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: |
+          .lua
+          .luarocks
+        key: ${{ steps.lua-toolchain.outputs.cache-primary-key }}
+    - name: Lua toolchain on PATH
+      shell: bash
+      run: |
+        lr_path="$(.luarocks/bin/luarocks path --lr-path)"
+        lr_cpath="$(.luarocks/bin/luarocks path --lr-cpath)"
+        echo "$GITHUB_WORKSPACE/.lua/bin" >> "$GITHUB_PATH"
+        echo "$GITHUB_WORKSPACE/.luarocks/bin" >> "$GITHUB_PATH"
+        echo "LUA_PATH=;;$lr_path" >> "$GITHUB_ENV"
+        echo "LUA_CPATH=;;$lr_cpath" >> "$GITHUB_ENV"
+    - shell: bash
+      run: .github/scripts/lua-rocks.sh verify

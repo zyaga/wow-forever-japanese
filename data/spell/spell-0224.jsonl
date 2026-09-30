@@ -1,0 +1,1 @@
+{"id": 224764, "field": "description", "ja": "Raptor Strikeの与ダメージの$N1%が回復します。", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3527"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

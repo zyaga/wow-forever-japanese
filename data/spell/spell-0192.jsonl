@@ -1,0 +1,1 @@
+{"id": 192939, "field": "description", "ja": "Fel Rushのダメージを$N1%増やし\nFel Rushが敵に当たると$N2 Furyを得る", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3234"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}

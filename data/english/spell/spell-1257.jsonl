@@ -1,0 +1,149 @@
+{"id": 1257010, "field": "name", "en": "Smack Flutterfly", "hash": "7f548ff95e0564f8", "src": "db2@1.60.1.70009"}
+{"id": 1257010, "field": "description", "en": "Recently smacked!", "hash": "a94a10a87bbbf694", "src": "db2@1.60.1.70009"}
+{"id": 1257010, "field": "aura", "en": "Recently smacked!", "hash": "a94a10a87bbbf694", "src": "db2@1.60.1.70009"}
+{"id": 1257013, "field": "name", "en": "Linen Reagent Bag", "hash": "cc58b7c8914baeb7", "src": "db2@1.60.1.70009"}
+{"id": 1257014, "field": "name", "en": "Flutterfly Dust", "hash": "ebc0dbf47bfb66c6", "src": "db2@1.60.1.70009"}
+{"id": 1257017, "field": "name", "en": "Woolen Reagent Bag", "hash": "6b46054bb4fec9e0", "src": "db2@1.60.1.70009"}
+{"id": 1257019, "field": "name", "en": "Angry!", "hash": "7566dbf72627613c", "src": "db2@1.60.1.70009"}
+{"id": 1257019, "field": "description", "en": "Looks like you made it angry!", "hash": "dd1e491f43063aa6", "src": "db2@1.60.1.70009"}
+{"id": 1257019, "field": "aura", "en": "Looks like you made it angry!", "hash": "dd1e491f43063aa6", "src": "db2@1.60.1.70009"}
+{"id": 1257049, "field": "name", "en": "Sword Specialization", "hash": "112aed18a7bde3f7", "src": "db2@1.60.1.70009"}
+{"id": 1257055, "field": "name", "en": "Fly Away!", "hash": "41e7d768bb7ddcc2", "src": "db2@1.60.1.70009"}
+{"id": 1257055, "field": "aura", "en": "Feared.", "hash": "5a2205f292a109c9", "src": "db2@1.60.1.70009"}
+{"id": 1257057, "field": "name", "en": "Despawn", "hash": "2c6dd4a169423cd6", "src": "db2@1.60.1.70009"}
+{"id": 1257106, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70009"}
+{"id": 1257106, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70009"}
+{"id": 1257129, "field": "name", "en": "Credit Granter", "hash": "701beadc4ed1650c", "src": "db2@1.60.1.70009"}
+{"id": 1257130, "field": "name", "en": "Make Your Stand", "hash": "f6e76ee2fc2279e7", "src": "db2@1.60.1.70009"}
+{"id": 1257130, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70009"}
+{"id": 1257368, "field": "name", "en": "Novice Arcanist's Sash", "hash": "60a9c320035d6b70", "src": "db2@1.60.1.70009"}
+{"id": 1257369, "field": "name", "en": "Novice Ardent's Sash", "hash": "1ba33f0c9b2c9f8b", "src": "db2@1.60.1.70009"}
+{"id": 1257370, "field": "name", "en": "Pristine Boots", "hash": "8fca47e215db2582", "src": "db2@1.60.1.70009"}
+{"id": 1257371, "field": "name", "en": "Silky Boots", "hash": "5c4644d3f8a7e0a9", "src": "db2@1.60.1.70009"}
+{"id": 1257372, "field": "name", "en": "Flame Boots", "hash": "cf5d9de61aa1507c", "src": "db2@1.60.1.70009"}
+{"id": 1257373, "field": "name", "en": "Shadow Boots", "hash": "d11b551d6e54f2b2", "src": "db2@1.60.1.70009"}
+{"id": 1257374, "field": "name", "en": "Pearly Boots", "hash": "011eb11111017ee2", "src": "db2@1.60.1.70009"}
+{"id": 1257375, "field": "name", "en": "Shining Boots", "hash": "6389c242864c0f5a", "src": "db2@1.60.1.70009"}
+{"id": 1257376, "field": "name", "en": "Filigreed Pristine Gown", "hash": "db1294ebe8b11c97", "src": "db2@1.60.1.70009"}
+{"id": 1257377, "field": "name", "en": "Filigreed Silky Gown", "hash": "59504cd7cb41c51b", "src": "db2@1.60.1.70009"}
+{"id": 1257378, "field": "name", "en": "Filigreed Flame Gown", "hash": "8d005b32d6e61c1a", "src": "db2@1.60.1.70009"}
+{"id": 1257379, "field": "name", "en": "Filigreed Shadow Gown", "hash": "eadb4871f65ef9f6", "src": "db2@1.60.1.70009"}
+{"id": 1257380, "field": "name", "en": "Filigreed Pearly Gown", "hash": "182b6e4ae58bc2be", "src": "db2@1.60.1.70009"}
+{"id": 1257381, "field": "name", "en": "Filigreed Shining Gown", "hash": "8f8d63c5b36376b4", "src": "db2@1.60.1.70009"}
+{"id": 1257382, "field": "name", "en": "Pristine Gloves", "hash": "496fa09bc206810e", "src": "db2@1.60.1.70009"}
+{"id": 1257383, "field": "name", "en": "Silky Gloves", "hash": "ece20f67e2a29773", "src": "db2@1.60.1.70009"}
+{"id": 1257384, "field": "name", "en": "Flame Gloves", "hash": "d1d4a547f36696e0", "src": "db2@1.60.1.70009"}
+{"id": 1257385, "field": "name", "en": "Shadow Gloves", "hash": "b5e9667144ed6393", "src": "db2@1.60.1.70009"}
+{"id": 1257386, "field": "name", "en": "Pearly Gloves", "hash": "47a1723b238da434", "src": "db2@1.60.1.70009"}
+{"id": 1257387, "field": "name", "en": "Shining Gloves", "hash": "a46b3f4841961df7", "src": "db2@1.60.1.70009"}
+{"id": 1257388, "field": "name", "en": "Pristine Sash", "hash": "22a0e3029cd1a7ff", "src": "db2@1.60.1.70009"}
+{"id": 1257389, "field": "name", "en": "Silky Sash", "hash": "129a043552e9252b", "src": "db2@1.60.1.70009"}
+{"id": 1257390, "field": "name", "en": "Flame Sash", "hash": "464a12905e8d7c2a", "src": "db2@1.60.1.70009"}
+{"id": 1257391, "field": "name", "en": "Shadow Sash", "hash": "ec68d56a36f9c2ae", "src": "db2@1.60.1.70009"}
+{"id": 1257392, "field": "name", "en": "Pearly Sash", "hash": "19b8fb4326268b76", "src": "db2@1.60.1.70009"}
+{"id": 1257393, "field": "name", "en": "Shining Sash", "hash": "8bd13fc8fb98fc9a", "src": "db2@1.60.1.70009"}
+{"id": 1257394, "field": "name", "en": "Filigreed Pristine Leggings", "hash": "939168e935997a14", "src": "db2@1.60.1.70009"}
+{"id": 1257395, "field": "name", "en": "Filigreed Silky Leggings", "hash": "3259ba919606f3b0", "src": "db2@1.60.1.70009"}
+{"id": 1257396, "field": "name", "en": "Filigreed Flame Leggings", "hash": "bc1a7c0342a77f0b", "src": "db2@1.60.1.70009"}
+{"id": 1257397, "field": "name", "en": "Filigreed Shadow Leggings", "hash": "0deacdd8a5bd6d5e", "src": "db2@1.60.1.70009"}
+{"id": 1257398, "field": "name", "en": "Filigreed Pearly Leggings", "hash": "5878858de3a3ff9a", "src": "db2@1.60.1.70009"}
+{"id": 1257399, "field": "name", "en": "Filigreed Shining Leggings", "hash": "4ba997db0d9c6dc7", "src": "db2@1.60.1.70009"}
+{"id": 1257400, "field": "name", "en": "Pristine Circlet", "hash": "00e6b0d74032e56b", "src": "db2@1.60.1.70009"}
+{"id": 1257401, "field": "name", "en": "Silky Circlet", "hash": "a47564dad019142f", "src": "db2@1.60.1.70009"}
+{"id": 1257402, "field": "name", "en": "Flame Circlet", "hash": "cc981634484ae983", "src": "db2@1.60.1.70009"}
+{"id": 1257403, "field": "name", "en": "Shadow Circlet", "hash": "8336ee6c428d0e7c", "src": "db2@1.60.1.70009"}
+{"id": 1257404, "field": "name", "en": "Pearly Circlet", "hash": "1464f5b255391455", "src": "db2@1.60.1.70009"}
+{"id": 1257405, "field": "name", "en": "Shining Circlet", "hash": "8fa8e444c16af545", "src": "db2@1.60.1.70009"}
+{"id": 1257406, "field": "name", "en": "Pristine Gown", "hash": "2108ec4e33866bbd", "src": "db2@1.60.1.70009"}
+{"id": 1257407, "field": "name", "en": "Silky Gown", "hash": "11020d81e99de8d8", "src": "db2@1.60.1.70009"}
+{"id": 1257408, "field": "name", "en": "Flame Gown", "hash": "44b21bdcf5423fd7", "src": "db2@1.60.1.70009"}
+{"id": 1257409, "field": "name", "en": "Shadow Gown", "hash": "ead0deb6cdae865b", "src": "db2@1.60.1.70009"}
+{"id": 1257410, "field": "name", "en": "Pearly Gown", "hash": "1821048fbcdb4f23", "src": "db2@1.60.1.70009"}
+{"id": 1257411, "field": "name", "en": "Shining Gown", "hash": "8a394914924dc058", "src": "db2@1.60.1.70009"}
+{"id": 1257412, "field": "name", "en": "Silk Reagent Bag", "hash": "c9148df6a2dcfb7b", "src": "db2@1.60.1.70009"}
+{"id": 1257413, "field": "name", "en": "Filigreed Pristine Circlet", "hash": "f1cda5471a815559", "src": "db2@1.60.1.70009"}
+{"id": 1257414, "field": "name", "en": "Filigreed Silky Circlet", "hash": "5e7f0d7c8543c51a", "src": "db2@1.60.1.70009"}
+{"id": 1257415, "field": "name", "en": "Filigreed Flame Circlet", "hash": "86a1bed6fd759a5d", "src": "db2@1.60.1.70009"}
+{"id": 1257416, "field": "name", "en": "Filigreed Shadow Circlet", "hash": "b628389ea87e6395", "src": "db2@1.60.1.70009"}
+{"id": 1257417, "field": "name", "en": "Filigreed Pearly Circlet", "hash": "47563fe4bb2a696e", "src": "db2@1.60.1.70009"}
+{"id": 1257418, "field": "name", "en": "Filigreed Shining Circlet", "hash": "a121dc5c93d59f10", "src": "db2@1.60.1.70009"}
+{"id": 1257419, "field": "name", "en": "Pristine Leggings", "hash": "4d625132d71b97a7", "src": "db2@1.60.1.70009"}
+{"id": 1257420, "field": "name", "en": "Silky Leggings", "hash": "ff68705a30159e97", "src": "db2@1.60.1.70009"}
+{"id": 1257421, "field": "name", "en": "Flame Leggings", "hash": "892931d1dcb629e1", "src": "db2@1.60.1.70009"}
+{"id": 1257422, "field": "name", "en": "Shadow Leggings", "hash": "fc71d5bbd352c393", "src": "db2@1.60.1.70009"}
+{"id": 1257423, "field": "name", "en": "Pearly Leggings", "hash": "46ff8d75113955e0", "src": "db2@1.60.1.70009"}
+{"id": 1257424, "field": "name", "en": "Shining Leggings", "hash": "5ac2a366334dfdd9", "src": "db2@1.60.1.70009"}
+{"id": 1257425, "field": "name", "en": "Earthen Leggings", "hash": "ba82861a17000069", "src": "db2@1.60.1.70009"}
+{"id": 1257426, "field": "name", "en": "Gilded Slippers", "hash": "827fd26e901e7415", "src": "db2@1.60.1.70009"}
+{"id": 1257427, "field": "name", "en": "Frothing Slippers", "hash": "1208cc115d593c24", "src": "db2@1.60.1.70009"}
+{"id": 1257428, "field": "name", "en": "Fiery Slippers", "hash": "573dabf5b441cd9b", "src": "db2@1.60.1.70009"}
+{"id": 1257429, "field": "name", "en": "Black Slippers", "hash": "544f4ae486fb27eb", "src": "db2@1.60.1.70009"}
+{"id": 1257430, "field": "name", "en": "Golden Slippers", "hash": "5634b7db5a52adfb", "src": "db2@1.60.1.70009"}
+{"id": 1257431, "field": "name", "en": "Radiant Slippers", "hash": "79cba79ba62f15f8", "src": "db2@1.60.1.70009"}
+{"id": 1257432, "field": "name", "en": "Earthen Silk Slippers", "hash": "61a797e173e713c4", "src": "db2@1.60.1.70009"}
+{"id": 1257433, "field": "name", "en": "Earthen Silk Hood", "hash": "973a4bc6ef6c61aa", "src": "db2@1.60.1.70009"}
+{"id": 1257434, "field": "name", "en": "Earthen Silk Gloves", "hash": "62b9be24114b1c19", "src": "db2@1.60.1.70009"}
+{"id": 1257435, "field": "name", "en": "Earthen Silk Cuffs", "hash": "0bdbb0086038807d", "src": "db2@1.60.1.70009"}
+{"id": 1257436, "field": "name", "en": "Gilded Handwraps", "hash": "897a7a1728b887be", "src": "db2@1.60.1.70009"}
+{"id": 1257437, "field": "name", "en": "Frothing Handwraps", "hash": "fc92375ea79bc26a", "src": "db2@1.60.1.70009"}
+{"id": 1257438, "field": "name", "en": "Fiery Handwraps", "hash": "66a0c9be33a1bd04", "src": "db2@1.60.1.70009"}
+{"id": 1257439, "field": "name", "en": "Black Handwraps", "hash": "e6a51e01da796d70", "src": "db2@1.60.1.70009"}
+{"id": 1257440, "field": "name", "en": "Golden Handwraps", "hash": "df0be06b33a1d301", "src": "db2@1.60.1.70009"}
+{"id": 1257441, "field": "name", "en": "Radiant Handwraps", "hash": "1548900a90f17bf0", "src": "db2@1.60.1.70009"}
+{"id": 1257442, "field": "name", "en": "Earthen Silk Shoulders", "hash": "fa65cac8606447f0", "src": "db2@1.60.1.70009"}
+{"id": 1257443, "field": "name", "en": "Mageweave Reagent Bag", "hash": "6255e79779818f05", "src": "db2@1.60.1.70009"}
+{"id": 1257444, "field": "name", "en": "Gilded Cord", "hash": "81d69c14ab113f24", "src": "db2@1.60.1.70009"}
+{"id": 1257445, "field": "name", "en": "Frothing Cord", "hash": "fc5f3716614a7473", "src": "db2@1.60.1.70009"}
+{"id": 1257446, "field": "name", "en": "Fiery Cord", "hash": "f28099b2e4e437f1", "src": "db2@1.60.1.70009"}
+{"id": 1257447, "field": "name", "en": "Black Cord", "hash": "796ee3e2dfa3c43c", "src": "db2@1.60.1.70009"}
+{"id": 1257448, "field": "name", "en": "Golden Cord", "hash": "c646bceb84733321", "src": "db2@1.60.1.70009"}
+{"id": 1257449, "field": "name", "en": "Radiant Cord", "hash": "4c3962bf2f4979a3", "src": "db2@1.60.1.70009"}
+{"id": 1257450, "field": "name", "en": "Nethergeld Shoulders", "hash": "31cd3a0050a5c194", "src": "db2@1.60.1.70009"}
+{"id": 1257451, "field": "name", "en": "Netherfroth Shoulders", "hash": "cb024c0be99e3821", "src": "db2@1.60.1.70009"}
+{"id": 1257452, "field": "name", "en": "Netherflame Shoulders", "hash": "65424a997e448528", "src": "db2@1.60.1.70009"}
+{"id": 1257453, "field": "name", "en": "Netherpearl Shoulders", "hash": "505a4286bf37b7ee", "src": "db2@1.60.1.70009"}
+{"id": 1257454, "field": "name", "en": "Nethershine Shoulders", "hash": "7542bf6c265af741", "src": "db2@1.60.1.70009"}
+{"id": 1257455, "field": "name", "en": "Netherlight Shoulders", "hash": "8f417d427f05e4f3", "src": "db2@1.60.1.70009"}
+{"id": 1257456, "field": "name", "en": "Nethergeld Cuffs", "hash": "4674e6077fbb0738", "src": "db2@1.60.1.70009"}
+{"id": 1257457, "field": "name", "en": "Netherfroth Cuffs", "hash": "dcb16448d3c44651", "src": "db2@1.60.1.70009"}
+{"id": 1257458, "field": "name", "en": "Netherflame Cuffs", "hash": "5606cede34c33e9b", "src": "db2@1.60.1.70009"}
+{"id": 1257459, "field": "name", "en": "Netherpearl Cuffs", "hash": "87fa406c3183ccfc", "src": "db2@1.60.1.70009"}
+{"id": 1257460, "field": "name", "en": "Nethershine Cuffs", "hash": "e5d6188a6bd7c8fd", "src": "db2@1.60.1.70009"}
+{"id": 1257461, "field": "name", "en": "Netherlight Cuffs", "hash": "8f8e6d3c2270ec33", "src": "db2@1.60.1.70009"}
+{"id": 1257462, "field": "name", "en": "Ghostweave Cord", "hash": "4263a9cc9445d726", "src": "db2@1.60.1.70009"}
+{"id": 1257463, "field": "name", "en": "Earthenweave Gloves", "hash": "aeee573185a47ea0", "src": "db2@1.60.1.70009"}
+{"id": 1257464, "field": "name", "en": "Earthenweave Cord", "hash": "1ed95142734ef64e", "src": "db2@1.60.1.70009"}
+{"id": 1257465, "field": "name", "en": "Runecloth Reagent Bag", "hash": "0c8889ceb93af97d", "src": "db2@1.60.1.70009"}
+{"id": 1257466, "field": "name", "en": "Gilded Waistcord", "hash": "5a5e0cb73cf92ec2", "src": "db2@1.60.1.70009"}
+{"id": 1257467, "field": "name", "en": "Frothing Waistcord", "hash": "cd75c9febbdc696e", "src": "db2@1.60.1.70009"}
+{"id": 1257468, "field": "name", "en": "Fiery Waistcord", "hash": "37845c5e47e26408", "src": "db2@1.60.1.70009"}
+{"id": 1257469, "field": "name", "en": "Black Waistcord", "hash": "b788b0a1eeba1474", "src": "db2@1.60.1.70009"}
+{"id": 1257470, "field": "name", "en": "Golden Waistcord", "hash": "afef730b47e27a05", "src": "db2@1.60.1.70009"}
+{"id": 1257471, "field": "name", "en": "Radiant Waistcord", "hash": "e62c22a5a53222f4", "src": "db2@1.60.1.70009"}
+{"id": 1257472, "field": "name", "en": "Earthenweave Boots", "hash": "b7a61e48fd69945e", "src": "db2@1.60.1.70009"}
+{"id": 1257473, "field": "name", "en": "Gilded Gloves", "hash": "746b702f883060f9", "src": "db2@1.60.1.70009"}
+{"id": 1257474, "field": "name", "en": "Frothing Gloves", "hash": "83cb09af605a565d", "src": "db2@1.60.1.70009"}
+{"id": 1257475, "field": "name", "en": "Fiery Gloves", "hash": "e7c6483dd431f0af", "src": "db2@1.60.1.70009"}
+{"id": 1257476, "field": "name", "en": "Black Gloves", "hash": "0390d56ec897ea1b", "src": "db2@1.60.1.70009"}
+{"id": 1257477, "field": "name", "en": "Golden Gloves", "hash": "34f5365a57ce64be", "src": "db2@1.60.1.70009"}
+{"id": 1257478, "field": "name", "en": "Radiant Gloves", "hash": "6be2e700f54a3c6d", "src": "db2@1.60.1.70009"}
+{"id": 1257479, "field": "name", "en": "Gilded Sandals", "hash": "28b350d0304d9b84", "src": "db2@1.60.1.70009"}
+{"id": 1257480, "field": "name", "en": "Frothing Sandals", "hash": "069edd7841e51012", "src": "db2@1.60.1.70009"}
+{"id": 1257481, "field": "name", "en": "Fiery Sandals", "hash": "302fe1212e149561", "src": "db2@1.60.1.70009"}
+{"id": 1257482, "field": "name", "en": "Black Sandals", "hash": "68d61eeb54e8c8bb", "src": "db2@1.60.1.70009"}
+{"id": 1257483, "field": "name", "en": "Golden Sandals", "hash": "af33b82ccca36032", "src": "db2@1.60.1.70009"}
+{"id": 1257484, "field": "name", "en": "Radiant Sandals", "hash": "cad51daa359b6f6e", "src": "db2@1.60.1.70009"}
+{"id": 1257485, "field": "name", "en": "Earthenweave Mantle", "hash": "d2ce774b4573646a", "src": "db2@1.60.1.70009"}
+{"id": 1257486, "field": "name", "en": "Earthenweave Vest", "hash": "216275fcca538d4c", "src": "db2@1.60.1.70009"}
+{"id": 1257487, "field": "name", "en": "Runecloth Cuffs", "hash": "388bd7b6234582b6", "src": "db2@1.60.1.70009"}
+{"id": 1257488, "field": "name", "en": "Earthenweave Leggings", "hash": "08a0835cf619f474", "src": "db2@1.60.1.70009"}
+{"id": 1257489, "field": "name", "en": "Ghostweave Mantle", "hash": "47d7e0b01e5c1428", "src": "db2@1.60.1.70009"}
+{"id": 1257490, "field": "name", "en": "Ghostweave Boots", "hash": "e7716d40db9fa001", "src": "db2@1.60.1.70009"}
+{"id": 1257491, "field": "name", "en": "Earthenweave Cuffs", "hash": "c9ff43c00907ac00", "src": "db2@1.60.1.70009"}
+{"id": 1257492, "field": "name", "en": "Mooncloth Reagent Bag", "hash": "3bd498432e4f8569", "src": "db2@1.60.1.70009"}
+{"id": 1257493, "field": "name", "en": "Ghostweave Hood", "hash": "430f2c4a574d3bb1", "src": "db2@1.60.1.70009"}
+{"id": 1257494, "field": "name", "en": "Earthenweave Crown", "hash": "c99abeee848c4f96", "src": "db2@1.60.1.70009"}
+{"id": 1257495, "field": "name", "en": "Bottomless Reagent Bag", "hash": "c8004c9be119e7ee", "src": "db2@1.60.1.70009"}
+{"id": 1257860, "field": "name", "en": "Arcane-Infused Net", "hash": "dac37bf87ea04d69", "src": "db2@1.60.1.70009"}
+{"id": 1257860, "field": "description", "en": "Attempt to bring down one of the Manticores flying overhead in Shadowgale Forest.", "hash": "79e1f29276cec527", "src": "db2@1.60.1.70009"}
+{"id": 1257860, "field": "aura", "en": "Downed!", "hash": "458c090d095ba862", "src": "db2@1.60.1.70009"}

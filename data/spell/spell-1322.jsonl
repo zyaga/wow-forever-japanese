@@ -1,0 +1,1 @@
+{"id": 1322007, "field": "description", "ja": "ウォーロックの指揮下にあるVoidwalkerを召喚します。", "status": "unaligned", "checks": [], "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-audit-rd-spell-sg10@2026-09-26", "imported": "2026-09-26"}, "english": {"hash": "e766a608e584028d", "src": "db2@1.60.1.70009"}, "reasons": [], "conflicts": []}

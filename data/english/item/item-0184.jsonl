@@ -1,0 +1,4 @@
+{"id": 184937, "field": "name", "en": "Chronoboon Displacer", "hash": "1c832be154ad05dd", "src": "db2@1.60.1.70009"}
+{"id": 184937, "field": "description", "en": "Alters the fabric of time, suspending beneficial world effects from dragonslaying, Dire Maul, Zul'Gurub, and Felwood.", "hash": "51f8d5232ad3300e", "src": "db2@1.60.1.70009"}
+{"id": 184938, "field": "name", "en": "Supercharged Chronoboon Displacer", "hash": "bdd4ab21c7f35a18", "src": "db2@1.60.1.70009"}
+{"id": 184938, "field": "description", "en": "Restores your suspended world effects.", "hash": "89976410d364dc96", "src": "db2@1.60.1.70009"}

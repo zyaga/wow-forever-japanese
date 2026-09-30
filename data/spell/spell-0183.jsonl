@@ -1,0 +1,1 @@
+{"id": 183752, "field": "description", "ja": "敵の魔法詠唱を止めて、その種類の魔法を$N1秒間使えなくする\nインタラプトに成功した場合、 $N2 Fury, $N3 Painを得る", "status": "rejected", "checks": [], "provenance": {"class": "human", "translator": "WoWJapanizer", "source": "ctjt@84db736", "imported": "2026-09-13", "origins": ["ctjt@84db736#3198"]}, "english": null, "reasons": ["no_english_id"], "conflicts": []}
