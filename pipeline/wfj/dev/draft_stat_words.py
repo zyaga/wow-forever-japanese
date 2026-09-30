@@ -46,28 +46,35 @@ from wfj.core import align, stat_words
 from wfj.core.report import SHIPPED
 from wfj.dev.glossary import GLOSSARY, read_glossary, read_required
 from wfj.dev.lint_names import exempt_words
+from wfj.dev.translate_batch import KINDS, TEMPLATE_KINDS
 from wfj.dev.translate_lint import ALLOWLIST, check_row
 from wfj.io.jsonl_store import Store
 
 TYPES = ("item", "spell")
-KIND = {("item", "description"): "item_description", ("spell", "description"): "spell_description",
-        ("spell", "aura"): "spell_aura"}
+KIND = {KINDS[k]: k for k in TEMPLATE_KINDS}  # (type, field) → the tooltip kind the lint reads it as
 CONTEXT = 12  # characters kept on each side of a swapped word in contexts.txt
 
 
-def selected(line: dict[str, Any]) -> bool:
-    """A shipped machine line that keeps a stat word in English letters on its own."""
+def _tooltip(type_: str, line: dict[str, Any]) -> bool:
+    return (type_, line["field"]) in KIND  # a field the lint has no tooltip kind for is not a tooltip
+
+
+def selected(line: dict[str, Any], type_: str = "item") -> bool:
+    """A shipped machine tooltip line that keeps a stat word in English letters on its own."""
     return (
-        line["provenance"]["class"] == "machine"
+        _tooltip(type_, line)
+        and line["provenance"]["class"] == "machine"
         and line["status"] in SHIPPED
         and bool(stat_words.find(line["ja"]))
     )
 
 
-def hand_selected(line: dict[str, Any]) -> bool:
-    """A shipped hand-written line that keeps a stat word in English letters or writes another spelling."""
+def hand_selected(line: dict[str, Any], type_: str = "item") -> bool:
+    """A shipped hand-written tooltip line that keeps a stat word in English letters or writes another
+    spelling."""
     return (
-        line["provenance"]["class"] in ("human", "correction")
+        _tooltip(type_, line)
+        and line["provenance"]["class"] in ("human", "correction")
         and line["status"] in SHIPPED
         and bool(stat_words.find(line["ja"]) or stat_words.not_spellings(line["ja"]))
     )
@@ -83,7 +90,7 @@ def corrections(root: Path, skip: set[tuple[str, int, str]]) -> tuple[list[dict[
     store = Store(root / "data")
     for type_ in TYPES:
         for line in store.load(type_):
-            if not hand_selected(line) or (type_, line["id"], line["field"]) in skip:
+            if not hand_selected(line, type_) or (type_, line["id"], line["field"]) in skip:
                 continue
             new = stat_words.settle_spellings(stat_words.settle(line["ja"]))
             if stat_words.find(new) or stat_words.not_spellings(new):
@@ -113,8 +120,10 @@ def unswap(old: str, new: str) -> bool:
 
 
 def contexts(ja: str) -> list[str]:
-    """The text around each word the swap replaces, and nothing else."""
-    return [ja[max(0, a - CONTEXT): b + CONTEXT].replace("\n", " ") for a, b, _ in stat_words.spans(ja)]
+    """The text around each word the swap replaces (a stat word in English letters or another spelling), and
+    nothing else."""
+    spans = sorted(stat_words.spans(ja) + stat_words.spelling_spans(ja))
+    return [ja[max(0, a - CONTEXT): b + CONTEXT].replace("\n", " ") for a, b, _ in spans]
 
 
 def draft(
@@ -126,7 +135,7 @@ def draft(
     seen: Counter = Counter()
     for type_ in TYPES:
         for line in store.load(type_):
-            if not selected(line) or (type_, line["id"], line["field"]) in skip:
+            if not selected(line, type_) or (type_, line["id"], line["field"]) in skip:
                 continue
             model = line["provenance"]["model"]
             if model not in tags:
@@ -221,7 +230,7 @@ def main(argv: list[str]) -> int:
             print(f"{type_}: moved {n} accept ruling(s) onto the redraft")
             # an accept left on a line that still keeps a stat word: its redraft is missing or already ruled
             for ln in lines:
-                if (ln.get("ruling") or {}).get("ruling") == "accept" and selected(ln):
+                if (ln.get("ruling") or {}).get("ruling") == "accept" and selected(ln, type_):
                     print(f"  not moved: {type_} {ln['id']} {ln['field']}")
         return 0
     if args.corrections:

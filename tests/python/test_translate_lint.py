@@ -973,6 +973,8 @@ def test_a_name_inside_a_gender_code_may_be_kept():
         ("Restores $s1 health.", "healthを$N1回復します。", "stat_word:health"),
         ("Increases Stamina by $s1.", "Staminaが$N1増加します。", "stat_word:stamina"),
         ("Restores $s1 health.", "ヘルスを$N1回復します。", "stat_word:ヘルス"),
+        ("Increases intellect by $s1 at night.", "夜間、知性が$N1上昇します。", "stat_word:知性"),
+        ("Restores $s1 energy.", "気力を$N1回復します。", "stat_word:気力"),
     ],
 )
 def test_a_tooltip_keeping_a_stat_word_in_english_fails(en, ja, reason):
@@ -989,6 +991,21 @@ def test_a_stat_word_inside_a_name_is_still_a_name():
     assert _check(en, "Mana Shieldが持続する間、$N1のダメージを吸収します。", kind="spell_description") == []
     assert "name_missing:Mana" in _check(en, "マナShieldが持続する間、$N1のダメージを吸収します。",
                                          kind="spell_description")
+
+
+def test_a_stat_word_used_both_free_and_in_a_name_is_still_a_name():
+    en = "Restores $s1 Mana. Your Mana Shield absorbs $s2."
+    assert "name_missing:Mana" in _check(en, "マナを$N1回復します。マナShieldが$N2吸収します。", kind="spell_description")
+    assert _check(en, "マナを$N1回復します。Mana Shieldが$N2吸収します。", kind="spell_description") == []
+
+
+def test_a_name_wrapped_onto_the_next_line_is_still_a_name():
+    en = "Absorbs $s1 damage while your Mana\nShield lasts."
+    assert "name_missing:Mana" in _check(en, "Mana\nShieldが持続する間、$N1のダメージを吸収します。".replace("Mana\nShield", "マナShield"), kind="spell_description")
+
+
+def test_a_healthstone_is_no_health_spelling():
+    assert not any(r.startswith("stat_word") for r in _check("Creates a Healthstone.", "ヘルスストーンを作ります。", kind="spell_description"))
 
 
 def test_the_stat_word_rule_is_for_tooltips_only():

@@ -20,6 +20,15 @@ def test_selects_only_shipped_machine_lines_with_a_stat_word():
     assert not dsw.selected(_line("healthを$N1回復します。", status="rejected"))
 
 
+def test_only_tooltip_fields_are_selected():
+    assert dsw.KIND == {("item", "description"): "item_description", ("spell", "description"): "spell_description",
+                        ("spell", "aura"): "spell_aura"}
+    assert dsw.selected(_line("healthを$N1回復します。", field="aura"), "spell")
+    assert not dsw.selected(_line("healthを$N1回復します。", field="aura"), "item")
+    assert not dsw.selected(_line("healthを$N1回復します。", field="name"), "spell")
+    assert not dsw.hand_selected(_line("healthを回復", cls="human", field="name"), "item")
+
+
 def test_unswap_accepts_only_stat_word_swaps():
     old = "$D1かけてhealthを$N1、Manaを$N2回復します。"
     assert dsw.unswap(old, "$D1かけて体力を$N1、マナを$N2回復します。")
@@ -85,6 +94,7 @@ def test_a_model_without_a_tag_fails_the_run(tmp_path, monkeypatch):
 
 def test_contexts_are_only_the_swapped_words():
     assert dsw.contexts("Mana ShieldとHealthstone、manaを回復") == ["Healthstone、manaを回復"]
+    assert dsw.contexts("最大ヘルスが増加") == ["最大ヘルスが増加"]  # another spelling is a swap to read too
 
 
 def test_hand_selected_takes_shipped_hand_written_lines_only():

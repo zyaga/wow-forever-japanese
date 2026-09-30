@@ -90,3 +90,24 @@ def test_free_in_english(en, names, free):
 def test_settle_spellings():
     assert stat_words.settle_spellings("最大ヘルスが増加") == "最大体力が増加"
     assert stat_words.settle_spellings("ヘルス、アーマー") == "体力、アーマー"
+    assert stat_words.settle_spellings("知性が$N1上昇") == "知力が$N1上昇"
+    assert stat_words.settle_spellings("気力を回復") == "エネルギーを回復"
+
+
+def test_a_katakana_spelling_inside_a_longer_word_is_not_read():
+    assert stat_words.not_spellings("ヘルスストーンを作る") == []
+    assert stat_words.settle_spellings("ヘルスストーンを作る") == "ヘルスストーンを作る"
+    assert stat_words.not_spellings("最大ヘルスが増加。ヘルス") == ["ヘルス"]
+
+
+@pytest.mark.parametrize(
+    ("en", "names", "free", "named"),
+    [
+        ("Restores $s1 Mana. Your Mana Shield absorbs $s2.", ["Mana", "Shield"], {"mana"}, {"mana"}),
+        ("Absorbs damage while Mana\nShield lasts.", ["Mana", "Shield"], set(), {"mana"}),
+        ("Absorbs damage while Mana  Shield lasts.", ["Mana", "Shield"], set(), {"mana"}),
+        ("Drink an Elixir of Agility.", ["Elixir", "Agility"], set(), {"agility"}),
+    ],
+)
+def test_classify_judges_each_occurrence(en, names, free, named):
+    assert stat_words.classify(en, names) == (free, named)

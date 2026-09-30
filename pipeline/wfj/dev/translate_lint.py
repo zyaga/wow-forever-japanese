@@ -71,10 +71,13 @@ reason per problem:
 - `markup_changed:<difference>`: an HTML book page (`<HTML…`) whose Japanese does not carry the English's
   tags in the same order (`markup.html_mismatch`, the rule `wfj check` applies to book pages)
 - `stat_word:<word>`: an item or spell row keeps a stat word (`health`, `Stamina`, …) in English letters on
-  its own, or writes another spelling (`ヘルス`); a tooltip uses the interface's Japanese
-  (`core/stat_words.STAT_WORDS`: 体力, スタミナ, …). A stat word inside a name (`Mana Shield`, `Elixir of
-  Agility`) is not read. On these rows a stat word the English uses on its own (`Increases Stamina by $s1`)
-  is no name to keep; one inside a name in the English (`Elixir of Agility`) still is.
+  its own, or writes another spelling of the stat (`core/stat_words.NOT_SPELLINGS`: ヘルス, 知性, 気力,
+  エナジー); a tooltip uses the interface's Japanese (`core/stat_words.STAT_WORDS`: 体力, スタミナ, …). A
+  stat word inside a name (`Mana Shield`, `Elixir of Agility`) is not read. On these rows a stat word the
+  English uses on its own (`Increases Stamina by $s1`) is no name to keep; one inside a name in the English
+  (`Elixir of Agility`) still is, even when the same word is also used on its own in the line. Which
+  Japanese sense a free word takes (spirit as the stat or as a ghost) is the drafter's reading, not the
+  lint's.
 - `glossary:<term>`: the English has a `required` glossary term (a race or class word, or its plural) and
   the Japanese neither uses the glossary's rendering nor keeps the word in English letters (part of a name,
   `Skeletal Warrior`). A term listed in lower case for the row's ref in `pipeline/translation_not_names.tsv`
@@ -237,8 +240,9 @@ def check_row(
     if row["kind"] in TEMPLATE_KINDS:
         reasons += [f"stat_word:{w}" for w in dict.fromkeys(stat_words.find(ja))]
         reasons += [f"stat_word:{s}" for s in stat_words.not_spellings(ja)]
-        free = stat_words.free_in_english(en, names)
-        missing = [w for w in missing if not any(f in free for f in forms(w))]
+        free, named = stat_words.classify(en, names)
+        missing = [w for w in missing
+                   if not (any(f in free for f in forms(w)) and not any(f in named for f in forms(w)))]
     # A quest TITLE is written in title case ("The Alliance Needs Copper Bars", "Keeper of the Flame"). Every
     # word is capitalised by convention, so capitalisation carries none of the signal this check reads it
     # for, and it would flag "Needs" and "Flame" as names. The check is skipped here rather than drowned:

@@ -159,7 +159,7 @@ A row whose branches could not be told apart on screen (Tiger's Fury: the same "
 
 - Spell, item, zone and creature names stay in English letters, as everywhere (see **Names stay in English letters**). `Teaches Frost Ward (Rank 5).` → `Frost Ward（Rank 5）を習得します。`
 - **`Rank` stays in English letters for now.** It reads as part of the spell's name beside one, and whether words like it become Japanese belongs with the names and titles work, not here. The same goes for any capitalised word inside an English sentence that the glossary does not list.
-- **Stat words are Japanese, the interface's words**: `armor` アーマー, `health` 体力, `mana` マナ, `stamina` スタミナ, `strength` 筋力, `agility` 敏捷性, `intellect` 知力, `spirit` 精神, `rage` 怒り, `energy` エネルギー, in lower or upper case alike (`Increases Stamina by $s1.` → `スタミナが$N1増加します。`). They are what the character sheet and an item's stat lines show on the same screen (the interface terms table under **Interface text**). Never keep one in English letters, and never write ヘルス. A stat word inside a name stays English with the name: `Mana Shield`, `Elixir of Agility`, `Spirit of Zandalar`.
+- **Stat words are Japanese, the interface's words**: `armor` アーマー, `health` 体力, `mana` マナ, `stamina` スタミナ, `strength` 筋力, `agility` 敏捷性, `intellect` 知力, `spirit` 精神, `rage` 怒り, `energy` エネルギー, in lower or upper case alike (`Increases Stamina by $s1.` → `スタミナが$N1増加します。`). They are what the character sheet and an item's stat lines show on the same screen (the interface terms table under **Interface text**). Never keep one in English letters, and never write the other spellings the table lists (ヘルス, 知性, 気力, エナジー). Which sense a word takes is the drafter's reading: `spirit` as a ghost is 霊 or 魂, `chest armor` as a piece of gear is 胸防具, and the rule is for the stat. A stat word inside a name stays English with the name: `Mana Shield`, `Elixir of Agility`, `Spirit of Zandalar`.
 - **Say exactly what the English says, no wider.** `while drinking` is drinking, not `飲食中` ("eating and drinking"); `one ally` has no number to write, because the English writes none; a digit the English does not have is refused (`numbers_changed`).
 - `%` stays `%`. A percentage reads `$N1%`.
 
@@ -233,10 +233,10 @@ Settled interface terms (a test holds every shipped UI line whose English has th
 | stamina | スタミナ | stamina |
 | strength | 筋力 | strength |
 | agility | 敏捷性 | agility |
-| intellect | 知力 | intellect |
+| intellect | 知力 | intellect, 知性 |
 | spirit | 精神 | spirit |
 | rage | 怒り | rage |
-| energy | エネルギー | energy |
+| energy | エネルギー | energy, 気力, エナジー |
 
 A banker, the NPC, is `銀行員`: a person, not the bank window. `戦場` is shorter than `バトルグラウンド` and fits a button (`Leave Battleground` is `戦場から離脱`).
 
