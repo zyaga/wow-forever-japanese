@@ -58,6 +58,8 @@ def test_not_spellings():
         ("|TInterface\\Icons\\Spell_Holy_Mana:0|tを回復", []),  # a texture path is no word
         ("|cffffffffStamina|rが上昇", ["stamina"]),  # a colour code is glued to the word it colours
         ("Mana\nShieldを唱える", []),  # a name wrapped onto the next line
+        ("真夏の精神(spirit  of Midsummer)", []),  # a name with a double space
+        ("精神(spirit \nof Midsummer)", []),  # a space and a line break
         ("Energiesが回復", ["energy"]),
         ("Mana'sコスト", ["mana"]),
     ],
@@ -83,3 +85,8 @@ def test_escapes_plurals_and_wrapped_names(ja, found):
 )
 def test_free_in_english(en, names, free):
     assert stat_words.free_in_english(en, names) == free
+
+
+def test_settle_spellings():
+    assert stat_words.settle_spellings("最大ヘルスが増加") == "最大体力が増加"
+    assert stat_words.settle_spellings("ヘルス、アーマー") == "体力、アーマー"

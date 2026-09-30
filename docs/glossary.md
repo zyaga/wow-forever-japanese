@@ -148,7 +148,7 @@ _Avoid_: aura description (in prose), debuff tooltip
 → [Data model](architecture/data-model.md)
 
 **Stat word**:
-One of ten stat and resource words in [[Tooltip text]] and [[Buff text]]: armor, health, mana, stamina, strength, agility, intellect, spirit, rage, energy. A machine-drafted tooltip line writes each as the interface does on the character sheet (アーマー, 体力, マナ, スタミナ, 筋力, 敏捷性, 知力, 精神, 怒り, エネルギー), never in English letters and never as ヘルス; lint reason `stat_word:<word>`. [[Hand-written]] lines keep them in English letters (`Healthを70回復`), so the words stay on the name-check allowlist. A stat word inside a name stays English with it (`Mana Shield`, `Elixir of Agility`).
+One of ten stat and resource words in [[Tooltip text]] and [[Buff text]]: armor, health, mana, stamina, strength, agility, intellect, spirit, rage, energy. Every shipped tooltip line writes each as the interface does on the character sheet (アーマー, 体力, マナ, スタミナ, 筋力, 敏捷性, 知力, 精神, 怒り, エネルギー), never in English letters and never as ヘルス; lint reason `stat_word:<word>`. [[Hand-written]] lines carry a correction that does the same. The words stay on the name-check allowlist, because some lines still hold one inside a name or phrase. A stat word inside a name stays English with it (`Mana Shield`, `Elixir of Agility`).
 _Avoid_: attribute, resource word (energy and rage are stat words here too), stat name
 → [Pipeline](systems/pipeline.md) · [ADR-048](adr/048-stat-words-in-tooltips.md)
 

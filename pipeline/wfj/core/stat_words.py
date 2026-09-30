@@ -31,8 +31,8 @@ NOT_SPELLINGS: dict[str, tuple[str, ...]] = {"health": ("ヘルス",)}
 _RUN = re.compile(r"[A-Za-z][A-Za-z'’\-]*")
 # a Latin word right before the run, joined to it by one space, hyphen or line break (`Mana Shield`, `of
 # Agility`; a name wraps onto the next line in a tooltip)
-_JOINED_BEFORE = re.compile(r"[A-Za-z'’][ \-\n]\Z")
-_JOINED_AFTER = re.compile(r"[ \-\n][A-Za-z]")
+_JOINED_BEFORE = re.compile(r"[A-Za-z'’](?:[ \n]+|-)\Z")
+_JOINED_AFTER = re.compile(r"(?:[ \n]+|-)[A-Za-z]")
 # Client escapes whose letters are no words: a texture or link path (`|TInterface\Icons\Spell_Holy_Mana:0|t`),
 # and a colour code, which is glued to the word it colours (`|cffffffffStamina|r`)
 _ESCAPE = re.compile(r"\|T.*?\|t|\|H.*?\|h|\|c[0-9A-Fa-f]{8}|\|r")
@@ -117,6 +117,14 @@ def settle(ja: str) -> str:
         out += [ja[at:start], STAT_WORDS[word]]
         at = end
     return "".join(out) + ja[at:]
+
+
+def settle_spellings(ja: str) -> str:
+    """The line with every other spelling (`NOT_SPELLINGS`, ヘルス) replaced by the settled Japanese."""
+    for word, spellings in NOT_SPELLINGS.items():
+        for other in spellings:
+            ja = ja.replace(other, STAT_WORDS[word])
+    return ja
 
 
 def not_spellings(ja: str) -> list[str]:

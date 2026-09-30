@@ -21,7 +21,7 @@ WFJ.Data.add("spell", {
   [22105] = { "手袋に永続的なエンチャントを施し、敏捷性を$N1付与します。", nil, 0xa450bbbf, nil, "um" },
   [22106] = { "手袋に永続的なエンチャントを施し、攻撃速度に$N1のボーナスを付与します。", nil, 0x4ffe8406, nil, "um" },
   [22430] = { "Scale of OnyxiaをRefined Scale of Onyxiaに変成します。", nil, 0xe785016a, nil, "um" },
-  [22480] = { "$N2秒間でHealthを$N1回復。食事中は\n座っている必要があります。\n10秒以上食事をするとお腹いっぱいになり15分間StaminaとSpiritが$N4上がります。", nil, 0xbca2b603, nil, "um" },
+  [22480] = { "$N2秒間で体力を$N1回復。食事中は\n座っている必要があります。\n10秒以上食事をするとお腹いっぱいになり15分間スタミナと精神が$N4上がります。", nil, 0xbca2b603, nil, "um" },
   [22562] = { "Oracle GladeのムーンウェルでAmethyst Phialを満たします。", nil, 0xe09fe7fb, nil, "um" },
   [22563] = { "Frostwolf Keepの聖域へ帰還します。", nil, 0x4c7c77ce, nil, "um" },
   [22564] = { "Dun Baldarの聖域へ帰還します。", nil, 0x326fa18c, nil, "um" },

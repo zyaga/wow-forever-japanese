@@ -85,3 +85,28 @@ def test_a_model_without_a_tag_fails_the_run(tmp_path, monkeypatch):
 
 def test_contexts_are_only_the_swapped_words():
     assert dsw.contexts("Mana ShieldとHealthstone、manaを回復") == ["Healthstone、manaを回復"]
+
+
+def test_hand_selected_takes_shipped_hand_written_lines_only():
+    assert dsw.hand_selected(_line("healthを回復", cls="human"))
+    assert dsw.hand_selected(_line("ヘルスを回復", cls="correction"))
+    assert not dsw.hand_selected(_line("healthを回復"))  # machine: the swap draft takes it
+    assert not dsw.hand_selected(_line("healthを回復", cls="human", status="rejected"))
+    assert not dsw.hand_selected(_line("体力を回復", cls="human"))
+
+
+def test_corrections_rows_swap_english_and_other_spellings(tmp_path, monkeypatch):
+    lines = [_line("Healthを$N1、ヘルスを回復", cls="human", id_=7),
+             _line("真夏の精神(spirit \nof Midsummer)", cls="human", id_=8)]
+
+    class FakeStore:
+        def __init__(self, *_a, **_k):
+            pass
+
+        def load(self, type_):
+            return lines if type_ == "item" else []
+
+    monkeypatch.setattr(dsw, "Store", FakeStore)
+    rows, _ = dsw.corrections(tmp_path, skip=set())
+    assert rows == [{"type": "item", "id": 7, "field": "description", "decision": "correct",
+                     "ja": "体力を$N1、体力を回復", "note": dsw.CORRECTION_NOTE}]

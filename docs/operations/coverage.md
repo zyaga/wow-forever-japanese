@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-09-30 at commit `65ba82b`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-09-30 at commit `6470a2f`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves; spells are the player-visible set; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).

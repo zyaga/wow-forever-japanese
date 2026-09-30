@@ -215,7 +215,7 @@ Labels, buttons, tabs and headers are bare nouns or verb stems, with no `です`
 
 One English, one Japanese: every key whose English another key already ships takes that Japanese (`Accept` is `承諾` on all four of its keys), unless the key owns its Japanese on one screen (`UIStrings.OWN`, [ADR-037](../adr/037-staticpopup-dialogs-and-owned-keys.md)). Game terms follow `pipeline/translation_glossary.tsv`, and the interface's own terms follow the table below (the glossary is the quest translators' usage; these are the words the windows use). A tab and the window it opens agree, and so do a button and the dialog it raises.
 
-Settled interface terms (a test holds every shipped UI line whose English has the term to the Japanese, never the other spellings; the stat words, `armor` to `energy`, also hold every shipped machine item and spell tooltip line, where they are never kept in English letters in either case, see **Tooltips**):
+Settled interface terms (a test holds every shipped UI line whose English has the term to the Japanese, never the other spellings; the stat words, `armor` to `energy`, also hold every shipped item and spell tooltip line, hand-written ones included, where they are never kept in English letters in either case, see **Tooltips**):
 
 | English | Japanese | Not |
 |---|---|---|

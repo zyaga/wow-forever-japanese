@@ -198,13 +198,13 @@ def test_stat_word_rows_match_the_code(guide):
         assert set(others) - {en} == set(stat_words.NOT_SPELLINGS.get(en, ())), en
 
 
-def test_machine_tooltips_use_the_settled_stat_words(root: Path):
-    # Hand-written lines (`human`, `correction`) keep the translators' spelling: the no-overwrite rule
+def test_shipped_tooltips_use_the_settled_stat_words(root: Path):
+    # Hand-written lines too: each one carries a stat-word correction (ADR-048)
     bad = [
         (type_, ln["id"], ln["field"], stat_words.find(ln["ja"]) + stat_words.not_spellings(ln["ja"]))
         for type_ in ("item", "spell")
         for ln in Store(root / "data").load(type_)
-        if ln["provenance"]["class"] == "machine" and ln["status"] in SHIPPED
+        if ln["status"] in SHIPPED
         and (stat_words.find(ln["ja"]) or stat_words.not_spellings(ln["ja"]))
     ]
     assert bad == []

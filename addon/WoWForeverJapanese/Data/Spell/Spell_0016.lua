@@ -168,7 +168,7 @@ WFJ.Data.add("spell", {
   [16860] = { "Demoralizing RoarによるAttack Power低下を$N1%、Ferocious Biteで与えるダメージを$N2%増加させます。", nil, 0x86822fbc, nil, "um" },
   [16861] = { "Demoralizing RoarによるAttack Power低下を$N1%、Ferocious Biteで与えるダメージを$N2%増加させます。", nil, 0x86822fbc, nil, "um" },
   [16862] = { "Demoralizing RoarによるAttack Power低下を$N1%、Ferocious Biteで与えるダメージを$N2%増加させます。", nil, 0x86822fbc, nil, "um" },
-  [16864] = { "呪文と攻撃に、Clearcastingを得るチャンスがあります。\nClearcastingは次に使用するダメージまたは回復の呪文、攻撃能力の\nMana、Rage、Energyコストを$N1%軽減します。\nWrathやリソースを消費しない呪文・能力ではClearcastingは消費されません。", nil, 0xbe6081d0, nil, "um" },
+  [16864] = { "呪文と攻撃に、Clearcastingを得るチャンスがあります。\nClearcastingは次に使用するダメージまたは回復の呪文、攻撃能力の\nマナ、怒り、エネルギーコストを$N1%軽減します。\nWrathやリソースを消費しない呪文・能力ではClearcastingは消費されません。", nil, 0xbe6081d0, nil, "um" },
   [16870] = { "LifebloomによるHoTが4%の確率でClearcastingを引き起こし\n次のRegrowthをノーコストで使えるようにする", nil, 0x55196a3b, nil, "um" },
   [16871] = { "敵にBleakwood Curseをかけ、魔法耐性を$N1低下させます。最大$N2回まで重ねがけできます。", "呪われています。耐性が$N1低下しています。", 0xd162e006, 0x6e1be98a, "uu" },
   [16880] = { "周期効果でない呪文のクリティカルがすべて自然の祝福をもたらし、$D1の間、呪文の詠唱速度を上昇させ、グローバルクールダウンを$N1%短縮します。", nil, 0xb6fd5023, nil, "um" },

@@ -118,7 +118,7 @@ WFJ.Data.add("spell", {
   [10478] = { "術者の足元に体力 $N1のFrost Resistance Totemを$D1の間召喚します。トーテムは$N4ヤード以内にいるパーティとレイドのメンバーのFrostへの抵抗力を$N3上げます。", nil, 0xc9a84cfd, nil, "um" },
   [10479] = { "術者の足元に体力 $N1のFrost Resistance Totemを$D1の間召喚します。トーテムは$N4ヤード以内にいるパーティとレイドのメンバーのFrostへの抵抗力を$N3上げます。", nil, 0xb1a3f5ed, nil, "um" },
   [10486] = { "シャーマンの武器に風を宿します。攻撃が命中するたびに20%の確率で、近接攻撃力が$N3上がった追加攻撃を$N2回得ます。メインハンドに使用すると、Windfury Totemから自分が受ける効果はすべて無効になります。効果時間は60分です。", nil, 0xe272988d, nil, "um" },
-  [10487] = { "Chest、Leg、HandsまたはFeetのarmorを32上げる\nlevel 25以上のアイテムにしか使えない", nil, 0x21f9a890, nil, "um" },
+  [10487] = { "Chest、Leg、HandsまたはFeetのアーマーを32上げる\nlevel 25以上のアイテムにしか使えない", nil, 0x21f9a890, nil, "um" },
   [10495] = { "術者の足元に体力 $N1のMana Spring Totemを$D1の間召喚し、$N5ヤード以内のグループメンバーのマナを$N4秒ごとに$N3回復します。", nil, 0x7f39070f, nil, "um" },
   [10496] = { "術者の足元に体力 $N1のMana Spring Totemを$D1の間召喚し、$N5ヤード以内のグループメンバーのマナを$N4秒ごとに$N3回復します。", nil, 0xdab5155e, nil, "um" },
   [10497] = { "術者の足元に体力 $N1のMana Spring Totemを$D1の間召喚し、$N5ヤード以内のグループメンバーのマナを$N4秒ごとに$N3回復します。", nil, 0x88731c88, nil, "um" },

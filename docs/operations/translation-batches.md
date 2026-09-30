@@ -123,7 +123,7 @@ The rules catch a changed number, a missing name, a cut-off paragraph, never a w
 7. **Redrafts.** Cut the ruled lines per kind with `--held-back --ids`, draft (quest rows with `words`), lint, expand, import.
 8. **Accept rulings** on each machine winner that replaced a shipping hand-written line; `validate --base` requires them.
 
-`apply_review` has two more scopes. `--scope stale` (the default) reviews stale hand-written lines after a client build moved their English: `keep` re-stamps the English baseline and leaves the Japanese alone; `correct` edits the person's Japanese as little as the new English needs, never retranslating it. `--scope templates` rewrites a hand-written tooltip line with `$N` / `$D` / `$I` placeholders (and the branch skeleton where the English has one) as a correction.
+`apply_review` has three more scopes. `--scope stale` (the default) reviews stale hand-written lines after a client build moved their English: `keep` re-stamps the English baseline and leaves the Japanese alone; `correct` edits the person's Japanese as little as the new English needs, never retranslating it. `--scope templates` rewrites a hand-written tooltip line with `$N` / `$D` / `$I` placeholders (and the branch skeleton where the English has one) as a correction. `--scope stat-words` takes the rows `draft_stat_words --corrections` writes (below).
 
 ## Included text and branches
 
@@ -168,7 +168,12 @@ When a style rule changes only which word the Japanese uses (a stat word in tool
    ```sh
    cd pipeline && python -m wfj.dev.draft_stat_words --move-accepts <YYYY-MM-DD>
    ```
-6. **Check**: `make check`, `make generate`, `make validate VALIDATE_FLAGS="--base origin/main"`, `make coverage`. No line should change status, and no `human` or `correction` variant should change. `test_style_guide.py` fails while any shipped machine tooltip line keeps a stat word in English letters.
+6. **Hand-written lines, on the maintainer's ruling.** The swap never touches a `human` or `correction` line. When the maintainer rules that the settled words apply to them too, write one correction row per shipped hand-written line that keeps a stat word (or ヘルス), read `corrections.contexts.txt` the same way, and apply them (the translator's text stays beside each correction; an earlier correction is ruled superseded):
+   ```sh
+   cd pipeline && python -m wfj.dev.draft_stat_words --corrections ../batches/<folder>/corrections.jsonl [--skip <file>]
+   python -m wfj.dev.apply_review ../batches/<folder>/corrections.jsonl --scope stat-words --date <YYYY-MM-DD> --by maintainer --model "the stat-word script"
+   ```
+7. **Check**: `make check`, `make generate`, `make validate VALIDATE_FLAGS="--base origin/main"`, `make coverage`. No line should change status, and no translator's text should be lost. `test_style_guide.py` fails while any shipped tooltip line keeps a stat word in English letters.
 
 ## Drafting prompt
 

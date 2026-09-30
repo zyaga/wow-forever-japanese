@@ -2,19 +2,20 @@
 # One per line: term  # justification. A test rejects lines without a justification and terms no
 # corpus line uses. Compared case-insensitively. Terms under 3 letters are never extracted as
 # names (align.NAME_RUN), so they do not belong here.
-# Stat and resource words: the human corpus keeps them in English letters ("Healthを70回復"), and its lines
-# still ship, so the name check must not read them as names. Machine lines write the interface's Japanese
-# instead (体力, マナ …; the style guide's Settled interface terms, core/stat_words.py).
-Health  # stat word the human corpus keeps in English letters
-Mana  # stat word the human corpus keeps in English letters
-Stamina  # stat word the human corpus keeps in English letters
-Spirit  # stat word the human corpus keeps in English letters
-Intellect  # stat word the human corpus keeps in English letters
-Agility  # stat word the human corpus keeps in English letters
-Strength  # stat word the human corpus keeps in English letters
-Armor  # stat word the human corpus keeps in English letters
-Rage  # resource word the human corpus keeps in English letters
-Energy  # resource word the human corpus keeps in English letters
+# Stat and resource words. Shipped tooltip lines write them in the interface's Japanese (体力, マナ …; the style
+# guide's Settled interface terms, core/stat_words.py), but some lines still hold one in English letters inside a
+# name or phrase ("spirit of Midsummer"), and the rejected human lines keep them ("Healthを70回復"). Listed so the
+# name check never reads them as names on their own: taking them off would make the runtime gate refuse such lines.
+Health  # stat word, not a name
+Mana  # stat word, not a name
+Stamina  # stat word, not a name
+Spirit  # stat word, not a name
+Intellect  # stat word, not a name
+Agility  # stat word, not a name
+Strength  # stat word, not a name
+Armor  # stat word, not a name
+Rage  # resource word, not a name
+Energy  # resource word, not a name
 NPC  # abbreviation
 PvP  # abbreviation
 # World / faction / reputation words the translators add for context even when the English line omits them

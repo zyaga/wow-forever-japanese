@@ -13,6 +13,14 @@ Writes to OUT_DIR:
   stat word that is really a name before importing
 - `lint.txt`: lines where the swap brought a `translate_lint` problem the old line did not have
 
+    python -m wfj.dev.draft_stat_words --corrections FILE [--skip FILE]
+
+Hand-written lines are never redrafted by the swap above; they are corrected instead (ADR-048).
+`--corrections` writes one `apply_review --scope stat-words` row per shipped `human` or `correction` item
+and spell line that keeps a stat word in English letters or writes ヘルス: `decision: correct`, the
+translator's Japanese with only those words swapped. `apply_review` adds it as a `correction` variant, the
+translator's text kept beside it.
+
 `--skip FILE` lists `<type> <id> <field>` lines to leave out (a stat word the read found to be a name).
 
     python -m wfj.dev.draft_stat_words --move-accepts DATE
@@ -54,6 +62,36 @@ def selected(line: dict[str, Any]) -> bool:
         and line["status"] in SHIPPED
         and bool(stat_words.find(line["ja"]))
     )
+
+
+def hand_selected(line: dict[str, Any]) -> bool:
+    """A shipped hand-written line that keeps a stat word in English letters or writes another spelling."""
+    return (
+        line["provenance"]["class"] in ("human", "correction")
+        and line["status"] in SHIPPED
+        and bool(stat_words.find(line["ja"]) or stat_words.not_spellings(line["ja"]))
+    )
+
+
+CORRECTION_NOTE = "Stat words written with the interface's Japanese"
+
+
+def corrections(root: Path, skip: set[tuple[str, int, str]]) -> tuple[list[dict[str, Any]], Counter]:
+    """`apply_review` rows for every hand-selected line, and the contexts of every swapped word."""
+    rows: list[dict[str, Any]] = []
+    seen: Counter = Counter()
+    store = Store(root / "data")
+    for type_ in TYPES:
+        for line in store.load(type_):
+            if not hand_selected(line) or (type_, line["id"], line["field"]) in skip:
+                continue
+            new = stat_words.settle_spellings(stat_words.settle(line["ja"]))
+            if stat_words.find(new) or stat_words.not_spellings(new):
+                raise ValueError(f"{type_} {line['id']}/{line['field']}: the swap is not clean")
+            rows.append({"type": type_, "id": line["id"], "field": line["field"], "decision": "correct",
+                         "ja": new, "note": CORRECTION_NOTE})
+            seen.update(contexts(line["ja"]))
+    return rows, seen
 
 
 def unswap(old: str, new: str) -> bool:
@@ -171,6 +209,7 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--tag", action="append", default=[], metavar="MODEL=TAG")
     ap.add_argument("--skip", type=Path)
     ap.add_argument("--move-accepts", metavar="DATE")
+    ap.add_argument("--corrections", type=Path, metavar="FILE")
     args = ap.parse_args(argv)
     root = Path(__file__).resolve().parents[3]
     if args.move_accepts:
@@ -184,6 +223,14 @@ def main(argv: list[str]) -> int:
             for ln in lines:
                 if (ln.get("ruling") or {}).get("ruling") == "accept" and selected(ln):
                     print(f"  not moved: {type_} {ln['id']} {ln['field']}")
+        return 0
+    if args.corrections:
+        rows_, seen_ = corrections(root, read_skip(args.skip))
+        args.corrections.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows_),
+                                    encoding="utf-8")
+        args.corrections.with_name("corrections.contexts.txt").write_text(
+            "".join(f"{n}\t{c}\n" for c, n in seen_.most_common()), encoding="utf-8")
+        print(f"{args.corrections.name}: {len(rows_)} rows · contexts: {len(seen_)} distinct")
         return 0
     if args.out is None:
         ap.error("OUT_DIR is required unless --move-accepts")
