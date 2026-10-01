@@ -23,8 +23,9 @@ describe("UI/OptionsText: every page string in both languages", function()
 
   it("no English line carries Japanese (it would switch the English to the Japanese face and wrap)", function()
     -- the About page's marker line held "[要更新 …" in its English and ran into the next row
+    -- page.main is the addon's name, written the same in both languages (and so in the same face) on a wide header
     for key, t in pairs(Text.T) do
-      assert.is_nil(t.en:find("[\227-\233\239]"), key)
+      if key ~= "page.main" then assert.is_nil(t.en:find("[\227-\233\239]"), key) end
     end
   end)
 
