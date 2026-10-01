@@ -1,8 +1,8 @@
-{"id": 202251, "field": "name", "en": "Bag of Pet Treats", "hash": "e6a228bcb6e529b5", "src": "db2@1.60.1.70009"}
-{"id": 202251, "field": "description", "en": "Open the bag of treats and palm it into your target's pocket, increasing the damage of Beasts against this target by $s2.", "hash": "e2383ce6920d73e4", "src": "db2@1.60.1.70009"}
-{"id": 202256, "field": "name", "en": "Privateer's Ornate Pistol", "hash": "9d93d899fa735274", "src": "db2@1.60.1.70009"}
-{"id": 202256, "field": "description", "en": "Gain the Quick Draw ability:\r\n\r\n$@spellicon398196\r\n$@spelldesc398196", "hash": "b42953200f6cf033", "src": "db2@1.60.1.70009"}
-{"id": 202316, "field": "name", "en": "Runecarving Test - Crippling Poison", "hash": "d984f3c5b3b30151", "src": "db2@1.60.1.70009"}
-{"id": 202316, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, slowing their movement speed by $3409s1% for $3409d.", "hash": "6bb4a1f1d75340a4", "src": "db2@1.60.1.70009"}
-{"id": 202641, "field": "name", "en": "Mud-covered notebook", "hash": "d6bf15ccddcf2b4e", "src": "db2@1.60.1.70009"}
-{"id": 202641, "field": "description", "en": "This book is covered in mud, but has runes inscribed on its pages, and a short note in a some sort of slang.", "hash": "1b2cf59d1c0de300", "src": "db2@1.60.1.70009"}
+{"id": 202251, "field": "name", "en": "Bag of Pet Treats", "hash": "e6a228bcb6e529b5", "src": "db2@1.60.1.70124"}
+{"id": 202251, "field": "description", "en": "Open the bag of treats and palm it into your target's pocket, increasing the damage of Beasts against this target by $s2.", "hash": "e2383ce6920d73e4", "src": "db2@1.60.1.70124"}
+{"id": 202256, "field": "name", "en": "Privateer's Ornate Pistol", "hash": "9d93d899fa735274", "src": "db2@1.60.1.70124"}
+{"id": 202256, "field": "description", "en": "Gain the Quick Draw ability:\r\n\r\n$@spellicon398196\r\n$@spelldesc398196", "hash": "b42953200f6cf033", "src": "db2@1.60.1.70124"}
+{"id": 202316, "field": "name", "en": "Runecarving Test - Crippling Poison", "hash": "d984f3c5b3b30151", "src": "db2@1.60.1.70124"}
+{"id": 202316, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, slowing their movement speed by $3409s1% for $3409d.", "hash": "6bb4a1f1d75340a4", "src": "db2@1.60.1.70124"}
+{"id": 202641, "field": "name", "en": "Mud-covered notebook", "hash": "d6bf15ccddcf2b4e", "src": "db2@1.60.1.70124"}
+{"id": 202641, "field": "description", "en": "This book is covered in mud, but has runes inscribed on its pages, and a short note in a some sort of slang.", "hash": "1b2cf59d1c0de300", "src": "db2@1.60.1.70124"}

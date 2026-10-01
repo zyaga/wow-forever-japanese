@@ -39,4 +39,5 @@ WFJ.Data.add("quest", {
   [99191] = { "羊毛の寄付", nil, nil, nil, nil, 0xaad71c6f, nil, nil, nil, nil, ".mmmm" },
   [99196] = { "羊毛の寄付", nil, nil, nil, nil, 0xaad71c6f, nil, nil, nil, nil, ".mmmm" },
   [99260] = { "Fillionの任務", "ValanaarのElaadrin Evengaleと話す。", "私はOverlook Standing Stonesから、エレメンタルのエネルギーの流れに関する重要なデータを回収する任務を負っていました。そのデータは、SkywallとAzerothの間を安全に行き来するという我々の計画に欠かせません。計算を助けるそのデータがなければ、エレメンタル界を抜けてskycutter船を操ろうとする試みは失敗するでしょう。\n\nデータはもう失われたも同然で、私にはもう一度集めに行ける状態ではありません。Supreme Magisterにあなたが私を救ってくれたことを伝えたところ、もう一度あなたと話したいとのことです。", nil, nil, 0x6d5d3e21, 0x73833554, 0x8b8e3ec7, nil, nil, "...mm" },
+  [99267] = { "不幸な最期", nil, nil, nil, nil, 0xc0c4b3d4, nil, nil, nil, nil, ".mmmm" },
 })

@@ -25,6 +25,44 @@ function Font.set(fs, path, size, flags)
   return ok
 end
 
+-- Pooled FontStrings the client reuses (chat rows, the guild bank log, speech bubbles) that the addon dressed in the
+-- bundled face. SetFontObject alone does not undress one: re-applying the object the FontString already has leaves
+-- a SetFont made since in place (in game: chat lines kept the bundled face through the chat frame's own
+-- InitializeFontString, scrollingmessageframe.lua:642, 716). So each is remembered with the font it had, and given
+-- a font back directly once it shows anything else.
+local dressed = setmetatable({}, { __mode = "k" }) -- fs → { path, size, flags } it had before the bundled face
+
+-- The bundled face on `fs`, at `fontObject`'s size and flags when given (the owner's font: a row may still hold a
+-- size an earlier fit shrank it to), else at its own. → the size set, or nil when the client refused the font
+function Font.bundle(fs, fontObject)
+  local path, size, flags = fs:GetFont()
+  if type(fontObject) == "table" and type(fontObject.GetFont) == "function" then
+    local _, objSize, objFlags = fontObject:GetFont()
+    size, flags = objSize or size, objFlags or flags
+  end
+  size, flags = size or Font.DEFAULT_SIZE, flags or ""
+  if fs:SetFont(Font.PATH, size, flags) == false then return nil end
+  if not dressed[fs] then dressed[fs] = { path, size, flags } end
+  return size
+end
+
+-- Whether `fs` is wearing the bundled face from Font.bundle.
+function Font.dressed(fs) return dressed[fs] ~= nil end
+
+-- `fs` given its owner's font back: `fontObject`'s when given, else the font it had before Font.bundle. → true
+-- when it no longer wears the bundled face
+function Font.restore(fs, fontObject)
+  if type(fs) ~= "table" or not dressed[fs] then return false end
+  local path, size, flags
+  if type(fontObject) == "table" and type(fontObject.GetFont) == "function" then
+    path, size, flags = fontObject:GetFont()
+  end
+  if type(path) ~= "string" then path, size, flags = dressed[fs][1], dressed[fs][2], dressed[fs][3] end
+  if type(path) ~= "string" or fs:SetFont(path, size, flags or "") == false then return false end
+  dressed[fs] = nil
+  return true
+end
+
 -- → the number still refused after one more try
 function Font.retryPending()
   local n = 0

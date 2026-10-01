@@ -1,30 +1,30 @@
-{"id": 1281378, "field": "name", "en": "Dispel Shadow", "hash": "b6e8701c7124517e", "src": "db2@1.60.1.70009"}
-{"id": 1281431, "field": "name", "en": "Dream Visual (DNT)", "hash": "1c762dcaa789e94a", "src": "db2@1.60.1.70009"}
-{"id": 1281434, "field": "name", "en": "Nightmare Visual (DNT)", "hash": "359911e47b40b95e", "src": "db2@1.60.1.70009"}
-{"id": 1281437, "field": "name", "en": "Nightmare Visual (DNT)", "hash": "359911e47b40b95e", "src": "db2@1.60.1.70009"}
-{"id": 1281438, "field": "name", "en": "Nightmare Visual (DNT)", "hash": "359911e47b40b95e", "src": "db2@1.60.1.70009"}
-{"id": 1281439, "field": "name", "en": "Nightmare Visual (DNT)", "hash": "359911e47b40b95e", "src": "db2@1.60.1.70009"}
-{"id": 1281440, "field": "name", "en": "Nightmare Visual (DNT)", "hash": "359911e47b40b95e", "src": "db2@1.60.1.70009"}
-{"id": 1281530, "field": "name", "en": "[TEST] Mount Rental - Alliance", "hash": "896a94df3249de87", "src": "db2@1.60.1.70009"}
-{"id": 1281530, "field": "description", "en": "Allows you to rent a mount for 2 minutes.", "hash": "ec237fd3584eb5bc", "src": "db2@1.60.1.70009"}
-{"id": 1281530, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
-{"id": 1281639, "field": "name", "en": "Sing", "hash": "0b3ae0a379959c0a", "src": "db2@1.60.1.70009"}
-{"id": 1281640, "field": "name", "en": "Sing", "hash": "0b3ae0a379959c0a", "src": "db2@1.60.1.70009"}
-{"id": 1281641, "field": "name", "en": "Summon Musical Gustjumper", "hash": "15790417a1f69bf6", "src": "db2@1.60.1.70009"}
-{"id": 1281641, "field": "description", "en": "Right Click to summon and dismiss your musical froggy friend.", "hash": "1c2273eca7c391c2", "src": "db2@1.60.1.70009"}
-{"id": 1281645, "field": "name", "en": "Give loot", "hash": "627f513ca5810e67", "src": "db2@1.60.1.70009"}
-{"id": 1281744, "field": "name", "en": "Natural Guidance", "hash": "669040e6080a6246", "src": "db2@1.60.1.70009"}
-{"id": 1281744, "field": "description", "en": "Improves your chance to hit by $s1%.", "hash": "8e26e0349a4f376b", "src": "db2@1.60.1.70009"}
-{"id": 1281765, "field": "name", "en": "Force of Nature", "hash": "76b661984cc42adc", "src": "db2@1.60.1.70009"}
-{"id": 1281765, "field": "description", "en": "Places a magical seed that blooms after 5 sec. Treants are created every $1281782t1 sec.", "hash": "9e1d641f2b4983ac", "src": "db2@1.60.1.70009"}
-{"id": 1281778, "field": "name", "en": "Force of Nature", "hash": "76b661984cc42adc", "src": "db2@1.60.1.70009"}
-{"id": 1281781, "field": "name", "en": "Entangling Roots", "hash": "2c0883989bcc14e2", "src": "db2@1.60.1.70009"}
-{"id": 1281781, "field": "description", "en": "Entangles an enemy in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "ed46cb1a9bc2abfc", "src": "db2@1.60.1.70009"}
-{"id": 1281781, "field": "aura", "en": "Immobilized.\r\nNature damage inflicted every $t2 sec.", "hash": "e6768e6a91f2334b", "src": "db2@1.60.1.70009"}
-{"id": 1281782, "field": "name", "en": "Force of Nature", "hash": "76b661984cc42adc", "src": "db2@1.60.1.70009"}
-{"id": 1281782, "field": "description", "en": "Periodically summons Treants who attack nearby enemies.", "hash": "542ac3edd1618e53", "src": "db2@1.60.1.70009"}
-{"id": 1281887, "field": "name", "en": "Recently Entangled", "hash": "2992d7b2a7bc7816", "src": "db2@1.60.1.70009"}
-{"id": 1281887, "field": "description", "en": "Recently Entangled.", "hash": "462460ad3f319897", "src": "db2@1.60.1.70009"}
-{"id": 1281959, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70009"}
-{"id": 1281960, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70009"}
-{"id": 1281961, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70009"}
+{"id": 1281378, "field": "name", "en": "Dispel Shadow", "hash": "b6e8701c7124517e", "src": "db2@1.60.1.70124"}
+{"id": 1281431, "field": "name", "en": "Dream Visual (DNT)", "hash": "1c762dcaa789e94a", "src": "db2@1.60.1.70124"}
+{"id": 1281434, "field": "name", "en": "Nightmare Visual (DNT)", "hash": "359911e47b40b95e", "src": "db2@1.60.1.70124"}
+{"id": 1281437, "field": "name", "en": "Nightmare Visual (DNT)", "hash": "359911e47b40b95e", "src": "db2@1.60.1.70124"}
+{"id": 1281438, "field": "name", "en": "Nightmare Visual (DNT)", "hash": "359911e47b40b95e", "src": "db2@1.60.1.70124"}
+{"id": 1281439, "field": "name", "en": "Nightmare Visual (DNT)", "hash": "359911e47b40b95e", "src": "db2@1.60.1.70124"}
+{"id": 1281440, "field": "name", "en": "Nightmare Visual (DNT)", "hash": "359911e47b40b95e", "src": "db2@1.60.1.70124"}
+{"id": 1281530, "field": "name", "en": "[TEST] Mount Rental - Alliance", "hash": "896a94df3249de87", "src": "db2@1.60.1.70124"}
+{"id": 1281530, "field": "description", "en": "Allows you to rent a mount for 2 minutes.", "hash": "ec237fd3584eb5bc", "src": "db2@1.60.1.70124"}
+{"id": 1281530, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
+{"id": 1281639, "field": "name", "en": "Sing", "hash": "0b3ae0a379959c0a", "src": "db2@1.60.1.70124"}
+{"id": 1281640, "field": "name", "en": "Sing", "hash": "0b3ae0a379959c0a", "src": "db2@1.60.1.70124"}
+{"id": 1281641, "field": "name", "en": "Summon Musical Gustjumper", "hash": "15790417a1f69bf6", "src": "db2@1.60.1.70124"}
+{"id": 1281641, "field": "description", "en": "Right Click to summon and dismiss your musical froggy friend.", "hash": "1c2273eca7c391c2", "src": "db2@1.60.1.70124"}
+{"id": 1281645, "field": "name", "en": "Give loot", "hash": "627f513ca5810e67", "src": "db2@1.60.1.70124"}
+{"id": 1281744, "field": "name", "en": "Natural Guidance", "hash": "669040e6080a6246", "src": "db2@1.60.1.70124"}
+{"id": 1281744, "field": "description", "en": "Improves your chance to hit by $s1%.", "hash": "8e26e0349a4f376b", "src": "db2@1.60.1.70124"}
+{"id": 1281765, "field": "name", "en": "Force of Nature", "hash": "76b661984cc42adc", "src": "db2@1.60.1.70124"}
+{"id": 1281765, "field": "description", "en": "Places a magical seed that blooms after 5 sec. Treants are created every $1281782t1 sec.", "hash": "9e1d641f2b4983ac", "src": "db2@1.60.1.70124"}
+{"id": 1281778, "field": "name", "en": "Force of Nature", "hash": "76b661984cc42adc", "src": "db2@1.60.1.70124"}
+{"id": 1281781, "field": "name", "en": "Entangling Roots", "hash": "2c0883989bcc14e2", "src": "db2@1.60.1.70124"}
+{"id": 1281781, "field": "description", "en": "Entangles an enemy in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "ed46cb1a9bc2abfc", "src": "db2@1.60.1.70124"}
+{"id": 1281781, "field": "aura", "en": "Immobilized.\r\nNature damage inflicted every $t2 sec.", "hash": "e6768e6a91f2334b", "src": "db2@1.60.1.70124"}
+{"id": 1281782, "field": "name", "en": "Force of Nature", "hash": "76b661984cc42adc", "src": "db2@1.60.1.70124"}
+{"id": 1281782, "field": "description", "en": "Periodically summons Treants who attack nearby enemies.", "hash": "542ac3edd1618e53", "src": "db2@1.60.1.70124"}
+{"id": 1281887, "field": "name", "en": "Recently Entangled", "hash": "2992d7b2a7bc7816", "src": "db2@1.60.1.70124"}
+{"id": 1281887, "field": "description", "en": "Recently Entangled.", "hash": "462460ad3f319897", "src": "db2@1.60.1.70124"}
+{"id": 1281959, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70124"}
+{"id": 1281960, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70124"}
+{"id": 1281961, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70124"}

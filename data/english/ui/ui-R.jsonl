@@ -1,343 +1,343 @@
-{"id": "RACE", "field": "text", "en": "Race", "hash": "0b16751dcc6a2b45", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_ERROR_FALLBACK", "field": "text", "en": "That action is unavailable right now.", "hash": "d43e8d9251aaee2a", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_ERROR_NO_AURAS", "field": "text", "en": "You do not have any buffs or debuffs.", "hash": "ab342fefe10ec3f2", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_ANGRY", "field": "text", "en": "Angry", "hash": "83d3d6adf526aea4", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_BAGS", "field": "text", "en": "Bags", "hash": "08f19d87f5eb6a4e", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_BUFFS", "field": "text", "en": "View Buffs", "hash": "e7e5ec8713088c99", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_CALENDAR", "field": "text", "en": "Calendar", "hash": "d1fb8aded0d484b6", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_CHARACTER", "field": "text", "en": "Character", "hash": "d58d30af5f5bc7fe", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_CHAT", "field": "text", "en": "Chat", "hash": "0915bd509f1c7960", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_CHEER", "field": "text", "en": "Cheer", "hash": "a620e4ed5a99cf77", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_CHICKEN", "field": "text", "en": "Chicken", "hash": "b90389c14c88ae79", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_CLOCK", "field": "text", "en": "Clock", "hash": "a6acb8a6b7ec0556", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_COLLECTIONS", "field": "text", "en": "Collections", "hash": "2bcc5c8bc405575d", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_DANCE", "field": "text", "en": "Dance", "hash": "b6c0d63f7f66c4af", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_GAME_MENU", "field": "text", "en": "Game Menu", "hash": "4880ed18b0a44df1", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_GROUP_FINDER", "field": "text", "en": "Group Finder", "hash": "be7119ca58a84a6f", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_GUILD", "field": "text", "en": "Communities", "hash": "1c8f1ebc6459ec74", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_KNEEL", "field": "text", "en": "Kneel", "hash": "335c6916a25d8365", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_LEGACY", "field": "text", "en": "Legacy", "hash": "a61634768d53f7e2", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_LFD_CONTEXT_MENU", "field": "text", "en": "Open Context Menu", "hash": "306d8f36dca4e529", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_POINT", "field": "text", "en": "Point", "hash": "8b44570d9a3c22c0", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_PROFESSIONS", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_PVP", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_QUEST_MAPS", "field": "text", "en": "Quest & Maps", "hash": "caed83328cece3dc", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_SHOP", "field": "text", "en": "Shop", "hash": "0b3a9e26759d7833", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_SOCIAL", "field": "text", "en": "Social", "hash": "35b645ce6762a730", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_SPELLBOOK", "field": "text", "en": "Spellbook", "hash": "311c1907fb01d371", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_TALENTS", "field": "text", "en": "Talents", "hash": "0d31e779843effa2", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_TARGET_EMOTES", "field": "text", "en": "Emotes", "hash": "52fd3d260091348f", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_TOGGLE_SIT", "field": "text", "en": "Sit / Stand", "hash": "461d7e047696d4da", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_TRACKING", "field": "text", "en": "Minimap Settings", "hash": "d3522e77d950382e", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_TRAIN", "field": "text", "en": "Train", "hash": "d1dffe459e5b3f47", "src": "db2@1.60.1.70009"}
-{"id": "RADIAL_LABEL_WAVE", "field": "text", "en": "Wave", "hash": "0bc202dd8f744d26", "src": "db2@1.60.1.70009"}
-{"id": "RAF_ACTIVE_LINK_EXPIRE_DATE", "field": "text", "en": "This link will expire on %s", "hash": "18225afe1309f33f", "src": "db2@1.60.1.70009"}
-{"id": "RAF_ACTIVE_RECRUIT", "field": "text", "en": "Active subscription", "hash": "719d6c7d76ef5b8e", "src": "db2@1.60.1.70009"}
-{"id": "RAF_BENEFIT4", "field": "text", "en": "30 days of free game time", "hash": "d7024ce5e88a9b2b", "src": "db2@1.60.1.70009"}
-{"id": "RAF_CLAIM_MULTIPLE_REWARDS", "field": "text", "en": "Claim %d Rewards", "hash": "428b3fbc27f670f0", "src": "db2@1.60.1.70009"}
-{"id": "RAF_COPY_LINK", "field": "text", "en": "Copy Link", "hash": "18ab2f6c5a4640a5", "src": "db2@1.60.1.70009"}
-{"id": "RAF_EXPENDED_LINK_EXPIRE_DATE", "field": "text", "en": "You will be able to generate a new link on %s", "hash": "aef9ec683412f206", "src": "db2@1.60.1.70009"}
-{"id": "RAF_FIRST_MONTH", "field": "text", "en": "Recruit friends to get started!", "hash": "6c65ed7815ebf7ef", "src": "db2@1.60.1.70009"}
-{"id": "RAF_FIRST_REWARD", "field": "text", "en": "First Reward:", "hash": "1477396f8a27e07c", "src": "db2@1.60.1.70009"}
-{"id": "RAF_FULL_RECRUITS", "field": "text", "en": "%d/%d Recruited Friends. Maximum recruits reached.", "hash": "b7b3908826baae47", "src": "db2@1.60.1.70009"}
-{"id": "RAF_GENERATE_LINK", "field": "text", "en": "Generate Link", "hash": "572cd8733c50828b", "src": "db2@1.60.1.70009"}
-{"id": "RAF_INACTIVE_RECRUIT", "field": "text", "en": "Inactive subscription", "hash": "de455e546f0f9218", "src": "db2@1.60.1.70009"}
-{"id": "RAF_LATEST_REWARDS_HELP_TEXT", "field": "text", "en": "Current Active Recruits: |cnHIGHLIGHT_FONT_COLOR:%d|r|nUnclaimed Rewards: |cnHIGHLIGHT_FONT_COLOR:%d|r", "hash": "37970b16e8be22be", "src": "db2@1.60.1.70009"}
-{"id": "RAF_LEGACY_REWARDS_DESC", "field": "text", "en": "Legacy recruits can no longer be added but existing recruits will continue to provide RAF rewards.", "hash": "2a22a06ab765e842", "src": "db2@1.60.1.70009"}
-{"id": "RAF_LEGACY_REWARDS_HELP_TEXT", "field": "text", "en": "Current Active Legacy Recruits: |cnHIGHLIGHT_FONT_COLOR:%d|r|nUnclaimed Rewards: |cnHIGHLIGHT_FONT_COLOR:%d|r", "hash": "07b1679ee009c004", "src": "db2@1.60.1.70009"}
-{"id": "RAF_LINK_REMAINING_USES", "field": "text", "en": "%d/%d friends have used this link.", "hash": "889b096ee95eaab5", "src": "db2@1.60.1.70009"}
-{"id": "RAF_MONTHS", "field": "text", "en": "%d |4Month:Months;", "hash": "ac0a6ceb5ba4565d", "src": "db2@1.60.1.70009"}
-{"id": "RAF_MONTHS_EARNED", "field": "text", "en": "%d |4Month:Months; Subscribed by Friends", "hash": "5ad8ba1ae8132481", "src": "db2@1.60.1.70009"}
-{"id": "RAF_NEXT_REWARD", "field": "text", "en": "Next Reward:", "hash": "d853b30f11fd603d", "src": "db2@1.60.1.70009"}
-{"id": "RAF_NEXT_REWARD_AFTER", "field": "text", "en": "Next Reward (%d of %d |4month:months;):", "hash": "bbfff1d3c06cdfa3", "src": "db2@1.60.1.70009"}
-{"id": "RAF_NEXT_REWARD_HELP_TEXT", "field": "text", "en": "Recruit friends to begin earning rewards when your friends start a subscription.", "hash": "861d3b0082d727dc", "src": "db2@1.60.1.70009"}
-{"id": "RAF_NO_ACTIVE_LINK", "field": "text", "en": "Click Generate Link to create a link good for %d days.", "hash": "23108a27e4ce85ee", "src": "db2@1.60.1.70009"}
-{"id": "RAF_NO_RECRUITS_DESC", "field": "text", "en": "|cffffd200Recruit friends to begin earning rewards for each month they subscribe.|n|nPlay together to unlock additional rewards!|r|n|nFor more info:|n|HurlIndex:49|h|cff82c5ffVisit our Recruit A Friend Website|r|h", "hash": "77705a967caf0116", "src": "db2@1.60.1.70009"}
-{"id": "RAF_PENDING_RECRUIT", "field": "text", "en": "Pending Recruit", "hash": "9210138b86f373d4", "src": "db2@1.60.1.70009"}
-{"id": "RAF_RECRUITED_FRIENDS", "field": "text", "en": "Recruited Friends", "hash": "17dd51954a4495bd", "src": "db2@1.60.1.70009"}
-{"id": "RAF_RECRUITER_FRIEND", "field": "text", "en": "|cffffd200Recruiter:|r %s", "hash": "d0974587469557c9", "src": "db2@1.60.1.70009"}
-{"id": "RAF_RECRUITMENT", "field": "text", "en": "Recruitment", "hash": "675c60cbf9db1c1c", "src": "db2@1.60.1.70009"}
-{"id": "RAF_RECRUITMENT_DESC", "field": "text", "en": "Recruit friends to play World of Warcraft with you!|nYou can invite %d friends every %d days.", "hash": "e6381feb01e88305", "src": "db2@1.60.1.70009"}
-{"id": "RAF_RECRUITS_FACTION_AND_REALM", "field": "text", "en": "Your friend will be encouraged to join you by making a %s character on the Realm %s.", "hash": "f823818511be3214", "src": "db2@1.60.1.70009"}
-{"id": "RAF_RECRUIT_ACTIVITY_DESCRIPTION", "field": "text", "en": "Use Party Sync and complete the following tasks with %s to receive a reward.", "hash": "7f3c4e092619bdba", "src": "db2@1.60.1.70009"}
-{"id": "RAF_RECRUIT_FRIEND", "field": "text", "en": "|cffffd200Recruit:|r %s", "hash": "6074b421bc322433", "src": "db2@1.60.1.70009"}
-{"id": "RAF_RECRUIT_TOOLTIP_DESC", "field": "text", "en": "Each recruited friend can provide up to %d subscription months toward your rewards.", "hash": "39dbb13d4c9fd73e", "src": "db2@1.60.1.70009"}
-{"id": "RAF_RECRUIT_TOOLTIP_MONTH_COUNT", "field": "text", "en": "- %d/%d subscription months provided", "hash": "f491a977fbd0f79a", "src": "db2@1.60.1.70009"}
-{"id": "RAF_REMOVE_RECRUIT_CONFIRM", "field": "text", "en": "Are you sure you want to remove|n|cffffd200%s|r|n from your Recruited Friends?|n|nType \"REMOVE\" into the field to confirm.", "hash": "7cb5745b63d5f128", "src": "db2@1.60.1.70009"}
-{"id": "RAF_REPEATABLE_MONTHS", "field": "text", "en": "Every %d months after", "hash": "0e7acd20f9213cc3", "src": "db2@1.60.1.70009"}
-{"id": "RAF_REWARDS", "field": "text", "en": "Recruit A Friend Rewards", "hash": "393200e0160cec9b", "src": "db2@1.60.1.70009"}
-{"id": "RAF_REWARDS_DESC", "field": "text", "en": "A single monthly reward is earned every 30 days per recruit with active gametime.", "hash": "f4f5aa27afaf6b16", "src": "db2@1.60.1.70009"}
-{"id": "RAF_REWARD_TITLE", "field": "text", "en": "New Title: %s", "hash": "bf63e07952a4a621", "src": "db2@1.60.1.70009"}
-{"id": "RAF_REWARD_TUTORIAL_TEXT", "field": "text", "en": "You have unlocked a new Recruit A Friend reward.", "hash": "8dcc846a9cfcf92d", "src": "db2@1.60.1.70009"}
-{"id": "RAF_SPLASH_SCREEN_DESCRIPTION", "field": "text", "en": "Bring your friends to Azeroth,|nadventure together and earn epic rewards!", "hash": "fcf84bb1de28755d", "src": "db2@1.60.1.70009"}
-{"id": "RAF_SPLASH_SCREEN_TITLE", "field": "text", "en": "Share Azeroth with Everyone!", "hash": "d24f449758da7008", "src": "db2@1.60.1.70009"}
-{"id": "RAF_SUMMON_LINKED", "field": "text", "en": "Summon Linked Friend", "hash": "63af347a82951065", "src": "db2@1.60.1.70009"}
-{"id": "RAF_TRIAL_RECRUIT", "field": "text", "en": "Trial Account", "hash": "dd4713234c9f7d4c", "src": "db2@1.60.1.70009"}
-{"id": "RAF_VIEW_ALL_REWARDS", "field": "text", "en": "View All Rewards", "hash": "ff73f7ae62dd6f48", "src": "db2@1.60.1.70009"}
-{"id": "RAF_YOU_HAVE_EARNED", "field": "text", "en": "You've Earned:", "hash": "5b07f31f3a7b29a6", "src": "db2@1.60.1.70009"}
-{"id": "RAGE", "field": "text", "en": "Rage", "hash": "0b167729cc6aaac9", "src": "db2@1.60.1.70009"}
-{"id": "RAGE_COST", "field": "text", "en": "%s Rage", "hash": "570f12e0a9558e99", "src": "db2@1.60.1.70009"}
-{"id": "RAGE_COST_PER_TIME", "field": "text", "en": "%s Rage, plus %s per sec", "hash": "873c4bf01de306da", "src": "db2@1.60.1.70009"}
-{"id": "RAGE_COST_PER_TIME_NO_BASE", "field": "text", "en": "%s Rage per sec", "hash": "876d8ddf9bedf520", "src": "db2@1.60.1.70009"}
-{"id": "RAID", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70009"}
-{"id": "RAID_ASSISTANT", "field": "text", "en": "Raid Assistant", "hash": "9b48ce97a8fad78a", "src": "db2@1.60.1.70009"}
-{"id": "RAID_BOSS_EMOTE", "field": "text", "en": "Boss Emote", "hash": "6730ebecbd2147a4", "src": "db2@1.60.1.70009"}
-{"id": "RAID_BOSS_WHISPER", "field": "text", "en": "Boss Whisper", "hash": "d0013136a2495616", "src": "db2@1.60.1.70009"}
-{"id": "RAID_CHAT_BUBBLES_TEXT", "field": "text", "en": "Raid Chat Bubbles", "hash": "c378f9e842145941", "src": "db2@1.60.1.70009"}
-{"id": "RAID_DESCRIPTION", "field": "text", "en": "Raids are groups of more than 5 people and are typically used to defeat unique challenges at high levels.\n\n|cffffffff- Raid members cannot earn credit toward most non-raid quests. Specifically, they will not receive non-raid quest credit for killing creatures or collecting items.\n\n- Raids grant substantially less experience for defeating monsters than normal groups.\n\n- Raids allow you to overcome challenges that might otherwise be nearly impossible.|r", "hash": "8511508f965dd12e", "src": "db2@1.60.1.70009"}
-{"id": "RAID_DIFFICULTY", "field": "text", "en": "Raid Difficulty", "hash": "ce46f457af7349c5", "src": "db2@1.60.1.70009"}
-{"id": "RAID_DIFFICULTY_10PLAYER", "field": "text", "en": "10 Player", "hash": "fd104bdf4b83966c", "src": "db2@1.60.1.70009"}
-{"id": "RAID_DIFFICULTY_20PLAYER", "field": "text", "en": "20 Player", "hash": "1c2634d2348a3786", "src": "db2@1.60.1.70009"}
-{"id": "RAID_DIFFICULTY_40PLAYER", "field": "text", "en": "40 Player", "hash": "5a5206ae069779ba", "src": "db2@1.60.1.70009"}
-{"id": "RAID_FRAMES_LABEL", "field": "text", "en": "Raid Frames", "hash": "71b133c1c3292374", "src": "db2@1.60.1.70009"}
-{"id": "RAID_INFO", "field": "text", "en": "Raid Info", "hash": "cf9bf92bfa22cde1", "src": "db2@1.60.1.70009"}
-{"id": "RAID_INFORMATION", "field": "text", "en": "Raid Information", "hash": "3c76535730049ef6", "src": "db2@1.60.1.70009"}
-{"id": "RAID_INFO_WORLD_BOSS", "field": "text", "en": "World Boss", "hash": "4b3454ae73d56613", "src": "db2@1.60.1.70009"}
-{"id": "RAID_INSTANCE_EXPIRES_EXPIRED", "field": "text", "en": "Expired", "hash": "565d4c7b94f3889b", "src": "db2@1.60.1.70009"}
-{"id": "RAID_LEADER", "field": "text", "en": "Raid Leader", "hash": "72965c0d36c044f7", "src": "db2@1.60.1.70009"}
-{"id": "RAID_MANAGER_RESTRICT_PINGS_TO", "field": "text", "en": "Restrict Pings To:", "hash": "f33466d1952c9679", "src": "db2@1.60.1.70009"}
-{"id": "RAID_MANAGER_RESTRICT_PINGS_TO_ASSIST", "field": "text", "en": "Assist", "hash": "cec4b0c0fde02e30", "src": "db2@1.60.1.70009"}
-{"id": "RAID_MANAGER_RESTRICT_PINGS_TO_LEAD", "field": "text", "en": "Lead", "hash": "0a49ae988bdb4259", "src": "db2@1.60.1.70009"}
-{"id": "RAID_MANAGER_RESTRICT_PINGS_TO_TANKS_HEALERS", "field": "text", "en": "Tanks/Healers", "hash": "c668a859d518f80a", "src": "db2@1.60.1.70009"}
-{"id": "RAID_MESSAGE", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70009"}
-{"id": "RAID_SETTINGS", "field": "text", "en": "Raid and Battleground", "hash": "b88cb21ade5359a9", "src": "db2@1.60.1.70009"}
-{"id": "RAID_SETTINGS_ENABLED", "field": "text", "en": "Enable Raid and Battleground Settings", "hash": "a93b6838fae7623e", "src": "db2@1.60.1.70009"}
-{"id": "RAID_SETTINGS_ENABLED_TOOLTIP", "field": "text", "en": "Check this option to enable an alternate graphic setting for Raids and Battlegrounds.", "hash": "28e691f2ab56d87e", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGETING_OPTIONS", "field": "text", "en": "Raid Targeting Options", "hash": "87d16ebd738b7724", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGETING_OPTIONS_HOVER_MODE", "field": "text", "en": "Hover Mode", "hash": "5f9ffd1152550e98", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGET_1", "field": "text", "en": "Star", "hash": "0b3dbb6aa53ee6f3", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGET_2", "field": "text", "en": "Circle", "hash": "1620456146901de1", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGET_3", "field": "text", "en": "Diamond", "hash": "de24ee6d9246a820", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGET_4", "field": "text", "en": "Triangle", "hash": "87a02c5de770ff52", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGET_5", "field": "text", "en": "Moon", "hash": "0a6ea1c140f79a4b", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGET_6", "field": "text", "en": "Square", "hash": "5b3917baf6c6ce8f", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGET_7", "field": "text", "en": "Cross", "hash": "a77a9280085dbbac", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGET_8", "field": "text", "en": "Skull", "hash": "bf6766f230febe55", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGET_ICON", "field": "text", "en": "Target Marker Icon", "hash": "51b04c6573b4e670", "src": "db2@1.60.1.70009"}
-{"id": "RAID_TARGET_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
-{"id": "RAID_WARNING", "field": "text", "en": "Raid Warning", "hash": "a44eca5f322b49b7", "src": "db2@1.60.1.70009"}
-{"id": "RANDOMIZE_APPEARANCE", "field": "text", "en": "Randomize Appearance", "hash": "8a67f054c8ce5c2a", "src": "db2@1.60.1.70009"}
-{"id": "RANDOM_ROLL_RESULT", "field": "text", "en": "%s rolls %d (%d-%d)", "hash": "dfba36abecd81fca", "src": "db2@1.60.1.70009"}
-{"id": "RANGED", "field": "text", "en": "Ranged", "hash": "45ead356f08d78d0", "src": "db2@1.60.1.70009"}
-{"id": "RANGEDSLOT", "field": "text", "en": "Ranged", "hash": "45ead356f08d78d0", "src": "db2@1.60.1.70009"}
-{"id": "RANGED_ATTACK", "field": "text", "en": "Ranged Attack", "hash": "c66012ea8353f6b9", "src": "db2@1.60.1.70009"}
-{"id": "RANGED_ATTACK_POWER", "field": "text", "en": "Ranged Attack Power", "hash": "2839b759bde88dab", "src": "db2@1.60.1.70009"}
-{"id": "RANGED_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFRanged Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFAgility|r\n\n|cffBCBCBCEvery 14 Ranged Attack Power adds 1 damage per second|r", "hash": "8516ea2350ce81a0", "src": "db2@1.60.1.70009"}
-{"id": "RANGED_COMBATLOG_TOOLTIP", "field": "text", "en": "Shows attacks from bows, guns, thrown weapons, and wands.", "hash": "1e72387e76510b7d", "src": "db2@1.60.1.70009"}
-{"id": "RANGE_DAMAGE_COMBATLOG_TOOLTIP", "field": "text", "en": "Show ranged shots that deal full or partial damage.", "hash": "45f0bc5145f3017d", "src": "db2@1.60.1.70009"}
-{"id": "RANGE_MISSED_COMBATLOG_TOOLTIP", "field": "text", "en": "Show ranged shots that fail to deal damage.", "hash": "2ff7a0558deecf53", "src": "db2@1.60.1.70009"}
-{"id": "RANK", "field": "text", "en": "Rank", "hash": "0b167ac4cc6b89f6", "src": "db2@1.60.1.70009"}
-{"id": "RANK_COLON", "field": "text", "en": "Rank:", "hash": "ac80d29fb03abc24", "src": "db2@1.60.1.70009"}
-{"id": "RARITY", "field": "text", "en": "Rarity", "hash": "467497962e1faec5", "src": "db2@1.60.1.70009"}
-{"id": "RATED_BATTLEGROUND_IS_READY", "field": "text", "en": "Your Rated Battleground is ready!", "hash": "3b3f62bd33628ada", "src": "db2@1.60.1.70009"}
-{"id": "RATINGS_MENU", "field": "text", "en": "Rating", "hash": "46b92fa848eed77c", "src": "db2@1.60.1.70009"}
-{"id": "RATING_CHANGE_TOOLTIP", "field": "text", "en": "Total rating change", "hash": "c4b838261268e313", "src": "db2@1.60.1.70009"}
-{"id": "RATING_CHANGE_TOOLTIP_TITLE", "field": "text", "en": "Rating Change", "hash": "2d27b498c630ea06", "src": "db2@1.60.1.70009"}
-{"id": "REACTIVATE_RAID_LOCK", "field": "text", "en": "Reactivate Raid Lock", "hash": "4781703e337e855b", "src": "db2@1.60.1.70009"}
-{"id": "READY", "field": "text", "en": "Ready", "hash": "ad069e40b23e3c8d", "src": "db2@1.60.1.70009"}
-{"id": "READY_CHECK", "field": "text", "en": "Ready Check", "hash": "5e4133d1643cd35c", "src": "db2@1.60.1.70009"}
-{"id": "READY_CHECK_MESSAGE", "field": "text", "en": "%s has initiated a ready check.", "hash": "3cfcfba52577e0ca", "src": "db2@1.60.1.70009"}
-{"id": "READY_CHECK_YOU_WERE_AFK", "field": "text", "en": "You were Away for a ready check", "hash": "702ef727232da046", "src": "db2@1.60.1.70009"}
-{"id": "REALID_BATTLETAG_FRIEND_LABEL", "field": "text", "en": "Enter email address\n(or BattleTag)", "hash": "f936eec71b4d6cf5", "src": "db2@1.60.1.70009"}
-{"id": "REALID_FRIEND_LABEL", "field": "text", "en": "Enter email address", "hash": "33e8aeb23b97e9e9", "src": "db2@1.60.1.70009"}
-{"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_PIN", "field": "text", "en": "Pin", "hash": "001528f93da24018", "src": "db2@1.60.1.70009"}
-{"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_SET_NOTE", "field": "text", "en": "Set Note", "hash": "3887f30a7386f36f", "src": "db2@1.60.1.70009"}
-{"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_UNPIN", "field": "text", "en": "Unpin", "hash": "e2e86bb18331e6f3", "src": "db2@1.60.1.70009"}
-{"id": "RECENT_ALLIES_PARTY_BUTTON_OFFLINE_TOOLTIP", "field": "text", "en": "Player Offline", "hash": "3cc01cd4515f8da8", "src": "db2@1.60.1.70009"}
-{"id": "RECENT_ALLIES_PARTY_BUTTON_TOOLTIP", "field": "text", "en": "Invite to Group", "hash": "36db2de9f846c335", "src": "db2@1.60.1.70009"}
-{"id": "RECENT_ALLY_INTERACTION_TIME_FORMAT", "field": "text", "en": "%s ago", "hash": "412b23931a59d904", "src": "db2@1.60.1.70009"}
-{"id": "RECENT_ALLY_PIN_EXPIRING_TOOLTIP", "field": "text", "en": "Pinned Ally (Expires in %s)", "hash": "217af55dd0ffea36", "src": "db2@1.60.1.70009"}
-{"id": "RECENT_ALLY_PIN_TOOLTIP", "field": "text", "en": "Pinned Ally", "hash": "dbc4ddc9ca20b0d2", "src": "db2@1.60.1.70009"}
-{"id": "RECENT_ALLY_RECENT_ACTIVITIES_LABEL", "field": "text", "en": "Recent Activities", "hash": "d57fa14f5cec22ad", "src": "db2@1.60.1.70009"}
-{"id": "RECENT_ALLY_TOOLTIP_LEVEL_RACE_FORMAT", "field": "text", "en": "Level %d  %s  %s", "hash": "48db18c2c09d7d4d", "src": "db2@1.60.1.70009"}
-{"id": "RECOMMENDED", "field": "text", "en": "Recommended", "hash": "4257c786acc32283", "src": "db2@1.60.1.70009"}
-{"id": "RECOVER_CORPSE", "field": "text", "en": "Resurrect now?", "hash": "f82441dbb767f253", "src": "db2@1.60.1.70009"}
-{"id": "RECOVER_CORPSE_INSTANCE", "field": "text", "en": "You must enter the instance to recover your corpse", "hash": "01e3a754ee62304d", "src": "db2@1.60.1.70009"}
-{"id": "RECRUIT_A_FRIEND", "field": "text", "en": "Recruit A Friend", "hash": "0c392ed6e77a9921", "src": "db2@1.60.1.70009"}
-{"id": "RED_GEM", "field": "text", "en": "Red", "hash": "0015acf54592480c", "src": "db2@1.60.1.70009"}
-{"id": "REFLECT", "field": "text", "en": "Reflect", "hash": "297925a19fd4ad3f", "src": "db2@1.60.1.70009"}
-{"id": "REFRESH", "field": "text", "en": "Refresh", "hash": "2a46ff67f0466370", "src": "db2@1.60.1.70009"}
-{"id": "REGIONAL_RESTRICT_CHAT_DIALOG_DISABLE", "field": "text", "en": "Leave Chat Off", "hash": "bfd0145721d45411", "src": "db2@1.60.1.70009"}
-{"id": "REGIONAL_RESTRICT_CHAT_DIALOG_ENABLE", "field": "text", "en": "Turn Chat On", "hash": "dabce90f61d75295", "src": "db2@1.60.1.70009"}
-{"id": "REGIONAL_RESTRICT_CHAT_DIALOG_MESSAGE", "field": "text", "en": "There are regional regulations that affect this account. Chat features have been disabled by default. You can re-enable those features now, or enable them later in Options -> Social.\n\nIf you decide to enable them, please be mindful of our community interaction policies and report any abusive behavior, chat, or other conduct intended to undermine or disrupt the game experience using our in-game reporting options; we'll review chat records and take appropriate action.", "hash": "b8915e2a300d4d7e", "src": "db2@1.60.1.70009"}
-{"id": "REGIONAL_RESTRICT_CHAT_DIALOG_TITLE", "field": "text", "en": "Chat has been turned off", "hash": "0c43d3c4dcbd83b6", "src": "db2@1.60.1.70009"}
-{"id": "RELEASE_PET", "field": "text", "en": "Are you sure you want to permanently release your pet? You will never be able to summon this pet again.", "hash": "897d134901527274", "src": "db2@1.60.1.70009"}
-{"id": "RELEASE_PET_BUTTON_LABEL", "field": "text", "en": "Release", "hash": "91da4847eb9cecd0", "src": "db2@1.60.1.70009"}
-{"id": "RELICSLOT", "field": "text", "en": "Relic", "hash": "ad09821cdde9c527", "src": "db2@1.60.1.70009"}
-{"id": "RELOADUI", "field": "text", "en": "Reload UI", "hash": "12ae60fa9f4f4b81", "src": "db2@1.60.1.70009"}
-{"id": "REMIX_END_OF_EVENT_NOTICE", "field": "text", "en": "The Timerunning event has ended.  You have been transported back to your home timeline.\r\n\r\nItems from the event have been removed.\r\n", "hash": "6d28278b4b00ee0e", "src": "db2@1.60.1.70009"}
-{"id": "REMOVE", "field": "text", "en": "Remove", "hash": "8c017ffbfe93bea6", "src": "db2@1.60.1.70009"}
-{"id": "REMOVE_AUTHENTICATOR_FROM_RANK", "field": "text", "en": "Are you sure you want to remove the Authenticator requirement from the %s rank? You won't be able to reapply it as long as there are guild members with this rank.", "hash": "9cde0ea6aa750307", "src": "db2@1.60.1.70009"}
-{"id": "REMOVE_FAVORITE_STATUS", "field": "text", "en": "Remove from Favorites", "hash": "ef4e4c7c17b8e3ef", "src": "db2@1.60.1.70009"}
-{"id": "REMOVE_FRIEND", "field": "text", "en": "Remove Friend", "hash": "e54f8be338d810c1", "src": "db2@1.60.1.70009"}
-{"id": "REMOVE_MODERATOR", "field": "text", "en": "Remove Moderator", "hash": "8ab27db7ca8f737d", "src": "db2@1.60.1.70009"}
-{"id": "RENAME_CHAT_WINDOW", "field": "text", "en": "Rename Window", "hash": "04c81f86912ef09e", "src": "db2@1.60.1.70009"}
-{"id": "RENAME_GUILD", "field": "text", "en": "Rename guild", "hash": "5136c73a269128a1", "src": "db2@1.60.1.70009"}
-{"id": "RENAME_GUILD_LABEL", "field": "text", "en": "Enter new guild name:", "hash": "f253234bd05c9f21", "src": "db2@1.60.1.70009"}
-{"id": "RENDER_SCALE", "field": "text", "en": "Render Scale", "hash": "be81b53c139f3356", "src": "db2@1.60.1.70009"}
-{"id": "RENOWN_LEVEL_LABEL", "field": "text", "en": "Renown %d", "hash": "ff986135f8acf86d", "src": "db2@1.60.1.70009"}
-{"id": "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC", "field": "text", "en": "These rewards will be granted to you to recognize your unwavering commitment to the covenant.", "hash": "cdb9c2c45b13d969", "src": "db2@1.60.1.70009"}
-{"id": "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC2", "field": "text", "en": "Rewards:", "hash": "2d6ea58b43389134", "src": "db2@1.60.1.70009"}
-{"id": "RENOWN_REWARD_CAPSTONE_TOOLTIP_TITLE", "field": "text", "en": "Major Milestone", "hash": "07ce51bf1ee47e37", "src": "db2@1.60.1.70009"}
-{"id": "RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE", "field": "text", "en": "Renown %d Rewards", "hash": "f7e6b5efd0a508c3", "src": "db2@1.60.1.70009"}
-{"id": "REPAIR_ALL_ITEMS", "field": "text", "en": "Repair All Items", "hash": "1f5bcd63d655dea3", "src": "db2@1.60.1.70009"}
-{"id": "REPAIR_AN_ITEM", "field": "text", "en": "Repair an Item", "hash": "b37b118b43e6b3f3", "src": "db2@1.60.1.70009"}
-{"id": "REPAIR_ARMOR_TOOLTIP_BREAKING", "field": "text", "en": "The durability of your armor is getting low. Visit a vendor in town to repair the item before it breaks.", "hash": "8dee460c61352f3f", "src": "db2@1.60.1.70009"}
-{"id": "REPAIR_ARMOR_TOOLTIP_BROKEN", "field": "text", "en": "One of your items has broken. You'll gain no benefit from it until it's repaired. Visit a vendor in town to repair it.", "hash": "d4bc86204fdcda34", "src": "db2@1.60.1.70009"}
-{"id": "REPAIR_ARMOR_TOOLTIP_TITLE", "field": "text", "en": "Repair Armor", "hash": "d5814a0733186503", "src": "db2@1.60.1.70009"}
-{"id": "REPLACE_ENCHANT", "field": "text", "en": "Do you want to replace \"%s\" with \"%s\"?", "hash": "ed132ee66e542d84", "src": "db2@1.60.1.70009"}
-{"id": "REPLACE_MY_PLAYER_PORTRAIT", "field": "text", "en": "Replace My Frame Portrait", "hash": "b6acdb95266af38f", "src": "db2@1.60.1.70009"}
-{"id": "REPLACE_OTHER_PLAYER_PORTRAITS", "field": "text", "en": "Replace Player Frame Portraits", "hash": "a0ad26831093669c", "src": "db2@1.60.1.70009"}
-{"id": "REPLY_MESSAGE", "field": "text", "en": "Reply", "hash": "ad0a8fdfedcb33e4", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_COMMENT_INSTRUCTIONS", "field": "text", "en": "More details about your report (optional)", "hash": "6b6fd71a9f2dc35d", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MAJOR_CATEGORY_CHEATING", "field": "text", "en": "Cheating", "hash": "9cd8ab75d5cf9dd0", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MAJOR_CATEGORY_CHINA_HARMFUL_MINORS", "field": "text", "en": "Harmful to Minors", "hash": "54fa5822d43e9145", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MAJOR_CATEGORY_GAMEPLAY_SABOTAGE", "field": "text", "en": "Gameplay Sabotage", "hash": "3290a07491625e2b", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MAJOR_CATEGORY_INAPPROPRIATE_COMMUNICATION", "field": "text", "en": "Inappropriate Communication", "hash": "7850aca03fad67a1", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MAJOR_CATEGORY_INAPPROPRIATE_NAME", "field": "text", "en": "Inappropriate Name", "hash": "2efc8ad0c86e6d33", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MAKE_SELECTION", "field": "text", "en": "Make a Selection", "hash": "486095957b7a6f57", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_ADVERTISEMENT", "field": "text", "en": "Advertisement", "hash": "e6f871ebdee71245", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_AFK", "field": "text", "en": "AFK/Non-Participation", "hash": "3686d7f87b8f129c", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_BLOCKING_PROG", "field": "text", "en": "Blocking Team Progress", "hash": "bf1e628785c0a9ca", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_BOOSTING", "field": "text", "en": "Boosting/Deranking", "hash": "52273478a3eba224", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_BOTTING", "field": "text", "en": "Botting", "hash": "a84c639821c105ec", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_BTAG", "field": "text", "en": "Battle Tag", "hash": "b2c72ecfe87c9612", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_CHARACTER_NAME", "field": "text", "en": "Character Name", "hash": "ae4ec204487a02a4", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_CSEA", "field": "text", "en": "Child Abuse", "hash": "6c92e8a2e73fa469", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_CUSTOM_GAME_NAME", "field": "text", "en": "Custom Game Name", "hash": "6d907b661c958ca8", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_DESCRIPTION", "field": "text", "en": "Description", "hash": "6173958c6c516f23", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_DISRUPTION", "field": "text", "en": "Disruption", "hash": "3f106df7742c5dc6", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_FEEDING", "field": "text", "en": "Intentionally Dying", "hash": "95d0cfc58869289f", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_GROUP_NAME", "field": "text", "en": "Group Name", "hash": "e4d23038475f97cf", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_GUILD_NAME", "field": "text", "en": "Guild Name", "hash": "50ef05876d3e2026", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_HACKING", "field": "text", "en": "Hacking", "hash": "f7a29bf9e7872c8e", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_HARMFUL_INFO_FOR_MINORS", "field": "text", "en": "Harmful info for Minors", "hash": "de446078f351dac6", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_HARMFUL_TO_MINORS", "field": "text", "en": "Harmful To Minors", "hash": "723d3a4eb36a6e38", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_INAPPROPRIATE", "field": "text", "en": "Inappropriate", "hash": "6782e104fb2f5b10", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_NAME", "field": "text", "en": "Name", "hash": "0a8d43cf96cb99f1", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_SPAM", "field": "text", "en": "Spam", "hash": "0b3caf41955dd7ea", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_TEXT_CHAT", "field": "text", "en": "Text-Chat", "hash": "1dade643a7e81164", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_TVEC", "field": "text", "en": "Terrorist/Violent Content", "hash": "211566bfadd6c24c", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_MINOR_CATEGORY_VOICE_CHAT", "field": "text", "en": "Voice-Chat", "hash": "b58f3d36c9916401", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_REPORT", "field": "text", "en": "Report", "hash": "8c6866cfa6cb1b50", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_REPORT_DETAILS", "field": "text", "en": "Provide Details (Select all that apply)", "hash": "de2811565502a31f", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_REPORT_PLAYER", "field": "text", "en": "Report %s", "hash": "120708fd99b55daa", "src": "db2@1.60.1.70009"}
-{"id": "REPORTING_REPORT_REASON", "field": "text", "en": "Select a Reason", "hash": "335fc4da41f2ebc6", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_BATTLEPET_NAME_CONFIRMATION", "field": "text", "en": "Are you sure you want to report %s for inappropriate battle pet name?", "hash": "2d38eebaf1f0b90b", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_CALENDAR", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_CHAT", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_CHEATING_EDITBOX_INFO", "field": "text", "en": "Please enter specific details here.", "hash": "31ff84b5609728d0", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_CHEATING_TEXT1", "field": "text", "en": "Below, please |cffffd200provide a clear and specific description|r of the cheating behavior you observed from this player. Include as much detail as possible about the |cffffd200time frame|r, the |cffffd200location|r, and the |cffffd200actions the character was performing|r.", "hash": "4c15603ca63399ce", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_CHEATING_TITLE", "field": "text", "en": "Report Player for Cheating", "hash": "55569def062a84a1", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_CLUB_MEMBER", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_GROUP_FINDER_ADVERTISEMENT", "field": "text", "en": "Report Advertisement", "hash": "8d729b86d490bde3", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_GROUP_MEMBER", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_IN_WORLD_PLAYER", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_PET_NAME_CONFIRMATION", "field": "text", "en": "Are you sure you want to report %s for inappropriate pet name?", "hash": "c21c9f40d78e8894", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_PLAYER", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_RESULT_REQUIRES_CHAT", "field": "text", "en": "Report failed. Report type only valid on chat lines.", "hash": "8334ac69b068ee8b", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_RESULT_REQUIRES_CHAT_OR_VOICE", "field": "text", "en": "Report failed. Report type only valid on chat lines or when in voice chat.", "hash": "256ec2873da63d76", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_RESULT_TOO_MANY_REPORTS", "field": "text", "en": "Report failed. Too many report attempts. Please try again in a few minutes.", "hash": "aa4fc4e850086669", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_SPAM", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70009"}
-{"id": "REPORT_SPAM_CONFIRMATION", "field": "text", "en": "Are you sure you want to report %s for spamming?", "hash": "c00a78e4354691c8", "src": "db2@1.60.1.70009"}
-{"id": "REPUTATION", "field": "text", "en": "Reputation", "hash": "2aa11d789c011de5", "src": "db2@1.60.1.70009"}
-{"id": "REPUTATION_AT_WAR_DESCRIPTION", "field": "text", "en": "This determines how you will interact with members of this faction. If you have at war checked then your default behavior will be to attack them. If you do not have it checked you will not be able to attack them. ", "hash": "7024aa557ffa9cb5", "src": "db2@1.60.1.70009"}
-{"id": "REPUTATION_DETAIL_SELECT_PROMPT", "field": "text", "en": "Select a faction to view its details.", "hash": "fcd13f85eabc00a3", "src": "db2@1.60.1.70009"}
-{"id": "REPUTATION_EXALTED_PLUS_HELP", "field": "text", "en": "Continue earning reputation with Exalted factions to receive rewards.", "hash": "0bdce19b7383f8f9", "src": "db2@1.60.1.70009"}
-{"id": "REPUTATION_MOVE_TO_INACTIVE", "field": "text", "en": "Moves the reputation bar to the bottom of your list under the inactive heading. Useful for reputations you are no longer interested in tracking.", "hash": "afc55fac974b252a", "src": "db2@1.60.1.70009"}
-{"id": "REPUTATION_SHOW_AS_XP", "field": "text", "en": "Displays this reputation bar next to your experience bar.", "hash": "422aa684875f4839", "src": "db2@1.60.1.70009"}
-{"id": "REPUTATION_TOOLTIP_ACCOUNT_WIDE_LABEL", "field": "text", "en": "Account Reputation", "hash": "3d26e6cfe49958f0", "src": "db2@1.60.1.70009"}
-{"id": "REQUEST_INVITE", "field": "text", "en": "Request to Join Group", "hash": "c7ef66dc7e7431ec", "src": "db2@1.60.1.70009"}
-{"id": "REQUEST_ROLL", "field": "text", "en": "Request Roll", "hash": "423577b6e3c80b67", "src": "db2@1.60.1.70009"}
-{"id": "REQUEST_SIGNATURE", "field": "text", "en": "Request Signature", "hash": "a9dd0d16819839c5", "src": "db2@1.60.1.70009"}
-{"id": "REQUIRED_MONEY", "field": "text", "en": "Required Money:", "hash": "e2df7ab129aaf7cb", "src": "db2@1.60.1.70009"}
-{"id": "REQUIRES_GUILD_ACHIEVEMENT", "field": "text", "en": "Requires guild achievement", "hash": "26465241a0a59393", "src": "db2@1.60.1.70009"}
-{"id": "REQUIRES_GUILD_FACTION", "field": "text", "en": "Requires: |cffff0000%s|r", "hash": "5c2e634a67674a6a", "src": "db2@1.60.1.70009"}
-{"id": "REQUIRES_GUILD_FACTION_TOOLTIP", "field": "text", "en": "Requires %s with guild", "hash": "a30e02c7ffc76233", "src": "db2@1.60.1.70009"}
-{"id": "REQUIRES_LABEL", "field": "text", "en": "Requires:", "hash": "0da5b69df96b8551", "src": "db2@1.60.1.70009"}
-{"id": "REQUIRES_RELOAD", "field": "text", "en": "Requires Reload", "hash": "1c507601fa396924", "src": "db2@1.60.1.70009"}
-{"id": "REQ_LEVEL_ABBR", "field": "text", "en": "Lvl", "hash": "0014237a2dc2cf7f", "src": "db2@1.60.1.70009"}
-{"id": "RESAMPLE_QUALITY", "field": "text", "en": "Resample Quality", "hash": "ae86907ae1c9e78e", "src": "db2@1.60.1.70009"}
-{"id": "RESAMPLE_QUALITY_BICUBIC", "field": "text", "en": "Bicubic", "hash": "98e9f83bdc920cc8", "src": "db2@1.60.1.70009"}
-{"id": "RESAMPLE_QUALITY_BILINEAR", "field": "text", "en": "Bilinear", "hash": "4656bb1287c269b2", "src": "db2@1.60.1.70009"}
-{"id": "RESAMPLE_QUALITY_POINT", "field": "text", "en": "Point", "hash": "8b44570d9a3c22c0", "src": "db2@1.60.1.70009"}
-{"id": "RESAMPLE_SHARPNESS", "field": "text", "en": "Resample Sharpness", "hash": "e71b03c1857c1ef8", "src": "db2@1.60.1.70009"}
-{"id": "RESET", "field": "text", "en": "Reset", "hash": "ad0b5560f9b31ffb", "src": "db2@1.60.1.70009"}
-{"id": "RESET_CAMERA", "field": "text", "en": "Reset Camera", "hash": "df3e607a6dd3b847", "src": "db2@1.60.1.70009"}
-{"id": "RESET_CHAT_POSITION", "field": "text", "en": "Reset Chat Position", "hash": "63d1205ab2d7d678", "src": "db2@1.60.1.70009"}
-{"id": "RESET_CHAT_WINDOW", "field": "text", "en": "This will reset your chat windows to default settings.\nYou will lose any custom settings.", "hash": "9064aca0bb410b03", "src": "db2@1.60.1.70009"}
-{"id": "RESET_CHAT_WINDOW_POSITIONS", "field": "text", "en": "Reset Chat Positions", "hash": "14038f8052ad8280", "src": "db2@1.60.1.70009"}
-{"id": "RESET_INSTANCES", "field": "text", "en": "Reset all instances", "hash": "5b03b930a3e08a0b", "src": "db2@1.60.1.70009"}
-{"id": "RESET_TO_DEFAULT", "field": "text", "en": "Reset To Default", "hash": "0ad88897414ae2bd", "src": "db2@1.60.1.70009"}
-{"id": "RESET_TUTORIALS", "field": "text", "en": "Reset Tutorials", "hash": "e91f3fa0bd312146", "src": "db2@1.60.1.70009"}
-{"id": "RESIST", "field": "text", "en": "Resist", "hash": "8ccdbded373180ca", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE0_NAME", "field": "text", "en": "Armor", "hash": "845e9dbf4297b5af", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE1_NAME", "field": "text", "en": "Holy Resistance", "hash": "cc7d6787a440d892", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE2_NAME", "field": "text", "en": "Fire Resistance", "hash": "b61e89e5e9c15047", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE3_NAME", "field": "text", "en": "Nature Resistance", "hash": "1cfc8a7066590e09", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE4_NAME", "field": "text", "en": "Frost Resistance", "hash": "fa580288c5627849", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE5_NAME", "field": "text", "en": "Shadow Resistance", "hash": "5a9cbecf3c70058d", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE6_NAME", "field": "text", "en": "Arcane Resistance", "hash": "3ce7bd3182cba324", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_EXCELLENT", "field": "text", "en": "Excellent", "hash": "f0c66433605925df", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_FAIR", "field": "text", "en": "Fair", "hash": "097ad4f82b8b7a3e", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_GOOD", "field": "text", "en": "Good", "hash": "09a0d015f087e203", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_POOR", "field": "text", "en": "Poor", "hash": "0ad58a96e92f765d", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_TOOLTIP_SUBTEXT", "field": "text", "en": "Improves resistance to %s-based attacks, spells, and abilities\n\nAverage resistance versus a level %d enemy: |cffffffff%s%%|r", "hash": "8995636e8f37e7ef", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_TYPE2", "field": "text", "en": "fire", "hash": "0dc6a52ef84d3823", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_TYPE3", "field": "text", "en": "nature", "hash": "c9349b9963a11df3", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_TYPE4", "field": "text", "en": "frost", "hash": "0dda7fa3826d2929", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_TYPE5", "field": "text", "en": "shadow", "hash": "2b19da645186f093", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_TYPE6", "field": "text", "en": "arcane", "hash": "2b9979d959e8f2eb", "src": "db2@1.60.1.70009"}
-{"id": "RESISTANCE_VERYGOOD", "field": "text", "en": "Very Good", "hash": "2597d1e80fa11688", "src": "db2@1.60.1.70009"}
-{"id": "RESIST_TRAILER", "field": "text", "en": " (%d resisted)", "hash": "ec117b8cb20a3e82", "src": "db2@1.60.1.70009"}
-{"id": "RESTRICT_CALENDAR_INVITES", "field": "text", "en": "Restrict Calendar Invites", "hash": "fb14b9af9c4da6de", "src": "db2@1.60.1.70009"}
-{"id": "RESTRICT_CHAT_COMMUNITIES_TOOLTIP_INSTRUCTION", "field": "text", "en": "<Shift Click to View Chat Options>", "hash": "fbe699972610457c", "src": "db2@1.60.1.70009"}
-{"id": "RESTRICT_CHAT_CONFIG_DIALOG_CANCEL", "field": "text", "en": "Cancel", "hash": "892958da199b72dc", "src": "db2@1.60.1.70009"}
-{"id": "RESTRICT_CHAT_CONFIG_DIALOG_DISABLE", "field": "text", "en": "Disable Chat", "hash": "ff9fbb643644644a", "src": "db2@1.60.1.70009"}
-{"id": "RESTRICT_CHAT_CONFIG_DIALOG_MESSAGE", "field": "text", "en": "Are you sure you want to disable chat completely?\n\nYou won't be able to send or receive any messages.", "hash": "ad08ba1a72fbdc9f", "src": "db2@1.60.1.70009"}
-{"id": "RESTRICT_CHAT_CONFIG_DISABLE", "field": "text", "en": "Disable Chat", "hash": "ff9fbb643644644a", "src": "db2@1.60.1.70009"}
-{"id": "RESTRICT_CHAT_CONFIG_TOOLTIP", "field": "text", "en": "|cnRED_FONT_COLOR:You can't edit chat settings while chat is disabled.|r\r\n|cnGREEN_FONT_COLOR:<Shift Click to View Options>|r", "hash": "7422bee49c7cb005", "src": "db2@1.60.1.70009"}
-{"id": "RESTRICT_CHAT_MESSAGE_SUPPRESSED", "field": "text", "en": "You can't send or receive messages while chat is disabled.", "hash": "a413122db6530ac8", "src": "db2@1.60.1.70009"}
-{"id": "RESTRICT_CHAT_TOOLTIP_FORMAT", "field": "text", "en": "%s\n%s", "hash": "98ecaae23ca42057", "src": "db2@1.60.1.70009"}
-{"id": "RESURRECT", "field": "text", "en": "Resurrections", "hash": "36ab5a6ffc8b3476", "src": "db2@1.60.1.70009"}
-{"id": "RESURRECT_REQUEST", "field": "text", "en": "%s wants to resurrect you.  You will be afflicted with resurrection sickness.", "hash": "fc6362a3cb080861", "src": "db2@1.60.1.70009"}
-{"id": "RESURRECT_REQUEST_NO_SICKNESS", "field": "text", "en": "%s wants to resurrect you", "hash": "cc53d488bde41ade", "src": "db2@1.60.1.70009"}
-{"id": "RETRIEVING_DATA", "field": "text", "en": "Retrieving data", "hash": "485f180a9da6a05c", "src": "db2@1.60.1.70009"}
-{"id": "RETRIEVING_INVITE_LIST", "field": "text", "en": "Retrieving invite list", "hash": "78003d81efba8243", "src": "db2@1.60.1.70009"}
-{"id": "RETURN_TO_GAME", "field": "text", "en": "Return to Game", "hash": "b443b5b57723e9c5", "src": "db2@1.60.1.70009"}
-{"id": "RETURN_TO_GRAVEYARD", "field": "text", "en": "Return to Graveyard", "hash": "c044542de0474ea9", "src": "db2@1.60.1.70009"}
-{"id": "REWARDS", "field": "text", "en": "Rewards", "hash": "526c53558d8b389a", "src": "db2@1.60.1.70009"}
-{"id": "REWARD_ABILITY", "field": "text", "en": "You will learn the following:", "hash": "507d96bc2f0ec8d6", "src": "db2@1.60.1.70009"}
-{"id": "REWARD_AURA", "field": "text", "en": "The following will be cast on you:", "hash": "7bc7618de9022cf2", "src": "db2@1.60.1.70009"}
-{"id": "REWARD_CHOICES", "field": "text", "en": "You will be able to choose one of these rewards:", "hash": "a3187fa8b7114678", "src": "db2@1.60.1.70009"}
-{"id": "REWARD_CHOOSE", "field": "text", "en": "Choose your reward:", "hash": "24b0a5331fc3626f", "src": "db2@1.60.1.70009"}
-{"id": "REWARD_ITEMS", "field": "text", "en": "You will also receive:", "hash": "ef3767f54694405d", "src": "db2@1.60.1.70009"}
-{"id": "REWARD_ITEMS_ONLY", "field": "text", "en": "You will receive:", "hash": "cf2c2a703d848bec", "src": "db2@1.60.1.70009"}
-{"id": "REWARD_SPELL", "field": "text", "en": "You will learn the following:", "hash": "507d96bc2f0ec8d6", "src": "db2@1.60.1.70009"}
-{"id": "REWARD_TITLE", "field": "text", "en": "You shall be granted the title:", "hash": "17e14c64fad3ac6a", "src": "db2@1.60.1.70009"}
-{"id": "REWARD_TRADESKILL_SPELL", "field": "text", "en": "You will learn how to create:", "hash": "850c1377e43338f6", "src": "db2@1.60.1.70009"}
-{"id": "RID_FRIEND_REQUEST_INFO", "field": "text", "en": "This should be a person you know and trust in real life. You will be able to chat with them no matter which Blizzard game you are playing. If you accept their friend request your real name will be displayed to all of their friends.", "hash": "d0ff4bb5c724b3f6", "src": "db2@1.60.1.70009"}
-{"id": "RIGHTSHOULDERSLOT", "field": "text", "en": "Right Shoulder", "hash": "279b21157fbef384", "src": "db2@1.60.1.70009"}
-{"id": "RIGHT_BUTTON_STRING", "field": "text", "en": "Right Button", "hash": "0d664c5f143bd758", "src": "db2@1.60.1.70009"}
-{"id": "ROGUE_AGILITY_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFCritical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFAttack Power|r by %d\nIncreases |cFFFFFFFFRanged Attack Power|r by %d\nIncreases |cFFFFFFFFArmor|r by %d\nIncreases |cFFFFFFFFDodge|r chance by %.1f%%", "hash": "1b87af750624ca4d", "src": "db2@1.60.1.70009"}
-{"id": "ROGUE_INTELLECT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFWeapon Skill|r improvement rate", "hash": "f79f01e1188490d5", "src": "db2@1.60.1.70009"}
-{"id": "ROGUE_MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r and |cFFFFFFFFAgility|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "118d6e69333c5868", "src": "db2@1.60.1.70009"}
-{"id": "ROGUE_SPIRIT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFHealth Regeneration|r by %d per 5 sec while not in combat", "hash": "11847c42cb6d1b29", "src": "db2@1.60.1.70009"}
-{"id": "ROLE_CHANGED_INFORM", "field": "text", "en": "%s is now %s.", "hash": "e335117929b6fa08", "src": "db2@1.60.1.70009"}
-{"id": "ROLE_CHANGED_INFORM_WITH_SOURCE", "field": "text", "en": "%s is now %s. (Changed by %s.)", "hash": "73ab06668de0809b", "src": "db2@1.60.1.70009"}
-{"id": "ROLE_DESCRIPTION_DAMAGER", "field": "text", "en": "Indicates that you are willing to take on the role of dealing damage to enemies.", "hash": "1cebb11d8d4a58fe", "src": "db2@1.60.1.70009"}
-{"id": "ROLE_DESCRIPTION_HEALER", "field": "text", "en": "Indicates that you are willing to heal your allies when they take damage.", "hash": "c87c5de6a9196a07", "src": "db2@1.60.1.70009"}
-{"id": "ROLE_DESCRIPTION_TANK", "field": "text", "en": "Indicates that you are willing to protect allies from harm by ensuring that enemies are attacking you instead of them.", "hash": "1e0fc3961084166c", "src": "db2@1.60.1.70009"}
-{"id": "ROLE_POLL", "field": "text", "en": "Role Check", "hash": "a0ea1aeaf5cd42a6", "src": "db2@1.60.1.70009"}
-{"id": "ROLE_REMOVED_INFORM", "field": "text", "en": "%s no longer has a selected role.", "hash": "91140da4180d8ca9", "src": "db2@1.60.1.70009"}
-{"id": "ROLE_REMOVED_INFORM_WITH_SOURCE", "field": "text", "en": "%s no longer has a selected role. (Changed by %s.)", "hash": "a0da82517e246242", "src": "db2@1.60.1.70009"}
-{"id": "ROTATE_LEFT", "field": "text", "en": "Rotate Left", "hash": "31b565b5c793689b", "src": "db2@1.60.1.70009"}
-{"id": "ROTATE_RIGHT", "field": "text", "en": "Rotate Right", "hash": "d9aec5c7b550ee4d", "src": "db2@1.60.1.70009"}
-{"id": "RPE_ASSISTED_HIGHLIGHT_KEEP_ON", "field": "text", "en": "Keep On", "hash": "277fa63d8d7f291b", "src": "db2@1.60.1.70009"}
-{"id": "RPE_ASSISTED_HIGHLIGHT_TURN_CHOICE", "field": "text", "en": "Keep Assisted Highlight on?|n|n|cnNORMAL_FONT_COLOR:During the Catch Up Experience, Assisted Highlight was turned on. This enabled highlights that recommend the next ability to use from your action bars.|n|nWould you like to keep it on?|r You can change it in Options at any point.", "hash": "3590995388d567c1", "src": "db2@1.60.1.70009"}
-{"id": "RPE_ASSISTED_HIGHLIGHT_TURN_OFF", "field": "text", "en": "Turn Off", "hash": "57173e79a300be9e", "src": "db2@1.60.1.70009"}
-{"id": "RT_SHADOW_QUALITY", "field": "text", "en": "Ray Traced Shadows", "hash": "747bf370dd4b0d23", "src": "db2@1.60.1.70009"}
-{"id": "RUNEFORGE_LEGENDARY_COST_LABEL", "field": "text", "en": "Costs:", "hash": "7f994fe550f46d8f", "src": "db2@1.60.1.70009"}
-{"id": "RUNES", "field": "text", "en": "Runes", "hash": "af2edfe2bc590dbe", "src": "db2@1.60.1.70009"}
-{"id": "RUNIC_POWER", "field": "text", "en": "Runic Power", "hash": "28c47219663d4a0c", "src": "db2@1.60.1.70009"}
+{"id": "RACE", "field": "text", "en": "Race", "hash": "0b16751dcc6a2b45", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_ERROR_FALLBACK", "field": "text", "en": "That action is unavailable right now.", "hash": "d43e8d9251aaee2a", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_ERROR_NO_AURAS", "field": "text", "en": "You do not have any buffs or debuffs.", "hash": "ab342fefe10ec3f2", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_ANGRY", "field": "text", "en": "Angry", "hash": "83d3d6adf526aea4", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_BAGS", "field": "text", "en": "Bags", "hash": "08f19d87f5eb6a4e", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_BUFFS", "field": "text", "en": "View Buffs", "hash": "e7e5ec8713088c99", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_CALENDAR", "field": "text", "en": "Calendar", "hash": "d1fb8aded0d484b6", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_CHARACTER", "field": "text", "en": "Character", "hash": "d58d30af5f5bc7fe", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_CHAT", "field": "text", "en": "Chat", "hash": "0915bd509f1c7960", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_CHEER", "field": "text", "en": "Cheer", "hash": "a620e4ed5a99cf77", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_CHICKEN", "field": "text", "en": "Chicken", "hash": "b90389c14c88ae79", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_CLOCK", "field": "text", "en": "Clock", "hash": "a6acb8a6b7ec0556", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_COLLECTIONS", "field": "text", "en": "Collections", "hash": "2bcc5c8bc405575d", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_DANCE", "field": "text", "en": "Dance", "hash": "b6c0d63f7f66c4af", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_GAME_MENU", "field": "text", "en": "Game Menu", "hash": "4880ed18b0a44df1", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_GROUP_FINDER", "field": "text", "en": "Group Finder", "hash": "be7119ca58a84a6f", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_GUILD", "field": "text", "en": "Communities", "hash": "1c8f1ebc6459ec74", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_KNEEL", "field": "text", "en": "Kneel", "hash": "335c6916a25d8365", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_LEGACY", "field": "text", "en": "Legacy", "hash": "a61634768d53f7e2", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_LFD_CONTEXT_MENU", "field": "text", "en": "Open Context Menu", "hash": "306d8f36dca4e529", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_POINT", "field": "text", "en": "Point", "hash": "8b44570d9a3c22c0", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_PROFESSIONS", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_PVP", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_QUEST_MAPS", "field": "text", "en": "Quest & Maps", "hash": "caed83328cece3dc", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_SHOP", "field": "text", "en": "Shop", "hash": "0b3a9e26759d7833", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_SOCIAL", "field": "text", "en": "Social", "hash": "35b645ce6762a730", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_SPELLBOOK", "field": "text", "en": "Spellbook", "hash": "311c1907fb01d371", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_TALENTS", "field": "text", "en": "Talents", "hash": "0d31e779843effa2", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_TARGET_EMOTES", "field": "text", "en": "Emotes", "hash": "52fd3d260091348f", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_TOGGLE_SIT", "field": "text", "en": "Sit / Stand", "hash": "461d7e047696d4da", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_TRACKING", "field": "text", "en": "Minimap Settings", "hash": "d3522e77d950382e", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_TRAIN", "field": "text", "en": "Train", "hash": "d1dffe459e5b3f47", "src": "db2@1.60.1.70124"}
+{"id": "RADIAL_LABEL_WAVE", "field": "text", "en": "Wave", "hash": "0bc202dd8f744d26", "src": "db2@1.60.1.70124"}
+{"id": "RAF_ACTIVE_LINK_EXPIRE_DATE", "field": "text", "en": "This link will expire on %s", "hash": "18225afe1309f33f", "src": "db2@1.60.1.70124"}
+{"id": "RAF_ACTIVE_RECRUIT", "field": "text", "en": "Active subscription", "hash": "719d6c7d76ef5b8e", "src": "db2@1.60.1.70124"}
+{"id": "RAF_BENEFIT4", "field": "text", "en": "30 days of free game time", "hash": "d7024ce5e88a9b2b", "src": "db2@1.60.1.70124"}
+{"id": "RAF_CLAIM_MULTIPLE_REWARDS", "field": "text", "en": "Claim %d Rewards", "hash": "428b3fbc27f670f0", "src": "db2@1.60.1.70124"}
+{"id": "RAF_COPY_LINK", "field": "text", "en": "Copy Link", "hash": "18ab2f6c5a4640a5", "src": "db2@1.60.1.70124"}
+{"id": "RAF_EXPENDED_LINK_EXPIRE_DATE", "field": "text", "en": "You will be able to generate a new link on %s", "hash": "aef9ec683412f206", "src": "db2@1.60.1.70124"}
+{"id": "RAF_FIRST_MONTH", "field": "text", "en": "Recruit friends to get started!", "hash": "6c65ed7815ebf7ef", "src": "db2@1.60.1.70124"}
+{"id": "RAF_FIRST_REWARD", "field": "text", "en": "First Reward:", "hash": "1477396f8a27e07c", "src": "db2@1.60.1.70124"}
+{"id": "RAF_FULL_RECRUITS", "field": "text", "en": "%d/%d Recruited Friends. Maximum recruits reached.", "hash": "b7b3908826baae47", "src": "db2@1.60.1.70124"}
+{"id": "RAF_GENERATE_LINK", "field": "text", "en": "Generate Link", "hash": "572cd8733c50828b", "src": "db2@1.60.1.70124"}
+{"id": "RAF_INACTIVE_RECRUIT", "field": "text", "en": "Inactive subscription", "hash": "de455e546f0f9218", "src": "db2@1.60.1.70124"}
+{"id": "RAF_LATEST_REWARDS_HELP_TEXT", "field": "text", "en": "Current Active Recruits: |cnHIGHLIGHT_FONT_COLOR:%d|r|nUnclaimed Rewards: |cnHIGHLIGHT_FONT_COLOR:%d|r", "hash": "37970b16e8be22be", "src": "db2@1.60.1.70124"}
+{"id": "RAF_LEGACY_REWARDS_DESC", "field": "text", "en": "Legacy recruits can no longer be added but existing recruits will continue to provide RAF rewards.", "hash": "2a22a06ab765e842", "src": "db2@1.60.1.70124"}
+{"id": "RAF_LEGACY_REWARDS_HELP_TEXT", "field": "text", "en": "Current Active Legacy Recruits: |cnHIGHLIGHT_FONT_COLOR:%d|r|nUnclaimed Rewards: |cnHIGHLIGHT_FONT_COLOR:%d|r", "hash": "07b1679ee009c004", "src": "db2@1.60.1.70124"}
+{"id": "RAF_LINK_REMAINING_USES", "field": "text", "en": "%d/%d friends have used this link.", "hash": "889b096ee95eaab5", "src": "db2@1.60.1.70124"}
+{"id": "RAF_MONTHS", "field": "text", "en": "%d |4Month:Months;", "hash": "ac0a6ceb5ba4565d", "src": "db2@1.60.1.70124"}
+{"id": "RAF_MONTHS_EARNED", "field": "text", "en": "%d |4Month:Months; Subscribed by Friends", "hash": "5ad8ba1ae8132481", "src": "db2@1.60.1.70124"}
+{"id": "RAF_NEXT_REWARD", "field": "text", "en": "Next Reward:", "hash": "d853b30f11fd603d", "src": "db2@1.60.1.70124"}
+{"id": "RAF_NEXT_REWARD_AFTER", "field": "text", "en": "Next Reward (%d of %d |4month:months;):", "hash": "bbfff1d3c06cdfa3", "src": "db2@1.60.1.70124"}
+{"id": "RAF_NEXT_REWARD_HELP_TEXT", "field": "text", "en": "Recruit friends to begin earning rewards when your friends start a subscription.", "hash": "861d3b0082d727dc", "src": "db2@1.60.1.70124"}
+{"id": "RAF_NO_ACTIVE_LINK", "field": "text", "en": "Click Generate Link to create a link good for %d days.", "hash": "23108a27e4ce85ee", "src": "db2@1.60.1.70124"}
+{"id": "RAF_NO_RECRUITS_DESC", "field": "text", "en": "|cffffd200Recruit friends to begin earning rewards for each month they subscribe.|n|nPlay together to unlock additional rewards!|r|n|nFor more info:|n|HurlIndex:49|h|cff82c5ffVisit our Recruit A Friend Website|r|h", "hash": "77705a967caf0116", "src": "db2@1.60.1.70124"}
+{"id": "RAF_PENDING_RECRUIT", "field": "text", "en": "Pending Recruit", "hash": "9210138b86f373d4", "src": "db2@1.60.1.70124"}
+{"id": "RAF_RECRUITED_FRIENDS", "field": "text", "en": "Recruited Friends", "hash": "17dd51954a4495bd", "src": "db2@1.60.1.70124"}
+{"id": "RAF_RECRUITER_FRIEND", "field": "text", "en": "|cffffd200Recruiter:|r %s", "hash": "d0974587469557c9", "src": "db2@1.60.1.70124"}
+{"id": "RAF_RECRUITMENT", "field": "text", "en": "Recruitment", "hash": "675c60cbf9db1c1c", "src": "db2@1.60.1.70124"}
+{"id": "RAF_RECRUITMENT_DESC", "field": "text", "en": "Recruit friends to play World of Warcraft with you!|nYou can invite %d friends every %d days.", "hash": "e6381feb01e88305", "src": "db2@1.60.1.70124"}
+{"id": "RAF_RECRUITS_FACTION_AND_REALM", "field": "text", "en": "Your friend will be encouraged to join you by making a %s character on the Realm %s.", "hash": "f823818511be3214", "src": "db2@1.60.1.70124"}
+{"id": "RAF_RECRUIT_ACTIVITY_DESCRIPTION", "field": "text", "en": "Use Party Sync and complete the following tasks with %s to receive a reward.", "hash": "7f3c4e092619bdba", "src": "db2@1.60.1.70124"}
+{"id": "RAF_RECRUIT_FRIEND", "field": "text", "en": "|cffffd200Recruit:|r %s", "hash": "6074b421bc322433", "src": "db2@1.60.1.70124"}
+{"id": "RAF_RECRUIT_TOOLTIP_DESC", "field": "text", "en": "Each recruited friend can provide up to %d subscription months toward your rewards.", "hash": "39dbb13d4c9fd73e", "src": "db2@1.60.1.70124"}
+{"id": "RAF_RECRUIT_TOOLTIP_MONTH_COUNT", "field": "text", "en": "- %d/%d subscription months provided", "hash": "f491a977fbd0f79a", "src": "db2@1.60.1.70124"}
+{"id": "RAF_REMOVE_RECRUIT_CONFIRM", "field": "text", "en": "Are you sure you want to remove|n|cffffd200%s|r|n from your Recruited Friends?|n|nType \"REMOVE\" into the field to confirm.", "hash": "7cb5745b63d5f128", "src": "db2@1.60.1.70124"}
+{"id": "RAF_REPEATABLE_MONTHS", "field": "text", "en": "Every %d months after", "hash": "0e7acd20f9213cc3", "src": "db2@1.60.1.70124"}
+{"id": "RAF_REWARDS", "field": "text", "en": "Recruit A Friend Rewards", "hash": "393200e0160cec9b", "src": "db2@1.60.1.70124"}
+{"id": "RAF_REWARDS_DESC", "field": "text", "en": "A single monthly reward is earned every 30 days per recruit with active gametime.", "hash": "f4f5aa27afaf6b16", "src": "db2@1.60.1.70124"}
+{"id": "RAF_REWARD_TITLE", "field": "text", "en": "New Title: %s", "hash": "bf63e07952a4a621", "src": "db2@1.60.1.70124"}
+{"id": "RAF_REWARD_TUTORIAL_TEXT", "field": "text", "en": "You have unlocked a new Recruit A Friend reward.", "hash": "8dcc846a9cfcf92d", "src": "db2@1.60.1.70124"}
+{"id": "RAF_SPLASH_SCREEN_DESCRIPTION", "field": "text", "en": "Bring your friends to Azeroth,|nadventure together and earn epic rewards!", "hash": "fcf84bb1de28755d", "src": "db2@1.60.1.70124"}
+{"id": "RAF_SPLASH_SCREEN_TITLE", "field": "text", "en": "Share Azeroth with Everyone!", "hash": "d24f449758da7008", "src": "db2@1.60.1.70124"}
+{"id": "RAF_SUMMON_LINKED", "field": "text", "en": "Summon Linked Friend", "hash": "63af347a82951065", "src": "db2@1.60.1.70124"}
+{"id": "RAF_TRIAL_RECRUIT", "field": "text", "en": "Trial Account", "hash": "dd4713234c9f7d4c", "src": "db2@1.60.1.70124"}
+{"id": "RAF_VIEW_ALL_REWARDS", "field": "text", "en": "View All Rewards", "hash": "ff73f7ae62dd6f48", "src": "db2@1.60.1.70124"}
+{"id": "RAF_YOU_HAVE_EARNED", "field": "text", "en": "You've Earned:", "hash": "5b07f31f3a7b29a6", "src": "db2@1.60.1.70124"}
+{"id": "RAGE", "field": "text", "en": "Rage", "hash": "0b167729cc6aaac9", "src": "db2@1.60.1.70124"}
+{"id": "RAGE_COST", "field": "text", "en": "%s Rage", "hash": "570f12e0a9558e99", "src": "db2@1.60.1.70124"}
+{"id": "RAGE_COST_PER_TIME", "field": "text", "en": "%s Rage, plus %s per sec", "hash": "873c4bf01de306da", "src": "db2@1.60.1.70124"}
+{"id": "RAGE_COST_PER_TIME_NO_BASE", "field": "text", "en": "%s Rage per sec", "hash": "876d8ddf9bedf520", "src": "db2@1.60.1.70124"}
+{"id": "RAID", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70124"}
+{"id": "RAID_ASSISTANT", "field": "text", "en": "Raid Assistant", "hash": "9b48ce97a8fad78a", "src": "db2@1.60.1.70124"}
+{"id": "RAID_BOSS_EMOTE", "field": "text", "en": "Boss Emote", "hash": "6730ebecbd2147a4", "src": "db2@1.60.1.70124"}
+{"id": "RAID_BOSS_WHISPER", "field": "text", "en": "Boss Whisper", "hash": "d0013136a2495616", "src": "db2@1.60.1.70124"}
+{"id": "RAID_CHAT_BUBBLES_TEXT", "field": "text", "en": "Raid Chat Bubbles", "hash": "c378f9e842145941", "src": "db2@1.60.1.70124"}
+{"id": "RAID_DESCRIPTION", "field": "text", "en": "Raids are groups of more than 5 people and are typically used to defeat unique challenges at high levels.\n\n|cffffffff- Raid members cannot earn credit toward most non-raid quests. Specifically, they will not receive non-raid quest credit for killing creatures or collecting items.\n\n- Raids grant substantially less experience for defeating monsters than normal groups.\n\n- Raids allow you to overcome challenges that might otherwise be nearly impossible.|r", "hash": "8511508f965dd12e", "src": "db2@1.60.1.70124"}
+{"id": "RAID_DIFFICULTY", "field": "text", "en": "Raid Difficulty", "hash": "ce46f457af7349c5", "src": "db2@1.60.1.70124"}
+{"id": "RAID_DIFFICULTY_10PLAYER", "field": "text", "en": "10 Player", "hash": "fd104bdf4b83966c", "src": "db2@1.60.1.70124"}
+{"id": "RAID_DIFFICULTY_20PLAYER", "field": "text", "en": "20 Player", "hash": "1c2634d2348a3786", "src": "db2@1.60.1.70124"}
+{"id": "RAID_DIFFICULTY_40PLAYER", "field": "text", "en": "40 Player", "hash": "5a5206ae069779ba", "src": "db2@1.60.1.70124"}
+{"id": "RAID_FRAMES_LABEL", "field": "text", "en": "Raid Frames", "hash": "71b133c1c3292374", "src": "db2@1.60.1.70124"}
+{"id": "RAID_INFO", "field": "text", "en": "Raid Info", "hash": "cf9bf92bfa22cde1", "src": "db2@1.60.1.70124"}
+{"id": "RAID_INFORMATION", "field": "text", "en": "Raid Information", "hash": "3c76535730049ef6", "src": "db2@1.60.1.70124"}
+{"id": "RAID_INFO_WORLD_BOSS", "field": "text", "en": "World Boss", "hash": "4b3454ae73d56613", "src": "db2@1.60.1.70124"}
+{"id": "RAID_INSTANCE_EXPIRES_EXPIRED", "field": "text", "en": "Expired", "hash": "565d4c7b94f3889b", "src": "db2@1.60.1.70124"}
+{"id": "RAID_LEADER", "field": "text", "en": "Raid Leader", "hash": "72965c0d36c044f7", "src": "db2@1.60.1.70124"}
+{"id": "RAID_MANAGER_RESTRICT_PINGS_TO", "field": "text", "en": "Restrict Pings To:", "hash": "f33466d1952c9679", "src": "db2@1.60.1.70124"}
+{"id": "RAID_MANAGER_RESTRICT_PINGS_TO_ASSIST", "field": "text", "en": "Assist", "hash": "cec4b0c0fde02e30", "src": "db2@1.60.1.70124"}
+{"id": "RAID_MANAGER_RESTRICT_PINGS_TO_LEAD", "field": "text", "en": "Lead", "hash": "0a49ae988bdb4259", "src": "db2@1.60.1.70124"}
+{"id": "RAID_MANAGER_RESTRICT_PINGS_TO_TANKS_HEALERS", "field": "text", "en": "Tanks/Healers", "hash": "c668a859d518f80a", "src": "db2@1.60.1.70124"}
+{"id": "RAID_MESSAGE", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70124"}
+{"id": "RAID_SETTINGS", "field": "text", "en": "Raid and Battleground", "hash": "b88cb21ade5359a9", "src": "db2@1.60.1.70124"}
+{"id": "RAID_SETTINGS_ENABLED", "field": "text", "en": "Enable Raid and Battleground Settings", "hash": "a93b6838fae7623e", "src": "db2@1.60.1.70124"}
+{"id": "RAID_SETTINGS_ENABLED_TOOLTIP", "field": "text", "en": "Check this option to enable an alternate graphic setting for Raids and Battlegrounds.", "hash": "28e691f2ab56d87e", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGETING_OPTIONS", "field": "text", "en": "Raid Targeting Options", "hash": "87d16ebd738b7724", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGETING_OPTIONS_HOVER_MODE", "field": "text", "en": "Hover Mode", "hash": "5f9ffd1152550e98", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGET_1", "field": "text", "en": "Star", "hash": "0b3dbb6aa53ee6f3", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGET_2", "field": "text", "en": "Circle", "hash": "1620456146901de1", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGET_3", "field": "text", "en": "Diamond", "hash": "de24ee6d9246a820", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGET_4", "field": "text", "en": "Triangle", "hash": "87a02c5de770ff52", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGET_5", "field": "text", "en": "Moon", "hash": "0a6ea1c140f79a4b", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGET_6", "field": "text", "en": "Square", "hash": "5b3917baf6c6ce8f", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGET_7", "field": "text", "en": "Cross", "hash": "a77a9280085dbbac", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGET_8", "field": "text", "en": "Skull", "hash": "bf6766f230febe55", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGET_ICON", "field": "text", "en": "Target Marker Icon", "hash": "51b04c6573b4e670", "src": "db2@1.60.1.70124"}
+{"id": "RAID_TARGET_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
+{"id": "RAID_WARNING", "field": "text", "en": "Raid Warning", "hash": "a44eca5f322b49b7", "src": "db2@1.60.1.70124"}
+{"id": "RANDOMIZE_APPEARANCE", "field": "text", "en": "Randomize Appearance", "hash": "8a67f054c8ce5c2a", "src": "db2@1.60.1.70124"}
+{"id": "RANDOM_ROLL_RESULT", "field": "text", "en": "%s rolls %d (%d-%d)", "hash": "dfba36abecd81fca", "src": "db2@1.60.1.70124"}
+{"id": "RANGED", "field": "text", "en": "Ranged", "hash": "45ead356f08d78d0", "src": "db2@1.60.1.70124"}
+{"id": "RANGEDSLOT", "field": "text", "en": "Ranged", "hash": "45ead356f08d78d0", "src": "db2@1.60.1.70124"}
+{"id": "RANGED_ATTACK", "field": "text", "en": "Ranged Attack", "hash": "c66012ea8353f6b9", "src": "db2@1.60.1.70124"}
+{"id": "RANGED_ATTACK_POWER", "field": "text", "en": "Ranged Attack Power", "hash": "2839b759bde88dab", "src": "db2@1.60.1.70124"}
+{"id": "RANGED_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFRanged Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFAgility|r\n\n|cffBCBCBCEvery 14 Ranged Attack Power adds 1 damage per second|r", "hash": "8516ea2350ce81a0", "src": "db2@1.60.1.70124"}
+{"id": "RANGED_COMBATLOG_TOOLTIP", "field": "text", "en": "Shows attacks from bows, guns, thrown weapons, and wands.", "hash": "1e72387e76510b7d", "src": "db2@1.60.1.70124"}
+{"id": "RANGE_DAMAGE_COMBATLOG_TOOLTIP", "field": "text", "en": "Show ranged shots that deal full or partial damage.", "hash": "45f0bc5145f3017d", "src": "db2@1.60.1.70124"}
+{"id": "RANGE_MISSED_COMBATLOG_TOOLTIP", "field": "text", "en": "Show ranged shots that fail to deal damage.", "hash": "2ff7a0558deecf53", "src": "db2@1.60.1.70124"}
+{"id": "RANK", "field": "text", "en": "Rank", "hash": "0b167ac4cc6b89f6", "src": "db2@1.60.1.70124"}
+{"id": "RANK_COLON", "field": "text", "en": "Rank:", "hash": "ac80d29fb03abc24", "src": "db2@1.60.1.70124"}
+{"id": "RARITY", "field": "text", "en": "Rarity", "hash": "467497962e1faec5", "src": "db2@1.60.1.70124"}
+{"id": "RATED_BATTLEGROUND_IS_READY", "field": "text", "en": "Your Rated Battleground is ready!", "hash": "3b3f62bd33628ada", "src": "db2@1.60.1.70124"}
+{"id": "RATINGS_MENU", "field": "text", "en": "Rating", "hash": "46b92fa848eed77c", "src": "db2@1.60.1.70124"}
+{"id": "RATING_CHANGE_TOOLTIP", "field": "text", "en": "Total rating change", "hash": "c4b838261268e313", "src": "db2@1.60.1.70124"}
+{"id": "RATING_CHANGE_TOOLTIP_TITLE", "field": "text", "en": "Rating Change", "hash": "2d27b498c630ea06", "src": "db2@1.60.1.70124"}
+{"id": "REACTIVATE_RAID_LOCK", "field": "text", "en": "Reactivate Raid Lock", "hash": "4781703e337e855b", "src": "db2@1.60.1.70124"}
+{"id": "READY", "field": "text", "en": "Ready", "hash": "ad069e40b23e3c8d", "src": "db2@1.60.1.70124"}
+{"id": "READY_CHECK", "field": "text", "en": "Ready Check", "hash": "5e4133d1643cd35c", "src": "db2@1.60.1.70124"}
+{"id": "READY_CHECK_MESSAGE", "field": "text", "en": "%s has initiated a ready check.", "hash": "3cfcfba52577e0ca", "src": "db2@1.60.1.70124"}
+{"id": "READY_CHECK_YOU_WERE_AFK", "field": "text", "en": "You were Away for a ready check", "hash": "702ef727232da046", "src": "db2@1.60.1.70124"}
+{"id": "REALID_BATTLETAG_FRIEND_LABEL", "field": "text", "en": "Enter email address\n(or BattleTag)", "hash": "f936eec71b4d6cf5", "src": "db2@1.60.1.70124"}
+{"id": "REALID_FRIEND_LABEL", "field": "text", "en": "Enter email address", "hash": "33e8aeb23b97e9e9", "src": "db2@1.60.1.70124"}
+{"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_PIN", "field": "text", "en": "Pin", "hash": "001528f93da24018", "src": "db2@1.60.1.70124"}
+{"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_SET_NOTE", "field": "text", "en": "Set Note", "hash": "3887f30a7386f36f", "src": "db2@1.60.1.70124"}
+{"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_UNPIN", "field": "text", "en": "Unpin", "hash": "e2e86bb18331e6f3", "src": "db2@1.60.1.70124"}
+{"id": "RECENT_ALLIES_PARTY_BUTTON_OFFLINE_TOOLTIP", "field": "text", "en": "Player Offline", "hash": "3cc01cd4515f8da8", "src": "db2@1.60.1.70124"}
+{"id": "RECENT_ALLIES_PARTY_BUTTON_TOOLTIP", "field": "text", "en": "Invite to Group", "hash": "36db2de9f846c335", "src": "db2@1.60.1.70124"}
+{"id": "RECENT_ALLY_INTERACTION_TIME_FORMAT", "field": "text", "en": "%s ago", "hash": "412b23931a59d904", "src": "db2@1.60.1.70124"}
+{"id": "RECENT_ALLY_PIN_EXPIRING_TOOLTIP", "field": "text", "en": "Pinned Ally (Expires in %s)", "hash": "217af55dd0ffea36", "src": "db2@1.60.1.70124"}
+{"id": "RECENT_ALLY_PIN_TOOLTIP", "field": "text", "en": "Pinned Ally", "hash": "dbc4ddc9ca20b0d2", "src": "db2@1.60.1.70124"}
+{"id": "RECENT_ALLY_RECENT_ACTIVITIES_LABEL", "field": "text", "en": "Recent Activities", "hash": "d57fa14f5cec22ad", "src": "db2@1.60.1.70124"}
+{"id": "RECENT_ALLY_TOOLTIP_LEVEL_RACE_FORMAT", "field": "text", "en": "Level %d  %s  %s", "hash": "48db18c2c09d7d4d", "src": "db2@1.60.1.70124"}
+{"id": "RECOMMENDED", "field": "text", "en": "Recommended", "hash": "4257c786acc32283", "src": "db2@1.60.1.70124"}
+{"id": "RECOVER_CORPSE", "field": "text", "en": "Resurrect now?", "hash": "f82441dbb767f253", "src": "db2@1.60.1.70124"}
+{"id": "RECOVER_CORPSE_INSTANCE", "field": "text", "en": "You must enter the instance to recover your corpse", "hash": "01e3a754ee62304d", "src": "db2@1.60.1.70124"}
+{"id": "RECRUIT_A_FRIEND", "field": "text", "en": "Recruit A Friend", "hash": "0c392ed6e77a9921", "src": "db2@1.60.1.70124"}
+{"id": "RED_GEM", "field": "text", "en": "Red", "hash": "0015acf54592480c", "src": "db2@1.60.1.70124"}
+{"id": "REFLECT", "field": "text", "en": "Reflect", "hash": "297925a19fd4ad3f", "src": "db2@1.60.1.70124"}
+{"id": "REFRESH", "field": "text", "en": "Refresh", "hash": "2a46ff67f0466370", "src": "db2@1.60.1.70124"}
+{"id": "REGIONAL_RESTRICT_CHAT_DIALOG_DISABLE", "field": "text", "en": "Leave Chat Off", "hash": "bfd0145721d45411", "src": "db2@1.60.1.70124"}
+{"id": "REGIONAL_RESTRICT_CHAT_DIALOG_ENABLE", "field": "text", "en": "Turn Chat On", "hash": "dabce90f61d75295", "src": "db2@1.60.1.70124"}
+{"id": "REGIONAL_RESTRICT_CHAT_DIALOG_MESSAGE", "field": "text", "en": "There are regional regulations that affect this account. Chat features have been disabled by default. You can re-enable those features now, or enable them later in Options -> Social.\n\nIf you decide to enable them, please be mindful of our community interaction policies and report any abusive behavior, chat, or other conduct intended to undermine or disrupt the game experience using our in-game reporting options; we'll review chat records and take appropriate action.", "hash": "b8915e2a300d4d7e", "src": "db2@1.60.1.70124"}
+{"id": "REGIONAL_RESTRICT_CHAT_DIALOG_TITLE", "field": "text", "en": "Chat has been turned off", "hash": "0c43d3c4dcbd83b6", "src": "db2@1.60.1.70124"}
+{"id": "RELEASE_PET", "field": "text", "en": "Are you sure you want to permanently release your pet? You will never be able to summon this pet again.", "hash": "897d134901527274", "src": "db2@1.60.1.70124"}
+{"id": "RELEASE_PET_BUTTON_LABEL", "field": "text", "en": "Release", "hash": "91da4847eb9cecd0", "src": "db2@1.60.1.70124"}
+{"id": "RELICSLOT", "field": "text", "en": "Relic", "hash": "ad09821cdde9c527", "src": "db2@1.60.1.70124"}
+{"id": "RELOADUI", "field": "text", "en": "Reload UI", "hash": "12ae60fa9f4f4b81", "src": "db2@1.60.1.70124"}
+{"id": "REMIX_END_OF_EVENT_NOTICE", "field": "text", "en": "The Timerunning event has ended.  You have been transported back to your home timeline.\r\n\r\nItems from the event have been removed.\r\n", "hash": "6d28278b4b00ee0e", "src": "db2@1.60.1.70124"}
+{"id": "REMOVE", "field": "text", "en": "Remove", "hash": "8c017ffbfe93bea6", "src": "db2@1.60.1.70124"}
+{"id": "REMOVE_AUTHENTICATOR_FROM_RANK", "field": "text", "en": "Are you sure you want to remove the Authenticator requirement from the %s rank? You won't be able to reapply it as long as there are guild members with this rank.", "hash": "9cde0ea6aa750307", "src": "db2@1.60.1.70124"}
+{"id": "REMOVE_FAVORITE_STATUS", "field": "text", "en": "Remove from Favorites", "hash": "ef4e4c7c17b8e3ef", "src": "db2@1.60.1.70124"}
+{"id": "REMOVE_FRIEND", "field": "text", "en": "Remove Friend", "hash": "e54f8be338d810c1", "src": "db2@1.60.1.70124"}
+{"id": "REMOVE_MODERATOR", "field": "text", "en": "Remove Moderator", "hash": "8ab27db7ca8f737d", "src": "db2@1.60.1.70124"}
+{"id": "RENAME_CHAT_WINDOW", "field": "text", "en": "Rename Window", "hash": "04c81f86912ef09e", "src": "db2@1.60.1.70124"}
+{"id": "RENAME_GUILD", "field": "text", "en": "Rename guild", "hash": "5136c73a269128a1", "src": "db2@1.60.1.70124"}
+{"id": "RENAME_GUILD_LABEL", "field": "text", "en": "Enter new guild name:", "hash": "f253234bd05c9f21", "src": "db2@1.60.1.70124"}
+{"id": "RENDER_SCALE", "field": "text", "en": "Render Scale", "hash": "be81b53c139f3356", "src": "db2@1.60.1.70124"}
+{"id": "RENOWN_LEVEL_LABEL", "field": "text", "en": "Renown %d", "hash": "ff986135f8acf86d", "src": "db2@1.60.1.70124"}
+{"id": "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC", "field": "text", "en": "These rewards will be granted to you to recognize your unwavering commitment to the covenant.", "hash": "cdb9c2c45b13d969", "src": "db2@1.60.1.70124"}
+{"id": "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC2", "field": "text", "en": "Rewards:", "hash": "2d6ea58b43389134", "src": "db2@1.60.1.70124"}
+{"id": "RENOWN_REWARD_CAPSTONE_TOOLTIP_TITLE", "field": "text", "en": "Major Milestone", "hash": "07ce51bf1ee47e37", "src": "db2@1.60.1.70124"}
+{"id": "RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE", "field": "text", "en": "Renown %d Rewards", "hash": "f7e6b5efd0a508c3", "src": "db2@1.60.1.70124"}
+{"id": "REPAIR_ALL_ITEMS", "field": "text", "en": "Repair All Items", "hash": "1f5bcd63d655dea3", "src": "db2@1.60.1.70124"}
+{"id": "REPAIR_AN_ITEM", "field": "text", "en": "Repair an Item", "hash": "b37b118b43e6b3f3", "src": "db2@1.60.1.70124"}
+{"id": "REPAIR_ARMOR_TOOLTIP_BREAKING", "field": "text", "en": "The durability of your armor is getting low. Visit a vendor in town to repair the item before it breaks.", "hash": "8dee460c61352f3f", "src": "db2@1.60.1.70124"}
+{"id": "REPAIR_ARMOR_TOOLTIP_BROKEN", "field": "text", "en": "One of your items has broken. You'll gain no benefit from it until it's repaired. Visit a vendor in town to repair it.", "hash": "d4bc86204fdcda34", "src": "db2@1.60.1.70124"}
+{"id": "REPAIR_ARMOR_TOOLTIP_TITLE", "field": "text", "en": "Repair Armor", "hash": "d5814a0733186503", "src": "db2@1.60.1.70124"}
+{"id": "REPLACE_ENCHANT", "field": "text", "en": "Do you want to replace \"%s\" with \"%s\"?", "hash": "ed132ee66e542d84", "src": "db2@1.60.1.70124"}
+{"id": "REPLACE_MY_PLAYER_PORTRAIT", "field": "text", "en": "Replace My Frame Portrait", "hash": "b6acdb95266af38f", "src": "db2@1.60.1.70124"}
+{"id": "REPLACE_OTHER_PLAYER_PORTRAITS", "field": "text", "en": "Replace Player Frame Portraits", "hash": "a0ad26831093669c", "src": "db2@1.60.1.70124"}
+{"id": "REPLY_MESSAGE", "field": "text", "en": "Reply", "hash": "ad0a8fdfedcb33e4", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_COMMENT_INSTRUCTIONS", "field": "text", "en": "More details about your report (optional)", "hash": "6b6fd71a9f2dc35d", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MAJOR_CATEGORY_CHEATING", "field": "text", "en": "Cheating", "hash": "9cd8ab75d5cf9dd0", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MAJOR_CATEGORY_CHINA_HARMFUL_MINORS", "field": "text", "en": "Harmful to Minors", "hash": "54fa5822d43e9145", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MAJOR_CATEGORY_GAMEPLAY_SABOTAGE", "field": "text", "en": "Gameplay Sabotage", "hash": "3290a07491625e2b", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MAJOR_CATEGORY_INAPPROPRIATE_COMMUNICATION", "field": "text", "en": "Inappropriate Communication", "hash": "7850aca03fad67a1", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MAJOR_CATEGORY_INAPPROPRIATE_NAME", "field": "text", "en": "Inappropriate Name", "hash": "2efc8ad0c86e6d33", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MAKE_SELECTION", "field": "text", "en": "Make a Selection", "hash": "486095957b7a6f57", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_ADVERTISEMENT", "field": "text", "en": "Advertisement", "hash": "e6f871ebdee71245", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_AFK", "field": "text", "en": "AFK/Non-Participation", "hash": "3686d7f87b8f129c", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_BLOCKING_PROG", "field": "text", "en": "Blocking Team Progress", "hash": "bf1e628785c0a9ca", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_BOOSTING", "field": "text", "en": "Boosting/Deranking", "hash": "52273478a3eba224", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_BOTTING", "field": "text", "en": "Botting", "hash": "a84c639821c105ec", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_BTAG", "field": "text", "en": "Battle Tag", "hash": "b2c72ecfe87c9612", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_CHARACTER_NAME", "field": "text", "en": "Character Name", "hash": "ae4ec204487a02a4", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_CSEA", "field": "text", "en": "Child Abuse", "hash": "6c92e8a2e73fa469", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_CUSTOM_GAME_NAME", "field": "text", "en": "Custom Game Name", "hash": "6d907b661c958ca8", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_DESCRIPTION", "field": "text", "en": "Description", "hash": "6173958c6c516f23", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_DISRUPTION", "field": "text", "en": "Disruption", "hash": "3f106df7742c5dc6", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_FEEDING", "field": "text", "en": "Intentionally Dying", "hash": "95d0cfc58869289f", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_GROUP_NAME", "field": "text", "en": "Group Name", "hash": "e4d23038475f97cf", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_GUILD_NAME", "field": "text", "en": "Guild Name", "hash": "50ef05876d3e2026", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_HACKING", "field": "text", "en": "Hacking", "hash": "f7a29bf9e7872c8e", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_HARMFUL_INFO_FOR_MINORS", "field": "text", "en": "Harmful info for Minors", "hash": "de446078f351dac6", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_HARMFUL_TO_MINORS", "field": "text", "en": "Harmful To Minors", "hash": "723d3a4eb36a6e38", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_INAPPROPRIATE", "field": "text", "en": "Inappropriate", "hash": "6782e104fb2f5b10", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_NAME", "field": "text", "en": "Name", "hash": "0a8d43cf96cb99f1", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_SPAM", "field": "text", "en": "Spam", "hash": "0b3caf41955dd7ea", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_TEXT_CHAT", "field": "text", "en": "Text-Chat", "hash": "1dade643a7e81164", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_TVEC", "field": "text", "en": "Terrorist/Violent Content", "hash": "211566bfadd6c24c", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_MINOR_CATEGORY_VOICE_CHAT", "field": "text", "en": "Voice-Chat", "hash": "b58f3d36c9916401", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_REPORT", "field": "text", "en": "Report", "hash": "8c6866cfa6cb1b50", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_REPORT_DETAILS", "field": "text", "en": "Provide Details (Select all that apply)", "hash": "de2811565502a31f", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_REPORT_PLAYER", "field": "text", "en": "Report %s", "hash": "120708fd99b55daa", "src": "db2@1.60.1.70124"}
+{"id": "REPORTING_REPORT_REASON", "field": "text", "en": "Select a Reason", "hash": "335fc4da41f2ebc6", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_BATTLEPET_NAME_CONFIRMATION", "field": "text", "en": "Are you sure you want to report %s for inappropriate battle pet name?", "hash": "2d38eebaf1f0b90b", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_CALENDAR", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_CHAT", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_CHEATING_EDITBOX_INFO", "field": "text", "en": "Please enter specific details here.", "hash": "31ff84b5609728d0", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_CHEATING_TEXT1", "field": "text", "en": "Below, please |cffffd200provide a clear and specific description|r of the cheating behavior you observed from this player. Include as much detail as possible about the |cffffd200time frame|r, the |cffffd200location|r, and the |cffffd200actions the character was performing|r.", "hash": "4c15603ca63399ce", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_CHEATING_TITLE", "field": "text", "en": "Report Player for Cheating", "hash": "55569def062a84a1", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_CLUB_MEMBER", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_GROUP_FINDER_ADVERTISEMENT", "field": "text", "en": "Report Advertisement", "hash": "8d729b86d490bde3", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_GROUP_MEMBER", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_IN_WORLD_PLAYER", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_PET_NAME_CONFIRMATION", "field": "text", "en": "Are you sure you want to report %s for inappropriate pet name?", "hash": "c21c9f40d78e8894", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_PLAYER", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_RESULT_REQUIRES_CHAT", "field": "text", "en": "Report failed. Report type only valid on chat lines.", "hash": "8334ac69b068ee8b", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_RESULT_REQUIRES_CHAT_OR_VOICE", "field": "text", "en": "Report failed. Report type only valid on chat lines or when in voice chat.", "hash": "256ec2873da63d76", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_RESULT_TOO_MANY_REPORTS", "field": "text", "en": "Report failed. Too many report attempts. Please try again in a few minutes.", "hash": "aa4fc4e850086669", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_SPAM", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70124"}
+{"id": "REPORT_SPAM_CONFIRMATION", "field": "text", "en": "Are you sure you want to report %s for spamming?", "hash": "c00a78e4354691c8", "src": "db2@1.60.1.70124"}
+{"id": "REPUTATION", "field": "text", "en": "Reputation", "hash": "2aa11d789c011de5", "src": "db2@1.60.1.70124"}
+{"id": "REPUTATION_AT_WAR_DESCRIPTION", "field": "text", "en": "This determines how you will interact with members of this faction. If you have at war checked then your default behavior will be to attack them. If you do not have it checked you will not be able to attack them. ", "hash": "7024aa557ffa9cb5", "src": "db2@1.60.1.70124"}
+{"id": "REPUTATION_DETAIL_SELECT_PROMPT", "field": "text", "en": "Select a faction to view its details.", "hash": "fcd13f85eabc00a3", "src": "db2@1.60.1.70124"}
+{"id": "REPUTATION_EXALTED_PLUS_HELP", "field": "text", "en": "Continue earning reputation with Exalted factions to receive rewards.", "hash": "0bdce19b7383f8f9", "src": "db2@1.60.1.70124"}
+{"id": "REPUTATION_MOVE_TO_INACTIVE", "field": "text", "en": "Moves the reputation bar to the bottom of your list under the inactive heading. Useful for reputations you are no longer interested in tracking.", "hash": "afc55fac974b252a", "src": "db2@1.60.1.70124"}
+{"id": "REPUTATION_SHOW_AS_XP", "field": "text", "en": "Displays this reputation bar next to your experience bar.", "hash": "422aa684875f4839", "src": "db2@1.60.1.70124"}
+{"id": "REPUTATION_TOOLTIP_ACCOUNT_WIDE_LABEL", "field": "text", "en": "Account Reputation", "hash": "3d26e6cfe49958f0", "src": "db2@1.60.1.70124"}
+{"id": "REQUEST_INVITE", "field": "text", "en": "Request to Join Group", "hash": "c7ef66dc7e7431ec", "src": "db2@1.60.1.70124"}
+{"id": "REQUEST_ROLL", "field": "text", "en": "Request Roll", "hash": "423577b6e3c80b67", "src": "db2@1.60.1.70124"}
+{"id": "REQUEST_SIGNATURE", "field": "text", "en": "Request Signature", "hash": "a9dd0d16819839c5", "src": "db2@1.60.1.70124"}
+{"id": "REQUIRED_MONEY", "field": "text", "en": "Required Money:", "hash": "e2df7ab129aaf7cb", "src": "db2@1.60.1.70124"}
+{"id": "REQUIRES_GUILD_ACHIEVEMENT", "field": "text", "en": "Requires guild achievement", "hash": "26465241a0a59393", "src": "db2@1.60.1.70124"}
+{"id": "REQUIRES_GUILD_FACTION", "field": "text", "en": "Requires: |cffff0000%s|r", "hash": "5c2e634a67674a6a", "src": "db2@1.60.1.70124"}
+{"id": "REQUIRES_GUILD_FACTION_TOOLTIP", "field": "text", "en": "Requires %s with guild", "hash": "a30e02c7ffc76233", "src": "db2@1.60.1.70124"}
+{"id": "REQUIRES_LABEL", "field": "text", "en": "Requires:", "hash": "0da5b69df96b8551", "src": "db2@1.60.1.70124"}
+{"id": "REQUIRES_RELOAD", "field": "text", "en": "Requires Reload", "hash": "1c507601fa396924", "src": "db2@1.60.1.70124"}
+{"id": "REQ_LEVEL_ABBR", "field": "text", "en": "Lvl", "hash": "0014237a2dc2cf7f", "src": "db2@1.60.1.70124"}
+{"id": "RESAMPLE_QUALITY", "field": "text", "en": "Resample Quality", "hash": "ae86907ae1c9e78e", "src": "db2@1.60.1.70124"}
+{"id": "RESAMPLE_QUALITY_BICUBIC", "field": "text", "en": "Bicubic", "hash": "98e9f83bdc920cc8", "src": "db2@1.60.1.70124"}
+{"id": "RESAMPLE_QUALITY_BILINEAR", "field": "text", "en": "Bilinear", "hash": "4656bb1287c269b2", "src": "db2@1.60.1.70124"}
+{"id": "RESAMPLE_QUALITY_POINT", "field": "text", "en": "Point", "hash": "8b44570d9a3c22c0", "src": "db2@1.60.1.70124"}
+{"id": "RESAMPLE_SHARPNESS", "field": "text", "en": "Resample Sharpness", "hash": "e71b03c1857c1ef8", "src": "db2@1.60.1.70124"}
+{"id": "RESET", "field": "text", "en": "Reset", "hash": "ad0b5560f9b31ffb", "src": "db2@1.60.1.70124"}
+{"id": "RESET_CAMERA", "field": "text", "en": "Reset Camera", "hash": "df3e607a6dd3b847", "src": "db2@1.60.1.70124"}
+{"id": "RESET_CHAT_POSITION", "field": "text", "en": "Reset Chat Position", "hash": "63d1205ab2d7d678", "src": "db2@1.60.1.70124"}
+{"id": "RESET_CHAT_WINDOW", "field": "text", "en": "This will reset your chat windows to default settings.\nYou will lose any custom settings.", "hash": "9064aca0bb410b03", "src": "db2@1.60.1.70124"}
+{"id": "RESET_CHAT_WINDOW_POSITIONS", "field": "text", "en": "Reset Chat Positions", "hash": "14038f8052ad8280", "src": "db2@1.60.1.70124"}
+{"id": "RESET_INSTANCES", "field": "text", "en": "Reset all instances", "hash": "5b03b930a3e08a0b", "src": "db2@1.60.1.70124"}
+{"id": "RESET_TO_DEFAULT", "field": "text", "en": "Reset To Default", "hash": "0ad88897414ae2bd", "src": "db2@1.60.1.70124"}
+{"id": "RESET_TUTORIALS", "field": "text", "en": "Reset Tutorials", "hash": "e91f3fa0bd312146", "src": "db2@1.60.1.70124"}
+{"id": "RESIST", "field": "text", "en": "Resist", "hash": "8ccdbded373180ca", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE0_NAME", "field": "text", "en": "Armor", "hash": "845e9dbf4297b5af", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE1_NAME", "field": "text", "en": "Holy Resistance", "hash": "cc7d6787a440d892", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE2_NAME", "field": "text", "en": "Fire Resistance", "hash": "b61e89e5e9c15047", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE3_NAME", "field": "text", "en": "Nature Resistance", "hash": "1cfc8a7066590e09", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE4_NAME", "field": "text", "en": "Frost Resistance", "hash": "fa580288c5627849", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE5_NAME", "field": "text", "en": "Shadow Resistance", "hash": "5a9cbecf3c70058d", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE6_NAME", "field": "text", "en": "Arcane Resistance", "hash": "3ce7bd3182cba324", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_EXCELLENT", "field": "text", "en": "Excellent", "hash": "f0c66433605925df", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_FAIR", "field": "text", "en": "Fair", "hash": "097ad4f82b8b7a3e", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_GOOD", "field": "text", "en": "Good", "hash": "09a0d015f087e203", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_POOR", "field": "text", "en": "Poor", "hash": "0ad58a96e92f765d", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_TOOLTIP_SUBTEXT", "field": "text", "en": "Improves resistance to %s-based attacks, spells, and abilities\n\nAverage resistance versus a level %d enemy: |cffffffff%s%%|r", "hash": "8995636e8f37e7ef", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_TYPE2", "field": "text", "en": "fire", "hash": "0dc6a52ef84d3823", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_TYPE3", "field": "text", "en": "nature", "hash": "c9349b9963a11df3", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_TYPE4", "field": "text", "en": "frost", "hash": "0dda7fa3826d2929", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_TYPE5", "field": "text", "en": "shadow", "hash": "2b19da645186f093", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_TYPE6", "field": "text", "en": "arcane", "hash": "2b9979d959e8f2eb", "src": "db2@1.60.1.70124"}
+{"id": "RESISTANCE_VERYGOOD", "field": "text", "en": "Very Good", "hash": "2597d1e80fa11688", "src": "db2@1.60.1.70124"}
+{"id": "RESIST_TRAILER", "field": "text", "en": " (%d resisted)", "hash": "ec117b8cb20a3e82", "src": "db2@1.60.1.70124"}
+{"id": "RESTRICT_CALENDAR_INVITES", "field": "text", "en": "Restrict Calendar Invites", "hash": "fb14b9af9c4da6de", "src": "db2@1.60.1.70124"}
+{"id": "RESTRICT_CHAT_COMMUNITIES_TOOLTIP_INSTRUCTION", "field": "text", "en": "<Shift Click to View Chat Options>", "hash": "fbe699972610457c", "src": "db2@1.60.1.70124"}
+{"id": "RESTRICT_CHAT_CONFIG_DIALOG_CANCEL", "field": "text", "en": "Cancel", "hash": "892958da199b72dc", "src": "db2@1.60.1.70124"}
+{"id": "RESTRICT_CHAT_CONFIG_DIALOG_DISABLE", "field": "text", "en": "Disable Chat", "hash": "ff9fbb643644644a", "src": "db2@1.60.1.70124"}
+{"id": "RESTRICT_CHAT_CONFIG_DIALOG_MESSAGE", "field": "text", "en": "Are you sure you want to disable chat completely?\n\nYou won't be able to send or receive any messages.", "hash": "ad08ba1a72fbdc9f", "src": "db2@1.60.1.70124"}
+{"id": "RESTRICT_CHAT_CONFIG_DISABLE", "field": "text", "en": "Disable Chat", "hash": "ff9fbb643644644a", "src": "db2@1.60.1.70124"}
+{"id": "RESTRICT_CHAT_CONFIG_TOOLTIP", "field": "text", "en": "|cnRED_FONT_COLOR:You can't edit chat settings while chat is disabled.|r\r\n|cnGREEN_FONT_COLOR:<Shift Click to View Options>|r", "hash": "7422bee49c7cb005", "src": "db2@1.60.1.70124"}
+{"id": "RESTRICT_CHAT_MESSAGE_SUPPRESSED", "field": "text", "en": "You can't send or receive messages while chat is disabled.", "hash": "a413122db6530ac8", "src": "db2@1.60.1.70124"}
+{"id": "RESTRICT_CHAT_TOOLTIP_FORMAT", "field": "text", "en": "%s\n%s", "hash": "98ecaae23ca42057", "src": "db2@1.60.1.70124"}
+{"id": "RESURRECT", "field": "text", "en": "Resurrections", "hash": "36ab5a6ffc8b3476", "src": "db2@1.60.1.70124"}
+{"id": "RESURRECT_REQUEST", "field": "text", "en": "%s wants to resurrect you.  You will be afflicted with resurrection sickness.", "hash": "fc6362a3cb080861", "src": "db2@1.60.1.70124"}
+{"id": "RESURRECT_REQUEST_NO_SICKNESS", "field": "text", "en": "%s wants to resurrect you", "hash": "cc53d488bde41ade", "src": "db2@1.60.1.70124"}
+{"id": "RETRIEVING_DATA", "field": "text", "en": "Retrieving data", "hash": "485f180a9da6a05c", "src": "db2@1.60.1.70124"}
+{"id": "RETRIEVING_INVITE_LIST", "field": "text", "en": "Retrieving invite list", "hash": "78003d81efba8243", "src": "db2@1.60.1.70124"}
+{"id": "RETURN_TO_GAME", "field": "text", "en": "Return to Game", "hash": "b443b5b57723e9c5", "src": "db2@1.60.1.70124"}
+{"id": "RETURN_TO_GRAVEYARD", "field": "text", "en": "Return to Graveyard", "hash": "c044542de0474ea9", "src": "db2@1.60.1.70124"}
+{"id": "REWARDS", "field": "text", "en": "Rewards", "hash": "526c53558d8b389a", "src": "db2@1.60.1.70124"}
+{"id": "REWARD_ABILITY", "field": "text", "en": "You will learn the following:", "hash": "507d96bc2f0ec8d6", "src": "db2@1.60.1.70124"}
+{"id": "REWARD_AURA", "field": "text", "en": "The following will be cast on you:", "hash": "7bc7618de9022cf2", "src": "db2@1.60.1.70124"}
+{"id": "REWARD_CHOICES", "field": "text", "en": "You will be able to choose one of these rewards:", "hash": "a3187fa8b7114678", "src": "db2@1.60.1.70124"}
+{"id": "REWARD_CHOOSE", "field": "text", "en": "Choose your reward:", "hash": "24b0a5331fc3626f", "src": "db2@1.60.1.70124"}
+{"id": "REWARD_ITEMS", "field": "text", "en": "You will also receive:", "hash": "ef3767f54694405d", "src": "db2@1.60.1.70124"}
+{"id": "REWARD_ITEMS_ONLY", "field": "text", "en": "You will receive:", "hash": "cf2c2a703d848bec", "src": "db2@1.60.1.70124"}
+{"id": "REWARD_SPELL", "field": "text", "en": "You will learn the following:", "hash": "507d96bc2f0ec8d6", "src": "db2@1.60.1.70124"}
+{"id": "REWARD_TITLE", "field": "text", "en": "You shall be granted the title:", "hash": "17e14c64fad3ac6a", "src": "db2@1.60.1.70124"}
+{"id": "REWARD_TRADESKILL_SPELL", "field": "text", "en": "You will learn how to create:", "hash": "850c1377e43338f6", "src": "db2@1.60.1.70124"}
+{"id": "RID_FRIEND_REQUEST_INFO", "field": "text", "en": "This should be a person you know and trust in real life. You will be able to chat with them no matter which Blizzard game you are playing. If you accept their friend request your real name will be displayed to all of their friends.", "hash": "d0ff4bb5c724b3f6", "src": "db2@1.60.1.70124"}
+{"id": "RIGHTSHOULDERSLOT", "field": "text", "en": "Right Shoulder", "hash": "279b21157fbef384", "src": "db2@1.60.1.70124"}
+{"id": "RIGHT_BUTTON_STRING", "field": "text", "en": "Right Button", "hash": "0d664c5f143bd758", "src": "db2@1.60.1.70124"}
+{"id": "ROGUE_AGILITY_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFCritical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFAttack Power|r by %d\nIncreases |cFFFFFFFFRanged Attack Power|r by %d\nIncreases |cFFFFFFFFArmor|r by %d\nIncreases |cFFFFFFFFDodge|r chance by %.1f%%", "hash": "1b87af750624ca4d", "src": "db2@1.60.1.70124"}
+{"id": "ROGUE_INTELLECT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFWeapon Skill|r improvement rate", "hash": "f79f01e1188490d5", "src": "db2@1.60.1.70124"}
+{"id": "ROGUE_MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r and |cFFFFFFFFAgility|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "118d6e69333c5868", "src": "db2@1.60.1.70124"}
+{"id": "ROGUE_SPIRIT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFHealth Regeneration|r by %d per 5 sec while not in combat", "hash": "11847c42cb6d1b29", "src": "db2@1.60.1.70124"}
+{"id": "ROLE_CHANGED_INFORM", "field": "text", "en": "%s is now %s.", "hash": "e335117929b6fa08", "src": "db2@1.60.1.70124"}
+{"id": "ROLE_CHANGED_INFORM_WITH_SOURCE", "field": "text", "en": "%s is now %s. (Changed by %s.)", "hash": "73ab06668de0809b", "src": "db2@1.60.1.70124"}
+{"id": "ROLE_DESCRIPTION_DAMAGER", "field": "text", "en": "Indicates that you are willing to take on the role of dealing damage to enemies.", "hash": "1cebb11d8d4a58fe", "src": "db2@1.60.1.70124"}
+{"id": "ROLE_DESCRIPTION_HEALER", "field": "text", "en": "Indicates that you are willing to heal your allies when they take damage.", "hash": "c87c5de6a9196a07", "src": "db2@1.60.1.70124"}
+{"id": "ROLE_DESCRIPTION_TANK", "field": "text", "en": "Indicates that you are willing to protect allies from harm by ensuring that enemies are attacking you instead of them.", "hash": "1e0fc3961084166c", "src": "db2@1.60.1.70124"}
+{"id": "ROLE_POLL", "field": "text", "en": "Role Check", "hash": "a0ea1aeaf5cd42a6", "src": "db2@1.60.1.70124"}
+{"id": "ROLE_REMOVED_INFORM", "field": "text", "en": "%s no longer has a selected role.", "hash": "91140da4180d8ca9", "src": "db2@1.60.1.70124"}
+{"id": "ROLE_REMOVED_INFORM_WITH_SOURCE", "field": "text", "en": "%s no longer has a selected role. (Changed by %s.)", "hash": "a0da82517e246242", "src": "db2@1.60.1.70124"}
+{"id": "ROTATE_LEFT", "field": "text", "en": "Rotate Left", "hash": "31b565b5c793689b", "src": "db2@1.60.1.70124"}
+{"id": "ROTATE_RIGHT", "field": "text", "en": "Rotate Right", "hash": "d9aec5c7b550ee4d", "src": "db2@1.60.1.70124"}
+{"id": "RPE_ASSISTED_HIGHLIGHT_KEEP_ON", "field": "text", "en": "Keep On", "hash": "277fa63d8d7f291b", "src": "db2@1.60.1.70124"}
+{"id": "RPE_ASSISTED_HIGHLIGHT_TURN_CHOICE", "field": "text", "en": "Keep Assisted Highlight on?|n|n|cnNORMAL_FONT_COLOR:During the Catch Up Experience, Assisted Highlight was turned on. This enabled highlights that recommend the next ability to use from your action bars.|n|nWould you like to keep it on?|r You can change it in Options at any point.", "hash": "3590995388d567c1", "src": "db2@1.60.1.70124"}
+{"id": "RPE_ASSISTED_HIGHLIGHT_TURN_OFF", "field": "text", "en": "Turn Off", "hash": "57173e79a300be9e", "src": "db2@1.60.1.70124"}
+{"id": "RT_SHADOW_QUALITY", "field": "text", "en": "Ray Traced Shadows", "hash": "747bf370dd4b0d23", "src": "db2@1.60.1.70124"}
+{"id": "RUNEFORGE_LEGENDARY_COST_LABEL", "field": "text", "en": "Costs:", "hash": "7f994fe550f46d8f", "src": "db2@1.60.1.70124"}
+{"id": "RUNES", "field": "text", "en": "Runes", "hash": "af2edfe2bc590dbe", "src": "db2@1.60.1.70124"}
+{"id": "RUNIC_POWER", "field": "text", "en": "Runic Power", "hash": "28c47219663d4a0c", "src": "db2@1.60.1.70124"}

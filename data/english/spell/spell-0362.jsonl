@@ -1,3 +1,3 @@
-{"id": 362859, "field": "name", "en": "Adventure Awaits", "hash": "f71504f9431e4e11", "src": "db2@1.60.1.70009"}
-{"id": 362859, "field": "description", "en": "Quest experience increased by $s1%.", "hash": "21ffc30dfb49c771", "src": "db2@1.60.1.70009"}
-{"id": 362859, "field": "aura", "en": "|cFFffd200Season of Mastery|r\r\n\r\nIncreases experience and gold earned from quests by $s1%. Dungeon and Elite quests grant bonus experience.", "hash": "9213b1f9c3434fbb", "src": "db2@1.60.1.70009"}
+{"id": 362859, "field": "name", "en": "Adventure Awaits", "hash": "f71504f9431e4e11", "src": "db2@1.60.1.70124"}
+{"id": 362859, "field": "description", "en": "Quest experience increased by $s1%.", "hash": "21ffc30dfb49c771", "src": "db2@1.60.1.70124"}
+{"id": 362859, "field": "aura", "en": "|cFFffd200Season of Mastery|r\r\n\r\nIncreases experience and gold earned from quests by $s1%. Dungeon and Elite quests grant bonus experience.", "hash": "9213b1f9c3434fbb", "src": "db2@1.60.1.70124"}

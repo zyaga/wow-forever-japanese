@@ -54,6 +54,7 @@ WFJ.Data.add("item", {
   [274278] = { "Flask of Natural Aggressionの製作方法を習得します。", 0xbfbed4a3, "u" },
   [274279] = { "Flask of Natural Precisionの製作方法を習得します。", 0x7b2d8b0c, "u" },
   [274280] = { "Flask of Natural Swiftnessの製作方法を習得します。", 0x417e5a15, "u" },
+  [274290] = { "戦闘中に攻撃を受けた時、$N1%の確率で$D2の間、5秒ごとにマナを$N2獲得します。", 0xba3f58ab, "u" },
   [274373] = { "革張りのフラスコの中身を、Deadwood Den内の池の浅瀬に注ぎます。\n純粋なhyjalの湧き水が、松やにできらめいています。", 0x1552c607, "u" },
   [274379] = { "新たに目覚めた力を呼び起こし、装備できるArtisan's Tierアイテムの上限を$N1に引き上げます。\nNordrassilの枝から落ちた数多くの種のひとつです。この種は長い間、厳重に守られてきました。", 0x3c8486d1, "u" },
   [274386] = { "$D1の間、Dodge率を$N1%上昇させます。StrongholdsとCitiesでは、この効果は二倍になります。", 0x7d85baf7, "u" },

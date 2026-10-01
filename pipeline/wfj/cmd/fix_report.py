@@ -136,7 +136,7 @@ def resolve_all(
         if fix.type not in lines_by:
             lines_by[fix.type] = store.load(fix.type)
             en_by[fix.type] = {(ln["id"], ln["field"]): ln["en"] for ln in english.load(fix.type)}
-        line, why = fix_report.resolve(fix, lines_by[fix.type], issue)
+        line, why = fix_report.resolve(fix, lines_by[fix.type], issue, en_by[fix.type])
         base = {"n": n, "type": fix.type}
         if line is None:
             skipped.append(base | {"id": fix.id, "field": fix.field, "reason": fix.reason, "skip": why})

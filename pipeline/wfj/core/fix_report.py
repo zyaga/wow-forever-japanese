@@ -8,10 +8,11 @@ are `vectors/report_vectors.*`), and finds the store line each fix is about.
 from __future__ import annotations
 
 import re
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from typing import Any
 
-from wfj.core import model, readings
+from wfj.core import model, readings, tooltip_text
 from wfj.emit.lua_writer import shipped
 
 VERSION = "1"
@@ -263,11 +264,16 @@ def book_owners(lines: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
 
 
 def resolve(
-    fix: Fix, lines: list[dict[str, Any]], issue: int | None = None
+    fix: Fix,
+    lines: list[dict[str, Any]],
+    issue: int | None = None,
+    english: Mapping[tuple[Any, str], str] | None = None,
 ) -> tuple[dict[str, Any] | None, str | None]:
     """The store line `fix` is about, from its type's lines → (line, None) | (None, skip reason). A line
     this same report (`issue`) already rewrote still matches: its Japanese is ours now, not a later change
-    (intake can run again after apply)."""
+    (intake can run again after apply). The hash is of the Japanese as the addon ships it: an item or spell
+    line's manual breaks are joined on the way out (`tooltip_text`), so `english` (the type's English by
+    (id, field)) is what the player saw it against."""
     if fix.type == "book":
         line = book_owners(lines).get(str(fix.id))
         if line is None:
@@ -280,7 +286,10 @@ def resolve(
             return None, NOT_SHIPPING
     if not isinstance(line.get("ja"), str):
         return None, ALREADY_CHANGED
-    if readings.ja_hash(line["ja"]) != fix.ja_hash:
+    shown = line["ja"]
+    if fix.type in tooltip_text.TYPES:
+        shown = tooltip_text.shipped_ja(line, (english or {}).get((line["id"], line["field"])))
+    if readings.ja_hash(shown) != fix.ja_hash:
         if issue is not None and line.get("provenance", {}).get("report") == issue:
             return line, None
         return None, ALREADY_CHANGED

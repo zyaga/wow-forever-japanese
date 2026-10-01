@@ -1,62 +1,62 @@
-{"id": 31016, "field": "name", "en": "Eviscerate", "hash": "54fc33c01b019cc5", "src": "db2@1.60.1.70009"}
-{"id": 31016, "field": "description", "en": "Finishing move that causes damage per combo point, increased by Attack Power:\r\n   1 point  : ${$m1+(1*$b1*$<mult>)}-${$M1+(1*$b1*$<mult>)} damage\r\n   2 points: ${$m1+(2*$b1*$<mult>)}-${$M1+(2*$b1*$<mult>)} damage\r\n   3 points: ${$m1+(3*$b1*$<mult>)}-${$M1+(3*$b1*$<mult>)} damage\r\n   4 points: ${$m1+(4*$b1*$<mult>)}-${$M1+(4*$b1*$<mult>)} damage\r\n   5 points: ${$m1+(5*$b1*$<mult>)}-${$M1+(5*$b1*$<mult>)} damage", "hash": "b268c10a383f7476", "src": "db2@1.60.1.70009"}
-{"id": 31018, "field": "name", "en": "Ferocious Bite", "hash": "d02e75969ae52d33", "src": "db2@1.60.1.70009"}
-{"id": 31018, "field": "description", "en": "Finishing move that causes damage per combo point and converts each extra point of energy into ${$m2/100}.1 additional damage.  Damage is increased by your Attack Power.\r\n   1 point  : 199-259 damage\r\n   2 points: 346-406 damage\r\n   3 points: 493-553 damage\r\n   4 points: 640-700 damage\r\n   5 points: 787-847 damage", "hash": "58b294b7c4ef0c50", "src": "db2@1.60.1.70009"}
-{"id": 31247, "field": "name", "en": "Silithyst Cap Reward", "hash": "dba80e16b376fcba", "src": "db2@1.60.1.70009"}
-{"id": 31248, "field": "name", "en": "Self Stun - 1 second, no visual", "hash": "f3b8de515819c4cb", "src": "db2@1.60.1.70009"}
-{"id": 31255, "field": "name", "en": "Deadly Swiftness", "hash": "6b0479d87d05cfea", "src": "db2@1.60.1.70009"}
-{"id": 31255, "field": "description", "en": "Increases your movement speed by 10% whenever you deal damage to a target who is below 20% health.", "hash": "31f538897ec21b53", "src": "db2@1.60.1.70009"}
-{"id": 31309, "field": "name", "en": "Spirit Particles (red, big)", "hash": "da0b94be4398284b", "src": "db2@1.60.1.70009"}
-{"id": 31313, "field": "name", "en": "Make Player Summon Boss", "hash": "170665652187dbe6", "src": "db2@1.60.1.70009"}
-{"id": 31315, "field": "name", "en": "Summon Boss", "hash": "8543bf522a28369f", "src": "db2@1.60.1.70009"}
-{"id": 31316, "field": "name", "en": "Summon Boss Buff", "hash": "5eaef6e53f235bd4", "src": "db2@1.60.1.70009"}
-{"id": 31316, "field": "aura", "en": "Don't hit this guy!", "hash": "0cd960b9fb3d3eb1", "src": "db2@1.60.1.70009"}
-{"id": 31362, "field": "name", "en": "Explode the Spice", "hash": "4009e75b11b4e68d", "src": "db2@1.60.1.70009"}
-{"id": 31363, "field": "name", "en": "Spice Shockwave", "hash": "e018e1a5f79cd80d", "src": "db2@1.60.1.70009"}
-{"id": 31364, "field": "name", "en": "Spice Mortar", "hash": "cafcb9691684818a", "src": "db2@1.60.1.70009"}
-{"id": 31364, "field": "description", "en": "$s1 Fire damage to area enemies. ", "hash": "85b142c2719395f7", "src": "db2@1.60.1.70009"}
-{"id": 31365, "field": "name", "en": "Self Fear", "hash": "e12f562e90b1bd22", "src": "db2@1.60.1.70009"}
-{"id": 31365, "field": "description", "en": "Strikes fear in an enemy, causing it to flee in terror for up to $d. Only 1 target can be feared at a time.", "hash": "7ea261620000db9b", "src": "db2@1.60.1.70009"}
-{"id": 31365, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70009"}
-{"id": 31366, "field": "name", "en": "RAF", "hash": "00159a6b458dcc4a", "src": "db2@1.60.1.70009"}
-{"id": 31378, "field": "name", "en": "Worm Blast", "hash": "8b3238c6b77a1172", "src": "db2@1.60.1.70009"}
-{"id": 31378, "field": "description", "en": "Inflicts Physical damage to an enemy.", "hash": "7c1fa4f75f413744", "src": "db2@1.60.1.70009"}
-{"id": 31400, "field": "name", "en": "Honor Points Branch, 1-60", "hash": "a7965e76b810ba45", "src": "db2@1.60.1.70009"}
-{"id": 31415, "field": "name", "en": "Honor Points +25", "hash": "ff3e8c7f70e47e81", "src": "db2@1.60.1.70009"}
-{"id": 31416, "field": "name", "en": "Honor Points +41", "hash": "ff3e8d8170e4be3f", "src": "db2@1.60.1.70009"}
-{"id": 31417, "field": "name", "en": "Honor Points +69", "hash": "ff3e8e8f70e4fe09", "src": "db2@1.60.1.70009"}
-{"id": 31418, "field": "name", "en": "Honor Points +114", "hash": "9d01a2a6e02cfa3e", "src": "db2@1.60.1.70009"}
-{"id": 31419, "field": "name", "en": "Honor Points +189", "hash": "9d01a640e02dd96a", "src": "db2@1.60.1.70009"}
-{"id": 31420, "field": "name", "en": "Honor Points +199", "hash": "9d01a6c3e02df94b", "src": "db2@1.60.1.70009"}
-{"id": 31466, "field": "name", "en": "Copy of Mana Surge", "hash": "150ecbd92181ce53", "src": "db2@1.60.1.70009"}
-{"id": 31557, "field": "name", "en": "Summon Mortar Target", "hash": "23cc2c19f8ce4fad", "src": "db2@1.60.1.70009"}
-{"id": 31562, "field": "name", "en": "Trigger Sandworm Mortar", "hash": "3155f5edb1ab0d99", "src": "db2@1.60.1.70009"}
-{"id": 31563, "field": "name", "en": "Trigger Sandworm Mortar NOW", "hash": "fedaaeeab11fe36d", "src": "db2@1.60.1.70009"}
-{"id": 31565, "field": "name", "en": "I can't drive 55", "hash": "51ee0e9f363b565d", "src": "db2@1.60.1.70009"}
-{"id": 31565, "field": "aura", "en": "I got my foot pedal on the floor, but...", "hash": "b69902b088394ab8", "src": "db2@1.60.1.70009"}
-{"id": 31599, "field": "name", "en": "Netherwalk", "hash": "a888c74f36a04c32", "src": "db2@1.60.1.70009"}
-{"id": 31599, "field": "aura", "en": "You are entering the nether...", "hash": "cd13f6239e0a0e7e", "src": "db2@1.60.1.70009"}
-{"id": 31605, "field": "name", "en": "Netherwalk, Port to Strathholme", "hash": "6c1c9d7399eebe3a", "src": "db2@1.60.1.70009"}
-{"id": 31688, "field": "name", "en": "Frost Breath", "hash": "b3bb9f9f3387d03a", "src": "db2@1.60.1.70009"}
-{"id": 31688, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70009"}
-{"id": 31688, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70009"}
-{"id": 31700, "field": "name", "en": "Summon Black Qiraji Battle Tank", "hash": "7bf273675bf642f4", "src": "db2@1.60.1.70009"}
-{"id": 31700, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70009"}
-{"id": 31700, "field": "aura", "en": "Increases speed by $s2%.", "hash": "e296361f1f637a3c", "src": "db2@1.60.1.70009"}
-{"id": 31725, "field": "name", "en": "Summon Nightmare", "hash": "883ad4df7d077d1b", "src": "db2@1.60.1.70009"}
-{"id": 31726, "field": "name", "en": "Summon Holy Mount Visual", "hash": "97aadd028eb8d209", "src": "db2@1.60.1.70009"}
-{"id": 31748, "field": "name", "en": "Spirit Particles, big", "hash": "e643095f9aa9dde7", "src": "db2@1.60.1.70009"}
-{"id": 31750, "field": "name", "en": "QATest +1000 Spell Dmg", "hash": "2221438fd38ce334", "src": "db2@1.60.1.70009"}
-{"id": 31750, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70009"}
-{"id": 31751, "field": "name", "en": "Arcane Missiles", "hash": "881374420f5b1aff", "src": "db2@1.60.1.70009"}
-{"id": 31768, "field": "name", "en": "Summon Sandworm Base", "hash": "fe2c579e9f010a25", "src": "db2@1.60.1.70009"}
-{"id": 31770, "field": "name", "en": "Guard Slip'kik Trigger", "hash": "11f34fb427b79137", "src": "db2@1.60.1.70009"}
-{"id": 31800, "field": "name", "en": "Icebolt", "hash": "c546297bbd2fd755", "src": "db2@1.60.1.70009"}
-{"id": 31817, "field": "name", "en": "Buff", "hash": "08f6d9ab45509585", "src": "db2@1.60.1.70009"}
-{"id": 31817, "field": "aura", "en": "Strength increased by $s1.", "hash": "90d8a2f83ee1c8bf", "src": "db2@1.60.1.70009"}
-{"id": 31818, "field": "name", "en": "Life Tap", "hash": "bafd1ec35fcfd07f", "src": "db2@1.60.1.70009"}
-{"id": 31885, "field": "name", "en": "Tower Capture", "hash": "19137d55e27daa8d", "src": "db2@1.60.1.70009"}
-{"id": 31906, "field": "name", "en": "Lordaeron's Blessing Effect (DND)", "hash": "ae75c7e959444f41", "src": "db2@1.60.1.70009"}
-{"id": 31929, "field": "name", "en": "Tower Capture (DND)", "hash": "7f8793ebad7ba52b", "src": "db2@1.60.1.70009"}
-{"id": 31951, "field": "name", "en": "Spirit Particles (red, super big) (DND)", "hash": "ab6072bcd15ff137", "src": "db2@1.60.1.70009"}
-{"id": 31954, "field": "name", "en": "Spirit Particles, super big (DND)", "hash": "3ffb6b108f001545", "src": "db2@1.60.1.70009"}
+{"id": 31016, "field": "name", "en": "Eviscerate", "hash": "54fc33c01b019cc5", "src": "db2@1.60.1.70124"}
+{"id": 31016, "field": "description", "en": "Finishing move that causes damage per combo point, increased by Attack Power:\r\n   1 point  : ${$m1+(1*$b1*$<mult>)}-${$M1+(1*$b1*$<mult>)} damage\r\n   2 points: ${$m1+(2*$b1*$<mult>)}-${$M1+(2*$b1*$<mult>)} damage\r\n   3 points: ${$m1+(3*$b1*$<mult>)}-${$M1+(3*$b1*$<mult>)} damage\r\n   4 points: ${$m1+(4*$b1*$<mult>)}-${$M1+(4*$b1*$<mult>)} damage\r\n   5 points: ${$m1+(5*$b1*$<mult>)}-${$M1+(5*$b1*$<mult>)} damage", "hash": "b268c10a383f7476", "src": "db2@1.60.1.70124"}
+{"id": 31018, "field": "name", "en": "Ferocious Bite", "hash": "d02e75969ae52d33", "src": "db2@1.60.1.70124"}
+{"id": 31018, "field": "description", "en": "Finishing move that causes damage per combo point and converts each extra point of energy into ${$m2/100}.1 additional damage.  Damage is increased by your Attack Power.\r\n   1 point  : 199-259 damage\r\n   2 points: 346-406 damage\r\n   3 points: 493-553 damage\r\n   4 points: 640-700 damage\r\n   5 points: 787-847 damage", "hash": "58b294b7c4ef0c50", "src": "db2@1.60.1.70124"}
+{"id": 31247, "field": "name", "en": "Silithyst Cap Reward", "hash": "dba80e16b376fcba", "src": "db2@1.60.1.70124"}
+{"id": 31248, "field": "name", "en": "Self Stun - 1 second, no visual", "hash": "f3b8de515819c4cb", "src": "db2@1.60.1.70124"}
+{"id": 31255, "field": "name", "en": "Deadly Swiftness", "hash": "6b0479d87d05cfea", "src": "db2@1.60.1.70124"}
+{"id": 31255, "field": "description", "en": "Increases your movement speed by 10% whenever you deal damage to a target who is below 20% health.", "hash": "31f538897ec21b53", "src": "db2@1.60.1.70124"}
+{"id": 31309, "field": "name", "en": "Spirit Particles (red, big)", "hash": "da0b94be4398284b", "src": "db2@1.60.1.70124"}
+{"id": 31313, "field": "name", "en": "Make Player Summon Boss", "hash": "170665652187dbe6", "src": "db2@1.60.1.70124"}
+{"id": 31315, "field": "name", "en": "Summon Boss", "hash": "8543bf522a28369f", "src": "db2@1.60.1.70124"}
+{"id": 31316, "field": "name", "en": "Summon Boss Buff", "hash": "5eaef6e53f235bd4", "src": "db2@1.60.1.70124"}
+{"id": 31316, "field": "aura", "en": "Don't hit this guy!", "hash": "0cd960b9fb3d3eb1", "src": "db2@1.60.1.70124"}
+{"id": 31362, "field": "name", "en": "Explode the Spice", "hash": "4009e75b11b4e68d", "src": "db2@1.60.1.70124"}
+{"id": 31363, "field": "name", "en": "Spice Shockwave", "hash": "e018e1a5f79cd80d", "src": "db2@1.60.1.70124"}
+{"id": 31364, "field": "name", "en": "Spice Mortar", "hash": "cafcb9691684818a", "src": "db2@1.60.1.70124"}
+{"id": 31364, "field": "description", "en": "$s1 Fire damage to area enemies. ", "hash": "85b142c2719395f7", "src": "db2@1.60.1.70124"}
+{"id": 31365, "field": "name", "en": "Self Fear", "hash": "e12f562e90b1bd22", "src": "db2@1.60.1.70124"}
+{"id": 31365, "field": "description", "en": "Strikes fear in an enemy, causing it to flee in terror for up to $d. Only 1 target can be feared at a time.", "hash": "7ea261620000db9b", "src": "db2@1.60.1.70124"}
+{"id": 31365, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70124"}
+{"id": 31366, "field": "name", "en": "RAF", "hash": "00159a6b458dcc4a", "src": "db2@1.60.1.70124"}
+{"id": 31378, "field": "name", "en": "Worm Blast", "hash": "8b3238c6b77a1172", "src": "db2@1.60.1.70124"}
+{"id": 31378, "field": "description", "en": "Inflicts Physical damage to an enemy.", "hash": "7c1fa4f75f413744", "src": "db2@1.60.1.70124"}
+{"id": 31400, "field": "name", "en": "Honor Points Branch, 1-60", "hash": "a7965e76b810ba45", "src": "db2@1.60.1.70124"}
+{"id": 31415, "field": "name", "en": "Honor Points +25", "hash": "ff3e8c7f70e47e81", "src": "db2@1.60.1.70124"}
+{"id": 31416, "field": "name", "en": "Honor Points +41", "hash": "ff3e8d8170e4be3f", "src": "db2@1.60.1.70124"}
+{"id": 31417, "field": "name", "en": "Honor Points +69", "hash": "ff3e8e8f70e4fe09", "src": "db2@1.60.1.70124"}
+{"id": 31418, "field": "name", "en": "Honor Points +114", "hash": "9d01a2a6e02cfa3e", "src": "db2@1.60.1.70124"}
+{"id": 31419, "field": "name", "en": "Honor Points +189", "hash": "9d01a640e02dd96a", "src": "db2@1.60.1.70124"}
+{"id": 31420, "field": "name", "en": "Honor Points +199", "hash": "9d01a6c3e02df94b", "src": "db2@1.60.1.70124"}
+{"id": 31466, "field": "name", "en": "Copy of Mana Surge", "hash": "150ecbd92181ce53", "src": "db2@1.60.1.70124"}
+{"id": 31557, "field": "name", "en": "Summon Mortar Target", "hash": "23cc2c19f8ce4fad", "src": "db2@1.60.1.70124"}
+{"id": 31562, "field": "name", "en": "Trigger Sandworm Mortar", "hash": "3155f5edb1ab0d99", "src": "db2@1.60.1.70124"}
+{"id": 31563, "field": "name", "en": "Trigger Sandworm Mortar NOW", "hash": "fedaaeeab11fe36d", "src": "db2@1.60.1.70124"}
+{"id": 31565, "field": "name", "en": "I can't drive 55", "hash": "51ee0e9f363b565d", "src": "db2@1.60.1.70124"}
+{"id": 31565, "field": "aura", "en": "I got my foot pedal on the floor, but...", "hash": "b69902b088394ab8", "src": "db2@1.60.1.70124"}
+{"id": 31599, "field": "name", "en": "Netherwalk", "hash": "a888c74f36a04c32", "src": "db2@1.60.1.70124"}
+{"id": 31599, "field": "aura", "en": "You are entering the nether...", "hash": "cd13f6239e0a0e7e", "src": "db2@1.60.1.70124"}
+{"id": 31605, "field": "name", "en": "Netherwalk, Port to Strathholme", "hash": "6c1c9d7399eebe3a", "src": "db2@1.60.1.70124"}
+{"id": 31688, "field": "name", "en": "Frost Breath", "hash": "b3bb9f9f3387d03a", "src": "db2@1.60.1.70124"}
+{"id": 31688, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70124"}
+{"id": 31688, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70124"}
+{"id": 31700, "field": "name", "en": "Summon Black Qiraji Battle Tank", "hash": "7bf273675bf642f4", "src": "db2@1.60.1.70124"}
+{"id": 31700, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
+{"id": 31700, "field": "aura", "en": "Increases speed by $s2%.", "hash": "e296361f1f637a3c", "src": "db2@1.60.1.70124"}
+{"id": 31725, "field": "name", "en": "Summon Nightmare", "hash": "883ad4df7d077d1b", "src": "db2@1.60.1.70124"}
+{"id": 31726, "field": "name", "en": "Summon Holy Mount Visual", "hash": "97aadd028eb8d209", "src": "db2@1.60.1.70124"}
+{"id": 31748, "field": "name", "en": "Spirit Particles, big", "hash": "e643095f9aa9dde7", "src": "db2@1.60.1.70124"}
+{"id": 31750, "field": "name", "en": "QATest +1000 Spell Dmg", "hash": "2221438fd38ce334", "src": "db2@1.60.1.70124"}
+{"id": 31750, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70124"}
+{"id": 31751, "field": "name", "en": "Arcane Missiles", "hash": "881374420f5b1aff", "src": "db2@1.60.1.70124"}
+{"id": 31768, "field": "name", "en": "Summon Sandworm Base", "hash": "fe2c579e9f010a25", "src": "db2@1.60.1.70124"}
+{"id": 31770, "field": "name", "en": "Guard Slip'kik Trigger", "hash": "11f34fb427b79137", "src": "db2@1.60.1.70124"}
+{"id": 31800, "field": "name", "en": "Icebolt", "hash": "c546297bbd2fd755", "src": "db2@1.60.1.70124"}
+{"id": 31817, "field": "name", "en": "Buff", "hash": "08f6d9ab45509585", "src": "db2@1.60.1.70124"}
+{"id": 31817, "field": "aura", "en": "Strength increased by $s1.", "hash": "90d8a2f83ee1c8bf", "src": "db2@1.60.1.70124"}
+{"id": 31818, "field": "name", "en": "Life Tap", "hash": "bafd1ec35fcfd07f", "src": "db2@1.60.1.70124"}
+{"id": 31885, "field": "name", "en": "Tower Capture", "hash": "19137d55e27daa8d", "src": "db2@1.60.1.70124"}
+{"id": 31906, "field": "name", "en": "Lordaeron's Blessing Effect (DND)", "hash": "ae75c7e959444f41", "src": "db2@1.60.1.70124"}
+{"id": 31929, "field": "name", "en": "Tower Capture (DND)", "hash": "7f8793ebad7ba52b", "src": "db2@1.60.1.70124"}
+{"id": 31951, "field": "name", "en": "Spirit Particles (red, super big) (DND)", "hash": "ab6072bcd15ff137", "src": "db2@1.60.1.70124"}
+{"id": 31954, "field": "name", "en": "Spirit Particles, super big (DND)", "hash": "3ffb6b108f001545", "src": "db2@1.60.1.70124"}

@@ -1,57 +1,57 @@
-{"id": 474116, "field": "name", "en": "Amulet of Fowl Warding", "hash": "9f7079099949f308", "src": "db2@1.60.1.70009"}
-{"id": 474116, "field": "description", "en": "Absorbs $s1 nature damage.  Lasts $d.", "hash": "6175292784f0482e", "src": "db2@1.60.1.70009"}
-{"id": 474116, "field": "aura", "en": "Absorbs $s1 nature damage.", "hash": "3df0dfc85a4938c7", "src": "db2@1.60.1.70009"}
-{"id": 474126, "field": "name", "en": "Immersed", "hash": "13166ef1570f9853", "src": "db2@1.60.1.70009"}
-{"id": 474126, "field": "description", "en": "Increases damage done by spells and effects by up to $s1.", "hash": "3da55a9f873fcb78", "src": "db2@1.60.1.70009"}
-{"id": 474126, "field": "aura", "en": "Spell damage dealt is increased by $s1.", "hash": "07adfaa18cadd02c", "src": "db2@1.60.1.70009"}
-{"id": 474127, "field": "name", "en": "Immersion", "hash": "c47bd7b3780a1457", "src": "db2@1.60.1.70009"}
-{"id": 474127, "field": "description", "en": "Your damaging non-periodic Nature spell critical strikes have a chance to grant you $474126s1 increased spell damage for $474126d1.", "hash": "ab841da9f82d331f", "src": "db2@1.60.1.70009"}
-{"id": 474142, "field": "name", "en": "Swarming Thoughts", "hash": "687d8b8016409164", "src": "db2@1.60.1.70009"}
-{"id": 474142, "field": "description", "en": "Your damaging non-periodic spells increase your spell damage by $474148s1 for $474148d1.  If the target is player controlled, gain $474146s2 spell penetration for $474146d1 instead.", "hash": "34e80ede2d6957b0", "src": "db2@1.60.1.70009"}
-{"id": 474146, "field": "name", "en": "Swarming Thoughts", "hash": "687d8b8016409164", "src": "db2@1.60.1.70009"}
-{"id": 474146, "field": "description", "en": "Decreases the magical resistances of your spell targets by $s1.", "hash": "d2e75829a0ff77d4", "src": "db2@1.60.1.70009"}
-{"id": 474146, "field": "aura", "en": "Decreases the magical resistances of your spell targets by $s1.", "hash": "d2e75829a0ff77d4", "src": "db2@1.60.1.70009"}
-{"id": 474148, "field": "name", "en": "Swarming Thoughts", "hash": "687d8b8016409164", "src": "db2@1.60.1.70009"}
-{"id": 474148, "field": "description", "en": "Increases damage done by spells and effects by up to $s1.", "hash": "3da55a9f873fcb78", "src": "db2@1.60.1.70009"}
-{"id": 474148, "field": "aura", "en": "Spell damage dealt is increased by $s1.", "hash": "07adfaa18cadd02c", "src": "db2@1.60.1.70009"}
-{"id": 474196, "field": "name", "en": "Qiraji Prophets", "hash": "9d19af174e29650d", "src": "db2@1.60.1.70009"}
-{"id": 474196, "field": "description", "en": "Your damaging spell casts have a chance to summon Visions of the Qiraji Prophets.", "hash": "fb7b94d55c78aedd", "src": "db2@1.60.1.70009"}
-{"id": 474198, "field": "name", "en": "Visions of the Prophet", "hash": "8b89f3050601951f", "src": "db2@1.60.1.70009"}
-{"id": 474204, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70009"}
-{"id": 474204, "field": "description", "en": "Inflicts Shadow damage to an enemy and reduces its movement speed for $d.", "hash": "b24a12b10f7654d4", "src": "db2@1.60.1.70009"}
-{"id": 474204, "field": "aura", "en": "Shadow damage inflicted over $d.\r\nReduced movement speed.", "hash": "0ff93482949f4ede", "src": "db2@1.60.1.70009"}
-{"id": 474210, "field": "name", "en": "Qiraji Prophets", "hash": "9d19af174e29650d", "src": "db2@1.60.1.70009"}
-{"id": 474214, "field": "name", "en": "Visions of the Prophet", "hash": "8b89f3050601951f", "src": "db2@1.60.1.70009"}
-{"id": 474220, "field": "name", "en": "Aggro", "hash": "82e3b766174f026e", "src": "db2@1.60.1.70009"}
-{"id": 474232, "field": "name", "en": "Staff of the Qiraji Prophets Unequip", "hash": "cd1e961c945d66d3", "src": "db2@1.60.1.70009"}
-{"id": 474236, "field": "name", "en": "Blessing of Ji'zhi", "hash": "778e4fb02ba33465", "src": "db2@1.60.1.70009"}
-{"id": 474236, "field": "description", "en": "Next spell cast within $d will cast instantly.", "hash": "0b45c4ad1fdfc5c7", "src": "db2@1.60.1.70009"}
-{"id": 474236, "field": "aura", "en": "Next spell casts instantly.", "hash": "71a46f0d80f635d5", "src": "db2@1.60.1.70009"}
-{"id": 474268, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70009"}
-{"id": 474268, "field": "description", "en": "Inflicts Shadow damage to an enemy and reduces its movement speed for $d.", "hash": "b24a12b10f7654d4", "src": "db2@1.60.1.70009"}
-{"id": 474268, "field": "aura", "en": "$s1 Shadow damage inflicted every second for $d.\r\nReduced movement speed.\r\nFleeing in fear.", "hash": "949c70950a60950c", "src": "db2@1.60.1.70009"}
-{"id": 474386, "field": "name", "en": "PvP Trinket", "hash": "662ce3a9d464ad08", "src": "db2@1.60.1.70009"}
-{"id": 474386, "field": "description", "en": "Removes all movement impairing effects and all effects which cause loss of control of your character.", "hash": "5922de690eb48ff3", "src": "db2@1.60.1.70009"}
-{"id": 474400, "field": "name", "en": "Cause Insanity", "hash": "d6974d45d47c32cb", "src": "db2@1.60.1.70009"}
-{"id": 474400, "field": "description", "en": "Drives an enemy target temporarily insane, speeding its attacks by $s2%, increasing its movement by $s3%, as well as causing it to attack its own allies for $d. Affected targets take $s4% reduced damage.", "hash": "76a00cea7d0fd951", "src": "db2@1.60.1.70009"}
-{"id": 474400, "field": "aura", "en": "Charmed.\r\nAttack speed increased by $s2%.\r\nMovement speed increased by $s3%\r\nIncoming damage reduced by $s4%.", "hash": "52110521cde224ef", "src": "db2@1.60.1.70009"}
-{"id": 474402, "field": "name", "en": "Mind Blast", "hash": "868279b14e0b7083", "src": "db2@1.60.1.70009"}
-{"id": 474402, "field": "description", "en": "Inflicts Shadow damage to an enemy, but causes a high amount of threat.", "hash": "d60755718e5f125b", "src": "db2@1.60.1.70009"}
-{"id": 474444, "field": "name", "en": "Thundercrash", "hash": "82cd906eae6418ce", "src": "db2@1.60.1.70009"}
-{"id": 474444, "field": "description", "en": "Inflicts normal damage plus $s1 to nearby enemies and knocks them up.", "hash": "20847f8cf13aa56a", "src": "db2@1.60.1.70009"}
-{"id": 474500, "field": "name", "en": "Choose Random Powers", "hash": "19011a591f2dc8da", "src": "db2@1.60.1.70009"}
-{"id": 474500, "field": "description", "en": "Select random powers for the Anibusath Guardian", "hash": "fe66bd236fca6aba", "src": "db2@1.60.1.70009"}
-{"id": 474553, "field": "name", "en": "Anubisath Guardian Targeted", "hash": "6d7200d43da95ae0", "src": "db2@1.60.1.70009"}
-{"id": 474553, "field": "description", "en": "Cast a single target spell", "hash": "3a0676a2a541caba", "src": "db2@1.60.1.70009"}
-{"id": 474564, "field": "name", "en": "Thunder", "hash": "8cfd761d663431ec", "src": "db2@1.60.1.70009"}
-{"id": 474564, "field": "description", "en": "Thunderclap.", "hash": "81ffbd095df400c4", "src": "db2@1.60.1.70009"}
-{"id": 474565, "field": "name", "en": "Shadow", "hash": "ba9066642051ae69", "src": "db2@1.60.1.70009"}
-{"id": 474565, "field": "description", "en": "Shadowbolt.", "hash": "76b53505527859b1", "src": "db2@1.60.1.70009"}
-{"id": 474570, "field": "name", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70009"}
-{"id": 474570, "field": "description", "en": "Fire.", "hash": "daefbcacb85cb270", "src": "db2@1.60.1.70009"}
-{"id": 474571, "field": "name", "en": "Plague", "hash": "0e3b28e8b3483886", "src": "db2@1.60.1.70009"}
-{"id": 474571, "field": "description", "en": "Plague.", "hash": "4845ef0951536377", "src": "db2@1.60.1.70009"}
-{"id": 474727, "field": "name", "en": "Hybrid Healing/Spell Dam 144/47", "hash": "76ece7d63723096f", "src": "db2@1.60.1.70009"}
-{"id": 474727, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70009"}
-{"id": 474742, "field": "name", "en": "Tail Sweep", "hash": "63900fd39ebe13da", "src": "db2@1.60.1.70009"}
-{"id": 474742, "field": "description", "en": "Inflicts $s1 damage on enemies in a cone behind the caster, knocking them back.", "hash": "bae901df359c35be", "src": "db2@1.60.1.70009"}
+{"id": 474116, "field": "name", "en": "Amulet of Fowl Warding", "hash": "9f7079099949f308", "src": "db2@1.60.1.70124"}
+{"id": 474116, "field": "description", "en": "Absorbs $s1 nature damage.  Lasts $d.", "hash": "6175292784f0482e", "src": "db2@1.60.1.70124"}
+{"id": 474116, "field": "aura", "en": "Absorbs $s1 nature damage.", "hash": "3df0dfc85a4938c7", "src": "db2@1.60.1.70124"}
+{"id": 474126, "field": "name", "en": "Immersed", "hash": "13166ef1570f9853", "src": "db2@1.60.1.70124"}
+{"id": 474126, "field": "description", "en": "Increases damage done by spells and effects by up to $s1.", "hash": "3da55a9f873fcb78", "src": "db2@1.60.1.70124"}
+{"id": 474126, "field": "aura", "en": "Spell damage dealt is increased by $s1.", "hash": "07adfaa18cadd02c", "src": "db2@1.60.1.70124"}
+{"id": 474127, "field": "name", "en": "Immersion", "hash": "c47bd7b3780a1457", "src": "db2@1.60.1.70124"}
+{"id": 474127, "field": "description", "en": "Your damaging non-periodic Nature spell critical strikes have a chance to grant you $474126s1 increased spell damage for $474126d1.", "hash": "ab841da9f82d331f", "src": "db2@1.60.1.70124"}
+{"id": 474142, "field": "name", "en": "Swarming Thoughts", "hash": "687d8b8016409164", "src": "db2@1.60.1.70124"}
+{"id": 474142, "field": "description", "en": "Your damaging non-periodic spells increase your spell damage by $474148s1 for $474148d1.  If the target is player controlled, gain $474146s2 spell penetration for $474146d1 instead.", "hash": "34e80ede2d6957b0", "src": "db2@1.60.1.70124"}
+{"id": 474146, "field": "name", "en": "Swarming Thoughts", "hash": "687d8b8016409164", "src": "db2@1.60.1.70124"}
+{"id": 474146, "field": "description", "en": "Decreases the magical resistances of your spell targets by $s1.", "hash": "d2e75829a0ff77d4", "src": "db2@1.60.1.70124"}
+{"id": 474146, "field": "aura", "en": "Decreases the magical resistances of your spell targets by $s1.", "hash": "d2e75829a0ff77d4", "src": "db2@1.60.1.70124"}
+{"id": 474148, "field": "name", "en": "Swarming Thoughts", "hash": "687d8b8016409164", "src": "db2@1.60.1.70124"}
+{"id": 474148, "field": "description", "en": "Increases damage done by spells and effects by up to $s1.", "hash": "3da55a9f873fcb78", "src": "db2@1.60.1.70124"}
+{"id": 474148, "field": "aura", "en": "Spell damage dealt is increased by $s1.", "hash": "07adfaa18cadd02c", "src": "db2@1.60.1.70124"}
+{"id": 474196, "field": "name", "en": "Qiraji Prophets", "hash": "9d19af174e29650d", "src": "db2@1.60.1.70124"}
+{"id": 474196, "field": "description", "en": "Your damaging spell casts have a chance to summon Visions of the Qiraji Prophets.", "hash": "fb7b94d55c78aedd", "src": "db2@1.60.1.70124"}
+{"id": 474198, "field": "name", "en": "Visions of the Prophet", "hash": "8b89f3050601951f", "src": "db2@1.60.1.70124"}
+{"id": 474204, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70124"}
+{"id": 474204, "field": "description", "en": "Inflicts Shadow damage to an enemy and reduces its movement speed for $d.", "hash": "b24a12b10f7654d4", "src": "db2@1.60.1.70124"}
+{"id": 474204, "field": "aura", "en": "Shadow damage inflicted over $d.\r\nReduced movement speed.", "hash": "0ff93482949f4ede", "src": "db2@1.60.1.70124"}
+{"id": 474210, "field": "name", "en": "Qiraji Prophets", "hash": "9d19af174e29650d", "src": "db2@1.60.1.70124"}
+{"id": 474214, "field": "name", "en": "Visions of the Prophet", "hash": "8b89f3050601951f", "src": "db2@1.60.1.70124"}
+{"id": 474220, "field": "name", "en": "Aggro", "hash": "82e3b766174f026e", "src": "db2@1.60.1.70124"}
+{"id": 474232, "field": "name", "en": "Staff of the Qiraji Prophets Unequip", "hash": "cd1e961c945d66d3", "src": "db2@1.60.1.70124"}
+{"id": 474236, "field": "name", "en": "Blessing of Ji'zhi", "hash": "778e4fb02ba33465", "src": "db2@1.60.1.70124"}
+{"id": 474236, "field": "description", "en": "Next spell cast within $d will cast instantly.", "hash": "0b45c4ad1fdfc5c7", "src": "db2@1.60.1.70124"}
+{"id": 474236, "field": "aura", "en": "Next spell casts instantly.", "hash": "71a46f0d80f635d5", "src": "db2@1.60.1.70124"}
+{"id": 474268, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70124"}
+{"id": 474268, "field": "description", "en": "Inflicts Shadow damage to an enemy and reduces its movement speed for $d.", "hash": "b24a12b10f7654d4", "src": "db2@1.60.1.70124"}
+{"id": 474268, "field": "aura", "en": "$s1 Shadow damage inflicted every second for $d.\r\nReduced movement speed.\r\nFleeing in fear.", "hash": "949c70950a60950c", "src": "db2@1.60.1.70124"}
+{"id": 474386, "field": "name", "en": "PvP Trinket", "hash": "662ce3a9d464ad08", "src": "db2@1.60.1.70124"}
+{"id": 474386, "field": "description", "en": "Removes all movement impairing effects and all effects which cause loss of control of your character.", "hash": "5922de690eb48ff3", "src": "db2@1.60.1.70124"}
+{"id": 474400, "field": "name", "en": "Cause Insanity", "hash": "d6974d45d47c32cb", "src": "db2@1.60.1.70124"}
+{"id": 474400, "field": "description", "en": "Drives an enemy target temporarily insane, speeding its attacks by $s2%, increasing its movement by $s3%, as well as causing it to attack its own allies for $d. Affected targets take $s4% reduced damage.", "hash": "76a00cea7d0fd951", "src": "db2@1.60.1.70124"}
+{"id": 474400, "field": "aura", "en": "Charmed.\r\nAttack speed increased by $s2%.\r\nMovement speed increased by $s3%\r\nIncoming damage reduced by $s4%.", "hash": "52110521cde224ef", "src": "db2@1.60.1.70124"}
+{"id": 474402, "field": "name", "en": "Mind Blast", "hash": "868279b14e0b7083", "src": "db2@1.60.1.70124"}
+{"id": 474402, "field": "description", "en": "Inflicts Shadow damage to an enemy, but causes a high amount of threat.", "hash": "d60755718e5f125b", "src": "db2@1.60.1.70124"}
+{"id": 474444, "field": "name", "en": "Thundercrash", "hash": "82cd906eae6418ce", "src": "db2@1.60.1.70124"}
+{"id": 474444, "field": "description", "en": "Inflicts normal damage plus $s1 to nearby enemies and knocks them up.", "hash": "20847f8cf13aa56a", "src": "db2@1.60.1.70124"}
+{"id": 474500, "field": "name", "en": "Choose Random Powers", "hash": "19011a591f2dc8da", "src": "db2@1.60.1.70124"}
+{"id": 474500, "field": "description", "en": "Select random powers for the Anibusath Guardian", "hash": "fe66bd236fca6aba", "src": "db2@1.60.1.70124"}
+{"id": 474553, "field": "name", "en": "Anubisath Guardian Targeted", "hash": "6d7200d43da95ae0", "src": "db2@1.60.1.70124"}
+{"id": 474553, "field": "description", "en": "Cast a single target spell", "hash": "3a0676a2a541caba", "src": "db2@1.60.1.70124"}
+{"id": 474564, "field": "name", "en": "Thunder", "hash": "8cfd761d663431ec", "src": "db2@1.60.1.70124"}
+{"id": 474564, "field": "description", "en": "Thunderclap.", "hash": "81ffbd095df400c4", "src": "db2@1.60.1.70124"}
+{"id": 474565, "field": "name", "en": "Shadow", "hash": "ba9066642051ae69", "src": "db2@1.60.1.70124"}
+{"id": 474565, "field": "description", "en": "Shadowbolt.", "hash": "76b53505527859b1", "src": "db2@1.60.1.70124"}
+{"id": 474570, "field": "name", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70124"}
+{"id": 474570, "field": "description", "en": "Fire.", "hash": "daefbcacb85cb270", "src": "db2@1.60.1.70124"}
+{"id": 474571, "field": "name", "en": "Plague", "hash": "0e3b28e8b3483886", "src": "db2@1.60.1.70124"}
+{"id": 474571, "field": "description", "en": "Plague.", "hash": "4845ef0951536377", "src": "db2@1.60.1.70124"}
+{"id": 474727, "field": "name", "en": "Hybrid Healing/Spell Dam 144/47", "hash": "76ece7d63723096f", "src": "db2@1.60.1.70124"}
+{"id": 474727, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70124"}
+{"id": 474742, "field": "name", "en": "Tail Sweep", "hash": "63900fd39ebe13da", "src": "db2@1.60.1.70124"}
+{"id": 474742, "field": "description", "en": "Inflicts $s1 damage on enemies in a cone behind the caster, knocking them back.", "hash": "bae901df359c35be", "src": "db2@1.60.1.70124"}

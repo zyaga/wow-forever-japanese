@@ -116,8 +116,10 @@ def measure(root: Path) -> dict[str, Any]:
                 nothing[why] += 1
             else:
                 src = str(ln.get("src", "")).split("@")[0]
-                wait = ": English still from wago (Classic Era); waits for the Forever re-pull" if (
-                    type_ in ("item", "spell") and src == "wago") else ""
+                wait = ""
+                if type_ in ("item", "spell") and src == "wago":
+                    wait = (": no text from the Forever tables on this build yet"
+                            " (English still from Classic Era); rechecked at each re-pull")
                 missing[_why(j) + wait] += 1
         kept = sum(
             1 for j in ja.values()

@@ -159,7 +159,7 @@ def test_committed_data_validates(root):
     # (`schema.MULTI_VERSION_SOURCES`). Every source is still a PINNED build; that is what this asserts.
     pinned = {
         "pfquest@7786596", "wago@1.15.9.69722", "vmangos@13b49dc", "wdb@1.15.9.69722",
-        "wdb@1.60.1.70009", "db2@1.60.1.70009",  # Forever's pinned build
+        "wdb@1.60.1.70124", "db2@1.60.1.70124",  # Forever's pinned build
     }
     for type_ in ("quest", "item", "spell"):
         for line in english.load(type_):

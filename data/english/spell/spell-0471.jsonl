@@ -1,27 +1,27 @@
-{"id": 471050, "field": "name", "en": "[DNT] Combat Check", "hash": "af684ca63ff0b4e0", "src": "db2@1.60.1.70009"}
-{"id": 471051, "field": "name", "en": "[DNT] Combat Check", "hash": "af684ca63ff0b4e0", "src": "db2@1.60.1.70009"}
-{"id": 471056, "field": "name", "en": "[DNT] Riosustrasz Fight Initialization", "hash": "78a0a8462bedb185", "src": "db2@1.60.1.70009"}
-{"id": 471149, "field": "name", "en": "Out of Bounds", "hash": "6be7cd0fcc6aa261", "src": "db2@1.60.1.70009"}
-{"id": 471149, "field": "description", "en": "Enter another area engulfed in nightmare.", "hash": "339fbd21c7e02eea", "src": "db2@1.60.1.70009"}
-{"id": 471149, "field": "aura", "en": "Return to the mission area or you will be teleported in $d.", "hash": "57e7cc867ef9b36b", "src": "db2@1.60.1.70009"}
-{"id": 471150, "field": "name", "en": "Portal to Old Andorhal", "hash": "ad2caf64ec51d774", "src": "db2@1.60.1.70009"}
-{"id": 471152, "field": "name", "en": "[DNT] Cancel Aura", "hash": "db4eb7666e09baf9", "src": "db2@1.60.1.70009"}
-{"id": 471400, "field": "name", "en": "Magnificent Trollshine", "hash": "acfa035c782c1c37", "src": "db2@1.60.1.70009"}
-{"id": 471400, "field": "description", "en": "Creates Magnificent Trollshine.", "hash": "2e9829a161fc64c6", "src": "db2@1.60.1.70009"}
-{"id": 471401, "field": "name", "en": "Magnificent Trollshine", "hash": "acfa035c782c1c37", "src": "db2@1.60.1.70009"}
-{"id": 471401, "field": "description", "en": "While applied to target shield it increases spell damage and healing by up to 36 and increases Spell Critical chance by 1%.  Lasts for 30 minutes.", "hash": "6c2a8aacb4268d3e", "src": "db2@1.60.1.70009"}
-{"id": 471402, "field": "name", "en": "Increase Spell Dam 36 and 1% Crit", "hash": "0b13e40962463b6b", "src": "db2@1.60.1.70009"}
-{"id": 471402, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.   Also increases chance to get a critical hit with spells by $s3%.", "hash": "299ae61d1a466c20", "src": "db2@1.60.1.70009"}
-{"id": 471487, "field": "name", "en": "Peregrine", "hash": "a8cd7ab0b665a810", "src": "db2@1.60.1.70009"}
-{"id": 471513, "field": "name", "en": "(DNT) Darkness Test", "hash": "bdd3fdeca227fd8c", "src": "db2@1.60.1.70009"}
-{"id": 471514, "field": "name", "en": "(DNT) Darkness Test - Fog of War", "hash": "fa3721c37017b392", "src": "db2@1.60.1.70009"}
-{"id": 471516, "field": "name", "en": "(DNT) Darkness Test - Within Light", "hash": "ce7cbc41f56647c7", "src": "db2@1.60.1.70009"}
-{"id": 471535, "field": "name", "en": "[DNT]", "hash": "4691042c02a73d3f", "src": "db2@1.60.1.70009"}
-{"id": 471570, "field": "name", "en": "Shadowflame Visual [DNT]", "hash": "fb9af3ef5a181ab3", "src": "db2@1.60.1.70009"}
-{"id": 471695, "field": "name", "en": "Dummy Test Visual Proc Driver [DNT]", "hash": "59dcaf7761f66cf0", "src": "db2@1.60.1.70009"}
-{"id": 471698, "field": "name", "en": "Soul of the Demon", "hash": "20e514d5e6ee4a01", "src": "db2@1.60.1.70009"}
-{"id": 471698, "field": "description", "en": "Attune with the darkness within, allowing you better control over your inner demon.", "hash": "4255a78a63eda54d", "src": "db2@1.60.1.70009"}
-{"id": 471698, "field": "aura", "en": "Your soul is one with the demon...", "hash": "872359eb5134e7f3", "src": "db2@1.60.1.70009"}
-{"id": 471699, "field": "name", "en": "Zila Amanemodas", "hash": "578ca42ba46d0933", "src": "db2@1.60.1.70009"}
-{"id": 471699, "field": "description", "en": "Attune to the darkness within, allowing you better control over your inner demon.\r\n", "hash": "a0b0ec43333212db", "src": "db2@1.60.1.70009"}
-{"id": 471699, "field": "aura", "en": "Your soul is one with the demon...", "hash": "872359eb5134e7f3", "src": "db2@1.60.1.70009"}
+{"id": 471050, "field": "name", "en": "[DNT] Combat Check", "hash": "af684ca63ff0b4e0", "src": "db2@1.60.1.70124"}
+{"id": 471051, "field": "name", "en": "[DNT] Combat Check", "hash": "af684ca63ff0b4e0", "src": "db2@1.60.1.70124"}
+{"id": 471056, "field": "name", "en": "[DNT] Riosustrasz Fight Initialization", "hash": "78a0a8462bedb185", "src": "db2@1.60.1.70124"}
+{"id": 471149, "field": "name", "en": "Out of Bounds", "hash": "6be7cd0fcc6aa261", "src": "db2@1.60.1.70124"}
+{"id": 471149, "field": "description", "en": "Enter another area engulfed in nightmare.", "hash": "339fbd21c7e02eea", "src": "db2@1.60.1.70124"}
+{"id": 471149, "field": "aura", "en": "Return to the mission area or you will be teleported in $d.", "hash": "57e7cc867ef9b36b", "src": "db2@1.60.1.70124"}
+{"id": 471150, "field": "name", "en": "Portal to Old Andorhal", "hash": "ad2caf64ec51d774", "src": "db2@1.60.1.70124"}
+{"id": 471152, "field": "name", "en": "[DNT] Cancel Aura", "hash": "db4eb7666e09baf9", "src": "db2@1.60.1.70124"}
+{"id": 471400, "field": "name", "en": "Magnificent Trollshine", "hash": "acfa035c782c1c37", "src": "db2@1.60.1.70124"}
+{"id": 471400, "field": "description", "en": "Creates Magnificent Trollshine.", "hash": "2e9829a161fc64c6", "src": "db2@1.60.1.70124"}
+{"id": 471401, "field": "name", "en": "Magnificent Trollshine", "hash": "acfa035c782c1c37", "src": "db2@1.60.1.70124"}
+{"id": 471401, "field": "description", "en": "While applied to target shield it increases spell damage and healing by up to 36 and increases Spell Critical chance by 1%.  Lasts for 30 minutes.", "hash": "6c2a8aacb4268d3e", "src": "db2@1.60.1.70124"}
+{"id": 471402, "field": "name", "en": "Increase Spell Dam 36 and 1% Crit", "hash": "0b13e40962463b6b", "src": "db2@1.60.1.70124"}
+{"id": 471402, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.   Also increases chance to get a critical hit with spells by $s3%.", "hash": "299ae61d1a466c20", "src": "db2@1.60.1.70124"}
+{"id": 471487, "field": "name", "en": "Peregrine", "hash": "a8cd7ab0b665a810", "src": "db2@1.60.1.70124"}
+{"id": 471513, "field": "name", "en": "(DNT) Darkness Test", "hash": "bdd3fdeca227fd8c", "src": "db2@1.60.1.70124"}
+{"id": 471514, "field": "name", "en": "(DNT) Darkness Test - Fog of War", "hash": "fa3721c37017b392", "src": "db2@1.60.1.70124"}
+{"id": 471516, "field": "name", "en": "(DNT) Darkness Test - Within Light", "hash": "ce7cbc41f56647c7", "src": "db2@1.60.1.70124"}
+{"id": 471535, "field": "name", "en": "[DNT]", "hash": "4691042c02a73d3f", "src": "db2@1.60.1.70124"}
+{"id": 471570, "field": "name", "en": "Shadowflame Visual [DNT]", "hash": "fb9af3ef5a181ab3", "src": "db2@1.60.1.70124"}
+{"id": 471695, "field": "name", "en": "Dummy Test Visual Proc Driver [DNT]", "hash": "59dcaf7761f66cf0", "src": "db2@1.60.1.70124"}
+{"id": 471698, "field": "name", "en": "Soul of the Demon", "hash": "20e514d5e6ee4a01", "src": "db2@1.60.1.70124"}
+{"id": 471698, "field": "description", "en": "Attune with the darkness within, allowing you better control over your inner demon.", "hash": "4255a78a63eda54d", "src": "db2@1.60.1.70124"}
+{"id": 471698, "field": "aura", "en": "Your soul is one with the demon...", "hash": "872359eb5134e7f3", "src": "db2@1.60.1.70124"}
+{"id": 471699, "field": "name", "en": "Zila Amanemodas", "hash": "578ca42ba46d0933", "src": "db2@1.60.1.70124"}
+{"id": 471699, "field": "description", "en": "Attune to the darkness within, allowing you better control over your inner demon.\r\n", "hash": "a0b0ec43333212db", "src": "db2@1.60.1.70124"}
+{"id": 471699, "field": "aura", "en": "Your soul is one with the demon...", "hash": "872359eb5134e7f3", "src": "db2@1.60.1.70124"}

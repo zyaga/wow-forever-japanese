@@ -8,7 +8,9 @@ LUACHECK ?= $(shell command -v luacheck 2>/dev/null || echo $(LUAROCKS_BIN)/luac
 LUACOV   ?= $(shell command -v luacov 2>/dev/null || echo $(LUAROCKS_BIN)/luacov)
 # Python: the repo venv (`.venv` in the main checkout, shared by every worktree) when it exists, else python3.
 # The system python is externally managed and refuses `pip install` (docs/operations/local-setup.md).
-REPO_ROOT := $(abspath $(dir $(shell git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)))
+# Without git (a tarball, say) the common dir is empty and this checkout is the root.
+GIT_COMMON := $(shell git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)
+REPO_ROOT := $(if $(GIT_COMMON),$(abspath $(dir $(GIT_COMMON))),$(CURDIR))
 VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
@@ -76,7 +78,8 @@ toc-check: ## TOC ## Interface matches pipeline/clients.toml
 
 # Inputs for the import (see docs/operations/local-setup.md). Override on the command line.
 # Inputs live under <repo>/predecessors/ (gitignored); paths are absolute so the `cd pipeline` in the recipes is harmless.
-INPUTS       ?= $(CURDIR)/predecessors
+# A worktree has no predecessors/ of its own: it reads the main checkout's (REPO_ROOT, beside the shared .git).
+INPUTS       ?= $(or $(wildcard $(CURDIR)/predecessors),$(REPO_ROOT)/predecessors)
 # Absolute even when given relative, so a recipe's `cd pipeline` reads the same files the checks did
 override INPUTS := $(abspath $(INPUTS))
 PRED_QUEST   ?= $(INPUTS)/classic-wow-quest-japanese-translator
@@ -92,7 +95,7 @@ CLIENTS := classic-era forever
 classic-era_BUILD   := 1.15.9.69722
 classic-era_SRC     := wago
 classic-era_PRODUCT := wow_classic_era
-forever_BUILD       := 1.60.1.70009
+forever_BUILD       := 1.60.1.70124
 forever_SRC         := db2
 forever_PRODUCT     := wow_classic_beta
 client_dir = $(INPUTS)/clients/$(1)-$($(1)_BUILD)

@@ -49,7 +49,7 @@ local function build()
   -- GuildBankMessageFrame: a ScrollingMessageFrame (AddMessage / Clear / TransformMessages / visible lines)
   local log = CreateFrame("Frame", "GuildBankMessageFrame")
   log.history, log.callbacks = {}, {}
-  log.fontObject = { font = { path = "Fonts\\ARIALN.TTF", size = 12, flags = "" } }
+  log.fontObject = Stub.fontObject("Fonts\\ARIALN.TTF", 12)
   log.visibleLines = { Stub.fontString("") }
   function log.AddMessage(self, message) self.history[#self.history + 1] = message end
   function log.Clear(self) self.history = {} end
@@ -137,11 +137,17 @@ C.suite(getfenv(1), {
         assert.are.equal(BOB .. " sneezed" .. AGO, log.history[3])
         log.history[3] = nil
         log:Refresh()
+        assert.are.equal(WFJ.Font.PATH, log.visibleLines[1].font.path)
         C.alt(WFJ, true)
         local moved = BOB .. " moved " .. LINEN .. " x 2 from Deposit to Tab 2" .. AGO
         assert.are.equal(moved, log.visibleLines[1]:GetText())
+        assert.are.equal("Fonts\\ARIALN.TTF", log.visibleLines[1].font.path)
         C.alt(WFJ, false)
         assert.are.equal(log.history[2], log.visibleLines[1]:GetText())
+        log:AddMessage(BOB .. " sneezed" .. AGO) -- English on the row the Japanese had: the log's font again
+        log:Refresh()
+        assert.are.equal("Fonts\\ARIALN.TTF", log.visibleLines[1].font.path)
+        assert.are.equal(12, log.visibleLines[1].font.size)
       end },
     { "the buy-tab tooltip translates; a tab's name tooltip does not", function(frame)
       C.tooltip(frame.BankTabs[2].Button, { en("BUY_GUILDBANK_TAB") })

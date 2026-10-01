@@ -1,158 +1,158 @@
-{"id": 238057, "field": "name", "en": "Krellian's Head", "hash": "de57f0c535124a3a", "src": "db2@1.60.1.70009"}
-{"id": 238244, "field": "name", "en": "Tablet of Creation", "hash": "21f018c07c8f6653", "src": "db2@1.60.1.70009"}
-{"id": 238244, "field": "description", "en": "Writings on the formation of arcane implements and weaponry.", "hash": "d439a47d16a16b1c", "src": "db2@1.60.1.70009"}
-{"id": 238245, "field": "name", "en": "Tablet of Manipulation", "hash": "3cc2b803e1862f40", "src": "db2@1.60.1.70009"}
-{"id": 238245, "field": "description", "en": "Writings on the magics of scrying and teleportation.", "hash": "231c27772d262054", "src": "db2@1.60.1.70009"}
-{"id": 238246, "field": "name", "en": "Tablet of Power", "hash": "5404c93db848d226", "src": "db2@1.60.1.70009"}
-{"id": 238246, "field": "description", "en": "Writings on the Well of Eternity and harnessing its cosmic energies.", "hash": "50a492eb05673261", "src": "db2@1.60.1.70009"}
-{"id": 238298, "field": "name", "en": "Pattern: Scarlet Augur's Hood", "hash": "83cff583bf139cc7", "src": "db2@1.60.1.70009"}
-{"id": 238298, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Hood.", "hash": "d8205d489761dbc2", "src": "db2@1.60.1.70009"}
-{"id": 238299, "field": "name", "en": "Pattern: Scarlet Augur's Mantle", "hash": "0349337ab0ff6b06", "src": "db2@1.60.1.70009"}
-{"id": 238299, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Mantle.", "hash": "c877294e334e0967", "src": "db2@1.60.1.70009"}
-{"id": 238300, "field": "name", "en": "Pattern: Scarlet Augur's Vestments", "hash": "66b78a01e2f06bb2", "src": "db2@1.60.1.70009"}
-{"id": 238300, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Vestments.", "hash": "b4220914791a45d6", "src": "db2@1.60.1.70009"}
-{"id": 238301, "field": "name", "en": "Pattern: Scarlet Augur's Cuffs", "hash": "1c718b8d225b91a5", "src": "db2@1.60.1.70009"}
-{"id": 238301, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Cuffs.", "hash": "171878e597c01978", "src": "db2@1.60.1.70009"}
-{"id": 238302, "field": "name", "en": "Pattern: Scarlet Augur's Mitts", "hash": "ca62b91b6e3a8ed3", "src": "db2@1.60.1.70009"}
-{"id": 238302, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Mitts.", "hash": "1982ca4c4765d189", "src": "db2@1.60.1.70009"}
-{"id": 238303, "field": "name", "en": "Pattern: Scarlet Augur's Strap", "hash": "352dc4e1b33e22c7", "src": "db2@1.60.1.70009"}
-{"id": 238303, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Strap.", "hash": "bf69cf1d5e75f915", "src": "db2@1.60.1.70009"}
-{"id": 238304, "field": "name", "en": "Pattern: Scarlet Augur's Leggings", "hash": "dc305e4b07dfb762", "src": "db2@1.60.1.70009"}
-{"id": 238304, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Leggings.", "hash": "10b10ae42858a963", "src": "db2@1.60.1.70009"}
-{"id": 238305, "field": "name", "en": "Pattern: Scarlet Augur's Soles", "hash": "3480b0b3d865479a", "src": "db2@1.60.1.70009"}
-{"id": 238305, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Soles.", "hash": "66d87b93c3533228", "src": "db2@1.60.1.70009"}
-{"id": 238306, "field": "name", "en": "Pattern: Scarlet Infiltrator's Bandana", "hash": "89aaf73d118c5148", "src": "db2@1.60.1.70009"}
-{"id": 238306, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Bandana.", "hash": "fb5ab297e8048b85", "src": "db2@1.60.1.70009"}
-{"id": 238307, "field": "name", "en": "Pattern: Scarlet Infiltrator's Shoulderpads", "hash": "ecf4a720a904433c", "src": "db2@1.60.1.70009"}
-{"id": 238307, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Shoulderpads.", "hash": "d0839cfcf91109bb", "src": "db2@1.60.1.70009"}
-{"id": 238308, "field": "name", "en": "Pattern: Scarlet Infiltrator's Vest", "hash": "99e87ea0cb12c0e4", "src": "db2@1.60.1.70009"}
-{"id": 238308, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Vest.", "hash": "49d0b990b5ac524a", "src": "db2@1.60.1.70009"}
-{"id": 238309, "field": "name", "en": "Pattern: Scarlet Infiltrator's Bracers", "hash": "59207b62ac41bdd6", "src": "db2@1.60.1.70009"}
-{"id": 238309, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Bracers.", "hash": "247d510ed99f6dd7", "src": "db2@1.60.1.70009"}
-{"id": 238310, "field": "name", "en": "Pattern: Scarlet Infiltrator's Gloves", "hash": "ffe82ec0e3bd93af", "src": "db2@1.60.1.70009"}
-{"id": 238310, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Gloves.", "hash": "3d29918686838f86", "src": "db2@1.60.1.70009"}
-{"id": 238311, "field": "name", "en": "Pattern: Scarlet Infiltrator's Belt", "hash": "973a6aefbef2d116", "src": "db2@1.60.1.70009"}
-{"id": 238311, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Belt.", "hash": "eabca5f32f90829a", "src": "db2@1.60.1.70009"}
-{"id": 238312, "field": "name", "en": "Pattern: Scarlet Infiltrator's Trousers", "hash": "00aa210e4740a676", "src": "db2@1.60.1.70009"}
-{"id": 238312, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Trousers.", "hash": "60bfdc325e6bb90f", "src": "db2@1.60.1.70009"}
-{"id": 238313, "field": "name", "en": "Pattern: Scarlet Infiltrator's Shoes", "hash": "8db57fe6bc6e432b", "src": "db2@1.60.1.70009"}
-{"id": 238313, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Shoes.", "hash": "075e350bc16c192a", "src": "db2@1.60.1.70009"}
-{"id": 238314, "field": "name", "en": "Pattern: Scarlet Huntsman's Coif", "hash": "9f4594fd300e1417", "src": "db2@1.60.1.70009"}
-{"id": 238314, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Coif.", "hash": "cf898b024378172e", "src": "db2@1.60.1.70009"}
-{"id": 238315, "field": "name", "en": "Pattern: Scarlet Huntsman's Pauldrons", "hash": "15c5e1e9bffaa004", "src": "db2@1.60.1.70009"}
-{"id": 238315, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Pauldrons.", "hash": "6d9c3d297ca96587", "src": "db2@1.60.1.70009"}
-{"id": 238316, "field": "name", "en": "Pattern: Scarlet Huntsman's Chain", "hash": "7fa9097ef3356cae", "src": "db2@1.60.1.70009"}
-{"id": 238316, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Chain.", "hash": "b770a50d5fa3275d", "src": "db2@1.60.1.70009"}
-{"id": 238317, "field": "name", "en": "Pattern: Scarlet Huntsman's Wristguards", "hash": "76f3acfd78642f9b", "src": "db2@1.60.1.70009"}
-{"id": 238317, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Wristguards.", "hash": "e86278abdc432592", "src": "db2@1.60.1.70009"}
-{"id": 238318, "field": "name", "en": "Pattern: Scarlet Huntsman's Handguards", "hash": "1e37abfc34f4ceb8", "src": "db2@1.60.1.70009"}
-{"id": 238318, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Handguards.", "hash": "ff5b2f41ae0ba5ee", "src": "db2@1.60.1.70009"}
-{"id": 238319, "field": "name", "en": "Pattern: Scarlet Huntsman's Clasp", "hash": "8032450a28d67ba9", "src": "db2@1.60.1.70009"}
-{"id": 238319, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Clasp.", "hash": "fdaa1db103000a95", "src": "db2@1.60.1.70009"}
-{"id": 238320, "field": "name", "en": "Pattern: Scarlet Huntsman's Legguards", "hash": "d3fbbf8a212a87d8", "src": "db2@1.60.1.70009"}
-{"id": 238320, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Legguards.", "hash": "c32ca871b4d582a4", "src": "db2@1.60.1.70009"}
-{"id": 238321, "field": "name", "en": "Pattern: Scarlet Huntsman's Boots", "hash": "6f0f228e29b7acbf", "src": "db2@1.60.1.70009"}
-{"id": 238321, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Boots.", "hash": "38af78150ddddac7", "src": "db2@1.60.1.70009"}
-{"id": 238322, "field": "name", "en": "Plans: Scarlet Soldier's Helmet", "hash": "7ddfe60eecd06ad3", "src": "db2@1.60.1.70009"}
-{"id": 238322, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Helmet.", "hash": "253ad28cfbae4b6e", "src": "db2@1.60.1.70009"}
-{"id": 238323, "field": "name", "en": "Plans: Scarlet Soldier's Spaulders", "hash": "260ef43f5b302b84", "src": "db2@1.60.1.70009"}
-{"id": 238323, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Spaulders.", "hash": "d5dc178d1d05e8dc", "src": "db2@1.60.1.70009"}
-{"id": 238324, "field": "name", "en": "Plans: Scarlet Soldier's Chestplate", "hash": "21a7ce48b12ba423", "src": "db2@1.60.1.70009"}
-{"id": 238324, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Chestplate.", "hash": "680b420f12fd7899", "src": "db2@1.60.1.70009"}
-{"id": 238325, "field": "name", "en": "Plans: Scarlet Soldier's Protectors", "hash": "e288a7223150908e", "src": "db2@1.60.1.70009"}
-{"id": 238325, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Protectors.", "hash": "1b1a3b8c2c1128f8", "src": "db2@1.60.1.70009"}
-{"id": 238326, "field": "name", "en": "Plans: Scarlet Soldier's Grips", "hash": "76081ecc17e1a9aa", "src": "db2@1.60.1.70009"}
-{"id": 238326, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Grips.", "hash": "03ec77b86c898e00", "src": "db2@1.60.1.70009"}
-{"id": 238327, "field": "name", "en": "Plans: Scarlet Soldier's Waistguard", "hash": "ad49b55380b935e3", "src": "db2@1.60.1.70009"}
-{"id": 238327, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Waistguard.", "hash": "dbe47e13a3106bc0", "src": "db2@1.60.1.70009"}
-{"id": 238328, "field": "name", "en": "Plans: Scarlet Soldier's Legplates", "hash": "7cccac53eda82cca", "src": "db2@1.60.1.70009"}
-{"id": 238328, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Legplates.", "hash": "38f14aaa60a7b76f", "src": "db2@1.60.1.70009"}
-{"id": 238329, "field": "name", "en": "Plans: Scarlet Soldier's Stompers", "hash": "b27103d624d82cee", "src": "db2@1.60.1.70009"}
-{"id": 238329, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Stompers.", "hash": "e702528d393e2fcd", "src": "db2@1.60.1.70009"}
-{"id": 238345, "field": "name", "en": "Lady Sesspira's Key", "hash": "e7b907a21bb2f902", "src": "db2@1.60.1.70009"}
-{"id": 238347, "field": "name", "en": "Staff of Archmage Selwyn", "hash": "07f5e0cd123faaa2", "src": "db2@1.60.1.70009"}
-{"id": 238385, "field": "name", "en": "Memory Crystal", "hash": "aa8eaad43d7477be", "src": "db2@1.60.1.70009"}
-{"id": 238449, "field": "name", "en": "Nullifying Ward", "hash": "5a8bd1bb1623da8a", "src": "db2@1.60.1.70009"}
-{"id": 238449, "field": "description", "en": "Nullify a nearby Naga power stone.", "hash": "ec174b03c2372ca6", "src": "db2@1.60.1.70009"}
-{"id": 238463, "field": "name", "en": "Mosshoof Hide", "hash": "bb772412e781d940", "src": "db2@1.60.1.70009"}
-{"id": 238464, "field": "name", "en": "Astringent Spider Venom", "hash": "3d8d0eeec16bbff0", "src": "db2@1.60.1.70009"}
-{"id": 238497, "field": "name", "en": "Air Elemental Core", "hash": "7014f8ce4891b885", "src": "db2@1.60.1.70009"}
-{"id": 238497, "field": "description", "en": "A broken core of an air elemental. It still smells faintly of gunpowder.", "hash": "9b0db0b85c959ddc", "src": "db2@1.60.1.70009"}
-{"id": 238501, "field": "name", "en": "Pellet Gun", "hash": "a7a0237362a8d90d", "src": "db2@1.60.1.70009"}
-{"id": 238501, "field": "description", "en": "Shoot down a Wasp Nest.", "hash": "9d5dab5597cba13f", "src": "db2@1.60.1.70009"}
-{"id": 238503, "field": "name", "en": "Wild Honey", "hash": "1379f83993e17438", "src": "db2@1.60.1.70009"}
-{"id": 238507, "field": "name", "en": "Mammoth Shark Steak", "hash": "672db0ef1eeb3279", "src": "db2@1.60.1.70009"}
-{"id": 238517, "field": "name", "en": "Mark of the Queen", "hash": "70276814460e5fa1", "src": "db2@1.60.1.70009"}
-{"id": 238637, "field": "name", "en": "Prowler Steak", "hash": "6f34eaac934bd4a1", "src": "db2@1.60.1.70009"}
-{"id": 238637, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225778", "hash": "f67859b2de8b1c06", "src": "db2@1.60.1.70009"}
-{"id": 238638, "field": "name", "en": "Filet o' Flank", "hash": "3e82e13f57386fc2", "src": "db2@1.60.1.70009"}
-{"id": 238638, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225779", "hash": "f67859b3de8b1c07", "src": "db2@1.60.1.70009"}
-{"id": 238639, "field": "name", "en": "Sunrise Omelette", "hash": "3d64752aea7bd919", "src": "db2@1.60.1.70009"}
-{"id": 238639, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225780", "hash": "f6785a2dde8b3bdf", "src": "db2@1.60.1.70009"}
-{"id": 238641, "field": "name", "en": "Specklefin Feast", "hash": "741a9b292087b241", "src": "db2@1.60.1.70009"}
-{"id": 238641, "field": "description", "en": "Serve a delicious feast that lasts for $d and serves up to $M2 players.\r\n\r\n$@spellicon1225774 $@spellname1225774\r\n$@spelldesc1225774", "hash": "ee1e8d514364967e", "src": "db2@1.60.1.70009"}
-{"id": 238642, "field": "name", "en": "Grand Lobster Banquet", "hash": "94c1ad1e696598b8", "src": "db2@1.60.1.70009"}
-{"id": 238642, "field": "description", "en": "Serve a delicious feast that lasts for $d and serves up to $M2 players.\r\n\r\n$@spellicon1225774 $@spellname1225774\r\n$@spelldesc1225774", "hash": "ee1e8d514364967e", "src": "db2@1.60.1.70009"}
-{"id": 238644, "field": "name", "en": "Demonic Energy Crystal Shard", "hash": "784d8f2390a5c5c6", "src": "db2@1.60.1.70009"}
-{"id": 238644, "field": "description", "en": "A strange fel energy pulses from within, but otherwise seems stable.", "hash": "4a5f77c850897a65", "src": "db2@1.60.1.70009"}
-{"id": 238645, "field": "name", "en": "Recipe: Prowler Steak", "hash": "fa263334a33c086f", "src": "db2@1.60.1.70009"}
-{"id": 238645, "field": "description", "en": "Teaches you how to cook Prowler Steak.", "hash": "5f05ede821fcdd0d", "src": "db2@1.60.1.70009"}
-{"id": 238646, "field": "name", "en": "Recipe: Filet o' Flank", "hash": "57fb003a6f9c0b8c", "src": "db2@1.60.1.70009"}
-{"id": 238646, "field": "description", "en": "Teaches you how to cook Filet o' Flank.", "hash": "daba15821182edf6", "src": "db2@1.60.1.70009"}
-{"id": 238647, "field": "name", "en": "Recipe: Sunrise Omelette", "hash": "92b95e54af78189a", "src": "db2@1.60.1.70009"}
-{"id": 238647, "field": "description", "en": "Teaches you how to cook Sunrise Omelette.", "hash": "ad0299cbcd142b8e", "src": "db2@1.60.1.70009"}
-{"id": 238649, "field": "name", "en": "Recipe: Specklefin Feast", "hash": "c96f8453e583f1b1", "src": "db2@1.60.1.70009"}
-{"id": 238649, "field": "description", "en": "Teaches you how to cook Specklefin Feast.", "hash": "ac380bd4bcc83430", "src": "db2@1.60.1.70009"}
-{"id": 238650, "field": "name", "en": "Recipe: Grand Lobster Banquet", "hash": "2a51e78eb4e28eb5", "src": "db2@1.60.1.70009"}
-{"id": 238650, "field": "description", "en": "Teaches you how to cook Grand Lobster Banquet.", "hash": "4830158303b06357", "src": "db2@1.60.1.70009"}
-{"id": 238681, "field": "name", "en": "Dusty Bag", "hash": "4d4195d903aae143", "src": "db2@1.60.1.70009"}
-{"id": 238734, "field": "name", "en": "Tinkerbox: Teleport", "hash": "dac1878bf29d26e8", "src": "db2@1.60.1.70009"}
-{"id": 238734, "field": "description", "en": "$@spelldesc1225960", "hash": "84222b206fbe151b", "src": "db2@1.60.1.70009"}
-{"id": 238735, "field": "name", "en": "Tinkerbox: Nitro Boosts", "hash": "5d9e46a053e658c1", "src": "db2@1.60.1.70009"}
-{"id": 238735, "field": "description", "en": "$@spelldesc1225987", "hash": "84222c2d6fbe54e4", "src": "db2@1.60.1.70009"}
-{"id": 238736, "field": "name", "en": "Tinkerbox: Magnetic Displacement", "hash": "36460cb58563adfd", "src": "db2@1.60.1.70009"}
-{"id": 238736, "field": "description", "en": "$@spelldesc1226007", "hash": "84421a5fd96ae812", "src": "db2@1.60.1.70009"}
-{"id": 238737, "field": "name", "en": "Tinkerbox", "hash": "f21ce290e96532b9", "src": "db2@1.60.1.70009"}
-{"id": 238737, "field": "description", "en": "A simplistic control module used by engineers when creating tinkers.", "hash": "d987c8289b3de1eb", "src": "db2@1.60.1.70009"}
-{"id": 238782, "field": "name", "en": "Schematic: Tinkerbox", "hash": "d5105c77a3d149cc", "src": "db2@1.60.1.70009"}
-{"id": 238782, "field": "description", "en": "Teaches you how to craft Tinkerbox.", "hash": "85d569fe87d74f88", "src": "db2@1.60.1.70009"}
-{"id": 238783, "field": "name", "en": "Schematic: Tinkerbox: Teleport", "hash": "6058bb65b4af2ae0", "src": "db2@1.60.1.70009"}
-{"id": 238783, "field": "description", "en": "Teaches you how to craft Tinkerbox: Teleport.", "hash": "186fc81100b799f1", "src": "db2@1.60.1.70009"}
-{"id": 238784, "field": "name", "en": "Schematic: Tinkerbox: Nitro Boosts", "hash": "006d1056bb453ba3", "src": "db2@1.60.1.70009"}
-{"id": 238784, "field": "description", "en": "Teaches you how to craft Tinkerbox: Nitro Boosts.", "hash": "c9b0be539d58351e", "src": "db2@1.60.1.70009"}
-{"id": 238785, "field": "name", "en": "Schematic: Tinkerbox: Magnetic Displacement", "hash": "ca5c818932384410", "src": "db2@1.60.1.70009"}
-{"id": 238785, "field": "description", "en": "Teaches you how to craft Tinkerbox: Magnetic Displacement.", "hash": "8affdd4edd7a9a5c", "src": "db2@1.60.1.70009"}
-{"id": 238786, "field": "name", "en": "Schematic: Tinker: Teleport", "hash": "0ee55907cf7be869", "src": "db2@1.60.1.70009"}
-{"id": 238786, "field": "description", "en": "Teaches you how to craft Tinker: Teleport.", "hash": "0d38f82c65c348e2", "src": "db2@1.60.1.70009"}
-{"id": 238787, "field": "name", "en": "Schematic: Tinker: Nitro Boosts", "hash": "ab495c20000453e8", "src": "db2@1.60.1.70009"}
-{"id": 238787, "field": "description", "en": "Teaches you how to craft Tinker: Nitro Boosts.", "hash": "8b92ebf7fe09efcb", "src": "db2@1.60.1.70009"}
-{"id": 238788, "field": "name", "en": "Schematic: Tinker: Magnetic Displacement", "hash": "e8c3400e0b1a5743", "src": "db2@1.60.1.70009"}
-{"id": 238788, "field": "description", "en": "Teaches you how to craft Tinker: Magnetic Displacement.", "hash": "c656c25413d133a1", "src": "db2@1.60.1.70009"}
-{"id": 238789, "field": "name", "en": "Schematic: Semisafe Transporter: New Avalon", "hash": "ba4cf9564dd4fcb8", "src": "db2@1.60.1.70009"}
-{"id": 238789, "field": "description", "en": "Teaches you how to craft Semisafe Transporter: New Avalon.", "hash": "530d2b0d1c957885", "src": "db2@1.60.1.70009"}
-{"id": 238794, "field": "name", "en": "Unappetizing Leftovers", "hash": "d19c0c50a9c35ffb", "src": "db2@1.60.1.70009"}
-{"id": 238794, "field": "description", "en": "Maybe starvation isn't so bad after all.", "hash": "70dd3442c990e7e4", "src": "db2@1.60.1.70009"}
-{"id": 238797, "field": "name", "en": "Fel Crystal Shard", "hash": "7e26002ad9e975ca", "src": "db2@1.60.1.70009"}
-{"id": 238797, "field": "description", "en": "A strong fel energy pulses from the shard.", "hash": "c0d84c2536b66e02", "src": "db2@1.60.1.70009"}
-{"id": 238798, "field": "name", "en": "Toxic Essence", "hash": "06b6b3ac0e72da8a", "src": "db2@1.60.1.70009"}
-{"id": 238798, "field": "description", "en": "Faint fel energy oozes from the caustic goo.", "hash": "8f61212ca037762f", "src": "db2@1.60.1.70009"}
-{"id": 238802, "field": "name", "en": "Druidic Amulet", "hash": "f9b7ca86e0722cf3", "src": "db2@1.60.1.70009"}
-{"id": 238802, "field": "description", "en": "Use on a Corrupted Vine.\nA faint calming energy emanates from the amulet.", "hash": "0a50b60d7ecb889a", "src": "db2@1.60.1.70009"}
-{"id": 238811, "field": "name", "en": "Juicy Apple", "hash": "a2fee7c0bb21bf18", "src": "db2@1.60.1.70009"}
-{"id": 238811, "field": "description", "en": "Fresh from the field.", "hash": "1b8d29ebdf567880", "src": "db2@1.60.1.70009"}
-{"id": 238830, "field": "name", "en": "Apple Scope", "hash": "d130d0391a2e5a60", "src": "db2@1.60.1.70009"}
-{"id": 238830, "field": "description", "en": "Allows you to look far into the distance in the pursuit of apples.\nUsed by the laziest of farmers to monitor their yield from the comfort of home.", "hash": "fdac5601c7a30421", "src": "db2@1.60.1.70009"}
-{"id": 238831, "field": "name", "en": "Apple Rope", "hash": "84680da02ab8636f", "src": "db2@1.60.1.70009"}
-{"id": 238831, "field": "description", "en": "Steal an apple from a safe distance.\nIt's just a regular rope.", "hash": "c05519515b68b610", "src": "db2@1.60.1.70009"}
-{"id": 238899, "field": "name", "en": "Assorted Fish", "hash": "653006ad92936d7f", "src": "db2@1.60.1.70009"}
-{"id": 238899, "field": "description", "en": "Your fishing skill is not high enough to identify most of these fish, but fortunately that is not your problem.", "hash": "86e19cc360027c84", "src": "db2@1.60.1.70009"}
-{"id": 238927, "field": "name", "en": "Pattern: Scarlet Quiver", "hash": "0b7b56a84283581a", "src": "db2@1.60.1.70009"}
-{"id": 238927, "field": "description", "en": "Teaches you how to craft Scarlet Quiver.", "hash": "ca02b3a5dc638bfb", "src": "db2@1.60.1.70009"}
-{"id": 238928, "field": "name", "en": "Pattern: Scarlet Ammo Pouch", "hash": "986e381b9bc1eba1", "src": "db2@1.60.1.70009"}
-{"id": 238928, "field": "description", "en": "Teaches you how to craft Scarlet Ammo Pouch.", "hash": "268d200e33a1fc7b", "src": "db2@1.60.1.70009"}
-{"id": 238935, "field": "name", "en": "Gently Plagued Meat", "hash": "2b3c6c5800c85e70", "src": "db2@1.60.1.70009"}
-{"id": 238935, "field": "description", "en": "If you cut away the green parts, who is going to know?", "hash": "60c8b11be9e9d540", "src": "db2@1.60.1.70009"}
-{"id": 238960, "field": "name", "en": "Quartermaster's Crate", "hash": "7d37537b3baf1e28", "src": "db2@1.60.1.70009"}
-{"id": 238960, "field": "description", "en": "Stash a piece of crafted Scarlet Crusade equipment in the crate. This will permanently destroy the item.", "hash": "ef045547fc2d03b4", "src": "db2@1.60.1.70009"}
-{"id": 238985, "field": "name", "en": "Heavy Crate", "hash": "803e0b547ae39c9d", "src": "db2@1.60.1.70009"}
-{"id": 238985, "field": "description", "en": "Deliver to the Scarlet Quartermaster to complete Prove Your Worth.", "hash": "224592f7da1f60e9", "src": "db2@1.60.1.70009"}
+{"id": 238057, "field": "name", "en": "Krellian's Head", "hash": "de57f0c535124a3a", "src": "db2@1.60.1.70124"}
+{"id": 238244, "field": "name", "en": "Tablet of Creation", "hash": "21f018c07c8f6653", "src": "db2@1.60.1.70124"}
+{"id": 238244, "field": "description", "en": "Writings on the formation of arcane implements and weaponry.", "hash": "d439a47d16a16b1c", "src": "db2@1.60.1.70124"}
+{"id": 238245, "field": "name", "en": "Tablet of Manipulation", "hash": "3cc2b803e1862f40", "src": "db2@1.60.1.70124"}
+{"id": 238245, "field": "description", "en": "Writings on the magics of scrying and teleportation.", "hash": "231c27772d262054", "src": "db2@1.60.1.70124"}
+{"id": 238246, "field": "name", "en": "Tablet of Power", "hash": "5404c93db848d226", "src": "db2@1.60.1.70124"}
+{"id": 238246, "field": "description", "en": "Writings on the Well of Eternity and harnessing its cosmic energies.", "hash": "50a492eb05673261", "src": "db2@1.60.1.70124"}
+{"id": 238298, "field": "name", "en": "Pattern: Scarlet Augur's Hood", "hash": "83cff583bf139cc7", "src": "db2@1.60.1.70124"}
+{"id": 238298, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Hood.", "hash": "d8205d489761dbc2", "src": "db2@1.60.1.70124"}
+{"id": 238299, "field": "name", "en": "Pattern: Scarlet Augur's Mantle", "hash": "0349337ab0ff6b06", "src": "db2@1.60.1.70124"}
+{"id": 238299, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Mantle.", "hash": "c877294e334e0967", "src": "db2@1.60.1.70124"}
+{"id": 238300, "field": "name", "en": "Pattern: Scarlet Augur's Vestments", "hash": "66b78a01e2f06bb2", "src": "db2@1.60.1.70124"}
+{"id": 238300, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Vestments.", "hash": "b4220914791a45d6", "src": "db2@1.60.1.70124"}
+{"id": 238301, "field": "name", "en": "Pattern: Scarlet Augur's Cuffs", "hash": "1c718b8d225b91a5", "src": "db2@1.60.1.70124"}
+{"id": 238301, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Cuffs.", "hash": "171878e597c01978", "src": "db2@1.60.1.70124"}
+{"id": 238302, "field": "name", "en": "Pattern: Scarlet Augur's Mitts", "hash": "ca62b91b6e3a8ed3", "src": "db2@1.60.1.70124"}
+{"id": 238302, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Mitts.", "hash": "1982ca4c4765d189", "src": "db2@1.60.1.70124"}
+{"id": 238303, "field": "name", "en": "Pattern: Scarlet Augur's Strap", "hash": "352dc4e1b33e22c7", "src": "db2@1.60.1.70124"}
+{"id": 238303, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Strap.", "hash": "bf69cf1d5e75f915", "src": "db2@1.60.1.70124"}
+{"id": 238304, "field": "name", "en": "Pattern: Scarlet Augur's Leggings", "hash": "dc305e4b07dfb762", "src": "db2@1.60.1.70124"}
+{"id": 238304, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Leggings.", "hash": "10b10ae42858a963", "src": "db2@1.60.1.70124"}
+{"id": 238305, "field": "name", "en": "Pattern: Scarlet Augur's Soles", "hash": "3480b0b3d865479a", "src": "db2@1.60.1.70124"}
+{"id": 238305, "field": "description", "en": "Teaches you how to craft Scarlet Augur's Soles.", "hash": "66d87b93c3533228", "src": "db2@1.60.1.70124"}
+{"id": 238306, "field": "name", "en": "Pattern: Scarlet Infiltrator's Bandana", "hash": "89aaf73d118c5148", "src": "db2@1.60.1.70124"}
+{"id": 238306, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Bandana.", "hash": "fb5ab297e8048b85", "src": "db2@1.60.1.70124"}
+{"id": 238307, "field": "name", "en": "Pattern: Scarlet Infiltrator's Shoulderpads", "hash": "ecf4a720a904433c", "src": "db2@1.60.1.70124"}
+{"id": 238307, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Shoulderpads.", "hash": "d0839cfcf91109bb", "src": "db2@1.60.1.70124"}
+{"id": 238308, "field": "name", "en": "Pattern: Scarlet Infiltrator's Vest", "hash": "99e87ea0cb12c0e4", "src": "db2@1.60.1.70124"}
+{"id": 238308, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Vest.", "hash": "49d0b990b5ac524a", "src": "db2@1.60.1.70124"}
+{"id": 238309, "field": "name", "en": "Pattern: Scarlet Infiltrator's Bracers", "hash": "59207b62ac41bdd6", "src": "db2@1.60.1.70124"}
+{"id": 238309, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Bracers.", "hash": "247d510ed99f6dd7", "src": "db2@1.60.1.70124"}
+{"id": 238310, "field": "name", "en": "Pattern: Scarlet Infiltrator's Gloves", "hash": "ffe82ec0e3bd93af", "src": "db2@1.60.1.70124"}
+{"id": 238310, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Gloves.", "hash": "3d29918686838f86", "src": "db2@1.60.1.70124"}
+{"id": 238311, "field": "name", "en": "Pattern: Scarlet Infiltrator's Belt", "hash": "973a6aefbef2d116", "src": "db2@1.60.1.70124"}
+{"id": 238311, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Belt.", "hash": "eabca5f32f90829a", "src": "db2@1.60.1.70124"}
+{"id": 238312, "field": "name", "en": "Pattern: Scarlet Infiltrator's Trousers", "hash": "00aa210e4740a676", "src": "db2@1.60.1.70124"}
+{"id": 238312, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Trousers.", "hash": "60bfdc325e6bb90f", "src": "db2@1.60.1.70124"}
+{"id": 238313, "field": "name", "en": "Pattern: Scarlet Infiltrator's Shoes", "hash": "8db57fe6bc6e432b", "src": "db2@1.60.1.70124"}
+{"id": 238313, "field": "description", "en": "Teaches you how to craft Scarlet Infiltrator's Shoes.", "hash": "075e350bc16c192a", "src": "db2@1.60.1.70124"}
+{"id": 238314, "field": "name", "en": "Pattern: Scarlet Huntsman's Coif", "hash": "9f4594fd300e1417", "src": "db2@1.60.1.70124"}
+{"id": 238314, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Coif.", "hash": "cf898b024378172e", "src": "db2@1.60.1.70124"}
+{"id": 238315, "field": "name", "en": "Pattern: Scarlet Huntsman's Pauldrons", "hash": "15c5e1e9bffaa004", "src": "db2@1.60.1.70124"}
+{"id": 238315, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Pauldrons.", "hash": "6d9c3d297ca96587", "src": "db2@1.60.1.70124"}
+{"id": 238316, "field": "name", "en": "Pattern: Scarlet Huntsman's Chain", "hash": "7fa9097ef3356cae", "src": "db2@1.60.1.70124"}
+{"id": 238316, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Chain.", "hash": "b770a50d5fa3275d", "src": "db2@1.60.1.70124"}
+{"id": 238317, "field": "name", "en": "Pattern: Scarlet Huntsman's Wristguards", "hash": "76f3acfd78642f9b", "src": "db2@1.60.1.70124"}
+{"id": 238317, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Wristguards.", "hash": "e86278abdc432592", "src": "db2@1.60.1.70124"}
+{"id": 238318, "field": "name", "en": "Pattern: Scarlet Huntsman's Handguards", "hash": "1e37abfc34f4ceb8", "src": "db2@1.60.1.70124"}
+{"id": 238318, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Handguards.", "hash": "ff5b2f41ae0ba5ee", "src": "db2@1.60.1.70124"}
+{"id": 238319, "field": "name", "en": "Pattern: Scarlet Huntsman's Clasp", "hash": "8032450a28d67ba9", "src": "db2@1.60.1.70124"}
+{"id": 238319, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Clasp.", "hash": "fdaa1db103000a95", "src": "db2@1.60.1.70124"}
+{"id": 238320, "field": "name", "en": "Pattern: Scarlet Huntsman's Legguards", "hash": "d3fbbf8a212a87d8", "src": "db2@1.60.1.70124"}
+{"id": 238320, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Legguards.", "hash": "c32ca871b4d582a4", "src": "db2@1.60.1.70124"}
+{"id": 238321, "field": "name", "en": "Pattern: Scarlet Huntsman's Boots", "hash": "6f0f228e29b7acbf", "src": "db2@1.60.1.70124"}
+{"id": 238321, "field": "description", "en": "Teaches you how to craft Scarlet Huntsman's Boots.", "hash": "38af78150ddddac7", "src": "db2@1.60.1.70124"}
+{"id": 238322, "field": "name", "en": "Plans: Scarlet Soldier's Helmet", "hash": "7ddfe60eecd06ad3", "src": "db2@1.60.1.70124"}
+{"id": 238322, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Helmet.", "hash": "253ad28cfbae4b6e", "src": "db2@1.60.1.70124"}
+{"id": 238323, "field": "name", "en": "Plans: Scarlet Soldier's Spaulders", "hash": "260ef43f5b302b84", "src": "db2@1.60.1.70124"}
+{"id": 238323, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Spaulders.", "hash": "d5dc178d1d05e8dc", "src": "db2@1.60.1.70124"}
+{"id": 238324, "field": "name", "en": "Plans: Scarlet Soldier's Chestplate", "hash": "21a7ce48b12ba423", "src": "db2@1.60.1.70124"}
+{"id": 238324, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Chestplate.", "hash": "680b420f12fd7899", "src": "db2@1.60.1.70124"}
+{"id": 238325, "field": "name", "en": "Plans: Scarlet Soldier's Protectors", "hash": "e288a7223150908e", "src": "db2@1.60.1.70124"}
+{"id": 238325, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Protectors.", "hash": "1b1a3b8c2c1128f8", "src": "db2@1.60.1.70124"}
+{"id": 238326, "field": "name", "en": "Plans: Scarlet Soldier's Grips", "hash": "76081ecc17e1a9aa", "src": "db2@1.60.1.70124"}
+{"id": 238326, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Grips.", "hash": "03ec77b86c898e00", "src": "db2@1.60.1.70124"}
+{"id": 238327, "field": "name", "en": "Plans: Scarlet Soldier's Waistguard", "hash": "ad49b55380b935e3", "src": "db2@1.60.1.70124"}
+{"id": 238327, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Waistguard.", "hash": "dbe47e13a3106bc0", "src": "db2@1.60.1.70124"}
+{"id": 238328, "field": "name", "en": "Plans: Scarlet Soldier's Legplates", "hash": "7cccac53eda82cca", "src": "db2@1.60.1.70124"}
+{"id": 238328, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Legplates.", "hash": "38f14aaa60a7b76f", "src": "db2@1.60.1.70124"}
+{"id": 238329, "field": "name", "en": "Plans: Scarlet Soldier's Stompers", "hash": "b27103d624d82cee", "src": "db2@1.60.1.70124"}
+{"id": 238329, "field": "description", "en": "Teaches you how to craft Scarlet Soldier's Stompers.", "hash": "e702528d393e2fcd", "src": "db2@1.60.1.70124"}
+{"id": 238345, "field": "name", "en": "Lady Sesspira's Key", "hash": "e7b907a21bb2f902", "src": "db2@1.60.1.70124"}
+{"id": 238347, "field": "name", "en": "Staff of Archmage Selwyn", "hash": "07f5e0cd123faaa2", "src": "db2@1.60.1.70124"}
+{"id": 238385, "field": "name", "en": "Memory Crystal", "hash": "aa8eaad43d7477be", "src": "db2@1.60.1.70124"}
+{"id": 238449, "field": "name", "en": "Nullifying Ward", "hash": "5a8bd1bb1623da8a", "src": "db2@1.60.1.70124"}
+{"id": 238449, "field": "description", "en": "Nullify a nearby Naga power stone.", "hash": "ec174b03c2372ca6", "src": "db2@1.60.1.70124"}
+{"id": 238463, "field": "name", "en": "Mosshoof Hide", "hash": "bb772412e781d940", "src": "db2@1.60.1.70124"}
+{"id": 238464, "field": "name", "en": "Astringent Spider Venom", "hash": "3d8d0eeec16bbff0", "src": "db2@1.60.1.70124"}
+{"id": 238497, "field": "name", "en": "Air Elemental Core", "hash": "7014f8ce4891b885", "src": "db2@1.60.1.70124"}
+{"id": 238497, "field": "description", "en": "A broken core of an air elemental. It still smells faintly of gunpowder.", "hash": "9b0db0b85c959ddc", "src": "db2@1.60.1.70124"}
+{"id": 238501, "field": "name", "en": "Pellet Gun", "hash": "a7a0237362a8d90d", "src": "db2@1.60.1.70124"}
+{"id": 238501, "field": "description", "en": "Shoot down a Wasp Nest.", "hash": "9d5dab5597cba13f", "src": "db2@1.60.1.70124"}
+{"id": 238503, "field": "name", "en": "Wild Honey", "hash": "1379f83993e17438", "src": "db2@1.60.1.70124"}
+{"id": 238507, "field": "name", "en": "Mammoth Shark Steak", "hash": "672db0ef1eeb3279", "src": "db2@1.60.1.70124"}
+{"id": 238517, "field": "name", "en": "Mark of the Queen", "hash": "70276814460e5fa1", "src": "db2@1.60.1.70124"}
+{"id": 238637, "field": "name", "en": "Prowler Steak", "hash": "6f34eaac934bd4a1", "src": "db2@1.60.1.70124"}
+{"id": 238637, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225778", "hash": "f67859b2de8b1c06", "src": "db2@1.60.1.70124"}
+{"id": 238638, "field": "name", "en": "Filet o' Flank", "hash": "3e82e13f57386fc2", "src": "db2@1.60.1.70124"}
+{"id": 238638, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225779", "hash": "f67859b3de8b1c07", "src": "db2@1.60.1.70124"}
+{"id": 238639, "field": "name", "en": "Sunrise Omelette", "hash": "3d64752aea7bd919", "src": "db2@1.60.1.70124"}
+{"id": 238639, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225780", "hash": "f6785a2dde8b3bdf", "src": "db2@1.60.1.70124"}
+{"id": 238641, "field": "name", "en": "Specklefin Feast", "hash": "741a9b292087b241", "src": "db2@1.60.1.70124"}
+{"id": 238641, "field": "description", "en": "Serve a delicious feast that lasts for $d and serves up to $M2 players.\r\n\r\n$@spellicon1225774 $@spellname1225774\r\n$@spelldesc1225774", "hash": "ee1e8d514364967e", "src": "db2@1.60.1.70124"}
+{"id": 238642, "field": "name", "en": "Grand Lobster Banquet", "hash": "94c1ad1e696598b8", "src": "db2@1.60.1.70124"}
+{"id": 238642, "field": "description", "en": "Serve a delicious feast that lasts for $d and serves up to $M2 players.\r\n\r\n$@spellicon1225774 $@spellname1225774\r\n$@spelldesc1225774", "hash": "ee1e8d514364967e", "src": "db2@1.60.1.70124"}
+{"id": 238644, "field": "name", "en": "Demonic Energy Crystal Shard", "hash": "784d8f2390a5c5c6", "src": "db2@1.60.1.70124"}
+{"id": 238644, "field": "description", "en": "A strange fel energy pulses from within, but otherwise seems stable.", "hash": "4a5f77c850897a65", "src": "db2@1.60.1.70124"}
+{"id": 238645, "field": "name", "en": "Recipe: Prowler Steak", "hash": "fa263334a33c086f", "src": "db2@1.60.1.70124"}
+{"id": 238645, "field": "description", "en": "Teaches you how to cook Prowler Steak.", "hash": "5f05ede821fcdd0d", "src": "db2@1.60.1.70124"}
+{"id": 238646, "field": "name", "en": "Recipe: Filet o' Flank", "hash": "57fb003a6f9c0b8c", "src": "db2@1.60.1.70124"}
+{"id": 238646, "field": "description", "en": "Teaches you how to cook Filet o' Flank.", "hash": "daba15821182edf6", "src": "db2@1.60.1.70124"}
+{"id": 238647, "field": "name", "en": "Recipe: Sunrise Omelette", "hash": "92b95e54af78189a", "src": "db2@1.60.1.70124"}
+{"id": 238647, "field": "description", "en": "Teaches you how to cook Sunrise Omelette.", "hash": "ad0299cbcd142b8e", "src": "db2@1.60.1.70124"}
+{"id": 238649, "field": "name", "en": "Recipe: Specklefin Feast", "hash": "c96f8453e583f1b1", "src": "db2@1.60.1.70124"}
+{"id": 238649, "field": "description", "en": "Teaches you how to cook Specklefin Feast.", "hash": "ac380bd4bcc83430", "src": "db2@1.60.1.70124"}
+{"id": 238650, "field": "name", "en": "Recipe: Grand Lobster Banquet", "hash": "2a51e78eb4e28eb5", "src": "db2@1.60.1.70124"}
+{"id": 238650, "field": "description", "en": "Teaches you how to cook Grand Lobster Banquet.", "hash": "4830158303b06357", "src": "db2@1.60.1.70124"}
+{"id": 238681, "field": "name", "en": "Dusty Bag", "hash": "4d4195d903aae143", "src": "db2@1.60.1.70124"}
+{"id": 238734, "field": "name", "en": "Tinkerbox: Teleport", "hash": "dac1878bf29d26e8", "src": "db2@1.60.1.70124"}
+{"id": 238734, "field": "description", "en": "$@spelldesc1225960", "hash": "84222b206fbe151b", "src": "db2@1.60.1.70124"}
+{"id": 238735, "field": "name", "en": "Tinkerbox: Nitro Boosts", "hash": "5d9e46a053e658c1", "src": "db2@1.60.1.70124"}
+{"id": 238735, "field": "description", "en": "$@spelldesc1225987", "hash": "84222c2d6fbe54e4", "src": "db2@1.60.1.70124"}
+{"id": 238736, "field": "name", "en": "Tinkerbox: Magnetic Displacement", "hash": "36460cb58563adfd", "src": "db2@1.60.1.70124"}
+{"id": 238736, "field": "description", "en": "$@spelldesc1226007", "hash": "84421a5fd96ae812", "src": "db2@1.60.1.70124"}
+{"id": 238737, "field": "name", "en": "Tinkerbox", "hash": "f21ce290e96532b9", "src": "db2@1.60.1.70124"}
+{"id": 238737, "field": "description", "en": "A simplistic control module used by engineers when creating tinkers.", "hash": "d987c8289b3de1eb", "src": "db2@1.60.1.70124"}
+{"id": 238782, "field": "name", "en": "Schematic: Tinkerbox", "hash": "d5105c77a3d149cc", "src": "db2@1.60.1.70124"}
+{"id": 238782, "field": "description", "en": "Teaches you how to craft Tinkerbox.", "hash": "85d569fe87d74f88", "src": "db2@1.60.1.70124"}
+{"id": 238783, "field": "name", "en": "Schematic: Tinkerbox: Teleport", "hash": "6058bb65b4af2ae0", "src": "db2@1.60.1.70124"}
+{"id": 238783, "field": "description", "en": "Teaches you how to craft Tinkerbox: Teleport.", "hash": "186fc81100b799f1", "src": "db2@1.60.1.70124"}
+{"id": 238784, "field": "name", "en": "Schematic: Tinkerbox: Nitro Boosts", "hash": "006d1056bb453ba3", "src": "db2@1.60.1.70124"}
+{"id": 238784, "field": "description", "en": "Teaches you how to craft Tinkerbox: Nitro Boosts.", "hash": "c9b0be539d58351e", "src": "db2@1.60.1.70124"}
+{"id": 238785, "field": "name", "en": "Schematic: Tinkerbox: Magnetic Displacement", "hash": "ca5c818932384410", "src": "db2@1.60.1.70124"}
+{"id": 238785, "field": "description", "en": "Teaches you how to craft Tinkerbox: Magnetic Displacement.", "hash": "8affdd4edd7a9a5c", "src": "db2@1.60.1.70124"}
+{"id": 238786, "field": "name", "en": "Schematic: Tinker: Teleport", "hash": "0ee55907cf7be869", "src": "db2@1.60.1.70124"}
+{"id": 238786, "field": "description", "en": "Teaches you how to craft Tinker: Teleport.", "hash": "0d38f82c65c348e2", "src": "db2@1.60.1.70124"}
+{"id": 238787, "field": "name", "en": "Schematic: Tinker: Nitro Boosts", "hash": "ab495c20000453e8", "src": "db2@1.60.1.70124"}
+{"id": 238787, "field": "description", "en": "Teaches you how to craft Tinker: Nitro Boosts.", "hash": "8b92ebf7fe09efcb", "src": "db2@1.60.1.70124"}
+{"id": 238788, "field": "name", "en": "Schematic: Tinker: Magnetic Displacement", "hash": "e8c3400e0b1a5743", "src": "db2@1.60.1.70124"}
+{"id": 238788, "field": "description", "en": "Teaches you how to craft Tinker: Magnetic Displacement.", "hash": "c656c25413d133a1", "src": "db2@1.60.1.70124"}
+{"id": 238789, "field": "name", "en": "Schematic: Semisafe Transporter: New Avalon", "hash": "ba4cf9564dd4fcb8", "src": "db2@1.60.1.70124"}
+{"id": 238789, "field": "description", "en": "Teaches you how to craft Semisafe Transporter: New Avalon.", "hash": "530d2b0d1c957885", "src": "db2@1.60.1.70124"}
+{"id": 238794, "field": "name", "en": "Unappetizing Leftovers", "hash": "d19c0c50a9c35ffb", "src": "db2@1.60.1.70124"}
+{"id": 238794, "field": "description", "en": "Maybe starvation isn't so bad after all.", "hash": "70dd3442c990e7e4", "src": "db2@1.60.1.70124"}
+{"id": 238797, "field": "name", "en": "Fel Crystal Shard", "hash": "7e26002ad9e975ca", "src": "db2@1.60.1.70124"}
+{"id": 238797, "field": "description", "en": "A strong fel energy pulses from the shard.", "hash": "c0d84c2536b66e02", "src": "db2@1.60.1.70124"}
+{"id": 238798, "field": "name", "en": "Toxic Essence", "hash": "06b6b3ac0e72da8a", "src": "db2@1.60.1.70124"}
+{"id": 238798, "field": "description", "en": "Faint fel energy oozes from the caustic goo.", "hash": "8f61212ca037762f", "src": "db2@1.60.1.70124"}
+{"id": 238802, "field": "name", "en": "Druidic Amulet", "hash": "f9b7ca86e0722cf3", "src": "db2@1.60.1.70124"}
+{"id": 238802, "field": "description", "en": "Use on a Corrupted Vine.\nA faint calming energy emanates from the amulet.", "hash": "0a50b60d7ecb889a", "src": "db2@1.60.1.70124"}
+{"id": 238811, "field": "name", "en": "Juicy Apple", "hash": "a2fee7c0bb21bf18", "src": "db2@1.60.1.70124"}
+{"id": 238811, "field": "description", "en": "Fresh from the field.", "hash": "1b8d29ebdf567880", "src": "db2@1.60.1.70124"}
+{"id": 238830, "field": "name", "en": "Apple Scope", "hash": "d130d0391a2e5a60", "src": "db2@1.60.1.70124"}
+{"id": 238830, "field": "description", "en": "Allows you to look far into the distance in the pursuit of apples.\nUsed by the laziest of farmers to monitor their yield from the comfort of home.", "hash": "fdac5601c7a30421", "src": "db2@1.60.1.70124"}
+{"id": 238831, "field": "name", "en": "Apple Rope", "hash": "84680da02ab8636f", "src": "db2@1.60.1.70124"}
+{"id": 238831, "field": "description", "en": "Steal an apple from a safe distance.\nIt's just a regular rope.", "hash": "c05519515b68b610", "src": "db2@1.60.1.70124"}
+{"id": 238899, "field": "name", "en": "Assorted Fish", "hash": "653006ad92936d7f", "src": "db2@1.60.1.70124"}
+{"id": 238899, "field": "description", "en": "Your fishing skill is not high enough to identify most of these fish, but fortunately that is not your problem.", "hash": "86e19cc360027c84", "src": "db2@1.60.1.70124"}
+{"id": 238927, "field": "name", "en": "Pattern: Scarlet Quiver", "hash": "0b7b56a84283581a", "src": "db2@1.60.1.70124"}
+{"id": 238927, "field": "description", "en": "Teaches you how to craft Scarlet Quiver.", "hash": "ca02b3a5dc638bfb", "src": "db2@1.60.1.70124"}
+{"id": 238928, "field": "name", "en": "Pattern: Scarlet Ammo Pouch", "hash": "986e381b9bc1eba1", "src": "db2@1.60.1.70124"}
+{"id": 238928, "field": "description", "en": "Teaches you how to craft Scarlet Ammo Pouch.", "hash": "268d200e33a1fc7b", "src": "db2@1.60.1.70124"}
+{"id": 238935, "field": "name", "en": "Gently Plagued Meat", "hash": "2b3c6c5800c85e70", "src": "db2@1.60.1.70124"}
+{"id": 238935, "field": "description", "en": "If you cut away the green parts, who is going to know?", "hash": "60c8b11be9e9d540", "src": "db2@1.60.1.70124"}
+{"id": 238960, "field": "name", "en": "Quartermaster's Crate", "hash": "7d37537b3baf1e28", "src": "db2@1.60.1.70124"}
+{"id": 238960, "field": "description", "en": "Stash a piece of crafted Scarlet Crusade equipment in the crate. This will permanently destroy the item.", "hash": "ef045547fc2d03b4", "src": "db2@1.60.1.70124"}
+{"id": 238985, "field": "name", "en": "Heavy Crate", "hash": "803e0b547ae39c9d", "src": "db2@1.60.1.70124"}
+{"id": 238985, "field": "description", "en": "Deliver to the Scarlet Quartermaster to complete Prove Your Worth.", "hash": "224592f7da1f60e9", "src": "db2@1.60.1.70124"}

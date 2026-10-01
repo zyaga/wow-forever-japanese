@@ -1,10 +1,10 @@
 {"id": 2240, "field": "text", "en": "Explore the Hidden Chamber", "hash": "8adad1693e0fb99f", "src": "wdb@1.15.9.69722"}
 {"id": 2278, "field": "text", "en": "Learn what lore that the stone watcher has to offer", "hash": "b0997b2a28f22d31", "src": "wdb@1.15.9.69722"}
-{"id": 2460, "field": "text", "en": "Shattered Salute Performed", "hash": "c42d157f8167d52b", "src": "wdb@1.60.1.70009"}
-{"id": 2480, "field": "text", "en": "Cure Completed", "hash": "bda585efb3df9786", "src": "wdb@1.60.1.70009"}
-{"id": 2520, "field": "text", "en": "Offer the sacrifice at the fountain", "hash": "3099db269ab1bcf0", "src": "wdb@1.60.1.70009"}
-{"id": 2561, "field": "text", "en": "Release Oben Rageclaw's spirit", "hash": "2d7f6f6bf3518533", "src": "wdb@1.60.1.70009"}
-{"id": 2608, "field": "text", "en": "Diagnosis Complete", "hash": "88ce388c413b47a5", "src": "wdb@1.60.1.70009"}
+{"id": 2460, "field": "text", "en": "Shattered Salute Performed", "hash": "c42d157f8167d52b", "src": "wdb@1.60.1.70124"}
+{"id": 2480, "field": "text", "en": "Cure Completed", "hash": "bda585efb3df9786", "src": "wdb@1.60.1.70124"}
+{"id": 2520, "field": "text", "en": "Offer the sacrifice at the fountain", "hash": "3099db269ab1bcf0", "src": "wdb@1.60.1.70124"}
+{"id": 2561, "field": "text", "en": "Release Oben Rageclaw's spirit", "hash": "2d7f6f6bf3518533", "src": "wdb@1.60.1.70124"}
+{"id": 2608, "field": "text", "en": "Diagnosis Complete", "hash": "88ce388c413b47a5", "src": "wdb@1.60.1.70124"}
 {"id": 2742, "field": "text", "en": "Escort Rin'ji to safety", "hash": "46eae4631698ae55", "src": "wdb@1.15.9.69722"}
 {"id": 2744, "field": "text", "en": "Conversation with Loramus", "hash": "d502e3e4b53e065a", "src": "wdb@1.15.9.69722"}
 {"id": 2755, "field": "text", "en": "Omosh Dance of Joy Learned", "hash": "b6a27b52128923af", "src": "wdb@1.15.9.69722"}
@@ -12,9 +12,9 @@
 {"id": 2767, "field": "text", "en": "Escort OOX-22/FE to the dock along the Forgotten Coast", "hash": "984aa871983d8864", "src": "wdb@1.15.9.69722"}
 {"id": 2784, "field": "text", "en": "The Tale of Sorrow", "hash": "f7e54a64fefe22b2", "src": "wdb@1.15.9.69722"}
 {"id": 2801, "field": "text", "en": "A Tale of Sorrow", "hash": "76eea50bf5a9bfe7", "src": "wdb@1.15.9.69722"}
-{"id": 2843, "field": "text", "en": "Goblin Transponder", "hash": "f5820039ee03ef29", "src": "wdb@1.60.1.70009"}
+{"id": 2843, "field": "text", "en": "Goblin Transponder", "hash": "f5820039ee03ef29", "src": "wdb@1.60.1.70124"}
 {"id": 2845, "field": "text", "en": "Take Shay Leafrunner to Rockbiter's camp", "hash": "0e52a8cc05bacc63", "src": "wdb@1.15.9.69722"}
-{"id": 2904, "field": "text", "en": "Kernobee Rescue", "hash": "bdeaecf7b75c6e3d", "src": "wdb@1.60.1.70009"}
+{"id": 2904, "field": "text", "en": "Kernobee Rescue", "hash": "bdeaecf7b75c6e3d", "src": "wdb@1.60.1.70124"}
 {"id": 2932, "field": "text", "en": "Place the grim message.", "hash": "13eec9bb1c24a74d", "src": "wdb@1.15.9.69722"}
 {"id": 2936, "field": "text", "en": "Find the Spider God's Name", "hash": "f5a7f33c072b44ac", "src": "wdb@1.15.9.69722"}
 {"id": 2954, "field": "text", "en": "Learn the purpose of the Stone Watcher of Norgannon", "hash": "fe625c0716eb60e2", "src": "wdb@1.15.9.69722"}

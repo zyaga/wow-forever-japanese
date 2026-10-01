@@ -118,16 +118,23 @@ describe("the world map chrome on Forever", function()
     assert.are.equal("Player: 1.0, 2.0 (Elwynn Forest)", frame.coords.PlayerCoords.Label:GetText())
   end)
 
-  it("the crosshair coordinates (gamepad mode) translate; Alt shows English", function()
+  it("the crosshair coordinates (gamepad mode, their own label) translate; Alt shows English", function()
     Maps.state = { tenths = true, crosshair = true, cursor = { 7.5, 80.1 } }
     tick(frame.coords)
-    assert.are.equal("照準: 7.5, 80.1", frame.coords.CursorCoords.Label:GetText())
+    assert.are.equal("照準: 7.5, 80.1", frame.coords.CrosshairCoords.Label:GetText())
     Maps.state = { tenths = false, crosshair = true, cursor = { 8, 80 } }
     tick(frame.coords)
-    assert.are.equal("照準: 8, 80", frame.coords.CursorCoords.Label:GetText())
+    assert.are.equal("照準: 8, 80", frame.coords.CrosshairCoords.Label:GetText())
     alt(true)
-    assert.are.equal("Crosshair: 8, 80", frame.coords.CursorCoords.Label:GetText())
+    assert.are.equal("Crosshair: 8, 80", frame.coords.CrosshairCoords.Label:GetText())
     alt(false)
+  end)
+
+  it("each coordinates label takes only its own keys", function()
+    frame.coords.CursorCoords.Label.text = "Crosshair: 8, 80"
+    frame.coords.CursorCoords.shown = true
+    WFJ.WorldMap.onCoords(frame.coords)
+    assert.are.equal("Crosshair: 8, 80", frame.coords.CursorCoords.Label:GetText())
   end)
 
   it("the zone timer translates while it is shown", function()

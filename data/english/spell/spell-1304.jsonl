@@ -1,63 +1,63 @@
-{"id": 1304277, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70009"}
-{"id": 1304277, "field": "description", "en": "Discard of hazardous materials a safe distance away from Gadgetzan and other garbage.", "hash": "ed0f38eb6d5715fa", "src": "db2@1.60.1.70009"}
-{"id": 1304281, "field": "name", "en": "Tracking", "hash": "ce32da4878b198ed", "src": "db2@1.60.1.70009"}
-{"id": 1304310, "field": "name", "en": "Visitor", "hash": "ce246c692193be16", "src": "db2@1.60.1.70009"}
-{"id": 1304310, "field": "aura", "en": "This player is visiting from another rule set, some interactions are limited.", "hash": "3f61e27370eb4f1e", "src": "db2@1.60.1.70009"}
-{"id": 1304323, "field": "name", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70009"}
-{"id": 1304398, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70009"}
-{"id": 1304398, "field": "description", "en": "Sends out a blast wave of magic, inflicting $s1 Arcane damage to nearby enemies.", "hash": "e5bc2450428282dd", "src": "db2@1.60.1.70009"}
-{"id": 1304401, "field": "name", "en": "Silence", "hash": "34a188e2baf39d02", "src": "db2@1.60.1.70009"}
-{"id": 1304401, "field": "description", "en": "Silences nearby enemies, preventing them from casting spells for $d.", "hash": "2d8a29ef4e7384d7", "src": "db2@1.60.1.70009"}
-{"id": 1304401, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70009"}
-{"id": 1304452, "field": "name", "en": "Rallying Cry of the Dragonslayer", "hash": "7d39ca9b95e4b332", "src": "db2@1.60.1.70009"}
-{"id": 1304452, "field": "description", "en": "Increases critical chance of spells and attacks by $s1%, increases Attack Power by $s2, and increases spell damage and healing by up to $s4. Lasts $d.", "hash": "d3b03d6730344af2", "src": "db2@1.60.1.70009"}
-{"id": 1304452, "field": "aura", "en": "Increases critical chance of all spells and attacks by $s1%, increases Attack Power by $s2, and increases spell damage and healing by up to $s4.", "hash": "3f699905837b4f3e", "src": "db2@1.60.1.70009"}
-{"id": 1304455, "field": "name", "en": "Summon Manaling", "hash": "7d712d3008f90f11", "src": "db2@1.60.1.70009"}
-{"id": 1304472, "field": "name", "en": "Curse of Thorns", "hash": "1fc35d56bd5ed752", "src": "db2@1.60.1.70009"}
-{"id": 1304473, "field": "name", "en": "Curse of Thorns", "hash": "1fc35d56bd5ed752", "src": "db2@1.60.1.70009"}
-{"id": 1304473, "field": "description", "en": "Curses an enemy for $d., giving it $h% chance to take $6910s1 damage on attack.", "hash": "b2cad783d316cd4d", "src": "db2@1.60.1.70009"}
-{"id": 1304473, "field": "aura", "en": "$h% chance to take $6910s1 damage on a", "hash": "95b06e6435d775a6", "src": "db2@1.60.1.70009"}
-{"id": 1304594, "field": "name", "en": "Warchief's Blessing", "hash": "26b9a73b03147c44", "src": "db2@1.60.1.70009"}
-{"id": 1304594, "field": "description", "en": "Increases hitpoints by 300. 15% haste to melee attacks. 10 mana regen every 5 seconds.", "hash": "143f9918440a74d6", "src": "db2@1.60.1.70009"}
-{"id": 1304594, "field": "aura", "en": "Increases hitpoints by 300. 15% haste to melee attacks. 10 mana regen every 5 seconds.", "hash": "143f9918440a74d6", "src": "db2@1.60.1.70009"}
-{"id": 1304678, "field": "name", "en": "Might of Stormwind", "hash": "c3f7433e7b025b35", "src": "db2@1.60.1.70009"}
-{"id": 1304678, "field": "description", "en": "Increases hitpoints by 300. 15% haste to all spells and attacks. 10 mana regen every 5 seconds.", "hash": "a677ca69f79322e5", "src": "db2@1.60.1.70009"}
-{"id": 1304678, "field": "aura", "en": "Increases hitpoints by 300. 15% haste to all spells and attacks. 10 mana regen every 5 seconds.", "hash": "a677ca69f79322e5", "src": "db2@1.60.1.70009"}
-{"id": 1304690, "field": "name", "en": "Songflower Serenade", "hash": "907215a2e47fc905", "src": "db2@1.60.1.70009"}
-{"id": 1304690, "field": "description", "en": "Increases chance for a melee, ranged, or spell critical by $s1% and all attributes by $s2 for $d.", "hash": "edf11cad29b56195", "src": "db2@1.60.1.70009"}
-{"id": 1304690, "field": "aura", "en": "Increases chance for a melee, ranged, or spell critical by $s1% and all attributes by $s2.", "hash": "1e1394660351a360", "src": "db2@1.60.1.70009"}
-{"id": 1304751, "field": "name", "en": "Slip'kik's Savvy", "hash": "cf8183cfc37749d3", "src": "db2@1.60.1.70009"}
-{"id": 1304751, "field": "description", "en": "Chance for a critical hit with all spells and attacks increased by $s1%.", "hash": "0ebfbe6ca2d22dc1", "src": "db2@1.60.1.70009"}
-{"id": 1304751, "field": "aura", "en": "Chance for a critical hit with all spells and attacks increased by $s1%.", "hash": "0ebfbe6ca2d22dc1", "src": "db2@1.60.1.70009"}
-{"id": 1304753, "field": "name", "en": "Mol'dar's Moxie", "hash": "d114a5f6ee29fdd5", "src": "db2@1.60.1.70009"}
-{"id": 1304753, "field": "description", "en": "Overall Stamina increased by $s1%.", "hash": "b64b2b3c6b83dc17", "src": "db2@1.60.1.70009"}
-{"id": 1304753, "field": "aura", "en": "Overall Stamina increased by $s1%.", "hash": "b64b2b3c6b83dc17", "src": "db2@1.60.1.70009"}
-{"id": 1304759, "field": "name", "en": "Fengus' Ferocity", "hash": "0fae7dcabe81fd2d", "src": "db2@1.60.1.70009"}
-{"id": 1304759, "field": "description", "en": "Attack power increased by $s1 and spell damage and healing increased by up to $s3.", "hash": "d48a0e0fefadb5b0", "src": "db2@1.60.1.70009"}
-{"id": 1304759, "field": "aura", "en": "Attack power increased by $s1 and spell damage and healing increased by up to $s3.", "hash": "d48a0e0fefadb5b0", "src": "db2@1.60.1.70009"}
-{"id": 1304767, "field": "name", "en": "Sayge's Dark Fortune of Resistance", "hash": "a9464036551dd03e", "src": "db2@1.60.1.70009"}
-{"id": 1304767, "field": "aura", "en": "Increases all magical resistances by $s1.", "hash": "3e37d7394c660c30", "src": "db2@1.60.1.70009"}
-{"id": 1304769, "field": "name", "en": "Sayge's Dark Fortune of Damage", "hash": "806ef3e4e1cb4f2f", "src": "db2@1.60.1.70009"}
-{"id": 1304769, "field": "aura", "en": "Increases damage by $s1%.", "hash": "416dea0faa84f579", "src": "db2@1.60.1.70009"}
-{"id": 1304771, "field": "name", "en": "Sayge's Dark Fortune of Armor", "hash": "dc46f3fcbfd96d44", "src": "db2@1.60.1.70009"}
-{"id": 1304771, "field": "aura", "en": "Increases armor by $s1%.", "hash": "78cc3b625f253afc", "src": "db2@1.60.1.70009"}
-{"id": 1304772, "field": "name", "en": "Sayge's Dark Fortune of Intelligence", "hash": "8a6fec00d4f7cdb0", "src": "db2@1.60.1.70009"}
-{"id": 1304772, "field": "aura", "en": "Increases intelligence by $s1%.", "hash": "5181e807dfd973b8", "src": "db2@1.60.1.70009"}
-{"id": 1304775, "field": "name", "en": "Sayge's Dark Fortune of Spirit", "hash": "43f84f4ac676adcf", "src": "db2@1.60.1.70009"}
-{"id": 1304775, "field": "aura", "en": "Increases spirit by $s1%.", "hash": "c4d6bb450f26bae6", "src": "db2@1.60.1.70009"}
-{"id": 1304778, "field": "name", "en": "Sayge's Dark Fortune of Stamina", "hash": "290888c85926a17d", "src": "db2@1.60.1.70009"}
-{"id": 1304778, "field": "aura", "en": "Increases stamina by $s1%.", "hash": "c2ea79df45e0cd42", "src": "db2@1.60.1.70009"}
-{"id": 1304780, "field": "name", "en": "Sayge's Dark Fortune of Agility", "hash": "3b0b86d19a7f48d6", "src": "db2@1.60.1.70009"}
-{"id": 1304780, "field": "aura", "en": "Increases agility by $s1%.", "hash": "e25db27c0994e0bd", "src": "db2@1.60.1.70009"}
-{"id": 1304782, "field": "name", "en": "Sayge's Dark Fortune of Strength", "hash": "27630abd229365f3", "src": "db2@1.60.1.70009"}
-{"id": 1304782, "field": "aura", "en": "Increases strength by $s1%.", "hash": "5bf699aee64a5127", "src": "db2@1.60.1.70009"}
-{"id": 1304806, "field": "name", "en": "Excavation Tools stowed", "hash": "db2cee095668b8a5", "src": "db2@1.60.1.70009"}
-{"id": 1304941, "field": "name", "en": "Jorell's Lab", "hash": "0ce0a00063baabd1", "src": "db2@1.60.1.70009"}
-{"id": 1304982, "field": "name", "en": "Allistarj's Resolve", "hash": "e30e940e3692eb6b", "src": "db2@1.60.1.70009"}
-{"id": 1304982, "field": "aura", "en": "Unkillable without a Stone of Binding.", "hash": "f2d6e0a6d982032b", "src": "db2@1.60.1.70009"}
-{"id": 1304986, "field": "name", "en": "Grol's Rage", "hash": "c0042aacae8a5963", "src": "db2@1.60.1.70009"}
-{"id": 1304986, "field": "aura", "en": "Unkillable without a Stone of Binding.", "hash": "f2d6e0a6d982032b", "src": "db2@1.60.1.70009"}
-{"id": 1304989, "field": "name", "en": "Defiled Soul", "hash": "9ece908b60b40ce0", "src": "db2@1.60.1.70009"}
-{"id": 1304989, "field": "aura", "en": "Unkillable without a Stone of Binding.", "hash": "f2d6e0a6d982032b", "src": "db2@1.60.1.70009"}
-{"id": 1304998, "field": "name", "en": "Sevine's Tether", "hash": "d338ce49684e1cf0", "src": "db2@1.60.1.70009"}
-{"id": 1304998, "field": "aura", "en": "Unkillable without a Stone of Binding.", "hash": "f2d6e0a6d982032b", "src": "db2@1.60.1.70009"}
+{"id": 1304277, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70124"}
+{"id": 1304277, "field": "description", "en": "Discard of hazardous materials a safe distance away from Gadgetzan and other garbage.", "hash": "ed0f38eb6d5715fa", "src": "db2@1.60.1.70124"}
+{"id": 1304281, "field": "name", "en": "Tracking", "hash": "ce32da4878b198ed", "src": "db2@1.60.1.70124"}
+{"id": 1304310, "field": "name", "en": "Visitor", "hash": "ce246c692193be16", "src": "db2@1.60.1.70124"}
+{"id": 1304310, "field": "aura", "en": "This player is visiting from another rule set, some interactions are limited.", "hash": "3f61e27370eb4f1e", "src": "db2@1.60.1.70124"}
+{"id": 1304323, "field": "name", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70124"}
+{"id": 1304398, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70124"}
+{"id": 1304398, "field": "description", "en": "Sends out a blast wave of magic, inflicting $s1 Arcane damage to nearby enemies.", "hash": "e5bc2450428282dd", "src": "db2@1.60.1.70124"}
+{"id": 1304401, "field": "name", "en": "Silence", "hash": "34a188e2baf39d02", "src": "db2@1.60.1.70124"}
+{"id": 1304401, "field": "description", "en": "Silences nearby enemies, preventing them from casting spells for $d.", "hash": "2d8a29ef4e7384d7", "src": "db2@1.60.1.70124"}
+{"id": 1304401, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70124"}
+{"id": 1304452, "field": "name", "en": "Rallying Cry of the Dragonslayer", "hash": "7d39ca9b95e4b332", "src": "db2@1.60.1.70124"}
+{"id": 1304452, "field": "description", "en": "Increases critical chance of spells and attacks by $s1%, increases Attack Power by $s2, and increases spell damage and healing by up to $s4. Lasts $d.", "hash": "d3b03d6730344af2", "src": "db2@1.60.1.70124"}
+{"id": 1304452, "field": "aura", "en": "Increases critical chance of all spells and attacks by $s1%, increases Attack Power by $s2, and increases spell damage and healing by up to $s4.", "hash": "3f699905837b4f3e", "src": "db2@1.60.1.70124"}
+{"id": 1304455, "field": "name", "en": "Summon Manaling", "hash": "7d712d3008f90f11", "src": "db2@1.60.1.70124"}
+{"id": 1304472, "field": "name", "en": "Curse of Thorns", "hash": "1fc35d56bd5ed752", "src": "db2@1.60.1.70124"}
+{"id": 1304473, "field": "name", "en": "Curse of Thorns", "hash": "1fc35d56bd5ed752", "src": "db2@1.60.1.70124"}
+{"id": 1304473, "field": "description", "en": "Curses an enemy for $d., giving it $h% chance to take $6910s1 damage on attack.", "hash": "b2cad783d316cd4d", "src": "db2@1.60.1.70124"}
+{"id": 1304473, "field": "aura", "en": "$h% chance to take $6910s1 damage on a", "hash": "95b06e6435d775a6", "src": "db2@1.60.1.70124"}
+{"id": 1304594, "field": "name", "en": "Warchief's Blessing", "hash": "26b9a73b03147c44", "src": "db2@1.60.1.70124"}
+{"id": 1304594, "field": "description", "en": "Increases hitpoints by 300. 15% haste to melee attacks. 10 mana regen every 5 seconds.", "hash": "143f9918440a74d6", "src": "db2@1.60.1.70124"}
+{"id": 1304594, "field": "aura", "en": "Increases hitpoints by 300. 15% haste to melee attacks. 10 mana regen every 5 seconds.", "hash": "143f9918440a74d6", "src": "db2@1.60.1.70124"}
+{"id": 1304678, "field": "name", "en": "Might of Stormwind", "hash": "c3f7433e7b025b35", "src": "db2@1.60.1.70124"}
+{"id": 1304678, "field": "description", "en": "Increases hitpoints by 300. 15% haste to all spells and attacks. 10 mana regen every 5 seconds.", "hash": "a677ca69f79322e5", "src": "db2@1.60.1.70124"}
+{"id": 1304678, "field": "aura", "en": "Increases hitpoints by 300. 15% haste to all spells and attacks. 10 mana regen every 5 seconds.", "hash": "a677ca69f79322e5", "src": "db2@1.60.1.70124"}
+{"id": 1304690, "field": "name", "en": "Songflower Serenade", "hash": "907215a2e47fc905", "src": "db2@1.60.1.70124"}
+{"id": 1304690, "field": "description", "en": "Increases chance for a melee, ranged, or spell critical by $s1% and all attributes by $s2 for $d.", "hash": "edf11cad29b56195", "src": "db2@1.60.1.70124"}
+{"id": 1304690, "field": "aura", "en": "Increases chance for a melee, ranged, or spell critical by $s1% and all attributes by $s2.", "hash": "1e1394660351a360", "src": "db2@1.60.1.70124"}
+{"id": 1304751, "field": "name", "en": "Slip'kik's Savvy", "hash": "cf8183cfc37749d3", "src": "db2@1.60.1.70124"}
+{"id": 1304751, "field": "description", "en": "Chance for a critical hit with all spells and attacks increased by $s1%.", "hash": "0ebfbe6ca2d22dc1", "src": "db2@1.60.1.70124"}
+{"id": 1304751, "field": "aura", "en": "Chance for a critical hit with all spells and attacks increased by $s1%.", "hash": "0ebfbe6ca2d22dc1", "src": "db2@1.60.1.70124"}
+{"id": 1304753, "field": "name", "en": "Mol'dar's Moxie", "hash": "d114a5f6ee29fdd5", "src": "db2@1.60.1.70124"}
+{"id": 1304753, "field": "description", "en": "Overall Stamina increased by $s1%.", "hash": "b64b2b3c6b83dc17", "src": "db2@1.60.1.70124"}
+{"id": 1304753, "field": "aura", "en": "Overall Stamina increased by $s1%.", "hash": "b64b2b3c6b83dc17", "src": "db2@1.60.1.70124"}
+{"id": 1304759, "field": "name", "en": "Fengus' Ferocity", "hash": "0fae7dcabe81fd2d", "src": "db2@1.60.1.70124"}
+{"id": 1304759, "field": "description", "en": "Attack power increased by $s1 and spell damage and healing increased by up to $s3.", "hash": "d48a0e0fefadb5b0", "src": "db2@1.60.1.70124"}
+{"id": 1304759, "field": "aura", "en": "Attack power increased by $s1 and spell damage and healing increased by up to $s3.", "hash": "d48a0e0fefadb5b0", "src": "db2@1.60.1.70124"}
+{"id": 1304767, "field": "name", "en": "Sayge's Dark Fortune of Resistance", "hash": "a9464036551dd03e", "src": "db2@1.60.1.70124"}
+{"id": 1304767, "field": "aura", "en": "Increases all magical resistances by $s1.", "hash": "3e37d7394c660c30", "src": "db2@1.60.1.70124"}
+{"id": 1304769, "field": "name", "en": "Sayge's Dark Fortune of Damage", "hash": "806ef3e4e1cb4f2f", "src": "db2@1.60.1.70124"}
+{"id": 1304769, "field": "aura", "en": "Increases damage by $s1%.", "hash": "416dea0faa84f579", "src": "db2@1.60.1.70124"}
+{"id": 1304771, "field": "name", "en": "Sayge's Dark Fortune of Armor", "hash": "dc46f3fcbfd96d44", "src": "db2@1.60.1.70124"}
+{"id": 1304771, "field": "aura", "en": "Increases armor by $s1%.", "hash": "78cc3b625f253afc", "src": "db2@1.60.1.70124"}
+{"id": 1304772, "field": "name", "en": "Sayge's Dark Fortune of Intelligence", "hash": "8a6fec00d4f7cdb0", "src": "db2@1.60.1.70124"}
+{"id": 1304772, "field": "aura", "en": "Increases intelligence by $s1%.", "hash": "5181e807dfd973b8", "src": "db2@1.60.1.70124"}
+{"id": 1304775, "field": "name", "en": "Sayge's Dark Fortune of Spirit", "hash": "43f84f4ac676adcf", "src": "db2@1.60.1.70124"}
+{"id": 1304775, "field": "aura", "en": "Increases spirit by $s1%.", "hash": "c4d6bb450f26bae6", "src": "db2@1.60.1.70124"}
+{"id": 1304778, "field": "name", "en": "Sayge's Dark Fortune of Stamina", "hash": "290888c85926a17d", "src": "db2@1.60.1.70124"}
+{"id": 1304778, "field": "aura", "en": "Increases stamina by $s1%.", "hash": "c2ea79df45e0cd42", "src": "db2@1.60.1.70124"}
+{"id": 1304780, "field": "name", "en": "Sayge's Dark Fortune of Agility", "hash": "3b0b86d19a7f48d6", "src": "db2@1.60.1.70124"}
+{"id": 1304780, "field": "aura", "en": "Increases agility by $s1%.", "hash": "e25db27c0994e0bd", "src": "db2@1.60.1.70124"}
+{"id": 1304782, "field": "name", "en": "Sayge's Dark Fortune of Strength", "hash": "27630abd229365f3", "src": "db2@1.60.1.70124"}
+{"id": 1304782, "field": "aura", "en": "Increases strength by $s1%.", "hash": "5bf699aee64a5127", "src": "db2@1.60.1.70124"}
+{"id": 1304806, "field": "name", "en": "Excavation Tools stowed", "hash": "db2cee095668b8a5", "src": "db2@1.60.1.70124"}
+{"id": 1304941, "field": "name", "en": "Jorell's Lab", "hash": "0ce0a00063baabd1", "src": "db2@1.60.1.70124"}
+{"id": 1304982, "field": "name", "en": "Allistarj's Resolve", "hash": "e30e940e3692eb6b", "src": "db2@1.60.1.70124"}
+{"id": 1304982, "field": "aura", "en": "Unkillable without a Stone of Binding.", "hash": "f2d6e0a6d982032b", "src": "db2@1.60.1.70124"}
+{"id": 1304986, "field": "name", "en": "Grol's Rage", "hash": "c0042aacae8a5963", "src": "db2@1.60.1.70124"}
+{"id": 1304986, "field": "aura", "en": "Unkillable without a Stone of Binding.", "hash": "f2d6e0a6d982032b", "src": "db2@1.60.1.70124"}
+{"id": 1304989, "field": "name", "en": "Defiled Soul", "hash": "9ece908b60b40ce0", "src": "db2@1.60.1.70124"}
+{"id": 1304989, "field": "aura", "en": "Unkillable without a Stone of Binding.", "hash": "f2d6e0a6d982032b", "src": "db2@1.60.1.70124"}
+{"id": 1304998, "field": "name", "en": "Sevine's Tether", "hash": "d338ce49684e1cf0", "src": "db2@1.60.1.70124"}
+{"id": 1304998, "field": "aura", "en": "Unkillable without a Stone of Binding.", "hash": "f2d6e0a6d982032b", "src": "db2@1.60.1.70124"}

@@ -122,7 +122,7 @@ WFJ.Data.add("spell", {
   [14828] = { "遠隔攻撃速度を$N1%上昇させます。", nil, 0x3009bf39, nil, "um" },
   [14829] = { "遠隔攻撃速度を$N1%上昇させます。", nil, 0x3009bf39, nil, "um" },
   [14889] = { "Holy呪文のクリティカル効果率を$N1%上昇させます。", nil, 0xbe847456, nil, "um" },
-  [14891] = { "Dark Iron Oreを製錬してDark Iron \nBarを作り出せます。Dark Ironを製錬\nできるのは、Blackrock Depths内の\nBlack Forgeだけです。", nil, 0x05e7906e, nil, "um" },
+  [14891] = { "Dark Iron Oreを製錬してDark Iron Barを作り出せます。Dark Ironを製錬できるのは、Blackrock Depths内のBlack Forgeだけです。", nil, 0x05e7906e, nil, "um" },
   [14892] = { "周期効果でない回復がクリティカルになると、$D1の間、対象のアーマーを$N1%上昇させます。", nil, 0x90cf1ea6, nil, "um" },
   [14898] = { "呪文による回復量を$N1%増加させます。", nil, 0x7dad99a1, nil, "um" },
   [14901] = { "呪文の回復量を総精神の最大$N1%分、呪文ダメージを総精神の最大$N2%分増加させます。", nil, 0x58bb1676, nil, "um" },

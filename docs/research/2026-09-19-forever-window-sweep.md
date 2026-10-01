@@ -387,6 +387,10 @@ rows, so no Forever class has hero talents: the hero-talent keys are excluded wi
 folder>/Cache/ADB/enUS/DBCache.bin` with the build's own hotfix cache (build 70009) gave output identical to
 the table above, and every table has 0 valid hotfix rows: nothing differs, and every `no-content` disposition holds.
 
+#### Re-run on build 1.60.1.70124 (2026-09-30)
+
+`make forever-table-counts` with the 70124 hotfix cache: every count identical to the 70009 run (Covenant 2, RenownRewards 22, BattlePetSpecies 115, the rest 0), 0 hotfix rows on any of them. Every `no-content` disposition still holds.
+
 ### 6. `unreachable`: no entry point in the camelot load set (9)
 
 | addon | evidence |

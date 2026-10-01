@@ -1,218 +1,218 @@
-{"id": 1240044, "field": "name", "en": "Ice Lance", "hash": "0c5d877246da1893", "src": "db2@1.60.1.70009"}
-{"id": 1240044, "field": "description", "en": "Deals $s1 Frost damage to an enemy target. Deals $s2% increased damage to Frozen targets.", "hash": "3353dc3d98d751ef", "src": "db2@1.60.1.70009"}
-{"id": 1240045, "field": "name", "en": "Ice Lance", "hash": "0c5d877246da1893", "src": "db2@1.60.1.70009"}
-{"id": 1240045, "field": "description", "en": "Deals $s1 Frost damage to an enemy target. Deals $s2% increased damage to Frozen targets.", "hash": "3353dc3d98d751ef", "src": "db2@1.60.1.70009"}
-{"id": 1240046, "field": "name", "en": "Ice Lance", "hash": "0c5d877246da1893", "src": "db2@1.60.1.70009"}
-{"id": 1240046, "field": "description", "en": "Deals $s1 Frost damage to an enemy target. Deals $s2% increased damage to Frozen targets.", "hash": "3353dc3d98d751ef", "src": "db2@1.60.1.70009"}
-{"id": 1240047, "field": "name", "en": "Ice Lance", "hash": "0c5d877246da1893", "src": "db2@1.60.1.70009"}
-{"id": 1240047, "field": "description", "en": "Deals $s1 Frost damage to an enemy target. Deals $s2% increased damage to Frozen targets.", "hash": "3353dc3d98d751ef", "src": "db2@1.60.1.70009"}
-{"id": 1240062, "field": "name", "en": "Teleport Target to Self", "hash": "d1b22fb03308ac92", "src": "db2@1.60.1.70009"}
-{"id": 1240071, "field": "name", "en": "Increased Critical 2 - All", "hash": "94aafb1631b8cb2f", "src": "db2@1.60.1.70009"}
-{"id": 1240071, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%.", "hash": "ff9a12de55e3926a", "src": "db2@1.60.1.70009"}
-{"id": 1240113, "field": "name", "en": "Prevent Time Freeze", "hash": "52bc061b8b754155", "src": "db2@1.60.1.70009"}
-{"id": 1240193, "field": "name", "en": "Slam", "hash": "0b3ba31d857cc8e6", "src": "db2@1.60.1.70009"}
-{"id": 1240193, "field": "description", "en": "Slams the opponent, causing weapon damage plus $s1.", "hash": "27b9eb8bded789db", "src": "db2@1.60.1.70009"}
-{"id": 1240287, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70009"}
-{"id": 1240287, "field": "description", "en": "Charge an enemy, generate $/10;s2 Rage, and Stun it for $7922d.", "hash": "13433f720459b840", "src": "db2@1.60.1.70009"}
-{"id": 1240288, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70009"}
-{"id": 1240288, "field": "description", "en": "Charge an enemy, generate $/10;s2 Rage, and Stun it for $7922d.", "hash": "13433f720459b840", "src": "db2@1.60.1.70009"}
-{"id": 1240289, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70009"}
-{"id": 1240289, "field": "description", "en": "Charge an enemy, generate $/10;s2 Rage, and Stun it for $7922d.", "hash": "13433f720459b840", "src": "db2@1.60.1.70009"}
-{"id": 1240319, "field": "name", "en": "[DNT] Spawn Challenge", "hash": "da852efd0e40c273", "src": "db2@1.60.1.70009"}
-{"id": 1240329, "field": "name", "en": "Scorned by the Light", "hash": "f6645b59fc8c341f", "src": "db2@1.60.1.70009"}
-{"id": 1240330, "field": "name", "en": "Rediscovering the Light", "hash": "d01819748f690040", "src": "db2@1.60.1.70009"}
-{"id": 1240330, "field": "aura", "en": "As a newly risen Forsaken, calling upon the light to heal yourself or others will cause you considerable pain.", "hash": "82481aabf0a912c0", "src": "db2@1.60.1.70009"}
-{"id": 1240331, "field": "name", "en": "(DNT) Cancel Aura", "hash": "8a413a4c4fe16994", "src": "db2@1.60.1.70009"}
-{"id": 1240334, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70009"}
-{"id": 1240337, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70009"}
-{"id": 1240337, "field": "description", "en": "Allows a test professioner to make items of various types.", "hash": "55e8d0aa88ef32c2", "src": "db2@1.60.1.70009"}
-{"id": 1240345, "field": "name", "en": "Smelt Copper (Test)", "hash": "a89dd4ddff2db4d1", "src": "db2@1.60.1.70009"}
-{"id": 1240345, "field": "description", "en": "Allows the miner to smelt a chunk of copper ore into a copper bar.  Smelting copper requires a forge.", "hash": "d9a0372f3f76fc47", "src": "db2@1.60.1.70009"}
-{"id": 1240365, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70009"}
-{"id": 1240365, "field": "description", "en": "Allows a test professioner to make basic contraptions up to a maximum potential skill of 75.  Requires ingredients, materials, and sometimes even reagents! [DNT]", "hash": "1f18f5bdc6fd494b", "src": "db2@1.60.1.70009"}
-{"id": 1240366, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70009"}
-{"id": 1240366, "field": "description", "en": "Allows a test professioner to make basic contraptions up to a maximum potential skill of 150.  Requires ingredients, materials, and sometimes even reagents! [DNT]", "hash": "b7e4ef7dab709e4c", "src": "db2@1.60.1.70009"}
-{"id": 1240367, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70009"}
-{"id": 1240367, "field": "description", "en": "Allows a test professioner to make basic contraptions up to a maximum potential skill of 225.  Requires ingredients, materials, and sometimes even reagents! [DNT]", "hash": "e801012d243a81b4", "src": "db2@1.60.1.70009"}
-{"id": 1240368, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70009"}
-{"id": 1240368, "field": "description", "en": "Allows a test professioner to make basic contraptions up to a maximum potential skill of 300.  Requires ingredients, materials, and sometimes even reagents! [DNT]", "hash": "1770231594a2917a", "src": "db2@1.60.1.70009"}
-{"id": 1240375, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70009"}
-{"id": 1240375, "field": "description", "en": "Profession", "hash": "5f7ba5eb177479d9", "src": "db2@1.60.1.70009"}
-{"id": 1240571, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Shockadin 2P Bonus", "hash": "bb0f83f941866c0f", "src": "db2@1.60.1.70009"}
-{"id": 1240571, "field": "description", "en": "While Shock and Awe is active, Crusader Strike and Exorcism grant you Holy Power, increasing all Holy damage you deal by $1226461s1%, stacking up to $1226461u times.", "hash": "b562c78ed4ba5529", "src": "db2@1.60.1.70009"}
-{"id": 1240573, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Shockadin 6P Bonus", "hash": "98d58eff172a83dd", "src": "db2@1.60.1.70009"}
-{"id": 1240573, "field": "description", "en": "Consuming Holy Power increases your Spell Power by $1240574s1% per Holy Power consumed for $1240574d.", "hash": "c5870f1313ea8eb7", "src": "db2@1.60.1.70009"}
-{"id": 1240574, "field": "name", "en": "Templar", "hash": "0e499227b4d4be83", "src": "db2@1.60.1.70009"}
-{"id": 1240574, "field": "aura", "en": "Increases Spell Power by $w1%.", "hash": "0a3ed59155a52037", "src": "db2@1.60.1.70009"}
-{"id": 1240682, "field": "name", "en": "Arcane Bolt", "hash": "8ce91867cb47c09b", "src": "db2@1.60.1.70009"}
-{"id": 1240682, "field": "description", "en": "Hurls a magical bolt at an enemy, inflicting Arcane damage.", "hash": "1414a65f1ea6766f", "src": "db2@1.60.1.70009"}
-{"id": 1240686, "field": "name", "en": "Slow", "hash": "0b3baa51857e873e", "src": "db2@1.60.1.70009"}
-{"id": 1240686, "field": "description", "en": "Increases the time between nearby enemies' attacks by $s1% and slows their movement and casting speed by $s2% for $d.", "hash": "95a001cd723800c6", "src": "db2@1.60.1.70009"}
-{"id": 1240686, "field": "aura", "en": "Time between attacks increased by $s1%.\r\nCasting Speed reduced by $s1%.\r\nMovement speed reduced by $s2%.", "hash": "74fe21b8a8b29ef5", "src": "db2@1.60.1.70009"}
-{"id": 1240687, "field": "name", "en": "Trample", "hash": "00f7065dcd7ef944", "src": "db2@1.60.1.70009"}
-{"id": 1240687, "field": "description", "en": "Inflicts normal damage plus $s1 to nearby enemies.", "hash": "301ad2a40024a3c5", "src": "db2@1.60.1.70009"}
-{"id": 1240688, "field": "name", "en": "Entangle", "hash": "83ddf79630d9a041", "src": "db2@1.60.1.70009"}
-{"id": 1240688, "field": "description", "en": "Entangles nearby enemies  in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "d4edad7c84a40a34", "src": "db2@1.60.1.70009"}
-{"id": 1240688, "field": "aura", "en": "Immobilized.\r\n$s2 Nature damage inflicted every $t2 sec.", "hash": "4d35cbbaf3cbec29", "src": "db2@1.60.1.70009"}
-{"id": 1240692, "field": "name", "en": "Fel Timbers", "hash": "8897ad3633a74ccf", "src": "db2@1.60.1.70009"}
-{"id": 1240692, "field": "description", "en": "The Fel Ancient sends noxious vines toward an enemy inflicting $1240706s1 Nature damage to enemies within 5 yds and creating poisonous fumes at the location that deal $1263985s1 Nature damage every $1263985t1 sec for $1240707d.", "hash": "7463e56519b601fc", "src": "db2@1.60.1.70009"}
-{"id": 1240694, "field": "name", "en": "Fel Timbers", "hash": "8897ad3633a74ccf", "src": "db2@1.60.1.70009"}
-{"id": 1240706, "field": "name", "en": "Fel Timbers", "hash": "8897ad3633a74ccf", "src": "db2@1.60.1.70009"}
-{"id": 1240706, "field": "description", "en": "$@spelldesc1240692", "hash": "a6914c2b5ea2e445", "src": "db2@1.60.1.70009"}
-{"id": 1240707, "field": "name", "en": "Fel Timbers", "hash": "8897ad3633a74ccf", "src": "db2@1.60.1.70009"}
-{"id": 1240707, "field": "description", "en": "$@spelldesc1240692", "hash": "a6914c2b5ea2e445", "src": "db2@1.60.1.70009"}
-{"id": 1240710, "field": "name", "en": "Fel Flames", "hash": "f7c1dbf885da7fb1", "src": "db2@1.60.1.70009"}
-{"id": 1240720, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70009"}
-{"id": 1240720, "field": "description", "en": "Launches a volley of holy light at the target, causing $1240727s1 Holy damage to an enemy, or $1240723s1 healing to an ally, instantly and every $402261t2 sec for $402261d.", "hash": "f806c278bd3bc75e", "src": "db2@1.60.1.70009"}
-{"id": 1240721, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70009"}
-{"id": 1240721, "field": "description", "en": "Launches a volley of holy light at the target, causing $1240730s1 Holy damage to an enemy, or $1240724s1 healing to an ally, instantly and every $402261t2 sec for $402261d.", "hash": "f49abdf88b80df89", "src": "db2@1.60.1.70009"}
-{"id": 1240723, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70009"}
-{"id": 1240723, "field": "description", "en": "Healing for $s1 every $1240732t2 sec. for $1240732d.", "hash": "c8712800d455b6d2", "src": "db2@1.60.1.70009"}
-{"id": 1240724, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70009"}
-{"id": 1240724, "field": "description", "en": "Healing for $s1 every $1240733t2 sec. for $1240733d.", "hash": "b9db9978de142795", "src": "db2@1.60.1.70009"}
-{"id": 1240727, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70009"}
-{"id": 1240727, "field": "description", "en": "Dealing $s1 Holy damage every $1240734t2 sec.", "hash": "cc1908bfd2d2e3ba", "src": "db2@1.60.1.70009"}
-{"id": 1240730, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70009"}
-{"id": 1240730, "field": "description", "en": "Dealing $s1 Holy damage every $1240736t2 sec.", "hash": "bafc0e42bda4efa1", "src": "db2@1.60.1.70009"}
-{"id": 1240732, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70009"}
-{"id": 1240732, "field": "description", "en": "Healing every $t2 sec for $d.", "hash": "032d56b0f6b6fb7e", "src": "db2@1.60.1.70009"}
-{"id": 1240733, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70009"}
-{"id": 1240733, "field": "description", "en": "Healing every $t2 sec for $d.", "hash": "032d56b0f6b6fb7e", "src": "db2@1.60.1.70009"}
-{"id": 1240734, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70009"}
-{"id": 1240734, "field": "description", "en": "Deals Holy damage every $t2 sec.", "hash": "703b6482d69e198b", "src": "db2@1.60.1.70009"}
-{"id": 1240736, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70009"}
-{"id": 1240736, "field": "description", "en": "Deals Holy damage every $t2 sec.", "hash": "703b6482d69e198b", "src": "db2@1.60.1.70009"}
-{"id": 1240738, "field": "name", "en": "Drain Vitality", "hash": "f7efd415ac54c74b", "src": "db2@1.60.1.70009"}
-{"id": 1240738, "field": "description", "en": "Drains the vitality of the target, causing $s1 Arcane damage and an additional $o2 Arcane damage over $d.", "hash": "7de1ceb3615f88a5", "src": "db2@1.60.1.70009"}
-{"id": 1240738, "field": "aura", "en": "$s2 Arcane damage every $t2 seconds.", "hash": "de9bb6a24dcfd80d", "src": "db2@1.60.1.70009"}
-{"id": 1240749, "field": "name", "en": "Debilitate", "hash": "275e1753ebcb4036", "src": "db2@1.60.1.70009"}
-{"id": 1240750, "field": "name", "en": "Debilitate", "hash": "275e1753ebcb4036", "src": "db2@1.60.1.70009"}
-{"id": 1240750, "field": "description", "en": "Hits an enemy with a bolt of draining arcane power that consumes up to $s1 mana.", "hash": "658ad6f35b3ec584", "src": "db2@1.60.1.70009"}
-{"id": 1240755, "field": "name", "en": "Blessed Recovery", "hash": "2dc67bbb02141690", "src": "db2@1.60.1.70009"}
-{"id": 1240770, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70009"}
-{"id": 1240770, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70009"}
-{"id": 1240771, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70009"}
-{"id": 1240771, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70009"}
-{"id": 1240772, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70009"}
-{"id": 1240772, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70009"}
-{"id": 1240773, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70009"}
-{"id": 1240773, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70009"}
-{"id": 1240774, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70009"}
-{"id": 1240774, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70009"}
-{"id": 1240822, "field": "name", "en": "Channeling", "hash": "5c3701c41cfc8ef1", "src": "db2@1.60.1.70009"}
-{"id": 1240826, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
-{"id": 1240826, "field": "description", "en": "Places a spell on the target that heals them for ${($m1+($bh*$bc))*$<mult>} the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within $401880a1 yards. Jumps up to $s2 times and lasts $401877d after each jump. This spell can only be placed on one target at a time per caster.", "hash": "18d9951a2ecf8a98", "src": "db2@1.60.1.70009"}
-{"id": 1240827, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
-{"id": 1240827, "field": "description", "en": "Places a spell on the target that heals them for ${($m1+($bh*$bc))*$<mult>} the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within $401880a1 yards. Jumps up to $s2 times and lasts $401877d after each jump. This spell can only be placed on one target at a time per caster.", "hash": "18d9951a2ecf8a98", "src": "db2@1.60.1.70009"}
-{"id": 1240830, "field": "name", "en": "Disruption", "hash": "3f106df7742c5dc6", "src": "db2@1.60.1.70009"}
-{"id": 1240830, "field": "description", "en": "Siphoning arcane power.", "hash": "2d9f4898e08532e8", "src": "db2@1.60.1.70009"}
-{"id": 1240848, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
-{"id": 1240848, "field": "description", "en": "Places a spell on the target that heals them the next time they take damage or receive healing.  When the heal occurs, Prayer of Mending jumps to a party or raid member within $a1 yards.  Jumps up to $n times and lasts $d after each jump.  This spell can only be placed on one target at a time.", "hash": "5aeb0cdd25834e0a", "src": "db2@1.60.1.70009"}
-{"id": 1240848, "field": "aura", "en": "Heals upon taking damage or receiving healing.", "hash": "a73e48f096e8449e", "src": "db2@1.60.1.70009"}
-{"id": 1240849, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
-{"id": 1240849, "field": "description", "en": "Places a spell on the target that heals them the next time they take damage or receive healing.  When the heal occurs, Prayer of Mending jumps to a party or raid member within $a1 yards.  Jumps up to $n times and lasts $d after each jump.  This spell can only be placed on one target at a time.", "hash": "5aeb0cdd25834e0a", "src": "db2@1.60.1.70009"}
-{"id": 1240849, "field": "aura", "en": "Heals upon taking damage or receiving healing.", "hash": "a73e48f096e8449e", "src": "db2@1.60.1.70009"}
-{"id": 1240869, "field": "name", "en": "Manamorph", "hash": "15d774813e2e7267", "src": "db2@1.60.1.70009"}
-{"id": 1240869, "field": "description", "en": "Transforms an enemy into an animal, forcing it to wander around for up to $d. While wandering, the polymorph cannot attack or cast spells.", "hash": "eb84f35f0582f9ec", "src": "db2@1.60.1.70009"}
-{"id": 1240869, "field": "aura", "en": "Cannot attack or cast spells.", "hash": "03c3096f3d5d7df5", "src": "db2@1.60.1.70009"}
-{"id": 1240918, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
-{"id": 1240919, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
-{"id": 1240921, "field": "name", "en": "Expelling Mana", "hash": "0afa0ff653fd8809", "src": "db2@1.60.1.70009"}
-{"id": 1240921, "field": "description", "en": "Expels unstable mana in an area directed at a player dealing $s1 Arcane damage.", "hash": "25c9baeee15bc9a9", "src": "db2@1.60.1.70009"}
-{"id": 1240927, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70009"}
-{"id": 1240927, "field": "description", "en": "$@spelldesc3273", "hash": "e2a2d35cec74b431", "src": "db2@1.60.1.70009"}
-{"id": 1240928, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70009"}
-{"id": 1240928, "field": "description", "en": "$@spelldesc3274", "hash": "e2a2d35dec74b432", "src": "db2@1.60.1.70009"}
-{"id": 1240929, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70009"}
-{"id": 1240929, "field": "description", "en": "$@spelldesc7924", "hash": "e32ddc793dddbf43", "src": "db2@1.60.1.70009"}
-{"id": 1240930, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70009"}
-{"id": 1240930, "field": "description", "en": "$@spelldesc10846", "hash": "d5f2663d1fb9bf76", "src": "db2@1.60.1.70009"}
-{"id": 1240938, "field": "name", "en": "Expelling Mana", "hash": "0afa0ff653fd8809", "src": "db2@1.60.1.70009"}
-{"id": 1240943, "field": "name", "en": "Alchemy", "hash": "d50702a3593a5c4d", "src": "db2@1.60.1.70009"}
-{"id": 1240943, "field": "description", "en": "$@spelldesc2259", "hash": "e28084c15f0c8076", "src": "db2@1.60.1.70009"}
-{"id": 1240944, "field": "name", "en": "Blacksmithing", "hash": "c2c99fc3326f57d9", "src": "db2@1.60.1.70009"}
-{"id": 1240944, "field": "description", "en": "$@spelldesc2018", "hash": "e27ffca2571b796f", "src": "db2@1.60.1.70009"}
-{"id": 1240945, "field": "name", "en": "Cooking", "hash": "0405cc66241b896d", "src": "db2@1.60.1.70009"}
-{"id": 1240945, "field": "description", "en": "$@spelldesc2550", "hash": "e2814dd36af54bb0", "src": "db2@1.60.1.70009"}
-{"id": 1240946, "field": "name", "en": "Enchanting", "hash": "732faeabd29a7578", "src": "db2@1.60.1.70009"}
-{"id": 1240946, "field": "description", "en": "$@spelldesc7411", "hash": "e32c8cc62a044c9a", "src": "db2@1.60.1.70009"}
-{"id": 1240947, "field": "name", "en": "Engineering", "hash": "3481b5cc37605013", "src": "db2@1.60.1.70009"}
-{"id": 1240947, "field": "description", "en": "$@spelldesc4036", "hash": "e2c498dc71eba13e", "src": "db2@1.60.1.70009"}
-{"id": 1240948, "field": "name", "en": "Fishing", "hash": "82d40f960f176e4a", "src": "db2@1.60.1.70009"}
-{"id": 1240948, "field": "description", "en": "$@spelldesc7620", "hash": "e32d135a31f4f3fc", "src": "db2@1.60.1.70009"}
-{"id": 1240949, "field": "name", "en": "Herbalism", "hash": "53713b6aefa58b7a", "src": "db2@1.60.1.70009"}
-{"id": 1240949, "field": "description", "en": "$@spelldesc2366", "hash": "e280c84a6304e415", "src": "db2@1.60.1.70009"}
-{"id": 1240950, "field": "name", "en": "Leatherworking", "hash": "5e66ee4e5d824461", "src": "db2@1.60.1.70009"}
-{"id": 1240950, "field": "description", "en": "$@spelldesc2108", "hash": "e2803f285b139d4f", "src": "db2@1.60.1.70009"}
-{"id": 1240951, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70009"}
-{"id": 1240951, "field": "description", "en": "$@spelldesc2575", "hash": "e2814ede6af58b77", "src": "db2@1.60.1.70009"}
-{"id": 1240952, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70009"}
-{"id": 1240952, "field": "description", "en": "$@spelldesc8613", "hash": "e34f6075bf5cc81d", "src": "db2@1.60.1.70009"}
-{"id": 1240953, "field": "name", "en": "Tailoring", "hash": "5a228ddab4a8787b", "src": "db2@1.60.1.70009"}
-{"id": 1240953, "field": "description", "en": "$@spelldesc3908", "hash": "e2a4a50b083daf67", "src": "db2@1.60.1.70009"}
-{"id": 1240954, "field": "name", "en": "Alchemy", "hash": "d50702a3593a5c4d", "src": "db2@1.60.1.70009"}
-{"id": 1240954, "field": "description", "en": "$@spelldesc3101", "hash": "e2a28cbce87b9147", "src": "db2@1.60.1.70009"}
-{"id": 1240955, "field": "name", "en": "Blacksmithing", "hash": "c2c99fc3326f57d9", "src": "db2@1.60.1.70009"}
-{"id": 1240955, "field": "description", "en": "$@spelldesc3100", "hash": "e2a28cbbe87b9146", "src": "db2@1.60.1.70009"}
-{"id": 1240956, "field": "name", "en": "Cooking", "hash": "0405cc66241b896d", "src": "db2@1.60.1.70009"}
-{"id": 1240956, "field": "description", "en": "$@spelldesc3102", "hash": "e2a28cbde87b9148", "src": "db2@1.60.1.70009"}
-{"id": 1240957, "field": "name", "en": "Enchanting", "hash": "732faeabd29a7578", "src": "db2@1.60.1.70009"}
-{"id": 1240957, "field": "description", "en": "$@spelldesc7412", "hash": "e32c8cc72a044c9b", "src": "db2@1.60.1.70009"}
-{"id": 1240958, "field": "name", "en": "Engineering", "hash": "3481b5cc37605013", "src": "db2@1.60.1.70009"}
-{"id": 1240958, "field": "description", "en": "$@spelldesc4037", "hash": "e2c498dd71eba13f", "src": "db2@1.60.1.70009"}
-{"id": 1240959, "field": "name", "en": "Fishing", "hash": "82d40f960f176e4a", "src": "db2@1.60.1.70009"}
-{"id": 1240959, "field": "description", "en": "$@spelldesc7731", "hash": "e32d56e735ed579f", "src": "db2@1.60.1.70009"}
-{"id": 1240960, "field": "name", "en": "Herbalism", "hash": "53713b6aefa58b7a", "src": "db2@1.60.1.70009"}
-{"id": 1240960, "field": "description", "en": "$@spelldesc2368", "hash": "e280c84c6304e417", "src": "db2@1.60.1.70009"}
-{"id": 1240961, "field": "name", "en": "Leatherworking", "hash": "5e66ee4e5d824461", "src": "db2@1.60.1.70009"}
-{"id": 1240961, "field": "description", "en": "$@spelldesc3104", "hash": "e2a28cbfe87b914a", "src": "db2@1.60.1.70009"}
-{"id": 1240962, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70009"}
-{"id": 1240962, "field": "description", "en": "$@spelldesc2576", "hash": "e2814edf6af58b78", "src": "db2@1.60.1.70009"}
-{"id": 1240963, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70009"}
-{"id": 1240963, "field": "description", "en": "$@spelldesc8617", "hash": "e34f6079bf5cc821", "src": "db2@1.60.1.70009"}
-{"id": 1240964, "field": "name", "en": "Tailoring", "hash": "5a228ddab4a8787b", "src": "db2@1.60.1.70009"}
-{"id": 1240964, "field": "description", "en": "$@spelldesc3909", "hash": "e2a4a50c083daf68", "src": "db2@1.60.1.70009"}
-{"id": 1240965, "field": "name", "en": "Alchemy", "hash": "d50702a3593a5c4d", "src": "db2@1.60.1.70009"}
-{"id": 1240965, "field": "description", "en": "$@spelldesc3464", "hash": "e2a358ecf4651bd3", "src": "db2@1.60.1.70009"}
-{"id": 1240966, "field": "name", "en": "Blacksmithing", "hash": "c2c99fc3326f57d9", "src": "db2@1.60.1.70009"}
-{"id": 1240966, "field": "description", "en": "$@spelldesc3538", "hash": "e2a39a70f85cfff5", "src": "db2@1.60.1.70009"}
-{"id": 1240967, "field": "name", "en": "Cooking", "hash": "0405cc66241b896d", "src": "db2@1.60.1.70009"}
-{"id": 1240967, "field": "description", "en": "$@spelldesc3413", "hash": "e2a3565cf4647c6d", "src": "db2@1.60.1.70009"}
-{"id": 1240968, "field": "name", "en": "Enchanting", "hash": "732faeabd29a7578", "src": "db2@1.60.1.70009"}
-{"id": 1240968, "field": "description", "en": "$@spelldesc7413", "hash": "e32c8cc82a044c9c", "src": "db2@1.60.1.70009"}
-{"id": 1240969, "field": "name", "en": "Engineering", "hash": "3481b5cc37605013", "src": "db2@1.60.1.70009"}
-{"id": 1240969, "field": "description", "en": "$@spelldesc4038", "hash": "e2c498de71eba140", "src": "db2@1.60.1.70009"}
-{"id": 1240970, "field": "name", "en": "Fishing", "hash": "82d40f960f176e4a", "src": "db2@1.60.1.70009"}
-{"id": 1240970, "field": "description", "en": "$@spelldesc7732", "hash": "e32d56e835ed57a0", "src": "db2@1.60.1.70009"}
-{"id": 1240971, "field": "name", "en": "Herbalism", "hash": "53713b6aefa58b7a", "src": "db2@1.60.1.70009"}
-{"id": 1240971, "field": "description", "en": "$@spelldesc3570", "hash": "e2a39c74f85d7f71", "src": "db2@1.60.1.70009"}
-{"id": 1240972, "field": "name", "en": "Leatherworking", "hash": "5e66ee4e5d824461", "src": "db2@1.60.1.70009"}
-{"id": 1240972, "field": "description", "en": "$@spelldesc3811", "hash": "e2a4627e04458b80", "src": "db2@1.60.1.70009"}
-{"id": 1240973, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70009"}
-{"id": 1240973, "field": "description", "en": "$@spelldesc3564", "hash": "e2a39bf5f85d5f94", "src": "db2@1.60.1.70009"}
-{"id": 1240974, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70009"}
-{"id": 1240974, "field": "description", "en": "$@spelldesc8618", "hash": "e34f607abf5cc822", "src": "db2@1.60.1.70009"}
-{"id": 1240976, "field": "name", "en": "Tailoring", "hash": "5a228ddab4a8787b", "src": "db2@1.60.1.70009"}
-{"id": 1240976, "field": "description", "en": "$@spelldesc3910", "hash": "e2a4a586083dcf40", "src": "db2@1.60.1.70009"}
-{"id": 1240977, "field": "name", "en": "Alchemy", "hash": "d50702a3593a5c4d", "src": "db2@1.60.1.70009"}
-{"id": 1240977, "field": "description", "en": "$@spelldesc11611", "hash": "d6142c38a530cc4b", "src": "db2@1.60.1.70009"}
-{"id": 1240979, "field": "name", "en": "Blacksmithing", "hash": "c2c99fc3326f57d9", "src": "db2@1.60.1.70009"}
-{"id": 1240979, "field": "description", "en": "$@spelldesc9785", "hash": "e371f4b050bddf17", "src": "db2@1.60.1.70009"}
-{"id": 1240980, "field": "name", "en": "Cooking", "hash": "0405cc66241b896d", "src": "db2@1.60.1.70009"}
-{"id": 1240980, "field": "description", "en": "$@spelldesc18260", "hash": "d70341df732808e8", "src": "db2@1.60.1.70009"}
-{"id": 1240981, "field": "name", "en": "Enchanting", "hash": "732faeabd29a7578", "src": "db2@1.60.1.70009"}
-{"id": 1240981, "field": "description", "en": "$@spelldesc13920", "hash": "d659910bcbe99f7d", "src": "db2@1.60.1.70009"}
-{"id": 1240982, "field": "name", "en": "Engineering", "hash": "3481b5cc37605013", "src": "db2@1.60.1.70009"}
-{"id": 1240982, "field": "description", "en": "$@spelldesc12656", "hash": "d6367be432993fe4", "src": "db2@1.60.1.70009"}
-{"id": 1240983, "field": "name", "en": "Fishing", "hash": "82d40f960f176e4a", "src": "db2@1.60.1.70009"}
-{"id": 1240983, "field": "description", "en": "$@spelldesc18248", "hash": "d70340e17327c92e", "src": "db2@1.60.1.70009"}
-{"id": 1240984, "field": "name", "en": "Herbalism", "hash": "53713b6aefa58b7a", "src": "db2@1.60.1.70009"}
-{"id": 1240984, "field": "description", "en": "$@spelldesc11993", "hash": "d614f96db11a9698", "src": "db2@1.60.1.70009"}
-{"id": 1240985, "field": "name", "en": "Leatherworking", "hash": "5e66ee4e5d824461", "src": "db2@1.60.1.70009"}
-{"id": 1240985, "field": "description", "en": "$@spelldesc10662", "hash": "d5f1e12d17c977b2", "src": "db2@1.60.1.70009"}
-{"id": 1240986, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70009"}
-{"id": 1240986, "field": "description", "en": "$@spelldesc10248", "hash": "d5f0d40907e828f2", "src": "db2@1.60.1.70009"}
-{"id": 1240987, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70009"}
-{"id": 1240987, "field": "description", "en": "$@spelldesc10768", "hash": "d5f2243c1bc1bb79", "src": "db2@1.60.1.70009"}
-{"id": 1240988, "field": "name", "en": "Tailoring", "hash": "5a228ddab4a8787b", "src": "db2@1.60.1.70009"}
-{"id": 1240988, "field": "description", "en": "$@spelldesc12180", "hash": "d6352e3a1ec04cbc", "src": "db2@1.60.1.70009"}
+{"id": 1240044, "field": "name", "en": "Ice Lance", "hash": "0c5d877246da1893", "src": "db2@1.60.1.70124"}
+{"id": 1240044, "field": "description", "en": "Deals $s1 Frost damage to an enemy target. Deals $s2% increased damage to Frozen targets.", "hash": "3353dc3d98d751ef", "src": "db2@1.60.1.70124"}
+{"id": 1240045, "field": "name", "en": "Ice Lance", "hash": "0c5d877246da1893", "src": "db2@1.60.1.70124"}
+{"id": 1240045, "field": "description", "en": "Deals $s1 Frost damage to an enemy target. Deals $s2% increased damage to Frozen targets.", "hash": "3353dc3d98d751ef", "src": "db2@1.60.1.70124"}
+{"id": 1240046, "field": "name", "en": "Ice Lance", "hash": "0c5d877246da1893", "src": "db2@1.60.1.70124"}
+{"id": 1240046, "field": "description", "en": "Deals $s1 Frost damage to an enemy target. Deals $s2% increased damage to Frozen targets.", "hash": "3353dc3d98d751ef", "src": "db2@1.60.1.70124"}
+{"id": 1240047, "field": "name", "en": "Ice Lance", "hash": "0c5d877246da1893", "src": "db2@1.60.1.70124"}
+{"id": 1240047, "field": "description", "en": "Deals $s1 Frost damage to an enemy target. Deals $s2% increased damage to Frozen targets.", "hash": "3353dc3d98d751ef", "src": "db2@1.60.1.70124"}
+{"id": 1240062, "field": "name", "en": "Teleport Target to Self", "hash": "d1b22fb03308ac92", "src": "db2@1.60.1.70124"}
+{"id": 1240071, "field": "name", "en": "Increased Critical 2 - All", "hash": "94aafb1631b8cb2f", "src": "db2@1.60.1.70124"}
+{"id": 1240071, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%.", "hash": "ff9a12de55e3926a", "src": "db2@1.60.1.70124"}
+{"id": 1240113, "field": "name", "en": "Prevent Time Freeze", "hash": "52bc061b8b754155", "src": "db2@1.60.1.70124"}
+{"id": 1240193, "field": "name", "en": "Slam", "hash": "0b3ba31d857cc8e6", "src": "db2@1.60.1.70124"}
+{"id": 1240193, "field": "description", "en": "Slams the opponent, causing weapon damage plus $s1.", "hash": "27b9eb8bded789db", "src": "db2@1.60.1.70124"}
+{"id": 1240287, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70124"}
+{"id": 1240287, "field": "description", "en": "Charge an enemy, generate $/10;s2 Rage, and Stun it for $7922d.", "hash": "13433f720459b840", "src": "db2@1.60.1.70124"}
+{"id": 1240288, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70124"}
+{"id": 1240288, "field": "description", "en": "Charge an enemy, generate $/10;s2 Rage, and Stun it for $7922d.", "hash": "13433f720459b840", "src": "db2@1.60.1.70124"}
+{"id": 1240289, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70124"}
+{"id": 1240289, "field": "description", "en": "Charge an enemy, generate $/10;s2 Rage, and Stun it for $7922d.", "hash": "13433f720459b840", "src": "db2@1.60.1.70124"}
+{"id": 1240319, "field": "name", "en": "[DNT] Spawn Challenge", "hash": "da852efd0e40c273", "src": "db2@1.60.1.70124"}
+{"id": 1240329, "field": "name", "en": "Scorned by the Light", "hash": "f6645b59fc8c341f", "src": "db2@1.60.1.70124"}
+{"id": 1240330, "field": "name", "en": "Rediscovering the Light", "hash": "d01819748f690040", "src": "db2@1.60.1.70124"}
+{"id": 1240330, "field": "aura", "en": "As a newly risen Forsaken, calling upon the light to heal yourself or others will cause you considerable pain.", "hash": "82481aabf0a912c0", "src": "db2@1.60.1.70124"}
+{"id": 1240331, "field": "name", "en": "(DNT) Cancel Aura", "hash": "8a413a4c4fe16994", "src": "db2@1.60.1.70124"}
+{"id": 1240334, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70124"}
+{"id": 1240337, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70124"}
+{"id": 1240337, "field": "description", "en": "Allows a test professioner to make items of various types.", "hash": "55e8d0aa88ef32c2", "src": "db2@1.60.1.70124"}
+{"id": 1240345, "field": "name", "en": "Smelt Copper (Test)", "hash": "a89dd4ddff2db4d1", "src": "db2@1.60.1.70124"}
+{"id": 1240345, "field": "description", "en": "Allows the miner to smelt a chunk of copper ore into a copper bar.  Smelting copper requires a forge.", "hash": "d9a0372f3f76fc47", "src": "db2@1.60.1.70124"}
+{"id": 1240365, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70124"}
+{"id": 1240365, "field": "description", "en": "Allows a test professioner to make basic contraptions up to a maximum potential skill of 75.  Requires ingredients, materials, and sometimes even reagents! [DNT]", "hash": "1f18f5bdc6fd494b", "src": "db2@1.60.1.70124"}
+{"id": 1240366, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70124"}
+{"id": 1240366, "field": "description", "en": "Allows a test professioner to make basic contraptions up to a maximum potential skill of 150.  Requires ingredients, materials, and sometimes even reagents! [DNT]", "hash": "b7e4ef7dab709e4c", "src": "db2@1.60.1.70124"}
+{"id": 1240367, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70124"}
+{"id": 1240367, "field": "description", "en": "Allows a test professioner to make basic contraptions up to a maximum potential skill of 225.  Requires ingredients, materials, and sometimes even reagents! [DNT]", "hash": "e801012d243a81b4", "src": "db2@1.60.1.70124"}
+{"id": 1240368, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70124"}
+{"id": 1240368, "field": "description", "en": "Allows a test professioner to make basic contraptions up to a maximum potential skill of 300.  Requires ingredients, materials, and sometimes even reagents! [DNT]", "hash": "1770231594a2917a", "src": "db2@1.60.1.70124"}
+{"id": 1240375, "field": "name", "en": "Test Profession", "hash": "16ec7cf436922487", "src": "db2@1.60.1.70124"}
+{"id": 1240375, "field": "description", "en": "Profession", "hash": "5f7ba5eb177479d9", "src": "db2@1.60.1.70124"}
+{"id": 1240571, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Shockadin 2P Bonus", "hash": "bb0f83f941866c0f", "src": "db2@1.60.1.70124"}
+{"id": 1240571, "field": "description", "en": "While Shock and Awe is active, Crusader Strike and Exorcism grant you Holy Power, increasing all Holy damage you deal by $1226461s1%, stacking up to $1226461u times.", "hash": "b562c78ed4ba5529", "src": "db2@1.60.1.70124"}
+{"id": 1240573, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Shockadin 6P Bonus", "hash": "98d58eff172a83dd", "src": "db2@1.60.1.70124"}
+{"id": 1240573, "field": "description", "en": "Consuming Holy Power increases your Spell Power by $1240574s1% per Holy Power consumed for $1240574d.", "hash": "c5870f1313ea8eb7", "src": "db2@1.60.1.70124"}
+{"id": 1240574, "field": "name", "en": "Templar", "hash": "0e499227b4d4be83", "src": "db2@1.60.1.70124"}
+{"id": 1240574, "field": "aura", "en": "Increases Spell Power by $w1%.", "hash": "0a3ed59155a52037", "src": "db2@1.60.1.70124"}
+{"id": 1240682, "field": "name", "en": "Arcane Bolt", "hash": "8ce91867cb47c09b", "src": "db2@1.60.1.70124"}
+{"id": 1240682, "field": "description", "en": "Hurls a magical bolt at an enemy, inflicting Arcane damage.", "hash": "1414a65f1ea6766f", "src": "db2@1.60.1.70124"}
+{"id": 1240686, "field": "name", "en": "Slow", "hash": "0b3baa51857e873e", "src": "db2@1.60.1.70124"}
+{"id": 1240686, "field": "description", "en": "Increases the time between nearby enemies' attacks by $s1% and slows their movement and casting speed by $s2% for $d.", "hash": "95a001cd723800c6", "src": "db2@1.60.1.70124"}
+{"id": 1240686, "field": "aura", "en": "Time between attacks increased by $s1%.\r\nCasting Speed reduced by $s1%.\r\nMovement speed reduced by $s2%.", "hash": "74fe21b8a8b29ef5", "src": "db2@1.60.1.70124"}
+{"id": 1240687, "field": "name", "en": "Trample", "hash": "00f7065dcd7ef944", "src": "db2@1.60.1.70124"}
+{"id": 1240687, "field": "description", "en": "Inflicts normal damage plus $s1 to nearby enemies.", "hash": "301ad2a40024a3c5", "src": "db2@1.60.1.70124"}
+{"id": 1240688, "field": "name", "en": "Entangle", "hash": "83ddf79630d9a041", "src": "db2@1.60.1.70124"}
+{"id": 1240688, "field": "description", "en": "Entangles nearby enemies  in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "d4edad7c84a40a34", "src": "db2@1.60.1.70124"}
+{"id": 1240688, "field": "aura", "en": "Immobilized.\r\n$s2 Nature damage inflicted every $t2 sec.", "hash": "4d35cbbaf3cbec29", "src": "db2@1.60.1.70124"}
+{"id": 1240692, "field": "name", "en": "Fel Timbers", "hash": "8897ad3633a74ccf", "src": "db2@1.60.1.70124"}
+{"id": 1240692, "field": "description", "en": "The Fel Ancient sends noxious vines toward an enemy inflicting $1240706s1 Nature damage to enemies within 5 yds and creating poisonous fumes at the location that deal $1263985s1 Nature damage every $1263985t1 sec for $1240707d.", "hash": "7463e56519b601fc", "src": "db2@1.60.1.70124"}
+{"id": 1240694, "field": "name", "en": "Fel Timbers", "hash": "8897ad3633a74ccf", "src": "db2@1.60.1.70124"}
+{"id": 1240706, "field": "name", "en": "Fel Timbers", "hash": "8897ad3633a74ccf", "src": "db2@1.60.1.70124"}
+{"id": 1240706, "field": "description", "en": "$@spelldesc1240692", "hash": "a6914c2b5ea2e445", "src": "db2@1.60.1.70124"}
+{"id": 1240707, "field": "name", "en": "Fel Timbers", "hash": "8897ad3633a74ccf", "src": "db2@1.60.1.70124"}
+{"id": 1240707, "field": "description", "en": "$@spelldesc1240692", "hash": "a6914c2b5ea2e445", "src": "db2@1.60.1.70124"}
+{"id": 1240710, "field": "name", "en": "Fel Flames", "hash": "f7c1dbf885da7fb1", "src": "db2@1.60.1.70124"}
+{"id": 1240720, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
+{"id": 1240720, "field": "description", "en": "Launches a volley of holy light at the target, causing $1240727s1 Holy damage to an enemy, or $1240723s1 healing to an ally, instantly and every $402261t2 sec for $402261d.", "hash": "f806c278bd3bc75e", "src": "db2@1.60.1.70124"}
+{"id": 1240721, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
+{"id": 1240721, "field": "description", "en": "Launches a volley of holy light at the target, causing $1240730s1 Holy damage to an enemy, or $1240724s1 healing to an ally, instantly and every $402261t2 sec for $402261d.", "hash": "f49abdf88b80df89", "src": "db2@1.60.1.70124"}
+{"id": 1240723, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
+{"id": 1240723, "field": "description", "en": "Healing for $s1 every $1240732t2 sec. for $1240732d.", "hash": "c8712800d455b6d2", "src": "db2@1.60.1.70124"}
+{"id": 1240724, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
+{"id": 1240724, "field": "description", "en": "Healing for $s1 every $1240733t2 sec. for $1240733d.", "hash": "b9db9978de142795", "src": "db2@1.60.1.70124"}
+{"id": 1240727, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
+{"id": 1240727, "field": "description", "en": "Dealing $s1 Holy damage every $1240734t2 sec.", "hash": "cc1908bfd2d2e3ba", "src": "db2@1.60.1.70124"}
+{"id": 1240730, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
+{"id": 1240730, "field": "description", "en": "Dealing $s1 Holy damage every $1240736t2 sec.", "hash": "bafc0e42bda4efa1", "src": "db2@1.60.1.70124"}
+{"id": 1240732, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
+{"id": 1240732, "field": "description", "en": "Healing every $t2 sec for $d.", "hash": "032d56b0f6b6fb7e", "src": "db2@1.60.1.70124"}
+{"id": 1240733, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
+{"id": 1240733, "field": "description", "en": "Healing every $t2 sec for $d.", "hash": "032d56b0f6b6fb7e", "src": "db2@1.60.1.70124"}
+{"id": 1240734, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
+{"id": 1240734, "field": "description", "en": "Deals Holy damage every $t2 sec.", "hash": "703b6482d69e198b", "src": "db2@1.60.1.70124"}
+{"id": 1240736, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
+{"id": 1240736, "field": "description", "en": "Deals Holy damage every $t2 sec.", "hash": "703b6482d69e198b", "src": "db2@1.60.1.70124"}
+{"id": 1240738, "field": "name", "en": "Drain Vitality", "hash": "f7efd415ac54c74b", "src": "db2@1.60.1.70124"}
+{"id": 1240738, "field": "description", "en": "Drains the vitality of the target, causing $s1 Arcane damage and an additional $o2 Arcane damage over $d.", "hash": "7de1ceb3615f88a5", "src": "db2@1.60.1.70124"}
+{"id": 1240738, "field": "aura", "en": "$s2 Arcane damage every $t2 seconds.", "hash": "de9bb6a24dcfd80d", "src": "db2@1.60.1.70124"}
+{"id": 1240749, "field": "name", "en": "Debilitate", "hash": "275e1753ebcb4036", "src": "db2@1.60.1.70124"}
+{"id": 1240750, "field": "name", "en": "Debilitate", "hash": "275e1753ebcb4036", "src": "db2@1.60.1.70124"}
+{"id": 1240750, "field": "description", "en": "Hits an enemy with a bolt of draining arcane power that consumes up to $s1 mana.", "hash": "658ad6f35b3ec584", "src": "db2@1.60.1.70124"}
+{"id": 1240755, "field": "name", "en": "Blessed Recovery", "hash": "2dc67bbb02141690", "src": "db2@1.60.1.70124"}
+{"id": 1240770, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70124"}
+{"id": 1240770, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70124"}
+{"id": 1240771, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70124"}
+{"id": 1240771, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70124"}
+{"id": 1240772, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70124"}
+{"id": 1240772, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70124"}
+{"id": 1240773, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70124"}
+{"id": 1240773, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70124"}
+{"id": 1240774, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70124"}
+{"id": 1240774, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70124"}
+{"id": 1240822, "field": "name", "en": "Channeling", "hash": "5c3701c41cfc8ef1", "src": "db2@1.60.1.70124"}
+{"id": 1240826, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70124"}
+{"id": 1240826, "field": "description", "en": "Places a spell on the target that heals them for ${($m1+($bh*$bc))*$<mult>} the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within $401880a1 yards. Jumps up to $s2 times and lasts $401877d after each jump. This spell can only be placed on one target at a time per caster.", "hash": "18d9951a2ecf8a98", "src": "db2@1.60.1.70124"}
+{"id": 1240827, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70124"}
+{"id": 1240827, "field": "description", "en": "Places a spell on the target that heals them for ${($m1+($bh*$bc))*$<mult>} the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within $401880a1 yards. Jumps up to $s2 times and lasts $401877d after each jump. This spell can only be placed on one target at a time per caster.", "hash": "18d9951a2ecf8a98", "src": "db2@1.60.1.70124"}
+{"id": 1240830, "field": "name", "en": "Disruption", "hash": "3f106df7742c5dc6", "src": "db2@1.60.1.70124"}
+{"id": 1240830, "field": "description", "en": "Siphoning arcane power.", "hash": "2d9f4898e08532e8", "src": "db2@1.60.1.70124"}
+{"id": 1240848, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70124"}
+{"id": 1240848, "field": "description", "en": "Places a spell on the target that heals them the next time they take damage or receive healing.  When the heal occurs, Prayer of Mending jumps to a party or raid member within $a1 yards.  Jumps up to $n times and lasts $d after each jump.  This spell can only be placed on one target at a time.", "hash": "5aeb0cdd25834e0a", "src": "db2@1.60.1.70124"}
+{"id": 1240848, "field": "aura", "en": "Heals upon taking damage or receiving healing.", "hash": "a73e48f096e8449e", "src": "db2@1.60.1.70124"}
+{"id": 1240849, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70124"}
+{"id": 1240849, "field": "description", "en": "Places a spell on the target that heals them the next time they take damage or receive healing.  When the heal occurs, Prayer of Mending jumps to a party or raid member within $a1 yards.  Jumps up to $n times and lasts $d after each jump.  This spell can only be placed on one target at a time.", "hash": "5aeb0cdd25834e0a", "src": "db2@1.60.1.70124"}
+{"id": 1240849, "field": "aura", "en": "Heals upon taking damage or receiving healing.", "hash": "a73e48f096e8449e", "src": "db2@1.60.1.70124"}
+{"id": 1240869, "field": "name", "en": "Manamorph", "hash": "15d774813e2e7267", "src": "db2@1.60.1.70124"}
+{"id": 1240869, "field": "description", "en": "Transforms an enemy into an animal, forcing it to wander around for up to $d. While wandering, the polymorph cannot attack or cast spells.", "hash": "eb84f35f0582f9ec", "src": "db2@1.60.1.70124"}
+{"id": 1240869, "field": "aura", "en": "Cannot attack or cast spells.", "hash": "03c3096f3d5d7df5", "src": "db2@1.60.1.70124"}
+{"id": 1240918, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70124"}
+{"id": 1240919, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70124"}
+{"id": 1240921, "field": "name", "en": "Expelling Mana", "hash": "0afa0ff653fd8809", "src": "db2@1.60.1.70124"}
+{"id": 1240921, "field": "description", "en": "Expels unstable mana in an area directed at a player dealing $s1 Arcane damage.", "hash": "25c9baeee15bc9a9", "src": "db2@1.60.1.70124"}
+{"id": 1240927, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70124"}
+{"id": 1240927, "field": "description", "en": "$@spelldesc3273", "hash": "e2a2d35cec74b431", "src": "db2@1.60.1.70124"}
+{"id": 1240928, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70124"}
+{"id": 1240928, "field": "description", "en": "$@spelldesc3274", "hash": "e2a2d35dec74b432", "src": "db2@1.60.1.70124"}
+{"id": 1240929, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70124"}
+{"id": 1240929, "field": "description", "en": "$@spelldesc7924", "hash": "e32ddc793dddbf43", "src": "db2@1.60.1.70124"}
+{"id": 1240930, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70124"}
+{"id": 1240930, "field": "description", "en": "$@spelldesc10846", "hash": "d5f2663d1fb9bf76", "src": "db2@1.60.1.70124"}
+{"id": 1240938, "field": "name", "en": "Expelling Mana", "hash": "0afa0ff653fd8809", "src": "db2@1.60.1.70124"}
+{"id": 1240943, "field": "name", "en": "Alchemy", "hash": "d50702a3593a5c4d", "src": "db2@1.60.1.70124"}
+{"id": 1240943, "field": "description", "en": "$@spelldesc2259", "hash": "e28084c15f0c8076", "src": "db2@1.60.1.70124"}
+{"id": 1240944, "field": "name", "en": "Blacksmithing", "hash": "c2c99fc3326f57d9", "src": "db2@1.60.1.70124"}
+{"id": 1240944, "field": "description", "en": "$@spelldesc2018", "hash": "e27ffca2571b796f", "src": "db2@1.60.1.70124"}
+{"id": 1240945, "field": "name", "en": "Cooking", "hash": "0405cc66241b896d", "src": "db2@1.60.1.70124"}
+{"id": 1240945, "field": "description", "en": "$@spelldesc2550", "hash": "e2814dd36af54bb0", "src": "db2@1.60.1.70124"}
+{"id": 1240946, "field": "name", "en": "Enchanting", "hash": "732faeabd29a7578", "src": "db2@1.60.1.70124"}
+{"id": 1240946, "field": "description", "en": "$@spelldesc7411", "hash": "e32c8cc62a044c9a", "src": "db2@1.60.1.70124"}
+{"id": 1240947, "field": "name", "en": "Engineering", "hash": "3481b5cc37605013", "src": "db2@1.60.1.70124"}
+{"id": 1240947, "field": "description", "en": "$@spelldesc4036", "hash": "e2c498dc71eba13e", "src": "db2@1.60.1.70124"}
+{"id": 1240948, "field": "name", "en": "Fishing", "hash": "82d40f960f176e4a", "src": "db2@1.60.1.70124"}
+{"id": 1240948, "field": "description", "en": "$@spelldesc7620", "hash": "e32d135a31f4f3fc", "src": "db2@1.60.1.70124"}
+{"id": 1240949, "field": "name", "en": "Herbalism", "hash": "53713b6aefa58b7a", "src": "db2@1.60.1.70124"}
+{"id": 1240949, "field": "description", "en": "$@spelldesc2366", "hash": "e280c84a6304e415", "src": "db2@1.60.1.70124"}
+{"id": 1240950, "field": "name", "en": "Leatherworking", "hash": "5e66ee4e5d824461", "src": "db2@1.60.1.70124"}
+{"id": 1240950, "field": "description", "en": "$@spelldesc2108", "hash": "e2803f285b139d4f", "src": "db2@1.60.1.70124"}
+{"id": 1240951, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70124"}
+{"id": 1240951, "field": "description", "en": "$@spelldesc2575", "hash": "e2814ede6af58b77", "src": "db2@1.60.1.70124"}
+{"id": 1240952, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70124"}
+{"id": 1240952, "field": "description", "en": "$@spelldesc8613", "hash": "e34f6075bf5cc81d", "src": "db2@1.60.1.70124"}
+{"id": 1240953, "field": "name", "en": "Tailoring", "hash": "5a228ddab4a8787b", "src": "db2@1.60.1.70124"}
+{"id": 1240953, "field": "description", "en": "$@spelldesc3908", "hash": "e2a4a50b083daf67", "src": "db2@1.60.1.70124"}
+{"id": 1240954, "field": "name", "en": "Alchemy", "hash": "d50702a3593a5c4d", "src": "db2@1.60.1.70124"}
+{"id": 1240954, "field": "description", "en": "$@spelldesc3101", "hash": "e2a28cbce87b9147", "src": "db2@1.60.1.70124"}
+{"id": 1240955, "field": "name", "en": "Blacksmithing", "hash": "c2c99fc3326f57d9", "src": "db2@1.60.1.70124"}
+{"id": 1240955, "field": "description", "en": "$@spelldesc3100", "hash": "e2a28cbbe87b9146", "src": "db2@1.60.1.70124"}
+{"id": 1240956, "field": "name", "en": "Cooking", "hash": "0405cc66241b896d", "src": "db2@1.60.1.70124"}
+{"id": 1240956, "field": "description", "en": "$@spelldesc3102", "hash": "e2a28cbde87b9148", "src": "db2@1.60.1.70124"}
+{"id": 1240957, "field": "name", "en": "Enchanting", "hash": "732faeabd29a7578", "src": "db2@1.60.1.70124"}
+{"id": 1240957, "field": "description", "en": "$@spelldesc7412", "hash": "e32c8cc72a044c9b", "src": "db2@1.60.1.70124"}
+{"id": 1240958, "field": "name", "en": "Engineering", "hash": "3481b5cc37605013", "src": "db2@1.60.1.70124"}
+{"id": 1240958, "field": "description", "en": "$@spelldesc4037", "hash": "e2c498dd71eba13f", "src": "db2@1.60.1.70124"}
+{"id": 1240959, "field": "name", "en": "Fishing", "hash": "82d40f960f176e4a", "src": "db2@1.60.1.70124"}
+{"id": 1240959, "field": "description", "en": "$@spelldesc7731", "hash": "e32d56e735ed579f", "src": "db2@1.60.1.70124"}
+{"id": 1240960, "field": "name", "en": "Herbalism", "hash": "53713b6aefa58b7a", "src": "db2@1.60.1.70124"}
+{"id": 1240960, "field": "description", "en": "$@spelldesc2368", "hash": "e280c84c6304e417", "src": "db2@1.60.1.70124"}
+{"id": 1240961, "field": "name", "en": "Leatherworking", "hash": "5e66ee4e5d824461", "src": "db2@1.60.1.70124"}
+{"id": 1240961, "field": "description", "en": "$@spelldesc3104", "hash": "e2a28cbfe87b914a", "src": "db2@1.60.1.70124"}
+{"id": 1240962, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70124"}
+{"id": 1240962, "field": "description", "en": "$@spelldesc2576", "hash": "e2814edf6af58b78", "src": "db2@1.60.1.70124"}
+{"id": 1240963, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70124"}
+{"id": 1240963, "field": "description", "en": "$@spelldesc8617", "hash": "e34f6079bf5cc821", "src": "db2@1.60.1.70124"}
+{"id": 1240964, "field": "name", "en": "Tailoring", "hash": "5a228ddab4a8787b", "src": "db2@1.60.1.70124"}
+{"id": 1240964, "field": "description", "en": "$@spelldesc3909", "hash": "e2a4a50c083daf68", "src": "db2@1.60.1.70124"}
+{"id": 1240965, "field": "name", "en": "Alchemy", "hash": "d50702a3593a5c4d", "src": "db2@1.60.1.70124"}
+{"id": 1240965, "field": "description", "en": "$@spelldesc3464", "hash": "e2a358ecf4651bd3", "src": "db2@1.60.1.70124"}
+{"id": 1240966, "field": "name", "en": "Blacksmithing", "hash": "c2c99fc3326f57d9", "src": "db2@1.60.1.70124"}
+{"id": 1240966, "field": "description", "en": "$@spelldesc3538", "hash": "e2a39a70f85cfff5", "src": "db2@1.60.1.70124"}
+{"id": 1240967, "field": "name", "en": "Cooking", "hash": "0405cc66241b896d", "src": "db2@1.60.1.70124"}
+{"id": 1240967, "field": "description", "en": "$@spelldesc3413", "hash": "e2a3565cf4647c6d", "src": "db2@1.60.1.70124"}
+{"id": 1240968, "field": "name", "en": "Enchanting", "hash": "732faeabd29a7578", "src": "db2@1.60.1.70124"}
+{"id": 1240968, "field": "description", "en": "$@spelldesc7413", "hash": "e32c8cc82a044c9c", "src": "db2@1.60.1.70124"}
+{"id": 1240969, "field": "name", "en": "Engineering", "hash": "3481b5cc37605013", "src": "db2@1.60.1.70124"}
+{"id": 1240969, "field": "description", "en": "$@spelldesc4038", "hash": "e2c498de71eba140", "src": "db2@1.60.1.70124"}
+{"id": 1240970, "field": "name", "en": "Fishing", "hash": "82d40f960f176e4a", "src": "db2@1.60.1.70124"}
+{"id": 1240970, "field": "description", "en": "$@spelldesc7732", "hash": "e32d56e835ed57a0", "src": "db2@1.60.1.70124"}
+{"id": 1240971, "field": "name", "en": "Herbalism", "hash": "53713b6aefa58b7a", "src": "db2@1.60.1.70124"}
+{"id": 1240971, "field": "description", "en": "$@spelldesc3570", "hash": "e2a39c74f85d7f71", "src": "db2@1.60.1.70124"}
+{"id": 1240972, "field": "name", "en": "Leatherworking", "hash": "5e66ee4e5d824461", "src": "db2@1.60.1.70124"}
+{"id": 1240972, "field": "description", "en": "$@spelldesc3811", "hash": "e2a4627e04458b80", "src": "db2@1.60.1.70124"}
+{"id": 1240973, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70124"}
+{"id": 1240973, "field": "description", "en": "$@spelldesc3564", "hash": "e2a39bf5f85d5f94", "src": "db2@1.60.1.70124"}
+{"id": 1240974, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70124"}
+{"id": 1240974, "field": "description", "en": "$@spelldesc8618", "hash": "e34f607abf5cc822", "src": "db2@1.60.1.70124"}
+{"id": 1240976, "field": "name", "en": "Tailoring", "hash": "5a228ddab4a8787b", "src": "db2@1.60.1.70124"}
+{"id": 1240976, "field": "description", "en": "$@spelldesc3910", "hash": "e2a4a586083dcf40", "src": "db2@1.60.1.70124"}
+{"id": 1240977, "field": "name", "en": "Alchemy", "hash": "d50702a3593a5c4d", "src": "db2@1.60.1.70124"}
+{"id": 1240977, "field": "description", "en": "$@spelldesc11611", "hash": "d6142c38a530cc4b", "src": "db2@1.60.1.70124"}
+{"id": 1240979, "field": "name", "en": "Blacksmithing", "hash": "c2c99fc3326f57d9", "src": "db2@1.60.1.70124"}
+{"id": 1240979, "field": "description", "en": "$@spelldesc9785", "hash": "e371f4b050bddf17", "src": "db2@1.60.1.70124"}
+{"id": 1240980, "field": "name", "en": "Cooking", "hash": "0405cc66241b896d", "src": "db2@1.60.1.70124"}
+{"id": 1240980, "field": "description", "en": "$@spelldesc18260", "hash": "d70341df732808e8", "src": "db2@1.60.1.70124"}
+{"id": 1240981, "field": "name", "en": "Enchanting", "hash": "732faeabd29a7578", "src": "db2@1.60.1.70124"}
+{"id": 1240981, "field": "description", "en": "$@spelldesc13920", "hash": "d659910bcbe99f7d", "src": "db2@1.60.1.70124"}
+{"id": 1240982, "field": "name", "en": "Engineering", "hash": "3481b5cc37605013", "src": "db2@1.60.1.70124"}
+{"id": 1240982, "field": "description", "en": "$@spelldesc12656", "hash": "d6367be432993fe4", "src": "db2@1.60.1.70124"}
+{"id": 1240983, "field": "name", "en": "Fishing", "hash": "82d40f960f176e4a", "src": "db2@1.60.1.70124"}
+{"id": 1240983, "field": "description", "en": "$@spelldesc18248", "hash": "d70340e17327c92e", "src": "db2@1.60.1.70124"}
+{"id": 1240984, "field": "name", "en": "Herbalism", "hash": "53713b6aefa58b7a", "src": "db2@1.60.1.70124"}
+{"id": 1240984, "field": "description", "en": "$@spelldesc11993", "hash": "d614f96db11a9698", "src": "db2@1.60.1.70124"}
+{"id": 1240985, "field": "name", "en": "Leatherworking", "hash": "5e66ee4e5d824461", "src": "db2@1.60.1.70124"}
+{"id": 1240985, "field": "description", "en": "$@spelldesc10662", "hash": "d5f1e12d17c977b2", "src": "db2@1.60.1.70124"}
+{"id": 1240986, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70124"}
+{"id": 1240986, "field": "description", "en": "$@spelldesc10248", "hash": "d5f0d40907e828f2", "src": "db2@1.60.1.70124"}
+{"id": 1240987, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70124"}
+{"id": 1240987, "field": "description", "en": "$@spelldesc10768", "hash": "d5f2243c1bc1bb79", "src": "db2@1.60.1.70124"}
+{"id": 1240988, "field": "name", "en": "Tailoring", "hash": "5a228ddab4a8787b", "src": "db2@1.60.1.70124"}
+{"id": 1240988, "field": "description", "en": "$@spelldesc12180", "hash": "d6352e3a1ec04cbc", "src": "db2@1.60.1.70124"}

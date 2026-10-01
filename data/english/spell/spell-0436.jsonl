@@ -1,388 +1,388 @@
-{"id": 436008, "field": "name", "en": "[DNT] Dormant Rune Dummy", "hash": "656581558d1615e9", "src": "db2@1.60.1.70009"}
-{"id": 436011, "field": "name", "en": "[DNT] Transform Dormant Rune", "hash": "7363a76417847dcf", "src": "db2@1.60.1.70009"}
-{"id": 436027, "field": "name", "en": "Grubbis Mad!", "hash": "104157b931630552", "src": "db2@1.60.1.70009"}
-{"id": 436037, "field": "name", "en": "Grubbis Mad!", "hash": "104157b931630552", "src": "db2@1.60.1.70009"}
-{"id": 436041, "field": "name", "en": "World Shrinker", "hash": "acd3f7c927b1dc04", "src": "db2@1.60.1.70009"}
-{"id": 436041, "field": "description", "en": "Shrinks the entire world for $d or until you attack.", "hash": "b4945a89c365c059", "src": "db2@1.60.1.70009"}
-{"id": 436041, "field": "aura", "en": "You have minimized the entire world!", "hash": "e95108a10a00c771", "src": "db2@1.60.1.70009"}
-{"id": 436059, "field": "name", "en": "Radiation?", "hash": "3dd21dbdf67524fb", "src": "db2@1.60.1.70009"}
-{"id": 436068, "field": "name", "en": "Radiation?", "hash": "3dd21dbdf67524fb", "src": "db2@1.60.1.70009"}
-{"id": 436068, "field": "aura", "en": "You smell really bad...", "hash": "42ca0ed0dd1e9865", "src": "db2@1.60.1.70009"}
-{"id": 436069, "field": "name", "en": "Domesticated Attack Chicken", "hash": "81c3f42ffe3237d2", "src": "db2@1.60.1.70009"}
-{"id": 436069, "field": "description", "en": "Release your Domesticated Attack Chicken that will fight for you for $d or until defeated.", "hash": "13efe70a0412e125", "src": "db2@1.60.1.70009"}
-{"id": 436074, "field": "name", "en": "Trogg Rage", "hash": "f6af7e9fe143b19a", "src": "db2@1.60.1.70009"}
-{"id": 436074, "field": "aura", "en": "Enraged and unable to focus on a single enemy.\r\nAttack speed increased by $s2%.\r\nMovement speed increased by $s1%.", "hash": "2c3c1e6d916324f6", "src": "db2@1.60.1.70009"}
-{"id": 436081, "field": "name", "en": "Trogg Rage", "hash": "f6af7e9fe143b19a", "src": "db2@1.60.1.70009"}
-{"id": 436097, "field": "name", "en": "Blood Moon", "hash": "9abd619a99bc97b1", "src": "db2@1.60.1.70009"}
-{"id": 436097, "field": "description", "en": "The thirst for blood fills your senses!", "hash": "40a7090bef0842af", "src": "db2@1.60.1.70009"}
-{"id": 436097, "field": "aura", "en": "Hostile to everyone but party or raid members. Killing enemies awards all party members with Blood for the Blood Loa. Increased rewards for killing players.", "hash": "16dc5ef47e420dbe", "src": "db2@1.60.1.70009"}
-{"id": 436100, "field": "name", "en": "Petrify", "hash": "b6a297bc85cba26a", "src": "db2@1.60.1.70009"}
-{"id": 436100, "field": "description", "en": "Stuns an enemy, but increases its armor by $s2% for $d.", "hash": "ca6440eff06be522", "src": "db2@1.60.1.70009"}
-{"id": 436100, "field": "aura", "en": "Stunned.\r\nArmor increased by $s2%.", "hash": "395f7d1def353b42", "src": "db2@1.60.1.70009"}
-{"id": 436103, "field": "name", "en": "Sooty", "hash": "bfef0f4d4ecdf702", "src": "db2@1.60.1.70009"}
-{"id": 436103, "field": "aura", "en": "Covered in burnt-smelling soot. Cannot stealth or turn invisible.", "hash": "cf5a0eac8acd52f7", "src": "db2@1.60.1.70009"}
-{"id": 436104, "field": "name", "en": "Tiny Strongbox", "hash": "34b2d99bac650f63", "src": "db2@1.60.1.70009"}
-{"id": 436104, "field": "aura", "en": "Covered in burnt-smelling soot. Cannot stealth or turn invisible.", "hash": "cf5a0eac8acd52f7", "src": "db2@1.60.1.70009"}
-{"id": 436168, "field": "name", "en": "Troggquake", "hash": "8936cc9bbeace37f", "src": "db2@1.60.1.70009"}
-{"id": 436189, "field": "name", "en": "Critically Injured", "hash": "0ca701afdc3a11a1", "src": "db2@1.60.1.70009"}
-{"id": 436204, "field": "name", "en": "Saved!", "hash": "428104f6a5661b83", "src": "db2@1.60.1.70009"}
-{"id": 436207, "field": "name", "en": "Near Death", "hash": "e58e79b9de2ac6c0", "src": "db2@1.60.1.70009"}
-{"id": 436239, "field": "name", "en": "Increased Critical 1 - All", "hash": "dff84840dc2235fb", "src": "db2@1.60.1.70009"}
-{"id": 436239, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%.", "hash": "ff9a12de55e3926a", "src": "db2@1.60.1.70009"}
-{"id": 436278, "field": "name", "en": "Strike Gong", "hash": "b0ef1c56d4258c85", "src": "db2@1.60.1.70009"}
-{"id": 436278, "field": "description", "en": "Strike the gong inside the Witherbark's den.", "hash": "7ebcfac13e6ec99e", "src": "db2@1.60.1.70009"}
-{"id": 436284, "field": "name", "en": "Improved Holy Shock", "hash": "1e01c33289312cb2", "src": "db2@1.60.1.70009"}
-{"id": 436284, "field": "description", "en": "Increases the critical hit chance of Holy Shock by $s1%.", "hash": "1e6be372d8322313", "src": "db2@1.60.1.70009"}
-{"id": 436285, "field": "name", "en": "Increased Fist Weapons", "hash": "14ec2ce3cad2bbc4", "src": "db2@1.60.1.70009"}
-{"id": 436285, "field": "description", "en": "Increased Fist Weapons +$s1.", "hash": "cffc03044977ec6c", "src": "db2@1.60.1.70009"}
-{"id": 436286, "field": "name", "en": "Flame Shock Cost Reduced", "hash": "da0de4fdcadff61d", "src": "db2@1.60.1.70009"}
-{"id": 436286, "field": "description", "en": "Reduces the mana cost of your Flame Shock spell by $s1.", "hash": "7837066cf93cddb3", "src": "db2@1.60.1.70009"}
-{"id": 436287, "field": "name", "en": "Improved Wrath", "hash": "f0a9fdee1330ebb5", "src": "db2@1.60.1.70009"}
-{"id": 436287, "field": "description", "en": "Increases the damage of your Wrath spell by up to $s1%.", "hash": "50a2446dd0598a6d", "src": "db2@1.60.1.70009"}
-{"id": 436288, "field": "name", "en": "Mottled Blood Raptor", "hash": "0314b3359dcc122c", "src": "db2@1.60.1.70009"}
-{"id": 436288, "field": "description", "en": "Summons and dismisses a rideable Raptor.", "hash": "7d1c7f754999027a", "src": "db2@1.60.1.70009"}
-{"id": 436288, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
-{"id": 436289, "field": "name", "en": "Ivory Raptor", "hash": "d33311706967896d", "src": "db2@1.60.1.70009"}
-{"id": 436289, "field": "description", "en": "Summons and dismisses a rideable Raptor.", "hash": "7d1c7f754999027a", "src": "db2@1.60.1.70009"}
-{"id": 436289, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
-{"id": 436295, "field": "name", "en": "Rusted Cage Key", "hash": "3dabdac0b90ef6d0", "src": "db2@1.60.1.70009"}
-{"id": 436295, "field": "description", "en": "Opens Rusted Cage", "hash": "ed809cdb2acb7bb8", "src": "db2@1.60.1.70009"}
-{"id": 436326, "field": "name", "en": "Aragriar's Wild Ride", "hash": "2490d68339fed39b", "src": "db2@1.60.1.70009"}
-{"id": 436326, "field": "description", "en": "Where could this device possibly take you?.... Oh well. Who cares!!!", "hash": "a465283052359f64", "src": "db2@1.60.1.70009"}
-{"id": 436327, "field": "name", "en": "Bengal Tiger", "hash": "83e32e5efaa858da", "src": "db2@1.60.1.70009"}
-{"id": 436327, "field": "description", "en": "Summons and dismisses a rideable Bengal Tiger.", "hash": "160fa69482cf7ebc", "src": "db2@1.60.1.70009"}
-{"id": 436327, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
-{"id": 436329, "field": "name", "en": "Golden Sabercat", "hash": "f1162e4af0e06725", "src": "db2@1.60.1.70009"}
-{"id": 436329, "field": "description", "en": "Summons and dismisses a rideable Golden Saber Cat.", "hash": "3745fb1ed6b4a288", "src": "db2@1.60.1.70009"}
-{"id": 436329, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
-{"id": 436332, "field": "name", "en": "Exsanguination", "hash": "68c19aed62ffe417", "src": "db2@1.60.1.70009"}
-{"id": 436332, "field": "description", "en": "Unleash a flourish of steel and blood, wounding all enemy targets within $a1 yards, dealing $s2 Shadowstrike damage, and causing them to bleed for an additional $s1 damage every $t1 sec for $d.", "hash": "2b813e95585f9d4d", "src": "db2@1.60.1.70009"}
-{"id": 436332, "field": "aura", "en": "Bleeding for $s1 damage every $t1 sec.", "hash": "72a94853949619d1", "src": "db2@1.60.1.70009"}
-{"id": 436333, "field": "name", "en": "Bleacher Toss", "hash": "93a0a611cb1ae036", "src": "db2@1.60.1.70009"}
-{"id": 436342, "field": "name", "en": "Bloodbonded Grove Talisman", "hash": "0df3f98b9f8efcfc", "src": "db2@1.60.1.70009"}
-{"id": 436342, "field": "description", "en": "Instantly heal target ally for $s1, but sacrifice $436343s1 of your own health in return after 2 sec.\r\n", "hash": "aaea061918b29703", "src": "db2@1.60.1.70009"}
-{"id": 436343, "field": "name", "en": "Bloodbonded Sacrifice", "hash": "63a84e6b50b2f2cc", "src": "db2@1.60.1.70009"}
-{"id": 436343, "field": "description", "en": "Damage yourself for $s1.", "hash": "f0dc6818960acbd2", "src": "db2@1.60.1.70009"}
-{"id": 436346, "field": "name", "en": "Blood Nova", "hash": "9adfb2bd27256adb", "src": "db2@1.60.1.70009"}
-{"id": 436346, "field": "description", "en": "A delayed explosion of blood and light occurs around the caster, causing $s1 Twilight damage to all targets within $a1 yards.", "hash": "825c89cee2a91da8", "src": "db2@1.60.1.70009"}
-{"id": 436347, "field": "name", "en": "Blood Nova", "hash": "9adfb2bd27256adb", "src": "db2@1.60.1.70009"}
-{"id": 436347, "field": "description", "en": "Unleash a delayed explosion of blood and light, causing $436346s1 Twilight damage to all targets within $436346a1 yards.", "hash": "6bab67498107a419", "src": "db2@1.60.1.70009"}
-{"id": 436351, "field": "name", "en": "Zandalari Ward", "hash": "0ec101de60c90bb1", "src": "db2@1.60.1.70009"}
-{"id": 436351, "field": "aura", "en": "Zandalari magic protects you from the madness of the Blood Moon.", "hash": "944e17e635baa6a5", "src": "db2@1.60.1.70009"}
-{"id": 436364, "field": "name", "en": "Two-Handed Mastery", "hash": "0e353f427030de89", "src": "db2@1.60.1.70009"}
-{"id": 436364, "field": "description", "en": "Each time you strike an enemy with a two-handed weapon, you gain $436365s1% attack speed with two-handed weapons, $436365s2% increased Attack Power, and $436365s3% increased chance to hit with spells for $436365d. This effect is lost if you strike an enemy with a one-handed weapon.", "hash": "8f63216913e58b31", "src": "db2@1.60.1.70009"}
-{"id": 436365, "field": "name", "en": "Two-Handed Mastery", "hash": "0e353f427030de89", "src": "db2@1.60.1.70009"}
-{"id": 436365, "field": "aura", "en": "Attack speed increased by $s1%.\r\nAttack Power increased by $s2%.\r\nSpell hit chance increased by $s3%.", "hash": "75dc1adac08df4a7", "src": "db2@1.60.1.70009"}
-{"id": 436367, "field": "name", "en": "Two-Handed Mastery", "hash": "0e353f427030de89", "src": "db2@1.60.1.70009"}
-{"id": 436367, "field": "description", "en": "Gain the Two-Handed Mastery ability:\r\n\r\n$@spellicon436364\r\n$@spelldesc436364", "hash": "1f3e582301076eef", "src": "db2@1.60.1.70009"}
-{"id": 436368, "field": "name", "en": "Engrave Chest - Two-Handed Mastery", "hash": "e02d960f7c7838e1", "src": "db2@1.60.1.70009"}
-{"id": 436368, "field": "description", "en": "Engrave your chest or robe with the Two-Handed Mastery rune:\r\n\r\n$@spellicon436364\r\n$@spelldesc436364", "hash": "dd8ed9f40f1cbced", "src": "db2@1.60.1.70009"}
-{"id": 436372, "field": "name", "en": "Sanguine Sanctuary Sacrifice", "hash": "423299ba6a123a82", "src": "db2@1.60.1.70009"}
-{"id": 436372, "field": "description", "en": "Damage yourself for $s1.", "hash": "f0dc6818960acbd2", "src": "db2@1.60.1.70009"}
-{"id": 436373, "field": "name", "en": "Sanguine Sanctuary", "hash": "814c6fb756ef76aa", "src": "db2@1.60.1.70009"}
-{"id": 436373, "field": "description", "en": "Instantly shield target ally for $s1, but sacrifice $436372s1 of your own health in return after 2 sec.", "hash": "f2d3b0b010ba98af", "src": "db2@1.60.1.70009"}
-{"id": 436374, "field": "name", "en": "Infernal Pact", "hash": "7da9b724e5b8f8b6", "src": "db2@1.60.1.70009"}
-{"id": 436374, "field": "aura", "en": "Pet's stamina and intellect increased.", "hash": "f6b4a4f2f7d96960", "src": "db2@1.60.1.70009"}
-{"id": 436375, "field": "name", "en": "Infernal Pact Essence", "hash": "df17758cc6a1a9f2", "src": "db2@1.60.1.70009"}
-{"id": 436375, "field": "description", "en": "Your pet gains $436374s1 stamina and $436374s2 intellect.", "hash": "d634fb2711d55799", "src": "db2@1.60.1.70009"}
-{"id": 436376, "field": "name", "en": "Chain Heal Cost Reduced", "hash": "7c4095302585cb36", "src": "db2@1.60.1.70009"}
-{"id": 436376, "field": "description", "en": "Reduces the mana cost of your Chain Heal spell by $s1. Effect lasts $d seconds.", "hash": "033ead49871743b8", "src": "db2@1.60.1.70009"}
-{"id": 436377, "field": "name", "en": "Tigerblood Talisman", "hash": "a7fc6a91e737facf", "src": "db2@1.60.1.70009"}
-{"id": 436377, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70009"}
-{"id": 436377, "field": "aura", "en": "$1s mana restored.", "hash": "ffb4963e712aefde", "src": "db2@1.60.1.70009"}
-{"id": 436378, "field": "name", "en": "Tigerblood Talisman", "hash": "a7fc6a91e737facf", "src": "db2@1.60.1.70009"}
-{"id": 436378, "field": "aura", "en": "Restores $436377s1 mana to their master upon landing a critical strike.", "hash": "10d533a645245463", "src": "db2@1.60.1.70009"}
-{"id": 436379, "field": "name", "en": "Tigerblood Talisman", "hash": "a7fc6a91e737facf", "src": "db2@1.60.1.70009"}
-{"id": 436379, "field": "description", "en": "Your pet's critical hits cause you to become energized, granting you $436377s1 mana.", "hash": "edf726cbc522785e", "src": "db2@1.60.1.70009"}
-{"id": 436379, "field": "aura", "en": "Your pet's critical hits cause you to become energized, granting you $436377s1 mana.", "hash": "edf726cbc522785e", "src": "db2@1.60.1.70009"}
-{"id": 436380, "field": "name", "en": "Bloodstorm Sacrifice", "hash": "d6ec28fe1108f1d2", "src": "db2@1.60.1.70009"}
-{"id": 436380, "field": "description", "en": "Damage yourself for $s1.", "hash": "f0dc6818960acbd2", "src": "db2@1.60.1.70009"}
-{"id": 436381, "field": "name", "en": "Bloodstorm Jewel", "hash": "928d198a49f44b1d", "src": "db2@1.60.1.70009"}
-{"id": 436381, "field": "description", "en": "Instantly heal target ally for $s1, but sacrifice $436380s1 of your own health in return after 2 sec.\r\n", "hash": "1cd9c93178a1e780", "src": "db2@1.60.1.70009"}
-{"id": 436382, "field": "name", "en": "Bloodlight Offering", "hash": "15578c04e67cedad", "src": "db2@1.60.1.70009"}
-{"id": 436382, "field": "description", "en": "Damage yourself for $s1.", "hash": "f0dc6818960acbd2", "src": "db2@1.60.1.70009"}
-{"id": 436383, "field": "name", "en": "Bloodlight Offering", "hash": "15578c04e67cedad", "src": "db2@1.60.1.70009"}
-{"id": 436383, "field": "description", "en": "Instantly heal target ally for $s1, but sacrifice $436382s1 of your own health in return after 2 sec.\r\n", "hash": "19d93b72f312e34f", "src": "db2@1.60.1.70009"}
-{"id": 436387, "field": "name", "en": "Blessing of the Blood Loa", "hash": "14c78c04986745a7", "src": "db2@1.60.1.70009"}
-{"id": 436387, "field": "description", "en": "Increases all damage and healing done by $s1% for $d.", "hash": "738b070573dd8374", "src": "db2@1.60.1.70009"}
-{"id": 436387, "field": "aura", "en": "Increases all damage and healing done by $s1%.", "hash": "4dceee09c0e2e607", "src": "db2@1.60.1.70009"}
-{"id": 436390, "field": "name", "en": "Decoy Totem", "hash": "5567e2407aac2f44", "src": "db2@1.60.1.70009"}
-{"id": 436391, "field": "name", "en": "Decoy Totem", "hash": "5567e2407aac2f44", "src": "db2@1.60.1.70009"}
-{"id": 436391, "field": "aura", "en": "Immune to movement impairing effects.", "hash": "fedffc6909e46bf5", "src": "db2@1.60.1.70009"}
-{"id": 436393, "field": "name", "en": "Chimera Shot - Serpent", "hash": "5835cab7b6cf72f3", "src": "db2@1.60.1.70009"}
-{"id": 436393, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70009"}
-{"id": 436394, "field": "name", "en": "Chimera Shot - Serpent", "hash": "5835cab7b6cf72f3", "src": "db2@1.60.1.70009"}
-{"id": 436394, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70009"}
-{"id": 436395, "field": "name", "en": "Chimera Shot - Serpent", "hash": "5835cab7b6cf72f3", "src": "db2@1.60.1.70009"}
-{"id": 436395, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70009"}
-{"id": 436412, "field": "name", "en": "Discoverer's Delight", "hash": "5a5d440e0d076745", "src": "db2@1.60.1.70009"}
-{"id": 436412, "field": "description", "en": "Empowered by the brave discoverers that preceded you, experience gains increased by $w1%, and gold earned from quests also increases by $w3%.", "hash": "2f2e90e6533f2e38", "src": "db2@1.60.1.70009"}
-{"id": 436412, "field": "aura", "en": "Experience gains increased by $w1%. Gold earned from quests increased by $w3%.", "hash": "7e123d97a2978ead", "src": "db2@1.60.1.70009"}
-{"id": 436413, "field": "name", "en": "Bloodstorm", "hash": "50e952206a9a78c8", "src": "db2@1.60.1.70009"}
-{"id": 436413, "field": "description", "en": "A delayed explosion of blood and nature occurs around the caster, causing $s1 Plague damage to all targets within $a1 yards.", "hash": "c1c3fee7416e8c58", "src": "db2@1.60.1.70009"}
-{"id": 436414, "field": "name", "en": "Bloodstorm", "hash": "50e952206a9a78c8", "src": "db2@1.60.1.70009"}
-{"id": 436414, "field": "description", "en": "Unleash a delayed explosion of blood and nature, causing $436413s1 Plague damage to all targets within $436413a1 yards.", "hash": "33268e267a0dd44c", "src": "db2@1.60.1.70009"}
-{"id": 436419, "field": "name", "en": "Complete Harold Riggs Tracking Quest (DNT)", "hash": "746bcd9fd0db5574", "src": "db2@1.60.1.70009"}
-{"id": 436425, "field": "name", "en": "Complete Nat Pagle Tracking Quest (DNT)", "hash": "05d6e5d916e2c36d", "src": "db2@1.60.1.70009"}
-{"id": 436426, "field": "name", "en": "Discoverer's Delight - Modify Aura", "hash": "65d5d619e3be5028", "src": "db2@1.60.1.70009"}
-{"id": 436427, "field": "name", "en": "Discoverer's Delight - Cancel Aura", "hash": "5d5238df965c4d55", "src": "db2@1.60.1.70009"}
-{"id": 436428, "field": "name", "en": "Discoverer's Delight - Reapply Aura", "hash": "594411c5d1638ce2", "src": "db2@1.60.1.70009"}
-{"id": 436429, "field": "name", "en": "Gift of the Sun", "hash": "3e80f8db09a220c6", "src": "db2@1.60.1.70009"}
-{"id": 436429, "field": "description", "en": "Brings Gifts of the Sun.", "hash": "dcb4080dfa34a550", "src": "db2@1.60.1.70009"}
-{"id": 436429, "field": "aura", "en": "Brings Gifts of the Sun.", "hash": "dcb4080dfa34a550", "src": "db2@1.60.1.70009"}
-{"id": 436430, "field": "name", "en": "Avenging Wrath", "hash": "e9d5e46cb552a935", "src": "db2@1.60.1.70009"}
-{"id": 436430, "field": "description", "en": "Greatly increases damage while inspired.", "hash": "8b85caa6a8c06f86", "src": "db2@1.60.1.70009"}
-{"id": 436430, "field": "aura", "en": "Attack speed increased.\r\nDamage dealt increased.", "hash": "7193b025d8120612", "src": "db2@1.60.1.70009"}
-{"id": 436431, "field": "name", "en": "Prey", "hash": "0ad64e9af51702dd", "src": "db2@1.60.1.70009"}
-{"id": 436431, "field": "description", "en": "Now you know you're being watched...", "hash": "3a9579e79ec7da16", "src": "db2@1.60.1.70009"}
-{"id": 436431, "field": "aura", "en": "Now you know you're being watched...", "hash": "3a9579e79ec7da16", "src": "db2@1.60.1.70009"}
-{"id": 436432, "field": "name", "en": "Trail Snack", "hash": "1245a8d0fcc8cf8b", "src": "db2@1.60.1.70009"}
-{"id": 436432, "field": "description", "en": "Eat a handful and make up for lost time on the trail!", "hash": "33638c5c8e5ac7b9", "src": "db2@1.60.1.70009"}
-{"id": 436432, "field": "aura", "en": "Regenerating $s5 health every 2 sec for $d.", "hash": "400c651ce8b9684f", "src": "db2@1.60.1.70009"}
-{"id": 436433, "field": "name", "en": "Field Marshal", "hash": "3e299ceb458a5615", "src": "db2@1.60.1.70009"}
-{"id": 436433, "field": "description", "en": "Field Marshal", "hash": "3e299ceb458a5615", "src": "db2@1.60.1.70009"}
-{"id": 436433, "field": "aura", "en": "Field Marshal", "hash": "3e299ceb458a5615", "src": "db2@1.60.1.70009"}
-{"id": 436434, "field": "name", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70009"}
-{"id": 436434, "field": "description", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70009"}
-{"id": 436434, "field": "aura", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70009"}
-{"id": 436435, "field": "name", "en": "Marshal", "hash": "877fec130a7b4c96", "src": "db2@1.60.1.70009"}
-{"id": 436435, "field": "description", "en": "Marshal", "hash": "877fec130a7b4c96", "src": "db2@1.60.1.70009"}
-{"id": 436435, "field": "aura", "en": "Marshal", "hash": "877fec130a7b4c96", "src": "db2@1.60.1.70009"}
-{"id": 436436, "field": "name", "en": "General", "hash": "f14c70303f73c518", "src": "db2@1.60.1.70009"}
-{"id": 436436, "field": "description", "en": "General", "hash": "f14c70303f73c518", "src": "db2@1.60.1.70009"}
-{"id": 436436, "field": "aura", "en": "General", "hash": "f14c70303f73c518", "src": "db2@1.60.1.70009"}
-{"id": 436437, "field": "name", "en": "Commander", "hash": "a9e7d0e9d48cdd73", "src": "db2@1.60.1.70009"}
-{"id": 436437, "field": "description", "en": "Commander", "hash": "a9e7d0e9d48cdd73", "src": "db2@1.60.1.70009"}
-{"id": 436437, "field": "aura", "en": "Commander", "hash": "a9e7d0e9d48cdd73", "src": "db2@1.60.1.70009"}
-{"id": 436438, "field": "name", "en": "Lieutenant General", "hash": "25704ffb742e6df8", "src": "db2@1.60.1.70009"}
-{"id": 436438, "field": "description", "en": "Lieutenant General", "hash": "25704ffb742e6df8", "src": "db2@1.60.1.70009"}
-{"id": 436438, "field": "aura", "en": "Lieutenant General", "hash": "25704ffb742e6df8", "src": "db2@1.60.1.70009"}
-{"id": 436439, "field": "name", "en": "Lieutenant Commander", "hash": "e2bbc522b65f4d46", "src": "db2@1.60.1.70009"}
-{"id": 436439, "field": "description", "en": "Lieutenant Commander", "hash": "e2bbc522b65f4d46", "src": "db2@1.60.1.70009"}
-{"id": 436439, "field": "aura", "en": "Lieutenant Commander", "hash": "e2bbc522b65f4d46", "src": "db2@1.60.1.70009"}
-{"id": 436440, "field": "name", "en": "Champion", "hash": "80e2d2e4cd073efb", "src": "db2@1.60.1.70009"}
-{"id": 436440, "field": "description", "en": "Champion", "hash": "80e2d2e4cd073efb", "src": "db2@1.60.1.70009"}
-{"id": 436440, "field": "aura", "en": "Champion", "hash": "80e2d2e4cd073efb", "src": "db2@1.60.1.70009"}
-{"id": 436441, "field": "name", "en": "Knight", "hash": "48d381aa44aae70d", "src": "db2@1.60.1.70009"}
-{"id": 436441, "field": "description", "en": "Knight", "hash": "48d381aa44aae70d", "src": "db2@1.60.1.70009"}
-{"id": 436441, "field": "aura", "en": "Knight", "hash": "48d381aa44aae70d", "src": "db2@1.60.1.70009"}
-{"id": 436442, "field": "name", "en": "Stone Guard", "hash": "54c96c078f508131", "src": "db2@1.60.1.70009"}
-{"id": 436442, "field": "description", "en": "Stone Guard", "hash": "54c96c078f508131", "src": "db2@1.60.1.70009"}
-{"id": 436442, "field": "aura", "en": "Stone Guard", "hash": "54c96c078f508131", "src": "db2@1.60.1.70009"}
-{"id": 436443, "field": "name", "en": "Soul of Stromgarde", "hash": "98dd9cf92f6618d7", "src": "db2@1.60.1.70009"}
-{"id": 436443, "field": "description", "en": "Increases the damage of nearby allies by $s1% for $d.", "hash": "9dd27ffb9847425e", "src": "db2@1.60.1.70009"}
-{"id": 436443, "field": "aura", "en": "Damage increased by $s1%.", "hash": "b556e36189b38b27", "src": "db2@1.60.1.70009"}
-{"id": 436444, "field": "name", "en": "Veteran of the Third War", "hash": "992d4fd69cd37d34", "src": "db2@1.60.1.70009"}
-{"id": 436444, "field": "description", "en": "Unrelenting, unprejudiced, and undamned. ", "hash": "a133c109809bfa9a", "src": "db2@1.60.1.70009"}
-{"id": 436444, "field": "aura", "en": "Unrelenting, unprejudiced, and undamned.", "hash": "a133c109809bfa9a", "src": "db2@1.60.1.70009"}
-{"id": 436445, "field": "name", "en": "Fire Strike", "hash": "40e734d25ad1e58f", "src": "db2@1.60.1.70009"}
-{"id": 436445, "field": "description", "en": "Does $s1 additional Fire damage to the target.", "hash": "c0c27c0fb3150a3f", "src": "db2@1.60.1.70009"}
-{"id": 436469, "field": "name", "en": "Bloodlash", "hash": "b94f22624f943259", "src": "db2@1.60.1.70009"}
-{"id": 436469, "field": "description", "en": "Chance on hit to increase Strength by $436471s1 for $436471d.", "hash": "0fafc632e9ae1c1a", "src": "db2@1.60.1.70009"}
-{"id": 436469, "field": "aura", "en": "Strength Increased by $436471s1.", "hash": "359fb8fc46ee7918", "src": "db2@1.60.1.70009"}
-{"id": 436471, "field": "name", "en": "Bloodlash", "hash": "b94f22624f943259", "src": "db2@1.60.1.70009"}
-{"id": 436471, "field": "description", "en": "Chance on hit to increase Strength by $s1 for $d.", "hash": "87a49b6fcc3ef65c", "src": "db2@1.60.1.70009"}
-{"id": 436471, "field": "aura", "en": "Strength Increased by $s1.", "hash": "555ecc600a129a42", "src": "db2@1.60.1.70009"}
-{"id": 436473, "field": "name", "en": "Stun", "hash": "0b3dc5a2a5416483", "src": "db2@1.60.1.70009"}
-{"id": 436473, "field": "description", "en": "Knocks target silly for $d1.", "hash": "9f6da6c03626bebc", "src": "db2@1.60.1.70009"}
-{"id": 436473, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 436474, "field": "name", "en": "Consume", "hash": "f38da6cfe013b757", "src": "db2@1.60.1.70009"}
-{"id": 436475, "field": "name", "en": "Longsight", "hash": "cc9206b867837d54", "src": "db2@1.60.1.70009"}
-{"id": 436475, "field": "description", "en": "Allows you to look far into the distance.", "hash": "4c99356daeaf0bf4", "src": "db2@1.60.1.70009"}
-{"id": 436475, "field": "aura", "en": "Increased vision range until you move.", "hash": "ae3b2d17cc81c7ef", "src": "db2@1.60.1.70009"}
-{"id": 436476, "field": "name", "en": "Teleport to Wirdal Wondergear", "hash": "9b779db389e0da87", "src": "db2@1.60.1.70009"}
-{"id": 436476, "field": "description", "en": "Sends player to Gnomeregan.", "hash": "187b898451d33e10", "src": "db2@1.60.1.70009"}
-{"id": 436477, "field": "name", "en": "Blood Spattered Tempest", "hash": "f7ad0bfa30345c0e", "src": "db2@1.60.1.70009"}
-{"id": 436477, "field": "description", "en": "Unleash a violent tempest of steel and blood, causing $s1 Shadowstrike damage to all enemies within $a1 yards.", "hash": "312bd32a4b66ac18", "src": "db2@1.60.1.70009"}
-{"id": 436478, "field": "name", "en": "Infernal Impact", "hash": "c9a62589038b4958", "src": "db2@1.60.1.70009"}
-{"id": 436478, "field": "description", "en": "Unleash a delayed explosion of blood and fire, causing $436479s1 Shadowflame damage to all targets within $436479a1 yards.", "hash": "601d049716de06e3", "src": "db2@1.60.1.70009"}
-{"id": 436479, "field": "name", "en": "Infernal Impact", "hash": "c9a62589038b4958", "src": "db2@1.60.1.70009"}
-{"id": 436479, "field": "description", "en": "A delayed explosion of blood and fire occurs around the caster, causing $s1 Shadowflame damage to all targets within $a1 yards.", "hash": "65b1d4d043c5f579", "src": "db2@1.60.1.70009"}
-{"id": 436480, "field": "name", "en": "Attack Power - Feral (+80)", "hash": "566eb75531747174", "src": "db2@1.60.1.70009"}
-{"id": 436480, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70009"}
-{"id": 436481, "field": "name", "en": "Bloodbark Cleave", "hash": "be5bbea7e8302b8a", "src": "db2@1.60.1.70009"}
-{"id": 436481, "field": "description", "en": "Inficts $s1 additional  damage to the target and its nearest allies, affecting up to $x1 targets. Causes additional threat.", "hash": "8af15791c35f93c1", "src": "db2@1.60.1.70009"}
-{"id": 436481, "field": "aura", "en": "Inficts $s1 additional  damage to the target and its nearest allies, affecting up to $x1 targets. Causes additional threat.", "hash": "8af15791c35f93c1", "src": "db2@1.60.1.70009"}
-{"id": 436482, "field": "name", "en": "Bloodbark Cleave", "hash": "be5bbea7e8302b8a", "src": "db2@1.60.1.70009"}
-{"id": 436482, "field": "description", "en": "Adds $436481s1 Stormstrike damage to your melee attacks, damaging the target and its nearest allies, affecting up to $436481x1 targets. Causes additional threat. Lasts $d.", "hash": "470349c1ea479da5", "src": "db2@1.60.1.70009"}
-{"id": 436482, "field": "aura", "en": "Adding $436481s1 Stormstrike damage to your melee attacks, damaging the target and its 2 nearest allies. Causes additional threat.", "hash": "ed72e25c95a418df", "src": "db2@1.60.1.70009"}
-{"id": 436483, "field": "name", "en": "Wintersprint Teleport", "hash": "0e3b7ef2a4fbae42", "src": "db2@1.60.1.70009"}
-{"id": 436484, "field": "name", "en": "Azshara Teleport", "hash": "d3f0eadf7f7fdbae", "src": "db2@1.60.1.70009"}
-{"id": 436485, "field": "name", "en": "Azshara Duke Hydraxis Teleport", "hash": "982ed13d8b2a072b", "src": "db2@1.60.1.70009"}
-{"id": 436486, "field": "name", "en": "Desolace Two Goliaths Teleport", "hash": "a3420cf8474bd788", "src": "db2@1.60.1.70009"}
-{"id": 436487, "field": "name", "en": "Desolace Horn Teleport", "hash": "ee120e7192d03bd0", "src": "db2@1.60.1.70009"}
-{"id": 436488, "field": "name", "en": "Desolace Tent Teleport", "hash": "3586d9332946e6dd", "src": "db2@1.60.1.70009"}
-{"id": 436489, "field": "name", "en": "Feralas Teleport", "hash": "ccd2517dc6fddc2f", "src": "db2@1.60.1.70009"}
-{"id": 436490, "field": "name", "en": "Silithus Teleport", "hash": "ddf54565de6da171", "src": "db2@1.60.1.70009"}
-{"id": 436491, "field": "name", "en": "Tanaris Teleport", "hash": "adc640f03d167a5a", "src": "db2@1.60.1.70009"}
-{"id": 436492, "field": "name", "en": "Southern Tanaris Teleport", "hash": "1a0205113cf276e5", "src": "db2@1.60.1.70009"}
-{"id": 436493, "field": "name", "en": "Ironforge Teleport", "hash": "94ad6775cb20e940", "src": "db2@1.60.1.70009"}
-{"id": 436494, "field": "name", "en": "Theramore Teleport", "hash": "914776f028314801", "src": "db2@1.60.1.70009"}
-{"id": 436495, "field": "name", "en": "Scarlet Monastery Teleport", "hash": "73e8af0b49c7e985", "src": "db2@1.60.1.70009"}
-{"id": 436496, "field": "name", "en": "Mushroom Teleport", "hash": "fb84a9b38b9e5adc", "src": "db2@1.60.1.70009"}
-{"id": 436497, "field": "name", "en": "Scholomance Teleport", "hash": "8b5a768164a53904", "src": "db2@1.60.1.70009"}
-{"id": 436498, "field": "name", "en": "Alterac Mountain Teleport", "hash": "d2ab6e106a495485", "src": "db2@1.60.1.70009"}
-{"id": 436499, "field": "name", "en": "Thandol Span Teleport", "hash": "748beadbba36d376", "src": "db2@1.60.1.70009"}
-{"id": 436500, "field": "name", "en": "Zepplin Teleport", "hash": "9afa75b108abf558", "src": "db2@1.60.1.70009"}
-{"id": 436501, "field": "name", "en": "Grim Batol Teleport", "hash": "d6c99383c0d7c429", "src": "db2@1.60.1.70009"}
-{"id": 436502, "field": "name", "en": "Overlook Cliffs Teleport", "hash": "1bab6d4c4d0adcaa", "src": "db2@1.60.1.70009"}
-{"id": 436503, "field": "name", "en": "Stonewrought Dam Teleport", "hash": "d3d939f96a57f781", "src": "db2@1.60.1.70009"}
-{"id": 436504, "field": "name", "en": "Altar of Storms Teleport", "hash": "56c13a9c8c52a7ee", "src": "db2@1.60.1.70009"}
-{"id": 436505, "field": "name", "en": "Blackrock Mountain Teleport", "hash": "d7c3c19aa13089d8", "src": "db2@1.60.1.70009"}
-{"id": 436506, "field": "name", "en": "Burning Steppes Teleport", "hash": "a569836fb8b5159e", "src": "db2@1.60.1.70009"}
-{"id": 436507, "field": "name", "en": "Searing Gorge Teleport", "hash": "95f6af202e3e352a", "src": "db2@1.60.1.70009"}
-{"id": 436508, "field": "name", "en": "TEST DEVELOPER DEBUG SPELL", "hash": "b52e72de436a4a63", "src": "db2@1.60.1.70009"}
-{"id": 436508, "field": "aura", "en": "I don't think I'm supposed to be here...", "hash": "261534e91857712d", "src": "db2@1.60.1.70009"}
-{"id": 436509, "field": "name", "en": "Booty Bay Teleport", "hash": "6b04787f2be1a7a1", "src": "db2@1.60.1.70009"}
-{"id": 436510, "field": "name", "en": "Booty Bay Bell Teleport", "hash": "dcc23597ab5de8ce", "src": "db2@1.60.1.70009"}
-{"id": 436511, "field": "name", "en": "Purgation Isle Teleport", "hash": "5fc77f5c74a069a0", "src": "db2@1.60.1.70009"}
-{"id": 436512, "field": "name", "en": "Troll Village Teleport", "hash": "600712f756bcc3bf", "src": "db2@1.60.1.70009"}
-{"id": 436513, "field": "name", "en": "TEST DEVELOPER DEBUG SPELL", "hash": "b52e72de436a4a63", "src": "db2@1.60.1.70009"}
-{"id": 436513, "field": "aura", "en": "I don't think I'm supposed to be here...", "hash": "261534e91857712d", "src": "db2@1.60.1.70009"}
-{"id": 436514, "field": "name", "en": "TEST DEVELOPER DEBUG SPELL", "hash": "b52e72de436a4a63", "src": "db2@1.60.1.70009"}
-{"id": 436514, "field": "aura", "en": "I don't think I'm supposed to be here...", "hash": "261534e91857712d", "src": "db2@1.60.1.70009"}
-{"id": 436515, "field": "name", "en": "TEST DEVELOPER DEBUG SPELL", "hash": "b52e72de436a4a63", "src": "db2@1.60.1.70009"}
-{"id": 436515, "field": "aura", "en": "I don't think I'm supposed to be here...", "hash": "261534e91857712d", "src": "db2@1.60.1.70009"}
-{"id": 436516, "field": "name", "en": "Chronostatic Preservation", "hash": "fb106a5f1a35c238", "src": "db2@1.60.1.70009"}
-{"id": 436516, "field": "description", "en": "$?a443369[Heals a friendly target for ${$<healpower>*$436517m1/100} to ${$<healpower>*$436517M1/100}.]\r\n\r\n[Fuses Arcane, Fire, and Frost magic to freeze chronomantic energy into a stored state for later use. You can hold this energy for up to $d before it combusts and expires. When unleashed, heals a friendly target for ${$<healpower>*$436517m1/100} to ${$<healpower>*$436517M1/100}.\r\n\r\nThis spell is considered Arcane, Fire, and Frost for interactions with other spells, talents, and effects.]", "hash": "9c268048fad9e762", "src": "db2@1.60.1.70009"}
-{"id": 436517, "field": "name", "en": "Chronostatic Preservation", "hash": "fb106a5f1a35c238", "src": "db2@1.60.1.70009"}
-{"id": 436517, "field": "description", "en": "Unleash stored chronomantic energy to instantly heal a friendly target for ${$<healpower>*$m1/100}to ${$<healpower>*$M1/100}.", "hash": "1006953fd8519458", "src": "db2@1.60.1.70009"}
-{"id": 436519, "field": "name", "en": "Flametongue Weapon", "hash": "4de7af7167112026", "src": "db2@1.60.1.70009"}
-{"id": 436520, "field": "name", "en": "Dual Wield Specialization", "hash": "42d34dcf2ff20d11", "src": "db2@1.60.1.70009"}
-{"id": 436526, "field": "name", "en": "Leprous Assistant Toss", "hash": "762cec86344e878b", "src": "db2@1.60.1.70009"}
-{"id": 436529, "field": "name", "en": "S03 - Flag Tracking Quest - Scooty Pre-Req", "hash": "63bb6454bfae347f", "src": "db2@1.60.1.70009"}
-{"id": 436530, "field": "name", "en": "[DNT] S03 - Gnomeregan Professions - Beam me up to Wirdal", "hash": "65ce556fbeebe4bc", "src": "db2@1.60.1.70009"}
-{"id": 436531, "field": "name", "en": "Teleport to Feralas", "hash": "fb6acc214be10750", "src": "db2@1.60.1.70009"}
-{"id": 436531, "field": "description", "en": "Sends player to Gnomeregan.", "hash": "187b898451d33e10", "src": "db2@1.60.1.70009"}
-{"id": 436532, "field": "name", "en": "Throw and Despawn Closest Bleacher and Leper Gnomes", "hash": "fca67e89d1b60fcb", "src": "db2@1.60.1.70009"}
-{"id": 436534, "field": "name", "en": "Defense Protocol: Goodbye", "hash": "0bca5a91bfd7f608", "src": "db2@1.60.1.70009"}
-{"id": 436534, "field": "description", "en": "Thank you for your cooperation.", "hash": "bd0fa800281194c1", "src": "db2@1.60.1.70009"}
-{"id": 436534, "field": "aura", "en": "Thank you for your cooperation.", "hash": "bd0fa800281194c1", "src": "db2@1.60.1.70009"}
-{"id": 436536, "field": "name", "en": "GM Hearth", "hash": "d9c9f973de7c5201", "src": "db2@1.60.1.70009"}
-{"id": 436536, "field": "description", "en": "Returns you to $z.  Speak to an Innkeeper in a different place to change your home location.", "hash": "f92eb2a9d4b8341b", "src": "db2@1.60.1.70009"}
-{"id": 436537, "field": "name", "en": "GM Freeze", "hash": "c779765b8f56959a", "src": "db2@1.60.1.70009"}
-{"id": 436537, "field": "description", "en": "GM tool to freeze players.", "hash": "05a2ce6dc3aed6b6", "src": "db2@1.60.1.70009"}
-{"id": 436537, "field": "aura", "en": "Frozen.", "hash": "16ac477b52b28458", "src": "db2@1.60.1.70009"}
-{"id": 436538, "field": "name", "en": "TEST DEVELOPER DEBUG SPELL hidden stun primer", "hash": "d7deadf6970a32f3", "src": "db2@1.60.1.70009"}
-{"id": 436538, "field": "aura", "en": "I don't think I'm supposed to be here...", "hash": "261534e91857712d", "src": "db2@1.60.1.70009"}
-{"id": 436545, "field": "name", "en": "Infusing Voidcore", "hash": "176e5e1d3b4445f4", "src": "db2@1.60.1.70009"}
-{"id": 436545, "field": "description", "en": "Combine with an appropriate power source to create a Charged Voidcore.", "hash": "6f006444a81fdafe", "src": "db2@1.60.1.70009"}
-{"id": 436545, "field": "aura", "en": "Combine with an appropriate power source to create a Charged Voidcore.", "hash": "6f006444a81fdafe", "src": "db2@1.60.1.70009"}
-{"id": 436562, "field": "name", "en": "Create Mote of Darkness", "hash": "025f57706abae681", "src": "db2@1.60.1.70009"}
-{"id": 436563, "field": "name", "en": "DNT Void Phase", "hash": "aa94e330300261c3", "src": "db2@1.60.1.70009"}
-{"id": 436564, "field": "name", "en": "Blunderbuss", "hash": "c46246611169dcbe", "src": "db2@1.60.1.70009"}
-{"id": 436564, "field": "description", "en": "Fire a musket blast at up to $i enemies in a cone in front of you for ${$<base>*$m1/100+$m2/100*$AP} to ${$<base>*$M1/100+$m2/100*$AP} Physical damage.", "hash": "db83412d4e740320", "src": "db2@1.60.1.70009"}
-{"id": 436570, "field": "name", "en": "Cluck!", "hash": "4b30505e8b87583b", "src": "db2@1.60.1.70009"}
-{"id": 436608, "field": "name", "en": "Fan of Knives", "hash": "4e308a0c5e4f29d4", "src": "db2@1.60.1.70009"}
-{"id": 436608, "field": "description", "en": "Gain the Fan of Knives ability:\r\n\r\n$@spellicon409240\r\n$@spelldesc409240", "hash": "86e39fc315a79208", "src": "db2@1.60.1.70009"}
-{"id": 436609, "field": "name", "en": "Engrave Cloak - Fan of Knives", "hash": "34695e47abd06a8f", "src": "db2@1.60.1.70009"}
-{"id": 436609, "field": "description", "en": "Engrave your cloak with the Fan of Knives rune:\r\n\r\n$@spellicon409240\r\n$@spelldesc409240", "hash": "35afb9300bead207", "src": "db2@1.60.1.70009"}
-{"id": 436610, "field": "name", "en": "Blunderbuss", "hash": "c46246611169dcbe", "src": "db2@1.60.1.70009"}
-{"id": 436610, "field": "description", "en": "Gain the Blunderbuss ability:\r\n\r\n$@spellicon436564\r\n$@spelldesc436564", "hash": "cf65f1b9a3d0ea83", "src": "db2@1.60.1.70009"}
-{"id": 436611, "field": "name", "en": "Crimson Tempest", "hash": "663acd8bd32b8a97", "src": "db2@1.60.1.70009"}
-{"id": 436611, "field": "description", "en": "Gain the Crimson Tempest ability:\r\n\r\n$@spellicon412096\r\n$@spelldesc412096", "hash": "0868597873595e31", "src": "db2@1.60.1.70009"}
-{"id": 436620, "field": "name", "en": "Duel The Swordsman", "hash": "f1ac07b5d77d17b9", "src": "db2@1.60.1.70009"}
-{"id": 436622, "field": "name", "en": "Defeated Wandering Swordsman", "hash": "c21b3a5ab0e06546", "src": "db2@1.60.1.70009"}
-{"id": 436623, "field": "name", "en": "Wandering Swordsman Reward", "hash": "938374f3fadf9be5", "src": "db2@1.60.1.70009"}
-{"id": 436623, "field": "description", "en": "Dig up the buried cache at the marked location", "hash": "9cbb92576feabe92", "src": "db2@1.60.1.70009"}
-{"id": 436641, "field": "name", "en": "Blood Moon Copy", "hash": "b09ed8ef78f0a031", "src": "db2@1.60.1.70009"}
-{"id": 436641, "field": "description", "en": "The thirst for blood fills your senses!", "hash": "40a7090bef0842af", "src": "db2@1.60.1.70009"}
-{"id": 436641, "field": "aura", "en": "Hostile to everyone but party or raid members. Killing enemies awards Blood for the Blood Loa, increased reward for player kills.", "hash": "5bb392bce91fcb1d", "src": "db2@1.60.1.70009"}
-{"id": 436655, "field": "name", "en": "Witherbark Gong", "hash": "c1ac04bcb2b3c47a", "src": "db2@1.60.1.70009"}
-{"id": 436680, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70009"}
-{"id": 436689, "field": "name", "en": "Increased Pet Crit +1%", "hash": "89591b2395ac3f96", "src": "db2@1.60.1.70009"}
-{"id": 436689, "field": "description", "en": "Increases your pet's critical strike chance by $1%.", "hash": "7c84ef0e2b0dd0fc", "src": "db2@1.60.1.70009"}
-{"id": 436689, "field": "aura", "en": "Critical strike chance increase.", "hash": "a095d48e619dcc2e", "src": "db2@1.60.1.70009"}
-{"id": 436690, "field": "name", "en": "Increased Pet Crit +1%", "hash": "89591b2395ac3f96", "src": "db2@1.60.1.70009"}
-{"id": 436690, "field": "description", "en": "Increases your pet's critical strike chance by 1%.", "hash": "31d195fb8f3c0fbf", "src": "db2@1.60.1.70009"}
-{"id": 436691, "field": "name", "en": "Peck", "hash": "0ad2e611c17b5240", "src": "db2@1.60.1.70009"}
-{"id": 436692, "field": "name", "en": "Explosive Egg", "hash": "86ffa93c64be43a1", "src": "db2@1.60.1.70009"}
-{"id": 436693, "field": "name", "en": "Explosive Egg", "hash": "86ffa93c64be43a1", "src": "db2@1.60.1.70009"}
-{"id": 436694, "field": "name", "en": "Detonation", "hash": "3426745dfa360146", "src": "db2@1.60.1.70009"}
-{"id": 436695, "field": "name", "en": "Overheat", "hash": "40bcf98b21c866b3", "src": "db2@1.60.1.70009"}
-{"id": 436739, "field": "name", "en": "Cluck!", "hash": "4b30505e8b87583b", "src": "db2@1.60.1.70009"}
-{"id": 436739, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70009"}
-{"id": 436741, "field": "name", "en": "Overheat", "hash": "40bcf98b21c866b3", "src": "db2@1.60.1.70009"}
-{"id": 436741, "field": "aura", "en": "Overheating. All damage taken increased by $s1% while radiating fire damage to all nearby enemies.", "hash": "d3377ca59b649f90", "src": "db2@1.60.1.70009"}
-{"id": 436743, "field": "name", "en": "Overheat", "hash": "40bcf98b21c866b3", "src": "db2@1.60.1.70009"}
-{"id": 436750, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70009"}
-{"id": 436751, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70009"}
-{"id": 436770, "field": "name", "en": "Get Back In There!", "hash": "08d3f4ef5d5d7189", "src": "db2@1.60.1.70009"}
-{"id": 436816, "field": "name", "en": "Sprocketfire Breath", "hash": "5d0056077feee041", "src": "db2@1.60.1.70009"}
-{"id": 436817, "field": "name", "en": "Sprocketfire Breath", "hash": "5d0056077feee041", "src": "db2@1.60.1.70009"}
-{"id": 436817, "field": "aura", "en": "Deals $w1 Fire damage every $t1 sec.", "hash": "e06497998c1ce50b", "src": "db2@1.60.1.70009"}
-{"id": 436818, "field": "name", "en": "Sprocketfire Breath", "hash": "5d0056077feee041", "src": "db2@1.60.1.70009"}
-{"id": 436819, "field": "name", "en": "Sprocketfire Breath", "hash": "5d0056077feee041", "src": "db2@1.60.1.70009"}
-{"id": 436820, "field": "name", "en": "Sprocketfire Breath", "hash": "5d0056077feee041", "src": "db2@1.60.1.70009"}
-{"id": 436821, "field": "name", "en": "Slag Embers", "hash": "5a3d9f7e17b05d74", "src": "db2@1.60.1.70009"}
-{"id": 436822, "field": "name", "en": "Slag Embers", "hash": "5a3d9f7e17b05d74", "src": "db2@1.60.1.70009"}
-{"id": 436823, "field": "name", "en": "Slag Embers", "hash": "5a3d9f7e17b05d74", "src": "db2@1.60.1.70009"}
-{"id": 436823, "field": "description", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70009"}
-{"id": 436823, "field": "aura", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70009"}
-{"id": 436824, "field": "name", "en": "Frayed Wiring", "hash": "7fae6fbefd63afe1", "src": "db2@1.60.1.70009"}
-{"id": 436825, "field": "name", "en": "Frayed Wiring", "hash": "7fae6fbefd63afe1", "src": "db2@1.60.1.70009"}
-{"id": 436825, "field": "aura", "en": "Electrically charged, shocking all attackers with Nature damage.", "hash": "8f63cd99cc1a146a", "src": "db2@1.60.1.70009"}
-{"id": 436826, "field": "name", "en": "Frayed Wiring", "hash": "7fae6fbefd63afe1", "src": "db2@1.60.1.70009"}
-{"id": 436827, "field": "name", "en": "Frayed Wiring", "hash": "7fae6fbefd63afe1", "src": "db2@1.60.1.70009"}
-{"id": 436828, "field": "name", "en": "Binary Bleat", "hash": "f85a97a7aa14b317", "src": "db2@1.60.1.70009"}
-{"id": 436828, "field": "aura", "en": "Silenced by nearby electrical interference.", "hash": "ad99a8ff2f29cb9f", "src": "db2@1.60.1.70009"}
-{"id": 436829, "field": "name", "en": "Static Fleece", "hash": "59406837bfdb97f7", "src": "db2@1.60.1.70009"}
-{"id": 436830, "field": "name", "en": "Static Fleece", "hash": "59406837bfdb97f7", "src": "db2@1.60.1.70009"}
-{"id": 436831, "field": "name", "en": "Static Fleece", "hash": "59406837bfdb97f7", "src": "db2@1.60.1.70009"}
-{"id": 436831, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 436833, "field": "name", "en": "Widget Volley", "hash": "cbac9f0032da0c4e", "src": "db2@1.60.1.70009"}
-{"id": 436834, "field": "name", "en": "Widget Volley", "hash": "cbac9f0032da0c4e", "src": "db2@1.60.1.70009"}
-{"id": 436835, "field": "name", "en": "Nutty Shield", "hash": "f938ad115ba80438", "src": "db2@1.60.1.70009"}
-{"id": 436836, "field": "name", "en": "Widget Fortress", "hash": "52d7dd55b38181d9", "src": "db2@1.60.1.70009"}
-{"id": 436837, "field": "name", "en": "Widget Fortress", "hash": "52d7dd55b38181d9", "src": "db2@1.60.1.70009"}
-{"id": 436837, "field": "aura", "en": "All damage taken reduced by $s1%.", "hash": "bd0656aa9b8dd371", "src": "db2@1.60.1.70009"}
-{"id": 436858, "field": "name", "en": "[DNT] Combat Dummy I", "hash": "7eee092f4c3981d7", "src": "db2@1.60.1.70009"}
-{"id": 436861, "field": "name", "en": "[DNT] Combat Dummy II", "hash": "f3ceb496f544c88d", "src": "db2@1.60.1.70009"}
-{"id": 436863, "field": "name", "en": "[DNT] Combat Dummy III", "hash": "c2c66b77e5bf5e60", "src": "db2@1.60.1.70009"}
-{"id": 436892, "field": "name", "en": "Feline Swiftness", "hash": "a76c133e94ded748", "src": "db2@1.60.1.70009"}
-{"id": 436892, "field": "description", "en": "Increases your movement speed by $s1% while outdoors in Cat Form and increases your chance to dodge while in Cat Form by $24864s1%.", "hash": "16562a12026671c9", "src": "db2@1.60.1.70009"}
-{"id": 436893, "field": "name", "en": "Feline Swiftness", "hash": "a76c133e94ded748", "src": "db2@1.60.1.70009"}
-{"id": 436893, "field": "description", "en": "Increases your movement speed by $s1% while outdoors in Cat Form and increases your chance to dodge while in Cat Form by $24864s1%.", "hash": "16562a12026671c9", "src": "db2@1.60.1.70009"}
-{"id": 436895, "field": "name", "en": "S03 - Tuning and Overrides Passive - Druid", "hash": "4c3b87eef71bcd55", "src": "db2@1.60.1.70009"}
-{"id": 436896, "field": "name", "en": "Dueling Zone - Screen Effect", "hash": "67183667f819c355", "src": "db2@1.60.1.70009"}
-{"id": 436937, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70009"}
-{"id": 436937, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70009"}
-{"id": 436937, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70009"}
-{"id": 436938, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70009"}
-{"id": 436938, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70009"}
-{"id": 436938, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70009"}
-{"id": 436939, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70009"}
-{"id": 436939, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70009"}
-{"id": 436939, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70009"}
-{"id": 436940, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70009"}
-{"id": 436940, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70009"}
-{"id": 436940, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70009"}
-{"id": 436941, "field": "name", "en": "[DNT] Monastery Bust Active", "hash": "e8e8d5006f1ac2ea", "src": "db2@1.60.1.70009"}
-{"id": 436942, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70009"}
-{"id": 436942, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70009"}
-{"id": 436942, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70009"}
-{"id": 436943, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70009"}
-{"id": 436943, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70009"}
-{"id": 436943, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70009"}
-{"id": 436944, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70009"}
-{"id": 436944, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70009"}
-{"id": 436944, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70009"}
-{"id": 436945, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70009"}
-{"id": 436945, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70009"}
-{"id": 436945, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70009"}
-{"id": 436946, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70009"}
-{"id": 436946, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70009"}
-{"id": 436946, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70009"}
-{"id": 436949, "field": "name", "en": "Expanded Intellect", "hash": "e138db801abb6f59", "src": "db2@1.60.1.70009"}
-{"id": 436949, "field": "description", "en": "Decreases the mana cost of Arcane Intellect by $s1% and increases its duration by $s2%.", "hash": "4dfdc3856ab4352b", "src": "db2@1.60.1.70009"}
-{"id": 436951, "field": "name", "en": "Increased Fortitude", "hash": "71bb0b09f5198e49", "src": "db2@1.60.1.70009"}
-{"id": 436951, "field": "description", "en": "Decreases the mana cost of Power Word: Fortitude by $s1% and increases its duration by $s2%.", "hash": "5604b3da9fc2a2be", "src": "db2@1.60.1.70009"}
-{"id": 436952, "field": "name", "en": "Use Echo", "hash": "4b386cd41d37f0b2", "src": "db2@1.60.1.70009"}
-{"id": 436952, "field": "description", "en": "Honor the archivists.", "hash": "a62056ef39d00548", "src": "db2@1.60.1.70009"}
-{"id": 436956, "field": "name", "en": "Deeper Wilds", "hash": "726a2d059d27969c", "src": "db2@1.60.1.70009"}
-{"id": 436956, "field": "description", "en": "Decreases the mana cost of Mark of the Wild by $s1% and increases its duration by $s2%.", "hash": "182a02c01b42455d", "src": "db2@1.60.1.70009"}
-{"id": 436969, "field": "name", "en": "[DNT] Combat Dummy II Powered", "hash": "3713c0bab1ba577f", "src": "db2@1.60.1.70009"}
-{"id": 436970, "field": "name", "en": "[DNT] Combat Dummy III Powered", "hash": "40cbae2adc0731e2", "src": "db2@1.60.1.70009"}
-{"id": 436973, "field": "name", "en": "[DNT] Combat Dummy I Powered", "hash": "2376035022be812a", "src": "db2@1.60.1.70009"}
-{"id": 436981, "field": "name", "en": "[DNT] Monastery Bust Failed", "hash": "adea4d3c41654748", "src": "db2@1.60.1.70009"}
-{"id": 436990, "field": "name", "en": "[DNT] Reset", "hash": "5e83e697bb69f1a2", "src": "db2@1.60.1.70009"}
+{"id": 436008, "field": "name", "en": "[DNT] Dormant Rune Dummy", "hash": "656581558d1615e9", "src": "db2@1.60.1.70124"}
+{"id": 436011, "field": "name", "en": "[DNT] Transform Dormant Rune", "hash": "7363a76417847dcf", "src": "db2@1.60.1.70124"}
+{"id": 436027, "field": "name", "en": "Grubbis Mad!", "hash": "104157b931630552", "src": "db2@1.60.1.70124"}
+{"id": 436037, "field": "name", "en": "Grubbis Mad!", "hash": "104157b931630552", "src": "db2@1.60.1.70124"}
+{"id": 436041, "field": "name", "en": "World Shrinker", "hash": "acd3f7c927b1dc04", "src": "db2@1.60.1.70124"}
+{"id": 436041, "field": "description", "en": "Shrinks the entire world for $d or until you attack.", "hash": "b4945a89c365c059", "src": "db2@1.60.1.70124"}
+{"id": 436041, "field": "aura", "en": "You have minimized the entire world!", "hash": "e95108a10a00c771", "src": "db2@1.60.1.70124"}
+{"id": 436059, "field": "name", "en": "Radiation?", "hash": "3dd21dbdf67524fb", "src": "db2@1.60.1.70124"}
+{"id": 436068, "field": "name", "en": "Radiation?", "hash": "3dd21dbdf67524fb", "src": "db2@1.60.1.70124"}
+{"id": 436068, "field": "aura", "en": "You smell really bad...", "hash": "42ca0ed0dd1e9865", "src": "db2@1.60.1.70124"}
+{"id": 436069, "field": "name", "en": "Domesticated Attack Chicken", "hash": "81c3f42ffe3237d2", "src": "db2@1.60.1.70124"}
+{"id": 436069, "field": "description", "en": "Release your Domesticated Attack Chicken that will fight for you for $d or until defeated.", "hash": "13efe70a0412e125", "src": "db2@1.60.1.70124"}
+{"id": 436074, "field": "name", "en": "Trogg Rage", "hash": "f6af7e9fe143b19a", "src": "db2@1.60.1.70124"}
+{"id": 436074, "field": "aura", "en": "Enraged and unable to focus on a single enemy.\r\nAttack speed increased by $s2%.\r\nMovement speed increased by $s1%.", "hash": "2c3c1e6d916324f6", "src": "db2@1.60.1.70124"}
+{"id": 436081, "field": "name", "en": "Trogg Rage", "hash": "f6af7e9fe143b19a", "src": "db2@1.60.1.70124"}
+{"id": 436097, "field": "name", "en": "Blood Moon", "hash": "9abd619a99bc97b1", "src": "db2@1.60.1.70124"}
+{"id": 436097, "field": "description", "en": "The thirst for blood fills your senses!", "hash": "40a7090bef0842af", "src": "db2@1.60.1.70124"}
+{"id": 436097, "field": "aura", "en": "Hostile to everyone but party or raid members. Killing enemies awards all party members with Blood for the Blood Loa. Increased rewards for killing players.", "hash": "16dc5ef47e420dbe", "src": "db2@1.60.1.70124"}
+{"id": 436100, "field": "name", "en": "Petrify", "hash": "b6a297bc85cba26a", "src": "db2@1.60.1.70124"}
+{"id": 436100, "field": "description", "en": "Stuns an enemy, but increases its armor by $s2% for $d.", "hash": "ca6440eff06be522", "src": "db2@1.60.1.70124"}
+{"id": 436100, "field": "aura", "en": "Stunned.\r\nArmor increased by $s2%.", "hash": "395f7d1def353b42", "src": "db2@1.60.1.70124"}
+{"id": 436103, "field": "name", "en": "Sooty", "hash": "bfef0f4d4ecdf702", "src": "db2@1.60.1.70124"}
+{"id": 436103, "field": "aura", "en": "Covered in burnt-smelling soot. Cannot stealth or turn invisible.", "hash": "cf5a0eac8acd52f7", "src": "db2@1.60.1.70124"}
+{"id": 436104, "field": "name", "en": "Tiny Strongbox", "hash": "34b2d99bac650f63", "src": "db2@1.60.1.70124"}
+{"id": 436104, "field": "aura", "en": "Covered in burnt-smelling soot. Cannot stealth or turn invisible.", "hash": "cf5a0eac8acd52f7", "src": "db2@1.60.1.70124"}
+{"id": 436168, "field": "name", "en": "Troggquake", "hash": "8936cc9bbeace37f", "src": "db2@1.60.1.70124"}
+{"id": 436189, "field": "name", "en": "Critically Injured", "hash": "0ca701afdc3a11a1", "src": "db2@1.60.1.70124"}
+{"id": 436204, "field": "name", "en": "Saved!", "hash": "428104f6a5661b83", "src": "db2@1.60.1.70124"}
+{"id": 436207, "field": "name", "en": "Near Death", "hash": "e58e79b9de2ac6c0", "src": "db2@1.60.1.70124"}
+{"id": 436239, "field": "name", "en": "Increased Critical 1 - All", "hash": "dff84840dc2235fb", "src": "db2@1.60.1.70124"}
+{"id": 436239, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%.", "hash": "ff9a12de55e3926a", "src": "db2@1.60.1.70124"}
+{"id": 436278, "field": "name", "en": "Strike Gong", "hash": "b0ef1c56d4258c85", "src": "db2@1.60.1.70124"}
+{"id": 436278, "field": "description", "en": "Strike the gong inside the Witherbark's den.", "hash": "7ebcfac13e6ec99e", "src": "db2@1.60.1.70124"}
+{"id": 436284, "field": "name", "en": "Improved Holy Shock", "hash": "1e01c33289312cb2", "src": "db2@1.60.1.70124"}
+{"id": 436284, "field": "description", "en": "Increases the critical hit chance of Holy Shock by $s1%.", "hash": "1e6be372d8322313", "src": "db2@1.60.1.70124"}
+{"id": 436285, "field": "name", "en": "Increased Fist Weapons", "hash": "14ec2ce3cad2bbc4", "src": "db2@1.60.1.70124"}
+{"id": 436285, "field": "description", "en": "Increased Fist Weapons +$s1.", "hash": "cffc03044977ec6c", "src": "db2@1.60.1.70124"}
+{"id": 436286, "field": "name", "en": "Flame Shock Cost Reduced", "hash": "da0de4fdcadff61d", "src": "db2@1.60.1.70124"}
+{"id": 436286, "field": "description", "en": "Reduces the mana cost of your Flame Shock spell by $s1.", "hash": "7837066cf93cddb3", "src": "db2@1.60.1.70124"}
+{"id": 436287, "field": "name", "en": "Improved Wrath", "hash": "f0a9fdee1330ebb5", "src": "db2@1.60.1.70124"}
+{"id": 436287, "field": "description", "en": "Increases the damage of your Wrath spell by up to $s1%.", "hash": "50a2446dd0598a6d", "src": "db2@1.60.1.70124"}
+{"id": 436288, "field": "name", "en": "Mottled Blood Raptor", "hash": "0314b3359dcc122c", "src": "db2@1.60.1.70124"}
+{"id": 436288, "field": "description", "en": "Summons and dismisses a rideable Raptor.", "hash": "7d1c7f754999027a", "src": "db2@1.60.1.70124"}
+{"id": 436288, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
+{"id": 436289, "field": "name", "en": "Ivory Raptor", "hash": "d33311706967896d", "src": "db2@1.60.1.70124"}
+{"id": 436289, "field": "description", "en": "Summons and dismisses a rideable Raptor.", "hash": "7d1c7f754999027a", "src": "db2@1.60.1.70124"}
+{"id": 436289, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
+{"id": 436295, "field": "name", "en": "Rusted Cage Key", "hash": "3dabdac0b90ef6d0", "src": "db2@1.60.1.70124"}
+{"id": 436295, "field": "description", "en": "Opens Rusted Cage", "hash": "ed809cdb2acb7bb8", "src": "db2@1.60.1.70124"}
+{"id": 436326, "field": "name", "en": "Aragriar's Wild Ride", "hash": "2490d68339fed39b", "src": "db2@1.60.1.70124"}
+{"id": 436326, "field": "description", "en": "Where could this device possibly take you?.... Oh well. Who cares!!!", "hash": "a465283052359f64", "src": "db2@1.60.1.70124"}
+{"id": 436327, "field": "name", "en": "Bengal Tiger", "hash": "83e32e5efaa858da", "src": "db2@1.60.1.70124"}
+{"id": 436327, "field": "description", "en": "Summons and dismisses a rideable Bengal Tiger.", "hash": "160fa69482cf7ebc", "src": "db2@1.60.1.70124"}
+{"id": 436327, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
+{"id": 436329, "field": "name", "en": "Golden Sabercat", "hash": "f1162e4af0e06725", "src": "db2@1.60.1.70124"}
+{"id": 436329, "field": "description", "en": "Summons and dismisses a rideable Golden Saber Cat.", "hash": "3745fb1ed6b4a288", "src": "db2@1.60.1.70124"}
+{"id": 436329, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
+{"id": 436332, "field": "name", "en": "Exsanguination", "hash": "68c19aed62ffe417", "src": "db2@1.60.1.70124"}
+{"id": 436332, "field": "description", "en": "Unleash a flourish of steel and blood, wounding all enemy targets within $a1 yards, dealing $s2 Shadowstrike damage, and causing them to bleed for an additional $s1 damage every $t1 sec for $d.", "hash": "2b813e95585f9d4d", "src": "db2@1.60.1.70124"}
+{"id": 436332, "field": "aura", "en": "Bleeding for $s1 damage every $t1 sec.", "hash": "72a94853949619d1", "src": "db2@1.60.1.70124"}
+{"id": 436333, "field": "name", "en": "Bleacher Toss", "hash": "93a0a611cb1ae036", "src": "db2@1.60.1.70124"}
+{"id": 436342, "field": "name", "en": "Bloodbonded Grove Talisman", "hash": "0df3f98b9f8efcfc", "src": "db2@1.60.1.70124"}
+{"id": 436342, "field": "description", "en": "Instantly heal target ally for $s1, but sacrifice $436343s1 of your own health in return after 2 sec.\r\n", "hash": "aaea061918b29703", "src": "db2@1.60.1.70124"}
+{"id": 436343, "field": "name", "en": "Bloodbonded Sacrifice", "hash": "63a84e6b50b2f2cc", "src": "db2@1.60.1.70124"}
+{"id": 436343, "field": "description", "en": "Damage yourself for $s1.", "hash": "f0dc6818960acbd2", "src": "db2@1.60.1.70124"}
+{"id": 436346, "field": "name", "en": "Blood Nova", "hash": "9adfb2bd27256adb", "src": "db2@1.60.1.70124"}
+{"id": 436346, "field": "description", "en": "A delayed explosion of blood and light occurs around the caster, causing $s1 Twilight damage to all targets within $a1 yards.", "hash": "825c89cee2a91da8", "src": "db2@1.60.1.70124"}
+{"id": 436347, "field": "name", "en": "Blood Nova", "hash": "9adfb2bd27256adb", "src": "db2@1.60.1.70124"}
+{"id": 436347, "field": "description", "en": "Unleash a delayed explosion of blood and light, causing $436346s1 Twilight damage to all targets within $436346a1 yards.", "hash": "6bab67498107a419", "src": "db2@1.60.1.70124"}
+{"id": 436351, "field": "name", "en": "Zandalari Ward", "hash": "0ec101de60c90bb1", "src": "db2@1.60.1.70124"}
+{"id": 436351, "field": "aura", "en": "Zandalari magic protects you from the madness of the Blood Moon.", "hash": "944e17e635baa6a5", "src": "db2@1.60.1.70124"}
+{"id": 436364, "field": "name", "en": "Two-Handed Mastery", "hash": "0e353f427030de89", "src": "db2@1.60.1.70124"}
+{"id": 436364, "field": "description", "en": "Each time you strike an enemy with a two-handed weapon, you gain $436365s1% attack speed with two-handed weapons, $436365s2% increased Attack Power, and $436365s3% increased chance to hit with spells for $436365d. This effect is lost if you strike an enemy with a one-handed weapon.", "hash": "8f63216913e58b31", "src": "db2@1.60.1.70124"}
+{"id": 436365, "field": "name", "en": "Two-Handed Mastery", "hash": "0e353f427030de89", "src": "db2@1.60.1.70124"}
+{"id": 436365, "field": "aura", "en": "Attack speed increased by $s1%.\r\nAttack Power increased by $s2%.\r\nSpell hit chance increased by $s3%.", "hash": "75dc1adac08df4a7", "src": "db2@1.60.1.70124"}
+{"id": 436367, "field": "name", "en": "Two-Handed Mastery", "hash": "0e353f427030de89", "src": "db2@1.60.1.70124"}
+{"id": 436367, "field": "description", "en": "Gain the Two-Handed Mastery ability:\r\n\r\n$@spellicon436364\r\n$@spelldesc436364", "hash": "1f3e582301076eef", "src": "db2@1.60.1.70124"}
+{"id": 436368, "field": "name", "en": "Engrave Chest - Two-Handed Mastery", "hash": "e02d960f7c7838e1", "src": "db2@1.60.1.70124"}
+{"id": 436368, "field": "description", "en": "Engrave your chest or robe with the Two-Handed Mastery rune:\r\n\r\n$@spellicon436364\r\n$@spelldesc436364", "hash": "dd8ed9f40f1cbced", "src": "db2@1.60.1.70124"}
+{"id": 436372, "field": "name", "en": "Sanguine Sanctuary Sacrifice", "hash": "423299ba6a123a82", "src": "db2@1.60.1.70124"}
+{"id": 436372, "field": "description", "en": "Damage yourself for $s1.", "hash": "f0dc6818960acbd2", "src": "db2@1.60.1.70124"}
+{"id": 436373, "field": "name", "en": "Sanguine Sanctuary", "hash": "814c6fb756ef76aa", "src": "db2@1.60.1.70124"}
+{"id": 436373, "field": "description", "en": "Instantly shield target ally for $s1, but sacrifice $436372s1 of your own health in return after 2 sec.", "hash": "f2d3b0b010ba98af", "src": "db2@1.60.1.70124"}
+{"id": 436374, "field": "name", "en": "Infernal Pact", "hash": "7da9b724e5b8f8b6", "src": "db2@1.60.1.70124"}
+{"id": 436374, "field": "aura", "en": "Pet's stamina and intellect increased.", "hash": "f6b4a4f2f7d96960", "src": "db2@1.60.1.70124"}
+{"id": 436375, "field": "name", "en": "Infernal Pact Essence", "hash": "df17758cc6a1a9f2", "src": "db2@1.60.1.70124"}
+{"id": 436375, "field": "description", "en": "Your pet gains $436374s1 stamina and $436374s2 intellect.", "hash": "d634fb2711d55799", "src": "db2@1.60.1.70124"}
+{"id": 436376, "field": "name", "en": "Chain Heal Cost Reduced", "hash": "7c4095302585cb36", "src": "db2@1.60.1.70124"}
+{"id": 436376, "field": "description", "en": "Reduces the mana cost of your Chain Heal spell by $s1. Effect lasts $d seconds.", "hash": "033ead49871743b8", "src": "db2@1.60.1.70124"}
+{"id": 436377, "field": "name", "en": "Tigerblood Talisman", "hash": "a7fc6a91e737facf", "src": "db2@1.60.1.70124"}
+{"id": 436377, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70124"}
+{"id": 436377, "field": "aura", "en": "$1s mana restored.", "hash": "ffb4963e712aefde", "src": "db2@1.60.1.70124"}
+{"id": 436378, "field": "name", "en": "Tigerblood Talisman", "hash": "a7fc6a91e737facf", "src": "db2@1.60.1.70124"}
+{"id": 436378, "field": "aura", "en": "Restores $436377s1 mana to their master upon landing a critical strike.", "hash": "10d533a645245463", "src": "db2@1.60.1.70124"}
+{"id": 436379, "field": "name", "en": "Tigerblood Talisman", "hash": "a7fc6a91e737facf", "src": "db2@1.60.1.70124"}
+{"id": 436379, "field": "description", "en": "Your pet's critical hits cause you to become energized, granting you $436377s1 mana.", "hash": "edf726cbc522785e", "src": "db2@1.60.1.70124"}
+{"id": 436379, "field": "aura", "en": "Your pet's critical hits cause you to become energized, granting you $436377s1 mana.", "hash": "edf726cbc522785e", "src": "db2@1.60.1.70124"}
+{"id": 436380, "field": "name", "en": "Bloodstorm Sacrifice", "hash": "d6ec28fe1108f1d2", "src": "db2@1.60.1.70124"}
+{"id": 436380, "field": "description", "en": "Damage yourself for $s1.", "hash": "f0dc6818960acbd2", "src": "db2@1.60.1.70124"}
+{"id": 436381, "field": "name", "en": "Bloodstorm Jewel", "hash": "928d198a49f44b1d", "src": "db2@1.60.1.70124"}
+{"id": 436381, "field": "description", "en": "Instantly heal target ally for $s1, but sacrifice $436380s1 of your own health in return after 2 sec.\r\n", "hash": "1cd9c93178a1e780", "src": "db2@1.60.1.70124"}
+{"id": 436382, "field": "name", "en": "Bloodlight Offering", "hash": "15578c04e67cedad", "src": "db2@1.60.1.70124"}
+{"id": 436382, "field": "description", "en": "Damage yourself for $s1.", "hash": "f0dc6818960acbd2", "src": "db2@1.60.1.70124"}
+{"id": 436383, "field": "name", "en": "Bloodlight Offering", "hash": "15578c04e67cedad", "src": "db2@1.60.1.70124"}
+{"id": 436383, "field": "description", "en": "Instantly heal target ally for $s1, but sacrifice $436382s1 of your own health in return after 2 sec.\r\n", "hash": "19d93b72f312e34f", "src": "db2@1.60.1.70124"}
+{"id": 436387, "field": "name", "en": "Blessing of the Blood Loa", "hash": "14c78c04986745a7", "src": "db2@1.60.1.70124"}
+{"id": 436387, "field": "description", "en": "Increases all damage and healing done by $s1% for $d.", "hash": "738b070573dd8374", "src": "db2@1.60.1.70124"}
+{"id": 436387, "field": "aura", "en": "Increases all damage and healing done by $s1%.", "hash": "4dceee09c0e2e607", "src": "db2@1.60.1.70124"}
+{"id": 436390, "field": "name", "en": "Decoy Totem", "hash": "5567e2407aac2f44", "src": "db2@1.60.1.70124"}
+{"id": 436391, "field": "name", "en": "Decoy Totem", "hash": "5567e2407aac2f44", "src": "db2@1.60.1.70124"}
+{"id": 436391, "field": "aura", "en": "Immune to movement impairing effects.", "hash": "fedffc6909e46bf5", "src": "db2@1.60.1.70124"}
+{"id": 436393, "field": "name", "en": "Chimera Shot - Serpent", "hash": "5835cab7b6cf72f3", "src": "db2@1.60.1.70124"}
+{"id": 436393, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70124"}
+{"id": 436394, "field": "name", "en": "Chimera Shot - Serpent", "hash": "5835cab7b6cf72f3", "src": "db2@1.60.1.70124"}
+{"id": 436394, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70124"}
+{"id": 436395, "field": "name", "en": "Chimera Shot - Serpent", "hash": "5835cab7b6cf72f3", "src": "db2@1.60.1.70124"}
+{"id": 436395, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70124"}
+{"id": 436412, "field": "name", "en": "Discoverer's Delight", "hash": "5a5d440e0d076745", "src": "db2@1.60.1.70124"}
+{"id": 436412, "field": "description", "en": "Empowered by the brave discoverers that preceded you, experience gains increased by $w1%, and gold earned from quests also increases by $w3%.", "hash": "2f2e90e6533f2e38", "src": "db2@1.60.1.70124"}
+{"id": 436412, "field": "aura", "en": "Experience gains increased by $w1%. Gold earned from quests increased by $w3%.", "hash": "7e123d97a2978ead", "src": "db2@1.60.1.70124"}
+{"id": 436413, "field": "name", "en": "Bloodstorm", "hash": "50e952206a9a78c8", "src": "db2@1.60.1.70124"}
+{"id": 436413, "field": "description", "en": "A delayed explosion of blood and nature occurs around the caster, causing $s1 Plague damage to all targets within $a1 yards.", "hash": "c1c3fee7416e8c58", "src": "db2@1.60.1.70124"}
+{"id": 436414, "field": "name", "en": "Bloodstorm", "hash": "50e952206a9a78c8", "src": "db2@1.60.1.70124"}
+{"id": 436414, "field": "description", "en": "Unleash a delayed explosion of blood and nature, causing $436413s1 Plague damage to all targets within $436413a1 yards.", "hash": "33268e267a0dd44c", "src": "db2@1.60.1.70124"}
+{"id": 436419, "field": "name", "en": "Complete Harold Riggs Tracking Quest (DNT)", "hash": "746bcd9fd0db5574", "src": "db2@1.60.1.70124"}
+{"id": 436425, "field": "name", "en": "Complete Nat Pagle Tracking Quest (DNT)", "hash": "05d6e5d916e2c36d", "src": "db2@1.60.1.70124"}
+{"id": 436426, "field": "name", "en": "Discoverer's Delight - Modify Aura", "hash": "65d5d619e3be5028", "src": "db2@1.60.1.70124"}
+{"id": 436427, "field": "name", "en": "Discoverer's Delight - Cancel Aura", "hash": "5d5238df965c4d55", "src": "db2@1.60.1.70124"}
+{"id": 436428, "field": "name", "en": "Discoverer's Delight - Reapply Aura", "hash": "594411c5d1638ce2", "src": "db2@1.60.1.70124"}
+{"id": 436429, "field": "name", "en": "Gift of the Sun", "hash": "3e80f8db09a220c6", "src": "db2@1.60.1.70124"}
+{"id": 436429, "field": "description", "en": "Brings Gifts of the Sun.", "hash": "dcb4080dfa34a550", "src": "db2@1.60.1.70124"}
+{"id": 436429, "field": "aura", "en": "Brings Gifts of the Sun.", "hash": "dcb4080dfa34a550", "src": "db2@1.60.1.70124"}
+{"id": 436430, "field": "name", "en": "Avenging Wrath", "hash": "e9d5e46cb552a935", "src": "db2@1.60.1.70124"}
+{"id": 436430, "field": "description", "en": "Greatly increases damage while inspired.", "hash": "8b85caa6a8c06f86", "src": "db2@1.60.1.70124"}
+{"id": 436430, "field": "aura", "en": "Attack speed increased.\r\nDamage dealt increased.", "hash": "7193b025d8120612", "src": "db2@1.60.1.70124"}
+{"id": 436431, "field": "name", "en": "Prey", "hash": "0ad64e9af51702dd", "src": "db2@1.60.1.70124"}
+{"id": 436431, "field": "description", "en": "Now you know you're being watched...", "hash": "3a9579e79ec7da16", "src": "db2@1.60.1.70124"}
+{"id": 436431, "field": "aura", "en": "Now you know you're being watched...", "hash": "3a9579e79ec7da16", "src": "db2@1.60.1.70124"}
+{"id": 436432, "field": "name", "en": "Trail Snack", "hash": "1245a8d0fcc8cf8b", "src": "db2@1.60.1.70124"}
+{"id": 436432, "field": "description", "en": "Eat a handful and make up for lost time on the trail!", "hash": "33638c5c8e5ac7b9", "src": "db2@1.60.1.70124"}
+{"id": 436432, "field": "aura", "en": "Regenerating $s5 health every 2 sec for $d.", "hash": "400c651ce8b9684f", "src": "db2@1.60.1.70124"}
+{"id": 436433, "field": "name", "en": "Field Marshal", "hash": "3e299ceb458a5615", "src": "db2@1.60.1.70124"}
+{"id": 436433, "field": "description", "en": "Field Marshal", "hash": "3e299ceb458a5615", "src": "db2@1.60.1.70124"}
+{"id": 436433, "field": "aura", "en": "Field Marshal", "hash": "3e299ceb458a5615", "src": "db2@1.60.1.70124"}
+{"id": 436434, "field": "name", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70124"}
+{"id": 436434, "field": "description", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70124"}
+{"id": 436434, "field": "aura", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70124"}
+{"id": 436435, "field": "name", "en": "Marshal", "hash": "877fec130a7b4c96", "src": "db2@1.60.1.70124"}
+{"id": 436435, "field": "description", "en": "Marshal", "hash": "877fec130a7b4c96", "src": "db2@1.60.1.70124"}
+{"id": 436435, "field": "aura", "en": "Marshal", "hash": "877fec130a7b4c96", "src": "db2@1.60.1.70124"}
+{"id": 436436, "field": "name", "en": "General", "hash": "f14c70303f73c518", "src": "db2@1.60.1.70124"}
+{"id": 436436, "field": "description", "en": "General", "hash": "f14c70303f73c518", "src": "db2@1.60.1.70124"}
+{"id": 436436, "field": "aura", "en": "General", "hash": "f14c70303f73c518", "src": "db2@1.60.1.70124"}
+{"id": 436437, "field": "name", "en": "Commander", "hash": "a9e7d0e9d48cdd73", "src": "db2@1.60.1.70124"}
+{"id": 436437, "field": "description", "en": "Commander", "hash": "a9e7d0e9d48cdd73", "src": "db2@1.60.1.70124"}
+{"id": 436437, "field": "aura", "en": "Commander", "hash": "a9e7d0e9d48cdd73", "src": "db2@1.60.1.70124"}
+{"id": 436438, "field": "name", "en": "Lieutenant General", "hash": "25704ffb742e6df8", "src": "db2@1.60.1.70124"}
+{"id": 436438, "field": "description", "en": "Lieutenant General", "hash": "25704ffb742e6df8", "src": "db2@1.60.1.70124"}
+{"id": 436438, "field": "aura", "en": "Lieutenant General", "hash": "25704ffb742e6df8", "src": "db2@1.60.1.70124"}
+{"id": 436439, "field": "name", "en": "Lieutenant Commander", "hash": "e2bbc522b65f4d46", "src": "db2@1.60.1.70124"}
+{"id": 436439, "field": "description", "en": "Lieutenant Commander", "hash": "e2bbc522b65f4d46", "src": "db2@1.60.1.70124"}
+{"id": 436439, "field": "aura", "en": "Lieutenant Commander", "hash": "e2bbc522b65f4d46", "src": "db2@1.60.1.70124"}
+{"id": 436440, "field": "name", "en": "Champion", "hash": "80e2d2e4cd073efb", "src": "db2@1.60.1.70124"}
+{"id": 436440, "field": "description", "en": "Champion", "hash": "80e2d2e4cd073efb", "src": "db2@1.60.1.70124"}
+{"id": 436440, "field": "aura", "en": "Champion", "hash": "80e2d2e4cd073efb", "src": "db2@1.60.1.70124"}
+{"id": 436441, "field": "name", "en": "Knight", "hash": "48d381aa44aae70d", "src": "db2@1.60.1.70124"}
+{"id": 436441, "field": "description", "en": "Knight", "hash": "48d381aa44aae70d", "src": "db2@1.60.1.70124"}
+{"id": 436441, "field": "aura", "en": "Knight", "hash": "48d381aa44aae70d", "src": "db2@1.60.1.70124"}
+{"id": 436442, "field": "name", "en": "Stone Guard", "hash": "54c96c078f508131", "src": "db2@1.60.1.70124"}
+{"id": 436442, "field": "description", "en": "Stone Guard", "hash": "54c96c078f508131", "src": "db2@1.60.1.70124"}
+{"id": 436442, "field": "aura", "en": "Stone Guard", "hash": "54c96c078f508131", "src": "db2@1.60.1.70124"}
+{"id": 436443, "field": "name", "en": "Soul of Stromgarde", "hash": "98dd9cf92f6618d7", "src": "db2@1.60.1.70124"}
+{"id": 436443, "field": "description", "en": "Increases the damage of nearby allies by $s1% for $d.", "hash": "9dd27ffb9847425e", "src": "db2@1.60.1.70124"}
+{"id": 436443, "field": "aura", "en": "Damage increased by $s1%.", "hash": "b556e36189b38b27", "src": "db2@1.60.1.70124"}
+{"id": 436444, "field": "name", "en": "Veteran of the Third War", "hash": "992d4fd69cd37d34", "src": "db2@1.60.1.70124"}
+{"id": 436444, "field": "description", "en": "Unrelenting, unprejudiced, and undamned. ", "hash": "a133c109809bfa9a", "src": "db2@1.60.1.70124"}
+{"id": 436444, "field": "aura", "en": "Unrelenting, unprejudiced, and undamned.", "hash": "a133c109809bfa9a", "src": "db2@1.60.1.70124"}
+{"id": 436445, "field": "name", "en": "Fire Strike", "hash": "40e734d25ad1e58f", "src": "db2@1.60.1.70124"}
+{"id": 436445, "field": "description", "en": "Does $s1 additional Fire damage to the target.", "hash": "c0c27c0fb3150a3f", "src": "db2@1.60.1.70124"}
+{"id": 436469, "field": "name", "en": "Bloodlash", "hash": "b94f22624f943259", "src": "db2@1.60.1.70124"}
+{"id": 436469, "field": "description", "en": "Chance on hit to increase Strength by $436471s1 for $436471d.", "hash": "0fafc632e9ae1c1a", "src": "db2@1.60.1.70124"}
+{"id": 436469, "field": "aura", "en": "Strength Increased by $436471s1.", "hash": "359fb8fc46ee7918", "src": "db2@1.60.1.70124"}
+{"id": 436471, "field": "name", "en": "Bloodlash", "hash": "b94f22624f943259", "src": "db2@1.60.1.70124"}
+{"id": 436471, "field": "description", "en": "Chance on hit to increase Strength by $s1 for $d.", "hash": "87a49b6fcc3ef65c", "src": "db2@1.60.1.70124"}
+{"id": 436471, "field": "aura", "en": "Strength Increased by $s1.", "hash": "555ecc600a129a42", "src": "db2@1.60.1.70124"}
+{"id": 436473, "field": "name", "en": "Stun", "hash": "0b3dc5a2a5416483", "src": "db2@1.60.1.70124"}
+{"id": 436473, "field": "description", "en": "Knocks target silly for $d1.", "hash": "9f6da6c03626bebc", "src": "db2@1.60.1.70124"}
+{"id": 436473, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 436474, "field": "name", "en": "Consume", "hash": "f38da6cfe013b757", "src": "db2@1.60.1.70124"}
+{"id": 436475, "field": "name", "en": "Longsight", "hash": "cc9206b867837d54", "src": "db2@1.60.1.70124"}
+{"id": 436475, "field": "description", "en": "Allows you to look far into the distance.", "hash": "4c99356daeaf0bf4", "src": "db2@1.60.1.70124"}
+{"id": 436475, "field": "aura", "en": "Increased vision range until you move.", "hash": "ae3b2d17cc81c7ef", "src": "db2@1.60.1.70124"}
+{"id": 436476, "field": "name", "en": "Teleport to Wirdal Wondergear", "hash": "9b779db389e0da87", "src": "db2@1.60.1.70124"}
+{"id": 436476, "field": "description", "en": "Sends player to Gnomeregan.", "hash": "187b898451d33e10", "src": "db2@1.60.1.70124"}
+{"id": 436477, "field": "name", "en": "Blood Spattered Tempest", "hash": "f7ad0bfa30345c0e", "src": "db2@1.60.1.70124"}
+{"id": 436477, "field": "description", "en": "Unleash a violent tempest of steel and blood, causing $s1 Shadowstrike damage to all enemies within $a1 yards.", "hash": "312bd32a4b66ac18", "src": "db2@1.60.1.70124"}
+{"id": 436478, "field": "name", "en": "Infernal Impact", "hash": "c9a62589038b4958", "src": "db2@1.60.1.70124"}
+{"id": 436478, "field": "description", "en": "Unleash a delayed explosion of blood and fire, causing $436479s1 Shadowflame damage to all targets within $436479a1 yards.", "hash": "601d049716de06e3", "src": "db2@1.60.1.70124"}
+{"id": 436479, "field": "name", "en": "Infernal Impact", "hash": "c9a62589038b4958", "src": "db2@1.60.1.70124"}
+{"id": 436479, "field": "description", "en": "A delayed explosion of blood and fire occurs around the caster, causing $s1 Shadowflame damage to all targets within $a1 yards.", "hash": "65b1d4d043c5f579", "src": "db2@1.60.1.70124"}
+{"id": 436480, "field": "name", "en": "Attack Power - Feral (+80)", "hash": "566eb75531747174", "src": "db2@1.60.1.70124"}
+{"id": 436480, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70124"}
+{"id": 436481, "field": "name", "en": "Bloodbark Cleave", "hash": "be5bbea7e8302b8a", "src": "db2@1.60.1.70124"}
+{"id": 436481, "field": "description", "en": "Inficts $s1 additional  damage to the target and its nearest allies, affecting up to $x1 targets. Causes additional threat.", "hash": "8af15791c35f93c1", "src": "db2@1.60.1.70124"}
+{"id": 436481, "field": "aura", "en": "Inficts $s1 additional  damage to the target and its nearest allies, affecting up to $x1 targets. Causes additional threat.", "hash": "8af15791c35f93c1", "src": "db2@1.60.1.70124"}
+{"id": 436482, "field": "name", "en": "Bloodbark Cleave", "hash": "be5bbea7e8302b8a", "src": "db2@1.60.1.70124"}
+{"id": 436482, "field": "description", "en": "Adds $436481s1 Stormstrike damage to your melee attacks, damaging the target and its nearest allies, affecting up to $436481x1 targets. Causes additional threat. Lasts $d.", "hash": "470349c1ea479da5", "src": "db2@1.60.1.70124"}
+{"id": 436482, "field": "aura", "en": "Adding $436481s1 Stormstrike damage to your melee attacks, damaging the target and its 2 nearest allies. Causes additional threat.", "hash": "ed72e25c95a418df", "src": "db2@1.60.1.70124"}
+{"id": 436483, "field": "name", "en": "Wintersprint Teleport", "hash": "0e3b7ef2a4fbae42", "src": "db2@1.60.1.70124"}
+{"id": 436484, "field": "name", "en": "Azshara Teleport", "hash": "d3f0eadf7f7fdbae", "src": "db2@1.60.1.70124"}
+{"id": 436485, "field": "name", "en": "Azshara Duke Hydraxis Teleport", "hash": "982ed13d8b2a072b", "src": "db2@1.60.1.70124"}
+{"id": 436486, "field": "name", "en": "Desolace Two Goliaths Teleport", "hash": "a3420cf8474bd788", "src": "db2@1.60.1.70124"}
+{"id": 436487, "field": "name", "en": "Desolace Horn Teleport", "hash": "ee120e7192d03bd0", "src": "db2@1.60.1.70124"}
+{"id": 436488, "field": "name", "en": "Desolace Tent Teleport", "hash": "3586d9332946e6dd", "src": "db2@1.60.1.70124"}
+{"id": 436489, "field": "name", "en": "Feralas Teleport", "hash": "ccd2517dc6fddc2f", "src": "db2@1.60.1.70124"}
+{"id": 436490, "field": "name", "en": "Silithus Teleport", "hash": "ddf54565de6da171", "src": "db2@1.60.1.70124"}
+{"id": 436491, "field": "name", "en": "Tanaris Teleport", "hash": "adc640f03d167a5a", "src": "db2@1.60.1.70124"}
+{"id": 436492, "field": "name", "en": "Southern Tanaris Teleport", "hash": "1a0205113cf276e5", "src": "db2@1.60.1.70124"}
+{"id": 436493, "field": "name", "en": "Ironforge Teleport", "hash": "94ad6775cb20e940", "src": "db2@1.60.1.70124"}
+{"id": 436494, "field": "name", "en": "Theramore Teleport", "hash": "914776f028314801", "src": "db2@1.60.1.70124"}
+{"id": 436495, "field": "name", "en": "Scarlet Monastery Teleport", "hash": "73e8af0b49c7e985", "src": "db2@1.60.1.70124"}
+{"id": 436496, "field": "name", "en": "Mushroom Teleport", "hash": "fb84a9b38b9e5adc", "src": "db2@1.60.1.70124"}
+{"id": 436497, "field": "name", "en": "Scholomance Teleport", "hash": "8b5a768164a53904", "src": "db2@1.60.1.70124"}
+{"id": 436498, "field": "name", "en": "Alterac Mountain Teleport", "hash": "d2ab6e106a495485", "src": "db2@1.60.1.70124"}
+{"id": 436499, "field": "name", "en": "Thandol Span Teleport", "hash": "748beadbba36d376", "src": "db2@1.60.1.70124"}
+{"id": 436500, "field": "name", "en": "Zepplin Teleport", "hash": "9afa75b108abf558", "src": "db2@1.60.1.70124"}
+{"id": 436501, "field": "name", "en": "Grim Batol Teleport", "hash": "d6c99383c0d7c429", "src": "db2@1.60.1.70124"}
+{"id": 436502, "field": "name", "en": "Overlook Cliffs Teleport", "hash": "1bab6d4c4d0adcaa", "src": "db2@1.60.1.70124"}
+{"id": 436503, "field": "name", "en": "Stonewrought Dam Teleport", "hash": "d3d939f96a57f781", "src": "db2@1.60.1.70124"}
+{"id": 436504, "field": "name", "en": "Altar of Storms Teleport", "hash": "56c13a9c8c52a7ee", "src": "db2@1.60.1.70124"}
+{"id": 436505, "field": "name", "en": "Blackrock Mountain Teleport", "hash": "d7c3c19aa13089d8", "src": "db2@1.60.1.70124"}
+{"id": 436506, "field": "name", "en": "Burning Steppes Teleport", "hash": "a569836fb8b5159e", "src": "db2@1.60.1.70124"}
+{"id": 436507, "field": "name", "en": "Searing Gorge Teleport", "hash": "95f6af202e3e352a", "src": "db2@1.60.1.70124"}
+{"id": 436508, "field": "name", "en": "TEST DEVELOPER DEBUG SPELL", "hash": "b52e72de436a4a63", "src": "db2@1.60.1.70124"}
+{"id": 436508, "field": "aura", "en": "I don't think I'm supposed to be here...", "hash": "261534e91857712d", "src": "db2@1.60.1.70124"}
+{"id": 436509, "field": "name", "en": "Booty Bay Teleport", "hash": "6b04787f2be1a7a1", "src": "db2@1.60.1.70124"}
+{"id": 436510, "field": "name", "en": "Booty Bay Bell Teleport", "hash": "dcc23597ab5de8ce", "src": "db2@1.60.1.70124"}
+{"id": 436511, "field": "name", "en": "Purgation Isle Teleport", "hash": "5fc77f5c74a069a0", "src": "db2@1.60.1.70124"}
+{"id": 436512, "field": "name", "en": "Troll Village Teleport", "hash": "600712f756bcc3bf", "src": "db2@1.60.1.70124"}
+{"id": 436513, "field": "name", "en": "TEST DEVELOPER DEBUG SPELL", "hash": "b52e72de436a4a63", "src": "db2@1.60.1.70124"}
+{"id": 436513, "field": "aura", "en": "I don't think I'm supposed to be here...", "hash": "261534e91857712d", "src": "db2@1.60.1.70124"}
+{"id": 436514, "field": "name", "en": "TEST DEVELOPER DEBUG SPELL", "hash": "b52e72de436a4a63", "src": "db2@1.60.1.70124"}
+{"id": 436514, "field": "aura", "en": "I don't think I'm supposed to be here...", "hash": "261534e91857712d", "src": "db2@1.60.1.70124"}
+{"id": 436515, "field": "name", "en": "TEST DEVELOPER DEBUG SPELL", "hash": "b52e72de436a4a63", "src": "db2@1.60.1.70124"}
+{"id": 436515, "field": "aura", "en": "I don't think I'm supposed to be here...", "hash": "261534e91857712d", "src": "db2@1.60.1.70124"}
+{"id": 436516, "field": "name", "en": "Chronostatic Preservation", "hash": "fb106a5f1a35c238", "src": "db2@1.60.1.70124"}
+{"id": 436516, "field": "description", "en": "$?a443369[Heals a friendly target for ${$<healpower>*$436517m1/100} to ${$<healpower>*$436517M1/100}.]\r\n\r\n[Fuses Arcane, Fire, and Frost magic to freeze chronomantic energy into a stored state for later use. You can hold this energy for up to $d before it combusts and expires. When unleashed, heals a friendly target for ${$<healpower>*$436517m1/100} to ${$<healpower>*$436517M1/100}.\r\n\r\nThis spell is considered Arcane, Fire, and Frost for interactions with other spells, talents, and effects.]", "hash": "9c268048fad9e762", "src": "db2@1.60.1.70124"}
+{"id": 436517, "field": "name", "en": "Chronostatic Preservation", "hash": "fb106a5f1a35c238", "src": "db2@1.60.1.70124"}
+{"id": 436517, "field": "description", "en": "Unleash stored chronomantic energy to instantly heal a friendly target for ${$<healpower>*$m1/100}to ${$<healpower>*$M1/100}.", "hash": "1006953fd8519458", "src": "db2@1.60.1.70124"}
+{"id": 436519, "field": "name", "en": "Flametongue Weapon", "hash": "4de7af7167112026", "src": "db2@1.60.1.70124"}
+{"id": 436520, "field": "name", "en": "Dual Wield Specialization", "hash": "42d34dcf2ff20d11", "src": "db2@1.60.1.70124"}
+{"id": 436526, "field": "name", "en": "Leprous Assistant Toss", "hash": "762cec86344e878b", "src": "db2@1.60.1.70124"}
+{"id": 436529, "field": "name", "en": "S03 - Flag Tracking Quest - Scooty Pre-Req", "hash": "63bb6454bfae347f", "src": "db2@1.60.1.70124"}
+{"id": 436530, "field": "name", "en": "[DNT] S03 - Gnomeregan Professions - Beam me up to Wirdal", "hash": "65ce556fbeebe4bc", "src": "db2@1.60.1.70124"}
+{"id": 436531, "field": "name", "en": "Teleport to Feralas", "hash": "fb6acc214be10750", "src": "db2@1.60.1.70124"}
+{"id": 436531, "field": "description", "en": "Sends player to Gnomeregan.", "hash": "187b898451d33e10", "src": "db2@1.60.1.70124"}
+{"id": 436532, "field": "name", "en": "Throw and Despawn Closest Bleacher and Leper Gnomes", "hash": "fca67e89d1b60fcb", "src": "db2@1.60.1.70124"}
+{"id": 436534, "field": "name", "en": "Defense Protocol: Goodbye", "hash": "0bca5a91bfd7f608", "src": "db2@1.60.1.70124"}
+{"id": 436534, "field": "description", "en": "Thank you for your cooperation.", "hash": "bd0fa800281194c1", "src": "db2@1.60.1.70124"}
+{"id": 436534, "field": "aura", "en": "Thank you for your cooperation.", "hash": "bd0fa800281194c1", "src": "db2@1.60.1.70124"}
+{"id": 436536, "field": "name", "en": "GM Hearth", "hash": "d9c9f973de7c5201", "src": "db2@1.60.1.70124"}
+{"id": 436536, "field": "description", "en": "Returns you to $z.  Speak to an Innkeeper in a different place to change your home location.", "hash": "f92eb2a9d4b8341b", "src": "db2@1.60.1.70124"}
+{"id": 436537, "field": "name", "en": "GM Freeze", "hash": "c779765b8f56959a", "src": "db2@1.60.1.70124"}
+{"id": 436537, "field": "description", "en": "GM tool to freeze players.", "hash": "05a2ce6dc3aed6b6", "src": "db2@1.60.1.70124"}
+{"id": 436537, "field": "aura", "en": "Frozen.", "hash": "16ac477b52b28458", "src": "db2@1.60.1.70124"}
+{"id": 436538, "field": "name", "en": "TEST DEVELOPER DEBUG SPELL hidden stun primer", "hash": "d7deadf6970a32f3", "src": "db2@1.60.1.70124"}
+{"id": 436538, "field": "aura", "en": "I don't think I'm supposed to be here...", "hash": "261534e91857712d", "src": "db2@1.60.1.70124"}
+{"id": 436545, "field": "name", "en": "Infusing Voidcore", "hash": "176e5e1d3b4445f4", "src": "db2@1.60.1.70124"}
+{"id": 436545, "field": "description", "en": "Combine with an appropriate power source to create a Charged Voidcore.", "hash": "6f006444a81fdafe", "src": "db2@1.60.1.70124"}
+{"id": 436545, "field": "aura", "en": "Combine with an appropriate power source to create a Charged Voidcore.", "hash": "6f006444a81fdafe", "src": "db2@1.60.1.70124"}
+{"id": 436562, "field": "name", "en": "Create Mote of Darkness", "hash": "025f57706abae681", "src": "db2@1.60.1.70124"}
+{"id": 436563, "field": "name", "en": "DNT Void Phase", "hash": "aa94e330300261c3", "src": "db2@1.60.1.70124"}
+{"id": 436564, "field": "name", "en": "Blunderbuss", "hash": "c46246611169dcbe", "src": "db2@1.60.1.70124"}
+{"id": 436564, "field": "description", "en": "Fire a musket blast at up to $i enemies in a cone in front of you for ${$<base>*$m1/100+$m2/100*$AP} to ${$<base>*$M1/100+$m2/100*$AP} Physical damage.", "hash": "db83412d4e740320", "src": "db2@1.60.1.70124"}
+{"id": 436570, "field": "name", "en": "Cluck!", "hash": "4b30505e8b87583b", "src": "db2@1.60.1.70124"}
+{"id": 436608, "field": "name", "en": "Fan of Knives", "hash": "4e308a0c5e4f29d4", "src": "db2@1.60.1.70124"}
+{"id": 436608, "field": "description", "en": "Gain the Fan of Knives ability:\r\n\r\n$@spellicon409240\r\n$@spelldesc409240", "hash": "86e39fc315a79208", "src": "db2@1.60.1.70124"}
+{"id": 436609, "field": "name", "en": "Engrave Cloak - Fan of Knives", "hash": "34695e47abd06a8f", "src": "db2@1.60.1.70124"}
+{"id": 436609, "field": "description", "en": "Engrave your cloak with the Fan of Knives rune:\r\n\r\n$@spellicon409240\r\n$@spelldesc409240", "hash": "35afb9300bead207", "src": "db2@1.60.1.70124"}
+{"id": 436610, "field": "name", "en": "Blunderbuss", "hash": "c46246611169dcbe", "src": "db2@1.60.1.70124"}
+{"id": 436610, "field": "description", "en": "Gain the Blunderbuss ability:\r\n\r\n$@spellicon436564\r\n$@spelldesc436564", "hash": "cf65f1b9a3d0ea83", "src": "db2@1.60.1.70124"}
+{"id": 436611, "field": "name", "en": "Crimson Tempest", "hash": "663acd8bd32b8a97", "src": "db2@1.60.1.70124"}
+{"id": 436611, "field": "description", "en": "Gain the Crimson Tempest ability:\r\n\r\n$@spellicon412096\r\n$@spelldesc412096", "hash": "0868597873595e31", "src": "db2@1.60.1.70124"}
+{"id": 436620, "field": "name", "en": "Duel The Swordsman", "hash": "f1ac07b5d77d17b9", "src": "db2@1.60.1.70124"}
+{"id": 436622, "field": "name", "en": "Defeated Wandering Swordsman", "hash": "c21b3a5ab0e06546", "src": "db2@1.60.1.70124"}
+{"id": 436623, "field": "name", "en": "Wandering Swordsman Reward", "hash": "938374f3fadf9be5", "src": "db2@1.60.1.70124"}
+{"id": 436623, "field": "description", "en": "Dig up the buried cache at the marked location", "hash": "9cbb92576feabe92", "src": "db2@1.60.1.70124"}
+{"id": 436641, "field": "name", "en": "Blood Moon Copy", "hash": "b09ed8ef78f0a031", "src": "db2@1.60.1.70124"}
+{"id": 436641, "field": "description", "en": "The thirst for blood fills your senses!", "hash": "40a7090bef0842af", "src": "db2@1.60.1.70124"}
+{"id": 436641, "field": "aura", "en": "Hostile to everyone but party or raid members. Killing enemies awards Blood for the Blood Loa, increased reward for player kills.", "hash": "5bb392bce91fcb1d", "src": "db2@1.60.1.70124"}
+{"id": 436655, "field": "name", "en": "Witherbark Gong", "hash": "c1ac04bcb2b3c47a", "src": "db2@1.60.1.70124"}
+{"id": 436680, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70124"}
+{"id": 436689, "field": "name", "en": "Increased Pet Crit +1%", "hash": "89591b2395ac3f96", "src": "db2@1.60.1.70124"}
+{"id": 436689, "field": "description", "en": "Increases your pet's critical strike chance by $1%.", "hash": "7c84ef0e2b0dd0fc", "src": "db2@1.60.1.70124"}
+{"id": 436689, "field": "aura", "en": "Critical strike chance increase.", "hash": "a095d48e619dcc2e", "src": "db2@1.60.1.70124"}
+{"id": 436690, "field": "name", "en": "Increased Pet Crit +1%", "hash": "89591b2395ac3f96", "src": "db2@1.60.1.70124"}
+{"id": 436690, "field": "description", "en": "Increases your pet's critical strike chance by 1%.", "hash": "31d195fb8f3c0fbf", "src": "db2@1.60.1.70124"}
+{"id": 436691, "field": "name", "en": "Peck", "hash": "0ad2e611c17b5240", "src": "db2@1.60.1.70124"}
+{"id": 436692, "field": "name", "en": "Explosive Egg", "hash": "86ffa93c64be43a1", "src": "db2@1.60.1.70124"}
+{"id": 436693, "field": "name", "en": "Explosive Egg", "hash": "86ffa93c64be43a1", "src": "db2@1.60.1.70124"}
+{"id": 436694, "field": "name", "en": "Detonation", "hash": "3426745dfa360146", "src": "db2@1.60.1.70124"}
+{"id": 436695, "field": "name", "en": "Overheat", "hash": "40bcf98b21c866b3", "src": "db2@1.60.1.70124"}
+{"id": 436739, "field": "name", "en": "Cluck!", "hash": "4b30505e8b87583b", "src": "db2@1.60.1.70124"}
+{"id": 436739, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70124"}
+{"id": 436741, "field": "name", "en": "Overheat", "hash": "40bcf98b21c866b3", "src": "db2@1.60.1.70124"}
+{"id": 436741, "field": "aura", "en": "Overheating. All damage taken increased by $s1% while radiating fire damage to all nearby enemies.", "hash": "d3377ca59b649f90", "src": "db2@1.60.1.70124"}
+{"id": 436743, "field": "name", "en": "Overheat", "hash": "40bcf98b21c866b3", "src": "db2@1.60.1.70124"}
+{"id": 436750, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70124"}
+{"id": 436751, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70124"}
+{"id": 436770, "field": "name", "en": "Get Back In There!", "hash": "08d3f4ef5d5d7189", "src": "db2@1.60.1.70124"}
+{"id": 436816, "field": "name", "en": "Sprocketfire Breath", "hash": "5d0056077feee041", "src": "db2@1.60.1.70124"}
+{"id": 436817, "field": "name", "en": "Sprocketfire Breath", "hash": "5d0056077feee041", "src": "db2@1.60.1.70124"}
+{"id": 436817, "field": "aura", "en": "Deals $w1 Fire damage every $t1 sec.", "hash": "e06497998c1ce50b", "src": "db2@1.60.1.70124"}
+{"id": 436818, "field": "name", "en": "Sprocketfire Breath", "hash": "5d0056077feee041", "src": "db2@1.60.1.70124"}
+{"id": 436819, "field": "name", "en": "Sprocketfire Breath", "hash": "5d0056077feee041", "src": "db2@1.60.1.70124"}
+{"id": 436820, "field": "name", "en": "Sprocketfire Breath", "hash": "5d0056077feee041", "src": "db2@1.60.1.70124"}
+{"id": 436821, "field": "name", "en": "Slag Embers", "hash": "5a3d9f7e17b05d74", "src": "db2@1.60.1.70124"}
+{"id": 436822, "field": "name", "en": "Slag Embers", "hash": "5a3d9f7e17b05d74", "src": "db2@1.60.1.70124"}
+{"id": 436823, "field": "name", "en": "Slag Embers", "hash": "5a3d9f7e17b05d74", "src": "db2@1.60.1.70124"}
+{"id": 436823, "field": "description", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70124"}
+{"id": 436823, "field": "aura", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70124"}
+{"id": 436824, "field": "name", "en": "Frayed Wiring", "hash": "7fae6fbefd63afe1", "src": "db2@1.60.1.70124"}
+{"id": 436825, "field": "name", "en": "Frayed Wiring", "hash": "7fae6fbefd63afe1", "src": "db2@1.60.1.70124"}
+{"id": 436825, "field": "aura", "en": "Electrically charged, shocking all attackers with Nature damage.", "hash": "8f63cd99cc1a146a", "src": "db2@1.60.1.70124"}
+{"id": 436826, "field": "name", "en": "Frayed Wiring", "hash": "7fae6fbefd63afe1", "src": "db2@1.60.1.70124"}
+{"id": 436827, "field": "name", "en": "Frayed Wiring", "hash": "7fae6fbefd63afe1", "src": "db2@1.60.1.70124"}
+{"id": 436828, "field": "name", "en": "Binary Bleat", "hash": "f85a97a7aa14b317", "src": "db2@1.60.1.70124"}
+{"id": 436828, "field": "aura", "en": "Silenced by nearby electrical interference.", "hash": "ad99a8ff2f29cb9f", "src": "db2@1.60.1.70124"}
+{"id": 436829, "field": "name", "en": "Static Fleece", "hash": "59406837bfdb97f7", "src": "db2@1.60.1.70124"}
+{"id": 436830, "field": "name", "en": "Static Fleece", "hash": "59406837bfdb97f7", "src": "db2@1.60.1.70124"}
+{"id": 436831, "field": "name", "en": "Static Fleece", "hash": "59406837bfdb97f7", "src": "db2@1.60.1.70124"}
+{"id": 436831, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 436833, "field": "name", "en": "Widget Volley", "hash": "cbac9f0032da0c4e", "src": "db2@1.60.1.70124"}
+{"id": 436834, "field": "name", "en": "Widget Volley", "hash": "cbac9f0032da0c4e", "src": "db2@1.60.1.70124"}
+{"id": 436835, "field": "name", "en": "Nutty Shield", "hash": "f938ad115ba80438", "src": "db2@1.60.1.70124"}
+{"id": 436836, "field": "name", "en": "Widget Fortress", "hash": "52d7dd55b38181d9", "src": "db2@1.60.1.70124"}
+{"id": 436837, "field": "name", "en": "Widget Fortress", "hash": "52d7dd55b38181d9", "src": "db2@1.60.1.70124"}
+{"id": 436837, "field": "aura", "en": "All damage taken reduced by $s1%.", "hash": "bd0656aa9b8dd371", "src": "db2@1.60.1.70124"}
+{"id": 436858, "field": "name", "en": "[DNT] Combat Dummy I", "hash": "7eee092f4c3981d7", "src": "db2@1.60.1.70124"}
+{"id": 436861, "field": "name", "en": "[DNT] Combat Dummy II", "hash": "f3ceb496f544c88d", "src": "db2@1.60.1.70124"}
+{"id": 436863, "field": "name", "en": "[DNT] Combat Dummy III", "hash": "c2c66b77e5bf5e60", "src": "db2@1.60.1.70124"}
+{"id": 436892, "field": "name", "en": "Feline Swiftness", "hash": "a76c133e94ded748", "src": "db2@1.60.1.70124"}
+{"id": 436892, "field": "description", "en": "Increases your movement speed by $s1% while outdoors in Cat Form and increases your chance to dodge while in Cat Form by $24864s1%.", "hash": "16562a12026671c9", "src": "db2@1.60.1.70124"}
+{"id": 436893, "field": "name", "en": "Feline Swiftness", "hash": "a76c133e94ded748", "src": "db2@1.60.1.70124"}
+{"id": 436893, "field": "description", "en": "Increases your movement speed by $s1% while outdoors in Cat Form and increases your chance to dodge while in Cat Form by $24864s1%.", "hash": "16562a12026671c9", "src": "db2@1.60.1.70124"}
+{"id": 436895, "field": "name", "en": "S03 - Tuning and Overrides Passive - Druid", "hash": "4c3b87eef71bcd55", "src": "db2@1.60.1.70124"}
+{"id": 436896, "field": "name", "en": "Dueling Zone - Screen Effect", "hash": "67183667f819c355", "src": "db2@1.60.1.70124"}
+{"id": 436937, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70124"}
+{"id": 436937, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70124"}
+{"id": 436937, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70124"}
+{"id": 436938, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70124"}
+{"id": 436938, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70124"}
+{"id": 436938, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70124"}
+{"id": 436939, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70124"}
+{"id": 436939, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70124"}
+{"id": 436939, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70124"}
+{"id": 436940, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70124"}
+{"id": 436940, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70124"}
+{"id": 436940, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70124"}
+{"id": 436941, "field": "name", "en": "[DNT] Monastery Bust Active", "hash": "e8e8d5006f1ac2ea", "src": "db2@1.60.1.70124"}
+{"id": 436942, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70124"}
+{"id": 436942, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70124"}
+{"id": 436942, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70124"}
+{"id": 436943, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70124"}
+{"id": 436943, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70124"}
+{"id": 436943, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70124"}
+{"id": 436944, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70124"}
+{"id": 436944, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70124"}
+{"id": 436944, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70124"}
+{"id": 436945, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70124"}
+{"id": 436945, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70124"}
+{"id": 436945, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70124"}
+{"id": 436946, "field": "name", "en": "Regrowth", "hash": "9f31187c9b65b26b", "src": "db2@1.60.1.70124"}
+{"id": 436946, "field": "description", "en": "Heals a friendly target for $s1 and another $o2 over $d.", "hash": "1430248dfac010dc", "src": "db2@1.60.1.70124"}
+{"id": 436946, "field": "aura", "en": "Heals $s2 every $t2 seconds.", "hash": "9eb1427b3b08725f", "src": "db2@1.60.1.70124"}
+{"id": 436949, "field": "name", "en": "Expanded Intellect", "hash": "e138db801abb6f59", "src": "db2@1.60.1.70124"}
+{"id": 436949, "field": "description", "en": "Decreases the mana cost of Arcane Intellect by $s1% and increases its duration by $s2%.", "hash": "4dfdc3856ab4352b", "src": "db2@1.60.1.70124"}
+{"id": 436951, "field": "name", "en": "Increased Fortitude", "hash": "71bb0b09f5198e49", "src": "db2@1.60.1.70124"}
+{"id": 436951, "field": "description", "en": "Decreases the mana cost of Power Word: Fortitude by $s1% and increases its duration by $s2%.", "hash": "5604b3da9fc2a2be", "src": "db2@1.60.1.70124"}
+{"id": 436952, "field": "name", "en": "Use Echo", "hash": "4b386cd41d37f0b2", "src": "db2@1.60.1.70124"}
+{"id": 436952, "field": "description", "en": "Honor the archivists.", "hash": "a62056ef39d00548", "src": "db2@1.60.1.70124"}
+{"id": 436956, "field": "name", "en": "Deeper Wilds", "hash": "726a2d059d27969c", "src": "db2@1.60.1.70124"}
+{"id": 436956, "field": "description", "en": "Decreases the mana cost of Mark of the Wild by $s1% and increases its duration by $s2%.", "hash": "182a02c01b42455d", "src": "db2@1.60.1.70124"}
+{"id": 436969, "field": "name", "en": "[DNT] Combat Dummy II Powered", "hash": "3713c0bab1ba577f", "src": "db2@1.60.1.70124"}
+{"id": 436970, "field": "name", "en": "[DNT] Combat Dummy III Powered", "hash": "40cbae2adc0731e2", "src": "db2@1.60.1.70124"}
+{"id": 436973, "field": "name", "en": "[DNT] Combat Dummy I Powered", "hash": "2376035022be812a", "src": "db2@1.60.1.70124"}
+{"id": 436981, "field": "name", "en": "[DNT] Monastery Bust Failed", "hash": "adea4d3c41654748", "src": "db2@1.60.1.70124"}
+{"id": 436990, "field": "name", "en": "[DNT] Reset", "hash": "5e83e697bb69f1a2", "src": "db2@1.60.1.70124"}

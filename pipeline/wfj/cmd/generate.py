@@ -14,7 +14,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
-from wfj.core import align, glosses, numbered, readings
+from wfj.core import align, glosses, numbered, readings, tooltip_text
 from wfj.core.align import load_allowlist
 from wfj.core.english_text import model_english
 from wfj.core.hashing import key as hash_key
@@ -107,7 +107,10 @@ def gender_report_lines(report: dict[str, Any]) -> list[str]:
 
 
 def branch_variants(
-    type_: str, lines: list[dict[str, Any]], english_store: Store
+    type_: str,
+    lines: list[dict[str, Any]],
+    english_store: Store,
+    en_by: dict[tuple[int, str], str] | None = None,
 ) -> tuple[dict[tuple[int, str], list[tuple[str, str]]], dict[tuple[int, str], str]]:
     """→ (shipped, refused), ADR-043. `shipped`: (id, field) → [(variant Japanese, shape)…] for every shipped
     item / spell line whose Japanese keeps `$?` conditionals: its English (inclusions spliced in) split into
@@ -126,9 +129,11 @@ def branch_variants(
     todo = [ln for ln in lines if lua_writer.shipped(ln) and align.has_branches(str(ln.get("ja") or ""))]
     if not todo:
         return {}, {}
-    english = english_store.load(type_)
-    en_by = {(ln["id"], ln["field"]): ln["en"] for ln in english}
-    spells = {(ln["id"], ln["field"]): ln["en"] for ln in english_store.load("spell")}
+    if en_by is None:
+        en_by = {(ln["id"], ln["field"]): ln["en"] for ln in english_store.load(type_)}
+    spells = en_by if type_ == "spell" else {
+        (ln["id"], ln["field"]): ln["en"] for ln in english_store.load("spell")
+    }
     allowlist = load_allowlist(allowlist_path(english_store.root.parent).read_text(encoding="utf-8"))
     shipped: dict[tuple[int, str], list[tuple[str, str]]] = {}
     refused: dict[tuple[int, str], str] = {}
@@ -258,11 +263,16 @@ def _plan_id_types(
     """The shards of every type keyed by game ID (quest, item, spell, …)."""
     for type_ in schema.TYPES:
         lines = store.load(type_)
+        en_by = None
+        if type_ in tooltip_text.TYPES:
+            # a hand-written line's manual breaks are joined in what ships; data/ keeps the text as written
+            en_by = {(ln["id"], ln["field"]): ln["en"] for ln in english_store.load(type_)}
+            lines = tooltip_text.joined(lines, en_by)
         quest = "female" in schema.SLOTS[type_]
         female = female_fields(english_store.load(type_)) if quest else None
         masked = masked_fields(english_store.load(type_)) if quest else None
         branches, refused = (
-            branch_variants(type_, lines, english_store) if type_ in ("item", "spell") else ({}, {})
+            branch_variants(type_, lines, english_store, en_by) if type_ in ("item", "spell") else ({}, {})
         )
         if report is not None and refused:
             report.setdefault("branch_refused", {})[type_] = refused

@@ -1,126 +1,126 @@
-{"id": 401405, "field": "name", "en": "Chronomantic Healing", "hash": "3bbae6eccc809eb0", "src": "db2@1.60.1.70009"}
-{"id": 401417, "field": "name", "en": "Regeneration", "hash": "1270364d50efbed3", "src": "db2@1.60.1.70009"}
-{"id": 401417, "field": "description", "en": "Heals the target for ${$<healpower>*$m1/100*3} health over $d and applies Temporal Beacon for $400735s3 sec. \r\n\r\nTemporal Beacon\r\n$@spellicon400735\r\n$@spelldesc400735", "hash": "7470eeff860033ca", "src": "db2@1.60.1.70009"}
-{"id": 401417, "field": "aura", "en": "Healing ${$w1*3} health over $d.$?$w2>0[ Movement speed increased by $w2%.][]", "hash": "931e594a7c068282", "src": "db2@1.60.1.70009"}
-{"id": 401460, "field": "name", "en": "Rapid Regeneration", "hash": "d51fa4741042f01d", "src": "db2@1.60.1.70009"}
-{"id": 401460, "field": "description", "en": "Heals the target for ${$<healpower>*$m1/100*3} health over $d and applies Temporal Beacon for ${$400735m3*2/3} sec.\r\n\r\n$@spellicon400735\r\n$@spelldesc400735", "hash": "5178d77edd8395d3", "src": "db2@1.60.1.70009"}
-{"id": 401460, "field": "aura", "en": "Healing ${$w1*3} health over $d.", "hash": "71292dfdea88bb37", "src": "db2@1.60.1.70009"}
-{"id": 401462, "field": "name", "en": "Rewind Time", "hash": "01c441743aa85cb5", "src": "db2@1.60.1.70009"}
-{"id": 401462, "field": "description", "en": "Your current target with your Temporal Beacon instantly heals all damage taken over the last $s1 seconds. Ineffective on targets that did not have a Temporal Beacon $s1 seconds ago.", "hash": "490806a30ecbbdec", "src": "db2@1.60.1.70009"}
-{"id": 401488, "field": "name", "en": "Engrave Pants - Cutty's Rune", "hash": "a83c35c64b4f4971", "src": "db2@1.60.1.70009"}
-{"id": 401488, "field": "description", "en": "Engrave your pants with the Shadowstrike rune:\r\n\r\n$@spellicon399985\r\n$@spelldesc399985", "hash": "2b51ff0b06b82e4a", "src": "db2@1.60.1.70009"}
-{"id": 401489, "field": "name", "en": "Runecarving: Learn Cutty's Rune", "hash": "7fa7a41300a14a33", "src": "db2@1.60.1.70009"}
-{"id": 401495, "field": "name", "en": "Cutty - Trade Letter for Rune", "hash": "d499e360203a452e", "src": "db2@1.60.1.70009"}
-{"id": 401502, "field": "name", "en": "Frostfire Bolt", "hash": "a2fc5ba25777ffbf", "src": "db2@1.60.1.70009"}
-{"id": 401502, "field": "description", "en": "Launches a bolt of frostfire at the enemy, causing $s2 Frostfire damage, slowing movement speed by $s1% and causing an additional $o3 Frostfire damage over $d. This spell will be checked against the lower of the target's Frost and Fire resists and counts as both Frost and Fire damage.", "hash": "ff9796854e68f4ff", "src": "db2@1.60.1.70009"}
-{"id": 401502, "field": "aura", "en": "Movement slowed by $w1%. $w3 Frostfire damage every $t3 sec.", "hash": "3991e2af273d70a8", "src": "db2@1.60.1.70009"}
-{"id": 401556, "field": "name", "en": "Living Flame", "hash": "60c716da710c4c17", "src": "db2@1.60.1.70009"}
-{"id": 401556, "field": "description", "en": "Summons a spellfire flame that moves toward the target, leaving a trail of spellfire. This trail deals ${$<power>*$401558m1/100} Spellfire damage every second to nearby enemies. Lasts $d.", "hash": "b96c469de99f3fba", "src": "db2@1.60.1.70009"}
-{"id": 401558, "field": "name", "en": "Living Flame", "hash": "60c716da710c4c17", "src": "db2@1.60.1.70009"}
-{"id": 401558, "field": "description", "en": "Deals ${$<power>*$m1/100} Fire damage every $t1 sec.", "hash": "5c2b23fac1db95a8", "src": "db2@1.60.1.70009"}
-{"id": 401558, "field": "aura", "en": "Deals $w1 Fire damage every $t1 sec.", "hash": "e06497998c1ce50b", "src": "db2@1.60.1.70009"}
-{"id": 401559, "field": "name", "en": "Living Flame", "hash": "60c716da710c4c17", "src": "db2@1.60.1.70009"}
-{"id": 401617, "field": "name", "en": "Dig Up Treasure", "hash": "785217e3e0581aee", "src": "db2@1.60.1.70009"}
-{"id": 401617, "field": "description", "en": "Dig up treasure at the marked location", "hash": "cb9fbb49acaf7910", "src": "db2@1.60.1.70009"}
-{"id": 401681, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70009"}
-{"id": 401681, "field": "description", "en": "Decipher the spell notes with a Comphrehension Primer to learn a new Engraving spell.", "hash": "1278ff255eb6f475", "src": "db2@1.60.1.70009"}
-{"id": 401683, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70009"}
-{"id": 401683, "field": "description", "en": "Attempt to translate the spell notes into a new runecarving recipe.", "hash": "68ecd2ae3e3fa205", "src": "db2@1.60.1.70009"}
-{"id": 401684, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70009"}
-{"id": 401684, "field": "description", "en": "Attempt to translate the spell notes into a new runecarving recipe.", "hash": "68ecd2ae3e3fa205", "src": "db2@1.60.1.70009"}
-{"id": 401699, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70009"}
-{"id": 401699, "field": "description", "en": "Combine 8 Azora Apprentice Notes to discover a new runecarving recipe.", "hash": "0d2429eeae675d0d", "src": "db2@1.60.1.70009"}
-{"id": 401719, "field": "name", "en": "Arcane Barrage", "hash": "53704d3114c95fc4", "src": "db2@1.60.1.70009"}
-{"id": 401719, "field": "description", "en": "Gain the Arcane Barrage ability:\r\n\r\n$@spellicon400610\r\n$@spelldesc400610", "hash": "5cc6b146a28e90f8", "src": "db2@1.60.1.70009"}
-{"id": 401722, "field": "name", "en": "Engrave Cloak - Arcane Barrage", "hash": "2284e721da3a8d25", "src": "db2@1.60.1.70009"}
-{"id": 401722, "field": "description", "en": "Engrave your cloak with the Arcane Barrage rune:\r\n\r\n$@spellicon400610\r\n$@spelldesc400610", "hash": "948d9b5eb6724df4", "src": "db2@1.60.1.70009"}
-{"id": 401724, "field": "name", "en": "Hot Streak", "hash": "0f000625e3864a46", "src": "db2@1.60.1.70009"}
-{"id": 401724, "field": "description", "en": "Gain the Hot Streak ability:\r\n\r\n$@spellicon400624\r\n$@spelldesc400624", "hash": "03e95487573c498e", "src": "db2@1.60.1.70009"}
-{"id": 401725, "field": "name", "en": "Brain Freeze", "hash": "87412f0051279995", "src": "db2@1.60.1.70009"}
-{"id": 401725, "field": "description", "en": "Gain the Brain Freeze ability:\r\n\r\n$@spellicon400731\r\n$@spelldesc400731", "hash": "7ed1f1daefe446a6", "src": "db2@1.60.1.70009"}
-{"id": 401726, "field": "name", "en": "Advanced Warding", "hash": "35e86b2802f1b270", "src": "db2@1.60.1.70009"}
-{"id": 401726, "field": "description", "en": "Gain the Advanced Warding ability:\r\n\r\n$@spellicon412115\r\n$@spelldesc412115", "hash": "3b37264bf391cb09", "src": "db2@1.60.1.70009"}
-{"id": 401729, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70009"}
-{"id": 401729, "field": "description", "en": "Gain the Arcane Blast ability:\r\n\r\n$@spellicon400574\r\n$@spelldesc400574", "hash": "6a8d4cac25363af9", "src": "db2@1.60.1.70009"}
-{"id": 401731, "field": "name", "en": "Living Bomb", "hash": "7d464eaf4a566d95", "src": "db2@1.60.1.70009"}
-{"id": 401731, "field": "description", "en": "Gain the Living Bomb ability:\r\n\r\n$@spellicon400613\r\n$@spelldesc400613", "hash": "395d18dcca17538c", "src": "db2@1.60.1.70009"}
-{"id": 401732, "field": "name", "en": "Ice Lance", "hash": "0c5d877246da1893", "src": "db2@1.60.1.70009"}
-{"id": 401732, "field": "description", "en": "Gain the Ice Lance ability:\r\n\r\n$@spellicon400640\r\n$@spelldesc400640", "hash": "ee304a05e4abb196", "src": "db2@1.60.1.70009"}
-{"id": 401734, "field": "name", "en": "Rewind Time", "hash": "01c441743aa85cb5", "src": "db2@1.60.1.70009"}
-{"id": 401734, "field": "description", "en": "Gain the Rewind Time ability:\r\n\r\n$@spellicon401462\r\n$@spelldesc401462", "hash": "6a8737270a0810da", "src": "db2@1.60.1.70009"}
-{"id": 401735, "field": "name", "en": "Frostfire Bolt", "hash": "a2fc5ba25777ffbf", "src": "db2@1.60.1.70009"}
-{"id": 401735, "field": "description", "en": "Gain the Frostfire Bolt ability:\r\n\r\n$@spellicon401502\r\n$@spelldesc401502", "hash": "3a219dc9e4a215aa", "src": "db2@1.60.1.70009"}
-{"id": 401736, "field": "name", "en": "Missile Barrage", "hash": "6ec1255ed8c6a90d", "src": "db2@1.60.1.70009"}
-{"id": 401736, "field": "description", "en": "Gain the Missile Barrage ability:\r\n\r\n$@spellicon400588\r\n$@spelldesc400588", "hash": "967fe76540ee76d7", "src": "db2@1.60.1.70009"}
-{"id": 401737, "field": "name", "en": "Overheat", "hash": "40bcf98b21c866b3", "src": "db2@1.60.1.70009"}
-{"id": 401737, "field": "description", "en": "Gain the Overheat ability:\r\n\r\n$@spellicon400615\r\n$@spelldesc400615", "hash": "921647ace5608e28", "src": "db2@1.60.1.70009"}
-{"id": 401741, "field": "name", "en": "Fingers of Frost", "hash": "73bda315c490cac7", "src": "db2@1.60.1.70009"}
-{"id": 401741, "field": "description", "en": "Gain the Fingers of Frost ability:\r\n\r\n$@spellicon400647\r\n$@spelldesc400647", "hash": "a7da2ad28499b80a", "src": "db2@1.60.1.70009"}
-{"id": 401743, "field": "name", "en": "Regeneration", "hash": "1270364d50efbed3", "src": "db2@1.60.1.70009"}
-{"id": 401743, "field": "description", "en": "Gain the Regeneration ability:\r\n\r\n$@spellicon401417\r\n$@spelldesc401417", "hash": "24c8a9d08b8bcd56", "src": "db2@1.60.1.70009"}
-{"id": 401744, "field": "name", "en": "Living Flame", "hash": "60c716da710c4c17", "src": "db2@1.60.1.70009"}
-{"id": 401744, "field": "description", "en": "Gain the Living Flame ability:\r\n\r\n$@spellicon401556\r\n$@spelldesc401556", "hash": "8e90ef6ff3116fb3", "src": "db2@1.60.1.70009"}
-{"id": 401749, "field": "name", "en": "Engrave Helm - Hot Streak", "hash": "9a7cc20f8c07f93c", "src": "db2@1.60.1.70009"}
-{"id": 401749, "field": "description", "en": "Engrave your helm with the Hot Streak rune:\r\n\r\n$@spellicon400624\r\n$@spelldesc400624", "hash": "cad31fdfed45490b", "src": "db2@1.60.1.70009"}
-{"id": 401752, "field": "name", "en": "Engrave Boots - Brain Freeze", "hash": "6a3887039ffc1b14", "src": "db2@1.60.1.70009"}
-{"id": 401752, "field": "description", "en": "Engrave your boots with the Brain Freeze rune:\r\n\r\n$@spellicon400731\r\n$@spelldesc400731", "hash": "90851280a4de1700", "src": "db2@1.60.1.70009"}
-{"id": 401754, "field": "name", "en": "Engrave Helm - Advanced Warding", "hash": "ee63e4a9c85ee5bb", "src": "db2@1.60.1.70009"}
-{"id": 401754, "field": "description", "en": "Engrave your helm with the Advanced Warding rune:\r\n\r\n$@spellicon412115\r\n$@spelldesc412115", "hash": "ae017b08e1ff23ad", "src": "db2@1.60.1.70009"}
-{"id": 401757, "field": "name", "en": "Engrave Gloves - Arcane Blast", "hash": "cf2c9fb405f456ab", "src": "db2@1.60.1.70009"}
-{"id": 401757, "field": "description", "en": "Engrave your gloves with the Arcane Blast rune:\r\n\r\n$@spellicon400574\r\n$@spelldesc400574", "hash": "8e71b31944997b98", "src": "db2@1.60.1.70009"}
-{"id": 401759, "field": "name", "en": "Engrave Chest - Burnout", "hash": "6a90fd70a03adf21", "src": "db2@1.60.1.70009"}
-{"id": 401759, "field": "description", "en": "Engrave your chest with the Burnout rune:\r\n\r\n$@spellicon412286\r\n$@spelldesc412286", "hash": "32623dd452dcde24", "src": "db2@1.60.1.70009"}
-{"id": 401760, "field": "name", "en": "Engrave Gloves - Ice Lance", "hash": "d8ef86e7cbd375a7", "src": "db2@1.60.1.70009"}
-{"id": 401760, "field": "description", "en": "Engrave your gloves with the Ice Lance rune:\r\n\r\n$@spellicon400640\r\n$@spelldesc400640", "hash": "389684487e4c9411", "src": "db2@1.60.1.70009"}
-{"id": 401761, "field": "name", "en": "Engrave Bracers - Rewind Time", "hash": "6ae56a52e1a0edad", "src": "db2@1.60.1.70009"}
-{"id": 401761, "field": "description", "en": "Engrave your bracers with the Rewind Time rune:\r\n\r\n$@spellicon401462\r\n$@spelldesc401462", "hash": "5aca755718934ee3", "src": "db2@1.60.1.70009"}
-{"id": 401762, "field": "name", "en": "Engrave Belt - Frostfire Bolt", "hash": "4e71663c0457eb53", "src": "db2@1.60.1.70009"}
-{"id": 401762, "field": "description", "en": "Engrave your belt with the Frostfire Bolt rune:\r\n\r\n$@spellicon401502\r\n$@spelldesc401502", "hash": "699fda747cac20ae", "src": "db2@1.60.1.70009"}
-{"id": 401763, "field": "name", "en": "Engrave Belt - Missile Barrage", "hash": "2ba59155e71af227", "src": "db2@1.60.1.70009"}
-{"id": 401763, "field": "description", "en": "Engrave your belt with the Missile Barrage rune:\r\n\r\n$@spellicon400588\r\n$@spelldesc400588", "hash": "90adccfe6d508316", "src": "db2@1.60.1.70009"}
-{"id": 401764, "field": "name", "en": "Engrave Cloak - Overheat", "hash": "0a945cdc5dec321a", "src": "db2@1.60.1.70009"}
-{"id": 401764, "field": "description", "en": "Engrave your cloak with the Overheat rune:\r\n\r\n$@spellicon400615\r\n$@spelldesc400615", "hash": "8ba4957530a5be11", "src": "db2@1.60.1.70009"}
-{"id": 401765, "field": "name", "en": "Engrave Chest - Fingers of Frost", "hash": "0f4888adcf099136", "src": "db2@1.60.1.70009"}
-{"id": 401765, "field": "description", "en": "Engrave your chest or robe with the Fingers of Frost rune:\r\n\r\n$@spellicon400647\r\n$@spelldesc400647", "hash": "ccde94fb8e2d20ba", "src": "db2@1.60.1.70009"}
-{"id": 401767, "field": "name", "en": "Engrave Chest - Regeneration", "hash": "c870abdfb791d6d1", "src": "db2@1.60.1.70009"}
-{"id": 401767, "field": "description", "en": "Engrave your chest or robe with the Regeneration rune:\r\n\r\n$@spellicon401417\r\n$@spelldesc401417", "hash": "f111a62e3f8e0500", "src": "db2@1.60.1.70009"}
-{"id": 401768, "field": "name", "en": "Engrave Pants - Living Flame", "hash": "747b396bbded750e", "src": "db2@1.60.1.70009"}
-{"id": 401768, "field": "description", "en": "Engrave your pants with the Living Flame rune:\r\n\r\n$@spellicon401556\r\n$@spelldesc401556", "hash": "4d4c79bc0557f70a", "src": "db2@1.60.1.70009"}
-{"id": 401798, "field": "name", "en": "Near Buried Cache", "hash": "54d97c75af45c5e9", "src": "db2@1.60.1.70009"}
-{"id": 401847, "field": "name", "en": "Combine Map Pieces", "hash": "32952a73e4a1a5e7", "src": "db2@1.60.1.70009"}
-{"id": 401847, "field": "description", "en": "Combine with 3 other pieces to make the full map.", "hash": "dcc7f5cfbaee489f", "src": "db2@1.60.1.70009"}
-{"id": 401859, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
-{"id": 401859, "field": "description", "en": "Places a spell on the target that heals them for ${($m1+($bh*$bc))*$<mult>} the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within $401880a1 yards. Jumps up to $s2 times and lasts $401877d after each jump. This spell can only be placed on one target at a time per caster.", "hash": "18d9951a2ecf8a98", "src": "db2@1.60.1.70009"}
-{"id": 401863, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
-{"id": 401863, "field": "description", "en": "Places a spell on the target that heals them the next time they take damage.  When the heal occurs, Prayer of Mending jumps to a party or raid member within $41635a1 yards. Jumps up to $48113n times and lasts $48111d after each jump. This spell can only be placed on one target at a time.\r\n", "hash": "5562ca1ae96237b9", "src": "db2@1.60.1.70009"}
-{"id": 401877, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
-{"id": 401877, "field": "description", "en": "Places a spell on the target that heals them the next time they take damage or receive healing.  When the heal occurs, Prayer of Mending jumps to a party or raid member within $a1 yards.  Jumps up to $n times and lasts $d after each jump.  This spell can only be placed on one target at a time.", "hash": "5aeb0cdd25834e0a", "src": "db2@1.60.1.70009"}
-{"id": 401877, "field": "aura", "en": "Heals upon taking damage or receiving healing.", "hash": "a73e48f096e8449e", "src": "db2@1.60.1.70009"}
-{"id": 401880, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
-{"id": 401882, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70009"}
-{"id": 401937, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70009"}
-{"id": 401937, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70009"}
-{"id": 401946, "field": "name", "en": "Circle of Healing", "hash": "48ca9c14befe2db4", "src": "db2@1.60.1.70009"}
-{"id": 401946, "field": "description", "en": "Heals all of target player's party members within $a1 yards of target player for ${$<healpower>*$m1/100} to ${$<healpower>*$M1/100}.", "hash": "4267c87cd81af2fa", "src": "db2@1.60.1.70009"}
-{"id": 401955, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70009"}
-{"id": 401955, "field": "description", "en": "A word of dark binding that inflicts ${$<damagepower>*$m1/100} to ${$<damagepower>*$M1/100} Shadow damage to the target.  If the target is not killed by Shadow Word: Death, the caster takes damage equal to $m2% of the damage attempted against the target.", "hash": "51a0e84bb5ccf377", "src": "db2@1.60.1.70009"}
-{"id": 401956, "field": "name", "en": "Cryomantic Mishap", "hash": "3d88a06ab61d81e6", "src": "db2@1.60.1.70009"}
-{"id": 401956, "field": "aura", "en": "Encased in a quickly-regenerating block of ice.", "hash": "eedfae4290304ef5", "src": "db2@1.60.1.70009"}
-{"id": 401962, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70009"}
-{"id": 401962, "field": "description", "en": "A word of dark binding that inflicts Shadow damage to the target.  If the target is not killed by Shadow Word: Death, the caster takes damage equal to the damage inflicted upon the target.", "hash": "dc4620157d6947c1", "src": "db2@1.60.1.70009"}
-{"id": 401969, "field": "name", "en": "Shared Pain", "hash": "ba6a74e995658830", "src": "db2@1.60.1.70009"}
-{"id": 401969, "field": "description", "en": "Your Shadow Word: Pain now also afflicts up to ${$m1-1} additional nearby targets within $s2 yards.", "hash": "a676480072dd6b95", "src": "db2@1.60.1.70009"}
-{"id": 401977, "field": "name", "en": "Shadowfiend", "hash": "bc1c648c61e80608", "src": "db2@1.60.1.70009"}
-{"id": 401977, "field": "description", "en": "Creates a shadowy fiend to attack the target.  Caster receives $401988s1% mana when the Shadowfiend attacks. Lasts $d.", "hash": "609469be8d366203", "src": "db2@1.60.1.70009"}
-{"id": 401980, "field": "name", "en": "Shadowform", "hash": "074e070f4fdc8d3c", "src": "db2@1.60.1.70009"}
-{"id": 401981, "field": "name", "en": "Applying Heat", "hash": "2b1ea458ac706856", "src": "db2@1.60.1.70009"}
-{"id": 401981, "field": "aura", "en": "Still not hot enough!  More heat!", "hash": "9987dc3387b35796", "src": "db2@1.60.1.70009"}
-{"id": 401984, "field": "name", "en": "Mana Leech", "hash": "1e551d99ec4307a1", "src": "db2@1.60.1.70009"}
-{"id": 401984, "field": "description", "en": "The Shadowfiend's melee attacks siphon energy from the target, converting it into mana for its master.", "hash": "63a87b320c8a43bc", "src": "db2@1.60.1.70009"}
-{"id": 401984, "field": "aura", "en": "Converts Shadow damage to mana.", "hash": "41ef7edc1cc9dda8", "src": "db2@1.60.1.70009"}
-{"id": 401988, "field": "name", "en": "Mana Leech", "hash": "1e551d99ec4307a1", "src": "db2@1.60.1.70009"}
-{"id": 401988, "field": "description", "en": "The Shadowfiend's melee attacks siphon energy from the target, converting it into mana for its master.", "hash": "63a87b320c8a43bc", "src": "db2@1.60.1.70009"}
-{"id": 401990, "field": "name", "en": "Shadowcrawl", "hash": "88a6f48badf02bd0", "src": "db2@1.60.1.70009"}
-{"id": 401990, "field": "description", "en": "Crawls through the shadows to the target enemy, and increases damage done by the Shadowfiend by $s2% for $d.", "hash": "9c4628149ffd0d09", "src": "db2@1.60.1.70009"}
-{"id": 401990, "field": "aura", "en": "Damage increased by $s2%.", "hash": "b557266a8dabcee8", "src": "db2@1.60.1.70009"}
-{"id": 401991, "field": "name", "en": "Shadowcrawl", "hash": "88a6f48badf02bd0", "src": "db2@1.60.1.70009"}
+{"id": 401405, "field": "name", "en": "Chronomantic Healing", "hash": "3bbae6eccc809eb0", "src": "db2@1.60.1.70124"}
+{"id": 401417, "field": "name", "en": "Regeneration", "hash": "1270364d50efbed3", "src": "db2@1.60.1.70124"}
+{"id": 401417, "field": "description", "en": "Heals the target for ${$<healpower>*$m1/100*3} health over $d and applies Temporal Beacon for $400735s3 sec. \r\n\r\nTemporal Beacon\r\n$@spellicon400735\r\n$@spelldesc400735", "hash": "7470eeff860033ca", "src": "db2@1.60.1.70124"}
+{"id": 401417, "field": "aura", "en": "Healing ${$w1*3} health over $d.$?$w2>0[ Movement speed increased by $w2%.][]", "hash": "931e594a7c068282", "src": "db2@1.60.1.70124"}
+{"id": 401460, "field": "name", "en": "Rapid Regeneration", "hash": "d51fa4741042f01d", "src": "db2@1.60.1.70124"}
+{"id": 401460, "field": "description", "en": "Heals the target for ${$<healpower>*$m1/100*3} health over $d and applies Temporal Beacon for ${$400735m3*2/3} sec.\r\n\r\n$@spellicon400735\r\n$@spelldesc400735", "hash": "5178d77edd8395d3", "src": "db2@1.60.1.70124"}
+{"id": 401460, "field": "aura", "en": "Healing ${$w1*3} health over $d.", "hash": "71292dfdea88bb37", "src": "db2@1.60.1.70124"}
+{"id": 401462, "field": "name", "en": "Rewind Time", "hash": "01c441743aa85cb5", "src": "db2@1.60.1.70124"}
+{"id": 401462, "field": "description", "en": "Your current target with your Temporal Beacon instantly heals all damage taken over the last $s1 seconds. Ineffective on targets that did not have a Temporal Beacon $s1 seconds ago.", "hash": "490806a30ecbbdec", "src": "db2@1.60.1.70124"}
+{"id": 401488, "field": "name", "en": "Engrave Pants - Cutty's Rune", "hash": "a83c35c64b4f4971", "src": "db2@1.60.1.70124"}
+{"id": 401488, "field": "description", "en": "Engrave your pants with the Shadowstrike rune:\r\n\r\n$@spellicon399985\r\n$@spelldesc399985", "hash": "2b51ff0b06b82e4a", "src": "db2@1.60.1.70124"}
+{"id": 401489, "field": "name", "en": "Runecarving: Learn Cutty's Rune", "hash": "7fa7a41300a14a33", "src": "db2@1.60.1.70124"}
+{"id": 401495, "field": "name", "en": "Cutty - Trade Letter for Rune", "hash": "d499e360203a452e", "src": "db2@1.60.1.70124"}
+{"id": 401502, "field": "name", "en": "Frostfire Bolt", "hash": "a2fc5ba25777ffbf", "src": "db2@1.60.1.70124"}
+{"id": 401502, "field": "description", "en": "Launches a bolt of frostfire at the enemy, causing $s2 Frostfire damage, slowing movement speed by $s1% and causing an additional $o3 Frostfire damage over $d. This spell will be checked against the lower of the target's Frost and Fire resists and counts as both Frost and Fire damage.", "hash": "ff9796854e68f4ff", "src": "db2@1.60.1.70124"}
+{"id": 401502, "field": "aura", "en": "Movement slowed by $w1%. $w3 Frostfire damage every $t3 sec.", "hash": "3991e2af273d70a8", "src": "db2@1.60.1.70124"}
+{"id": 401556, "field": "name", "en": "Living Flame", "hash": "60c716da710c4c17", "src": "db2@1.60.1.70124"}
+{"id": 401556, "field": "description", "en": "Summons a spellfire flame that moves toward the target, leaving a trail of spellfire. This trail deals ${$<power>*$401558m1/100} Spellfire damage every second to nearby enemies. Lasts $d.", "hash": "b96c469de99f3fba", "src": "db2@1.60.1.70124"}
+{"id": 401558, "field": "name", "en": "Living Flame", "hash": "60c716da710c4c17", "src": "db2@1.60.1.70124"}
+{"id": 401558, "field": "description", "en": "Deals ${$<power>*$m1/100} Fire damage every $t1 sec.", "hash": "5c2b23fac1db95a8", "src": "db2@1.60.1.70124"}
+{"id": 401558, "field": "aura", "en": "Deals $w1 Fire damage every $t1 sec.", "hash": "e06497998c1ce50b", "src": "db2@1.60.1.70124"}
+{"id": 401559, "field": "name", "en": "Living Flame", "hash": "60c716da710c4c17", "src": "db2@1.60.1.70124"}
+{"id": 401617, "field": "name", "en": "Dig Up Treasure", "hash": "785217e3e0581aee", "src": "db2@1.60.1.70124"}
+{"id": 401617, "field": "description", "en": "Dig up treasure at the marked location", "hash": "cb9fbb49acaf7910", "src": "db2@1.60.1.70124"}
+{"id": 401681, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70124"}
+{"id": 401681, "field": "description", "en": "Decipher the spell notes with a Comphrehension Primer to learn a new Engraving spell.", "hash": "1278ff255eb6f475", "src": "db2@1.60.1.70124"}
+{"id": 401683, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70124"}
+{"id": 401683, "field": "description", "en": "Attempt to translate the spell notes into a new runecarving recipe.", "hash": "68ecd2ae3e3fa205", "src": "db2@1.60.1.70124"}
+{"id": 401684, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70124"}
+{"id": 401684, "field": "description", "en": "Attempt to translate the spell notes into a new runecarving recipe.", "hash": "68ecd2ae3e3fa205", "src": "db2@1.60.1.70124"}
+{"id": 401699, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70124"}
+{"id": 401699, "field": "description", "en": "Combine 8 Azora Apprentice Notes to discover a new runecarving recipe.", "hash": "0d2429eeae675d0d", "src": "db2@1.60.1.70124"}
+{"id": 401719, "field": "name", "en": "Arcane Barrage", "hash": "53704d3114c95fc4", "src": "db2@1.60.1.70124"}
+{"id": 401719, "field": "description", "en": "Gain the Arcane Barrage ability:\r\n\r\n$@spellicon400610\r\n$@spelldesc400610", "hash": "5cc6b146a28e90f8", "src": "db2@1.60.1.70124"}
+{"id": 401722, "field": "name", "en": "Engrave Cloak - Arcane Barrage", "hash": "2284e721da3a8d25", "src": "db2@1.60.1.70124"}
+{"id": 401722, "field": "description", "en": "Engrave your cloak with the Arcane Barrage rune:\r\n\r\n$@spellicon400610\r\n$@spelldesc400610", "hash": "948d9b5eb6724df4", "src": "db2@1.60.1.70124"}
+{"id": 401724, "field": "name", "en": "Hot Streak", "hash": "0f000625e3864a46", "src": "db2@1.60.1.70124"}
+{"id": 401724, "field": "description", "en": "Gain the Hot Streak ability:\r\n\r\n$@spellicon400624\r\n$@spelldesc400624", "hash": "03e95487573c498e", "src": "db2@1.60.1.70124"}
+{"id": 401725, "field": "name", "en": "Brain Freeze", "hash": "87412f0051279995", "src": "db2@1.60.1.70124"}
+{"id": 401725, "field": "description", "en": "Gain the Brain Freeze ability:\r\n\r\n$@spellicon400731\r\n$@spelldesc400731", "hash": "7ed1f1daefe446a6", "src": "db2@1.60.1.70124"}
+{"id": 401726, "field": "name", "en": "Advanced Warding", "hash": "35e86b2802f1b270", "src": "db2@1.60.1.70124"}
+{"id": 401726, "field": "description", "en": "Gain the Advanced Warding ability:\r\n\r\n$@spellicon412115\r\n$@spelldesc412115", "hash": "3b37264bf391cb09", "src": "db2@1.60.1.70124"}
+{"id": 401729, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70124"}
+{"id": 401729, "field": "description", "en": "Gain the Arcane Blast ability:\r\n\r\n$@spellicon400574\r\n$@spelldesc400574", "hash": "6a8d4cac25363af9", "src": "db2@1.60.1.70124"}
+{"id": 401731, "field": "name", "en": "Living Bomb", "hash": "7d464eaf4a566d95", "src": "db2@1.60.1.70124"}
+{"id": 401731, "field": "description", "en": "Gain the Living Bomb ability:\r\n\r\n$@spellicon400613\r\n$@spelldesc400613", "hash": "395d18dcca17538c", "src": "db2@1.60.1.70124"}
+{"id": 401732, "field": "name", "en": "Ice Lance", "hash": "0c5d877246da1893", "src": "db2@1.60.1.70124"}
+{"id": 401732, "field": "description", "en": "Gain the Ice Lance ability:\r\n\r\n$@spellicon400640\r\n$@spelldesc400640", "hash": "ee304a05e4abb196", "src": "db2@1.60.1.70124"}
+{"id": 401734, "field": "name", "en": "Rewind Time", "hash": "01c441743aa85cb5", "src": "db2@1.60.1.70124"}
+{"id": 401734, "field": "description", "en": "Gain the Rewind Time ability:\r\n\r\n$@spellicon401462\r\n$@spelldesc401462", "hash": "6a8737270a0810da", "src": "db2@1.60.1.70124"}
+{"id": 401735, "field": "name", "en": "Frostfire Bolt", "hash": "a2fc5ba25777ffbf", "src": "db2@1.60.1.70124"}
+{"id": 401735, "field": "description", "en": "Gain the Frostfire Bolt ability:\r\n\r\n$@spellicon401502\r\n$@spelldesc401502", "hash": "3a219dc9e4a215aa", "src": "db2@1.60.1.70124"}
+{"id": 401736, "field": "name", "en": "Missile Barrage", "hash": "6ec1255ed8c6a90d", "src": "db2@1.60.1.70124"}
+{"id": 401736, "field": "description", "en": "Gain the Missile Barrage ability:\r\n\r\n$@spellicon400588\r\n$@spelldesc400588", "hash": "967fe76540ee76d7", "src": "db2@1.60.1.70124"}
+{"id": 401737, "field": "name", "en": "Overheat", "hash": "40bcf98b21c866b3", "src": "db2@1.60.1.70124"}
+{"id": 401737, "field": "description", "en": "Gain the Overheat ability:\r\n\r\n$@spellicon400615\r\n$@spelldesc400615", "hash": "921647ace5608e28", "src": "db2@1.60.1.70124"}
+{"id": 401741, "field": "name", "en": "Fingers of Frost", "hash": "73bda315c490cac7", "src": "db2@1.60.1.70124"}
+{"id": 401741, "field": "description", "en": "Gain the Fingers of Frost ability:\r\n\r\n$@spellicon400647\r\n$@spelldesc400647", "hash": "a7da2ad28499b80a", "src": "db2@1.60.1.70124"}
+{"id": 401743, "field": "name", "en": "Regeneration", "hash": "1270364d50efbed3", "src": "db2@1.60.1.70124"}
+{"id": 401743, "field": "description", "en": "Gain the Regeneration ability:\r\n\r\n$@spellicon401417\r\n$@spelldesc401417", "hash": "24c8a9d08b8bcd56", "src": "db2@1.60.1.70124"}
+{"id": 401744, "field": "name", "en": "Living Flame", "hash": "60c716da710c4c17", "src": "db2@1.60.1.70124"}
+{"id": 401744, "field": "description", "en": "Gain the Living Flame ability:\r\n\r\n$@spellicon401556\r\n$@spelldesc401556", "hash": "8e90ef6ff3116fb3", "src": "db2@1.60.1.70124"}
+{"id": 401749, "field": "name", "en": "Engrave Helm - Hot Streak", "hash": "9a7cc20f8c07f93c", "src": "db2@1.60.1.70124"}
+{"id": 401749, "field": "description", "en": "Engrave your helm with the Hot Streak rune:\r\n\r\n$@spellicon400624\r\n$@spelldesc400624", "hash": "cad31fdfed45490b", "src": "db2@1.60.1.70124"}
+{"id": 401752, "field": "name", "en": "Engrave Boots - Brain Freeze", "hash": "6a3887039ffc1b14", "src": "db2@1.60.1.70124"}
+{"id": 401752, "field": "description", "en": "Engrave your boots with the Brain Freeze rune:\r\n\r\n$@spellicon400731\r\n$@spelldesc400731", "hash": "90851280a4de1700", "src": "db2@1.60.1.70124"}
+{"id": 401754, "field": "name", "en": "Engrave Helm - Advanced Warding", "hash": "ee63e4a9c85ee5bb", "src": "db2@1.60.1.70124"}
+{"id": 401754, "field": "description", "en": "Engrave your helm with the Advanced Warding rune:\r\n\r\n$@spellicon412115\r\n$@spelldesc412115", "hash": "ae017b08e1ff23ad", "src": "db2@1.60.1.70124"}
+{"id": 401757, "field": "name", "en": "Engrave Gloves - Arcane Blast", "hash": "cf2c9fb405f456ab", "src": "db2@1.60.1.70124"}
+{"id": 401757, "field": "description", "en": "Engrave your gloves with the Arcane Blast rune:\r\n\r\n$@spellicon400574\r\n$@spelldesc400574", "hash": "8e71b31944997b98", "src": "db2@1.60.1.70124"}
+{"id": 401759, "field": "name", "en": "Engrave Chest - Burnout", "hash": "6a90fd70a03adf21", "src": "db2@1.60.1.70124"}
+{"id": 401759, "field": "description", "en": "Engrave your chest with the Burnout rune:\r\n\r\n$@spellicon412286\r\n$@spelldesc412286", "hash": "32623dd452dcde24", "src": "db2@1.60.1.70124"}
+{"id": 401760, "field": "name", "en": "Engrave Gloves - Ice Lance", "hash": "d8ef86e7cbd375a7", "src": "db2@1.60.1.70124"}
+{"id": 401760, "field": "description", "en": "Engrave your gloves with the Ice Lance rune:\r\n\r\n$@spellicon400640\r\n$@spelldesc400640", "hash": "389684487e4c9411", "src": "db2@1.60.1.70124"}
+{"id": 401761, "field": "name", "en": "Engrave Bracers - Rewind Time", "hash": "6ae56a52e1a0edad", "src": "db2@1.60.1.70124"}
+{"id": 401761, "field": "description", "en": "Engrave your bracers with the Rewind Time rune:\r\n\r\n$@spellicon401462\r\n$@spelldesc401462", "hash": "5aca755718934ee3", "src": "db2@1.60.1.70124"}
+{"id": 401762, "field": "name", "en": "Engrave Belt - Frostfire Bolt", "hash": "4e71663c0457eb53", "src": "db2@1.60.1.70124"}
+{"id": 401762, "field": "description", "en": "Engrave your belt with the Frostfire Bolt rune:\r\n\r\n$@spellicon401502\r\n$@spelldesc401502", "hash": "699fda747cac20ae", "src": "db2@1.60.1.70124"}
+{"id": 401763, "field": "name", "en": "Engrave Belt - Missile Barrage", "hash": "2ba59155e71af227", "src": "db2@1.60.1.70124"}
+{"id": 401763, "field": "description", "en": "Engrave your belt with the Missile Barrage rune:\r\n\r\n$@spellicon400588\r\n$@spelldesc400588", "hash": "90adccfe6d508316", "src": "db2@1.60.1.70124"}
+{"id": 401764, "field": "name", "en": "Engrave Cloak - Overheat", "hash": "0a945cdc5dec321a", "src": "db2@1.60.1.70124"}
+{"id": 401764, "field": "description", "en": "Engrave your cloak with the Overheat rune:\r\n\r\n$@spellicon400615\r\n$@spelldesc400615", "hash": "8ba4957530a5be11", "src": "db2@1.60.1.70124"}
+{"id": 401765, "field": "name", "en": "Engrave Chest - Fingers of Frost", "hash": "0f4888adcf099136", "src": "db2@1.60.1.70124"}
+{"id": 401765, "field": "description", "en": "Engrave your chest or robe with the Fingers of Frost rune:\r\n\r\n$@spellicon400647\r\n$@spelldesc400647", "hash": "ccde94fb8e2d20ba", "src": "db2@1.60.1.70124"}
+{"id": 401767, "field": "name", "en": "Engrave Chest - Regeneration", "hash": "c870abdfb791d6d1", "src": "db2@1.60.1.70124"}
+{"id": 401767, "field": "description", "en": "Engrave your chest or robe with the Regeneration rune:\r\n\r\n$@spellicon401417\r\n$@spelldesc401417", "hash": "f111a62e3f8e0500", "src": "db2@1.60.1.70124"}
+{"id": 401768, "field": "name", "en": "Engrave Pants - Living Flame", "hash": "747b396bbded750e", "src": "db2@1.60.1.70124"}
+{"id": 401768, "field": "description", "en": "Engrave your pants with the Living Flame rune:\r\n\r\n$@spellicon401556\r\n$@spelldesc401556", "hash": "4d4c79bc0557f70a", "src": "db2@1.60.1.70124"}
+{"id": 401798, "field": "name", "en": "Near Buried Cache", "hash": "54d97c75af45c5e9", "src": "db2@1.60.1.70124"}
+{"id": 401847, "field": "name", "en": "Combine Map Pieces", "hash": "32952a73e4a1a5e7", "src": "db2@1.60.1.70124"}
+{"id": 401847, "field": "description", "en": "Combine with 3 other pieces to make the full map.", "hash": "dcc7f5cfbaee489f", "src": "db2@1.60.1.70124"}
+{"id": 401859, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70124"}
+{"id": 401859, "field": "description", "en": "Places a spell on the target that heals them for ${($m1+($bh*$bc))*$<mult>} the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within $401880a1 yards. Jumps up to $s2 times and lasts $401877d after each jump. This spell can only be placed on one target at a time per caster.", "hash": "18d9951a2ecf8a98", "src": "db2@1.60.1.70124"}
+{"id": 401863, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70124"}
+{"id": 401863, "field": "description", "en": "Places a spell on the target that heals them the next time they take damage.  When the heal occurs, Prayer of Mending jumps to a party or raid member within $41635a1 yards. Jumps up to $48113n times and lasts $48111d after each jump. This spell can only be placed on one target at a time.\r\n", "hash": "5562ca1ae96237b9", "src": "db2@1.60.1.70124"}
+{"id": 401877, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70124"}
+{"id": 401877, "field": "description", "en": "Places a spell on the target that heals them the next time they take damage or receive healing.  When the heal occurs, Prayer of Mending jumps to a party or raid member within $a1 yards.  Jumps up to $n times and lasts $d after each jump.  This spell can only be placed on one target at a time.", "hash": "5aeb0cdd25834e0a", "src": "db2@1.60.1.70124"}
+{"id": 401877, "field": "aura", "en": "Heals upon taking damage or receiving healing.", "hash": "a73e48f096e8449e", "src": "db2@1.60.1.70124"}
+{"id": 401880, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70124"}
+{"id": 401882, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70124"}
+{"id": 401937, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70124"}
+{"id": 401937, "field": "description", "en": "Heals a friendly target and the caster for $s1. Low threat.", "hash": "da5be047ff0e07f4", "src": "db2@1.60.1.70124"}
+{"id": 401946, "field": "name", "en": "Circle of Healing", "hash": "48ca9c14befe2db4", "src": "db2@1.60.1.70124"}
+{"id": 401946, "field": "description", "en": "Heals all of target player's party members within $a1 yards of target player for ${$<healpower>*$m1/100} to ${$<healpower>*$M1/100}.", "hash": "4267c87cd81af2fa", "src": "db2@1.60.1.70124"}
+{"id": 401955, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70124"}
+{"id": 401955, "field": "description", "en": "A word of dark binding that inflicts ${$<damagepower>*$m1/100} to ${$<damagepower>*$M1/100} Shadow damage to the target.  If the target is not killed by Shadow Word: Death, the caster takes damage equal to $m2% of the damage attempted against the target.", "hash": "51a0e84bb5ccf377", "src": "db2@1.60.1.70124"}
+{"id": 401956, "field": "name", "en": "Cryomantic Mishap", "hash": "3d88a06ab61d81e6", "src": "db2@1.60.1.70124"}
+{"id": 401956, "field": "aura", "en": "Encased in a quickly-regenerating block of ice.", "hash": "eedfae4290304ef5", "src": "db2@1.60.1.70124"}
+{"id": 401962, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70124"}
+{"id": 401962, "field": "description", "en": "A word of dark binding that inflicts Shadow damage to the target.  If the target is not killed by Shadow Word: Death, the caster takes damage equal to the damage inflicted upon the target.", "hash": "dc4620157d6947c1", "src": "db2@1.60.1.70124"}
+{"id": 401969, "field": "name", "en": "Shared Pain", "hash": "ba6a74e995658830", "src": "db2@1.60.1.70124"}
+{"id": 401969, "field": "description", "en": "Your Shadow Word: Pain now also afflicts up to ${$m1-1} additional nearby targets within $s2 yards.", "hash": "a676480072dd6b95", "src": "db2@1.60.1.70124"}
+{"id": 401977, "field": "name", "en": "Shadowfiend", "hash": "bc1c648c61e80608", "src": "db2@1.60.1.70124"}
+{"id": 401977, "field": "description", "en": "Creates a shadowy fiend to attack the target.  Caster receives $401988s1% mana when the Shadowfiend attacks. Lasts $d.", "hash": "609469be8d366203", "src": "db2@1.60.1.70124"}
+{"id": 401980, "field": "name", "en": "Shadowform", "hash": "074e070f4fdc8d3c", "src": "db2@1.60.1.70124"}
+{"id": 401981, "field": "name", "en": "Applying Heat", "hash": "2b1ea458ac706856", "src": "db2@1.60.1.70124"}
+{"id": 401981, "field": "aura", "en": "Still not hot enough!  More heat!", "hash": "9987dc3387b35796", "src": "db2@1.60.1.70124"}
+{"id": 401984, "field": "name", "en": "Mana Leech", "hash": "1e551d99ec4307a1", "src": "db2@1.60.1.70124"}
+{"id": 401984, "field": "description", "en": "The Shadowfiend's melee attacks siphon energy from the target, converting it into mana for its master.", "hash": "63a87b320c8a43bc", "src": "db2@1.60.1.70124"}
+{"id": 401984, "field": "aura", "en": "Converts Shadow damage to mana.", "hash": "41ef7edc1cc9dda8", "src": "db2@1.60.1.70124"}
+{"id": 401988, "field": "name", "en": "Mana Leech", "hash": "1e551d99ec4307a1", "src": "db2@1.60.1.70124"}
+{"id": 401988, "field": "description", "en": "The Shadowfiend's melee attacks siphon energy from the target, converting it into mana for its master.", "hash": "63a87b320c8a43bc", "src": "db2@1.60.1.70124"}
+{"id": 401990, "field": "name", "en": "Shadowcrawl", "hash": "88a6f48badf02bd0", "src": "db2@1.60.1.70124"}
+{"id": 401990, "field": "description", "en": "Crawls through the shadows to the target enemy, and increases damage done by the Shadowfiend by $s2% for $d.", "hash": "9c4628149ffd0d09", "src": "db2@1.60.1.70124"}
+{"id": 401990, "field": "aura", "en": "Damage increased by $s2%.", "hash": "b557266a8dabcee8", "src": "db2@1.60.1.70124"}
+{"id": 401991, "field": "name", "en": "Shadowcrawl", "hash": "88a6f48badf02bd0", "src": "db2@1.60.1.70124"}

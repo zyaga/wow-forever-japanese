@@ -1,183 +1,183 @@
-{"id": "FACTION", "field": "text", "en": "Faction", "hash": "8f71f14f3501b67c", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_CONTROLLED_TERRITORY", "field": "text", "en": "(%s Territory)", "hash": "dee1b4a21185d685", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_INACTIVE", "field": "text", "en": "Inactive", "hash": "dabc2f300f7c9634", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_OTHER", "field": "text", "en": "Other", "hash": "7a61dd1d7a6004c7", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_DECREASED", "field": "text", "en": "Reputation with %s decreased by %d.", "hash": "076aab6833db4c04", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_DECREASED_ACCOUNT_WIDE", "field": "text", "en": "Your Account's reputation with %s decreased by %d.", "hash": "9418a2fe526f10c9", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_DECREASED_GENERIC", "field": "text", "en": "Reputation with %s decreased.", "hash": "7a31e3f7c697df6a", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_DECREASED_GENERIC_ACCOUNT_WIDE", "field": "text", "en": "Your Account's reputation with %s decreased.", "hash": "3b8f2e8529c0d996", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED", "field": "text", "en": "Reputation with %s increased by %d.", "hash": "61cca65cd2b346d0", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED_ACCOUNT_WIDE", "field": "text", "en": "Your Account's reputation with %s increased by %d.", "hash": "ee7a9df2f1470b95", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED_ACH_BONUS", "field": "text", "en": "Reputation with %s increased by %d. (+%.1f bonus)", "hash": "a4a8e498983003b4", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED_ACH_BONUS_ACCOUNT_WIDE", "field": "text", "en": "Your Account's reputation with %s increased by %d. (+%.1f bonus)", "hash": "ee1a27795be2395e", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED_ACH_PART", "field": "text", "en": "(+%.1f bonus)", "hash": "6f48a1932c62725a", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED_BONUS", "field": "text", "en": "Reputation with %s increased by %d. (+%.1f Recruit A Friend bonus)", "hash": "0e72be3aae60cdbd", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED_DOUBLE_BONUS", "field": "text", "en": "Reputation with %s increased by %d. (+%.1f Recruit A Friend bonus) (+%.1f bonus)", "hash": "15ba78a758f5b1a0", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED_GENERIC", "field": "text", "en": "Reputation with %s increased.", "hash": "1b060edc057f4b68", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED_GENERIC_ACCOUNT_WIDE", "field": "text", "en": "Your Account's reputation with %s increased.", "hash": "dc63596568a84583", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED_GUARDIAN", "field": "text", "en": "%s has gained %d guardian experience points.", "hash": "44c43bd4f80f406a", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED_REFER_PART", "field": "text", "en": "(+%.1f Recruit A Friend bonus)", "hash": "5aadf69a0b9ceb45", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_INCREASED_REST_PART", "field": "text", "en": "(+%.1f Rested bonus)", "hash": "dde0c1baa6dedfba", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL1", "field": "text", "en": "Hated", "hash": "fcf942be12e298e2", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL1_FEMALE", "field": "text", "en": "Hated", "hash": "fcf942be12e298e2", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL2", "field": "text", "en": "Hostile", "hash": "d2eedd39445dc5a1", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL2_FEMALE", "field": "text", "en": "Hostile", "hash": "d2eedd39445dc5a1", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL3", "field": "text", "en": "Unfriendly", "hash": "a93a2734a1d5b904", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL3_FEMALE", "field": "text", "en": "Unfriendly", "hash": "a93a2734a1d5b904", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL4", "field": "text", "en": "Neutral", "hash": "5f11dc51f812a1f4", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL4_FEMALE", "field": "text", "en": "Neutral", "hash": "5f11dc51f812a1f4", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL5", "field": "text", "en": "Friendly", "hash": "45a1160aeb73debe", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL5_FEMALE", "field": "text", "en": "Friendly", "hash": "45a1160aeb73debe", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL6", "field": "text", "en": "Honored", "hash": "7a8121584a7b06be", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL6_FEMALE", "field": "text", "en": "Honored", "hash": "7a8121584a7b06be", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL7", "field": "text", "en": "Revered", "hash": "4167d3e4e440a90f", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL7_FEMALE", "field": "text", "en": "Revered", "hash": "4167d3e4e440a90f", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL8", "field": "text", "en": "Exalted", "hash": "4f770c9a355e7429", "src": "db2@1.60.1.70009"}
-{"id": "FACTION_STANDING_LABEL8_FEMALE", "field": "text", "en": "Exalted", "hash": "4f770c9a355e7429", "src": "db2@1.60.1.70009"}
-{"id": "FAILED", "field": "text", "en": "Failed", "hash": "7b0d12fc6eeb0ea4", "src": "db2@1.60.1.70009"}
-{"id": "FAILURES", "field": "text", "en": "Failures", "hash": "c196f8446a47f500", "src": "db2@1.60.1.70009"}
-{"id": "FARCLIP", "field": "text", "en": "View Distance", "hash": "2a922e0e9c40aa13", "src": "db2@1.60.1.70009"}
-{"id": "FAST", "field": "text", "en": "Fast", "hash": "097ada182b8cb90a", "src": "db2@1.60.1.70009"}
-{"id": "FEATURE_BECOMES_AVAILABLE_AT_LEVEL", "field": "text", "en": "This feature becomes available at level %d.", "hash": "1a9462f0a85d8962", "src": "db2@1.60.1.70009"}
-{"id": "FEATURE_NOT_YET_AVAILABLE", "field": "text", "en": "This feature is not yet available.", "hash": "82c179b50a8276b2", "src": "db2@1.60.1.70009"}
-{"id": "FEATURE_UNAVAILBLE_PLAYER_IS_NEUTRAL", "field": "text", "en": "This feature is not available until you pick a faction.", "hash": "845b8ccb9a104344", "src": "db2@1.60.1.70009"}
-{"id": "FEAT_OF_STRENGTH_DESCRIPTION", "field": "text", "en": "Feats of Strength are accomplishments that players will find very difficult if not impossible to earn.  Worth no points, Feats of Strength are a collection of past glories on Azeroth.", "hash": "2b9f26539191e81f", "src": "db2@1.60.1.70009"}
-{"id": "FEETSLOT", "field": "text", "en": "Feet", "hash": "097bdf123b6c09c0", "src": "db2@1.60.1.70009"}
-{"id": "FILTER", "field": "text", "en": "Filter", "hash": "07e3c6b02e3904a0", "src": "db2@1.60.1.70009"}
-{"id": "FILTERS", "field": "text", "en": "Filters", "hash": "098eac9787acd2e4", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_BY_ENEMIES_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by hostile creatures and pets.", "hash": "b191ae3271441abe", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_BY_FRIENDS_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by friendly players, pets, and creatures.", "hash": "2e48c9375ddef9f3", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_BY_HOSTILE_PLAYERS_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by hostile players.", "hash": "6ea2fc72c3a3361e", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_BY_ME_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by you, your traps, and your spells.", "hash": "c90da6d591754c24", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_BY_NEUTRAL_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by neutral creatures.", "hash": "161c0beb776a1608", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_BY_PET_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by your pets, summoned guardians, and charmed players.", "hash": "26a09856af4fd273", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_BY_UNKNOWN_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by undefined sources such as falling, acid, or lava.", "hash": "2621f5a74b2237b9", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_NAME", "field": "text", "en": "Filter Name", "hash": "e7e4f0728fc1412c", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_TO_FRIENDS_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on friendly players, pets, and creatures.", "hash": "641e0cca8e23af35", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_TO_HOSTILE_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on hostile pets and creatures.", "hash": "aec2b671e440d132", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_TO_HOSTILE_PLAYERS_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on hostile players.", "hash": "ae1b064eace2bd9b", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_TO_ME_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on you.", "hash": "fe20a0b37fc9a934", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_TO_NEUTRAL_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on neutral creatures.", "hash": "bbe94bbda2dd8221", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_TO_PET_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on your pets, summoned guardians, and charmed players.", "hash": "5b0b48c45a9c67d8", "src": "db2@1.60.1.70009"}
-{"id": "FILTER_TO_UNKNOWN_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on invisible targets.", "hash": "d336591ae41095f7", "src": "db2@1.60.1.70009"}
-{"id": "FINGER0SLOT", "field": "text", "en": "Finger", "hash": "0824fa71156d7be2", "src": "db2@1.60.1.70009"}
-{"id": "FINGER1SLOT", "field": "text", "en": "Finger", "hash": "0824fa71156d7be2", "src": "db2@1.60.1.70009"}
-{"id": "FLASH_LOW_HEALTH_WARNING", "field": "text", "en": "Do Not Flash Screen at Low Health", "hash": "bd52db7546f20e98", "src": "db2@1.60.1.70009"}
-{"id": "FLIGHT_MAP", "field": "text", "en": "Flight Map", "hash": "73d7f16ca6bfd810", "src": "db2@1.60.1.70009"}
-{"id": "FLIGHT_MAP_CLICK_TO_ZOOM_HINT", "field": "text", "en": "Click to Zoom In", "hash": "84d46667fda48361", "src": "db2@1.60.1.70009"}
-{"id": "FLIGHT_MAP_CLICK_TO_ZOOM_IN", "field": "text", "en": "<Click to Zoom In>", "hash": "0976eefbcaddffe1", "src": "db2@1.60.1.70009"}
-{"id": "FLIGHT_MAP_CLICK_TO_ZOOM_OUT_HINT", "field": "text", "en": "Right-Click to Zoom Out", "hash": "e4a820539a3bc39b", "src": "db2@1.60.1.70009"}
-{"id": "FLIGHT_MAP_WORLD_QUESTS", "field": "text", "en": "%d World Quests active here.", "hash": "3cea66e95bd134f1", "src": "db2@1.60.1.70009"}
-{"id": "FOCUS", "field": "text", "en": "Focus", "hash": "dbb9a93ccd4270a3", "src": "db2@1.60.1.70009"}
-{"id": "FOCUS_CAST_KEY_TEXT", "field": "text", "en": "Focus Cast Key", "hash": "d2a4af627d0044d5", "src": "db2@1.60.1.70009"}
-{"id": "FOCUS_COST", "field": "text", "en": "%s Focus", "hash": "bbf158a4694a9035", "src": "db2@1.60.1.70009"}
-{"id": "FOCUS_COST_PER_TIME", "field": "text", "en": "%s Focus, plus %s per sec", "hash": "74f09f468813e69f", "src": "db2@1.60.1.70009"}
-{"id": "FOCUS_COST_PER_TIME_NO_BASE", "field": "text", "en": "%d Focus per sec", "hash": "eabfa2ef0f37267c", "src": "db2@1.60.1.70009"}
-{"id": "FOCUS_GLOW_COLOR", "field": "text", "en": "Focus Glow Color", "hash": "2db3e3a898703773", "src": "db2@1.60.1.70009"}
-{"id": "FOCUS_MODIFICATIONS_HEADER", "field": "text", "en": "Frame Focus Style", "hash": "92b76520418c75ac", "src": "db2@1.60.1.70009"}
-{"id": "FOCUS_OPACITY", "field": "text", "en": "Focus Opacity", "hash": "a2959604f104ebfb", "src": "db2@1.60.1.70009"}
-{"id": "FOLLOW", "field": "text", "en": "Follow", "hash": "7133f97147f72238", "src": "db2@1.60.1.70009"}
-{"id": "FOLLOW_TERRAIN", "field": "text", "en": "Follow Terrain", "hash": "16e07039bed3e2c1", "src": "db2@1.60.1.70009"}
-{"id": "FONT_SIZE", "field": "text", "en": "Font Size", "hash": "23e22fcab055d201", "src": "db2@1.60.1.70009"}
-{"id": "FONT_SIZE_TEMPLATE", "field": "text", "en": "%d pt", "hash": "96ea452ff3962ab9", "src": "db2@1.60.1.70009"}
-{"id": "FORMATTING", "field": "text", "en": "Formatting", "hash": "6af237161e8de3ae", "src": "db2@1.60.1.70009"}
-{"id": "FPS_COUNTER_CPU_BOUND", "field": "text", "en": "%.1f CPU Bound", "hash": "20144e10ae95ea71", "src": "db2@1.60.1.70009"}
-{"id": "FPS_COUNTER_GPU_BOUND", "field": "text", "en": "%.1f GPU Bound", "hash": "9c6bf1c852b06ed9", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_ACCEPT", "field": "text", "en": "Accept", "hash": "b3c3644e28d78783", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_AMOUNT", "field": "text", "en": "Amount", "hash": "64ec564bbe63eee8", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_BACK", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_CANCEL", "field": "text", "en": "Cancel", "hash": "892958da199b72dc", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_CHANGE_MAP", "field": "text", "en": "Change Map", "hash": "71628ac678336e6c", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_CLOSE", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_COMPLETE", "field": "text", "en": "Complete", "hash": "7018251d4dd88a91", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_CONFIRM", "field": "text", "en": "Confirm", "hash": "f1cc941b8229c54e", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_CONTINUE", "field": "text", "en": "Continue", "hash": "b16ebd04968ed814", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_EDIT_ACTION_BAR", "field": "text", "en": "Edit Action Bar", "hash": "94be4e4dbf0256c6", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_EXIT", "field": "text", "en": "Exit", "hash": "095e8d2ef9719c87", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_HOLD_TO_UNLEARN", "field": "text", "en": "Hold to Unlearn", "hash": "3fed1fd66ac40277", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_LOOT", "field": "text", "en": "Loot", "hash": "0a4c542cb38fa641", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_LOOT_ALL", "field": "text", "en": "Loot All", "hash": "d61cb31303801979", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_MAP_MARKER", "field": "text", "en": "Marker", "hash": "5cdf9bd49e5e05b3", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_NAVIGATE", "field": "text", "en": "Navigate", "hash": "0c4d18099da44ee1", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_OPEN_FULLMAP", "field": "text", "en": "Fullscreen Map", "hash": "8aa9205ab2005840", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_OPEN_MAP", "field": "text", "en": "Standard Map", "hash": "2619a2f1d8d2c465", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_PAN", "field": "text", "en": "Pan", "hash": "001524e13da14110", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_TOGGLE_ITEM_COMPARE", "field": "text", "en": "Toggle Item Compare", "hash": "cd24b5ac65b0e5bc", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_ACTION_ZOOM", "field": "text", "en": "Zoom", "hash": "0c2c929f6f3efeb4", "src": "db2@1.60.1.70009"}
-{"id": "FRAME_LABEL_MAIN_MENU", "field": "text", "en": "Main Menu", "hash": "07e03ffeae48ba7e", "src": "db2@1.60.1.70009"}
-{"id": "FREE_FOR_ALL_TERRITORY", "field": "text", "en": "(PvP Area)", "hash": "7a60b81770f0de26", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS", "field": "text", "en": "Friends", "hash": "aa8bfa51a365a614", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_FRIENDS_CHOICE_EVERYONE", "field": "text", "en": "Everyone", "hash": "9897aa391749a3b1", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_FRIENDS_CHOICE_MUTUAL", "field": "text", "en": "Mutual Friends", "hash": "e81bd0dfcc19bec4", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_FRIENDS_CHOICE_POTENTIAL", "field": "text", "en": "Potential Friends", "hash": "57cefaf041cc8a8b", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_LEVEL_TEMPLATE", "field": "text", "en": "Level %d %s", "hash": "2fcf25e1a3bdd25f", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_LIST", "field": "text", "en": "Friends List", "hash": "43a8bd234b8b0eba", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_LIST_AVAILABLE", "field": "text", "en": "Available", "hash": "08bd63f84d058c1c", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_LIST_AWAY", "field": "text", "en": "Away", "hash": "08d50fa6bfd889a5", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_LIST_BUSY", "field": "text", "en": "Busy", "hash": "08f6e06545523405", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_LIST_ENTER_TEXT", "field": "text", "en": "Tell your friends what you're doing", "hash": "0b0b767e971f4b6f", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_LIST_OFFLINE", "field": "text", "en": "Offline", "hash": "06e66a7a007d0582", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_LIST_PLAYING", "field": "text", "en": "Also Playing:", "hash": "526232f2c9002bf3", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_LIST_STATUS_TOOLTIP", "field": "text", "en": "Status: |cffffffff%s|r", "hash": "6068de337ba0fab3", "src": "db2@1.60.1.70009"}
-{"id": "FRIENDS_TOOLTIP_TOO_MANY_CHARACTERS", "field": "text", "en": "(%d more |4character:characters;)", "hash": "4afb5f25522a778d", "src": "db2@1.60.1.70009"}
-{"id": "FRIEND_REQUESTS", "field": "text", "en": "Friend Requests (%d)", "hash": "1290633f8e33c95b", "src": "db2@1.60.1.70009"}
-{"id": "FROM", "field": "text", "en": "From:", "hash": "dc23b228a51c7a8d", "src": "db2@1.60.1.70009"}
-{"id": "FULLDATE", "field": "text", "en": "%1$s, %2$s %3$d %4$d", "hash": "85fea8eee30fa674", "src": "db2@1.60.1.70009"}
-{"id": "FULL_TEXT_COMBATLOG_TOOLTIP", "field": "text", "en": "Show combat log entries as full sentences.", "hash": "be1cba5d5dce59ed", "src": "db2@1.60.1.70009"}
-{"id": "FXAA_CMAA_LABEL", "field": "text", "en": "Image-Based Techniques", "hash": "e9dab29f5f6a9f07", "src": "db2@1.60.1.70009"}
-{"id": "FX_VOLUME", "field": "text", "en": "Effects", "hash": "f6f9bfd5b2f2ae71", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:21", "field": "text", "en": "This booming coastal city is run by Baron Revilgaz of the Blackwater Raiders.  Mortal enemies of the Bloodsail Buccaneers and part of the Steamwheedle Cartel.", "hash": "7e9b81b0947c6e24", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2586", "field": "text", "en": "Originally commissioned to facilitate trade across the Eastern Kingdoms, the ACA now maintains supply routes to Alliance forces worldwide.", "hash": "8036c9b7270daca3", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2587", "field": "text", "en": "The Horde's robust supply network fuels its rapid expansion across Kalimdor and beyond.", "hash": "d5dd6387c1c3d4e2", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2634", "field": "text", "en": "The skies are red, and your senses are overpowered with the thirst for blood!", "hash": "81534b1e2bdcda2b", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2641", "field": "text", "en": "A hastily-organized group of Druids, working with both the Alliance and the Horde to stop the Nightmare Incursions.", "hash": "5bdc18b7fbe00cb7", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2679", "field": "text", "en": "A monastic order of holy warriors sworn to the service of the king of Lordaeron.", "hash": "40c7b2619539b630", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:270", "field": "text", "en": "These trolls have come to Yojamba Isle in an effort to recruit help against the resurrected Blood God and his Atal'ai Priests in Zul'Gurub.", "hash": "407992c774a2f4a7", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2719", "field": "text", "en": "The Cenarion Scouts are young nature enthusiasts dedicated to exploring and protecting the wilds of Azeroth.", "hash": "44ac6d4adbbf317e", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2740", "field": "text", "en": "An elite cadre of the most powerful wizards in the world and the ruliung conclave of magi that leads the magical nation of Dalaran.", "hash": "da8b373a20b4da03", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2747", "field": "text", "en": "The Barkskin are among the few furbolg tribes untouched by corruption, and dedicate themselves to safeguarding their spiritual heritage to bring harmony back to Hyjal.", "hash": "cc6cd07b562f9928", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2758", "field": "text", "en": "The secretive druids of the Shadowgale Forest. They operate independently, apart from any other faction on Zephras Isle.", "hash": "b676b03dff98d4d4", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2765", "field": "text", "en": "Charged with the protection of preservation of Mount Hyjal, this splinter faction of the Cenarion Circle welcome any who are willing to push back the forces of evil.", "hash": "50a5261710915834", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2778", "field": "text", "en": "The Windshapers are shamanistic spiritual leaders of the Skyborne people on Zephras Isle. They honor the elements and seek to gain a better understanding of the nature of the elemental plane to protect the shen'dorei way of life within Skywall.", "hash": "79baf3bf0f3c7b17", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2779", "field": "text", "en": "The High Order are the Skyborne descendants of the Highborne magisters of Eldre'Thalas. Having spent the past 10,000 years in the realm of Skywall, members of the High Order seek to reclaim the ancient arcane knowledge of their forebears.", "hash": "db7a7bd9138be8d7", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2782", "field": "text", "en": "Exiled for betraying their false prophets, these former members of the Twilight's Hammer seek to forge their own path.", "hash": "b0d166e2e97c0f04", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2787", "field": "text", "en": "The Earthen Ring is a loose collective of horde-aligned shamans and druids who seek to maintain and nurture the balance of nature on Azeroth.", "hash": "7586058e98ca08f3", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2797", "field": "text", "en": "Elite members of night elf society.", "hash": "d684bc84a55deee9", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2798", "field": "text", "en": "Loyal to the troll nation, the Darkspear Raiders battle the Theramore Expeditionary Force for control of their ancestral Darkspear Islands.", "hash": "ae4311e45cbd2e0e", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2799", "field": "text", "en": "Loyal partisans for their city, the Theramore Expeditionary Force battles the Darkspear Raiders for control of the so-called Darkspear Islands.", "hash": "1bb82cf16b01187a", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2819", "field": "text", "en": "An order of powerful jailers and marshals of night elf society. They stand vigilant to ensure that no threat can ever escape their extensive underground network of prisons.", "hash": "56b24689279963d3", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2826", "field": "text", "en": "Outcast members of Stormwind's cavalry, these former riders started anew in the unexplored lands along the eastern coast, establishing their home, new relationships, and trade routes.", "hash": "d66174601b4b142f", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:2827", "field": "text", "en": "A strong arm of the Steamwheedle Cartel, this port is home to seafaring sailors and back-alley dealers spanning the eastern sea trading routes.", "hash": "cf8710c66a266738", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:349", "field": "text", "en": "This guild of thieves and assassins welcomes only those of extraordinary prowess into its fold.  Sworn rivals of the Syndicate.", "hash": "e15addc5fe1c4dd6", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:369", "field": "text", "en": "Capital of the Steamwheedle Cartel and home to goblinhood's finest engineers, alchemists and merchants.", "hash": "6bc27bf5eef584eb", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:47", "field": "text", "en": "This Alliance capital is the pride of the Dun Morogh dwarves.  Home to King Magni.", "hash": "7338a7380a5a902a", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:470", "field": "text", "en": "Part of the Steamwheedle Cartel, this goblin city provides a neutral haven for those that wish to trade goods and services in the Barrens.", "hash": "d92b7fb29e659938", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:471", "field": "text", "en": "Though not a part of the Alliance, the dwarves of Aerie Peak have opened their doors to it and hold the Horde as enemies.", "hash": "ff3c6dd2e11d63f5", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:509", "field": "text", "en": "The League of Arathor seeks to reclaim lost land of Arathi Basin for their benefactors in Stormwind.", "hash": "1ec818e36959a970", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:510", "field": "text", "en": "The Defilers seek to claim Arathi Basin's valuable resources for the Horde.", "hash": "0a18bac0af818841", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:529", "field": "text", "en": "An organization focused on protecting Azeroth from the threat of the Scourge.  Strongholds of the Argent Dawn can be found in the Eastern and Western Plaguelands.", "hash": "4113163d67f11533", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:530", "field": "text", "en": "This tribe of exiled trolls has joined forces with Thrall and the Horde.  They now call Durotar their home, which they share with their orc allies.", "hash": "3ea5477c15869096", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:54", "field": "text", "en": "The former denizens of Gnomeregan, now living in exile in Ironforge and in league with the Alliance.", "hash": "067f29feb28c5be2", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:576", "field": "text", "en": "As one of the last uncorrupted furbolg tribes, the Timbermaw seek to preserve their spiritual ways and end the suffering of their brethren.", "hash": "e26925423d93c3ed", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:577", "field": "text", "en": "This trading post is run by the goblins of the Steamwheedle Cartel and it sits in the crossroads of Winterspring's main trade routes.", "hash": "a62dc357922c3ba4", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:589", "field": "text", "en": "This small group of reclusive night elves raises and trains wintersabers in the Winterspring area.", "hash": "4f1493562d48be10", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:59", "field": "text", "en": "The dwarves of the Thorium Brotherhood epitomize excellence in craftsmanship and are bent on unlocking the secrets of Blackrock Mountain.", "hash": "d74f4abb97ea79fd", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:609", "field": "text", "en": "The druids of Cenarion Circle are guardians of nature and make their home in tranquil Moonglade.", "hash": "09a580e21e038758", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:630", "field": "text", "en": "The ravasaurs of Un'Goro Crater are incredibly deadly, but a few individuals have learned how to tame them.", "hash": "8770841ecf812a21", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:68", "field": "text", "en": "Led by Sylvanas Windrunner, the Forsaken have joined a tenuous alliance with the Horde and established this capital in the vast depths under the Ruins of Lordaeron.", "hash": "de70e66051f6fbef", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:69", "field": "text", "en": "The Alliance capital is populated by Night Elves and is located in the island of Teldrassil.  Ruled by the Priestess of the Moon, Tyrande Whisperwind.", "hash": "7c7ef88470ccd244", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:70", "field": "text", "en": "A primarily human criminal organization that operates mostly out of the Alterac Mountains and Hillsbrad Foothills.", "hash": "039ecfd76de22d5b", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:72", "field": "text", "en": "One of the last bastions of human power, this Alliance capital is ruled by the child king, Anduin Wrynn.", "hash": "1a805474bc510c39", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:729", "field": "text", "en": "The Frostwolf Clan seeks to drive out the dwarves of the Stormpike Expedition from Alterac Valley.", "hash": "b10857263cea16eb", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:730", "field": "text", "en": "The Stormpike Dwarves have set up residence in Alterac Valley, where they're locked in battle with the Frostwolf Orcs.", "hash": "f10b0cbac4ac2ad3", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:749", "field": "text", "en": "These elementals have made their home on the islands east of Azshara.  Sworn enemies of the armies of Ragnaros.", "hash": "6fb36621261b54c3", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:76", "field": "text", "en": "Founded by Thrall, this Horde capital city is home to many of the proud orc clans of Durotar.", "hash": "862915726f23cbb1", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:809", "field": "text", "en": "A remnant of the once powerful elves living in Dire Maul, yet still wise and knowledgeable about great secrets.", "hash": "63e9a14a401695da", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:81", "field": "text", "en": "Cairne Bloodhoof leads his people, the Proud Tauren, from this mighty Horde capital.", "hash": "fed3b47e35543dca", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:87", "field": "text", "en": "These bloodthirsty corsairs are the bane of many a merchant in the high seas.  Sworn enemies of Booty Bay.", "hash": "7ad652c12edfe98e", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:889", "field": "text", "en": "Fierce orcs of the Warsong Clan, locked in battle against the Silverwing Sentinels in Warsong Gulch.", "hash": "dfb1cd3c67a0db9a", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:890", "field": "text", "en": "Staunch defenders of Ashenvale, locked in battle against the Warsong Outriders in Warsong Gulch.", "hash": "a1c33f03a1fc3c17", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:909", "field": "text", "en": "A traveling fair that showcases the weird and the extraordinary.  Often spotted in Elwynn Forest and Mulgore.", "hash": "4339ac1f31637010", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:910", "field": "text", "en": "The descendants of the Bronze Dragonflight are the guardians of time and care little for the mortal races.", "hash": "83782a844c078497", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:92", "field": "text", "en": "These centaur have made their home in the southern region of Desolace.  Mortal enemies of the Magram Centaur.", "hash": "1b4b23042452fa32", "src": "db2@1.60.1.70009"}
-{"id": "FactionDescription:93", "field": "text", "en": "These centaur have made their home in the eastern region of Desolace.  Mortal enemies of the Gelkis Centaur.", "hash": "c63dbc46fe15d4b0", "src": "db2@1.60.1.70009"}
+{"id": "FACTION", "field": "text", "en": "Faction", "hash": "8f71f14f3501b67c", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_CONTROLLED_TERRITORY", "field": "text", "en": "(%s Territory)", "hash": "dee1b4a21185d685", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_INACTIVE", "field": "text", "en": "Inactive", "hash": "dabc2f300f7c9634", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_OTHER", "field": "text", "en": "Other", "hash": "7a61dd1d7a6004c7", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_DECREASED", "field": "text", "en": "Reputation with %s decreased by %d.", "hash": "076aab6833db4c04", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_DECREASED_ACCOUNT_WIDE", "field": "text", "en": "Your Account's reputation with %s decreased by %d.", "hash": "9418a2fe526f10c9", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_DECREASED_GENERIC", "field": "text", "en": "Reputation with %s decreased.", "hash": "7a31e3f7c697df6a", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_DECREASED_GENERIC_ACCOUNT_WIDE", "field": "text", "en": "Your Account's reputation with %s decreased.", "hash": "3b8f2e8529c0d996", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED", "field": "text", "en": "Reputation with %s increased by %d.", "hash": "61cca65cd2b346d0", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED_ACCOUNT_WIDE", "field": "text", "en": "Your Account's reputation with %s increased by %d.", "hash": "ee7a9df2f1470b95", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED_ACH_BONUS", "field": "text", "en": "Reputation with %s increased by %d. (+%.1f bonus)", "hash": "a4a8e498983003b4", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED_ACH_BONUS_ACCOUNT_WIDE", "field": "text", "en": "Your Account's reputation with %s increased by %d. (+%.1f bonus)", "hash": "ee1a27795be2395e", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED_ACH_PART", "field": "text", "en": "(+%.1f bonus)", "hash": "6f48a1932c62725a", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED_BONUS", "field": "text", "en": "Reputation with %s increased by %d. (+%.1f Recruit A Friend bonus)", "hash": "0e72be3aae60cdbd", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED_DOUBLE_BONUS", "field": "text", "en": "Reputation with %s increased by %d. (+%.1f Recruit A Friend bonus) (+%.1f bonus)", "hash": "15ba78a758f5b1a0", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED_GENERIC", "field": "text", "en": "Reputation with %s increased.", "hash": "1b060edc057f4b68", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED_GENERIC_ACCOUNT_WIDE", "field": "text", "en": "Your Account's reputation with %s increased.", "hash": "dc63596568a84583", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED_GUARDIAN", "field": "text", "en": "%s has gained %d guardian experience points.", "hash": "44c43bd4f80f406a", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED_REFER_PART", "field": "text", "en": "(+%.1f Recruit A Friend bonus)", "hash": "5aadf69a0b9ceb45", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_INCREASED_REST_PART", "field": "text", "en": "(+%.1f Rested bonus)", "hash": "dde0c1baa6dedfba", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL1", "field": "text", "en": "Hated", "hash": "fcf942be12e298e2", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL1_FEMALE", "field": "text", "en": "Hated", "hash": "fcf942be12e298e2", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL2", "field": "text", "en": "Hostile", "hash": "d2eedd39445dc5a1", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL2_FEMALE", "field": "text", "en": "Hostile", "hash": "d2eedd39445dc5a1", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL3", "field": "text", "en": "Unfriendly", "hash": "a93a2734a1d5b904", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL3_FEMALE", "field": "text", "en": "Unfriendly", "hash": "a93a2734a1d5b904", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL4", "field": "text", "en": "Neutral", "hash": "5f11dc51f812a1f4", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL4_FEMALE", "field": "text", "en": "Neutral", "hash": "5f11dc51f812a1f4", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL5", "field": "text", "en": "Friendly", "hash": "45a1160aeb73debe", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL5_FEMALE", "field": "text", "en": "Friendly", "hash": "45a1160aeb73debe", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL6", "field": "text", "en": "Honored", "hash": "7a8121584a7b06be", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL6_FEMALE", "field": "text", "en": "Honored", "hash": "7a8121584a7b06be", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL7", "field": "text", "en": "Revered", "hash": "4167d3e4e440a90f", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL7_FEMALE", "field": "text", "en": "Revered", "hash": "4167d3e4e440a90f", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL8", "field": "text", "en": "Exalted", "hash": "4f770c9a355e7429", "src": "db2@1.60.1.70124"}
+{"id": "FACTION_STANDING_LABEL8_FEMALE", "field": "text", "en": "Exalted", "hash": "4f770c9a355e7429", "src": "db2@1.60.1.70124"}
+{"id": "FAILED", "field": "text", "en": "Failed", "hash": "7b0d12fc6eeb0ea4", "src": "db2@1.60.1.70124"}
+{"id": "FAILURES", "field": "text", "en": "Failures", "hash": "c196f8446a47f500", "src": "db2@1.60.1.70124"}
+{"id": "FARCLIP", "field": "text", "en": "View Distance", "hash": "2a922e0e9c40aa13", "src": "db2@1.60.1.70124"}
+{"id": "FAST", "field": "text", "en": "Fast", "hash": "097ada182b8cb90a", "src": "db2@1.60.1.70124"}
+{"id": "FEATURE_BECOMES_AVAILABLE_AT_LEVEL", "field": "text", "en": "This feature becomes available at level %d.", "hash": "1a9462f0a85d8962", "src": "db2@1.60.1.70124"}
+{"id": "FEATURE_NOT_YET_AVAILABLE", "field": "text", "en": "This feature is not yet available.", "hash": "82c179b50a8276b2", "src": "db2@1.60.1.70124"}
+{"id": "FEATURE_UNAVAILBLE_PLAYER_IS_NEUTRAL", "field": "text", "en": "This feature is not available until you pick a faction.", "hash": "845b8ccb9a104344", "src": "db2@1.60.1.70124"}
+{"id": "FEAT_OF_STRENGTH_DESCRIPTION", "field": "text", "en": "Feats of Strength are accomplishments that players will find very difficult if not impossible to earn.  Worth no points, Feats of Strength are a collection of past glories on Azeroth.", "hash": "2b9f26539191e81f", "src": "db2@1.60.1.70124"}
+{"id": "FEETSLOT", "field": "text", "en": "Feet", "hash": "097bdf123b6c09c0", "src": "db2@1.60.1.70124"}
+{"id": "FILTER", "field": "text", "en": "Filter", "hash": "07e3c6b02e3904a0", "src": "db2@1.60.1.70124"}
+{"id": "FILTERS", "field": "text", "en": "Filters", "hash": "098eac9787acd2e4", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_BY_ENEMIES_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by hostile creatures and pets.", "hash": "b191ae3271441abe", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_BY_FRIENDS_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by friendly players, pets, and creatures.", "hash": "2e48c9375ddef9f3", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_BY_HOSTILE_PLAYERS_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by hostile players.", "hash": "6ea2fc72c3a3361e", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_BY_ME_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by you, your traps, and your spells.", "hash": "c90da6d591754c24", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_BY_NEUTRAL_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by neutral creatures.", "hash": "161c0beb776a1608", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_BY_PET_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by your pets, summoned guardians, and charmed players.", "hash": "26a09856af4fd273", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_BY_UNKNOWN_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed by undefined sources such as falling, acid, or lava.", "hash": "2621f5a74b2237b9", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_NAME", "field": "text", "en": "Filter Name", "hash": "e7e4f0728fc1412c", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_TO_FRIENDS_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on friendly players, pets, and creatures.", "hash": "641e0cca8e23af35", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_TO_HOSTILE_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on hostile pets and creatures.", "hash": "aec2b671e440d132", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_TO_HOSTILE_PLAYERS_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on hostile players.", "hash": "ae1b064eace2bd9b", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_TO_ME_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on you.", "hash": "fe20a0b37fc9a934", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_TO_NEUTRAL_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on neutral creatures.", "hash": "bbe94bbda2dd8221", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_TO_PET_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on your pets, summoned guardians, and charmed players.", "hash": "5b0b48c45a9c67d8", "src": "db2@1.60.1.70124"}
+{"id": "FILTER_TO_UNKNOWN_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on invisible targets.", "hash": "d336591ae41095f7", "src": "db2@1.60.1.70124"}
+{"id": "FINGER0SLOT", "field": "text", "en": "Finger", "hash": "0824fa71156d7be2", "src": "db2@1.60.1.70124"}
+{"id": "FINGER1SLOT", "field": "text", "en": "Finger", "hash": "0824fa71156d7be2", "src": "db2@1.60.1.70124"}
+{"id": "FLASH_LOW_HEALTH_WARNING", "field": "text", "en": "Do Not Flash Screen at Low Health", "hash": "bd52db7546f20e98", "src": "db2@1.60.1.70124"}
+{"id": "FLIGHT_MAP", "field": "text", "en": "Flight Map", "hash": "73d7f16ca6bfd810", "src": "db2@1.60.1.70124"}
+{"id": "FLIGHT_MAP_CLICK_TO_ZOOM_HINT", "field": "text", "en": "Click to Zoom In", "hash": "84d46667fda48361", "src": "db2@1.60.1.70124"}
+{"id": "FLIGHT_MAP_CLICK_TO_ZOOM_IN", "field": "text", "en": "<Click to Zoom In>", "hash": "0976eefbcaddffe1", "src": "db2@1.60.1.70124"}
+{"id": "FLIGHT_MAP_CLICK_TO_ZOOM_OUT_HINT", "field": "text", "en": "Right-Click to Zoom Out", "hash": "e4a820539a3bc39b", "src": "db2@1.60.1.70124"}
+{"id": "FLIGHT_MAP_WORLD_QUESTS", "field": "text", "en": "%d World Quests active here.", "hash": "3cea66e95bd134f1", "src": "db2@1.60.1.70124"}
+{"id": "FOCUS", "field": "text", "en": "Focus", "hash": "dbb9a93ccd4270a3", "src": "db2@1.60.1.70124"}
+{"id": "FOCUS_CAST_KEY_TEXT", "field": "text", "en": "Focus Cast Key", "hash": "d2a4af627d0044d5", "src": "db2@1.60.1.70124"}
+{"id": "FOCUS_COST", "field": "text", "en": "%s Focus", "hash": "bbf158a4694a9035", "src": "db2@1.60.1.70124"}
+{"id": "FOCUS_COST_PER_TIME", "field": "text", "en": "%s Focus, plus %s per sec", "hash": "74f09f468813e69f", "src": "db2@1.60.1.70124"}
+{"id": "FOCUS_COST_PER_TIME_NO_BASE", "field": "text", "en": "%d Focus per sec", "hash": "eabfa2ef0f37267c", "src": "db2@1.60.1.70124"}
+{"id": "FOCUS_GLOW_COLOR", "field": "text", "en": "Focus Glow Color", "hash": "2db3e3a898703773", "src": "db2@1.60.1.70124"}
+{"id": "FOCUS_MODIFICATIONS_HEADER", "field": "text", "en": "Frame Focus Style", "hash": "92b76520418c75ac", "src": "db2@1.60.1.70124"}
+{"id": "FOCUS_OPACITY", "field": "text", "en": "Focus Opacity", "hash": "a2959604f104ebfb", "src": "db2@1.60.1.70124"}
+{"id": "FOLLOW", "field": "text", "en": "Follow", "hash": "7133f97147f72238", "src": "db2@1.60.1.70124"}
+{"id": "FOLLOW_TERRAIN", "field": "text", "en": "Follow Terrain", "hash": "16e07039bed3e2c1", "src": "db2@1.60.1.70124"}
+{"id": "FONT_SIZE", "field": "text", "en": "Font Size", "hash": "23e22fcab055d201", "src": "db2@1.60.1.70124"}
+{"id": "FONT_SIZE_TEMPLATE", "field": "text", "en": "%d pt", "hash": "96ea452ff3962ab9", "src": "db2@1.60.1.70124"}
+{"id": "FORMATTING", "field": "text", "en": "Formatting", "hash": "6af237161e8de3ae", "src": "db2@1.60.1.70124"}
+{"id": "FPS_COUNTER_CPU_BOUND", "field": "text", "en": "%.1f CPU Bound", "hash": "20144e10ae95ea71", "src": "db2@1.60.1.70124"}
+{"id": "FPS_COUNTER_GPU_BOUND", "field": "text", "en": "%.1f GPU Bound", "hash": "9c6bf1c852b06ed9", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_ACCEPT", "field": "text", "en": "Accept", "hash": "b3c3644e28d78783", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_AMOUNT", "field": "text", "en": "Amount", "hash": "64ec564bbe63eee8", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_BACK", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_CANCEL", "field": "text", "en": "Cancel", "hash": "892958da199b72dc", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_CHANGE_MAP", "field": "text", "en": "Change Map", "hash": "71628ac678336e6c", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_CLOSE", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_COMPLETE", "field": "text", "en": "Complete", "hash": "7018251d4dd88a91", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_CONFIRM", "field": "text", "en": "Confirm", "hash": "f1cc941b8229c54e", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_CONTINUE", "field": "text", "en": "Continue", "hash": "b16ebd04968ed814", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_EDIT_ACTION_BAR", "field": "text", "en": "Edit Action Bar", "hash": "94be4e4dbf0256c6", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_EXIT", "field": "text", "en": "Exit", "hash": "095e8d2ef9719c87", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_HOLD_TO_UNLEARN", "field": "text", "en": "Hold to Unlearn", "hash": "3fed1fd66ac40277", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_LOOT", "field": "text", "en": "Loot", "hash": "0a4c542cb38fa641", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_LOOT_ALL", "field": "text", "en": "Loot All", "hash": "d61cb31303801979", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_MAP_MARKER", "field": "text", "en": "Marker", "hash": "5cdf9bd49e5e05b3", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_NAVIGATE", "field": "text", "en": "Navigate", "hash": "0c4d18099da44ee1", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_OPEN_FULLMAP", "field": "text", "en": "Fullscreen Map", "hash": "8aa9205ab2005840", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_OPEN_MAP", "field": "text", "en": "Standard Map", "hash": "2619a2f1d8d2c465", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_PAN", "field": "text", "en": "Pan", "hash": "001524e13da14110", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_TOGGLE_ITEM_COMPARE", "field": "text", "en": "Toggle Item Compare", "hash": "cd24b5ac65b0e5bc", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_ACTION_ZOOM", "field": "text", "en": "Zoom", "hash": "0c2c929f6f3efeb4", "src": "db2@1.60.1.70124"}
+{"id": "FRAME_LABEL_MAIN_MENU", "field": "text", "en": "Main Menu", "hash": "07e03ffeae48ba7e", "src": "db2@1.60.1.70124"}
+{"id": "FREE_FOR_ALL_TERRITORY", "field": "text", "en": "(PvP Area)", "hash": "7a60b81770f0de26", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS", "field": "text", "en": "Friends", "hash": "aa8bfa51a365a614", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_FRIENDS_CHOICE_EVERYONE", "field": "text", "en": "Everyone", "hash": "9897aa391749a3b1", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_FRIENDS_CHOICE_MUTUAL", "field": "text", "en": "Mutual Friends", "hash": "e81bd0dfcc19bec4", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_FRIENDS_CHOICE_POTENTIAL", "field": "text", "en": "Potential Friends", "hash": "57cefaf041cc8a8b", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_LEVEL_TEMPLATE", "field": "text", "en": "Level %d %s", "hash": "2fcf25e1a3bdd25f", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_LIST", "field": "text", "en": "Friends List", "hash": "43a8bd234b8b0eba", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_LIST_AVAILABLE", "field": "text", "en": "Available", "hash": "08bd63f84d058c1c", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_LIST_AWAY", "field": "text", "en": "Away", "hash": "08d50fa6bfd889a5", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_LIST_BUSY", "field": "text", "en": "Busy", "hash": "08f6e06545523405", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_LIST_ENTER_TEXT", "field": "text", "en": "Tell your friends what you're doing", "hash": "0b0b767e971f4b6f", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_LIST_OFFLINE", "field": "text", "en": "Offline", "hash": "06e66a7a007d0582", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_LIST_PLAYING", "field": "text", "en": "Also Playing:", "hash": "526232f2c9002bf3", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_LIST_STATUS_TOOLTIP", "field": "text", "en": "Status: |cffffffff%s|r", "hash": "6068de337ba0fab3", "src": "db2@1.60.1.70124"}
+{"id": "FRIENDS_TOOLTIP_TOO_MANY_CHARACTERS", "field": "text", "en": "(%d more |4character:characters;)", "hash": "4afb5f25522a778d", "src": "db2@1.60.1.70124"}
+{"id": "FRIEND_REQUESTS", "field": "text", "en": "Friend Requests (%d)", "hash": "1290633f8e33c95b", "src": "db2@1.60.1.70124"}
+{"id": "FROM", "field": "text", "en": "From:", "hash": "dc23b228a51c7a8d", "src": "db2@1.60.1.70124"}
+{"id": "FULLDATE", "field": "text", "en": "%1$s, %2$s %3$d %4$d", "hash": "85fea8eee30fa674", "src": "db2@1.60.1.70124"}
+{"id": "FULL_TEXT_COMBATLOG_TOOLTIP", "field": "text", "en": "Show combat log entries as full sentences.", "hash": "be1cba5d5dce59ed", "src": "db2@1.60.1.70124"}
+{"id": "FXAA_CMAA_LABEL", "field": "text", "en": "Image-Based Techniques", "hash": "e9dab29f5f6a9f07", "src": "db2@1.60.1.70124"}
+{"id": "FX_VOLUME", "field": "text", "en": "Effects", "hash": "f6f9bfd5b2f2ae71", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:21", "field": "text", "en": "This booming coastal city is run by Baron Revilgaz of the Blackwater Raiders.  Mortal enemies of the Bloodsail Buccaneers and part of the Steamwheedle Cartel.", "hash": "7e9b81b0947c6e24", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2586", "field": "text", "en": "Originally commissioned to facilitate trade across the Eastern Kingdoms, the ACA now maintains supply routes to Alliance forces worldwide.", "hash": "8036c9b7270daca3", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2587", "field": "text", "en": "The Horde's robust supply network fuels its rapid expansion across Kalimdor and beyond.", "hash": "d5dd6387c1c3d4e2", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2634", "field": "text", "en": "The skies are red, and your senses are overpowered with the thirst for blood!", "hash": "81534b1e2bdcda2b", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2641", "field": "text", "en": "A hastily-organized group of Druids, working with both the Alliance and the Horde to stop the Nightmare Incursions.", "hash": "5bdc18b7fbe00cb7", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2679", "field": "text", "en": "A monastic order of holy warriors sworn to the service of the king of Lordaeron.", "hash": "40c7b2619539b630", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:270", "field": "text", "en": "These trolls have come to Yojamba Isle in an effort to recruit help against the resurrected Blood God and his Atal'ai Priests in Zul'Gurub.", "hash": "407992c774a2f4a7", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2719", "field": "text", "en": "The Cenarion Scouts are young nature enthusiasts dedicated to exploring and protecting the wilds of Azeroth.", "hash": "44ac6d4adbbf317e", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2740", "field": "text", "en": "An elite cadre of the most powerful wizards in the world and the ruliung conclave of magi that leads the magical nation of Dalaran.", "hash": "da8b373a20b4da03", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2747", "field": "text", "en": "The Barkskin are among the few furbolg tribes untouched by corruption, and dedicate themselves to safeguarding their spiritual heritage to bring harmony back to Hyjal.", "hash": "cc6cd07b562f9928", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2758", "field": "text", "en": "The secretive druids of the Shadowgale Forest. They operate independently, apart from any other faction on Zephras Isle.", "hash": "b676b03dff98d4d4", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2765", "field": "text", "en": "Charged with the protection of preservation of Mount Hyjal, this splinter faction of the Cenarion Circle welcome any who are willing to push back the forces of evil.", "hash": "50a5261710915834", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2778", "field": "text", "en": "The Windshapers are shamanistic spiritual leaders of the Skyborne people on Zephras Isle. They honor the elements and seek to gain a better understanding of the nature of the elemental plane to protect the shen'dorei way of life within Skywall.", "hash": "79baf3bf0f3c7b17", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2779", "field": "text", "en": "The High Order are the Skyborne descendants of the Highborne magisters of Eldre'Thalas. Having spent the past 10,000 years in the realm of Skywall, members of the High Order seek to reclaim the ancient arcane knowledge of their forebears.", "hash": "db7a7bd9138be8d7", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2782", "field": "text", "en": "Exiled for betraying their false prophets, these former members of the Twilight's Hammer seek to forge their own path.", "hash": "b0d166e2e97c0f04", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2787", "field": "text", "en": "The Earthen Ring is a loose collective of horde-aligned shamans and druids who seek to maintain and nurture the balance of nature on Azeroth.", "hash": "7586058e98ca08f3", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2797", "field": "text", "en": "Elite members of night elf society.", "hash": "d684bc84a55deee9", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2798", "field": "text", "en": "Loyal to the troll nation, the Darkspear Raiders battle the Theramore Expeditionary Force for control of their ancestral Darkspear Islands.", "hash": "ae4311e45cbd2e0e", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2799", "field": "text", "en": "Loyal partisans for their city, the Theramore Expeditionary Force battles the Darkspear Raiders for control of the so-called Darkspear Islands.", "hash": "1bb82cf16b01187a", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2819", "field": "text", "en": "An order of powerful jailers and marshals of night elf society. They stand vigilant to ensure that no threat can ever escape their extensive underground network of prisons.", "hash": "56b24689279963d3", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2826", "field": "text", "en": "Outcast members of Stormwind's cavalry, these former riders started anew in the unexplored lands along the eastern coast, establishing their home, new relationships, and trade routes.", "hash": "d66174601b4b142f", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:2827", "field": "text", "en": "A strong arm of the Steamwheedle Cartel, this port is home to seafaring sailors and back-alley dealers spanning the eastern sea trading routes.", "hash": "cf8710c66a266738", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:349", "field": "text", "en": "This guild of thieves and assassins welcomes only those of extraordinary prowess into its fold.  Sworn rivals of the Syndicate.", "hash": "e15addc5fe1c4dd6", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:369", "field": "text", "en": "Capital of the Steamwheedle Cartel and home to goblinhood's finest engineers, alchemists and merchants.", "hash": "6bc27bf5eef584eb", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:47", "field": "text", "en": "This Alliance capital is the pride of the Dun Morogh dwarves.  Home to King Magni.", "hash": "7338a7380a5a902a", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:470", "field": "text", "en": "Part of the Steamwheedle Cartel, this goblin city provides a neutral haven for those that wish to trade goods and services in the Barrens.", "hash": "d92b7fb29e659938", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:471", "field": "text", "en": "Though not a part of the Alliance, the dwarves of Aerie Peak have opened their doors to it and hold the Horde as enemies.", "hash": "ff3c6dd2e11d63f5", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:509", "field": "text", "en": "The League of Arathor seeks to reclaim lost land of Arathi Basin for their benefactors in Stormwind.", "hash": "1ec818e36959a970", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:510", "field": "text", "en": "The Defilers seek to claim Arathi Basin's valuable resources for the Horde.", "hash": "0a18bac0af818841", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:529", "field": "text", "en": "An organization focused on protecting Azeroth from the threat of the Scourge.  Strongholds of the Argent Dawn can be found in the Eastern and Western Plaguelands.", "hash": "4113163d67f11533", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:530", "field": "text", "en": "This tribe of exiled trolls has joined forces with Thrall and the Horde.  They now call Durotar their home, which they share with their orc allies.", "hash": "3ea5477c15869096", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:54", "field": "text", "en": "The former denizens of Gnomeregan, now living in exile in Ironforge and in league with the Alliance.", "hash": "067f29feb28c5be2", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:576", "field": "text", "en": "As one of the last uncorrupted furbolg tribes, the Timbermaw seek to preserve their spiritual ways and end the suffering of their brethren.", "hash": "e26925423d93c3ed", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:577", "field": "text", "en": "This trading post is run by the goblins of the Steamwheedle Cartel and it sits in the crossroads of Winterspring's main trade routes.", "hash": "a62dc357922c3ba4", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:589", "field": "text", "en": "This small group of reclusive night elves raises and trains wintersabers in the Winterspring area.", "hash": "4f1493562d48be10", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:59", "field": "text", "en": "The dwarves of the Thorium Brotherhood epitomize excellence in craftsmanship and are bent on unlocking the secrets of Blackrock Mountain.", "hash": "d74f4abb97ea79fd", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:609", "field": "text", "en": "The druids of Cenarion Circle are guardians of nature and make their home in tranquil Moonglade.", "hash": "09a580e21e038758", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:630", "field": "text", "en": "The ravasaurs of Un'Goro Crater are incredibly deadly, but a few individuals have learned how to tame them.", "hash": "8770841ecf812a21", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:68", "field": "text", "en": "Led by Sylvanas Windrunner, the Forsaken have joined a tenuous alliance with the Horde and established this capital in the vast depths under the Ruins of Lordaeron.", "hash": "de70e66051f6fbef", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:69", "field": "text", "en": "The Alliance capital is populated by Night Elves and is located in the island of Teldrassil.  Ruled by the Priestess of the Moon, Tyrande Whisperwind.", "hash": "7c7ef88470ccd244", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:70", "field": "text", "en": "A primarily human criminal organization that operates mostly out of the Alterac Mountains and Hillsbrad Foothills.", "hash": "039ecfd76de22d5b", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:72", "field": "text", "en": "One of the last bastions of human power, this Alliance capital is ruled by the child king, Anduin Wrynn.", "hash": "1a805474bc510c39", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:729", "field": "text", "en": "The Frostwolf Clan seeks to drive out the dwarves of the Stormpike Expedition from Alterac Valley.", "hash": "b10857263cea16eb", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:730", "field": "text", "en": "The Stormpike Dwarves have set up residence in Alterac Valley, where they're locked in battle with the Frostwolf Orcs.", "hash": "f10b0cbac4ac2ad3", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:749", "field": "text", "en": "These elementals have made their home on the islands east of Azshara.  Sworn enemies of the armies of Ragnaros.", "hash": "6fb36621261b54c3", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:76", "field": "text", "en": "Founded by Thrall, this Horde capital city is home to many of the proud orc clans of Durotar.", "hash": "862915726f23cbb1", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:809", "field": "text", "en": "A remnant of the once powerful elves living in Dire Maul, yet still wise and knowledgeable about great secrets.", "hash": "63e9a14a401695da", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:81", "field": "text", "en": "Cairne Bloodhoof leads his people, the Proud Tauren, from this mighty Horde capital.", "hash": "fed3b47e35543dca", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:87", "field": "text", "en": "These bloodthirsty corsairs are the bane of many a merchant in the high seas.  Sworn enemies of Booty Bay.", "hash": "7ad652c12edfe98e", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:889", "field": "text", "en": "Fierce orcs of the Warsong Clan, locked in battle against the Silverwing Sentinels in Warsong Gulch.", "hash": "dfb1cd3c67a0db9a", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:890", "field": "text", "en": "Staunch defenders of Ashenvale, locked in battle against the Warsong Outriders in Warsong Gulch.", "hash": "a1c33f03a1fc3c17", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:909", "field": "text", "en": "A traveling fair that showcases the weird and the extraordinary.  Often spotted in Elwynn Forest and Mulgore.", "hash": "4339ac1f31637010", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:910", "field": "text", "en": "The descendants of the Bronze Dragonflight are the guardians of time and care little for the mortal races.", "hash": "83782a844c078497", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:92", "field": "text", "en": "These centaur have made their home in the southern region of Desolace.  Mortal enemies of the Magram Centaur.", "hash": "1b4b23042452fa32", "src": "db2@1.60.1.70124"}
+{"id": "FactionDescription:93", "field": "text", "en": "These centaur have made their home in the eastern region of Desolace.  Mortal enemies of the Gelkis Centaur.", "hash": "c63dbc46fe15d4b0", "src": "db2@1.60.1.70124"}

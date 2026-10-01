@@ -1,63 +1,63 @@
-{"id": 423002, "field": "name", "en": "Attack Power - Feral (+59)", "hash": "566df2d5258cc51a", "src": "db2@1.60.1.70009"}
-{"id": 423002, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70009"}
-{"id": 423003, "field": "name", "en": "Crashing Thunder", "hash": "4a38e20e689e4f5c", "src": "db2@1.60.1.70009"}
-{"id": 423003, "field": "description", "en": "Discharge a mote of thunder dealing $s1 Nature damage.", "hash": "461c0247fd38f39b", "src": "db2@1.60.1.70009"}
-{"id": 423004, "field": "name", "en": "Gusting Wind", "hash": "ed4fe9245a3eb625", "src": "db2@1.60.1.70009"}
-{"id": 423004, "field": "description", "en": "Blast a gust of wind dealing $s1 Nature damage.", "hash": "24083c31eadf8050", "src": "db2@1.60.1.70009"}
-{"id": 423088, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70009"}
-{"id": 423088, "field": "description", "en": "Open Waterlogged Captain's Chest", "hash": "9433ac1325fe60a7", "src": "db2@1.60.1.70009"}
-{"id": 423133, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70009"}
-{"id": 423135, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70009"}
-{"id": 423140, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70009"}
-{"id": 423144, "field": "name", "en": "Spawn Emissary", "hash": "28165d0382ebcdc3", "src": "db2@1.60.1.70009"}
-{"id": 423168, "field": "name", "en": "[DNT] Teleport to Lorgus Jett in Blackfathom Deeps", "hash": "3b1d2aeedd0216fb", "src": "db2@1.60.1.70009"}
-{"id": 423186, "field": "name", "en": "Unbalanced Idol Moon", "hash": "d6adcda18965c5c7", "src": "db2@1.60.1.70009"}
-{"id": 423186, "field": "aura", "en": "Balancing yourself with the powers of nature.", "hash": "2b38d4f592609785", "src": "db2@1.60.1.70009"}
-{"id": 423187, "field": "name", "en": "Balance", "hash": "581815594a0694a9", "src": "db2@1.60.1.70009"}
-{"id": 423187, "field": "description", "en": "Balance the Powers of the Moon, Emerald Dream, and Wild to learn a new ability.", "hash": "b3c699cf3d416949", "src": "db2@1.60.1.70009"}
-{"id": 423191, "field": "name", "en": "Power of the Moon", "hash": "0b2784723841d736", "src": "db2@1.60.1.70009"}
-{"id": 423191, "field": "aura", "en": "Slaying enemies after they were afflicted by Moonfire increases your balance with the Moon.", "hash": "a52e0b78d162035c", "src": "db2@1.60.1.70009"}
-{"id": 423192, "field": "name", "en": "Power of the Emerald Dream", "hash": "3e96251a64a3c05c", "src": "db2@1.60.1.70009"}
-{"id": 423192, "field": "aura", "en": "Healing injuries can increases your balance with the Emerald Dream.", "hash": "2e46c6ee484f65b2", "src": "db2@1.60.1.70009"}
-{"id": 423194, "field": "name", "en": "Power of the Wild", "hash": "0c7cf8b7a67f694e", "src": "db2@1.60.1.70009"}
-{"id": 423194, "field": "aura", "en": "Shapeshifting increases your balance with the Wild.", "hash": "d734b75a6be3a6b1", "src": "db2@1.60.1.70009"}
-{"id": 423212, "field": "name", "en": "Balance", "hash": "581815594a0694a9", "src": "db2@1.60.1.70009"}
-{"id": 423253, "field": "name", "en": "Indiscriminate Outburst", "hash": "969bf4cf344cc79e", "src": "db2@1.60.1.70009"}
-{"id": 423253, "field": "description", "en": "Inflicts heavy damage nearby, will damage self if no foes are struck.", "hash": "ba65d20f49154e4c", "src": "db2@1.60.1.70009"}
-{"id": 423253, "field": "aura", "en": "Inflicts harm to nearby targets, regardless of allegiance.", "hash": "e3402a05537faa79", "src": "db2@1.60.1.70009"}
-{"id": 423298, "field": "name", "en": "Swimming Speed Minor", "hash": "97aea654e0763d8f", "src": "db2@1.60.1.70009"}
-{"id": 423298, "field": "description", "en": "Increases swim speed by $s1%.", "hash": "e184d52ae28bab2e", "src": "db2@1.60.1.70009"}
-{"id": 423298, "field": "aura", "en": "Increases swim speed by $s1%.", "hash": "e184d52ae28bab2e", "src": "db2@1.60.1.70009"}
-{"id": 423299, "field": "name", "en": "Beast Slayer Equip Bonus", "hash": "e52f4a82c92867da", "src": "db2@1.60.1.70009"}
-{"id": 423299, "field": "description", "en": "Increases damage done to Beasts with physical attacks by $s1. ", "hash": "35fca8b7704433bd", "src": "db2@1.60.1.70009"}
-{"id": 423300, "field": "name", "en": "M'grrgl's Protection", "hash": "0a1b7d40109b97f3", "src": "db2@1.60.1.70009"}
-{"id": 423300, "field": "description", "en": "M'grrgl will accompany you for $d1, providing minor protection against shadow.", "hash": "0eb12453ed018bb1", "src": "db2@1.60.1.70009"}
-{"id": 423300, "field": "aura", "en": "M'grrgl likes you! \r\nIncreases Shadow Resistance by 5.", "hash": "48d168f496d5fa01", "src": "db2@1.60.1.70009"}
-{"id": 423304, "field": "name", "en": "Life Drain", "hash": "bb5c1d816a47c130", "src": "db2@1.60.1.70009"}
-{"id": 423304, "field": "description", "en": "Leech life from your victim, healing for $s1 damage.", "hash": "ea366d8f75fd4d11", "src": "db2@1.60.1.70009"}
-{"id": 423415, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70009"}
-{"id": 423434, "field": "name", "en": "Tim's Test Invis", "hash": "d2494ff7ce32f7cf", "src": "db2@1.60.1.70009"}
-{"id": 423435, "field": "name", "en": "Tim's Test Invis Detection", "hash": "1daf17719e6f95d9", "src": "db2@1.60.1.70009"}
-{"id": 423474, "field": "name", "en": "Fetish of Mischief", "hash": "eaddb1a2ab3bc015", "src": "db2@1.60.1.70009"}
-{"id": 423474, "field": "description", "en": "Increases the damage of your Imp's Firebolt spell by $s1.", "hash": "c780d6c3fc81a017", "src": "db2@1.60.1.70009"}
-{"id": 423478, "field": "name", "en": "Wyvern Taming Wand", "hash": "e93a50b5597c43ea", "src": "db2@1.60.1.70009"}
-{"id": 423478, "field": "aura", "en": "Able to tame Young Pridewings in the Stonetalon Mountains", "hash": "a8ab6da55c032468", "src": "db2@1.60.1.70009"}
-{"id": 423481, "field": "name", "en": "Minor Stealth Detection", "hash": "064bf4378f6c5001", "src": "db2@1.60.1.70009"}
-{"id": 423481, "field": "description", "en": "Slightly increases your stealth detection.", "hash": "f1baa5450739454d", "src": "db2@1.60.1.70009"}
-{"id": 423481, "field": "aura", "en": "Slightly increased stealth detection.", "hash": "993706805ac54c8b", "src": "db2@1.60.1.70009"}
-{"id": 423484, "field": "name", "en": "Increased Hunter Pet Damage", "hash": "d61dca023a438f0b", "src": "db2@1.60.1.70009"}
-{"id": 423484, "field": "description", "en": "Increases the damage done by your pets by $s1%.", "hash": "a112dde100da3640", "src": "db2@1.60.1.70009"}
-{"id": 423549, "field": "name", "en": "Imbue Wand", "hash": "3b92df0a7451a4d8", "src": "db2@1.60.1.70009"}
-{"id": 423549, "field": "description", "en": "Imbue a Greater Magic Wand with wild magic.", "hash": "40589d5ee490fc42", "src": "db2@1.60.1.70009"}
-{"id": 423558, "field": "name", "en": "Orb Shatter", "hash": "0da7ac4dfa19ddbe", "src": "db2@1.60.1.70009"}
-{"id": 423561, "field": "name", "en": "Orb Shatter", "hash": "0da7ac4dfa19ddbe", "src": "db2@1.60.1.70009"}
-{"id": 423592, "field": "name", "en": "Sleep - Dream Phase", "hash": "d18e8525bbca526a", "src": "db2@1.60.1.70009"}
-{"id": 423631, "field": "name", "en": "Knockdown", "hash": "6f9508bc7debff6d", "src": "db2@1.60.1.70009"}
-{"id": 423632, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70009"}
-{"id": 423632, "field": "description", "en": "Open the Waterlogged Captain's Chest.", "hash": "97ea925d484ce220", "src": "db2@1.60.1.70009"}
-{"id": 423646, "field": "name", "en": "Tame Wyvern", "hash": "3e68ee495f969f55", "src": "db2@1.60.1.70009"}
-{"id": 423785, "field": "name", "en": "Give Extra Wyvern Wand", "hash": "8257887a88374a62", "src": "db2@1.60.1.70009"}
-{"id": 423786, "field": "name", "en": "Give Extra Rune", "hash": "250d4a0cec66aace", "src": "db2@1.60.1.70009"}
-{"id": 423907, "field": "name", "en": "Equip Dragonslayer Armor", "hash": "410b2ced36992d22", "src": "db2@1.60.1.70009"}
-{"id": 423953, "field": "name", "en": "Impatient", "hash": "164619a85a8b734b", "src": "db2@1.60.1.70009"}
-{"id": 423954, "field": "name", "en": "Stacking", "hash": "c026bd30ae75bd48", "src": "db2@1.60.1.70009"}
+{"id": 423002, "field": "name", "en": "Attack Power - Feral (+59)", "hash": "566df2d5258cc51a", "src": "db2@1.60.1.70124"}
+{"id": 423002, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70124"}
+{"id": 423003, "field": "name", "en": "Crashing Thunder", "hash": "4a38e20e689e4f5c", "src": "db2@1.60.1.70124"}
+{"id": 423003, "field": "description", "en": "Discharge a mote of thunder dealing $s1 Nature damage.", "hash": "461c0247fd38f39b", "src": "db2@1.60.1.70124"}
+{"id": 423004, "field": "name", "en": "Gusting Wind", "hash": "ed4fe9245a3eb625", "src": "db2@1.60.1.70124"}
+{"id": 423004, "field": "description", "en": "Blast a gust of wind dealing $s1 Nature damage.", "hash": "24083c31eadf8050", "src": "db2@1.60.1.70124"}
+{"id": 423088, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70124"}
+{"id": 423088, "field": "description", "en": "Open Waterlogged Captain's Chest", "hash": "9433ac1325fe60a7", "src": "db2@1.60.1.70124"}
+{"id": 423133, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70124"}
+{"id": 423135, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70124"}
+{"id": 423140, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70124"}
+{"id": 423144, "field": "name", "en": "Spawn Emissary", "hash": "28165d0382ebcdc3", "src": "db2@1.60.1.70124"}
+{"id": 423168, "field": "name", "en": "[DNT] Teleport to Lorgus Jett in Blackfathom Deeps", "hash": "3b1d2aeedd0216fb", "src": "db2@1.60.1.70124"}
+{"id": 423186, "field": "name", "en": "Unbalanced Idol Moon", "hash": "d6adcda18965c5c7", "src": "db2@1.60.1.70124"}
+{"id": 423186, "field": "aura", "en": "Balancing yourself with the powers of nature.", "hash": "2b38d4f592609785", "src": "db2@1.60.1.70124"}
+{"id": 423187, "field": "name", "en": "Balance", "hash": "581815594a0694a9", "src": "db2@1.60.1.70124"}
+{"id": 423187, "field": "description", "en": "Balance the Powers of the Moon, Emerald Dream, and Wild to learn a new ability.", "hash": "b3c699cf3d416949", "src": "db2@1.60.1.70124"}
+{"id": 423191, "field": "name", "en": "Power of the Moon", "hash": "0b2784723841d736", "src": "db2@1.60.1.70124"}
+{"id": 423191, "field": "aura", "en": "Slaying enemies after they were afflicted by Moonfire increases your balance with the Moon.", "hash": "a52e0b78d162035c", "src": "db2@1.60.1.70124"}
+{"id": 423192, "field": "name", "en": "Power of the Emerald Dream", "hash": "3e96251a64a3c05c", "src": "db2@1.60.1.70124"}
+{"id": 423192, "field": "aura", "en": "Healing injuries can increases your balance with the Emerald Dream.", "hash": "2e46c6ee484f65b2", "src": "db2@1.60.1.70124"}
+{"id": 423194, "field": "name", "en": "Power of the Wild", "hash": "0c7cf8b7a67f694e", "src": "db2@1.60.1.70124"}
+{"id": 423194, "field": "aura", "en": "Shapeshifting increases your balance with the Wild.", "hash": "d734b75a6be3a6b1", "src": "db2@1.60.1.70124"}
+{"id": 423212, "field": "name", "en": "Balance", "hash": "581815594a0694a9", "src": "db2@1.60.1.70124"}
+{"id": 423253, "field": "name", "en": "Indiscriminate Outburst", "hash": "969bf4cf344cc79e", "src": "db2@1.60.1.70124"}
+{"id": 423253, "field": "description", "en": "Inflicts heavy damage nearby, will damage self if no foes are struck.", "hash": "ba65d20f49154e4c", "src": "db2@1.60.1.70124"}
+{"id": 423253, "field": "aura", "en": "Inflicts harm to nearby targets, regardless of allegiance.", "hash": "e3402a05537faa79", "src": "db2@1.60.1.70124"}
+{"id": 423298, "field": "name", "en": "Swimming Speed Minor", "hash": "97aea654e0763d8f", "src": "db2@1.60.1.70124"}
+{"id": 423298, "field": "description", "en": "Increases swim speed by $s1%.", "hash": "e184d52ae28bab2e", "src": "db2@1.60.1.70124"}
+{"id": 423298, "field": "aura", "en": "Increases swim speed by $s1%.", "hash": "e184d52ae28bab2e", "src": "db2@1.60.1.70124"}
+{"id": 423299, "field": "name", "en": "Beast Slayer Equip Bonus", "hash": "e52f4a82c92867da", "src": "db2@1.60.1.70124"}
+{"id": 423299, "field": "description", "en": "Increases damage done to Beasts with physical attacks by $s1. ", "hash": "35fca8b7704433bd", "src": "db2@1.60.1.70124"}
+{"id": 423300, "field": "name", "en": "M'grrgl's Protection", "hash": "0a1b7d40109b97f3", "src": "db2@1.60.1.70124"}
+{"id": 423300, "field": "description", "en": "M'grrgl will accompany you for $d1, providing minor protection against shadow.", "hash": "0eb12453ed018bb1", "src": "db2@1.60.1.70124"}
+{"id": 423300, "field": "aura", "en": "M'grrgl likes you! \r\nIncreases Shadow Resistance by 5.", "hash": "48d168f496d5fa01", "src": "db2@1.60.1.70124"}
+{"id": 423304, "field": "name", "en": "Life Drain", "hash": "bb5c1d816a47c130", "src": "db2@1.60.1.70124"}
+{"id": 423304, "field": "description", "en": "Leech life from your victim, healing for $s1 damage.", "hash": "ea366d8f75fd4d11", "src": "db2@1.60.1.70124"}
+{"id": 423415, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70124"}
+{"id": 423434, "field": "name", "en": "Tim's Test Invis", "hash": "d2494ff7ce32f7cf", "src": "db2@1.60.1.70124"}
+{"id": 423435, "field": "name", "en": "Tim's Test Invis Detection", "hash": "1daf17719e6f95d9", "src": "db2@1.60.1.70124"}
+{"id": 423474, "field": "name", "en": "Fetish of Mischief", "hash": "eaddb1a2ab3bc015", "src": "db2@1.60.1.70124"}
+{"id": 423474, "field": "description", "en": "Increases the damage of your Imp's Firebolt spell by $s1.", "hash": "c780d6c3fc81a017", "src": "db2@1.60.1.70124"}
+{"id": 423478, "field": "name", "en": "Wyvern Taming Wand", "hash": "e93a50b5597c43ea", "src": "db2@1.60.1.70124"}
+{"id": 423478, "field": "aura", "en": "Able to tame Young Pridewings in the Stonetalon Mountains", "hash": "a8ab6da55c032468", "src": "db2@1.60.1.70124"}
+{"id": 423481, "field": "name", "en": "Minor Stealth Detection", "hash": "064bf4378f6c5001", "src": "db2@1.60.1.70124"}
+{"id": 423481, "field": "description", "en": "Slightly increases your stealth detection.", "hash": "f1baa5450739454d", "src": "db2@1.60.1.70124"}
+{"id": 423481, "field": "aura", "en": "Slightly increased stealth detection.", "hash": "993706805ac54c8b", "src": "db2@1.60.1.70124"}
+{"id": 423484, "field": "name", "en": "Increased Hunter Pet Damage", "hash": "d61dca023a438f0b", "src": "db2@1.60.1.70124"}
+{"id": 423484, "field": "description", "en": "Increases the damage done by your pets by $s1%.", "hash": "a112dde100da3640", "src": "db2@1.60.1.70124"}
+{"id": 423549, "field": "name", "en": "Imbue Wand", "hash": "3b92df0a7451a4d8", "src": "db2@1.60.1.70124"}
+{"id": 423549, "field": "description", "en": "Imbue a Greater Magic Wand with wild magic.", "hash": "40589d5ee490fc42", "src": "db2@1.60.1.70124"}
+{"id": 423558, "field": "name", "en": "Orb Shatter", "hash": "0da7ac4dfa19ddbe", "src": "db2@1.60.1.70124"}
+{"id": 423561, "field": "name", "en": "Orb Shatter", "hash": "0da7ac4dfa19ddbe", "src": "db2@1.60.1.70124"}
+{"id": 423592, "field": "name", "en": "Sleep - Dream Phase", "hash": "d18e8525bbca526a", "src": "db2@1.60.1.70124"}
+{"id": 423631, "field": "name", "en": "Knockdown", "hash": "6f9508bc7debff6d", "src": "db2@1.60.1.70124"}
+{"id": 423632, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70124"}
+{"id": 423632, "field": "description", "en": "Open the Waterlogged Captain's Chest.", "hash": "97ea925d484ce220", "src": "db2@1.60.1.70124"}
+{"id": 423646, "field": "name", "en": "Tame Wyvern", "hash": "3e68ee495f969f55", "src": "db2@1.60.1.70124"}
+{"id": 423785, "field": "name", "en": "Give Extra Wyvern Wand", "hash": "8257887a88374a62", "src": "db2@1.60.1.70124"}
+{"id": 423786, "field": "name", "en": "Give Extra Rune", "hash": "250d4a0cec66aace", "src": "db2@1.60.1.70124"}
+{"id": 423907, "field": "name", "en": "Equip Dragonslayer Armor", "hash": "410b2ced36992d22", "src": "db2@1.60.1.70124"}
+{"id": 423953, "field": "name", "en": "Impatient", "hash": "164619a85a8b734b", "src": "db2@1.60.1.70124"}
+{"id": 423954, "field": "name", "en": "Stacking", "hash": "c026bd30ae75bd48", "src": "db2@1.60.1.70124"}

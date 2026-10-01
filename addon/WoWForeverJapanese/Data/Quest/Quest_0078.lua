@@ -3,6 +3,9 @@ local _, WFJ = ...
 WFJ.Data.add("quest", {
   [78124] = { "Nar'thalas Almanac", nil, nil, nil, nil, 0x3a40adb9, nil, nil, nil, nil, ".mmmm" },
   [78127] = { "Dalaran要覧", nil, nil, nil, nil, 0x3c34dd7c, nil, nil, nil, nil, ".mmmm" },
+  [78132] = { "Dragonslayer's Helm", nil, nil, nil, nil, 0x979b839c, nil, nil, nil, nil, ".mmmm" },
+  [78133] = { "Dragonslayer's Shield", nil, nil, nil, nil, 0x0ad9d45d, nil, nil, nil, nil, ".mmmm" },
+  [78134] = { "Dragonslayer's Lance", nil, nil, nil, nil, 0xda427e86, nil, nil, nil, nil, ".mmmm" },
   [78142] = { "Bewitchments and Glamours", nil, nil, nil, nil, 0x311bffcc, nil, nil, nil, nil, ".mmmm" },
   [78143] = { "Secrets of the Dreamers", nil, nil, nil, nil, 0x8a435740, nil, nil, nil, nil, ".mmmm" },
   [78145] = { "Arcanic Systems Manual", nil, nil, nil, nil, 0x309e1889, nil, nil, nil, nil, ".mmmm" },
@@ -12,5 +15,6 @@ WFJ.Data.add("quest", {
   [78149] = { "Fury of the Land", nil, nil, nil, nil, 0x53dc86ff, nil, nil, nil, nil, ".mmmm" },
   [78150] = { "図書館の友", nil, nil, nil, nil, 0x9626da4d, nil, nil, nil, nil, ".mmmm" },
   [78261] = { "Horn of Xelthos", "Shadowfang Keepの中でThe Horn of Xelthosを見つけてください。それから、Pyrewood Villageの近くにあるCの隠し場所へそれを届けてください。この仕事は一人でやり遂げなければなりません。", "<箱の中にメモが入っている>\n\nこんにちは、{name}。\n\n私は、Shadowfang Keepのどこかにあると言われる、Horn of Xelthosという宝を求めている。\n\nあの砦の中に入り込むには、普通なら援護が必要だ。だが今回の仕事では、目立たないことが何より重要だ。\n\n一人で行かねばならない。\n\nStonetalon Mountainsに、Veenixという名の連絡役がいる。彼なら中庭の門を越える手助けをしてくれるはずだ。その先はお前次第だ。\n\n角笛をここへ戻してくれれば、その後すぐに報酬を送る。\n\n- C", nil, nil, 0x8ef63440, 0xa04dc89a, 0x3eb0aa8f, nil, nil, "...mm" },
+  [78270] = { "ゴブリンのロックピック", "Shadowfang Keepの中でThe Horn of Xelthosを見つけ、Pyrewood Village近くのCの隠し場所に届けて下さい。", "<木箱の中に手紙が置かれている>\n\nまた会ったな、{name}。\n\nShadowfang Keepのどこかにある、The Horn of Xelthosという財宝が欲しい。\n\nあの砦に乗り込むなら、普通は援軍が要る。だがこの仕事では、目立たないことが何より重要だ。\n\n一人で行け。\n\nStonetalon Mountainsに、Veenixという名の協力者がいる。中庭の門を抜けるのを手伝ってくれるはずだ。あとはお前次第だ。\n\n角笛をここに持ち帰れば、報酬はすぐに送られる。\n\n- C", nil, nil, 0x6567783d, 0x8f719ff2, 0xe73ec883, nil, nil, "...mm" },
   [78307] = { "Horn of Xelthos", nil, nil, nil, nil, 0x8ef63440, nil, nil, nil, nil, ".mmmm" },
 })

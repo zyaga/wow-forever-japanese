@@ -1,39 +1,39 @@
-{"id": 225675, "field": "name", "en": "Sooty Obsidian Core", "hash": "bfe8c5bd79cef39e", "src": "db2@1.60.1.70009"}
-{"id": 225675, "field": "description", "en": "Polish off the soot.", "hash": "2b57291db5cbf692", "src": "db2@1.60.1.70009"}
-{"id": 225676, "field": "name", "en": "Molten Obsidian Core", "hash": "8d3a08d6dade2f85", "src": "db2@1.60.1.70009"}
-{"id": 225676, "field": "description", "en": "Cool it down before it melts!", "hash": "4c950f01e3eb7c75", "src": "db2@1.60.1.70009"}
-{"id": 225686, "field": "name", "en": "Rune of Decimation", "hash": "1bbdc96953f71070", "src": "db2@1.60.1.70009"}
-{"id": 225686, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 225687, "field": "name", "en": "Rune of Infernal Armor", "hash": "895280df8dd8eca3", "src": "db2@1.60.1.70009"}
-{"id": 225687, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 225688, "field": "name", "en": "Rune of Mark of Chaos", "hash": "fc627477ec03db18", "src": "db2@1.60.1.70009"}
-{"id": 225688, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 225689, "field": "name", "en": "Spell Notes: Arcane Barrage", "hash": "7c305b694c4e7b53", "src": "db2@1.60.1.70009"}
-{"id": 225689, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 225690, "field": "name", "en": "Spell Notes: Frozen Orb", "hash": "0024310a93ce1dcb", "src": "db2@1.60.1.70009"}
-{"id": 225690, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 225691, "field": "name", "en": "Spell Notes: Overheat", "hash": "12e194140274c533", "src": "db2@1.60.1.70009"}
-{"id": 225691, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 225740, "field": "name", "en": "Rune of Composure", "hash": "bdfdbefbbd152ae1", "src": "db2@1.60.1.70009"}
-{"id": 225740, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 225838, "field": "name", "en": "Voltaic Icon", "hash": "a1b4cfbf9f0fce8c", "src": "db2@1.60.1.70009"}
-{"id": 225838, "field": "description", "en": "Learn a new ability after defeating 3 enemies with a single cast of Chain Lightning.", "hash": "927321db4a2a41d5", "src": "db2@1.60.1.70009"}
-{"id": 225914, "field": "name", "en": "Rune of the Bound Spirit", "hash": "e79c1ae47263cc94", "src": "db2@1.60.1.70009"}
-{"id": 225914, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 225929, "field": "name", "en": "Plagued Soul Shard", "hash": "4ad36f49212ae331", "src": "db2@1.60.1.70009"}
-{"id": 225938, "field": "name", "en": "Torn Spell Notes", "hash": "adbc7b23059513d5", "src": "db2@1.60.1.70009"}
-{"id": 225938, "field": "description", "en": "Combine the collected Torn Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Three-quarters are missing.", "hash": "24da7a9f6248b2a1", "src": "db2@1.60.1.70009"}
-{"id": 225939, "field": "name", "en": "Torn Spell Notes", "hash": "adbc7b23059513d5", "src": "db2@1.60.1.70009"}
-{"id": 225939, "field": "description", "en": "Combine the collected Torn Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Three-quarters are missing.", "hash": "24da7a9f6248b2a1", "src": "db2@1.60.1.70009"}
-{"id": 225940, "field": "name", "en": "Torn Spell Notes", "hash": "adbc7b23059513d5", "src": "db2@1.60.1.70009"}
-{"id": 225940, "field": "description", "en": "Combine the collected Torn Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Three-quarters are missing.", "hash": "24da7a9f6248b2a1", "src": "db2@1.60.1.70009"}
-{"id": 225941, "field": "name", "en": "Torn Spell Notes", "hash": "adbc7b23059513d5", "src": "db2@1.60.1.70009"}
-{"id": 225941, "field": "description", "en": "Combine the collected Torn Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Three-quarters are missing.", "hash": "24da7a9f6248b2a1", "src": "db2@1.60.1.70009"}
-{"id": 225942, "field": "name", "en": "Tainted Boar Meat", "hash": "4ced03612533f81c", "src": "db2@1.60.1.70009"}
-{"id": 225942, "field": "description", "en": "Coat in ichor.\nProbably just needs some sauce.", "hash": "8ec905b6bbc4dea8", "src": "db2@1.60.1.70009"}
-{"id": 225943, "field": "name", "en": "Rancid Hunk of Flesh", "hash": "3e80e9e8cc8ce9a8", "src": "db2@1.60.1.70009"}
-{"id": 225943, "field": "description", "en": "???\nWould make even the lowliest scavenger retch.", "hash": "6631fd9d89323283", "src": "db2@1.60.1.70009"}
-{"id": 225954, "field": "name", "en": "Charred Spell Notes", "hash": "49b10a03202042d3", "src": "db2@1.60.1.70009"}
-{"id": 225954, "field": "description", "en": "A charred and torn page that once held arcane secrets for Engraving abilities, now burnt beyond use.", "hash": "24a173bb699ad377", "src": "db2@1.60.1.70009"}
-{"id": 225955, "field": "name", "en": "Rune of the Resourceful", "hash": "d1a5ac27cfe88b90", "src": "db2@1.60.1.70009"}
-{"id": 225955, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
+{"id": 225675, "field": "name", "en": "Sooty Obsidian Core", "hash": "bfe8c5bd79cef39e", "src": "db2@1.60.1.70124"}
+{"id": 225675, "field": "description", "en": "Polish off the soot.", "hash": "2b57291db5cbf692", "src": "db2@1.60.1.70124"}
+{"id": 225676, "field": "name", "en": "Molten Obsidian Core", "hash": "8d3a08d6dade2f85", "src": "db2@1.60.1.70124"}
+{"id": 225676, "field": "description", "en": "Cool it down before it melts!", "hash": "4c950f01e3eb7c75", "src": "db2@1.60.1.70124"}
+{"id": 225686, "field": "name", "en": "Rune of Decimation", "hash": "1bbdc96953f71070", "src": "db2@1.60.1.70124"}
+{"id": 225686, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 225687, "field": "name", "en": "Rune of Infernal Armor", "hash": "895280df8dd8eca3", "src": "db2@1.60.1.70124"}
+{"id": 225687, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 225688, "field": "name", "en": "Rune of Mark of Chaos", "hash": "fc627477ec03db18", "src": "db2@1.60.1.70124"}
+{"id": 225688, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 225689, "field": "name", "en": "Spell Notes: Arcane Barrage", "hash": "7c305b694c4e7b53", "src": "db2@1.60.1.70124"}
+{"id": 225689, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 225690, "field": "name", "en": "Spell Notes: Frozen Orb", "hash": "0024310a93ce1dcb", "src": "db2@1.60.1.70124"}
+{"id": 225690, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 225691, "field": "name", "en": "Spell Notes: Overheat", "hash": "12e194140274c533", "src": "db2@1.60.1.70124"}
+{"id": 225691, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 225740, "field": "name", "en": "Rune of Composure", "hash": "bdfdbefbbd152ae1", "src": "db2@1.60.1.70124"}
+{"id": 225740, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 225838, "field": "name", "en": "Voltaic Icon", "hash": "a1b4cfbf9f0fce8c", "src": "db2@1.60.1.70124"}
+{"id": 225838, "field": "description", "en": "Learn a new ability after defeating 3 enemies with a single cast of Chain Lightning.", "hash": "927321db4a2a41d5", "src": "db2@1.60.1.70124"}
+{"id": 225914, "field": "name", "en": "Rune of the Bound Spirit", "hash": "e79c1ae47263cc94", "src": "db2@1.60.1.70124"}
+{"id": 225914, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 225929, "field": "name", "en": "Plagued Soul Shard", "hash": "4ad36f49212ae331", "src": "db2@1.60.1.70124"}
+{"id": 225938, "field": "name", "en": "Torn Spell Notes", "hash": "adbc7b23059513d5", "src": "db2@1.60.1.70124"}
+{"id": 225938, "field": "description", "en": "Combine the collected Torn Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Three-quarters are missing.", "hash": "24da7a9f6248b2a1", "src": "db2@1.60.1.70124"}
+{"id": 225939, "field": "name", "en": "Torn Spell Notes", "hash": "adbc7b23059513d5", "src": "db2@1.60.1.70124"}
+{"id": 225939, "field": "description", "en": "Combine the collected Torn Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Three-quarters are missing.", "hash": "24da7a9f6248b2a1", "src": "db2@1.60.1.70124"}
+{"id": 225940, "field": "name", "en": "Torn Spell Notes", "hash": "adbc7b23059513d5", "src": "db2@1.60.1.70124"}
+{"id": 225940, "field": "description", "en": "Combine the collected Torn Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Three-quarters are missing.", "hash": "24da7a9f6248b2a1", "src": "db2@1.60.1.70124"}
+{"id": 225941, "field": "name", "en": "Torn Spell Notes", "hash": "adbc7b23059513d5", "src": "db2@1.60.1.70124"}
+{"id": 225941, "field": "description", "en": "Combine the collected Torn Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Three-quarters are missing.", "hash": "24da7a9f6248b2a1", "src": "db2@1.60.1.70124"}
+{"id": 225942, "field": "name", "en": "Tainted Boar Meat", "hash": "4ced03612533f81c", "src": "db2@1.60.1.70124"}
+{"id": 225942, "field": "description", "en": "Coat in ichor.\nProbably just needs some sauce.", "hash": "8ec905b6bbc4dea8", "src": "db2@1.60.1.70124"}
+{"id": 225943, "field": "name", "en": "Rancid Hunk of Flesh", "hash": "3e80e9e8cc8ce9a8", "src": "db2@1.60.1.70124"}
+{"id": 225943, "field": "description", "en": "???\nWould make even the lowliest scavenger retch.", "hash": "6631fd9d89323283", "src": "db2@1.60.1.70124"}
+{"id": 225954, "field": "name", "en": "Charred Spell Notes", "hash": "49b10a03202042d3", "src": "db2@1.60.1.70124"}
+{"id": 225954, "field": "description", "en": "A charred and torn page that once held arcane secrets for Engraving abilities, now burnt beyond use.", "hash": "24a173bb699ad377", "src": "db2@1.60.1.70124"}
+{"id": 225955, "field": "name", "en": "Rune of the Resourceful", "hash": "d1a5ac27cfe88b90", "src": "db2@1.60.1.70124"}
+{"id": 225955, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}

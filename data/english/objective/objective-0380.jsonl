@@ -3,22 +3,22 @@
 {"id": 380545, "field": "text", "en": "Flame of Azel charged", "hash": "2090382a08b13738", "src": "wdb@1.15.9.69722"}
 {"id": 380546, "field": "text", "en": "Flame of Veraz charged", "hash": "94951a5ad9086cd0", "src": "wdb@1.15.9.69722"}
 {"id": 380547, "field": "text", "en": "Flame of Uzel charged", "hash": "14e91b891dbdd2ca", "src": "wdb@1.15.9.69722"}
-{"id": 380563, "field": "text", "en": "Hillsbrad Proclamation destroyed", "hash": "c81edf602a911d21", "src": "wdb@1.60.1.70009"}
-{"id": 380666, "field": "text", "en": "Bael Modan Flying Machine destroyed", "hash": "ea5660287b11a529", "src": "wdb@1.60.1.70009"}
-{"id": 380688, "field": "text", "en": "Destroy the Demon Seed", "hash": "07a58f1053c1bc40", "src": "wdb@1.60.1.70009"}
+{"id": 380563, "field": "text", "en": "Hillsbrad Proclamation destroyed", "hash": "c81edf602a911d21", "src": "wdb@1.60.1.70124"}
+{"id": 380666, "field": "text", "en": "Bael Modan Flying Machine destroyed", "hash": "ea5660287b11a529", "src": "wdb@1.60.1.70124"}
+{"id": 380688, "field": "text", "en": "Destroy the Demon Seed", "hash": "07a58f1053c1bc40", "src": "wdb@1.60.1.70124"}
 {"id": 380711, "field": "text", "en": "Toss Stink Bomb into Southshore", "hash": "4a762b8c5bb7ef9f", "src": "wdb@1.15.9.69722"}
-{"id": 380716, "field": "text", "en": "Visit Blue Raptor Nest", "hash": "cd62f5e5a1e52e06", "src": "wdb@1.60.1.70009"}
-{"id": 380717, "field": "text", "en": "Visit Yellow Raptor Nest", "hash": "b7735c276fe71e83", "src": "wdb@1.60.1.70009"}
-{"id": 380718, "field": "text", "en": "Visit Red Raptor Nest", "hash": "00db008f4a05359e", "src": "wdb@1.60.1.70009"}
+{"id": 380716, "field": "text", "en": "Visit Blue Raptor Nest", "hash": "cd62f5e5a1e52e06", "src": "wdb@1.60.1.70124"}
+{"id": 380717, "field": "text", "en": "Visit Yellow Raptor Nest", "hash": "b7735c276fe71e83", "src": "wdb@1.60.1.70124"}
+{"id": 380718, "field": "text", "en": "Visit Red Raptor Nest", "hash": "00db008f4a05359e", "src": "wdb@1.60.1.70124"}
 {"id": 380729, "field": "text", "en": "Who Does Number Two Work For?", "hash": "4f98e3ab93774d42", "src": "wdb@1.15.9.69722"}
-{"id": 380816, "field": "text", "en": "Shut off Main Control Valve", "hash": "389ed12a0684f477", "src": "wdb@1.60.1.70009"}
-{"id": 380817, "field": "text", "en": "Shut off Fuel Control Valve", "hash": "10893f0d7f9d7dc0", "src": "wdb@1.60.1.70009"}
-{"id": 380818, "field": "text", "en": "Shut off Regulator Valve", "hash": "a48789144dc22cf3", "src": "wdb@1.60.1.70009"}
-{"id": 380821, "field": "text", "en": "Destroy the seal at the ancient flame", "hash": "5ed5b30f61fc5b8f", "src": "wdb@1.60.1.70009"}
-{"id": 380847, "field": "text", "en": "Attack Plan: Valley of Trials destroyed", "hash": "03d6a348f1aa9c50", "src": "wdb@1.60.1.70009"}
-{"id": 380848, "field": "text", "en": "Attack Plan: Sen'jin Village destroyed", "hash": "088771cef096f9c6", "src": "wdb@1.60.1.70009"}
-{"id": 380849, "field": "text", "en": "Attack Plan: Orgrimmar destroyed", "hash": "f68a825e9a1d79c7", "src": "wdb@1.60.1.70009"}
-{"id": 380853, "field": "text", "en": "Test the Dried Seeds", "hash": "ecf1026f4945cec4", "src": "wdb@1.60.1.70009"}
+{"id": 380816, "field": "text", "en": "Shut off Main Control Valve", "hash": "389ed12a0684f477", "src": "wdb@1.60.1.70124"}
+{"id": 380817, "field": "text", "en": "Shut off Fuel Control Valve", "hash": "10893f0d7f9d7dc0", "src": "wdb@1.60.1.70124"}
+{"id": 380818, "field": "text", "en": "Shut off Regulator Valve", "hash": "a48789144dc22cf3", "src": "wdb@1.60.1.70124"}
+{"id": 380821, "field": "text", "en": "Destroy the seal at the ancient flame", "hash": "5ed5b30f61fc5b8f", "src": "wdb@1.60.1.70124"}
+{"id": 380847, "field": "text", "en": "Attack Plan: Valley of Trials destroyed", "hash": "03d6a348f1aa9c50", "src": "wdb@1.60.1.70124"}
+{"id": 380848, "field": "text", "en": "Attack Plan: Sen'jin Village destroyed", "hash": "088771cef096f9c6", "src": "wdb@1.60.1.70124"}
+{"id": 380849, "field": "text", "en": "Attack Plan: Orgrimmar destroyed", "hash": "f68a825e9a1d79c7", "src": "wdb@1.60.1.70124"}
+{"id": 380853, "field": "text", "en": "Test the Dried Seeds", "hash": "ecf1026f4945cec4", "src": "wdb@1.60.1.70124"}
 {"id": 380862, "field": "text", "en": "Find the hottest area of Fire Plume Ridge", "hash": "7edaf00af7186940", "src": "wdb@1.15.9.69722"}
 {"id": 380902, "field": "text", "en": "View the Tome of Mel'Thandris", "hash": "fe4d4d85ec752281", "src": "wdb@1.15.9.69722"}
 {"id": 380914, "field": "text", "en": "Capture Crown Guard Tower", "hash": "c55e1423295ab278", "src": "wdb@1.15.9.69722"}

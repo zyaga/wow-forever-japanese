@@ -1,144 +1,144 @@
-{"id": 1215061, "field": "name", "en": "[DNT] Curse of Decay", "hash": "90d37aea5748de8a", "src": "db2@1.60.1.70009"}
-{"id": 1215091, "field": "name", "en": "Summon Poison Cloud", "hash": "8d583ce0a96b2ef0", "src": "db2@1.60.1.70009"}
-{"id": 1215091, "field": "description", "en": "Inflicts $s1 Nature damage to nearby enemies every $t1 sec. for $d.", "hash": "a5f95a74ea4b7d7a", "src": "db2@1.60.1.70009"}
-{"id": 1215091, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70009"}
-{"id": 1215198, "field": "name", "en": "Hybrid Healing/Spell Dam 76/26", "hash": "26185c940d6e3b63", "src": "db2@1.60.1.70009"}
-{"id": 1215198, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70009"}
-{"id": 1215202, "field": "name", "en": "Noxious Burst", "hash": "670660d7a17a78b5", "src": "db2@1.60.1.70009"}
-{"id": 1215202, "field": "aura", "en": "Noxious pustules are erupting.", "hash": "ec703e9ef0fd5b22", "src": "db2@1.60.1.70009"}
-{"id": 1215329, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70009"}
-{"id": 1215329, "field": "description", "en": "Receive tokens for your service to the Blood God.", "hash": "f0c62931b6fe4a3a", "src": "db2@1.60.1.70009"}
-{"id": 1215358, "field": "name", "en": "Spiritual Protection", "hash": "5adde44f1810c364", "src": "db2@1.60.1.70009"}
-{"id": 1215358, "field": "description", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70009"}
-{"id": 1215358, "field": "aura", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70009"}
-{"id": 1215375, "field": "name", "en": "Spirit Shade Visual", "hash": "95d63584849a7e38", "src": "db2@1.60.1.70009"}
-{"id": 1215377, "field": "name", "en": "Acid Blast", "hash": "943d1d2038d3ed9b", "src": "db2@1.60.1.70009"}
-{"id": 1215377, "field": "description", "en": "Blasts the enemy with acid for $s1 Nature damage.", "hash": "1ce273c6bfb51f39", "src": "db2@1.60.1.70009"}
-{"id": 1215378, "field": "name", "en": "Blood-Caked Tiger", "hash": "6770d04f2cc3f9d2", "src": "db2@1.60.1.70009"}
-{"id": 1215378, "field": "description", "en": "Summons and dismisses a rideable Tiger.  This is a very fast mount.", "hash": "745feae340fcd5c7", "src": "db2@1.60.1.70009"}
-{"id": 1215378, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
-{"id": 1215380, "field": "name", "en": "Blood-Caked Raptor", "hash": "6c7cf68cad4b3bcf", "src": "db2@1.60.1.70009"}
-{"id": 1215380, "field": "description", "en": "Summons and dismisses a rideable Raptor.  This is a very fast mount.", "hash": "955b85b615b8bc06", "src": "db2@1.60.1.70009"}
-{"id": 1215380, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70009"}
-{"id": 1215404, "field": "name", "en": "Timeworn Pyromancy", "hash": "b65fd46b21b3fbf9", "src": "db2@1.60.1.70009"}
-{"id": 1215404, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.", "hash": "bd362e35d4275fc7", "src": "db2@1.60.1.70009"}
-{"id": 1215405, "field": "name", "en": "Timeworn Pyromancy", "hash": "b65fd46b21b3fbf9", "src": "db2@1.60.1.70009"}
-{"id": 1215420, "field": "name", "en": "(DNT) Poison Cloud Pool", "hash": "c59829e5a7c63755", "src": "db2@1.60.1.70009"}
-{"id": 1215421, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70009"}
-{"id": 1215421, "field": "description", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70009"}
-{"id": 1215421, "field": "aura", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70009"}
-{"id": 1215425, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215427, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215428, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215429, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215430, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215431, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215432, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215433, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215434, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215435, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215436, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215437, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215438, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215439, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215440, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215441, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215442, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215443, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215444, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215445, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215446, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215447, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215448, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215449, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215450, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215451, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215452, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215453, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215454, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70009"}
-{"id": 1215455, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70009"}
-{"id": 1215456, "field": "name", "en": "Dummy Test Visual Proc Driver [DNT]", "hash": "59dcaf7761f66cf0", "src": "db2@1.60.1.70009"}
-{"id": 1215457, "field": "name", "en": "Void-Touched Visual [DNT]", "hash": "787d453d7c701765", "src": "db2@1.60.1.70009"}
-{"id": 1215491, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70009"}
-{"id": 1215498, "field": "name", "en": "Caustic Emanations", "hash": "56457f1090ddb31d", "src": "db2@1.60.1.70009"}
-{"id": 1215507, "field": "name", "en": "Thick Obsidian Breastplate", "hash": "2493dfb9ceb9d43a", "src": "db2@1.60.1.70009"}
-{"id": 1215508, "field": "name", "en": "Obsidian Armor", "hash": "5a4a90a03a15d548", "src": "db2@1.60.1.70009"}
-{"id": 1215508, "field": "description", "en": "When struck by a non-periodic damage spell you have a $h% chance of getting a $1215509d spell shield that absorbs $1215509s1 of that school of damage.", "hash": "f2962962de94b085", "src": "db2@1.60.1.70009"}
-{"id": 1215509, "field": "name", "en": "Fire Resistance", "hash": "b61e89e5e9c15047", "src": "db2@1.60.1.70009"}
-{"id": 1215509, "field": "description", "en": "Absorbs $s1 fire damage.  Lasts $d.", "hash": "8a1157b973768b7a", "src": "db2@1.60.1.70009"}
-{"id": 1215509, "field": "aura", "en": "Absorbs $s1 fire damage.", "hash": "f97f8e4ffcedf171", "src": "db2@1.60.1.70009"}
-{"id": 1215510, "field": "name", "en": "Frost Resistance", "hash": "fa580288c5627849", "src": "db2@1.60.1.70009"}
-{"id": 1215510, "field": "description", "en": "Absorbs $s1 frost damage.  Lasts $d.", "hash": "08003478858e4da4", "src": "db2@1.60.1.70009"}
-{"id": 1215510, "field": "aura", "en": "Absorbs $s1 frost damage.", "hash": "a3f74587558f995b", "src": "db2@1.60.1.70009"}
-{"id": 1215511, "field": "name", "en": "Nature Resistance", "hash": "1cfc8a7066590e09", "src": "db2@1.60.1.70009"}
-{"id": 1215511, "field": "description", "en": "Absorbs $s1 nature damage.  Lasts $d.", "hash": "6175292784f0482e", "src": "db2@1.60.1.70009"}
-{"id": 1215511, "field": "aura", "en": "Absorbs $s1 nature damage.", "hash": "3df0dfc85a4938c7", "src": "db2@1.60.1.70009"}
-{"id": 1215512, "field": "name", "en": "Shadow Resistance", "hash": "5a9cbecf3c70058d", "src": "db2@1.60.1.70009"}
-{"id": 1215512, "field": "description", "en": "Absorbs $s1 shadow damage.  Lasts $d.", "hash": "8d4773b5113b390c", "src": "db2@1.60.1.70009"}
-{"id": 1215512, "field": "aura", "en": "Absorbs $s1 shadow damage.", "hash": "5da25d43b8754039", "src": "db2@1.60.1.70009"}
-{"id": 1215513, "field": "name", "en": "Holy Resistance", "hash": "cc7d6787a440d892", "src": "db2@1.60.1.70009"}
-{"id": 1215513, "field": "description", "en": "Absorbs $s1 holy damage.  Lasts $d.", "hash": "be170d363411450f", "src": "db2@1.60.1.70009"}
-{"id": 1215513, "field": "aura", "en": "Absorbs $s1 holy damage.", "hash": "9e5f4a4c83b369de", "src": "db2@1.60.1.70009"}
-{"id": 1215514, "field": "name", "en": "Arcane Resistance", "hash": "3ce7bd3182cba324", "src": "db2@1.60.1.70009"}
-{"id": 1215514, "field": "description", "en": "Absorbs $s1 arcane damage.  Lasts $d.", "hash": "0a5d73b93be855a5", "src": "db2@1.60.1.70009"}
-{"id": 1215514, "field": "aura", "en": "Absorbs $s1 arcane damage.", "hash": "bcb120304f28d456", "src": "db2@1.60.1.70009"}
-{"id": 1215516, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70009"}
-{"id": 1215554, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70009"}
-{"id": 1215555, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70009"}
-{"id": 1215557, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70009"}
-{"id": 1215558, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70009"}
-{"id": 1215559, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70009"}
-{"id": 1215578, "field": "name", "en": "[DNT] Player Death", "hash": "27632e190a38e9aa", "src": "db2@1.60.1.70009"}
-{"id": 1215615, "field": "name", "en": "Combine Goo-Covered Gauntlet", "hash": "1a73572579492df6", "src": "db2@1.60.1.70009"}
-{"id": 1215615, "field": "description", "en": "Combine the Demonic Gauntlet with the Acidic Goo.", "hash": "4274156dafc1e00f", "src": "db2@1.60.1.70009"}
-{"id": 1215625, "field": "name", "en": "Spell Warding", "hash": "df818e67d2c7b98b", "src": "db2@1.60.1.70009"}
-{"id": 1215625, "field": "description", "en": "Reduces all spell damage taken by $s1%.", "hash": "9a4d57c2f76ecaf4", "src": "db2@1.60.1.70009"}
-{"id": 1215635, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70009"}
-{"id": 1215639, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70009"}
-{"id": 1215685, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70009"}
-{"id": 1215696, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70009"}
-{"id": 1215697, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70009"}
-{"id": 1215699, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70009"}
-{"id": 1215700, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70009"}
-{"id": 1215701, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70009"}
-{"id": 1215736, "field": "name", "en": "Viscidus Frost Weakness", "hash": "27787f97e0e0af73", "src": "db2@1.60.1.70009"}
-{"id": 1215737, "field": "name", "en": "Viscidus Freeze", "hash": "d7e362425c9a0cef", "src": "db2@1.60.1.70009"}
-{"id": 1215739, "field": "name", "en": "Summon Hook Tentacle", "hash": "634b2c087264ed55", "src": "db2@1.60.1.70009"}
-{"id": 1215740, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70009"}
-{"id": 1215740, "field": "description", "en": "Inflicts Shadow damage to an enemy and reduces its movement speed for $d.", "hash": "b24a12b10f7654d4", "src": "db2@1.60.1.70009"}
-{"id": 1215740, "field": "aura", "en": "$s1 Shadow damage inflicted every second for $d.\r\nMovement speed reduced to $s2% of normal.", "hash": "bc2e574c315fae75", "src": "db2@1.60.1.70009"}
-{"id": 1215742, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70009"}
-{"id": 1215743, "field": "name", "en": "[DNT] Blinding Admiration", "hash": "21009624a498c672", "src": "db2@1.60.1.70009"}
-{"id": 1215744, "field": "name", "en": "Blinding Admiration", "hash": "727695d69275dbea", "src": "db2@1.60.1.70009"}
-{"id": 1215744, "field": "aura", "en": "Blinded.", "hash": "c84f797b686e7f61", "src": "db2@1.60.1.70009"}
-{"id": 1215745, "field": "name", "en": "Blinding Admiration", "hash": "727695d69275dbea", "src": "db2@1.60.1.70009"}
-{"id": 1215752, "field": "name", "en": "Noxious Poison", "hash": "0ef8af4f04a374c9", "src": "db2@1.60.1.70009"}
-{"id": 1215752, "field": "aura", "en": "Deals $s1 nature damage every $t1 sec.\r\nCannot cast spells.", "hash": "2bcd171f414562ea", "src": "db2@1.60.1.70009"}
-{"id": 1215753, "field": "name", "en": "Wyvern Sting", "hash": "a74a3e40ca126224", "src": "db2@1.60.1.70009"}
-{"id": 1215753, "field": "description", "en": "A stinging shot that puts the target to sleep for $d.  Any damage will cancel the effect. ", "hash": "22792fa026f6a990", "src": "db2@1.60.1.70009"}
-{"id": 1215753, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70009"}
-{"id": 1215755, "field": "name", "en": "Frenzy", "hash": "a4ed88dc0ed0da9b", "src": "db2@1.60.1.70009"}
-{"id": 1215755, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70009"}
-{"id": 1215756, "field": "name", "en": "[DNT] Frenzy Ramp", "hash": "66d8ccde31b95418", "src": "db2@1.60.1.70009"}
-{"id": 1215756, "field": "aura", "en": "Increased Nature damage.", "hash": "c581423475135056", "src": "db2@1.60.1.70009"}
-{"id": 1215757, "field": "name", "en": "Acid Spit", "hash": "af621684f98496a5", "src": "db2@1.60.1.70009"}
-{"id": 1215757, "field": "description", "en": "Inflicts Nature damage to an enemy every $t1 sec. for $d.", "hash": "05ece5991a43ff48", "src": "db2@1.60.1.70009"}
-{"id": 1215757, "field": "aura", "en": "Deals $s1 nature damage every $t1 sec.", "hash": "4c9a49917eef7363", "src": "db2@1.60.1.70009"}
-{"id": 1215779, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70009"}
-{"id": 1215781, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70009"}
-{"id": 1215866, "field": "name", "en": "Enter Hyjal", "hash": "f6dd9c86348fc55c", "src": "db2@1.60.1.70009"}
-{"id": 1215866, "field": "description", "en": "Pass through the druidic wards to enter Mount Hyjal.", "hash": "f9ad16b6012fdc61", "src": "db2@1.60.1.70009"}
-{"id": 1215867, "field": "name", "en": "Exit Hyjal", "hash": "781fb73cac9d3131", "src": "db2@1.60.1.70009"}
-{"id": 1215867, "field": "description", "en": "Pass through the druidic wards to enter Mount Hyjal.", "hash": "f9ad16b6012fdc61", "src": "db2@1.60.1.70009"}
-{"id": 1215885, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70009"}
-{"id": 1215885, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70009"}
-{"id": 1215888, "field": "name", "en": "Poison Bolt", "hash": "e91d12bd52a12ff6", "src": "db2@1.60.1.70009"}
-{"id": 1215888, "field": "description", "en": "Shoots poison at an enemy, inflicting Nature damage, then additional damage every $t2 sec. for $d.", "hash": "2c66ca3a5e6ed22c", "src": "db2@1.60.1.70009"}
-{"id": 1215888, "field": "aura", "en": "Deals $s2 nature damage every $t2 sec.", "hash": "47e40c07891c7912", "src": "db2@1.60.1.70009"}
-{"id": 1215969, "field": "name", "en": "Capture Essence", "hash": "9362b36da4646b47", "src": "db2@1.60.1.70009"}
-{"id": 1215969, "field": "description", "en": "Collect the essence of a Hederine demon from Darkwhisper Gorge.", "hash": "f3749f3be03b0b48", "src": "db2@1.60.1.70009"}
-{"id": 1215978, "field": "name", "en": "Enter Hyjal", "hash": "f6dd9c86348fc55c", "src": "db2@1.60.1.70009"}
-{"id": 1215978, "field": "description", "en": "Pass through the druidic wards to enter Mount Hyjal.", "hash": "f9ad16b6012fdc61", "src": "db2@1.60.1.70009"}
-{"id": 1215980, "field": "name", "en": "Exit Hyjal", "hash": "781fb73cac9d3131", "src": "db2@1.60.1.70009"}
-{"id": 1215980, "field": "description", "en": "Pass through the druidic wards to enter Mount Hyjal.", "hash": "f9ad16b6012fdc61", "src": "db2@1.60.1.70009"}
-{"id": 1215983, "field": "name", "en": "Demonic Essence Captured", "hash": "5a6f0d6e8daf6fec", "src": "db2@1.60.1.70009"}
+{"id": 1215061, "field": "name", "en": "[DNT] Curse of Decay", "hash": "90d37aea5748de8a", "src": "db2@1.60.1.70124"}
+{"id": 1215091, "field": "name", "en": "Summon Poison Cloud", "hash": "8d583ce0a96b2ef0", "src": "db2@1.60.1.70124"}
+{"id": 1215091, "field": "description", "en": "Inflicts $s1 Nature damage to nearby enemies every $t1 sec. for $d.", "hash": "a5f95a74ea4b7d7a", "src": "db2@1.60.1.70124"}
+{"id": 1215091, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70124"}
+{"id": 1215198, "field": "name", "en": "Hybrid Healing/Spell Dam 76/26", "hash": "26185c940d6e3b63", "src": "db2@1.60.1.70124"}
+{"id": 1215198, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70124"}
+{"id": 1215202, "field": "name", "en": "Noxious Burst", "hash": "670660d7a17a78b5", "src": "db2@1.60.1.70124"}
+{"id": 1215202, "field": "aura", "en": "Noxious pustules are erupting.", "hash": "ec703e9ef0fd5b22", "src": "db2@1.60.1.70124"}
+{"id": 1215329, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70124"}
+{"id": 1215329, "field": "description", "en": "Receive tokens for your service to the Blood God.", "hash": "f0c62931b6fe4a3a", "src": "db2@1.60.1.70124"}
+{"id": 1215358, "field": "name", "en": "Spiritual Protection", "hash": "5adde44f1810c364", "src": "db2@1.60.1.70124"}
+{"id": 1215358, "field": "description", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70124"}
+{"id": 1215358, "field": "aura", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70124"}
+{"id": 1215375, "field": "name", "en": "Spirit Shade Visual", "hash": "95d63584849a7e38", "src": "db2@1.60.1.70124"}
+{"id": 1215377, "field": "name", "en": "Acid Blast", "hash": "943d1d2038d3ed9b", "src": "db2@1.60.1.70124"}
+{"id": 1215377, "field": "description", "en": "Blasts the enemy with acid for $s1 Nature damage.", "hash": "1ce273c6bfb51f39", "src": "db2@1.60.1.70124"}
+{"id": 1215378, "field": "name", "en": "Blood-Caked Tiger", "hash": "6770d04f2cc3f9d2", "src": "db2@1.60.1.70124"}
+{"id": 1215378, "field": "description", "en": "Summons and dismisses a rideable Tiger.  This is a very fast mount.", "hash": "745feae340fcd5c7", "src": "db2@1.60.1.70124"}
+{"id": 1215378, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
+{"id": 1215380, "field": "name", "en": "Blood-Caked Raptor", "hash": "6c7cf68cad4b3bcf", "src": "db2@1.60.1.70124"}
+{"id": 1215380, "field": "description", "en": "Summons and dismisses a rideable Raptor.  This is a very fast mount.", "hash": "955b85b615b8bc06", "src": "db2@1.60.1.70124"}
+{"id": 1215380, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
+{"id": 1215404, "field": "name", "en": "Timeworn Pyromancy", "hash": "b65fd46b21b3fbf9", "src": "db2@1.60.1.70124"}
+{"id": 1215404, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.", "hash": "bd362e35d4275fc7", "src": "db2@1.60.1.70124"}
+{"id": 1215405, "field": "name", "en": "Timeworn Pyromancy", "hash": "b65fd46b21b3fbf9", "src": "db2@1.60.1.70124"}
+{"id": 1215420, "field": "name", "en": "(DNT) Poison Cloud Pool", "hash": "c59829e5a7c63755", "src": "db2@1.60.1.70124"}
+{"id": 1215421, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70124"}
+{"id": 1215421, "field": "description", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70124"}
+{"id": 1215421, "field": "aura", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70124"}
+{"id": 1215425, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215427, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215428, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215429, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215430, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215431, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215432, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215433, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215434, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215435, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215436, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215437, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215438, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215439, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215440, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215441, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215442, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215443, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215444, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215445, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215446, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215447, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215448, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215449, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215450, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215451, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215452, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215453, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215454, "field": "name", "en": "[DNT] Gong of Fortune Activate", "hash": "7a41dac70e7c9695", "src": "db2@1.60.1.70124"}
+{"id": 1215455, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
+{"id": 1215456, "field": "name", "en": "Dummy Test Visual Proc Driver [DNT]", "hash": "59dcaf7761f66cf0", "src": "db2@1.60.1.70124"}
+{"id": 1215457, "field": "name", "en": "Void-Touched Visual [DNT]", "hash": "787d453d7c701765", "src": "db2@1.60.1.70124"}
+{"id": 1215491, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70124"}
+{"id": 1215498, "field": "name", "en": "Caustic Emanations", "hash": "56457f1090ddb31d", "src": "db2@1.60.1.70124"}
+{"id": 1215507, "field": "name", "en": "Thick Obsidian Breastplate", "hash": "2493dfb9ceb9d43a", "src": "db2@1.60.1.70124"}
+{"id": 1215508, "field": "name", "en": "Obsidian Armor", "hash": "5a4a90a03a15d548", "src": "db2@1.60.1.70124"}
+{"id": 1215508, "field": "description", "en": "When struck by a non-periodic damage spell you have a $h% chance of getting a $1215509d spell shield that absorbs $1215509s1 of that school of damage.", "hash": "f2962962de94b085", "src": "db2@1.60.1.70124"}
+{"id": 1215509, "field": "name", "en": "Fire Resistance", "hash": "b61e89e5e9c15047", "src": "db2@1.60.1.70124"}
+{"id": 1215509, "field": "description", "en": "Absorbs $s1 fire damage.  Lasts $d.", "hash": "8a1157b973768b7a", "src": "db2@1.60.1.70124"}
+{"id": 1215509, "field": "aura", "en": "Absorbs $s1 fire damage.", "hash": "f97f8e4ffcedf171", "src": "db2@1.60.1.70124"}
+{"id": 1215510, "field": "name", "en": "Frost Resistance", "hash": "fa580288c5627849", "src": "db2@1.60.1.70124"}
+{"id": 1215510, "field": "description", "en": "Absorbs $s1 frost damage.  Lasts $d.", "hash": "08003478858e4da4", "src": "db2@1.60.1.70124"}
+{"id": 1215510, "field": "aura", "en": "Absorbs $s1 frost damage.", "hash": "a3f74587558f995b", "src": "db2@1.60.1.70124"}
+{"id": 1215511, "field": "name", "en": "Nature Resistance", "hash": "1cfc8a7066590e09", "src": "db2@1.60.1.70124"}
+{"id": 1215511, "field": "description", "en": "Absorbs $s1 nature damage.  Lasts $d.", "hash": "6175292784f0482e", "src": "db2@1.60.1.70124"}
+{"id": 1215511, "field": "aura", "en": "Absorbs $s1 nature damage.", "hash": "3df0dfc85a4938c7", "src": "db2@1.60.1.70124"}
+{"id": 1215512, "field": "name", "en": "Shadow Resistance", "hash": "5a9cbecf3c70058d", "src": "db2@1.60.1.70124"}
+{"id": 1215512, "field": "description", "en": "Absorbs $s1 shadow damage.  Lasts $d.", "hash": "8d4773b5113b390c", "src": "db2@1.60.1.70124"}
+{"id": 1215512, "field": "aura", "en": "Absorbs $s1 shadow damage.", "hash": "5da25d43b8754039", "src": "db2@1.60.1.70124"}
+{"id": 1215513, "field": "name", "en": "Holy Resistance", "hash": "cc7d6787a440d892", "src": "db2@1.60.1.70124"}
+{"id": 1215513, "field": "description", "en": "Absorbs $s1 holy damage.  Lasts $d.", "hash": "be170d363411450f", "src": "db2@1.60.1.70124"}
+{"id": 1215513, "field": "aura", "en": "Absorbs $s1 holy damage.", "hash": "9e5f4a4c83b369de", "src": "db2@1.60.1.70124"}
+{"id": 1215514, "field": "name", "en": "Arcane Resistance", "hash": "3ce7bd3182cba324", "src": "db2@1.60.1.70124"}
+{"id": 1215514, "field": "description", "en": "Absorbs $s1 arcane damage.  Lasts $d.", "hash": "0a5d73b93be855a5", "src": "db2@1.60.1.70124"}
+{"id": 1215514, "field": "aura", "en": "Absorbs $s1 arcane damage.", "hash": "bcb120304f28d456", "src": "db2@1.60.1.70124"}
+{"id": 1215516, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70124"}
+{"id": 1215554, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70124"}
+{"id": 1215555, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70124"}
+{"id": 1215557, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70124"}
+{"id": 1215558, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70124"}
+{"id": 1215559, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70124"}
+{"id": 1215578, "field": "name", "en": "[DNT] Player Death", "hash": "27632e190a38e9aa", "src": "db2@1.60.1.70124"}
+{"id": 1215615, "field": "name", "en": "Combine Goo-Covered Gauntlet", "hash": "1a73572579492df6", "src": "db2@1.60.1.70124"}
+{"id": 1215615, "field": "description", "en": "Combine the Demonic Gauntlet with the Acidic Goo.", "hash": "4274156dafc1e00f", "src": "db2@1.60.1.70124"}
+{"id": 1215625, "field": "name", "en": "Spell Warding", "hash": "df818e67d2c7b98b", "src": "db2@1.60.1.70124"}
+{"id": 1215625, "field": "description", "en": "Reduces all spell damage taken by $s1%.", "hash": "9a4d57c2f76ecaf4", "src": "db2@1.60.1.70124"}
+{"id": 1215635, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70124"}
+{"id": 1215639, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70124"}
+{"id": 1215685, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70124"}
+{"id": 1215696, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70124"}
+{"id": 1215697, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70124"}
+{"id": 1215699, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70124"}
+{"id": 1215700, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70124"}
+{"id": 1215701, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70124"}
+{"id": 1215736, "field": "name", "en": "Viscidus Frost Weakness", "hash": "27787f97e0e0af73", "src": "db2@1.60.1.70124"}
+{"id": 1215737, "field": "name", "en": "Viscidus Freeze", "hash": "d7e362425c9a0cef", "src": "db2@1.60.1.70124"}
+{"id": 1215739, "field": "name", "en": "Summon Hook Tentacle", "hash": "634b2c087264ed55", "src": "db2@1.60.1.70124"}
+{"id": 1215740, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70124"}
+{"id": 1215740, "field": "description", "en": "Inflicts Shadow damage to an enemy and reduces its movement speed for $d.", "hash": "b24a12b10f7654d4", "src": "db2@1.60.1.70124"}
+{"id": 1215740, "field": "aura", "en": "$s1 Shadow damage inflicted every second for $d.\r\nMovement speed reduced to $s2% of normal.", "hash": "bc2e574c315fae75", "src": "db2@1.60.1.70124"}
+{"id": 1215742, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70124"}
+{"id": 1215743, "field": "name", "en": "[DNT] Blinding Admiration", "hash": "21009624a498c672", "src": "db2@1.60.1.70124"}
+{"id": 1215744, "field": "name", "en": "Blinding Admiration", "hash": "727695d69275dbea", "src": "db2@1.60.1.70124"}
+{"id": 1215744, "field": "aura", "en": "Blinded.", "hash": "c84f797b686e7f61", "src": "db2@1.60.1.70124"}
+{"id": 1215745, "field": "name", "en": "Blinding Admiration", "hash": "727695d69275dbea", "src": "db2@1.60.1.70124"}
+{"id": 1215752, "field": "name", "en": "Noxious Poison", "hash": "0ef8af4f04a374c9", "src": "db2@1.60.1.70124"}
+{"id": 1215752, "field": "aura", "en": "Deals $s1 nature damage every $t1 sec.\r\nCannot cast spells.", "hash": "2bcd171f414562ea", "src": "db2@1.60.1.70124"}
+{"id": 1215753, "field": "name", "en": "Wyvern Sting", "hash": "a74a3e40ca126224", "src": "db2@1.60.1.70124"}
+{"id": 1215753, "field": "description", "en": "A stinging shot that puts the target to sleep for $d.  Any damage will cancel the effect. ", "hash": "22792fa026f6a990", "src": "db2@1.60.1.70124"}
+{"id": 1215753, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70124"}
+{"id": 1215755, "field": "name", "en": "Frenzy", "hash": "a4ed88dc0ed0da9b", "src": "db2@1.60.1.70124"}
+{"id": 1215755, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70124"}
+{"id": 1215756, "field": "name", "en": "[DNT] Frenzy Ramp", "hash": "66d8ccde31b95418", "src": "db2@1.60.1.70124"}
+{"id": 1215756, "field": "aura", "en": "Increased Nature damage.", "hash": "c581423475135056", "src": "db2@1.60.1.70124"}
+{"id": 1215757, "field": "name", "en": "Acid Spit", "hash": "af621684f98496a5", "src": "db2@1.60.1.70124"}
+{"id": 1215757, "field": "description", "en": "Inflicts Nature damage to an enemy every $t1 sec. for $d.", "hash": "05ece5991a43ff48", "src": "db2@1.60.1.70124"}
+{"id": 1215757, "field": "aura", "en": "Deals $s1 nature damage every $t1 sec.", "hash": "4c9a49917eef7363", "src": "db2@1.60.1.70124"}
+{"id": 1215779, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70124"}
+{"id": 1215781, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70124"}
+{"id": 1215866, "field": "name", "en": "Enter Hyjal", "hash": "f6dd9c86348fc55c", "src": "db2@1.60.1.70124"}
+{"id": 1215866, "field": "description", "en": "Pass through the druidic wards to enter Mount Hyjal.", "hash": "f9ad16b6012fdc61", "src": "db2@1.60.1.70124"}
+{"id": 1215867, "field": "name", "en": "Exit Hyjal", "hash": "781fb73cac9d3131", "src": "db2@1.60.1.70124"}
+{"id": 1215867, "field": "description", "en": "Pass through the druidic wards to enter Mount Hyjal.", "hash": "f9ad16b6012fdc61", "src": "db2@1.60.1.70124"}
+{"id": 1215885, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70124"}
+{"id": 1215885, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70124"}
+{"id": 1215888, "field": "name", "en": "Poison Bolt", "hash": "e91d12bd52a12ff6", "src": "db2@1.60.1.70124"}
+{"id": 1215888, "field": "description", "en": "Shoots poison at an enemy, inflicting Nature damage, then additional damage every $t2 sec. for $d.", "hash": "2c66ca3a5e6ed22c", "src": "db2@1.60.1.70124"}
+{"id": 1215888, "field": "aura", "en": "Deals $s2 nature damage every $t2 sec.", "hash": "47e40c07891c7912", "src": "db2@1.60.1.70124"}
+{"id": 1215969, "field": "name", "en": "Capture Essence", "hash": "9362b36da4646b47", "src": "db2@1.60.1.70124"}
+{"id": 1215969, "field": "description", "en": "Collect the essence of a Hederine demon from Darkwhisper Gorge.", "hash": "f3749f3be03b0b48", "src": "db2@1.60.1.70124"}
+{"id": 1215978, "field": "name", "en": "Enter Hyjal", "hash": "f6dd9c86348fc55c", "src": "db2@1.60.1.70124"}
+{"id": 1215978, "field": "description", "en": "Pass through the druidic wards to enter Mount Hyjal.", "hash": "f9ad16b6012fdc61", "src": "db2@1.60.1.70124"}
+{"id": 1215980, "field": "name", "en": "Exit Hyjal", "hash": "781fb73cac9d3131", "src": "db2@1.60.1.70124"}
+{"id": 1215980, "field": "description", "en": "Pass through the druidic wards to enter Mount Hyjal.", "hash": "f9ad16b6012fdc61", "src": "db2@1.60.1.70124"}
+{"id": 1215983, "field": "name", "en": "Demonic Essence Captured", "hash": "5a6f0d6e8daf6fec", "src": "db2@1.60.1.70124"}

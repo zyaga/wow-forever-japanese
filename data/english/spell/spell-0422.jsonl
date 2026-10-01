@@ -1,43 +1,43 @@
-{"id": 422171, "field": "name", "en": "Feed Treat", "hash": "ba7784bf4fb459f8", "src": "db2@1.60.1.70009"}
-{"id": 422171, "field": "description", "en": "Feed treat to target.", "hash": "553028f972ff5286", "src": "db2@1.60.1.70009"}
-{"id": 422268, "field": "name", "en": "Young Reef Crawler- Give Rune", "hash": "d74a78b575c03d3d", "src": "db2@1.60.1.70009"}
-{"id": 422269, "field": "name", "en": "Young Reef Crawler- Give Rune", "hash": "d74a78b575c03d3d", "src": "db2@1.60.1.70009"}
-{"id": 422350, "field": "name", "en": "Westfall Farmland", "hash": "730985c228d93a19", "src": "db2@1.60.1.70009"}
-{"id": 422387, "field": "name", "en": "Plant Pumpkin Seeds", "hash": "f05f36d23295a69d", "src": "db2@1.60.1.70009"}
-{"id": 422387, "field": "description", "en": "Plant Pumpkin Seeds", "hash": "f05f36d23295a69d", "src": "db2@1.60.1.70009"}
-{"id": 422390, "field": "name", "en": "Idol of the Deep - Summon Horror", "hash": "a2b53a3f37fab581", "src": "db2@1.60.1.70009"}
-{"id": 422397, "field": "name", "en": "Gnarled Harpoon", "hash": "cbc91ac3d42b0eae", "src": "db2@1.60.1.70009"}
-{"id": 422397, "field": "description", "en": "Throw harpoon at target (40 yd. range)", "hash": "7b4e67042e5304bb", "src": "db2@1.60.1.70009"}
-{"id": 422397, "field": "aura", "en": "Max health and damage greatly reduced.", "hash": "09814f56d4d7752b", "src": "db2@1.60.1.70009"}
-{"id": 422410, "field": "name", "en": "Malfunctioning", "hash": "5e957f821685f133", "src": "db2@1.60.1.70009"}
-{"id": 422410, "field": "aura", "en": "Needs a new engine", "hash": "43e3dbaea37ab0b9", "src": "db2@1.60.1.70009"}
-{"id": 422477, "field": "name", "en": "Create Prototype Engine", "hash": "1233240c21e4e1e9", "src": "db2@1.60.1.70009"}
-{"id": 422477, "field": "description", "en": "Combine spare reaper parts with an elemental core to create a prototype engine.", "hash": "9e0358e6015a406d", "src": "db2@1.60.1.70009"}
-{"id": 422478, "field": "name", "en": "Install Engine", "hash": "77a91c21a6117ab8", "src": "db2@1.60.1.70009"}
-{"id": 422478, "field": "description", "en": "Install into a harvest reaper prototype.", "hash": "8cfaa23caf66a688", "src": "db2@1.60.1.70009"}
-{"id": 422487, "field": "name", "en": "Coyote Den - Summon Coyote", "hash": "24c2df4410363d4b", "src": "db2@1.60.1.70009"}
-{"id": 422488, "field": "name", "en": "Place Bait", "hash": "4725dee5be1ab96a", "src": "db2@1.60.1.70009"}
-{"id": 422488, "field": "description", "en": "Place as bait near a coyote dwelling", "hash": "80f8c7e82c92508d", "src": "db2@1.60.1.70009"}
-{"id": 422498, "field": "name", "en": "Sun's Blessing", "hash": "c504ec1416022e24", "src": "db2@1.60.1.70009"}
-{"id": 422498, "field": "description", "en": "Chase the fading light!", "hash": "a364a2ec7625004b", "src": "db2@1.60.1.70009"}
-{"id": 422498, "field": "aura", "en": "Chase the fading light!", "hash": "a364a2ec7625004b", "src": "db2@1.60.1.70009"}
-{"id": 422549, "field": "name", "en": "Back to Work!", "hash": "e9587eae394f33fa", "src": "db2@1.60.1.70009"}
-{"id": 422549, "field": "aura", "en": "Building unholy energy to return to life...", "hash": "785bfee710b3c793", "src": "db2@1.60.1.70009"}
-{"id": 422563, "field": "name", "en": "Back to Work Timeout", "hash": "79f79e0ff81cd487", "src": "db2@1.60.1.70009"}
-{"id": 422598, "field": "name", "en": "Escape Plan", "hash": "2f52ac28cfbaf0a8", "src": "db2@1.60.1.70009"}
-{"id": 422598, "field": "aura", "en": "Will flee if they sense danger", "hash": "2c44318da3fdf720", "src": "db2@1.60.1.70009"}
-{"id": 422600, "field": "name", "en": "Escape Plan Melee Effect", "hash": "db1c202aeaf38386", "src": "db2@1.60.1.70009"}
-{"id": 422603, "field": "name", "en": "Smoke Bomb", "hash": "4cacc7cfcc2932b8", "src": "db2@1.60.1.70009"}
-{"id": 422609, "field": "name", "en": "Attempt to Flee", "hash": "5e7aa6f8490b7f12", "src": "db2@1.60.1.70009"}
-{"id": 422612, "field": "name", "en": "Defias Scout - Flee - Marked", "hash": "0299926db293c399", "src": "db2@1.60.1.70009"}
-{"id": 422613, "field": "name", "en": "Defias Scout - Flee", "hash": "c342dee426ee0516", "src": "db2@1.60.1.70009"}
-{"id": 422621, "field": "name", "en": "Preparation", "hash": "470bc629db3d91ca", "src": "db2@1.60.1.70009"}
-{"id": 422621, "field": "description", "en": "Reduces the power cost of spells and abilities by $s1%.", "hash": "1f210876b829d6d6", "src": "db2@1.60.1.70009"}
-{"id": 422621, "field": "aura", "en": "Reduces the power cost of spells and abilities by $s1%.", "hash": "1f210876b829d6d6", "src": "db2@1.60.1.70009"}
-{"id": 422746, "field": "name", "en": "Gillsbane", "hash": "e3b9cf8d10c6d8a9", "src": "db2@1.60.1.70009"}
-{"id": 422746, "field": "aura", "en": "Chance to harvest slain Murloc souls", "hash": "1eb9c3c09580414d", "src": "db2@1.60.1.70009"}
-{"id": 422978, "field": "name", "en": "Coward!", "hash": "8f1ecccdb9191f91", "src": "db2@1.60.1.70009"}
-{"id": 422978, "field": "aura", "en": "Decreases all attributes by $s1%, all damage caused by $s2%, armor and resistance by $s3%.", "hash": "894238dacc5bedc0", "src": "db2@1.60.1.70009"}
-{"id": 422996, "field": "name", "en": "Ancient Corrosive Poison", "hash": "40e886dbc3396bc4", "src": "db2@1.60.1.70009"}
-{"id": 422996, "field": "description", "en": "Splash the target with ancient corrosive poison that deals $m1 Nature damage every 3 sec and lowers the target's armor by $m2 for $d.", "hash": "79ecb000f91f2058", "src": "db2@1.60.1.70009"}
-{"id": 422996, "field": "aura", "en": "Lowered armor and periodic Nature damage.", "hash": "8a10a16c57dfff92", "src": "db2@1.60.1.70009"}
+{"id": 422171, "field": "name", "en": "Feed Treat", "hash": "ba7784bf4fb459f8", "src": "db2@1.60.1.70124"}
+{"id": 422171, "field": "description", "en": "Feed treat to target.", "hash": "553028f972ff5286", "src": "db2@1.60.1.70124"}
+{"id": 422268, "field": "name", "en": "Young Reef Crawler- Give Rune", "hash": "d74a78b575c03d3d", "src": "db2@1.60.1.70124"}
+{"id": 422269, "field": "name", "en": "Young Reef Crawler- Give Rune", "hash": "d74a78b575c03d3d", "src": "db2@1.60.1.70124"}
+{"id": 422350, "field": "name", "en": "Westfall Farmland", "hash": "730985c228d93a19", "src": "db2@1.60.1.70124"}
+{"id": 422387, "field": "name", "en": "Plant Pumpkin Seeds", "hash": "f05f36d23295a69d", "src": "db2@1.60.1.70124"}
+{"id": 422387, "field": "description", "en": "Plant Pumpkin Seeds", "hash": "f05f36d23295a69d", "src": "db2@1.60.1.70124"}
+{"id": 422390, "field": "name", "en": "Idol of the Deep - Summon Horror", "hash": "a2b53a3f37fab581", "src": "db2@1.60.1.70124"}
+{"id": 422397, "field": "name", "en": "Gnarled Harpoon", "hash": "cbc91ac3d42b0eae", "src": "db2@1.60.1.70124"}
+{"id": 422397, "field": "description", "en": "Throw harpoon at target (40 yd. range)", "hash": "7b4e67042e5304bb", "src": "db2@1.60.1.70124"}
+{"id": 422397, "field": "aura", "en": "Max health and damage greatly reduced.", "hash": "09814f56d4d7752b", "src": "db2@1.60.1.70124"}
+{"id": 422410, "field": "name", "en": "Malfunctioning", "hash": "5e957f821685f133", "src": "db2@1.60.1.70124"}
+{"id": 422410, "field": "aura", "en": "Needs a new engine", "hash": "43e3dbaea37ab0b9", "src": "db2@1.60.1.70124"}
+{"id": 422477, "field": "name", "en": "Create Prototype Engine", "hash": "1233240c21e4e1e9", "src": "db2@1.60.1.70124"}
+{"id": 422477, "field": "description", "en": "Combine spare reaper parts with an elemental core to create a prototype engine.", "hash": "9e0358e6015a406d", "src": "db2@1.60.1.70124"}
+{"id": 422478, "field": "name", "en": "Install Engine", "hash": "77a91c21a6117ab8", "src": "db2@1.60.1.70124"}
+{"id": 422478, "field": "description", "en": "Install into a harvest reaper prototype.", "hash": "8cfaa23caf66a688", "src": "db2@1.60.1.70124"}
+{"id": 422487, "field": "name", "en": "Coyote Den - Summon Coyote", "hash": "24c2df4410363d4b", "src": "db2@1.60.1.70124"}
+{"id": 422488, "field": "name", "en": "Place Bait", "hash": "4725dee5be1ab96a", "src": "db2@1.60.1.70124"}
+{"id": 422488, "field": "description", "en": "Place as bait near a coyote dwelling", "hash": "80f8c7e82c92508d", "src": "db2@1.60.1.70124"}
+{"id": 422498, "field": "name", "en": "Sun's Blessing", "hash": "c504ec1416022e24", "src": "db2@1.60.1.70124"}
+{"id": 422498, "field": "description", "en": "Chase the fading light!", "hash": "a364a2ec7625004b", "src": "db2@1.60.1.70124"}
+{"id": 422498, "field": "aura", "en": "Chase the fading light!", "hash": "a364a2ec7625004b", "src": "db2@1.60.1.70124"}
+{"id": 422549, "field": "name", "en": "Back to Work!", "hash": "e9587eae394f33fa", "src": "db2@1.60.1.70124"}
+{"id": 422549, "field": "aura", "en": "Building unholy energy to return to life...", "hash": "785bfee710b3c793", "src": "db2@1.60.1.70124"}
+{"id": 422563, "field": "name", "en": "Back to Work Timeout", "hash": "79f79e0ff81cd487", "src": "db2@1.60.1.70124"}
+{"id": 422598, "field": "name", "en": "Escape Plan", "hash": "2f52ac28cfbaf0a8", "src": "db2@1.60.1.70124"}
+{"id": 422598, "field": "aura", "en": "Will flee if they sense danger", "hash": "2c44318da3fdf720", "src": "db2@1.60.1.70124"}
+{"id": 422600, "field": "name", "en": "Escape Plan Melee Effect", "hash": "db1c202aeaf38386", "src": "db2@1.60.1.70124"}
+{"id": 422603, "field": "name", "en": "Smoke Bomb", "hash": "4cacc7cfcc2932b8", "src": "db2@1.60.1.70124"}
+{"id": 422609, "field": "name", "en": "Attempt to Flee", "hash": "5e7aa6f8490b7f12", "src": "db2@1.60.1.70124"}
+{"id": 422612, "field": "name", "en": "Defias Scout - Flee - Marked", "hash": "0299926db293c399", "src": "db2@1.60.1.70124"}
+{"id": 422613, "field": "name", "en": "Defias Scout - Flee", "hash": "c342dee426ee0516", "src": "db2@1.60.1.70124"}
+{"id": 422621, "field": "name", "en": "Preparation", "hash": "470bc629db3d91ca", "src": "db2@1.60.1.70124"}
+{"id": 422621, "field": "description", "en": "Reduces the power cost of spells and abilities by $s1%.", "hash": "1f210876b829d6d6", "src": "db2@1.60.1.70124"}
+{"id": 422621, "field": "aura", "en": "Reduces the power cost of spells and abilities by $s1%.", "hash": "1f210876b829d6d6", "src": "db2@1.60.1.70124"}
+{"id": 422746, "field": "name", "en": "Gillsbane", "hash": "e3b9cf8d10c6d8a9", "src": "db2@1.60.1.70124"}
+{"id": 422746, "field": "aura", "en": "Chance to harvest slain Murloc souls", "hash": "1eb9c3c09580414d", "src": "db2@1.60.1.70124"}
+{"id": 422978, "field": "name", "en": "Coward!", "hash": "8f1ecccdb9191f91", "src": "db2@1.60.1.70124"}
+{"id": 422978, "field": "aura", "en": "Decreases all attributes by $s1%, all damage caused by $s2%, armor and resistance by $s3%.", "hash": "894238dacc5bedc0", "src": "db2@1.60.1.70124"}
+{"id": 422996, "field": "name", "en": "Ancient Corrosive Poison", "hash": "40e886dbc3396bc4", "src": "db2@1.60.1.70124"}
+{"id": 422996, "field": "description", "en": "Splash the target with ancient corrosive poison that deals $m1 Nature damage every 3 sec and lowers the target's armor by $m2 for $d.", "hash": "79ecb000f91f2058", "src": "db2@1.60.1.70124"}
+{"id": 422996, "field": "aura", "en": "Lowered armor and periodic Nature damage.", "hash": "8a10a16c57dfff92", "src": "db2@1.60.1.70124"}

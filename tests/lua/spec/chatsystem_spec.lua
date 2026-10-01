@@ -50,7 +50,7 @@ local SYSTEM, SAY, LOOT, XP = 1, 2, 3, 4
 local clock = 0
 local function chatFrame()
   local frame = { history = {}, visibleLines = { Stub.fontString(""), Stub.fontString("") }, callbacks = {},
-    fontObject = { font = { path = "Fonts\\ARIALN.TTF", size = 14, flags = "" } } }
+    fontObject = Stub.fontObject("Fonts\\ARIALN.TTF", 14) }
   local function package(message, r, g, b, ...) -- PackageEntry: a new timestamp every time
     clock = clock + 1
     return { message = message, r = r, g = g, b = b, extra = { ... }, timestamp = clock }
@@ -252,6 +252,37 @@ describe("SYSTEM chat lines", function()
     assert.are.equal(WFJ.Font.PATH, ja.font.path)
     assert.are.equal(14, ja.font.size)
     assert.are.equal("Fonts\\ARIALN.TTF", en.font.path)
+  end)
+
+  it("in game: a row that showed our Japanese gets the chat font back for the English after it", function()
+    local f = _G.ChatFrame1
+    system(f, "Your party is full.")
+    f:Refresh()
+    local row = f.visibleLines[2] -- the newest row
+    assert.are.equal(WFJ.Font.PATH, row.font.path)
+    f:AddMessage("Ostara says: hey", 1, 1, 1, SAY) -- the Japanese moves up a row; English takes this one
+    f:Refresh()
+    assert.are.equal("Ostara says: hey", row:GetText())
+    assert.are.equal("Fonts\\ARIALN.TTF", row.font.path)
+    assert.are.equal(14, row.font.size)
+    assert.are.equal(WFJ.Font.PATH, f.visibleLines[1].font.path) -- the Japanese in its new row
+    f:AddMessage("Ostara says: again", 1, 1, 1, SAY)
+    f:Refresh()
+    for _, line in ipairs(f.visibleLines) do assert.are.equal("Fonts\\ARIALN.TTF", line.font.path) end
+  end)
+
+  it("in game: Alt gives the row the chat font back, release the bundled face at the chat size", function()
+    local f = _G.ChatFrame1
+    system(f, "Your party is full.")
+    f:Refresh()
+    local row = f.visibleLines[2]
+    row.font.size = 11 -- a size an earlier fit shrank it to
+    alt(WFJ, true)
+    assert.are.equal("Your party is full.", row:GetText())
+    assert.are.equal("Fonts\\ARIALN.TTF", row.font.path)
+    alt(WFJ, false)
+    assert.are.equal(WFJ.Font.PATH, row.font.path)
+    assert.are.equal(14, row.font.size) -- from the frame's font, not the row's leftover size
   end)
 
   it("in game: a Japanese line that takes an extra line is made smaller; a refused font is never retried",

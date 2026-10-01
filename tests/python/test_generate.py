@@ -211,16 +211,16 @@ def test_area_rows_ship_as_text_h1_status_in_their_own_shards_and_toc_slot(root,
 
 
 def test_the_committed_area_english_is_the_former_quest_area(root):
-    """The 217 quest-cache area lines live under data/english/area (field text, keyed by quest id);
+    """The 218 quest-cache area lines live under data/english/area (field text, keyed by quest id);
     no quest `area` line remains."""
     from wfj.core.hashing import key
     from wfj.core.normalize import normalize_v1
 
     english = Store(root / "data", english=True)
     area = english.load("area")
-    assert len(area) == 217 and len({ln["hash"] for ln in area}) == 202
+    assert len(area) == 218 and len({ln["hash"] for ln in area}) == 203
     assert {ln["field"] for ln in area} == {"text"}
-    assert {ln["src"] for ln in area} == {"wdb@1.15.9.69722", "wdb@1.60.1.70009"}
+    assert {ln["src"] for ln in area} == {"wdb@1.15.9.69722", "wdb@1.60.1.70124"}
     assert all(ln["hash"] == key(normalize_v1(ln["en"])) for ln in area)
     assert not [ln for ln in english.load("quest") if ln["field"] == "area"]
     titles = {ln["id"] for ln in english.load("quest") if ln["field"] == "title"}

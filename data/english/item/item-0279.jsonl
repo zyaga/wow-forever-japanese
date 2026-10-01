@@ -1,294 +1,294 @@
-{"id": 279020, "field": "name", "en": "Unstable Potion", "hash": "720ec7a27b39a5a3", "src": "db2@1.60.1.70009"}
-{"id": 279023, "field": "name", "en": "Inert Potion", "hash": "cd3e2c598060dec4", "src": "db2@1.60.1.70009"}
-{"id": 279023, "field": "description", "en": "This potion has become inert and is no longer useful for experimentation.", "hash": "443027d7ffeca27f", "src": "db2@1.60.1.70009"}
-{"id": 279024, "field": "name", "en": "Corrupted Chestguard of the Warden", "hash": "43cb62e0d4466c0c", "src": "db2@1.60.1.70009"}
-{"id": 279025, "field": "name", "en": "Corrupted Chestguard of the Sentinel", "hash": "bd5fd409ddd833d2", "src": "db2@1.60.1.70009"}
-{"id": 279026, "field": "name", "en": "Corrupted Chestguard of the Harbinger", "hash": "d7d07238f2fcd383", "src": "db2@1.60.1.70009"}
-{"id": 279028, "field": "name", "en": "Corrupted Pauldrons of the Warden", "hash": "f3e9740b133fd7ca", "src": "db2@1.60.1.70009"}
-{"id": 279029, "field": "name", "en": "Corrupted Pauldrons of the Sentinel", "hash": "cced962206428fbe", "src": "db2@1.60.1.70009"}
-{"id": 279030, "field": "name", "en": "Corrupted Pauldrons of the Harbinger", "hash": "cd5ac52b59976997", "src": "db2@1.60.1.70009"}
-{"id": 279031, "field": "name", "en": "Corrupted Helm of the Warden", "hash": "a1e73bf548eb8e37", "src": "db2@1.60.1.70009"}
-{"id": 279032, "field": "name", "en": "Corrupted Helm of the Sentinel", "hash": "562b6fff7c33a99b", "src": "db2@1.60.1.70009"}
-{"id": 279033, "field": "name", "en": "Corrupted Helm of the Harbinger", "hash": "0801401634a1e184", "src": "db2@1.60.1.70009"}
-{"id": 279034, "field": "name", "en": "Corrupted Gloves of the Warden", "hash": "fc8b2ac8c9b604a8", "src": "db2@1.60.1.70009"}
-{"id": 279035, "field": "name", "en": "Corrupted Gloves of the Sentinel", "hash": "6d708516c4422728", "src": "db2@1.60.1.70009"}
-{"id": 279036, "field": "name", "en": "Corrupted Gloves of the Harbinger", "hash": "f05b0b124a92e5fa", "src": "db2@1.60.1.70009"}
-{"id": 279037, "field": "name", "en": "Corrupted Leggings of the Warden", "hash": "729df6b5dcebb929", "src": "db2@1.60.1.70009"}
-{"id": 279038, "field": "name", "en": "Corrupted Leggings of the Sentinel", "hash": "7f7802d5b3056543", "src": "db2@1.60.1.70009"}
-{"id": 279039, "field": "name", "en": "Corrupted Leggings of the Harbinger", "hash": "2a306401c8b19c2f", "src": "db2@1.60.1.70009"}
-{"id": 279040, "field": "name", "en": "Corrupted Boots of the Warden", "hash": "5349b19699fbe22d", "src": "db2@1.60.1.70009"}
-{"id": 279041, "field": "name", "en": "Corrupted Boots of the Sentinel", "hash": "576a4eba2d2b0a73", "src": "db2@1.60.1.70009"}
-{"id": 279042, "field": "name", "en": "Corrupted Boots of the Harbinger", "hash": "ab2d39c7b2c78004", "src": "db2@1.60.1.70009"}
-{"id": 279045, "field": "name", "en": "Thundris' Letter", "hash": "c15da509f5b162b8", "src": "db2@1.60.1.70009"}
-{"id": 279046, "field": "name", "en": "Cracked Crab Pincer", "hash": "e99a4d3b7f2ef7da", "src": "db2@1.60.1.70009"}
-{"id": 279048, "field": "name", "en": "Alexston's Reply", "hash": "bcb3d94f45e0f662", "src": "db2@1.60.1.70009"}
-{"id": 279082, "field": "name", "en": "Gnarlpine Totem", "hash": "530b52d34408fc88", "src": "db2@1.60.1.70009"}
-{"id": 279171, "field": "name", "en": "Diplomatic Satchel", "hash": "8193592ba1488035", "src": "db2@1.60.1.70009"}
-{"id": 279173, "field": "name", "en": "Veteran Adventurer's Chestpiece", "hash": "6606691e58dc570f", "src": "db2@1.60.1.70009"}
-{"id": 279174, "field": "name", "en": "Veteran Adventurer's Belt", "hash": "4b9ab87ab794a1a3", "src": "db2@1.60.1.70009"}
-{"id": 279175, "field": "name", "en": "Veteran Adventurer's Legguards", "hash": "478fd560c80ba391", "src": "db2@1.60.1.70009"}
-{"id": 279176, "field": "name", "en": "Veteran Adventurer's Boots", "hash": "b18438c8eb2ea5e0", "src": "db2@1.60.1.70009"}
-{"id": 279177, "field": "name", "en": "Veteran Adventurer's Bracer", "hash": "096d7a47f7a9c3f2", "src": "db2@1.60.1.70009"}
-{"id": 279178, "field": "name", "en": "Veteran Adventurer's Gloves", "hash": "8b95e6a25cf7794d", "src": "db2@1.60.1.70009"}
-{"id": 279179, "field": "name", "en": "Veteran Adventurer's Cloak", "hash": "c2aafc8721deeb92", "src": "db2@1.60.1.70009"}
-{"id": 279180, "field": "name", "en": "Veteran Adventurer's Hood", "hash": "4c6b29ef2fb75efe", "src": "db2@1.60.1.70009"}
-{"id": 279181, "field": "name", "en": "Veteran Adventurer's Shoulderpads", "hash": "e83fa8c1f127baa9", "src": "db2@1.60.1.70009"}
-{"id": 279182, "field": "name", "en": "Ensemble: Veteran Adventurer's Outdoor Wear", "hash": "b35364e5827ad28f", "src": "db2@1.60.1.70009"}
-{"id": 279182, "field": "description", "en": "Collect the appearances of this armor set.", "hash": "3bcf52b26d5663c8", "src": "db2@1.60.1.70009"}
-{"id": 279186, "field": "name", "en": "Stormheart's Still-beating Heart", "hash": "afbf76b60e65887b", "src": "db2@1.60.1.70009"}
-{"id": 279215, "field": "name", "en": "Monster - Bow, Skyborne", "hash": "b4ca962f291309d6", "src": "db2@1.60.1.70009"}
-{"id": 279225, "field": "name", "en": "Vilebranch Totem", "hash": "75d9bdd12c8e5d7f", "src": "db2@1.60.1.70009"}
-{"id": 279229, "field": "name", "en": "Lost Gryphon Egg", "hash": "ffe672cad7651c23", "src": "db2@1.60.1.70009"}
-{"id": 279246, "field": "name", "en": "Torch of Light", "hash": "143304cedeb66de0", "src": "db2@1.60.1.70009"}
-{"id": 279247, "field": "name", "en": "Steadfast Libram", "hash": "fb9e883784416943", "src": "db2@1.60.1.70009"}
-{"id": 279247, "field": "description", "en": "Increases the Block Value of your shield by $1306749s1% while Holy Shield is active.", "hash": "7f7de8b36d9e5ca0", "src": "db2@1.60.1.70009"}
-{"id": 279248, "field": "name", "en": "Libram of Infusion", "hash": "f0e26833ca77867b", "src": "db2@1.60.1.70009"}
-{"id": 279248, "field": "description", "en": "Increases the critical strike chance of your Holy Shock spell by $s1%.", "hash": "cdc8341377540102", "src": "db2@1.60.1.70009"}
-{"id": 279249, "field": "name", "en": "Totem of Urgency", "hash": "af137ce0a7b8d5c9", "src": "db2@1.60.1.70009"}
-{"id": 279249, "field": "description", "en": "Increases the critical strike chance of your Lessing Healing Wave spell by $s1%.", "hash": "dde8381592198c61", "src": "db2@1.60.1.70009"}
-{"id": 279250, "field": "name", "en": "Idol of Swiftness", "hash": "cf608d942e1b5482", "src": "db2@1.60.1.70009"}
-{"id": 279250, "field": "description", "en": "Reduces the cooldown on your Swiftmend spell by ${$m1/-1000} sec.", "hash": "f88c9c20f2749071", "src": "db2@1.60.1.70009"}
-{"id": 279251, "field": "name", "en": "Idol of the Ursine Twins", "hash": "e92abfbfd31129de", "src": "db2@1.60.1.70009"}
-{"id": 279251, "field": "description", "en": "Your Lacerate hits have a $h% chance to reset the cooldown on Mangle (Bear).", "hash": "60414f0caf2269e5", "src": "db2@1.60.1.70009"}
-{"id": 279252, "field": "name", "en": "Elderwild Waistcord", "hash": "864d74b0f66a05c5", "src": "db2@1.60.1.70009"}
-{"id": 279253, "field": "name", "en": "Outlaw's Collar", "hash": "a06fcfab92df8d10", "src": "db2@1.60.1.70009"}
-{"id": 279254, "field": "name", "en": "Elderwild Pants", "hash": "93e5b6a820080b54", "src": "db2@1.60.1.70009"}
-{"id": 279255, "field": "name", "en": "Eternity Pauldrons", "hash": "4bc4936879f03177", "src": "db2@1.60.1.70009"}
-{"id": 279256, "field": "name", "en": "Tranquil Wristguards", "hash": "86b138f6a795eaf7", "src": "db2@1.60.1.70009"}
-{"id": 279257, "field": "name", "en": "Mourning Handguards", "hash": "088ae5ad9fe9f3a7", "src": "db2@1.60.1.70009"}
-{"id": 279258, "field": "name", "en": "Wild Leather Armor Kit", "hash": "02f244f345accd89", "src": "db2@1.60.1.70009"}
-{"id": 279258, "field": "description", "en": "Permanently increase the Defense Skill by $ec1 and the Stamina value by $ec2 of an item worn on the chest, legs, hands or feet. Only usable on items level $ecim and above.", "hash": "3d11942015a33d40", "src": "db2@1.60.1.70009"}
-{"id": 279259, "field": "name", "en": "Ironwood Blade", "hash": "ac2f95981369f826", "src": "db2@1.60.1.70009"}
-{"id": 279260, "field": "name", "en": "Forest Defender's Axe", "hash": "ded3d5c929a1101c", "src": "db2@1.60.1.70009"}
-{"id": 279261, "field": "name", "en": "Greenhammer", "hash": "0c8b749a4d65fc43", "src": "db2@1.60.1.70009"}
-{"id": 279262, "field": "name", "en": "Evergreen Shield", "hash": "3d50ce414cdb464b", "src": "db2@1.60.1.70009"}
-{"id": 279263, "field": "name", "en": "Depleted Thorium Sabatons", "hash": "4fdaca3556ef82db", "src": "db2@1.60.1.70009"}
-{"id": 279264, "field": "name", "en": "Heavy Thorium Gauntlets", "hash": "70e28dba244a1533", "src": "db2@1.60.1.70009"}
-{"id": 279265, "field": "name", "en": "Azerothium Legplates", "hash": "2b75c67e66df122a", "src": "db2@1.60.1.70009"}
-{"id": 279266, "field": "name", "en": "Robes of Fiery Devastation", "hash": "b6e845b6f5ba73c1", "src": "db2@1.60.1.70009"}
-{"id": 279267, "field": "name", "en": "Mana-infused Cord", "hash": "031cfbc9e6f6adf4", "src": "db2@1.60.1.70009"}
-{"id": 279268, "field": "name", "en": "Rime-encrusted Boots", "hash": "227dbcc01055d9ad", "src": "db2@1.60.1.70009"}
-{"id": 279269, "field": "name", "en": "Fel Cape", "hash": "4a24f006a5d8a51a", "src": "db2@1.60.1.70009"}
-{"id": 279270, "field": "name", "en": "Cloak of Earth and Sky", "hash": "f4c355912f530159", "src": "db2@1.60.1.70009"}
-{"id": 279271, "field": "name", "en": "Felblood Soul Bag", "hash": "171b0f567b092770", "src": "db2@1.60.1.70009"}
-{"id": 279272, "field": "name", "en": "SAF-T Ultra Precision Scope", "hash": "ea929bd8c0777f1e", "src": "db2@1.60.1.70009"}
-{"id": 279272, "field": "description", "en": "Attaches a permanent scope to a bow, gun, or crossbow that increases its critical strike chance by $s2%.", "hash": "945403b16fec7944", "src": "db2@1.60.1.70009"}
-{"id": 279273, "field": "name", "en": "Hyper Deluxe Sniper Rifle Mk XVII", "hash": "915ed10747164b50", "src": "db2@1.60.1.70009"}
-{"id": 279274, "field": "name", "en": "Gleaming Crescent Necklace", "hash": "b3215af63abe74d5", "src": "db2@1.60.1.70009"}
-{"id": 279275, "field": "name", "en": "Clouded Water Globe", "hash": "0b882b7313b8048f", "src": "db2@1.60.1.70009"}
-{"id": 279276, "field": "name", "en": "Mathystral Amulet Fragment", "hash": "335bfcd092365fe9", "src": "db2@1.60.1.70009"}
-{"id": 279276, "field": "description", "en": "Combine 20 Mathystral Amulet Fragments into a restored Mathystral Amulet.", "hash": "98c0977d97361d9c", "src": "db2@1.60.1.70009"}
-{"id": 279277, "field": "name", "en": "Mathystral Amulet", "hash": "e91574ce51552ec3", "src": "db2@1.60.1.70009"}
-{"id": 279277, "field": "description", "en": "Beckon forth the being guarding the Mathystral Ruins at a Fathom Stone.", "hash": "df237b9547e32bc5", "src": "db2@1.60.1.70009"}
-{"id": 279279, "field": "name", "en": "Peerless Eye", "hash": "6164fb77a349c958", "src": "db2@1.60.1.70009"}
-{"id": 279279, "field": "description", "en": "Its lens continues to twitch, as if searching for something.", "hash": "a163e0ac39a028d9", "src": "db2@1.60.1.70009"}
-{"id": 279291, "field": "name", "en": "Drained Vessel", "hash": "27c076c671fc80f9", "src": "db2@1.60.1.70009"}
-{"id": 279295, "field": "name", "en": "Formula: Torch of Light", "hash": "9c434d7853355b0c", "src": "db2@1.60.1.70009"}
-{"id": 279295, "field": "description", "en": "Teaches you how to craft Torch of Light.", "hash": "174dd635dbd94a09", "src": "db2@1.60.1.70009"}
-{"id": 279296, "field": "name", "en": "Formula: Steadfast Libram", "hash": "0736465bb1de1b50", "src": "db2@1.60.1.70009"}
-{"id": 279296, "field": "description", "en": "Teaches you how to craft Steadfast Libram.", "hash": "bc20c95c5b08e1a9", "src": "db2@1.60.1.70009"}
-{"id": 279297, "field": "name", "en": "Formula: Libram of Infusion", "hash": "0ffa437cdfd15a8d", "src": "db2@1.60.1.70009"}
-{"id": 279297, "field": "description", "en": "Teaches you how to craft Libram of Infusion.", "hash": "55becea56a43a766", "src": "db2@1.60.1.70009"}
-{"id": 279298, "field": "name", "en": "Formula: Totem of Urgency", "hash": "baab3affd55587d6", "src": "db2@1.60.1.70009"}
-{"id": 279298, "field": "description", "en": "Teaches you how to craft Totem of Urgency.", "hash": "90f9fb14fd23c879", "src": "db2@1.60.1.70009"}
-{"id": 279299, "field": "name", "en": "Formula: Idol of Swiftness", "hash": "be06d78f3e63c57d", "src": "db2@1.60.1.70009"}
-{"id": 279299, "field": "description", "en": "Teaches you how to craft Idol of Swiftness.", "hash": "0cf4f10832bbe411", "src": "db2@1.60.1.70009"}
-{"id": 279300, "field": "name", "en": "Formula: Idol of the Ursine Twins", "hash": "951e6eaabcad2ca1", "src": "db2@1.60.1.70009"}
-{"id": 279300, "field": "description", "en": "Teaches you how to craft Idol of the Ursine Twins.", "hash": "cf4499fcb120cde6", "src": "db2@1.60.1.70009"}
-{"id": 279301, "field": "name", "en": "Pattern: Elderwild Waistcord", "hash": "720a861e21adce46", "src": "db2@1.60.1.70009"}
-{"id": 279301, "field": "description", "en": "Teaches you how to craft Elderwild Waistcord.", "hash": "e10a212426c44537", "src": "db2@1.60.1.70009"}
-{"id": 279302, "field": "name", "en": "Pattern: Outlaw's Collar", "hash": "77bcd4b019cae375", "src": "db2@1.60.1.70009"}
-{"id": 279302, "field": "description", "en": "Teaches you how to craft Outlaw's Collar.", "hash": "f5fe9c65c07dddcd", "src": "db2@1.60.1.70009"}
-{"id": 279303, "field": "name", "en": "Pattern: Elderwild Pants", "hash": "6b32bbada6f361a8", "src": "db2@1.60.1.70009"}
-{"id": 279303, "field": "description", "en": "Teaches you how to craft Elderwild Pants.", "hash": "8b53cfbeb85e2074", "src": "db2@1.60.1.70009"}
-{"id": 279304, "field": "name", "en": "Pattern: Eternity Pauldrons", "hash": "7c77d9e33405d08c", "src": "db2@1.60.1.70009"}
-{"id": 279304, "field": "description", "en": "Teaches you how to craft Eternity Pauldrons.", "hash": "d77ae91b4005c86b", "src": "db2@1.60.1.70009"}
-{"id": 279305, "field": "name", "en": "Pattern: Tranquil Wristguards", "hash": "2871240ee36f00fa", "src": "db2@1.60.1.70009"}
-{"id": 279305, "field": "description", "en": "Teaches you how to craft Tranquil Wristguards.", "hash": "169b2d839cd7668c", "src": "db2@1.60.1.70009"}
-{"id": 279306, "field": "name", "en": "Pattern: Mourning Handguards", "hash": "f447f716cb2dbc17", "src": "db2@1.60.1.70009"}
-{"id": 279306, "field": "description", "en": "Teaches you how to craft Mourning Handguards.", "hash": "867af15b9e01ffb3", "src": "db2@1.60.1.70009"}
-{"id": 279307, "field": "name", "en": "Pattern: Wild Leather Armor Kit", "hash": "ed385560a0c81a92", "src": "db2@1.60.1.70009"}
-{"id": 279307, "field": "description", "en": "Teaches you how to craft Wild Leather Armor Kit.", "hash": "7dd584583ff2251e", "src": "db2@1.60.1.70009"}
-{"id": 279308, "field": "name", "en": "Plans: Ironwood Blade", "hash": "f3cb36bc3bdcf770", "src": "db2@1.60.1.70009"}
-{"id": 279308, "field": "description", "en": "Teaches you how to craft Ironwood Blade.", "hash": "dd8bef14eb629d2e", "src": "db2@1.60.1.70009"}
-{"id": 279309, "field": "name", "en": "Plans: Forest Defender's Axe", "hash": "d7b6d0864ce76e52", "src": "db2@1.60.1.70009"}
-{"id": 279309, "field": "description", "en": "Teaches you how to craft Forest Defender's Axe.", "hash": "79aa87fac1400580", "src": "db2@1.60.1.70009"}
-{"id": 279310, "field": "name", "en": "Plans: Greenhammer", "hash": "8c7ffe0a8322ec05", "src": "db2@1.60.1.70009"}
-{"id": 279310, "field": "description", "en": "Teaches you how to craft Greenhammer.", "hash": "9b2acf4acc406bfa", "src": "db2@1.60.1.70009"}
-{"id": 279311, "field": "name", "en": "Plans: Evergreen Shield", "hash": "7cf642451cb7dfcf", "src": "db2@1.60.1.70009"}
-{"id": 279311, "field": "description", "en": "Teaches you how to craft Evergreen Shield.", "hash": "5a5a9e954c07a86b", "src": "db2@1.60.1.70009"}
-{"id": 279312, "field": "name", "en": "Plans: Depleted Thorium Sabatons", "hash": "12972b04d657fe1c", "src": "db2@1.60.1.70009"}
-{"id": 279312, "field": "description", "en": "Teaches you how to craft Depleted Thorium Sabatons.", "hash": "8a5f44941180ff5a", "src": "db2@1.60.1.70009"}
-{"id": 279313, "field": "name", "en": "Plans: Heavy Thorium Gauntlets", "hash": "987ccc0e169bd045", "src": "db2@1.60.1.70009"}
-{"id": 279313, "field": "description", "en": "Teaches you how to craft Heavy Thorium Gauntlets.", "hash": "a5a120d3d8d23e82", "src": "db2@1.60.1.70009"}
-{"id": 279314, "field": "name", "en": "Plans: Azerothium Legplates", "hash": "2f506c8fea6fa05e", "src": "db2@1.60.1.70009"}
-{"id": 279314, "field": "description", "en": "Teaches you how to craft Azerothium Legplates.", "hash": "672f993097e17e60", "src": "db2@1.60.1.70009"}
-{"id": 279315, "field": "name", "en": "Pattern: Robes of Fiery Devastation", "hash": "401ba6d6b721039b", "src": "db2@1.60.1.70009"}
-{"id": 279315, "field": "description", "en": "Teaches you how to craft Robes of Fiery Devastation.", "hash": "55fe4c4ce848f3e5", "src": "db2@1.60.1.70009"}
-{"id": 279316, "field": "name", "en": "Pattern: Mana-infused Cord", "hash": "bd2242a9f6ebf43c", "src": "db2@1.60.1.70009"}
-{"id": 279316, "field": "description", "en": "Teaches you how to craft Mana-infused Cord.", "hash": "8661541a3b5bd698", "src": "db2@1.60.1.70009"}
-{"id": 279317, "field": "name", "en": "Pattern: Rime-encrusted Boots", "hash": "c43da7d34c2eefb0", "src": "db2@1.60.1.70009"}
-{"id": 279317, "field": "description", "en": "Teaches you how to craft Rime-encrusted Boots.", "hash": "d0429cddeb6efe4c", "src": "db2@1.60.1.70009"}
-{"id": 279318, "field": "name", "en": "Pattern: Fel Cape", "hash": "92b8add5bf4e6c1b", "src": "db2@1.60.1.70009"}
-{"id": 279318, "field": "description", "en": "Teaches you how to craft Fel Cape.", "hash": "0d7d67780fd9b4a4", "src": "db2@1.60.1.70009"}
-{"id": 279319, "field": "name", "en": "Pattern: Cloak of Earth and Sky", "hash": "df0966038a6e4e62", "src": "db2@1.60.1.70009"}
-{"id": 279319, "field": "description", "en": "Teaches you how to craft Cloak of Earth and Sky.", "hash": "3bd1079ebb4baf95", "src": "db2@1.60.1.70009"}
-{"id": 279320, "field": "name", "en": "Pattern: Felblood Soul Bag", "hash": "d12056368afe6db8", "src": "db2@1.60.1.70009"}
-{"id": 279320, "field": "description", "en": "Teaches you how to craft Felblood Soul Bag.", "hash": "c16555739c4dbc13", "src": "db2@1.60.1.70009"}
-{"id": 279321, "field": "name", "en": "Schematic: SAF-T Ultra Precision Scope", "hash": "80b28b0af91616e6", "src": "db2@1.60.1.70009"}
-{"id": 279321, "field": "description", "en": "Teaches you how to craft SAF-T Ultra Precision Scope.", "hash": "d1bcb160ea7426b1", "src": "db2@1.60.1.70009"}
-{"id": 279322, "field": "name", "en": "Schematic: Hyper Deluxe Sniper Rifle Mk XVII", "hash": "58dc9affec19cee7", "src": "db2@1.60.1.70009"}
-{"id": 279322, "field": "description", "en": "Teaches you how to craft Hyper Deluxe Sniper Rifle Mk XVII.", "hash": "46a9088d61350915", "src": "db2@1.60.1.70009"}
-{"id": 279331, "field": "name", "en": "Moonwell Remnants", "hash": "9b1b6877bd6afec4", "src": "db2@1.60.1.70009"}
-{"id": 279378, "field": "name", "en": "Lunar Pendant", "hash": "a869a4cf85576669", "src": "db2@1.60.1.70009"}
-{"id": 279378, "field": "description", "en": "Call a Sentinel to monitor an area.", "hash": "962bd17349d51af1", "src": "db2@1.60.1.70009"}
-{"id": 279379, "field": "name", "en": "Jar of Snow", "hash": "c3dcd775260343f8", "src": "db2@1.60.1.70009"}
-{"id": 279380, "field": "name", "en": "Ceramic Jar", "hash": "08c5a7aaf626873b", "src": "db2@1.60.1.70009"}
-{"id": 279380, "field": "description", "en": "Scoop up snow from South Gate Pass into the ceramic jar.", "hash": "adbb41d0fbcb0c83", "src": "db2@1.60.1.70009"}
-{"id": 279383, "field": "name", "en": "Stolen Freewind Supplies", "hash": "02f16acd9daed915", "src": "db2@1.60.1.70009"}
-{"id": 279385, "field": "name", "en": "Pristine Crimson Scale", "hash": "8056bc29f65be7c3", "src": "db2@1.60.1.70009"}
-{"id": 279386, "field": "name", "en": "Sealed Company Request", "hash": "b7812cfc63ded141", "src": "db2@1.60.1.70009"}
-{"id": 279386, "field": "description", "en": "Bring to the Hillsbrad Town Hall's bookkeeping table. ", "hash": "99fd7a0a54d8260f", "src": "db2@1.60.1.70009"}
-{"id": 279389, "field": "name", "en": "Sack of Homebrew Hops", "hash": "54bb943ae86dbbcd", "src": "db2@1.60.1.70009"}
-{"id": 279390, "field": "name", "en": "Case of Fallrook Varietal", "hash": "64753b1f3ea4ac51", "src": "db2@1.60.1.70009"}
-{"id": 279390, "field": "description", "en": "Deliver to the bottom floor of Dun Garok.", "hash": "c37b032c3f64f176", "src": "db2@1.60.1.70009"}
-{"id": 279391, "field": "name", "en": "Taurajo Headband", "hash": "ea19ab82ff49c0a2", "src": "db2@1.60.1.70009"}
-{"id": 279392, "field": "name", "en": "Glimmer", "hash": "7b3711b87709bb39", "src": "db2@1.60.1.70009"}
-{"id": 279393, "field": "name", "en": "Frostfall", "hash": "086e950a9882e2e4", "src": "db2@1.60.1.70009"}
-{"id": 279394, "field": "name", "en": "Darthalia's Orders", "hash": "b8d87d2abbd475e6", "src": "db2@1.60.1.70009"}
-{"id": 279395, "field": "name", "en": "Apothecary Vials", "hash": "a46b936c87748c12", "src": "db2@1.60.1.70009"}
-{"id": 279395, "field": "description", "en": "Open a vial and place on the ground at a high vantage point.", "hash": "841fffbc7fa4a160", "src": "db2@1.60.1.70009"}
-{"id": 279415, "field": "name", "en": "Ash of Asharell", "hash": "2367acaaba89ba3e", "src": "db2@1.60.1.70009"}
-{"id": 279415, "field": "description", "en": "All that remains of a manifestation of fiery hatred.", "hash": "627fc455263ded49", "src": "db2@1.60.1.70009"}
-{"id": 279450, "field": "name", "en": "Fractured Insignia", "hash": "aff8a3f5f1b00d8a", "src": "db2@1.60.1.70009"}
-{"id": 279464, "field": "name", "en": "Monster Shoulder (DNT)", "hash": "229e47c0275e0e7c", "src": "db2@1.60.1.70009"}
-{"id": 279465, "field": "name", "en": "Monster Chest (DNT)", "hash": "3b07fbcfa06bd7c9", "src": "db2@1.60.1.70009"}
-{"id": 279466, "field": "name", "en": "Monster Waist (DNT)", "hash": "e88cfe2a4007f1c1", "src": "db2@1.60.1.70009"}
-{"id": 279467, "field": "name", "en": "Monster Legs (DNT)", "hash": "361c5a118b1e5155", "src": "db2@1.60.1.70009"}
-{"id": 279468, "field": "name", "en": "Monster Feet (DNT)", "hash": "8aa6dac84be18b50", "src": "db2@1.60.1.70009"}
-{"id": 279469, "field": "name", "en": "Grimy Key", "hash": "54981823ef9919f5", "src": "db2@1.60.1.70009"}
-{"id": 279470, "field": "name", "en": "Monster Hand (DNT)", "hash": "c68e06c3a7ba0455", "src": "db2@1.60.1.70009"}
-{"id": 279472, "field": "name", "en": "Pristine Pesterhide Pelt", "hash": "cbf68cfb20b7a36e", "src": "db2@1.60.1.70009"}
-{"id": 279481, "field": "name", "en": "Package of Pristine Pelts", "hash": "b8e416f6a6c6f6bb", "src": "db2@1.60.1.70009"}
-{"id": 279505, "field": "name", "en": "Jagged Orcish Sword", "hash": "6f30e0306e0825d3", "src": "db2@1.60.1.70009"}
-{"id": 279507, "field": "name", "en": "Curved Orcish Dagger", "hash": "7bc9c0361d1347a0", "src": "db2@1.60.1.70009"}
-{"id": 279537, "field": "name", "en": "Rotheap Innards", "hash": "1d6fc11d54547340", "src": "db2@1.60.1.70009"}
-{"id": 279537, "field": "description", "en": "You feel great discomfort simply looking at this.", "hash": "2b2de36bf833c6b7", "src": "db2@1.60.1.70009"}
-{"id": 279589, "field": "name", "en": "Menethil Statuette", "hash": "4c2daf8dd28028c1", "src": "db2@1.60.1.70009"}
-{"id": 279591, "field": "name", "en": "Marek's Croc-Hunting Knife", "hash": "c8ee9027a0fda689", "src": "db2@1.60.1.70009"}
-{"id": 279595, "field": "name", "en": "Menethil Statuette", "hash": "4c2daf8dd28028c1", "src": "db2@1.60.1.70009"}
-{"id": 279598, "field": "name", "en": "Menethil Statuette", "hash": "4c2daf8dd28028c1", "src": "db2@1.60.1.70009"}
-{"id": 279601, "field": "name", "en": "Intact Raptor Hide", "hash": "8e386c5d463cda7b", "src": "db2@1.60.1.70009"}
-{"id": 279821, "field": "name", "en": "Khaz Modan Timber", "hash": "a686617d95a01638", "src": "db2@1.60.1.70009"}
-{"id": 279822, "field": "name", "en": "Khaz Modan Iron", "hash": "685ae8b5e34187af", "src": "db2@1.60.1.70009"}
-{"id": 279864, "field": "name", "en": "Monstrous Cleaver", "hash": "62f1131a4fdfa8ac", "src": "db2@1.60.1.70009"}
-{"id": 279865, "field": "name", "en": "Grave Shroud", "hash": "bd65e7c34fddcbed", "src": "db2@1.60.1.70009"}
-{"id": 279867, "field": "name", "en": "Slain Baron's Signet", "hash": "d3886961621a5af5", "src": "db2@1.60.1.70009"}
-{"id": 279868, "field": "name", "en": "Duty Bound Leggings", "hash": "d71e9fed66501684", "src": "db2@1.60.1.70009"}
-{"id": 279869, "field": "name", "en": "Remembrance Armor", "hash": "a6f2b9a2812648ce", "src": "db2@1.60.1.70009"}
-{"id": 279870, "field": "name", "en": "Tarnished Locket", "hash": "90ffaa9f8d5a895c", "src": "db2@1.60.1.70009"}
-{"id": 279870, "field": "description", "en": "Some memories are best forgotten.", "hash": "01c4c69a7a23e6b7", "src": "db2@1.60.1.70009"}
-{"id": 279874, "field": "name", "en": "The Stitcher", "hash": "7f6df691e34bd412", "src": "db2@1.60.1.70009"}
-{"id": 279875, "field": "name", "en": "Spare Part Bindings", "hash": "993895d9fab8756a", "src": "db2@1.60.1.70009"}
-{"id": 279876, "field": "name", "en": "Plaguefang", "hash": "923a746f24e2fb43", "src": "db2@1.60.1.70009"}
-{"id": 279876, "field": "description", "en": "Poisons target for $s1 Nature damage every $t1 sec for $d.", "hash": "c6bab04662dda29a", "src": "db2@1.60.1.70009"}
-{"id": 279877, "field": "name", "en": "Blight Gloves", "hash": "cee34316fffbd235", "src": "db2@1.60.1.70009"}
-{"id": 279894, "field": "name", "en": "Calibrated Blunderbuss", "hash": "25ffec3b173f8c5c", "src": "db2@1.60.1.70009"}
-{"id": 279895, "field": "name", "en": "Ironforge Greathammer", "hash": "04d3897f11046ccf", "src": "db2@1.60.1.70009"}
-{"id": 279896, "field": "name", "en": "Deepblaze", "hash": "7cce473927960196", "src": "db2@1.60.1.70009"}
-{"id": 279896, "field": "description", "en": "The Great Forge burns within it still.", "hash": "4f5a1d08aff181b1", "src": "db2@1.60.1.70009"}
-{"id": 279897, "field": "name", "en": "Dusty Belt", "hash": "8890bdf5fa58cf74", "src": "db2@1.60.1.70009"}
-{"id": 279898, "field": "name", "en": "Dwarven Tome", "hash": "8e7296ec926896d9", "src": "db2@1.60.1.70009"}
-{"id": 279898, "field": "description", "en": "Details the history of dwarves long since forgotten.", "hash": "89e481f836cba14e", "src": "db2@1.60.1.70009"}
-{"id": 279899, "field": "name", "en": "Catacomb Cloak", "hash": "1a8aedd002f175aa", "src": "db2@1.60.1.70009"}
-{"id": 279900, "field": "name", "en": "Deepgrave Trousers", "hash": "91794c4310e144d9", "src": "db2@1.60.1.70009"}
-{"id": 279913, "field": "name", "en": "Ti'ik's Head", "hash": "d93982af94dede02", "src": "db2@1.60.1.70009"}
-{"id": 279915, "field": "name", "en": "Nord'el", "hash": "fb5b32528a792d9e", "src": "db2@1.60.1.70009"}
-{"id": 279924, "field": "name", "en": "Nord'el", "hash": "fb5b32528a792d9e", "src": "db2@1.60.1.70009"}
-{"id": 279934, "field": "name", "en": "Shed Dark Dragonscale", "hash": "aa24e430b0ea2401", "src": "db2@1.60.1.70009"}
-{"id": 279935, "field": "name", "en": "Book Bag", "hash": "8db26c0e9b1e47c5", "src": "db2@1.60.1.70009"}
-{"id": 279936, "field": "name", "en": "Book Bag", "hash": "8db26c0e9b1e47c5", "src": "db2@1.60.1.70009"}
-{"id": 279937, "field": "name", "en": "Collecting Basket", "hash": "1e9bb8bb204fdfbf", "src": "db2@1.60.1.70009"}
-{"id": 279938, "field": "name", "en": "Trapper's Workbench", "hash": "6355088f92f66612", "src": "db2@1.60.1.70009"}
-{"id": 279938, "field": "description", "en": "Places a Trapper's Workbench containing 1 trap, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Chair to replace it.\r\n\r\n All camping features share a cooldown of $1308027d.", "hash": "6a4f5109bf37387a", "src": "db2@1.60.1.70009"}
-{"id": 279939, "field": "name", "en": "Collecting Basket", "hash": "1e9bb8bb204fdfbf", "src": "db2@1.60.1.70009"}
-{"id": 279940, "field": "name", "en": "Toxin Study", "hash": "8ed374816262eeae", "src": "db2@1.60.1.70009"}
-{"id": 279940, "field": "description", "en": "Places a Toxin Study that contains healing potions, anti-venom, and provides all of the benefits of a First Aid Kit. Requires a Campfire nearby. \r\n\r\nMay be placed over a First Aid Kit to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "de7d7930e99717a9", "src": "db2@1.60.1.70009"}
-{"id": 279941, "field": "name", "en": "Tanning Rack", "hash": "a3a0e0ccd90fac76", "src": "db2@1.60.1.70009"}
-{"id": 279941, "field": "description", "en": "Places a Tanning Rack that allows the creation of certain reagents, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Tent to replace it. All camping features share a cooldown of $1308027d.", "hash": "b65c0c3325600ab8", "src": "db2@1.60.1.70009"}
-{"id": 279943, "field": "name", "en": "Spinning Wheel", "hash": "9b2c89dae0fe5b26", "src": "db2@1.60.1.70009"}
-{"id": 279943, "field": "description", "en": "Places a Spinning Wheel that allows the creation of certain reagents, and provides all the benefits of a Faction Banner. Requires a Campfire nearby. \r\n\r\nMay be placed over a Faction Banner to replace it. All camping features share a cooldown of $1308027d.", "hash": "ade015d4f2b37ebb", "src": "db2@1.60.1.70009"}
-{"id": 279944, "field": "name", "en": "Sharpening Wheel", "hash": "d8707d4dc5b9be35", "src": "db2@1.60.1.70009"}
-{"id": 279944, "field": "description", "en": "Constructs a sharpening wheel that grants you and others sitting nearby $?$PL<24[6]?$PL<38[11]?$PL<52[20][$1230172s1] increased Strength, exclusive with Strength of Earth Totem.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "c9b7d553f9f20396", "src": "db2@1.60.1.70009"}
-{"id": 279945, "field": "name", "en": "Sewing Machine", "hash": "f7112ca015bed070", "src": "db2@1.60.1.70009"}
-{"id": 279945, "field": "description", "en": "Places a Sewing Machine usable for recipes that require it, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Tent to replace it. All camping features share a cooldown of $1308027d.", "hash": "a50a8a939c7497ae", "src": "db2@1.60.1.70009"}
-{"id": 279947, "field": "name", "en": "Seed Hybridizer", "hash": "59b99b4eae6bb164", "src": "db2@1.60.1.70009"}
-{"id": 279947, "field": "description", "en": "Places a Seed Hybridizer that allows seeds to be multiplied or combined into rarer tiers, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. \r\n\r\nMay be placed over an Incense Candle to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "a466fc3ac3b08f26", "src": "db2@1.60.1.70009"}
-{"id": 279948, "field": "name", "en": "Rock Garden", "hash": "819f0b06d3b24555", "src": "db2@1.60.1.70009"}
-{"id": 279948, "field": "description", "en": "Places a Rock Garden that spawns a common mining node over time, and provides all the benefits of a Lodestone. Requires a Campfire nearby. \r\n\r\nMay be placed over a Lodestone to replace it. All camping features share a cooldown of $1308027d.", "hash": "8c32c868b9507dc3", "src": "db2@1.60.1.70009"}
-{"id": 279949, "field": "name", "en": "Repair Bot", "hash": "5d19532f37f739d8", "src": "db2@1.60.1.70009"}
-{"id": 279949, "field": "description", "en": "Summons a Repair Bot that allows you and others nearby to buy reagents and repair gear. Requires a Campfire nearby. \r\n\r\nMay be placed over a Reagent Bot to replace it. All camping features share a cooldown of $1308027d.", "hash": "3e5f1087ecc0fc18", "src": "db2@1.60.1.70009"}
-{"id": 279950, "field": "name", "en": "Reagent Bot", "hash": "9b5fbc1e475c0e43", "src": "db2@1.60.1.70009"}
-{"id": 279950, "field": "description", "en": "Summons a Reagent Bot that allows you and others nearby to purchase reagents. Requires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "8db6dd3edb97d129", "src": "db2@1.60.1.70009"}
-{"id": 279951, "field": "name", "en": "Plague Doctor's Laboratory", "hash": "da0156c5b15dbcf0", "src": "db2@1.60.1.70009"}
-{"id": 279951, "field": "description", "en": "Places a Plague Doctor's Laboratory that contains healing potions, poultices, and provides all of the benefits of a First Aid Kit. Requires a Campfire nearby. \r\n\r\nMay be placed over a First Aid Kit to replace it. All camping features share a cooldown of $1308027d.", "hash": "19d08955ce663a12", "src": "db2@1.60.1.70009"}
-{"id": 279952, "field": "name", "en": "Molten Foundry", "hash": "bce5b81977718714", "src": "db2@1.60.1.70009"}
-{"id": 279952, "field": "description", "en": "Places a Molten Foundry usable for recipes that require it, and provides all the benefits of a Lodestone. Requires a Campfire nearby. \r\n\r\nMay be placed over a Lodestone to replace it. All camping features share a cooldown of $1308027d.", "hash": "fcb4b585bad778fa", "src": "db2@1.60.1.70009"}
-{"id": 279955, "field": "name", "en": "Master Forge", "hash": "4a584bb8b1b96db2", "src": "db2@1.60.1.70009"}
-{"id": 279955, "field": "description", "en": "Places a Master Forge usable for recipes that require it, and provides all of the benefits of a Sharpening Wheel. Requires a Campfire nearby. \r\n\r\nMay be placed over a Sharpening Wheel to replace it. All camping features share a cooldown of $1308027d.", "hash": "d95588b4add0b122", "src": "db2@1.60.1.70009"}
-{"id": 279956, "field": "name", "en": "Mana Well", "hash": "cafcee01bc4b49ef", "src": "db2@1.60.1.70009"}
-{"id": 279956, "field": "description", "en": "Constructs a mana well that allows you and others sitting nearby to regenerate $?$PL<24[10]?$PL<34[15]?$PL<44[20]?$PL<54[24][$1230587s1] Mana every 5 sec, exclusive with Blessing of Wisdom.\n\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "56057be259659206", "src": "db2@1.60.1.70009"}
-{"id": 279957, "field": "name", "en": "Cookie's Feast", "hash": "2193b4154ed04b08", "src": "db2@1.60.1.70009"}
-{"id": 279957, "field": "description", "en": "Lay out Cookie's Feast that contains Stamina-boosting food. Requires a Cooking Fire nearby. All camping features share a cooldown of $1308027d.", "hash": "03a6e34838edec18", "src": "db2@1.60.1.70009"}
-{"id": 279959, "field": "name", "en": "Loom", "hash": "0a4c5425b38fa63a", "src": "db2@1.60.1.70009"}
-{"id": 279959, "field": "description", "en": "Places a Loom usable for recipes that require it, and provides all the benefits of a Faction Banner. Requires a Campfire nearby. \r\n\r\nMay be placed over a Faction Banner to replace it. All camping features share a cooldown of $1308027d.", "hash": "4c1a1fbaaf0affdc", "src": "db2@1.60.1.70009"}
-{"id": 279960, "field": "name", "en": "Lodestone", "hash": "c809e41f9fc8af34", "src": "db2@1.60.1.70009"}
-{"id": 279960, "field": "description", "en": "Erects a lodestone that allows you and others sitting nearby to gain $?$PL<12[12]?$PL<22[20]?$PL<32[32]?$PL<42[49]?$PL<52[67][$1230164s1] increased melee Attack Power, exclusive with Blessing of Might.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "a2566cd95ea948cc", "src": "db2@1.60.1.70009"}
-{"id": 279961, "field": "name", "en": "Journeyman Campfire Kit", "hash": "41cbcedbd8342019", "src": "db2@1.60.1.70009"}
-{"id": 279961, "field": "description", "en": "Builds a journeyman campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "c188d8ff694a3970", "src": "db2@1.60.1.70009"}
-{"id": 279962, "field": "name", "en": "Incense Candle", "hash": "0556be08df4ec55b", "src": "db2@1.60.1.70009"}
-{"id": 279962, "field": "description", "en": "Ignites an incense candle that allows you and others sitting nearby to gain $?$PL<14[2]?$PL<28[6]?$PL<42[12]?$PL<56[18][$1229513s1] increased Intellect, exclusive with Arcane Intellect.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "6ff5feeeee5adf12", "src": "db2@1.60.1.70009"}
-{"id": 279964, "field": "name", "en": "Greenhouse", "hash": "ec7bd7c4f0890f08", "src": "db2@1.60.1.70009"}
-{"id": 279964, "field": "description", "en": "Places a Greenhouse that will grow herbs over time from seeds planted, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. \r\n\r\nMay be placed over an Incense Candle to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "452a5fb381df0197", "src": "db2@1.60.1.70009"}
-{"id": 279965, "field": "name", "en": "Fishing Rack", "hash": "31cb457daf6168b5", "src": "db2@1.60.1.70009"}
-{"id": 279965, "field": "description", "en": "Places a Fishing Rack that grants the ability to catch uncommon fish for $1280341d, Fishing Skill lures, and provides all of the benefits of a Fish Bowl. Requires a Campfire nearby. \r\n\r\nMay be placed over a Fish Bowl to replace it. All camping features share a cooldown of $1308027d.", "hash": "cd28c4bbbef06e4c", "src": "db2@1.60.1.70009"}
-{"id": 279966, "field": "name", "en": "Fishing Hut", "hash": "e502e1b68554f00a", "src": "db2@1.60.1.70009"}
-{"id": 279966, "field": "description", "en": "Places a Fishing Hut that grants the ability to catch rare fish for $1280342d, Fishing Skill lures, and provides all of the benefits of a Fish Bowl. Requires a Campfire nearby. \r\n\r\nMay be placed over a Fish Bowl to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "73c33244f38dc2c8", "src": "db2@1.60.1.70009"}
-{"id": 279967, "field": "name", "en": "Fish Bowl", "hash": "123d7b537d46a1ab", "src": "db2@1.60.1.70009"}
-{"id": 279967, "field": "description", "en": "Places a small fish bowl that allows you and others sitting nearby to gain $1230098s1% increased stats, exclusive with Blessing of Kings.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "eba7cfc623d0cedc", "src": "db2@1.60.1.70009"}
-{"id": 279968, "field": "name", "en": "First Aid Kit", "hash": "ac6617d413b0822b", "src": "db2@1.60.1.70009"}
-{"id": 279968, "field": "description", "en": "Unpacks a first aid kit that allows you and others sitting nearby to gain $?$PL<12[3]?$PL<24[8]?$PL<36[21]?$PL<48[34]?$PL<60[45][$1230124s1] increased Stamina, exclusive with Power Word: Fortitude.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "c1b75e5849658393", "src": "db2@1.60.1.70009"}
-{"id": 279969, "field": "name", "en": "Field Guide", "hash": "bf7f3c83b1ec32fb", "src": "db2@1.60.1.70009"}
-{"id": 279969, "field": "description", "en": "Places a Field Guide that allows players to read it and gain Track Beasts, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Chair to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "08408bcef22a631b", "src": "db2@1.60.1.70009"}
-{"id": 279970, "field": "name", "en": "Fermenter", "hash": "2a72f82660a5a90b", "src": "db2@1.60.1.70009"}
-{"id": 279970, "field": "description", "en": "Places a fermenter that allows the creation of certain reagents, and provides all of the benefits of a Mana Well. Requires a Campfire nearby. May be placed over a Mana Well to replace it. All camping features share a cooldown of $1308027d.", "hash": "4d4c9cf098bd96dd", "src": "db2@1.60.1.70009"}
-{"id": 279972, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70009"}
-{"id": 279972, "field": "description", "en": "Unrolls a banner that allows you and others members of the Horde sitting nearby to gain $?$PL<40[14]?$PL<50[19]?$PL<60[27][$1229718s1] increased Spirit, exclusive with Divine Spirit.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "50f84e548268c269", "src": "db2@1.60.1.70009"}
-{"id": 279973, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70009"}
-{"id": 279973, "field": "description", "en": "Unrolls a banner that allows you and others members of the Alliance sitting nearby to gain $?$PL<40[14]?$PL<50[19]?$PL<60[27][$1229718s1] increased Spirit, exclusive with Divine Spirit.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "15c1d355ad36e8bf", "src": "db2@1.60.1.70009"}
-{"id": 279974, "field": "name", "en": "Expert Campfire Kit", "hash": "4a749c1de199f8c4", "src": "db2@1.60.1.70009"}
-{"id": 279974, "field": "description", "en": "Builds an expert campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "28ce231b83787325", "src": "db2@1.60.1.70009"}
-{"id": 279976, "field": "name", "en": "Enchanted Lute", "hash": "94fb1453e4194e9c", "src": "db2@1.60.1.70009"}
-{"id": 279976, "field": "description", "en": "Summons an enchanted lute that allows you and others sitting nearby to gain $?$PL<10[28]?$PL<20[71]?$PL<30[114]?$PL<40[163]?$PL<50[211]?$PL<60[260][$1230653s1 ] increase to Armor$?$PL<10[]?$PL<30[ and ][, ]$?$PL>59[$1230653s2]?$PL>49[12]?$PL>39[9]?$PL>29[7]?$PL>19[4]?$PL>9[2][]$?$PL>9[ increase to all stats][]$?$PL>59[, and $1230653s3]?$PL>49[, and 16]?$PL>39[, and 12]?$PL>29[, and 6][]$?$PL>29[ increase to all resistances][], exclusive with Mark of the Wild.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "170b93a86cfd0a93", "src": "db2@1.60.1.70009"}
-{"id": 279978, "field": "name", "en": "Camp Tent", "hash": "9bc8a8776b4bc48d", "src": "db2@1.60.1.70009"}
-{"id": 279978, "field": "description", "en": "Builds a tent that allows you and others sitting nearby to increase Rested experience to $s2% of a level. No effect if Rested experience already exceeds that value.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "13e29a9503a0c724", "src": "db2@1.60.1.70009"}
-{"id": 279979, "field": "name", "en": "Camp Chair", "hash": "8da89737216e4c19", "src": "db2@1.60.1.70009"}
-{"id": 279979, "field": "description", "en": "Assembles a camp chair that allows you and others sitting nearby to gain $1229519s1% increased critical strike chance with all spells and attacks, exclusive with Moonkin Aura.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "db795153e552655d", "src": "db2@1.60.1.70009"}
-{"id": 279981, "field": "name", "en": "Basic Campfire Kit", "hash": "0d536699c844a827", "src": "db2@1.60.1.70009"}
-{"id": 279981, "field": "description", "en": "Builds a basic campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "7f185d8fbd4ab628", "src": "db2@1.60.1.70009"}
-{"id": 279982, "field": "name", "en": "Iron Oven", "hash": "b68b863f35fa632e", "src": "db2@1.60.1.70009"}
-{"id": 279982, "field": "description", "en": "Places an Iron Oven required for the most advanced cooking recipes. Requires a Cooking Fire nearby. All camping features share a cooldown of $1308027d.", "hash": "8cd3c85960ca0880", "src": "db2@1.60.1.70009"}
-{"id": 279985, "field": "name", "en": "Arcane Salvager", "hash": "021e43b705ff7a51", "src": "db2@1.60.1.70009"}
-{"id": 279985, "field": "description", "en": "Places an Arcane Salvager that enables more efficient disenchanting, and provides all the benefits of an Enchanted Lute. Requires a Campfire nearby. \r\n\r\nMay be placed over an Enchanted Lute to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "5981e275864a7193", "src": "db2@1.60.1.70009"}
-{"id": 279987, "field": "name", "en": "Arcane Forge", "hash": "617fe355eddeb1e4", "src": "db2@1.60.1.70009"}
-{"id": 279987, "field": "description", "en": "Places an Arcane Forge usable for recipes that require it, and provides all the benefits of an Enchanted Lute. Requires a Campfire nearby. \r\n\r\nMay be placed over an Enchanted Lute to replace it. All camping features share a cooldown of $1308027d.", "hash": "ec844b4917e79d74", "src": "db2@1.60.1.70009"}
-{"id": 279988, "field": "name", "en": "Anvil", "hash": "83d7bf8c30b1880e", "src": "db2@1.60.1.70009"}
-{"id": 279988, "field": "description", "en": "Places an anvil, and provides all of the benefits of a Sharpening Wheel. Requires a Campfire nearby. \r\n\r\nMay be placed over a Sharpening Wheel to replace it. All camping features share a cooldown of $1308027d.", "hash": "b9998893c4608f21", "src": "db2@1.60.1.70009"}
-{"id": 279989, "field": "name", "en": "Anarchist's Workbench", "hash": "7d1e77ca981659d9", "src": "db2@1.60.1.70009"}
-{"id": 279989, "field": "description", "en": "Places an Anarchist's Workbench usable for recipes that require it. Requires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "d276a78745d5011d", "src": "db2@1.60.1.70009"}
-{"id": 279990, "field": "name", "en": "Alchemy Laboratory", "hash": "7d78f6e976720849", "src": "db2@1.60.1.70009"}
-{"id": 279990, "field": "description", "en": "Places an Alchemy Laboratory usable for recipes that require it, and provides all of the benefits of a Mana Well. Requires a Campfire nearby. \r\n\r\nMay be placed over a Mana Well to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "f6ebb8cc6a8ba6fa", "src": "db2@1.60.1.70009"}
-{"id": 279991, "field": "name", "en": "Dry Branch", "hash": "47774918102b3960", "src": "db2@1.60.1.70009"}
-{"id": 279993, "field": "name", "en": "Titanic Keystone", "hash": "d13d1355a1fd508d", "src": "db2@1.60.1.70009"}
-{"id": 279996, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70009"}
-{"id": 279996, "field": "description", "en": "Activate a Goaz Warder.", "hash": "3e261b236c4833f1", "src": "db2@1.60.1.70009"}
+{"id": 279020, "field": "name", "en": "Unstable Potion", "hash": "720ec7a27b39a5a3", "src": "db2@1.60.1.70124"}
+{"id": 279023, "field": "name", "en": "Inert Potion", "hash": "cd3e2c598060dec4", "src": "db2@1.60.1.70124"}
+{"id": 279023, "field": "description", "en": "This potion has become inert and is no longer useful for experimentation.", "hash": "443027d7ffeca27f", "src": "db2@1.60.1.70124"}
+{"id": 279024, "field": "name", "en": "Corrupted Chestguard of the Warden", "hash": "43cb62e0d4466c0c", "src": "db2@1.60.1.70124"}
+{"id": 279025, "field": "name", "en": "Corrupted Chestguard of the Sentinel", "hash": "bd5fd409ddd833d2", "src": "db2@1.60.1.70124"}
+{"id": 279026, "field": "name", "en": "Corrupted Chestguard of the Harbinger", "hash": "d7d07238f2fcd383", "src": "db2@1.60.1.70124"}
+{"id": 279028, "field": "name", "en": "Corrupted Pauldrons of the Warden", "hash": "f3e9740b133fd7ca", "src": "db2@1.60.1.70124"}
+{"id": 279029, "field": "name", "en": "Corrupted Pauldrons of the Sentinel", "hash": "cced962206428fbe", "src": "db2@1.60.1.70124"}
+{"id": 279030, "field": "name", "en": "Corrupted Pauldrons of the Harbinger", "hash": "cd5ac52b59976997", "src": "db2@1.60.1.70124"}
+{"id": 279031, "field": "name", "en": "Corrupted Helm of the Warden", "hash": "a1e73bf548eb8e37", "src": "db2@1.60.1.70124"}
+{"id": 279032, "field": "name", "en": "Corrupted Helm of the Sentinel", "hash": "562b6fff7c33a99b", "src": "db2@1.60.1.70124"}
+{"id": 279033, "field": "name", "en": "Corrupted Helm of the Harbinger", "hash": "0801401634a1e184", "src": "db2@1.60.1.70124"}
+{"id": 279034, "field": "name", "en": "Corrupted Gloves of the Warden", "hash": "fc8b2ac8c9b604a8", "src": "db2@1.60.1.70124"}
+{"id": 279035, "field": "name", "en": "Corrupted Gloves of the Sentinel", "hash": "6d708516c4422728", "src": "db2@1.60.1.70124"}
+{"id": 279036, "field": "name", "en": "Corrupted Gloves of the Harbinger", "hash": "f05b0b124a92e5fa", "src": "db2@1.60.1.70124"}
+{"id": 279037, "field": "name", "en": "Corrupted Leggings of the Warden", "hash": "729df6b5dcebb929", "src": "db2@1.60.1.70124"}
+{"id": 279038, "field": "name", "en": "Corrupted Leggings of the Sentinel", "hash": "7f7802d5b3056543", "src": "db2@1.60.1.70124"}
+{"id": 279039, "field": "name", "en": "Corrupted Leggings of the Harbinger", "hash": "2a306401c8b19c2f", "src": "db2@1.60.1.70124"}
+{"id": 279040, "field": "name", "en": "Corrupted Boots of the Warden", "hash": "5349b19699fbe22d", "src": "db2@1.60.1.70124"}
+{"id": 279041, "field": "name", "en": "Corrupted Boots of the Sentinel", "hash": "576a4eba2d2b0a73", "src": "db2@1.60.1.70124"}
+{"id": 279042, "field": "name", "en": "Corrupted Boots of the Harbinger", "hash": "ab2d39c7b2c78004", "src": "db2@1.60.1.70124"}
+{"id": 279045, "field": "name", "en": "Thundris' Letter", "hash": "c15da509f5b162b8", "src": "db2@1.60.1.70124"}
+{"id": 279046, "field": "name", "en": "Cracked Crab Pincer", "hash": "e99a4d3b7f2ef7da", "src": "db2@1.60.1.70124"}
+{"id": 279048, "field": "name", "en": "Alexston's Reply", "hash": "bcb3d94f45e0f662", "src": "db2@1.60.1.70124"}
+{"id": 279082, "field": "name", "en": "Gnarlpine Totem", "hash": "530b52d34408fc88", "src": "db2@1.60.1.70124"}
+{"id": 279171, "field": "name", "en": "Diplomatic Satchel", "hash": "8193592ba1488035", "src": "db2@1.60.1.70124"}
+{"id": 279173, "field": "name", "en": "Veteran Adventurer's Chestpiece", "hash": "6606691e58dc570f", "src": "db2@1.60.1.70124"}
+{"id": 279174, "field": "name", "en": "Veteran Adventurer's Belt", "hash": "4b9ab87ab794a1a3", "src": "db2@1.60.1.70124"}
+{"id": 279175, "field": "name", "en": "Veteran Adventurer's Legguards", "hash": "478fd560c80ba391", "src": "db2@1.60.1.70124"}
+{"id": 279176, "field": "name", "en": "Veteran Adventurer's Boots", "hash": "b18438c8eb2ea5e0", "src": "db2@1.60.1.70124"}
+{"id": 279177, "field": "name", "en": "Veteran Adventurer's Bracer", "hash": "096d7a47f7a9c3f2", "src": "db2@1.60.1.70124"}
+{"id": 279178, "field": "name", "en": "Veteran Adventurer's Gloves", "hash": "8b95e6a25cf7794d", "src": "db2@1.60.1.70124"}
+{"id": 279179, "field": "name", "en": "Veteran Adventurer's Cloak", "hash": "c2aafc8721deeb92", "src": "db2@1.60.1.70124"}
+{"id": 279180, "field": "name", "en": "Veteran Adventurer's Hood", "hash": "4c6b29ef2fb75efe", "src": "db2@1.60.1.70124"}
+{"id": 279181, "field": "name", "en": "Veteran Adventurer's Shoulderpads", "hash": "e83fa8c1f127baa9", "src": "db2@1.60.1.70124"}
+{"id": 279182, "field": "name", "en": "Ensemble: Veteran Adventurer's Outdoor Wear", "hash": "b35364e5827ad28f", "src": "db2@1.60.1.70124"}
+{"id": 279182, "field": "description", "en": "Collect the appearances of this armor set.", "hash": "3bcf52b26d5663c8", "src": "db2@1.60.1.70124"}
+{"id": 279186, "field": "name", "en": "Stormheart's Still-beating Heart", "hash": "afbf76b60e65887b", "src": "db2@1.60.1.70124"}
+{"id": 279215, "field": "name", "en": "Monster - Bow, Skyborne", "hash": "b4ca962f291309d6", "src": "db2@1.60.1.70124"}
+{"id": 279225, "field": "name", "en": "Vilebranch Totem", "hash": "75d9bdd12c8e5d7f", "src": "db2@1.60.1.70124"}
+{"id": 279229, "field": "name", "en": "Lost Gryphon Egg", "hash": "ffe672cad7651c23", "src": "db2@1.60.1.70124"}
+{"id": 279246, "field": "name", "en": "Torch of Light", "hash": "143304cedeb66de0", "src": "db2@1.60.1.70124"}
+{"id": 279247, "field": "name", "en": "Steadfast Libram", "hash": "fb9e883784416943", "src": "db2@1.60.1.70124"}
+{"id": 279247, "field": "description", "en": "Increases the Block Value of your shield by $1306749s1% while Holy Shield is active.", "hash": "7f7de8b36d9e5ca0", "src": "db2@1.60.1.70124"}
+{"id": 279248, "field": "name", "en": "Libram of Infusion", "hash": "f0e26833ca77867b", "src": "db2@1.60.1.70124"}
+{"id": 279248, "field": "description", "en": "Increases the critical strike chance of your Holy Shock spell by $s1%.", "hash": "cdc8341377540102", "src": "db2@1.60.1.70124"}
+{"id": 279249, "field": "name", "en": "Totem of Urgency", "hash": "af137ce0a7b8d5c9", "src": "db2@1.60.1.70124"}
+{"id": 279249, "field": "description", "en": "Increases the critical strike chance of your Lessing Healing Wave spell by $s1%.", "hash": "dde8381592198c61", "src": "db2@1.60.1.70124"}
+{"id": 279250, "field": "name", "en": "Idol of Swiftness", "hash": "cf608d942e1b5482", "src": "db2@1.60.1.70124"}
+{"id": 279250, "field": "description", "en": "Reduces the cooldown on your Swiftmend spell by ${$m1/-1000} sec.", "hash": "f88c9c20f2749071", "src": "db2@1.60.1.70124"}
+{"id": 279251, "field": "name", "en": "Idol of the Ursine Twins", "hash": "e92abfbfd31129de", "src": "db2@1.60.1.70124"}
+{"id": 279251, "field": "description", "en": "Your Lacerate hits have a $h% chance to reset the cooldown on Mangle (Bear).", "hash": "60414f0caf2269e5", "src": "db2@1.60.1.70124"}
+{"id": 279252, "field": "name", "en": "Elderwild Waistcord", "hash": "864d74b0f66a05c5", "src": "db2@1.60.1.70124"}
+{"id": 279253, "field": "name", "en": "Outlaw's Collar", "hash": "a06fcfab92df8d10", "src": "db2@1.60.1.70124"}
+{"id": 279254, "field": "name", "en": "Elderwild Pants", "hash": "93e5b6a820080b54", "src": "db2@1.60.1.70124"}
+{"id": 279255, "field": "name", "en": "Eternity Pauldrons", "hash": "4bc4936879f03177", "src": "db2@1.60.1.70124"}
+{"id": 279256, "field": "name", "en": "Tranquil Wristguards", "hash": "86b138f6a795eaf7", "src": "db2@1.60.1.70124"}
+{"id": 279257, "field": "name", "en": "Mourning Handguards", "hash": "088ae5ad9fe9f3a7", "src": "db2@1.60.1.70124"}
+{"id": 279258, "field": "name", "en": "Wild Leather Armor Kit", "hash": "02f244f345accd89", "src": "db2@1.60.1.70124"}
+{"id": 279258, "field": "description", "en": "Permanently increase the Defense Skill by $ec1 and the Stamina value by $ec2 of an item worn on the chest, legs, hands or feet. Only usable on items level $ecim and above.", "hash": "3d11942015a33d40", "src": "db2@1.60.1.70124"}
+{"id": 279259, "field": "name", "en": "Ironwood Blade", "hash": "ac2f95981369f826", "src": "db2@1.60.1.70124"}
+{"id": 279260, "field": "name", "en": "Forest Defender's Axe", "hash": "ded3d5c929a1101c", "src": "db2@1.60.1.70124"}
+{"id": 279261, "field": "name", "en": "Greenhammer", "hash": "0c8b749a4d65fc43", "src": "db2@1.60.1.70124"}
+{"id": 279262, "field": "name", "en": "Evergreen Shield", "hash": "3d50ce414cdb464b", "src": "db2@1.60.1.70124"}
+{"id": 279263, "field": "name", "en": "Depleted Thorium Sabatons", "hash": "4fdaca3556ef82db", "src": "db2@1.60.1.70124"}
+{"id": 279264, "field": "name", "en": "Heavy Thorium Gauntlets", "hash": "70e28dba244a1533", "src": "db2@1.60.1.70124"}
+{"id": 279265, "field": "name", "en": "Azerothium Legplates", "hash": "2b75c67e66df122a", "src": "db2@1.60.1.70124"}
+{"id": 279266, "field": "name", "en": "Robes of Fiery Devastation", "hash": "b6e845b6f5ba73c1", "src": "db2@1.60.1.70124"}
+{"id": 279267, "field": "name", "en": "Mana-infused Cord", "hash": "031cfbc9e6f6adf4", "src": "db2@1.60.1.70124"}
+{"id": 279268, "field": "name", "en": "Rime-encrusted Boots", "hash": "227dbcc01055d9ad", "src": "db2@1.60.1.70124"}
+{"id": 279269, "field": "name", "en": "Fel Cape", "hash": "4a24f006a5d8a51a", "src": "db2@1.60.1.70124"}
+{"id": 279270, "field": "name", "en": "Cloak of Earth and Sky", "hash": "f4c355912f530159", "src": "db2@1.60.1.70124"}
+{"id": 279271, "field": "name", "en": "Felblood Soul Bag", "hash": "171b0f567b092770", "src": "db2@1.60.1.70124"}
+{"id": 279272, "field": "name", "en": "SAF-T Ultra Precision Scope", "hash": "ea929bd8c0777f1e", "src": "db2@1.60.1.70124"}
+{"id": 279272, "field": "description", "en": "Attaches a permanent scope to a bow, gun, or crossbow that increases its critical strike chance by $s2%.", "hash": "945403b16fec7944", "src": "db2@1.60.1.70124"}
+{"id": 279273, "field": "name", "en": "Hyper Deluxe Sniper Rifle Mk XVII", "hash": "915ed10747164b50", "src": "db2@1.60.1.70124"}
+{"id": 279274, "field": "name", "en": "Gleaming Crescent Necklace", "hash": "b3215af63abe74d5", "src": "db2@1.60.1.70124"}
+{"id": 279275, "field": "name", "en": "Clouded Water Globe", "hash": "0b882b7313b8048f", "src": "db2@1.60.1.70124"}
+{"id": 279276, "field": "name", "en": "Mathystral Amulet Fragment", "hash": "335bfcd092365fe9", "src": "db2@1.60.1.70124"}
+{"id": 279276, "field": "description", "en": "Combine 20 Mathystral Amulet Fragments into a restored Mathystral Amulet.", "hash": "98c0977d97361d9c", "src": "db2@1.60.1.70124"}
+{"id": 279277, "field": "name", "en": "Mathystral Amulet", "hash": "e91574ce51552ec3", "src": "db2@1.60.1.70124"}
+{"id": 279277, "field": "description", "en": "Beckon forth the being guarding the Mathystral Ruins at a Fathom Stone.", "hash": "df237b9547e32bc5", "src": "db2@1.60.1.70124"}
+{"id": 279279, "field": "name", "en": "Peerless Eye", "hash": "6164fb77a349c958", "src": "db2@1.60.1.70124"}
+{"id": 279279, "field": "description", "en": "Its lens continues to twitch, as if searching for something.", "hash": "a163e0ac39a028d9", "src": "db2@1.60.1.70124"}
+{"id": 279291, "field": "name", "en": "Drained Vessel", "hash": "27c076c671fc80f9", "src": "db2@1.60.1.70124"}
+{"id": 279295, "field": "name", "en": "Formula: Torch of Light", "hash": "9c434d7853355b0c", "src": "db2@1.60.1.70124"}
+{"id": 279295, "field": "description", "en": "Teaches you how to craft Torch of Light.", "hash": "174dd635dbd94a09", "src": "db2@1.60.1.70124"}
+{"id": 279296, "field": "name", "en": "Formula: Steadfast Libram", "hash": "0736465bb1de1b50", "src": "db2@1.60.1.70124"}
+{"id": 279296, "field": "description", "en": "Teaches you how to craft Steadfast Libram.", "hash": "bc20c95c5b08e1a9", "src": "db2@1.60.1.70124"}
+{"id": 279297, "field": "name", "en": "Formula: Libram of Infusion", "hash": "0ffa437cdfd15a8d", "src": "db2@1.60.1.70124"}
+{"id": 279297, "field": "description", "en": "Teaches you how to craft Libram of Infusion.", "hash": "55becea56a43a766", "src": "db2@1.60.1.70124"}
+{"id": 279298, "field": "name", "en": "Formula: Totem of Urgency", "hash": "baab3affd55587d6", "src": "db2@1.60.1.70124"}
+{"id": 279298, "field": "description", "en": "Teaches you how to craft Totem of Urgency.", "hash": "90f9fb14fd23c879", "src": "db2@1.60.1.70124"}
+{"id": 279299, "field": "name", "en": "Formula: Idol of Swiftness", "hash": "be06d78f3e63c57d", "src": "db2@1.60.1.70124"}
+{"id": 279299, "field": "description", "en": "Teaches you how to craft Idol of Swiftness.", "hash": "0cf4f10832bbe411", "src": "db2@1.60.1.70124"}
+{"id": 279300, "field": "name", "en": "Formula: Idol of the Ursine Twins", "hash": "951e6eaabcad2ca1", "src": "db2@1.60.1.70124"}
+{"id": 279300, "field": "description", "en": "Teaches you how to craft Idol of the Ursine Twins.", "hash": "cf4499fcb120cde6", "src": "db2@1.60.1.70124"}
+{"id": 279301, "field": "name", "en": "Pattern: Elderwild Waistcord", "hash": "720a861e21adce46", "src": "db2@1.60.1.70124"}
+{"id": 279301, "field": "description", "en": "Teaches you how to craft Elderwild Waistcord.", "hash": "e10a212426c44537", "src": "db2@1.60.1.70124"}
+{"id": 279302, "field": "name", "en": "Pattern: Outlaw's Collar", "hash": "77bcd4b019cae375", "src": "db2@1.60.1.70124"}
+{"id": 279302, "field": "description", "en": "Teaches you how to craft Outlaw's Collar.", "hash": "f5fe9c65c07dddcd", "src": "db2@1.60.1.70124"}
+{"id": 279303, "field": "name", "en": "Pattern: Elderwild Pants", "hash": "6b32bbada6f361a8", "src": "db2@1.60.1.70124"}
+{"id": 279303, "field": "description", "en": "Teaches you how to craft Elderwild Pants.", "hash": "8b53cfbeb85e2074", "src": "db2@1.60.1.70124"}
+{"id": 279304, "field": "name", "en": "Pattern: Eternity Pauldrons", "hash": "7c77d9e33405d08c", "src": "db2@1.60.1.70124"}
+{"id": 279304, "field": "description", "en": "Teaches you how to craft Eternity Pauldrons.", "hash": "d77ae91b4005c86b", "src": "db2@1.60.1.70124"}
+{"id": 279305, "field": "name", "en": "Pattern: Tranquil Wristguards", "hash": "2871240ee36f00fa", "src": "db2@1.60.1.70124"}
+{"id": 279305, "field": "description", "en": "Teaches you how to craft Tranquil Wristguards.", "hash": "169b2d839cd7668c", "src": "db2@1.60.1.70124"}
+{"id": 279306, "field": "name", "en": "Pattern: Mourning Handguards", "hash": "f447f716cb2dbc17", "src": "db2@1.60.1.70124"}
+{"id": 279306, "field": "description", "en": "Teaches you how to craft Mourning Handguards.", "hash": "867af15b9e01ffb3", "src": "db2@1.60.1.70124"}
+{"id": 279307, "field": "name", "en": "Pattern: Wild Leather Armor Kit", "hash": "ed385560a0c81a92", "src": "db2@1.60.1.70124"}
+{"id": 279307, "field": "description", "en": "Teaches you how to craft Wild Leather Armor Kit.", "hash": "7dd584583ff2251e", "src": "db2@1.60.1.70124"}
+{"id": 279308, "field": "name", "en": "Plans: Ironwood Blade", "hash": "f3cb36bc3bdcf770", "src": "db2@1.60.1.70124"}
+{"id": 279308, "field": "description", "en": "Teaches you how to craft Ironwood Blade.", "hash": "dd8bef14eb629d2e", "src": "db2@1.60.1.70124"}
+{"id": 279309, "field": "name", "en": "Plans: Forest Defender's Axe", "hash": "d7b6d0864ce76e52", "src": "db2@1.60.1.70124"}
+{"id": 279309, "field": "description", "en": "Teaches you how to craft Forest Defender's Axe.", "hash": "79aa87fac1400580", "src": "db2@1.60.1.70124"}
+{"id": 279310, "field": "name", "en": "Plans: Greenhammer", "hash": "8c7ffe0a8322ec05", "src": "db2@1.60.1.70124"}
+{"id": 279310, "field": "description", "en": "Teaches you how to craft Greenhammer.", "hash": "9b2acf4acc406bfa", "src": "db2@1.60.1.70124"}
+{"id": 279311, "field": "name", "en": "Plans: Evergreen Shield", "hash": "7cf642451cb7dfcf", "src": "db2@1.60.1.70124"}
+{"id": 279311, "field": "description", "en": "Teaches you how to craft Evergreen Shield.", "hash": "5a5a9e954c07a86b", "src": "db2@1.60.1.70124"}
+{"id": 279312, "field": "name", "en": "Plans: Depleted Thorium Sabatons", "hash": "12972b04d657fe1c", "src": "db2@1.60.1.70124"}
+{"id": 279312, "field": "description", "en": "Teaches you how to craft Depleted Thorium Sabatons.", "hash": "8a5f44941180ff5a", "src": "db2@1.60.1.70124"}
+{"id": 279313, "field": "name", "en": "Plans: Heavy Thorium Gauntlets", "hash": "987ccc0e169bd045", "src": "db2@1.60.1.70124"}
+{"id": 279313, "field": "description", "en": "Teaches you how to craft Heavy Thorium Gauntlets.", "hash": "a5a120d3d8d23e82", "src": "db2@1.60.1.70124"}
+{"id": 279314, "field": "name", "en": "Plans: Azerothium Legplates", "hash": "2f506c8fea6fa05e", "src": "db2@1.60.1.70124"}
+{"id": 279314, "field": "description", "en": "Teaches you how to craft Azerothium Legplates.", "hash": "672f993097e17e60", "src": "db2@1.60.1.70124"}
+{"id": 279315, "field": "name", "en": "Pattern: Robes of Fiery Devastation", "hash": "401ba6d6b721039b", "src": "db2@1.60.1.70124"}
+{"id": 279315, "field": "description", "en": "Teaches you how to craft Robes of Fiery Devastation.", "hash": "55fe4c4ce848f3e5", "src": "db2@1.60.1.70124"}
+{"id": 279316, "field": "name", "en": "Pattern: Mana-infused Cord", "hash": "bd2242a9f6ebf43c", "src": "db2@1.60.1.70124"}
+{"id": 279316, "field": "description", "en": "Teaches you how to craft Mana-infused Cord.", "hash": "8661541a3b5bd698", "src": "db2@1.60.1.70124"}
+{"id": 279317, "field": "name", "en": "Pattern: Rime-encrusted Boots", "hash": "c43da7d34c2eefb0", "src": "db2@1.60.1.70124"}
+{"id": 279317, "field": "description", "en": "Teaches you how to craft Rime-encrusted Boots.", "hash": "d0429cddeb6efe4c", "src": "db2@1.60.1.70124"}
+{"id": 279318, "field": "name", "en": "Pattern: Fel Cape", "hash": "92b8add5bf4e6c1b", "src": "db2@1.60.1.70124"}
+{"id": 279318, "field": "description", "en": "Teaches you how to craft Fel Cape.", "hash": "0d7d67780fd9b4a4", "src": "db2@1.60.1.70124"}
+{"id": 279319, "field": "name", "en": "Pattern: Cloak of Earth and Sky", "hash": "df0966038a6e4e62", "src": "db2@1.60.1.70124"}
+{"id": 279319, "field": "description", "en": "Teaches you how to craft Cloak of Earth and Sky.", "hash": "3bd1079ebb4baf95", "src": "db2@1.60.1.70124"}
+{"id": 279320, "field": "name", "en": "Pattern: Felblood Soul Bag", "hash": "d12056368afe6db8", "src": "db2@1.60.1.70124"}
+{"id": 279320, "field": "description", "en": "Teaches you how to craft Felblood Soul Bag.", "hash": "c16555739c4dbc13", "src": "db2@1.60.1.70124"}
+{"id": 279321, "field": "name", "en": "Schematic: SAF-T Ultra Precision Scope", "hash": "80b28b0af91616e6", "src": "db2@1.60.1.70124"}
+{"id": 279321, "field": "description", "en": "Teaches you how to craft SAF-T Ultra Precision Scope.", "hash": "d1bcb160ea7426b1", "src": "db2@1.60.1.70124"}
+{"id": 279322, "field": "name", "en": "Schematic: Hyper Deluxe Sniper Rifle Mk XVII", "hash": "58dc9affec19cee7", "src": "db2@1.60.1.70124"}
+{"id": 279322, "field": "description", "en": "Teaches you how to craft Hyper Deluxe Sniper Rifle Mk XVII.", "hash": "46a9088d61350915", "src": "db2@1.60.1.70124"}
+{"id": 279331, "field": "name", "en": "Moonwell Remnants", "hash": "9b1b6877bd6afec4", "src": "db2@1.60.1.70124"}
+{"id": 279378, "field": "name", "en": "Lunar Pendant", "hash": "a869a4cf85576669", "src": "db2@1.60.1.70124"}
+{"id": 279378, "field": "description", "en": "Call a Sentinel to monitor an area.", "hash": "962bd17349d51af1", "src": "db2@1.60.1.70124"}
+{"id": 279379, "field": "name", "en": "Jar of Snow", "hash": "c3dcd775260343f8", "src": "db2@1.60.1.70124"}
+{"id": 279380, "field": "name", "en": "Ceramic Jar", "hash": "08c5a7aaf626873b", "src": "db2@1.60.1.70124"}
+{"id": 279380, "field": "description", "en": "Scoop up snow from South Gate Pass into the ceramic jar.", "hash": "adbb41d0fbcb0c83", "src": "db2@1.60.1.70124"}
+{"id": 279383, "field": "name", "en": "Stolen Freewind Supplies", "hash": "02f16acd9daed915", "src": "db2@1.60.1.70124"}
+{"id": 279385, "field": "name", "en": "Pristine Crimson Scale", "hash": "8056bc29f65be7c3", "src": "db2@1.60.1.70124"}
+{"id": 279386, "field": "name", "en": "Sealed Company Request", "hash": "b7812cfc63ded141", "src": "db2@1.60.1.70124"}
+{"id": 279386, "field": "description", "en": "Bring to the Hillsbrad Town Hall's bookkeeping table. ", "hash": "99fd7a0a54d8260f", "src": "db2@1.60.1.70124"}
+{"id": 279389, "field": "name", "en": "Sack of Homebrew Hops", "hash": "54bb943ae86dbbcd", "src": "db2@1.60.1.70124"}
+{"id": 279390, "field": "name", "en": "Case of Fallrook Varietal", "hash": "64753b1f3ea4ac51", "src": "db2@1.60.1.70124"}
+{"id": 279390, "field": "description", "en": "Deliver to the bottom floor of Dun Garok.", "hash": "c37b032c3f64f176", "src": "db2@1.60.1.70124"}
+{"id": 279391, "field": "name", "en": "Taurajo Headband", "hash": "ea19ab82ff49c0a2", "src": "db2@1.60.1.70124"}
+{"id": 279392, "field": "name", "en": "Glimmer", "hash": "7b3711b87709bb39", "src": "db2@1.60.1.70124"}
+{"id": 279393, "field": "name", "en": "Frostfall", "hash": "086e950a9882e2e4", "src": "db2@1.60.1.70124"}
+{"id": 279394, "field": "name", "en": "Darthalia's Orders", "hash": "b8d87d2abbd475e6", "src": "db2@1.60.1.70124"}
+{"id": 279395, "field": "name", "en": "Apothecary Vials", "hash": "a46b936c87748c12", "src": "db2@1.60.1.70124"}
+{"id": 279395, "field": "description", "en": "Open a vial and place on the ground at a high vantage point.", "hash": "841fffbc7fa4a160", "src": "db2@1.60.1.70124"}
+{"id": 279415, "field": "name", "en": "Ash of Asharell", "hash": "2367acaaba89ba3e", "src": "db2@1.60.1.70124"}
+{"id": 279415, "field": "description", "en": "All that remains of a manifestation of fiery hatred.", "hash": "627fc455263ded49", "src": "db2@1.60.1.70124"}
+{"id": 279450, "field": "name", "en": "Fractured Insignia", "hash": "aff8a3f5f1b00d8a", "src": "db2@1.60.1.70124"}
+{"id": 279464, "field": "name", "en": "Monster Shoulder (DNT)", "hash": "229e47c0275e0e7c", "src": "db2@1.60.1.70124"}
+{"id": 279465, "field": "name", "en": "Monster Chest (DNT)", "hash": "3b07fbcfa06bd7c9", "src": "db2@1.60.1.70124"}
+{"id": 279466, "field": "name", "en": "Monster Waist (DNT)", "hash": "e88cfe2a4007f1c1", "src": "db2@1.60.1.70124"}
+{"id": 279467, "field": "name", "en": "Monster Legs (DNT)", "hash": "361c5a118b1e5155", "src": "db2@1.60.1.70124"}
+{"id": 279468, "field": "name", "en": "Monster Feet (DNT)", "hash": "8aa6dac84be18b50", "src": "db2@1.60.1.70124"}
+{"id": 279469, "field": "name", "en": "Grimy Key", "hash": "54981823ef9919f5", "src": "db2@1.60.1.70124"}
+{"id": 279470, "field": "name", "en": "Monster Hand (DNT)", "hash": "c68e06c3a7ba0455", "src": "db2@1.60.1.70124"}
+{"id": 279472, "field": "name", "en": "Pristine Pesterhide Pelt", "hash": "cbf68cfb20b7a36e", "src": "db2@1.60.1.70124"}
+{"id": 279481, "field": "name", "en": "Package of Pristine Pelts", "hash": "b8e416f6a6c6f6bb", "src": "db2@1.60.1.70124"}
+{"id": 279505, "field": "name", "en": "Jagged Orcish Sword", "hash": "6f30e0306e0825d3", "src": "db2@1.60.1.70124"}
+{"id": 279507, "field": "name", "en": "Curved Orcish Dagger", "hash": "7bc9c0361d1347a0", "src": "db2@1.60.1.70124"}
+{"id": 279537, "field": "name", "en": "Rotheap Innards", "hash": "1d6fc11d54547340", "src": "db2@1.60.1.70124"}
+{"id": 279537, "field": "description", "en": "You feel great discomfort simply looking at this.", "hash": "2b2de36bf833c6b7", "src": "db2@1.60.1.70124"}
+{"id": 279589, "field": "name", "en": "Menethil Statuette", "hash": "4c2daf8dd28028c1", "src": "db2@1.60.1.70124"}
+{"id": 279591, "field": "name", "en": "Marek's Croc-Hunting Knife", "hash": "c8ee9027a0fda689", "src": "db2@1.60.1.70124"}
+{"id": 279595, "field": "name", "en": "Menethil Statuette", "hash": "4c2daf8dd28028c1", "src": "db2@1.60.1.70124"}
+{"id": 279598, "field": "name", "en": "Menethil Statuette", "hash": "4c2daf8dd28028c1", "src": "db2@1.60.1.70124"}
+{"id": 279601, "field": "name", "en": "Intact Raptor Hide", "hash": "8e386c5d463cda7b", "src": "db2@1.60.1.70124"}
+{"id": 279821, "field": "name", "en": "Khaz Modan Timber", "hash": "a686617d95a01638", "src": "db2@1.60.1.70124"}
+{"id": 279822, "field": "name", "en": "Khaz Modan Iron", "hash": "685ae8b5e34187af", "src": "db2@1.60.1.70124"}
+{"id": 279864, "field": "name", "en": "Monstrous Cleaver", "hash": "62f1131a4fdfa8ac", "src": "db2@1.60.1.70124"}
+{"id": 279865, "field": "name", "en": "Grave Shroud", "hash": "bd65e7c34fddcbed", "src": "db2@1.60.1.70124"}
+{"id": 279867, "field": "name", "en": "Slain Baron's Signet", "hash": "d3886961621a5af5", "src": "db2@1.60.1.70124"}
+{"id": 279868, "field": "name", "en": "Duty Bound Leggings", "hash": "d71e9fed66501684", "src": "db2@1.60.1.70124"}
+{"id": 279869, "field": "name", "en": "Remembrance Armor", "hash": "a6f2b9a2812648ce", "src": "db2@1.60.1.70124"}
+{"id": 279870, "field": "name", "en": "Tarnished Locket", "hash": "90ffaa9f8d5a895c", "src": "db2@1.60.1.70124"}
+{"id": 279870, "field": "description", "en": "Some memories are best forgotten.", "hash": "01c4c69a7a23e6b7", "src": "db2@1.60.1.70124"}
+{"id": 279874, "field": "name", "en": "The Stitcher", "hash": "7f6df691e34bd412", "src": "db2@1.60.1.70124"}
+{"id": 279875, "field": "name", "en": "Spare Part Bindings", "hash": "993895d9fab8756a", "src": "db2@1.60.1.70124"}
+{"id": 279876, "field": "name", "en": "Plaguefang", "hash": "923a746f24e2fb43", "src": "db2@1.60.1.70124"}
+{"id": 279876, "field": "description", "en": "Poisons target for $s1 Nature damage every $t1 sec for $d.", "hash": "c6bab04662dda29a", "src": "db2@1.60.1.70124"}
+{"id": 279877, "field": "name", "en": "Blight Gloves", "hash": "cee34316fffbd235", "src": "db2@1.60.1.70124"}
+{"id": 279894, "field": "name", "en": "Calibrated Blunderbuss", "hash": "25ffec3b173f8c5c", "src": "db2@1.60.1.70124"}
+{"id": 279895, "field": "name", "en": "Ironforge Greathammer", "hash": "04d3897f11046ccf", "src": "db2@1.60.1.70124"}
+{"id": 279896, "field": "name", "en": "Deepblaze", "hash": "7cce473927960196", "src": "db2@1.60.1.70124"}
+{"id": 279896, "field": "description", "en": "The Great Forge burns within it still.", "hash": "4f5a1d08aff181b1", "src": "db2@1.60.1.70124"}
+{"id": 279897, "field": "name", "en": "Dusty Belt", "hash": "8890bdf5fa58cf74", "src": "db2@1.60.1.70124"}
+{"id": 279898, "field": "name", "en": "Dwarven Tome", "hash": "8e7296ec926896d9", "src": "db2@1.60.1.70124"}
+{"id": 279898, "field": "description", "en": "Details the history of dwarves long since forgotten.", "hash": "89e481f836cba14e", "src": "db2@1.60.1.70124"}
+{"id": 279899, "field": "name", "en": "Catacomb Cloak", "hash": "1a8aedd002f175aa", "src": "db2@1.60.1.70124"}
+{"id": 279900, "field": "name", "en": "Deepgrave Trousers", "hash": "91794c4310e144d9", "src": "db2@1.60.1.70124"}
+{"id": 279913, "field": "name", "en": "Ti'ik's Head", "hash": "d93982af94dede02", "src": "db2@1.60.1.70124"}
+{"id": 279915, "field": "name", "en": "Nord'el", "hash": "fb5b32528a792d9e", "src": "db2@1.60.1.70124"}
+{"id": 279924, "field": "name", "en": "Nord'el", "hash": "fb5b32528a792d9e", "src": "db2@1.60.1.70124"}
+{"id": 279934, "field": "name", "en": "Shed Dark Dragonscale", "hash": "aa24e430b0ea2401", "src": "db2@1.60.1.70124"}
+{"id": 279935, "field": "name", "en": "Book Bag", "hash": "8db26c0e9b1e47c5", "src": "db2@1.60.1.70124"}
+{"id": 279936, "field": "name", "en": "Book Bag", "hash": "8db26c0e9b1e47c5", "src": "db2@1.60.1.70124"}
+{"id": 279937, "field": "name", "en": "Collecting Basket", "hash": "1e9bb8bb204fdfbf", "src": "db2@1.60.1.70124"}
+{"id": 279938, "field": "name", "en": "Trapper's Workbench", "hash": "6355088f92f66612", "src": "db2@1.60.1.70124"}
+{"id": 279938, "field": "description", "en": "Places a Trapper's Workbench containing 1 trap, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Chair to replace it.\r\n\r\n All camping features share a cooldown of $1308027d.", "hash": "6a4f5109bf37387a", "src": "db2@1.60.1.70124"}
+{"id": 279939, "field": "name", "en": "Collecting Basket", "hash": "1e9bb8bb204fdfbf", "src": "db2@1.60.1.70124"}
+{"id": 279940, "field": "name", "en": "Toxin Study", "hash": "8ed374816262eeae", "src": "db2@1.60.1.70124"}
+{"id": 279940, "field": "description", "en": "Places a Toxin Study that contains healing potions, anti-venom, and provides all of the benefits of a First Aid Kit. Requires a Campfire nearby. \r\n\r\nMay be placed over a First Aid Kit to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "de7d7930e99717a9", "src": "db2@1.60.1.70124"}
+{"id": 279941, "field": "name", "en": "Tanning Rack", "hash": "a3a0e0ccd90fac76", "src": "db2@1.60.1.70124"}
+{"id": 279941, "field": "description", "en": "Places a Tanning Rack that allows the creation of certain reagents, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Tent to replace it. All camping features share a cooldown of $1308027d.", "hash": "b65c0c3325600ab8", "src": "db2@1.60.1.70124"}
+{"id": 279943, "field": "name", "en": "Spinning Wheel", "hash": "9b2c89dae0fe5b26", "src": "db2@1.60.1.70124"}
+{"id": 279943, "field": "description", "en": "Places a Spinning Wheel that allows the creation of certain reagents, and provides all the benefits of a Faction Banner. Requires a Campfire nearby. \r\n\r\nMay be placed over a Faction Banner to replace it. All camping features share a cooldown of $1308027d.", "hash": "ade015d4f2b37ebb", "src": "db2@1.60.1.70124"}
+{"id": 279944, "field": "name", "en": "Sharpening Wheel", "hash": "d8707d4dc5b9be35", "src": "db2@1.60.1.70124"}
+{"id": 279944, "field": "description", "en": "Constructs a sharpening wheel that grants you and others sitting nearby $?$PL<24[6]?$PL<38[11]?$PL<52[20][$1230172s1] increased Strength, exclusive with Strength of Earth Totem.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "c9b7d553f9f20396", "src": "db2@1.60.1.70124"}
+{"id": 279945, "field": "name", "en": "Sewing Machine", "hash": "f7112ca015bed070", "src": "db2@1.60.1.70124"}
+{"id": 279945, "field": "description", "en": "Places a Sewing Machine usable for recipes that require it, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Tent to replace it. All camping features share a cooldown of $1308027d.", "hash": "a50a8a939c7497ae", "src": "db2@1.60.1.70124"}
+{"id": 279947, "field": "name", "en": "Seed Hybridizer", "hash": "59b99b4eae6bb164", "src": "db2@1.60.1.70124"}
+{"id": 279947, "field": "description", "en": "Places a Seed Hybridizer that allows seeds to be multiplied or combined into rarer tiers, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. \r\n\r\nMay be placed over an Incense Candle to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "a466fc3ac3b08f26", "src": "db2@1.60.1.70124"}
+{"id": 279948, "field": "name", "en": "Rock Garden", "hash": "819f0b06d3b24555", "src": "db2@1.60.1.70124"}
+{"id": 279948, "field": "description", "en": "Places a Rock Garden that spawns a common mining node over time, and provides all the benefits of a Lodestone. Requires a Campfire nearby. \r\n\r\nMay be placed over a Lodestone to replace it. All camping features share a cooldown of $1308027d.", "hash": "8c32c868b9507dc3", "src": "db2@1.60.1.70124"}
+{"id": 279949, "field": "name", "en": "Repair Bot", "hash": "5d19532f37f739d8", "src": "db2@1.60.1.70124"}
+{"id": 279949, "field": "description", "en": "Summons a Repair Bot that allows you and others nearby to buy reagents and repair gear. Requires a Campfire nearby. \r\n\r\nMay be placed over a Reagent Bot to replace it. All camping features share a cooldown of $1308027d.", "hash": "3e5f1087ecc0fc18", "src": "db2@1.60.1.70124"}
+{"id": 279950, "field": "name", "en": "Reagent Bot", "hash": "9b5fbc1e475c0e43", "src": "db2@1.60.1.70124"}
+{"id": 279950, "field": "description", "en": "Summons a Reagent Bot that allows you and others nearby to purchase reagents. Requires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "8db6dd3edb97d129", "src": "db2@1.60.1.70124"}
+{"id": 279951, "field": "name", "en": "Plague Doctor's Laboratory", "hash": "da0156c5b15dbcf0", "src": "db2@1.60.1.70124"}
+{"id": 279951, "field": "description", "en": "Places a Plague Doctor's Laboratory that contains healing potions, poultices, and provides all of the benefits of a First Aid Kit. Requires a Campfire nearby. \r\n\r\nMay be placed over a First Aid Kit to replace it. All camping features share a cooldown of $1308027d.", "hash": "19d08955ce663a12", "src": "db2@1.60.1.70124"}
+{"id": 279952, "field": "name", "en": "Molten Foundry", "hash": "bce5b81977718714", "src": "db2@1.60.1.70124"}
+{"id": 279952, "field": "description", "en": "Places a Molten Foundry usable for recipes that require it, and provides all the benefits of a Lodestone. Requires a Campfire nearby. \r\n\r\nMay be placed over a Lodestone to replace it. All camping features share a cooldown of $1308027d.", "hash": "fcb4b585bad778fa", "src": "db2@1.60.1.70124"}
+{"id": 279955, "field": "name", "en": "Master Forge", "hash": "4a584bb8b1b96db2", "src": "db2@1.60.1.70124"}
+{"id": 279955, "field": "description", "en": "Places a Master Forge usable for recipes that require it, and provides all of the benefits of a Sharpening Wheel. Requires a Campfire nearby. \r\n\r\nMay be placed over a Sharpening Wheel to replace it. All camping features share a cooldown of $1308027d.", "hash": "d95588b4add0b122", "src": "db2@1.60.1.70124"}
+{"id": 279956, "field": "name", "en": "Mana Well", "hash": "cafcee01bc4b49ef", "src": "db2@1.60.1.70124"}
+{"id": 279956, "field": "description", "en": "Constructs a mana well that allows you and others sitting nearby to regenerate $?$PL<24[10]?$PL<34[15]?$PL<44[20]?$PL<54[24][$1230587s1] Mana every 5 sec, exclusive with Blessing of Wisdom.\n\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "56057be259659206", "src": "db2@1.60.1.70124"}
+{"id": 279957, "field": "name", "en": "Cookie's Feast", "hash": "2193b4154ed04b08", "src": "db2@1.60.1.70124"}
+{"id": 279957, "field": "description", "en": "Lay out Cookie's Feast that contains Stamina-boosting food. Requires a Cooking Fire nearby. All camping features share a cooldown of $1308027d.", "hash": "03a6e34838edec18", "src": "db2@1.60.1.70124"}
+{"id": 279959, "field": "name", "en": "Loom", "hash": "0a4c5425b38fa63a", "src": "db2@1.60.1.70124"}
+{"id": 279959, "field": "description", "en": "Places a Loom usable for recipes that require it, and provides all the benefits of a Faction Banner. Requires a Campfire nearby. \r\n\r\nMay be placed over a Faction Banner to replace it. All camping features share a cooldown of $1308027d.", "hash": "4c1a1fbaaf0affdc", "src": "db2@1.60.1.70124"}
+{"id": 279960, "field": "name", "en": "Lodestone", "hash": "c809e41f9fc8af34", "src": "db2@1.60.1.70124"}
+{"id": 279960, "field": "description", "en": "Erects a lodestone that allows you and others sitting nearby to gain $?$PL<12[12]?$PL<22[20]?$PL<32[32]?$PL<42[49]?$PL<52[67][$1230164s1] increased melee Attack Power, exclusive with Blessing of Might.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "a2566cd95ea948cc", "src": "db2@1.60.1.70124"}
+{"id": 279961, "field": "name", "en": "Journeyman Campfire Kit", "hash": "41cbcedbd8342019", "src": "db2@1.60.1.70124"}
+{"id": 279961, "field": "description", "en": "Builds a journeyman campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "c188d8ff694a3970", "src": "db2@1.60.1.70124"}
+{"id": 279962, "field": "name", "en": "Incense Candle", "hash": "0556be08df4ec55b", "src": "db2@1.60.1.70124"}
+{"id": 279962, "field": "description", "en": "Ignites an incense candle that allows you and others sitting nearby to gain $?$PL<14[2]?$PL<28[6]?$PL<42[12]?$PL<56[18][$1229513s1] increased Intellect, exclusive with Arcane Intellect.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "6ff5feeeee5adf12", "src": "db2@1.60.1.70124"}
+{"id": 279964, "field": "name", "en": "Greenhouse", "hash": "ec7bd7c4f0890f08", "src": "db2@1.60.1.70124"}
+{"id": 279964, "field": "description", "en": "Places a Greenhouse that will grow herbs over time from seeds planted, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. \r\n\r\nMay be placed over an Incense Candle to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "452a5fb381df0197", "src": "db2@1.60.1.70124"}
+{"id": 279965, "field": "name", "en": "Fishing Rack", "hash": "31cb457daf6168b5", "src": "db2@1.60.1.70124"}
+{"id": 279965, "field": "description", "en": "Places a Fishing Rack that grants the ability to catch uncommon fish for $1280341d, Fishing Skill lures, and provides all of the benefits of a Fish Bowl. Requires a Campfire nearby. \r\n\r\nMay be placed over a Fish Bowl to replace it. All camping features share a cooldown of $1308027d.", "hash": "cd28c4bbbef06e4c", "src": "db2@1.60.1.70124"}
+{"id": 279966, "field": "name", "en": "Fishing Hut", "hash": "e502e1b68554f00a", "src": "db2@1.60.1.70124"}
+{"id": 279966, "field": "description", "en": "Places a Fishing Hut that grants the ability to catch rare fish for $1280342d, Fishing Skill lures, and provides all of the benefits of a Fish Bowl. Requires a Campfire nearby. \r\n\r\nMay be placed over a Fish Bowl to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "73c33244f38dc2c8", "src": "db2@1.60.1.70124"}
+{"id": 279967, "field": "name", "en": "Fish Bowl", "hash": "123d7b537d46a1ab", "src": "db2@1.60.1.70124"}
+{"id": 279967, "field": "description", "en": "Places a small fish bowl that allows you and others sitting nearby to gain $1230098s1% increased stats, exclusive with Blessing of Kings.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "eba7cfc623d0cedc", "src": "db2@1.60.1.70124"}
+{"id": 279968, "field": "name", "en": "First Aid Kit", "hash": "ac6617d413b0822b", "src": "db2@1.60.1.70124"}
+{"id": 279968, "field": "description", "en": "Unpacks a first aid kit that allows you and others sitting nearby to gain $?$PL<12[3]?$PL<24[8]?$PL<36[21]?$PL<48[34]?$PL<60[45][$1230124s1] increased Stamina, exclusive with Power Word: Fortitude.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "c1b75e5849658393", "src": "db2@1.60.1.70124"}
+{"id": 279969, "field": "name", "en": "Field Guide", "hash": "bf7f3c83b1ec32fb", "src": "db2@1.60.1.70124"}
+{"id": 279969, "field": "description", "en": "Places a Field Guide that allows players to read it and gain Track Beasts, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Chair to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "08408bcef22a631b", "src": "db2@1.60.1.70124"}
+{"id": 279970, "field": "name", "en": "Fermenter", "hash": "2a72f82660a5a90b", "src": "db2@1.60.1.70124"}
+{"id": 279970, "field": "description", "en": "Places a fermenter that allows the creation of certain reagents, and provides all of the benefits of a Mana Well. Requires a Campfire nearby. May be placed over a Mana Well to replace it. All camping features share a cooldown of $1308027d.", "hash": "4d4c9cf098bd96dd", "src": "db2@1.60.1.70124"}
+{"id": 279972, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70124"}
+{"id": 279972, "field": "description", "en": "Unrolls a banner that allows you and others members of the Horde sitting nearby to gain $?$PL<40[14]?$PL<50[19]?$PL<60[27][$1229718s1] increased Spirit, exclusive with Divine Spirit.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "50f84e548268c269", "src": "db2@1.60.1.70124"}
+{"id": 279973, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70124"}
+{"id": 279973, "field": "description", "en": "Unrolls a banner that allows you and others members of the Alliance sitting nearby to gain $?$PL<40[14]?$PL<50[19]?$PL<60[27][$1229718s1] increased Spirit, exclusive with Divine Spirit.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "15c1d355ad36e8bf", "src": "db2@1.60.1.70124"}
+{"id": 279974, "field": "name", "en": "Expert Campfire Kit", "hash": "4a749c1de199f8c4", "src": "db2@1.60.1.70124"}
+{"id": 279974, "field": "description", "en": "Builds an expert campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "28ce231b83787325", "src": "db2@1.60.1.70124"}
+{"id": 279976, "field": "name", "en": "Enchanted Lute", "hash": "94fb1453e4194e9c", "src": "db2@1.60.1.70124"}
+{"id": 279976, "field": "description", "en": "Summons an enchanted lute that allows you and others sitting nearby to gain $?$PL<10[28]?$PL<20[71]?$PL<30[114]?$PL<40[163]?$PL<50[211]?$PL<60[260][$1230653s1 ] increase to Armor$?$PL<10[]?$PL<30[ and ][, ]$?$PL>59[$1230653s2]?$PL>49[12]?$PL>39[9]?$PL>29[7]?$PL>19[4]?$PL>9[2][]$?$PL>9[ increase to all stats][]$?$PL>59[, and $1230653s3]?$PL>49[, and 16]?$PL>39[, and 12]?$PL>29[, and 6][]$?$PL>29[ increase to all resistances][], exclusive with Mark of the Wild.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "170b93a86cfd0a93", "src": "db2@1.60.1.70124"}
+{"id": 279978, "field": "name", "en": "Camp Tent", "hash": "9bc8a8776b4bc48d", "src": "db2@1.60.1.70124"}
+{"id": 279978, "field": "description", "en": "Builds a tent that allows you and others sitting nearby to increase Rested experience to $s2% of a level. No effect if Rested experience already exceeds that value.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "13e29a9503a0c724", "src": "db2@1.60.1.70124"}
+{"id": 279979, "field": "name", "en": "Camp Chair", "hash": "8da89737216e4c19", "src": "db2@1.60.1.70124"}
+{"id": 279979, "field": "description", "en": "Assembles a camp chair that allows you and others sitting nearby to gain $1229519s1% increased critical strike chance with all spells and attacks, exclusive with Moonkin Aura.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "db795153e552655d", "src": "db2@1.60.1.70124"}
+{"id": 279981, "field": "name", "en": "Basic Campfire Kit", "hash": "0d536699c844a827", "src": "db2@1.60.1.70124"}
+{"id": 279981, "field": "description", "en": "Builds a basic campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "7f185d8fbd4ab628", "src": "db2@1.60.1.70124"}
+{"id": 279982, "field": "name", "en": "Iron Oven", "hash": "b68b863f35fa632e", "src": "db2@1.60.1.70124"}
+{"id": 279982, "field": "description", "en": "Places an Iron Oven required for the most advanced cooking recipes. Requires a Cooking Fire nearby. All camping features share a cooldown of $1308027d.", "hash": "8cd3c85960ca0880", "src": "db2@1.60.1.70124"}
+{"id": 279985, "field": "name", "en": "Arcane Salvager", "hash": "021e43b705ff7a51", "src": "db2@1.60.1.70124"}
+{"id": 279985, "field": "description", "en": "Places an Arcane Salvager that enables more efficient disenchanting, and provides all the benefits of an Enchanted Lute. Requires a Campfire nearby. \r\n\r\nMay be placed over an Enchanted Lute to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "5981e275864a7193", "src": "db2@1.60.1.70124"}
+{"id": 279987, "field": "name", "en": "Arcane Forge", "hash": "617fe355eddeb1e4", "src": "db2@1.60.1.70124"}
+{"id": 279987, "field": "description", "en": "Places an Arcane Forge usable for recipes that require it, and provides all the benefits of an Enchanted Lute. Requires a Campfire nearby. \r\n\r\nMay be placed over an Enchanted Lute to replace it. All camping features share a cooldown of $1308027d.", "hash": "ec844b4917e79d74", "src": "db2@1.60.1.70124"}
+{"id": 279988, "field": "name", "en": "Anvil", "hash": "83d7bf8c30b1880e", "src": "db2@1.60.1.70124"}
+{"id": 279988, "field": "description", "en": "Places an anvil, and provides all of the benefits of a Sharpening Wheel. Requires a Campfire nearby. \r\n\r\nMay be placed over a Sharpening Wheel to replace it. All camping features share a cooldown of $1308027d.", "hash": "b9998893c4608f21", "src": "db2@1.60.1.70124"}
+{"id": 279989, "field": "name", "en": "Anarchist's Workbench", "hash": "7d1e77ca981659d9", "src": "db2@1.60.1.70124"}
+{"id": 279989, "field": "description", "en": "Places an Anarchist's Workbench usable for recipes that require it. Requires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "d276a78745d5011d", "src": "db2@1.60.1.70124"}
+{"id": 279990, "field": "name", "en": "Alchemy Laboratory", "hash": "7d78f6e976720849", "src": "db2@1.60.1.70124"}
+{"id": 279990, "field": "description", "en": "Places an Alchemy Laboratory usable for recipes that require it, and provides all of the benefits of a Mana Well. Requires a Campfire nearby. \r\n\r\nMay be placed over a Mana Well to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "f6ebb8cc6a8ba6fa", "src": "db2@1.60.1.70124"}
+{"id": 279991, "field": "name", "en": "Dry Branch", "hash": "47774918102b3960", "src": "db2@1.60.1.70124"}
+{"id": 279993, "field": "name", "en": "Titanic Keystone", "hash": "d13d1355a1fd508d", "src": "db2@1.60.1.70124"}
+{"id": 279996, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70124"}
+{"id": 279996, "field": "description", "en": "Activate a Goaz Warder.", "hash": "3e261b236c4833f1", "src": "db2@1.60.1.70124"}

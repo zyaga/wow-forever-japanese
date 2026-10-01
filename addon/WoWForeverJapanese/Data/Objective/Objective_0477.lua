@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("objective", {
   [477011] = { "Veenixを見つける", 0x36a09fcd, "." },
+  [477150] = { "Eye of Kilroggを道まで誘導する", 0x47d031d6, "." },
   [477266] = { "Enchantingのスキルを20まで上げる", 0x67d7fcad, "." },
   [477267] = { "Engineeringのスキルを20まで上げる", 0xe75484ed, "." },
   [477268] = { "Enchantingのスキルを20まで上げる", 0x67d7fcad, "." },
@@ -10,4 +11,5 @@ WFJ.Data.add("objective", {
   [477504] = { "Tarantula Eggを破壊する", 0xecffe759, "." },
   [477518] = { "Webbed Forsakenを解放する", 0x280e18e3, "." },
   [477632] = { "Doctor Martin Felbenと話す", 0x35c836fd, "." },
+  [477671] = { "Raven Hillを調査する", 0x6e4a2ba7, "." },
 })

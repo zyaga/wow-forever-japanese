@@ -1,10 +1,11 @@
-{"id": 283254, "field": "name", "en": "Heart of Alterac", "hash": "8d581d6959ce4b1d", "src": "db2@1.60.1.70009"}
-{"id": 283255, "field": "name", "en": "Syndicate Executioner's Slicer", "hash": "c5ba7fb84a3a9e2c", "src": "db2@1.60.1.70009"}
-{"id": 283259, "field": "name", "en": "Bearhide Vicegrips", "hash": "59a2df883c4bbb1f", "src": "db2@1.60.1.70009"}
-{"id": 283361, "field": "name", "en": "Gorefang's Runners", "hash": "7980ec6ce61b5785", "src": "db2@1.60.1.70009"}
-{"id": 283389, "field": "name", "en": "Skonk's List", "hash": "12e246be31e7dbc0", "src": "db2@1.60.1.70009"}
-{"id": 283460, "field": "name", "en": "Decaying Flesh Belt", "hash": "421973500e28cca4", "src": "db2@1.60.1.70009"}
-{"id": 283462, "field": "name", "en": "Bayne's Bite", "hash": "286036df6d82e339", "src": "db2@1.60.1.70009"}
-{"id": 283471, "field": "name", "en": "Fellicent's Bindings", "hash": "8a4b80c1a6a81d99", "src": "db2@1.60.1.70009"}
-{"id": 283473, "field": "name", "en": "Batwing Bindings", "hash": "16071ebb2b270b0a", "src": "db2@1.60.1.70009"}
-{"id": 283480, "field": "name", "en": "Cracked Carapace Hauberk", "hash": "5bfe827a261cbaa9", "src": "db2@1.60.1.70009"}
+{"id": 283253, "field": "name", "en": "Denmother's Hide", "hash": "aa9c465cc21bed12", "src": "db2@1.60.1.70124"}
+{"id": 283254, "field": "name", "en": "Heart of Alterac", "hash": "8d581d6959ce4b1d", "src": "db2@1.60.1.70124"}
+{"id": 283255, "field": "name", "en": "Syndicate Executioner's Slicer", "hash": "c5ba7fb84a3a9e2c", "src": "db2@1.60.1.70124"}
+{"id": 283259, "field": "name", "en": "Bearhide Vicegrips", "hash": "59a2df883c4bbb1f", "src": "db2@1.60.1.70124"}
+{"id": 283361, "field": "name", "en": "Gorefang's Runners", "hash": "7980ec6ce61b5785", "src": "db2@1.60.1.70124"}
+{"id": 283389, "field": "name", "en": "Skonk's List", "hash": "12e246be31e7dbc0", "src": "db2@1.60.1.70124"}
+{"id": 283460, "field": "name", "en": "Decaying Flesh Belt", "hash": "421973500e28cca4", "src": "db2@1.60.1.70124"}
+{"id": 283462, "field": "name", "en": "Bayne's Bite", "hash": "286036df6d82e339", "src": "db2@1.60.1.70124"}
+{"id": 283471, "field": "name", "en": "Fellicent's Bindings", "hash": "8a4b80c1a6a81d99", "src": "db2@1.60.1.70124"}
+{"id": 283473, "field": "name", "en": "Batwing Bindings", "hash": "16071ebb2b270b0a", "src": "db2@1.60.1.70124"}
+{"id": 283480, "field": "name", "en": "Cracked Carapace Hauberk", "hash": "5bfe827a261cbaa9", "src": "db2@1.60.1.70124"}

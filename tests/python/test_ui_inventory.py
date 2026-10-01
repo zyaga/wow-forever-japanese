@@ -77,8 +77,8 @@ def _source(env: str, default: Path) -> Path | None:
 
 def test_forever_output_matches_the_committed_inventory(root):
     # Needs a Forever UI extract + its GlobalStrings: WFJ_FOREVER_UI=<extract>/interface/addons, WFJ_FOREVER_GLOBALSTRINGS
-    addons = _source("WFJ_FOREVER_UI", root / "predecessors/forever-ui-1.60.1.70009/interface/addons")
-    gs = _source("WFJ_FOREVER_GLOBALSTRINGS", root / "predecessors/clients/forever-1.60.1.70009/GlobalStrings.csv")
+    addons = _source("WFJ_FOREVER_UI", root / "predecessors/forever-ui-1.60.1.70124/interface/addons")
+    gs = _source("WFJ_FOREVER_GLOBALSTRINGS", root / "predecessors/clients/forever-1.60.1.70124/GlobalStrings.csv")
     if addons is None or gs is None:
         pytest.skip("no Forever UI extract")
     code, out = _run([str(addons), str(gs)])

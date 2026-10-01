@@ -1,345 +1,345 @@
-{"id": "ICON_SELECTION_CLICK", "field": "text", "en": "Click to view in the list", "hash": "0439ee6fbbfdb04f", "src": "db2@1.60.1.70009"}
-{"id": "ICON_SELECTION_NOTINLIST", "field": "text", "en": "This icon is not in the list", "hash": "f3864f642ae0b51f", "src": "db2@1.60.1.70009"}
-{"id": "ICON_SELECTION_TITLE_CURRENT", "field": "text", "en": "Currently Selected", "hash": "d4b26efa1f3ba217", "src": "db2@1.60.1.70009"}
-{"id": "IGNORE", "field": "text", "en": "Ignore", "hash": "d7988f8c6bf93789", "src": "db2@1.60.1.70009"}
-{"id": "IGNORED", "field": "text", "en": "Ignored", "hash": "5311772e13c44b5f", "src": "db2@1.60.1.70009"}
-{"id": "IGNORED_QUEST_DISPLAY", "field": "text", "en": "|cff000000%s (ignored)|r", "hash": "4d41b04c8d765d83", "src": "db2@1.60.1.70009"}
-{"id": "IGNORE_DIALOG", "field": "text", "en": "Ignore", "hash": "d7988f8c6bf93789", "src": "db2@1.60.1.70009"}
-{"id": "IGNORE_ERRORS", "field": "text", "en": "Ignore", "hash": "d7988f8c6bf93789", "src": "db2@1.60.1.70009"}
-{"id": "IGNORE_LIST", "field": "text", "en": "Ignore List", "hash": "e2b877686191a833", "src": "db2@1.60.1.70009"}
-{"id": "IGNORE_REMOVE", "field": "text", "en": "Stop Ignoring", "hash": "ee876699f23d9d0b", "src": "db2@1.60.1.70009"}
-{"id": "IGR_BILLING_NAG_DIALOG", "field": "text", "en": "Your IGR's playtime is about to expire, you will be disconnected shortly.", "hash": "f7097375dabcfb46", "src": "db2@1.60.1.70009"}
-{"id": "IMMUNE", "field": "text", "en": "Immune", "hash": "40ca18062fe1575d", "src": "db2@1.60.1.70009"}
-{"id": "IM_STYLE", "field": "text", "en": "IM Style", "hash": "9a44b48ea3fa333d", "src": "db2@1.60.1.70009"}
-{"id": "INBOX", "field": "text", "en": "Inbox", "hash": "10403883d8a0f802", "src": "db2@1.60.1.70009"}
-{"id": "INBOX_TOO_MUCH_MAIL", "field": "text", "en": "Your inbox is full.", "hash": "0db59e6afb2c1e8d", "src": "db2@1.60.1.70009"}
-{"id": "INBOX_TOO_MUCH_MAIL_TOOLTIP", "field": "text", "en": "Not all of your mail can be displayed.|nPlease delete some mail to make room.", "hash": "b93bd21fcee70c08", "src": "db2@1.60.1.70009"}
-{"id": "INCOMING_SUMMON_TOOLTIP_SUMMON_ACCEPTED", "field": "text", "en": "Summon Accepted", "hash": "c5981e5f8f433b9f", "src": "db2@1.60.1.70009"}
-{"id": "INCOMING_SUMMON_TOOLTIP_SUMMON_DECLINED", "field": "text", "en": "Summon Declined", "hash": "0f405716bd6bb151", "src": "db2@1.60.1.70009"}
-{"id": "INCOMING_SUMMON_TOOLTIP_SUMMON_PENDING", "field": "text", "en": "Summon Pending", "hash": "2ebd38b7becf1807", "src": "db2@1.60.1.70009"}
-{"id": "INCOMPLETE", "field": "text", "en": "Incomplete", "hash": "f126dd14b037c633", "src": "db2@1.60.1.70009"}
-{"id": "INSPECT", "field": "text", "en": "Inspect", "hash": "8b92fd5302e8b2bc", "src": "db2@1.60.1.70009"}
-{"id": "INSPECT_GUILD_FACTION", "field": "text", "en": "%s Guild", "hash": "ce4e6e23b0753f6b", "src": "db2@1.60.1.70009"}
-{"id": "INSPECT_GUILD_NUM_MEMBERS", "field": "text", "en": "%d Guild Members", "hash": "84f74a4a257efcd9", "src": "db2@1.60.1.70009"}
-{"id": "INSPECT_REQUIREMENTS", "field": "text", "en": "<Ctrl-Click to view requirements>", "hash": "c24ea6013a70bbdc", "src": "db2@1.60.1.70009"}
-{"id": "INSPECT_TALENTS_BUTTON", "field": "text", "en": "Talents", "hash": "0d31e779843effa2", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE", "field": "text", "en": "Instance", "hash": "b1e81ec92ddcdae5", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_BOOT_TIMER", "field": "text", "en": "You are not in this instance's group.  You will be teleported to the nearest graveyard in %d %s.", "hash": "41aaa34ab5606395", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_CHAT", "field": "text", "en": "Instance", "hash": "b1e81ec92ddcdae5", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_CHAT_LEADER", "field": "text", "en": "Instance Leader", "hash": "7c327ca73c2524c6", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_CHAT_MESSAGE", "field": "text", "en": "Instance", "hash": "b1e81ec92ddcdae5", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_ENTRANCES_FILTER_DESCRIPTION", "field": "text", "en": "Instanced content that rewards loot, intended for groups of adventurers", "hash": "47ec9d8c1ec68a6f", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_LEAVE", "field": "text", "en": "Leave Instance", "hash": "80b4780201f4b6d6", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_LOCK_TIMER", "field": "text", "en": "You have entered an instance already in progress! You will be saved to %1$s in %2$s!", "hash": "6e072ce11a0c9a30", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_PARTY_LEAVE", "field": "text", "en": "Leave Instance Group", "hash": "8ca1e942a29ea3ae", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_RESET_FAILED", "field": "text", "en": "Cannot reset %s.  There are players still inside the instance.", "hash": "d7b2f78f7f18dd00", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_RESET_FAILED_OFFLINE", "field": "text", "en": "Cannot reset %s.  There are players offline in your party.", "hash": "f24d833380fec0cd", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_RESET_FAILED_ZONING", "field": "text", "en": "Cannot reset %s.  There are players in your party attempting to zone into an instance.", "hash": "29128e6fc81d11f1", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_RESET_SUCCESS", "field": "text", "en": "%s has been reset.", "hash": "c1f28253a9c1eef4", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_SHUTDOWN_MESSAGE", "field": "text", "en": "Not enough players. The game will end in %s", "hash": "cfb75b85069f14e8", "src": "db2@1.60.1.70009"}
-{"id": "INSTANCE_WALK_IN_LEAVE", "field": "text", "en": "Leave Delve", "hash": "c10946d8b499838b", "src": "db2@1.60.1.70009"}
-{"id": "INTERACT_ICONS_DEFAULT", "field": "text", "en": "NPCs Only (Default)", "hash": "ce96e1acc285791b", "src": "db2@1.60.1.70009"}
-{"id": "INTERACT_ICONS_OPTION", "field": "text", "en": "Interact Key Icons", "hash": "1f9272b2714b0bf8", "src": "db2@1.60.1.70009"}
-{"id": "INTERACT_ICONS_SHOW_ALL", "field": "text", "en": "Show All", "hash": "5dfd85837f00ad62", "src": "db2@1.60.1.70009"}
-{"id": "INTERACT_ICONS_SHOW_NONE", "field": "text", "en": "Show None", "hash": "1a7a0e5eeec8bdc6", "src": "db2@1.60.1.70009"}
-{"id": "INTERACT_KEY_TUTORIAL", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Interact Key|n|r|cnHIGHLIGHT_FONT_COLOR:Press |r|cnNORMAL_FONT_COLOR:%s|r|cnHIGHLIGHT_FONT_COLOR: to Interact with nearby NPCs and objects|r|n|n|cnNORMAL_FONT_COLOR:%d/2 - Interact with an NPC or object|r", "hash": "41c40e78b2f86e75", "src": "db2@1.60.1.70009"}
-{"id": "INTERACT_KEY_TUTORIAL_NO_INTERACT_KEY_ASSIGNED", "field": "text", "en": "|cnHIGHLIGHT_FONT_COLOR:The |r|cnNORMAL_FONT_COLOR:Interact Key|r|cnHIGHLIGHT_FONT_COLOR: allows you to interact with NPCs and objects using a keypress|n|n|r|cnRED_FONT_COLOR:Assign an Interact Key binding under Control options|r", "hash": "e1d055bbb3e6d529", "src": "db2@1.60.1.70009"}
-{"id": "INTERACT_ON_LEFT_CLICK_TEXT", "field": "text", "en": "Interact On Left Click", "hash": "3cfe58e030d79729", "src": "db2@1.60.1.70009"}
-{"id": "INTERFACE_ACTION_BLOCKED", "field": "text", "en": "Interface action failed because of an AddOn", "hash": "4a9d61ab1c7fda90", "src": "db2@1.60.1.70009"}
-{"id": "INTERFACE_ACTION_BLOCKED_TOOLTIP", "field": "text", "en": "Interface actions failed because of this AddOn: %d", "hash": "696688ad1169a920", "src": "db2@1.60.1.70009"}
-{"id": "INTERFACE_LABEL", "field": "text", "en": "Interface", "hash": "2b102ef3f6862d52", "src": "db2@1.60.1.70009"}
-{"id": "INTERRUPT", "field": "text", "en": "Interrupt", "hash": "2cb115a1e6cc874d", "src": "db2@1.60.1.70009"}
-{"id": "INTERRUPTED", "field": "text", "en": "Interrupted", "hash": "eae3543bbe1781e4", "src": "db2@1.60.1.70009"}
-{"id": "INTERRUPTS", "field": "text", "en": "Interrupts", "hash": "de9e12449e2726ad", "src": "db2@1.60.1.70009"}
-{"id": "INT_SPELL_DURATION_DAYS", "field": "text", "en": "%d |4day:days;", "hash": "91d4fc7d5e6b46eb", "src": "db2@1.60.1.70009"}
-{"id": "INT_SPELL_DURATION_HOURS", "field": "text", "en": "%d |4hour:hrs;", "hash": "e835e7171d9be5e5", "src": "db2@1.60.1.70009"}
-{"id": "INT_SPELL_DURATION_MIN", "field": "text", "en": "%d min", "hash": "39e09a403a3fcdbe", "src": "db2@1.60.1.70009"}
-{"id": "INT_SPELL_DURATION_SEC", "field": "text", "en": "%d sec", "hash": "39e22a5f5210e4b5", "src": "db2@1.60.1.70009"}
-{"id": "INVERT_GAMEPAD_PITCH", "field": "text", "en": "Invert Vertical Axis", "hash": "b92e6498d39e22ca", "src": "db2@1.60.1.70009"}
-{"id": "INVERT_GAMEPAD_YAW", "field": "text", "en": "Invert Horizontal Axis", "hash": "44b7cba78e7d0062", "src": "db2@1.60.1.70009"}
-{"id": "INVERT_MOUSE", "field": "text", "en": "Invert Mouse", "hash": "823191c7bef70db4", "src": "db2@1.60.1.70009"}
-{"id": "INVITATION", "field": "text", "en": "%s invites you to a group.", "hash": "e38d7130910f3b63", "src": "db2@1.60.1.70009"}
-{"id": "INVITE", "field": "text", "en": "Invite", "hash": "53896770d7d0fd4d", "src": "db2@1.60.1.70009"}
-{"id": "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG", "field": "text", "en": "Enter a BattleTag.", "hash": "d736d1a1a2a578ba", "src": "db2@1.60.1.70009"}
-{"id": "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_TEXT", "field": "text", "en": "Invite Member", "hash": "ce1b8be1c0246ee1", "src": "db2@1.60.1.70009"}
-{"id": "INVITE_COMMUNITY_MEMBER_POPUP_SEND_INVITE", "field": "text", "en": "Send", "hash": "0b39d47c69b48d03", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_2HWEAPON", "field": "text", "en": "Two-Hand", "hash": "5e55518b1fba7104", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_AMMO", "field": "text", "en": "Ammo", "hash": "08d277669827629d", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_BAG", "field": "text", "en": "Bag", "hash": "00117a5c060d8c7b", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_BODY", "field": "text", "en": "Shirt", "hash": "befd5ccf59247478", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_CHEST", "field": "text", "en": "Chest", "hash": "a620ec195a9b8dc7", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_CLOAK", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_FEET", "field": "text", "en": "Feet", "hash": "097bdf123b6c09c0", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_FINGER", "field": "text", "en": "Finger", "hash": "0824fa71156d7be2", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_HAND", "field": "text", "en": "Hands", "hash": "fcf7b014fb10e279", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_HEAD", "field": "text", "en": "Head", "hash": "09c0782c563b723b", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_HOLDABLE", "field": "text", "en": "Held In Off-hand", "hash": "9fca5b084e0699fd", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_LEGS", "field": "text", "en": "Legs", "hash": "0a49b1b98bdc01ae", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_NECK", "field": "text", "en": "Neck", "hash": "0a8e4adba6ab6a31", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_QUIVER", "field": "text", "en": "Quiver", "hash": "a8d12f9d81d9f86d", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_RANGED", "field": "text", "en": "Ranged", "hash": "45ead356f08d78d0", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_RANGEDRIGHT", "field": "text", "en": "Ranged", "hash": "45ead356f08d78d0", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_RELIC", "field": "text", "en": "Relic", "hash": "ad09821cdde9c527", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_ROBE", "field": "text", "en": "Chest", "hash": "a620ec195a9b8dc7", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_SHIELD", "field": "text", "en": "Off Hand", "hash": "4d66f8e7f5edf7c5", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_SHOULDER", "field": "text", "en": "Shoulder", "hash": "451a499146f8853d", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_TABARD", "field": "text", "en": "Tabard", "hash": "3b563bc3daf16475", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_THROWN", "field": "text", "en": "Thrown", "hash": "b85ebec1016e7558", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_TRINKET", "field": "text", "en": "Trinket", "hash": "8d85b3cd3e60b73e", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_WAIST", "field": "text", "en": "Waist", "hash": "0444175ef6f6e5f7", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_WEAPON", "field": "text", "en": "One-Hand", "hash": "dbaa860aa3017021", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_WEAPONMAINHAND", "field": "text", "en": "Main Hand", "hash": "0733afc2db5fe73b", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_WEAPONMAINHAND_PET", "field": "text", "en": "Main Attack", "hash": "3584af84fe059ec8", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_WEAPONOFFHAND", "field": "text", "en": "Off Hand", "hash": "4d66f8e7f5edf7c5", "src": "db2@1.60.1.70009"}
-{"id": "INVTYPE_WRIST", "field": "text", "en": "Wrist", "hash": "068b3ea95ade1a90", "src": "db2@1.60.1.70009"}
-{"id": "ISLAND_LEAVE", "field": "text", "en": "Leave Island", "hash": "a70f3a47c702cbd5", "src": "db2@1.60.1.70009"}
-{"id": "ITEMS", "field": "text", "en": "Items", "hash": "110ed23534f93bbc", "src": "db2@1.60.1.70009"}
-{"id": "ITEMSLOTTEXT", "field": "text", "en": "Item Slots", "hash": "8d522a9fc6be7c07", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_BIND_ON_EQUIP", "field": "text", "en": "Binds when equipped", "hash": "421c36d3a912ab1b", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_BIND_ON_PICKUP", "field": "text", "en": "Binds when picked up", "hash": "ee887e158bc4920f", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_BIND_ON_USE", "field": "text", "en": "Binds when used", "hash": "a491a9dc6f47e220", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_BIND_QUEST", "field": "text", "en": "Quest Item", "hash": "2dc7fee4ab0e85e2", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_CAN_BE_READ", "field": "text", "en": "<This item can be read>", "hash": "3e1f4527625046b8", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_CLASSES_ALLOWED", "field": "text", "en": "Classes: %s", "hash": "2232eb3e64441ce0", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_COMPARISON_CYCLING_DISABLED_MSG_MAINHAND", "field": "text", "en": "Visit the Key Bindings menu to enable cycling through your main-hand items. (SHIFT-C recommended)", "hash": "7e9809a39664e35c", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_COMPARISON_CYCLING_DISABLED_MSG_OFFHAND", "field": "text", "en": "Visit the Key Bindings menu to enable cycling through your off-hand items. (SHIFT-C recommended)", "hash": "69f23b552d60a531", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_COMPARISON_SWAP_ITEM_MAINHAND_DESCRIPTION", "field": "text", "en": "Press %s to cycle through your main-hand items.", "hash": "2675faf297f13e9c", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_COMPARISON_SWAP_ITEM_OFFHAND_DESCRIPTION", "field": "text", "en": "Press %s to cycle through your off-hand items.", "hash": "1f7c17a5ee5a2286", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_CONJURED", "field": "text", "en": "Conjured Item", "hash": "deb9fd7408431083", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_COOLDOWN_TIME", "field": "text", "en": "Cooldown remaining: %s", "hash": "eeb13cd9b0f3b728", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_COOLDOWN_TIME_MIN", "field": "text", "en": "Cooldown remaining: %d min", "hash": "c2c9cd81d0c60f9a", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_COOLDOWN_TIME_SEC", "field": "text", "en": "Cooldown remaining: %d sec", "hash": "c2cb5da0e8972691", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_COOLDOWN_TOTAL", "field": "text", "en": "(%s Cooldown)", "hash": "614701d10442abce", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_COOLDOWN_TOTAL_MIN", "field": "text", "en": "(%d Min Cooldown)", "hash": "43a83fef876cc4dc", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_COOLDOWN_TOTAL_SEC", "field": "text", "en": "(%d Sec Cooldown)", "hash": "162bc52dd446ad8c", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_DELTA_DESCRIPTION", "field": "text", "en": "If you replace this item, the following stat changes will occur:", "hash": "931160fee1cfe14b", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION", "field": "text", "en": "If you replace these items, the following stat changes will occur:", "hash": "d8791b5b841c0a09", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_DURATION_DAYS", "field": "text", "en": "Duration: %d |4day:days;", "hash": "cbdd57e4edbd215a", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_DURATION_HOURS", "field": "text", "en": "Duration: %d |4hour:hrs;", "hash": "223e4283acedc054", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_DURATION_MIN", "field": "text", "en": "Duration: %d min", "hash": "bd37f8798b032666", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_DURATION_SEC", "field": "text", "en": "Duration: %d sec", "hash": "bd398898a2d43d5d", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_LEVEL", "field": "text", "en": "Item Level %d", "hash": "947990bf12c90d59", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_LEVEL_ABBR", "field": "text", "en": "iLvl", "hash": "0e25f80d2d65e6f0", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_LEVEL_RANGE", "field": "text", "en": "Requires level %d to %d", "hash": "f27575e23239ec21", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_LEVEL_RANGE_CURRENT", "field": "text", "en": "Requires level %d to %d (%d)", "hash": "735cb5b3389f023c", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_LIMIT_CATEGORY", "field": "text", "en": "Unique: %s (%d)", "hash": "5746901dc7d7022d", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_LIMIT_CATEGORY_MULTIPLE", "field": "text", "en": "Unique-Equipped: %s (%d)", "hash": "fee16faa4e6edbeb", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_LOOT", "field": "text", "en": "Item Loot", "hash": "9a868ae9b36079d1", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MIN_LEVEL", "field": "text", "en": "Requires Level %d", "hash": "6616ed3bf3ef068f", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MIN_SKILL", "field": "text", "en": "Requires %s (%d)", "hash": "3b59ba17f69f83c4", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_AGILITY", "field": "text", "en": "%c%s Agility", "hash": "895fceadc74a054e", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_ALCHEMY", "field": "text", "en": "Increases alchemy skill by %s.", "hash": "10363244cb42d526", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_ARCANE_DAMAGE_DONE", "field": "text", "en": "Increases arcane damage done by up to %s.", "hash": "440552e75664fd45", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_ARCANE_PENETRATION", "field": "text", "en": "Increases arcane piercing by %s.", "hash": "128707bbfef4b742", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_ATTACK_POWER", "field": "text", "en": "Increases attack power by %s.", "hash": "58e5e475515adddf", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_AXES", "field": "text", "en": "Increases axes skill by %s.", "hash": "db1f722b233921fa", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_BLACKSMITHING", "field": "text", "en": "Increases blacksmithing skill by %s.", "hash": "55f9cc4206b698ce", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_BLOCK_VALUE", "field": "text", "en": "Increases the block value of your shield by %s.", "hash": "90057b449b47381f", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_BOWS", "field": "text", "en": "Increases bows skill by %s.", "hash": "56d9f5a617e3bfd1", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_COOKING", "field": "text", "en": "Increases cooking skill by %s.", "hash": "f1a781015d8d3ba0", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_CROSSBOWS", "field": "text", "en": "Increases crossbows skill by %s.", "hash": "e5b6f670e250f456", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_DAGGERS", "field": "text", "en": "Increases daggers skill by %s.", "hash": "2099cd66668644ad", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_DUAL_WIELD", "field": "text", "en": "Increases dual wield skill by %s.", "hash": "4ec315d373feaeeb", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_ENCHANTING", "field": "text", "en": "Increases enchanting skill by %s.", "hash": "b9f4e61f2e031be9", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_ENGINEERING", "field": "text", "en": "Increases engineering skill by %s.", "hash": "3e228fe1c520ced3", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_FERAL_ATTACK_POWER", "field": "text", "en": "Increases attack power by %s in Cat, Bear, Dire Bear, and Moonkin forms only.", "hash": "cb166f6a23799a2b", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_FIRE_DAMAGE_DONE", "field": "text", "en": "Increases fire damage done by up to %s.", "hash": "a42b3d2d7c2fe177", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_FIRE_PENETRATION", "field": "text", "en": "Increases fire piercing by %s.", "hash": "4dc4c980c9995738", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_FIRST_AID", "field": "text", "en": "Increases first aid skill by %s.", "hash": "af9c14410aa62ac4", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_FISHING", "field": "text", "en": "Increases fishing skill by %s.", "hash": "3ed97ca2d65f4ecb", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_FIST_WEAPONS", "field": "text", "en": "Increases fist weapons skill by %s.", "hash": "37ac2f4c6b4d97c1", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_FROST_DAMAGE_DONE", "field": "text", "en": "Increases frost damage done by up to %s.", "hash": "4a9f283c8109a695", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_FROST_PENETRATION", "field": "text", "en": "Increases frost piercing by %s.", "hash": "8ff9fd0da7f0296c", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_GUNS", "field": "text", "en": "Increases guns skill by %s.", "hash": "57045fd6d5ca8fe4", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_HEALTH", "field": "text", "en": "%c%s Health", "hash": "daccd199f0464151", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_HEALTH_REGEN", "field": "text", "en": "Restores %s health per 5 sec.", "hash": "6400c233cb047b13", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_HEALTH_REGENERATION", "field": "text", "en": "Restores %s health per 5 sec.", "hash": "6400c233cb047b13", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_HERBALISM", "field": "text", "en": "Increases herbalism skill by %s.", "hash": "70cbac09f1ad66be", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_HOLY_DAMAGE_DONE", "field": "text", "en": "Increases holy damage done by up to %s.", "hash": "0b20b9b998ad27ec", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_INTELLECT", "field": "text", "en": "%c%s Intellect", "hash": "3ae163f6b33a90b6", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_LEATHERWORKING", "field": "text", "en": "Increases leatherworking skill by %s.", "hash": "5d1b4d1fd9464c9a", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_MACES", "field": "text", "en": "Increases maces skill by %s.", "hash": "c9eb23396979d701", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_MANA", "field": "text", "en": "%c%s Mana", "hash": "0573cdacfbe13efb", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_MANA_REGENERATION", "field": "text", "en": "Restores %s mana per 5 sec.", "hash": "819f9a05d9c5f06b", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_MINING", "field": "text", "en": "Increases mining skill by %s.", "hash": "d1d5adfb842e8f8b", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_NATURE_DAMAGE_DONE", "field": "text", "en": "Increases nature damage done by up to %s.", "hash": "4b92bc66d90662a5", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_NATURE_PENETRATION", "field": "text", "en": "Increases nature piercing by %s.", "hash": "d3f04288a2166849", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_PHYSICAL_DAMAGE_DONE", "field": "text", "en": "Increases physical damage done by up to %s.", "hash": "3cc06a9d3b717f84", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_POLEARMS", "field": "text", "en": "Increases polearms skill by %s.", "hash": "3b1ca9cbff9a6290", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_RANGED_ATTACK_POWER", "field": "text", "en": "Increases ranged attack power by %s.", "hash": "780228f3f23c9e5a", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_SHADOW_DAMAGE_DONE", "field": "text", "en": "Increases shadow damage done by up to %s.", "hash": "183d62a9d36f1eb1", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_SHADOW_PENETRATION", "field": "text", "en": "Increases shadow piercing by %s.", "hash": "67ff69da423e117d", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_SKINNING", "field": "text", "en": "Increases skinning skill by %s.", "hash": "d760963ebce05046", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_SPELL_DAMAGE_DONE", "field": "text", "en": "Increases damage done by magical spells and effects by up to %s.", "hash": "a2dc6e126675a3ce", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_SPELL_HEALING_DONE", "field": "text", "en": "Increases healing done by magical spells and effects by up to %s.", "hash": "7f20e4dd03d0c195", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_SPELL_PENETRATION", "field": "text", "en": "Increases spell piercing by %s.", "hash": "cbb8eb0340ea59b0", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_SPELL_RESISTANCE_ALL_SCHOOLS", "field": "text", "en": "Increases spell resistance by %s.", "hash": "9307905499d9d795", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_SPIRIT", "field": "text", "en": "%c%s Spirit", "hash": "6ba6e0728853e274", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_STAMINA", "field": "text", "en": "%c%s Stamina", "hash": "775cd0a485f15df5", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_STAVES", "field": "text", "en": "Increases staves skill by %s.", "hash": "5564df05e423d7f3", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_STRENGTH", "field": "text", "en": "%c%s Strength", "hash": "3c83d1190d95f23f", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_SWORDS", "field": "text", "en": "Increases swords skill by %s.", "hash": "fcfe61b747e4538a", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_TAILORING", "field": "text", "en": "Increases tailoring skill by %s.", "hash": "be9eaa77976a961d", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_THROWN", "field": "text", "en": "Increases thrown skill by %s.", "hash": "80af1b0cb229a033", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_TWOHANDED_AXES", "field": "text", "en": "Increases two-handed axes skill by %s.", "hash": "6a6c228266043828", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_TWOHANDED_MACES", "field": "text", "en": "Increases two-handed maces skill by %s.", "hash": "1e295ea1b5a874d0", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_TWOHANDED_SWORDS", "field": "text", "en": "Increases two-handed swords skill by %s.", "hash": "18d6c63ce1f9b8b5", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_MOD_WANDS", "field": "text", "en": "Increases wands skill by %s.", "hash": "05ee1407a1dd5ce5", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_NAMES", "field": "text", "en": "Item Names", "hash": "3413b7a250c01ca5", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_NAMES_SHOW_BRACES_COMBATLOG_TOOLTIP", "field": "text", "en": "Show braces around item names.", "hash": "2913bb05a3dd728a", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_NO_DROP", "field": "text", "en": "No Drop", "hash": "57c0c1aca01af04b", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_OPENABLE", "field": "text", "en": "<Right Click to Open>", "hash": "747fe419a8efc6a9", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_PURCHASED_COLON", "field": "text", "en": "Item Purchased:", "hash": "e592f48ab440e86c", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_QUALITY0_DESC", "field": "text", "en": "Poor", "hash": "0ad58a96e92f765d", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_QUALITY1_DESC", "field": "text", "en": "Common", "hash": "7ec9a72ce4ba5bba", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_QUALITY2_DESC", "field": "text", "en": "Uncommon", "hash": "3ccc5caed882af01", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_QUALITY3_DESC", "field": "text", "en": "Rare", "hash": "0b167ccacc6c0974", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_QUALITY4_DESC", "field": "text", "en": "Epic", "hash": "095c74d5d9af7e6e", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_QUALITY5_DESC", "field": "text", "en": "Legendary", "hash": "e1c5cf6aa1cb4056", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_QUALITY6_DESC", "field": "text", "en": "Artifact", "hash": "043c66d625d1833b", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_QUALITY7_DESC", "field": "text", "en": "Heirloom", "hash": "eb61908ae064318a", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_RACES_ALLOWED", "field": "text", "en": "Races: %s", "hash": "3dcb1620116843bb", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_RANDOM_ENCHANT", "field": "text", "en": "<Random additional stats>", "hash": "82949d25f66cedca", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_READABLE", "field": "text", "en": "<Right Click to Read>", "hash": "a7aea02122557af1", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_REQ_ALLIANCE", "field": "text", "en": "Alliance Only", "hash": "70e1abed1cb7a478", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_REQ_AMOUNT_EARNED", "field": "text", "en": "Requires earning a total of %1$d\n%2$s for the season.", "hash": "a843acfcf439c5f9", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_REQ_HORDE", "field": "text", "en": "Horde Only", "hash": "07b3c47319f56231", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_REQ_REPUTATION", "field": "text", "en": "Requires %s - %s", "hash": "3c03cefea5c61d18", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_REQ_SKILL", "field": "text", "en": "Requires %s", "hash": "d997d8d721f9dfeb", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_RESIST_ALL", "field": "text", "en": "%c%d to All Resistances", "hash": "9e0af13952de007f", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_RESIST_SINGLE", "field": "text", "en": "%c%d %s Resistance", "hash": "5ac30dfd8b384186", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_SIGNABLE", "field": "text", "en": "<Right Click for Details>", "hash": "db947c632166d803", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_SOCKETING", "field": "text", "en": "Item Socketing", "hash": "8a875bcfbb4e0c76", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_SOLD_COLON", "field": "text", "en": "Item Sold:", "hash": "8db841ec630b8e9a", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_SOULBOUND", "field": "text", "en": "Soulbound", "hash": "570c26eb6ff20067", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_SPELL_CHARGES_NONE", "field": "text", "en": "No charges", "hash": "ee214d249a4f3417", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_SPELL_EFFECT", "field": "text", "en": "Effect: %s", "hash": "1b3edc289b0d5cee", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_SPELL_KNOWN", "field": "text", "en": "Already known", "hash": "015eaec57c21a5b5", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_SPELL_MAX_USABLE_LEVEL", "field": "text", "en": " (Requires level %d or below)", "hash": "304731b8e8aafa42", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_SPELL_TRIGGER_ONEQUIP", "field": "text", "en": "Equip:", "hash": "99ff0c11a1015fbe", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_STARTS_QUEST", "field": "text", "en": "This Item Begins a Quest", "hash": "f90deee246b872b1", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_UNIQUE", "field": "text", "en": "Unique", "hash": "1c011adc9bbfcfa0", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_UNIQUE_EQUIPPABLE", "field": "text", "en": "Unique-Equipped", "hash": "adc9c572764d41cc", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_UNIQUE_MULTIPLE", "field": "text", "en": "Unique (%d)", "hash": "95a84c193d4cd9ac", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_UNSELLABLE", "field": "text", "en": "No sell price", "hash": "7cf628414b36b7a6", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_UPGRADE", "field": "text", "en": "Item Upgrade", "hash": "43cb98f4b80577a5", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_UPGRADED_LABEL", "field": "text", "en": "Item Upgraded!", "hash": "ab30c8a131d6c341", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_UPGRADE_DESCRIPTION", "field": "text", "en": "You can upgrade many equippable items to increase their item level. The currency required to upgrade an item varies depending on the item's source.", "hash": "0eb5eb2bdd4510c9", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_UPGRADE_FRAME_UPGRADE_TO", "field": "text", "en": "Upgrade To:", "hash": "400c28657c90f11d", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_UPGRADE_NO_MORE_UPGRADES", "field": "text", "en": "This item cannot be upgraded anymore.", "hash": "37117fe1778e4181", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_VENDOR_STACK_BUY", "field": "text", "en": "<Shift click to buy a different amount>", "hash": "3413f0cee291a047", "src": "db2@1.60.1.70009"}
-{"id": "ITEM_WRITTEN_BY", "field": "text", "en": "Written by %s", "hash": "cae386859fa48097", "src": "db2@1.60.1.70009"}
-{"id": "ItemNameDescription:13967", "field": "text", "en": "Blue", "hash": "08f48606219811ea", "src": "db2@1.60.1.70009"}
-{"id": "ItemNameDescription:13968", "field": "text", "en": "Green", "hash": "edaec63b5c5355aa", "src": "db2@1.60.1.70009"}
-{"id": "ItemNameDescription:14120", "field": "text", "en": "White", "hash": "0534370fd4ceb206", "src": "db2@1.60.1.70009"}
-{"id": "ItemNameDescription:14245", "field": "text", "en": "Grey", "hash": "09a19427fc6f6e91", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:1:0", "field": "text", "en": "Bag", "hash": "00117a5c060d8c7b", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:1:1", "field": "text", "en": "Soul Bag", "hash": "72e396f62f3c28cd", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:1:10", "field": "text", "en": "Cooking Bag", "hash": "c5106d2789c24121", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:1:11", "field": "text", "en": "Reagent Bag", "hash": "9b5fb4e7475a4fe8", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:1:12", "field": "text", "en": "Trinket Bag", "hash": "aeeae96f600cd777", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:1:2", "field": "text", "en": "Herb Bag", "hash": "9ff1fa4c22111adc", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:1:3", "field": "text", "en": "Enchanting Bag", "hash": "134ba9502487d3d8", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:1:4", "field": "text", "en": "Engineering Bag", "hash": "980120d047c0d237", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:1:6", "field": "text", "en": "Mining Bag", "hash": "2f932af693e3b34a", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:1:7", "field": "text", "en": "Leatherworking Bag", "hash": "9fab7f2511c90a85", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:1:9", "field": "text", "en": "Tackle Box", "hash": "bdc00ce4d0c8db33", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:0", "field": "text", "en": "Axe", "hash": "00114316021825ef", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:1", "field": "text", "en": "Axe", "hash": "00114316021825ef", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:10", "field": "text", "en": "Staff", "hash": "c096e199da404830", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:11", "field": "text", "en": "Exotic", "hash": "141414a294a52e2a", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:12", "field": "text", "en": "Exotic", "hash": "141414a294a52e2a", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:13", "field": "text", "en": "Fist Weapon", "hash": "4421f6d9134c355f", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:14", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:15", "field": "text", "en": "Dagger", "hash": "83be91679d2e7fb5", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:16", "field": "text", "en": "Thrown", "hash": "b85ebec1016e7558", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:17", "field": "text", "en": "Spear", "hash": "c00eb4ceb480e7bd", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:18", "field": "text", "en": "Crossbow", "hash": "bad14b72605d5e3b", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:19", "field": "text", "en": "Wand", "hash": "0bc1fec48f734e1d", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:2", "field": "text", "en": "Bow", "hash": "00118196060f4ad9", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:20", "field": "text", "en": "Fishing Pole", "hash": "318a595acc265417", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:3", "field": "text", "en": "Gun", "hash": "0012d3cc19e95cdb", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:4", "field": "text", "en": "Mace", "hash": "0a6af11609626728", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:5", "field": "text", "en": "Mace", "hash": "0a6af11609626728", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:6", "field": "text", "en": "Polearm", "hash": "fb9fd6606fd0475c", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:7", "field": "text", "en": "Sword", "hash": "c1017b0aba0d5767", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:2:8", "field": "text", "en": "Sword", "hash": "c1017b0aba0d5767", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:4:0", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:4:1", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:4:2", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:4:3", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:4:4", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:4:6", "field": "text", "en": "Shield", "hash": "bba314a98f8932b0", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:4:7", "field": "text", "en": "Libram", "hash": "eba5fc3a897271a3", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:4:8", "field": "text", "en": "Idol", "hash": "09e289f0dface0cf", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClass:4:9", "field": "text", "en": "Totem", "hash": "d17e0d12418feb07", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:0", "field": "text", "en": "Explosives", "hash": "a523f6b229cb0256", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:1", "field": "text", "en": "Potions", "hash": "889a67d1d4574851", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:13", "field": "text", "en": "Draughts", "hash": "928809959506dbac", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:14", "field": "text", "en": "Devices", "hash": "60275538301858bf", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:15", "field": "text", "en": "Temporary", "hash": "f8c27c84070beec6", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:2", "field": "text", "en": "Elixirs", "hash": "1349fc3ecf749ca7", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:3", "field": "text", "en": "Flasks", "hash": "3b135404b389822b", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:4", "field": "text", "en": "Scrolls", "hash": "ba308fad8958bd3a", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:5", "field": "text", "en": "Food & Drink", "hash": "e3e8923828f2b8c1", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:6", "field": "text", "en": "Permanent", "hash": "1b134f49c3b31cae", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:7", "field": "text", "en": "Bandages", "hash": "3e47c357fd3639c6", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:0:8", "field": "text", "en": "Other", "hash": "7a61dd1d7a6004c7", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:11:2", "field": "text", "en": "Quiver", "hash": "a8d12f9d81d9f86d", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:11:3", "field": "text", "en": "Ammo Pouch", "hash": "62b80656fea0dabf", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:12:0", "field": "text", "en": "Quest", "hash": "9d9ed56bb9b5eac9", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:13:0", "field": "text", "en": "Key", "hash": "0013d7cb29c86dda", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:13:1", "field": "text", "en": "Lockpick", "hash": "78b073f62a135f4e", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:15:0", "field": "text", "en": "Junk", "hash": "0a094aa0b09134ce", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:15:2", "field": "text", "en": "Pet", "hash": "001526f33da1c09a", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:15:3", "field": "text", "en": "Holiday", "hash": "5694369f04a21b9e", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:15:5", "field": "text", "en": "Mount", "hash": "569e58862d1fd16c", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:1:0", "field": "text", "en": "Bag", "hash": "00117a5c060d8c7b", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:1:1", "field": "text", "en": "Soul Bag", "hash": "72e396f62f3c28cd", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:1:10", "field": "text", "en": "Cooking Bag", "hash": "c5106d2789c24121", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:1:11", "field": "text", "en": "Reagent Bag", "hash": "9b5fb4e7475a4fe8", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:1:12", "field": "text", "en": "Trinket Bag", "hash": "aeeae96f600cd777", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:1:2", "field": "text", "en": "Herb Bag", "hash": "9ff1fa4c22111adc", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:1:3", "field": "text", "en": "Enchanting Bag", "hash": "134ba9502487d3d8", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:1:4", "field": "text", "en": "Engineering Bag", "hash": "980120d047c0d237", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:1:6", "field": "text", "en": "Mining Bag", "hash": "2f932af693e3b34a", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:1:7", "field": "text", "en": "Leatherworking Bag", "hash": "9fab7f2511c90a85", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:1:9", "field": "text", "en": "Tackle Box", "hash": "bdc00ce4d0c8db33", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:0", "field": "text", "en": "One-Handed Axes", "hash": "11e3a286f24718bb", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:1", "field": "text", "en": "Two-Handed Axes", "hash": "f137139d29b02e29", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:10", "field": "text", "en": "Staves", "hash": "8d39a3b5dac32ccf", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:11", "field": "text", "en": "One-Handed Exotics", "hash": "651f9b4fe05fb25c", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:12", "field": "text", "en": "Two-Handed Exotics", "hash": "bb4c9f24ab0fafbd", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:13", "field": "text", "en": "Fist Weapons", "hash": "dd615228307192c9", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:14", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:15", "field": "text", "en": "Daggers", "hash": "6a846977c756763a", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:16", "field": "text", "en": "Thrown", "hash": "b85ebec1016e7558", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:17", "field": "text", "en": "Spears", "hash": "478687c7415d0eaa", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:18", "field": "text", "en": "Crossbows", "hash": "99199da40079c34e", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:19", "field": "text", "en": "Wands", "hash": "04455edd0ace5a9d", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:2", "field": "text", "en": "Bows", "hash": "08f550352d811cfd", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:20", "field": "text", "en": "Fishing Pole", "hash": "318a595acc265417", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:3", "field": "text", "en": "Guns", "hash": "09a261d7085958c8", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:4", "field": "text", "en": "One-Handed Maces", "hash": "f70b30d5433229c6", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:5", "field": "text", "en": "Two-Handed Maces", "hash": "3ebe11d9b024a8c9", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:6", "field": "text", "en": "Polearms", "hash": "c2cab6137eb3c8fb", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:7", "field": "text", "en": "One-Handed Swords", "hash": "d3a073af08003389", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:8", "field": "text", "en": "Two-Handed Swords", "hash": "842996e5268418cd", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:2:9", "field": "text", "en": "Warglaives", "hash": "66dd61d3d5fda464", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:4:1", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:4:2", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:4:3", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:4:4", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:4:5", "field": "text", "en": "Cosmetic", "hash": "1f9c9091f805f5ef", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:4:6", "field": "text", "en": "Shields", "hash": "047394cec4ba0cf2", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:4:7", "field": "text", "en": "Librams", "hash": "95f01479a959c0a3", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:4:8", "field": "text", "en": "Idols", "hash": "0eec965c862c80dc", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:4:9", "field": "text", "en": "Totems", "hash": "3380b2c00cf3f564", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:5:0", "field": "text", "en": "Reagent", "hash": "d10917a18239ca66", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:6:2", "field": "text", "en": "Arrow", "hash": "845fecf156710879", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:6:3", "field": "text", "en": "Bullet", "hash": "ec750bb63b4e37fb", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:7:1", "field": "text", "en": "Parts", "hash": "896676f50247eb65", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:7:10", "field": "text", "en": "Elemental", "hash": "22648ba454d81efc", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:7:7", "field": "text", "en": "Metal & Stone", "hash": "9987ad9225c7410b", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:7:9", "field": "text", "en": "Herb", "hash": "09c080dd563d902a", "src": "db2@1.60.1.70009"}
-{"id": "ItemSubClassName:9:0", "field": "text", "en": "Book", "hash": "08f54c152d801ded", "src": "db2@1.60.1.70009"}
+{"id": "ICON_SELECTION_CLICK", "field": "text", "en": "Click to view in the list", "hash": "0439ee6fbbfdb04f", "src": "db2@1.60.1.70124"}
+{"id": "ICON_SELECTION_NOTINLIST", "field": "text", "en": "This icon is not in the list", "hash": "f3864f642ae0b51f", "src": "db2@1.60.1.70124"}
+{"id": "ICON_SELECTION_TITLE_CURRENT", "field": "text", "en": "Currently Selected", "hash": "d4b26efa1f3ba217", "src": "db2@1.60.1.70124"}
+{"id": "IGNORE", "field": "text", "en": "Ignore", "hash": "d7988f8c6bf93789", "src": "db2@1.60.1.70124"}
+{"id": "IGNORED", "field": "text", "en": "Ignored", "hash": "5311772e13c44b5f", "src": "db2@1.60.1.70124"}
+{"id": "IGNORED_QUEST_DISPLAY", "field": "text", "en": "|cff000000%s (ignored)|r", "hash": "4d41b04c8d765d83", "src": "db2@1.60.1.70124"}
+{"id": "IGNORE_DIALOG", "field": "text", "en": "Ignore", "hash": "d7988f8c6bf93789", "src": "db2@1.60.1.70124"}
+{"id": "IGNORE_ERRORS", "field": "text", "en": "Ignore", "hash": "d7988f8c6bf93789", "src": "db2@1.60.1.70124"}
+{"id": "IGNORE_LIST", "field": "text", "en": "Ignore List", "hash": "e2b877686191a833", "src": "db2@1.60.1.70124"}
+{"id": "IGNORE_REMOVE", "field": "text", "en": "Stop Ignoring", "hash": "ee876699f23d9d0b", "src": "db2@1.60.1.70124"}
+{"id": "IGR_BILLING_NAG_DIALOG", "field": "text", "en": "Your IGR's playtime is about to expire, you will be disconnected shortly.", "hash": "f7097375dabcfb46", "src": "db2@1.60.1.70124"}
+{"id": "IMMUNE", "field": "text", "en": "Immune", "hash": "40ca18062fe1575d", "src": "db2@1.60.1.70124"}
+{"id": "IM_STYLE", "field": "text", "en": "IM Style", "hash": "9a44b48ea3fa333d", "src": "db2@1.60.1.70124"}
+{"id": "INBOX", "field": "text", "en": "Inbox", "hash": "10403883d8a0f802", "src": "db2@1.60.1.70124"}
+{"id": "INBOX_TOO_MUCH_MAIL", "field": "text", "en": "Your inbox is full.", "hash": "0db59e6afb2c1e8d", "src": "db2@1.60.1.70124"}
+{"id": "INBOX_TOO_MUCH_MAIL_TOOLTIP", "field": "text", "en": "Not all of your mail can be displayed.|nPlease delete some mail to make room.", "hash": "b93bd21fcee70c08", "src": "db2@1.60.1.70124"}
+{"id": "INCOMING_SUMMON_TOOLTIP_SUMMON_ACCEPTED", "field": "text", "en": "Summon Accepted", "hash": "c5981e5f8f433b9f", "src": "db2@1.60.1.70124"}
+{"id": "INCOMING_SUMMON_TOOLTIP_SUMMON_DECLINED", "field": "text", "en": "Summon Declined", "hash": "0f405716bd6bb151", "src": "db2@1.60.1.70124"}
+{"id": "INCOMING_SUMMON_TOOLTIP_SUMMON_PENDING", "field": "text", "en": "Summon Pending", "hash": "2ebd38b7becf1807", "src": "db2@1.60.1.70124"}
+{"id": "INCOMPLETE", "field": "text", "en": "Incomplete", "hash": "f126dd14b037c633", "src": "db2@1.60.1.70124"}
+{"id": "INSPECT", "field": "text", "en": "Inspect", "hash": "8b92fd5302e8b2bc", "src": "db2@1.60.1.70124"}
+{"id": "INSPECT_GUILD_FACTION", "field": "text", "en": "%s Guild", "hash": "ce4e6e23b0753f6b", "src": "db2@1.60.1.70124"}
+{"id": "INSPECT_GUILD_NUM_MEMBERS", "field": "text", "en": "%d Guild Members", "hash": "84f74a4a257efcd9", "src": "db2@1.60.1.70124"}
+{"id": "INSPECT_REQUIREMENTS", "field": "text", "en": "<Ctrl-Click to view requirements>", "hash": "c24ea6013a70bbdc", "src": "db2@1.60.1.70124"}
+{"id": "INSPECT_TALENTS_BUTTON", "field": "text", "en": "Talents", "hash": "0d31e779843effa2", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE", "field": "text", "en": "Instance", "hash": "b1e81ec92ddcdae5", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_BOOT_TIMER", "field": "text", "en": "You are not in this instance's group.  You will be teleported to the nearest graveyard in %d %s.", "hash": "41aaa34ab5606395", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_CHAT", "field": "text", "en": "Instance", "hash": "b1e81ec92ddcdae5", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_CHAT_LEADER", "field": "text", "en": "Instance Leader", "hash": "7c327ca73c2524c6", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_CHAT_MESSAGE", "field": "text", "en": "Instance", "hash": "b1e81ec92ddcdae5", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_ENTRANCES_FILTER_DESCRIPTION", "field": "text", "en": "Instanced content that rewards loot, intended for groups of adventurers", "hash": "47ec9d8c1ec68a6f", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_LEAVE", "field": "text", "en": "Leave Instance", "hash": "80b4780201f4b6d6", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_LOCK_TIMER", "field": "text", "en": "You have entered an instance already in progress! You will be saved to %1$s in %2$s!", "hash": "6e072ce11a0c9a30", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_PARTY_LEAVE", "field": "text", "en": "Leave Instance Group", "hash": "8ca1e942a29ea3ae", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_RESET_FAILED", "field": "text", "en": "Cannot reset %s.  There are players still inside the instance.", "hash": "d7b2f78f7f18dd00", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_RESET_FAILED_OFFLINE", "field": "text", "en": "Cannot reset %s.  There are players offline in your party.", "hash": "f24d833380fec0cd", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_RESET_FAILED_ZONING", "field": "text", "en": "Cannot reset %s.  There are players in your party attempting to zone into an instance.", "hash": "29128e6fc81d11f1", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_RESET_SUCCESS", "field": "text", "en": "%s has been reset.", "hash": "c1f28253a9c1eef4", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_SHUTDOWN_MESSAGE", "field": "text", "en": "Not enough players. The game will end in %s", "hash": "cfb75b85069f14e8", "src": "db2@1.60.1.70124"}
+{"id": "INSTANCE_WALK_IN_LEAVE", "field": "text", "en": "Leave Delve", "hash": "c10946d8b499838b", "src": "db2@1.60.1.70124"}
+{"id": "INTERACT_ICONS_DEFAULT", "field": "text", "en": "NPCs Only (Default)", "hash": "ce96e1acc285791b", "src": "db2@1.60.1.70124"}
+{"id": "INTERACT_ICONS_OPTION", "field": "text", "en": "Interact Key Icons", "hash": "1f9272b2714b0bf8", "src": "db2@1.60.1.70124"}
+{"id": "INTERACT_ICONS_SHOW_ALL", "field": "text", "en": "Show All", "hash": "5dfd85837f00ad62", "src": "db2@1.60.1.70124"}
+{"id": "INTERACT_ICONS_SHOW_NONE", "field": "text", "en": "Show None", "hash": "1a7a0e5eeec8bdc6", "src": "db2@1.60.1.70124"}
+{"id": "INTERACT_KEY_TUTORIAL", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Interact Key|n|r|cnHIGHLIGHT_FONT_COLOR:Press |r|cnNORMAL_FONT_COLOR:%s|r|cnHIGHLIGHT_FONT_COLOR: to Interact with nearby NPCs and objects|r|n|n|cnNORMAL_FONT_COLOR:%d/2 - Interact with an NPC or object|r", "hash": "41c40e78b2f86e75", "src": "db2@1.60.1.70124"}
+{"id": "INTERACT_KEY_TUTORIAL_NO_INTERACT_KEY_ASSIGNED", "field": "text", "en": "|cnHIGHLIGHT_FONT_COLOR:The |r|cnNORMAL_FONT_COLOR:Interact Key|r|cnHIGHLIGHT_FONT_COLOR: allows you to interact with NPCs and objects using a keypress|n|n|r|cnRED_FONT_COLOR:Assign an Interact Key binding under Control options|r", "hash": "e1d055bbb3e6d529", "src": "db2@1.60.1.70124"}
+{"id": "INTERACT_ON_LEFT_CLICK_TEXT", "field": "text", "en": "Interact On Left Click", "hash": "3cfe58e030d79729", "src": "db2@1.60.1.70124"}
+{"id": "INTERFACE_ACTION_BLOCKED", "field": "text", "en": "Interface action failed because of an AddOn", "hash": "4a9d61ab1c7fda90", "src": "db2@1.60.1.70124"}
+{"id": "INTERFACE_ACTION_BLOCKED_TOOLTIP", "field": "text", "en": "Interface actions failed because of this AddOn: %d", "hash": "696688ad1169a920", "src": "db2@1.60.1.70124"}
+{"id": "INTERFACE_LABEL", "field": "text", "en": "Interface", "hash": "2b102ef3f6862d52", "src": "db2@1.60.1.70124"}
+{"id": "INTERRUPT", "field": "text", "en": "Interrupt", "hash": "2cb115a1e6cc874d", "src": "db2@1.60.1.70124"}
+{"id": "INTERRUPTED", "field": "text", "en": "Interrupted", "hash": "eae3543bbe1781e4", "src": "db2@1.60.1.70124"}
+{"id": "INTERRUPTS", "field": "text", "en": "Interrupts", "hash": "de9e12449e2726ad", "src": "db2@1.60.1.70124"}
+{"id": "INT_SPELL_DURATION_DAYS", "field": "text", "en": "%d |4day:days;", "hash": "91d4fc7d5e6b46eb", "src": "db2@1.60.1.70124"}
+{"id": "INT_SPELL_DURATION_HOURS", "field": "text", "en": "%d |4hour:hrs;", "hash": "e835e7171d9be5e5", "src": "db2@1.60.1.70124"}
+{"id": "INT_SPELL_DURATION_MIN", "field": "text", "en": "%d min", "hash": "39e09a403a3fcdbe", "src": "db2@1.60.1.70124"}
+{"id": "INT_SPELL_DURATION_SEC", "field": "text", "en": "%d sec", "hash": "39e22a5f5210e4b5", "src": "db2@1.60.1.70124"}
+{"id": "INVERT_GAMEPAD_PITCH", "field": "text", "en": "Invert Vertical Axis", "hash": "b92e6498d39e22ca", "src": "db2@1.60.1.70124"}
+{"id": "INVERT_GAMEPAD_YAW", "field": "text", "en": "Invert Horizontal Axis", "hash": "44b7cba78e7d0062", "src": "db2@1.60.1.70124"}
+{"id": "INVERT_MOUSE", "field": "text", "en": "Invert Mouse", "hash": "823191c7bef70db4", "src": "db2@1.60.1.70124"}
+{"id": "INVITATION", "field": "text", "en": "%s invites you to a group.", "hash": "e38d7130910f3b63", "src": "db2@1.60.1.70124"}
+{"id": "INVITE", "field": "text", "en": "Invite", "hash": "53896770d7d0fd4d", "src": "db2@1.60.1.70124"}
+{"id": "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG", "field": "text", "en": "Enter a BattleTag.", "hash": "d736d1a1a2a578ba", "src": "db2@1.60.1.70124"}
+{"id": "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_TEXT", "field": "text", "en": "Invite Member", "hash": "ce1b8be1c0246ee1", "src": "db2@1.60.1.70124"}
+{"id": "INVITE_COMMUNITY_MEMBER_POPUP_SEND_INVITE", "field": "text", "en": "Send", "hash": "0b39d47c69b48d03", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_2HWEAPON", "field": "text", "en": "Two-Hand", "hash": "5e55518b1fba7104", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_AMMO", "field": "text", "en": "Ammo", "hash": "08d277669827629d", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_BAG", "field": "text", "en": "Bag", "hash": "00117a5c060d8c7b", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_BODY", "field": "text", "en": "Shirt", "hash": "befd5ccf59247478", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_CHEST", "field": "text", "en": "Chest", "hash": "a620ec195a9b8dc7", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_CLOAK", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_FEET", "field": "text", "en": "Feet", "hash": "097bdf123b6c09c0", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_FINGER", "field": "text", "en": "Finger", "hash": "0824fa71156d7be2", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_HAND", "field": "text", "en": "Hands", "hash": "fcf7b014fb10e279", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_HEAD", "field": "text", "en": "Head", "hash": "09c0782c563b723b", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_HOLDABLE", "field": "text", "en": "Held In Off-hand", "hash": "9fca5b084e0699fd", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_LEGS", "field": "text", "en": "Legs", "hash": "0a49b1b98bdc01ae", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_NECK", "field": "text", "en": "Neck", "hash": "0a8e4adba6ab6a31", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_QUIVER", "field": "text", "en": "Quiver", "hash": "a8d12f9d81d9f86d", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_RANGED", "field": "text", "en": "Ranged", "hash": "45ead356f08d78d0", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_RANGEDRIGHT", "field": "text", "en": "Ranged", "hash": "45ead356f08d78d0", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_RELIC", "field": "text", "en": "Relic", "hash": "ad09821cdde9c527", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_ROBE", "field": "text", "en": "Chest", "hash": "a620ec195a9b8dc7", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_SHIELD", "field": "text", "en": "Off Hand", "hash": "4d66f8e7f5edf7c5", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_SHOULDER", "field": "text", "en": "Shoulder", "hash": "451a499146f8853d", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_TABARD", "field": "text", "en": "Tabard", "hash": "3b563bc3daf16475", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_THROWN", "field": "text", "en": "Thrown", "hash": "b85ebec1016e7558", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_TRINKET", "field": "text", "en": "Trinket", "hash": "8d85b3cd3e60b73e", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_WAIST", "field": "text", "en": "Waist", "hash": "0444175ef6f6e5f7", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_WEAPON", "field": "text", "en": "One-Hand", "hash": "dbaa860aa3017021", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_WEAPONMAINHAND", "field": "text", "en": "Main Hand", "hash": "0733afc2db5fe73b", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_WEAPONMAINHAND_PET", "field": "text", "en": "Main Attack", "hash": "3584af84fe059ec8", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_WEAPONOFFHAND", "field": "text", "en": "Off Hand", "hash": "4d66f8e7f5edf7c5", "src": "db2@1.60.1.70124"}
+{"id": "INVTYPE_WRIST", "field": "text", "en": "Wrist", "hash": "068b3ea95ade1a90", "src": "db2@1.60.1.70124"}
+{"id": "ISLAND_LEAVE", "field": "text", "en": "Leave Island", "hash": "a70f3a47c702cbd5", "src": "db2@1.60.1.70124"}
+{"id": "ITEMS", "field": "text", "en": "Items", "hash": "110ed23534f93bbc", "src": "db2@1.60.1.70124"}
+{"id": "ITEMSLOTTEXT", "field": "text", "en": "Item Slots", "hash": "8d522a9fc6be7c07", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_BIND_ON_EQUIP", "field": "text", "en": "Binds when equipped", "hash": "421c36d3a912ab1b", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_BIND_ON_PICKUP", "field": "text", "en": "Binds when picked up", "hash": "ee887e158bc4920f", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_BIND_ON_USE", "field": "text", "en": "Binds when used", "hash": "a491a9dc6f47e220", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_BIND_QUEST", "field": "text", "en": "Quest Item", "hash": "2dc7fee4ab0e85e2", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_CAN_BE_READ", "field": "text", "en": "<This item can be read>", "hash": "3e1f4527625046b8", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_CLASSES_ALLOWED", "field": "text", "en": "Classes: %s", "hash": "2232eb3e64441ce0", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_COMPARISON_CYCLING_DISABLED_MSG_MAINHAND", "field": "text", "en": "Visit the Key Bindings menu to enable cycling through your main-hand items. (SHIFT-C recommended)", "hash": "7e9809a39664e35c", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_COMPARISON_CYCLING_DISABLED_MSG_OFFHAND", "field": "text", "en": "Visit the Key Bindings menu to enable cycling through your off-hand items. (SHIFT-C recommended)", "hash": "69f23b552d60a531", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_COMPARISON_SWAP_ITEM_MAINHAND_DESCRIPTION", "field": "text", "en": "Press %s to cycle through your main-hand items.", "hash": "2675faf297f13e9c", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_COMPARISON_SWAP_ITEM_OFFHAND_DESCRIPTION", "field": "text", "en": "Press %s to cycle through your off-hand items.", "hash": "1f7c17a5ee5a2286", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_CONJURED", "field": "text", "en": "Conjured Item", "hash": "deb9fd7408431083", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_COOLDOWN_TIME", "field": "text", "en": "Cooldown remaining: %s", "hash": "eeb13cd9b0f3b728", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_COOLDOWN_TIME_MIN", "field": "text", "en": "Cooldown remaining: %d min", "hash": "c2c9cd81d0c60f9a", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_COOLDOWN_TIME_SEC", "field": "text", "en": "Cooldown remaining: %d sec", "hash": "c2cb5da0e8972691", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_COOLDOWN_TOTAL", "field": "text", "en": "(%s Cooldown)", "hash": "614701d10442abce", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_COOLDOWN_TOTAL_MIN", "field": "text", "en": "(%d Min Cooldown)", "hash": "43a83fef876cc4dc", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_COOLDOWN_TOTAL_SEC", "field": "text", "en": "(%d Sec Cooldown)", "hash": "162bc52dd446ad8c", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_DELTA_DESCRIPTION", "field": "text", "en": "If you replace this item, the following stat changes will occur:", "hash": "931160fee1cfe14b", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION", "field": "text", "en": "If you replace these items, the following stat changes will occur:", "hash": "d8791b5b841c0a09", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_DURATION_DAYS", "field": "text", "en": "Duration: %d |4day:days;", "hash": "cbdd57e4edbd215a", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_DURATION_HOURS", "field": "text", "en": "Duration: %d |4hour:hrs;", "hash": "223e4283acedc054", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_DURATION_MIN", "field": "text", "en": "Duration: %d min", "hash": "bd37f8798b032666", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_DURATION_SEC", "field": "text", "en": "Duration: %d sec", "hash": "bd398898a2d43d5d", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_LEVEL", "field": "text", "en": "Item Level %d", "hash": "947990bf12c90d59", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_LEVEL_ABBR", "field": "text", "en": "iLvl", "hash": "0e25f80d2d65e6f0", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_LEVEL_RANGE", "field": "text", "en": "Requires level %d to %d", "hash": "f27575e23239ec21", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_LEVEL_RANGE_CURRENT", "field": "text", "en": "Requires level %d to %d (%d)", "hash": "735cb5b3389f023c", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_LIMIT_CATEGORY", "field": "text", "en": "Unique: %s (%d)", "hash": "5746901dc7d7022d", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_LIMIT_CATEGORY_MULTIPLE", "field": "text", "en": "Unique-Equipped: %s (%d)", "hash": "fee16faa4e6edbeb", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_LOOT", "field": "text", "en": "Item Loot", "hash": "9a868ae9b36079d1", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MIN_LEVEL", "field": "text", "en": "Requires Level %d", "hash": "6616ed3bf3ef068f", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MIN_SKILL", "field": "text", "en": "Requires %s (%d)", "hash": "3b59ba17f69f83c4", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_AGILITY", "field": "text", "en": "%c%s Agility", "hash": "895fceadc74a054e", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_ALCHEMY", "field": "text", "en": "Increases alchemy skill by %s.", "hash": "10363244cb42d526", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_ARCANE_DAMAGE_DONE", "field": "text", "en": "Increases arcane damage done by up to %s.", "hash": "440552e75664fd45", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_ARCANE_PENETRATION", "field": "text", "en": "Increases arcane piercing by %s.", "hash": "128707bbfef4b742", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_ATTACK_POWER", "field": "text", "en": "Increases attack power by %s.", "hash": "58e5e475515adddf", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_AXES", "field": "text", "en": "Increases axes skill by %s.", "hash": "db1f722b233921fa", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_BLACKSMITHING", "field": "text", "en": "Increases blacksmithing skill by %s.", "hash": "55f9cc4206b698ce", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_BLOCK_VALUE", "field": "text", "en": "Increases the block value of your shield by %s.", "hash": "90057b449b47381f", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_BOWS", "field": "text", "en": "Increases bows skill by %s.", "hash": "56d9f5a617e3bfd1", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_COOKING", "field": "text", "en": "Increases cooking skill by %s.", "hash": "f1a781015d8d3ba0", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_CROSSBOWS", "field": "text", "en": "Increases crossbows skill by %s.", "hash": "e5b6f670e250f456", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_DAGGERS", "field": "text", "en": "Increases daggers skill by %s.", "hash": "2099cd66668644ad", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_DUAL_WIELD", "field": "text", "en": "Increases dual wield skill by %s.", "hash": "4ec315d373feaeeb", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_ENCHANTING", "field": "text", "en": "Increases enchanting skill by %s.", "hash": "b9f4e61f2e031be9", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_ENGINEERING", "field": "text", "en": "Increases engineering skill by %s.", "hash": "3e228fe1c520ced3", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_FERAL_ATTACK_POWER", "field": "text", "en": "Increases attack power by %s in Cat, Bear, Dire Bear, and Moonkin forms only.", "hash": "cb166f6a23799a2b", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_FIRE_DAMAGE_DONE", "field": "text", "en": "Increases fire damage done by up to %s.", "hash": "a42b3d2d7c2fe177", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_FIRE_PENETRATION", "field": "text", "en": "Increases fire piercing by %s.", "hash": "4dc4c980c9995738", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_FIRST_AID", "field": "text", "en": "Increases first aid skill by %s.", "hash": "af9c14410aa62ac4", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_FISHING", "field": "text", "en": "Increases fishing skill by %s.", "hash": "3ed97ca2d65f4ecb", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_FIST_WEAPONS", "field": "text", "en": "Increases fist weapons skill by %s.", "hash": "37ac2f4c6b4d97c1", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_FROST_DAMAGE_DONE", "field": "text", "en": "Increases frost damage done by up to %s.", "hash": "4a9f283c8109a695", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_FROST_PENETRATION", "field": "text", "en": "Increases frost piercing by %s.", "hash": "8ff9fd0da7f0296c", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_GUNS", "field": "text", "en": "Increases guns skill by %s.", "hash": "57045fd6d5ca8fe4", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_HEALTH", "field": "text", "en": "%c%s Health", "hash": "daccd199f0464151", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_HEALTH_REGEN", "field": "text", "en": "Restores %s health per 5 sec.", "hash": "6400c233cb047b13", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_HEALTH_REGENERATION", "field": "text", "en": "Restores %s health per 5 sec.", "hash": "6400c233cb047b13", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_HERBALISM", "field": "text", "en": "Increases herbalism skill by %s.", "hash": "70cbac09f1ad66be", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_HOLY_DAMAGE_DONE", "field": "text", "en": "Increases holy damage done by up to %s.", "hash": "0b20b9b998ad27ec", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_INTELLECT", "field": "text", "en": "%c%s Intellect", "hash": "3ae163f6b33a90b6", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_LEATHERWORKING", "field": "text", "en": "Increases leatherworking skill by %s.", "hash": "5d1b4d1fd9464c9a", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_MACES", "field": "text", "en": "Increases maces skill by %s.", "hash": "c9eb23396979d701", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_MANA", "field": "text", "en": "%c%s Mana", "hash": "0573cdacfbe13efb", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_MANA_REGENERATION", "field": "text", "en": "Restores %s mana per 5 sec.", "hash": "819f9a05d9c5f06b", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_MINING", "field": "text", "en": "Increases mining skill by %s.", "hash": "d1d5adfb842e8f8b", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_NATURE_DAMAGE_DONE", "field": "text", "en": "Increases nature damage done by up to %s.", "hash": "4b92bc66d90662a5", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_NATURE_PENETRATION", "field": "text", "en": "Increases nature piercing by %s.", "hash": "d3f04288a2166849", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_PHYSICAL_DAMAGE_DONE", "field": "text", "en": "Increases physical damage done by up to %s.", "hash": "3cc06a9d3b717f84", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_POLEARMS", "field": "text", "en": "Increases polearms skill by %s.", "hash": "3b1ca9cbff9a6290", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_RANGED_ATTACK_POWER", "field": "text", "en": "Increases ranged attack power by %s.", "hash": "780228f3f23c9e5a", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_SHADOW_DAMAGE_DONE", "field": "text", "en": "Increases shadow damage done by up to %s.", "hash": "183d62a9d36f1eb1", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_SHADOW_PENETRATION", "field": "text", "en": "Increases shadow piercing by %s.", "hash": "67ff69da423e117d", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_SKINNING", "field": "text", "en": "Increases skinning skill by %s.", "hash": "d760963ebce05046", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_SPELL_DAMAGE_DONE", "field": "text", "en": "Increases damage done by magical spells and effects by up to %s.", "hash": "a2dc6e126675a3ce", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_SPELL_HEALING_DONE", "field": "text", "en": "Increases healing done by magical spells and effects by up to %s.", "hash": "7f20e4dd03d0c195", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_SPELL_PENETRATION", "field": "text", "en": "Increases spell piercing by %s.", "hash": "cbb8eb0340ea59b0", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_SPELL_RESISTANCE_ALL_SCHOOLS", "field": "text", "en": "Increases spell resistance by %s.", "hash": "9307905499d9d795", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_SPIRIT", "field": "text", "en": "%c%s Spirit", "hash": "6ba6e0728853e274", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_STAMINA", "field": "text", "en": "%c%s Stamina", "hash": "775cd0a485f15df5", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_STAVES", "field": "text", "en": "Increases staves skill by %s.", "hash": "5564df05e423d7f3", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_STRENGTH", "field": "text", "en": "%c%s Strength", "hash": "3c83d1190d95f23f", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_SWORDS", "field": "text", "en": "Increases swords skill by %s.", "hash": "fcfe61b747e4538a", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_TAILORING", "field": "text", "en": "Increases tailoring skill by %s.", "hash": "be9eaa77976a961d", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_THROWN", "field": "text", "en": "Increases thrown skill by %s.", "hash": "80af1b0cb229a033", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_TWOHANDED_AXES", "field": "text", "en": "Increases two-handed axes skill by %s.", "hash": "6a6c228266043828", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_TWOHANDED_MACES", "field": "text", "en": "Increases two-handed maces skill by %s.", "hash": "1e295ea1b5a874d0", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_TWOHANDED_SWORDS", "field": "text", "en": "Increases two-handed swords skill by %s.", "hash": "18d6c63ce1f9b8b5", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_MOD_WANDS", "field": "text", "en": "Increases wands skill by %s.", "hash": "05ee1407a1dd5ce5", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_NAMES", "field": "text", "en": "Item Names", "hash": "3413b7a250c01ca5", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_NAMES_SHOW_BRACES_COMBATLOG_TOOLTIP", "field": "text", "en": "Show braces around item names.", "hash": "2913bb05a3dd728a", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_NO_DROP", "field": "text", "en": "No Drop", "hash": "57c0c1aca01af04b", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_OPENABLE", "field": "text", "en": "<Right Click to Open>", "hash": "747fe419a8efc6a9", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_PURCHASED_COLON", "field": "text", "en": "Item Purchased:", "hash": "e592f48ab440e86c", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_QUALITY0_DESC", "field": "text", "en": "Poor", "hash": "0ad58a96e92f765d", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_QUALITY1_DESC", "field": "text", "en": "Common", "hash": "7ec9a72ce4ba5bba", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_QUALITY2_DESC", "field": "text", "en": "Uncommon", "hash": "3ccc5caed882af01", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_QUALITY3_DESC", "field": "text", "en": "Rare", "hash": "0b167ccacc6c0974", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_QUALITY4_DESC", "field": "text", "en": "Epic", "hash": "095c74d5d9af7e6e", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_QUALITY5_DESC", "field": "text", "en": "Legendary", "hash": "e1c5cf6aa1cb4056", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_QUALITY6_DESC", "field": "text", "en": "Artifact", "hash": "043c66d625d1833b", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_QUALITY7_DESC", "field": "text", "en": "Heirloom", "hash": "eb61908ae064318a", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_RACES_ALLOWED", "field": "text", "en": "Races: %s", "hash": "3dcb1620116843bb", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_RANDOM_ENCHANT", "field": "text", "en": "<Random additional stats>", "hash": "82949d25f66cedca", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_READABLE", "field": "text", "en": "<Right Click to Read>", "hash": "a7aea02122557af1", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_REQ_ALLIANCE", "field": "text", "en": "Alliance Only", "hash": "70e1abed1cb7a478", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_REQ_AMOUNT_EARNED", "field": "text", "en": "Requires earning a total of %1$d\n%2$s for the season.", "hash": "a843acfcf439c5f9", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_REQ_HORDE", "field": "text", "en": "Horde Only", "hash": "07b3c47319f56231", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_REQ_REPUTATION", "field": "text", "en": "Requires %s - %s", "hash": "3c03cefea5c61d18", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_REQ_SKILL", "field": "text", "en": "Requires %s", "hash": "d997d8d721f9dfeb", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_RESIST_ALL", "field": "text", "en": "%c%d to All Resistances", "hash": "9e0af13952de007f", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_RESIST_SINGLE", "field": "text", "en": "%c%d %s Resistance", "hash": "5ac30dfd8b384186", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_SIGNABLE", "field": "text", "en": "<Right Click for Details>", "hash": "db947c632166d803", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_SOCKETING", "field": "text", "en": "Item Socketing", "hash": "8a875bcfbb4e0c76", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_SOLD_COLON", "field": "text", "en": "Item Sold:", "hash": "8db841ec630b8e9a", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_SOULBOUND", "field": "text", "en": "Soulbound", "hash": "570c26eb6ff20067", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_SPELL_CHARGES_NONE", "field": "text", "en": "No charges", "hash": "ee214d249a4f3417", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_SPELL_EFFECT", "field": "text", "en": "Effect: %s", "hash": "1b3edc289b0d5cee", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_SPELL_KNOWN", "field": "text", "en": "Already known", "hash": "015eaec57c21a5b5", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_SPELL_MAX_USABLE_LEVEL", "field": "text", "en": " (Requires level %d or below)", "hash": "304731b8e8aafa42", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_SPELL_TRIGGER_ONEQUIP", "field": "text", "en": "Equip:", "hash": "99ff0c11a1015fbe", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_STARTS_QUEST", "field": "text", "en": "This Item Begins a Quest", "hash": "f90deee246b872b1", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_UNIQUE", "field": "text", "en": "Unique", "hash": "1c011adc9bbfcfa0", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_UNIQUE_EQUIPPABLE", "field": "text", "en": "Unique-Equipped", "hash": "adc9c572764d41cc", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_UNIQUE_MULTIPLE", "field": "text", "en": "Unique (%d)", "hash": "95a84c193d4cd9ac", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_UNSELLABLE", "field": "text", "en": "No sell price", "hash": "7cf628414b36b7a6", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_UPGRADE", "field": "text", "en": "Item Upgrade", "hash": "43cb98f4b80577a5", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_UPGRADED_LABEL", "field": "text", "en": "Item Upgraded!", "hash": "ab30c8a131d6c341", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_UPGRADE_DESCRIPTION", "field": "text", "en": "You can upgrade many equippable items to increase their item level. The currency required to upgrade an item varies depending on the item's source.", "hash": "0eb5eb2bdd4510c9", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_UPGRADE_FRAME_UPGRADE_TO", "field": "text", "en": "Upgrade To:", "hash": "400c28657c90f11d", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_UPGRADE_NO_MORE_UPGRADES", "field": "text", "en": "This item cannot be upgraded anymore.", "hash": "37117fe1778e4181", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_VENDOR_STACK_BUY", "field": "text", "en": "<Shift click to buy a different amount>", "hash": "3413f0cee291a047", "src": "db2@1.60.1.70124"}
+{"id": "ITEM_WRITTEN_BY", "field": "text", "en": "Written by %s", "hash": "cae386859fa48097", "src": "db2@1.60.1.70124"}
+{"id": "ItemNameDescription:13967", "field": "text", "en": "Blue", "hash": "08f48606219811ea", "src": "db2@1.60.1.70124"}
+{"id": "ItemNameDescription:13968", "field": "text", "en": "Green", "hash": "edaec63b5c5355aa", "src": "db2@1.60.1.70124"}
+{"id": "ItemNameDescription:14120", "field": "text", "en": "White", "hash": "0534370fd4ceb206", "src": "db2@1.60.1.70124"}
+{"id": "ItemNameDescription:14245", "field": "text", "en": "Grey", "hash": "09a19427fc6f6e91", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:1:0", "field": "text", "en": "Bag", "hash": "00117a5c060d8c7b", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:1:1", "field": "text", "en": "Soul Bag", "hash": "72e396f62f3c28cd", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:1:10", "field": "text", "en": "Cooking Bag", "hash": "c5106d2789c24121", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:1:11", "field": "text", "en": "Reagent Bag", "hash": "9b5fb4e7475a4fe8", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:1:12", "field": "text", "en": "Trinket Bag", "hash": "aeeae96f600cd777", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:1:2", "field": "text", "en": "Herb Bag", "hash": "9ff1fa4c22111adc", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:1:3", "field": "text", "en": "Enchanting Bag", "hash": "134ba9502487d3d8", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:1:4", "field": "text", "en": "Engineering Bag", "hash": "980120d047c0d237", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:1:6", "field": "text", "en": "Mining Bag", "hash": "2f932af693e3b34a", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:1:7", "field": "text", "en": "Leatherworking Bag", "hash": "9fab7f2511c90a85", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:1:9", "field": "text", "en": "Tackle Box", "hash": "bdc00ce4d0c8db33", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:0", "field": "text", "en": "Axe", "hash": "00114316021825ef", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:1", "field": "text", "en": "Axe", "hash": "00114316021825ef", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:10", "field": "text", "en": "Staff", "hash": "c096e199da404830", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:11", "field": "text", "en": "Exotic", "hash": "141414a294a52e2a", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:12", "field": "text", "en": "Exotic", "hash": "141414a294a52e2a", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:13", "field": "text", "en": "Fist Weapon", "hash": "4421f6d9134c355f", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:14", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:15", "field": "text", "en": "Dagger", "hash": "83be91679d2e7fb5", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:16", "field": "text", "en": "Thrown", "hash": "b85ebec1016e7558", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:17", "field": "text", "en": "Spear", "hash": "c00eb4ceb480e7bd", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:18", "field": "text", "en": "Crossbow", "hash": "bad14b72605d5e3b", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:19", "field": "text", "en": "Wand", "hash": "0bc1fec48f734e1d", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:2", "field": "text", "en": "Bow", "hash": "00118196060f4ad9", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:20", "field": "text", "en": "Fishing Pole", "hash": "318a595acc265417", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:3", "field": "text", "en": "Gun", "hash": "0012d3cc19e95cdb", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:4", "field": "text", "en": "Mace", "hash": "0a6af11609626728", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:5", "field": "text", "en": "Mace", "hash": "0a6af11609626728", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:6", "field": "text", "en": "Polearm", "hash": "fb9fd6606fd0475c", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:7", "field": "text", "en": "Sword", "hash": "c1017b0aba0d5767", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:2:8", "field": "text", "en": "Sword", "hash": "c1017b0aba0d5767", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:4:0", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:4:1", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:4:2", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:4:3", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:4:4", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:4:6", "field": "text", "en": "Shield", "hash": "bba314a98f8932b0", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:4:7", "field": "text", "en": "Libram", "hash": "eba5fc3a897271a3", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:4:8", "field": "text", "en": "Idol", "hash": "09e289f0dface0cf", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClass:4:9", "field": "text", "en": "Totem", "hash": "d17e0d12418feb07", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:0", "field": "text", "en": "Explosives", "hash": "a523f6b229cb0256", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:1", "field": "text", "en": "Potions", "hash": "889a67d1d4574851", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:13", "field": "text", "en": "Draughts", "hash": "928809959506dbac", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:14", "field": "text", "en": "Devices", "hash": "60275538301858bf", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:15", "field": "text", "en": "Temporary", "hash": "f8c27c84070beec6", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:2", "field": "text", "en": "Elixirs", "hash": "1349fc3ecf749ca7", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:3", "field": "text", "en": "Flasks", "hash": "3b135404b389822b", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:4", "field": "text", "en": "Scrolls", "hash": "ba308fad8958bd3a", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:5", "field": "text", "en": "Food & Drink", "hash": "e3e8923828f2b8c1", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:6", "field": "text", "en": "Permanent", "hash": "1b134f49c3b31cae", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:7", "field": "text", "en": "Bandages", "hash": "3e47c357fd3639c6", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:0:8", "field": "text", "en": "Other", "hash": "7a61dd1d7a6004c7", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:11:2", "field": "text", "en": "Quiver", "hash": "a8d12f9d81d9f86d", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:11:3", "field": "text", "en": "Ammo Pouch", "hash": "62b80656fea0dabf", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:12:0", "field": "text", "en": "Quest", "hash": "9d9ed56bb9b5eac9", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:13:0", "field": "text", "en": "Key", "hash": "0013d7cb29c86dda", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:13:1", "field": "text", "en": "Lockpick", "hash": "78b073f62a135f4e", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:15:0", "field": "text", "en": "Junk", "hash": "0a094aa0b09134ce", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:15:2", "field": "text", "en": "Pet", "hash": "001526f33da1c09a", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:15:3", "field": "text", "en": "Holiday", "hash": "5694369f04a21b9e", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:15:5", "field": "text", "en": "Mount", "hash": "569e58862d1fd16c", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:1:0", "field": "text", "en": "Bag", "hash": "00117a5c060d8c7b", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:1:1", "field": "text", "en": "Soul Bag", "hash": "72e396f62f3c28cd", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:1:10", "field": "text", "en": "Cooking Bag", "hash": "c5106d2789c24121", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:1:11", "field": "text", "en": "Reagent Bag", "hash": "9b5fb4e7475a4fe8", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:1:12", "field": "text", "en": "Trinket Bag", "hash": "aeeae96f600cd777", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:1:2", "field": "text", "en": "Herb Bag", "hash": "9ff1fa4c22111adc", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:1:3", "field": "text", "en": "Enchanting Bag", "hash": "134ba9502487d3d8", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:1:4", "field": "text", "en": "Engineering Bag", "hash": "980120d047c0d237", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:1:6", "field": "text", "en": "Mining Bag", "hash": "2f932af693e3b34a", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:1:7", "field": "text", "en": "Leatherworking Bag", "hash": "9fab7f2511c90a85", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:1:9", "field": "text", "en": "Tackle Box", "hash": "bdc00ce4d0c8db33", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:0", "field": "text", "en": "One-Handed Axes", "hash": "11e3a286f24718bb", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:1", "field": "text", "en": "Two-Handed Axes", "hash": "f137139d29b02e29", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:10", "field": "text", "en": "Staves", "hash": "8d39a3b5dac32ccf", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:11", "field": "text", "en": "One-Handed Exotics", "hash": "651f9b4fe05fb25c", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:12", "field": "text", "en": "Two-Handed Exotics", "hash": "bb4c9f24ab0fafbd", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:13", "field": "text", "en": "Fist Weapons", "hash": "dd615228307192c9", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:14", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:15", "field": "text", "en": "Daggers", "hash": "6a846977c756763a", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:16", "field": "text", "en": "Thrown", "hash": "b85ebec1016e7558", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:17", "field": "text", "en": "Spears", "hash": "478687c7415d0eaa", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:18", "field": "text", "en": "Crossbows", "hash": "99199da40079c34e", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:19", "field": "text", "en": "Wands", "hash": "04455edd0ace5a9d", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:2", "field": "text", "en": "Bows", "hash": "08f550352d811cfd", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:20", "field": "text", "en": "Fishing Pole", "hash": "318a595acc265417", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:3", "field": "text", "en": "Guns", "hash": "09a261d7085958c8", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:4", "field": "text", "en": "One-Handed Maces", "hash": "f70b30d5433229c6", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:5", "field": "text", "en": "Two-Handed Maces", "hash": "3ebe11d9b024a8c9", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:6", "field": "text", "en": "Polearms", "hash": "c2cab6137eb3c8fb", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:7", "field": "text", "en": "One-Handed Swords", "hash": "d3a073af08003389", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:8", "field": "text", "en": "Two-Handed Swords", "hash": "842996e5268418cd", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:2:9", "field": "text", "en": "Warglaives", "hash": "66dd61d3d5fda464", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:4:1", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:4:2", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:4:3", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:4:4", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:4:5", "field": "text", "en": "Cosmetic", "hash": "1f9c9091f805f5ef", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:4:6", "field": "text", "en": "Shields", "hash": "047394cec4ba0cf2", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:4:7", "field": "text", "en": "Librams", "hash": "95f01479a959c0a3", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:4:8", "field": "text", "en": "Idols", "hash": "0eec965c862c80dc", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:4:9", "field": "text", "en": "Totems", "hash": "3380b2c00cf3f564", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:5:0", "field": "text", "en": "Reagent", "hash": "d10917a18239ca66", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:6:2", "field": "text", "en": "Arrow", "hash": "845fecf156710879", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:6:3", "field": "text", "en": "Bullet", "hash": "ec750bb63b4e37fb", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:7:1", "field": "text", "en": "Parts", "hash": "896676f50247eb65", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:7:10", "field": "text", "en": "Elemental", "hash": "22648ba454d81efc", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:7:7", "field": "text", "en": "Metal & Stone", "hash": "9987ad9225c7410b", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:7:9", "field": "text", "en": "Herb", "hash": "09c080dd563d902a", "src": "db2@1.60.1.70124"}
+{"id": "ItemSubClassName:9:0", "field": "text", "en": "Book", "hash": "08f54c152d801ded", "src": "db2@1.60.1.70124"}

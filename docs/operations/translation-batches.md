@@ -17,7 +17,7 @@ One batch goes from untranslated English to imported, checked, generated `machin
 
 - **Kinds.** `progress`, `completion` (quest progress and turn-in text), `gossip` (NPC greetings and speech), `book` (a book, letter, note or plaque page), the client's quest text `quest_title` / `quest_objectives` / `quest_description`, `objective` (a quest objective's own text, keyed by QuestObjective id), `area` (a quest's exploration or event objective, keyed by quest id), and the tooltip kinds `item_description`, `spell_description`, `spell_aura`. A book page written as HTML (`<HTML>…`) reaches the row with its tags and line breaks unchanged. The addon finds area and objective text in one index, so an area and an objective line with the same English must be drafted to the same Japanese (`validate` refuses otherwise).
 - **Tooltip English is a template** (`Restores $o1 health over $d.`): the client fills the values per item, rank, level and talent, so a draft never writes a number the client supplies. It writes `$N<k>` for the k-th value of the line the player sees and `$D<k>` for the k-th duration, whose unit the client chooses ([ADR-028](../adr/028-a-duration-is-copied-not-named.md)). A number the English writes before a unit word (`every 5 sec`) is a duration too. Quest title, objectives and description rows take `$N<k>` for a count the server fills in (`Collect $1oa Lady's Tear Moss.`). In tooltip English, `$n` / `$c` / `$r` are values (`within $r yards`), not player tokens, and a `$b<k>` is a value; only a `$b` with no digit is a break. Quest text keeps every `$B` run as a paragraph break.
-- **`--src PREFIX`** keeps only English whose `src` starts with the prefix (`--src db2@`, or one build: `--src db2@1.60.1.70009`), so tooltip lines are drafted from the Forever client's own English. **`--visible FILE`** keeps only the spell ids in the visible-spell list (`make visible-spells` → `pipeline/visible_spells.txt`): text a player can actually be shown.
+- **`--src PREFIX`** keeps only English whose `src` starts with the prefix (`--src db2@`, or one build: `--src db2@1.60.1.70124`), so tooltip lines are drafted from the Forever client's own English. **`--visible FILE`** keeps only the spell ids in the visible-spell list (`make visible-spells` → `pipeline/visible_spells.txt`): text a player can actually be shown.
 - **Quest text from Classic Era English.** Quest title, objectives and description that the Forever server has not answered yet are drafted from the Classic Era English the import carries (no `--src`). Forever changed the English of about 2 % of the quests both clients hold; a later Forever rewording shows the stale marker ([ADR-003](../adr/003-ship-stale-with-marker.md)) until the line is redrafted.
 - **Skipped.** A bare label: English with no lower-case word, no `{name}` / `{class}` / `{race}` token and no `.` `?` `!` `…` (`Stratholme`, `Auction House`). It ships as the English. The title-case kinds (`quest_title`, `objective`, `area`) are never skipped this way, because title case makes a real title look like a label. An objective or area line that is only a name is listed in `pipeline/objective_names.txt` / `pipeline/area_names.txt` instead of being drafted; a quest title that is only a name is drafted and ships that name in English letters. Also skipped: every field of a placeholder quest (`<UNUSED>`, `<NYI>`, `REUSE`; `io/wdb.PLACEHOLDER_TITLE`), a line already `trusted`, a line that already has a `machine` variant, and a line with any `human` or `correction` variant (machine output never competes with hand-written text; see [Principles §6](../architecture/principles.md#6-provenance-on-every-line-people-over-machines)) unless `--held-back` applies.
 - **Grouped by unique English.** Lines whose English is identical after the token mapping become one row, `{"ref", "kind", "en", "targets": [[id, field], …]}`, so each text is drafted once and fans out to every target at `expand`. Quest `progress` / `completion` rows also carry `"items"`: the item names found in the quest's objectives, so the drafter can tell which lower-case words are items. Rows of the slot kinds (tooltips and the three quest kinds) carry `"slots"` (the `$N<k>` range) and, when the English prints any, `"durations"` (the `$D<k>` range). `quest_title`, `objective` and `area` rows carry `"names"`: the words the Japanese must keep in English letters. Book rows are grouped by the English hash (the addon's key for a page, [ADR-022](../adr/022-book-and-trainer-greeting-surfaces.md)). The same store always gives a byte-identical batch.
@@ -34,7 +34,7 @@ One batch goes from untranslated English to imported, checked, generated `machin
    # --redraft-older       also lines whose drafts are all from an older style version
    # --ids FILE --redraft  the listed lines even when drafted: fix them in place, same draft name
    # --held-back           also the lines whose hand-written variants are all ruled reject (below)
-   # --src PREFIX          only English from one source, e.g. db2@1.60.1.70009
+   # --src PREFIX          only English from one source, e.g. db2@1.60.1.70124
    # --visible FILE        spell kinds: only the ids in the visible-spell list
    ```
    It prints `in scope (<kind>, sg<N>): L lines · U unique · C English chars` (everything still to draft) and the same for the batch. With `--ids`, a further line lists the ids it could not take and why (a hand-written variant without `--held-back`, no English, or no prose); nothing listed is dropped silently. A slot kind may also print `left out (<kind>): N rows whose value count the template cannot give`.
@@ -146,7 +146,7 @@ When a client build rewords a string, `make check` marks its line `stale` (the E
    make check && make generate && make validate VALIDATE_FLAGS="--base origin/main"
    ```
 
-`--reverify` records on every line the draft names exactly the baseline a fresh `make check` would record for the current English, because the draft was written against it. The summary ends `re-verified N`. It refuses, writing nothing, a row with no English, a line with a hand-written variant not ruled `reject` (that needs a ruling first), and a row whose Japanese loses to a variant ruled `accept` (move the ruling to the redraft first). `make test-py` includes a test that fails while any shipped UI line is mismatched or ambiguous against Forever's English.
+`--reverify` records on every line the draft names exactly the baseline a fresh `make check` would record for the current English, because the draft was written against it. A redraft whose Japanese equals a variant the line already holds imports as `unchanged`: that older variant keeps its own date and can still lose the machine-versus-machine tiebreak to the stale winner, which then ships re-stamped. Check the winner after `make check`; if the stale text still wins, rule it `reject` (a ruling on the variant, as for a hand-written line) and check again. The summary ends `re-verified N`. It refuses, writing nothing, a row with no English, a line with a hand-written variant not ruled `reject` (that needs a ruling first), and a row whose Japanese loses to a variant ruled `accept` (move the ruling to the redraft first). `make test-py` includes a test that fails while any shipped UI line is mismatched or ambiguous against Forever's English.
 
 ## Scripted redraft (a word swap)
 
@@ -327,6 +327,27 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 - **`draft: --reverify: N row(s) have a hand-written variant not ruled reject`**: the line needs a ruling before a redraft can take it over, or drop the row.
 - **`draft: --reverify: N row(s) lose to a variant ruled accept`**: move the `accept` ruling onto the redraft, then re-verify.
 - **`--reverify is for ui, quest, objective, area, item, spell only`**: the flag was passed with another `TYPE`.
+
+## Re-pull records
+
+What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
+previous build, with what was drafted for it. The round's batches follow the steps above.
+
+### 1.60.1.70009 → 1.60.1.70124 (2026-10-01)
+
+| Type | Reworded | New English lines | Gone | Drafted |
+|---|---|---|---|---|
+| quest | 2 (5638: Laurena → Rohan) | 84 on 36 quests (22 quests new to Forever; 13 found only by the all-ids sweep) | 18 (7 `<UNUSED>` stubs the placeholder filter now drops) | 23 titles, 13 objectives, 12 descriptions; 2 redrafts; 1 hand-written line ruled and redrafted (7945) |
+| item | 0 | 66 (11 tooltip texts) | 0 | 13 tooltips; 4 range rows redrafted to one slot (1447, 5631, 5633, 16252) |
+| spell | 1 (1309410 aura) | 0 | 0 | the earlier variant that matches the new English promoted |
+| objective, area | 0 | 3, 1 | 0 | 4 |
+| ui, gossip, book, unit | 0 | 0 | 0 | none |
+
+Left out with a reason: test or stub English (quests 1, 9065, 7682, 94559, 94901, 94902; the title markers of 93173,
+94898, 97583; spell 457021), name-only text (items 14625, 278051), picture-only or name-and-dates book pages (11), and
+three belt-tinker / expertise tooltips whose branches differ only by prose (1226210, 1226211, 1234040 / 1234805:
+`branches_indistinguishable`). Readings and meanings were written for every drafted quest line and for the 25
+holiday and reputation quest lines that started shipping on this build.
 
 ## Related
 

@@ -24,7 +24,7 @@ local SAY, YELL, EMOTE, BOSS, PLAYER_SAY = 11, 12, 13, 14, 1
 local clock = 0
 local function chatFrame()
   local frame = { history = {}, visibleLines = { Stub.fontString("") }, callbacks = {},
-    fontObject = { font = { path = "Fonts\\ARIALN.TTF", size = 14, flags = "" } } }
+    fontObject = Stub.fontObject("Fonts\\ARIALN.TTF", 14) }
   local function package(message, r, g, b, ...)
     clock = clock + 1
     return { message = message, r = r, g = g, b = b, extra = { n = select("#", ...), ... }, timestamp = clock }
@@ -181,6 +181,12 @@ describe("NPC speech", function()
     assert.are.equal(WFJ.Font.PATH, string.font.path)
     alt(WFJ, true)
     assert.are.equal("Stay close, Testplayer!", string:GetText())
+    assert.are.equal("Fonts\\FRIZQT__.TTF", string.font.path) -- its own font back while English shows
+    alt(WFJ, false)
+    assert.are.equal(WFJ.Font.PATH, string.font.path)
+    string:SetText("Another line entirely") -- the client reuses the pooled string for a later bubble
+    WFJ.Speech.refresh()
+    assert.are.equal("Fonts\\FRIZQT__.TTF", string.font.path) -- in game: the bundled face stayed on reused bubbles
   end)
 
   it("a boss emote in the middle of the screen", function()

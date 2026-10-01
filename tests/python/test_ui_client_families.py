@@ -13,7 +13,7 @@ from wfj.core.model import UI_FAMILIES, validate_line
 from wfj.io import client_tables, wago
 from wfj.io.jsonl_store import Store
 
-BUILD = "1.60.1.70009"
+BUILD = "1.60.1.70124"
 TEXT_TABLES = (
     "Faction", "Achievement", "Achievement_Category", "SkillLineCategory", "SkillLine", "EmotesTextData",
     "HolidayDescriptions", "CurrencyTypes", "CurrencyCategory", "SpellDispelType", "CreatureType", "QuestSort",

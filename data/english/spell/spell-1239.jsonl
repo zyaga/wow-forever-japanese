@@ -1,37 +1,37 @@
-{"id": 1239031, "field": "name", "en": "[DNT] Essence of C'Thun", "hash": "186ffe055e6337e9", "src": "db2@1.60.1.70009"}
-{"id": 1239032, "field": "name", "en": "[DNT] Essence of C'Thun", "hash": "186ffe055e6337e9", "src": "db2@1.60.1.70009"}
-{"id": 1239038, "field": "name", "en": "Summon Essence of C'Thun", "hash": "c85de91dc29c3ca2", "src": "db2@1.60.1.70009"}
-{"id": 1239045, "field": "name", "en": "Holy Radiance", "hash": "862bf2f244886b02", "src": "db2@1.60.1.70009"}
-{"id": 1239077, "field": "name", "en": "Summon Essence of C'Thun", "hash": "c85de91dc29c3ca2", "src": "db2@1.60.1.70009"}
-{"id": 1239090, "field": "name", "en": "Summon Essence of C'Thun", "hash": "c85de91dc29c3ca2", "src": "db2@1.60.1.70009"}
-{"id": 1239100, "field": "name", "en": "Shadow Barrier", "hash": "f463a18e9dd7a9fa", "src": "db2@1.60.1.70009"}
-{"id": 1239114, "field": "name", "en": "Class Call", "hash": "88eef2bb2a1b80c6", "src": "db2@1.60.1.70009"}
-{"id": 1239173, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70009"}
-{"id": 1239241, "field": "name", "en": "Cripple", "hash": "8dedc199be0ae971", "src": "db2@1.60.1.70009"}
-{"id": 1239242, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70009"}
-{"id": 1239242, "field": "description", "en": "Heals a friendly target for $s1, an additional $o2 over $d, and increases the effectiveness of your Chain Heal casts directly on that target by $s3%.", "hash": "68320edfb136aab7", "src": "db2@1.60.1.70009"}
-{"id": 1239242, "field": "aura", "en": "Heals $w2 every $t2 sec.\r\nIncreases the effectiveness of the caster's Chain Heal spells cast directly on this target by $s3%.", "hash": "0b6d739c1c2884ec", "src": "db2@1.60.1.70009"}
-{"id": 1239243, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70009"}
-{"id": 1239243, "field": "description", "en": "Heals a friendly target for $s1, an additional $o2 over $d, and increases the effectiveness of your Chain Heal casts directly on that target by $s3%.", "hash": "68320edfb136aab7", "src": "db2@1.60.1.70009"}
-{"id": 1239243, "field": "aura", "en": "Heals $w2 every $t2 sec.\r\nIncreases the effectiveness of the caster's Chain Heal spells cast directly on this target by $s3%.", "hash": "0b6d739c1c2884ec", "src": "db2@1.60.1.70009"}
-{"id": 1239255, "field": "name", "en": "Consumption", "hash": "87a9cde3d4b7c237", "src": "db2@1.60.1.70009"}
-{"id": 1239256, "field": "name", "en": "Consumption", "hash": "87a9cde3d4b7c237", "src": "db2@1.60.1.70009"}
-{"id": 1239317, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70009"}
-{"id": 1239456, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70009"}
-{"id": 1239456, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 1239482, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70009"}
-{"id": 1239482, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70009"}
-{"id": 1239543, "field": "name", "en": "Sunlight", "hash": "d8478bb2db8741c3", "src": "db2@1.60.1.70009"}
-{"id": 1239543, "field": "aura", "en": "Divine Storm, Crusader Strike, and melee attacks deal bonus Holy damage.", "hash": "2e82806123596c8b", "src": "db2@1.60.1.70009"}
-{"id": 1239548, "field": "name", "en": "Sunlight", "hash": "d8478bb2db8741c3", "src": "db2@1.60.1.70009"}
-{"id": 1239620, "field": "name", "en": "Wrath of the Ashbringer", "hash": "11c83aec346a5d31", "src": "db2@1.60.1.70009"}
-{"id": 1239696, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70009"}
-{"id": 1239696, "field": "description", "en": "Blasts the target with energy, dealing $s1 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by $400573s1% and the mana cost of Arcane Blast is increased by $400573s2%. Effect stacks up to $400573u times and lasts $400573d or until any other damage spell is cast.", "hash": "70a83dc8f854b1b2", "src": "db2@1.60.1.70009"}
-{"id": 1239697, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70009"}
-{"id": 1239697, "field": "description", "en": "Blasts the target with energy, dealing $s1 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by $400573s1% and the mana cost of Arcane Blast is increased by $400573s2%. Effect stacks up to $400573u times and lasts $400573d or until any other damage spell is cast.", "hash": "70a83dc8f854b1b2", "src": "db2@1.60.1.70009"}
-{"id": 1239699, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70009"}
-{"id": 1239699, "field": "description", "en": "Blasts the target with energy, dealing $s1 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by $400573s1% and the mana cost of Arcane Blast is increased by $400573s2%. Effect stacks up to $400573u times and lasts $400573d or until any other damage spell is cast.", "hash": "70a83dc8f854b1b2", "src": "db2@1.60.1.70009"}
-{"id": 1239700, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70009"}
-{"id": 1239700, "field": "description", "en": "Blasts the target with energy, dealing $s1 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by $400573s1% and the mana cost of Arcane Blast is increased by $400573s2%. Effect stacks up to $400573u times and lasts $400573d or until any other damage spell is cast.", "hash": "70a83dc8f854b1b2", "src": "db2@1.60.1.70009"}
-{"id": 1239832, "field": "name", "en": "Impact", "hash": "412bbe9188b289bb", "src": "db2@1.60.1.70009"}
-{"id": 1239832, "field": "aura", "en": "The Mage's next Fire Blast hit will also Stun the target for $12355d.", "hash": "799ddc774b0458ef", "src": "db2@1.60.1.70009"}
+{"id": 1239031, "field": "name", "en": "[DNT] Essence of C'Thun", "hash": "186ffe055e6337e9", "src": "db2@1.60.1.70124"}
+{"id": 1239032, "field": "name", "en": "[DNT] Essence of C'Thun", "hash": "186ffe055e6337e9", "src": "db2@1.60.1.70124"}
+{"id": 1239038, "field": "name", "en": "Summon Essence of C'Thun", "hash": "c85de91dc29c3ca2", "src": "db2@1.60.1.70124"}
+{"id": 1239045, "field": "name", "en": "Holy Radiance", "hash": "862bf2f244886b02", "src": "db2@1.60.1.70124"}
+{"id": 1239077, "field": "name", "en": "Summon Essence of C'Thun", "hash": "c85de91dc29c3ca2", "src": "db2@1.60.1.70124"}
+{"id": 1239090, "field": "name", "en": "Summon Essence of C'Thun", "hash": "c85de91dc29c3ca2", "src": "db2@1.60.1.70124"}
+{"id": 1239100, "field": "name", "en": "Shadow Barrier", "hash": "f463a18e9dd7a9fa", "src": "db2@1.60.1.70124"}
+{"id": 1239114, "field": "name", "en": "Class Call", "hash": "88eef2bb2a1b80c6", "src": "db2@1.60.1.70124"}
+{"id": 1239173, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70124"}
+{"id": 1239241, "field": "name", "en": "Cripple", "hash": "8dedc199be0ae971", "src": "db2@1.60.1.70124"}
+{"id": 1239242, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70124"}
+{"id": 1239242, "field": "description", "en": "Heals a friendly target for $s1, an additional $o2 over $d, and increases the effectiveness of your Chain Heal casts directly on that target by $s3%.", "hash": "68320edfb136aab7", "src": "db2@1.60.1.70124"}
+{"id": 1239242, "field": "aura", "en": "Heals $w2 every $t2 sec.\r\nIncreases the effectiveness of the caster's Chain Heal spells cast directly on this target by $s3%.", "hash": "0b6d739c1c2884ec", "src": "db2@1.60.1.70124"}
+{"id": 1239243, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70124"}
+{"id": 1239243, "field": "description", "en": "Heals a friendly target for $s1, an additional $o2 over $d, and increases the effectiveness of your Chain Heal casts directly on that target by $s3%.", "hash": "68320edfb136aab7", "src": "db2@1.60.1.70124"}
+{"id": 1239243, "field": "aura", "en": "Heals $w2 every $t2 sec.\r\nIncreases the effectiveness of the caster's Chain Heal spells cast directly on this target by $s3%.", "hash": "0b6d739c1c2884ec", "src": "db2@1.60.1.70124"}
+{"id": 1239255, "field": "name", "en": "Consumption", "hash": "87a9cde3d4b7c237", "src": "db2@1.60.1.70124"}
+{"id": 1239256, "field": "name", "en": "Consumption", "hash": "87a9cde3d4b7c237", "src": "db2@1.60.1.70124"}
+{"id": 1239317, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70124"}
+{"id": 1239456, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70124"}
+{"id": 1239456, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 1239482, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
+{"id": 1239482, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70124"}
+{"id": 1239543, "field": "name", "en": "Sunlight", "hash": "d8478bb2db8741c3", "src": "db2@1.60.1.70124"}
+{"id": 1239543, "field": "aura", "en": "Divine Storm, Crusader Strike, and melee attacks deal bonus Holy damage.", "hash": "2e82806123596c8b", "src": "db2@1.60.1.70124"}
+{"id": 1239548, "field": "name", "en": "Sunlight", "hash": "d8478bb2db8741c3", "src": "db2@1.60.1.70124"}
+{"id": 1239620, "field": "name", "en": "Wrath of the Ashbringer", "hash": "11c83aec346a5d31", "src": "db2@1.60.1.70124"}
+{"id": 1239696, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70124"}
+{"id": 1239696, "field": "description", "en": "Blasts the target with energy, dealing $s1 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by $400573s1% and the mana cost of Arcane Blast is increased by $400573s2%. Effect stacks up to $400573u times and lasts $400573d or until any other damage spell is cast.", "hash": "70a83dc8f854b1b2", "src": "db2@1.60.1.70124"}
+{"id": 1239697, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70124"}
+{"id": 1239697, "field": "description", "en": "Blasts the target with energy, dealing $s1 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by $400573s1% and the mana cost of Arcane Blast is increased by $400573s2%. Effect stacks up to $400573u times and lasts $400573d or until any other damage spell is cast.", "hash": "70a83dc8f854b1b2", "src": "db2@1.60.1.70124"}
+{"id": 1239699, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70124"}
+{"id": 1239699, "field": "description", "en": "Blasts the target with energy, dealing $s1 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by $400573s1% and the mana cost of Arcane Blast is increased by $400573s2%. Effect stacks up to $400573u times and lasts $400573d or until any other damage spell is cast.", "hash": "70a83dc8f854b1b2", "src": "db2@1.60.1.70124"}
+{"id": 1239700, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70124"}
+{"id": 1239700, "field": "description", "en": "Blasts the target with energy, dealing $s1 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by $400573s1% and the mana cost of Arcane Blast is increased by $400573s2%. Effect stacks up to $400573u times and lasts $400573d or until any other damage spell is cast.", "hash": "70a83dc8f854b1b2", "src": "db2@1.60.1.70124"}
+{"id": 1239832, "field": "name", "en": "Impact", "hash": "412bbe9188b289bb", "src": "db2@1.60.1.70124"}
+{"id": 1239832, "field": "aura", "en": "The Mage's next Fire Blast hit will also Stun the target for $12355d.", "hash": "799ddc774b0458ef", "src": "db2@1.60.1.70124"}

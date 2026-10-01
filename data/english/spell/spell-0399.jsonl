@@ -1,26 +1,26 @@
-{"id": 399699, "field": "name", "en": "S03 - Runecarving Test - Sharpen Helm - Critical", "hash": "bb981bd3cf748722", "src": "db2@1.60.1.70009"}
-{"id": 399699, "field": "description", "en": "Increase critical chance on a helm by 2% for 30 minutes.", "hash": "c6823f92fea9dcdf", "src": "db2@1.60.1.70009"}
-{"id": 399954, "field": "name", "en": "Chest Rune Ability", "hash": "4691fd4e62942d12", "src": "db2@1.60.1.70009"}
-{"id": 399954, "field": "description", "en": "Equip a Chest slot item with a Rune engraved to activate an ability in this slot.", "hash": "d9c27ae48b0cd808", "src": "db2@1.60.1.70009"}
-{"id": 399956, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70009"}
-{"id": 399956, "field": "description", "en": "Instantly attacks with both weapons for $399960s2% weapon damage plus an additional ${$399960m1*$399960m2/100} with each weapon. Damage increased by $m4% against Poisoned targets. Awards $m1 Combo $LPoint:Points;.", "hash": "a12beab4ffad15c5", "src": "db2@1.60.1.70009"}
-{"id": 399960, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70009"}
+{"id": 399699, "field": "name", "en": "S03 - Runecarving Test - Sharpen Helm - Critical", "hash": "bb981bd3cf748722", "src": "db2@1.60.1.70124"}
+{"id": 399699, "field": "description", "en": "Increase critical chance on a helm by 2% for 30 minutes.", "hash": "c6823f92fea9dcdf", "src": "db2@1.60.1.70124"}
+{"id": 399954, "field": "name", "en": "Chest Rune Ability", "hash": "4691fd4e62942d12", "src": "db2@1.60.1.70124"}
+{"id": 399954, "field": "description", "en": "Equip a Chest slot item with a Rune engraved to activate an ability in this slot.", "hash": "d9c27ae48b0cd808", "src": "db2@1.60.1.70124"}
+{"id": 399956, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70124"}
+{"id": 399956, "field": "description", "en": "Instantly attacks with both weapons for $399960s2% weapon damage plus an additional ${$399960m1*$399960m2/100} with each weapon. Damage increased by $m4% against Poisoned targets. Awards $m1 Combo $LPoint:Points;.", "hash": "a12beab4ffad15c5", "src": "db2@1.60.1.70124"}
+{"id": 399960, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70124"}
 {"id": 399960, "field": "description", "en": "Instantly attacks with both weapons for 100% weapon damage plus additional ${$399960m1/100*$<base>} with each weapon.  Damage is increased by 20% against Poisoned targets.  Awards 2 combo points.", "hash": "a38edd06cd0694d5", "src": "wago@1.15.9.69722"}
-{"id": 399961, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70009"}
+{"id": 399961, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70124"}
 {"id": 399961, "field": "description", "en": "Instantly attacks with both weapons for 100% weapon damage plus additional $${$399960m1/100*$<base>} with each weapon.  Damage is increased by 20% against Poisoned targets.  Awards 2 combo points.", "hash": "8245c11204b9b8f3", "src": "wago@1.15.9.69722"}
-{"id": 399962, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70009"}
-{"id": 399962, "field": "description", "en": "Gain the Mutilate ability:\r\n\r\n$@spellicon399956\r\n$@spelldesc399956", "hash": "017062fe276dde3f", "src": "db2@1.60.1.70009"}
-{"id": 399965, "field": "name", "en": "Deadly Brew", "hash": "a27575137279e726", "src": "db2@1.60.1.70009"}
-{"id": 399965, "field": "description", "en": "Grants several improvements to your poisons:\r\n\r\nWhen you inflict any other poison on a target, you also inflict Deadly Poison.\r\n\r\nIf your weapon does not have a poison applied, it has a chance to trigger Instant Poison as if Instant Poison were applied.\r\n\r\nDeadly Poison and Instant Poison now gain increased damage from your Attack Power.\r\n\r\nYour Deadly Poison can now be active on targets affected by another Rogue's Deadly Poison.", "hash": "d4dbe68da98eba87", "src": "db2@1.60.1.70009"}
-{"id": 399966, "field": "name", "en": "Legs Rune Ability", "hash": "2dfce083ab110c99", "src": "db2@1.60.1.70009"}
-{"id": 399966, "field": "description", "en": "Equip a Legs slot item with a Rune engraved to activate an ability in this slot.", "hash": "73ddef7a87d66191", "src": "db2@1.60.1.70009"}
-{"id": 399967, "field": "name", "en": "Hands Rune Ability", "hash": "fe468892754ec54b", "src": "db2@1.60.1.70009"}
-{"id": 399967, "field": "description", "en": "Equip a Hands slot item with a Rune engraved to activate an ability in this slot.", "hash": "55d903a3547979cf", "src": "db2@1.60.1.70009"}
-{"id": 399968, "field": "name", "en": "Envenom", "hash": "ebfa60b859924072", "src": "db2@1.60.1.70009"}
-{"id": 399968, "field": "description", "en": "Gain the Envenom ability:\r\n\r\n$@spellicon399963\r\n$@spelldesc399963", "hash": "27aef0ee9ffb387e", "src": "db2@1.60.1.70009"}
-{"id": 399969, "field": "name", "en": "Deadly Brew", "hash": "a27575137279e726", "src": "db2@1.60.1.70009"}
-{"id": 399969, "field": "description", "en": "Gain the Deadly Brew ability:\r\n\r\n$@spellicon399965\r\n$@spelldesc399965", "hash": "20d1c1dab1c9bbd0", "src": "db2@1.60.1.70009"}
-{"id": 399985, "field": "name", "en": "Shadowstrike", "hash": "cb12c7cbf8292281", "src": "db2@1.60.1.70009"}
-{"id": 399985, "field": "description", "en": "Teleport behind your target and strike, causing $s3% weapon damage to the target.  Must be stealthed.  Awards $s4 combo $lpoint:points;.", "hash": "8e972e2d63e2ee1d", "src": "db2@1.60.1.70009"}
-{"id": 399986, "field": "name", "en": "Shuriken Toss", "hash": "6b52e5986691ec9b", "src": "db2@1.60.1.70009"}
-{"id": 399986, "field": "description", "en": "Throw a shuriken at your enemy dealing damage equal to $s1% of your Attack Power, and also strike up to ${$x1-1} additional nearby targets. Awards $s2 combo $lpoint:points; per target hit.\r\n", "hash": "22f728549e15a38d", "src": "db2@1.60.1.70009"}
+{"id": 399962, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70124"}
+{"id": 399962, "field": "description", "en": "Gain the Mutilate ability:\r\n\r\n$@spellicon399956\r\n$@spelldesc399956", "hash": "017062fe276dde3f", "src": "db2@1.60.1.70124"}
+{"id": 399965, "field": "name", "en": "Deadly Brew", "hash": "a27575137279e726", "src": "db2@1.60.1.70124"}
+{"id": 399965, "field": "description", "en": "Grants several improvements to your poisons:\r\n\r\nWhen you inflict any other poison on a target, you also inflict Deadly Poison.\r\n\r\nIf your weapon does not have a poison applied, it has a chance to trigger Instant Poison as if Instant Poison were applied.\r\n\r\nDeadly Poison and Instant Poison now gain increased damage from your Attack Power.\r\n\r\nYour Deadly Poison can now be active on targets affected by another Rogue's Deadly Poison.", "hash": "d4dbe68da98eba87", "src": "db2@1.60.1.70124"}
+{"id": 399966, "field": "name", "en": "Legs Rune Ability", "hash": "2dfce083ab110c99", "src": "db2@1.60.1.70124"}
+{"id": 399966, "field": "description", "en": "Equip a Legs slot item with a Rune engraved to activate an ability in this slot.", "hash": "73ddef7a87d66191", "src": "db2@1.60.1.70124"}
+{"id": 399967, "field": "name", "en": "Hands Rune Ability", "hash": "fe468892754ec54b", "src": "db2@1.60.1.70124"}
+{"id": 399967, "field": "description", "en": "Equip a Hands slot item with a Rune engraved to activate an ability in this slot.", "hash": "55d903a3547979cf", "src": "db2@1.60.1.70124"}
+{"id": 399968, "field": "name", "en": "Envenom", "hash": "ebfa60b859924072", "src": "db2@1.60.1.70124"}
+{"id": 399968, "field": "description", "en": "Gain the Envenom ability:\r\n\r\n$@spellicon399963\r\n$@spelldesc399963", "hash": "27aef0ee9ffb387e", "src": "db2@1.60.1.70124"}
+{"id": 399969, "field": "name", "en": "Deadly Brew", "hash": "a27575137279e726", "src": "db2@1.60.1.70124"}
+{"id": 399969, "field": "description", "en": "Gain the Deadly Brew ability:\r\n\r\n$@spellicon399965\r\n$@spelldesc399965", "hash": "20d1c1dab1c9bbd0", "src": "db2@1.60.1.70124"}
+{"id": 399985, "field": "name", "en": "Shadowstrike", "hash": "cb12c7cbf8292281", "src": "db2@1.60.1.70124"}
+{"id": 399985, "field": "description", "en": "Teleport behind your target and strike, causing $s3% weapon damage to the target.  Must be stealthed.  Awards $s4 combo $lpoint:points;.", "hash": "8e972e2d63e2ee1d", "src": "db2@1.60.1.70124"}
+{"id": 399986, "field": "name", "en": "Shuriken Toss", "hash": "6b52e5986691ec9b", "src": "db2@1.60.1.70124"}
+{"id": 399986, "field": "description", "en": "Throw a shuriken at your enemy dealing damage equal to $s1% of your Attack Power, and also strike up to ${$x1-1} additional nearby targets. Awards $s2 combo $lpoint:points; per target hit.\r\n", "hash": "22f728549e15a38d", "src": "db2@1.60.1.70124"}

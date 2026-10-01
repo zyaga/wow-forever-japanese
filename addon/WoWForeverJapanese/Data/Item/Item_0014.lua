@@ -61,7 +61,7 @@ WFJ.Data.add("item", {
   [14512] = { "Truefaith Vestmentsの縫い方を習得します。", 0x28ddd73e, "u" },
   [14513] = { "Robe of the Archmageの縫い方を習得します。", 0x5254b910, "u" },
   [14514] = { "Robe of the Voidの縫い方を習得します。", 0xd8eaa1af, "u" },
-  [14523] = { "Demon Pick\n[使用]Demon Crystalを破壊します", 0x28576edc, "u" },
+  [14523] = { "Demon Pick[使用]Demon Crystalを破壊します", 0x28576edc, "u" },
   [14526] = { "Felclothを浄化してMoonclothに変える方法を習得します。", 0x91261f8d, "u" },
   [14529] = { "$D1かけて$N1のダメージを回復します。", 0xcb31688f, "u" },
   [14530] = { "$D1かけて$N1のダメージを回復します。", 0xcb31688f, "u" },
