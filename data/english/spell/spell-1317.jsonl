@@ -1,101 +1,101 @@
-{"id": 1317006, "field": "name", "en": "Litany of Light", "hash": "ba8537c8bb40c05d", "src": "db2@1.60.1.70009"}
-{"id": 1317006, "field": "description", "en": "When you cast a healing spell, gain Mana equal to $m1% of the base cost of the spell if your previous heal was a different spell.", "hash": "300292383ea41792", "src": "db2@1.60.1.70009"}
-{"id": 1317007, "field": "name", "en": "Litany of Light", "hash": "ba8537c8bb40c05d", "src": "db2@1.60.1.70009"}
-{"id": 1317007, "field": "description", "en": "When you cast a healing spell, regain a portion of its base cost if your previous heal was a different spell.", "hash": "8405912debb7854f", "src": "db2@1.60.1.70009"}
-{"id": 1317038, "field": "name", "en": "Increase Strength 20", "hash": "8d1c610d85b36359", "src": "db2@1.60.1.70009"}
-{"id": 1317038, "field": "description", "en": "+$s1 Strength.", "hash": "7dbddd018496c4c5", "src": "db2@1.60.1.70009"}
-{"id": 1317039, "field": "name", "en": "Now you're making me angry", "hash": "ff900429a3cccf70", "src": "db2@1.60.1.70009"}
-{"id": 1317039, "field": "description", "en": "Chance on melee swing to become Angry, increasing Strength by $1317040s1 for $1317040d.", "hash": "e78aa8875269c94d", "src": "db2@1.60.1.70009"}
-{"id": 1317040, "field": "name", "en": "Angry", "hash": "83d3d6adf526aea4", "src": "db2@1.60.1.70009"}
-{"id": 1317040, "field": "description", "en": "+$s1 Strength.", "hash": "7dbddd018496c4c5", "src": "db2@1.60.1.70009"}
-{"id": 1317040, "field": "aura", "en": "Strength increased by $s1.", "hash": "90d8a2f83ee1c8bf", "src": "db2@1.60.1.70009"}
-{"id": 1317170, "field": "name", "en": "Summon Fire Elemental", "hash": "7d3a9b2c3b115676", "src": "db2@1.60.1.70009"}
-{"id": 1317170, "field": "description", "en": "Summons a Fire Elemental to aid the caster in battle for $d.", "hash": "e7294982c1b25e7d", "src": "db2@1.60.1.70009"}
-{"id": 1317232, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70009"}
-{"id": 1317233, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70009"}
-{"id": 1317234, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70009"}
-{"id": 1317235, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70009"}
-{"id": 1317253, "field": "name", "en": "Spirit of Wind", "hash": "f6714946ddb9bf94", "src": "db2@1.60.1.70009"}
-{"id": 1317256, "field": "name", "en": "Unknown", "hash": "7743ba191b88efe6", "src": "db2@1.60.1.70009"}
-{"id": 1317256, "field": "description", "en": "To be added in a future update.", "hash": "d09c1e2a0a8ab623", "src": "db2@1.60.1.70009"}
-{"id": 1317257, "field": "name", "en": "Strider Kick", "hash": "253626b7fd0e1e6b", "src": "db2@1.60.1.70009"}
-{"id": 1317257, "field": "description", "en": "A powerful kick that deals $s2% melee weapon damage and increases movement speed by $s3% for $d.", "hash": "fe94c84572df9ac7", "src": "db2@1.60.1.70009"}
-{"id": 1317257, "field": "aura", "en": "Movement speed increased by $w3%.", "hash": "d64d68fabf07edb3", "src": "db2@1.60.1.70009"}
-{"id": 1317268, "field": "name", "en": "Holy Hand Grenade", "hash": "aef9c52944d36277", "src": "db2@1.60.1.70009"}
-{"id": 1317268, "field": "description", "en": "Inflicts $s1 Holy damage to targets in a $a1 yard radius. May occasionally backfire and imbue targets with the power of the Light.", "hash": "f26ada3718c7bbee", "src": "db2@1.60.1.70009"}
-{"id": 1317269, "field": "name", "en": "Bless Grenade", "hash": "d29b52ef86874a34", "src": "db2@1.60.1.70009"}
-{"id": 1317269, "field": "description", "en": "Bless the grenade with the Light.", "hash": "bc3911093d17f50a", "src": "db2@1.60.1.70009"}
-{"id": 1317270, "field": "name", "en": "Unsanctified Grenade", "hash": "25c9cd2dbe392483", "src": "db2@1.60.1.70009"}
-{"id": 1317271, "field": "name", "en": "Righteous Indignation", "hash": "fcad2708322df159", "src": "db2@1.60.1.70009"}
-{"id": 1317272, "field": "name", "en": "Righteous Indignation", "hash": "fcad2708322df159", "src": "db2@1.60.1.70009"}
-{"id": 1317272, "field": "description", "en": "Fills the target with holy spirit for $d, granting each melee attack  additional Holy damage. ", "hash": "2c0902e9dcd0a310", "src": "db2@1.60.1.70009"}
-{"id": 1317272, "field": "aura", "en": "Melee attacks cause additional Holy damage.", "hash": "bd1ddfaeae7251b3", "src": "db2@1.60.1.70009"}
-{"id": 1317279, "field": "name", "en": "Transmute: Legionite", "hash": "c36be6946b822bd2", "src": "db2@1.60.1.70009"}
-{"id": 1317279, "field": "description", "en": "Transmutes a bar of Heavy Thorium and a Fel Crystal into a Legionite Bar.", "hash": "a74829bad29a44d4", "src": "db2@1.60.1.70009"}
-{"id": 1317283, "field": "name", "en": "Mysticbloom Seed", "hash": "20e40b32a555fee5", "src": "db2@1.60.1.70009"}
-{"id": 1317285, "field": "name", "en": "Arena Master", "hash": "11d885c30972e811", "src": "db2@1.60.1.70009"}
-{"id": 1317285, "field": "description", "en": "Reduces your damage taken by $s1% in the Battle Ring and The Maul.", "hash": "c18b39ccca5601de", "src": "db2@1.60.1.70009"}
-{"id": 1317285, "field": "aura", "en": "In the Battle Ring or The Maul, damage taken reduced by $s1%.", "hash": "6ce139d9e20a2a7d", "src": "db2@1.60.1.70009"}
-{"id": 1317286, "field": "name", "en": "Gnomish Shrink Ray", "hash": "42f9367462273c44", "src": "db2@1.60.1.70009"}
-{"id": 1317288, "field": "name", "en": "Tidal Charm", "hash": "706a5ba14e7cbac9", "src": "db2@1.60.1.70009"}
-{"id": 1317288, "field": "description", "en": "Stuns target for $d. Naga are stunned for $1317288d and refund $1317288s2% of the cooldown.", "hash": "77421ff3441f76b5", "src": "db2@1.60.1.70009"}
-{"id": 1317288, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 1317424, "field": "name", "en": "Heal", "hash": "09c07834563b7243", "src": "db2@1.60.1.70009"}
-{"id": 1317424, "field": "description", "en": "Heal your target for $s1.", "hash": "bdf1d263c3b5155c", "src": "db2@1.60.1.70009"}
-{"id": 1317432, "field": "name", "en": "Forging Strike", "hash": "6145b39e9c1856ea", "src": "db2@1.60.1.70009"}
-{"id": 1317432, "field": "description", "en": "Deal $s1 Fire damage. Deals $s2 times as much damage to Earth Elementals, Fire Elementals, and Mountain Giants.", "hash": "1cab7316f4443420", "src": "db2@1.60.1.70009"}
-{"id": 1317441, "field": "name", "en": "Rune of Duty", "hash": "0c70af479dfd7b6d", "src": "db2@1.60.1.70009"}
-{"id": 1317441, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1317442s1 to all Resistances in Forest and Grassland areas.", "hash": "03fece2eeb2d1860", "src": "db2@1.60.1.70009"}
-{"id": 1317442, "field": "name", "en": "Rune of Duty", "hash": "0c70af479dfd7b6d", "src": "db2@1.60.1.70009"}
-{"id": 1317442, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70009"}
-{"id": 1317443, "field": "name", "en": "Rune of Perfection", "hash": "26cfc315b9e4f728", "src": "db2@1.60.1.70009"}
-{"id": 1317443, "field": "description", "en": "Your spells pierce $s1 Magical Resistances. Gain an additional $1317444s1 Spell Piercing in Forest and Grassland areas.", "hash": "f4899f9449e48b3c", "src": "db2@1.60.1.70009"}
-{"id": 1317444, "field": "name", "en": "Rune of Perfection", "hash": "26cfc315b9e4f728", "src": "db2@1.60.1.70009"}
-{"id": 1317444, "field": "aura", "en": "In a Forest or Grassland area, Spell Piercing increased by an additional $s1.", "hash": "4e10bc744e8f38be", "src": "db2@1.60.1.70009"}
-{"id": 1317446, "field": "name", "en": "Ooze Covered Miner", "hash": "71e573a69456d3f8", "src": "db2@1.60.1.70009"}
-{"id": 1317446, "field": "description", "en": "You have a small chance to find additional ore when mining Ooze Covered Thorium Veins.", "hash": "94aa5d0e7ff76cdf", "src": "db2@1.60.1.70009"}
-{"id": 1317450, "field": "name", "en": "Slammed", "hash": "6729c11682c4bd4c", "src": "db2@1.60.1.70009"}
-{"id": 1317450, "field": "description", "en": "Stuns target and yourself for $d. Ogres are Stunned for $1317450d and refund $1317450s2% of the cooldown.", "hash": "b6db8b9d4eec0760", "src": "db2@1.60.1.70009"}
-{"id": 1317450, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 1317472, "field": "name", "en": "Slammed", "hash": "6729c11682c4bd4c", "src": "db2@1.60.1.70009"}
-{"id": 1317472, "field": "description", "en": "Stuns target and yourself for $d. Ogres are Stunned for $1317450d and refund $1317450s2% of the cooldown.", "hash": "b6db8b9d4eec0760", "src": "db2@1.60.1.70009"}
-{"id": 1317472, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 1317478, "field": "name", "en": "Force Reaction", "hash": "77c3844f504fb731", "src": "db2@1.60.1.70009"}
-{"id": 1317479, "field": "name", "en": "Gnomish Battle Chicken", "hash": "ce7c701a0d437799", "src": "db2@1.60.1.70009"}
-{"id": 1317480, "field": "name", "en": "Battle Squawk", "hash": "7ef45d3b82d422e4", "src": "db2@1.60.1.70009"}
-{"id": 1317483, "field": "name", "en": "Goblin Bomb Dispenser", "hash": "fe16c8a46d5b5745", "src": "db2@1.60.1.70009"}
-{"id": 1317486, "field": "name", "en": "Swamp Speed", "hash": "786f7eed9dd96264", "src": "db2@1.60.1.70009"}
-{"id": 1317486, "field": "description", "en": "Movement speed increased by $s1% in Dustwallow Marsh and Swamp of Sorrows.", "hash": "ecf527a9258d6e2f", "src": "db2@1.60.1.70009"}
-{"id": 1317486, "field": "aura", "en": "Movement speed Increased by $s1%.", "hash": "666adc1e00be2773", "src": "db2@1.60.1.70009"}
-{"id": 1317516, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 1317516, "field": "description", "en": "Heals an ally every $t1 sec. for $d.", "hash": "61f0e6eb9544de7b", "src": "db2@1.60.1.70009"}
-{"id": 1317516, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 1317579, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70009"}
-{"id": 1317583, "field": "name", "en": "Poison", "hash": "43f9da16eae9c502", "src": "db2@1.60.1.70009"}
-{"id": 1317583, "field": "description", "en": "Your attacks have a high chance to poison the target for $s1 Nature damage every $t1 sec for $d.", "hash": "73c8a5f63323bf80", "src": "db2@1.60.1.70009"}
-{"id": 1317583, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70009"}
-{"id": 1317591, "field": "name", "en": "Light Lamp", "hash": "5b4962d64b38ada0", "src": "db2@1.60.1.70009"}
-{"id": 1317604, "field": "name", "en": "Luffa", "hash": "45da8225631812b4", "src": "db2@1.60.1.70009"}
-{"id": 1317604, "field": "description", "en": "Removes all Bleed, Disease, and Poison effects.", "hash": "925be8415c5ede13", "src": "db2@1.60.1.70009"}
-{"id": 1317605, "field": "name", "en": "Light Lamp", "hash": "5b4962d64b38ada0", "src": "db2@1.60.1.70009"}
-{"id": 1317605, "field": "description", "en": "Turn on the lights of Dalaran.", "hash": "ea6a4b6d28c09b0b", "src": "db2@1.60.1.70009"}
-{"id": 1317675, "field": "name", "en": "Slow Fall", "hash": "f72a010a2199410f", "src": "db2@1.60.1.70009"}
-{"id": 1317692, "field": "name", "en": "Training Lesson", "hash": "2cf544b9a61f28f4", "src": "db2@1.60.1.70009"}
-{"id": 1317692, "field": "description", "en": "Teaches Beast Training, Feed Pet and Revive Pet.", "hash": "ba634df925cf9be2", "src": "db2@1.60.1.70009"}
-{"id": 1317695, "field": "name", "en": "Training Lesson", "hash": "2cf544b9a61f28f4", "src": "db2@1.60.1.70009"}
-{"id": 1317695, "field": "description", "en": "Teaches Beast Training, Feed Pet and Revive Pet.", "hash": "ba634df925cf9be2", "src": "db2@1.60.1.70009"}
-{"id": 1317740, "field": "name", "en": "Smotts' Compass", "hash": "d7c65d54a58db964", "src": "db2@1.60.1.70009"}
-{"id": 1317740, "field": "description", "en": "Finds the nearest treasure chest, if one is nearby. Only outdoors.", "hash": "4c47d05a8dfa1f1e", "src": "db2@1.60.1.70009"}
-{"id": 1317755, "field": "name", "en": "Reading", "hash": "d0a33ae7e9e2fd3e", "src": "db2@1.60.1.70009"}
-{"id": 1317830, "field": "name", "en": "[DNT] Shadow Infusion", "hash": "d6f979332d385384", "src": "db2@1.60.1.70009"}
-{"id": 1317849, "field": "name", "en": "Smotts' Compass", "hash": "d7c65d54a58db964", "src": "db2@1.60.1.70009"}
-{"id": 1317958, "field": "name", "en": "Satchel of Copper Bombs", "hash": "76aee1a6a847aa1b", "src": "db2@1.60.1.70009"}
-{"id": 1317959, "field": "name", "en": "Satchel of Bronze Bombs", "hash": "11b7fa31187c9ab8", "src": "db2@1.60.1.70009"}
-{"id": 1317960, "field": "name", "en": "Satchel of Iron Bombs", "hash": "b4899ec52cd7a6df", "src": "db2@1.60.1.70009"}
-{"id": 1317961, "field": "name", "en": "Satchel of Dark Iron Bombs", "hash": "2ea981f0c8dc234d", "src": "db2@1.60.1.70009"}
-{"id": 1317962, "field": "name", "en": "Cracked Blacksmith Hammer", "hash": "ff33eaa3731c17ca", "src": "db2@1.60.1.70009"}
-{"id": 1317963, "field": "name", "en": "Mithril Blacksmith Hammer", "hash": "a8d9367570e33414", "src": "db2@1.60.1.70009"}
-{"id": 1317964, "field": "name", "en": "Arcanite Blacksmith Hammer", "hash": "fea3cda2d655e89a", "src": "db2@1.60.1.70009"}
-{"id": 1317985, "field": "name", "en": "Mithril Mechanical Dragonling", "hash": "2cf3190621dfd854", "src": "db2@1.60.1.70009"}
-{"id": 1317999, "field": "name", "en": "Authority", "hash": "35fcff06fcb17a6f", "src": "db2@1.60.1.70009"}
-{"id": 1317999, "field": "aura", "en": "In a Forest or Grassland area, Attack Power increased by an additional $w1.", "hash": "c5b620c2d0b27a59", "src": "db2@1.60.1.70009"}
+{"id": 1317006, "field": "name", "en": "Litany of Light", "hash": "ba8537c8bb40c05d", "src": "db2@1.60.1.70124"}
+{"id": 1317006, "field": "description", "en": "When you cast a healing spell, gain Mana equal to $m1% of the base cost of the spell if your previous heal was a different spell.", "hash": "300292383ea41792", "src": "db2@1.60.1.70124"}
+{"id": 1317007, "field": "name", "en": "Litany of Light", "hash": "ba8537c8bb40c05d", "src": "db2@1.60.1.70124"}
+{"id": 1317007, "field": "description", "en": "When you cast a healing spell, regain a portion of its base cost if your previous heal was a different spell.", "hash": "8405912debb7854f", "src": "db2@1.60.1.70124"}
+{"id": 1317038, "field": "name", "en": "Increase Strength 20", "hash": "8d1c610d85b36359", "src": "db2@1.60.1.70124"}
+{"id": 1317038, "field": "description", "en": "+$s1 Strength.", "hash": "7dbddd018496c4c5", "src": "db2@1.60.1.70124"}
+{"id": 1317039, "field": "name", "en": "Now you're making me angry", "hash": "ff900429a3cccf70", "src": "db2@1.60.1.70124"}
+{"id": 1317039, "field": "description", "en": "Chance on melee swing to become Angry, increasing Strength by $1317040s1 for $1317040d.", "hash": "e78aa8875269c94d", "src": "db2@1.60.1.70124"}
+{"id": 1317040, "field": "name", "en": "Angry", "hash": "83d3d6adf526aea4", "src": "db2@1.60.1.70124"}
+{"id": 1317040, "field": "description", "en": "+$s1 Strength.", "hash": "7dbddd018496c4c5", "src": "db2@1.60.1.70124"}
+{"id": 1317040, "field": "aura", "en": "Strength increased by $s1.", "hash": "90d8a2f83ee1c8bf", "src": "db2@1.60.1.70124"}
+{"id": 1317170, "field": "name", "en": "Summon Fire Elemental", "hash": "7d3a9b2c3b115676", "src": "db2@1.60.1.70124"}
+{"id": 1317170, "field": "description", "en": "Summons a Fire Elemental to aid the caster in battle for $d.", "hash": "e7294982c1b25e7d", "src": "db2@1.60.1.70124"}
+{"id": 1317232, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
+{"id": 1317233, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
+{"id": 1317234, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
+{"id": 1317235, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
+{"id": 1317253, "field": "name", "en": "Spirit of Wind", "hash": "f6714946ddb9bf94", "src": "db2@1.60.1.70124"}
+{"id": 1317256, "field": "name", "en": "Unknown", "hash": "7743ba191b88efe6", "src": "db2@1.60.1.70124"}
+{"id": 1317256, "field": "description", "en": "To be added in a future update.", "hash": "d09c1e2a0a8ab623", "src": "db2@1.60.1.70124"}
+{"id": 1317257, "field": "name", "en": "Strider Kick", "hash": "253626b7fd0e1e6b", "src": "db2@1.60.1.70124"}
+{"id": 1317257, "field": "description", "en": "A powerful kick that deals $s2% melee weapon damage and increases movement speed by $s3% for $d.", "hash": "fe94c84572df9ac7", "src": "db2@1.60.1.70124"}
+{"id": 1317257, "field": "aura", "en": "Movement speed increased by $w3%.", "hash": "d64d68fabf07edb3", "src": "db2@1.60.1.70124"}
+{"id": 1317268, "field": "name", "en": "Holy Hand Grenade", "hash": "aef9c52944d36277", "src": "db2@1.60.1.70124"}
+{"id": 1317268, "field": "description", "en": "Inflicts $s1 Holy damage to targets in a $a1 yard radius. May occasionally backfire and imbue targets with the power of the Light.", "hash": "f26ada3718c7bbee", "src": "db2@1.60.1.70124"}
+{"id": 1317269, "field": "name", "en": "Bless Grenade", "hash": "d29b52ef86874a34", "src": "db2@1.60.1.70124"}
+{"id": 1317269, "field": "description", "en": "Bless the grenade with the Light.", "hash": "bc3911093d17f50a", "src": "db2@1.60.1.70124"}
+{"id": 1317270, "field": "name", "en": "Unsanctified Grenade", "hash": "25c9cd2dbe392483", "src": "db2@1.60.1.70124"}
+{"id": 1317271, "field": "name", "en": "Righteous Indignation", "hash": "fcad2708322df159", "src": "db2@1.60.1.70124"}
+{"id": 1317272, "field": "name", "en": "Righteous Indignation", "hash": "fcad2708322df159", "src": "db2@1.60.1.70124"}
+{"id": 1317272, "field": "description", "en": "Fills the target with holy spirit for $d, granting each melee attack  additional Holy damage. ", "hash": "2c0902e9dcd0a310", "src": "db2@1.60.1.70124"}
+{"id": 1317272, "field": "aura", "en": "Melee attacks cause additional Holy damage.", "hash": "bd1ddfaeae7251b3", "src": "db2@1.60.1.70124"}
+{"id": 1317279, "field": "name", "en": "Transmute: Legionite", "hash": "c36be6946b822bd2", "src": "db2@1.60.1.70124"}
+{"id": 1317279, "field": "description", "en": "Transmutes a bar of Heavy Thorium and a Fel Crystal into a Legionite Bar.", "hash": "a74829bad29a44d4", "src": "db2@1.60.1.70124"}
+{"id": 1317283, "field": "name", "en": "Mysticbloom Seed", "hash": "20e40b32a555fee5", "src": "db2@1.60.1.70124"}
+{"id": 1317285, "field": "name", "en": "Arena Master", "hash": "11d885c30972e811", "src": "db2@1.60.1.70124"}
+{"id": 1317285, "field": "description", "en": "Reduces your damage taken by $s1% in the Battle Ring and The Maul.", "hash": "c18b39ccca5601de", "src": "db2@1.60.1.70124"}
+{"id": 1317285, "field": "aura", "en": "In the Battle Ring or The Maul, damage taken reduced by $s1%.", "hash": "6ce139d9e20a2a7d", "src": "db2@1.60.1.70124"}
+{"id": 1317286, "field": "name", "en": "Gnomish Shrink Ray", "hash": "42f9367462273c44", "src": "db2@1.60.1.70124"}
+{"id": 1317288, "field": "name", "en": "Tidal Charm", "hash": "706a5ba14e7cbac9", "src": "db2@1.60.1.70124"}
+{"id": 1317288, "field": "description", "en": "Stuns target for $d. Naga are stunned for $1317288d and refund $1317288s2% of the cooldown.", "hash": "77421ff3441f76b5", "src": "db2@1.60.1.70124"}
+{"id": 1317288, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 1317424, "field": "name", "en": "Heal", "hash": "09c07834563b7243", "src": "db2@1.60.1.70124"}
+{"id": 1317424, "field": "description", "en": "Heal your target for $s1.", "hash": "bdf1d263c3b5155c", "src": "db2@1.60.1.70124"}
+{"id": 1317432, "field": "name", "en": "Forging Strike", "hash": "6145b39e9c1856ea", "src": "db2@1.60.1.70124"}
+{"id": 1317432, "field": "description", "en": "Deal $s1 Fire damage. Deals $s2 times as much damage to Earth Elementals, Fire Elementals, and Mountain Giants.", "hash": "1cab7316f4443420", "src": "db2@1.60.1.70124"}
+{"id": 1317441, "field": "name", "en": "Rune of Duty", "hash": "0c70af479dfd7b6d", "src": "db2@1.60.1.70124"}
+{"id": 1317441, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1317442s1 to all Resistances in Forest and Grassland areas.", "hash": "03fece2eeb2d1860", "src": "db2@1.60.1.70124"}
+{"id": 1317442, "field": "name", "en": "Rune of Duty", "hash": "0c70af479dfd7b6d", "src": "db2@1.60.1.70124"}
+{"id": 1317442, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70124"}
+{"id": 1317443, "field": "name", "en": "Rune of Perfection", "hash": "26cfc315b9e4f728", "src": "db2@1.60.1.70124"}
+{"id": 1317443, "field": "description", "en": "Your spells pierce $s1 Magical Resistances. Gain an additional $1317444s1 Spell Piercing in Forest and Grassland areas.", "hash": "f4899f9449e48b3c", "src": "db2@1.60.1.70124"}
+{"id": 1317444, "field": "name", "en": "Rune of Perfection", "hash": "26cfc315b9e4f728", "src": "db2@1.60.1.70124"}
+{"id": 1317444, "field": "aura", "en": "In a Forest or Grassland area, Spell Piercing increased by an additional $s1.", "hash": "4e10bc744e8f38be", "src": "db2@1.60.1.70124"}
+{"id": 1317446, "field": "name", "en": "Ooze Covered Miner", "hash": "71e573a69456d3f8", "src": "db2@1.60.1.70124"}
+{"id": 1317446, "field": "description", "en": "You have a small chance to find additional ore when mining Ooze Covered Thorium Veins.", "hash": "94aa5d0e7ff76cdf", "src": "db2@1.60.1.70124"}
+{"id": 1317450, "field": "name", "en": "Slammed", "hash": "6729c11682c4bd4c", "src": "db2@1.60.1.70124"}
+{"id": 1317450, "field": "description", "en": "Stuns target and yourself for $d. Ogres are Stunned for $1317450d and refund $1317450s2% of the cooldown.", "hash": "b6db8b9d4eec0760", "src": "db2@1.60.1.70124"}
+{"id": 1317450, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 1317472, "field": "name", "en": "Slammed", "hash": "6729c11682c4bd4c", "src": "db2@1.60.1.70124"}
+{"id": 1317472, "field": "description", "en": "Stuns target and yourself for $d. Ogres are Stunned for $1317450d and refund $1317450s2% of the cooldown.", "hash": "b6db8b9d4eec0760", "src": "db2@1.60.1.70124"}
+{"id": 1317472, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 1317478, "field": "name", "en": "Force Reaction", "hash": "77c3844f504fb731", "src": "db2@1.60.1.70124"}
+{"id": 1317479, "field": "name", "en": "Gnomish Battle Chicken", "hash": "ce7c701a0d437799", "src": "db2@1.60.1.70124"}
+{"id": 1317480, "field": "name", "en": "Battle Squawk", "hash": "7ef45d3b82d422e4", "src": "db2@1.60.1.70124"}
+{"id": 1317483, "field": "name", "en": "Goblin Bomb Dispenser", "hash": "fe16c8a46d5b5745", "src": "db2@1.60.1.70124"}
+{"id": 1317486, "field": "name", "en": "Swamp Speed", "hash": "786f7eed9dd96264", "src": "db2@1.60.1.70124"}
+{"id": 1317486, "field": "description", "en": "Movement speed increased by $s1% in Dustwallow Marsh and Swamp of Sorrows.", "hash": "ecf527a9258d6e2f", "src": "db2@1.60.1.70124"}
+{"id": 1317486, "field": "aura", "en": "Movement speed Increased by $s1%.", "hash": "666adc1e00be2773", "src": "db2@1.60.1.70124"}
+{"id": 1317516, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 1317516, "field": "description", "en": "Heals an ally every $t1 sec. for $d.", "hash": "61f0e6eb9544de7b", "src": "db2@1.60.1.70124"}
+{"id": 1317516, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 1317579, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
+{"id": 1317583, "field": "name", "en": "Poison", "hash": "43f9da16eae9c502", "src": "db2@1.60.1.70124"}
+{"id": 1317583, "field": "description", "en": "Your attacks have a high chance to poison the target for $s1 Nature damage every $t1 sec for $d.", "hash": "73c8a5f63323bf80", "src": "db2@1.60.1.70124"}
+{"id": 1317583, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70124"}
+{"id": 1317591, "field": "name", "en": "Light Lamp", "hash": "5b4962d64b38ada0", "src": "db2@1.60.1.70124"}
+{"id": 1317604, "field": "name", "en": "Luffa", "hash": "45da8225631812b4", "src": "db2@1.60.1.70124"}
+{"id": 1317604, "field": "description", "en": "Removes all Bleed, Disease, and Poison effects.", "hash": "925be8415c5ede13", "src": "db2@1.60.1.70124"}
+{"id": 1317605, "field": "name", "en": "Light Lamp", "hash": "5b4962d64b38ada0", "src": "db2@1.60.1.70124"}
+{"id": 1317605, "field": "description", "en": "Turn on the lights of Dalaran.", "hash": "ea6a4b6d28c09b0b", "src": "db2@1.60.1.70124"}
+{"id": 1317675, "field": "name", "en": "Slow Fall", "hash": "f72a010a2199410f", "src": "db2@1.60.1.70124"}
+{"id": 1317692, "field": "name", "en": "Training Lesson", "hash": "2cf544b9a61f28f4", "src": "db2@1.60.1.70124"}
+{"id": 1317692, "field": "description", "en": "Teaches Beast Training, Feed Pet and Revive Pet.", "hash": "ba634df925cf9be2", "src": "db2@1.60.1.70124"}
+{"id": 1317695, "field": "name", "en": "Training Lesson", "hash": "2cf544b9a61f28f4", "src": "db2@1.60.1.70124"}
+{"id": 1317695, "field": "description", "en": "Teaches Beast Training, Feed Pet and Revive Pet.", "hash": "ba634df925cf9be2", "src": "db2@1.60.1.70124"}
+{"id": 1317740, "field": "name", "en": "Smotts' Compass", "hash": "d7c65d54a58db964", "src": "db2@1.60.1.70124"}
+{"id": 1317740, "field": "description", "en": "Finds the nearest treasure chest, if one is nearby. Only outdoors.", "hash": "4c47d05a8dfa1f1e", "src": "db2@1.60.1.70124"}
+{"id": 1317755, "field": "name", "en": "Reading", "hash": "d0a33ae7e9e2fd3e", "src": "db2@1.60.1.70124"}
+{"id": 1317830, "field": "name", "en": "[DNT] Shadow Infusion", "hash": "d6f979332d385384", "src": "db2@1.60.1.70124"}
+{"id": 1317849, "field": "name", "en": "Smotts' Compass", "hash": "d7c65d54a58db964", "src": "db2@1.60.1.70124"}
+{"id": 1317958, "field": "name", "en": "Satchel of Copper Bombs", "hash": "76aee1a6a847aa1b", "src": "db2@1.60.1.70124"}
+{"id": 1317959, "field": "name", "en": "Satchel of Bronze Bombs", "hash": "11b7fa31187c9ab8", "src": "db2@1.60.1.70124"}
+{"id": 1317960, "field": "name", "en": "Satchel of Iron Bombs", "hash": "b4899ec52cd7a6df", "src": "db2@1.60.1.70124"}
+{"id": 1317961, "field": "name", "en": "Satchel of Dark Iron Bombs", "hash": "2ea981f0c8dc234d", "src": "db2@1.60.1.70124"}
+{"id": 1317962, "field": "name", "en": "Cracked Blacksmith Hammer", "hash": "ff33eaa3731c17ca", "src": "db2@1.60.1.70124"}
+{"id": 1317963, "field": "name", "en": "Mithril Blacksmith Hammer", "hash": "a8d9367570e33414", "src": "db2@1.60.1.70124"}
+{"id": 1317964, "field": "name", "en": "Arcanite Blacksmith Hammer", "hash": "fea3cda2d655e89a", "src": "db2@1.60.1.70124"}
+{"id": 1317985, "field": "name", "en": "Mithril Mechanical Dragonling", "hash": "2cf3190621dfd854", "src": "db2@1.60.1.70124"}
+{"id": 1317999, "field": "name", "en": "Authority", "hash": "35fcff06fcb17a6f", "src": "db2@1.60.1.70124"}
+{"id": 1317999, "field": "aura", "en": "In a Forest or Grassland area, Attack Power increased by an additional $w1.", "hash": "c5b620c2d0b27a59", "src": "db2@1.60.1.70124"}

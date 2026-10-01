@@ -17,10 +17,11 @@
 --   button is not created when the game rule WorldMapTrackingPinDisabled is on (blizzard_worldmap.lua:331–335).
 -- - The coordinates panel and the zone timer are overlay frames with no field on the map: they are found in
 --   WorldMapFrame.overlayFrames (AddOverlayFrame, blizzard_worldmap.lua:452–463) by their own parentKeys
---   (PlayerCoords + CursorCoords; TimeLabel: blizzard_worldmaptemplates.xml:113–141, 209–222), never by position.
---   Both rewrite their text from an OnUpdate script (SetFormattedText every frame: WORLD_MAP_PLAYER_COORDS[_INTEGER],
---   WORLD_MAP_PLAYER_COORDS_MAP_NAME[_INTEGER] (whose %s is a map's name, kept as written),
---   WORLD_MAP_CURSOR_COORDS[_INTEGER], blizzard_worldmaptemplates.lua:553–610; NEXT_BATTLE :665–676), so each gets a
+--   (PlayerCoords + CursorCoords + CrosshairCoords; TimeLabel: blizzard_worldmaptemplates.xml:129–165, 240), never by
+--   position. Both rewrite their text from an OnUpdate script (SetFormattedText every frame:
+--   WORLD_MAP_PLAYER_COORDS[_INTEGER], WORLD_MAP_PLAYER_COORDS_MAP_NAME[_INTEGER] (whose %s is a map's name, kept as
+--   written), WORLD_MAP_CURSOR_COORDS[_INTEGER] with the mouse, WORLD_MAP_CROSSHAIR_COORDS[_INTEGER] on its own label
+--   with the gamepad, blizzard_worldmaptemplates.lua:572–619), so each gets a
 --   HookScript("OnUpdate") that runs after the client's and shows only a label whose holder is shown. The
 --   coordinates are off unless the player turns them on (CVars worldMapShowPlayerCoords / worldMapShowCursorCoords,
 --   :617–621), and the timer shows only on an outdoor-PvP map (C_PvP.GetOutdoorPvPWaitTime, :666).
@@ -56,9 +57,8 @@ local FILTER_TOOLTIP = { only = { "MAP_FILTER" } }
 local PIN_TOOLTIP = { only = { "MAP_PIN", "MAP_PIN_TOOLTIP", "MAP_PIN_TOOLTIP_INSTRUCTIONS", "MAP_PIN_INVALID_MAP" } }
 local PLAYER = { only = { "WORLD_MAP_PLAYER_COORDS", "WORLD_MAP_PLAYER_COORDS_INTEGER",
   "WORLD_MAP_PLAYER_COORDS_MAP_NAME", "WORLD_MAP_PLAYER_COORDS_MAP_NAME_INTEGER" } }
--- In gamepad mode the same label reads "Crosshair: …" (blizzard_worldmaptemplates.lua:604–606)
-local CURSOR = { only = { "WORLD_MAP_CURSOR_COORDS", "WORLD_MAP_CURSOR_COORDS_INTEGER", "WORLD_MAP_CROSSHAIR_COORDS",
-  "WORLD_MAP_CROSSHAIR_COORDS_INTEGER" } }
+local CURSOR = { only = { "WORLD_MAP_CURSOR_COORDS", "WORLD_MAP_CURSOR_COORDS_INTEGER" } }
+local CROSSHAIR = { only = { "WORLD_MAP_CROSSHAIR_COORDS", "WORLD_MAP_CROSSHAIR_COORDS_INTEGER" } }
 local TIMER = { only = { "NEXT_BATTLE" } }
 
 local function get(key) return Compat.get(SURFACE, key) end
@@ -72,12 +72,13 @@ function WorldMap.showHome()
   return WFJ.Labels.show(STATIC, "home", get("home"), nil, HOME)
 end
 
--- HookScript("OnUpdate") target on the coordinates panel: the two labels, each only while its holder is shown (a
+-- HookScript("OnUpdate") target on the coordinates panel: its labels, each only while its holder is shown (a
 -- hidden holder keeps a stale text the client no longer writes). → the number of dictionary words found
 function WorldMap.onCoords(panel)
   if type(panel) ~= "table" then return 0 end
   local n = 0
-  for _, item in ipairs({ { "player", panel.PlayerCoords, PLAYER }, { "cursor", panel.CursorCoords, CURSOR } }) do
+  for _, item in ipairs({ { "player", panel.PlayerCoords, PLAYER }, { "cursor", panel.CursorCoords, CURSOR },
+    { "crosshair", panel.CrosshairCoords, CROSSHAIR } }) do
     local holder = item[2]
     if shown(holder) and type(holder.Label) == "table" then
       n = n + WFJ.Labels.show(SURFACE, item[1], holder.Label, nil, item[3])

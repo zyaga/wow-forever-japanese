@@ -1,126 +1,126 @@
-{"id": 447031, "field": "name", "en": "[DNT] Spawn Nightmare Vines", "hash": "6520132e9f7a36dd", "src": "db2@1.60.1.70009"}
-{"id": 447032, "field": "name", "en": "[DNT] Spawn Nightmare Vines", "hash": "6520132e9f7a36dd", "src": "db2@1.60.1.70009"}
-{"id": 447033, "field": "name", "en": "[DNT] Spawn Nightmare Vines", "hash": "6520132e9f7a36dd", "src": "db2@1.60.1.70009"}
-{"id": 447036, "field": "name", "en": "[DNT] Stormcrow Nest", "hash": "f7aa208da6346868", "src": "db2@1.60.1.70009"}
-{"id": 447037, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.70009"}
-{"id": 447040, "field": "name", "en": "[DNT] Summon Enraged Stormcrow", "hash": "12a9e71875ff8610", "src": "db2@1.60.1.70009"}
-{"id": 447051, "field": "name", "en": "Decipher Notes", "hash": "916927f5fd9f26b2", "src": "db2@1.60.1.70009"}
-{"id": 447051, "field": "description", "en": "A cipher is needed to understand the Warlock's notes. Who knows what magic it contains?", "hash": "3c8714423dc2337d", "src": "db2@1.60.1.70009"}
-{"id": 447054, "field": "name", "en": "Summon Enraged Voidwalker", "hash": "495ac006c92beb5b", "src": "db2@1.60.1.70009"}
-{"id": 447106, "field": "name", "en": "[DNT] Nightmare Vines - Spawn Visual Dummy Spell", "hash": "ad6c0b82ef8c9bf7", "src": "db2@1.60.1.70009"}
-{"id": 447138, "field": "name", "en": "[DNT] Head of the Obliterator", "hash": "f00b42dd606e5fa6", "src": "db2@1.60.1.70009"}
-{"id": 447238, "field": "name", "en": "[DNT] Backfire", "hash": "ebeb6ab6ea1b7cda", "src": "db2@1.60.1.70009"}
-{"id": 447238, "field": "description", "en": "Inflicts $s1 damage on enemies in a cone behind the caster, knocking them back.", "hash": "bae901df359c35be", "src": "db2@1.60.1.70009"}
-{"id": 447255, "field": "name", "en": "Dragon Slaying 24", "hash": "ada7973752008918", "src": "db2@1.60.1.70009"}
-{"id": 447255, "field": "description", "en": "+$s1 Attack Power against Dragonkin.", "hash": "85a118c60419ea97", "src": "db2@1.60.1.70009"}
-{"id": 447256, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70009"}
-{"id": 447259, "field": "name", "en": "Charged Air", "hash": "86c774909132d6e3", "src": "db2@1.60.1.70009"}
-{"id": 447259, "field": "aura", "en": "You feel strangely energized, as if zapped by static.", "hash": "caa3a1c5e34c9319", "src": "db2@1.60.1.70009"}
-{"id": 447260, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70009"}
-{"id": 447267, "field": "name", "en": "Static Buildup", "hash": "f7f8767d1c61a196", "src": "db2@1.60.1.70009"}
-{"id": 447267, "field": "aura", "en": "You feel electrically charged!", "hash": "cddae8e11d9d479b", "src": "db2@1.60.1.70009"}
-{"id": 447274, "field": "name", "en": "Attack Power - Feral (+67)", "hash": "566e34d82984c919", "src": "db2@1.60.1.70009"}
-{"id": 447274, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70009"}
-{"id": 447280, "field": "name", "en": "Rift-ripping Roar", "hash": "1f04a7218d0c62fc", "src": "db2@1.60.1.70009"}
-{"id": 447280, "field": "aura", "en": "The deafening roar tears open new rifts.", "hash": "290ddce46a0e385a", "src": "db2@1.60.1.70009"}
-{"id": 447282, "field": "name", "en": "Rift-ripping Roar", "hash": "1f04a7218d0c62fc", "src": "db2@1.60.1.70009"}
-{"id": 447282, "field": "aura", "en": "The deafening roar tears open new rifts.", "hash": "290ddce46a0e385a", "src": "db2@1.60.1.70009"}
-{"id": 447283, "field": "name", "en": "Rift-ripping Roar", "hash": "1f04a7218d0c62fc", "src": "db2@1.60.1.70009"}
-{"id": 447283, "field": "aura", "en": "The deafening roar tears open new rifts.", "hash": "290ddce46a0e385a", "src": "db2@1.60.1.70009"}
-{"id": 447296, "field": "name", "en": "Idol of the Swarm", "hash": "f6849f3fe15be0cb", "src": "db2@1.60.1.70009"}
-{"id": 447296, "field": "description", "en": "The duration of your Insect Swarm spell is increased by $/1000;s1 sec.", "hash": "b6ad8827f91bd8bb", "src": "db2@1.60.1.70009"}
-{"id": 447297, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70009"}
-{"id": 447298, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70009"}
-{"id": 447299, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70009"}
-{"id": 447300, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70009"}
-{"id": 447301, "field": "name", "en": "Dizzying Spin", "hash": "5d99862bec73124a", "src": "db2@1.60.1.70009"}
-{"id": 447301, "field": "description", "en": "You attack all nearby enemies for $d causing weapon damage plus an additional $9633s1 every $t1 sec.", "hash": "3df8972c39db7b85", "src": "db2@1.60.1.70009"}
-{"id": 447301, "field": "aura", "en": "Attacking all nearby enemies for weapon damage + $9633s1.", "hash": "de7e324f3c3b84e0", "src": "db2@1.60.1.70009"}
-{"id": 447302, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70009"}
-{"id": 447397, "field": "name", "en": "Rift-ripping Roar", "hash": "1f04a7218d0c62fc", "src": "db2@1.60.1.70009"}
-{"id": 447397, "field": "aura", "en": "The deafening roar tears open new rifts.", "hash": "290ddce46a0e385a", "src": "db2@1.60.1.70009"}
-{"id": 447409, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70009"}
-{"id": 447472, "field": "name", "en": "Brew Tincture", "hash": "a7e50a73776b2b84", "src": "db2@1.60.1.70009"}
-{"id": 447472, "field": "description", "en": "Combine 3 Satyrweed samples to brew a tincture.", "hash": "ab7e29b3c02b74f0", "src": "db2@1.60.1.70009"}
-{"id": 447475, "field": "name", "en": "Satyrweed Tincture", "hash": "4211def5a62330cb", "src": "db2@1.60.1.70009"}
-{"id": 447475, "field": "description", "en": "Cure a creature of Satyr corruption.", "hash": "cbba2d5f798b076d", "src": "db2@1.60.1.70009"}
-{"id": 447483, "field": "name", "en": "Satyr Corruption", "hash": "137b720e3ad33416", "src": "db2@1.60.1.70009"}
-{"id": 447537, "field": "name", "en": "Combine Immolation Aura", "hash": "c9d0dae047679dc0", "src": "db2@1.60.1.70009"}
-{"id": 447537, "field": "description", "en": "Combine the collected reagents into a rune that will teach a new Engraving spell.", "hash": "fc4e919200638a3c", "src": "db2@1.60.1.70009"}
-{"id": 447544, "field": "name", "en": "Dizzy", "hash": "b7d6735c1a4c6f53", "src": "db2@1.60.1.70009"}
-{"id": 447546, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70009"}
-{"id": 447546, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70009"}
-{"id": 447547, "field": "name", "en": "Flamestrike", "hash": "c9551094a475804b", "src": "db2@1.60.1.70009"}
-{"id": 447547, "field": "description", "en": "Calls down a pillar of flame, burning all enemies in a selected area and inflicting additional damage every $t2 sec. for $d.", "hash": "545393765c76d795", "src": "db2@1.60.1.70009"}
-{"id": 447547, "field": "aura", "en": "Fire damage inflicted every $t2 sec.", "hash": "fd7a76cfe4cff65d", "src": "db2@1.60.1.70009"}
-{"id": 447548, "field": "name", "en": "Twisted Tranquility", "hash": "e9bd56ec27b4133f", "src": "db2@1.60.1.70009"}
-{"id": 447548, "field": "description", "en": "Deals nature damage to enemies in an area over $d, slowing their movement by $s2% and increasing the time between their attacks by $s3%.", "hash": "94cf54e0e23730e1", "src": "db2@1.60.1.70009"}
-{"id": 447548, "field": "aura", "en": "Deals nature damage every $t sec.\r\nReduces movement speed by $s2%.\r\nTime between attacks increased by $s3%.", "hash": "90ce53f485defbbd", "src": "db2@1.60.1.70009"}
-{"id": 447549, "field": "name", "en": "Feedback", "hash": "1752ab67c0f3c952", "src": "db2@1.60.1.70009"}
-{"id": 447549, "field": "description", "en": "The priest becomes surrounded with anti-magic energy.  Any successful spell cast against the priest will burn $19270s1 of the attacker's Mana, causing 1 Shadow damage for each point of Mana burned.  Lasts $d.", "hash": "7d1a32d933d59fd3", "src": "db2@1.60.1.70009"}
-{"id": 447549, "field": "aura", "en": "Anti-magic energy will burn $19270s1 of the attacker's Mana, causing 1 Shadow damage for each point of Mana burned.", "hash": "0019d6f5633250c2", "src": "db2@1.60.1.70009"}
-{"id": 447550, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70009"}
-{"id": 447551, "field": "name", "en": "[DNT]Jabbey Give Rune", "hash": "cde31fee518ec67d", "src": "db2@1.60.1.70009"}
-{"id": 447553, "field": "name", "en": "[DNT] Trigger Bat Chest Trap", "hash": "2a5ca41db61bdc68", "src": "db2@1.60.1.70009"}
-{"id": 447554, "field": "name", "en": "Undying Slumber", "hash": "85db9677af20175e", "src": "db2@1.60.1.70009"}
-{"id": 447554, "field": "aura", "en": "A strange slumber unaffected by most sources. May be broken with the right reagent and fel magic.", "hash": "219bd14bfa4c0087", "src": "db2@1.60.1.70009"}
-{"id": 447555, "field": "name", "en": "Chest Pains", "hash": "86a93fb5251f53e8", "src": "db2@1.60.1.70009"}
-{"id": 447555, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 447556, "field": "name", "en": "Combine Diseased Nature Staff", "hash": "b4b0d02ddfd338e4", "src": "db2@1.60.1.70009"}
-{"id": 447556, "field": "description", "en": "Combine the collected reagents into a fragile staff that can end Undying Slumber.", "hash": "f32edb1392193688", "src": "db2@1.60.1.70009"}
-{"id": 447557, "field": "name", "en": "Awaken Diseased Forest Walker", "hash": "e6989e2348920e1c", "src": "db2@1.60.1.70009"}
-{"id": 447557, "field": "description", "en": "Awaken the current target from Undying Slumber.", "hash": "16de151793cfad4e", "src": "db2@1.60.1.70009"}
-{"id": 447561, "field": "name", "en": "[DNT] Deep Freeze", "hash": "e3474cac45f6dc1d", "src": "db2@1.60.1.70009"}
-{"id": 447562, "field": "name", "en": "[DNT] Troll Object - Visual Aura", "hash": "83190d8053a199ad", "src": "db2@1.60.1.70009"}
-{"id": 447563, "field": "name", "en": "Blind", "hash": "951d75b9c1314df9", "src": "db2@1.60.1.70009"}
-{"id": 447563, "field": "description", "en": "Blinds the target, causing it to wander disoriented for up to $d.  Any damage caused will remove the effect.", "hash": "9dce52b19376bd3f", "src": "db2@1.60.1.70009"}
-{"id": 447563, "field": "aura", "en": "Disoriented.", "hash": "6b902ba73addf3d6", "src": "db2@1.60.1.70009"}
-{"id": 447564, "field": "name", "en": "[DNT] Temporal Anomaly", "hash": "9395cfed6a4be338", "src": "db2@1.60.1.70009"}
-{"id": 447569, "field": "name", "en": "[DNT] Move Troll Object", "hash": "6969e0517ed10496", "src": "db2@1.60.1.70009"}
-{"id": 447578, "field": "name", "en": "Gloom", "hash": "ece39810339781d0", "src": "db2@1.60.1.70009"}
-{"id": 447578, "field": "aura", "en": "Harrowed by glimpses of the nightmare.\r\nSuffering harmful effects.", "hash": "bc2a109e648a4c2b", "src": "db2@1.60.1.70009"}
-{"id": 447579, "field": "name", "en": "Gloom", "hash": "ece39810339781d0", "src": "db2@1.60.1.70009"}
-{"id": 447579, "field": "aura", "en": "Harrowed by glimpses of the nightmare.\r\nSuffering harmful effects.", "hash": "bc2a109e648a4c2b", "src": "db2@1.60.1.70009"}
-{"id": 447580, "field": "name", "en": "Gloom", "hash": "ece39810339781d0", "src": "db2@1.60.1.70009"}
-{"id": 447580, "field": "aura", "en": "Harrowed by glimpses of the nightmare.\r\nSuffering harmful effects.", "hash": "bc2a109e648a4c2b", "src": "db2@1.60.1.70009"}
-{"id": 447581, "field": "name", "en": "Gloom", "hash": "ece39810339781d0", "src": "db2@1.60.1.70009"}
-{"id": 447581, "field": "description", "en": "$@spelldesc998", "hash": "59acd7e46cec4a54", "src": "db2@1.60.1.70009"}
-{"id": 447581, "field": "aura", "en": "$@spelldesc998", "hash": "59acd7e46cec4a54", "src": "db2@1.60.1.70009"}
-{"id": 447582, "field": "name", "en": "Wisp Detonate", "hash": "c54f74c9dfa2ce84", "src": "db2@1.60.1.70009"}
-{"id": 447584, "field": "name", "en": "Wisp Detonate", "hash": "c54f74c9dfa2ce84", "src": "db2@1.60.1.70009"}
-{"id": 447585, "field": "name", "en": "Creeping Nightmare", "hash": "4ad98d4d020617ed", "src": "db2@1.60.1.70009"}
-{"id": 447585, "field": "aura", "en": "$@spellaura27605", "hash": "568adae4775d76b4", "src": "db2@1.60.1.70009"}
-{"id": 447586, "field": "name", "en": "Summon Treant Allies", "hash": "a7afce0a515afa9a", "src": "db2@1.60.1.70009"}
-{"id": 447586, "field": "description", "en": "Summons $s1 $lTreant Ally:Treant Allies; to accompany the caster until dismissed.", "hash": "7f52587e408253eb", "src": "db2@1.60.1.70009"}
-{"id": 447587, "field": "name", "en": "Force of Nature", "hash": "76b661984cc42adc", "src": "db2@1.60.1.70009"}
-{"id": 447587, "field": "description", "en": "Summons $s1 $lForce of Nature:Forces of Nature; to aid the caster in battle for $d.", "hash": "460f12d661e76e09", "src": "db2@1.60.1.70009"}
-{"id": 447588, "field": "name", "en": "Wake Up Dead", "hash": "ff3c24c24af66d4e", "src": "db2@1.60.1.70009"}
-{"id": 447588, "field": "aura", "en": "$@spelldesc424574", "hash": "9029b02ee13b64ab", "src": "db2@1.60.1.70009"}
-{"id": 447589, "field": "name", "en": "Deafening Screech", "hash": "afadb85c46781bab", "src": "db2@1.60.1.70009"}
-{"id": 447589, "field": "description", "en": "Silences nearby enemies, preventing them from casting spells for $d.", "hash": "2d8a29ef4e7384d7", "src": "db2@1.60.1.70009"}
-{"id": 447589, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70009"}
-{"id": 447590, "field": "name", "en": "Infernal Lasso", "hash": "07a60fe4118ca704", "src": "db2@1.60.1.70009"}
-{"id": 447590, "field": "description", "en": "Weaken Calefactus the Unleashed.", "hash": "bcba3518e9505e31", "src": "db2@1.60.1.70009"}
-{"id": 447590, "field": "aura", "en": "Rooted. Causes $s2 Fire damage every $t2 seconds.", "hash": "bc987a186c0f7f29", "src": "db2@1.60.1.70009"}
-{"id": 447591, "field": "name", "en": "Undying Fel Fire", "hash": "5ab189172eba0972", "src": "db2@1.60.1.70009"}
-{"id": 447591, "field": "aura", "en": "Cannot be killed.", "hash": "1011ad1b72c9fc1d", "src": "db2@1.60.1.70009"}
-{"id": 447890, "field": "name", "en": "Wake Up Dead", "hash": "ff3c24c24af66d4e", "src": "db2@1.60.1.70009"}
-{"id": 447890, "field": "aura", "en": "Hard sleep.", "hash": "11982e2f850b8d03", "src": "db2@1.60.1.70009"}
-{"id": 447891, "field": "name", "en": "Bash", "hash": "08f1a3a0f5ece8cf", "src": "db2@1.60.1.70009"}
-{"id": 447891, "field": "description", "en": "Stuns an enemy, rendering it unable to move or attack for $d.", "hash": "79289398718d04d2", "src": "db2@1.60.1.70009"}
-{"id": 447891, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 447892, "field": "name", "en": "Skin of Rock", "hash": "b0b59bc478bd6f7d", "src": "db2@1.60.1.70009"}
-{"id": 447892, "field": "aura", "en": "Armor increased by $s1.\r\nMovement speed reduced by $s2%.", "hash": "da23ce517eb2c0a6", "src": "db2@1.60.1.70009"}
-{"id": 447894, "field": "name", "en": "Sting of the Serpent", "hash": "d2b05d077c556b80", "src": "db2@1.60.1.70009"}
-{"id": 447894, "field": "description", "en": "Poison the enemy dealing $s3 Nature damage, reducing Nature resistance by $s1 and increasing Holy and Nature damage taken by $s2% for $d. Only affects enemies level 55 and below.", "hash": "76472134de63b89e", "src": "db2@1.60.1.70009"}
-{"id": 447894, "field": "aura", "en": "Nature resistance reduced by $s1.  Holy and Nature spell damage taken increased by $s2%.", "hash": "f85c0bd5560fc910", "src": "db2@1.60.1.70009"}
-{"id": 447895, "field": "name", "en": "[DNT] Summon Blightbark", "hash": "046b8a708a16dfa7", "src": "db2@1.60.1.70009"}
-{"id": 447899, "field": "name", "en": "[DNT]Shrine of the Warden Trigger", "hash": "b262f021d141a5e6", "src": "db2@1.60.1.70009"}
-{"id": 447906, "field": "name", "en": "[DNT] Shrine of the Moon Dummy", "hash": "dc8c3957eb3e4323", "src": "db2@1.60.1.70009"}
-{"id": 447907, "field": "name", "en": "[DNT] Shrine of the Moon Trigger Effect", "hash": "8d8cac8dc60b686b", "src": "db2@1.60.1.70009"}
-{"id": 447914, "field": "name", "en": "[DNT]Shrine of the Moon Trigger", "hash": "34ea0bd30f2d8b6b", "src": "db2@1.60.1.70009"}
-{"id": 447920, "field": "name", "en": "[DNT] Summon Sagefeather", "hash": "f5f0442fac77a198", "src": "db2@1.60.1.70009"}
-{"id": 447935, "field": "name", "en": "[DNT] Enraged Leywalker Spawn", "hash": "c6926726ab9b9523", "src": "db2@1.60.1.70009"}
-{"id": 447947, "field": "name", "en": "Visual Effect (DNT)", "hash": "cc59170865ff3711", "src": "db2@1.60.1.70009"}
-{"id": 447986, "field": "name", "en": "[DNT] Shrine of the Beast Trigger", "hash": "7a2435f197b75efb", "src": "db2@1.60.1.70009"}
-{"id": 447993, "field": "name", "en": "[DNT] Summon Whisperwing", "hash": "9e866fb60f6ae6f7", "src": "db2@1.60.1.70009"}
+{"id": 447031, "field": "name", "en": "[DNT] Spawn Nightmare Vines", "hash": "6520132e9f7a36dd", "src": "db2@1.60.1.70124"}
+{"id": 447032, "field": "name", "en": "[DNT] Spawn Nightmare Vines", "hash": "6520132e9f7a36dd", "src": "db2@1.60.1.70124"}
+{"id": 447033, "field": "name", "en": "[DNT] Spawn Nightmare Vines", "hash": "6520132e9f7a36dd", "src": "db2@1.60.1.70124"}
+{"id": 447036, "field": "name", "en": "[DNT] Stormcrow Nest", "hash": "f7aa208da6346868", "src": "db2@1.60.1.70124"}
+{"id": 447037, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.70124"}
+{"id": 447040, "field": "name", "en": "[DNT] Summon Enraged Stormcrow", "hash": "12a9e71875ff8610", "src": "db2@1.60.1.70124"}
+{"id": 447051, "field": "name", "en": "Decipher Notes", "hash": "916927f5fd9f26b2", "src": "db2@1.60.1.70124"}
+{"id": 447051, "field": "description", "en": "A cipher is needed to understand the Warlock's notes. Who knows what magic it contains?", "hash": "3c8714423dc2337d", "src": "db2@1.60.1.70124"}
+{"id": 447054, "field": "name", "en": "Summon Enraged Voidwalker", "hash": "495ac006c92beb5b", "src": "db2@1.60.1.70124"}
+{"id": 447106, "field": "name", "en": "[DNT] Nightmare Vines - Spawn Visual Dummy Spell", "hash": "ad6c0b82ef8c9bf7", "src": "db2@1.60.1.70124"}
+{"id": 447138, "field": "name", "en": "[DNT] Head of the Obliterator", "hash": "f00b42dd606e5fa6", "src": "db2@1.60.1.70124"}
+{"id": 447238, "field": "name", "en": "[DNT] Backfire", "hash": "ebeb6ab6ea1b7cda", "src": "db2@1.60.1.70124"}
+{"id": 447238, "field": "description", "en": "Inflicts $s1 damage on enemies in a cone behind the caster, knocking them back.", "hash": "bae901df359c35be", "src": "db2@1.60.1.70124"}
+{"id": 447255, "field": "name", "en": "Dragon Slaying 24", "hash": "ada7973752008918", "src": "db2@1.60.1.70124"}
+{"id": 447255, "field": "description", "en": "+$s1 Attack Power against Dragonkin.", "hash": "85a118c60419ea97", "src": "db2@1.60.1.70124"}
+{"id": 447256, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70124"}
+{"id": 447259, "field": "name", "en": "Charged Air", "hash": "86c774909132d6e3", "src": "db2@1.60.1.70124"}
+{"id": 447259, "field": "aura", "en": "You feel strangely energized, as if zapped by static.", "hash": "caa3a1c5e34c9319", "src": "db2@1.60.1.70124"}
+{"id": 447260, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70124"}
+{"id": 447267, "field": "name", "en": "Static Buildup", "hash": "f7f8767d1c61a196", "src": "db2@1.60.1.70124"}
+{"id": 447267, "field": "aura", "en": "You feel electrically charged!", "hash": "cddae8e11d9d479b", "src": "db2@1.60.1.70124"}
+{"id": 447274, "field": "name", "en": "Attack Power - Feral (+67)", "hash": "566e34d82984c919", "src": "db2@1.60.1.70124"}
+{"id": 447274, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70124"}
+{"id": 447280, "field": "name", "en": "Rift-ripping Roar", "hash": "1f04a7218d0c62fc", "src": "db2@1.60.1.70124"}
+{"id": 447280, "field": "aura", "en": "The deafening roar tears open new rifts.", "hash": "290ddce46a0e385a", "src": "db2@1.60.1.70124"}
+{"id": 447282, "field": "name", "en": "Rift-ripping Roar", "hash": "1f04a7218d0c62fc", "src": "db2@1.60.1.70124"}
+{"id": 447282, "field": "aura", "en": "The deafening roar tears open new rifts.", "hash": "290ddce46a0e385a", "src": "db2@1.60.1.70124"}
+{"id": 447283, "field": "name", "en": "Rift-ripping Roar", "hash": "1f04a7218d0c62fc", "src": "db2@1.60.1.70124"}
+{"id": 447283, "field": "aura", "en": "The deafening roar tears open new rifts.", "hash": "290ddce46a0e385a", "src": "db2@1.60.1.70124"}
+{"id": 447296, "field": "name", "en": "Idol of the Swarm", "hash": "f6849f3fe15be0cb", "src": "db2@1.60.1.70124"}
+{"id": 447296, "field": "description", "en": "The duration of your Insect Swarm spell is increased by $/1000;s1 sec.", "hash": "b6ad8827f91bd8bb", "src": "db2@1.60.1.70124"}
+{"id": 447297, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70124"}
+{"id": 447298, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70124"}
+{"id": 447299, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70124"}
+{"id": 447300, "field": "name", "en": "Summon Burning Imp", "hash": "de463c58efeb33f4", "src": "db2@1.60.1.70124"}
+{"id": 447301, "field": "name", "en": "Dizzying Spin", "hash": "5d99862bec73124a", "src": "db2@1.60.1.70124"}
+{"id": 447301, "field": "description", "en": "You attack all nearby enemies for $d causing weapon damage plus an additional $9633s1 every $t1 sec.", "hash": "3df8972c39db7b85", "src": "db2@1.60.1.70124"}
+{"id": 447301, "field": "aura", "en": "Attacking all nearby enemies for weapon damage + $9633s1.", "hash": "de7e324f3c3b84e0", "src": "db2@1.60.1.70124"}
+{"id": 447302, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70124"}
+{"id": 447397, "field": "name", "en": "Rift-ripping Roar", "hash": "1f04a7218d0c62fc", "src": "db2@1.60.1.70124"}
+{"id": 447397, "field": "aura", "en": "The deafening roar tears open new rifts.", "hash": "290ddce46a0e385a", "src": "db2@1.60.1.70124"}
+{"id": 447409, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70124"}
+{"id": 447472, "field": "name", "en": "Brew Tincture", "hash": "a7e50a73776b2b84", "src": "db2@1.60.1.70124"}
+{"id": 447472, "field": "description", "en": "Combine 3 Satyrweed samples to brew a tincture.", "hash": "ab7e29b3c02b74f0", "src": "db2@1.60.1.70124"}
+{"id": 447475, "field": "name", "en": "Satyrweed Tincture", "hash": "4211def5a62330cb", "src": "db2@1.60.1.70124"}
+{"id": 447475, "field": "description", "en": "Cure a creature of Satyr corruption.", "hash": "cbba2d5f798b076d", "src": "db2@1.60.1.70124"}
+{"id": 447483, "field": "name", "en": "Satyr Corruption", "hash": "137b720e3ad33416", "src": "db2@1.60.1.70124"}
+{"id": 447537, "field": "name", "en": "Combine Immolation Aura", "hash": "c9d0dae047679dc0", "src": "db2@1.60.1.70124"}
+{"id": 447537, "field": "description", "en": "Combine the collected reagents into a rune that will teach a new Engraving spell.", "hash": "fc4e919200638a3c", "src": "db2@1.60.1.70124"}
+{"id": 447544, "field": "name", "en": "Dizzy", "hash": "b7d6735c1a4c6f53", "src": "db2@1.60.1.70124"}
+{"id": 447546, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70124"}
+{"id": 447546, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70124"}
+{"id": 447547, "field": "name", "en": "Flamestrike", "hash": "c9551094a475804b", "src": "db2@1.60.1.70124"}
+{"id": 447547, "field": "description", "en": "Calls down a pillar of flame, burning all enemies in a selected area and inflicting additional damage every $t2 sec. for $d.", "hash": "545393765c76d795", "src": "db2@1.60.1.70124"}
+{"id": 447547, "field": "aura", "en": "Fire damage inflicted every $t2 sec.", "hash": "fd7a76cfe4cff65d", "src": "db2@1.60.1.70124"}
+{"id": 447548, "field": "name", "en": "Twisted Tranquility", "hash": "e9bd56ec27b4133f", "src": "db2@1.60.1.70124"}
+{"id": 447548, "field": "description", "en": "Deals nature damage to enemies in an area over $d, slowing their movement by $s2% and increasing the time between their attacks by $s3%.", "hash": "94cf54e0e23730e1", "src": "db2@1.60.1.70124"}
+{"id": 447548, "field": "aura", "en": "Deals nature damage every $t sec.\r\nReduces movement speed by $s2%.\r\nTime between attacks increased by $s3%.", "hash": "90ce53f485defbbd", "src": "db2@1.60.1.70124"}
+{"id": 447549, "field": "name", "en": "Feedback", "hash": "1752ab67c0f3c952", "src": "db2@1.60.1.70124"}
+{"id": 447549, "field": "description", "en": "The priest becomes surrounded with anti-magic energy.  Any successful spell cast against the priest will burn $19270s1 of the attacker's Mana, causing 1 Shadow damage for each point of Mana burned.  Lasts $d.", "hash": "7d1a32d933d59fd3", "src": "db2@1.60.1.70124"}
+{"id": 447549, "field": "aura", "en": "Anti-magic energy will burn $19270s1 of the attacker's Mana, causing 1 Shadow damage for each point of Mana burned.", "hash": "0019d6f5633250c2", "src": "db2@1.60.1.70124"}
+{"id": 447550, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70124"}
+{"id": 447551, "field": "name", "en": "[DNT]Jabbey Give Rune", "hash": "cde31fee518ec67d", "src": "db2@1.60.1.70124"}
+{"id": 447553, "field": "name", "en": "[DNT] Trigger Bat Chest Trap", "hash": "2a5ca41db61bdc68", "src": "db2@1.60.1.70124"}
+{"id": 447554, "field": "name", "en": "Undying Slumber", "hash": "85db9677af20175e", "src": "db2@1.60.1.70124"}
+{"id": 447554, "field": "aura", "en": "A strange slumber unaffected by most sources. May be broken with the right reagent and fel magic.", "hash": "219bd14bfa4c0087", "src": "db2@1.60.1.70124"}
+{"id": 447555, "field": "name", "en": "Chest Pains", "hash": "86a93fb5251f53e8", "src": "db2@1.60.1.70124"}
+{"id": 447555, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 447556, "field": "name", "en": "Combine Diseased Nature Staff", "hash": "b4b0d02ddfd338e4", "src": "db2@1.60.1.70124"}
+{"id": 447556, "field": "description", "en": "Combine the collected reagents into a fragile staff that can end Undying Slumber.", "hash": "f32edb1392193688", "src": "db2@1.60.1.70124"}
+{"id": 447557, "field": "name", "en": "Awaken Diseased Forest Walker", "hash": "e6989e2348920e1c", "src": "db2@1.60.1.70124"}
+{"id": 447557, "field": "description", "en": "Awaken the current target from Undying Slumber.", "hash": "16de151793cfad4e", "src": "db2@1.60.1.70124"}
+{"id": 447561, "field": "name", "en": "[DNT] Deep Freeze", "hash": "e3474cac45f6dc1d", "src": "db2@1.60.1.70124"}
+{"id": 447562, "field": "name", "en": "[DNT] Troll Object - Visual Aura", "hash": "83190d8053a199ad", "src": "db2@1.60.1.70124"}
+{"id": 447563, "field": "name", "en": "Blind", "hash": "951d75b9c1314df9", "src": "db2@1.60.1.70124"}
+{"id": 447563, "field": "description", "en": "Blinds the target, causing it to wander disoriented for up to $d.  Any damage caused will remove the effect.", "hash": "9dce52b19376bd3f", "src": "db2@1.60.1.70124"}
+{"id": 447563, "field": "aura", "en": "Disoriented.", "hash": "6b902ba73addf3d6", "src": "db2@1.60.1.70124"}
+{"id": 447564, "field": "name", "en": "[DNT] Temporal Anomaly", "hash": "9395cfed6a4be338", "src": "db2@1.60.1.70124"}
+{"id": 447569, "field": "name", "en": "[DNT] Move Troll Object", "hash": "6969e0517ed10496", "src": "db2@1.60.1.70124"}
+{"id": 447578, "field": "name", "en": "Gloom", "hash": "ece39810339781d0", "src": "db2@1.60.1.70124"}
+{"id": 447578, "field": "aura", "en": "Harrowed by glimpses of the nightmare.\r\nSuffering harmful effects.", "hash": "bc2a109e648a4c2b", "src": "db2@1.60.1.70124"}
+{"id": 447579, "field": "name", "en": "Gloom", "hash": "ece39810339781d0", "src": "db2@1.60.1.70124"}
+{"id": 447579, "field": "aura", "en": "Harrowed by glimpses of the nightmare.\r\nSuffering harmful effects.", "hash": "bc2a109e648a4c2b", "src": "db2@1.60.1.70124"}
+{"id": 447580, "field": "name", "en": "Gloom", "hash": "ece39810339781d0", "src": "db2@1.60.1.70124"}
+{"id": 447580, "field": "aura", "en": "Harrowed by glimpses of the nightmare.\r\nSuffering harmful effects.", "hash": "bc2a109e648a4c2b", "src": "db2@1.60.1.70124"}
+{"id": 447581, "field": "name", "en": "Gloom", "hash": "ece39810339781d0", "src": "db2@1.60.1.70124"}
+{"id": 447581, "field": "description", "en": "$@spelldesc998", "hash": "59acd7e46cec4a54", "src": "db2@1.60.1.70124"}
+{"id": 447581, "field": "aura", "en": "$@spelldesc998", "hash": "59acd7e46cec4a54", "src": "db2@1.60.1.70124"}
+{"id": 447582, "field": "name", "en": "Wisp Detonate", "hash": "c54f74c9dfa2ce84", "src": "db2@1.60.1.70124"}
+{"id": 447584, "field": "name", "en": "Wisp Detonate", "hash": "c54f74c9dfa2ce84", "src": "db2@1.60.1.70124"}
+{"id": 447585, "field": "name", "en": "Creeping Nightmare", "hash": "4ad98d4d020617ed", "src": "db2@1.60.1.70124"}
+{"id": 447585, "field": "aura", "en": "$@spellaura27605", "hash": "568adae4775d76b4", "src": "db2@1.60.1.70124"}
+{"id": 447586, "field": "name", "en": "Summon Treant Allies", "hash": "a7afce0a515afa9a", "src": "db2@1.60.1.70124"}
+{"id": 447586, "field": "description", "en": "Summons $s1 $lTreant Ally:Treant Allies; to accompany the caster until dismissed.", "hash": "7f52587e408253eb", "src": "db2@1.60.1.70124"}
+{"id": 447587, "field": "name", "en": "Force of Nature", "hash": "76b661984cc42adc", "src": "db2@1.60.1.70124"}
+{"id": 447587, "field": "description", "en": "Summons $s1 $lForce of Nature:Forces of Nature; to aid the caster in battle for $d.", "hash": "460f12d661e76e09", "src": "db2@1.60.1.70124"}
+{"id": 447588, "field": "name", "en": "Wake Up Dead", "hash": "ff3c24c24af66d4e", "src": "db2@1.60.1.70124"}
+{"id": 447588, "field": "aura", "en": "$@spelldesc424574", "hash": "9029b02ee13b64ab", "src": "db2@1.60.1.70124"}
+{"id": 447589, "field": "name", "en": "Deafening Screech", "hash": "afadb85c46781bab", "src": "db2@1.60.1.70124"}
+{"id": 447589, "field": "description", "en": "Silences nearby enemies, preventing them from casting spells for $d.", "hash": "2d8a29ef4e7384d7", "src": "db2@1.60.1.70124"}
+{"id": 447589, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70124"}
+{"id": 447590, "field": "name", "en": "Infernal Lasso", "hash": "07a60fe4118ca704", "src": "db2@1.60.1.70124"}
+{"id": 447590, "field": "description", "en": "Weaken Calefactus the Unleashed.", "hash": "bcba3518e9505e31", "src": "db2@1.60.1.70124"}
+{"id": 447590, "field": "aura", "en": "Rooted. Causes $s2 Fire damage every $t2 seconds.", "hash": "bc987a186c0f7f29", "src": "db2@1.60.1.70124"}
+{"id": 447591, "field": "name", "en": "Undying Fel Fire", "hash": "5ab189172eba0972", "src": "db2@1.60.1.70124"}
+{"id": 447591, "field": "aura", "en": "Cannot be killed.", "hash": "1011ad1b72c9fc1d", "src": "db2@1.60.1.70124"}
+{"id": 447890, "field": "name", "en": "Wake Up Dead", "hash": "ff3c24c24af66d4e", "src": "db2@1.60.1.70124"}
+{"id": 447890, "field": "aura", "en": "Hard sleep.", "hash": "11982e2f850b8d03", "src": "db2@1.60.1.70124"}
+{"id": 447891, "field": "name", "en": "Bash", "hash": "08f1a3a0f5ece8cf", "src": "db2@1.60.1.70124"}
+{"id": 447891, "field": "description", "en": "Stuns an enemy, rendering it unable to move or attack for $d.", "hash": "79289398718d04d2", "src": "db2@1.60.1.70124"}
+{"id": 447891, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 447892, "field": "name", "en": "Skin of Rock", "hash": "b0b59bc478bd6f7d", "src": "db2@1.60.1.70124"}
+{"id": 447892, "field": "aura", "en": "Armor increased by $s1.\r\nMovement speed reduced by $s2%.", "hash": "da23ce517eb2c0a6", "src": "db2@1.60.1.70124"}
+{"id": 447894, "field": "name", "en": "Sting of the Serpent", "hash": "d2b05d077c556b80", "src": "db2@1.60.1.70124"}
+{"id": 447894, "field": "description", "en": "Poison the enemy dealing $s3 Nature damage, reducing Nature resistance by $s1 and increasing Holy and Nature damage taken by $s2% for $d. Only affects enemies level 55 and below.", "hash": "76472134de63b89e", "src": "db2@1.60.1.70124"}
+{"id": 447894, "field": "aura", "en": "Nature resistance reduced by $s1.  Holy and Nature spell damage taken increased by $s2%.", "hash": "f85c0bd5560fc910", "src": "db2@1.60.1.70124"}
+{"id": 447895, "field": "name", "en": "[DNT] Summon Blightbark", "hash": "046b8a708a16dfa7", "src": "db2@1.60.1.70124"}
+{"id": 447899, "field": "name", "en": "[DNT]Shrine of the Warden Trigger", "hash": "b262f021d141a5e6", "src": "db2@1.60.1.70124"}
+{"id": 447906, "field": "name", "en": "[DNT] Shrine of the Moon Dummy", "hash": "dc8c3957eb3e4323", "src": "db2@1.60.1.70124"}
+{"id": 447907, "field": "name", "en": "[DNT] Shrine of the Moon Trigger Effect", "hash": "8d8cac8dc60b686b", "src": "db2@1.60.1.70124"}
+{"id": 447914, "field": "name", "en": "[DNT]Shrine of the Moon Trigger", "hash": "34ea0bd30f2d8b6b", "src": "db2@1.60.1.70124"}
+{"id": 447920, "field": "name", "en": "[DNT] Summon Sagefeather", "hash": "f5f0442fac77a198", "src": "db2@1.60.1.70124"}
+{"id": 447935, "field": "name", "en": "[DNT] Enraged Leywalker Spawn", "hash": "c6926726ab9b9523", "src": "db2@1.60.1.70124"}
+{"id": 447947, "field": "name", "en": "Visual Effect (DNT)", "hash": "cc59170865ff3711", "src": "db2@1.60.1.70124"}
+{"id": 447986, "field": "name", "en": "[DNT] Shrine of the Beast Trigger", "hash": "7a2435f197b75efb", "src": "db2@1.60.1.70124"}
+{"id": 447993, "field": "name", "en": "[DNT] Summon Whisperwing", "hash": "9e866fb60f6ae6f7", "src": "db2@1.60.1.70124"}

@@ -1,163 +1,163 @@
-{"id": 439084, "field": "name", "en": "Pattern: Crimson Silk Robe", "hash": "16ab1b3883efff36", "src": "db2@1.60.1.70009"}
-{"id": 439084, "field": "description", "en": "Teaches you how to sew a Crimson Silk Robe.", "hash": "cc0fc05fb3d36aa5", "src": "db2@1.60.1.70009"}
-{"id": 439085, "field": "name", "en": "Crimson Silk Robe", "hash": "5ca5d45373fab8ee", "src": "db2@1.60.1.70009"}
-{"id": 439086, "field": "name", "en": "Black Mageweave Vest", "hash": "e5c29ff662bc8b59", "src": "db2@1.60.1.70009"}
-{"id": 439087, "field": "name", "en": "Black Mageweave Vest", "hash": "e5c29ff662bc8b59", "src": "db2@1.60.1.70009"}
-{"id": 439088, "field": "name", "en": "Black Mageweave Leggings", "hash": "84eafd7da80c4cb9", "src": "db2@1.60.1.70009"}
-{"id": 439089, "field": "name", "en": "Black Mageweave Leggings", "hash": "84eafd7da80c4cb9", "src": "db2@1.60.1.70009"}
-{"id": 439090, "field": "name", "en": "Pattern: Earthen Silk Belt", "hash": "506f2136873eeaa8", "src": "db2@1.60.1.70009"}
-{"id": 439090, "field": "description", "en": "Teaches you how to sew an Earthen Silk Belt.", "hash": "3960c204b8d60c65", "src": "db2@1.60.1.70009"}
-{"id": 439091, "field": "name", "en": "Earthen Silk Belt", "hash": "9669da517749a460", "src": "db2@1.60.1.70009"}
-{"id": 439092, "field": "name", "en": "Pattern: Crimson Silk Shoulders", "hash": "706b5495fff5966c", "src": "db2@1.60.1.70009"}
-{"id": 439092, "field": "description", "en": "Teaches you how to sew Crimson Silk Shoulders.", "hash": "ac23fc8bc56c760d", "src": "db2@1.60.1.70009"}
-{"id": 439093, "field": "name", "en": "Crimson Silk Shoulders", "hash": "86254423a4da4963", "src": "db2@1.60.1.70009"}
-{"id": 439094, "field": "name", "en": "Long Silken Cloak", "hash": "6f51972669e70130", "src": "db2@1.60.1.70009"}
-{"id": 439095, "field": "name", "en": "Long Silken Cloak", "hash": "6f51972669e70130", "src": "db2@1.60.1.70009"}
-{"id": 439096, "field": "name", "en": "Pattern: Boots of the Enchanter", "hash": "b218e58e05075ff7", "src": "db2@1.60.1.70009"}
-{"id": 439096, "field": "description", "en": "Teaches you how to sew Boots of the Enchanter.", "hash": "47f52ca061745b09", "src": "db2@1.60.1.70009"}
-{"id": 439097, "field": "name", "en": "Boots of the Enchanter", "hash": "c7d2d51ca9ec12dd", "src": "db2@1.60.1.70009"}
-{"id": 439098, "field": "name", "en": "Crimson Silk Belt", "hash": "5a7e617675ca11b4", "src": "db2@1.60.1.70009"}
-{"id": 439099, "field": "name", "en": "Crimson Silk Belt", "hash": "5a7e617675ca11b4", "src": "db2@1.60.1.70009"}
-{"id": 439100, "field": "name", "en": "Earthen Vest", "hash": "d72904303956729b", "src": "db2@1.60.1.70009"}
-{"id": 439101, "field": "name", "en": "Earthen Vest", "hash": "d72904303956729b", "src": "db2@1.60.1.70009"}
-{"id": 439102, "field": "name", "en": "Enchanter's Cowl", "hash": "e2ca3ab20fbd643a", "src": "db2@1.60.1.70009"}
-{"id": 439103, "field": "name", "en": "Enchanter's Cowl", "hash": "e2ca3ab20fbd643a", "src": "db2@1.60.1.70009"}
-{"id": 439105, "field": "name", "en": "Big Voodoo Mask", "hash": "fd990e99167ee858", "src": "db2@1.60.1.70009"}
-{"id": 439106, "field": "name", "en": "Pattern: Big Voodoo Mask", "hash": "d4e6139e9d6a3eac", "src": "db2@1.60.1.70009"}
-{"id": 439106, "field": "description", "en": "Teaches you how to craft a Big Voodoo Mask.", "hash": "70de05483c28d11a", "src": "db2@1.60.1.70009"}
-{"id": 439108, "field": "name", "en": "Big Voodoo Robe", "hash": "fe4834651118431d", "src": "db2@1.60.1.70009"}
-{"id": 439109, "field": "name", "en": "Pattern: Big Voodoo Robe", "hash": "d595396a98039971", "src": "db2@1.60.1.70009"}
-{"id": 439109, "field": "description", "en": "Teaches you how to craft a Big Voodoo Robe.", "hash": "ca7e5cac0eef67d3", "src": "db2@1.60.1.70009"}
-{"id": 439110, "field": "name", "en": "Guardian Leather Bracers", "hash": "597747d170ca5124", "src": "db2@1.60.1.70009"}
-{"id": 439111, "field": "name", "en": "Pattern: Guardian Leather Bracers", "hash": "ec3b955e194533d4", "src": "db2@1.60.1.70009"}
-{"id": 439111, "field": "description", "en": "Teaches you how to craft Guardian Leather Bracers.", "hash": "466e39c5bc9cfc5f", "src": "db2@1.60.1.70009"}
-{"id": 439112, "field": "name", "en": "Guardian Belt", "hash": "6711ded4608a85a1", "src": "db2@1.60.1.70009"}
-{"id": 439113, "field": "name", "en": "Pattern: Guardian Belt", "hash": "d9653fc1229ac726", "src": "db2@1.60.1.70009"}
-{"id": 439113, "field": "description", "en": "Teaches you how to craft a Guardian Belt.", "hash": "9d151b30d95cf56c", "src": "db2@1.60.1.70009"}
-{"id": 439114, "field": "name", "en": "Guardian Pants", "hash": "b35c500ca3126e45", "src": "db2@1.60.1.70009"}
-{"id": 439115, "field": "name", "en": "Guardian Pants", "hash": "b35c500ca3126e45", "src": "db2@1.60.1.70009"}
-{"id": 439116, "field": "name", "en": "Turtle Scale Breastplate", "hash": "b21ca005aa3b03e4", "src": "db2@1.60.1.70009"}
-{"id": 439117, "field": "name", "en": "Turtle Scale Breastplate", "hash": "b21ca005aa3b03e4", "src": "db2@1.60.1.70009"}
-{"id": 439118, "field": "name", "en": "Turtle Scale Gloves", "hash": "cbbcef03c17544f0", "src": "db2@1.60.1.70009"}
-{"id": 439119, "field": "name", "en": "Pattern: Turtle Scale Gloves", "hash": "b77a0071ecb90d60", "src": "db2@1.60.1.70009"}
-{"id": 439119, "field": "description", "en": "Teaches you how to craft Turtle Scale Gloves.", "hash": "6915ba51f84c8ed9", "src": "db2@1.60.1.70009"}
-{"id": 439120, "field": "name", "en": "Golden Scale Gauntlets", "hash": "c0cc894275b84135", "src": "db2@1.60.1.70009"}
-{"id": 439121, "field": "name", "en": "Plans: Golden Scale Gauntlets", "hash": "1cf2d7eafbf9e34f", "src": "db2@1.60.1.70009"}
-{"id": 439121, "field": "description", "en": "Teaches you how to make Golden Scale Gauntlets.", "hash": "715dda3c394ef51f", "src": "db2@1.60.1.70009"}
-{"id": 439122, "field": "name", "en": "Golden Scale Boots", "hash": "9ed6b2b07552fdb7", "src": "db2@1.60.1.70009"}
-{"id": 439123, "field": "name", "en": "Plans: Golden Scale Boots", "hash": "2905262b1dff993f", "src": "db2@1.60.1.70009"}
-{"id": 439123, "field": "description", "en": "Teaches you how to make Golden Scale Boots.", "hash": "0a568eab6a9aca32", "src": "db2@1.60.1.70009"}
-{"id": 439124, "field": "name", "en": "Golden Scale Cuirass", "hash": "f6824442dc492eb3", "src": "db2@1.60.1.70009"}
-{"id": 439125, "field": "name", "en": "Plans: Golden Scale Cuirass", "hash": "fa5cea535fd9bcf8", "src": "db2@1.60.1.70009"}
-{"id": 439125, "field": "description", "en": "Teaches you how to make a Golden Scale Cuirass.", "hash": "edc792b8b5f5380d", "src": "db2@1.60.1.70009"}
-{"id": 439126, "field": "name", "en": "Golden Scale Coif", "hash": "9daead8a80eeca9d", "src": "db2@1.60.1.70009"}
-{"id": 439127, "field": "name", "en": "Plans: Golden Scale Coif", "hash": "2f590c3be8684db2", "src": "db2@1.60.1.70009"}
-{"id": 439127, "field": "description", "en": "Teaches you how to make a Golden Scale Coif.", "hash": "9a0df3bb5333808f", "src": "db2@1.60.1.70009"}
-{"id": 439128, "field": "name", "en": "Moonsteel Broadsword", "hash": "949f9da7232ee442", "src": "db2@1.60.1.70009"}
-{"id": 439129, "field": "name", "en": "Plans: Moonsteel Broadsword", "hash": "987a43b8a6bf7276", "src": "db2@1.60.1.70009"}
-{"id": 439129, "field": "description", "en": "Teaches you how to make a Moonsteel Broadsword.", "hash": "d6cc506dd6d493df", "src": "db2@1.60.1.70009"}
-{"id": 439130, "field": "name", "en": "Golden Scale Shoulders", "hash": "90dbc7b76e8f43b9", "src": "db2@1.60.1.70009"}
-{"id": 439131, "field": "name", "en": "Plans: Golden Scale Shoulders", "hash": "ed02165af4d0e5d3", "src": "db2@1.60.1.70009"}
-{"id": 439131, "field": "description", "en": "Teaches you how to make Golden Scale Shoulders.", "hash": "e92acf9ef79617ee", "src": "db2@1.60.1.70009"}
-{"id": 439132, "field": "name", "en": "Golden Scale Leggings", "hash": "556d06fa60816eb1", "src": "db2@1.60.1.70009"}
-{"id": 439133, "field": "name", "en": "Plans: Golden Scale Leggings", "hash": "4e5001b783c7cce7", "src": "db2@1.60.1.70009"}
-{"id": 439133, "field": "description", "en": "Teaches you how to make Golden Scale Leggings.", "hash": "b852c8e6dc817cf7", "src": "db2@1.60.1.70009"}
-{"id": 439134, "field": "name", "en": "Greater Mystic Wand", "hash": "69beed59d61d9e79", "src": "db2@1.60.1.70009"}
-{"id": 439134, "field": "description", "en": "Creates a greater mystic wand.", "hash": "a69d351a7ada0289", "src": "db2@1.60.1.70009"}
-{"id": 439135, "field": "name", "en": "Greater Mystic Wand", "hash": "69beed59d61d9e79", "src": "db2@1.60.1.70009"}
-{"id": 439154, "field": "name", "en": "Sprocketfire Punch", "hash": "625a19133fe279c4", "src": "db2@1.60.1.70009"}
-{"id": 439155, "field": "name", "en": "Sigil of Innovation", "hash": "98260a61ea43217f", "src": "db2@1.60.1.70009"}
-{"id": 439155, "field": "description", "en": "Gain an enchanted sigil of innovation, empowering you to deal up to $s1 increased damage and healing with spells, and increasing attack power by $s2 for $d. This can only be applied outside of combat. ", "hash": "5b27e1aab5fc1b93", "src": "db2@1.60.1.70009"}
-{"id": 439155, "field": "aura", "en": "Empowered by Innovation. Dealing up to $s1 increased damage and healing with spells, and increasing attack power by increased $s2.", "hash": "21bf66a37ad9a5ae", "src": "db2@1.60.1.70009"}
-{"id": 439156, "field": "name", "en": "Sigil of Innovation", "hash": "98260a61ea43217f", "src": "db2@1.60.1.70009"}
-{"id": 439158, "field": "name", "en": "Supercooled Smash", "hash": "cea8dfae21ef9840", "src": "db2@1.60.1.70009"}
-{"id": 439159, "field": "name", "en": "Supercooled Smash", "hash": "cea8dfae21ef9840", "src": "db2@1.60.1.70009"}
-{"id": 439164, "field": "name", "en": "Dismantle", "hash": "38890e653e29f507", "src": "db2@1.60.1.70009"}
-{"id": 439336, "field": "name", "en": "Frozen Shrapnel", "hash": "2abaf53bcf7bbce5", "src": "db2@1.60.1.70009"}
-{"id": 439338, "field": "name", "en": "Walking Bomb Passive Proc (100%)", "hash": "d1503b4b8cb8fe8f", "src": "db2@1.60.1.70009"}
-{"id": 439342, "field": "name", "en": "Hazardous Hammer", "hash": "3e9d59cda1e4932c", "src": "db2@1.60.1.70009"}
-{"id": 439343, "field": "name", "en": "Hazardous Hammer", "hash": "3e9d59cda1e4932c", "src": "db2@1.60.1.70009"}
-{"id": 439431, "field": "name", "en": "Windfury Weapon", "hash": "f57112af36ea575b", "src": "db2@1.60.1.70009"}
-{"id": 439431, "field": "description", "en": "Imbue the Shaman's weapon with wind.  Each hit has a 20% chance of granting you $8233s2 extra $lattack:attacks; with $8233s1 extra melee attack power.  Lasts for 5 minutes.", "hash": "97843252fa89508a", "src": "db2@1.60.1.70009"}
-{"id": 439440, "field": "name", "en": "Windfury Weapon", "hash": "f57112af36ea575b", "src": "db2@1.60.1.70009"}
-{"id": 439441, "field": "name", "en": "Windfury Weapon", "hash": "f57112af36ea575b", "src": "db2@1.60.1.70009"}
-{"id": 439462, "field": "name", "en": "Sebacious Poison", "hash": "e66ddea004437fab", "src": "db2@1.60.1.70009"}
-{"id": 439462, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, reducing the enemy's armor by $439471s1 for $439471d.\r\n\r\nSebacious Poison benefits from the Improved Expose Armor talent.", "hash": "2d0ef69d1cec968e", "src": "db2@1.60.1.70009"}
-{"id": 439464, "field": "name", "en": "Numbing Poison", "hash": "dd1af83ce6c83f73", "src": "db2@1.60.1.70009"}
-{"id": 439464, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, increasing the time between the enemy's melee attacks by $439472s1% for $439472d.", "hash": "706228c1ec280488", "src": "db2@1.60.1.70009"}
-{"id": 439465, "field": "name", "en": "Atrophic Poison", "hash": "94261ba4379297a0", "src": "db2@1.60.1.70009"}
-{"id": 439465, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, reducing the enemy's melee attack power by $439473s1 for $439473d.", "hash": "97dc5decf1f1db6f", "src": "db2@1.60.1.70009"}
-{"id": 439471, "field": "name", "en": "Sebacious Poison", "hash": "e66ddea004437fab", "src": "db2@1.60.1.70009"}
-{"id": 439471, "field": "aura", "en": "Armor reduced by $w1.", "hash": "aedf6639961a6e99", "src": "db2@1.60.1.70009"}
-{"id": 439472, "field": "name", "en": "Numbing Poison", "hash": "dd1af83ce6c83f73", "src": "db2@1.60.1.70009"}
-{"id": 439472, "field": "aura", "en": "Time between attacks increased by $s1%.", "hash": "4f44ab25fd31a67e", "src": "db2@1.60.1.70009"}
-{"id": 439473, "field": "name", "en": "Atrophic Poison", "hash": "94261ba4379297a0", "src": "db2@1.60.1.70009"}
-{"id": 439473, "field": "aura", "en": "Melee attack power reduced by $s1.", "hash": "100ea0c6aa28746c", "src": "db2@1.60.1.70009"}
-{"id": 439500, "field": "name", "en": "Sebacious Poison", "hash": "e66ddea004437fab", "src": "db2@1.60.1.70009"}
-{"id": 439500, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $439462h% chance of poisoning the enemy, reducing the enemy's armor by $439471s1 for $439471d.  105 charges.\r\n\r\nSebacious Poison benefits from the Improved Expose Armor talent.", "hash": "a3ff84435a701ab9", "src": "db2@1.60.1.70009"}
-{"id": 439503, "field": "name", "en": "Atrophic Poison", "hash": "94261ba4379297a0", "src": "db2@1.60.1.70009"}
-{"id": 439503, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $439465h% chance of poisoning the enemy, reducing the enemy's melee attack power by $439473s1 for $439473d.  105 charges.", "hash": "ebede533df6ce58b", "src": "db2@1.60.1.70009"}
-{"id": 439505, "field": "name", "en": "Numbing Poison", "hash": "dd1af83ce6c83f73", "src": "db2@1.60.1.70009"}
-{"id": 439505, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $439464h% chance of poisoning the enemy, increasing the time between the enemy's melee attacks by $439472s1% for $439472d.  105 charges.", "hash": "05dfb15497b675bf", "src": "db2@1.60.1.70009"}
-{"id": 439510, "field": "name", "en": "Improved Swipe", "hash": "ab20beea7a505078", "src": "db2@1.60.1.70009"}
-{"id": 439510, "field": "description", "en": "While in Cat Form, your Swipe ability becomes Swipe (Cat), and while in Bear Form, your Swipe ability strikes up to $s1 additional enemies.\r\n\r\nSwipe (Cat)\r\n$@spellicon411128\r\n$@spelldesc411128", "hash": "7f92f9611f525809", "src": "db2@1.60.1.70009"}
-{"id": 439512, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70009"}
-{"id": 439540, "field": "name", "en": "Walking Bomb Passive Proc (100%)", "hash": "d1503b4b8cb8fe8f", "src": "db2@1.60.1.70009"}
-{"id": 439581, "field": "name", "en": "[DNT] - Radiation Cloud Visual", "hash": "fe5331456407a027", "src": "db2@1.60.1.70009"}
-{"id": 439624, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70009"}
-{"id": 439626, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70009"}
-{"id": 439627, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70009"}
-{"id": 439651, "field": "name", "en": "Increased Fist Weapons", "hash": "14ec2ce3cad2bbc4", "src": "db2@1.60.1.70009"}
-{"id": 439651, "field": "description", "en": "Increased Fist Weapons +$s1.", "hash": "cffc03044977ec6c", "src": "db2@1.60.1.70009"}
-{"id": 439670, "field": "name", "en": "[DNT] Punch Randomizer", "hash": "bc57771392b3671d", "src": "db2@1.60.1.70009"}
-{"id": 439671, "field": "name", "en": "[DNT] Special Ability Randomizer", "hash": "b10a03ad52c90caa", "src": "db2@1.60.1.70009"}
-{"id": 439672, "field": "name", "en": "Radioactive Bomb", "hash": "41546df8e9e7b912", "src": "db2@1.60.1.70009"}
-{"id": 439691, "field": "name", "en": "Teleport to Booty Bay", "hash": "607000b1d98f75b7", "src": "db2@1.60.1.70009"}
-{"id": 439691, "field": "description", "en": "Sends player to Gnomeregan.", "hash": "187b898451d33e10", "src": "db2@1.60.1.70009"}
-{"id": 439731, "field": "name", "en": "Domesticated Attack Chicken", "hash": "81c3f42ffe3237d2", "src": "db2@1.60.1.70009"}
-{"id": 439733, "field": "name", "en": "Tree of Life", "hash": "1a6e27e57937048e", "src": "db2@1.60.1.70009"}
-{"id": 439733, "field": "description", "en": "Shapeshift into the Tree of Life. While in this form you increase healing received by $439745s1% for all party members within $439745a1 yards, Wild Growth healing is increased by $439734s8%, your heal over time spells cost $439734s1% less, you gain $439734s2% increased Spirit, you gain $439734s3% increased armor, and you cannot cast harmful spells.\r\n\r\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.", "hash": "c887c72f657d9665", "src": "db2@1.60.1.70009"}
-{"id": 439733, "field": "aura", "en": "Immune to Polymorph effects.\r\nReduces mana cost of heal over time spells by $439734s1%.\r\nIncreases Spirit by $439734s2% and armor by $439734s3%.\r\nIncreases healing received by $439745s1% for all party members within $439745a1 yards and healing done by Wild Growth by $439734s8%.", "hash": "3b08cc5b67df8768", "src": "db2@1.60.1.70009"}
-{"id": 439734, "field": "name", "en": "Tree of Life (Passive)", "hash": "663bbde6589d05ad", "src": "db2@1.60.1.70009"}
-{"id": 439745, "field": "name", "en": "Tree of Life", "hash": "1a6e27e57937048e", "src": "db2@1.60.1.70009"}
-{"id": 439745, "field": "description", "en": "Increased all healing received by party members within $a1 yards by $s1%.", "hash": "29dc88392ced17e0", "src": "db2@1.60.1.70009"}
-{"id": 439745, "field": "aura", "en": "Increases healing received by $s1%.", "hash": "ec4c26b6ed245c22", "src": "db2@1.60.1.70009"}
-{"id": 439748, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70009"}
-{"id": 439748, "field": "description", "en": "You summon a flurry of stars from the sky over $d, striking targets within $439755a yards of your location, each dealing ${$439753m1*$<damagepower>/100} to ${$439753M1*$<damagepower>/100} Arcane damage to its target and ${$439756m1*$<damagepower>/100} Arcane damage to all other enemies within $439756a1 yards. Maximum 20 stars.\r\n\r\nShapeshifting or mounting cancels the effect. Any effect which causes you to lose control of your character will suppress the Starfall effect.\r\n\r\nBenefits from and triggers most talents and effects that trigger or benefit from Moonfire.", "hash": "16bd2a8dc8712cfd", "src": "db2@1.60.1.70009"}
-{"id": 439748, "field": "aura", "en": "Summoning stars from the sky.", "hash": "e60f8fbc522322ff", "src": "db2@1.60.1.70009"}
-{"id": 439753, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70009"}
-{"id": 439753, "field": "description", "en": "You summon a flurry of stars from the sky on all targets within 30 yards of the caster, each dealing $50288s1 Arcane damage. Also causes $50294s1 Arcane damage to all other enemies within $50294a1 yards of the enemy target. Maximum 20 stars. Lasts $48505d.", "hash": "e6e31d13554eb656", "src": "db2@1.60.1.70009"}
-{"id": 439753, "field": "aura", "en": "You summon a flurry of stars from the sky on all targets within 30 yards of the caster, each dealing $50288s1 Arcane damage. Also causes $50294s1 Arcane damage to all other enemies within $50294a1 yards of the enemy target. Maximum 20 stars. Lasts $48505d.", "hash": "e6e31d13554eb656", "src": "db2@1.60.1.70009"}
-{"id": 439755, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70009"}
-{"id": 439756, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70009"}
-{"id": 439756, "field": "aura", "en": "Maximum 20 stars. Lasts $48505d.", "hash": "1ae310a75b0ea3b7", "src": "db2@1.60.1.70009"}
-{"id": 439765, "field": "name", "en": "Engrave Cloak - Improved Swipe", "hash": "7a3558da3fc17dea", "src": "db2@1.60.1.70009"}
-{"id": 439765, "field": "description", "en": "Engrave your cloak with the Improved Swipe rune:\r\n\r\n$@spellicon439510\r\n$@spelldesc439510", "hash": "e1173b739de43dc4", "src": "db2@1.60.1.70009"}
-{"id": 439766, "field": "name", "en": "Tree of Life", "hash": "1a6e27e57937048e", "src": "db2@1.60.1.70009"}
-{"id": 439766, "field": "description", "en": "Gain the Tree of Life ability:\r\n\r\n$@spellicon439766\r\n$@spelldesc439733", "hash": "26efaedb94cd4665", "src": "db2@1.60.1.70009"}
-{"id": 439767, "field": "name", "en": "Engrave Cloak - Tree of Life", "hash": "1a3bc7ceda578811", "src": "db2@1.60.1.70009"}
-{"id": 439767, "field": "description", "en": "Engrave your cloak with the Tree of Life rune:\r\n\r\n$@spellicon439766\r\n$@spelldesc439733", "hash": "33ad400e299616e1", "src": "db2@1.60.1.70009"}
-{"id": 439768, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70009"}
-{"id": 439768, "field": "description", "en": "Gain the Starfall\r\n ability:\r\n\r\n$@spellicon439748\r\n$@spelldesc439748", "hash": "29e9237861c875ed", "src": "db2@1.60.1.70009"}
-{"id": 439770, "field": "name", "en": "Engrave Cloak - Starfall", "hash": "909e31f5178cdee0", "src": "db2@1.60.1.70009"}
-{"id": 439770, "field": "description", "en": "Engrave your cloak with the Starfall\r\n rune:\r\n\r\n$@spellicon439748\r\n$@spelldesc439748", "hash": "49741463422ae44e", "src": "db2@1.60.1.70009"}
-{"id": 439822, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70009"}
-{"id": 439823, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70009"}
-{"id": 439824, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70009"}
-{"id": 439826, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70009"}
-{"id": 439870, "field": "name", "en": "Hyperconductive Goldwrap", "hash": "5585cafed765d929", "src": "db2@1.60.1.70009"}
-{"id": 439885, "field": "name", "en": "[DNT] Jump to Ground", "hash": "12c1db3eb264270d", "src": "db2@1.60.1.70009"}
-{"id": 439939, "field": "name", "en": "Freezing", "hash": "592cdaef5a06395d", "src": "db2@1.60.1.70009"}
-{"id": 439944, "field": "name", "en": "Radiation Overdose", "hash": "d9e3cfde69192820", "src": "db2@1.60.1.70009"}
-{"id": 439946, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70009"}
-{"id": 439947, "field": "name", "en": "[DNT] Teleport Player Back To Crowd Pummeler's Platform", "hash": "b1b815c6625062cd", "src": "db2@1.60.1.70009"}
-{"id": 439956, "field": "name", "en": "Revive Pet", "hash": "b0e134b7aec9a64e", "src": "db2@1.60.1.70009"}
-{"id": 439958, "field": "name", "en": "Kill, Maim, Bleed!", "hash": "beb1d5bb96e68941", "src": "db2@1.60.1.70009"}
-{"id": 439958, "field": "aura", "en": "The Blood Loa rewards danger.", "hash": "548d5a6205c88814", "src": "db2@1.60.1.70009"}
-{"id": 439959, "field": "name", "en": "Lesser Arcane Elixir", "hash": "f80f15c18a53ca45", "src": "db2@1.60.1.70009"}
-{"id": 439959, "field": "description", "en": "Increases spell damage by up to $s1 for $d.", "hash": "bfd948e79e2ad268", "src": "db2@1.60.1.70009"}
-{"id": 439959, "field": "aura", "en": "Magical damage dealt by spells and abilities is increased by up to $s1.", "hash": "a5bf5341273beb75", "src": "db2@1.60.1.70009"}
-{"id": 439960, "field": "name", "en": "Lesser Arcane Elixir", "hash": "f80f15c18a53ca45", "src": "db2@1.60.1.70009"}
-{"id": 439995, "field": "name", "en": "Resurrection", "hash": "4e95d3bcfd7d75d3", "src": "db2@1.60.1.70009"}
-{"id": 439996, "field": "name", "en": "Resurrection", "hash": "4e95d3bcfd7d75d3", "src": "db2@1.60.1.70009"}
-{"id": 439998, "field": "name", "en": "Resurrection", "hash": "4e95d3bcfd7d75d3", "src": "db2@1.60.1.70009"}
+{"id": 439084, "field": "name", "en": "Pattern: Crimson Silk Robe", "hash": "16ab1b3883efff36", "src": "db2@1.60.1.70124"}
+{"id": 439084, "field": "description", "en": "Teaches you how to sew a Crimson Silk Robe.", "hash": "cc0fc05fb3d36aa5", "src": "db2@1.60.1.70124"}
+{"id": 439085, "field": "name", "en": "Crimson Silk Robe", "hash": "5ca5d45373fab8ee", "src": "db2@1.60.1.70124"}
+{"id": 439086, "field": "name", "en": "Black Mageweave Vest", "hash": "e5c29ff662bc8b59", "src": "db2@1.60.1.70124"}
+{"id": 439087, "field": "name", "en": "Black Mageweave Vest", "hash": "e5c29ff662bc8b59", "src": "db2@1.60.1.70124"}
+{"id": 439088, "field": "name", "en": "Black Mageweave Leggings", "hash": "84eafd7da80c4cb9", "src": "db2@1.60.1.70124"}
+{"id": 439089, "field": "name", "en": "Black Mageweave Leggings", "hash": "84eafd7da80c4cb9", "src": "db2@1.60.1.70124"}
+{"id": 439090, "field": "name", "en": "Pattern: Earthen Silk Belt", "hash": "506f2136873eeaa8", "src": "db2@1.60.1.70124"}
+{"id": 439090, "field": "description", "en": "Teaches you how to sew an Earthen Silk Belt.", "hash": "3960c204b8d60c65", "src": "db2@1.60.1.70124"}
+{"id": 439091, "field": "name", "en": "Earthen Silk Belt", "hash": "9669da517749a460", "src": "db2@1.60.1.70124"}
+{"id": 439092, "field": "name", "en": "Pattern: Crimson Silk Shoulders", "hash": "706b5495fff5966c", "src": "db2@1.60.1.70124"}
+{"id": 439092, "field": "description", "en": "Teaches you how to sew Crimson Silk Shoulders.", "hash": "ac23fc8bc56c760d", "src": "db2@1.60.1.70124"}
+{"id": 439093, "field": "name", "en": "Crimson Silk Shoulders", "hash": "86254423a4da4963", "src": "db2@1.60.1.70124"}
+{"id": 439094, "field": "name", "en": "Long Silken Cloak", "hash": "6f51972669e70130", "src": "db2@1.60.1.70124"}
+{"id": 439095, "field": "name", "en": "Long Silken Cloak", "hash": "6f51972669e70130", "src": "db2@1.60.1.70124"}
+{"id": 439096, "field": "name", "en": "Pattern: Boots of the Enchanter", "hash": "b218e58e05075ff7", "src": "db2@1.60.1.70124"}
+{"id": 439096, "field": "description", "en": "Teaches you how to sew Boots of the Enchanter.", "hash": "47f52ca061745b09", "src": "db2@1.60.1.70124"}
+{"id": 439097, "field": "name", "en": "Boots of the Enchanter", "hash": "c7d2d51ca9ec12dd", "src": "db2@1.60.1.70124"}
+{"id": 439098, "field": "name", "en": "Crimson Silk Belt", "hash": "5a7e617675ca11b4", "src": "db2@1.60.1.70124"}
+{"id": 439099, "field": "name", "en": "Crimson Silk Belt", "hash": "5a7e617675ca11b4", "src": "db2@1.60.1.70124"}
+{"id": 439100, "field": "name", "en": "Earthen Vest", "hash": "d72904303956729b", "src": "db2@1.60.1.70124"}
+{"id": 439101, "field": "name", "en": "Earthen Vest", "hash": "d72904303956729b", "src": "db2@1.60.1.70124"}
+{"id": 439102, "field": "name", "en": "Enchanter's Cowl", "hash": "e2ca3ab20fbd643a", "src": "db2@1.60.1.70124"}
+{"id": 439103, "field": "name", "en": "Enchanter's Cowl", "hash": "e2ca3ab20fbd643a", "src": "db2@1.60.1.70124"}
+{"id": 439105, "field": "name", "en": "Big Voodoo Mask", "hash": "fd990e99167ee858", "src": "db2@1.60.1.70124"}
+{"id": 439106, "field": "name", "en": "Pattern: Big Voodoo Mask", "hash": "d4e6139e9d6a3eac", "src": "db2@1.60.1.70124"}
+{"id": 439106, "field": "description", "en": "Teaches you how to craft a Big Voodoo Mask.", "hash": "70de05483c28d11a", "src": "db2@1.60.1.70124"}
+{"id": 439108, "field": "name", "en": "Big Voodoo Robe", "hash": "fe4834651118431d", "src": "db2@1.60.1.70124"}
+{"id": 439109, "field": "name", "en": "Pattern: Big Voodoo Robe", "hash": "d595396a98039971", "src": "db2@1.60.1.70124"}
+{"id": 439109, "field": "description", "en": "Teaches you how to craft a Big Voodoo Robe.", "hash": "ca7e5cac0eef67d3", "src": "db2@1.60.1.70124"}
+{"id": 439110, "field": "name", "en": "Guardian Leather Bracers", "hash": "597747d170ca5124", "src": "db2@1.60.1.70124"}
+{"id": 439111, "field": "name", "en": "Pattern: Guardian Leather Bracers", "hash": "ec3b955e194533d4", "src": "db2@1.60.1.70124"}
+{"id": 439111, "field": "description", "en": "Teaches you how to craft Guardian Leather Bracers.", "hash": "466e39c5bc9cfc5f", "src": "db2@1.60.1.70124"}
+{"id": 439112, "field": "name", "en": "Guardian Belt", "hash": "6711ded4608a85a1", "src": "db2@1.60.1.70124"}
+{"id": 439113, "field": "name", "en": "Pattern: Guardian Belt", "hash": "d9653fc1229ac726", "src": "db2@1.60.1.70124"}
+{"id": 439113, "field": "description", "en": "Teaches you how to craft a Guardian Belt.", "hash": "9d151b30d95cf56c", "src": "db2@1.60.1.70124"}
+{"id": 439114, "field": "name", "en": "Guardian Pants", "hash": "b35c500ca3126e45", "src": "db2@1.60.1.70124"}
+{"id": 439115, "field": "name", "en": "Guardian Pants", "hash": "b35c500ca3126e45", "src": "db2@1.60.1.70124"}
+{"id": 439116, "field": "name", "en": "Turtle Scale Breastplate", "hash": "b21ca005aa3b03e4", "src": "db2@1.60.1.70124"}
+{"id": 439117, "field": "name", "en": "Turtle Scale Breastplate", "hash": "b21ca005aa3b03e4", "src": "db2@1.60.1.70124"}
+{"id": 439118, "field": "name", "en": "Turtle Scale Gloves", "hash": "cbbcef03c17544f0", "src": "db2@1.60.1.70124"}
+{"id": 439119, "field": "name", "en": "Pattern: Turtle Scale Gloves", "hash": "b77a0071ecb90d60", "src": "db2@1.60.1.70124"}
+{"id": 439119, "field": "description", "en": "Teaches you how to craft Turtle Scale Gloves.", "hash": "6915ba51f84c8ed9", "src": "db2@1.60.1.70124"}
+{"id": 439120, "field": "name", "en": "Golden Scale Gauntlets", "hash": "c0cc894275b84135", "src": "db2@1.60.1.70124"}
+{"id": 439121, "field": "name", "en": "Plans: Golden Scale Gauntlets", "hash": "1cf2d7eafbf9e34f", "src": "db2@1.60.1.70124"}
+{"id": 439121, "field": "description", "en": "Teaches you how to make Golden Scale Gauntlets.", "hash": "715dda3c394ef51f", "src": "db2@1.60.1.70124"}
+{"id": 439122, "field": "name", "en": "Golden Scale Boots", "hash": "9ed6b2b07552fdb7", "src": "db2@1.60.1.70124"}
+{"id": 439123, "field": "name", "en": "Plans: Golden Scale Boots", "hash": "2905262b1dff993f", "src": "db2@1.60.1.70124"}
+{"id": 439123, "field": "description", "en": "Teaches you how to make Golden Scale Boots.", "hash": "0a568eab6a9aca32", "src": "db2@1.60.1.70124"}
+{"id": 439124, "field": "name", "en": "Golden Scale Cuirass", "hash": "f6824442dc492eb3", "src": "db2@1.60.1.70124"}
+{"id": 439125, "field": "name", "en": "Plans: Golden Scale Cuirass", "hash": "fa5cea535fd9bcf8", "src": "db2@1.60.1.70124"}
+{"id": 439125, "field": "description", "en": "Teaches you how to make a Golden Scale Cuirass.", "hash": "edc792b8b5f5380d", "src": "db2@1.60.1.70124"}
+{"id": 439126, "field": "name", "en": "Golden Scale Coif", "hash": "9daead8a80eeca9d", "src": "db2@1.60.1.70124"}
+{"id": 439127, "field": "name", "en": "Plans: Golden Scale Coif", "hash": "2f590c3be8684db2", "src": "db2@1.60.1.70124"}
+{"id": 439127, "field": "description", "en": "Teaches you how to make a Golden Scale Coif.", "hash": "9a0df3bb5333808f", "src": "db2@1.60.1.70124"}
+{"id": 439128, "field": "name", "en": "Moonsteel Broadsword", "hash": "949f9da7232ee442", "src": "db2@1.60.1.70124"}
+{"id": 439129, "field": "name", "en": "Plans: Moonsteel Broadsword", "hash": "987a43b8a6bf7276", "src": "db2@1.60.1.70124"}
+{"id": 439129, "field": "description", "en": "Teaches you how to make a Moonsteel Broadsword.", "hash": "d6cc506dd6d493df", "src": "db2@1.60.1.70124"}
+{"id": 439130, "field": "name", "en": "Golden Scale Shoulders", "hash": "90dbc7b76e8f43b9", "src": "db2@1.60.1.70124"}
+{"id": 439131, "field": "name", "en": "Plans: Golden Scale Shoulders", "hash": "ed02165af4d0e5d3", "src": "db2@1.60.1.70124"}
+{"id": 439131, "field": "description", "en": "Teaches you how to make Golden Scale Shoulders.", "hash": "e92acf9ef79617ee", "src": "db2@1.60.1.70124"}
+{"id": 439132, "field": "name", "en": "Golden Scale Leggings", "hash": "556d06fa60816eb1", "src": "db2@1.60.1.70124"}
+{"id": 439133, "field": "name", "en": "Plans: Golden Scale Leggings", "hash": "4e5001b783c7cce7", "src": "db2@1.60.1.70124"}
+{"id": 439133, "field": "description", "en": "Teaches you how to make Golden Scale Leggings.", "hash": "b852c8e6dc817cf7", "src": "db2@1.60.1.70124"}
+{"id": 439134, "field": "name", "en": "Greater Mystic Wand", "hash": "69beed59d61d9e79", "src": "db2@1.60.1.70124"}
+{"id": 439134, "field": "description", "en": "Creates a greater mystic wand.", "hash": "a69d351a7ada0289", "src": "db2@1.60.1.70124"}
+{"id": 439135, "field": "name", "en": "Greater Mystic Wand", "hash": "69beed59d61d9e79", "src": "db2@1.60.1.70124"}
+{"id": 439154, "field": "name", "en": "Sprocketfire Punch", "hash": "625a19133fe279c4", "src": "db2@1.60.1.70124"}
+{"id": 439155, "field": "name", "en": "Sigil of Innovation", "hash": "98260a61ea43217f", "src": "db2@1.60.1.70124"}
+{"id": 439155, "field": "description", "en": "Gain an enchanted sigil of innovation, empowering you to deal up to $s1 increased damage and healing with spells, and increasing attack power by $s2 for $d. This can only be applied outside of combat. ", "hash": "5b27e1aab5fc1b93", "src": "db2@1.60.1.70124"}
+{"id": 439155, "field": "aura", "en": "Empowered by Innovation. Dealing up to $s1 increased damage and healing with spells, and increasing attack power by increased $s2.", "hash": "21bf66a37ad9a5ae", "src": "db2@1.60.1.70124"}
+{"id": 439156, "field": "name", "en": "Sigil of Innovation", "hash": "98260a61ea43217f", "src": "db2@1.60.1.70124"}
+{"id": 439158, "field": "name", "en": "Supercooled Smash", "hash": "cea8dfae21ef9840", "src": "db2@1.60.1.70124"}
+{"id": 439159, "field": "name", "en": "Supercooled Smash", "hash": "cea8dfae21ef9840", "src": "db2@1.60.1.70124"}
+{"id": 439164, "field": "name", "en": "Dismantle", "hash": "38890e653e29f507", "src": "db2@1.60.1.70124"}
+{"id": 439336, "field": "name", "en": "Frozen Shrapnel", "hash": "2abaf53bcf7bbce5", "src": "db2@1.60.1.70124"}
+{"id": 439338, "field": "name", "en": "Walking Bomb Passive Proc (100%)", "hash": "d1503b4b8cb8fe8f", "src": "db2@1.60.1.70124"}
+{"id": 439342, "field": "name", "en": "Hazardous Hammer", "hash": "3e9d59cda1e4932c", "src": "db2@1.60.1.70124"}
+{"id": 439343, "field": "name", "en": "Hazardous Hammer", "hash": "3e9d59cda1e4932c", "src": "db2@1.60.1.70124"}
+{"id": 439431, "field": "name", "en": "Windfury Weapon", "hash": "f57112af36ea575b", "src": "db2@1.60.1.70124"}
+{"id": 439431, "field": "description", "en": "Imbue the Shaman's weapon with wind.  Each hit has a 20% chance of granting you $8233s2 extra $lattack:attacks; with $8233s1 extra melee attack power.  Lasts for 5 minutes.", "hash": "97843252fa89508a", "src": "db2@1.60.1.70124"}
+{"id": 439440, "field": "name", "en": "Windfury Weapon", "hash": "f57112af36ea575b", "src": "db2@1.60.1.70124"}
+{"id": 439441, "field": "name", "en": "Windfury Weapon", "hash": "f57112af36ea575b", "src": "db2@1.60.1.70124"}
+{"id": 439462, "field": "name", "en": "Sebacious Poison", "hash": "e66ddea004437fab", "src": "db2@1.60.1.70124"}
+{"id": 439462, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, reducing the enemy's armor by $439471s1 for $439471d.\r\n\r\nSebacious Poison benefits from the Improved Expose Armor talent.", "hash": "2d0ef69d1cec968e", "src": "db2@1.60.1.70124"}
+{"id": 439464, "field": "name", "en": "Numbing Poison", "hash": "dd1af83ce6c83f73", "src": "db2@1.60.1.70124"}
+{"id": 439464, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, increasing the time between the enemy's melee attacks by $439472s1% for $439472d.", "hash": "706228c1ec280488", "src": "db2@1.60.1.70124"}
+{"id": 439465, "field": "name", "en": "Atrophic Poison", "hash": "94261ba4379297a0", "src": "db2@1.60.1.70124"}
+{"id": 439465, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, reducing the enemy's melee attack power by $439473s1 for $439473d.", "hash": "97dc5decf1f1db6f", "src": "db2@1.60.1.70124"}
+{"id": 439471, "field": "name", "en": "Sebacious Poison", "hash": "e66ddea004437fab", "src": "db2@1.60.1.70124"}
+{"id": 439471, "field": "aura", "en": "Armor reduced by $w1.", "hash": "aedf6639961a6e99", "src": "db2@1.60.1.70124"}
+{"id": 439472, "field": "name", "en": "Numbing Poison", "hash": "dd1af83ce6c83f73", "src": "db2@1.60.1.70124"}
+{"id": 439472, "field": "aura", "en": "Time between attacks increased by $s1%.", "hash": "4f44ab25fd31a67e", "src": "db2@1.60.1.70124"}
+{"id": 439473, "field": "name", "en": "Atrophic Poison", "hash": "94261ba4379297a0", "src": "db2@1.60.1.70124"}
+{"id": 439473, "field": "aura", "en": "Melee attack power reduced by $s1.", "hash": "100ea0c6aa28746c", "src": "db2@1.60.1.70124"}
+{"id": 439500, "field": "name", "en": "Sebacious Poison", "hash": "e66ddea004437fab", "src": "db2@1.60.1.70124"}
+{"id": 439500, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $439462h% chance of poisoning the enemy, reducing the enemy's armor by $439471s1 for $439471d.  105 charges.\r\n\r\nSebacious Poison benefits from the Improved Expose Armor talent.", "hash": "a3ff84435a701ab9", "src": "db2@1.60.1.70124"}
+{"id": 439503, "field": "name", "en": "Atrophic Poison", "hash": "94261ba4379297a0", "src": "db2@1.60.1.70124"}
+{"id": 439503, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $439465h% chance of poisoning the enemy, reducing the enemy's melee attack power by $439473s1 for $439473d.  105 charges.", "hash": "ebede533df6ce58b", "src": "db2@1.60.1.70124"}
+{"id": 439505, "field": "name", "en": "Numbing Poison", "hash": "dd1af83ce6c83f73", "src": "db2@1.60.1.70124"}
+{"id": 439505, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $439464h% chance of poisoning the enemy, increasing the time between the enemy's melee attacks by $439472s1% for $439472d.  105 charges.", "hash": "05dfb15497b675bf", "src": "db2@1.60.1.70124"}
+{"id": 439510, "field": "name", "en": "Improved Swipe", "hash": "ab20beea7a505078", "src": "db2@1.60.1.70124"}
+{"id": 439510, "field": "description", "en": "While in Cat Form, your Swipe ability becomes Swipe (Cat), and while in Bear Form, your Swipe ability strikes up to $s1 additional enemies.\r\n\r\nSwipe (Cat)\r\n$@spellicon411128\r\n$@spelldesc411128", "hash": "7f92f9611f525809", "src": "db2@1.60.1.70124"}
+{"id": 439512, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70124"}
+{"id": 439540, "field": "name", "en": "Walking Bomb Passive Proc (100%)", "hash": "d1503b4b8cb8fe8f", "src": "db2@1.60.1.70124"}
+{"id": 439581, "field": "name", "en": "[DNT] - Radiation Cloud Visual", "hash": "fe5331456407a027", "src": "db2@1.60.1.70124"}
+{"id": 439624, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70124"}
+{"id": 439626, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70124"}
+{"id": 439627, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70124"}
+{"id": 439651, "field": "name", "en": "Increased Fist Weapons", "hash": "14ec2ce3cad2bbc4", "src": "db2@1.60.1.70124"}
+{"id": 439651, "field": "description", "en": "Increased Fist Weapons +$s1.", "hash": "cffc03044977ec6c", "src": "db2@1.60.1.70124"}
+{"id": 439670, "field": "name", "en": "[DNT] Punch Randomizer", "hash": "bc57771392b3671d", "src": "db2@1.60.1.70124"}
+{"id": 439671, "field": "name", "en": "[DNT] Special Ability Randomizer", "hash": "b10a03ad52c90caa", "src": "db2@1.60.1.70124"}
+{"id": 439672, "field": "name", "en": "Radioactive Bomb", "hash": "41546df8e9e7b912", "src": "db2@1.60.1.70124"}
+{"id": 439691, "field": "name", "en": "Teleport to Booty Bay", "hash": "607000b1d98f75b7", "src": "db2@1.60.1.70124"}
+{"id": 439691, "field": "description", "en": "Sends player to Gnomeregan.", "hash": "187b898451d33e10", "src": "db2@1.60.1.70124"}
+{"id": 439731, "field": "name", "en": "Domesticated Attack Chicken", "hash": "81c3f42ffe3237d2", "src": "db2@1.60.1.70124"}
+{"id": 439733, "field": "name", "en": "Tree of Life", "hash": "1a6e27e57937048e", "src": "db2@1.60.1.70124"}
+{"id": 439733, "field": "description", "en": "Shapeshift into the Tree of Life. While in this form you increase healing received by $439745s1% for all party members within $439745a1 yards, Wild Growth healing is increased by $439734s8%, your heal over time spells cost $439734s1% less, you gain $439734s2% increased Spirit, you gain $439734s3% increased armor, and you cannot cast harmful spells.\r\n\r\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.", "hash": "c887c72f657d9665", "src": "db2@1.60.1.70124"}
+{"id": 439733, "field": "aura", "en": "Immune to Polymorph effects.\r\nReduces mana cost of heal over time spells by $439734s1%.\r\nIncreases Spirit by $439734s2% and armor by $439734s3%.\r\nIncreases healing received by $439745s1% for all party members within $439745a1 yards and healing done by Wild Growth by $439734s8%.", "hash": "3b08cc5b67df8768", "src": "db2@1.60.1.70124"}
+{"id": 439734, "field": "name", "en": "Tree of Life (Passive)", "hash": "663bbde6589d05ad", "src": "db2@1.60.1.70124"}
+{"id": 439745, "field": "name", "en": "Tree of Life", "hash": "1a6e27e57937048e", "src": "db2@1.60.1.70124"}
+{"id": 439745, "field": "description", "en": "Increased all healing received by party members within $a1 yards by $s1%.", "hash": "29dc88392ced17e0", "src": "db2@1.60.1.70124"}
+{"id": 439745, "field": "aura", "en": "Increases healing received by $s1%.", "hash": "ec4c26b6ed245c22", "src": "db2@1.60.1.70124"}
+{"id": 439748, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70124"}
+{"id": 439748, "field": "description", "en": "You summon a flurry of stars from the sky over $d, striking targets within $439755a yards of your location, each dealing ${$439753m1*$<damagepower>/100} to ${$439753M1*$<damagepower>/100} Arcane damage to its target and ${$439756m1*$<damagepower>/100} Arcane damage to all other enemies within $439756a1 yards. Maximum 20 stars.\r\n\r\nShapeshifting or mounting cancels the effect. Any effect which causes you to lose control of your character will suppress the Starfall effect.\r\n\r\nBenefits from and triggers most talents and effects that trigger or benefit from Moonfire.", "hash": "16bd2a8dc8712cfd", "src": "db2@1.60.1.70124"}
+{"id": 439748, "field": "aura", "en": "Summoning stars from the sky.", "hash": "e60f8fbc522322ff", "src": "db2@1.60.1.70124"}
+{"id": 439753, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70124"}
+{"id": 439753, "field": "description", "en": "You summon a flurry of stars from the sky on all targets within 30 yards of the caster, each dealing $50288s1 Arcane damage. Also causes $50294s1 Arcane damage to all other enemies within $50294a1 yards of the enemy target. Maximum 20 stars. Lasts $48505d.", "hash": "e6e31d13554eb656", "src": "db2@1.60.1.70124"}
+{"id": 439753, "field": "aura", "en": "You summon a flurry of stars from the sky on all targets within 30 yards of the caster, each dealing $50288s1 Arcane damage. Also causes $50294s1 Arcane damage to all other enemies within $50294a1 yards of the enemy target. Maximum 20 stars. Lasts $48505d.", "hash": "e6e31d13554eb656", "src": "db2@1.60.1.70124"}
+{"id": 439755, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70124"}
+{"id": 439756, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70124"}
+{"id": 439756, "field": "aura", "en": "Maximum 20 stars. Lasts $48505d.", "hash": "1ae310a75b0ea3b7", "src": "db2@1.60.1.70124"}
+{"id": 439765, "field": "name", "en": "Engrave Cloak - Improved Swipe", "hash": "7a3558da3fc17dea", "src": "db2@1.60.1.70124"}
+{"id": 439765, "field": "description", "en": "Engrave your cloak with the Improved Swipe rune:\r\n\r\n$@spellicon439510\r\n$@spelldesc439510", "hash": "e1173b739de43dc4", "src": "db2@1.60.1.70124"}
+{"id": 439766, "field": "name", "en": "Tree of Life", "hash": "1a6e27e57937048e", "src": "db2@1.60.1.70124"}
+{"id": 439766, "field": "description", "en": "Gain the Tree of Life ability:\r\n\r\n$@spellicon439766\r\n$@spelldesc439733", "hash": "26efaedb94cd4665", "src": "db2@1.60.1.70124"}
+{"id": 439767, "field": "name", "en": "Engrave Cloak - Tree of Life", "hash": "1a3bc7ceda578811", "src": "db2@1.60.1.70124"}
+{"id": 439767, "field": "description", "en": "Engrave your cloak with the Tree of Life rune:\r\n\r\n$@spellicon439766\r\n$@spelldesc439733", "hash": "33ad400e299616e1", "src": "db2@1.60.1.70124"}
+{"id": 439768, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70124"}
+{"id": 439768, "field": "description", "en": "Gain the Starfall\r\n ability:\r\n\r\n$@spellicon439748\r\n$@spelldesc439748", "hash": "29e9237861c875ed", "src": "db2@1.60.1.70124"}
+{"id": 439770, "field": "name", "en": "Engrave Cloak - Starfall", "hash": "909e31f5178cdee0", "src": "db2@1.60.1.70124"}
+{"id": 439770, "field": "description", "en": "Engrave your cloak with the Starfall\r\n rune:\r\n\r\n$@spellicon439748\r\n$@spelldesc439748", "hash": "49741463422ae44e", "src": "db2@1.60.1.70124"}
+{"id": 439822, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70124"}
+{"id": 439823, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70124"}
+{"id": 439824, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70124"}
+{"id": 439826, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70124"}
+{"id": 439870, "field": "name", "en": "Hyperconductive Goldwrap", "hash": "5585cafed765d929", "src": "db2@1.60.1.70124"}
+{"id": 439885, "field": "name", "en": "[DNT] Jump to Ground", "hash": "12c1db3eb264270d", "src": "db2@1.60.1.70124"}
+{"id": 439939, "field": "name", "en": "Freezing", "hash": "592cdaef5a06395d", "src": "db2@1.60.1.70124"}
+{"id": 439944, "field": "name", "en": "Radiation Overdose", "hash": "d9e3cfde69192820", "src": "db2@1.60.1.70124"}
+{"id": 439946, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70124"}
+{"id": 439947, "field": "name", "en": "[DNT] Teleport Player Back To Crowd Pummeler's Platform", "hash": "b1b815c6625062cd", "src": "db2@1.60.1.70124"}
+{"id": 439956, "field": "name", "en": "Revive Pet", "hash": "b0e134b7aec9a64e", "src": "db2@1.60.1.70124"}
+{"id": 439958, "field": "name", "en": "Kill, Maim, Bleed!", "hash": "beb1d5bb96e68941", "src": "db2@1.60.1.70124"}
+{"id": 439958, "field": "aura", "en": "The Blood Loa rewards danger.", "hash": "548d5a6205c88814", "src": "db2@1.60.1.70124"}
+{"id": 439959, "field": "name", "en": "Lesser Arcane Elixir", "hash": "f80f15c18a53ca45", "src": "db2@1.60.1.70124"}
+{"id": 439959, "field": "description", "en": "Increases spell damage by up to $s1 for $d.", "hash": "bfd948e79e2ad268", "src": "db2@1.60.1.70124"}
+{"id": 439959, "field": "aura", "en": "Magical damage dealt by spells and abilities is increased by up to $s1.", "hash": "a5bf5341273beb75", "src": "db2@1.60.1.70124"}
+{"id": 439960, "field": "name", "en": "Lesser Arcane Elixir", "hash": "f80f15c18a53ca45", "src": "db2@1.60.1.70124"}
+{"id": 439995, "field": "name", "en": "Resurrection", "hash": "4e95d3bcfd7d75d3", "src": "db2@1.60.1.70124"}
+{"id": 439996, "field": "name", "en": "Resurrection", "hash": "4e95d3bcfd7d75d3", "src": "db2@1.60.1.70124"}
+{"id": 439998, "field": "name", "en": "Resurrection", "hash": "4e95d3bcfd7d75d3", "src": "db2@1.60.1.70124"}

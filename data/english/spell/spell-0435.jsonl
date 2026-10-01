@@ -1,261 +1,261 @@
-{"id": 435011, "field": "name", "en": "Fading Fiery Intuition", "hash": "3366a806ce80ff37", "src": "db2@1.60.1.70009"}
-{"id": 435081, "field": "name", "en": "Beastly Effigy", "hash": "1dd96e650863e902", "src": "db2@1.60.1.70009"}
-{"id": 435081, "field": "aura", "en": "The beast awaits a challenger.", "hash": "141666915f8426fa", "src": "db2@1.60.1.70009"}
-{"id": 435083, "field": "name", "en": "Search Corpse", "hash": "30228c33ce632c05", "src": "db2@1.60.1.70009"}
-{"id": 435086, "field": "name", "en": "Brimstone Carving", "hash": "ecb7687329e466f5", "src": "db2@1.60.1.70009"}
-{"id": 435097, "field": "name", "en": "Idol of the Heckler", "hash": "0f889717c6158410", "src": "db2@1.60.1.70009"}
-{"id": 435097, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70009"}
-{"id": 435100, "field": "name", "en": "[DNT] Idol of the Heckler Roar Effect", "hash": "8ed0a0df11f05305", "src": "db2@1.60.1.70009"}
-{"id": 435102, "field": "name", "en": "[DNT] Idol of the Heckler Roar Proc Aura", "hash": "4a67af39fe83cd13", "src": "db2@1.60.1.70009"}
-{"id": 435111, "field": "name", "en": "[DNT] Idol of the Heckler Challenging Roar Dummy", "hash": "a443f4319d0c97ed", "src": "db2@1.60.1.70009"}
-{"id": 435112, "field": "name", "en": "Vengeance", "hash": "622d71d56b622ec3", "src": "db2@1.60.1.70009"}
-{"id": 435112, "field": "description", "en": "Slows falling speed for $d.", "hash": "52529547b0d6c3e8", "src": "db2@1.60.1.70009"}
-{"id": 435112, "field": "aura", "en": "Slows falling speed.", "hash": "e05c0825947d7a89", "src": "db2@1.60.1.70009"}
-{"id": 435113, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70009"}
-{"id": 435117, "field": "name", "en": "Meditation on the Abyss", "hash": "844d7e2a9517e24f", "src": "db2@1.60.1.70009"}
-{"id": 435117, "field": "description", "en": "Share meditation with the target Priest.", "hash": "cd0391f41fcc480d", "src": "db2@1.60.1.70009"}
-{"id": 435117, "field": "aura", "en": "Your mind struggles to hold the secrets of the naga.", "hash": "30a272541f4d8d81", "src": "db2@1.60.1.70009"}
-{"id": 435120, "field": "name", "en": "Learn Rune", "hash": "3cfcf3f0f524ffd2", "src": "db2@1.60.1.70009"}
-{"id": 435120, "field": "description", "en": "Focus on the Vision to learn a new spell.  Requires a glimpse of corrupt knowledge.", "hash": "045217d4a9323fc4", "src": "db2@1.60.1.70009"}
-{"id": 435139, "field": "name", "en": "[DNT] S03 - 40 - Druid - Destroy Water Globe", "hash": "7d2d966e102480ae", "src": "db2@1.60.1.70009"}
-{"id": 435167, "field": "name", "en": "Miniaturized Combustion Chamber", "hash": "ec28af2809ac136d", "src": "db2@1.60.1.70009"}
-{"id": 435167, "field": "description", "en": "Randomly channels between $m1 and $M1 health into between $m2 and $M2 mana every $t1 sec for $d.", "hash": "fd942810a7861645", "src": "db2@1.60.1.70009"}
-{"id": 435168, "field": "name", "en": "Guard of the Innovator", "hash": "457fd9e30bb8847d", "src": "db2@1.60.1.70009"}
-{"id": 435168, "field": "description", "en": "A protective mana shield surrounds the caster absorbing 250 damage. While the shield holds, increases mana regeneration by $s2 every $t2 sec for $d.", "hash": "0d9344bcc41deb8d", "src": "db2@1.60.1.70009"}
-{"id": 435168, "field": "aura", "en": "Absorbs damage and increases mana regeneration by $s2 every $t2 sec.", "hash": "f4f32f919accb500", "src": "db2@1.60.1.70009"}
-{"id": 435169, "field": "name", "en": "Poison Cloud", "hash": "5b08308c67162f04", "src": "db2@1.60.1.70009"}
-{"id": 435169, "field": "description", "en": "Deals $s1 Nature damage every $t1 sec to any enemy in an $a1 yard radius around the caster for $d.", "hash": "9eb2fe621a2ab194", "src": "db2@1.60.1.70009"}
-{"id": 435169, "field": "aura", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70009"}
-{"id": 435180, "field": "name", "en": "Water of Elune'ara", "hash": "0dcb8b40019ed1c2", "src": "db2@1.60.1.70009"}
-{"id": 435180, "field": "aura", "en": "Carrying the Water of Elune'ara.", "hash": "8943bfe55d212f0f", "src": "db2@1.60.1.70009"}
-{"id": 435185, "field": "name", "en": "Combine Partial Spell Notes", "hash": "2cb678f18a2a9953", "src": "db2@1.60.1.70009"}
-{"id": 435185, "field": "description", "en": "Combine the collected Partial Spell Notes into a scroll that will teach a new Engraving spell.", "hash": "aa4b1cb2353eb797", "src": "db2@1.60.1.70009"}
-{"id": 435187, "field": "name", "en": "[DNT] S03 - 40 - Druid - Destroy Water Globe (Globe Only)", "hash": "2a07e78035f9d97a", "src": "db2@1.60.1.70009"}
-{"id": 435195, "field": "name", "en": "Petrification", "hash": "0cdeada17e9529e1", "src": "db2@1.60.1.70009"}
-{"id": 435195, "field": "aura", "en": "Immune to all attacks and spells.  Cannot attack, move or use spells.", "hash": "16dc02b3b7f74fb7", "src": "db2@1.60.1.70009"}
-{"id": 435204, "field": "name", "en": "Cooling Down", "hash": "f6c61429d50b9ccd", "src": "db2@1.60.1.70009"}
-{"id": 435204, "field": "aura", "en": "Still too hot! More cold!", "hash": "645418b447f382ab", "src": "db2@1.60.1.70009"}
-{"id": 435205, "field": "name", "en": "Pyromantic Mishap", "hash": "09da54d686a77b1a", "src": "db2@1.60.1.70009"}
-{"id": 435205, "field": "aura", "en": "Chased by embers of a persistent fire spell.", "hash": "c785e8f5642c1743", "src": "db2@1.60.1.70009"}
-{"id": 435206, "field": "name", "en": "Pyromantic Mishap (Frost Absorb)", "hash": "e742e0e224046122", "src": "db2@1.60.1.70009"}
-{"id": 435206, "field": "aura", "en": "Chased by embers of a persistent fire spell.", "hash": "c785e8f5642c1743", "src": "db2@1.60.1.70009"}
-{"id": 435213, "field": "name", "en": "Assemble the Offering", "hash": "16edfe291aabe009", "src": "db2@1.60.1.70009"}
-{"id": 435213, "field": "description", "en": "Combine 10 Strong Harpy Feathers and 3 Cloud Serpent Fangs with 1 Silken Thread to create an Offering to the Wind Spirit.", "hash": "f5d79734a0cda31d", "src": "db2@1.60.1.70009"}
-{"id": 435218, "field": "name", "en": "Offering to the Wind Spirit", "hash": "534e55db4f3b9f81", "src": "db2@1.60.1.70009"}
-{"id": 435218, "field": "description", "en": "Make an Offering to the Wind Spirit and show your faith.", "hash": "69dd8697a19073dd", "src": "db2@1.60.1.70009"}
-{"id": 435218, "field": "aura", "en": "Show a test of faith to the Wind Spirit.", "hash": "2536d7ab184c3582", "src": "db2@1.60.1.70009"}
-{"id": 435256, "field": "name", "en": "Altar of the Wind Spirit Trial", "hash": "96f46c7def6274a7", "src": "db2@1.60.1.70009"}
-{"id": 435317, "field": "name", "en": "Cougar Cage Key", "hash": "4cd730a65a24f93a", "src": "db2@1.60.1.70009"}
-{"id": 435317, "field": "description", "en": "Opens Cougar Cage", "hash": "301667bd0a4cc40d", "src": "db2@1.60.1.70009"}
-{"id": 435349, "field": "name", "en": "Grubbis Vent 01 Disturb", "hash": "a8f732af5fbc2e8e", "src": "db2@1.60.1.70009"}
-{"id": 435350, "field": "name", "en": "Grubbis Vent 02 Disturb", "hash": "c80d1b9d48c2cfa8", "src": "db2@1.60.1.70009"}
-{"id": 435351, "field": "name", "en": "Grubbis Vent 03 Disturb", "hash": "e723048b31c970c2", "src": "db2@1.60.1.70009"}
-{"id": 435352, "field": "name", "en": "Grubbis - Cave A - Wave 1", "hash": "a117cd20e5ba8f3e", "src": "db2@1.60.1.70009"}
-{"id": 435353, "field": "name", "en": "Grubbis - Cave A - Wave 2", "hash": "a117cd21e5ba8f3f", "src": "db2@1.60.1.70009"}
-{"id": 435354, "field": "name", "en": "Grubbis - Cave A - Wave 3", "hash": "a117cd22e5ba8f40", "src": "db2@1.60.1.70009"}
-{"id": 435355, "field": "name", "en": "Grubbis - Cave B - Wave 1", "hash": "894dff3a82101c7c", "src": "db2@1.60.1.70009"}
-{"id": 435356, "field": "name", "en": "Grubbis - Cave B - Wave 2", "hash": "894dff3b82101c7d", "src": "db2@1.60.1.70009"}
-{"id": 435357, "field": "name", "en": "Grubbis - Cave B - Wave 3", "hash": "894dff3c82101c7e", "src": "db2@1.60.1.70009"}
-{"id": 435358, "field": "name", "en": "Self Screen Shake", "hash": "15eef7c0aed0bb4d", "src": "db2@1.60.1.70009"}
-{"id": 435359, "field": "name", "en": "Hardened to the Core", "hash": "34a21d581e1c150b", "src": "db2@1.60.1.70009"}
-{"id": 435359, "field": "description", "en": "Increases armor by $s1, but movement speed is reduced by $s2%. Effect cannot be removed and lasts for $d.", "hash": "7b087caf33737e20", "src": "db2@1.60.1.70009"}
-{"id": 435359, "field": "aura", "en": "Increases armor by $s1.\r\nMovement speed reduced by $s2%.", "hash": "ecfe61690071f1e5", "src": "db2@1.60.1.70009"}
-{"id": 435360, "field": "name", "en": "Mechanical Slaying 30", "hash": "48b3e055090c3a8a", "src": "db2@1.60.1.70009"}
-{"id": 435360, "field": "description", "en": "+$s1 Attack Power against Mechanical units.", "hash": "7cab8490a1ec5a41", "src": "db2@1.60.1.70009"}
-{"id": 435361, "field": "name", "en": "Grubbis - Final Phase - Wave 1", "hash": "b93e762335059f4d", "src": "db2@1.60.1.70009"}
-{"id": 435362, "field": "name", "en": "Grubbis - Final Phase - Wave 2", "hash": "b93e762435059f4e", "src": "db2@1.60.1.70009"}
-{"id": 435363, "field": "name", "en": "Grubbis - Final Phase - Wave 3", "hash": "b93e762535059f4f", "src": "db2@1.60.1.70009"}
-{"id": 435402, "field": "name", "en": "[DNT] Summon Dropped Pouch", "hash": "eb44cd27e13368bd", "src": "db2@1.60.1.70009"}
-{"id": 435428, "field": "name", "en": "Danger!", "hash": "e564655cdfbff234", "src": "db2@1.60.1.70009"}
-{"id": 435428, "field": "aura", "en": "You sense something lurking nearby.", "hash": "b9e8d638a97e552e", "src": "db2@1.60.1.70009"}
-{"id": 435445, "field": "name", "en": "DNT SF Phase", "hash": "5a65568114ef6b28", "src": "db2@1.60.1.70009"}
-{"id": 435450, "field": "name", "en": "Rune Scrying", "hash": "fcd38cb9cae69aca", "src": "db2@1.60.1.70009"}
-{"id": 435467, "field": "name", "en": "Dismantle", "hash": "38890e653e29f507", "src": "db2@1.60.1.70009"}
-{"id": 435481, "field": "name", "en": "Enchant Weapon - Dismantle", "hash": "2d9ea3e23fa0e9ec", "src": "db2@1.60.1.70009"}
-{"id": 435481, "field": "description", "en": "Permanently enchant a Weapon to cause all spells and attacks to sometimes deal $439164s1 additional damage to mechanical creatures.", "hash": "7694b78d5311a52f", "src": "db2@1.60.1.70009"}
-{"id": 435520, "field": "name", "en": "Activate Vents x1", "hash": "bfdda9f7d5f08c0b", "src": "db2@1.60.1.70009"}
-{"id": 435525, "field": "name", "en": "Activate Vents x2", "hash": "bfdda9f8d5f08c0c", "src": "db2@1.60.1.70009"}
-{"id": 435526, "field": "name", "en": "Activate Vents x3", "hash": "bfdda9f9d5f08c0d", "src": "db2@1.60.1.70009"}
-{"id": 435531, "field": "name", "en": "Attack Power - Feral (+69)", "hash": "566e35de298508db", "src": "db2@1.60.1.70009"}
-{"id": 435531, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70009"}
-{"id": 435532, "field": "name", "en": "Defibrillate", "hash": "44700d2b80208eff", "src": "db2@1.60.1.70009"}
-{"id": 435532, "field": "description", "en": "The staff will sometimes be able to shock a dead player back to life.  Cannot be used when in combat.", "hash": "8573879b617e0d0c", "src": "db2@1.60.1.70009"}
-{"id": 435535, "field": "name", "en": "Increased Fist Weapons", "hash": "14ec2ce3cad2bbc4", "src": "db2@1.60.1.70009"}
-{"id": 435535, "field": "description", "en": "Increased Fist Weapons +$s1.", "hash": "cffc03044977ec6c", "src": "db2@1.60.1.70009"}
-{"id": 435546, "field": "name", "en": "Danger!", "hash": "e564655cdfbff234", "src": "db2@1.60.1.70009"}
-{"id": 435546, "field": "aura", "en": "You sense something lurking nearby.", "hash": "b9e8d638a97e552e", "src": "db2@1.60.1.70009"}
-{"id": 435548, "field": "name", "en": "Danger!", "hash": "e564655cdfbff234", "src": "db2@1.60.1.70009"}
-{"id": 435548, "field": "aura", "en": "You sense something lurking nearby.", "hash": "b9e8d638a97e552e", "src": "db2@1.60.1.70009"}
-{"id": 435552, "field": "name", "en": "[DNT] Summon Bloodscalp Guerrilla", "hash": "aa821934ddb3f915", "src": "db2@1.60.1.70009"}
-{"id": 435563, "field": "name", "en": "Comprehension", "hash": "86a5f87182b4fbe0", "src": "db2@1.60.1.70009"}
-{"id": 435563, "field": "description", "en": "Increases your Comprehension skill by $s1 for $d.", "hash": "b588fed350ae6d61", "src": "db2@1.60.1.70009"}
-{"id": 435563, "field": "aura", "en": "Comprehension skill increased by $s1.", "hash": "2bb1452005cd565e", "src": "db2@1.60.1.70009"}
-{"id": 435571, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70009"}
-{"id": 435610, "field": "name", "en": "Gneuro-Linked Arcano-Filament Monocle", "hash": "c322b87971b54668", "src": "db2@1.60.1.70009"}
-{"id": 435816, "field": "name", "en": "[DNT] Divine Prayer Bead I", "hash": "13344d55ea64ed95", "src": "db2@1.60.1.70009"}
-{"id": 435818, "field": "name", "en": "[DNT] Tarnished Prayer Bead I", "hash": "e6f8b7096ed9d36b", "src": "db2@1.60.1.70009"}
-{"id": 435819, "field": "name", "en": "Faintly Glowing Leather", "hash": "902898927812864b", "src": "db2@1.60.1.70009"}
-{"id": 435827, "field": "name", "en": "Hyperconductive Arcano-Filament", "hash": "dcc71ccf9646acb1", "src": "db2@1.60.1.70009"}
-{"id": 435831, "field": "name", "en": "[DNT] Divine Prayer Bead II", "hash": "d3c392f53b7bcb6e", "src": "db2@1.60.1.70009"}
-{"id": 435832, "field": "name", "en": "Spawn Caverndeep Ambusher", "hash": "9fea48afced0f9cc", "src": "db2@1.60.1.70009"}
-{"id": 435833, "field": "name", "en": "[DNT] Tarnished Prayer Bead II", "hash": "3145ac32ce0db0f1", "src": "db2@1.60.1.70009"}
-{"id": 435835, "field": "name", "en": "Spawn Caverndeep Pillager", "hash": "ff8bfa23bd78bb7b", "src": "db2@1.60.1.70009"}
-{"id": 435839, "field": "name", "en": "[DNT] Divine Prayer Bead III", "hash": "5d1435c445709bdf", "src": "db2@1.60.1.70009"}
-{"id": 435841, "field": "name", "en": "Invoker's Cord", "hash": "29e38154b69813d0", "src": "db2@1.60.1.70009"}
-{"id": 435844, "field": "name", "en": "[DNT] Tarnished Prayer Bead III", "hash": "36a71e5cc2776742", "src": "db2@1.60.1.70009"}
-{"id": 435848, "field": "name", "en": "Invoker's Mantle", "hash": "e0beec614ff88528", "src": "db2@1.60.1.70009"}
-{"id": 435849, "field": "name", "en": "Conjure Comprehension Charms", "hash": "5715e3c84a9738f1", "src": "db2@1.60.1.70009"}
-{"id": 435849, "field": "description", "en": "Conjure $s1 Comprehension Charms.", "hash": "6001721de09c194a", "src": "db2@1.60.1.70009"}
-{"id": 435869, "field": "name", "en": "Jani's Blessing", "hash": "b6febd0b2c31d754", "src": "db2@1.60.1.70009"}
-{"id": 435869, "field": "aura", "en": "Grants you a chance to find unusual items when pickpocketing Stranglethorn Trolls.", "hash": "192054ca9b025c04", "src": "db2@1.60.1.70009"}
-{"id": 435884, "field": "name", "en": "S03 - Tuning and Overrides Passive - Shaman", "hash": "0d00d9aba2f8693e", "src": "db2@1.60.1.70009"}
-{"id": 435890, "field": "name", "en": "Despawn Tracker", "hash": "cfcb1c59cc20eca7", "src": "db2@1.60.1.70009"}
-{"id": 435892, "field": "name", "en": "Burned Alive", "hash": "2522ea3f4d8c978c", "src": "db2@1.60.1.70009"}
-{"id": 435893, "field": "name", "en": "Gniodine Side Effect", "hash": "bcd5aeddebc52ca9", "src": "db2@1.60.1.70009"}
-{"id": 435893, "field": "aura", "en": "You feel more Gnome like...", "hash": "707f82a07550e82e", "src": "db2@1.60.1.70009"}
-{"id": 435895, "field": "name", "en": "Gniodine Dispel", "hash": "3edfc5b40a8f26a9", "src": "db2@1.60.1.70009"}
-{"id": 435895, "field": "description", "en": "Make target ally immune to Snare and Immobilizing effects for the next $d.  Also removes existing Snare and Immobilizing effects.", "hash": "0891898da01d809d", "src": "db2@1.60.1.70009"}
-{"id": 435895, "field": "aura", "en": "Immune to Snare and Immobilizing effects for $d.", "hash": "bafd8efdf03f6aef", "src": "db2@1.60.1.70009"}
-{"id": 435896, "field": "name", "en": "Cluck Cluck??", "hash": "7f095c42b1495e59", "src": "db2@1.60.1.70009"}
-{"id": 435896, "field": "aura", "en": "CLUCK CLUCK!!", "hash": "56f0fe62d9c53125", "src": "db2@1.60.1.70009"}
-{"id": 435897, "field": "name", "en": "Whirlwind Backfire", "hash": "27d4ea8343bea406", "src": "db2@1.60.1.70009"}
-{"id": 435897, "field": "description", "en": "This is a description", "hash": "18dc502ffd5f3ea2", "src": "db2@1.60.1.70009"}
-{"id": 435897, "field": "aura", "en": "Spinning out of control! Attacking all nearby enemies.", "hash": "9e94cffc692d218d", "src": "db2@1.60.1.70009"}
-{"id": 435898, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70009"}
-{"id": 435899, "field": "name", "en": "Gyroscopic Acceleration", "hash": "0a3cd9106c1992ef", "src": "db2@1.60.1.70009"}
-{"id": 435899, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70009"}
-{"id": 435900, "field": "name", "en": "Gyromatic Experiment 420b", "hash": "b37295c2a84563ba", "src": "db2@1.60.1.70009"}
-{"id": 435900, "field": "description", "en": "Increase attack speed by $435899s1%.  You may be able to push this experiment further.....", "hash": "d313f1175b7294f4", "src": "db2@1.60.1.70009"}
-{"id": 435901, "field": "name", "en": "Retricutioner", "hash": "790374e05462d54f", "src": "db2@1.60.1.70009"}
-{"id": 435903, "field": "name", "en": "Enchant Chest - Retricutioner", "hash": "8737017b691a5e9a", "src": "db2@1.60.1.70009"}
-{"id": 435903, "field": "description", "en": "Teaches you how to permanently enchant a piece of chest armor to reflect 9 damage back to the attacker when the bearer is struck in Melee.\r\n", "hash": "4e034784b6fb99bf", "src": "db2@1.60.1.70009"}
-{"id": 435904, "field": "name", "en": "Glowing Gneuro-Linked Cowl", "hash": "8b247b0d29dac64d", "src": "db2@1.60.1.70009"}
-{"id": 435906, "field": "name", "en": "Reflective Truesilver Braincage", "hash": "ff631fe8a7e5a421", "src": "db2@1.60.1.70009"}
-{"id": 435908, "field": "name", "en": "Tempered Interference-Negating Helmet", "hash": "e84c544a1f878a4e", "src": "db2@1.60.1.70009"}
-{"id": 435910, "field": "name", "en": "Low-Background Truesilver Plates", "hash": "53377d5e36a228b3", "src": "db2@1.60.1.70009"}
-{"id": 435912, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435912, "field": "description", "en": "Add $q2 Gold Bars to complete the shipment.", "hash": "5e72f467816a6789", "src": "db2@1.60.1.70009"}
-{"id": 435913, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435913, "field": "description", "en": "Add $q2 Mithril Bars to complete the shipment.", "hash": "47bcfc4fc1b036b7", "src": "db2@1.60.1.70009"}
-{"id": 435914, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435914, "field": "description", "en": "Add $q2 Heavy Hide to complete the shipment.", "hash": "027ba49b6016a93b", "src": "db2@1.60.1.70009"}
-{"id": 435915, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435915, "field": "description", "en": "Add $q2 Thick Leather to complete the shipment.", "hash": "462b79926b7c7e27", "src": "db2@1.60.1.70009"}
-{"id": 435916, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435916, "field": "description", "en": "Add $q2 Fadeleaf to complete the shipment.", "hash": "041e9564099dc515", "src": "db2@1.60.1.70009"}
-{"id": 435917, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435917, "field": "description", "en": "Add $q2 Khadgar's Whisker to complete the shipment.", "hash": "b9225cb586ea3aab", "src": "db2@1.60.1.70009"}
-{"id": 435918, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435918, "field": "description", "en": "Add $q2 Wintersbite to complete the shipment.", "hash": "0a59c18546b48c9c", "src": "db2@1.60.1.70009"}
-{"id": 435919, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435919, "field": "description", "en": "Add $q2 Purple Lotus to complete the shipment.", "hash": "f56f98a720ce7fa0", "src": "db2@1.60.1.70009"}
-{"id": 435920, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435920, "field": "description", "en": "Add $q2 Greater Healing Potions to complete the shipment.", "hash": "274ae74a7b4d52d9", "src": "db2@1.60.1.70009"}
-{"id": 435921, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435921, "field": "description", "en": "Add $q2 Lesser Stoneshield Potions to complete the shipment.", "hash": "636d930daa9d6f11", "src": "db2@1.60.1.70009"}
-{"id": 435922, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435922, "field": "description", "en": "Add $q2 Elixirs of Agility to complete the shipment.", "hash": "4239f8f27e978af6", "src": "db2@1.60.1.70009"}
-{"id": 435923, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435923, "field": "description", "en": "Add $q2 Elixirs of Greater Defense to complete the shipment.", "hash": "8171d316f2c2d0be", "src": "db2@1.60.1.70009"}
-{"id": 435924, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435924, "field": "description", "en": "Add $q2 Massive Iron Axes to complete the shipment.", "hash": "7489aa61e3a57f91", "src": "db2@1.60.1.70009"}
-{"id": 435925, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435925, "field": "description", "en": "Add $q2 Green Iron Bracers to complete the shipment.", "hash": "1bba3cf1d1f64e9b", "src": "db2@1.60.1.70009"}
-{"id": 435926, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435926, "field": "description", "en": "Add $q2 Heavy Mithril Gauntlets to complete the shipment.", "hash": "5d6fedc8a00866db", "src": "db2@1.60.1.70009"}
-{"id": 435927, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435927, "field": "description", "en": "Add $q2 Solid Grinding Stones to complete the shipment.", "hash": "1a2a638588ebf590", "src": "db2@1.60.1.70009"}
-{"id": 435928, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435928, "field": "description", "en": "Add $q2 Compact Harvest Reaper Kits to complete the shipment.", "hash": "4f2d90654727a7fc", "src": "db2@1.60.1.70009"}
-{"id": 435929, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435929, "field": "description", "en": "Add $q2 Big Iron Bombs to complete the shipment.", "hash": "b7020a18a858f54c", "src": "db2@1.60.1.70009"}
-{"id": 435930, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435930, "field": "description", "en": "Add $q2 Deadly Scopes to complete the shipment.", "hash": "164bcaa18adb793c", "src": "db2@1.60.1.70009"}
-{"id": 435931, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435931, "field": "description", "en": "Add $q2 Mithril Blunderbuss to complete the shipment.", "hash": "9bcbd22948630f67", "src": "db2@1.60.1.70009"}
-{"id": 435932, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435932, "field": "description", "en": "Add $q2 Gnomish Rocket Boots to complete the shipment.", "hash": "997cbf05c750fbbb", "src": "db2@1.60.1.70009"}
-{"id": 435933, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435933, "field": "description", "en": "Add $q2 Goblin Mortars to complete the shipment.", "hash": "4e7c648630d2be27", "src": "db2@1.60.1.70009"}
-{"id": 435934, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435934, "field": "description", "en": "Add $q2 Barbaric Shoulders to complete the shipment.", "hash": "cb7b0d8aff0d9a4c", "src": "db2@1.60.1.70009"}
-{"id": 435935, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435935, "field": "description", "en": "Add $q2 Guardian Gloves to complete the shipment.", "hash": "0f1b412a4a2a048e", "src": "db2@1.60.1.70009"}
-{"id": 435936, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435936, "field": "description", "en": "Add $q2 Turtle Scale Bracers to complete the shipment.", "hash": "cdb4cd0ce35e4f1b", "src": "db2@1.60.1.70009"}
-{"id": 435937, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435937, "field": "description", "en": "Add $q2 Dusky Belts to complete the shipment.", "hash": "da784d0561e9e34e", "src": "db2@1.60.1.70009"}
-{"id": 435938, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435938, "field": "description", "en": "Add $q2 Frost Leather Cloaks to complete the shipment.", "hash": "249fc46380974e98", "src": "db2@1.60.1.70009"}
-{"id": 435939, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435939, "field": "description", "en": "Add $q2 Shadowskin Gloves to complete the shipment.", "hash": "2ac3742719b9d923", "src": "db2@1.60.1.70009"}
-{"id": 435940, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435940, "field": "description", "en": "Add $q2 Formal White Shirts to complete the shipment.", "hash": "08887f5671b3e95a", "src": "db2@1.60.1.70009"}
-{"id": 435941, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435941, "field": "description", "en": "Add $q2 Crimson Silk Pantaloons to complete the shipment.", "hash": "79af8d074cf94a80", "src": "db2@1.60.1.70009"}
-{"id": 435942, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435942, "field": "description", "en": "Add $q2 Rich Purple Silk Shirts to complete the shipment.", "hash": "35a9803607de840a", "src": "db2@1.60.1.70009"}
-{"id": 435943, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435943, "field": "description", "en": "Add $q2 White Bandit Masks to complete the shipment.", "hash": "10762fdf28a2d6d0", "src": "db2@1.60.1.70009"}
-{"id": 435944, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435944, "field": "description", "en": "Add $q2 Soothing Turtle Bisque to complete the shipment.", "hash": "d4d79e3d5733c4bc", "src": "db2@1.60.1.70009"}
-{"id": 435945, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435945, "field": "description", "en": "Add $q2 Spider Sausages to complete the shipment.", "hash": "5775b6e5549ca4e1", "src": "db2@1.60.1.70009"}
-{"id": 435946, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435946, "field": "description", "en": "Add $q2 Heavy Silk Bandages to complete the shipment.", "hash": "1b73e8b679673dd1", "src": "db2@1.60.1.70009"}
-{"id": 435947, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435947, "field": "description", "en": "Add $q2 Rockscale Cod to complete the shipment.", "hash": "df5ec740c91e3e54", "src": "db2@1.60.1.70009"}
-{"id": 435948, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 435948, "field": "description", "en": "Add $q2 Fire Oil to complete the shipment.", "hash": "97478cc9cde4ae7a", "src": "db2@1.60.1.70009"}
-{"id": 435949, "field": "name", "en": "Glowing Hyperconductive Scale Coif", "hash": "83dafd315d15a83e", "src": "db2@1.60.1.70009"}
-{"id": 435951, "field": "name", "en": "Gneuro-Conductive Channeler's Hood", "hash": "de75ebcb794f5886", "src": "db2@1.60.1.70009"}
-{"id": 435953, "field": "name", "en": "Rad-Resistant Scale Hood", "hash": "dd6f428588dc40a6", "src": "db2@1.60.1.70009"}
-{"id": 435955, "field": "name", "en": "[DNT] Brother Atticus Give Rune", "hash": "cab8ff314bd75f88", "src": "db2@1.60.1.70009"}
-{"id": 435956, "field": "name", "en": "Polished Truesilver Gears", "hash": "6fbdd326c48f1ec6", "src": "db2@1.60.1.70009"}
-{"id": 435958, "field": "name", "en": "Whirling Truesilver Gearwall", "hash": "5711c077a317909c", "src": "db2@1.60.1.70009"}
-{"id": 435960, "field": "name", "en": "Hyperconductive Goldwap", "hash": "cdd7f30760b24c0d", "src": "db2@1.60.1.70009"}
-{"id": 435962, "field": "name", "en": "Libram of Deliverance", "hash": "018250a3ecfb9294", "src": "db2@1.60.1.70009"}
-{"id": 435962, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70009"}
-{"id": 435963, "field": "name", "en": "High-Yield Radiation Bomb", "hash": "b4810dcc6a322f3e", "src": "db2@1.60.1.70009"}
-{"id": 435963, "field": "description", "en": "Inflicts $s1 fire damage to those in the blast radius plus an additional $443813s1 nature damage every 2 sec for 10 seconds. Also reduces the movement speed of affected targets by 25% for $d. ", "hash": "832b5fccdf88646b", "src": "db2@1.60.1.70009"}
-{"id": 435964, "field": "name", "en": "High-Yield Radiation Bomb", "hash": "b4810dcc6a322f3e", "src": "db2@1.60.1.70009"}
-{"id": 435966, "field": "name", "en": "Ez-Thro Radiation Bomb", "hash": "9dd2b0b66fb3e945", "src": "db2@1.60.1.70009"}
-{"id": 435968, "field": "name", "en": "Ez-Thro Radiation Bomb", "hash": "9dd2b0b66fb3e945", "src": "db2@1.60.1.70009"}
-{"id": 435968, "field": "description", "en": "Inflicts $s1 fire damage to those in the blast radius plus an additional $s3 nature damage every 2 sec for 10 seconds. Also reduces the movement speed of affected targets by 25% for $d. ", "hash": "6af039ce18824786", "src": "db2@1.60.1.70009"}
-{"id": 435968, "field": "aura", "en": "Irradiated. Suffering damage over time and movement is slowed.", "hash": "bf0174a02da5de26", "src": "db2@1.60.1.70009"}
-{"id": 435969, "field": "name", "en": "Insulating Gniodine", "hash": "3bc4229f96d9e68c", "src": "db2@1.60.1.70009"}
-{"id": 435971, "field": "name", "en": "Mildly Irradiated Rejuvenation Potion", "hash": "d45d69172d192587", "src": "db2@1.60.1.70009"}
-{"id": 435973, "field": "name", "en": "Mildly Irradiated", "hash": "7ea8ca593f4f98a3", "src": "db2@1.60.1.70009"}
-{"id": 435973, "field": "description", "en": "Restores $s1 mana and $s2 health. Also increases attack power by $s4 and damage done by all spells by $s3 for $d.", "hash": "3034fbeb31030ae3", "src": "db2@1.60.1.70009"}
-{"id": 435973, "field": "aura", "en": "This can't actually be good for you, right?", "hash": "68832f823e27109a", "src": "db2@1.60.1.70009"}
-{"id": 435974, "field": "name", "en": "Decrease Stamina 05", "hash": "fced3858b7695278", "src": "db2@1.60.1.70009"}
-{"id": 435974, "field": "description", "en": "-$s1 Stamina.", "hash": "3bcb47e9cd200184", "src": "db2@1.60.1.70009"}
-{"id": 435975, "field": "name", "en": "Irradiated Set Spell Dam 11", "hash": "1058d56a8426e0a2", "src": "db2@1.60.1.70009"}
-{"id": 435975, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70009"}
-{"id": 435976, "field": "name", "en": "Attack Power - Feral (+20)", "hash": "566d251f19a2daee", "src": "db2@1.60.1.70009"}
-{"id": 435976, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70009"}
-{"id": 435977, "field": "name", "en": "Energized Hyperconductor", "hash": "eb6b3d8af19ed0cb", "src": "db2@1.60.1.70009"}
-{"id": 435977, "field": "description", "en": "Chance on spell cast to increase your damage and healing by up to $435978s1 for $435978d.", "hash": "937b78d9dc043b44", "src": "db2@1.60.1.70009"}
-{"id": 435978, "field": "name", "en": "Energized Hyperconductor", "hash": "eb6b3d8af19ed0cb", "src": "db2@1.60.1.70009"}
-{"id": 435978, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70009"}
-{"id": 435978, "field": "aura", "en": "Magical damage and healing dealt is increased by $s1", "hash": "27248267688f6fed", "src": "db2@1.60.1.70009"}
-{"id": 435980, "field": "name", "en": "Minor Meditation", "hash": "343039855049ef8b", "src": "db2@1.60.1.70009"}
-{"id": 435980, "field": "description", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70009"}
-{"id": 435981, "field": "name", "en": "Energize", "hash": "f097129b6175b9d4", "src": "db2@1.60.1.70009"}
-{"id": 435981, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70009"}
-{"id": 435981, "field": "aura", "en": "You gain $s1 mana.", "hash": "c44bdf9ac8a070d4", "src": "db2@1.60.1.70009"}
-{"id": 435982, "field": "name", "en": "Energize", "hash": "f097129b6175b9d4", "src": "db2@1.60.1.70009"}
-{"id": 435982, "field": "description", "en": "Your attacks have a 5% chance of restoring $435981s1 mana.", "hash": "e9d46bcc66cda040", "src": "db2@1.60.1.70009"}
-{"id": 435983, "field": "name", "en": "Stormbringer Lightning Bolt Bonus", "hash": "eeee0bc539933803", "src": "db2@1.60.1.70009"}
-{"id": 435983, "field": "description", "en": "-$/1000;S1 seconds on the casting time of your Lightning Bolt spell.", "hash": "b9c5489e9ca0cca0", "src": "db2@1.60.1.70009"}
-{"id": 435984, "field": "name", "en": "Enhanced Blessings", "hash": "347b60430f555471", "src": "db2@1.60.1.70009"}
-{"id": 435984, "field": "description", "en": "Increases the duration of your Blessing of Might, Wisdom, Salvation, Sanctuary, Light, and Kings by $s1% and reduces their mana cost by $s2%.", "hash": "ae1d4b4324f9b6f9", "src": "db2@1.60.1.70009"}
-{"id": 435985, "field": "name", "en": "Greatly Improved Weapon Enhancements [DOES NOT WORK]", "hash": "3ea1b0d1680c120d", "src": "db2@1.60.1.70009"}
-{"id": 435985, "field": "description", "en": "Increases the duration of your personal Weapon Imbuements by $s1%.", "hash": "59443d0dd3740649", "src": "db2@1.60.1.70009"}
-{"id": 435986, "field": "name", "en": "Trogg Transfigurator 3000", "hash": "72e3afbfa0dc1881", "src": "db2@1.60.1.70009"}
-{"id": 435986, "field": "description", "en": "Transfigures the caster into a Trogg.", "hash": "647a1aaaf1a53258", "src": "db2@1.60.1.70009"}
-{"id": 435986, "field": "aura", "en": "Hello my fellow Troggs...", "hash": "a93588e6052ab8a8", "src": "db2@1.60.1.70009"}
-{"id": 435991, "field": "name", "en": "Entangling Roots", "hash": "2c0883989bcc14e2", "src": "db2@1.60.1.70009"}
-{"id": 435991, "field": "description", "en": "Entangles an enemy in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "ed46cb1a9bc2abfc", "src": "db2@1.60.1.70009"}
-{"id": 435991, "field": "aura", "en": "Immobilized.\r\nNature damage inflicted every $t2 sec.", "hash": "e6768e6a91f2334b", "src": "db2@1.60.1.70009"}
-{"id": 435994, "field": "name", "en": "Dormant Rune", "hash": "3390924d9388ca48", "src": "db2@1.60.1.70009"}
+{"id": 435011, "field": "name", "en": "Fading Fiery Intuition", "hash": "3366a806ce80ff37", "src": "db2@1.60.1.70124"}
+{"id": 435081, "field": "name", "en": "Beastly Effigy", "hash": "1dd96e650863e902", "src": "db2@1.60.1.70124"}
+{"id": 435081, "field": "aura", "en": "The beast awaits a challenger.", "hash": "141666915f8426fa", "src": "db2@1.60.1.70124"}
+{"id": 435083, "field": "name", "en": "Search Corpse", "hash": "30228c33ce632c05", "src": "db2@1.60.1.70124"}
+{"id": 435086, "field": "name", "en": "Brimstone Carving", "hash": "ecb7687329e466f5", "src": "db2@1.60.1.70124"}
+{"id": 435097, "field": "name", "en": "Idol of the Heckler", "hash": "0f889717c6158410", "src": "db2@1.60.1.70124"}
+{"id": 435097, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70124"}
+{"id": 435100, "field": "name", "en": "[DNT] Idol of the Heckler Roar Effect", "hash": "8ed0a0df11f05305", "src": "db2@1.60.1.70124"}
+{"id": 435102, "field": "name", "en": "[DNT] Idol of the Heckler Roar Proc Aura", "hash": "4a67af39fe83cd13", "src": "db2@1.60.1.70124"}
+{"id": 435111, "field": "name", "en": "[DNT] Idol of the Heckler Challenging Roar Dummy", "hash": "a443f4319d0c97ed", "src": "db2@1.60.1.70124"}
+{"id": 435112, "field": "name", "en": "Vengeance", "hash": "622d71d56b622ec3", "src": "db2@1.60.1.70124"}
+{"id": 435112, "field": "description", "en": "Slows falling speed for $d.", "hash": "52529547b0d6c3e8", "src": "db2@1.60.1.70124"}
+{"id": 435112, "field": "aura", "en": "Slows falling speed.", "hash": "e05c0825947d7a89", "src": "db2@1.60.1.70124"}
+{"id": 435113, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70124"}
+{"id": 435117, "field": "name", "en": "Meditation on the Abyss", "hash": "844d7e2a9517e24f", "src": "db2@1.60.1.70124"}
+{"id": 435117, "field": "description", "en": "Share meditation with the target Priest.", "hash": "cd0391f41fcc480d", "src": "db2@1.60.1.70124"}
+{"id": 435117, "field": "aura", "en": "Your mind struggles to hold the secrets of the naga.", "hash": "30a272541f4d8d81", "src": "db2@1.60.1.70124"}
+{"id": 435120, "field": "name", "en": "Learn Rune", "hash": "3cfcf3f0f524ffd2", "src": "db2@1.60.1.70124"}
+{"id": 435120, "field": "description", "en": "Focus on the Vision to learn a new spell.  Requires a glimpse of corrupt knowledge.", "hash": "045217d4a9323fc4", "src": "db2@1.60.1.70124"}
+{"id": 435139, "field": "name", "en": "[DNT] S03 - 40 - Druid - Destroy Water Globe", "hash": "7d2d966e102480ae", "src": "db2@1.60.1.70124"}
+{"id": 435167, "field": "name", "en": "Miniaturized Combustion Chamber", "hash": "ec28af2809ac136d", "src": "db2@1.60.1.70124"}
+{"id": 435167, "field": "description", "en": "Randomly channels between $m1 and $M1 health into between $m2 and $M2 mana every $t1 sec for $d.", "hash": "fd942810a7861645", "src": "db2@1.60.1.70124"}
+{"id": 435168, "field": "name", "en": "Guard of the Innovator", "hash": "457fd9e30bb8847d", "src": "db2@1.60.1.70124"}
+{"id": 435168, "field": "description", "en": "A protective mana shield surrounds the caster absorbing 250 damage. While the shield holds, increases mana regeneration by $s2 every $t2 sec for $d.", "hash": "0d9344bcc41deb8d", "src": "db2@1.60.1.70124"}
+{"id": 435168, "field": "aura", "en": "Absorbs damage and increases mana regeneration by $s2 every $t2 sec.", "hash": "f4f32f919accb500", "src": "db2@1.60.1.70124"}
+{"id": 435169, "field": "name", "en": "Poison Cloud", "hash": "5b08308c67162f04", "src": "db2@1.60.1.70124"}
+{"id": 435169, "field": "description", "en": "Deals $s1 Nature damage every $t1 sec to any enemy in an $a1 yard radius around the caster for $d.", "hash": "9eb2fe621a2ab194", "src": "db2@1.60.1.70124"}
+{"id": 435169, "field": "aura", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70124"}
+{"id": 435180, "field": "name", "en": "Water of Elune'ara", "hash": "0dcb8b40019ed1c2", "src": "db2@1.60.1.70124"}
+{"id": 435180, "field": "aura", "en": "Carrying the Water of Elune'ara.", "hash": "8943bfe55d212f0f", "src": "db2@1.60.1.70124"}
+{"id": 435185, "field": "name", "en": "Combine Partial Spell Notes", "hash": "2cb678f18a2a9953", "src": "db2@1.60.1.70124"}
+{"id": 435185, "field": "description", "en": "Combine the collected Partial Spell Notes into a scroll that will teach a new Engraving spell.", "hash": "aa4b1cb2353eb797", "src": "db2@1.60.1.70124"}
+{"id": 435187, "field": "name", "en": "[DNT] S03 - 40 - Druid - Destroy Water Globe (Globe Only)", "hash": "2a07e78035f9d97a", "src": "db2@1.60.1.70124"}
+{"id": 435195, "field": "name", "en": "Petrification", "hash": "0cdeada17e9529e1", "src": "db2@1.60.1.70124"}
+{"id": 435195, "field": "aura", "en": "Immune to all attacks and spells.  Cannot attack, move or use spells.", "hash": "16dc02b3b7f74fb7", "src": "db2@1.60.1.70124"}
+{"id": 435204, "field": "name", "en": "Cooling Down", "hash": "f6c61429d50b9ccd", "src": "db2@1.60.1.70124"}
+{"id": 435204, "field": "aura", "en": "Still too hot! More cold!", "hash": "645418b447f382ab", "src": "db2@1.60.1.70124"}
+{"id": 435205, "field": "name", "en": "Pyromantic Mishap", "hash": "09da54d686a77b1a", "src": "db2@1.60.1.70124"}
+{"id": 435205, "field": "aura", "en": "Chased by embers of a persistent fire spell.", "hash": "c785e8f5642c1743", "src": "db2@1.60.1.70124"}
+{"id": 435206, "field": "name", "en": "Pyromantic Mishap (Frost Absorb)", "hash": "e742e0e224046122", "src": "db2@1.60.1.70124"}
+{"id": 435206, "field": "aura", "en": "Chased by embers of a persistent fire spell.", "hash": "c785e8f5642c1743", "src": "db2@1.60.1.70124"}
+{"id": 435213, "field": "name", "en": "Assemble the Offering", "hash": "16edfe291aabe009", "src": "db2@1.60.1.70124"}
+{"id": 435213, "field": "description", "en": "Combine 10 Strong Harpy Feathers and 3 Cloud Serpent Fangs with 1 Silken Thread to create an Offering to the Wind Spirit.", "hash": "f5d79734a0cda31d", "src": "db2@1.60.1.70124"}
+{"id": 435218, "field": "name", "en": "Offering to the Wind Spirit", "hash": "534e55db4f3b9f81", "src": "db2@1.60.1.70124"}
+{"id": 435218, "field": "description", "en": "Make an Offering to the Wind Spirit and show your faith.", "hash": "69dd8697a19073dd", "src": "db2@1.60.1.70124"}
+{"id": 435218, "field": "aura", "en": "Show a test of faith to the Wind Spirit.", "hash": "2536d7ab184c3582", "src": "db2@1.60.1.70124"}
+{"id": 435256, "field": "name", "en": "Altar of the Wind Spirit Trial", "hash": "96f46c7def6274a7", "src": "db2@1.60.1.70124"}
+{"id": 435317, "field": "name", "en": "Cougar Cage Key", "hash": "4cd730a65a24f93a", "src": "db2@1.60.1.70124"}
+{"id": 435317, "field": "description", "en": "Opens Cougar Cage", "hash": "301667bd0a4cc40d", "src": "db2@1.60.1.70124"}
+{"id": 435349, "field": "name", "en": "Grubbis Vent 01 Disturb", "hash": "a8f732af5fbc2e8e", "src": "db2@1.60.1.70124"}
+{"id": 435350, "field": "name", "en": "Grubbis Vent 02 Disturb", "hash": "c80d1b9d48c2cfa8", "src": "db2@1.60.1.70124"}
+{"id": 435351, "field": "name", "en": "Grubbis Vent 03 Disturb", "hash": "e723048b31c970c2", "src": "db2@1.60.1.70124"}
+{"id": 435352, "field": "name", "en": "Grubbis - Cave A - Wave 1", "hash": "a117cd20e5ba8f3e", "src": "db2@1.60.1.70124"}
+{"id": 435353, "field": "name", "en": "Grubbis - Cave A - Wave 2", "hash": "a117cd21e5ba8f3f", "src": "db2@1.60.1.70124"}
+{"id": 435354, "field": "name", "en": "Grubbis - Cave A - Wave 3", "hash": "a117cd22e5ba8f40", "src": "db2@1.60.1.70124"}
+{"id": 435355, "field": "name", "en": "Grubbis - Cave B - Wave 1", "hash": "894dff3a82101c7c", "src": "db2@1.60.1.70124"}
+{"id": 435356, "field": "name", "en": "Grubbis - Cave B - Wave 2", "hash": "894dff3b82101c7d", "src": "db2@1.60.1.70124"}
+{"id": 435357, "field": "name", "en": "Grubbis - Cave B - Wave 3", "hash": "894dff3c82101c7e", "src": "db2@1.60.1.70124"}
+{"id": 435358, "field": "name", "en": "Self Screen Shake", "hash": "15eef7c0aed0bb4d", "src": "db2@1.60.1.70124"}
+{"id": 435359, "field": "name", "en": "Hardened to the Core", "hash": "34a21d581e1c150b", "src": "db2@1.60.1.70124"}
+{"id": 435359, "field": "description", "en": "Increases armor by $s1, but movement speed is reduced by $s2%. Effect cannot be removed and lasts for $d.", "hash": "7b087caf33737e20", "src": "db2@1.60.1.70124"}
+{"id": 435359, "field": "aura", "en": "Increases armor by $s1.\r\nMovement speed reduced by $s2%.", "hash": "ecfe61690071f1e5", "src": "db2@1.60.1.70124"}
+{"id": 435360, "field": "name", "en": "Mechanical Slaying 30", "hash": "48b3e055090c3a8a", "src": "db2@1.60.1.70124"}
+{"id": 435360, "field": "description", "en": "+$s1 Attack Power against Mechanical units.", "hash": "7cab8490a1ec5a41", "src": "db2@1.60.1.70124"}
+{"id": 435361, "field": "name", "en": "Grubbis - Final Phase - Wave 1", "hash": "b93e762335059f4d", "src": "db2@1.60.1.70124"}
+{"id": 435362, "field": "name", "en": "Grubbis - Final Phase - Wave 2", "hash": "b93e762435059f4e", "src": "db2@1.60.1.70124"}
+{"id": 435363, "field": "name", "en": "Grubbis - Final Phase - Wave 3", "hash": "b93e762535059f4f", "src": "db2@1.60.1.70124"}
+{"id": 435402, "field": "name", "en": "[DNT] Summon Dropped Pouch", "hash": "eb44cd27e13368bd", "src": "db2@1.60.1.70124"}
+{"id": 435428, "field": "name", "en": "Danger!", "hash": "e564655cdfbff234", "src": "db2@1.60.1.70124"}
+{"id": 435428, "field": "aura", "en": "You sense something lurking nearby.", "hash": "b9e8d638a97e552e", "src": "db2@1.60.1.70124"}
+{"id": 435445, "field": "name", "en": "DNT SF Phase", "hash": "5a65568114ef6b28", "src": "db2@1.60.1.70124"}
+{"id": 435450, "field": "name", "en": "Rune Scrying", "hash": "fcd38cb9cae69aca", "src": "db2@1.60.1.70124"}
+{"id": 435467, "field": "name", "en": "Dismantle", "hash": "38890e653e29f507", "src": "db2@1.60.1.70124"}
+{"id": 435481, "field": "name", "en": "Enchant Weapon - Dismantle", "hash": "2d9ea3e23fa0e9ec", "src": "db2@1.60.1.70124"}
+{"id": 435481, "field": "description", "en": "Permanently enchant a Weapon to cause all spells and attacks to sometimes deal $439164s1 additional damage to mechanical creatures.", "hash": "7694b78d5311a52f", "src": "db2@1.60.1.70124"}
+{"id": 435520, "field": "name", "en": "Activate Vents x1", "hash": "bfdda9f7d5f08c0b", "src": "db2@1.60.1.70124"}
+{"id": 435525, "field": "name", "en": "Activate Vents x2", "hash": "bfdda9f8d5f08c0c", "src": "db2@1.60.1.70124"}
+{"id": 435526, "field": "name", "en": "Activate Vents x3", "hash": "bfdda9f9d5f08c0d", "src": "db2@1.60.1.70124"}
+{"id": 435531, "field": "name", "en": "Attack Power - Feral (+69)", "hash": "566e35de298508db", "src": "db2@1.60.1.70124"}
+{"id": 435531, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70124"}
+{"id": 435532, "field": "name", "en": "Defibrillate", "hash": "44700d2b80208eff", "src": "db2@1.60.1.70124"}
+{"id": 435532, "field": "description", "en": "The staff will sometimes be able to shock a dead player back to life.  Cannot be used when in combat.", "hash": "8573879b617e0d0c", "src": "db2@1.60.1.70124"}
+{"id": 435535, "field": "name", "en": "Increased Fist Weapons", "hash": "14ec2ce3cad2bbc4", "src": "db2@1.60.1.70124"}
+{"id": 435535, "field": "description", "en": "Increased Fist Weapons +$s1.", "hash": "cffc03044977ec6c", "src": "db2@1.60.1.70124"}
+{"id": 435546, "field": "name", "en": "Danger!", "hash": "e564655cdfbff234", "src": "db2@1.60.1.70124"}
+{"id": 435546, "field": "aura", "en": "You sense something lurking nearby.", "hash": "b9e8d638a97e552e", "src": "db2@1.60.1.70124"}
+{"id": 435548, "field": "name", "en": "Danger!", "hash": "e564655cdfbff234", "src": "db2@1.60.1.70124"}
+{"id": 435548, "field": "aura", "en": "You sense something lurking nearby.", "hash": "b9e8d638a97e552e", "src": "db2@1.60.1.70124"}
+{"id": 435552, "field": "name", "en": "[DNT] Summon Bloodscalp Guerrilla", "hash": "aa821934ddb3f915", "src": "db2@1.60.1.70124"}
+{"id": 435563, "field": "name", "en": "Comprehension", "hash": "86a5f87182b4fbe0", "src": "db2@1.60.1.70124"}
+{"id": 435563, "field": "description", "en": "Increases your Comprehension skill by $s1 for $d.", "hash": "b588fed350ae6d61", "src": "db2@1.60.1.70124"}
+{"id": 435563, "field": "aura", "en": "Comprehension skill increased by $s1.", "hash": "2bb1452005cd565e", "src": "db2@1.60.1.70124"}
+{"id": 435571, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70124"}
+{"id": 435610, "field": "name", "en": "Gneuro-Linked Arcano-Filament Monocle", "hash": "c322b87971b54668", "src": "db2@1.60.1.70124"}
+{"id": 435816, "field": "name", "en": "[DNT] Divine Prayer Bead I", "hash": "13344d55ea64ed95", "src": "db2@1.60.1.70124"}
+{"id": 435818, "field": "name", "en": "[DNT] Tarnished Prayer Bead I", "hash": "e6f8b7096ed9d36b", "src": "db2@1.60.1.70124"}
+{"id": 435819, "field": "name", "en": "Faintly Glowing Leather", "hash": "902898927812864b", "src": "db2@1.60.1.70124"}
+{"id": 435827, "field": "name", "en": "Hyperconductive Arcano-Filament", "hash": "dcc71ccf9646acb1", "src": "db2@1.60.1.70124"}
+{"id": 435831, "field": "name", "en": "[DNT] Divine Prayer Bead II", "hash": "d3c392f53b7bcb6e", "src": "db2@1.60.1.70124"}
+{"id": 435832, "field": "name", "en": "Spawn Caverndeep Ambusher", "hash": "9fea48afced0f9cc", "src": "db2@1.60.1.70124"}
+{"id": 435833, "field": "name", "en": "[DNT] Tarnished Prayer Bead II", "hash": "3145ac32ce0db0f1", "src": "db2@1.60.1.70124"}
+{"id": 435835, "field": "name", "en": "Spawn Caverndeep Pillager", "hash": "ff8bfa23bd78bb7b", "src": "db2@1.60.1.70124"}
+{"id": 435839, "field": "name", "en": "[DNT] Divine Prayer Bead III", "hash": "5d1435c445709bdf", "src": "db2@1.60.1.70124"}
+{"id": 435841, "field": "name", "en": "Invoker's Cord", "hash": "29e38154b69813d0", "src": "db2@1.60.1.70124"}
+{"id": 435844, "field": "name", "en": "[DNT] Tarnished Prayer Bead III", "hash": "36a71e5cc2776742", "src": "db2@1.60.1.70124"}
+{"id": 435848, "field": "name", "en": "Invoker's Mantle", "hash": "e0beec614ff88528", "src": "db2@1.60.1.70124"}
+{"id": 435849, "field": "name", "en": "Conjure Comprehension Charms", "hash": "5715e3c84a9738f1", "src": "db2@1.60.1.70124"}
+{"id": 435849, "field": "description", "en": "Conjure $s1 Comprehension Charms.", "hash": "6001721de09c194a", "src": "db2@1.60.1.70124"}
+{"id": 435869, "field": "name", "en": "Jani's Blessing", "hash": "b6febd0b2c31d754", "src": "db2@1.60.1.70124"}
+{"id": 435869, "field": "aura", "en": "Grants you a chance to find unusual items when pickpocketing Stranglethorn Trolls.", "hash": "192054ca9b025c04", "src": "db2@1.60.1.70124"}
+{"id": 435884, "field": "name", "en": "S03 - Tuning and Overrides Passive - Shaman", "hash": "0d00d9aba2f8693e", "src": "db2@1.60.1.70124"}
+{"id": 435890, "field": "name", "en": "Despawn Tracker", "hash": "cfcb1c59cc20eca7", "src": "db2@1.60.1.70124"}
+{"id": 435892, "field": "name", "en": "Burned Alive", "hash": "2522ea3f4d8c978c", "src": "db2@1.60.1.70124"}
+{"id": 435893, "field": "name", "en": "Gniodine Side Effect", "hash": "bcd5aeddebc52ca9", "src": "db2@1.60.1.70124"}
+{"id": 435893, "field": "aura", "en": "You feel more Gnome like...", "hash": "707f82a07550e82e", "src": "db2@1.60.1.70124"}
+{"id": 435895, "field": "name", "en": "Gniodine Dispel", "hash": "3edfc5b40a8f26a9", "src": "db2@1.60.1.70124"}
+{"id": 435895, "field": "description", "en": "Make target ally immune to Snare and Immobilizing effects for the next $d.  Also removes existing Snare and Immobilizing effects.", "hash": "0891898da01d809d", "src": "db2@1.60.1.70124"}
+{"id": 435895, "field": "aura", "en": "Immune to Snare and Immobilizing effects for $d.", "hash": "bafd8efdf03f6aef", "src": "db2@1.60.1.70124"}
+{"id": 435896, "field": "name", "en": "Cluck Cluck??", "hash": "7f095c42b1495e59", "src": "db2@1.60.1.70124"}
+{"id": 435896, "field": "aura", "en": "CLUCK CLUCK!!", "hash": "56f0fe62d9c53125", "src": "db2@1.60.1.70124"}
+{"id": 435897, "field": "name", "en": "Whirlwind Backfire", "hash": "27d4ea8343bea406", "src": "db2@1.60.1.70124"}
+{"id": 435897, "field": "description", "en": "This is a description", "hash": "18dc502ffd5f3ea2", "src": "db2@1.60.1.70124"}
+{"id": 435897, "field": "aura", "en": "Spinning out of control! Attacking all nearby enemies.", "hash": "9e94cffc692d218d", "src": "db2@1.60.1.70124"}
+{"id": 435898, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70124"}
+{"id": 435899, "field": "name", "en": "Gyroscopic Acceleration", "hash": "0a3cd9106c1992ef", "src": "db2@1.60.1.70124"}
+{"id": 435899, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70124"}
+{"id": 435900, "field": "name", "en": "Gyromatic Experiment 420b", "hash": "b37295c2a84563ba", "src": "db2@1.60.1.70124"}
+{"id": 435900, "field": "description", "en": "Increase attack speed by $435899s1%.  You may be able to push this experiment further.....", "hash": "d313f1175b7294f4", "src": "db2@1.60.1.70124"}
+{"id": 435901, "field": "name", "en": "Retricutioner", "hash": "790374e05462d54f", "src": "db2@1.60.1.70124"}
+{"id": 435903, "field": "name", "en": "Enchant Chest - Retricutioner", "hash": "8737017b691a5e9a", "src": "db2@1.60.1.70124"}
+{"id": 435903, "field": "description", "en": "Teaches you how to permanently enchant a piece of chest armor to reflect 9 damage back to the attacker when the bearer is struck in Melee.\r\n", "hash": "4e034784b6fb99bf", "src": "db2@1.60.1.70124"}
+{"id": 435904, "field": "name", "en": "Glowing Gneuro-Linked Cowl", "hash": "8b247b0d29dac64d", "src": "db2@1.60.1.70124"}
+{"id": 435906, "field": "name", "en": "Reflective Truesilver Braincage", "hash": "ff631fe8a7e5a421", "src": "db2@1.60.1.70124"}
+{"id": 435908, "field": "name", "en": "Tempered Interference-Negating Helmet", "hash": "e84c544a1f878a4e", "src": "db2@1.60.1.70124"}
+{"id": 435910, "field": "name", "en": "Low-Background Truesilver Plates", "hash": "53377d5e36a228b3", "src": "db2@1.60.1.70124"}
+{"id": 435912, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435912, "field": "description", "en": "Add $q2 Gold Bars to complete the shipment.", "hash": "5e72f467816a6789", "src": "db2@1.60.1.70124"}
+{"id": 435913, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435913, "field": "description", "en": "Add $q2 Mithril Bars to complete the shipment.", "hash": "47bcfc4fc1b036b7", "src": "db2@1.60.1.70124"}
+{"id": 435914, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435914, "field": "description", "en": "Add $q2 Heavy Hide to complete the shipment.", "hash": "027ba49b6016a93b", "src": "db2@1.60.1.70124"}
+{"id": 435915, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435915, "field": "description", "en": "Add $q2 Thick Leather to complete the shipment.", "hash": "462b79926b7c7e27", "src": "db2@1.60.1.70124"}
+{"id": 435916, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435916, "field": "description", "en": "Add $q2 Fadeleaf to complete the shipment.", "hash": "041e9564099dc515", "src": "db2@1.60.1.70124"}
+{"id": 435917, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435917, "field": "description", "en": "Add $q2 Khadgar's Whisker to complete the shipment.", "hash": "b9225cb586ea3aab", "src": "db2@1.60.1.70124"}
+{"id": 435918, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435918, "field": "description", "en": "Add $q2 Wintersbite to complete the shipment.", "hash": "0a59c18546b48c9c", "src": "db2@1.60.1.70124"}
+{"id": 435919, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435919, "field": "description", "en": "Add $q2 Purple Lotus to complete the shipment.", "hash": "f56f98a720ce7fa0", "src": "db2@1.60.1.70124"}
+{"id": 435920, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435920, "field": "description", "en": "Add $q2 Greater Healing Potions to complete the shipment.", "hash": "274ae74a7b4d52d9", "src": "db2@1.60.1.70124"}
+{"id": 435921, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435921, "field": "description", "en": "Add $q2 Lesser Stoneshield Potions to complete the shipment.", "hash": "636d930daa9d6f11", "src": "db2@1.60.1.70124"}
+{"id": 435922, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435922, "field": "description", "en": "Add $q2 Elixirs of Agility to complete the shipment.", "hash": "4239f8f27e978af6", "src": "db2@1.60.1.70124"}
+{"id": 435923, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435923, "field": "description", "en": "Add $q2 Elixirs of Greater Defense to complete the shipment.", "hash": "8171d316f2c2d0be", "src": "db2@1.60.1.70124"}
+{"id": 435924, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435924, "field": "description", "en": "Add $q2 Massive Iron Axes to complete the shipment.", "hash": "7489aa61e3a57f91", "src": "db2@1.60.1.70124"}
+{"id": 435925, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435925, "field": "description", "en": "Add $q2 Green Iron Bracers to complete the shipment.", "hash": "1bba3cf1d1f64e9b", "src": "db2@1.60.1.70124"}
+{"id": 435926, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435926, "field": "description", "en": "Add $q2 Heavy Mithril Gauntlets to complete the shipment.", "hash": "5d6fedc8a00866db", "src": "db2@1.60.1.70124"}
+{"id": 435927, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435927, "field": "description", "en": "Add $q2 Solid Grinding Stones to complete the shipment.", "hash": "1a2a638588ebf590", "src": "db2@1.60.1.70124"}
+{"id": 435928, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435928, "field": "description", "en": "Add $q2 Compact Harvest Reaper Kits to complete the shipment.", "hash": "4f2d90654727a7fc", "src": "db2@1.60.1.70124"}
+{"id": 435929, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435929, "field": "description", "en": "Add $q2 Big Iron Bombs to complete the shipment.", "hash": "b7020a18a858f54c", "src": "db2@1.60.1.70124"}
+{"id": 435930, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435930, "field": "description", "en": "Add $q2 Deadly Scopes to complete the shipment.", "hash": "164bcaa18adb793c", "src": "db2@1.60.1.70124"}
+{"id": 435931, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435931, "field": "description", "en": "Add $q2 Mithril Blunderbuss to complete the shipment.", "hash": "9bcbd22948630f67", "src": "db2@1.60.1.70124"}
+{"id": 435932, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435932, "field": "description", "en": "Add $q2 Gnomish Rocket Boots to complete the shipment.", "hash": "997cbf05c750fbbb", "src": "db2@1.60.1.70124"}
+{"id": 435933, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435933, "field": "description", "en": "Add $q2 Goblin Mortars to complete the shipment.", "hash": "4e7c648630d2be27", "src": "db2@1.60.1.70124"}
+{"id": 435934, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435934, "field": "description", "en": "Add $q2 Barbaric Shoulders to complete the shipment.", "hash": "cb7b0d8aff0d9a4c", "src": "db2@1.60.1.70124"}
+{"id": 435935, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435935, "field": "description", "en": "Add $q2 Guardian Gloves to complete the shipment.", "hash": "0f1b412a4a2a048e", "src": "db2@1.60.1.70124"}
+{"id": 435936, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435936, "field": "description", "en": "Add $q2 Turtle Scale Bracers to complete the shipment.", "hash": "cdb4cd0ce35e4f1b", "src": "db2@1.60.1.70124"}
+{"id": 435937, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435937, "field": "description", "en": "Add $q2 Dusky Belts to complete the shipment.", "hash": "da784d0561e9e34e", "src": "db2@1.60.1.70124"}
+{"id": 435938, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435938, "field": "description", "en": "Add $q2 Frost Leather Cloaks to complete the shipment.", "hash": "249fc46380974e98", "src": "db2@1.60.1.70124"}
+{"id": 435939, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435939, "field": "description", "en": "Add $q2 Shadowskin Gloves to complete the shipment.", "hash": "2ac3742719b9d923", "src": "db2@1.60.1.70124"}
+{"id": 435940, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435940, "field": "description", "en": "Add $q2 Formal White Shirts to complete the shipment.", "hash": "08887f5671b3e95a", "src": "db2@1.60.1.70124"}
+{"id": 435941, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435941, "field": "description", "en": "Add $q2 Crimson Silk Pantaloons to complete the shipment.", "hash": "79af8d074cf94a80", "src": "db2@1.60.1.70124"}
+{"id": 435942, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435942, "field": "description", "en": "Add $q2 Rich Purple Silk Shirts to complete the shipment.", "hash": "35a9803607de840a", "src": "db2@1.60.1.70124"}
+{"id": 435943, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435943, "field": "description", "en": "Add $q2 White Bandit Masks to complete the shipment.", "hash": "10762fdf28a2d6d0", "src": "db2@1.60.1.70124"}
+{"id": 435944, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435944, "field": "description", "en": "Add $q2 Soothing Turtle Bisque to complete the shipment.", "hash": "d4d79e3d5733c4bc", "src": "db2@1.60.1.70124"}
+{"id": 435945, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435945, "field": "description", "en": "Add $q2 Spider Sausages to complete the shipment.", "hash": "5775b6e5549ca4e1", "src": "db2@1.60.1.70124"}
+{"id": 435946, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435946, "field": "description", "en": "Add $q2 Heavy Silk Bandages to complete the shipment.", "hash": "1b73e8b679673dd1", "src": "db2@1.60.1.70124"}
+{"id": 435947, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435947, "field": "description", "en": "Add $q2 Rockscale Cod to complete the shipment.", "hash": "df5ec740c91e3e54", "src": "db2@1.60.1.70124"}
+{"id": 435948, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 435948, "field": "description", "en": "Add $q2 Fire Oil to complete the shipment.", "hash": "97478cc9cde4ae7a", "src": "db2@1.60.1.70124"}
+{"id": 435949, "field": "name", "en": "Glowing Hyperconductive Scale Coif", "hash": "83dafd315d15a83e", "src": "db2@1.60.1.70124"}
+{"id": 435951, "field": "name", "en": "Gneuro-Conductive Channeler's Hood", "hash": "de75ebcb794f5886", "src": "db2@1.60.1.70124"}
+{"id": 435953, "field": "name", "en": "Rad-Resistant Scale Hood", "hash": "dd6f428588dc40a6", "src": "db2@1.60.1.70124"}
+{"id": 435955, "field": "name", "en": "[DNT] Brother Atticus Give Rune", "hash": "cab8ff314bd75f88", "src": "db2@1.60.1.70124"}
+{"id": 435956, "field": "name", "en": "Polished Truesilver Gears", "hash": "6fbdd326c48f1ec6", "src": "db2@1.60.1.70124"}
+{"id": 435958, "field": "name", "en": "Whirling Truesilver Gearwall", "hash": "5711c077a317909c", "src": "db2@1.60.1.70124"}
+{"id": 435960, "field": "name", "en": "Hyperconductive Goldwap", "hash": "cdd7f30760b24c0d", "src": "db2@1.60.1.70124"}
+{"id": 435962, "field": "name", "en": "Libram of Deliverance", "hash": "018250a3ecfb9294", "src": "db2@1.60.1.70124"}
+{"id": 435962, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70124"}
+{"id": 435963, "field": "name", "en": "High-Yield Radiation Bomb", "hash": "b4810dcc6a322f3e", "src": "db2@1.60.1.70124"}
+{"id": 435963, "field": "description", "en": "Inflicts $s1 fire damage to those in the blast radius plus an additional $443813s1 nature damage every 2 sec for 10 seconds. Also reduces the movement speed of affected targets by 25% for $d. ", "hash": "832b5fccdf88646b", "src": "db2@1.60.1.70124"}
+{"id": 435964, "field": "name", "en": "High-Yield Radiation Bomb", "hash": "b4810dcc6a322f3e", "src": "db2@1.60.1.70124"}
+{"id": 435966, "field": "name", "en": "Ez-Thro Radiation Bomb", "hash": "9dd2b0b66fb3e945", "src": "db2@1.60.1.70124"}
+{"id": 435968, "field": "name", "en": "Ez-Thro Radiation Bomb", "hash": "9dd2b0b66fb3e945", "src": "db2@1.60.1.70124"}
+{"id": 435968, "field": "description", "en": "Inflicts $s1 fire damage to those in the blast radius plus an additional $s3 nature damage every 2 sec for 10 seconds. Also reduces the movement speed of affected targets by 25% for $d. ", "hash": "6af039ce18824786", "src": "db2@1.60.1.70124"}
+{"id": 435968, "field": "aura", "en": "Irradiated. Suffering damage over time and movement is slowed.", "hash": "bf0174a02da5de26", "src": "db2@1.60.1.70124"}
+{"id": 435969, "field": "name", "en": "Insulating Gniodine", "hash": "3bc4229f96d9e68c", "src": "db2@1.60.1.70124"}
+{"id": 435971, "field": "name", "en": "Mildly Irradiated Rejuvenation Potion", "hash": "d45d69172d192587", "src": "db2@1.60.1.70124"}
+{"id": 435973, "field": "name", "en": "Mildly Irradiated", "hash": "7ea8ca593f4f98a3", "src": "db2@1.60.1.70124"}
+{"id": 435973, "field": "description", "en": "Restores $s1 mana and $s2 health. Also increases attack power by $s4 and damage done by all spells by $s3 for $d.", "hash": "3034fbeb31030ae3", "src": "db2@1.60.1.70124"}
+{"id": 435973, "field": "aura", "en": "This can't actually be good for you, right?", "hash": "68832f823e27109a", "src": "db2@1.60.1.70124"}
+{"id": 435974, "field": "name", "en": "Decrease Stamina 05", "hash": "fced3858b7695278", "src": "db2@1.60.1.70124"}
+{"id": 435974, "field": "description", "en": "-$s1 Stamina.", "hash": "3bcb47e9cd200184", "src": "db2@1.60.1.70124"}
+{"id": 435975, "field": "name", "en": "Irradiated Set Spell Dam 11", "hash": "1058d56a8426e0a2", "src": "db2@1.60.1.70124"}
+{"id": 435975, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70124"}
+{"id": 435976, "field": "name", "en": "Attack Power - Feral (+20)", "hash": "566d251f19a2daee", "src": "db2@1.60.1.70124"}
+{"id": 435976, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70124"}
+{"id": 435977, "field": "name", "en": "Energized Hyperconductor", "hash": "eb6b3d8af19ed0cb", "src": "db2@1.60.1.70124"}
+{"id": 435977, "field": "description", "en": "Chance on spell cast to increase your damage and healing by up to $435978s1 for $435978d.", "hash": "937b78d9dc043b44", "src": "db2@1.60.1.70124"}
+{"id": 435978, "field": "name", "en": "Energized Hyperconductor", "hash": "eb6b3d8af19ed0cb", "src": "db2@1.60.1.70124"}
+{"id": 435978, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70124"}
+{"id": 435978, "field": "aura", "en": "Magical damage and healing dealt is increased by $s1", "hash": "27248267688f6fed", "src": "db2@1.60.1.70124"}
+{"id": 435980, "field": "name", "en": "Minor Meditation", "hash": "343039855049ef8b", "src": "db2@1.60.1.70124"}
+{"id": 435980, "field": "description", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70124"}
+{"id": 435981, "field": "name", "en": "Energize", "hash": "f097129b6175b9d4", "src": "db2@1.60.1.70124"}
+{"id": 435981, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70124"}
+{"id": 435981, "field": "aura", "en": "You gain $s1 mana.", "hash": "c44bdf9ac8a070d4", "src": "db2@1.60.1.70124"}
+{"id": 435982, "field": "name", "en": "Energize", "hash": "f097129b6175b9d4", "src": "db2@1.60.1.70124"}
+{"id": 435982, "field": "description", "en": "Your attacks have a 5% chance of restoring $435981s1 mana.", "hash": "e9d46bcc66cda040", "src": "db2@1.60.1.70124"}
+{"id": 435983, "field": "name", "en": "Stormbringer Lightning Bolt Bonus", "hash": "eeee0bc539933803", "src": "db2@1.60.1.70124"}
+{"id": 435983, "field": "description", "en": "-$/1000;S1 seconds on the casting time of your Lightning Bolt spell.", "hash": "b9c5489e9ca0cca0", "src": "db2@1.60.1.70124"}
+{"id": 435984, "field": "name", "en": "Enhanced Blessings", "hash": "347b60430f555471", "src": "db2@1.60.1.70124"}
+{"id": 435984, "field": "description", "en": "Increases the duration of your Blessing of Might, Wisdom, Salvation, Sanctuary, Light, and Kings by $s1% and reduces their mana cost by $s2%.", "hash": "ae1d4b4324f9b6f9", "src": "db2@1.60.1.70124"}
+{"id": 435985, "field": "name", "en": "Greatly Improved Weapon Enhancements [DOES NOT WORK]", "hash": "3ea1b0d1680c120d", "src": "db2@1.60.1.70124"}
+{"id": 435985, "field": "description", "en": "Increases the duration of your personal Weapon Imbuements by $s1%.", "hash": "59443d0dd3740649", "src": "db2@1.60.1.70124"}
+{"id": 435986, "field": "name", "en": "Trogg Transfigurator 3000", "hash": "72e3afbfa0dc1881", "src": "db2@1.60.1.70124"}
+{"id": 435986, "field": "description", "en": "Transfigures the caster into a Trogg.", "hash": "647a1aaaf1a53258", "src": "db2@1.60.1.70124"}
+{"id": 435986, "field": "aura", "en": "Hello my fellow Troggs...", "hash": "a93588e6052ab8a8", "src": "db2@1.60.1.70124"}
+{"id": 435991, "field": "name", "en": "Entangling Roots", "hash": "2c0883989bcc14e2", "src": "db2@1.60.1.70124"}
+{"id": 435991, "field": "description", "en": "Entangles an enemy in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "ed46cb1a9bc2abfc", "src": "db2@1.60.1.70124"}
+{"id": 435991, "field": "aura", "en": "Immobilized.\r\nNature damage inflicted every $t2 sec.", "hash": "e6768e6a91f2334b", "src": "db2@1.60.1.70124"}
+{"id": 435994, "field": "name", "en": "Dormant Rune", "hash": "3390924d9388ca48", "src": "db2@1.60.1.70124"}

@@ -1,88 +1,88 @@
-{"id": 263005, "field": "name", "en": "Thendal Watcher's Vest", "hash": "336c40d215269a16", "src": "db2@1.60.1.70009"}
-{"id": 263006, "field": "name", "en": "Scout Ranger's Tunic", "hash": "27f67a25a8807e19", "src": "db2@1.60.1.70009"}
-{"id": 263007, "field": "name", "en": "Skyseer's Vest", "hash": "5aa19a0b9a995102", "src": "db2@1.60.1.70009"}
-{"id": 263015, "field": "name", "en": "Skyseer's Pants", "hash": "f6d50976ee9898b0", "src": "db2@1.60.1.70009"}
-{"id": 263016, "field": "name", "en": "Scout Ranger's Leggings", "hash": "8477eef786e425b7", "src": "db2@1.60.1.70009"}
-{"id": 263017, "field": "name", "en": "Thendal Watcher's Leggings", "hash": "a7fb029b07878293", "src": "db2@1.60.1.70009"}
-{"id": 263028, "field": "name", "en": "Enchanted Harpy Amulet", "hash": "2599ecd460fd504e", "src": "db2@1.60.1.70009"}
-{"id": 263029, "field": "name", "en": "Empty Waterskin", "hash": "b0bb56b997d42b99", "src": "db2@1.60.1.70009"}
-{"id": 263029, "field": "description", "en": "Fill with water from the snowmelt pond in front of Deadwood Den.", "hash": "10266eb8f382ef82", "src": "db2@1.60.1.70009"}
-{"id": 263030, "field": "name", "en": "Filled Hyjal Waterskin", "hash": "6341cea24e23e9a1", "src": "db2@1.60.1.70009"}
-{"id": 263183, "field": "name", "en": "Sharp Ursera Tooth", "hash": "6ef0fb51b49a6b74", "src": "db2@1.60.1.70009"}
-{"id": 263184, "field": "name", "en": "Chipped Ursera Bone", "hash": "6055b5945b1815b5", "src": "db2@1.60.1.70009"}
-{"id": 263227, "field": "name", "en": "Thorn Seed", "hash": "64437e894c863933", "src": "db2@1.60.1.70009"}
-{"id": 263305, "field": "name", "en": "Windshaped Shield", "hash": "15df9a84f3f8b047", "src": "db2@1.60.1.70009"}
-{"id": 263306, "field": "name", "en": "Nightclaw Gloves", "hash": "f6f5df7eb19d4015", "src": "db2@1.60.1.70009"}
-{"id": 263307, "field": "name", "en": "Shadowgale Pants", "hash": "8285ad8750d3c9ca", "src": "db2@1.60.1.70009"}
-{"id": 263308, "field": "name", "en": "Cult Hunter's Boots", "hash": "f82392b1a94c1129", "src": "db2@1.60.1.70009"}
-{"id": 263309, "field": "name", "en": "Freedom Walkers", "hash": "07d61cbba304748b", "src": "db2@1.60.1.70009"}
-{"id": 263310, "field": "name", "en": "Sorrowsong Gloves", "hash": "cef33056749907ef", "src": "db2@1.60.1.70009"}
-{"id": 263311, "field": "name", "en": "Scuffed Cuffs", "hash": "b58f56cd74f39c0c", "src": "db2@1.60.1.70009"}
-{"id": 263312, "field": "name", "en": "Planting Shovel", "hash": "d37071a3ccbe08e2", "src": "db2@1.60.1.70009"}
-{"id": 263313, "field": "name", "en": "Trusty Wrench", "hash": "8dc02d4f1ee2e71d", "src": "db2@1.60.1.70009"}
-{"id": 263314, "field": "name", "en": "Roofing Hammer", "hash": "e8cc59455a4bd2a7", "src": "db2@1.60.1.70009"}
-{"id": 263329, "field": "name", "en": "Flutterfly Swatter", "hash": "489c5854dcd082fe", "src": "db2@1.60.1.70009"}
-{"id": 263330, "field": "name", "en": "Tracker's Pants", "hash": "82ee212769028c57", "src": "db2@1.60.1.70009"}
-{"id": 263332, "field": "name", "en": "Elder's Tunic", "hash": "6da13502201b72f2", "src": "db2@1.60.1.70009"}
-{"id": 263333, "field": "name", "en": "Peacekeeper's Mail", "hash": "aed1cc45ef621ec9", "src": "db2@1.60.1.70009"}
-{"id": 263335, "field": "name", "en": "Hunter's Cord", "hash": "d09d293bb6c09b6e", "src": "db2@1.60.1.70009"}
-{"id": 263336, "field": "name", "en": "Windsong Bangles", "hash": "79903de5661b1107", "src": "db2@1.60.1.70009"}
-{"id": 263337, "field": "name", "en": "Breaker's Gauntlets", "hash": "939382daa7014b0e", "src": "db2@1.60.1.70009"}
-{"id": 263338, "field": "name", "en": "Defender's Bracers", "hash": "81cf99a57a5590fb", "src": "db2@1.60.1.70009"}
-{"id": 263339, "field": "name", "en": "Windswept Slippers", "hash": "1ee27f3985a4850f", "src": "db2@1.60.1.70009"}
-{"id": 263340, "field": "name", "en": "Peacekeeper's Legguards", "hash": "23d4271e67b169fa", "src": "db2@1.60.1.70009"}
-{"id": 263401, "field": "name", "en": "Martyr's Armor", "hash": "933018f0307a941a", "src": "db2@1.60.1.70009"}
-{"id": 263402, "field": "name", "en": "Sash of Sorrow", "hash": "bab905fedcb3481a", "src": "db2@1.60.1.70009"}
-{"id": 263403, "field": "name", "en": "Cilice of Regret", "hash": "4f1cdff3112d3955", "src": "db2@1.60.1.70009"}
-{"id": 263404, "field": "name", "en": "Bow of Hours", "hash": "ce3da250f8fdc0e8", "src": "db2@1.60.1.70009"}
-{"id": 263405, "field": "name", "en": "Belt of Blades", "hash": "88eb19c2b0ac6ea3", "src": "db2@1.60.1.70009"}
-{"id": 263406, "field": "name", "en": "Empyrean Shoes", "hash": "20ea4f115ea4dfc4", "src": "db2@1.60.1.70009"}
-{"id": 263407, "field": "name", "en": "Empyrean Greatsword", "hash": "69d0fab0735ec078", "src": "db2@1.60.1.70009"}
-{"id": 263408, "field": "name", "en": "Exterminator's Vest", "hash": "075e3be3768a1106", "src": "db2@1.60.1.70009"}
-{"id": 263409, "field": "name", "en": "Gardening Pants", "hash": "8f195803d52662d1", "src": "db2@1.60.1.70009"}
-{"id": 263410, "field": "name", "en": "Watcher's Mail Chest", "hash": "f23f0be6056f2f12", "src": "db2@1.60.1.70009"}
-{"id": 263411, "field": "name", "en": "Windcharged Leaf", "hash": "1501292b25161542", "src": "db2@1.60.1.70009"}
-{"id": 263411, "field": "description", "en": "Reduces the mana cost of shapeshifting spells by $s1.", "hash": "d507d0826360b503", "src": "db2@1.60.1.70009"}
-{"id": 263412, "field": "name", "en": "Windcarved Effigy", "hash": "6e5a9589d6f09381", "src": "db2@1.60.1.70009"}
-{"id": 263412, "field": "description", "en": "Reduces the mana cost of Lightning Bolt by $s1 mana.", "hash": "f8a2122d3e0c281d", "src": "db2@1.60.1.70009"}
-{"id": 263414, "field": "name", "en": "Traveler's Wraps", "hash": "c92caf8ea2cee4a6", "src": "db2@1.60.1.70009"}
-{"id": 263415, "field": "name", "en": "Raani's Lucky Feather", "hash": "bc3040916a1c32cd", "src": "db2@1.60.1.70009"}
-{"id": 263417, "field": "name", "en": "Adventurer's Cloak", "hash": "b80a9a1b88b3d5fd", "src": "db2@1.60.1.70009"}
-{"id": 263418, "field": "name", "en": "Shadowsong Family Signet", "hash": "dba3bd94d5a3877c", "src": "db2@1.60.1.70009"}
-{"id": 263420, "field": "name", "en": "Hiking Boots", "hash": "bc94e6594c7f2731", "src": "db2@1.60.1.70009"}
-{"id": 263421, "field": "name", "en": "Bandit's Jerkin", "hash": "4c9df33ad9ac0e9e", "src": "db2@1.60.1.70009"}
-{"id": 263422, "field": "name", "en": "Patchwork Leggings", "hash": "9366ace9e857aad1", "src": "db2@1.60.1.70009"}
-{"id": 263423, "field": "name", "en": "Highlands Mail Legguards", "hash": "b845f592ae6bee25", "src": "db2@1.60.1.70009"}
-{"id": 263424, "field": "name", "en": "Wolfhide Belt", "hash": "1ea96b2803cbb847", "src": "db2@1.60.1.70009"}
-{"id": 263425, "field": "name", "en": "Elegant Cuffs", "hash": "ac1785b89b02f416", "src": "db2@1.60.1.70009"}
-{"id": 263426, "field": "name", "en": "Ex-Commander's Gauntlets", "hash": "cf7963aa0d1f480f", "src": "db2@1.60.1.70009"}
-{"id": 263428, "field": "name", "en": "Dowsing Rod", "hash": "4d0ba5718010465c", "src": "db2@1.60.1.70009"}
-{"id": 263430, "field": "name", "en": "Windbough Wand", "hash": "734b6e3e10baa858", "src": "db2@1.60.1.70009"}
-{"id": 263431, "field": "name", "en": "Defender's Aegis", "hash": "91c043e7e4a1fcaa", "src": "db2@1.60.1.70009"}
-{"id": 263432, "field": "name", "en": "Skulker's Shiv", "hash": "9d4d6546803c09a8", "src": "db2@1.60.1.70009"}
-{"id": 263434, "field": "name", "en": "Winged Beast Staff", "hash": "afc01ea1da46c306", "src": "db2@1.60.1.70009"}
-{"id": 263435, "field": "name", "en": "Mark of Urs'endris", "hash": "20e459fa2b846355", "src": "db2@1.60.1.70009"}
-{"id": 263435, "field": "description", "en": "Increases your Armor contribution from items by $s1%.", "hash": "f6b6e46c504356a6", "src": "db2@1.60.1.70009"}
-{"id": 263436, "field": "name", "en": "Firestorm Totem", "hash": "09a1f47880230726", "src": "db2@1.60.1.70009"}
-{"id": 263436, "field": "description", "en": "Reduces the mana cost of your totems by $s1%.", "hash": "a905b49a878b8b9c", "src": "db2@1.60.1.70009"}
-{"id": 263439, "field": "name", "en": "Deadwood Tribal Beads", "hash": "20b2822a9c37d26a", "src": "db2@1.60.1.70009"}
-{"id": 263439, "field": "description", "en": "These may be collected for the Barkskin furbolgs to earn their trust.", "hash": "fc0be8c076ea73a7", "src": "db2@1.60.1.70009"}
-{"id": 263491, "field": "name", "en": "Shadowsong Family Signet", "hash": "dba3bd94d5a3877c", "src": "db2@1.60.1.70009"}
-{"id": 263493, "field": "name", "en": "Hippogryph Down", "hash": "3ec7fcecfddeb303", "src": "db2@1.60.1.70009"}
-{"id": 263509, "field": "name", "en": "Skywall Souffle", "hash": "f87757399e91aa4c", "src": "db2@1.60.1.70009"}
-{"id": 263509, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "15786f05dbc1cd0f", "src": "db2@1.60.1.70009"}
-{"id": 263511, "field": "name", "en": "Recipe: Skywall Souffle", "hash": "00ef31f01dfb4080", "src": "db2@1.60.1.70009"}
-{"id": 263511, "field": "description", "en": "Teaches you how to cook Skywall Souffle.", "hash": "9ebcd6ee18cb531c", "src": "db2@1.60.1.70009"}
-{"id": 263512, "field": "name", "en": "Pincer Bites", "hash": "12bb216b9d8c02e2", "src": "db2@1.60.1.70009"}
-{"id": 263512, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "132256a17bb15a65", "src": "db2@1.60.1.70009"}
-{"id": 263513, "field": "name", "en": "Recipe: Pincer Bites", "hash": "92d083ac18a3c16d", "src": "db2@1.60.1.70009"}
-{"id": 263513, "field": "description", "en": "Teaches you how to cook Pincer Bites.", "hash": "b206640d60d9ee35", "src": "db2@1.60.1.70009"}
-{"id": 263930, "field": "name", "en": "Farholde Scouting Report", "hash": "d11ff6244200e96f", "src": "db2@1.60.1.70009"}
-{"id": 263931, "field": "name", "en": "Crudely Fashioned Report", "hash": "189af6bb7b688f7e", "src": "db2@1.60.1.70009"}
-{"id": 263935, "field": "name", "en": "Elunar Longstaff", "hash": "7fa927bcce9c11ad", "src": "db2@1.60.1.70009"}
-{"id": 263936, "field": "name", "en": "Windforged Shortblade", "hash": "45b35ddf7aad8cd0", "src": "db2@1.60.1.70009"}
-{"id": 263937, "field": "name", "en": "Skyseeker's Greatstaff", "hash": "caf8dd8f6b4ad0e7", "src": "db2@1.60.1.70009"}
-{"id": 263972, "field": "name", "en": "Woodworker's Axe", "hash": "bb546aa5aec3aaf5", "src": "db2@1.60.1.70009"}
-{"id": 263973, "field": "name", "en": "Beguiler's Blade", "hash": "89ec6325d272be74", "src": "db2@1.60.1.70009"}
-{"id": 263992, "field": "name", "en": "Overseer's Keyring", "hash": "42ca64ab32d3f115", "src": "db2@1.60.1.70009"}
-{"id": 263993, "field": "name", "en": "Skybreaker Bulwark", "hash": "6316b731de68c5c6", "src": "db2@1.60.1.70009"}
+{"id": 263005, "field": "name", "en": "Thendal Watcher's Vest", "hash": "336c40d215269a16", "src": "db2@1.60.1.70124"}
+{"id": 263006, "field": "name", "en": "Scout Ranger's Tunic", "hash": "27f67a25a8807e19", "src": "db2@1.60.1.70124"}
+{"id": 263007, "field": "name", "en": "Skyseer's Vest", "hash": "5aa19a0b9a995102", "src": "db2@1.60.1.70124"}
+{"id": 263015, "field": "name", "en": "Skyseer's Pants", "hash": "f6d50976ee9898b0", "src": "db2@1.60.1.70124"}
+{"id": 263016, "field": "name", "en": "Scout Ranger's Leggings", "hash": "8477eef786e425b7", "src": "db2@1.60.1.70124"}
+{"id": 263017, "field": "name", "en": "Thendal Watcher's Leggings", "hash": "a7fb029b07878293", "src": "db2@1.60.1.70124"}
+{"id": 263028, "field": "name", "en": "Enchanted Harpy Amulet", "hash": "2599ecd460fd504e", "src": "db2@1.60.1.70124"}
+{"id": 263029, "field": "name", "en": "Empty Waterskin", "hash": "b0bb56b997d42b99", "src": "db2@1.60.1.70124"}
+{"id": 263029, "field": "description", "en": "Fill with water from the snowmelt pond in front of Deadwood Den.", "hash": "10266eb8f382ef82", "src": "db2@1.60.1.70124"}
+{"id": 263030, "field": "name", "en": "Filled Hyjal Waterskin", "hash": "6341cea24e23e9a1", "src": "db2@1.60.1.70124"}
+{"id": 263183, "field": "name", "en": "Sharp Ursera Tooth", "hash": "6ef0fb51b49a6b74", "src": "db2@1.60.1.70124"}
+{"id": 263184, "field": "name", "en": "Chipped Ursera Bone", "hash": "6055b5945b1815b5", "src": "db2@1.60.1.70124"}
+{"id": 263227, "field": "name", "en": "Thorn Seed", "hash": "64437e894c863933", "src": "db2@1.60.1.70124"}
+{"id": 263305, "field": "name", "en": "Windshaped Shield", "hash": "15df9a84f3f8b047", "src": "db2@1.60.1.70124"}
+{"id": 263306, "field": "name", "en": "Nightclaw Gloves", "hash": "f6f5df7eb19d4015", "src": "db2@1.60.1.70124"}
+{"id": 263307, "field": "name", "en": "Shadowgale Pants", "hash": "8285ad8750d3c9ca", "src": "db2@1.60.1.70124"}
+{"id": 263308, "field": "name", "en": "Cult Hunter's Boots", "hash": "f82392b1a94c1129", "src": "db2@1.60.1.70124"}
+{"id": 263309, "field": "name", "en": "Freedom Walkers", "hash": "07d61cbba304748b", "src": "db2@1.60.1.70124"}
+{"id": 263310, "field": "name", "en": "Sorrowsong Gloves", "hash": "cef33056749907ef", "src": "db2@1.60.1.70124"}
+{"id": 263311, "field": "name", "en": "Scuffed Cuffs", "hash": "b58f56cd74f39c0c", "src": "db2@1.60.1.70124"}
+{"id": 263312, "field": "name", "en": "Planting Shovel", "hash": "d37071a3ccbe08e2", "src": "db2@1.60.1.70124"}
+{"id": 263313, "field": "name", "en": "Trusty Wrench", "hash": "8dc02d4f1ee2e71d", "src": "db2@1.60.1.70124"}
+{"id": 263314, "field": "name", "en": "Roofing Hammer", "hash": "e8cc59455a4bd2a7", "src": "db2@1.60.1.70124"}
+{"id": 263329, "field": "name", "en": "Flutterfly Swatter", "hash": "489c5854dcd082fe", "src": "db2@1.60.1.70124"}
+{"id": 263330, "field": "name", "en": "Tracker's Pants", "hash": "82ee212769028c57", "src": "db2@1.60.1.70124"}
+{"id": 263332, "field": "name", "en": "Elder's Tunic", "hash": "6da13502201b72f2", "src": "db2@1.60.1.70124"}
+{"id": 263333, "field": "name", "en": "Peacekeeper's Mail", "hash": "aed1cc45ef621ec9", "src": "db2@1.60.1.70124"}
+{"id": 263335, "field": "name", "en": "Hunter's Cord", "hash": "d09d293bb6c09b6e", "src": "db2@1.60.1.70124"}
+{"id": 263336, "field": "name", "en": "Windsong Bangles", "hash": "79903de5661b1107", "src": "db2@1.60.1.70124"}
+{"id": 263337, "field": "name", "en": "Breaker's Gauntlets", "hash": "939382daa7014b0e", "src": "db2@1.60.1.70124"}
+{"id": 263338, "field": "name", "en": "Defender's Bracers", "hash": "81cf99a57a5590fb", "src": "db2@1.60.1.70124"}
+{"id": 263339, "field": "name", "en": "Windswept Slippers", "hash": "1ee27f3985a4850f", "src": "db2@1.60.1.70124"}
+{"id": 263340, "field": "name", "en": "Peacekeeper's Legguards", "hash": "23d4271e67b169fa", "src": "db2@1.60.1.70124"}
+{"id": 263401, "field": "name", "en": "Martyr's Armor", "hash": "933018f0307a941a", "src": "db2@1.60.1.70124"}
+{"id": 263402, "field": "name", "en": "Sash of Sorrow", "hash": "bab905fedcb3481a", "src": "db2@1.60.1.70124"}
+{"id": 263403, "field": "name", "en": "Cilice of Regret", "hash": "4f1cdff3112d3955", "src": "db2@1.60.1.70124"}
+{"id": 263404, "field": "name", "en": "Bow of Hours", "hash": "ce3da250f8fdc0e8", "src": "db2@1.60.1.70124"}
+{"id": 263405, "field": "name", "en": "Belt of Blades", "hash": "88eb19c2b0ac6ea3", "src": "db2@1.60.1.70124"}
+{"id": 263406, "field": "name", "en": "Empyrean Shoes", "hash": "20ea4f115ea4dfc4", "src": "db2@1.60.1.70124"}
+{"id": 263407, "field": "name", "en": "Empyrean Greatsword", "hash": "69d0fab0735ec078", "src": "db2@1.60.1.70124"}
+{"id": 263408, "field": "name", "en": "Exterminator's Vest", "hash": "075e3be3768a1106", "src": "db2@1.60.1.70124"}
+{"id": 263409, "field": "name", "en": "Gardening Pants", "hash": "8f195803d52662d1", "src": "db2@1.60.1.70124"}
+{"id": 263410, "field": "name", "en": "Watcher's Mail Chest", "hash": "f23f0be6056f2f12", "src": "db2@1.60.1.70124"}
+{"id": 263411, "field": "name", "en": "Windcharged Leaf", "hash": "1501292b25161542", "src": "db2@1.60.1.70124"}
+{"id": 263411, "field": "description", "en": "Reduces the mana cost of shapeshifting spells by $s1.", "hash": "d507d0826360b503", "src": "db2@1.60.1.70124"}
+{"id": 263412, "field": "name", "en": "Windcarved Effigy", "hash": "6e5a9589d6f09381", "src": "db2@1.60.1.70124"}
+{"id": 263412, "field": "description", "en": "Reduces the mana cost of Lightning Bolt by $s1 mana.", "hash": "f8a2122d3e0c281d", "src": "db2@1.60.1.70124"}
+{"id": 263414, "field": "name", "en": "Traveler's Wraps", "hash": "c92caf8ea2cee4a6", "src": "db2@1.60.1.70124"}
+{"id": 263415, "field": "name", "en": "Raani's Lucky Feather", "hash": "bc3040916a1c32cd", "src": "db2@1.60.1.70124"}
+{"id": 263417, "field": "name", "en": "Adventurer's Cloak", "hash": "b80a9a1b88b3d5fd", "src": "db2@1.60.1.70124"}
+{"id": 263418, "field": "name", "en": "Shadowsong Family Signet", "hash": "dba3bd94d5a3877c", "src": "db2@1.60.1.70124"}
+{"id": 263420, "field": "name", "en": "Hiking Boots", "hash": "bc94e6594c7f2731", "src": "db2@1.60.1.70124"}
+{"id": 263421, "field": "name", "en": "Bandit's Jerkin", "hash": "4c9df33ad9ac0e9e", "src": "db2@1.60.1.70124"}
+{"id": 263422, "field": "name", "en": "Patchwork Leggings", "hash": "9366ace9e857aad1", "src": "db2@1.60.1.70124"}
+{"id": 263423, "field": "name", "en": "Highlands Mail Legguards", "hash": "b845f592ae6bee25", "src": "db2@1.60.1.70124"}
+{"id": 263424, "field": "name", "en": "Wolfhide Belt", "hash": "1ea96b2803cbb847", "src": "db2@1.60.1.70124"}
+{"id": 263425, "field": "name", "en": "Elegant Cuffs", "hash": "ac1785b89b02f416", "src": "db2@1.60.1.70124"}
+{"id": 263426, "field": "name", "en": "Ex-Commander's Gauntlets", "hash": "cf7963aa0d1f480f", "src": "db2@1.60.1.70124"}
+{"id": 263428, "field": "name", "en": "Dowsing Rod", "hash": "4d0ba5718010465c", "src": "db2@1.60.1.70124"}
+{"id": 263430, "field": "name", "en": "Windbough Wand", "hash": "734b6e3e10baa858", "src": "db2@1.60.1.70124"}
+{"id": 263431, "field": "name", "en": "Defender's Aegis", "hash": "91c043e7e4a1fcaa", "src": "db2@1.60.1.70124"}
+{"id": 263432, "field": "name", "en": "Skulker's Shiv", "hash": "9d4d6546803c09a8", "src": "db2@1.60.1.70124"}
+{"id": 263434, "field": "name", "en": "Winged Beast Staff", "hash": "afc01ea1da46c306", "src": "db2@1.60.1.70124"}
+{"id": 263435, "field": "name", "en": "Mark of Urs'endris", "hash": "20e459fa2b846355", "src": "db2@1.60.1.70124"}
+{"id": 263435, "field": "description", "en": "Increases your Armor contribution from items by $s1%.", "hash": "f6b6e46c504356a6", "src": "db2@1.60.1.70124"}
+{"id": 263436, "field": "name", "en": "Firestorm Totem", "hash": "09a1f47880230726", "src": "db2@1.60.1.70124"}
+{"id": 263436, "field": "description", "en": "Reduces the mana cost of your totems by $s1%.", "hash": "a905b49a878b8b9c", "src": "db2@1.60.1.70124"}
+{"id": 263439, "field": "name", "en": "Deadwood Tribal Beads", "hash": "20b2822a9c37d26a", "src": "db2@1.60.1.70124"}
+{"id": 263439, "field": "description", "en": "These may be collected for the Barkskin furbolgs to earn their trust.", "hash": "fc0be8c076ea73a7", "src": "db2@1.60.1.70124"}
+{"id": 263491, "field": "name", "en": "Shadowsong Family Signet", "hash": "dba3bd94d5a3877c", "src": "db2@1.60.1.70124"}
+{"id": 263493, "field": "name", "en": "Hippogryph Down", "hash": "3ec7fcecfddeb303", "src": "db2@1.60.1.70124"}
+{"id": 263509, "field": "name", "en": "Skywall Souffle", "hash": "f87757399e91aa4c", "src": "db2@1.60.1.70124"}
+{"id": 263509, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "15786f05dbc1cd0f", "src": "db2@1.60.1.70124"}
+{"id": 263511, "field": "name", "en": "Recipe: Skywall Souffle", "hash": "00ef31f01dfb4080", "src": "db2@1.60.1.70124"}
+{"id": 263511, "field": "description", "en": "Teaches you how to cook Skywall Souffle.", "hash": "9ebcd6ee18cb531c", "src": "db2@1.60.1.70124"}
+{"id": 263512, "field": "name", "en": "Pincer Bites", "hash": "12bb216b9d8c02e2", "src": "db2@1.60.1.70124"}
+{"id": 263512, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "132256a17bb15a65", "src": "db2@1.60.1.70124"}
+{"id": 263513, "field": "name", "en": "Recipe: Pincer Bites", "hash": "92d083ac18a3c16d", "src": "db2@1.60.1.70124"}
+{"id": 263513, "field": "description", "en": "Teaches you how to cook Pincer Bites.", "hash": "b206640d60d9ee35", "src": "db2@1.60.1.70124"}
+{"id": 263930, "field": "name", "en": "Farholde Scouting Report", "hash": "d11ff6244200e96f", "src": "db2@1.60.1.70124"}
+{"id": 263931, "field": "name", "en": "Crudely Fashioned Report", "hash": "189af6bb7b688f7e", "src": "db2@1.60.1.70124"}
+{"id": 263935, "field": "name", "en": "Elunar Longstaff", "hash": "7fa927bcce9c11ad", "src": "db2@1.60.1.70124"}
+{"id": 263936, "field": "name", "en": "Windforged Shortblade", "hash": "45b35ddf7aad8cd0", "src": "db2@1.60.1.70124"}
+{"id": 263937, "field": "name", "en": "Skyseeker's Greatstaff", "hash": "caf8dd8f6b4ad0e7", "src": "db2@1.60.1.70124"}
+{"id": 263972, "field": "name", "en": "Woodworker's Axe", "hash": "bb546aa5aec3aaf5", "src": "db2@1.60.1.70124"}
+{"id": 263973, "field": "name", "en": "Beguiler's Blade", "hash": "89ec6325d272be74", "src": "db2@1.60.1.70124"}
+{"id": 263992, "field": "name", "en": "Overseer's Keyring", "hash": "42ca64ab32d3f115", "src": "db2@1.60.1.70124"}
+{"id": 263993, "field": "name", "en": "Skybreaker Bulwark", "hash": "6316b731de68c5c6", "src": "db2@1.60.1.70124"}

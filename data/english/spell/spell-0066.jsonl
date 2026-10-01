@@ -1,6 +1,6 @@
-{"id": 66842, "field": "name", "en": "Call of the Elements", "hash": "4d1f436c6b339a72", "src": "db2@1.60.1.70009"}
-{"id": 66842, "field": "description", "en": "Simultaneously places up to 4 totems specified in the Totem Bar.", "hash": "22a79ee886fa0411", "src": "db2@1.60.1.70009"}
-{"id": 66843, "field": "name", "en": "Call of the Ancestors", "hash": "9a8f9afef4b5ba53", "src": "db2@1.60.1.70009"}
-{"id": 66843, "field": "description", "en": "Simultaneously places up to 4 totems specified in the Totem Bar. Can call different totems than Call of the Elements.", "hash": "16d3fadb027a0c3b", "src": "db2@1.60.1.70009"}
-{"id": 66844, "field": "name", "en": "Call of the Spirits", "hash": "1d2debee4a8108c1", "src": "db2@1.60.1.70009"}
-{"id": 66844, "field": "description", "en": "Simultaneously places up to 4 totems specified in the Totem Bar. Can call different totems than Call of the Elements or Call of the Ancestors.", "hash": "6628655d4fc755db", "src": "db2@1.60.1.70009"}
+{"id": 66842, "field": "name", "en": "Call of the Elements", "hash": "4d1f436c6b339a72", "src": "db2@1.60.1.70124"}
+{"id": 66842, "field": "description", "en": "Simultaneously places up to 4 totems specified in the Totem Bar.", "hash": "22a79ee886fa0411", "src": "db2@1.60.1.70124"}
+{"id": 66843, "field": "name", "en": "Call of the Ancestors", "hash": "9a8f9afef4b5ba53", "src": "db2@1.60.1.70124"}
+{"id": 66843, "field": "description", "en": "Simultaneously places up to 4 totems specified in the Totem Bar. Can call different totems than Call of the Elements.", "hash": "16d3fadb027a0c3b", "src": "db2@1.60.1.70124"}
+{"id": 66844, "field": "name", "en": "Call of the Spirits", "hash": "1d2debee4a8108c1", "src": "db2@1.60.1.70124"}
+{"id": 66844, "field": "description", "en": "Simultaneously places up to 4 totems specified in the Totem Bar. Can call different totems than Call of the Elements or Call of the Ancestors.", "hash": "6628655d4fc755db", "src": "db2@1.60.1.70124"}

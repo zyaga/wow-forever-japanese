@@ -1,13 +1,13 @@
-{"id": 451092, "field": "name", "en": "Create Yellow Punch Card", "hash": "381772c27cad6ee9", "src": "db2@1.60.1.70009"}
-{"id": 451227, "field": "name", "en": "Despawn Caster", "hash": "25d1d641b4641d78", "src": "db2@1.60.1.70009"}
-{"id": 451398, "field": "name", "en": "Fire Crown", "hash": "d1df0d4e99ddaca9", "src": "db2@1.60.1.70009"}
-{"id": 451398, "field": "aura", "en": "A finishing touch to a Dark Iron Dwarf disguise.", "hash": "79de3b547733669d", "src": "db2@1.60.1.70009"}
-{"id": 451415, "field": "name", "en": "Sandstorm", "hash": "2ce4ced799916caa", "src": "db2@1.60.1.70009"}
-{"id": 451438, "field": "name", "en": "Dream Eater", "hash": "5490c9a702d77b99", "src": "db2@1.60.1.70009"}
-{"id": 451439, "field": "name", "en": "Dream Eater", "hash": "5490c9a702d77b99", "src": "db2@1.60.1.70009"}
-{"id": 451439, "field": "description", "en": "Damaging finishing moves have a $b1% chance per combo point to restore $451438s1 energy.", "hash": "3337749b64b688c7", "src": "db2@1.60.1.70009"}
-{"id": 451439, "field": "aura", "en": "Damaging finishing moves have a $b1% chance per combo point to restore $451438s1 energy.", "hash": "3337749b64b688c7", "src": "db2@1.60.1.70009"}
-{"id": 451706, "field": "name", "en": "Screaming Chain Pauldrons", "hash": "be33c19a8ba0ccd9", "src": "db2@1.60.1.70009"}
-{"id": 451714, "field": "name", "en": "Goblin Mortar", "hash": "c7d3559863e969b5", "src": "db2@1.60.1.70009"}
-{"id": 451714, "field": "description", "en": "$?$a446847[Teaches you how to craft a Goblin Mortar][]", "hash": "08e69178ca2ae452", "src": "db2@1.60.1.70009"}
-{"id": 451730, "field": "name", "en": "[DNT] Threat Drop", "hash": "b93843630d86cf85", "src": "db2@1.60.1.70009"}
+{"id": 451092, "field": "name", "en": "Create Yellow Punch Card", "hash": "381772c27cad6ee9", "src": "db2@1.60.1.70124"}
+{"id": 451227, "field": "name", "en": "Despawn Caster", "hash": "25d1d641b4641d78", "src": "db2@1.60.1.70124"}
+{"id": 451398, "field": "name", "en": "Fire Crown", "hash": "d1df0d4e99ddaca9", "src": "db2@1.60.1.70124"}
+{"id": 451398, "field": "aura", "en": "A finishing touch to a Dark Iron Dwarf disguise.", "hash": "79de3b547733669d", "src": "db2@1.60.1.70124"}
+{"id": 451415, "field": "name", "en": "Sandstorm", "hash": "2ce4ced799916caa", "src": "db2@1.60.1.70124"}
+{"id": 451438, "field": "name", "en": "Dream Eater", "hash": "5490c9a702d77b99", "src": "db2@1.60.1.70124"}
+{"id": 451439, "field": "name", "en": "Dream Eater", "hash": "5490c9a702d77b99", "src": "db2@1.60.1.70124"}
+{"id": 451439, "field": "description", "en": "Damaging finishing moves have a $b1% chance per combo point to restore $451438s1 energy.", "hash": "3337749b64b688c7", "src": "db2@1.60.1.70124"}
+{"id": 451439, "field": "aura", "en": "Damaging finishing moves have a $b1% chance per combo point to restore $451438s1 energy.", "hash": "3337749b64b688c7", "src": "db2@1.60.1.70124"}
+{"id": 451706, "field": "name", "en": "Screaming Chain Pauldrons", "hash": "be33c19a8ba0ccd9", "src": "db2@1.60.1.70124"}
+{"id": 451714, "field": "name", "en": "Goblin Mortar", "hash": "c7d3559863e969b5", "src": "db2@1.60.1.70124"}
+{"id": 451714, "field": "description", "en": "$?$a446847[Teaches you how to craft a Goblin Mortar][]", "hash": "08e69178ca2ae452", "src": "db2@1.60.1.70124"}
+{"id": 451730, "field": "name", "en": "[DNT] Threat Drop", "hash": "b93843630d86cf85", "src": "db2@1.60.1.70124"}

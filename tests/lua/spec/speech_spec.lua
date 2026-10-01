@@ -24,7 +24,7 @@ local SAY, YELL, EMOTE, BOSS, PLAYER_SAY = 11, 12, 13, 14, 1
 local clock = 0
 local function chatFrame()
   local frame = { history = {}, visibleLines = { Stub.fontString("") }, callbacks = {},
-    fontObject = { font = { path = "Fonts\\ARIALN.TTF", size = 14, flags = "" } } }
+    fontObject = Stub.fontObject("Fonts\\ARIALN.TTF", 14) }
   local function package(message, r, g, b, ...)
     clock = clock + 1
     return { message = message, r = r, g = g, b = b, extra = { n = select("#", ...), ... }, timestamp = clock }

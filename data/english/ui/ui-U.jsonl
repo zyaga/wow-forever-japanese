@@ -1,188 +1,188 @@
-{"id": "UI_SCALE", "field": "text", "en": "UI Scale", "hash": "5e7e9a2a0b5e9759", "src": "db2@1.60.1.70009"}
-{"id": "UNAVAILABLE", "field": "text", "en": "Unavailable", "hash": "00112d75727441c7", "src": "db2@1.60.1.70009"}
-{"id": "UNCHECK_ALL", "field": "text", "en": "Uncheck All", "hash": "896ccf81fc935765", "src": "db2@1.60.1.70009"}
-{"id": "UNCONSCIOUS", "field": "text", "en": "Unconscious", "hash": "5d7ae52b5f4646e0", "src": "db2@1.60.1.70009"}
-{"id": "UNDER_X_PERCENT", "field": "text", "en": "Under %d%%", "hash": "9ff04bbdd4534af8", "src": "db2@1.60.1.70009"}
-{"id": "UNDISCOVERED_FACTION_FLIGHTPOINT", "field": "text", "en": "Undiscovered %s Flightpoint", "hash": "ea48b9ffbbaee541", "src": "db2@1.60.1.70009"}
-{"id": "UNDISCOVERED_NEUTRAL_FLIGHTPOINT", "field": "text", "en": "Undiscovered Flightpoint", "hash": "09609acdd3509692", "src": "db2@1.60.1.70009"}
-{"id": "UNDOCK_WINDOW", "field": "text", "en": "Undock Window", "hash": "d1331c633a73b2a8", "src": "db2@1.60.1.70009"}
-{"id": "UNEXTEND_RAID_LOCK", "field": "text", "en": "Remove Raid Lock Extension", "hash": "44cb43ee0f36210e", "src": "db2@1.60.1.70009"}
-{"id": "UNIGNORE_PLAYER_BUTTON_LABEL", "field": "text", "en": "Remove from list", "hash": "fc0ce1ada6e637e9", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_COLORS", "field": "text", "en": "Unit Colors:", "hash": "9b5a8600078b8dee", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_INSTANCE", "field": "text", "en": "Instance Options", "hash": "c8cfcbdd53e93a2a", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_INTERACT", "field": "text", "en": "Interact", "hash": "a8627b8a9ff4d0a8", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_LOOT", "field": "text", "en": "Loot Options", "hash": "beb718cd0e258470", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_OTHER", "field": "text", "en": "Other Options", "hash": "25a8d189cf23f6e3", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_LEVEL_DEAD_TEMPLATE", "field": "text", "en": "Level %d Corpse", "hash": "86782f24e419003b", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_LEVEL_TEMPLATE", "field": "text", "en": "Level %d", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_AUTOMODE", "field": "text", "en": "Always Show Nameplates", "hash": "64e083c80c2999ce", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY", "field": "text", "en": "Cast Bar Information", "hash": "c56ae0326dd4e7c3", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_HIGHLIGHT_IMPORTANT_CASTS", "field": "text", "en": "Highlight Important Casts", "hash": "858f0e4d3648c55d", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_HIGHLIGHT_IMPORTANT_CASTS_TOOLTIP", "field": "text", "en": "Controls whether cast bars on nameplates display in a more noticeable way for important casts.", "hash": "6af6a049940c77b9", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_HIGHLIGHT_WHEN_CAST_TARGET", "field": "text", "en": "Flash When Targeted By Enemy", "hash": "ddad21b3c596ce8b", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_HIGHLIGHT_WHEN_CAST_TARGET_TOOLTIP", "field": "text", "en": "Controls whether cast bars on nameplates display in a more noticeable way when your character is the target of the spell.", "hash": "577b2b0626631806", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_ICON", "field": "text", "en": "Spell Icon", "hash": "95bd27232fb1d52c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_ICON_TOOLTIP", "field": "text", "en": "Displays the icon of the spell on the cast bar.", "hash": "5e022c8dfc3920aa", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_NAME", "field": "text", "en": "Spell Name", "hash": "96682409eac8d1fc", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_NAME_TOOLTIP", "field": "text", "en": "Displays the name of the spell on the cast bar.", "hash": "e0d28a99aff87889", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_TARGET", "field": "text", "en": "Spell Target", "hash": "70de6837e29edcb3", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_TARGET_TOOLTIP", "field": "text", "en": "Displays the name of the unit being targeted by the spell on the cast bar.", "hash": "6861b0b5a956b648", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_TOOLTIP", "field": "text", "en": "Controls what information is displayed on cast bars.", "hash": "e2f506b5650776ea", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CLASS_COLOR", "field": "text", "en": "Nameplate Class Color", "hash": "da13b7c74bf7d7c6", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CLASS_COLOR_ENEMY", "field": "text", "en": "Enemy Players", "hash": "a62739f73cfa4f03", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CLASS_COLOR_ENEMY_TOOLTIP", "field": "text", "en": "Color enemy player nameplates using class colors.", "hash": "287e81dba28812bd", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CLASS_COLOR_FRIENDLY", "field": "text", "en": "Friendly Players", "hash": "1faf73f33858781a", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CLASS_COLOR_FRIENDLY_TOOLTIP", "field": "text", "en": "Color friendly player nameplates using class colors.", "hash": "418d386c74a83c0d", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CLASS_COLOR_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_CLASS_COLOR_TOOLTIP", "field": "text", "en": "For player units, the Nameplate Health Bar will be colored based on that player's class.", "hash": "3f5c45da4d85e216", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_DEBUFF_PADDING", "field": "text", "en": "Debuff Padding", "hash": "00db41e91d270f39", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_DEBUFF_PADDING_TOOLTIP", "field": "text", "en": "Controls the vertical space between debuffs and the health bar.", "hash": "f4a7183e0b967317", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_DEBUFF_SCALE", "field": "text", "en": "Buff/Debuff Scale", "hash": "efdeb5c999db3ac4", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_DEBUFF_SCALE_TOOLTIP", "field": "text", "en": "Controls the size nameplate buffs and debuffs are displayed on the screen.", "hash": "b2d76b57d12ea81d", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENABLE_STACKING", "field": "text", "en": "Stack Nameplates", "hash": "0be30ef6da8e551c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENABLE_STACKING_TOOLTIP", "field": "text", "en": "Avoids overlapping Nameplates by stacking them vertically.", "hash": "4561cc529cb9f90a", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY", "field": "text", "en": "Enemy NPC Buffs/Debuffs", "hash": "18c4583349aa8cdf", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_BUFFS", "field": "text", "en": "Mob Buffs", "hash": "57120dfba2517c6d", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_BUFFS_TOOLTIP", "field": "text", "en": "Show the temporary beneficial effects applied to the unit.", "hash": "77bddb45a4842663", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_CROWD_CONTROL", "field": "text", "en": "Shared CC", "hash": "0d2ed5f4ab5d53f1", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_CROWD_CONTROL_TOOLTIP", "field": "text", "en": "Show the temporary crowd control effects you or your allies have applied to the unit.", "hash": "1ebe0c81b6b1dc8b", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_DEBUFFS", "field": "text", "en": "Personal Debuffs", "hash": "4f5faa5c6a7dd1eb", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_DEBUFFS_TOOLTIP", "field": "text", "en": "Show the temporary negative effects you have applied to the unit.", "hash": "9c3518dc9accf100", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_TOOLTIP", "field": "text", "en": "Controls how your buffs, debuffs, and forms of crowd control are displayed on the nameplates of enemy NPCs.", "hash": "ebb23c9431c84852", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY", "field": "text", "en": "Enemy Player Buffs/Debuffs", "hash": "31461ed6741bec61", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_BIG_DEBUFF", "field": "text", "en": "Big Debuff", "hash": "0c44fc6a5f3f12f0", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_BIG_DEBUFF_TOOLTIP", "field": "text", "en": "Show the temporary crowd control effects you or your allies have applied to the player.", "hash": "c7bab94e17b5573e", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_BUFFS", "field": "text", "en": "Enemy Buffs", "hash": "67276a8610935c13", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_BUFFS_TOOLTIP", "field": "text", "en": "Show the temporary beneficial effects applied to the player.", "hash": "dbd6beb87907bd2b", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_DEBUFFS", "field": "text", "en": "Personal Debuffs", "hash": "4f5faa5c6a7dd1eb", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_DEBUFFS_TOOLTIP", "field": "text", "en": "Show the temporary negative effects you have applied to the player.", "hash": "59269dc84f77e7fa", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_TOOLTIP", "field": "text", "en": "Controls how your buffs, debuffs, and forms of crowd control are displayed on the nameplates of enemy players.", "hash": "e857ec1cab99c61e", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY", "field": "text", "en": "Friendly Player Buffs/Debuffs", "hash": "1d59cef07bb81cb8", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_BIG_DEBUFF", "field": "text", "en": "Big Debuff", "hash": "0c44fc6a5f3f12f0", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_BIG_DEBUFF_TOOLTIP", "field": "text", "en": "Show the temporary crowd control effects that enemies have applied to the player.", "hash": "c2339e33369e086c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_BUFFS", "field": "text", "en": "Personal Buffs", "hash": "77aab55634930c5d", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_BUFFS_TOOLTIP", "field": "text", "en": "Show the temporary beneficial effects you have applied to the player.", "hash": "56619cb5dd713928", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_DEBUFFS", "field": "text", "en": "Enemy Debuffs", "hash": "5e2d836dac691f26", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_DEBUFFS_TOOLTIP", "field": "text", "en": "Show the temporary negative effects that enemies have applied to the player.", "hash": "f81916f89eb20eba", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_TOOLTIP", "field": "text", "en": "Controls how your buffs, debuffs, and forms of crowd control are displayed on the nameplates of friendly players.", "hash": "204d8c72bdd521be", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_NAME_USE_CLASS_COLOR", "field": "text", "en": "Use Class Color for Names", "hash": "73c4f8a4f87b23cc", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_SHOW_ONLY_NAME", "field": "text", "en": "Only Show Names", "hash": "0c5ff05ea85bbcf6", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_GLOBAL_SCALE", "field": "text", "en": "Size", "hash": "0b3ae6c579971a94", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_GLOBAL_SCALE_TOOLTIP", "field": "text", "en": "Controls the size nameplates are displayed on the screen.", "hash": "d8a23ed00485067f", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_INFO_DISPLAY", "field": "text", "en": "Nameplate Information", "hash": "5feb94bcd74c69ff", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_CURRENT_HEALTH_PERCENT", "field": "text", "en": "Health Percentage", "hash": "15099a8ea8df1765", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_CURRENT_HEALTH_PERCENT_TOOLTIP", "field": "text", "en": "Displays the unit's current health as a percentage of total health.", "hash": "d20d606472003dfa", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_CURRENT_HEALTH_VALUE", "field": "text", "en": "Health Value", "hash": "97571a7997d6e6ab", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_CURRENT_HEALTH_VALUE_TOOLTIP", "field": "text", "en": "Displays the unit's current health.", "hash": "bcc8d3928e9e1184", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_RARITY_ICON", "field": "text", "en": "Rarity Icon", "hash": "a20d6aabc2baa19d", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_RARITY_ICON_TOOLTIP", "field": "text", "en": "Displays an icon for elite units.", "hash": "5c951ce062d54030", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_TOOLTIP", "field": "text", "en": "Controls what information is displayed on nameplates.", "hash": "cd8c3e8f9192a7f5", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_PREVIEW_ENEMY_NPC", "field": "text", "en": "Previewing - Enemy NPC", "hash": "e408da6ac441e8ca", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_PREVIEW_ENEMY_PLAYER", "field": "text", "en": "Previewing - Enemy Player", "hash": "a4686b61a31903f4", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_PREVIEW_FRIENDLY_NPC", "field": "text", "en": "Previewing - Friendly NPC", "hash": "30055256e8fe969c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_PREVIEW_FRIENDLY_PLAYER", "field": "text", "en": "Previewing - Friendly Player", "hash": "83366813467ebf8e", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SEARCH_TAG", "field": "text", "en": "Nameplates", "hash": "2c6dbc93c7cb6014", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SHOW_ENEMIES", "field": "text", "en": "Enemy Unit Nameplate", "hash": "903520c65be84cf0", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SHOW_ENEMY_MINIONS", "field": "text", "en": "Minions", "hash": "1c1643aeb0da8f9c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SHOW_ENEMY_MINUS", "field": "text", "en": "Minor", "hash": "55ceb226c0e65ec6", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SHOW_FRIENDLY_MINIONS", "field": "text", "en": "Minions", "hash": "1c1643aeb0da8f9c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SHOW_FRIENDLY_NPCS", "field": "text", "en": "Friendly NPC Nameplates", "hash": "24f75b9f488d1ebe", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SHOW_FRIENDLY_NPCS_TOOLTIP", "field": "text", "en": "Show Nameplates for friendly NPCs", "hash": "52f9c17d075993d4", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SHOW_FRIENDLY_REALM_NAME", "field": "text", "en": "Realm Name", "hash": "75ff304ac70feb00", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SHOW_FRIENDS", "field": "text", "en": "Friendly Player Nameplates", "hash": "57dda7ecf16271a4", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SHOW_OFFSCREEN", "field": "text", "en": "Show Offscreen Nameplates", "hash": "6c0bb2f5d223b3d5", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SHOW_OFFSCREEN_TOOLTIP", "field": "text", "en": "Controls whether nameplates for offscreen units are displayed.", "hash": "417b218b52475666", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SIMPLIFIED", "field": "text", "en": "Simplify Nameplates", "hash": "c9945b59d83f34f0", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SIMPLIFIED_FRIENDLY_NPCS", "field": "text", "en": "Friendly NPCs", "hash": "1771682f7883209f", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SIMPLIFIED_FRIENDLY_NPCS_TOOLTIP", "field": "text", "en": "NPCs that belong to the same faction as you.", "hash": "2ac404e1e09aee4b", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SIMPLIFIED_FRIENDLY_PLAYERS", "field": "text", "en": "Friendly Players", "hash": "1faf73f33858781a", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SIMPLIFIED_FRIENDLY_PLAYERS_TOOLTIP", "field": "text", "en": "Players that belong to the same faction as you.", "hash": "7aa33a6c6942a2ec", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SIMPLIFIED_MINIONS", "field": "text", "en": "Minions", "hash": "1c1643aeb0da8f9c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SIMPLIFIED_MINIONS_TOOLTIP", "field": "text", "en": "Units that belong to another player, such as pets, totems, or guardians.", "hash": "92dc2260a41b48fd", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SIMPLIFIED_MINUS_MOBS", "field": "text", "en": "Minor", "hash": "55ceb226c0e65ec6", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SIMPLIFIED_MINUS_MOBS_TOOLTIP", "field": "text", "en": "Units that are weaker than normal.", "hash": "28fd64b9ac6a855c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SIMPLIFIED_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SIMPLIFIED_TOOLTIP", "field": "text", "en": "Controls whether the nameplates of certain types of units are displayed in a more simple and streamlined way.", "hash": "fcce194b2dbfd989", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_SPELL_NAME_PREVIEW", "field": "text", "en": "Spell Name", "hash": "96682409eac8d1fc", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STACK_ENEMY_UNITS", "field": "text", "en": "Enemy Units", "hash": "b3bca396ca0daf55", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STACK_ENEMY_UNITS_TOOLTIP", "field": "text", "en": "Stack nameplates for enemy units.", "hash": "aa460f743bd82c90", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STACK_FRIENDLY_UNITS", "field": "text", "en": "Friendly Units", "hash": "7df758f60da6302a", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STACK_FRIENDLY_UNITS_TOOLTIP", "field": "text", "en": "Stack nameplates for friendly units.", "hash": "ede6bc2be8c62da1", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STACK_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STYLE", "field": "text", "en": "Style", "hash": "c09d2d823987619e", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STYLE_BLOCK", "field": "text", "en": "Block", "hash": "951f0255d90185db", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STYLE_CAST_FOCUS", "field": "text", "en": "Cast Focus", "hash": "62b6417abac7f517", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STYLE_HEALTH_FOCUS", "field": "text", "en": "Health Focus", "hash": "8059989b4123e5dc", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STYLE_LEGACY", "field": "text", "en": "Legacy", "hash": "a61634768d53f7e2", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STYLE_MODERN", "field": "text", "en": "Large", "hash": "432f96fc869c4efe", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STYLE_THIN", "field": "text", "en": "Default", "hash": "463e3d831da663af", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_STYLE_TOOLTIP", "field": "text", "en": "Controls the way the contents of nameplates are displayed on the screen.", "hash": "f71b6a66f146ea66", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY", "field": "text", "en": "Aggro Display", "hash": "cb7105339fc3d2bf", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_FLASH", "field": "text", "en": "Flash", "hash": "db5239481d19cd46", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_FLASH_TOOLTIP", "field": "text", "en": "The nameplate will flash if you lose threat on the unit as a tank, or gain threat on a unit as a DPS.", "hash": "d4fb13006be18a33", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_HEALTHBAR_COLOR", "field": "text", "en": "Health Bar Color", "hash": "a6a00689816ca662", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_HEALTHBAR_COLOR_TOOLTIP", "field": "text", "en": "The nameplate health bar will change color if you lose threat on the unit as a tank, or gain threat on a unit as a DPS.", "hash": "f74515803b141cba", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_PROGRESSIVE", "field": "text", "en": "Progressive", "hash": "c0e3d7547ee6cda1", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_PROGRESSIVE_TOOLTIP", "field": "text", "en": "The nameplate will look different if you are close to losing threat on the unit as a tank, or close to gaining threat on a unit as a DPS.", "hash": "be619932e4436b0c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_TUTORIAL_AGGRO", "field": "text", "en": "|cnTUTORIAL_BLUE_FONT_COLOR:Aggro|r comes with its own visual effect and a |cnTUTORIAL_BLUE_FONT_COLOR:sense of progression.|r", "hash": "5ded7bb73d2250df", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_TUTORIAL_BUFFS_DEBUFFS", "field": "text", "en": "Buffs and debuffs can be shown if you |cnTUTORIAL_BLUE_FONT_COLOR:choose|r, and they're also resizable.", "hash": "de5184f7e8d45f02", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_TUTORIAL_ENEMY_FRIENDLY", "field": "text", "en": "Enemy player nameplates can be set up |cnTUTORIAL_BLUE_FONT_COLOR:differently|r from friendly ones.", "hash": "2209f4386b7641da", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_TUTORIAL_STYLE_OPTIONS", "field": "text", "en": "There are |cnTUTORIAL_BLUE_FONT_COLOR:multiple style options|r for nameplates, and they can be |cnTUTORIAL_BLUE_FONT_COLOR:resized.|r", "hash": "533beb94a15fab6f", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMEPLATES_TUTORIAL_TOOLTIP", "field": "text", "en": "About Nameplates", "hash": "169df93900896647", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMES", "field": "text", "en": "Unit Names", "hash": "2ac38a125b5d2092", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMES_COMBATLOG_TOOLTIP", "field": "text", "en": "Color unit names.", "hash": "ebdc9577e4e7ecbc", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAMES_SHOW_BRACES_COMBATLOG_TOOLTIP", "field": "text", "en": "Show braces around unit names.", "hash": "650c6a3cfb57af49", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAME_ENEMY", "field": "text", "en": "Enemy Players", "hash": "a62739f73cfa4f03", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAME_ENEMY_MINIONS", "field": "text", "en": "Minions", "hash": "1c1643aeb0da8f9c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAME_FRIENDLY", "field": "text", "en": "Friendly Players", "hash": "1faf73f33858781a", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAME_FRIENDLY_MINIONS", "field": "text", "en": "Minions", "hash": "1c1643aeb0da8f9c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAME_NONCOMBAT_CREATURE", "field": "text", "en": "Critters and Companions", "hash": "6d9ce19fcca8e6f2", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_NAME_OWN", "field": "text", "en": "My Name", "hash": "778b967abc77c880", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_PLUS_LEVEL_TEMPLATE", "field": "text", "en": "Level %d Elite", "hash": "79b5099fe1eae8a7", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_POPUP_RIGHT_CLICK", "field": "text", "en": "<Right click for Frame Settings>", "hash": "5dd665ff77958b4b", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_SECONDARY_NAME_OWN", "field": "text", "en": "My Secondary Name", "hash": "94866c37742114c5", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_SKINNABLE_BOLTS", "field": "text", "en": "Requires Engineering", "hash": "3c11cc1c4a22d08d", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_SKINNABLE_HERB", "field": "text", "en": "Requires Herbalism", "hash": "45361f4cdc8d180c", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_SKINNABLE_LEATHER", "field": "text", "en": "Skinnable", "hash": "c8ada3d3a63398ee", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_SKINNABLE_ROCK", "field": "text", "en": "Requires Mining", "hash": "7934e4cfe13304ab", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_TYPE_LEVEL_FACTION_TEMPLATE", "field": "text", "en": "Level %d %s (%s)", "hash": "e781bb465d870bbc", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_TYPE_LEVEL_TEMPLATE", "field": "text", "en": "Level %d %s", "hash": "2fcf25e1a3bdd25f", "src": "db2@1.60.1.70009"}
-{"id": "UNIT_TYPE_PLUS_LEVEL_TEMPLATE", "field": "text", "en": "Level %d Elite %s", "hash": "6bf9a577627e66a4", "src": "db2@1.60.1.70009"}
-{"id": "UNLEARN", "field": "text", "en": "Unlearn", "hash": "879908eaca378711", "src": "db2@1.60.1.70009"}
-{"id": "UNLEARN_SKILL", "field": "text", "en": "Do you want to unlearn %s and lose all associated recipes? |n|nType \"UNLEARN\" into the field to confirm.", "hash": "4e45b9b6fd55978f", "src": "db2@1.60.1.70009"}
-{"id": "UNLEARN_SKILL_GAMEPAD", "field": "text", "en": "Do you want to unlearn %s and lose all associated recipes? |n|nPress the button sequence to confirm.", "hash": "b2e640eee941c32d", "src": "db2@1.60.1.70009"}
-{"id": "UNLEARN_SKILL_TOOLTIP", "field": "text", "en": "Unlearn this profession.", "hash": "407f4160171e3331", "src": "db2@1.60.1.70009"}
-{"id": "UNLIST_ME", "field": "text", "en": "Delist My Name", "hash": "d5e523e5d609997d", "src": "db2@1.60.1.70009"}
-{"id": "UNLIST_MY_GROUP", "field": "text", "en": "Delist My Group", "hash": "fba91a119b780d32", "src": "db2@1.60.1.70009"}
-{"id": "UNLOCK_WINDOW", "field": "text", "en": "Unlock Window", "hash": "6f1034ee54ca46ae", "src": "db2@1.60.1.70009"}
-{"id": "UNMUTE", "field": "text", "en": "Unmute", "hash": "1c8b5ce9e1408ee1", "src": "db2@1.60.1.70009"}
-{"id": "UNMUTE_SILENCED", "field": "text", "en": "Unmute (Player is silenced)", "hash": "ce7d2e495d90a305", "src": "db2@1.60.1.70009"}
-{"id": "UNSPENT_POINTS", "field": "text", "en": "Unspent Talents", "hash": "37f7eae2a90935bf", "src": "db2@1.60.1.70009"}
-{"id": "UNSPENT_TALENT_POINTS", "field": "text", "en": "Unspent Talents: %s", "hash": "71e64127a0e86666", "src": "db2@1.60.1.70009"}
-{"id": "UNTRACK_ACHIEVEMENT_TOOLTIP", "field": "text", "en": "Uncheck to stop tracking this achievement.", "hash": "0057036d5684300e", "src": "db2@1.60.1.70009"}
-{"id": "UNTRACK_QUEST", "field": "text", "en": "Untrack Quest", "hash": "0e6d6d75512ab5ec", "src": "db2@1.60.1.70009"}
-{"id": "UNTRACK_QUEST_ABBREV", "field": "text", "en": "Untrack", "hash": "15c4a4a6efd10910", "src": "db2@1.60.1.70009"}
-{"id": "UNUSED", "field": "text", "en": "Unused", "hash": "1d9d3c01448dc97c", "src": "db2@1.60.1.70009"}
-{"id": "UNWRAP", "field": "text", "en": "Unwrap", "hash": "1de1922e5b64ee52", "src": "db2@1.60.1.70009"}
-{"id": "UPDATE", "field": "text", "en": "Update", "hash": "3e6cd2645708ae77", "src": "db2@1.60.1.70009"}
-{"id": "UPGRADE", "field": "text", "en": "Upgrade", "hash": "289afa4140fc03f7", "src": "db2@1.60.1.70009"}
-{"id": "UPGRADED_RECIPE_LEARNED_TITLE", "field": "text", "en": "Recipe Upgraded!", "hash": "618c32c8c2552c18", "src": "db2@1.60.1.70009"}
-{"id": "UPGRADE_MISSING_ITEM", "field": "text", "en": "Drag an item here to upgrade it.", "hash": "7e2b333e540e2461", "src": "db2@1.60.1.70009"}
-{"id": "USED", "field": "text", "en": "Already Known", "hash": "cfa7e4969ed1b699", "src": "db2@1.60.1.70009"}
-{"id": "USEIPV6", "field": "text", "en": "Enable IPv6 when available", "hash": "1cec9db8a1f2702b", "src": "db2@1.60.1.70009"}
-{"id": "USER_SURVEY_DIALOG_TEXT", "field": "text", "en": "We'd like to invite you to answer a few questions about your World of Warcraft experience! Clicking Yes will open an external browser window to fill out the survey.", "hash": "d8efec9b011164b0", "src": "db2@1.60.1.70009"}
-{"id": "USER_SURVEY_STATUS_READY", "field": "text", "en": "Research Survey Available", "hash": "aa1f2d799b9fbb54", "src": "db2@1.60.1.70009"}
-{"id": "USER_SURVEY_STATUS_READY_DESCRIPTION", "field": "text", "en": "We want your feedback! Click here to access the survey.", "hash": "7cd00a54e57ab492", "src": "db2@1.60.1.70009"}
-{"id": "USE_COMBINED_BAGS_TEXT", "field": "text", "en": "Combine Bags", "hash": "f82db1858ca5489e", "src": "db2@1.60.1.70009"}
-{"id": "USE_FULL_TEXT_MODE", "field": "text", "en": "Use Verbose Mode", "hash": "54bde010094d5bcf", "src": "db2@1.60.1.70009"}
-{"id": "USE_GUILDBANK_REPAIR", "field": "text", "en": "Do you want to use guild funds for repair?", "hash": "2a7320cedd967ca7", "src": "db2@1.60.1.70009"}
-{"id": "USE_NO_DROP", "field": "text", "en": "Using this item will bind it to you.", "hash": "311762a812e81094", "src": "db2@1.60.1.70009"}
-{"id": "USE_PERSONAL_FUNDS", "field": "text", "en": "Use Personal Funds", "hash": "22601abb704c341b", "src": "db2@1.60.1.70009"}
-{"id": "USE_SOULSTONE", "field": "text", "en": "Reincarnate", "hash": "906cb343c92da2c8", "src": "db2@1.60.1.70009"}
-{"id": "USE_UISCALE", "field": "text", "en": "Use UI Scale", "hash": "8a6183156e05965d", "src": "db2@1.60.1.70009"}
+{"id": "UI_SCALE", "field": "text", "en": "UI Scale", "hash": "5e7e9a2a0b5e9759", "src": "db2@1.60.1.70124"}
+{"id": "UNAVAILABLE", "field": "text", "en": "Unavailable", "hash": "00112d75727441c7", "src": "db2@1.60.1.70124"}
+{"id": "UNCHECK_ALL", "field": "text", "en": "Uncheck All", "hash": "896ccf81fc935765", "src": "db2@1.60.1.70124"}
+{"id": "UNCONSCIOUS", "field": "text", "en": "Unconscious", "hash": "5d7ae52b5f4646e0", "src": "db2@1.60.1.70124"}
+{"id": "UNDER_X_PERCENT", "field": "text", "en": "Under %d%%", "hash": "9ff04bbdd4534af8", "src": "db2@1.60.1.70124"}
+{"id": "UNDISCOVERED_FACTION_FLIGHTPOINT", "field": "text", "en": "Undiscovered %s Flightpoint", "hash": "ea48b9ffbbaee541", "src": "db2@1.60.1.70124"}
+{"id": "UNDISCOVERED_NEUTRAL_FLIGHTPOINT", "field": "text", "en": "Undiscovered Flightpoint", "hash": "09609acdd3509692", "src": "db2@1.60.1.70124"}
+{"id": "UNDOCK_WINDOW", "field": "text", "en": "Undock Window", "hash": "d1331c633a73b2a8", "src": "db2@1.60.1.70124"}
+{"id": "UNEXTEND_RAID_LOCK", "field": "text", "en": "Remove Raid Lock Extension", "hash": "44cb43ee0f36210e", "src": "db2@1.60.1.70124"}
+{"id": "UNIGNORE_PLAYER_BUTTON_LABEL", "field": "text", "en": "Remove from list", "hash": "fc0ce1ada6e637e9", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_COLORS", "field": "text", "en": "Unit Colors:", "hash": "9b5a8600078b8dee", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_INSTANCE", "field": "text", "en": "Instance Options", "hash": "c8cfcbdd53e93a2a", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_INTERACT", "field": "text", "en": "Interact", "hash": "a8627b8a9ff4d0a8", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_LOOT", "field": "text", "en": "Loot Options", "hash": "beb718cd0e258470", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_OTHER", "field": "text", "en": "Other Options", "hash": "25a8d189cf23f6e3", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_LEVEL_DEAD_TEMPLATE", "field": "text", "en": "Level %d Corpse", "hash": "86782f24e419003b", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_LEVEL_TEMPLATE", "field": "text", "en": "Level %d", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_AUTOMODE", "field": "text", "en": "Always Show Nameplates", "hash": "64e083c80c2999ce", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY", "field": "text", "en": "Cast Bar Information", "hash": "c56ae0326dd4e7c3", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_HIGHLIGHT_IMPORTANT_CASTS", "field": "text", "en": "Highlight Important Casts", "hash": "858f0e4d3648c55d", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_HIGHLIGHT_IMPORTANT_CASTS_TOOLTIP", "field": "text", "en": "Controls whether cast bars on nameplates display in a more noticeable way for important casts.", "hash": "6af6a049940c77b9", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_HIGHLIGHT_WHEN_CAST_TARGET", "field": "text", "en": "Flash When Targeted By Enemy", "hash": "ddad21b3c596ce8b", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_HIGHLIGHT_WHEN_CAST_TARGET_TOOLTIP", "field": "text", "en": "Controls whether cast bars on nameplates display in a more noticeable way when your character is the target of the spell.", "hash": "577b2b0626631806", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_ICON", "field": "text", "en": "Spell Icon", "hash": "95bd27232fb1d52c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_ICON_TOOLTIP", "field": "text", "en": "Displays the icon of the spell on the cast bar.", "hash": "5e022c8dfc3920aa", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_NAME", "field": "text", "en": "Spell Name", "hash": "96682409eac8d1fc", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_NAME_TOOLTIP", "field": "text", "en": "Displays the name of the spell on the cast bar.", "hash": "e0d28a99aff87889", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_TARGET", "field": "text", "en": "Spell Target", "hash": "70de6837e29edcb3", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_SPELL_TARGET_TOOLTIP", "field": "text", "en": "Displays the name of the unit being targeted by the spell on the cast bar.", "hash": "6861b0b5a956b648", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CAST_BAR_DISPLAY_TOOLTIP", "field": "text", "en": "Controls what information is displayed on cast bars.", "hash": "e2f506b5650776ea", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CLASS_COLOR", "field": "text", "en": "Nameplate Class Color", "hash": "da13b7c74bf7d7c6", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CLASS_COLOR_ENEMY", "field": "text", "en": "Enemy Players", "hash": "a62739f73cfa4f03", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CLASS_COLOR_ENEMY_TOOLTIP", "field": "text", "en": "Color enemy player nameplates using class colors.", "hash": "287e81dba28812bd", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CLASS_COLOR_FRIENDLY", "field": "text", "en": "Friendly Players", "hash": "1faf73f33858781a", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CLASS_COLOR_FRIENDLY_TOOLTIP", "field": "text", "en": "Color friendly player nameplates using class colors.", "hash": "418d386c74a83c0d", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CLASS_COLOR_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_CLASS_COLOR_TOOLTIP", "field": "text", "en": "For player units, the Nameplate Health Bar will be colored based on that player's class.", "hash": "3f5c45da4d85e216", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_DEBUFF_PADDING", "field": "text", "en": "Debuff Padding", "hash": "00db41e91d270f39", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_DEBUFF_PADDING_TOOLTIP", "field": "text", "en": "Controls the vertical space between debuffs and the health bar.", "hash": "f4a7183e0b967317", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_DEBUFF_SCALE", "field": "text", "en": "Buff/Debuff Scale", "hash": "efdeb5c999db3ac4", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_DEBUFF_SCALE_TOOLTIP", "field": "text", "en": "Controls the size nameplate buffs and debuffs are displayed on the screen.", "hash": "b2d76b57d12ea81d", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENABLE_STACKING", "field": "text", "en": "Stack Nameplates", "hash": "0be30ef6da8e551c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENABLE_STACKING_TOOLTIP", "field": "text", "en": "Avoids overlapping Nameplates by stacking them vertically.", "hash": "4561cc529cb9f90a", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY", "field": "text", "en": "Enemy NPC Buffs/Debuffs", "hash": "18c4583349aa8cdf", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_BUFFS", "field": "text", "en": "Mob Buffs", "hash": "57120dfba2517c6d", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_BUFFS_TOOLTIP", "field": "text", "en": "Show the temporary beneficial effects applied to the unit.", "hash": "77bddb45a4842663", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_CROWD_CONTROL", "field": "text", "en": "Shared CC", "hash": "0d2ed5f4ab5d53f1", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_CROWD_CONTROL_TOOLTIP", "field": "text", "en": "Show the temporary crowd control effects you or your allies have applied to the unit.", "hash": "1ebe0c81b6b1dc8b", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_DEBUFFS", "field": "text", "en": "Personal Debuffs", "hash": "4f5faa5c6a7dd1eb", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_DEBUFFS_TOOLTIP", "field": "text", "en": "Show the temporary negative effects you have applied to the unit.", "hash": "9c3518dc9accf100", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_NPC_AURA_DISPLAY_TOOLTIP", "field": "text", "en": "Controls how your buffs, debuffs, and forms of crowd control are displayed on the nameplates of enemy NPCs.", "hash": "ebb23c9431c84852", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY", "field": "text", "en": "Enemy Player Buffs/Debuffs", "hash": "31461ed6741bec61", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_BIG_DEBUFF", "field": "text", "en": "Big Debuff", "hash": "0c44fc6a5f3f12f0", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_BIG_DEBUFF_TOOLTIP", "field": "text", "en": "Show the temporary crowd control effects you or your allies have applied to the player.", "hash": "c7bab94e17b5573e", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_BUFFS", "field": "text", "en": "Enemy Buffs", "hash": "67276a8610935c13", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_BUFFS_TOOLTIP", "field": "text", "en": "Show the temporary beneficial effects applied to the player.", "hash": "dbd6beb87907bd2b", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_DEBUFFS", "field": "text", "en": "Personal Debuffs", "hash": "4f5faa5c6a7dd1eb", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_DEBUFFS_TOOLTIP", "field": "text", "en": "Show the temporary negative effects you have applied to the player.", "hash": "59269dc84f77e7fa", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_ENEMY_PLAYER_AURA_DISPLAY_TOOLTIP", "field": "text", "en": "Controls how your buffs, debuffs, and forms of crowd control are displayed on the nameplates of enemy players.", "hash": "e857ec1cab99c61e", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY", "field": "text", "en": "Friendly Player Buffs/Debuffs", "hash": "1d59cef07bb81cb8", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_BIG_DEBUFF", "field": "text", "en": "Big Debuff", "hash": "0c44fc6a5f3f12f0", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_BIG_DEBUFF_TOOLTIP", "field": "text", "en": "Show the temporary crowd control effects that enemies have applied to the player.", "hash": "c2339e33369e086c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_BUFFS", "field": "text", "en": "Personal Buffs", "hash": "77aab55634930c5d", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_BUFFS_TOOLTIP", "field": "text", "en": "Show the temporary beneficial effects you have applied to the player.", "hash": "56619cb5dd713928", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_DEBUFFS", "field": "text", "en": "Enemy Debuffs", "hash": "5e2d836dac691f26", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_DEBUFFS_TOOLTIP", "field": "text", "en": "Show the temporary negative effects that enemies have applied to the player.", "hash": "f81916f89eb20eba", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_AURA_DISPLAY_TOOLTIP", "field": "text", "en": "Controls how your buffs, debuffs, and forms of crowd control are displayed on the nameplates of friendly players.", "hash": "204d8c72bdd521be", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_NAME_USE_CLASS_COLOR", "field": "text", "en": "Use Class Color for Names", "hash": "73c4f8a4f87b23cc", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_FRIENDLY_PLAYER_SHOW_ONLY_NAME", "field": "text", "en": "Only Show Names", "hash": "0c5ff05ea85bbcf6", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_GLOBAL_SCALE", "field": "text", "en": "Size", "hash": "0b3ae6c579971a94", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_GLOBAL_SCALE_TOOLTIP", "field": "text", "en": "Controls the size nameplates are displayed on the screen.", "hash": "d8a23ed00485067f", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_INFO_DISPLAY", "field": "text", "en": "Nameplate Information", "hash": "5feb94bcd74c69ff", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_CURRENT_HEALTH_PERCENT", "field": "text", "en": "Health Percentage", "hash": "15099a8ea8df1765", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_CURRENT_HEALTH_PERCENT_TOOLTIP", "field": "text", "en": "Displays the unit's current health as a percentage of total health.", "hash": "d20d606472003dfa", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_CURRENT_HEALTH_VALUE", "field": "text", "en": "Health Value", "hash": "97571a7997d6e6ab", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_CURRENT_HEALTH_VALUE_TOOLTIP", "field": "text", "en": "Displays the unit's current health.", "hash": "bcc8d3928e9e1184", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_RARITY_ICON", "field": "text", "en": "Rarity Icon", "hash": "a20d6aabc2baa19d", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_RARITY_ICON_TOOLTIP", "field": "text", "en": "Displays an icon for elite units.", "hash": "5c951ce062d54030", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_INFO_DISPLAY_TOOLTIP", "field": "text", "en": "Controls what information is displayed on nameplates.", "hash": "cd8c3e8f9192a7f5", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_PREVIEW_ENEMY_NPC", "field": "text", "en": "Previewing - Enemy NPC", "hash": "e408da6ac441e8ca", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_PREVIEW_ENEMY_PLAYER", "field": "text", "en": "Previewing - Enemy Player", "hash": "a4686b61a31903f4", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_PREVIEW_FRIENDLY_NPC", "field": "text", "en": "Previewing - Friendly NPC", "hash": "30055256e8fe969c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_PREVIEW_FRIENDLY_PLAYER", "field": "text", "en": "Previewing - Friendly Player", "hash": "83366813467ebf8e", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SEARCH_TAG", "field": "text", "en": "Nameplates", "hash": "2c6dbc93c7cb6014", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SHOW_ENEMIES", "field": "text", "en": "Enemy Unit Nameplate", "hash": "903520c65be84cf0", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SHOW_ENEMY_MINIONS", "field": "text", "en": "Minions", "hash": "1c1643aeb0da8f9c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SHOW_ENEMY_MINUS", "field": "text", "en": "Minor", "hash": "55ceb226c0e65ec6", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SHOW_FRIENDLY_MINIONS", "field": "text", "en": "Minions", "hash": "1c1643aeb0da8f9c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SHOW_FRIENDLY_NPCS", "field": "text", "en": "Friendly NPC Nameplates", "hash": "24f75b9f488d1ebe", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SHOW_FRIENDLY_NPCS_TOOLTIP", "field": "text", "en": "Show Nameplates for friendly NPCs", "hash": "52f9c17d075993d4", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SHOW_FRIENDLY_REALM_NAME", "field": "text", "en": "Realm Name", "hash": "75ff304ac70feb00", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SHOW_FRIENDS", "field": "text", "en": "Friendly Player Nameplates", "hash": "57dda7ecf16271a4", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SHOW_OFFSCREEN", "field": "text", "en": "Show Offscreen Nameplates", "hash": "6c0bb2f5d223b3d5", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SHOW_OFFSCREEN_TOOLTIP", "field": "text", "en": "Controls whether nameplates for offscreen units are displayed.", "hash": "417b218b52475666", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SIMPLIFIED", "field": "text", "en": "Simplify Nameplates", "hash": "c9945b59d83f34f0", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SIMPLIFIED_FRIENDLY_NPCS", "field": "text", "en": "Friendly NPCs", "hash": "1771682f7883209f", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SIMPLIFIED_FRIENDLY_NPCS_TOOLTIP", "field": "text", "en": "NPCs that belong to the same faction as you.", "hash": "2ac404e1e09aee4b", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SIMPLIFIED_FRIENDLY_PLAYERS", "field": "text", "en": "Friendly Players", "hash": "1faf73f33858781a", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SIMPLIFIED_FRIENDLY_PLAYERS_TOOLTIP", "field": "text", "en": "Players that belong to the same faction as you.", "hash": "7aa33a6c6942a2ec", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SIMPLIFIED_MINIONS", "field": "text", "en": "Minions", "hash": "1c1643aeb0da8f9c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SIMPLIFIED_MINIONS_TOOLTIP", "field": "text", "en": "Units that belong to another player, such as pets, totems, or guardians.", "hash": "92dc2260a41b48fd", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SIMPLIFIED_MINUS_MOBS", "field": "text", "en": "Minor", "hash": "55ceb226c0e65ec6", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SIMPLIFIED_MINUS_MOBS_TOOLTIP", "field": "text", "en": "Units that are weaker than normal.", "hash": "28fd64b9ac6a855c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SIMPLIFIED_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SIMPLIFIED_TOOLTIP", "field": "text", "en": "Controls whether the nameplates of certain types of units are displayed in a more simple and streamlined way.", "hash": "fcce194b2dbfd989", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_SPELL_NAME_PREVIEW", "field": "text", "en": "Spell Name", "hash": "96682409eac8d1fc", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STACK_ENEMY_UNITS", "field": "text", "en": "Enemy Units", "hash": "b3bca396ca0daf55", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STACK_ENEMY_UNITS_TOOLTIP", "field": "text", "en": "Stack nameplates for enemy units.", "hash": "aa460f743bd82c90", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STACK_FRIENDLY_UNITS", "field": "text", "en": "Friendly Units", "hash": "7df758f60da6302a", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STACK_FRIENDLY_UNITS_TOOLTIP", "field": "text", "en": "Stack nameplates for friendly units.", "hash": "ede6bc2be8c62da1", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STACK_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STYLE", "field": "text", "en": "Style", "hash": "c09d2d823987619e", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STYLE_BLOCK", "field": "text", "en": "Block", "hash": "951f0255d90185db", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STYLE_CAST_FOCUS", "field": "text", "en": "Cast Focus", "hash": "62b6417abac7f517", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STYLE_HEALTH_FOCUS", "field": "text", "en": "Health Focus", "hash": "8059989b4123e5dc", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STYLE_LEGACY", "field": "text", "en": "Legacy", "hash": "a61634768d53f7e2", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STYLE_MODERN", "field": "text", "en": "Large", "hash": "432f96fc869c4efe", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STYLE_THIN", "field": "text", "en": "Default", "hash": "463e3d831da663af", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_STYLE_TOOLTIP", "field": "text", "en": "Controls the way the contents of nameplates are displayed on the screen.", "hash": "f71b6a66f146ea66", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY", "field": "text", "en": "Aggro Display", "hash": "cb7105339fc3d2bf", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_FLASH", "field": "text", "en": "Flash", "hash": "db5239481d19cd46", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_FLASH_TOOLTIP", "field": "text", "en": "The nameplate will flash if you lose threat on the unit as a tank, or gain threat on a unit as a DPS.", "hash": "d4fb13006be18a33", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_HEALTHBAR_COLOR", "field": "text", "en": "Health Bar Color", "hash": "a6a00689816ca662", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_HEALTHBAR_COLOR_TOOLTIP", "field": "text", "en": "The nameplate health bar will change color if you lose threat on the unit as a tank, or gain threat on a unit as a DPS.", "hash": "f74515803b141cba", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_PROGRESSIVE", "field": "text", "en": "Progressive", "hash": "c0e3d7547ee6cda1", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_THREAT_DISPLAY_PROGRESSIVE_TOOLTIP", "field": "text", "en": "The nameplate will look different if you are close to losing threat on the unit as a tank, or close to gaining threat on a unit as a DPS.", "hash": "be619932e4436b0c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_TUTORIAL_AGGRO", "field": "text", "en": "|cnTUTORIAL_BLUE_FONT_COLOR:Aggro|r comes with its own visual effect and a |cnTUTORIAL_BLUE_FONT_COLOR:sense of progression.|r", "hash": "5ded7bb73d2250df", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_TUTORIAL_BUFFS_DEBUFFS", "field": "text", "en": "Buffs and debuffs can be shown if you |cnTUTORIAL_BLUE_FONT_COLOR:choose|r, and they're also resizable.", "hash": "de5184f7e8d45f02", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_TUTORIAL_ENEMY_FRIENDLY", "field": "text", "en": "Enemy player nameplates can be set up |cnTUTORIAL_BLUE_FONT_COLOR:differently|r from friendly ones.", "hash": "2209f4386b7641da", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_TUTORIAL_STYLE_OPTIONS", "field": "text", "en": "There are |cnTUTORIAL_BLUE_FONT_COLOR:multiple style options|r for nameplates, and they can be |cnTUTORIAL_BLUE_FONT_COLOR:resized.|r", "hash": "533beb94a15fab6f", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMEPLATES_TUTORIAL_TOOLTIP", "field": "text", "en": "About Nameplates", "hash": "169df93900896647", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMES", "field": "text", "en": "Unit Names", "hash": "2ac38a125b5d2092", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMES_COMBATLOG_TOOLTIP", "field": "text", "en": "Color unit names.", "hash": "ebdc9577e4e7ecbc", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAMES_SHOW_BRACES_COMBATLOG_TOOLTIP", "field": "text", "en": "Show braces around unit names.", "hash": "650c6a3cfb57af49", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAME_ENEMY", "field": "text", "en": "Enemy Players", "hash": "a62739f73cfa4f03", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAME_ENEMY_MINIONS", "field": "text", "en": "Minions", "hash": "1c1643aeb0da8f9c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAME_FRIENDLY", "field": "text", "en": "Friendly Players", "hash": "1faf73f33858781a", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAME_FRIENDLY_MINIONS", "field": "text", "en": "Minions", "hash": "1c1643aeb0da8f9c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAME_NONCOMBAT_CREATURE", "field": "text", "en": "Critters and Companions", "hash": "6d9ce19fcca8e6f2", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_NAME_OWN", "field": "text", "en": "My Name", "hash": "778b967abc77c880", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_PLUS_LEVEL_TEMPLATE", "field": "text", "en": "Level %d Elite", "hash": "79b5099fe1eae8a7", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_POPUP_RIGHT_CLICK", "field": "text", "en": "<Right click for Frame Settings>", "hash": "5dd665ff77958b4b", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_SECONDARY_NAME_OWN", "field": "text", "en": "My Secondary Name", "hash": "94866c37742114c5", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_SKINNABLE_BOLTS", "field": "text", "en": "Requires Engineering", "hash": "3c11cc1c4a22d08d", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_SKINNABLE_HERB", "field": "text", "en": "Requires Herbalism", "hash": "45361f4cdc8d180c", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_SKINNABLE_LEATHER", "field": "text", "en": "Skinnable", "hash": "c8ada3d3a63398ee", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_SKINNABLE_ROCK", "field": "text", "en": "Requires Mining", "hash": "7934e4cfe13304ab", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_TYPE_LEVEL_FACTION_TEMPLATE", "field": "text", "en": "Level %d %s (%s)", "hash": "e781bb465d870bbc", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_TYPE_LEVEL_TEMPLATE", "field": "text", "en": "Level %d %s", "hash": "2fcf25e1a3bdd25f", "src": "db2@1.60.1.70124"}
+{"id": "UNIT_TYPE_PLUS_LEVEL_TEMPLATE", "field": "text", "en": "Level %d Elite %s", "hash": "6bf9a577627e66a4", "src": "db2@1.60.1.70124"}
+{"id": "UNLEARN", "field": "text", "en": "Unlearn", "hash": "879908eaca378711", "src": "db2@1.60.1.70124"}
+{"id": "UNLEARN_SKILL", "field": "text", "en": "Do you want to unlearn %s and lose all associated recipes? |n|nType \"UNLEARN\" into the field to confirm.", "hash": "4e45b9b6fd55978f", "src": "db2@1.60.1.70124"}
+{"id": "UNLEARN_SKILL_GAMEPAD", "field": "text", "en": "Do you want to unlearn %s and lose all associated recipes? |n|nPress the button sequence to confirm.", "hash": "b2e640eee941c32d", "src": "db2@1.60.1.70124"}
+{"id": "UNLEARN_SKILL_TOOLTIP", "field": "text", "en": "Unlearn this profession.", "hash": "407f4160171e3331", "src": "db2@1.60.1.70124"}
+{"id": "UNLIST_ME", "field": "text", "en": "Delist My Name", "hash": "d5e523e5d609997d", "src": "db2@1.60.1.70124"}
+{"id": "UNLIST_MY_GROUP", "field": "text", "en": "Delist My Group", "hash": "fba91a119b780d32", "src": "db2@1.60.1.70124"}
+{"id": "UNLOCK_WINDOW", "field": "text", "en": "Unlock Window", "hash": "6f1034ee54ca46ae", "src": "db2@1.60.1.70124"}
+{"id": "UNMUTE", "field": "text", "en": "Unmute", "hash": "1c8b5ce9e1408ee1", "src": "db2@1.60.1.70124"}
+{"id": "UNMUTE_SILENCED", "field": "text", "en": "Unmute (Player is silenced)", "hash": "ce7d2e495d90a305", "src": "db2@1.60.1.70124"}
+{"id": "UNSPENT_POINTS", "field": "text", "en": "Unspent Talents", "hash": "37f7eae2a90935bf", "src": "db2@1.60.1.70124"}
+{"id": "UNSPENT_TALENT_POINTS", "field": "text", "en": "Unspent Talents: %s", "hash": "71e64127a0e86666", "src": "db2@1.60.1.70124"}
+{"id": "UNTRACK_ACHIEVEMENT_TOOLTIP", "field": "text", "en": "Uncheck to stop tracking this achievement.", "hash": "0057036d5684300e", "src": "db2@1.60.1.70124"}
+{"id": "UNTRACK_QUEST", "field": "text", "en": "Untrack Quest", "hash": "0e6d6d75512ab5ec", "src": "db2@1.60.1.70124"}
+{"id": "UNTRACK_QUEST_ABBREV", "field": "text", "en": "Untrack", "hash": "15c4a4a6efd10910", "src": "db2@1.60.1.70124"}
+{"id": "UNUSED", "field": "text", "en": "Unused", "hash": "1d9d3c01448dc97c", "src": "db2@1.60.1.70124"}
+{"id": "UNWRAP", "field": "text", "en": "Unwrap", "hash": "1de1922e5b64ee52", "src": "db2@1.60.1.70124"}
+{"id": "UPDATE", "field": "text", "en": "Update", "hash": "3e6cd2645708ae77", "src": "db2@1.60.1.70124"}
+{"id": "UPGRADE", "field": "text", "en": "Upgrade", "hash": "289afa4140fc03f7", "src": "db2@1.60.1.70124"}
+{"id": "UPGRADED_RECIPE_LEARNED_TITLE", "field": "text", "en": "Recipe Upgraded!", "hash": "618c32c8c2552c18", "src": "db2@1.60.1.70124"}
+{"id": "UPGRADE_MISSING_ITEM", "field": "text", "en": "Drag an item here to upgrade it.", "hash": "7e2b333e540e2461", "src": "db2@1.60.1.70124"}
+{"id": "USED", "field": "text", "en": "Already Known", "hash": "cfa7e4969ed1b699", "src": "db2@1.60.1.70124"}
+{"id": "USEIPV6", "field": "text", "en": "Enable IPv6 when available", "hash": "1cec9db8a1f2702b", "src": "db2@1.60.1.70124"}
+{"id": "USER_SURVEY_DIALOG_TEXT", "field": "text", "en": "We'd like to invite you to answer a few questions about your World of Warcraft experience! Clicking Yes will open an external browser window to fill out the survey.", "hash": "d8efec9b011164b0", "src": "db2@1.60.1.70124"}
+{"id": "USER_SURVEY_STATUS_READY", "field": "text", "en": "Research Survey Available", "hash": "aa1f2d799b9fbb54", "src": "db2@1.60.1.70124"}
+{"id": "USER_SURVEY_STATUS_READY_DESCRIPTION", "field": "text", "en": "We want your feedback! Click here to access the survey.", "hash": "7cd00a54e57ab492", "src": "db2@1.60.1.70124"}
+{"id": "USE_COMBINED_BAGS_TEXT", "field": "text", "en": "Combine Bags", "hash": "f82db1858ca5489e", "src": "db2@1.60.1.70124"}
+{"id": "USE_FULL_TEXT_MODE", "field": "text", "en": "Use Verbose Mode", "hash": "54bde010094d5bcf", "src": "db2@1.60.1.70124"}
+{"id": "USE_GUILDBANK_REPAIR", "field": "text", "en": "Do you want to use guild funds for repair?", "hash": "2a7320cedd967ca7", "src": "db2@1.60.1.70124"}
+{"id": "USE_NO_DROP", "field": "text", "en": "Using this item will bind it to you.", "hash": "311762a812e81094", "src": "db2@1.60.1.70124"}
+{"id": "USE_PERSONAL_FUNDS", "field": "text", "en": "Use Personal Funds", "hash": "22601abb704c341b", "src": "db2@1.60.1.70124"}
+{"id": "USE_SOULSTONE", "field": "text", "en": "Reincarnate", "hash": "906cb343c92da2c8", "src": "db2@1.60.1.70124"}
+{"id": "USE_UISCALE", "field": "text", "en": "Use UI Scale", "hash": "8a6183156e05965d", "src": "db2@1.60.1.70124"}

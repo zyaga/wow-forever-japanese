@@ -1,180 +1,180 @@
-{"id": 1236125, "field": "name", "en": "Rend Flesh", "hash": "d971b5d24327bb13", "src": "db2@1.60.1.70009"}
-{"id": 1236125, "field": "description", "en": "Inflicts $s1 damage to an enemy every $t1 sec. for $d.", "hash": "02f9cbe1eebffb1c", "src": "db2@1.60.1.70009"}
-{"id": 1236125, "field": "aura", "en": "$s1 damage inflicted every $t1 sec.", "hash": "2613e2e65d0025e0", "src": "db2@1.60.1.70009"}
-{"id": 1236151, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70009"}
-{"id": 1236151, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70009"}
-{"id": 1236151, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 1236152, "field": "name", "en": "Volcanic Unrest", "hash": "bcf8149a80d936dd", "src": "db2@1.60.1.70009"}
-{"id": 1236153, "field": "name", "en": "Flash Heal", "hash": "738ed3b351194e2e", "src": "db2@1.60.1.70009"}
-{"id": 1236153, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70009"}
-{"id": 1236154, "field": "name", "en": "Power Word: Shield", "hash": "08517dab040e07b6", "src": "db2@1.60.1.70009"}
-{"id": 1236154, "field": "description", "en": "Draws on the soul of the party member to shield them, absorbing $s1 damage.  Lasts $d.  While the shield holds, spellcasting will not be interrupted by damage.  Once shielded, the target cannot be shielded again for $6788d.", "hash": "ec6b3c652c252e9b", "src": "db2@1.60.1.70009"}
-{"id": 1236154, "field": "aura", "en": "Absorbs damage.", "hash": "960eff1a7519fb85", "src": "db2@1.60.1.70009"}
-{"id": 1236156, "field": "name", "en": "Dispel Magic", "hash": "87826d000137cc51", "src": "db2@1.60.1.70009"}
-{"id": 1236156, "field": "description", "en": "Dispels magic on the target, removing $s1 harmful $lspell:spells; from a friend or $s1 beneficial $lspell:spells; from an enemy.", "hash": "f935d55094206c8e", "src": "db2@1.60.1.70009"}
-{"id": 1236157, "field": "name", "en": "Volcanic Unrest", "hash": "bcf8149a80d936dd", "src": "db2@1.60.1.70009"}
-{"id": 1236159, "field": "name", "en": "Smite", "hash": "bfa8e1cd1c2c7859", "src": "db2@1.60.1.70009"}
-{"id": 1236159, "field": "description", "en": "Smite a target for $s1 Holy damage.", "hash": "870147e22d9a9b3b", "src": "db2@1.60.1.70009"}
-{"id": 1236162, "field": "name", "en": "Holy Fire", "hash": "e0802123409dd8ca", "src": "db2@1.60.1.70009"}
-{"id": 1236162, "field": "description", "en": "Consumes the target in holy flames that cause $s1 Holy damage and an additional $s2 Holy damage every $t2 sec for $d.", "hash": "8f6c499530161e44", "src": "db2@1.60.1.70009"}
-{"id": 1236162, "field": "aura", "en": "$s2 Holy damage inflicted every $t2 sec.", "hash": "dfb7cd3940fca158", "src": "db2@1.60.1.70009"}
-{"id": 1236172, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70009"}
-{"id": 1236172, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70009"}
-{"id": 1236173, "field": "name", "en": "Pyroblast", "hash": "78422f2847350f99", "src": "db2@1.60.1.70009"}
-{"id": 1236173, "field": "description", "en": "Inflicts Fire damage to an enemy, then additional damage every $t2 sec. for $d.", "hash": "af899fc7125be32a", "src": "db2@1.60.1.70009"}
-{"id": 1236173, "field": "aura", "en": "Fire damage inflicted every $t2 sec.", "hash": "fd7a76cfe4cff65d", "src": "db2@1.60.1.70009"}
-{"id": 1236174, "field": "name", "en": "Polymorph", "hash": "265007345ebb7046", "src": "db2@1.60.1.70009"}
-{"id": 1236174, "field": "description", "en": "Transforms an enemy into a sheep, forcing it to wander around for up to $d. While wandering, the sheep cannot attack or cast spells, but regenerates very quickly. Any damage will transform the target back into its normal form. Only one target can be polymorphed at a time. Only works on beasts, dragons, giants, humanoids, and critters.", "hash": "1f2ac94a23c2916b", "src": "db2@1.60.1.70009"}
-{"id": 1236174, "field": "aura", "en": "Cannot attack or cast spells.\r\nHealth regeneration increased.", "hash": "4096b919e9551d9a", "src": "db2@1.60.1.70009"}
-{"id": 1236175, "field": "name", "en": "Blink", "hash": "951d75c0c1314e00", "src": "db2@1.60.1.70009"}
-{"id": 1236175, "field": "description", "en": "Teleports the caster 20 yd. forward unless something is in the way. Also frees the caster from any bonds.", "hash": "a02ec6f5691a1b00", "src": "db2@1.60.1.70009"}
-{"id": 1236175, "field": "aura", "en": "Blinking...", "hash": "e8b15d2fefd96faf", "src": "db2@1.60.1.70009"}
-{"id": 1236176, "field": "name", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70009"}
-{"id": 1236176, "field": "description", "en": "Disarm the enemy's weapon for $d.", "hash": "ef69889f9488cc16", "src": "db2@1.60.1.70009"}
-{"id": 1236176, "field": "aura", "en": "Disarmed!", "hash": "98985ecd70538791", "src": "db2@1.60.1.70009"}
-{"id": 1236177, "field": "name", "en": "Hamstring", "hash": "f0490ef0b40b63ce", "src": "db2@1.60.1.70009"}
-{"id": 1236177, "field": "description", "en": "Maims the enemy, causing $s1 damage and slowing the enemy's movement by $s2% for $d.", "hash": "99e679bfd0ebb48c", "src": "db2@1.60.1.70009"}
-{"id": 1236177, "field": "aura", "en": "Movement slowed by $s2%.", "hash": "bd9449c14e5aeafa", "src": "db2@1.60.1.70009"}
-{"id": 1236179, "field": "name", "en": "Shield Slam", "hash": "93a2c27812451e23", "src": "db2@1.60.1.70009"}
-{"id": 1236179, "field": "description", "en": "Inflicts $s2 damage to an enemy, stunning it for $d.", "hash": "9f56403fdcaeb36a", "src": "db2@1.60.1.70009"}
-{"id": 1236179, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 1236181, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70009"}
-{"id": 1236181, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70009"}
-{"id": 1236182, "field": "name", "en": "Crusader Strike", "hash": "803d227f2d23d8b5", "src": "db2@1.60.1.70009"}
-{"id": 1236182, "field": "description", "en": "Inflicts $s1 damage to an enemy and increases the Holy damage it takes by $s2 per Crusader Strike. Can be applied up to 5 times. Lasts $d.", "hash": "e1adbda338dac753", "src": "db2@1.60.1.70009"}
-{"id": 1236182, "field": "aura", "en": "Holy damage taken is increased.", "hash": "6508d97f817d05a9", "src": "db2@1.60.1.70009"}
-{"id": 1236183, "field": "name", "en": "Holy Cleave", "hash": "ad8bf8ffe37ec990", "src": "db2@1.60.1.70009"}
-{"id": 1236183, "field": "description", "en": "Inflicts weapon damage plus $s1 to an enemy and its nearest allies, affecting up to $x1 targets.", "hash": "bd91ba0f19e05ae9", "src": "db2@1.60.1.70009"}
-{"id": 1236188, "field": "name", "en": "Aimed Shot", "hash": "58336f4f344525aa", "src": "db2@1.60.1.70009"}
-{"id": 1236188, "field": "description", "en": "An aimed shot that increases ranged damage by $s1.", "hash": "8edc6d6f0dd190dd", "src": "db2@1.60.1.70009"}
-{"id": 1236190, "field": "name", "en": "Multi-Shot", "hash": "9c9367a3ec99d445", "src": "db2@1.60.1.70009"}
-{"id": 1236190, "field": "description", "en": "Fires a volley of missiles at an enemy and its nearby allies, striking up to $x1 targets for normal damage plus $s1.", "hash": "2f4b573040a433d8", "src": "db2@1.60.1.70009"}
-{"id": 1236191, "field": "name", "en": "Concussive Shot", "hash": "74f7c49a8b8a97e2", "src": "db2@1.60.1.70009"}
-{"id": 1236191, "field": "description", "en": "Dazes an enemy, reducing its movement speed by $s1% for $d.", "hash": "d6ffef29851b8f6e", "src": "db2@1.60.1.70009"}
-{"id": 1236191, "field": "aura", "en": "Movement speed reduced by $s1%.", "hash": "08fe36e785e78519", "src": "db2@1.60.1.70009"}
-{"id": 1236217, "field": "name", "en": "Poultry Precision Scope", "hash": "aa4a56df55d5d1b3", "src": "db2@1.60.1.70009"}
-{"id": 1236217, "field": "description", "en": "Attaches a permanent scope to a bow or gun that increases its damage by 10.", "hash": "d11292291f3a2918", "src": "db2@1.60.1.70009"}
-{"id": 1236220, "field": "name", "en": "Slow", "hash": "0b3baa51857e873e", "src": "db2@1.60.1.70009"}
-{"id": 1236220, "field": "description", "en": "Increases the time between nearby enemies' attacks by $s1%, slows their movement by $s2%, and slow casting speed by $s3% for $d.", "hash": "459d6825e8ecf577", "src": "db2@1.60.1.70009"}
-{"id": 1236220, "field": "aura", "en": "Time between attacks increased by $s1%.\r\nMovement speed reduced by $s2%.\r\nCasting speed reduced by $s3%.", "hash": "1289e16950b5ca0f", "src": "db2@1.60.1.70009"}
-{"id": 1236221, "field": "name", "en": "Poultry Precision (Bows) - Auto Shot", "hash": "de386c62c4c27e73", "src": "db2@1.60.1.70009"}
-{"id": 1236222, "field": "name", "en": "Poultry Precision (Bows) - Arcane Shot", "hash": "0d2f82ad0677da61", "src": "db2@1.60.1.70009"}
-{"id": 1236223, "field": "name", "en": "Poultry Precision (Bows) - Multi-Shot", "hash": "80398520450f1e83", "src": "db2@1.60.1.70009"}
-{"id": 1236224, "field": "name", "en": "Poultry Precision (Bows) - Scorpid Sting", "hash": "86085b98e442f132", "src": "db2@1.60.1.70009"}
-{"id": 1236225, "field": "name", "en": "Poultry Precision (Bows) - Serpent Sting", "hash": "2d497cf2ff271542", "src": "db2@1.60.1.70009"}
-{"id": 1236226, "field": "name", "en": "Poultry Precision (Bows) - Viper Sting", "hash": "3f58fe323ae8e9f3", "src": "db2@1.60.1.70009"}
-{"id": 1236227, "field": "name", "en": "Poultry Precision (Bows) 1", "hash": "22e4c75647e3d03c", "src": "db2@1.60.1.70009"}
-{"id": 1236232, "field": "name", "en": "Poultry Precision (Bows) - Aimed Shot", "hash": "3bd98ccc8cba6fd7", "src": "db2@1.60.1.70009"}
-{"id": 1236233, "field": "name", "en": "Poultry Precision (Bows) - Explosive Shot", "hash": "b85b02f3160500fa", "src": "db2@1.60.1.70009"}
-{"id": 1236234, "field": "name", "en": "Poultry Precision (Bows) - Explosive Shot Impact", "hash": "8b3ff1f5df5a6876", "src": "db2@1.60.1.70009"}
-{"id": 1236235, "field": "name", "en": "Poultry Precision (Bows) - Wyvern Sting", "hash": "21d8d989a6d2cc79", "src": "db2@1.60.1.70009"}
-{"id": 1236236, "field": "name", "en": "Poultry Precision (Bows) - Trap Launcher Freezing", "hash": "b697700161ff3774", "src": "db2@1.60.1.70009"}
-{"id": 1236237, "field": "name", "en": "Poultry Precision (Bows) - Trap Launcher Immolation", "hash": "a884f9b711bdedd5", "src": "db2@1.60.1.70009"}
-{"id": 1236238, "field": "name", "en": "Poultry Precision (Bows) - Trap Launcher Explosive", "hash": "019c25e5a6d7c420", "src": "db2@1.60.1.70009"}
-{"id": 1236239, "field": "name", "en": "Poultry Precision (Bows) - Chimera Shot", "hash": "66efa3a15e8e4b0f", "src": "db2@1.60.1.70009"}
-{"id": 1236241, "field": "name", "en": "Poultry Precision (Bows) - Flare", "hash": "956380acec0cc4c5", "src": "db2@1.60.1.70009"}
-{"id": 1236242, "field": "name", "en": "Poultry Precision (Bows) 2", "hash": "22e4c75747e3d03d", "src": "db2@1.60.1.70009"}
-{"id": 1236246, "field": "name", "en": "Poultry Precision (Guns) - Chimera Shot", "hash": "5cee7b1cc4d7ac5a", "src": "db2@1.60.1.70009"}
-{"id": 1236265, "field": "name", "en": "Veil of Darkness", "hash": "702e8cca3eb73c35", "src": "db2@1.60.1.70009"}
-{"id": 1236265, "field": "aura", "en": "Shrouded in darkness.", "hash": "609a853e356f8e6d", "src": "db2@1.60.1.70009"}
-{"id": 1236266, "field": "name", "en": "Explosive Sheep", "hash": "9e2a4bf4f701e2d1", "src": "db2@1.60.1.70009"}
-{"id": 1236266, "field": "description", "en": "Creates $s1 Explosive Sheep that $lcharges:charge; the nearest $lenemy:enemies; and $lexplodes:explode;. Explosive Sheep are unstable and will self-destruct after $d.", "hash": "7ef2174305bf70fe", "src": "db2@1.60.1.70009"}
-{"id": 1236267, "field": "name", "en": "Explosive Sheep Passive", "hash": "2c89688ef22a80fc", "src": "db2@1.60.1.70009"}
-{"id": 1236268, "field": "name", "en": "Explosive Sheep", "hash": "9e2a4bf4f701e2d1", "src": "db2@1.60.1.70009"}
-{"id": 1236269, "field": "name", "en": "Throw Dynamite", "hash": "2beb24a66d18b2b8", "src": "db2@1.60.1.70009"}
-{"id": 1236269, "field": "description", "en": "Inflicts $s1 Fire damage to all enemies in a selected area.", "hash": "ee6c0689890eac39", "src": "db2@1.60.1.70009"}
-{"id": 1236270, "field": "name", "en": "Goblin Dragon Gun", "hash": "911169f85ebf8c2a", "src": "db2@1.60.1.70009"}
-{"id": 1236270, "field": "description", "en": "Deals $13184s1 fire damage for $d to all targets in a cone in front of the engineer using the weapon.   That is unless it explodes.....", "hash": "d24952c3b31532ea", "src": "db2@1.60.1.70009"}
-{"id": 1236271, "field": "name", "en": "Goblin Dragon Gun", "hash": "911169f85ebf8c2a", "src": "db2@1.60.1.70009"}
-{"id": 1236287, "field": "name", "en": "Holy Fire", "hash": "e0802123409dd8ca", "src": "db2@1.60.1.70009"}
-{"id": 1236287, "field": "description", "en": "Consumes the target in holy flames that cause $s1 Holy damage and an additional $s2 Holy damage every $t2 sec for $d.", "hash": "8f6c499530161e44", "src": "db2@1.60.1.70009"}
-{"id": 1236287, "field": "aura", "en": "$s2 Holy damage inflicted every $t2 sec.", "hash": "dfb7cd3940fca158", "src": "db2@1.60.1.70009"}
-{"id": 1236290, "field": "name", "en": "Polymorph", "hash": "265007345ebb7046", "src": "db2@1.60.1.70009"}
-{"id": 1236290, "field": "description", "en": "Transforms an enemy into a sheep, forcing it to wander around for up to $d. While wandering, the sheep cannot attack or cast spells, but regenerates very quickly. Any damage will transform the target back into its normal form. Only one target can be polymorphed at a time. Only works on beasts, dragons, giants, humanoids, and critters.", "hash": "1f2ac94a23c2916b", "src": "db2@1.60.1.70009"}
-{"id": 1236290, "field": "aura", "en": "Cannot attack or cast spells.\r\nHealth regeneration increased.", "hash": "4096b919e9551d9a", "src": "db2@1.60.1.70009"}
-{"id": 1236291, "field": "name", "en": "Pyroblast", "hash": "78422f2847350f99", "src": "db2@1.60.1.70009"}
-{"id": 1236291, "field": "description", "en": "Inflicts Fire damage to an enemy, then additional damage every $t2 sec. for $d.", "hash": "af899fc7125be32a", "src": "db2@1.60.1.70009"}
-{"id": 1236291, "field": "aura", "en": "Fire damage inflicted every $t2 sec.", "hash": "fd7a76cfe4cff65d", "src": "db2@1.60.1.70009"}
-{"id": 1236306, "field": "name", "en": "Divine Avatar", "hash": "f2c1684b24b1edde", "src": "db2@1.60.1.70009"}
-{"id": 1236306, "field": "aura", "en": "Damage increased by $s2%. Periodically, divine bolts will rain down on nearby enemies.", "hash": "25cc1e158ed8fac4", "src": "db2@1.60.1.70009"}
-{"id": 1236307, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 1236307, "field": "description", "en": "Heals an ally every $t1 sec. for $d.", "hash": "61f0e6eb9544de7b", "src": "db2@1.60.1.70009"}
-{"id": 1236307, "field": "aura", "en": "Damage healed every $t1 sec.", "hash": "7668097caf4a4e47", "src": "db2@1.60.1.70009"}
-{"id": 1236308, "field": "name", "en": "Thorns", "hash": "b7f89a75651e4598", "src": "db2@1.60.1.70009"}
-{"id": 1236308, "field": "description", "en": "Thorns sprout from the friendly target causing $s1 Nature damage to attackers when hit.  Lasts $d.", "hash": "0eddc25a9d89e619", "src": "db2@1.60.1.70009"}
-{"id": 1236308, "field": "aura", "en": "Causes $s1 Nature damage to attackers.", "hash": "7724a9e2ce1e4b6b", "src": "db2@1.60.1.70009"}
-{"id": 1236318, "field": "name", "en": "Crimson Flare", "hash": "06184bd3719b1da6", "src": "db2@1.60.1.70009"}
-{"id": 1236326, "field": "name", "en": "(DNT) Summon Whelps Cover Spell", "hash": "0195528e0ae389a3", "src": "db2@1.60.1.70009"}
-{"id": 1236339, "field": "name", "en": "Veil of Darkness", "hash": "702e8cca3eb73c35", "src": "db2@1.60.1.70009"}
-{"id": 1236339, "field": "aura", "en": "Shrouded in darkness. Suffering $s1 Shadow damage every $t1 sec. Movement removes this affect but causes you to take additional damage.", "hash": "8b658ca7ed7faad6", "src": "db2@1.60.1.70009"}
-{"id": 1236340, "field": "name", "en": "Living Darkness", "hash": "630b8b8552f4a110", "src": "db2@1.60.1.70009"}
-{"id": 1236340, "field": "description", "en": "A chilling, magical darkness washes over you... ", "hash": "99e047cfa3ebbbe0", "src": "db2@1.60.1.70009"}
-{"id": 1236340, "field": "aura", "en": "A chilling, magical darkness washes over you...", "hash": "99e047cfa3ebbbe0", "src": "db2@1.60.1.70009"}
-{"id": 1236393, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70009"}
-{"id": 1236510, "field": "name", "en": "Poultry Precision (Bows) - Distracting Shot", "hash": "79846b92a849463e", "src": "db2@1.60.1.70009"}
-{"id": 1236511, "field": "name", "en": "Poultry Precision (Bows) - Tranquilizing Shot", "hash": "542792c1f586bf8a", "src": "db2@1.60.1.70009"}
-{"id": 1236516, "field": "name", "en": "Poultry Precision (Bows) - Concussive Shot", "hash": "2d5d573e6258820f", "src": "db2@1.60.1.70009"}
-{"id": 1236517, "field": "name", "en": "Poultry Precision (Bows) - Scatter Shot", "hash": "f2d0f876414a53dd", "src": "db2@1.60.1.70009"}
-{"id": 1236518, "field": "name", "en": "Poultry Precision (Bows) - Steady Shot", "hash": "96541c20d35279ca", "src": "db2@1.60.1.70009"}
-{"id": 1236519, "field": "name", "en": "Poultry Precision (Bows) - Kill Shot", "hash": "e39eeb20bcc6da8d", "src": "db2@1.60.1.70009"}
-{"id": 1236520, "field": "name", "en": "Poultry Precision (Bows) 3", "hash": "22e4c75847e3d03e", "src": "db2@1.60.1.70009"}
-{"id": 1236521, "field": "name", "en": "Poultry Precision (Crossbows) - Auto Shot", "hash": "969adf88970f6c4b", "src": "db2@1.60.1.70009"}
-{"id": 1236522, "field": "name", "en": "Poultry Precision (Crossbows) - Arcane Shot", "hash": "4cc8233e99ea9ae0", "src": "db2@1.60.1.70009"}
-{"id": 1236523, "field": "name", "en": "Poultry Precision (Crossbows) - Multi-Shot", "hash": "da9a70d96b78f09a", "src": "db2@1.60.1.70009"}
-{"id": 1236524, "field": "name", "en": "Poultry Precision (Crossbows) - Scorpid Sting", "hash": "b46c46f4350e0b94", "src": "db2@1.60.1.70009"}
-{"id": 1236525, "field": "name", "en": "Poultry Precision (Crossbows) - Serpent Sting", "hash": "5bad684e4ff22fa4", "src": "db2@1.60.1.70009"}
-{"id": 1236526, "field": "name", "en": "Poultry Precision (Crossbows) - Viper Sting", "hash": "7ef19ec3ce5baa72", "src": "db2@1.60.1.70009"}
-{"id": 1236527, "field": "name", "en": "Poultry Precision (Crossbows) 1", "hash": "be7204a83bc7f493", "src": "db2@1.60.1.70009"}
-{"id": 1236528, "field": "name", "en": "Poultry Precision (Crossbows) - Chimera Shot", "hash": "f209ce74dbba13ca", "src": "db2@1.60.1.70009"}
-{"id": 1236530, "field": "name", "en": "Poultry Precision (Crossbows) - Explosive Shot", "hash": "757c737fb0b79c2a", "src": "db2@1.60.1.70009"}
-{"id": 1236531, "field": "name", "en": "Poultry Precision (Crossbows) - Explosive Shot Impact", "hash": "c8267b05ab2b61bd", "src": "db2@1.60.1.70009"}
-{"id": 1236532, "field": "name", "en": "Poultry Precision (Crossbows) - Aimed Shot", "hash": "963a7885b32441ee", "src": "db2@1.60.1.70009"}
-{"id": 1236534, "field": "name", "en": "Poultry Precision (Crossbows) - Wyvern Sting", "hash": "acf3045c23fe9545", "src": "db2@1.60.1.70009"}
-{"id": 1236536, "field": "name", "en": "Poultry Precision (Crossbows) - Trap Launcher Freezing", "hash": "e08f93ccd2d9795b", "src": "db2@1.60.1.70009"}
-{"id": 1236537, "field": "name", "en": "Poultry Precision (Crossbows) - Trap Launcher Immolation", "hash": "139c93d0f011133f", "src": "db2@1.60.1.70009"}
-{"id": 1236538, "field": "name", "en": "Poultry Precision (Crossbows) - Trap Launcher Explosive", "hash": "7b96772f44a79815", "src": "db2@1.60.1.70009"}
-{"id": 1236539, "field": "name", "en": "Poultry Precision (Crossbows) - Flare", "hash": "3855088af68c0b5a", "src": "db2@1.60.1.70009"}
-{"id": 1236540, "field": "name", "en": "Poultry Precision (Crossbows) 2", "hash": "be7204a93bc7f494", "src": "db2@1.60.1.70009"}
-{"id": 1236541, "field": "name", "en": "Poultry Precision (Crossbows) - Distracting Shot", "hash": "e025acef16d5cfd8", "src": "db2@1.60.1.70009"}
-{"id": 1236542, "field": "name", "en": "Poultry Precision (Crossbows) - Tranquilizing Shot", "hash": "23eebc660a55d628", "src": "db2@1.60.1.70009"}
-{"id": 1236543, "field": "name", "en": "Poultry Precision (Crossbows) - Concussive Shot", "hash": "f579ee33fa1efeb2", "src": "db2@1.60.1.70009"}
-{"id": 1236544, "field": "name", "en": "Poultry Precision (Crossbows) - Scatter Shot", "hash": "7deb234ebe761c98", "src": "db2@1.60.1.70009"}
-{"id": 1236545, "field": "name", "en": "Poultry Precision (Crossbows) - Steady Shot", "hash": "d5ecbcb166c53a5a", "src": "db2@1.60.1.70009"}
-{"id": 1236546, "field": "name", "en": "Poultry Precision (Crossbows) - Kill Shot", "hash": "9c015e468f13c865", "src": "db2@1.60.1.70009"}
-{"id": 1236547, "field": "name", "en": "Poultry Precision (Crossbows) 3", "hash": "be7204aa3bc7f495", "src": "db2@1.60.1.70009"}
-{"id": 1236641, "field": "name", "en": "[DNT] Eastsea Jettison", "hash": "0b2d69e903ec2c3d", "src": "db2@1.60.1.70009"}
-{"id": 1236642, "field": "name", "en": "[DNT] Eastsea Jettison", "hash": "0b2d69e903ec2c3d", "src": "db2@1.60.1.70009"}
-{"id": 1236655, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70009"}
-{"id": 1236655, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 1236656, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70009"}
-{"id": 1236656, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 1236675, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70009"}
-{"id": 1236675, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 1236799, "field": "name", "en": "(DNT) Angela Spawn Visuals", "hash": "26bff5dbace75099", "src": "db2@1.60.1.70009"}
-{"id": 1236813, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236814, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236815, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236816, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236819, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236821, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236825, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236828, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236830, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236833, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236834, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236837, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236838, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236839, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236840, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236841, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236842, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236843, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236844, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236845, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236846, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236847, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236848, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70009"}
-{"id": 1236879, "field": "name", "en": "Fire's Glow", "hash": "da117c1b09a6b5ac", "src": "db2@1.60.1.70009"}
-{"id": 1236879, "field": "description", "en": "Increase the Spirit of nearby party members by $M1.", "hash": "23ae3f5e01538d19", "src": "db2@1.60.1.70009"}
-{"id": 1236884, "field": "name", "en": "Flame Spear", "hash": "f9e65ed34de6b846", "src": "db2@1.60.1.70009"}
-{"id": 1236922, "field": "name", "en": "Magnetic Object [DNT]", "hash": "704b07e487ded0f6", "src": "db2@1.60.1.70009"}
+{"id": 1236125, "field": "name", "en": "Rend Flesh", "hash": "d971b5d24327bb13", "src": "db2@1.60.1.70124"}
+{"id": 1236125, "field": "description", "en": "Inflicts $s1 damage to an enemy every $t1 sec. for $d.", "hash": "02f9cbe1eebffb1c", "src": "db2@1.60.1.70124"}
+{"id": 1236125, "field": "aura", "en": "$s1 damage inflicted every $t1 sec.", "hash": "2613e2e65d0025e0", "src": "db2@1.60.1.70124"}
+{"id": 1236151, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
+{"id": 1236151, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
+{"id": 1236151, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 1236152, "field": "name", "en": "Volcanic Unrest", "hash": "bcf8149a80d936dd", "src": "db2@1.60.1.70124"}
+{"id": 1236153, "field": "name", "en": "Flash Heal", "hash": "738ed3b351194e2e", "src": "db2@1.60.1.70124"}
+{"id": 1236153, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70124"}
+{"id": 1236154, "field": "name", "en": "Power Word: Shield", "hash": "08517dab040e07b6", "src": "db2@1.60.1.70124"}
+{"id": 1236154, "field": "description", "en": "Draws on the soul of the party member to shield them, absorbing $s1 damage.  Lasts $d.  While the shield holds, spellcasting will not be interrupted by damage.  Once shielded, the target cannot be shielded again for $6788d.", "hash": "ec6b3c652c252e9b", "src": "db2@1.60.1.70124"}
+{"id": 1236154, "field": "aura", "en": "Absorbs damage.", "hash": "960eff1a7519fb85", "src": "db2@1.60.1.70124"}
+{"id": 1236156, "field": "name", "en": "Dispel Magic", "hash": "87826d000137cc51", "src": "db2@1.60.1.70124"}
+{"id": 1236156, "field": "description", "en": "Dispels magic on the target, removing $s1 harmful $lspell:spells; from a friend or $s1 beneficial $lspell:spells; from an enemy.", "hash": "f935d55094206c8e", "src": "db2@1.60.1.70124"}
+{"id": 1236157, "field": "name", "en": "Volcanic Unrest", "hash": "bcf8149a80d936dd", "src": "db2@1.60.1.70124"}
+{"id": 1236159, "field": "name", "en": "Smite", "hash": "bfa8e1cd1c2c7859", "src": "db2@1.60.1.70124"}
+{"id": 1236159, "field": "description", "en": "Smite a target for $s1 Holy damage.", "hash": "870147e22d9a9b3b", "src": "db2@1.60.1.70124"}
+{"id": 1236162, "field": "name", "en": "Holy Fire", "hash": "e0802123409dd8ca", "src": "db2@1.60.1.70124"}
+{"id": 1236162, "field": "description", "en": "Consumes the target in holy flames that cause $s1 Holy damage and an additional $s2 Holy damage every $t2 sec for $d.", "hash": "8f6c499530161e44", "src": "db2@1.60.1.70124"}
+{"id": 1236162, "field": "aura", "en": "$s2 Holy damage inflicted every $t2 sec.", "hash": "dfb7cd3940fca158", "src": "db2@1.60.1.70124"}
+{"id": 1236172, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70124"}
+{"id": 1236172, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70124"}
+{"id": 1236173, "field": "name", "en": "Pyroblast", "hash": "78422f2847350f99", "src": "db2@1.60.1.70124"}
+{"id": 1236173, "field": "description", "en": "Inflicts Fire damage to an enemy, then additional damage every $t2 sec. for $d.", "hash": "af899fc7125be32a", "src": "db2@1.60.1.70124"}
+{"id": 1236173, "field": "aura", "en": "Fire damage inflicted every $t2 sec.", "hash": "fd7a76cfe4cff65d", "src": "db2@1.60.1.70124"}
+{"id": 1236174, "field": "name", "en": "Polymorph", "hash": "265007345ebb7046", "src": "db2@1.60.1.70124"}
+{"id": 1236174, "field": "description", "en": "Transforms an enemy into a sheep, forcing it to wander around for up to $d. While wandering, the sheep cannot attack or cast spells, but regenerates very quickly. Any damage will transform the target back into its normal form. Only one target can be polymorphed at a time. Only works on beasts, dragons, giants, humanoids, and critters.", "hash": "1f2ac94a23c2916b", "src": "db2@1.60.1.70124"}
+{"id": 1236174, "field": "aura", "en": "Cannot attack or cast spells.\r\nHealth regeneration increased.", "hash": "4096b919e9551d9a", "src": "db2@1.60.1.70124"}
+{"id": 1236175, "field": "name", "en": "Blink", "hash": "951d75c0c1314e00", "src": "db2@1.60.1.70124"}
+{"id": 1236175, "field": "description", "en": "Teleports the caster 20 yd. forward unless something is in the way. Also frees the caster from any bonds.", "hash": "a02ec6f5691a1b00", "src": "db2@1.60.1.70124"}
+{"id": 1236175, "field": "aura", "en": "Blinking...", "hash": "e8b15d2fefd96faf", "src": "db2@1.60.1.70124"}
+{"id": 1236176, "field": "name", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70124"}
+{"id": 1236176, "field": "description", "en": "Disarm the enemy's weapon for $d.", "hash": "ef69889f9488cc16", "src": "db2@1.60.1.70124"}
+{"id": 1236176, "field": "aura", "en": "Disarmed!", "hash": "98985ecd70538791", "src": "db2@1.60.1.70124"}
+{"id": 1236177, "field": "name", "en": "Hamstring", "hash": "f0490ef0b40b63ce", "src": "db2@1.60.1.70124"}
+{"id": 1236177, "field": "description", "en": "Maims the enemy, causing $s1 damage and slowing the enemy's movement by $s2% for $d.", "hash": "99e679bfd0ebb48c", "src": "db2@1.60.1.70124"}
+{"id": 1236177, "field": "aura", "en": "Movement slowed by $s2%.", "hash": "bd9449c14e5aeafa", "src": "db2@1.60.1.70124"}
+{"id": 1236179, "field": "name", "en": "Shield Slam", "hash": "93a2c27812451e23", "src": "db2@1.60.1.70124"}
+{"id": 1236179, "field": "description", "en": "Inflicts $s2 damage to an enemy, stunning it for $d.", "hash": "9f56403fdcaeb36a", "src": "db2@1.60.1.70124"}
+{"id": 1236179, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 1236181, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70124"}
+{"id": 1236181, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70124"}
+{"id": 1236182, "field": "name", "en": "Crusader Strike", "hash": "803d227f2d23d8b5", "src": "db2@1.60.1.70124"}
+{"id": 1236182, "field": "description", "en": "Inflicts $s1 damage to an enemy and increases the Holy damage it takes by $s2 per Crusader Strike. Can be applied up to 5 times. Lasts $d.", "hash": "e1adbda338dac753", "src": "db2@1.60.1.70124"}
+{"id": 1236182, "field": "aura", "en": "Holy damage taken is increased.", "hash": "6508d97f817d05a9", "src": "db2@1.60.1.70124"}
+{"id": 1236183, "field": "name", "en": "Holy Cleave", "hash": "ad8bf8ffe37ec990", "src": "db2@1.60.1.70124"}
+{"id": 1236183, "field": "description", "en": "Inflicts weapon damage plus $s1 to an enemy and its nearest allies, affecting up to $x1 targets.", "hash": "bd91ba0f19e05ae9", "src": "db2@1.60.1.70124"}
+{"id": 1236188, "field": "name", "en": "Aimed Shot", "hash": "58336f4f344525aa", "src": "db2@1.60.1.70124"}
+{"id": 1236188, "field": "description", "en": "An aimed shot that increases ranged damage by $s1.", "hash": "8edc6d6f0dd190dd", "src": "db2@1.60.1.70124"}
+{"id": 1236190, "field": "name", "en": "Multi-Shot", "hash": "9c9367a3ec99d445", "src": "db2@1.60.1.70124"}
+{"id": 1236190, "field": "description", "en": "Fires a volley of missiles at an enemy and its nearby allies, striking up to $x1 targets for normal damage plus $s1.", "hash": "2f4b573040a433d8", "src": "db2@1.60.1.70124"}
+{"id": 1236191, "field": "name", "en": "Concussive Shot", "hash": "74f7c49a8b8a97e2", "src": "db2@1.60.1.70124"}
+{"id": 1236191, "field": "description", "en": "Dazes an enemy, reducing its movement speed by $s1% for $d.", "hash": "d6ffef29851b8f6e", "src": "db2@1.60.1.70124"}
+{"id": 1236191, "field": "aura", "en": "Movement speed reduced by $s1%.", "hash": "08fe36e785e78519", "src": "db2@1.60.1.70124"}
+{"id": 1236217, "field": "name", "en": "Poultry Precision Scope", "hash": "aa4a56df55d5d1b3", "src": "db2@1.60.1.70124"}
+{"id": 1236217, "field": "description", "en": "Attaches a permanent scope to a bow or gun that increases its damage by 10.", "hash": "d11292291f3a2918", "src": "db2@1.60.1.70124"}
+{"id": 1236220, "field": "name", "en": "Slow", "hash": "0b3baa51857e873e", "src": "db2@1.60.1.70124"}
+{"id": 1236220, "field": "description", "en": "Increases the time between nearby enemies' attacks by $s1%, slows their movement by $s2%, and slow casting speed by $s3% for $d.", "hash": "459d6825e8ecf577", "src": "db2@1.60.1.70124"}
+{"id": 1236220, "field": "aura", "en": "Time between attacks increased by $s1%.\r\nMovement speed reduced by $s2%.\r\nCasting speed reduced by $s3%.", "hash": "1289e16950b5ca0f", "src": "db2@1.60.1.70124"}
+{"id": 1236221, "field": "name", "en": "Poultry Precision (Bows) - Auto Shot", "hash": "de386c62c4c27e73", "src": "db2@1.60.1.70124"}
+{"id": 1236222, "field": "name", "en": "Poultry Precision (Bows) - Arcane Shot", "hash": "0d2f82ad0677da61", "src": "db2@1.60.1.70124"}
+{"id": 1236223, "field": "name", "en": "Poultry Precision (Bows) - Multi-Shot", "hash": "80398520450f1e83", "src": "db2@1.60.1.70124"}
+{"id": 1236224, "field": "name", "en": "Poultry Precision (Bows) - Scorpid Sting", "hash": "86085b98e442f132", "src": "db2@1.60.1.70124"}
+{"id": 1236225, "field": "name", "en": "Poultry Precision (Bows) - Serpent Sting", "hash": "2d497cf2ff271542", "src": "db2@1.60.1.70124"}
+{"id": 1236226, "field": "name", "en": "Poultry Precision (Bows) - Viper Sting", "hash": "3f58fe323ae8e9f3", "src": "db2@1.60.1.70124"}
+{"id": 1236227, "field": "name", "en": "Poultry Precision (Bows) 1", "hash": "22e4c75647e3d03c", "src": "db2@1.60.1.70124"}
+{"id": 1236232, "field": "name", "en": "Poultry Precision (Bows) - Aimed Shot", "hash": "3bd98ccc8cba6fd7", "src": "db2@1.60.1.70124"}
+{"id": 1236233, "field": "name", "en": "Poultry Precision (Bows) - Explosive Shot", "hash": "b85b02f3160500fa", "src": "db2@1.60.1.70124"}
+{"id": 1236234, "field": "name", "en": "Poultry Precision (Bows) - Explosive Shot Impact", "hash": "8b3ff1f5df5a6876", "src": "db2@1.60.1.70124"}
+{"id": 1236235, "field": "name", "en": "Poultry Precision (Bows) - Wyvern Sting", "hash": "21d8d989a6d2cc79", "src": "db2@1.60.1.70124"}
+{"id": 1236236, "field": "name", "en": "Poultry Precision (Bows) - Trap Launcher Freezing", "hash": "b697700161ff3774", "src": "db2@1.60.1.70124"}
+{"id": 1236237, "field": "name", "en": "Poultry Precision (Bows) - Trap Launcher Immolation", "hash": "a884f9b711bdedd5", "src": "db2@1.60.1.70124"}
+{"id": 1236238, "field": "name", "en": "Poultry Precision (Bows) - Trap Launcher Explosive", "hash": "019c25e5a6d7c420", "src": "db2@1.60.1.70124"}
+{"id": 1236239, "field": "name", "en": "Poultry Precision (Bows) - Chimera Shot", "hash": "66efa3a15e8e4b0f", "src": "db2@1.60.1.70124"}
+{"id": 1236241, "field": "name", "en": "Poultry Precision (Bows) - Flare", "hash": "956380acec0cc4c5", "src": "db2@1.60.1.70124"}
+{"id": 1236242, "field": "name", "en": "Poultry Precision (Bows) 2", "hash": "22e4c75747e3d03d", "src": "db2@1.60.1.70124"}
+{"id": 1236246, "field": "name", "en": "Poultry Precision (Guns) - Chimera Shot", "hash": "5cee7b1cc4d7ac5a", "src": "db2@1.60.1.70124"}
+{"id": 1236265, "field": "name", "en": "Veil of Darkness", "hash": "702e8cca3eb73c35", "src": "db2@1.60.1.70124"}
+{"id": 1236265, "field": "aura", "en": "Shrouded in darkness.", "hash": "609a853e356f8e6d", "src": "db2@1.60.1.70124"}
+{"id": 1236266, "field": "name", "en": "Explosive Sheep", "hash": "9e2a4bf4f701e2d1", "src": "db2@1.60.1.70124"}
+{"id": 1236266, "field": "description", "en": "Creates $s1 Explosive Sheep that $lcharges:charge; the nearest $lenemy:enemies; and $lexplodes:explode;. Explosive Sheep are unstable and will self-destruct after $d.", "hash": "7ef2174305bf70fe", "src": "db2@1.60.1.70124"}
+{"id": 1236267, "field": "name", "en": "Explosive Sheep Passive", "hash": "2c89688ef22a80fc", "src": "db2@1.60.1.70124"}
+{"id": 1236268, "field": "name", "en": "Explosive Sheep", "hash": "9e2a4bf4f701e2d1", "src": "db2@1.60.1.70124"}
+{"id": 1236269, "field": "name", "en": "Throw Dynamite", "hash": "2beb24a66d18b2b8", "src": "db2@1.60.1.70124"}
+{"id": 1236269, "field": "description", "en": "Inflicts $s1 Fire damage to all enemies in a selected area.", "hash": "ee6c0689890eac39", "src": "db2@1.60.1.70124"}
+{"id": 1236270, "field": "name", "en": "Goblin Dragon Gun", "hash": "911169f85ebf8c2a", "src": "db2@1.60.1.70124"}
+{"id": 1236270, "field": "description", "en": "Deals $13184s1 fire damage for $d to all targets in a cone in front of the engineer using the weapon.   That is unless it explodes.....", "hash": "d24952c3b31532ea", "src": "db2@1.60.1.70124"}
+{"id": 1236271, "field": "name", "en": "Goblin Dragon Gun", "hash": "911169f85ebf8c2a", "src": "db2@1.60.1.70124"}
+{"id": 1236287, "field": "name", "en": "Holy Fire", "hash": "e0802123409dd8ca", "src": "db2@1.60.1.70124"}
+{"id": 1236287, "field": "description", "en": "Consumes the target in holy flames that cause $s1 Holy damage and an additional $s2 Holy damage every $t2 sec for $d.", "hash": "8f6c499530161e44", "src": "db2@1.60.1.70124"}
+{"id": 1236287, "field": "aura", "en": "$s2 Holy damage inflicted every $t2 sec.", "hash": "dfb7cd3940fca158", "src": "db2@1.60.1.70124"}
+{"id": 1236290, "field": "name", "en": "Polymorph", "hash": "265007345ebb7046", "src": "db2@1.60.1.70124"}
+{"id": 1236290, "field": "description", "en": "Transforms an enemy into a sheep, forcing it to wander around for up to $d. While wandering, the sheep cannot attack or cast spells, but regenerates very quickly. Any damage will transform the target back into its normal form. Only one target can be polymorphed at a time. Only works on beasts, dragons, giants, humanoids, and critters.", "hash": "1f2ac94a23c2916b", "src": "db2@1.60.1.70124"}
+{"id": 1236290, "field": "aura", "en": "Cannot attack or cast spells.\r\nHealth regeneration increased.", "hash": "4096b919e9551d9a", "src": "db2@1.60.1.70124"}
+{"id": 1236291, "field": "name", "en": "Pyroblast", "hash": "78422f2847350f99", "src": "db2@1.60.1.70124"}
+{"id": 1236291, "field": "description", "en": "Inflicts Fire damage to an enemy, then additional damage every $t2 sec. for $d.", "hash": "af899fc7125be32a", "src": "db2@1.60.1.70124"}
+{"id": 1236291, "field": "aura", "en": "Fire damage inflicted every $t2 sec.", "hash": "fd7a76cfe4cff65d", "src": "db2@1.60.1.70124"}
+{"id": 1236306, "field": "name", "en": "Divine Avatar", "hash": "f2c1684b24b1edde", "src": "db2@1.60.1.70124"}
+{"id": 1236306, "field": "aura", "en": "Damage increased by $s2%. Periodically, divine bolts will rain down on nearby enemies.", "hash": "25cc1e158ed8fac4", "src": "db2@1.60.1.70124"}
+{"id": 1236307, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 1236307, "field": "description", "en": "Heals an ally every $t1 sec. for $d.", "hash": "61f0e6eb9544de7b", "src": "db2@1.60.1.70124"}
+{"id": 1236307, "field": "aura", "en": "Damage healed every $t1 sec.", "hash": "7668097caf4a4e47", "src": "db2@1.60.1.70124"}
+{"id": 1236308, "field": "name", "en": "Thorns", "hash": "b7f89a75651e4598", "src": "db2@1.60.1.70124"}
+{"id": 1236308, "field": "description", "en": "Thorns sprout from the friendly target causing $s1 Nature damage to attackers when hit.  Lasts $d.", "hash": "0eddc25a9d89e619", "src": "db2@1.60.1.70124"}
+{"id": 1236308, "field": "aura", "en": "Causes $s1 Nature damage to attackers.", "hash": "7724a9e2ce1e4b6b", "src": "db2@1.60.1.70124"}
+{"id": 1236318, "field": "name", "en": "Crimson Flare", "hash": "06184bd3719b1da6", "src": "db2@1.60.1.70124"}
+{"id": 1236326, "field": "name", "en": "(DNT) Summon Whelps Cover Spell", "hash": "0195528e0ae389a3", "src": "db2@1.60.1.70124"}
+{"id": 1236339, "field": "name", "en": "Veil of Darkness", "hash": "702e8cca3eb73c35", "src": "db2@1.60.1.70124"}
+{"id": 1236339, "field": "aura", "en": "Shrouded in darkness. Suffering $s1 Shadow damage every $t1 sec. Movement removes this affect but causes you to take additional damage.", "hash": "8b658ca7ed7faad6", "src": "db2@1.60.1.70124"}
+{"id": 1236340, "field": "name", "en": "Living Darkness", "hash": "630b8b8552f4a110", "src": "db2@1.60.1.70124"}
+{"id": 1236340, "field": "description", "en": "A chilling, magical darkness washes over you... ", "hash": "99e047cfa3ebbbe0", "src": "db2@1.60.1.70124"}
+{"id": 1236340, "field": "aura", "en": "A chilling, magical darkness washes over you...", "hash": "99e047cfa3ebbbe0", "src": "db2@1.60.1.70124"}
+{"id": 1236393, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70124"}
+{"id": 1236510, "field": "name", "en": "Poultry Precision (Bows) - Distracting Shot", "hash": "79846b92a849463e", "src": "db2@1.60.1.70124"}
+{"id": 1236511, "field": "name", "en": "Poultry Precision (Bows) - Tranquilizing Shot", "hash": "542792c1f586bf8a", "src": "db2@1.60.1.70124"}
+{"id": 1236516, "field": "name", "en": "Poultry Precision (Bows) - Concussive Shot", "hash": "2d5d573e6258820f", "src": "db2@1.60.1.70124"}
+{"id": 1236517, "field": "name", "en": "Poultry Precision (Bows) - Scatter Shot", "hash": "f2d0f876414a53dd", "src": "db2@1.60.1.70124"}
+{"id": 1236518, "field": "name", "en": "Poultry Precision (Bows) - Steady Shot", "hash": "96541c20d35279ca", "src": "db2@1.60.1.70124"}
+{"id": 1236519, "field": "name", "en": "Poultry Precision (Bows) - Kill Shot", "hash": "e39eeb20bcc6da8d", "src": "db2@1.60.1.70124"}
+{"id": 1236520, "field": "name", "en": "Poultry Precision (Bows) 3", "hash": "22e4c75847e3d03e", "src": "db2@1.60.1.70124"}
+{"id": 1236521, "field": "name", "en": "Poultry Precision (Crossbows) - Auto Shot", "hash": "969adf88970f6c4b", "src": "db2@1.60.1.70124"}
+{"id": 1236522, "field": "name", "en": "Poultry Precision (Crossbows) - Arcane Shot", "hash": "4cc8233e99ea9ae0", "src": "db2@1.60.1.70124"}
+{"id": 1236523, "field": "name", "en": "Poultry Precision (Crossbows) - Multi-Shot", "hash": "da9a70d96b78f09a", "src": "db2@1.60.1.70124"}
+{"id": 1236524, "field": "name", "en": "Poultry Precision (Crossbows) - Scorpid Sting", "hash": "b46c46f4350e0b94", "src": "db2@1.60.1.70124"}
+{"id": 1236525, "field": "name", "en": "Poultry Precision (Crossbows) - Serpent Sting", "hash": "5bad684e4ff22fa4", "src": "db2@1.60.1.70124"}
+{"id": 1236526, "field": "name", "en": "Poultry Precision (Crossbows) - Viper Sting", "hash": "7ef19ec3ce5baa72", "src": "db2@1.60.1.70124"}
+{"id": 1236527, "field": "name", "en": "Poultry Precision (Crossbows) 1", "hash": "be7204a83bc7f493", "src": "db2@1.60.1.70124"}
+{"id": 1236528, "field": "name", "en": "Poultry Precision (Crossbows) - Chimera Shot", "hash": "f209ce74dbba13ca", "src": "db2@1.60.1.70124"}
+{"id": 1236530, "field": "name", "en": "Poultry Precision (Crossbows) - Explosive Shot", "hash": "757c737fb0b79c2a", "src": "db2@1.60.1.70124"}
+{"id": 1236531, "field": "name", "en": "Poultry Precision (Crossbows) - Explosive Shot Impact", "hash": "c8267b05ab2b61bd", "src": "db2@1.60.1.70124"}
+{"id": 1236532, "field": "name", "en": "Poultry Precision (Crossbows) - Aimed Shot", "hash": "963a7885b32441ee", "src": "db2@1.60.1.70124"}
+{"id": 1236534, "field": "name", "en": "Poultry Precision (Crossbows) - Wyvern Sting", "hash": "acf3045c23fe9545", "src": "db2@1.60.1.70124"}
+{"id": 1236536, "field": "name", "en": "Poultry Precision (Crossbows) - Trap Launcher Freezing", "hash": "e08f93ccd2d9795b", "src": "db2@1.60.1.70124"}
+{"id": 1236537, "field": "name", "en": "Poultry Precision (Crossbows) - Trap Launcher Immolation", "hash": "139c93d0f011133f", "src": "db2@1.60.1.70124"}
+{"id": 1236538, "field": "name", "en": "Poultry Precision (Crossbows) - Trap Launcher Explosive", "hash": "7b96772f44a79815", "src": "db2@1.60.1.70124"}
+{"id": 1236539, "field": "name", "en": "Poultry Precision (Crossbows) - Flare", "hash": "3855088af68c0b5a", "src": "db2@1.60.1.70124"}
+{"id": 1236540, "field": "name", "en": "Poultry Precision (Crossbows) 2", "hash": "be7204a93bc7f494", "src": "db2@1.60.1.70124"}
+{"id": 1236541, "field": "name", "en": "Poultry Precision (Crossbows) - Distracting Shot", "hash": "e025acef16d5cfd8", "src": "db2@1.60.1.70124"}
+{"id": 1236542, "field": "name", "en": "Poultry Precision (Crossbows) - Tranquilizing Shot", "hash": "23eebc660a55d628", "src": "db2@1.60.1.70124"}
+{"id": 1236543, "field": "name", "en": "Poultry Precision (Crossbows) - Concussive Shot", "hash": "f579ee33fa1efeb2", "src": "db2@1.60.1.70124"}
+{"id": 1236544, "field": "name", "en": "Poultry Precision (Crossbows) - Scatter Shot", "hash": "7deb234ebe761c98", "src": "db2@1.60.1.70124"}
+{"id": 1236545, "field": "name", "en": "Poultry Precision (Crossbows) - Steady Shot", "hash": "d5ecbcb166c53a5a", "src": "db2@1.60.1.70124"}
+{"id": 1236546, "field": "name", "en": "Poultry Precision (Crossbows) - Kill Shot", "hash": "9c015e468f13c865", "src": "db2@1.60.1.70124"}
+{"id": 1236547, "field": "name", "en": "Poultry Precision (Crossbows) 3", "hash": "be7204aa3bc7f495", "src": "db2@1.60.1.70124"}
+{"id": 1236641, "field": "name", "en": "[DNT] Eastsea Jettison", "hash": "0b2d69e903ec2c3d", "src": "db2@1.60.1.70124"}
+{"id": 1236642, "field": "name", "en": "[DNT] Eastsea Jettison", "hash": "0b2d69e903ec2c3d", "src": "db2@1.60.1.70124"}
+{"id": 1236655, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70124"}
+{"id": 1236655, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 1236656, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70124"}
+{"id": 1236656, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 1236675, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70124"}
+{"id": 1236675, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 1236799, "field": "name", "en": "(DNT) Angela Spawn Visuals", "hash": "26bff5dbace75099", "src": "db2@1.60.1.70124"}
+{"id": 1236813, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236814, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236815, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236816, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236819, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236821, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236825, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236828, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236830, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236833, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236834, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236837, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236838, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236839, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236840, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236841, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236842, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236843, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236844, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236845, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236846, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236847, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236848, "field": "name", "en": "Experiment-800M", "hash": "6619995b66a549b8", "src": "db2@1.60.1.70124"}
+{"id": 1236879, "field": "name", "en": "Fire's Glow", "hash": "da117c1b09a6b5ac", "src": "db2@1.60.1.70124"}
+{"id": 1236879, "field": "description", "en": "Increase the Spirit of nearby party members by $M1.", "hash": "23ae3f5e01538d19", "src": "db2@1.60.1.70124"}
+{"id": 1236884, "field": "name", "en": "Flame Spear", "hash": "f9e65ed34de6b846", "src": "db2@1.60.1.70124"}
+{"id": 1236922, "field": "name", "en": "Magnetic Object [DNT]", "hash": "704b07e487ded0f6", "src": "db2@1.60.1.70124"}

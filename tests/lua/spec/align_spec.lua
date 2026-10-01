@@ -198,6 +198,16 @@ describe("fillValues", function()
     assert.is_true(ok); assert.are.equal("14～22のFireダメージを与え、さらに4秒かけて2のFireダメージを与えます。", text)
   end)
 
+  it("Wrath: one slot takes the range or the single number; two slots around one range never fill", function()
+    local ja = "対象に$N1のNature属性ダメージを\n与えます。"
+    local ok, text = A.check(ja, { "Causes 14 to 16 Nature damage to the target." })
+    assert.is_true(ok); assert.are.equal("対象に14～16のNature属性ダメージを\n与えます。", text)
+    ok, text = A.check(ja, { "Causes 15 Nature damage to the target." })
+    assert.is_true(ok); assert.are.equal("対象に15のNature属性ダメージを\n与えます。", text)
+    assert.is_false((A.check("対象に$N1-$N2のNature属性ダメージを\n与えます。",
+      { "Causes 14 to 16 Nature damage to the target." })))
+  end)
+
   it("fills from the live line without gating names or numbers", function()
     local live = "Collect 5 Lady's Tear Moss."
     assert.are.equal("Lady's Tear Mossを5個集める。", A.fillValues("Lady's Tear Mossを$N1個集める。", live))

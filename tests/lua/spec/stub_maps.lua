@@ -41,7 +41,7 @@ function M.worldMap(en)
   nav.zone = Stub.button(nil, "World") -- a nav button: a map's name (here one that is also a dictionary word)
   local coords = overlay(CreateFrame("Frame"))
   frame.coords = coords
-  for _, key in ipairs({ "PlayerCoords", "CursorCoords" }) do
+  for _, key in ipairs({ "PlayerCoords", "CursorCoords", "CrosshairCoords" }) do
     coords[key] = CreateFrame("Frame")
     coords[key].Label = Stub.fontString("")
   end
@@ -57,12 +57,13 @@ function M.worldMap(en)
           :format(s.player[1], s.player[2])
       end
     end
-    self.CursorCoords.shown = s.cursor ~= nil
+    -- the mouse writes CursorCoords, the gamepad its own CrosshairCoords (blizzard_worldmaptemplates.lua:601–619)
+    local holder = s.crosshair and self.CrosshairCoords or self.CursorCoords
+    self.CursorCoords.shown = s.cursor ~= nil and not s.crosshair
+    self.CrosshairCoords.shown = s.cursor ~= nil and s.crosshair == true
     if s.cursor then
-      -- gamepad mode writes the crosshair template instead (blizzard_worldmaptemplates.lua:604–606)
       local base = s.crosshair and "WORLD_MAP_CROSSHAIR_COORDS" or "WORLD_MAP_CURSOR_COORDS"
-      self.CursorCoords.Label.text = en(s.tenths and base or base .. "_INTEGER")
-        :format(s.cursor[1], s.cursor[2])
+      holder.Label.text = en(s.tenths and base or base .. "_INTEGER"):format(s.cursor[1], s.cursor[2])
     end
   end)
   local timer = overlay(CreateFrame("Frame"))

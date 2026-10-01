@@ -1,176 +1,176 @@
-{"id": 234012, "field": "name", "en": "Hive Thistle", "hash": "d70ed9da6dce364e", "src": "db2@1.60.1.70009"}
-{"id": 234016, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234016, "field": "description", "en": "Increases the casting speed of your spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Invoker", "hash": "2b5d2b7652a91f40", "src": "db2@1.60.1.70009"}
-{"id": 234017, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234017, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Dominator", "hash": "05ff9d84939c7da6", "src": "db2@1.60.1.70009"}
-{"id": 234018, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234018, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1% per piece of Timeworn armor equipped.\nThe Path of the Protector", "hash": "5a8811dee3419234", "src": "db2@1.60.1.70009"}
-{"id": 234019, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234019, "field": "description", "en": "Increases the effectiveness of your healing and shielding spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Preserver", "hash": "90940f0dd336391a", "src": "db2@1.60.1.70009"}
-{"id": 234020, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234020, "field": "description", "en": "Increases the casting speed of your spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Invoker", "hash": "2b5d2b7652a91f40", "src": "db2@1.60.1.70009"}
-{"id": 234021, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234021, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Dominator", "hash": "05ff9d84939c7da6", "src": "db2@1.60.1.70009"}
-{"id": 234022, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234022, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1% per piece of Timeworn armor equipped.\nThe Path of the Protector", "hash": "5a8811dee3419234", "src": "db2@1.60.1.70009"}
-{"id": 234023, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234023, "field": "description", "en": "Increases the effectiveness of your healing and shielding spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Preserver", "hash": "90940f0dd336391a", "src": "db2@1.60.1.70009"}
-{"id": 234024, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234024, "field": "description", "en": "Increases the casting speed of your spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Invoker", "hash": "2b5d2b7652a91f40", "src": "db2@1.60.1.70009"}
-{"id": 234025, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234025, "field": "description", "en": "Increases the effectiveness of your healing and shielding spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Preserver", "hash": "90940f0dd336391a", "src": "db2@1.60.1.70009"}
-{"id": 234026, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234026, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Dominator", "hash": "05ff9d84939c7da6", "src": "db2@1.60.1.70009"}
-{"id": 234027, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234027, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1% per piece of Timeworn armor equipped.\nThe Path of the Protector", "hash": "5a8811dee3419234", "src": "db2@1.60.1.70009"}
-{"id": 234028, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234028, "field": "description", "en": "Increases the casting speed of your spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Invoker", "hash": "2b5d2b7652a91f40", "src": "db2@1.60.1.70009"}
-{"id": 234029, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234029, "field": "description", "en": "Increases the effectiveness of your healing and shielding spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Preserver", "hash": "90940f0dd336391a", "src": "db2@1.60.1.70009"}
-{"id": 234030, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234030, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Dominator", "hash": "05ff9d84939c7da6", "src": "db2@1.60.1.70009"}
-{"id": 234031, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234031, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1% per piece of Timeworn armor equipped.\nThe Path of the Protector", "hash": "5a8811dee3419234", "src": "db2@1.60.1.70009"}
-{"id": 234032, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234032, "field": "description", "en": "Increases the casting speed of your spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Invoker", "hash": "2b5d2b7652a91f40", "src": "db2@1.60.1.70009"}
-{"id": 234033, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234033, "field": "description", "en": "Increases the effectiveness of your healing and shielding spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Preserver", "hash": "90940f0dd336391a", "src": "db2@1.60.1.70009"}
-{"id": 234034, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234034, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Dominator", "hash": "05ff9d84939c7da6", "src": "db2@1.60.1.70009"}
-{"id": 234035, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234035, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1% per piece of Timeworn armor equipped.\nThe Path of the Protector", "hash": "5a8811dee3419234", "src": "db2@1.60.1.70009"}
-{"id": 234198, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234198, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Conqueror", "hash": "f32770f8d292872a", "src": "db2@1.60.1.70009"}
-{"id": 234199, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234199, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Conqueror", "hash": "f32770f8d292872a", "src": "db2@1.60.1.70009"}
-{"id": 234200, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234200, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Conqueror", "hash": "f32770f8d292872a", "src": "db2@1.60.1.70009"}
-{"id": 234201, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234201, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Conqueror", "hash": "f32770f8d292872a", "src": "db2@1.60.1.70009"}
-{"id": 234202, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234202, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Conqueror", "hash": "f32770f8d292872a", "src": "db2@1.60.1.70009"}
-{"id": 234271, "field": "name", "en": "Formula: Scroll: Wrath of the Swarm", "hash": "2a93079f637a5f24", "src": "db2@1.60.1.70009"}
-{"id": 234271, "field": "description", "en": "Teaches you how to conjure a Scroll: Wrath of the Swarm.", "hash": "6030a7d40ef8a57a", "src": "db2@1.60.1.70009"}
-{"id": 234272, "field": "name", "en": "Formula: Enchanted Repellent", "hash": "4ad3788c71989c12", "src": "db2@1.60.1.70009"}
-{"id": 234272, "field": "description", "en": "Teaches you how to create Enchanted Repellent.", "hash": "747cfe89129c1d24", "src": "db2@1.60.1.70009"}
-{"id": 234436, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234436, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70009"}
-{"id": 234437, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234437, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70009"}
-{"id": 234438, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234438, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70009"}
-{"id": 234439, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234439, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70009"}
-{"id": 234440, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234440, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70009"}
-{"id": 234444, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70009"}
-{"id": 234444, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $1214170o1 Nature damage over $1214170d and causing the enemy to take $1214170s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $1214170u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "db56e99728cc6694", "src": "db2@1.60.1.70009"}
-{"id": 234465, "field": "name", "en": "Reins of the Swift Spectral Tiger", "hash": "ff77be2acf248468", "src": "db2@1.60.1.70009"}
+{"id": 234012, "field": "name", "en": "Hive Thistle", "hash": "d70ed9da6dce364e", "src": "db2@1.60.1.70124"}
+{"id": 234016, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234016, "field": "description", "en": "Increases the casting speed of your spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Invoker", "hash": "2b5d2b7652a91f40", "src": "db2@1.60.1.70124"}
+{"id": 234017, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234017, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Dominator", "hash": "05ff9d84939c7da6", "src": "db2@1.60.1.70124"}
+{"id": 234018, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234018, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1% per piece of Timeworn armor equipped.\nThe Path of the Protector", "hash": "5a8811dee3419234", "src": "db2@1.60.1.70124"}
+{"id": 234019, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234019, "field": "description", "en": "Increases the effectiveness of your healing and shielding spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Preserver", "hash": "90940f0dd336391a", "src": "db2@1.60.1.70124"}
+{"id": 234020, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234020, "field": "description", "en": "Increases the casting speed of your spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Invoker", "hash": "2b5d2b7652a91f40", "src": "db2@1.60.1.70124"}
+{"id": 234021, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234021, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Dominator", "hash": "05ff9d84939c7da6", "src": "db2@1.60.1.70124"}
+{"id": 234022, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234022, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1% per piece of Timeworn armor equipped.\nThe Path of the Protector", "hash": "5a8811dee3419234", "src": "db2@1.60.1.70124"}
+{"id": 234023, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234023, "field": "description", "en": "Increases the effectiveness of your healing and shielding spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Preserver", "hash": "90940f0dd336391a", "src": "db2@1.60.1.70124"}
+{"id": 234024, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234024, "field": "description", "en": "Increases the casting speed of your spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Invoker", "hash": "2b5d2b7652a91f40", "src": "db2@1.60.1.70124"}
+{"id": 234025, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234025, "field": "description", "en": "Increases the effectiveness of your healing and shielding spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Preserver", "hash": "90940f0dd336391a", "src": "db2@1.60.1.70124"}
+{"id": 234026, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234026, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Dominator", "hash": "05ff9d84939c7da6", "src": "db2@1.60.1.70124"}
+{"id": 234027, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234027, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1% per piece of Timeworn armor equipped.\nThe Path of the Protector", "hash": "5a8811dee3419234", "src": "db2@1.60.1.70124"}
+{"id": 234028, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234028, "field": "description", "en": "Increases the casting speed of your spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Invoker", "hash": "2b5d2b7652a91f40", "src": "db2@1.60.1.70124"}
+{"id": 234029, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234029, "field": "description", "en": "Increases the effectiveness of your healing and shielding spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Preserver", "hash": "90940f0dd336391a", "src": "db2@1.60.1.70124"}
+{"id": 234030, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234030, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Dominator", "hash": "05ff9d84939c7da6", "src": "db2@1.60.1.70124"}
+{"id": 234031, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234031, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1% per piece of Timeworn armor equipped.\nThe Path of the Protector", "hash": "5a8811dee3419234", "src": "db2@1.60.1.70124"}
+{"id": 234032, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234032, "field": "description", "en": "Increases the casting speed of your spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Invoker", "hash": "2b5d2b7652a91f40", "src": "db2@1.60.1.70124"}
+{"id": 234033, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234033, "field": "description", "en": "Increases the effectiveness of your healing and shielding spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Preserver", "hash": "90940f0dd336391a", "src": "db2@1.60.1.70124"}
+{"id": 234034, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234034, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Dominator", "hash": "05ff9d84939c7da6", "src": "db2@1.60.1.70124"}
+{"id": 234035, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234035, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1% per piece of Timeworn armor equipped.\nThe Path of the Protector", "hash": "5a8811dee3419234", "src": "db2@1.60.1.70124"}
+{"id": 234198, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234198, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Conqueror", "hash": "f32770f8d292872a", "src": "db2@1.60.1.70124"}
+{"id": 234199, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234199, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Conqueror", "hash": "f32770f8d292872a", "src": "db2@1.60.1.70124"}
+{"id": 234200, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234200, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Conqueror", "hash": "f32770f8d292872a", "src": "db2@1.60.1.70124"}
+{"id": 234201, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234201, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Conqueror", "hash": "f32770f8d292872a", "src": "db2@1.60.1.70124"}
+{"id": 234202, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234202, "field": "description", "en": "Gives you $s1% chance per piece of Timeworn armor equipped to get an extra attack on melee or ranged hit.\nThe Path of the Conqueror", "hash": "f32770f8d292872a", "src": "db2@1.60.1.70124"}
+{"id": 234271, "field": "name", "en": "Formula: Scroll: Wrath of the Swarm", "hash": "2a93079f637a5f24", "src": "db2@1.60.1.70124"}
+{"id": 234271, "field": "description", "en": "Teaches you how to conjure a Scroll: Wrath of the Swarm.", "hash": "6030a7d40ef8a57a", "src": "db2@1.60.1.70124"}
+{"id": 234272, "field": "name", "en": "Formula: Enchanted Repellent", "hash": "4ad3788c71989c12", "src": "db2@1.60.1.70124"}
+{"id": 234272, "field": "description", "en": "Teaches you how to create Enchanted Repellent.", "hash": "747cfe89129c1d24", "src": "db2@1.60.1.70124"}
+{"id": 234436, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234436, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70124"}
+{"id": 234437, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234437, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70124"}
+{"id": 234438, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234438, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70124"}
+{"id": 234439, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234439, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70124"}
+{"id": 234440, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234440, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70124"}
+{"id": 234444, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70124"}
+{"id": 234444, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $1214170o1 Nature damage over $1214170d and causing the enemy to take $1214170s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $1214170u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "db56e99728cc6694", "src": "db2@1.60.1.70124"}
+{"id": 234465, "field": "name", "en": "Reins of the Swift Spectral Tiger", "hash": "ff77be2acf248468", "src": "db2@1.60.1.70124"}
 {"id": 234465, "field": "description", "en": "Summons and dismisses a Swift Spectral Tiger.   This is a very fast mount.", "hash": "7d7bae98295e5de2", "src": "wago@1.15.9.69722"}
-{"id": 234542, "field": "name", "en": "High Warlord's Greatsword", "hash": "94dccf2e75b7f6cd", "src": "db2@1.60.1.70009"}
-{"id": 234542, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234543, "field": "name", "en": "High Warlord's Battle Axe", "hash": "86ac8e46a7e047e0", "src": "db2@1.60.1.70009"}
-{"id": 234543, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234545, "field": "name", "en": "High Warlord's Pulverizer", "hash": "629e0339b505b2fa", "src": "db2@1.60.1.70009"}
-{"id": 234545, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234546, "field": "name", "en": "High Warlord's Destroyer", "hash": "dad81ff6b70c8175", "src": "db2@1.60.1.70009"}
-{"id": 234546, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234547, "field": "name", "en": "High Warlord's Pig Sticker", "hash": "18266bbb7a3a3258", "src": "db2@1.60.1.70009"}
-{"id": 234547, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "50bc8c5fea80322f", "src": "db2@1.60.1.70009"}
-{"id": 234548, "field": "name", "en": "High Warlord's Pig Poker", "hash": "d9060270e20cb827", "src": "db2@1.60.1.70009"}
-{"id": 234548, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "50bc8c5fea80322f", "src": "db2@1.60.1.70009"}
-{"id": 234549, "field": "name", "en": "High Warlord's War Staff", "hash": "f01303257b8015df", "src": "db2@1.60.1.70009"}
-{"id": 234549, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234550, "field": "name", "en": "High Warlord's Spellblade", "hash": "f4e085ed00390530", "src": "db2@1.60.1.70009"}
-{"id": 234550, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234551, "field": "name", "en": "High Warlord's Battle Mace", "hash": "ebe26bfafa65c9dd", "src": "db2@1.60.1.70009"}
-{"id": 234551, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234552, "field": "name", "en": "High Warlord's Blade", "hash": "85bef8c7a07b4f5a", "src": "db2@1.60.1.70009"}
-{"id": 234552, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234553, "field": "name", "en": "High Warlord's Quickblade", "hash": "47db2453d67e3f79", "src": "db2@1.60.1.70009"}
-{"id": 234553, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234554, "field": "name", "en": "High Warlord's Cleaver", "hash": "a95ace1bc6cb7d6e", "src": "db2@1.60.1.70009"}
-{"id": 234554, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234555, "field": "name", "en": "High Warlord's Bludgeon", "hash": "1cf1468353e4a25b", "src": "db2@1.60.1.70009"}
-{"id": 234555, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234556, "field": "name", "en": "High Warlord's Razor", "hash": "9d2799c2deebc71e", "src": "db2@1.60.1.70009"}
-{"id": 234556, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234557, "field": "name", "en": "High Warlord's Right Claw", "hash": "9f46fd9f3309af58", "src": "db2@1.60.1.70009"}
-{"id": 234557, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234558, "field": "name", "en": "High Warlord's Left Claw", "hash": "01272c76be0540b5", "src": "db2@1.60.1.70009"}
-{"id": 234558, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234559, "field": "name", "en": "High Warlord's Recurve", "hash": "3ec6d72dce45b4eb", "src": "db2@1.60.1.70009"}
-{"id": 234559, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234560, "field": "name", "en": "High Warlord's Crossbow", "hash": "f461bd72864f4814", "src": "db2@1.60.1.70009"}
-{"id": 234560, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234561, "field": "name", "en": "High Warlord's Street Sweeper", "hash": "15fd8d1fba957413", "src": "db2@1.60.1.70009"}
-{"id": 234561, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234562, "field": "name", "en": "High Warlord's Shield Wall", "hash": "050eb45088cb58e4", "src": "db2@1.60.1.70009"}
-{"id": 234562, "field": "description", "en": "When struck in combat has a $h% chance of inflicting $16782s1 Nature damage to the attacker.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "1ce8d70fbbba74bc", "src": "db2@1.60.1.70009"}
-{"id": 234563, "field": "name", "en": "High Warlord's Tome of Destruction", "hash": "ca97ed81115a2df2", "src": "db2@1.60.1.70009"}
-{"id": 234563, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234564, "field": "name", "en": "High Warlord's Tome of Mending", "hash": "7090097587900e05", "src": "db2@1.60.1.70009"}
-{"id": 234564, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234565, "field": "name", "en": "Grand Marshal's Claymore", "hash": "675d50311f20991a", "src": "db2@1.60.1.70009"}
-{"id": 234565, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234566, "field": "name", "en": "Grand Marshal's Sunderer", "hash": "8cc3fddaf364f141", "src": "db2@1.60.1.70009"}
-{"id": 234566, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234567, "field": "name", "en": "Grand Marshal's Battle Hammer", "hash": "a61977c795536c19", "src": "db2@1.60.1.70009"}
-{"id": 234567, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234568, "field": "name", "en": "Grand Marshal's Demolisher", "hash": "4285ddb21b902bf3", "src": "db2@1.60.1.70009"}
-{"id": 234568, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234569, "field": "name", "en": "Grand Marshal's Glaive", "hash": "479b5bc09cf0ccaf", "src": "db2@1.60.1.70009"}
-{"id": 234569, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "50bc8c5fea80322f", "src": "db2@1.60.1.70009"}
-{"id": 234570, "field": "name", "en": "Grand Marshal's Polearm", "hash": "b1dd46b61a6e59bb", "src": "db2@1.60.1.70009"}
-{"id": 234570, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "50bc8c5fea80322f", "src": "db2@1.60.1.70009"}
-{"id": 234571, "field": "name", "en": "Grand Marshal's Stave", "hash": "8423a9f268c24ec6", "src": "db2@1.60.1.70009"}
-{"id": 234571, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234574, "field": "name", "en": "Grand Marshal's Mageblade", "hash": "ce129b917fee4139", "src": "db2@1.60.1.70009"}
-{"id": 234574, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234576, "field": "name", "en": "Grand Marshal's Warhammer", "hash": "a9c0032b1a66b4b5", "src": "db2@1.60.1.70009"}
-{"id": 234576, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234578, "field": "name", "en": "Grand Marshal's Longsword", "hash": "4b0376fe1576c1ef", "src": "db2@1.60.1.70009"}
-{"id": 234578, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234579, "field": "name", "en": "Grand Marshal's Swiftblade", "hash": "357f4534495d9d7a", "src": "db2@1.60.1.70009"}
-{"id": 234579, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234580, "field": "name", "en": "Grand Marshal's Handaxe", "hash": "6e04af6628a02da8", "src": "db2@1.60.1.70009"}
-{"id": 234580, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234581, "field": "name", "en": "Grand Marshal's Punisher", "hash": "8011a54d81bb0fb5", "src": "db2@1.60.1.70009"}
-{"id": 234581, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234582, "field": "name", "en": "Grand Marshal's Dirk", "hash": "10934e5033de87d4", "src": "db2@1.60.1.70009"}
-{"id": 234582, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234583, "field": "name", "en": "Grand Marshal's Right Hand Blade", "hash": "fa4a7db702690cdd", "src": "db2@1.60.1.70009"}
-{"id": 234583, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234584, "field": "name", "en": "Grand Marshal's Left Hand Blade", "hash": "5e84d64f1538bf81", "src": "db2@1.60.1.70009"}
-{"id": 234584, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234585, "field": "name", "en": "Grand Marshal's Bullseye", "hash": "357c4b8403c29901", "src": "db2@1.60.1.70009"}
-{"id": 234585, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234586, "field": "name", "en": "Grand Marshal's Repeater", "hash": "d234eb0678e123c8", "src": "db2@1.60.1.70009"}
-{"id": 234586, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234587, "field": "name", "en": "Grand Marshal's Hand Cannon", "hash": "7ff48a876ceafa56", "src": "db2@1.60.1.70009"}
-{"id": 234587, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234588, "field": "name", "en": "Grand Marshal's Aegis", "hash": "462bd7c38afe03f0", "src": "db2@1.60.1.70009"}
-{"id": 234588, "field": "description", "en": "When struck in combat has a $h% chance of inflicting $16782s1 Nature damage to the attacker.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "1ce8d70fbbba74bc", "src": "db2@1.60.1.70009"}
-{"id": 234589, "field": "name", "en": "Grand Marshal's Tome of Power", "hash": "6ff65dbafdc45a1c", "src": "db2@1.60.1.70009"}
-{"id": 234589, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234590, "field": "name", "en": "Grand Marshal's Tome of Restoration", "hash": "e599a258d6acf1a1", "src": "db2@1.60.1.70009"}
-{"id": 234590, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70009"}
-{"id": 234728, "field": "name", "en": "Hakkari Summoning Token", "hash": "451ef5785580e794", "src": "db2@1.60.1.70009"}
-{"id": 234728, "field": "description", "en": "A fetish used in summoning the god Hakkar to receive a bodily sacrifice.", "hash": "d2d150c47c2590a0", "src": "db2@1.60.1.70009"}
-{"id": 234817, "field": "name", "en": "Roots Within Stone", "hash": "4152d90015639f45", "src": "db2@1.60.1.70009"}
-{"id": 234817, "field": "description", "en": "An ancient text that details properties of long-lost rituals of the druids.", "hash": "d3f5be2938ddfbd2", "src": "db2@1.60.1.70009"}
-{"id": 234818, "field": "name", "en": "Essence Bottle", "hash": "35f21b3024a923bd", "src": "db2@1.60.1.70009"}
-{"id": 234818, "field": "description", "en": "Collect the essence of a Hederine demon from Darkwhisper Gorge.\nA strange fel energy emanates from the bottle.", "hash": "a07ab1249389ccb1", "src": "db2@1.60.1.70009"}
-{"id": 234819, "field": "name", "en": "Demonic Gauntlet", "hash": "54b6d40699d79a79", "src": "db2@1.60.1.70009"}
-{"id": 234820, "field": "name", "en": "Acidic Goo", "hash": "86055337d33c0773", "src": "db2@1.60.1.70009"}
-{"id": 234820, "field": "description", "en": "Combine the Demonic Gauntlet with the Acidic Goo.", "hash": "4274156dafc1e00f", "src": "db2@1.60.1.70009"}
-{"id": 234964, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234964, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Flamekeeper", "hash": "8624e35c89cfebff", "src": "db2@1.60.1.70009"}
-{"id": 234965, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234965, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Flamekeeper", "hash": "8624e35c89cfebff", "src": "db2@1.60.1.70009"}
-{"id": 234966, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234966, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Flamekeeper", "hash": "8624e35c89cfebff", "src": "db2@1.60.1.70009"}
-{"id": 234967, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234967, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Flamekeeper", "hash": "8624e35c89cfebff", "src": "db2@1.60.1.70009"}
-{"id": 234968, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70009"}
-{"id": 234968, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Flamekeeper", "hash": "8624e35c89cfebff", "src": "db2@1.60.1.70009"}
+{"id": 234542, "field": "name", "en": "High Warlord's Greatsword", "hash": "94dccf2e75b7f6cd", "src": "db2@1.60.1.70124"}
+{"id": 234542, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234543, "field": "name", "en": "High Warlord's Battle Axe", "hash": "86ac8e46a7e047e0", "src": "db2@1.60.1.70124"}
+{"id": 234543, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234545, "field": "name", "en": "High Warlord's Pulverizer", "hash": "629e0339b505b2fa", "src": "db2@1.60.1.70124"}
+{"id": 234545, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234546, "field": "name", "en": "High Warlord's Destroyer", "hash": "dad81ff6b70c8175", "src": "db2@1.60.1.70124"}
+{"id": 234546, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234547, "field": "name", "en": "High Warlord's Pig Sticker", "hash": "18266bbb7a3a3258", "src": "db2@1.60.1.70124"}
+{"id": 234547, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "50bc8c5fea80322f", "src": "db2@1.60.1.70124"}
+{"id": 234548, "field": "name", "en": "High Warlord's Pig Poker", "hash": "d9060270e20cb827", "src": "db2@1.60.1.70124"}
+{"id": 234548, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "50bc8c5fea80322f", "src": "db2@1.60.1.70124"}
+{"id": 234549, "field": "name", "en": "High Warlord's War Staff", "hash": "f01303257b8015df", "src": "db2@1.60.1.70124"}
+{"id": 234549, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234550, "field": "name", "en": "High Warlord's Spellblade", "hash": "f4e085ed00390530", "src": "db2@1.60.1.70124"}
+{"id": 234550, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234551, "field": "name", "en": "High Warlord's Battle Mace", "hash": "ebe26bfafa65c9dd", "src": "db2@1.60.1.70124"}
+{"id": 234551, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234552, "field": "name", "en": "High Warlord's Blade", "hash": "85bef8c7a07b4f5a", "src": "db2@1.60.1.70124"}
+{"id": 234552, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234553, "field": "name", "en": "High Warlord's Quickblade", "hash": "47db2453d67e3f79", "src": "db2@1.60.1.70124"}
+{"id": 234553, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234554, "field": "name", "en": "High Warlord's Cleaver", "hash": "a95ace1bc6cb7d6e", "src": "db2@1.60.1.70124"}
+{"id": 234554, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234555, "field": "name", "en": "High Warlord's Bludgeon", "hash": "1cf1468353e4a25b", "src": "db2@1.60.1.70124"}
+{"id": 234555, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234556, "field": "name", "en": "High Warlord's Razor", "hash": "9d2799c2deebc71e", "src": "db2@1.60.1.70124"}
+{"id": 234556, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234557, "field": "name", "en": "High Warlord's Right Claw", "hash": "9f46fd9f3309af58", "src": "db2@1.60.1.70124"}
+{"id": 234557, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234558, "field": "name", "en": "High Warlord's Left Claw", "hash": "01272c76be0540b5", "src": "db2@1.60.1.70124"}
+{"id": 234558, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234559, "field": "name", "en": "High Warlord's Recurve", "hash": "3ec6d72dce45b4eb", "src": "db2@1.60.1.70124"}
+{"id": 234559, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234560, "field": "name", "en": "High Warlord's Crossbow", "hash": "f461bd72864f4814", "src": "db2@1.60.1.70124"}
+{"id": 234560, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234561, "field": "name", "en": "High Warlord's Street Sweeper", "hash": "15fd8d1fba957413", "src": "db2@1.60.1.70124"}
+{"id": 234561, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234562, "field": "name", "en": "High Warlord's Shield Wall", "hash": "050eb45088cb58e4", "src": "db2@1.60.1.70124"}
+{"id": 234562, "field": "description", "en": "When struck in combat has a $h% chance of inflicting $16782s1 Nature damage to the attacker.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "1ce8d70fbbba74bc", "src": "db2@1.60.1.70124"}
+{"id": 234563, "field": "name", "en": "High Warlord's Tome of Destruction", "hash": "ca97ed81115a2df2", "src": "db2@1.60.1.70124"}
+{"id": 234563, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234564, "field": "name", "en": "High Warlord's Tome of Mending", "hash": "7090097587900e05", "src": "db2@1.60.1.70124"}
+{"id": 234564, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234565, "field": "name", "en": "Grand Marshal's Claymore", "hash": "675d50311f20991a", "src": "db2@1.60.1.70124"}
+{"id": 234565, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234566, "field": "name", "en": "Grand Marshal's Sunderer", "hash": "8cc3fddaf364f141", "src": "db2@1.60.1.70124"}
+{"id": 234566, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234567, "field": "name", "en": "Grand Marshal's Battle Hammer", "hash": "a61977c795536c19", "src": "db2@1.60.1.70124"}
+{"id": 234567, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234568, "field": "name", "en": "Grand Marshal's Demolisher", "hash": "4285ddb21b902bf3", "src": "db2@1.60.1.70124"}
+{"id": 234568, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234569, "field": "name", "en": "Grand Marshal's Glaive", "hash": "479b5bc09cf0ccaf", "src": "db2@1.60.1.70124"}
+{"id": 234569, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "50bc8c5fea80322f", "src": "db2@1.60.1.70124"}
+{"id": 234570, "field": "name", "en": "Grand Marshal's Polearm", "hash": "b1dd46b61a6e59bb", "src": "db2@1.60.1.70124"}
+{"id": 234570, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "50bc8c5fea80322f", "src": "db2@1.60.1.70124"}
+{"id": 234571, "field": "name", "en": "Grand Marshal's Stave", "hash": "8423a9f268c24ec6", "src": "db2@1.60.1.70124"}
+{"id": 234571, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234574, "field": "name", "en": "Grand Marshal's Mageblade", "hash": "ce129b917fee4139", "src": "db2@1.60.1.70124"}
+{"id": 234574, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234576, "field": "name", "en": "Grand Marshal's Warhammer", "hash": "a9c0032b1a66b4b5", "src": "db2@1.60.1.70124"}
+{"id": 234576, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234578, "field": "name", "en": "Grand Marshal's Longsword", "hash": "4b0376fe1576c1ef", "src": "db2@1.60.1.70124"}
+{"id": 234578, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234579, "field": "name", "en": "Grand Marshal's Swiftblade", "hash": "357f4534495d9d7a", "src": "db2@1.60.1.70124"}
+{"id": 234579, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234580, "field": "name", "en": "Grand Marshal's Handaxe", "hash": "6e04af6628a02da8", "src": "db2@1.60.1.70124"}
+{"id": 234580, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234581, "field": "name", "en": "Grand Marshal's Punisher", "hash": "8011a54d81bb0fb5", "src": "db2@1.60.1.70124"}
+{"id": 234581, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234582, "field": "name", "en": "Grand Marshal's Dirk", "hash": "10934e5033de87d4", "src": "db2@1.60.1.70124"}
+{"id": 234582, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234583, "field": "name", "en": "Grand Marshal's Right Hand Blade", "hash": "fa4a7db702690cdd", "src": "db2@1.60.1.70124"}
+{"id": 234583, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234584, "field": "name", "en": "Grand Marshal's Left Hand Blade", "hash": "5e84d64f1538bf81", "src": "db2@1.60.1.70124"}
+{"id": 234584, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234585, "field": "name", "en": "Grand Marshal's Bullseye", "hash": "357c4b8403c29901", "src": "db2@1.60.1.70124"}
+{"id": 234585, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234586, "field": "name", "en": "Grand Marshal's Repeater", "hash": "d234eb0678e123c8", "src": "db2@1.60.1.70124"}
+{"id": 234586, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234587, "field": "name", "en": "Grand Marshal's Hand Cannon", "hash": "7ff48a876ceafa56", "src": "db2@1.60.1.70124"}
+{"id": 234587, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234588, "field": "name", "en": "Grand Marshal's Aegis", "hash": "462bd7c38afe03f0", "src": "db2@1.60.1.70124"}
+{"id": 234588, "field": "description", "en": "When struck in combat has a $h% chance of inflicting $16782s1 Nature damage to the attacker.\nReduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "1ce8d70fbbba74bc", "src": "db2@1.60.1.70124"}
+{"id": 234589, "field": "name", "en": "Grand Marshal's Tome of Power", "hash": "6ff65dbafdc45a1c", "src": "db2@1.60.1.70124"}
+{"id": 234589, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234590, "field": "name", "en": "Grand Marshal's Tome of Restoration", "hash": "e599a258d6acf1a1", "src": "db2@1.60.1.70124"}
+{"id": 234590, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70124"}
+{"id": 234728, "field": "name", "en": "Hakkari Summoning Token", "hash": "451ef5785580e794", "src": "db2@1.60.1.70124"}
+{"id": 234728, "field": "description", "en": "A fetish used in summoning the god Hakkar to receive a bodily sacrifice.", "hash": "d2d150c47c2590a0", "src": "db2@1.60.1.70124"}
+{"id": 234817, "field": "name", "en": "Roots Within Stone", "hash": "4152d90015639f45", "src": "db2@1.60.1.70124"}
+{"id": 234817, "field": "description", "en": "An ancient text that details properties of long-lost rituals of the druids.", "hash": "d3f5be2938ddfbd2", "src": "db2@1.60.1.70124"}
+{"id": 234818, "field": "name", "en": "Essence Bottle", "hash": "35f21b3024a923bd", "src": "db2@1.60.1.70124"}
+{"id": 234818, "field": "description", "en": "Collect the essence of a Hederine demon from Darkwhisper Gorge.\nA strange fel energy emanates from the bottle.", "hash": "a07ab1249389ccb1", "src": "db2@1.60.1.70124"}
+{"id": 234819, "field": "name", "en": "Demonic Gauntlet", "hash": "54b6d40699d79a79", "src": "db2@1.60.1.70124"}
+{"id": 234820, "field": "name", "en": "Acidic Goo", "hash": "86055337d33c0773", "src": "db2@1.60.1.70124"}
+{"id": 234820, "field": "description", "en": "Combine the Demonic Gauntlet with the Acidic Goo.", "hash": "4274156dafc1e00f", "src": "db2@1.60.1.70124"}
+{"id": 234964, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234964, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Flamekeeper", "hash": "8624e35c89cfebff", "src": "db2@1.60.1.70124"}
+{"id": 234965, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234965, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Flamekeeper", "hash": "8624e35c89cfebff", "src": "db2@1.60.1.70124"}
+{"id": 234966, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234966, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Flamekeeper", "hash": "8624e35c89cfebff", "src": "db2@1.60.1.70124"}
+{"id": 234967, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234967, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Flamekeeper", "hash": "8624e35c89cfebff", "src": "db2@1.60.1.70124"}
+{"id": 234968, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70124"}
+{"id": 234968, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Flamekeeper", "hash": "8624e35c89cfebff", "src": "db2@1.60.1.70124"}

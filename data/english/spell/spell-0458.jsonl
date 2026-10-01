@@ -1,111 +1,111 @@
-{"id": 458112, "field": "name", "en": "Crusader", "hash": "9d821d3b60377ac0", "src": "db2@1.60.1.70009"}
-{"id": 458176, "field": "name", "en": "[DNT] Stratholme Puzzle Aura", "hash": "b4da83912e8f951c", "src": "db2@1.60.1.70009"}
-{"id": 458285, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70009"}
-{"id": 458285, "field": "aura", "en": "$s1 healing every $t1 $lsecond:seconds;.", "hash": "6ae8a0f493332866", "src": "db2@1.60.1.70009"}
-{"id": 458286, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70009"}
-{"id": 458287, "field": "name", "en": "Hallowed Ground", "hash": "32635a2a38f92870", "src": "db2@1.60.1.70009"}
-{"id": 458287, "field": "description", "en": "Your Consecration now also heals party members within its area for $s1% of Consecration's damage value.", "hash": "d606e17790c85a3e", "src": "db2@1.60.1.70009"}
-{"id": 458312, "field": "name", "en": "Divine Protection", "hash": "ac5544a161d89272", "src": "db2@1.60.1.70009"}
-{"id": 458312, "field": "description", "en": "Reduces all damage taken by $s1% for $d.  Once protected, you cannot be targeted by Divine Shield, Divine Protection, or Blessing of Protection again for $25771d.", "hash": "4f4c8473351f280e", "src": "db2@1.60.1.70009"}
-{"id": 458312, "field": "aura", "en": "Damage taken reduced by $s1%.", "hash": "a4f10210fada6a4f", "src": "db2@1.60.1.70009"}
-{"id": 458318, "field": "name", "en": "Malleable Protection", "hash": "f2c0cfdacb66b81b", "src": "db2@1.60.1.70009"}
-{"id": 458318, "field": "description", "en": "You can now take actions during Divine Protection and its duration is increased by $s3%, but it only reduces damage you take by $458312s1% instead of making you immune. In addition, activating Holy Shield also grants you $460171s2 Attack Power for each point of your defense skill beyond ${$PL*5}, lasting $460171d.", "hash": "ef5783e03108452e", "src": "db2@1.60.1.70009"}
-{"id": 458321, "field": "name", "en": "Sandworm Submerge Visual", "hash": "6f35b3af654e120b", "src": "db2@1.60.1.70009"}
-{"id": 458354, "field": "name", "en": "[DNT] Juvenile Sandworm - Burrow", "hash": "7a1edc53d1835f31", "src": "db2@1.60.1.70009"}
-{"id": 458355, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70009"}
-{"id": 458371, "field": "name", "en": "Divine Protection", "hash": "ac5544a161d89272", "src": "db2@1.60.1.70009"}
-{"id": 458371, "field": "description", "en": "Reduces all damage taken by $s1% for $d.  Once protected, you cannot be targeted by Divine Shield, Divine Protection, or Blessing of Protection again for $25771d.", "hash": "4f4c8473351f280e", "src": "db2@1.60.1.70009"}
-{"id": 458371, "field": "aura", "en": "Damage taken reduced by $s1%.", "hash": "a4f10210fada6a4f", "src": "db2@1.60.1.70009"}
-{"id": 458389, "field": "name", "en": "Dirt Mound Effect", "hash": "e0bc55a6bcc8d69c", "src": "db2@1.60.1.70009"}
-{"id": 458390, "field": "name", "en": "Dirt Mound Passive", "hash": "c08c1f6c79b4d169", "src": "db2@1.60.1.70009"}
-{"id": 458392, "field": "name", "en": "[DNT] Juvenile Sandworm - Summon Dirt Mound", "hash": "137969f747ca0bfd", "src": "db2@1.60.1.70009"}
-{"id": 458393, "field": "name", "en": "Cobra Slayer", "hash": "b02c0309970530cb", "src": "db2@1.60.1.70009"}
-{"id": 458393, "field": "description", "en": "Mongoose Bite now has a $s3% chance to activate on each of your melee attacks, a 100% chance when an enemy dodges. This chance accumulates, with the chance rising by $s3% from each subsequent attack if it does not reset. Mongoose Bite also deals additional damage equal to $s2% of your Attack Power.", "hash": "31863f78f1c5d5cb", "src": "db2@1.60.1.70009"}
-{"id": 458399, "field": "name", "en": "Eruption", "hash": "5a49169340dbb669", "src": "db2@1.60.1.70009"}
-{"id": 458403, "field": "name", "en": "Stalker", "hash": "43294a7779b9925b", "src": "db2@1.60.1.70009"}
-{"id": 458403, "field": "aura", "en": "Chance to hit with all attacks increased by $s1%.", "hash": "36a319d20b1f0b03", "src": "db2@1.60.1.70009"}
-{"id": 458407, "field": "name", "en": "Eruption", "hash": "5a49169340dbb669", "src": "db2@1.60.1.70009"}
-{"id": 458407, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 458436, "field": "name", "en": "Wyvern Strike", "hash": "9c314a20b8db0acd", "src": "db2@1.60.1.70009"}
-{"id": 458436, "field": "description", "en": "A vicious strike that deals $s2% weapon damage and causes the target to Bleed for ${$m3/100*8*$AP} Physical damage over $d.", "hash": "a0da7bd780e58ed5", "src": "db2@1.60.1.70009"}
-{"id": 458436, "field": "aura", "en": "$w3 Bleed damage every $t3 seconds.", "hash": "d7a9220a22d789cd", "src": "db2@1.60.1.70009"}
-{"id": 458454, "field": "name", "en": "Use Echo", "hash": "4b386cd41d37f0b2", "src": "db2@1.60.1.70009"}
-{"id": 458454, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70009"}
-{"id": 458479, "field": "name", "en": "Wyvern Strike", "hash": "9c314a20b8db0acd", "src": "db2@1.60.1.70009"}
-{"id": 458479, "field": "description", "en": "Replaces your Wyvern Sting ability with Wyvern Strike, a vicious strike that deals $458436s2% weapon damage and causes the target to Bleed for damage over time.\r\n\r\nWyvern Strike requires you to have the Wyvern Sting talent, and replaces the Wyvern Sting abilities found in the Survival spellbook.", "hash": "dd66b74c662ee6c6", "src": "db2@1.60.1.70009"}
-{"id": 458481, "field": "name", "en": "Wyvern Strike", "hash": "9c314a20b8db0acd", "src": "db2@1.60.1.70009"}
-{"id": 458481, "field": "description", "en": "A vicious strike that deals $s2% weapon damage and causes the target to Bleed for ${$m3/100*8*$AP} Physical damage over $d.", "hash": "a0da7bd780e58ed5", "src": "db2@1.60.1.70009"}
-{"id": 458481, "field": "aura", "en": "$w3 Bleed damage every $t3 seconds.", "hash": "d7a9220a22d789cd", "src": "db2@1.60.1.70009"}
-{"id": 458482, "field": "name", "en": "Wyvern Strike", "hash": "9c314a20b8db0acd", "src": "db2@1.60.1.70009"}
-{"id": 458482, "field": "description", "en": "A vicious strike that deals $s2% weapon damage and causes the target to Bleed for ${$m3/100*8*$AP} Physical damage over $d.", "hash": "a0da7bd780e58ed5", "src": "db2@1.60.1.70009"}
-{"id": 458482, "field": "aura", "en": "$w3 Bleed damage every $t3 seconds.", "hash": "d7a9220a22d789cd", "src": "db2@1.60.1.70009"}
-{"id": 458488, "field": "name", "en": "Astral Beacon", "hash": "c8a032aa07a03d9e", "src": "db2@1.60.1.70009"}
-{"id": 458491, "field": "name", "en": "Attack", "hash": "e072942b4a6e859a", "src": "db2@1.60.1.70009"}
-{"id": 458590, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70009"}
-{"id": 458590, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70009"}
-{"id": 458684, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70009"}
-{"id": 458808, "field": "name", "en": "[DNT] Stratholme Clue Active", "hash": "fdef838009646576", "src": "db2@1.60.1.70009"}
-{"id": 458809, "field": "name", "en": "[DNT] Stratholme Clue Failed", "hash": "c2f0fbbcdbaee9c3", "src": "db2@1.60.1.70009"}
-{"id": 458819, "field": "name", "en": "Tim's Test Fireball", "hash": "da8401935cc543d1", "src": "db2@1.60.1.70009"}
-{"id": 458819, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70009"}
-{"id": 458820, "field": "name", "en": "Occult Poison I", "hash": "acdf0860690afab2", "src": "db2@1.60.1.70009"}
-{"id": 458820, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds and $s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.", "hash": "4290b92c25899841", "src": "db2@1.60.1.70009"}
-{"id": 458821, "field": "name", "en": "Occult Poison I", "hash": "acdf0860690afab2", "src": "db2@1.60.1.70009"}
-{"id": 458821, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $458820o1 Nature damage over $458820d and causing the enemy to take $458820s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $458820u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "ac6b5ded306f2c8f", "src": "db2@1.60.1.70009"}
-{"id": 458822, "field": "name", "en": "Occult Poison I", "hash": "acdf0860690afab2", "src": "db2@1.60.1.70009"}
-{"id": 458822, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a 30% chance of poisoning the enemy for $458820o1 Nature damage over $458820d and causing the enemy to take $458820s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $458820u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.", "hash": "dba5bb614a352fd5", "src": "db2@1.60.1.70009"}
-{"id": 458833, "field": "name", "en": "[DNT] Update Bonus Difficulty", "hash": "ee6bbc55f4c96be2", "src": "db2@1.60.1.70009"}
-{"id": 458841, "field": "name", "en": "Sweltering Heat", "hash": "20ef0b134079a8df", "src": "db2@1.60.1.70009"}
-{"id": 458841, "field": "aura", "en": "The Hydraxians are providing maximum relief, reducing the heat within the Molten Core to a minimum.", "hash": "19674aede1dad5e2", "src": "db2@1.60.1.70009"}
-{"id": 458842, "field": "name", "en": "Blistering Heat", "hash": "b43ab7a518140d94", "src": "db2@1.60.1.70009"}
-{"id": 458842, "field": "aura", "en": "The Hydraxians are providing limited relief. The Molten Core is almost too hot to bear.", "hash": "9a755df54b8c32bd", "src": "db2@1.60.1.70009"}
-{"id": 458843, "field": "name", "en": "Molten Heat", "hash": "346d98740a178218", "src": "db2@1.60.1.70009"}
-{"id": 458843, "field": "aura", "en": "The Hydraxians are providing no relief. The Molten Core is at its most intense.", "hash": "17d3b2a6b37377a9", "src": "db2@1.60.1.70009"}
-{"id": 458856, "field": "name", "en": "Divine Light", "hash": "982b0fd7ccf22ea5", "src": "db2@1.60.1.70009"}
-{"id": 458856, "field": "description", "en": "Heals a friendly target for ${$<healpower>*$m1/100} to ${$<healpower>*$M1/100}. $s2% of any excess healing on the target is converted into an absorption shield that lasts $458857d. Multiple casts of Divine Light do not accumulate this shield.\r\n\r\nDivine Light benefits from all talents and effects that trigger from or modify Holy Light.", "hash": "5eb11dfbb1127690", "src": "db2@1.60.1.70009"}
-{"id": 458857, "field": "name", "en": "Divine Light", "hash": "982b0fd7ccf22ea5", "src": "db2@1.60.1.70009"}
-{"id": 458857, "field": "aura", "en": "Absorbs $w damage.", "hash": "bd35a1c181db6254", "src": "db2@1.60.1.70009"}
-{"id": 458860, "field": "name", "en": "Divine Light", "hash": "982b0fd7ccf22ea5", "src": "db2@1.60.1.70009"}
-{"id": 458872, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70009"}
-{"id": 458872, "field": "description", "en": "The end of an epoch is nigh!\r\nLimited health\r\nCannot exceed 100% movement speed.", "hash": "1d3f1f64d15d0b70", "src": "db2@1.60.1.70009"}
-{"id": 458872, "field": "aura", "en": "The end of an epoch is nigh!\r\nLimited health\r\nCannot exceed 100% movement speed.", "hash": "1d3f1f64d15d0b70", "src": "db2@1.60.1.70009"}
-{"id": 458877, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70009"}
-{"id": 458877, "field": "description", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70009"}
-{"id": 458877, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70009"}
-{"id": 458878, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70009"}
-{"id": 458878, "field": "description", "en": "The end of an epoch is nigh!\r\nMovement speed increased by $s3%.\r\nDamage taken reduced by $s4%.\r\nHealth increased by $s5%.\r\n", "hash": "da91c66601131cb7", "src": "db2@1.60.1.70009"}
-{"id": 458878, "field": "aura", "en": "The end of an epoch is nigh!\r\nMovement speed increased by $s3%.\r\nDamage taken reduced by $s4%.\r\nHealth increased by $s5%.", "hash": "da91c66601131cb7", "src": "db2@1.60.1.70009"}
-{"id": 458880, "field": "name", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70009"}
-{"id": 458880, "field": "description", "en": "Disarm target's weapon for $d.", "hash": "fbbf66ad70cd6ab3", "src": "db2@1.60.1.70009"}
-{"id": 458880, "field": "aura", "en": "De-clawed.", "hash": "a4a80e525c487718", "src": "db2@1.60.1.70009"}
-{"id": 458881, "field": "name", "en": "Disarmed", "hash": "89f5701a0b668df5", "src": "db2@1.60.1.70009"}
-{"id": 458882, "field": "name", "en": "Recycle", "hash": "f68d7202296d2aa1", "src": "db2@1.60.1.70009"}
-{"id": 458882, "field": "description", "en": "Prime recycling shears to recycle the target, repurposing it for something cool.", "hash": "8c36ef8bc1ff0c38", "src": "db2@1.60.1.70009"}
-{"id": 458882, "field": "aura", "en": "Health reduced by $s2%.\r\nArmor reduced by $s3%", "hash": "adb582d75f3e6e8b", "src": "db2@1.60.1.70009"}
-{"id": 458884, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70009"}
-{"id": 458884, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70009"}
-{"id": 458884, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70009"}
-{"id": 458885, "field": "name", "en": "Righteous Vengeance", "hash": "874f777c707e4c51", "src": "db2@1.60.1.70009"}
-{"id": 458886, "field": "name", "en": "Escort Complete", "hash": "73e79de2cc18fc34", "src": "db2@1.60.1.70009"}
-{"id": 458888, "field": "name", "en": "Josh's General Phase and Zone Aura Update", "hash": "9d57f735eda14577", "src": "db2@1.60.1.70009"}
-{"id": 458902, "field": "name", "en": "Bulky Protective Ironweave", "hash": "079028c5ba10df79", "src": "db2@1.60.1.70009"}
-{"id": 458902, "field": "aura", "en": "\"Armor\" attached to the golem\r\nArmor increased by $s2.\r\nAll resistances increased by $s3.\r\nDamage taken reduced by $s4%.", "hash": "6be0f6fdb7b40311", "src": "db2@1.60.1.70009"}
-{"id": 458965, "field": "name", "en": "Interrupt", "hash": "2cb115a1e6cc874d", "src": "db2@1.60.1.70009"}
-{"id": 458976, "field": "name", "en": "Sand Bomb", "hash": "753f8796b53bcf6a", "src": "db2@1.60.1.70009"}
-{"id": 458979, "field": "name", "en": "Sand Bomb", "hash": "753f8796b53bcf6a", "src": "db2@1.60.1.70009"}
-{"id": 458979, "field": "description", "en": "Inflicts Nature damage to enemies in an area, and reduces their movement speed for $d.", "hash": "3f083c0f6e8bf2ca", "src": "db2@1.60.1.70009"}
-{"id": 458979, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70009"}
-{"id": 458984, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70009"}
-{"id": 458985, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70009"}
-{"id": 458987, "field": "name", "en": "Summon Zotl", "hash": "887b06566be7373e", "src": "db2@1.60.1.70009"}
-{"id": 458987, "field": "description", "en": "Entices Zotl the shrike bat to accompany you for a challenge.", "hash": "57f28cc1e8768104", "src": "db2@1.60.1.70009"}
-{"id": 458987, "field": "aura", "en": "Accompanied by Zotl the shrike bat.", "hash": "f8f20aba7f465425", "src": "db2@1.60.1.70009"}
-{"id": 458988, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70009"}
-{"id": 458990, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70009"}
-{"id": 458991, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70009"}
-{"id": 458992, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70009"}
-{"id": 458993, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70009"}
-{"id": 458994, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70009"}
-{"id": 458996, "field": "name", "en": "Sand Bomb", "hash": "753f8796b53bcf6a", "src": "db2@1.60.1.70009"}
-{"id": 458996, "field": "description", "en": "Inflicts Nature damage to enemies in an area, and reduces their movement speed for $d.", "hash": "3f083c0f6e8bf2ca", "src": "db2@1.60.1.70009"}
-{"id": 458996, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70009"}
+{"id": 458112, "field": "name", "en": "Crusader", "hash": "9d821d3b60377ac0", "src": "db2@1.60.1.70124"}
+{"id": 458176, "field": "name", "en": "[DNT] Stratholme Puzzle Aura", "hash": "b4da83912e8f951c", "src": "db2@1.60.1.70124"}
+{"id": 458285, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70124"}
+{"id": 458285, "field": "aura", "en": "$s1 healing every $t1 $lsecond:seconds;.", "hash": "6ae8a0f493332866", "src": "db2@1.60.1.70124"}
+{"id": 458286, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70124"}
+{"id": 458287, "field": "name", "en": "Hallowed Ground", "hash": "32635a2a38f92870", "src": "db2@1.60.1.70124"}
+{"id": 458287, "field": "description", "en": "Your Consecration now also heals party members within its area for $s1% of Consecration's damage value.", "hash": "d606e17790c85a3e", "src": "db2@1.60.1.70124"}
+{"id": 458312, "field": "name", "en": "Divine Protection", "hash": "ac5544a161d89272", "src": "db2@1.60.1.70124"}
+{"id": 458312, "field": "description", "en": "Reduces all damage taken by $s1% for $d.  Once protected, you cannot be targeted by Divine Shield, Divine Protection, or Blessing of Protection again for $25771d.", "hash": "4f4c8473351f280e", "src": "db2@1.60.1.70124"}
+{"id": 458312, "field": "aura", "en": "Damage taken reduced by $s1%.", "hash": "a4f10210fada6a4f", "src": "db2@1.60.1.70124"}
+{"id": 458318, "field": "name", "en": "Malleable Protection", "hash": "f2c0cfdacb66b81b", "src": "db2@1.60.1.70124"}
+{"id": 458318, "field": "description", "en": "You can now take actions during Divine Protection and its duration is increased by $s3%, but it only reduces damage you take by $458312s1% instead of making you immune. In addition, activating Holy Shield also grants you $460171s2 Attack Power for each point of your defense skill beyond ${$PL*5}, lasting $460171d.", "hash": "ef5783e03108452e", "src": "db2@1.60.1.70124"}
+{"id": 458321, "field": "name", "en": "Sandworm Submerge Visual", "hash": "6f35b3af654e120b", "src": "db2@1.60.1.70124"}
+{"id": 458354, "field": "name", "en": "[DNT] Juvenile Sandworm - Burrow", "hash": "7a1edc53d1835f31", "src": "db2@1.60.1.70124"}
+{"id": 458355, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70124"}
+{"id": 458371, "field": "name", "en": "Divine Protection", "hash": "ac5544a161d89272", "src": "db2@1.60.1.70124"}
+{"id": 458371, "field": "description", "en": "Reduces all damage taken by $s1% for $d.  Once protected, you cannot be targeted by Divine Shield, Divine Protection, or Blessing of Protection again for $25771d.", "hash": "4f4c8473351f280e", "src": "db2@1.60.1.70124"}
+{"id": 458371, "field": "aura", "en": "Damage taken reduced by $s1%.", "hash": "a4f10210fada6a4f", "src": "db2@1.60.1.70124"}
+{"id": 458389, "field": "name", "en": "Dirt Mound Effect", "hash": "e0bc55a6bcc8d69c", "src": "db2@1.60.1.70124"}
+{"id": 458390, "field": "name", "en": "Dirt Mound Passive", "hash": "c08c1f6c79b4d169", "src": "db2@1.60.1.70124"}
+{"id": 458392, "field": "name", "en": "[DNT] Juvenile Sandworm - Summon Dirt Mound", "hash": "137969f747ca0bfd", "src": "db2@1.60.1.70124"}
+{"id": 458393, "field": "name", "en": "Cobra Slayer", "hash": "b02c0309970530cb", "src": "db2@1.60.1.70124"}
+{"id": 458393, "field": "description", "en": "Mongoose Bite now has a $s3% chance to activate on each of your melee attacks, a 100% chance when an enemy dodges. This chance accumulates, with the chance rising by $s3% from each subsequent attack if it does not reset. Mongoose Bite also deals additional damage equal to $s2% of your Attack Power.", "hash": "31863f78f1c5d5cb", "src": "db2@1.60.1.70124"}
+{"id": 458399, "field": "name", "en": "Eruption", "hash": "5a49169340dbb669", "src": "db2@1.60.1.70124"}
+{"id": 458403, "field": "name", "en": "Stalker", "hash": "43294a7779b9925b", "src": "db2@1.60.1.70124"}
+{"id": 458403, "field": "aura", "en": "Chance to hit with all attacks increased by $s1%.", "hash": "36a319d20b1f0b03", "src": "db2@1.60.1.70124"}
+{"id": 458407, "field": "name", "en": "Eruption", "hash": "5a49169340dbb669", "src": "db2@1.60.1.70124"}
+{"id": 458407, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 458436, "field": "name", "en": "Wyvern Strike", "hash": "9c314a20b8db0acd", "src": "db2@1.60.1.70124"}
+{"id": 458436, "field": "description", "en": "A vicious strike that deals $s2% weapon damage and causes the target to Bleed for ${$m3/100*8*$AP} Physical damage over $d.", "hash": "a0da7bd780e58ed5", "src": "db2@1.60.1.70124"}
+{"id": 458436, "field": "aura", "en": "$w3 Bleed damage every $t3 seconds.", "hash": "d7a9220a22d789cd", "src": "db2@1.60.1.70124"}
+{"id": 458454, "field": "name", "en": "Use Echo", "hash": "4b386cd41d37f0b2", "src": "db2@1.60.1.70124"}
+{"id": 458454, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70124"}
+{"id": 458479, "field": "name", "en": "Wyvern Strike", "hash": "9c314a20b8db0acd", "src": "db2@1.60.1.70124"}
+{"id": 458479, "field": "description", "en": "Replaces your Wyvern Sting ability with Wyvern Strike, a vicious strike that deals $458436s2% weapon damage and causes the target to Bleed for damage over time.\r\n\r\nWyvern Strike requires you to have the Wyvern Sting talent, and replaces the Wyvern Sting abilities found in the Survival spellbook.", "hash": "dd66b74c662ee6c6", "src": "db2@1.60.1.70124"}
+{"id": 458481, "field": "name", "en": "Wyvern Strike", "hash": "9c314a20b8db0acd", "src": "db2@1.60.1.70124"}
+{"id": 458481, "field": "description", "en": "A vicious strike that deals $s2% weapon damage and causes the target to Bleed for ${$m3/100*8*$AP} Physical damage over $d.", "hash": "a0da7bd780e58ed5", "src": "db2@1.60.1.70124"}
+{"id": 458481, "field": "aura", "en": "$w3 Bleed damage every $t3 seconds.", "hash": "d7a9220a22d789cd", "src": "db2@1.60.1.70124"}
+{"id": 458482, "field": "name", "en": "Wyvern Strike", "hash": "9c314a20b8db0acd", "src": "db2@1.60.1.70124"}
+{"id": 458482, "field": "description", "en": "A vicious strike that deals $s2% weapon damage and causes the target to Bleed for ${$m3/100*8*$AP} Physical damage over $d.", "hash": "a0da7bd780e58ed5", "src": "db2@1.60.1.70124"}
+{"id": 458482, "field": "aura", "en": "$w3 Bleed damage every $t3 seconds.", "hash": "d7a9220a22d789cd", "src": "db2@1.60.1.70124"}
+{"id": 458488, "field": "name", "en": "Astral Beacon", "hash": "c8a032aa07a03d9e", "src": "db2@1.60.1.70124"}
+{"id": 458491, "field": "name", "en": "Attack", "hash": "e072942b4a6e859a", "src": "db2@1.60.1.70124"}
+{"id": 458590, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70124"}
+{"id": 458590, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70124"}
+{"id": 458684, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70124"}
+{"id": 458808, "field": "name", "en": "[DNT] Stratholme Clue Active", "hash": "fdef838009646576", "src": "db2@1.60.1.70124"}
+{"id": 458809, "field": "name", "en": "[DNT] Stratholme Clue Failed", "hash": "c2f0fbbcdbaee9c3", "src": "db2@1.60.1.70124"}
+{"id": 458819, "field": "name", "en": "Tim's Test Fireball", "hash": "da8401935cc543d1", "src": "db2@1.60.1.70124"}
+{"id": 458819, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70124"}
+{"id": 458820, "field": "name", "en": "Occult Poison I", "hash": "acdf0860690afab2", "src": "db2@1.60.1.70124"}
+{"id": 458820, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds and $s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.", "hash": "4290b92c25899841", "src": "db2@1.60.1.70124"}
+{"id": 458821, "field": "name", "en": "Occult Poison I", "hash": "acdf0860690afab2", "src": "db2@1.60.1.70124"}
+{"id": 458821, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $458820o1 Nature damage over $458820d and causing the enemy to take $458820s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $458820u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "ac6b5ded306f2c8f", "src": "db2@1.60.1.70124"}
+{"id": 458822, "field": "name", "en": "Occult Poison I", "hash": "acdf0860690afab2", "src": "db2@1.60.1.70124"}
+{"id": 458822, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a 30% chance of poisoning the enemy for $458820o1 Nature damage over $458820d and causing the enemy to take $458820s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $458820u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.", "hash": "dba5bb614a352fd5", "src": "db2@1.60.1.70124"}
+{"id": 458833, "field": "name", "en": "[DNT] Update Bonus Difficulty", "hash": "ee6bbc55f4c96be2", "src": "db2@1.60.1.70124"}
+{"id": 458841, "field": "name", "en": "Sweltering Heat", "hash": "20ef0b134079a8df", "src": "db2@1.60.1.70124"}
+{"id": 458841, "field": "aura", "en": "The Hydraxians are providing maximum relief, reducing the heat within the Molten Core to a minimum.", "hash": "19674aede1dad5e2", "src": "db2@1.60.1.70124"}
+{"id": 458842, "field": "name", "en": "Blistering Heat", "hash": "b43ab7a518140d94", "src": "db2@1.60.1.70124"}
+{"id": 458842, "field": "aura", "en": "The Hydraxians are providing limited relief. The Molten Core is almost too hot to bear.", "hash": "9a755df54b8c32bd", "src": "db2@1.60.1.70124"}
+{"id": 458843, "field": "name", "en": "Molten Heat", "hash": "346d98740a178218", "src": "db2@1.60.1.70124"}
+{"id": 458843, "field": "aura", "en": "The Hydraxians are providing no relief. The Molten Core is at its most intense.", "hash": "17d3b2a6b37377a9", "src": "db2@1.60.1.70124"}
+{"id": 458856, "field": "name", "en": "Divine Light", "hash": "982b0fd7ccf22ea5", "src": "db2@1.60.1.70124"}
+{"id": 458856, "field": "description", "en": "Heals a friendly target for ${$<healpower>*$m1/100} to ${$<healpower>*$M1/100}. $s2% of any excess healing on the target is converted into an absorption shield that lasts $458857d. Multiple casts of Divine Light do not accumulate this shield.\r\n\r\nDivine Light benefits from all talents and effects that trigger from or modify Holy Light.", "hash": "5eb11dfbb1127690", "src": "db2@1.60.1.70124"}
+{"id": 458857, "field": "name", "en": "Divine Light", "hash": "982b0fd7ccf22ea5", "src": "db2@1.60.1.70124"}
+{"id": 458857, "field": "aura", "en": "Absorbs $w damage.", "hash": "bd35a1c181db6254", "src": "db2@1.60.1.70124"}
+{"id": 458860, "field": "name", "en": "Divine Light", "hash": "982b0fd7ccf22ea5", "src": "db2@1.60.1.70124"}
+{"id": 458872, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70124"}
+{"id": 458872, "field": "description", "en": "The end of an epoch is nigh!\r\nLimited health\r\nCannot exceed 100% movement speed.", "hash": "1d3f1f64d15d0b70", "src": "db2@1.60.1.70124"}
+{"id": 458872, "field": "aura", "en": "The end of an epoch is nigh!\r\nLimited health\r\nCannot exceed 100% movement speed.", "hash": "1d3f1f64d15d0b70", "src": "db2@1.60.1.70124"}
+{"id": 458877, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70124"}
+{"id": 458877, "field": "description", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70124"}
+{"id": 458877, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70124"}
+{"id": 458878, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70124"}
+{"id": 458878, "field": "description", "en": "The end of an epoch is nigh!\r\nMovement speed increased by $s3%.\r\nDamage taken reduced by $s4%.\r\nHealth increased by $s5%.\r\n", "hash": "da91c66601131cb7", "src": "db2@1.60.1.70124"}
+{"id": 458878, "field": "aura", "en": "The end of an epoch is nigh!\r\nMovement speed increased by $s3%.\r\nDamage taken reduced by $s4%.\r\nHealth increased by $s5%.", "hash": "da91c66601131cb7", "src": "db2@1.60.1.70124"}
+{"id": 458880, "field": "name", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70124"}
+{"id": 458880, "field": "description", "en": "Disarm target's weapon for $d.", "hash": "fbbf66ad70cd6ab3", "src": "db2@1.60.1.70124"}
+{"id": 458880, "field": "aura", "en": "De-clawed.", "hash": "a4a80e525c487718", "src": "db2@1.60.1.70124"}
+{"id": 458881, "field": "name", "en": "Disarmed", "hash": "89f5701a0b668df5", "src": "db2@1.60.1.70124"}
+{"id": 458882, "field": "name", "en": "Recycle", "hash": "f68d7202296d2aa1", "src": "db2@1.60.1.70124"}
+{"id": 458882, "field": "description", "en": "Prime recycling shears to recycle the target, repurposing it for something cool.", "hash": "8c36ef8bc1ff0c38", "src": "db2@1.60.1.70124"}
+{"id": 458882, "field": "aura", "en": "Health reduced by $s2%.\r\nArmor reduced by $s3%", "hash": "adb582d75f3e6e8b", "src": "db2@1.60.1.70124"}
+{"id": 458884, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70124"}
+{"id": 458884, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70124"}
+{"id": 458884, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70124"}
+{"id": 458885, "field": "name", "en": "Righteous Vengeance", "hash": "874f777c707e4c51", "src": "db2@1.60.1.70124"}
+{"id": 458886, "field": "name", "en": "Escort Complete", "hash": "73e79de2cc18fc34", "src": "db2@1.60.1.70124"}
+{"id": 458888, "field": "name", "en": "Josh's General Phase and Zone Aura Update", "hash": "9d57f735eda14577", "src": "db2@1.60.1.70124"}
+{"id": 458902, "field": "name", "en": "Bulky Protective Ironweave", "hash": "079028c5ba10df79", "src": "db2@1.60.1.70124"}
+{"id": 458902, "field": "aura", "en": "\"Armor\" attached to the golem\r\nArmor increased by $s2.\r\nAll resistances increased by $s3.\r\nDamage taken reduced by $s4%.", "hash": "6be0f6fdb7b40311", "src": "db2@1.60.1.70124"}
+{"id": 458965, "field": "name", "en": "Interrupt", "hash": "2cb115a1e6cc874d", "src": "db2@1.60.1.70124"}
+{"id": 458976, "field": "name", "en": "Sand Bomb", "hash": "753f8796b53bcf6a", "src": "db2@1.60.1.70124"}
+{"id": 458979, "field": "name", "en": "Sand Bomb", "hash": "753f8796b53bcf6a", "src": "db2@1.60.1.70124"}
+{"id": 458979, "field": "description", "en": "Inflicts Nature damage to enemies in an area, and reduces their movement speed for $d.", "hash": "3f083c0f6e8bf2ca", "src": "db2@1.60.1.70124"}
+{"id": 458979, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70124"}
+{"id": 458984, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70124"}
+{"id": 458985, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70124"}
+{"id": 458987, "field": "name", "en": "Summon Zotl", "hash": "887b06566be7373e", "src": "db2@1.60.1.70124"}
+{"id": 458987, "field": "description", "en": "Entices Zotl the shrike bat to accompany you for a challenge.", "hash": "57f28cc1e8768104", "src": "db2@1.60.1.70124"}
+{"id": 458987, "field": "aura", "en": "Accompanied by Zotl the shrike bat.", "hash": "f8f20aba7f465425", "src": "db2@1.60.1.70124"}
+{"id": 458988, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70124"}
+{"id": 458990, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70124"}
+{"id": 458991, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70124"}
+{"id": 458992, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70124"}
+{"id": 458993, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70124"}
+{"id": 458994, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70124"}
+{"id": 458996, "field": "name", "en": "Sand Bomb", "hash": "753f8796b53bcf6a", "src": "db2@1.60.1.70124"}
+{"id": 458996, "field": "description", "en": "Inflicts Nature damage to enemies in an area, and reduces their movement speed for $d.", "hash": "3f083c0f6e8bf2ca", "src": "db2@1.60.1.70124"}
+{"id": 458996, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70124"}

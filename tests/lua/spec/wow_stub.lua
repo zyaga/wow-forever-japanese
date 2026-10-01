@@ -65,7 +65,10 @@ function Stub.fontString(text, path, size, flags)
     return true
   end
   -- font objects (the Menu compositor sets its FontStrings with SetFontObject)
+  -- re-applying the object a FontString already has does not undo a SetFont made since (in game: chat lines kept the
+  -- bundled face through RefreshDisplay's InitializeFontString, scrollingmessageframe.lua:642, 716)
   function fs:SetFontObject(obj)
+    if obj ~= nil and obj == self.fontObject then return end
     self.fontObject = obj
     if type(obj) == "table" and obj.font then
       self.font = { path = obj.font.path, size = obj.font.size, flags = obj.font.flags }
@@ -86,6 +89,13 @@ function Stub.fontString(text, path, size, flags)
   function fs:IsVisible() return self.shown end
   if Stub.fontStrings then Stub.fontStrings[#Stub.fontStrings + 1] = fs end
   return fs
+end
+
+-- A Font object (a frame's GetFontObject): its font as a table, and GetFont like the client's.
+function Stub.fontObject(path, size, flags)
+  local obj = { font = { path = path, size = size, flags = flags or "" } }
+  function obj:GetFont() return self.font.path, self.font.size, self.font.flags end
+  return obj
 end
 
 -- A FontString registered as a global, the way Blizzard's XML-named widgets are.

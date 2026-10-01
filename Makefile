@@ -76,7 +76,9 @@ toc-check: ## TOC ## Interface matches pipeline/clients.toml
 
 # Inputs for the import (see docs/operations/local-setup.md). Override on the command line.
 # Inputs live under <repo>/predecessors/ (gitignored); paths are absolute so the `cd pipeline` in the recipes is harmless.
-INPUTS       ?= $(CURDIR)/predecessors
+# A worktree has no predecessors/ of its own: it reads the main checkout's (the folder beside the shared .git).
+MAIN_CHECKOUT := $(abspath $(dir $(shell git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)))
+INPUTS       ?= $(or $(wildcard $(CURDIR)/predecessors),$(MAIN_CHECKOUT)/predecessors)
 # Absolute even when given relative, so a recipe's `cd pipeline` reads the same files the checks did
 override INPUTS := $(abspath $(INPUTS))
 PRED_QUEST   ?= $(INPUTS)/classic-wow-quest-japanese-translator
@@ -92,7 +94,7 @@ CLIENTS := classic-era forever
 classic-era_BUILD   := 1.15.9.69722
 classic-era_SRC     := wago
 classic-era_PRODUCT := wow_classic_era
-forever_BUILD       := 1.60.1.70009
+forever_BUILD       := 1.60.1.70124
 forever_SRC         := db2
 forever_PRODUCT     := wow_classic_beta
 client_dir = $(INPUTS)/clients/$(1)-$($(1)_BUILD)

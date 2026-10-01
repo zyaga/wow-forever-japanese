@@ -27,7 +27,7 @@ WFJ.Data.add("spell", {
   [1309380] = { "騎乗できるヘラジカを召喚、または解放します。", "地上での移動速度が$N1%上昇します。", 0x15f349b8, 0x2195529a, "uu" },
   [1309381] = { "騎乗できるヘラジカを召喚、または解放します。", "地上での移動速度が$N1%上昇します。", 0x15f349b8, 0x2195529a, "uu" },
   [1309405] = { "騎乗できるクマを召喚、または解放します。", "地上での移動速度が$N1%上昇します。", 0xc29c0c4c, 0x2195529a, "uu" },
-  [1309410] = { "Night Watchman's Torchに火を灯します。", "Night Watchman's Torchに照らされています。\r\n\n戦闘に入るとこの効果は終了します。", 0x49e8f9fa, 0x21cf2df8, "uu" },
+  [1309410] = { "Night Watchman's Torchに火を灯します。", "Night Watchman's Torchに照らされています。\r\n\n戦闘に入るとこの効果は終了します。", 0x49e8f9fa, 0x21cf2df8, "us" },
   [1309420] = { "Right Clickで[PH] Pachimaraを召喚、または解放します。", nil, 0x6a40f6ff, nil, "um" },
   [1309422] = { "Stormstrikeアビリティのダメージを$N1%増加させます。", nil, 0x631b983b, nil, "um" },
   [1309423] = { "Right ClickでGalestrider Chickを召喚、または解放します。", nil, 0xd89d46d1, nil, "um" },

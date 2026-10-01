@@ -1,352 +1,352 @@
-{"id": 251270, "field": "name", "en": "Blood-Stained Parchment", "hash": "dad0d93a2b5d79c2", "src": "db2@1.60.1.70009"}
-{"id": 251270, "field": "description", "en": "A piece of torn parchment, stained with blood.", "hash": "a37200413005c7a1", "src": "db2@1.60.1.70009"}
-{"id": 251279, "field": "name", "en": "[DNT] Fragment of Air Essence REUSE", "hash": "02937292d2fddcfc", "src": "db2@1.60.1.70009"}
-{"id": 251280, "field": "name", "en": "[DNT] Fragment of Fire Essence REUSE", "hash": "1e4bc13a8493530e", "src": "db2@1.60.1.70009"}
-{"id": 251281, "field": "name", "en": "[DNT] Fragment of Earth Essence REUSE", "hash": "26be2a0075c8ee2e", "src": "db2@1.60.1.70009"}
-{"id": 251282, "field": "name", "en": "[DNT] Fragment of Water Essence REUSE", "hash": "81a8ab2569f79691", "src": "db2@1.60.1.70009"}
-{"id": 251290, "field": "name", "en": "Legionite Bar", "hash": "521a7a4d19b24cf4", "src": "db2@1.60.1.70009"}
-{"id": 251290, "field": "description", "en": "Transmuted by alchemists.", "hash": "07fbd78454d3ed93", "src": "db2@1.60.1.70009"}
-{"id": 251291, "field": "name", "en": "Heavy Thorium Bar", "hash": "91241f83ce0c0252", "src": "db2@1.60.1.70009"}
-{"id": 251320, "field": "name", "en": "Satchet of Spirit Powder", "hash": "b8d4dbe6e2a0f4c7", "src": "db2@1.60.1.70009"}
-{"id": 251320, "field": "description", "en": "The exact composition of the powder is unknown, but it sure smells like feet.", "hash": "9cdb8b020689e67e", "src": "db2@1.60.1.70009"}
-{"id": 251332, "field": "name", "en": "Plans: Gemmed Copper Boots", "hash": "1e04103f7af0ce76", "src": "db2@1.60.1.70009"}
-{"id": 251332, "field": "description", "en": "Teaches you how to craft Gemmed Copper Boots.", "hash": "7fa114376ff68423", "src": "db2@1.60.1.70009"}
-{"id": 251333, "field": "name", "en": "Plans: Strange Copper Boots", "hash": "a4e5920cc65b47be", "src": "db2@1.60.1.70009"}
-{"id": 251333, "field": "description", "en": "Teaches you how to craft Strange Copper Boots.", "hash": "9281c9536b43ed62", "src": "db2@1.60.1.70009"}
-{"id": 251334, "field": "name", "en": "Plans: Glowing Copper Boots", "hash": "619ae90c5692d5ac", "src": "db2@1.60.1.70009"}
-{"id": 251334, "field": "description", "en": "Teaches you how to craft Glowing Copper Boots.", "hash": "234d4da9e64690e4", "src": "db2@1.60.1.70009"}
-{"id": 251335, "field": "name", "en": "Plans: Sterling Silver Boots", "hash": "b975747eecff1c05", "src": "db2@1.60.1.70009"}
-{"id": 251335, "field": "description", "en": "Teaches you how to craft Sterling Silver Boots.", "hash": "fe386f925419afc3", "src": "db2@1.60.1.70009"}
-{"id": 251336, "field": "name", "en": "Plans: Sterling Silver Leggings", "hash": "f1452a7780da5db8", "src": "db2@1.60.1.70009"}
-{"id": 251336, "field": "description", "en": "Teaches you how to craft Sterling Silver Leggings.", "hash": "320cd56e4cd59d32", "src": "db2@1.60.1.70009"}
-{"id": 251337, "field": "name", "en": "Plans: Sterling Silver Gauntlet", "hash": "06d7beed78ea69b2", "src": "db2@1.60.1.70009"}
-{"id": 251337, "field": "description", "en": "Teaches you how to craft Sterling Silver Gauntlet.", "hash": "3c0ecb784463591f", "src": "db2@1.60.1.70009"}
-{"id": 251338, "field": "name", "en": "Plans: Sterling Silver Shoulders", "hash": "5075f23ea1ab7657", "src": "db2@1.60.1.70009"}
-{"id": 251338, "field": "description", "en": "Teaches you how to craft Sterling Silver Shoulders.", "hash": "335f37e2e16c60a5", "src": "db2@1.60.1.70009"}
-{"id": 251339, "field": "name", "en": "Plans: Sterling Silver Breastplate", "hash": "92e71ebddf0269ea", "src": "db2@1.60.1.70009"}
-{"id": 251339, "field": "description", "en": "Teaches you how to craft Sterling Silver Breastplate.", "hash": "8879d71f6e5e318c", "src": "db2@1.60.1.70009"}
-{"id": 251341, "field": "name", "en": "Plans: Guard's Chain Shirt", "hash": "acec13d662c18223", "src": "db2@1.60.1.70009"}
-{"id": 251341, "field": "description", "en": "Teaches you how to craft Guard's Chain Shirt.", "hash": "a05aebe974262efd", "src": "db2@1.60.1.70009"}
-{"id": 251355, "field": "name", "en": "Plans: Veteran's Boots", "hash": "f0da28aeb5a3f9e6", "src": "db2@1.60.1.70009"}
-{"id": 251355, "field": "description", "en": "Teaches you how to craft Veteran's Boots.", "hash": "dcc4b5b748732004", "src": "db2@1.60.1.70009"}
-{"id": 251356, "field": "name", "en": "Plans: Guard's Boots", "hash": "887dfb2974853d09", "src": "db2@1.60.1.70009"}
-{"id": 251356, "field": "description", "en": "Teaches you how to craft Guard's Boots.", "hash": "3293faa71f837818", "src": "db2@1.60.1.70009"}
-{"id": 251357, "field": "name", "en": "Plans: Protector's Boots", "hash": "2e8854f07a4a8432", "src": "db2@1.60.1.70009"}
-{"id": 251357, "field": "description", "en": "Teaches you how to craft Protector's Boots.", "hash": "34218007364f2386", "src": "db2@1.60.1.70009"}
-{"id": 251358, "field": "name", "en": "Plans: Acolyte's Boots", "hash": "bd4996079f4269d4", "src": "db2@1.60.1.70009"}
-{"id": 251358, "field": "description", "en": "Teaches you how to craft Acolyte's Boots.", "hash": "79c9a9c0cc4122c8", "src": "db2@1.60.1.70009"}
-{"id": 251359, "field": "name", "en": "Plans: Crusader's Boots", "hash": "e832f04d8f7d1b51", "src": "db2@1.60.1.70009"}
-{"id": 251359, "field": "description", "en": "Teaches you how to craft Crusader's Boots.", "hash": "3a67adc00d96a6a8", "src": "db2@1.60.1.70009"}
-{"id": 251360, "field": "name", "en": "Plans: Veteran's Gloves", "hash": "f48fa9f483429b38", "src": "db2@1.60.1.70009"}
-{"id": 251360, "field": "description", "en": "Teaches you how to craft Veteran's Gloves.", "hash": "8ddaae5338a8efc9", "src": "db2@1.60.1.70009"}
-{"id": 251361, "field": "name", "en": "Plans: Guard's Gloves", "hash": "8d645ddc8e5f501f", "src": "db2@1.60.1.70009"}
-{"id": 251361, "field": "description", "en": "Teaches you how to craft Guard's Gloves.", "hash": "76eaf37038b06eb4", "src": "db2@1.60.1.70009"}
-{"id": 251362, "field": "name", "en": "Plans: Protector's Gloves", "hash": "84b04dcb8460de60", "src": "db2@1.60.1.70009"}
-{"id": 251362, "field": "description", "en": "Teaches you how to craft Protector's Gloves.", "hash": "42563395eb749c98", "src": "db2@1.60.1.70009"}
-{"id": 251363, "field": "name", "en": "Plans: Acolyte's Gloves", "hash": "91949dfd07109e0d", "src": "db2@1.60.1.70009"}
-{"id": 251363, "field": "description", "en": "Teaches you how to craft Acolyte's Gloves.", "hash": "e7638def03103117", "src": "db2@1.60.1.70009"}
-{"id": 251364, "field": "name", "en": "Plans: Crusader's Gloves", "hash": "86fdd03d46249e83", "src": "db2@1.60.1.70009"}
-{"id": 251364, "field": "description", "en": "Teaches you how to craft Crusader's Gloves.", "hash": "783f994fca2fa548", "src": "db2@1.60.1.70009"}
-{"id": 251365, "field": "name", "en": "Plans: Veteran's Chain Belt", "hash": "04b3691d30991930", "src": "db2@1.60.1.70009"}
-{"id": 251365, "field": "description", "en": "Teaches you how to craft Veteran's Chain Belt.", "hash": "98d6d56c47f4938e", "src": "db2@1.60.1.70009"}
-{"id": 251366, "field": "name", "en": "Plans: Guard's Chain Belt", "hash": "f35057a059ded6dc", "src": "db2@1.60.1.70009"}
-{"id": 251366, "field": "description", "en": "Teaches you how to craft Guard's Chain Belt.", "hash": "de3b3cacd042ab99", "src": "db2@1.60.1.70009"}
-{"id": 251367, "field": "name", "en": "Plans: Protector's Chain Belt", "hash": "31924c0fcd8f4b74", "src": "db2@1.60.1.70009"}
-{"id": 251367, "field": "description", "en": "Teaches you how to craft Protector's Chain Belt.", "hash": "321ee9d028f1aa43", "src": "db2@1.60.1.70009"}
-{"id": 251368, "field": "name", "en": "Plans: Acolyte's Chain Belt", "hash": "18c8b52b1589020e", "src": "db2@1.60.1.70009"}
-{"id": 251368, "field": "description", "en": "Teaches you how to craft Acolyte's Chain Belt.", "hash": "dfbcc0c88c02e75d", "src": "db2@1.60.1.70009"}
-{"id": 251369, "field": "name", "en": "Plans: Crusader's Chain Belt", "hash": "7269ba1785a6de71", "src": "db2@1.60.1.70009"}
-{"id": 251369, "field": "description", "en": "Teaches you how to craft Crusader's Chain Belt.", "hash": "a3380c29d015c9e0", "src": "db2@1.60.1.70009"}
-{"id": 251370, "field": "name", "en": "Plans: Veteran's Silvered Chain Shirt", "hash": "1ef3c97aa5114fbd", "src": "db2@1.60.1.70009"}
-{"id": 251370, "field": "description", "en": "Teaches you how to craft Veteran's Silvered Chain Shirt.", "hash": "3217bc020a1e51da", "src": "db2@1.60.1.70009"}
-{"id": 251371, "field": "name", "en": "Plans: Guard's Silvered Chain Shirt", "hash": "363d812f7d398270", "src": "db2@1.60.1.70009"}
-{"id": 251371, "field": "description", "en": "Teaches you how to craft Guard's Silvered Chain Shirt.", "hash": "f0a5ce761918bf4e", "src": "db2@1.60.1.70009"}
-{"id": 251372, "field": "name", "en": "Plans: Protector's Silvered Chain Shirt", "hash": "471a5ffe0117cf73", "src": "db2@1.60.1.70009"}
-{"id": 251372, "field": "description", "en": "Teaches you how to craft Protector's Silvered Chain Shirt.", "hash": "88000c3976924d12", "src": "db2@1.60.1.70009"}
-{"id": 251373, "field": "name", "en": "Plans: Acolyte's Silvered Chain Shirt", "hash": "1ebcee5d3a011d6f", "src": "db2@1.60.1.70009"}
-{"id": 251373, "field": "description", "en": "Teaches you how to craft Acolyte's Silvered Chain Shirt.", "hash": "16059c2bfac9c696", "src": "db2@1.60.1.70009"}
-{"id": 251374, "field": "name", "en": "Plans: Crusader's Silvered Chain Shirt", "hash": "c1177e2d51efef1d", "src": "db2@1.60.1.70009"}
-{"id": 251374, "field": "description", "en": "Teaches you how to craft Crusader's Silvered Chain Shirt.", "hash": "8cdd854c06d8a78c", "src": "db2@1.60.1.70009"}
-{"id": 251375, "field": "name", "en": "Plans: Veteran's Silvered Chain Leggings", "hash": "b7cf00804a792573", "src": "db2@1.60.1.70009"}
-{"id": 251375, "field": "description", "en": "Teaches you how to craft Veteran's Silvered Chain Leggings.", "hash": "3fe6377aaef95e32", "src": "db2@1.60.1.70009"}
-{"id": 251376, "field": "name", "en": "Plans: Guard's Silvered Chain Leggings", "hash": "63cc46594985e6be", "src": "db2@1.60.1.70009"}
-{"id": 251376, "field": "description", "en": "Teaches you how to craft Guard's Silvered Chain Leggings.", "hash": "cf5ff2e0caa3b930", "src": "db2@1.60.1.70009"}
-{"id": 251377, "field": "name", "en": "Plans: Protector's Silvered Chain Leggings", "hash": "a014bce8bca306b2", "src": "db2@1.60.1.70009"}
-{"id": 251377, "field": "description", "en": "Teaches you how to craft Protector's Silvered Chain Leggings.", "hash": "cb36e240b3e56504", "src": "db2@1.60.1.70009"}
-{"id": 251378, "field": "name", "en": "Plans: Acolyte's Silvered Chain Leggings", "hash": "fcd6782f24db45f9", "src": "db2@1.60.1.70009"}
-{"id": 251378, "field": "description", "en": "Teaches you how to craft Acolyte's Silvered Chain Leggings.", "hash": "92b876b68127de59", "src": "db2@1.60.1.70009"}
-{"id": 251379, "field": "name", "en": "Plans: Crusader's Silvered Chain Leggings", "hash": "a0f9e15ac084a3de", "src": "db2@1.60.1.70009"}
-{"id": 251379, "field": "description", "en": "Teaches you how to craft Crusader's Silvered Chain Leggings.", "hash": "6f432a35b1d0ce5d", "src": "db2@1.60.1.70009"}
-{"id": 251380, "field": "name", "en": "Plans: Veteran's Silvered Chain Helm", "hash": "878d9bf844d6550f", "src": "db2@1.60.1.70009"}
-{"id": 251380, "field": "description", "en": "Teaches you how to craft Veteran's Silvered Chain Helm.", "hash": "815644033f919b5d", "src": "db2@1.60.1.70009"}
-{"id": 251381, "field": "name", "en": "Plans: Guard's Silvered Chain Helm", "hash": "02d86e7b66255adc", "src": "db2@1.60.1.70009"}
-{"id": 251381, "field": "description", "en": "Teaches you how to craft Guard's Silvered Chain Helm.", "hash": "d0f5a3e76f404461", "src": "db2@1.60.1.70009"}
-{"id": 251382, "field": "name", "en": "Plans: Protector's Silvered Chain Helm", "hash": "b8b6f125f3e2c948", "src": "db2@1.60.1.70009"}
-{"id": 251382, "field": "description", "en": "Teaches you how to craft Protector's Silvered Chain Helm.", "hash": "43755a20c5b6f321", "src": "db2@1.60.1.70009"}
-{"id": 251383, "field": "name", "en": "Plans: Acolyte's Silvered Chain Helm", "hash": "6c3157db27061ad7", "src": "db2@1.60.1.70009"}
-{"id": 251383, "field": "description", "en": "Teaches you how to craft Acolyte's Silvered Chain Helm.", "hash": "811f68e6d48168fe", "src": "db2@1.60.1.70009"}
-{"id": 251384, "field": "name", "en": "Plans: Crusader's Silvered Chain Helm", "hash": "b9a5550a5b79aa3d", "src": "db2@1.60.1.70009"}
-{"id": 251384, "field": "description", "en": "Teaches you how to craft Crusader's Silvered Chain Helm.", "hash": "5af2283dfecac07f", "src": "db2@1.60.1.70009"}
-{"id": 251385, "field": "name", "en": "Plans: Hard Gold Cuirass", "hash": "43c6544810302710", "src": "db2@1.60.1.70009"}
-{"id": 251385, "field": "description", "en": "Teaches you how to craft Hard Gold Cuirass.", "hash": "12db2a46c3db49fd", "src": "db2@1.60.1.70009"}
-{"id": 251386, "field": "name", "en": "Plans: Hard Gold Boots", "hash": "d39b453c30ab4582", "src": "db2@1.60.1.70009"}
-{"id": 251386, "field": "description", "en": "Teaches you how to craft Hard Gold Boots.", "hash": "e59652164c035ea1", "src": "db2@1.60.1.70009"}
-{"id": 251387, "field": "name", "en": "Plans: Hard Gold Bracers", "hash": "0e178b9695723a8a", "src": "db2@1.60.1.70009"}
-{"id": 251387, "field": "description", "en": "Teaches you how to craft Hard Gold Bracers.", "hash": "9a6a76a4e34b484f", "src": "db2@1.60.1.70009"}
-{"id": 251388, "field": "name", "en": "Plans: Hard Gold Leggings", "hash": "df413840f6934b53", "src": "db2@1.60.1.70009"}
-{"id": 251388, "field": "description", "en": "Teaches you how to craft Hard Gold Leggings.", "hash": "9a7e2e5a64f8bcf4", "src": "db2@1.60.1.70009"}
-{"id": 251389, "field": "name", "en": "Plans: Hard Gold Coif", "hash": "61814717ebf452b4", "src": "db2@1.60.1.70009"}
-{"id": 251389, "field": "description", "en": "Teaches you how to craft Hard Gold Coif.", "hash": "01b64c3383f884c0", "src": "db2@1.60.1.70009"}
-{"id": 251390, "field": "name", "en": "Plans: Hard Gold Gauntlet", "hash": "f4d3ccb1eea3574d", "src": "db2@1.60.1.70009"}
-{"id": 251390, "field": "description", "en": "Teaches you how to craft Hard Gold Gauntlet.", "hash": "a48024645c8678e1", "src": "db2@1.60.1.70009"}
-{"id": 251391, "field": "name", "en": "Plans: Hard Gold Pauldrons", "hash": "5113626f9cc603eb", "src": "db2@1.60.1.70009"}
-{"id": 251391, "field": "description", "en": "Teaches you how to craft Hard Gold Pauldrons.", "hash": "a0782349fdd3f28e", "src": "db2@1.60.1.70009"}
-{"id": 251392, "field": "name", "en": "Plans: Shining Mithril Breastplate", "hash": "cb6e76f02fa245d1", "src": "db2@1.60.1.70009"}
-{"id": 251392, "field": "description", "en": "Teaches you how to craft Shining Mithril Breastplate.", "hash": "75bbf9c9a67dfd4c", "src": "db2@1.60.1.70009"}
-{"id": 251393, "field": "name", "en": "Plans: Shining Mithril Pauldrons", "hash": "1e73eaf57d6517e5", "src": "db2@1.60.1.70009"}
-{"id": 251393, "field": "description", "en": "Teaches you how to craft Shining Mithril Pauldrons.", "hash": "9c557d057a2343af", "src": "db2@1.60.1.70009"}
-{"id": 251394, "field": "name", "en": "Plans: Shining Mithril Boots", "hash": "e0cf86e629a30e95", "src": "db2@1.60.1.70009"}
-{"id": 251394, "field": "description", "en": "Teaches you how to craft Shining Mithril Boots.", "hash": "214fdb337a8fb2bf", "src": "db2@1.60.1.70009"}
-{"id": 251396, "field": "name", "en": "Plans: Shining Mithril Pants", "hash": "d4aefdd69ace6af2", "src": "db2@1.60.1.70009"}
-{"id": 251396, "field": "description", "en": "Teaches you how to craft Shining Mithril Pants.", "hash": "eca9b7e031dc1314", "src": "db2@1.60.1.70009"}
-{"id": 251397, "field": "name", "en": "Plans: Shining Mithril Gauntlet", "hash": "63d489593cee34d8", "src": "db2@1.60.1.70009"}
-{"id": 251397, "field": "description", "en": "Teaches you how to craft Shining Mithril Gauntlet.", "hash": "d16a61a70152008d", "src": "db2@1.60.1.70009"}
-{"id": 251398, "field": "name", "en": "Plans: Officer's Boots", "hash": "32ee0c3d475a500a", "src": "db2@1.60.1.70009"}
-{"id": 251398, "field": "description", "en": "Teaches you how to craft Officer's Boots.", "hash": "acf225ff6e22482c", "src": "db2@1.60.1.70009"}
-{"id": 251399, "field": "name", "en": "Plans: Sentinel's Boots", "hash": "16abc13161fed225", "src": "db2@1.60.1.70009"}
-{"id": 251399, "field": "description", "en": "Teaches you how to craft Sentinel's Boots.", "hash": "023a9055c6bba2a1", "src": "db2@1.60.1.70009"}
-{"id": 251400, "field": "name", "en": "Plans: Warder's Boots", "hash": "794ddb32fa4fb172", "src": "db2@1.60.1.70009"}
-{"id": 251400, "field": "description", "en": "Teaches you how to craft Warder's Boots.", "hash": "2f66164032bfea28", "src": "db2@1.60.1.70009"}
-{"id": 251401, "field": "name", "en": "Plans: Prefect's Boots", "hash": "8b093fd8a445e82a", "src": "db2@1.60.1.70009"}
-{"id": 251401, "field": "description", "en": "Teaches you how to craft Prefect's Boots.", "hash": "c2dd8f31a09fa0fe", "src": "db2@1.60.1.70009"}
-{"id": 251402, "field": "name", "en": "Plans: Justicar's Boots", "hash": "97b93c897c010e0c", "src": "db2@1.60.1.70009"}
-{"id": 251402, "field": "description", "en": "Teaches you how to craft Justicar's Boots.", "hash": "0c20afa7e7f378b5", "src": "db2@1.60.1.70009"}
-{"id": 251403, "field": "name", "en": "Plans: Officer's Gloves", "hash": "c4bd1a3ca8f1c360", "src": "db2@1.60.1.70009"}
-{"id": 251403, "field": "description", "en": "Teaches you how to craft Officer's Gloves.", "hash": "151b22b38d7862b2", "src": "db2@1.60.1.70009"}
-{"id": 251404, "field": "name", "en": "Plans: Sentinel's Gloves", "hash": "4ed0b2d2ff499a7c", "src": "db2@1.60.1.70009"}
-{"id": 251404, "field": "description", "en": "Teaches you how to craft Sentinel's Gloves.", "hash": "b9298afdfe35ca0f", "src": "db2@1.60.1.70009"}
-{"id": 251405, "field": "name", "en": "Plans: Warder's Gloves", "hash": "c7c4024fa96972a1", "src": "db2@1.60.1.70009"}
-{"id": 251405, "field": "description", "en": "Teaches you how to craft Warder's Gloves.", "hash": "d66f12b172a0c779", "src": "db2@1.60.1.70009"}
-{"id": 251406, "field": "name", "en": "Plans: Prefect's Gloves", "hash": "daa8836edb6f1c32", "src": "db2@1.60.1.70009"}
-{"id": 251406, "field": "description", "en": "Teaches you how to craft Prefect's Gloves.", "hash": "4c91f7801b654c2e", "src": "db2@1.60.1.70009"}
-{"id": 251407, "field": "name", "en": "Plans: Justicar's Gloves", "hash": "58b6d224208170a1", "src": "db2@1.60.1.70009"}
-{"id": 251407, "field": "description", "en": "Teaches you how to craft Justicar's Gloves.", "hash": "c9eb920cf335a3f6", "src": "db2@1.60.1.70009"}
-{"id": 251408, "field": "name", "en": "Plans: Officer's Belt", "hash": "0060e70b1b905eea", "src": "db2@1.60.1.70009"}
-{"id": 251408, "field": "description", "en": "Teaches you how to craft Officer's Belt.", "hash": "4e25251541981113", "src": "db2@1.60.1.70009"}
-{"id": 251409, "field": "name", "en": "Plans: Sentinel's Belt", "hash": "cf4ecf01fdf48504", "src": "db2@1.60.1.70009"}
-{"id": 251409, "field": "description", "en": "Teaches you how to craft Sentinel's Belt.", "hash": "b275d1db9816a073", "src": "db2@1.60.1.70009"}
-{"id": 251410, "field": "name", "en": "Plans: Warder's Belt", "hash": "6e59d12a87e6ea65", "src": "db2@1.60.1.70009"}
-{"id": 251410, "field": "description", "en": "Teaches you how to craft Warder's Belt.", "hash": "d2127ce4fc5b22ed", "src": "db2@1.60.1.70009"}
-{"id": 251411, "field": "name", "en": "Plans: Prefect's Belt", "hash": "97863d69bad59145", "src": "db2@1.60.1.70009"}
-{"id": 251411, "field": "description", "en": "Teaches you how to craft Prefect's Belt.", "hash": "a64058b09e83a933", "src": "db2@1.60.1.70009"}
-{"id": 251412, "field": "name", "en": "Plans: Justicar's Belt", "hash": "7e37760f02599710", "src": "db2@1.60.1.70009"}
-{"id": 251412, "field": "description", "en": "Teaches you how to craft Justicar's Belt.", "hash": "33834d38b218dc5a", "src": "db2@1.60.1.70009"}
-{"id": 251413, "field": "name", "en": "Plans: Officer's Sabatons", "hash": "09d30083d56d925c", "src": "db2@1.60.1.70009"}
-{"id": 251413, "field": "description", "en": "Teaches you how to craft Officer's Sabatons.", "hash": "6317a682b16afcac", "src": "db2@1.60.1.70009"}
-{"id": 251414, "field": "name", "en": "Plans: Sentinel's Sabatons", "hash": "05720564b8d60d70", "src": "db2@1.60.1.70009"}
-{"id": 251414, "field": "description", "en": "Teaches you how to craft Sentinel's Sabatons.", "hash": "ece585e59913a6e2", "src": "db2@1.60.1.70009"}
-{"id": 251415, "field": "name", "en": "Plans: Warder's Sabatons", "hash": "f3ce26200c9e427d", "src": "db2@1.60.1.70009"}
-{"id": 251415, "field": "description", "en": "Teaches you how to craft Warder's Sabatons.", "hash": "26db8d90f5f39038", "src": "db2@1.60.1.70009"}
-{"id": 251416, "field": "name", "en": "Plans: Prefect's Sabatons", "hash": "6ba1e5f642ebdae4", "src": "db2@1.60.1.70009"}
-{"id": 251416, "field": "description", "en": "Teaches you how to craft Prefect's Sabatons.", "hash": "6ff71155382ffe16", "src": "db2@1.60.1.70009"}
-{"id": 251417, "field": "name", "en": "Plans: Justicar's Sabatons", "hash": "98bba23909177339", "src": "db2@1.60.1.70009"}
-{"id": 251417, "field": "description", "en": "Teaches you how to craft Justicar's Sabatons.", "hash": "4b90c8600ddfff89", "src": "db2@1.60.1.70009"}
-{"id": 251418, "field": "name", "en": "Plans: Officer's Gauntlet", "hash": "ff83f0b9a7b7793f", "src": "db2@1.60.1.70009"}
-{"id": 251418, "field": "description", "en": "Teaches you how to craft Officer's Gauntlet.", "hash": "1ca2949a7754066e", "src": "db2@1.60.1.70009"}
-{"id": 251419, "field": "name", "en": "Plans: Sentinel's Gauntlet", "hash": "fb22f59a8b1ff453", "src": "db2@1.60.1.70009"}
-{"id": 251419, "field": "description", "en": "Teaches you how to craft Sentinel's Gauntlet.", "hash": "a67073fd5efcb0a4", "src": "db2@1.60.1.70009"}
-{"id": 251420, "field": "name", "en": "Plans: Warder's Gauntlet", "hash": "e97f165bdee8294f", "src": "db2@1.60.1.70009"}
-{"id": 251420, "field": "description", "en": "Teaches you how to craft Warder's Gauntlet.", "hash": "e0667ba3bbdc99fa", "src": "db2@1.60.1.70009"}
-{"id": 251421, "field": "name", "en": "Plans: Prefect's Gauntlet", "hash": "6152d6311535c1c7", "src": "db2@1.60.1.70009"}
-{"id": 251421, "field": "description", "en": "Teaches you how to craft Prefect's Gauntlet.", "hash": "2981ff6dfe1907c7", "src": "db2@1.60.1.70009"}
-{"id": 251422, "field": "name", "en": "Plans: Justicar's Gauntlet", "hash": "8e6c9274db615a0b", "src": "db2@1.60.1.70009"}
-{"id": 251422, "field": "description", "en": "Teaches you how to craft Justicar's Gauntlet.", "hash": "051bb678d3c9093a", "src": "db2@1.60.1.70009"}
-{"id": 251423, "field": "name", "en": "Plans: Officer's Waistguard", "hash": "9f8f39e0f535df11", "src": "db2@1.60.1.70009"}
-{"id": 251423, "field": "description", "en": "Teaches you how to craft Officer's Waistguard.", "hash": "d752aac011b65d8b", "src": "db2@1.60.1.70009"}
-{"id": 251424, "field": "name", "en": "Plans: Sentinel's Waistguard", "hash": "166d43102f0755bd", "src": "db2@1.60.1.70009"}
-{"id": 251424, "field": "description", "en": "Teaches you how to craft Sentinel's Waistguard.", "hash": "910722a95c502053", "src": "db2@1.60.1.70009"}
-{"id": 251425, "field": "name", "en": "Plans: Warder's Waistguard", "hash": "943cd5be1d0b6068", "src": "db2@1.60.1.70009"}
-{"id": 251425, "field": "description", "en": "Teaches you how to craft Warder's Waistguard.", "hash": "feae256020fc5114", "src": "db2@1.60.1.70009"}
-{"id": 251426, "field": "name", "en": "Plans: Prefect's Waistguard", "hash": "35e2e3fc4386f2a3", "src": "db2@1.60.1.70009"}
-{"id": 251426, "field": "description", "en": "Teaches you how to craft Prefect's Waistguard.", "hash": "c422b606b855c6ac", "src": "db2@1.60.1.70009"}
-{"id": 251427, "field": "name", "en": "Plans: Justicar's Waistguard", "hash": "88104662955c52ce", "src": "db2@1.60.1.70009"}
-{"id": 251427, "field": "description", "en": "Teaches you how to craft Justicar's Waistguard.", "hash": "b771d6c197a873e2", "src": "db2@1.60.1.70009"}
-{"id": 251428, "field": "name", "en": "Plans: Officer's Pauldrons", "hash": "c935d2a0b7939178", "src": "db2@1.60.1.70009"}
-{"id": 251428, "field": "description", "en": "Teaches you how to craft Officer's Pauldrons.", "hash": "1a178d9270a1a742", "src": "db2@1.60.1.70009"}
-{"id": 251429, "field": "name", "en": "Plans: Sentinel's Pauldrons", "hash": "8b9551b93d4eed8d", "src": "db2@1.60.1.70009"}
-{"id": 251429, "field": "description", "en": "Teaches you how to craft Sentinel's Pauldrons.", "hash": "9e70de99787b9730", "src": "db2@1.60.1.70009"}
-{"id": 251430, "field": "name", "en": "Plans: Warder's Pauldrons", "hash": "84ba144f1eb0b468", "src": "db2@1.60.1.70009"}
-{"id": 251430, "field": "description", "en": "Teaches you how to craft Warder's Pauldrons.", "hash": "4756c9213689da67", "src": "db2@1.60.1.70009"}
-{"id": 251431, "field": "name", "en": "Plans: Prefect's Pauldrons", "hash": "d6153d733e5892e2", "src": "db2@1.60.1.70009"}
-{"id": 251431, "field": "description", "en": "Teaches you how to craft Prefect's Pauldrons.", "hash": "b06b37a9bef2bac3", "src": "db2@1.60.1.70009"}
-{"id": 251432, "field": "name", "en": "Plans: Justicar's Pauldrons", "hash": "ea40942fb21b4623", "src": "db2@1.60.1.70009"}
-{"id": 251432, "field": "description", "en": "Teaches you how to craft Justicar's Pauldrons.", "hash": "1013e1f0ded09441", "src": "db2@1.60.1.70009"}
-{"id": 251433, "field": "name", "en": "Plans: Officer's Wristguard", "hash": "b003b1b86ea691ba", "src": "db2@1.60.1.70009"}
-{"id": 251433, "field": "description", "en": "Teaches you how to craft Officer's Wristguard.", "hash": "42ebfe757364be32", "src": "db2@1.60.1.70009"}
-{"id": 251434, "field": "name", "en": "Plans: Sentinel's Wristguard", "hash": "26e1bae8a8780855", "src": "db2@1.60.1.70009"}
-{"id": 251434, "field": "description", "en": "Teaches you how to craft Sentinel's Wristguard.", "hash": "fca07659bdfe80fa", "src": "db2@1.60.1.70009"}
-{"id": 251435, "field": "name", "en": "Plans: Warder's Wristguard", "hash": "a4b14d96967c1300", "src": "db2@1.60.1.70009"}
-{"id": 251435, "field": "description", "en": "Teaches you how to craft Warder's Wristguard.", "hash": "6a47791582aab1bb", "src": "db2@1.60.1.70009"}
-{"id": 251436, "field": "name", "en": "Plans: Prefect's Wristguard", "hash": "46575bd4bcf7a53b", "src": "db2@1.60.1.70009"}
-{"id": 251436, "field": "description", "en": "Teaches you how to craft Prefect's Wristguard.", "hash": "2fbc09bb1a042764", "src": "db2@1.60.1.70009"}
-{"id": 251437, "field": "name", "en": "Plans: Justicar's Wristguards", "hash": "0bed59a7d5db5651", "src": "db2@1.60.1.70009"}
-{"id": 251437, "field": "description", "en": "Teaches you how to craft Justicar's Wristguards.", "hash": "eeb6de34a9180b08", "src": "db2@1.60.1.70009"}
-{"id": 251438, "field": "name", "en": "Plans: Blessed Plate Pauldrons", "hash": "b0715e021bc8c1a1", "src": "db2@1.60.1.70009"}
-{"id": 251438, "field": "description", "en": "Teaches you how to craft Blessed Plate Pauldrons.", "hash": "e7c7d0ebd68c8f53", "src": "db2@1.60.1.70009"}
-{"id": 251439, "field": "name", "en": "Plans: Blessed Plate Boots", "hash": "41db92d6b7bdc448", "src": "db2@1.60.1.70009"}
-{"id": 251439, "field": "description", "en": "Teaches you how to craft Blessed Plate Boots.", "hash": "d6e8e7d6b1df8067", "src": "db2@1.60.1.70009"}
-{"id": 251440, "field": "name", "en": "Plans: Blessed Plate Gauntlet", "hash": "5b2c74bb0c6c29fe", "src": "db2@1.60.1.70009"}
-{"id": 251440, "field": "description", "en": "Teaches you how to craft Blessed Plate Gauntlet.", "hash": "7c01ba3d28025eb0", "src": "db2@1.60.1.70009"}
-{"id": 251441, "field": "name", "en": "Plans: Imperial Plate Gauntlets", "hash": "ccade5a0e48f4d95", "src": "db2@1.60.1.70009"}
-{"id": 251441, "field": "description", "en": "Teaches you how to craft Imperial Plate Gauntlets.", "hash": "78a49b0ad7e90479", "src": "db2@1.60.1.70009"}
-{"id": 251442, "field": "name", "en": "Plans: Blessed Plate Bracers", "hash": "c2a8d52986fd2767", "src": "db2@1.60.1.70009"}
-{"id": 251442, "field": "description", "en": "Teaches you how to craft Blessed Plate Bracers.", "hash": "b382e72c6fc1b6f1", "src": "db2@1.60.1.70009"}
-{"id": 251443, "field": "name", "en": "Plans: Blessed Plate Leggings", "hash": "4599e04a145c1e04", "src": "db2@1.60.1.70009"}
-{"id": 251443, "field": "description", "en": "Teaches you how to craft Blessed Plate Leggings.", "hash": "71ffc4333074a2c3", "src": "db2@1.60.1.70009"}
-{"id": 251444, "field": "name", "en": "Plans: Blessed Plate Belt", "hash": "44e3b1599d397dd3", "src": "db2@1.60.1.70009"}
-{"id": 251444, "field": "description", "en": "Teaches you how to craft Blessed Plate Belt.", "hash": "9ca2249afd27e243", "src": "db2@1.60.1.70009"}
-{"id": 251445, "field": "name", "en": "Plans: Blessed Plate Helm", "hash": "45b182f4eda935f9", "src": "db2@1.60.1.70009"}
-{"id": 251445, "field": "description", "en": "Teaches you how to craft Blessed Plate Helm.", "hash": "05f466f036a5fffe", "src": "db2@1.60.1.70009"}
-{"id": 251446, "field": "name", "en": "Plans: Blessed Plate Chest", "hash": "52768b0e911dd21c", "src": "db2@1.60.1.70009"}
-{"id": 251446, "field": "description", "en": "Teaches you how to craft Blessed Plate Chest.", "hash": "5635ecab60f801fc", "src": "db2@1.60.1.70009"}
-{"id": 251447, "field": "name", "en": "Plans: Enriched Thorium Breastplate", "hash": "cc637eabde62d642", "src": "db2@1.60.1.70009"}
-{"id": 251447, "field": "description", "en": "Teaches you how to craft Enriched Thorium Breastplate.", "hash": "c616866b7f92a689", "src": "db2@1.60.1.70009"}
-{"id": 251448, "field": "name", "en": "Plans: Enriched Thorium Leggings", "hash": "dfa124bf6d319e2f", "src": "db2@1.60.1.70009"}
-{"id": 251448, "field": "description", "en": "Teaches you how to craft Enriched Thorium Leggings.", "hash": "767a115201281e75", "src": "db2@1.60.1.70009"}
-{"id": 251449, "field": "name", "en": "Plans: Enriched Thorium Helm", "hash": "7122b3018eae2814", "src": "db2@1.60.1.70009"}
-{"id": 251449, "field": "description", "en": "Teaches you how to craft Enriched Thorium Helm.", "hash": "fbdf6be2a1685243", "src": "db2@1.60.1.70009"}
-{"id": 251450, "field": "name", "en": "Plans: Champion's Legplates", "hash": "38789c352693dc82", "src": "db2@1.60.1.70009"}
-{"id": 251450, "field": "description", "en": "Teaches you how to craft Champion's Legplates.", "hash": "16bffb3bd7011760", "src": "db2@1.60.1.70009"}
-{"id": 251451, "field": "name", "en": "Plans: Stalwart Helm", "hash": "347e542a1d9a065d", "src": "db2@1.60.1.70009"}
-{"id": 251451, "field": "description", "en": "Teaches you how to craft Stalwart Helm.", "hash": "36c185533f28dee9", "src": "db2@1.60.1.70009"}
-{"id": 251452, "field": "name", "en": "Plans: Martyr's Legplates", "hash": "d514825dc8b25eaa", "src": "db2@1.60.1.70009"}
-{"id": 251452, "field": "description", "en": "Teaches you how to craft Martyr's Legplates.", "hash": "659d1b18d59fe444", "src": "db2@1.60.1.70009"}
-{"id": 251453, "field": "name", "en": "Plans: Breastplate of Salvation", "hash": "7f34f6a4966556f5", "src": "db2@1.60.1.70009"}
-{"id": 251453, "field": "description", "en": "Teaches you how to craft Breastplate of Salvation.", "hash": "d3c24f4e10293c6e", "src": "db2@1.60.1.70009"}
-{"id": 251454, "field": "name", "en": "Plans: Brass Knuckles", "hash": "fc2cdf7e220c24e8", "src": "db2@1.60.1.70009"}
-{"id": 251454, "field": "description", "en": "Teaches you how to craft Brass Knuckles.", "hash": "27854a73f15ae4ff", "src": "db2@1.60.1.70009"}
-{"id": 251455, "field": "name", "en": "Plans: Bronze Dory", "hash": "df08d42dc4d402a0", "src": "db2@1.60.1.70009"}
-{"id": 251455, "field": "description", "en": "Teaches you how to craft Bronze Dory.", "hash": "d7306405faa29a43", "src": "db2@1.60.1.70009"}
-{"id": 251456, "field": "name", "en": "Plans: Iron Fists", "hash": "97daeffa3ca0bc3d", "src": "db2@1.60.1.70009"}
-{"id": 251456, "field": "description", "en": "Teaches you how to craft Iron Fists.", "hash": "9ef887e303dd82ba", "src": "db2@1.60.1.70009"}
-{"id": 251457, "field": "name", "en": "Plans: Steel Spear", "hash": "2dc23274a10d2b36", "src": "db2@1.60.1.70009"}
-{"id": 251457, "field": "description", "en": "Teaches you how to craft Steel Spear.", "hash": "200ba09874c92465", "src": "db2@1.60.1.70009"}
-{"id": 251458, "field": "name", "en": "Plans: Iron Morningstar", "hash": "636e68d7c84902fb", "src": "db2@1.60.1.70009"}
-{"id": 251458, "field": "description", "en": "Teaches you how to craft Iron Morningstar.", "hash": "49d65b0aa9db5144", "src": "db2@1.60.1.70009"}
-{"id": 251459, "field": "name", "en": "Plans: Mithril Shortsword", "hash": "b57217f83cd60c70", "src": "db2@1.60.1.70009"}
-{"id": 251459, "field": "description", "en": "Teaches you how to craft Mithril Shortsword.", "hash": "3580a9193b057140", "src": "db2@1.60.1.70009"}
-{"id": 251460, "field": "name", "en": "Plans: Mithril Warhammer", "hash": "9404fd17fa75b8ed", "src": "db2@1.60.1.70009"}
-{"id": 251460, "field": "description", "en": "Teaches you how to craft Mithril Warhammer.", "hash": "22eb8d0017ac3037", "src": "db2@1.60.1.70009"}
-{"id": 251461, "field": "name", "en": "Plans: Mithril Claws", "hash": "ef73cce19238d3eb", "src": "db2@1.60.1.70009"}
-{"id": 251461, "field": "description", "en": "Teaches you how to craft Mithril Claws.", "hash": "e25e4cd3f9a0b18c", "src": "db2@1.60.1.70009"}
-{"id": 251462, "field": "name", "en": "Plans: Mithril Claymore", "hash": "28aa0db5cd787ead", "src": "db2@1.60.1.70009"}
-{"id": 251462, "field": "description", "en": "Teaches you how to craft Mithril Claymore.", "hash": "375bb80ef891a1ab", "src": "db2@1.60.1.70009"}
-{"id": 251463, "field": "name", "en": "Plans: Mithril Stiletto", "hash": "3c36ceb1b3bc50d9", "src": "db2@1.60.1.70009"}
-{"id": 251463, "field": "description", "en": "Teaches you how to craft Mithril Stiletto.", "hash": "3862793490a077e3", "src": "db2@1.60.1.70009"}
-{"id": 251464, "field": "name", "en": "Plans: Charged Mithril Battleaxe", "hash": "24f9fe6fbc233248", "src": "db2@1.60.1.70009"}
-{"id": 251464, "field": "description", "en": "Teaches you how to craft Charged Mithril Battleaxe.", "hash": "f2f17482a46af682", "src": "db2@1.60.1.70009"}
-{"id": 251465, "field": "name", "en": "Plans: Thorium Greatmace", "hash": "4e65912f28cef85a", "src": "db2@1.60.1.70009"}
-{"id": 251465, "field": "description", "en": "Teaches you how to craft Thorium Greatmace.", "hash": "82575494a2c96628", "src": "db2@1.60.1.70009"}
-{"id": 251466, "field": "name", "en": "Plans: Thorium Cestus", "hash": "d9d89194e74d5099", "src": "db2@1.60.1.70009"}
-{"id": 251466, "field": "description", "en": "Teaches you how to craft Thorium Cestus.", "hash": "96616b5b33ee5c31", "src": "db2@1.60.1.70009"}
-{"id": 251467, "field": "name", "en": "Plans: Thorium Poleaxe", "hash": "fd28c7e07ed90abd", "src": "db2@1.60.1.70009"}
-{"id": 251467, "field": "description", "en": "Teaches you how to craft Thorium Poleaxe.", "hash": "29002c708d2081f8", "src": "db2@1.60.1.70009"}
-{"id": 251468, "field": "name", "en": "Plans: Bold Dirk", "hash": "dd611e7f0f44d503", "src": "db2@1.60.1.70009"}
-{"id": 251468, "field": "description", "en": "Teaches you how to craft Bold Dirk.", "hash": "1b952d739f8c22dd", "src": "db2@1.60.1.70009"}
-{"id": 251469, "field": "name", "en": "Plans: Stormcarver", "hash": "f3bc7690ed62bb37", "src": "db2@1.60.1.70009"}
-{"id": 251469, "field": "description", "en": "Teaches you how to craft Stormcarver.", "hash": "6f1c7ce5e86d75d7", "src": "db2@1.60.1.70009"}
-{"id": 251470, "field": "name", "en": "Plans: Bagh Nakh", "hash": "bd149474a408cb4c", "src": "db2@1.60.1.70009"}
-{"id": 251470, "field": "description", "en": "Teaches you how to craft Bagh Nakh.", "hash": "946a897d1a9baafd", "src": "db2@1.60.1.70009"}
-{"id": 251471, "field": "name", "en": "Plans: Legionite Glaive", "hash": "d3688f735bb9ce60", "src": "db2@1.60.1.70009"}
-{"id": 251471, "field": "description", "en": "Teaches you how to craft Legionite Glaive.", "hash": "96d81dfbe89e6a34", "src": "db2@1.60.1.70009"}
-{"id": 251485, "field": "name", "en": "Edward's Knife", "hash": "8c08af8324b18c1a", "src": "db2@1.60.1.70009"}
-{"id": 251486, "field": "name", "en": "Tabitha's Cuffs", "hash": "64b93829f1bc5210", "src": "db2@1.60.1.70009"}
-{"id": 251520, "field": "name", "en": "Last Scrawlings of Edward Heartweaver", "hash": "4bd2cd7d72165e82", "src": "db2@1.60.1.70009"}
-{"id": 251522, "field": "name", "en": "Blood-Stained Letter", "hash": "173163bfdbf86c3b", "src": "db2@1.60.1.70009"}
-{"id": 251523, "field": "name", "en": "The Friends We Made Along the Way", "hash": "a3cd0ea01ab400c8", "src": "db2@1.60.1.70009"}
-{"id": 251523, "field": "description", "en": "Completely worthless.", "hash": "3f53c5391556a5df", "src": "db2@1.60.1.70009"}
-{"id": 251524, "field": "name", "en": "Whimsyfin", "hash": "3e29546f44bd6efd", "src": "db2@1.60.1.70009"}
-{"id": 251524, "field": "description", "en": "Eat me.", "hash": "f9e7e9c956c15591", "src": "db2@1.60.1.70009"}
-{"id": 251525, "field": "name", "en": "Savory Whimsyfin Delight", "hash": "22aa4d6461f905d6", "src": "db2@1.60.1.70009"}
-{"id": 251525, "field": "description", "en": "Eat me.", "hash": "f9e7e9c956c15591", "src": "db2@1.60.1.70009"}
-{"id": 251526, "field": "name", "en": "Recipe: Savory Whimsyfin Delight", "hash": "d52a0fa347965a22", "src": "db2@1.60.1.70009"}
-{"id": 251526, "field": "description", "en": "Teaches you how to craft Savory Whimsyfin Delight.", "hash": "3b8a13725e8b3b79", "src": "db2@1.60.1.70009"}
-{"id": 251533, "field": "name", "en": "Forsaken Greataxe", "hash": "12a2bd4743788dc6", "src": "db2@1.60.1.70009"}
-{"id": 251533, "field": "description", "en": "Movement speed increased by $s1% in Silverpine Forest and Hillsbrad Foothills.", "hash": "1bce2f3452d83f21", "src": "db2@1.60.1.70009"}
-{"id": 251534, "field": "name", "en": "Gnarled Necromancer's Staff", "hash": "7232a53bb17d6f02", "src": "db2@1.60.1.70009"}
-{"id": 251534, "field": "description", "en": "Movement speed increased by $s1% in Silverpine Forest and Hillsbrad Foothills.", "hash": "1bce2f3452d83f21", "src": "db2@1.60.1.70009"}
-{"id": 251641, "field": "name", "en": "Hyjal Venison Cut", "hash": "37a8b3dcbd5f5688", "src": "db2@1.60.1.70009"}
-{"id": 251723, "field": "name", "en": "Charged Stone", "hash": "2df5107b74d9b024", "src": "db2@1.60.1.70009"}
-{"id": 251723, "field": "description", "en": "Boosts effect of $@spellname1269966 for $d.\nA deceptively heavy stone.", "hash": "73854693748b5278", "src": "db2@1.60.1.70009"}
-{"id": 251735, "field": "name", "en": "Pattern: Slimeslayer's Adaptive Robes", "hash": "0fb8dd10735f6c93", "src": "db2@1.60.1.70009"}
-{"id": 251735, "field": "description", "en": "Teaches you how to craft Slimeslayer's Adaptive Robes.", "hash": "54f2c20f5d05de0c", "src": "db2@1.60.1.70009"}
-{"id": 251736, "field": "name", "en": "Pattern: Slimeslayer's Adaptive Cuffs", "hash": "093a0c95c3f2db92", "src": "db2@1.60.1.70009"}
-{"id": 251736, "field": "description", "en": "Teaches you how to craft Slimeslayer's Adaptive Cuffs.", "hash": "020e130f090bf7c4", "src": "db2@1.60.1.70009"}
-{"id": 251737, "field": "name", "en": "Pattern: Slimeslayer's Adaptive Cord", "hash": "d5127017fc296136", "src": "db2@1.60.1.70009"}
-{"id": 251737, "field": "description", "en": "Teaches you how to craft Slimeslayer's Adaptive Cord.", "hash": "8bed1ed26d855cc5", "src": "db2@1.60.1.70009"}
-{"id": 251738, "field": "name", "en": "Pattern: Beastculler's Adaptive Vest", "hash": "ca07335f41e60ee9", "src": "db2@1.60.1.70009"}
-{"id": 251738, "field": "description", "en": "Teaches you how to craft Beastculler's Adaptive Vest.", "hash": "e52d0c8c916129c6", "src": "db2@1.60.1.70009"}
-{"id": 251739, "field": "name", "en": "Pattern: Beastculler's Adaptive Bracers", "hash": "b9939b59b8b3c5ab", "src": "db2@1.60.1.70009"}
-{"id": 251739, "field": "description", "en": "Teaches you how to craft Beastculler's Adaptive Bracers.", "hash": "0039726e056281d5", "src": "db2@1.60.1.70009"}
-{"id": 251740, "field": "name", "en": "Pattern: Beastculler's Adaptive Wrap", "hash": "ca2cdf3502e735f0", "src": "db2@1.60.1.70009"}
-{"id": 251740, "field": "description", "en": "Teaches you how to craft Beastculler's Adaptive Wrap.", "hash": "f873fb0e571dca95", "src": "db2@1.60.1.70009"}
-{"id": 251741, "field": "name", "en": "Pattern: Dinodestroyer's Adaptive Chestguard", "hash": "f6de3bd89e107613", "src": "db2@1.60.1.70009"}
-{"id": 251741, "field": "description", "en": "Teaches you how to craft Dinodestroyer's Adaptive Chestguard.", "hash": "aab96b4c566b355e", "src": "db2@1.60.1.70009"}
-{"id": 251742, "field": "name", "en": "Pattern: Dinodestroyer's Adaptive Wrists", "hash": "2dd2cd6fa142deca", "src": "db2@1.60.1.70009"}
-{"id": 251742, "field": "description", "en": "Teaches you how to craft Dinodestroyer's Adaptive Wrists.", "hash": "686ae315826c2c49", "src": "db2@1.60.1.70009"}
-{"id": 251743, "field": "name", "en": "Pattern: Dinodestroyer's Adaptive Belt", "hash": "3290bb8fe8232908", "src": "db2@1.60.1.70009"}
-{"id": 251743, "field": "description", "en": "Teaches you how to craft Dinodestroyer's Adaptive Belt.", "hash": "68ee27b1c6ba318e", "src": "db2@1.60.1.70009"}
-{"id": 251744, "field": "name", "en": "Plans: Earthcrusher's Adaptive Chestplate", "hash": "e73067fffa4d21f0", "src": "db2@1.60.1.70009"}
-{"id": 251744, "field": "description", "en": "Teaches you how to craft Earthcrusher's Adaptive Chestplate.", "hash": "5d2a1158c24c4481", "src": "db2@1.60.1.70009"}
-{"id": 251745, "field": "name", "en": "Plans: Earthcrusher's Adaptive Armguards", "hash": "04ee0bc9ea33f456", "src": "db2@1.60.1.70009"}
-{"id": 251745, "field": "description", "en": "Teaches you how to craft Earthcrusher's Adaptive Armguards.", "hash": "b6c8fc09b13802d9", "src": "db2@1.60.1.70009"}
-{"id": 251746, "field": "name", "en": "Plans: Earthcrusher's Adaptive Girdle", "hash": "77c0362cb205c17e", "src": "db2@1.60.1.70009"}
-{"id": 251746, "field": "description", "en": "Teaches you how to craft Earthcrusher's Adaptive Girdle.", "hash": "a2b35bf906bcc6e8", "src": "db2@1.60.1.70009"}
-{"id": 251747, "field": "name", "en": "Schematic: Sludge Suppressor", "hash": "b398f8ee6772afd9", "src": "db2@1.60.1.70009"}
-{"id": 251747, "field": "description", "en": "Teaches you how to craft Sludge Suppressor.", "hash": "1f11411f73e231e3", "src": "db2@1.60.1.70009"}
-{"id": 251748, "field": "name", "en": "Schematic: Enormous Tranquilizer Dart", "hash": "0dd5968d908beb89", "src": "db2@1.60.1.70009"}
-{"id": 251748, "field": "description", "en": "Teaches you how to craft Enormous Tranquilizer Dart.", "hash": "3b4eb9711f4504bc", "src": "db2@1.60.1.70009"}
-{"id": 251749, "field": "name", "en": "Schematic: G.R.R.-Nade", "hash": "c52117e52bb1789e", "src": "db2@1.60.1.70009"}
-{"id": 251749, "field": "description", "en": "Teaches you how to craft G.R.R.-Nade.", "hash": "3a0d8d01d2caaad6", "src": "db2@1.60.1.70009"}
-{"id": 251750, "field": "name", "en": "Pattern: Slimetender's Adaptive Tunic", "hash": "1895a80134831c0c", "src": "db2@1.60.1.70009"}
-{"id": 251750, "field": "description", "en": "Teaches you how to craft Slimetender's Adaptive Tunic.", "hash": "ddee9b766fa23951", "src": "db2@1.60.1.70009"}
-{"id": 251751, "field": "name", "en": "Pattern: Slimetender's Adaptive Bracers", "hash": "7c1e827db11a30d4", "src": "db2@1.60.1.70009"}
-{"id": 251751, "field": "description", "en": "Teaches you how to craft Slimetender's Adaptive Bracers.", "hash": "8d4db93abe6097bb", "src": "db2@1.60.1.70009"}
-{"id": 251752, "field": "name", "en": "Pattern: Slimetender's Adaptive Belt", "hash": "4033bc8b1d99f9e6", "src": "db2@1.60.1.70009"}
-{"id": 251752, "field": "description", "en": "Teaches you how to craft Slimetender's Adaptive Belt.", "hash": "5df73cb273f7084e", "src": "db2@1.60.1.70009"}
-{"id": 251753, "field": "name", "en": "Pattern: Beastmender's Adaptive Robe", "hash": "a090c08b1e7f2944", "src": "db2@1.60.1.70009"}
-{"id": 251753, "field": "description", "en": "Teaches you how to craft Beastmender's Adaptive Robe.", "hash": "ad9049a7fe220dc8", "src": "db2@1.60.1.70009"}
-{"id": 251754, "field": "name", "en": "Pattern: Beastmender's Adaptive Wristlinks", "hash": "097c3d13fc1b46f0", "src": "db2@1.60.1.70009"}
-{"id": 251754, "field": "description", "en": "Teaches you how to craft Beastmender's Adaptive Wristlinks.", "hash": "106ec02ec7908e45", "src": "db2@1.60.1.70009"}
-{"id": 251755, "field": "name", "en": "Pattern: Beastmender's Adaptive Girdle", "hash": "519f40a42bc02962", "src": "db2@1.60.1.70009"}
-{"id": 251755, "field": "description", "en": "Teaches you how to craft Beastmender's Adaptive Girdle.", "hash": "4d5c41c036c0d7e3", "src": "db2@1.60.1.70009"}
-{"id": 251756, "field": "name", "en": "Pattern: Dinomender's Adaptive Tunic", "hash": "0e823478d7e05a8e", "src": "db2@1.60.1.70009"}
-{"id": 251756, "field": "description", "en": "Teaches you how to craft Dinomender's Adaptive Tunic.", "hash": "f01e9a77b187de48", "src": "db2@1.60.1.70009"}
-{"id": 251757, "field": "name", "en": "Pattern: Dinomender's Adaptive Wrists", "hash": "29dbbcf1a3b31154", "src": "db2@1.60.1.70009"}
-{"id": 251757, "field": "description", "en": "Teaches you how to craft Dinomender's Adaptive Wrists.", "hash": "b4cb5273f77d70f1", "src": "db2@1.60.1.70009"}
-{"id": 251758, "field": "name", "en": "Pattern: Dinomender's Adaptive Chain", "hash": "e257c0c4a86b0e59", "src": "db2@1.60.1.70009"}
-{"id": 251758, "field": "description", "en": "Teaches you how to craft Dinomender's Adaptive Chain.", "hash": "5665677cc735143a", "src": "db2@1.60.1.70009"}
-{"id": 251759, "field": "name", "en": "Plans: Earthweaver's Adaptive Plate", "hash": "28ba66fffc92965e", "src": "db2@1.60.1.70009"}
-{"id": 251759, "field": "description", "en": "Teaches you how to craft Earthweaver's Adaptive Plate.", "hash": "068f67c8cfce2307", "src": "db2@1.60.1.70009"}
-{"id": 251760, "field": "name", "en": "Plans: Earthweaver's Adaptive Links", "hash": "e22007cd0c4b0e67", "src": "db2@1.60.1.70009"}
-{"id": 251760, "field": "description", "en": "Teaches you how to craft Earthweaver's Adaptive Links.", "hash": "e590b308f776bd44", "src": "db2@1.60.1.70009"}
-{"id": 251761, "field": "name", "en": "Plans: Earthweaver's Adaptive Waistguard", "hash": "1487bec6ee691b5f", "src": "db2@1.60.1.70009"}
-{"id": 251761, "field": "description", "en": "Teaches you how to craft Earthweaver's Adaptive Waistguard.", "hash": "b26f93a8d3a971a8", "src": "db2@1.60.1.70009"}
-{"id": 251780, "field": "name", "en": "Rabbit Carcass", "hash": "623df85048f0db0b", "src": "db2@1.60.1.70009"}
-{"id": 251781, "field": "name", "en": "Head Scratcher's Scratchers", "hash": "8f3a257908d1c141", "src": "db2@1.60.1.70009"}
-{"id": 251900, "field": "name", "en": "Thendal Grove Gift Voucher", "hash": "60127c64519d0a10", "src": "db2@1.60.1.70009"}
-{"id": 251917, "field": "name", "en": "Falorne's Homemade Tart", "hash": "13478dc2d893bfff", "src": "db2@1.60.1.70009"}
-{"id": 251917, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70009"}
-{"id": 251918, "field": "name", "en": "Scrawny Ursera Claw", "hash": "885dc6ee3f4f4857", "src": "db2@1.60.1.70009"}
-{"id": 251918, "field": "description", "en": "The claw seems weaker and more brittle than it should be.", "hash": "3fb3a1391b01be34", "src": "db2@1.60.1.70009"}
-{"id": 251924, "field": "name", "en": "Signet of Akir", "hash": "74c3639a154bdf62", "src": "db2@1.60.1.70009"}
-{"id": 251925, "field": "name", "en": "Tattered Ursera Feather", "hash": "68b7b94955dc735c", "src": "db2@1.60.1.70009"}
-{"id": 251927, "field": "name", "en": "Chipped Cirrusfly Stinger", "hash": "80d9b0601e2f6ee4", "src": "db2@1.60.1.70009"}
-{"id": 251928, "field": "name", "en": "Torn Insect Wing", "hash": "09838311f7d06259", "src": "db2@1.60.1.70009"}
-{"id": 251930, "field": "name", "en": "Minor Essence of the Four Winds", "hash": "3b29a600583e96d3", "src": "db2@1.60.1.70009"}
-{"id": 251931, "field": "name", "en": "Depleted Windstone", "hash": "e71a72c621d9c9c8", "src": "db2@1.60.1.70009"}
-{"id": 251932, "field": "name", "en": "Sharpened Cirrusfly Stinger", "hash": "f0e39e40cf433bd5", "src": "db2@1.60.1.70009"}
-{"id": 251941, "field": "name", "en": "Scribbled Letter", "hash": "e684aabed5961430", "src": "db2@1.60.1.70009"}
-{"id": 251960, "field": "name", "en": "Yngwe's Axe", "hash": "edc5a7ff6a121d45", "src": "db2@1.60.1.70009"}
-{"id": 251961, "field": "name", "en": "Arcane Mote", "hash": "8e627219dec03bef", "src": "db2@1.60.1.70009"}
-{"id": 251983, "field": "name", "en": "Fel Infused Blossom", "hash": "343f1178f97715fb", "src": "db2@1.60.1.70009"}
+{"id": 251270, "field": "name", "en": "Blood-Stained Parchment", "hash": "dad0d93a2b5d79c2", "src": "db2@1.60.1.70124"}
+{"id": 251270, "field": "description", "en": "A piece of torn parchment, stained with blood.", "hash": "a37200413005c7a1", "src": "db2@1.60.1.70124"}
+{"id": 251279, "field": "name", "en": "[DNT] Fragment of Air Essence REUSE", "hash": "02937292d2fddcfc", "src": "db2@1.60.1.70124"}
+{"id": 251280, "field": "name", "en": "[DNT] Fragment of Fire Essence REUSE", "hash": "1e4bc13a8493530e", "src": "db2@1.60.1.70124"}
+{"id": 251281, "field": "name", "en": "[DNT] Fragment of Earth Essence REUSE", "hash": "26be2a0075c8ee2e", "src": "db2@1.60.1.70124"}
+{"id": 251282, "field": "name", "en": "[DNT] Fragment of Water Essence REUSE", "hash": "81a8ab2569f79691", "src": "db2@1.60.1.70124"}
+{"id": 251290, "field": "name", "en": "Legionite Bar", "hash": "521a7a4d19b24cf4", "src": "db2@1.60.1.70124"}
+{"id": 251290, "field": "description", "en": "Transmuted by alchemists.", "hash": "07fbd78454d3ed93", "src": "db2@1.60.1.70124"}
+{"id": 251291, "field": "name", "en": "Heavy Thorium Bar", "hash": "91241f83ce0c0252", "src": "db2@1.60.1.70124"}
+{"id": 251320, "field": "name", "en": "Satchet of Spirit Powder", "hash": "b8d4dbe6e2a0f4c7", "src": "db2@1.60.1.70124"}
+{"id": 251320, "field": "description", "en": "The exact composition of the powder is unknown, but it sure smells like feet.", "hash": "9cdb8b020689e67e", "src": "db2@1.60.1.70124"}
+{"id": 251332, "field": "name", "en": "Plans: Gemmed Copper Boots", "hash": "1e04103f7af0ce76", "src": "db2@1.60.1.70124"}
+{"id": 251332, "field": "description", "en": "Teaches you how to craft Gemmed Copper Boots.", "hash": "7fa114376ff68423", "src": "db2@1.60.1.70124"}
+{"id": 251333, "field": "name", "en": "Plans: Strange Copper Boots", "hash": "a4e5920cc65b47be", "src": "db2@1.60.1.70124"}
+{"id": 251333, "field": "description", "en": "Teaches you how to craft Strange Copper Boots.", "hash": "9281c9536b43ed62", "src": "db2@1.60.1.70124"}
+{"id": 251334, "field": "name", "en": "Plans: Glowing Copper Boots", "hash": "619ae90c5692d5ac", "src": "db2@1.60.1.70124"}
+{"id": 251334, "field": "description", "en": "Teaches you how to craft Glowing Copper Boots.", "hash": "234d4da9e64690e4", "src": "db2@1.60.1.70124"}
+{"id": 251335, "field": "name", "en": "Plans: Sterling Silver Boots", "hash": "b975747eecff1c05", "src": "db2@1.60.1.70124"}
+{"id": 251335, "field": "description", "en": "Teaches you how to craft Sterling Silver Boots.", "hash": "fe386f925419afc3", "src": "db2@1.60.1.70124"}
+{"id": 251336, "field": "name", "en": "Plans: Sterling Silver Leggings", "hash": "f1452a7780da5db8", "src": "db2@1.60.1.70124"}
+{"id": 251336, "field": "description", "en": "Teaches you how to craft Sterling Silver Leggings.", "hash": "320cd56e4cd59d32", "src": "db2@1.60.1.70124"}
+{"id": 251337, "field": "name", "en": "Plans: Sterling Silver Gauntlet", "hash": "06d7beed78ea69b2", "src": "db2@1.60.1.70124"}
+{"id": 251337, "field": "description", "en": "Teaches you how to craft Sterling Silver Gauntlet.", "hash": "3c0ecb784463591f", "src": "db2@1.60.1.70124"}
+{"id": 251338, "field": "name", "en": "Plans: Sterling Silver Shoulders", "hash": "5075f23ea1ab7657", "src": "db2@1.60.1.70124"}
+{"id": 251338, "field": "description", "en": "Teaches you how to craft Sterling Silver Shoulders.", "hash": "335f37e2e16c60a5", "src": "db2@1.60.1.70124"}
+{"id": 251339, "field": "name", "en": "Plans: Sterling Silver Breastplate", "hash": "92e71ebddf0269ea", "src": "db2@1.60.1.70124"}
+{"id": 251339, "field": "description", "en": "Teaches you how to craft Sterling Silver Breastplate.", "hash": "8879d71f6e5e318c", "src": "db2@1.60.1.70124"}
+{"id": 251341, "field": "name", "en": "Plans: Guard's Chain Shirt", "hash": "acec13d662c18223", "src": "db2@1.60.1.70124"}
+{"id": 251341, "field": "description", "en": "Teaches you how to craft Guard's Chain Shirt.", "hash": "a05aebe974262efd", "src": "db2@1.60.1.70124"}
+{"id": 251355, "field": "name", "en": "Plans: Veteran's Boots", "hash": "f0da28aeb5a3f9e6", "src": "db2@1.60.1.70124"}
+{"id": 251355, "field": "description", "en": "Teaches you how to craft Veteran's Boots.", "hash": "dcc4b5b748732004", "src": "db2@1.60.1.70124"}
+{"id": 251356, "field": "name", "en": "Plans: Guard's Boots", "hash": "887dfb2974853d09", "src": "db2@1.60.1.70124"}
+{"id": 251356, "field": "description", "en": "Teaches you how to craft Guard's Boots.", "hash": "3293faa71f837818", "src": "db2@1.60.1.70124"}
+{"id": 251357, "field": "name", "en": "Plans: Protector's Boots", "hash": "2e8854f07a4a8432", "src": "db2@1.60.1.70124"}
+{"id": 251357, "field": "description", "en": "Teaches you how to craft Protector's Boots.", "hash": "34218007364f2386", "src": "db2@1.60.1.70124"}
+{"id": 251358, "field": "name", "en": "Plans: Acolyte's Boots", "hash": "bd4996079f4269d4", "src": "db2@1.60.1.70124"}
+{"id": 251358, "field": "description", "en": "Teaches you how to craft Acolyte's Boots.", "hash": "79c9a9c0cc4122c8", "src": "db2@1.60.1.70124"}
+{"id": 251359, "field": "name", "en": "Plans: Crusader's Boots", "hash": "e832f04d8f7d1b51", "src": "db2@1.60.1.70124"}
+{"id": 251359, "field": "description", "en": "Teaches you how to craft Crusader's Boots.", "hash": "3a67adc00d96a6a8", "src": "db2@1.60.1.70124"}
+{"id": 251360, "field": "name", "en": "Plans: Veteran's Gloves", "hash": "f48fa9f483429b38", "src": "db2@1.60.1.70124"}
+{"id": 251360, "field": "description", "en": "Teaches you how to craft Veteran's Gloves.", "hash": "8ddaae5338a8efc9", "src": "db2@1.60.1.70124"}
+{"id": 251361, "field": "name", "en": "Plans: Guard's Gloves", "hash": "8d645ddc8e5f501f", "src": "db2@1.60.1.70124"}
+{"id": 251361, "field": "description", "en": "Teaches you how to craft Guard's Gloves.", "hash": "76eaf37038b06eb4", "src": "db2@1.60.1.70124"}
+{"id": 251362, "field": "name", "en": "Plans: Protector's Gloves", "hash": "84b04dcb8460de60", "src": "db2@1.60.1.70124"}
+{"id": 251362, "field": "description", "en": "Teaches you how to craft Protector's Gloves.", "hash": "42563395eb749c98", "src": "db2@1.60.1.70124"}
+{"id": 251363, "field": "name", "en": "Plans: Acolyte's Gloves", "hash": "91949dfd07109e0d", "src": "db2@1.60.1.70124"}
+{"id": 251363, "field": "description", "en": "Teaches you how to craft Acolyte's Gloves.", "hash": "e7638def03103117", "src": "db2@1.60.1.70124"}
+{"id": 251364, "field": "name", "en": "Plans: Crusader's Gloves", "hash": "86fdd03d46249e83", "src": "db2@1.60.1.70124"}
+{"id": 251364, "field": "description", "en": "Teaches you how to craft Crusader's Gloves.", "hash": "783f994fca2fa548", "src": "db2@1.60.1.70124"}
+{"id": 251365, "field": "name", "en": "Plans: Veteran's Chain Belt", "hash": "04b3691d30991930", "src": "db2@1.60.1.70124"}
+{"id": 251365, "field": "description", "en": "Teaches you how to craft Veteran's Chain Belt.", "hash": "98d6d56c47f4938e", "src": "db2@1.60.1.70124"}
+{"id": 251366, "field": "name", "en": "Plans: Guard's Chain Belt", "hash": "f35057a059ded6dc", "src": "db2@1.60.1.70124"}
+{"id": 251366, "field": "description", "en": "Teaches you how to craft Guard's Chain Belt.", "hash": "de3b3cacd042ab99", "src": "db2@1.60.1.70124"}
+{"id": 251367, "field": "name", "en": "Plans: Protector's Chain Belt", "hash": "31924c0fcd8f4b74", "src": "db2@1.60.1.70124"}
+{"id": 251367, "field": "description", "en": "Teaches you how to craft Protector's Chain Belt.", "hash": "321ee9d028f1aa43", "src": "db2@1.60.1.70124"}
+{"id": 251368, "field": "name", "en": "Plans: Acolyte's Chain Belt", "hash": "18c8b52b1589020e", "src": "db2@1.60.1.70124"}
+{"id": 251368, "field": "description", "en": "Teaches you how to craft Acolyte's Chain Belt.", "hash": "dfbcc0c88c02e75d", "src": "db2@1.60.1.70124"}
+{"id": 251369, "field": "name", "en": "Plans: Crusader's Chain Belt", "hash": "7269ba1785a6de71", "src": "db2@1.60.1.70124"}
+{"id": 251369, "field": "description", "en": "Teaches you how to craft Crusader's Chain Belt.", "hash": "a3380c29d015c9e0", "src": "db2@1.60.1.70124"}
+{"id": 251370, "field": "name", "en": "Plans: Veteran's Silvered Chain Shirt", "hash": "1ef3c97aa5114fbd", "src": "db2@1.60.1.70124"}
+{"id": 251370, "field": "description", "en": "Teaches you how to craft Veteran's Silvered Chain Shirt.", "hash": "3217bc020a1e51da", "src": "db2@1.60.1.70124"}
+{"id": 251371, "field": "name", "en": "Plans: Guard's Silvered Chain Shirt", "hash": "363d812f7d398270", "src": "db2@1.60.1.70124"}
+{"id": 251371, "field": "description", "en": "Teaches you how to craft Guard's Silvered Chain Shirt.", "hash": "f0a5ce761918bf4e", "src": "db2@1.60.1.70124"}
+{"id": 251372, "field": "name", "en": "Plans: Protector's Silvered Chain Shirt", "hash": "471a5ffe0117cf73", "src": "db2@1.60.1.70124"}
+{"id": 251372, "field": "description", "en": "Teaches you how to craft Protector's Silvered Chain Shirt.", "hash": "88000c3976924d12", "src": "db2@1.60.1.70124"}
+{"id": 251373, "field": "name", "en": "Plans: Acolyte's Silvered Chain Shirt", "hash": "1ebcee5d3a011d6f", "src": "db2@1.60.1.70124"}
+{"id": 251373, "field": "description", "en": "Teaches you how to craft Acolyte's Silvered Chain Shirt.", "hash": "16059c2bfac9c696", "src": "db2@1.60.1.70124"}
+{"id": 251374, "field": "name", "en": "Plans: Crusader's Silvered Chain Shirt", "hash": "c1177e2d51efef1d", "src": "db2@1.60.1.70124"}
+{"id": 251374, "field": "description", "en": "Teaches you how to craft Crusader's Silvered Chain Shirt.", "hash": "8cdd854c06d8a78c", "src": "db2@1.60.1.70124"}
+{"id": 251375, "field": "name", "en": "Plans: Veteran's Silvered Chain Leggings", "hash": "b7cf00804a792573", "src": "db2@1.60.1.70124"}
+{"id": 251375, "field": "description", "en": "Teaches you how to craft Veteran's Silvered Chain Leggings.", "hash": "3fe6377aaef95e32", "src": "db2@1.60.1.70124"}
+{"id": 251376, "field": "name", "en": "Plans: Guard's Silvered Chain Leggings", "hash": "63cc46594985e6be", "src": "db2@1.60.1.70124"}
+{"id": 251376, "field": "description", "en": "Teaches you how to craft Guard's Silvered Chain Leggings.", "hash": "cf5ff2e0caa3b930", "src": "db2@1.60.1.70124"}
+{"id": 251377, "field": "name", "en": "Plans: Protector's Silvered Chain Leggings", "hash": "a014bce8bca306b2", "src": "db2@1.60.1.70124"}
+{"id": 251377, "field": "description", "en": "Teaches you how to craft Protector's Silvered Chain Leggings.", "hash": "cb36e240b3e56504", "src": "db2@1.60.1.70124"}
+{"id": 251378, "field": "name", "en": "Plans: Acolyte's Silvered Chain Leggings", "hash": "fcd6782f24db45f9", "src": "db2@1.60.1.70124"}
+{"id": 251378, "field": "description", "en": "Teaches you how to craft Acolyte's Silvered Chain Leggings.", "hash": "92b876b68127de59", "src": "db2@1.60.1.70124"}
+{"id": 251379, "field": "name", "en": "Plans: Crusader's Silvered Chain Leggings", "hash": "a0f9e15ac084a3de", "src": "db2@1.60.1.70124"}
+{"id": 251379, "field": "description", "en": "Teaches you how to craft Crusader's Silvered Chain Leggings.", "hash": "6f432a35b1d0ce5d", "src": "db2@1.60.1.70124"}
+{"id": 251380, "field": "name", "en": "Plans: Veteran's Silvered Chain Helm", "hash": "878d9bf844d6550f", "src": "db2@1.60.1.70124"}
+{"id": 251380, "field": "description", "en": "Teaches you how to craft Veteran's Silvered Chain Helm.", "hash": "815644033f919b5d", "src": "db2@1.60.1.70124"}
+{"id": 251381, "field": "name", "en": "Plans: Guard's Silvered Chain Helm", "hash": "02d86e7b66255adc", "src": "db2@1.60.1.70124"}
+{"id": 251381, "field": "description", "en": "Teaches you how to craft Guard's Silvered Chain Helm.", "hash": "d0f5a3e76f404461", "src": "db2@1.60.1.70124"}
+{"id": 251382, "field": "name", "en": "Plans: Protector's Silvered Chain Helm", "hash": "b8b6f125f3e2c948", "src": "db2@1.60.1.70124"}
+{"id": 251382, "field": "description", "en": "Teaches you how to craft Protector's Silvered Chain Helm.", "hash": "43755a20c5b6f321", "src": "db2@1.60.1.70124"}
+{"id": 251383, "field": "name", "en": "Plans: Acolyte's Silvered Chain Helm", "hash": "6c3157db27061ad7", "src": "db2@1.60.1.70124"}
+{"id": 251383, "field": "description", "en": "Teaches you how to craft Acolyte's Silvered Chain Helm.", "hash": "811f68e6d48168fe", "src": "db2@1.60.1.70124"}
+{"id": 251384, "field": "name", "en": "Plans: Crusader's Silvered Chain Helm", "hash": "b9a5550a5b79aa3d", "src": "db2@1.60.1.70124"}
+{"id": 251384, "field": "description", "en": "Teaches you how to craft Crusader's Silvered Chain Helm.", "hash": "5af2283dfecac07f", "src": "db2@1.60.1.70124"}
+{"id": 251385, "field": "name", "en": "Plans: Hard Gold Cuirass", "hash": "43c6544810302710", "src": "db2@1.60.1.70124"}
+{"id": 251385, "field": "description", "en": "Teaches you how to craft Hard Gold Cuirass.", "hash": "12db2a46c3db49fd", "src": "db2@1.60.1.70124"}
+{"id": 251386, "field": "name", "en": "Plans: Hard Gold Boots", "hash": "d39b453c30ab4582", "src": "db2@1.60.1.70124"}
+{"id": 251386, "field": "description", "en": "Teaches you how to craft Hard Gold Boots.", "hash": "e59652164c035ea1", "src": "db2@1.60.1.70124"}
+{"id": 251387, "field": "name", "en": "Plans: Hard Gold Bracers", "hash": "0e178b9695723a8a", "src": "db2@1.60.1.70124"}
+{"id": 251387, "field": "description", "en": "Teaches you how to craft Hard Gold Bracers.", "hash": "9a6a76a4e34b484f", "src": "db2@1.60.1.70124"}
+{"id": 251388, "field": "name", "en": "Plans: Hard Gold Leggings", "hash": "df413840f6934b53", "src": "db2@1.60.1.70124"}
+{"id": 251388, "field": "description", "en": "Teaches you how to craft Hard Gold Leggings.", "hash": "9a7e2e5a64f8bcf4", "src": "db2@1.60.1.70124"}
+{"id": 251389, "field": "name", "en": "Plans: Hard Gold Coif", "hash": "61814717ebf452b4", "src": "db2@1.60.1.70124"}
+{"id": 251389, "field": "description", "en": "Teaches you how to craft Hard Gold Coif.", "hash": "01b64c3383f884c0", "src": "db2@1.60.1.70124"}
+{"id": 251390, "field": "name", "en": "Plans: Hard Gold Gauntlet", "hash": "f4d3ccb1eea3574d", "src": "db2@1.60.1.70124"}
+{"id": 251390, "field": "description", "en": "Teaches you how to craft Hard Gold Gauntlet.", "hash": "a48024645c8678e1", "src": "db2@1.60.1.70124"}
+{"id": 251391, "field": "name", "en": "Plans: Hard Gold Pauldrons", "hash": "5113626f9cc603eb", "src": "db2@1.60.1.70124"}
+{"id": 251391, "field": "description", "en": "Teaches you how to craft Hard Gold Pauldrons.", "hash": "a0782349fdd3f28e", "src": "db2@1.60.1.70124"}
+{"id": 251392, "field": "name", "en": "Plans: Shining Mithril Breastplate", "hash": "cb6e76f02fa245d1", "src": "db2@1.60.1.70124"}
+{"id": 251392, "field": "description", "en": "Teaches you how to craft Shining Mithril Breastplate.", "hash": "75bbf9c9a67dfd4c", "src": "db2@1.60.1.70124"}
+{"id": 251393, "field": "name", "en": "Plans: Shining Mithril Pauldrons", "hash": "1e73eaf57d6517e5", "src": "db2@1.60.1.70124"}
+{"id": 251393, "field": "description", "en": "Teaches you how to craft Shining Mithril Pauldrons.", "hash": "9c557d057a2343af", "src": "db2@1.60.1.70124"}
+{"id": 251394, "field": "name", "en": "Plans: Shining Mithril Boots", "hash": "e0cf86e629a30e95", "src": "db2@1.60.1.70124"}
+{"id": 251394, "field": "description", "en": "Teaches you how to craft Shining Mithril Boots.", "hash": "214fdb337a8fb2bf", "src": "db2@1.60.1.70124"}
+{"id": 251396, "field": "name", "en": "Plans: Shining Mithril Pants", "hash": "d4aefdd69ace6af2", "src": "db2@1.60.1.70124"}
+{"id": 251396, "field": "description", "en": "Teaches you how to craft Shining Mithril Pants.", "hash": "eca9b7e031dc1314", "src": "db2@1.60.1.70124"}
+{"id": 251397, "field": "name", "en": "Plans: Shining Mithril Gauntlet", "hash": "63d489593cee34d8", "src": "db2@1.60.1.70124"}
+{"id": 251397, "field": "description", "en": "Teaches you how to craft Shining Mithril Gauntlet.", "hash": "d16a61a70152008d", "src": "db2@1.60.1.70124"}
+{"id": 251398, "field": "name", "en": "Plans: Officer's Boots", "hash": "32ee0c3d475a500a", "src": "db2@1.60.1.70124"}
+{"id": 251398, "field": "description", "en": "Teaches you how to craft Officer's Boots.", "hash": "acf225ff6e22482c", "src": "db2@1.60.1.70124"}
+{"id": 251399, "field": "name", "en": "Plans: Sentinel's Boots", "hash": "16abc13161fed225", "src": "db2@1.60.1.70124"}
+{"id": 251399, "field": "description", "en": "Teaches you how to craft Sentinel's Boots.", "hash": "023a9055c6bba2a1", "src": "db2@1.60.1.70124"}
+{"id": 251400, "field": "name", "en": "Plans: Warder's Boots", "hash": "794ddb32fa4fb172", "src": "db2@1.60.1.70124"}
+{"id": 251400, "field": "description", "en": "Teaches you how to craft Warder's Boots.", "hash": "2f66164032bfea28", "src": "db2@1.60.1.70124"}
+{"id": 251401, "field": "name", "en": "Plans: Prefect's Boots", "hash": "8b093fd8a445e82a", "src": "db2@1.60.1.70124"}
+{"id": 251401, "field": "description", "en": "Teaches you how to craft Prefect's Boots.", "hash": "c2dd8f31a09fa0fe", "src": "db2@1.60.1.70124"}
+{"id": 251402, "field": "name", "en": "Plans: Justicar's Boots", "hash": "97b93c897c010e0c", "src": "db2@1.60.1.70124"}
+{"id": 251402, "field": "description", "en": "Teaches you how to craft Justicar's Boots.", "hash": "0c20afa7e7f378b5", "src": "db2@1.60.1.70124"}
+{"id": 251403, "field": "name", "en": "Plans: Officer's Gloves", "hash": "c4bd1a3ca8f1c360", "src": "db2@1.60.1.70124"}
+{"id": 251403, "field": "description", "en": "Teaches you how to craft Officer's Gloves.", "hash": "151b22b38d7862b2", "src": "db2@1.60.1.70124"}
+{"id": 251404, "field": "name", "en": "Plans: Sentinel's Gloves", "hash": "4ed0b2d2ff499a7c", "src": "db2@1.60.1.70124"}
+{"id": 251404, "field": "description", "en": "Teaches you how to craft Sentinel's Gloves.", "hash": "b9298afdfe35ca0f", "src": "db2@1.60.1.70124"}
+{"id": 251405, "field": "name", "en": "Plans: Warder's Gloves", "hash": "c7c4024fa96972a1", "src": "db2@1.60.1.70124"}
+{"id": 251405, "field": "description", "en": "Teaches you how to craft Warder's Gloves.", "hash": "d66f12b172a0c779", "src": "db2@1.60.1.70124"}
+{"id": 251406, "field": "name", "en": "Plans: Prefect's Gloves", "hash": "daa8836edb6f1c32", "src": "db2@1.60.1.70124"}
+{"id": 251406, "field": "description", "en": "Teaches you how to craft Prefect's Gloves.", "hash": "4c91f7801b654c2e", "src": "db2@1.60.1.70124"}
+{"id": 251407, "field": "name", "en": "Plans: Justicar's Gloves", "hash": "58b6d224208170a1", "src": "db2@1.60.1.70124"}
+{"id": 251407, "field": "description", "en": "Teaches you how to craft Justicar's Gloves.", "hash": "c9eb920cf335a3f6", "src": "db2@1.60.1.70124"}
+{"id": 251408, "field": "name", "en": "Plans: Officer's Belt", "hash": "0060e70b1b905eea", "src": "db2@1.60.1.70124"}
+{"id": 251408, "field": "description", "en": "Teaches you how to craft Officer's Belt.", "hash": "4e25251541981113", "src": "db2@1.60.1.70124"}
+{"id": 251409, "field": "name", "en": "Plans: Sentinel's Belt", "hash": "cf4ecf01fdf48504", "src": "db2@1.60.1.70124"}
+{"id": 251409, "field": "description", "en": "Teaches you how to craft Sentinel's Belt.", "hash": "b275d1db9816a073", "src": "db2@1.60.1.70124"}
+{"id": 251410, "field": "name", "en": "Plans: Warder's Belt", "hash": "6e59d12a87e6ea65", "src": "db2@1.60.1.70124"}
+{"id": 251410, "field": "description", "en": "Teaches you how to craft Warder's Belt.", "hash": "d2127ce4fc5b22ed", "src": "db2@1.60.1.70124"}
+{"id": 251411, "field": "name", "en": "Plans: Prefect's Belt", "hash": "97863d69bad59145", "src": "db2@1.60.1.70124"}
+{"id": 251411, "field": "description", "en": "Teaches you how to craft Prefect's Belt.", "hash": "a64058b09e83a933", "src": "db2@1.60.1.70124"}
+{"id": 251412, "field": "name", "en": "Plans: Justicar's Belt", "hash": "7e37760f02599710", "src": "db2@1.60.1.70124"}
+{"id": 251412, "field": "description", "en": "Teaches you how to craft Justicar's Belt.", "hash": "33834d38b218dc5a", "src": "db2@1.60.1.70124"}
+{"id": 251413, "field": "name", "en": "Plans: Officer's Sabatons", "hash": "09d30083d56d925c", "src": "db2@1.60.1.70124"}
+{"id": 251413, "field": "description", "en": "Teaches you how to craft Officer's Sabatons.", "hash": "6317a682b16afcac", "src": "db2@1.60.1.70124"}
+{"id": 251414, "field": "name", "en": "Plans: Sentinel's Sabatons", "hash": "05720564b8d60d70", "src": "db2@1.60.1.70124"}
+{"id": 251414, "field": "description", "en": "Teaches you how to craft Sentinel's Sabatons.", "hash": "ece585e59913a6e2", "src": "db2@1.60.1.70124"}
+{"id": 251415, "field": "name", "en": "Plans: Warder's Sabatons", "hash": "f3ce26200c9e427d", "src": "db2@1.60.1.70124"}
+{"id": 251415, "field": "description", "en": "Teaches you how to craft Warder's Sabatons.", "hash": "26db8d90f5f39038", "src": "db2@1.60.1.70124"}
+{"id": 251416, "field": "name", "en": "Plans: Prefect's Sabatons", "hash": "6ba1e5f642ebdae4", "src": "db2@1.60.1.70124"}
+{"id": 251416, "field": "description", "en": "Teaches you how to craft Prefect's Sabatons.", "hash": "6ff71155382ffe16", "src": "db2@1.60.1.70124"}
+{"id": 251417, "field": "name", "en": "Plans: Justicar's Sabatons", "hash": "98bba23909177339", "src": "db2@1.60.1.70124"}
+{"id": 251417, "field": "description", "en": "Teaches you how to craft Justicar's Sabatons.", "hash": "4b90c8600ddfff89", "src": "db2@1.60.1.70124"}
+{"id": 251418, "field": "name", "en": "Plans: Officer's Gauntlet", "hash": "ff83f0b9a7b7793f", "src": "db2@1.60.1.70124"}
+{"id": 251418, "field": "description", "en": "Teaches you how to craft Officer's Gauntlet.", "hash": "1ca2949a7754066e", "src": "db2@1.60.1.70124"}
+{"id": 251419, "field": "name", "en": "Plans: Sentinel's Gauntlet", "hash": "fb22f59a8b1ff453", "src": "db2@1.60.1.70124"}
+{"id": 251419, "field": "description", "en": "Teaches you how to craft Sentinel's Gauntlet.", "hash": "a67073fd5efcb0a4", "src": "db2@1.60.1.70124"}
+{"id": 251420, "field": "name", "en": "Plans: Warder's Gauntlet", "hash": "e97f165bdee8294f", "src": "db2@1.60.1.70124"}
+{"id": 251420, "field": "description", "en": "Teaches you how to craft Warder's Gauntlet.", "hash": "e0667ba3bbdc99fa", "src": "db2@1.60.1.70124"}
+{"id": 251421, "field": "name", "en": "Plans: Prefect's Gauntlet", "hash": "6152d6311535c1c7", "src": "db2@1.60.1.70124"}
+{"id": 251421, "field": "description", "en": "Teaches you how to craft Prefect's Gauntlet.", "hash": "2981ff6dfe1907c7", "src": "db2@1.60.1.70124"}
+{"id": 251422, "field": "name", "en": "Plans: Justicar's Gauntlet", "hash": "8e6c9274db615a0b", "src": "db2@1.60.1.70124"}
+{"id": 251422, "field": "description", "en": "Teaches you how to craft Justicar's Gauntlet.", "hash": "051bb678d3c9093a", "src": "db2@1.60.1.70124"}
+{"id": 251423, "field": "name", "en": "Plans: Officer's Waistguard", "hash": "9f8f39e0f535df11", "src": "db2@1.60.1.70124"}
+{"id": 251423, "field": "description", "en": "Teaches you how to craft Officer's Waistguard.", "hash": "d752aac011b65d8b", "src": "db2@1.60.1.70124"}
+{"id": 251424, "field": "name", "en": "Plans: Sentinel's Waistguard", "hash": "166d43102f0755bd", "src": "db2@1.60.1.70124"}
+{"id": 251424, "field": "description", "en": "Teaches you how to craft Sentinel's Waistguard.", "hash": "910722a95c502053", "src": "db2@1.60.1.70124"}
+{"id": 251425, "field": "name", "en": "Plans: Warder's Waistguard", "hash": "943cd5be1d0b6068", "src": "db2@1.60.1.70124"}
+{"id": 251425, "field": "description", "en": "Teaches you how to craft Warder's Waistguard.", "hash": "feae256020fc5114", "src": "db2@1.60.1.70124"}
+{"id": 251426, "field": "name", "en": "Plans: Prefect's Waistguard", "hash": "35e2e3fc4386f2a3", "src": "db2@1.60.1.70124"}
+{"id": 251426, "field": "description", "en": "Teaches you how to craft Prefect's Waistguard.", "hash": "c422b606b855c6ac", "src": "db2@1.60.1.70124"}
+{"id": 251427, "field": "name", "en": "Plans: Justicar's Waistguard", "hash": "88104662955c52ce", "src": "db2@1.60.1.70124"}
+{"id": 251427, "field": "description", "en": "Teaches you how to craft Justicar's Waistguard.", "hash": "b771d6c197a873e2", "src": "db2@1.60.1.70124"}
+{"id": 251428, "field": "name", "en": "Plans: Officer's Pauldrons", "hash": "c935d2a0b7939178", "src": "db2@1.60.1.70124"}
+{"id": 251428, "field": "description", "en": "Teaches you how to craft Officer's Pauldrons.", "hash": "1a178d9270a1a742", "src": "db2@1.60.1.70124"}
+{"id": 251429, "field": "name", "en": "Plans: Sentinel's Pauldrons", "hash": "8b9551b93d4eed8d", "src": "db2@1.60.1.70124"}
+{"id": 251429, "field": "description", "en": "Teaches you how to craft Sentinel's Pauldrons.", "hash": "9e70de99787b9730", "src": "db2@1.60.1.70124"}
+{"id": 251430, "field": "name", "en": "Plans: Warder's Pauldrons", "hash": "84ba144f1eb0b468", "src": "db2@1.60.1.70124"}
+{"id": 251430, "field": "description", "en": "Teaches you how to craft Warder's Pauldrons.", "hash": "4756c9213689da67", "src": "db2@1.60.1.70124"}
+{"id": 251431, "field": "name", "en": "Plans: Prefect's Pauldrons", "hash": "d6153d733e5892e2", "src": "db2@1.60.1.70124"}
+{"id": 251431, "field": "description", "en": "Teaches you how to craft Prefect's Pauldrons.", "hash": "b06b37a9bef2bac3", "src": "db2@1.60.1.70124"}
+{"id": 251432, "field": "name", "en": "Plans: Justicar's Pauldrons", "hash": "ea40942fb21b4623", "src": "db2@1.60.1.70124"}
+{"id": 251432, "field": "description", "en": "Teaches you how to craft Justicar's Pauldrons.", "hash": "1013e1f0ded09441", "src": "db2@1.60.1.70124"}
+{"id": 251433, "field": "name", "en": "Plans: Officer's Wristguard", "hash": "b003b1b86ea691ba", "src": "db2@1.60.1.70124"}
+{"id": 251433, "field": "description", "en": "Teaches you how to craft Officer's Wristguard.", "hash": "42ebfe757364be32", "src": "db2@1.60.1.70124"}
+{"id": 251434, "field": "name", "en": "Plans: Sentinel's Wristguard", "hash": "26e1bae8a8780855", "src": "db2@1.60.1.70124"}
+{"id": 251434, "field": "description", "en": "Teaches you how to craft Sentinel's Wristguard.", "hash": "fca07659bdfe80fa", "src": "db2@1.60.1.70124"}
+{"id": 251435, "field": "name", "en": "Plans: Warder's Wristguard", "hash": "a4b14d96967c1300", "src": "db2@1.60.1.70124"}
+{"id": 251435, "field": "description", "en": "Teaches you how to craft Warder's Wristguard.", "hash": "6a47791582aab1bb", "src": "db2@1.60.1.70124"}
+{"id": 251436, "field": "name", "en": "Plans: Prefect's Wristguard", "hash": "46575bd4bcf7a53b", "src": "db2@1.60.1.70124"}
+{"id": 251436, "field": "description", "en": "Teaches you how to craft Prefect's Wristguard.", "hash": "2fbc09bb1a042764", "src": "db2@1.60.1.70124"}
+{"id": 251437, "field": "name", "en": "Plans: Justicar's Wristguards", "hash": "0bed59a7d5db5651", "src": "db2@1.60.1.70124"}
+{"id": 251437, "field": "description", "en": "Teaches you how to craft Justicar's Wristguards.", "hash": "eeb6de34a9180b08", "src": "db2@1.60.1.70124"}
+{"id": 251438, "field": "name", "en": "Plans: Blessed Plate Pauldrons", "hash": "b0715e021bc8c1a1", "src": "db2@1.60.1.70124"}
+{"id": 251438, "field": "description", "en": "Teaches you how to craft Blessed Plate Pauldrons.", "hash": "e7c7d0ebd68c8f53", "src": "db2@1.60.1.70124"}
+{"id": 251439, "field": "name", "en": "Plans: Blessed Plate Boots", "hash": "41db92d6b7bdc448", "src": "db2@1.60.1.70124"}
+{"id": 251439, "field": "description", "en": "Teaches you how to craft Blessed Plate Boots.", "hash": "d6e8e7d6b1df8067", "src": "db2@1.60.1.70124"}
+{"id": 251440, "field": "name", "en": "Plans: Blessed Plate Gauntlet", "hash": "5b2c74bb0c6c29fe", "src": "db2@1.60.1.70124"}
+{"id": 251440, "field": "description", "en": "Teaches you how to craft Blessed Plate Gauntlet.", "hash": "7c01ba3d28025eb0", "src": "db2@1.60.1.70124"}
+{"id": 251441, "field": "name", "en": "Plans: Imperial Plate Gauntlets", "hash": "ccade5a0e48f4d95", "src": "db2@1.60.1.70124"}
+{"id": 251441, "field": "description", "en": "Teaches you how to craft Imperial Plate Gauntlets.", "hash": "78a49b0ad7e90479", "src": "db2@1.60.1.70124"}
+{"id": 251442, "field": "name", "en": "Plans: Blessed Plate Bracers", "hash": "c2a8d52986fd2767", "src": "db2@1.60.1.70124"}
+{"id": 251442, "field": "description", "en": "Teaches you how to craft Blessed Plate Bracers.", "hash": "b382e72c6fc1b6f1", "src": "db2@1.60.1.70124"}
+{"id": 251443, "field": "name", "en": "Plans: Blessed Plate Leggings", "hash": "4599e04a145c1e04", "src": "db2@1.60.1.70124"}
+{"id": 251443, "field": "description", "en": "Teaches you how to craft Blessed Plate Leggings.", "hash": "71ffc4333074a2c3", "src": "db2@1.60.1.70124"}
+{"id": 251444, "field": "name", "en": "Plans: Blessed Plate Belt", "hash": "44e3b1599d397dd3", "src": "db2@1.60.1.70124"}
+{"id": 251444, "field": "description", "en": "Teaches you how to craft Blessed Plate Belt.", "hash": "9ca2249afd27e243", "src": "db2@1.60.1.70124"}
+{"id": 251445, "field": "name", "en": "Plans: Blessed Plate Helm", "hash": "45b182f4eda935f9", "src": "db2@1.60.1.70124"}
+{"id": 251445, "field": "description", "en": "Teaches you how to craft Blessed Plate Helm.", "hash": "05f466f036a5fffe", "src": "db2@1.60.1.70124"}
+{"id": 251446, "field": "name", "en": "Plans: Blessed Plate Chest", "hash": "52768b0e911dd21c", "src": "db2@1.60.1.70124"}
+{"id": 251446, "field": "description", "en": "Teaches you how to craft Blessed Plate Chest.", "hash": "5635ecab60f801fc", "src": "db2@1.60.1.70124"}
+{"id": 251447, "field": "name", "en": "Plans: Enriched Thorium Breastplate", "hash": "cc637eabde62d642", "src": "db2@1.60.1.70124"}
+{"id": 251447, "field": "description", "en": "Teaches you how to craft Enriched Thorium Breastplate.", "hash": "c616866b7f92a689", "src": "db2@1.60.1.70124"}
+{"id": 251448, "field": "name", "en": "Plans: Enriched Thorium Leggings", "hash": "dfa124bf6d319e2f", "src": "db2@1.60.1.70124"}
+{"id": 251448, "field": "description", "en": "Teaches you how to craft Enriched Thorium Leggings.", "hash": "767a115201281e75", "src": "db2@1.60.1.70124"}
+{"id": 251449, "field": "name", "en": "Plans: Enriched Thorium Helm", "hash": "7122b3018eae2814", "src": "db2@1.60.1.70124"}
+{"id": 251449, "field": "description", "en": "Teaches you how to craft Enriched Thorium Helm.", "hash": "fbdf6be2a1685243", "src": "db2@1.60.1.70124"}
+{"id": 251450, "field": "name", "en": "Plans: Champion's Legplates", "hash": "38789c352693dc82", "src": "db2@1.60.1.70124"}
+{"id": 251450, "field": "description", "en": "Teaches you how to craft Champion's Legplates.", "hash": "16bffb3bd7011760", "src": "db2@1.60.1.70124"}
+{"id": 251451, "field": "name", "en": "Plans: Stalwart Helm", "hash": "347e542a1d9a065d", "src": "db2@1.60.1.70124"}
+{"id": 251451, "field": "description", "en": "Teaches you how to craft Stalwart Helm.", "hash": "36c185533f28dee9", "src": "db2@1.60.1.70124"}
+{"id": 251452, "field": "name", "en": "Plans: Martyr's Legplates", "hash": "d514825dc8b25eaa", "src": "db2@1.60.1.70124"}
+{"id": 251452, "field": "description", "en": "Teaches you how to craft Martyr's Legplates.", "hash": "659d1b18d59fe444", "src": "db2@1.60.1.70124"}
+{"id": 251453, "field": "name", "en": "Plans: Breastplate of Salvation", "hash": "7f34f6a4966556f5", "src": "db2@1.60.1.70124"}
+{"id": 251453, "field": "description", "en": "Teaches you how to craft Breastplate of Salvation.", "hash": "d3c24f4e10293c6e", "src": "db2@1.60.1.70124"}
+{"id": 251454, "field": "name", "en": "Plans: Brass Knuckles", "hash": "fc2cdf7e220c24e8", "src": "db2@1.60.1.70124"}
+{"id": 251454, "field": "description", "en": "Teaches you how to craft Brass Knuckles.", "hash": "27854a73f15ae4ff", "src": "db2@1.60.1.70124"}
+{"id": 251455, "field": "name", "en": "Plans: Bronze Dory", "hash": "df08d42dc4d402a0", "src": "db2@1.60.1.70124"}
+{"id": 251455, "field": "description", "en": "Teaches you how to craft Bronze Dory.", "hash": "d7306405faa29a43", "src": "db2@1.60.1.70124"}
+{"id": 251456, "field": "name", "en": "Plans: Iron Fists", "hash": "97daeffa3ca0bc3d", "src": "db2@1.60.1.70124"}
+{"id": 251456, "field": "description", "en": "Teaches you how to craft Iron Fists.", "hash": "9ef887e303dd82ba", "src": "db2@1.60.1.70124"}
+{"id": 251457, "field": "name", "en": "Plans: Steel Spear", "hash": "2dc23274a10d2b36", "src": "db2@1.60.1.70124"}
+{"id": 251457, "field": "description", "en": "Teaches you how to craft Steel Spear.", "hash": "200ba09874c92465", "src": "db2@1.60.1.70124"}
+{"id": 251458, "field": "name", "en": "Plans: Iron Morningstar", "hash": "636e68d7c84902fb", "src": "db2@1.60.1.70124"}
+{"id": 251458, "field": "description", "en": "Teaches you how to craft Iron Morningstar.", "hash": "49d65b0aa9db5144", "src": "db2@1.60.1.70124"}
+{"id": 251459, "field": "name", "en": "Plans: Mithril Shortsword", "hash": "b57217f83cd60c70", "src": "db2@1.60.1.70124"}
+{"id": 251459, "field": "description", "en": "Teaches you how to craft Mithril Shortsword.", "hash": "3580a9193b057140", "src": "db2@1.60.1.70124"}
+{"id": 251460, "field": "name", "en": "Plans: Mithril Warhammer", "hash": "9404fd17fa75b8ed", "src": "db2@1.60.1.70124"}
+{"id": 251460, "field": "description", "en": "Teaches you how to craft Mithril Warhammer.", "hash": "22eb8d0017ac3037", "src": "db2@1.60.1.70124"}
+{"id": 251461, "field": "name", "en": "Plans: Mithril Claws", "hash": "ef73cce19238d3eb", "src": "db2@1.60.1.70124"}
+{"id": 251461, "field": "description", "en": "Teaches you how to craft Mithril Claws.", "hash": "e25e4cd3f9a0b18c", "src": "db2@1.60.1.70124"}
+{"id": 251462, "field": "name", "en": "Plans: Mithril Claymore", "hash": "28aa0db5cd787ead", "src": "db2@1.60.1.70124"}
+{"id": 251462, "field": "description", "en": "Teaches you how to craft Mithril Claymore.", "hash": "375bb80ef891a1ab", "src": "db2@1.60.1.70124"}
+{"id": 251463, "field": "name", "en": "Plans: Mithril Stiletto", "hash": "3c36ceb1b3bc50d9", "src": "db2@1.60.1.70124"}
+{"id": 251463, "field": "description", "en": "Teaches you how to craft Mithril Stiletto.", "hash": "3862793490a077e3", "src": "db2@1.60.1.70124"}
+{"id": 251464, "field": "name", "en": "Plans: Charged Mithril Battleaxe", "hash": "24f9fe6fbc233248", "src": "db2@1.60.1.70124"}
+{"id": 251464, "field": "description", "en": "Teaches you how to craft Charged Mithril Battleaxe.", "hash": "f2f17482a46af682", "src": "db2@1.60.1.70124"}
+{"id": 251465, "field": "name", "en": "Plans: Thorium Greatmace", "hash": "4e65912f28cef85a", "src": "db2@1.60.1.70124"}
+{"id": 251465, "field": "description", "en": "Teaches you how to craft Thorium Greatmace.", "hash": "82575494a2c96628", "src": "db2@1.60.1.70124"}
+{"id": 251466, "field": "name", "en": "Plans: Thorium Cestus", "hash": "d9d89194e74d5099", "src": "db2@1.60.1.70124"}
+{"id": 251466, "field": "description", "en": "Teaches you how to craft Thorium Cestus.", "hash": "96616b5b33ee5c31", "src": "db2@1.60.1.70124"}
+{"id": 251467, "field": "name", "en": "Plans: Thorium Poleaxe", "hash": "fd28c7e07ed90abd", "src": "db2@1.60.1.70124"}
+{"id": 251467, "field": "description", "en": "Teaches you how to craft Thorium Poleaxe.", "hash": "29002c708d2081f8", "src": "db2@1.60.1.70124"}
+{"id": 251468, "field": "name", "en": "Plans: Bold Dirk", "hash": "dd611e7f0f44d503", "src": "db2@1.60.1.70124"}
+{"id": 251468, "field": "description", "en": "Teaches you how to craft Bold Dirk.", "hash": "1b952d739f8c22dd", "src": "db2@1.60.1.70124"}
+{"id": 251469, "field": "name", "en": "Plans: Stormcarver", "hash": "f3bc7690ed62bb37", "src": "db2@1.60.1.70124"}
+{"id": 251469, "field": "description", "en": "Teaches you how to craft Stormcarver.", "hash": "6f1c7ce5e86d75d7", "src": "db2@1.60.1.70124"}
+{"id": 251470, "field": "name", "en": "Plans: Bagh Nakh", "hash": "bd149474a408cb4c", "src": "db2@1.60.1.70124"}
+{"id": 251470, "field": "description", "en": "Teaches you how to craft Bagh Nakh.", "hash": "946a897d1a9baafd", "src": "db2@1.60.1.70124"}
+{"id": 251471, "field": "name", "en": "Plans: Legionite Glaive", "hash": "d3688f735bb9ce60", "src": "db2@1.60.1.70124"}
+{"id": 251471, "field": "description", "en": "Teaches you how to craft Legionite Glaive.", "hash": "96d81dfbe89e6a34", "src": "db2@1.60.1.70124"}
+{"id": 251485, "field": "name", "en": "Edward's Knife", "hash": "8c08af8324b18c1a", "src": "db2@1.60.1.70124"}
+{"id": 251486, "field": "name", "en": "Tabitha's Cuffs", "hash": "64b93829f1bc5210", "src": "db2@1.60.1.70124"}
+{"id": 251520, "field": "name", "en": "Last Scrawlings of Edward Heartweaver", "hash": "4bd2cd7d72165e82", "src": "db2@1.60.1.70124"}
+{"id": 251522, "field": "name", "en": "Blood-Stained Letter", "hash": "173163bfdbf86c3b", "src": "db2@1.60.1.70124"}
+{"id": 251523, "field": "name", "en": "The Friends We Made Along the Way", "hash": "a3cd0ea01ab400c8", "src": "db2@1.60.1.70124"}
+{"id": 251523, "field": "description", "en": "Completely worthless.", "hash": "3f53c5391556a5df", "src": "db2@1.60.1.70124"}
+{"id": 251524, "field": "name", "en": "Whimsyfin", "hash": "3e29546f44bd6efd", "src": "db2@1.60.1.70124"}
+{"id": 251524, "field": "description", "en": "Eat me.", "hash": "f9e7e9c956c15591", "src": "db2@1.60.1.70124"}
+{"id": 251525, "field": "name", "en": "Savory Whimsyfin Delight", "hash": "22aa4d6461f905d6", "src": "db2@1.60.1.70124"}
+{"id": 251525, "field": "description", "en": "Eat me.", "hash": "f9e7e9c956c15591", "src": "db2@1.60.1.70124"}
+{"id": 251526, "field": "name", "en": "Recipe: Savory Whimsyfin Delight", "hash": "d52a0fa347965a22", "src": "db2@1.60.1.70124"}
+{"id": 251526, "field": "description", "en": "Teaches you how to craft Savory Whimsyfin Delight.", "hash": "3b8a13725e8b3b79", "src": "db2@1.60.1.70124"}
+{"id": 251533, "field": "name", "en": "Forsaken Greataxe", "hash": "12a2bd4743788dc6", "src": "db2@1.60.1.70124"}
+{"id": 251533, "field": "description", "en": "Movement speed increased by $s1% in Silverpine Forest and Hillsbrad Foothills.", "hash": "1bce2f3452d83f21", "src": "db2@1.60.1.70124"}
+{"id": 251534, "field": "name", "en": "Gnarled Necromancer's Staff", "hash": "7232a53bb17d6f02", "src": "db2@1.60.1.70124"}
+{"id": 251534, "field": "description", "en": "Movement speed increased by $s1% in Silverpine Forest and Hillsbrad Foothills.", "hash": "1bce2f3452d83f21", "src": "db2@1.60.1.70124"}
+{"id": 251641, "field": "name", "en": "Hyjal Venison Cut", "hash": "37a8b3dcbd5f5688", "src": "db2@1.60.1.70124"}
+{"id": 251723, "field": "name", "en": "Charged Stone", "hash": "2df5107b74d9b024", "src": "db2@1.60.1.70124"}
+{"id": 251723, "field": "description", "en": "Boosts effect of $@spellname1269966 for $d.\nA deceptively heavy stone.", "hash": "73854693748b5278", "src": "db2@1.60.1.70124"}
+{"id": 251735, "field": "name", "en": "Pattern: Slimeslayer's Adaptive Robes", "hash": "0fb8dd10735f6c93", "src": "db2@1.60.1.70124"}
+{"id": 251735, "field": "description", "en": "Teaches you how to craft Slimeslayer's Adaptive Robes.", "hash": "54f2c20f5d05de0c", "src": "db2@1.60.1.70124"}
+{"id": 251736, "field": "name", "en": "Pattern: Slimeslayer's Adaptive Cuffs", "hash": "093a0c95c3f2db92", "src": "db2@1.60.1.70124"}
+{"id": 251736, "field": "description", "en": "Teaches you how to craft Slimeslayer's Adaptive Cuffs.", "hash": "020e130f090bf7c4", "src": "db2@1.60.1.70124"}
+{"id": 251737, "field": "name", "en": "Pattern: Slimeslayer's Adaptive Cord", "hash": "d5127017fc296136", "src": "db2@1.60.1.70124"}
+{"id": 251737, "field": "description", "en": "Teaches you how to craft Slimeslayer's Adaptive Cord.", "hash": "8bed1ed26d855cc5", "src": "db2@1.60.1.70124"}
+{"id": 251738, "field": "name", "en": "Pattern: Beastculler's Adaptive Vest", "hash": "ca07335f41e60ee9", "src": "db2@1.60.1.70124"}
+{"id": 251738, "field": "description", "en": "Teaches you how to craft Beastculler's Adaptive Vest.", "hash": "e52d0c8c916129c6", "src": "db2@1.60.1.70124"}
+{"id": 251739, "field": "name", "en": "Pattern: Beastculler's Adaptive Bracers", "hash": "b9939b59b8b3c5ab", "src": "db2@1.60.1.70124"}
+{"id": 251739, "field": "description", "en": "Teaches you how to craft Beastculler's Adaptive Bracers.", "hash": "0039726e056281d5", "src": "db2@1.60.1.70124"}
+{"id": 251740, "field": "name", "en": "Pattern: Beastculler's Adaptive Wrap", "hash": "ca2cdf3502e735f0", "src": "db2@1.60.1.70124"}
+{"id": 251740, "field": "description", "en": "Teaches you how to craft Beastculler's Adaptive Wrap.", "hash": "f873fb0e571dca95", "src": "db2@1.60.1.70124"}
+{"id": 251741, "field": "name", "en": "Pattern: Dinodestroyer's Adaptive Chestguard", "hash": "f6de3bd89e107613", "src": "db2@1.60.1.70124"}
+{"id": 251741, "field": "description", "en": "Teaches you how to craft Dinodestroyer's Adaptive Chestguard.", "hash": "aab96b4c566b355e", "src": "db2@1.60.1.70124"}
+{"id": 251742, "field": "name", "en": "Pattern: Dinodestroyer's Adaptive Wrists", "hash": "2dd2cd6fa142deca", "src": "db2@1.60.1.70124"}
+{"id": 251742, "field": "description", "en": "Teaches you how to craft Dinodestroyer's Adaptive Wrists.", "hash": "686ae315826c2c49", "src": "db2@1.60.1.70124"}
+{"id": 251743, "field": "name", "en": "Pattern: Dinodestroyer's Adaptive Belt", "hash": "3290bb8fe8232908", "src": "db2@1.60.1.70124"}
+{"id": 251743, "field": "description", "en": "Teaches you how to craft Dinodestroyer's Adaptive Belt.", "hash": "68ee27b1c6ba318e", "src": "db2@1.60.1.70124"}
+{"id": 251744, "field": "name", "en": "Plans: Earthcrusher's Adaptive Chestplate", "hash": "e73067fffa4d21f0", "src": "db2@1.60.1.70124"}
+{"id": 251744, "field": "description", "en": "Teaches you how to craft Earthcrusher's Adaptive Chestplate.", "hash": "5d2a1158c24c4481", "src": "db2@1.60.1.70124"}
+{"id": 251745, "field": "name", "en": "Plans: Earthcrusher's Adaptive Armguards", "hash": "04ee0bc9ea33f456", "src": "db2@1.60.1.70124"}
+{"id": 251745, "field": "description", "en": "Teaches you how to craft Earthcrusher's Adaptive Armguards.", "hash": "b6c8fc09b13802d9", "src": "db2@1.60.1.70124"}
+{"id": 251746, "field": "name", "en": "Plans: Earthcrusher's Adaptive Girdle", "hash": "77c0362cb205c17e", "src": "db2@1.60.1.70124"}
+{"id": 251746, "field": "description", "en": "Teaches you how to craft Earthcrusher's Adaptive Girdle.", "hash": "a2b35bf906bcc6e8", "src": "db2@1.60.1.70124"}
+{"id": 251747, "field": "name", "en": "Schematic: Sludge Suppressor", "hash": "b398f8ee6772afd9", "src": "db2@1.60.1.70124"}
+{"id": 251747, "field": "description", "en": "Teaches you how to craft Sludge Suppressor.", "hash": "1f11411f73e231e3", "src": "db2@1.60.1.70124"}
+{"id": 251748, "field": "name", "en": "Schematic: Enormous Tranquilizer Dart", "hash": "0dd5968d908beb89", "src": "db2@1.60.1.70124"}
+{"id": 251748, "field": "description", "en": "Teaches you how to craft Enormous Tranquilizer Dart.", "hash": "3b4eb9711f4504bc", "src": "db2@1.60.1.70124"}
+{"id": 251749, "field": "name", "en": "Schematic: G.R.R.-Nade", "hash": "c52117e52bb1789e", "src": "db2@1.60.1.70124"}
+{"id": 251749, "field": "description", "en": "Teaches you how to craft G.R.R.-Nade.", "hash": "3a0d8d01d2caaad6", "src": "db2@1.60.1.70124"}
+{"id": 251750, "field": "name", "en": "Pattern: Slimetender's Adaptive Tunic", "hash": "1895a80134831c0c", "src": "db2@1.60.1.70124"}
+{"id": 251750, "field": "description", "en": "Teaches you how to craft Slimetender's Adaptive Tunic.", "hash": "ddee9b766fa23951", "src": "db2@1.60.1.70124"}
+{"id": 251751, "field": "name", "en": "Pattern: Slimetender's Adaptive Bracers", "hash": "7c1e827db11a30d4", "src": "db2@1.60.1.70124"}
+{"id": 251751, "field": "description", "en": "Teaches you how to craft Slimetender's Adaptive Bracers.", "hash": "8d4db93abe6097bb", "src": "db2@1.60.1.70124"}
+{"id": 251752, "field": "name", "en": "Pattern: Slimetender's Adaptive Belt", "hash": "4033bc8b1d99f9e6", "src": "db2@1.60.1.70124"}
+{"id": 251752, "field": "description", "en": "Teaches you how to craft Slimetender's Adaptive Belt.", "hash": "5df73cb273f7084e", "src": "db2@1.60.1.70124"}
+{"id": 251753, "field": "name", "en": "Pattern: Beastmender's Adaptive Robe", "hash": "a090c08b1e7f2944", "src": "db2@1.60.1.70124"}
+{"id": 251753, "field": "description", "en": "Teaches you how to craft Beastmender's Adaptive Robe.", "hash": "ad9049a7fe220dc8", "src": "db2@1.60.1.70124"}
+{"id": 251754, "field": "name", "en": "Pattern: Beastmender's Adaptive Wristlinks", "hash": "097c3d13fc1b46f0", "src": "db2@1.60.1.70124"}
+{"id": 251754, "field": "description", "en": "Teaches you how to craft Beastmender's Adaptive Wristlinks.", "hash": "106ec02ec7908e45", "src": "db2@1.60.1.70124"}
+{"id": 251755, "field": "name", "en": "Pattern: Beastmender's Adaptive Girdle", "hash": "519f40a42bc02962", "src": "db2@1.60.1.70124"}
+{"id": 251755, "field": "description", "en": "Teaches you how to craft Beastmender's Adaptive Girdle.", "hash": "4d5c41c036c0d7e3", "src": "db2@1.60.1.70124"}
+{"id": 251756, "field": "name", "en": "Pattern: Dinomender's Adaptive Tunic", "hash": "0e823478d7e05a8e", "src": "db2@1.60.1.70124"}
+{"id": 251756, "field": "description", "en": "Teaches you how to craft Dinomender's Adaptive Tunic.", "hash": "f01e9a77b187de48", "src": "db2@1.60.1.70124"}
+{"id": 251757, "field": "name", "en": "Pattern: Dinomender's Adaptive Wrists", "hash": "29dbbcf1a3b31154", "src": "db2@1.60.1.70124"}
+{"id": 251757, "field": "description", "en": "Teaches you how to craft Dinomender's Adaptive Wrists.", "hash": "b4cb5273f77d70f1", "src": "db2@1.60.1.70124"}
+{"id": 251758, "field": "name", "en": "Pattern: Dinomender's Adaptive Chain", "hash": "e257c0c4a86b0e59", "src": "db2@1.60.1.70124"}
+{"id": 251758, "field": "description", "en": "Teaches you how to craft Dinomender's Adaptive Chain.", "hash": "5665677cc735143a", "src": "db2@1.60.1.70124"}
+{"id": 251759, "field": "name", "en": "Plans: Earthweaver's Adaptive Plate", "hash": "28ba66fffc92965e", "src": "db2@1.60.1.70124"}
+{"id": 251759, "field": "description", "en": "Teaches you how to craft Earthweaver's Adaptive Plate.", "hash": "068f67c8cfce2307", "src": "db2@1.60.1.70124"}
+{"id": 251760, "field": "name", "en": "Plans: Earthweaver's Adaptive Links", "hash": "e22007cd0c4b0e67", "src": "db2@1.60.1.70124"}
+{"id": 251760, "field": "description", "en": "Teaches you how to craft Earthweaver's Adaptive Links.", "hash": "e590b308f776bd44", "src": "db2@1.60.1.70124"}
+{"id": 251761, "field": "name", "en": "Plans: Earthweaver's Adaptive Waistguard", "hash": "1487bec6ee691b5f", "src": "db2@1.60.1.70124"}
+{"id": 251761, "field": "description", "en": "Teaches you how to craft Earthweaver's Adaptive Waistguard.", "hash": "b26f93a8d3a971a8", "src": "db2@1.60.1.70124"}
+{"id": 251780, "field": "name", "en": "Rabbit Carcass", "hash": "623df85048f0db0b", "src": "db2@1.60.1.70124"}
+{"id": 251781, "field": "name", "en": "Head Scratcher's Scratchers", "hash": "8f3a257908d1c141", "src": "db2@1.60.1.70124"}
+{"id": 251900, "field": "name", "en": "Thendal Grove Gift Voucher", "hash": "60127c64519d0a10", "src": "db2@1.60.1.70124"}
+{"id": 251917, "field": "name", "en": "Falorne's Homemade Tart", "hash": "13478dc2d893bfff", "src": "db2@1.60.1.70124"}
+{"id": 251917, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70124"}
+{"id": 251918, "field": "name", "en": "Scrawny Ursera Claw", "hash": "885dc6ee3f4f4857", "src": "db2@1.60.1.70124"}
+{"id": 251918, "field": "description", "en": "The claw seems weaker and more brittle than it should be.", "hash": "3fb3a1391b01be34", "src": "db2@1.60.1.70124"}
+{"id": 251924, "field": "name", "en": "Signet of Akir", "hash": "74c3639a154bdf62", "src": "db2@1.60.1.70124"}
+{"id": 251925, "field": "name", "en": "Tattered Ursera Feather", "hash": "68b7b94955dc735c", "src": "db2@1.60.1.70124"}
+{"id": 251927, "field": "name", "en": "Chipped Cirrusfly Stinger", "hash": "80d9b0601e2f6ee4", "src": "db2@1.60.1.70124"}
+{"id": 251928, "field": "name", "en": "Torn Insect Wing", "hash": "09838311f7d06259", "src": "db2@1.60.1.70124"}
+{"id": 251930, "field": "name", "en": "Minor Essence of the Four Winds", "hash": "3b29a600583e96d3", "src": "db2@1.60.1.70124"}
+{"id": 251931, "field": "name", "en": "Depleted Windstone", "hash": "e71a72c621d9c9c8", "src": "db2@1.60.1.70124"}
+{"id": 251932, "field": "name", "en": "Sharpened Cirrusfly Stinger", "hash": "f0e39e40cf433bd5", "src": "db2@1.60.1.70124"}
+{"id": 251941, "field": "name", "en": "Scribbled Letter", "hash": "e684aabed5961430", "src": "db2@1.60.1.70124"}
+{"id": 251960, "field": "name", "en": "Yngwe's Axe", "hash": "edc5a7ff6a121d45", "src": "db2@1.60.1.70124"}
+{"id": 251961, "field": "name", "en": "Arcane Mote", "hash": "8e627219dec03bef", "src": "db2@1.60.1.70124"}
+{"id": 251983, "field": "name", "en": "Fel Infused Blossom", "hash": "343f1178f97715fb", "src": "db2@1.60.1.70124"}

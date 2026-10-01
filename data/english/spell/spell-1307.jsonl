@@ -1,180 +1,180 @@
-{"id": 1307007, "field": "name", "en": "Lightning Aura", "hash": "a8b42216dc53d22d", "src": "db2@1.60.1.70009"}
-{"id": 1307007, "field": "description", "en": "Charged with lightning, dealing $1307008S1 nature damage to random nearby locations every $t1 sec.", "hash": "0be8c1d529e5f347", "src": "db2@1.60.1.70009"}
-{"id": 1307007, "field": "aura", "en": "Deals $1307008S1 nature damage to random nearby locations every $t1 sec.", "hash": "0646c471b08a29f7", "src": "db2@1.60.1.70009"}
-{"id": 1307008, "field": "name", "en": "Lightning Aura", "hash": "a8b42216dc53d22d", "src": "db2@1.60.1.70009"}
-{"id": 1307008, "field": "description", "en": "$@spelldesc1307007", "hash": "5ccd46f8fa878738", "src": "db2@1.60.1.70009"}
-{"id": 1307014, "field": "name", "en": "Old Gloomlurker Eye", "hash": "2efcaa693bc517c9", "src": "db2@1.60.1.70009"}
-{"id": 1307014, "field": "description", "en": "Increases your effective stealth detection level by ${$s1/5} for $d.", "hash": "dda95b42db46599c", "src": "db2@1.60.1.70009"}
-{"id": 1307014, "field": "aura", "en": "Stealth detection greatly increased.", "hash": "34a2797a53b3db54", "src": "db2@1.60.1.70009"}
-{"id": 1307018, "field": "name", "en": "Lightning Aura", "hash": "a8b42216dc53d22d", "src": "db2@1.60.1.70009"}
-{"id": 1307019, "field": "name", "en": "Chilled", "hash": "ba3887334928867c", "src": "db2@1.60.1.70009"}
-{"id": 1307019, "field": "description", "en": "Target's movement slowed and time between attacks increased.", "hash": "9eb9cb4d624ef730", "src": "db2@1.60.1.70009"}
-{"id": 1307050, "field": "name", "en": "SAF-T Ultra Precision Scope", "hash": "ea929bd8c0777f1e", "src": "db2@1.60.1.70009"}
-{"id": 1307050, "field": "description", "en": "Attaches a permanent scope to a bow, gun, or crossbow that increases its critical strike chance by $s2%.", "hash": "945403b16fec7944", "src": "db2@1.60.1.70009"}
-{"id": 1307063, "field": "name", "en": "Empty Phial", "hash": "0cff9c11bbd9a487", "src": "db2@1.60.1.70009"}
-{"id": 1307066, "field": "name", "en": "Bladestorm", "hash": "008ac80da2ed66cf", "src": "db2@1.60.1.70009"}
-{"id": 1307066, "field": "description", "en": "$@spelldesc1307067", "hash": "5ccd4a0afa88467e", "src": "db2@1.60.1.70009"}
-{"id": 1307067, "field": "name", "en": "Bladestorm", "hash": "008ac80da2ed66cf", "src": "db2@1.60.1.70009"}
-{"id": 1307067, "field": "description", "en": "In a flash of steel the caster whirls their weapons in an attack that inflicts normal damage plus $1307066s1 to all players within $1307066A1 yards.", "hash": "75aa11767809f801", "src": "db2@1.60.1.70009"}
-{"id": 1307068, "field": "name", "en": "Terenas' Wisdom", "hash": "eeae48fe86b130bd", "src": "db2@1.60.1.70009"}
-{"id": 1307068, "field": "description", "en": "Spirit increased by $s1.", "hash": "4b61379df9520bde", "src": "db2@1.60.1.70009"}
-{"id": 1307068, "field": "aura", "en": "Spirit increased by $s1.\r\n\r\nRestores $s2 mana every $t2 seconds.", "hash": "4b3f39c8c1273ee9", "src": "db2@1.60.1.70009"}
-{"id": 1307072, "field": "name", "en": "(DNT) Wild King Intro Theater", "hash": "8f428507859ae4f4", "src": "db2@1.60.1.70009"}
-{"id": 1307075, "field": "name", "en": "Summon Druid of the Claw", "hash": "757a840450eb6bb1", "src": "db2@1.60.1.70009"}
-{"id": 1307076, "field": "name", "en": "Summon Druid of the Talon", "hash": "46a432ae86b9a633", "src": "db2@1.60.1.70009"}
-{"id": 1307103, "field": "name", "en": "Summon Sentinel", "hash": "6a03f2da16d15524", "src": "db2@1.60.1.70009"}
-{"id": 1307105, "field": "name", "en": "Summon Druid of the Claw", "hash": "757a840450eb6bb1", "src": "db2@1.60.1.70009"}
-{"id": 1307107, "field": "name", "en": "Summon Druid of the Claw", "hash": "757a840450eb6bb1", "src": "db2@1.60.1.70009"}
-{"id": 1307132, "field": "name", "en": "Shadowmeld", "hash": "083b84d70600d4a0", "src": "db2@1.60.1.70009"}
-{"id": 1307132, "field": "description", "en": "Puts the caster in stealth mode for $d.", "hash": "4b1b0f76138058e8", "src": "db2@1.60.1.70009"}
-{"id": 1307132, "field": "aura", "en": "Shadowmelded.", "hash": "87ac43123a661283", "src": "db2@1.60.1.70009"}
-{"id": 1307172, "field": "name", "en": "Alchemy Laboratory", "hash": "7d78f6e976720849", "src": "db2@1.60.1.70009"}
-{"id": 1307172, "field": "description", "en": "Places an Alchemy Laboratory usable for recipes that require it, and provides all of the benefits of a Mana Well. Requires a Campfire nearby. \r\n\r\nMay be placed over a Mana Well to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "f6ebb8cc6a8ba6fa", "src": "db2@1.60.1.70009"}
-{"id": 1307174, "field": "name", "en": "Anarchist's Workbench", "hash": "7d1e77ca981659d9", "src": "db2@1.60.1.70009"}
-{"id": 1307174, "field": "description", "en": "Places an Anarchist's Workbench usable for recipes that require it. Requires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "d276a78745d5011d", "src": "db2@1.60.1.70009"}
-{"id": 1307175, "field": "name", "en": "Anvil", "hash": "83d7bf8c30b1880e", "src": "db2@1.60.1.70009"}
-{"id": 1307175, "field": "description", "en": "Places an anvil, and provides all of the benefits of a Sharpening Wheel. Requires a Campfire nearby. \r\n\r\nMay be placed over a Sharpening Wheel to replace it. All camping features share a cooldown of $1308027d.", "hash": "b9998893c4608f21", "src": "db2@1.60.1.70009"}
-{"id": 1307176, "field": "name", "en": "Arcane Forge", "hash": "617fe355eddeb1e4", "src": "db2@1.60.1.70009"}
-{"id": 1307176, "field": "description", "en": "Places an Arcane Forge usable for recipes that require it, and provides all the benefits of an Enchanted Lute. Requires a Campfire nearby. \r\n\r\nMay be placed over an Enchanted Lute to replace it. All camping features share a cooldown of $1308027d.", "hash": "ec844b4917e79d74", "src": "db2@1.60.1.70009"}
-{"id": 1307178, "field": "name", "en": "Dark Channeling", "hash": "b8dcec79c0f0a477", "src": "db2@1.60.1.70009"}
-{"id": 1307199, "field": "name", "en": "Loop of Lingering Echoes", "hash": "57f33d27cf7b40d2", "src": "db2@1.60.1.70009"}
-{"id": 1307199, "field": "aura", "en": "In a Haunted area, Attack Power increased by an additional $w1.", "hash": "941eab52256bf402", "src": "db2@1.60.1.70009"}
-{"id": 1307208, "field": "name", "en": "Totem of The Undergrove", "hash": "1022b091f668ff33", "src": "db2@1.60.1.70009"}
-{"id": 1307208, "field": "description", "en": "Shock casts against Undead reduce the remaining cooldown of Stormstrike by ${$s1/-1000}.1 sec.", "hash": "e32f913b122e103c", "src": "db2@1.60.1.70009"}
-{"id": 1307223, "field": "name", "en": "Arcane Salvager", "hash": "021e43b705ff7a51", "src": "db2@1.60.1.70009"}
-{"id": 1307223, "field": "description", "en": "Places an Arcane Salvager that enables more efficient disenchanting, and provides all the benefits of an Enchanted Lute. Requires a Campfire nearby. \r\n\r\nMay be placed over an Enchanted Lute to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "5981e275864a7193", "src": "db2@1.60.1.70009"}
-{"id": 1307226, "field": "name", "en": "Iron Oven", "hash": "b68b863f35fa632e", "src": "db2@1.60.1.70009"}
-{"id": 1307226, "field": "description", "en": "Places an Iron Oven required for the most advanced cooking recipes. Requires a Cooking Fire nearby. All camping features share a cooldown of $1308027d.", "hash": "8cd3c85960ca0880", "src": "db2@1.60.1.70009"}
-{"id": 1307227, "field": "name", "en": "Basic Campfire", "hash": "eb447f35ecbc0dc1", "src": "db2@1.60.1.70009"}
-{"id": 1307227, "field": "description", "en": "Builds a basic campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "7f185d8fbd4ab628", "src": "db2@1.60.1.70009"}
-{"id": 1307229, "field": "name", "en": "Camp Chair", "hash": "8da89737216e4c19", "src": "db2@1.60.1.70009"}
-{"id": 1307229, "field": "description", "en": "Assembles a camp chair that allows you and others sitting nearby to gain $1229519s1% increased critical strike chance with all spells and attacks, exclusive with Moonkin Aura.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "db795153e552655d", "src": "db2@1.60.1.70009"}
-{"id": 1307230, "field": "name", "en": "Camp Tent", "hash": "9bc8a8776b4bc48d", "src": "db2@1.60.1.70009"}
-{"id": 1307230, "field": "description", "en": "Builds a tent that allows you and others sitting nearby to increase Rested experience to $s2% of a level. No effect if Rested experience already exceeds that value.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "13e29a9503a0c724", "src": "db2@1.60.1.70009"}
-{"id": 1307234, "field": "name", "en": "Enchanted Lute", "hash": "94fb1453e4194e9c", "src": "db2@1.60.1.70009"}
-{"id": 1307234, "field": "description", "en": "Summons an enchanted lute that allows you and others sitting nearby to gain $?$PL<10[28]?$PL<20[71]?$PL<30[114]?$PL<40[163]?$PL<50[211]?$PL<60[260][$1230653s1 ] increase to Armor$?$PL<10[]?$PL<30[ and ][, ]$?$PL>59[$1230653s2]?$PL>49[12]?$PL>39[9]?$PL>29[7]?$PL>19[4]?$PL>9[2][]$?$PL>9[ increase to all stats][]$?$PL>59[, and $1230653s3]?$PL>49[, and 16]?$PL>39[, and 12]?$PL>29[, and 6][]$?$PL>29[ increase to all resistances][], exclusive with Mark of the Wild.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "170b93a86cfd0a93", "src": "db2@1.60.1.70009"}
-{"id": 1307237, "field": "name", "en": "Expert Campfire", "hash": "ba61e4d97e546733", "src": "db2@1.60.1.70009"}
-{"id": 1307237, "field": "description", "en": "Builds an expert campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "28ce231b83787325", "src": "db2@1.60.1.70009"}
-{"id": 1307239, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70009"}
-{"id": 1307239, "field": "description", "en": "Unrolls a banner that allows you and others members of the Alliance sitting nearby to gain $?$PL<40[14]?$PL<50[19]?$PL<60[27][$1229718s1] increased Spirit, exclusive with Divine Spirit.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "15c1d355ad36e8bf", "src": "db2@1.60.1.70009"}
-{"id": 1307240, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70009"}
-{"id": 1307240, "field": "description", "en": "Unrolls a banner that allows you and others members of the Horde sitting nearby to gain $?$PL<40[14]?$PL<50[19]?$PL<60[27][$1229718s1] increased Spirit, exclusive with Divine Spirit.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "50f84e548268c269", "src": "db2@1.60.1.70009"}
-{"id": 1307242, "field": "name", "en": "Fermenter", "hash": "2a72f82660a5a90b", "src": "db2@1.60.1.70009"}
-{"id": 1307242, "field": "description", "en": "Places a fermenter that allows the creation of certain reagents, and provides all of the benefits of a Mana Well. Requires a Campfire nearby. May be placed over a Mana Well to replace it. All camping features share a cooldown of $1308027d.", "hash": "4d4c9cf098bd96dd", "src": "db2@1.60.1.70009"}
-{"id": 1307243, "field": "name", "en": "Field Guide", "hash": "bf7f3c83b1ec32fb", "src": "db2@1.60.1.70009"}
-{"id": 1307243, "field": "description", "en": "Places a Field Guide that allows players to read it and gain Track Beasts, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Chair to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "08408bcef22a631b", "src": "db2@1.60.1.70009"}
-{"id": 1307244, "field": "name", "en": "First Aid Kit", "hash": "ac6617d413b0822b", "src": "db2@1.60.1.70009"}
-{"id": 1307244, "field": "description", "en": "Unpacks a first aid kit that allows you and others sitting nearby to gain $?$PL<12[3]?$PL<24[8]?$PL<36[21]?$PL<48[34]?$PL<60[45][$1230124s1] increased Stamina, exclusive with Power Word: Fortitude.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "c1b75e5849658393", "src": "db2@1.60.1.70009"}
-{"id": 1307245, "field": "name", "en": "Fish Bowl", "hash": "123d7b537d46a1ab", "src": "db2@1.60.1.70009"}
-{"id": 1307245, "field": "description", "en": "Places a small fish bowl that allows you and others sitting nearby to gain $1230098s1% increased stats, exclusive with Blessing of Kings.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "eba7cfc623d0cedc", "src": "db2@1.60.1.70009"}
-{"id": 1307246, "field": "name", "en": "Fishing Hut", "hash": "e502e1b68554f00a", "src": "db2@1.60.1.70009"}
-{"id": 1307246, "field": "description", "en": "Places a Fishing Hut that grants the ability to catch rare fish for $1280342d, Fishing Skill lures, and provides all of the benefits of a Fish Bowl. Requires a Campfire nearby. \r\n\r\nMay be placed over a Fish Bowl to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "73c33244f38dc2c8", "src": "db2@1.60.1.70009"}
-{"id": 1307247, "field": "name", "en": "Fishing Rack", "hash": "31cb457daf6168b5", "src": "db2@1.60.1.70009"}
-{"id": 1307247, "field": "description", "en": "Places a Fishing Rack that grants the ability to catch uncommon fish for $1280341d, Fishing Skill lures, and provides all of the benefits of a Fish Bowl. Requires a Campfire nearby. \r\n\r\nMay be placed over a Fish Bowl to replace it. All camping features share a cooldown of $1308027d.", "hash": "cd28c4bbbef06e4c", "src": "db2@1.60.1.70009"}
-{"id": 1307248, "field": "name", "en": "Greenhouse", "hash": "ec7bd7c4f0890f08", "src": "db2@1.60.1.70009"}
-{"id": 1307248, "field": "description", "en": "Places a Greenhouse that will grow herbs over time from seeds planted, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. \r\n\r\nMay be placed over an Incense Candle to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "452a5fb381df0197", "src": "db2@1.60.1.70009"}
-{"id": 1307251, "field": "name", "en": "Incense Candle", "hash": "0556be08df4ec55b", "src": "db2@1.60.1.70009"}
-{"id": 1307251, "field": "description", "en": "Ignites an incense candle that allows you and others sitting nearby to gain $?$PL<14[2]?$PL<28[6]?$PL<42[12]?$PL<56[18][$1229513s1] increased Intellect, exclusive with Arcane Intellect.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "6ff5feeeee5adf12", "src": "db2@1.60.1.70009"}
-{"id": 1307252, "field": "name", "en": "Journeyman Campfire", "hash": "b36a498adc5d9ec8", "src": "db2@1.60.1.70009"}
-{"id": 1307252, "field": "description", "en": "Builds a journeyman campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "c188d8ff694a3970", "src": "db2@1.60.1.70009"}
-{"id": 1307254, "field": "name", "en": "Lodestone", "hash": "c809e41f9fc8af34", "src": "db2@1.60.1.70009"}
-{"id": 1307254, "field": "description", "en": "Erects a lodestone that allows you and others sitting nearby to gain $?$PL<12[12]?$PL<22[20]?$PL<32[32]?$PL<42[49]?$PL<52[67][$1230164s1] increased melee Attack Power, exclusive with Blessing of Might.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "a2566cd95ea948cc", "src": "db2@1.60.1.70009"}
-{"id": 1307255, "field": "name", "en": "Loom", "hash": "0a4c5425b38fa63a", "src": "db2@1.60.1.70009"}
-{"id": 1307255, "field": "description", "en": "Places a Loom usable for recipes that require it, and provides all the benefits of a Faction Banner. Requires a Campfire nearby. \r\n\r\nMay be placed over a Faction Banner to replace it. All camping features share a cooldown of $1308027d.", "hash": "4c1a1fbaaf0affdc", "src": "db2@1.60.1.70009"}
-{"id": 1307257, "field": "name", "en": "Cookie's Feast", "hash": "2193b4154ed04b08", "src": "db2@1.60.1.70009"}
-{"id": 1307257, "field": "description", "en": "Lay out Cookie's Feast that contains Stamina-boosting food. Requires a Cooking Fire nearby. All camping features share a cooldown of $1308027d.", "hash": "03a6e34838edec18", "src": "db2@1.60.1.70009"}
-{"id": 1307259, "field": "name", "en": "Mana Well", "hash": "cafcee01bc4b49ef", "src": "db2@1.60.1.70009"}
-{"id": 1307259, "field": "description", "en": "Constructs a mana well that allows you and others sitting nearby to regenerate $?$PL<24[10]?$PL<34[15]?$PL<44[20]?$PL<54[24][$1230587s1] Mana every 5 sec, exclusive with Blessing of Wisdom.\n\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "56057be259659206", "src": "db2@1.60.1.70009"}
-{"id": 1307261, "field": "name", "en": "Master Forge", "hash": "4a584bb8b1b96db2", "src": "db2@1.60.1.70009"}
-{"id": 1307261, "field": "description", "en": "Places a Master Forge usable for recipes that require it, and provides all of the benefits of a Sharpening Wheel. Requires a Campfire nearby. \r\n\r\nMay be placed over a Sharpening Wheel to replace it. All camping features share a cooldown of $1308027d.", "hash": "d95588b4add0b122", "src": "db2@1.60.1.70009"}
-{"id": 1307264, "field": "name", "en": "Molten Foundry", "hash": "bce5b81977718714", "src": "db2@1.60.1.70009"}
-{"id": 1307264, "field": "description", "en": "Places a Molten Foundry usable for recipes that require it, and provides all the benefits of a Lodestone. Requires a Campfire nearby. \r\n\r\nMay be placed over a Lodestone to replace it. All camping features share a cooldown of $1308027d.", "hash": "fcb4b585bad778fa", "src": "db2@1.60.1.70009"}
-{"id": 1307265, "field": "name", "en": "Plague Doctor's Laboratory", "hash": "da0156c5b15dbcf0", "src": "db2@1.60.1.70009"}
-{"id": 1307265, "field": "description", "en": "Places a Plague Doctor's Laboratory that contains healing potions, poultices, and provides all of the benefits of a First Aid Kit. Requires a Campfire nearby. \r\n\r\nMay be placed over a First Aid Kit to replace it. All camping features share a cooldown of $1308027d.", "hash": "19d08955ce663a12", "src": "db2@1.60.1.70009"}
-{"id": 1307266, "field": "name", "en": "Reagent Bot", "hash": "9b5fbc1e475c0e43", "src": "db2@1.60.1.70009"}
-{"id": 1307266, "field": "description", "en": "Summons a Reagent Bot that allows you and others nearby to purchase reagents. Requires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "8db6dd3edb97d129", "src": "db2@1.60.1.70009"}
-{"id": 1307288, "field": "name", "en": "Soulrip", "hash": "b8a7e5f968258f40", "src": "db2@1.60.1.70009"}
-{"id": 1307288, "field": "description", "en": "Deal $s1 Shadow damage to the target and drains $s3 Mana. Deals $s2 times \r\nas much damage to Undead.", "hash": "ea04a619051f3101", "src": "db2@1.60.1.70009"}
-{"id": 1307315, "field": "name", "en": "Soulrip", "hash": "b8a7e5f968258f40", "src": "db2@1.60.1.70009"}
-{"id": 1307315, "field": "description", "en": "Chance on harmful spell cast to deal $1307288s1 Shadow damage to the target and drain $1307288s3 Mana. Deals $1307288s2 times as much damage to Undead.\r\n", "hash": "61828e5c1db91586", "src": "db2@1.60.1.70009"}
-{"id": 1307334, "field": "name", "en": "Phantomspeaker Mask", "hash": "7d833b8ef1459bff", "src": "db2@1.60.1.70009"}
-{"id": 1307334, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects while in Haunted areas.", "hash": "4a6abc51c8ad3114", "src": "db2@1.60.1.70009"}
-{"id": 1307334, "field": "aura", "en": "In a Haunted area, healing done increased by up to $w1 and spell damage done increased by up to $w2.", "hash": "e681cdf13411059a", "src": "db2@1.60.1.70009"}
-{"id": 1307370, "field": "name", "en": "Mark of Ala'ro", "hash": "34ff4f63dd66464d", "src": "db2@1.60.1.70009"}
-{"id": 1307370, "field": "aura", "en": "Increases Armor by $s2, Fire, Frost, and Nature Resistance by $s1 and Health by $s3.", "hash": "82644f2871c69041", "src": "db2@1.60.1.70009"}
-{"id": 1307385, "field": "name", "en": "Repair Bot", "hash": "5d19532f37f739d8", "src": "db2@1.60.1.70009"}
-{"id": 1307385, "field": "description", "en": "Summons a Repair Bot that allows you and others nearby to buy reagents and repair gear. Requires a Campfire nearby. \r\n\r\nMay be placed over a Reagent Bot to replace it. All camping features share a cooldown of $1308027d.", "hash": "3e5f1087ecc0fc18", "src": "db2@1.60.1.70009"}
-{"id": 1307386, "field": "name", "en": "Rock Garden", "hash": "819f0b06d3b24555", "src": "db2@1.60.1.70009"}
-{"id": 1307386, "field": "description", "en": "Places a Rock Garden that spawns a common mining node over time, and provides all the benefits of a Lodestone. Requires a Campfire nearby. \r\n\r\nMay be placed over a Lodestone to replace it. All camping features share a cooldown of $1308027d.", "hash": "8c32c868b9507dc3", "src": "db2@1.60.1.70009"}
-{"id": 1307387, "field": "name", "en": "Seed Hybridizer", "hash": "59b99b4eae6bb164", "src": "db2@1.60.1.70009"}
-{"id": 1307387, "field": "description", "en": "Places a Seed Hybridizer that allows seeds to be multiplied or combined into rarer tiers, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. \r\n\r\nMay be placed over an Incense Candle to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "a466fc3ac3b08f26", "src": "db2@1.60.1.70009"}
-{"id": 1307391, "field": "name", "en": "Sewing Machine", "hash": "f7112ca015bed070", "src": "db2@1.60.1.70009"}
-{"id": 1307391, "field": "description", "en": "Places a Sewing Machine usable for recipes that require it, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Tent to replace it. All camping features share a cooldown of $1308027d.", "hash": "a50a8a939c7497ae", "src": "db2@1.60.1.70009"}
-{"id": 1307392, "field": "name", "en": "Sharpening Wheel", "hash": "d8707d4dc5b9be35", "src": "db2@1.60.1.70009"}
-{"id": 1307392, "field": "description", "en": "Constructs a sharpening wheel that grants you and others sitting nearby $?$PL<24[6]?$PL<38[11]?$PL<52[20][$1230172s1] increased Strength, exclusive with Strength of Earth Totem.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "c9b7d553f9f20396", "src": "db2@1.60.1.70009"}
-{"id": 1307393, "field": "name", "en": "Spinning Wheel", "hash": "9b2c89dae0fe5b26", "src": "db2@1.60.1.70009"}
-{"id": 1307393, "field": "description", "en": "Places a Spinning Wheel that allows the creation of certain reagents, and provides all the benefits of a Faction Banner. Requires a Campfire nearby. \r\n\r\nMay be placed over a Faction Banner to replace it. All camping features share a cooldown of $1308027d.", "hash": "ade015d4f2b37ebb", "src": "db2@1.60.1.70009"}
-{"id": 1307395, "field": "name", "en": "Tanning Rack", "hash": "a3a0e0ccd90fac76", "src": "db2@1.60.1.70009"}
-{"id": 1307395, "field": "description", "en": "Places a Tanning Rack that allows the creation of certain reagents, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Tent to replace it. All camping features share a cooldown of $1308027d.", "hash": "b65c0c3325600ab8", "src": "db2@1.60.1.70009"}
-{"id": 1307396, "field": "name", "en": "Toxin Study", "hash": "8ed374816262eeae", "src": "db2@1.60.1.70009"}
-{"id": 1307396, "field": "description", "en": "Places a Toxin Study that contains healing potions, anti-venom, and provides all of the benefits of a First Aid Kit. Requires a Campfire nearby. \r\n\r\nMay be placed over a First Aid Kit to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "de7d7930e99717a9", "src": "db2@1.60.1.70009"}
-{"id": 1307397, "field": "name", "en": "Trapper's Workbench", "hash": "6355088f92f66612", "src": "db2@1.60.1.70009"}
-{"id": 1307397, "field": "description", "en": "Places a Trapper's Workbench containing 1 trap, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Chair to replace it.\r\n\r\n All camping features share a cooldown of $1308027d.", "hash": "6a4f5109bf37387a", "src": "db2@1.60.1.70009"}
-{"id": 1307399, "field": "name", "en": "Shader", "hash": "ba90614120506f9a", "src": "db2@1.60.1.70009"}
-{"id": 1307400, "field": "name", "en": "Idol of the Wild Court", "hash": "e77c612de143674f", "src": "db2@1.60.1.70009"}
-{"id": 1307400, "field": "description", "en": "Wrath critical strikes extend the duration of your Insect Swarm on the target by ${$s1/1000} sec. Against Beasts, this duration is extended by an additional ${$s2/1000} sec.", "hash": "7161a38a26312555", "src": "db2@1.60.1.70009"}
-{"id": 1307411, "field": "name", "en": "Lightheaded", "hash": "2a9746c889ba2074", "src": "db2@1.60.1.70009"}
-{"id": 1307411, "field": "description", "en": "Drink me.  I'm delicious!", "hash": "d0f4ad455c342dcf", "src": "db2@1.60.1.70009"}
-{"id": 1307411, "field": "aura", "en": "You feel light as a feather... and your voice sounds very high pitched!", "hash": "c36d2ff6feff8282", "src": "db2@1.60.1.70009"}
-{"id": 1307423, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70009"}
-{"id": 1307423, "field": "description", "en": "Activate a Goaz Warder.", "hash": "3e261b236c4833f1", "src": "db2@1.60.1.70009"}
-{"id": 1307426, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70009"}
-{"id": 1307426, "field": "description", "en": "$@spelldesc1307423", "hash": "5cce541e0a68d60b", "src": "db2@1.60.1.70009"}
-{"id": 1307426, "field": "aura", "en": "Activating.", "hash": "3cfa7e61d95a7b10", "src": "db2@1.60.1.70009"}
-{"id": 1307433, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70009"}
-{"id": 1307508, "field": "name", "en": "Bramble Root", "hash": "e26b6157fe930c59", "src": "db2@1.60.1.70009"}
-{"id": 1307508, "field": "description", "en": "When struck in combat inflicts $s1 Nature and $1307509s1 Arcane damage to the attacker.", "hash": "cb88affa1cc7db73", "src": "db2@1.60.1.70009"}
-{"id": 1307508, "field": "aura", "en": "$s1 Nature damage dealt to attackers.", "hash": "c2dcafc32649bf29", "src": "db2@1.60.1.70009"}
-{"id": 1307509, "field": "name", "en": "Blazing Star", "hash": "24ce88e065877c32", "src": "db2@1.60.1.70009"}
-{"id": 1307509, "field": "aura", "en": "$s1 Arcane damage dealt to attackers.", "hash": "7c47b36af5a46ccb", "src": "db2@1.60.1.70009"}
-{"id": 1307519, "field": "name", "en": "Rootbinder's Will", "hash": "6f76fc48cf7effe6", "src": "db2@1.60.1.70009"}
-{"id": 1307519, "field": "description", "en": "Call upon nature's protection for $d. The first enemy to strike you with a melee attack becomes Rooted for $1307520d.", "hash": "79b025917cd39ec8", "src": "db2@1.60.1.70009"}
-{"id": 1307519, "field": "aura", "en": "Entangles the next enemy that deals Melee damage to you.", "hash": "831fbd9370de98b8", "src": "db2@1.60.1.70009"}
-{"id": 1307520, "field": "name", "en": "Rootbinder's Will", "hash": "6f76fc48cf7effe6", "src": "db2@1.60.1.70009"}
-{"id": 1307520, "field": "description", "en": "Roots the target in place and causes $o2 Nature damage over $d.  Damage caused may interrupt the effect.", "hash": "4275e94b07e549d1", "src": "db2@1.60.1.70009"}
-{"id": 1307520, "field": "aura", "en": "Rooted. Causes $s2 Nature damage every $t2 seconds.", "hash": "67ac6e3c09f442ff", "src": "db2@1.60.1.70009"}
-{"id": 1307611, "field": "name", "en": "Reward", "hash": "8d54db7e4d0f12ef", "src": "db2@1.60.1.70009"}
-{"id": 1307644, "field": "name", "en": "Spark", "hash": "c00db156a4a1f6a3", "src": "db2@1.60.1.70009"}
-{"id": 1307644, "field": "description", "en": "Melee attacks from enemies have a chance to refresh your Flame Blast cooldown.", "hash": "7c7474cc0bb2e3d4", "src": "db2@1.60.1.70009"}
-{"id": 1307654, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70009"}
-{"id": 1307660, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70009"}
-{"id": 1307667, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70009"}
-{"id": 1307694, "field": "name", "en": "[DNT] Pain", "hash": "17e6535e81827879", "src": "db2@1.60.1.70009"}
-{"id": 1307694, "field": "description", "en": "[DNT] Suffer $s1% maximum health in damage every $t1 sec. Cannot kill the target.\r\n\r\nThis is a debug spell.", "hash": "d831b8afe2e31a08", "src": "db2@1.60.1.70009"}
-{"id": 1307694, "field": "aura", "en": "[DNT] Suffering $w1% of your maximum health as damage every $t1 sec.", "hash": "df751d76dcafae8d", "src": "db2@1.60.1.70009"}
-{"id": 1307696, "field": "name", "en": "Skyshatter", "hash": "ccc249137d382ea0", "src": "db2@1.60.1.70009"}
-{"id": 1307696, "field": "description", "en": "Deal $s1 Nature damage to the target. Deals $s2 times as much damage to Dragonkin and Winged enemies.", "hash": "583039a30154ac37", "src": "db2@1.60.1.70009"}
-{"id": 1307760, "field": "name", "en": "Warplate of Burden", "hash": "f82fe803dd4d35e3", "src": "db2@1.60.1.70009"}
-{"id": 1307760, "field": "description", "en": "Strength increased by $1307762s1 while carrying a full inventory.", "hash": "5a54dc97be3d4db5", "src": "db2@1.60.1.70009"}
-{"id": 1307762, "field": "name", "en": "Weight of Duty", "hash": "0c580bb8e98965db", "src": "db2@1.60.1.70009"}
-{"id": 1307762, "field": "description", "en": "Increases Strength by $s1 while your inventory is full.", "hash": "624420e473ace923", "src": "db2@1.60.1.70009"}
-{"id": 1307762, "field": "aura", "en": "Strength increased by $s1.", "hash": "90d8a2f83ee1c8bf", "src": "db2@1.60.1.70009"}
-{"id": 1307779, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70009"}
-{"id": 1307791, "field": "name", "en": "Bark of the Scale", "hash": "3c667575788cce15", "src": "db2@1.60.1.70009"}
-{"id": 1307791, "field": "description", "en": "$s1 Health restored.", "hash": "1120fd47167fbe03", "src": "db2@1.60.1.70009"}
-{"id": 1307791, "field": "aura", "en": "$s1 Health restored.", "hash": "1120fd47167fbe03", "src": "db2@1.60.1.70009"}
-{"id": 1307792, "field": "name", "en": "Bark of the Scale", "hash": "3c667575788cce15", "src": "db2@1.60.1.70009"}
-{"id": 1307792, "field": "description", "en": "Restores $1305426s1 Health when you kill a Dragonkin that gives experience. This effect cannot occur more than once every $proccooldown sec.", "hash": "73c05b1b507f2572", "src": "db2@1.60.1.70009"}
-{"id": 1307848, "field": "name", "en": "Strength of the Moon", "hash": "3594622ac5a2947b", "src": "db2@1.60.1.70009"}
-{"id": 1307848, "field": "aura", "en": "Increases Physical and Arcane damage done by $s1%.", "hash": "8da8b7bd2ef1cc52", "src": "db2@1.60.1.70009"}
-{"id": 1307882, "field": "name", "en": "Debilitate", "hash": "275e1753ebcb4036", "src": "db2@1.60.1.70009"}
-{"id": 1307882, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70009"}
-{"id": 1307889, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70009"}
-{"id": 1307940, "field": "name", "en": "Light in the Dark", "hash": "7945e0e47688742a", "src": "db2@1.60.1.70009"}
-{"id": 1307940, "field": "description", "en": "Deal $s1 Holy damage to the target. Deals $s2 times as much damage to Undead and Demons.", "hash": "6d51a01e17f77040", "src": "db2@1.60.1.70009"}
-{"id": 1307943, "field": "name", "en": "Improved Pick Pocket and Distract 03", "hash": "a53bbc4784f15db1", "src": "db2@1.60.1.70009"}
-{"id": 1307943, "field": "description", "en": "Increases the chance your Pick Pocket and Distract abilities are successful by $s1%", "hash": "3f2913730b08df2c", "src": "db2@1.60.1.70009"}
-{"id": 1307944, "field": "name", "en": "Improved Pick Pocket and Distract 04", "hash": "a53bbc4884f15db2", "src": "db2@1.60.1.70009"}
-{"id": 1307944, "field": "description", "en": "Increases the chance your Pick Pocket and Distract abilities are successful by $s1%", "hash": "3f2913730b08df2c", "src": "db2@1.60.1.70009"}
-{"id": 1307945, "field": "name", "en": "Improved Pick Pocket and Distract 05", "hash": "a53bbc4984f15db3", "src": "db2@1.60.1.70009"}
-{"id": 1307945, "field": "description", "en": "Increases the chance your Pick Pocket and Distract abilities are successful by $s1%", "hash": "3f2913730b08df2c", "src": "db2@1.60.1.70009"}
+{"id": 1307007, "field": "name", "en": "Lightning Aura", "hash": "a8b42216dc53d22d", "src": "db2@1.60.1.70124"}
+{"id": 1307007, "field": "description", "en": "Charged with lightning, dealing $1307008S1 nature damage to random nearby locations every $t1 sec.", "hash": "0be8c1d529e5f347", "src": "db2@1.60.1.70124"}
+{"id": 1307007, "field": "aura", "en": "Deals $1307008S1 nature damage to random nearby locations every $t1 sec.", "hash": "0646c471b08a29f7", "src": "db2@1.60.1.70124"}
+{"id": 1307008, "field": "name", "en": "Lightning Aura", "hash": "a8b42216dc53d22d", "src": "db2@1.60.1.70124"}
+{"id": 1307008, "field": "description", "en": "$@spelldesc1307007", "hash": "5ccd46f8fa878738", "src": "db2@1.60.1.70124"}
+{"id": 1307014, "field": "name", "en": "Old Gloomlurker Eye", "hash": "2efcaa693bc517c9", "src": "db2@1.60.1.70124"}
+{"id": 1307014, "field": "description", "en": "Increases your effective stealth detection level by ${$s1/5} for $d.", "hash": "dda95b42db46599c", "src": "db2@1.60.1.70124"}
+{"id": 1307014, "field": "aura", "en": "Stealth detection greatly increased.", "hash": "34a2797a53b3db54", "src": "db2@1.60.1.70124"}
+{"id": 1307018, "field": "name", "en": "Lightning Aura", "hash": "a8b42216dc53d22d", "src": "db2@1.60.1.70124"}
+{"id": 1307019, "field": "name", "en": "Chilled", "hash": "ba3887334928867c", "src": "db2@1.60.1.70124"}
+{"id": 1307019, "field": "description", "en": "Target's movement slowed and time between attacks increased.", "hash": "9eb9cb4d624ef730", "src": "db2@1.60.1.70124"}
+{"id": 1307050, "field": "name", "en": "SAF-T Ultra Precision Scope", "hash": "ea929bd8c0777f1e", "src": "db2@1.60.1.70124"}
+{"id": 1307050, "field": "description", "en": "Attaches a permanent scope to a bow, gun, or crossbow that increases its critical strike chance by $s2%.", "hash": "945403b16fec7944", "src": "db2@1.60.1.70124"}
+{"id": 1307063, "field": "name", "en": "Empty Phial", "hash": "0cff9c11bbd9a487", "src": "db2@1.60.1.70124"}
+{"id": 1307066, "field": "name", "en": "Bladestorm", "hash": "008ac80da2ed66cf", "src": "db2@1.60.1.70124"}
+{"id": 1307066, "field": "description", "en": "$@spelldesc1307067", "hash": "5ccd4a0afa88467e", "src": "db2@1.60.1.70124"}
+{"id": 1307067, "field": "name", "en": "Bladestorm", "hash": "008ac80da2ed66cf", "src": "db2@1.60.1.70124"}
+{"id": 1307067, "field": "description", "en": "In a flash of steel the caster whirls their weapons in an attack that inflicts normal damage plus $1307066s1 to all players within $1307066A1 yards.", "hash": "75aa11767809f801", "src": "db2@1.60.1.70124"}
+{"id": 1307068, "field": "name", "en": "Terenas' Wisdom", "hash": "eeae48fe86b130bd", "src": "db2@1.60.1.70124"}
+{"id": 1307068, "field": "description", "en": "Spirit increased by $s1.", "hash": "4b61379df9520bde", "src": "db2@1.60.1.70124"}
+{"id": 1307068, "field": "aura", "en": "Spirit increased by $s1.\r\n\r\nRestores $s2 mana every $t2 seconds.", "hash": "4b3f39c8c1273ee9", "src": "db2@1.60.1.70124"}
+{"id": 1307072, "field": "name", "en": "(DNT) Wild King Intro Theater", "hash": "8f428507859ae4f4", "src": "db2@1.60.1.70124"}
+{"id": 1307075, "field": "name", "en": "Summon Druid of the Claw", "hash": "757a840450eb6bb1", "src": "db2@1.60.1.70124"}
+{"id": 1307076, "field": "name", "en": "Summon Druid of the Talon", "hash": "46a432ae86b9a633", "src": "db2@1.60.1.70124"}
+{"id": 1307103, "field": "name", "en": "Summon Sentinel", "hash": "6a03f2da16d15524", "src": "db2@1.60.1.70124"}
+{"id": 1307105, "field": "name", "en": "Summon Druid of the Claw", "hash": "757a840450eb6bb1", "src": "db2@1.60.1.70124"}
+{"id": 1307107, "field": "name", "en": "Summon Druid of the Claw", "hash": "757a840450eb6bb1", "src": "db2@1.60.1.70124"}
+{"id": 1307132, "field": "name", "en": "Shadowmeld", "hash": "083b84d70600d4a0", "src": "db2@1.60.1.70124"}
+{"id": 1307132, "field": "description", "en": "Puts the caster in stealth mode for $d.", "hash": "4b1b0f76138058e8", "src": "db2@1.60.1.70124"}
+{"id": 1307132, "field": "aura", "en": "Shadowmelded.", "hash": "87ac43123a661283", "src": "db2@1.60.1.70124"}
+{"id": 1307172, "field": "name", "en": "Alchemy Laboratory", "hash": "7d78f6e976720849", "src": "db2@1.60.1.70124"}
+{"id": 1307172, "field": "description", "en": "Places an Alchemy Laboratory usable for recipes that require it, and provides all of the benefits of a Mana Well. Requires a Campfire nearby. \r\n\r\nMay be placed over a Mana Well to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "f6ebb8cc6a8ba6fa", "src": "db2@1.60.1.70124"}
+{"id": 1307174, "field": "name", "en": "Anarchist's Workbench", "hash": "7d1e77ca981659d9", "src": "db2@1.60.1.70124"}
+{"id": 1307174, "field": "description", "en": "Places an Anarchist's Workbench usable for recipes that require it. Requires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "d276a78745d5011d", "src": "db2@1.60.1.70124"}
+{"id": 1307175, "field": "name", "en": "Anvil", "hash": "83d7bf8c30b1880e", "src": "db2@1.60.1.70124"}
+{"id": 1307175, "field": "description", "en": "Places an anvil, and provides all of the benefits of a Sharpening Wheel. Requires a Campfire nearby. \r\n\r\nMay be placed over a Sharpening Wheel to replace it. All camping features share a cooldown of $1308027d.", "hash": "b9998893c4608f21", "src": "db2@1.60.1.70124"}
+{"id": 1307176, "field": "name", "en": "Arcane Forge", "hash": "617fe355eddeb1e4", "src": "db2@1.60.1.70124"}
+{"id": 1307176, "field": "description", "en": "Places an Arcane Forge usable for recipes that require it, and provides all the benefits of an Enchanted Lute. Requires a Campfire nearby. \r\n\r\nMay be placed over an Enchanted Lute to replace it. All camping features share a cooldown of $1308027d.", "hash": "ec844b4917e79d74", "src": "db2@1.60.1.70124"}
+{"id": 1307178, "field": "name", "en": "Dark Channeling", "hash": "b8dcec79c0f0a477", "src": "db2@1.60.1.70124"}
+{"id": 1307199, "field": "name", "en": "Loop of Lingering Echoes", "hash": "57f33d27cf7b40d2", "src": "db2@1.60.1.70124"}
+{"id": 1307199, "field": "aura", "en": "In a Haunted area, Attack Power increased by an additional $w1.", "hash": "941eab52256bf402", "src": "db2@1.60.1.70124"}
+{"id": 1307208, "field": "name", "en": "Totem of The Undergrove", "hash": "1022b091f668ff33", "src": "db2@1.60.1.70124"}
+{"id": 1307208, "field": "description", "en": "Shock casts against Undead reduce the remaining cooldown of Stormstrike by ${$s1/-1000}.1 sec.", "hash": "e32f913b122e103c", "src": "db2@1.60.1.70124"}
+{"id": 1307223, "field": "name", "en": "Arcane Salvager", "hash": "021e43b705ff7a51", "src": "db2@1.60.1.70124"}
+{"id": 1307223, "field": "description", "en": "Places an Arcane Salvager that enables more efficient disenchanting, and provides all the benefits of an Enchanted Lute. Requires a Campfire nearby. \r\n\r\nMay be placed over an Enchanted Lute to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "5981e275864a7193", "src": "db2@1.60.1.70124"}
+{"id": 1307226, "field": "name", "en": "Iron Oven", "hash": "b68b863f35fa632e", "src": "db2@1.60.1.70124"}
+{"id": 1307226, "field": "description", "en": "Places an Iron Oven required for the most advanced cooking recipes. Requires a Cooking Fire nearby. All camping features share a cooldown of $1308027d.", "hash": "8cd3c85960ca0880", "src": "db2@1.60.1.70124"}
+{"id": 1307227, "field": "name", "en": "Basic Campfire", "hash": "eb447f35ecbc0dc1", "src": "db2@1.60.1.70124"}
+{"id": 1307227, "field": "description", "en": "Builds a basic campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "7f185d8fbd4ab628", "src": "db2@1.60.1.70124"}
+{"id": 1307229, "field": "name", "en": "Camp Chair", "hash": "8da89737216e4c19", "src": "db2@1.60.1.70124"}
+{"id": 1307229, "field": "description", "en": "Assembles a camp chair that allows you and others sitting nearby to gain $1229519s1% increased critical strike chance with all spells and attacks, exclusive with Moonkin Aura.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "db795153e552655d", "src": "db2@1.60.1.70124"}
+{"id": 1307230, "field": "name", "en": "Camp Tent", "hash": "9bc8a8776b4bc48d", "src": "db2@1.60.1.70124"}
+{"id": 1307230, "field": "description", "en": "Builds a tent that allows you and others sitting nearby to increase Rested experience to $s2% of a level. No effect if Rested experience already exceeds that value.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "13e29a9503a0c724", "src": "db2@1.60.1.70124"}
+{"id": 1307234, "field": "name", "en": "Enchanted Lute", "hash": "94fb1453e4194e9c", "src": "db2@1.60.1.70124"}
+{"id": 1307234, "field": "description", "en": "Summons an enchanted lute that allows you and others sitting nearby to gain $?$PL<10[28]?$PL<20[71]?$PL<30[114]?$PL<40[163]?$PL<50[211]?$PL<60[260][$1230653s1 ] increase to Armor$?$PL<10[]?$PL<30[ and ][, ]$?$PL>59[$1230653s2]?$PL>49[12]?$PL>39[9]?$PL>29[7]?$PL>19[4]?$PL>9[2][]$?$PL>9[ increase to all stats][]$?$PL>59[, and $1230653s3]?$PL>49[, and 16]?$PL>39[, and 12]?$PL>29[, and 6][]$?$PL>29[ increase to all resistances][], exclusive with Mark of the Wild.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "170b93a86cfd0a93", "src": "db2@1.60.1.70124"}
+{"id": 1307237, "field": "name", "en": "Expert Campfire", "hash": "ba61e4d97e546733", "src": "db2@1.60.1.70124"}
+{"id": 1307237, "field": "description", "en": "Builds an expert campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "28ce231b83787325", "src": "db2@1.60.1.70124"}
+{"id": 1307239, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70124"}
+{"id": 1307239, "field": "description", "en": "Unrolls a banner that allows you and others members of the Alliance sitting nearby to gain $?$PL<40[14]?$PL<50[19]?$PL<60[27][$1229718s1] increased Spirit, exclusive with Divine Spirit.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "15c1d355ad36e8bf", "src": "db2@1.60.1.70124"}
+{"id": 1307240, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70124"}
+{"id": 1307240, "field": "description", "en": "Unrolls a banner that allows you and others members of the Horde sitting nearby to gain $?$PL<40[14]?$PL<50[19]?$PL<60[27][$1229718s1] increased Spirit, exclusive with Divine Spirit.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "50f84e548268c269", "src": "db2@1.60.1.70124"}
+{"id": 1307242, "field": "name", "en": "Fermenter", "hash": "2a72f82660a5a90b", "src": "db2@1.60.1.70124"}
+{"id": 1307242, "field": "description", "en": "Places a fermenter that allows the creation of certain reagents, and provides all of the benefits of a Mana Well. Requires a Campfire nearby. May be placed over a Mana Well to replace it. All camping features share a cooldown of $1308027d.", "hash": "4d4c9cf098bd96dd", "src": "db2@1.60.1.70124"}
+{"id": 1307243, "field": "name", "en": "Field Guide", "hash": "bf7f3c83b1ec32fb", "src": "db2@1.60.1.70124"}
+{"id": 1307243, "field": "description", "en": "Places a Field Guide that allows players to read it and gain Track Beasts, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Chair to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "08408bcef22a631b", "src": "db2@1.60.1.70124"}
+{"id": 1307244, "field": "name", "en": "First Aid Kit", "hash": "ac6617d413b0822b", "src": "db2@1.60.1.70124"}
+{"id": 1307244, "field": "description", "en": "Unpacks a first aid kit that allows you and others sitting nearby to gain $?$PL<12[3]?$PL<24[8]?$PL<36[21]?$PL<48[34]?$PL<60[45][$1230124s1] increased Stamina, exclusive with Power Word: Fortitude.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "c1b75e5849658393", "src": "db2@1.60.1.70124"}
+{"id": 1307245, "field": "name", "en": "Fish Bowl", "hash": "123d7b537d46a1ab", "src": "db2@1.60.1.70124"}
+{"id": 1307245, "field": "description", "en": "Places a small fish bowl that allows you and others sitting nearby to gain $1230098s1% increased stats, exclusive with Blessing of Kings.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "eba7cfc623d0cedc", "src": "db2@1.60.1.70124"}
+{"id": 1307246, "field": "name", "en": "Fishing Hut", "hash": "e502e1b68554f00a", "src": "db2@1.60.1.70124"}
+{"id": 1307246, "field": "description", "en": "Places a Fishing Hut that grants the ability to catch rare fish for $1280342d, Fishing Skill lures, and provides all of the benefits of a Fish Bowl. Requires a Campfire nearby. \r\n\r\nMay be placed over a Fish Bowl to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "73c33244f38dc2c8", "src": "db2@1.60.1.70124"}
+{"id": 1307247, "field": "name", "en": "Fishing Rack", "hash": "31cb457daf6168b5", "src": "db2@1.60.1.70124"}
+{"id": 1307247, "field": "description", "en": "Places a Fishing Rack that grants the ability to catch uncommon fish for $1280341d, Fishing Skill lures, and provides all of the benefits of a Fish Bowl. Requires a Campfire nearby. \r\n\r\nMay be placed over a Fish Bowl to replace it. All camping features share a cooldown of $1308027d.", "hash": "cd28c4bbbef06e4c", "src": "db2@1.60.1.70124"}
+{"id": 1307248, "field": "name", "en": "Greenhouse", "hash": "ec7bd7c4f0890f08", "src": "db2@1.60.1.70124"}
+{"id": 1307248, "field": "description", "en": "Places a Greenhouse that will grow herbs over time from seeds planted, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. \r\n\r\nMay be placed over an Incense Candle to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "452a5fb381df0197", "src": "db2@1.60.1.70124"}
+{"id": 1307251, "field": "name", "en": "Incense Candle", "hash": "0556be08df4ec55b", "src": "db2@1.60.1.70124"}
+{"id": 1307251, "field": "description", "en": "Ignites an incense candle that allows you and others sitting nearby to gain $?$PL<14[2]?$PL<28[6]?$PL<42[12]?$PL<56[18][$1229513s1] increased Intellect, exclusive with Arcane Intellect.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "6ff5feeeee5adf12", "src": "db2@1.60.1.70124"}
+{"id": 1307252, "field": "name", "en": "Journeyman Campfire", "hash": "b36a498adc5d9ec8", "src": "db2@1.60.1.70124"}
+{"id": 1307252, "field": "description", "en": "Builds a journeyman campfire that allows cooking and the placement of up to $s1 additional camp features. Players sitting or crafting nearby for $1229739d will gain benefits from other camp features.", "hash": "c188d8ff694a3970", "src": "db2@1.60.1.70124"}
+{"id": 1307254, "field": "name", "en": "Lodestone", "hash": "c809e41f9fc8af34", "src": "db2@1.60.1.70124"}
+{"id": 1307254, "field": "description", "en": "Erects a lodestone that allows you and others sitting nearby to gain $?$PL<12[12]?$PL<22[20]?$PL<32[32]?$PL<42[49]?$PL<52[67][$1230164s1] increased melee Attack Power, exclusive with Blessing of Might.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "a2566cd95ea948cc", "src": "db2@1.60.1.70124"}
+{"id": 1307255, "field": "name", "en": "Loom", "hash": "0a4c5425b38fa63a", "src": "db2@1.60.1.70124"}
+{"id": 1307255, "field": "description", "en": "Places a Loom usable for recipes that require it, and provides all the benefits of a Faction Banner. Requires a Campfire nearby. \r\n\r\nMay be placed over a Faction Banner to replace it. All camping features share a cooldown of $1308027d.", "hash": "4c1a1fbaaf0affdc", "src": "db2@1.60.1.70124"}
+{"id": 1307257, "field": "name", "en": "Cookie's Feast", "hash": "2193b4154ed04b08", "src": "db2@1.60.1.70124"}
+{"id": 1307257, "field": "description", "en": "Lay out Cookie's Feast that contains Stamina-boosting food. Requires a Cooking Fire nearby. All camping features share a cooldown of $1308027d.", "hash": "03a6e34838edec18", "src": "db2@1.60.1.70124"}
+{"id": 1307259, "field": "name", "en": "Mana Well", "hash": "cafcee01bc4b49ef", "src": "db2@1.60.1.70124"}
+{"id": 1307259, "field": "description", "en": "Constructs a mana well that allows you and others sitting nearby to regenerate $?$PL<24[10]?$PL<34[15]?$PL<44[20]?$PL<54[24][$1230587s1] Mana every 5 sec, exclusive with Blessing of Wisdom.\n\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "56057be259659206", "src": "db2@1.60.1.70124"}
+{"id": 1307261, "field": "name", "en": "Master Forge", "hash": "4a584bb8b1b96db2", "src": "db2@1.60.1.70124"}
+{"id": 1307261, "field": "description", "en": "Places a Master Forge usable for recipes that require it, and provides all of the benefits of a Sharpening Wheel. Requires a Campfire nearby. \r\n\r\nMay be placed over a Sharpening Wheel to replace it. All camping features share a cooldown of $1308027d.", "hash": "d95588b4add0b122", "src": "db2@1.60.1.70124"}
+{"id": 1307264, "field": "name", "en": "Molten Foundry", "hash": "bce5b81977718714", "src": "db2@1.60.1.70124"}
+{"id": 1307264, "field": "description", "en": "Places a Molten Foundry usable for recipes that require it, and provides all the benefits of a Lodestone. Requires a Campfire nearby. \r\n\r\nMay be placed over a Lodestone to replace it. All camping features share a cooldown of $1308027d.", "hash": "fcb4b585bad778fa", "src": "db2@1.60.1.70124"}
+{"id": 1307265, "field": "name", "en": "Plague Doctor's Laboratory", "hash": "da0156c5b15dbcf0", "src": "db2@1.60.1.70124"}
+{"id": 1307265, "field": "description", "en": "Places a Plague Doctor's Laboratory that contains healing potions, poultices, and provides all of the benefits of a First Aid Kit. Requires a Campfire nearby. \r\n\r\nMay be placed over a First Aid Kit to replace it. All camping features share a cooldown of $1308027d.", "hash": "19d08955ce663a12", "src": "db2@1.60.1.70124"}
+{"id": 1307266, "field": "name", "en": "Reagent Bot", "hash": "9b5fbc1e475c0e43", "src": "db2@1.60.1.70124"}
+{"id": 1307266, "field": "description", "en": "Summons a Reagent Bot that allows you and others nearby to purchase reagents. Requires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "8db6dd3edb97d129", "src": "db2@1.60.1.70124"}
+{"id": 1307288, "field": "name", "en": "Soulrip", "hash": "b8a7e5f968258f40", "src": "db2@1.60.1.70124"}
+{"id": 1307288, "field": "description", "en": "Deal $s1 Shadow damage to the target and drains $s3 Mana. Deals $s2 times \r\nas much damage to Undead.", "hash": "ea04a619051f3101", "src": "db2@1.60.1.70124"}
+{"id": 1307315, "field": "name", "en": "Soulrip", "hash": "b8a7e5f968258f40", "src": "db2@1.60.1.70124"}
+{"id": 1307315, "field": "description", "en": "Chance on harmful spell cast to deal $1307288s1 Shadow damage to the target and drain $1307288s3 Mana. Deals $1307288s2 times as much damage to Undead.\r\n", "hash": "61828e5c1db91586", "src": "db2@1.60.1.70124"}
+{"id": 1307334, "field": "name", "en": "Phantomspeaker Mask", "hash": "7d833b8ef1459bff", "src": "db2@1.60.1.70124"}
+{"id": 1307334, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects while in Haunted areas.", "hash": "4a6abc51c8ad3114", "src": "db2@1.60.1.70124"}
+{"id": 1307334, "field": "aura", "en": "In a Haunted area, healing done increased by up to $w1 and spell damage done increased by up to $w2.", "hash": "e681cdf13411059a", "src": "db2@1.60.1.70124"}
+{"id": 1307370, "field": "name", "en": "Mark of Ala'ro", "hash": "34ff4f63dd66464d", "src": "db2@1.60.1.70124"}
+{"id": 1307370, "field": "aura", "en": "Increases Armor by $s2, Fire, Frost, and Nature Resistance by $s1 and Health by $s3.", "hash": "82644f2871c69041", "src": "db2@1.60.1.70124"}
+{"id": 1307385, "field": "name", "en": "Repair Bot", "hash": "5d19532f37f739d8", "src": "db2@1.60.1.70124"}
+{"id": 1307385, "field": "description", "en": "Summons a Repair Bot that allows you and others nearby to buy reagents and repair gear. Requires a Campfire nearby. \r\n\r\nMay be placed over a Reagent Bot to replace it. All camping features share a cooldown of $1308027d.", "hash": "3e5f1087ecc0fc18", "src": "db2@1.60.1.70124"}
+{"id": 1307386, "field": "name", "en": "Rock Garden", "hash": "819f0b06d3b24555", "src": "db2@1.60.1.70124"}
+{"id": 1307386, "field": "description", "en": "Places a Rock Garden that spawns a common mining node over time, and provides all the benefits of a Lodestone. Requires a Campfire nearby. \r\n\r\nMay be placed over a Lodestone to replace it. All camping features share a cooldown of $1308027d.", "hash": "8c32c868b9507dc3", "src": "db2@1.60.1.70124"}
+{"id": 1307387, "field": "name", "en": "Seed Hybridizer", "hash": "59b99b4eae6bb164", "src": "db2@1.60.1.70124"}
+{"id": 1307387, "field": "description", "en": "Places a Seed Hybridizer that allows seeds to be multiplied or combined into rarer tiers, and provides all of the benefits of an Incense Candle. Requires a Campfire nearby. \r\n\r\nMay be placed over an Incense Candle to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "a466fc3ac3b08f26", "src": "db2@1.60.1.70124"}
+{"id": 1307391, "field": "name", "en": "Sewing Machine", "hash": "f7112ca015bed070", "src": "db2@1.60.1.70124"}
+{"id": 1307391, "field": "description", "en": "Places a Sewing Machine usable for recipes that require it, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Tent to replace it. All camping features share a cooldown of $1308027d.", "hash": "a50a8a939c7497ae", "src": "db2@1.60.1.70124"}
+{"id": 1307392, "field": "name", "en": "Sharpening Wheel", "hash": "d8707d4dc5b9be35", "src": "db2@1.60.1.70124"}
+{"id": 1307392, "field": "description", "en": "Constructs a sharpening wheel that grants you and others sitting nearby $?$PL<24[6]?$PL<38[11]?$PL<52[20][$1230172s1] increased Strength, exclusive with Strength of Earth Totem.\r\n\r\nRequires a Campfire nearby. All camping features share a cooldown of $1308027d.", "hash": "c9b7d553f9f20396", "src": "db2@1.60.1.70124"}
+{"id": 1307393, "field": "name", "en": "Spinning Wheel", "hash": "9b2c89dae0fe5b26", "src": "db2@1.60.1.70124"}
+{"id": 1307393, "field": "description", "en": "Places a Spinning Wheel that allows the creation of certain reagents, and provides all the benefits of a Faction Banner. Requires a Campfire nearby. \r\n\r\nMay be placed over a Faction Banner to replace it. All camping features share a cooldown of $1308027d.", "hash": "ade015d4f2b37ebb", "src": "db2@1.60.1.70124"}
+{"id": 1307395, "field": "name", "en": "Tanning Rack", "hash": "a3a0e0ccd90fac76", "src": "db2@1.60.1.70124"}
+{"id": 1307395, "field": "description", "en": "Places a Tanning Rack that allows the creation of certain reagents, and provides all of the benefits of a Camp Tent. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Tent to replace it. All camping features share a cooldown of $1308027d.", "hash": "b65c0c3325600ab8", "src": "db2@1.60.1.70124"}
+{"id": 1307396, "field": "name", "en": "Toxin Study", "hash": "8ed374816262eeae", "src": "db2@1.60.1.70124"}
+{"id": 1307396, "field": "description", "en": "Places a Toxin Study that contains healing potions, anti-venom, and provides all of the benefits of a First Aid Kit. Requires a Campfire nearby. \r\n\r\nMay be placed over a First Aid Kit to replace it.\r\n All camping features share a cooldown of $1308027d.", "hash": "de7d7930e99717a9", "src": "db2@1.60.1.70124"}
+{"id": 1307397, "field": "name", "en": "Trapper's Workbench", "hash": "6355088f92f66612", "src": "db2@1.60.1.70124"}
+{"id": 1307397, "field": "description", "en": "Places a Trapper's Workbench containing 1 trap, and provides all the benefits of a Camp Chair. Requires a Campfire nearby. \r\n\r\nMay be placed over a Camp Chair to replace it.\r\n\r\n All camping features share a cooldown of $1308027d.", "hash": "6a4f5109bf37387a", "src": "db2@1.60.1.70124"}
+{"id": 1307399, "field": "name", "en": "Shader", "hash": "ba90614120506f9a", "src": "db2@1.60.1.70124"}
+{"id": 1307400, "field": "name", "en": "Idol of the Wild Court", "hash": "e77c612de143674f", "src": "db2@1.60.1.70124"}
+{"id": 1307400, "field": "description", "en": "Wrath critical strikes extend the duration of your Insect Swarm on the target by ${$s1/1000} sec. Against Beasts, this duration is extended by an additional ${$s2/1000} sec.", "hash": "7161a38a26312555", "src": "db2@1.60.1.70124"}
+{"id": 1307411, "field": "name", "en": "Lightheaded", "hash": "2a9746c889ba2074", "src": "db2@1.60.1.70124"}
+{"id": 1307411, "field": "description", "en": "Drink me.  I'm delicious!", "hash": "d0f4ad455c342dcf", "src": "db2@1.60.1.70124"}
+{"id": 1307411, "field": "aura", "en": "You feel light as a feather... and your voice sounds very high pitched!", "hash": "c36d2ff6feff8282", "src": "db2@1.60.1.70124"}
+{"id": 1307423, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70124"}
+{"id": 1307423, "field": "description", "en": "Activate a Goaz Warder.", "hash": "3e261b236c4833f1", "src": "db2@1.60.1.70124"}
+{"id": 1307426, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70124"}
+{"id": 1307426, "field": "description", "en": "$@spelldesc1307423", "hash": "5cce541e0a68d60b", "src": "db2@1.60.1.70124"}
+{"id": 1307426, "field": "aura", "en": "Activating.", "hash": "3cfa7e61d95a7b10", "src": "db2@1.60.1.70124"}
+{"id": 1307433, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70124"}
+{"id": 1307508, "field": "name", "en": "Bramble Root", "hash": "e26b6157fe930c59", "src": "db2@1.60.1.70124"}
+{"id": 1307508, "field": "description", "en": "When struck in combat inflicts $s1 Nature and $1307509s1 Arcane damage to the attacker.", "hash": "cb88affa1cc7db73", "src": "db2@1.60.1.70124"}
+{"id": 1307508, "field": "aura", "en": "$s1 Nature damage dealt to attackers.", "hash": "c2dcafc32649bf29", "src": "db2@1.60.1.70124"}
+{"id": 1307509, "field": "name", "en": "Blazing Star", "hash": "24ce88e065877c32", "src": "db2@1.60.1.70124"}
+{"id": 1307509, "field": "aura", "en": "$s1 Arcane damage dealt to attackers.", "hash": "7c47b36af5a46ccb", "src": "db2@1.60.1.70124"}
+{"id": 1307519, "field": "name", "en": "Rootbinder's Will", "hash": "6f76fc48cf7effe6", "src": "db2@1.60.1.70124"}
+{"id": 1307519, "field": "description", "en": "Call upon nature's protection for $d. The first enemy to strike you with a melee attack becomes Rooted for $1307520d.", "hash": "79b025917cd39ec8", "src": "db2@1.60.1.70124"}
+{"id": 1307519, "field": "aura", "en": "Entangles the next enemy that deals Melee damage to you.", "hash": "831fbd9370de98b8", "src": "db2@1.60.1.70124"}
+{"id": 1307520, "field": "name", "en": "Rootbinder's Will", "hash": "6f76fc48cf7effe6", "src": "db2@1.60.1.70124"}
+{"id": 1307520, "field": "description", "en": "Roots the target in place and causes $o2 Nature damage over $d.  Damage caused may interrupt the effect.", "hash": "4275e94b07e549d1", "src": "db2@1.60.1.70124"}
+{"id": 1307520, "field": "aura", "en": "Rooted. Causes $s2 Nature damage every $t2 seconds.", "hash": "67ac6e3c09f442ff", "src": "db2@1.60.1.70124"}
+{"id": 1307611, "field": "name", "en": "Reward", "hash": "8d54db7e4d0f12ef", "src": "db2@1.60.1.70124"}
+{"id": 1307644, "field": "name", "en": "Spark", "hash": "c00db156a4a1f6a3", "src": "db2@1.60.1.70124"}
+{"id": 1307644, "field": "description", "en": "Melee attacks from enemies have a chance to refresh your Flame Blast cooldown.", "hash": "7c7474cc0bb2e3d4", "src": "db2@1.60.1.70124"}
+{"id": 1307654, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
+{"id": 1307660, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
+{"id": 1307667, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
+{"id": 1307694, "field": "name", "en": "[DNT] Pain", "hash": "17e6535e81827879", "src": "db2@1.60.1.70124"}
+{"id": 1307694, "field": "description", "en": "[DNT] Suffer $s1% maximum health in damage every $t1 sec. Cannot kill the target.\r\n\r\nThis is a debug spell.", "hash": "d831b8afe2e31a08", "src": "db2@1.60.1.70124"}
+{"id": 1307694, "field": "aura", "en": "[DNT] Suffering $w1% of your maximum health as damage every $t1 sec.", "hash": "df751d76dcafae8d", "src": "db2@1.60.1.70124"}
+{"id": 1307696, "field": "name", "en": "Skyshatter", "hash": "ccc249137d382ea0", "src": "db2@1.60.1.70124"}
+{"id": 1307696, "field": "description", "en": "Deal $s1 Nature damage to the target. Deals $s2 times as much damage to Dragonkin and Winged enemies.", "hash": "583039a30154ac37", "src": "db2@1.60.1.70124"}
+{"id": 1307760, "field": "name", "en": "Warplate of Burden", "hash": "f82fe803dd4d35e3", "src": "db2@1.60.1.70124"}
+{"id": 1307760, "field": "description", "en": "Strength increased by $1307762s1 while carrying a full inventory.", "hash": "5a54dc97be3d4db5", "src": "db2@1.60.1.70124"}
+{"id": 1307762, "field": "name", "en": "Weight of Duty", "hash": "0c580bb8e98965db", "src": "db2@1.60.1.70124"}
+{"id": 1307762, "field": "description", "en": "Increases Strength by $s1 while your inventory is full.", "hash": "624420e473ace923", "src": "db2@1.60.1.70124"}
+{"id": 1307762, "field": "aura", "en": "Strength increased by $s1.", "hash": "90d8a2f83ee1c8bf", "src": "db2@1.60.1.70124"}
+{"id": 1307779, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
+{"id": 1307791, "field": "name", "en": "Bark of the Scale", "hash": "3c667575788cce15", "src": "db2@1.60.1.70124"}
+{"id": 1307791, "field": "description", "en": "$s1 Health restored.", "hash": "1120fd47167fbe03", "src": "db2@1.60.1.70124"}
+{"id": 1307791, "field": "aura", "en": "$s1 Health restored.", "hash": "1120fd47167fbe03", "src": "db2@1.60.1.70124"}
+{"id": 1307792, "field": "name", "en": "Bark of the Scale", "hash": "3c667575788cce15", "src": "db2@1.60.1.70124"}
+{"id": 1307792, "field": "description", "en": "Restores $1305426s1 Health when you kill a Dragonkin that gives experience. This effect cannot occur more than once every $proccooldown sec.", "hash": "73c05b1b507f2572", "src": "db2@1.60.1.70124"}
+{"id": 1307848, "field": "name", "en": "Strength of the Moon", "hash": "3594622ac5a2947b", "src": "db2@1.60.1.70124"}
+{"id": 1307848, "field": "aura", "en": "Increases Physical and Arcane damage done by $s1%.", "hash": "8da8b7bd2ef1cc52", "src": "db2@1.60.1.70124"}
+{"id": 1307882, "field": "name", "en": "Debilitate", "hash": "275e1753ebcb4036", "src": "db2@1.60.1.70124"}
+{"id": 1307882, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70124"}
+{"id": 1307889, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
+{"id": 1307940, "field": "name", "en": "Light in the Dark", "hash": "7945e0e47688742a", "src": "db2@1.60.1.70124"}
+{"id": 1307940, "field": "description", "en": "Deal $s1 Holy damage to the target. Deals $s2 times as much damage to Undead and Demons.", "hash": "6d51a01e17f77040", "src": "db2@1.60.1.70124"}
+{"id": 1307943, "field": "name", "en": "Improved Pick Pocket and Distract 03", "hash": "a53bbc4784f15db1", "src": "db2@1.60.1.70124"}
+{"id": 1307943, "field": "description", "en": "Increases the chance your Pick Pocket and Distract abilities are successful by $s1%", "hash": "3f2913730b08df2c", "src": "db2@1.60.1.70124"}
+{"id": 1307944, "field": "name", "en": "Improved Pick Pocket and Distract 04", "hash": "a53bbc4884f15db2", "src": "db2@1.60.1.70124"}
+{"id": 1307944, "field": "description", "en": "Increases the chance your Pick Pocket and Distract abilities are successful by $s1%", "hash": "3f2913730b08df2c", "src": "db2@1.60.1.70124"}
+{"id": 1307945, "field": "name", "en": "Improved Pick Pocket and Distract 05", "hash": "a53bbc4984f15db3", "src": "db2@1.60.1.70124"}
+{"id": 1307945, "field": "description", "en": "Increases the chance your Pick Pocket and Distract abilities are successful by $s1%", "hash": "3f2913730b08df2c", "src": "db2@1.60.1.70124"}

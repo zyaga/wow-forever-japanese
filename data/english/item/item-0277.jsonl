@@ -1,318 +1,318 @@
-{"id": 277000, "field": "name", "en": "Cloudy Gustwoven Gloves", "hash": "c6fa03a030ed883d", "src": "db2@1.60.1.70009"}
-{"id": 277001, "field": "name", "en": "Cloudy Gustwoven Belt", "hash": "b712e6f42bb96dad", "src": "db2@1.60.1.70009"}
-{"id": 277002, "field": "name", "en": "Cloudy Gustwoven Trousers", "hash": "ab00f26169d5c673", "src": "db2@1.60.1.70009"}
-{"id": 277003, "field": "name", "en": "Cloudy Gustwoven Boots", "hash": "b0040249743a08a0", "src": "db2@1.60.1.70009"}
-{"id": 277004, "field": "name", "en": "Cloudy Windraveled Jerkin", "hash": "8c7231f6daa36977", "src": "db2@1.60.1.70009"}
-{"id": 277005, "field": "name", "en": "Cloudy Windraveled Armguards", "hash": "59a9c600c127a6d6", "src": "db2@1.60.1.70009"}
-{"id": 277006, "field": "name", "en": "Cloudy Windraveled Mitts", "hash": "b356f02ec0166151", "src": "db2@1.60.1.70009"}
-{"id": 277007, "field": "name", "en": "Cloudy Windraveled Strap", "hash": "1e21fbf40519f556", "src": "db2@1.60.1.70009"}
-{"id": 277008, "field": "name", "en": "Cloudy Windraveled Pants", "hash": "e6ec1413d9c4a8ef", "src": "db2@1.60.1.70009"}
-{"id": 277009, "field": "name", "en": "Cloudy Windraveled Footwraps", "hash": "e33e2da39b79b9e5", "src": "db2@1.60.1.70009"}
-{"id": 277010, "field": "name", "en": "Cloudy Stormsewn Vest", "hash": "d4602972bf022207", "src": "db2@1.60.1.70009"}
-{"id": 277011, "field": "name", "en": "Cloudy Stormsewn Cuffs", "hash": "61d21aee3a7af162", "src": "db2@1.60.1.70009"}
-{"id": 277012, "field": "name", "en": "Cloudy Stormsewn Handwraps", "hash": "61f29998958cf8e2", "src": "db2@1.60.1.70009"}
-{"id": 277013, "field": "name", "en": "Cloudy Stormsewn Cord", "hash": "d1d704b867fd8b09", "src": "db2@1.60.1.70009"}
-{"id": 277014, "field": "name", "en": "Cloudy Stormsewn Leggings", "hash": "f3d7d64d578fc48e", "src": "db2@1.60.1.70009"}
-{"id": 277015, "field": "name", "en": "Cloudy Stormsewn Shoes", "hash": "78f1e9f21e95c66e", "src": "db2@1.60.1.70009"}
-{"id": 277016, "field": "name", "en": "Azure Skyforged Chainmail", "hash": "3ee8b64d890298ea", "src": "db2@1.60.1.70009"}
-{"id": 277017, "field": "name", "en": "Azure Skyforged Wristguards", "hash": "12e1f9fe6885f329", "src": "db2@1.60.1.70009"}
-{"id": 277018, "field": "name", "en": "Azure Skyforged Gauntlets", "hash": "e7e2438efaab63a9", "src": "db2@1.60.1.70009"}
-{"id": 277019, "field": "name", "en": "Azure Skyforged Chain", "hash": "e00caff2efb7db2c", "src": "db2@1.60.1.70009"}
-{"id": 277020, "field": "name", "en": "Azure Skyforged Legguards", "hash": "aec9c22c737d4821", "src": "db2@1.60.1.70009"}
-{"id": 277021, "field": "name", "en": "Azure Skyforged Greaves", "hash": "1d9c2342a3be7c73", "src": "db2@1.60.1.70009"}
-{"id": 277022, "field": "name", "en": "Azure Gustwoven Harness", "hash": "78fca8e4ccd38f37", "src": "db2@1.60.1.70009"}
-{"id": 277023, "field": "name", "en": "Azure Gustwoven Bracers", "hash": "c4b30bf354664830", "src": "db2@1.60.1.70009"}
-{"id": 277024, "field": "name", "en": "Azure Gustwoven Gloves", "hash": "39665ec55488190e", "src": "db2@1.60.1.70009"}
-{"id": 277025, "field": "name", "en": "Azure Gustwoven Belt", "hash": "88ac097f7e9402f0", "src": "db2@1.60.1.70009"}
-{"id": 277026, "field": "name", "en": "Azure Gustwoven Trousers", "hash": "0caa1c547c1e6b8f", "src": "db2@1.60.1.70009"}
-{"id": 277027, "field": "name", "en": "Azure Gustwoven Boots", "hash": "f160aef2be6b04e4", "src": "db2@1.60.1.70009"}
-{"id": 277028, "field": "name", "en": "Azure Windraveled Jerkin", "hash": "ee1b5be4ecec0e93", "src": "db2@1.60.1.70009"}
-{"id": 277029, "field": "name", "en": "Azure Windraveled Armguards", "hash": "ee902d7472321ae3", "src": "db2@1.60.1.70009"}
-{"id": 277030, "field": "name", "en": "Azure Windraveled Mitts", "hash": "40c992b5c2794361", "src": "db2@1.60.1.70009"}
-{"id": 277031, "field": "name", "en": "Azure Windraveled Strap", "hash": "ab949e76077cd766", "src": "db2@1.60.1.70009"}
-{"id": 277032, "field": "name", "en": "Azure Windraveled Pants", "hash": "745eb69adc278aff", "src": "db2@1.60.1.70009"}
-{"id": 277033, "field": "name", "en": "Azure Windraveled Footwraps", "hash": "7824951c4c842df2", "src": "db2@1.60.1.70009"}
-{"id": 277034, "field": "name", "en": "Azure Stormsewn Vest", "hash": "a5f94bfd11dcb75b", "src": "db2@1.60.1.70009"}
-{"id": 277035, "field": "name", "en": "Azure Stormsewn Cuffs", "hash": "a32ec79784abeda6", "src": "db2@1.60.1.70009"}
-{"id": 277036, "field": "name", "en": "Azure Stormsewn Handwraps", "hash": "5b830f5c7364a135", "src": "db2@1.60.1.70009"}
-{"id": 277037, "field": "name", "en": "Azure Stormsewn Cord", "hash": "a3702743bad8204c", "src": "db2@1.60.1.70009"}
-{"id": 277038, "field": "name", "en": "Azure Stormsewn Leggings", "hash": "5581004069d869aa", "src": "db2@1.60.1.70009"}
-{"id": 277039, "field": "name", "en": "Azure Stormsewn Shoes", "hash": "ba4e969b68c6c2b2", "src": "db2@1.60.1.70009"}
-{"id": 277040, "field": "name", "en": "Cloudy Skyforged Helm", "hash": "80e6b8c3a9b8872f", "src": "db2@1.60.1.70009"}
-{"id": 277041, "field": "name", "en": "Cloudy Skyforged Pauldrons", "hash": "f7036ec23475b80b", "src": "db2@1.60.1.70009"}
-{"id": 277042, "field": "name", "en": "Cloudy Gustwoven Hood", "hash": "b7e35869a3dc2af7", "src": "db2@1.60.1.70009"}
-{"id": 277043, "field": "name", "en": "Cloudy Gustwoven Spaulders", "hash": "16b7a1ee8c6a624a", "src": "db2@1.60.1.70009"}
-{"id": 277044, "field": "name", "en": "Cloudy Windraveled Cover", "hash": "049c210a634bc824", "src": "db2@1.60.1.70009"}
-{"id": 277045, "field": "name", "en": "Cloudy Windraveled Drapes", "hash": "8944d433f34384e8", "src": "db2@1.60.1.70009"}
-{"id": 277046, "field": "name", "en": "Cloudy Stormsewn Cowl", "hash": "d1d7074f67fe2a76", "src": "db2@1.60.1.70009"}
-{"id": 277047, "field": "name", "en": "Cloudy Stormsewn Epaulets", "hash": "8475b9029b411893", "src": "db2@1.60.1.70009"}
-{"id": 277048, "field": "name", "en": "Azure Skyforged Helm", "hash": "527fdb4efc931c72", "src": "db2@1.60.1.70009"}
-{"id": 277049, "field": "name", "en": "Azure Skyforged Pauldrons", "hash": "f093e486124d605e", "src": "db2@1.60.1.70009"}
-{"id": 277050, "field": "name", "en": "Azure Gustwoven Hood", "hash": "897c7af4f6b6c03a", "src": "db2@1.60.1.70009"}
-{"id": 277051, "field": "name", "en": "Azure Gustwoven Spaulders", "hash": "104817b26a420a9d", "src": "db2@1.60.1.70009"}
-{"id": 277052, "field": "name", "en": "Azure Windraveled Cover", "hash": "920ec38c65aeaa34", "src": "db2@1.60.1.70009"}
-{"id": 277053, "field": "name", "en": "Azure Windraveled Drapes", "hash": "eaedfe21058c2a15", "src": "db2@1.60.1.70009"}
-{"id": 277054, "field": "name", "en": "Azure Stormsewn Cowl", "hash": "a37029dabad8bfb9", "src": "db2@1.60.1.70009"}
-{"id": 277055, "field": "name", "en": "Azure Stormsewn Epaulets", "hash": "e61ee2f0ad89bdaf", "src": "db2@1.60.1.70009"}
-{"id": 277056, "field": "name", "en": "Al'aketh Chainmail", "hash": "8c928c70290f9852", "src": "db2@1.60.1.70009"}
-{"id": 277057, "field": "name", "en": "Al'aketh Wristguards", "hash": "40e60fe7049f75d2", "src": "db2@1.60.1.70009"}
-{"id": 277058, "field": "name", "en": "Al'aketh Gauntlets", "hash": "358c19b69ab86311", "src": "db2@1.60.1.70009"}
-{"id": 277059, "field": "name", "en": "Al'aketh Chain", "hash": "5af07e2f924ea52a", "src": "db2@1.60.1.70009"}
-{"id": 277060, "field": "name", "en": "Al'aketh Legguards", "hash": "fc73984f138a4789", "src": "db2@1.60.1.70009"}
-{"id": 277061, "field": "name", "en": "Al'aketh Greaves", "hash": "0e97ac203dba483a", "src": "db2@1.60.1.70009"}
-{"id": 277062, "field": "name", "en": "Al'aketh Harness", "hash": "f56d1fe365e1ae40", "src": "db2@1.60.1.70009"}
-{"id": 277063, "field": "name", "en": "Al'aketh Bracers", "hash": "412382f7ed746728", "src": "db2@1.60.1.70009"}
-{"id": 277064, "field": "name", "en": "Al'aketh Gloves", "hash": "bf3c3c7ece3ac68f", "src": "db2@1.60.1.70009"}
-{"id": 277065, "field": "name", "en": "Al'aketh Belt", "hash": "12251ed2e20cb303", "src": "db2@1.60.1.70009"}
-{"id": 277066, "field": "name", "en": "Al'aketh Trousers", "hash": "ba37020cb748ef86", "src": "db2@1.60.1.70009"}
-{"id": 277067, "field": "name", "en": "Al'aketh Boots", "hash": "4a56973fc8d0e52a", "src": "db2@1.60.1.70009"}
-{"id": 277068, "field": "name", "en": "Al'aketh Jerkin", "hash": "374d2c9c26fbbacb", "src": "db2@1.60.1.70009"}
-{"id": 277069, "field": "name", "en": "Al'aketh Armguards", "hash": "f3766adb081e27c5", "src": "db2@1.60.1.70009"}
-{"id": 277070, "field": "name", "en": "Al'aketh Mitts", "hash": "0aa0ea4a204df9fa", "src": "db2@1.60.1.70009"}
-{"id": 277071, "field": "name", "en": "Al'aketh Strap", "hash": "756bf60b65518dee", "src": "db2@1.60.1.70009"}
-{"id": 277072, "field": "name", "en": "Al'aketh Pants", "hash": "3e360e2f39fc4198", "src": "db2@1.60.1.70009"}
-{"id": 277073, "field": "name", "en": "Al'aketh Footwraps", "hash": "7d0ad283e2703ac3", "src": "db2@1.60.1.70009"}
-{"id": 277074, "field": "name", "en": "Al'aketh Vestments", "hash": "e5816aa48345f6a7", "src": "db2@1.60.1.70009"}
-{"id": 277075, "field": "name", "en": "Al'aketh Cuffs", "hash": "5cafbcb7d46efcbb", "src": "db2@1.60.1.70009"}
-{"id": 277076, "field": "name", "en": "Al'aketh Handwraps", "hash": "c60a10f9da8df36e", "src": "db2@1.60.1.70009"}
-{"id": 277077, "field": "name", "en": "Al'aketh Cord", "hash": "124a0dc997280bd3", "src": "db2@1.60.1.70009"}
-{"id": 277078, "field": "name", "en": "Al'aketh Leggings", "hash": "fe60cf6593e45e87", "src": "db2@1.60.1.70009"}
-{"id": 277079, "field": "name", "en": "Al'aketh Shoes", "hash": "73cf8bbbb889d1c7", "src": "db2@1.60.1.70009"}
-{"id": 277080, "field": "name", "en": "Zephrali Chainmail", "hash": "55d0ae7f4b52ede6", "src": "db2@1.60.1.70009"}
-{"id": 277081, "field": "name", "en": "Zephrali Wristguards", "hash": "96fee7bb2530ff83", "src": "db2@1.60.1.70009"}
-{"id": 277082, "field": "name", "en": "Zephrali Gauntlets", "hash": "feca3bc0bcfbb8a5", "src": "db2@1.60.1.70009"}
-{"id": 277083, "field": "name", "en": "Zephrali Chain", "hash": "d1ff75e2dd296579", "src": "db2@1.60.1.70009"}
-{"id": 277084, "field": "name", "en": "Zephrali Legguards", "hash": "c5b1ba5e35cd9d1d", "src": "db2@1.60.1.70009"}
-{"id": 277085, "field": "name", "en": "Zephrali Greaves", "hash": "28f2d64c3a3d9874", "src": "db2@1.60.1.70009"}
-{"id": 277086, "field": "name", "en": "Zephrali Harness", "hash": "0fc84a146264fe7a", "src": "db2@1.60.1.70009"}
-{"id": 277087, "field": "name", "en": "Zephrali Bracers", "hash": "5b7ead23e9f7b762", "src": "db2@1.60.1.70009"}
-{"id": 277088, "field": "name", "en": "Zephrali Gloves", "hash": "abe4fe4815c7fb81", "src": "db2@1.60.1.70009"}
-{"id": 277089, "field": "name", "en": "Zephrali Belt", "hash": "7aa0596061faf8b5", "src": "db2@1.60.1.70009"}
-{"id": 277090, "field": "name", "en": "Zephrali Trousers", "hash": "36dd96d68d697121", "src": "db2@1.60.1.70009"}
-{"id": 277091, "field": "name", "en": "Zephrali Boots", "hash": "c1658ef213aba58a", "src": "db2@1.60.1.70009"}
-{"id": 277092, "field": "name", "en": "Zephrali Jerkin", "hash": "23f5ee666e88efac", "src": "db2@1.60.1.70009"}
-{"id": 277093, "field": "name", "en": "Zephrali Armguards", "hash": "bcb48cea2a617d59", "src": "db2@1.60.1.70009"}
-{"id": 277094, "field": "name", "en": "Zephrali Mitts", "hash": "81afe1fd6b28ba49", "src": "db2@1.60.1.70009"}
-{"id": 277095, "field": "name", "en": "Zephrali Strap", "hash": "ec7aedbeb02c4e3d", "src": "db2@1.60.1.70009"}
-{"id": 277096, "field": "name", "en": "Zephrali Pants", "hash": "b54505e284d701e7", "src": "db2@1.60.1.70009"}
-{"id": 277097, "field": "name", "en": "Zephrali Footwraps", "hash": "4648f49204b39068", "src": "db2@1.60.1.70009"}
-{"id": 277098, "field": "name", "en": "Zephrali Vest", "hash": "7d4e6d116e1ae883", "src": "db2@1.60.1.70009"}
-{"id": 277099, "field": "name", "en": "Zephrali Cuffs", "hash": "d3beb46a1f49bd1b", "src": "db2@1.60.1.70009"}
-{"id": 277100, "field": "name", "en": "Zephrali Handwraps", "hash": "8f483308fcd14902", "src": "db2@1.60.1.70009"}
-{"id": 277101, "field": "name", "en": "Zephrali Cord", "hash": "7ac5485717165185", "src": "db2@1.60.1.70009"}
-{"id": 277102, "field": "name", "en": "Zephrali Leggings", "hash": "7b07642f6a04e022", "src": "db2@1.60.1.70009"}
-{"id": 277103, "field": "name", "en": "Zephrali Shoes", "hash": "eade836e03649227", "src": "db2@1.60.1.70009"}
-{"id": 277104, "field": "name", "en": "Zephrali Greatsword", "hash": "4b0dee9654b4c715", "src": "db2@1.60.1.70009"}
-{"id": 277105, "field": "name", "en": "Zephrali Blade", "hash": "c0faf36533de16bf", "src": "db2@1.60.1.70009"}
-{"id": 277106, "field": "name", "en": "Zephrali Smasher", "hash": "73ecaf43e3adba1b", "src": "db2@1.60.1.70009"}
-{"id": 277107, "field": "name", "en": "Zephrali Bludgeon", "hash": "4dc739c9c5473c6d", "src": "db2@1.60.1.70009"}
-{"id": 277108, "field": "name", "en": "Zephrali Knife", "hash": "5f3d10c744aed7da", "src": "db2@1.60.1.70009"}
-{"id": 277109, "field": "name", "en": "Zephrali Greatstaff", "hash": "4aa3552574e7b7de", "src": "db2@1.60.1.70009"}
-{"id": 277110, "field": "name", "en": "Zephrali Bow", "hash": "08c0c171b980016d", "src": "db2@1.60.1.70009"}
-{"id": 277111, "field": "name", "en": "Zephrali Crossbow", "hash": "2537b0bdf7b1e226", "src": "db2@1.60.1.70009"}
-{"id": 277112, "field": "name", "en": "Zum'rah's Head", "hash": "8614fa93a1ef0c0f", "src": "db2@1.60.1.70009"}
-{"id": 277113, "field": "name", "en": "Apprentice's Herb Pouch", "hash": "70eca1282b2b2854", "src": "db2@1.60.1.70009"}
-{"id": 277114, "field": "name", "en": "Apprentice's Skinning Satchel", "hash": "7e9b7a9fcb464e67", "src": "db2@1.60.1.70009"}
-{"id": 277115, "field": "name", "en": "Apprentice's Mining Pack", "hash": "8c00a549234ce7d4", "src": "db2@1.60.1.70009"}
-{"id": 277119, "field": "name", "en": "Gatehouse Shipment", "hash": "7a46f8744eb0e398", "src": "db2@1.60.1.70009"}
-{"id": 277119, "field": "description", "en": "Deliver to Gatehouse stockroom entrance, floor 2, Trias' Property, Trade District", "hash": "3a90c45f00c537b6", "src": "db2@1.60.1.70009"}
-{"id": 277128, "field": "name", "en": "Bloodtalon Martriarch Eggs", "hash": "8232f4d695deb72e", "src": "db2@1.60.1.70009"}
-{"id": 277129, "field": "name", "en": "Fragment of the Firelands", "hash": "5792e331b86ff4a7", "src": "db2@1.60.1.70009"}
-{"id": 277132, "field": "name", "en": "Harvester Override Signalcaster", "hash": "cc39dfb4adbc0f99", "src": "db2@1.60.1.70009"}
-{"id": 277132, "field": "description", "en": "Override control of the target mechanical creature for up to $d. The target will attack slower while under your control. Ineffective on targets above level $m1.", "hash": "7f04cd90560a9eec", "src": "db2@1.60.1.70009"}
-{"id": 277135, "field": "name", "en": "Forgotten Loa Idol", "hash": "d18b967a4b08443e", "src": "db2@1.60.1.70009"}
-{"id": 277135, "field": "description", "en": "The idol seems to depict the Loa of Treachery, Dambala.", "hash": "6e30eb014b79eaed", "src": "db2@1.60.1.70009"}
-{"id": 277136, "field": "name", "en": "Brooch of the Wardens", "hash": "ad088c606a9b0b72", "src": "db2@1.60.1.70009"}
-{"id": 277136, "field": "description", "en": "Grants access to the Vord'anaar Prison within Barrow Deeps.", "hash": "3d578e50df0d8b2b", "src": "db2@1.60.1.70009"}
-{"id": 277140, "field": "name", "en": "An'she's Radiance", "hash": "29fa6e043b3b8cc8", "src": "db2@1.60.1.70009"}
-{"id": 277153, "field": "name", "en": "Intricate Filigree", "hash": "d7c267c0d505bc97", "src": "db2@1.60.1.70009"}
-{"id": 277154, "field": "name", "en": "Corrupted Gemstone", "hash": "96a44abcca6c30c2", "src": "db2@1.60.1.70009"}
-{"id": 277158, "field": "name", "en": "Wrapped Reading Material", "hash": "6ee83b813751e437", "src": "db2@1.60.1.70009"}
-{"id": 277172, "field": "name", "en": "Corrupted Chillhowl Shard", "hash": "67fca80b08e33f25", "src": "db2@1.60.1.70009"}
-{"id": 277174, "field": "name", "en": "Corrupted Dreadspinner Shard", "hash": "5053d76467451095", "src": "db2@1.60.1.70009"}
-{"id": 277175, "field": "name", "en": "Corrupted Tangleclaw Shard", "hash": "6ae5006768b1f92e", "src": "db2@1.60.1.70009"}
-{"id": 277178, "field": "name", "en": "Corrupted Sorrowful Shard", "hash": "126f17789853f54e", "src": "db2@1.60.1.70009"}
-{"id": 277179, "field": "name", "en": "Corrupted Amethrax Shard", "hash": "2965b577ca02c06e", "src": "db2@1.60.1.70009"}
-{"id": 277190, "field": "name", "en": "Fang of Githyiss", "hash": "c0cb6394dcf78856", "src": "db2@1.60.1.70009"}
-{"id": 277194, "field": "name", "en": "Trollbane Conquests", "hash": "3401d39665c9f9b6", "src": "db2@1.60.1.70009"}
-{"id": 277195, "field": "name", "en": "The Forsaken Ally", "hash": "32ee1f1c31cbe887", "src": "db2@1.60.1.70009"}
-{"id": 277196, "field": "name", "en": "Field Accounts of Horde Razings", "hash": "9a5c7785909a0e75", "src": "db2@1.60.1.70009"}
-{"id": 277197, "field": "name", "en": "Cycles of Morality", "hash": "b44efff27a4a7ce3", "src": "db2@1.60.1.70009"}
-{"id": 277198, "field": "name", "en": "Gatehouse Shipment", "hash": "7a46f8744eb0e398", "src": "db2@1.60.1.70009"}
-{"id": 277198, "field": "description", "en": "Place outside the door on the second floor of Trias' Cheese.\nDeliver to Gatehouse stockroom entrance, floor 2, Trias' Property, Trade District", "hash": "c2727522f70bb861", "src": "db2@1.60.1.70009"}
-{"id": 277199, "field": "name", "en": "Pouch of Smoldering Incense", "hash": "244d563d103d91c2", "src": "db2@1.60.1.70009"}
-{"id": 277200, "field": "name", "en": "Scorched Leather Pouch", "hash": "857dc3e6e00e5194", "src": "db2@1.60.1.70009"}
-{"id": 277202, "field": "name", "en": "Artifact Seeker's Pendant", "hash": "5b6d8590c421510d", "src": "db2@1.60.1.70009"}
-{"id": 277203, "field": "name", "en": "Scholarly Pendant", "hash": "b6ce4025363a49a4", "src": "db2@1.60.1.70009"}
-{"id": 277204, "field": "name", "en": "Erudite's Amulet", "hash": "a3b6ea7c79bef7e8", "src": "db2@1.60.1.70009"}
-{"id": 277205, "field": "name", "en": "Cloak of the Divine Storm", "hash": "e6f7db574c40fcbb", "src": "db2@1.60.1.70009"}
-{"id": 277206, "field": "name", "en": "Brilliant Cloak", "hash": "3425fe5cea821de1", "src": "db2@1.60.1.70009"}
-{"id": 277207, "field": "name", "en": "Well-Weathered Cloak", "hash": "171a2dd61d16819e", "src": "db2@1.60.1.70009"}
-{"id": 277208, "field": "name", "en": "Determined Band", "hash": "159871e7a107f3fe", "src": "db2@1.60.1.70009"}
-{"id": 277209, "field": "name", "en": "Ponderous Loop", "hash": "aea5ebe8bf032f13", "src": "db2@1.60.1.70009"}
-{"id": 277210, "field": "name", "en": "Pyrewood Signet Ring", "hash": "a62880b9db18f04d", "src": "db2@1.60.1.70009"}
-{"id": 277211, "field": "name", "en": "Dudd's Thinkin' Cap", "hash": "19ffad9d57dad686", "src": "db2@1.60.1.70009"}
-{"id": 277212, "field": "name", "en": "Soulwoven Epaulets", "hash": "df0c3fb07551d258", "src": "db2@1.60.1.70009"}
-{"id": 277213, "field": "name", "en": "Dro'zem's Tunic", "hash": "f48da86855702fb0", "src": "db2@1.60.1.70009"}
-{"id": 277214, "field": "name", "en": "Crusty Cuffs", "hash": "4da34061ab21ee0c", "src": "db2@1.60.1.70009"}
-{"id": 277215, "field": "name", "en": "Nimble Gloves", "hash": "a5b1160da9d394b6", "src": "db2@1.60.1.70009"}
-{"id": 277216, "field": "name", "en": "Cross-Stitched Cord", "hash": "234bb4eb362eabd3", "src": "db2@1.60.1.70009"}
-{"id": 277217, "field": "name", "en": "Patchy Pants", "hash": "3206a2a09253841c", "src": "db2@1.60.1.70009"}
-{"id": 277218, "field": "name", "en": "Incinerator's Boots", "hash": "71f122baad8c8b8e", "src": "db2@1.60.1.70009"}
-{"id": 277219, "field": "name", "en": "Solomon's Comfortable Hat", "hash": "686f9162fbec0630", "src": "db2@1.60.1.70009"}
-{"id": 277220, "field": "name", "en": "Shabby Spaulders", "hash": "e9c8f45a8d7b8145", "src": "db2@1.60.1.70009"}
-{"id": 277221, "field": "name", "en": "Grimtotem Naturalist's Tunic", "hash": "a3498ab3e4df6fc5", "src": "db2@1.60.1.70009"}
-{"id": 277222, "field": "name", "en": "Feathered Cuffs", "hash": "c7dadf712b4f869f", "src": "db2@1.60.1.70009"}
-{"id": 277223, "field": "name", "en": "Traveled Gloves", "hash": "0be13d728a50c69f", "src": "db2@1.60.1.70009"}
-{"id": 277224, "field": "name", "en": "Kurzen Headshrinker's Cinch", "hash": "909cf9e92ceef0d7", "src": "db2@1.60.1.70009"}
-{"id": 277225, "field": "name", "en": "Feathered Leggings", "hash": "77ec951b1b1214e6", "src": "db2@1.60.1.70009"}
-{"id": 277226, "field": "name", "en": "Disjointed Shoes", "hash": "f98b9f4e73123e48", "src": "db2@1.60.1.70009"}
-{"id": 277227, "field": "name", "en": "Magistrate's Chain Hood", "hash": "0beacbe25b926b4f", "src": "db2@1.60.1.70009"}
-{"id": 277228, "field": "name", "en": "Snakescale Pauldrons", "hash": "75a3d8cd7fa4320f", "src": "db2@1.60.1.70009"}
-{"id": 277229, "field": "name", "en": "Enduring Chain Vest", "hash": "90f8f3fc8096dabb", "src": "db2@1.60.1.70009"}
-{"id": 277230, "field": "name", "en": "Grayscale Bracers", "hash": "fd0480e98e8daca4", "src": "db2@1.60.1.70009"}
-{"id": 277231, "field": "name", "en": "Conductive Gauntlets", "hash": "318489f76e426c26", "src": "db2@1.60.1.70009"}
-{"id": 277232, "field": "name", "en": "Jailer's Discarded Chain", "hash": "acf9d02f8d3397d3", "src": "db2@1.60.1.70009"}
-{"id": 277233, "field": "name", "en": "Clinking Mail Legguards", "hash": "097e381f711c981f", "src": "db2@1.60.1.70009"}
-{"id": 277234, "field": "name", "en": "Alacritous Treads", "hash": "07241317f6bf26d2", "src": "db2@1.60.1.70009"}
-{"id": 277235, "field": "name", "en": "Soldier's Visor", "hash": "78100c6bff500525", "src": "db2@1.60.1.70009"}
-{"id": 277236, "field": "name", "en": "Pauldrons of Vindication", "hash": "0ee07dd2cc8dbe6c", "src": "db2@1.60.1.70009"}
-{"id": 277237, "field": "name", "en": "Inspiring Chestplate", "hash": "38ef535137d73632", "src": "db2@1.60.1.70009"}
-{"id": 277238, "field": "name", "en": "Shimmering Bracers", "hash": "fb7d3c9e6e323b8f", "src": "db2@1.60.1.70009"}
-{"id": 277239, "field": "name", "en": "Bejeweled Punchers", "hash": "0953c5b36d9f6592", "src": "db2@1.60.1.70009"}
-{"id": 277240, "field": "name", "en": "Gilded Plate Belt", "hash": "d8da960ffd9be230", "src": "db2@1.60.1.70009"}
-{"id": 277241, "field": "name", "en": "Double-Plated Legplates", "hash": "e0a6b81929d0d7cc", "src": "db2@1.60.1.70009"}
-{"id": 277242, "field": "name", "en": "Silverrune Greaves", "hash": "4e82f18c88e3be2f", "src": "db2@1.60.1.70009"}
-{"id": 277243, "field": "name", "en": "Silverbane Slicer", "hash": "7171f5b21b9e3ff6", "src": "db2@1.60.1.70009"}
-{"id": 277244, "field": "name", "en": "Guardian's Maulers", "hash": "02b4239ced0160f7", "src": "db2@1.60.1.70009"}
-{"id": 277245, "field": "name", "en": "Swampspine Crusher", "hash": "ae12cf42fcccddb5", "src": "db2@1.60.1.70009"}
-{"id": 277246, "field": "name", "en": "Ruby-Adorned Blade", "hash": "df4f8688da33440d", "src": "db2@1.60.1.70009"}
-{"id": 277247, "field": "name", "en": "Mug of Muddled Memories", "hash": "fa6bc1977034cc33", "src": "db2@1.60.1.70009"}
-{"id": 277248, "field": "name", "en": "Notched Ritual Rib", "hash": "bff2dc55645815ac", "src": "db2@1.60.1.70009"}
-{"id": 277250, "field": "name", "en": "The Skullcracker", "hash": "e614b8a8a6160647", "src": "db2@1.60.1.70009"}
-{"id": 277253, "field": "name", "en": "Staff of Brutal Cunning", "hash": "8d12568eae9e99cf", "src": "db2@1.60.1.70009"}
-{"id": 277254, "field": "name", "en": "Truthseeker's Bow", "hash": "03d54b85e6599bf4", "src": "db2@1.60.1.70009"}
-{"id": 277255, "field": "name", "en": "Misplaced Shooter", "hash": "63aba8fbc65475a5", "src": "db2@1.60.1.70009"}
-{"id": 277256, "field": "name", "en": "Dudd's Second-Favorite Wand", "hash": "5b237b0774b15015", "src": "db2@1.60.1.70009"}
-{"id": 277257, "field": "name", "en": "Raven Hill Crest", "hash": "5b2c45500ea6548b", "src": "db2@1.60.1.70009"}
-{"id": 277258, "field": "name", "en": "Crest of Elucidation", "hash": "0d3111f6eb9081a4", "src": "db2@1.60.1.70009"}
-{"id": 277259, "field": "name", "en": "Fermented Restoration Potion", "hash": "8b5bd8ad23f8f3cc", "src": "db2@1.60.1.70009"}
-{"id": 277260, "field": "name", "en": "Researcher's Night Light", "hash": "2111ce6bb23ce8f4", "src": "db2@1.60.1.70009"}
-{"id": 277267, "field": "name", "en": "Faladiel's Heart", "hash": "415755ec8ab565fe", "src": "db2@1.60.1.70009"}
-{"id": 277267, "field": "description", "en": "The heart is black and sickly-looking.", "hash": "75e417ece7695484", "src": "db2@1.60.1.70009"}
-{"id": 277269, "field": "name", "en": "Kuramaa's Mask", "hash": "0b35bf96a09c2524", "src": "db2@1.60.1.70009"}
-{"id": 277277, "field": "name", "en": "Olgra's Adornments", "hash": "84b9820626780b7c", "src": "db2@1.60.1.70009"}
-{"id": 277278, "field": "name", "en": "Handful of Cattails", "hash": "a194f45ef16a4ef8", "src": "db2@1.60.1.70009"}
-{"id": 277279, "field": "name", "en": "Speargrass Cuttings", "hash": "9d747155861ce052", "src": "db2@1.60.1.70009"}
-{"id": 277284, "field": "name", "en": "Migi's Lunch", "hash": "e10e1a2ad4f8c1ee", "src": "db2@1.60.1.70009"}
-{"id": 277286, "field": "name", "en": "Encroacher's Claim", "hash": "dd3b180513211890", "src": "db2@1.60.1.70009"}
-{"id": 277288, "field": "name", "en": "Pathfinder's Clearway", "hash": "2aed7ab385fe1937", "src": "db2@1.60.1.70009"}
-{"id": 277289, "field": "name", "en": "Traveler's Shawl", "hash": "819ed1caa1163d8f", "src": "db2@1.60.1.70009"}
-{"id": 277329, "field": "name", "en": "Torch of Eternal Flame", "hash": "d69cee5a7aafea23", "src": "db2@1.60.1.70009"}
-{"id": 277329, "field": "description", "en": "Hold forth the Torch of Eternal Flame.", "hash": "d92c5ba17483df26", "src": "db2@1.60.1.70009"}
-{"id": 277331, "field": "name", "en": "Handful of Complicated Parts", "hash": "288a181200f3d57f", "src": "db2@1.60.1.70009"}
-{"id": 277332, "field": "name", "en": "Scuffed Shipping Crate", "hash": "2b25024033784fe7", "src": "db2@1.60.1.70009"}
-{"id": 277470, "field": "name", "en": "Schematic: Harvester Override Signalcaster", "hash": "ec9fa9e03fa6d1b1", "src": "db2@1.60.1.70009"}
-{"id": 277470, "field": "description", "en": "Teaches you how to make a Harvester Override Signalcaster.", "hash": "3e7b40297e674d5a", "src": "db2@1.60.1.70009"}
-{"id": 277483, "field": "name", "en": "Scroll of Frog Familiar", "hash": "155ff47b42e68f14", "src": "db2@1.60.1.70009"}
-{"id": 277483, "field": "description", "en": "Summon a faithful frog familiar for $d. Its presence increases your Intellect by $s2.", "hash": "af2388c796ce05cb", "src": "db2@1.60.1.70009"}
-{"id": 277484, "field": "name", "en": "Scroll of Confuse Beast", "hash": "763f8db7e4c54ca8", "src": "db2@1.60.1.70009"}
-{"id": 277484, "field": "description", "en": "Bewitch the target Beast, reducing the damage it does to you by $s1%.", "hash": "ba65d22ec465e7d6", "src": "db2@1.60.1.70009"}
-{"id": 277485, "field": "name", "en": "Scroll of Imbue Frost", "hash": "bb3e3717ff57bb1d", "src": "db2@1.60.1.70009"}
-{"id": 277485, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done by Frost spells and effects by up to $1306518s1.", "hash": "b4ef8d75938bbb9a", "src": "db2@1.60.1.70009"}
-{"id": 277486, "field": "name", "en": "Scroll of Imbue Striking", "hash": "22dc8328c7966afd", "src": "db2@1.60.1.70009"}
-{"id": 277486, "field": "description", "en": "Imbue a staff with magic for 1 hour, causing it to occasionally unleash an Arcane Missile at targets you damage with a spell.", "hash": "c38eef90c1a87376", "src": "db2@1.60.1.70009"}
-{"id": 277487, "field": "name", "en": "Scroll of Imbue Baleflame", "hash": "6753875f4448b496", "src": "db2@1.60.1.70009"}
-{"id": 277487, "field": "description", "en": "Imbue a staff with magic for 1 hour, reducing your spell targets' Fire resistance by $1306572s1.", "hash": "3ad271c584fba359", "src": "db2@1.60.1.70009"}
-{"id": 277488, "field": "name", "en": "Scroll of Imbue Iceknife", "hash": "d65a01b5c48a80ec", "src": "db2@1.60.1.70009"}
-{"id": 277488, "field": "description", "en": "Imbue a dagger with magic for 1 hour, causing it to occasionally freeze foes when hit.", "hash": "17199842f0afb607", "src": "db2@1.60.1.70009"}
-{"id": 277489, "field": "name", "en": "Scroll of Imbue Spark", "hash": "9f2832f9fedc77b3", "src": "db2@1.60.1.70009"}
-{"id": 277489, "field": "description", "en": "Imbue a sword with magic for 1 hour, causing your Flame Blast cooldown to sometimes reset when you are struck by a melee attack.", "hash": "ce93d8d2ef8daa75", "src": "db2@1.60.1.70009"}
-{"id": 277490, "field": "name", "en": "Scroll of the Saber", "hash": "eafd39e1806d4dd3", "src": "db2@1.60.1.70009"}
-{"id": 277490, "field": "description", "en": "Use on Blade of Silverlaine to create a powerful weapon.", "hash": "4228a647dfcc4a3a", "src": "db2@1.60.1.70009"}
-{"id": 277491, "field": "name", "en": "Scroll of Rebuke Elemental", "hash": "e7d89fb0ab14d077", "src": "db2@1.60.1.70009"}
-{"id": 277491, "field": "description", "en": "Increase the damage target Elemental takes from your spells by $s1%.", "hash": "9181c2c496275722", "src": "db2@1.60.1.70009"}
-{"id": 277492, "field": "name", "en": "Scroll of Khadgar's Unlocking", "hash": "e220a72333e50a0c", "src": "db2@1.60.1.70009"}
-{"id": 277492, "field": "description", "en": "Magically open a lock of difficulty $s1 or lower.", "hash": "95ebe730ddf54b56", "src": "db2@1.60.1.70009"}
-{"id": 277493, "field": "name", "en": "Scroll of Cat Familiar", "hash": "ecdc306392e293e2", "src": "db2@1.60.1.70009"}
-{"id": 277493, "field": "description", "en": "Summon a faithful cat familiar for $d. Its presence increases your Intellect by $s2.", "hash": "bf38ae4592267554", "src": "db2@1.60.1.70009"}
-{"id": 277494, "field": "name", "en": "Scroll of Imbue Accuracy", "hash": "d3d5904741354a7c", "src": "db2@1.60.1.70009"}
-{"id": 277494, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing your chance to hit with spells by $1306578s1.", "hash": "35dc6d237eebdd37", "src": "db2@1.60.1.70009"}
-{"id": 277495, "field": "name", "en": "Scroll of Imbue Quickening", "hash": "8959e27cc1935d17", "src": "db2@1.60.1.70009"}
-{"id": 277495, "field": "description", "en": "Imbue a staff with magic for 1 hour, giving your damaging spells a chance to increase your attack speed with Wands.", "hash": "b0b098ceea470833", "src": "db2@1.60.1.70009"}
-{"id": 277496, "field": "name", "en": "Scroll of Imbue Balefrost", "hash": "682506a0cc4ce0a6", "src": "db2@1.60.1.70009"}
-{"id": 277496, "field": "description", "en": "Imbue a staff with magic for 1 hour, reducing your spell targets' Frost resistance by $1306580s1.", "hash": "927b22bd2547bb65", "src": "db2@1.60.1.70009"}
-{"id": 277497, "field": "name", "en": "Scroll of Imbue Flame", "hash": "ba6cb7d677538f0d", "src": "db2@1.60.1.70009"}
-{"id": 277497, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done with Fire spells and effects by up to $1306579s1.", "hash": "4b78123771929c8c", "src": "db2@1.60.1.70009"}
-{"id": 277498, "field": "name", "en": "Scroll of Imbue Manablade", "hash": "f261e2e630ed05e4", "src": "db2@1.60.1.70009"}
-{"id": 277498, "field": "description", "en": "Imbue a dagger with magic for 1 hour, causing it to occasionally restore your mana when it hits a target.", "hash": "c6550912be03ff5c", "src": "db2@1.60.1.70009"}
-{"id": 277499, "field": "name", "en": "Scroll of Greater Cryoblast", "hash": "f0618e688866bd2d", "src": "db2@1.60.1.70009"}
-{"id": 277499, "field": "description", "en": "Inflicts $s1 Frost damage in a 5 yard radius.", "hash": "68d7f26fc49aefda", "src": "db2@1.60.1.70009"}
-{"id": 277500, "field": "name", "en": "Scroll of Imbue Greater Flame", "hash": "0cb01171bcea2a1a", "src": "db2@1.60.1.70009"}
-{"id": 277500, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done with Fire spells and effects by up to $1306581s1.", "hash": "5bf35bb0e53d7bba", "src": "db2@1.60.1.70009"}
-{"id": 277501, "field": "name", "en": "Scroll of Imbue Greater Frost", "hash": "0d8190b244ee563b", "src": "db2@1.60.1.70009"}
-{"id": 277501, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done with Frost spells and effects by up to $1306582s1.", "hash": "5faaea41cd6b8ea5", "src": "db2@1.60.1.70009"}
-{"id": 277502, "field": "name", "en": "Scroll of Imbue Precision", "hash": "56bfd3bb6ec70944", "src": "db2@1.60.1.70009"}
-{"id": 277502, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing your chance to critically hit with spells by $1306583s1%.", "hash": "2bbe924457133e22", "src": "db2@1.60.1.70009"}
-{"id": 277503, "field": "name", "en": "Scroll of Imbue Spellbreak", "hash": "023e44cd744bc70e", "src": "db2@1.60.1.70009"}
-{"id": 277503, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done by Fire spells and effects by up to $1306515s1.", "hash": "046a7061fde3d4e1", "src": "db2@1.60.1.70009"}
-{"id": 277504, "field": "name", "en": "Scroll of Wit", "hash": "5c364bf20e97b656", "src": "db2@1.60.1.70009"}
-{"id": 277504, "field": "description", "en": "Use on Witchblade to create a powerful weapon.", "hash": "5fb53cd2ceae68d0", "src": "db2@1.60.1.70009"}
-{"id": 277505, "field": "name", "en": "Misplaced Package", "hash": "91c2c42f96c27e46", "src": "db2@1.60.1.70009"}
-{"id": 277507, "field": "name", "en": "Dalaran Sewer Key", "hash": "f0e73e4a2864c8b9", "src": "db2@1.60.1.70009"}
-{"id": 277508, "field": "name", "en": "Prairie Wolf Pup Carrier", "hash": "3008bca1279cb877", "src": "db2@1.60.1.70009"}
-{"id": 277508, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70009"}
-{"id": 277514, "field": "name", "en": "Aka'rai's Tattered Vestments", "hash": "ecbee9236ed14294", "src": "db2@1.60.1.70009"}
-{"id": 277515, "field": "name", "en": "Dagger of Deals", "hash": "343d306926657af3", "src": "db2@1.60.1.70009"}
-{"id": 277518, "field": "name", "en": "Last Week's Ration", "hash": "e86bb432a0cc763e", "src": "db2@1.60.1.70009"}
-{"id": 277518, "field": "description", "en": "Restores $s1 health.\r\n", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70009"}
-{"id": 277519, "field": "name", "en": "Nelanna's Enchanted Jewel", "hash": "5584fa0e8e5df26f", "src": "db2@1.60.1.70009"}
-{"id": 277533, "field": "name", "en": "Fel Tained Journal", "hash": "cd515ef0886e96c7", "src": "db2@1.60.1.70009"}
-{"id": 277534, "field": "name", "en": "Arena Spoils", "hash": "fdb3e609a120823c", "src": "db2@1.60.1.70009"}
-{"id": 277555, "field": "name", "en": "Monster - Shield, Skyborne (Gray)", "hash": "10ef0957bfe3f032", "src": "db2@1.60.1.70009"}
-{"id": 277566, "field": "name", "en": "Yelmak's Potion", "hash": "34ff8dd552085d78", "src": "db2@1.60.1.70009"}
-{"id": 277648, "field": "name", "en": "Stormwind Library Card", "hash": "186d6ab5c240693a", "src": "db2@1.60.1.70009"}
-{"id": 277649, "field": "name", "en": "Undercity Library Card", "hash": "c8843e6a38d01bc6", "src": "db2@1.60.1.70009"}
-{"id": 277651, "field": "name", "en": "Bundle of Scrolls", "hash": "07a0578bd12fd210", "src": "db2@1.60.1.70009"}
-{"id": 277653, "field": "name", "en": "Abandoned Training Weapon", "hash": "73c86444347ff0bc", "src": "db2@1.60.1.70009"}
-{"id": 277661, "field": "name", "en": "Dull Storm Orb", "hash": "6be409af71f43ed6", "src": "db2@1.60.1.70009"}
-{"id": 277665, "field": "name", "en": "Charged Thunder Lizard Organ", "hash": "43b035e6b6d24000", "src": "db2@1.60.1.70009"}
-{"id": 277672, "field": "name", "en": "Rough Copper Chain Boots", "hash": "53bebfce0823147d", "src": "db2@1.60.1.70009"}
-{"id": 277673, "field": "name", "en": "Plans: Rough Copper Chain Boots", "hash": "97aca52ee79f904a", "src": "db2@1.60.1.70009"}
-{"id": 277673, "field": "description", "en": "Teaches you how to make a Rough Copper Chain Boots.", "hash": "1c9acb8727edffcb", "src": "db2@1.60.1.70009"}
-{"id": 277714, "field": "name", "en": "Spectral Bear Cub", "hash": "4b52ec03d571f043", "src": "db2@1.60.1.70009"}
-{"id": 277714, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70009"}
-{"id": 277715, "field": "name", "en": "Light Leather Reagent Bag", "hash": "987b9db26e5c331c", "src": "db2@1.60.1.70009"}
-{"id": 277716, "field": "name", "en": "Pattern: Light Leather Reagent Bag", "hash": "b2ef4e5063d00686", "src": "db2@1.60.1.70009"}
-{"id": 277716, "field": "description", "en": "Teaches you how to craft Light Leather Reagent Bag.", "hash": "b4ab7e44d15ff905", "src": "db2@1.60.1.70009"}
-{"id": 277717, "field": "name", "en": "Spectral Bear Tabard", "hash": "399aac73aac26821", "src": "db2@1.60.1.70009"}
-{"id": 277718, "field": "name", "en": "Reins of the Spectral Bear", "hash": "efbef270b6a9bda0", "src": "db2@1.60.1.70009"}
-{"id": 277718, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
-{"id": 277844, "field": "name", "en": "Mirage Mirror", "hash": "6847d38af54cf414", "src": "db2@1.60.1.70009"}
-{"id": 277844, "field": "description", "en": "Increases run speed by $s1% for $d. While out of combat in Desert areas, gain an additional $s2% run speed and become invisible.", "hash": "e3489f894fc5aad2", "src": "db2@1.60.1.70009"}
-{"id": 277845, "field": "name", "en": "A Reasonably Large Bag", "hash": "c60a01bb0ece3193", "src": "db2@1.60.1.70009"}
-{"id": 277910, "field": "name", "en": "Mysticbloom Seed", "hash": "20e40b32a555fee5", "src": "db2@1.60.1.70009"}
-{"id": 277910, "field": "description", "en": "Stuns and heals you for $o1 over $d. In Forest and Grassland areas, gain $1302875s1 Stamina for $1302875d.", "hash": "e3067100063a6867", "src": "db2@1.60.1.70009"}
-{"id": 277915, "field": "name", "en": "Stonetalon Supply Satchel", "hash": "b8f42015416543e6", "src": "db2@1.60.1.70009"}
-{"id": 277917, "field": "name", "en": "Stonetalon Supply Bundle", "hash": "8aac6fd6b2071e5f", "src": "db2@1.60.1.70009"}
-{"id": 277936, "field": "name", "en": "Glittering Sunstone", "hash": "130385c202fac561", "src": "db2@1.60.1.70009"}
-{"id": 277950, "field": "name", "en": "Wastewanderer Rations", "hash": "ccdf853f06a2e2ab", "src": "db2@1.60.1.70009"}
-{"id": 277950, "field": "description", "en": "Your Well Fed buffs metabolize $s2% slower. This effect is increased by an additional $s1% in Wasteland areas.", "hash": "e014f147099a990f", "src": "db2@1.60.1.70009"}
-{"id": 277952, "field": "name", "en": "Smooth Boulder", "hash": "59ed6bd83398805d", "src": "db2@1.60.1.70009"}
-{"id": 277953, "field": "name", "en": "Stolen Shipment", "hash": "8a1bb932f9d62c29", "src": "db2@1.60.1.70009"}
-{"id": 277957, "field": "name", "en": "Primitive Key", "hash": "5dedbe1a4b653c81", "src": "db2@1.60.1.70009"}
-{"id": 277958, "field": "name", "en": "Putrescent Bear Organs", "hash": "35b05e015a56486b", "src": "db2@1.60.1.70009"}
-{"id": 277959, "field": "name", "en": "Putrescent Wolf Organs", "hash": "62d19498fd2db5ca", "src": "db2@1.60.1.70009"}
-{"id": 277960, "field": "name", "en": "Lavender Kodo", "hash": "6c72c0fe2e134d38", "src": "db2@1.60.1.70009"}
-{"id": 277960, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70009"}
-{"id": 277972, "field": "name", "en": "Mirrorscale's Wing", "hash": "54eadafaf725a213", "src": "db2@1.60.1.70009"}
-{"id": 277973, "field": "name", "en": "Stag Lord's Bauble", "hash": "64f22cb2624bc43c", "src": "db2@1.60.1.70009"}
-{"id": 277974, "field": "name", "en": "Twice Reordered Package", "hash": "8ba5699cf1fbaafb", "src": "db2@1.60.1.70009"}
-{"id": 277974, "field": "description", "en": "To Powderfuse Port. Shipped from Booty Bay.", "hash": "892783a9be497122", "src": "db2@1.60.1.70009"}
-{"id": 277976, "field": "name", "en": "Gozwin's Mechanic's Log", "hash": "0dd7e83ac464d8be", "src": "db2@1.60.1.70009"}
-{"id": 277977, "field": "name", "en": "Canvas Latchbag", "hash": "559f86767de3acfd", "src": "db2@1.60.1.70009"}
-{"id": 277979, "field": "name", "en": "Mauler's Mutton", "hash": "a6713b91b1bc0e3d", "src": "db2@1.60.1.70009"}
-{"id": 277980, "field": "name", "en": "Ogre Bone", "hash": "93e00bdb797b8d55", "src": "db2@1.60.1.70009"}
-{"id": 277981, "field": "name", "en": "Souvenir Ogre Tooth", "hash": "5ed2a1174299b8df", "src": "db2@1.60.1.70009"}
-{"id": 277986, "field": "name", "en": "Drum of Crude Oil", "hash": "431a6cef0a3a8355", "src": "db2@1.60.1.70009"}
-{"id": 277988, "field": "name", "en": "Hoof-Holstered Blade", "hash": "ca8b0af719f0a5cb", "src": "db2@1.60.1.70009"}
+{"id": 277000, "field": "name", "en": "Cloudy Gustwoven Gloves", "hash": "c6fa03a030ed883d", "src": "db2@1.60.1.70124"}
+{"id": 277001, "field": "name", "en": "Cloudy Gustwoven Belt", "hash": "b712e6f42bb96dad", "src": "db2@1.60.1.70124"}
+{"id": 277002, "field": "name", "en": "Cloudy Gustwoven Trousers", "hash": "ab00f26169d5c673", "src": "db2@1.60.1.70124"}
+{"id": 277003, "field": "name", "en": "Cloudy Gustwoven Boots", "hash": "b0040249743a08a0", "src": "db2@1.60.1.70124"}
+{"id": 277004, "field": "name", "en": "Cloudy Windraveled Jerkin", "hash": "8c7231f6daa36977", "src": "db2@1.60.1.70124"}
+{"id": 277005, "field": "name", "en": "Cloudy Windraveled Armguards", "hash": "59a9c600c127a6d6", "src": "db2@1.60.1.70124"}
+{"id": 277006, "field": "name", "en": "Cloudy Windraveled Mitts", "hash": "b356f02ec0166151", "src": "db2@1.60.1.70124"}
+{"id": 277007, "field": "name", "en": "Cloudy Windraveled Strap", "hash": "1e21fbf40519f556", "src": "db2@1.60.1.70124"}
+{"id": 277008, "field": "name", "en": "Cloudy Windraveled Pants", "hash": "e6ec1413d9c4a8ef", "src": "db2@1.60.1.70124"}
+{"id": 277009, "field": "name", "en": "Cloudy Windraveled Footwraps", "hash": "e33e2da39b79b9e5", "src": "db2@1.60.1.70124"}
+{"id": 277010, "field": "name", "en": "Cloudy Stormsewn Vest", "hash": "d4602972bf022207", "src": "db2@1.60.1.70124"}
+{"id": 277011, "field": "name", "en": "Cloudy Stormsewn Cuffs", "hash": "61d21aee3a7af162", "src": "db2@1.60.1.70124"}
+{"id": 277012, "field": "name", "en": "Cloudy Stormsewn Handwraps", "hash": "61f29998958cf8e2", "src": "db2@1.60.1.70124"}
+{"id": 277013, "field": "name", "en": "Cloudy Stormsewn Cord", "hash": "d1d704b867fd8b09", "src": "db2@1.60.1.70124"}
+{"id": 277014, "field": "name", "en": "Cloudy Stormsewn Leggings", "hash": "f3d7d64d578fc48e", "src": "db2@1.60.1.70124"}
+{"id": 277015, "field": "name", "en": "Cloudy Stormsewn Shoes", "hash": "78f1e9f21e95c66e", "src": "db2@1.60.1.70124"}
+{"id": 277016, "field": "name", "en": "Azure Skyforged Chainmail", "hash": "3ee8b64d890298ea", "src": "db2@1.60.1.70124"}
+{"id": 277017, "field": "name", "en": "Azure Skyforged Wristguards", "hash": "12e1f9fe6885f329", "src": "db2@1.60.1.70124"}
+{"id": 277018, "field": "name", "en": "Azure Skyforged Gauntlets", "hash": "e7e2438efaab63a9", "src": "db2@1.60.1.70124"}
+{"id": 277019, "field": "name", "en": "Azure Skyforged Chain", "hash": "e00caff2efb7db2c", "src": "db2@1.60.1.70124"}
+{"id": 277020, "field": "name", "en": "Azure Skyforged Legguards", "hash": "aec9c22c737d4821", "src": "db2@1.60.1.70124"}
+{"id": 277021, "field": "name", "en": "Azure Skyforged Greaves", "hash": "1d9c2342a3be7c73", "src": "db2@1.60.1.70124"}
+{"id": 277022, "field": "name", "en": "Azure Gustwoven Harness", "hash": "78fca8e4ccd38f37", "src": "db2@1.60.1.70124"}
+{"id": 277023, "field": "name", "en": "Azure Gustwoven Bracers", "hash": "c4b30bf354664830", "src": "db2@1.60.1.70124"}
+{"id": 277024, "field": "name", "en": "Azure Gustwoven Gloves", "hash": "39665ec55488190e", "src": "db2@1.60.1.70124"}
+{"id": 277025, "field": "name", "en": "Azure Gustwoven Belt", "hash": "88ac097f7e9402f0", "src": "db2@1.60.1.70124"}
+{"id": 277026, "field": "name", "en": "Azure Gustwoven Trousers", "hash": "0caa1c547c1e6b8f", "src": "db2@1.60.1.70124"}
+{"id": 277027, "field": "name", "en": "Azure Gustwoven Boots", "hash": "f160aef2be6b04e4", "src": "db2@1.60.1.70124"}
+{"id": 277028, "field": "name", "en": "Azure Windraveled Jerkin", "hash": "ee1b5be4ecec0e93", "src": "db2@1.60.1.70124"}
+{"id": 277029, "field": "name", "en": "Azure Windraveled Armguards", "hash": "ee902d7472321ae3", "src": "db2@1.60.1.70124"}
+{"id": 277030, "field": "name", "en": "Azure Windraveled Mitts", "hash": "40c992b5c2794361", "src": "db2@1.60.1.70124"}
+{"id": 277031, "field": "name", "en": "Azure Windraveled Strap", "hash": "ab949e76077cd766", "src": "db2@1.60.1.70124"}
+{"id": 277032, "field": "name", "en": "Azure Windraveled Pants", "hash": "745eb69adc278aff", "src": "db2@1.60.1.70124"}
+{"id": 277033, "field": "name", "en": "Azure Windraveled Footwraps", "hash": "7824951c4c842df2", "src": "db2@1.60.1.70124"}
+{"id": 277034, "field": "name", "en": "Azure Stormsewn Vest", "hash": "a5f94bfd11dcb75b", "src": "db2@1.60.1.70124"}
+{"id": 277035, "field": "name", "en": "Azure Stormsewn Cuffs", "hash": "a32ec79784abeda6", "src": "db2@1.60.1.70124"}
+{"id": 277036, "field": "name", "en": "Azure Stormsewn Handwraps", "hash": "5b830f5c7364a135", "src": "db2@1.60.1.70124"}
+{"id": 277037, "field": "name", "en": "Azure Stormsewn Cord", "hash": "a3702743bad8204c", "src": "db2@1.60.1.70124"}
+{"id": 277038, "field": "name", "en": "Azure Stormsewn Leggings", "hash": "5581004069d869aa", "src": "db2@1.60.1.70124"}
+{"id": 277039, "field": "name", "en": "Azure Stormsewn Shoes", "hash": "ba4e969b68c6c2b2", "src": "db2@1.60.1.70124"}
+{"id": 277040, "field": "name", "en": "Cloudy Skyforged Helm", "hash": "80e6b8c3a9b8872f", "src": "db2@1.60.1.70124"}
+{"id": 277041, "field": "name", "en": "Cloudy Skyforged Pauldrons", "hash": "f7036ec23475b80b", "src": "db2@1.60.1.70124"}
+{"id": 277042, "field": "name", "en": "Cloudy Gustwoven Hood", "hash": "b7e35869a3dc2af7", "src": "db2@1.60.1.70124"}
+{"id": 277043, "field": "name", "en": "Cloudy Gustwoven Spaulders", "hash": "16b7a1ee8c6a624a", "src": "db2@1.60.1.70124"}
+{"id": 277044, "field": "name", "en": "Cloudy Windraveled Cover", "hash": "049c210a634bc824", "src": "db2@1.60.1.70124"}
+{"id": 277045, "field": "name", "en": "Cloudy Windraveled Drapes", "hash": "8944d433f34384e8", "src": "db2@1.60.1.70124"}
+{"id": 277046, "field": "name", "en": "Cloudy Stormsewn Cowl", "hash": "d1d7074f67fe2a76", "src": "db2@1.60.1.70124"}
+{"id": 277047, "field": "name", "en": "Cloudy Stormsewn Epaulets", "hash": "8475b9029b411893", "src": "db2@1.60.1.70124"}
+{"id": 277048, "field": "name", "en": "Azure Skyforged Helm", "hash": "527fdb4efc931c72", "src": "db2@1.60.1.70124"}
+{"id": 277049, "field": "name", "en": "Azure Skyforged Pauldrons", "hash": "f093e486124d605e", "src": "db2@1.60.1.70124"}
+{"id": 277050, "field": "name", "en": "Azure Gustwoven Hood", "hash": "897c7af4f6b6c03a", "src": "db2@1.60.1.70124"}
+{"id": 277051, "field": "name", "en": "Azure Gustwoven Spaulders", "hash": "104817b26a420a9d", "src": "db2@1.60.1.70124"}
+{"id": 277052, "field": "name", "en": "Azure Windraveled Cover", "hash": "920ec38c65aeaa34", "src": "db2@1.60.1.70124"}
+{"id": 277053, "field": "name", "en": "Azure Windraveled Drapes", "hash": "eaedfe21058c2a15", "src": "db2@1.60.1.70124"}
+{"id": 277054, "field": "name", "en": "Azure Stormsewn Cowl", "hash": "a37029dabad8bfb9", "src": "db2@1.60.1.70124"}
+{"id": 277055, "field": "name", "en": "Azure Stormsewn Epaulets", "hash": "e61ee2f0ad89bdaf", "src": "db2@1.60.1.70124"}
+{"id": 277056, "field": "name", "en": "Al'aketh Chainmail", "hash": "8c928c70290f9852", "src": "db2@1.60.1.70124"}
+{"id": 277057, "field": "name", "en": "Al'aketh Wristguards", "hash": "40e60fe7049f75d2", "src": "db2@1.60.1.70124"}
+{"id": 277058, "field": "name", "en": "Al'aketh Gauntlets", "hash": "358c19b69ab86311", "src": "db2@1.60.1.70124"}
+{"id": 277059, "field": "name", "en": "Al'aketh Chain", "hash": "5af07e2f924ea52a", "src": "db2@1.60.1.70124"}
+{"id": 277060, "field": "name", "en": "Al'aketh Legguards", "hash": "fc73984f138a4789", "src": "db2@1.60.1.70124"}
+{"id": 277061, "field": "name", "en": "Al'aketh Greaves", "hash": "0e97ac203dba483a", "src": "db2@1.60.1.70124"}
+{"id": 277062, "field": "name", "en": "Al'aketh Harness", "hash": "f56d1fe365e1ae40", "src": "db2@1.60.1.70124"}
+{"id": 277063, "field": "name", "en": "Al'aketh Bracers", "hash": "412382f7ed746728", "src": "db2@1.60.1.70124"}
+{"id": 277064, "field": "name", "en": "Al'aketh Gloves", "hash": "bf3c3c7ece3ac68f", "src": "db2@1.60.1.70124"}
+{"id": 277065, "field": "name", "en": "Al'aketh Belt", "hash": "12251ed2e20cb303", "src": "db2@1.60.1.70124"}
+{"id": 277066, "field": "name", "en": "Al'aketh Trousers", "hash": "ba37020cb748ef86", "src": "db2@1.60.1.70124"}
+{"id": 277067, "field": "name", "en": "Al'aketh Boots", "hash": "4a56973fc8d0e52a", "src": "db2@1.60.1.70124"}
+{"id": 277068, "field": "name", "en": "Al'aketh Jerkin", "hash": "374d2c9c26fbbacb", "src": "db2@1.60.1.70124"}
+{"id": 277069, "field": "name", "en": "Al'aketh Armguards", "hash": "f3766adb081e27c5", "src": "db2@1.60.1.70124"}
+{"id": 277070, "field": "name", "en": "Al'aketh Mitts", "hash": "0aa0ea4a204df9fa", "src": "db2@1.60.1.70124"}
+{"id": 277071, "field": "name", "en": "Al'aketh Strap", "hash": "756bf60b65518dee", "src": "db2@1.60.1.70124"}
+{"id": 277072, "field": "name", "en": "Al'aketh Pants", "hash": "3e360e2f39fc4198", "src": "db2@1.60.1.70124"}
+{"id": 277073, "field": "name", "en": "Al'aketh Footwraps", "hash": "7d0ad283e2703ac3", "src": "db2@1.60.1.70124"}
+{"id": 277074, "field": "name", "en": "Al'aketh Vestments", "hash": "e5816aa48345f6a7", "src": "db2@1.60.1.70124"}
+{"id": 277075, "field": "name", "en": "Al'aketh Cuffs", "hash": "5cafbcb7d46efcbb", "src": "db2@1.60.1.70124"}
+{"id": 277076, "field": "name", "en": "Al'aketh Handwraps", "hash": "c60a10f9da8df36e", "src": "db2@1.60.1.70124"}
+{"id": 277077, "field": "name", "en": "Al'aketh Cord", "hash": "124a0dc997280bd3", "src": "db2@1.60.1.70124"}
+{"id": 277078, "field": "name", "en": "Al'aketh Leggings", "hash": "fe60cf6593e45e87", "src": "db2@1.60.1.70124"}
+{"id": 277079, "field": "name", "en": "Al'aketh Shoes", "hash": "73cf8bbbb889d1c7", "src": "db2@1.60.1.70124"}
+{"id": 277080, "field": "name", "en": "Zephrali Chainmail", "hash": "55d0ae7f4b52ede6", "src": "db2@1.60.1.70124"}
+{"id": 277081, "field": "name", "en": "Zephrali Wristguards", "hash": "96fee7bb2530ff83", "src": "db2@1.60.1.70124"}
+{"id": 277082, "field": "name", "en": "Zephrali Gauntlets", "hash": "feca3bc0bcfbb8a5", "src": "db2@1.60.1.70124"}
+{"id": 277083, "field": "name", "en": "Zephrali Chain", "hash": "d1ff75e2dd296579", "src": "db2@1.60.1.70124"}
+{"id": 277084, "field": "name", "en": "Zephrali Legguards", "hash": "c5b1ba5e35cd9d1d", "src": "db2@1.60.1.70124"}
+{"id": 277085, "field": "name", "en": "Zephrali Greaves", "hash": "28f2d64c3a3d9874", "src": "db2@1.60.1.70124"}
+{"id": 277086, "field": "name", "en": "Zephrali Harness", "hash": "0fc84a146264fe7a", "src": "db2@1.60.1.70124"}
+{"id": 277087, "field": "name", "en": "Zephrali Bracers", "hash": "5b7ead23e9f7b762", "src": "db2@1.60.1.70124"}
+{"id": 277088, "field": "name", "en": "Zephrali Gloves", "hash": "abe4fe4815c7fb81", "src": "db2@1.60.1.70124"}
+{"id": 277089, "field": "name", "en": "Zephrali Belt", "hash": "7aa0596061faf8b5", "src": "db2@1.60.1.70124"}
+{"id": 277090, "field": "name", "en": "Zephrali Trousers", "hash": "36dd96d68d697121", "src": "db2@1.60.1.70124"}
+{"id": 277091, "field": "name", "en": "Zephrali Boots", "hash": "c1658ef213aba58a", "src": "db2@1.60.1.70124"}
+{"id": 277092, "field": "name", "en": "Zephrali Jerkin", "hash": "23f5ee666e88efac", "src": "db2@1.60.1.70124"}
+{"id": 277093, "field": "name", "en": "Zephrali Armguards", "hash": "bcb48cea2a617d59", "src": "db2@1.60.1.70124"}
+{"id": 277094, "field": "name", "en": "Zephrali Mitts", "hash": "81afe1fd6b28ba49", "src": "db2@1.60.1.70124"}
+{"id": 277095, "field": "name", "en": "Zephrali Strap", "hash": "ec7aedbeb02c4e3d", "src": "db2@1.60.1.70124"}
+{"id": 277096, "field": "name", "en": "Zephrali Pants", "hash": "b54505e284d701e7", "src": "db2@1.60.1.70124"}
+{"id": 277097, "field": "name", "en": "Zephrali Footwraps", "hash": "4648f49204b39068", "src": "db2@1.60.1.70124"}
+{"id": 277098, "field": "name", "en": "Zephrali Vest", "hash": "7d4e6d116e1ae883", "src": "db2@1.60.1.70124"}
+{"id": 277099, "field": "name", "en": "Zephrali Cuffs", "hash": "d3beb46a1f49bd1b", "src": "db2@1.60.1.70124"}
+{"id": 277100, "field": "name", "en": "Zephrali Handwraps", "hash": "8f483308fcd14902", "src": "db2@1.60.1.70124"}
+{"id": 277101, "field": "name", "en": "Zephrali Cord", "hash": "7ac5485717165185", "src": "db2@1.60.1.70124"}
+{"id": 277102, "field": "name", "en": "Zephrali Leggings", "hash": "7b07642f6a04e022", "src": "db2@1.60.1.70124"}
+{"id": 277103, "field": "name", "en": "Zephrali Shoes", "hash": "eade836e03649227", "src": "db2@1.60.1.70124"}
+{"id": 277104, "field": "name", "en": "Zephrali Greatsword", "hash": "4b0dee9654b4c715", "src": "db2@1.60.1.70124"}
+{"id": 277105, "field": "name", "en": "Zephrali Blade", "hash": "c0faf36533de16bf", "src": "db2@1.60.1.70124"}
+{"id": 277106, "field": "name", "en": "Zephrali Smasher", "hash": "73ecaf43e3adba1b", "src": "db2@1.60.1.70124"}
+{"id": 277107, "field": "name", "en": "Zephrali Bludgeon", "hash": "4dc739c9c5473c6d", "src": "db2@1.60.1.70124"}
+{"id": 277108, "field": "name", "en": "Zephrali Knife", "hash": "5f3d10c744aed7da", "src": "db2@1.60.1.70124"}
+{"id": 277109, "field": "name", "en": "Zephrali Greatstaff", "hash": "4aa3552574e7b7de", "src": "db2@1.60.1.70124"}
+{"id": 277110, "field": "name", "en": "Zephrali Bow", "hash": "08c0c171b980016d", "src": "db2@1.60.1.70124"}
+{"id": 277111, "field": "name", "en": "Zephrali Crossbow", "hash": "2537b0bdf7b1e226", "src": "db2@1.60.1.70124"}
+{"id": 277112, "field": "name", "en": "Zum'rah's Head", "hash": "8614fa93a1ef0c0f", "src": "db2@1.60.1.70124"}
+{"id": 277113, "field": "name", "en": "Apprentice's Herb Pouch", "hash": "70eca1282b2b2854", "src": "db2@1.60.1.70124"}
+{"id": 277114, "field": "name", "en": "Apprentice's Skinning Satchel", "hash": "7e9b7a9fcb464e67", "src": "db2@1.60.1.70124"}
+{"id": 277115, "field": "name", "en": "Apprentice's Mining Pack", "hash": "8c00a549234ce7d4", "src": "db2@1.60.1.70124"}
+{"id": 277119, "field": "name", "en": "Gatehouse Shipment", "hash": "7a46f8744eb0e398", "src": "db2@1.60.1.70124"}
+{"id": 277119, "field": "description", "en": "Deliver to Gatehouse stockroom entrance, floor 2, Trias' Property, Trade District", "hash": "3a90c45f00c537b6", "src": "db2@1.60.1.70124"}
+{"id": 277128, "field": "name", "en": "Bloodtalon Martriarch Eggs", "hash": "8232f4d695deb72e", "src": "db2@1.60.1.70124"}
+{"id": 277129, "field": "name", "en": "Fragment of the Firelands", "hash": "5792e331b86ff4a7", "src": "db2@1.60.1.70124"}
+{"id": 277132, "field": "name", "en": "Harvester Override Signalcaster", "hash": "cc39dfb4adbc0f99", "src": "db2@1.60.1.70124"}
+{"id": 277132, "field": "description", "en": "Override control of the target mechanical creature for up to $d. The target will attack slower while under your control. Ineffective on targets above level $m1.", "hash": "7f04cd90560a9eec", "src": "db2@1.60.1.70124"}
+{"id": 277135, "field": "name", "en": "Forgotten Loa Idol", "hash": "d18b967a4b08443e", "src": "db2@1.60.1.70124"}
+{"id": 277135, "field": "description", "en": "The idol seems to depict the Loa of Treachery, Dambala.", "hash": "6e30eb014b79eaed", "src": "db2@1.60.1.70124"}
+{"id": 277136, "field": "name", "en": "Brooch of the Wardens", "hash": "ad088c606a9b0b72", "src": "db2@1.60.1.70124"}
+{"id": 277136, "field": "description", "en": "Grants access to the Vord'anaar Prison within Barrow Deeps.", "hash": "3d578e50df0d8b2b", "src": "db2@1.60.1.70124"}
+{"id": 277140, "field": "name", "en": "An'she's Radiance", "hash": "29fa6e043b3b8cc8", "src": "db2@1.60.1.70124"}
+{"id": 277153, "field": "name", "en": "Intricate Filigree", "hash": "d7c267c0d505bc97", "src": "db2@1.60.1.70124"}
+{"id": 277154, "field": "name", "en": "Corrupted Gemstone", "hash": "96a44abcca6c30c2", "src": "db2@1.60.1.70124"}
+{"id": 277158, "field": "name", "en": "Wrapped Reading Material", "hash": "6ee83b813751e437", "src": "db2@1.60.1.70124"}
+{"id": 277172, "field": "name", "en": "Corrupted Chillhowl Shard", "hash": "67fca80b08e33f25", "src": "db2@1.60.1.70124"}
+{"id": 277174, "field": "name", "en": "Corrupted Dreadspinner Shard", "hash": "5053d76467451095", "src": "db2@1.60.1.70124"}
+{"id": 277175, "field": "name", "en": "Corrupted Tangleclaw Shard", "hash": "6ae5006768b1f92e", "src": "db2@1.60.1.70124"}
+{"id": 277178, "field": "name", "en": "Corrupted Sorrowful Shard", "hash": "126f17789853f54e", "src": "db2@1.60.1.70124"}
+{"id": 277179, "field": "name", "en": "Corrupted Amethrax Shard", "hash": "2965b577ca02c06e", "src": "db2@1.60.1.70124"}
+{"id": 277190, "field": "name", "en": "Fang of Githyiss", "hash": "c0cb6394dcf78856", "src": "db2@1.60.1.70124"}
+{"id": 277194, "field": "name", "en": "Trollbane Conquests", "hash": "3401d39665c9f9b6", "src": "db2@1.60.1.70124"}
+{"id": 277195, "field": "name", "en": "The Forsaken Ally", "hash": "32ee1f1c31cbe887", "src": "db2@1.60.1.70124"}
+{"id": 277196, "field": "name", "en": "Field Accounts of Horde Razings", "hash": "9a5c7785909a0e75", "src": "db2@1.60.1.70124"}
+{"id": 277197, "field": "name", "en": "Cycles of Morality", "hash": "b44efff27a4a7ce3", "src": "db2@1.60.1.70124"}
+{"id": 277198, "field": "name", "en": "Gatehouse Shipment", "hash": "7a46f8744eb0e398", "src": "db2@1.60.1.70124"}
+{"id": 277198, "field": "description", "en": "Place outside the door on the second floor of Trias' Cheese.\nDeliver to Gatehouse stockroom entrance, floor 2, Trias' Property, Trade District", "hash": "c2727522f70bb861", "src": "db2@1.60.1.70124"}
+{"id": 277199, "field": "name", "en": "Pouch of Smoldering Incense", "hash": "244d563d103d91c2", "src": "db2@1.60.1.70124"}
+{"id": 277200, "field": "name", "en": "Scorched Leather Pouch", "hash": "857dc3e6e00e5194", "src": "db2@1.60.1.70124"}
+{"id": 277202, "field": "name", "en": "Artifact Seeker's Pendant", "hash": "5b6d8590c421510d", "src": "db2@1.60.1.70124"}
+{"id": 277203, "field": "name", "en": "Scholarly Pendant", "hash": "b6ce4025363a49a4", "src": "db2@1.60.1.70124"}
+{"id": 277204, "field": "name", "en": "Erudite's Amulet", "hash": "a3b6ea7c79bef7e8", "src": "db2@1.60.1.70124"}
+{"id": 277205, "field": "name", "en": "Cloak of the Divine Storm", "hash": "e6f7db574c40fcbb", "src": "db2@1.60.1.70124"}
+{"id": 277206, "field": "name", "en": "Brilliant Cloak", "hash": "3425fe5cea821de1", "src": "db2@1.60.1.70124"}
+{"id": 277207, "field": "name", "en": "Well-Weathered Cloak", "hash": "171a2dd61d16819e", "src": "db2@1.60.1.70124"}
+{"id": 277208, "field": "name", "en": "Determined Band", "hash": "159871e7a107f3fe", "src": "db2@1.60.1.70124"}
+{"id": 277209, "field": "name", "en": "Ponderous Loop", "hash": "aea5ebe8bf032f13", "src": "db2@1.60.1.70124"}
+{"id": 277210, "field": "name", "en": "Pyrewood Signet Ring", "hash": "a62880b9db18f04d", "src": "db2@1.60.1.70124"}
+{"id": 277211, "field": "name", "en": "Dudd's Thinkin' Cap", "hash": "19ffad9d57dad686", "src": "db2@1.60.1.70124"}
+{"id": 277212, "field": "name", "en": "Soulwoven Epaulets", "hash": "df0c3fb07551d258", "src": "db2@1.60.1.70124"}
+{"id": 277213, "field": "name", "en": "Dro'zem's Tunic", "hash": "f48da86855702fb0", "src": "db2@1.60.1.70124"}
+{"id": 277214, "field": "name", "en": "Crusty Cuffs", "hash": "4da34061ab21ee0c", "src": "db2@1.60.1.70124"}
+{"id": 277215, "field": "name", "en": "Nimble Gloves", "hash": "a5b1160da9d394b6", "src": "db2@1.60.1.70124"}
+{"id": 277216, "field": "name", "en": "Cross-Stitched Cord", "hash": "234bb4eb362eabd3", "src": "db2@1.60.1.70124"}
+{"id": 277217, "field": "name", "en": "Patchy Pants", "hash": "3206a2a09253841c", "src": "db2@1.60.1.70124"}
+{"id": 277218, "field": "name", "en": "Incinerator's Boots", "hash": "71f122baad8c8b8e", "src": "db2@1.60.1.70124"}
+{"id": 277219, "field": "name", "en": "Solomon's Comfortable Hat", "hash": "686f9162fbec0630", "src": "db2@1.60.1.70124"}
+{"id": 277220, "field": "name", "en": "Shabby Spaulders", "hash": "e9c8f45a8d7b8145", "src": "db2@1.60.1.70124"}
+{"id": 277221, "field": "name", "en": "Grimtotem Naturalist's Tunic", "hash": "a3498ab3e4df6fc5", "src": "db2@1.60.1.70124"}
+{"id": 277222, "field": "name", "en": "Feathered Cuffs", "hash": "c7dadf712b4f869f", "src": "db2@1.60.1.70124"}
+{"id": 277223, "field": "name", "en": "Traveled Gloves", "hash": "0be13d728a50c69f", "src": "db2@1.60.1.70124"}
+{"id": 277224, "field": "name", "en": "Kurzen Headshrinker's Cinch", "hash": "909cf9e92ceef0d7", "src": "db2@1.60.1.70124"}
+{"id": 277225, "field": "name", "en": "Feathered Leggings", "hash": "77ec951b1b1214e6", "src": "db2@1.60.1.70124"}
+{"id": 277226, "field": "name", "en": "Disjointed Shoes", "hash": "f98b9f4e73123e48", "src": "db2@1.60.1.70124"}
+{"id": 277227, "field": "name", "en": "Magistrate's Chain Hood", "hash": "0beacbe25b926b4f", "src": "db2@1.60.1.70124"}
+{"id": 277228, "field": "name", "en": "Snakescale Pauldrons", "hash": "75a3d8cd7fa4320f", "src": "db2@1.60.1.70124"}
+{"id": 277229, "field": "name", "en": "Enduring Chain Vest", "hash": "90f8f3fc8096dabb", "src": "db2@1.60.1.70124"}
+{"id": 277230, "field": "name", "en": "Grayscale Bracers", "hash": "fd0480e98e8daca4", "src": "db2@1.60.1.70124"}
+{"id": 277231, "field": "name", "en": "Conductive Gauntlets", "hash": "318489f76e426c26", "src": "db2@1.60.1.70124"}
+{"id": 277232, "field": "name", "en": "Jailer's Discarded Chain", "hash": "acf9d02f8d3397d3", "src": "db2@1.60.1.70124"}
+{"id": 277233, "field": "name", "en": "Clinking Mail Legguards", "hash": "097e381f711c981f", "src": "db2@1.60.1.70124"}
+{"id": 277234, "field": "name", "en": "Alacritous Treads", "hash": "07241317f6bf26d2", "src": "db2@1.60.1.70124"}
+{"id": 277235, "field": "name", "en": "Soldier's Visor", "hash": "78100c6bff500525", "src": "db2@1.60.1.70124"}
+{"id": 277236, "field": "name", "en": "Pauldrons of Vindication", "hash": "0ee07dd2cc8dbe6c", "src": "db2@1.60.1.70124"}
+{"id": 277237, "field": "name", "en": "Inspiring Chestplate", "hash": "38ef535137d73632", "src": "db2@1.60.1.70124"}
+{"id": 277238, "field": "name", "en": "Shimmering Bracers", "hash": "fb7d3c9e6e323b8f", "src": "db2@1.60.1.70124"}
+{"id": 277239, "field": "name", "en": "Bejeweled Punchers", "hash": "0953c5b36d9f6592", "src": "db2@1.60.1.70124"}
+{"id": 277240, "field": "name", "en": "Gilded Plate Belt", "hash": "d8da960ffd9be230", "src": "db2@1.60.1.70124"}
+{"id": 277241, "field": "name", "en": "Double-Plated Legplates", "hash": "e0a6b81929d0d7cc", "src": "db2@1.60.1.70124"}
+{"id": 277242, "field": "name", "en": "Silverrune Greaves", "hash": "4e82f18c88e3be2f", "src": "db2@1.60.1.70124"}
+{"id": 277243, "field": "name", "en": "Silverbane Slicer", "hash": "7171f5b21b9e3ff6", "src": "db2@1.60.1.70124"}
+{"id": 277244, "field": "name", "en": "Guardian's Maulers", "hash": "02b4239ced0160f7", "src": "db2@1.60.1.70124"}
+{"id": 277245, "field": "name", "en": "Swampspine Crusher", "hash": "ae12cf42fcccddb5", "src": "db2@1.60.1.70124"}
+{"id": 277246, "field": "name", "en": "Ruby-Adorned Blade", "hash": "df4f8688da33440d", "src": "db2@1.60.1.70124"}
+{"id": 277247, "field": "name", "en": "Mug of Muddled Memories", "hash": "fa6bc1977034cc33", "src": "db2@1.60.1.70124"}
+{"id": 277248, "field": "name", "en": "Notched Ritual Rib", "hash": "bff2dc55645815ac", "src": "db2@1.60.1.70124"}
+{"id": 277250, "field": "name", "en": "The Skullcracker", "hash": "e614b8a8a6160647", "src": "db2@1.60.1.70124"}
+{"id": 277253, "field": "name", "en": "Staff of Brutal Cunning", "hash": "8d12568eae9e99cf", "src": "db2@1.60.1.70124"}
+{"id": 277254, "field": "name", "en": "Truthseeker's Bow", "hash": "03d54b85e6599bf4", "src": "db2@1.60.1.70124"}
+{"id": 277255, "field": "name", "en": "Misplaced Shooter", "hash": "63aba8fbc65475a5", "src": "db2@1.60.1.70124"}
+{"id": 277256, "field": "name", "en": "Dudd's Second-Favorite Wand", "hash": "5b237b0774b15015", "src": "db2@1.60.1.70124"}
+{"id": 277257, "field": "name", "en": "Raven Hill Crest", "hash": "5b2c45500ea6548b", "src": "db2@1.60.1.70124"}
+{"id": 277258, "field": "name", "en": "Crest of Elucidation", "hash": "0d3111f6eb9081a4", "src": "db2@1.60.1.70124"}
+{"id": 277259, "field": "name", "en": "Fermented Restoration Potion", "hash": "8b5bd8ad23f8f3cc", "src": "db2@1.60.1.70124"}
+{"id": 277260, "field": "name", "en": "Researcher's Night Light", "hash": "2111ce6bb23ce8f4", "src": "db2@1.60.1.70124"}
+{"id": 277267, "field": "name", "en": "Faladiel's Heart", "hash": "415755ec8ab565fe", "src": "db2@1.60.1.70124"}
+{"id": 277267, "field": "description", "en": "The heart is black and sickly-looking.", "hash": "75e417ece7695484", "src": "db2@1.60.1.70124"}
+{"id": 277269, "field": "name", "en": "Kuramaa's Mask", "hash": "0b35bf96a09c2524", "src": "db2@1.60.1.70124"}
+{"id": 277277, "field": "name", "en": "Olgra's Adornments", "hash": "84b9820626780b7c", "src": "db2@1.60.1.70124"}
+{"id": 277278, "field": "name", "en": "Handful of Cattails", "hash": "a194f45ef16a4ef8", "src": "db2@1.60.1.70124"}
+{"id": 277279, "field": "name", "en": "Speargrass Cuttings", "hash": "9d747155861ce052", "src": "db2@1.60.1.70124"}
+{"id": 277284, "field": "name", "en": "Migi's Lunch", "hash": "e10e1a2ad4f8c1ee", "src": "db2@1.60.1.70124"}
+{"id": 277286, "field": "name", "en": "Encroacher's Claim", "hash": "dd3b180513211890", "src": "db2@1.60.1.70124"}
+{"id": 277288, "field": "name", "en": "Pathfinder's Clearway", "hash": "2aed7ab385fe1937", "src": "db2@1.60.1.70124"}
+{"id": 277289, "field": "name", "en": "Traveler's Shawl", "hash": "819ed1caa1163d8f", "src": "db2@1.60.1.70124"}
+{"id": 277329, "field": "name", "en": "Torch of Eternal Flame", "hash": "d69cee5a7aafea23", "src": "db2@1.60.1.70124"}
+{"id": 277329, "field": "description", "en": "Hold forth the Torch of Eternal Flame.", "hash": "d92c5ba17483df26", "src": "db2@1.60.1.70124"}
+{"id": 277331, "field": "name", "en": "Handful of Complicated Parts", "hash": "288a181200f3d57f", "src": "db2@1.60.1.70124"}
+{"id": 277332, "field": "name", "en": "Scuffed Shipping Crate", "hash": "2b25024033784fe7", "src": "db2@1.60.1.70124"}
+{"id": 277470, "field": "name", "en": "Schematic: Harvester Override Signalcaster", "hash": "ec9fa9e03fa6d1b1", "src": "db2@1.60.1.70124"}
+{"id": 277470, "field": "description", "en": "Teaches you how to make a Harvester Override Signalcaster.", "hash": "3e7b40297e674d5a", "src": "db2@1.60.1.70124"}
+{"id": 277483, "field": "name", "en": "Scroll of Frog Familiar", "hash": "155ff47b42e68f14", "src": "db2@1.60.1.70124"}
+{"id": 277483, "field": "description", "en": "Summon a faithful frog familiar for $d. Its presence increases your Intellect by $s2.", "hash": "af2388c796ce05cb", "src": "db2@1.60.1.70124"}
+{"id": 277484, "field": "name", "en": "Scroll of Confuse Beast", "hash": "763f8db7e4c54ca8", "src": "db2@1.60.1.70124"}
+{"id": 277484, "field": "description", "en": "Bewitch the target Beast, reducing the damage it does to you by $s1%.", "hash": "ba65d22ec465e7d6", "src": "db2@1.60.1.70124"}
+{"id": 277485, "field": "name", "en": "Scroll of Imbue Frost", "hash": "bb3e3717ff57bb1d", "src": "db2@1.60.1.70124"}
+{"id": 277485, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done by Frost spells and effects by up to $1306518s1.", "hash": "b4ef8d75938bbb9a", "src": "db2@1.60.1.70124"}
+{"id": 277486, "field": "name", "en": "Scroll of Imbue Striking", "hash": "22dc8328c7966afd", "src": "db2@1.60.1.70124"}
+{"id": 277486, "field": "description", "en": "Imbue a staff with magic for 1 hour, causing it to occasionally unleash an Arcane Missile at targets you damage with a spell.", "hash": "c38eef90c1a87376", "src": "db2@1.60.1.70124"}
+{"id": 277487, "field": "name", "en": "Scroll of Imbue Baleflame", "hash": "6753875f4448b496", "src": "db2@1.60.1.70124"}
+{"id": 277487, "field": "description", "en": "Imbue a staff with magic for 1 hour, reducing your spell targets' Fire resistance by $1306572s1.", "hash": "3ad271c584fba359", "src": "db2@1.60.1.70124"}
+{"id": 277488, "field": "name", "en": "Scroll of Imbue Iceknife", "hash": "d65a01b5c48a80ec", "src": "db2@1.60.1.70124"}
+{"id": 277488, "field": "description", "en": "Imbue a dagger with magic for 1 hour, causing it to occasionally freeze foes when hit.", "hash": "17199842f0afb607", "src": "db2@1.60.1.70124"}
+{"id": 277489, "field": "name", "en": "Scroll of Imbue Spark", "hash": "9f2832f9fedc77b3", "src": "db2@1.60.1.70124"}
+{"id": 277489, "field": "description", "en": "Imbue a sword with magic for 1 hour, causing your Flame Blast cooldown to sometimes reset when you are struck by a melee attack.", "hash": "ce93d8d2ef8daa75", "src": "db2@1.60.1.70124"}
+{"id": 277490, "field": "name", "en": "Scroll of the Saber", "hash": "eafd39e1806d4dd3", "src": "db2@1.60.1.70124"}
+{"id": 277490, "field": "description", "en": "Use on Blade of Silverlaine to create a powerful weapon.", "hash": "4228a647dfcc4a3a", "src": "db2@1.60.1.70124"}
+{"id": 277491, "field": "name", "en": "Scroll of Rebuke Elemental", "hash": "e7d89fb0ab14d077", "src": "db2@1.60.1.70124"}
+{"id": 277491, "field": "description", "en": "Increase the damage target Elemental takes from your spells by $s1%.", "hash": "9181c2c496275722", "src": "db2@1.60.1.70124"}
+{"id": 277492, "field": "name", "en": "Scroll of Khadgar's Unlocking", "hash": "e220a72333e50a0c", "src": "db2@1.60.1.70124"}
+{"id": 277492, "field": "description", "en": "Magically open a lock of difficulty $s1 or lower.", "hash": "95ebe730ddf54b56", "src": "db2@1.60.1.70124"}
+{"id": 277493, "field": "name", "en": "Scroll of Cat Familiar", "hash": "ecdc306392e293e2", "src": "db2@1.60.1.70124"}
+{"id": 277493, "field": "description", "en": "Summon a faithful cat familiar for $d. Its presence increases your Intellect by $s2.", "hash": "bf38ae4592267554", "src": "db2@1.60.1.70124"}
+{"id": 277494, "field": "name", "en": "Scroll of Imbue Accuracy", "hash": "d3d5904741354a7c", "src": "db2@1.60.1.70124"}
+{"id": 277494, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing your chance to hit with spells by $1306578s1.", "hash": "35dc6d237eebdd37", "src": "db2@1.60.1.70124"}
+{"id": 277495, "field": "name", "en": "Scroll of Imbue Quickening", "hash": "8959e27cc1935d17", "src": "db2@1.60.1.70124"}
+{"id": 277495, "field": "description", "en": "Imbue a staff with magic for 1 hour, giving your damaging spells a chance to increase your attack speed with Wands.", "hash": "b0b098ceea470833", "src": "db2@1.60.1.70124"}
+{"id": 277496, "field": "name", "en": "Scroll of Imbue Balefrost", "hash": "682506a0cc4ce0a6", "src": "db2@1.60.1.70124"}
+{"id": 277496, "field": "description", "en": "Imbue a staff with magic for 1 hour, reducing your spell targets' Frost resistance by $1306580s1.", "hash": "927b22bd2547bb65", "src": "db2@1.60.1.70124"}
+{"id": 277497, "field": "name", "en": "Scroll of Imbue Flame", "hash": "ba6cb7d677538f0d", "src": "db2@1.60.1.70124"}
+{"id": 277497, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done with Fire spells and effects by up to $1306579s1.", "hash": "4b78123771929c8c", "src": "db2@1.60.1.70124"}
+{"id": 277498, "field": "name", "en": "Scroll of Imbue Manablade", "hash": "f261e2e630ed05e4", "src": "db2@1.60.1.70124"}
+{"id": 277498, "field": "description", "en": "Imbue a dagger with magic for 1 hour, causing it to occasionally restore your mana when it hits a target.", "hash": "c6550912be03ff5c", "src": "db2@1.60.1.70124"}
+{"id": 277499, "field": "name", "en": "Scroll of Greater Cryoblast", "hash": "f0618e688866bd2d", "src": "db2@1.60.1.70124"}
+{"id": 277499, "field": "description", "en": "Inflicts $s1 Frost damage in a 5 yard radius.", "hash": "68d7f26fc49aefda", "src": "db2@1.60.1.70124"}
+{"id": 277500, "field": "name", "en": "Scroll of Imbue Greater Flame", "hash": "0cb01171bcea2a1a", "src": "db2@1.60.1.70124"}
+{"id": 277500, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done with Fire spells and effects by up to $1306581s1.", "hash": "5bf35bb0e53d7bba", "src": "db2@1.60.1.70124"}
+{"id": 277501, "field": "name", "en": "Scroll of Imbue Greater Frost", "hash": "0d8190b244ee563b", "src": "db2@1.60.1.70124"}
+{"id": 277501, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done with Frost spells and effects by up to $1306582s1.", "hash": "5faaea41cd6b8ea5", "src": "db2@1.60.1.70124"}
+{"id": 277502, "field": "name", "en": "Scroll of Imbue Precision", "hash": "56bfd3bb6ec70944", "src": "db2@1.60.1.70124"}
+{"id": 277502, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing your chance to critically hit with spells by $1306583s1%.", "hash": "2bbe924457133e22", "src": "db2@1.60.1.70124"}
+{"id": 277503, "field": "name", "en": "Scroll of Imbue Spellbreak", "hash": "023e44cd744bc70e", "src": "db2@1.60.1.70124"}
+{"id": 277503, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done by Fire spells and effects by up to $1306515s1.", "hash": "046a7061fde3d4e1", "src": "db2@1.60.1.70124"}
+{"id": 277504, "field": "name", "en": "Scroll of Wit", "hash": "5c364bf20e97b656", "src": "db2@1.60.1.70124"}
+{"id": 277504, "field": "description", "en": "Use on Witchblade to create a powerful weapon.", "hash": "5fb53cd2ceae68d0", "src": "db2@1.60.1.70124"}
+{"id": 277505, "field": "name", "en": "Misplaced Package", "hash": "91c2c42f96c27e46", "src": "db2@1.60.1.70124"}
+{"id": 277507, "field": "name", "en": "Dalaran Sewer Key", "hash": "f0e73e4a2864c8b9", "src": "db2@1.60.1.70124"}
+{"id": 277508, "field": "name", "en": "Prairie Wolf Pup Carrier", "hash": "3008bca1279cb877", "src": "db2@1.60.1.70124"}
+{"id": 277508, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70124"}
+{"id": 277514, "field": "name", "en": "Aka'rai's Tattered Vestments", "hash": "ecbee9236ed14294", "src": "db2@1.60.1.70124"}
+{"id": 277515, "field": "name", "en": "Dagger of Deals", "hash": "343d306926657af3", "src": "db2@1.60.1.70124"}
+{"id": 277518, "field": "name", "en": "Last Week's Ration", "hash": "e86bb432a0cc763e", "src": "db2@1.60.1.70124"}
+{"id": 277518, "field": "description", "en": "Restores $s1 health.\r\n", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70124"}
+{"id": 277519, "field": "name", "en": "Nelanna's Enchanted Jewel", "hash": "5584fa0e8e5df26f", "src": "db2@1.60.1.70124"}
+{"id": 277533, "field": "name", "en": "Fel Tained Journal", "hash": "cd515ef0886e96c7", "src": "db2@1.60.1.70124"}
+{"id": 277534, "field": "name", "en": "Arena Spoils", "hash": "fdb3e609a120823c", "src": "db2@1.60.1.70124"}
+{"id": 277555, "field": "name", "en": "Monster - Shield, Skyborne (Gray)", "hash": "10ef0957bfe3f032", "src": "db2@1.60.1.70124"}
+{"id": 277566, "field": "name", "en": "Yelmak's Potion", "hash": "34ff8dd552085d78", "src": "db2@1.60.1.70124"}
+{"id": 277648, "field": "name", "en": "Stormwind Library Card", "hash": "186d6ab5c240693a", "src": "db2@1.60.1.70124"}
+{"id": 277649, "field": "name", "en": "Undercity Library Card", "hash": "c8843e6a38d01bc6", "src": "db2@1.60.1.70124"}
+{"id": 277651, "field": "name", "en": "Bundle of Scrolls", "hash": "07a0578bd12fd210", "src": "db2@1.60.1.70124"}
+{"id": 277653, "field": "name", "en": "Abandoned Training Weapon", "hash": "73c86444347ff0bc", "src": "db2@1.60.1.70124"}
+{"id": 277661, "field": "name", "en": "Dull Storm Orb", "hash": "6be409af71f43ed6", "src": "db2@1.60.1.70124"}
+{"id": 277665, "field": "name", "en": "Charged Thunder Lizard Organ", "hash": "43b035e6b6d24000", "src": "db2@1.60.1.70124"}
+{"id": 277672, "field": "name", "en": "Rough Copper Chain Boots", "hash": "53bebfce0823147d", "src": "db2@1.60.1.70124"}
+{"id": 277673, "field": "name", "en": "Plans: Rough Copper Chain Boots", "hash": "97aca52ee79f904a", "src": "db2@1.60.1.70124"}
+{"id": 277673, "field": "description", "en": "Teaches you how to make a Rough Copper Chain Boots.", "hash": "1c9acb8727edffcb", "src": "db2@1.60.1.70124"}
+{"id": 277714, "field": "name", "en": "Spectral Bear Cub", "hash": "4b52ec03d571f043", "src": "db2@1.60.1.70124"}
+{"id": 277714, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70124"}
+{"id": 277715, "field": "name", "en": "Light Leather Reagent Bag", "hash": "987b9db26e5c331c", "src": "db2@1.60.1.70124"}
+{"id": 277716, "field": "name", "en": "Pattern: Light Leather Reagent Bag", "hash": "b2ef4e5063d00686", "src": "db2@1.60.1.70124"}
+{"id": 277716, "field": "description", "en": "Teaches you how to craft Light Leather Reagent Bag.", "hash": "b4ab7e44d15ff905", "src": "db2@1.60.1.70124"}
+{"id": 277717, "field": "name", "en": "Spectral Bear Tabard", "hash": "399aac73aac26821", "src": "db2@1.60.1.70124"}
+{"id": 277718, "field": "name", "en": "Reins of the Spectral Bear", "hash": "efbef270b6a9bda0", "src": "db2@1.60.1.70124"}
+{"id": 277718, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70124"}
+{"id": 277844, "field": "name", "en": "Mirage Mirror", "hash": "6847d38af54cf414", "src": "db2@1.60.1.70124"}
+{"id": 277844, "field": "description", "en": "Increases run speed by $s1% for $d. While out of combat in Desert areas, gain an additional $s2% run speed and become invisible.", "hash": "e3489f894fc5aad2", "src": "db2@1.60.1.70124"}
+{"id": 277845, "field": "name", "en": "A Reasonably Large Bag", "hash": "c60a01bb0ece3193", "src": "db2@1.60.1.70124"}
+{"id": 277910, "field": "name", "en": "Mysticbloom Seed", "hash": "20e40b32a555fee5", "src": "db2@1.60.1.70124"}
+{"id": 277910, "field": "description", "en": "Stuns and heals you for $o1 over $d. In Forest and Grassland areas, gain $1302875s1 Stamina for $1302875d.", "hash": "e3067100063a6867", "src": "db2@1.60.1.70124"}
+{"id": 277915, "field": "name", "en": "Stonetalon Supply Satchel", "hash": "b8f42015416543e6", "src": "db2@1.60.1.70124"}
+{"id": 277917, "field": "name", "en": "Stonetalon Supply Bundle", "hash": "8aac6fd6b2071e5f", "src": "db2@1.60.1.70124"}
+{"id": 277936, "field": "name", "en": "Glittering Sunstone", "hash": "130385c202fac561", "src": "db2@1.60.1.70124"}
+{"id": 277950, "field": "name", "en": "Wastewanderer Rations", "hash": "ccdf853f06a2e2ab", "src": "db2@1.60.1.70124"}
+{"id": 277950, "field": "description", "en": "Your Well Fed buffs metabolize $s2% slower. This effect is increased by an additional $s1% in Wasteland areas.", "hash": "e014f147099a990f", "src": "db2@1.60.1.70124"}
+{"id": 277952, "field": "name", "en": "Smooth Boulder", "hash": "59ed6bd83398805d", "src": "db2@1.60.1.70124"}
+{"id": 277953, "field": "name", "en": "Stolen Shipment", "hash": "8a1bb932f9d62c29", "src": "db2@1.60.1.70124"}
+{"id": 277957, "field": "name", "en": "Primitive Key", "hash": "5dedbe1a4b653c81", "src": "db2@1.60.1.70124"}
+{"id": 277958, "field": "name", "en": "Putrescent Bear Organs", "hash": "35b05e015a56486b", "src": "db2@1.60.1.70124"}
+{"id": 277959, "field": "name", "en": "Putrescent Wolf Organs", "hash": "62d19498fd2db5ca", "src": "db2@1.60.1.70124"}
+{"id": 277960, "field": "name", "en": "Lavender Kodo", "hash": "6c72c0fe2e134d38", "src": "db2@1.60.1.70124"}
+{"id": 277960, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70124"}
+{"id": 277972, "field": "name", "en": "Mirrorscale's Wing", "hash": "54eadafaf725a213", "src": "db2@1.60.1.70124"}
+{"id": 277973, "field": "name", "en": "Stag Lord's Bauble", "hash": "64f22cb2624bc43c", "src": "db2@1.60.1.70124"}
+{"id": 277974, "field": "name", "en": "Twice Reordered Package", "hash": "8ba5699cf1fbaafb", "src": "db2@1.60.1.70124"}
+{"id": 277974, "field": "description", "en": "To Powderfuse Port. Shipped from Booty Bay.", "hash": "892783a9be497122", "src": "db2@1.60.1.70124"}
+{"id": 277976, "field": "name", "en": "Gozwin's Mechanic's Log", "hash": "0dd7e83ac464d8be", "src": "db2@1.60.1.70124"}
+{"id": 277977, "field": "name", "en": "Canvas Latchbag", "hash": "559f86767de3acfd", "src": "db2@1.60.1.70124"}
+{"id": 277979, "field": "name", "en": "Mauler's Mutton", "hash": "a6713b91b1bc0e3d", "src": "db2@1.60.1.70124"}
+{"id": 277980, "field": "name", "en": "Ogre Bone", "hash": "93e00bdb797b8d55", "src": "db2@1.60.1.70124"}
+{"id": 277981, "field": "name", "en": "Souvenir Ogre Tooth", "hash": "5ed2a1174299b8df", "src": "db2@1.60.1.70124"}
+{"id": 277986, "field": "name", "en": "Drum of Crude Oil", "hash": "431a6cef0a3a8355", "src": "db2@1.60.1.70124"}
+{"id": 277988, "field": "name", "en": "Hoof-Holstered Blade", "hash": "ca8b0af719f0a5cb", "src": "db2@1.60.1.70124"}

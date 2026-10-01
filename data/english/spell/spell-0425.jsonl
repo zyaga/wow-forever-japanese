@@ -1,313 +1,313 @@
-{"id": 425012, "field": "name", "en": "Poisoned Knife", "hash": "b07d69378f02339f", "src": "db2@1.60.1.70009"}
-{"id": 425012, "field": "description", "en": "Instantly throw your off-hand weapon to deal normal off-hand weapon damage with a 100% chance to apply the poison from your off-hand weapon to the target. Awards $s2 combo $lpoint:points;. Refunds $s3 Energy per application of Deadly Poison on the target.\r\n\r\nPoisoned Knife benefits from all talents and effects that trigger from or modify Sinister Strike.\r\n", "hash": "efa7ed2e8ba99edf", "src": "db2@1.60.1.70009"}
-{"id": 425013, "field": "name", "en": "Poisoned Knife", "hash": "b07d69378f02339f", "src": "db2@1.60.1.70009"}
-{"id": 425013, "field": "description", "en": "Instantly throw your off-hand weapon to deal normal off-hand weapon damage with a 100% chance to apply the poison from your off-hand weapon to the target. Awards $s2 combo $lpoint:points;.\r\n\r\nPoisoned Knife benefits from all talents and effects that trigger from or modify Sinister Strike.\r\n\r\n", "hash": "2e09c327042934a5", "src": "db2@1.60.1.70009"}
-{"id": 425016, "field": "name", "en": "Summon Grizzled Protector", "hash": "676d24ffa28b042a", "src": "db2@1.60.1.70009"}
-{"id": 425067, "field": "name", "en": "Breach Gate", "hash": "ce579ea43339795d", "src": "db2@1.60.1.70009"}
-{"id": 425067, "field": "description", "en": "Open a heavy gate, goblin-style!", "hash": "13dc7dbcacb59eb5", "src": "db2@1.60.1.70009"}
-{"id": 425078, "field": "name", "en": "[DNT] Shadowfang Solo Rogue Aura", "hash": "6732508e3b451c7c", "src": "db2@1.60.1.70009"}
-{"id": 425094, "field": "name", "en": "Combine Half-Keys", "hash": "f5c34e6559dae04b", "src": "db2@1.60.1.70009"}
-{"id": 425094, "field": "description", "en": "Combine Brother and Sister Half-Keys.", "hash": "1df3c5ffc0868099", "src": "db2@1.60.1.70009"}
-{"id": 425096, "field": "name", "en": "Master of Subtlety", "hash": "2eea567f4e7b6ef9", "src": "db2@1.60.1.70009"}
-{"id": 425096, "field": "description", "en": "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional $s1% damage.", "hash": "94ffd5e186f1e416", "src": "db2@1.60.1.70009"}
-{"id": 425098, "field": "name", "en": "Master of Subtlety", "hash": "2eea567f4e7b6ef9", "src": "db2@1.60.1.70009"}
-{"id": 425098, "field": "description", "en": "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional $s1% damage.", "hash": "94ffd5e186f1e416", "src": "db2@1.60.1.70009"}
-{"id": 425098, "field": "aura", "en": "Increases damage done by $s1% while stealthed and for 6 seconds after breaking stealth.", "hash": "5488e10f17c425b6", "src": "db2@1.60.1.70009"}
-{"id": 425100, "field": "name", "en": "Poisoned Knife", "hash": "b07d69378f02339f", "src": "db2@1.60.1.70009"}
-{"id": 425100, "field": "description", "en": "Gain the Poisoned Knife ability:\r\n\r\n$@spellicon425012\r\n$@spelldesc425012", "hash": "937b24a06cbf84e6", "src": "db2@1.60.1.70009"}
-{"id": 425101, "field": "name", "en": "Master of Subtlety", "hash": "2eea567f4e7b6ef9", "src": "db2@1.60.1.70009"}
-{"id": 425101, "field": "description", "en": "Gain the Master of Subtlety ability:\r\n\r\n$@spellicon425096\r\n$@spelldesc425096", "hash": "de540b325723bf46", "src": "db2@1.60.1.70009"}
-{"id": 425102, "field": "name", "en": "Engrave Belt - Poisoned Knife", "hash": "5bf273d13be21f33", "src": "db2@1.60.1.70009"}
-{"id": 425102, "field": "description", "en": "Engrave your belt with the Poisoned Knife rune:\r\n\r\n$@spellicon425012\r\n$@spelldesc425012", "hash": "dae3547b284d67fe", "src": "db2@1.60.1.70009"}
-{"id": 425103, "field": "name", "en": "Engrave Boots - Master of Subtlety", "hash": "5da982db905bd2d7", "src": "db2@1.60.1.70009"}
-{"id": 425103, "field": "description", "en": "Engrave your boots with the Master of Subtlety rune:\r\n\r\n$@spellicon425096\r\n$@spelldesc425096", "hash": "b4456c3f075d4ede", "src": "db2@1.60.1.70009"}
-{"id": 425121, "field": "name", "en": "Icy Veins", "hash": "da648c24cd8e9684", "src": "db2@1.60.1.70009"}
-{"id": 425121, "field": "description", "en": "Hastens your spellcasting, increasing spell casting speed by $s1% and reduces the pushback suffered from damaging attacks while casting by $s2%. Lasts $d.", "hash": "a582f7cdd09ff94b", "src": "db2@1.60.1.70009"}
-{"id": 425121, "field": "aura", "en": "Casting speed of all spells increased by $s1% and pushback suffered from damaging attacks while casting reduced by $s2%.", "hash": "edaed79fc6ecdfa0", "src": "db2@1.60.1.70009"}
-{"id": 425124, "field": "name", "en": "Arcane Surge", "hash": "467ff7199036e33f", "src": "db2@1.60.1.70009"}
-{"id": 425124, "field": "description", "en": "Unleash all of your remaining mana in a surge of energy focused at the target dealing ${$<power>*$m1/100} to ${$<power>*$M1/100} Arcane damage, increased by up to $s4% based on your mana remaining. Afterward, your normal mana regeneration is activated and increased by $s2% for $d.", "hash": "339bcb875a928156", "src": "db2@1.60.1.70009"}
-{"id": 425124, "field": "aura", "en": "Normal mana regeneration activated and increased by $s2%.", "hash": "a28241d90773894b", "src": "db2@1.60.1.70009"}
-{"id": 425147, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70009"}
-{"id": 425151, "field": "name", "en": "S03 - Rogue 25 Quest Reward", "hash": "722e27b3e2b4391b", "src": "db2@1.60.1.70009"}
-{"id": 425168, "field": "name", "en": "Arcane Surge", "hash": "467ff7199036e33f", "src": "db2@1.60.1.70009"}
-{"id": 425168, "field": "description", "en": "Gain the Arcane Surge ability:\r\n\r\n$@spellicon425124\r\n$@spelldesc425124", "hash": "40f1c9b3f5ad6dba", "src": "db2@1.60.1.70009"}
-{"id": 425169, "field": "name", "en": "Icy Veins", "hash": "da648c24cd8e9684", "src": "db2@1.60.1.70009"}
-{"id": 425169, "field": "description", "en": "Gain the Icy Veins ability:\r\n\r\n$@spellicon425121\r\n$@spelldesc425121", "hash": "dad3711a9c4866e9", "src": "db2@1.60.1.70009"}
-{"id": 425170, "field": "name", "en": "Engrave Pants - Icy Veins", "hash": "0c5f61c32a71725c", "src": "db2@1.60.1.70009"}
-{"id": 425170, "field": "description", "en": "Engrave your pants with the Icy Veins rune:\r\n\r\n$@spellicon425121\r\n$@spelldesc425121", "hash": "e3b2f6e8540fb6bf", "src": "db2@1.60.1.70009"}
-{"id": 425171, "field": "name", "en": "Engrave Pants - Arcane Surge", "hash": "5a3419aadd180c36", "src": "db2@1.60.1.70009"}
-{"id": 425171, "field": "description", "en": "Engrave your pants with the Arcane Surge rune:\r\n\r\n$@spellicon425124\r\n$@spelldesc425124", "hash": "5e00b89129586827", "src": "db2@1.60.1.70009"}
-{"id": 425187, "field": "name", "en": "Chronostatic Preservation", "hash": "fb106a5f1a35c238", "src": "db2@1.60.1.70009"}
-{"id": 425187, "field": "description", "en": "Gain the Chronostatic Preservation ability:\r\n\r\n$@spellicon436516\r\n$@spelldesc436516", "hash": "c1a12a9c8a3e20d1", "src": "db2@1.60.1.70009"}
-{"id": 425189, "field": "name", "en": "Engrave Boots - Chronostatic Preservation", "hash": "b5e3326d62d29c87", "src": "db2@1.60.1.70009"}
-{"id": 425189, "field": "description", "en": "Engrave your boots with the Chronostatic Preservation rune:\r\n\r\n$@spellicon436516\r\n$@spelldesc436516", "hash": "1d4e262edee051d9", "src": "db2@1.60.1.70009"}
-{"id": 425198, "field": "name", "en": "Twisted Faith", "hash": "fa51f874ee16e047", "src": "db2@1.60.1.70009"}
-{"id": 425198, "field": "description", "en": "Mind Flay and Mind Blast deal $s1% increased damage to targets afflicted with your Shadow Word: Pain.", "hash": "7838fcf402cad6a8", "src": "db2@1.60.1.70009"}
-{"id": 425204, "field": "name", "en": "Void Plague", "hash": "dd6da1ac3b1435dc", "src": "db2@1.60.1.70009"}
-{"id": 425204, "field": "description", "en": "Afflicts the target with a disease that causes ${$<damagepower>*$m1/100*6} Shadow damage over $d.", "hash": "6d5d1c3a3c5c134e", "src": "db2@1.60.1.70009"}
-{"id": 425204, "field": "aura", "en": "Causes $w1 damage every $t1 seconds.", "hash": "a713b2d824cea956", "src": "db2@1.60.1.70009"}
-{"id": 425205, "field": "name", "en": "Power Word: Barrier", "hash": "00efeeaf521d8014", "src": "db2@1.60.1.70009"}
-{"id": 425205, "field": "aura", "en": "Damage taken reduced by $s1% and damaging attacks will not cause spellcasting delays.", "hash": "c6bd28be37e1af6b", "src": "db2@1.60.1.70009"}
-{"id": 425207, "field": "name", "en": "Power Word: Barrier", "hash": "00efeeaf521d8014", "src": "db2@1.60.1.70009"}
-{"id": 425207, "field": "description", "en": "Summons a holy barrier to protect all party members at the target location for $d, reducing all damage taken by $425205s1% and preventing damage from delaying spellcasting. ", "hash": "b1dd5c90cc015f8b", "src": "db2@1.60.1.70009"}
-{"id": 425210, "field": "name", "en": "Twisted Faith", "hash": "fa51f874ee16e047", "src": "db2@1.60.1.70009"}
-{"id": 425210, "field": "description", "en": "Gain the Twisted Faith ability:\r\n\r\n$@spellicon425198\r\n$@spelldesc425198", "hash": "be861b6127b7d925", "src": "db2@1.60.1.70009"}
-{"id": 425211, "field": "name", "en": "Void Plague", "hash": "dd6da1ac3b1435dc", "src": "db2@1.60.1.70009"}
-{"id": 425211, "field": "description", "en": "Gain the Void Plague ability:\r\n\r\n$@spellicon425204\r\n$@spelldesc425204", "hash": "19ef949a49fe5f2d", "src": "db2@1.60.1.70009"}
-{"id": 425212, "field": "name", "en": "Power Word: Barrier", "hash": "00efeeaf521d8014", "src": "db2@1.60.1.70009"}
-{"id": 425212, "field": "description", "en": "Gain the Power Word: Barrier ability:\r\n\r\n$@spellicon425207\r\n$@spelldesc425207", "hash": "ba814dc9e0c83d28", "src": "db2@1.60.1.70009"}
-{"id": 425213, "field": "name", "en": "Engrave Bracers - Power Word: Barrier", "hash": "46d72db2b99c0d13", "src": "db2@1.60.1.70009"}
-{"id": 425213, "field": "description", "en": "Engrave your bracers with the Power Word: Barrier rune:\r\n\r\n$@spellicon425207\r\n$@spelldesc425207", "hash": "192ed3ca8c67c641", "src": "db2@1.60.1.70009"}
-{"id": 425215, "field": "name", "en": "Engrave Chest - Twisted Faith", "hash": "1c8e2400c37691cd", "src": "db2@1.60.1.70009"}
-{"id": 425215, "field": "description", "en": "Engrave your chest or robe with the Twisted Faith rune:\r\n\r\n$@spellicon425198\r\n$@spelldesc425198", "hash": "66bd1c0bfb866c09", "src": "db2@1.60.1.70009"}
-{"id": 425216, "field": "name", "en": "Engrave Boots - Void Plague", "hash": "0a2736e147a2d6ab", "src": "db2@1.60.1.70009"}
-{"id": 425216, "field": "description", "en": "Engrave your boots with the Void Plague rune:\r\n\r\n$@spellicon425204\r\n$@spelldesc425204", "hash": "42ee551e026b5ec7", "src": "db2@1.60.1.70009"}
-{"id": 425218, "field": "name", "en": "Crazed", "hash": "b1da892814349bca", "src": "db2@1.60.1.70009"}
-{"id": 425225, "field": "name", "en": "Fire Damage Check", "hash": "cf85c5b9e83a6793", "src": "db2@1.60.1.70009"}
-{"id": 425226, "field": "name", "en": "Burning", "hash": "697ceb14fcb64b22", "src": "db2@1.60.1.70009"}
-{"id": 425226, "field": "description", "en": "Burning!", "hash": "faec4c662f533dfb", "src": "db2@1.60.1.70009"}
-{"id": 425226, "field": "aura", "en": "Burning!", "hash": "faec4c662f533dfb", "src": "db2@1.60.1.70009"}
-{"id": 425233, "field": "name", "en": "Mind Blast", "hash": "868279b14e0b7083", "src": "db2@1.60.1.70009"}
-{"id": 425233, "field": "description", "en": "Inflicts Shadow damage to an enemy, but causes a high amount of threat.", "hash": "d60755718e5f125b", "src": "db2@1.60.1.70009"}
-{"id": 425234, "field": "name", "en": "Orbs of Shadow", "hash": "a3426883bb5f414d", "src": "db2@1.60.1.70009"}
-{"id": 425234, "field": "aura", "en": "Unstable magical energy coalesces around Kelris.\r\n\r\nIncreases shadow damage by $s1%.", "hash": "65b7862730aa62ef", "src": "db2@1.60.1.70009"}
-{"id": 425235, "field": "name", "en": "Polished Iceblock", "hash": "e258f6c30c3dffbe", "src": "db2@1.60.1.70009"}
-{"id": 425235, "field": "aura", "en": "Stunned, but nearly impervious.", "hash": "00b8f0197074a041", "src": "db2@1.60.1.70009"}
-{"id": 425236, "field": "name", "en": "Orbs of Shadow Visual 2", "hash": "346852280a852b2a", "src": "db2@1.60.1.70009"}
-{"id": 425237, "field": "name", "en": "Orbs of Shadow Visual 3", "hash": "346852290a852b2b", "src": "db2@1.60.1.70009"}
-{"id": 425239, "field": "name", "en": "Shadowy Chains", "hash": "4fcd37f46a29ed98", "src": "db2@1.60.1.70009"}
-{"id": 425239, "field": "aura", "en": "Movement slowed by $s2%.\r\nShadow damage inflicted every $t3 sec.", "hash": "e57492101833d3e7", "src": "db2@1.60.1.70009"}
-{"id": 425265, "field": "name", "en": "Shadowy Chains", "hash": "4fcd37f46a29ed98", "src": "db2@1.60.1.70009"}
-{"id": 425265, "field": "aura", "en": "[PH] needs a tooltip", "hash": "1e8354d4c4a6e1ad", "src": "db2@1.60.1.70009"}
-{"id": 425266, "field": "name", "en": "Empowered Renew", "hash": "be7523e137c66003", "src": "db2@1.60.1.70009"}
-{"id": 425266, "field": "description", "en": "Your Renew now heals one extra time immediately when applied, and gains $s1% increased benefit each time it heals from your bonus healing effects.\r\n\r\nIn addition, your Renew can now be active on targets affected by another Priest's Renew.\r\n", "hash": "8faef343e644d82c", "src": "db2@1.60.1.70009"}
-{"id": 425268, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70009"}
-{"id": 425268, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70009"}
-{"id": 425268, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 425269, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70009"}
-{"id": 425269, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70009"}
-{"id": 425269, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 425270, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70009"}
-{"id": 425270, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70009"}
-{"id": 425270, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 425271, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70009"}
-{"id": 425271, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70009"}
-{"id": 425271, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 425272, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70009"}
-{"id": 425272, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70009"}
-{"id": 425272, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 425273, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70009"}
-{"id": 425273, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70009"}
-{"id": 425273, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 425274, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70009"}
-{"id": 425274, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70009"}
-{"id": 425274, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 425275, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70009"}
-{"id": 425275, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70009"}
-{"id": 425275, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 425276, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70009"}
-{"id": 425276, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70009"}
-{"id": 425276, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 425277, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70009"}
-{"id": 425277, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70009"}
-{"id": 425277, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70009"}
-{"id": 425280, "field": "name", "en": "Renewed Hope", "hash": "62cdfc7072d9eb2c", "src": "db2@1.60.1.70009"}
-{"id": 425280, "field": "description", "en": "Your heals from Flash Heal, Binding Heal, Lesser Heal, Heal, Greater Heal, and Penance gain $m1% increased critical strike chance when cast on targets with Weakened Soul, and reduce the remaining duration of Weakened Soul on their target by ${$m2/-1000} sec.", "hash": "1cb93a0fa22ddbc5", "src": "db2@1.60.1.70009"}
-{"id": 425284, "field": "name", "en": "Spirit of the Redeemer", "hash": "773b7f781feb5486", "src": "db2@1.60.1.70009"}
-{"id": 425284, "field": "description", "en": "Activate to become the Spirit of Redemption for $d. While in this form, you can cast any healing spell free of cost, but you cannot move, attack, be attacked, or be targeted by any spells or effects. Requires Spirit of Redemption talent to activate, and you will no longer enter Spirit of Redemption  upon dying.", "hash": "bb79c036b6a021fb", "src": "db2@1.60.1.70009"}
-{"id": 425284, "field": "aura", "en": "You have become more powerful than anyone can possibly imagine.", "hash": "393ecc0ca928171a", "src": "db2@1.60.1.70009"}
-{"id": 425285, "field": "name", "en": "Summon Decayed Elemental", "hash": "8058d16a2b25f493", "src": "db2@1.60.1.70009"}
-{"id": 425285, "field": "description", "en": "Call to the spirits of the elements.", "hash": "091afdbbb45574ae", "src": "db2@1.60.1.70009"}
-{"id": 425294, "field": "name", "en": "Dispersion", "hash": "405f6d57e0d19d40", "src": "db2@1.60.1.70009"}
-{"id": 425294, "field": "description", "en": "You disperse into pure Shadow energy, reducing all damage taken by $s1%.  You are unable to attack or cast spells, but you regenerate $s2% mana every $t2 sec for $d. Dispersion can be cast while stunned, feared or silenced and clears all snare and movement impairing effects when cast, and makes you immune to them while dispersed.", "hash": "f9ae902a72e6aa3b", "src": "db2@1.60.1.70009"}
-{"id": 425294, "field": "aura", "en": "Reduces all damage by $s1%, and you regenerate $s2% mana every $t2 sec for $d.  Cannot attack or cast spells. Immune to snare and movement impairing effects.", "hash": "a58e8279d286be2f", "src": "db2@1.60.1.70009"}
-{"id": 425301, "field": "name", "en": "[DNT] Player is in Statue Trigger", "hash": "62a233fd3f88d1de", "src": "db2@1.60.1.70009"}
-{"id": 425302, "field": "name", "en": "Empowered Renew", "hash": "be7523e137c66003", "src": "db2@1.60.1.70009"}
-{"id": 425302, "field": "description", "en": "Gain the Empowered Renew ability:\r\n\r\n$@spellicon425266\r\n$@spelldesc425266", "hash": "6f1dc8a5c2367527", "src": "db2@1.60.1.70009"}
-{"id": 425303, "field": "name", "en": "Renewed Hope", "hash": "62cdfc7072d9eb2c", "src": "db2@1.60.1.70009"}
-{"id": 425303, "field": "description", "en": "Gain the Renewed Hope ability:\r\n\r\n$@spellicon425280\r\n$@spelldesc425280", "hash": "df0b8af4a63f6bb0", "src": "db2@1.60.1.70009"}
-{"id": 425304, "field": "name", "en": "Spirit of the Redeemer", "hash": "773b7f781feb5486", "src": "db2@1.60.1.70009"}
-{"id": 425304, "field": "description", "en": "Gain the Spirit of the Redeemer ability:\r\n\r\n$@spellicon425284\r\n$@spelldesc425284", "hash": "cd4dc4ca62662261", "src": "db2@1.60.1.70009"}
-{"id": 425307, "field": "name", "en": "Dispersion", "hash": "405f6d57e0d19d40", "src": "db2@1.60.1.70009"}
-{"id": 425307, "field": "description", "en": "Gain the Dispersion ability:\r\n\r\n$@spellicon425294\r\n$@spelldesc425294", "hash": "23f83f060e2642c7", "src": "db2@1.60.1.70009"}
-{"id": 425309, "field": "name", "en": "Engrave Belt - Empowered Renew", "hash": "7b598fd8461aa91d", "src": "db2@1.60.1.70009"}
-{"id": 425309, "field": "description", "en": "Engrave your belt with the Empowered Renew rune:\r\n\r\n$@spellicon425266\r\n$@spelldesc425266", "hash": "e14c3cd23257c728", "src": "db2@1.60.1.70009"}
-{"id": 425310, "field": "name", "en": "Engrave Belt - Renewed Hope", "hash": "3cd976ea63ae315d", "src": "db2@1.60.1.70009"}
-{"id": 425310, "field": "description", "en": "Engrave your belt with the Renewed Hope rune:\r\n\r\n$@spellicon425280\r\n$@spelldesc425280", "hash": "88a2587107047b0a", "src": "db2@1.60.1.70009"}
-{"id": 425312, "field": "name", "en": "Engrave Boots - Spirit of the Redeemer", "hash": "c5f4cd3c5477a725", "src": "db2@1.60.1.70009"}
-{"id": 425312, "field": "description", "en": "Engrave your boots with the Spirit of the Redeemer rune:\r\n\r\n$@spellicon425284\r\n$@spelldesc425284", "hash": "10efc02281c53459", "src": "db2@1.60.1.70009"}
-{"id": 425314, "field": "name", "en": "Engrave Boots - Dispersion", "hash": "aa3dab0dd861d56c", "src": "db2@1.60.1.70009"}
-{"id": 425314, "field": "description", "en": "Engrave your boots with the Dispersion\r\n rune:\r\n\r\n$@spellicon425294\r\n$@spelldesc425294", "hash": "0287aa9bad419395", "src": "db2@1.60.1.70009"}
-{"id": 425321, "field": "name", "en": "Duskwood Rings - Give Rune", "hash": "9af736f7069c5c77", "src": "db2@1.60.1.70009"}
-{"id": 425336, "field": "name", "en": "Rage of the Farseer", "hash": "d1225497e3db38c1", "src": "db2@1.60.1.70009"}
-{"id": 425336, "field": "description", "en": "Increases your attack speed by $s1% for $d.", "hash": "7e4b2c7fe7ada63e", "src": "db2@1.60.1.70009"}
-{"id": 425336, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70009"}
-{"id": 425339, "field": "name", "en": "Molten Blast", "hash": "6bb2dd265bc2e468", "src": "db2@1.60.1.70009"}
-{"id": 425339, "field": "description", "en": "Blast up to $i enemies in a cone in front of you for ${$<damagepower>*$m1/100+$m2/100*$AP} to ${$<damagepower>*$M1/100+$m2/100*$AP} Fire damage. This ability generates a high amount of threat. Flame Shock periodic damage has a $s3% chance to reset the cooldown on Molten Blast.", "hash": "0854686643ead010", "src": "db2@1.60.1.70009"}
-{"id": 425340, "field": "name", "en": "Molten Blast", "hash": "6bb2dd265bc2e468", "src": "db2@1.60.1.70009"}
-{"id": 425340, "field": "description", "en": "Gain the Molten Blast ability:\r\n\r\n$@spellicon425339\r\n$@spelldesc425339", "hash": "32a57cd39c09fcea", "src": "db2@1.60.1.70009"}
-{"id": 425341, "field": "name", "en": "Greater Ghost Wolf", "hash": "2c8e0d57e347a88b", "src": "db2@1.60.1.70009"}
-{"id": 425341, "field": "description", "en": "Gain the Greater Ghost Wolf ability:\r\n\r\n$@spellicon415813\r\n$@spelldesc415813", "hash": "e67819f99cc85396", "src": "db2@1.60.1.70009"}
-{"id": 425343, "field": "name", "en": "Engrave Pants - Greater Ghost Wolf", "hash": "c503264d2b95b5e4", "src": "db2@1.60.1.70009"}
-{"id": 425343, "field": "description", "en": "Engrave your pants with the Greater Ghost Wolf rune:\r\n\r\n$@spellicon415813\r\n$@spelldesc415813", "hash": "0f11028df6f321c2", "src": "db2@1.60.1.70009"}
-{"id": 425344, "field": "name", "en": "Engrave Gloves - Molten Blast", "hash": "2001c905db35644e", "src": "db2@1.60.1.70009"}
-{"id": 425344, "field": "description", "en": "Engrave your gloves with the Molten Blast rune:\r\n\r\n$@spellicon425339\r\n$@spelldesc425339", "hash": "23c7149c655e75a5", "src": "db2@1.60.1.70009"}
-{"id": 425412, "field": "name", "en": "Frenzied Assault", "hash": "d6eecd481d05f56d", "src": "db2@1.60.1.70009"}
-{"id": 425412, "field": "description", "en": "While wielding 2-handed weapons, your attack speed is increased by $s1% and your successful melee hits generate $s2 additional Rage, or ${$m2*2} additional Rage if they are critical hits.\r\n", "hash": "1e91f2d15e036748", "src": "db2@1.60.1.70009"}
-{"id": 425415, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70009"}
-{"id": 425415, "field": "aura", "en": "Enraged.", "hash": "8be4b6b8a7fd191a", "src": "db2@1.60.1.70009"}
-{"id": 425418, "field": "name", "en": "Consumed By Rage", "hash": "849f369e31f085bd", "src": "db2@1.60.1.70009"}
-{"id": 425418, "field": "description", "en": "Enrages you (activating abilities which require being Enraged) for $425415d  after you exceed $s1 Rage. In addition, Whirlwind also strikes with off-hand melee weapons while you are Enraged.", "hash": "c054ad7385943c26", "src": "db2@1.60.1.70009"}
-{"id": 425421, "field": "name", "en": "Warbringer", "hash": "518ef27692167ea2", "src": "db2@1.60.1.70009"}
-{"id": 425421, "field": "description", "en": "Your Charge, Intercept, and Intervene abilities are now usable while in combat and in any stance, and will all remove movement impairing effects when activated.", "hash": "b79da5551062b704", "src": "db2@1.60.1.70009"}
-{"id": 425428, "field": "name", "en": "Quick Strike", "hash": "45228ec457144e2d", "src": "db2@1.60.1.70009"}
-{"id": 425428, "field": "description", "en": "Gain the Quick Strike ability:\r\n\r\n$@spellicon429765\r\n$@spelldesc429765", "hash": "565964996450071f", "src": "db2@1.60.1.70009"}
-{"id": 425429, "field": "name", "en": "Raging Blow", "hash": "5fb1224f481ef704", "src": "db2@1.60.1.70009"}
-{"id": 425429, "field": "description", "en": "Gain the Raging Blow ability:\r\n\r\n$@spellicon402911\r\n$@spelldesc402911", "hash": "103bfb7d2c3f3a67", "src": "db2@1.60.1.70009"}
-{"id": 425430, "field": "name", "en": "Warbringer", "hash": "518ef27692167ea2", "src": "db2@1.60.1.70009"}
-{"id": 425430, "field": "description", "en": "Gain the Warbringer ability:\r\n\r\n$@spellicon425421\r\n$@spelldesc425421", "hash": "b338ca677aa1bc1c", "src": "db2@1.60.1.70009"}
-{"id": 425431, "field": "name", "en": "[DNT] Player is in Fishing Boat Trigger", "hash": "11e73cecb2d89773", "src": "db2@1.60.1.70009"}
-{"id": 425440, "field": "name", "en": "Consumed by Rage", "hash": "1af59131e4c32ac7", "src": "db2@1.60.1.70009"}
-{"id": 425440, "field": "description", "en": "Gain the Consumed by Rage ability:\r\n\r\n$@spellicon425418\r\n$@spelldesc425418", "hash": "985a7941b64b5cdf", "src": "db2@1.60.1.70009"}
-{"id": 425442, "field": "name", "en": "Frenzied Assault", "hash": "d6eecd481d05f56d", "src": "db2@1.60.1.70009"}
-{"id": 425442, "field": "description", "en": "Gain the Frenzied Assault ability:\r\n\r\n$@spellicon425412\r\n$@spelldesc425412", "hash": "85410117db3fa4cb", "src": "db2@1.60.1.70009"}
-{"id": 425443, "field": "name", "en": "Engrave Gloves - Quick Strike", "hash": "f9717a9ed686ce13", "src": "db2@1.60.1.70009"}
-{"id": 425443, "field": "description", "en": "Engrave your gloves with the Quick Strike rune:\r\n\r\n$@spellicon429765\r\n$@spelldesc429765", "hash": "fe2ebe8b7b72422b", "src": "db2@1.60.1.70009"}
-{"id": 425444, "field": "name", "en": "Engrave Chest - Raging Blow", "hash": "34227b26444e7a1c", "src": "db2@1.60.1.70009"}
-{"id": 425444, "field": "description", "en": "Engrave your chest with the Raging Blow rune:\r\n\r\n$@spellicon402911\r\n$@spelldesc402911", "hash": "95af0904a9aa576b", "src": "db2@1.60.1.70009"}
-{"id": 425445, "field": "name", "en": "Engrave Chest - Warbringer", "hash": "10bcc24ab5e10c55", "src": "db2@1.60.1.70009"}
-{"id": 425445, "field": "description", "en": "Engrave your chest with the Warbringer rune:\r\n\r\n$@spellicon425421\r\n$@spelldesc425421", "hash": "d9810bbda9127509", "src": "db2@1.60.1.70009"}
-{"id": 425446, "field": "name", "en": "Engrave Pants - Consumed by Rage", "hash": "1925efc98323318b", "src": "db2@1.60.1.70009"}
-{"id": 425446, "field": "description", "en": "Engrave your pants with the Consumed by Rage rune:\r\n\r\n$@spellicon425418\r\n$@spelldesc425418", "hash": "002a5c3b2debfeae", "src": "db2@1.60.1.70009"}
-{"id": 425447, "field": "name", "en": "Engrave Pants - Frenzied Assault", "hash": "d51f2be0bb65fc20", "src": "db2@1.60.1.70009"}
-{"id": 425447, "field": "description", "en": "Engrave your pants with the Frenzied Assault rune:\r\n\r\n$@spellicon425412\r\n$@spelldesc425412", "hash": "17dbef858980b209", "src": "db2@1.60.1.70009"}
-{"id": 425460, "field": "name", "en": "Dream Eater", "hash": "5490c9a702d77b99", "src": "db2@1.60.1.70009"}
-{"id": 425460, "field": "aura", "en": "The dream is collapsing.", "hash": "2b57184c1f283984", "src": "db2@1.60.1.70009"}
-{"id": 425462, "field": "name", "en": "Dream Eater", "hash": "5490c9a702d77b99", "src": "db2@1.60.1.70009"}
-{"id": 425463, "field": "name", "en": "Demonic Grace", "hash": "1416e0ed04ca8c10", "src": "db2@1.60.1.70009"}
-{"id": 425463, "field": "description", "en": "Surge with fel energy, increasing your pet's and your own dodge chance by $s1%, and your chance to critically strike with all attacks by $s2%. Lasts $d.", "hash": "95ecc1be56f04cb7", "src": "db2@1.60.1.70009"}
-{"id": 425463, "field": "aura", "en": "Dodge chance increased by $s1%. \r\nMaster's critical strike chance increased by $s2%.", "hash": "b041bbc12c58bc2b", "src": "db2@1.60.1.70009"}
-{"id": 425464, "field": "name", "en": "Demonic Pact", "hash": "788c4d8e2d0797fc", "src": "db2@1.60.1.70009"}
-{"id": 425464, "field": "description", "en": "Your Demonic Sacrifice effect is no longer cancelled by summoning a different Demon pet. Resummoning the sacrificed pet will still cancel the effect.\r\n", "hash": "910d423f78764f42", "src": "db2@1.60.1.70009"}
-{"id": 425465, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70009"}
-{"id": 425466, "field": "name", "en": "Demonic Pact", "hash": "788c4d8e2d0797fc", "src": "db2@1.60.1.70009"}
-{"id": 425467, "field": "name", "en": "Demonic Pact", "hash": "788c4d8e2d0797fc", "src": "db2@1.60.1.70009"}
-{"id": 425467, "field": "aura", "en": "Spell damage and healing increased by $w1.", "hash": "79cd41df74dd476a", "src": "db2@1.60.1.70009"}
-{"id": 425473, "field": "name", "en": "Demonic Pact", "hash": "788c4d8e2d0797fc", "src": "db2@1.60.1.70009"}
-{"id": 425473, "field": "description", "en": "Gain the Demonic Pact ability:\r\n\r\n$@spellicon425464\r\n$@spelldesc425464", "hash": "71ac32060cf95e12", "src": "db2@1.60.1.70009"}
-{"id": 425474, "field": "name", "en": "Demonic Grace", "hash": "1416e0ed04ca8c10", "src": "db2@1.60.1.70009"}
-{"id": 425474, "field": "description", "en": "Gain the Demonic Grace ability:\r\n\r\n$@spellicon425463\r\n$@spelldesc425463", "hash": "a8b370d2ae7e4f77", "src": "db2@1.60.1.70009"}
-{"id": 425476, "field": "name", "en": "Engrave Pants - Demonic Pact", "hash": "8c40701f79e8c0f3", "src": "db2@1.60.1.70009"}
-{"id": 425476, "field": "description", "en": "Engrave your pants with the Demonic Pact rune:\r\n\r\n$@spellicon425464\r\n$@spelldesc425464", "hash": "15896149d3b33a0e", "src": "db2@1.60.1.70009"}
-{"id": 425477, "field": "name", "en": "Engrave Pants - Demonic Grace", "hash": "29449152daa618d9", "src": "db2@1.60.1.70009"}
-{"id": 425477, "field": "description", "en": "Engrave your pants with the Demonic Grace rune:\r\n\r\n$@spellicon425463\r\n$@spelldesc425463", "hash": "08b6b628ebc019e9", "src": "db2@1.60.1.70009"}
-{"id": 425480, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70009"}
-{"id": 425497, "field": "name", "en": "Toss Bait", "hash": "60c4d725456e709e", "src": "db2@1.60.1.70009"}
-{"id": 425497, "field": "description", "en": "Toss bait.", "hash": "b670e33c43049f1d", "src": "db2@1.60.1.70009"}
-{"id": 425589, "field": "name", "en": "Aegis", "hash": "829f1799fc7dfb69", "src": "db2@1.60.1.70009"}
-{"id": 425589, "field": "description", "en": "Increases your block value by $s2% and modifies your Redoubt talent. Redoubt now also has a $m1% chance to trigger from any melee or ranged attack against you, and always triggers when you deal a melee critical strike. In addition, your Reckoning talent gains a $s3% chance per talent point to trigger from any melee or ranged attack against you.", "hash": "62ae9a8adf6bde28", "src": "db2@1.60.1.70009"}
-{"id": 425600, "field": "name", "en": "Horn of Lordaeron", "hash": "bc25f9b159ddf126", "src": "db2@1.60.1.70009"}
-{"id": 425600, "field": "description", "en": "The Paladin blows the Horn of Lordaeron, which increases total Strength and Agility of all party members within $a1 yards by $?s25291[89][${$cond($gte($PL,56),74,$cond($gte($PL,52),60,$cond($gte($PL,42),45,$cond($gte($PL,32),26,$cond($gte($PL,22),17,$cond($gte($PL,12),11,6)))))))}]. Lasts $d. Exclusive with Blessing of Might.", "hash": "c2588b8d98298c03", "src": "db2@1.60.1.70009"}
-{"id": 425600, "field": "aura", "en": "Increases your total Strength and Agility by $w1.", "hash": "4c95c821384ee557", "src": "db2@1.60.1.70009"}
-{"id": 425609, "field": "name", "en": "Rebuke", "hash": "8a89b6e702ec7a37", "src": "db2@1.60.1.70009"}
-{"id": 425609, "field": "description", "en": "Interrupts spellcasting and prevents any spell in that school from being cast for $d.", "hash": "25cb829fe928a51a", "src": "db2@1.60.1.70009"}
-{"id": 425614, "field": "name", "en": "Hallowed Ground", "hash": "32635a2a38f92870", "src": "db2@1.60.1.70009"}
-{"id": 425614, "field": "description", "en": "Gain the Hallowed Ground ability:\r\n\r\n$@spellicon458287\r\n$@spelldesc458287", "hash": "e4cdfe6b6c35fa31", "src": "db2@1.60.1.70009"}
-{"id": 425615, "field": "name", "en": "Aegis", "hash": "829f1799fc7dfb69", "src": "db2@1.60.1.70009"}
-{"id": 425615, "field": "description", "en": "Gain the Aegis ability:\r\n\r\n$@spellicon425589\r\n$@spelldesc425589", "hash": "b503216f400157b1", "src": "db2@1.60.1.70009"}
-{"id": 425616, "field": "name", "en": "Rebuke", "hash": "8a89b6e702ec7a37", "src": "db2@1.60.1.70009"}
-{"id": 425616, "field": "description", "en": "Gain the Rebuke ability:\r\n\r\n$@spellicon425609\r\n$@spelldesc425609", "hash": "06e6051fa13880af", "src": "db2@1.60.1.70009"}
-{"id": 425618, "field": "name", "en": "Engrave Chest - Hallowed Ground", "hash": "25e563bca22760f6", "src": "db2@1.60.1.70009"}
-{"id": 425618, "field": "description", "en": "Engrave your chest with the Hallowed Ground rune:\r\n\r\n$@spellicon458287\r\n$@spelldesc458287", "hash": "96d0ec241cc0649b", "src": "db2@1.60.1.70009"}
-{"id": 425619, "field": "name", "en": "Engrave Chest - Aegis", "hash": "36c7dce9cfe2cec5", "src": "db2@1.60.1.70009"}
-{"id": 425619, "field": "description", "en": "Engrave your chest with the Aegis rune:\r\n\r\n$@spellicon425589\r\n$@spelldesc425589", "hash": "4ecc312653cb37c4", "src": "db2@1.60.1.70009"}
-{"id": 425621, "field": "name", "en": "Engrave Pants - Rebuke", "hash": "b944f77e6479c652", "src": "db2@1.60.1.70009"}
-{"id": 425621, "field": "description", "en": "Engrave your pants with the Rebuke\r\n rune:\r\n\r\n$@spellicon425609\r\n$@spelldesc425609", "hash": "69981c41569ecbc7", "src": "db2@1.60.1.70009"}
-{"id": 425711, "field": "name", "en": "Carve", "hash": "a53435cbb05fb1eb", "src": "db2@1.60.1.70009"}
-{"id": 425711, "field": "description", "en": "A sweeping attack that strikes all enemies in front of you with your melee weapons for $s2% weapon damage. Your primary target takes $s3% increased damage.", "hash": "24f251b2199370eb", "src": "db2@1.60.1.70009"}
-{"id": 425713, "field": "name", "en": "Cobra Strikes", "hash": "2aedba15f7aa36a7", "src": "db2@1.60.1.70009"}
-{"id": 425713, "field": "description", "en": "Your critical hits with Shot and Strike abilities and with Mongoose Bite cause your pet's next 2 special attacks to critically hit.", "hash": "c4c6a018c45e7dce", "src": "db2@1.60.1.70009"}
-{"id": 425714, "field": "name", "en": "Cobra Strikes", "hash": "2aedba15f7aa36a7", "src": "db2@1.60.1.70009"}
-{"id": 425714, "field": "description", "en": "Your critical hits with Shot abilities cause your pet's next 2 special attacks to critically hit.", "hash": "fd27a430b819ec7d", "src": "db2@1.60.1.70009"}
-{"id": 425714, "field": "aura", "en": "Pet special abilities guaranteed to be critical strikes.", "hash": "1a7c794a59814888", "src": "db2@1.60.1.70009"}
-{"id": 425718, "field": "name", "en": "Cobra Strikes", "hash": "2aedba15f7aa36a7", "src": "db2@1.60.1.70009"}
-{"id": 425718, "field": "description", "en": "Your critical hits with Shot abilities cause your pet's next 2 special attacks to critically hit.", "hash": "fd27a430b819ec7d", "src": "db2@1.60.1.70009"}
-{"id": 425718, "field": "aura", "en": "Pet special abilities guaranteed to be critical strikes.", "hash": "1a7c794a59814888", "src": "db2@1.60.1.70009"}
-{"id": 425728, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70009"}
-{"id": 425728, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70009"}
-{"id": 425728, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70009"}
-{"id": 425729, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70009"}
-{"id": 425729, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70009"}
-{"id": 425729, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70009"}
-{"id": 425730, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70009"}
-{"id": 425730, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70009"}
-{"id": 425730, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70009"}
-{"id": 425732, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70009"}
-{"id": 425732, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70009"}
-{"id": 425732, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70009"}
-{"id": 425733, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70009"}
-{"id": 425733, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70009"}
-{"id": 425733, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70009"}
-{"id": 425734, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70009"}
-{"id": 425734, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70009"}
-{"id": 425734, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70009"}
-{"id": 425735, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70009"}
-{"id": 425735, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70009"}
-{"id": 425735, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70009"}
-{"id": 425736, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70009"}
-{"id": 425736, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70009"}
-{"id": 425736, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70009"}
-{"id": 425737, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70009"}
-{"id": 425737, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70009"}
-{"id": 425737, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70009"}
-{"id": 425738, "field": "name", "en": "Serpent Spread", "hash": "45ef919d953f9e56", "src": "db2@1.60.1.70009"}
-{"id": 425738, "field": "description", "en": "Targets hit by your Multi-Shot are also afflicted by your Serpent Sting for $425728d.", "hash": "fd520141f84f7f7f", "src": "db2@1.60.1.70009"}
-{"id": 425754, "field": "name", "en": "Carve", "hash": "a53435cbb05fb1eb", "src": "db2@1.60.1.70009"}
-{"id": 425754, "field": "description", "en": "Gain the Carve ability:\r\n\r\n$@spellicon425711\r\n$@spelldesc425711", "hash": "c57af772b5644af0", "src": "db2@1.60.1.70009"}
-{"id": 425755, "field": "name", "en": "Cobra Strikes", "hash": "2aedba15f7aa36a7", "src": "db2@1.60.1.70009"}
-{"id": 425755, "field": "description", "en": "Gain the Cobra Strikes ability:\r\n\r\n$@spellicon425713\r\n$@spelldesc425713", "hash": "c059b5104eb35b69", "src": "db2@1.60.1.70009"}
-{"id": 425756, "field": "name", "en": "Serpent Spread", "hash": "45ef919d953f9e56", "src": "db2@1.60.1.70009"}
-{"id": 425756, "field": "description", "en": "Gain the Serpent Spread ability:\r\n\r\n$@spellicon425738\r\n$@spelldesc425738", "hash": "649f5357907295c0", "src": "db2@1.60.1.70009"}
-{"id": 425757, "field": "name", "en": "Flanking Strike", "hash": "c47a0ecf7b6752da", "src": "db2@1.60.1.70009"}
-{"id": 425757, "field": "description", "en": "Gain the Flanking Strike ability:\r\n\r\n$@spellicon415320\r\n$@spelldesc415320", "hash": "b7bf4b067278273b", "src": "db2@1.60.1.70009"}
-{"id": 425758, "field": "name", "en": "Engrave Gloves - Carve", "hash": "3209d7031e449cf2", "src": "db2@1.60.1.70009"}
-{"id": 425758, "field": "description", "en": "Engrave your gloves with the Carve rune:\r\n\r\n$@spellicon425711\r\n$@spelldesc425711", "hash": "3c61f546cda056b5", "src": "db2@1.60.1.70009"}
-{"id": 425759, "field": "name", "en": "Engrave Chest - Cobra Strikes", "hash": "4d29e59ccd09e82d", "src": "db2@1.60.1.70009"}
-{"id": 425759, "field": "description", "en": "Engrave your chest or robe with the Cobra Strikes rune:\r\n\r\n$@spellicon425713\r\n$@spelldesc425713", "hash": "d5359e717243a43d", "src": "db2@1.60.1.70009"}
-{"id": 425760, "field": "name", "en": "Engrave Pants - Serpent Spread", "hash": "1c50d583214476c1", "src": "db2@1.60.1.70009"}
-{"id": 425760, "field": "description", "en": "Engrave your pants with the Serpent Spread rune:\r\n\r\n$@spellicon425738\r\n$@spelldesc425738", "hash": "5f415872dd62d5fb", "src": "db2@1.60.1.70009"}
-{"id": 425762, "field": "name", "en": "Engrave Pants - Flanking Strike", "hash": "783fcd1821dd8864", "src": "db2@1.60.1.70009"}
-{"id": 425762, "field": "description", "en": "Engrave your pants with the Flanking Strike rune:\r\n\r\n$@spellicon415320\r\n$@spelldesc415320", "hash": "2cd65e380b18f1e4", "src": "db2@1.60.1.70009"}
-{"id": 425798, "field": "name", "en": "Arena Fatigue", "hash": "40fe77ceb45df070", "src": "db2@1.60.1.70009"}
-{"id": 425798, "field": "aura", "en": "This unit has recently plundered the Gurubashi Arena chest and cannot claim its spoils again for a time.", "hash": "78eb804050e95269", "src": "db2@1.60.1.70009"}
-{"id": 425858, "field": "name", "en": "Ancestral Awakening", "hash": "15cd13de68d10618", "src": "db2@1.60.1.70009"}
-{"id": 425858, "field": "description", "en": "When you critically heal with your Healing Wave or Lesser Healing Wave you summon an Ancestral spirit to aid you, instantly healing the lowest percentage health party member within 40 yards for $s1% of the amount healed.", "hash": "d30bce977ddd9770", "src": "db2@1.60.1.70009"}
-{"id": 425861, "field": "name", "en": "Ancestral Awakening", "hash": "15cd13de68d10618", "src": "db2@1.60.1.70009"}
-{"id": 425864, "field": "name", "en": "Ancestral Awakening", "hash": "15cd13de68d10618", "src": "db2@1.60.1.70009"}
-{"id": 425864, "field": "description", "en": "When you critically heal with your Healing Wave or Lesser Healing Wave, you summon an Ancestral spirit to aid you, instantly healing the lowest percentage health friendly party or raid target within 40 yards.", "hash": "bc4a80231ea82b0a", "src": "db2@1.60.1.70009"}
-{"id": 425874, "field": "name", "en": "Decoy Totem", "hash": "5567e2407aac2f44", "src": "db2@1.60.1.70009"}
-{"id": 425874, "field": "description", "en": "Summons a Decoy Totem for $d with $s1 health at the feet of the target that will redirect the next melee or ranged attack made against the target to the totem instead. The totem also grants the target immunity to movement impairing effects for $436391d.", "hash": "4df50519b9447760", "src": "db2@1.60.1.70009"}
-{"id": 425876, "field": "name", "en": "Decoy Totem", "hash": "5567e2407aac2f44", "src": "db2@1.60.1.70009"}
-{"id": 425876, "field": "aura", "en": "Will redirect one melee or ranged attack to the Decoy Totem.", "hash": "39a4638501948568", "src": "db2@1.60.1.70009"}
-{"id": 425879, "field": "name", "en": "Ancestral Awakening", "hash": "15cd13de68d10618", "src": "db2@1.60.1.70009"}
-{"id": 425879, "field": "description", "en": "Gain the Ancestral Awakening ability:\r\n\r\n$@spellicon425858\r\n$@spelldesc425858", "hash": "7f9b44ab03181fe2", "src": "db2@1.60.1.70009"}
-{"id": 425881, "field": "name", "en": "Decoy Totem", "hash": "5567e2407aac2f44", "src": "db2@1.60.1.70009"}
-{"id": 425881, "field": "description", "en": "Gain the Decoy Totem ability:\r\n\r\n$@spellicon425874\r\n$@spelldesc425874", "hash": "9212fa0d3886d9b9", "src": "db2@1.60.1.70009"}
-{"id": 425882, "field": "name", "en": "Engrave Boots - Decoy Totem", "hash": "82217770873ad013", "src": "db2@1.60.1.70009"}
-{"id": 425882, "field": "description", "en": "Engrave your boots with the Decoy Totem rune:\r\n\r\n$@spellicon425874\r\n$@spelldesc425874", "hash": "8e83f7254d01b3b6", "src": "db2@1.60.1.70009"}
-{"id": 425883, "field": "name", "en": "Engrave Boots - Ancestral Awakening", "hash": "01a0c76a7b2139aa", "src": "db2@1.60.1.70009"}
-{"id": 425883, "field": "description", "en": "Engrave your boots with the Ancestral Awakening rune:\r\n\r\n$@spellicon425858\r\n$@spelldesc425858", "hash": "9366949463dc8ed1", "src": "db2@1.60.1.70009"}
-{"id": 425886, "field": "name", "en": "Dead Serrakis", "hash": "5ad7986f0d0541d2", "src": "db2@1.60.1.70009"}
-{"id": 425887, "field": "name", "en": "Rot Bane", "hash": "ce721bbf7d8bdcd6", "src": "db2@1.60.1.70009"}
-{"id": 425887, "field": "aura", "en": "Something within you now hungers for Gnoll blood and vengeance...", "hash": "c8c5dbf40309ee84", "src": "db2@1.60.1.70009"}
-{"id": 425891, "field": "name", "en": "Scared", "hash": "62cf7c1cfd4fa6b3", "src": "db2@1.60.1.70009"}
-{"id": 425891, "field": "aura", "en": "Opener was resisted.", "hash": "0ea6a3e3c8f0f155", "src": "db2@1.60.1.70009"}
-{"id": 425892, "field": "name", "en": "Adventurer Challenge", "hash": "a1dd2e6b43271df3", "src": "db2@1.60.1.70009"}
-{"id": 425893, "field": "name", "en": "Grease-Matted Fur", "hash": "4dea32e428a257eb", "src": "db2@1.60.1.70009"}
-{"id": 425893, "field": "aura", "en": "Wendigo are known for filth, and this one is very greasy.", "hash": "c50e2d5c32fa30d9", "src": "db2@1.60.1.70009"}
-{"id": 425894, "field": "name", "en": "Deep Rend", "hash": "f2ca6a7f6271ec0b", "src": "db2@1.60.1.70009"}
-{"id": 425894, "field": "description", "en": "Inflicts physical damage to an enemy every $t1 sec. for $d.", "hash": "40a759e7f6100b59", "src": "db2@1.60.1.70009"}
-{"id": 425894, "field": "aura", "en": "Deals $s1 physical damage every $t1 sec.", "hash": "59f891165a4d13d5", "src": "db2@1.60.1.70009"}
-{"id": 425895, "field": "name", "en": "Frost Breath", "hash": "b3bb9f9f3387d03a", "src": "db2@1.60.1.70009"}
-{"id": 425895, "field": "description", "en": "Inflicts $s1 Frost damage to an enemy.", "hash": "e9a78e076de58778", "src": "db2@1.60.1.70009"}
-{"id": 425895, "field": "aura", "en": "Time between attacks increased by $s2%\r\nMovement speed slowed by $s3%.", "hash": "c42f1bbc21935296", "src": "db2@1.60.1.70009"}
+{"id": 425012, "field": "name", "en": "Poisoned Knife", "hash": "b07d69378f02339f", "src": "db2@1.60.1.70124"}
+{"id": 425012, "field": "description", "en": "Instantly throw your off-hand weapon to deal normal off-hand weapon damage with a 100% chance to apply the poison from your off-hand weapon to the target. Awards $s2 combo $lpoint:points;. Refunds $s3 Energy per application of Deadly Poison on the target.\r\n\r\nPoisoned Knife benefits from all talents and effects that trigger from or modify Sinister Strike.\r\n", "hash": "efa7ed2e8ba99edf", "src": "db2@1.60.1.70124"}
+{"id": 425013, "field": "name", "en": "Poisoned Knife", "hash": "b07d69378f02339f", "src": "db2@1.60.1.70124"}
+{"id": 425013, "field": "description", "en": "Instantly throw your off-hand weapon to deal normal off-hand weapon damage with a 100% chance to apply the poison from your off-hand weapon to the target. Awards $s2 combo $lpoint:points;.\r\n\r\nPoisoned Knife benefits from all talents and effects that trigger from or modify Sinister Strike.\r\n\r\n", "hash": "2e09c327042934a5", "src": "db2@1.60.1.70124"}
+{"id": 425016, "field": "name", "en": "Summon Grizzled Protector", "hash": "676d24ffa28b042a", "src": "db2@1.60.1.70124"}
+{"id": 425067, "field": "name", "en": "Breach Gate", "hash": "ce579ea43339795d", "src": "db2@1.60.1.70124"}
+{"id": 425067, "field": "description", "en": "Open a heavy gate, goblin-style!", "hash": "13dc7dbcacb59eb5", "src": "db2@1.60.1.70124"}
+{"id": 425078, "field": "name", "en": "[DNT] Shadowfang Solo Rogue Aura", "hash": "6732508e3b451c7c", "src": "db2@1.60.1.70124"}
+{"id": 425094, "field": "name", "en": "Combine Half-Keys", "hash": "f5c34e6559dae04b", "src": "db2@1.60.1.70124"}
+{"id": 425094, "field": "description", "en": "Combine Brother and Sister Half-Keys.", "hash": "1df3c5ffc0868099", "src": "db2@1.60.1.70124"}
+{"id": 425096, "field": "name", "en": "Master of Subtlety", "hash": "2eea567f4e7b6ef9", "src": "db2@1.60.1.70124"}
+{"id": 425096, "field": "description", "en": "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional $s1% damage.", "hash": "94ffd5e186f1e416", "src": "db2@1.60.1.70124"}
+{"id": 425098, "field": "name", "en": "Master of Subtlety", "hash": "2eea567f4e7b6ef9", "src": "db2@1.60.1.70124"}
+{"id": 425098, "field": "description", "en": "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional $s1% damage.", "hash": "94ffd5e186f1e416", "src": "db2@1.60.1.70124"}
+{"id": 425098, "field": "aura", "en": "Increases damage done by $s1% while stealthed and for 6 seconds after breaking stealth.", "hash": "5488e10f17c425b6", "src": "db2@1.60.1.70124"}
+{"id": 425100, "field": "name", "en": "Poisoned Knife", "hash": "b07d69378f02339f", "src": "db2@1.60.1.70124"}
+{"id": 425100, "field": "description", "en": "Gain the Poisoned Knife ability:\r\n\r\n$@spellicon425012\r\n$@spelldesc425012", "hash": "937b24a06cbf84e6", "src": "db2@1.60.1.70124"}
+{"id": 425101, "field": "name", "en": "Master of Subtlety", "hash": "2eea567f4e7b6ef9", "src": "db2@1.60.1.70124"}
+{"id": 425101, "field": "description", "en": "Gain the Master of Subtlety ability:\r\n\r\n$@spellicon425096\r\n$@spelldesc425096", "hash": "de540b325723bf46", "src": "db2@1.60.1.70124"}
+{"id": 425102, "field": "name", "en": "Engrave Belt - Poisoned Knife", "hash": "5bf273d13be21f33", "src": "db2@1.60.1.70124"}
+{"id": 425102, "field": "description", "en": "Engrave your belt with the Poisoned Knife rune:\r\n\r\n$@spellicon425012\r\n$@spelldesc425012", "hash": "dae3547b284d67fe", "src": "db2@1.60.1.70124"}
+{"id": 425103, "field": "name", "en": "Engrave Boots - Master of Subtlety", "hash": "5da982db905bd2d7", "src": "db2@1.60.1.70124"}
+{"id": 425103, "field": "description", "en": "Engrave your boots with the Master of Subtlety rune:\r\n\r\n$@spellicon425096\r\n$@spelldesc425096", "hash": "b4456c3f075d4ede", "src": "db2@1.60.1.70124"}
+{"id": 425121, "field": "name", "en": "Icy Veins", "hash": "da648c24cd8e9684", "src": "db2@1.60.1.70124"}
+{"id": 425121, "field": "description", "en": "Hastens your spellcasting, increasing spell casting speed by $s1% and reduces the pushback suffered from damaging attacks while casting by $s2%. Lasts $d.", "hash": "a582f7cdd09ff94b", "src": "db2@1.60.1.70124"}
+{"id": 425121, "field": "aura", "en": "Casting speed of all spells increased by $s1% and pushback suffered from damaging attacks while casting reduced by $s2%.", "hash": "edaed79fc6ecdfa0", "src": "db2@1.60.1.70124"}
+{"id": 425124, "field": "name", "en": "Arcane Surge", "hash": "467ff7199036e33f", "src": "db2@1.60.1.70124"}
+{"id": 425124, "field": "description", "en": "Unleash all of your remaining mana in a surge of energy focused at the target dealing ${$<power>*$m1/100} to ${$<power>*$M1/100} Arcane damage, increased by up to $s4% based on your mana remaining. Afterward, your normal mana regeneration is activated and increased by $s2% for $d.", "hash": "339bcb875a928156", "src": "db2@1.60.1.70124"}
+{"id": 425124, "field": "aura", "en": "Normal mana regeneration activated and increased by $s2%.", "hash": "a28241d90773894b", "src": "db2@1.60.1.70124"}
+{"id": 425147, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70124"}
+{"id": 425151, "field": "name", "en": "S03 - Rogue 25 Quest Reward", "hash": "722e27b3e2b4391b", "src": "db2@1.60.1.70124"}
+{"id": 425168, "field": "name", "en": "Arcane Surge", "hash": "467ff7199036e33f", "src": "db2@1.60.1.70124"}
+{"id": 425168, "field": "description", "en": "Gain the Arcane Surge ability:\r\n\r\n$@spellicon425124\r\n$@spelldesc425124", "hash": "40f1c9b3f5ad6dba", "src": "db2@1.60.1.70124"}
+{"id": 425169, "field": "name", "en": "Icy Veins", "hash": "da648c24cd8e9684", "src": "db2@1.60.1.70124"}
+{"id": 425169, "field": "description", "en": "Gain the Icy Veins ability:\r\n\r\n$@spellicon425121\r\n$@spelldesc425121", "hash": "dad3711a9c4866e9", "src": "db2@1.60.1.70124"}
+{"id": 425170, "field": "name", "en": "Engrave Pants - Icy Veins", "hash": "0c5f61c32a71725c", "src": "db2@1.60.1.70124"}
+{"id": 425170, "field": "description", "en": "Engrave your pants with the Icy Veins rune:\r\n\r\n$@spellicon425121\r\n$@spelldesc425121", "hash": "e3b2f6e8540fb6bf", "src": "db2@1.60.1.70124"}
+{"id": 425171, "field": "name", "en": "Engrave Pants - Arcane Surge", "hash": "5a3419aadd180c36", "src": "db2@1.60.1.70124"}
+{"id": 425171, "field": "description", "en": "Engrave your pants with the Arcane Surge rune:\r\n\r\n$@spellicon425124\r\n$@spelldesc425124", "hash": "5e00b89129586827", "src": "db2@1.60.1.70124"}
+{"id": 425187, "field": "name", "en": "Chronostatic Preservation", "hash": "fb106a5f1a35c238", "src": "db2@1.60.1.70124"}
+{"id": 425187, "field": "description", "en": "Gain the Chronostatic Preservation ability:\r\n\r\n$@spellicon436516\r\n$@spelldesc436516", "hash": "c1a12a9c8a3e20d1", "src": "db2@1.60.1.70124"}
+{"id": 425189, "field": "name", "en": "Engrave Boots - Chronostatic Preservation", "hash": "b5e3326d62d29c87", "src": "db2@1.60.1.70124"}
+{"id": 425189, "field": "description", "en": "Engrave your boots with the Chronostatic Preservation rune:\r\n\r\n$@spellicon436516\r\n$@spelldesc436516", "hash": "1d4e262edee051d9", "src": "db2@1.60.1.70124"}
+{"id": 425198, "field": "name", "en": "Twisted Faith", "hash": "fa51f874ee16e047", "src": "db2@1.60.1.70124"}
+{"id": 425198, "field": "description", "en": "Mind Flay and Mind Blast deal $s1% increased damage to targets afflicted with your Shadow Word: Pain.", "hash": "7838fcf402cad6a8", "src": "db2@1.60.1.70124"}
+{"id": 425204, "field": "name", "en": "Void Plague", "hash": "dd6da1ac3b1435dc", "src": "db2@1.60.1.70124"}
+{"id": 425204, "field": "description", "en": "Afflicts the target with a disease that causes ${$<damagepower>*$m1/100*6} Shadow damage over $d.", "hash": "6d5d1c3a3c5c134e", "src": "db2@1.60.1.70124"}
+{"id": 425204, "field": "aura", "en": "Causes $w1 damage every $t1 seconds.", "hash": "a713b2d824cea956", "src": "db2@1.60.1.70124"}
+{"id": 425205, "field": "name", "en": "Power Word: Barrier", "hash": "00efeeaf521d8014", "src": "db2@1.60.1.70124"}
+{"id": 425205, "field": "aura", "en": "Damage taken reduced by $s1% and damaging attacks will not cause spellcasting delays.", "hash": "c6bd28be37e1af6b", "src": "db2@1.60.1.70124"}
+{"id": 425207, "field": "name", "en": "Power Word: Barrier", "hash": "00efeeaf521d8014", "src": "db2@1.60.1.70124"}
+{"id": 425207, "field": "description", "en": "Summons a holy barrier to protect all party members at the target location for $d, reducing all damage taken by $425205s1% and preventing damage from delaying spellcasting. ", "hash": "b1dd5c90cc015f8b", "src": "db2@1.60.1.70124"}
+{"id": 425210, "field": "name", "en": "Twisted Faith", "hash": "fa51f874ee16e047", "src": "db2@1.60.1.70124"}
+{"id": 425210, "field": "description", "en": "Gain the Twisted Faith ability:\r\n\r\n$@spellicon425198\r\n$@spelldesc425198", "hash": "be861b6127b7d925", "src": "db2@1.60.1.70124"}
+{"id": 425211, "field": "name", "en": "Void Plague", "hash": "dd6da1ac3b1435dc", "src": "db2@1.60.1.70124"}
+{"id": 425211, "field": "description", "en": "Gain the Void Plague ability:\r\n\r\n$@spellicon425204\r\n$@spelldesc425204", "hash": "19ef949a49fe5f2d", "src": "db2@1.60.1.70124"}
+{"id": 425212, "field": "name", "en": "Power Word: Barrier", "hash": "00efeeaf521d8014", "src": "db2@1.60.1.70124"}
+{"id": 425212, "field": "description", "en": "Gain the Power Word: Barrier ability:\r\n\r\n$@spellicon425207\r\n$@spelldesc425207", "hash": "ba814dc9e0c83d28", "src": "db2@1.60.1.70124"}
+{"id": 425213, "field": "name", "en": "Engrave Bracers - Power Word: Barrier", "hash": "46d72db2b99c0d13", "src": "db2@1.60.1.70124"}
+{"id": 425213, "field": "description", "en": "Engrave your bracers with the Power Word: Barrier rune:\r\n\r\n$@spellicon425207\r\n$@spelldesc425207", "hash": "192ed3ca8c67c641", "src": "db2@1.60.1.70124"}
+{"id": 425215, "field": "name", "en": "Engrave Chest - Twisted Faith", "hash": "1c8e2400c37691cd", "src": "db2@1.60.1.70124"}
+{"id": 425215, "field": "description", "en": "Engrave your chest or robe with the Twisted Faith rune:\r\n\r\n$@spellicon425198\r\n$@spelldesc425198", "hash": "66bd1c0bfb866c09", "src": "db2@1.60.1.70124"}
+{"id": 425216, "field": "name", "en": "Engrave Boots - Void Plague", "hash": "0a2736e147a2d6ab", "src": "db2@1.60.1.70124"}
+{"id": 425216, "field": "description", "en": "Engrave your boots with the Void Plague rune:\r\n\r\n$@spellicon425204\r\n$@spelldesc425204", "hash": "42ee551e026b5ec7", "src": "db2@1.60.1.70124"}
+{"id": 425218, "field": "name", "en": "Crazed", "hash": "b1da892814349bca", "src": "db2@1.60.1.70124"}
+{"id": 425225, "field": "name", "en": "Fire Damage Check", "hash": "cf85c5b9e83a6793", "src": "db2@1.60.1.70124"}
+{"id": 425226, "field": "name", "en": "Burning", "hash": "697ceb14fcb64b22", "src": "db2@1.60.1.70124"}
+{"id": 425226, "field": "description", "en": "Burning!", "hash": "faec4c662f533dfb", "src": "db2@1.60.1.70124"}
+{"id": 425226, "field": "aura", "en": "Burning!", "hash": "faec4c662f533dfb", "src": "db2@1.60.1.70124"}
+{"id": 425233, "field": "name", "en": "Mind Blast", "hash": "868279b14e0b7083", "src": "db2@1.60.1.70124"}
+{"id": 425233, "field": "description", "en": "Inflicts Shadow damage to an enemy, but causes a high amount of threat.", "hash": "d60755718e5f125b", "src": "db2@1.60.1.70124"}
+{"id": 425234, "field": "name", "en": "Orbs of Shadow", "hash": "a3426883bb5f414d", "src": "db2@1.60.1.70124"}
+{"id": 425234, "field": "aura", "en": "Unstable magical energy coalesces around Kelris.\r\n\r\nIncreases shadow damage by $s1%.", "hash": "65b7862730aa62ef", "src": "db2@1.60.1.70124"}
+{"id": 425235, "field": "name", "en": "Polished Iceblock", "hash": "e258f6c30c3dffbe", "src": "db2@1.60.1.70124"}
+{"id": 425235, "field": "aura", "en": "Stunned, but nearly impervious.", "hash": "00b8f0197074a041", "src": "db2@1.60.1.70124"}
+{"id": 425236, "field": "name", "en": "Orbs of Shadow Visual 2", "hash": "346852280a852b2a", "src": "db2@1.60.1.70124"}
+{"id": 425237, "field": "name", "en": "Orbs of Shadow Visual 3", "hash": "346852290a852b2b", "src": "db2@1.60.1.70124"}
+{"id": 425239, "field": "name", "en": "Shadowy Chains", "hash": "4fcd37f46a29ed98", "src": "db2@1.60.1.70124"}
+{"id": 425239, "field": "aura", "en": "Movement slowed by $s2%.\r\nShadow damage inflicted every $t3 sec.", "hash": "e57492101833d3e7", "src": "db2@1.60.1.70124"}
+{"id": 425265, "field": "name", "en": "Shadowy Chains", "hash": "4fcd37f46a29ed98", "src": "db2@1.60.1.70124"}
+{"id": 425265, "field": "aura", "en": "[PH] needs a tooltip", "hash": "1e8354d4c4a6e1ad", "src": "db2@1.60.1.70124"}
+{"id": 425266, "field": "name", "en": "Empowered Renew", "hash": "be7523e137c66003", "src": "db2@1.60.1.70124"}
+{"id": 425266, "field": "description", "en": "Your Renew now heals one extra time immediately when applied, and gains $s1% increased benefit each time it heals from your bonus healing effects.\r\n\r\nIn addition, your Renew can now be active on targets affected by another Priest's Renew.\r\n", "hash": "8faef343e644d82c", "src": "db2@1.60.1.70124"}
+{"id": 425268, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
+{"id": 425268, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
+{"id": 425268, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 425269, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
+{"id": 425269, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
+{"id": 425269, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 425270, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
+{"id": 425270, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
+{"id": 425270, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 425271, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
+{"id": 425271, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
+{"id": 425271, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 425272, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
+{"id": 425272, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
+{"id": 425272, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 425273, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
+{"id": 425273, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
+{"id": 425273, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 425274, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
+{"id": 425274, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
+{"id": 425274, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 425275, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
+{"id": 425275, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
+{"id": 425275, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 425276, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
+{"id": 425276, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
+{"id": 425276, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 425277, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
+{"id": 425277, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
+{"id": 425277, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
+{"id": 425280, "field": "name", "en": "Renewed Hope", "hash": "62cdfc7072d9eb2c", "src": "db2@1.60.1.70124"}
+{"id": 425280, "field": "description", "en": "Your heals from Flash Heal, Binding Heal, Lesser Heal, Heal, Greater Heal, and Penance gain $m1% increased critical strike chance when cast on targets with Weakened Soul, and reduce the remaining duration of Weakened Soul on their target by ${$m2/-1000} sec.", "hash": "1cb93a0fa22ddbc5", "src": "db2@1.60.1.70124"}
+{"id": 425284, "field": "name", "en": "Spirit of the Redeemer", "hash": "773b7f781feb5486", "src": "db2@1.60.1.70124"}
+{"id": 425284, "field": "description", "en": "Activate to become the Spirit of Redemption for $d. While in this form, you can cast any healing spell free of cost, but you cannot move, attack, be attacked, or be targeted by any spells or effects. Requires Spirit of Redemption talent to activate, and you will no longer enter Spirit of Redemption  upon dying.", "hash": "bb79c036b6a021fb", "src": "db2@1.60.1.70124"}
+{"id": 425284, "field": "aura", "en": "You have become more powerful than anyone can possibly imagine.", "hash": "393ecc0ca928171a", "src": "db2@1.60.1.70124"}
+{"id": 425285, "field": "name", "en": "Summon Decayed Elemental", "hash": "8058d16a2b25f493", "src": "db2@1.60.1.70124"}
+{"id": 425285, "field": "description", "en": "Call to the spirits of the elements.", "hash": "091afdbbb45574ae", "src": "db2@1.60.1.70124"}
+{"id": 425294, "field": "name", "en": "Dispersion", "hash": "405f6d57e0d19d40", "src": "db2@1.60.1.70124"}
+{"id": 425294, "field": "description", "en": "You disperse into pure Shadow energy, reducing all damage taken by $s1%.  You are unable to attack or cast spells, but you regenerate $s2% mana every $t2 sec for $d. Dispersion can be cast while stunned, feared or silenced and clears all snare and movement impairing effects when cast, and makes you immune to them while dispersed.", "hash": "f9ae902a72e6aa3b", "src": "db2@1.60.1.70124"}
+{"id": 425294, "field": "aura", "en": "Reduces all damage by $s1%, and you regenerate $s2% mana every $t2 sec for $d.  Cannot attack or cast spells. Immune to snare and movement impairing effects.", "hash": "a58e8279d286be2f", "src": "db2@1.60.1.70124"}
+{"id": 425301, "field": "name", "en": "[DNT] Player is in Statue Trigger", "hash": "62a233fd3f88d1de", "src": "db2@1.60.1.70124"}
+{"id": 425302, "field": "name", "en": "Empowered Renew", "hash": "be7523e137c66003", "src": "db2@1.60.1.70124"}
+{"id": 425302, "field": "description", "en": "Gain the Empowered Renew ability:\r\n\r\n$@spellicon425266\r\n$@spelldesc425266", "hash": "6f1dc8a5c2367527", "src": "db2@1.60.1.70124"}
+{"id": 425303, "field": "name", "en": "Renewed Hope", "hash": "62cdfc7072d9eb2c", "src": "db2@1.60.1.70124"}
+{"id": 425303, "field": "description", "en": "Gain the Renewed Hope ability:\r\n\r\n$@spellicon425280\r\n$@spelldesc425280", "hash": "df0b8af4a63f6bb0", "src": "db2@1.60.1.70124"}
+{"id": 425304, "field": "name", "en": "Spirit of the Redeemer", "hash": "773b7f781feb5486", "src": "db2@1.60.1.70124"}
+{"id": 425304, "field": "description", "en": "Gain the Spirit of the Redeemer ability:\r\n\r\n$@spellicon425284\r\n$@spelldesc425284", "hash": "cd4dc4ca62662261", "src": "db2@1.60.1.70124"}
+{"id": 425307, "field": "name", "en": "Dispersion", "hash": "405f6d57e0d19d40", "src": "db2@1.60.1.70124"}
+{"id": 425307, "field": "description", "en": "Gain the Dispersion ability:\r\n\r\n$@spellicon425294\r\n$@spelldesc425294", "hash": "23f83f060e2642c7", "src": "db2@1.60.1.70124"}
+{"id": 425309, "field": "name", "en": "Engrave Belt - Empowered Renew", "hash": "7b598fd8461aa91d", "src": "db2@1.60.1.70124"}
+{"id": 425309, "field": "description", "en": "Engrave your belt with the Empowered Renew rune:\r\n\r\n$@spellicon425266\r\n$@spelldesc425266", "hash": "e14c3cd23257c728", "src": "db2@1.60.1.70124"}
+{"id": 425310, "field": "name", "en": "Engrave Belt - Renewed Hope", "hash": "3cd976ea63ae315d", "src": "db2@1.60.1.70124"}
+{"id": 425310, "field": "description", "en": "Engrave your belt with the Renewed Hope rune:\r\n\r\n$@spellicon425280\r\n$@spelldesc425280", "hash": "88a2587107047b0a", "src": "db2@1.60.1.70124"}
+{"id": 425312, "field": "name", "en": "Engrave Boots - Spirit of the Redeemer", "hash": "c5f4cd3c5477a725", "src": "db2@1.60.1.70124"}
+{"id": 425312, "field": "description", "en": "Engrave your boots with the Spirit of the Redeemer rune:\r\n\r\n$@spellicon425284\r\n$@spelldesc425284", "hash": "10efc02281c53459", "src": "db2@1.60.1.70124"}
+{"id": 425314, "field": "name", "en": "Engrave Boots - Dispersion", "hash": "aa3dab0dd861d56c", "src": "db2@1.60.1.70124"}
+{"id": 425314, "field": "description", "en": "Engrave your boots with the Dispersion\r\n rune:\r\n\r\n$@spellicon425294\r\n$@spelldesc425294", "hash": "0287aa9bad419395", "src": "db2@1.60.1.70124"}
+{"id": 425321, "field": "name", "en": "Duskwood Rings - Give Rune", "hash": "9af736f7069c5c77", "src": "db2@1.60.1.70124"}
+{"id": 425336, "field": "name", "en": "Rage of the Farseer", "hash": "d1225497e3db38c1", "src": "db2@1.60.1.70124"}
+{"id": 425336, "field": "description", "en": "Increases your attack speed by $s1% for $d.", "hash": "7e4b2c7fe7ada63e", "src": "db2@1.60.1.70124"}
+{"id": 425336, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70124"}
+{"id": 425339, "field": "name", "en": "Molten Blast", "hash": "6bb2dd265bc2e468", "src": "db2@1.60.1.70124"}
+{"id": 425339, "field": "description", "en": "Blast up to $i enemies in a cone in front of you for ${$<damagepower>*$m1/100+$m2/100*$AP} to ${$<damagepower>*$M1/100+$m2/100*$AP} Fire damage. This ability generates a high amount of threat. Flame Shock periodic damage has a $s3% chance to reset the cooldown on Molten Blast.", "hash": "0854686643ead010", "src": "db2@1.60.1.70124"}
+{"id": 425340, "field": "name", "en": "Molten Blast", "hash": "6bb2dd265bc2e468", "src": "db2@1.60.1.70124"}
+{"id": 425340, "field": "description", "en": "Gain the Molten Blast ability:\r\n\r\n$@spellicon425339\r\n$@spelldesc425339", "hash": "32a57cd39c09fcea", "src": "db2@1.60.1.70124"}
+{"id": 425341, "field": "name", "en": "Greater Ghost Wolf", "hash": "2c8e0d57e347a88b", "src": "db2@1.60.1.70124"}
+{"id": 425341, "field": "description", "en": "Gain the Greater Ghost Wolf ability:\r\n\r\n$@spellicon415813\r\n$@spelldesc415813", "hash": "e67819f99cc85396", "src": "db2@1.60.1.70124"}
+{"id": 425343, "field": "name", "en": "Engrave Pants - Greater Ghost Wolf", "hash": "c503264d2b95b5e4", "src": "db2@1.60.1.70124"}
+{"id": 425343, "field": "description", "en": "Engrave your pants with the Greater Ghost Wolf rune:\r\n\r\n$@spellicon415813\r\n$@spelldesc415813", "hash": "0f11028df6f321c2", "src": "db2@1.60.1.70124"}
+{"id": 425344, "field": "name", "en": "Engrave Gloves - Molten Blast", "hash": "2001c905db35644e", "src": "db2@1.60.1.70124"}
+{"id": 425344, "field": "description", "en": "Engrave your gloves with the Molten Blast rune:\r\n\r\n$@spellicon425339\r\n$@spelldesc425339", "hash": "23c7149c655e75a5", "src": "db2@1.60.1.70124"}
+{"id": 425412, "field": "name", "en": "Frenzied Assault", "hash": "d6eecd481d05f56d", "src": "db2@1.60.1.70124"}
+{"id": 425412, "field": "description", "en": "While wielding 2-handed weapons, your attack speed is increased by $s1% and your successful melee hits generate $s2 additional Rage, or ${$m2*2} additional Rage if they are critical hits.\r\n", "hash": "1e91f2d15e036748", "src": "db2@1.60.1.70124"}
+{"id": 425415, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70124"}
+{"id": 425415, "field": "aura", "en": "Enraged.", "hash": "8be4b6b8a7fd191a", "src": "db2@1.60.1.70124"}
+{"id": 425418, "field": "name", "en": "Consumed By Rage", "hash": "849f369e31f085bd", "src": "db2@1.60.1.70124"}
+{"id": 425418, "field": "description", "en": "Enrages you (activating abilities which require being Enraged) for $425415d  after you exceed $s1 Rage. In addition, Whirlwind also strikes with off-hand melee weapons while you are Enraged.", "hash": "c054ad7385943c26", "src": "db2@1.60.1.70124"}
+{"id": 425421, "field": "name", "en": "Warbringer", "hash": "518ef27692167ea2", "src": "db2@1.60.1.70124"}
+{"id": 425421, "field": "description", "en": "Your Charge, Intercept, and Intervene abilities are now usable while in combat and in any stance, and will all remove movement impairing effects when activated.", "hash": "b79da5551062b704", "src": "db2@1.60.1.70124"}
+{"id": 425428, "field": "name", "en": "Quick Strike", "hash": "45228ec457144e2d", "src": "db2@1.60.1.70124"}
+{"id": 425428, "field": "description", "en": "Gain the Quick Strike ability:\r\n\r\n$@spellicon429765\r\n$@spelldesc429765", "hash": "565964996450071f", "src": "db2@1.60.1.70124"}
+{"id": 425429, "field": "name", "en": "Raging Blow", "hash": "5fb1224f481ef704", "src": "db2@1.60.1.70124"}
+{"id": 425429, "field": "description", "en": "Gain the Raging Blow ability:\r\n\r\n$@spellicon402911\r\n$@spelldesc402911", "hash": "103bfb7d2c3f3a67", "src": "db2@1.60.1.70124"}
+{"id": 425430, "field": "name", "en": "Warbringer", "hash": "518ef27692167ea2", "src": "db2@1.60.1.70124"}
+{"id": 425430, "field": "description", "en": "Gain the Warbringer ability:\r\n\r\n$@spellicon425421\r\n$@spelldesc425421", "hash": "b338ca677aa1bc1c", "src": "db2@1.60.1.70124"}
+{"id": 425431, "field": "name", "en": "[DNT] Player is in Fishing Boat Trigger", "hash": "11e73cecb2d89773", "src": "db2@1.60.1.70124"}
+{"id": 425440, "field": "name", "en": "Consumed by Rage", "hash": "1af59131e4c32ac7", "src": "db2@1.60.1.70124"}
+{"id": 425440, "field": "description", "en": "Gain the Consumed by Rage ability:\r\n\r\n$@spellicon425418\r\n$@spelldesc425418", "hash": "985a7941b64b5cdf", "src": "db2@1.60.1.70124"}
+{"id": 425442, "field": "name", "en": "Frenzied Assault", "hash": "d6eecd481d05f56d", "src": "db2@1.60.1.70124"}
+{"id": 425442, "field": "description", "en": "Gain the Frenzied Assault ability:\r\n\r\n$@spellicon425412\r\n$@spelldesc425412", "hash": "85410117db3fa4cb", "src": "db2@1.60.1.70124"}
+{"id": 425443, "field": "name", "en": "Engrave Gloves - Quick Strike", "hash": "f9717a9ed686ce13", "src": "db2@1.60.1.70124"}
+{"id": 425443, "field": "description", "en": "Engrave your gloves with the Quick Strike rune:\r\n\r\n$@spellicon429765\r\n$@spelldesc429765", "hash": "fe2ebe8b7b72422b", "src": "db2@1.60.1.70124"}
+{"id": 425444, "field": "name", "en": "Engrave Chest - Raging Blow", "hash": "34227b26444e7a1c", "src": "db2@1.60.1.70124"}
+{"id": 425444, "field": "description", "en": "Engrave your chest with the Raging Blow rune:\r\n\r\n$@spellicon402911\r\n$@spelldesc402911", "hash": "95af0904a9aa576b", "src": "db2@1.60.1.70124"}
+{"id": 425445, "field": "name", "en": "Engrave Chest - Warbringer", "hash": "10bcc24ab5e10c55", "src": "db2@1.60.1.70124"}
+{"id": 425445, "field": "description", "en": "Engrave your chest with the Warbringer rune:\r\n\r\n$@spellicon425421\r\n$@spelldesc425421", "hash": "d9810bbda9127509", "src": "db2@1.60.1.70124"}
+{"id": 425446, "field": "name", "en": "Engrave Pants - Consumed by Rage", "hash": "1925efc98323318b", "src": "db2@1.60.1.70124"}
+{"id": 425446, "field": "description", "en": "Engrave your pants with the Consumed by Rage rune:\r\n\r\n$@spellicon425418\r\n$@spelldesc425418", "hash": "002a5c3b2debfeae", "src": "db2@1.60.1.70124"}
+{"id": 425447, "field": "name", "en": "Engrave Pants - Frenzied Assault", "hash": "d51f2be0bb65fc20", "src": "db2@1.60.1.70124"}
+{"id": 425447, "field": "description", "en": "Engrave your pants with the Frenzied Assault rune:\r\n\r\n$@spellicon425412\r\n$@spelldesc425412", "hash": "17dbef858980b209", "src": "db2@1.60.1.70124"}
+{"id": 425460, "field": "name", "en": "Dream Eater", "hash": "5490c9a702d77b99", "src": "db2@1.60.1.70124"}
+{"id": 425460, "field": "aura", "en": "The dream is collapsing.", "hash": "2b57184c1f283984", "src": "db2@1.60.1.70124"}
+{"id": 425462, "field": "name", "en": "Dream Eater", "hash": "5490c9a702d77b99", "src": "db2@1.60.1.70124"}
+{"id": 425463, "field": "name", "en": "Demonic Grace", "hash": "1416e0ed04ca8c10", "src": "db2@1.60.1.70124"}
+{"id": 425463, "field": "description", "en": "Surge with fel energy, increasing your pet's and your own dodge chance by $s1%, and your chance to critically strike with all attacks by $s2%. Lasts $d.", "hash": "95ecc1be56f04cb7", "src": "db2@1.60.1.70124"}
+{"id": 425463, "field": "aura", "en": "Dodge chance increased by $s1%. \r\nMaster's critical strike chance increased by $s2%.", "hash": "b041bbc12c58bc2b", "src": "db2@1.60.1.70124"}
+{"id": 425464, "field": "name", "en": "Demonic Pact", "hash": "788c4d8e2d0797fc", "src": "db2@1.60.1.70124"}
+{"id": 425464, "field": "description", "en": "Your Demonic Sacrifice effect is no longer cancelled by summoning a different Demon pet. Resummoning the sacrificed pet will still cancel the effect.\r\n", "hash": "910d423f78764f42", "src": "db2@1.60.1.70124"}
+{"id": 425465, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70124"}
+{"id": 425466, "field": "name", "en": "Demonic Pact", "hash": "788c4d8e2d0797fc", "src": "db2@1.60.1.70124"}
+{"id": 425467, "field": "name", "en": "Demonic Pact", "hash": "788c4d8e2d0797fc", "src": "db2@1.60.1.70124"}
+{"id": 425467, "field": "aura", "en": "Spell damage and healing increased by $w1.", "hash": "79cd41df74dd476a", "src": "db2@1.60.1.70124"}
+{"id": 425473, "field": "name", "en": "Demonic Pact", "hash": "788c4d8e2d0797fc", "src": "db2@1.60.1.70124"}
+{"id": 425473, "field": "description", "en": "Gain the Demonic Pact ability:\r\n\r\n$@spellicon425464\r\n$@spelldesc425464", "hash": "71ac32060cf95e12", "src": "db2@1.60.1.70124"}
+{"id": 425474, "field": "name", "en": "Demonic Grace", "hash": "1416e0ed04ca8c10", "src": "db2@1.60.1.70124"}
+{"id": 425474, "field": "description", "en": "Gain the Demonic Grace ability:\r\n\r\n$@spellicon425463\r\n$@spelldesc425463", "hash": "a8b370d2ae7e4f77", "src": "db2@1.60.1.70124"}
+{"id": 425476, "field": "name", "en": "Engrave Pants - Demonic Pact", "hash": "8c40701f79e8c0f3", "src": "db2@1.60.1.70124"}
+{"id": 425476, "field": "description", "en": "Engrave your pants with the Demonic Pact rune:\r\n\r\n$@spellicon425464\r\n$@spelldesc425464", "hash": "15896149d3b33a0e", "src": "db2@1.60.1.70124"}
+{"id": 425477, "field": "name", "en": "Engrave Pants - Demonic Grace", "hash": "29449152daa618d9", "src": "db2@1.60.1.70124"}
+{"id": 425477, "field": "description", "en": "Engrave your pants with the Demonic Grace rune:\r\n\r\n$@spellicon425463\r\n$@spelldesc425463", "hash": "08b6b628ebc019e9", "src": "db2@1.60.1.70124"}
+{"id": 425480, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70124"}
+{"id": 425497, "field": "name", "en": "Toss Bait", "hash": "60c4d725456e709e", "src": "db2@1.60.1.70124"}
+{"id": 425497, "field": "description", "en": "Toss bait.", "hash": "b670e33c43049f1d", "src": "db2@1.60.1.70124"}
+{"id": 425589, "field": "name", "en": "Aegis", "hash": "829f1799fc7dfb69", "src": "db2@1.60.1.70124"}
+{"id": 425589, "field": "description", "en": "Increases your block value by $s2% and modifies your Redoubt talent. Redoubt now also has a $m1% chance to trigger from any melee or ranged attack against you, and always triggers when you deal a melee critical strike. In addition, your Reckoning talent gains a $s3% chance per talent point to trigger from any melee or ranged attack against you.", "hash": "62ae9a8adf6bde28", "src": "db2@1.60.1.70124"}
+{"id": 425600, "field": "name", "en": "Horn of Lordaeron", "hash": "bc25f9b159ddf126", "src": "db2@1.60.1.70124"}
+{"id": 425600, "field": "description", "en": "The Paladin blows the Horn of Lordaeron, which increases total Strength and Agility of all party members within $a1 yards by $?s25291[89][${$cond($gte($PL,56),74,$cond($gte($PL,52),60,$cond($gte($PL,42),45,$cond($gte($PL,32),26,$cond($gte($PL,22),17,$cond($gte($PL,12),11,6)))))))}]. Lasts $d. Exclusive with Blessing of Might.", "hash": "c2588b8d98298c03", "src": "db2@1.60.1.70124"}
+{"id": 425600, "field": "aura", "en": "Increases your total Strength and Agility by $w1.", "hash": "4c95c821384ee557", "src": "db2@1.60.1.70124"}
+{"id": 425609, "field": "name", "en": "Rebuke", "hash": "8a89b6e702ec7a37", "src": "db2@1.60.1.70124"}
+{"id": 425609, "field": "description", "en": "Interrupts spellcasting and prevents any spell in that school from being cast for $d.", "hash": "25cb829fe928a51a", "src": "db2@1.60.1.70124"}
+{"id": 425614, "field": "name", "en": "Hallowed Ground", "hash": "32635a2a38f92870", "src": "db2@1.60.1.70124"}
+{"id": 425614, "field": "description", "en": "Gain the Hallowed Ground ability:\r\n\r\n$@spellicon458287\r\n$@spelldesc458287", "hash": "e4cdfe6b6c35fa31", "src": "db2@1.60.1.70124"}
+{"id": 425615, "field": "name", "en": "Aegis", "hash": "829f1799fc7dfb69", "src": "db2@1.60.1.70124"}
+{"id": 425615, "field": "description", "en": "Gain the Aegis ability:\r\n\r\n$@spellicon425589\r\n$@spelldesc425589", "hash": "b503216f400157b1", "src": "db2@1.60.1.70124"}
+{"id": 425616, "field": "name", "en": "Rebuke", "hash": "8a89b6e702ec7a37", "src": "db2@1.60.1.70124"}
+{"id": 425616, "field": "description", "en": "Gain the Rebuke ability:\r\n\r\n$@spellicon425609\r\n$@spelldesc425609", "hash": "06e6051fa13880af", "src": "db2@1.60.1.70124"}
+{"id": 425618, "field": "name", "en": "Engrave Chest - Hallowed Ground", "hash": "25e563bca22760f6", "src": "db2@1.60.1.70124"}
+{"id": 425618, "field": "description", "en": "Engrave your chest with the Hallowed Ground rune:\r\n\r\n$@spellicon458287\r\n$@spelldesc458287", "hash": "96d0ec241cc0649b", "src": "db2@1.60.1.70124"}
+{"id": 425619, "field": "name", "en": "Engrave Chest - Aegis", "hash": "36c7dce9cfe2cec5", "src": "db2@1.60.1.70124"}
+{"id": 425619, "field": "description", "en": "Engrave your chest with the Aegis rune:\r\n\r\n$@spellicon425589\r\n$@spelldesc425589", "hash": "4ecc312653cb37c4", "src": "db2@1.60.1.70124"}
+{"id": 425621, "field": "name", "en": "Engrave Pants - Rebuke", "hash": "b944f77e6479c652", "src": "db2@1.60.1.70124"}
+{"id": 425621, "field": "description", "en": "Engrave your pants with the Rebuke\r\n rune:\r\n\r\n$@spellicon425609\r\n$@spelldesc425609", "hash": "69981c41569ecbc7", "src": "db2@1.60.1.70124"}
+{"id": 425711, "field": "name", "en": "Carve", "hash": "a53435cbb05fb1eb", "src": "db2@1.60.1.70124"}
+{"id": 425711, "field": "description", "en": "A sweeping attack that strikes all enemies in front of you with your melee weapons for $s2% weapon damage. Your primary target takes $s3% increased damage.", "hash": "24f251b2199370eb", "src": "db2@1.60.1.70124"}
+{"id": 425713, "field": "name", "en": "Cobra Strikes", "hash": "2aedba15f7aa36a7", "src": "db2@1.60.1.70124"}
+{"id": 425713, "field": "description", "en": "Your critical hits with Shot and Strike abilities and with Mongoose Bite cause your pet's next 2 special attacks to critically hit.", "hash": "c4c6a018c45e7dce", "src": "db2@1.60.1.70124"}
+{"id": 425714, "field": "name", "en": "Cobra Strikes", "hash": "2aedba15f7aa36a7", "src": "db2@1.60.1.70124"}
+{"id": 425714, "field": "description", "en": "Your critical hits with Shot abilities cause your pet's next 2 special attacks to critically hit.", "hash": "fd27a430b819ec7d", "src": "db2@1.60.1.70124"}
+{"id": 425714, "field": "aura", "en": "Pet special abilities guaranteed to be critical strikes.", "hash": "1a7c794a59814888", "src": "db2@1.60.1.70124"}
+{"id": 425718, "field": "name", "en": "Cobra Strikes", "hash": "2aedba15f7aa36a7", "src": "db2@1.60.1.70124"}
+{"id": 425718, "field": "description", "en": "Your critical hits with Shot abilities cause your pet's next 2 special attacks to critically hit.", "hash": "fd27a430b819ec7d", "src": "db2@1.60.1.70124"}
+{"id": 425718, "field": "aura", "en": "Pet special abilities guaranteed to be critical strikes.", "hash": "1a7c794a59814888", "src": "db2@1.60.1.70124"}
+{"id": 425728, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70124"}
+{"id": 425728, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70124"}
+{"id": 425728, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70124"}
+{"id": 425729, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70124"}
+{"id": 425729, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70124"}
+{"id": 425729, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70124"}
+{"id": 425730, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70124"}
+{"id": 425730, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70124"}
+{"id": 425730, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70124"}
+{"id": 425732, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70124"}
+{"id": 425732, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70124"}
+{"id": 425732, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70124"}
+{"id": 425733, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70124"}
+{"id": 425733, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70124"}
+{"id": 425733, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70124"}
+{"id": 425734, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70124"}
+{"id": 425734, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70124"}
+{"id": 425734, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70124"}
+{"id": 425735, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70124"}
+{"id": 425735, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70124"}
+{"id": 425735, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70124"}
+{"id": 425736, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70124"}
+{"id": 425736, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70124"}
+{"id": 425736, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70124"}
+{"id": 425737, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70124"}
+{"id": 425737, "field": "description", "en": "Stings the target, causing $o1 Nature damage over $d.  Only one Sting per Hunter can be active on any one target.", "hash": "7d1286a5888b14f9", "src": "db2@1.60.1.70124"}
+{"id": 425737, "field": "aura", "en": "Causes $s1 Nature damage every $t1 seconds.", "hash": "549b2d676961d8bd", "src": "db2@1.60.1.70124"}
+{"id": 425738, "field": "name", "en": "Serpent Spread", "hash": "45ef919d953f9e56", "src": "db2@1.60.1.70124"}
+{"id": 425738, "field": "description", "en": "Targets hit by your Multi-Shot are also afflicted by your Serpent Sting for $425728d.", "hash": "fd520141f84f7f7f", "src": "db2@1.60.1.70124"}
+{"id": 425754, "field": "name", "en": "Carve", "hash": "a53435cbb05fb1eb", "src": "db2@1.60.1.70124"}
+{"id": 425754, "field": "description", "en": "Gain the Carve ability:\r\n\r\n$@spellicon425711\r\n$@spelldesc425711", "hash": "c57af772b5644af0", "src": "db2@1.60.1.70124"}
+{"id": 425755, "field": "name", "en": "Cobra Strikes", "hash": "2aedba15f7aa36a7", "src": "db2@1.60.1.70124"}
+{"id": 425755, "field": "description", "en": "Gain the Cobra Strikes ability:\r\n\r\n$@spellicon425713\r\n$@spelldesc425713", "hash": "c059b5104eb35b69", "src": "db2@1.60.1.70124"}
+{"id": 425756, "field": "name", "en": "Serpent Spread", "hash": "45ef919d953f9e56", "src": "db2@1.60.1.70124"}
+{"id": 425756, "field": "description", "en": "Gain the Serpent Spread ability:\r\n\r\n$@spellicon425738\r\n$@spelldesc425738", "hash": "649f5357907295c0", "src": "db2@1.60.1.70124"}
+{"id": 425757, "field": "name", "en": "Flanking Strike", "hash": "c47a0ecf7b6752da", "src": "db2@1.60.1.70124"}
+{"id": 425757, "field": "description", "en": "Gain the Flanking Strike ability:\r\n\r\n$@spellicon415320\r\n$@spelldesc415320", "hash": "b7bf4b067278273b", "src": "db2@1.60.1.70124"}
+{"id": 425758, "field": "name", "en": "Engrave Gloves - Carve", "hash": "3209d7031e449cf2", "src": "db2@1.60.1.70124"}
+{"id": 425758, "field": "description", "en": "Engrave your gloves with the Carve rune:\r\n\r\n$@spellicon425711\r\n$@spelldesc425711", "hash": "3c61f546cda056b5", "src": "db2@1.60.1.70124"}
+{"id": 425759, "field": "name", "en": "Engrave Chest - Cobra Strikes", "hash": "4d29e59ccd09e82d", "src": "db2@1.60.1.70124"}
+{"id": 425759, "field": "description", "en": "Engrave your chest or robe with the Cobra Strikes rune:\r\n\r\n$@spellicon425713\r\n$@spelldesc425713", "hash": "d5359e717243a43d", "src": "db2@1.60.1.70124"}
+{"id": 425760, "field": "name", "en": "Engrave Pants - Serpent Spread", "hash": "1c50d583214476c1", "src": "db2@1.60.1.70124"}
+{"id": 425760, "field": "description", "en": "Engrave your pants with the Serpent Spread rune:\r\n\r\n$@spellicon425738\r\n$@spelldesc425738", "hash": "5f415872dd62d5fb", "src": "db2@1.60.1.70124"}
+{"id": 425762, "field": "name", "en": "Engrave Pants - Flanking Strike", "hash": "783fcd1821dd8864", "src": "db2@1.60.1.70124"}
+{"id": 425762, "field": "description", "en": "Engrave your pants with the Flanking Strike rune:\r\n\r\n$@spellicon415320\r\n$@spelldesc415320", "hash": "2cd65e380b18f1e4", "src": "db2@1.60.1.70124"}
+{"id": 425798, "field": "name", "en": "Arena Fatigue", "hash": "40fe77ceb45df070", "src": "db2@1.60.1.70124"}
+{"id": 425798, "field": "aura", "en": "This unit has recently plundered the Gurubashi Arena chest and cannot claim its spoils again for a time.", "hash": "78eb804050e95269", "src": "db2@1.60.1.70124"}
+{"id": 425858, "field": "name", "en": "Ancestral Awakening", "hash": "15cd13de68d10618", "src": "db2@1.60.1.70124"}
+{"id": 425858, "field": "description", "en": "When you critically heal with your Healing Wave or Lesser Healing Wave you summon an Ancestral spirit to aid you, instantly healing the lowest percentage health party member within 40 yards for $s1% of the amount healed.", "hash": "d30bce977ddd9770", "src": "db2@1.60.1.70124"}
+{"id": 425861, "field": "name", "en": "Ancestral Awakening", "hash": "15cd13de68d10618", "src": "db2@1.60.1.70124"}
+{"id": 425864, "field": "name", "en": "Ancestral Awakening", "hash": "15cd13de68d10618", "src": "db2@1.60.1.70124"}
+{"id": 425864, "field": "description", "en": "When you critically heal with your Healing Wave or Lesser Healing Wave, you summon an Ancestral spirit to aid you, instantly healing the lowest percentage health friendly party or raid target within 40 yards.", "hash": "bc4a80231ea82b0a", "src": "db2@1.60.1.70124"}
+{"id": 425874, "field": "name", "en": "Decoy Totem", "hash": "5567e2407aac2f44", "src": "db2@1.60.1.70124"}
+{"id": 425874, "field": "description", "en": "Summons a Decoy Totem for $d with $s1 health at the feet of the target that will redirect the next melee or ranged attack made against the target to the totem instead. The totem also grants the target immunity to movement impairing effects for $436391d.", "hash": "4df50519b9447760", "src": "db2@1.60.1.70124"}
+{"id": 425876, "field": "name", "en": "Decoy Totem", "hash": "5567e2407aac2f44", "src": "db2@1.60.1.70124"}
+{"id": 425876, "field": "aura", "en": "Will redirect one melee or ranged attack to the Decoy Totem.", "hash": "39a4638501948568", "src": "db2@1.60.1.70124"}
+{"id": 425879, "field": "name", "en": "Ancestral Awakening", "hash": "15cd13de68d10618", "src": "db2@1.60.1.70124"}
+{"id": 425879, "field": "description", "en": "Gain the Ancestral Awakening ability:\r\n\r\n$@spellicon425858\r\n$@spelldesc425858", "hash": "7f9b44ab03181fe2", "src": "db2@1.60.1.70124"}
+{"id": 425881, "field": "name", "en": "Decoy Totem", "hash": "5567e2407aac2f44", "src": "db2@1.60.1.70124"}
+{"id": 425881, "field": "description", "en": "Gain the Decoy Totem ability:\r\n\r\n$@spellicon425874\r\n$@spelldesc425874", "hash": "9212fa0d3886d9b9", "src": "db2@1.60.1.70124"}
+{"id": 425882, "field": "name", "en": "Engrave Boots - Decoy Totem", "hash": "82217770873ad013", "src": "db2@1.60.1.70124"}
+{"id": 425882, "field": "description", "en": "Engrave your boots with the Decoy Totem rune:\r\n\r\n$@spellicon425874\r\n$@spelldesc425874", "hash": "8e83f7254d01b3b6", "src": "db2@1.60.1.70124"}
+{"id": 425883, "field": "name", "en": "Engrave Boots - Ancestral Awakening", "hash": "01a0c76a7b2139aa", "src": "db2@1.60.1.70124"}
+{"id": 425883, "field": "description", "en": "Engrave your boots with the Ancestral Awakening rune:\r\n\r\n$@spellicon425858\r\n$@spelldesc425858", "hash": "9366949463dc8ed1", "src": "db2@1.60.1.70124"}
+{"id": 425886, "field": "name", "en": "Dead Serrakis", "hash": "5ad7986f0d0541d2", "src": "db2@1.60.1.70124"}
+{"id": 425887, "field": "name", "en": "Rot Bane", "hash": "ce721bbf7d8bdcd6", "src": "db2@1.60.1.70124"}
+{"id": 425887, "field": "aura", "en": "Something within you now hungers for Gnoll blood and vengeance...", "hash": "c8c5dbf40309ee84", "src": "db2@1.60.1.70124"}
+{"id": 425891, "field": "name", "en": "Scared", "hash": "62cf7c1cfd4fa6b3", "src": "db2@1.60.1.70124"}
+{"id": 425891, "field": "aura", "en": "Opener was resisted.", "hash": "0ea6a3e3c8f0f155", "src": "db2@1.60.1.70124"}
+{"id": 425892, "field": "name", "en": "Adventurer Challenge", "hash": "a1dd2e6b43271df3", "src": "db2@1.60.1.70124"}
+{"id": 425893, "field": "name", "en": "Grease-Matted Fur", "hash": "4dea32e428a257eb", "src": "db2@1.60.1.70124"}
+{"id": 425893, "field": "aura", "en": "Wendigo are known for filth, and this one is very greasy.", "hash": "c50e2d5c32fa30d9", "src": "db2@1.60.1.70124"}
+{"id": 425894, "field": "name", "en": "Deep Rend", "hash": "f2ca6a7f6271ec0b", "src": "db2@1.60.1.70124"}
+{"id": 425894, "field": "description", "en": "Inflicts physical damage to an enemy every $t1 sec. for $d.", "hash": "40a759e7f6100b59", "src": "db2@1.60.1.70124"}
+{"id": 425894, "field": "aura", "en": "Deals $s1 physical damage every $t1 sec.", "hash": "59f891165a4d13d5", "src": "db2@1.60.1.70124"}
+{"id": 425895, "field": "name", "en": "Frost Breath", "hash": "b3bb9f9f3387d03a", "src": "db2@1.60.1.70124"}
+{"id": 425895, "field": "description", "en": "Inflicts $s1 Frost damage to an enemy.", "hash": "e9a78e076de58778", "src": "db2@1.60.1.70124"}
+{"id": 425895, "field": "aura", "en": "Time between attacks increased by $s2%\r\nMovement speed slowed by $s3%.", "hash": "c42f1bbc21935296", "src": "db2@1.60.1.70124"}

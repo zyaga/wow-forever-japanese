@@ -1,10 +1,10 @@
-{"id": "KEYBINDINGFRAME_MOUSEWHEEL_ERROR", "field": "text", "en": "Can't bind mousewheel to actions with up and down states", "hash": "9445c57ccfb494b7", "src": "db2@1.60.1.70009"}
-{"id": "KEYRING", "field": "text", "en": "Keyring", "hash": "86e9ad33347034f6", "src": "db2@1.60.1.70009"}
-{"id": "KEY_BINDING_NAME_AND_KEY", "field": "text", "en": "%s (%s)", "hash": "515ea73e8819223f", "src": "db2@1.60.1.70009"}
-{"id": "KEY_BINDING_TOOLTIP", "field": "text", "en": "<Right click to unbind>", "hash": "ddf7d0f8c1d235ef", "src": "db2@1.60.1.70009"}
-{"id": "KEY_BOUND", "field": "text", "en": "Key Bound Successfully", "hash": "6d8aee77362e58ea", "src": "db2@1.60.1.70009"}
-{"id": "KEY_UNBOUND_ERROR", "field": "text", "en": "|cffff0000Action %s is Now Unbound!|r", "hash": "34112563175e2fb1", "src": "db2@1.60.1.70009"}
-{"id": "KILLING_BLOW_TOOLTIP", "field": "text", "en": "Enemy players to whom you have personally delivered the killing blow", "hash": "de750b8c8edd7fec", "src": "db2@1.60.1.70009"}
-{"id": "KILLING_BLOW_TOOLTIP_TITLE", "field": "text", "en": "Killing Blows", "hash": "fcbc1456a0c5eefd", "src": "db2@1.60.1.70009"}
-{"id": "KILLS", "field": "text", "en": "Kills", "hash": "32b2bdeafb2078ac", "src": "db2@1.60.1.70009"}
-{"id": "KILLS_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when a member of your party kills something.", "hash": "36e445601cd37820", "src": "db2@1.60.1.70009"}
+{"id": "KEYBINDINGFRAME_MOUSEWHEEL_ERROR", "field": "text", "en": "Can't bind mousewheel to actions with up and down states", "hash": "9445c57ccfb494b7", "src": "db2@1.60.1.70124"}
+{"id": "KEYRING", "field": "text", "en": "Keyring", "hash": "86e9ad33347034f6", "src": "db2@1.60.1.70124"}
+{"id": "KEY_BINDING_NAME_AND_KEY", "field": "text", "en": "%s (%s)", "hash": "515ea73e8819223f", "src": "db2@1.60.1.70124"}
+{"id": "KEY_BINDING_TOOLTIP", "field": "text", "en": "<Right click to unbind>", "hash": "ddf7d0f8c1d235ef", "src": "db2@1.60.1.70124"}
+{"id": "KEY_BOUND", "field": "text", "en": "Key Bound Successfully", "hash": "6d8aee77362e58ea", "src": "db2@1.60.1.70124"}
+{"id": "KEY_UNBOUND_ERROR", "field": "text", "en": "|cffff0000Action %s is Now Unbound!|r", "hash": "34112563175e2fb1", "src": "db2@1.60.1.70124"}
+{"id": "KILLING_BLOW_TOOLTIP", "field": "text", "en": "Enemy players to whom you have personally delivered the killing blow", "hash": "de750b8c8edd7fec", "src": "db2@1.60.1.70124"}
+{"id": "KILLING_BLOW_TOOLTIP_TITLE", "field": "text", "en": "Killing Blows", "hash": "fcbc1456a0c5eefd", "src": "db2@1.60.1.70124"}
+{"id": "KILLS", "field": "text", "en": "Kills", "hash": "32b2bdeafb2078ac", "src": "db2@1.60.1.70124"}
+{"id": "KILLS_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when a member of your party kills something.", "hash": "36e445601cd37820", "src": "db2@1.60.1.70124"}

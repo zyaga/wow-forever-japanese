@@ -29,7 +29,7 @@ WFJ.Data.add("spell", {
   [5166] = { "silithidの卵を掘り出します。", nil, 0x44d63dca, nil, "um" },
   [5169] = { "Defias Footpadに変装します。", nil, 0x3c90fcc7, nil, "um" },
   [5171] = { "近接攻撃速度を$N1%上昇させるFinishing \nmove。コンボポイントにより持続\n時間が延長されます。\n$N2ポイント:$N3秒\n$N4ポイント:$N5秒\n$N6ポイント:$N7秒\n$N8ポイント:$N9秒\n$N10ポイント:$N11秒", "近接攻撃速度が$N1%上昇しています。", 0x9e71ebcf, 0xd4718a15, "uu" },
-  [5176] = { "対象に$N1-$N2のNature属性ダメージを\n与えます。", nil, 0xb57329ad, nil, "um" },
+  [5176] = { "対象に$N1のNature属性ダメージを\n与えます。", nil, 0xb57329ad, nil, "um" },
   [5177] = { "対象に$N1のNatureダメージを与えます。", nil, 0xb57329ad, nil, "um" },
   [5178] = { "対象に$N1のNatureダメージを与えます。", nil, 0xb57329ad, nil, "um" },
   [5179] = { "対象に$N1のNatureダメージを与えます。", nil, 0xb57329ad, nil, "um" },

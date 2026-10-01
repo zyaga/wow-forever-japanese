@@ -1,48 +1,48 @@
-{"id": 79007, "field": "title", "en": "... and that note you found", "hash": "5aedabd1a780b71d", "src": "wdb@1.60.1.70009"}
-{"id": 79007, "field": "objectives", "en": "Charred remains of the note serve as your only guide.", "hash": "b4126cf23f31e234", "src": "wdb@1.60.1.70009"}
-{"id": 79007, "field": "description", "en": "<The faint radiance of the embers darkening, you stumble across the remnants of a recent fire.\r\n\r\nAmidst the scattered provisions, you discover a blistered note.>\r\n\r\n\"Not all that burns is lost. Find the twin land, find the place.\"", "hash": "9304bba37fe463f0", "src": "wdb@1.60.1.70009"}
-{"id": 79008, "field": "title", "en": "... and that note you found", "hash": "5aedabd1a780b71d", "src": "wdb@1.60.1.70009"}
-{"id": 79008, "field": "objectives", "en": "Charred remains of the note serve as your only guide.", "hash": "b4126cf23f31e234", "src": "wdb@1.60.1.70009"}
-{"id": 79008, "field": "description", "en": "<The faint radiance of the embers darkening, you stumble across the remnants of a recent fire.\r\n\r\nAmidst the scattered provisions, you discover a blistered note.>\r\n\r\n\"Not all that burns is lost. Find the twin land, find the place.\"", "hash": "9304bba37fe463f0", "src": "wdb@1.60.1.70009"}
+{"id": 79007, "field": "title", "en": "... and that note you found", "hash": "5aedabd1a780b71d", "src": "wdb@1.60.1.70124"}
+{"id": 79007, "field": "objectives", "en": "Charred remains of the note serve as your only guide.", "hash": "b4126cf23f31e234", "src": "wdb@1.60.1.70124"}
+{"id": 79007, "field": "description", "en": "<The faint radiance of the embers darkening, you stumble across the remnants of a recent fire.\r\n\r\nAmidst the scattered provisions, you discover a blistered note.>\r\n\r\n\"Not all that burns is lost. Find the twin land, find the place.\"", "hash": "9304bba37fe463f0", "src": "wdb@1.60.1.70124"}
+{"id": 79008, "field": "title", "en": "... and that note you found", "hash": "5aedabd1a780b71d", "src": "wdb@1.60.1.70124"}
+{"id": 79008, "field": "objectives", "en": "Charred remains of the note serve as your only guide.", "hash": "b4126cf23f31e234", "src": "wdb@1.60.1.70124"}
+{"id": 79008, "field": "description", "en": "<The faint radiance of the embers darkening, you stumble across the remnants of a recent fire.\r\n\r\nAmidst the scattered provisions, you discover a blistered note.>\r\n\r\n\"Not all that burns is lost. Find the twin land, find the place.\"", "hash": "9304bba37fe463f0", "src": "wdb@1.60.1.70124"}
 {"id": 79090, "field": "title", "en": "Repelling Invaders", "hash": "d7957bbec8dbad13", "src": "wdb@1.15.9.69722"}
 {"id": 79090, "field": "objectives", "en": "Bring the Warsong Outrider Mark to Felore Moonray, Priestess of the Moon, at the Moonwell base in Ashenvale.", "hash": "def0139e06633b58", "src": "wdb@1.15.9.69722"}
 {"id": 79090, "field": "description", "en": "Some of the Warsong Outriders lie defeated, but the battle still rages...", "hash": "793d0d2956ed6bcb", "src": "wdb@1.15.9.69722"}
-{"id": 79091, "field": "title", "en": "Archmage Antonidas: The Unabridged Autobiography", "hash": "009cff456dea6ccb", "src": "wdb@1.60.1.70009"}
-{"id": 79092, "field": "title", "en": "Archmage Theocritus' Research Journal", "hash": "276fbac6493e581b", "src": "wdb@1.60.1.70009"}
-{"id": 79093, "field": "title", "en": "Rumi of Gnomeregan: The Collected Works", "hash": "24c4502579224e04", "src": "wdb@1.60.1.70009"}
-{"id": 79094, "field": "title", "en": "The Lessons of Ta'zo", "hash": "faffd00328675678", "src": "wdb@1.60.1.70009"}
-{"id": 79095, "field": "title", "en": "The Apothecary's Metaphysical Primer", "hash": "cbb1ebc85383600c", "src": "wdb@1.60.1.70009"}
-{"id": 79097, "field": "title", "en": "Baxtan: On Destructive Magics", "hash": "3e745b06d2352a80", "src": "wdb@1.60.1.70009"}
-{"id": 79098, "field": "title", "en": "Clear the Forest!", "hash": "47bae5fc72da88cc", "src": "wdb@1.15.9.69722"}
-{"id": 79098, "field": "objectives", "en": "Bring the Silverwing Sentinel Charm to Kazragore, Far Seer, at the Bonfire base in Ashenvale.", "hash": "072ac677e5308347", "src": "wdb@1.15.9.69722"}
-{"id": 79098, "field": "description", "en": "This one is slain, but these infuriating alliance continue to fight... what is this charm?", "hash": "0d462d5539b11232", "src": "wdb@1.15.9.69722"}
-{"id": 79192, "field": "title", "en": "Stepping Stones", "hash": "9dd88a3c702c548d", "src": "wdb@1.60.1.70009"}
-{"id": 79192, "field": "objectives", "en": "You tear the note from the plank and read the scrawled writing.", "hash": "42f58b3670da13e7", "src": "wdb@1.60.1.70009"}
-{"id": 79192, "field": "description", "en": "The note begins, \"Mission said they were both making deliveries for New Plague. Looks like simple apothecary accidents to me. Find my cozy spot in the mountains between The Barrens and Desolace if you want a safe place to talk.\"", "hash": "18dc9772c544674f", "src": "wdb@1.60.1.70009"}
-{"id": 79362, "field": "title", "en": "Grant's Shield", "hash": "55951b8a1feebf68", "src": "wdb@1.60.1.70009"}
-{"id": 79362, "field": "objectives", "en": "Find Grant's Mace on one of the skeletons in Raven Hill Cemetery then return to Sirra Von'Indie in Darkshire for more information.", "hash": "e684af826df1487e", "src": "wdb@1.60.1.70009"}
-{"id": 79362, "field": "description", "en": "A shield left behind by the specter of Grant Valor, father of the Valor family and hero of Raven Hill.\r\n\r\nWith Grant's spirit still battling the undead, perhaps his unfinished business was to slay the scourge that injured him in the Raven Hill Cemetery. It is likely the one his mace is still imbedded in.", "hash": "80fde6789bc05d23", "src": "wdb@1.60.1.70009"}
-{"id": 79363, "field": "title", "en": "Silvia's Sword", "hash": "f920a62267d9e48f", "src": "wdb@1.60.1.70009"}
-{"id": 79363, "field": "objectives", "en": "Defeat $1oa Defias Night Blades and $1oa Defias Enchanters in Addle's Stead then return to Sirra Von'Indi in Darkshire for more information.", "hash": "a93ad91ac0fd88d8", "src": "wdb@1.60.1.70009"}
-{"id": 79363, "field": "description", "en": "A sword left by the spirit of Raven Hill's guard, Silvia Valor, who lived her life protecting civilians and their homes.\r\n\r\nWith Silvia's spirit still visiting farmsteads, perhaps her unfinished business was to route the defias who have taken up residence in Addle's Stead south of Raven Hill.", "hash": "1497337fc647a9a7", "src": "wdb@1.60.1.70009"}
-{"id": 79535, "field": "title", "en": "Basilisks: Should Petrification be Feared?", "hash": "a30fcfacb0b0a30a", "src": "wdb@1.60.1.70009"}
-{"id": 79536, "field": "title", "en": "Greater Friend of the Library", "hash": "f10ee12c19358efe", "src": "wdb@1.60.1.70009"}
-{"id": 79637, "field": "title", "en": "A Ticking Present", "hash": "d9f880a5b1fee9e7", "src": "wdb@1.15.9.69722"}
-{"id": 79947, "field": "title", "en": "Geomancy: The Stone-Cold Truth", "hash": "19d978d89be22e4c", "src": "wdb@1.60.1.70009"}
-{"id": 79948, "field": "title", "en": "Defensive Magics 101", "hash": "5bc13f46576d9197", "src": "wdb@1.60.1.70009"}
-{"id": 79949, "field": "title", "en": "A Web of Lies: Debunking Myths and Legends", "hash": "efc18e04a3a23acb", "src": "wdb@1.60.1.70009"}
-{"id": 79950, "field": "title", "en": "Demons and You", "hash": "6fe9a1ef040c438f", "src": "wdb@1.60.1.70009"}
-{"id": 79951, "field": "title", "en": "Mummies: A Guide to the Unsavory Undead", "hash": "99295356cea4dd84", "src": "wdb@1.60.1.70009"}
-{"id": 79952, "field": "title", "en": "RwlRwlRwlRwl!", "hash": "6bc7959f37aeabcb", "src": "wdb@1.60.1.70009"}
-{"id": 79974, "field": "title", "en": "Wet Job", "hash": "9c808653168e7649", "src": "wdb@1.60.1.70009"}
-{"id": 79974, "field": "objectives", "en": "Dusting off a messenger bag emerging from the soil, you find a parchment nestled among the supplies.", "hash": "9e139b4e1e37fa66", "src": "wdb@1.60.1.70009"}
-{"id": 79974, "field": "description", "en": "\"Always like to keep a reserve stash nearby in the off chance I've got to flee in a hurry.\r\n\r\nThe face of this mountainside is so beautiful you might say it was carved from the waterfalls of time. \r\nThat's the eagles nest, that's what you're looking for.\"", "hash": "631c42d4ada7f68d", "src": "wdb@1.60.1.70009"}
-{"id": 79975, "field": "title", "en": "Eagle's Fist", "hash": "a1fb6a7aefd3478d", "src": "wdb@1.60.1.70009"}
-{"id": 79975, "field": "objectives", "en": "Water spray dampens the air, the view is incredible.", "hash": "b9a336037f78bd30", "src": "wdb@1.60.1.70009"}
-{"id": 79975, "field": "description", "en": "<You find a carefully folded letter inside of the toolbox.>\r\n\r\n\"From here, with the right tools, you call the shots. Great place to launch a parachute glider.\r\n\r\nMy loyalty to the Eagle and Fist requires distance in order to serve them best. This barricade has had better days, like the Old Kingdoms it once defended, but I'll never abandon it.\"", "hash": "322bb447321135ce", "src": "wdb@1.60.1.70009"}
-{"id": 79976, "field": "title", "en": "This Must Be The Place", "hash": "3d8d005f91050d75", "src": "wdb@1.60.1.70009"}
-{"id": 79976, "field": "objectives", "en": "Whoever was here, you just missed them.", "hash": "5d8a5aefa1fc0ff2", "src": "wdb@1.60.1.70009"}
-{"id": 79976, "field": "description", "en": "\"So, I've decided to take my work back underground. To stop it falling into the wrong hands.\"\r\n\r\n<The paper is torn just large enough to fit the message. You aren't sure if these are the last words you'll read from the author, or if they're a clue to the next hideout. An inadequately secured sleeping bag is unrolling itself onto your feet...>", "hash": "b96b34378c463cc2", "src": "wdb@1.60.1.70009"}
-{"id": 79980, "field": "title", "en": "Scramble", "hash": "51393b00aacaefcf", "src": "wdb@1.60.1.70009"}
-{"id": 79980, "field": "objectives", "en": "Find what awaits you.", "hash": "ecbb95284ff24d43", "src": "wdb@1.60.1.70009"}
-{"id": 79980, "field": "description", "en": "\"Not so bad, eh? Since you're reading this, it means my stash is still there. Take a hundred paces due north and don't break your ankles going down the steep cliffside. There should be enough to keep you going.\"", "hash": "76de52abaca11f4f", "src": "wdb@1.60.1.70009"}
+{"id": 79091, "field": "title", "en": "Archmage Antonidas: The Unabridged Autobiography", "hash": "009cff456dea6ccb", "src": "wdb@1.60.1.70124"}
+{"id": 79092, "field": "title", "en": "Archmage Theocritus' Research Journal", "hash": "276fbac6493e581b", "src": "wdb@1.60.1.70124"}
+{"id": 79093, "field": "title", "en": "Rumi of Gnomeregan: The Collected Works", "hash": "24c4502579224e04", "src": "wdb@1.60.1.70124"}
+{"id": 79094, "field": "title", "en": "The Lessons of Ta'zo", "hash": "faffd00328675678", "src": "wdb@1.60.1.70124"}
+{"id": 79095, "field": "title", "en": "The Apothecary's Metaphysical Primer", "hash": "cbb1ebc85383600c", "src": "wdb@1.60.1.70124"}
+{"id": 79097, "field": "title", "en": "Baxtan: On Destructive Magics", "hash": "3e745b06d2352a80", "src": "wdb@1.60.1.70124"}
+{"id": 79098, "field": "title", "en": "Clear the Forest!", "hash": "47bae5fc72da88cc", "src": "wdb@1.60.1.70124"}
+{"id": 79098, "field": "objectives", "en": "Bring the Silverwing Sentinel Charm to Kazragore, Far Seer, at the Bonfire base in Ashenvale.", "hash": "072ac677e5308347", "src": "wdb@1.60.1.70124"}
+{"id": 79098, "field": "description", "en": "This one is slain, but these infuriating alliance continue to fight... what is this charm?", "hash": "0d462d5539b11232", "src": "wdb@1.60.1.70124"}
+{"id": 79192, "field": "title", "en": "Stepping Stones", "hash": "9dd88a3c702c548d", "src": "wdb@1.60.1.70124"}
+{"id": 79192, "field": "objectives", "en": "You tear the note from the plank and read the scrawled writing.", "hash": "42f58b3670da13e7", "src": "wdb@1.60.1.70124"}
+{"id": 79192, "field": "description", "en": "The note begins, \"Mission said they were both making deliveries for New Plague. Looks like simple apothecary accidents to me. Find my cozy spot in the mountains between The Barrens and Desolace if you want a safe place to talk.\"", "hash": "18dc9772c544674f", "src": "wdb@1.60.1.70124"}
+{"id": 79362, "field": "title", "en": "Grant's Shield", "hash": "55951b8a1feebf68", "src": "wdb@1.60.1.70124"}
+{"id": 79362, "field": "objectives", "en": "Find Grant's Mace on one of the skeletons in Raven Hill Cemetery then return to Sirra Von'Indie in Darkshire for more information.", "hash": "e684af826df1487e", "src": "wdb@1.60.1.70124"}
+{"id": 79362, "field": "description", "en": "A shield left behind by the specter of Grant Valor, father of the Valor family and hero of Raven Hill.\r\n\r\nWith Grant's spirit still battling the undead, perhaps his unfinished business was to slay the scourge that injured him in the Raven Hill Cemetery. It is likely the one his mace is still imbedded in.", "hash": "80fde6789bc05d23", "src": "wdb@1.60.1.70124"}
+{"id": 79363, "field": "title", "en": "Silvia's Sword", "hash": "f920a62267d9e48f", "src": "wdb@1.60.1.70124"}
+{"id": 79363, "field": "objectives", "en": "Defeat $1oa Defias Night Blades and $1oa Defias Enchanters in Addle's Stead then return to Sirra Von'Indi in Darkshire for more information.", "hash": "a93ad91ac0fd88d8", "src": "wdb@1.60.1.70124"}
+{"id": 79363, "field": "description", "en": "A sword left by the spirit of Raven Hill's guard, Silvia Valor, who lived her life protecting civilians and their homes.\r\n\r\nWith Silvia's spirit still visiting farmsteads, perhaps her unfinished business was to route the defias who have taken up residence in Addle's Stead south of Raven Hill.", "hash": "1497337fc647a9a7", "src": "wdb@1.60.1.70124"}
+{"id": 79535, "field": "title", "en": "Basilisks: Should Petrification be Feared?", "hash": "a30fcfacb0b0a30a", "src": "wdb@1.60.1.70124"}
+{"id": 79536, "field": "title", "en": "Greater Friend of the Library", "hash": "f10ee12c19358efe", "src": "wdb@1.60.1.70124"}
+{"id": 79637, "field": "title", "en": "A Ticking Present", "hash": "d9f880a5b1fee9e7", "src": "wdb@1.60.1.70124"}
+{"id": 79947, "field": "title", "en": "Geomancy: The Stone-Cold Truth", "hash": "19d978d89be22e4c", "src": "wdb@1.60.1.70124"}
+{"id": 79948, "field": "title", "en": "Defensive Magics 101", "hash": "5bc13f46576d9197", "src": "wdb@1.60.1.70124"}
+{"id": 79949, "field": "title", "en": "A Web of Lies: Debunking Myths and Legends", "hash": "efc18e04a3a23acb", "src": "wdb@1.60.1.70124"}
+{"id": 79950, "field": "title", "en": "Demons and You", "hash": "6fe9a1ef040c438f", "src": "wdb@1.60.1.70124"}
+{"id": 79951, "field": "title", "en": "Mummies: A Guide to the Unsavory Undead", "hash": "99295356cea4dd84", "src": "wdb@1.60.1.70124"}
+{"id": 79952, "field": "title", "en": "RwlRwlRwlRwl!", "hash": "6bc7959f37aeabcb", "src": "wdb@1.60.1.70124"}
+{"id": 79974, "field": "title", "en": "Wet Job", "hash": "9c808653168e7649", "src": "wdb@1.60.1.70124"}
+{"id": 79974, "field": "objectives", "en": "Dusting off a messenger bag emerging from the soil, you find a parchment nestled among the supplies.", "hash": "9e139b4e1e37fa66", "src": "wdb@1.60.1.70124"}
+{"id": 79974, "field": "description", "en": "\"Always like to keep a reserve stash nearby in the off chance I've got to flee in a hurry.\r\n\r\nThe face of this mountainside is so beautiful you might say it was carved from the waterfalls of time. \r\nThat's the eagles nest, that's what you're looking for.\"", "hash": "631c42d4ada7f68d", "src": "wdb@1.60.1.70124"}
+{"id": 79975, "field": "title", "en": "Eagle's Fist", "hash": "a1fb6a7aefd3478d", "src": "wdb@1.60.1.70124"}
+{"id": 79975, "field": "objectives", "en": "Water spray dampens the air, the view is incredible.", "hash": "b9a336037f78bd30", "src": "wdb@1.60.1.70124"}
+{"id": 79975, "field": "description", "en": "<You find a carefully folded letter inside of the toolbox.>\r\n\r\n\"From here, with the right tools, you call the shots. Great place to launch a parachute glider.\r\n\r\nMy loyalty to the Eagle and Fist requires distance in order to serve them best. This barricade has had better days, like the Old Kingdoms it once defended, but I'll never abandon it.\"", "hash": "322bb447321135ce", "src": "wdb@1.60.1.70124"}
+{"id": 79976, "field": "title", "en": "This Must Be The Place", "hash": "3d8d005f91050d75", "src": "wdb@1.60.1.70124"}
+{"id": 79976, "field": "objectives", "en": "Whoever was here, you just missed them.", "hash": "5d8a5aefa1fc0ff2", "src": "wdb@1.60.1.70124"}
+{"id": 79976, "field": "description", "en": "\"So, I've decided to take my work back underground. To stop it falling into the wrong hands.\"\r\n\r\n<The paper is torn just large enough to fit the message. You aren't sure if these are the last words you'll read from the author, or if they're a clue to the next hideout. An inadequately secured sleeping bag is unrolling itself onto your feet...>", "hash": "b96b34378c463cc2", "src": "wdb@1.60.1.70124"}
+{"id": 79980, "field": "title", "en": "Scramble", "hash": "51393b00aacaefcf", "src": "wdb@1.60.1.70124"}
+{"id": 79980, "field": "objectives", "en": "Find what awaits you.", "hash": "ecbb95284ff24d43", "src": "wdb@1.60.1.70124"}
+{"id": 79980, "field": "description", "en": "\"Not so bad, eh? Since you're reading this, it means my stash is still there. Take a hundred paces due north and don't break your ankles going down the steep cliffside. There should be enough to keep you going.\"", "hash": "76de52abaca11f4f", "src": "wdb@1.60.1.70124"}

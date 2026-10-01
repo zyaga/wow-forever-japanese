@@ -1,180 +1,180 @@
-{"id": 213074, "field": "name", "en": "Rune of Nourishing", "hash": "7144523492b546f7", "src": "db2@1.60.1.70009"}
-{"id": 213074, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213086, "field": "name", "en": "Rune of the Storm", "hash": "42c8534a0db17494", "src": "db2@1.60.1.70009"}
-{"id": 213086, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213090, "field": "name", "en": "Rune of Synergy", "hash": "cd1032c84208ce84", "src": "db2@1.60.1.70009"}
-{"id": 213090, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213093, "field": "name", "en": "Rune of Power", "hash": "2f812af3bc318bcf", "src": "db2@1.60.1.70009"}
-{"id": 213093, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213094, "field": "name", "en": "Rune of Fire Nova", "hash": "97b29cd89084d303", "src": "db2@1.60.1.70009"}
-{"id": 213094, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213096, "field": "name", "en": "Rune of Decoys", "hash": "d2b0e268fb73013a", "src": "db2@1.60.1.70009"}
-{"id": 213096, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213098, "field": "name", "en": "Rune of Invocation", "hash": "0303e5621bd0c7b0", "src": "db2@1.60.1.70009"}
-{"id": 213098, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213100, "field": "name", "en": "Rune of Forbidden Knowledge", "hash": "074aa7c573eb93c6", "src": "db2@1.60.1.70009"}
-{"id": 213100, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213101, "field": "name", "en": "Rune of Shadowflames", "hash": "d3c96d780a70e67b", "src": "db2@1.60.1.70009"}
-{"id": 213101, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213102, "field": "name", "en": "Rune of Wickedness", "hash": "953874efedba2066", "src": "db2@1.60.1.70009"}
-{"id": 213102, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213103, "field": "name", "en": "Rune of Blood Surge", "hash": "ad4a90e65df81dfc", "src": "db2@1.60.1.70009"}
-{"id": 213103, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213104, "field": "name", "en": "Rune of Ruthless Precision", "hash": "185d00f5adb6d8d3", "src": "db2@1.60.1.70009"}
-{"id": 213104, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213105, "field": "name", "en": "Shawarmageddon", "hash": "2aba68bd78335bd2", "src": "db2@1.60.1.70009"}
-{"id": 213105, "field": "description", "en": "Melee attacks deal an additional 7 Fire damage for $d.", "hash": "26bc0e67b76da3ed", "src": "db2@1.60.1.70009"}
-{"id": 213109, "field": "name", "en": "Rune of Focused Rage", "hash": "f3a7092273f27833", "src": "db2@1.60.1.70009"}
-{"id": 213109, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213110, "field": "name", "en": "Rune of the Commander", "hash": "0fe2858324aa4303", "src": "db2@1.60.1.70009"}
-{"id": 213110, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213111, "field": "name", "en": "Rune of Intervention", "hash": "86e220edfcd2c1cb", "src": "db2@1.60.1.70009"}
-{"id": 213111, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213112, "field": "name", "en": "Spell Notes: Missile Barrage", "hash": "49086c6fc31aa846", "src": "db2@1.60.1.70009"}
-{"id": 213112, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213117, "field": "name", "en": "Rune of Berserk", "hash": "6ef0200c3806e19a", "src": "db2@1.60.1.70009"}
-{"id": 213117, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213118, "field": "name", "en": "Rune of the Jungle King", "hash": "a4a01e6574325b43", "src": "db2@1.60.1.70009"}
-{"id": 213118, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213119, "field": "name", "en": "Rune of Instinct", "hash": "70dd6c95a1bab90f", "src": "db2@1.60.1.70009"}
-{"id": 213119, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213120, "field": "name", "en": "Rune of the Dreamer", "hash": "87867efcb35e0d41", "src": "db2@1.60.1.70009"}
-{"id": 213120, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213121, "field": "name", "en": "DEPRECATED ITEM", "hash": "eacdc418b023f226", "src": "db2@1.60.1.70009"}
-{"id": 213121, "field": "description", "en": "Transforms your mount into something more festive.", "hash": "3ce08c151673810a", "src": "db2@1.60.1.70009"}
-{"id": 213122, "field": "name", "en": "Rune of Steady Shot", "hash": "2c93c58eb3408f70", "src": "db2@1.60.1.70009"}
-{"id": 213122, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213123, "field": "name", "en": "Rune of Exposure", "hash": "5919d05276a23a0a", "src": "db2@1.60.1.70009"}
-{"id": 213123, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213124, "field": "name", "en": "Rune of Close Combat", "hash": "d7b1eaf7477d9d2f", "src": "db2@1.60.1.70009"}
-{"id": 213124, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213125, "field": "name", "en": "Rune of Invigoration", "hash": "a2683bb9490c34dc", "src": "db2@1.60.1.70009"}
-{"id": 213125, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213126, "field": "name", "en": "Rune of the Scrapper", "hash": "8922c64ade7966ef", "src": "db2@1.60.1.70009"}
-{"id": 213126, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213127, "field": "name", "en": "Partial Mystical Notes", "hash": "ec99fcec9669f73e", "src": "db2@1.60.1.70009"}
-{"id": 213127, "field": "description", "en": "\"Eggs\" can just about be made out in the unreadable scrawl.", "hash": "36d9a6698e4f63be", "src": "db2@1.60.1.70009"}
-{"id": 213128, "field": "name", "en": "Rune of Piety", "hash": "2eaeaa63244eee46", "src": "db2@1.60.1.70009"}
-{"id": 213128, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213129, "field": "name", "en": "Rune of Light's Embrace", "hash": "a9a5c7124cb8b263", "src": "db2@1.60.1.70009"}
-{"id": 213129, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213130, "field": "name", "en": "Rune of Infusions", "hash": "3ea08527dc2e894b", "src": "db2@1.60.1.70009"}
-{"id": 213130, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213131, "field": "name", "en": "Rune of Sacred Shields", "hash": "7e46bf66409fe3fd", "src": "db2@1.60.1.70009"}
-{"id": 213131, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213132, "field": "name", "en": "Rune of the Guardian", "hash": "1963d36308e7fe20", "src": "db2@1.60.1.70009"}
-{"id": 213132, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213136, "field": "name", "en": "Rune of Subtlety", "hash": "58cafc8ca94e55c3", "src": "db2@1.60.1.70009"}
-{"id": 213136, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213137, "field": "name", "en": "Rune of the Assailant", "hash": "ada1b6fb27f1061d", "src": "db2@1.60.1.70009"}
-{"id": 213137, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213138, "field": "name", "en": "Rune of the Southpaw", "hash": "4082244cf64cb93f", "src": "db2@1.60.1.70009"}
-{"id": 213138, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213139, "field": "name", "en": "Rune of the Assassin", "hash": "6a3ec18ffc2b1f54", "src": "db2@1.60.1.70009"}
-{"id": 213139, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213140, "field": "name", "en": "Prophecy of the Quickened Path", "hash": "343026e5561ff2b0", "src": "db2@1.60.1.70009"}
-{"id": 213140, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70009"}
-{"id": 213141, "field": "name", "en": "Rune of Hope", "hash": "0cf8515dbbcb356d", "src": "db2@1.60.1.70009"}
-{"id": 213141, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213142, "field": "name", "en": "Prophecy of Imprisoned Malice", "hash": "cc66a5e37d90b82a", "src": "db2@1.60.1.70009"}
-{"id": 213142, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70009"}
-{"id": 213143, "field": "name", "en": "Apocryphal Epiphany", "hash": "cc976841f45ca067", "src": "db2@1.60.1.70009"}
-{"id": 213143, "field": "description", "en": "Learn a new Engraving ability.", "hash": "83c8b2f0b56d7036", "src": "db2@1.60.1.70009"}
-{"id": 213144, "field": "name", "en": "Luminous Epiphany", "hash": "3867501c051de729", "src": "db2@1.60.1.70009"}
-{"id": 213144, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70009"}
-{"id": 213165, "field": "name", "en": "Basilisks: Should Petrification be Feared?", "hash": "a30fcfacb0b0a30a", "src": "db2@1.60.1.70009"}
-{"id": 213165, "field": "description", "en": "Attempted research on the use of basilisk parts as reagents. A fine addition to any library's collection.", "hash": "c9ac97e817175372", "src": "db2@1.60.1.70009"}
-{"id": 213369, "field": "name", "en": "Faintly Glowing Leather", "hash": "902898927812864b", "src": "db2@1.60.1.70009"}
-{"id": 213370, "field": "name", "en": "Irradiated Leather Scraps", "hash": "f8db17101b6bdbf5", "src": "db2@1.60.1.70009"}
-{"id": 213370, "field": "description", "en": "A skilled leatherworker may be able to fashion this into something useful.", "hash": "49b5c9dbd5443fb7", "src": "db2@1.60.1.70009"}
-{"id": 213371, "field": "name", "en": "Crate of Tainted Gniodine Solution", "hash": "676095e8c5625869", "src": "db2@1.60.1.70009"}
-{"id": 213371, "field": "description", "en": "A skilled alchemist may be able to fashion this into something useful.", "hash": "1c582b6d54f31942", "src": "db2@1.60.1.70009"}
-{"id": 213373, "field": "name", "en": "Reflective Scrapmetal", "hash": "4b105bc1b450663d", "src": "db2@1.60.1.70009"}
-{"id": 213373, "field": "description", "en": "A skilled blacksmith may be able to fashion this into something usable.", "hash": "c5d0bd71818791e9", "src": "db2@1.60.1.70009"}
-{"id": 213376, "field": "name", "en": "Low-Background Truesilver Plates", "hash": "53377d5e36a228b3", "src": "db2@1.60.1.70009"}
-{"id": 213378, "field": "name", "en": "Unstable Microfilament", "hash": "a07a00930ced5c93", "src": "db2@1.60.1.70009"}
-{"id": 213378, "field": "description", "en": "A skilled tailor may be able to fashion this into something useful.", "hash": "993a33c259846d28", "src": "db2@1.60.1.70009"}
-{"id": 213379, "field": "name", "en": "Hyperconductive Arcano-Filament", "hash": "dcc71ccf9646acb1", "src": "db2@1.60.1.70009"}
-{"id": 213381, "field": "name", "en": "Pile of Tarnished Gears", "hash": "2a0f72054c4b63d4", "src": "db2@1.60.1.70009"}
-{"id": 213381, "field": "description", "en": "A skilled engineer may be able to fashion this into something useful.", "hash": "b7724e26a83d7a90", "src": "db2@1.60.1.70009"}
-{"id": 213383, "field": "name", "en": "Polished Truesilver Gears", "hash": "6fbdd326c48f1ec6", "src": "db2@1.60.1.70009"}
-{"id": 213391, "field": "name", "en": "UNUSED Electrified Mithril Gauntlets", "hash": "e922ea366cc2ec0f", "src": "db2@1.60.1.70009"}
-{"id": 213421, "field": "name", "en": "Singed Note", "hash": "149bf1b518532d62", "src": "db2@1.60.1.70009"}
-{"id": 213422, "field": "name", "en": "Illegible Recipe", "hash": "2d17e57233d1f8b7", "src": "db2@1.60.1.70009"}
-{"id": 213426, "field": "name", "en": "Ogre Lightning Rod", "hash": "84ef71e4a6d4c782", "src": "db2@1.60.1.70009"}
-{"id": 213426, "field": "description", "en": "Plant into Soft Soil.", "hash": "80726cbb40c0063a", "src": "db2@1.60.1.70009"}
-{"id": 213427, "field": "name", "en": "Grime-Encrusted Salvage", "hash": "69333d1c234b8c35", "src": "db2@1.60.1.70009"}
-{"id": 213443, "field": "name", "en": "DEPRECATED ITEM", "hash": "eacdc418b023f226", "src": "db2@1.60.1.70009"}
-{"id": 213444, "field": "name", "en": "Tarnished Prayer Bead I", "hash": "540ed04c3d421587", "src": "db2@1.60.1.70009"}
-{"id": 213444, "field": "description", "en": "May those who stand against us know our might.", "hash": "a2b7359d06cae3e9", "src": "db2@1.60.1.70009"}
-{"id": 213445, "field": "name", "en": "Tarnished Prayer Bead II", "hash": "03949804d7b0c690", "src": "db2@1.60.1.70009"}
-{"id": 213445, "field": "description", "en": "May the Light shield us when we are wounded.", "hash": "ca4e6eaf36b6419f", "src": "db2@1.60.1.70009"}
-{"id": 213446, "field": "name", "en": "Tarnished Prayer Bead III", "hash": "d509ca5afa6bbd64", "src": "db2@1.60.1.70009"}
-{"id": 213446, "field": "description", "en": "May the wicked and cowardly be brought to justice", "hash": "a07b2e5d86ea972a", "src": "db2@1.60.1.70009"}
-{"id": 213452, "field": "name", "en": "Dormant Holy Rune", "hash": "f5a6f84dba1941a0", "src": "db2@1.60.1.70009"}
-{"id": 213452, "field": "description", "en": "First, you must lay down your life for another. Then, before your spirit departs, have your salvation returned in kind.", "hash": "691705bd8427bac6", "src": "db2@1.60.1.70009"}
-{"id": 213513, "field": "name", "en": "Libram of Deliverance", "hash": "018250a3ecfb9294", "src": "db2@1.60.1.70009"}
-{"id": 213513, "field": "description", "en": "Learn a new ability after using Blessing of Freedom to free others from movement impairing effects 5 times.", "hash": "8f7f61d93a10e681", "src": "db2@1.60.1.70009"}
-{"id": 213526, "field": "name", "en": "Hybrid Haunch", "hash": "b72bf5058a9299ef", "src": "db2@1.60.1.70009"}
-{"id": 213526, "field": "description", "en": "Tastes like beef *and* chicken.", "hash": "f834fe40c5541805", "src": "db2@1.60.1.70009"}
-{"id": 213527, "field": "name", "en": "Smuggler's Spice Blend", "hash": "193ed151974136e9", "src": "db2@1.60.1.70009"}
-{"id": 213527, "field": "description", "en": "The crown jewel of any ship's galley. Could make a boot taste good.", "hash": "d719be2ff3751f77", "src": "db2@1.60.1.70009"}
-{"id": 213528, "field": "name", "en": "Balmy Brew", "hash": "157413ea33c67315", "src": "db2@1.60.1.70009"}
-{"id": 213528, "field": "description", "en": "Not exactly a 'cold one' per-se", "hash": "bea5463dc8b5eaff", "src": "db2@1.60.1.70009"}
-{"id": 213529, "field": "name", "en": "Viscous Venom", "hash": "841a6e2574350d55", "src": "db2@1.60.1.70009"}
-{"id": 213529, "field": "description", "en": "Eats through swamp critters like they're nothing. Great for marinades!", "hash": "4ea1370b1e550056", "src": "db2@1.60.1.70009"}
-{"id": 213543, "field": "name", "en": "Scroll: UPDOG", "hash": "f48989af00e26747", "src": "db2@1.60.1.70009"}
-{"id": 213543, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70009"}
-{"id": 213544, "field": "name", "en": "Scroll: TOPAZ YORAK", "hash": "9c58b2ef152cd4dd", "src": "db2@1.60.1.70009"}
-{"id": 213544, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70009"}
-{"id": 213545, "field": "name", "en": "Scroll: PEATCHY ATTAX", "hash": "6455400ae7af3b8d", "src": "db2@1.60.1.70009"}
-{"id": 213545, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70009"}
-{"id": 213546, "field": "name", "en": "Scroll: SHOOBEEDOOP", "hash": "e112c30ec759f1f2", "src": "db2@1.60.1.70009"}
-{"id": 213546, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70009"}
-{"id": 213547, "field": "name", "en": "Scroll: THAW WORDS", "hash": "ae2753a3ca44c5f4", "src": "db2@1.60.1.70009"}
-{"id": 213547, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70009"}
-{"id": 213548, "field": "name", "en": "Scroll of Liminal Passage", "hash": "8a2e3d7cb2b6d836", "src": "db2@1.60.1.70009"}
-{"id": 213548, "field": "description", "en": "Teleport to a party member. Both you and the target must be resting at an inn or city.", "hash": "ce3c6cf9f498aee2", "src": "db2@1.60.1.70009"}
-{"id": 213549, "field": "name", "en": "Scroll of Arcane Angling", "hash": "0ab1f38ea389abb2", "src": "db2@1.60.1.70009"}
-{"id": 213550, "field": "name", "en": "Scroll of Polymorph: Odd Melon", "hash": "cef612f4ddaa73d3", "src": "db2@1.60.1.70009"}
-{"id": 213550, "field": "description", "en": "Polymorph the target into an Odd Melon.", "hash": "a08bd2d0847bd4ba", "src": "db2@1.60.1.70009"}
-{"id": 213551, "field": "name", "en": "Scroll of Controlled Displacement", "hash": "c42f3b22ffdf5720", "src": "db2@1.60.1.70009"}
-{"id": 213552, "field": "name", "en": "Tear of Theradras", "hash": "ea0f432d0d5c3a7a", "src": "db2@1.60.1.70009"}
-{"id": 213552, "field": "description", "en": "Hoarded and closely guarded by the Gelkis centaur tribe, these are said to grant their wielder the protection of the earthen spirits.", "hash": "91b0bfd8c2a6f519", "src": "db2@1.60.1.70009"}
-{"id": 213553, "field": "name", "en": "Tear of Theradras", "hash": "ea0f432d0d5c3a7a", "src": "db2@1.60.1.70009"}
-{"id": 213553, "field": "description", "en": "Hoarded and closely guarded by the Gelkis centaur tribe, these are said to grant their weilder the protection of the earthen spirits.", "hash": "37e4a85349a4a52d", "src": "db2@1.60.1.70009"}
-{"id": 213554, "field": "name", "en": "Vial of Crystal Water", "hash": "2f3a35f10fcf8d5f", "src": "db2@1.60.1.70009"}
-{"id": 213554, "field": "description", "en": "Mix with the Tears of Theradras to create an Elemental Salve capable of purifying corruption.\nThe water is so crystal clear that the vial seems empty.", "hash": "4366cc37f8f6900c", "src": "db2@1.60.1.70009"}
-{"id": 213558, "field": "name", "en": "Elemental Salve", "hash": "0d2f0a29d1e08d9c", "src": "db2@1.60.1.70009"}
-{"id": 213558, "field": "description", "en": "Pour over corrupted objects to cleanse them.\nA potent salve capable of cleansing deep corruption.", "hash": "7de9b94a3c494ecb", "src": "db2@1.60.1.70009"}
-{"id": 213562, "field": "name", "en": "Bug Catching Net", "hash": "01d7a2a1d77d7033", "src": "db2@1.60.1.70009"}
-{"id": 213562, "field": "description", "en": "Catch an exotic bug, and keep it as a specimen. ", "hash": "7c522522809fc241", "src": "db2@1.60.1.70009"}
-{"id": 213563, "field": "name", "en": "Field Guide", "hash": "bf7f3c83b1ec32fb", "src": "db2@1.60.1.70009"}
-{"id": 213564, "field": "name", "en": "Scroll of Minor Evocation", "hash": "df6a675fb69d6fa5", "src": "db2@1.60.1.70009"}
-{"id": 213564, "field": "description", "en": "Restores mana.", "hash": "7569fc8c919feec3", "src": "db2@1.60.1.70009"}
-{"id": 213565, "field": "name", "en": "Entomology Starter Kit", "hash": "f53a381b29cd7b96", "src": "db2@1.60.1.70009"}
-{"id": 213566, "field": "name", "en": "Arbor Tarantula Specimen", "hash": "7d6949fa09a05921", "src": "db2@1.60.1.70009"}
-{"id": 213567, "field": "name", "en": "Flesh Picker Specimen", "hash": "1fe488dda5d5c80f", "src": "db2@1.60.1.70009"}
-{"id": 213568, "field": "name", "en": "Hay Weevil Specimen", "hash": "4981ec243389c75c", "src": "db2@1.60.1.70009"}
-{"id": 213583, "field": "name", "en": "Brimstone Carving", "hash": "ecb7687329e466f5", "src": "db2@1.60.1.70009"}
-{"id": 213583, "field": "description", "en": "It appears the previous owner played with fire one too few times.", "hash": "ff2707b78c6b262a", "src": "db2@1.60.1.70009"}
-{"id": 213594, "field": "name", "en": "Idol of the Heckler", "hash": "0f889717c6158410", "src": "db2@1.60.1.70009"}
-{"id": 213594, "field": "description", "en": "Taunt 2 or more enemies with Challenging Roar, and kill at least one of them. After 3 kills, use this idol to learn a new ability.", "hash": "c6388a5d828df8ec", "src": "db2@1.60.1.70009"}
-{"id": 213599, "field": "name", "en": "Unsettling Vision", "hash": "d3ec5d3ae22f4e9f", "src": "db2@1.60.1.70009"}
-{"id": 213599, "field": "description", "en": "Focus on the Vision to learn a new spell.  Requires a glimpse of corrupt knowledge.", "hash": "045217d4a9323fc4", "src": "db2@1.60.1.70009"}
-{"id": 213632, "field": "name", "en": "Partial Spell Notes", "hash": "77321d987b9b9ac0", "src": "db2@1.60.1.70009"}
-{"id": 213632, "field": "description", "en": "Combine the collected Partial Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Two-thirds are missing.", "hash": "44e70defb23e2b07", "src": "db2@1.60.1.70009"}
-{"id": 213633, "field": "name", "en": "Partial Spell Notes", "hash": "77321d987b9b9ac0", "src": "db2@1.60.1.70009"}
-{"id": 213633, "field": "description", "en": "Combine the collected Partial Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Two-thirds are missing.", "hash": "44e70defb23e2b07", "src": "db2@1.60.1.70009"}
-{"id": 213634, "field": "name", "en": "Partial Spell Notes", "hash": "77321d987b9b9ac0", "src": "db2@1.60.1.70009"}
-{"id": 213634, "field": "description", "en": "Combine the collected Partial Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Two-thirds are missing.", "hash": "44e70defb23e2b07", "src": "db2@1.60.1.70009"}
-{"id": 213701, "field": "name", "en": "Strong Harpy Feather", "hash": "c86ab1089c0d7f25", "src": "db2@1.60.1.70009"}
+{"id": 213074, "field": "name", "en": "Rune of Nourishing", "hash": "7144523492b546f7", "src": "db2@1.60.1.70124"}
+{"id": 213074, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213086, "field": "name", "en": "Rune of the Storm", "hash": "42c8534a0db17494", "src": "db2@1.60.1.70124"}
+{"id": 213086, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213090, "field": "name", "en": "Rune of Synergy", "hash": "cd1032c84208ce84", "src": "db2@1.60.1.70124"}
+{"id": 213090, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213093, "field": "name", "en": "Rune of Power", "hash": "2f812af3bc318bcf", "src": "db2@1.60.1.70124"}
+{"id": 213093, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213094, "field": "name", "en": "Rune of Fire Nova", "hash": "97b29cd89084d303", "src": "db2@1.60.1.70124"}
+{"id": 213094, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213096, "field": "name", "en": "Rune of Decoys", "hash": "d2b0e268fb73013a", "src": "db2@1.60.1.70124"}
+{"id": 213096, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213098, "field": "name", "en": "Rune of Invocation", "hash": "0303e5621bd0c7b0", "src": "db2@1.60.1.70124"}
+{"id": 213098, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213100, "field": "name", "en": "Rune of Forbidden Knowledge", "hash": "074aa7c573eb93c6", "src": "db2@1.60.1.70124"}
+{"id": 213100, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213101, "field": "name", "en": "Rune of Shadowflames", "hash": "d3c96d780a70e67b", "src": "db2@1.60.1.70124"}
+{"id": 213101, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213102, "field": "name", "en": "Rune of Wickedness", "hash": "953874efedba2066", "src": "db2@1.60.1.70124"}
+{"id": 213102, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213103, "field": "name", "en": "Rune of Blood Surge", "hash": "ad4a90e65df81dfc", "src": "db2@1.60.1.70124"}
+{"id": 213103, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213104, "field": "name", "en": "Rune of Ruthless Precision", "hash": "185d00f5adb6d8d3", "src": "db2@1.60.1.70124"}
+{"id": 213104, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213105, "field": "name", "en": "Shawarmageddon", "hash": "2aba68bd78335bd2", "src": "db2@1.60.1.70124"}
+{"id": 213105, "field": "description", "en": "Melee attacks deal an additional 7 Fire damage for $d.", "hash": "26bc0e67b76da3ed", "src": "db2@1.60.1.70124"}
+{"id": 213109, "field": "name", "en": "Rune of Focused Rage", "hash": "f3a7092273f27833", "src": "db2@1.60.1.70124"}
+{"id": 213109, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213110, "field": "name", "en": "Rune of the Commander", "hash": "0fe2858324aa4303", "src": "db2@1.60.1.70124"}
+{"id": 213110, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213111, "field": "name", "en": "Rune of Intervention", "hash": "86e220edfcd2c1cb", "src": "db2@1.60.1.70124"}
+{"id": 213111, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213112, "field": "name", "en": "Spell Notes: Missile Barrage", "hash": "49086c6fc31aa846", "src": "db2@1.60.1.70124"}
+{"id": 213112, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213117, "field": "name", "en": "Rune of Berserk", "hash": "6ef0200c3806e19a", "src": "db2@1.60.1.70124"}
+{"id": 213117, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213118, "field": "name", "en": "Rune of the Jungle King", "hash": "a4a01e6574325b43", "src": "db2@1.60.1.70124"}
+{"id": 213118, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213119, "field": "name", "en": "Rune of Instinct", "hash": "70dd6c95a1bab90f", "src": "db2@1.60.1.70124"}
+{"id": 213119, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213120, "field": "name", "en": "Rune of the Dreamer", "hash": "87867efcb35e0d41", "src": "db2@1.60.1.70124"}
+{"id": 213120, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213121, "field": "name", "en": "DEPRECATED ITEM", "hash": "eacdc418b023f226", "src": "db2@1.60.1.70124"}
+{"id": 213121, "field": "description", "en": "Transforms your mount into something more festive.", "hash": "3ce08c151673810a", "src": "db2@1.60.1.70124"}
+{"id": 213122, "field": "name", "en": "Rune of Steady Shot", "hash": "2c93c58eb3408f70", "src": "db2@1.60.1.70124"}
+{"id": 213122, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213123, "field": "name", "en": "Rune of Exposure", "hash": "5919d05276a23a0a", "src": "db2@1.60.1.70124"}
+{"id": 213123, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213124, "field": "name", "en": "Rune of Close Combat", "hash": "d7b1eaf7477d9d2f", "src": "db2@1.60.1.70124"}
+{"id": 213124, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213125, "field": "name", "en": "Rune of Invigoration", "hash": "a2683bb9490c34dc", "src": "db2@1.60.1.70124"}
+{"id": 213125, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213126, "field": "name", "en": "Rune of the Scrapper", "hash": "8922c64ade7966ef", "src": "db2@1.60.1.70124"}
+{"id": 213126, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213127, "field": "name", "en": "Partial Mystical Notes", "hash": "ec99fcec9669f73e", "src": "db2@1.60.1.70124"}
+{"id": 213127, "field": "description", "en": "\"Eggs\" can just about be made out in the unreadable scrawl.", "hash": "36d9a6698e4f63be", "src": "db2@1.60.1.70124"}
+{"id": 213128, "field": "name", "en": "Rune of Piety", "hash": "2eaeaa63244eee46", "src": "db2@1.60.1.70124"}
+{"id": 213128, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213129, "field": "name", "en": "Rune of Light's Embrace", "hash": "a9a5c7124cb8b263", "src": "db2@1.60.1.70124"}
+{"id": 213129, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213130, "field": "name", "en": "Rune of Infusions", "hash": "3ea08527dc2e894b", "src": "db2@1.60.1.70124"}
+{"id": 213130, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213131, "field": "name", "en": "Rune of Sacred Shields", "hash": "7e46bf66409fe3fd", "src": "db2@1.60.1.70124"}
+{"id": 213131, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213132, "field": "name", "en": "Rune of the Guardian", "hash": "1963d36308e7fe20", "src": "db2@1.60.1.70124"}
+{"id": 213132, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213136, "field": "name", "en": "Rune of Subtlety", "hash": "58cafc8ca94e55c3", "src": "db2@1.60.1.70124"}
+{"id": 213136, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213137, "field": "name", "en": "Rune of the Assailant", "hash": "ada1b6fb27f1061d", "src": "db2@1.60.1.70124"}
+{"id": 213137, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213138, "field": "name", "en": "Rune of the Southpaw", "hash": "4082244cf64cb93f", "src": "db2@1.60.1.70124"}
+{"id": 213138, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213139, "field": "name", "en": "Rune of the Assassin", "hash": "6a3ec18ffc2b1f54", "src": "db2@1.60.1.70124"}
+{"id": 213139, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213140, "field": "name", "en": "Prophecy of the Quickened Path", "hash": "343026e5561ff2b0", "src": "db2@1.60.1.70124"}
+{"id": 213140, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70124"}
+{"id": 213141, "field": "name", "en": "Rune of Hope", "hash": "0cf8515dbbcb356d", "src": "db2@1.60.1.70124"}
+{"id": 213141, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213142, "field": "name", "en": "Prophecy of Imprisoned Malice", "hash": "cc66a5e37d90b82a", "src": "db2@1.60.1.70124"}
+{"id": 213142, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70124"}
+{"id": 213143, "field": "name", "en": "Apocryphal Epiphany", "hash": "cc976841f45ca067", "src": "db2@1.60.1.70124"}
+{"id": 213143, "field": "description", "en": "Learn a new Engraving ability.", "hash": "83c8b2f0b56d7036", "src": "db2@1.60.1.70124"}
+{"id": 213144, "field": "name", "en": "Luminous Epiphany", "hash": "3867501c051de729", "src": "db2@1.60.1.70124"}
+{"id": 213144, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
+{"id": 213165, "field": "name", "en": "Basilisks: Should Petrification be Feared?", "hash": "a30fcfacb0b0a30a", "src": "db2@1.60.1.70124"}
+{"id": 213165, "field": "description", "en": "Attempted research on the use of basilisk parts as reagents. A fine addition to any library's collection.", "hash": "c9ac97e817175372", "src": "db2@1.60.1.70124"}
+{"id": 213369, "field": "name", "en": "Faintly Glowing Leather", "hash": "902898927812864b", "src": "db2@1.60.1.70124"}
+{"id": 213370, "field": "name", "en": "Irradiated Leather Scraps", "hash": "f8db17101b6bdbf5", "src": "db2@1.60.1.70124"}
+{"id": 213370, "field": "description", "en": "A skilled leatherworker may be able to fashion this into something useful.", "hash": "49b5c9dbd5443fb7", "src": "db2@1.60.1.70124"}
+{"id": 213371, "field": "name", "en": "Crate of Tainted Gniodine Solution", "hash": "676095e8c5625869", "src": "db2@1.60.1.70124"}
+{"id": 213371, "field": "description", "en": "A skilled alchemist may be able to fashion this into something useful.", "hash": "1c582b6d54f31942", "src": "db2@1.60.1.70124"}
+{"id": 213373, "field": "name", "en": "Reflective Scrapmetal", "hash": "4b105bc1b450663d", "src": "db2@1.60.1.70124"}
+{"id": 213373, "field": "description", "en": "A skilled blacksmith may be able to fashion this into something usable.", "hash": "c5d0bd71818791e9", "src": "db2@1.60.1.70124"}
+{"id": 213376, "field": "name", "en": "Low-Background Truesilver Plates", "hash": "53377d5e36a228b3", "src": "db2@1.60.1.70124"}
+{"id": 213378, "field": "name", "en": "Unstable Microfilament", "hash": "a07a00930ced5c93", "src": "db2@1.60.1.70124"}
+{"id": 213378, "field": "description", "en": "A skilled tailor may be able to fashion this into something useful.", "hash": "993a33c259846d28", "src": "db2@1.60.1.70124"}
+{"id": 213379, "field": "name", "en": "Hyperconductive Arcano-Filament", "hash": "dcc71ccf9646acb1", "src": "db2@1.60.1.70124"}
+{"id": 213381, "field": "name", "en": "Pile of Tarnished Gears", "hash": "2a0f72054c4b63d4", "src": "db2@1.60.1.70124"}
+{"id": 213381, "field": "description", "en": "A skilled engineer may be able to fashion this into something useful.", "hash": "b7724e26a83d7a90", "src": "db2@1.60.1.70124"}
+{"id": 213383, "field": "name", "en": "Polished Truesilver Gears", "hash": "6fbdd326c48f1ec6", "src": "db2@1.60.1.70124"}
+{"id": 213391, "field": "name", "en": "UNUSED Electrified Mithril Gauntlets", "hash": "e922ea366cc2ec0f", "src": "db2@1.60.1.70124"}
+{"id": 213421, "field": "name", "en": "Singed Note", "hash": "149bf1b518532d62", "src": "db2@1.60.1.70124"}
+{"id": 213422, "field": "name", "en": "Illegible Recipe", "hash": "2d17e57233d1f8b7", "src": "db2@1.60.1.70124"}
+{"id": 213426, "field": "name", "en": "Ogre Lightning Rod", "hash": "84ef71e4a6d4c782", "src": "db2@1.60.1.70124"}
+{"id": 213426, "field": "description", "en": "Plant into Soft Soil.", "hash": "80726cbb40c0063a", "src": "db2@1.60.1.70124"}
+{"id": 213427, "field": "name", "en": "Grime-Encrusted Salvage", "hash": "69333d1c234b8c35", "src": "db2@1.60.1.70124"}
+{"id": 213443, "field": "name", "en": "DEPRECATED ITEM", "hash": "eacdc418b023f226", "src": "db2@1.60.1.70124"}
+{"id": 213444, "field": "name", "en": "Tarnished Prayer Bead I", "hash": "540ed04c3d421587", "src": "db2@1.60.1.70124"}
+{"id": 213444, "field": "description", "en": "May those who stand against us know our might.", "hash": "a2b7359d06cae3e9", "src": "db2@1.60.1.70124"}
+{"id": 213445, "field": "name", "en": "Tarnished Prayer Bead II", "hash": "03949804d7b0c690", "src": "db2@1.60.1.70124"}
+{"id": 213445, "field": "description", "en": "May the Light shield us when we are wounded.", "hash": "ca4e6eaf36b6419f", "src": "db2@1.60.1.70124"}
+{"id": 213446, "field": "name", "en": "Tarnished Prayer Bead III", "hash": "d509ca5afa6bbd64", "src": "db2@1.60.1.70124"}
+{"id": 213446, "field": "description", "en": "May the wicked and cowardly be brought to justice", "hash": "a07b2e5d86ea972a", "src": "db2@1.60.1.70124"}
+{"id": 213452, "field": "name", "en": "Dormant Holy Rune", "hash": "f5a6f84dba1941a0", "src": "db2@1.60.1.70124"}
+{"id": 213452, "field": "description", "en": "First, you must lay down your life for another. Then, before your spirit departs, have your salvation returned in kind.", "hash": "691705bd8427bac6", "src": "db2@1.60.1.70124"}
+{"id": 213513, "field": "name", "en": "Libram of Deliverance", "hash": "018250a3ecfb9294", "src": "db2@1.60.1.70124"}
+{"id": 213513, "field": "description", "en": "Learn a new ability after using Blessing of Freedom to free others from movement impairing effects 5 times.", "hash": "8f7f61d93a10e681", "src": "db2@1.60.1.70124"}
+{"id": 213526, "field": "name", "en": "Hybrid Haunch", "hash": "b72bf5058a9299ef", "src": "db2@1.60.1.70124"}
+{"id": 213526, "field": "description", "en": "Tastes like beef *and* chicken.", "hash": "f834fe40c5541805", "src": "db2@1.60.1.70124"}
+{"id": 213527, "field": "name", "en": "Smuggler's Spice Blend", "hash": "193ed151974136e9", "src": "db2@1.60.1.70124"}
+{"id": 213527, "field": "description", "en": "The crown jewel of any ship's galley. Could make a boot taste good.", "hash": "d719be2ff3751f77", "src": "db2@1.60.1.70124"}
+{"id": 213528, "field": "name", "en": "Balmy Brew", "hash": "157413ea33c67315", "src": "db2@1.60.1.70124"}
+{"id": 213528, "field": "description", "en": "Not exactly a 'cold one' per-se", "hash": "bea5463dc8b5eaff", "src": "db2@1.60.1.70124"}
+{"id": 213529, "field": "name", "en": "Viscous Venom", "hash": "841a6e2574350d55", "src": "db2@1.60.1.70124"}
+{"id": 213529, "field": "description", "en": "Eats through swamp critters like they're nothing. Great for marinades!", "hash": "4ea1370b1e550056", "src": "db2@1.60.1.70124"}
+{"id": 213543, "field": "name", "en": "Scroll: UPDOG", "hash": "f48989af00e26747", "src": "db2@1.60.1.70124"}
+{"id": 213543, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70124"}
+{"id": 213544, "field": "name", "en": "Scroll: TOPAZ YORAK", "hash": "9c58b2ef152cd4dd", "src": "db2@1.60.1.70124"}
+{"id": 213544, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70124"}
+{"id": 213545, "field": "name", "en": "Scroll: PEATCHY ATTAX", "hash": "6455400ae7af3b8d", "src": "db2@1.60.1.70124"}
+{"id": 213545, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70124"}
+{"id": 213546, "field": "name", "en": "Scroll: SHOOBEEDOOP", "hash": "e112c30ec759f1f2", "src": "db2@1.60.1.70124"}
+{"id": 213546, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70124"}
+{"id": 213547, "field": "name", "en": "Scroll: THAW WORDS", "hash": "ae2753a3ca44c5f4", "src": "db2@1.60.1.70124"}
+{"id": 213547, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70124"}
+{"id": 213548, "field": "name", "en": "Scroll of Liminal Passage", "hash": "8a2e3d7cb2b6d836", "src": "db2@1.60.1.70124"}
+{"id": 213548, "field": "description", "en": "Teleport to a party member. Both you and the target must be resting at an inn or city.", "hash": "ce3c6cf9f498aee2", "src": "db2@1.60.1.70124"}
+{"id": 213549, "field": "name", "en": "Scroll of Arcane Angling", "hash": "0ab1f38ea389abb2", "src": "db2@1.60.1.70124"}
+{"id": 213550, "field": "name", "en": "Scroll of Polymorph: Odd Melon", "hash": "cef612f4ddaa73d3", "src": "db2@1.60.1.70124"}
+{"id": 213550, "field": "description", "en": "Polymorph the target into an Odd Melon.", "hash": "a08bd2d0847bd4ba", "src": "db2@1.60.1.70124"}
+{"id": 213551, "field": "name", "en": "Scroll of Controlled Displacement", "hash": "c42f3b22ffdf5720", "src": "db2@1.60.1.70124"}
+{"id": 213552, "field": "name", "en": "Tear of Theradras", "hash": "ea0f432d0d5c3a7a", "src": "db2@1.60.1.70124"}
+{"id": 213552, "field": "description", "en": "Hoarded and closely guarded by the Gelkis centaur tribe, these are said to grant their wielder the protection of the earthen spirits.", "hash": "91b0bfd8c2a6f519", "src": "db2@1.60.1.70124"}
+{"id": 213553, "field": "name", "en": "Tear of Theradras", "hash": "ea0f432d0d5c3a7a", "src": "db2@1.60.1.70124"}
+{"id": 213553, "field": "description", "en": "Hoarded and closely guarded by the Gelkis centaur tribe, these are said to grant their weilder the protection of the earthen spirits.", "hash": "37e4a85349a4a52d", "src": "db2@1.60.1.70124"}
+{"id": 213554, "field": "name", "en": "Vial of Crystal Water", "hash": "2f3a35f10fcf8d5f", "src": "db2@1.60.1.70124"}
+{"id": 213554, "field": "description", "en": "Mix with the Tears of Theradras to create an Elemental Salve capable of purifying corruption.\nThe water is so crystal clear that the vial seems empty.", "hash": "4366cc37f8f6900c", "src": "db2@1.60.1.70124"}
+{"id": 213558, "field": "name", "en": "Elemental Salve", "hash": "0d2f0a29d1e08d9c", "src": "db2@1.60.1.70124"}
+{"id": 213558, "field": "description", "en": "Pour over corrupted objects to cleanse them.\nA potent salve capable of cleansing deep corruption.", "hash": "7de9b94a3c494ecb", "src": "db2@1.60.1.70124"}
+{"id": 213562, "field": "name", "en": "Bug Catching Net", "hash": "01d7a2a1d77d7033", "src": "db2@1.60.1.70124"}
+{"id": 213562, "field": "description", "en": "Catch an exotic bug, and keep it as a specimen. ", "hash": "7c522522809fc241", "src": "db2@1.60.1.70124"}
+{"id": 213563, "field": "name", "en": "Field Guide", "hash": "bf7f3c83b1ec32fb", "src": "db2@1.60.1.70124"}
+{"id": 213564, "field": "name", "en": "Scroll of Minor Evocation", "hash": "df6a675fb69d6fa5", "src": "db2@1.60.1.70124"}
+{"id": 213564, "field": "description", "en": "Restores mana.", "hash": "7569fc8c919feec3", "src": "db2@1.60.1.70124"}
+{"id": 213565, "field": "name", "en": "Entomology Starter Kit", "hash": "f53a381b29cd7b96", "src": "db2@1.60.1.70124"}
+{"id": 213566, "field": "name", "en": "Arbor Tarantula Specimen", "hash": "7d6949fa09a05921", "src": "db2@1.60.1.70124"}
+{"id": 213567, "field": "name", "en": "Flesh Picker Specimen", "hash": "1fe488dda5d5c80f", "src": "db2@1.60.1.70124"}
+{"id": 213568, "field": "name", "en": "Hay Weevil Specimen", "hash": "4981ec243389c75c", "src": "db2@1.60.1.70124"}
+{"id": 213583, "field": "name", "en": "Brimstone Carving", "hash": "ecb7687329e466f5", "src": "db2@1.60.1.70124"}
+{"id": 213583, "field": "description", "en": "It appears the previous owner played with fire one too few times.", "hash": "ff2707b78c6b262a", "src": "db2@1.60.1.70124"}
+{"id": 213594, "field": "name", "en": "Idol of the Heckler", "hash": "0f889717c6158410", "src": "db2@1.60.1.70124"}
+{"id": 213594, "field": "description", "en": "Taunt 2 or more enemies with Challenging Roar, and kill at least one of them. After 3 kills, use this idol to learn a new ability.", "hash": "c6388a5d828df8ec", "src": "db2@1.60.1.70124"}
+{"id": 213599, "field": "name", "en": "Unsettling Vision", "hash": "d3ec5d3ae22f4e9f", "src": "db2@1.60.1.70124"}
+{"id": 213599, "field": "description", "en": "Focus on the Vision to learn a new spell.  Requires a glimpse of corrupt knowledge.", "hash": "045217d4a9323fc4", "src": "db2@1.60.1.70124"}
+{"id": 213632, "field": "name", "en": "Partial Spell Notes", "hash": "77321d987b9b9ac0", "src": "db2@1.60.1.70124"}
+{"id": 213632, "field": "description", "en": "Combine the collected Partial Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Two-thirds are missing.", "hash": "44e70defb23e2b07", "src": "db2@1.60.1.70124"}
+{"id": 213633, "field": "name", "en": "Partial Spell Notes", "hash": "77321d987b9b9ac0", "src": "db2@1.60.1.70124"}
+{"id": 213633, "field": "description", "en": "Combine the collected Partial Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Two-thirds are missing.", "hash": "44e70defb23e2b07", "src": "db2@1.60.1.70124"}
+{"id": 213634, "field": "name", "en": "Partial Spell Notes", "hash": "77321d987b9b9ac0", "src": "db2@1.60.1.70124"}
+{"id": 213634, "field": "description", "en": "Combine the collected Partial Spell Notes into a scroll that will teach a new Engraving spell.\nAn incomplete page that appears similar to scrolls that teach Engraving abilities. Two-thirds are missing.", "hash": "44e70defb23e2b07", "src": "db2@1.60.1.70124"}
+{"id": 213701, "field": "name", "en": "Strong Harpy Feather", "hash": "c86ab1089c0d7f25", "src": "db2@1.60.1.70124"}
 {"id": 213701, "field": "description", "en": "Combine 10 Strong Harpy Feathers and 3 Cloud Serpent Fangs with 1 Silken Thread to create an Offering to the Wind Spirit.", "hash": "f5d79734a0cda31d", "src": "wago@1.15.9.69722"}
-{"id": 213709, "field": "name", "en": "Cloud Serpent Fang", "hash": "851b04e8b7313aa7", "src": "db2@1.60.1.70009"}
+{"id": 213709, "field": "name", "en": "Cloud Serpent Fang", "hash": "851b04e8b7313aa7", "src": "db2@1.60.1.70124"}
 {"id": 213709, "field": "description", "en": "Combine 10 Strong Harpy Feathers and 3 Cloud Serpent Fangs with 1 Silken Thread to create an Offering to the Wind Spirit.", "hash": "f5d79734a0cda31d", "src": "wago@1.15.9.69722"}
-{"id": 213735, "field": "name", "en": "Pristine G-7 C.O.R.E. Processor", "hash": "447b3af1c8d2ad11", "src": "db2@1.60.1.70009"}
-{"id": 213735, "field": "description", "en": "This thing can pre-render over 4 million gigaflops of low-variance relational codebursts. Wow!", "hash": "b431cb1e681ce6bc", "src": "db2@1.60.1.70009"}
-{"id": 213736, "field": "name", "en": "Corroded G-7 C.O.R.E. Processor", "hash": "1b5dc36213942bf9", "src": "db2@1.60.1.70009"}
-{"id": 213736, "field": "description", "en": "This processor core is caked with corrosion and a sticky black substance but you can barely make out a model number and a few illegible words through the gunk. You may need a specialist to help restore it.", "hash": "71fa5f270bcbf958", "src": "db2@1.60.1.70009"}
-{"id": 213737, "field": "name", "en": "Offering to the Wind Spirit", "hash": "534e55db4f3b9f81", "src": "db2@1.60.1.70009"}
-{"id": 213737, "field": "description", "en": "Make an Offering to the Wind Spirit and show your faith.", "hash": "69dd8697a19073dd", "src": "db2@1.60.1.70009"}
+{"id": 213735, "field": "name", "en": "Pristine G-7 C.O.R.E. Processor", "hash": "447b3af1c8d2ad11", "src": "db2@1.60.1.70124"}
+{"id": 213735, "field": "description", "en": "This thing can pre-render over 4 million gigaflops of low-variance relational codebursts. Wow!", "hash": "b431cb1e681ce6bc", "src": "db2@1.60.1.70124"}
+{"id": 213736, "field": "name", "en": "Corroded G-7 C.O.R.E. Processor", "hash": "1b5dc36213942bf9", "src": "db2@1.60.1.70124"}
+{"id": 213736, "field": "description", "en": "This processor core is caked with corrosion and a sticky black substance but you can barely make out a model number and a few illegible words through the gunk. You may need a specialist to help restore it.", "hash": "71fa5f270bcbf958", "src": "db2@1.60.1.70124"}
+{"id": 213737, "field": "name", "en": "Offering to the Wind Spirit", "hash": "534e55db4f3b9f81", "src": "db2@1.60.1.70124"}
+{"id": 213737, "field": "description", "en": "Make an Offering to the Wind Spirit and show your faith.", "hash": "69dd8697a19073dd", "src": "db2@1.60.1.70124"}

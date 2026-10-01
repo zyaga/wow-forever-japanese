@@ -1,192 +1,192 @@
-{"id": 426019, "field": "name", "en": "Marshroom", "hash": "409120b291f12fdb", "src": "db2@1.60.1.70009"}
-{"id": 426019, "field": "description", "en": "Eat (at your own risk).", "hash": "e672e39d9ff101d5", "src": "db2@1.60.1.70009"}
-{"id": 426019, "field": "aura", "en": "Granted a new kind of vision.", "hash": "39c94c2550dc438f", "src": "db2@1.60.1.70009"}
-{"id": 426053, "field": "name", "en": "Give Marshroom", "hash": "925cc7e18dd02a44", "src": "db2@1.60.1.70009"}
-{"id": 426062, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70009"}
-{"id": 426065, "field": "name", "en": "Infusion of Light", "hash": "373be75ac44b345a", "src": "db2@1.60.1.70009"}
-{"id": 426065, "field": "description", "en": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within $437063d by ${$m1/-1000}.1 sec.", "hash": "649bcbeddfc1d402", "src": "db2@1.60.1.70009"}
-{"id": 426068, "field": "name", "en": "Give Rune of Stars", "hash": "5f09694c620d4439", "src": "db2@1.60.1.70009"}
-{"id": 426069, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
-{"id": 426070, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
-{"id": 426072, "field": "name", "en": "Idol of the Wild", "hash": "96ec32f30edccde4", "src": "db2@1.60.1.70009"}
-{"id": 426072, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70009"}
-{"id": 426080, "field": "name", "en": "Omni Diffusion Armor", "hash": "3b32e56981dbc821", "src": "db2@1.60.1.70009"}
-{"id": 426080, "field": "aura", "en": "Absorbing inputs to create nullifying barriers.", "hash": "eefe44e42be2664f", "src": "db2@1.60.1.70009"}
-{"id": 426084, "field": "name", "en": "Bulky Protective Ironweave", "hash": "079028c5ba10df79", "src": "db2@1.60.1.70009"}
-{"id": 426084, "field": "aura", "en": "Encaged in an scrappy layer of barely-attached protective ironweave, the armor layer could fall off at any time.", "hash": "19e2e2b3155c52f7", "src": "db2@1.60.1.70009"}
-{"id": 426086, "field": "name", "en": "Electrostatic Discharge Shielding", "hash": "b6438dac41f1ab35", "src": "db2@1.60.1.70009"}
-{"id": 426086, "field": "aura", "en": "Highly resilient to heat and cold.", "hash": "42f19263551654f8", "src": "db2@1.60.1.70009"}
-{"id": 426090, "field": "name", "en": "Idol of the Wild Spam Prevention Dummy", "hash": "2ac6ff3bde21ffcc", "src": "db2@1.60.1.70009"}
-{"id": 426097, "field": "name", "en": "Auxiliary Anti-Tamper Mechanism", "hash": "3b18017105a60d87", "src": "db2@1.60.1.70009"}
-{"id": 426097, "field": "aura", "en": "Not all components survived transport.", "hash": "4d1719a808370724", "src": "db2@1.60.1.70009"}
-{"id": 426101, "field": "name", "en": "Central Reaping Function 9000", "hash": "dd9c5d86fe7970de", "src": "db2@1.60.1.70009"}
-{"id": 426101, "field": "aura", "en": "The exposed hyperalloy endoskeleton can withstand nearly all assault.", "hash": "8778e1d02f23b01c", "src": "db2@1.60.1.70009"}
-{"id": 426117, "field": "name", "en": "Share Meditation", "hash": "7fdd7b81d4cfcf3b", "src": "db2@1.60.1.70009"}
-{"id": 426157, "field": "name", "en": "The Art of War", "hash": "257b3210ca873d2d", "src": "db2@1.60.1.70009"}
-{"id": 426157, "field": "description", "en": "Increases all Holy damage you deal by $m1%, and your melee and spell critical strikes reduce the remaining cooldown on your Exorcism spell by ${$m2/-1000} sec.", "hash": "c4a882f0f531906a", "src": "db2@1.60.1.70009"}
-{"id": 426162, "field": "name", "en": "Fanaticism", "hash": "490cafb89cbb8e92", "src": "db2@1.60.1.70009"}
-{"id": 426162, "field": "aura", "en": "Heals $w1 every $t1 sec.", "hash": "15b97dfff0940eb4", "src": "db2@1.60.1.70009"}
-{"id": 426173, "field": "name", "en": "Enlightened Judgements", "hash": "9e5894819cea4d43", "src": "db2@1.60.1.70009"}
-{"id": 426173, "field": "description", "en": "Increases the range on your Judgement by $s1 yards and your spell hit with all spells by $s2%.", "hash": "e1aed3a5f93b52fa", "src": "db2@1.60.1.70009"}
-{"id": 426174, "field": "name", "en": "Malleable Protection", "hash": "f2c0cfdacb66b81b", "src": "db2@1.60.1.70009"}
-{"id": 426174, "field": "description", "en": "Gain the Malleable Protection ability:\r\n\r\n$@spellicon458318\r\n$@spelldesc458318", "hash": "00244963ba61ffda", "src": "db2@1.60.1.70009"}
-{"id": 426175, "field": "name", "en": "Engrave Belt - Malleable Protection", "hash": "cb61f2771665c535", "src": "db2@1.60.1.70009"}
-{"id": 426175, "field": "description", "en": "Engrave your belt with the Malleable Protection rune:\r\n\r\n$@spellicon458318\r\n$@spelldesc458318", "hash": "523ac40aff114728", "src": "db2@1.60.1.70009"}
-{"id": 426178, "field": "name", "en": "Engrave Belt - Sheath of Light", "hash": "d871958794f95e64", "src": "db2@1.60.1.70009"}
-{"id": 426178, "field": "description", "en": "Engrave your belt with the Sheath of Light rune:\r\n\r\n$@spellicon426158\r\n$@spelldesc426158", "hash": "81a91a0a22393350", "src": "db2@1.60.1.70009"}
-{"id": 426179, "field": "name", "en": "Infusion of Light", "hash": "373be75ac44b345a", "src": "db2@1.60.1.70009"}
-{"id": 426179, "field": "description", "en": "Gain the Infusion of Light ability:\r\n\r\n$@spellicon426065\r\n$@spelldesc426065", "hash": "58b745f400361b9b", "src": "db2@1.60.1.70009"}
-{"id": 426180, "field": "name", "en": "Engrave Belt - Infusion of Light", "hash": "a385002ac3ef2611", "src": "db2@1.60.1.70009"}
-{"id": 426180, "field": "description", "en": "Engrave your belt with the Infusion of Light rune:\r\n\r\n$@spellicon426065\r\n$@spelldesc426065", "hash": "4905da9bdebacf58", "src": "db2@1.60.1.70009"}
-{"id": 426182, "field": "name", "en": "Use Phylactery", "hash": "f664734d24128b1b", "src": "db2@1.60.1.70009"}
-{"id": 426190, "field": "name", "en": "Summon Lich", "hash": "86992cef98642a49", "src": "db2@1.60.1.70009"}
-{"id": 426192, "field": "name", "en": "Diver Helm Test", "hash": "19b535ba46d55d87", "src": "db2@1.60.1.70009"}
-{"id": 426192, "field": "aura", "en": "Do murlocs even need underwater breathing?", "hash": "90149cf95180aa7b", "src": "db2@1.60.1.70009"}
-{"id": 426195, "field": "name", "en": "Vengeance", "hash": "622d71d56b622ec3", "src": "db2@1.60.1.70009"}
-{"id": 426195, "field": "description", "en": "When activated, this ability temporarily grants you a $s1% increase to your maximum health for $d. After the effect expires, the health is lost. Additionally, while in Metamorphosis, Vengeance causes your wings to slow your falling speed.", "hash": "56419bc8c2b20419", "src": "db2@1.60.1.70009"}
-{"id": 426195, "field": "aura", "en": "Health increased by $s1% of maximum and slows falling speed while in Metamorphosis.", "hash": "7d0d771299abc23b", "src": "db2@1.60.1.70009"}
-{"id": 426197, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
-{"id": 426198, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
-{"id": 426199, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
-{"id": 426199, "field": "description", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70009"}
-{"id": 426199, "field": "aura", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70009"}
-{"id": 426200, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
-{"id": 426223, "field": "name", "en": "Shadowform", "hash": "074e070f4fdc8d3c", "src": "db2@1.60.1.70009"}
-{"id": 426241, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70009"}
-{"id": 426243, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70009"}
-{"id": 426243, "field": "description", "en": "Applying Corruption, Immolate, Curse of Agony, Unstable Affliction, Shadowflame, or Siphon Life will cause you to deal instant damage to the target equal to one tick of the spell's periodic damage. Refreshing any of those spells when it has less than $s1 seconds duration remaining will cause you to deal instant damage to the target equal to the spell's remaining periodic damage.", "hash": "744ce5b33c767d51", "src": "db2@1.60.1.70009"}
-{"id": 426245, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70009"}
-{"id": 426246, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70009"}
-{"id": 426247, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70009"}
-{"id": 426257, "field": "name", "en": "Sulfurous Icon", "hash": "577e291f24173049", "src": "db2@1.60.1.70009"}
-{"id": 426257, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70009"}
-{"id": 426301, "field": "name", "en": "Grimoire of Synergy", "hash": "e2fdc6ab6333a5c2", "src": "db2@1.60.1.70009"}
-{"id": 426301, "field": "description", "en": "Damage done by you or your summoned demon has a $h% chance to increase the damage done by the other by $426303s1% for $426303d.", "hash": "689303284e2ec8a0", "src": "db2@1.60.1.70009"}
-{"id": 426301, "field": "aura", "en": "Damage done by you or your summoned demon has a $h% chance to increase the damage done by the other by $426303s1% for $426303d.", "hash": "689303284e2ec8a0", "src": "db2@1.60.1.70009"}
-{"id": 426303, "field": "name", "en": "Grimoire of Synergy", "hash": "e2fdc6ab6333a5c2", "src": "db2@1.60.1.70009"}
-{"id": 426303, "field": "description", "en": "Increases all damage done by $s1%.", "hash": "bb0dd2401204fa49", "src": "db2@1.60.1.70009"}
-{"id": 426303, "field": "aura", "en": "Increases all damage done by $s1%.", "hash": "bb0dd2401204fa49", "src": "db2@1.60.1.70009"}
-{"id": 426311, "field": "name", "en": "Flame", "hash": "db5236331d190dfd", "src": "db2@1.60.1.70009"}
-{"id": 426311, "field": "description", "en": "Increases all Fire damage done by $s1%.", "hash": "7f6cf18633e90439", "src": "db2@1.60.1.70009"}
-{"id": 426311, "field": "aura", "en": "Increases all Fire damage done by $w1%.", "hash": "7ff627f26988d457", "src": "db2@1.60.1.70009"}
-{"id": 426316, "field": "name", "en": "Shadow and Flame", "hash": "a79ae683b50747c3", "src": "db2@1.60.1.70009"}
-{"id": 426316, "field": "description", "en": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by $m3% for $1293816d, and hitting an enemy with Shadowburn increases all Fire damage you deal by $m4% for $426311d. In addition, Conflagrate has a $m2% chance not to consume Immolate, and Shadowburn has a $m2% chance to instantly refund a Soul Shard.", "hash": "a8ba88f4ffe89e94", "src": "db2@1.60.1.70009"}
-{"id": 426320, "field": "name", "en": "Shadowflame", "hash": "bc8240b7fa3eb332", "src": "db2@1.60.1.70009"}
-{"id": 426320, "field": "description", "en": "Burns the enemy for ${$m1*$<power>/100*$<mult>} Shadowflame damage and then an additional ${$m2*5*$<power>/100} Shadowflame damage over $d.\r\n\r\nShadowflame triggers and benefits from all effects that modify or interact with Immolate, or with Affliction, Destruction, Fire, or Shadow spells, but only one of Immolate or Shadowflame per Warlock can be active on any target. In addition, Shadowflame can trigger your Improved Shadow Bolt talent and causes it to have $426454s2 additional charges.", "hash": "ae243044743eec43", "src": "db2@1.60.1.70009"}
-{"id": 426320, "field": "aura", "en": "${$m2*$<power>/100} Shadowflame damage every $t2 seconds.", "hash": "0b858fcaf9c5b12e", "src": "db2@1.60.1.70009"}
-{"id": 426325, "field": "name", "en": "Shadowflame", "hash": "bc8240b7fa3eb332", "src": "db2@1.60.1.70009"}
-{"id": 426325, "field": "aura", "en": "$w1 Fire damage every $t1 seconds.", "hash": "341a73be8a7f3663", "src": "db2@1.60.1.70009"}
-{"id": 426331, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70009"}
-{"id": 426359, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70009"}
-{"id": 426359, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70009"}
-{"id": 426366, "field": "name", "en": "Icy Veins", "hash": "da648c24cd8e9684", "src": "db2@1.60.1.70009"}
-{"id": 426415, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
-{"id": 426429, "field": "name", "en": "Dispel Phantasm", "hash": "8d5ec7e418471e55", "src": "db2@1.60.1.70009"}
-{"id": 426442, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70009"}
-{"id": 426442, "field": "description", "en": "Gain the Invocation ability:\r\n\r\n$@spellicon426243\r\n$@spelldesc426243", "hash": "4bcef48942d12acf", "src": "db2@1.60.1.70009"}
-{"id": 426443, "field": "name", "en": "Engrave Belt - Invocation", "hash": "0209b669c84c29f0", "src": "db2@1.60.1.70009"}
-{"id": 426443, "field": "description", "en": "Engrave your belt with the Invocation rune:\r\n\r\n$@spellicon426243\r\n$@spelldesc426243", "hash": "f02be364ef7754ef", "src": "db2@1.60.1.70009"}
-{"id": 426444, "field": "name", "en": "Grimoire of Synergy", "hash": "e2fdc6ab6333a5c2", "src": "db2@1.60.1.70009"}
-{"id": 426444, "field": "description", "en": "Gain the Grimoire of Synergy ability:\r\n\r\n$@spellicon426301\r\n$@spelldesc426301", "hash": "ed3c384e396813a1", "src": "db2@1.60.1.70009"}
-{"id": 426445, "field": "name", "en": "Engrave Belt - Grimoire of Synergy", "hash": "d30ea3c2543f8138", "src": "db2@1.60.1.70009"}
-{"id": 426445, "field": "description", "en": "Engrave your belt with the Grimoire of Synergy rune:\r\n\r\n$@spellicon426301\r\n$@spelldesc426301", "hash": "6962f950f1d55b47", "src": "db2@1.60.1.70009"}
-{"id": 426449, "field": "name", "en": "Shadow and Flame", "hash": "a79ae683b50747c3", "src": "db2@1.60.1.70009"}
-{"id": 426449, "field": "description", "en": "Gain the Shadow and Flame ability:\r\n\r\n$@spellicon426316\r\n$@spelldesc426316", "hash": "ac371e1ea854b203", "src": "db2@1.60.1.70009"}
-{"id": 426452, "field": "name", "en": "Engrave Belt - Shadow and Flame", "hash": "507e253e81f5cbf6", "src": "db2@1.60.1.70009"}
-{"id": 426452, "field": "description", "en": "Engrave your belt with the Shadow and Flame rune:\r\n\r\n$@spellicon426316\r\n$@spelldesc426316", "hash": "6e71e40a88fcde7a", "src": "db2@1.60.1.70009"}
-{"id": 426454, "field": "name", "en": "Shadowflame", "hash": "bc8240b7fa3eb332", "src": "db2@1.60.1.70009"}
-{"id": 426454, "field": "description", "en": "Gain the Shadowflame ability:\r\n\r\n$@spellicon426320\r\n$@spelldesc426320", "hash": "0c00a94d1da84c1b", "src": "db2@1.60.1.70009"}
-{"id": 426467, "field": "name", "en": "Engrave Boots - Shadowflame", "hash": "e93bd5e706cd5412", "src": "db2@1.60.1.70009"}
-{"id": 426467, "field": "description", "en": "Engrave your boots with the Shadowflame rune:\r\n\r\n$@spellicon426320\r\n$@spelldesc426320", "hash": "c47d2fb015806cc7", "src": "db2@1.60.1.70009"}
-{"id": 426469, "field": "name", "en": "Vengeance", "hash": "622d71d56b622ec3", "src": "db2@1.60.1.70009"}
-{"id": 426469, "field": "description", "en": "Gain the Vengeance ability:\r\n\r\n$@spellicon426195\r\n$@spelldesc426195", "hash": "170741aee50b8bb2", "src": "db2@1.60.1.70009"}
-{"id": 426470, "field": "name", "en": "Engrave Helm - Vengeance", "hash": "c2ff7efcb87a21ff", "src": "db2@1.60.1.70009"}
-{"id": 426470, "field": "description", "en": "Engrave your helm with the Vengeance rune:\r\n\r\n$@spellicon426195\r\n$@spelldesc426195", "hash": "b6b931d6288e41a5", "src": "db2@1.60.1.70009"}
-{"id": 426487, "field": "name", "en": "Manifesting Dreams", "hash": "2b37ac94d83e4445", "src": "db2@1.60.1.70009"}
-{"id": 426489, "field": "name", "en": "Manifesting Dreams", "hash": "2b37ac94d83e4445", "src": "db2@1.60.1.70009"}
-{"id": 426489, "field": "aura", "en": "Increases all damage done by ${$w0}%.", "hash": "d6406ebb38fe0d76", "src": "db2@1.60.1.70009"}
-{"id": 426490, "field": "name", "en": "Rallying Cry", "hash": "8acb1b7708dec772", "src": "db2@1.60.1.70009"}
-{"id": 426490, "field": "description", "en": "Let loose a rallying cry, granting all party and raid members within $a1 yards $s1% increased maximum health for $d.", "hash": "27c70783ec343b6d", "src": "db2@1.60.1.70009"}
-{"id": 426490, "field": "aura", "en": "Health increased by $s1% of maximum.", "hash": "f305c695a34f48e9", "src": "db2@1.60.1.70009"}
-{"id": 426491, "field": "name", "en": "Engrave Boots - Rallying Cry", "hash": "6dc2737a57b348f1", "src": "db2@1.60.1.70009"}
-{"id": 426491, "field": "description", "en": "Engrave your boots with the Rallying Cry rune:\r\n\r\n$@spellicon426490\r\n$@spelldesc426490", "hash": "ec8cc0d926a144d9", "src": "db2@1.60.1.70009"}
-{"id": 426492, "field": "name", "en": "Rallying Cry", "hash": "8acb1b7708dec772", "src": "db2@1.60.1.70009"}
-{"id": 426492, "field": "description", "en": "Gain the Rallying Cry ability:\r\n\r\n$@spellicon426490\r\n$@spelldesc426490", "hash": "0451981719d4eecf", "src": "db2@1.60.1.70009"}
-{"id": 426493, "field": "name", "en": "Mind Blast", "hash": "868279b14e0b7083", "src": "db2@1.60.1.70009"}
-{"id": 426494, "field": "name", "en": "Shadowy Chains", "hash": "4fcd37f46a29ed98", "src": "db2@1.60.1.70009"}
-{"id": 426495, "field": "name", "en": "Shadowy Chains", "hash": "4fcd37f46a29ed98", "src": "db2@1.60.1.70009"}
-{"id": 426495, "field": "aura", "en": "Shadows constrict your legs, decreasing movement speed and inflicting $s3 damage every $t3 sec.", "hash": "81e391d3d35ca0e8", "src": "db2@1.60.1.70009"}
-{"id": 426496, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
-{"id": 426498, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
-{"id": 426501, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70009"}
-{"id": 426502, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70009"}
-{"id": 426503, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70009"}
-{"id": 426504, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70009"}
-{"id": 426506, "field": "name", "en": "Eye of the Void", "hash": "39fdf5877250144b", "src": "db2@1.60.1.70009"}
-{"id": 426570, "field": "name", "en": "Fan of Knives", "hash": "4e308a0c5e4f29d4", "src": "db2@1.60.1.70009"}
-{"id": 426571, "field": "name", "en": "Search Corpse", "hash": "30228c33ce632c05", "src": "db2@1.60.1.70009"}
-{"id": 426597, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70009"}
-{"id": 426597, "field": "description", "en": "..", "hash": "000017b80005ba9c", "src": "db2@1.60.1.70009"}
-{"id": 426598, "field": "name", "en": "Spawn Omni Diffusion Armor", "hash": "1dc8fda77a343362", "src": "db2@1.60.1.70009"}
-{"id": 426599, "field": "name", "en": "Spawn Bulky Protective Ironweave", "hash": "6c4213af6628e8b2", "src": "db2@1.60.1.70009"}
-{"id": 426600, "field": "name", "en": "Spawn Electrostatic Discharge Shield", "hash": "498b4c61c87cca87", "src": "db2@1.60.1.70009"}
-{"id": 426601, "field": "name", "en": "Spawn Auxiliary Anti-Tamper Mechanism", "hash": "cff4312a3f1592dd", "src": "db2@1.60.1.70009"}
-{"id": 426604, "field": "name", "en": "Rebooting", "hash": "fbab6145708e2042", "src": "db2@1.60.1.70009"}
-{"id": 426604, "field": "aura", "en": "System rebooting.", "hash": "833b5b1e67dc0d5a", "src": "db2@1.60.1.70009"}
-{"id": 426606, "field": "name", "en": "Speak with the Dead?", "hash": "25fe00b7da097901", "src": "db2@1.60.1.70009"}
-{"id": 426606, "field": "description", "en": "Allows the imbiber to speak with the corpse of an individual with unfinished business in the mortal world. Also may cure indigestion.", "hash": "440274f1ecd785f4", "src": "db2@1.60.1.70009"}
-{"id": 426606, "field": "aura", "en": "Allows the imbiber to speak with the corpse of an individual with unfinished business in the mortal world. Also may cure indigestion.", "hash": "440274f1ecd785f4", "src": "db2@1.60.1.70009"}
-{"id": 426607, "field": "name", "en": "Elixir of Coalesced Regret", "hash": "c47b799a908a7ebd", "src": "db2@1.60.1.70009"}
-{"id": 426611, "field": "name", "en": "[DNT] Near Bonfire", "hash": "3dbd5527a3112319", "src": "db2@1.60.1.70009"}
-{"id": 426612, "field": "name", "en": "Elixir of Insight", "hash": "a6a448c8d3a4dfdd", "src": "db2@1.60.1.70009"}
-{"id": 426612, "field": "description", "en": "Behold a vision at Je'neu's  bonfire.", "hash": "8f6faa55ed5038c5", "src": "db2@1.60.1.70009"}
-{"id": 426633, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70009"}
-{"id": 426633, "field": "description", "en": "Make an offering of blood and unleash the soul within.", "hash": "3818054716e9367d", "src": "db2@1.60.1.70009"}
-{"id": 426639, "field": "name", "en": "Offering of Blood", "hash": "4039af9523e508ca", "src": "db2@1.60.1.70009"}
-{"id": 426640, "field": "name", "en": "Offering of Blood", "hash": "4039af9523e508ca", "src": "db2@1.60.1.70009"}
-{"id": 426640, "field": "aura", "en": "A suitable sacrifice has been made.", "hash": "8a2856895c83d6cd", "src": "db2@1.60.1.70009"}
-{"id": 426668, "field": "name", "en": "Summon Bound Elemental", "hash": "0cf4fa7ada43bf51", "src": "db2@1.60.1.70009"}
-{"id": 426668, "field": "description", "en": "Summons $s1 $lStone Rumbler:Stone Rumblers; to accompany the caster until dismissed.", "hash": "36bf232d1bae56a7", "src": "db2@1.60.1.70009"}
-{"id": 426694, "field": "name", "en": "Bear Form", "hash": "d74361bb63f15e0f", "src": "db2@1.60.1.70009"}
-{"id": 426694, "field": "description", "en": "Shapeshifts into a bear for $d, increasing armor and hit points, as well as allowing the use of various bear abilities.", "hash": "827ae877ea439287", "src": "db2@1.60.1.70009"}
-{"id": 426694, "field": "aura", "en": "Shapeshifted into bear.\r\nArmor increased by $1178s1%,  hit points increased by 290, and attack power increased by 75.", "hash": "a64e022fa87a10f2", "src": "db2@1.60.1.70009"}
-{"id": 426737, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 01 - Entrance", "hash": "1ae81b8467d57a2e", "src": "db2@1.60.1.70009"}
-{"id": 426738, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 02 - Baron Aquanis", "hash": "ac6ac5a397cd75f2", "src": "db2@1.60.1.70009"}
-{"id": 426740, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 03 - Ghamoo-ra & Sarevess", "hash": "b692247bf3aa9744", "src": "db2@1.60.1.70009"}
-{"id": 426742, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 04 - Gelihast & Lorgus Jett", "hash": "59b28800d471dd07", "src": "db2@1.60.1.70009"}
-{"id": 426745, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 05 - Kelris", "hash": "40fb6cba7baab0da", "src": "db2@1.60.1.70009"}
-{"id": 426754, "field": "name", "en": "Bloodletting", "hash": "9317b238894daac4", "src": "db2@1.60.1.70009"}
-{"id": 426754, "field": "description", "en": "Make an Offering of Blood to release this Tortured Soul.", "hash": "72038d21fe2f7241", "src": "db2@1.60.1.70009"}
-{"id": 426764, "field": "name", "en": "Only Pain", "hash": "43fce81f90af85e7", "src": "db2@1.60.1.70009"}
-{"id": 426764, "field": "aura", "en": "Unmotivated... No pain, no gain.", "hash": "a0ac7857301b0190", "src": "db2@1.60.1.70009"}
-{"id": 426811, "field": "name", "en": "Battlefield Inspiration", "hash": "505e11bb2e48b78c", "src": "db2@1.60.1.70009"}
-{"id": 426811, "field": "aura", "en": "Allies within $a1 yards of a battlefield leader gain $s1% increased health and $s2% increased damage.", "hash": "5a25079a5ad687cf", "src": "db2@1.60.1.70009"}
-{"id": 426821, "field": "name", "en": "Healing Touch", "hash": "1426e6fd17068c96", "src": "db2@1.60.1.70009"}
-{"id": 426821, "field": "description", "en": "Calls upon Nature magic to heal an ally.", "hash": "a861c49b618fd296", "src": "db2@1.60.1.70009"}
-{"id": 426832, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 06 - Aku'mai", "hash": "7e72c01f29bca51c", "src": "db2@1.60.1.70009"}
-{"id": 426842, "field": "name", "en": "Wailing Spirit Haunting", "hash": "df9b30b68dc9f9be", "src": "db2@1.60.1.70009"}
-{"id": 426917, "field": "name", "en": "Nature Form", "hash": "1a7dc05286061e1a", "src": "db2@1.60.1.70009"}
-{"id": 426917, "field": "aura", "en": "Vulnerable to fire damage.", "hash": "357449a4ce095418", "src": "db2@1.60.1.70009"}
-{"id": 426923, "field": "name", "en": "Fire Form", "hash": "6b87197b68b23f0d", "src": "db2@1.60.1.70009"}
-{"id": 426923, "field": "aura", "en": "Vulnerable to frost damage.", "hash": "523320126f9323db", "src": "db2@1.60.1.70009"}
-{"id": 426925, "field": "name", "en": "Water Form", "hash": "57c711f6f4538bab", "src": "db2@1.60.1.70009"}
-{"id": 426925, "field": "aura", "en": "Vulnerable to nature damage.", "hash": "6691b417a52baa54", "src": "db2@1.60.1.70009"}
-{"id": 426940, "field": "name", "en": "Rampage", "hash": "b6d01f9d97d6c1d9", "src": "db2@1.60.1.70009"}
-{"id": 426940, "field": "description", "en": "Go on a rampage, increasing your attack power by $s1% for $d.  This ability can only be used while Enraged.", "hash": "507c8c0a69da5070", "src": "db2@1.60.1.70009"}
-{"id": 426940, "field": "aura", "en": "Increases attack power by $s1%.", "hash": "39534167ed0fe242", "src": "db2@1.60.1.70009"}
-{"id": 426953, "field": "name", "en": "Taste for Blood", "hash": "4e3eb8341630b6a3", "src": "db2@1.60.1.70009"}
-{"id": 426953, "field": "description", "en": "Whenever your Rend ability causes damage, your Overpower ability will activate for $426969d or 1 attack.  This effect will not occur more than once every $s1 sec.", "hash": "8d278e915de997ae", "src": "db2@1.60.1.70009"}
-{"id": 426969, "field": "name", "en": "Taste for Blood", "hash": "4e3eb8341630b6a3", "src": "db2@1.60.1.70009"}
-{"id": 426969, "field": "aura", "en": "Allows the use of Overpower.", "hash": "77befb9b38a8a67b", "src": "db2@1.60.1.70009"}
-{"id": 426972, "field": "name", "en": "Vigilance", "hash": "c0f92c82a56502de", "src": "db2@1.60.1.70009"}
-{"id": 426972, "field": "description", "en": "Focus your protective gaze on a party or raid member, reducing their damage taken by $s1% and transferring $m2% of the threat they cause to you.  In addition, each time they are hit by an attack your Taunt cooldown is refreshed.  Lasts $d.  This effect can only be on one target at a time.", "hash": "4720bf0a979e85b9", "src": "db2@1.60.1.70009"}
-{"id": 426972, "field": "aura", "en": "Damage taken reduced by $s1% and $s2% of all threat transferred to warrior.", "hash": "a1c1c2abdc014bc1", "src": "db2@1.60.1.70009"}
-{"id": 426975, "field": "name", "en": "Vigilance", "hash": "c0f92c82a56502de", "src": "db2@1.60.1.70009"}
-{"id": 426975, "field": "aura", "en": "Damage taken reduced by $426972s3% and $s1% of all threat transferred to the warrior.", "hash": "4c5cf7a86458c4f1", "src": "db2@1.60.1.70009"}
-{"id": 426978, "field": "name", "en": "Sword and Board", "hash": "b79456a9985f9af4", "src": "db2@1.60.1.70009"}
-{"id": 426978, "field": "description", "en": "When your Devastate and Revenge abilities deal damage they have a $h% chance of refreshing the cooldown of your Shield Slam ability and reducing its Rage cost by $426979s1% for $426979d.", "hash": "d3189dc28689716d", "src": "db2@1.60.1.70009"}
-{"id": 426979, "field": "name", "en": "Sword and Board", "hash": "b79456a9985f9af4", "src": "db2@1.60.1.70009"}
-{"id": 426979, "field": "aura", "en": "Shield Slam rage cost reduced by $s1%.", "hash": "dde900a06de2ed75", "src": "db2@1.60.1.70009"}
-{"id": 426980, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70009"}
-{"id": 426980, "field": "description", "en": "Increases all physical damage you deal by $426981s1% while you have a shield equipped, and reduces the duration of all Disarm effects used against you by $s2%.  This does not stack with other Disarm duration reducing effects.\r\n", "hash": "23eaab02919ac40e", "src": "db2@1.60.1.70009"}
-{"id": 426981, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70009"}
+{"id": 426019, "field": "name", "en": "Marshroom", "hash": "409120b291f12fdb", "src": "db2@1.60.1.70124"}
+{"id": 426019, "field": "description", "en": "Eat (at your own risk).", "hash": "e672e39d9ff101d5", "src": "db2@1.60.1.70124"}
+{"id": 426019, "field": "aura", "en": "Granted a new kind of vision.", "hash": "39c94c2550dc438f", "src": "db2@1.60.1.70124"}
+{"id": 426053, "field": "name", "en": "Give Marshroom", "hash": "925cc7e18dd02a44", "src": "db2@1.60.1.70124"}
+{"id": 426062, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70124"}
+{"id": 426065, "field": "name", "en": "Infusion of Light", "hash": "373be75ac44b345a", "src": "db2@1.60.1.70124"}
+{"id": 426065, "field": "description", "en": "Your Holy Shock and Flash of Light critical hits reduce the cast time of your next Holy Light cast within $437063d by ${$m1/-1000}.1 sec.", "hash": "649bcbeddfc1d402", "src": "db2@1.60.1.70124"}
+{"id": 426068, "field": "name", "en": "Give Rune of Stars", "hash": "5f09694c620d4439", "src": "db2@1.60.1.70124"}
+{"id": 426069, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
+{"id": 426070, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
+{"id": 426072, "field": "name", "en": "Idol of the Wild", "hash": "96ec32f30edccde4", "src": "db2@1.60.1.70124"}
+{"id": 426072, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70124"}
+{"id": 426080, "field": "name", "en": "Omni Diffusion Armor", "hash": "3b32e56981dbc821", "src": "db2@1.60.1.70124"}
+{"id": 426080, "field": "aura", "en": "Absorbing inputs to create nullifying barriers.", "hash": "eefe44e42be2664f", "src": "db2@1.60.1.70124"}
+{"id": 426084, "field": "name", "en": "Bulky Protective Ironweave", "hash": "079028c5ba10df79", "src": "db2@1.60.1.70124"}
+{"id": 426084, "field": "aura", "en": "Encaged in an scrappy layer of barely-attached protective ironweave, the armor layer could fall off at any time.", "hash": "19e2e2b3155c52f7", "src": "db2@1.60.1.70124"}
+{"id": 426086, "field": "name", "en": "Electrostatic Discharge Shielding", "hash": "b6438dac41f1ab35", "src": "db2@1.60.1.70124"}
+{"id": 426086, "field": "aura", "en": "Highly resilient to heat and cold.", "hash": "42f19263551654f8", "src": "db2@1.60.1.70124"}
+{"id": 426090, "field": "name", "en": "Idol of the Wild Spam Prevention Dummy", "hash": "2ac6ff3bde21ffcc", "src": "db2@1.60.1.70124"}
+{"id": 426097, "field": "name", "en": "Auxiliary Anti-Tamper Mechanism", "hash": "3b18017105a60d87", "src": "db2@1.60.1.70124"}
+{"id": 426097, "field": "aura", "en": "Not all components survived transport.", "hash": "4d1719a808370724", "src": "db2@1.60.1.70124"}
+{"id": 426101, "field": "name", "en": "Central Reaping Function 9000", "hash": "dd9c5d86fe7970de", "src": "db2@1.60.1.70124"}
+{"id": 426101, "field": "aura", "en": "The exposed hyperalloy endoskeleton can withstand nearly all assault.", "hash": "8778e1d02f23b01c", "src": "db2@1.60.1.70124"}
+{"id": 426117, "field": "name", "en": "Share Meditation", "hash": "7fdd7b81d4cfcf3b", "src": "db2@1.60.1.70124"}
+{"id": 426157, "field": "name", "en": "The Art of War", "hash": "257b3210ca873d2d", "src": "db2@1.60.1.70124"}
+{"id": 426157, "field": "description", "en": "Increases all Holy damage you deal by $m1%, and your melee and spell critical strikes reduce the remaining cooldown on your Exorcism spell by ${$m2/-1000} sec.", "hash": "c4a882f0f531906a", "src": "db2@1.60.1.70124"}
+{"id": 426162, "field": "name", "en": "Fanaticism", "hash": "490cafb89cbb8e92", "src": "db2@1.60.1.70124"}
+{"id": 426162, "field": "aura", "en": "Heals $w1 every $t1 sec.", "hash": "15b97dfff0940eb4", "src": "db2@1.60.1.70124"}
+{"id": 426173, "field": "name", "en": "Enlightened Judgements", "hash": "9e5894819cea4d43", "src": "db2@1.60.1.70124"}
+{"id": 426173, "field": "description", "en": "Increases the range on your Judgement by $s1 yards and your spell hit with all spells by $s2%.", "hash": "e1aed3a5f93b52fa", "src": "db2@1.60.1.70124"}
+{"id": 426174, "field": "name", "en": "Malleable Protection", "hash": "f2c0cfdacb66b81b", "src": "db2@1.60.1.70124"}
+{"id": 426174, "field": "description", "en": "Gain the Malleable Protection ability:\r\n\r\n$@spellicon458318\r\n$@spelldesc458318", "hash": "00244963ba61ffda", "src": "db2@1.60.1.70124"}
+{"id": 426175, "field": "name", "en": "Engrave Belt - Malleable Protection", "hash": "cb61f2771665c535", "src": "db2@1.60.1.70124"}
+{"id": 426175, "field": "description", "en": "Engrave your belt with the Malleable Protection rune:\r\n\r\n$@spellicon458318\r\n$@spelldesc458318", "hash": "523ac40aff114728", "src": "db2@1.60.1.70124"}
+{"id": 426178, "field": "name", "en": "Engrave Belt - Sheath of Light", "hash": "d871958794f95e64", "src": "db2@1.60.1.70124"}
+{"id": 426178, "field": "description", "en": "Engrave your belt with the Sheath of Light rune:\r\n\r\n$@spellicon426158\r\n$@spelldesc426158", "hash": "81a91a0a22393350", "src": "db2@1.60.1.70124"}
+{"id": 426179, "field": "name", "en": "Infusion of Light", "hash": "373be75ac44b345a", "src": "db2@1.60.1.70124"}
+{"id": 426179, "field": "description", "en": "Gain the Infusion of Light ability:\r\n\r\n$@spellicon426065\r\n$@spelldesc426065", "hash": "58b745f400361b9b", "src": "db2@1.60.1.70124"}
+{"id": 426180, "field": "name", "en": "Engrave Belt - Infusion of Light", "hash": "a385002ac3ef2611", "src": "db2@1.60.1.70124"}
+{"id": 426180, "field": "description", "en": "Engrave your belt with the Infusion of Light rune:\r\n\r\n$@spellicon426065\r\n$@spelldesc426065", "hash": "4905da9bdebacf58", "src": "db2@1.60.1.70124"}
+{"id": 426182, "field": "name", "en": "Use Phylactery", "hash": "f664734d24128b1b", "src": "db2@1.60.1.70124"}
+{"id": 426190, "field": "name", "en": "Summon Lich", "hash": "86992cef98642a49", "src": "db2@1.60.1.70124"}
+{"id": 426192, "field": "name", "en": "Diver Helm Test", "hash": "19b535ba46d55d87", "src": "db2@1.60.1.70124"}
+{"id": 426192, "field": "aura", "en": "Do murlocs even need underwater breathing?", "hash": "90149cf95180aa7b", "src": "db2@1.60.1.70124"}
+{"id": 426195, "field": "name", "en": "Vengeance", "hash": "622d71d56b622ec3", "src": "db2@1.60.1.70124"}
+{"id": 426195, "field": "description", "en": "When activated, this ability temporarily grants you a $s1% increase to your maximum health for $d. After the effect expires, the health is lost. Additionally, while in Metamorphosis, Vengeance causes your wings to slow your falling speed.", "hash": "56419bc8c2b20419", "src": "db2@1.60.1.70124"}
+{"id": 426195, "field": "aura", "en": "Health increased by $s1% of maximum and slows falling speed while in Metamorphosis.", "hash": "7d0d771299abc23b", "src": "db2@1.60.1.70124"}
+{"id": 426197, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
+{"id": 426198, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
+{"id": 426199, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
+{"id": 426199, "field": "description", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70124"}
+{"id": 426199, "field": "aura", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70124"}
+{"id": 426200, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
+{"id": 426223, "field": "name", "en": "Shadowform", "hash": "074e070f4fdc8d3c", "src": "db2@1.60.1.70124"}
+{"id": 426241, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70124"}
+{"id": 426243, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70124"}
+{"id": 426243, "field": "description", "en": "Applying Corruption, Immolate, Curse of Agony, Unstable Affliction, Shadowflame, or Siphon Life will cause you to deal instant damage to the target equal to one tick of the spell's periodic damage. Refreshing any of those spells when it has less than $s1 seconds duration remaining will cause you to deal instant damage to the target equal to the spell's remaining periodic damage.", "hash": "744ce5b33c767d51", "src": "db2@1.60.1.70124"}
+{"id": 426245, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70124"}
+{"id": 426246, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70124"}
+{"id": 426247, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70124"}
+{"id": 426257, "field": "name", "en": "Sulfurous Icon", "hash": "577e291f24173049", "src": "db2@1.60.1.70124"}
+{"id": 426257, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70124"}
+{"id": 426301, "field": "name", "en": "Grimoire of Synergy", "hash": "e2fdc6ab6333a5c2", "src": "db2@1.60.1.70124"}
+{"id": 426301, "field": "description", "en": "Damage done by you or your summoned demon has a $h% chance to increase the damage done by the other by $426303s1% for $426303d.", "hash": "689303284e2ec8a0", "src": "db2@1.60.1.70124"}
+{"id": 426301, "field": "aura", "en": "Damage done by you or your summoned demon has a $h% chance to increase the damage done by the other by $426303s1% for $426303d.", "hash": "689303284e2ec8a0", "src": "db2@1.60.1.70124"}
+{"id": 426303, "field": "name", "en": "Grimoire of Synergy", "hash": "e2fdc6ab6333a5c2", "src": "db2@1.60.1.70124"}
+{"id": 426303, "field": "description", "en": "Increases all damage done by $s1%.", "hash": "bb0dd2401204fa49", "src": "db2@1.60.1.70124"}
+{"id": 426303, "field": "aura", "en": "Increases all damage done by $s1%.", "hash": "bb0dd2401204fa49", "src": "db2@1.60.1.70124"}
+{"id": 426311, "field": "name", "en": "Flame", "hash": "db5236331d190dfd", "src": "db2@1.60.1.70124"}
+{"id": 426311, "field": "description", "en": "Increases all Fire damage done by $s1%.", "hash": "7f6cf18633e90439", "src": "db2@1.60.1.70124"}
+{"id": 426311, "field": "aura", "en": "Increases all Fire damage done by $w1%.", "hash": "7ff627f26988d457", "src": "db2@1.60.1.70124"}
+{"id": 426316, "field": "name", "en": "Shadow and Flame", "hash": "a79ae683b50747c3", "src": "db2@1.60.1.70124"}
+{"id": 426316, "field": "description", "en": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by $m3% for $1293816d, and hitting an enemy with Shadowburn increases all Fire damage you deal by $m4% for $426311d. In addition, Conflagrate has a $m2% chance not to consume Immolate, and Shadowburn has a $m2% chance to instantly refund a Soul Shard.", "hash": "a8ba88f4ffe89e94", "src": "db2@1.60.1.70124"}
+{"id": 426320, "field": "name", "en": "Shadowflame", "hash": "bc8240b7fa3eb332", "src": "db2@1.60.1.70124"}
+{"id": 426320, "field": "description", "en": "Burns the enemy for ${$m1*$<power>/100*$<mult>} Shadowflame damage and then an additional ${$m2*5*$<power>/100} Shadowflame damage over $d.\r\n\r\nShadowflame triggers and benefits from all effects that modify or interact with Immolate, or with Affliction, Destruction, Fire, or Shadow spells, but only one of Immolate or Shadowflame per Warlock can be active on any target. In addition, Shadowflame can trigger your Improved Shadow Bolt talent and causes it to have $426454s2 additional charges.", "hash": "ae243044743eec43", "src": "db2@1.60.1.70124"}
+{"id": 426320, "field": "aura", "en": "${$m2*$<power>/100} Shadowflame damage every $t2 seconds.", "hash": "0b858fcaf9c5b12e", "src": "db2@1.60.1.70124"}
+{"id": 426325, "field": "name", "en": "Shadowflame", "hash": "bc8240b7fa3eb332", "src": "db2@1.60.1.70124"}
+{"id": 426325, "field": "aura", "en": "$w1 Fire damage every $t1 seconds.", "hash": "341a73be8a7f3663", "src": "db2@1.60.1.70124"}
+{"id": 426331, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70124"}
+{"id": 426359, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70124"}
+{"id": 426359, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70124"}
+{"id": 426366, "field": "name", "en": "Icy Veins", "hash": "da648c24cd8e9684", "src": "db2@1.60.1.70124"}
+{"id": 426415, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
+{"id": 426429, "field": "name", "en": "Dispel Phantasm", "hash": "8d5ec7e418471e55", "src": "db2@1.60.1.70124"}
+{"id": 426442, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70124"}
+{"id": 426442, "field": "description", "en": "Gain the Invocation ability:\r\n\r\n$@spellicon426243\r\n$@spelldesc426243", "hash": "4bcef48942d12acf", "src": "db2@1.60.1.70124"}
+{"id": 426443, "field": "name", "en": "Engrave Belt - Invocation", "hash": "0209b669c84c29f0", "src": "db2@1.60.1.70124"}
+{"id": 426443, "field": "description", "en": "Engrave your belt with the Invocation rune:\r\n\r\n$@spellicon426243\r\n$@spelldesc426243", "hash": "f02be364ef7754ef", "src": "db2@1.60.1.70124"}
+{"id": 426444, "field": "name", "en": "Grimoire of Synergy", "hash": "e2fdc6ab6333a5c2", "src": "db2@1.60.1.70124"}
+{"id": 426444, "field": "description", "en": "Gain the Grimoire of Synergy ability:\r\n\r\n$@spellicon426301\r\n$@spelldesc426301", "hash": "ed3c384e396813a1", "src": "db2@1.60.1.70124"}
+{"id": 426445, "field": "name", "en": "Engrave Belt - Grimoire of Synergy", "hash": "d30ea3c2543f8138", "src": "db2@1.60.1.70124"}
+{"id": 426445, "field": "description", "en": "Engrave your belt with the Grimoire of Synergy rune:\r\n\r\n$@spellicon426301\r\n$@spelldesc426301", "hash": "6962f950f1d55b47", "src": "db2@1.60.1.70124"}
+{"id": 426449, "field": "name", "en": "Shadow and Flame", "hash": "a79ae683b50747c3", "src": "db2@1.60.1.70124"}
+{"id": 426449, "field": "description", "en": "Gain the Shadow and Flame ability:\r\n\r\n$@spellicon426316\r\n$@spelldesc426316", "hash": "ac371e1ea854b203", "src": "db2@1.60.1.70124"}
+{"id": 426452, "field": "name", "en": "Engrave Belt - Shadow and Flame", "hash": "507e253e81f5cbf6", "src": "db2@1.60.1.70124"}
+{"id": 426452, "field": "description", "en": "Engrave your belt with the Shadow and Flame rune:\r\n\r\n$@spellicon426316\r\n$@spelldesc426316", "hash": "6e71e40a88fcde7a", "src": "db2@1.60.1.70124"}
+{"id": 426454, "field": "name", "en": "Shadowflame", "hash": "bc8240b7fa3eb332", "src": "db2@1.60.1.70124"}
+{"id": 426454, "field": "description", "en": "Gain the Shadowflame ability:\r\n\r\n$@spellicon426320\r\n$@spelldesc426320", "hash": "0c00a94d1da84c1b", "src": "db2@1.60.1.70124"}
+{"id": 426467, "field": "name", "en": "Engrave Boots - Shadowflame", "hash": "e93bd5e706cd5412", "src": "db2@1.60.1.70124"}
+{"id": 426467, "field": "description", "en": "Engrave your boots with the Shadowflame rune:\r\n\r\n$@spellicon426320\r\n$@spelldesc426320", "hash": "c47d2fb015806cc7", "src": "db2@1.60.1.70124"}
+{"id": 426469, "field": "name", "en": "Vengeance", "hash": "622d71d56b622ec3", "src": "db2@1.60.1.70124"}
+{"id": 426469, "field": "description", "en": "Gain the Vengeance ability:\r\n\r\n$@spellicon426195\r\n$@spelldesc426195", "hash": "170741aee50b8bb2", "src": "db2@1.60.1.70124"}
+{"id": 426470, "field": "name", "en": "Engrave Helm - Vengeance", "hash": "c2ff7efcb87a21ff", "src": "db2@1.60.1.70124"}
+{"id": 426470, "field": "description", "en": "Engrave your helm with the Vengeance rune:\r\n\r\n$@spellicon426195\r\n$@spelldesc426195", "hash": "b6b931d6288e41a5", "src": "db2@1.60.1.70124"}
+{"id": 426487, "field": "name", "en": "Manifesting Dreams", "hash": "2b37ac94d83e4445", "src": "db2@1.60.1.70124"}
+{"id": 426489, "field": "name", "en": "Manifesting Dreams", "hash": "2b37ac94d83e4445", "src": "db2@1.60.1.70124"}
+{"id": 426489, "field": "aura", "en": "Increases all damage done by ${$w0}%.", "hash": "d6406ebb38fe0d76", "src": "db2@1.60.1.70124"}
+{"id": 426490, "field": "name", "en": "Rallying Cry", "hash": "8acb1b7708dec772", "src": "db2@1.60.1.70124"}
+{"id": 426490, "field": "description", "en": "Let loose a rallying cry, granting all party and raid members within $a1 yards $s1% increased maximum health for $d.", "hash": "27c70783ec343b6d", "src": "db2@1.60.1.70124"}
+{"id": 426490, "field": "aura", "en": "Health increased by $s1% of maximum.", "hash": "f305c695a34f48e9", "src": "db2@1.60.1.70124"}
+{"id": 426491, "field": "name", "en": "Engrave Boots - Rallying Cry", "hash": "6dc2737a57b348f1", "src": "db2@1.60.1.70124"}
+{"id": 426491, "field": "description", "en": "Engrave your boots with the Rallying Cry rune:\r\n\r\n$@spellicon426490\r\n$@spelldesc426490", "hash": "ec8cc0d926a144d9", "src": "db2@1.60.1.70124"}
+{"id": 426492, "field": "name", "en": "Rallying Cry", "hash": "8acb1b7708dec772", "src": "db2@1.60.1.70124"}
+{"id": 426492, "field": "description", "en": "Gain the Rallying Cry ability:\r\n\r\n$@spellicon426490\r\n$@spelldesc426490", "hash": "0451981719d4eecf", "src": "db2@1.60.1.70124"}
+{"id": 426493, "field": "name", "en": "Mind Blast", "hash": "868279b14e0b7083", "src": "db2@1.60.1.70124"}
+{"id": 426494, "field": "name", "en": "Shadowy Chains", "hash": "4fcd37f46a29ed98", "src": "db2@1.60.1.70124"}
+{"id": 426495, "field": "name", "en": "Shadowy Chains", "hash": "4fcd37f46a29ed98", "src": "db2@1.60.1.70124"}
+{"id": 426495, "field": "aura", "en": "Shadows constrict your legs, decreasing movement speed and inflicting $s3 damage every $t3 sec.", "hash": "81e391d3d35ca0e8", "src": "db2@1.60.1.70124"}
+{"id": 426496, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
+{"id": 426498, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
+{"id": 426501, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
+{"id": 426502, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70124"}
+{"id": 426503, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70124"}
+{"id": 426504, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70124"}
+{"id": 426506, "field": "name", "en": "Eye of the Void", "hash": "39fdf5877250144b", "src": "db2@1.60.1.70124"}
+{"id": 426570, "field": "name", "en": "Fan of Knives", "hash": "4e308a0c5e4f29d4", "src": "db2@1.60.1.70124"}
+{"id": 426571, "field": "name", "en": "Search Corpse", "hash": "30228c33ce632c05", "src": "db2@1.60.1.70124"}
+{"id": 426597, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70124"}
+{"id": 426597, "field": "description", "en": "..", "hash": "000017b80005ba9c", "src": "db2@1.60.1.70124"}
+{"id": 426598, "field": "name", "en": "Spawn Omni Diffusion Armor", "hash": "1dc8fda77a343362", "src": "db2@1.60.1.70124"}
+{"id": 426599, "field": "name", "en": "Spawn Bulky Protective Ironweave", "hash": "6c4213af6628e8b2", "src": "db2@1.60.1.70124"}
+{"id": 426600, "field": "name", "en": "Spawn Electrostatic Discharge Shield", "hash": "498b4c61c87cca87", "src": "db2@1.60.1.70124"}
+{"id": 426601, "field": "name", "en": "Spawn Auxiliary Anti-Tamper Mechanism", "hash": "cff4312a3f1592dd", "src": "db2@1.60.1.70124"}
+{"id": 426604, "field": "name", "en": "Rebooting", "hash": "fbab6145708e2042", "src": "db2@1.60.1.70124"}
+{"id": 426604, "field": "aura", "en": "System rebooting.", "hash": "833b5b1e67dc0d5a", "src": "db2@1.60.1.70124"}
+{"id": 426606, "field": "name", "en": "Speak with the Dead?", "hash": "25fe00b7da097901", "src": "db2@1.60.1.70124"}
+{"id": 426606, "field": "description", "en": "Allows the imbiber to speak with the corpse of an individual with unfinished business in the mortal world. Also may cure indigestion.", "hash": "440274f1ecd785f4", "src": "db2@1.60.1.70124"}
+{"id": 426606, "field": "aura", "en": "Allows the imbiber to speak with the corpse of an individual with unfinished business in the mortal world. Also may cure indigestion.", "hash": "440274f1ecd785f4", "src": "db2@1.60.1.70124"}
+{"id": 426607, "field": "name", "en": "Elixir of Coalesced Regret", "hash": "c47b799a908a7ebd", "src": "db2@1.60.1.70124"}
+{"id": 426611, "field": "name", "en": "[DNT] Near Bonfire", "hash": "3dbd5527a3112319", "src": "db2@1.60.1.70124"}
+{"id": 426612, "field": "name", "en": "Elixir of Insight", "hash": "a6a448c8d3a4dfdd", "src": "db2@1.60.1.70124"}
+{"id": 426612, "field": "description", "en": "Behold a vision at Je'neu's  bonfire.", "hash": "8f6faa55ed5038c5", "src": "db2@1.60.1.70124"}
+{"id": 426633, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70124"}
+{"id": 426633, "field": "description", "en": "Make an offering of blood and unleash the soul within.", "hash": "3818054716e9367d", "src": "db2@1.60.1.70124"}
+{"id": 426639, "field": "name", "en": "Offering of Blood", "hash": "4039af9523e508ca", "src": "db2@1.60.1.70124"}
+{"id": 426640, "field": "name", "en": "Offering of Blood", "hash": "4039af9523e508ca", "src": "db2@1.60.1.70124"}
+{"id": 426640, "field": "aura", "en": "A suitable sacrifice has been made.", "hash": "8a2856895c83d6cd", "src": "db2@1.60.1.70124"}
+{"id": 426668, "field": "name", "en": "Summon Bound Elemental", "hash": "0cf4fa7ada43bf51", "src": "db2@1.60.1.70124"}
+{"id": 426668, "field": "description", "en": "Summons $s1 $lStone Rumbler:Stone Rumblers; to accompany the caster until dismissed.", "hash": "36bf232d1bae56a7", "src": "db2@1.60.1.70124"}
+{"id": 426694, "field": "name", "en": "Bear Form", "hash": "d74361bb63f15e0f", "src": "db2@1.60.1.70124"}
+{"id": 426694, "field": "description", "en": "Shapeshifts into a bear for $d, increasing armor and hit points, as well as allowing the use of various bear abilities.", "hash": "827ae877ea439287", "src": "db2@1.60.1.70124"}
+{"id": 426694, "field": "aura", "en": "Shapeshifted into bear.\r\nArmor increased by $1178s1%,  hit points increased by 290, and attack power increased by 75.", "hash": "a64e022fa87a10f2", "src": "db2@1.60.1.70124"}
+{"id": 426737, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 01 - Entrance", "hash": "1ae81b8467d57a2e", "src": "db2@1.60.1.70124"}
+{"id": 426738, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 02 - Baron Aquanis", "hash": "ac6ac5a397cd75f2", "src": "db2@1.60.1.70124"}
+{"id": 426740, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 03 - Ghamoo-ra & Sarevess", "hash": "b692247bf3aa9744", "src": "db2@1.60.1.70124"}
+{"id": 426742, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 04 - Gelihast & Lorgus Jett", "hash": "59b28800d471dd07", "src": "db2@1.60.1.70124"}
+{"id": 426745, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 05 - Kelris", "hash": "40fb6cba7baab0da", "src": "db2@1.60.1.70124"}
+{"id": 426754, "field": "name", "en": "Bloodletting", "hash": "9317b238894daac4", "src": "db2@1.60.1.70124"}
+{"id": 426754, "field": "description", "en": "Make an Offering of Blood to release this Tortured Soul.", "hash": "72038d21fe2f7241", "src": "db2@1.60.1.70124"}
+{"id": 426764, "field": "name", "en": "Only Pain", "hash": "43fce81f90af85e7", "src": "db2@1.60.1.70124"}
+{"id": 426764, "field": "aura", "en": "Unmotivated... No pain, no gain.", "hash": "a0ac7857301b0190", "src": "db2@1.60.1.70124"}
+{"id": 426811, "field": "name", "en": "Battlefield Inspiration", "hash": "505e11bb2e48b78c", "src": "db2@1.60.1.70124"}
+{"id": 426811, "field": "aura", "en": "Allies within $a1 yards of a battlefield leader gain $s1% increased health and $s2% increased damage.", "hash": "5a25079a5ad687cf", "src": "db2@1.60.1.70124"}
+{"id": 426821, "field": "name", "en": "Healing Touch", "hash": "1426e6fd17068c96", "src": "db2@1.60.1.70124"}
+{"id": 426821, "field": "description", "en": "Calls upon Nature magic to heal an ally.", "hash": "a861c49b618fd296", "src": "db2@1.60.1.70124"}
+{"id": 426832, "field": "name", "en": "[DNT] S03 - BFD Raid - Teleport 06 - Aku'mai", "hash": "7e72c01f29bca51c", "src": "db2@1.60.1.70124"}
+{"id": 426842, "field": "name", "en": "Wailing Spirit Haunting", "hash": "df9b30b68dc9f9be", "src": "db2@1.60.1.70124"}
+{"id": 426917, "field": "name", "en": "Nature Form", "hash": "1a7dc05286061e1a", "src": "db2@1.60.1.70124"}
+{"id": 426917, "field": "aura", "en": "Vulnerable to fire damage.", "hash": "357449a4ce095418", "src": "db2@1.60.1.70124"}
+{"id": 426923, "field": "name", "en": "Fire Form", "hash": "6b87197b68b23f0d", "src": "db2@1.60.1.70124"}
+{"id": 426923, "field": "aura", "en": "Vulnerable to frost damage.", "hash": "523320126f9323db", "src": "db2@1.60.1.70124"}
+{"id": 426925, "field": "name", "en": "Water Form", "hash": "57c711f6f4538bab", "src": "db2@1.60.1.70124"}
+{"id": 426925, "field": "aura", "en": "Vulnerable to nature damage.", "hash": "6691b417a52baa54", "src": "db2@1.60.1.70124"}
+{"id": 426940, "field": "name", "en": "Rampage", "hash": "b6d01f9d97d6c1d9", "src": "db2@1.60.1.70124"}
+{"id": 426940, "field": "description", "en": "Go on a rampage, increasing your attack power by $s1% for $d.  This ability can only be used while Enraged.", "hash": "507c8c0a69da5070", "src": "db2@1.60.1.70124"}
+{"id": 426940, "field": "aura", "en": "Increases attack power by $s1%.", "hash": "39534167ed0fe242", "src": "db2@1.60.1.70124"}
+{"id": 426953, "field": "name", "en": "Taste for Blood", "hash": "4e3eb8341630b6a3", "src": "db2@1.60.1.70124"}
+{"id": 426953, "field": "description", "en": "Whenever your Rend ability causes damage, your Overpower ability will activate for $426969d or 1 attack.  This effect will not occur more than once every $s1 sec.", "hash": "8d278e915de997ae", "src": "db2@1.60.1.70124"}
+{"id": 426969, "field": "name", "en": "Taste for Blood", "hash": "4e3eb8341630b6a3", "src": "db2@1.60.1.70124"}
+{"id": 426969, "field": "aura", "en": "Allows the use of Overpower.", "hash": "77befb9b38a8a67b", "src": "db2@1.60.1.70124"}
+{"id": 426972, "field": "name", "en": "Vigilance", "hash": "c0f92c82a56502de", "src": "db2@1.60.1.70124"}
+{"id": 426972, "field": "description", "en": "Focus your protective gaze on a party or raid member, reducing their damage taken by $s1% and transferring $m2% of the threat they cause to you.  In addition, each time they are hit by an attack your Taunt cooldown is refreshed.  Lasts $d.  This effect can only be on one target at a time.", "hash": "4720bf0a979e85b9", "src": "db2@1.60.1.70124"}
+{"id": 426972, "field": "aura", "en": "Damage taken reduced by $s1% and $s2% of all threat transferred to warrior.", "hash": "a1c1c2abdc014bc1", "src": "db2@1.60.1.70124"}
+{"id": 426975, "field": "name", "en": "Vigilance", "hash": "c0f92c82a56502de", "src": "db2@1.60.1.70124"}
+{"id": 426975, "field": "aura", "en": "Damage taken reduced by $426972s3% and $s1% of all threat transferred to the warrior.", "hash": "4c5cf7a86458c4f1", "src": "db2@1.60.1.70124"}
+{"id": 426978, "field": "name", "en": "Sword and Board", "hash": "b79456a9985f9af4", "src": "db2@1.60.1.70124"}
+{"id": 426978, "field": "description", "en": "When your Devastate and Revenge abilities deal damage they have a $h% chance of refreshing the cooldown of your Shield Slam ability and reducing its Rage cost by $426979s1% for $426979d.", "hash": "d3189dc28689716d", "src": "db2@1.60.1.70124"}
+{"id": 426979, "field": "name", "en": "Sword and Board", "hash": "b79456a9985f9af4", "src": "db2@1.60.1.70124"}
+{"id": 426979, "field": "aura", "en": "Shield Slam rage cost reduced by $s1%.", "hash": "dde900a06de2ed75", "src": "db2@1.60.1.70124"}
+{"id": 426980, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70124"}
+{"id": 426980, "field": "description", "en": "Increases all physical damage you deal by $426981s1% while you have a shield equipped, and reduces the duration of all Disarm effects used against you by $s2%.  This does not stack with other Disarm duration reducing effects.\r\n", "hash": "23eaab02919ac40e", "src": "db2@1.60.1.70124"}
+{"id": 426981, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70124"}

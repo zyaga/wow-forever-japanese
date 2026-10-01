@@ -1,111 +1,111 @@
-{"id": 417045, "field": "name", "en": "Tiger's Fury", "hash": "ae4896c360bd4329", "src": "db2@1.60.1.70009"}
-{"id": 417045, "field": "description", "en": "Instantly grants you Energy.", "hash": "7598f2eaa5289018", "src": "db2@1.60.1.70009"}
+{"id": 417045, "field": "name", "en": "Tiger's Fury", "hash": "ae4896c360bd4329", "src": "db2@1.60.1.70124"}
+{"id": 417045, "field": "description", "en": "Instantly grants you Energy.", "hash": "7598f2eaa5289018", "src": "db2@1.60.1.70124"}
 {"id": 417045, "field": "aura", "en": "Increases damage done by $s1%.", "hash": "69fddc6f610667f3", "src": "wago@1.15.9.69722"}
-{"id": 417046, "field": "name", "en": "King of the Jungle", "hash": "97afb7f136c97630", "src": "db2@1.60.1.70009"}
-{"id": 417046, "field": "description", "en": "Tiger's Fury now instantly grants you $s1 Energy.", "hash": "d24bc9000c7752aa", "src": "db2@1.60.1.70009"}
-{"id": 417051, "field": "name", "en": "Natural Reaction", "hash": "5220181db9cbc988", "src": "db2@1.60.1.70009"}
-{"id": 417051, "field": "description", "en": "Increases your dodge chance by $m1%, and gives you a $m2% chance to gain ${$417053m1/10} Rage each time you dodge.", "hash": "455d2119d6b6055a", "src": "db2@1.60.1.70009"}
-{"id": 417053, "field": "name", "en": "Natural Reaction", "hash": "5220181db9cbc988", "src": "db2@1.60.1.70009"}
-{"id": 417056, "field": "name", "en": "Summon Soboz", "hash": "5c0f8e85760b141c", "src": "db2@1.60.1.70009"}
-{"id": 417056, "field": "description", "en": "Summon Soboz", "hash": "5c0f8e85760b141c", "src": "db2@1.60.1.70009"}
-{"id": 417057, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 417057, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70009"}
-{"id": 417057, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70009"}
-{"id": 417058, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 417058, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70009"}
-{"id": 417058, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70009"}
-{"id": 417059, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 417059, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70009"}
-{"id": 417059, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70009"}
-{"id": 417060, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 417060, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70009"}
-{"id": 417060, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70009"}
-{"id": 417061, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 417061, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70009"}
-{"id": 417061, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70009"}
-{"id": 417062, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 417062, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70009"}
-{"id": 417062, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70009"}
-{"id": 417063, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 417063, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70009"}
-{"id": 417063, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70009"}
-{"id": 417064, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 417064, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70009"}
-{"id": 417064, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70009"}
-{"id": 417065, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 417065, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70009"}
-{"id": 417065, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70009"}
-{"id": 417066, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 417066, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70009"}
-{"id": 417066, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70009"}
-{"id": 417068, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70009"}
-{"id": 417068, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70009"}
-{"id": 417068, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70009"}
-{"id": 417123, "field": "name", "en": "Enhanced Restoration", "hash": "51d069296743e5cb", "src": "db2@1.60.1.70009"}
-{"id": 417123, "field": "description", "en": "Your Rejuvenation and Regrowth spells can now be active on targets affected by another Druid's Rejuvenation or Regrowth.", "hash": "98bc35ae2dc1a918", "src": "db2@1.60.1.70009"}
-{"id": 417135, "field": "name", "en": "Gale Winds", "hash": "529a1e989b37cd21", "src": "db2@1.60.1.70009"}
-{"id": 417135, "field": "description", "en": "Increases the damage done by your Hurricane by $s1%, it no longer has a cooldown, and its mana cost is reduced by $s4%.", "hash": "a6f14cbcd672aebd", "src": "db2@1.60.1.70009"}
-{"id": 417141, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70009"}
-{"id": 417141, "field": "description", "en": "$?a5487|a9634|a3025[|CFFFFFFFFReuires Cat Form, Bear Form, Dire Bear Form|R][|CFFFF2020Requires Cat Form, Bear Form, Dire Bear Form|R]\r\nCauses your Primal Bite ability to strike up to $s3 targets, removes its cooldown, and increases the critical strike chance of your Combo Point-generating abilities by $s1%. Clears and grants immunity to Fear effects for the duration. Lasts $d.", "hash": "67700812928bfa1b", "src": "db2@1.60.1.70009"}
-{"id": 417141, "field": "aura", "en": "Combo Point generating abilities gain $s1% increased critical strike chance.\r\nPrimal Bite hits up to $w3 targets and has no cooldown.\r\nImmune to Fear effects.", "hash": "a6f78b5307c0bb87", "src": "db2@1.60.1.70009"}
-{"id": 417145, "field": "name", "en": "Gore", "hash": "09a0d19ff08841a7", "src": "db2@1.60.1.70009"}
-{"id": 417145, "field": "description", "en": "Striking a target with Lacerate, Swipe, or Maul has a $h% chance to reset the cooldown on Mangle (Bear) and grant ${$446699m1/10}  Rage. Striking a target with Mangle (Cat) or Shred has a $s1% chance to reset the cooldown on Tiger's Fury.", "hash": "5b32606e7e13dd61", "src": "db2@1.60.1.70009"}
-{"id": 417146, "field": "name", "en": "Efflorescence", "hash": "a8c0524f58d87abc", "src": "db2@1.60.1.70009"}
-{"id": 417146, "field": "aura", "en": "Within a Druid's Efflorescence.", "hash": "ba44b6a4b58f3521", "src": "db2@1.60.1.70009"}
-{"id": 417147, "field": "name", "en": "Efflorescence", "hash": "a8c0524f58d87abc", "src": "db2@1.60.1.70009"}
-{"id": 417147, "field": "description", "en": "Heals all party or raid members within $417148a1 yards of the selected area for ${$<healpower>*$417148m1/100} every $417147t1 sec for $d.", "hash": "77ef4186b971f29d", "src": "db2@1.60.1.70009"}
-{"id": 417147, "field": "aura", "en": "Healing all party members of your Swiftmend target within your Efflorescence every $t2 sec for ${$<healpower>*$417148m1/100}.", "hash": "8e2d4e7c8eb57d3b", "src": "db2@1.60.1.70009"}
-{"id": 417148, "field": "name", "en": "Efflorescence", "hash": "a8c0524f58d87abc", "src": "db2@1.60.1.70009"}
-{"id": 417148, "field": "description", "en": "Heals all party members within $a1 yards of the target for ${$<healpower>*$m1/100}.", "hash": "8ee8859e97c60714", "src": "db2@1.60.1.70009"}
-{"id": 417149, "field": "name", "en": "Efflorescence", "hash": "a8c0524f58d87abc", "src": "db2@1.60.1.70009"}
-{"id": 417149, "field": "description", "en": "Your Swiftmend now also causes Efflorescence, healing all party members within $417148a1 yards of the Swiftmend target's location for ${$<healpower>*$417148m1/100} every $417147t2 sec for $417147d.", "hash": "fa6947b4604f7c39", "src": "db2@1.60.1.70009"}
-{"id": 417157, "field": "name", "en": "Starsurge", "hash": "9e9da22f068df835", "src": "db2@1.60.1.70009"}
-{"id": 417157, "field": "description", "en": "Launch surging stellar energies that cause ${$m1/100*$<damagepower>} to ${$M1/100*$<damagepower>} Arcane damage, and increases the damage done by your next $n Starfire $Lcast:casts; by $s2% for $d.\r\n\r\nStarsurge benefits from and triggers most talents and effects that trigger or benefit from Wrath or Starfire.", "hash": "5b236c3f4b6153fc", "src": "db2@1.60.1.70009"}
-{"id": 417157, "field": "aura", "en": "Your next $n Starfire $Lcast deals:casts deal; $s2% increased damage.", "hash": "624d73d80b3e5daf", "src": "db2@1.60.1.70009"}
-{"id": 417159, "field": "name", "en": "Renewal", "hash": "b4fb6e8000c580a2", "src": "db2@1.60.1.70009"}
-{"id": 417159, "field": "description", "en": "Instantly heal yourself for $s1% of you maximum health. Useable in all forms.\r\n", "hash": "28428f72273c1ce7", "src": "db2@1.60.1.70009"}
-{"id": 417192, "field": "name", "en": "Loa Altar", "hash": "708aa961c3b54791", "src": "db2@1.60.1.70009"}
-{"id": 417192, "field": "aura", "en": "Kneel before the Loa to receive their wisdom.", "hash": "731b2e2d0ef271b8", "src": "db2@1.60.1.70009"}
-{"id": 417202, "field": "name", "en": "Summon Serpent Loa", "hash": "6aa4354914d39679", "src": "db2@1.60.1.70009"}
-{"id": 417293, "field": "name", "en": "Trace Ta'zo Mural", "hash": "f0d051e3eb392571", "src": "db2@1.60.1.70009"}
-{"id": 417315, "field": "name", "en": "Summon Soboz", "hash": "5c0f8e85760b141c", "src": "db2@1.60.1.70009"}
-{"id": 417315, "field": "description", "en": "Summon Soboz", "hash": "5c0f8e85760b141c", "src": "db2@1.60.1.70009"}
-{"id": 417316, "field": "name", "en": "Meditation on the Loa", "hash": "a76106792ddd3cd6", "src": "db2@1.60.1.70009"}
-{"id": 417316, "field": "aura", "en": "Your mind is expanded by your meditation, granting you the clarity to learn new spells from Memories found throughout the world.", "hash": "0f1e11e98a8d9c57", "src": "db2@1.60.1.70009"}
-{"id": 417345, "field": "name", "en": "Helm Rune Ability", "hash": "1d2990fc8342aaee", "src": "db2@1.60.1.70009"}
-{"id": 417345, "field": "description", "en": "Equip a Helm slot item with a Rune engraved to activate an ability in this slot.", "hash": "407fa9b36a79c3aa", "src": "db2@1.60.1.70009"}
-{"id": 417346, "field": "name", "en": "Bracer Rune Ability", "hash": "90d1d9806e80808b", "src": "db2@1.60.1.70009"}
-{"id": 417346, "field": "description", "en": "Equip a Bracer slot item with a Rune engraved to activate an ability in this slot.", "hash": "bb892d16ea9c4e22", "src": "db2@1.60.1.70009"}
-{"id": 417347, "field": "name", "en": "Cloak Rune Ability", "hash": "fef4976844a48aa0", "src": "db2@1.60.1.70009"}
-{"id": 417347, "field": "description", "en": "Equip a Cloak slot item with a Rune engraved to activate an ability in this slot.", "hash": "39b2b0bc6f85e21d", "src": "db2@1.60.1.70009"}
-{"id": 417348, "field": "name", "en": "Shoulder Rune Ability", "hash": "682149b8ca70d9ed", "src": "db2@1.60.1.70009"}
-{"id": 417348, "field": "description", "en": "Equip a Shoulder slot item with a Rune engraved to activate an ability in this slot.", "hash": "6b8649ede1e234fc", "src": "db2@1.60.1.70009"}
-{"id": 417410, "field": "name", "en": "Near Buried Cache", "hash": "54d97c75af45c5e9", "src": "db2@1.60.1.70009"}
-{"id": 417433, "field": "name", "en": "Dig Up Treasure", "hash": "785217e3e0581aee", "src": "db2@1.60.1.70009"}
-{"id": 417433, "field": "description", "en": "Dig up treasure at the marked location", "hash": "cb9fbb49acaf7910", "src": "db2@1.60.1.70009"}
-{"id": 417434, "field": "name", "en": "Combine Map Pieces", "hash": "32952a73e4a1a5e7", "src": "db2@1.60.1.70009"}
-{"id": 417434, "field": "description", "en": "Combine with 3 other pieces to make the full map.", "hash": "dcc7f5cfbaee489f", "src": "db2@1.60.1.70009"}
-{"id": 417437, "field": "name", "en": "Thrash (Cat)", "hash": "b1776aab71bed34e", "src": "db2@1.60.1.70009"}
-{"id": 417440, "field": "name", "en": "Thrash (Bear)", "hash": "bf1243371fa07afa", "src": "db2@1.60.1.70009"}
-{"id": 417440, "field": "description", "en": "Strikes all nearby enemies, dealing ${$m1*$<damagepower>/100+0.092*$AP} Bleed damage and an additional ${$417441m1*$<damagepower>/100*5+0.125*$AP} Bleed damage over $417441d. When applied from Bear Form, this effect can stack up to $417441u times.", "hash": "9fe9051fd49c0c54", "src": "db2@1.60.1.70009"}
-{"id": 417441, "field": "name", "en": "Thrash (Bear)", "hash": "bf1243371fa07afa", "src": "db2@1.60.1.70009"}
-{"id": 417441, "field": "aura", "en": "Bleeding for $w1 damage every $t1 seconds.", "hash": "babe73bb2ed0c6ac", "src": "db2@1.60.1.70009"}
-{"id": 417448, "field": "name", "en": "Thrash (Cat)", "hash": "b1776aab71bed34e", "src": "db2@1.60.1.70009"}
-{"id": 417448, "field": "description", "en": "Strikes all nearby enemies, dealing ${$m1*$<damagepower>/100+0.104*$AP} Bleed damage and an additional ${$m2*$<damagepower>/100*5+0.0661*5*$AP} Bleed damage over $d. Awards $417450s1 combo $lpoint:points;.", "hash": "53483d55751456d7", "src": "db2@1.60.1.70009"}
-{"id": 417448, "field": "aura", "en": "Bleeding for $w2 damage every $t2 sec.", "hash": "84eecd00366954d8", "src": "db2@1.60.1.70009"}
-{"id": 417450, "field": "name", "en": "Thrash (Cat)", "hash": "b1776aab71bed34e", "src": "db2@1.60.1.70009"}
-{"id": 417453, "field": "name", "en": "Thrash (Cat)", "hash": "b1776aab71bed34e", "src": "db2@1.60.1.70009"}
-{"id": 417453, "field": "description", "en": "Gain several new demonic abilities: Disrupt, Demon Charge, Demonic Howl, and Infernal Strike.\r\n\r\n$@spellicon412787\r\n$@spelldesc412787\r\n\r\n$@spellicon412788\r\n$@spelldesc412788\r\n\r\n$@spellicon412789\r\n$@spelldesc412789\r\n\r\n$@spellicon412790\r\n$@spelldesc412790", "hash": "52f942385fae9130", "src": "db2@1.60.1.70009"}
-{"id": 417463, "field": "name", "en": "Near Death Experience", "hash": "f46fe0a8e49ca3e6", "src": "db2@1.60.1.70009"}
-{"id": 417463, "field": "aura", "en": "Your brush with death temporarily reveals the spectral realm.", "hash": "aa93f5d07bc3c532", "src": "db2@1.60.1.70009"}
-{"id": 417627, "field": "name", "en": "Videre Elixir", "hash": "199a42fb2e8d3979", "src": "db2@1.60.1.70009"}
-{"id": 417627, "field": "description", "en": "Drink in the Tanaris Graveyard.", "hash": "95316d5e2317b255", "src": "db2@1.60.1.70009"}
-{"id": 417684, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70009"}
-{"id": 417743, "field": "name", "en": "Forge Documents", "hash": "41a41ff0fad9dbc1", "src": "db2@1.60.1.70009"}
-{"id": 417743, "field": "description", "en": "Create forged documents implicating the Scarlet Crusade against the Alliance.  Requires writing supplies found in Brill's town hall.", "hash": "d6127412dafd482c", "src": "db2@1.60.1.70009"}
-{"id": 417750, "field": "name", "en": "Jamie - Trade Letter for Rune", "hash": "a24de5f96a950af5", "src": "db2@1.60.1.70009"}
-{"id": 417803, "field": "name", "en": "Emberglow Vision", "hash": "9a80984257447d99", "src": "db2@1.60.1.70009"}
-{"id": 417803, "field": "aura", "en": "Your eyes are filled with spectral flame, granting sight beyond the mortal veil.", "hash": "75c01edff725730e", "src": "db2@1.60.1.70009"}
-{"id": 417856, "field": "name", "en": "Altar of the Light", "hash": "d14fefefcae25329", "src": "db2@1.60.1.70009"}
-{"id": 417856, "field": "aura", "en": "Pray to the Light to receive wisdom", "hash": "4fa0d13e3bc9710f", "src": "db2@1.60.1.70009"}
-{"id": 417858, "field": "name", "en": "Meditation on the Light", "hash": "464fb6a5bf8ce677", "src": "db2@1.60.1.70009"}
+{"id": 417046, "field": "name", "en": "King of the Jungle", "hash": "97afb7f136c97630", "src": "db2@1.60.1.70124"}
+{"id": 417046, "field": "description", "en": "Tiger's Fury now instantly grants you $s1 Energy.", "hash": "d24bc9000c7752aa", "src": "db2@1.60.1.70124"}
+{"id": 417051, "field": "name", "en": "Natural Reaction", "hash": "5220181db9cbc988", "src": "db2@1.60.1.70124"}
+{"id": 417051, "field": "description", "en": "Increases your dodge chance by $m1%, and gives you a $m2% chance to gain ${$417053m1/10} Rage each time you dodge.", "hash": "455d2119d6b6055a", "src": "db2@1.60.1.70124"}
+{"id": 417053, "field": "name", "en": "Natural Reaction", "hash": "5220181db9cbc988", "src": "db2@1.60.1.70124"}
+{"id": 417056, "field": "name", "en": "Summon Soboz", "hash": "5c0f8e85760b141c", "src": "db2@1.60.1.70124"}
+{"id": 417056, "field": "description", "en": "Summon Soboz", "hash": "5c0f8e85760b141c", "src": "db2@1.60.1.70124"}
+{"id": 417057, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 417057, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70124"}
+{"id": 417057, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70124"}
+{"id": 417058, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 417058, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70124"}
+{"id": 417058, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70124"}
+{"id": 417059, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 417059, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70124"}
+{"id": 417059, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70124"}
+{"id": 417060, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 417060, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70124"}
+{"id": 417060, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70124"}
+{"id": 417061, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 417061, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70124"}
+{"id": 417061, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70124"}
+{"id": 417062, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 417062, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70124"}
+{"id": 417062, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70124"}
+{"id": 417063, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 417063, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70124"}
+{"id": 417063, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70124"}
+{"id": 417064, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 417064, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70124"}
+{"id": 417064, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70124"}
+{"id": 417065, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 417065, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70124"}
+{"id": 417065, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70124"}
+{"id": 417066, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 417066, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70124"}
+{"id": 417066, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70124"}
+{"id": 417068, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
+{"id": 417068, "field": "description", "en": "Heals the target for $o1 over $d.", "hash": "3367b9a92440edc9", "src": "db2@1.60.1.70124"}
+{"id": 417068, "field": "aura", "en": "Heals $s1 damage every $t1 seconds.", "hash": "1302c0455dcde802", "src": "db2@1.60.1.70124"}
+{"id": 417123, "field": "name", "en": "Enhanced Restoration", "hash": "51d069296743e5cb", "src": "db2@1.60.1.70124"}
+{"id": 417123, "field": "description", "en": "Your Rejuvenation and Regrowth spells can now be active on targets affected by another Druid's Rejuvenation or Regrowth.", "hash": "98bc35ae2dc1a918", "src": "db2@1.60.1.70124"}
+{"id": 417135, "field": "name", "en": "Gale Winds", "hash": "529a1e989b37cd21", "src": "db2@1.60.1.70124"}
+{"id": 417135, "field": "description", "en": "Increases the damage done by your Hurricane by $s1%, it no longer has a cooldown, and its mana cost is reduced by $s4%.", "hash": "a6f14cbcd672aebd", "src": "db2@1.60.1.70124"}
+{"id": 417141, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70124"}
+{"id": 417141, "field": "description", "en": "$?a5487|a9634|a3025[|CFFFFFFFFReuires Cat Form, Bear Form, Dire Bear Form|R][|CFFFF2020Requires Cat Form, Bear Form, Dire Bear Form|R]\r\nCauses your Primal Bite ability to strike up to $s3 targets, removes its cooldown, and increases the critical strike chance of your Combo Point-generating abilities by $s1%. Clears and grants immunity to Fear effects for the duration. Lasts $d.", "hash": "67700812928bfa1b", "src": "db2@1.60.1.70124"}
+{"id": 417141, "field": "aura", "en": "Combo Point generating abilities gain $s1% increased critical strike chance.\r\nPrimal Bite hits up to $w3 targets and has no cooldown.\r\nImmune to Fear effects.", "hash": "a6f78b5307c0bb87", "src": "db2@1.60.1.70124"}
+{"id": 417145, "field": "name", "en": "Gore", "hash": "09a0d19ff08841a7", "src": "db2@1.60.1.70124"}
+{"id": 417145, "field": "description", "en": "Striking a target with Lacerate, Swipe, or Maul has a $h% chance to reset the cooldown on Mangle (Bear) and grant ${$446699m1/10}  Rage. Striking a target with Mangle (Cat) or Shred has a $s1% chance to reset the cooldown on Tiger's Fury.", "hash": "5b32606e7e13dd61", "src": "db2@1.60.1.70124"}
+{"id": 417146, "field": "name", "en": "Efflorescence", "hash": "a8c0524f58d87abc", "src": "db2@1.60.1.70124"}
+{"id": 417146, "field": "aura", "en": "Within a Druid's Efflorescence.", "hash": "ba44b6a4b58f3521", "src": "db2@1.60.1.70124"}
+{"id": 417147, "field": "name", "en": "Efflorescence", "hash": "a8c0524f58d87abc", "src": "db2@1.60.1.70124"}
+{"id": 417147, "field": "description", "en": "Heals all party or raid members within $417148a1 yards of the selected area for ${$<healpower>*$417148m1/100} every $417147t1 sec for $d.", "hash": "77ef4186b971f29d", "src": "db2@1.60.1.70124"}
+{"id": 417147, "field": "aura", "en": "Healing all party members of your Swiftmend target within your Efflorescence every $t2 sec for ${$<healpower>*$417148m1/100}.", "hash": "8e2d4e7c8eb57d3b", "src": "db2@1.60.1.70124"}
+{"id": 417148, "field": "name", "en": "Efflorescence", "hash": "a8c0524f58d87abc", "src": "db2@1.60.1.70124"}
+{"id": 417148, "field": "description", "en": "Heals all party members within $a1 yards of the target for ${$<healpower>*$m1/100}.", "hash": "8ee8859e97c60714", "src": "db2@1.60.1.70124"}
+{"id": 417149, "field": "name", "en": "Efflorescence", "hash": "a8c0524f58d87abc", "src": "db2@1.60.1.70124"}
+{"id": 417149, "field": "description", "en": "Your Swiftmend now also causes Efflorescence, healing all party members within $417148a1 yards of the Swiftmend target's location for ${$<healpower>*$417148m1/100} every $417147t2 sec for $417147d.", "hash": "fa6947b4604f7c39", "src": "db2@1.60.1.70124"}
+{"id": 417157, "field": "name", "en": "Starsurge", "hash": "9e9da22f068df835", "src": "db2@1.60.1.70124"}
+{"id": 417157, "field": "description", "en": "Launch surging stellar energies that cause ${$m1/100*$<damagepower>} to ${$M1/100*$<damagepower>} Arcane damage, and increases the damage done by your next $n Starfire $Lcast:casts; by $s2% for $d.\r\n\r\nStarsurge benefits from and triggers most talents and effects that trigger or benefit from Wrath or Starfire.", "hash": "5b236c3f4b6153fc", "src": "db2@1.60.1.70124"}
+{"id": 417157, "field": "aura", "en": "Your next $n Starfire $Lcast deals:casts deal; $s2% increased damage.", "hash": "624d73d80b3e5daf", "src": "db2@1.60.1.70124"}
+{"id": 417159, "field": "name", "en": "Renewal", "hash": "b4fb6e8000c580a2", "src": "db2@1.60.1.70124"}
+{"id": 417159, "field": "description", "en": "Instantly heal yourself for $s1% of you maximum health. Useable in all forms.\r\n", "hash": "28428f72273c1ce7", "src": "db2@1.60.1.70124"}
+{"id": 417192, "field": "name", "en": "Loa Altar", "hash": "708aa961c3b54791", "src": "db2@1.60.1.70124"}
+{"id": 417192, "field": "aura", "en": "Kneel before the Loa to receive their wisdom.", "hash": "731b2e2d0ef271b8", "src": "db2@1.60.1.70124"}
+{"id": 417202, "field": "name", "en": "Summon Serpent Loa", "hash": "6aa4354914d39679", "src": "db2@1.60.1.70124"}
+{"id": 417293, "field": "name", "en": "Trace Ta'zo Mural", "hash": "f0d051e3eb392571", "src": "db2@1.60.1.70124"}
+{"id": 417315, "field": "name", "en": "Summon Soboz", "hash": "5c0f8e85760b141c", "src": "db2@1.60.1.70124"}
+{"id": 417315, "field": "description", "en": "Summon Soboz", "hash": "5c0f8e85760b141c", "src": "db2@1.60.1.70124"}
+{"id": 417316, "field": "name", "en": "Meditation on the Loa", "hash": "a76106792ddd3cd6", "src": "db2@1.60.1.70124"}
+{"id": 417316, "field": "aura", "en": "Your mind is expanded by your meditation, granting you the clarity to learn new spells from Memories found throughout the world.", "hash": "0f1e11e98a8d9c57", "src": "db2@1.60.1.70124"}
+{"id": 417345, "field": "name", "en": "Helm Rune Ability", "hash": "1d2990fc8342aaee", "src": "db2@1.60.1.70124"}
+{"id": 417345, "field": "description", "en": "Equip a Helm slot item with a Rune engraved to activate an ability in this slot.", "hash": "407fa9b36a79c3aa", "src": "db2@1.60.1.70124"}
+{"id": 417346, "field": "name", "en": "Bracer Rune Ability", "hash": "90d1d9806e80808b", "src": "db2@1.60.1.70124"}
+{"id": 417346, "field": "description", "en": "Equip a Bracer slot item with a Rune engraved to activate an ability in this slot.", "hash": "bb892d16ea9c4e22", "src": "db2@1.60.1.70124"}
+{"id": 417347, "field": "name", "en": "Cloak Rune Ability", "hash": "fef4976844a48aa0", "src": "db2@1.60.1.70124"}
+{"id": 417347, "field": "description", "en": "Equip a Cloak slot item with a Rune engraved to activate an ability in this slot.", "hash": "39b2b0bc6f85e21d", "src": "db2@1.60.1.70124"}
+{"id": 417348, "field": "name", "en": "Shoulder Rune Ability", "hash": "682149b8ca70d9ed", "src": "db2@1.60.1.70124"}
+{"id": 417348, "field": "description", "en": "Equip a Shoulder slot item with a Rune engraved to activate an ability in this slot.", "hash": "6b8649ede1e234fc", "src": "db2@1.60.1.70124"}
+{"id": 417410, "field": "name", "en": "Near Buried Cache", "hash": "54d97c75af45c5e9", "src": "db2@1.60.1.70124"}
+{"id": 417433, "field": "name", "en": "Dig Up Treasure", "hash": "785217e3e0581aee", "src": "db2@1.60.1.70124"}
+{"id": 417433, "field": "description", "en": "Dig up treasure at the marked location", "hash": "cb9fbb49acaf7910", "src": "db2@1.60.1.70124"}
+{"id": 417434, "field": "name", "en": "Combine Map Pieces", "hash": "32952a73e4a1a5e7", "src": "db2@1.60.1.70124"}
+{"id": 417434, "field": "description", "en": "Combine with 3 other pieces to make the full map.", "hash": "dcc7f5cfbaee489f", "src": "db2@1.60.1.70124"}
+{"id": 417437, "field": "name", "en": "Thrash (Cat)", "hash": "b1776aab71bed34e", "src": "db2@1.60.1.70124"}
+{"id": 417440, "field": "name", "en": "Thrash (Bear)", "hash": "bf1243371fa07afa", "src": "db2@1.60.1.70124"}
+{"id": 417440, "field": "description", "en": "Strikes all nearby enemies, dealing ${$m1*$<damagepower>/100+0.092*$AP} Bleed damage and an additional ${$417441m1*$<damagepower>/100*5+0.125*$AP} Bleed damage over $417441d. When applied from Bear Form, this effect can stack up to $417441u times.", "hash": "9fe9051fd49c0c54", "src": "db2@1.60.1.70124"}
+{"id": 417441, "field": "name", "en": "Thrash (Bear)", "hash": "bf1243371fa07afa", "src": "db2@1.60.1.70124"}
+{"id": 417441, "field": "aura", "en": "Bleeding for $w1 damage every $t1 seconds.", "hash": "babe73bb2ed0c6ac", "src": "db2@1.60.1.70124"}
+{"id": 417448, "field": "name", "en": "Thrash (Cat)", "hash": "b1776aab71bed34e", "src": "db2@1.60.1.70124"}
+{"id": 417448, "field": "description", "en": "Strikes all nearby enemies, dealing ${$m1*$<damagepower>/100+0.104*$AP} Bleed damage and an additional ${$m2*$<damagepower>/100*5+0.0661*5*$AP} Bleed damage over $d. Awards $417450s1 combo $lpoint:points;.", "hash": "53483d55751456d7", "src": "db2@1.60.1.70124"}
+{"id": 417448, "field": "aura", "en": "Bleeding for $w2 damage every $t2 sec.", "hash": "84eecd00366954d8", "src": "db2@1.60.1.70124"}
+{"id": 417450, "field": "name", "en": "Thrash (Cat)", "hash": "b1776aab71bed34e", "src": "db2@1.60.1.70124"}
+{"id": 417453, "field": "name", "en": "Thrash (Cat)", "hash": "b1776aab71bed34e", "src": "db2@1.60.1.70124"}
+{"id": 417453, "field": "description", "en": "Gain several new demonic abilities: Disrupt, Demon Charge, Demonic Howl, and Infernal Strike.\r\n\r\n$@spellicon412787\r\n$@spelldesc412787\r\n\r\n$@spellicon412788\r\n$@spelldesc412788\r\n\r\n$@spellicon412789\r\n$@spelldesc412789\r\n\r\n$@spellicon412790\r\n$@spelldesc412790", "hash": "52f942385fae9130", "src": "db2@1.60.1.70124"}
+{"id": 417463, "field": "name", "en": "Near Death Experience", "hash": "f46fe0a8e49ca3e6", "src": "db2@1.60.1.70124"}
+{"id": 417463, "field": "aura", "en": "Your brush with death temporarily reveals the spectral realm.", "hash": "aa93f5d07bc3c532", "src": "db2@1.60.1.70124"}
+{"id": 417627, "field": "name", "en": "Videre Elixir", "hash": "199a42fb2e8d3979", "src": "db2@1.60.1.70124"}
+{"id": 417627, "field": "description", "en": "Drink in the Tanaris Graveyard.", "hash": "95316d5e2317b255", "src": "db2@1.60.1.70124"}
+{"id": 417684, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70124"}
+{"id": 417743, "field": "name", "en": "Forge Documents", "hash": "41a41ff0fad9dbc1", "src": "db2@1.60.1.70124"}
+{"id": 417743, "field": "description", "en": "Create forged documents implicating the Scarlet Crusade against the Alliance.  Requires writing supplies found in Brill's town hall.", "hash": "d6127412dafd482c", "src": "db2@1.60.1.70124"}
+{"id": 417750, "field": "name", "en": "Jamie - Trade Letter for Rune", "hash": "a24de5f96a950af5", "src": "db2@1.60.1.70124"}
+{"id": 417803, "field": "name", "en": "Emberglow Vision", "hash": "9a80984257447d99", "src": "db2@1.60.1.70124"}
+{"id": 417803, "field": "aura", "en": "Your eyes are filled with spectral flame, granting sight beyond the mortal veil.", "hash": "75c01edff725730e", "src": "db2@1.60.1.70124"}
+{"id": 417856, "field": "name", "en": "Altar of the Light", "hash": "d14fefefcae25329", "src": "db2@1.60.1.70124"}
+{"id": 417856, "field": "aura", "en": "Pray to the Light to receive wisdom", "hash": "4fa0d13e3bc9710f", "src": "db2@1.60.1.70124"}
+{"id": 417858, "field": "name", "en": "Meditation on the Light", "hash": "464fb6a5bf8ce677", "src": "db2@1.60.1.70124"}

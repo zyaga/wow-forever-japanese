@@ -1,2 +1,2 @@
-{"id": 150544, "field": "name", "en": "Summon Random Favorite Mount", "hash": "78cf1257a54f6d4b", "src": "db2@1.60.1.70009"}
-{"id": 150544, "field": "description", "en": "Summons and dismisses a favorite mount that is usable in the current area. If you don't have any favorite mounts, it'll choose from your whole collection.", "hash": "3e39df1435fd0b46", "src": "db2@1.60.1.70009"}
+{"id": 150544, "field": "name", "en": "Summon Random Favorite Mount", "hash": "78cf1257a54f6d4b", "src": "db2@1.60.1.70124"}
+{"id": 150544, "field": "description", "en": "Summons and dismisses a favorite mount that is usable in the current area. If you don't have any favorite mounts, it'll choose from your whole collection.", "hash": "3e39df1435fd0b46", "src": "db2@1.60.1.70124"}

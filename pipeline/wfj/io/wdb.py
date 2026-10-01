@@ -135,6 +135,21 @@ LAYOUTS: tuple[Layout, ...] = (
         conditional_counts_at=(472, 476),
         objective_list_count_at=33,
     ),
+    # 1.60.1.70124 bumped only the build. dev/wdb_layout: layouts 69913 and 70009 (the same offsets) read every
+    # record of the full scan exactly, and layout 69722 reads none.
+    Layout(
+        build=70124,
+        evidence="Forever beta 1.60.1.70124, 2,325 of 2,325 records, the 69913 offsets",
+        objective_count_at=436,
+        objectives_at=488,
+        bits_at=None,
+        pad_bits=32,
+        zero_u32_at=(480, 484),
+        pre_list_count_at=64,
+        post_list_count_at=448,
+        conditional_counts_at=(472, 476),
+        objective_list_count_at=33,
+    ),
 )
 
 

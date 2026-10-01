@@ -28,10 +28,13 @@
 -- English for good. One Japanese is remembered with one English: a line whose Japanese another English already has
 -- stays English (so Alt never shows English the client did not write there), and past MAX_REMEMBERED pairs new lines
 -- stay English (a pair still in some history is never forgotten).
--- Font: each refresh re-initializes a visible line's font from the frame's font object (scrollingmessageframe.lua:
--- 642), and the chat fonts have no Japanese member, so the bundled face is put back on every visible line showing one
--- of our Japanese strings from the frame's AddOnDisplayRefreshedCallback (:164–175) with SetFont directly (a deferred
--- font retry would land on a pooled English line; in game), shrunk until it fits the line's laid-out height (fit).
+-- Font: the chat fonts have no Japanese member, so the bundled face is put on every visible line showing one of our
+-- Japanese strings from the frame's AddOnDisplayRefreshedCallback (:164–175) with SetFont directly (a deferred font
+-- retry would land on a pooled English line; in game), shrunk until it fits the line's laid-out height (fit). The
+-- visible lines are fixed rows the messages move through, and the refresh's re-init (SetFontObject with the frame's
+-- own object, scrollingmessageframe.lua:642, 716) does not undo our SetFont (in game: every row a Japanese line had
+-- passed showed later English in the bundled face). So each row given the bundled face is remembered and given the
+-- frame's font back directly (Font.restore) once it shows anything else.
 local _, WFJ = ...
 local ChatSystem = {}
 WFJ.ChatSystem = ChatSystem
@@ -377,11 +380,18 @@ end
 -- line spilled over the next one). SetFont directly, never Font.set: a refused font must not be retried later; the
 -- pooled line shows another message by then (in game: English lines turned small in the bundled face). → size set
 local MIN_SIZE = 8
-function ChatSystem.fit(line)
+local fonted = setmetatable({}, { __mode = "k" }) -- rows showing the bundled face
+-- `fontObject` (optional): the frame's own font, whose size a row starts from (a row may still hold a shrunk size)
+function ChatSystem.fit(line, fontObject)
   local _, size, flags = line:GetFont()
+  if type(fontObject) == "table" and type(fontObject.GetFont) == "function" then
+    local _, objSize, objFlags = fontObject:GetFont()
+    size, flags = objSize or size, objFlags or flags
+  end
   size, flags = size or WFJ.Font.DEFAULT_SIZE, flags or ""
   local room = type(line.GetHeight) == "function" and line:GetHeight() or 0
   if line:SetFont(WFJ.Font.PATH, size, flags) == false then return nil end
+  fonted[line] = true
   if type(line.GetStringHeight) ~= "function" or room <= 0 then return size end
   -- shrink only when the Japanese takes an extra line (its string height passes the room by more than half a line):
   -- the bundled face's line is a few pixels taller than the chat font's, and shrinking for that alone made
@@ -398,22 +408,23 @@ end
 -- callback. → lines set
 function ChatSystem.show(frame)
   local lines = type(frame) == "table" and type(frame.visibleLines) == "table" and frame.visibleLines or {}
+  local fontObject = type(frame) == "table" and type(frame.GetFontObject) == "function" and frame:GetFontObject() or nil
   local n = 0
   for _, line in ipairs(lines) do
     local info = type(line) == "table" and line.messageInfo or nil
     local ja = type(info) == "table" and info.message or nil
-    if type(ja) == "string" and not secret(ja) and jaToEn[ja] then
-      if not wanted(jaArea[ja]) then
-        line:SetText(jaToEn[ja])
-        if type(frame.GetFontObject) == "function" and type(line.SetFontObject) == "function" then
-          line:SetFontObject(frame:GetFontObject())
-        end
-      else
-        line:SetText(ja)
-        ChatSystem.fit(line)
+    local ours = type(ja) == "string" and not secret(ja) and jaToEn[ja] ~= nil
+    if ours and wanted(jaArea[ja]) then
+      line:SetText(ja)
+      ChatSystem.fit(line, fontObject)
+    else
+      if ours then line:SetText(jaToEn[ja]) end
+      -- a secret line is left to the client: the addon never touches one
+      if fonted[line] and not (type(ja) == "string" and secret(ja)) and WFJ.Font.restore(line, fontObject) then
+        fonted[line] = nil
       end
-      n = n + 1
     end
+    if ours then n = n + 1 end
   end
   return n
 end

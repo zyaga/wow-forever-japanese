@@ -20,7 +20,7 @@ local SYSTEM, EMOTE = 1, 5
 
 local function chatFrame()
   local frame = { history = {}, visibleLines = { Stub.fontString("") }, callbacks = {},
-    fontObject = { font = { path = "Fonts\\ARIALN.TTF", size = 14, flags = "" } } }
+    fontObject = Stub.fontObject("Fonts\\ARIALN.TTF", 14) }
   function frame:AddMessage(message, r, g, b, ...)
     self.history[#self.history + 1] = { message = message, r = r, g = g, b = b, extra = { ... } }
   end

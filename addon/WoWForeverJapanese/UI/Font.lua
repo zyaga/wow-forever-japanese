@@ -25,6 +25,17 @@ function Font.set(fs, path, size, flags)
   return ok
 end
 
+-- A pooled FontString the addon put the bundled face on, given back its owner's font. SetFontObject alone does not do
+-- it: re-applying the object the FontString already has leaves a SetFont made since in place (in game: chat lines
+-- kept the bundled face through the chat frame's own InitializeFontString, scrollingmessageframe.lua:642, 716), so
+-- the object's font is set directly. → true when set
+function Font.restore(fs, fontObject)
+  if type(fs) ~= "table" or type(fontObject) ~= "table" or type(fontObject.GetFont) ~= "function" then return false end
+  local path, size, flags = fontObject:GetFont()
+  if type(path) ~= "string" then return false end
+  return fs:SetFont(path, size, flags or "") ~= false
+end
+
 -- → the number still refused after one more try
 function Font.retryPending()
   local n = 0

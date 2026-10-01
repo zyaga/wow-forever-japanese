@@ -1,192 +1,192 @@
-{"id": 1248000, "field": "name", "en": "Flame Shock", "hash": "f8d691540a59fd4f", "src": "db2@1.60.1.70009"}
-{"id": 1248000, "field": "description", "en": "Instantly burns an enemy, then inflicts additional Fire damage every $t2 sec. for $d.", "hash": "574498d6cdfd81a3", "src": "db2@1.60.1.70009"}
-{"id": 1248000, "field": "aura", "en": "Fire damage inflicted every $t2 sec.", "hash": "fd7a76cfe4cff65d", "src": "db2@1.60.1.70009"}
-{"id": 1248001, "field": "name", "en": "Frost Shock", "hash": "807005f83700fd02", "src": "db2@1.60.1.70009"}
-{"id": 1248001, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70009"}
-{"id": 1248001, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70009"}
-{"id": 1248008, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70009"}
-{"id": 1248008, "field": "description", "en": "Inflicts $S1 fire damage to all players within $RAD# yards.", "hash": "4a8ac8d6ddf47ae9", "src": "db2@1.60.1.70009"}
-{"id": 1248071, "field": "name", "en": "(DNT) Summon Corrupted Spiders", "hash": "a9a39f017ce04eb6", "src": "db2@1.60.1.70009"}
-{"id": 1248083, "field": "name", "en": "(DNT) Corrupted Add Spawn Visuals", "hash": "f8e1ac9667bc2f98", "src": "db2@1.60.1.70009"}
-{"id": 1248093, "field": "name", "en": "(DNT) Summon Corrupted Wolves", "hash": "d08cad59bc36d30e", "src": "db2@1.60.1.70009"}
-{"id": 1248095, "field": "name", "en": "(DNT) Summon Corrupted Bear", "hash": "8f7bf996f1c1bc78", "src": "db2@1.60.1.70009"}
-{"id": 1248131, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70009"}
-{"id": 1248131, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70009"}
-{"id": 1248147, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70009"}
-{"id": 1248147, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting %S1 shadow damage.\r\n", "hash": "13de3bd4da40d6e8", "src": "db2@1.60.1.70009"}
-{"id": 1248148, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70009"}
-{"id": 1248148, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70009"}
-{"id": 1248148, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70009"}
-{"id": 1248152, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70009"}
-{"id": 1248152, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70009"}
-{"id": 1248187, "field": "name", "en": "DNT Kill Credit", "hash": "c2ff79355f5256a4", "src": "db2@1.60.1.70009"}
-{"id": 1248237, "field": "name", "en": "Lesser Spirit", "hash": "cfd7d40fd283caf7", "src": "db2@1.60.1.70009"}
-{"id": 1248239, "field": "name", "en": "Resistance - Fire", "hash": "917e81451157acb0", "src": "db2@1.60.1.70009"}
-{"id": 1248377, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248377, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "15786f05dbc1cd0f", "src": "db2@1.60.1.70009"}
-{"id": 1248378, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248378, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "bb13786479363b6d", "src": "db2@1.60.1.70009"}
-{"id": 1248379, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248379, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "132256a17bb15a65", "src": "db2@1.60.1.70009"}
-{"id": 1248380, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248380, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "6400f44afac14c27", "src": "db2@1.60.1.70009"}
-{"id": 1248381, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248381, "field": "description", "en": "$@spelldesc434 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "d9709707efe30854", "src": "db2@1.60.1.70009"}
-{"id": 1248382, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248382, "field": "description", "en": "$@spelldesc434 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "7f0ba06b8d5776b2", "src": "db2@1.60.1.70009"}
-{"id": 1248383, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248383, "field": "description", "en": "$@spelldesc434 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "e95545439a689511", "src": "db2@1.60.1.70009"}
-{"id": 1248384, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248384, "field": "description", "en": "$@spelldesc434 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "abfd6f44b223e96e", "src": "db2@1.60.1.70009"}
-{"id": 1248386, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248386, "field": "description", "en": "$@spelldesc435 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "9d68bf0e040443aa", "src": "db2@1.60.1.70009"}
-{"id": 1248387, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248387, "field": "description", "en": "$@spelldesc435 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "4303c872a178b1f7", "src": "db2@1.60.1.70009"}
-{"id": 1248388, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248388, "field": "description", "en": "$@spelldesc435 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "bf8833eab91fcfbd", "src": "db2@1.60.1.70009"}
-{"id": 1248389, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248389, "field": "description", "en": "$@spelldesc435 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "f3f9ea3e698686b5", "src": "db2@1.60.1.70009"}
-{"id": 1248390, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248390, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "f38930edc9033239", "src": "db2@1.60.1.70009"}
-{"id": 1248391, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248391, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "99243a516677a097", "src": "db2@1.60.1.70009"}
-{"id": 1248392, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248392, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "447a0287f1379cd2", "src": "db2@1.60.1.70009"}
-{"id": 1248393, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248393, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "0694303c6c7b246c", "src": "db2@1.60.1.70009"}
-{"id": 1248394, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248394, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "7b7980fbf145a8c3", "src": "db2@1.60.1.70009"}
-{"id": 1248395, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248395, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "21148a5f8eba1721", "src": "db2@1.60.1.70009"}
-{"id": 1248396, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248396, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "f0dfdfd02ea6123b", "src": "db2@1.60.1.70009"}
-{"id": 1248397, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248397, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "968d2630db405ee9", "src": "db2@1.60.1.70009"}
-{"id": 1248398, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248398, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "a3b4bbc7079e6be2", "src": "db2@1.60.1.70009"}
-{"id": 1248399, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248399, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "494fc52ba512da2f", "src": "db2@1.60.1.70009"}
-{"id": 1248400, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248400, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "db5889a96811e2f9", "src": "db2@1.60.1.70009"}
-{"id": 1248401, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248401, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "2cdc3cfd3ee2af90", "src": "db2@1.60.1.70009"}
-{"id": 1248403, "field": "name", "en": "Lesser Agility", "hash": "ce6c7903c88dda7e", "src": "db2@1.60.1.70009"}
-{"id": 1248406, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70009"}
-{"id": 1248406, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Stamina.", "hash": "f63ef4fbaa759f95", "src": "db2@1.60.1.70009"}
-{"id": 1248406, "field": "aura", "en": "Your Stamina is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "1704cd1d8db963a8", "src": "db2@1.60.1.70009"}
-{"id": 1248420, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70009"}
-{"id": 1248420, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Agility.", "hash": "2dc6f3c8d5a50621", "src": "db2@1.60.1.70009"}
-{"id": 1248420, "field": "aura", "en": "Your Agility is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "d1cc84d0e39a407b", "src": "db2@1.60.1.70009"}
-{"id": 1248421, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70009"}
-{"id": 1248421, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Intellect.", "hash": "5d940c67872cc2b4", "src": "db2@1.60.1.70009"}
-{"id": 1248421, "field": "aura", "en": "Your Intellect is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "a4a122787c91697f", "src": "db2@1.60.1.70009"}
-{"id": 1248422, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70009"}
-{"id": 1248422, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Strength.", "hash": "7ccc69e3fa995e89", "src": "db2@1.60.1.70009"}
-{"id": 1248422, "field": "aura", "en": "Your Strength is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "e443e8a2fa59efdc", "src": "db2@1.60.1.70009"}
-{"id": 1248437, "field": "name", "en": "Greater Agility", "hash": "ea10e9a443a08021", "src": "db2@1.60.1.70009"}
-{"id": 1248444, "field": "name", "en": "Greater Strength", "hash": "b7249e73ce765bec", "src": "db2@1.60.1.70009"}
-{"id": 1248458, "field": "name", "en": "Enchant Bracer - Minor Intellect", "hash": "4afd31aa133e756a", "src": "db2@1.60.1.70009"}
-{"id": 1248458, "field": "description", "en": "Permanently enchant bracers to give +3 Intellect.", "hash": "229d76ed92c34fb7", "src": "db2@1.60.1.70009"}
-{"id": 1248459, "field": "name", "en": "Enchant Bracer - Minor Healing Power", "hash": "2c5b8504d47a6889", "src": "db2@1.60.1.70009"}
-{"id": 1248459, "field": "description", "en": "Permanently enchant bracers so they increase the wearer's healing spells by up to 8 and damage spells by up to 3.", "hash": "3cbee28a3d25b5ba", "src": "db2@1.60.1.70009"}
-{"id": 1248460, "field": "name", "en": "Enchant Bracer - Lesser Agility", "hash": "33768020fc384925", "src": "db2@1.60.1.70009"}
-{"id": 1248460, "field": "description", "en": "Permanently enchant a bracer so it increases the wearer's Agility by 4.", "hash": "70ab3636385ebbea", "src": "db2@1.60.1.70009"}
-{"id": 1248461, "field": "name", "en": "Twisted Nether Wand", "hash": "3b65773cecce91d8", "src": "db2@1.60.1.70009"}
-{"id": 1248461, "field": "description", "en": "Creates a twisted nether wand.", "hash": "eed5c3cbd9d89a0b", "src": "db2@1.60.1.70009"}
-{"id": 1248471, "field": "name", "en": "Glaive Thrower", "hash": "87b532a9c48c30d2", "src": "db2@1.60.1.70009"}
-{"id": 1248471, "field": "description", "en": "Fire a massive glaive into the distance.", "hash": "0535a07cec552787", "src": "db2@1.60.1.70009"}
-{"id": 1248473, "field": "name", "en": "Fire Glaive", "hash": "e7fed51b2d241b17", "src": "db2@1.60.1.70009"}
-{"id": 1248473, "field": "description", "en": "Fire a massive glaive into the distance.", "hash": "0535a07cec552787", "src": "db2@1.60.1.70009"}
-{"id": 1248497, "field": "name", "en": "Enchant Bracer - Agility", "hash": "cb790132078f0d2f", "src": "db2@1.60.1.70009"}
-{"id": 1248497, "field": "description", "en": "Permanently enchant bracers to give +5 Agility.", "hash": "1ee5798271c41772", "src": "db2@1.60.1.70009"}
-{"id": 1248498, "field": "name", "en": "Enchant Bracer - Lesser Healing Power", "hash": "bc5269617a01ea26", "src": "db2@1.60.1.70009"}
-{"id": 1248498, "field": "description", "en": "Permanently enchant bracers to increase healing by up to 16 and damage by up to 6.", "hash": "da879bf8dcc2e4ef", "src": "db2@1.60.1.70009"}
-{"id": 1248500, "field": "name", "en": "Enchant Bracer - Greater Agility", "hash": "9e328bf04fd26747", "src": "db2@1.60.1.70009"}
-{"id": 1248500, "field": "description", "en": "Permanently enchant bracers to give +7 Agility.", "hash": "ef51ddb1aa6f31dd", "src": "db2@1.60.1.70009"}
-{"id": 1248505, "field": "name", "en": "Lesser Eternal Wand", "hash": "b1b1418d9d5ec77c", "src": "db2@1.60.1.70009"}
-{"id": 1248505, "field": "description", "en": "Creates a lesser eternal wand.", "hash": "ffd7096d0214505d", "src": "db2@1.60.1.70009"}
-{"id": 1248509, "field": "name", "en": "Dreambough Wand", "hash": "746c6a465f1c36bd", "src": "db2@1.60.1.70009"}
-{"id": 1248509, "field": "description", "en": "Creates a dreambough wand.", "hash": "928a8e569864e2b0", "src": "db2@1.60.1.70009"}
-{"id": 1248510, "field": "name", "en": "Enchant 2H Weapon - Lesser Agility", "hash": "2bcff47ae5488625", "src": "db2@1.60.1.70009"}
-{"id": 1248510, "field": "description", "en": "Permanently enchant a Two-handed Melee Weapon to grant +15 Agility.", "hash": "da2a27679367091c", "src": "db2@1.60.1.70009"}
-{"id": 1248511, "field": "name", "en": "Enchant 2H Weapon - Lesser Strength", "hash": "5be728103bdf77b2", "src": "db2@1.60.1.70009"}
-{"id": 1248511, "field": "description", "en": "Permanently enchant a Two-handed Melee Weapon to grant +15 Strength.", "hash": "b38fd5f84079d5f5", "src": "db2@1.60.1.70009"}
-{"id": 1248515, "field": "name", "en": "Greater Eternal Wand", "hash": "110f2ef72bb7e585", "src": "db2@1.60.1.70009"}
-{"id": 1248515, "field": "description", "en": "Creates a greater eternal wand.", "hash": "0e8f47c667f4f39c", "src": "db2@1.60.1.70009"}
-{"id": 1248528, "field": "name", "en": "Enchant Gloves - Advanced Skinning", "hash": "5ad989e3420dac9f", "src": "db2@1.60.1.70009"}
-{"id": 1248528, "field": "description", "en": "Permanently enchant gloves to grant +10 skinning skill.", "hash": "80bdd4f62efe96e2", "src": "db2@1.60.1.70009"}
-{"id": 1248530, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70009"}
-{"id": 1248599, "field": "name", "en": "Enchant Bracer - Superior Agility", "hash": "7d9bcf34e19c8443", "src": "db2@1.60.1.70009"}
-{"id": 1248599, "field": "description", "en": "Permanently enchant bracers to give +9 Agility.", "hash": "bfbe41e5e31a4c48", "src": "db2@1.60.1.70009"}
-{"id": 1248606, "field": "name", "en": "Increase Spell Dam 55", "hash": "4f9bcd1cd45f9dd6", "src": "db2@1.60.1.70009"}
-{"id": 1248606, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70009"}
-{"id": 1248607, "field": "name", "en": "Enchant 2H Weapon - Mighty Spell Power", "hash": "007939ca9c804894", "src": "db2@1.60.1.70009"}
-{"id": 1248607, "field": "description", "en": "Permanently enchant a two-handed melee weapon to increase damage and healing by up to 55.", "hash": "88dd3eb2f603a502", "src": "db2@1.60.1.70009"}
-{"id": 1248633, "field": "name", "en": "FX Test Aura", "hash": "d83a67b7b8f278d8", "src": "db2@1.60.1.70009"}
-{"id": 1248636, "field": "name", "en": "Enchant 2H Weapon - Mighty Healing Power", "hash": "848fae646aca664d", "src": "db2@1.60.1.70009"}
-{"id": 1248636, "field": "description", "en": "Permanently enchant a two-handed melee weapon to increase healing by up to 100 and damage by up to 34.", "hash": "a4cb193eda25b86d", "src": "db2@1.60.1.70009"}
-{"id": 1248637, "field": "name", "en": "Increase Healing 100", "hash": "77d27b55701169d8", "src": "db2@1.60.1.70009"}
-{"id": 1248637, "field": "description", "en": "Increases healing done by spells and effects by up to $s1 and damage done by up to $s2.", "hash": "ae344efae2f04550", "src": "db2@1.60.1.70009"}
-{"id": 1248640, "field": "name", "en": "Enchant Gloves - Superior Strength", "hash": "cfb8f3ede8976bf6", "src": "db2@1.60.1.70009"}
-{"id": 1248640, "field": "description", "en": "Permanently enchant gloves to increase Strength by 15.", "hash": "9e6712d7adcdbda4", "src": "db2@1.60.1.70009"}
-{"id": 1248645, "field": "name", "en": "Enchant Gloves - Natural Power", "hash": "2cd1631b693b7d44", "src": "db2@1.60.1.70009"}
-{"id": 1248645, "field": "description", "en": "Permanently enchant gloves to increase nature damage by up to 20.", "hash": "9247cedf7d8a14cf", "src": "db2@1.60.1.70009"}
-{"id": 1248647, "field": "name", "en": "Increase Nature Dam 20", "hash": "91a3cd89f2a1f8d7", "src": "db2@1.60.1.70009"}
-{"id": 1248647, "field": "description", "en": "Increases damage done by Nature spells and effects by up to $s1.", "hash": "679f95b352a617b7", "src": "db2@1.60.1.70009"}
-{"id": 1248650, "field": "name", "en": "Brilliant Wand", "hash": "e3ccb11fa774239d", "src": "db2@1.60.1.70009"}
-{"id": 1248650, "field": "description", "en": "Creates a brilliant wand.", "hash": "c506ba79e28bff90", "src": "db2@1.60.1.70009"}
-{"id": 1248661, "field": "name", "en": "Enchant Bracer - Superior Intellect", "hash": "8520ae4c05eecacb", "src": "db2@1.60.1.70009"}
-{"id": 1248661, "field": "description", "en": "Permanently enchant bracers to give +9 Intellect.", "hash": "38b82189cc4717f9", "src": "db2@1.60.1.70009"}
-{"id": 1248664, "field": "name", "en": "Deflection", "hash": "d94df94d6db1f2e3", "src": "db2@1.60.1.70009"}
-{"id": 1248665, "field": "name", "en": "Enchant Bracer - Superior Deflection", "hash": "6afd667f1dcd5532", "src": "db2@1.60.1.70009"}
-{"id": 1248665, "field": "description", "en": "Permanently enchant bracers to give +9 defense skill.", "hash": "31219d49a04b0770", "src": "db2@1.60.1.70009"}
-{"id": 1248668, "field": "name", "en": "Enchant 2H Weapon - Strength", "hash": "2dd89c7c728fa4cb", "src": "db2@1.60.1.70009"}
-{"id": 1248668, "field": "description", "en": "Permanently enchant a two-handed melee weapon to grant +25 Strength.", "hash": "e0bdfa3ae57153c0", "src": "db2@1.60.1.70009"}
-{"id": 1248672, "field": "name", "en": "[DNT] Rimtori Ritual Trigger", "hash": "12aa33b63606f2a6", "src": "db2@1.60.1.70009"}
-{"id": 1248682, "field": "name", "en": "Destroy Seals", "hash": "34ce5ff3aa706ae5", "src": "db2@1.60.1.70009"}
-{"id": 1248682, "field": "description", "en": "Break the seals, releasing their energy.", "hash": "faa7f8aa539a4e3f", "src": "db2@1.60.1.70009"}
-{"id": 1248687, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70009"}
-{"id": 1248687, "field": "description", "en": "$@spelldesc434 If you spend at least 10 seconds eating you will become well fed and gain $1248688s2% movement speed while in Westfall for $1248688d. $@spelldesc1243969", "hash": "c99a0e191db103e5", "src": "db2@1.60.1.70009"}
-{"id": 1248688, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70009"}
-{"id": 1248688, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your movement speed.", "hash": "b9353e68968857e1", "src": "db2@1.60.1.70009"}
-{"id": 1248688, "field": "aura", "en": "Your movement speed is increased by $w2% while in Westfall. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "a9c2d3373e66403d", "src": "db2@1.60.1.70009"}
-{"id": 1248703, "field": "name", "en": "Glimmering Staff", "hash": "80675b12847292e0", "src": "db2@1.60.1.70009"}
-{"id": 1248703, "field": "description", "en": "Creates a glimmering staff.", "hash": "3a29b4b602d40556", "src": "db2@1.60.1.70009"}
-{"id": 1248739, "field": "name", "en": "Soulstaff", "hash": "821b858eb125f173", "src": "db2@1.60.1.70009"}
-{"id": 1248739, "field": "description", "en": "Creates a soulstaff.", "hash": "dbc7085fac84be6a", "src": "db2@1.60.1.70009"}
-{"id": 1248745, "field": "name", "en": "Orb of Mystic Insight", "hash": "594325057729d75d", "src": "db2@1.60.1.70009"}
-{"id": 1248745, "field": "description", "en": "Creates an orb of mystic insight.", "hash": "4521e53d72db8c86", "src": "db2@1.60.1.70009"}
-{"id": 1248748, "field": "name", "en": "Orb of Souls", "hash": "834f08d72b348fc5", "src": "db2@1.60.1.70009"}
-{"id": 1248748, "field": "description", "en": "Creates an orb of souls.", "hash": "c9d693d649de01b9", "src": "db2@1.60.1.70009"}
-{"id": 1248751, "field": "name", "en": "Increased Spirit", "hash": "ef6e6958ceb59c16", "src": "db2@1.60.1.70009"}
-{"id": 1248751, "field": "description", "en": "Increases Spirit by $s1%.", "hash": "c3913d0e848baefe", "src": "db2@1.60.1.70009"}
-{"id": 1248752, "field": "name", "en": "Mystic Mushroom", "hash": "ea335f64aac292be", "src": "db2@1.60.1.70009"}
-{"id": 1248752, "field": "description", "en": "Creates a mystic mushroom.", "hash": "886051867e44b2ae", "src": "db2@1.60.1.70009"}
-{"id": 1248754, "field": "name", "en": "Tenets of the Silver Hand", "hash": "d73ffc2b3ab1c2e8", "src": "db2@1.60.1.70009"}
-{"id": 1248754, "field": "description", "en": "Creates a copy of the Tenets of the Silver Hand.", "hash": "45867a6633c33658", "src": "db2@1.60.1.70009"}
-{"id": 1248755, "field": "name", "en": "Polished Driftwood Icon", "hash": "19db5237c88033ac", "src": "db2@1.60.1.70009"}
-{"id": 1248755, "field": "description", "en": "Creates a polished driftwood icon.", "hash": "c8e486914ac7c6a1", "src": "db2@1.60.1.70009"}
-{"id": 1248756, "field": "name", "en": "Meditation", "hash": "8fdf9ff00a5a1690", "src": "db2@1.60.1.70009"}
-{"id": 1248756, "field": "description", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70009"}
-{"id": 1248757, "field": "name", "en": "Enchant Weapon - Insight", "hash": "f5670bcb71c92ee9", "src": "db2@1.60.1.70009"}
-{"id": 1248757, "field": "description", "en": "Permanently enchant a Melee Weapon to have a chance to grant Insight when you cast a spell, increasing Spirit by $1299796s1% for $1299796d.", "hash": "375e31e19bbaa88a", "src": "db2@1.60.1.70009"}
-{"id": 1248758, "field": "name", "en": "Insight", "hash": "8aa366b72d022d66", "src": "db2@1.60.1.70009"}
-{"id": 1248759, "field": "name", "en": "Recovery", "hash": "7d622eaf4ee234b3", "src": "db2@1.60.1.70009"}
-{"id": 1248759, "field": "description", "en": "Healed for $s1% of maximum health.", "hash": "7a940051ccd65c54", "src": "db2@1.60.1.70009"}
-{"id": 1248760, "field": "name", "en": "Enchant Weapon - Recovery", "hash": "1f7fa8fedaf9f766", "src": "db2@1.60.1.70009"}
-{"id": 1248760, "field": "description", "en": "Permanently enchant a Melee Weapon to trigger Recovery when you are Parried or Dodged, healing you for $1248759s1% of your maximum health. Cannot occur more often than once every $s1 sec.", "hash": "a502038cef5ef218", "src": "db2@1.60.1.70009"}
-{"id": 1248761, "field": "name", "en": "Recovery", "hash": "7d622eaf4ee234b3", "src": "db2@1.60.1.70009"}
-{"id": 1248802, "field": "name", "en": "Wind Spike", "hash": "c394d4a38c565ac3", "src": "db2@1.60.1.70009"}
-{"id": 1248802, "field": "description", "en": "Summons a spike of corrupted wind, inflicting nature damage.", "hash": "ee6b33f0f9231019", "src": "db2@1.60.1.70009"}
-{"id": 1248805, "field": "name", "en": "Enchant Weapon - Revelation", "hash": "3a08229327f599e6", "src": "db2@1.60.1.70009"}
-{"id": 1248805, "field": "description", "en": "Permanently enchant a Melee Weapon to have a chance to trigger Revelation when a non-periodic spell fails to critically strike. Revelation grants 100% increased critical strike chance to the next spell cast. Revelation's chance to trigger is diminished as your critical strike chance increases.", "hash": "85e7b4161511fe8b", "src": "db2@1.60.1.70009"}
-{"id": 1248806, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70009"}
-{"id": 1248808, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70009"}
-{"id": 1248808, "field": "aura", "en": "Critical strike chance with all spells and attacks increased by $s1%.", "hash": "9bebb88985b4c411", "src": "db2@1.60.1.70009"}
-{"id": 1248947, "field": "name", "en": "Fel-Tainted Spittle", "hash": "6b6b7117b534d91c", "src": "db2@1.60.1.70009"}
-{"id": 1248947, "field": "description", "en": "Slows the target and inflicts Nature damage over time.", "hash": "8d09196ce18bd9bc", "src": "db2@1.60.1.70009"}
-{"id": 1248956, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70009"}
-{"id": 1248974, "field": "name", "en": "Talons of Wrath", "hash": "e873feb00319be87", "src": "db2@1.60.1.70009"}
-{"id": 1248974, "field": "description", "en": "Creates talons of wrath.", "hash": "567735805b4e73c6", "src": "db2@1.60.1.70009"}
-{"id": 1248996, "field": "name", "en": "Improved Wrath", "hash": "f0a9fdee1330ebb5", "src": "db2@1.60.1.70009"}
-{"id": 1248996, "field": "description", "en": "Causes Wrath to have a $h% chance to restore $1302521s1 Mana.", "hash": "bb56b72c7660a9ea", "src": "db2@1.60.1.70009"}
+{"id": 1248000, "field": "name", "en": "Flame Shock", "hash": "f8d691540a59fd4f", "src": "db2@1.60.1.70124"}
+{"id": 1248000, "field": "description", "en": "Instantly burns an enemy, then inflicts additional Fire damage every $t2 sec. for $d.", "hash": "574498d6cdfd81a3", "src": "db2@1.60.1.70124"}
+{"id": 1248000, "field": "aura", "en": "Fire damage inflicted every $t2 sec.", "hash": "fd7a76cfe4cff65d", "src": "db2@1.60.1.70124"}
+{"id": 1248001, "field": "name", "en": "Frost Shock", "hash": "807005f83700fd02", "src": "db2@1.60.1.70124"}
+{"id": 1248001, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70124"}
+{"id": 1248001, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70124"}
+{"id": 1248008, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70124"}
+{"id": 1248008, "field": "description", "en": "Inflicts $S1 fire damage to all players within $RAD# yards.", "hash": "4a8ac8d6ddf47ae9", "src": "db2@1.60.1.70124"}
+{"id": 1248071, "field": "name", "en": "(DNT) Summon Corrupted Spiders", "hash": "a9a39f017ce04eb6", "src": "db2@1.60.1.70124"}
+{"id": 1248083, "field": "name", "en": "(DNT) Corrupted Add Spawn Visuals", "hash": "f8e1ac9667bc2f98", "src": "db2@1.60.1.70124"}
+{"id": 1248093, "field": "name", "en": "(DNT) Summon Corrupted Wolves", "hash": "d08cad59bc36d30e", "src": "db2@1.60.1.70124"}
+{"id": 1248095, "field": "name", "en": "(DNT) Summon Corrupted Bear", "hash": "8f7bf996f1c1bc78", "src": "db2@1.60.1.70124"}
+{"id": 1248131, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70124"}
+{"id": 1248131, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70124"}
+{"id": 1248147, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70124"}
+{"id": 1248147, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting %S1 shadow damage.\r\n", "hash": "13de3bd4da40d6e8", "src": "db2@1.60.1.70124"}
+{"id": 1248148, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70124"}
+{"id": 1248148, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70124"}
+{"id": 1248148, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70124"}
+{"id": 1248152, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70124"}
+{"id": 1248152, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70124"}
+{"id": 1248187, "field": "name", "en": "DNT Kill Credit", "hash": "c2ff79355f5256a4", "src": "db2@1.60.1.70124"}
+{"id": 1248237, "field": "name", "en": "Lesser Spirit", "hash": "cfd7d40fd283caf7", "src": "db2@1.60.1.70124"}
+{"id": 1248239, "field": "name", "en": "Resistance - Fire", "hash": "917e81451157acb0", "src": "db2@1.60.1.70124"}
+{"id": 1248377, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248377, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "15786f05dbc1cd0f", "src": "db2@1.60.1.70124"}
+{"id": 1248378, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248378, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "bb13786479363b6d", "src": "db2@1.60.1.70124"}
+{"id": 1248379, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248379, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "132256a17bb15a65", "src": "db2@1.60.1.70124"}
+{"id": 1248380, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248380, "field": "description", "en": "$@spelldesc433 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "6400f44afac14c27", "src": "db2@1.60.1.70124"}
+{"id": 1248381, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248381, "field": "description", "en": "$@spelldesc434 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "d9709707efe30854", "src": "db2@1.60.1.70124"}
+{"id": 1248382, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248382, "field": "description", "en": "$@spelldesc434 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "7f0ba06b8d5776b2", "src": "db2@1.60.1.70124"}
+{"id": 1248383, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248383, "field": "description", "en": "$@spelldesc434 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "e95545439a689511", "src": "db2@1.60.1.70124"}
+{"id": 1248384, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248384, "field": "description", "en": "$@spelldesc434 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "abfd6f44b223e96e", "src": "db2@1.60.1.70124"}
+{"id": 1248386, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248386, "field": "description", "en": "$@spelldesc435 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "9d68bf0e040443aa", "src": "db2@1.60.1.70124"}
+{"id": 1248387, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248387, "field": "description", "en": "$@spelldesc435 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "4303c872a178b1f7", "src": "db2@1.60.1.70124"}
+{"id": 1248388, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248388, "field": "description", "en": "$@spelldesc435 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "bf8833eab91fcfbd", "src": "db2@1.60.1.70124"}
+{"id": 1248389, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248389, "field": "description", "en": "$@spelldesc435 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "f3f9ea3e698686b5", "src": "db2@1.60.1.70124"}
+{"id": 1248390, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248390, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "f38930edc9033239", "src": "db2@1.60.1.70124"}
+{"id": 1248391, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248391, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "99243a516677a097", "src": "db2@1.60.1.70124"}
+{"id": 1248392, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248392, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "447a0287f1379cd2", "src": "db2@1.60.1.70124"}
+{"id": 1248393, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248393, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "0694303c6c7b246c", "src": "db2@1.60.1.70124"}
+{"id": 1248394, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248394, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "7b7980fbf145a8c3", "src": "db2@1.60.1.70124"}
+{"id": 1248395, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248395, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "21148a5f8eba1721", "src": "db2@1.60.1.70124"}
+{"id": 1248396, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248396, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "f0dfdfd02ea6123b", "src": "db2@1.60.1.70124"}
+{"id": 1248397, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248397, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "968d2630db405ee9", "src": "db2@1.60.1.70124"}
+{"id": 1248398, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248398, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 seconds eating you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "a3b4bbc7079e6be2", "src": "db2@1.60.1.70124"}
+{"id": 1248399, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248399, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 seconds eating you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "494fc52ba512da2f", "src": "db2@1.60.1.70124"}
+{"id": 1248400, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248400, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 seconds eating you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "db5889a96811e2f9", "src": "db2@1.60.1.70124"}
+{"id": 1248401, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248401, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 seconds eating you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "2cdc3cfd3ee2af90", "src": "db2@1.60.1.70124"}
+{"id": 1248403, "field": "name", "en": "Lesser Agility", "hash": "ce6c7903c88dda7e", "src": "db2@1.60.1.70124"}
+{"id": 1248406, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70124"}
+{"id": 1248406, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Stamina.", "hash": "f63ef4fbaa759f95", "src": "db2@1.60.1.70124"}
+{"id": 1248406, "field": "aura", "en": "Your Stamina is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "1704cd1d8db963a8", "src": "db2@1.60.1.70124"}
+{"id": 1248420, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70124"}
+{"id": 1248420, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Agility.", "hash": "2dc6f3c8d5a50621", "src": "db2@1.60.1.70124"}
+{"id": 1248420, "field": "aura", "en": "Your Agility is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "d1cc84d0e39a407b", "src": "db2@1.60.1.70124"}
+{"id": 1248421, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70124"}
+{"id": 1248421, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Intellect.", "hash": "5d940c67872cc2b4", "src": "db2@1.60.1.70124"}
+{"id": 1248421, "field": "aura", "en": "Your Intellect is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "a4a122787c91697f", "src": "db2@1.60.1.70124"}
+{"id": 1248422, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70124"}
+{"id": 1248422, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Strength.", "hash": "7ccc69e3fa995e89", "src": "db2@1.60.1.70124"}
+{"id": 1248422, "field": "aura", "en": "Your Strength is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "e443e8a2fa59efdc", "src": "db2@1.60.1.70124"}
+{"id": 1248437, "field": "name", "en": "Greater Agility", "hash": "ea10e9a443a08021", "src": "db2@1.60.1.70124"}
+{"id": 1248444, "field": "name", "en": "Greater Strength", "hash": "b7249e73ce765bec", "src": "db2@1.60.1.70124"}
+{"id": 1248458, "field": "name", "en": "Enchant Bracer - Minor Intellect", "hash": "4afd31aa133e756a", "src": "db2@1.60.1.70124"}
+{"id": 1248458, "field": "description", "en": "Permanently enchant bracers to give +3 Intellect.", "hash": "229d76ed92c34fb7", "src": "db2@1.60.1.70124"}
+{"id": 1248459, "field": "name", "en": "Enchant Bracer - Minor Healing Power", "hash": "2c5b8504d47a6889", "src": "db2@1.60.1.70124"}
+{"id": 1248459, "field": "description", "en": "Permanently enchant bracers so they increase the wearer's healing spells by up to 8 and damage spells by up to 3.", "hash": "3cbee28a3d25b5ba", "src": "db2@1.60.1.70124"}
+{"id": 1248460, "field": "name", "en": "Enchant Bracer - Lesser Agility", "hash": "33768020fc384925", "src": "db2@1.60.1.70124"}
+{"id": 1248460, "field": "description", "en": "Permanently enchant a bracer so it increases the wearer's Agility by 4.", "hash": "70ab3636385ebbea", "src": "db2@1.60.1.70124"}
+{"id": 1248461, "field": "name", "en": "Twisted Nether Wand", "hash": "3b65773cecce91d8", "src": "db2@1.60.1.70124"}
+{"id": 1248461, "field": "description", "en": "Creates a twisted nether wand.", "hash": "eed5c3cbd9d89a0b", "src": "db2@1.60.1.70124"}
+{"id": 1248471, "field": "name", "en": "Glaive Thrower", "hash": "87b532a9c48c30d2", "src": "db2@1.60.1.70124"}
+{"id": 1248471, "field": "description", "en": "Fire a massive glaive into the distance.", "hash": "0535a07cec552787", "src": "db2@1.60.1.70124"}
+{"id": 1248473, "field": "name", "en": "Fire Glaive", "hash": "e7fed51b2d241b17", "src": "db2@1.60.1.70124"}
+{"id": 1248473, "field": "description", "en": "Fire a massive glaive into the distance.", "hash": "0535a07cec552787", "src": "db2@1.60.1.70124"}
+{"id": 1248497, "field": "name", "en": "Enchant Bracer - Agility", "hash": "cb790132078f0d2f", "src": "db2@1.60.1.70124"}
+{"id": 1248497, "field": "description", "en": "Permanently enchant bracers to give +5 Agility.", "hash": "1ee5798271c41772", "src": "db2@1.60.1.70124"}
+{"id": 1248498, "field": "name", "en": "Enchant Bracer - Lesser Healing Power", "hash": "bc5269617a01ea26", "src": "db2@1.60.1.70124"}
+{"id": 1248498, "field": "description", "en": "Permanently enchant bracers to increase healing by up to 16 and damage by up to 6.", "hash": "da879bf8dcc2e4ef", "src": "db2@1.60.1.70124"}
+{"id": 1248500, "field": "name", "en": "Enchant Bracer - Greater Agility", "hash": "9e328bf04fd26747", "src": "db2@1.60.1.70124"}
+{"id": 1248500, "field": "description", "en": "Permanently enchant bracers to give +7 Agility.", "hash": "ef51ddb1aa6f31dd", "src": "db2@1.60.1.70124"}
+{"id": 1248505, "field": "name", "en": "Lesser Eternal Wand", "hash": "b1b1418d9d5ec77c", "src": "db2@1.60.1.70124"}
+{"id": 1248505, "field": "description", "en": "Creates a lesser eternal wand.", "hash": "ffd7096d0214505d", "src": "db2@1.60.1.70124"}
+{"id": 1248509, "field": "name", "en": "Dreambough Wand", "hash": "746c6a465f1c36bd", "src": "db2@1.60.1.70124"}
+{"id": 1248509, "field": "description", "en": "Creates a dreambough wand.", "hash": "928a8e569864e2b0", "src": "db2@1.60.1.70124"}
+{"id": 1248510, "field": "name", "en": "Enchant 2H Weapon - Lesser Agility", "hash": "2bcff47ae5488625", "src": "db2@1.60.1.70124"}
+{"id": 1248510, "field": "description", "en": "Permanently enchant a Two-handed Melee Weapon to grant +15 Agility.", "hash": "da2a27679367091c", "src": "db2@1.60.1.70124"}
+{"id": 1248511, "field": "name", "en": "Enchant 2H Weapon - Lesser Strength", "hash": "5be728103bdf77b2", "src": "db2@1.60.1.70124"}
+{"id": 1248511, "field": "description", "en": "Permanently enchant a Two-handed Melee Weapon to grant +15 Strength.", "hash": "b38fd5f84079d5f5", "src": "db2@1.60.1.70124"}
+{"id": 1248515, "field": "name", "en": "Greater Eternal Wand", "hash": "110f2ef72bb7e585", "src": "db2@1.60.1.70124"}
+{"id": 1248515, "field": "description", "en": "Creates a greater eternal wand.", "hash": "0e8f47c667f4f39c", "src": "db2@1.60.1.70124"}
+{"id": 1248528, "field": "name", "en": "Enchant Gloves - Advanced Skinning", "hash": "5ad989e3420dac9f", "src": "db2@1.60.1.70124"}
+{"id": 1248528, "field": "description", "en": "Permanently enchant gloves to grant +10 skinning skill.", "hash": "80bdd4f62efe96e2", "src": "db2@1.60.1.70124"}
+{"id": 1248530, "field": "name", "en": "Skinning", "hash": "037e8f0a74c325b3", "src": "db2@1.60.1.70124"}
+{"id": 1248599, "field": "name", "en": "Enchant Bracer - Superior Agility", "hash": "7d9bcf34e19c8443", "src": "db2@1.60.1.70124"}
+{"id": 1248599, "field": "description", "en": "Permanently enchant bracers to give +9 Agility.", "hash": "bfbe41e5e31a4c48", "src": "db2@1.60.1.70124"}
+{"id": 1248606, "field": "name", "en": "Increase Spell Dam 55", "hash": "4f9bcd1cd45f9dd6", "src": "db2@1.60.1.70124"}
+{"id": 1248606, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70124"}
+{"id": 1248607, "field": "name", "en": "Enchant 2H Weapon - Mighty Spell Power", "hash": "007939ca9c804894", "src": "db2@1.60.1.70124"}
+{"id": 1248607, "field": "description", "en": "Permanently enchant a two-handed melee weapon to increase damage and healing by up to 55.", "hash": "88dd3eb2f603a502", "src": "db2@1.60.1.70124"}
+{"id": 1248633, "field": "name", "en": "FX Test Aura", "hash": "d83a67b7b8f278d8", "src": "db2@1.60.1.70124"}
+{"id": 1248636, "field": "name", "en": "Enchant 2H Weapon - Mighty Healing Power", "hash": "848fae646aca664d", "src": "db2@1.60.1.70124"}
+{"id": 1248636, "field": "description", "en": "Permanently enchant a two-handed melee weapon to increase healing by up to 100 and damage by up to 34.", "hash": "a4cb193eda25b86d", "src": "db2@1.60.1.70124"}
+{"id": 1248637, "field": "name", "en": "Increase Healing 100", "hash": "77d27b55701169d8", "src": "db2@1.60.1.70124"}
+{"id": 1248637, "field": "description", "en": "Increases healing done by spells and effects by up to $s1 and damage done by up to $s2.", "hash": "ae344efae2f04550", "src": "db2@1.60.1.70124"}
+{"id": 1248640, "field": "name", "en": "Enchant Gloves - Superior Strength", "hash": "cfb8f3ede8976bf6", "src": "db2@1.60.1.70124"}
+{"id": 1248640, "field": "description", "en": "Permanently enchant gloves to increase Strength by 15.", "hash": "9e6712d7adcdbda4", "src": "db2@1.60.1.70124"}
+{"id": 1248645, "field": "name", "en": "Enchant Gloves - Natural Power", "hash": "2cd1631b693b7d44", "src": "db2@1.60.1.70124"}
+{"id": 1248645, "field": "description", "en": "Permanently enchant gloves to increase nature damage by up to 20.", "hash": "9247cedf7d8a14cf", "src": "db2@1.60.1.70124"}
+{"id": 1248647, "field": "name", "en": "Increase Nature Dam 20", "hash": "91a3cd89f2a1f8d7", "src": "db2@1.60.1.70124"}
+{"id": 1248647, "field": "description", "en": "Increases damage done by Nature spells and effects by up to $s1.", "hash": "679f95b352a617b7", "src": "db2@1.60.1.70124"}
+{"id": 1248650, "field": "name", "en": "Brilliant Wand", "hash": "e3ccb11fa774239d", "src": "db2@1.60.1.70124"}
+{"id": 1248650, "field": "description", "en": "Creates a brilliant wand.", "hash": "c506ba79e28bff90", "src": "db2@1.60.1.70124"}
+{"id": 1248661, "field": "name", "en": "Enchant Bracer - Superior Intellect", "hash": "8520ae4c05eecacb", "src": "db2@1.60.1.70124"}
+{"id": 1248661, "field": "description", "en": "Permanently enchant bracers to give +9 Intellect.", "hash": "38b82189cc4717f9", "src": "db2@1.60.1.70124"}
+{"id": 1248664, "field": "name", "en": "Deflection", "hash": "d94df94d6db1f2e3", "src": "db2@1.60.1.70124"}
+{"id": 1248665, "field": "name", "en": "Enchant Bracer - Superior Deflection", "hash": "6afd667f1dcd5532", "src": "db2@1.60.1.70124"}
+{"id": 1248665, "field": "description", "en": "Permanently enchant bracers to give +9 defense skill.", "hash": "31219d49a04b0770", "src": "db2@1.60.1.70124"}
+{"id": 1248668, "field": "name", "en": "Enchant 2H Weapon - Strength", "hash": "2dd89c7c728fa4cb", "src": "db2@1.60.1.70124"}
+{"id": 1248668, "field": "description", "en": "Permanently enchant a two-handed melee weapon to grant +25 Strength.", "hash": "e0bdfa3ae57153c0", "src": "db2@1.60.1.70124"}
+{"id": 1248672, "field": "name", "en": "[DNT] Rimtori Ritual Trigger", "hash": "12aa33b63606f2a6", "src": "db2@1.60.1.70124"}
+{"id": 1248682, "field": "name", "en": "Destroy Seals", "hash": "34ce5ff3aa706ae5", "src": "db2@1.60.1.70124"}
+{"id": 1248682, "field": "description", "en": "Break the seals, releasing their energy.", "hash": "faa7f8aa539a4e3f", "src": "db2@1.60.1.70124"}
+{"id": 1248687, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
+{"id": 1248687, "field": "description", "en": "$@spelldesc434 If you spend at least 10 seconds eating you will become well fed and gain $1248688s2% movement speed while in Westfall for $1248688d. $@spelldesc1243969", "hash": "c99a0e191db103e5", "src": "db2@1.60.1.70124"}
+{"id": 1248688, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70124"}
+{"id": 1248688, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your movement speed.", "hash": "b9353e68968857e1", "src": "db2@1.60.1.70124"}
+{"id": 1248688, "field": "aura", "en": "Your movement speed is increased by $w2% while in Westfall. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "a9c2d3373e66403d", "src": "db2@1.60.1.70124"}
+{"id": 1248703, "field": "name", "en": "Glimmering Staff", "hash": "80675b12847292e0", "src": "db2@1.60.1.70124"}
+{"id": 1248703, "field": "description", "en": "Creates a glimmering staff.", "hash": "3a29b4b602d40556", "src": "db2@1.60.1.70124"}
+{"id": 1248739, "field": "name", "en": "Soulstaff", "hash": "821b858eb125f173", "src": "db2@1.60.1.70124"}
+{"id": 1248739, "field": "description", "en": "Creates a soulstaff.", "hash": "dbc7085fac84be6a", "src": "db2@1.60.1.70124"}
+{"id": 1248745, "field": "name", "en": "Orb of Mystic Insight", "hash": "594325057729d75d", "src": "db2@1.60.1.70124"}
+{"id": 1248745, "field": "description", "en": "Creates an orb of mystic insight.", "hash": "4521e53d72db8c86", "src": "db2@1.60.1.70124"}
+{"id": 1248748, "field": "name", "en": "Orb of Souls", "hash": "834f08d72b348fc5", "src": "db2@1.60.1.70124"}
+{"id": 1248748, "field": "description", "en": "Creates an orb of souls.", "hash": "c9d693d649de01b9", "src": "db2@1.60.1.70124"}
+{"id": 1248751, "field": "name", "en": "Increased Spirit", "hash": "ef6e6958ceb59c16", "src": "db2@1.60.1.70124"}
+{"id": 1248751, "field": "description", "en": "Increases Spirit by $s1%.", "hash": "c3913d0e848baefe", "src": "db2@1.60.1.70124"}
+{"id": 1248752, "field": "name", "en": "Mystic Mushroom", "hash": "ea335f64aac292be", "src": "db2@1.60.1.70124"}
+{"id": 1248752, "field": "description", "en": "Creates a mystic mushroom.", "hash": "886051867e44b2ae", "src": "db2@1.60.1.70124"}
+{"id": 1248754, "field": "name", "en": "Tenets of the Silver Hand", "hash": "d73ffc2b3ab1c2e8", "src": "db2@1.60.1.70124"}
+{"id": 1248754, "field": "description", "en": "Creates a copy of the Tenets of the Silver Hand.", "hash": "45867a6633c33658", "src": "db2@1.60.1.70124"}
+{"id": 1248755, "field": "name", "en": "Polished Driftwood Icon", "hash": "19db5237c88033ac", "src": "db2@1.60.1.70124"}
+{"id": 1248755, "field": "description", "en": "Creates a polished driftwood icon.", "hash": "c8e486914ac7c6a1", "src": "db2@1.60.1.70124"}
+{"id": 1248756, "field": "name", "en": "Meditation", "hash": "8fdf9ff00a5a1690", "src": "db2@1.60.1.70124"}
+{"id": 1248756, "field": "description", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70124"}
+{"id": 1248757, "field": "name", "en": "Enchant Weapon - Insight", "hash": "f5670bcb71c92ee9", "src": "db2@1.60.1.70124"}
+{"id": 1248757, "field": "description", "en": "Permanently enchant a Melee Weapon to have a chance to grant Insight when you cast a spell, increasing Spirit by $1299796s1% for $1299796d.", "hash": "375e31e19bbaa88a", "src": "db2@1.60.1.70124"}
+{"id": 1248758, "field": "name", "en": "Insight", "hash": "8aa366b72d022d66", "src": "db2@1.60.1.70124"}
+{"id": 1248759, "field": "name", "en": "Recovery", "hash": "7d622eaf4ee234b3", "src": "db2@1.60.1.70124"}
+{"id": 1248759, "field": "description", "en": "Healed for $s1% of maximum health.", "hash": "7a940051ccd65c54", "src": "db2@1.60.1.70124"}
+{"id": 1248760, "field": "name", "en": "Enchant Weapon - Recovery", "hash": "1f7fa8fedaf9f766", "src": "db2@1.60.1.70124"}
+{"id": 1248760, "field": "description", "en": "Permanently enchant a Melee Weapon to trigger Recovery when you are Parried or Dodged, healing you for $1248759s1% of your maximum health. Cannot occur more often than once every $s1 sec.", "hash": "a502038cef5ef218", "src": "db2@1.60.1.70124"}
+{"id": 1248761, "field": "name", "en": "Recovery", "hash": "7d622eaf4ee234b3", "src": "db2@1.60.1.70124"}
+{"id": 1248802, "field": "name", "en": "Wind Spike", "hash": "c394d4a38c565ac3", "src": "db2@1.60.1.70124"}
+{"id": 1248802, "field": "description", "en": "Summons a spike of corrupted wind, inflicting nature damage.", "hash": "ee6b33f0f9231019", "src": "db2@1.60.1.70124"}
+{"id": 1248805, "field": "name", "en": "Enchant Weapon - Revelation", "hash": "3a08229327f599e6", "src": "db2@1.60.1.70124"}
+{"id": 1248805, "field": "description", "en": "Permanently enchant a Melee Weapon to have a chance to trigger Revelation when a non-periodic spell fails to critically strike. Revelation grants 100% increased critical strike chance to the next spell cast. Revelation's chance to trigger is diminished as your critical strike chance increases.", "hash": "85e7b4161511fe8b", "src": "db2@1.60.1.70124"}
+{"id": 1248806, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70124"}
+{"id": 1248808, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70124"}
+{"id": 1248808, "field": "aura", "en": "Critical strike chance with all spells and attacks increased by $s1%.", "hash": "9bebb88985b4c411", "src": "db2@1.60.1.70124"}
+{"id": 1248947, "field": "name", "en": "Fel-Tainted Spittle", "hash": "6b6b7117b534d91c", "src": "db2@1.60.1.70124"}
+{"id": 1248947, "field": "description", "en": "Slows the target and inflicts Nature damage over time.", "hash": "8d09196ce18bd9bc", "src": "db2@1.60.1.70124"}
+{"id": 1248956, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70124"}
+{"id": 1248974, "field": "name", "en": "Talons of Wrath", "hash": "e873feb00319be87", "src": "db2@1.60.1.70124"}
+{"id": 1248974, "field": "description", "en": "Creates talons of wrath.", "hash": "567735805b4e73c6", "src": "db2@1.60.1.70124"}
+{"id": 1248996, "field": "name", "en": "Improved Wrath", "hash": "f0a9fdee1330ebb5", "src": "db2@1.60.1.70124"}
+{"id": 1248996, "field": "description", "en": "Causes Wrath to have a $h% chance to restore $1302521s1 Mana.", "hash": "bb56b72c7660a9ea", "src": "db2@1.60.1.70124"}

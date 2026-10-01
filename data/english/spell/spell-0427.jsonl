@@ -1,114 +1,114 @@
-{"id": 427020, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70009"}
-{"id": 427020, "field": "description", "en": "Add $q2 Copper Bars to complete the shipment.", "hash": "470409ea2717c857", "src": "db2@1.60.1.70009"}
-{"id": 427061, "field": "name", "en": "Mantle of the Second War", "hash": "becb61e4d05a995d", "src": "db2@1.60.1.70009"}
-{"id": 427065, "field": "name", "en": "Wrecking Crew", "hash": "0a5db4896b8cc3ee", "src": "db2@1.60.1.70009"}
-{"id": 427065, "field": "description", "en": "Your melee critical hits Enrage you (activating abilities which require being Enraged), and increase Mortal Strike, Bloodthirst, and Shield Slam damage by $427066s1% for $427066d.", "hash": "be623cd5daae9a1a", "src": "db2@1.60.1.70009"}
-{"id": 427066, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70009"}
-{"id": 427066, "field": "aura", "en": "Enraged. Mortal Strike, Bloodthirst, and Shield Slam damage increased by $s1%.", "hash": "dbc6b71312735d08", "src": "db2@1.60.1.70009"}
-{"id": 427067, "field": "name", "en": "Taste for Blood", "hash": "4e3eb8341630b6a3", "src": "db2@1.60.1.70009"}
-{"id": 427067, "field": "description", "en": "Gain the Taste for Blood ability:\r\n\r\n$@spellicon426953\r\n$@spelldesc426953", "hash": "ce54e8fe36c7b493", "src": "db2@1.60.1.70009"}
-{"id": 427068, "field": "name", "en": "Vigilance", "hash": "c0f92c82a56502de", "src": "db2@1.60.1.70009"}
-{"id": 427068, "field": "description", "en": "Gain the Vigilance ability:\r\n\r\n$@spellicon426972\r\n$@spelldesc426972", "hash": "cddfed5ce6cadcc0", "src": "db2@1.60.1.70009"}
-{"id": 427069, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70009"}
-{"id": 427069, "field": "description", "en": "Gain the Shield Mastery ability:\r\n\r\n$@spellicon426980\r\n$@spelldesc426980", "hash": "c6e53f92f374cc52", "src": "db2@1.60.1.70009"}
-{"id": 427070, "field": "name", "en": "Rampage", "hash": "b6d01f9d97d6c1d9", "src": "db2@1.60.1.70009"}
-{"id": 427070, "field": "description", "en": "Gain the Rampage ability:\r\n\r\n$@spellicon426940\r\n$@spelldesc426940", "hash": "5f89a2b1a62d64c8", "src": "db2@1.60.1.70009"}
-{"id": 427073, "field": "name", "en": "Sword and Board", "hash": "b79456a9985f9af4", "src": "db2@1.60.1.70009"}
-{"id": 427073, "field": "description", "en": "Gain the Sword and Board ability:\r\n\r\n$@spellicon426978\r\n$@spelldesc426978", "hash": "9c4d937470aca535", "src": "db2@1.60.1.70009"}
-{"id": 427074, "field": "name", "en": "Wrecking Crew", "hash": "0a5db4896b8cc3ee", "src": "db2@1.60.1.70009"}
-{"id": 427074, "field": "description", "en": "Gain the Wrecking Crew ability:\r\n\r\n$@spellicon427065\r\n$@spelldesc427065", "hash": "a35782cc69078347", "src": "db2@1.60.1.70009"}
-{"id": 427076, "field": "name", "en": "Engrave Helm - Taste for Blood", "hash": "4db2f5b6b85bfbed", "src": "db2@1.60.1.70009"}
-{"id": 427076, "field": "description", "en": "Engrave your helm with the Taste for Blood rune:\r\n\r\n$@spellicon426953\r\n$@spelldesc426953", "hash": "372b5a4769d19c1f", "src": "db2@1.60.1.70009"}
-{"id": 427078, "field": "name", "en": "Engrave Helm - Vigilance", "hash": "21cb39aef27cf61a", "src": "db2@1.60.1.70009"}
-{"id": 427078, "field": "description", "en": "Engrave your helm with the Vigilance rune:\r\n\r\n$@spellicon426972\r\n$@spelldesc426972", "hash": "61f07c957255bdd7", "src": "db2@1.60.1.70009"}
-{"id": 427080, "field": "name", "en": "Engrave Helm - Shield Mastery", "hash": "68433c9cc72c2274", "src": "db2@1.60.1.70009"}
-{"id": 427080, "field": "description", "en": "Engrave your helm with the Shield Mastery rune:\r\n\r\n$@spellicon426980\r\n$@spelldesc426980", "hash": "9c5cde044f56d4d9", "src": "db2@1.60.1.70009"}
-{"id": 427081, "field": "name", "en": "Engrave Bracers - Rampage", "hash": "d0d5a652b345faaf", "src": "db2@1.60.1.70009"}
-{"id": 427081, "field": "description", "en": "Engrave your bracers with the Rampage rune:\r\n\r\n$@spellicon426940\r\n$@spelldesc426940", "hash": "0c6ff6332686c031", "src": "db2@1.60.1.70009"}
-{"id": 427082, "field": "name", "en": "Engrave Bracers - Sword and Board", "hash": "f271162445932ab4", "src": "db2@1.60.1.70009"}
-{"id": 427082, "field": "description", "en": "Engrave your bracers with the Sword and Board rune:\r\n\r\n$@spellicon426978\r\n$@spelldesc426978", "hash": "a197703f9981aa97", "src": "db2@1.60.1.70009"}
-{"id": 427084, "field": "name", "en": "Engrave Bracers - Wrecking Crew", "hash": "6a3ac7fadf273896", "src": "db2@1.60.1.70009"}
-{"id": 427084, "field": "description", "en": "Engrave your bracers with the Wrecking Crew rune:\r\n\r\n$@spellicon427065\r\n$@spelldesc427065", "hash": "5e77eb3f63148676", "src": "db2@1.60.1.70009"}
-{"id": 427086, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70009"}
-{"id": 427086, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $s1% increased health and $s2% increased damage per Keeper of the Grove living in her army.", "hash": "c3e84c43f61daeb7", "src": "db2@1.60.1.70009"}
-{"id": 427087, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70009"}
-{"id": 427087, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427086s1% increased health and $427086s2% increased damage per Keeper of the Grove living in her army.", "hash": "36cb3ece10fef023", "src": "db2@1.60.1.70009"}
-{"id": 427088, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70009"}
-{"id": 427088, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427086s1% increased health and $427086s2% increased damage per Keeper of the Grove living in her army.", "hash": "36cb3ece10fef023", "src": "db2@1.60.1.70009"}
-{"id": 427089, "field": "name", "en": "Battlemaster Supreme", "hash": "fbb168b0127d94c5", "src": "db2@1.60.1.70009"}
-{"id": 427089, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $427089s1% increased health and $427089s2% increased damage per Blade Master living in his army.", "hash": "4d4580bdbe32560d", "src": "db2@1.60.1.70009"}
-{"id": 427090, "field": "name", "en": "Battlemaster Supreme", "hash": "fbb168b0127d94c5", "src": "db2@1.60.1.70009"}
-{"id": 427090, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $427089s1% increased health and $427089s2% increased damage per Blade Master living in his army.", "hash": "4d4580bdbe32560d", "src": "db2@1.60.1.70009"}
-{"id": 427091, "field": "name", "en": "Battlemaster Supreme", "hash": "fbb168b0127d94c5", "src": "db2@1.60.1.70009"}
-{"id": 427091, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $427089s1% increased health and $427089s2% increased damage per Blade Master living in his army.", "hash": "4d4580bdbe32560d", "src": "db2@1.60.1.70009"}
-{"id": 427116, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70009"}
-{"id": 427116, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Keeper of the Grove in the Priestess's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "4a3e575961a3c25e", "src": "db2@1.60.1.70009"}
-{"id": 427117, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70009"}
-{"id": 427117, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Keeper of the Grove in the Priestess's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "4a3e575961a3c25e", "src": "db2@1.60.1.70009"}
-{"id": 427118, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70009"}
-{"id": 427118, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Keeper of the Grove in the Priestess's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "4a3e575961a3c25e", "src": "db2@1.60.1.70009"}
-{"id": 427119, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70009"}
-{"id": 427119, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Blade Master in the Far Seer's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "89fb86da064d000a", "src": "db2@1.60.1.70009"}
-{"id": 427120, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70009"}
-{"id": 427120, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Blade Master in the Far Seer's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "89fb86da064d000a", "src": "db2@1.60.1.70009"}
-{"id": 427121, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70009"}
-{"id": 427121, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Blade Master in the Far Seer's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "89fb86da064d000a", "src": "db2@1.60.1.70009"}
-{"id": 427123, "field": "name", "en": "S03 - Ashenvale PvP Event - Leader Area Buff - Alliance Power Level Controller", "hash": "79c95f9ac952a9b2", "src": "db2@1.60.1.70009"}
-{"id": 427123, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427116s1% increased health and $427116s2% increased damage per living Keeper of the Grove in her army.", "hash": "270bb4b9586f7133", "src": "db2@1.60.1.70009"}
-{"id": 427143, "field": "name", "en": "Curse of Vulnerability", "hash": "55ca9301e12bec71", "src": "db2@1.60.1.70009"}
-{"id": 427143, "field": "description", "en": "Increases the all damage taken by an enemy by $s1 for $d.", "hash": "32a4af771b58412f", "src": "db2@1.60.1.70009"}
-{"id": 427143, "field": "aura", "en": "All damage taken is increased by $s1.", "hash": "b418110cdf511144", "src": "db2@1.60.1.70009"}
-{"id": 427144, "field": "name", "en": "Void Backlash", "hash": "6a52e46ea214795e", "src": "db2@1.60.1.70009"}
-{"id": 427144, "field": "description", "en": "This item is infused with the raw power of the Void. When the bearer is attacked this item has a high chance of inflicting a terrible curse, causing the attacker to take additional damage from all sources for 15 seconds. \r\n", "hash": "21583d700966d522", "src": "db2@1.60.1.70009"}
-{"id": 427592, "field": "name", "en": "Scarlet Initiate's Uniform", "hash": "987e19a0ba77711b", "src": "db2@1.60.1.70009"}
-{"id": 427592, "field": "description", "en": "Disguise yourself as a member of the Scarlet Crusade. Suspicious activity will break the disguise.", "hash": "6fd6b5d5739f7372", "src": "db2@1.60.1.70009"}
-{"id": 427592, "field": "aura", "en": "Disguised as a member of the Scarlet Monastery.", "hash": "cd5bf8dcc7f06cb6", "src": "db2@1.60.1.70009"}
-{"id": 427625, "field": "name", "en": "Corrosion", "hash": "116799f31fe367f3", "src": "db2@1.60.1.70009"}
-{"id": 427625, "field": "aura", "en": "Deals $w1 Nature damage every $t1 sec.", "hash": "257a061ced38097c", "src": "db2@1.60.1.70009"}
-{"id": 427711, "field": "name", "en": "[DNT] Graveyard Bench Trigger A", "hash": "46cf9fe812e76cf5", "src": "db2@1.60.1.70009"}
-{"id": 427712, "field": "name", "en": "Pandemic", "hash": "c707b485b666732f", "src": "db2@1.60.1.70009"}
-{"id": 427712, "field": "description", "en": "Increases the critical strike damage bonus of your Corruption, Bane of Agony, Bane of Doom, Drain Soul, Drain Life, Siphon Life, and Wrack spells by $m1%.", "hash": "860f8d69de98be1b", "src": "db2@1.60.1.70009"}
-{"id": 427713, "field": "name", "en": "Backdraft", "hash": "31cabea74b49648e", "src": "db2@1.60.1.70009"}
-{"id": 427713, "field": "description", "en": "Your Conflagrate ability also grants $427714s1% spellcasting haste for $427714d and no longer consumes Immolate.", "hash": "93b0d8a3aa12107a", "src": "db2@1.60.1.70009"}
-{"id": 427714, "field": "name", "en": "Backdraft", "hash": "31cabea74b49648e", "src": "db2@1.60.1.70009"}
-{"id": 427714, "field": "aura", "en": "Spellcasting haste increased by $w1%.", "hash": "0f60ce954fa84da4", "src": "db2@1.60.1.70009"}
-{"id": 427715, "field": "name", "en": "[DNT] Graveyard Bench Trigger B", "hash": "46cf9fe912e76cf6", "src": "db2@1.60.1.70009"}
-{"id": 427717, "field": "name", "en": "Unstable Affliction", "hash": "c2560853f19861b4", "src": "db2@1.60.1.70009"}
-{"id": 427717, "field": "description", "en": "Shadow energy slowly destroys the target, causing $o1 damage over $d. In addition, if the Unstable Affliction is dispelled it will cause ${$m1*$m3/100} damage to the dispeller and silence them for $427719d. Only one Unstable Affliction or Immolate per Warlock can be active on any one target.", "hash": "af4118210f851afb", "src": "db2@1.60.1.70009"}
-{"id": 427717, "field": "aura", "en": "$w1 Shadow damage every $t1 sec.  If dispelled, will cause ${$w1*$m3/100} damage to the dispeller and silence them for $427719d.", "hash": "88bbd8b640510770", "src": "db2@1.60.1.70009"}
-{"id": 427718, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70009"}
-{"id": 427719, "field": "name", "en": "Unstable Affliction", "hash": "c2560853f19861b4", "src": "db2@1.60.1.70009"}
-{"id": 427719, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.70009"}
-{"id": 427725, "field": "name", "en": "Immolation Aura", "hash": "cc524f5d6efe9a15", "src": "db2@1.60.1.70009"}
-{"id": 427726, "field": "name", "en": "Immolation Aura", "hash": "cc524f5d6efe9a15", "src": "db2@1.60.1.70009"}
-{"id": 427726, "field": "description", "en": "Burns nearby enemies for ${$<power>*$427725m1/100} damage every time an enemy makes a melee attack against you (no more than once per sec), reduces all magic damage taken by $s2%, and increases Fire damage done by $s3%. Lasts $d.", "hash": "fcb8261995be6656", "src": "db2@1.60.1.70009"}
-{"id": 427726, "field": "aura", "en": "Burning nearby enemies for $w1 damage when attacked, taking $s2% reduced magic damage, and dealing $s3% increased Fire damage.", "hash": "2cf4f599a028309e", "src": "db2@1.60.1.70009"}
-{"id": 427733, "field": "name", "en": "Summon Felguard", "hash": "7f9db81598c5d87b", "src": "db2@1.60.1.70009"}
-{"id": 427733, "field": "description", "en": "Summons a Felguard under the command of the Warlock.\r\n\r\nThe Felguard benefits from all talents and effects that trigger from or benefit any of your other Demon minions.", "hash": "81f505fa04415ab8", "src": "db2@1.60.1.70009"}
-{"id": 427735, "field": "name", "en": "Summoned Felguard", "hash": "1891d27c4ae7906c", "src": "db2@1.60.1.70009"}
-{"id": 427739, "field": "name", "en": "Master Demonologist", "hash": "bae30ec7879957bd", "src": "db2@1.60.1.70009"}
-{"id": 427742, "field": "name", "en": "Anguish", "hash": "14057330b620e0f4", "src": "db2@1.60.1.70009"}
-{"id": 427742, "field": "description", "en": "Taunts the creature, increasing the chance that it will attack the Felguard.", "hash": "f8aa5bd9ce303b55", "src": "db2@1.60.1.70009"}
-{"id": 427743, "field": "name", "en": "Avoidance", "hash": "5e1898dc338fc6b7", "src": "db2@1.60.1.70009"}
-{"id": 427744, "field": "name", "en": "Cleave", "hash": "490af681ad18ef1f", "src": "db2@1.60.1.70009"}
-{"id": 427744, "field": "description", "en": "A sweeping attack that does the Felguard's weapon damage plus $s1 to the target and his nearest ally.", "hash": "1bb4f76bc6a3bd81", "src": "db2@1.60.1.70009"}
-{"id": 427745, "field": "name", "en": "Intercept", "hash": "2aaa58fc5e30fec4", "src": "db2@1.60.1.70009"}
-{"id": 427745, "field": "description", "en": "Charge an enemy, causing $427746s2 damage and stunning it for $427746d.", "hash": "481312e40b2b25de", "src": "db2@1.60.1.70009"}
-{"id": 427746, "field": "name", "en": "Intercept Stun", "hash": "c1b19ccbcef20aa6", "src": "db2@1.60.1.70009"}
-{"id": 427746, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70009"}
-{"id": 427748, "field": "name", "en": "Summon Felguard", "hash": "7f9db81598c5d87b", "src": "db2@1.60.1.70009"}
-{"id": 427750, "field": "name", "en": "Cleansing Pool", "hash": "5e235fea6beaa6c5", "src": "db2@1.60.1.70009"}
-{"id": 427751, "field": "name", "en": "Cleansing Pool", "hash": "5e235fea6beaa6c5", "src": "db2@1.60.1.70009"}
-{"id": 427751, "field": "aura", "en": "The cleansing waters wash off any impurities.", "hash": "3316bbef73b1af21", "src": "db2@1.60.1.70009"}
-{"id": 427752, "field": "name", "en": "Cleansing Pool", "hash": "5e235fea6beaa6c5", "src": "db2@1.60.1.70009"}
-{"id": 427753, "field": "name", "en": "Corrosion", "hash": "116799f31fe367f3", "src": "db2@1.60.1.70009"}
-{"id": 427754, "field": "name", "en": "Mirror Corrosion Elemental", "hash": "7382b11768ff7ff3", "src": "db2@1.60.1.70009"}
-{"id": 427755, "field": "name", "en": "Mirror Corrosion Elemental", "hash": "7382b11768ff7ff3", "src": "db2@1.60.1.70009"}
-{"id": 427774, "field": "name", "en": "Crushing Darkness", "hash": "4e0d10141c66617f", "src": "db2@1.60.1.70009"}
-{"id": 427774, "field": "description", "en": "You feel an otherworldly, crushing pressure.", "hash": "9dda12300ab4d49a", "src": "db2@1.60.1.70009"}
-{"id": 427774, "field": "aura", "en": "A crushing darkness envelops you...", "hash": "7e9d050537a15f3e", "src": "db2@1.60.1.70009"}
-{"id": 427780, "field": "name", "en": "S03 - Rogue 35 Quest Start", "hash": "1515b5eabd0402c6", "src": "db2@1.60.1.70009"}
-{"id": 427781, "field": "name", "en": "S03 - Rogue 35 Quest Reward", "hash": "ca3853a31f091187", "src": "db2@1.60.1.70009"}
-{"id": 427859, "field": "name", "en": "Mysterious Traveler", "hash": "88e4d7571a940794", "src": "db2@1.60.1.70009"}
-{"id": 427860, "field": "name", "en": "Raszel Ander", "hash": "2dd740848c0c768d", "src": "db2@1.60.1.70009"}
-{"id": 427931, "field": "name", "en": "[DNT] S03 - Rogue 35 Quest - Remove Quest Items", "hash": "38edf9f4f644b922", "src": "db2@1.60.1.70009"}
+{"id": 427020, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
+{"id": 427020, "field": "description", "en": "Add $q2 Copper Bars to complete the shipment.", "hash": "470409ea2717c857", "src": "db2@1.60.1.70124"}
+{"id": 427061, "field": "name", "en": "Mantle of the Second War", "hash": "becb61e4d05a995d", "src": "db2@1.60.1.70124"}
+{"id": 427065, "field": "name", "en": "Wrecking Crew", "hash": "0a5db4896b8cc3ee", "src": "db2@1.60.1.70124"}
+{"id": 427065, "field": "description", "en": "Your melee critical hits Enrage you (activating abilities which require being Enraged), and increase Mortal Strike, Bloodthirst, and Shield Slam damage by $427066s1% for $427066d.", "hash": "be623cd5daae9a1a", "src": "db2@1.60.1.70124"}
+{"id": 427066, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70124"}
+{"id": 427066, "field": "aura", "en": "Enraged. Mortal Strike, Bloodthirst, and Shield Slam damage increased by $s1%.", "hash": "dbc6b71312735d08", "src": "db2@1.60.1.70124"}
+{"id": 427067, "field": "name", "en": "Taste for Blood", "hash": "4e3eb8341630b6a3", "src": "db2@1.60.1.70124"}
+{"id": 427067, "field": "description", "en": "Gain the Taste for Blood ability:\r\n\r\n$@spellicon426953\r\n$@spelldesc426953", "hash": "ce54e8fe36c7b493", "src": "db2@1.60.1.70124"}
+{"id": 427068, "field": "name", "en": "Vigilance", "hash": "c0f92c82a56502de", "src": "db2@1.60.1.70124"}
+{"id": 427068, "field": "description", "en": "Gain the Vigilance ability:\r\n\r\n$@spellicon426972\r\n$@spelldesc426972", "hash": "cddfed5ce6cadcc0", "src": "db2@1.60.1.70124"}
+{"id": 427069, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70124"}
+{"id": 427069, "field": "description", "en": "Gain the Shield Mastery ability:\r\n\r\n$@spellicon426980\r\n$@spelldesc426980", "hash": "c6e53f92f374cc52", "src": "db2@1.60.1.70124"}
+{"id": 427070, "field": "name", "en": "Rampage", "hash": "b6d01f9d97d6c1d9", "src": "db2@1.60.1.70124"}
+{"id": 427070, "field": "description", "en": "Gain the Rampage ability:\r\n\r\n$@spellicon426940\r\n$@spelldesc426940", "hash": "5f89a2b1a62d64c8", "src": "db2@1.60.1.70124"}
+{"id": 427073, "field": "name", "en": "Sword and Board", "hash": "b79456a9985f9af4", "src": "db2@1.60.1.70124"}
+{"id": 427073, "field": "description", "en": "Gain the Sword and Board ability:\r\n\r\n$@spellicon426978\r\n$@spelldesc426978", "hash": "9c4d937470aca535", "src": "db2@1.60.1.70124"}
+{"id": 427074, "field": "name", "en": "Wrecking Crew", "hash": "0a5db4896b8cc3ee", "src": "db2@1.60.1.70124"}
+{"id": 427074, "field": "description", "en": "Gain the Wrecking Crew ability:\r\n\r\n$@spellicon427065\r\n$@spelldesc427065", "hash": "a35782cc69078347", "src": "db2@1.60.1.70124"}
+{"id": 427076, "field": "name", "en": "Engrave Helm - Taste for Blood", "hash": "4db2f5b6b85bfbed", "src": "db2@1.60.1.70124"}
+{"id": 427076, "field": "description", "en": "Engrave your helm with the Taste for Blood rune:\r\n\r\n$@spellicon426953\r\n$@spelldesc426953", "hash": "372b5a4769d19c1f", "src": "db2@1.60.1.70124"}
+{"id": 427078, "field": "name", "en": "Engrave Helm - Vigilance", "hash": "21cb39aef27cf61a", "src": "db2@1.60.1.70124"}
+{"id": 427078, "field": "description", "en": "Engrave your helm with the Vigilance rune:\r\n\r\n$@spellicon426972\r\n$@spelldesc426972", "hash": "61f07c957255bdd7", "src": "db2@1.60.1.70124"}
+{"id": 427080, "field": "name", "en": "Engrave Helm - Shield Mastery", "hash": "68433c9cc72c2274", "src": "db2@1.60.1.70124"}
+{"id": 427080, "field": "description", "en": "Engrave your helm with the Shield Mastery rune:\r\n\r\n$@spellicon426980\r\n$@spelldesc426980", "hash": "9c5cde044f56d4d9", "src": "db2@1.60.1.70124"}
+{"id": 427081, "field": "name", "en": "Engrave Bracers - Rampage", "hash": "d0d5a652b345faaf", "src": "db2@1.60.1.70124"}
+{"id": 427081, "field": "description", "en": "Engrave your bracers with the Rampage rune:\r\n\r\n$@spellicon426940\r\n$@spelldesc426940", "hash": "0c6ff6332686c031", "src": "db2@1.60.1.70124"}
+{"id": 427082, "field": "name", "en": "Engrave Bracers - Sword and Board", "hash": "f271162445932ab4", "src": "db2@1.60.1.70124"}
+{"id": 427082, "field": "description", "en": "Engrave your bracers with the Sword and Board rune:\r\n\r\n$@spellicon426978\r\n$@spelldesc426978", "hash": "a197703f9981aa97", "src": "db2@1.60.1.70124"}
+{"id": 427084, "field": "name", "en": "Engrave Bracers - Wrecking Crew", "hash": "6a3ac7fadf273896", "src": "db2@1.60.1.70124"}
+{"id": 427084, "field": "description", "en": "Engrave your bracers with the Wrecking Crew rune:\r\n\r\n$@spellicon427065\r\n$@spelldesc427065", "hash": "5e77eb3f63148676", "src": "db2@1.60.1.70124"}
+{"id": 427086, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70124"}
+{"id": 427086, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $s1% increased health and $s2% increased damage per Keeper of the Grove living in her army.", "hash": "c3e84c43f61daeb7", "src": "db2@1.60.1.70124"}
+{"id": 427087, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70124"}
+{"id": 427087, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427086s1% increased health and $427086s2% increased damage per Keeper of the Grove living in her army.", "hash": "36cb3ece10fef023", "src": "db2@1.60.1.70124"}
+{"id": 427088, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70124"}
+{"id": 427088, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427086s1% increased health and $427086s2% increased damage per Keeper of the Grove living in her army.", "hash": "36cb3ece10fef023", "src": "db2@1.60.1.70124"}
+{"id": 427089, "field": "name", "en": "Battlemaster Supreme", "hash": "fbb168b0127d94c5", "src": "db2@1.60.1.70124"}
+{"id": 427089, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $427089s1% increased health and $427089s2% increased damage per Blade Master living in his army.", "hash": "4d4580bdbe32560d", "src": "db2@1.60.1.70124"}
+{"id": 427090, "field": "name", "en": "Battlemaster Supreme", "hash": "fbb168b0127d94c5", "src": "db2@1.60.1.70124"}
+{"id": 427090, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $427089s1% increased health and $427089s2% increased damage per Blade Master living in his army.", "hash": "4d4580bdbe32560d", "src": "db2@1.60.1.70124"}
+{"id": 427091, "field": "name", "en": "Battlemaster Supreme", "hash": "fbb168b0127d94c5", "src": "db2@1.60.1.70124"}
+{"id": 427091, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $427089s1% increased health and $427089s2% increased damage per Blade Master living in his army.", "hash": "4d4580bdbe32560d", "src": "db2@1.60.1.70124"}
+{"id": 427116, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70124"}
+{"id": 427116, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Keeper of the Grove in the Priestess's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "4a3e575961a3c25e", "src": "db2@1.60.1.70124"}
+{"id": 427117, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70124"}
+{"id": 427117, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Keeper of the Grove in the Priestess's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "4a3e575961a3c25e", "src": "db2@1.60.1.70124"}
+{"id": 427118, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70124"}
+{"id": 427118, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Keeper of the Grove in the Priestess's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "4a3e575961a3c25e", "src": "db2@1.60.1.70124"}
+{"id": 427119, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70124"}
+{"id": 427119, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Blade Master in the Far Seer's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "89fb86da064d000a", "src": "db2@1.60.1.70124"}
+{"id": 427120, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70124"}
+{"id": 427120, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Blade Master in the Far Seer's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "89fb86da064d000a", "src": "db2@1.60.1.70124"}
+{"id": 427121, "field": "name", "en": "Battlefield Genius", "hash": "fa2171364b240456", "src": "db2@1.60.1.70124"}
+{"id": 427121, "field": "aura", "en": "Allies within $a1 yards of the Far Seer gain $s1% increased health and $s2% increased damage.\r\n\r\nThese values are increased by each living Blade Master in the Far Seer's army, each one granting $427116s1% increased health and $427116s2% increased damage.", "hash": "89fb86da064d000a", "src": "db2@1.60.1.70124"}
+{"id": 427123, "field": "name", "en": "S03 - Ashenvale PvP Event - Leader Area Buff - Alliance Power Level Controller", "hash": "79c95f9ac952a9b2", "src": "db2@1.60.1.70124"}
+{"id": 427123, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427116s1% increased health and $427116s2% increased damage per living Keeper of the Grove in her army.", "hash": "270bb4b9586f7133", "src": "db2@1.60.1.70124"}
+{"id": 427143, "field": "name", "en": "Curse of Vulnerability", "hash": "55ca9301e12bec71", "src": "db2@1.60.1.70124"}
+{"id": 427143, "field": "description", "en": "Increases the all damage taken by an enemy by $s1 for $d.", "hash": "32a4af771b58412f", "src": "db2@1.60.1.70124"}
+{"id": 427143, "field": "aura", "en": "All damage taken is increased by $s1.", "hash": "b418110cdf511144", "src": "db2@1.60.1.70124"}
+{"id": 427144, "field": "name", "en": "Void Backlash", "hash": "6a52e46ea214795e", "src": "db2@1.60.1.70124"}
+{"id": 427144, "field": "description", "en": "This item is infused with the raw power of the Void. When the bearer is attacked this item has a high chance of inflicting a terrible curse, causing the attacker to take additional damage from all sources for 15 seconds. \r\n", "hash": "21583d700966d522", "src": "db2@1.60.1.70124"}
+{"id": 427592, "field": "name", "en": "Scarlet Initiate's Uniform", "hash": "987e19a0ba77711b", "src": "db2@1.60.1.70124"}
+{"id": 427592, "field": "description", "en": "Disguise yourself as a member of the Scarlet Crusade. Suspicious activity will break the disguise.", "hash": "6fd6b5d5739f7372", "src": "db2@1.60.1.70124"}
+{"id": 427592, "field": "aura", "en": "Disguised as a member of the Scarlet Monastery.", "hash": "cd5bf8dcc7f06cb6", "src": "db2@1.60.1.70124"}
+{"id": 427625, "field": "name", "en": "Corrosion", "hash": "116799f31fe367f3", "src": "db2@1.60.1.70124"}
+{"id": 427625, "field": "aura", "en": "Deals $w1 Nature damage every $t1 sec.", "hash": "257a061ced38097c", "src": "db2@1.60.1.70124"}
+{"id": 427711, "field": "name", "en": "[DNT] Graveyard Bench Trigger A", "hash": "46cf9fe812e76cf5", "src": "db2@1.60.1.70124"}
+{"id": 427712, "field": "name", "en": "Pandemic", "hash": "c707b485b666732f", "src": "db2@1.60.1.70124"}
+{"id": 427712, "field": "description", "en": "Increases the critical strike damage bonus of your Corruption, Bane of Agony, Bane of Doom, Drain Soul, Drain Life, Siphon Life, and Wrack spells by $m1%.", "hash": "860f8d69de98be1b", "src": "db2@1.60.1.70124"}
+{"id": 427713, "field": "name", "en": "Backdraft", "hash": "31cabea74b49648e", "src": "db2@1.60.1.70124"}
+{"id": 427713, "field": "description", "en": "Your Conflagrate ability also grants $427714s1% spellcasting haste for $427714d and no longer consumes Immolate.", "hash": "93b0d8a3aa12107a", "src": "db2@1.60.1.70124"}
+{"id": 427714, "field": "name", "en": "Backdraft", "hash": "31cabea74b49648e", "src": "db2@1.60.1.70124"}
+{"id": 427714, "field": "aura", "en": "Spellcasting haste increased by $w1%.", "hash": "0f60ce954fa84da4", "src": "db2@1.60.1.70124"}
+{"id": 427715, "field": "name", "en": "[DNT] Graveyard Bench Trigger B", "hash": "46cf9fe912e76cf6", "src": "db2@1.60.1.70124"}
+{"id": 427717, "field": "name", "en": "Unstable Affliction", "hash": "c2560853f19861b4", "src": "db2@1.60.1.70124"}
+{"id": 427717, "field": "description", "en": "Shadow energy slowly destroys the target, causing $o1 damage over $d. In addition, if the Unstable Affliction is dispelled it will cause ${$m1*$m3/100} damage to the dispeller and silence them for $427719d. Only one Unstable Affliction or Immolate per Warlock can be active on any one target.", "hash": "af4118210f851afb", "src": "db2@1.60.1.70124"}
+{"id": 427717, "field": "aura", "en": "$w1 Shadow damage every $t1 sec.  If dispelled, will cause ${$w1*$m3/100} damage to the dispeller and silence them for $427719d.", "hash": "88bbd8b640510770", "src": "db2@1.60.1.70124"}
+{"id": 427718, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70124"}
+{"id": 427719, "field": "name", "en": "Unstable Affliction", "hash": "c2560853f19861b4", "src": "db2@1.60.1.70124"}
+{"id": 427719, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.70124"}
+{"id": 427725, "field": "name", "en": "Immolation Aura", "hash": "cc524f5d6efe9a15", "src": "db2@1.60.1.70124"}
+{"id": 427726, "field": "name", "en": "Immolation Aura", "hash": "cc524f5d6efe9a15", "src": "db2@1.60.1.70124"}
+{"id": 427726, "field": "description", "en": "Burns nearby enemies for ${$<power>*$427725m1/100} damage every time an enemy makes a melee attack against you (no more than once per sec), reduces all magic damage taken by $s2%, and increases Fire damage done by $s3%. Lasts $d.", "hash": "fcb8261995be6656", "src": "db2@1.60.1.70124"}
+{"id": 427726, "field": "aura", "en": "Burning nearby enemies for $w1 damage when attacked, taking $s2% reduced magic damage, and dealing $s3% increased Fire damage.", "hash": "2cf4f599a028309e", "src": "db2@1.60.1.70124"}
+{"id": 427733, "field": "name", "en": "Summon Felguard", "hash": "7f9db81598c5d87b", "src": "db2@1.60.1.70124"}
+{"id": 427733, "field": "description", "en": "Summons a Felguard under the command of the Warlock.\r\n\r\nThe Felguard benefits from all talents and effects that trigger from or benefit any of your other Demon minions.", "hash": "81f505fa04415ab8", "src": "db2@1.60.1.70124"}
+{"id": 427735, "field": "name", "en": "Summoned Felguard", "hash": "1891d27c4ae7906c", "src": "db2@1.60.1.70124"}
+{"id": 427739, "field": "name", "en": "Master Demonologist", "hash": "bae30ec7879957bd", "src": "db2@1.60.1.70124"}
+{"id": 427742, "field": "name", "en": "Anguish", "hash": "14057330b620e0f4", "src": "db2@1.60.1.70124"}
+{"id": 427742, "field": "description", "en": "Taunts the creature, increasing the chance that it will attack the Felguard.", "hash": "f8aa5bd9ce303b55", "src": "db2@1.60.1.70124"}
+{"id": 427743, "field": "name", "en": "Avoidance", "hash": "5e1898dc338fc6b7", "src": "db2@1.60.1.70124"}
+{"id": 427744, "field": "name", "en": "Cleave", "hash": "490af681ad18ef1f", "src": "db2@1.60.1.70124"}
+{"id": 427744, "field": "description", "en": "A sweeping attack that does the Felguard's weapon damage plus $s1 to the target and his nearest ally.", "hash": "1bb4f76bc6a3bd81", "src": "db2@1.60.1.70124"}
+{"id": 427745, "field": "name", "en": "Intercept", "hash": "2aaa58fc5e30fec4", "src": "db2@1.60.1.70124"}
+{"id": 427745, "field": "description", "en": "Charge an enemy, causing $427746s2 damage and stunning it for $427746d.", "hash": "481312e40b2b25de", "src": "db2@1.60.1.70124"}
+{"id": 427746, "field": "name", "en": "Intercept Stun", "hash": "c1b19ccbcef20aa6", "src": "db2@1.60.1.70124"}
+{"id": 427746, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 427748, "field": "name", "en": "Summon Felguard", "hash": "7f9db81598c5d87b", "src": "db2@1.60.1.70124"}
+{"id": 427750, "field": "name", "en": "Cleansing Pool", "hash": "5e235fea6beaa6c5", "src": "db2@1.60.1.70124"}
+{"id": 427751, "field": "name", "en": "Cleansing Pool", "hash": "5e235fea6beaa6c5", "src": "db2@1.60.1.70124"}
+{"id": 427751, "field": "aura", "en": "The cleansing waters wash off any impurities.", "hash": "3316bbef73b1af21", "src": "db2@1.60.1.70124"}
+{"id": 427752, "field": "name", "en": "Cleansing Pool", "hash": "5e235fea6beaa6c5", "src": "db2@1.60.1.70124"}
+{"id": 427753, "field": "name", "en": "Corrosion", "hash": "116799f31fe367f3", "src": "db2@1.60.1.70124"}
+{"id": 427754, "field": "name", "en": "Mirror Corrosion Elemental", "hash": "7382b11768ff7ff3", "src": "db2@1.60.1.70124"}
+{"id": 427755, "field": "name", "en": "Mirror Corrosion Elemental", "hash": "7382b11768ff7ff3", "src": "db2@1.60.1.70124"}
+{"id": 427774, "field": "name", "en": "Crushing Darkness", "hash": "4e0d10141c66617f", "src": "db2@1.60.1.70124"}
+{"id": 427774, "field": "description", "en": "You feel an otherworldly, crushing pressure.", "hash": "9dda12300ab4d49a", "src": "db2@1.60.1.70124"}
+{"id": 427774, "field": "aura", "en": "A crushing darkness envelops you...", "hash": "7e9d050537a15f3e", "src": "db2@1.60.1.70124"}
+{"id": 427780, "field": "name", "en": "S03 - Rogue 35 Quest Start", "hash": "1515b5eabd0402c6", "src": "db2@1.60.1.70124"}
+{"id": 427781, "field": "name", "en": "S03 - Rogue 35 Quest Reward", "hash": "ca3853a31f091187", "src": "db2@1.60.1.70124"}
+{"id": 427859, "field": "name", "en": "Mysterious Traveler", "hash": "88e4d7571a940794", "src": "db2@1.60.1.70124"}
+{"id": 427860, "field": "name", "en": "Raszel Ander", "hash": "2dd740848c0c768d", "src": "db2@1.60.1.70124"}
+{"id": 427931, "field": "name", "en": "[DNT] S03 - Rogue 35 Quest - Remove Quest Items", "hash": "38edf9f4f644b922", "src": "db2@1.60.1.70124"}

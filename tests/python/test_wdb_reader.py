@@ -113,7 +113,7 @@ def test_an_unpinned_build_is_refused(tmp_path, real):
     """ADR-020: a build with no verified layout stops the import rather than guessing one."""
     path = tmp_path / "questcache.wdb"
     path.write_bytes(real[:4] + struct.pack("<I", 99999) + real[8:])
-    with pytest.raises(wdb.WdbError, match=r"build 99999 has no pinned payload layout \(pinned: 69722, 69913, 70009\)"):
+    with pytest.raises(wdb.WdbError, match=r"build 99999 has no pinned payload layout \(pinned: 69722, 69913, 70009, 70124\)"):
         wdb.read_quests(path)
     assert "wdb_layout" in str(pytest.raises(wdb.WdbError, wdb.read_quests, path).value)
     # the framing still reads, which is what a rescan list needs
@@ -150,17 +150,18 @@ def test_reads_the_forever_records():
     assert all(not q.conditional for q in cache.quests if q.id not in (92596, 94978))
 
 
-def test_the_70009_layout_is_the_69913_offsets(tmp_path):
-    """Forever 1.60.1.70009 kept 69913's payload layout (dev/wdb_layout over the full 70009 scan). The pin
-    is its own entry with its own evidence, and the 69913 fixture, restamped 70009, reads the same quests."""
+@pytest.mark.parametrize("build", [70009, 70124])
+def test_the_later_forever_layouts_are_the_69913_offsets(tmp_path, build):
+    """Forever 1.60.1.70009 and 70124 kept 69913's payload layout (dev/wdb_layout over each build's full scan).
+    Each pin is its own entry with its own evidence, and the 69913 fixture, restamped, reads the same quests."""
     from dataclasses import replace
 
-    assert replace(wdb.layout_for(70009), build=69913, evidence="") == replace(wdb.layout_for(69913), evidence="")
+    assert replace(wdb.layout_for(build), build=69913, evidence="") == replace(wdb.layout_for(69913), evidence="")
     real = (FOREVER / "questcache.wdb").read_bytes()
     path = tmp_path / "questcache.wdb"
-    path.write_bytes(real[:4] + struct.pack("<I", 70009) + real[8:])
+    path.write_bytes(real[:4] + struct.pack("<I", build) + real[8:])
     cache = wdb.read_quests(path)
-    assert cache.build == 70009 and cache.layout is not None and cache.layout.build == 70009
+    assert cache.build == build and cache.layout is not None and cache.layout.build == build
     assert _as_json(cache.quests) == _as_json(wdb.read_quests(FOREVER / "questcache.wdb").quests)
 
 
