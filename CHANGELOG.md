@@ -20,6 +20,7 @@ an old setting stops working). A release moves those lines under its version num
 - Chat lines that followed a Japanese system message no longer keep the Japanese font: once a line shows English again it gets the chat font back. The guild bank log had the same fault.
 - Wrath's tooltip shows its damage range in Japanese; it fell back to English because the translation expected two numbers where the game prints one range.
 - The Darkmoon Faire fortune quest's objective line for Mulgore no longer names Elwynn Forest.
+- Tooltips from the hand-written corpus no longer break mid-sentence: the translators' manual line breaks, written for the narrow tooltips of the original client, are joined and the tooltip wraps at its own width.
 
 ## 0.1.0-alpha.2 - 2026-09-30
 

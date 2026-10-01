@@ -12,7 +12,7 @@ WFJ.Data.add("spell", {
   [410027] = { "ブーツにSurvival Instinctsのルーンを刻みます：\r\n\n$I1\r\n発動すると、最大体力の$N1%を得て、$D1の間、与えるPhysical以外のすべての治療が$N2%増加します。効果が切れると、その体力は失われます。Moonkin Form以外のすべてのフォームで使用できます。\r\n\nさらに、Bear FormかDire Bear Formの間は回避するたびに怒りを$N4、Cat Formの間はエネルギーを$N5、その他のフォームの間は最大マナの$N6%を回復します。", nil, 0xb1a4b583, nil, "um" },
   [410028] = { "手袋にWild Growthのルーンを刻みます：\r\n\n$I1\r\n対象とそのパーティーを$D1かけて$N1回復します。パーティーメンバーは対象から$N3ヤード以内にいる必要があります。回復量は最初は多く、Wild Growthが効果時間の終わりに近づくにつれて少なくなります。", nil, 0xf3ff628e, nil, "um" },
   [410029] = { "ベルトにEclipseのルーンを刻みます：\r\n\n$I1\r\nWrathが、次の$N1回のStarfireの詠唱時間を$D1短縮します。チャージは最大$N3回まで蓄えられます。$D2持続します。", nil, 0xf6c8a77f, nil, "um" },
-  [410033] = { "脚部にLifebloomのルーンを刻みます：\r\n\nRejuvenationとLifebloomのグローバルクールダウンを$D1短縮し、Lifebloomのアビリティを得ます：\r\n\n$I1\r\n対象を$D2かけて$N2回復します。Lifebloomが効果時間を終えるか解除されると、対象は即座に$N4回復し、ドルイドは呪文のコストの半分を取り戻します。この効果は同じ対象に最大$N5回まで累積します。", nil, 0xcebd1350, nil, "um" },
+  [410033] = { "脚部にLifebloomのルーンを刻みます：\r\n\nRejuvenationとLifebloomのグローバルクールダウンを$D1短縮し、Lifebloomのアビリティを得ます：\r\n\n$I1\r対象を$D2かけて$N2回復します。Lifebloomが効果時間を終えるか解除されると、対象は即座に$N4回復し、ドルイドは呪文のコストの半分を取り戻します。この効果は同じ対象に最大$N5回まで累積します。", nil, 0xcebd1350, nil, "um" },
   [410059] = { "ベルトにNourishのルーンを刻みます：\r\n\n$I1\r\n味方の対象を$N1回復します。対象にRejuvenation、Regrowth、Lifebloom、Wild Growthのいずれかの効果がある場合、さらに20%多く回復します。この呪文は、Healing TouchまたはRegrowthに関連するすべての効果の恩恵を受け、それらを発動させます。", nil, 0x4c436437, nil, "um" },
   [410060] = { "ブーツにDreamstateのルーンを刻みます：\r\n\n$I1\r\nダメージを与える非周期の呪文がクリティカルになると、$D1の間、詠唱中もマナ回復の$N1%が継続します。", nil, 0xddd238a5, nil, "um" },
   [410061] = { "胸部か法衣にFury of Stormrageのルーンを刻みます：\r\n\n$I1\r\nWrathのマナ消費を$N1%減らし、Wrathでダメージを与えるたびに$N2%の確率で、$D1以内に次に詠唱するHealing Touchが即時詠唱になり、どのシェイプシフトフォームでも詠唱できるようになります。Tree of Lifeフォームの間もWrathを詠唱できます。", nil, 0xec987f0e, nil, "um" },

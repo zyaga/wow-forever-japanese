@@ -14,7 +14,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
-from wfj.core import align, glosses, numbered, readings
+from wfj.core import align, glosses, numbered, readings, tooltip_text
 from wfj.core.align import load_allowlist
 from wfj.core.english_text import model_english
 from wfj.core.hashing import key as hash_key
@@ -258,6 +258,10 @@ def _plan_id_types(
     """The shards of every type keyed by game ID (quest, item, spell, …)."""
     for type_ in schema.TYPES:
         lines = store.load(type_)
+        if type_ in tooltip_text.TYPES:
+            # the translator's manual line breaks are joined in what ships; data/ keeps the text as written
+            en_by = {(ln["id"], ln["field"]): ln["en"] for ln in english_store.load(type_)}
+            lines = tooltip_text.joined(lines, en_by)
         quest = "female" in schema.SLOTS[type_]
         female = female_fields(english_store.load(type_)) if quest else None
         masked = masked_fields(english_store.load(type_)) if quest else None

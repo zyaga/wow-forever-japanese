@@ -14,6 +14,6 @@ WFJ.Data.add("spell", {
   [1320824] = { "対象を負傷させて出血させ、$D1かけて$N1のダメージを与えます。", "$D1ごとに$N1の出血ダメージを受けています。", 0x47f171f5, 0x72a94853, "uu" },
   [1320864] = { "この槍は使う前に鍛え直す必要があります。槍を鍛え直すには、Mithril Bars 40個、Truesilver Bars 10個、Aquamarine 8個、Solid Grinding Stone 4個、Elemental Fire 2個が必要です。", nil, 0xb280519c, nil, "um" },
   [1320898] = { "Unstable Mana Riftに投げ込みます。", nil, 0xee05b862, nil, "um" },
-  [1320922] = { "以下のリストにあるいずれかの束で木箱を満たします：|cnIQ1:\n- Bronze Tube\r ×$N1\n- Whirring Bronze Gizmo\r ×$N2\n- Bronze Framework\r ×$N3\n- Gold Power Core ×$N4", nil, 0xa780e349, nil, "um" },
+  [1320922] = { "以下のリストにあるいずれかの束で木箱を満たします：|cnIQ1:- Bronze Tube\r ×$N1- Whirring Bronze Gizmo\r ×$N2- Bronze Framework\r ×$N3- Gold Power Core ×$N4", nil, 0xa780e349, nil, "um" },
   [1320925] = { "$D2の間、$D1ごとに対象を焼き、$N1のFireダメージを与えます。", "$D1ごとに$N1のFireダメージを受けています。", 0x9a11784e, 0x5a5656de, "uu" },
 })
