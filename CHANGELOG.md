@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.1.0-alpha.3 - 2026-10-01
+
 ### Added
 - Japanese for the quests, items and objectives the Forever build 1.60.1.70124 added or unlocked, including the holiday and reputation quests the client's own list leaves out.
 
