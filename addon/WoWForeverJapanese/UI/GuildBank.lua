@@ -179,7 +179,8 @@ function GuildBank.showLog(frame)
     else
       if translated then line:SetText(logJa[ja]) end
       -- the log's rows are fixed and the refresh's SetFontObject does not undo our SetFont (UI/ChatSystem.lua)
-      WFJ.Font.restore(line, fontObject)
+      -- a row given its font back earlier follows a later change of the frame's font size (Font.follow)
+      if not WFJ.Font.restore(line, fontObject) then WFJ.Font.follow(line, fontObject) end
     end
     if translated then n = n + 1 end
   end
