@@ -107,3 +107,17 @@ def test_a_book_fix_lands_on_the_page_that_ships_under_its_english():
     line, why = F.resolve(F.Fix("book", h, "text", ja_hash("手紙"), "awkward"), pages)
     assert why is None and line["id"] == 12  # a current page before a stale one of the same English
     assert F.resolve(F.Fix("book", "2" * 16, "text", ja_hash("手紙"), "awkward"), pages) == (None, F.NO_LINE)
+
+
+def test_resolve_hashes_a_tooltip_as_the_addon_ships_it():
+    """A hand-written tooltip's manual breaks are joined on the way out (ADR-049): the player's report carries
+    the hash of the joined text, and intake must find the line by it."""
+    from wfj.core import tooltip_text
+
+    line = {"id": 5176, "field": "description", "ja": "対象に$N1のNature属性ダメージを\n与えます。", "status": "unaligned",
+            "provenance": {"class": "human", "translator": "t", "source": "x", "imported": "2026-01-01"}}
+    english = {(5176, "description"): "Causes $s1 Nature damage to the target."}
+    shown = tooltip_text.shipped_ja(line, english[(5176, "description")])
+    assert "\n" not in shown
+    assert F.resolve(F.Fix("spell", 5176, "description", ja_hash(shown), "wrong"), [line], None, english) == (line, None)
+    assert F.resolve(F.Fix("spell", 5176, "description", ja_hash(line["ja"]), "wrong"), [line], None, english) == (None, F.ALREADY_CHANGED)

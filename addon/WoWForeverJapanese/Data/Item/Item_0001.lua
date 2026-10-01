@@ -190,7 +190,7 @@ WFJ.Data.add("item", {
   [1726] = { "対象に毒を与え、$D2の間、$D1ごとに$N1のNatureダメージを与えます。", 0xc6bab046, "u" },
   [1851] = { "味方の対象を浄化し、病気効果を$N1個と毒効果を$N2個取り除きます。", 0x55d8540d, "u" },
   [1854] = { "$D1の間、対象の攻撃間隔を$N1%延ばし、移動速度を$N2%低下させます。", 0x8cbf1cf8, "u" },
-  [1875] = { "Foreman ThistlenettleExplorers' Leagueのメンバー", 0x4bbb3bc9, "u" },
+  [1875] = { "Foreman Thistlenettle Explorers' Leagueのメンバー", 0x4bbb3bc9, "u" },
   [1877] = { "Rejuvenation（Rank $N1）を習得します。", 0x26d8b63f, "u" },
   [1882] = { "Moonfire（Rank $N1）を習得します。", 0xfc46f80f, "u" },
   [1886] = { "Moonfire（Rank $N1）を習得します。", 0xfc46b506, "u" },

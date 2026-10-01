@@ -19,17 +19,22 @@ The text in `data/` is the translator's; the project does not rewrite a person's
 
 ## Decision
 
-`generate` drops a single line break from an item or spell line's Japanese when the line's English template has no
-single line break of its own. A paragraph break (a blank line, `\n\n`) is kept. A line whose English carries single
-breaks keeps every break, because nothing says which of the Japanese's breaks are the template's. `data/` is not
-changed; only the generated Lua is. The rule lives in `core/tooltip_text.py` and runs before the branch variants are
-split, so a branch line's variants are joined the same way.
+`generate` drops a single line break from a hand-written (`human` or `correction`) item or spell line's Japanese
+when the line's English template has no single line break of its own. A paragraph break (a blank line, `\n\n`) is
+kept. A line whose English carries single breaks keeps every break, because nothing says which of the Japanese's
+breaks are the template's. A machine line is never touched: its breaks mirror the template, included spells and
+lists included. Carriage returns are dropped first, so a `\r\n` break counts as one and none is left behind. Two
+Latin words a break kept apart get a space between them, so a name does not run into the next word. `data/` is not
+changed; only the generated Lua is. The rule lives in `core/tooltip_text.py` (`shipped_ja`), runs before the branch
+variants are split, so a branch line's variants are joined the same way, and is the text the fix-report intake
+hashes, so a player's report on a joined line is found by the hash the addon sent.
 
 ## Consequences
 
 - The 849 lines wrap at the client's width like every machine-drafted line, with no orphaned particles.
 - The runtime checks are unaffected: the alignment gate reads names and numbers, not line breaks; tooltip lines
-  carry no readings; the stale check compares English hashes.
+  carry no readings; the stale check compares English hashes. The fix-report hash is of the shipped text on both
+  sides (the addon's report and the intake), which is why the join has one home.
 - 25 lines whose English has its own single break (`…damage.⏎The powers…`) keep the translator's extra breaks too.
   They can be corrected by hand if they look wrong in game.
 - Reverting is deleting the call in `generate` and regenerating.

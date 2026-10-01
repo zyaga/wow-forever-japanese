@@ -60,7 +60,7 @@ WFJ.Data.add("spell", {
   [1309736] = { "Right Clickでジリスを召喚、または解放します。", nil, 0xe54eb853, nil, "um" },
   [1309752] = { "Right Clickでウサギを呼び出し、または帰します。", nil, 0x2fcb8396, nil, "um" },
   [1309788] = { "対象のBeastを魅惑し、自分に与えるダメージを$N1%減少させます。", nil, 0xba65d22e, nil, "um" },
-  [1309950] = { "Devouring Plagueのマナコストを$N1%減少させます。\r\n\nDevouring Plagueを受けている間に死亡した対象はそれを拡散させ、残りの持続時間の間、$N2ヤード以内の近くの敵に飛び移ります。", nil, 0xa9b3b90d, nil, "um" },
+  [1309950] = { "Devouring Plagueのマナコストを$N1%減少させます。\n\nDevouring Plagueを受けている間に死亡した対象はそれを拡散させ、残りの持続時間の間、$N2ヤード以内の近くの敵に飛び移ります。", nil, 0xa9b3b90d, nil, "um" },
   [1309957] = { "Holy呪文の命中率を$N1%上昇させます。", nil, 0x9e735c14, nil, "um" },
   [1309965] = { "未翻訳の巻物を解読します。", nil, 0x2551fb8b, nil, "um" },
   [1309969] = { "SmiteとPenance呪文が、自分のHoly Fireを受けている対象に与えるダメージが$N1%増加します。", nil, 0xfa3e5bcf, nil, "um" },
