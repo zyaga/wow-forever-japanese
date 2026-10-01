@@ -162,8 +162,6 @@ function GuildBank.onLogMessage(frame, message)
   return 1
 end
 
-local fonted = setmetatable({}, { __mode = "k" }) -- log rows showing the bundled face
-
 -- The visible lines showing one of our Japanese strings: the Japanese in the bundled face, or (Alt held, the addon
 -- or its UI area off) the remembered English in the frame's own font. → lines set
 function GuildBank.showLog(frame)
@@ -177,17 +175,11 @@ function GuildBank.showLog(frame)
     local translated = type(ja) == "string" and logJa[ja] ~= nil
     if translated and wanted then
       line:SetText(ja)
-      local _, size, flags = line:GetFont()
-      if type(fontObject) == "table" and type(fontObject.GetFont) == "function" then
-        local _, objSize, objFlags = fontObject:GetFont()
-        size, flags = objSize or size, objFlags or flags
-      end
-      line:SetFont(WFJ.Font.PATH, size or WFJ.Font.DEFAULT_SIZE, flags or "")
-      fonted[line] = true
+      WFJ.Font.bundle(line, fontObject)
     else
       if translated then line:SetText(logJa[ja]) end
       -- the log's rows are fixed and the refresh's SetFontObject does not undo our SetFont (UI/ChatSystem.lua)
-      if fonted[line] and WFJ.Font.restore(line, fontObject) then fonted[line] = nil end
+      WFJ.Font.restore(line, fontObject)
     end
     if translated then n = n + 1 end
   end

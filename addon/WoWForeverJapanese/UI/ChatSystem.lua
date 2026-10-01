@@ -33,8 +33,8 @@
 -- retry would land on a pooled English line; in game), shrunk until it fits the line's laid-out height (fit). The
 -- visible lines are fixed rows the messages move through, and the refresh's re-init (SetFontObject with the frame's
 -- own object, scrollingmessageframe.lua:642, 716) does not undo our SetFont (in game: every row a Japanese line had
--- passed showed later English in the bundled face). So each row given the bundled face is remembered and given the
--- frame's font back directly (Font.restore) once it shows anything else.
+-- passed showed later English in the bundled face). So each row given the bundled face is remembered (Font.bundle)
+-- and given the frame's font back directly (Font.restore) once it shows anything else.
 local _, WFJ = ...
 local ChatSystem = {}
 WFJ.ChatSystem = ChatSystem
@@ -380,18 +380,13 @@ end
 -- line spilled over the next one). SetFont directly, never Font.set: a refused font must not be retried later; the
 -- pooled line shows another message by then (in game: English lines turned small in the bundled face). → size set
 local MIN_SIZE = 8
-local fonted = setmetatable({}, { __mode = "k" }) -- rows showing the bundled face
 -- `fontObject` (optional): the frame's own font, whose size a row starts from (a row may still hold a shrunk size)
 function ChatSystem.fit(line, fontObject)
-  local _, size, flags = line:GetFont()
-  if type(fontObject) == "table" and type(fontObject.GetFont) == "function" then
-    local _, objSize, objFlags = fontObject:GetFont()
-    size, flags = objSize or size, objFlags or flags
-  end
-  size, flags = size or WFJ.Font.DEFAULT_SIZE, flags or ""
   local room = type(line.GetHeight) == "function" and line:GetHeight() or 0
-  if line:SetFont(WFJ.Font.PATH, size, flags) == false then return nil end
-  fonted[line] = true
+  local size = WFJ.Font.bundle(line, fontObject)
+  if size == nil then return nil end
+  local _, _, flags = line:GetFont()
+  flags = flags or ""
   if type(line.GetStringHeight) ~= "function" or room <= 0 then return size end
   -- shrink only when the Japanese takes an extra line (its string height passes the room by more than half a line):
   -- the bundled face's line is a few pixels taller than the chat font's, and shrinking for that alone made
@@ -419,10 +414,8 @@ function ChatSystem.show(frame)
       ChatSystem.fit(line, fontObject)
     else
       if ours then line:SetText(jaToEn[ja]) end
-      -- a secret line is left to the client: the addon never touches one
-      if fonted[line] and not (type(ja) == "string" and secret(ja)) and WFJ.Font.restore(line, fontObject) then
-        fonted[line] = nil
-      end
+      -- setting a font reads nothing from the line, so a secret line gets its font back like any other
+      WFJ.Font.restore(line, fontObject)
     end
     if ours then n = n + 1 end
   end

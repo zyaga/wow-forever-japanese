@@ -181,6 +181,12 @@ describe("NPC speech", function()
     assert.are.equal(WFJ.Font.PATH, string.font.path)
     alt(WFJ, true)
     assert.are.equal("Stay close, Testplayer!", string:GetText())
+    assert.are.equal("Fonts\\FRIZQT__.TTF", string.font.path) -- its own font back while English shows
+    alt(WFJ, false)
+    assert.are.equal(WFJ.Font.PATH, string.font.path)
+    string:SetText("Another line entirely") -- the client reuses the pooled string for a later bubble
+    WFJ.Speech.refresh()
+    assert.are.equal("Fonts\\FRIZQT__.TTF", string.font.path) -- in game: the bundled face stayed on reused bubbles
   end)
 
   it("a boss emote in the middle of the screen", function()

@@ -87,13 +87,12 @@ end
 local pending = {}
 local bubbleText = setmetatable({}, { __mode = "k" }) -- fs → { en, ja }
 
+-- The bubble's FontString is the client's, pooled and reused for later lines, so the bundled face goes on with
+-- Font.bundle and comes off with Font.restore (its own font, remembered) whenever it shows English again.
 local function setBubble(fs, rec)
   local english = not WFJ.ChatSystem.wanted(AREA)
   fs:SetText(english and rec.en or rec.ja)
-  if not english then
-    local _, size, flags = fs:GetFont()
-    fs:SetFont(WFJ.Font.PATH, size or WFJ.Font.DEFAULT_SIZE, flags or "")
-  end
+  if english then WFJ.Font.restore(fs) else WFJ.Font.bundle(fs) end
 end
 
 -- A line shown in several chat tabs reaches AddMessage once per tab: one bubble is waited for.
@@ -217,10 +216,12 @@ function Speech.refresh()
       local text = fs:GetText()
       if secret(text) then
         map[fs] = nil
+        WFJ.Font.restore(fs)
       elseif text == rec.en or text == rec.ja then
         setBubble(fs, rec)
       else
         map[fs] = nil
+        WFJ.Font.restore(fs) -- the pooled string shows another line now
       end
     end
   end
