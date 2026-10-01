@@ -361,3 +361,27 @@ def test_no_meaning_copies_a_whole_english_line(root):
                 continue
             hits += [(type_, *key, w[0]) for w in rec["words"] if len(w) == 5 and scan.copies(w[4], en)]
     assert not hits, f"{len(hits)} meaning(s) copy a whole English line: {hits[:10]}"
+
+
+@pytest.mark.parametrize("type_", ["item", "spell"])
+def test_no_shipped_tooltip_asks_for_more_slots_than_its_english_prints(root, type_):
+    """A `$N<k>` or `$D<k>` past what the template prints can never be filled, so the line falls back to English
+    for every player (two placeholders around one range the client prints as `14 to 16`, say). Shipped tooltip
+    rows stay within `align.value_slots` / `align.duration_slots` of their current English."""
+    from wfj.core import align
+    from wfj.core.report import SHIPPED
+
+    english = {(ln["id"], ln["field"]): ln["en"] for ln in Store(root / "data", english=True).load(type_)}
+    over = []
+    for ln in Store(root / "data").load(type_):
+        en = english.get((ln["id"], ln["field"]))
+        if ln["status"] not in SHIPPED or en is None:
+            continue
+        slots, durations = align.value_slots(en), align.duration_slots(en)
+        if slots is None:
+            continue
+        n = max((int(m) for m in re.findall(r"\$N(\d+)", ln["ja"])), default=0)
+        d = max((int(m) for m in re.findall(r"\$D(\d+)", ln["ja"])), default=0)
+        if n > slots or (durations is not None and d > durations):
+            over.append((ln["id"], ln["field"], n, slots, d, durations))
+    assert not over, f"{len(over)} shipped {type_} line(s) ask for a slot the English never prints: {over[:10]}"

@@ -140,6 +140,7 @@ WFJ.Data.add("item", {
   [6678] = { "【装備】ヒット率+4", 0x038d7f94, "u" },
   [6681] = { "対象にトゲを投げつけて$N1のPhysicalダメージを与え、さらに近くの敵$N2体に跳ね移ります。跳ね移るたびにダメージが$N3%減少します。", 0x85d6e1ab, "u" },
   [6684] = { "【使用】Snufflenose Gopherに使います。", 0x8de47a0a, "u" },
+  [6693] = { "The Barrens、Thousand Needles、Razorfen Kraul、Razorfen Downsでの移動速度が$N1%上昇します。", 0x8d244fb9, "u" },
   [6710] = { "Moonglow Vestの製作方法を習得します。", 0xf5cc3eca, "u" },
   [6712] = { "[鍵空け練習装置]\n鍵がかかっている。", 0x3cc67cd2, "u" },
   [6714] = { "Non-Engineers向けの、ほぼ必ず目標に届くダイナマイトです！半径$N2ヤード内に$N1のFireダメージを与えます。\nとてもE-Zなので、あなたの猫でも投げられます。", 0xc6301dbd, "u" },

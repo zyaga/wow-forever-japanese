@@ -175,7 +175,7 @@ Pipeline tooling, not part of the addon, that reads the client's English from th
 - **Scope:** `make visible-spells` derives which spells a player can be shown, so translation work is scoped to text someone will read.
 - **Delta:** `wfj stats --delta REF [--capture PATH]` reports which lines changed status and what `data/english/` gained, lost or changed since a git ref.
 - **feature-id:** `harvest`
-- **status:** in use on the Forever beta client (build 1.60.1.70009)
+- **status:** in use on the Forever beta client (build 1.60.1.70124)
 - **regen-triggers:** `pipeline/wfj/io/{wdb,casc,blte,db2,client_tables,dbcache,vmangos,tables_stamp}.py`, `pipeline/wfj/dev/{wdb_layout,client_tables,tables_stamp}.py`, `pipeline/wfj/cmd/{import_,import_english,import_predecessor,served,stats}.py`, `Makefile`
 
 ## Not in v1 (by decision)

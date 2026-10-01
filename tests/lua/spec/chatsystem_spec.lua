@@ -276,7 +276,7 @@ describe("SYSTEM chat lines", function()
     system(f, "Your party is full.")
     f:Refresh()
     local row = f.visibleLines[2]
-    row.font.size = 11 -- a size fit shrank it to on an earlier pass
+    row.font.size = 11 -- a size an earlier fit shrank it to
     alt(WFJ, true)
     assert.are.equal("Your party is full.", row:GetText())
     assert.are.equal("Fonts\\ARIALN.TTF", row.font.path)

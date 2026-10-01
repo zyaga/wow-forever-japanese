@@ -34,7 +34,10 @@ WFJ.Data.add("quest", {
   [91862] = { "Lumina Windsinger", "Rot Hide GnollからFenris Isle Keyを取り戻し、それを使ってLumina Windsingerを解放してください。", "Quel'dorei？ いいえ、私は「quel'dorei」ではありません。私はLumina Windsinger、shen'doreiです。Windshaper Skyborneの一人です。\n\n私はEarthen Ringの客人としてこの地に来ました。仲間のBanonと私は、Arathi Highlandsへ向かうためにSilverpineを通っていました。そこで精霊の合流点を調べるためです。見ての通り、たどり着けませんでしたが。\n\nでも今はそんな話をしている時間はありません。近くのgnollを倒してください。この檻の鍵を取り戻して、私を解放してください。安全な所まで逃げたら、残りをお話しします。", nil, nil, 0x8615ca23, 0x9d3e70b4, 0x1c33efa2, nil, nil, "...mm" },
   [91899] = { "Sealed Crate", nil, nil, nil, nil, 0xfc2b137e, nil, nil, nil, nil, ".mmmm" },
   [91900] = { "Sealed Crate", nil, nil, nil, nil, 0xfc2b137e, nil, nil, nil, nil, ".mmmm" },
+  [91901] = { "Sealed Crate", nil, nil, nil, nil, 0xfc2b137e, nil, nil, nil, nil, ".mmmm" },
   [91904] = { "Sealed Crate", nil, nil, nil, nil, 0xfc2b137e, nil, nil, nil, nil, ".mmmm" },
+  [91905] = { "Sealed Crate", nil, nil, nil, nil, 0xfc2b137e, nil, nil, nil, nil, ".mmmm" },
+  [91906] = { "Sealed Crate", nil, nil, nil, nil, 0xfc2b137e, nil, nil, nil, nil, ".mmmm" },
   [91920] = { "野生の目", "murlocの目を3個集め、SepulcherにいるApothecary Renferrelのところへ持って行ってください。", "Apothecary Renferrelの調合の効果を疑うつもりはないが、あの薬に目立った違いがあったと言えば嘘になる。\n\nLake Lordamereの岸辺にはmurlocがうじゃうじゃいる。そして注目すべきことに、murlocには目がある。薬剤師殿の新しいことへの意欲は、最近の心臓への執着で抑え込まれているのだろう。彼にいくつか持っていってやってくれ。\n\nいずれ二度目の死を迎えるか、やり方を疑ったせいでRenferrelに殺されるかを選ぶなら、私は後者を選ぶ。", nil, nil, 0x44275ed7, 0xd4c23f40, 0x9795c646, nil, nil, "...mm" },
   [91921] = { "Quinnのもとへ（再び）", "Quinnの薬を、Sepulcherの北のIvar PatchにいるQuinn Yorickのところへ持って行ってください。", "これがQuinnの回復を助ける新しい薬だ。心臓丸ごと6つから抽出した愛情で作ってある。\n\nさて、君がいるとまた書類仕事が増えるので、失礼させてもらうよ。", nil, nil, 0x641834db, 0xed042c3f, 0x0c746cd7, nil, nil, "...mm" },
 })

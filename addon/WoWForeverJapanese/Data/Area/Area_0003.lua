@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("area", {
   [3141] = { "Loramusの話", 0xd2c49d2b, "." },
   [3321] = { "Trentonの仕事ぶりを見る", 0x5573ba32, "." },
+  [3366] = { "Nightmare Shardについて誰かに話す", 0x2bbd7527, "." },
   [3367] = { "Doriusの護衛", 0xd5676c06, "." },
   [3377] = { "Zamaelの話", 0xb8596e2c, "." },
   [3382] = { "Captain Vanessa Beltisをnagaの襲撃から守る", 0x0df82ba5, "." },

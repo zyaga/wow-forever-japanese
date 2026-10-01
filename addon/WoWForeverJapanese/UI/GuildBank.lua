@@ -174,8 +174,8 @@ function GuildBank.showLog(frame)
   for _, line in ipairs(lines) do
     local info = type(line) == "table" and line.messageInfo or nil
     local ja = type(info) == "table" and info.message or nil
-    local ours = type(ja) == "string" and logJa[ja] ~= nil
-    if ours and wanted then
+    local translated = type(ja) == "string" and logJa[ja] ~= nil
+    if translated and wanted then
       line:SetText(ja)
       local _, size, flags = line:GetFont()
       if type(fontObject) == "table" and type(fontObject.GetFont) == "function" then
@@ -185,11 +185,11 @@ function GuildBank.showLog(frame)
       line:SetFont(WFJ.Font.PATH, size or WFJ.Font.DEFAULT_SIZE, flags or "")
       fonted[line] = true
     else
-      if ours then line:SetText(logJa[ja]) end
+      if translated then line:SetText(logJa[ja]) end
       -- the log's rows are fixed and the refresh's SetFontObject does not undo our SetFont (UI/ChatSystem.lua)
       if fonted[line] and WFJ.Font.restore(line, fontObject) then fonted[line] = nil end
     end
-    if ours then n = n + 1 end
+    if translated then n = n + 1 end
   end
   return n
 end

@@ -136,7 +136,7 @@ Drift tests regenerate each pair in memory and fail if the result differs from t
 
 ## Import inputs
 
-`data/` is **committed**, so a clean checkout needs none of this. The import is re-run only when an input changes. To re-run it, put the inputs under `<repo>/predecessors/` (ignored by git; the Makefile default is `INPUTS=$(CURDIR)/predecessors`) or override the variables. `IMPORT_DATE` is written into every line's `provenance.imported`; bump it only when the inputs change, so a rerun on another day stays byte-identical.
+`data/` is **committed**, so a clean checkout needs none of this. The import is re-run only when an input changes. To re-run it, put the inputs under `<repo>/predecessors/` (ignored by git; the Makefile default is `INPUTS=<checkout>/predecessors`; a worktree that has no `predecessors/` of its own reads the main checkout's, found through `git rev-parse --git-common-dir`, and `INPUTS=` on the command line overrides either) or override the variables. `IMPORT_DATE` is written into every line's `provenance.imported`; bump it only when the inputs change, so a rerun on another day stays byte-identical.
 
 **Per-client inputs.** `make import` merges the English of every client in `CLIENTS` (`classic-era forever`, oldest first). Each client's inputs live in `predecessors/clients/<client>-<build>/`, named by the build pinned in the `Makefile` (`<client>_BUILD`, with `<client>_SRC` the table source and `<client>_PRODUCT` the install's product). The shared inputs stay at the `predecessors/` root, and so do the Forever UI extracts, one folder per build.
 
@@ -144,9 +144,9 @@ Drift tests regenerate each pair in memory and fail if the result differs from t
 predecessors/
 ├── clients/
 │   ├── classic-era-1.15.9.69722/   wago tables (stamped wago@1.15.9.69722), questcache.wdb, missing.txt
-│   └── forever-1.60.1.70009/       db2 tables (stamped db2@1.60.1.70009), questcache.wdb, missing.txt
+│   └── forever-1.60.1.70124/       db2 tables (stamped db2@1.60.1.70124), questcache.wdb, missing.txt
 ├── classic-wow-quest-japanese-translator/  classic-wow-tooltips-japanese-translator/  lineage/
-└── pfquest-quests.lua  vmangos/  forever-ui-1.60.1.70009/
+└── pfquest-quests.lua  vmangos/  forever-ui-1.60.1.70124/
 ```
 
 Staging a client folder (the preflight refuses the import until every client's folder is complete):

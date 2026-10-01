@@ -154,7 +154,7 @@ describe("Settings pages from the registry and PAGES", function()
     O.pages.main:Show()
     assert.is_false(control("area.gossip").widget:GetChecked())
     assert.is_truthy(O.frame.subtitle:GetText():find("1.2 MB", 1, true))
-    assert.is_truthy(O.frame.subtitle:GetText():find("4,536 quests", 1, true)) -- the shipped quest count
+    assert.is_truthy(O.frame.subtitle:GetText():find("4,572 quests", 1, true)) -- the shipped quest count
   end)
 
   it("the header shows the TOC version as written (a release version already starts with v)", function()
@@ -337,7 +337,7 @@ describe("Settings pages from the registry and PAGES", function()
   it("the about page has the header, how to open settings, the slash list and the report link", function()
     local about = O.pages.about
     about:Show()
-    assert.is_truthy(about.subtitle:GetText():find("4,536 quests", 1, true)) -- the shipped quest count
+    assert.is_truthy(about.subtitle:GetText():find("4,572 quests", 1, true)) -- the shipped quest count
     local texts = {}
     for _, fs in ipairs(about.children) do if fs.GetText then texts[#texts + 1] = fs:GetText() end end
     local all = table.concat(texts, "\n")

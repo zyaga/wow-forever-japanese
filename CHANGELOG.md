@@ -9,6 +9,18 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Japanese for the quests, items and objectives the Forever build 1.60.1.70124 added or unlocked, including the holiday and reputation quests the client's own list leaves out.
+
+### Changed
+- The game text is read from Forever build 1.60.1.70124.
+- The gamepad crosshair coordinates on the world map are translated on their own label, where the new build puts them.
+
+### Fixed
+- Chat lines that followed a Japanese system message no longer keep the Japanese font: once a line shows English again it gets the chat font back. The guild bank log had the same fault.
+- Wrath's tooltip shows its damage range in Japanese; it fell back to English because the translation expected two numbers where the game prints one range.
+- The Darkmoon Faire fortune quest's objective line for Mulgore no longer names Elwynn Forest.
+
 ## 0.1.0-alpha.2 - 2026-09-30
 
 ### Changed
