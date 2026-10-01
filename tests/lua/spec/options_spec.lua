@@ -157,6 +157,12 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_truthy(O.frame.subtitle:GetText():find("4,572 quests", 1, true)) -- the shipped quest count
   end)
 
+  it("the page title is the addon's name, the same in both languages", function()
+    local t = WFJ.OptionsText.T["page.main"]
+    assert.are.equal("WoW Forever Japanese (日本語化)", t.en)
+    assert.are.equal(t.en, t.ja)
+  end)
+
   it("the header shows the TOC version as written (a release version already starts with v)", function()
     WFJ.VERSION = "v0.1.0-alpha.1"
     O.pages.main:Show()

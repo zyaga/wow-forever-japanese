@@ -7,7 +7,7 @@ local Text = {}
 WFJ.OptionsText = Text
 
 Text.T = {
-  ["page.main"] = { en = "WoW Forever Japanese", ja = "日本語化" },
+  ["page.main"] = { en = "WoW Forever Japanese (日本語化)", ja = "WoW Forever Japanese (日本語化)" },
   ["page.collector"] = { en = "English Collector", ja = "英語テキスト収集" },
   ["page.about"] = { en = "About & Help", ja = "情報とヘルプ" },
   ["tagline"] = {

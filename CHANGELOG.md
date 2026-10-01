@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- The settings page header reads WoW Forever Japanese (日本語化) in both languages, the addon's name as the addon list shows it.
+
 ## 0.1.0-alpha.3 - 2026-10-01
 
 ### Added
