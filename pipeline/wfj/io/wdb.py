@@ -29,7 +29,7 @@ from __future__ import annotations
 import re
 import struct
 from collections.abc import Iterator
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 
 MAGIC = b"TSQW"
@@ -119,37 +119,17 @@ LAYOUTS: tuple[Layout, ...] = (
         conditional_counts_at=(472, 476),
         objective_list_count_at=33,
     ),
-    # 1.60.1.70009 bumped only the build. dev/wdb_layout: layout 69913 reads every record of the full
-    # scan exactly (2,164 quests, 67 placeholders, 16 conditional entries), 2,091 of the 2,101 titles already
-    # held reproduce character for character, and layout 69722 reads none.
-    Layout(
-        build=70009,
-        evidence="Forever beta 1.60.1.70009, 2,231 of 2,231 records, the 69913 offsets",
-        objective_count_at=436,
-        objectives_at=488,
-        bits_at=None,
-        pad_bits=32,
-        zero_u32_at=(480, 484),
-        pre_list_count_at=64,
-        post_list_count_at=448,
-        conditional_counts_at=(472, 476),
-        objective_list_count_at=33,
-    ),
-    # 1.60.1.70124 bumped only the build. dev/wdb_layout: layouts 69913 and 70009 (the same offsets) read
-    # every record of the full scan exactly, and layout 69722 reads none.
-    Layout(
-        build=70124,
-        evidence="Forever beta 1.60.1.70124, 2,325 of 2,325 records, the 69913 offsets",
-        objective_count_at=436,
-        objectives_at=488,
-        bits_at=None,
-        pad_bits=32,
-        zero_u32_at=(480, 484),
-        pre_list_count_at=64,
-        post_list_count_at=448,
-        conditional_counts_at=(472, 476),
-        objective_list_count_at=33,
-    ),
+    # 1.60.1.70009 and 1.60.1.70124 bumped only the build: dev/wdb_layout read every record of each full
+    # scan with the 69913 offsets (70009: 2,231 of 2,231, 2,164 quests, 67 placeholders, 16 conditional
+    # entries, 2,091 of 2,101 held titles reproducing; 70124: 2,325 of 2,325, then every record of the
+    # 2,356-record cache after the sweep), and layout 69722 reads none. One definition, re-pinned per build
+    # with its own evidence.
+)
+_FOREVER_69913 = LAYOUTS[-1]
+LAYOUTS = (
+    *LAYOUTS,
+    replace(_FOREVER_69913, build=70009, evidence="Forever beta 1.60.1.70009, 2,231 of 2,231 records"),
+    replace(_FOREVER_69913, build=70124, evidence="Forever beta 1.60.1.70124, 2,325 of 2,325 records"),
 )
 
 

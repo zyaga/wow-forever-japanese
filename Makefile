@@ -8,7 +8,9 @@ LUACHECK ?= $(shell command -v luacheck 2>/dev/null || echo $(LUAROCKS_BIN)/luac
 LUACOV   ?= $(shell command -v luacov 2>/dev/null || echo $(LUAROCKS_BIN)/luacov)
 # Python: the repo venv (`.venv` in the main checkout, shared by every worktree) when it exists, else python3.
 # The system python is externally managed and refuses `pip install` (docs/operations/local-setup.md).
-REPO_ROOT := $(abspath $(dir $(shell git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)))
+# Without git (a tarball, say) the common dir is empty and this checkout is the root.
+GIT_COMMON := $(shell git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)
+REPO_ROOT := $(if $(GIT_COMMON),$(abspath $(dir $(GIT_COMMON))),$(CURDIR))
 VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
