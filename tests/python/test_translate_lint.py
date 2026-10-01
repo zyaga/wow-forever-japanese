@@ -1021,3 +1021,20 @@ def test_a_stat_word_joined_by_of_is_still_a_name():
 def test_a_stat_word_leading_a_capitalised_word_is_no_new_name():
     reasons = _check("Strength Increased by $s1.", "筋力が$N1増加しています。", kind="spell_aura")
     assert "name_missing:Strength" not in reasons
+
+
+def test_a_title_case_tooltip_row_is_checked_by_its_names():
+    """A tooltip row without prose (`cut` marks it `title_case`) is checked like a quest title: its
+    capitals say nothing, the `names` `cut` found must stay in English letters."""
+    flavour = {**_tooltip("Soft Like Pudding"), "title_case": True}
+    assert _reasons(flavour, "プリンのように柔らかい") == []
+    named = {**_tooltip("By Hemet Nesingwary"), "title_case": True, "names": ["Hemet", "Nesingwary"]}
+    assert "name_missing:Nesingwary" in _reasons(named, "ヘメット・ネシングウェアリー作")
+    assert _reasons(named, "Hemet Nesingwary作") == []
+
+
+def test_only_a_name_only_tooltip_row_may_keep_its_english():
+    name = {**_tooltip("Umbrinoth"), "title_case": True, "names": ["Umbrinoth"], "name_only": True}
+    assert _reasons(name, "Umbrinoth") == []
+    flavour = {**_tooltip("Made With Love"), "title_case": True}
+    assert _reasons(flavour, "Made With Love") == ["not_japanese"]

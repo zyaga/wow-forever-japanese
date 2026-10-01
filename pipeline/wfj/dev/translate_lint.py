@@ -7,7 +7,8 @@ reason per problem:
 
 - `missing` / `duplicate` / `unknown_ref`: the draft does not cover the batch one to one
 - `not_japanese`: no kana or kanji, or a simplified-only character (`language.is_japanese`). An English
-  line that is only dots (`...`) may stay only dots (`……`).
+  line that is only dots (`...`) may stay only dots (`……`), and a tooltip row `cut` marked `name_only`
+  (`Umbrinoth`) may keep exactly its English.
 - `tokens:<english>→<japanese>`: the `{name}` / `{class}` / `{race}` tokens differ in kind or count
 - `leftover:<token>`: a `$` code, an unknown `{word}` or any `<a/b>` pair (drafts are gender-neutral)
 - `slash:<a>/<b>`: a `/` between two Japanese words (`師匠/主人`), two renderings where one must be chosen;
@@ -175,7 +176,11 @@ def check_row(
         return _check_branches(row, ja, allowlist, glossary, required, not_names)
     en, field = row["en"], KINDS[row["kind"]][1]
     reasons: list[str] = []
-    if not language.is_japanese(ja, field) and not (_DOTS.fullmatch(en) and _DOTS.fullmatch(ja)):
+    # a tooltip line that is only a name (`translate_batch` marks it `name_only`) ships that name: names stay
+    # in English letters
+    kept_name = bool(row.get("name_only")) and ja == en
+    dots = bool(_DOTS.fullmatch(en) and _DOTS.fullmatch(ja))
+    if not language.is_japanese(ja, field) and not dots and not kept_name:
         return ["not_japanese"]
     want, have = _brace_tokens(en), _brace_tokens(ja)
     if want != have:
@@ -248,7 +253,8 @@ def check_row(
     # for, and it would flag "Needs" and "Flame" as names. The check is skipped here rather than drowned:
     # names still stay in English letters, and the style guide's Quests section says so, but the lint
     # cannot tell a name from an ordinary word in title case.
-    if row["kind"] not in TITLE_CASE_KINDS:  # objective text is title case too
+    # objective text is title case too, and so is a tooltip row without prose (`Soft Like Pudding`)
+    if row["kind"] not in TITLE_CASE_KINDS and not row.get("title_case"):
         reasons += [f"name_missing:{w}" for w in missing]
     else:
         # the names `cut` found by what the corpus never writes in lower case, and the item / creature names
