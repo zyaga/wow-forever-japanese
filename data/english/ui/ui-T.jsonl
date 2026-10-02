@@ -206,7 +206,13 @@
 {"id": "TRANSMOGRIFY_CLEAR_ALL_PENDING", "field": "text", "en": "Undo all pending changes", "hash": "afe62cce96e55fe8", "src": "db2@1.60.1.70170"}
 {"id": "TRANSMOGRIFY_ILLUSION_INVALID_ITEM", "field": "text", "en": "This weapon appearance cannot be transmogrified with enchants.", "hash": "0c55a5e5891fa80f", "src": "db2@1.60.1.70170"}
 {"id": "TRANSMOGRIFY_RIGHT_SHOULDER", "field": "text", "en": "Transmog Each Shoulder Separately", "hash": "4697f05999c019db", "src": "db2@1.60.1.70170"}
+{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_KNOWN", "field": "text", "en": "You've collected this appearance", "hash": "9eaa6b3d4ada4edc", "src": "db2@1.60.1.70170"}
+{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNCOLLECTABLE", "field": "text", "en": "This item can't be used for transmogrification, but may be worn as equipment", "hash": "541ad5875c49c04c", "src": "db2@1.60.1.70170"}
+{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNKNOWN", "field": "text", "en": "You haven't collected this appearance", "hash": "11c6310d6f88bb4b", "src": "db2@1.60.1.70170"}
+{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNUSABLE", "field": "text", "en": "This appearance can't be used by your character", "hash": "4250f2240e3f29eb", "src": "db2@1.60.1.70170"}
 {"id": "TRANSMOGRIFY_TOOLTIP_HIDDEN", "field": "text", "en": "Hidden", "hash": "fdd5c07f26887c68", "src": "db2@1.60.1.70170"}
+{"id": "TRANSMOGRIFY_TOOLTIP_ITEM_UNKNOWN_APPEARANCE_KNOWN", "field": "text", "en": "You've collected this appearance, but not from this item", "hash": "23716b808f7e1ba4", "src": "db2@1.60.1.70170"}
+{"id": "TRANSMOGRIFY_TOOLTIP_REVERT", "field": "text", "en": "To be reverted", "hash": "ec8a85d0e9c3f967", "src": "db2@1.60.1.70170"}
 {"id": "TRANSMOG_ARTIFACT_OPTIONS_HEADER", "field": "text", "en": "Legion Artifact Override", "hash": "3ba7d7019a89c88f", "src": "db2@1.60.1.70170"}
 {"id": "TRANSMOG_CUSTOM_SETS_HELPTIP", "field": "text", "en": "Create outfits from scratch with your Custom Sets.", "hash": "dfcb5c7f2ea0bc41", "src": "db2@1.60.1.70170"}
 {"id": "TRANSMOG_CUSTOM_SETS_MIGRATION_HELPTIP", "field": "text", "en": "Your previously applied Transmog and legacy outfits are available in Custom Sets.", "hash": "36eba7737c625a55", "src": "db2@1.60.1.70170"}

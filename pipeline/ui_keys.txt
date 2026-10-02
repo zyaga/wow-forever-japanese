@@ -14035,3 +14035,10 @@ UNIT_CAPTURABLE
 # the comparison tooltip's tab above the equipped item (blizzard_sharedxmlgame/tooltip/tooltipcomparisonmanager.lua:241-247)
 EQUIPPED
 IF_EQUIPPED_TOGETHER
+# the item tooltip's appearance-collection lines (Forever collects appearances: the Collections window's Appearances tab)
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_KNOWN
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNKNOWN
+TRANSMOGRIFY_TOOLTIP_ITEM_UNKNOWN_APPEARANCE_KNOWN
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNUSABLE
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNCOLLECTABLE
+TRANSMOGRIFY_TOOLTIP_REVERT

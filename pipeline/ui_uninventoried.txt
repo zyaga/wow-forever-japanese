@@ -137,3 +137,5 @@ GROUP_FINDER_GENERAL_PLAYSTYLE3  # asked for by UI/GroupFinder.lua and UI/Menus.
 GROUP_FINDER_GENERAL_PLAYSTYLE4  # asked for by UI/GroupFinder.lua and UI/Menus.lua: written by blizzard_lfgutil/mainline/lfgutil.lua:317-323 (the playstyle string), a file the inventory does not scan
 EQUIPPED  # asked for by UI/Tooltip.lua: written by blizzard_sharedxmlgame/tooltip/tooltipcomparisonmanager.lua:241-247 (the comparison tab), a file the inventory does not scan
 IF_EQUIPPED_TOGETHER  # asked for by UI/Tooltip.lua: written by blizzard_sharedxmlgame/tooltip/tooltipcomparisonmanager.lua:241-247 (the comparison tab), a file the inventory does not scan
+TRANSMOGRIFY_TOOLTIP_ITEM_UNKNOWN_APPEARANCE_KNOWN  # asked for by UI/Tooltip.lua's structural pass: the C client writes this item tooltip line itself, so no scanned file names it
+TRANSMOGRIFY_TOOLTIP_REVERT  # asked for by UI/Tooltip.lua's structural pass: the C client writes this item tooltip line itself, so no scanned file names it

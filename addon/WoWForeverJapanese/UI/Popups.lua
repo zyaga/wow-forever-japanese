@@ -106,6 +106,11 @@ local function argumentsOf(dialog, info, fs, english, shown)
   local a1, a2 = fs.text_arg1, fs.text_arg2
   local ok, text = pcall(string.format, english, a1, a2)
   if ok and text == shown then return a1, a2 end
+  if info.text_arg1 ~= nil or info.text_arg2 ~= nil then -- a generic confirmation's own arguments
+    a1, a2 = info.text_arg1, info.text_arg2
+    ok, text = pcall(string.format, english, a1, a2)
+    if ok and text == shown then return a1, a2 end
+  end
   local util = _G.GameDialogDefsUtil
   if type(util) ~= "table" or info.GetExpirationText == nil
       or info.GetExpirationText ~= util.GetDefaultExpirationText or type(dialog.timeleft) ~= "number" then
@@ -155,11 +160,23 @@ local function showText(dialog, info)
   return 1
 end
 
+-- GENERIC_CONFIRMATION's definition is empty: its OnShow writes the caller's text and arguments, and its buttons
+-- are the caller's accept / cancel text or YES / NO [verified: blizzard_staticpopup/shareddialogdefs.lua:1-8,
+-- blizzard_staticpopup_game/gamedialogdefs.lua:168-175]. → the strings the dialog shows, as a definition
+local function shownInfo(dialog, info)
+  local data = dialog.data
+  if dialog.which ~= "GENERIC_CONFIRMATION" or type(data) ~= "table" then return info end
+  return setmetatable({ text = data.text, text_arg1 = data.text_arg1, text_arg2 = data.text_arg2,
+    button1 = data.acceptText or Compat.resolve("YES"), button2 = data.cancelText or Compat.resolve("NO") },
+    { __index = info })
+end
+
 -- One shown dialog, its text already written. → words found
 function Popups.onShow(dialog)
   if type(dialog) ~= "table" then return 0 end
   local info = dialog.dialogInfo
   if type(info) ~= "table" then return 0 end
+  info = shownInfo(dialog, info)
   local n = showText(dialog, info)
   n = n + showWord(dialog.SubText, info.subText)
   local container = dialog.ButtonContainer
