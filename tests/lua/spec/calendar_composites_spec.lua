@@ -264,3 +264,147 @@ describe("the calendar's holiday description", function()
     assert.are.equal("Children's Week is here.|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM", sf:GetText())
   end)
 end)
+
+-- Difficulty names: GetDungeonNameWithDifficulty (blizzard_calendar.lua:62–68, local to Blizzard's file) puts the
+-- difficulty in brackets after the dungeon's name; the difficulty is a Difficulty row's English (GetDifficultyInfo,
+-- lua:777). It becomes the row's Japanese wherever such a title shows; the name and colour stay as written.
+describe("the calendar's difficulty names", function()
+  local WFJ
+
+  local ROWS = {}
+  for k, v in pairs(UI) do ROWS[k] = v end
+  ROWS["Difficulty:9"] = { "40 Player", "40人" }
+  ROWS["Difficulty:2"] = { "Heroic", "ヒロイック" }
+  local LOCKOUT = { calendarType = "RAID_LOCKOUT", sequenceType = "", title = "Molten Core",
+    difficultyName = "40 Player" }
+  local DAY = { LOCKOUT, { calendarType = "PLAYER", sequenceType = "", title = "Molten Core (40 Player) Unlocks" } }
+  local CLIENT = { NORMAL_FONT_COLOR_CODE = "|cffffd200", FONT_COLOR_CODE_CLOSE = "|r",
+    DUNGEON_NAME_WITH_DIFFICULTY = "%s (%s)" }
+  local MORE = { "CalendarCreateEventTextureName", "CalendarCreateEventTexture_Update",
+    "CalendarTexturePicker_InitButton", "CalendarCreateEventFrame" }
+
+  -- Blizzard's local GetDungeonNameWithDifficulty (lua:62–68)
+  local function titled(name, difficultyName)
+    if difficultyName == "" then return "|cffffd200" .. name .. "|r" end
+    return "|cffffd200" .. ("%s (%s)"):format(name, difficultyName) .. "|r"
+  end
+
+  local function alt(down)
+    Stub.keys.alt = down
+    WFJ.Modifier.refresh()
+  end
+
+  before_each(function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    Stub.installTooltipAPI()
+    WFJ = H.loadChunks(FILES)
+    H.uiSetup(WFJ, ROWS)
+    loadCalendar()
+    for k, v in pairs(CLIENT) do _G[k] = v end
+    _G.GetDungeonNameWithDifficulty = nil -- local in Blizzard's file: the module builds the title itself
+    _G.C_Calendar = {
+      GetNumDayEvents = function(_, day) return day == 12 and #DAY or 0 end,
+      GetDayEvent = function(_, day, i) return (day == 12 or day == 3) and DAY[i] or nil end,
+    }
+    _G.CalendarDayButton_OnEnter = function(self) -- lua:2141–2154: the lockout's title through the local function
+      local tt = _G.GameTooltip
+      tt:SetOwner(self)
+      tt:ClearLines()
+      tt:AddLine("Thursday, September 25 2026")
+      tt:AddDoubleLine(titled(LOCKOUT.title, LOCKOUT.difficultyName) .. " Unlocks", "8:00 AM")
+      tt:AddDoubleLine(DAY[2].title, "9:00 PM")
+      tt:Show()
+    end
+    _G.CalendarFrame_UpdateDayEvents = function(index) -- lua:1571–1582
+      _G["CalendarDayButton" .. index .. "EventButton1"].eventIndex = 1
+      _G["CalendarDayButton" .. index .. "EventButton1Text1"]:SetText(
+        titled(LOCKOUT.title, LOCKOUT.difficultyName) .. " Unlocks")
+    end
+    _G.CalendarEventPickerFrame_InitButton = function(button, elementData) -- lua:4339–4349
+      local event = DAY[elementData.index]
+      local title = event.calendarType == "RAID_LOCKOUT" and titled(event.title, event.difficultyName) .. " Unlocks"
+        or event.title
+      button.Title:SetText(title)
+    end
+    _G.CalendarViewEventFrame_Update = function() -- lua:2806–2809
+      _G.CalendarViewEventTypeName:SetText("Raid - " .. titled("Onyxia's Lair", "Heroic"))
+    end
+    _G.CalendarViewRaidFrame_Update = function() -- lua:2520–2525
+      _G.CalendarViewRaidFrame.ScrollingFont:SetText(("Your %s instance unlocks at 8:00 AM."):format(
+        titled("Molten Core", "40 Player")))
+    end
+    Stub.namedFontString("CalendarCreateEventTextureName", "")
+    _G.CalendarCreateEventTexture_Update = function() -- lua:3679–3693
+      _G.CalendarCreateEventTextureName:SetText(titled("Zul'Gurub", _G.CalendarCreateEventFrame.difficulty))
+    end
+    _G.CalendarTexturePicker_InitButton = function(button, elementData) -- lua:4513–4531
+      button.Title:SetText(titled(elementData.name, elementData.difficulty))
+    end
+    local create = CreateFrame("Frame", "CalendarCreateEventFrame")
+    create.difficulty = "Heroic"
+    create.DifficultyOptionDropdown = CreateFrame("DropdownButton")
+    create.DifficultyOptionDropdown.Text = fs("")
+    function create.DifficultyOptionDropdown.UpdateText(self) self.Text:SetText(create.difficulty) end
+    assert.is_true(WFJ.Calendar.init())
+  end)
+
+  after_each(function()
+    H.uiTeardown()
+    Stub.keys.alt = false
+    for _, name in ipairs(GLOBALS) do _G[name] = nil end
+    for _, name in ipairs(MORE) do _G[name] = nil end
+    for k in pairs(CLIENT) do _G[k] = nil end
+  end)
+
+  it("a lockout's title on a day button, in the picker and in the day tooltip: the difficulty in Japanese, the"
+    .. " name and colour kept; Alt shows English; a typed title that reads the same stays", function()
+    _G.CalendarFrame_UpdateDayEvents(3)
+    assert.are.equal("|cffffd200Molten Core (40人)|rのロック解除", _G.CalendarDayButton3EventButton1Text1:GetText())
+    alt(true)
+    assert.are.equal("|cffffd200Molten Core (40 Player)|r Unlocks", _G.CalendarDayButton3EventButton1Text1:GetText())
+    alt(false)
+    local button = { Title = fs("") }
+    _G.CalendarEventPickerFrame_InitButton(button, { index = 1 })
+    assert.are.equal("|cffffd200Molten Core (40人)|rのロック解除", button.Title:GetText())
+    _G.CalendarEventPickerFrame_InitButton(button, { index = 2 }) -- a player's event typed like a lockout
+    assert.are.equal("Molten Core (40 Player) Unlocks", button.Title:GetText())
+    _G.CalendarDayButton_OnEnter(_G.CalendarDayButton12)
+    assert.are.equal("|cffffd200Molten Core (40人)|rのロック解除", _G.GameTooltipTextLeft2:GetText())
+    assert.are.equal("Molten Core (40 Player) Unlocks", _G.GameTooltipTextLeft3:GetText())
+  end)
+
+  it("the event type line and the raid description take the difficulty in Japanese", function()
+    _G.CalendarViewEventFrame_Update()
+    assert.are.equal("レイド - |cffffd200Onyxia's Lair (ヒロイック)|r", _G.CalendarViewEventTypeName:GetText())
+    _G.CalendarViewRaidFrame_Update()
+    assert.are.equal("|cffffd200Molten Core (40人)|rのインスタンスは8:00 AMに解除されます。",
+      _G.CalendarViewRaidFrame.ScrollingFont:GetText())
+    alt(true)
+    assert.are.equal("Raid - |cffffd200Onyxia's Lair (Heroic)|r", _G.CalendarViewEventTypeName:GetText())
+    alt(false)
+  end)
+
+  it("a dungeon title on its own (the create frame, the texture picker) and the difficulty dropdown; a difficulty"
+    .. " with no row and a title with none stay English", function()
+    _G.CalendarCreateEventTexture_Update()
+    assert.are.equal("|cffffd200Zul'Gurub (ヒロイック)|r", _G.CalendarCreateEventTextureName:GetText())
+    alt(true)
+    assert.are.equal("|cffffd200Zul'Gurub (Heroic)|r", _G.CalendarCreateEventTextureName:GetText())
+    alt(false)
+    _G.CalendarCreateEventFrame.difficulty = "Mythic"
+    _G.CalendarCreateEventTexture_Update()
+    assert.are.equal("|cffffd200Zul'Gurub (Mythic)|r", _G.CalendarCreateEventTextureName:GetText())
+    local button = { Title = fs("") }
+    _G.CalendarTexturePicker_InitButton(button, { name = "Molten Core", difficulty = "40 Player" })
+    assert.are.equal("|cffffd200Molten Core (40人)|r", button.Title:GetText())
+    _G.CalendarTexturePicker_InitButton(button, { name = "Molten Core", difficulty = "" }) -- reused, no difficulty
+    assert.are.equal("|cffffd200Molten Core|r", button.Title:GetText())
+    local dropdown = _G.CalendarCreateEventFrame.DifficultyOptionDropdown
+    _G.CalendarCreateEventFrame.difficulty = "Heroic"
+    dropdown:UpdateText()
+    assert.are.equal("ヒロイック", dropdown.Text:GetText())
+    _G.CalendarCreateEventFrame.difficulty = "Close" -- a dictionary word, no Difficulty row
+    dropdown:UpdateText()
+    assert.are.equal("Close", dropdown.Text:GetText())
+  end)
+end)

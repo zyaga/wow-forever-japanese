@@ -104,6 +104,29 @@ local function chatKeys(index)
   return chatSet
 end
 
+-- A reputation line (COMBAT_FACTION_CHANGE) may also be a FriendshipGain row ("You gain 25 Rank Points.",
+-- FriendshipReputation's StandingModified text, the number filled in by the client: UIStrings index:matchCounted). The
+-- family is named for that chat type only, so no other line is ever taken for one.
+local factionSet, factionIndex
+local function factionKeys(index)
+  if factionIndex ~= index then
+    factionSet, factionIndex = {}, index
+    for key in pairs(chatKeys(index)) do factionSet[key] = true end
+    for key in pairs(WFJ.UIStrings.familyKeys(index.rows, "FriendshipGain")) do factionSet[key] = true end
+  end
+  return factionSet
+end
+
+local factionId
+local function factionTypeId()
+  if factionId == nil then
+    local info = Compat.get(SURFACE, "typeInfo")
+    local t = type(info) == "table" and info.COMBAT_FACTION_CHANGE or nil
+    factionId = type(t) == "table" and t.id or false
+  end
+  return factionId or nil
+end
+
 -- `area`: the settings area a line belongs to: "ui" (system lines), "gossip" (NPC speech, UI/Speech)
 local function on(area)
   return WFJ.State.enabled and WFJ.State.areaEnabled(area or "ui")
@@ -165,11 +188,14 @@ local function filled(index, key, args, en)
   return ja
 end
 
-function ChatSystem.translate(en, exactOnly)
+-- `faction` (optional): the line is a reputation line, which may also be a FriendshipGain row.
+function ChatSystem.translate(en, exactOnly, faction)
   local index = WFJ.UIIndex
   if not index or type(en) ~= "string" or en == "" then return nil end
   local key, args = index:exactKey(en), nil
-  if not key and not exactOnly then key, args = index:matchOnly(en, chatKeys(index)) end
+  if not key and not exactOnly then
+    key, args = index:matchOnly(en, faction and factionKeys(index) or chatKeys(index))
+  end
   return filled(index, key, args, en)
 end
 
@@ -364,7 +390,7 @@ function ChatSystem.onAddMessage(frame, message, _, _, _, typeId, _, _, _, event
   if not untyped and typeId == emoteTypeId() then return onEmoteLine(frame, message, typeId, eventArgs) end
   if not untyped and not ids[typeId] then return onPlayerLine(frame, message, typeId, eventArgs) end
   if not on() then return 0 end
-  local ja = ChatSystem.translate(message, untyped)
+  local ja = ChatSystem.translate(message, untyped, not untyped and typeId == factionTypeId())
   if not ja or not remember(ja, message) then return 0 end
   -- no line id on a plain line: an identical English still in the history (it arrived while off) is rewritten too
   frame:TransformMessages(function(text, _, _, _, lineType)

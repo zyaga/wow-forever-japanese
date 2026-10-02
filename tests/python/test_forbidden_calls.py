@@ -95,11 +95,15 @@ def test_the_addon_has_none(root):
     assert found == []
 
 
-# The addon hooks no subtitle, NPC-chatter, speech-bubble, screen-tutorial or new-player-experience frame. Only
-# UI/Speech.lua (NPC speech: raid boss emotes and chat bubbles) may name the chatter frames; nothing names the subtitle frame or the NPE / screen-tutorial code.
+# The addon hooks no NPC-chatter, speech-bubble, subtitle, screen-tutorial or new-player-experience frame outside the
+# module that owns it. Only UI/Speech.lua (NPC speech: raid boss emotes and chat bubbles) may name the chatter frames
+# and only UI/Subtitles.lua (cinematic subtitle lines) the subtitle frame; nothing names the NPE / screen-tutorial code.
 SCOPE_NAMES = ("SubtitlesFrame", "SHOW_SUBTITLE", "RaidBossEmoteFrame", "CHAT_MSG_RAID_BOSS_EMOTE", "ChatBubble",
                "TutorialMainFrame", "NewPlayerExperience")
-SPEECH_ONLY = {"RaidBossEmoteFrame", "CHAT_MSG_RAID_BOSS_EMOTE", "ChatBubble"}
+OWNED = {
+    "UI/Speech.lua": {"RaidBossEmoteFrame", "CHAT_MSG_RAID_BOSS_EMOTE", "ChatBubble"},
+    "UI/Subtitles.lua": {"SubtitlesFrame", "SHOW_SUBTITLE"},
+}
 
 
 def test_no_subtitle_or_npe_hook(root):
@@ -110,6 +114,6 @@ def test_no_subtitle_or_npe_hook(root):
             continue
         text = path.read_text(encoding="utf-8")
         for name in SCOPE_NAMES:
-            if name in text and not (rel == "UI/Speech.lua" and name in SPEECH_ONLY):
+            if name in text and name not in OWNED.get(rel, set()):
                 found.append(f"{rel}: {name}")
     assert found == []

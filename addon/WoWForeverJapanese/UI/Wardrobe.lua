@@ -10,7 +10,12 @@
 --   SetsCollectionFrame.DetailsFrame.LimitedSet.Text TRANSMOG_SET_LIMITED_TIME_SET (xml:671);
 --   each ItemsCollectionFrame.Models[…].NewString NEW_CAPS (xml:41; the models are XML children listed in the
 --     parentArray, xml:445 onward), keyed by widget;
---   FilterButton's text FILTER (blizzard_menu/mainline/menutemplates.xml:69).
+--   FilterButton's text FILTER (blizzard_menu/mainline/menutemplates.xml:69);
+--   SearchBox.Instructions SEARCH, the search box's placeholder: SearchBoxTemplate's instructionText, written once by
+--     WardrobeCollectionFrameSearchBoxMixin:OnLoad → SearchBoxTemplate_OnLoad [verified: mainline/
+--     blizzard_wardrobe.xml:245; mainline/blizzard_wardrobe.lua:1698–1700; blizzard_sharedxml/shared/inputbox/
+--     inputboxtemplates.xml:206–208, inputboxtemplates.lua:174–177]. Instructions is a FontString of its own beside
+--     the EditBox, so what the player types is never read or written.
 -- Writer: ItemsCollectionFrame.PagingFrame:Update → PageText COLLECTION_PAGE_NUMBER (Collections.paging).
 -- Tooltips (help-tooltip owners, each restricted to its keys):
 --   a slot button: SetText(WEAPON_ENCHANTMENT), or _G[self.slot] (HEADSLOT …), or LEFTSHOULDERSLOT /
@@ -28,7 +33,7 @@
 --   ItemNameDescription through TransmogSet.ItemNameDescriptionID), written with VariantSetsDropdown:SetText
 --   (shared/blizzard_wardrobe_sets.lua:307): post-hooked on the dropdown, the ItemNameDescription family only.
 -- Never touched: set names and labels (item-set names), item names, the class dropdown's selection (a class name),
--- the search box text.
+-- the search box text (the EditBox itself; its placeholder FontString is shown above).
 local _, WFJ = ...
 local Wardrobe = {}
 WFJ.Wardrobe = Wardrobe
@@ -48,6 +53,7 @@ local STATIC_LABELS = { -- record key → { candidate, the one key it shows }
   loading = { FRAME .. ".SearchBox.ProgressFrame.LoadingFrame.Text", "SEARCH_LOADING_TEXT" },
   searching = { FRAME .. ".SearchBox.ProgressFrame.ProgressBar.text", "SEARCH_PROGRESS_BAR_TEXT" },
   limitedSet = { DETAILS .. ".LimitedSet.Text", "TRANSMOG_SET_LIMITED_TIME_SET" },
+  searchHint = { FRAME .. ".SearchBox.Instructions", "SEARCH" },
   shortcutsHeader = { "TrackingInterfaceShortcutsFrame.HeaderText", "WARDROBE_SHORTCUTS_TUTORIAL_2" },
   shortcutsText = { "TrackingInterfaceShortcutsFrame.Text", "WARDROBE_SHORTCUTS_TUTORIAL_3" },
 }

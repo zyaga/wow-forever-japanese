@@ -60,8 +60,14 @@
 --   the summary: the recent achievements' Label / Description (AchievementFrameSummary_UpdateAchievements,
 --     lua:2578–2579, 2626–2627) and the category bars' Label (AchievementFrameSummary_UpdateSummaryProgressBars,
 --     lua:2490–2495, AchievementFrameSummaryCategoriesCategory1–12);
---   a meta criteria button's Label (another achievement's title; AchievementObjectives_DisplayCriteria, lua:2124).
--- Never touched: criteria text, player names in the comparison view, the point totals, the search EditBox.
+--   a meta criteria button's Label (another achievement's title; AchievementObjectives_DisplayCriteria, lua:2124);
+--   a text criterion's Name (the CriteriaText family; AchievementObjectives_DisplayCriteria, lua:2170-2214, the
+--     pooled AchievementCriteriaTemplate frames in objectivesFrame.criterias, AchievementsObjectivesMixin:
+--     GetCriteria, lua:1862-1878): a completed criterion is its text, an open one "- " and its text (lua:2203,
+--     2210). The "- " is kept and only the criterion is matched. A progress-bar criterion (its quantity string,
+--     lua:2152-2168), a meta criterion (an achievement title, above) and a criterion with no shipped row (a name)
+--     stay as written. The statistics rows read criteria only for their quantity (lua:2384-2387, 3148-3151).
+-- Never touched: player names in the comparison view, the point totals, the search EditBox.
 local _, WFJ = ...
 local Achievement = {}
 WFJ.Achievement = Achievement
@@ -212,12 +218,36 @@ function Achievement.onMeta(frame)
   return 1
 end
 
--- hooksecurefunc target (AchievementObjectives_DisplayCriteria): every meta criteria button's title.
--- → the number shown
-function Achievement.onCriteria()
+local criterionKey = WFJ.Labels.keyer("criterion.")
+local OPEN = "- " -- an open criterion's prefix (lua:2210)
+
+-- One criterion's Name: its text, or "- " and its text. `opts` is the family's { only = set }. → 1 | 0
+local function showCriterion(fs, opts)
+  local key = criterionKey(fs)
+  local text = fs:GetText()
+  if type(text) == "string" and text:sub(1, #OPEN) == OPEN then
+    local rec = WFJ.SurfaceState.get(SURFACE, key)
+    if rec and rec.fs == fs and rec.applied ~= nil and text == rec.applied then return 1 end -- still ours
+    local part = WFJ.Labels.part(text:sub(#OPEN + 1), opts.only)
+    return WFJ.Labels.showArgs(SURFACE, key, fs, part and part.key, part and { form = "seq", parts = { OPEN, part } })
+  end
+  return WFJ.Labels.show(SURFACE, key, fs, nil, opts)
+end
+
+-- hooksecurefunc target (AchievementObjectives_DisplayCriteria(objectivesFrame, id)): every meta criteria button's
+-- title and every text criterion of that frame. → the number shown
+function Achievement.onCriteria(objectivesFrame)
   local n = 0
   for frame in pairs(metas) do
     if frame.Label ~= nil then n = n + WFJ.Labels.show(SURFACE, metaKey(frame), frame.Label, nil, textOnly()) end
+  end
+  local criterias = type(objectivesFrame) == "table" and objectivesFrame.criterias or nil
+  if type(criterias) == "table" then
+    local only = WFJ.Labels.families("CriteriaText")
+    for _, criterion in ipairs(criterias) do
+      local fs = type(criterion) == "table" and WFJ.Labels.widget(criterion.Name) or nil
+      if fs then n = n + showCriterion(fs, only) end
+    end
   end
   WFJ.Render.updateBanner(SURFACE)
   return n

@@ -40,6 +40,8 @@ local UI = {
   -- the pet damage row's hover title (CharacterDamageFrame_OnEnter, unit "pet", camelot paperdollframe.lua:
   -- 2293–2294) and the row's label word
   INVTYPE_WEAPONMAINHAND_PET = { "Main Attack", "主攻撃" }, DAMAGE = { "Damage", "ダメージ" },
+  -- a pet's loyalty rank, C_PetInfo.GetPetLoyalty() (client-table row: no global; ADR-042)
+  ["PetLoyalty:3"] = { "Submissive", "従順" },
 }
 
 -- The UIStrings entries this surface needs on camelot are in Core/UIStringKeys.lua (ARGS PLAYER_LEVEL …, the stat
@@ -62,11 +64,13 @@ describe("the character window on the Forever client", function()
     for k, v in pairs(ARGS) do saved.args[k] = WFJ.UIStrings.ARGS[k]; WFJ.UIStrings.ARGS[k] = v end
     for k, v in pairs(LABELS) do saved.labels[k] = WFJ.UIStrings.LABELS[k]; WFJ.UIStrings.LABELS[k] = v end
     H.uiSetup(WFJ, UI)
+    Stub.namedFontString("PetLoyaltyText", "") -- paperdollframe.xml:457
     WFJ.Labels.forbidNames(WFJ.Character.NEVER_TOUCH) -- Main registers every list before any init
     WFJ.Character.init()
   end)
 
   after_each(function()
+    _G.PetLoyaltyText = nil
     for k in pairs(ARGS) do WFJ.UIStrings.ARGS[k] = saved.args[k] end
     for k in pairs(LABELS) do WFJ.UIStrings.LABELS[k] = saved.labels[k] end
     H.uiTeardown()
@@ -107,6 +111,22 @@ describe("the character window on the Forever client", function()
     RC.player.pet = { level = 58, family = "Wolf" }
     _G.PaperDollFrame_SetPetLevel()
     assert.are.equal("レベル58 Wolf", _G.CharacterLevelText:GetText())
+  end)
+
+  it("the pet's loyalty rank is a PetLoyalty row's Japanese after PaperDollFrame_SetPetLevel; Alt shows English;"
+    .. " a dictionary word that is no PetLoyalty row stays English", function()
+    RC.player.pet = { level = 20, family = "Boar" }
+    _G.PetLoyaltyText.text = "Submissive" -- PetLoyaltyText:SetText(C_PetInfo.GetPetLoyalty()), lua:549–552
+    _G.PaperDollFrame_SetPetLevel()
+    assert.are.equal("従順", _G.PetLoyaltyText:GetText())
+    assert.are.equal("レベル20 Boar", _G.CharacterLevelText:GetText())
+    alt(true)
+    assert.are.equal("Submissive", _G.PetLoyaltyText:GetText())
+    alt(false)
+    assert.are.equal("従順", _G.PetLoyaltyText:GetText())
+    _G.PetLoyaltyText.text = "Damage"
+    _G.PaperDollFrame_SetPetLevel()
+    assert.are.equal("Damage", _G.PetLoyaltyText:GetText())
   end)
 
   it("the stat pane's headers and stat labels translate on pooled rows; a skill-named row stays English", function()

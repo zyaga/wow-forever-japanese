@@ -44,6 +44,7 @@ View.SURFACES = {
 -- until it is classified.
 View.NON_WINDOW = {
   alerts = true, ["auctionhouse.token"] = true, bnettoast = true, bossbanner = true, castingbar = true,
+  ["cinematic.subtitles"] = true, -- subtitle lines over a cinematic
   chattabs = true, combatfeedback = true, combattext = true, ["communities.benefits.rewardtip"] = true,
   cooldownviewer = true, damagemeter = true, ["deathrecap.tip"] = true, ["editmode.selection"] = true,
   errors = true, gamepad = true,

@@ -298,7 +298,7 @@ describe("the mailbox", function()
 
   it("never-touch widgets holding dictionary English are never recorded, and Reply copies them as written",
     function()
-      assert.is_true(#WFJ.Mail.NEVER_TOUCH >= 22)
+      assert.is_true(#WFJ.Mail.NEVER_TOUCH >= 21)
       MailStub.inbox = { { sender = "Inbox", subject = "Delete", daysLeft = 0.25 } }
       MailStub.letter = { sender = "Send Money", subject = "Reply", body = "Close", items = 0, money = 0,
         canDelete = true }

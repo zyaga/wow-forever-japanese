@@ -87,8 +87,13 @@ end
 -- letters would take any other addon's "x: 1/2" line.)
 Errors.LUA_TEMPLATES = { TOO_MANY_WATCHED_TOKENS = true, ACHIEVEMENT_WATCH_TOO_MANY = true } -- camelot
 -- blizzard_tokenui.lua:463, achievementui:1718
--- communitieserrors.lua:120–132 (a community action's error; removed from a community), communitieshyperlink.lua:16
-local LUA_FAMILIES = { "^ERROR_CLUB_ACTION_", "^CLUB_REMOVED_REASON_" }
+-- communitieserrors.lua:120–132 (a community action's error; removed from a community), communitieshyperlink.lua:16;
+-- and the client's own instance transfer messages, which carry no GlobalStrings key: a dungeon's entry message
+-- (MapDifficulty.Message) and an entry condition's failure text (MapDifficultyXCondition.FailureDescription), both
+-- client-table families matched only by their exact English [unverified in game: which id, if any, such a line
+-- arrives with; a line whose id did not match takes this rule too].
+local LUA_FAMILIES = { "^ERROR_CLUB_ACTION_", "^CLUB_REMOVED_REASON_", "^InstanceEntryMessage:",
+  "^InstanceEntryFailure:" }
 local luaSet, luaIndex
 local function luaTemplates(index)
   if luaIndex ~= index then

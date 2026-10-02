@@ -33,7 +33,26 @@
 --     its Label and Description are the Achievement table's text, restricted to the achievement families
 --     (UI/Achievement.TEXT_FIELDS, textOnly); its Shield owns the reward tooltip, one line added by
 --     AchievementShield_OnEnter (blizzard_legacychallenges.lua:327-336): the AchievementReward family only.
---     Its criteria are not table text and are left as written.
+--     Its text criteria are the CriteriaText family (CriteriaTree.Description_lang, GetAchievementCriteriaInfo):
+--     AchievementTemplateMixin:DisplayObjectives hands the one shared LegacyChallengeObjectives frame to the card
+--     (blizzard_legacychallengebutton.lua:256-279), whose Display acquires a pooled criterion per row and calls
+--     LegacyChallengeCriteriaMixin:Init → Name:SetText(text) (:102-111, :158-175). Display is post-hooked on that
+--     frame and walks criteriaPool:EnumerateActive(), each Name restricted to the CriteriaText family. A counted
+--     criterion shows a progress bar and its count instead (showingProgress, Name hidden): left as written. A
+--     criterion with no shipped row (a name) has no key and stays as the client wrote it.
+--   the reward track (RewardTrackPage.LegacyRewardProgressFrame, RewardProgressFrameTemplate, pooled
+--     LegacyRewardCardTemplate cards with RenownLevelMixin, blizzard_legacyrewardtrack.xml:4, 59, 119-124):
+--     LegacyRewardTrackPageMixin:SetupRewardTrack fills each level's rewardInfo from
+--     C_MajorFactions.GetRenownRewardsForLevel and calls progressFrame:Init (blizzard_legacyrewardtrack.lua:35-49);
+--     RewardTrackFrameMixin:Init acquires the cards into self.Elements (blizzard_framexml/rewardtracktemplates.lua:
+--     38-63), post-hooked on the instance. Each card's SetRewardName (:493-495, called from TryInit :367-386 after
+--     SetInfo resets it) is post-hooked on the card: RewardName restricted to the RenownRewardName family. A name
+--     that is no reward row's text (an item's, a mount's or a spell's own name, blizzard_framexmlutil/
+--     renownrewardutil.lua:3-70) has no key and stays English. Each card owns its tooltip
+--     (RenownLevelMixin:RefreshTooltip, :517-549): a single reward's name as title and its description, else the
+--     milestone title and "- %s" name lines, or the capstone lines: the RenownRewardName and
+--     RenownRewardDescription families and the four fixed renown keys only, so a "- %s" line (a name inside) is
+--     never matched.
 --   the category list (LIST.ScrollBox, pooled LegacyChallengeCategory rows): LegacyChallengeCategoryMixin:Init
 --     writes the category name with SetHeaderText → GetTitleRegion():SetText (blizzard_legacychallengecategorylist
 --     .lua:184–188; blizzard_sharedxml/listtemplates.lua:58–61), the AchievementCategory family only.
@@ -47,9 +66,9 @@
 --   LegacyTreePointSummary's LEGACY_POINTS_SEASONAL_CAP (blizzard_legacytree.lua:299–304, 315);
 --   UndoButton's TALENT_FRAME_DISCARD_CHANGES_BUTTON_TOOLTIP (blizzard_legacytree.xml:212; UIButtonMixin:OnEnter).
 -- Not here: the tree's search preview and search icons (UI/SpellSearch.lua); talent node tooltips
---   ("TalentDisplay.TooltipCreated", UI/Talents.lua); the reward cards' names (C_MajorFactions reward text);
---   the filter menu's entries (UI/Menus); the gamepad footers (GamepadSharedUtility prompts).
--- Never touched: the two search EditBoxes, the point counters, reward names.
+--   ("TalentDisplay.TooltipCreated", UI/Talents.lua); the filter menu's entries (UI/Menus); the gamepad footers
+--   (GamepadSharedUtility prompts); the paragon reward's tooltip (paragon info, not a renown reward row).
+-- Never touched: the two search EditBoxes, the point counters, the reward cards' level numbers.
 local _, WFJ = ...
 local Legacy = {}
 WFJ.Legacy = Legacy
@@ -74,6 +93,9 @@ local TREE = { only = TREE_KEYS }
 local AVAILABLE = { only = { "LEGACY_POINTS_AVAILABLE" } }
 local POINTS_BAR = { only = { "LEGACY_POINTS_CURR_MAX" } }
 local TRACKED = { only = { "TRACK_ACHIEVEMENT" } }
+-- the fixed lines of a reward card's tooltip besides a reward's own name and description
+local RENOWN_TOOLTIP_KEYS = { "RENOWN_REWARD_CAPSTONE_TOOLTIP_TITLE", "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC",
+  "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC2", "RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE" }
 
 -- Static labels: record key → { candidate, the one key it shows }.
 local STATIC_LABELS = {
@@ -105,6 +127,8 @@ local CANDIDATES = {
   selection = { FRAME .. ".TreePage.LegacyTreeSelectionPanel" },
   cards = { FRAME .. ".ChallengesPage.DetailPane.ScrollBox" }, scrollUtil = { "ScrollUtil" },
   categories = { LIST .. ".ScrollBox" },
+  objectives = { "LegacyChallengeObjectives" }, -- the one criteria frame every card borrows (xml:155)
+  track = { FRAME .. ".RewardTrackPage.LegacyRewardProgressFrame" },
   -- the label's writer: OnLoad registers RefreshText itself as a currency callback, so a hook on the frame's field
   -- never runs; UpdateCurrencyInfo fires it on every show and points change [verified: forever-ui-1.60.1.70170
   -- blizzard_legacysystem/blizzard_legacysystemutil.lua:55-73, blizzard_legacytree.lua:107, 291-293]
@@ -122,6 +146,8 @@ end
 -- A stable record key per pooled challenge card (records follow the widget, not the index).
 local cardKey = WFJ.Labels.keyer("card.")
 local categoryKey = WFJ.Labels.keyer("category.")
+local criterionKey = WFJ.Labels.keyer("criterion.")
+local rewardKey = WFJ.Labels.keyer("reward.")
 
 -- The labels the client writes once at load, the filter button's own text and the window title.
 -- → the number of dictionary words found.
@@ -182,6 +208,57 @@ function Legacy.onCategory(a, b)
   WFJ.Render.updateBanner(SURFACE)
 end
 
+-- hooksecurefunc target (LegacyChallengeObjectives:Display): every pooled criterion it holds. → words shown
+function Legacy.onObjectives(objectives)
+  if type(objectives) ~= "table" then objectives = get("objectives") end
+  local pool = type(objectives) == "table" and objectives.criteriaPool or nil
+  if type(pool) ~= "table" or type(pool.EnumerateActive) ~= "function" then return 0 end
+  local only, n = WFJ.Labels.families("CriteriaText"), 0
+  for criterion in pool:EnumerateActive() do
+    local name = type(criterion) == "table" and criterion.Name or nil
+    if type(name) == "table" then
+      if criterion.showingProgress then
+        WFJ.SurfaceState.drop(SURFACE, criterionKey(name)) -- the count speaks; the hidden name stays as written
+      else
+        n = n + WFJ.Labels.show(SURFACE, criterionKey(name), name, nil, only)
+      end
+    end
+  end
+  WFJ.Render.updateBanner(SURFACE)
+  return n
+end
+
+-- hooksecurefunc target (a reward card's SetRewardName). → 1 | 0
+function Legacy.onRewardName(card)
+  if type(card) ~= "table" then return 0 end
+  local n = WFJ.Labels.show(SURFACE, rewardKey(card), card.RewardName, nil, WFJ.Labels.families("RenownRewardName"))
+  WFJ.Render.updateBanner(SURFACE)
+  return n
+end
+
+local rewardCards = setmetatable({}, { __mode = "k" }) -- cards whose SetRewardName is hooked
+
+-- hooksecurefunc target (LegacyRewardProgressFrame:Init): the cards it acquired. → the number of cards seen
+function Legacy.onTrack(track)
+  if type(track) ~= "table" then track = get("track") end
+  local cards = type(track) == "table" and track.Elements or nil
+  if type(cards) ~= "table" then return 0 end
+  local tooltip = WFJ.Labels.familiesWith(RENOWN_TOOLTIP_KEYS, "RenownRewardName", "RenownRewardDescription")
+  local n = 0
+  for _, card in ipairs(cards) do
+    if type(card) == "table" then
+      WFJ.HelpTooltip.register(card, tooltip)
+      if not rewardCards[card] and type(card.SetRewardName) == "function" then
+        rewardCards[card] = true
+        hooksecurefunc(card, "SetRewardName", Legacy.onRewardName)
+      end
+      Legacy.onRewardName(card)
+      n = n + 1
+    end
+  end
+  return n
+end
+
 -- hooksecurefunc target (LegacyTreeSelectionPanel:RefreshTreeButtons): the pooled tree buttons own a one-line tooltip.
 -- → the number of buttons registered.
 function Legacy.onTreeButtons()
@@ -219,6 +296,8 @@ function Legacy.setup()
   hook(get("system"), "UpdateCurrencyInfo", Legacy.onAvailable)
   hook(get("pointsBar"), "Update", Legacy.onPointsBar)
   hook(get("selection"), "RefreshTreeButtons", Legacy.onTreeButtons)
+  hook(get("objectives"), "Display", Legacy.onObjectives)
+  hook(get("track"), "Init", Legacy.onTrack)
   local cards, util = get("cards"), get("scrollUtil")
   if type(cards) == "table" and type(util) == "table" and type(util.AddInitializedFrameCallback) == "function" then
     util.AddInitializedFrameCallback(cards, Legacy.onCard, Legacy, true)
@@ -229,6 +308,8 @@ function Legacy.setup()
   end
   for key, t in pairs(TOOLTIPS) do WFJ.HelpTooltip.register(get("tip." .. key), { only = t[2] }) end
   Legacy.onTreeButtons()
+  Legacy.onObjectives()
+  Legacy.onTrack()
   Legacy.onTree()
   Legacy.onAvailable()
   Legacy.onPointsBar()

@@ -20,6 +20,10 @@
 -- family (index:restrictedKeys), so a family may word an English its own way ("Close": 寄せ in the barber shop).
 -- A SLOTTED row (`EmoteText:<id>`, "%s waves at you.") keeps `%s` slots the live line fills with names; with no
 -- English to read, it is matched by putting the slots back (index:matchSlots).
+-- A TEMPLATED row (`SharedString:<id>`, `EventToastText:<id>`, `FriendshipGain:<id>` whose Japanese takes arguments)
+-- is a format string the client fills before showing it ("You gain %d Rank Points."). Still restricted: it is found
+-- only through matchOnly with its key, by the line's digits put back as `%d` (index:matchCounted), or against the
+-- template the client hands the caller (index:matchTemplate: plural groups and text arguments too).
 -- Format specifiers follow Blizzard's format(): %s %d %i %c %f %g with optional flags / width / precision, %N$ for a
 -- positional argument, %% for a literal percent. A captured argument that is itself an exact entry's English is
 -- shown as that entry's Japanese (school words, reputation standings); every other capture is shown as captured.
@@ -78,6 +82,18 @@ end
 -- fingerprint keys whose English holds `%s` slots a live line fills with names (index:matchSlots). → bool
 function UIStrings.isSlottedKey(key)
   return type(key) == "string" and key:find("^EmoteText:") ~= nil
+end
+
+-- TEMPLATED rows: the restricted families whose English is a format string the client fills (talent requirement
+-- lines, the rank toast, the friendship rank-points chat line). Only their rows whose Japanese takes an argument are
+-- templated; a row with none stays a plain restricted fingerprint row. → bool
+local TEMPLATED_PREFIXES = { "^SharedString:", "^EventToastText:", "^FriendshipGain:" }
+function UIStrings.isTemplatedKey(key)
+  if type(key) ~= "string" then return false end
+  for _, p in ipairs(TEMPLATED_PREFIXES) do
+    if key:find(p) then return true end
+  end
+  return false
 end
 
 -- NUMBERED rows (`WidgetText:<id>`, a UI widget's line): the English holds world-state tokens the client
@@ -168,7 +184,8 @@ UIStrings.isChatKey = isChatKey
 local function argKinds(key)
   local kinds = UIStrings.ARGS[key]
   if kinds then return kinds end
-  if isErrorKey(key) or isChatKey(key) then return ALL_TEXT end
+  -- a templated row's `%s` is a name or a word the client put in (a talent tree's name), kept as written
+  if isErrorKey(key) or isChatKey(key) or UIStrings.isTemplatedKey(key) then return ALL_TEXT end
   return nil
 end
 UIStrings.argKinds = argKinds
@@ -683,6 +700,18 @@ local setNames = setmetatable({}, { __mode = "k" }) -- a key set → does it nam
 -- kept on the index (a rebuilt index starts empty) and dropped whole when it grows past MISS_LIMIT.
 local MISS_LIMIT = 512
 
+-- `keys` as a set: a set as given, a list through onlySets. → set
+local function asSet(keys)
+  if keys[1] == nil then return keys end
+  local set = onlySets[keys]
+  if not set then
+    set = {}
+    for _, k in ipairs(keys) do set[k] = true end
+    onlySets[keys] = set
+  end
+  return set
+end
+
 -- a Settings option's "<label>: <tooltip>" line (blizzard_settings.lua:441–457), each half wrapped in its
 -- own colour. Only a RESTRICTED lookup reaches this form (the Options window walks its tooltip with `only` =
 -- UI/SettingsKeys' list): both halves must be dictionary entries AND the label must be one of the caller's keys, so a
@@ -804,17 +833,83 @@ function Index:matchNumbers(text)
   return nil
 end
 
+-- A templated row's line whose every argument is a number ("You gain 25 Rank Points."): each digit run of the
+-- live text (colour codes and textures left out first, as the hash does) is put back as `%d`, a literal "%" as
+-- "%%"; a result whose fingerprint is a templated row's h1 is that row's English, and the numbers are its arguments
+-- in order. A template with a text argument, a plural group or another conversion never fingerprints this way;
+-- those are matched against the client's own template (index:matchTemplate). → key, args | nil
+function Index:matchCounted(text)
+  if type(text) ~= "string" or text == "" or next(self.byTemplate) == nil then return nil end
+  local plain = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("|T[^|]*|t", "")
+  if not plain:find("%d") then return nil end
+  local args = {}
+  local template = plain:gsub("%%", "%%%%"):gsub("%d+", function(d)
+    args[#args + 1] = d
+    return "%d"
+  end)
+  local key = self.byTemplate[self.hash(template)]
+  if not key then return nil end
+  args.key = key
+  return key, args
+end
+
+-- A live line against a template English the client itself hands the caller (a talent condition's tooltipFormat):
+-- the English is never shipped, only compared by its fingerprint, as a global string is. When its fingerprint is
+-- one of `keys`' templated rows, the line is matched against it (its plural groups in every form, `%s` as text);
+-- when it is one of `keys`' plain restricted rows, the line must be that English. Either may be wrapped in one
+-- colour (an unmet condition is shown red), kept around the Japanese. → key, args | nil
+local compiledTemplates, compiledCount = {}, 0
+function Index:matchTemplate(text, en, keys)
+  if type(text) ~= "string" or text == "" or type(en) ~= "string" or en == "" or type(keys) ~= "table" then
+    return nil
+  end
+  local set = asSet(keys)
+  local function allowed(key)
+    for _, k in ipairs(self.synonyms[key] or { key }) do
+      if set[k] then return true end
+    end
+    return false
+  end
+  local open, inner, close = text:match("^(|c%x%x%x%x%x%x%x%x)(.-)(|r)$")
+  local body = inner or text
+  local h = self.hash(en)
+  local key, args = self.byTemplate[h], nil
+  if key and allowed(key) then
+    local forms = compiledTemplates[en]
+    if not forms then
+      forms = {}
+      for _, form in ipairs(pluralForms(en) or {}) do
+        local pattern, order = compile(form, key)
+        forms[#forms + 1] = { pattern = pattern, order = order }
+      end
+      if compiledCount >= MEMO_LIMIT then compiledTemplates, compiledCount = {}, 0 end
+      compiledTemplates[en], compiledCount = forms, compiledCount + 1
+    end
+    for _, f in ipairs(forms) do
+      local caps = { body:match(f.pattern) }
+      if caps[1] ~= nil then
+        args = { key = key }
+        for i, argIndex in ipairs(f.order) do args[argIndex] = caps[i] end
+        break
+      end
+    end
+    if not args then return nil end
+  else
+    key = nil
+    if body == en then
+      for _, k in ipairs(self:restrictedKeys(en)) do
+        if set[k] then key = k; break end
+      end
+    end
+    if not key then return nil end
+  end
+  if open then return key, { form = "wrapped", open = open, close = close, inner = args } end
+  return key, args
+end
+
 -- match, restricted to a set of keys ({ [key] = true } or a list): a widget that may also hold a name.
 function Index:matchOnly(text, keys)
-  local set = keys
-  if keys[1] ~= nil then
-    set = onlySets[keys]
-    if not set then
-      set = {}
-      for _, k in ipairs(keys) do set[k] = true end
-      onlySets[keys] = set
-    end
-  end
+  local set = asSet(keys)
   self.onlyMisses = self.onlyMisses or setmetatable({}, { __mode = "k" })
   local misses = self.onlyMisses[set]
   if misses and misses.lines[text] then return nil end
@@ -833,11 +928,12 @@ function Index:matchOnly(text, keys)
   end
   local names = setNames[set] -- only a set naming a family key pays for the family lookups
   if not names then
-    names = { restricted = false, numbered = false }
+    names = { restricted = false, numbered = false, templated = false }
     for k in pairs(set) do
       if type(k) == "string" then
         if UIStrings.isRestrictedKey(k) then names.restricted = true end
         if UIStrings.isNumberedKey(k) then names.numbered = true end
+        if UIStrings.isTemplatedKey(k) then names.templated = true end
       end
     end
     setNames[set] = names
@@ -846,6 +942,10 @@ function Index:matchOnly(text, keys)
     for _, fk in ipairs(self:restrictedKeys(text)) do -- a restricted family's row, when the widget names it
       if set[fk] then return fk, nil end
     end
+  end
+  if names.templated then
+    local tk, targs = self:matchCounted(text) -- a templated row whose arguments are all numbers
+    if tk and allowed(tk) then return tk, targs end
   end
   if names.numbered then
     local nk, numbers = self:matchNumbers(text) -- a numbered row (a widget's line with live numbers)
@@ -1029,12 +1129,13 @@ function UIStrings.build(deps)
   local rows = deps.rows or {}
   local index = setmetatable({ rows = rows, exact = {}, templates = {}, prefixes = {}, byHash = {}, hashCount = 0,
     memo = {}, memoCount = 0, durations = {}, spellDurations = {}, synonyms = {}, own = {}, templateKeys = {},
-    bySlots = {}, byNumbers = {}, byRestricted = {},
+    bySlots = {}, byNumbers = {}, byRestricted = {}, byTemplate = {},
     hash = deps.hash,
     counts = { shipped = 0, indexed = 0, hashed = 0, mismatched = 0, ambiguous = 0, unresolved = 0, unsupported = 0,
       owned = 0 },
     problems = { mismatched = {}, ambiguous = {}, unresolved = {}, unsupported = {} } }, Index)
   local c, byText, templateByText, byH1, bySlots, byNumbers, byRestricted = index.counts, {}, {}, {}, {}, {}, {}
+  local byTemplate = {}
   for _, key in ipairs(sortedKeys(rows)) do
     local row = rows[key]
     c.shipped = c.shipped + 1
@@ -1054,6 +1155,15 @@ function UIStrings.build(deps)
       local seen = bySlots[row[2]] -- matched by putting its slots back (index:matchSlots)
       if not seen then
         bySlots[row[2]] = { key = key, ja = row[1], keys = { key } }
+      else
+        seen.keys[#seen.keys + 1] = key
+        if seen.ja ~= row[1] then seen.conflict = true end
+      end
+    elseif (type(en) ~= "string" or en == "") and UIStrings.isTemplatedKey(key)
+        and jaArgs > 0 and type(row[2]) == "number" then
+      local seen = byTemplate[row[2]] -- a format string: matched by index:matchCounted / index:matchTemplate
+      if not seen then
+        byTemplate[row[2]] = { key = key, ja = row[1], keys = { key } }
       else
         seen.keys[#seen.keys + 1] = key
         if seen.ja ~= row[1] then seen.conflict = true end
@@ -1200,7 +1310,8 @@ function UIStrings.build(deps)
     table.sort(list)
     if #list > 0 then index.byRestricted[h] = list end
   end
-  for _, pair in ipairs({ { bySlots, index.bySlots }, { byNumbers, index.byNumbers } }) do
+  for _, pair in ipairs({ { bySlots, index.bySlots }, { byNumbers, index.byNumbers },
+    { byTemplate, index.byTemplate } }) do
     local from, into = pair[1], pair[2]
     local keys = {}
     for h in pairs(from) do keys[#keys + 1] = h end

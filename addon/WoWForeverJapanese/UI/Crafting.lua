@@ -28,11 +28,13 @@
 --   blizzard_professionscraftingoutputlog.xml:136), through Labels.title.
 -- The recipe list's rows (a ScrollBox tree of pooled frames, blizzard_professionsrecipelist.lua:21–86), followed with
 --   ScrollUtil.AddInitializedFrameCallback and keyed by the row widget: a category row's header (ButtonText, written
---   by ProfessionsRecipeListCategoryMixin:Init → SetHeaderText(categoryInfo.name), :207; listtemplates.lua:21, 57) is
---   client data except the favourites category, PROFESSIONS_CATEGORY_FAVORITE (blizzard_professions.lua:844), the one
---   key it may show; the unlearned divider's Label is XML text PROFESSIONS_CATEGORY_UNLEARNED (recipelist.xml:98); a
---   recipe row's Label is the recipe's name (forbidden), and its SkillUps icon owns a tooltip of one line,
---   PROFESSIONS_SKILL_UP_EASY / _MEDIUM / _OPTIMAL (recipelist.lua:282–316), registered per row.
+--   by ProfessionsRecipeListCategoryMixin:Init → SetHeaderText(categoryInfo.name), :207; listtemplates.lua:21, 57)
+--   is C_TradeSkillUI.GetCategoryInfo's name, a TradeSkillCategory row (TradeSkillCategory.Name_lang, ADR-042), or
+--   the favourites category, PROFESSIONS_CATEGORY_FAVORITE (blizzard_professions.lua:844): those are the keys it may
+--   show. A profession's own name has no row there and stays English. The unlearned divider's Label is XML text
+--   PROFESSIONS_CATEGORY_UNLEARNED (recipelist.xml:98); a recipe row's Label is the recipe's name (forbidden), and
+--   its SkillUps icon owns a tooltip of one line, PROFESSIONS_SKILL_UP_EASY / _MEDIUM / _OPTIMAL
+--   (recipelist.lua:282–316), registered per row.
 -- The enchant target slot (form.enchantSlot, built for an Enchant-type recipe by the form's Init,
 --   schematicform.lua:1177–1188): its Name is SetNameText(PROFESSIONS_ADD_ENCHANT) at Init and ClearReagent
 --   (enchantslot.lua:8, 65), shown after the form's Init and after each SetNameText (hooked on the instance); an
@@ -62,9 +64,9 @@
 --   the output log: an enchant result's ItemContainer.Text = ENCHANTED_TOOLTIP_LINE with the item's name kept, written
 --     when the item loads (craftingoutputlog.lua:29–40); each pooled element's Text is followed (SetText post-hook).
 -- Never touched: the EditBoxes (both search boxes, the create-count box), the recipe's name, sub text and
---   description (OutputText, OutputSubText, Description: item / spell data), the list's rows (recipe names and
---   category names, client data: blizzard_professionsrecipelist.lua:207, 247), the rank bar (joins the profession
---   name). The window title is UI/Professions' (the same frame; a profession's name here).
+--   description (OutputText, OutputSubText, Description: item / spell data), the list's recipe names (client data:
+--   blizzard_professionsrecipelist.lua:247) and any category name with no TradeSkillCategory row, the rank bar
+--   (joins the profession name). The window title is UI/Professions' (the same frame; a profession's name here).
 local _, WFJ = ...
 local Crafting = {}
 WFJ.Crafting = Crafting
@@ -100,11 +102,12 @@ local CANDIDATES = {
 }
 
 local function only(...) return { only = { ... } } end
+-- a category header: Favorites, or the category's TradeSkillCategory row (Labels caches the set per index)
+local function category() return WFJ.Labels.familiesWith({ "PROFESSIONS_CATEGORY_FAVORITE" }, "TradeSkillCategory") end
 local CREATE = only("CREATE_PROFESSION", "CREATE_PROFESSION_ENCHANT", "PROFESSIONS_CRAFTING_RECRAFT")
 local CREATE_ALL = only("PROFESSIONS_CREATE_ALL_FORMAT")
 local OUTPUT_TITLE = only("PROFESSIONS_CRAFT_OUTPUT_TITLE")
 local LINK = only("LINK_TRADESKILL_TOOLTIP")
-local FAVORITES = only("PROFESSIONS_CATEGORY_FAVORITE")
 local UNLEARNED = only("PROFESSIONS_CATEGORY_UNLEARNED")
 local SKILL_UP = only("PROFESSIONS_SKILL_UP_EASY", "PROFESSIONS_SKILL_UP_MEDIUM", "PROFESSIONS_SKILL_UP_OPTIMAL")
 local ENCHANT_SLOT = only("PROFESSIONS_ADD_ENCHANT")
@@ -229,7 +232,7 @@ function Crafting.onListRow(a, b, c)
     return
   end
   if data.categoryInfo then
-    WFJ.Labels.show(SURFACE, rowKey(row), row.ButtonText, nil, FAVORITES)
+    WFJ.Labels.show(SURFACE, rowKey(row), row.ButtonText, nil, category())
   elseif data.isDivider then
     WFJ.Labels.show(SURFACE, rowKey(row), row.Label, nil, UNLEARNED)
   else

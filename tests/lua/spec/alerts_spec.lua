@@ -17,6 +17,10 @@ local UI = {
   ITEM_UPGRADED_LABEL = { "Item Upgraded!", "アイテムがアップグレードされた！" },
   -- an achievement title (a client-table fingerprint row)
   ["AchievementTitle:6"] = { "Explore Elwynn Forest", "エルウィンの森を探検" },
+  -- the event toast's own text (UiEventToast): a format string the client fills, and a plain sentence
+  ["EventToastText:513"] = { "You have reached Rank %d.", "ランク%dに到達した。" },
+  ["EventToastText:479"] = { "Your Lotus Claw enchant allows you to carefully extract a Death Lotus!",
+    "Lotus Clawのエンチャントで慎重にDeath Lotusを採取できる！" },
 }
 local NAMES = { "AlertFrame_ShowNewAlert", "EventToastManagerFrame" }
 
@@ -154,5 +158,26 @@ describe("the alert toasts on Forever", function()
     manager:DisplayToast()
     assert.are.equal("Achievement Earned", manager.currentDisplayingToast.Title:GetText())
     assert.are.equal("Elwynn Forest", manager.currentDisplayingToast.SubTitle:GetText())
+  end)
+
+  it("an event toast's EventToastText line translates with the live number; Alt shows English", function()
+    local manager = _G.EventToastManagerFrame
+    manager.next = { title = "Rank Up!", subtitle = "You have reached Rank 4." }
+    manager:DisplayToast()
+    local toast = manager.currentDisplayingToast
+    assert.are.equal("Rank Up!", toast.Title:GetText()) -- no row: left as written
+    assert.are.equal("ランク4に到達した。", toast.SubTitle:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal("You have reached Rank 4.", toast.SubTitle:GetText())
+    X.alt(WFJ, false)
+    assert.are.equal("ランク4に到達した。", toast.SubTitle:GetText())
+    manager.next = { title = "Your Lotus Claw enchant allows you to carefully extract a Death Lotus!", subtitle = "" }
+    manager:DisplayToast()
+    assert.are.equal("Lotus Clawのエンチャントで慎重にDeath Lotusを採取できる！",
+      manager.currentDisplayingToast.Title:GetText())
+    -- an alert's field never takes the family
+    local alert = { Title = Stub.fontString("You have reached Rank 4.") }
+    _G.AlertFrame_ShowNewAlert(alert)
+    assert.are.equal("You have reached Rank 4.", alert.Title:GetText())
   end)
 end)

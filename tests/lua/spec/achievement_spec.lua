@@ -337,6 +337,7 @@ describe("the achievement window's client-table text on Forever", function()
   ROWS["AchievementTitle:60"] = { "Total deaths", "死亡回数" }
   ROWS["AchievementCategory:92"] = { "General", "一般" }
   ROWS["AchievementCategory:130"] = { "Character", "キャラクター" }
+  ROWS["CriteriaText:121233"] = { "Explore Alterac Mountains", "アルターク山脈を探検する" }
 
   local function alt(down)
     Stub.keys.alt = down
@@ -368,8 +369,18 @@ describe("the achievement window's client-table text on Forever", function()
       for i, name in ipairs(f.bars) do _G["AchievementFrameSummaryCategoriesCategory" .. i].Label.text = name end
     end
     f.metas = {}
-    _G.AchievementObjectives_DisplayCriteria = function() -- lua:2124: the meta button's Label is another title
+    -- lua:2124: the meta button's Label is another title; lua:2170-2214: each text criterion's Name is its text
+    -- when completed, else "- " and its text, on the pooled frames in objectivesFrame.criterias
+    _G.AchievementObjectives_DisplayCriteria = function(objectivesFrame)
       for button, title in pairs(f.metas) do button.Label.text = title end
+      if objectivesFrame then
+        objectivesFrame.criterias = objectivesFrame.criterias or {}
+        for i, c in ipairs(f.criteria or {}) do
+          local criterion = objectivesFrame.criterias[i] or { Name = fs("") }
+          criterion.Name.text = c.completed and c.text or ("- " .. c.text)
+          objectivesFrame.criterias[i] = criterion
+        end
+      end
     end
     return f
   end
@@ -490,5 +501,31 @@ describe("the achievement window's client-table text on Forever", function()
       _G.AchievementObjectives_DisplayCriteria()
       assert.are.equal("レベル10", meta.Label:GetText())
       assert.are.equal("General", other.Label:GetText()) -- a category's English: not a title
+    end)
+
+  it("a text criterion is a CriteriaText row's Japanese, open or completed; Alt shows English; others stay",
+    function()
+      local objectives = CreateFrame("Frame")
+      frames.criteria = { { text = "Explore Alterac Mountains" },
+        { text = "Explore Alterac Mountains", completed = true },
+        { text = "Hogger" }, { text = "Level 10", completed = true }, { text = "General" } }
+      _G.AchievementObjectives_DisplayCriteria(objectives, 6)
+      local c = objectives.criterias
+      assert.are.equal("- アルターク山脈を探検する", c[1].Name:GetText())
+      assert.are.equal("アルターク山脈を探検する", c[2].Name:GetText())
+      assert.are.equal("- Hogger", c[3].Name:GetText()) -- a name: no row
+      assert.are.equal("Level 10", c[4].Name:GetText()) -- an AchievementTitle row: not a criterion's family
+      assert.are.equal("- General", c[5].Name:GetText())
+      assert.is_true(unrecorded(c[3].Name))
+      alt(true)
+      assert.are.equal("- Explore Alterac Mountains", c[1].Name:GetText())
+      assert.are.equal("Explore Alterac Mountains", c[2].Name:GetText())
+      alt(false)
+      assert.are.equal("- アルターク山脈を探検する", c[1].Name:GetText())
+      _G.AchievementObjectives_DisplayCriteria(objectives, 6) -- shown again: still ours
+      assert.are.equal("- アルターク山脈を探検する", c[1].Name:GetText())
+      frames.criteria = { { text = "Hogger" } } -- the pooled frame reused for a name
+      _G.AchievementObjectives_DisplayCriteria(objectives, 7)
+      assert.are.equal("- Hogger", c[1].Name:GetText())
     end)
 end)

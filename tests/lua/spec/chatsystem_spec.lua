@@ -42,10 +42,12 @@ local UI = {
   COMMUNITIES_CHAT_FRAME_TODAY_NOTIFICATION = { "Today", "今日" },
   COMMUNITIES_CHAT_FRAME_UNREAD_MESSAGES_NOTIFICATION = { "Unread Messages", "未読メッセージ" },
   COMMUNITIES_MESSAGE_OF_THE_DAY_FORMAT = { "Message of the Day: \"%s\"", "今日のメッセージ: 「%s」" },
+  -- a friendship's rank points (FriendshipReputation, a client-table family the reputation line names)
+  ["FriendshipGain:513"] = { "You gain %d Rank Points.", "ランクポイントを%d獲得した。" },
 }
 local NAMES = { "CHAT_FRAMES", "ChatTypeInfo", "ChatFrame1", "ChatFrame2", "FCF_OpenTemporaryWindow",
   "issecretvalue" }
-local SYSTEM, SAY, LOOT, XP = 1, 2, 3, 4
+local SYSTEM, SAY, LOOT, XP, FACTION = 1, 2, 3, 4, 5
 
 local clock = 0
 local function chatFrame()
@@ -93,7 +95,8 @@ end
 local secrets = {}
 local function install()
   _G.ChatTypeInfo = { SYSTEM = { id = SYSTEM, r = 1, g = 1, b = 0 }, SAY = { id = SAY, r = 1, g = 1, b = 1 },
-    LOOT = { id = LOOT, r = 0, g = 0.7, b = 0 }, COMBAT_XP_GAIN = { id = XP, r = 0.4, g = 0.4, b = 1 } }
+    LOOT = { id = LOOT, r = 0, g = 0.7, b = 0 }, COMBAT_XP_GAIN = { id = XP, r = 0.4, g = 0.4, b = 1 },
+    COMBAT_FACTION_CHANGE = { id = FACTION, r = 0.5, g = 0.5, b = 1 } }
   _G.ChatFrame1 = chatFrame()
   _G.CHAT_FRAMES = { "ChatFrame1" }
   _G.FCF_OpenTemporaryWindow = function()
@@ -136,6 +139,23 @@ describe("SYSTEM chat lines", function()
     H.uiTeardown()
     Stub.keys.alt = false
     for _, n in ipairs(NAMES) do _G[n] = nil end
+  end)
+
+  it("a reputation line is the FriendshipGain row with the live number; no other chat type takes it", function()
+    local f = _G.ChatFrame1
+    f:AddMessage("You gain 25 Rank Points.", 0.5, 0.5, 1, FACTION)
+    assert.are.equal("ランクポイントを25獲得した。", f:Last())
+    f:Refresh()
+    alt(WFJ, true)
+    assert.are.equal("You gain 25 Rank Points.", f.visibleLines[2]:GetText())
+    alt(WFJ, false)
+    assert.are.equal("ランクポイントを25獲得した。", f.visibleLines[2]:GetText())
+    system(f, "You gain 25 Rank Points.") -- a SYSTEM line does not name the family
+    assert.are.equal("You gain 25 Rank Points.", f:Last())
+    f:AddMessage("You gain 25 Rank Points.", 1, 1, 1) -- an untyped line: exact English only
+    assert.are.equal("You gain 25 Rank Points.", f:Last())
+    f:AddMessage("Your party is full.", 0.5, 0.5, 1, FACTION) -- the chat keys still reach a reputation line
+    assert.are.equal("パーティーがいっぱいです。", f:Last())
   end)
 
   it("a SYSTEM line is rewritten in the history when it arrives; others stay", function()

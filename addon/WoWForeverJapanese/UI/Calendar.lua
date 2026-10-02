@@ -65,6 +65,18 @@
 -- The two community dropdowns (CalendarCreateEventFrame.CommunityDropdown, CalendarMassInviteFrame's) show
 --   SetDefaultText(CALENDER_INVITE_SELECT_COMMUNITY) until a community is picked (mainline/blizzard_calendar.lua:3336,
 --   4117): Labels.dropdown restricted to that one key, so a chosen community's name is never matched.
+-- Difficulty names (the Difficulty family, restricted): a raid or dungeon title is GetDungeonNameWithDifficulty(name,
+--   difficultyName), the name and " (<difficulty>)" through DUNGEON_NAME_WITH_DIFFICULTY in NORMAL_FONT_COLOR_CODE
+--   (lua:62–68). That function is local to Blizzard's file, so it is rebuilt here from the same globals. The
+--   difficulty inside the brackets is a Difficulty row's English (GetDifficultyInfo, lua:777); it becomes the row's
+--   Japanese and the name and colour stay as written, wherever such a title appears: inside an event title
+--   (CALENDAR_EVENTNAME_FORMAT_RAID_* on the day buttons, the picker and the day tooltip, lua:1578, 4342, 2146), the
+--   event type line (CALENDAR_VIEW_EVENTTYPE's second argument, lua:2808–2809), the raid description
+--   (CALENDAR_RAID_*_DESCRIPTION's first argument, lua:2520–2529), and on its own on CalendarCreateEventTextureName
+--   (CalendarCreateEventTexture_Update, lua:3692) and the texture picker's pooled Title
+--   (CalendarTexturePicker_InitButton, called by name from the view's initializer, lua:4450, 4531). The difficulty
+--   dropdown's own selection text (CalendarCreateEventFrame.DifficultyOptionDropdown, its radios carry
+--   difficultyName, lua:3303–3317) through Labels.dropdown, restricted to the family. Its popup entries are UI/Menus'.
 -- Never touched: event titles and descriptions, holiday names, player names, the three EditBoxes whose default text
 -- the client reads back (CALENDAR_EVENT_NAME / _DESCRIPTION / CALENDAR_PLAYER_NAME, lua:145–146, 3937–3958).
 local _, WFJ = ...
@@ -156,6 +168,8 @@ local CANDIDATES = {
   viewCreator = { "CalendarViewEventCreatorName" }, createCreator = { "CalendarCreateEventCreatorName" },
   viewDate = { "CalendarViewEventDateLabel" }, createDate = { "CalendarCreateEventDateLabel" },
   holiday = { "CalendarViewHolidayFrame.ScrollingFont" }, raid = { "CalendarViewRaidFrame.ScrollingFont" },
+  textureName = { "CalendarCreateEventTextureName" },
+  difficultyDropdown = { "CalendarCreateEventFrame.DifficultyOptionDropdown" },
 }
 -- global writer → the hook target it runs
 local WRITERS = { CalendarFrame_Update = "onWeekdays", CalendarFrame_UpdateTitle = "onMonth",
@@ -163,7 +177,8 @@ local WRITERS = { CalendarFrame_Update = "onWeekdays", CalendarFrame_UpdateTitle
   CalendarCreateEventFrame_Update = "onCreateEvent", CalendarCreateEventCreateButton_SetText = "onCreateButton",
   CalendarTexturePickerTitleFrame_Update = "onTexturePicker", CalendarFrame_UpdateDayEvents = "onDayEvents",
   CalendarViewHolidayFrame_Update = "onHoliday", CalendarViewRaidFrame_Update = "onRaid",
-  CalendarEventPickerFrame_InitButton = "onPickerButton", CalendarDayButton_OnEnter = "onDayTooltip" }
+  CalendarEventPickerFrame_InitButton = "onPickerButton", CalendarDayButton_OnEnter = "onDayTooltip",
+  CalendarCreateEventTexture_Update = "onTextureName", CalendarTexturePicker_InitButton = "onTextureButton" }
 
 local SELECT_COMMUNITY = { only = { "CALENDER_INVITE_SELECT_COMMUNITY" } }
 local WEEKDAY = { only = { "WEEKDAY_SUNDAY", "WEEKDAY_MONDAY", "WEEKDAY_TUESDAY", "WEEKDAY_WEDNESDAY",
@@ -194,6 +209,70 @@ end
 
 local function show(recKey, candidate, opts) return WFJ.Labels.show(SURFACE, recKey, get(candidate), nil, opts) end
 
+-- GetDungeonNameWithDifficulty(name, difficultyName), rebuilt from the globals Blizzard's local function uses
+-- (lua:62–68). → string | nil (a global missing)
+local function dungeonName(name, difficultyName)
+  local open, close = Compat.resolve("NORMAL_FONT_COLOR_CODE"), Compat.resolve("FONT_COLOR_CODE_CLOSE")
+  local template = Compat.resolve("DUNGEON_NAME_WITH_DIFFICULTY")
+  if type(open) ~= "string" or type(close) ~= "string" or type(name) ~= "string" then return nil end
+  if difficultyName == nil or difficultyName == "" then return open .. name .. close end
+  if type(template) ~= "string" then return nil end
+  local ok, body = pcall(string.format, template, name, difficultyName)
+  return ok and open .. body .. close or nil
+end
+
+-- A title that ends in "(<difficulty>)" (and the colour's close) whose difficulty is a Difficulty row's English.
+-- → the text before the difficulty, the row's key, the text after it | nil
+local function difficultyParts(text)
+  if type(text) ~= "string" then return nil end
+  local head, word, tail = text:match("^(.*%()([^()]+)(%)[^()]*)$")
+  local part = word and WFJ.Labels.part(word, WFJ.Labels.families("Difficulty").only)
+  if not part then return nil end
+  return head, part.key, tail
+end
+
+-- `text` with its difficulty in Japanese, the name and colour as written. → string | nil (no Difficulty row)
+local function withDifficulty(text)
+  local head, key, tail = difficultyParts(text)
+  local ja = key and WFJ.UIIndex:fillArg({ entry = key })
+  return ja and head .. ja .. tail or nil
+end
+
+-- A template's args with each written argument that is a dungeon title carrying a Difficulty row given that row's
+-- Japanese (a copy; the index's own args are never changed). → args
+local function difficultyArgs(args)
+  if type(args) ~= "table" or args.form ~= nil then return args end
+  local out
+  for i, v in pairs(args) do
+    local title = type(i) == "number" and withDifficulty(v) or nil
+    if title then
+      if not out then
+        out = {}
+        for k, w in pairs(args) do out[k] = w end
+      end
+      out[i] = title
+    end
+  end
+  return out or args
+end
+
+-- Labels.show with `opts`, the difficulty inside a dungeon title argument in Japanese. → 1 | 0
+local function showTitled(recKey, widget, opts)
+  local fs = WFJ.Labels.widget(widget)
+  local index = WFJ.UIIndex
+  local text = fs and fs:GetText()
+  local key, args
+  if index and type(text) == "string" and text ~= "" then key, args = index:matchOnly(text, opts.only) end
+  return WFJ.Labels.showArgs(SURFACE, recKey, widget, key, difficultyArgs(args))
+end
+
+-- A dungeon title on its own: the difficulty in Japanese, the name and colour as written. → 1 | 0
+local function showDifficultyTitle(recKey, widget)
+  local fs = WFJ.Labels.widget(widget)
+  local head, key, tail = difficultyParts(fs and fs:GetText())
+  return WFJ.Labels.showArgs(SURFACE, recKey, widget, key, key and { form = "affix", before = head, after = tail })
+end
+
 -- hooksecurefunc targets, one per global writer. Each → the number of dictionary words found.
 function Calendar.onWeekdays()
   local n = 0
@@ -205,7 +284,7 @@ end
 function Calendar.onMonth() return show("month", "month", MONTH) end
 
 function Calendar.onViewEvent()
-  return show("typeName", "typeName", EVENT_TYPE) + show("viewHeader", "viewHeader", VIEW_HEADER)
+  return showTitled("typeName", get("typeName"), EVENT_TYPE) + show("viewHeader", "viewHeader", VIEW_HEADER)
     + show("viewCreator", "viewCreator", CREATOR) + show("viewDate", "viewDate", DATE)
 end
 
@@ -238,7 +317,7 @@ function Calendar.onDayEvents(index)
       local recKey = "event." .. d .. "." .. i
       local eventButton = Compat.resolve(name)
       if buttonTitled(dayEvent(dayButton, type(eventButton) == "table" and eventButton.eventIndex or nil)) then
-        n = n + WFJ.Labels.show(SURFACE, recKey, Compat.resolve(name .. "Text1"), nil, EVENT_NAME)
+        n = n + showTitled(recKey, Compat.resolve(name .. "Text1"), EVENT_NAME)
       else
         WFJ.SurfaceState.drop(SURFACE, recKey)
       end
@@ -260,7 +339,7 @@ function Calendar.onPickerButton(button, elementData)
     WFJ.SurfaceState.drop(SURFACE, recKey)
     return 0
   end
-  return WFJ.Labels.show(SURFACE, recKey, button.Title, nil, EVENT_NAME)
+  return showTitled(recKey, button.Title, EVENT_NAME)
 end
 
 -- After CalendarDayButton_OnEnter(dayButton) (post-hook: the day button's OnEnter script calls it by name,
@@ -280,15 +359,19 @@ function Calendar.onDayTooltip(dayButton)
       or type(tt.NumLines) ~= "function" or type(tt.GetName) ~= "function" then return 0 end
   local ok, count = pcall(api.GetNumDayEvents, dayButton.monthOffset, dayButton.day)
   local expected, keys = {}, {}
-  local withDifficulty = Compat.resolve("GetDungeonNameWithDifficulty")
+  local nameWithDifficulty = Compat.resolve("GetDungeonNameWithDifficulty") -- only a stand-in; Blizzard's is local
   for i = 1, ok and type(count) == "number" and count or 0 do
     local event = dayEvent(dayButton, i)
     local t = event and TITLE_KEYS[event.calendarType]
     local key = t and (t.any or t[event.sequenceType])
     local title = key and event.title
-    if key and t.any and type(withDifficulty) == "function" then
-      local okName, name = pcall(withDifficulty, title, event.difficultyName)
-      title = okName and name or nil
+    if key and t.any then
+      local name = dungeonName(title, event.difficultyName)
+      if not name and type(nameWithDifficulty) == "function" then
+        local okName, got = pcall(nameWithDifficulty, title, event.difficultyName)
+        name = okName and got or nil
+      end
+      title = name
     end
     if type(title) == "string" then
       local id = key .. "\0" .. title
@@ -312,7 +395,7 @@ function Calendar.onDayTooltip(dayButton)
   local n = 0
   for _, f in ipairs(found) do
     if seen[f.id] <= expected[f.id] then
-      n = n + WFJ.Labels.showArgs(help.SURFACE, "L" .. f.i, f.fs, f.key, f.args, help.refit)
+      n = n + WFJ.Labels.showArgs(help.SURFACE, "L" .. f.i, f.fs, f.key, difficultyArgs(f.args), help.refit)
     end
   end
   if n > 0 then help.refit() end
@@ -321,7 +404,18 @@ end
 
 function Calendar.onHoliday() return show("holiday", "holiday", HOLIDAY) end
 
-function Calendar.onRaid() return show("raid", "raid", RAID) end
+function Calendar.onRaid() return showTitled("raid", get("raid"), RAID) end
+
+-- CalendarCreateEventTexture_Update: the chosen dungeon's title. → 1 | 0
+function Calendar.onTextureName() return showDifficultyTitle("textureName", get("textureName")) end
+
+local textureKey = WFJ.Labels.keyer("texture.") -- a pooled texture picker button's record key
+
+-- CalendarTexturePicker_InitButton(button, elementData): the pooled button's dungeon title. → 1 | 0
+function Calendar.onTextureButton(button)
+  if type(button) ~= "table" or type(button.Title) ~= "table" then return 0 end
+  return showDifficultyTitle(textureKey(button.Title), button.Title)
+end
 
 function Calendar.onAccept() return show("accept", "accept", ACCEPT) end
 
@@ -346,6 +440,7 @@ function Calendar.showStatic()
   n = n + WFJ.Labels.dropdown(SURFACE, "filter", get("filter"))
   n = n + WFJ.Labels.dropdown(SURFACE, "createCommunity", get("createCommunity"), SELECT_COMMUNITY)
   n = n + WFJ.Labels.dropdown(SURFACE, "massCommunity", get("massCommunity"), SELECT_COMMUNITY)
+  n = n + WFJ.Labels.dropdown(SURFACE, "difficulty", get("difficultyDropdown"), WFJ.Labels.families("Difficulty"))
   return n + WFJ.Labels.dropdown(SURFACE, "ampm", get("ampm"))
 end
 

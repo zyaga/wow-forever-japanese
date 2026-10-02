@@ -12,8 +12,10 @@
 --       Status       a QUEUED_STATUS_* word (:1099)
 --       Title        a battleground, dungeon-category or zone name, left English; the two fixed titles are
 --                    HUD_EDIT_MODE_TITLE (edit mode's placeholder entry, :694) and PET_BATTLE_PVP_QUEUE (:1067–1075)
---       SubTitle     QUEUED_STATUS_LOCKED_EXPLANATION (:1027), LFG_LIST_PENDING_APPLICANTS (:987); otherwise a
---                    dungeon / activity name or a brawl description (server text)
+--       SubTitle     QUEUED_STATUS_LOCKED_EXPLANATION (:1027), LFG_LIST_PENDING_APPLICANTS (:987); an active
+--                    battlefield's long description, GetBattlefieldStatus's 11th return, a PvpLongDescription row's
+--                    English (:801, :812-815); otherwise a dungeon / activity name or a brawl description (server
+--                    text), which matches none of those and stays English
 --       TimeInQueue  TIME_IN_QUEUE with a SecondsToTime duration or LESS_THAN_ONE_MINUTE (:1083–1086)
 --       AverageWait  LFG_STATISTIC_AVERAGE_WAIT with a SecondsToTime duration (:1235)
 --     The frame's method is post-hooked and every active entry walked, keyed by widget (entries are pooled and
@@ -46,10 +48,12 @@ local STATUS = { only = { "QUEUED_STATUS_IN_PROGRESS", "QUEUED_STATUS_LISTED", "
   "QUEUED_STATUS_PROPOSAL", "QUEUED_STATUS_READY_CHECK_IN_PROGRESS", "QUEUED_STATUS_ROLE_CHECK_IN_PROGRESS",
   "QUEUED_STATUS_SIGNED_UP", "QUEUED_STATUS_SUSPENDED", "QUEUED_STATUS_UNKNOWN", "QUEUED_STATUS_WAITING" } }
 local TITLE = { only = { "HUD_EDIT_MODE_TITLE", "PET_BATTLE_PVP_QUEUE" } }
-local SUBTITLE = { only = { "QUEUED_STATUS_LOCKED_EXPLANATION", "LFG_LIST_PENDING_APPLICANTS" } }
+local SUBTITLE_KEYS = { "QUEUED_STATUS_LOCKED_EXPLANATION", "LFG_LIST_PENDING_APPLICANTS" }
+-- the SubTitle's `only`: built per index, since the PvpLongDescription family's keys are the index's rows
+local function subtitle() return WFJ.Labels.familiesWith(SUBTITLE_KEYS, "PvpLongDescription") end
 local TIME = { only = { "TIME_IN_QUEUE" } }
 local WAIT = { only = { "LFG_STATISTIC_AVERAGE_WAIT" } }
-local FIELDS = { { "Title", TITLE }, { "Status", STATUS }, { "SubTitle", SUBTITLE }, { "TimeInQueue", TIME },
+local FIELDS = { { "Title", TITLE }, { "Status", STATUS }, { "SubTitle", subtitle }, { "TimeInQueue", TIME },
   { "AverageWait", WAIT } }
 local COUNTS = { "TanksFound", "HealersFound", "DamagersFound" }
 
@@ -68,7 +72,9 @@ function QueueStatus.showEntry(entry)
   local n = 0
   for _, f in ipairs(FIELDS) do
     local widget = entry[f[1]]
-    if type(widget) == "table" then n = n + WFJ.Labels.show(SURFACE, widgetKey(widget), widget, nil, f[2]) end
+    local opts = f[2]
+    if type(opts) == "function" then opts = opts() end
+    if type(widget) == "table" then n = n + WFJ.Labels.show(SURFACE, widgetKey(widget), widget, nil, opts) end
   end
   return n
 end

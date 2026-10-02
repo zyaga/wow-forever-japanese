@@ -21,6 +21,16 @@
 --   owners; the callback walks lines 2.. of that tooltip restricted to TOOLTIP_KEYS (surface "talents.tooltip").
 --   Line 1 is never read or written. One Show() refit per pass that changed a line; forgotten on the tooltip's OnHide
 --   and before each pass (the client rebuilt the lines).
+-- - Talent requirement lines ("Spend 5 more points in Arms Talents"): the talent frame's AddConditionsToTooltip adds
+--   each shown condition's tooltipText as a highlight line, red when unmet [verified:
+--   blizzard_sharedtalentui/blizzard_sharedtalentframe.lua:1914-1972]. That text is the condition's tooltipFormat (a
+--   SharedString row's English) formatted with spentAmountRequired and the tree's name [verified:
+--   blizzard_sharedtalentui/blizzard_sharedtalentutil.lua:679-699, 726-730]. The pass reads, never calls, the frame's
+--   own cache of those conditions (talentFrame.condInfoCache, blizzard_sharedtalentframe.lua:173, 1225-1232) for the
+--   button's conditionIDs (nodeInfo on a talent button, entryInfo on a display; blizzard_talentbuttonbase.lua:254,
+--   blizzard_talentdisplay.lua:379), and a line that is not a dictionary line is matched against each tooltipFormat
+--   restricted to the SharedString family (UIStrings index:matchTemplate). The number and the tree's name are kept
+--   as the client wrote them (names stay English).
 -- - Button tooltips, both GameTooltip with the button as owner then Show(), so the buttons are
 --   help-tooltip owners restricted to their one key:
 --   - a force-disabled dual-spec tab adds its errorReason TALENT_SPEC_LOCKED (camelot/…/blizzard_classtalentsframe
@@ -123,6 +133,30 @@ end
 
 local walking, lastTooltip = false, nil
 
+-- The tooltipFormat of every condition the hovered button's frame has cached. → list (maybe empty)
+local function conditionFormats(display)
+  local formats = {}
+  if type(display) ~= "table" then return formats end
+  local frame = rawget(display, "talentFrame")
+  local cache = type(frame) == "table" and rawget(frame, "condInfoCache") or nil
+  if type(cache) ~= "table" then return formats end
+  local seen = {}
+  for _, field in ipairs({ "nodeInfo", "entryInfo" }) do
+    local info = rawget(display, field)
+    local ids = type(info) == "table" and info.conditionIDs or nil
+    for _, id in ipairs(type(ids) == "table" and ids or {}) do
+      local cond = cache[id]
+      local fmt = type(cond) == "table" and cond.tooltipFormat or nil
+      if type(fmt) == "string" and fmt ~= "" and not seen[fmt] then
+        seen[fmt] = true
+        formats[#formats + 1] = fmt
+      end
+    end
+  end
+  return formats
+end
+Talents.conditionFormats = conditionFormats
+
 -- The talent tooltip's single refit (a Render.refresh or the end of a pass): lay it out for the new text.
 local function refitTooltip()
   if walking or type(lastTooltip) ~= "table" or type(lastTooltip.Show) ~= "function" then return end
@@ -138,8 +172,20 @@ end
 
 local tooltipHooked = setmetatable({}, { __mode = "k" })
 
+-- A requirement line: a SharedString row matched against one of the conditions' own templates. → 1 | 0
+local function showRequirement(recKey, fs, formats)
+  local index, text = WFJ.UIIndex, fs:GetText()
+  if not index or type(index.matchTemplate) ~= "function" or type(text) ~= "string" or text == "" then return 0 end
+  local only = WFJ.Labels.families("SharedString").only
+  for _, fmt in ipairs(formats) do
+    local key, args = index:matchTemplate(text, fmt, only)
+    if key then return WFJ.Labels.showArgs(TT, recKey, fs, key, args, refitTooltip) end
+  end
+  return 0
+end
+
 -- EventRegistry callback (owner, talentDisplay, tooltip). → the number of dictionary lines
-function Talents.onTooltip(_, _, tooltip)
+function Talents.onTooltip(_, display, tooltip)
   if walking or type(tooltip) ~= "table" or type(tooltip.GetName) ~= "function"
       or type(tooltip.NumLines) ~= "function" then
     return 0
@@ -151,13 +197,16 @@ function Talents.onTooltip(_, _, tooltip)
   WFJ.Render.forget(TT) -- the client rebuilt every line
   lastTooltip = tooltip
   local name, n, changed = tooltip:GetName(), 0, false
+  local formats = conditionFormats(display)
   walking = true
   local ok, err = pcall(function()
     for i = 2, tooltip:NumLines() or 0 do -- line 1 is the talent's name: never read, never written
       local fs = Compat.resolve(name .. "TextLeft" .. i)
       if type(fs) == "table" and type(fs.GetText) == "function" then
         local before = fs:GetText()
-        n = n + WFJ.Labels.show(TT, "L" .. i, fs, refitTooltip, { only = TOOLTIP_KEYS })
+        local got = WFJ.Labels.show(TT, "L" .. i, fs, refitTooltip, { only = TOOLTIP_KEYS })
+        if got == 0 and #formats > 0 then got = showRequirement("L" .. i, fs, formats) end
+        n = n + got
         if fs:GetText() ~= before then changed = true end
       end
     end

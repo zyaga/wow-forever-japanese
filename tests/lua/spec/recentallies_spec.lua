@@ -15,6 +15,10 @@ local UI = {
   RECENT_ALLY_PIN_EXPIRING_TOOLTIP = { "Pinned Ally (Expires in %s)", "ピン留めした仲間 (%s後に期限切れ)" },
   CLOSE = { "Close", "閉じる" },
   RECENT_ALLY_TOOLTIP_LEVEL_RACE_FORMAT = { "Level %d  %s  %s", "レベル%d  %s  %s" },
+  -- client-table rows (fingerprints: no global; ADR-042): RolodexType's two text columns
+  ["RecentAllyType:1"] = { "Party Member", "パーティメンバー" },
+  ["RecentAllyInteraction:11"] = { "Fought Together", "共闘した" },
+  ["CurrencyCategory:9"] = { "Miscellaneous", "その他" }, -- another family: never an activity
 }
 -- Core/UIStrings: both time arguments are SecondsFormatter output
 local NEEDS = { ARGS = { RECENT_ALLY_INTERACTION_TIME_FORMAT = { [1] = "time" },
@@ -29,10 +33,10 @@ local function install(o)
   local frame = S.frame("RecentAlliesFrame")
   frame.List = S.frame(nil, "List")
   frame.List.ScrollBox = Stub.scrollBox()
-  function C.row(existing)
+  function C.row(existing, activity)
     local row = existing or CreateFrame("Button")
     row.CharacterData = { Name = S.fs("Close"), Level = S.fs("60"), Class = S.fs("Close"), Location = S.fs("Close"),
-      MostRecentInteraction = S.fs("Close") }
+      MostRecentInteraction = S.fs(activity or "Close") }
     row.PartyButton = S.frame()
     row.StateIconContainer = { PinDisplay = S.frame() }
     frame.List.ScrollBox:initFrame(row, {})
@@ -74,11 +78,53 @@ describe("the recent allies panel on Forever", function()
     S.alt(WFJ, false)
   end)
 
-  it("a row's name, class, location and activity widgets can never take a record", function()
+  it("a row's last activity shows its RolodexType text in Japanese, either column; Alt shows the English", function()
+    install()
+    WFJ.RecentAllies.init()
+    local party, fought = C.row(nil, "Party Member"), C.row(nil, "Fought Together")
+    assert.are.equal("パーティメンバー", party.CharacterData.MostRecentInteraction:GetText())
+    assert.are.equal("共闘した", fought.CharacterData.MostRecentInteraction:GetText())
+    S.alt(WFJ, true)
+    assert.are.equal("Party Member", party.CharacterData.MostRecentInteraction:GetText())
+    assert.are.equal("Fought Together", fought.CharacterData.MostRecentInteraction:GetText())
+    S.alt(WFJ, false)
+    assert.are.equal("パーティメンバー", party.CharacterData.MostRecentInteraction:GetText())
+    C.row(party, "Whispered") -- the pooled row reused: an activity with no row stays as written
+    S.alt(WFJ, true)
+    S.alt(WFJ, false)
+    assert.are.equal("Whispered", party.CharacterData.MostRecentInteraction:GetText())
+    assert.is_nil(WFJ.UIIndex:match("Party Member")) -- the families only where the widget names them
+  end)
+
+  it("an activity that is a dictionary word, another family's word or empty stays as written", function()
+    install()
+    WFJ.RecentAllies.init()
+    for _, text in ipairs({ "Close", "Miscellaneous", "" }) do
+      local row = C.row(nil, text)
+      assert.are.equal(text, row.CharacterData.MostRecentInteraction:GetText())
+      assert.is_true(S.unrecorded(WFJ, row.CharacterData.MostRecentInteraction))
+    end
+  end)
+
+  it("the row tooltip's activity line translates; the same word on the party button's tooltip does not",
+    function()
+    install()
+    WFJ.RecentAllies.init()
+    local row = C.row(nil, "Fought Together")
+    local lines = S.tooltip(row, { "Close-Realm", "Close", " ", { "Recent Activities", "3 Hrs ago" },
+      "Fought Together" })
+    assert.are.same({ "Close-Realm", "Close", " ", "最近のアクティビティ", "共闘した" }, lines)
+    S.alt(WFJ, true)
+    assert.are.equal("Fought Together", _G.GameTooltipTextLeft5:GetText())
+    S.alt(WFJ, false)
+    assert.are.same({ "Party Member" }, S.tooltip(row.PartyButton, { "Party Member" }))
+  end)
+
+  it("a row's name, class and location widgets can never take a record", function()
     install()
     WFJ.RecentAllies.init()
     local row = C.row()
-    for _, key in ipairs({ "Name", "Class", "Location", "MostRecentInteraction" }) do
+    for _, key in ipairs({ "Name", "Class", "Location" }) do
       assert.are.equal(0, WFJ.Labels.show("recentallies", "probe", row.CharacterData[key]))
       assert.are.equal("Close", row.CharacterData[key]:GetText())
       assert.is_true(S.unrecorded(WFJ, row.CharacterData[key]))

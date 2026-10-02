@@ -1830,6 +1830,7 @@ UI\ChatSystem.lua
 UI\Speech.lua
 UI\BossBanner.lua
 UI\Cinematic.lua
+UI\Subtitles.lua
 UI\CoinPickup.lua
 UI\CombatFeedback.lua
 UI\EquipmentFlyout.lua

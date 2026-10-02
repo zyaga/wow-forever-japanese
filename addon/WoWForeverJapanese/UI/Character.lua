@@ -43,7 +43,10 @@
 --     a pooled row's text is written by PaperDollTitlesPane_InitButton (paperdollframe.lua:3243–3246). The first row is
 --     PLAYER_TITLE_NONE (:3304); every other row is a title the character earned, a name, left as written. Rows are
 --     walked from the ScrollBox's initialized-frame callback, restricted to that one key.
--- Not translated: PetLoyaltyText (client text) and the XP / pet XP bars.
+--   the pet's loyalty rank: PaperDollFrame_SetPetLevel writes PetLoyaltyText:SetText(C_PetInfo.GetPetLoyalty())
+--     (camelot/paperdollframe.lua:549-552), a PetLoyalty row's English. Shown after that writer, restricted to the
+--     PetLoyalty family, so any other text there stays English.
+-- Not translated: the XP / pet XP bars.
 local _, WFJ = ...
 local Character = {}
 WFJ.Character = Character
@@ -62,7 +65,7 @@ Character.PANE_TITLE_KEYS = PANE_TITLE.only
 local Compat = WFJ.Compat
 
 -- Widgets this module must never record.
-Character.NEVER_TOUCH = { "PetLoyaltyText",
+Character.NEVER_TOUCH = {
   "GearManagerPopupFrame.BorderBox.IconSelectorEditBox" } -- the equipment set's name
 
 -- (the window title is not here: a pane title renders under `only`, and the name title is released; see the header)
@@ -115,6 +118,7 @@ local function declareAll()
     for _, name in ipairs(list) do Compat.declare(SURFACE, name, { name }) end
   end
   Compat.declare(SURFACE, "CharacterLevelText", { "CharacterLevelText" })
+  Compat.declare(SURFACE, "PetLoyaltyText", { "PetLoyaltyText" })
   Compat.declare(SURFACE, "statsBox", { "CharacterStatsPaneScrollBox.ScrollBox" })
   Compat.declare(SURFACE, "petStatsBox", { "CharacterStatsPanePetScrollBox.ScrollBox" })
   Compat.declare(SURFACE, "scrollUtil", { "ScrollUtil" })
@@ -138,7 +142,8 @@ end
 
 -- hooksecurefunc target for PaperDollFrame_SetLevel and PaperDollFrame_SetPetLevel.
 function Character.onLevel()
-  return WFJ.Labels.showAll(SURFACE, { { "ui.level", get("CharacterLevelText"), LEVEL_ONLY } })
+  return WFJ.Labels.showAll(SURFACE, { { "ui.level", get("CharacterLevelText"), LEVEL_ONLY },
+    { "ui.petLoyalty", get("PetLoyaltyText"), WFJ.Labels.families("PetLoyalty") } })
 end
 
 -- camelot: a stable record key per pooled stat-pane row (never its position)
