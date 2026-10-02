@@ -67,10 +67,13 @@ if WFJ.State then
 end
 
 -- Text in the bundled font at a fixed size, English or Japanese: one face everywhere, no size drift when the
--- language flips.
+-- language flips. The bundled face sets its lines close together, so a wrapped or two-line label gets a few pixels
+-- between lines.
+W.LINE_GAP = 4
 function W.put(fs, text, size)
   fs:SetText(text or "")
   WFJ.Font.set(fs, WFJ.Font.PATH, size, "")
+  if type(fs.SetSpacing) == "function" then fs:SetSpacing(W.LINE_GAP) end
 end
 
 local function hasJapanese(text)

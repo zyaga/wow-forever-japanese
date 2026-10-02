@@ -56,17 +56,19 @@ local function thousands(n)
   end
 end
 
+-- → the English and the Japanese header line
 local function headerText()
   local mem = WFJ.Compat.memoryKB()
-  local memText = mem and (("%.1f MB"):format(mem / 1024)) or "memory n/a"
+  local memEn, memJa = Text.get("header.noMemory")
+  if mem then memEn = ("%.1f MB"):format(mem / 1024); memJa = memEn end
   local meta = WFJ.Data and WFJ.Data.meta
-  local data = "data: none"
+  local dataEn, dataJa = Text.get("header.noData")
   if meta then
     local c = meta.counts
-    data = ("data: %s quests · %s items · %s spells · %s UI strings"):format(thousands(c.quest), thousands(c.item),
-      thousands(c.spell), thousands(c.ui or 0))
+    dataEn, dataJa = Text.get("header.data", thousands(c.quest), thousands(c.item), thousands(c.spell),
+      thousands(c.ui or 0))
   end
-  return ("%s · %s · %s"):format(WFJ.VERSION, memText, data)
+  return ("%s · %s · %s"):format(WFJ.VERSION, memEn, dataEn), ("%s · %s · %s"):format(WFJ.VERSION, memJa, dataJa)
 end
 
 local function definition(id)
@@ -263,12 +265,12 @@ A.reportLink = copyRow("about.report", Text.REPORT_URL)
 -- The About page's way into the fix window (report a line the player just saw).
 function A.aboutFix(page, x, y, width)
   local en, ja = Text.get("about.fix")
-  local h = W.labelHeight(W.label(page, en, ja, x, y, width - 170), 36)
+  local h = W.labelHeight(W.label(page, en, ja, x, y, width), 24) - 6
   en, ja = Text.get("button.reportLine")
   local b = W.button(page, en, ja, 150, function() WFJ.FixWindow.open() end)
-  b:SetPoint("TOPLEFT", x + width - 160, y)
+  b:SetPoint("TOPLEFT", x, y - h) -- under its sentence
   Options.reportLine = b
-  return h
+  return h + 36
 end
 
 local function helpRow(key)
@@ -276,8 +278,29 @@ local function helpRow(key)
     return W.labelHeight(W.label(page, Text.T[key].en, Text.T[key].ja, x, y, width), 24)
   end
 end
-A.aboutHold, A.aboutMarkers, A.aboutOpen = helpRow("about.hold"), helpRow("about.markers"), helpRow("about.open")
-A.aboutReadings = helpRow("about.readings")
+A.aboutOpen, A.aboutReadings = helpRow("about.open"), helpRow("about.readings")
+
+function A.aboutMarkers(page, x, y, width)
+  local l = W.label(page, "", "", x, y, width)
+  W.setPair(l, Text.get("about.markers", WFJ.MARKER.stale, WFJ.MARKER.missing))
+  return W.labelHeight(l, 24)
+end
+
+-- The reveal key by name: a preset's ("Alt"), or a bound key's as the client names it ("Mouse Button 4").
+function Options.keyName()
+  local k = S.get("modifier")
+  if M.class(k) == "bound" then return KC.keyText(k) end
+  return M.display(k)
+end
+
+-- Names the reveal key, so it follows a key change.
+function A.aboutHold(page, x, y, width)
+  local l = W.label(page, "", "", x, y, width)
+  local function fill() W.setPair(l, Text.get("about.hold", Options.keyName())) end
+  fill()
+  Options.refreshers[#Options.refreshers + 1] = fill
+  return W.labelHeight(l, 24)
+end
 
 function A.slashHelp(page, x, y, width)
   for i, line in ipairs(Text.SLASH) do
@@ -296,7 +319,7 @@ end
 local function buildPage(spec)
   local page = CreateFrame("Frame")
   -- the page title in the current language, gold like the client's own page titles
-  page.title = W.label(page, "", "", LEFT, -16, 300)
+  page.title = W.label(page, "", "", LEFT, -16, WIDTH) -- the whole page width: the full name at 18 must not wrap
   page.title.en:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
   W.setPair(page.title, Text.get(spec.title))
   local function titleSize() W.put(page.title.en, page.title.en:GetText(), 18) end
@@ -306,7 +329,7 @@ local function buildPage(spec)
   -- The addon never writes Blizzard's category tables itself.
   local y = -40
   if spec.header then
-    page.subtitle = W.fontString(page, "GameFontHighlightSmall", "", LEFT, y, WIDTH) -- filled on show
+    page.subtitle = W.label(page, "", "", LEFT, y, WIDTH) -- filled on show
     y = y - 18
   end
   if spec.tagline then
@@ -337,7 +360,7 @@ local function buildPage(spec)
   end
   page.bottom = -y
   page:SetScript("OnShow", function()
-    if page.subtitle then page.subtitle:SetText(headerText()) end -- memory is read on show only (an expensive call)
+    if page.subtitle then W.setPair(page.subtitle, headerText()) end -- memory is read on show only (an expensive call)
     W.relabelIfStale() -- the language flipped while no page was on screen (OptionsWidgets)
     Options.refresh()
   end)

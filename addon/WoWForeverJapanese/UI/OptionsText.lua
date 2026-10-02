@@ -74,21 +74,28 @@ Text.T = {
   ["collector.cleared"] = { en = "Cleared %s entries", ja = "%s件を消去しました" },
 
   ["about.open"] = {
-    en = "Open settings: Esc > Options > AddOns · AddOn List \"Settings\" · /wfj config",
-    ja = "設定の開き方：Esc → オプション → アドオン ・ アドオン一覧の「設定」 ・ /wfj config",
+    en = "Open settings: Esc > Options > AddOns  /  the AddOn List's \"Settings\"  /  /wfj config",
+    ja = "設定の開き方：Esc → オプション → アドオン　／　アドオン一覧の「設定」　／　/wfj config",
   },
+  -- %s: the reveal key's name ("Alt", "Mouse Button 4")
   ["about.hold"] = {
-    en = "Hold your key to see the game's own English; let go to return to Japanese.",
-    ja = "キーを押している間はゲーム本来の英語を表示し、離すと日本語に戻ります。",
+    en = "Hold %s to see the game's own English; let go to return to Japanese.",
+    ja = "%sを押している間はゲーム本来の英語を表示し、離すと日本語に戻ります。",
   },
   ["about.readings"] = {
     en = "Point at a Japanese word in a quest or NPC window to see its reading.",
     ja = "クエストやNPCの画面で日本語の単語にカーソルを合わせると、読み方が表示されます。",
   },
+  -- %s, %s: the two markers as they show (WFJ.MARKER.stale, .missing)
   ["about.markers"] = {
-    en = "An \"English Changed\" marker means the English changed after translation.\nHold your key to read it.",
-    ja = "[要更新 / English Changed]：翻訳後に英語が変わった印です。\nキーを押すと英語を表示します。",
+    en = "%s  the English changed after translation.\n%s  this line has no translation yet.",
+    ja = "%s　翻訳後に英語が変わった行です。\n%s　まだ翻訳がない行です。",
   },
+  -- the line under a page title: version, memory, how much data ships
+  ["header.data"] = { en = "data: %s quests · %s items · %s spells · %s UI strings",
+    ja = "データ：クエスト %s・アイテム %s・呪文 %s・UI文字列 %s" },
+  ["header.noData"] = { en = "data: none", ja = "データ：なし" },
+  ["header.noMemory"] = { en = "memory n/a", ja = "メモリ不明" },
   ["about.report"] = { en = "Other problems (bugs, suggestions):", ja = "その他の問題（不具合・要望）：" },
 
   -- the fix window (UI/FixWindow) and the About page's way into it
