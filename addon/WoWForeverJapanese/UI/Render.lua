@@ -112,10 +112,11 @@ end
 
 -- The text and font the policy would show for an element that has no record: a widget the client only measures
 -- with (the gossip ScrollBox's measure widgets) → text, font | nil (show the English as is). Writes nothing.
-function Render.preview(surface, en, font, area, kind, id)
+-- `ctx` (optional): as Render.show's (a UI template's `args`).
+function Render.preview(surface, en, font, area, kind, id, ctx)
   if not translator then return nil end
   local text, f = desired({ surface = surface, en = en, font = font,
-    meta = { area = area, kind = kind, id = id } })
+    meta = { area = area, kind = kind, id = id, ctx = ctx } })
   return text, f
 end
 

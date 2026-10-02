@@ -303,6 +303,7 @@ function Slash.debug(sub, arg)
     say("secret tooltips: last line-count skip: remembered %d lines, the secret pass had %d", mm.remembered, mm.secret)
     for i, text in ipairs(mm.english or {}) do say("  remembered line %d: %s", i, text) end
   end
+  for _, line in ipairs(WFJ.TimeLine.status()) do say("tooltip time, %s", line) end
   local kb = WFJ.Compat.memoryKB()
   say("memory: %s", kb and ("%.1f MB"):format(kb / 1024) or "n/a")
   local c = WFJ.Data.counts

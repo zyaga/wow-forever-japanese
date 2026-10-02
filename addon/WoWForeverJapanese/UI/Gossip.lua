@@ -1,6 +1,7 @@
 -- UI/Gossip.lua: the NPC talk window (surface "gossip", area "gossip", ADR-017): the greeting and the option
 -- rows, each translated by the gossip key of its API English (ADR-005). Quest rows, dividers, the NPC name and the
--- window chrome are not this surface's (quest titles stay English; the Goodbye button is interface text).
+-- window chrome are not this surface's (the Goodbye button is interface text). A quest row shows its quest's title as
+-- the quest log does, through UI/QuestMap's title helper, by the row's quest id.
 -- Forever builds the window as a WowScrollBoxList with pooled rows [verified: forever-ui blizzard_uipanels_game/
 -- mainline/gossipframe.xml:62, shared/gossipframeshared.lua]:
 --   * GOSSIP_SHOW → GossipFrame:Update() → ScrollBox:SetDataProvider: every row is released, the extents are measured
@@ -153,8 +154,25 @@ local function rowOf(row, elementData)
   return nil
 end
 
+-- A quest row ("|cff000000<title>|r", or the low-level / ignored wrapper): the quest's Japanese title by its id
+-- [verified: forever-ui blizzard_uipanels_game/shared/gossipframeshared.lua:27–59]. → 1 | 0
+local function questRow(row, elementData)
+  local t = elementData.buttonType
+  local active = buttonType("GOSSIP_BUTTON_TYPE_ACTIVE_QUEST", 4)
+  local offered = buttonType("GOSSIP_BUTTON_TYPE_AVAILABLE_QUEST", 5)
+  if t ~= active and t ~= offered then return nil end
+  local info = elementData.info
+  local fs = WFJ.ButtonText.of(row)
+  if type(info) ~= "table" or type(fs) ~= "table" then return 0 end
+  return WFJ.QuestMap.showTitle(SURFACE, info.questID, fs, refit, info.title, row)
+end
+
 -- OnInitializedFrame subscriber: the client has just written `row`. → 1 when the row is ours to show, else 0.
 function Gossip.onInitialized(_, row, elementData)
+  if type(row) == "table" and type(elementData) == "table" then
+    local quest = questRow(row, elementData)
+    if quest then return quest end
+  end
   local widget, en, recKey = rowOf(row, elementData)
   if not widget then return 0 end
   local f = frame()
@@ -186,6 +204,7 @@ function Gossip.onReleased(_, row)
   if type(row) ~= "table" then return 0 end
   local widget = row.GreetingText or (WFJ.ButtonText.known(row) and WFJ.ButtonText.of(row)) or nil
   if not widget then return 0 end
+  WFJ.QuestMap.dropWidget(SURFACE, nil, widget) -- a quest row's title record sits on the title helper's adapter
   local keys = {}
   for key, rec in pairs(SS.records(SURFACE)) do
     if rec.fs == widget then keys[#keys + 1] = key end

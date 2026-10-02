@@ -1735,6 +1735,7 @@ UI\MenusUntagged.lua
 UI\HelpTips.lua
 UI\QuestFrame.lua
 UI\QuestMap.lua
+UI\TimeLine.lua
 UI\Tooltip.lua
 UI\TooltipUnit.lua
 UI\GameMenu.lua

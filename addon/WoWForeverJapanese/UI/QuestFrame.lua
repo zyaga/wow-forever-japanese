@@ -349,11 +349,44 @@ local function showGreetingText()
   return 0
 end
 
+-- The greeting panel's quest buttons: each shows its quest's Japanese title, as the quest log does, through
+-- UI/QuestMap's title helper. The client acquires them from titleButtonPool, numbering active quests 1.. and offered
+-- ones 1.. again (`isActive` 1 / 0) [verified: forever-ui blizzard_uipanels_game/mainline/questframe.lua,
+-- QuestFrameGreetingPanel_OnShow]. → titles shown
+local function showGreetingTitles()
+  local panel = Compat.get(DECLARE, "greetingPanel")
+  local pool = type(panel) == "table" and panel.titleButtonPool or nil
+  if type(pool) ~= "table" or type(pool.EnumerateActive) ~= "function" then return 0 end
+  local activeId, activeTitle = Compat.resolve("GetActiveQuestID"), Compat.resolve("GetActiveTitle")
+  local offeredInfo, offeredTitle = Compat.resolve("GetAvailableQuestInfo"), Compat.resolve("GetAvailableTitle")
+  local n = 0
+  for button in pool:EnumerateActive() do
+    local i = type(button.GetID) == "function" and button:GetID() or nil
+    local fs = type(button.GetFontString) == "function" and button:GetFontString() or nil
+    local questID, en
+    if type(i) == "number" and button.isActive == 1 and type(activeId) == "function" and type(activeTitle) == "function"
+    then
+      questID, en = activeId(i), activeTitle(i)
+    elseif type(i) == "number" and type(offeredInfo) == "function" and type(offeredTitle) == "function" then
+      questID, en = select(5, offeredInfo(i)), offeredTitle(i)
+    end
+    if fs and questID then
+      local function refit()
+        local icon = button.Icon
+        button:SetHeight(math.max(button:GetTextHeight() + 2, icon and icon:GetHeight() or 0))
+      end
+      n = n + WFJ.QuestMap.showTitle(QuestFrame.GREETING, questID, fs, refit, en)
+    end
+  end
+  return n
+end
+
 -- HookScript target on QuestFrameGreetingPanel's OnShow, and hooksecurefunc target on QuestFrameGreetingPanel_OnShow:
--- the greeting prose, then the panel's headers and Goodbye button. → the number of labels found
+-- the greeting prose, its quest titles, then the panel's headers and Goodbye button. → the number of labels found
 function QuestFrame.onGreeting()
   for _, panel in pairs(PANELS) do WFJ.Render.forget(panel.surface) end
   showGreetingText()
+  pcall(showGreetingTitles)
   local n = showLabels(QuestFrame.GREETING, LABELS.greeting)
   WFJ.Render.updateBanner(QuestFrame.GREETING)
   return n

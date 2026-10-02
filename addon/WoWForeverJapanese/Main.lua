@@ -140,6 +140,7 @@ function WFJ.OnLoad()
     return WFJ.Settings.load(WFJ_DB, WFJ.SCHEMA, WFJ.Settings.MIGRATIONS)
   end) or WFJ_DB
   step("reports", function() WFJ.Reports.load(WFJ_DB) end) -- pending fixes live in WFJ_DB.reports
+  step("timeline", function() WFJ.TimeLine.load(WFJ_DB) end) -- the client's tooltip time rule, WFJ_DB.timeRule
   WFJ_Collector = step("collector", function() return WFJ.Collector.load(WFJ_Collector, {
     enabled = function() return WFJ.Settings.get("collector.enabled") end,
     lookup = WFJ.Lookup.get,

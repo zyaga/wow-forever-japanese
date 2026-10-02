@@ -301,6 +301,12 @@ local function isCountdown(english)
   return head ~= nil and head ~= "" and english:sub(1, #head) == head
 end
 
+-- A row whose number moves while the tooltip is up: the cooldown countdown, or an aura's time left ("17 minutes
+-- remaining"). Its remembered Japanese is stale a moment later, so it is never written back (UI/TimeLine writes it).
+local function moving(english)
+  return isCountdown(english) or WFJ.TimeLine.family(english) ~= nil
+end
+
 -- Where each remembered row is on a secret pass with another row count. A row comes or goes in the middle (the
 -- countdown sits right above the description), so rows are matched from the top while their colours agree and from
 -- the bottom while they agree. When the client hides the colours too (a secret pass does), one row more or less is
@@ -343,8 +349,10 @@ local function rowMap(snap, lines)
     return nil, "colours hidden"
   end
   local map = {}
+  -- the one new row nothing remembered maps to: the countdown, when a row came
+  map.inserted = (n == m + 1 and top + bottom == m) and top + 1 or nil
   for i = 1, m do
-    local written = (snap[i] or snap.right[i]) and not isCountdown(snap.english[i])
+    local written = (snap[i] or snap.right[i]) and not moving(snap.english[i])
     if i <= top then
       map[i] = i
     elseif i > m - bottom then
@@ -373,6 +381,72 @@ local function remember(frame, kind, id, area, lines, rights)
   rendered[frame] = snap
 end
 
+-- The cooldown a spell or item tooltip counts down: the seconds left when the client lets them be read, else (a
+-- spell only) the client's duration object for UI/TimeLine to format unread. C_Spell.GetSpellCooldown is
+-- SecretWhenCooldownsRestricted [verified: spelldocumentation.lua:309–313]; C_Item.GetItemCooldown carries no such
+-- flag [verified: itemdocumentation.lua:434–449], so an item's is read, and a hidden one leaves the client's line.
+-- → seconds | nil, why, duration
+local function cooldownOf(kind, id)
+  if type(id) ~= "number" or anySecret({ id }) then return nil, "id hidden" end
+  local clock = Compat.resolve("GetTime")
+  if type(clock) ~= "function" then return nil, "no clock" end
+  if kind == "spell.description" then
+    local get = Compat.resolve("C_Spell.GetSpellCooldown")
+    if type(get) ~= "function" then return nil, "no cooldown API" end
+    local ok, info = pcall(get, id)
+    if not ok or type(info) ~= "table" then return nil, "no cooldown info" end
+    if not anySecret({ info.startTime, info.duration }) then
+      if type(info.startTime) ~= "number" or type(info.duration) ~= "number" then return nil, "no cooldown values" end
+      return info.startTime + info.duration - clock(), "readable"
+    end
+    local durationOf = Compat.resolve("C_Spell.GetSpellCooldownDuration")
+    if type(durationOf) ~= "function" then return nil, "hidden, no duration API" end
+    local okD, duration = pcall(durationOf, id)
+    if not okD or not duration then return nil, "hidden, no duration object" end
+    return nil, "hidden", duration
+  elseif kind == "item.description" then
+    local get = Compat.resolve("C_Item.GetItemCooldown")
+    if type(get) ~= "function" then return nil, "no item cooldown API" end
+    local ok, start, duration = pcall(get, id)
+    if not ok then return nil, "no item cooldown" end
+    if anySecret({ start, duration }) then return nil, "item cooldown hidden" end
+    if type(start) ~= "number" or type(duration) ~= "number" then return nil, "no item cooldown values" end
+    return start + duration - clock(), "readable"
+  end
+  return nil, "not a spell or item"
+end
+
+-- The countdown row in Japanese on a secret pass. → true | nil, why (the trace)
+local function writeCountdown(fs, kind, id)
+  local seconds, why, duration = cooldownOf(kind, id)
+  if seconds then
+    if seconds <= 0 then return nil, "no cooldown running" end
+    return WFJ.TimeLine.writeSeconds(fs, "cooldown", seconds)
+  end
+  if duration then return WFJ.TimeLine.writeDuration(fs, "cooldown", duration) end
+  return nil, why
+end
+
+-- A readable spell or item tooltip teaches UI/TimeLine the client's cooldown rule, and checks the client's formatter
+-- against it on a spell's duration object.
+local function learnCountdown(kind, id, texts)
+  for _, text in ipairs(texts) do
+    if WFJ.TimeLine.family(text) == "cooldown" then
+      local seconds = cooldownOf(kind, id)
+      if seconds then
+        WFJ.TimeLine.observe("cooldown", seconds, text)
+        local durationOf = Compat.resolve("C_Spell.GetSpellCooldownDuration")
+        if kind == "spell.description" and type(durationOf) == "function" then
+          local ok, duration = pcall(durationOf, id)
+          if ok and duration then WFJ.TimeLine.checkFormatter("cooldown", duration, seconds) end
+        end
+      end
+      return
+    end
+  end
+end
+Tooltip.learnCountdown = learnCountdown
+
 -- A secret pass: the last readable pass's Japanese written back, when nothing says it no longer applies.
 -- → lines written
 -- What the secret passes did (/wfj debug): written back, or why not.
@@ -397,7 +471,10 @@ local function reapply(frame, kind, id, lines)
   local map, how
   if snap.n == #lines then
     map, how = {}, "same rows"
-    for i = 1, snap.n do map[i] = i end
+    for i = 1, snap.n do
+      map[i] = i
+      if isCountdown(snap.english[i]) then map.inserted = i end -- the remembered countdown's row, still there
+    end
   else
     map, how = rowMap(snap, lines)
     if not map then
@@ -408,8 +485,42 @@ local function reapply(frame, kind, id, lines)
   Tooltip.secretPasses.reapplied = Tooltip.secretPasses.reapplied + 1
   local rights = Tooltip.lines(frame, "Right")
   local n = 0
+  local countdownRow = map.inserted
+  map.inserted = nil
+  -- the spell or item itself may be withheld on a secret pass: the remembered one is the same (same owner)
+  local known = (type(id) == "number" and not anySecret({ id })) and id or snap.id
+  if countdownRow and lines[countdownRow] then
+    local ok, wrote, why = pcall(writeCountdown, lines[countdownRow].fs, kind, known)
+    if not ok then why = "refused: " .. tostring(wrote) end
+    if ok and wrote then
+      WFJ.Font.bundle(lines[countdownRow].fs)
+      n = n + 1
+    end
+    how = how .. "; countdown row " .. countdownRow .. ": " .. tostring(why)
+  end
+  -- an aura's time left, from the client's duration for that aura
+  if kind == "spell.aura" and snap.auraUnit and snap.n == #lines then
+    local durationOf = Compat.resolve("C_UnitAuras.GetAuraDuration")
+    for i = 1, snap.n do
+      if WFJ.TimeLine.family(snap.english[i]) == "aura" and lines[i] then
+        local why
+        local okD, duration = pcall(durationOf, snap.auraUnit, snap.auraInstance)
+        if okD and duration then
+          local ok, wrote, w = pcall(WFJ.TimeLine.writeDuration, lines[i].fs, "aura", duration)
+          why = ok and w or ("refused: " .. tostring(wrote))
+          if ok and wrote then
+            WFJ.Font.bundle(lines[i].fs)
+            n = n + 1
+          end
+        else
+          why = "no aura duration"
+        end
+        how = how .. "; time row " .. i .. ": " .. tostring(why)
+      end
+    end
+  end
   for old, new in pairs(map) do
-    if not isCountdown(snap.english[old]) then
+    if not moving(snap.english[old]) then
       if snap[old] and lines[new] then
         lines[new].fs:SetText(snap[old])
         WFJ.Font.bundle(lines[new].fs)
@@ -458,18 +569,53 @@ local function traceFrame(frame, event, id, lines, note)
   local out = { ("[%s] %s %s id=%s owner=%s rows=%d %s"):format(stamp, plain(frame:GetName()), event,
     plain(id), ownerName, #lines, note or "") }
   local rights = Tooltip.lines(frame, "Right")
+  local kinds = {}
+  if type(frame.GetPrimaryTooltipInfo) == "function" then
+    local ok, info = pcall(frame.GetPrimaryTooltipInfo, frame)
+    if ok and type(info) == "table" then kinds = WFJ.TooltipUnit.lineKinds(info.tooltipData) end
+  end
   for i, l in ipairs(lines) do
-    out[#out + 1] = ("  %d L %s | R %s"):format(i, describe(l.fs), describe(rights[i] and rights[i].fs))
+    out[#out + 1] = ("  %d %s L %s | R %s"):format(i, kinds[i] or "?", describe(l.fs),
+      describe(rights[i] and rights[i].fs))
   end
   local snap = rendered[frame]
   if snap then
     out[#out + 1] = ("  remembered: %s id=%s rows=%d"):format(plain(snap.kind), plain(snap.id), snap.n)
   end
   local t = Tooltip.trace
+  -- a pass identical to the one before (an owner re-showing the tooltip several times a second) is counted, not
+  -- added again, so a short recording is not filled by one hover
+  local body = table.concat(out, "\n", 2)
+  local key = out[1]:gsub("^%[[^%]]*%] ", "") .. "\n" .. body
+  if Tooltip.traceLast == key and #t > 0 then
+    Tooltip.traceRepeat = (Tooltip.traceRepeat or 1) + 1
+    t[#t] = t[#t]:gsub("\n  %(seen %d+ times[^\n]*$", "") .. ("\n  (seen %d times, last %s)"):format(
+      Tooltip.traceRepeat, stamp)
+    return
+  end
+  Tooltip.traceLast, Tooltip.traceRepeat = key, 1
   t[#t + 1] = table.concat(out, "\n")
   if #t > TRACE_MAX then table.remove(t, 1) end
 end
 Tooltip.traceFrame = traceFrame
+
+-- One line in the trace for a hook call the addon set aside before reading the tooltip (why it was not its).
+local function traceNote(text)
+  if not Tooltip.trace then return end
+  local clock = Compat.resolve("date")
+  local stamp = type(clock) == "function" and clock("%H:%M:%S") or ""
+  local t = Tooltip.trace
+  local line = ("[%s] %s"):format(stamp, text)
+  if Tooltip.traceLast == text and #t > 0 then
+    Tooltip.traceRepeat = (Tooltip.traceRepeat or 1) + 1
+    t[#t] = line .. (" (seen %d times)"):format(Tooltip.traceRepeat)
+    return
+  end
+  Tooltip.traceLast, Tooltip.traceRepeat = text, 1
+  t[#t + 1] = line
+  if #t > TRACE_MAX then table.remove(t, 1) end
+end
+Tooltip.traceNote = traceNote
 
 local function show(frame, area, kind, id, lines, first, last, name, runArgs)
   local surface = surfaceOf(frame)
@@ -549,6 +695,7 @@ function Tooltip.onItem(frame)
   local rights = Tooltip.lines(frame, "Right")
   local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs)
   remember(frame, "item.description", id, "items", lines, rights)
+  pcall(learnCountdown, "item.description", id, texts)
   traceFrame(frame, "readable item", id, lines, ("-> rendered %d"):format(n))
   return n
 end
@@ -581,6 +728,7 @@ function Tooltip.onSpell(frame)
   local rights = Tooltip.lines(frame, "Right")
   local n = show(frame, "spells", "spell.description", id, lines, i, i, spellName)
   remember(frame, "spell.description", id, "spells", lines, rights)
+  pcall(learnCountdown, "spell.description", id, texts)
   traceFrame(frame, "readable spell", id, lines, ("-> rendered %d"):format(n))
   return n
 end
@@ -719,6 +867,142 @@ function Tooltip.auraCall(frame)
   return method, unit, key, filter, count
 end
 
+-- ── Buffs and debuffs in combat ──
+-- A tooltip forgets its Japanese when it hides, and in combat a buff's lines are secret, so a buff first hovered in
+-- combat had nothing to write back. The Japanese is kept per aura instead: unit + auraInstanceID, which stay readable
+-- in combat. It is learnt from every readable hover and, for the player's own auras, from C_TooltipInfo whenever the
+-- auras change out of combat. Only the *ByAuraInstanceID methods name an aura stably (an index shifts).
+local auraMemory, auraMemoryCount = {}, 0
+local AURA_MEMORY_MAX = 400
+
+local function auraKey(method, unit, key)
+  if type(method) ~= "string" or not method:find("ByAuraInstanceID$") then return nil end
+  if anySecret({ unit, key }) or type(unit) ~= "string" or type(key) ~= "number" then return nil end
+  return unit .. "#" .. key
+end
+
+local function keepAura(k, snap)
+  if not auraMemory[k] then auraMemoryCount = auraMemoryCount + 1 end
+  if auraMemoryCount > AURA_MEMORY_MAX then auraMemory, auraMemoryCount = {}, 1 end
+  auraMemory[k] = snap
+end
+
+-- A readable aura's time line teaches UI/TimeLine the client's rule (seconds left from the aura's expiration time) and
+-- checks the client's formatter on the aura's duration object.
+function Tooltip.learnAuraTime(unit, instance, texts)
+  local getAura = Compat.resolve("C_UnitAuras.GetAuraDataByAuraInstanceID")
+  local durationOf = Compat.resolve("C_UnitAuras.GetAuraDuration")
+  local clock = Compat.resolve("GetTime")
+  if type(getAura) ~= "function" or type(clock) ~= "function" then return end
+  for _, text in ipairs(texts) do
+    if WFJ.TimeLine.family(text) == "aura" then
+      local ok, aura = pcall(getAura, unit, instance)
+      if not ok or type(aura) ~= "table" then return end
+      local expires = aura.expirationTime
+      if anySecret({ expires }) or type(expires) ~= "number" or expires <= 0 then return end
+      local seconds = expires - clock()
+      WFJ.TimeLine.observe("aura", seconds, text)
+      if type(durationOf) == "function" then
+        local okD, duration = pcall(durationOf, unit, instance)
+        if okD and duration then WFJ.TimeLine.checkFormatter("aura", duration, seconds) end
+      end
+      return
+    end
+  end
+end
+
+-- The Japanese the tooltip would show for one aura, from the client's tooltip data rather than a frame.
+-- → a remembered-pass record | nil
+local function learnAura(unit, instance)
+  local getData = Compat.resolve("C_TooltipInfo.GetUnitAuraByAuraInstanceID")
+  local getAura = Compat.resolve("C_UnitAuras.GetAuraDataByAuraInstanceID")
+  if type(getData) ~= "function" or type(getAura) ~= "function" then return nil end
+  local okA, aura = pcall(getAura, unit, instance)
+  if not okA or type(aura) ~= "table" or anySecret({ aura.spellId }) or type(aura.spellId) ~= "number" then
+    return nil
+  end
+  local okD, data = pcall(getData, unit, instance)
+  if not okD or type(data) ~= "table" or type(data.lines) ~= "table" then return nil end
+  local texts, rightsEn = {}, {}
+  for i, line in ipairs(data.lines) do
+    if anySecret({ line.leftText, line.rightText }) then return nil end
+    texts[i], rightsEn[i] = line.leftText or "", line.rightText
+  end
+  local snap = { kind = "spell.aura", id = aura.spellId, n = #texts, area = "spells", english = texts, colours = {},
+    right = {}, learnt = true }
+  local index = WFJ.UIIndex
+  local function ui(en)
+    if type(en) ~= "string" or en == "" or not index or moving(en) then return nil end
+    local key, args = index:match(en)
+    if not key then return nil end
+    local ja = WFJ.Render.preview("tooltip.aura", en, nil, "ui", "ui", key, { args = args })
+    return ja ~= en and ja or nil
+  end
+  local at = Tooltip.auraLine(texts)
+  for i, en in ipairs(texts) do
+    if i == at then
+      local ja = WFJ.Render.preview("tooltip.aura", en, nil, "spells", "spell.aura", aura.spellId)
+      if type(ja) == "string" and ja ~= en then snap[i] = ja end
+    elseif i > 1 then
+      snap[i] = ui(en)
+    end
+    snap.right[i] = ui(rightsEn[i])
+  end
+  return snap
+end
+
+-- Spells on the action bars that are cooling down, read from the client's tooltip data (no hover), teach
+-- UI/TimeLine the cooldown rule. → spells read
+function Tooltip.learnBarCooldowns()
+  local actionInfo = Compat.resolve("GetActionInfo")
+  local tooltipOf = Compat.resolve("C_TooltipInfo.GetSpellByID")
+  local get = Compat.resolve("C_Spell.GetSpellCooldown")
+  if type(actionInfo) ~= "function" or type(tooltipOf) ~= "function" or type(get) ~= "function" then return 0 end
+  local seen, n = {}, 0
+  for slot = 1, 180 do
+    local ok, kind, id = pcall(actionInfo, slot)
+    if ok and kind == "spell" and type(id) == "number" and not anySecret({ id }) and not seen[id] then
+      seen[id] = true
+      local okC, info = pcall(get, id)
+      if okC and type(info) == "table" and not anySecret({ info.duration }) and type(info.duration) == "number"
+        and info.duration > 0 then
+        local okT, data = pcall(tooltipOf, id)
+        if okT and type(data) == "table" and type(data.lines) == "table" then
+          local texts = {}
+          for i, line in ipairs(data.lines) do texts[i] = line.leftText end
+          if not anySecret(texts) then pcall(learnCountdown, "spell.description", id, texts); n = n + 1 end
+        end
+      end
+    end
+  end
+  return n
+end
+
+-- The player's auras, learnt while their lines are readable (UNIT_AURA out of combat, and on entering combat).
+-- → auras learnt
+function Tooltip.learnPlayerAuras()
+  local byIndex = Compat.resolve("C_UnitAuras.GetAuraDataByIndex")
+  if type(byIndex) ~= "function" then return 0 end
+  local n = 0
+  for _, filter in ipairs({ "HELPFUL", "HARMFUL" }) do
+    for i = 1, 40 do
+      local ok, aura = pcall(byIndex, "player", i, filter)
+      if not ok or type(aura) ~= "table" then break end
+      local instance = aura.auraInstanceID
+      if not anySecret({ instance }) and type(instance) == "number" then
+        local snap = learnAura("player", instance)
+        if snap then
+          snap.key, snap.auraUnit, snap.auraInstance = "player#" .. instance, "player", instance
+          keepAura(snap.key, snap)
+          pcall(Tooltip.learnAuraTime, "player", instance, snap.english)
+          n = n + 1
+        end
+      end
+    end
+  end
+  return n
+end
+
 -- The aura handler: (frame, method, <that method's arguments>).
 Tooltip.auraErrors = 0
 
@@ -727,10 +1011,31 @@ local function auraImpl(frame, method, unit, key, filter, clientLines)
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
+  local how = ("%s(%s, %s, %s) client rows=%s"):format(plain(method), plain(unit), plain(key), plain(filter),
+    plain(clientLines))
   -- restricted: leave everything alone, forgetting included (forget compares the widget's text)
-  if anySecret(texts) then return 0 end
+  if anySecret(texts) then
+    -- the aura's own memory, when this tooltip remembers nothing for it (first hovered in combat)
+    local k = auraKey(method, unit, key)
+    local kept = k and auraMemory[k]
+    local snap = rendered[frame]
+    if kept and not (snap and snap.kind == "spell.aura" and snap.key == k) then
+      kept.owner = ownerOf(frame)
+      kept.key = k
+      rendered[frame] = kept
+      how = how .. "; from the aura's memory" .. (kept.learnt and " (learnt)" or "")
+    elseif not kept then
+      how = how .. "; aura not known" .. (k and "" or " (no instance id)")
+    end
+    local n, why = reapply(frame, "spell.aura", nil, lines)
+    traceFrame(frame, "secret aura", nil, lines, ("-> wrote %d (%s; %s)"):format(n, why, how))
+    return n
+  end
   local id = Tooltip.auraSpellId(method, unit, key, filter)
-  if not id then WFJ.Render.forget(surfaceOf(frame)); return 0 end
+  if not id then
+    traceFrame(frame, "readable aura", nil, lines, "-> left, no spell id (" .. how .. ")")
+    WFJ.Render.forget(surfaceOf(frame)); return 0
+  end
   local i = Tooltip.auraLine(texts)
   -- Forever: line 2 only when the client wrote it; a line another addon appended (an id line, the PTR
   -- reporter's hint) is past the client's own count and is never the aura text
@@ -741,7 +1046,19 @@ local function auraImpl(frame, method, unit, key, filter, clientLines)
   if i and type(lookup) == "function" and lookup("spell.aura", id) ~= nil then
     WFJ.Collector.record("spell", id, "aura", texts[i])
   end
-  return show(frame, "spells", "spell.aura", id, lines, i, i, texts[1])
+  local rights = Tooltip.lines(frame, "Right")
+  local n = show(frame, "spells", "spell.aura", id, lines, i, i, texts[1])
+  remember(frame, "spell.aura", id, "spells", lines, rights)
+  local k = auraKey(method, unit, key)
+  if k and rendered[frame] then
+    rendered[frame].key = k
+    rendered[frame].auraUnit, rendered[frame].auraInstance = unit, key
+    keepAura(k, rendered[frame])
+    pcall(Tooltip.learnAuraTime, unit, key, texts)
+  end
+  traceFrame(frame, "readable aura", id, lines, ("-> rendered %s, aura row %s, shipped aura text %s (%s)"):format(
+    plain(n), plain(i), tostring(type(lookup) == "function" and lookup("spell.aura", id) ~= nil), how))
+  return n
 end
 
 -- The aura handler: (frame, method, <that method's arguments>[, the client's own line count]). Guarded
@@ -751,6 +1068,7 @@ function Tooltip.onAura(frame, method, unit, key, filter, clientLines)
   local ok, n = pcall(auraImpl, frame, method, unit, key, filter, clientLines)
   if ok then return n end
   Tooltip.auraErrors = Tooltip.auraErrors + 1
+  pcall(traceFrame, frame, "aura error", nil, Tooltip.lines(frame), "-> " .. tostring(n))
   return 0
 end
 
@@ -799,11 +1117,53 @@ function Tooltip.init()
   if processor and types.UnitAura ~= nil then
     processor.AddTooltipPostCall(types.UnitAura, function(tt)
       local frame = dataFrame(tt, types.UnitAura, "GetPrimaryTooltipInfo")
-      if not frame then return end
+      if not frame then
+        pcall(traceNote, ("aura post-call on %s: not one of ours"):format(
+          type(tt) == "table" and type(tt.GetName) == "function" and plain(tt:GetName()) or "?"))
+        return
+      end
       local method, unit, key, filter, count = Tooltip.auraCall(frame)
-      if method then Tooltip.onAura(frame, method, unit, key, filter, count) end
+      if method then Tooltip.onAura(frame, method, unit, key, filter, count)
+      else pcall(traceFrame, frame, "aura", nil, Tooltip.lines(frame), "-> left, getter not known") end
     end)
     auraHooks = #Tooltip.AURA_ORDER
+    -- the trace only: which GameTooltip call opened a buff tooltip, so a buff the post-call never sees still shows
+    local tooltip = Compat.get(DECLARE, "GameTooltip")
+    if type(tooltip) == "table" then
+      for _, method in ipairs(Tooltip.AURA_ORDER) do
+        if type(tooltip[method]) == "function" then
+          hooksecurefunc(tooltip, method, function(_, unit, key, filter)
+            if Tooltip.trace then
+              pcall(traceNote, ("%s(%s, %s, %s) called"):format(method, plain(unit), plain(key), plain(filter)))
+            end
+          end)
+        end
+      end
+    end
+    local create, inCombat = Compat.resolve("CreateFrame"), Compat.resolve("InCombatLockdown")
+    if type(create) == "function" then
+      local events = create("Frame")
+      events:RegisterUnitEvent("UNIT_AURA", "player")
+      events:RegisterEvent("PLAYER_REGEN_DISABLED")
+      events:RegisterEvent("PLAYER_ENTERING_WORLD")
+      events:SetScript("OnEvent", function(_, event)
+        -- in combat the lines are secret; PLAYER_REGEN_DISABLED is the last moment they may still be read
+        if event == "UNIT_AURA" and type(inCombat) == "function" and inCombat() then return end
+        if event == "PLAYER_ENTERING_WORLD" then pcall(WFJ.TimeLine.selfTest) end
+        pcall(Tooltip.learnPlayerAuras)
+      end)
+      -- Until the client's time rule is learnt: once a second out of combat, the player's auras and the bars'
+      -- cooldowns are read as they count down. The ticker stops itself once there is nothing left to learn.
+      local timer = Compat.resolve("C_Timer.NewTicker")
+      if type(timer) == "function" then
+        Tooltip.timeTicker = timer(1, function(ticker)
+          if not WFJ.TimeLine.learning() then ticker:Cancel(); Tooltip.timeTicker = nil; return end
+          if type(inCombat) == "function" and inCombat() then return end
+          pcall(Tooltip.learnPlayerAuras)
+          pcall(Tooltip.learnBarCooldowns)
+        end)
+      end
+    end
   end
   -- Latched last, not first: if a registration or a hook raises, Main's guard records the failure and the
   -- surface stays retryable instead of being stuck permanently half-hooked (item hooked, spell not, no OnHide).
