@@ -982,9 +982,6 @@ QUEST_REPUTATION_REWARD_TITLE  # permanent: a retail feature the Forever client 
 QUEST_REPUTATION_REWARD_TOOLTIP  # permanent: a retail feature the Forever client never shows: the major-faction (renown) reputation reward tooltip (blizzard_uipanels_game/mainline/questinfo.lua:1355) [unverified in game]; a name-carrying composite
 QUEST_STORY_STATUS  # a retail-era system (story) with no Classic-content counterpart on Forever [unverified in game] (blizzard_uipanels_game/mainline/questmapframe.lua:2143)
 QUEST_TITLE_FORMAT_FAILED  # a decorated title ("%s - (Failed)"): a decorated row stays English (blizzard_uipanels_game/mainline/questinfo.lua:156)
-QUEST_WATCH_CLICK_TO_COMPLETE  # a tracker objective line (objective progress lines are out of scope) (blizzard_objectivetracker/blizzard_questobjectivetracker.lua:322)
-QUEST_WATCH_QUEST_COMPLETE  # a tracker objective line (objective progress lines are out of scope) (blizzard_objectivetracker/blizzard_questobjectivetracker.lua:321)
-QUEST_WATCH_QUEST_READY  # a tracker / list objective line (objective progress lines are out of scope) (blizzard_uipanels_game/mainline/questmapframe.lua:1896)
 QUEUED_STATUS_BRAWL_RULES_SUBTITLE  # permanent: no words of its own: "%s|n|n%s" is a PvP brawl's name and server description (blizzard_queuestatusframe/mainline/queuestatusframe.lua:955–962)
 QUICKBUTTON_NAME_ME  # a name: a default combat log filter's name, saved in Blizzard_CombatLog_Filters and edited by the player (blizzard_combatlog.lua:361–363; chatconfigframe.xml:1366–1390); the quick button is also sized from this text (lua:1594–1598)
 QUICKBUTTON_NAME_ME_TOOLTIP  # not displayed: stored as the filter's and the quick button's `tooltip` field (blizzard_combatlog.lua:369, 1601), which no script reads: CombatLogQuickButtonTemplate has no OnEnter (blizzard_combatlog.xml:3–12)

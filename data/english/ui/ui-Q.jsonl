@@ -36,10 +36,13 @@
 {"id": "QUEST_TEXT_PREVIEW_BODY", "field": "text", "en": "This preview showcases what your quest description will look like in the quest offer pane when you opt for the alternative background color.", "hash": "795adc6870a59ee5", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_TEXT_PREVIEW_TITLE", "field": "text", "en": "Example", "hash": "4f9851a7b2e6384c", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_TIMERS", "field": "text", "en": "Quest Timers", "hash": "0266d7ae81679c44", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_WATCH_CLICK_TO_COMPLETE", "field": "text", "en": "(click to complete)", "hash": "456e672e28b74d67", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WATCH_POPUP_CLICK_TO_COMPLETE", "field": "text", "en": "Click to complete quest", "hash": "59e154ca98da8d59", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WATCH_POPUP_CLICK_TO_COMPLETE_TASK", "field": "text", "en": "Click to complete", "hash": "7384eefe5de44b4b", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WATCH_POPUP_CLICK_TO_VIEW", "field": "text", "en": "Click to view quest", "hash": "b893297b0ed729d3", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WATCH_POPUP_QUEST_DISCOVERED", "field": "text", "en": "Quest Discovered!", "hash": "d19e1cb98601bec1", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_WATCH_QUEST_COMPLETE", "field": "text", "en": "Quest Complete", "hash": "0dfc39873eac418e", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_WATCH_QUEST_READY", "field": "text", "en": "Ready for turn-in", "hash": "5c68785dcd5cf59d", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WATCH_TOOLTIP", "field": "text", "en": "Shift click a quest to add or remove a quest from your quest watch list.", "hash": "c7db7b66f843a4c5", "src": "db2@1.60.1.69913"}
 {"id": "QUEST_WAYPOINT_FINAL", "field": "text", "en": "Show Final Destination", "hash": "dc2080c1d41b9a45", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WAYPOINT_ROUTE", "field": "text", "en": "Show Travel Route", "hash": "2b61ae05ef72ad5f", "src": "db2@1.60.1.70170"}
