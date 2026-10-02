@@ -87,18 +87,37 @@ describe("UI/Tooltip hooks the client's data processor", function()
       assert.is_truthy(fs("GameTooltip", 4):GetText():find("シールド", 1, true))
     end)
 
-  it("leaves an item or spell tooltip whose lines are secret alone, with no error", function()
-    -- an action button's tooltip in combat: every line is a secret value, and comparing one raises in game
+  it("a secret pass reads nothing and raises nothing; it puts back what the last readable pass wrote", function()
+    -- an action button's tooltip turns secret while its spell casts or cools down: the client rewrites the English
     local WFJ, tt = setup()
     WFJ.Tooltip.init()
     local secret = {}
     for _, l in ipairs(SHIELD_LINES) do secret[l] = true end
     for _, l in ipairs(JERKY_LINES) do secret[l] = true end
+    -- nothing rendered yet: a secret pass leaves the English
     _G.issecretvalue = function(v) return secret[v] == true end
     assert.has_no.errors(function() Stub.setSpellTooltip(tt, 17, SHIELD_LINES) end)
     assert.are.equal(SHIELD_LINES[4], fs("GameTooltip", 4):GetText())
+    _G.issecretvalue = nil
+    -- a readable pass renders, then a secret pass for the same spell keeps the Japanese instead of flashing English
+    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
+    local ja = fs("GameTooltip", 4):GetText()
+    assert.is_truthy(ja:find("シールド", 1, true))
+    _G.issecretvalue = function(v) return secret[v] == true end
+    assert.has_no.errors(function() Stub.setSpellTooltip(tt, 17, SHIELD_LINES) end)
+    assert.are.equal(ja, fs("GameTooltip", 4):GetText())
+    assert.are.equal("Power Word: Shield", fs("GameTooltip", 1):GetText())
+    -- another item on the same frame: nothing to put back, the English stays
     assert.has_no.errors(function() Stub.setItemTooltip(tt, JERKY, JERKY_LINES) end)
     assert.are.equal(JERKY_LINES[2], fs("GameTooltip", 2):GetText())
+    -- the modifier held: the client's English stays
+    _G.issecretvalue = nil
+    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
+    _G.issecretvalue = function(v) return secret[v] == true end
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
+    assert.are.equal(SHIELD_LINES[4], fs("GameTooltip", 4):GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
     _G.issecretvalue = nil
   end)
 

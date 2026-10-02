@@ -268,6 +268,39 @@ local function anySecret(texts)
   return false
 end
 
+-- The lines a pass rendered, per frame: { kind, id, n = line count, area, [i] = the text written }. An action
+-- button's tooltip turns secret while its spell casts or cools down and turns back after, and the client rewrites
+-- the lines each time; a secret pass cannot read or match them, so it puts back what the last readable pass wrote
+-- for the same spell or item with the same line count, instead of leaving the English to flash in between. Writing
+-- a line is allowed while reading it is not. Forgotten on the frame's OnHide.
+local rendered = setmetatable({}, { __mode = "k" })
+
+local function remember(frame, kind, id, area, lines)
+  local snap = { kind = kind, id = id, n = #lines, area = area }
+  for i, l in ipairs(lines) do
+    local now = l.fs:GetText()
+    if now ~= l.text then snap[i] = now end -- l.text: the client's line as read before this pass wrote
+  end
+  rendered[frame] = snap
+end
+
+-- A secret pass: the last readable pass's Japanese written back, when nothing says it no longer applies.
+-- → lines written
+local function reapply(frame, kind, id, lines)
+  local snap = rendered[frame]
+  if not snap or snap.kind ~= kind or snap.id ~= id or snap.n ~= #lines then return 0 end
+  if WFJ.State.enabled == false or WFJ.Modifier.isDown() or not WFJ.State.areaEnabled(snap.area) then return 0 end
+  local n = 0
+  for i, l in ipairs(lines) do
+    if snap[i] then
+      l.fs:SetText(snap[i])
+      WFJ.Font.bundle(l.fs)
+      n = n + 1
+    end
+  end
+  return n
+end
+
 local function show(frame, area, kind, id, lines, first, last, name, runArgs)
   local surface = surfaceOf(frame)
   WFJ.Render.forget(surface)
@@ -326,8 +359,8 @@ function Tooltip.onItem(frame)
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
-  -- restricted: leave everything alone, forgetting included (forget compares the widget's text)
-  if anySecret(texts) then return 0 end
+  -- restricted: nothing is read or matched, forgetting included (forget compares the widget's text)
+  if anySecret(texts) then return reapply(frame, "item.description", id, lines) end
   local first, last = Tooltip.itemRun(texts)
   local runArgs = first and peelTrailer(texts, first, last) or nil
   -- The run is read before we write (the client rewrote every line); the Collector refuses our own text anyway.
@@ -338,7 +371,9 @@ function Tooltip.onItem(frame)
     if not (entry and entry.status == ".") then runArgs = nil end
   end
   -- No run still has structural lines.
-  return show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs)
+  local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs)
+  remember(frame, "item.description", id, "items", lines)
+  return n
 end
 
 -- The Spell post-call's target.
@@ -350,13 +385,15 @@ function Tooltip.onSpell(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
   local description = Tooltip.spellDescription(id)
-  -- restricted: leave everything alone, forgetting included (forget compares the widget's text)
-  if anySecret(texts) or anySecret({ description }) then return 0 end
+  -- restricted: nothing is read or matched, forgetting included (forget compares the widget's text)
+  if anySecret(texts) or anySecret({ description }) then return reapply(frame, "spell.description", id, lines) end
   -- Only the API's string becomes data: the positional fallback is a guess.
   if description and description ~= "" then WFJ.Collector.record("spell", id, "description", description) end
   local i = Tooltip.spellLine(texts, description)
   -- "spell.description": a bare "spell" would not name one field (spells also have `aura`)
-  return show(frame, "spells", "spell.description", id, lines, i, i, spellName)
+  local n = show(frame, "spells", "spell.description", id, lines, i, i, spellName)
+  remember(frame, "spell.description", id, "spells", lines)
+  return n
 end
 
 -- The lines a comparison tooltip gets after its item post-call (see the header). → the number shown
@@ -384,6 +421,7 @@ function Tooltip.onCompareShow(frame)
 end
 
 function Tooltip.release(frame)
+  rendered[frame] = nil
   return WFJ.Render.release(surfaceOf(frame))
 end
 
