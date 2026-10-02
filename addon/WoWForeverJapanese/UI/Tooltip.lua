@@ -275,8 +275,12 @@ end
 -- a line is allowed while reading it is not. Forgotten on the frame's OnHide.
 local rendered = setmetatable({}, { __mode = "k" })
 
+local function ownerOf(frame)
+  return type(frame.GetOwner) == "function" and frame:GetOwner() or nil
+end
+
 local function remember(frame, kind, id, area, lines)
-  local snap = { kind = kind, id = id, n = #lines, area = area }
+  local snap = { kind = kind, id = id, n = #lines, area = area, owner = ownerOf(frame) }
   for i, l in ipairs(lines) do
     local now = l.fs:GetText()
     if now ~= l.text then snap[i] = now end -- l.text: the client's line as read before this pass wrote
@@ -286,10 +290,25 @@ end
 
 -- A secret pass: the last readable pass's Japanese written back, when nothing says it no longer applies.
 -- → lines written
+-- What the secret passes did (/wfj debug): written back, or why not.
+Tooltip.secretPasses = { reapplied = 0, nothing = 0, other = 0, lines = 0, owner = 0, off = 0 }
+local function skip(why)
+  Tooltip.secretPasses[why] = Tooltip.secretPasses[why] + 1
+  return 0
+end
+
 local function reapply(frame, kind, id, lines)
   local snap = rendered[frame]
-  if not snap or snap.kind ~= kind or snap.id ~= id or snap.n ~= #lines then return 0 end
-  if WFJ.State.enabled == false or WFJ.Modifier.isDown() or not WFJ.State.areaEnabled(snap.area) then return 0 end
+  if not snap then return skip("nothing") end
+  if snap.kind ~= kind then return skip("other") end
+  if snap.n ~= #lines then return skip("lines") end
+  if snap.owner ~= ownerOf(frame) then return skip("owner") end
+  -- the spell or item itself may be withheld on a secret pass: then the same owner (an action button) stands for it
+  if type(id) == "number" and not anySecret({ id }) and snap.id ~= id then return skip("other") end
+  if WFJ.State.enabled == false or WFJ.Modifier.isDown() or not WFJ.State.areaEnabled(snap.area) then
+    return skip("off")
+  end
+  Tooltip.secretPasses.reapplied = Tooltip.secretPasses.reapplied + 1
   local n = 0
   for i, l in ipairs(lines) do
     if snap[i] then
@@ -354,13 +373,14 @@ end
 function Tooltip.onItem(frame)
   if inRefit[frame] then return 0 end
   local itemName, link = frame:GetItem()
-  local id = type(link) == "string" and tonumber(link:match("item:(%d+)")) or nil
-  if not id or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
-  -- restricted: nothing is read or matched, forgetting included (forget compares the widget's text)
-  if anySecret(texts) then return reapply(frame, "item.description", id, lines) end
+  -- restricted: nothing is read or matched, forgetting included (forget compares the widget's text); checked
+  -- before the link, which a secret pass may withhold
+  if anySecret(texts) or anySecret({ link }) then return reapply(frame, "item.description", nil, lines) end
+  local id = type(link) == "string" and tonumber(link:match("item:(%d+)")) or nil
+  if not id or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
   local first, last = Tooltip.itemRun(texts)
   local runArgs = first and peelTrailer(texts, first, last) or nil
   -- The run is read before we write (the client rewrote every line); the Collector refuses our own text anyway.
@@ -380,13 +400,15 @@ end
 function Tooltip.onSpell(frame)
   if inRefit[frame] then return 0 end
   local spellName, id = frame:GetSpell()
-  if type(id) ~= "number" or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
+  -- restricted: nothing is read or matched, forgetting included (forget compares the widget's text); checked
+  -- before the id, which a secret pass may withhold
+  if anySecret(texts) or anySecret({ id }) then return reapply(frame, "spell.description", id, lines) end
+  if type(id) ~= "number" or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
   local description = Tooltip.spellDescription(id)
-  -- restricted: nothing is read or matched, forgetting included (forget compares the widget's text)
-  if anySecret(texts) or anySecret({ description }) then return reapply(frame, "spell.description", id, lines) end
+  if anySecret({ description }) then return reapply(frame, "spell.description", id, lines) end
   -- Only the API's string becomes data: the positional fallback is a guess.
   if description and description ~= "" then WFJ.Collector.record("spell", id, "description", description) end
   local i = Tooltip.spellLine(texts, description)

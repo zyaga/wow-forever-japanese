@@ -107,6 +107,20 @@ describe("UI/Tooltip hooks the client's data processor", function()
     assert.has_no.errors(function() Stub.setSpellTooltip(tt, 17, SHIELD_LINES) end)
     assert.are.equal(ja, fs("GameTooltip", 4):GetText())
     assert.are.equal("Power Word: Shield", fs("GameTooltip", 1):GetText())
+    -- the spell id secret too: the same owner stands for it
+    tt.owner = "ActionButton1"
+    _G.issecretvalue = nil
+    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
+    secret[17] = true
+    _G.issecretvalue = function(v) return secret[v] == true end
+    assert.has_no.errors(function() Stub.setSpellTooltip(tt, 17, SHIELD_LINES) end)
+    assert.are.equal(ja, fs("GameTooltip", 4):GetText())
+    -- another owner (another button): nothing is put back
+    tt.owner = "ActionButton2"
+    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
+    assert.are.equal(SHIELD_LINES[4], fs("GameTooltip", 4):GetText())
+    tt.owner = "ActionButton1"
+    secret[17] = nil
     -- another item on the same frame: nothing to put back, the English stays
     assert.has_no.errors(function() Stub.setItemTooltip(tt, JERKY, JERKY_LINES) end)
     assert.are.equal(JERKY_LINES[2], fs("GameTooltip", 2):GetText())

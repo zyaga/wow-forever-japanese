@@ -248,6 +248,9 @@ function Slash.debug(sub, arg)
   say("tooltip frames: %d/%d · hook path: %s · spell description API: %s · aura hooks: %d · aura errors: %d",
     got, want, tostring(path), api and "present" or "absent (positional rule)", auras or 0,
     WFJ.Tooltip.auraErrors or 0)
+  local sp = WFJ.Tooltip.secretPasses
+  say("secret tooltips: %d written back · skipped: %d nothing to write · %d another spell · %d line count · "
+    .. "%d another owner · %d English wanted", sp.reapplied, sp.nothing, sp.other, sp.lines, sp.owner, sp.off)
   local kb = WFJ.Compat.memoryKB()
   say("memory: %s", kb and ("%.1f MB"):format(kb / 1024) or "n/a")
   local c = WFJ.Data.counts
