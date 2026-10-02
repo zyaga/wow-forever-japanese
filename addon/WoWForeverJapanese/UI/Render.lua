@@ -21,6 +21,12 @@ Render.fontFailureSurfaces = {}
 local pendingFonts = setmetatable({}, { __mode = "k" })
 Render.BLANK = " " -- what a companion line shows while its primary is applied
 
+-- The client's secret test, for the record machine (which reads no global itself).
+SS.secret = function(v)
+  local f = WFJ.Compat and WFJ.Compat.resolve("issecretvalue")
+  return type(f) == "function" and f(v) == true
+end
+
 function Render.init(T)
   translator = T
 end
@@ -214,6 +220,7 @@ end
 local function stale(rec)
   if not rec.fs or not rec.fs.GetText then return false end
   local current = rec.fs:GetText()
+  if SS.secret(current) then return true end -- the client rewrote the widget with text the addon may not read
   if rec.applied ~= nil then return current ~= rec.applied end
   return current ~= rec.en
 end

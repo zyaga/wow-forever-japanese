@@ -223,6 +223,8 @@ function TooltipUnit.onUnit(tt, data)
         local id, why = TooltipUnit.questFor(title)
         if id and WFJ.Render.show(SURFACE, "L" .. i, fs, title, "quests", "quest.title", id, { refit = refit }) then
           n = n + 1
+        elseif not id then
+          WFJ.SurfaceState.drop(SURFACE, "L" .. i) -- an earlier tooltip's record on this row
         end
         notes[#notes + 1] = ("row %d quest title: %s"):format(i, id and ("quest " .. id) or why)
       else

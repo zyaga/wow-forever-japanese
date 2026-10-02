@@ -91,6 +91,17 @@ describe("UI/Gossip: quest rows", function()
     assert.are.equal("|cff000000狼の毛皮|r", rowsOf("available")[1]:GetText())
   end)
 
+  it("a quest row rebuilt while the window is closed is never shown or recorded", function()
+    Stub.showGossip({ text = "Hail.", npc = NPC, available = { "Wolf Pelts" } })
+    local row = rowsOf("available")[1]
+    assert.are.equal(1, titleRecords())
+    Stub.closeGossip()
+    assert.is_false(GossipFrame:IsShown())
+    assert.are.equal(0, titleRecords())
+    assert.are.equal(0, WFJ.Gossip.onInitialized(nil, row, row.elementData))
+    assert.are.equal(0, titleRecords())
+  end)
+
   it("a row for a quest with no title anywhere is left as the client wrote it", function()
     LOG[201] = nil
     Stub.showGossip({ text = "Hail.", npc = NPC, active = { "" } })

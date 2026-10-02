@@ -156,11 +156,14 @@ end
 
 -- A quest row ("|cff000000<title>|r", or the low-level / ignored wrapper): the quest's Japanese title by its id
 -- [verified: forever-ui blizzard_uipanels_game/shared/gossipframeshared.lua:27–59]. → 1 | 0
-local function questRow(row, elementData)
+local function isQuestRow(elementData)
   local t = elementData.buttonType
-  local active = buttonType("GOSSIP_BUTTON_TYPE_ACTIVE_QUEST", 4)
-  local offered = buttonType("GOSSIP_BUTTON_TYPE_AVAILABLE_QUEST", 5)
-  if t ~= active and t ~= offered then return nil end
+  return t == buttonType("GOSSIP_BUTTON_TYPE_ACTIVE_QUEST", 4)
+    or t == buttonType("GOSSIP_BUTTON_TYPE_AVAILABLE_QUEST", 5)
+end
+
+local function questRow(row, elementData)
+  if not isQuestRow(elementData) then return nil end
   local info = elementData.info
   local fs = WFJ.ButtonText.of(row)
   if type(info) ~= "table" or type(fs) ~= "table" then return 0 end
@@ -169,14 +172,18 @@ end
 
 -- OnInitializedFrame subscriber: the client has just written `row`. → 1 when the row is ours to show, else 0.
 function Gossip.onInitialized(_, row, elementData)
-  if type(row) == "table" and type(elementData) == "table" then
-    local quest = questRow(row, elementData)
-    if quest then return quest end
+  local f = frame()
+  local closed = f and f.IsShown and not f:IsShown() -- rebuilt while closed (an auto-selected option, QUEST_LOG_UPDATE)
+  if type(row) == "table" and type(elementData) == "table" and isQuestRow(elementData) then
+    if closed then return 0 end
+    syncBanner()
+    local n = 0
+    flagged(setInCallback, function() n = questRow(row, elementData) or 0 end)
+    return n
   end
   local widget, en, recKey = rowOf(row, elementData)
   if not widget then return 0 end
-  local f = frame()
-  if f and f.IsShown and not f:IsShown() then -- rebuilt while closed (an auto-selected option, QUEST_LOG_UPDATE)
+  if closed then
     SS.drop(SURFACE, recKey)
     return 0
   end
