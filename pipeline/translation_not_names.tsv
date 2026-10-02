@@ -571,3 +571,8 @@ b7de9bc46d	rogue	Only one rogue clan still operated in secret: "renegade", not t
 30af432d5f	Cracked	The Cracked and Cursed (item flavour text)
 30af432d5f	Cursed	The Cracked and Cursed (item flavour text)
 7e846184c3	Lost	Loa of the Lost (item flavour text)
+8e81a4cc76	Wasteland	In a Wasteland area, restoring $s1 Mana every 5 sec.
+5c3d3e7574	Swamp	In a Swamp area, restoring $s1 Health every 5 sec.
+8308dd0b95	Snowy	In a Snowy area, healing done increased by up to $w1 and spell damage done increased by up to $w2.
+c3cfc82208	Forest	In a Forest or Grassland area, restoring an additional $s1 Mana every 5 sec.
+c3cfc82208	Grassland	In a Forest or Grassland area, restoring an additional $s1 Mana every 5 sec.
