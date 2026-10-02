@@ -229,10 +229,26 @@ local function showTrace()
     if type(special) == "table" then table.insert(special, "WFJTooltipTrace") end
     traceWindow = f
   end
-  -- `|` doubled: the edit box shows a colour code or a link as the characters it is, not as a colour
-  traceWindow.text:setText((text:gsub("|", "||")))
+  -- `|` doubled: the edit box shows a colour code or a link as the characters it is, not as a colour. The window is
+  -- shown first and the text written again on the next frame: a scrolling edit box made while its parent was never
+  -- laid out can come up blank (seen in game).
+  local shown = (text:gsub("|", "||"))
   traceWindow:Show()
-  say("tooltip trace: %d passes shown; click the text, Ctrl+A, Ctrl+C", #lines)
+  traceWindow.text:setText(shown)
+  local after = WFJ.Compat.resolve("C_Timer.After")
+  if type(after) == "function" then
+    after(0, function() if traceWindow:IsShown() then traceWindow.text:setText(shown) end end)
+  end
+  say("tooltip trace: %d passes shown; click the text, Ctrl+A, Ctrl+C (or /wfj debug tooltip chat)", #lines)
+end
+
+-- /wfj debug tooltip chat: the same trace printed into the chat frame, line by line, for a screenshot.
+local function traceToChat()
+  local lines = WFJ.Tooltip.trace or {}
+  if #lines == 0 then return say("tooltip trace: nothing recorded (/wfj debug tooltip on, then hover the tooltip)") end
+  for _, pass in ipairs(lines) do
+    for row in (pass .. "\n"):gmatch("(.-)\n") do say("%s", (row:gsub("|", "||"))) end
+  end
 end
 
 local function debugTooltip(arg)
@@ -245,6 +261,7 @@ local function debugTooltip(arg)
     WFJ.Tooltip.trace = nil
     return say("tooltip trace: off")
   end
+  if arg == "chat" then return traceToChat() end
   return showTrace()
 end
 
