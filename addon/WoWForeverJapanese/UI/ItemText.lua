@@ -163,6 +163,12 @@ function page:snapshot()
   for _, tag in ipairs(TAGS) do
     local path, size, flags = self.html:GetFont(tag)
     local obj = type(self.html.GetFontObject) == "function" and self.html:GetFontObject(tag) or nil
+    -- a text type can report an unnamed font object the SimpleHTML made for itself; setting that back on the same
+    -- frame is a font object loop (a Lua error in game), so only a named object (QuestFont, Fancy48Font) is kept
+    if obj ~= nil and type(obj.GetName) == "function" then
+      local named = obj:GetName()
+      if type(named) ~= "string" or named == "" then obj = nil end
+    end
     tags[tag] = { object = obj, font = { path, size, flags }, color = { self.html:GetTextColor(tag) } }
   end
   self.tags = tags
@@ -180,7 +186,9 @@ local function restoreTags(html, tags)
     local t = tags[tag]
     -- the captured font first, then the font object: right whether or not re-assigning the same object re-applies it
     if t.font[1] ~= nil then html:SetFont(tag, t.font[1], t.font[2], t.font[3]) end
-    if t.object ~= nil and type(html.SetFontObject) == "function" then html:SetFontObject(tag, t.object) end
+    if t.object ~= nil and type(html.SetFontObject) == "function" then
+      pcall(html.SetFontObject, html, tag, t.object)
+    end
   end
   recolor(html, tags)
 end
