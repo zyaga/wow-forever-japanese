@@ -424,9 +424,9 @@ function ChatSystem.fit(line, fontObject)
   return size
 end
 
--- Each visible line showing one of our Japanese strings: the Japanese in the bundled face, or, while the modifier
--- is held or the addon / UI area is off, the remembered English in the frame's own font. Also the display-refreshed
--- callback. → lines set
+-- Each visible line in the bundled face. A line showing one of our Japanese strings: the Japanese (shrunk to fit,
+-- ChatSystem.fit), or, while the modifier is held or the addon / UI area is off, the remembered English. Also the
+-- display-refreshed callback. → lines set to our Japanese or its English
 function ChatSystem.show(frame)
   local lines = type(frame) == "table" and type(frame.visibleLines) == "table" and frame.visibleLines or {}
   local fontObject = type(frame) == "table" and type(frame.GetFontObject) == "function" and frame:GetFontObject() or nil
@@ -440,9 +440,10 @@ function ChatSystem.show(frame)
       ChatSystem.fit(line, fontObject)
     else
       if ours then line:SetText(jaToEn[ja]) end
-      -- setting a font reads nothing from the line, so a secret line gets its font back like any other
-      -- a row given its font back earlier follows a later change of the frame's font size (Font.follow)
-      if not WFJ.Font.restore(line, fontObject) then WFJ.Font.follow(line, fontObject) end
+      -- every chat line wears the bundled face, English too, so a player's Japanese shows (the client's chat
+      -- font has no kana or kanji); at the frame's size, which follows a change of the chat font size. Setting
+      -- a font reads nothing from the line, so a secret line is dressed like any other
+      if type(line) == "table" and type(line.SetFont) == "function" then WFJ.Font.bundle(line, fontObject) end
     end
     if ours then n = n + 1 end
   end

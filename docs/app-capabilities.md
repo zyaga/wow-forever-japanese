@@ -32,8 +32,8 @@ The NPC greeting and the option lines are Japanese, with row heights following t
 - **status:** shipped
 - **regen-triggers:** `UI/Gossip.lua`, `UI/QuestFrame.lua` (greeting prose), `Data/Gossip/*.lua`
 
-### Typing Japanese in chat
-The chat input box shows Japanese you type or paste: while it holds Japanese it uses the addon's Japanese font, and the game's font comes back when the text is English again. Nothing is translated.
+### Japanese in chat
+The chat window, the chat input box and its channel label always use the addon's Japanese font, so Japanese you type or paste and Japanese other players write are visible. English in chat shows in the same font. Nothing is translated by this.
 - **status:** implemented; in-game check pending
 
 ### NPC speech (chat, speech bubbles, boss emotes)

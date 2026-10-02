@@ -1,7 +1,9 @@
--- UI/ChatInput.lua: the chat input box in the bundled Japanese face while it holds Japanese. The client's chat font
--- has no kana or kanji, so Japanese the player types (or pastes) shows as nothing. Each chat frame's edit box
--- (frame.editBox, floatingchatframe.xml:555) gets an OnTextChanged hook: text with a CJK character wears the bundled
--- face at the box's own size, any other text gets back the font the box had before. Nothing is translated here.
+-- UI/ChatInput.lua: the chat input box, its channel header and the header's ": " suffix always in the bundled
+-- Japanese face. The client's chat font has no kana or kanji, so Japanese the player types or pastes showed as
+-- nothing; switching faces as the text changed left the header measured in one face and shown in the other (in
+-- game: the typed text started 50 px late after "/1"). One face throughout means the client's own header layout
+-- (chatframeeditbox.lua:640, 696–710) always measures what is shown. Each chat frame's edit box (frame.editBox,
+-- floatingchatframe.xml:555) is dressed once and again whenever it shows. Nothing is translated here.
 local _, WFJ = ...
 local ChatInput = {}
 WFJ.ChatInput = ChatInput
@@ -14,28 +16,29 @@ ChatInput.NEVER_TOUCH = {}
 local CANDIDATES = { frames = { "CHAT_FRAMES" }, openTemporary = { "FCF_OpenTemporaryWindow" } }
 local hooked = setmetatable({}, { __mode = "k" })
 
--- Lead bytes of U+3000..U+9FFF (ideographic punctuation, kana, kanji) and of the full-width forms (U+FF00..).
-local function hasJapanese(text)
-  return type(text) == "string" and (text:find("[\227-\233]") or text:find("\239[\188-\191]")) ~= nil
+-- The bundled face at the widget's own size and flags. → true when the widget wears it
+local function dressOne(widget)
+  if type(widget) ~= "table" or type(widget.GetFont) ~= "function" then return false end
+  local path, size, flags = widget:GetFont()
+  if path == WFJ.Font.PATH then return true end
+  return widget:SetFont(WFJ.Font.PATH, size or WFJ.Font.DEFAULT_SIZE, flags or "") ~= false
 end
-ChatInput.hasJapanese = hasJapanese
 
--- OnTextChanged: the face follows what the box holds. → true when the box wears the bundled face
-function ChatInput.follow(box)
-  local fontObject = type(box.GetFontObject) == "function" and box:GetFontObject() or nil
-  if hasJapanese(box:GetText()) then
-    if not WFJ.Font.dressed(box) then WFJ.Font.bundle(box, fontObject) end
-  elseif WFJ.Font.dressed(box) then
-    -- the font the box had before, as remembered: in game the box kept the bundled face through its font object
-    WFJ.Font.restore(box)
+-- The box, its header and the header's suffix. → true when the box wears the bundled face
+function ChatInput.dress(box)
+  local name = type(box.GetName) == "function" and box:GetName() or nil
+  if name then
+    dressOne(Compat.resolve(name .. "Header"))
+    dressOne(Compat.resolve(name .. "HeaderSuffix"))
   end
-  return WFJ.Font.dressed(box)
+  return dressOne(box)
 end
 
 local function hookBox(box)
   if type(box) ~= "table" or hooked[box] or type(box.HookScript) ~= "function" then return 0 end
   hooked[box] = true
-  box:HookScript("OnTextChanged", ChatInput.follow)
+  ChatInput.dress(box)
+  box:HookScript("OnShow", ChatInput.dress)
   return 1
 end
 
