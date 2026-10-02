@@ -756,9 +756,26 @@ function QuestMap.onAddObjective(block, objectiveKey)
   if type(line) ~= "table" or type(line.Text) ~= "table" then return 0 end
   local fs = line.Text
   if type(fs.GetHeight) == "function" then lineHeights[line] = fs:GetHeight() end
-  local n = QuestMap.showObjective(TRACKER_OBJECTIVES, trackerObjectiveKey(line), fs, lineRefit(block, line))
+  local recKey, refit = trackerObjectiveKey(line), lineRefit(block, line)
+  local n = QuestMap.showObjective(TRACKER_OBJECTIVES, recKey, fs, refit)
+  if n == 0 then n = QuestMap.showQuestText(TRACKER_OBJECTIVES, recKey, fs, block.id, refit) end
   WFJ.Render.updateBanner(TRACKER_OBJECTIVES)
   return n
+end
+
+-- A quest with no counted objectives shows its whole objective text as one tracker line
+-- (GetQuestLogCompletionText falls back to it; blizzard_questobjectivetracker.lua:326-336): the line is that quest's
+-- own text when its hash is the quest's objectives hash. → 1 | 0
+function QuestMap.showQuestText(surface, recKey, fs, questID, refit)
+  if type(questID) ~= "number" or not isText(fs) then return 0 end
+  local en = fs:GetText()
+  if type(en) ~= "string" or en == "" then return 0 end
+  local lookup = WFJ.Lookup and WFJ.Lookup.get
+  local entry = type(lookup) == "function" and lookup("quest.objectives", questID) or nil
+  if not (entry and entry.h1) then return 0 end
+  local h1 = WFJ.Hash.h32x2(WFJ.Normalize.v1(WFJ.Collector.text(en)))
+  if h1 ~= entry.h1 then return 0 end
+  return WFJ.Render.show(surface, recKey, fs, en, "quests", "quest.objectives", questID, { refit = refit }) and 1 or 0
 end
 
 -- ── content-tracking lines ──────────────────────────────────────────────────────────────────────────────────────

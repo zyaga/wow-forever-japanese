@@ -135,6 +135,19 @@ describe("UI/QuestMap: objective lines", function()
       assert.are.same({ objective = 2, area = 2 }, WFJ.ObjectiveIndex.counts.byType)
     end)
 
+    it("a quest with no counted objectives: its whole objective text on one line is the quest's Japanese", function()
+      local h1 = (WFJ.Hash.h32x2(WFJ.Normalize.v1(QUEST.objectives)))
+      DATA["quest.objectives"] = { [9] = { ja = "記録庫を焼き払え。", status = ".", h1 = h1 } }
+      WFJ.Lookup = { get = function(kind, id) return DATA[kind] and DATA[kind][id] end }
+      Q.quests[9].leaderboard = { { text = QUEST.objectives }, { text = "Burn something else." } }
+      local _, lines = trackerLines()
+      assert.are.equal("記録庫を焼き払え。", lines[1].Text:GetText())
+      assert.are.equal("Burn something else.", lines[2].Text:GetText()) -- not the quest's text: as written
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal(QUEST.objectives, lines[1].Text:GetText())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+    end)
+
     it("the block's height follows the line's height change, and the modifier restores the English", function()
       Q.quests[9].leaderboard = { { text = "0/1 Archive Burned" } }
       local block, lines = trackerLines()

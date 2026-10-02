@@ -147,6 +147,13 @@ class WdbQuest:
     # serves a variant of a quest's text per condition. Read so the payload is accounted for, and reported;
     # **not imported**: an entry is keyed by its condition, and that key is not designed yet.
     conditional: tuple[tuple[int, int, str], ...] = ()
+    # the other five strings: the quest frame portrait's giver text and name, its turn-in text and name, and the
+    # completion log (GetQuestLogCompletionText: the tracker's and the quest log's line once the quest is ready)
+    portrait_giver_text: str = ""
+    portrait_giver_name: str = ""
+    portrait_turnin_text: str = ""
+    portrait_turnin_name: str = ""
+    completion_log: str = ""
 
 
 @dataclass
@@ -274,7 +281,10 @@ def decode_payload(qid: int, payload: bytes, lay: Layout) -> WdbQuest:
         except UnicodeDecodeError as e:
             raise ValueError(f"string {n} is not UTF-8 ({e.reason})") from e
         at += length
-    return WdbQuest(qid, strings[0], strings[1], strings[2], strings[3], tuple(texts), tuple(conditional))
+    return WdbQuest(
+        qid, strings[0], strings[1], strings[2], strings[3], tuple(texts), tuple(conditional),
+        strings[4], strings[5], strings[6], strings[7], strings[8],
+    )
 
 
 def layout_for(build: int) -> Layout:
