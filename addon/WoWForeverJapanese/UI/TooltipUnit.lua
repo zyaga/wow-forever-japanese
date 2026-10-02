@@ -146,6 +146,16 @@ function TooltipUnit.questFor(title)
   return first
 end
 
+-- A quest title inside a system line, as its Japanese when exactly one translation answers it (UIStrings
+-- questTitle arguments). → Japanese | nil
+function TooltipUnit.titleJapanese(title)
+  local id = TooltipUnit.questFor(title)
+  local entry = id and WFJ.Lookup.get("quest.title", id)
+  return entry and type(entry.ja) == "string" and entry.ja ~= "" and entry.ja or nil
+end
+WFJ.UIStrings = WFJ.UIStrings or {}
+WFJ.UIStrings.questTitle = TooltipUnit.titleJapanese
+
 -- The minimap mouseover is one line holding a block the client builds: names (a quest giver), a quest title, a colour
 -- code, then the objectives as "- 2/7 Young Nightsaber slain" (seen in game). Each part is read on its own: a title
 -- by its hash, an objective through UI/QuestMap's objective lookups, anything else (a name) kept as written. The
