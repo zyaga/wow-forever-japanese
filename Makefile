@@ -339,7 +339,8 @@ DUMP ?=
 
 import-collector: ## add one collector dump to data/english/ (never overwrites pfQuest / wago lines): DUMP=<file>
 	@test -n "$(DUMP)" || { echo "usage: make import-collector DUMP=<path to WoWForeverJapanese.lua>"; exit 2; }
-	cd pipeline && $(PY) -m wfj import english collector $(abspath $(DUMP))
+	@D="$(DUMP)"; case "$$D" in /*) ;; *) D="$$PWD/$$D";; esac; \
+		cd pipeline && $(PY) -m wfj import english collector "$$D"
 
 # A machine draft (ADR-014): DRAFT=<file.jsonl> TYPE=<type> NAME=<draft name> MODEL=<model id> [CRITIC=<id>] DATE=<YYYY-MM-DD>
 # [REVERIFY=1] (ui, quest, objective, item, spell): every named line records the current English, so a stale line is judged fresh.
