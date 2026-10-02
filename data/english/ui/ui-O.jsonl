@@ -103,6 +103,18 @@
 {"id": "OPTION_TOOLTIP_CLEAR_AFK", "field": "text", "en": "Automatically exit Away mode\nupon moving or talking.", "hash": "2705235304e95578", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_CLICK_TO_MOVE", "field": "text", "en": "Use mouse clicks to move your character to destinations.", "hash": "c37472619bdc2962", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_COMBAT_TEXT_MODE", "field": "text", "en": "Sets the direction that combat text scrolls.", "hash": "19238523d56ecd4e", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_AURAS", "field": "text", "en": "Shows a message when the player gains or loses an aura.", "hash": "17891e2e91e3214b", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_AURA_FADE", "field": "text", "en": "Shows a message when an aura fades from the player.", "hash": "5f3e5c68cd07df8e", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_COMBAT_STATE", "field": "text", "en": "Shows a message when you enter or leave combat. ", "hash": "08248f47e60fe476", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_COMBO_POINTS", "field": "text", "en": "Shows the number of combo points you have each time you acquire a new one.", "hash": "348379a87030531c", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_DODGE_PARRY_MISS", "field": "text", "en": "Shows attacks against you that dodge, parry, or miss.", "hash": "fd0827e9a4f56054", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_ENERGIZE", "field": "text", "en": "Shows all instant gains of mana, rage, energy, and chi.", "hash": "71673ac009489413", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_FRIENDLY_NAMES", "field": "text", "en": "Shows the name of a friendly caster when they cast a heal spell on you.", "hash": "2460ab2800fc9102", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_HONOR_GAINED", "field": "text", "en": "Shows the honor you gain from killing other players.", "hash": "ca8d5adbdc89b32b", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_LOW_HEALTH_MANA", "field": "text", "en": "Shows a message when you fall below 20% mana or health.", "hash": "0968212b65a1b2af", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_REACTIVES", "field": "text", "en": "Show alerts when certain important events occur.", "hash": "742c6a1752226b97", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_REPUTATION", "field": "text", "en": "Shows a message when the player gains or loses reputation with a faction.", "hash": "97580e9866b1e6fe", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_RESISTANCES", "field": "text", "en": "Shows when you resist taking damage from attacks or spells.", "hash": "1bd0318279571263", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_COMPACT_UNIT_FRAME_PROFILE_DISPELLABLE_INDICATOR_TYPE", "field": "text", "en": "Controls how the dispel indicator icons are shown, this is separate from the debuff display.", "hash": "8c11a8d339a5ab3a", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_COMPACT_UNIT_FRAME_PROFILE_DISPELLABLE_INDICATOR_TYPE_ALL", "field": "text", "en": "Show all dispel indicator types even if I can't dispel it", "hash": "4da5b61d07f7629d", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_COMPACT_UNIT_FRAME_PROFILE_DISPELLABLE_INDICATOR_TYPE_DISABLED", "field": "text", "en": "No dispel indicators will be shown", "hash": "e5a85dde7fa1defb", "src": "db2@1.60.1.70170"}
@@ -149,6 +161,7 @@
 {"id": "OPTION_TOOLTIP_DISABLE_CHAT_ACCOUNT_MUTE", "field": "text", "en": "To change this, you must first go to your Battle.net Account settings and make sure that: \n- Privacy & Communication -> Text Chat is enabled \n- Parental Controls -> Account Mute is disabled", "hash": "c5abdb9ea1977847", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_DISABLE_CHAT_AGE_RESTRICTED_MINOR", "field": "text", "en": "Chat and other social features are unavailable on accounts belonging to minors", "hash": "897dc610e19145c6", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_DISABLE_CHAT_AGE_RESTRICTED_UNVERIFIED", "field": "text", "en": "Verify your age in Battle.net Account Settings to enable chat and other social features", "hash": "015f6912bbb53f47", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_DISPLAY_FREE_BAG_SLOTS", "field": "text", "en": "Displays remaining inventory space on the backpack icon.", "hash": "8e711866561da047", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_DISPLAY_MODE", "field": "text", "en": "Set the game to run in Fullscreen or Windowed mode.", "hash": "f9b439b5ef9d99cf", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_DISPLAY_PERSONAL_RESOURCE", "field": "text", "en": "Add Health and Resource below your Character.", "hash": "e2bf7ab26a257450", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_ENABLE_AMBIENCE", "field": "text", "en": "Enable ambient sounds.", "hash": "637c037663f322da", "src": "db2@1.60.1.70170"}
@@ -289,8 +302,10 @@
 {"id": "OPTION_TOOLTIP_SHOW_LEARNED_RECIPE_TOASTS", "field": "text", "en": "Enabling this option will display toasts when profession recipes are learned.", "hash": "15f96847eb2000ac", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_SHOW_PINGS_IN_CHAT", "field": "text", "en": "Toggles ping chat messages on and off", "hash": "6969f812f3a08212", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_SHOW_PINGS_ON_RAID_FRAMES", "field": "text", "en": "Display ping indicators on raid frames when a player receives a ping.", "hash": "3d916d4357e5f89e", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_SHOW_QUEST_FADING", "field": "text", "en": "Check this to make quest text appear instantly.", "hash": "60bb79e3d4a24c0d", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_SHOW_SILHOUETTE", "field": "text", "en": "Highlight your character's silhouette when blocked by objects in game", "hash": "efbf31100c11ef57", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_SHOW_TARGET_OF_TARGET", "field": "text", "en": "Toggles the display of the target of your target.", "hash": "da265043d8e8cf1f", "src": "db2@1.60.1.70170"}
+{"id": "OPTION_TOOLTIP_SHOW_TIPOFTHEDAY", "field": "text", "en": "Uncheck this to hide the tip of the day in the load screens.", "hash": "9ec46aa23c851f43", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_SHOW_TOAST_BROADCAST", "field": "text", "en": "Displays a Blizzard message when a Real ID or BattleTag friend updates their broadcast.", "hash": "cc2033bf93df88c1", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_SHOW_TOAST_FRIEND_REQUEST", "field": "text", "en": "Displays a Blizzard message when you receive Real ID or BattleTag friend requests.", "hash": "c5b9df89dcbc487a", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_TOOLTIP_SHOW_TOAST_OFFLINE", "field": "text", "en": "Displays a Blizzard message when a Real ID or BattleTag friend goes offline.", "hash": "dfcf08868f91c8a0", "src": "db2@1.60.1.70170"}

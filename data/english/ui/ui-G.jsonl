@@ -129,6 +129,11 @@
 {"id": "GROUP_FINDER_DELIST_WARNING_SUBTEXT", "field": "text", "en": "|n%s until automatic delist", "hash": "44226196d7ce0b6a", "src": "db2@1.60.1.70170"}
 {"id": "GROUP_FINDER_DELIST_WARNING_TITLE", "field": "text", "en": "You have been promoted to Leader|TInterface\\GroupFrame\\UI-Group-LeaderIcon:0:0:0:-1|t |n|n|cffffd200Would you like to relist the group:|r|n%s|n", "hash": "326594d398ae946d", "src": "db2@1.60.1.70170"}
 {"id": "GROUP_FINDER_DESLIST_WARNING_EDIT_LISTING", "field": "text", "en": "Edit Listing", "hash": "b676b14ff35cc03f", "src": "db2@1.60.1.70170"}
+{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE1", "field": "text", "en": "Learning", "hash": "ed4847072cb92a78", "src": "db2@1.60.1.70170"}
+{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE2", "field": "text", "en": "Relaxed", "hash": "9157107f114974cb", "src": "db2@1.60.1.70170"}
+{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE3", "field": "text", "en": "Competitive", "hash": "1cd2481c5467c60e", "src": "db2@1.60.1.70170"}
+{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE4", "field": "text", "en": "Carry Offered", "hash": "0b44ada7d0b8148f", "src": "db2@1.60.1.70170"}
+{"id": "GROUP_FINDER_PLAYSTYLE_REQUIRED", "field": "text", "en": "Select Playstyle (required)", "hash": "426490637d25317d", "src": "db2@1.60.1.70170"}
 {"id": "GROUP_INVITE", "field": "text", "en": "Group Invite", "hash": "09d64fe926f4972e", "src": "db2@1.60.1.70170"}
 {"id": "GROUP_NUMBER", "field": "text", "en": "Group %d", "hash": "bb3a6c064593e9f0", "src": "db2@1.60.1.70170"}
 {"id": "GROUP_TARGETING_CLOSE", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70170"}

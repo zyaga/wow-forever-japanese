@@ -17,6 +17,7 @@
 {"id": "PAPERDOLL_EQUIPMENTMANAGER", "field": "text", "en": "Equipment Manager", "hash": "55cc30316136b813", "src": "db2@1.60.1.70170"}
 {"id": "PAPERDOLL_NEWEQUIPMENTSET", "field": "text", "en": "New Set", "hash": "76e3b614d4bbd94c", "src": "db2@1.60.1.70170"}
 {"id": "PAPERDOLL_SIDEBAR_STATS", "field": "text", "en": "Character Stats", "hash": "8c9a7f932339131e", "src": "db2@1.60.1.70170"}
+{"id": "PAPERDOLL_SIDEBAR_TITLES", "field": "text", "en": "Titles", "hash": "ca303dfcef3dd3c1", "src": "db2@1.60.1.70170"}
 {"id": "PARENS_TEMPLATE", "field": "text", "en": "(%s)", "hash": "05660b87ab2e3e6f", "src": "db2@1.60.1.70170"}
 {"id": "PARRY", "field": "text", "en": "Parry", "hash": "896675f50247aba9", "src": "db2@1.60.1.70170"}
 {"id": "PARRY_CHANCE", "field": "text", "en": "Parry Chance", "hash": "58abcd17177779d5", "src": "db2@1.60.1.70170"}
@@ -129,6 +130,7 @@
 {"id": "PLAYER_ONLY_INTERACTION", "field": "text", "en": "Player Only", "hash": "e54825910e7598a1", "src": "db2@1.60.1.70170"}
 {"id": "PLAYER_SPELLS_FRAME_MINIMIZE_TIP", "field": "text", "en": "You can minimize the Spellbook here", "hash": "f7c62c35362bd346", "src": "db2@1.60.1.70170"}
 {"id": "PLAYER_STATUS", "field": "text", "en": "Player Status", "hash": "47487d2dc8c56bb4", "src": "db2@1.60.1.69913"}
+{"id": "PLAYER_TITLE_NONE", "field": "text", "en": "No Title", "hash": "ff4b140804a0d0c3", "src": "db2@1.60.1.70170"}
 {"id": "PLAY_MOVIE_PREPEND", "field": "text", "en": "(Play Movie)", "hash": "2fa48d929f6c5894", "src": "db2@1.60.1.70170"}
 {"id": "PLUNDERSTORM_LOGOUT_TEXT", "field": "text", "en": "%d seconds until logout for Plunderstorm", "hash": "b5ac095c08bc7d39", "src": "db2@1.60.1.70170"}
 {"id": "PLUS_AMMO_DAMAGE_TEMPLATE", "field": "text", "en": "+ %s damage per second", "hash": "7025d91b16eb15eb", "src": "db2@1.60.1.70170"}

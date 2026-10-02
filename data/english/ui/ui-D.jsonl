@@ -90,6 +90,7 @@
 {"id": "DEPOSIT_COLON", "field": "text", "en": "Deposit:", "hash": "ba7f03546ecaf6bb", "src": "db2@1.60.1.70170"}
 {"id": "DEPTH_EFFECTS", "field": "text", "en": "Depth Effects", "hash": "061e7087874c0384", "src": "db2@1.60.1.70170"}
 {"id": "DESCRIPTION_OF_YOUR_GROUP", "field": "text", "en": "More details about your group (optional)", "hash": "6d487bec0295358a", "src": "db2@1.60.1.70170"}
+{"id": "DESCRIPTION_OF_YOUR_GROUP_MANDATORY", "field": "text", "en": "More details about your group", "hash": "b9813c47a28bd7e8", "src": "db2@1.60.1.70170"}
 {"id": "DIALOG_INSTRUCTION_REPLACE_MOUNT_EQUIPMENT", "field": "text", "en": "Are you sure you want to replace this Mount Equipment? The existing one will be destroyed.", "hash": "dbe1a05d5a6c4824", "src": "db2@1.60.1.70170"}
 {"id": "DIALOG_VOLUME", "field": "text", "en": "Dialog", "hash": "0f5fc69257ed54d3", "src": "db2@1.60.1.70170"}
 {"id": "DISABLE", "field": "text", "en": "Disable", "hash": "187cb46b6a487dab", "src": "db2@1.60.1.70170"}
@@ -119,6 +120,7 @@
 {"id": "DISPELS", "field": "text", "en": "Dispels", "hash": "1a8009a9bf489575", "src": "db2@1.60.1.70170"}
 {"id": "DISPEL_AURA_COMBATLOG_TOOLTIP", "field": "text", "en": "Show when an aura is removed, broken, or stolen.", "hash": "34385c2c69d1dbdb", "src": "db2@1.60.1.70170"}
 {"id": "DISPLAY", "field": "text", "en": "Display", "hash": "1a81d94ddb111117", "src": "db2@1.60.1.70170"}
+{"id": "DISPLAY_FREE_BAG_SLOTS", "field": "text", "en": "Show Free Bag Space", "hash": "d5a3471231788d3f", "src": "db2@1.60.1.70170"}
 {"id": "DISPLAY_LABEL", "field": "text", "en": "Display", "hash": "1a81d94ddb111117", "src": "db2@1.60.1.70170"}
 {"id": "DISPLAY_MODE", "field": "text", "en": "Display Mode", "hash": "60589513c6e4b2f9", "src": "db2@1.60.1.70170"}
 {"id": "DISPLAY_PERSONAL_RESOURCE", "field": "text", "en": "Personal Resource Display", "hash": "39968ee81c9441bf", "src": "db2@1.60.1.70170"}

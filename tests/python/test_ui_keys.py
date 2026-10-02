@@ -174,7 +174,11 @@ def test_ui_words_that_equal_a_name_are_the_reviewed_list(root):
     names = set()
     for type_ in ("item", "spell"):
         names |= {ln["en"] for ln in Store(root / "data", english=True).load(type_) if ln["field"] == "name"}
-    ui = {ln["en"] for ln in Store(root / "data", english=True).load("ui")}
+    # the dictionary's keys: the English store also keeps keys no longer listed (the import is additive), which
+    # ship nothing and are never matched
+    english = {ln["id"]: ln["en"] for ln in Store(root / "data", english=True).load("ui")}
+    keys = set(wago.expand_keys(_keys(root), english))
+    ui = {en for key, en in english.items() if key in keys}
     assert ui & names == KNOWN_NAME_COLLISIONS
 
 

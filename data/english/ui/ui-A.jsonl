@@ -56,6 +56,7 @@
 {"id": "ACTION_LABEL_DELETE_SET", "field": "text", "en": "Delete Set", "hash": "89a8c24e9e7cd44a", "src": "db2@1.60.1.70170"}
 {"id": "ACTION_LABEL_EQUIP_SET", "field": "text", "en": "Equip Set", "hash": "8b50a661ae8eca3e", "src": "db2@1.60.1.70170"}
 {"id": "ACTION_LABEL_RESET_VIEW", "field": "text", "en": "Reset View", "hash": "ccca108a7718a7cc", "src": "db2@1.60.1.70170"}
+{"id": "ACTION_LABEL_ROTATE", "field": "text", "en": "Rotate", "hash": "3c7712e35a007150", "src": "db2@1.60.1.70170"}
 {"id": "ACTION_LABEL_SAVE_SET", "field": "text", "en": "Save Set", "hash": "11c69471fd9d2db0", "src": "db2@1.60.1.70170"}
 {"id": "ACTION_LABEL_SELECT", "field": "text", "en": "Select", "hash": "8760d5fc9b007185", "src": "db2@1.60.1.70170"}
 {"id": "ACTION_LABEL_SEND", "field": "text", "en": "Send", "hash": "0b39d47c69b48d03", "src": "db2@1.60.1.70170"}

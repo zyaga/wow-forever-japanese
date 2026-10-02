@@ -85,6 +85,7 @@
 {"id": "NO_GUILDBANK_TABS", "field": "text", "en": "Your guild has not purchased any guild bank space.", "hash": "3d3315834be71661", "src": "db2@1.60.1.70170"}
 {"id": "NO_RAID_INSTANCES_SAVED", "field": "text", "en": "You are not saved to any instances", "hash": "3b50d9275ceee39b", "src": "db2@1.60.1.70170"}
 {"id": "NO_ROLE", "field": "text", "en": "No Role", "hash": "59a035774fe11dd4", "src": "db2@1.60.1.70170"}
+{"id": "NO_TITLES_TOOLTIP", "field": "text", "en": "You don't have any titles.", "hash": "cc5d19bd2bfd27fa", "src": "db2@1.60.1.70170"}
 {"id": "NO_VIEWABLE_GUILDBANK_LOGS", "field": "text", "en": "You do not have any permission to view any Guild Bank logs.", "hash": "644060d08569e538", "src": "db2@1.60.1.70170"}
 {"id": "NO_VIEWABLE_GUILDBANK_TABS", "field": "text", "en": "You do not have permission to view any Guild Bank tabs.", "hash": "b5ceb36208a1487f", "src": "db2@1.60.1.70170"}
 {"id": "NPC_NAMES_DROPDOWN_ALL", "field": "text", "en": "All NPCs", "hash": "e745112381defd83", "src": "db2@1.60.1.70170"}

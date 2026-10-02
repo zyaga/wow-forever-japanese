@@ -21,7 +21,6 @@ ACHIEVEMENT_COMPLETED_BY  # colour / link / texture markup (curation rule): |cff
 ACHIEVEMENT_NOT_COMPLETED_BY  # colour / link / texture markup (curation rule): |cn…|r around a player's name (mainline/blizzard_achievementui.lua:3359)
 ACHIEVEMENT_REQUIRES_GUILD_REPUTATION  # colour / link / texture markup (curation rule): |cffffffff…|r then a reputation standing (mainline/blizzard_achievementui.lua:2045)
 ACTION_LABEL_CYCLE_ERRORS  # a gamepad prompt label (GamepadSharedUtility input legend, built only when Blizzard_GamepadSharedUtility loads: blizzard_scripterrorsframe.lua:276–300), not a widget of the window
-ACTION_LABEL_ROTATE  # a gamepad footer prompt (GamepadSharedUtility.CreatePromptedBinding), not a window label: mainline/inspectpaperdollframe.lua:151
 ACTION_SWING  # permanent: shown only as the label of an |Haction link (TEXT_MODE_A_STRING_ACTION "|Haction:%s|h%s|h", blizzard_deathrecap/mainline/blizzard_deathrecap.lua:106–147); a link label is never translated: the whole |H…|h…|h link is one verbatim markup token (pipeline/wfj/core/markup.py; ADR-031 §4)
 ADDONS_OUT_OF_DATE  # not displayed in game: a login-screen (glue) dialog, defined only under InGlue() (blizzard_addonlist/addonlist.lua:44–59); AddonDialog is nil in game (:249)
 ADDON_MEM_KB_ABBR  # permanent: no words of its own: "(%.0f KB) %s" is a number, a unit abbreviation and an addon name (blizzard_performancebar/performancebar.lua:192; Classic Era PerformanceBar.lua:192); a name-carrying composite
@@ -795,7 +794,6 @@ NORMAL_QUEST_DISPLAY  # colour codes: the text is built around a name or a live 
 NORTH_AMERICA  # a Battle.net region label in the friend tooltip (cross-region Battle.net), not a hooked widget (blizzard_friendsframe/camelot/friendsframe.lua:1918)
 NOTE  # regex noise: the name appears in the source only as a comment word or an XML attribute value, never as a global string reference (blizzard_uipanels_game/mainline/containerframe.lua:1674)
 NO_ROSTER_ACHIEVEMENT_POINTS  # no translatable words ("-") (blizzard_communities/communitiesmemberlist.lua:1319)
-NO_TITLES_TOOLTIP  # the titles sidebar tab's disabled tooltip; camelot never shows that tab (camelot/PaperDollFrameConstants.lua:23)
 NPEV2_CHAT_WELCOME_TO_CHANNEL_GUIDE  # an |A atlas the dictionary never carries, in the Newcomer chat: shown only while IsActivePlayerNewcomer(), the mentorship Newcomer status (C_PlayerMentorship, blizzard_chatframebase/mainline/chatframeutiloverrides.lua:188–194); whether Forever grants it is [unverified in game] (mainline/channelframe.lua:671)
 NPEV2_CHAT_WELCOME_TO_CHANNEL_NEWCOMER  # the Newcomer chat: shown only while IsActivePlayerNewcomer(), the mentorship Newcomer status (C_PlayerMentorship, blizzard_chatframebase/mainline/chatframeutiloverrides.lua:188–194); whether Forever grants it is [unverified in game] (mainline/channelframe.lua:665)
 NPEV2_CHAT_WELCOME_TO_CHANNEL_NEWCOMER1  # an |A atlas the dictionary never carries, in the Newcomer chat: shown only while IsActivePlayerNewcomer(), the mentorship Newcomer status (C_PlayerMentorship, blizzard_chatframebase/mainline/chatframeutiloverrides.lua:188–194); whether Forever grants it is [unverified in game] (mainline/channelframe.lua:666)
@@ -825,7 +823,6 @@ PAIN_COST_PER_TIME  # no Forever UI file writes it: a retail / other-expansion t
 PAIN_COST_PER_TIME_NO_BASE  # no Forever UI file writes it: a retail / other-expansion tooltip line Vanilla content never produces (verified absent from the Forever UI extract)
 PAPERDOLLFRAME_TOOLTIP_FORMAT  # nothing to translate (only format specifiers / punctuation)
 PAPERDOLL_INVENTORY_FIXUP_COMPLETE  # an error / chat message, not a surface label (blizzard_uipanels_game/camelot/paperdollframe.lua:3487)
-PAPERDOLL_SIDEBAR_TITLES  # the titles sidebar tab, which camelot never shows (camelot/PaperDollFrameConstants.lua:23: PAPERDOLL_SIDEBARS has no titles tab)
 PERCENTAGE_STRING  # no translatable words (only format specifiers / punctuation / colour)
 PERSONAL_CRAFTING_ORDERS_AVAIL_FMT  # permanent: not displayed on Forever: the minimap personal crafting-orders indicator (blizzard_minimap/mainline/minimap.lua:530–548) is for a crafter's personal orders, and camelot's ProfessionsFrame has no crafting-orders page (blizzard_professions/camelot/blizzard_professionsframe.xml:67–79; as MAILFRAME_CRAFTING_ORDERS_TOOLTIP_TITLE)
 PET_ABILITY_REQUIRES_LEVEL  # not displayed on Forever: camelot loads the companion-pet journal (blizzard_collections.toc:30–33 exclude Shared\Blizzard_PetCollection.xml and load Classic\Blizzard_PetCollection.lua|xml, whose globals replace the shared file's), which has no loadout, pet-card stats or Find Battle button: the pet card's ability tooltips (shared/blizzard_petcollection.lua:428, 475)
@@ -859,7 +856,6 @@ PLAYER  # a fallback for a player's name: used only when GetUnitName("NPC") is n
 PLAYERS_FOUND_OUT_OF_MAX  # numbers only: the role counts "%d/%d" (queuestatusframe.lua:1212–1214)
 PLAYER_CHOICE_QUALITY_STRING_EMPTY  # permanent: no words of its own: "|n|n" (blizzard_playerchoice/blizzard_playerchoicecypheroptiontemplate.lua:77–82)
 PLAYER_LIST_DELIMITER  # no translatable words (only format specifiers / punctuation / colour) (blizzard_uipanels_game/mainline/merchantframe.lua:866)
-PLAYER_TITLE_NONE  # camelot never shows the title pane (camelot/PaperDollFrameConstants.lua:23: PAPERDOLL_SIDEBARS has no titles tab)
 PLAYTIME_TIRED_ABILITY  # permanent: shown only under the anti-addiction play-time limit (PartialPlayTime / NoPlayTime, blizzard_professions/blizzard_professionscrafting.lua:798–806), a regional account system with no counterpart on Forever
 PLAYTIME_UNHEALTHY_ABILITY  # permanent: shown only under the anti-addiction play-time limit (PartialPlayTime / NoPlayTime, blizzard_professions/blizzard_professionscrafting.lua:798–806), a regional account system with no counterpart on Forever
 PLUS_PERCENT_FORMAT  # no translatable words (only format specifiers / punctuation / colour) (blizzard_uipanels_game/mainline/questinfo.lua:995)
@@ -1193,6 +1189,7 @@ TEXT_MODE_A_TIMESTAMP  # regex noise, not a displayed string: a date format name
 TEXT_TO_SPEECH_SAMPLE_TEXT  # spoken by screen narration / combat audio alerts (text-to-speech), never drawn (blizzard_settingsdefinitions_shared/audioassist.lua:26)
 TEXT_TO_SPEECH_SHORT  # regex noise, not a displayed string: a settings search tag (initializer:AddSearchTags), matched by the search box and never drawn (blizzard_settingsdefinitions_shared/audioassist.lua:103)
 THRALL_NAME  # a name: TutorialFrame.ThrallName (blizzard_clickbindingui.xml:292)
+THREAT_TAG  # a search tag on the settings panel (Settings AddSearchTags), matched by the search box and never shown as a label: blizzard_settingsdefinitions_frame/mainline/combatoverrides.lua
 TIMEMANAGER_24HOUR  # a number-only format, no word to translate: "%02d" hour (mainline/blizzard_calendar.lua:3242; mainline/blizzard_timemanager.lua:170)
 TIMEMANAGER_MINUTE  # a number-only format, no word to translate: "%02d" minute radios (mainline/blizzard_calendar.lua:3266; mainline/blizzard_timemanager.lua:197)
 TIMEMANAGER_TICKER_12HOUR  # a number-only format, no word to translate: "%d:%02d" clock digits (blizzard_framexmlutil/gametimeutil.lua)

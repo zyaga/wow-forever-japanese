@@ -544,6 +544,18 @@
 {"id": "COMBAT_TEXT_SCROLL_ARC", "field": "text", "en": "Arc", "hash": "00114002021766a7", "src": "db2@1.60.1.70170"}
 {"id": "COMBAT_TEXT_SCROLL_DOWN", "field": "text", "en": "Scroll Down", "hash": "a6e8b9311b10ce0e", "src": "db2@1.60.1.70170"}
 {"id": "COMBAT_TEXT_SCROLL_UP", "field": "text", "en": "Scroll Up", "hash": "413ab7de9e5e7a43", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_AURAS_TEXT", "field": "text", "en": "Auras Gained/Lost", "hash": "079f9fcb18af11ac", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_AURA_FADE_TEXT", "field": "text", "en": "Fading Auras", "hash": "0274664a00bc1a33", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_COMBAT_STATE_TEXT", "field": "text", "en": "Enter/Leave Combat", "hash": "ae4f5fc7d045c693", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_COMBO_POINTS_TEXT", "field": "text", "en": "Combo Points", "hash": "8482950311bf9950", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_DODGE_PARRY_MISS_TEXT", "field": "text", "en": "Dodge/Parry/Miss", "hash": "ee4d72d1a28c6082", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_ENERGIZE_TEXT", "field": "text", "en": "Energy Gains", "hash": "410a7faadd37dc6b", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_FRIENDLY_NAMES_TEXT", "field": "text", "en": "Friendly Healer Names", "hash": "f029bc930776797c", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_HONOR_GAINED_TEXT", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_LOW_HEALTH_MANA_TEXT", "field": "text", "en": "Low Mana & Health", "hash": "acab6fcfdddbf6a6", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_REACTIVES_TEXT", "field": "text", "en": "Spell Alerts", "hash": "8568990766e01ab0", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_REPUTATION_TEXT", "field": "text", "en": "Reputation Changes", "hash": "cd766958c432e551", "src": "db2@1.60.1.70170"}
+{"id": "COMBAT_TEXT_SHOW_RESISTANCES_TEXT", "field": "text", "en": "Damage Reduction", "hash": "250fa3b7e4bb55b6", "src": "db2@1.60.1.70170"}
 {"id": "COMBAT_WARNINGS_ENABLE_ENCOUNTER_TIMELINE_LABEL", "field": "text", "en": "Enable Boss Abilities", "hash": "6233ba4be9cb09e8", "src": "db2@1.60.1.70170"}
 {"id": "COMBAT_WARNINGS_ENABLE_ENCOUNTER_TIMELINE_NOT_AVAILABLE", "field": "text", "en": "|cnRED_FONT_COLOR:This feature is not currently available.|r", "hash": "3a43a465b4aacf95", "src": "db2@1.60.1.70170"}
 {"id": "COMBAT_WARNINGS_ENABLE_ENCOUNTER_TIMELINE_TOOLTIP", "field": "text", "en": "Toggle on to view important Boss Abilities in a separate HUD element.", "hash": "1e83ab30d47ac43b", "src": "db2@1.60.1.70170"}

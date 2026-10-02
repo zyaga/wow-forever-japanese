@@ -146,6 +146,7 @@
 {"id": "SHOW_PINGS_IN_CHAT", "field": "text", "en": "Show Pings in Chat", "hash": "d79125175ecbcad1", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_PINGS_ON_RAID_FRAMES", "field": "text", "en": "Show Pings on Raid Frames", "hash": "1d973789eb7268af", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_PRIMARY_PROFESSION_ON_MAP_TEXT", "field": "text", "en": "Primary Profession World Quests", "hash": "ebd6595dbb2fe13a", "src": "db2@1.60.1.70170"}
+{"id": "SHOW_QUEST_FADING_TEXT", "field": "text", "en": "Instant Quest Text", "hash": "e2e42aaed3b832fe", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_QUEST_LEVELS", "field": "text", "en": "Show Quest Levels", "hash": "c2e553e678a9c5a3", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_QUEST_OBJECTIVES_ON_MAP_TEXT", "field": "text", "en": "Quest Objectives", "hash": "d38a12f0640c30d6", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_QUICK_BUTTON", "field": "text", "en": "Show Quick Button", "hash": "84d1b94318e87635", "src": "db2@1.60.1.70170"}
@@ -153,6 +154,7 @@
 {"id": "SHOW_SILHOUETTE_OPTION", "field": "text", "en": "Show Silhouette when Obscured", "hash": "475367bda42386f3", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_TARGET_OF_TARGET_TEXT", "field": "text", "en": "Target of Target", "hash": "e2a1ed065eebfcfd", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_TIMESTAMP", "field": "text", "en": "Show Timestamp", "hash": "0a1a64c3d8fd3343", "src": "db2@1.60.1.70170"}
+{"id": "SHOW_TIPOFTHEDAY_TEXT", "field": "text", "en": "Loading Screen Tips", "hash": "4d0d762160952a3b", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_TOAST_BROADCAST_TEXT", "field": "text", "en": "Broadcast Updates", "hash": "8935fb9bac9b9659", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_TOAST_FRIEND_REQUEST_TEXT", "field": "text", "en": "Real ID and BattleTag Friend Requests", "hash": "42a4c83186e445d9", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_TOAST_OFFLINE_TEXT", "field": "text", "en": "Offline Friends", "hash": "59a456476ffcf945", "src": "db2@1.60.1.70170"}
@@ -1020,6 +1022,7 @@
 {"id": "SPELL_FAILED_CUSTOM_ERROR_66", "field": "text", "en": "You must reach level 58 to use this portal.", "hash": "64fa61166f02c83a", "src": "db2@1.60.1.70170"}
 {"id": "SPELL_FAILED_CUSTOM_ERROR_660", "field": "text", "en": "You have already learned this.", "hash": "99c30d58ff247e60", "src": "db2@1.60.1.70170"}
 {"id": "SPELL_FAILED_CUSTOM_ERROR_666", "field": "text", "en": "You can't do that.", "hash": "917c199a48d61557", "src": "db2@1.60.1.70170"}
+{"id": "SPELL_FAILED_CUSTOM_ERROR_667", "field": "text", "en": "You are currently in a Timewalking Campaign. Speak to Chromie to exit.", "hash": "1c92222e580b3ef7", "src": "db2@1.60.1.70170"}
 {"id": "SPELL_FAILED_CUSTOM_ERROR_67", "field": "text", "en": "You already have the maximum amount of honor.", "hash": "c6d48b7a77aa985e", "src": "db2@1.60.1.70170"}
 {"id": "SPELL_FAILED_CUSTOM_ERROR_68", "field": "text", "en": "You already have a Hot Rod.", "hash": "f1a324dcf0bc6512", "src": "db2@1.60.1.70170"}
 {"id": "SPELL_FAILED_CUSTOM_ERROR_69", "field": "text", "en": "This partygoer wants some more bubbly.", "hash": "b57cd663a93ef067", "src": "db2@1.60.1.70170"}
@@ -1419,6 +1422,7 @@
 {"id": "SPLASH_START_QUEST_NOW", "field": "text", "en": "Start Quest Now", "hash": "4f11ee0e76bf4d0f", "src": "db2@1.60.1.70170"}
 {"id": "SSAO_LABEL", "field": "text", "en": "SSAO", "hash": "0b3506be223a2ecf", "src": "db2@1.60.1.70170"}
 {"id": "STABLED_PETS", "field": "text", "en": "Stabled Pets", "hash": "dafde865251b0be1", "src": "db2@1.60.1.70170"}
+{"id": "STABLE_SLOT_COST_TEXT", "field": "text", "en": "Stable Slot Cost:", "hash": "3aa755f560dea613", "src": "db2@1.60.1.70170"}
 {"id": "STABLE_SLOT_TEXT", "field": "text", "en": "Do you wish to purchase another stable slot?", "hash": "4cc49275ec4c4bae", "src": "db2@1.60.1.70170"}
 {"id": "STACKS", "field": "text", "en": "%d |4Stack:Stacks;", "hash": "29341dd6c0e4b7ec", "src": "db2@1.60.1.70170"}
 {"id": "STAGE_COMPLETE", "field": "text", "en": "Stage Complete", "hash": "2a88a1496c6aeaaf", "src": "db2@1.60.1.70170"}
