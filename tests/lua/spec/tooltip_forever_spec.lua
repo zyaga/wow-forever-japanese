@@ -13,7 +13,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
   "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
   "Core/Collector.lua", "UI/Font.lua", "UI/Render.lua",
-  "UI/Tooltip.lua" }
+  "UI/TimeLine.lua", "UI/Tooltip.lua", "UI/TooltipUnit.lua" }
 
 local DATA = {
   -- keyed by the kind the surface asks for; field-qualified because spell has two fields
@@ -49,6 +49,8 @@ end
 local function fs(frameName, i) return _G[frameName .. "TextLeft" .. i] end
 
 describe("UI/Tooltip hooks the client's data processor", function()
+  after_each(function() _G.issecretvalue, _G.GetActionInfo, _G.C_TooltipInfo = nil, nil, nil end)
+
   it("takes the data-processor path and hooks no OnTooltipSet* script", function()
     local WFJ = setup()
     assert.are.equal(6, WFJ.Tooltip.init())
@@ -87,174 +89,88 @@ describe("UI/Tooltip hooks the client's data processor", function()
       assert.is_truthy(fs("GameTooltip", 4):GetText():find("シールド", 1, true))
     end)
 
-  it("a secret pass reads nothing and raises nothing; it puts back what the last readable pass wrote", function()
-    -- an action button's tooltip turns secret while its spell casts or cools down: the client rewrites the English
-    local WFJ, tt = setup()
-    WFJ.Tooltip.init()
+  -- the client's own tooltip data for spell 17, as C_TooltipInfo.GetSpellByID answers it in game: plain rows,
+  -- the countdown hidden, the description typed. The stub tells a secret by its value, so the frame's hidden
+  -- rows carry a trailing space and the data rows stay readable, as they do in game.
+  local COUNTDOWN = "Cooldown remaining: 1 sec"
+  local SHIELD_ROWS = { { leftText = SHIELD_LINES[1], rightText = "Rank 1" }, { leftText = SHIELD_LINES[2] },
+    { leftText = SHIELD_LINES[3] }, { leftText = COUNTDOWN }, { leftText = SHIELD_LINES[4], type = 34 } }
+  local HIDDEN = { SHIELD_LINES[1] .. " ", SHIELD_LINES[2] .. " ", SHIELD_LINES[3] .. " ", COUNTDOWN .. " ",
+    SHIELD_LINES[4] .. " ", " ", "Press F6 " }
+  local function hiddenClient()
+    _G.Enum.TooltipDataLineType = { None = 0, SpellName = 13, SpellDescription = 34 }
+    _G.C_TooltipInfo = { GetSpellByID = function(id) if id == 17 then return { id = 17, lines = SHIELD_ROWS } end end }
+  end
+  local function hide(lines, more)
     local secret = {}
-    for _, l in ipairs(SHIELD_LINES) do secret[l] = true end
-    for _, l in ipairs(JERKY_LINES) do secret[l] = true end
-    -- nothing rendered yet: a secret pass leaves the English
+    for _, l in ipairs(lines) do secret[l] = true end
+    for _, v in ipairs(more or {}) do secret[v] = true end
     _G.issecretvalue = function(v) return secret[v] == true end
-    assert.has_no.errors(function() Stub.setSpellTooltip(tt, 17, SHIELD_LINES) end)
-    assert.are.equal(SHIELD_LINES[4], fs("GameTooltip", 4):GetText())
-    _G.issecretvalue = nil
-    -- a readable pass renders, then a secret pass for the same spell keeps the Japanese instead of flashing English
-    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
-    local ja = fs("GameTooltip", 4):GetText()
-    assert.is_truthy(ja:find("シールド", 1, true))
-    _G.issecretvalue = function(v) return secret[v] == true end
-    assert.has_no.errors(function() Stub.setSpellTooltip(tt, 17, SHIELD_LINES) end)
-    assert.are.equal(ja, fs("GameTooltip", 4):GetText())
-    assert.are.equal("Power Word: Shield", fs("GameTooltip", 1):GetText())
-    -- the spell id secret too: the same owner stands for it
-    tt.owner = "ActionButton1"
-    _G.issecretvalue = nil
-    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
-    secret[17] = true
-    _G.issecretvalue = function(v) return secret[v] == true end
-    assert.has_no.errors(function() Stub.setSpellTooltip(tt, 17, SHIELD_LINES) end)
-    assert.are.equal(ja, fs("GameTooltip", 4):GetText())
-    -- another owner (another button): nothing is put back
-    tt.owner = "ActionButton2"
-    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
-    assert.are.equal(SHIELD_LINES[4], fs("GameTooltip", 4):GetText())
-    tt.owner = "ActionButton1"
-    secret[17] = nil
-    -- another item on the same frame: nothing to put back, the English stays
-    assert.has_no.errors(function() Stub.setItemTooltip(tt, JERKY, JERKY_LINES) end)
-    assert.are.equal(JERKY_LINES[2], fs("GameTooltip", 2):GetText())
-    -- the modifier held: the client's English stays
-    _G.issecretvalue = nil
-    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
-    _G.issecretvalue = function(v) return secret[v] == true end
-    Stub.keys.alt = true; WFJ.Modifier.refresh()
-    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
-    assert.are.equal(SHIELD_LINES[4], fs("GameTooltip", 4):GetText())
-    Stub.keys.alt = false; WFJ.Modifier.refresh()
-    _G.issecretvalue = nil
-  end)
+  end
+  local function hiddenPass(tt, id)
+    tt.spell = { name = SHIELD_LINES[1], id = id or 17 }
+    tt.item = nil
+    tt.primaryInfo = { tooltipData = { lines = { { lineIndex = 1, type = 13 }, { lineIndex = 2, type = 0 },
+      { lineIndex = 3, type = 0 }, { lineIndex = 4, type = 0 }, { lineIndex = 5, type = 34 } } } }
+    tt:writeLines(HIDDEN)
+    Stub.fireTooltipSet(tt, "Spell")
+  end
 
-  it("a secret pass with a cooldown line added finds the description by its colour, above or below", function()
+  it("a hidden pass reads no row: it translates the client's own data for the spell and writes it by row", function()
+    -- an action button's tooltip in combat: every row's text is secret, the spell id is not
     local WFJ, tt = setup()
     WFJ.Tooltip.init()
+    hiddenClient()
     tt.owner = "ActionButton1"
-    local GOLD = { 1, 0.82, 0 }
-    local function colour(n, gold)
-      for i = 1, n do fs("GameTooltip", i):SetTextColor(1, 1, 1) end
-      fs("GameTooltip", gold):SetTextColor(GOLD[1], GOLD[2], GOLD[3])
-    end
-    -- readable: the description (line 4) is the gold line
-    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
-    colour(4, 4)
-    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
-    colour(4, 4)
-    local ja = fs("GameTooltip", 4):GetText()
-    assert.is_truthy(ja:find("シールド", 1, true))
-    local secret = {}
-    local withCooldownAbove = { SHIELD_LINES[1], SHIELD_LINES[2], SHIELD_LINES[3], "Cooldown remaining: 1 sec",
-      SHIELD_LINES[4] }
-    for _, l in ipairs(withCooldownAbove) do secret[l] = true end
-    _G.issecretvalue = function(v) return secret[v] == true end
-    -- the client writes five lines and colours them before the post-call: the description is line 5
-    tt.lines = {}
-    tt:writeLines(withCooldownAbove)
-    colour(5, 5)
-    Stub.fireTooltipSet(tt, "Spell")
-    assert.are.equal(ja, fs("GameTooltip", 5):GetText())
-    assert.are.equal("Cooldown remaining: 1 sec", fs("GameTooltip", 4):GetText())
-    -- the countdown below the description instead: the gold line is still line 4
-    local withCooldownBelow = { SHIELD_LINES[1], SHIELD_LINES[2], SHIELD_LINES[3], SHIELD_LINES[4],
-      "Cooldown remaining: 1 sec" }
-    tt:writeLines(withCooldownBelow)
-    colour(5, 4)
-    Stub.fireTooltipSet(tt, "Spell")
-    assert.are.equal(ja, fs("GameTooltip", 4):GetText())
-    assert.are.equal("Cooldown remaining: 1 sec", fs("GameTooltip", 5):GetText())
-    -- colours that agree neither from the top nor from the bottom: no guess, the English stays
-    tt:writeLines(withCooldownAbove)
-    colour(5, 2)
-    Stub.fireTooltipSet(tt, "Spell")
-    assert.are.equal(SHIELD_LINES[4], fs("GameTooltip", 5):GetText())
-    -- a readable pass with the countdown, then a secret one: the countdown is left to the client
+    hide(HIDDEN, { COUNTDOWN })
+    assert.has_no.errors(function() hiddenPass(tt) end)
+    assert.is_truthy(fs("GameTooltip", 5):GetText():find("シールド", 1, true))
+    assert.are.equal(SHIELD_LINES[1] .. " ", fs("GameTooltip", 1):GetText()) -- the name is never replaced
+    assert.are.equal(COUNTDOWN .. " ", fs("GameTooltip", 4):GetText()) -- no duration API in this stub: left
+    assert.are.equal("Press F6 ", fs("GameTooltip", 7):GetText()) -- another addon's row: left
+    assert.are.equal(1, WFJ.Tooltip.hidden.written)
+    -- the spell id hidden too (a secret stands in for it here): the owner's action slot names it
+    tt.owner = { action = 5 }
+    _G.GetActionInfo = function(slot) if slot == 5 then return "spell", 17 end end
+    hide(HIDDEN, { COUNTDOWN, "hidden id" })
+    assert.has_no.errors(function() hiddenPass(tt, "hidden id") end)
+    assert.is_truthy(fs("GameTooltip", 5):GetText():find("シールド", 1, true))
+    -- no slot either: nothing can be looked up, the English stays
+    tt.owner = "ActionButton1"
+    hiddenPass(tt, "hidden id")
+    assert.are.equal(SHIELD_LINES[4] .. " ", fs("GameTooltip", 5):GetText())
+    assert.are.equal("the spell or item itself is hidden", WFJ.Tooltip.hidden.last)
+    -- the modifier held: the client's English stays
+    hide(HIDDEN, { COUNTDOWN })
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    hiddenPass(tt)
+    assert.are.equal(SHIELD_LINES[4] .. " ", fs("GameTooltip", 5):GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    -- readable again: the ordinary path, with records
     _G.issecretvalue = nil
-    _G.ITEM_COOLDOWN_TIME = "Cooldown remaining: %s"
-    tt:writeLines(withCooldownAbove)
-    colour(5, 5)
-    Stub.fireTooltipSet(tt, "Spell")
-    assert.are.equal(ja, fs("GameTooltip", 5):GetText())
-    _G.issecretvalue = function(v) return secret[v] == true end
-    tt:writeLines(withCooldownAbove)
-    colour(5, 5)
-    Stub.fireTooltipSet(tt, "Spell")
-    assert.are.equal("Cooldown remaining: 1 sec", fs("GameTooltip", 4):GetText())
-    assert.are.equal(ja, fs("GameTooltip", 5):GetText())
-    _G.issecretvalue, _G.ITEM_COOLDOWN_TIME = nil, nil
+    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
+    assert.is_truthy(fs("GameTooltip", 4):GetText():find("シールド", 1, true))
+    _G.C_TooltipInfo, _G.GetActionInfo = nil, nil
   end)
 
   it("the trace records each pass row by row and writes a secret value as <secret>, never reading it", function()
     local WFJ, tt = setup()
     WFJ.Tooltip.init()
+    hiddenClient()
     WFJ.Tooltip.trace = {}
     tt.owner = "ActionButton1"
     Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
-    local secret = {}
-    for _, l in ipairs(SHIELD_LINES) do secret[l] = true end
-    _G.issecretvalue = function(v) return secret[v] == true end
-    assert.has_no.errors(function() Stub.setSpellTooltip(tt, 17, SHIELD_LINES) end)
+    hide(HIDDEN, { COUNTDOWN })
+    assert.has_no.errors(function() hiddenPass(tt) end)
     _G.issecretvalue = nil
     assert.are.equal(2, #WFJ.Tooltip.trace)
     assert.is_truthy(WFJ.Tooltip.trace[1]:find("readable spell", 1, true))
-    assert.is_truthy(WFJ.Tooltip.trace[2]:find("secret spell", 1, true))
+    assert.is_truthy(WFJ.Tooltip.trace[2]:find("secret spell id=17", 1, true))
     assert.is_truthy(WFJ.Tooltip.trace[2]:find("<secret>", 1, true))
-    assert.is_truthy(WFJ.Tooltip.trace[2]:find("-> wrote 1 (same rows)", 1, true))
+    assert.is_truthy(WFJ.Tooltip.trace[2]:find("-> wrote 1 (data rows 5, hidden: 4", 1, true))
     WFJ.Tooltip.trace = nil
+    _G.C_TooltipInfo = nil
   end)
-
-  it("colours hidden too: the countdown goes right above the description, the first gold row (the 70170 trace)",
-    function()
-      -- Wrath on 1.60.1.70170: name, mana, cast, description (gold), a blank and the beta's report line (gold);
-      -- the countdown comes in as row 4, and a secret pass hides the colours as well as the text
-      local WFJ, tt = setup()
-      WFJ.Tooltip.init()
-      tt.owner = "ActionButton2"
-      _G.ITEM_COOLDOWN_TIME = "Cooldown remaining: %s"
-      local SIX = { "Power Word: Shield", "40 yd range", "Instant cast", SHIELD_LINES[4], " ", "Press F6" }
-      local SEVEN = { SIX[1], SIX[2], SIX[3], "Cooldown remaining: 2 sec", SIX[4], SIX[5], SIX[6] }
-      local function paint(n, firstGold)
-        for i = 1, n do
-          local g = i >= firstGold
-          fs("GameTooltip", i):SetTextColor(1, g and 0.82 or 1, g and 0 or 1)
-        end
-      end
-      local function pass(lines, firstGold, hidden)
-        tt:writeLines(lines)
-        paint(#lines, firstGold)
-        if hidden then
-          local secret = {}
-          for _, l in ipairs(lines) do secret[l] = true end
-          _G.issecretvalue = function(v) return secret[v] == true or type(v) == "number" and v ~= 17 end
-        else
-          _G.issecretvalue = nil
-        end
-        Stub.fireTooltipSet(tt, "Spell")
-        _G.issecretvalue = nil
-      end
-      tt.spell = { name = SIX[1], id = 17 }
-      pass(SIX, 4, false)
-      local ja = fs("GameTooltip", 4):GetText()
-      assert.is_truthy(ja:find("シールド", 1, true))
-      pass(SEVEN, 5, true) -- the countdown came: the description is row 5 now
-      assert.are.equal(ja, fs("GameTooltip", 5):GetText())
-      assert.are.equal("Cooldown remaining: 2 sec", fs("GameTooltip", 4):GetText())
-      assert.are.equal("Press F6", fs("GameTooltip", 7):GetText())
-      pass(SEVEN, 5, false) -- a readable pass with the countdown
-      assert.are.equal(ja, fs("GameTooltip", 5):GetText())
-      pass(SIX, 4, true) -- the countdown went: the description is row 4 again
-      assert.are.equal(ja, fs("GameTooltip", 4):GetText())
-      assert.are.equal(" ", fs("GameTooltip", 5):GetText())
-      _G.ITEM_COOLDOWN_TIME = nil
-    end)
 
   it("ignores a tooltip whose data type is not the one the handler registered for", function()
     local WFJ, tt = setup()

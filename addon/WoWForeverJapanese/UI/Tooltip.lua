@@ -43,6 +43,10 @@
 --     Lua writer in the extract): peeled off a run line before the Collector reads it; for a trusted (ungated) item
 --     translation the trailer's Japanese is appended to the run's Japanese (the `affix` fill form). A gated entry
 --     keeps the whole line (its align gate sees all of it).
+-- Hidden passes (ADR-051, in combat): an action button's tooltip arrives with every row's text secret; the spell or
+-- item id stays readable, so the pass translates the client's own tooltip data for that id and writes it onto the
+-- rows by position, the countdown by the client's own duration (see "Hidden passes" below). A buff tooltip in combat
+-- has no readable handle and is left in English.
 local _, WFJ = ...
 local Tooltip = {}
 WFJ.Tooltip = Tooltip
@@ -268,161 +272,8 @@ local function anySecret(texts)
   return false
 end
 
--- The lines a pass rendered, per frame: { kind, id, n = line count, area, [i] = the text written }. An action
--- button's tooltip turns secret while its spell casts or cools down and turns back after, and the client rewrites
--- the lines each time; a secret pass cannot read or match them, so it puts back what the last readable pass wrote
--- for the same spell or item with the same line count, instead of leaving the English to flash in between. Writing
--- a line is allowed while reading it is not. Forgotten on the frame's OnHide.
-local rendered = setmetatable({}, { __mode = "k" })
-
 local function ownerOf(frame)
   return type(frame.GetOwner) == "function" and frame:GetOwner() or nil
-end
-
--- A line's colour as a key ("1.00,0.82,0.00"), or nil when the client hides it too. A spell's description is the
--- gold line and the name, cost, cast time and cooldown lines are white, so the colour finds a line again when a
--- secret pass adds one (the cooldown countdown) without reading any text.
-local function colourOf(fs)
-  if type(fs.GetTextColor) ~= "function" then return nil end
-  local r, g, b = fs:GetTextColor()
-  if anySecret({ r, g, b }) or type(r) ~= "number" then return nil end
-  return ("%.2f,%.2f,%.2f"):format(r, g, b)
-end
-
--- A description's colour in a spell or item tooltip, NORMAL_FONT_COLOR, as colourOf writes it.
-local GOLD = "1.00,0.82,0.00"
-
--- The countdown a tooltip shows while the spell or item cools down ("Cooldown remaining: 2 sec"): its number moves
--- every second, so a remembered one is never written back.
-local function isCountdown(english)
-  local template = Compat.resolve("ITEM_COOLDOWN_TIME")
-  if type(template) ~= "string" or type(english) ~= "string" then return false end
-  local head = template:match("^(.-)%%")
-  return head ~= nil and head ~= "" and english:sub(1, #head) == head
-end
-
--- Where each remembered row is on a secret pass with another row count. A row comes or goes in the middle (the
--- countdown sits right above the description), so rows are matched from the top while their colours agree and from
--- the bottom while they agree. When the client hides the colours too (a secret pass does), one row more or less is
--- taken to be that countdown, which the client puts right above the description: the first gold row of the
--- remembered pass (the trace on 1.60.1.70170: Wrath's 6 rows became 7 with the countdown as row 4). Rows above it stay,
--- rows from it on move by one. A written row that cannot be placed means nothing is written.
--- → { [old row] = new row } | nil, and how the rows were placed
-local function rowMap(snap, lines)
-  local m, n = snap.n, #lines
-  local now, hidden = {}, false
-  for i, l in ipairs(lines) do
-    now[i] = colourOf(l.fs)
-    if now[i] == nil then hidden = true end
-  end
-  local top, bottom, how
-  if not hidden then
-    local was = snap.colours
-    top = 0
-    while top < m and top < n and was[top + 1] ~= nil and was[top + 1] == now[top + 1] do top = top + 1 end
-    bottom = 0
-    while bottom < m - top and bottom < n - top and was[m - bottom] ~= nil and was[m - bottom] == now[n - bottom] do
-      bottom = bottom + 1
-    end
-    how = "colour"
-  elseif math.abs(m - n) == 1 then
-    local gold
-    for i = 1, m do
-      if snap.colours[i] == GOLD then gold = i; break end
-    end
-    if not gold then return nil, "colours hidden, no remembered description row" end
-    if n == m + 1 then -- the countdown came, above the description
-      top, bottom = gold - 1, m - gold + 1
-    elseif gold >= 2 and isCountdown(snap.english[gold - 1]) then -- the remembered countdown went
-      top, bottom = gold - 2, m - gold + 1
-    else
-      return nil, "colours hidden, the row that went is not the countdown"
-    end
-    how = "countdown"
-  else
-    return nil, "colours hidden"
-  end
-  local map = {}
-  for i = 1, m do
-    local written = (snap[i] or snap.right[i]) and not isCountdown(snap.english[i])
-    if i <= top then
-      map[i] = i
-    elseif i > m - bottom then
-      map[i] = n - (m - i)
-    elseif written then
-      return nil, how .. ": row " .. i .. " unplaced"
-    end
-  end
-  return map, how
-end
-
--- `rights`: the right column as read before this pass wrote ("Rank 1", "30 yd range": the structural pass writes it)
-local function remember(frame, kind, id, area, lines, rights)
-  local snap = { kind = kind, id = id, n = #lines, area = area, owner = ownerOf(frame), english = {}, colours = {},
-    right = {} }
-  for i, r in ipairs(rights) do
-    local now = r.fs:GetText()
-    if now ~= r.text then snap.right[i] = now end
-  end
-  for i, l in ipairs(lines) do
-    snap.english[i] = l.text
-    snap.colours[i] = colourOf(l.fs)
-    local now = l.fs:GetText()
-    if now ~= l.text then snap[i] = now end -- l.text: the client's line as read before this pass wrote
-  end
-  rendered[frame] = snap
-end
-
--- A secret pass: the last readable pass's Japanese written back, when nothing says it no longer applies.
--- → lines written
--- What the secret passes did (/wfj debug): written back, or why not.
-Tooltip.secretPasses = { reapplied = 0, nothing = 0, other = 0, lines = 0, owner = 0, off = 0 }
-local function skip(why)
-  Tooltip.secretPasses[why] = Tooltip.secretPasses[why] + 1
-  return 0
-end
-
-local function reapply(frame, kind, id, lines)
-  local snap = rendered[frame]
-  if not snap then return skip("nothing"), "nothing remembered" end
-  if snap.kind ~= kind then return skip("other"), "remembered another kind" end
-  if snap.owner ~= ownerOf(frame) then return skip("owner"), "another owner" end
-  -- the spell or item itself may be withheld on a secret pass: then the same owner (an action button) stands for it
-  if type(id) == "number" and not anySecret({ id }) and snap.id ~= id then
-    return skip("other"), "another spell or item"
-  end
-  if WFJ.State.enabled == false or WFJ.Modifier.isDown() or not WFJ.State.areaEnabled(snap.area) then
-    return skip("off"), "English wanted"
-  end
-  local map, how
-  if snap.n == #lines then
-    map, how = {}, "same rows"
-    for i = 1, snap.n do map[i] = i end
-  else
-    map, how = rowMap(snap, lines)
-    if not map then
-      Tooltip.lastMismatch = { remembered = snap.n, secret = #lines, english = snap.english }
-      return skip("lines"), how
-    end
-  end
-  Tooltip.secretPasses.reapplied = Tooltip.secretPasses.reapplied + 1
-  local rights = Tooltip.lines(frame, "Right")
-  local n = 0
-  for old, new in pairs(map) do
-    if not isCountdown(snap.english[old]) then
-      if snap[old] and lines[new] then
-        lines[new].fs:SetText(snap[old])
-        WFJ.Font.bundle(lines[new].fs)
-        n = n + 1
-      end
-      if snap.right[old] and rights[new] then
-        rights[new].fs:SetText(snap.right[old])
-        WFJ.Font.bundle(rights[new].fs)
-        n = n + 1
-      end
-    end
-  end
-  return n, how
 end
 
 -- ── The tooltip trace (/wfj debug tooltip): every pass over a spell or item tooltip, row by row ──
@@ -441,7 +292,11 @@ local function describe(fs)
   if type(fs) ~= "table" then return "-" end
   local text = fs:GetText()
   local shown = type(fs.IsShown) == "function" and fs:IsShown() and "" or " hidden"
-  local colour = colourOf(fs) or "<colour secret or none>"
+  local colour = "<colour secret or none>"
+  if type(fs.GetTextColor) == "function" then
+    local r, g, b = fs:GetTextColor()
+    if not anySecret({ r, g, b }) and type(r) == "number" then colour = ("%.2f,%.2f,%.2f"):format(r, g, b) end
+  end
   if text == nil then return "nil" .. shown end
   if anySecret({ text }) then return "<secret> " .. colour .. shown end
   if text == "" then return "\"\"" .. shown end
@@ -458,18 +313,49 @@ local function traceFrame(frame, event, id, lines, note)
   local out = { ("[%s] %s %s id=%s owner=%s rows=%d %s"):format(stamp, plain(frame:GetName()), event,
     plain(id), ownerName, #lines, note or "") }
   local rights = Tooltip.lines(frame, "Right")
-  for i, l in ipairs(lines) do
-    out[#out + 1] = ("  %d L %s | R %s"):format(i, describe(l.fs), describe(rights[i] and rights[i].fs))
+  local kinds = {}
+  if type(frame.GetPrimaryTooltipInfo) == "function" then
+    local ok, info = pcall(frame.GetPrimaryTooltipInfo, frame)
+    if ok and type(info) == "table" then kinds = WFJ.TooltipUnit.lineKinds(info.tooltipData) end
   end
-  local snap = rendered[frame]
-  if snap then
-    out[#out + 1] = ("  remembered: %s id=%s rows=%d"):format(plain(snap.kind), plain(snap.id), snap.n)
+  for i, l in ipairs(lines) do
+    out[#out + 1] = ("  %d %s L %s | R %s"):format(i, kinds[i] or "?", describe(l.fs),
+      describe(rights[i] and rights[i].fs))
   end
   local t = Tooltip.trace
+  -- a pass identical to the one before (an owner re-showing the tooltip several times a second) is counted, not
+  -- added again, so a short recording is not filled by one hover
+  local body = table.concat(out, "\n", 2)
+  local key = out[1]:gsub("^%[[^%]]*%] ", "") .. "\n" .. body
+  if Tooltip.traceLast == key and #t > 0 then
+    Tooltip.traceRepeat = (Tooltip.traceRepeat or 1) + 1
+    t[#t] = t[#t]:gsub("\n  %(seen %d+ times[^\n]*$", "") .. ("\n  (seen %d times, last %s)"):format(
+      Tooltip.traceRepeat, stamp)
+    return
+  end
+  Tooltip.traceLast, Tooltip.traceRepeat = key, 1
   t[#t + 1] = table.concat(out, "\n")
   if #t > TRACE_MAX then table.remove(t, 1) end
 end
 Tooltip.traceFrame = traceFrame
+
+-- One line in the trace for a hook call the addon set aside before reading the tooltip (why it was not its).
+local function traceNote(text)
+  if not Tooltip.trace then return end
+  local clock = Compat.resolve("date")
+  local stamp = type(clock) == "function" and clock("%H:%M:%S") or ""
+  local t = Tooltip.trace
+  local line = ("[%s] %s"):format(stamp, text)
+  if Tooltip.traceLast == text and #t > 0 then
+    Tooltip.traceRepeat = (Tooltip.traceRepeat or 1) + 1
+    t[#t] = line .. (" (seen %d times)"):format(Tooltip.traceRepeat)
+    return
+  end
+  Tooltip.traceLast, Tooltip.traceRepeat = text, 1
+  t[#t + 1] = line
+  if #t > TRACE_MAX then table.remove(t, 1) end
+end
+Tooltip.traceNote = traceNote
 
 local function show(frame, area, kind, id, lines, first, last, name, runArgs)
   local surface = surfaceOf(frame)
@@ -520,18 +406,317 @@ local function peelTrailer(texts, first, last)
   return after and { form = "affix", before = "", after = after } or nil
 end
 
--- The Item post-call's target. Returns the number of records written.
+-- ── Hidden passes: a tooltip whose rows the addon may not read ──
+-- In combat the client writes an action button's tooltip from values the addon may not read: every row's text and
+-- colour is secret, and so are the cooldown's numbers (SecretWhenCooldownsRestricted). What stays readable is the
+-- spell or item itself (the tooltip data's id, else the owner's action slot) and each row's kind. So a hidden pass
+-- asks the client for that spell's or item's own tooltip by id (C_TooltipInfo.GetSpellByID / GetItemByID), whose
+-- rows are plain text, translates those rows exactly as a readable pass would, and writes the Japanese onto the
+-- frame's rows by position. The cooldown countdown, a row only the frame has, is written by the client from its own
+-- hidden duration (UI/TimeLine). Nothing is kept between passes; a row that cannot be placed is left as the client
+-- wrote it. A buff tooltip in combat has no readable handle at all (its aura id, spell, icon and rows are all secret,
+-- and the aura APIs refuse a secret id from an addon), so it is left in the client's English until it is readable.
+Tooltip.hidden = { written = 0, left = 0, last = nil } -- what the hidden passes did (/wfj debug)
+
+local function hiddenDone(n, why)
+  local h = Tooltip.hidden
+  if n > 0 then h.written = h.written + 1 else h.left = h.left + 1 end
+  h.last = why
+  return n, why
+end
+
+-- A row written on a hidden pass wears the bundled face; the frame remembers which rows (by widget, never by
+-- text) and gives them the client's face back when it hides, so no later English row keeps the bundled face.
+local hiddenRows = setmetatable({}, { __mode = "k" })
+
+local function dressHidden(frame, fs)
+  WFJ.Font.bundle(fs)
+  hiddenRows[frame] = hiddenRows[frame] or {}
+  hiddenRows[frame][fs] = true
+end
+
+local function undressHidden(frame)
+  local list = hiddenRows[frame]
+  if not list then return end
+  for fs in pairs(list) do pcall(WFJ.Font.restore, fs) end
+  hiddenRows[frame] = nil
+end
+
+local function writeHidden(frame, fs, text)
+  fs:SetText(text)
+  dressHidden(frame, fs)
+end
+
+-- The spell or item on the owner's action slot, when the owner is an action button. GetActionInfo is not a guarded
+-- read: the client's own buttons call it in combat (blizzard_actionbar/shared/actionbutton.lua:525, 1476). → id | nil
+local function actionIdOf(frame, want)
+  local owner = ownerOf(frame)
+  local slot = type(owner) == "table" and owner.action or nil
+  local info = Compat.resolve("GetActionInfo")
+  if type(slot) ~= "number" or anySecret({ slot }) or type(info) ~= "function" then return nil end
+  local ok, kind, id = pcall(info, slot)
+  if not ok or kind ~= want or type(id) ~= "number" or anySecret({ id }) then return nil end
+  return id
+end
+
+local API_OF = { ["spell.description"] = "C_TooltipInfo.GetSpellByID",
+  ["item.description"] = "C_TooltipInfo.GetItemByID" }
+
+-- The client's tooltip data for the spell or item itself. A row the client hides there too (its cooldown line, or
+-- more) is kept as a hidden row, so the readable ones still serve. → { { left, right, type, hidden } }, hidden count,
+-- the hidden rows' numbers | nil, why
+local function apiRows(kind, id)
+  local get = Compat.resolve(API_OF[kind])
+  if type(get) ~= "function" then return nil, "no " .. API_OF[kind] end
+  local ok, data = pcall(get, id)
+  if not ok or type(data) ~= "table" or type(data.lines) ~= "table" then
+    return nil, "the client gave no tooltip data for " .. tostring(id)
+  end
+  local rows, hidden, which = {}, 0, {}
+  for i, line in ipairs(data.lines) do
+    local left, right, kindOf = line.leftText, line.rightText, line.type
+    local row = { type = not anySecret({ kindOf }) and kindOf or nil }
+    if anySecret({ left, right }) then
+      row.hidden, row.left = true, ""
+      hidden = hidden + 1
+      which[#which + 1] = tostring(i)
+    else
+      row.left = type(left) == "string" and left or ""
+      row.right = type(right) == "string" and right or nil
+    end
+    rows[i] = row
+  end
+  if #rows == 0 then return nil, "the client's tooltip data has no rows" end
+  return rows, hidden, table.concat(which, ",")
+end
+
+-- Where the frame's rows and the data's rows meet: one to one from the top (seen in game: Wrath's data has five
+-- rows, name, cost, cast time, the cooldown countdown hidden, the description; the frame shows those five and then
+-- rows other addons appended, which are left alone). When both sides type a description row and the frame's sits
+-- lower, the rows between are the frame's own extras (a countdown the data lacks) and the rows from the description
+-- on are shifted. → { [frame row] = data row }, { extra frame rows } | nil, why
+local function placeRows(n, m, frameAnchor, dataAnchor)
+  local map, extra = {}, {}
+  local k = (frameAnchor and dataAnchor) and (frameAnchor - dataAnchor) or 0
+  if k < 0 then
+    return nil, ("the description is row %d on the frame but row %d in the data"):format(frameAnchor, dataAnchor)
+  end
+  for i = 1, n do
+    if k > 0 and i >= dataAnchor and i < frameAnchor then
+      extra[#extra + 1] = i
+    else
+      local di = i - ((k > 0 and i >= frameAnchor) and k or 0)
+      if di >= 1 and di <= m then map[i] = di end
+    end
+  end
+  return map, extra
+end
+Tooltip.placeRows = placeRows
+
+-- The data rows that are the description run: a spell's SpellDescription row (else the row equal to its API
+-- description), an item's run from line 2. → first, last | nil
+local function dataRun(kind, id, texts, rows)
+  if kind == "item.description" then return Tooltip.itemRun(texts) end
+  local enum = Compat.resolve("Enum.TooltipDataLineType")
+  local want = type(enum) == "table" and enum.SpellDescription or nil
+  for i, r in ipairs(rows) do
+    if want ~= nil and r.type == want then return i, i end
+  end
+  local description = Tooltip.spellDescription(id)
+  if anySecret({ description }) then return nil end
+  local i = Tooltip.spellLine(texts, description)
+  return i, i
+end
+
+-- The frame row the client typed SpellDescription, read from the tooltip data behind the frame. → row | nil
+local function frameDescriptionRow(frame)
+  if type(frame.GetPrimaryTooltipInfo) ~= "function" then return nil end
+  local ok, info = pcall(frame.GetPrimaryTooltipInfo, frame)
+  if not ok or type(info) ~= "table" then return nil end
+  local okK, kinds = pcall(WFJ.TooltipUnit.lineKinds, info.tooltipData)
+  if not okK or type(kinds) ~= "table" then return nil end
+  for row, name in pairs(kinds) do
+    if name == "SpellDescription" then return row end
+  end
+  return nil
+end
+
+-- The countdown row: a spell's from its hidden cooldown duration, written by the client; an item's from the seconds
+-- left, which C_Item.GetItemCooldown gives unguarded [verified: itemdocumentation.lua:434–449]. → true | nil, why
+local function writeCountdown(frame, fs, kind, id)
+  local wrote, why
+  if kind == "spell.description" then
+    local durationOf = Compat.resolve("C_Spell.GetSpellCooldownDuration")
+    if type(durationOf) ~= "function" then return nil, "no cooldown duration API" end
+    local ok, duration = pcall(durationOf, id)
+    if not ok then return nil, "cooldown duration refused: " .. tostring(duration) end
+    if not duration then return nil, "no cooldown duration" end
+    wrote, why = WFJ.TimeLine.writeDuration(fs, duration)
+    if Tooltip.trace then
+      local hasSecret = type(duration) ~= "table" and type(duration.HasSecretValues) == "function"
+        and select(2, pcall(duration.HasSecretValues, duration)) or "?"
+      why = ("%s (duration %s, secret values %s, formatter: %s)"):format(tostring(why), type(duration),
+        tostring(hasSecret), WFJ.TimeLine.status())
+    end
+  else
+    local get, clock = Compat.resolve("C_Item.GetItemCooldown"), Compat.resolve("GetTime")
+    if type(get) ~= "function" or type(clock) ~= "function" then return nil, "no item cooldown API" end
+    local ok, start, duration = pcall(get, id)
+    if not ok or anySecret({ start, duration }) or type(start) ~= "number" or type(duration) ~= "number" then
+      return nil, "item cooldown hidden"
+    end
+    wrote, why = WFJ.TimeLine.writeSeconds(fs, start + duration - clock())
+  end
+  if wrote then dressHidden(frame, fs) end
+  return wrote, why
+end
+
+-- One hidden pass over a spell or item tooltip. → rows written, how (the trace)
+local function showHidden(frame, kind, id, lines)
+  local area = kind == "item.description" and "items" or "spells"
+  local surface = surfaceOf(frame)
+  -- the records of the last readable pass hold text the client has since rewritten; dropping them would read it
+  WFJ.Render.discard(surface)
+  if WFJ.State.enabled == false or WFJ.Modifier.isDown() or not WFJ.State.areaEnabled(area) then
+    return hiddenDone(0, "English wanted")
+  end
+  if type(id) ~= "number" or anySecret({ id }) then return hiddenDone(0, "the spell or item itself is hidden") end
+  local how = {}
+  local rows, hiddenCount, hiddenRowsList = apiRows(kind, id)
+  if not rows then
+    how[#how + 1] = hiddenCount -- the reason
+    rows, hiddenCount = {}, 0
+  else
+    how[#how + 1] = ("data rows %d%s"):format(#rows,
+      hiddenCount > 0 and (", hidden: " .. hiddenRowsList) or "")
+    if Tooltip.trace then
+      local enum = Compat.resolve("Enum.TooltipDataLineType")
+      local names = {}
+      if type(enum) == "table" then for k, v in pairs(enum) do names[v] = k end end
+      for i, r in ipairs(rows) do
+        how[#how + 1] = ("data %d %s %s%s"):format(i, r.type ~= nil and (names[r.type] or tostring(r.type)) or "?",
+          r.hidden and "<hidden>" or ("%q"):format(r.left), r.right and (" | " .. ("%q"):format(r.right)) or "")
+      end
+    end
+  end
+  local texts = {}
+  for i, r in ipairs(rows) do texts[i] = r.left end
+  local first, last = dataRun(kind, id, texts, rows)
+  if first and rows[first].hidden then last = first end -- the run is one hidden row: its English comes from the API
+  if first and not rows[first].hidden and texts[first] == "" then first, last = nil, nil end
+  local frameAnchor = kind == "spell.description" and frameDescriptionRow(frame) or nil
+  local map, extra = {}, {}
+  if #rows > 0 then
+    if kind == "item.description" and #lines ~= #rows then
+      how[#how + 1] = ("the frame has %d rows, the client's data %d, and an item's rows carry no kind to place by")
+        :format(#lines, #rows)
+    else
+      map, extra = placeRows(#lines, #rows, frameAnchor, first)
+      if not map then how[#how + 1] = extra; map, extra = {}, {} end
+    end
+  end
+  if Tooltip.trace then
+    local pairsOut = {}
+    for fi = 1, #lines do if map[fi] then pairsOut[#pairsOut + 1] = fi .. "=" .. map[fi] end end
+    how[#how + 1] = ("frame description row %s, data description row %s, map %s, extra %s"):format(
+      tostring(frameAnchor), tostring(first), table.concat(pairsOut, " "), table.concat(extra, ","))
+  end
+  -- the description: the data's row when readable, else (a spell) the description API's own string, on the frame
+  -- row the client typed as the description or the row the placing gave it
+  local descRow = frameAnchor
+  if not descRow and first then
+    for fi, di in pairs(map) do
+      if di == first then descRow = fi end
+    end
+  end
+  local descEn, descSource
+  if first and not rows[first].hidden then
+    descEn, descSource = texts[first], "the client's data"
+  elseif kind == "spell.description" then
+    local d = Tooltip.spellDescription(id)
+    if type(d) == "string" and d ~= "" and not anySecret({ d }) then descEn, descSource = d, "the spell API" end
+  end
+  local runArgs = (kind == "item.description" and first and descEn) and peelTrailer(texts, first, last) or nil
+  if runArgs then -- only an ungated translation takes the trailer's Japanese; a gated one keeps the whole line
+    local lookup = WFJ.Lookup and WFJ.Lookup.get
+    local entry = type(lookup) == "function" and lookup(kind, id) or nil
+    if not (entry and entry.status == ".") then runArgs = nil end
+  end
+  local index = WFJ.UIIndex
+  local rights = Tooltip.lines(frame, "Right")
+  local name = (rows[1] and not rows[1].hidden) and texts[1] or nil
+  local n, runApplied = 0, false
+  local function ui(en, row1)
+    if not index or type(en) ~= "string" or en == "" then return nil end
+    local key, args = index:match(en)
+    if not key and row1 and WFJ.Labels then key, args = index:matchOnly(en, WFJ.Labels.families("DispelType").only) end
+    if not key then return nil end
+    return WFJ.Render.preview(surface, en, nil, "ui", "ui", key, { args = args })
+  end
+  if descRow and descEn and lines[descRow] then
+    local run = { descEn }
+    if first and not rows[first].hidden then
+      run = {}
+      for j = first, last do run[#run + 1] = texts[j] end
+    end
+    local ja, _, action = WFJ.Render.preview(surface, descEn, nil, area, kind, id,
+      { lines = run, nameScope = name, args = runArgs })
+    if type(ja) == "string" then writeHidden(frame, lines[descRow].fs, ja); n = n + 1 end
+    runApplied = action == "apply"
+    how[#how + 1] = ("description row %d from %s"):format(descRow, descSource)
+  else
+    how[#how + 1] = "no description: " .. (descRow and "its English is hidden" or "no row for it")
+  end
+  for fi = 1, #lines do
+    local di = map[fi]
+    local row = di and rows[di]
+    if row and not row.hidden and fi ~= descRow then
+      local fs, en = lines[fi].fs, texts[di]
+      if first and di > first and di <= last then
+        if runApplied then writeHidden(frame, fs, WFJ.Render.BLANK); n = n + 1 end
+      elseif fi > 1 and en ~= name then
+        local ja = ui(en)
+        if type(ja) == "string" then writeHidden(frame, fs, ja); n = n + 1 end
+      end
+    end
+    if row and not row.hidden and row.right and rights[fi] then
+      local ja = ui(row.right, fi == 1)
+      if type(ja) == "string" then writeHidden(frame, rights[fi].fs, ja); n = n + 1 end
+    end
+  end
+  -- one hidden data row is the cooldown countdown (the one secret in a spell or item tooltip): that frame row is
+  -- written from the cooldown as well; more than one means the data hides something else, which is left alone
+  if hiddenCount == 1 then
+    for fi = 2, #lines do
+      local row = map[fi] and rows[map[fi]]
+      if row and row.hidden and fi ~= descRow then extra[#extra + 1] = fi end
+    end
+  elseif hiddenCount > 1 then
+    how[#how + 1] = "hidden data rows left as the client wrote them"
+  end
+  table.sort(extra)
+  for _, fi in ipairs(extra) do
+    local ok, wrote, note = pcall(writeCountdown, frame, lines[fi].fs, kind, id)
+    how[#how + 1] = ("countdown row %d: %s"):format(fi, ok and tostring(note) or ("refused: " .. tostring(wrote)))
+    if ok and wrote then n = n + 1 end
+  end
+  return hiddenDone(n, table.concat(how, "; "))
+end
+
+-- The Item post-call's target.
 function Tooltip.onItem(frame)
   if inRefit[frame] then return 0 end
   local itemName, link = frame:GetItem()
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
-  -- restricted: nothing is read or matched, forgetting included (forget compares the widget's text); checked
-  -- before the link, which a secret pass may withhold
+  -- hidden rows: nothing is read, matched or dropped (dropping a record reads its widget); the link is checked
+  -- after the texts, since the client may hide it too, and then the owner's action slot names the item
   if anySecret(texts) or anySecret({ link }) then
-    local n, why = reapply(frame, "item.description", nil, lines)
-    traceFrame(frame, "secret item", nil, lines, ("-> wrote %d (%s)"):format(n, why))
+    local id = (type(link) == "string" and not anySecret({ link })) and tonumber(link:match("item:(%d+)")) or nil
+    id = id or actionIdOf(frame, "item")
+    local n, why = showHidden(frame, "item.description", id, lines)
+    traceFrame(frame, "secret item", id, lines, ("-> wrote %d (%s)"):format(n, why))
     return n
   end
   local id = type(link) == "string" and tonumber(link:match("item:(%d+)")) or nil
@@ -546,9 +731,7 @@ function Tooltip.onItem(frame)
     if not (entry and entry.status == ".") then runArgs = nil end
   end
   -- No run still has structural lines.
-  local rights = Tooltip.lines(frame, "Right")
   local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs)
-  remember(frame, "item.description", id, "items", lines, rights)
   traceFrame(frame, "readable item", id, lines, ("-> rendered %d"):format(n))
   return n
 end
@@ -560,17 +743,18 @@ function Tooltip.onSpell(frame)
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
-  -- restricted: nothing is read or matched, forgetting included (forget compares the widget's text); checked
-  -- before the id, which a secret pass may withhold
-  if anySecret(texts) or anySecret({ id }) then
-    local n, why = reapply(frame, "spell.description", id, lines)
+  -- hidden rows: nothing is read, matched or dropped (dropping a record reads its widget); the id is checked after
+  -- the texts, since the client may hide it too, and then the owner's action slot names the spell
+  if anySecret(texts) then
+    if type(id) ~= "number" or anySecret({ id }) then id = actionIdOf(frame, "spell") end
+    local n, why = showHidden(frame, "spell.description", id, lines)
     traceFrame(frame, "secret spell", id, lines, ("-> wrote %d (%s)"):format(n, why))
     return n
   end
-  if type(id) ~= "number" or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
+  if type(id) ~= "number" or anySecret({ id }) or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
   local description = Tooltip.spellDescription(id)
   if anySecret({ description }) then
-    local n, why = reapply(frame, "spell.description", id, lines)
+    local n, why = showHidden(frame, "spell.description", id, lines)
     traceFrame(frame, "secret description", id, lines, ("-> wrote %d (%s)"):format(n, why))
     return n
   end
@@ -578,9 +762,7 @@ function Tooltip.onSpell(frame)
   if description and description ~= "" then WFJ.Collector.record("spell", id, "description", description) end
   local i = Tooltip.spellLine(texts, description)
   -- "spell.description": a bare "spell" would not name one field (spells also have `aura`)
-  local rights = Tooltip.lines(frame, "Right")
   local n = show(frame, "spells", "spell.description", id, lines, i, i, spellName)
-  remember(frame, "spell.description", id, "spells", lines, rights)
   traceFrame(frame, "readable spell", id, lines, ("-> rendered %d"):format(n))
   return n
 end
@@ -610,7 +792,7 @@ function Tooltip.onCompareShow(frame)
 end
 
 function Tooltip.release(frame)
-  rendered[frame] = nil
+  undressHidden(frame)
   return WFJ.Render.release(surfaceOf(frame))
 end
 
@@ -727,10 +909,21 @@ local function auraImpl(frame, method, unit, key, filter, clientLines)
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
-  -- restricted: leave everything alone, forgetting included (forget compares the widget's text)
-  if anySecret(texts) then return 0 end
+  local how = Tooltip.trace and ("%s(%s, %s, %s) client rows=%s"):format(plain(method), plain(unit), plain(key),
+    plain(filter), plain(clientLines)) or ""
+  -- hidden rows: which buff this is stays hidden too (its aura id, spell and icon are secret, and the aura APIs
+  -- refuse a secret id from an addon), so nothing can be looked up; the client's English stays, and the frame's
+  -- records are let go without reading the rows they held
+  if anySecret(texts) then
+    WFJ.Render.discard(surfaceOf(frame))
+    traceFrame(frame, "secret aura", nil, lines, "-> left, the client hides which buff it is (" .. how .. ")")
+    return 0
+  end
   local id = Tooltip.auraSpellId(method, unit, key, filter)
-  if not id then WFJ.Render.forget(surfaceOf(frame)); return 0 end
+  if not id then
+    traceFrame(frame, "readable aura", nil, lines, "-> left, no spell id (" .. how .. ")")
+    WFJ.Render.forget(surfaceOf(frame)); return 0
+  end
   local i = Tooltip.auraLine(texts)
   -- Forever: line 2 only when the client wrote it; a line another addon appended (an id line, the PTR
   -- reporter's hint) is past the client's own count and is never the aura text
@@ -741,7 +934,10 @@ local function auraImpl(frame, method, unit, key, filter, clientLines)
   if i and type(lookup) == "function" and lookup("spell.aura", id) ~= nil then
     WFJ.Collector.record("spell", id, "aura", texts[i])
   end
-  return show(frame, "spells", "spell.aura", id, lines, i, i, texts[1])
+  local n = show(frame, "spells", "spell.aura", id, lines, i, i, texts[1])
+  traceFrame(frame, "readable aura", id, lines, ("-> rendered %s, aura row %s, shipped aura text %s (%s)"):format(
+    plain(n), plain(i), tostring(type(lookup) == "function" and lookup("spell.aura", id) ~= nil), how))
+  return n
 end
 
 -- The aura handler: (frame, method, <that method's arguments>[, the client's own line count]). Guarded
@@ -751,6 +947,7 @@ function Tooltip.onAura(frame, method, unit, key, filter, clientLines)
   local ok, n = pcall(auraImpl, frame, method, unit, key, filter, clientLines)
   if ok then return n end
   Tooltip.auraErrors = Tooltip.auraErrors + 1
+  pcall(traceFrame, frame, "aura error", nil, Tooltip.lines(frame), "-> " .. tostring(n))
   return 0
 end
 
@@ -799,11 +996,29 @@ function Tooltip.init()
   if processor and types.UnitAura ~= nil then
     processor.AddTooltipPostCall(types.UnitAura, function(tt)
       local frame = dataFrame(tt, types.UnitAura, "GetPrimaryTooltipInfo")
-      if not frame then return end
+      if not frame then
+        pcall(traceNote, ("aura post-call on %s: not one of ours"):format(
+          type(tt) == "table" and type(tt.GetName) == "function" and plain(tt:GetName()) or "?"))
+        return
+      end
       local method, unit, key, filter, count = Tooltip.auraCall(frame)
-      if method then Tooltip.onAura(frame, method, unit, key, filter, count) end
+      if method then Tooltip.onAura(frame, method, unit, key, filter, count)
+      else pcall(traceFrame, frame, "aura", nil, Tooltip.lines(frame), "-> left, getter not known") end
     end)
     auraHooks = #Tooltip.AURA_ORDER
+    -- the trace only: which GameTooltip call opened a buff tooltip, so a buff the post-call never sees still shows
+    local tooltip = Compat.get(DECLARE, "GameTooltip")
+    if type(tooltip) == "table" then
+      for _, method in ipairs(Tooltip.AURA_ORDER) do
+        if type(tooltip[method]) == "function" then
+          hooksecurefunc(tooltip, method, function(_, unit, key, filter)
+            if Tooltip.trace then
+              pcall(traceNote, ("%s(%s, %s, %s) called"):format(method, plain(unit), plain(key), plain(filter)))
+            end
+          end)
+        end
+      end
+    end
   end
   -- Latched last, not first: if a registration or a hook raises, Main's guard records the failure and the
   -- surface stays retryable instead of being stuck permanently half-hooked (item hooked, spell not, no OnHide).

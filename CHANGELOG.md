@@ -14,12 +14,16 @@ an old setting stops working). A release moves those lines under its version num
 - Item flavour lines such as "Made With Love" are translated.
 - The character window's new Titles tab is in Japanese, and so is the "No Title" row of its title list. The titles you earn are names and stay English.
 - The group finder's playstyle, on a listing and on each search result, is in Japanese.
+- Quest titles are Japanese in the NPC talk window's quest rows and on the quest greeting panel's buttons.
+- A creature's tooltip shows its type on its own line and, for a quest it counts toward, the kill count in Japanese; the quest's title under a creature or on the minimap's quest block is Japanese too.
+- The owner line under a pet, minion or guardian ("Bob's Pet") is Japanese.
 
 ### Changed
 - The game text is read from Forever build 1.60.1.70170.
 - The settings page title no longer wraps, the help page names your reveal key and both markers, and settings text has more space between lines.
 
 ### Fixed
+- A spell on your action bar keeps its Japanese tooltip in combat, the cooldown countdown included. A buff icon's tooltip stays English during a fight, because the game hides which buff it is from addons, and is Japanese again when the fight ends.
 - The Legacy window's available points and the stable's pet diet tooltip are in Japanese again on the new build.
 - Chat lines keep the right size after you change the chat font size.
 - Lines that stopped being translated because a game update did not list them for a while are translated again. A later update no longer takes Japanese away from something the game has shown before.

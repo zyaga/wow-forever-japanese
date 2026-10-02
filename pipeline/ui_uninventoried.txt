@@ -106,7 +106,6 @@ PRISMATIC_GEM  # asked for by UI/ItemSocketing.lua: the client passes the string
 QUEST_FACTION_NEEDED  # asked for by UI/QuestMap.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 QUEST_FACTION_NEEDED_NOPROGRESS  # asked for by UI/QuestMap.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 QUEST_LOG  # asked for by UI/QuestMap.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-QUEST_MONSTERS_KILLED  # asked for by UI/QuestMap.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 QUEST_PLAYERS_KILLED  # asked for by UI/QuestMap.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 QUEST_PLAYERS_KILLED_NOPROGRESS  # asked for by UI/QuestMap.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 RAID_WARNING  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
@@ -132,3 +131,7 @@ WHO_LIST  # asked for by UI/Friends.lua: the client passes the string by referen
 YELLOW_GEM  # asked for by UI/ItemSocketing.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 FRAME_ACTION_CONFIRM  # asked for by UI/Gamepad.lua: the icon selector's gamepad footer (blizzard_sharedxml/mainline/shareduipaneltemplates.lua:2077–2079), a shared template file no surface scans
 FRAME_ACTION_EXIT  # asked for by UI/Gamepad.lua: the icon selector's gamepad footer (blizzard_sharedxml/mainline/shareduipaneltemplates.lua:2077–2079), a shared template file no surface scans
+GROUP_FINDER_GENERAL_PLAYSTYLE1  # asked for by UI/GroupFinder.lua and UI/Menus.lua: written by blizzard_lfgutil/mainline/lfgutil.lua:317-323 (the playstyle string), a file the inventory does not scan
+GROUP_FINDER_GENERAL_PLAYSTYLE2  # asked for by UI/GroupFinder.lua and UI/Menus.lua: written by blizzard_lfgutil/mainline/lfgutil.lua:317-323 (the playstyle string), a file the inventory does not scan
+GROUP_FINDER_GENERAL_PLAYSTYLE3  # asked for by UI/GroupFinder.lua and UI/Menus.lua: written by blizzard_lfgutil/mainline/lfgutil.lua:317-323 (the playstyle string), a file the inventory does not scan
+GROUP_FINDER_GENERAL_PLAYSTYLE4  # asked for by UI/GroupFinder.lua and UI/Menus.lua: written by blizzard_lfgutil/mainline/lfgutil.lua:317-323 (the playstyle string), a file the inventory does not scan

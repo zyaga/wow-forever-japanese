@@ -13,7 +13,7 @@ from wfj.io import wago, wdb
 from wfj.io.jsonl_store import Store
 
 ADDON = Path("addon/WoWForeverJapanese")
-FOREVER = "forever-1.60.1.70124"
+FOREVER = "forever-1.60.1.70170"
 
 # Globals only the Classic Era UI defines (the Era target survey in docs/research/). A name
 # preceded by a word character or a dot is another name or a Forever child key (`PlayerSpellsFrame.SpellBookFrame`,
@@ -94,6 +94,12 @@ def test_shipped_ids_are_listed_by_forever(root):
         "item": wago.read_ids(d / "ItemSparse.csv"),
         "spell": wago.read_ids(d / "SpellName.csv"),
     }
+    # Additive (ADR-050): an id an earlier Forever build served is kept, so it counts as served
+    for k in served:
+        record = root / "pipeline" / "served" / f"{k}.tsv"
+        if record.is_file():
+            served[k] |= {int(r.split("\t")[0]) for r in record.read_text(encoding="utf-8").splitlines()
+                          if r and not r.startswith("#")}
     store = Store(root / "data")
     unserved = {k: sorted({ln["id"] for ln in store.load(k) if lua_writer.shipped(ln) and ln["id"] not in ids})[:5]
                 for k, ids in served.items()}

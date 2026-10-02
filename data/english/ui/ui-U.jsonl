@@ -8,11 +8,84 @@
 {"id": "UNDOCK_WINDOW", "field": "text", "en": "Undock Window", "hash": "d1331c633a73b2a8", "src": "db2@1.60.1.70170"}
 {"id": "UNEXTEND_RAID_LOCK", "field": "text", "en": "Remove Raid Lock Extension", "hash": "44cb43ee0f36210e", "src": "db2@1.60.1.70170"}
 {"id": "UNIGNORE_PLAYER_BUTTON_LABEL", "field": "text", "en": "Remove from list", "hash": "fc0ce1ada6e637e9", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE1", "field": "text", "en": "%s's Pet", "hash": "a7dd81a1e4c34ae5", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE10", "field": "text", "en": "%s's Mount", "hash": "ac65ee4ffa51c3cf", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE11", "field": "text", "en": "%s's Lightwell", "hash": "1cb8ca2d380fdfe7", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE12", "field": "text", "en": "%s's Butler", "hash": "d2a91f430bcf90a6", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE13", "field": "text", "en": "%s'aka", "hash": "421b44cef83204a6", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE14", "field": "text", "en": "%s's Gateway", "hash": "acc726343abcef36", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE15", "field": "text", "en": "%s's Hatred", "hash": "58b238d2a2892e0e", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE16", "field": "text", "en": "%s's Statue", "hash": "725acc7c38165bc0", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE17", "field": "text", "en": "%s's Spirit", "hash": "2d35d3e91fb9f822", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE18", "field": "text", "en": "%s's War Banner", "hash": "630374a4863fa198", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE19", "field": "text", "en": "%s's Heartwarmer", "hash": "1a24c901915c35b5", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE2", "field": "text", "en": "%s's Guardian", "hash": "beb5761d1682ca93", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE20", "field": "text", "en": "Hired by %s", "hash": "9160f6bb6e80f40e", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE21", "field": "text", "en": "Purchased by %s", "hash": "fe6386d6e6f962c8", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE22", "field": "text", "en": "%s's Pride", "hash": "e172d07a0fa4b27a", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE23", "field": "text", "en": "Twisted Image of %s", "hash": "70a7779c3167c25c", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE24", "field": "text", "en": "%s's Noodle Cart", "hash": "7d78971d6b6ecca1", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE25", "field": "text", "en": "%s's Inner Demon", "hash": "b8fab344e2dd537a", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE26", "field": "text", "en": "%s's Bodyguard", "hash": "63bfc811cb0b934d", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE28", "field": "text", "en": "%s's Squire", "hash": "405cd6b97bcaa508", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE29", "field": "text", "en": "%s's Champion", "hash": "5db371262e85d10c", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE3", "field": "text", "en": "%s's Minion", "hash": "cde53dafbd64a100", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE31", "field": "text", "en": "%s's Erupting Reflection", "hash": "98daffd16ab9070c", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE32", "field": "text", "en": "%s's Hopeless Reflection", "hash": "ade21cac6af7ce52", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE33", "field": "text", "en": "%s's Malignant Reflection", "hash": "5e371e239e01bf40", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE34", "field": "text", "en": "%s's Wailing Reflection", "hash": "40658bcf8048e546", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE35", "field": "text", "en": "%s's Assistant", "hash": "d325e6d48876ac7d", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE36", "field": "text", "en": "%s's Enforcer", "hash": "95ba924b7361bfed", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE37", "field": "text", "en": "%s's Recruit", "hash": "35da57518721651e", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE38", "field": "text", "en": "%s's Admirer", "hash": "e8cbc522372fef01", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE39", "field": "text", "en": "%s's Evil Twin", "hash": "e42de9d68dd6cb4e", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE4", "field": "text", "en": "%s's Totem", "hash": "2745a2e00ec1dd7b", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE40", "field": "text", "en": "%s's Greed", "hash": "43765bff29854814", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE41", "field": "text", "en": "%s's Lost Mind", "hash": "63d6472c85ea6c07", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE42", "field": "text", "en": "%s's Pactbound Protector", "hash": "4f8a58cab0d0ae7a", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE43", "field": "text", "en": "%s's Automaton", "hash": "effc56a9455057b7", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE44", "field": "text", "en": "%s, Servant of N'Zoth", "hash": "992779f126a8d62f", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE45", "field": "text", "en": "%s's Assassin", "hash": "0f90644e09c5ebd8", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE46", "field": "text", "en": "%s's Wildseed", "hash": "985e099cf3523ee0", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE47", "field": "text", "en": "%s's Steward", "hash": "cb0f3102d5418822", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE48", "field": "text", "en": "Repaired by %s", "hash": "edbdcbc5c07ba79b", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE49", "field": "text", "en": "%s's Shambling Remains", "hash": "3e3d4ca53fa504a7", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE5", "field": "text", "en": "%s's Companion", "hash": "9b37037ce0f18d97", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE50", "field": "text", "en": "%s's Past Self", "hash": "58c588cefed50687", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE51", "field": "text", "en": "%s's Arcane Clone", "hash": "db3df2afdd0bfdb2", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE53", "field": "text", "en": "%s's Portal", "hash": "2a50771d4cc99730", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE54", "field": "text", "en": "%s's Ancestor", "hash": "16054b8dc4dd61d8", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE55", "field": "text", "en": "%s's Invention", "hash": "4ee213b105696f49", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE56", "field": "text", "en": "%s's Confidant", "hash": "07d353cc58a9b3a8", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE57", "field": "text", "en": "Placed by %s", "hash": "152d3bdaaf292250", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE58", "field": "text", "en": "%s's Body", "hash": "e47baf3521b9c20b", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE59", "field": "text", "en": "%s's Oathbound Minion", "hash": "8ac00808bd300898", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE6", "field": "text", "en": "%s's Runeblade", "hash": "31732a20c1ce82cc", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE60", "field": "text", "en": "%s's Husk", "hash": "e54b1aac89fceedf", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE61", "field": "text", "en": "%s's Edict", "hash": "1e7bbc11bfe1bff6", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE7", "field": "text", "en": "%s's Construct", "hash": "908775f41bce15a3", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE8", "field": "text", "en": "%s's Opponent", "hash": "7c315c04b65ba0b0", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_SUMMON_TITLE9", "field": "text", "en": "%s's Vehicle", "hash": "5f30429ef7f43ec7", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_TITLE_CHARM", "field": "text", "en": "%s's Minion", "hash": "cde53dafbd64a100", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_TITLE_COMPANION", "field": "text", "en": "%s's Companion", "hash": "9b37037ce0f18d97", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_TITLE_CREATION", "field": "text", "en": "%s's Creation", "hash": "88a4468e8f30235a", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_TITLE_GUARDIAN", "field": "text", "en": "%s's Guardian", "hash": "beb5761d1682ca93", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_TITLE_MINION", "field": "text", "en": "%s's Minion", "hash": "cde53dafbd64a100", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_TITLE_OPPONENT", "field": "text", "en": "%s's Opponent", "hash": "7c315c04b65ba0b0", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_TITLE_PET", "field": "text", "en": "%s's Pet", "hash": "a7dd81a1e4c34ae5", "src": "db2@1.60.1.70170"}
+{"id": "UNITNAME_TITLE_SQUIRE", "field": "text", "en": "%s's Squire", "hash": "405cd6b97bcaa508", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_ALREADY_SKINNED_BOLTS", "field": "text", "en": "Already salvaged for parts", "hash": "2e5fd9e2089da4a7", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_ALREADY_SKINNED_HERB", "field": "text", "en": "Already gathered herbs", "hash": "06aac52eba632940", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_ALREADY_SKINNED_LEATHER", "field": "text", "en": "Already skinned", "hash": "1c939d34b0cb272a", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_ALREADY_SKINNED_ROCK", "field": "text", "en": "Already mined", "hash": "23ce4b1772f45ee0", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_CAPTURABLE", "field": "text", "en": "Capturable", "hash": "81c9a51dfde78898", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_COLORS", "field": "text", "en": "Unit Colors:", "hash": "9b5a8600078b8dee", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_INSTANCE", "field": "text", "en": "Instance Options", "hash": "c8cfcbdd53e93a2a", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_INTERACT", "field": "text", "en": "Interact", "hash": "a8627b8a9ff4d0a8", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_LOOT", "field": "text", "en": "Loot Options", "hash": "beb718cd0e258470", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_OTHER", "field": "text", "en": "Other Options", "hash": "25a8d189cf23f6e3", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_LETHAL_LEVEL_DEAD_TEMPLATE", "field": "text", "en": "Level ?? Corpse", "hash": "6b49f16f969780a5", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_LETHAL_LEVEL_TEMPLATE", "field": "text", "en": "Level ??", "hash": "aa9868094e7a901d", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_LEVEL_DEAD_TEMPLATE", "field": "text", "en": "Level %d Corpse", "hash": "86782f24e419003b", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_LEVEL_TEMPLATE", "field": "text", "en": "Level %d", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_NAMEPLATES_AUTOMODE", "field": "text", "en": "Always Show Nameplates", "hash": "64e083c80c2999ce", "src": "db2@1.60.1.70170"}
@@ -151,6 +224,7 @@
 {"id": "UNIT_SKINNABLE_HERB", "field": "text", "en": "Requires Herbalism", "hash": "45361f4cdc8d180c", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_SKINNABLE_LEATHER", "field": "text", "en": "Skinnable", "hash": "c8ada3d3a63398ee", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_SKINNABLE_ROCK", "field": "text", "en": "Requires Mining", "hash": "7934e4cfe13304ab", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_TYPE_LETHAL_LEVEL_TEMPLATE", "field": "text", "en": "Level ?? %s", "hash": "f33e72b9d7887f6a", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_TYPE_LEVEL_FACTION_TEMPLATE", "field": "text", "en": "Level %d %s (%s)", "hash": "e781bb465d870bbc", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_TYPE_LEVEL_TEMPLATE", "field": "text", "en": "Level %d %s", "hash": "2fcf25e1a3bdd25f", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_TYPE_PLUS_LEVEL_TEMPLATE", "field": "text", "en": "Level %d Elite %s", "hash": "6bf9a577627e66a4", "src": "db2@1.60.1.70170"}

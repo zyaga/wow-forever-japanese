@@ -200,6 +200,7 @@ describe("every Render.show caller records a store line or nothing", function()
     ["UI/DamageMeter.lua"] = { "ui" },
     ["UI/CombatText.lua"] = { "ui" },
     ["UI/Gossip.lua"] = { "gossip" },
+    ["UI/TooltipUnit.lua"] = { "quest.title" },
   }
 
   it("lists exactly the files that call Render.show (directly or passed on, as UI/Gossip does)", function()

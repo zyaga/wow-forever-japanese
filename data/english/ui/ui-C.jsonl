@@ -958,6 +958,7 @@
 {"id": "COOLDOWN_VIEWER_TRINKET_NO_AURA_TOOLTIP_LABEL", "field": "text", "en": "No buff to track | Trinket Buff %d", "hash": "938237e5f49936df", "src": "db2@1.60.1.70170"}
 {"id": "COPY_CHARACTER_NAME", "field": "text", "en": "Copy Character Name", "hash": "0c29b377f8ce7007", "src": "db2@1.60.1.70170"}
 {"id": "COPY_FILTER", "field": "text", "en": "Copy Filter", "hash": "c6123d91384346f1", "src": "db2@1.60.1.70170"}
+{"id": "CORPSE", "field": "text", "en": "Corpse", "hash": "7f75f651b3ab6aa6", "src": "db2@1.60.1.70170"}
 {"id": "CORPSE_RED", "field": "text", "en": "|cffff2020Corpse|r", "hash": "7f75f651b3ab6aa6", "src": "db2@1.60.1.70170"}
 {"id": "CORPSE_TOOLTIP", "field": "text", "en": "Corpse of %s", "hash": "296adee79d4c3bc6", "src": "db2@1.60.1.70170"}
 {"id": "CORRUPTED_ITEM_LOOT_LABEL", "field": "text", "en": "Corrupted Item!", "hash": "bee509f23e72bff1", "src": "db2@1.60.1.70170"}

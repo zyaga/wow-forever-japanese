@@ -415,6 +415,7 @@ WFJ.Data.add("ui", {
   ["BINDING_NAME_TURNRIGHT"] = { "右を向く", 0x5a3bd3c0, "." },
   ["BINDING_NAME_VEHICLEEXIT"] = { "乗り物から降りる", 0x9f777e0e, "." },
   ["BIND_ENCHANT"] = { "このアイテムにエンチャントすると、アイテムはあなたにバインドされます。", 0x6abd1b0c, "." },
+  ["BIND_TRADE_TIME_REMAINING"] = { "このアイテムを入手する資格があったプレイヤーとは、今後%s（オフライン時間を含む）の間、このアイテムを取引できます。", 0x3f309366, "." },
   ["BLACK_MARKET_AUCTION_CONFIRMATION"] = { "次のアイテムに%sで入札してもよろしいですか？", 0x879efd09, "." },
   ["BLACK_MARKET_HOT_ITEM_CURRENT_BID"] = { "現在の入札額:", 0x47fd8738, "." },
   ["BLACK_MARKET_HOT_ITEM_TIME_LEFT"] = { "残り時間: %s", 0x77ce6603, "." },

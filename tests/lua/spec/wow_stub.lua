@@ -296,6 +296,8 @@ function Stub.install(tocPath)
     }
     function frame:RegisterEvent(e) self.events[e] = true end
     function frame:UnregisterEvent(e) self.events[e] = nil end
+    -- the unit filter is recorded but not applied: a spec fires the event with the unit it means
+    function frame:RegisterUnitEvent(e, ...) self.events[e] = { ... } end
     function frame:SetScript(k, fn) self.scripts[k] = fn end
     function frame:GetScript(k) return self.scripts[k] end
     function frame:HookScript(k, fn)

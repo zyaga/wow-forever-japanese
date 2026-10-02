@@ -19,7 +19,7 @@ from wfj.core.model import ui_family
 from wfj.emit.lua_writer import shipped
 from wfj.io.jsonl_store import Store
 
-FOREVER_SRC = "db2@1.60.1.70124"
+FOREVER_SRC = "db2@1.60.1.70170"
 FINGERPRINTED = ("ItemSubClass:", "SpellItemEnchantment:", "SpellSubtext:")  # no client string: matched by the live line's hash
 PLURAL = re.compile(r"\|4([^:;|]*):([^;|]*);")
 
@@ -97,8 +97,12 @@ def test_no_shipped_ui_line_is_hidden_on_forever(root):
 
 def test_no_shipped_key_is_one_forever_does_not_define(root):
     # Forever is the only target, so a key only Classic Era defines does not ship (the served step drops its
-    # English; `check` makes the line no_english_id).
-    assert forever_counters(root)["unresolved"] == []
+    # English; `check` makes the line no_english_id). A key an earlier Forever build defined keeps its English
+    # (ADR-050): it is in the served record and is not unresolved.
+    record = root / "pipeline" / "served" / "ui.tsv"
+    earlier = {r.split("\t")[0] for r in record.read_text(encoding="utf-8").splitlines()
+               if r and not r.startswith("#")} if record.is_file() else set()
+    assert [k for k in forever_counters(root)["unresolved"] if k not in earlier] == []
 
 
 def test_the_recipe_counts_a_reworded_line_and_a_shared_english(root, tmp_path):

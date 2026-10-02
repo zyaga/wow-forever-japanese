@@ -146,6 +146,7 @@ WFJ.Data.add("ui", {
   ["READY_CHECK_YOU_WERE_AFK"] = { "レディチェックの間、離席中でした", 0x702ef727, "." },
   ["REALID_BATTLETAG_FRIEND_LABEL"] = { "メールアドレスを入力\n(またはBattleTag)", 0xf936eec7, "." },
   ["REALID_FRIEND_LABEL"] = { "メールアドレスを入力", 0x33e8aeb2, "." },
+  ["RECENT_ALLIES_CATEGORIES_FILTER_LABEL"] = { "カテゴリー", 0xd57ae8fd, "." },
   ["RECENT_ALLIES_MENU_BUTTON_LABEL_PIN"] = { "ピン留め", 0x001528f9, "." },
   ["RECENT_ALLIES_MENU_BUTTON_LABEL_SET_NOTE"] = { "メモを設定", 0x3887f30a, "." },
   ["RECENT_ALLIES_MENU_BUTTON_LABEL_UNPIN"] = { "ピン留めを解除", 0xe2e86bb1, "." },

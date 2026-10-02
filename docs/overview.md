@@ -7,6 +7,7 @@
 
 ## Doc map
 - [Principles](architecture/principles.md): the rules every change keeps (start here)
+- [Client limits](architecture/client-limits.md): what the Forever client keeps from addons (buff tooltips in combat, cooldown numbers, sealed chat lines) and what the addon does there
 - [App capabilities](app-capabilities.md): feature inventory
 - [Glossary](glossary.md): the project's vocabulary
 - [Roadmap](roadmap.md): what is done and what is next

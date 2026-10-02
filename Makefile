@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: coverage-py coverage-lua lint-public report-intake report-apply coverage forever-table-counts ui-inventory served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: coverage-py coverage-lua lint-public report-intake report-apply coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -317,6 +317,11 @@ ui-inventory: ## regenerate pipeline/ui_inventory.txt from a Forever UI extract 
 	@test -d "$(FOREVER_UI)" || { echo "ui-inventory: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }
 	@test -f "$(FOREVER_GLOBALSTRINGS)" || { echo "ui-inventory: no GlobalStrings at $(FOREVER_GLOBALSTRINGS) (FOREVER_GLOBALSTRINGS=<csv>)"; exit 1; }
 	cd pipeline && $(PY) -m wfj.dev.ui_inventory "$(FOREVER_UI)" "$(FOREVER_GLOBALSTRINGS)" > ui_inventory.txt.tmp && mv ui_inventory.txt.tmp ui_inventory.txt
+
+tooltip-line-kinds: ## regenerate pipeline/tooltip_line_kinds_inventory.txt and tooltip_data_types_inventory.txt from a Forever UI extract (commit the result): [FOREVER_UI=<Interface/AddOns>]
+	@test -d "$(FOREVER_UI)" || { echo "tooltip-line-kinds: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }
+	cd pipeline && $(PY) -m wfj.dev.tooltip_line_kinds "$(FOREVER_UI)" > tooltip_line_kinds_inventory.txt.tmp && mv tooltip_line_kinds_inventory.txt.tmp tooltip_line_kinds_inventory.txt
+	cd pipeline && $(PY) -m wfj.dev.tooltip_line_kinds --types "$(FOREVER_UI)" > tooltip_data_types_inventory.txt.tmp && mv tooltip_data_types_inventory.txt.tmp tooltip_data_types_inventory.txt
 
 # Every Blizzard addon the Forever (camelot) client loads, resolved from the TOCs in the same FOREVER_UI extract
 # (its client_ui path list must include the addons' .toc files). pipeline/forever_addon_dispositions.txt gives each

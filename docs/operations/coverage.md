@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-02 at commit `5572f85`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-02 at commit `b02d276`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -9,18 +9,18 @@
 
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
-| Quest text | 19,452 | 19,337 | 108 | 100.0% | 7 |
+| Quest text | 19,452 | 19,341 | 111 | 100.0% | 0 |
 | NPC dialogue (gossip, speech) | 10,641 | 10,641 | 0 | 100.0% | 0 |
-| Book / letter pages | 1,257 | 1,203 | 50 | 99.7% | 4 |
+| Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 409 | 372 | 37 | 100.0% | 0 |
 | Exploration / event objectives | 218 | 216 | 2 | 100.0% | 0 |
 | Item descriptions | 10,124 | 8,611 | 0 | 85.1% | 1,513 |
 | Spell tooltips + auras | 25,458 | 10,369 | 0 | 40.7% | 15,089 |
-| Interface strings | 13,593 | 13,512 | 81 | 100.0% | 0 |
-| **All** | **81,152** | | | **79.5%** | **16,613** |
+| Interface strings | 14,690 | 13,697 | 0 | 93.2% | 993 |
+| **All** | **82,249** | | | **78.6%** | **17,595** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
-professions, internal strings): quest 329, gossip 81, item 888, spell 285, ui 4.
+professions, internal strings): quest 329, gossip 81, item 888, spell 285, ui 86.
 
 ### Nothing to translate (counted as done)
 
@@ -29,22 +29,21 @@ professions, internal strings): quest 329, gossip 81, item 888, spell 285, ui 4.
 | Quest objective lines | name only (`pipeline/objective_names.txt`) | 37 |
 | Exploration / event objectives | name only (`pipeline/area_names.txt`) | 2 |
 | Quest text | placeholder quest (never shown) | 108 |
+| Quest text | a bare label: a name or a one-word placeholder (ships as the English) | 3 |
 | Book / letter pages | Missing Text / picture-only page | 49 |
-| Book / letter pages | picture-only or cipher page | 1 |
-| Interface strings | a client-table row its family's key list leaves out (a name or developer row, ADR-042) | 78 |
-| Interface strings | left out with its reason in `pipeline/ui_exclusions.txt` | 3 |
+| Book / letter pages | picture-only or cipher page | 2 |
+| Book / letter pages | a bare label: names and numbers only (ships as the English) | 1 |
 
 ### What is not done yet
 
 | Surface | Why | Lines |
 |---|---|---|
-| Quest text | no Japanese yet | 7 |
-| Book / letter pages | no Japanese yet | 4 |
 | Item descriptions | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 1,511 |
 | Item descriptions | no Japanese yet | 2 |
 | Spell tooltips + auras | no Japanese yet | 15,064 |
 | Spell tooltips + auras | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 23 |
 | Spell tooltips + auras | rejected: ruled_reject | 2 |
+| Interface strings | no Japanese yet | 993 |
 
 ## Served text inventory
 
@@ -55,13 +54,13 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Disposition | Columns | Lines |
 |---|---|---|
-| Shipped through a surface above | 36 | 76,470 |
-| Names (stay English) | 53 | 68,793 |
+| Shipped through a surface above | 59 | 82,925 |
+| Names (stay English) | 55 | 69,037 |
 | Internal (never printed) | 96 | 370,638 |
-| No place in the Forever client | 26 | 1,782 |
+| No place in the Forever client | 29 | 1,899 |
 | Same text as another column | 7 | 10,965 |
 | Empty on this build | 3 | 0 |
-| No disposition yet | 39 | 7,115 |
+| No disposition yet | 11 | 299 |
 
 ### Every column
 
@@ -74,8 +73,8 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `animkitboneset.f0` | internal | 18 | animation bone set names |
 | `areaconditionaldata.f0` | names | 2 | place names (The Drunken Dwarf) |
 | `areapoi.f0` | names | 372 | place names (Anvilmar, Brill) |
-| `areapoi.f1` | none | 150 |  |
-| `areapoistate.f0` | none | 17 |  |
+| `areapoi.f1` | surface:ui:AreaPoiDescription | 150 | Description_lang: map point tooltip lines (zone and faction names stay English) |
+| `areapoistate.f0` | surface:ui:AreaPoiState | 17 | Description_lang |
 | `areatable.f0` | internal | 1,371 | ZoneName: CamelCase tokens (DunMorogh) |
 | `areatable.f1` | names | 1,371 | AreaName_lang: zone and subzone names |
 | `auctionhouse.f0` | names | 21 | auction house names (Stormwind Auction House) |
@@ -93,7 +92,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `battlepaycurrency.f1` | internal | 42 | price formats ($%s) |
 | `battlepaycurrency.f2` | internal | 42 | price formats |
 | `battlepaycurrency.f3` | no-display | 41 | blizzard_catalogshop.toc and blizzard_storeui.toc declare UseSecureEnvironment: 1 |
-| `broadcasttext.f0` | none | 12 |  |
+| `broadcasttext.f0` | surface:ui:BroadcastText | 12 | Text_lang: the archive's rows (cinematic subtitles) |
 | `cfg_categories.f0` | internal | 100 | realm list categories (glue screen) |
 | `cfg_datacenterlocality.f0` | internal | 9 | data center names |
 | `cfg_regions.f0` | internal | 244 | region codes |
@@ -145,24 +144,24 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `creature.f2` | names | 3 | a creature title (Lord of Terror) |
 | `creaturefamily.f0` | names | 27 | pet family names (docs/research/2026-09-26-client-table-text.md) |
 | `creaturetype.f0` | surface:ui:CreatureType | 13 | Name_lang |
-| `criteriatree.f0` | none | 5,590 |  |
+| `criteriatree.f0` | surface:ui:CriteriaText | 5,590 | Description_lang: achievement and Legacy criteria (the achievements' own trees) |
 | `currencycategory.f0` | surface:ui:CurrencyCategory | 6 | Name_lang |
 | `currencytypes.f0` | names | 9 | Name_lang: currency names (Honor Points, Darkmoon Prize Ticket) |
 | `currencytypes.f1` | surface:ui:CurrencyDescription | 8 | Description_lang |
 | `datatagxrecord.f0` | internal | 210 | tag tokens (HouseDecor) |
-| `difficulty.f0` | none | 22 |  |
+| `difficulty.f0` | surface:ui:Difficulty | 22 | Name_lang |
 | `dungeonencounter.f0` | names | 342 | boss names |
 | `emotes.f0` | internal | 120 | animation tokens (ONESHOT_TALK) |
 | `emotestext.f0` | internal | 255 | slash tokens (AGREE) |
 | `emotestextdata.f0` | surface:ui:EmoteText | 1,334 | Text_lang |
-| `exhaustion.f0` | none | 5 |  |
+| `exhaustion.f0` | surface:ui:RestState | 5 | Name_lang (the XXX developer rows never listed) |
 | `exhaustion.f1` | internal | 4 | GlobalStrings keys (COMBATLOG_XPGAIN_EXHAUSTION1) |
 | `faction.f0` | names | 253 | Name_lang |
 | `faction.f1` | surface:ui:FactionDescription | 59 | Description_lang |
 | `factiongroup.f0` | names | 4 | Player, Alliance, Horde, Monster |
 | `factiongroup.f1` | names | 2 | Alliance, Horde |
-| `friendshipreputation.f0` | none | 1 |  |
-| `friendshipreputation.f1` | none | 1 |  |
+| `friendshipreputation.f0` | names | 1 | Rank Points: the PvP rank currency's name |
+| `friendshipreputation.f1` | surface:ui:FriendshipGain | 1 | StandingModified_lang: You gain %d Rank Points. |
 | `gamemode.f0` | internal | 5 | mode tokens (wfhc, standard) |
 | `gameobjects.f0` | names | 1,415 | object names (Old Coast Road) |
 | `gametips.f0` | no-display | 72 | loading screen tips are drawn by the client, not by a Lua frame an addon can reach (only the showLoadingScreenTips CVar, blizzard_settingsdefinitions_frame/camelot/interfaceoverrides.lua:63) |
@@ -181,7 +180,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `itemclass.f0` | no-display | 17 | the camelot auction data (blizzard_auctionhouseui/camelot/blizzard_auctiondata.lua) uses GlobalStrings categories; the class-only branch (shared/blizzard_auctiondata.lua:89-90) is never reached |
 | `itemlimitcategory.f0` | names | 30 | item names (Signet Ring of the Bronze Dragonflight) |
 | `itemnamedescription.f0` | surface:ui:ItemNameDescription | 92 | Description_lang |
-| `itempetfood.f0` | none | 8 |  |
+| `itempetfood.f0` | surface:ui:PetFood | 8 | Name_lang: pet diet words |
 | `itemsearchname.f0` | covered-by:itemsparse.f0 | 10,839 | item names again, for the search index; the names in itemsparse.f4 stay English and this table carries nothing else |
 | `itemset.f0` | names | 536 | item set names (The Gladiator) |
 | `itemsparse.f0` | surface:item.description | 4,842 | Description_lang |
@@ -191,7 +190,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `itemsparse.f4` | names | 23,720 | Display_lang: item names |
 | `itemsubclass.f0` | surface:ui:ItemSubClass | 100 | DisplayName_lang |
 | `itemsubclass.f1` | surface:ui:ItemSubClassName | 36 | VerboseName_lang |
-| `itemsubclassmask.f0` | none | 3 |  |
+| `itemsubclassmask.f0` | surface:ui:ItemSubClassMask | 3 | Name_lang (Requires Melee Weapon) |
 | `languages.f0` | names | 15 | language names (Orcish) |
 | `languagewords.f0` | internal | 1,583 | the made-up words other-faction speech is scrambled into |
 | `lfgdungeons.f0` | names | 71 | dungeon names |
@@ -202,7 +201,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `locktype.f1` | none | 23 |  |
 | `locktype.f2` | none | 19 |  |
 | `locktype.f3` | internal | 3 | tokens (PickLock, GatherHerbs) |
-| `mailtemplate.f0` | none | 111 |  |
+| `mailtemplate.f0` | surface:ui:MailBody | 111 | Body_lang: NPC mail bodies |
 | `manifestinterfacedata.f0` | internal | 134,289 | interface file folders |
 | `manifestinterfacedata.f1` | internal | 134,289 | interface file names |
 | `map.f0` | internal | 71 | Directory: map folder tokens |
@@ -210,9 +209,9 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `map.f2` | no-display | 6 | battleground short descriptions read only by blizzard_pvpui, which camelot does not load |
 | `map.f3` | no-display | 6 | battleground long descriptions read only by blizzard_pvpui, which camelot does not load |
 | `map.f4` | no-display | 1 | battleground objective title read only by blizzard_pvpui (the queue status shows the long description, map.f5) |
-| `map.f5` | none | 1 |  |
-| `mapdifficulty.f0` | none | 21 |  |
-| `mapdifficultyxcondition.f0` | none | 139 |  |
+| `map.f5` | surface:ui:PvpLongDescription | 1 | PvpLongDescription_lang: the battleground queue subtitle |
+| `mapdifficulty.f0` | surface:ui:InstanceEntryMessage | 21 | Message_lang: the error when entering an instance under its level |
+| `mapdifficultyxcondition.f0` | surface:ui:InstanceEntryFailure | 139 | FailureDescription_lang |
 | `mount.f0` | names | 141 | mount names |
 | `namegen.f0` | internal | 2,741 | random name generator syllables |
 | `namesprofanity.f0` | internal | 6,595 | name filter list |
@@ -220,7 +219,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `namesreservedlocale.f0` | internal | 2 | reserved name patterns |
 | `pagetextmaterial.f0` | internal | 6 | page background material names |
 | `paperdollitemframe.f0` | internal | 48 | frame names (HeadSlot) |
-| `petloyalty.f0` | none | 8 |  |
+| `petloyalty.f0` | surface:ui:PetLoyalty | 8 | Name_lang |
 | `playercondition.f0` | none | 97 |  |
 | `powerdisplay.f0` | internal | 5 | GlobalStrings keys (POWER_TYPE_MANA) |
 | `powertype.f0` | internal | 6 | power tokens (MANA) |
@@ -230,15 +229,15 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `pvpscoreboardcolumnheader.f2` | covered-by:pvpscoreboardcolumnheader.f0 | 3 | the same three header names (Flag Captures, Bases Assaulted) |
 | `pvpstat.f0` | covered-by:pvpscoreboardcolumnheader.f0 | 3 | the same stat names as the scoreboard headers |
 | `questfeedbackeffect.f0` | internal | 34 | effect names (openhandglow) |
-| `questinfo.f0` | none | 7 |  |
+| `questinfo.f0` | surface:ui:QuestTag | 7 | InfoName_lang: quest type tags (Elite, Dungeon) |
 | `questline.f0` | names | 3 | quest line names, quest titles |
 | `questsort.f0` | surface:ui:QuestSort | 39 | SortName_lang |
-| `renownrewards.f0` | none | 21 |  |
-| `renownrewards.f1` | none | 22 |  |
-| `renownrewards.f2` | none | 22 |  |
+| `renownrewards.f0` | surface:ui:RenownRewardName | 21 | Name_lang (reward item names stay English) |
+| `renownrewards.f1` | surface:ui:RenownRewardDescription | 22 | Description_lang |
+| `renownrewards.f2` | surface:ui:RenownRewardToast | 22 | ToastDescription_lang |
 | `resistances.f0` | covered-by:globalstrings.f1 | 7 | all 7 school names are GlobalStrings text (Physical, Holy, ...) |
-| `rolodextype.f0` | none | 21 |  |
-| `rolodextype.f1` | none | 19 |  |
+| `rolodextype.f0` | surface:ui:RecentAllyType | 21 | Description_lang: the Recent Allies tab (shown on Forever, in game 1.60.1.70170) |
+| `rolodextype.f1` | surface:ui:RecentAllyInteraction | 19 | the most recent interaction (Traded, Whispered) |
 | `scenescriptglobaltext.f0` | internal | 29 | script names |
 | `scenescriptglobaltext.f1` | internal | 29 | Lua source |
 | `scenescriptpackage.f0` | internal | 9 | script package names |
@@ -247,7 +246,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `screeneffect.f0` | internal | 77 | effect names (Ghost Screen Effect) |
 | `screenlocation.f0` | internal | 12 | position names (Center) |
 | `servermessages.f0` | none | 15 |  |
-| `sharedstring.f0` | none | 37 |  |
+| `sharedstring.f0` | surface:ui:SharedString | 37 | String_lang: talent requirement lines (profession names stay English) |
 | `skillline.f0` | names | 154 | DisplayName_lang: skill and profession names |
 | `skillline.f2` | surface:ui:SkillLineDescription | 56 | Description_lang |
 | `skilllinecategory.f0` | surface:ui:SkillCategory | 9 | Name_lang |
@@ -266,15 +265,15 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `spelldispeltype.f1` | internal | 4 | InternalName: the same four words, upper-case tokens for code |
 | `spellflyout.f0` | none | 19 |  |
 | `spellflyout.f1` | none | 19 |  |
-| `spellfocusobject.f0` | none | 243 |  |
+| `spellfocusobject.f0` | names | 243 | object names a recipe or spell needs (Anvil, Forge, Ambermill Leyline Focus); names stay English |
 | `spellitemenchantment.f0` | surface:ui:SpellItemEnchantment | 2,215 | Name_lang: enchant lines on item tooltips |
 | `spellkeyboundoverride.f0` | internal | 1 | a key token (JUMP) |
 | `spellmechanic.f0` | internal | 36 | lower-case mechanic names (charmed, dazed); no Forever display site (docs/research/2026-09-26-client-table-text.md) |
 | `spellmissilemotion.f0` | internal | 66 | missile motion names |
 | `spellname.f0` | names | 31,731 | Name_lang: spell names |
 | `spelloverridename.f0` | names | 1 | one spell name |
-| `spellrange.f0` | none | 58 |  |
-| `spellrange.f1` | none | 58 |  |
+| `spellrange.f0` | no-display | 58 | in game on 1.60.1.70170, Wrath (SpellRange 4 "Medium Range", 30 yards) shows SPELL_RANGE "30 yd range", already Japanese; melee spells use MELEE_RANGE |
+| `spellrange.f1` | no-display | 58 | the short range names (Medium); not printed, as spellrange.f0 |
 | `spellscript.f0` | internal | 1 | script name |
 | `spellscript.f1` | internal | 1 | Lua source |
 | `spellscript.f2` | internal | 1 | author name of a script |
@@ -285,8 +284,8 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `terraintype.f0` | internal | 23 | terrain names for footstep sounds |
 | `terraintypesounds.f0` | internal | 20 | terrain names for footstep sounds |
 | `totemcategory.f0` | names | 28 | totem and tool item names (Earth Totem) |
-| `toy.f0` | none | 1 |  |
-| `tradeskillcategory.f0` | none | 216 |  |
+| `toy.f0` | no-display | 1 | in game on 1.60.1.70170, ToggleCollectionsJournal(COLLECTIONS_JOURNAL_TAB_INDEX_TOYS) opens Appearances with one tab (Items); there is no Toy Box |
+| `tradeskillcategory.f0` | surface:ui:TradeSkillCategory | 216 | Name_lang: recipe list headers (profession names stay English) |
 | `traitcost.f0` | no-display | 10 | talent costs print CurrencyTypes text (blizzard_sharedtalentui/blizzard_sharedtalentframe.lua:1837-1849), not TraitCost |
 | `traitcurrencysource.f0` | no-display | 186 | only C_ProfSpecs.GetSourceTextForPath reads it (blizzard_professions/blizzard_professionsspecializationstemplates.lua:121); camelot's profession frame has no specialization page |
 | `traitdefinition.f0` | internal | 1 | one numeric override string (16972) |
@@ -302,7 +301,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `uicameratype.f0` | internal | 10 | camera type names |
 | `uieventtoast.f0` | covered-by:globalstrings.f1 | 2 | Level %d, Rank %d are GlobalStrings text |
 | `uieventtoast.f1` | covered-by:globalstrings.f1 | 2 | You've Reached is GlobalStrings text |
-| `uieventtoast.f3` | none | 2 |  |
+| `uieventtoast.f3` | surface:ui:EventToastText | 2 | SubIcon_lang |
 | `uimap.f0` | names | 60 | map names |
 | `uimodelsceneactor.f0` | internal | 1,008 | actor names |
 | `uimodelscenecamera.f0` | internal | 302 | camera names |
@@ -332,10 +331,10 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 18,033 | 18,033 | 100.0% | 177 | 285,908 | 100.0% |
+| quest | 18,037 | 18,037 | 100.0% | 177 | 285,915 | 100.0% |
 | gossip | 10,513 | 10,513 | 100.0% | 0 | 98,175 | 100.0% |
-| ui | 13,162 | 13,162 | 100.0% | 0 | 39,731 | 100.0% |
-| book | 1,165 | 1,165 | 100.0% | 0 | 39,566 | 100.0% |
+| ui | 13,265 | 13,265 | 100.0% | 0 | 39,889 | 100.0% |
+| book | 1,167 | 1,167 | 100.0% | 0 | 39,571 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages
 and lines holding a `|` escape are not counted.

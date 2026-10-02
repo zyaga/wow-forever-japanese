@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 
 from wfj.cmd.import_ import run
@@ -159,12 +160,14 @@ def test_committed_data_validates(root):
     # (`schema.MULTI_VERSION_SOURCES`). Every source is still a PINNED build; that is what this asserts.
     pinned = {
         "pfquest@7786596", "wago@1.15.9.69722", "vmangos@13b49dc", "wdb@1.15.9.69722",
-        "wdb@1.60.1.70124", "db2@1.60.1.70124",  # Forever's pinned build
+        "wdb@1.60.1.70170", "db2@1.60.1.70170",  # Forever's pinned build
     }
+    # Additive (ADR-050): a line an earlier Forever build served keeps that build's stamp
+    earlier_forever = re.compile(r"^(wdb|db2)@1\.60\.1\.\d+$")
     for type_ in ("quest", "item", "spell"):
         for line in english.load(type_):
             assert validate_line(type_, line, english=True) == [], (type_, line["id"], line["field"])
-            assert line["src"] in pinned, line["src"]
+            assert line["src"] in pinned or earlier_forever.match(line["src"]), line["src"]
             total += 1
     if total:
         assert total > 100000

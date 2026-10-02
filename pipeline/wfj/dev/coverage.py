@@ -33,7 +33,7 @@ from typing import Any
 from wfj.core import readings
 from wfj.dev import served_dispositions
 from wfj.dev.served_columns import inventory_build, read_inventory
-from wfj.dev.translate_batch import AREA_NAMES, OBJECTIVE_NAMES, objective_names
+from wfj.dev.translate_batch import AREA_NAMES, OBJECTIVE_NAMES, has_prose, objective_names
 from wfj.emit.lua_writer import shipped
 from wfj.io.jsonl_store import Store
 from wfj.io.wdb import PLACEHOLDER_TITLE
@@ -65,17 +65,24 @@ _TAG = re.compile(r"<[^>]*>")
 _WORD = re.compile(r"[A-Za-z]{2,}")
 
 
-def nothing_to_translate(type_: str, en: str, title: str | None) -> str | None:
+def nothing_to_translate(type_: str, en: str, title: str | None, field: str = "") -> str | None:
     """Why a line has nothing to translate, or None: a placeholder quest (`<UNUSED>`, `<NYI>`, `REUSE`, never
-    drafted), a book page that is "Missing Text", only pictures / markup, or a cipher."""
+    drafted), a book page that is "Missing Text", only pictures / markup, or a cipher, and a quest or book
+    line
+    that is a bare label (`has_prose`: no lower-case word, token or sentence punctuation: a name and a colon,
+    a name and two years, "Log"). A quest title is never a bare label: titles are written in title case."""
     if type_ == "quest" and title is not None and PLACEHOLDER_TITLE.search(title):
         return "placeholder quest (never shown)"
     if type_ == "book":
         text = _TAG.sub(" ", en)
         if text.strip().lower() in ("missing text", ""):
             return "Missing Text / picture-only page"
-        if not _WORD.search(text) or re.fullmatch(r"[\s01]+", text):
+        if not _WORD.search(text) or re.fullmatch(r"[\s01]+", text) or re.fullmatch(r"[\sOo]+", text):
             return "picture-only or cipher page"
+        if not has_prose(text):
+            return "a bare label: names and numbers only (ships as the English)"
+    if type_ == "quest" and field != "title" and not has_prose(en):
+        return "a bare label: a name or a one-word placeholder (ships as the English)"
     return None
 
 
@@ -134,7 +141,7 @@ def measure(root: Path) -> dict[str, Any]:
             elif ln["id"] in names:
                 named += 1
             elif why := (
-                nothing_to_translate(type_, ln["en"], titles.get(ln["id"]))
+                nothing_to_translate(type_, ln["en"], titles.get(ln["id"]), ln["field"])
                 or (type_ == "ui" and ui_left_out(str(ln["id"]), ui_keys, ui_excluded))
             ):
                 nothing[why] += 1

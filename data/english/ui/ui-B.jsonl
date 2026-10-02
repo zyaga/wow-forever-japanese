@@ -412,6 +412,7 @@
 {"id": "BINDING_NAME_TURNRIGHT", "field": "text", "en": "Turn Right", "hash": "5a3bd3c00c7818e3", "src": "db2@1.60.1.70170"}
 {"id": "BINDING_NAME_VEHICLEEXIT", "field": "text", "en": "Exit Vehicle", "hash": "9f777e0e879390d2", "src": "db2@1.60.1.70170"}
 {"id": "BIND_ENCHANT", "field": "text", "en": "Enchanting this item will bind it to you.", "hash": "6abd1b0c6b1f121d", "src": "db2@1.60.1.70170"}
+{"id": "BIND_TRADE_TIME_REMAINING", "field": "text", "en": "You may trade this item with players that were also eligible to loot this item for the next %s (including time offline).", "hash": "3f309366ed8b1e6a", "src": "db2@1.60.1.70170"}
 {"id": "BLACK_MARKET_AUCTION_CONFIRMATION", "field": "text", "en": "Are you sure you wish to bid %s on the following item?", "hash": "879efd09ade8c07e", "src": "db2@1.60.1.70170"}
 {"id": "BLACK_MARKET_HOT_ITEM_CURRENT_BID", "field": "text", "en": "Current Bid:", "hash": "47fd8738cfaaa8a4", "src": "db2@1.60.1.70170"}
 {"id": "BLACK_MARKET_HOT_ITEM_TIME_LEFT", "field": "text", "en": "Time Left: %s", "hash": "77ce6603a84fd516", "src": "db2@1.60.1.70170"}

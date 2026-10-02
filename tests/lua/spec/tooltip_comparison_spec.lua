@@ -31,6 +31,7 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
     Stub.installTooltipAPI()
     local files = {}
     for i, f in ipairs(H.UI_FILES) do files[i] = f end
+    files[#files + 1] = "UI/TimeLine.lua"
     files[#files + 1] = "UI/Tooltip.lua"
     WFJ = H.loadChunks(files)
     H.uiSetup(WFJ, UI, { lookup = function(kind, id)

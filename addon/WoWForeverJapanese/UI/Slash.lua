@@ -295,14 +295,10 @@ function Slash.debug(sub, arg)
   say("tooltip frames: %d/%d · hook path: %s · spell description API: %s · aura hooks: %d · aura errors: %d",
     got, want, tostring(path), api and "present" or "absent (positional rule)", auras or 0,
     WFJ.Tooltip.auraErrors or 0)
-  local sp = WFJ.Tooltip.secretPasses
-  say("secret tooltips: %d written back · skipped: %d nothing to write · %d another spell · %d line count · "
-    .. "%d another owner · %d English wanted", sp.reapplied, sp.nothing, sp.other, sp.lines, sp.owner, sp.off)
-  local mm = WFJ.Tooltip.lastMismatch
-  if mm then
-    say("secret tooltips: last line-count skip: remembered %d lines, the secret pass had %d", mm.remembered, mm.secret)
-    for i, text in ipairs(mm.english or {}) do say("  remembered line %d: %s", i, text) end
-  end
+  local hp = WFJ.Tooltip.hidden
+  say("hidden tooltips: %d written from the client's own tooltip data · %d left as the client wrote them%s",
+    hp.written, hp.left, hp.last and (" · last: " .. hp.last) or "")
+  say("tooltip time: %s", WFJ.TimeLine.status())
   local kb = WFJ.Compat.memoryKB()
   say("memory: %s", kb and ("%.1f MB"):format(kb / 1024) or "n/a")
   local c = WFJ.Data.counts

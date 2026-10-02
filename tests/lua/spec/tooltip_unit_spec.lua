@@ -5,6 +5,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
+FILES[#FILES + 1] = "UI/TimeLine.lua"
 FILES[#FILES + 1] = "UI/Tooltip.lua"
 FILES[#FILES + 1] = "UI/TooltipUnit.lua"
 
