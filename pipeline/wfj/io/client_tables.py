@@ -670,19 +670,37 @@ def _key(table: Table, row: dict[str, str]) -> tuple:
     return (int(row["ClassID"]), int(row["SubClassID"]))  # ItemSubClass
 
 
-def read_parsed(table: Table, path: Path) -> dict[tuple, dict[str, str | int]]:
-    """A CSV (ours or wago's, any extra columns ignored) → {row key: {column: parsed value}}."""
+def _header(path: Path) -> list[str]:
+    with Path(path).open(encoding="utf-8", newline="") as f:
+        return next(csv.reader(f), [])
+
+
+def skipped_columns(table: Table, theirs: Path) -> list[str]:
+    """The relation columns the other export leaves out. A relation column is not in the record: on Forever
+    ItemEffect has no parent relation and ours writes 0 (see its layout), and wago.tools drops the column, so
+    it is not compared. Only a relation column may be missing; any other is still an error."""
+    header = _header(theirs)
+    return [c.name for c in table.columns if c.source == PARENT and c.name not in header]
+
+
+def read_parsed(
+    table: Table, path: Path, skip: Iterable[str] = ()
+) -> dict[tuple, dict[str, str | int]]:
+    """A CSV (ours or wago's, any extra columns ignored) → {row key: {column: parsed value}}, without the
+    `skip` columns."""
+    skip = set(skip)
+    columns = [c for c in table.columns if c.name not in skip]
     out: dict[tuple, dict[str, str | int]] = {}
     with Path(path).open(encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
-        missing = [c.name for c in table.columns if c.name not in (reader.fieldnames or [])]
+        missing = [c.name for c in columns if c.name not in (reader.fieldnames or [])]
         if missing:
             raise TableError(f"{Path(path).name}: no column {missing}")
         for row in reader:
             key = _key(table, row)
             if key in out:
                 raise TableError(f"{Path(path).name}: row {key} listed twice")
-            out[key] = {c.name: parse_value(c, row[c.name]) for c in table.columns}
+            out[key] = {c.name: parse_value(c, row[c.name]) for c in columns}
     return out
 
 
@@ -696,11 +714,12 @@ class Difference:
 
 def compare(table: Table, ours: Path, theirs: Path) -> tuple[int, int, list[Difference]]:
     """(rows ours, rows theirs, differences). A row only one side has is a difference on every column."""
-    a, b = read_parsed(table, ours), read_parsed(table, theirs)
+    skip = skipped_columns(table, theirs)
+    a, b = read_parsed(table, ours, skip), read_parsed(table, theirs, skip)
     diffs = []
     for key in sorted(a.keys() | b.keys(), key=lambda k: tuple(str(x) for x in k)):
         ra, rb = a.get(key), b.get(key)
-        for c in table.columns:
+        for c in (c for c in table.columns if c.name not in skip):
             va = None if ra is None else ra[c.name]
             vb = None if rb is None else rb[c.name]
             if va != vb:

@@ -158,6 +158,9 @@ def _compare(
     reader_diffs = [k for k in reader_diffs if client_tables.reader_row_key(table, k) not in excused_rows]
     rows = len({d.key for d in diffs})
     print(f"  against {theirs.name}: {n_ours} rows ours · {n_theirs} rows wago · {rows} rows differ")
+    skipped = client_tables.skipped_columns(table, theirs)
+    if skipped:
+        print(f"  not compared (a relation column wago leaves out): {', '.join(skipped)}")
     if fixed:
         print(f"  differ only where a hotfix applied: {len({d.key for d in fixed})} rows")
     for d in diffs[:SHOW_DIFFERENCES]:

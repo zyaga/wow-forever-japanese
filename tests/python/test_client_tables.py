@@ -474,3 +474,19 @@ def test_only_absence_is_forgiven_for_an_optional_table(root: Path, tmp_path: Pa
     a = casc.LocalArchive(wow, PRODUCT)
     with pytest.raises(client_tables.TableError):
         client_tables.extract(a, client_tables.TABLES["ItemXItemEffect"])
+
+
+def test_compare_skips_only_a_relation_column_the_other_export_leaves_out(tmp_path: Path):
+    """Forever's ItemEffect has no parent relation: ours writes ParentItemID 0, wago.tools drops the column.
+    The other columns are still compared; a missing record column is still an error."""
+    table = client_tables.TABLES["ItemEffect"]
+    ours, theirs = tmp_path / "ours.csv", tmp_path / "theirs.csv"
+    ours.write_text("ID,LegacySlotIndex,TriggerType,SpellID,ParentItemID\n1,0,0,100,0\n2,0,1,200,0\n")
+    theirs.write_text("ID,LegacySlotIndex,TriggerType,Charges,SpellID\n1,0,0,0,100\n2,0,1,0,201\n")
+    assert client_tables.skipped_columns(table, theirs) == ["ParentItemID"]
+    n_ours, n_theirs, diffs = client_tables.compare(table, ours, theirs)
+    assert (n_ours, n_theirs) == (2, 2)
+    assert [(d.key, d.column, d.ours, d.theirs) for d in diffs] == [((2,), "SpellID", 200, 201)]
+    theirs.write_text("ID,LegacySlotIndex,TriggerType\n1,0,0\n")  # a record column gone: not skipped
+    with pytest.raises(client_tables.TableError, match="no column"):
+        client_tables.compare(table, ours, theirs)
