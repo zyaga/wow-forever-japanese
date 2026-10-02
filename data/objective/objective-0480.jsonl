@@ -1,0 +1,1 @@
+{"id": 480147, "field": "text", "ja": "Kyleに餌をあげた", "status": "trusted", "checks": ["names"], "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-repull70170-obj-sg12@2026-10-02", "imported": "2026-10-02"}, "english": {"hash": "73cce68df576e45c", "src": "wdb@1.60.1.70170"}, "reasons": [], "conflicts": []}

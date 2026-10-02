@@ -69,6 +69,7 @@ WFJ.Data.add("item", {
   [14547] = { "【使用】Demon Portalを閉じます。", 0x83dcf42d, "u" },
   [14602] = { "【装備】ヒット率+4", 0xc6815a10, "u" },
   [14613] = { "刻まれた文字：愛する息子Taelanへ。Loveを込めて、父より。", 0x0776c4a0, "u" },
+  [14625] = { "Order of the Silver Hand", 0x0f056048, "u" },
   [14627] = { "Bright Yellow Shirtの縫い方を習得します。", 0x04618f13, "u" },
   [14630] = { "Enchanter's Cowlの縫い方を習得します。", 0xa2805daa, "u" },
   [14634] = { "Frost Oilの作り方を習得する。", 0xbff41956, "u" },

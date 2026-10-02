@@ -2,4 +2,11 @@
 local _, WFJ = ...
 WFJ.Data.add("spell", {
   [1322007] = { "ウォーロックの指揮下にあるVoidwalkerを召喚します。", nil, 0xe766a608, nil, "um" },
+  [1322218] = { "Great Forgeの炎で対象を燃え上がらせ、$N1のHolyfireダメージを与えます。Fire ElementalとEarth Elementalには$N2倍のダメージを与えます。", nil, 0x1fe0e4bc, nil, "um" },
+  [1322295] = { "対象に炎を放ち、$N1のFireダメージを与えます。", nil, 0x9d8bd0af, nil, "um" },
+  [1322303] = { "近くにあるHumanoidまたはUndeadの死体を真っ二つに叩き切り、体力を$N1、マナを$N2、怒りを$N3回復します。", nil, 0x52063f37, nil, "um" },
+  [1322312] = { "Cookingの速度が$N1%上昇します。", nil, 0x2371bf1d, nil, "um" },
+  [1322587] = { "チーズケーキを食べると幸せになります。", "わーい、チーズケーキです！", 0x81d403b4, 0xc0088836, "uu" },
+  [1322605] = { "マナ$N1を即座にエネルギー$N2に変換します。Shifting Powerのコストは、Shapeshiftingのコストを減らす効果によって減少します。", nil, 0xa7e4f4f6, nil, "um" },
+  [1322670] = { "Shifting Power呪文のクールダウンを$D1短縮します。", nil, 0x9860d8d1, nil, "um" },
 })

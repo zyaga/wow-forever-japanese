@@ -26,7 +26,7 @@ WFJ.Data.add("spell", {
   [400621] = { "敵に$N1のFireダメージを与えます。", nil, 0x27fcb60f, nil, "um" },
   [400622] = { "敵に$N1のFireダメージを与えます。", nil, 0x27fcb60f, nil, "um" },
   [400623] = { "敵に$N1のFireダメージを与えます。", nil, 0x27fcb60f, nil, "um" },
-  [400624] = { "Fireball、Frostfire Bolt、Fire Blast、Scorchの持続型でないクリティカルで、$D1の間Hot Streakを得ます。Hot StreakはPyroblastの詠唱時間を$N2%短縮し、最大$N3回まで重なります。", nil, 0x0ff8c902, nil, "um" },
+  [400624] = { "Fireball、Frostfire Bolt、Fire Blast、Scorchによる非周期的なクリティカルで、$D1以内に詠唱する次のPyroblastの詠唱時間が$N2%短縮されます。最大$N3回まで累積します。", nil, 0xa37f53a1, nil, "um" },
   [400640] = { "敵の対象に$N1のFrostダメージを与えます。Frozenの対象には$N2%増加したダメージを与えます。", nil, 0x3353dc3d, nil, "um" },
   [400647] = { "Chill効果に$N1%の確率でFingers of Frost効果を得る力を与えます。Fingers of Frostは、次に唱える$N2回の呪文を対象がFrozenであるかのように扱います。効果時間は$D1です。", nil, 0x57768bb5, nil, "um" },
 })

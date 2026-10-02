@@ -190,5 +190,5 @@ WFJ.Data.add("spell", {
   [13978] = { "Aquementasを召喚します。", nil, 0x7dcfff15, nil, "um" },
   [13981] = { "VanishとBlindのクールダウンを$N1秒短縮します。", nil, 0x141d64d5, nil, "um" },
   [13982] = { "Bael'Garの遺骸に使用し、その炎のエッセンスを捕らえます。", nil, 0x501879ed, nil, "um" },
-  [13983] = { "攻撃をDodgingした後、または呪文を完全にレジストした後に、$N1%の確率で対象にCombo Pointを加えます。", nil, 0x0e511ea5, nil, "um" },
+  [13983] = { "敵の攻撃をDodgingした後、または敵の呪文を完全に抵抗した後、$N1%の確率で対象にCombo Pointを追加します。", nil, 0x7fb99196, nil, "um" },
 })

@@ -11,7 +11,7 @@ WFJ.Data.add("item", {
   [281042] = { "Bundle of Herbs、Bundle of Dried Cedar Twigs、Sinew Thread、Ceremonial Flint and Tinderを組み合わせてPrepared Incenseを作ります。", 0x8e38e0e9, "u" },
   [281043] = { "Bundle of Herbs、Bundle of Dried Cedar Twigs、Sinew Thread、Ceremonial Flint and Tinderを組み合わせてPrepared Incenseを作ります。", 0x8e38e0e9, "u" },
   [281044] = { "Bundle of Herbs、Bundle of Dried Cedar Twigs、Sinew Thread、Ceremonial Flint and Tinderを組み合わせてPrepared Incenseを作ります。", 0x8e38e0e9, "u" },
-  [281059] = { "対象に丸鋸の刃を放ち、$N1のダメージを与え、$D1かけて$N2の出血ダメージを与えます。", 0x1224236f, "u" },
+  [281059] = { "対象にノコギリ刃を発射して$N1のダメージを与え、$D1かけて$N2の出血ダメージを与えます。", 0xad6f6653, "u" },
   [281060] = { "同じくReplica Ironforge Air Rifleを装備している他のプレイヤーをStunさせようと試みます。\n銃床に方位磁針が付き、得点を記録するノームの仕掛けを備えた公式版です。", 0xc6ddba1d, "u" },
   [281166] = { "このペットの呼び出し方を習得します。", 0x42caee1b, "u" },
   [281167] = { "このペットの呼び出し方を習得します。", 0x42caee1b, "u" },

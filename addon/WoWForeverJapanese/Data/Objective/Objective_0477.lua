@@ -2,6 +2,10 @@
 local _, WFJ = ...
 WFJ.Data.add("objective", {
   [477011] = { "Veenixを見つける", 0x36a09fcd, "." },
+  [477055] = { "攻撃計画：Menethil Harborを破棄した", 0xec97b436, "." },
+  [477056] = { "攻撃計画：Thelsamarを破棄した", 0xc525f778, "." },
+  [477057] = { "攻撃計画：Southshoreを破棄した", 0xb2b0778e, "." },
+  [477058] = { "攻撃計画：Ironforgeを破棄した", 0x6752771f, "." },
   [477150] = { "Eye of Kilroggを道まで誘導する", 0x47d031d6, "." },
   [477266] = { "Enchantingのスキルを20まで上げる", 0x67d7fcad, "." },
   [477267] = { "Engineeringのスキルを20まで上げる", 0xe75484ed, "." },
@@ -10,6 +14,7 @@ WFJ.Data.add("objective", {
   [477368] = { "Mountaineer Corneliusを見つける", 0x4c37d9bb, "." },
   [477504] = { "Tarantula Eggを破壊する", 0xecffe759, "." },
   [477518] = { "Webbed Forsakenを解放する", 0x280e18e3, "." },
+  [477594] = { "Kurothelと接触した", 0xadfe25a4, "." },
   [477632] = { "Doctor Martin Felbenと話す", 0x35c836fd, "." },
   [477671] = { "Raven Hillを調査する", 0x6e4a2ba7, "." },
 })

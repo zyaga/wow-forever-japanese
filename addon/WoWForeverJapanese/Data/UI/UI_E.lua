@@ -528,7 +528,7 @@ WFJ.Data.add("ui", {
   ["ERR_FRIEND_REMOVED_S"] = { "%sをフレンドリストから削除しました。", 0x68b8f0c4, "." },
   ["ERR_FRIEND_SELF"] = { "自分自身をフレンドリストに追加することはできません。", 0x43969318, "." },
   ["ERR_FRIEND_WRONG_FACTION"] = { "フレンドは同じ勢力である必要があります。", 0x6383ee51, "." },
-  ["ERR_FULL_NAME_REQUIRED"] = { "キャラクター名をすべて入力してください。", 0x17b0ff33, "." },
+  ["ERR_FULL_NAME_REQUIRED"] = { "キャラクター名をすべて入力してください。", 0x8210c7eb, "." },
   ["ERR_GAMEPAD_CANNOT_CLEAR_ACTION"] = { "この種類のアクションはアクションバーから消去できません。", 0x0884844d, "." },
   ["ERR_GENERIC_NO_TARGET"] = { "ターゲットがいません。", 0x34f8e4ec, "." },
   ["ERR_GENERIC_NO_VALID_TARGETS"] = { "有効なターゲットがいません。", 0x91024474, "." },

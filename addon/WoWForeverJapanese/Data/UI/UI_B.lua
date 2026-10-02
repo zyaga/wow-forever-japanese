@@ -31,6 +31,7 @@ WFJ.Data.add("ui", {
   ["BAG_NAME_BAG_3"] = { "バッグ3", 0x93a371e3, "." },
   ["BAG_NAME_BAG_4"] = { "バッグ4", 0x93a371e4, "." },
   ["BANKSLOTPURCHASE"] = { "購入", 0xc1e4eed3, "." },
+  ["BANKSLOTPURCHASE_LABEL"] = { "バッグスロットを追加購入しますか?", 0x1fd39fc4, "." },
   ["BANK_BAG"] = { "バッグスロット", 0xb2265a2c, "." },
   ["BANK_BAG_PURCHASE"] = { "購入可能なバッグスロット", 0xf1120290, "." },
   ["BANK_CONFIRM_CLEANUP_PROMPT"] = { "アイテムを自動で整理してもよろしいですか？|nすべてのタブが対象になります。", 0x846a7d3c, "." },

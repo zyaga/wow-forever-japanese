@@ -406,7 +406,7 @@ WFJ.Data.add("gloss", {
   [37403] = "乗り込む\tのりこむ\tventuring into",
   [37404] = "乗り込む\tのりこむ\twaltz in there",
   [37405] = "乗り込む\tのりこむ\twent into (march in)",
-  [37406] = "乗る\tのる\t(borne on) (ride)",
+  [37406] = "乗る\tのる\t-borne (riding)",
   [37407] = "乗る\tのる\tare (you) in",
   [37408] = "乗る\tのる\tare in (join)",
   [37409] = "乗る\tのる\tare on (riding)",

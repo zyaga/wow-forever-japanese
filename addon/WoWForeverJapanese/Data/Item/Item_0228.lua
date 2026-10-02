@@ -42,6 +42,7 @@ WFJ.Data.add("item", {
   [228318] = { "Mooncloth Leggingsの縫い方を習得します。", 0x6077a1b6, "u" },
   [228319] = { "Girdle of Insightの製作方法を習得します。", 0x3ed3c4e7, "u" },
   [228324] = { "Blood Loaへのあなたの多大な貢献を示す象徴。", 0x2d99cb2a, "u" },
+  [228327] = { "Silver Massacre Coinsが100枚入っています", 0x671ed6c8, "u" },
   [228477] = { "Embroidered Belt of the Archmageの縫い方を習得します。", 0xe93853ac, "u" },
   [228659] = { "Enchanted Black Dragon Sinewと組み合わせると、Rhok'delar, Longbow of the Ancient Keepersになります。\nAncientsからのGift。", 0x673b1dc2, "u" },
   [228696] = { "brood motherの心臓に突き立て、熱した刃を鍛え上げます。", 0xee536910, "u" },

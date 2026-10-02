@@ -8,6 +8,6 @@ WFJ.Data.add("spell", {
   [1303509] = { "Hunter Riseの南の崖にお香をまきます。", nil, 0x55017d5c, nil, "um" },
   [1303520] = { "Bundle of Herbs、Bundle of Dried Cedar Twigs、Sinew Thread、Ceremonial Flint and Tinderを組み合わせてPrepared Incenseを作ります。", nil, 0x8e38e0e9, nil, "um" },
   [1303543] = { "野営地にScarlet Bannerを立てます。近くにCampfireが必要です。", nil, 0xc1dc1b97, nil, "um" },
-  [1303853] = { "危険物を、Gadgetzanやほかのゴミから安全な距離だけ離れた場所に廃棄します。", nil, 0xed0f38eb, nil, "um" },
+  [1303853] = { "危険物を、Gadgetzanやほかのゴミから安全な距離まで離れた場所に捨てます。", nil, 0xc144223e, nil, "um" },
   [1303869] = { "負傷したSlave Workerを殴って正気に戻した後、Hearthstoneを投げ渡します。", "大胆な脱出を試みています！", 0x2d946e0d, 0x105909c3, "uu" },
 })

@@ -99,6 +99,7 @@ Data\Item\Item_0210.lua
 Data\Item\Item_0211.lua
 Data\Item\Item_0212.lua
 Data\Item\Item_0213.lua
+Data\Item\Item_0214.lua
 Data\Item\Item_0215.lua
 Data\Item\Item_0216.lua
 Data\Item\Item_0217.lua
@@ -167,6 +168,7 @@ Data\Item\Item_0282.lua
 Data\Item\Item_0284.lua
 Data\Item\Item_0285.lua
 Data\Item\Item_0286.lua
+Data\Item\Item_0287.lua
 Data\Spell\Spell_0000.lua
 Data\Spell\Spell_0001.lua
 Data\Spell\Spell_0002.lua
@@ -392,6 +394,7 @@ Data\Spell\Spell_1319.lua
 Data\Spell\Spell_1320.lua
 Data\Spell\Spell_1321.lua
 Data\Spell\Spell_1322.lua
+Data\Spell\Spell_1323.lua
 Data\Objective\Objective_0380.lua
 Data\Objective\Objective_0381.lua
 Data\Objective\Objective_0382.lua
@@ -417,6 +420,7 @@ Data\Objective\Objective_0476.lua
 Data\Objective\Objective_0477.lua
 Data\Objective\Objective_0478.lua
 Data\Objective\Objective_0479.lua
+Data\Objective\Objective_0480.lua
 Data\Area\Area_0000.lua
 Data\Area\Area_0001.lua
 Data\Area\Area_0002.lua

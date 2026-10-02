@@ -217,7 +217,7 @@ WFJ.Data.add("spell", {
   [24844] = { "雷を吐き、単体の対象に即座に$N1のNatureダメージを与えます。", nil, 0x8264dfdf, nil, "um" },
   [24845] = { "稲妻を吐き、単体の対象に即座に$N1のNatureダメージを与えます。", nil, 0x570a9dfb, nil, "um" },
   [24854] = { "Mana Spring Totemを$D1の間召喚し、$N4ヤード以内のパーティメンバーのマナを$N3秒ごとに$N2回復します。", nil, 0x72a4b677, nil, "um" },
-  [24858] = { "ドルイドをMoonkin Formに変身させます。この形態の間、アイテムによるアーマーの寄与が$N1%増加し、Omen of Clarityの発動率が$N2%上昇し、$N3ヤード以内のすべてのパーティーメンバーのクリティカル率が$N4%増加します（Leader of the Packとは重複しません）。Moonkinは変身中、治癒呪文を唱えられません。\n\n変身することで、術者はPolymorphおよびMovement Impairing効果から解放されます。", "Polymorph効果に対する免疫があります。Omen of Clarityの発動率が上昇します。アイテムによるアーマーの上昇量が$N1%増加します。", 0x5b6b8c6c, 0x0a5e2d8b, "uu" },
+  [24858] = { "Moonkin Formに変身し、Omen of Clarityの発動確率が$N1%、アイテムによるアーマーが$N2%上昇し、$N3ヤード以内のすべてのパーティーメンバーのCritical Strike率が$N4%上昇します（Leader of the Packとは重複しません）。また、術者をPolymorph効果から守りますが、回復呪文は使えなくなります。\n\n変身することで、術者はPolymorphとMovement Impairingの効果から解放されます。", "Polymorph効果に対する免疫があります。Omen of Clarityの発動率が上昇します。アイテムによるアーマーの上昇量が$N1%増加します。", 0x21a43b83, 0x0a5e2d8b, "uu" },
   [24865] = { "マナを$N1回復します。この効果はWastelandとHauntedのエリアでは倍になります。", nil, 0x0f9fdc4d, nil, "um" },
   [24869] = { "$D1の間、毎秒体力の$N1%を回復します。回復中は座っている必要があります。$N3秒以上食事を続けると満腹状態になり、$D2の間スタミナと精神が上昇します。", "毎秒体力の$N1%を回復します。", 0x56631d4f, 0x365a905e, "uu" },
   [24874] = { "Rugged Leather $N1個とFirebloom $N2個を組み合わせて、Crest of Beckoning: Fireを作ります。", nil, 0x8b0fc7fa, nil, "um" },
