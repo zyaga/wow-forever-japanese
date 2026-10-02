@@ -449,7 +449,10 @@
 {"id": 18665, "field": "description", "en": "Seething darkness engulfs the eye.", "hash": "e94f300b7f4c627d", "src": "db2@1.60.1.70170"}
 {"id": 18670, "field": "name", "en": "Xorothian Glyphs", "hash": "d8ca26df3caba7fc", "src": "db2@1.60.1.70170"}
 {"id": 18670, "field": "description", "en": "Summon a Xorothian Dreadsteed within an empowered Circle of Dark Summoning.", "hash": "52c79621959fadb2", "src": "db2@1.60.1.70170"}
+{"id": 18674, "field": "name", "en": "Hardened Stone Band", "hash": "de267bef76d5d0b4", "src": "wago@1.15.9.69722"}
+{"id": 18674, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
 {"id": 18675, "field": "name", "en": "Military Ranks of the Horde & Alliance", "hash": "516d5d44fd749f73", "src": "db2@1.60.1.70170"}
+{"id": 18678, "field": "name", "en": "Tempestria's Frozen Necklace", "hash": "049a3d5c803a1bb3", "src": "wago@1.15.9.69722"}
 {"id": 18679, "field": "name", "en": "Frigid Ring", "hash": "b5e14c88938f1d3e", "src": "db2@1.60.1.70170"}
 {"id": 18679, "field": "description", "en": "Increases damage done by Frost spells and effects by up to $s1.", "hash": "8d8b0ac5bd86af9a", "src": "wago@1.15.9.69722"}
 {"id": 18685, "field": "name", "en": "Shadowy Potion OLD", "hash": "705b149bc6a229b1", "src": "db2@1.60.1.70170"}

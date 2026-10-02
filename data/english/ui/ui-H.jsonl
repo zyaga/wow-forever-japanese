@@ -43,13 +43,21 @@
 {"id": "HIGHLIGHT_DAMAGE_COMBATLOG_TOOLTIP", "field": "text", "en": "Highlight damage numbers in combat messages.", "hash": "606a7fe904b70477", "src": "db2@1.60.1.70170"}
 {"id": "HIGHLIGHT_KILL_COMBATLOG_TOOLTIP", "field": "text", "en": "Highlights the entire line when you or a party member makes a kill.", "hash": "e8387b3d527315ed", "src": "db2@1.60.1.70170"}
 {"id": "HIGHLIGHT_SCHOOL_COMBATLOG_TOOLTIP", "field": "text", "en": "Highlight the school of a spell in combat messages.", "hash": "547dd2cd09211417", "src": "db2@1.60.1.70170"}
+{"id": "HIGH_BIDDER", "field": "text", "en": "High Bidder", "hash": "8200952d7098808d", "src": "db2@1.60.1.69913"}
 {"id": "HIGH_DEFINITION", "field": "text", "en": "High Definition", "hash": "f35f9b557776fb7e", "src": "db2@1.60.1.70170"}
 {"id": "HIGH_DEFINITION_TOOLTIP", "field": "text", "en": "Higher-detail character model fidelity.", "hash": "fc7aa305c6db4afe", "src": "db2@1.60.1.70170"}
 {"id": "HONOR", "field": "text", "en": "Honor", "hash": "fed7f42eb6c1999d", "src": "db2@1.60.1.70170"}
+{"id": "HONORABLE_KILLS", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.69913"}
 {"id": "HONORABLE_KILLS_TOOLTIP", "field": "text", "en": "Enemy players that you or the group you are in did damage to before they died", "hash": "e4ccc64988ba59a6", "src": "db2@1.60.1.70170"}
 {"id": "HONORABLE_KILLS_TOOLTIP_TITLE", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.70170"}
 {"id": "HONOR_BAR", "field": "text", "en": "Honor %d / %d", "hash": "5a4bbb00f13fa639", "src": "db2@1.60.1.70170"}
+{"id": "HONOR_CONTRIBUTION_POINTS", "field": "text", "en": "Honor", "hash": "fed7f42eb6c1999d", "src": "db2@1.60.1.69913"}
+{"id": "HONOR_HIGHEST_RANK", "field": "text", "en": "Highest Rank", "hash": "70b91fb4be2be06b", "src": "db2@1.60.1.69913"}
+{"id": "HONOR_LASTWEEK", "field": "text", "en": "Last Week", "hash": "de361c818c6c52c8", "src": "db2@1.60.1.69913"}
 {"id": "HONOR_LEVEL_TOOLTIP", "field": "text", "en": "Honor Level %d", "hash": "5841c80d475bc802", "src": "db2@1.60.1.70170"}
+{"id": "HONOR_LIFETIME", "field": "text", "en": "Lifetime", "hash": "c6441b75194af0a0", "src": "db2@1.60.1.69913"}
+{"id": "HONOR_THIS_SESSION", "field": "text", "en": "Today", "hash": "d179da82020b2f7f", "src": "db2@1.60.1.69913"}
+{"id": "HONOR_YESTERDAY", "field": "text", "en": "Yesterday", "hash": "0ee909e73298ee12", "src": "db2@1.60.1.69913"}
 {"id": "HOSTILE", "field": "text", "en": "Hostile", "hash": "d2eedd39445dc5a1", "src": "db2@1.60.1.70170"}
 {"id": "HOT_ITEM", "field": "text", "en": "Hot Item!", "hash": "eaf28319a0d0f728", "src": "db2@1.60.1.70170"}
 {"id": "HOT_ITEM_SELLER", "field": "text", "en": "Seller:", "hash": "477e25d02eec1d39", "src": "db2@1.60.1.70170"}

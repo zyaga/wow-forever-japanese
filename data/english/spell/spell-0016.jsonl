@@ -390,6 +390,7 @@
 {"id": 16381, "field": "description", "en": "Summons $s1 $lRockwing Gargoyle:Rockwing Gargoyles; to accompany the caster until dismissed.", "hash": "311b152399212eb6", "src": "db2@1.60.1.70170"}
 {"id": 16387, "field": "name", "en": "Flametongue Totem", "hash": "253b74d942ac6c4d", "src": "db2@1.60.1.70170"}
 {"id": 16387, "field": "description", "en": "Summons a Flametongue Totem with $s1 health at the feet of the caster. The totem enhances the melee attacks of all party members within $15036a1 yards. Each main hand hit causes ${$16389m1/77*$<mult>-1} to ${$16389M1/25*$<mult>} additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. Lasts $d.", "hash": "e8593cd6db16e4f1", "src": "db2@1.60.1.70170"}
+{"id": 16388, "field": "name", "en": "Flametongue Totem Passive", "hash": "17e9991309fa986f", "src": "wago@1.15.9.69722"}
 {"id": 16389, "field": "name", "en": "Flametongue Totem Proc", "hash": "ec931e472da05c7f", "src": "db2@1.60.1.70170"}
 {"id": 16390, "field": "name", "en": "Flame Breath", "hash": "5034f0e9bbca0857", "src": "db2@1.60.1.70170"}
 {"id": 16390, "field": "description", "en": "Inflicts $s1 Fire damage to enemies in a cone in front of the caster.", "hash": "ad2ec5767defab18", "src": "db2@1.60.1.70170"}

@@ -37,6 +37,11 @@
 {"id": 1266744, "field": "name", "en": "(DNT) Kill Pearls", "hash": "e77a3cfa552cdef4", "src": "db2@1.60.1.70170"}
 {"id": 1266753, "field": "name", "en": "(DNT) Combat Pulse", "hash": "1b7357f578a16622", "src": "db2@1.60.1.70170"}
 {"id": 1266840, "field": "name", "en": "DNT Windshapers", "hash": "f98a44be802f9ffd", "src": "db2@1.60.1.70170"}
+{"id": 1266849, "field": "name", "en": "Contribute Reagent", "hash": "7c7cddf5c677891f", "src": "db2@1.60.1.69913"}
+{"id": 1266850, "field": "name", "en": "Contribute Reagent", "hash": "7c7cddf5c677891f", "src": "db2@1.60.1.69913"}
+{"id": 1266851, "field": "name", "en": "Contribute Reagent", "hash": "7c7cddf5c677891f", "src": "db2@1.60.1.69913"}
+{"id": 1266852, "field": "name", "en": "Contribute Reagent", "hash": "7c7cddf5c677891f", "src": "db2@1.60.1.69913"}
+{"id": 1266854, "field": "name", "en": "Contribute Reagent", "hash": "7c7cddf5c677891f", "src": "db2@1.60.1.69913"}
 {"id": 1266893, "field": "name", "en": "SAF-T Tabs", "hash": "5f103d968651390e", "src": "db2@1.60.1.70170"}
 {"id": 1266905, "field": "name", "en": "SAF-T Dynamite", "hash": "b8bdba31a3b25721", "src": "db2@1.60.1.70170"}
 {"id": 1266906, "field": "name", "en": "SAF-T Copper Bomb", "hash": "69d50df5d806557d", "src": "db2@1.60.1.70170"}

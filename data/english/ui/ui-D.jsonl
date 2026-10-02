@@ -29,6 +29,7 @@
 {"id": "DAMAGE_METER_TYPE_INTERRUPTS", "field": "text", "en": "Interrupts", "hash": "de9e12449e2726ad", "src": "db2@1.60.1.70170"}
 {"id": "DAMAGE_METER_UNLOCK_WINDOW", "field": "text", "en": "Unlock Window", "hash": "6f1034ee54ca46ae", "src": "db2@1.60.1.70170"}
 {"id": "DAMAGE_NUMBER", "field": "text", "en": "Damage Number", "hash": "537b3eb701aefaa5", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_PER_SECOND", "field": "text", "en": "Damage per Second", "hash": "f5da31fe9206cb6d", "src": "db2@1.60.1.69913"}
 {"id": "DAMAGE_SCHOOL2", "field": "text", "en": "Holy", "hash": "09c31c3c7def7685", "src": "db2@1.60.1.70170"}
 {"id": "DAMAGE_SCHOOL3", "field": "text", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70170"}
 {"id": "DAMAGE_SCHOOL4", "field": "text", "en": "Nature", "hash": "58ab279e326bdbc9", "src": "db2@1.60.1.70170"}
@@ -73,6 +74,7 @@
 {"id": "DEFAULT_STATDEFENSE_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFDodge|r, |cFFFFFFFFBlock|r, and |cFFFFFFFFParry|r chance by %.2f%%, and decreases chance to be |cFFFFFFFFHit|r or |cFFFFFFFFCritically Hit|r by %.2f%%\n\n|cffBCBCBCCritical Strikes from creatures deal 200%% damage. Creatures 3+ levels above you can land Crushing Blows for 150%% damage\n\n|cffBCBCBCAt 440 Defense, cannot be Critically Hit by|r |cFFFF5A5ARaid Bosses|r |cFFBCBCBC(-5.60%% Critical Strike chance)|r", "hash": "b6508a162264c28d", "src": "db2@1.60.1.70170"}
 {"id": "DEFAULT_STRENGTH_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFAttack Power|r by %d", "hash": "5c51decbf51f051e", "src": "db2@1.60.1.70170"}
 {"id": "DEFENSE", "field": "text", "en": "Defense", "hash": "46c5a236377d389e", "src": "db2@1.60.1.70170"}
+{"id": "DEFENSE_TOOLTIP", "field": "text", "en": "Defense", "hash": "46c5a236377d389e", "src": "db2@1.60.1.69913"}
 {"id": "DEFLECT", "field": "text", "en": "Deflect", "hash": "47b35e01f1988500", "src": "db2@1.60.1.70170"}
 {"id": "DELETE", "field": "text", "en": "Delete", "hash": "caa07040d3f1985e", "src": "db2@1.60.1.70170"}
 {"id": "DELETE_GOOD_ITEM", "field": "text", "en": "Do you want to destroy %s?\n\nType \"DELETE\" into the field to confirm.", "hash": "d69b2a9edb1ea13e", "src": "db2@1.60.1.70170"}
@@ -113,6 +115,7 @@
 {"id": "DISCORD_SERVER_UNLINK_PROMPT", "field": "text", "en": "Unlink", "hash": "1c65e7d62434ae96", "src": "db2@1.60.1.70170"}
 {"id": "DISCORD_SETUP_OAUTH", "field": "text", "en": "Setup OAuth", "hash": "e24d78666461e7c4", "src": "db2@1.60.1.70170"}
 {"id": "DISCORD_VALID_SERVER_CHANNEL_LIST", "field": "text", "en": "Channels for server %s:", "hash": "4f6354755abc10df", "src": "db2@1.60.1.70170"}
+{"id": "DISHONORABLE_KILLS", "field": "text", "en": "Dishonorable Kills", "hash": "2b16af2338722b2e", "src": "db2@1.60.1.69913"}
 {"id": "DISPELS", "field": "text", "en": "Dispels", "hash": "1a8009a9bf489575", "src": "db2@1.60.1.70170"}
 {"id": "DISPEL_AURA_COMBATLOG_TOOLTIP", "field": "text", "en": "Show when an aura is removed, broken, or stolen.", "hash": "34385c2c69d1dbdb", "src": "db2@1.60.1.70170"}
 {"id": "DISPLAY", "field": "text", "en": "Display", "hash": "1a81d94ddb111117", "src": "db2@1.60.1.70170"}

@@ -196,3 +196,30 @@
 {"id": 1252807, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70170"}
 {"id": 1252879, "field": "name", "en": "Cooking Shortcut", "hash": "0a68af0c39ea1b4e", "src": "db2@1.60.1.70170"}
 {"id": 1252890, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70170"}
+{"id": 1252911, "field": "name", "en": "Contribute Reagent", "hash": "7c7cddf5c677891f", "src": "db2@1.60.1.69913"}
+{"id": 1252912, "field": "name", "en": "Contribute Reagent", "hash": "7c7cddf5c677891f", "src": "db2@1.60.1.69913"}
+{"id": 1252914, "field": "name", "en": "Contribute Reagent", "hash": "7c7cddf5c677891f", "src": "db2@1.60.1.69913"}
+{"id": 1252954, "field": "name", "en": "Boss Aura", "hash": "311d6a00a4f592c6", "src": "db2@1.60.1.69913"}
+{"id": 1252958, "field": "name", "en": "Gunked", "hash": "d64eddf3e9d62e86", "src": "db2@1.60.1.69913"}
+{"id": 1252958, "field": "description", "en": "Deal Nature damage equal to $s1% of the target's maximum health every $t1 sec and slows their movement speed by $s2%.", "hash": "bb4ae29b748c7995", "src": "db2@1.60.1.69913"}
+{"id": 1252958, "field": "aura", "en": "Suffering $w1% of your maximum health every $t sec. Movement speed reduced by $w2%.", "hash": "b813c234f5293fce", "src": "db2@1.60.1.69913"}
+{"id": 1252979, "field": "name", "en": "Slimeslayer's Adaptive Robes", "hash": "ca7fae77f4b7851f", "src": "db2@1.60.1.69913"}
+{"id": 1252980, "field": "name", "en": "Slimeslayer's Adaptive Cuffs", "hash": "c400ddfc454af42f", "src": "db2@1.60.1.69913"}
+{"id": 1252981, "field": "name", "en": "Slimeslayer's Adaptive Cord", "hash": "9fc7bde8959a1128", "src": "db2@1.60.1.69913"}
+{"id": 1252982, "field": "name", "en": "Beastculler's Adaptive Vest", "hash": "94bc8130db56beca", "src": "db2@1.60.1.69913"}
+{"id": 1252983, "field": "name", "en": "Beastculler's Adaptive Bracers", "hash": "535fe185d843e0e4", "src": "db2@1.60.1.69913"}
+{"id": 1252984, "field": "name", "en": "Beastculler's Adaptive Wrap", "hash": "94e22d069c57e5d1", "src": "db2@1.60.1.69913"}
+{"id": 1252985, "field": "name", "en": "Dinodestroyer's Adaptive Chestguard", "hash": "4abbf431104d43b3", "src": "db2@1.60.1.69913"}
+{"id": 1252986, "field": "name", "en": "Dinodestroyer's Adaptive Wrists", "hash": "e15ab4ead236f5b1", "src": "db2@1.60.1.69913"}
+{"id": 1252987, "field": "name", "en": "Dinodestroyer's Adaptive Belt", "hash": "c64de51f418ac1f0", "src": "db2@1.60.1.69913"}
+{"id": 1252988, "field": "name", "en": "Earthcrusher's Adaptive Chestplate", "hash": "35054ba255c57a2f", "src": "db2@1.60.1.69913"}
+{"id": 1252989, "field": "name", "en": "Earthcrusher's Adaptive Armguards", "hash": "65479c2cf9ee0c5f", "src": "db2@1.60.1.69913"}
+{"id": 1252990, "field": "name", "en": "Earthcrusher's Adaptive Girdle", "hash": "ac8dc2131ea01515", "src": "db2@1.60.1.69913"}
+{"id": 1252991, "field": "name", "en": "Slimetender's Adaptive Tunic", "hash": "d35c7968b5db3498", "src": "db2@1.60.1.69913"}
+{"id": 1252992, "field": "name", "en": "Slimetender's Adaptive Bracers", "hash": "15eac8a9d0aa4c0d", "src": "db2@1.60.1.69913"}
+{"id": 1252993, "field": "name", "en": "Slimetender's Adaptive Belt", "hash": "0ae90a5cb70aa9c7", "src": "db2@1.60.1.69913"}
+{"id": 1252995, "field": "name", "en": "Beastmender's Adaptive Robe", "hash": "6b460e5cb7efd925", "src": "db2@1.60.1.69913"}
+{"id": 1252996, "field": "name", "en": "Beastmender's Adaptive Wristlinks", "hash": "ead97c70b7ceb0c7", "src": "db2@1.60.1.69913"}
+{"id": 1252997, "field": "name", "en": "Beastmender's Adaptive Girdle", "hash": "e55c6a348527c239", "src": "db2@1.60.1.69913"}
+{"id": 1252998, "field": "name", "en": "Dinomender's Adaptive Tunic", "hash": "d937824471510a80", "src": "db2@1.60.1.69913"}
+{"id": 1252999, "field": "name", "en": "Dinomender's Adaptive Wrists", "hash": "e4a28e58250b29f1", "src": "db2@1.60.1.69913"}

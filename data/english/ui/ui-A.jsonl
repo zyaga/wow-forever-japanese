@@ -66,6 +66,7 @@
 {"id": "ACTIVATE", "field": "text", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70170"}
 {"id": "ADD", "field": "text", "en": "Add", "hash": "001138d90215a85a", "src": "db2@1.60.1.70170"}
 {"id": "ADDITIONAL_FILTERS", "field": "text", "en": "Additional Filters", "hash": "9ba734c2c709fbd5", "src": "db2@1.60.1.70170"}
+{"id": "ADDMEMBER", "field": "text", "en": "Add Member", "hash": "fb67b9857b6e9e30", "src": "db2@1.60.1.69913"}
 {"id": "ADDONS", "field": "text", "en": "AddOns", "hash": "c56da46d3dd3e8a4", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_ACTION_FORBIDDEN", "field": "text", "en": "%s has been blocked from an action only available to the Blizzard UI.\nYou can disable this addon and reload the UI.", "hash": "f4f81e90b6d08670", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_BANNED", "field": "text", "en": "Banned", "hash": "8da7ee95f3bcb202", "src": "db2@1.60.1.70170"}
@@ -183,6 +184,7 @@
 {"id": "ARMOR_MAX_EFFECTIVENESS_TOOLTIP", "field": "text", "en": "|cffBCBCBCDamage reduction from Armor cannot exceed 75.00%%|r", "hash": "7b00e66b129332a1", "src": "db2@1.60.1.70170"}
 {"id": "ARMOR_PENETRATION_TOOLTIP", "field": "text", "en": "Your |cFFFFFFFFAttacks|r ignore %d of your enemies' |cFFFFFFFFArmor|r when attacking. Reducing an enemy's armor below 0 will increase your damage against them.", "hash": "4bff5e70e897bb68", "src": "db2@1.60.1.70170"}
 {"id": "ARMOR_TEMPLATE", "field": "text", "en": "%s Armor", "hash": "64964d27de9fd530", "src": "db2@1.60.1.70170"}
+{"id": "ARMOR_TOOLTIP", "field": "text", "en": "Decreases the amount of damage taken from physical attacks.  The amount of reduction is influenced by the level of the attacker.\nDamage reduction against a level %d attacker: %.1f%%", "hash": "908a0bb8eda39ee2", "src": "db2@1.60.1.69913"}
 {"id": "ARTIFACT_RESPEC", "field": "text", "en": "Are you sure you want to refund your artifact traits?|n|nThis will consume %s |cffe6cc80Artifact Power|r.", "hash": "02aa66ec1c1582e5", "src": "db2@1.60.1.70170"}
 {"id": "ARTIFACT_RESPEC_NOT_ENOUGH_POWER", "field": "text", "en": "You don't have enough |cffe6cc80Artifact Power|r to refund your traits. |n|nRequires %s |cffe6cc80Artifact Power|r.", "hash": "b268e9e5b01ff33e", "src": "db2@1.60.1.70170"}
 {"id": "ARTISAN", "field": "text", "en": "Artisan", "hash": "e4afd5b3d500f9b6", "src": "db2@1.60.1.70170"}
@@ -194,8 +196,11 @@
 {"id": "ASSISTED_COMBAT_ROTATION_REDUCE_HIGHLIGHTS", "field": "text", "en": "Reduce Highlights on Abilities", "hash": "513c35aafec39a35", "src": "db2@1.60.1.70170"}
 {"id": "ASSISTED_COMBAT_ROTATION_VIEW_SPELLBOOK", "field": "text", "en": "View in Spellbook", "hash": "795a43c3935766b5", "src": "db2@1.60.1.70170"}
 {"id": "ATTACHMENT_TEXT", "field": "text", "en": "Drag an item here to include it with your mail", "hash": "c9c466825326d2cc", "src": "db2@1.60.1.70170"}
+{"id": "ATTACK_COLON", "field": "text", "en": "Attack:", "hash": "daa1d475cd51b018", "src": "db2@1.60.1.69913"}
 {"id": "ATTACK_SPEED", "field": "text", "en": "Attack Speed", "hash": "7331371677dbb1b8", "src": "db2@1.60.1.70170"}
 {"id": "ATTACK_SPEED_SECONDS", "field": "text", "en": "Attack Speed (seconds)", "hash": "2f26ca2a16d9e610", "src": "db2@1.60.1.70170"}
+{"id": "ATTACK_TOOLTIP", "field": "text", "en": "Attack Rating", "hash": "f160d4beea4ff0f3", "src": "db2@1.60.1.69913"}
+{"id": "ATTACK_TOOLTIP_SUBTEXT", "field": "text", "en": "Your attack rating affects your chance to hit a target, and is based on the weapon skill of the weapon you are currently wielding.", "hash": "613ac8c962a321ab", "src": "db2@1.60.1.69913"}
 {"id": "AT_WAR", "field": "text", "en": "At War", "hash": "d52e7df6bc9f8d8a", "src": "db2@1.60.1.70170"}
 {"id": "AUCTION_BUYOUT_ERROR", "field": "text", "en": "Buyout price must be greater than or equal to the starting price.", "hash": "2685fcb302fc1917", "src": "db2@1.60.1.70170"}
 {"id": "AUCTION_CATEGORY_ARMOR", "field": "text", "en": "Armor", "hash": "845e9dbf4297b5af", "src": "db2@1.60.1.70170"}

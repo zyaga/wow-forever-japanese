@@ -119,6 +119,8 @@
 {"id": 1249755, "field": "name", "en": "Summoning Disorientation", "hash": "23e20dfa15cc4d82", "src": "db2@1.60.1.70170"}
 {"id": 1249755, "field": "description", "en": "The forces of the nether bind the target, stunning it.", "hash": "f27299b4e8e42abc", "src": "db2@1.60.1.70170"}
 {"id": 1249755, "field": "aura", "en": "The forces of the nether bind the target, stunning it.", "hash": "f27299b4e8e42abc", "src": "db2@1.60.1.70170"}
+{"id": 1249805, "field": "name", "en": "Roast Beast", "hash": "d692b0ee1dc95a7b", "src": "db2@1.60.1.70124"}
+{"id": 1249805, "field": "description", "en": "Roast a hunk of meat of your choosing near a cooking fire, forgoing all other preparation steps. The resulting meal will be suitably edible for your level, but not very appealing beyond that.", "hash": "6c097721a359ce84", "src": "db2@1.60.1.70124"}
 {"id": 1249828, "field": "name", "en": "Credit Granter", "hash": "701beadc4ed1650c", "src": "db2@1.60.1.70170"}
 {"id": 1249834, "field": "name", "en": "Scared", "hash": "62cf7c1cfd4fa6b3", "src": "db2@1.60.1.70170"}
 {"id": 1249834, "field": "aura", "en": "Frightened!", "hash": "7864e30cd343e78d", "src": "db2@1.60.1.70170"}

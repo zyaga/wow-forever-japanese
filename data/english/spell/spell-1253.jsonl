@@ -1,3 +1,10 @@
+{"id": 1253000, "field": "name", "en": "Dinomender's Adaptive Chain", "hash": "ad0d0e9541dbbe4b", "src": "db2@1.60.1.69913"}
+{"id": 1253001, "field": "name", "en": "Earthweaver's Adaptive Plate", "hash": "bc38926bd5f54f3f", "src": "db2@1.60.1.69913"}
+{"id": 1253002, "field": "name", "en": "Earthweaver's Adaptive Links", "hash": "759e333ee5adc737", "src": "db2@1.60.1.69913"}
+{"id": 1253003, "field": "name", "en": "Earthweaver's Adaptive Waistguard", "hash": "74e14f29fe233368", "src": "db2@1.60.1.69913"}
+{"id": 1253004, "field": "name", "en": "Sludge Suppressor", "hash": "27744fab3e5d1d6e", "src": "db2@1.60.1.69913"}
+{"id": 1253005, "field": "name", "en": "Enormous Tranquilizer Dart", "hash": "7e082748fa105edd", "src": "db2@1.60.1.69913"}
+{"id": 1253006, "field": "name", "en": "G.R.R.-Nade", "hash": "11aa7fd2d519a699", "src": "db2@1.60.1.69913"}
 {"id": 1253106, "field": "name", "en": "Head Scratcher area", "hash": "baf2c73c9a723230", "src": "db2@1.60.1.70170"}
 {"id": 1253108, "field": "name", "en": "Place Head Scratcher Lure", "hash": "9624e258da0fa2a9", "src": "db2@1.60.1.70170"}
 {"id": 1253123, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70170"}
@@ -8,17 +15,28 @@
 {"id": 1253128, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
 {"id": 1253151, "field": "name", "en": "Sanctuary of the Shen'dorei", "hash": "afeeec64c426026b", "src": "db2@1.60.1.70170"}
 {"id": 1253151, "field": "aura", "en": "The Windshapers and the High Order have set aside their differences, for now.\r\n\r\n<Combat between players is currently forbidden on Zephras Isle.>", "hash": "2092681ab9d77ece", "src": "db2@1.60.1.70170"}
+{"id": 1253186, "field": "name", "en": "Boss Aura", "hash": "311d6a00a4f592c6", "src": "db2@1.60.1.69913"}
+{"id": 1253187, "field": "name", "en": "Boss Aura", "hash": "311d6a00a4f592c6", "src": "db2@1.60.1.69913"}
 {"id": 1253200, "field": "name", "en": "Fly Away!", "hash": "41e7d768bb7ddcc2", "src": "db2@1.60.1.70170"}
 {"id": 1253200, "field": "aura", "en": "You've startled the forest sprite!", "hash": "06fb2fdf4e367dba", "src": "db2@1.60.1.70170"}
+{"id": 1253202, "field": "name", "en": "Contribute Reagent", "hash": "7c7cddf5c677891f", "src": "db2@1.60.1.69913"}
+{"id": 1253203, "field": "name", "en": "Contribute Reagent", "hash": "7c7cddf5c677891f", "src": "db2@1.60.1.69913"}
+{"id": 1253204, "field": "name", "en": "Contribute Reagent", "hash": "7c7cddf5c677891f", "src": "db2@1.60.1.69913"}
 {"id": 1253298, "field": "name", "en": "[DNT] Head Scratcher", "hash": "82849776937b8cab", "src": "db2@1.60.1.70170"}
 {"id": 1253317, "field": "name", "en": "Slam", "hash": "0b3ba31d857cc8e6", "src": "db2@1.60.1.70170"}
 {"id": 1253317, "field": "description", "en": "Slams an enemy to the ground, inflicting Physical damage and stunning it for $d.", "hash": "b1a2fbcab4ea7eb4", "src": "db2@1.60.1.70170"}
 {"id": 1253317, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
 {"id": 1253321, "field": "name", "en": "Unicorn's Feast", "hash": "07c438012f226ec4", "src": "db2@1.60.1.70170"}
 {"id": 1253321, "field": "description", "en": "Unfolds into a Field Repair Bot that can repair damaged items and purchase unwanted goods.  After 10 minutes its internal motor fails.", "hash": "bb250bbd08fc8094", "src": "db2@1.60.1.70124"}
+{"id": 1253332, "field": "name", "en": "Poison Bolt Volley", "hash": "b04460f2b16e9e95", "src": "db2@1.60.1.69913"}
+{"id": 1253332, "field": "description", "en": "Shoots poison at an enemy, inflicting $s1 Nature damage, then additional damage every $t2 sec for $d.", "hash": "b50262993fb8c135", "src": "db2@1.60.1.69913"}
+{"id": 1253332, "field": "aura", "en": "$w2 Nature damage inflicted every $t2 sec.", "hash": "d008869eb72f958e", "src": "db2@1.60.1.69913"}
+{"id": 1253346, "field": "name", "en": "Corrupt Corpse", "hash": "bafc9bc5ede1f08f", "src": "db2@1.60.1.69913"}
+{"id": 1253346, "field": "description", "en": "Summon a creature from the corpse of another.", "hash": "f77f3d19cc1c16f3", "src": "db2@1.60.1.69913"}
 {"id": 1253348, "field": "name", "en": "You Smell Like Garbage", "hash": "940006494cd815af", "src": "db2@1.60.1.70170"}
 {"id": 1253348, "field": "description", "en": "You smell like garbage. Everything around you probably hates the smell.", "hash": "4640ee708394e804", "src": "db2@1.60.1.70170"}
 {"id": 1253348, "field": "aura", "en": "You smell like garbage. Everything around you probably hates the smell.", "hash": "4640ee708394e804", "src": "db2@1.60.1.70170"}
+{"id": 1253349, "field": "name", "en": "Corrupted Creature", "hash": "cdd9ba0b2c757b14", "src": "db2@1.60.1.69913"}
 {"id": 1253351, "field": "name", "en": "Garbage Smell", "hash": "682109807fcd07bd", "src": "db2@1.60.1.70170"}
 {"id": 1253351, "field": "description", "en": "Taunts all enemies within 30 yds.", "hash": "57ecf5cda5f8c0db", "src": "db2@1.60.1.70170"}
 {"id": 1253356, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
@@ -29,19 +47,106 @@
 {"id": 1253371, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70170"}
 {"id": 1253372, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
 {"id": 1253375, "field": "name", "en": "Spectral Presence", "hash": "0984304a869ce849", "src": "db2@1.60.1.70170"}
+{"id": 1253378, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253378, "field": "description", "en": "Increases your maximum mana by $s1.", "hash": "e775550ff0a46b42", "src": "db2@1.60.1.69913"}
+{"id": 1253378, "field": "aura", "en": "Maximum mana increased by $w1.", "hash": "69c4e99ac332a46a", "src": "db2@1.60.1.69913"}
+{"id": 1253379, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253379, "field": "description", "en": "Increases your Nature Resistance by $s1.", "hash": "1e7635be98322fcf", "src": "db2@1.60.1.69913"}
+{"id": 1253379, "field": "aura", "en": "Nature Resistance increased by $w1.", "hash": "d319064785e64f0c", "src": "db2@1.60.1.69913"}
+{"id": 1253380, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253380, "field": "description", "en": "Increases your Spell Damage by $s1 and Healing Power by $s2 while you have a staff or wand equipped.", "hash": "503a7f57b2578e84", "src": "db2@1.60.1.69913"}
+{"id": 1253380, "field": "aura", "en": "Your Spell Damage is increased by $w1 and Healing Power by $w2 while you have a staff or wand equipped.", "hash": "08c78d6091bce668", "src": "db2@1.60.1.69913"}
+{"id": 1253381, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253381, "field": "description", "en": "Your healing spells have a chance to hurl a slime bubble toward the target for $1253393d, allowing them to absorb up to $s1 damage.", "hash": "ecf68dd6a1b7d796", "src": "db2@1.60.1.69913"}
+{"id": 1253381, "field": "aura", "en": "Your healing spells have a chance to hurl a slime bubble toward the target for $d, allowing them to absorb up to $w1 damage.", "hash": "d8ccda8eed60184e", "src": "db2@1.60.1.69913"}
+{"id": 1253382, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253382, "field": "description", "en": "Increases your maximum energy by $s1.", "hash": "adb987f344168ecc", "src": "db2@1.60.1.69913"}
+{"id": 1253382, "field": "aura", "en": "Maximum energy increased by $w1.", "hash": "a8fefafaa28126ed", "src": "db2@1.60.1.69913"}
+{"id": 1253383, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253383, "field": "description", "en": "Increases your armor by $s1.", "hash": "e13ee3bd4c814e64", "src": "db2@1.60.1.69913"}
+{"id": 1253383, "field": "aura", "en": "Armor increased by $w1.", "hash": "97da7cadae09cc7a", "src": "db2@1.60.1.69913"}
+{"id": 1253384, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253384, "field": "description", "en": "Increases your Attack Power by $s1 while wielding a sharp weapon.", "hash": "6789c9d6c9d3ac3c", "src": "db2@1.60.1.69913"}
+{"id": 1253384, "field": "aura", "en": "Attack Power increased by $w1 while wielding a sharp weapon.", "hash": "47430fd60d096b7e", "src": "db2@1.60.1.69913"}
+{"id": 1253385, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253385, "field": "description", "en": "Increases your movement speed by $s1% when not under the effects of Well Fed.", "hash": "bf6f4cf2610f3646", "src": "db2@1.60.1.69913"}
+{"id": 1253385, "field": "aura", "en": "Movement speed increased by $w1% when not under the effects of Well Fed.", "hash": "d4d3a25ccdb71eb4", "src": "db2@1.60.1.69913"}
+{"id": 1253386, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253386, "field": "description", "en": "Increases your maximum rage by $s1.", "hash": "c767d2efd3ab3a07", "src": "db2@1.60.1.69913"}
+{"id": 1253386, "field": "aura", "en": "Maximum rage increased by $w1.", "hash": "3d4dcb4d941921a3", "src": "db2@1.60.1.69913"}
+{"id": 1253387, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253387, "field": "description", "en": "Increases your Fire Resistance by $s1.", "hash": "bd7d6376701880ad", "src": "db2@1.60.1.69913"}
+{"id": 1253387, "field": "aura", "en": "Fire Resistance increased by $w1.", "hash": "bcf4b0e02e0ce9f0", "src": "db2@1.60.1.69913"}
+{"id": 1253388, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253388, "field": "description", "en": "Increases your Attack Power by $s1 while wielding a blunt weapon.", "hash": "d0197719c9911a58", "src": "db2@1.60.1.69913"}
+{"id": 1253388, "field": "aura", "en": "Attack Power increased by $w1 while wielding a blunt weapon.", "hash": "afd2bd190cc6d99a", "src": "db2@1.60.1.69913"}
+{"id": 1253389, "field": "name", "en": "Adaptation", "hash": "18cdb95dc433d917", "src": "db2@1.60.1.69913"}
+{"id": 1253389, "field": "description", "en": "Your melee attacks have a chance to reveal a flaw in your opponent's defenses, reducing their armor by $s1 for $1253404d.", "hash": "8e56ad8c4861bcd5", "src": "db2@1.60.1.69913"}
+{"id": 1253389, "field": "aura", "en": "Your melee attacks have a chance to reveal a flaw in your opponent's defenses, reducing their armor by $w1 for $1253404d.", "hash": "95c5e85feefba29a", "src": "db2@1.60.1.69913"}
+{"id": 1253393, "field": "name", "en": "Slime Bubble", "hash": "4b62c1c4be3d8b06", "src": "db2@1.60.1.69913"}
+{"id": 1253393, "field": "description", "en": "$@spelldesc1253381", "hash": "b88521aed9dc54a9", "src": "db2@1.60.1.69913"}
+{"id": 1253393, "field": "aura", "en": "Absorbing $w1 damage.", "hash": "e074129ac35bf95c", "src": "db2@1.60.1.69913"}
+{"id": 1253404, "field": "name", "en": "Crushed Armor", "hash": "fdda68157757582d", "src": "db2@1.60.1.69913"}
+{"id": 1253404, "field": "description", "en": "$@spelldesc1253389", "hash": "b88521b6d9dc54b1", "src": "db2@1.60.1.69913"}
+{"id": 1253404, "field": "aura", "en": "A flaw in your defenses has reduced your armor by $w1.", "hash": "8f0ae9bbb9f7a85a", "src": "db2@1.60.1.69913"}
 {"id": 1253408, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70170"}
 {"id": 1253413, "field": "name", "en": "(DNT) Raise Dead Spawn Spell", "hash": "2f2a07d187a79bbb", "src": "db2@1.60.1.70170"}
 {"id": 1253414, "field": "name", "en": "Dying Will", "hash": "71cd2dbcf48bb7da", "src": "db2@1.60.1.70170"}
+{"id": 1253427, "field": "name", "en": "Cosmetic Slime Aura", "hash": "53f2e287fbd3dc91", "src": "db2@1.60.1.69913"}
+{"id": 1253456, "field": "name", "en": "Splat", "hash": "c0108a0fd04ac206", "src": "db2@1.60.1.69913"}
+{"id": 1253456, "field": "description", "en": "Spew slime around you, afflicting targets with a mind suppressing mucous.\r\n\r\nWhen the effect expires, affected targets release a Slime Nova, dealing $1253665s1 Nature damage to nearby allies. ", "hash": "0a516fd998605d62", "src": "db2@1.60.1.69913"}
+{"id": 1253463, "field": "name", "en": "Slimecontrolled", "hash": "b0c74dd811563cfb", "src": "db2@1.60.1.69913"}
+{"id": 1253463, "field": "description", "en": "$@spelldesc1253456", "hash": "b8856333ddd438cc", "src": "db2@1.60.1.69913"}
+{"id": 1253463, "field": "aura", "en": "Your conscience has been suppressed.", "hash": "a02d0033e20821f1", "src": "db2@1.60.1.69913"}
+{"id": 1253478, "field": "name", "en": "Coagulate", "hash": "ab3a8add2bdf036b", "src": "db2@1.60.1.69913"}
+{"id": 1253478, "field": "description", "en": "Devour living Slimecontrolled creatures and adventurers, healing for $s1% maximum health per victim consumed.", "hash": "6e0f9f4d1b49d45b", "src": "db2@1.60.1.69913"}
+{"id": 1253480, "field": "name", "en": "Congeal", "hash": "f1edccdeffae8c57", "src": "db2@1.60.1.69913"}
+{"id": 1253480, "field": "description", "en": "Devour living Slimecontrolled creatures and adventurers, gaining an absorb shield for $s1% maximum health per victim consumed. Lasts $d. ", "hash": "2441bab69b41dbd2", "src": "db2@1.60.1.69913"}
+{"id": 1253480, "field": "aura", "en": "Absorbing up to $w1 damage.", "hash": "37b5767b1a76fd61", "src": "db2@1.60.1.69913"}
+{"id": 1253487, "field": "name", "en": "Experimental Plague", "hash": "0c6426b093de85f3", "src": "db2@1.60.1.69913"}
+{"id": 1253487, "field": "description", "en": "Douse the target monster with an experimental plague, permanently preventing most sources of health regeneration.\r\n\r\nCan only be used on The Horror, Revildesh, and the Metamorphic Fury.", "hash": "7cb8ca2e5d907d24", "src": "db2@1.60.1.69913"}
+{"id": 1253487, "field": "aura", "en": "Most sources of health regeneration permanently suppressed.", "hash": "836f5a854ac2063b", "src": "db2@1.60.1.69913"}
 {"id": 1253552, "field": "name", "en": "Foul Volley", "hash": "ed83f7414b471681", "src": "db2@1.60.1.70170"}
 {"id": 1253552, "field": "description", "en": "Shoots poison at an enemy, inflicting $s1 Nature damage, then additional damage every $t2 sec for $d.", "hash": "b50262993fb8c135", "src": "db2@1.60.1.70170"}
 {"id": 1253552, "field": "aura", "en": "$w2 Nature damage inflicted every $t2 sec.", "hash": "d008869eb72f958e", "src": "db2@1.60.1.70170"}
 {"id": 1253568, "field": "name", "en": "Tranquility", "hash": "f3d301a233979744", "src": "db2@1.60.1.70170"}
 {"id": 1253568, "field": "description", "en": "Regenerates all nearby group members for $s1 every $t1 sec for $d. The Druid must channel to maintain the spell.", "hash": "1216d9a1a7a2d9b0", "src": "db2@1.60.1.70170"}
 {"id": 1253568, "field": "aura", "en": "Heals nearby party members for $s1 every $t1 sec.", "hash": "793ba8c5c7683984", "src": "db2@1.60.1.70170"}
+{"id": 1253636, "field": "name", "en": "Slimeletting", "hash": "4463c4957af2d6ab", "src": "db2@1.60.1.69913"}
+{"id": 1253636, "field": "description", "en": "When The Horror casts Congeal or Coagulate, deal damage equal to $s1% of the afflicted player's maximum health.\r\n\r\nNon-player targets are instantly killed.", "hash": "6a717d14180099c7", "src": "db2@1.60.1.69913"}
+{"id": 1253661, "field": "name", "en": "Slime Size Aura [DNT]", "hash": "fe5f83d91bd1c1c3", "src": "db2@1.60.1.69913"}
+{"id": 1253665, "field": "name", "en": "Slime Nova", "hash": "cbeedbdd6eba2793", "src": "db2@1.60.1.69913"}
+{"id": 1253665, "field": "description", "en": "$@spelldesc1253456", "hash": "b8856333ddd438cc", "src": "db2@1.60.1.69913"}
 {"id": 1253673, "field": "name", "en": "Play Stay A While Scene (DNT)", "hash": "7564b291f6185864", "src": "db2@1.60.1.70170"}
 {"id": 1253722, "field": "name", "en": "Foul Breath", "hash": "7ae438b57fc49421", "src": "db2@1.60.1.70170"}
 {"id": 1253722, "field": "description", "en": "Stars fall from above, inflicting $s1 damage. ", "hash": "e0cf85f6c6c2644d", "src": "db2@1.60.1.70170"}
+{"id": 1253743, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.69913"}
+{"id": 1253743, "field": "description", "en": "Fixate a random player, pursuing them for as long as your attention span can manage or $d, whichever is shorter.", "hash": "854e51e81fd6c1e0", "src": "db2@1.60.1.69913"}
+{"id": 1253746, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.69913"}
+{"id": 1253746, "field": "description", "en": "$@spelldesc1253743", "hash": "b8862bc8e9bce42b", "src": "db2@1.60.1.69913"}
+{"id": 1253746, "field": "aura", "en": "You are being pursued by an enormous, hungry dinosaur!\r\n\r\nAdrenaline is pumping through your veins. Your movement speed is increased by $w2% and you are immune to his Terrorizing Roar.", "hash": "226608e17e2087b7", "src": "db2@1.60.1.69913"}
 {"id": 1253772, "field": "name", "en": "Digging", "hash": "46a7d08363845641", "src": "db2@1.60.1.70170"}
+{"id": 1253774, "field": "name", "en": "Sonic Screech", "hash": "4c0d1954c02ab30b", "src": "db2@1.60.1.69913"}
+{"id": 1253774, "field": "description", "en": "Unleash a screech, dealing $s1 Physical damage and Silencing affected targets for $d.", "hash": "b42f59ee8e6e2783", "src": "db2@1.60.1.69913"}
+{"id": 1253774, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.69913"}
+{"id": 1253780, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.69913"}
+{"id": 1253780, "field": "description", "en": "Devour your target meal, $?pc108341[dealing $s2% of the target's maximum health and stunning them for $d][instantly killing them].\r\n\r\nHeal for $s2% of your maximum health whenever you successfully devour a target.", "hash": "a7be73025a116cb4", "src": "db2@1.60.1.69913"}
+{"id": 1253789, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.69913"}
+{"id": 1253789, "field": "description", "en": "$@spelldesc1253780", "hash": "b8862dd1e9bd63ac", "src": "db2@1.60.1.69913"}
+{"id": 1253789, "field": "aura", "en": "You have been partially devoured! Stunned.", "hash": "f187fb715c8fa54b", "src": "db2@1.60.1.69913"}
+{"id": 1253790, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.69913"}
+{"id": 1253790, "field": "description", "en": "$@spelldesc1253780", "hash": "b8862dd1e9bd63ac", "src": "db2@1.60.1.69913"}
+{"id": 1253790, "field": "aura", "en": "You have been devoured!", "hash": "f5a4f3224331cf94", "src": "db2@1.60.1.69913"}
+{"id": 1253815, "field": "name", "en": "Terrorizing Roar", "hash": "5b3f32688a397aa6", "src": "db2@1.60.1.69913"}
+{"id": 1253815, "field": "description", "en": "Unleash a Terrorizing Roar, striking fear into the hearts of nearby prey for $d.", "hash": "e54461cf09b2cfb4", "src": "db2@1.60.1.69913"}
+{"id": 1253815, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.69913"}
+{"id": 1253833, "field": "name", "en": "Devilsaur Hide", "hash": "85d4a2ec74f1db27", "src": "db2@1.60.1.69913"}
+{"id": 1253833, "field": "description", "en": "The thick hide of the devilsaur reduces all damage taken by $s1%.\r\n\r\nSpike pits can penetrate this, temporarily removing this effect until the wound heals.", "hash": "0af01e6fb510d2bb", "src": "db2@1.60.1.69913"}
+{"id": 1253833, "field": "aura", "en": "All damage taken reduced by $w1%.\r\n\r\nSpike pits can penetrate this defense for a short time.", "hash": "871409ea9950703b", "src": "db2@1.60.1.69913"}
+{"id": 1253843, "field": "name", "en": "Punctured Devilsaur Hide", "hash": "be1d4191c067a73e", "src": "db2@1.60.1.69913"}
+{"id": 1253843, "field": "description", "en": "A recent stroll through spikes resulted in a painful wound, dealing $s1 Physical damage per stack every $t1 sec. When this deals damage, one stack is removed.\r\n\r\nWhile under this effect, you cannot benefit from Devilsaur Hide.", "hash": "392f29cf2fce5208", "src": "db2@1.60.1.69913"}
+{"id": 1253843, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec. Cannot benefit from Devilsaur Hide.", "hash": "d919a3b6f8352ba6", "src": "db2@1.60.1.69913"}
+{"id": 1253857, "field": "name", "en": "Spike Trap", "hash": "dfafa9fbc3fd67ae", "src": "db2@1.60.1.69913"}
 {"id": 1253880, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70170"}
 {"id": 1253882, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70170"}
 {"id": 1253916, "field": "name", "en": "Bang a Drum", "hash": "1b673835bd54f9b9", "src": "db2@1.60.1.70170"}
@@ -49,4 +154,8 @@
 {"id": 1253931, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70170"}
 {"id": 1253946, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
 {"id": 1253958, "field": "name", "en": "Bang a Drum", "hash": "1b673835bd54f9b9", "src": "db2@1.60.1.70170"}
+{"id": 1253961, "field": "name", "en": "Molten Fury", "hash": "342d36862ecdf40f", "src": "db2@1.60.1.69913"}
+{"id": 1253966, "field": "name", "en": "Molten Fury", "hash": "342d36862ecdf40f", "src": "db2@1.60.1.69913"}
+{"id": 1253966, "field": "description", "en": "Unleash your fury every $1253961t1 sec, dealing $s1 Fire damage to puny weaklings within $s3 yds and increases Fire damage taken by $s2% for $d. Stacks up to $U times.", "hash": "1d013dc58677e264", "src": "db2@1.60.1.69913"}
+{"id": 1253966, "field": "aura", "en": "Fire damage taken increased by $w2%.", "hash": "7326be27a4b0144a", "src": "db2@1.60.1.69913"}
 {"id": 1253999, "field": "name", "en": "Summon Undead", "hash": "01b2c05ece70050c", "src": "db2@1.60.1.70170"}

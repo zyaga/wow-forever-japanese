@@ -8,6 +8,7 @@
 {"id": "TALENTS_INVOLUNTARILY_RESET", "field": "text", "en": "Some of your talents have been reset due to changes in the talent tree.", "hash": "96c9978b41ae006a", "src": "db2@1.60.1.70170"}
 {"id": "TALENTS_INVOLUNTARILY_RESET_PET", "field": "text", "en": "Your pet's talents have been reset.", "hash": "76bbdbfc7e0ddf37", "src": "db2@1.60.1.70170"}
 {"id": "TALENTS_LINK_FORMAT", "field": "text", "en": "Linked Talents (%s %s)", "hash": "9c1d664d69905b5a", "src": "db2@1.60.1.70170"}
+{"id": "TALENT_ACTIVE_SPEC_STATUS", "field": "text", "en": "These are your active talents", "hash": "5fe8f700ac8a9194", "src": "db2@1.60.1.69913"}
 {"id": "TALENT_BUTTON_TOOLTIP_CLEAR_REPURCHASE_INSTRUCTIONS", "field": "text", "en": "Right click to clear all history nodes", "hash": "42bada2d00b0c529", "src": "db2@1.60.1.70170"}
 {"id": "TALENT_BUTTON_TOOLTIP_NEXT_RANK", "field": "text", "en": "Next Rank:", "hash": "ff60c3734494f41f", "src": "db2@1.60.1.70170"}
 {"id": "TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS", "field": "text", "en": "Click to learn", "hash": "eab07e27b4d92214", "src": "db2@1.60.1.70170"}
@@ -45,6 +46,8 @@
 {"id": "TALENT_SPEC_ACTIVATE", "field": "text", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70170"}
 {"id": "TALENT_SPEC_ACTIVE", "field": "text", "en": "Active", "hash": "b60b9ac09ca08a46", "src": "db2@1.60.1.70170"}
 {"id": "TALENT_SPEC_LOCKED", "field": "text", "en": "Locked", "hash": "5518bc84349007b8", "src": "db2@1.60.1.70170"}
+{"id": "TALENT_SPEC_PRIMARY", "field": "text", "en": "Primary Talents", "hash": "090b4b85ebb32b9b", "src": "db2@1.60.1.69913"}
+{"id": "TALENT_SPEC_SECONDARY", "field": "text", "en": "Secondary Talents", "hash": "6231633f04fc9c31", "src": "db2@1.60.1.69913"}
 {"id": "TALL", "field": "text", "en": "Tall", "hash": "0b5b14f5e73b3244", "src": "db2@1.60.1.70170"}
 {"id": "TANK", "field": "text", "en": "Tank", "hash": "0b5b15fae73b7205", "src": "db2@1.60.1.70170"}
 {"id": "TARGET", "field": "text", "en": "Target", "hash": "3d7ca112c9409d27", "src": "db2@1.60.1.70170"}

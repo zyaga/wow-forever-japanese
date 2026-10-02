@@ -41,6 +41,8 @@
 {"id": 1292213, "field": "description", "en": "+$s1 Attack Power against Humanoids.", "hash": "f6a10ee80ea10520", "src": "db2@1.60.1.70170"}
 {"id": 1292222, "field": "name", "en": "Resist Silence 04", "hash": "7cad1e85c50606fa", "src": "db2@1.60.1.70170"}
 {"id": 1292222, "field": "description", "en": "Reduces the hit chance of Silence effects against you by $s1%.", "hash": "3b7aed97c6f00bbf", "src": "db2@1.60.1.70170"}
+{"id": 1292245, "field": "name", "en": "Prepare Fish", "hash": "81e5980dd9f3e95d", "src": "db2@1.60.1.70124"}
+{"id": 1292246, "field": "name", "en": "Prepare Fish", "hash": "81e5980dd9f3e95d", "src": "db2@1.60.1.70124"}
 {"id": 1292252, "field": "name", "en": "Worgenbane", "hash": "1caeb5367a4b2a2f", "src": "db2@1.60.1.70170"}
 {"id": 1292252, "field": "description", "en": "Stuns target Worgen for $d.", "hash": "308da16106fbb8de", "src": "db2@1.60.1.70170"}
 {"id": 1292252, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}

@@ -65,6 +65,8 @@
 {"id": 1310200, "field": "description", "en": "Slams the opponent, causing weapon damage plus $s1.", "hash": "27b9eb8bded789db", "src": "db2@1.60.1.70170"}
 {"id": 1310222, "field": "name", "en": "Spearing Strike", "hash": "e2b8cce0dc19fee9", "src": "db2@1.60.1.70170"}
 {"id": 1310222, "field": "description", "en": "A brutal attack that deals $s2% weapon damage, plus an additional ${$s2*$s3}% weapon damage against Giants, Dragonkin, and mounted targets.", "hash": "b4daabf65b759a7c", "src": "db2@1.60.1.70170"}
+{"id": 1310236, "field": "name", "en": "Boundless Rage", "hash": "944a85662571ca15", "src": "db2@1.60.1.70124"}
+{"id": 1310236, "field": "description", "en": "Increases your maximum Rage by ${$m1/10}.", "hash": "c6ddd0b5d8710dcd", "src": "db2@1.60.1.70124"}
 {"id": 1310243, "field": "name", "en": "Rend", "hash": "0b1786e1dc4c98f3", "src": "db2@1.60.1.70170"}
 {"id": 1310243, "field": "description", "en": "Inflicts Physical damage to an enemy every $t1 sec. for $d.", "hash": "922b603531dadde0", "src": "db2@1.60.1.70170"}
 {"id": 1310243, "field": "aura", "en": "Physical damage inflicted every $t1 sec.", "hash": "c8fd5ef350c4cc8c", "src": "db2@1.60.1.70170"}

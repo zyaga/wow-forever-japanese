@@ -100,6 +100,7 @@
 {"id": 276725, "field": "name", "en": "DNT LEGS", "hash": "8bfa12d6ef1250f3", "src": "db2@1.60.1.70170"}
 {"id": 276727, "field": "name", "en": "Glistening Stompers", "hash": "ada9aa9219f4e977", "src": "db2@1.60.1.70170"}
 {"id": 276754, "field": "name", "en": "Sunderbark Vigil", "hash": "167cc4e868f4800a", "src": "db2@1.60.1.70170"}
+{"id": 276765, "field": "name", "en": "Leafre's Ring of Precise Spell Power", "hash": "db48f9cd5a79e569", "src": "db2@1.60.1.70124"}
 {"id": 276782, "field": "name", "en": "Distant Communication Device", "hash": "5cb5198a57f45f09", "src": "db2@1.60.1.70170"}
 {"id": 276782, "field": "description", "en": "Turn the gizmo on and send the signal to Jurgens.", "hash": "1a89811d934cc6dd", "src": "db2@1.60.1.70170"}
 {"id": 276783, "field": "name", "en": "Spirit of Retribution", "hash": "811e0811a96bce1f", "src": "db2@1.60.1.70170"}

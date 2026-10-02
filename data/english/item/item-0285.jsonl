@@ -56,6 +56,7 @@
 {"id": 285291, "field": "name", "en": "Plans: Arcanite Blacksmith Hammer", "hash": "a50956f478182979", "src": "db2@1.60.1.70170"}
 {"id": 285291, "field": "description", "en": "Teaches you how to craft Arcanite Blacksmith Hammer.", "hash": "0af4dac92410ab36", "src": "db2@1.60.1.70170"}
 {"id": 285292, "field": "name", "en": "Dull Sawblade", "hash": "454645aed6650a9e", "src": "db2@1.60.1.70170"}
+{"id": 285326, "field": "name", "en": "Leafre's Ring of Armor Piercing", "hash": "313d8847a9b89909", "src": "db2@1.60.1.70124"}
 {"id": 285327, "field": "name", "en": "Kirin Tor Tabard", "hash": "b06bc0efa5072e43", "src": "db2@1.60.1.70170"}
 {"id": 285328, "field": "name", "en": "Taurenbane's Family Cleaver", "hash": "a0248747b5937efd", "src": "db2@1.60.1.70170"}
 {"id": 285329, "field": "name", "en": "Raptor Hide Cloak", "hash": "07f91f69883adcbf", "src": "db2@1.60.1.70170"}

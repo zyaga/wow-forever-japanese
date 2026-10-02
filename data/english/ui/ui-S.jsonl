@@ -141,6 +141,7 @@
 {"id": "SHOW_LEARNED_RECIPE_TOASTS", "field": "text", "en": "Show Recipe Toasts", "hash": "761d4cada5769bcf", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_MAP", "field": "text", "en": "Show Map", "hash": "5e00a452aea27bc7", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_NPC_NAMES", "field": "text", "en": "NPC Names", "hash": "edbdca31790cf89e", "src": "db2@1.60.1.70170"}
+{"id": "SHOW_OFFLINE_MEMBERS", "field": "text", "en": "Show Offline Members", "hash": "c7ff53d866334fa2", "src": "db2@1.60.1.69913"}
 {"id": "SHOW_ON_BACKPACK", "field": "text", "en": "Show on Backpack", "hash": "ba9c9328bbc615e9", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_PINGS_IN_CHAT", "field": "text", "en": "Show Pings in Chat", "hash": "d79125175ecbcad1", "src": "db2@1.60.1.70170"}
 {"id": "SHOW_PINGS_ON_RAID_FRAMES", "field": "text", "en": "Show Pings on Raid Frames", "hash": "1d973789eb7268af", "src": "db2@1.60.1.70170"}
@@ -1423,6 +1424,7 @@
 {"id": "STAGE_COMPLETE", "field": "text", "en": "Stage Complete", "hash": "2a88a1496c6aeaaf", "src": "db2@1.60.1.70170"}
 {"id": "STANDARD_DEFINITION", "field": "text", "en": "Standard Definition", "hash": "d90d48114d560992", "src": "db2@1.60.1.70170"}
 {"id": "STANDARD_DEFINITION_TOOLTIP", "field": "text", "en": "Classic character model fidelity.", "hash": "89fb9f10a6a510e5", "src": "db2@1.60.1.70170"}
+{"id": "STANDING", "field": "text", "en": "Standing", "hash": "804d737364b18b43", "src": "db2@1.60.1.69913"}
 {"id": "START", "field": "text", "en": "Start", "hash": "c096e7cbda41c6ca", "src": "db2@1.60.1.70170"}
 {"id": "STATISTICS", "field": "text", "en": "Statistics", "hash": "9e0e251cd48d565d", "src": "db2@1.60.1.70170"}
 {"id": "STATUS", "field": "text", "en": "Status", "hash": "8d3925d3d2d4a35d", "src": "db2@1.60.1.70170"}

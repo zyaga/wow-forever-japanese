@@ -231,6 +231,7 @@
 {"id": 254562, "field": "name", "en": "Quest Item Placeholder", "hash": "80c266922e9cc7c1", "src": "db2@1.60.1.70170"}
 {"id": 254562, "field": "description", "en": "Some day I'll be a real item...", "hash": "68b4e7ec66835f54", "src": "db2@1.60.1.70170"}
 {"id": 254584, "field": "name", "en": "Index Esoteria", "hash": "8b2eb82e026ebf71", "src": "db2@1.60.1.70170"}
+{"id": 254584, "field": "description", "en": "Activate the Index Esoteria to gather magical data at the Overlook Standing Stones in the Shen'dar Highlands.", "hash": "d78474f5cf567534", "src": "db2@1.60.1.69913"}
 {"id": 254663, "field": "name", "en": "Gently Cursed Bone", "hash": "a6c4c28718f1e2ff", "src": "db2@1.60.1.70170"}
 {"id": 254676, "field": "name", "en": "Suspicious Industrial Supplies", "hash": "5aa4d49f7b07a3a2", "src": "db2@1.60.1.70170"}
 {"id": 254679, "field": "name", "en": "Stillwind String", "hash": "e3f9887781e31f73", "src": "db2@1.60.1.70170"}

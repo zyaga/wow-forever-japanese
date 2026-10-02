@@ -344,6 +344,7 @@
 {"id": 8226, "field": "aura", "en": "Feign death.", "hash": "c31ab56c8a1ff523", "src": "db2@1.60.1.70170"}
 {"id": 8227, "field": "name", "en": "Flametongue Totem", "hash": "253b74d942ac6c4d", "src": "db2@1.60.1.70170"}
 {"id": 8227, "field": "description", "en": "Summons a Flametongue Totem with $s1 health at the feet of the caster. The totem enchants all party members' main-hand weapons with fire if they are within $8230a1 yards. Each hit causes ${$8253m1/77*$<mult>-1} to ${$8253M1/25*$<mult>} additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. Lasts $d.", "hash": "d7f74b3fa05e473c", "src": "db2@1.60.1.70170"}
+{"id": 8229, "field": "name", "en": "Flametongue Totem Passive", "hash": "17e9991309fa986f", "src": "wago@1.15.9.69722"}
 {"id": 8230, "field": "name", "en": "Flametongue Totem", "hash": "253b74d942ac6c4d", "src": "db2@1.60.1.70170"}
 {"id": 8230, "field": "aura", "en": "Main hand attacks deal an additional ${$8253m1/77} to ${$8253M1/25} Fire damage.", "hash": "192d2611635f5343", "src": "db2@1.60.1.70170"}
 {"id": 8232, "field": "name", "en": "Windfury Weapon", "hash": "f57112af36ea575b", "src": "db2@1.60.1.70170"}
@@ -369,6 +370,7 @@
 {"id": 8249, "field": "description", "en": "Summons a Flametongue Totem with $s1 health at the feet of the caster. The totem enhances the melee attacks of all party members within $8250a1 yards. Each main hand hit causes  ${$8248m1/77*$<mult>-1} to ${$8248M1/25*$<mult>} additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. Lasts $d.", "hash": "622215b6942a3a19", "src": "db2@1.60.1.70170"}
 {"id": 8250, "field": "name", "en": "Flametongue Totem", "hash": "253b74d942ac6c4d", "src": "db2@1.60.1.70170"}
 {"id": 8250, "field": "aura", "en": "Main hand attacks deal an additional ${$8248m1/77} to ${$8248M1/25} Fire damage.", "hash": "1d65b44015df373e", "src": "db2@1.60.1.70170"}
+{"id": 8251, "field": "name", "en": "Flametongue Totem Passive", "hash": "17e9991309fa986f", "src": "wago@1.15.9.69722"}
 {"id": 8253, "field": "name", "en": "Flametongue Totem Proc", "hash": "ec931e472da05c7f", "src": "db2@1.60.1.70170"}
 {"id": 8255, "field": "name", "en": "Strong Cleave", "hash": "664cf43e08715e3e", "src": "db2@1.60.1.70170"}
 {"id": 8255, "field": "description", "en": "Inflicts normal damage plus $s1 to an enemy and its nearest allies, affecting up to $x1 targets and increasing the time between their attacks by $s2% for $d.", "hash": "6c44d1eb288c2dbe", "src": "db2@1.60.1.70170"}

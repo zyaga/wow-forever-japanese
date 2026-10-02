@@ -457,6 +457,7 @@
 {"id": 274976, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "d87f66ab5e3a562f", "src": "db2@1.60.1.70170"}
 {"id": 274977, "field": "name", "en": "Recipe: Plain Ol' Paletusk", "hash": "02841e8a5f9fb65c", "src": "db2@1.60.1.70170"}
 {"id": 274977, "field": "description", "en": "Teaches you how to cook Plain Ol' Paletusk.", "hash": "edc2527eb170949c", "src": "db2@1.60.1.70170"}
+{"id": 274978, "field": "name", "en": "Leafre's Ring of Great Resistance", "hash": "bf6ebd74d6bebb44", "src": "db2@1.60.1.70124"}
 {"id": 274979, "field": "name", "en": "Hyjal Silphium", "hash": "77c166297ed8072e", "src": "db2@1.60.1.70170"}
 {"id": 274979, "field": "description", "en": "This herb gives off a faint minty smell and feels cool when rubbed between two fingers.", "hash": "e397cd0d627dd20d", "src": "db2@1.60.1.70170"}
 {"id": 274981, "field": "name", "en": "Rog'mar Report", "hash": "4de17f92ab94e687", "src": "db2@1.60.1.70170"}

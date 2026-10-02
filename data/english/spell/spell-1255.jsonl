@@ -142,6 +142,12 @@
 {"id": 1255144, "field": "name", "en": "Murloc Scale Shoes", "hash": "732ff3d0b0aa7be9", "src": "db2@1.60.1.70170"}
 {"id": 1255145, "field": "name", "en": "Dark Leather Boots", "hash": "ece8c7e2559345f9", "src": "db2@1.60.1.70170"}
 {"id": 1255146, "field": "name", "en": "Black Whelp Slippers", "hash": "e45a5ceb550a5465", "src": "db2@1.60.1.70170"}
+{"id": 1255160, "field": "name", "en": "Awaken", "hash": "129294059029ccb2", "src": "db2@1.60.1.69913"}
+{"id": 1255160, "field": "description", "en": "The Metamorphic Fury has been summoned onto this world!", "hash": "883090f70936b6a2", "src": "db2@1.60.1.69913"}
+{"id": 1255194, "field": "name", "en": "Furious Flame Shock", "hash": "44b8d6606fd1ce09", "src": "db2@1.60.1.69913"}
+{"id": 1255194, "field": "description", "en": "Deal $s1 Fire damage instantly and an additional $s2 Fire damage every $t2 sec.", "hash": "433026257835a2ee", "src": "db2@1.60.1.69913"}
+{"id": 1255194, "field": "aura", "en": "Suffering $w2 Fire damage every $t2 sec.", "hash": "2ca459b738c57e3b", "src": "db2@1.60.1.69913"}
+{"id": 1255210, "field": "name", "en": "TEST", "hash": "0b53b3167810ac17", "src": "db2@1.60.1.69913"}
 {"id": 1255229, "field": "name", "en": "Recently Dropped Flag", "hash": "25ed43e13c07b648", "src": "db2@1.60.1.70170"}
 {"id": 1255229, "field": "description", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70170"}
 {"id": 1255229, "field": "aura", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70170"}

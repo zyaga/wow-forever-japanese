@@ -12,6 +12,10 @@
 {"id": 1254220, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70170"}
 {"id": 1254221, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70170"}
 {"id": 1254233, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70170"}
+{"id": 1254234, "field": "name", "en": "Earthquake", "hash": "6c814df326a339a5", "src": "db2@1.60.1.69913"}
+{"id": 1254237, "field": "name", "en": "Earthquake", "hash": "6c814df326a339a5", "src": "db2@1.60.1.69913"}
+{"id": 1254237, "field": "description", "en": "Deal roughly $s1 Nature damage every $t1 sec to enemies standing in the earthquake.", "hash": "46e866d967c2dfc9", "src": "db2@1.60.1.69913"}
+{"id": 1254237, "field": "aura", "en": "Suffering $w1 Nature damage every $t1 sec.", "hash": "0c4dce3beae64d3f", "src": "db2@1.60.1.69913"}
 {"id": 1254268, "field": "name", "en": "Eternal Reward", "hash": "b48db06b9854b717", "src": "db2@1.60.1.70170"}
 {"id": 1254269, "field": "name", "en": "Eternal Reward", "hash": "b48db06b9854b717", "src": "db2@1.60.1.70170"}
 {"id": 1254287, "field": "name", "en": "Eternal Reward", "hash": "b48db06b9854b717", "src": "db2@1.60.1.70170"}
@@ -79,6 +83,10 @@
 {"id": 1254871, "field": "name", "en": "Eavesdropped", "hash": "6f323f9851f1d5a5", "src": "db2@1.60.1.70170"}
 {"id": 1254874, "field": "name", "en": "(DNT) Cancel Aura", "hash": "8a413a4c4fe16994", "src": "db2@1.60.1.70170"}
 {"id": 1254892, "field": "name", "en": "Channel Winds", "hash": "510878c2739f8b41", "src": "db2@1.60.1.70170"}
+{"id": 1254902, "field": "name", "en": "Eruption", "hash": "5a49169340dbb669", "src": "db2@1.60.1.69913"}
+{"id": 1254902, "field": "description", "en": "Magma seeps through tremors on the ground, causing up to ${$s1+$s2} pillars to erupt near the Metamorphic Fury.", "hash": "b12727a960cce43f", "src": "db2@1.60.1.69913"}
+{"id": 1254903, "field": "name", "en": "Eruption", "hash": "5a49169340dbb669", "src": "db2@1.60.1.69913"}
+{"id": 1254918, "field": "name", "en": "Eruption", "hash": "5a49169340dbb669", "src": "db2@1.60.1.69913"}
 {"id": 1254945, "field": "name", "en": "Shen'dar Offering", "hash": "04b6f8dd6cdb79ce", "src": "db2@1.60.1.70170"}
 {"id": 1254965, "field": "name", "en": "Forceful Rugged Armor Kit", "hash": "05a4fe6f7321627d", "src": "db2@1.60.1.70170"}
 {"id": 1254966, "field": "name", "en": "Mystic Rugged Armor Kit", "hash": "5edd97ef4a84599f", "src": "db2@1.60.1.70170"}

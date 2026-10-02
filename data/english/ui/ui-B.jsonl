@@ -28,6 +28,7 @@
 {"id": "BAG_NAME_BAG_3", "field": "text", "en": "Bag 3", "hash": "93a371e3a5bf935d", "src": "db2@1.60.1.70170"}
 {"id": "BAG_NAME_BAG_4", "field": "text", "en": "Bag 4", "hash": "93a371e4a5bf935e", "src": "db2@1.60.1.70170"}
 {"id": "BANKSLOTPURCHASE", "field": "text", "en": "Purchase", "hash": "c1e4eed345fc3107", "src": "db2@1.60.1.70170"}
+{"id": "BANKSLOTPURCHASE_LABEL", "field": "text", "en": "Do you wish to purchase space for an additional bag?", "hash": "1fd39fc43933b75a", "src": "db2@1.60.1.69913"}
 {"id": "BANK_BAG", "field": "text", "en": "Bag Slot", "hash": "b2265a2ce453f053", "src": "db2@1.60.1.70170"}
 {"id": "BANK_BAG_PURCHASE", "field": "text", "en": "Purchasable Bag Slot", "hash": "f112029010922ee2", "src": "db2@1.60.1.70170"}
 {"id": "BANK_CONFIRM_CLEANUP_PROMPT", "field": "text", "en": "Are you sure you want to automatically sort your items?|nThis will affect all tabs.", "hash": "846a7d3c76a4b6e3", "src": "db2@1.60.1.70170"}

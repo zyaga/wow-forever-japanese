@@ -32,3 +32,19 @@
 {"id": 1321861, "field": "name", "en": "Resting", "hash": "0ebee6536cdf344b", "src": "db2@1.60.1.70170"}
 {"id": 1321861, "field": "description", "en": "Resting.", "hash": "8bafdccab782f187", "src": "db2@1.60.1.70170"}
 {"id": 1321861, "field": "aura", "en": "Resting.", "hash": "8bafdccab782f187", "src": "db2@1.60.1.70170"}
+{"id": 1321936, "field": "name", "en": "Disease Cloud", "hash": "95273b4925a3f04a", "src": "db2@1.60.1.70124"}
+{"id": 1321936, "field": "description", "en": "A putrid cloud of disease surrounds the caster, dealing Nature damage to nearby enemies.\r\n", "hash": "009cc2695903d3d0", "src": "db2@1.60.1.70124"}
+{"id": 1321936, "field": "aura", "en": "Damaging nearby enemies every $t1 sec.", "hash": "727f1b3c25054f5c", "src": "db2@1.60.1.70124"}
+{"id": 1321937, "field": "name", "en": "Disease Cloud", "hash": "95273b4925a3f04a", "src": "db2@1.60.1.70124"}
+{"id": 1321937, "field": "description", "en": "A putrid cloud of disease surrounds the caster, dealing Nature damage to nearby enemies.\r\n", "hash": "009cc2695903d3d0", "src": "db2@1.60.1.70124"}
+{"id": 1321938, "field": "name", "en": "Knockdown", "hash": "6f9508bc7debff6d", "src": "db2@1.60.1.70124"}
+{"id": 1321938, "field": "description", "en": "Inflicts $s2 damage to an enemy, stunning it for $d.\r\n", "hash": "9f56403fdcaeb36a", "src": "db2@1.60.1.70124"}
+{"id": 1321938, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
+{"id": 1321952, "field": "name", "en": "Gargoyle Strike", "hash": "7c1243e50f94722a", "src": "db2@1.60.1.70124"}
+{"id": 1321952, "field": "description", "en": "Inflicts Nature damage to an enemy.", "hash": "6878f321f28a86b5", "src": "db2@1.60.1.70124"}
+{"id": 1321960, "field": "name", "en": "Move to Highest Threat Target Primer", "hash": "fc86e8ffe9ace003", "src": "db2@1.60.1.70124"}
+{"id": 1321998, "field": "name", "en": "Immolation", "hash": "7ac18bc777244e61", "src": "db2@1.60.1.70124"}
+{"id": 1321998, "field": "description", "en": "Burns nearby enemies for $1321999s1 fire damage every $t1 seconds.\r\n", "hash": "eb96a68bc61d483d", "src": "db2@1.60.1.70124"}
+{"id": 1321998, "field": "aura", "en": "Burns nearby enemies for $1321999s1 fire damage every $t1 seconds.", "hash": "eb96a68bc61d483d", "src": "db2@1.60.1.70124"}
+{"id": 1321999, "field": "name", "en": "Immolation", "hash": "7ac18bc777244e61", "src": "db2@1.60.1.70124"}
+{"id": 1321999, "field": "description", "en": "Burns nearby enemies for $s1 Fire damage periodically.\r\n", "hash": "c01d7a2018c9f554", "src": "db2@1.60.1.70124"}

@@ -7,6 +7,7 @@
 {"id": "IGNORE_DIALOG", "field": "text", "en": "Ignore", "hash": "d7988f8c6bf93789", "src": "db2@1.60.1.70170"}
 {"id": "IGNORE_ERRORS", "field": "text", "en": "Ignore", "hash": "d7988f8c6bf93789", "src": "db2@1.60.1.70170"}
 {"id": "IGNORE_LIST", "field": "text", "en": "Ignore List", "hash": "e2b877686191a833", "src": "db2@1.60.1.70170"}
+{"id": "IGNORE_PLAYER", "field": "text", "en": "Ignore Player", "hash": "600ff35957729ecf", "src": "db2@1.60.1.69913"}
 {"id": "IGNORE_REMOVE", "field": "text", "en": "Stop Ignoring", "hash": "ee876699f23d9d0b", "src": "db2@1.60.1.70170"}
 {"id": "IGR_BILLING_NAG_DIALOG", "field": "text", "en": "Your IGR's playtime is about to expire, you will be disconnected shortly.", "hash": "f7097375dabcfb46", "src": "db2@1.60.1.70170"}
 {"id": "IMMUNE", "field": "text", "en": "Immune", "hash": "40ca18062fe1575d", "src": "db2@1.60.1.70170"}

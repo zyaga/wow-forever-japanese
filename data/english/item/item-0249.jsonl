@@ -156,8 +156,20 @@
 {"id": 249697, "field": "name", "en": "Claws of the Great Bear", "hash": "4cecaca7f9a36d5a", "src": "db2@1.60.1.70170"}
 {"id": 249698, "field": "name", "en": "Feathered Charm Necklace", "hash": "05836f02fec0ce08", "src": "db2@1.60.1.70170"}
 {"id": 249726, "field": "name", "en": "Azerothium Bar", "hash": "9c51fb3d090a5044", "src": "db2@1.60.1.70170"}
+{"id": 249791, "field": "name", "en": "Shiny Green Apple", "hash": "8b02396032a9f8ff", "src": "db2@1.60.1.69913"}
+{"id": 249791, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.69913"}
+{"id": 249792, "field": "name", "en": "Sweetsour Grapes", "hash": "4026f5cf86982663", "src": "db2@1.60.1.69913"}
+{"id": 249792, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.69913"}
+{"id": 249793, "field": "name", "en": "Wayward Pomegranate", "hash": "c95a211e1ece239a", "src": "db2@1.60.1.69913"}
+{"id": 249793, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.69913"}
+{"id": 249794, "field": "name", "en": "Tel'Abim Plantains", "hash": "ce3b70e01ba8414d", "src": "db2@1.60.1.69913"}
+{"id": 249794, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.69913"}
+{"id": 249795, "field": "name", "en": "Flame Papaya", "hash": "e881506f7736fa04", "src": "db2@1.60.1.69913"}
+{"id": 249795, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.69913"}
 {"id": 249796, "field": "name", "en": "Hyjal Berries", "hash": "3443ef217a82b769", "src": "db2@1.60.1.70170"}
 {"id": 249796, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70170"}
+{"id": 249802, "field": "name", "en": "Grainy Fruit Pulp", "hash": "3afbb81c28323a55", "src": "db2@1.60.1.69913"}
+{"id": 249803, "field": "name", "en": "Tangy Fruit Pulp", "hash": "849bb47d807d8230", "src": "db2@1.60.1.69913"}
 {"id": 249865, "field": "name", "en": "Peace Tea", "hash": "83c936af07d294dc", "src": "db2@1.60.1.70170"}
 {"id": 249865, "field": "description", "en": "$@spelldesc430 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "83f655af096291c3", "src": "db2@1.60.1.70170"}
 {"id": 249866, "field": "name", "en": "Royal Tea", "hash": "e0fc4cfeeb6e3675", "src": "db2@1.60.1.70170"}

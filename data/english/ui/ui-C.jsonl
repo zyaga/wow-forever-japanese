@@ -7,7 +7,9 @@
 {"id": "CAA_PULSE_PLAYER_HEALTH_LABEL", "field": "text", "en": "Pulse Your Health", "hash": "473836cf0785bc33", "src": "db2@1.60.1.70170"}
 {"id": "CAA_PULSE_PLAYER_HEALTH_TOOLTIP", "field": "text", "en": "Plays a repeating sound that speeds up as your health decreases", "hash": "460ff17bab89007c", "src": "db2@1.60.1.70170"}
 {"id": "CAA_PULSE_PLAYER_HEALTH_VOLUME_TOOLTIP", "field": "text", "en": "Adjusts the volume for the health pulse", "hash": "c6116c360d2f5b8d", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAMPLE_DEBUFFNAME", "field": "text", "en": "Deadly Sting", "hash": "4cc9a8e458650451", "src": "db2@1.60.1.69913"}
 {"id": "CAA_SAMPLE_DISPELTTYPE", "field": "text", "en": "Magic", "hash": "54ba6cee39dc24ee", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAMPLE_SPELLNAME", "field": "text", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.69913"}
 {"id": "CAA_SAY_CASTS_END_OF_CAST", "field": "text", "en": "End of cast", "hash": "bae1eaa32a6cd323", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_CASTS_START_OF_CAST", "field": "text", "en": "Start of cast", "hash": "9966b1fc125d53fd", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_COMBAT_END_LABEL", "field": "text", "en": "Say Combat End", "hash": "eb9b68dea1bb5f84", "src": "db2@1.60.1.70170"}
@@ -261,6 +263,8 @@
 {"id": "CHAT_CONFIG_CHANNEL_SETTINGS_TITLE_WITH_DRAG_INSTRUCTIONS", "field": "text", "en": "Channels |cff808080(Drag to Reorder)|r", "hash": "c2c79c544985af53", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_DEFAULTS", "field": "text", "en": "Chat Defaults", "hash": "6a6ce0353db24f20", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_DND_GET", "field": "text", "en": "%s does not wish to be disturbed: ", "hash": "f6cd86940d38d0e1", "src": "db2@1.60.1.70170"}
+{"id": "CHAT_FLAG_AFK", "field": "text", "en": "<Away>", "hash": "7808bbbff2416769", "src": "db2@1.60.1.69913"}
+{"id": "CHAT_FLAG_DND", "field": "text", "en": "<Busy>", "hash": "89568d7cfdd0c267", "src": "db2@1.60.1.69913"}
 {"id": "CHAT_GUILD_SEND", "field": "text", "en": "Guild: ", "hash": "d5a39c482ac68e1f", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_INSTANCE_CHAT_SEND", "field": "text", "en": "Instance: ", "hash": "09c7c2dc0d9e7f95", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_INVALID_NAME_NOTICE", "field": "text", "en": "Invalid channel name", "hash": "175587e614586641", "src": "db2@1.60.1.70170"}
@@ -1151,6 +1155,7 @@
 {"id": "CustomizationChoice:1202", "field": "text", "en": "Cowlicked", "hash": "4854b3abda8b609d", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:1204", "field": "text", "en": "Balding", "hash": "587db4a0de667c9f", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:1211", "field": "text", "en": "The Curl", "hash": "0fd95b7926fc9c4c", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:1212", "field": "text", "en": "Blade's Edge", "hash": "45e5ffe1a3cf5180", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:1213", "field": "text", "en": "Fauxhawk", "hash": "5cacb44b3df84105", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:1260", "field": "text", "en": "Tower", "hash": "d17ed6324d78b64f", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:1268", "field": "text", "en": "Cute", "hash": "09192e6fd2ba47d1", "src": "db2@1.60.1.70170"}
@@ -1182,6 +1187,7 @@
 {"id": "CustomizationChoice:1399", "field": "text", "en": "Jungle Flower", "hash": "fe14218a9ede025a", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:140", "field": "text", "en": "Pony Left", "hash": "43618dad748d368c", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:1400", "field": "text", "en": "Wrapped Braid", "hash": "ce45442c5ee57030", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:1402", "field": "text", "en": "Mota", "hash": "0a6ea44340f839a3", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:1404", "field": "text", "en": "Sticks & Stones", "hash": "70ac3bd2c5784352", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:1405", "field": "text", "en": "Backblown", "hash": "0de5338e749a7fe4", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:141", "field": "text", "en": "Bobbed", "hash": "81c91f58540d0d34", "src": "db2@1.60.1.70170"}
@@ -1212,7 +1218,10 @@
 {"id": "CustomizationChoice:15187", "field": "text", "en": "Fangs of Ashamane (Green)", "hash": "08f8d5a26f89c5bf", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:152", "field": "text", "en": "Styled", "hash": "906e4bd4f4cf67fb", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:153", "field": "text", "en": "Curled", "hash": "e8c728e8dd479a24", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:15379", "field": "text", "en": "Druid of the Flame", "hash": "42752f81e9d6934e", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:15383", "field": "text", "en": "Pale", "hash": "0ad1de82b19b621f", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:154", "field": "text", "en": "Raquel", "hash": "465566add0590985", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:15406", "field": "text", "en": "Moonkin", "hash": "1368350e2c252141", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:15441", "field": "text", "en": "Trimmed", "hash": "8d63ec34b8e94aa0", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:15445", "field": "text", "en": "Wise", "hash": "0bc4199caf360b8b", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:15447", "field": "text", "en": "Fancy", "hash": "d9dc42f53d3bc3b9", "src": "db2@1.60.1.70170"}
@@ -1235,6 +1244,8 @@
 {"id": "CustomizationChoice:1557", "field": "text", "en": "Elegance", "hash": "c54e493ae59bd2a6", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:1558", "field": "text", "en": "Naughty", "hash": "6f40285e5bf44d7f", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:1559", "field": "text", "en": "Trifecta", "hash": "de2ef96f397dd86d", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:15593", "field": "text", "en": "Pterrordax", "hash": "eaf618205d871e5e", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:15603", "field": "text", "en": "Thistlehawk", "hash": "2f4b2b42fd6371f2", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:15681", "field": "text", "en": "Solid", "hash": "bfee407c42e3ccff", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:15683", "field": "text", "en": "Slim", "hash": "0b3ba735857dc7ee", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:15693", "field": "text", "en": "Prominent", "hash": "9a2c8d25b098a650", "src": "db2@1.60.1.70170"}
@@ -1292,6 +1303,7 @@
 {"id": "CustomizationChoice:18255", "field": "text", "en": "Casual", "hash": "89d9917724177b18", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18258", "field": "text", "en": "Exarch", "hash": "12334d09d1048eed", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18262", "field": "text", "en": "Woven", "hash": "0627b61de63ff0ea", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:18267", "field": "text", "en": "Talbuk", "hash": "3cad886a64f9903c", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:18268", "field": "text", "en": "Right", "hash": "ad9168e9ffb022b0", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18276", "field": "text", "en": "Finery", "hash": "08247b0d0d7e92d4", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18279", "field": "text", "en": "Both", "hash": "08f54ea12d80bd4f", "src": "db2@1.60.1.70170"}
@@ -1301,6 +1313,7 @@
 {"id": "CustomizationChoice:18291", "field": "text", "en": "Jewel", "hash": "209eaef412403341", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18294", "field": "text", "en": "Shard", "hash": "befb447739625660", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18297", "field": "text", "en": "Diadem", "hash": "0f5da9323829f807", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:1853", "field": "text", "en": "Dreadlord", "hash": "f3f08fb14c420c5d", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:1859", "field": "text", "en": "Bat", "hash": "00117a69060d8c88", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:1861", "field": "text", "en": "Veil", "hash": "0ba0bac611ebc9c5", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:1866", "field": "text", "en": "Tan", "hash": "001631054d825014", "src": "db2@1.60.1.70170"}
@@ -1324,13 +1337,16 @@
 {"id": "CustomizationChoice:18822", "field": "text", "en": "Artisan", "hash": "e4afd5b3d500f9b6", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18823", "field": "text", "en": "Gondolier", "hash": "f8c82b411a435fbe", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18827", "field": "text", "en": "Pendant", "hash": "4b6dff2770dc2e1a", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:18864", "field": "text", "en": "Suramar", "hash": "679ddfda8d4e3f13", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:18865", "field": "text", "en": "Augur", "hash": "84c3f76cd2feba7d", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18866", "field": "text", "en": "Eternity", "hash": "2db75fd940d425d3", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18872", "field": "text", "en": "Insight", "hash": "8aa366b72d022d66", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:18874", "field": "text", "en": "Duskwatch", "hash": "5b424dbb15e15957", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:18964", "field": "text", "en": "Shimmering Ardenmoth", "hash": "319fa016743e9daa", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18978", "field": "text", "en": "Nightwing Raven", "hash": "55e5a7a295219bf5", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:18992", "field": "text", "en": "Duskwing Raven", "hash": "c9c3575238499dd6", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:19006", "field": "text", "en": "Regal Dredbat", "hash": "927f342f44d41117", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:19020", "field": "text", "en": "Gloomstalker Dredbat", "hash": "6b05732818d7e274", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:19076", "field": "text", "en": "Twilight Runestag", "hash": "41bbdc7da486e62b", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:19090", "field": "text", "en": "Midnight Runestag", "hash": "198482f1f020cf91", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:19132", "field": "text", "en": "Sable Ardenmoth", "hash": "a1f16a0dcdcfee2c", "src": "db2@1.60.1.70170"}
@@ -1396,6 +1412,7 @@
 {"id": "CustomizationChoice:19530", "field": "text", "en": "Guardian", "hash": "e1e4d7dbb5043882", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:19532", "field": "text", "en": "Primal", "hash": "78a163a76fd5ee9d", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:19535", "field": "text", "en": "Basilisk", "hash": "811bafe90ae4cbae", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:19536", "field": "text", "en": "Shimada", "hash": "05832031044ec3e2", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:19537", "field": "text", "en": "Barbed", "hash": "8e2e0095f9b95514", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:19539", "field": "text", "en": "Small Fin", "hash": "ef1a03f72cdbe9a3", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:19541", "field": "text", "en": "Medium Fin", "hash": "52bdd338ddd3a4ca", "src": "db2@1.60.1.70170"}
@@ -1578,6 +1595,7 @@
 {"id": "CustomizationChoice:2573", "field": "text", "en": "Queue", "hash": "9d9ed662b9b62a7c", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:2579", "field": "text", "en": "Chopstick", "hash": "fe8577a14f3d9e0c", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:2580", "field": "text", "en": "Spiky", "hash": "c00fc617c4633592", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:2581", "field": "text", "en": "The Sokka", "hash": "34458d255d612ae0", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:2584", "field": "text", "en": "Temple Rope", "hash": "4856e00c80396e3b", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:2586", "field": "text", "en": "Chin Bead", "hash": "13a65d94b66c7e52", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:2587", "field": "text", "en": "Three Rings", "hash": "2fbd6c04bfc97ed7", "src": "db2@1.60.1.70170"}
@@ -1750,7 +1768,10 @@
 {"id": "CustomizationChoice:3017", "field": "text", "en": "Jani's Favor", "hash": "25a0d37bbe5cb56c", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3018", "field": "text", "en": "Quiff", "hash": "9d9fdadac9955b52", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3019", "field": "text", "en": "Ancient", "hash": "cc31e7fc89b5c451", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:3020", "field": "text", "en": "De King", "hash": "7688947fd2f5a288", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:3021", "field": "text", "en": "Zocalo", "hash": "1652448a82658e4c", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:3022", "field": "text", "en": "Raptor Whip", "hash": "1f883230e503fc8b", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:3024", "field": "text", "en": "The Gral", "hash": "1061c01750b18336", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:3033", "field": "text", "en": "Zandalar Forever", "hash": "8885acd0dab8a0fe", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3034", "field": "text", "en": "Gilded", "hash": "0363e1b2403e728e", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3042", "field": "text", "en": "Golden", "hash": "6cb627a279bd6f69", "src": "db2@1.60.1.70170"}
@@ -1761,8 +1782,11 @@
 {"id": "CustomizationChoice:3063", "field": "text", "en": "Undercut", "hash": "897071e410393c51", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3064", "field": "text", "en": "Daggertail", "hash": "5435ed98830a2569", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3065", "field": "text", "en": "Burial Mound", "hash": "24937e29e254074b", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:3066", "field": "text", "en": "Arcanital", "hash": "dc6cec1b06c95243", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:3067", "field": "text", "en": "Warbraid", "hash": "d7d2d61f733b7d8a", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3068", "field": "text", "en": "Kill Count", "hash": "7ec27fe7adc9fab4", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:3069", "field": "text", "en": "Rastari", "hash": "20aba19906f6ed88", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:30696", "field": "text", "en": "Crimson Gladiator", "hash": "ad14900ded7ac590", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:3070", "field": "text", "en": "Ravasaur Nest", "hash": "9be7ca7a45a70d0a", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:30705", "field": "text", "en": "Storm-Eater", "hash": "78185b22b71e3e81", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:30709", "field": "text", "en": "Spikes + Bangle", "hash": "6a75e2bf60cefe46", "src": "db2@1.60.1.70170"}
@@ -1776,9 +1800,11 @@
 {"id": "CustomizationChoice:3116", "field": "text", "en": "Low Tide", "hash": "f6c17626c2c2bf2c", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3117", "field": "text", "en": "Tradewinds", "hash": "539afcde7b519ac7", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3118", "field": "text", "en": "Tail Wind", "hash": "ebc91b610054655a", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:3119", "field": "text", "en": "Caspian", "hash": "89ac0051ed446013", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:3130", "field": "text", "en": "Chin", "hash": "0915c1629f1d7862", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3133", "field": "text", "en": "Sideburns", "hash": "aab42d7b0a3f3b8d", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3134", "field": "text", "en": "Chin Sail", "hash": "15ec7cdb0a73a2f7", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:3154", "field": "text", "en": "Clydesdale", "hash": "193cb4fe3307ce6b", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:3156", "field": "text", "en": "Ship Shape", "hash": "25ba74f05efa4612", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3157", "field": "text", "en": "The Wave", "hash": "128230e6e3b6e14b", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3158", "field": "text", "en": "Admiralty", "hash": "84777cc26fe4c06d", "src": "db2@1.60.1.70170"}
@@ -1850,12 +1876,14 @@
 {"id": "CustomizationChoice:3471", "field": "text", "en": "Collar", "hash": "7ea70f62535865b0", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3494", "field": "text", "en": "Head Gasket", "hash": "a80a7514b8b3eaa6", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3495", "field": "text", "en": "Impish", "hash": "412ddefda876a5c7", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:3496", "field": "text", "en": "G.O.A.T.", "hash": "66a369e7c6d96f8b", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:3497", "field": "text", "en": "Hotrod", "hash": "69508fac6e1bad10", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3498", "field": "text", "en": "Inventor", "hash": "9ee6dc2b58d6da90", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3499", "field": "text", "en": "Hairodynamic", "hash": "32e2da9d84e7332a", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3509", "field": "text", "en": "Propeller", "hash": "463fcc2d2a8479f7", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3511", "field": "text", "en": "Prospector", "hash": "635c09d9155d0bda", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3512", "field": "text", "en": "The Show", "hash": "11facc36c9e00c5f", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:3513", "field": "text", "en": "Tuskarr", "hash": "2f323556183dccf2", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:3515", "field": "text", "en": "Ears", "hash": "09588bf99e24a518", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3516", "field": "text", "en": "Antennas", "hash": "ec509580f2a801f8", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:3517", "field": "text", "en": "Transducers", "hash": "7ade25dcdf158cf3", "src": "db2@1.60.1.70170"}
@@ -1900,6 +1928,8 @@
 {"id": "CustomizationChoice:414", "field": "text", "en": "Wedge", "hash": "04cbf86a18bbe4c6", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:44", "field": "text", "en": "Bald", "hash": "08f1a007f5ec09a4", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:45", "field": "text", "en": "Peasant", "hash": "693e491a680b0176", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:45294", "field": "text", "en": "Obsidian Gladiator", "hash": "116b88ee5de941b6", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:45310", "field": "text", "en": "Elementium Drake", "hash": "2cde7a934ccac8c9", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:45575", "field": "text", "en": "Teal", "hash": "0b5c1b78f71ae29d", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:45576", "field": "text", "en": "Gray and Bronze", "hash": "2a032b57ef36b37b", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:45579", "field": "text", "en": "Ethereal", "hash": "3c9a211909450e45", "src": "db2@1.60.1.70170"}
@@ -1929,21 +1959,46 @@
 {"id": "CustomizationChoice:497", "field": "text", "en": "Shaved", "hash": "ba9517d567c5331e", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:50", "field": "text", "en": "Loose", "hash": "450f127f36645ac1", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:504", "field": "text", "en": "Braided Hawk", "hash": "6734e535df0097ca", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:50548", "field": "text", "en": "Fiend", "hash": "daec5a0884c260c2", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:51", "field": "text", "en": "Courtier", "hash": "7069601b1319ab38", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:52", "field": "text", "en": "Scholar", "hash": "0aa76ae1d42e63d1", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:53", "field": "text", "en": "Rogue", "hash": "ae5f41235021794c", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:5330", "field": "text", "en": "Glow", "hash": "09a0070de49f16d3", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:54", "field": "text", "en": "Fabulous", "hash": "7dbed4640134684d", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:54202", "field": "text", "en": "Felhunter", "hash": "1d88b221b615cf47", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54204", "field": "text", "en": "Dreadhound", "hash": "8de37f5895ccceb1", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:54351", "field": "text", "en": "Star", "hash": "0b3dbb6aa53ee6f3", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:54491", "field": "text", "en": "Infinite", "hash": "2cd61c93903bed63", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:54498", "field": "text", "en": "Infinite Scales", "hash": "81e247aa2c211475", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:54521", "field": "text", "en": "Alexstrasza", "hash": "fccd489b895b4c1b", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54522", "field": "text", "en": "Malygos", "hash": "1efb3bf71d758286", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54523", "field": "text", "en": "Neltharion", "hash": "2cd77083122c5b3b", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54524", "field": "text", "en": "Nozdormu", "hash": "85765b7be62de301", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54525", "field": "text", "en": "Ysera", "hash": "29c7ec2c9639de8d", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54643", "field": "text", "en": "Voidlord", "hash": "8cd1bc797331bf6e", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54653", "field": "text", "en": "Voidwalker", "hash": "afd782c7d407330a", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54685", "field": "text", "en": "Felguard", "hash": "2f25a9e1172fe909", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54688", "field": "text", "en": "Wrathguard", "hash": "32b281281cf65979", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54690", "field": "text", "en": "Doomguard", "hash": "9ca4c2247430250e", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54691", "field": "text", "en": "Terrorguard", "hash": "9971e51a0d9a44d5", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54695", "field": "text", "en": "Succubus", "hash": "6d373db6116633dc", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54696", "field": "text", "en": "Incubus", "hash": "73625c5fcb61f1d9", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54700", "field": "text", "en": "Shivarra", "hash": "7018958d60c6dedd", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54706", "field": "text", "en": "Infernal", "hash": "e729bf315e08b4bf", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54707", "field": "text", "en": "Abyssal", "hash": "8586b3599d0a5e51", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:54712", "field": "text", "en": "Flames", "hash": "3b11bebc9bb72c5f", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:54730", "field": "text", "en": "Hallow's End", "hash": "58e96c42f43a3d15", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54741", "field": "text", "en": "Voidseeker", "hash": "070d0e532bb2dc78", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54750", "field": "text", "en": "Brewfest", "hash": "b4ae87fc14df97da", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:54895", "field": "text", "en": "Day of the Dead", "hash": "e2a84a0668712dc0", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:54970", "field": "text", "en": "Gold and Blue", "hash": "139c7d7bb294fd48", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:54971", "field": "text", "en": "Silver and Yellow", "hash": "ce437b4fe9aef184", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:54976", "field": "text", "en": "Crested", "hash": "481ed9b4fa78f780", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:54981", "field": "text", "en": "Plumicorns", "hash": "3733127dfe7a0d8b", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:54990", "field": "text", "en": "Corvid", "hash": "7f778368cb7bc261", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:54994", "field": "text", "en": "Plain", "hash": "8adb535fd241892e", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:54999", "field": "text", "en": "Faceguard", "hash": "fe18ae774b22c587", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:55", "field": "text", "en": "Samson", "hash": "414ffaefe4539abd", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:55003", "field": "text", "en": "Neckplate", "hash": "566e76242fcd0937", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55007", "field": "text", "en": "Simple Harness", "hash": "ee23d1c4fd4a0f94", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55008", "field": "text", "en": "Decorated Harness", "hash": "81e0860334e339b8", "src": "db2@1.60.1.70170"}
@@ -1951,7 +2006,9 @@
 {"id": "CustomizationChoice:55010", "field": "text", "en": "Jeweled Plate", "hash": "cce10e814028d6da", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55014", "field": "text", "en": "Hammerlight", "hash": "6257daa516377fe1", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55015", "field": "text", "en": "Torchlight", "hash": "61a478437b60b0b4", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:55106", "field": "text", "en": "Pirates' Day", "hash": "f01941d4a10ba380", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:55382", "field": "text", "en": "Bronze and Purple", "hash": "69ba1ef4a0343bfa", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:55432", "field": "text", "en": "Draconic Gladiator", "hash": "a4a626b191a0c0df", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:55434", "field": "text", "en": "Underbite", "hash": "5464d7687390d3cf", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55447", "field": "text", "en": "Daylight", "hash": "895a29a4cb86901c", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55448", "field": "text", "en": "Night", "hash": "675a8fa5840624d5", "src": "db2@1.60.1.70170"}
@@ -1959,6 +2016,8 @@
 {"id": "CustomizationChoice:55450", "field": "text", "en": "Sunset", "hash": "a08481cbdc0c4572", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55473", "field": "text", "en": "Gold and Pink", "hash": "157bef4b625aab5e", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55487", "field": "text", "en": "Elite", "hash": "c9c69bbf5df18bb1", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:55495", "field": "text", "en": "Verdant Gladiator", "hash": "89252bd1d0c26f32", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:55496", "field": "text", "en": "Winter Veil", "hash": "369a0d6dd4e6adb4", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:55514", "field": "text", "en": "Blazing", "hash": "6908ca52f22c49e5", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55516", "field": "text", "en": "Shadowflame", "hash": "bc8240b7fa3eb332", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55593", "field": "text", "en": "Parrot", "hash": "4f6e5913aec61cfb", "src": "db2@1.60.1.70170"}
@@ -1980,6 +2039,7 @@
 {"id": "CustomizationChoice:55626", "field": "text", "en": "Moon", "hash": "0a6ea1c140f79a4b", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55628", "field": "text", "en": "Starlight", "hash": "221f21e3219a4223", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55629", "field": "text", "en": "Body", "hash": "08f546822d7ebf50", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:55640", "field": "text", "en": "Anu'relos, Flames Guidance", "hash": "a8f700b2d0c1fe5a", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:55641", "field": "text", "en": "Runebear (Yellow)", "hash": "6be35de45d37731e", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55647", "field": "text", "en": "Dreamsaber (Blue)", "hash": "af33f1d213b79469", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55648", "field": "text", "en": "Dreamsaber (Purple)", "hash": "476cbdebfbfa70ff", "src": "db2@1.60.1.70170"}
@@ -1989,6 +2049,7 @@
 {"id": "CustomizationChoice:55652", "field": "text", "en": "Dreamtalon (Green/Red)", "hash": "04f8796767824588", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55653", "field": "text", "en": "Dreamtalon (Purple/Blue)", "hash": "580dad7ce049bc99", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55654", "field": "text", "en": "Dreamtalon (White/Green)", "hash": "d54e11bf183c71da", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:55655", "field": "text", "en": "Dreaming Nae'dra", "hash": "12207c3970e45731", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:55656", "field": "text", "en": "Bristlebruin (Green)", "hash": "15258f2ff82afe77", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55657", "field": "text", "en": "Bristlebruin (Ash)", "hash": "c1e6f004ff0e57c6", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55658", "field": "text", "en": "Umbraclaw (Brown)", "hash": "a8f38a1f5f06a2ec", "src": "db2@1.60.1.70170"}
@@ -1997,6 +2058,14 @@
 {"id": "CustomizationChoice:55661", "field": "text", "en": "Gladehart (Green)", "hash": "60552216b4ae1725", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55662", "field": "text", "en": "Gladehart (Golden)", "hash": "d3bf061a54841111", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55663", "field": "text", "en": "Gladehart (Ashes)", "hash": "8d2ffe07529715ba", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:55664", "field": "text", "en": "Azure Somnowl", "hash": "d6297bd0390e6283", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:55665", "field": "text", "en": "Slumbering Somnowl", "hash": "4a946bea00b1e669", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:55666", "field": "text", "en": "Love is in the Air", "hash": "74d6f90468f6c121", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:55668", "field": "text", "en": "Observer", "hash": "012c5f405f301afe", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:55669", "field": "text", "en": "Darkglare", "hash": "3a4a625f6d7aa8d4", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:55670", "field": "text", "en": "Ancient Observer", "hash": "5093045df2a2b55a", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:55685", "field": "text", "en": "Lunar Festival", "hash": "87259714427642fa", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:55687", "field": "text", "en": "Tyrant", "hash": "e2c42b14976c18df", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:55717", "field": "text", "en": "Thick Both", "hash": "0c508f6f576da91c", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55736", "field": "text", "en": "Partial", "hash": "a5ba95349c9f43d0", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:55738", "field": "text", "en": "Striped", "hash": "6d2ccc2bb2ed7ffc", "src": "db2@1.60.1.70170"}
@@ -2034,6 +2103,7 @@
 {"id": "CustomizationChoice:56632", "field": "text", "en": "Banded", "hash": "8da5503bcc0a0c78", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:56663", "field": "text", "en": "Void Horns", "hash": "7f73c42a1d5ac9ab", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:56664", "field": "text", "en": "Void Hair", "hash": "d4030ff448f8a063", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:56670", "field": "text", "en": "Skardyn", "hash": "6c4ea872d08af332", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:56671", "field": "text", "en": "Colorless / Deactivated", "hash": "bbfc2a8b386bfaf8", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:56697", "field": "text", "en": "Mohawk Braid", "hash": "c4eab0972ffbdfad", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:56717", "field": "text", "en": "Skardyn Flame", "hash": "2eb4ff376b6b5269", "src": "db2@1.60.1.70170"}
@@ -2061,12 +2131,17 @@
 {"id": "CustomizationChoice:56978", "field": "text", "en": "Rotor Blades", "hash": "18b7a20f78363b35", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:56980", "field": "text", "en": "Zeppelin", "hash": "0dee7b7ab4f40d64", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:56981", "field": "text", "en": "Kite", "hash": "0a2876db0e56bb12", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:56989", "field": "text", "en": "Alliance", "hash": "eb41bc3608906055", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:56990", "field": "text", "en": "Explorer", "hash": "6603c6598fba43f9", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:56991", "field": "text", "en": "Horde", "hash": "fed8faa4c6a149e9", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:57", "field": "text", "en": "Spikes", "hash": "481255e69eade5e5", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:57285", "field": "text", "en": "Eyebrows", "hash": "9ce4430d4b8ede57", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:57292", "field": "text", "en": "Midsummer Fire Festival", "hash": "98c3a9b0eec511c7", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:57295", "field": "text", "en": "Void", "hash": "0ba35918399e6f47", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:576", "field": "text", "en": "Short Tail", "hash": "614855ba16f20cf7", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:578", "field": "text", "en": "Receding", "hash": "cb70a4a0b84aa0cc", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:57804", "field": "text", "en": "Skardyn 01", "hash": "9bbf514a27b1c855", "src": "db2@1.60.1.70009"}
+{"id": "CustomizationChoice:57856", "field": "text", "en": "Skardyn 02", "hash": "9bbf514b27b1c856", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:57883", "field": "text", "en": "Flamethrower", "hash": "f1d79b90c905b510", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:57887", "field": "text", "en": "Pipes", "hash": "8a78560e659525f0", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:57889", "field": "text", "en": "Balloon", "hash": "5991b4386177d35a", "src": "db2@1.60.1.70170"}
@@ -2074,6 +2149,7 @@
 {"id": "CustomizationChoice:57912", "field": "text", "en": "Leafy", "hash": "43b4596078bf7f7e", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:57918", "field": "text", "en": "Tri-Brow", "hash": "f0f4b02f7d9c7261", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:57922", "field": "text", "en": "Pink", "hash": "0ad3f7d6d15dbfef", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:57928", "field": "text", "en": "Flame's Radiance", "hash": "194f93abe116d036", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:58", "field": "text", "en": "Swept", "hash": "c0fedbba925a722b", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:580", "field": "text", "en": "Braid", "hash": "95e92c84f1de48b9", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:581", "field": "text", "en": "Short Braid", "hash": "8e521b4a11f73f70", "src": "db2@1.60.1.70170"}
@@ -2103,6 +2179,7 @@
 {"id": "CustomizationChoice:58286", "field": "text", "en": "Long Sidepart", "hash": "e7bbfe768a6dde88", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:58287", "field": "text", "en": "Half-Shaved", "hash": "bbc5bd61b3577692", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:58288", "field": "text", "en": "Mohawk Ponytail", "hash": "90b70546c0a2cdae", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:58289", "field": "text", "en": "Sonny", "hash": "bfeec9324ad4f3fb", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:58290", "field": "text", "en": "Short locs", "hash": "648343b59043e30b", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:58291", "field": "text", "en": "Long Spiked", "hash": "d3b284de72e9e170", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:585", "field": "text", "en": "Laurel Wreath", "hash": "6efd0731b62bef6e", "src": "db2@1.60.1.70170"}
@@ -2120,6 +2197,7 @@
 {"id": "CustomizationChoice:58891", "field": "text", "en": "Teeth", "hash": "d0231f257ff64886", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:589", "field": "text", "en": "Combover", "hash": "7ac3817408b80fc7", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:59", "field": "text", "en": "Foxtail", "hash": "c14bed5dd4029afc", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:59178", "field": "text", "en": "Hagar", "hash": "fcf5d94bdf46a88e", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:60", "field": "text", "en": "Slicked", "hash": "f23fe57eec18a935", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:605", "field": "text", "en": "Double-Braided", "hash": "6af7f8be0881274f", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:606", "field": "text", "en": "Groomed", "hash": "c9e7b886b4929c75", "src": "db2@1.60.1.70170"}
@@ -2146,11 +2224,13 @@
 {"id": "CustomizationChoice:60658", "field": "text", "en": "Hammer", "hash": "729f23bf4b9676ba", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:60659", "field": "text", "en": "Glowing Tools", "hash": "8495502812667ecd", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:60660", "field": "text", "en": "War Engine", "hash": "dc108786b0bf9c93", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:60713", "field": "text", "en": "Scornwing", "hash": "3a576edf8552a359", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:608", "field": "text", "en": "Medium", "hash": "a135b8b7566a21ae", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:609", "field": "text", "en": "Ornate", "hash": "7dc58154b1b3394e", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:610", "field": "text", "en": "Thick", "hash": "d08b0b6a380d15bb", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:611", "field": "text", "en": "Pointed", "hash": "c83060db1723c625", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:613", "field": "text", "en": "Humbug", "hash": "d1ae88da8a3f80dd", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:614", "field": "text", "en": "Grimbeard", "hash": "ca216af15ce3dd5b", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:6276", "field": "text", "en": "Strapped", "hash": "5181aad63995890d", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:6277", "field": "text", "en": "Rotting", "hash": "f37790df7b2a5871", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:6278", "field": "text", "en": "Putrid", "hash": "aec52f8033e73b2e", "src": "db2@1.60.1.70170"}
@@ -2258,6 +2338,7 @@
 {"id": "CustomizationChoice:77680", "field": "text", "en": "Colonel", "hash": "cfe72a71d0d40efb", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:77681", "field": "text", "en": "Duelist", "hash": "ee6b75ff3b2bb3bf", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:77683", "field": "text", "en": "Wizard", "hash": "bd8817b308a13f47", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:77685", "field": "text", "en": "Van Dyke", "hash": "e5a37bea35cfb290", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:77686", "field": "text", "en": "Mustachioed", "hash": "d21c0091501009b8", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:7769", "field": "text", "en": "Ducktail", "hash": "f9dbb01b96312003", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:7776", "field": "text", "en": "Side Swept", "hash": "2deeb93ea873bc3a", "src": "db2@1.60.1.70170"}
@@ -2290,6 +2371,7 @@
 {"id": "CustomizationChoice:821", "field": "text", "en": "Transmog", "hash": "905d294787e5e246", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:8363", "field": "text", "en": "Nub", "hash": "0014a8ff35b33716", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:8365", "field": "text", "en": "Flame", "hash": "db5236331d190dfd", "src": "db2@1.60.1.70170"}
+{"id": "CustomizationChoice:8370", "field": "text", "en": "Hanzo", "hash": "fcf7bb52fb139fcb", "src": "db2@1.60.1.70009"}
 {"id": "CustomizationChoice:8390", "field": "text", "en": "Barbels", "hash": "c18a5232ed3442a7", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:8391", "field": "text", "en": "Whiskers", "hash": "1a891e4bec1f8fca", "src": "db2@1.60.1.70170"}
 {"id": "CustomizationChoice:8392", "field": "text", "en": "Bristles", "hash": "5e6ae9c6b6d3b6a1", "src": "db2@1.60.1.70170"}

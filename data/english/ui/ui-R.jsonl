@@ -92,6 +92,7 @@
 {"id": "RAID_FRAMES_LABEL", "field": "text", "en": "Raid Frames", "hash": "71b133c1c3292374", "src": "db2@1.60.1.70170"}
 {"id": "RAID_INFO", "field": "text", "en": "Raid Info", "hash": "cf9bf92bfa22cde1", "src": "db2@1.60.1.70170"}
 {"id": "RAID_INFORMATION", "field": "text", "en": "Raid Information", "hash": "3c76535730049ef6", "src": "db2@1.60.1.70170"}
+{"id": "RAID_INFO_DESC", "field": "text", "en": "Your saved raid instance status.", "hash": "ac1c9d0224cdabc0", "src": "db2@1.60.1.69913"}
 {"id": "RAID_INFO_WORLD_BOSS", "field": "text", "en": "World Boss", "hash": "4b3454ae73d56613", "src": "db2@1.60.1.70170"}
 {"id": "RAID_INSTANCE_EXPIRES_EXPIRED", "field": "text", "en": "Expired", "hash": "565d4c7b94f3889b", "src": "db2@1.60.1.70170"}
 {"id": "RAID_LEADER", "field": "text", "en": "Raid Leader", "hash": "72965c0d36c044f7", "src": "db2@1.60.1.70170"}
@@ -123,11 +124,13 @@
 {"id": "RANGED_ATTACK", "field": "text", "en": "Ranged Attack", "hash": "c66012ea8353f6b9", "src": "db2@1.60.1.70170"}
 {"id": "RANGED_ATTACK_POWER", "field": "text", "en": "Ranged Attack Power", "hash": "2839b759bde88dab", "src": "db2@1.60.1.70170"}
 {"id": "RANGED_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFRanged Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFAgility|r\n\n|cffBCBCBCEvery 14 Ranged Attack Power adds 1 damage per second|r", "hash": "8516ea2350ce81a0", "src": "db2@1.60.1.70170"}
+{"id": "RANGED_ATTACK_TOOLTIP", "field": "text", "en": "Ranged Attack", "hash": "c66012ea8353f6b9", "src": "db2@1.60.1.69913"}
 {"id": "RANGED_COMBATLOG_TOOLTIP", "field": "text", "en": "Shows attacks from bows, guns, thrown weapons, and wands.", "hash": "1e72387e76510b7d", "src": "db2@1.60.1.70170"}
 {"id": "RANGE_DAMAGE_COMBATLOG_TOOLTIP", "field": "text", "en": "Show ranged shots that deal full or partial damage.", "hash": "45f0bc5145f3017d", "src": "db2@1.60.1.70170"}
 {"id": "RANGE_MISSED_COMBATLOG_TOOLTIP", "field": "text", "en": "Show ranged shots that fail to deal damage.", "hash": "2ff7a0558deecf53", "src": "db2@1.60.1.70170"}
 {"id": "RANK", "field": "text", "en": "Rank", "hash": "0b167ac4cc6b89f6", "src": "db2@1.60.1.70170"}
 {"id": "RANK_COLON", "field": "text", "en": "Rank:", "hash": "ac80d29fb03abc24", "src": "db2@1.60.1.70170"}
+{"id": "RANK_POSITION", "field": "text", "en": "Rank Position", "hash": "d35a19a7dbb7aa5d", "src": "db2@1.60.1.69913"}
 {"id": "RARITY", "field": "text", "en": "Rarity", "hash": "467497962e1faec5", "src": "db2@1.60.1.70170"}
 {"id": "RATED_BATTLEGROUND_IS_READY", "field": "text", "en": "Your Rated Battleground is ready!", "hash": "3b3f62bd33628ada", "src": "db2@1.60.1.70170"}
 {"id": "RATINGS_MENU", "field": "text", "en": "Rating", "hash": "46b92fa848eed77c", "src": "db2@1.60.1.70170"}
@@ -140,6 +143,7 @@
 {"id": "READY_CHECK_YOU_WERE_AFK", "field": "text", "en": "You were Away for a ready check", "hash": "702ef727232da046", "src": "db2@1.60.1.70170"}
 {"id": "REALID_BATTLETAG_FRIEND_LABEL", "field": "text", "en": "Enter email address\n(or BattleTag)", "hash": "f936eec71b4d6cf5", "src": "db2@1.60.1.70170"}
 {"id": "REALID_FRIEND_LABEL", "field": "text", "en": "Enter email address", "hash": "33e8aeb23b97e9e9", "src": "db2@1.60.1.70170"}
+{"id": "RECENT_ALLIES_CATEGORIES_FILTER_LABEL", "field": "text", "en": "Categories", "hash": "d57ae8fd3d22476e", "src": "db2@1.60.1.70009"}
 {"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_PIN", "field": "text", "en": "Pin", "hash": "001528f93da24018", "src": "db2@1.60.1.70170"}
 {"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_SET_NOTE", "field": "text", "en": "Set Note", "hash": "3887f30a7386f36f", "src": "db2@1.60.1.70170"}
 {"id": "RECENT_ALLIES_MENU_BUTTON_LABEL_UNPIN", "field": "text", "en": "Unpin", "hash": "e2e86bb18331e6f3", "src": "db2@1.60.1.70170"}
@@ -171,6 +175,7 @@
 {"id": "REMOVE_FAVORITE_STATUS", "field": "text", "en": "Remove from Favorites", "hash": "ef4e4c7c17b8e3ef", "src": "db2@1.60.1.70170"}
 {"id": "REMOVE_FRIEND", "field": "text", "en": "Remove Friend", "hash": "e54f8be338d810c1", "src": "db2@1.60.1.70170"}
 {"id": "REMOVE_MODERATOR", "field": "text", "en": "Remove Moderator", "hash": "8ab27db7ca8f737d", "src": "db2@1.60.1.70170"}
+{"id": "REMOVE_PLAYER", "field": "text", "en": "Remove Player", "hash": "4e1b058c12de4498", "src": "db2@1.60.1.69913"}
 {"id": "RENAME_CHAT_WINDOW", "field": "text", "en": "Rename Window", "hash": "04c81f86912ef09e", "src": "db2@1.60.1.70170"}
 {"id": "RENAME_GUILD", "field": "text", "en": "Rename guild", "hash": "5136c73a269128a1", "src": "db2@1.60.1.70170"}
 {"id": "RENAME_GUILD_LABEL", "field": "text", "en": "Enter new guild name:", "hash": "f253234bd05c9f21", "src": "db2@1.60.1.70170"}
@@ -185,6 +190,7 @@
 {"id": "REPAIR_ARMOR_TOOLTIP_BREAKING", "field": "text", "en": "The durability of your armor is getting low. Visit a vendor in town to repair the item before it breaks.", "hash": "8dee460c61352f3f", "src": "db2@1.60.1.70170"}
 {"id": "REPAIR_ARMOR_TOOLTIP_BROKEN", "field": "text", "en": "One of your items has broken. You'll gain no benefit from it until it's repaired. Visit a vendor in town to repair it.", "hash": "d4bc86204fdcda34", "src": "db2@1.60.1.70170"}
 {"id": "REPAIR_ARMOR_TOOLTIP_TITLE", "field": "text", "en": "Repair Armor", "hash": "d5814a0733186503", "src": "db2@1.60.1.70170"}
+{"id": "REPAIR_ITEMS", "field": "text", "en": "Repair Items", "hash": "62317e7d2579eb10", "src": "db2@1.60.1.69913"}
 {"id": "REPLACE_ENCHANT", "field": "text", "en": "Do you want to replace \"%s\" with \"%s\"?", "hash": "ed132ee66e542d84", "src": "db2@1.60.1.70170"}
 {"id": "REPLACE_MY_PLAYER_PORTRAIT", "field": "text", "en": "Replace My Frame Portrait", "hash": "b6acdb95266af38f", "src": "db2@1.60.1.70170"}
 {"id": "REPLACE_OTHER_PLAYER_PORTRAITS", "field": "text", "en": "Replace Player Frame Portraits", "hash": "a0ad26831093669c", "src": "db2@1.60.1.70170"}
@@ -244,8 +250,11 @@
 {"id": "REPUTATION_AT_WAR_DESCRIPTION", "field": "text", "en": "This determines how you will interact with members of this faction. If you have at war checked then your default behavior will be to attack them. If you do not have it checked you will not be able to attack them. ", "hash": "7024aa557ffa9cb5", "src": "db2@1.60.1.70170"}
 {"id": "REPUTATION_DETAIL_SELECT_PROMPT", "field": "text", "en": "Select a faction to view its details.", "hash": "fcd13f85eabc00a3", "src": "db2@1.60.1.70170"}
 {"id": "REPUTATION_EXALTED_PLUS_HELP", "field": "text", "en": "Continue earning reputation with Exalted factions to receive rewards.", "hash": "0bdce19b7383f8f9", "src": "db2@1.60.1.70170"}
+{"id": "REPUTATION_FACTION_DESCRIPTION", "field": "text", "en": "These are the factions that you have interacted with.", "hash": "9093b05a8d4b32b7", "src": "db2@1.60.1.69913"}
 {"id": "REPUTATION_MOVE_TO_INACTIVE", "field": "text", "en": "Moves the reputation bar to the bottom of your list under the inactive heading. Useful for reputations you are no longer interested in tracking.", "hash": "afc55fac974b252a", "src": "db2@1.60.1.70170"}
 {"id": "REPUTATION_SHOW_AS_XP", "field": "text", "en": "Displays this reputation bar next to your experience bar.", "hash": "422aa684875f4839", "src": "db2@1.60.1.70170"}
+{"id": "REPUTATION_STANDING_DESCRIPTION", "field": "text", "en": "The further to the right your standing bar is the closer you are to improving your reputation to the next tier with that faction. The Standing Levels in order are Hated, Hostile, Unfriendly, Neutral, Friendly, Honored, Revered and Exalted.", "hash": "5536715d8a1dd05f", "src": "db2@1.60.1.69913"}
+{"id": "REPUTATION_STATUS_AT_WAR", "field": "text", "en": "You are currently at war with this group.", "hash": "baf12bde0ba711cb", "src": "db2@1.60.1.69913"}
 {"id": "REPUTATION_TOOLTIP_ACCOUNT_WIDE_LABEL", "field": "text", "en": "Account Reputation", "hash": "3d26e6cfe49958f0", "src": "db2@1.60.1.70170"}
 {"id": "REQUEST_INVITE", "field": "text", "en": "Request to Join Group", "hash": "c7ef66dc7e7431ec", "src": "db2@1.60.1.70170"}
 {"id": "REQUEST_ROLL", "field": "text", "en": "Request Roll", "hash": "423577b6e3c80b67", "src": "db2@1.60.1.70170"}

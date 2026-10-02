@@ -484,6 +484,7 @@
 {"id": 10521, "field": "name", "en": "Flametongue Totem", "hash": "253b74d942ac6c4d", "src": "db2@1.60.1.70170"}
 {"id": 10521, "field": "aura", "en": "Main hand attacks deal an additional ${$10523m1/77} to ${$10523M1/25} Fire damage.", "hash": "c35889ea453f0c2a", "src": "db2@1.60.1.70170"}
 {"id": 10523, "field": "name", "en": "Flametongue Totem Proc", "hash": "ec931e472da05c7f", "src": "db2@1.60.1.70170"}
+{"id": 10524, "field": "name", "en": "Flametongue Totem Passive", "hash": "17e9991309fa986f", "src": "wago@1.15.9.69722"}
 {"id": 10525, "field": "name", "en": "Tough Scorpid Breastplate", "hash": "8d0baf39cb145354", "src": "db2@1.60.1.70170"}
 {"id": 10526, "field": "name", "en": "Flametongue Totem", "hash": "253b74d942ac6c4d", "src": "db2@1.60.1.70170"}
 {"id": 10526, "field": "description", "en": "Summons a Flametongue Totem with $s1 health at the feet of the caster. The totem enhances the melee attacks of all party members within $10521a1 yards. Each main hand hit causes  ${$10523m1/77*$<mult>-1} to ${$10523M1/25*$<mult>} additional Fire damage, based on the speed of the weapon. Slower weapons cause more fire damage per swing. Lasts $d.", "hash": "f253e6228a4b2ff6", "src": "db2@1.60.1.70170"}

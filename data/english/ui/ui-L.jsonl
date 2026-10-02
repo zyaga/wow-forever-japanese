@@ -1,8 +1,10 @@
+{"id": "LABEL_NOTE", "field": "text", "en": "Note", "hash": "0a90f1e2ce602da6", "src": "db2@1.60.1.69913"}
 {"id": "LANGUAGE", "field": "text", "en": "Language", "hash": "200c80b7245dad8f", "src": "db2@1.60.1.70170"}
 {"id": "LANGUAGES_LABEL", "field": "text", "en": "Languages", "hash": "6665de684e5a2919", "src": "db2@1.60.1.70170"}
 {"id": "LANGUAGES_SETTINGS_LABEL", "field": "text", "en": "Languages and Social", "hash": "8e37708bf9c00218", "src": "db2@1.60.1.70170"}
 {"id": "LANGUAGES_SOCIAL_LABEL", "field": "text", "en": "Social", "hash": "35b645ce6762a730", "src": "db2@1.60.1.70170"}
 {"id": "LARGE", "field": "text", "en": "Large", "hash": "432f96fc869c4efe", "src": "db2@1.60.1.70170"}
+{"id": "LASTONLINE", "field": "text", "en": "Last Online", "hash": "bc26c42c05ff6788", "src": "db2@1.60.1.69913"}
 {"id": "LASTONLINE_DAYS", "field": "text", "en": "%d |4day:days;", "hash": "91d4fc7d5e6b46eb", "src": "db2@1.60.1.70170"}
 {"id": "LASTONLINE_HOURS", "field": "text", "en": "%d |4hour:hours;", "hash": "110b6f1be4cebe87", "src": "db2@1.60.1.70170"}
 {"id": "LASTONLINE_MINS", "field": "text", "en": "< an hour", "hash": "01a4cfb0ca231d84", "src": "db2@1.60.1.70170"}
@@ -13,6 +15,7 @@
 {"id": "LAST_ONLINE_COLON", "field": "text", "en": "Last Online:", "hash": "47d6649e33038371", "src": "db2@1.60.1.70170"}
 {"id": "LATER", "field": "text", "en": "Later", "hash": "43301c158e8c96cb", "src": "db2@1.60.1.70170"}
 {"id": "LATEST_UNLOCKED_ACHIEVEMENTS", "field": "text", "en": "Recent Achievements", "hash": "ce29d4956ba81f18", "src": "db2@1.60.1.70170"}
+{"id": "LEARN", "field": "text", "en": "Learn", "hash": "43b45f7978c0fdff", "src": "db2@1.60.1.69913"}
 {"id": "LEARN_SKILL_TEMPLATE", "field": "text", "en": "Learn %s", "hash": "ed3504270ae4c141", "src": "db2@1.60.1.70170"}
 {"id": "LEARN_SPELL_OBJECTIVE", "field": "text", "en": "Learn Spell:", "hash": "fb49c198240da072", "src": "db2@1.60.1.70170"}
 {"id": "LEAVE", "field": "text", "en": "Leave", "hash": "43b4617c78c17d7a", "src": "db2@1.60.1.70170"}
@@ -119,6 +122,7 @@
 {"id": "LOCK_EXPIRE", "field": "text", "en": "Lock Expire", "hash": "27a8bd459cfa7f24", "src": "db2@1.60.1.70170"}
 {"id": "LOCK_WINDOW", "field": "text", "en": "Lock Window", "hash": "cf6273e21a4161ea", "src": "db2@1.60.1.70170"}
 {"id": "LOC_OPTION_OFF", "field": "text", "en": "Off", "hash": "0014e45f39a99cac", "src": "db2@1.60.1.70170"}
+{"id": "LOGOUT", "field": "text", "en": "Logout", "hash": "55a307547a12e4fa", "src": "db2@1.60.1.69913"}
 {"id": "LOG_OUT", "field": "text", "en": "Log Out", "hash": "c7ccdb9f5a684b2f", "src": "db2@1.60.1.70170"}
 {"id": "LOOKINGFORGUILD", "field": "text", "en": "Guild Finder", "hash": "174784f4465f8169", "src": "db2@1.60.1.70170"}
 {"id": "LOOKING_FOR_RAID", "field": "text", "en": "Other Raids", "hash": "e4c1d3c8029ff667", "src": "db2@1.60.1.70170"}

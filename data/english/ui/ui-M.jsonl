@@ -93,6 +93,7 @@
 {"id": "MAXFPS_CHECK", "field": "text", "en": "Max Foreground FPS Toggle", "hash": "6d91107d60401809", "src": "db2@1.60.1.70170"}
 {"id": "MAX_FOLLOW_DIST", "field": "text", "en": "Max Camera Distance", "hash": "2476ec1bf7a6ad18", "src": "db2@1.60.1.70170"}
 {"id": "MELEE", "field": "text", "en": "Melee", "hash": "5544f07d8354c84f", "src": "db2@1.60.1.70170"}
+{"id": "MELEE_ATTACK", "field": "text", "en": "Melee Attack", "hash": "20711bdf775b3c89", "src": "db2@1.60.1.69913"}
 {"id": "MELEE_ATTACK_POWER", "field": "text", "en": "Attack Power", "hash": "3e6a7d38952902e8", "src": "db2@1.60.1.70170"}
 {"id": "MELEE_ATTACK_POWER_PET_HUNTER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Attack|r damage per second by %s\n\nIncreased by 10%% of |cFFFFFFFFMaster's Attack Power|r from whichever is higher: |cFFFFFFFFMelee|r or |cFFFFFFFFRanged|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "ee59c16bf8c90931", "src": "db2@1.60.1.70170"}
 {"id": "MELEE_ATTACK_POWER_PET_WARLOCK_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Attack|r damage per second by %s\n\nIncreased by %d%% of |cFFFFFFFFMaster's Spell Damage|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "30d50bc86f52c49c", "src": "db2@1.60.1.70170"}

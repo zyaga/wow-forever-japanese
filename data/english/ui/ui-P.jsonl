@@ -128,6 +128,7 @@
 {"id": "PLAYER_OFFLINE", "field": "text", "en": "Offline", "hash": "06e66a7a007d0582", "src": "db2@1.60.1.70170"}
 {"id": "PLAYER_ONLY_INTERACTION", "field": "text", "en": "Player Only", "hash": "e54825910e7598a1", "src": "db2@1.60.1.70170"}
 {"id": "PLAYER_SPELLS_FRAME_MINIMIZE_TIP", "field": "text", "en": "You can minimize the Spellbook here", "hash": "f7c62c35362bd346", "src": "db2@1.60.1.70170"}
+{"id": "PLAYER_STATUS", "field": "text", "en": "Player Status", "hash": "47487d2dc8c56bb4", "src": "db2@1.60.1.69913"}
 {"id": "PLAY_MOVIE_PREPEND", "field": "text", "en": "(Play Movie)", "hash": "2fa48d929f6c5894", "src": "db2@1.60.1.70170"}
 {"id": "PLUNDERSTORM_LOGOUT_TEXT", "field": "text", "en": "%d seconds until logout for Plunderstorm", "hash": "b5ac095c08bc7d39", "src": "db2@1.60.1.70170"}
 {"id": "PLUS_AMMO_DAMAGE_TEMPLATE", "field": "text", "en": "+ %s damage per second", "hash": "7025d91b16eb15eb", "src": "db2@1.60.1.70170"}
