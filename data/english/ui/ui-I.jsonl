@@ -1,6 +1,7 @@
 {"id": "ICON_SELECTION_CLICK", "field": "text", "en": "Click to view in the list", "hash": "0439ee6fbbfdb04f", "src": "db2@1.60.1.70170"}
 {"id": "ICON_SELECTION_NOTINLIST", "field": "text", "en": "This icon is not in the list", "hash": "f3864f642ae0b51f", "src": "db2@1.60.1.70170"}
 {"id": "ICON_SELECTION_TITLE_CURRENT", "field": "text", "en": "Currently Selected", "hash": "d4b26efa1f3ba217", "src": "db2@1.60.1.70170"}
+{"id": "IF_EQUIPPED_TOGETHER", "field": "text", "en": "Equipped With", "hash": "04c7664dc43ecc10", "src": "db2@1.60.1.70170"}
 {"id": "IGNORE", "field": "text", "en": "Ignore", "hash": "d7988f8c6bf93789", "src": "db2@1.60.1.70170"}
 {"id": "IGNORED", "field": "text", "en": "Ignored", "hash": "5311772e13c44b5f", "src": "db2@1.60.1.70170"}
 {"id": "IGNORED_QUEST_DISPLAY", "field": "text", "en": "|cff000000%s (ignored)|r", "hash": "4d41b04c8d765d83", "src": "db2@1.60.1.70170"}

@@ -14032,3 +14032,6 @@ UNIT_ALREADY_SKINNED_HERB
 UNIT_ALREADY_SKINNED_ROCK
 UNIT_ALREADY_SKINNED_BOLTS
 UNIT_CAPTURABLE
+# the comparison tooltip's tab above the equipped item (blizzard_sharedxmlgame/tooltip/tooltipcomparisonmanager.lua:241-247)
+EQUIPPED
+IF_EQUIPPED_TOGETHER

@@ -734,10 +734,22 @@ local function showHidden(frame, kind, id, lines)
   return hiddenDone(n, table.concat(how, "; "))
 end
 
+-- A tooltip's item: (name, link). GameTooltip and ItemRefTooltip answer GetItem; a comparison tooltip only carries
+-- its tooltip data, read through Blizzard's own TooltipUtil.GetDisplayedItem
+-- [verified: blizzard_sharedxmlgame/tooltip/tooltiputil.lua:9-21].
+function Tooltip.itemOf(frame)
+  if type(frame.GetItem) == "function" then return frame:GetItem() end
+  local displayed = Compat.resolve("TooltipUtil.GetDisplayedItem")
+  if type(displayed) ~= "function" then return nil end
+  local ok, name, link = pcall(displayed, frame)
+  if not ok then return nil end
+  return name, link
+end
+
 -- The Item post-call's target.
 function Tooltip.onItem(frame)
   if inRefit[frame] then return 0 end -- our own refit re-runs the post-call; nothing new to read
-  local itemName, link = frame:GetItem()
+  local itemName, link = Tooltip.itemOf(frame)
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
@@ -807,12 +819,21 @@ local COMPARE_KEYS = { "ITEM_DELTA_DESCRIPTION", "ITEM_DELTA_MULTIPLE_COMPARISON
   "ITEM_COMPARISON_SWAP_ITEM_MAINHAND_DESCRIPTION", "ITEM_COMPARISON_SWAP_ITEM_OFFHAND_DESCRIPTION",
   "ITEM_COMPARISON_CYCLING_DISABLED_MSG_MAINHAND", "ITEM_COMPARISON_CYCLING_DISABLED_MSG_OFFHAND" }
 Tooltip.COMPARE_KEYS = COMPARE_KEYS
+local COMPARE_HEADER_KEYS = { "EQUIPPED", "IF_EQUIPPED_TOGETHER" }
+Tooltip.COMPARE_HEADER_KEYS = COMPARE_HEADER_KEYS
 function Tooltip.onCompareShow(frame)
   local index = WFJ.UIIndex
-  if inRefit[frame] or not index or not (frame.GetItem and frame:GetItem()) then return 0 end
+  if inRefit[frame] or not index or not Tooltip.itemOf(frame) then return 0 end
   local surface, refit, n = surfaceOf(frame), refitFor(frame), 0
   inRefit[frame] = true
   local ok, err = pcall(function()
+    -- the "Equipped" tab above the comparison (tooltipcomparisonmanager.lua:241-247)
+    local header = type(frame.CompareHeader) == "table" and frame.CompareHeader.Label or nil
+    local htext = type(header) == "table" and type(header.GetText) == "function" and header:GetText() or nil
+    if type(htext) == "string" and htext ~= "" and not anySecret({ htext }) then
+      local key = index:matchOnly(htext, COMPARE_HEADER_KEYS)
+      if key and WFJ.Render.show(surface, "ui.header", header, htext, "ui", "ui", key, {}) then n = n + 1 end
+    end
     for i, l in ipairs(Tooltip.lines(frame)) do
       local key, args
       if l.text ~= "" then key, args = index:matchOnly(l.text, COMPARE_KEYS) end
@@ -1025,7 +1046,10 @@ function Tooltip.init()
   Tooltip.path = processor and "dataprocessor" or "none"
   if processor then
     processor.AddTooltipPostCall(types.Item, function(tt)
-      local frame = dataFrame(tt, types.Item, "GetItem")
+      -- a comparison tooltip has no GetItem (ShoppingTooltipTemplate is TooltipDataHandlerMixin only,
+      -- blizzard_gametooltip/mainline/gametooltip.xml:109); it carries its tooltip data, which Tooltip.itemOf reads
+      local frame = dataFrame(tt, types.Item, type(tt) == "table" and tt.GetItem == nil and "GetPrimaryTooltipData"
+        or "GetItem")
       if frame then Tooltip.onItem(frame) end
     end)
     processor.AddTooltipPostCall(types.Spell, function(tt)

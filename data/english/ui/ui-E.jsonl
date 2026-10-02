@@ -116,6 +116,7 @@
 {"id": "EQUIPMENT_SETS_TOO_MANY", "field": "text", "en": "You cannot create any more new equipment sets.", "hash": "58bd02bbab4ae960", "src": "db2@1.60.1.70170"}
 {"id": "EQUIPMENT_SET_EDIT", "field": "text", "en": "Change Name/Icon", "hash": "dadd8a80751638b5", "src": "db2@1.60.1.70170"}
 {"id": "EQUIPMENT_SET_SETTINGS", "field": "text", "en": "Settings", "hash": "fea5ab6e7e75a1d4", "src": "db2@1.60.1.70170"}
+{"id": "EQUIPPED", "field": "text", "en": "Equipped", "hash": "2a2f0131b904703e", "src": "db2@1.60.1.70170"}
 {"id": "EQUIPSET_EQUIP", "field": "text", "en": "Equip", "hash": "ca753e9c509b1e4b", "src": "db2@1.60.1.70170"}
 {"id": "EQUIP_CONTAINER", "field": "text", "en": "Equip Container", "hash": "c95a9898116e0bbb", "src": "db2@1.60.1.70170"}
 {"id": "EQUIP_CONTAINER_REAGENT", "field": "text", "en": "Equip Reagent Bag", "hash": "97878ef55a2ca3d2", "src": "db2@1.60.1.70170"}
