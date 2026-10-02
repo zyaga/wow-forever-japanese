@@ -37,6 +37,9 @@ neither (see finding 4). Zero are Era-only.
 So the server itself is the filter. A quest the server does not have gets no answer; a quest it answers is
 one the Forever server carries. This is why the served step (ADR-034) ships every quest the cache holds.
 
+Note (2026-10-02): the served step no longer drops a quest a later scan misses. Since
+[ADR-050](../adr/050-english-is-additive.md), a quest any Forever build answered keeps its English.
+
 ### 2. Every quest record carries its zone, and every zone is a Forever zone
 
 The cache record's fixed part (the first 436 bytes on this layout) was profiled word by word across all

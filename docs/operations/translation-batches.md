@@ -336,12 +336,12 @@ previous build, with what was drafted for it. The round's batches follow the ste
 ### 1.60.1.70124 → 1.60.1.70170 (2026-10-02)
 
 Quest cache: 2,406 records (the all-ids sweep, cut by a logout near the top of the range, a catch-up scan of
-10,156 ids, then a slow recheck of 26 quests an earlier build answered, 3 passes at 2 s, which got 2); 24 quests an earlier build answered are not answered on 70170 (their Japanese stays in data/). Client tables: 31, with
+10,156 ids, then a slow recheck of 26 quests an earlier build answered, 3 passes at 2 s, which got 2); 24 quests an earlier build answered are not answered on 70170; they keep their English and Japanese ([ADR-050](../adr/050-english-is-additive.md)). Client tables: 31, with
 the build's own hotfixes (4,496 ItemSparse rows added). The wago.tools cross-check: 0 rows differ on all eight
 tables; every row count difference is a hotfix wago's export does not carry (ItemSparse 4,496, SpellName 8, Spell
 16, GlobalStrings 1), and wago has no row ours lacks. The UI extract: 4,412 files, 121 changed from 70124.
 
-| Type | Reworded (shipped line now stale) | New English lines (to draft) | Gone | Drafted |
+| Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
 |---|---|---|---|---|
 | quest | 111 machine (87 descriptions, 23 objectives, 1 title); 14 more machine lines rejected because a name or number in the English changed | 70 titles, 63 objectives, 67 descriptions | 2 (titles of 1005, 1006, not answered on 70170) | pending |
 | item | 255 tooltips (213 machine, 42 hand corrections) | 41 tooltips (26 flavour lines the bare-label rule used to skip) | 3 | pending |
