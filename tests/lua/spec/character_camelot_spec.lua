@@ -26,6 +26,7 @@ local UI = {
   SWORDS = { "Swords", "片手剣" }, -- a skill name that is also a dictionary word
   EQUIPSET_EQUIP = { "Equip", "装備" }, SAVE = { "Save", "保存" }, PAPERDOLL_NEWEQUIPMENTSET = { "New Set", "新規セット" },
   DELETE = { "Delete", "削除" }, EQUIPMENT_SET_SETTINGS = { "Settings", "設定" },
+  PLAYER_TITLE_NONE = { "No Title", "称号なし" },
   GEARSETS_POPUP_TEXT = { "Enter Set Name (Max 16 Characters):", "セット名を入力 (最大16文字):" },
   ICON_SELECTION_CLICK = { "Click to view in the list", "クリックで一覧に表示" },
   ICON_SELECTION_NOTINLIST = { "This icon is not in the list", "このアイコンは一覧にありません" },
@@ -225,6 +226,18 @@ describe("the character window on the Forever client", function()
     assert.is_true(WFJ.Labels.forbidden(_G.GearManagerPopupFrame.BorderBox.IconSelectorEditBox))
   end)
 
+  it("the title pane: the No Title row translates; an earned title stays English, even a dictionary word", function()
+    local rows = RC.setTitles({ "Save", "Private" })
+    assert.are.equal("称号なし", rows[1].text:GetText())
+    assert.are.equal("Save", rows[2].text:GetText())
+    assert.are.equal("Private", rows[3].text:GetText())
+    alt(true)
+    assert.are.equal("No Title", rows[1].text:GetText())
+    alt(false)
+    rows = RC.setTitles({}) -- a pooled row keeps no stale translation
+    assert.are.equal("称号なし", rows[1].text:GetText())
+  end)
+
   it("the popup's icon description translates after SetSelectedIconText and after an icon is clicked", function()
     local popup = _G.GearManagerPopupFrame
     local desc = popup.BorderBox.SelectedIconArea.SelectedIconText.SelectedIconDescription
@@ -245,6 +258,8 @@ describe("the character window on the Forever client", function()
     assert.has_no.errors(function() WFJ.Character.onStatRow({}) end)
     assert.has_no.errors(function() WFJ.Character.onGearSetRow(WFJ.Character, "moved") end)
     assert.has_no.errors(function() WFJ.Character.onGearSetRow({ DeleteButton = "moved" }) end)
+    assert.has_no.errors(function() WFJ.Character.onTitleRow(WFJ.Character, "moved") end)
+    assert.has_no.errors(function() WFJ.Character.onTitleRow({ text = "moved" }) end)
     _G.GearManagerPopupFrame.BorderBox = "moved"
     assert.are.equal(0, WFJ.Character.onIconText())
     _G.CharacterStatsPaneScrollBox.ScrollBox = "moved"

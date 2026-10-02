@@ -9,8 +9,8 @@
 -- Three frames inherit the template on camelot, each registered as a tooltip owner (UI/HelpTooltip, restricted to the
 -- keys above): PetFrameHappiness on the pet frame (blizzard_unitframe/mainline/petframe.xml:179),
 -- PetPaperDollPetHappinessInfo on the character window's pet tab (blizzard_uipanels_game/camelot/paperdollframe.xml:
--- 740) and PetStableFrame.modelScene.diet in the stable (blizzard_stableui/camelot/blizzard_stableui.xml:177; a login
--- addon on camelot, forever_addons.txt). An owner that is absent or not a frame is skipped.
+-- 740) and PetStableFrame.diet in the stable (blizzard_stableui/camelot/blizzard_stableui.xml:189; a login addon on
+-- camelot, forever_addons.txt). An owner that is absent or not a frame is skipped.
 local _, WFJ = ...
 local PetHappiness = {}
 WFJ.PetHappiness = PetHappiness
@@ -23,7 +23,7 @@ PetHappiness.NEVER_TOUCH = {}
 
 local OWNERS = {
   pet = { "PetFrameHappiness" }, paperdoll = { "PetPaperDollPetHappinessInfo" },
-  stable = { "PetStableFrame.modelScene.diet" },
+  stable = { "PetStableFrame.diet" },
 }
 local TOOLTIP = { only = { "PET_HAPPINESS1", "PET_HAPPINESS2", "PET_HAPPINESS3", "NONE", "PET_DAMAGE_PERCENTAGE",
   "GAINING_LOYALTY", "LOSING_LOYALTY", "PET_DIET_TEMPLATE" } }

@@ -12,6 +12,7 @@ FILES[#FILES + 1] = "UI/Stable.lua"
 local UI = {
   STABLE_SLOT_TEXT = { "Do you wish to purchase another stable slot?", "厩舎スロットをもう1つ購入しますか？" },
   COSTS_LABEL = { "Cost:", "費用:" }, PURCHASE = { "Purchase", "購入" },
+  STABLE_SLOT_COST_TEXT = { "Stable Slot Cost:", "厩舎スロットの費用:" },
   CURRENT_PET = { "Current Pet:", "現在のペット:" }, STABLED_PETS = { "Stabled Pets:", "預けているペット:" },
   EMPTY_STABLE_SLOT = { "|cffffffffEmpty Stable Slot|r", "|cffffffff空の厩舎スロット|r" },
   LOYALTY_LEVEL = { "Loyalty Level %d", "忠誠度レベル %d" },
@@ -30,6 +31,7 @@ local function installStable()
   Stub.namedFontString("PetStableLevelText", "")
   Stub.namedFontString("PetStableLoyaltyText", "")
   frame.purchaseButton = Stub.button(nil, en("PURCHASE"))
+  frame.GamepadSlotCostText = Stub.fontString(en("STABLE_SLOT_COST_TEXT"))
   frame.loyaltyLevel = CreateFrame("Frame")
   frame.loyaltyLevel.levelText = Stub.fontString("5")
   local current = CreateFrame("CheckButton", "PetStableCurrentPet")
@@ -89,6 +91,7 @@ describe("the pet stable on Forever", function()
       assert.are.equal("厩舎スロットをもう1つ購入しますか？", _G.PetStableSlotText:GetText())
       assert.are.equal("費用:", _G.PetStableCostLabel:GetText())
       assert.are.equal("購入", _G.PetStableFrame.purchaseButton:GetText())
+      assert.are.equal("厩舎スロットの費用:", _G.PetStableFrame.GamepadSlotCostText:GetText())
       assert.are.equal("現在のペット:", (_G.PetStableCurrentPet:GetRegions()):GetText())
       assert.are.equal("預けているペット:", (_G.PetStableStabledPet1:GetRegions()):GetText())
       alt(true)

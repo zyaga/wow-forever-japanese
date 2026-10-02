@@ -32,6 +32,9 @@ local UI = {
   LFGBROWSE_ACTIVITY_COUNT = { "%d |4activity:activities;", "アクティビティ %d件" },
   LFG_TOOLTIP_ROLES = { "Roles:", "ロール:" },
   LFG_LIST_CATEGORY_GROUPS = { "Groups", "グループ" }, LFG_LIST_CATEGORY_SOLO_PLAYERS = { "Players", "プレイヤー" },
+  GROUP_FINDER_GENERAL_PLAYSTYLE1 = { "Learning", "練習" }, GROUP_FINDER_GENERAL_PLAYSTYLE2 = { "Relaxed", "気楽に" },
+  GROUP_FINDER_GENERAL_PLAYSTYLE3 = { "Competitive", "本気で" },
+  GROUP_FINDER_GENERAL_PLAYSTYLE4 = { "Carry Offered", "キャリー可" },
   CATEGORY = { "Category", "カテゴリ" }, LFG_TYPE_NONE = { "None", "なし" },
   LFGBROWSE_ACTIVITY_HEADER_DEFAULT = { "Filter by activity", "アクティビティで絞り込む" },
   TANK = { "Tank", "タンク" }, HEALER = { "Healer", "ヒーラー" },
@@ -72,6 +75,7 @@ local function loadGroupFinder(o)
   S.put(listing, "LockedView.ErrorText", S.fs(en("LFG_LIST_ONLY_LEADER_CREATE")))
   listing.LockedView.ActivityText = S.fs(en("LFG_LIST_MY_ACTIVITY_LIST_HEADER"))
   listing.ActivityView = S.frame(nil, "ActivityView")
+  listing.ActivityView.PlayStyleDropdown = S.dropdown("PlayStyleDropdown")
   local comment = S.frame("LFGListingComment")
   comment.EditBox = CreateFrame("EditBox")
   comment.EditBox.Instructions = S.fs("")
@@ -108,11 +112,12 @@ local function loadGroupFinder(o)
     row.Name.text = d.leader
     row.ActivityName.text = d.own and en("LFG_SELF_LISTING")
       or (d.count and ("%d activities"):format(d.count) or d.activity)
+    if d.playstyle then row.PlaystyleLabel.text = en(d.playstyle) end -- blizzard_lfgvanilla_browse.lua:465–466
   end
   function C.entry(row, data)
     if not row then
       row = CreateFrame("Button")
-      row.Name, row.ActivityName = S.fs(), S.fs()
+      row.Name, row.ActivityName, row.PlaystyleLabel = S.fs(), S.fs(), S.fs()
       row.DataDisplay = { Solo = { RolesText = S.fs(en("LFG_TOOLTIP_ROLES")) }, DelistButton = S.frame() }
     end
     browse.ScrollBox:initFrame(row, data, function(r) _G.LFGBrowseSearchEntry_Update(r) end)
@@ -268,6 +273,16 @@ describe("the group finder on Forever", function()
         assert.are.equal("Close", browse.CategoryDropdown.Text:GetText())
         roles:SetSelectionText("Healer")
         assert.are.equal("ヒーラー", roles.Text:GetText())
+        local playstyle = _G.LFGListingFrame.ActivityView.PlayStyleDropdown
+        playstyle:SetSelectionText("Relaxed")
+        assert.are.equal("気楽に", playstyle.Text:GetText())
+      end)
+
+      it("a result's playstyle line translates; the leader's name next to it does not", function()
+        local row = C.entry(nil, { leader = "Learning", activity = "Custom",
+          playstyle = "GROUP_FINDER_GENERAL_PLAYSTYLE4" })
+        assert.are.equal("キャリー可", row.PlaystyleLabel:GetText())
+        assert.are.equal("Learning", row.Name:GetText())
       end)
 
       it("help tooltips: each owner shows only its own keys", function()

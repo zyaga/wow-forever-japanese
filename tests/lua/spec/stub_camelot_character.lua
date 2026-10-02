@@ -138,6 +138,31 @@ local function installEquipmentManager()
   end
 end
 
+-- the title pane (paperdollframe.xml:482): its ScrollBox of pooled PlayerTitleButtonTemplate rows
+local function installTitlePane()
+  local pane = CreateFrame("Frame", nil, _G.PaperDollFrame)
+  _G.PaperDollFrame.TitleManagerPane = pane
+  pane.ScrollBox = Stub.scrollBox()
+  RC.titleRows = {}
+end
+
+-- Replays PaperDollTitlesPane_Update → SetDataProvider: the first row is PLAYER_TITLE_NONE, the rest are the
+-- character's titles (paperdollframe.lua:3243–3305). → the rows
+function RC.setTitles(names)
+  local box = _G.PaperDollFrame.TitleManagerPane.ScrollBox
+  local list = { G("PLAYER_TITLE_NONE"), unpack(names) }
+  for i, name in ipairs(list) do
+    local row = RC.titleRows[i]
+    if not row then
+      row = CreateFrame("Button")
+      row.text = Stub.fontString("")
+      RC.titleRows[i] = row
+    end
+    box:initFrame(row, { index = i }, function(frame) frame.text.text = name end)
+  end
+  return RC.titleRows
+end
+
 -- Replays PaperDollEquipmentManagerPane_Update → SetDataProvider: pooled GearSetButtonTemplate rows, `.text` = the
 -- set's name; DeleteButton / EditButton tooltips (paperdollframe.xml:309–357). → the rows
 function RC.setGearSets(names)
@@ -322,6 +347,7 @@ function RC.leave(owner) if owner.scripts.OnLeave then owner.scripts.OnLeave(own
 function RC.install()
   installPaperDoll()
   installEquipmentManager()
+  installTitlePane()
   installReputation()
   -- the Classic Era panels are not loaded on camelot
   _G.PetPaperDollFrame_Update, _G.ReputationFrame_Update = nil, nil

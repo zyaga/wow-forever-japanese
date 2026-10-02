@@ -30,12 +30,14 @@ Stable.NEVER_TOUCH = { "PetStableLevelText", "PetStableLoyaltyText", "PetStableF
 local CANDIDATES = {
   frame = { "PetStableFrame" }, slotText = { "PetStableSlotText" }, costLabel = { "PetStableCostLabel" },
   purchase = { "PetStableFrame.purchaseButton" }, loyalty = { "PetStableFrame.loyaltyLevel" },
+  -- shown in gamepad mode while a slot can be bought (blizzard_stableui.xml:131, blizzard_stableui.lua:236)
+  slotCost = { "PetStableFrame.GamepadSlotCostText" },
   current = { "PetStableCurrentPet" }, stabled1 = { "PetStableStabledPet1" }, stabled2 = { "PetStableStabledPet2" },
 }
 
 local STATIC = {
   { "slotText", { only = { "STABLE_SLOT_TEXT" } } }, { "costLabel", { only = { "COSTS_LABEL" } } },
-  { "purchase", { only = { "PURCHASE" } } },
+  { "purchase", { only = { "PURCHASE" } } }, { "slotCost", { only = { "STABLE_SLOT_COST_TEXT" } } },
 }
 local REGIONS = { { "current", "CURRENT_PET" }, { "stabled1", "STABLED_PETS" } }
 local SLOT_TOOLTIP = { only = { "EMPTY_STABLE_SLOT" } }
