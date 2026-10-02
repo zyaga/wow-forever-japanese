@@ -289,40 +289,42 @@ local function colourOf(fs)
   return ("%.2f,%.2f,%.2f"):format(r, g, b)
 end
 
--- The index of the k-th line of `colour` among `colours`. → i | nil
-local function nthOfColour(colours, colour, k)
-  local seen = 0
-  for i = 1, #colours do
-    if colours[i] == colour then
-      seen = seen + 1
-      if seen == k then return i end
-    end
-  end
-  return nil
+-- The countdown a tooltip shows while the spell or item cools down ("Cooldown remaining: 2 sec"): its number moves
+-- every second, so a remembered one is never written back.
+local function isCountdown(english)
+  local template = Compat.resolve("ITEM_COOLDOWN_TIME")
+  if type(template) ~= "string" or type(english) ~= "string" then return false end
+  local head = template:match("^(.-)%%")
+  return head ~= nil and head ~= "" and english:sub(1, #head) == head
 end
 
--- The remembered lines moved onto a secret pass with another line count, matched by colour: the k-th line of a
--- colour takes what the k-th line of that colour had, and only when both have the same number of lines of every
--- colour a written line has. → { [new index] = text } | nil
+-- The remembered lines moved onto a secret pass with another line count. A line comes or goes in the middle (the
+-- countdown sits above the description), so lines are matched from the top while their colours agree and from the
+-- bottom while they agree; every written line must be matched one way or the other, or nothing is written.
+-- → { [new index] = text } | nil
 local function byColour(snap, lines)
   local now = {}
   for i, l in ipairs(lines) do
     now[i] = colourOf(l.fs)
     if now[i] == nil then return nil end
   end
-  local function count(colours, colour)
-    local n = 0
-    for i = 1, #colours do if colours[i] == colour then n = n + 1 end end
-    return n
+  local was, m, n = snap.colours, snap.n, #lines
+  local top = 0
+  while top < m and top < n and was[top + 1] ~= nil and was[top + 1] == now[top + 1] do top = top + 1 end
+  local bottom = 0
+  while bottom < m - top and bottom < n - top and was[m - bottom] ~= nil and was[m - bottom] == now[n - bottom] do
+    bottom = bottom + 1
   end
   local out = {}
-  for i = 1, snap.n do
-    if snap[i] then
-      local colour = snap.colours[i]
-      if colour == nil or count(snap.colours, colour) ~= count(now, colour) then return nil end
-      local k = 0
-      for j = 1, i do if snap.colours[j] == colour then k = k + 1 end end
-      out[nthOfColour(now, colour, k)] = snap[i]
+  for i = 1, m do
+    if snap[i] and not isCountdown(snap.english[i]) then
+      if i <= top then
+        out[i] = snap[i]
+      elseif i > m - bottom then
+        out[n - (m - i)] = snap[i]
+      else
+        return nil
+      end
     end
   end
   return out
@@ -355,7 +357,9 @@ local function reapply(frame, kind, id, lines)
   local target -- { [index] = text }: the remembered lines where they are now
   if snap.n == #lines then
     target = {}
-    for i = 1, snap.n do target[i] = snap[i] end
+    for i = 1, snap.n do
+      if not isCountdown(snap.english[i]) then target[i] = snap[i] end
+    end
   else
     target = byColour(snap, lines)
     if not target then

@@ -171,12 +171,25 @@ describe("UI/Tooltip hooks the client's data processor", function()
     Stub.fireTooltipSet(tt, "Spell")
     assert.are.equal(ja, fs("GameTooltip", 4):GetText())
     assert.are.equal("Cooldown remaining: 1 sec", fs("GameTooltip", 5):GetText())
-    -- two gold lines now where one was remembered: no guess, the English stays
+    -- colours that agree neither from the top nor from the bottom: no guess, the English stays
     tt:writeLines(withCooldownAbove)
-    colour(5, 5); fs("GameTooltip", 4):SetTextColor(GOLD[1], GOLD[2], GOLD[3])
+    colour(5, 2)
     Stub.fireTooltipSet(tt, "Spell")
     assert.are.equal(SHIELD_LINES[4], fs("GameTooltip", 5):GetText())
+    -- a readable pass with the countdown, then a secret one: the countdown is left to the client
     _G.issecretvalue = nil
+    _G.ITEM_COOLDOWN_TIME = "Cooldown remaining: %s"
+    tt:writeLines(withCooldownAbove)
+    colour(5, 5)
+    Stub.fireTooltipSet(tt, "Spell")
+    assert.are.equal(ja, fs("GameTooltip", 5):GetText())
+    _G.issecretvalue = function(v) return secret[v] == true end
+    tt:writeLines(withCooldownAbove)
+    colour(5, 5)
+    Stub.fireTooltipSet(tt, "Spell")
+    assert.are.equal("Cooldown remaining: 1 sec", fs("GameTooltip", 4):GetText())
+    assert.are.equal(ja, fs("GameTooltip", 5):GetText())
+    _G.issecretvalue, _G.ITEM_COOLDOWN_TIME = nil, nil
   end)
 
   it("ignores a tooltip whose data type is not the one the handler registered for", function()
