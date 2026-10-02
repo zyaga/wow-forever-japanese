@@ -151,6 +151,22 @@ local function spellPass(tt, lines, descRow, id)
   Stub.fireTooltipSet(tt, "Spell")
 end
 
+describe("UI/Tooltip: a readable description the spell API words differently", function()
+  it("the row the client typed SpellDescription is the description, gated by the live numbers", function()
+    local WFJ, tt = setup()
+    -- a trainer's spell the player has not learned: the API's text differs from the tooltip's line
+    local live = "Draws on the soul of the friendly target to shield them, absorbing 48 damage. Lasts 30 sec."
+    WFJ.Tooltip.trace = {}
+    spellPass(tt, { { "Power Word: Shield", "Rank 1" }, "40 yd range", "Instant cast", live }, 4)
+    assert.are.equal("味方にシールドを張り、48ダメージを吸収します。30秒間持続します。", text(4))
+    assert.is_truthy(WFJ.Tooltip.trace[#WFJ.Tooltip.trace]:find("typed row 4", 1, true))
+    WFJ.Tooltip.trace = nil
+    -- no typed row: nothing is guessed, the line stays as the client wrote it
+    spellPass(tt, { { "Power Word: Shield", "Rank 1" }, "40 yd range", "Instant cast", live })
+    assert.are.equal(live, text(4))
+  end)
+end)
+
 describe("UI/Tooltip: hidden passes", function()
   after_each(function() _G.issecretvalue, _G.GetActionInfo = nil, nil end)
 

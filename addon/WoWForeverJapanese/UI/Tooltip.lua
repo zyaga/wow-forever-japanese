@@ -819,9 +819,16 @@ function Tooltip.onSpell(frame)
   -- Only the API's string becomes data: the positional fallback is a guess.
   if description and description ~= "" then WFJ.Collector.record("spell", id, "description", description) end
   local i = Tooltip.spellLine(texts, description)
+  local how = ""
+  if not i and type(description) == "string" and description ~= "" then
+    -- the API's text differs from the tooltip's line (a trainer's spell the player has not learned): the row the
+    -- client typed SpellDescription is the description, still gated by the live line's numbers
+    i = frameDescriptionRow(frame)
+    how = (" (api description %q differs; typed row %s)"):format(plain(description), tostring(i))
+  end
   -- "spell.description": a bare "spell" would not name one field (spells also have `aura`)
   local n = show(frame, "spells", "spell.description", id, lines, i, i, spellName)
-  traceFrame(frame, "readable spell", id, lines, ("-> rendered %d"):format(n))
+  traceFrame(frame, "readable spell", id, lines, ("-> rendered %d%s"):format(n, how))
   return n
 end
 
