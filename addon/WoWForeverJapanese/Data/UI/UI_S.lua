@@ -54,7 +54,7 @@ WFJ.Data.add("ui", {
   ["SELF_HIGHLIGHT_UNIT_FRAME"] = { "自キャラクターのハイライト", 0x0cc298c9, "." },
   ["SELL_ALL_JUNK_ITEMS"] = { "ジャンクアイテムをすべて売却", 0x7a6dcaeb, "." },
   ["SELL_ALL_JUNK_ITEMS_EXCLUDE_FLAG"] = { "ジャンクを売却", 0xc6d6898a, "." },
-  ["SELL_ALL_JUNK_ITEMS_POPUP"] = { "すべてのジャンクアイテムを売却します。買い戻すことはできません。\r\n続行してもよろしいですか？", 0xfd76cc5f, "." },
+  ["SELL_ALL_JUNK_ITEMS_POPUP"] = { "すべてのガラクタアイテムを売却します。買い戻すことはできません。\r\n続行してもよろしいですか？", 0xfd76cc5f, "." },
   ["SELL_PRICE"] = { "売値", 0x28b26dd1, "." },
   ["SENDMAIL"] = { "郵便を送る", 0x547b3bc5, "." },
   ["SEND_BATTLETAG_REQUEST"] = { "バトルタグフレンドに追加", 0xfe6410ce, "." },
