@@ -72,11 +72,14 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
     tt:AddLine(" ")
     tt:AddLine(_G.ITEM_DELTA_DESCRIPTION)
     tt:AddLine("-11 Armor")
+    tt:AddLine("|cffff2020-3|r Armor") -- the client colours the number on its own
     tt:SetShown(true)
     assert.are.equal("このアイテムを置き換えると、次の能力値の変化が起こります:", _G.ShoppingTooltip1TextLeft4:GetText())
     assert.are.equal("アーマー -11", _G.ShoppingTooltip1TextLeft5:GetText())
+    assert.are.equal("アーマー |cffff2020-3|r", _G.ShoppingTooltip1TextLeft6:GetText())
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal("-11 Armor", _G.ShoppingTooltip1TextLeft5:GetText())
+    assert.are.equal("|cffff2020-3|r Armor", _G.ShoppingTooltip1TextLeft6:GetText())
   end)
 
   it("a trusted item translation gets the max-usable-level trailer in Japanese; the Collector sees no trailer",

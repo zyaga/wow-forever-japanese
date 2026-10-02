@@ -119,6 +119,7 @@ WFJ.Data.add("ui", {
   ["EQUIPMENT_SETS_TOO_MANY"] = { "これ以上新しい装備セットを作成できません。", 0x58bd02bb, "." },
   ["EQUIPMENT_SET_EDIT"] = { "名前/アイコン変更", 0xdadd8a80, "." },
   ["EQUIPMENT_SET_SETTINGS"] = { "設定", 0xfea5ab6e, "." },
+  ["EQUIPPED"] = { "装備中", 0x2a2f0131, "." },
   ["EQUIPSET_EQUIP"] = { "装備", 0xca753e9c, "." },
   ["EQUIP_CONTAINER"] = { "バッグを装備", 0xc95a9898, "." },
   ["EQUIP_CONTAINER_REAGENT"] = { "素材バッグを装備", 0x97878ef5, "." },

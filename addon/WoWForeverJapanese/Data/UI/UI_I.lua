@@ -4,6 +4,7 @@ WFJ.Data.add("ui", {
   ["ICON_SELECTION_CLICK"] = { "クリックでリスト内に表示", 0x0439ee6f, "." },
   ["ICON_SELECTION_NOTINLIST"] = { "このアイコンはリストにありません", 0xf3864f64, "." },
   ["ICON_SELECTION_TITLE_CURRENT"] = { "現在のアイコン", 0xd4b26efa, "." },
+  ["IF_EQUIPPED_TOGETHER"] = { "一緒に装備", 0x04c7664d, "." },
   ["IGNORE"] = { "無視", 0xd7988f8c, "." },
   ["IGNORED"] = { "無視中", 0x5311772e, "." },
   ["IGNORED_QUEST_DISPLAY"] = { "|cff000000%s (無視)|r", 0x4d41b04c, "." },

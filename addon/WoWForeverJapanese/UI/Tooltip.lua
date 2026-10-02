@@ -819,6 +819,25 @@ local COMPARE_KEYS = { "ITEM_DELTA_DESCRIPTION", "ITEM_DELTA_MULTIPLE_COMPARISON
   "ITEM_COMPARISON_SWAP_ITEM_MAINHAND_DESCRIPTION", "ITEM_COMPARISON_SWAP_ITEM_OFFHAND_DESCRIPTION",
   "ITEM_COMPARISON_CYCLING_DISABLED_MSG_MAINHAND", "ITEM_COMPARISON_CYCLING_DISABLED_MSG_OFFHAND" }
 Tooltip.COMPARE_KEYS = COMPARE_KEYS
+
+-- A stat change line colours its number on its own ("|cffff2020-11|r Armor", seen in game): the line is matched with
+-- its colour codes taken out, and an argument the client had coloured gets its colour back in the Japanese.
+-- → key, args | nil
+function Tooltip.matchColoured(index, text)
+  local key, args = index:match(text)
+  if key then return key, args end
+  local bare = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+  if bare == text then return nil end
+  key, args = index:match(bare)
+  if not key then return nil end
+  for i, a in pairs(args or {}) do
+    if type(i) == "number" and type(a) == "string" and a ~= "" then
+      local coloured = text:match("(|c%x%x%x%x%x%x%x%x" .. a:gsub("%p", "%%%0") .. "|r)")
+      if coloured then args[i] = coloured end
+    end
+  end
+  return key, args
+end
 local COMPARE_HEADER_KEYS = { "EQUIPPED", "IF_EQUIPPED_TOGETHER" }
 Tooltip.COMPARE_HEADER_KEYS = COMPARE_HEADER_KEYS
 function Tooltip.onCompareShow(frame)
@@ -843,7 +862,7 @@ function Tooltip.onCompareShow(frame)
         if key == "ITEM_DELTA_DESCRIPTION" or key == "ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION" then
           deltas = true
         elseif not key and deltas and not anySecret({ l.text }) then
-          key, args = index:match(l.text)
+          key, args = Tooltip.matchColoured(index, l.text)
         end
       end
       local ctx = { args = args, refit = refit }
@@ -853,6 +872,7 @@ function Tooltip.onCompareShow(frame)
   inRefit[frame] = false
   if not ok then error(err, 0) end
   if n > 0 then refit() end
+  traceFrame(frame, "comparison lines", nil, Tooltip.lines(frame), ("-> rendered %d"):format(n))
   return n
 end
 
