@@ -164,6 +164,21 @@ def test_plan_ships_the_alias_in_the_female_keys_shard_and_reports_it(tmp_path: 
     assert lua_writer.h1_literal(_k(female_variant(QUEST_EN))) in quest
 
 
+def test_the_alias_key_ships_its_lines_reading_too(tmp_path: Path):
+    # a female character's line is found under the alias key, so its word card needs the reading there as well
+    from wfj.core.readings import ja_hash
+
+    store = _store(tmp_path)
+    ja = "ケナリウスの加護を。\n\n私はTajarri。"
+    h, fk = _k(GOSSIP_EN), _k(female_variant(GOSSIP_EN))
+    reading = {"id": h, "field": "text", "ja_hash": ja_hash(ja), "words": [["加護", "かご", "加護", "かご", "blessing"]],
+               "provenance": {"class": "machine", "model": "m", "source": "readings@test", "imported": "2026-10-02"}}
+    Store(store.root / "reading").save("gossip", [reading])
+    planned = generate.plan(store, [], {})
+    assert f'["gossip:{h}"]' in planned[schema.reading_relpath("gossip", h[:2])]
+    assert f'["gossip:{fk}"]' in planned[schema.reading_relpath("gossip", fk[:2])]
+
+
 def test_gender_report_lines_name_every_dropped_and_ambiguous_key():
     report = {"aliases": {"gossip": 2, "book": 1}, "dropped": {"gossip": ["1" * 16], "book": []},
               "ambiguous": {"gossip": [], "book": ["2" * 16]}}

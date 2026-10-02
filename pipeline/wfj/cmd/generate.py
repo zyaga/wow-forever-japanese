@@ -208,9 +208,10 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
     if report is not None:
         report.update(aliases={}, dropped={}, ambiguous={})
     _plan_id_types(store, english_store, out, counts, english, report)
-    _plan_keyed_types(store, english_store, out, counts, english, report)
+    alias_of: dict[str, dict[str, str]] = {}
+    _plan_keyed_types(store, english_store, out, counts, english, report, alias_of)
     _plan_ui(store, english_store, out, counts, english)
-    _plan_readings(store, out, counts)
+    _plan_readings(store, out, counts, alias_of)
     # One version per source is still the rule, and a mixed store is still a data error, except for the
     # sources two clients serve (`schema.MULTI_VERSION_SOURCES`), where a union import keeps both builds'
     # lines on purpose (ADR-020). Meta records every version of those, sorted; the per-line
@@ -296,8 +297,10 @@ def _plan_keyed_types(
     counts: dict[str, int],
     english: dict[str, set[str]],
     report: dict[str, Any] | None,
+    alias_of: dict[str, dict[str, str]] | None = None,
 ) -> None:
-    """The shards of every type keyed by an English hash (gossip, …), with their gender aliases."""
+    """The shards of every type keyed by an English hash (gossip, …), with their gender aliases.
+    `alias_of`, when given, receives {type: {alias key: the key it repeats}} for the readings."""
     for type_ in schema.KEYED_TYPES:
         lines = store.load(type_)
         k_rows = lua_writer.keyed_rows(type_, lines)
@@ -307,6 +310,8 @@ def _plan_keyed_types(
         if report is not None:
             report["aliases"][type_], report["dropped"][type_] = len(aliases), dropped
             report["ambiguous"][type_] = ambiguous
+        if alias_of is not None:
+            alias_of[type_] = {f: k for k, f in index.items() if f in aliases and k in k_rows}
         k_rows = {**k_rows, **aliases}
         if type_ != "gossip":  # gossip's english.src names the key primitive, not a source version
             _note_versions(english, lines)
@@ -353,8 +358,15 @@ def _plan_ui(
         out[schema.shard_relpath("ui", c)] = lua_writer.ui_text(c, shard_rows)
 
 
-def _plan_readings(store: Store, out: dict[str, str], counts: dict[str, int]) -> None:
-    """The readings shards and the meanings table they point into."""
+def _plan_readings(
+    store: Store,
+    out: dict[str, str],
+    counts: dict[str, int],
+    alias_of: dict[str, dict[str, str]] | None = None,
+) -> None:
+    """The readings shards and the meanings table they point into. A gender alias key (the female variant of
+    a line, repeated under its own English hash) gets its line's reading too: the addon finds a female
+    character's line under the alias, and without the copy its words would have no reading."""
     # readings (ADR-036). Only current ones ship: a stale reading (its Japanese changed) is left
     # out and reported by `validate`; a malformed one stops generate like any invalid line.
     counts["reading"] = 0
@@ -366,6 +378,12 @@ def _plan_readings(store: Store, out: dict[str, str], counts: dict[str, int]) ->
             first = "; ".join(result["problems"][:5])
             raise ValueError(f"invalid data/reading/ records (first shown): {first}")
         current[type_] = readings.addon_keyed(type_, result["current"], store.load(type_))
+        aliases = (alias_of or {}).get(type_, {})
+        if aliases:
+            by_key = {rec["id"]: rec for rec in current[type_]}
+            current[type_] = current[type_] + [
+                by_key[key] | {"id": alias} for alias, key in sorted(aliases.items()) if key in by_key
+            ]
     # the word popup's meanings (ADR-039), each distinct one stored once and numbered; a reading row
     # points at its word's number.
     meanings = glosses.table(r for recs in current.values() for r in recs)
