@@ -565,8 +565,11 @@ function Index:matchUncached(text)
   end
   if key and self:has(key, "list") then -- "Requires: Level |cffffffff5|r, First Aid (|cffffffff50|r)"
     local items = {}
+    -- an item is read as a list item only: "Level |cffff20204|r" is also a spell's subtext row ("Level 4"),
+    -- which the open match would take first and leave the item in English
+    local isItem = function(k) return self:has(k, "listItem") end
     for item in (rest .. ", "):gmatch("(.-), ") do
-      local k, a = self:core(item)
+      local k, a = self:core(item, isItem)
       if k and self:has(k, "listItem") then items[#items + 1] = { key = k, args = a }
       else items[#items + 1] = { text = item } end
     end

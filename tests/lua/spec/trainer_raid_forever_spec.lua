@@ -16,6 +16,7 @@ local UI = {
   TRAIN = { "Train", "訓練" }, FILTER = { "Filter", "フィルター" }, APPRENTICE = { "Apprentice", "見習い" },
   PARENS_TEMPLATE = { "(%s)", "(%s)" },
   REQUIRES_LABEL = { "Requires:", "必要:" }, TRAINER_REQ_LEVEL = { "Level |cffffffff%d|r", "レベル |cffffffff%d|r" },
+  ["SpellSubtext:12178"] = { "Level 4", "レベル4" }, -- a spell's subtext that reads like a requirement item
   ITEM_SPELL_KNOWN = { "Already known", "習得済み" },
   TRAINER_REQ_SKILL_RANK = { "%s (|cffffffff%d|r)", "%s (|cffffffff%d|r)" }, RANK = { "Rank", "ランク" },
   TOOLTIP_TALENT_RANK_CURRENT_ONLY = { "Rank %d", "ランク %d" },
@@ -142,6 +143,19 @@ describe("trainer and raid on the Forever client", function()
       Stub.keys.alt = false; WFJ.Modifier.refresh()
       frame:Hide()
       assert.are.equal(en("ITEM_SPELL_KNOWN"), b2.subText:GetText()) -- released on hide
+    end)
+
+    it("a requirement item is read as a list item even when a spell subtext row has the same English", function()
+      loadTrainerUI()
+      WFJ.Trainer.init()
+      local b1 = row(1, { name = "Mark of the Wild", sub = "Rank 1" })
+      local b2 = row(2, { name = "Moonfire", level = 4 })
+      local b3 = row(3, { name = "Rejuvenation", level = 4 })
+      local b4 = row(4, { name = "Thorns", level = 6 })
+      assert.are.equal("", b1.subText:GetText())
+      assert.are.equal("必要: レベル |cffffffff4|r", b2.subText:GetText())
+      assert.are.equal("必要: レベル |cffffffff4|r", b3.subText:GetText())
+      assert.are.equal("必要: レベル |cffffffff6|r", b4.subText:GetText())
     end)
 
     it("'(Rank 2)' translates through the `entry` argument (a template inside the parentheses); a capture that is"
