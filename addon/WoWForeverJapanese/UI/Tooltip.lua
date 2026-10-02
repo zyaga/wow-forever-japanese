@@ -291,12 +291,22 @@ end
 Tooltip.trace = nil
 local TRACE_MAX = 80
 
+-- A long value is cut at 70 bytes, moved back to the start of a character: a cut inside a Japanese character is
+-- not UTF-8, and an edit box given text that is not UTF-8 shows none of it (the trace window came up blank in game).
 local function plain(v)
   if v == nil then return "nil" end
   if anySecretOf(v) then return "<secret>" end
   local t = tostring(v)
-  return #t > 70 and (t:sub(1, 70) .. "...") or t
+  if #t <= 70 then return t end
+  local cut = 70
+  while cut > 0 do
+    local b = t:byte(cut + 1)
+    if not b or b < 0x80 or b >= 0xC0 then break end -- the next byte starts a character
+    cut = cut - 1
+  end
+  return t:sub(1, cut) .. "..."
 end
+Tooltip.plain = plain
 
 local function describe(fs)
   if type(fs) ~= "table" then return "-" end
