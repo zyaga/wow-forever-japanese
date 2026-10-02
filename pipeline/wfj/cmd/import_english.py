@@ -3,7 +3,8 @@ the collector, VMaNGOS and the quest cache (split out of cmd/import_.py by sourc
 docs/systems/pipeline.md).
 
 English importers merge by source: an importer replaces its own lines and any line whose (id, field)
-it provides, and keeps every other source's lines. The collector import only adds (see run_collector)."""
+it provides, and keeps every other source's lines. The collector import replaces any stand-in
+(see run_collector)."""
 
 from __future__ import annotations
 
@@ -351,12 +352,45 @@ def _merge_fields(
     return kept + new
 
 
+_VERSION = re.compile(r"^(\d+\.\d+)\.")
+_WORDS = re.compile(r"\$[A-Za-z]|[A-Za-z']+|[^\sA-Za-z']")
+_PLAYER_TOKENS = {"$C", "$c", "$R", "$r"}
+
+
+def _same_client(src: str, build: str) -> bool:
+    """True when `src` was read from the same game line as `build` (both `1.60.…`): that client's own text
+    (its tables, its quest cache, an earlier dump), not a stand-in from another server or game version."""
+    theirs, ours = _VERSION.match(src.split("@", 1)[-1]), _VERSION.match(build)
+    return bool(theirs and ours and theirs.group(1) == ours.group(1))
+
+
+def _restore_literals(recorded: str, stand_in: str) -> str:
+    """The collector writes the recording player's class and race as `$C` / `$R` wherever the words occur, so
+    "a wise druid", recorded by a druid, comes back as "a wise $C". Where the stand-in has a literal word at
+    that spot, the literal is put back: a druid's dump cannot tell the two apart, the stand-in can."""
+    from difflib import SequenceMatcher
+
+    ours, theirs = list(_WORDS.finditer(recorded)), list(_WORDS.finditer(stand_in))
+    ow, tw = [m.group() for m in ours], [m.group() for m in theirs]
+    out, last = [], 0
+    for op, i1, i2, j1, j2 in SequenceMatcher(None, ow, tw, autojunk=False).get_opcodes():
+        swap = op == "replace" and i2 - i1 == 1 and ow[i1] in _PLAYER_TOKENS and 1 <= j2 - j1 <= 2
+        if swap and all(t.isalpha() for t in tw[j1:j2]):
+            out.append(recorded[last : ours[i1].start()])
+            out.append(stand_in[theirs[j1].start() : theirs[j2 - 1].end()])
+            last = ours[i1].end()
+    out.append(recorded[last:])
+    return "".join(out)
+
+
 def run_collector(a: argparse.Namespace) -> int:
-    """Add a collector dump to `data/english/`. Per (type, id, field): absent → added; same hash → unchanged;
-    an earlier collector line with another hash → replaced; a curated line (pfQuest, wago) with another hash →
-    kept and listed as differs; a person decides (ADR-013). A gossip line is keyed by its hash, so
-    it is only ever added or unchanged; the NPC ids a dump names are unioned into its `npcs` (counted
-    `npcs`). Invalid entries are counted by reason, never written."""
+    """Add a collector dump to `data/english/`. What the Forever client shows is the English, so per (type,
+    id, field): absent → added; same hash → unchanged; another hash → replaced, unless the line came from the
+    same client's own files (its tables or quest cache, `_same_client`), which are kept and listed as differs.
+    A replaced stand-in (pfQuest, VMaNGOS, an older client) gets its literal class or race words back
+    (`_restore_literals`). A gossip line is keyed by its hash, so it is only ever added or unchanged; the NPC
+    ids a dump names are unioned into its `npcs` (counted `npcs`). Invalid entries are counted by reason,
+    never written."""
     root = data_root()
     path = Path(a.file)
     dump = read_dump(path.read_text(encoding="utf-8-sig"))
@@ -384,8 +418,11 @@ def run_collector(a: argparse.Namespace) -> int:
                 c["npcs"] += 1
             elif cur["hash"] == en.hash_:
                 c["unchanged"] += 1
-            elif source_name(cur) == "collector":
-                lines[index[k]] = line
+            elif source_name(cur) == "collector" or not _same_client(cur["src"], en.build):
+                text = en.en if source_name(cur) == "collector" else _restore_literals(en.en, cur["en"])
+                src = f"collector@{en.build}"
+                h = hash_key(normalize_v1(text))
+                lines[index[k]] = english_line(en.id_, en.field, text, h, src, npcs=en.npcs)
                 c["replaced"] += 1
             else:
                 c["differs"] += 1
@@ -403,7 +440,7 @@ def run_collector(a: argparse.Namespace) -> int:
     rejected = ", ".join(f"{r} {n}" for r, n in sorted(dump.rejected.items())) or "none"
     print(f"rejected: {rejected}")
     if differs:
-        print("differs from a curated source (not applied):")
+        print("differs from the client's own files (kept):")
         print("\n".join(differs))
     return 0
 

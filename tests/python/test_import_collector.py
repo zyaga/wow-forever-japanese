@@ -76,7 +76,7 @@ def test_merge_rules_added_unchanged_replaced_differs(tmp_path: Path, monkeypatc
     )
     text = dump(
         entry("quest", 2, "title", same),  # unchanged
-        entry("quest", 2, "objectives", "New objectives."),  # differs from pfQuest → kept
+        entry("quest", 2, "objectives", "New objectives."),  # differs from pfQuest, a stand-in → replaced
         entry("quest", 3, "progress", "Later."),  # replaces an earlier collector line
         entry("quest", 4, "completion", "Done."),  # added
         entry("quest", 5, "title", "T", h="0000000000000000"),  # rejected
@@ -84,14 +84,36 @@ def test_merge_rules_added_unchanged_replaced_differs(tmp_path: Path, monkeypatc
     assert run(["english", "collector", _write(tmp_path, text)]) == 0
     by = {(ln["id"], ln["field"]): ln for ln in english.load("quest")}
     assert by[(2, "title")]["src"] == "pfquest@7786596"
-    assert by[(2, "objectives")]["en"] == "Old objectives."
+    assert by[(2, "objectives")]["en"] == "New objectives."
     assert by[(3, "progress")]["en"] == "Later." and by[(3, "progress")]["src"] == "collector@1.15.9.69722"
     assert by[(4, "completion")]["en"] == "Done."
     assert (5, "title") not in by
     out = capsys.readouterr().out
-    assert "quest       1         1        1       1" in out
+    assert "quest       1         1        2       0" in out
     assert "rejected: hash_mismatch 1" in out
-    assert "quest 2 objectives (kept pfquest@7786596)" in out
+
+
+def test_the_client_own_files_are_kept_and_literal_class_words_restored(tmp_path: Path, monkeypatch, capsys):
+    data = _data_dir(tmp_path, monkeypatch)
+    english = Store(data, english=True)
+    old = "I see you found me, young $r.  Melithar is a wise druid to have sent you."
+    english.save(
+        "quest",
+        [
+            english_line(458, "completion", old, key(normalize_v1(old)), "vmangos@13b49dc"),
+            english_line(9, "description", "Cache.", key(normalize_v1("Cache.")), "wdb@1.15.9.69722"),
+        ],
+    )
+    new = "I see you found me, young $R. Melithar is a wise $C to have sent you. Take a book."
+    text = dump(entry("quest", 458, "completion", new), entry("quest", 9, "description", "Other."))
+    assert run(["english", "collector", _write(tmp_path, text)]) == 0
+    by = {(ln["id"], ln["field"]): ln for ln in english.load("quest")}
+    want = "I see you found me, young $R. Melithar is a wise druid to have sent you. Take a book."
+    assert by[(458, "completion")]["en"] == want
+    assert by[(458, "completion")]["hash"] == key(normalize_v1(want))
+    assert by[(458, "completion")]["src"] == "collector@1.15.9.69722"
+    assert by[(9, "description")]["en"] == "Cache."  # the same client's quest cache stays
+    assert "quest 9 description (kept wdb@1.15.9.69722)" in capsys.readouterr().out
 
 
 def test_unchanged_import_writes_nothing(tmp_path: Path, monkeypatch):
@@ -153,10 +175,9 @@ def test_curated_importers_refuse_to_wipe_their_lines_with_nothing(tmp_path: Pat
     assert merge_source("quest", [], [], "pfquest") == []
 
 
-def test_check_and_validate_ignore_collector_english(root, tmp_path: Path, monkeypatch):
-    """Importing a dump changes nothing check/validate see: a collector item
-    description does not replace the name hash, and collector quest progress/completion do not replace the
-    description hash, open number checks, or add Vanilla ids."""
+def test_check_consults_collector_quest_english_only(root, tmp_path: Path, monkeypatch):
+    """Item English from a dump is not consulted (the client's tables hold its templates); quest English is,
+    since what the Forever client shows is the English: its hashes and new quests enter the scopes."""
     import shutil
 
     from wfj.cmd import check, validate
@@ -173,7 +194,9 @@ def test_check_and_validate_ignore_collector_english(root, tmp_path: Path, monke
     vanilla = check.vanilla_ids(english)
     ref_before = validate.rule_referential(Store(data), english)
     text = dump(
-        entry("item", 25, "description", "Use: A line no client table gives us."),  # 25: no description English
+        entry(
+            "item", 25, "description", "Use: A line no client table gives us."
+        ),  # 25: no description English
         entry("quest", 2, "completion", "Well done, $N."),
         entry("quest", 2, "progress", "Did you get 10 of them?"),
         entry("quest", 999, "description", "A Forever-only quest."),
@@ -181,12 +204,16 @@ def test_check_and_validate_ignore_collector_english(root, tmp_path: Path, monke
     assert run(["english", "collector", _write(tmp_path, text)]) == 0
     assert any(ln["src"].startswith("collector@") for ln in english.load("item"))
     after = {t: check.build_scopes(english, t) for t in ("item", "quest")}
-    for t in ("item", "quest"):
-        assert {i: (s.fields, s.hashes) for i, s in after[t].items()} == {
-            i: (s.fields, s.hashes) for i, s in before[t].items()
-        }
-    assert check.vanilla_ids(english) == vanilla
-    assert validate.rule_referential(Store(data), english) == ref_before
+    assert {i: (s.fields, s.hashes) for i, s in after["item"].items()} == {
+        i: (s.fields, s.hashes) for i, s in before["item"].items()
+    }
+    assert after["quest"][2].hashes["completion"] == key(normalize_v1("Well done, $N."))
+    assert after["quest"][999].fields["description"] == "A Forever-only quest."
+    assert set(before["quest"]) | {999} == set(after["quest"])
+    assert check.vanilla_ids(english) >= vanilla
+    # the quest fields the dump changed are no longer the English their Japanese was checked against
+    changed = sorted(set(validate.rule_referential(Store(data), english)) - set(ref_before))
+    assert all(p.startswith("quest 2/") for p in changed)
 
 
 def test_truncated_dump_is_refused_with_one_line(tmp_path: Path, monkeypatch, capsys):

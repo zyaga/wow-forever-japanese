@@ -66,6 +66,14 @@ describe("Core/Collector", function()
       end
     end)
 
+    it("a line with the race as a token and the class word literal matches (quest 458's turn-in)", function()
+      local fps = C.fingerprints("I see you found me, young night elf. A wise hunter sent you.", PLAYER)
+      local want = h1Of("I see you found me, young $R. A wise hunter sent you.")
+      local found = false
+      for _, h in ipairs(fps) do found = found or h == want end
+      assert.is_true(found)
+    end)
+
     it("lowercase class text matches the $c template's hash (quest 456's \"young druid\")", function()
       local fps = C.fingerprints("Journey forth, young hunter.", PLAYER)
       assert.are.equal(h1Of("Journey forth, young $c."), fps[1])

@@ -414,15 +414,21 @@ function Collector.key(raw, player)
   return Hash.key(Normalize.v1(e))
 end
 
--- The players a candidate is normalized for, most specific first: as given, name only, none (`false`). For a name
--- under 3 code points (which normalize_v1 never replaces) two more follow (as given, and name only, with that name
--- replaced as a whole word (`short`). They come last, so a line shipped under its literal English still wins.
+-- The players a candidate is normalized for, most specific first: as given, the race only and the class only
+-- (a line that says one of them literally and the other as a token: "young $R, a wise druid"), name only, none
+-- (`false`). For a name under 3 code points (which normalize_v1 never replaces) two more follow (as given, and
+-- name only, with that name replaced as a whole word (`short`). They come last, so a line shipped under its
+-- literal English still wins.
 local function candidates(player)
   local name = type(player) == "table" and player.name or nil
-  local list = { player, name and { name = name } or false, false }
+  local list = { player, false, false, name and { name = name } or false, false }
+  if name then
+    list[2] = { name = name, race = player.race }
+    list[3] = { name = name, class = player.class }
+  end
   if type(name) == "string" and name ~= "" and codePoints(name) < 3 then
-    list[4] = { name = name, class = player.class, race = player.race, short = true }
-    list[5] = { name = name, short = true }
+    list[6] = { name = name, class = player.class, race = player.race, short = true }
+    list[7] = { name = name, short = true }
   end
   return list
 end
