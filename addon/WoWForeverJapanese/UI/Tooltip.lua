@@ -24,9 +24,9 @@
 -- *ByAuraInstanceID twins: buff frame, target of target, party, raid, compact frames, nameplates [verified: Forever
 -- 1.60.1 blizzard_buffframe/buffframe.lua:1145–1149, unitframe/mainline/targetframe.xml:45,
 -- shared/partymemberframe.lua:202–206]. The target frame's own aura buttons use AuraButtonTooltip, a forbidden
--- frame no addon can reach (docs/architecture/client-limits.md). Forever types them Enum.TooltipDataType.UnitAura and GetSpell answers only
--- for Spell (tooltiputil.lua:25–31), so the Spell post-call never sees one; the surface registers a UnitAura
--- post-call, which fires on the first build and on every rebuild. The spell id comes from C_UnitAuras with the
+-- frame no addon can reach (docs/architecture/client-limits.md). Forever types them Enum.TooltipDataType.UnitAura
+-- and GetSpell answers only for Spell (tooltiputil.lua:25–31), so the Spell post-call never sees one; the surface
+-- registers a UnitAura post-call, which fires on the first build and on every rebuild. The spell id comes from C_UnitAuras with the
 -- call's own arguments, as Blizzard's PTR reporter does (blizzard_ptrfeedback_tooltips.lua:22–32). The aura text is
 -- line 2 [likely: tooltipdatahandler.lua writes it from C_TooltipInfo data; in-game check in
 -- docs/testing/strategy.md]: refused when empty or a UI-dictionary line, and the runtime gate refuses a line

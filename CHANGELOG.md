@@ -24,6 +24,7 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Fixed
 - A spell on your action bar keeps its Japanese tooltip in combat, the cooldown countdown included. A buff icon's tooltip stays English during a fight, because the game hides which buff it is from addons, and is Japanese again when the fight ends.
+- The README and the CurseForge page explain that a buff on the target frame always shows English: the game draws that tooltip in a window addons cannot touch.
 - The Legacy window's available points and the stable's pet diet tooltip are in Japanese again on the new build.
 - Chat lines keep the right size after you change the chat font size.
 - Lines that stopped being translated because a game update did not list them for a while are translated again. A later update no longer takes Japanese away from something the game has shown before.

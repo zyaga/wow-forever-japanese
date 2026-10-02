@@ -54,7 +54,7 @@ Click the <span style="color:#E0605A;">**字**</span> minimap button (or type **
 
 ### <span style="color:#E8C77E;">FAQ</span>
 
-**Why is a buff's tooltip in English during a fight?** While you are in combat, the game hides from addons which buff an icon under the minimap is. The addon cannot look up a translation for a buff it is not told about, so that tooltip stays in the game's English until the fight ends. Then it is Japanese again. Spell tooltips on your action bar stay Japanese in combat, the cooldown countdown too.
+**Why is a buff's tooltip sometimes in English?** Two cases. While you are in combat, the game hides from addons which buff an icon under the minimap is. The addon cannot look up a translation for a buff it is not told about, so that tooltip stays in the game's English until the fight ends. Then it is Japanese again. The buffs and debuffs shown on the target frame stay English at all times: the game draws their tooltip in a window no addon is allowed to touch. Your own buffs under the minimap and those on party frames are Japanese out of combat. Spell tooltips on your action bar stay Japanese in combat, the cooldown countdown too.
 
 **Why are names still in English?** On purpose, so what you read matches what other players say and what guides call things.
 
@@ -112,7 +112,7 @@ CurseForge アプリでインストールしてください（**Forever** のイ
 
 ### <span style="color:#E8C77E;">よくある質問</span>
 
-**戦闘中、バフのツールチップが英語なのはなぜ？** 戦闘中、ゲームはミニマップの下のアイコンがどのバフなのかをアドオンに隠します。どのバフかわからなければ翻訳を引けないため、そのツールチップは戦闘が終わるまでゲームの英語のままです。戦闘が終わると日本語に戻ります。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
+**バフのツールチップが英語になることがあるのはなぜ？** 理由は二つあります。戦闘中、ゲームはミニマップの下のアイコンがどのバフなのかをアドオンに隠します。どのバフかわからなければ翻訳を引けないため、そのツールチップは戦闘が終わるまでゲームの英語のままです。戦闘が終わると日本語に戻ります。また、ターゲットフレームに表示されるバフとデバフは常に英語です。ゲームがそのツールチップを、アドオンが触れることのできないウィンドウに表示するためです。ミニマップの下の自分のバフとパーティーフレームのバフは、戦闘外なら日本語で表示されます。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 
 **名前が英語のままなのはなぜ？** 意図した仕様です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。
 
