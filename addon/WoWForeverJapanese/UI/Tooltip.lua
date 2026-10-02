@@ -26,8 +26,8 @@
 -- shared/partymemberframe.lua:202–206]. The target frame's own aura buttons use AuraButtonTooltip, a forbidden
 -- frame no addon can reach (docs/architecture/client-limits.md). Forever types them Enum.TooltipDataType.UnitAura
 -- and GetSpell answers only for Spell (tooltiputil.lua:25–31), so the Spell post-call never sees one; the surface
--- registers a UnitAura post-call, which fires on the first build and on every rebuild. The spell id comes from C_UnitAuras with the
--- call's own arguments, as Blizzard's PTR reporter does (blizzard_ptrfeedback_tooltips.lua:22–32). The aura text is
+-- registers a UnitAura post-call, which fires on the first build and on every rebuild. The spell id comes from
+-- C_UnitAuras with the call's own arguments, as Blizzard's PTR reporter does (blizzard_ptrfeedback_tooltips.lua:22–32). The aura text is
 -- line 2 [likely: tooltipdatahandler.lua writes it from C_TooltipInfo data; in-game check in
 -- docs/testing/strategy.md]: refused when empty or a UI-dictionary line, and the runtime gate refuses a line
 -- whose names and numbers do not fit. An owner with UpdateTooltip re-shows the aura about 5 times a second while
