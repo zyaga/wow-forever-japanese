@@ -68,7 +68,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/SettingsPanel.lua", "UI/SettingsTutorials.lua", "UI/EditMode.lua", "UI/QuickKeybind.lua",
         "UI/ColorPicker.lua", "UI/ChatConfig.lua", "UI/TextToSpeech.lua", "UI/ChatTabs.lua", "UI/CombatLog.lua",
         "UI/AddonList.lua", "UI/ScriptErrors.lua", "UI/Splash.lua", "UI/EventTrace.lua", "UI/ChromieTime.lua",
-        "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua", "UI/Speech.lua", "UI/BossBanner.lua", "UI/Cinematic.lua",
+        "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua", "UI/ChatInput.lua", "UI/Speech.lua", "UI/BossBanner.lua", "UI/Cinematic.lua",
         "UI/Subtitles.lua", "UI/CoinPickup.lua", "UI/CombatFeedback.lua",
         "UI/EquipmentFlyout.lua", "UI/GhostFrame.lua", "UI/GuildInvite.lua", "UI/InstanceAbandon.lua",
         "UI/InstanceDifficulty.lua", "UI/LootHistory.lua", "UI/LossOfControl.lua", "UI/MajorFactionToast.lua",

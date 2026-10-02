@@ -1829,6 +1829,7 @@ UI\ChromieTime.lua
 UI\Alerts.lua
 UI\Errors.lua
 UI\ChatSystem.lua
+UI\ChatInput.lua
 UI\Speech.lua
 UI\BossBanner.lua
 UI\Cinematic.lua

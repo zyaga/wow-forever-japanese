@@ -32,6 +32,10 @@ The NPC greeting and the option lines are Japanese, with row heights following t
 - **status:** shipped
 - **regen-triggers:** `UI/Gossip.lua`, `UI/QuestFrame.lua` (greeting prose), `Data/Gossip/*.lua`
 
+### Typing Japanese in chat
+The chat input box shows Japanese you type or paste: while it holds Japanese it uses the addon's Japanese font, and the game's font comes back when the text is English again. Nothing is translated.
+- **status:** implemented; in-game check pending
+
 ### NPC speech (chat, speech bubbles, boss emotes)
 What NPCs say, yell, whisper and emote is Japanese: in the chat window (the line is rewritten once when it arrives, the speaker's name as the client wrote it and the prefix's words, "says:" and "yells:", in Japanese), in the NPC's speech bubble for a say or yell, and for a boss emote in the middle of the screen. The text is the server's, found by the same key as the NPC talk window, so the NPC talk area switch covers it. Emotes keep the speaker's name where the game puts it (`%s laughs.` → `%sは笑った。`). No marker is shown: a stale or missing line shows the English ([ADR-035](adr/035-ui-errors-frame-surface.md)).
 

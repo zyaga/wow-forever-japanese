@@ -230,7 +230,7 @@ function WFJ.OnLoad()
     "GroupFinder", "Channels", "QuickJoin", "RecentAllies", "RecruitAFriend", "ReportFrame", "HelpFrame",
     "StatusNotices", "BNetToast", "SettingsPanel", "SettingsTutorials", "EditMode", "QuickKeybind", "ColorPicker",
     "ChatConfig", "TextToSpeech", "ChatTabs", "CombatLog", "AddonList", "ScriptErrors", "Splash", "EventTrace",
-    "ChromieTime", "Alerts", "Errors", "ChatSystem", "BossBanner", "Cinematic", "Subtitles",
+    "ChromieTime", "Alerts", "Errors", "ChatSystem", "ChatInput", "BossBanner", "Cinematic", "Subtitles",
     "CoinPickup", "CombatFeedback", "EquipmentFlyout",
     "GhostFrame", "GuildInvite", "InstanceAbandon", "InstanceDifficulty", "LootHistory", "LossOfControl",
     "MajorFactionToast", "PartyPose", "PetHappiness", "PlayerChoice", "ReadyCheck", "StackSplit", "StreamingIcon",

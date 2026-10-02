@@ -17,6 +17,7 @@ an old setting stops working). A release moves those lines under its version num
 - Quest titles are Japanese in the NPC talk window's quest rows and on the quest greeting panel's buttons.
 - A creature's tooltip shows its type on its own line and, for a quest it counts toward, the kill count in Japanese; the quest's title under a creature or on the minimap's quest block is Japanese too.
 - The owner line under a pet, minion or guardian ("Bob's Pet") is Japanese.
+- Japanese typed or pasted into the chat input box is visible: the box switches to the addon's Japanese font while it holds Japanese.
 
 ### Changed
 - The game text is read from Forever build 1.60.1.70170.
