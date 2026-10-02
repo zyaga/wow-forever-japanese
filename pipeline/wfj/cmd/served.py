@@ -15,22 +15,21 @@ served (Classic Era's quests, items and spells under the union merge).
 The addon targets one client, Forever. Classic Era stays an input: its quest cache and tables fill English
 under the union merge (ADR-020), so `data/english` also holds lines for ids Forever does not have, and
 `generate` would ship their Japanese. `make import` / `make import-english` run this step last, after every
-client, with Forever's folder. It removes from `data/english`:
+client, with Forever's folder. What this build serves, which the record then holds:
 
-- quest: a line whose quest id is in neither QuestV2 nor the Forever quest cache (every id the cache holds,
-  placeholders included, was answered by the server). QuestV2 is kept as well as the cache: Forever lists
-  quests its server has not answered yet, and their English (from Classic Era) keeps their Japanese shipping.
-- area: keyed by the quest id, so kept exactly when its quest is.
-- objective: keyed by QuestObjective id, not quest id, so each objective is mapped to its quest through the
-  quest caches (Forever's first, then each `--map-cache`, Classic Era's) and kept when that quest is kept.
-  An objective no cache maps is kept and counted: nothing proves Forever does not serve it.
-- item: a line whose id is not in ItemSparse. spell: a line whose id is not in SpellName. Every field (the
-  name, tooltip and aura text) is keyed by the item / spell id, so one rule covers them all.
-- ui: a line whose English `src` is not the Forever tables' stamp (`<src>@<build>` from the folder's
-  `tables-source.txt`). Under the union merge Forever's line wins wherever Forever has the key, so a line
-  still stamped by another client is a key no Forever table provides. A line whose key has left
-  `ui_keys.txt` goes too: the curated list is what the dictionary is, and the union merge would otherwise
-  keep the English of a key nothing imports any more.
+- quest: QuestV2's ids and every id the Forever quest cache holds (placeholders included: the server answered
+  them). QuestV2 counts as well as the cache: Forever lists quests its server has not answered yet, and their
+  English (from Classic Era) keeps their Japanese shipping.
+- item: ItemSparse's ids. spell: SpellName's ids. Every field (name, tooltip and aura text) is keyed by the
+  item / spell id, so one rule covers them all.
+- ui: the keys whose English `src` is the Forever tables' stamp (`<src>@<build>` from the folder's
+  `tables-source.txt`) and that are in `ui_keys.txt`. Under the union merge Forever's line wins wherever
+  Forever has the key, so a line still stamped by another client is a key no Forever table provides.
+
+A line is kept when its id is in the record (this build or an earlier one). area is keyed by the quest id and
+follows its quest. An objective is keyed by QuestObjective id, so it is mapped to its quest through the quest
+caches (Forever's first, then each `--map-cache`, Classic Era's) and kept when that quest is; an objective no
+cache maps is kept and counted: nothing proves Forever does not serve it.
 
 Every other kind (book, gossip, unit) and every `data/<kind>` Japanese line is untouched; a Japanese line
 whose English was never served is `no_english_id` at the next `wfj check` and not generated. The three CSVs
