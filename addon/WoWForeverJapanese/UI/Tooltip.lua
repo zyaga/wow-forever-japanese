@@ -705,7 +705,7 @@ end
 
 -- The Item post-call's target.
 function Tooltip.onItem(frame)
-  if inRefit[frame] then return 0 end
+  if inRefit[frame] then return 0 end -- our own refit re-runs the post-call; nothing new to read
   local itemName, link = frame:GetItem()
   local lines = Tooltip.lines(frame)
   local texts = {}
@@ -720,7 +720,11 @@ function Tooltip.onItem(frame)
     return n
   end
   local id = type(link) == "string" and tonumber(link:match("item:(%d+)")) or nil
-  if not id or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
+  if not id or id <= 0 then
+    WFJ.Render.forget(surfaceOf(frame))
+    traceFrame(frame, "item without an id", nil, lines, "-> 0 (link " .. plain(link) .. ")")
+    return 0
+  end
   local first, last = Tooltip.itemRun(texts)
   local runArgs = first and peelTrailer(texts, first, last) or nil
   -- The run is read before we write (the client rewrote every line); the Collector refuses our own text anyway.
@@ -823,12 +827,31 @@ end
 -- (blizzard_sharedxmlgame/tooltip/tooltiputil.lua), and where that method is absent the registration's own type is
 -- trusted. A frame missing the reader `on*` needs (GetItem / GetSpell) is refused, never called.
 -- → the frame | nil
+-- With the trace on, a refused frame leaves one line saying which frame and why, so a tooltip that never turns
+-- Japanese shows up in the trace instead of leaving no pass at all; the same line twice in a row is kept once.
+local function traceRefusal(tt, want, why)
+  local t = Tooltip.trace
+  if not t then return end
+  local ok, name = pcall(function() return tt:GetName() end)
+  local line = ("%s refused (type %s): %s"):format(ok and plain(name) or "?", plain(want), why)
+  if t[#t] ~= line then t[#t + 1] = line end
+end
+
 local function dataFrame(tt, want, reader)
   if type(tt) ~= "table" or type(tt.GetName) ~= "function" then return nil end
-  if type(tt.IsTooltipType) == "function" and not tt:IsTooltipType(want) then return nil end
+  if type(tt.IsTooltipType) == "function" and not tt:IsTooltipType(want) then
+    traceRefusal(tt, want, "IsTooltipType is false")
+    return nil
+  end
   local name = tt:GetName()
-  if type(name) ~= "string" or not Tooltip.IS_SURFACE[name] then return nil end
-  if type(tt[reader]) ~= "function" then return nil end
+  if type(name) ~= "string" or not Tooltip.IS_SURFACE[name] then
+    traceRefusal(tt, want, "not one of the declared frames")
+    return nil
+  end
+  if type(tt[reader]) ~= "function" then
+    traceRefusal(tt, want, "no " .. reader)
+    return nil
+  end
   return tt
 end
 
