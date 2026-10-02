@@ -135,6 +135,50 @@ describe("UI/Tooltip hooks the client's data processor", function()
     _G.issecretvalue = nil
   end)
 
+  it("a secret pass with a cooldown line added finds the description by its colour, above or below", function()
+    local WFJ, tt = setup()
+    WFJ.Tooltip.init()
+    tt.owner = "ActionButton1"
+    local GOLD = { 1, 0.82, 0 }
+    local function colour(n, gold)
+      for i = 1, n do fs("GameTooltip", i):SetTextColor(1, 1, 1) end
+      fs("GameTooltip", gold):SetTextColor(GOLD[1], GOLD[2], GOLD[3])
+    end
+    -- readable: the description (line 4) is the gold line
+    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
+    colour(4, 4)
+    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
+    colour(4, 4)
+    local ja = fs("GameTooltip", 4):GetText()
+    assert.is_truthy(ja:find("シールド", 1, true))
+    local secret = {}
+    local withCooldownAbove = { SHIELD_LINES[1], SHIELD_LINES[2], SHIELD_LINES[3], "Cooldown remaining: 1 sec",
+      SHIELD_LINES[4] }
+    for _, l in ipairs(withCooldownAbove) do secret[l] = true end
+    _G.issecretvalue = function(v) return secret[v] == true end
+    -- the client writes five lines and colours them before the post-call: the description is line 5
+    tt.lines = {}
+    tt:writeLines(withCooldownAbove)
+    colour(5, 5)
+    Stub.fireTooltipSet(tt, "Spell")
+    assert.are.equal(ja, fs("GameTooltip", 5):GetText())
+    assert.are.equal("Cooldown remaining: 1 sec", fs("GameTooltip", 4):GetText())
+    -- the countdown below the description instead: the gold line is still line 4
+    local withCooldownBelow = { SHIELD_LINES[1], SHIELD_LINES[2], SHIELD_LINES[3], SHIELD_LINES[4],
+      "Cooldown remaining: 1 sec" }
+    tt:writeLines(withCooldownBelow)
+    colour(5, 4)
+    Stub.fireTooltipSet(tt, "Spell")
+    assert.are.equal(ja, fs("GameTooltip", 4):GetText())
+    assert.are.equal("Cooldown remaining: 1 sec", fs("GameTooltip", 5):GetText())
+    -- two gold lines now where one was remembered: no guess, the English stays
+    tt:writeLines(withCooldownAbove)
+    colour(5, 5); fs("GameTooltip", 4):SetTextColor(GOLD[1], GOLD[2], GOLD[3])
+    Stub.fireTooltipSet(tt, "Spell")
+    assert.are.equal(SHIELD_LINES[4], fs("GameTooltip", 5):GetText())
+    _G.issecretvalue = nil
+  end)
+
   it("ignores a tooltip whose data type is not the one the handler registered for", function()
     local WFJ, tt = setup()
     WFJ.Tooltip.init()

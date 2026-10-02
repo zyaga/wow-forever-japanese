@@ -251,6 +251,11 @@ function Slash.debug(sub, arg)
   local sp = WFJ.Tooltip.secretPasses
   say("secret tooltips: %d written back · skipped: %d nothing to write · %d another spell · %d line count · "
     .. "%d another owner · %d English wanted", sp.reapplied, sp.nothing, sp.other, sp.lines, sp.owner, sp.off)
+  local mm = WFJ.Tooltip.lastMismatch
+  if mm then
+    say("secret tooltips: last line-count skip: remembered %d lines, the secret pass had %d", mm.remembered, mm.secret)
+    for i, text in ipairs(mm.english or {}) do say("  remembered line %d: %s", i, text) end
+  end
   local kb = WFJ.Compat.memoryKB()
   say("memory: %s", kb and ("%.1f MB"):format(kb / 1024) or "n/a")
   local c = WFJ.Data.counts

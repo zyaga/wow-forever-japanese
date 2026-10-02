@@ -279,9 +279,60 @@ local function ownerOf(frame)
   return type(frame.GetOwner) == "function" and frame:GetOwner() or nil
 end
 
-local function remember(frame, kind, id, area, lines)
-  local snap = { kind = kind, id = id, n = #lines, area = area, owner = ownerOf(frame) }
+-- A line's colour as a key ("1.00,0.82,0.00"), or nil when the client hides it too. A spell's description is the
+-- gold line and the name, cost, cast time and cooldown lines are white, so the colour finds a line again when a
+-- secret pass adds one (the cooldown countdown) without reading any text.
+local function colourOf(fs)
+  if type(fs.GetTextColor) ~= "function" then return nil end
+  local r, g, b = fs:GetTextColor()
+  if anySecret({ r, g, b }) or type(r) ~= "number" then return nil end
+  return ("%.2f,%.2f,%.2f"):format(r, g, b)
+end
+
+-- The index of the k-th line of `colour` among `colours`. → i | nil
+local function nthOfColour(colours, colour, k)
+  local seen = 0
+  for i = 1, #colours do
+    if colours[i] == colour then
+      seen = seen + 1
+      if seen == k then return i end
+    end
+  end
+  return nil
+end
+
+-- The remembered lines moved onto a secret pass with another line count, matched by colour: the k-th line of a
+-- colour takes what the k-th line of that colour had, and only when both have the same number of lines of every
+-- colour a written line has. → { [new index] = text } | nil
+local function byColour(snap, lines)
+  local now = {}
   for i, l in ipairs(lines) do
+    now[i] = colourOf(l.fs)
+    if now[i] == nil then return nil end
+  end
+  local function count(colours, colour)
+    local n = 0
+    for i = 1, #colours do if colours[i] == colour then n = n + 1 end end
+    return n
+  end
+  local out = {}
+  for i = 1, snap.n do
+    if snap[i] then
+      local colour = snap.colours[i]
+      if colour == nil or count(snap.colours, colour) ~= count(now, colour) then return nil end
+      local k = 0
+      for j = 1, i do if snap.colours[j] == colour then k = k + 1 end end
+      out[nthOfColour(now, colour, k)] = snap[i]
+    end
+  end
+  return out
+end
+
+local function remember(frame, kind, id, area, lines)
+  local snap = { kind = kind, id = id, n = #lines, area = area, owner = ownerOf(frame), english = {}, colours = {} }
+  for i, l in ipairs(lines) do
+    snap.english[i] = l.text
+    snap.colours[i] = colourOf(l.fs)
     local now = l.fs:GetText()
     if now ~= l.text then snap[i] = now end -- l.text: the client's line as read before this pass wrote
   end
@@ -301,7 +352,18 @@ local function reapply(frame, kind, id, lines)
   local snap = rendered[frame]
   if not snap then return skip("nothing") end
   if snap.kind ~= kind then return skip("other") end
-  if snap.n ~= #lines then return skip("lines") end
+  local target -- { [index] = text }: the remembered lines where they are now
+  if snap.n == #lines then
+    target = {}
+    for i = 1, snap.n do target[i] = snap[i] end
+  else
+    target = byColour(snap, lines)
+    if not target then
+      -- what the counter cannot say: which line came or went (the readable pass's English, line by line)
+      Tooltip.lastMismatch = { remembered = snap.n, secret = #lines, english = snap.english }
+      return skip("lines")
+    end
+  end
   if snap.owner ~= ownerOf(frame) then return skip("owner") end
   -- the spell or item itself may be withheld on a secret pass: then the same owner (an action button) stands for it
   if type(id) == "number" and not anySecret({ id }) and snap.id ~= id then return skip("other") end
@@ -311,8 +373,8 @@ local function reapply(frame, kind, id, lines)
   Tooltip.secretPasses.reapplied = Tooltip.secretPasses.reapplied + 1
   local n = 0
   for i, l in ipairs(lines) do
-    if snap[i] then
-      l.fs:SetText(snap[i])
+    if target[i] then
+      l.fs:SetText(target[i])
       WFJ.Font.bundle(l.fs)
       n = n + 1
     end
