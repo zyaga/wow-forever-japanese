@@ -588,9 +588,10 @@ local function writeCountdown(frame, fs, kind, id)
     local ok, duration = pcall(durationOf, id)
     if not ok then return nil, "cooldown duration refused: " .. tostring(duration) end
     if not duration then return nil, "no cooldown duration" end
-    -- a zero duration is no cooldown: the row is something else, left as the client wrote it
+    -- a zero duration is no cooldown: the row is something else, left as the client wrote it. In combat IsZero's
+    -- answer is itself a secret boolean, never compared (a Lua error in game): the client's formatter writes it
     local okZ, zero = pcall(function() return duration:IsZero() end)
-    if okZ and zero == true then return nil, "no cooldown running" end
+    if okZ and not anySecretOf(zero) and zero == true then return nil, "no cooldown running" end
     wrote, why = WFJ.TimeLine.writeDuration(fs, duration)
     if Tooltip.trace then
       local hasSecret = type(duration) ~= "table" and type(duration.HasSecretValues) == "function"
