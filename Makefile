@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: coverage-py coverage-lua lint-public report-intake report-apply coverage forever-table-counts ui-inventory visible-spells level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: coverage-py coverage-lua lint-public report-intake report-apply coverage forever-table-counts ui-inventory served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -289,13 +289,23 @@ level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh leve
 		mv level1_spells.txt.part level1_spells.txt
 	@head -1 pipeline/level1_spells.txt
 
-visible-spells: ## regenerate pipeline/visible_spells.txt from the installed client (the spells whose tooltips the addon translates): WOW_DIR=<client folder> [PRODUCT=wow_classic_beta]
-	@test -n "$(WOW_DIR)" || { echo "usage: make visible-spells WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_> [PRODUCT=wow_classic_beta]"; exit 2; }
-	@test -d "$(WOW_DIR)" || { echo "visible-spells: no folder $(WOW_DIR)"; exit 1; }
-	@W="$$(cd "$(WOW_DIR)/.." && pwd)" && cd pipeline && \
-		$(PY) -m wfj.dev.visible_spells --wow "$$W" --product "$(PRODUCT)" > visible_spells.txt.part && \
-		mv visible_spells.txt.part visible_spells.txt
-	@head -5 pipeline/visible_spells.txt
+# Every text column of every client table the Forever install ships, and the rows its hotfix cache adds
+# (pipeline/served_columns.txt; tests/python/test_served_inventory.py needs a disposition for each in
+# pipeline/served_dispositions.txt). The archive root names no files, so the community listfile names the
+# tables: refresh it per build like the UI extract's (docs/operations/beta-day-harvest.md). Prints what the
+# build added, dropped or changed against the committed file.
+LISTFILE ?= $(INPUTS)/community-listfile.csv
+
+served-columns: ## regenerate pipeline/served_columns.txt from the installed client (commit the result; read-only, no network): WOW_DIR=<client folder> [LISTFILE=<community listfile>] [HOTFIXES=]
+	@test -n "$(WOW_DIR)" || { echo "usage: make served-columns WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_> [LISTFILE=<csv>] [HOTFIXES=<DBCache.bin>]"; exit 2; }
+	@test -d "$(WOW_DIR)" || { echo "served-columns: no folder $(WOW_DIR)"; exit 1; }
+	@test -f "$(LISTFILE)" || { echo "served-columns: no listfile at $(LISTFILE) (LISTFILE=<community listfile>)"; exit 1; }
+	@W="$$(cd "$(WOW_DIR)/.." && pwd)" && H="$(HOTFIXES)" && case "$$H" in "") H="$$(cd "$(WOW_DIR)" && pwd)/Cache/ADB/enUS/DBCache.bin"; test -f "$$H" || H="";; /*) ;; *) H="$$PWD/$$H";; esac && \
+		L="$(LISTFILE)" && C="$$(cd "$(WOW_DIR)" && pwd)" && cd pipeline && \
+		$(PY) -m wfj.dev.served_columns --wow "$$W" --product "$(forever_PRODUCT)" --listfile "$$L" \
+			$${H:+--hotfixes "$$H"} --wdb "$$C/Cache/WDB/enUS" --previous served_columns.txt > served_columns.txt.part && \
+		mv served_columns.txt.part served_columns.txt
+	@sed -n 3,5p pipeline/served_columns.txt
 
 # The Forever (camelot) inventory, the only one (Forever is the only target). FOREVER_UI is a UI extract of the Forever client (`python -m wfj.dev.client_ui
 # --product wow_classic_beta --out <dir>`, lowercased paths are fine) and FOREVER_GLOBALSTRINGS its GlobalStrings table
@@ -339,7 +349,7 @@ stats: ## coverage report over data/ (no writes)
 	cd pipeline && $(PY) -m wfj stats
 
 coverage: ## how much of the game ships in Japanese → docs/operations/coverage.md (run before every data pull request)
-	cd pipeline && $(PY) -m wfj.dev.coverage --out ../docs/operations/coverage.md
+	cd pipeline && $(PY) -m wfj.dev.coverage --out ../docs/operations/coverage.md --build $(forever_BUILD)
 
 report-intake: ## a player's fix report (GitHub issue ISSUE=N, or a saved body REPORT=<file> ISSUE=N) → batches/reports/issue-N/triage.jsonl
 	@test -n "$(ISSUE)" || { echo "usage: make report-intake ISSUE=<n> [REPORT=<saved issue body>] [CREDIT=<name>] [FORCE=1]"; exit 2; }

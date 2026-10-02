@@ -349,6 +349,10 @@ class LocalArchive:
             raise CascError(f"root: {path} names {len(hits)} enUS files ({sorted(hits)})")
         return hits.pop()
 
+    def ships(self, fdid: int) -> bool:
+        """Whether the root holds an enUS file for this FileDataID."""
+        return any(r[0] & LOCALE_ENUS for r in self._root.get(fdid, []))
+
     def ckey_of(self, fdid: int) -> bytes:
         """The enUS content key of a file. When enUS root blocks give the file several content keys (not seen
         on 1.15.9.69722), the variants flagged LowViolence or DoNotLoad are set aside; exactly one

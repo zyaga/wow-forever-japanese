@@ -439,3 +439,215 @@ def _cstring(strings: bytes, at: int, name: str) -> str:
         return strings[at:end].decode("utf-8")
     except UnicodeDecodeError as e:
         raise Db2Error(f"{name}: string at {at} is not UTF-8") from e
+
+
+def text_fields(
+    buf: bytes, encrypted: list[tuple[int, int, str]] | None = None, name: str = "db2"
+) -> frozenset[int]:
+    """The fields that hold text, found from the bytes alone (no column map): which columns of a table carry
+    text.
+
+    A dense table's field is text when it is unpacked and 32 bits wide, at least one row holds a non-zero
+    value, and every non-zero value points at the start of a NUL-terminated UTF-8 string in the string tables
+    (the byte before it is a NUL). A sparse table's strings are inline, so its text fields are the one
+    assignment of string or number to each 32-bit field under which every record parses to exactly its size;
+    more than one such assignment raises rather than picking one. Skipped sections are left out, as `read`
+    leaves them out."""
+    try:
+        return _text_fields(buf, encrypted or [], name)
+    except Db2Error:
+        raise
+    except (struct.error, IndexError, ValueError, OverflowError) as e:
+        raise Db2Error(f"{name}: truncated or corrupt ({type(e).__name__}: {e})") from e
+
+
+def _readable_sections(
+    buf: bytes, h: Header, sections: list[tuple], encrypted: list[tuple[int, int, str]]
+) -> list[tuple[int, tuple, int]]:
+    """(section number, section, records before it) for every section `_read_section` would not skip."""
+    out, record_base, sparse = [], 0, bool(h.flags & FLAG_SPARSE)
+    for sn, sec in enumerate(sections):
+        key, offset, count, str_size, records_end, id_size, _rel, _maps, _copies = sec
+        records_size = records_end - offset if sparse else count * h.record_size
+        end = offset + records_size + str_size + id_size
+        hit = any(e[0] < end and offset < e[1] for e in encrypted)
+        zeroed = key != 0 and not any(buf[offset : offset + records_size + str_size + id_size])
+        if not (hit or zeroed):
+            out.append((sn, sec, record_base))
+        record_base += count
+    return out
+
+
+def _text_fields(buf: bytes, encrypted: list[tuple[int, int, str]], name: str) -> frozenset[int]:
+    h = read_header(buf, name)
+    if h.record_count == 0:
+        return frozenset()
+    if h.flags & FLAG_SECONDARY_KEY:
+        raise Db2Error(f"{name}: secondary-key table (flags {h.flags:#x}) is not implemented")
+    sections, storages, _pallet, _common = _header_blocks(buf, h, encrypted, name)
+    readable = _readable_sections(buf, h, sections, encrypted)
+    if h.flags & FLAG_SPARSE:
+        return _sparse_text_fields(buf, readable, storages, name)
+    rs = h.record_size
+    strings = b"".join(buf[s[1] + s[2] * rs : s[1] + s[2] * rs + s[3]] for s in sections)
+    total = h.record_count * rs
+    candidates = {
+        fn for fn, s in enumerate(storages) if s.kind == NONE and s.size_bits == 32 and s.element_bits == 32
+    }
+    used: set[int] = set()
+    for _sn, sec, base in readable:
+        offset, count = sec[1], sec[2]
+        for r in range(count):
+            if not candidates:
+                return frozenset()
+            bits = int.from_bytes(buf[offset + r * rs : offset + (r + 1) * rs], "little")
+            shift = (base + r) * rs - total
+            for fn in list(candidates):
+                s = storages[fn]
+                v = (bits >> s.offset_bits) & 0xFFFFFFFF
+                if not v:
+                    continue
+                at = shift + s.offset_bits // 8 + v
+                if not 0 <= at < len(strings) or (at and strings[at - 1]) or not _is_cstring(strings, at):
+                    candidates.discard(fn)
+                else:
+                    used.add(fn)
+    return frozenset(candidates & used)
+
+
+def _is_cstring(data: bytes, at: int) -> bool:
+    end = data.find(b"\0", at)
+    if end < 0:
+        return False
+    try:
+        data[at:end].decode("utf-8")
+    except UnicodeDecodeError:
+        return False
+    return True
+
+
+_CONTROL = frozenset(range(32)) - {9, 10, 13}
+
+
+def _is_text(raw: bytes) -> bool:
+    """UTF-8 with no control character but tab and line breaks: what an inline string holds, and what the
+    bytes of a number read as a string almost never are. Only the sparse guess needs it; a dense string is
+    already proven by every value pointing at the start of a string (one Forever camera name carries a stray
+    0x03)."""
+    if _CONTROL.intersection(raw):
+        return False
+    try:
+        raw.decode("utf-8")
+    except UnicodeDecodeError:
+        return False
+    return True
+
+
+def _sparse_text_fields(
+    buf: bytes, readable: list[tuple[int, tuple, int]], storages: list[Storage], name: str
+) -> frozenset[int]:
+    records: list[bytes] = []
+    for sn, sec, _base in readable:
+        index_at = sec[4] + sec[3]  # records end, then the string table
+        _ids, _copied, offset_map, _rel = _section_index(buf, sn, sec, index_at, True, name)
+        records += [buf[at : at + size] for at, size in offset_map]
+    if not records:
+        return frozenset()
+    widths = []
+    for fn, s in enumerate(storages):
+        if s.element_bits <= 0 or s.element_bits % 8 or s.size_bits % s.element_bits:
+            raise Db2Error(f"{name}: sparse field {fn}: {s.size_bits} bits in elements of {s.element_bits}")
+        widths.append(s.size_bits // 8)
+    may_be_text = [s.size_bits == 32 and s.element_bits == 32 for s in storages]
+    # The sparse tables seen so far keep every string field first (Spell 0-2, ItemSparse 0-4): try those
+    # layouts before the search, which a table with many fields can make too slow.
+    leading = [
+        frozenset(range(k))
+        for k in range(len(widths) + 1)
+        if all(may_be_text[:k]) and _sparse_fits(records, widths, frozenset(range(k)))
+    ]
+    if len(leading) > 1:
+        raise Db2Error(f"{name}: more than one string layout fits every record")
+    if leading:
+        return leading[0]
+    # otherwise solve on a sample first (fast pruning), then check each answer against every record
+    sample = records[:: max(1, len(records) // 200)]
+    found: list[frozenset[int]] = []
+    for answer in _sparse_assignments(sample, widths, may_be_text, name):
+        if _sparse_fits(records, widths, answer):
+            found.append(answer)
+            if len(found) > 1:
+                raise Db2Error(f"{name}: more than one string layout fits every record")
+    if not found:
+        raise Db2Error(f"{name}: no string layout fits every record")
+    return found[0]
+
+
+def _sparse_assignments(records, widths, may_be_text, name, budget=2_000_000):
+    """Every set of string fields under which each sampled record parses to exactly its padded size. A state
+    (field, every record's position) that has failed once is not walked again, and a branch stops as soon as a
+    record has fewer bytes left than the remaining fields need at their narrowest (a string is at least 1)."""
+    n = len(widths)
+    least = [0] * (n + 1)
+    for fn in range(n - 1, -1, -1):
+        least[fn] = least[fn + 1] + (1 if may_be_text[fn] else widths[fn])
+    failed: set[tuple[int, tuple[int, ...]]] = set()
+    nodes = 0
+
+    def walk(fn, pos, chosen):
+        nonlocal nodes
+        nodes += 1
+        if nodes > budget:
+            raise Db2Error(f"{name}: string layout search gave up after {budget} steps")
+        state = (fn, tuple(pos))
+        if state in failed or any(p + least[fn] > len(rec) for rec, p in zip(records, pos, strict=True)):
+            return
+        hit = False
+        if fn == n:
+            fits = zip(records, pos, strict=True)
+            if all(len(rec) == (p + 3) & ~3 and not any(rec[p:]) for rec, p in fits):
+                hit = True
+                yield frozenset(chosen)
+        else:
+            for answer in walk(fn + 1, [p + widths[fn] for p in pos], chosen):
+                hit = True
+                yield answer
+            ends = _string_ends(records, pos) if may_be_text[fn] else None
+            if ends is not None:
+                for answer in walk(fn + 1, ends, chosen + [fn]):
+                    hit = True
+                    yield answer
+        if not hit:
+            failed.add(state)
+
+    yield from walk(0, [0] * len(records), [])
+
+
+def _string_ends(records: list[bytes], pos: list[int]) -> list[int] | None:
+    """Where each record's string starting at its position ends (past the NUL), or None when one is not a
+    NUL-terminated UTF-8 string."""
+    ends = []
+    for rec, p in zip(records, pos, strict=True):
+        end = rec.find(b"\0", p)
+        if end < 0 or not _is_text(rec[p:end]):
+            return None
+        ends.append(end + 1)
+    return ends
+
+
+def _sparse_fits(records: list[bytes], widths: list[int], text: frozenset[int]) -> bool:
+    for rec in records:
+        p = 0
+        for fn, w in enumerate(widths):
+            if fn in text:
+                end = rec.find(b"\0", p)
+                if end < 0 or not _is_text(rec[p:end]):
+                    return False
+                p = end + 1
+            else:
+                p += w
+            if p > len(rec):
+                return False
+        if len(rec) != (p + 3) & ~3 or any(rec[p:]):
+            return False
+    return True

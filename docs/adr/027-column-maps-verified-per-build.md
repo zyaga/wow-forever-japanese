@@ -58,21 +58,22 @@ And the pipeline reads **two live clients**, so a table needs a map per build, n
    it was proved by resolving a known item through the whole join to a known English string, which is stronger
    evidence than a percentage.
 
-## Exception: id-only tables pinned in a dev scope tool
+## Exception: id-only tables pinned in a dev tool
 
-`pipeline/wfj/dev/visible_spells.py` (`make visible-spells`) pins its own column maps for
-`SkillLineAbility` and `TraitDefinition` (the field holding the spell id, per layout hash, with the evidence
-beside it) instead of adding a `Layout` to `io/client_tables.py`. The reason is that **nothing is imported
-from these tables**: the tool reads them only for spell ids, to scope which spells a translation batch drafts,
-and writes a committed artifact (`pipeline/visible_spells.txt`). They carry no translatable text, so they need
-no CSV, source stamp, hotfix decode or provenance, and routing them through `client_tables` would add all of
-that for no data. The rule of this ADR still binds them: each map is keyed by layout hash, carries
-its evidence (`SkillLineAbility`: Forever prepended two fields, 16 → 18, verified by cross-build agreement
-over the 6,047 ids both clients hold; `TraitDefinition`: the same layout hash on both builds, confirmed end to
-end because Classic Era's 9 rows are too few to be an oracle), and an unverified layout is refused with a
-pointer to `dev/verify_columns`. `ItemXItemEffect` / `ItemEffect`, which the same tool also joins, keep their
-maps in `client_tables`, where they do carry text. A table that later gains an import moves its map into
-`client_tables` with it.
+`pipeline/wfj/dev/level1_spells.py` (`make level1-spells`) pins its own column maps for `SkillLineAbility` and
+`SkillLine` instead of adding a `Layout` to `io/client_tables.py`. The reason is that **nothing is imported
+from these tables**: the tool reads them only for spell ids and skill categories and writes a committed artifact
+(`pipeline/level1_spells.txt`). They carry no translatable text, so they need no CSV, source stamp, hotfix decode
+or provenance, and routing them through `client_tables` would add all of that for no data. The rule of this ADR
+still binds them: each map is keyed by layout hash, carries its evidence (`SkillLineAbility`: Forever prepended
+two fields, 16 → 18, verified by cross-build agreement over the 6,047 ids both clients hold), and an unverified
+layout is refused. A table that later gains an import moves its map into `client_tables` with it.
+
+The visible-spell scope tool (`dev/visible_spells.py`, which pinned `SkillLineAbility` and `TraitDefinition` the
+same way) was removed by [ADR-051](051-coverage-by-served-data.md): coverage now counts every spell the client
+serves. The served-text inventory that replaced it (`dev/served_columns.py`) finds text columns from the bytes and
+needs no map; on 1.60.1.70170 it matches the pinned maps of all 31 tables the pipeline reads, which is a second,
+independent check on those pins.
 
 ## Consequences
 

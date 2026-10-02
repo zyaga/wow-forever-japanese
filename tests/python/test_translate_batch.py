@@ -381,7 +381,6 @@ def client(tmp_path):
         _client_en(20000, "description", "An internal proc nobody sees.", FOREVER),
         _client_en(133, "aura", "Burning for $o1 damage.", FOREVER),
     ])
-    (tmp_path / "visible.txt").write_text("# header\nitem,skill 133\n", encoding="utf-8")
     return tmp_path
 
 
@@ -405,13 +404,15 @@ def test_cut_refuses_a_src_no_english_has(client):
         tb.cut(client / "data", "item_description", 10, client / "b.jsonl", src="db2@9.9.9.99999")
 
 
-def test_cut_spell_description_can_be_scoped_to_the_visible_set(client):
-    out = client / "b.jsonl"
-    unscoped = tb.cut(client / "data", "spell_description", 10, out, src=FOREVER)
-    assert len(unscoped) == 2  # the proc is in scope without the filter
-    scoped = tb.cut(client / "data", "spell_description", 10, out, src=FOREVER, visible=client / "visible.txt")
-    assert [r["targets"] for r in scoped] == [[[133, "description"]]]
-    assert "proc" not in scoped[0]["en"]
+def test_cut_spell_description_takes_every_served_spell(client):
+    rows = tb.cut(client / "data", "spell_description", 10, client / "b.jsonl", src=FOREVER)
+    # a spell no list says a player sees is still served text, so it is drafted too
+    assert sorted(t for r in rows for t in r["targets"]) == [[133, "description"], [20000, "description"]]
+
+
+def test_cut_has_no_visible_spell_option():
+    with pytest.raises(SystemExit):
+        tb.main(["cut", "--kind", "spell_description", "--size", "1", "--visible", "x", "--out", "y"])
 
 
 def test_cut_spell_aura_is_its_own_kind(client):
