@@ -29,9 +29,9 @@
 -- registers a UnitAura post-call, which fires on the first build and on every rebuild. The spell id comes from
 -- C_UnitAuras with the call's own arguments, as Blizzard's PTR reporter does
 -- (blizzard_ptrfeedback_tooltips.lua:22–32). The aura text is line 2 [likely: tooltipdatahandler.lua writes it
--- from C_TooltipInfo data; in-game check in docs/testing/strategy.md]: refused when empty or a UI-dictionary line, and the runtime gate refuses a line
--- whose names and numbers do not fit. An owner with UpdateTooltip re-shows the aura about 5 times a second while
--- hovered; each pass forgets and re-renders, as item tooltips do.
+-- from C_TooltipInfo data; in-game check in docs/testing/strategy.md]: refused when empty or a UI-dictionary line,
+-- and the runtime gate refuses a line whose names and numbers do not fit. An owner with UpdateTooltip re-shows the
+-- aura about 5 times a second while hovered; each pass forgets and re-renders, as item tooltips do.
 -- ADR-038:
 --   comparison tooltips: after the compared item's lines (ProcessInfo), TooltipComparisonManager appends the delta
 --     header ITEM_DELTA_DESCRIPTION / ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION and, with cycling on,
