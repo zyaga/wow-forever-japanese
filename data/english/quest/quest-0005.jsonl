@@ -1067,9 +1067,6 @@
 {"id": 5657, "field": "completion", "en": "You would do well to pay heed to this lesson, young one. The Hex of Weakness will be a great boon to you in battle. Later I will have tests for you to further yourself and prove your worth to the tribe.", "hash": "1c4616e4bab6c809", "src": "vmangos@13b49dc"}
 {"id": 5658, "field": "title", "en": "Touch of Weakness", "hash": "dccff77220b4ed50", "src": "wdb@1.60.1.70170"}
 {"id": 5658, "field": "completion", "en": "Ah, young $c, I am glad you have returned here. I would teach you a lesson you would do well to not forget. Are you prepared?", "hash": "b566d70105cca225", "src": "vmangos@13b49dc"}
-{"id": 5659, "field": "title", "en": "Touch of Weakness", "hash": "dccff77220b4ed50", "src": "pfquest@7786596"}
-{"id": 5659, "field": "objectives", "en": "Speak to Aelthalyste in the Undercity.", "hash": "53641243e407f6f1", "src": "pfquest@7786596"}
-{"id": 5659, "field": "description", "en": "This isn't the place for you, $N. You should head to the War Quarter in Undercity as soon as possible. Aelthalyste has called all her priests and priestesses there as soon as they are ready. It's time they learn more about their power and how to harness it.$B$BShe will not tolerate tardiness or excuses, so you'd best be on your way.", "hash": "37d5400503a44d3a", "src": "pfquest@7786596"}
 {"id": 5659, "field": "completion", "en": "Ah, good, another has arrived. Time may not matter to me, but to you it is of the essence. There is much for you to learn and there is much I wish to teach you. You simply must prove your worth. Do that, and you shall be greatly rewarded.", "hash": "b886b0c340826c7c", "src": "vmangos@13b49dc"}
 {"id": 5660, "field": "title", "en": "Touch of Weakness", "hash": "dccff77220b4ed50", "src": "wdb@1.60.1.70170"}
 {"id": 5660, "field": "objectives", "en": "Speak to Aelthalyste in the Undercity.", "hash": "53641243e407f6f1", "src": "wdb@1.60.1.70170"}

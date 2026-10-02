@@ -335,8 +335,8 @@ previous build, with what was drafted for it. The round's batches follow the ste
 
 ### 1.60.1.70124 → 1.60.1.70170 (2026-10-02)
 
-Quest cache: 2,404 records (the all-ids sweep, cut by a logout near the top of the range, then a catch-up scan of
-10,156 ids); 74 quests new to the cache, 26 that 70124 answered are not answered on 70170. Client tables: 31, with
+Quest cache: 2,406 records (the all-ids sweep, cut by a logout near the top of the range, a catch-up scan of
+10,156 ids, then a slow recheck of 26 quests an earlier build answered, 3 passes at 2 s, which got 2); 24 quests an earlier build answered are not answered on 70170 (their Japanese stays in data/). Client tables: 31, with
 the build's own hotfixes (4,496 ItemSparse rows added). The wago.tools cross-check: 0 rows differ on all eight
 tables; every row count difference is a hotfix wago's export does not carry (ItemSparse 4,496, SpellName 8, Spell
 16, GlobalStrings 1), and wago has no row ours lacks. The UI extract: 4,412 files, 121 changed from 70124.
