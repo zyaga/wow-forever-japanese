@@ -343,13 +343,21 @@ tables; every row count difference is a hotfix wago's export does not carry (Ite
 
 | Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
 |---|---|---|---|---|
-| quest | 111 machine (87 descriptions, 23 objectives, 1 title); 14 more machine lines rejected because a name or number in the English changed | 70 titles, 63 objectives, 67 descriptions | 2 (titles of 1005, 1006, not answered on 70170) | pending |
-| item | 255 tooltips (213 machine, 42 hand corrections) | 41 tooltips (26 flavour lines the bare-label rule used to skip) | 3 | pending |
-| spell | 383 (324 descriptions, 58 auras machine, 1 description hand correction) | 16 descriptions, 17 auras (visible spells; 19 flavour lines) | 16 | pending |
-| objective, area | 8 objectives | 10 objectives | 0 | pending |
-| ui | 34 machine; 2 rejected (`STAT_SPELLHEALING_TOOLTIP`, `STAT_SPELLPOWER_TOOLTIP`: the English gained line breaks) | 32 keys the 70170 windows newly use (combat text options, free bag slots, quest fading, tip of the day, group finder playstyle, stable buttons) | 1 key no longer used | pending |
-| book | 0 | 24 pages (11 unique), left over from earlier builds | 0 | pending |
+| quest | 111 machine (87 descriptions, 23 objectives, 1 title); 14 more machine lines rejected because a name or number in the English changed | 70 titles, 63 objectives, 67 descriptions | 2 (titles of 1005, 1006, not answered on 70170) | 71 titles, 96 objectives, 154 descriptions (the 125 reworded or rejected lines redrafted), all with word lists |
+| item | 255 tooltips (213 machine, 42 hand corrections) | 41 tooltips (26 flavour lines the bare-label rule used to skip) | 3 | 41 new (6 lines that are only a name ship it, ruled `accept`); 213 redrafted; 11 hand-written lines ruled out earlier redrafted; the 42 hand corrections reviewed: the buff's duration moved from `$D2` to `$D3` because the English now writes "10 sec", a duration the client reads |
+| spell | 383 (324 descriptions, 58 auras machine, 1 description hand correction) | 16 descriptions, 17 auras (visible spells; 19 flavour lines) | 16 | 24 new descriptions (5 only a name), 324 redrafted; 23 new auras, 58 redrafted; the hand correction kept (a typo fix in the English) |
+| objective, area | 8 objectives | 10 objectives | 0 | 10 new, 8 redrafted |
+| ui | 34 machine; 2 rejected (`STAT_SPELLHEALING_TOOLTIP`, `STAT_SPELLPOWER_TOOLTIP`: the English gained line breaks) | 32 keys the 70170 windows newly use (combat text options, free bag slots, quest fading, tip of the day, group finder playstyle, stable buttons) | 1 key no longer used | 42 new keys (with the titles tab and pane keys, which the 70170 window now shows); 36 reworded keys (27 kept as they were, 9 new Japanese); word lists for every changed UI line |
+| book | 0 | 24 pages (11 unique), left over from earlier builds | 0 | none: picture-only pages and one name-and-dates page |
 | gossip | 0 | 0 | 0 | none |
+
+Left out with a reason: placeholder or test quest text (four descriptions: `[PH] Collect …`, `$Tpunk;! …`), a spell
+description that is only `???`, three spell descriptions whose branches differ only in prose
+(`branches_indistinguishable`), and 171 tooltip lines whose template the pipeline cannot render yet (included
+`$@spellaura`, `$@spelldesc` and `$@expandkey` text, an included spell this build does not have, branches that differ
+only in prose, too many variants), listed for a follow-up. The two riding skills (33388, 33391) are among them: their
+English lists every riding ability the character knows. Not-names entries were added for ordinary capitalised words
+the name check flagged (flavour text, `Right Click`, `Maximum Health`, terrain words).
 
 ### 1.60.1.70009 → 1.60.1.70124 (2026-10-01)
 
