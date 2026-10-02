@@ -183,6 +183,20 @@ describe("UI/TooltipUnit: quest titles and line kinds", function()
       _G.issecretvalue = nil
     end)
 
+    it("a quest ready to turn in: its title alone on one line is Japanese only on the minimap mouseover", function()
+      assert.are.equal("|cffffd100狼の毛皮", (WFJ.TooltipUnit.minimapBlock("Wolf Pelts", true)))
+      assert.is_nil((WFJ.TooltipUnit.minimapBlock("Wolf Pelts"))) -- a unit's one line is its name
+      assert.is_nil((WFJ.TooltipUnit.minimapBlock("Innkeeper Allison", true))) -- a name is never a title
+      _G.Enum.TooltipDataType.MinimapMouseover = 22
+      assert.is_true(WFJ.TooltipUnit.init())
+      WFJ.TooltipUnit.onUnit(_G.GameTooltip, { type = 2 })
+      _G.GameTooltip:ClearLines(); _G.GameTooltip:AddLine("Wolf Pelts")
+      WFJ.TooltipUnit.onUnit(_G.GameTooltip, { type = 2 })
+      assert.are.equal("Wolf Pelts", left(1)) -- a unit tooltip with one line: left as written
+      WFJ.TooltipUnit.onUnit(_G.GameTooltip, { type = 22 })
+      assert.are.equal("|cffffd100狼の毛皮", left(1))
+    end)
+
     it("a one-line tooltip holding the block is written whole; the modifier held leaves the client's", function()
       assert.is_true(WFJ.TooltipUnit.init())
       hover({ BLOCK })
