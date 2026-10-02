@@ -32,8 +32,9 @@ UIStrings.ARGS = {
   PLUS_AMMO_SCHOOL_DAMAGE_TEMPLATE = { [2] = "word" }, CONTAINER_SLOTS = { [2] = "words" },
   ITEM_REQ_REPUTATION = { [1] = "text", [2] = "word" },
   ITEM_REQ_SKILL = { [1] = "skill" }, ITEM_MIN_SKILL = { [1] = "text" },
-  SPELL_EQUIPPED_ITEM = { [1] = "text" }, SPELL_EQUIPPED_ITEM_NOSPACE = { [1] = "text" },
-  SPELL_REQUIRED_FORM = { [1] = "text" }, SPELL_REQUIRED_FORM_NOSPACE = { [1] = "text" },
+  SPELL_EQUIPPED_ITEM = { [1] = "itemSubClassMask" }, SPELL_EQUIPPED_ITEM_NOSPACE = { [1] = "itemSubClassMask" },
+  -- "Requires %s": an ItemSubClassMask row ("Melee Weapon") is shown in Japanese; a form, item or skill name is kept
+  SPELL_REQUIRED_FORM = { [1] = "itemSubClassMask" }, SPELL_REQUIRED_FORM_NOSPACE = { [1] = "itemSubClassMask" },
   ITEM_CLASSES_ALLOWED = { [1] = "text" }, ITEM_RACES_ALLOWED = { [1] = "text" }, ITEM_SPELL_EFFECT = { [1] = "text" },
   ITEM_WRITTEN_BY = { [1] = "text" }, ITEM_LIMIT_CATEGORY = { [1] = "text" },
   ITEM_LIMIT_CATEGORY_MULTIPLE = { [1] = "text" }, TOOLTIP_TALENT_TIER_POINTS = { [2] = "text" },
@@ -49,9 +50,9 @@ UIStrings.ARGS = {
   TRAINER_REQ_SKILL_RANK_RED = { [1] = "skill" }, AUCTION_MAIL_ITEM_STACK = { [1] = "text" },
   LEARN_SKILL_TEMPLATE = { [1] = "text" }, UNIT_LEVEL_TEMPLATE = {},
   UNSPENT_TALENT_POINTS = { [1] = "text" }, -- the count arrives colour-wrapped (TalentFrameBase.lua:304)
-  RESISTANCE_TOOLTIP_SUBTEXT = { [1] = "words", [3] = "words" }, PET_DIET_TEMPLATE = { [1] = "text" },
+  RESISTANCE_TOOLTIP_SUBTEXT = { [1] = "words", [3] = "words" }, PET_DIET_TEMPLATE = { [1] = "petFoodList" },
   PARENS_TEMPLATE = { [1] = "entry" }, AUCTION_INVOICE_FUNDS_DELAY = { [1] = "text" },
-  MAIL_COD_ERROR_COLORBLIND = { [2] = "text" }, EXHAUST_TOOLTIP1 = { [1] = "text" },
+  MAIL_COD_ERROR_COLORBLIND = { [2] = "text" }, EXHAUST_TOOLTIP1 = { [1] = "restState" },
   MAINMENUBAR_PROTOCOLS_LABEL = { [1] = "text", [2] = "text" },
   MAINMENUBAR_COMMUNICATION_PROTOCOL_LABEL = { [1] = "text", [2] = "text" },
   -- a CPU share is a percentage ("0.04%"), which a `text` capture refuses for its period
@@ -622,7 +623,12 @@ UIStrings.OWN = {
 
 -- argument kind → the one fingerprint family it may be shown as
 UIStrings.FAMILY_KINDS = { creatureType = "CreatureType", holidayDescription = "HolidayDescription",
-  customizationChoice = "CustomizationChoice", customizationSource = "CustomizationSource" }
+  customizationChoice = "CustomizationChoice", customizationSource = "CustomizationSource",
+  restState = "RestState", itemSubClassMask = "ItemSubClassMask" }
+
+-- argument kind → the family each piece of a comma-separated list may be shown as ("Meat, Fish, Bread"); a piece
+-- that is not that family's row is kept as written, and the separators are kept
+UIStrings.FAMILY_LIST_KINDS = { petFoodList = "PetFood" }
 
 -- Label forms: only these entries take a value after them ("Sell Price: 5c", "Speed 2.60", "Rank 3"); a line such as
 -- "Libram: Cleanse" (a spell name) is never read as "<Libram>: <rest>". A `"<English>: "` prefix entry (Reagents: ,

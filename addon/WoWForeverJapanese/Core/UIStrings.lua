@@ -195,7 +195,8 @@ local KIND_CAPTURE = { word = "(%a+)", standing = "(%a+)", words = "(%a[%a ]-)",
   -- ADR-042: a client-table word of ONE family, shown in Japanese when it is that family's row, else as
   -- written (UIStrings.FAMILY_KINDS), never any other entry, so a class, spec or pet-family name stays English
   creatureType = "([^%.]-)", holidayDescription = "(.-)", customizationChoice = "(.-)",
-  customizationSource = "(.-)" }
+  customizationSource = "(.-)", restState = "([^%.]-)", itemSubClassMask = "([^%.]-)",
+  petFoodList = "([^%.]-)" }
 -- a template with more `|4` groups is not indexed (counted `unsupported`). 4 for TIME_DAYHOURMINUTESECOND
 -- (the /played duration, the only listed key with 4): the chat line holds its raw form, which is always matched
 local MAX_PLURAL_GROUPS = 4
@@ -388,6 +389,8 @@ function Index:core(text, allow)
             args[argIndex] = self:entryArg(caps[i], t.key) or caps[i]
           elseif UIStrings.FAMILY_KINDS[kinds[argIndex]] then
             args[argIndex] = self:familyArg(caps[i], UIStrings.FAMILY_KINDS[kinds[argIndex]]) or caps[i]
+          elseif UIStrings.FAMILY_LIST_KINDS[kinds[argIndex]] then
+            args[argIndex] = self:familyList(caps[i], UIStrings.FAMILY_LIST_KINDS[kinds[argIndex]])
           elseif kinds[argIndex] == "entryList" then
             args[argIndex] = self:entryList(caps[i], t.key)
             if not args[argIndex] then ok = false end
@@ -404,7 +407,8 @@ end
 -- unless the enclosing key opts in (ENTRY_TEXT).
 local TEXT_KINDS = { text = true, words = true, skill = true, entry = true, entryOrText = true, entryList = true,
   verbatim = true, creatureType = true, holidayDescription = true, customizationChoice = true,
-  customizationSource = true } -- a family argument is free text too
+  customizationSource = true, restState = true, itemSubClassMask = true, petFoodList = true }
+  -- a family argument is free text too
 -- The enclosing keys whose `entry` argument may itself be a template that carries text (none yet): every other
 -- `entry` is an exact entry or a template whose arguments are numbers, times, percentages or dictionary words, so
 -- "- Defeat Hogger (Current Health: 50%)" is never PVP_LEAVE_BUTTON_TIME's "%s (%s)" around a vignette line.
@@ -432,6 +436,21 @@ function Index:familyArg(value, family)
     if k:find(prefix) then return { entry = k } end
   end
   return nil
+end
+
+-- A `FAMILY_LIST_KINDS` argument: `value` split at its ", " separators, each piece that family's entry or kept as
+-- written. → { list = { piece, sep, piece, … } } (a piece is { entry = key } or a string)
+function Index:familyList(value, family)
+  local list, at = {}, 1
+  while true do
+    local s, e = value:find(", ", at, true)
+    local piece = value:sub(at, (s or 0) - 1)
+    list[#list + 1] = self:familyArg(piece, family) or piece
+    if not s then break end
+    list[#list + 1] = value:sub(s, e)
+    at = e + 1
+  end
+  return { list = list }
 end
 
 function Index:entryArg(value, outer)
@@ -986,8 +1005,8 @@ function Index:fill(ja, args)
       local kind = kinds and kinds[p.arg]
       if kind == "word" or kind == "words" or kind == "standing" then
         v = self:nested(v)
-      elseif (kind == "entry" or kind == "entryOrText" or kind == "entryList" or UIStrings.FAMILY_KINDS[kind])
-          and type(v) == "table" then
+      elseif (kind == "entry" or kind == "entryOrText" or kind == "entryList" or UIStrings.FAMILY_KINDS[kind]
+          or UIStrings.FAMILY_LIST_KINDS[kind]) and type(v) == "table" then
         v = self:fillArg(v)
         if v == nil then return nil end
       elseif kind == "time" then
