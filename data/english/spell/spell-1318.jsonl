@@ -1,143 +1,143 @@
-{"id": 1318000, "field": "name", "en": "Authority", "hash": "35fcff06fcb17a6f", "src": "db2@1.60.1.70124"}
-{"id": 1318000, "field": "description", "en": "+$s1 Attack Power. This effect is tripled in Forest and Grassland areas.", "hash": "81659b5b870c0845", "src": "db2@1.60.1.70124"}
-{"id": 1318001, "field": "name", "en": "Authority", "hash": "35fcff06fcb17a6f", "src": "db2@1.60.1.70124"}
-{"id": 1318001, "field": "description", "en": "+$s1 Attack Power. This effect is tripled in Forest and Grassland areas.", "hash": "81659b5b870c0845", "src": "db2@1.60.1.70124"}
-{"id": 1318002, "field": "name", "en": "Stolen Power", "hash": "5a97a2ce22e75119", "src": "db2@1.60.1.70124"}
-{"id": 1318002, "field": "aura", "en": "In a Forest or Grassland area, damage and healing done by magical spells and effects increased by an additional $w1.", "hash": "b50c7e598b7748de", "src": "db2@1.60.1.70124"}
-{"id": 1318003, "field": "name", "en": "Stolen Power", "hash": "5a97a2ce22e75119", "src": "db2@1.60.1.70124"}
-{"id": 1318003, "field": "aura", "en": "In a Forest or Grassland, damage and healing done by magical spells and effects increased by an additional $w1.", "hash": "85af3731f82d20b8", "src": "db2@1.60.1.70124"}
-{"id": 1318004, "field": "name", "en": "Stolen Power", "hash": "5a97a2ce22e75119", "src": "db2@1.60.1.70124"}
-{"id": 1318004, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1. This effect is tripled in Forest and Grassland areas.", "hash": "c854c672fc2bd1b6", "src": "db2@1.60.1.70124"}
-{"id": 1318022, "field": "name", "en": "[DNT] Cage", "hash": "16286170533ad444", "src": "db2@1.60.1.70124"}
-{"id": 1318024, "field": "name", "en": "Compact Critter Carrier", "hash": "13b08ca8e879e38c", "src": "db2@1.60.1.70124"}
-{"id": 1318024, "field": "description", "en": "Place a Compact Critter Carrier for $d that allows Hunters in your group to access their stabled pets.", "hash": "fe7715de9db31031", "src": "db2@1.60.1.70124"}
-{"id": 1318031, "field": "name", "en": "Small Bomb", "hash": "59c86570f0c51b11", "src": "db2@1.60.1.70124"}
-{"id": 1318031, "field": "description", "en": "Thrown attacks blow up on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "7696e5a4b3501ac0", "src": "db2@1.60.1.70124"}
-{"id": 1318034, "field": "name", "en": "Small Satchel of Bombs", "hash": "16dd8cc75930fded", "src": "db2@1.60.1.70124"}
-{"id": 1318034, "field": "description", "en": "Thrown attacks explode on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "975e2d49d391a71b", "src": "db2@1.60.1.70124"}
-{"id": 1318061, "field": "name", "en": "Bomb", "hash": "08f54b062d7fde22", "src": "db2@1.60.1.70124"}
-{"id": 1318061, "field": "description", "en": "Thrown attacks blow up on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "7696e5a4b3501ac0", "src": "db2@1.60.1.70124"}
-{"id": 1318062, "field": "name", "en": "Satchel of Bombs", "hash": "960108213538091e", "src": "db2@1.60.1.70124"}
-{"id": 1318062, "field": "description", "en": "Thrown attacks explode on impact, causing $1318061s1 Fire damage to nearby enemies.", "hash": "002674fb8b99347e", "src": "db2@1.60.1.70124"}
-{"id": 1318068, "field": "name", "en": "Large Bomb", "hash": "11b43ae0a3638647", "src": "db2@1.60.1.70124"}
-{"id": 1318068, "field": "description", "en": "Thrown attacks blow up on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "7696e5a4b3501ac0", "src": "db2@1.60.1.70124"}
-{"id": 1318069, "field": "name", "en": "Large Satchel of Bombs", "hash": "2a11f5fd89060d46", "src": "db2@1.60.1.70124"}
-{"id": 1318069, "field": "description", "en": "Thrown attacks explode on impact, causing $1318068s1 Fire damage to nearby enemies.", "hash": "d46b2a07e6a6d4e3", "src": "db2@1.60.1.70124"}
-{"id": 1318070, "field": "name", "en": "Diamond Flask", "hash": "d19548c8cff23376", "src": "db2@1.60.1.70124"}
-{"id": 1318070, "field": "description", "en": "Strength increased by $s1.", "hash": "90d8a2f83ee1c8bf", "src": "db2@1.60.1.70124"}
-{"id": 1318070, "field": "aura", "en": "Increases Strength by $s1.", "hash": "b2147e940c214c23", "src": "db2@1.60.1.70124"}
-{"id": 1318073, "field": "name", "en": "Diamond Flask", "hash": "d19548c8cff23376", "src": "db2@1.60.1.70124"}
-{"id": 1318084, "field": "name", "en": "Fingerbreaker Stamp", "hash": "dd0f90dd62c92420", "src": "db2@1.60.1.70124"}
-{"id": 1318084, "field": "description", "en": "Increases Strength by $s1 while affected by a Bleed.", "hash": "9d3d89fbb49c3791", "src": "db2@1.60.1.70124"}
-{"id": 1318084, "field": "aura", "en": "Strength increased by $w1.", "hash": "90d9af1c4ec2d7c3", "src": "db2@1.60.1.70124"}
-{"id": 1318102, "field": "name", "en": "Volunteer's Lucky Seal", "hash": "ff2764ffed3445f6", "src": "db2@1.60.1.70124"}
-{"id": 1318102, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1318103s1 to all Resistances in Forest and Grassland areas.", "hash": "fc42b0533dace83f", "src": "db2@1.60.1.70124"}
-{"id": 1318103, "field": "name", "en": "Volunteer's Lucky Seal", "hash": "ff2764ffed3445f6", "src": "db2@1.60.1.70124"}
-{"id": 1318103, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70124"}
-{"id": 1318104, "field": "name", "en": "Zarla's Snack Pouch", "hash": "8d0b22367e411d23", "src": "db2@1.60.1.70124"}
-{"id": 1318108, "field": "name", "en": "Dragon's Call", "hash": "5e4082d6ca81491a", "src": "db2@1.60.1.70124"}
-{"id": 1318110, "field": "name", "en": "Lydros' Inspection", "hash": "9f259623dfa1453b", "src": "db2@1.60.1.70124"}
-{"id": 1318110, "field": "aura", "en": "Holding Sonya's Darkened Glaive aloft for Lydros to inspect.", "hash": "0bfb7cbde846620d", "src": "db2@1.60.1.70124"}
-{"id": 1318121, "field": "name", "en": "Huge Bomb", "hash": "7ece2440d892f047", "src": "db2@1.60.1.70124"}
-{"id": 1318121, "field": "description", "en": "Thrown attacks blow up on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "7696e5a4b3501ac0", "src": "db2@1.60.1.70124"}
-{"id": 1318123, "field": "name", "en": "Huge Bombs", "hash": "e37c8e73243f9252", "src": "db2@1.60.1.70124"}
-{"id": 1318123, "field": "description", "en": "Thrown attacks explode on impact, causing $1318121s1 Fire damage to nearby enemies.", "hash": "fe9a4f9323cfb03f", "src": "db2@1.60.1.70124"}
-{"id": 1318124, "field": "name", "en": "Darkspear Voodoo Seal", "hash": "211211ea4c70de0d", "src": "db2@1.60.1.70124"}
-{"id": 1318124, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1318125s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "922e24ed4d04a37f", "src": "db2@1.60.1.70124"}
-{"id": 1318125, "field": "name", "en": "Darkspear Voodoo Seal", "hash": "211211ea4c70de0d", "src": "db2@1.60.1.70124"}
-{"id": 1318125, "field": "aura", "en": "In a Forest or Grassland area, restoring an additional $s1 Mana every 5 seconds.", "hash": "f0b58277076e6441", "src": "db2@1.60.1.70124"}
-{"id": 1318129, "field": "name", "en": "Relentless Raider's Seal", "hash": "20b491c16257da24", "src": "db2@1.60.1.70124"}
-{"id": 1318129, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1318103s1 to all Resistances in Forest and Grassland areas.", "hash": "fc42b0533dace83f", "src": "db2@1.60.1.70124"}
-{"id": 1318130, "field": "name", "en": "Relentless Raider's Seal", "hash": "20b491c16257da24", "src": "db2@1.60.1.70124"}
-{"id": 1318130, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70124"}
-{"id": 1318131, "field": "name", "en": "Enriched Seal", "hash": "2e53f15d977ad5c3", "src": "db2@1.60.1.70124"}
-{"id": 1318131, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1318125s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "922e24ed4d04a37f", "src": "db2@1.60.1.70124"}
-{"id": 1318132, "field": "name", "en": "Enriched Seal", "hash": "2e53f15d977ad5c3", "src": "db2@1.60.1.70124"}
-{"id": 1318132, "field": "aura", "en": "In a Forest or Grassland area, restoring an additional $s1 Mana every 5 seconds.", "hash": "f0b58277076e6441", "src": "db2@1.60.1.70124"}
-{"id": 1318151, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70124"}
-{"id": 1318151, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70124"}
-{"id": 1318159, "field": "name", "en": "Ancient Power", "hash": "b1bd2fee9d47005d", "src": "db2@1.60.1.70124"}
-{"id": 1318159, "field": "description", "en": "Chance on hit to deal $1265634s1 Arcane damage. Deals $s1 times as much damage to Naga and Satyrs.", "hash": "8c73a969295e488e", "src": "db2@1.60.1.70124"}
-{"id": 1318163, "field": "name", "en": "Concussed", "hash": "eb313f5863a87fd4", "src": "db2@1.60.1.70124"}
-{"id": 1318163, "field": "description", "en": "Concuss the target, slowing movement speed by $s1% for $d.", "hash": "a184509623a2738a", "src": "db2@1.60.1.70124"}
-{"id": 1318163, "field": "aura", "en": "Movement slowed by $s1%.", "hash": "bd9406b84a62a739", "src": "db2@1.60.1.70124"}
-{"id": 1318178, "field": "name", "en": "Cracked Skull", "hash": "88190d2819a0fe98", "src": "db2@1.60.1.70124"}
-{"id": 1318178, "field": "description", "en": "Stun the target for $1318178d.", "hash": "c7ffc341a0840cb8", "src": "db2@1.60.1.70124"}
-{"id": 1318178, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
-{"id": 1318182, "field": "name", "en": "Skull Crack", "hash": "a0c73348cedea0e0", "src": "db2@1.60.1.70124"}
-{"id": 1318182, "field": "description", "en": "Thrown hammers have a low chance to stun the target for $1318178d.", "hash": "bf1cb3b9ed3ace09", "src": "db2@1.60.1.70124"}
-{"id": 1318185, "field": "name", "en": "Concussed", "hash": "eb313f5863a87fd4", "src": "db2@1.60.1.70124"}
-{"id": 1318185, "field": "description", "en": "Thrown hammers have a chance to concuss the target, slowing movement speed by $1318163s1% for $1318163d.", "hash": "d0598c5c1fe5b1f4", "src": "db2@1.60.1.70124"}
-{"id": 1318217, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70124"}
-{"id": 1318244, "field": "name", "en": "Kalimdor Speed", "hash": "57558824129e33cb", "src": "db2@1.60.1.70124"}
-{"id": 1318244, "field": "description", "en": "Movement speed increased by $s1% in The Barrens and Stonetalon Mountains.", "hash": "2375b96129fe0079", "src": "db2@1.60.1.70124"}
-{"id": 1318244, "field": "aura", "en": "Movement speed increased by $w1%.", "hash": "d64ce2e8b7176631", "src": "db2@1.60.1.70124"}
-{"id": 1318250, "field": "name", "en": "Puncture", "hash": "d5749fc8f01a2453", "src": "db2@1.60.1.70124"}
-{"id": 1318250, "field": "description", "en": "Puncture the target, inflicting $s1 Physical damage.", "hash": "970d45f0a0a3e668", "src": "db2@1.60.1.70124"}
-{"id": 1318270, "field": "name", "en": "Teleport to Purple Parlor", "hash": "65d79d867e72ea9a", "src": "db2@1.60.1.70124"}
-{"id": 1318287, "field": "name", "en": "Teleport to Violet Citadel", "hash": "2f21ce2fa197c3b6", "src": "db2@1.60.1.70124"}
-{"id": 1318301, "field": "name", "en": "[DNT] Create Item", "hash": "f72c617ae3ff3ae6", "src": "db2@1.60.1.70124"}
-{"id": 1318304, "field": "name", "en": "[DNT] Create Item", "hash": "f72c617ae3ff3ae6", "src": "db2@1.60.1.70124"}
-{"id": 1318317, "field": "name", "en": "Parachute-Priest Pager", "hash": "879b81ce6326d804", "src": "db2@1.60.1.70124"}
-{"id": 1318318, "field": "name", "en": "Arena Grand Master", "hash": "6ab5f199ba95bfc3", "src": "db2@1.60.1.70124"}
-{"id": 1318318, "field": "description", "en": "Reduces your damage taken by $s1% in the Battle Ring and The Maul.", "hash": "c18b39ccca5601de", "src": "db2@1.60.1.70124"}
-{"id": 1318318, "field": "aura", "en": "In the Battle Ring or The Maul, damage taken reduced by $s1%.", "hash": "6ce139d9e20a2a7d", "src": "db2@1.60.1.70124"}
-{"id": 1318323, "field": "name", "en": "Scented Runewood Brooch", "hash": "6452f42bd132880a", "src": "db2@1.60.1.70124"}
-{"id": 1318323, "field": "description", "en": "Harmful spell casts and attacks against Furbolg have a chance to deal $1318324s1 Nature damage.", "hash": "e2f0a620fbaa3c4a", "src": "db2@1.60.1.70124"}
-{"id": 1318324, "field": "name", "en": "Scented Runewood Brooch", "hash": "6452f42bd132880a", "src": "db2@1.60.1.70124"}
-{"id": 1318324, "field": "description", "en": "Deals $s1 Nature damage.", "hash": "95b93ec2e49821bf", "src": "db2@1.60.1.70124"}
-{"id": 1318325, "field": "name", "en": "Arcanite Dragonling", "hash": "80655b15dc1f6840", "src": "db2@1.60.1.70124"}
-{"id": 1318326, "field": "name", "en": "Briarwood Reed", "hash": "732d3bf5a12daa01", "src": "db2@1.60.1.70124"}
-{"id": 1318326, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1. This effect is doubled in Marsh and Swamp areas.", "hash": "e03fff0f176d85ef", "src": "db2@1.60.1.70124"}
-{"id": 1318327, "field": "name", "en": "Briarwood Reed", "hash": "732d3bf5a12daa01", "src": "db2@1.60.1.70124"}
-{"id": 1318327, "field": "aura", "en": "In a Swamp area, spell damage and healing increased by an additional $s1.", "hash": "01377989ff862c16", "src": "db2@1.60.1.70124"}
-{"id": 1318328, "field": "name", "en": "Loop of Lingering Echoes", "hash": "57f33d27cf7b40d2", "src": "db2@1.60.1.70124"}
-{"id": 1318328, "field": "description", "en": "+$s1 Attack Power. In Haunted areas, gain an additional $1307199s1 Attack Power.", "hash": "ed5b597e3603d95b", "src": "db2@1.60.1.70124"}
-{"id": 1318432, "field": "name", "en": "Fire Blast", "hash": "bf7fd8d732ef40f5", "src": "db2@1.60.1.70124"}
-{"id": 1318432, "field": "description", "en": "Blasts the target for Fire damage.", "hash": "8d27014ea2953fc2", "src": "db2@1.60.1.70124"}
-{"id": 1318470, "field": "name", "en": "Defender of the Timbermaw", "hash": "1768b6c4efa15202", "src": "db2@1.60.1.70124"}
-{"id": 1318476, "field": "name", "en": "Royal Seal of Eldre'Thalas", "hash": "fa8b3981d4814b8c", "src": "db2@1.60.1.70124"}
-{"id": 1318476, "field": "description", "en": "Increases spell damage and healing by up to $s1. Grants an additional $s3 spell damage against Demons.", "hash": "033a1c5c1b1cde07", "src": "db2@1.60.1.70124"}
-{"id": 1318477, "field": "name", "en": "Royal Seal of Eldre'Thalas", "hash": "fa8b3981d4814b8c", "src": "db2@1.60.1.70124"}
-{"id": 1318477, "field": "description", "en": "Restores $s1 Mana per 5 sec in Haunted areas.\r\n\r\n", "hash": "eb024d18c827937d", "src": "db2@1.60.1.70124"}
-{"id": 1318477, "field": "aura", "en": "In a Haunted area, restoring $w1 Mana per 5 sec.", "hash": "1547e12c5027b417", "src": "db2@1.60.1.70124"}
-{"id": 1318478, "field": "name", "en": "Royal Seal of Eldre'Thalas", "hash": "fa8b3981d4814b8c", "src": "db2@1.60.1.70124"}
-{"id": 1318478, "field": "description", "en": "Increases Spirit by $s1 in Forest and Grassland areas.", "hash": "da2beec89884f9d9", "src": "db2@1.60.1.70124"}
-{"id": 1318478, "field": "aura", "en": "In a Forest or Grassland area, Spirit increased by $w1.", "hash": "aae7109d64b6b5a5", "src": "db2@1.60.1.70124"}
-{"id": 1318479, "field": "name", "en": "Royal Seal of Eldre'Thalas", "hash": "fa8b3981d4814b8c", "src": "db2@1.60.1.70124"}
-{"id": 1318479, "field": "description", "en": "Increases spell damage and healing by up to $s1. Grants an additional $s3 spell damage against Demons.", "hash": "033a1c5c1b1cde07", "src": "db2@1.60.1.70124"}
-{"id": 1318480, "field": "name", "en": "Royal Seal of Eldre'Thalas", "hash": "fa8b3981d4814b8c", "src": "db2@1.60.1.70124"}
-{"id": 1318480, "field": "description", "en": "Increases Spirit by $s1 in Cavernous or Underground areas.", "hash": "8a0163f174113d50", "src": "db2@1.60.1.70124"}
-{"id": 1318480, "field": "aura", "en": "In a Cavernous or Underground area, Spirit increased by $w1.", "hash": "f49cfd78a73bda3f", "src": "db2@1.60.1.70124"}
-{"id": 1318514, "field": "name", "en": "Defender of the Barkskin", "hash": "2bf8b62e5faa22f8", "src": "db2@1.60.1.70124"}
-{"id": 1318780, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70124"}
-{"id": 1318807, "field": "name", "en": "Cloud of Chained Essence", "hash": "eaaddda95a46199e", "src": "db2@1.60.1.70124"}
-{"id": 1318807, "field": "description", "en": "Unleash a cloud of lethargy in a $a1 yard radius. Enemies that attack within the cloud have a $1300240h% chance to succumb to sleep for $1300241d.  Lasts for $d.", "hash": "1ecfa62417c5d17d", "src": "db2@1.60.1.70124"}
-{"id": 1318827, "field": "name", "en": "Mana Gems", "hash": "c8d814dbe5cc294e", "src": "db2@1.60.1.70124"}
-{"id": 1318827, "field": "description", "en": "Consume a mana gem, restoring your mana.\r\n\r\n$?pc164091[You currently hold the following mana gems:][You currently do not have any conjured mana gems.]\r\n$?pc164089[$@spellicon10058 Mana Ruby\r\n$@spelldesc10058][]\r\n$?pc164088[$@spellicon10057 Mana Jade\r\n$@spelldesc10057][]\r\n$?pc164087[$@spellicon10052 Mana Citrine\r\n$@spelldesc10052][]\r\n$?pc164085[$@spellicon5405 Mana Agate\r\n$@spelldesc5405][]", "hash": "cc00087ae28aa31d", "src": "db2@1.60.1.70124"}
-{"id": 1318846, "field": "name", "en": "Eye of the Beast", "hash": "4c894e181ab61fbd", "src": "db2@1.60.1.70124"}
-{"id": 1318863, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70124"}
-{"id": 1318864, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70124"}
-{"id": 1318865, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70124"}
-{"id": 1318866, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70124"}
-{"id": 1318867, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70124"}
-{"id": 1318868, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70124"}
-{"id": 1318922, "field": "name", "en": "Crafting", "hash": "158708dc421f4687", "src": "db2@1.60.1.70124"}
-{"id": 1318930, "field": "name", "en": "Draconic Infused Emblem", "hash": "26887a5c5ea7e36c", "src": "db2@1.60.1.70124"}
-{"id": 1318930, "field": "description", "en": "Increases spell damage and healing done by up to $s1 for $d. This spell damage increase is doubled against Dragonkin.", "hash": "934ca7bea7064e17", "src": "db2@1.60.1.70124"}
-{"id": 1318930, "field": "aura", "en": "Spell damage and healing increased by $w1. Spell damage increased by an additional $w3 against Dragonkin.", "hash": "491b9531c0491fe5", "src": "db2@1.60.1.70124"}
-{"id": 1318931, "field": "name", "en": "Draconic Infused Emblem", "hash": "26887a5c5ea7e36c", "src": "db2@1.60.1.70124"}
-{"id": 1318931, "field": "description", "en": "Chance on harmful spellcast to increase your spell damage and healing by up to $1318930s1 for $1318930d. This spell damage increase is doubled against Dragonkin.", "hash": "3d3e3941353f0c73", "src": "db2@1.60.1.70124"}
-{"id": 1318938, "field": "name", "en": "Counterattack Lodestone", "hash": "44ccb5c6dbdc3824", "src": "db2@1.60.1.70124"}
-{"id": 1318938, "field": "description", "en": "+$s1 Attack Power, doubled against Mechanical units.", "hash": "ea5b794a5b2d92d5", "src": "db2@1.60.1.70124"}
-{"id": 1318944, "field": "name", "en": "Blackhand's Breadth", "hash": "7c28daeb35b0ab20", "src": "db2@1.60.1.70124"}
-{"id": 1318944, "field": "description", "en": "Marks your target, increasing your Critical Strike chance against them by $s1% for $d. This effect is doubled against Orcs and Ogres.", "hash": "f5bdb4091362a863", "src": "db2@1.60.1.70124"}
-{"id": 1318944, "field": "aura", "en": "Chance to be critically struck by the caster increased by $w1%.", "hash": "6d22790081597afa", "src": "db2@1.60.1.70124"}
-{"id": 1318945, "field": "name", "en": "Blackhand's Breadth", "hash": "7c28daeb35b0ab20", "src": "db2@1.60.1.70124"}
-{"id": 1318954, "field": "name", "en": "Increased Critical 1 - Melee and Ranged", "hash": "d11f56dae1eff10d", "src": "db2@1.60.1.70124"}
-{"id": 1318954, "field": "description", "en": "Improves your chance to get a Critical Strike with Melee and Ranged attacks by ${$s1}.1%.", "hash": "0911ed1f42ef35e1", "src": "db2@1.60.1.70124"}
-{"id": 1318956, "field": "name", "en": "Increased Critical 1 - Spell", "hash": "1722da12267bc587", "src": "db2@1.60.1.70124"}
-{"id": 1318956, "field": "description", "en": "Improves your chance to get a Critical Strike with Spells by ${$s1}.1%.", "hash": "7300d76e34248294", "src": "db2@1.60.1.70124"}
-{"id": 1318987, "field": "name", "en": "Mod Creature Hit Chance", "hash": "970338286cb4bce3", "src": "db2@1.60.1.70124"}
-{"id": 1318987, "field": "description", "en": "Increase target creature's hit chance by 1%. Stacks!", "hash": "e3080b4104a3560d", "src": "db2@1.60.1.70124"}
-{"id": 1318987, "field": "aura", "en": "This creature has an extra $M1% hit chance.", "hash": "a520e3b70bcbdf14", "src": "db2@1.60.1.70124"}
+{"id": 1318000, "field": "name", "en": "Authority", "hash": "35fcff06fcb17a6f", "src": "db2@1.60.1.70170"}
+{"id": 1318000, "field": "description", "en": "+$s1 Attack Power. This effect is tripled in Forest and Grassland areas.", "hash": "81659b5b870c0845", "src": "db2@1.60.1.70170"}
+{"id": 1318001, "field": "name", "en": "Authority", "hash": "35fcff06fcb17a6f", "src": "db2@1.60.1.70170"}
+{"id": 1318001, "field": "description", "en": "+$s1 Attack Power. This effect is tripled in Forest and Grassland areas.", "hash": "81659b5b870c0845", "src": "db2@1.60.1.70170"}
+{"id": 1318002, "field": "name", "en": "Stolen Power", "hash": "5a97a2ce22e75119", "src": "db2@1.60.1.70170"}
+{"id": 1318002, "field": "aura", "en": "In a Forest or Grassland area, damage and healing done by magical spells and effects increased by an additional $w1.", "hash": "b50c7e598b7748de", "src": "db2@1.60.1.70170"}
+{"id": 1318003, "field": "name", "en": "Stolen Power", "hash": "5a97a2ce22e75119", "src": "db2@1.60.1.70170"}
+{"id": 1318003, "field": "aura", "en": "In a Forest or Grassland, damage and healing done by magical spells and effects increased by an additional $w1.", "hash": "85af3731f82d20b8", "src": "db2@1.60.1.70170"}
+{"id": 1318004, "field": "name", "en": "Stolen Power", "hash": "5a97a2ce22e75119", "src": "db2@1.60.1.70170"}
+{"id": 1318004, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1. This effect is tripled in Forest and Grassland areas.", "hash": "c854c672fc2bd1b6", "src": "db2@1.60.1.70170"}
+{"id": 1318022, "field": "name", "en": "[DNT] Cage", "hash": "16286170533ad444", "src": "db2@1.60.1.70170"}
+{"id": 1318024, "field": "name", "en": "Compact Critter Carrier", "hash": "13b08ca8e879e38c", "src": "db2@1.60.1.70170"}
+{"id": 1318024, "field": "description", "en": "Place a Compact Critter Carrier for $d that allows Hunters in your group to access their stabled pets.", "hash": "fe7715de9db31031", "src": "db2@1.60.1.70170"}
+{"id": 1318031, "field": "name", "en": "Small Bomb", "hash": "59c86570f0c51b11", "src": "db2@1.60.1.70170"}
+{"id": 1318031, "field": "description", "en": "Thrown attacks blow up on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "7696e5a4b3501ac0", "src": "db2@1.60.1.70170"}
+{"id": 1318034, "field": "name", "en": "Small Satchel of Bombs", "hash": "16dd8cc75930fded", "src": "db2@1.60.1.70170"}
+{"id": 1318034, "field": "description", "en": "Thrown attacks explode on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "975e2d49d391a71b", "src": "db2@1.60.1.70170"}
+{"id": 1318061, "field": "name", "en": "Bomb", "hash": "08f54b062d7fde22", "src": "db2@1.60.1.70170"}
+{"id": 1318061, "field": "description", "en": "Thrown attacks blow up on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "7696e5a4b3501ac0", "src": "db2@1.60.1.70170"}
+{"id": 1318062, "field": "name", "en": "Satchel of Bombs", "hash": "960108213538091e", "src": "db2@1.60.1.70170"}
+{"id": 1318062, "field": "description", "en": "Thrown attacks explode on impact, causing $1318061s1 Fire damage to nearby enemies.", "hash": "002674fb8b99347e", "src": "db2@1.60.1.70170"}
+{"id": 1318068, "field": "name", "en": "Large Bomb", "hash": "11b43ae0a3638647", "src": "db2@1.60.1.70170"}
+{"id": 1318068, "field": "description", "en": "Thrown attacks blow up on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "7696e5a4b3501ac0", "src": "db2@1.60.1.70170"}
+{"id": 1318069, "field": "name", "en": "Large Satchel of Bombs", "hash": "2a11f5fd89060d46", "src": "db2@1.60.1.70170"}
+{"id": 1318069, "field": "description", "en": "Thrown attacks explode on impact, causing $1318068s1 Fire damage to nearby enemies.", "hash": "d46b2a07e6a6d4e3", "src": "db2@1.60.1.70170"}
+{"id": 1318070, "field": "name", "en": "Diamond Flask", "hash": "d19548c8cff23376", "src": "db2@1.60.1.70170"}
+{"id": 1318070, "field": "description", "en": "Increases Strength by $s1.", "hash": "b2147e940c214c23", "src": "db2@1.60.1.70170"}
+{"id": 1318070, "field": "aura", "en": "Increases Strength by $s1.", "hash": "b2147e940c214c23", "src": "db2@1.60.1.70170"}
+{"id": 1318073, "field": "name", "en": "Diamond Flask", "hash": "d19548c8cff23376", "src": "db2@1.60.1.70170"}
+{"id": 1318084, "field": "name", "en": "Fingerbreaker Stamp", "hash": "dd0f90dd62c92420", "src": "db2@1.60.1.70170"}
+{"id": 1318084, "field": "description", "en": "Increases Strength by $s1 while affected by a Bleed.", "hash": "9d3d89fbb49c3791", "src": "db2@1.60.1.70170"}
+{"id": 1318084, "field": "aura", "en": "Strength increased by $w1.", "hash": "90d9af1c4ec2d7c3", "src": "db2@1.60.1.70170"}
+{"id": 1318102, "field": "name", "en": "Volunteer's Lucky Seal", "hash": "ff2764ffed3445f6", "src": "db2@1.60.1.70170"}
+{"id": 1318102, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1318103s1 to all Resistances in Forest and Grassland areas.", "hash": "fc42b0533dace83f", "src": "db2@1.60.1.70170"}
+{"id": 1318103, "field": "name", "en": "Volunteer's Lucky Seal", "hash": "ff2764ffed3445f6", "src": "db2@1.60.1.70170"}
+{"id": 1318103, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70170"}
+{"id": 1318104, "field": "name", "en": "Zarla's Snack Pouch", "hash": "8d0b22367e411d23", "src": "db2@1.60.1.70170"}
+{"id": 1318108, "field": "name", "en": "Dragon's Call", "hash": "5e4082d6ca81491a", "src": "db2@1.60.1.70170"}
+{"id": 1318110, "field": "name", "en": "Lydros' Inspection", "hash": "9f259623dfa1453b", "src": "db2@1.60.1.70170"}
+{"id": 1318110, "field": "aura", "en": "Holding Sonya's Darkened Glaive aloft for Lydros to inspect.", "hash": "0bfb7cbde846620d", "src": "db2@1.60.1.70170"}
+{"id": 1318121, "field": "name", "en": "Huge Bomb", "hash": "7ece2440d892f047", "src": "db2@1.60.1.70170"}
+{"id": 1318121, "field": "description", "en": "Thrown attacks blow up on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "7696e5a4b3501ac0", "src": "db2@1.60.1.70170"}
+{"id": 1318123, "field": "name", "en": "Huge Bombs", "hash": "e37c8e73243f9252", "src": "db2@1.60.1.70170"}
+{"id": 1318123, "field": "description", "en": "Thrown attacks explode on impact, causing $1318121s1 Fire damage to nearby enemies.", "hash": "fe9a4f9323cfb03f", "src": "db2@1.60.1.70170"}
+{"id": 1318124, "field": "name", "en": "Darkspear Voodoo Seal", "hash": "211211ea4c70de0d", "src": "db2@1.60.1.70170"}
+{"id": 1318124, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1318125s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "922e24ed4d04a37f", "src": "db2@1.60.1.70170"}
+{"id": 1318125, "field": "name", "en": "Darkspear Voodoo Seal", "hash": "211211ea4c70de0d", "src": "db2@1.60.1.70170"}
+{"id": 1318125, "field": "aura", "en": "In a Forest or Grassland area, restoring an additional $s1 Mana every 5 sec.", "hash": "c3cfc82208cf79fc", "src": "db2@1.60.1.70170"}
+{"id": 1318129, "field": "name", "en": "Relentless Raider's Seal", "hash": "20b491c16257da24", "src": "db2@1.60.1.70170"}
+{"id": 1318129, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1318103s1 to all Resistances in Forest and Grassland areas.", "hash": "fc42b0533dace83f", "src": "db2@1.60.1.70170"}
+{"id": 1318130, "field": "name", "en": "Relentless Raider's Seal", "hash": "20b491c16257da24", "src": "db2@1.60.1.70170"}
+{"id": 1318130, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70170"}
+{"id": 1318131, "field": "name", "en": "Enriched Seal", "hash": "2e53f15d977ad5c3", "src": "db2@1.60.1.70170"}
+{"id": 1318131, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1318125s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "922e24ed4d04a37f", "src": "db2@1.60.1.70170"}
+{"id": 1318132, "field": "name", "en": "Enriched Seal", "hash": "2e53f15d977ad5c3", "src": "db2@1.60.1.70170"}
+{"id": 1318132, "field": "aura", "en": "In a Forest or Grassland area, restoring an additional $s1 Mana every 5 sec.", "hash": "c3cfc82208cf79fc", "src": "db2@1.60.1.70170"}
+{"id": 1318151, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70170"}
+{"id": 1318151, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70170"}
+{"id": 1318159, "field": "name", "en": "Ancient Power", "hash": "b1bd2fee9d47005d", "src": "db2@1.60.1.70170"}
+{"id": 1318159, "field": "description", "en": "Chance on hit to deal $1265634s1 Arcane damage. Deals $s1 times as much damage to Naga and Satyrs.", "hash": "8c73a969295e488e", "src": "db2@1.60.1.70170"}
+{"id": 1318163, "field": "name", "en": "Concussed", "hash": "eb313f5863a87fd4", "src": "db2@1.60.1.70170"}
+{"id": 1318163, "field": "description", "en": "Concuss the target, slowing movement speed by $s1% for $d.", "hash": "a184509623a2738a", "src": "db2@1.60.1.70170"}
+{"id": 1318163, "field": "aura", "en": "Movement slowed by $s1%.", "hash": "bd9406b84a62a739", "src": "db2@1.60.1.70170"}
+{"id": 1318178, "field": "name", "en": "Cracked Skull", "hash": "88190d2819a0fe98", "src": "db2@1.60.1.70170"}
+{"id": 1318178, "field": "description", "en": "Stun the target for $1318178d.", "hash": "c7ffc341a0840cb8", "src": "db2@1.60.1.70170"}
+{"id": 1318178, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
+{"id": 1318182, "field": "name", "en": "Skull Crack", "hash": "a0c73348cedea0e0", "src": "db2@1.60.1.70170"}
+{"id": 1318182, "field": "description", "en": "Thrown hammers have a low chance to stun the target for $1318178d.", "hash": "bf1cb3b9ed3ace09", "src": "db2@1.60.1.70170"}
+{"id": 1318185, "field": "name", "en": "Concussed", "hash": "eb313f5863a87fd4", "src": "db2@1.60.1.70170"}
+{"id": 1318185, "field": "description", "en": "Thrown hammers have a chance to concuss the target, slowing movement speed by $1318163s1% for $1318163d.", "hash": "d0598c5c1fe5b1f4", "src": "db2@1.60.1.70170"}
+{"id": 1318217, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70170"}
+{"id": 1318244, "field": "name", "en": "Kalimdor Speed", "hash": "57558824129e33cb", "src": "db2@1.60.1.70170"}
+{"id": 1318244, "field": "description", "en": "Increases movement speed by $s1% in The Barrens and Stonetalon Mountains.", "hash": "4b3cabe08f13e920", "src": "db2@1.60.1.70170"}
+{"id": 1318244, "field": "aura", "en": "Movement speed increased by $w1%.", "hash": "d64ce2e8b7176631", "src": "db2@1.60.1.70170"}
+{"id": 1318250, "field": "name", "en": "Puncture", "hash": "d5749fc8f01a2453", "src": "db2@1.60.1.70170"}
+{"id": 1318250, "field": "description", "en": "Puncture the target, inflicting $s1 Physical damage.", "hash": "970d45f0a0a3e668", "src": "db2@1.60.1.70170"}
+{"id": 1318270, "field": "name", "en": "Teleport to Purple Parlor", "hash": "65d79d867e72ea9a", "src": "db2@1.60.1.70170"}
+{"id": 1318287, "field": "name", "en": "Teleport to Violet Citadel", "hash": "2f21ce2fa197c3b6", "src": "db2@1.60.1.70170"}
+{"id": 1318301, "field": "name", "en": "[DNT] Create Item", "hash": "f72c617ae3ff3ae6", "src": "db2@1.60.1.70170"}
+{"id": 1318304, "field": "name", "en": "[DNT] Create Item", "hash": "f72c617ae3ff3ae6", "src": "db2@1.60.1.70170"}
+{"id": 1318317, "field": "name", "en": "Parachute-Priest Pager", "hash": "879b81ce6326d804", "src": "db2@1.60.1.70170"}
+{"id": 1318318, "field": "name", "en": "Arena Grand Master", "hash": "6ab5f199ba95bfc3", "src": "db2@1.60.1.70170"}
+{"id": 1318318, "field": "description", "en": "Reduces your damage taken by $s1% in the Battle Ring and The Maul.", "hash": "c18b39ccca5601de", "src": "db2@1.60.1.70170"}
+{"id": 1318318, "field": "aura", "en": "In the Battle Ring or The Maul, damage taken reduced by $s1%.", "hash": "6ce139d9e20a2a7d", "src": "db2@1.60.1.70170"}
+{"id": 1318323, "field": "name", "en": "Scented Runewood Brooch", "hash": "6452f42bd132880a", "src": "db2@1.60.1.70170"}
+{"id": 1318323, "field": "description", "en": "Harmful spell casts and attacks against Furbolg have a chance to deal $1318324s1 Nature damage.", "hash": "e2f0a620fbaa3c4a", "src": "db2@1.60.1.70170"}
+{"id": 1318324, "field": "name", "en": "Scented Runewood Brooch", "hash": "6452f42bd132880a", "src": "db2@1.60.1.70170"}
+{"id": 1318324, "field": "description", "en": "Deals $s1 Nature damage.", "hash": "95b93ec2e49821bf", "src": "db2@1.60.1.70170"}
+{"id": 1318325, "field": "name", "en": "Arcanite Dragonling", "hash": "80655b15dc1f6840", "src": "db2@1.60.1.70170"}
+{"id": 1318326, "field": "name", "en": "Briarwood Reed", "hash": "732d3bf5a12daa01", "src": "db2@1.60.1.70170"}
+{"id": 1318326, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1. This effect is doubled in Marsh and Swamp areas.", "hash": "e03fff0f176d85ef", "src": "db2@1.60.1.70170"}
+{"id": 1318327, "field": "name", "en": "Briarwood Reed", "hash": "732d3bf5a12daa01", "src": "db2@1.60.1.70170"}
+{"id": 1318327, "field": "aura", "en": "In a Swamp area, spell damage and healing increased by an additional $s1.", "hash": "01377989ff862c16", "src": "db2@1.60.1.70170"}
+{"id": 1318328, "field": "name", "en": "Loop of Lingering Echoes", "hash": "57f33d27cf7b40d2", "src": "db2@1.60.1.70170"}
+{"id": 1318328, "field": "description", "en": "+$s1 Attack Power. In Haunted areas, gain an additional $1307199s1 Attack Power.", "hash": "ed5b597e3603d95b", "src": "db2@1.60.1.70170"}
+{"id": 1318432, "field": "name", "en": "Fire Blast", "hash": "bf7fd8d732ef40f5", "src": "db2@1.60.1.70170"}
+{"id": 1318432, "field": "description", "en": "Blasts the target for Fire damage.", "hash": "8d27014ea2953fc2", "src": "db2@1.60.1.70170"}
+{"id": 1318470, "field": "name", "en": "Defender of the Timbermaw", "hash": "1768b6c4efa15202", "src": "db2@1.60.1.70170"}
+{"id": 1318476, "field": "name", "en": "Royal Seal of Eldre'Thalas", "hash": "fa8b3981d4814b8c", "src": "db2@1.60.1.70170"}
+{"id": 1318476, "field": "description", "en": "Increases spell damage and healing by up to $s1. Grants an additional $s3 spell damage against Demons.", "hash": "033a1c5c1b1cde07", "src": "db2@1.60.1.70170"}
+{"id": 1318477, "field": "name", "en": "Royal Seal of Eldre'Thalas", "hash": "fa8b3981d4814b8c", "src": "db2@1.60.1.70170"}
+{"id": 1318477, "field": "description", "en": "Restores $s1 Mana per 5 sec in Haunted areas.\r\n\r\n", "hash": "eb024d18c827937d", "src": "db2@1.60.1.70170"}
+{"id": 1318477, "field": "aura", "en": "In a Haunted area, restoring $w1 Mana per 5 sec.", "hash": "1547e12c5027b417", "src": "db2@1.60.1.70170"}
+{"id": 1318478, "field": "name", "en": "Royal Seal of Eldre'Thalas", "hash": "fa8b3981d4814b8c", "src": "db2@1.60.1.70170"}
+{"id": 1318478, "field": "description", "en": "Increases Spirit by $s1 in Forest and Grassland areas.", "hash": "da2beec89884f9d9", "src": "db2@1.60.1.70170"}
+{"id": 1318478, "field": "aura", "en": "In a Forest or Grassland area, Spirit increased by $w1.", "hash": "aae7109d64b6b5a5", "src": "db2@1.60.1.70170"}
+{"id": 1318479, "field": "name", "en": "Royal Seal of Eldre'Thalas", "hash": "fa8b3981d4814b8c", "src": "db2@1.60.1.70170"}
+{"id": 1318479, "field": "description", "en": "Increases spell damage and healing by up to $s1. Grants an additional $s3 spell damage against Demons.", "hash": "033a1c5c1b1cde07", "src": "db2@1.60.1.70170"}
+{"id": 1318480, "field": "name", "en": "Royal Seal of Eldre'Thalas", "hash": "fa8b3981d4814b8c", "src": "db2@1.60.1.70170"}
+{"id": 1318480, "field": "description", "en": "Increases Spirit by $s1 in Cavernous or Underground areas.", "hash": "8a0163f174113d50", "src": "db2@1.60.1.70170"}
+{"id": 1318480, "field": "aura", "en": "In a Cavernous or Underground area, Spirit increased by $w1.", "hash": "f49cfd78a73bda3f", "src": "db2@1.60.1.70170"}
+{"id": 1318514, "field": "name", "en": "Defender of the Barkskin", "hash": "2bf8b62e5faa22f8", "src": "db2@1.60.1.70170"}
+{"id": 1318780, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
+{"id": 1318807, "field": "name", "en": "Cloud of Chained Essence", "hash": "eaaddda95a46199e", "src": "db2@1.60.1.70170"}
+{"id": 1318807, "field": "description", "en": "Unleash a cloud of lethargy in a $a1 yd  radius. Enemies that attack within the cloud have a $1300240h% chance to succumb to sleep for $1300241d. Lasts for $d.", "hash": "0ca72a5929a0b315", "src": "db2@1.60.1.70170"}
+{"id": 1318827, "field": "name", "en": "Mana Gems", "hash": "c8d814dbe5cc294e", "src": "db2@1.60.1.70170"}
+{"id": 1318827, "field": "description", "en": "Consume a mana gem, restoring your mana.\r\n\r\n$?pc164091[You currently hold the following mana gems:][You currently do not have any conjured mana gems.]\r\n$?pc164089[$@spellicon10058 Mana Ruby\r\n$@spelldesc10058][]\r\n$?pc164088[$@spellicon10057 Mana Jade\r\n$@spelldesc10057][]\r\n$?pc164087[$@spellicon10052 Mana Citrine\r\n$@spelldesc10052][]\r\n$?pc164085[$@spellicon5405 Mana Agate\r\n$@spelldesc5405][]", "hash": "cc00087ae28aa31d", "src": "db2@1.60.1.70170"}
+{"id": 1318846, "field": "name", "en": "Eye of the Beast", "hash": "4c894e181ab61fbd", "src": "db2@1.60.1.70170"}
+{"id": 1318863, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
+{"id": 1318864, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
+{"id": 1318865, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
+{"id": 1318866, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
+{"id": 1318867, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
+{"id": 1318868, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
+{"id": 1318922, "field": "name", "en": "Crafting", "hash": "158708dc421f4687", "src": "db2@1.60.1.70170"}
+{"id": 1318930, "field": "name", "en": "Draconic Infused Emblem", "hash": "26887a5c5ea7e36c", "src": "db2@1.60.1.70170"}
+{"id": 1318930, "field": "description", "en": "Increases spell damage and healing done by up to $s1 for $d. This spell damage increase is doubled against Dragonkin.", "hash": "934ca7bea7064e17", "src": "db2@1.60.1.70170"}
+{"id": 1318930, "field": "aura", "en": "Spell damage and healing increased by $w1. Spell damage increased by an additional $w3 against Dragonkin.", "hash": "491b9531c0491fe5", "src": "db2@1.60.1.70170"}
+{"id": 1318931, "field": "name", "en": "Draconic Infused Emblem", "hash": "26887a5c5ea7e36c", "src": "db2@1.60.1.70170"}
+{"id": 1318931, "field": "description", "en": "Chance on harmful spellcast to increase your spell damage and healing by up to $1318930s1 for $1318930d. This spell damage increase is doubled against Dragonkin.", "hash": "3d3e3941353f0c73", "src": "db2@1.60.1.70170"}
+{"id": 1318938, "field": "name", "en": "Counterattack Lodestone", "hash": "44ccb5c6dbdc3824", "src": "db2@1.60.1.70170"}
+{"id": 1318938, "field": "description", "en": "+$s1 Attack Power, doubled against Mechanical units.", "hash": "ea5b794a5b2d92d5", "src": "db2@1.60.1.70170"}
+{"id": 1318944, "field": "name", "en": "Blackhand's Breadth", "hash": "7c28daeb35b0ab20", "src": "db2@1.60.1.70170"}
+{"id": 1318944, "field": "description", "en": "Marks your target, increasing your Critical Strike chance against them by $s1% for $d. This effect is doubled against Orcs and Ogres.", "hash": "f5bdb4091362a863", "src": "db2@1.60.1.70170"}
+{"id": 1318944, "field": "aura", "en": "Chance to be critically struck by the caster increased by $w1%.", "hash": "6d22790081597afa", "src": "db2@1.60.1.70170"}
+{"id": 1318945, "field": "name", "en": "Blackhand's Breadth", "hash": "7c28daeb35b0ab20", "src": "db2@1.60.1.70170"}
+{"id": 1318954, "field": "name", "en": "Increased Critical 1 - Melee and Ranged", "hash": "d11f56dae1eff10d", "src": "db2@1.60.1.70170"}
+{"id": 1318954, "field": "description", "en": "Improves your chance to get a Critical Strike with Melee and Ranged attacks by ${$s1}.1%.", "hash": "0911ed1f42ef35e1", "src": "db2@1.60.1.70170"}
+{"id": 1318956, "field": "name", "en": "Increased Critical 1 - Spell", "hash": "1722da12267bc587", "src": "db2@1.60.1.70170"}
+{"id": 1318956, "field": "description", "en": "Improves your chance to get a Critical Strike with Spells by ${$s1}.1%.", "hash": "7300d76e34248294", "src": "db2@1.60.1.70170"}
+{"id": 1318987, "field": "name", "en": "Mod Creature Hit Chance", "hash": "970338286cb4bce3", "src": "db2@1.60.1.70170"}
+{"id": 1318987, "field": "description", "en": "Increase target creature's hit chance by 1%. Stacks!", "hash": "e3080b4104a3560d", "src": "db2@1.60.1.70170"}
+{"id": 1318987, "field": "aura", "en": "This creature has an extra $M1% hit chance.", "hash": "a520e3b70bcbdf14", "src": "db2@1.60.1.70170"}

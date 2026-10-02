@@ -1,81 +1,81 @@
-{"id": 368000, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70124"}
-{"id": 368003, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70124"}
-{"id": 368007, "field": "name", "en": "Tactical Flurry", "hash": "e412319962179ac0", "src": "db2@1.60.1.70124"}
-{"id": 368007, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70124"}
-{"id": 368087, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70124"}
-{"id": 368127, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70124"}
-{"id": 368127, "field": "description", "en": "Charges an enemy, inflicting normal damage plus $s3 and stuns the opponent for $d.", "hash": "af4293e676932a45", "src": "db2@1.60.1.70124"}
-{"id": 368129, "field": "name", "en": "Corrupted Slam", "hash": "6c50d07b885fe0b1", "src": "db2@1.60.1.70124"}
-{"id": 368130, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70124"}
-{"id": 368134, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70124"}
-{"id": 368136, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70124"}
-{"id": 368156, "field": "name", "en": "Destroy Suppression Device", "hash": "cc1d71c4b9766efd", "src": "db2@1.60.1.70124"}
-{"id": 368156, "field": "description", "en": "Destroys a nearby Suppression Device.", "hash": "f8227795d3a3c17c", "src": "db2@1.60.1.70124"}
-{"id": 368186, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70124"}
-{"id": 368186, "field": "description", "en": "Sends out a blast wave of magic, inflicting Arcane damage to nearby enemies.", "hash": "b94462fd4bbc5c98", "src": "db2@1.60.1.70124"}
-{"id": 368188, "field": "name", "en": "Blink", "hash": "951d75c0c1314e00", "src": "db2@1.60.1.70124"}
-{"id": 368188, "field": "description", "en": "Teleports the caster 20 yd. forward unless something is in the way. Also frees the caster from any bonds.", "hash": "a02ec6f5691a1b00", "src": "db2@1.60.1.70124"}
-{"id": 368188, "field": "aura", "en": "Blinking...", "hash": "e8b15d2fefd96faf", "src": "db2@1.60.1.70124"}
-{"id": 368209, "field": "name", "en": "Corrupted Coil", "hash": "6a2cc3fdbdca6a72", "src": "db2@1.60.1.70124"}
-{"id": 368215, "field": "name", "en": "Corrupted Coil", "hash": "6a2cc3fdbdca6a72", "src": "db2@1.60.1.70124"}
-{"id": 368216, "field": "name", "en": "Corrupted Coil", "hash": "6a2cc3fdbdca6a72", "src": "db2@1.60.1.70124"}
-{"id": 368218, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70124"}
-{"id": 368218, "field": "description", "en": "Consecrates the land beneath Paladin, doing $o1 Holy damage over $d to enemies who enter the area.", "hash": "a8aaa1098e513552", "src": "db2@1.60.1.70124"}
-{"id": 368218, "field": "aura", "en": "$s1 damage every $t1 $lsecond:seconds;.", "hash": "6e1476427b33cc94", "src": "db2@1.60.1.70124"}
-{"id": 368226, "field": "name", "en": "Shadowrush", "hash": "08eb3d07088db409", "src": "db2@1.60.1.70124"}
-{"id": 368228, "field": "name", "en": "Corrupted Weapon", "hash": "689a47be0435ed02", "src": "db2@1.60.1.70124"}
-{"id": 368235, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70124"}
-{"id": 368235, "field": "description", "en": "Consecrates the land beneath Paladin, doing $o1 Holy damage over $d to enemies who enter the area.", "hash": "a8aaa1098e513552", "src": "db2@1.60.1.70124"}
-{"id": 368235, "field": "aura", "en": "$s1 damage every $t1 $lsecond:seconds;.", "hash": "6e1476427b33cc94", "src": "db2@1.60.1.70124"}
-{"id": 368238, "field": "name", "en": "Bouncing Bolt", "hash": "a5c9cb9e125c0629", "src": "db2@1.60.1.70124"}
-{"id": 368261, "field": "name", "en": "Bouncing Bolt", "hash": "a5c9cb9e125c0629", "src": "db2@1.60.1.70124"}
-{"id": 368288, "field": "name", "en": "Corrupted Shot", "hash": "6c4fcb8878809002", "src": "db2@1.60.1.70124"}
-{"id": 368292, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70124"}
-{"id": 368315, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70124"}
-{"id": 368315, "field": "description", "en": "Inflicts Shadow damage to an enemy and reduces its movement speed for $d.", "hash": "b24a12b10f7654d4", "src": "db2@1.60.1.70124"}
-{"id": 368315, "field": "aura", "en": "$s1 Shadow damage inflicted every second.\r\nMovement speed reduced by $s2%.", "hash": "99caad0abed1df63", "src": "db2@1.60.1.70124"}
-{"id": 368320, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70124"}
-{"id": 368324, "field": "name", "en": "Nightmare Brambles", "hash": "fcb03e0ff6dfb6b1", "src": "db2@1.60.1.70124"}
-{"id": 368329, "field": "name", "en": "Nightmare Brambles", "hash": "fcb03e0ff6dfb6b1", "src": "db2@1.60.1.70124"}
-{"id": 368329, "field": "description", "en": "Entangles an enemy in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "ed46cb1a9bc2abfc", "src": "db2@1.60.1.70124"}
-{"id": 368329, "field": "aura", "en": "Immobilized.\r\n$s2 Nature damage inflicted every $t2 sec.", "hash": "4d35cbbaf3cbec29", "src": "db2@1.60.1.70124"}
-{"id": 368332, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70124"}
-{"id": 368368, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70124"}
-{"id": 368371, "field": "name", "en": "Obsidian Fury", "hash": "efc648ffb3e8cf63", "src": "db2@1.60.1.70124"}
-{"id": 368371, "field": "aura", "en": "Damage Dealt increased by $s1%.", "hash": "ac8ad16f69be8eb2", "src": "db2@1.60.1.70124"}
-{"id": 368388, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70124"}
-{"id": 368388, "field": "description", "en": "Increases the caster's attack speed by $s2% and all damage it deals by $s1 for $d.", "hash": "62bd6caa71a8393c", "src": "db2@1.60.1.70124"}
-{"id": 368388, "field": "aura", "en": "All damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "9532f2fe4071e124", "src": "db2@1.60.1.70124"}
-{"id": 368418, "field": "name", "en": "Teleport to Blackwing Lair", "hash": "280b604ce020b8cd", "src": "db2@1.60.1.70124"}
-{"id": 368418, "field": "description", "en": "Teleport player to Blackwing Lair.", "hash": "77cc095ae4749476", "src": "db2@1.60.1.70124"}
-{"id": 368420, "field": "name", "en": "Teleport to Blackwing Lair", "hash": "280b604ce020b8cd", "src": "db2@1.60.1.70124"}
-{"id": 368420, "field": "description", "en": "Teleport player to Blackwing Lair.", "hash": "77cc095ae4749476", "src": "db2@1.60.1.70124"}
-{"id": 368431, "field": "name", "en": "Invisibility and Stealth Detection", "hash": "8563c35412a38acc", "src": "db2@1.60.1.70124"}
-{"id": 368515, "field": "name", "en": "Brand of Shadow", "hash": "f709f6b7d65f3a7c", "src": "db2@1.60.1.70124"}
-{"id": 368515, "field": "aura", "en": "Additional damage taken from Brand of Shadow.", "hash": "671fe634e61a9dd2", "src": "db2@1.60.1.70124"}
-{"id": 368519, "field": "name", "en": "Brand of Shadow", "hash": "f709f6b7d65f3a7c", "src": "db2@1.60.1.70124"}
-{"id": 368520, "field": "name", "en": "Brand of Flame", "hash": "9d3f9904e4a810e7", "src": "db2@1.60.1.70124"}
-{"id": 368521, "field": "name", "en": "Brand of Flame", "hash": "9d3f9904e4a810e7", "src": "db2@1.60.1.70124"}
-{"id": 368521, "field": "aura", "en": "Additional damage taken from Brand of Flame.", "hash": "331fe0a80b38027e", "src": "db2@1.60.1.70124"}
-{"id": 368615, "field": "name", "en": "Pulse Lightning", "hash": "055d5e7dad4db151", "src": "db2@1.60.1.70124"}
-{"id": 368615, "field": "aura", "en": "Inflicts Nature damage to nearby enemies every $t sec for $d. In addition, movement speed, attack speed, and cast speed are increased by $s2%.", "hash": "a9ceffd109fcda6e", "src": "db2@1.60.1.70124"}
-{"id": 368616, "field": "name", "en": "Pulse Lightning", "hash": "055d5e7dad4db151", "src": "db2@1.60.1.70124"}
-{"id": 368623, "field": "name", "en": "Holy Bolt", "hash": "dff879ea22cedffb", "src": "db2@1.60.1.70124"}
-{"id": 368624, "field": "name", "en": "Holy Bolt", "hash": "dff879ea22cedffb", "src": "db2@1.60.1.70124"}
-{"id": 368626, "field": "name", "en": "Holy Bolt", "hash": "dff879ea22cedffb", "src": "db2@1.60.1.70124"}
-{"id": 368632, "field": "name", "en": "Corrupted Weapon", "hash": "689a47be0435ed02", "src": "db2@1.60.1.70124"}
-{"id": 368632, "field": "aura", "en": "Stalked by your corrupted weapon.", "hash": "98e3346d94167038", "src": "db2@1.60.1.70124"}
-{"id": 368659, "field": "name", "en": "Chromatic Shield", "hash": "74ebf0444e5190c8", "src": "db2@1.60.1.70124"}
-{"id": 368659, "field": "aura", "en": "Damage reduced by $s1%.", "hash": "27db0483e3f05930", "src": "db2@1.60.1.70124"}
-{"id": 368708, "field": "name", "en": "[DNT] Permanent Feign Death", "hash": "cdf458fcfa20cf70", "src": "db2@1.60.1.70124"}
-{"id": 368713, "field": "name", "en": "[DNT] Firemaw Cosmetic Electricity", "hash": "2957197053d18174", "src": "db2@1.60.1.70124"}
-{"id": 368716, "field": "name", "en": "[DNT] Faulty Wiring", "hash": "9969b1cd8df5d85b", "src": "db2@1.60.1.70124"}
-{"id": 368720, "field": "name", "en": "[DNT] Firemaw Cosmetic Electricity", "hash": "2957197053d18174", "src": "db2@1.60.1.70124"}
-{"id": 368724, "field": "name", "en": "Static Overload", "hash": "25ece5d85710cde2", "src": "db2@1.60.1.70124"}
-{"id": 368831, "field": "name", "en": "Drakonid Spawner", "hash": "6248fc6194d93a4a", "src": "db2@1.60.1.70124"}
-{"id": 368925, "field": "name", "en": "Burning Adrenaline", "hash": "aa94191606cc525d", "src": "db2@1.60.1.70124"}
-{"id": 368940, "field": "name", "en": "AEDM", "hash": "08c7e8e1f957b139", "src": "db2@1.60.1.70124"}
-{"id": 368941, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70124"}
-{"id": 368941, "field": "description", "en": "Inflicts $s2 damage to enemies in a cone in front of the caster, knocking them back.", "hash": "fed85586daab0da2", "src": "db2@1.60.1.70124"}
-{"id": 368942, "field": "name", "en": "Shadow Flame", "hash": "16e797740a3280bc", "src": "db2@1.60.1.70124"}
-{"id": 368942, "field": "description", "en": "Inflicts $s1 Shadow damage to enemies in a cone in front of the caster.", "hash": "843ba22c2780281b", "src": "db2@1.60.1.70124"}
+{"id": 368000, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70170"}
+{"id": 368003, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70170"}
+{"id": 368007, "field": "name", "en": "Tactical Flurry", "hash": "e412319962179ac0", "src": "db2@1.60.1.70170"}
+{"id": 368007, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70170"}
+{"id": 368087, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70170"}
+{"id": 368127, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70170"}
+{"id": 368127, "field": "description", "en": "Charges an enemy, inflicting normal damage plus $s3 and stuns the opponent for $d.", "hash": "af4293e676932a45", "src": "db2@1.60.1.70170"}
+{"id": 368129, "field": "name", "en": "Corrupted Slam", "hash": "6c50d07b885fe0b1", "src": "db2@1.60.1.70170"}
+{"id": 368130, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70170"}
+{"id": 368134, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70170"}
+{"id": 368136, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70170"}
+{"id": 368156, "field": "name", "en": "Destroy Suppression Device", "hash": "cc1d71c4b9766efd", "src": "db2@1.60.1.70170"}
+{"id": 368156, "field": "description", "en": "Destroys a nearby Suppression Device.", "hash": "f8227795d3a3c17c", "src": "db2@1.60.1.70170"}
+{"id": 368186, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70170"}
+{"id": 368186, "field": "description", "en": "Sends out a blast wave of magic, inflicting Arcane damage to nearby enemies.", "hash": "b94462fd4bbc5c98", "src": "db2@1.60.1.70170"}
+{"id": 368188, "field": "name", "en": "Blink", "hash": "951d75c0c1314e00", "src": "db2@1.60.1.70170"}
+{"id": 368188, "field": "description", "en": "Teleports the caster 20 yd. forward unless something is in the way. Also frees the caster from any bonds.", "hash": "a02ec6f5691a1b00", "src": "db2@1.60.1.70170"}
+{"id": 368188, "field": "aura", "en": "Blinking...", "hash": "e8b15d2fefd96faf", "src": "db2@1.60.1.70170"}
+{"id": 368209, "field": "name", "en": "Corrupted Coil", "hash": "6a2cc3fdbdca6a72", "src": "db2@1.60.1.70170"}
+{"id": 368215, "field": "name", "en": "Corrupted Coil", "hash": "6a2cc3fdbdca6a72", "src": "db2@1.60.1.70170"}
+{"id": 368216, "field": "name", "en": "Corrupted Coil", "hash": "6a2cc3fdbdca6a72", "src": "db2@1.60.1.70170"}
+{"id": 368218, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70170"}
+{"id": 368218, "field": "description", "en": "Consecrates the land beneath Paladin, doing $o1 Holy damage over $d to enemies who enter the area.", "hash": "a8aaa1098e513552", "src": "db2@1.60.1.70170"}
+{"id": 368218, "field": "aura", "en": "$s1 damage every $t1 $lsecond:seconds;.", "hash": "6e1476427b33cc94", "src": "db2@1.60.1.70170"}
+{"id": 368226, "field": "name", "en": "Shadowrush", "hash": "08eb3d07088db409", "src": "db2@1.60.1.70170"}
+{"id": 368228, "field": "name", "en": "Corrupted Weapon", "hash": "689a47be0435ed02", "src": "db2@1.60.1.70170"}
+{"id": 368235, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70170"}
+{"id": 368235, "field": "description", "en": "Consecrates the land beneath Paladin, doing $o1 Holy damage over $d to enemies who enter the area.", "hash": "a8aaa1098e513552", "src": "db2@1.60.1.70170"}
+{"id": 368235, "field": "aura", "en": "$s1 damage every $t1 $lsecond:seconds;.", "hash": "6e1476427b33cc94", "src": "db2@1.60.1.70170"}
+{"id": 368238, "field": "name", "en": "Bouncing Bolt", "hash": "a5c9cb9e125c0629", "src": "db2@1.60.1.70170"}
+{"id": 368261, "field": "name", "en": "Bouncing Bolt", "hash": "a5c9cb9e125c0629", "src": "db2@1.60.1.70170"}
+{"id": 368288, "field": "name", "en": "Corrupted Shot", "hash": "6c4fcb8878809002", "src": "db2@1.60.1.70170"}
+{"id": 368292, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70170"}
+{"id": 368315, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70170"}
+{"id": 368315, "field": "description", "en": "Inflicts Shadow damage to an enemy and reduces its movement speed for $d.", "hash": "b24a12b10f7654d4", "src": "db2@1.60.1.70170"}
+{"id": 368315, "field": "aura", "en": "$s1 Shadow damage inflicted every second.\r\nMovement speed reduced by $s2%.", "hash": "99caad0abed1df63", "src": "db2@1.60.1.70170"}
+{"id": 368320, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70170"}
+{"id": 368324, "field": "name", "en": "Nightmare Brambles", "hash": "fcb03e0ff6dfb6b1", "src": "db2@1.60.1.70170"}
+{"id": 368329, "field": "name", "en": "Nightmare Brambles", "hash": "fcb03e0ff6dfb6b1", "src": "db2@1.60.1.70170"}
+{"id": 368329, "field": "description", "en": "Entangles an enemy in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "ed46cb1a9bc2abfc", "src": "db2@1.60.1.70170"}
+{"id": 368329, "field": "aura", "en": "Immobilized.\r\n$s2 Nature damage inflicted every $t2 sec.", "hash": "4d35cbbaf3cbec29", "src": "db2@1.60.1.70170"}
+{"id": 368332, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70170"}
+{"id": 368368, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70170"}
+{"id": 368371, "field": "name", "en": "Obsidian Fury", "hash": "efc648ffb3e8cf63", "src": "db2@1.60.1.70170"}
+{"id": 368371, "field": "aura", "en": "Damage Dealt increased by $s1%.", "hash": "ac8ad16f69be8eb2", "src": "db2@1.60.1.70170"}
+{"id": 368388, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70170"}
+{"id": 368388, "field": "description", "en": "Increases the caster's attack speed by $s2% and all damage it deals by $s1 for $d.", "hash": "62bd6caa71a8393c", "src": "db2@1.60.1.70170"}
+{"id": 368388, "field": "aura", "en": "All damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "9532f2fe4071e124", "src": "db2@1.60.1.70170"}
+{"id": 368418, "field": "name", "en": "Teleport to Blackwing Lair", "hash": "280b604ce020b8cd", "src": "db2@1.60.1.70170"}
+{"id": 368418, "field": "description", "en": "Teleport player to Blackwing Lair.", "hash": "77cc095ae4749476", "src": "db2@1.60.1.70170"}
+{"id": 368420, "field": "name", "en": "Teleport to Blackwing Lair", "hash": "280b604ce020b8cd", "src": "db2@1.60.1.70170"}
+{"id": 368420, "field": "description", "en": "Teleport player to Blackwing Lair.", "hash": "77cc095ae4749476", "src": "db2@1.60.1.70170"}
+{"id": 368431, "field": "name", "en": "Invisibility and Stealth Detection", "hash": "8563c35412a38acc", "src": "db2@1.60.1.70170"}
+{"id": 368515, "field": "name", "en": "Brand of Shadow", "hash": "f709f6b7d65f3a7c", "src": "db2@1.60.1.70170"}
+{"id": 368515, "field": "aura", "en": "Additional damage taken from Brand of Shadow.", "hash": "671fe634e61a9dd2", "src": "db2@1.60.1.70170"}
+{"id": 368519, "field": "name", "en": "Brand of Shadow", "hash": "f709f6b7d65f3a7c", "src": "db2@1.60.1.70170"}
+{"id": 368520, "field": "name", "en": "Brand of Flame", "hash": "9d3f9904e4a810e7", "src": "db2@1.60.1.70170"}
+{"id": 368521, "field": "name", "en": "Brand of Flame", "hash": "9d3f9904e4a810e7", "src": "db2@1.60.1.70170"}
+{"id": 368521, "field": "aura", "en": "Additional damage taken from Brand of Flame.", "hash": "331fe0a80b38027e", "src": "db2@1.60.1.70170"}
+{"id": 368615, "field": "name", "en": "Pulse Lightning", "hash": "055d5e7dad4db151", "src": "db2@1.60.1.70170"}
+{"id": 368615, "field": "aura", "en": "Inflicts Nature damage to nearby enemies every $t sec for $d. In addition, movement speed, attack speed, and cast speed are increased by $s2%.", "hash": "a9ceffd109fcda6e", "src": "db2@1.60.1.70170"}
+{"id": 368616, "field": "name", "en": "Pulse Lightning", "hash": "055d5e7dad4db151", "src": "db2@1.60.1.70170"}
+{"id": 368623, "field": "name", "en": "Holy Bolt", "hash": "dff879ea22cedffb", "src": "db2@1.60.1.70170"}
+{"id": 368624, "field": "name", "en": "Holy Bolt", "hash": "dff879ea22cedffb", "src": "db2@1.60.1.70170"}
+{"id": 368626, "field": "name", "en": "Holy Bolt", "hash": "dff879ea22cedffb", "src": "db2@1.60.1.70170"}
+{"id": 368632, "field": "name", "en": "Corrupted Weapon", "hash": "689a47be0435ed02", "src": "db2@1.60.1.70170"}
+{"id": 368632, "field": "aura", "en": "Stalked by your corrupted weapon.", "hash": "98e3346d94167038", "src": "db2@1.60.1.70170"}
+{"id": 368659, "field": "name", "en": "Chromatic Shield", "hash": "74ebf0444e5190c8", "src": "db2@1.60.1.70170"}
+{"id": 368659, "field": "aura", "en": "Damage reduced by $s1%.", "hash": "27db0483e3f05930", "src": "db2@1.60.1.70170"}
+{"id": 368708, "field": "name", "en": "[DNT] Permanent Feign Death", "hash": "cdf458fcfa20cf70", "src": "db2@1.60.1.70170"}
+{"id": 368713, "field": "name", "en": "[DNT] Firemaw Cosmetic Electricity", "hash": "2957197053d18174", "src": "db2@1.60.1.70170"}
+{"id": 368716, "field": "name", "en": "[DNT] Faulty Wiring", "hash": "9969b1cd8df5d85b", "src": "db2@1.60.1.70170"}
+{"id": 368720, "field": "name", "en": "[DNT] Firemaw Cosmetic Electricity", "hash": "2957197053d18174", "src": "db2@1.60.1.70170"}
+{"id": 368724, "field": "name", "en": "Static Overload", "hash": "25ece5d85710cde2", "src": "db2@1.60.1.70170"}
+{"id": 368831, "field": "name", "en": "Drakonid Spawner", "hash": "6248fc6194d93a4a", "src": "db2@1.60.1.70170"}
+{"id": 368925, "field": "name", "en": "Burning Adrenaline", "hash": "aa94191606cc525d", "src": "db2@1.60.1.70170"}
+{"id": 368940, "field": "name", "en": "AEDM", "hash": "08c7e8e1f957b139", "src": "db2@1.60.1.70170"}
+{"id": 368941, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70170"}
+{"id": 368941, "field": "description", "en": "Inflicts $s2 damage to enemies in a cone in front of the caster, knocking them back.", "hash": "fed85586daab0da2", "src": "db2@1.60.1.70170"}
+{"id": 368942, "field": "name", "en": "Shadow Flame", "hash": "16e797740a3280bc", "src": "db2@1.60.1.70170"}
+{"id": 368942, "field": "description", "en": "Inflicts $s1 Shadow damage to enemies in a cone in front of the caster.", "hash": "843ba22c2780281b", "src": "db2@1.60.1.70170"}

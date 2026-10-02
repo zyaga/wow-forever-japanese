@@ -1,9 +1,9 @@
-{"id": 355363, "field": "name", "en": "Rallying Cry of the Dragonslayer", "hash": "7d39ca9b95e4b332", "src": "db2@1.60.1.70124"}
-{"id": 355363, "field": "description", "en": "Increases critical chance of spells by $s1%, melee and ranged by $s3% and grants $s2 attack power. Lasts $d.", "hash": "d85f18eb8a4b3310", "src": "db2@1.60.1.70124"}
-{"id": 355363, "field": "aura", "en": "Increases critical chance of spells by $s1%, melee and ranged by $s3% and grants $s2  attack power. Lasts $d.", "hash": "d85f18eb8a4b3310", "src": "db2@1.60.1.70124"}
-{"id": 355365, "field": "name", "en": "Spirit of Zandalar", "hash": "a7d67f3c31235cc8", "src": "db2@1.60.1.70124"}
-{"id": 355365, "field": "description", "en": "Increases movement speed by 10% and all stats by 15% for 2 hours.", "hash": "36b19267b475f300", "src": "db2@1.60.1.70124"}
-{"id": 355365, "field": "aura", "en": "Increases movement speed by 10% and all stats by 15% for 2 hours.", "hash": "36b19267b475f300", "src": "db2@1.60.1.70124"}
-{"id": 355366, "field": "name", "en": "Warchief's Blessing", "hash": "26b9a73b03147c44", "src": "db2@1.60.1.70124"}
-{"id": 355366, "field": "description", "en": "Increases hitpoints by 300. 15% haste to melee attacks. 10 mana regen every 5 seconds.", "hash": "143f9918440a74d6", "src": "db2@1.60.1.70124"}
-{"id": 355366, "field": "aura", "en": "Increases hitpoints by 300. 15% haste to melee attacks. 10 mana regen every 5 seconds.", "hash": "143f9918440a74d6", "src": "db2@1.60.1.70124"}
+{"id": 355363, "field": "name", "en": "Rallying Cry of the Dragonslayer", "hash": "7d39ca9b95e4b332", "src": "db2@1.60.1.70170"}
+{"id": 355363, "field": "description", "en": "Increases critical chance of spells by $s1%, melee and ranged by $s3% and grants $s2 attack power. Lasts $d.", "hash": "d85f18eb8a4b3310", "src": "db2@1.60.1.70170"}
+{"id": 355363, "field": "aura", "en": "Increases critical chance of spells by $s1%, melee and ranged by $s3% and grants $s2  attack power. Lasts $d.", "hash": "d85f18eb8a4b3310", "src": "db2@1.60.1.70170"}
+{"id": 355365, "field": "name", "en": "Spirit of Zandalar", "hash": "a7d67f3c31235cc8", "src": "db2@1.60.1.70170"}
+{"id": 355365, "field": "description", "en": "Increases movement speed by 10% and all stats by 15% for 2 hours.", "hash": "36b19267b475f300", "src": "db2@1.60.1.70170"}
+{"id": 355365, "field": "aura", "en": "Increases movement speed by 10% and all stats by 15% for 2 hours.", "hash": "36b19267b475f300", "src": "db2@1.60.1.70170"}
+{"id": 355366, "field": "name", "en": "Warchief's Blessing", "hash": "26b9a73b03147c44", "src": "db2@1.60.1.70170"}
+{"id": 355366, "field": "description", "en": "Increases hitpoints by 300. 15% haste to melee attacks. 10 mana regen every 5 seconds.", "hash": "143f9918440a74d6", "src": "db2@1.60.1.70170"}
+{"id": 355366, "field": "aura", "en": "Increases hitpoints by 300. 15% haste to melee attacks. 10 mana regen every 5 seconds.", "hash": "143f9918440a74d6", "src": "db2@1.60.1.70170"}

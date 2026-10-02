@@ -1,12 +1,12 @@
-{"id": 365100, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70124"}
-{"id": 365122, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70124"}
-{"id": 365122, "field": "description", "en": "Increases the caster's attack speed by $s2% and the Physical damage it deals by $s1 for $d.", "hash": "1d3f8a492f089bd8", "src": "db2@1.60.1.70124"}
-{"id": 365122, "field": "aura", "en": "Physical damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "bc6c8e1d090dadea", "src": "db2@1.60.1.70124"}
-{"id": 365123, "field": "name", "en": "Call Meteor", "hash": "2175f52cfff44b77", "src": "db2@1.60.1.70124"}
-{"id": 365128, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70124"}
-{"id": 365188, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70124"}
-{"id": 365196, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70124"}
-{"id": 365663, "field": "name", "en": "Sunder Armor", "hash": "194f3875c8cadf79", "src": "db2@1.60.1.70124"}
-{"id": 365663, "field": "description", "en": "Hacks at an enemy's armor, reducing it by $s1 per Sunder Armor. Can be applied up to 5 times. Lasts $d.", "hash": "b4e55d0c440ef858", "src": "db2@1.60.1.70124"}
-{"id": 365663, "field": "aura", "en": "Reduced armor.", "hash": "c3d1fc4c19ef9b82", "src": "db2@1.60.1.70124"}
-{"id": 365762, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70124"}
+{"id": 365100, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70170"}
+{"id": 365122, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70170"}
+{"id": 365122, "field": "description", "en": "Increases the caster's attack speed by $s2% and the Physical damage it deals by $s1 for $d.", "hash": "1d3f8a492f089bd8", "src": "db2@1.60.1.70170"}
+{"id": 365122, "field": "aura", "en": "Physical damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "bc6c8e1d090dadea", "src": "db2@1.60.1.70170"}
+{"id": 365123, "field": "name", "en": "Call Meteor", "hash": "2175f52cfff44b77", "src": "db2@1.60.1.70170"}
+{"id": 365128, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70170"}
+{"id": 365188, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70170"}
+{"id": 365196, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70170"}
+{"id": 365663, "field": "name", "en": "Sunder Armor", "hash": "194f3875c8cadf79", "src": "db2@1.60.1.70170"}
+{"id": 365663, "field": "description", "en": "Hacks at an enemy's armor, reducing it by $s1 per Sunder Armor. Can be applied up to 5 times. Lasts $d.", "hash": "b4e55d0c440ef858", "src": "db2@1.60.1.70170"}
+{"id": 365663, "field": "aura", "en": "Reduced armor.", "hash": "c3d1fc4c19ef9b82", "src": "db2@1.60.1.70170"}
+{"id": 365762, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70170"}

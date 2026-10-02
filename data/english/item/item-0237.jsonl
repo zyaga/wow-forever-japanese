@@ -1,39 +1,39 @@
-{"id": 237011, "field": "name", "en": "Portcullis Key", "hash": "f282c80b1e734d62", "src": "db2@1.60.1.70124"}
-{"id": 237023, "field": "name", "en": "Pop-Up Shrub", "hash": "94b6f3c87910812b", "src": "db2@1.60.1.70124"}
-{"id": 237023, "field": "description", "en": "Deploy an emergency hiding spot. Most enemies will be less likely to notice you while you stand near it. Observant foes may not be so easily fooled.\r\n\r\nCannot be cast in combat.", "hash": "0cd5325acd88e60b", "src": "db2@1.60.1.70124"}
-{"id": 237024, "field": "name", "en": "Opera Ticket", "hash": "2fdbab083a5e9aac", "src": "db2@1.60.1.70124"}
-{"id": 237037, "field": "name", "en": "Haute Club Membership Card", "hash": "ce39e4afc1fb0dbe", "src": "db2@1.60.1.70124"}
-{"id": 237037, "field": "description", "en": "Fine Dining for the Finest.", "hash": "486a79c96a48e1f4", "src": "db2@1.60.1.70124"}
-{"id": 237041, "field": "name", "en": "Tome of Enchanted Flare", "hash": "954bf733762d1575", "src": "db2@1.60.1.70124"}
-{"id": 237196, "field": "name", "en": "Suspicious Collection Equipment", "hash": "c4562a74dc37c6cb", "src": "db2@1.60.1.70124"}
-{"id": 237196, "field": "description", "en": "Place at a Sulphur Vent.\nThere don't seem to be any collection supplies in the barrel.", "hash": "1a542d689624f93f", "src": "db2@1.60.1.70124"}
-{"id": 237230, "field": "name", "en": "Suspicious Neutralizing Compound", "hash": "d6d3d6dddeb3c030", "src": "db2@1.60.1.70124"}
-{"id": 237230, "field": "description", "en": "Place beside Suspicious Collection Equipment.\nThe crate smells of charcoal.", "hash": "5b652237d701a871", "src": "db2@1.60.1.70124"}
-{"id": 237261, "field": "name", "en": "Fine Sand", "hash": "9a769274090b1abf", "src": "db2@1.60.1.70124"}
-{"id": 237263, "field": "name", "en": "Supply Bag", "hash": "3a936689758e521c", "src": "db2@1.60.1.70124"}
-{"id": 237504, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70124"}
-{"id": 237504, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70124"}
-{"id": 237814, "field": "name", "en": "Sentinel's Lamellar Legguards", "hash": "573ed000a66b1138", "src": "db2@1.60.1.70124"}
+{"id": 237011, "field": "name", "en": "Portcullis Key", "hash": "f282c80b1e734d62", "src": "db2@1.60.1.70170"}
+{"id": 237023, "field": "name", "en": "Pop-Up Shrub", "hash": "94b6f3c87910812b", "src": "db2@1.60.1.70170"}
+{"id": 237023, "field": "description", "en": "Deploy an emergency hiding spot. Most enemies will be less likely to notice you while you stand near it. Observant foes may not be so easily fooled.\r\n\r\nCannot be cast in combat.", "hash": "0cd5325acd88e60b", "src": "db2@1.60.1.70170"}
+{"id": 237024, "field": "name", "en": "Opera Ticket", "hash": "2fdbab083a5e9aac", "src": "db2@1.60.1.70170"}
+{"id": 237037, "field": "name", "en": "Haute Club Membership Card", "hash": "ce39e4afc1fb0dbe", "src": "db2@1.60.1.70170"}
+{"id": 237037, "field": "description", "en": "Fine Dining for the Finest.", "hash": "486a79c96a48e1f4", "src": "db2@1.60.1.70170"}
+{"id": 237041, "field": "name", "en": "Tome of Enchanted Flare", "hash": "954bf733762d1575", "src": "db2@1.60.1.70170"}
+{"id": 237196, "field": "name", "en": "Suspicious Collection Equipment", "hash": "c4562a74dc37c6cb", "src": "db2@1.60.1.70170"}
+{"id": 237196, "field": "description", "en": "Place at a Sulphur Vent.\nThere don't seem to be any collection supplies in the barrel.", "hash": "1a542d689624f93f", "src": "db2@1.60.1.70170"}
+{"id": 237230, "field": "name", "en": "Suspicious Neutralizing Compound", "hash": "d6d3d6dddeb3c030", "src": "db2@1.60.1.70170"}
+{"id": 237230, "field": "description", "en": "Place beside Suspicious Collection Equipment.\nThe crate smells of charcoal.", "hash": "5b652237d701a871", "src": "db2@1.60.1.70170"}
+{"id": 237261, "field": "name", "en": "Fine Sand", "hash": "9a769274090b1abf", "src": "db2@1.60.1.70170"}
+{"id": 237263, "field": "name", "en": "Supply Bag", "hash": "3a936689758e521c", "src": "db2@1.60.1.70170"}
+{"id": 237504, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70170"}
+{"id": 237504, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70170"}
+{"id": 237814, "field": "name", "en": "Sentinel's Lamellar Legguards", "hash": "573ed000a66b1138", "src": "db2@1.60.1.70170"}
 {"id": 237814, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 237815, "field": "name", "en": "Sentinel's Silk Leggings", "hash": "ef97a507e3f0d546", "src": "db2@1.60.1.70124"}
+{"id": 237815, "field": "name", "en": "Sentinel's Silk Leggings", "hash": "ef97a507e3f0d546", "src": "db2@1.60.1.70170"}
 {"id": 237815, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 237817, "field": "name", "en": "Sentinel's Lizardhide Pants", "hash": "b33bca1891ff42ca", "src": "db2@1.60.1.70124"}
+{"id": 237817, "field": "name", "en": "Sentinel's Lizardhide Pants", "hash": "b33bca1891ff42ca", "src": "db2@1.60.1.70170"}
 {"id": 237817, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 237818, "field": "name", "en": "Sentinel's Leather Pants", "hash": "fe45b552b5940342", "src": "db2@1.60.1.70124"}
+{"id": 237818, "field": "name", "en": "Sentinel's Leather Pants", "hash": "fe45b552b5940342", "src": "db2@1.60.1.70170"}
 {"id": 237818, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 237819, "field": "name", "en": "Sentinel's Chain Leggings", "hash": "15422c5e8b3e9d5b", "src": "db2@1.60.1.70124"}
+{"id": 237819, "field": "name", "en": "Sentinel's Chain Leggings", "hash": "15422c5e8b3e9d5b", "src": "db2@1.60.1.70170"}
 {"id": 237819, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 237820, "field": "name", "en": "Outrider's Silk Leggings", "hash": "ba3bdb7663df87a6", "src": "db2@1.60.1.70124"}
+{"id": 237820, "field": "name", "en": "Outrider's Silk Leggings", "hash": "ba3bdb7663df87a6", "src": "db2@1.60.1.70170"}
 {"id": 237820, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 237821, "field": "name", "en": "Outrider's Lizardhide Pants", "hash": "03a2627c861dfade", "src": "db2@1.60.1.70124"}
+{"id": 237821, "field": "name", "en": "Outrider's Lizardhide Pants", "hash": "03a2627c861dfade", "src": "db2@1.60.1.70170"}
 {"id": 237821, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 237822, "field": "name", "en": "Outrider's Leather Pants", "hash": "c8e9ebc13582b5a2", "src": "db2@1.60.1.70124"}
+{"id": 237822, "field": "name", "en": "Outrider's Leather Pants", "hash": "c8e9ebc13582b5a2", "src": "db2@1.60.1.70170"}
 {"id": 237822, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 237823, "field": "name", "en": "Outrider's Mail Leggings", "hash": "0f76482d923c188c", "src": "db2@1.60.1.70124"}
+{"id": 237823, "field": "name", "en": "Outrider's Mail Leggings", "hash": "0f76482d923c188c", "src": "db2@1.60.1.70170"}
 {"id": 237823, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 237824, "field": "name", "en": "Outrider's Chain Leggings", "hash": "c74a069fe3a1f498", "src": "db2@1.60.1.70124"}
+{"id": 237824, "field": "name", "en": "Outrider's Chain Leggings", "hash": "c74a069fe3a1f498", "src": "db2@1.60.1.70170"}
 {"id": 237824, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 237825, "field": "name", "en": "Sentinel's Plate Legguards", "hash": "b79c822578296d78", "src": "db2@1.60.1.70124"}
+{"id": 237825, "field": "name", "en": "Sentinel's Plate Legguards", "hash": "b79c822578296d78", "src": "db2@1.60.1.70170"}
 {"id": 237825, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 237826, "field": "name", "en": "Outrider's Plate Legguards", "hash": "d1a1332f2f0a3837", "src": "db2@1.60.1.70124"}
+{"id": 237826, "field": "name", "en": "Outrider's Plate Legguards", "hash": "d1a1332f2f0a3837", "src": "db2@1.60.1.70170"}
 {"id": 237826, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}

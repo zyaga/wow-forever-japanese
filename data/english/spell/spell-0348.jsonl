@@ -1,24 +1,24 @@
-{"id": 348005, "field": "name", "en": "Poison", "hash": "43f9da16eae9c502", "src": "db2@1.60.1.70124"}
-{"id": 348005, "field": "description", "en": "Inflicts Nature damage to an enemy every $t1 sec. for $d.", "hash": "05ece5991a43ff48", "src": "db2@1.60.1.70124"}
-{"id": 348005, "field": "aura", "en": "Nature damage inflicted every $t1 sec.", "hash": "af62b13ec2fc8e7b", "src": "db2@1.60.1.70124"}
-{"id": 348021, "field": "name", "en": "Call for Help", "hash": "0de951ff0326017a", "src": "db2@1.60.1.70124"}
-{"id": 348023, "field": "name", "en": "Grobbulus Killed - Cleanup", "hash": "f8b414192c73b10b", "src": "db2@1.60.1.70124"}
-{"id": 348180, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70124"}
-{"id": 348191, "field": "name", "en": "Frost Aura", "hash": "7f8f155767220e97", "src": "db2@1.60.1.70124"}
-{"id": 348191, "field": "description", "en": "Deals $s1 frost damage a second.", "hash": "eb1e7372de55f54e", "src": "db2@1.60.1.70124"}
-{"id": 348191, "field": "aura", "en": "Deals $s1 frost damage a second.", "hash": "eb1e7372de55f54e", "src": "db2@1.60.1.70124"}
-{"id": 348232, "field": "name", "en": "Pet Teleport Check", "hash": "33668b915b951049", "src": "db2@1.60.1.70124"}
-{"id": 348234, "field": "name", "en": "Razuvious Aggro Understudies", "hash": "c60ebd4e015daca5", "src": "db2@1.60.1.70124"}
-{"id": 348243, "field": "name", "en": "Despawn Boss Adds", "hash": "242bf395e0ffd13e", "src": "db2@1.60.1.70124"}
-{"id": 348244, "field": "name", "en": "Leash", "hash": "43b45ff678c11dda", "src": "db2@1.60.1.70124"}
-{"id": 348250, "field": "name", "en": "Despawn InCombat Trigger", "hash": "4a41f339508315bf", "src": "db2@1.60.1.70124"}
-{"id": 348406, "field": "name", "en": "Holiday - Scourge Invasion,  Despawn Summoners", "hash": "691df0fbedd84a1f", "src": "db2@1.60.1.70124"}
-{"id": 348571, "field": "name", "en": "Zap Crystal Corpse", "hash": "854e3c72042de2d6", "src": "db2@1.60.1.70124"}
-{"id": 348779, "field": "name", "en": "Call of the Ashbringer", "hash": "2d48fca24e039a42", "src": "db2@1.60.1.70124"}
-{"id": 348779, "field": "description", "en": "$@null\r\n$@null", "hash": "22bd6f87c8f55d45", "src": "db2@1.60.1.70124"}
-{"id": 348789, "field": "name", "en": "Mana Burn", "hash": "c830c3ee624940a1", "src": "db2@1.60.1.70124"}
-{"id": 348789, "field": "description", "en": "Hits an enemy with an anti-mana bolt. For each point of mana consumed by the bolt, the target takes $e1 damage.", "hash": "5ae7b2cb51a18270", "src": "db2@1.60.1.70124"}
-{"id": 348795, "field": "name", "en": "Plague Wave 1", "hash": "776ccd5e7d85eabc", "src": "db2@1.60.1.70124"}
-{"id": 348804, "field": "name", "en": "Plague Wave 2", "hash": "776ccd5f7d85eabd", "src": "db2@1.60.1.70124"}
-{"id": 348806, "field": "name", "en": "Plague Wave 3", "hash": "776ccd607d85eabe", "src": "db2@1.60.1.70124"}
-{"id": 348807, "field": "name", "en": "Plague Wave 4", "hash": "776ccd617d85eabf", "src": "db2@1.60.1.70124"}
+{"id": 348005, "field": "name", "en": "Poison", "hash": "43f9da16eae9c502", "src": "db2@1.60.1.70170"}
+{"id": 348005, "field": "description", "en": "Inflicts Nature damage to an enemy every $t1 sec. for $d.", "hash": "05ece5991a43ff48", "src": "db2@1.60.1.70170"}
+{"id": 348005, "field": "aura", "en": "Nature damage inflicted every $t1 sec.", "hash": "af62b13ec2fc8e7b", "src": "db2@1.60.1.70170"}
+{"id": 348021, "field": "name", "en": "Call for Help", "hash": "0de951ff0326017a", "src": "db2@1.60.1.70170"}
+{"id": 348023, "field": "name", "en": "Grobbulus Killed - Cleanup", "hash": "f8b414192c73b10b", "src": "db2@1.60.1.70170"}
+{"id": 348180, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70170"}
+{"id": 348191, "field": "name", "en": "Frost Aura", "hash": "7f8f155767220e97", "src": "db2@1.60.1.70170"}
+{"id": 348191, "field": "description", "en": "Deals $s1 frost damage a second.", "hash": "eb1e7372de55f54e", "src": "db2@1.60.1.70170"}
+{"id": 348191, "field": "aura", "en": "Deals $s1 frost damage a second.", "hash": "eb1e7372de55f54e", "src": "db2@1.60.1.70170"}
+{"id": 348232, "field": "name", "en": "Pet Teleport Check", "hash": "33668b915b951049", "src": "db2@1.60.1.70170"}
+{"id": 348234, "field": "name", "en": "Razuvious Aggro Understudies", "hash": "c60ebd4e015daca5", "src": "db2@1.60.1.70170"}
+{"id": 348243, "field": "name", "en": "Despawn Boss Adds", "hash": "242bf395e0ffd13e", "src": "db2@1.60.1.70170"}
+{"id": 348244, "field": "name", "en": "Leash", "hash": "43b45ff678c11dda", "src": "db2@1.60.1.70170"}
+{"id": 348250, "field": "name", "en": "Despawn InCombat Trigger", "hash": "4a41f339508315bf", "src": "db2@1.60.1.70170"}
+{"id": 348406, "field": "name", "en": "Holiday - Scourge Invasion,  Despawn Summoners", "hash": "691df0fbedd84a1f", "src": "db2@1.60.1.70170"}
+{"id": 348571, "field": "name", "en": "Zap Crystal Corpse", "hash": "854e3c72042de2d6", "src": "db2@1.60.1.70170"}
+{"id": 348779, "field": "name", "en": "Call of the Ashbringer", "hash": "2d48fca24e039a42", "src": "db2@1.60.1.70170"}
+{"id": 348779, "field": "description", "en": "$@null\r\n$@null", "hash": "22bd6f87c8f55d45", "src": "db2@1.60.1.70170"}
+{"id": 348789, "field": "name", "en": "Mana Burn", "hash": "c830c3ee624940a1", "src": "db2@1.60.1.70170"}
+{"id": 348789, "field": "description", "en": "Hits an enemy with an anti-mana bolt. For each point of mana consumed by the bolt, the target takes $e1 damage.", "hash": "5ae7b2cb51a18270", "src": "db2@1.60.1.70170"}
+{"id": 348795, "field": "name", "en": "Plague Wave 1", "hash": "776ccd5e7d85eabc", "src": "db2@1.60.1.70170"}
+{"id": 348804, "field": "name", "en": "Plague Wave 2", "hash": "776ccd5f7d85eabd", "src": "db2@1.60.1.70170"}
+{"id": 348806, "field": "name", "en": "Plague Wave 3", "hash": "776ccd607d85eabe", "src": "db2@1.60.1.70170"}
+{"id": 348807, "field": "name", "en": "Plague Wave 4", "hash": "776ccd617d85eabf", "src": "db2@1.60.1.70170"}

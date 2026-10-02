@@ -1,12 +1,12 @@
-{"id": 233197, "field": "name", "en": "Argent Training Manual", "hash": "a11dec8ebc20ec85", "src": "db2@1.60.1.70124"}
-{"id": 233197, "field": "description", "en": "Use the manual to call your Argent Squire for a training lesson in combat with the Silithid. Silithids killed in the squire's presence will increase your reputation with the Argent Dawn.", "hash": "ec5a51f01694466e", "src": "db2@1.60.1.70124"}
-{"id": 233198, "field": "name", "en": "Horn of the Dawn", "hash": "4af1ac18136414c4", "src": "db2@1.60.1.70124"}
-{"id": 233198, "field": "description", "en": "Rally your nearby party or raid members, granting them $s1% increased spell critical strike chance, $s3% increased melee and ranged critical strike chance, and $s2 increased attack power. Lasts $473387d. Exclusive with similar world effects and unaffected by Chronoboons.", "hash": "e487cf6ecb188fdb", "src": "db2@1.60.1.70124"}
-{"id": 233200, "field": "name", "en": "Songflower Seed", "hash": "69e909a69ad8f139", "src": "db2@1.60.1.70124"}
-{"id": 233200, "field": "description", "en": "Summon a songflower that grants all your party or raid members $s1% increased chance for a melee, ranged, or spell critical and $s2 increased attributes for $473399d. Exclusive with similar world effects. Unaffected by Chronoboons.", "hash": "e9db065f2ccc14ad", "src": "db2@1.60.1.70124"}
-{"id": 233209, "field": "name", "en": "Firewater Cauldron", "hash": "ddad7a3b20b2bff5", "src": "db2@1.60.1.70124"}
-{"id": 233209, "field": "description", "en": "Summon a cauldron of Firewater for $d, useable by all members of your party or raid to increase melee attack power by $473469s1 and size for $473469d.", "hash": "0fcd9860aa08192e", "src": "db2@1.60.1.70124"}
-{"id": 233217, "field": "name", "en": "Tunneler's Incense", "hash": "473bcbde641346be", "src": "db2@1.60.1.70124"}
-{"id": 233217, "field": "description", "en": "Inhaling this incense causes you to fade into the shadows, allowing you to sneak around while inside Hive'Ashi, Hive'Regal, or Hive'Zora, but reduces your speed by $s2%.  Lasts $d.", "hash": "2b7ea238a01def6d", "src": "db2@1.60.1.70124"}
-{"id": 233250, "field": "name", "en": "Ancient Branch", "hash": "644c317ef8759e62", "src": "db2@1.60.1.70124"}
-{"id": 233250, "field": "description", "en": "Use the branch to call an Ancient of War to assist you in fighting Silithids.", "hash": "65c2a94ba0e4cae7", "src": "db2@1.60.1.70124"}
+{"id": 233197, "field": "name", "en": "Argent Training Manual", "hash": "a11dec8ebc20ec85", "src": "db2@1.60.1.70170"}
+{"id": 233197, "field": "description", "en": "Use the manual to call your Argent Squire for a training lesson in combat with the Silithid. Silithids killed in the squire's presence will increase your reputation with the Argent Dawn.", "hash": "ec5a51f01694466e", "src": "db2@1.60.1.70170"}
+{"id": 233198, "field": "name", "en": "Horn of the Dawn", "hash": "4af1ac18136414c4", "src": "db2@1.60.1.70170"}
+{"id": 233198, "field": "description", "en": "Rally your nearby party or raid members, granting them $s1% increased spell critical strike chance, $s3% increased melee and ranged critical strike chance, and $s2 increased attack power. Lasts $473387d. Exclusive with similar world effects and unaffected by Chronoboons.", "hash": "e487cf6ecb188fdb", "src": "db2@1.60.1.70170"}
+{"id": 233200, "field": "name", "en": "Songflower Seed", "hash": "69e909a69ad8f139", "src": "db2@1.60.1.70170"}
+{"id": 233200, "field": "description", "en": "Summon a songflower that grants all your party or raid members $s1% increased chance for a melee, ranged, or spell critical and $s2 increased attributes for $473399d. Exclusive with similar world effects. Unaffected by Chronoboons.", "hash": "e9db065f2ccc14ad", "src": "db2@1.60.1.70170"}
+{"id": 233209, "field": "name", "en": "Firewater Cauldron", "hash": "ddad7a3b20b2bff5", "src": "db2@1.60.1.70170"}
+{"id": 233209, "field": "description", "en": "Summon a cauldron of Firewater for $d, useable by all members of your party or raid to increase melee attack power by $473469s1 and size for $473469d.", "hash": "0fcd9860aa08192e", "src": "db2@1.60.1.70170"}
+{"id": 233217, "field": "name", "en": "Tunneler's Incense", "hash": "473bcbde641346be", "src": "db2@1.60.1.70170"}
+{"id": 233217, "field": "description", "en": "Inhaling this incense causes you to fade into the shadows, allowing you to sneak around while inside Hive'Ashi, Hive'Regal, or Hive'Zora, but reduces your speed by $s2%.  Lasts $d.", "hash": "2b7ea238a01def6d", "src": "db2@1.60.1.70170"}
+{"id": 233250, "field": "name", "en": "Ancient Branch", "hash": "644c317ef8759e62", "src": "db2@1.60.1.70170"}
+{"id": 233250, "field": "description", "en": "Use the branch to call an Ancient of War to assist you in fighting Silithids.", "hash": "65c2a94ba0e4cae7", "src": "db2@1.60.1.70170"}

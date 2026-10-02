@@ -1,36 +1,36 @@
-{"id": 441004, "field": "name", "en": "[DNT] S03 - GNO Raid - Crowd Pummeler - Platform Area Trigger Dummy Aura", "hash": "a1f8355b07686d8e", "src": "db2@1.60.1.70124"}
-{"id": 441042, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70124"}
-{"id": 441100, "field": "name", "en": "Ride Kaiju", "hash": "b6593258fdbb8a3e", "src": "db2@1.60.1.70124"}
-{"id": 441215, "field": "name", "en": "Ride Meka", "hash": "ffb5ba4a5ce9cb75", "src": "db2@1.60.1.70124"}
-{"id": 441260, "field": "name", "en": "Eclipse", "hash": "6e4bc030610fce1a", "src": "db2@1.60.1.70124"}
-{"id": 441281, "field": "name", "en": "Sprocketfire", "hash": "55eff0d5dd15dfca", "src": "db2@1.60.1.70124"}
-{"id": 441282, "field": "name", "en": "Radioactive Bomb", "hash": "41546df8e9e7b912", "src": "db2@1.60.1.70124"}
-{"id": 441335, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70124"}
-{"id": 441447, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70124"}
-{"id": 441448, "field": "name", "en": "Charged", "hash": "2e9757208e6af01d", "src": "db2@1.60.1.70124"}
-{"id": 441448, "field": "aura", "en": "Electrically charged!", "hash": "e6d88bd03b1835fc", "src": "db2@1.60.1.70124"}
-{"id": 441449, "field": "name", "en": "Flame Spray", "hash": "f9e9c64f8182291a", "src": "db2@1.60.1.70124"}
-{"id": 441449, "field": "description", "en": "Inflicts $s1 Fire damage to enemies in a cone in front of the caster.", "hash": "ad2ec5767defab18", "src": "db2@1.60.1.70124"}
-{"id": 441450, "field": "name", "en": "Chain Burn", "hash": "13e9cac3586ceccc", "src": "db2@1.60.1.70124"}
-{"id": 441450, "field": "description", "en": "Hits an enemy with an anti-mana bolt that arcs to another nearby enemy. For each point of mana consumed by the bolt, the target takes $e1 damage. The spell affects up to $x1 targets.", "hash": "c4e5d1064e4de05f", "src": "db2@1.60.1.70124"}
-{"id": 441453, "field": "name", "en": "Electrified Net", "hash": "695c475b5a41858b", "src": "db2@1.60.1.70124"}
-{"id": 441453, "field": "description", "en": "Immobilizes an enemy for $d. and shocks it with electricity, inflicting Nature damage.", "hash": "0d2f2b19bbe3ca4a", "src": "db2@1.60.1.70124"}
-{"id": 441453, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70124"}
-{"id": 441454, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70124"}
-{"id": 441454, "field": "description", "en": "Sends out a blast wave of magic, inflicting Arcane damage to nearby enemies.", "hash": "b94462fd4bbc5c98", "src": "db2@1.60.1.70124"}
-{"id": 441455, "field": "name", "en": "Toxic Ventilation", "hash": "41e5c6e46387dd28", "src": "db2@1.60.1.70124"}
-{"id": 441456, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70124"}
-{"id": 441457, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70124"}
-{"id": 441458, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70124"}
-{"id": 441459, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70124"}
-{"id": 441532, "field": "name", "en": "DNT Summon SF", "hash": "83f6c9aeeac316b9", "src": "db2@1.60.1.70124"}
-{"id": 441540, "field": "name", "en": "DNT SF Proc", "hash": "b8652136831d9929", "src": "db2@1.60.1.70124"}
-{"id": 441642, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70124"}
-{"id": 441739, "field": "name", "en": "Ghostly", "hash": "f747d39bd69c816b", "src": "db2@1.60.1.70124"}
-{"id": 441739, "field": "aura", "en": "You feel ghostly.", "hash": "fcf0fb0bb3e32fa9", "src": "db2@1.60.1.70124"}
-{"id": 441785, "field": "name", "en": "Drained of Blood", "hash": "3c8f61d59b84d635", "src": "db2@1.60.1.70124"}
-{"id": 441785, "field": "description", "en": "You have been made a tribute.", "hash": "93f5f924766ce817", "src": "db2@1.60.1.70124"}
-{"id": 441785, "field": "aura", "en": "You have been made a tribute.", "hash": "93f5f924766ce817", "src": "db2@1.60.1.70124"}
-{"id": 441924, "field": "name", "en": "[DNT] S03 - 40 - Druid Teleport Trigger", "hash": "7d4f1c1173b2aa2c", "src": "db2@1.60.1.70124"}
-{"id": 441927, "field": "name", "en": "Ghostly", "hash": "f747d39bd69c816b", "src": "db2@1.60.1.70124"}
-{"id": 441927, "field": "aura", "en": "You feel ghostly.", "hash": "fcf0fb0bb3e32fa9", "src": "db2@1.60.1.70124"}
+{"id": 441004, "field": "name", "en": "[DNT] S03 - GNO Raid - Crowd Pummeler - Platform Area Trigger Dummy Aura", "hash": "a1f8355b07686d8e", "src": "db2@1.60.1.70170"}
+{"id": 441042, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70170"}
+{"id": 441100, "field": "name", "en": "Ride Kaiju", "hash": "b6593258fdbb8a3e", "src": "db2@1.60.1.70170"}
+{"id": 441215, "field": "name", "en": "Ride Meka", "hash": "ffb5ba4a5ce9cb75", "src": "db2@1.60.1.70170"}
+{"id": 441260, "field": "name", "en": "Eclipse", "hash": "6e4bc030610fce1a", "src": "db2@1.60.1.70170"}
+{"id": 441281, "field": "name", "en": "Sprocketfire", "hash": "55eff0d5dd15dfca", "src": "db2@1.60.1.70170"}
+{"id": 441282, "field": "name", "en": "Radioactive Bomb", "hash": "41546df8e9e7b912", "src": "db2@1.60.1.70170"}
+{"id": 441335, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70170"}
+{"id": 441447, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70170"}
+{"id": 441448, "field": "name", "en": "Charged", "hash": "2e9757208e6af01d", "src": "db2@1.60.1.70170"}
+{"id": 441448, "field": "aura", "en": "Electrically charged!", "hash": "e6d88bd03b1835fc", "src": "db2@1.60.1.70170"}
+{"id": 441449, "field": "name", "en": "Flame Spray", "hash": "f9e9c64f8182291a", "src": "db2@1.60.1.70170"}
+{"id": 441449, "field": "description", "en": "Inflicts $s1 Fire damage to enemies in a cone in front of the caster.", "hash": "ad2ec5767defab18", "src": "db2@1.60.1.70170"}
+{"id": 441450, "field": "name", "en": "Chain Burn", "hash": "13e9cac3586ceccc", "src": "db2@1.60.1.70170"}
+{"id": 441450, "field": "description", "en": "Hits an enemy with an anti-mana bolt that arcs to another nearby enemy. For each point of mana consumed by the bolt, the target takes $e1 damage. The spell affects up to $x1 targets.", "hash": "c4e5d1064e4de05f", "src": "db2@1.60.1.70170"}
+{"id": 441453, "field": "name", "en": "Electrified Net", "hash": "695c475b5a41858b", "src": "db2@1.60.1.70170"}
+{"id": 441453, "field": "description", "en": "Immobilizes an enemy for $d. and shocks it with electricity, inflicting Nature damage.", "hash": "0d2f2b19bbe3ca4a", "src": "db2@1.60.1.70170"}
+{"id": 441453, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70170"}
+{"id": 441454, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70170"}
+{"id": 441454, "field": "description", "en": "Sends out a blast wave of magic, inflicting Arcane damage to nearby enemies.", "hash": "b94462fd4bbc5c98", "src": "db2@1.60.1.70170"}
+{"id": 441455, "field": "name", "en": "Toxic Ventilation", "hash": "41e5c6e46387dd28", "src": "db2@1.60.1.70170"}
+{"id": 441456, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70170"}
+{"id": 441457, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70170"}
+{"id": 441458, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70170"}
+{"id": 441459, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70170"}
+{"id": 441532, "field": "name", "en": "DNT Summon SF", "hash": "83f6c9aeeac316b9", "src": "db2@1.60.1.70170"}
+{"id": 441540, "field": "name", "en": "DNT SF Proc", "hash": "b8652136831d9929", "src": "db2@1.60.1.70170"}
+{"id": 441642, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70170"}
+{"id": 441739, "field": "name", "en": "Ghostly", "hash": "f747d39bd69c816b", "src": "db2@1.60.1.70170"}
+{"id": 441739, "field": "aura", "en": "You feel ghostly.", "hash": "fcf0fb0bb3e32fa9", "src": "db2@1.60.1.70170"}
+{"id": 441785, "field": "name", "en": "Drained of Blood", "hash": "3c8f61d59b84d635", "src": "db2@1.60.1.70170"}
+{"id": 441785, "field": "description", "en": "You have been made a tribute.", "hash": "93f5f924766ce817", "src": "db2@1.60.1.70170"}
+{"id": 441785, "field": "aura", "en": "You have been made a tribute.", "hash": "93f5f924766ce817", "src": "db2@1.60.1.70170"}
+{"id": 441924, "field": "name", "en": "[DNT] S03 - 40 - Druid Teleport Trigger", "hash": "7d4f1c1173b2aa2c", "src": "db2@1.60.1.70170"}
+{"id": 441927, "field": "name", "en": "Ghostly", "hash": "f747d39bd69c816b", "src": "db2@1.60.1.70170"}
+{"id": 441927, "field": "aura", "en": "You feel ghostly.", "hash": "fcf0fb0bb3e32fa9", "src": "db2@1.60.1.70170"}

@@ -1,131 +1,131 @@
-{"id": 1217084, "field": "name", "en": "Draught of the Sands", "hash": "104aad10c00d6a88", "src": "db2@1.60.1.70124"}
-{"id": 1217084, "field": "description", "en": "Increases all damage caused against targets in Silithus, Ahn'Qiraj, Eastern Plaguelands, and Naxxramas by $s1% and increases critical damage caused against targets in these areas by an additional $s2%.", "hash": "4212319fbc6718c4", "src": "db2@1.60.1.70124"}
-{"id": 1217084, "field": "aura", "en": "Damage against targets in Silithus, Ahn'Qiraj, Eastern Plaguelands, and Naxxramas increased by $s1%.\r\nCritical damage against targets in these areas is also increased by $s2%.", "hash": "f06a2af86b420a41", "src": "db2@1.60.1.70124"}
-{"id": 1217085, "field": "name", "en": "(DNT) Ignore Fog of War", "hash": "12124231e34a200b", "src": "db2@1.60.1.70124"}
-{"id": 1217127, "field": "name", "en": "[DNT] Satyrweed Tincture Quest Dummy", "hash": "fa2d7d2ac27a83ae", "src": "db2@1.60.1.70124"}
-{"id": 1217127, "field": "aura", "en": ".", "hash": "0000002e0000002e", "src": "db2@1.60.1.70124"}
-{"id": 1217128, "field": "name", "en": "Satyr Corruption", "hash": "137b720e3ad33416", "src": "db2@1.60.1.70124"}
-{"id": 1217130, "field": "name", "en": "Satyrweed Tincture", "hash": "4211def5a62330cb", "src": "db2@1.60.1.70124"}
-{"id": 1217130, "field": "description", "en": "Purge satyr corruption from a weakened Mosshoof Courser or Thunderhead Skystormer.", "hash": "421d941d380f7d01", "src": "db2@1.60.1.70124"}
-{"id": 1217141, "field": "name", "en": "Summon Flawless Yellow Qiraji Battle Tank", "hash": "67dd00c2988bf158", "src": "db2@1.60.1.70124"}
-{"id": 1217141, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217142, "field": "name", "en": "Summon Flawless Yellow Qiraji Battle Tank", "hash": "67dd00c2988bf158", "src": "db2@1.60.1.70124"}
-{"id": 1217142, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217142, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217143, "field": "name", "en": "Summon Flawless Yellow Qiraji Battle Tank", "hash": "67dd00c2988bf158", "src": "db2@1.60.1.70124"}
-{"id": 1217143, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217143, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217144, "field": "name", "en": "Summon Flawless Yellow Qiraji Battle Tank", "hash": "67dd00c2988bf158", "src": "db2@1.60.1.70124"}
-{"id": 1217144, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217144, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217145, "field": "name", "en": "Summon Flawless Green Qiraji Battle Tank", "hash": "f23f0c48d260afe2", "src": "db2@1.60.1.70124"}
-{"id": 1217145, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217146, "field": "name", "en": "Summon Flawless Green Qiraji Battle Tank", "hash": "f23f0c48d260afe2", "src": "db2@1.60.1.70124"}
-{"id": 1217146, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217146, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217147, "field": "name", "en": "Summon Flawless Green Qiraji Battle Tank", "hash": "f23f0c48d260afe2", "src": "db2@1.60.1.70124"}
-{"id": 1217147, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217147, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217148, "field": "name", "en": "Summon Flawless Green Qiraji Battle Tank", "hash": "f23f0c48d260afe2", "src": "db2@1.60.1.70124"}
-{"id": 1217148, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217148, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217149, "field": "name", "en": "Summon Flawless Blue Qiraji Battle Tank", "hash": "97f25614398de25f", "src": "db2@1.60.1.70124"}
-{"id": 1217149, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217150, "field": "name", "en": "Summon Flawless Blue Qiraji Battle Tank", "hash": "97f25614398de25f", "src": "db2@1.60.1.70124"}
-{"id": 1217150, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217150, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217151, "field": "name", "en": "Summon Flawless Blue Qiraji Battle Tank", "hash": "97f25614398de25f", "src": "db2@1.60.1.70124"}
-{"id": 1217151, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217151, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217152, "field": "name", "en": "Summon Flawless Blue Qiraji Battle Tank", "hash": "97f25614398de25f", "src": "db2@1.60.1.70124"}
-{"id": 1217152, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217152, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217153, "field": "name", "en": "Summon Flawless Red Qiraji Battle Tank", "hash": "3b6ddf08bc505dd4", "src": "db2@1.60.1.70124"}
-{"id": 1217153, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217154, "field": "name", "en": "Summon Flawless Red Qiraji Battle Tank", "hash": "3b6ddf08bc505dd4", "src": "db2@1.60.1.70124"}
-{"id": 1217154, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217154, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217155, "field": "name", "en": "Summon Flawless Red Qiraji Battle Tank", "hash": "3b6ddf08bc505dd4", "src": "db2@1.60.1.70124"}
-{"id": 1217155, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217155, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217156, "field": "name", "en": "Summon Flawless Red Qiraji Battle Tank", "hash": "3b6ddf08bc505dd4", "src": "db2@1.60.1.70124"}
-{"id": 1217156, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 1217156, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 1217157, "field": "name", "en": "Test Torch", "hash": "406b15a02ced8d41", "src": "db2@1.60.1.70124"}
-{"id": 1217158, "field": "name", "en": "Test Torch", "hash": "406b15a02ced8d41", "src": "db2@1.60.1.70124"}
-{"id": 1217160, "field": "name", "en": "Timbermaw War Banner", "hash": "0a1967a8b6ad054c", "src": "db2@1.60.1.70124"}
-{"id": 1217160, "field": "description", "en": "Call forth Timbermaw reinforcements to face Prince Halanox.", "hash": "ad22882a5b95f216", "src": "db2@1.60.1.70124"}
-{"id": 1217161, "field": "name", "en": "Summon Timbermaw Ally", "hash": "22079887b0b3c193", "src": "db2@1.60.1.70124"}
-{"id": 1217164, "field": "name", "en": "Summon Timbermaw Ally", "hash": "22079887b0b3c193", "src": "db2@1.60.1.70124"}
-{"id": 1217165, "field": "name", "en": "Despawn Allies", "hash": "eeed13dd9be1ae00", "src": "db2@1.60.1.70124"}
-{"id": 1217167, "field": "name", "en": "(DNT) Spawn Torch", "hash": "67ddbd797641f67c", "src": "db2@1.60.1.70124"}
-{"id": 1217170, "field": "name", "en": "(DNT) Ignore Fog of War (Torch)", "hash": "1e4b93551308f709", "src": "db2@1.60.1.70124"}
-{"id": 1217185, "field": "name", "en": "Guiding Torchlight", "hash": "c8e2d24ef9cb5d63", "src": "db2@1.60.1.70124"}
-{"id": 1217185, "field": "description", "en": "The way is lit. The path is clear. You require only the strength to follow it.", "hash": "54f255bde99607f7", "src": "db2@1.60.1.70124"}
-{"id": 1217185, "field": "aura", "en": "The way is lit. The path is clear. You require only the strength to follow it.", "hash": "54f255bde99607f7", "src": "db2@1.60.1.70124"}
-{"id": 1217189, "field": "name", "en": "Enchant Bracer - Spell Power", "hash": "0f2cf5e2a25b0962", "src": "db2@1.60.1.70124"}
-{"id": 1217189, "field": "description", "en": "Permanently enchant bracers to add up to 12 damage to spells.", "hash": "ec7c1941c779e364", "src": "db2@1.60.1.70124"}
-{"id": 1217203, "field": "name", "en": "Enchant Bracer - Agility", "hash": "cb790132078f0d2f", "src": "db2@1.60.1.70124"}
-{"id": 1217203, "field": "description", "en": "Permanently enchant bracers to increase Agility by 9.", "hash": "49e95488cf6bd4f4", "src": "db2@1.60.1.70124"}
-{"id": 1217206, "field": "name", "en": "Obsidian Scope", "hash": "943f5ccaa56c2698", "src": "db2@1.60.1.70124"}
-{"id": 1217206, "field": "description", "en": "Attaches a permanent scope to a bow or gun that increases its damage by 10.", "hash": "d11292291f3a2918", "src": "db2@1.60.1.70124"}
-{"id": 1217207, "field": "name", "en": "Obsidian Scope", "hash": "943f5ccaa56c2698", "src": "db2@1.60.1.70124"}
-{"id": 1217288, "field": "name", "en": "Summon Eye C'thun", "hash": "cde3431ca7866ad0", "src": "db2@1.60.1.70124"}
-{"id": 1217289, "field": "name", "en": "[DNT] Blinding Admiration", "hash": "21009624a498c672", "src": "db2@1.60.1.70124"}
-{"id": 1217297, "field": "name", "en": "Trance Stone", "hash": "8381272de8dacfa7", "src": "db2@1.60.1.70124"}
-{"id": 1217297, "field": "description", "en": "Reduces the mana cost of all shapeshifting by $s1%.", "hash": "a1501f59fe1f5006", "src": "db2@1.60.1.70124"}
-{"id": 1217328, "field": "name", "en": "Twin Teleport", "hash": "d1af384c88080256", "src": "db2@1.60.1.70124"}
-{"id": 1217333, "field": "name", "en": "Twin Teleport", "hash": "d1af384c88080256", "src": "db2@1.60.1.70124"}
-{"id": 1217337, "field": "name", "en": "Vulnerability", "hash": "b5511a6523ae5b71", "src": "db2@1.60.1.70124"}
-{"id": 1217339, "field": "name", "en": "Vulnerability", "hash": "b5511a6523ae5b71", "src": "db2@1.60.1.70124"}
-{"id": 1217348, "field": "name", "en": "[DNT] Dummy Aura", "hash": "dd08df9ac8ca4f3b", "src": "db2@1.60.1.70124"}
-{"id": 1217350, "field": "name", "en": "Warlock Pet Healup [DNT]", "hash": "841a45c1403f6a9a", "src": "db2@1.60.1.70124"}
-{"id": 1217353, "field": "name", "en": "Hunter Pet Healup [DNT]", "hash": "d483846a96ecdad6", "src": "db2@1.60.1.70124"}
-{"id": 1217376, "field": "name", "en": "Mirror Name", "hash": "8ca1d24eca0490f3", "src": "db2@1.60.1.70124"}
-{"id": 1217382, "field": "name", "en": "Mirror Name", "hash": "8ca1d24eca0490f3", "src": "db2@1.60.1.70124"}
-{"id": 1217420, "field": "name", "en": "(DNT) Mimic Stalker Whisper", "hash": "74c6d1361eb50477", "src": "db2@1.60.1.70124"}
-{"id": 1217424, "field": "name", "en": "Fel Pervasion", "hash": "0d49b2d8186db78c", "src": "db2@1.60.1.70124"}
-{"id": 1217424, "field": "description", "en": "Corrupts nearby enemies, inflicting Shadow damage every $t1 sec. while standing within corruption.", "hash": "f110760d33511005", "src": "db2@1.60.1.70124"}
-{"id": 1217424, "field": "aura", "en": "Shadow damage every $t1 sec.", "hash": "4cc78b5ec26c5ff1", "src": "db2@1.60.1.70124"}
-{"id": 1217485, "field": "name", "en": "Fel Pervasion Visual", "hash": "26951ade6fa5c67c", "src": "db2@1.60.1.70124"}
-{"id": 1217511, "field": "name", "en": "Increased Dodge 1", "hash": "9a440827d832a90c", "src": "db2@1.60.1.70124"}
-{"id": 1217511, "field": "description", "en": "Increases your chance to dodge an attack by $s1%.", "hash": "40869ada6166419a", "src": "db2@1.60.1.70124"}
-{"id": 1217520, "field": "name", "en": "Firewater Cauldron", "hash": "ddad7a3b20b2bff5", "src": "db2@1.60.1.70124"}
-{"id": 1217545, "field": "name", "en": "Firewater Cauldron", "hash": "ddad7a3b20b2bff5", "src": "db2@1.60.1.70124"}
-{"id": 1217601, "field": "name", "en": "(DNT) Ignore Fog of War (Book)", "hash": "628ddf6420de4e45", "src": "db2@1.60.1.70124"}
-{"id": 1217604, "field": "name", "en": "(DNT) Burn Book", "hash": "393ce0dbfff6d232", "src": "db2@1.60.1.70124"}
-{"id": 1217651, "field": "name", "en": "(DNT) Summon Light Stalker", "hash": "a5688b0b51c676c0", "src": "db2@1.60.1.70124"}
-{"id": 1217679, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70124"}
-{"id": 1217680, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70124"}
-{"id": 1217682, "field": "name", "en": "(DNT) Summon Kharon", "hash": "0820ac4484d35eda", "src": "db2@1.60.1.70124"}
-{"id": 1217683, "field": "name", "en": "(DNT) Summon Kharon", "hash": "0820ac4484d35eda", "src": "db2@1.60.1.70124"}
-{"id": 1217694, "field": "name", "en": "The Red Death", "hash": "e7114532068ca695", "src": "db2@1.60.1.70124"}
-{"id": 1217711, "field": "name", "en": "Just a Flesh Wound", "hash": "fb33b4090a96c60f", "src": "db2@1.60.1.70124"}
-{"id": 1217715, "field": "name", "en": "Irrepressible Blaze", "hash": "13e3d06c5b1df2a5", "src": "db2@1.60.1.70124"}
-{"id": 1217724, "field": "name", "en": "Scorching Torchlight", "hash": "cfb3daacf28b1992", "src": "db2@1.60.1.70124"}
-{"id": 1217724, "field": "description", "en": "The torch burns brightly, scorching it's wielder. ", "hash": "8dabefa0cd4b8cf0", "src": "db2@1.60.1.70124"}
-{"id": 1217724, "field": "aura", "en": "The torch burns brightly, scorching it's wielder.", "hash": "8dabefa0cd4b8cf0", "src": "db2@1.60.1.70124"}
-{"id": 1217733, "field": "name", "en": "(DNT) Spawn Brilliant Torch", "hash": "e9d2182f2e268cd7", "src": "db2@1.60.1.70124"}
-{"id": 1217775, "field": "name", "en": "Intolerable Heat", "hash": "7fb0e5e5af37a58d", "src": "db2@1.60.1.70124"}
-{"id": 1217775, "field": "description", "en": "Deals Fire damage every $t seconds.", "hash": "5091abdd29c3dd9d", "src": "db2@1.60.1.70124"}
-{"id": 1217775, "field": "aura", "en": "Deals Fire damage every $t seconds.", "hash": "5091abdd29c3dd9d", "src": "db2@1.60.1.70124"}
-{"id": 1217835, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70124"}
-{"id": 1217844, "field": "name", "en": "Charred Skin", "hash": "1c5b3c22ca7760e4", "src": "db2@1.60.1.70124"}
-{"id": 1217844, "field": "description", "en": "Your skin is burned and blackened, increasing the damage recieved from Intolerable Heat.", "hash": "fd1f823af1633234", "src": "db2@1.60.1.70124"}
-{"id": 1217844, "field": "aura", "en": "Your skin is burned and blackened, increasing the damage recieved from Intolerable Heat.", "hash": "fd1f823af1633234", "src": "db2@1.60.1.70124"}
-{"id": 1217847, "field": "name", "en": "(DNT) Cancel Kharon Auras", "hash": "b876d45eaa7ab27b", "src": "db2@1.60.1.70124"}
-{"id": 1217848, "field": "name", "en": "(DNT) Charred Skin Periodic", "hash": "5625808abf8475c5", "src": "db2@1.60.1.70124"}
-{"id": 1217852, "field": "name", "en": "Toggle Object Fog of War Flag", "hash": "726ed6d6f9fafaa8", "src": "db2@1.60.1.70124"}
-{"id": 1217868, "field": "name", "en": "Intolerable Heat", "hash": "7fb0e5e5af37a58d", "src": "db2@1.60.1.70124"}
-{"id": 1217927, "field": "name", "en": "Excommunication", "hash": "bb2c73086eab366a", "src": "db2@1.60.1.70124"}
-{"id": 1217927, "field": "aura", "en": "Damage of your next Exorcism is increased by $s1%.", "hash": "fc8f401ffcc4b77e", "src": "db2@1.60.1.70124"}
-{"id": 1217948, "field": "name", "en": "Portal to Ironforge", "hash": "67fd43fc6e09839b", "src": "db2@1.60.1.70124"}
-{"id": 1217949, "field": "name", "en": "Portal to Darnassus", "hash": "a4e3120ff4b80d55", "src": "db2@1.60.1.70124"}
-{"id": 1217950, "field": "name", "en": "Portal to Undercity", "hash": "34f0605ca7cb5b90", "src": "db2@1.60.1.70124"}
-{"id": 1217951, "field": "name", "en": "Portal to Orgrimmar", "hash": "9f5f86faebb8cd80", "src": "db2@1.60.1.70124"}
-{"id": 1217952, "field": "name", "en": "Dreadful Visage", "hash": "637ee040d8126dc9", "src": "db2@1.60.1.70124"}
-{"id": 1217959, "field": "name", "en": "Fading Hope", "hash": "16725de5c1e1d8ec", "src": "db2@1.60.1.70124"}
-{"id": 1217959, "field": "description", "en": "The fire flickers and fades.", "hash": "31df0e36b2f73c90", "src": "db2@1.60.1.70124"}
-{"id": 1217959, "field": "aura", "en": "The fire flickers and fades.", "hash": "31df0e36b2f73c90", "src": "db2@1.60.1.70124"}
-{"id": 1217962, "field": "name", "en": "(DNT) Remove Fading Hope", "hash": "ed6f3cdeff09094e", "src": "db2@1.60.1.70124"}
-{"id": 1217988, "field": "name", "en": "Satyr Corruption", "hash": "137b720e3ad33416", "src": "db2@1.60.1.70124"}
+{"id": 1217084, "field": "name", "en": "Draught of the Sands", "hash": "104aad10c00d6a88", "src": "db2@1.60.1.70170"}
+{"id": 1217084, "field": "description", "en": "Increases all damage caused against targets in Silithus, Ahn'Qiraj, Eastern Plaguelands, and Naxxramas by $s1% and increases critical damage caused against targets in these areas by an additional $s2%.", "hash": "4212319fbc6718c4", "src": "db2@1.60.1.70170"}
+{"id": 1217084, "field": "aura", "en": "Damage against targets in Silithus, Ahn'Qiraj, Eastern Plaguelands, and Naxxramas increased by $s1%.\r\nCritical damage against targets in these areas is also increased by $s2%.", "hash": "f06a2af86b420a41", "src": "db2@1.60.1.70170"}
+{"id": 1217085, "field": "name", "en": "(DNT) Ignore Fog of War", "hash": "12124231e34a200b", "src": "db2@1.60.1.70170"}
+{"id": 1217127, "field": "name", "en": "[DNT] Satyrweed Tincture Quest Dummy", "hash": "fa2d7d2ac27a83ae", "src": "db2@1.60.1.70170"}
+{"id": 1217127, "field": "aura", "en": ".", "hash": "0000002e0000002e", "src": "db2@1.60.1.70170"}
+{"id": 1217128, "field": "name", "en": "Satyr Corruption", "hash": "137b720e3ad33416", "src": "db2@1.60.1.70170"}
+{"id": 1217130, "field": "name", "en": "Satyrweed Tincture", "hash": "4211def5a62330cb", "src": "db2@1.60.1.70170"}
+{"id": 1217130, "field": "description", "en": "Purge satyr corruption from a weakened Mosshoof Courser or Thunderhead Skystormer.", "hash": "421d941d380f7d01", "src": "db2@1.60.1.70170"}
+{"id": 1217141, "field": "name", "en": "Summon Flawless Yellow Qiraji Battle Tank", "hash": "67dd00c2988bf158", "src": "db2@1.60.1.70170"}
+{"id": 1217141, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217142, "field": "name", "en": "Summon Flawless Yellow Qiraji Battle Tank", "hash": "67dd00c2988bf158", "src": "db2@1.60.1.70170"}
+{"id": 1217142, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217142, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217143, "field": "name", "en": "Summon Flawless Yellow Qiraji Battle Tank", "hash": "67dd00c2988bf158", "src": "db2@1.60.1.70170"}
+{"id": 1217143, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217143, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217144, "field": "name", "en": "Summon Flawless Yellow Qiraji Battle Tank", "hash": "67dd00c2988bf158", "src": "db2@1.60.1.70170"}
+{"id": 1217144, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217144, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217145, "field": "name", "en": "Summon Flawless Green Qiraji Battle Tank", "hash": "f23f0c48d260afe2", "src": "db2@1.60.1.70170"}
+{"id": 1217145, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217146, "field": "name", "en": "Summon Flawless Green Qiraji Battle Tank", "hash": "f23f0c48d260afe2", "src": "db2@1.60.1.70170"}
+{"id": 1217146, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217146, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217147, "field": "name", "en": "Summon Flawless Green Qiraji Battle Tank", "hash": "f23f0c48d260afe2", "src": "db2@1.60.1.70170"}
+{"id": 1217147, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217147, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217148, "field": "name", "en": "Summon Flawless Green Qiraji Battle Tank", "hash": "f23f0c48d260afe2", "src": "db2@1.60.1.70170"}
+{"id": 1217148, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217148, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217149, "field": "name", "en": "Summon Flawless Blue Qiraji Battle Tank", "hash": "97f25614398de25f", "src": "db2@1.60.1.70170"}
+{"id": 1217149, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217150, "field": "name", "en": "Summon Flawless Blue Qiraji Battle Tank", "hash": "97f25614398de25f", "src": "db2@1.60.1.70170"}
+{"id": 1217150, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217150, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217151, "field": "name", "en": "Summon Flawless Blue Qiraji Battle Tank", "hash": "97f25614398de25f", "src": "db2@1.60.1.70170"}
+{"id": 1217151, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217151, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217152, "field": "name", "en": "Summon Flawless Blue Qiraji Battle Tank", "hash": "97f25614398de25f", "src": "db2@1.60.1.70170"}
+{"id": 1217152, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217152, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217153, "field": "name", "en": "Summon Flawless Red Qiraji Battle Tank", "hash": "3b6ddf08bc505dd4", "src": "db2@1.60.1.70170"}
+{"id": 1217153, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217154, "field": "name", "en": "Summon Flawless Red Qiraji Battle Tank", "hash": "3b6ddf08bc505dd4", "src": "db2@1.60.1.70170"}
+{"id": 1217154, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217154, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217155, "field": "name", "en": "Summon Flawless Red Qiraji Battle Tank", "hash": "3b6ddf08bc505dd4", "src": "db2@1.60.1.70170"}
+{"id": 1217155, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217155, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217156, "field": "name", "en": "Summon Flawless Red Qiraji Battle Tank", "hash": "3b6ddf08bc505dd4", "src": "db2@1.60.1.70170"}
+{"id": 1217156, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 1217156, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 1217157, "field": "name", "en": "Test Torch", "hash": "406b15a02ced8d41", "src": "db2@1.60.1.70170"}
+{"id": 1217158, "field": "name", "en": "Test Torch", "hash": "406b15a02ced8d41", "src": "db2@1.60.1.70170"}
+{"id": 1217160, "field": "name", "en": "Timbermaw War Banner", "hash": "0a1967a8b6ad054c", "src": "db2@1.60.1.70170"}
+{"id": 1217160, "field": "description", "en": "Call forth Timbermaw reinforcements to face Prince Halanox.", "hash": "ad22882a5b95f216", "src": "db2@1.60.1.70170"}
+{"id": 1217161, "field": "name", "en": "Summon Timbermaw Ally", "hash": "22079887b0b3c193", "src": "db2@1.60.1.70170"}
+{"id": 1217164, "field": "name", "en": "Summon Timbermaw Ally", "hash": "22079887b0b3c193", "src": "db2@1.60.1.70170"}
+{"id": 1217165, "field": "name", "en": "Despawn Allies", "hash": "eeed13dd9be1ae00", "src": "db2@1.60.1.70170"}
+{"id": 1217167, "field": "name", "en": "(DNT) Spawn Torch", "hash": "67ddbd797641f67c", "src": "db2@1.60.1.70170"}
+{"id": 1217170, "field": "name", "en": "(DNT) Ignore Fog of War (Torch)", "hash": "1e4b93551308f709", "src": "db2@1.60.1.70170"}
+{"id": 1217185, "field": "name", "en": "Guiding Torchlight", "hash": "c8e2d24ef9cb5d63", "src": "db2@1.60.1.70170"}
+{"id": 1217185, "field": "description", "en": "The way is lit. The path is clear. You require only the strength to follow it.", "hash": "54f255bde99607f7", "src": "db2@1.60.1.70170"}
+{"id": 1217185, "field": "aura", "en": "The way is lit. The path is clear. You require only the strength to follow it.", "hash": "54f255bde99607f7", "src": "db2@1.60.1.70170"}
+{"id": 1217189, "field": "name", "en": "Enchant Bracer - Spell Power", "hash": "0f2cf5e2a25b0962", "src": "db2@1.60.1.70170"}
+{"id": 1217189, "field": "description", "en": "Permanently enchant bracers to add up to 12 damage to spells.", "hash": "ec7c1941c779e364", "src": "db2@1.60.1.70170"}
+{"id": 1217203, "field": "name", "en": "Enchant Bracer - Agility", "hash": "cb790132078f0d2f", "src": "db2@1.60.1.70170"}
+{"id": 1217203, "field": "description", "en": "Permanently enchant bracers to increase Agility by 9.", "hash": "49e95488cf6bd4f4", "src": "db2@1.60.1.70170"}
+{"id": 1217206, "field": "name", "en": "Obsidian Scope", "hash": "943f5ccaa56c2698", "src": "db2@1.60.1.70170"}
+{"id": 1217206, "field": "description", "en": "Attaches a permanent scope to a bow or gun that increases its damage by 10.", "hash": "d11292291f3a2918", "src": "db2@1.60.1.70170"}
+{"id": 1217207, "field": "name", "en": "Obsidian Scope", "hash": "943f5ccaa56c2698", "src": "db2@1.60.1.70170"}
+{"id": 1217288, "field": "name", "en": "Summon Eye C'thun", "hash": "cde3431ca7866ad0", "src": "db2@1.60.1.70170"}
+{"id": 1217289, "field": "name", "en": "[DNT] Blinding Admiration", "hash": "21009624a498c672", "src": "db2@1.60.1.70170"}
+{"id": 1217297, "field": "name", "en": "Trance Stone", "hash": "8381272de8dacfa7", "src": "db2@1.60.1.70170"}
+{"id": 1217297, "field": "description", "en": "Reduces the mana cost of all shapeshifting by $s1%.", "hash": "a1501f59fe1f5006", "src": "db2@1.60.1.70170"}
+{"id": 1217328, "field": "name", "en": "Twin Teleport", "hash": "d1af384c88080256", "src": "db2@1.60.1.70170"}
+{"id": 1217333, "field": "name", "en": "Twin Teleport", "hash": "d1af384c88080256", "src": "db2@1.60.1.70170"}
+{"id": 1217337, "field": "name", "en": "Vulnerability", "hash": "b5511a6523ae5b71", "src": "db2@1.60.1.70170"}
+{"id": 1217339, "field": "name", "en": "Vulnerability", "hash": "b5511a6523ae5b71", "src": "db2@1.60.1.70170"}
+{"id": 1217348, "field": "name", "en": "[DNT] Dummy Aura", "hash": "dd08df9ac8ca4f3b", "src": "db2@1.60.1.70170"}
+{"id": 1217350, "field": "name", "en": "Warlock Pet Healup [DNT]", "hash": "841a45c1403f6a9a", "src": "db2@1.60.1.70170"}
+{"id": 1217353, "field": "name", "en": "Hunter Pet Healup [DNT]", "hash": "d483846a96ecdad6", "src": "db2@1.60.1.70170"}
+{"id": 1217376, "field": "name", "en": "Mirror Name", "hash": "8ca1d24eca0490f3", "src": "db2@1.60.1.70170"}
+{"id": 1217382, "field": "name", "en": "Mirror Name", "hash": "8ca1d24eca0490f3", "src": "db2@1.60.1.70170"}
+{"id": 1217420, "field": "name", "en": "(DNT) Mimic Stalker Whisper", "hash": "74c6d1361eb50477", "src": "db2@1.60.1.70170"}
+{"id": 1217424, "field": "name", "en": "Fel Pervasion", "hash": "0d49b2d8186db78c", "src": "db2@1.60.1.70170"}
+{"id": 1217424, "field": "description", "en": "Corrupts nearby enemies, inflicting Shadow damage every $t1 sec. while standing within corruption.", "hash": "f110760d33511005", "src": "db2@1.60.1.70170"}
+{"id": 1217424, "field": "aura", "en": "Shadow damage every $t1 sec.", "hash": "4cc78b5ec26c5ff1", "src": "db2@1.60.1.70170"}
+{"id": 1217485, "field": "name", "en": "Fel Pervasion Visual", "hash": "26951ade6fa5c67c", "src": "db2@1.60.1.70170"}
+{"id": 1217511, "field": "name", "en": "Increased Dodge 1", "hash": "9a440827d832a90c", "src": "db2@1.60.1.70170"}
+{"id": 1217511, "field": "description", "en": "Increases your chance to dodge an attack by $s1%.", "hash": "40869ada6166419a", "src": "db2@1.60.1.70170"}
+{"id": 1217520, "field": "name", "en": "Firewater Cauldron", "hash": "ddad7a3b20b2bff5", "src": "db2@1.60.1.70170"}
+{"id": 1217545, "field": "name", "en": "Firewater Cauldron", "hash": "ddad7a3b20b2bff5", "src": "db2@1.60.1.70170"}
+{"id": 1217601, "field": "name", "en": "(DNT) Ignore Fog of War (Book)", "hash": "628ddf6420de4e45", "src": "db2@1.60.1.70170"}
+{"id": 1217604, "field": "name", "en": "(DNT) Burn Book", "hash": "393ce0dbfff6d232", "src": "db2@1.60.1.70170"}
+{"id": 1217651, "field": "name", "en": "(DNT) Summon Light Stalker", "hash": "a5688b0b51c676c0", "src": "db2@1.60.1.70170"}
+{"id": 1217679, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70170"}
+{"id": 1217680, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70170"}
+{"id": 1217682, "field": "name", "en": "(DNT) Summon Kharon", "hash": "0820ac4484d35eda", "src": "db2@1.60.1.70170"}
+{"id": 1217683, "field": "name", "en": "(DNT) Summon Kharon", "hash": "0820ac4484d35eda", "src": "db2@1.60.1.70170"}
+{"id": 1217694, "field": "name", "en": "The Red Death", "hash": "e7114532068ca695", "src": "db2@1.60.1.70170"}
+{"id": 1217711, "field": "name", "en": "Just a Flesh Wound", "hash": "fb33b4090a96c60f", "src": "db2@1.60.1.70170"}
+{"id": 1217715, "field": "name", "en": "Irrepressible Blaze", "hash": "13e3d06c5b1df2a5", "src": "db2@1.60.1.70170"}
+{"id": 1217724, "field": "name", "en": "Scorching Torchlight", "hash": "cfb3daacf28b1992", "src": "db2@1.60.1.70170"}
+{"id": 1217724, "field": "description", "en": "The torch burns brightly, scorching it's wielder. ", "hash": "8dabefa0cd4b8cf0", "src": "db2@1.60.1.70170"}
+{"id": 1217724, "field": "aura", "en": "The torch burns brightly, scorching it's wielder.", "hash": "8dabefa0cd4b8cf0", "src": "db2@1.60.1.70170"}
+{"id": 1217733, "field": "name", "en": "(DNT) Spawn Brilliant Torch", "hash": "e9d2182f2e268cd7", "src": "db2@1.60.1.70170"}
+{"id": 1217775, "field": "name", "en": "Intolerable Heat", "hash": "7fb0e5e5af37a58d", "src": "db2@1.60.1.70170"}
+{"id": 1217775, "field": "description", "en": "Deals Fire damage every $t seconds.", "hash": "5091abdd29c3dd9d", "src": "db2@1.60.1.70170"}
+{"id": 1217775, "field": "aura", "en": "Deals Fire damage every $t seconds.", "hash": "5091abdd29c3dd9d", "src": "db2@1.60.1.70170"}
+{"id": 1217835, "field": "name", "en": "[DNT] Character Visual", "hash": "6932ad636c08ffce", "src": "db2@1.60.1.70170"}
+{"id": 1217844, "field": "name", "en": "Charred Skin", "hash": "1c5b3c22ca7760e4", "src": "db2@1.60.1.70170"}
+{"id": 1217844, "field": "description", "en": "Your skin is burned and blackened, increasing the damage recieved from Intolerable Heat.", "hash": "fd1f823af1633234", "src": "db2@1.60.1.70170"}
+{"id": 1217844, "field": "aura", "en": "Your skin is burned and blackened, increasing the damage recieved from Intolerable Heat.", "hash": "fd1f823af1633234", "src": "db2@1.60.1.70170"}
+{"id": 1217847, "field": "name", "en": "(DNT) Cancel Kharon Auras", "hash": "b876d45eaa7ab27b", "src": "db2@1.60.1.70170"}
+{"id": 1217848, "field": "name", "en": "(DNT) Charred Skin Periodic", "hash": "5625808abf8475c5", "src": "db2@1.60.1.70170"}
+{"id": 1217852, "field": "name", "en": "Toggle Object Fog of War Flag", "hash": "726ed6d6f9fafaa8", "src": "db2@1.60.1.70170"}
+{"id": 1217868, "field": "name", "en": "Intolerable Heat", "hash": "7fb0e5e5af37a58d", "src": "db2@1.60.1.70170"}
+{"id": 1217927, "field": "name", "en": "Excommunication", "hash": "bb2c73086eab366a", "src": "db2@1.60.1.70170"}
+{"id": 1217927, "field": "aura", "en": "Damage of your next Exorcism is increased by $s1%.", "hash": "fc8f401ffcc4b77e", "src": "db2@1.60.1.70170"}
+{"id": 1217948, "field": "name", "en": "Portal to Ironforge", "hash": "67fd43fc6e09839b", "src": "db2@1.60.1.70170"}
+{"id": 1217949, "field": "name", "en": "Portal to Darnassus", "hash": "a4e3120ff4b80d55", "src": "db2@1.60.1.70170"}
+{"id": 1217950, "field": "name", "en": "Portal to Undercity", "hash": "34f0605ca7cb5b90", "src": "db2@1.60.1.70170"}
+{"id": 1217951, "field": "name", "en": "Portal to Orgrimmar", "hash": "9f5f86faebb8cd80", "src": "db2@1.60.1.70170"}
+{"id": 1217952, "field": "name", "en": "Dreadful Visage", "hash": "637ee040d8126dc9", "src": "db2@1.60.1.70170"}
+{"id": 1217959, "field": "name", "en": "Fading Hope", "hash": "16725de5c1e1d8ec", "src": "db2@1.60.1.70170"}
+{"id": 1217959, "field": "description", "en": "The fire flickers and fades.", "hash": "31df0e36b2f73c90", "src": "db2@1.60.1.70170"}
+{"id": 1217959, "field": "aura", "en": "The fire flickers and fades.", "hash": "31df0e36b2f73c90", "src": "db2@1.60.1.70170"}
+{"id": 1217962, "field": "name", "en": "(DNT) Remove Fading Hope", "hash": "ed6f3cdeff09094e", "src": "db2@1.60.1.70170"}
+{"id": 1217988, "field": "name", "en": "Satyr Corruption", "hash": "137b720e3ad33416", "src": "db2@1.60.1.70170"}

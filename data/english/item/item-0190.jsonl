@@ -1,17 +1,17 @@
-{"id": 190179, "field": "name", "en": "Avelina's Heart", "hash": "623bd2c5ef480c6c", "src": "db2@1.60.1.70124"}
-{"id": 190180, "field": "name", "en": "Isaac's Heart", "hash": "4eb810392f9084ef", "src": "db2@1.60.1.70124"}
-{"id": 190181, "field": "name", "en": "Lovers' Hearts", "hash": "f02a0e3e76701241", "src": "db2@1.60.1.70124"}
-{"id": 190181, "field": "description", "en": "Call forth an incubus using the summoning circle.", "hash": "cff16dcb06a296ed", "src": "db2@1.60.1.70124"}
-{"id": 190186, "field": "name", "en": "Wooden Figurine", "hash": "b0cfff43cbc284b4", "src": "db2@1.60.1.70124"}
-{"id": 190186, "field": "description", "en": "Call forth an incubus using the summoning circle.\nAn inscription on the base reads: I'm home.", "hash": "8853598fcc3face6", "src": "db2@1.60.1.70124"}
-{"id": 190187, "field": "name", "en": "Withered Scarf", "hash": "1caa6433ab09a6f6", "src": "db2@1.60.1.70124"}
-{"id": 190187, "field": "description", "en": "Call forth an incubus using the summoning circle.\nDelicate patterns are embroidered into the cloth, along with the letters 'M+K'.", "hash": "dfa0e2534989b1d7", "src": "db2@1.60.1.70124"}
-{"id": 190232, "field": "name", "en": "Withered Scarf", "hash": "1caa6433ab09a6f6", "src": "db2@1.60.1.70124"}
-{"id": 190232, "field": "description", "en": "Delicate patterns are embroidered into the cloth, along with the letters 'M+K'.", "hash": "2382222c1bf3b99c", "src": "db2@1.60.1.70124"}
-{"id": 190307, "field": "name", "en": "Unlit Torch", "hash": "526393e1ae89f5da", "src": "db2@1.60.1.70124"}
-{"id": 190307, "field": "description", "en": "You know what would look really good on this torch? Fire.", "hash": "12f5c94b55fee4af", "src": "db2@1.60.1.70124"}
-{"id": 190308, "field": "name", "en": "Burning Torch", "hash": "34aa2477fdb7728e", "src": "db2@1.60.1.70124"}
-{"id": 190308, "field": "description", "en": "Tosses a torch at the target location, starting a fire.\nUseful for fiery distractions!", "hash": "f3590576b7c3c3c2", "src": "db2@1.60.1.70124"}
-{"id": 190309, "field": "name", "en": "Wooden Figurine", "hash": "b0cfff43cbc284b4", "src": "db2@1.60.1.70124"}
-{"id": 190309, "field": "description", "en": "An inscription on the base reads: I'm home.", "hash": "4ca2810171b7b94e", "src": "db2@1.60.1.70124"}
-{"id": 190325, "field": "name", "en": "Monster - Incubus Whip Mace1H", "hash": "67de07886039cd4f", "src": "db2@1.60.1.70124"}
+{"id": 190179, "field": "name", "en": "Avelina's Heart", "hash": "623bd2c5ef480c6c", "src": "db2@1.60.1.70170"}
+{"id": 190180, "field": "name", "en": "Isaac's Heart", "hash": "4eb810392f9084ef", "src": "db2@1.60.1.70170"}
+{"id": 190181, "field": "name", "en": "Lovers' Hearts", "hash": "f02a0e3e76701241", "src": "db2@1.60.1.70170"}
+{"id": 190181, "field": "description", "en": "Call forth an incubus using the summoning circle.", "hash": "cff16dcb06a296ed", "src": "db2@1.60.1.70170"}
+{"id": 190186, "field": "name", "en": "Wooden Figurine", "hash": "b0cfff43cbc284b4", "src": "db2@1.60.1.70170"}
+{"id": 190186, "field": "description", "en": "Call forth an incubus using the summoning circle.\nAn inscription on the base reads: I'm home.", "hash": "8853598fcc3face6", "src": "db2@1.60.1.70170"}
+{"id": 190187, "field": "name", "en": "Withered Scarf", "hash": "1caa6433ab09a6f6", "src": "db2@1.60.1.70170"}
+{"id": 190187, "field": "description", "en": "Call forth an incubus using the summoning circle.\nDelicate patterns are embroidered into the cloth, along with the letters 'M+K'.", "hash": "dfa0e2534989b1d7", "src": "db2@1.60.1.70170"}
+{"id": 190232, "field": "name", "en": "Withered Scarf", "hash": "1caa6433ab09a6f6", "src": "db2@1.60.1.70170"}
+{"id": 190232, "field": "description", "en": "Delicate patterns are embroidered into the cloth, along with the letters 'M+K'.", "hash": "2382222c1bf3b99c", "src": "db2@1.60.1.70170"}
+{"id": 190307, "field": "name", "en": "Unlit Torch", "hash": "526393e1ae89f5da", "src": "db2@1.60.1.70170"}
+{"id": 190307, "field": "description", "en": "You know what would look really good on this torch? Fire.", "hash": "12f5c94b55fee4af", "src": "db2@1.60.1.70170"}
+{"id": 190308, "field": "name", "en": "Burning Torch", "hash": "34aa2477fdb7728e", "src": "db2@1.60.1.70170"}
+{"id": 190308, "field": "description", "en": "Tosses a torch at the target location, starting a fire.\nUseful for fiery distractions!", "hash": "f3590576b7c3c3c2", "src": "db2@1.60.1.70170"}
+{"id": 190309, "field": "name", "en": "Wooden Figurine", "hash": "b0cfff43cbc284b4", "src": "db2@1.60.1.70170"}
+{"id": 190309, "field": "description", "en": "An inscription on the base reads: I'm home.", "hash": "4ca2810171b7b94e", "src": "db2@1.60.1.70170"}
+{"id": 190325, "field": "name", "en": "Monster - Incubus Whip Mace1H", "hash": "67de07886039cd4f", "src": "db2@1.60.1.70170"}

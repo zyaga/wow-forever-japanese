@@ -1,44 +1,44 @@
-{"id": 1241057, "field": "name", "en": "Interrupted", "hash": "eae3543bbe1781e4", "src": "db2@1.60.1.70124"}
-{"id": 1241057, "field": "aura", "en": "Interrupted.", "hash": "32541cb7eb6557ed", "src": "db2@1.60.1.70124"}
-{"id": 1241115, "field": "name", "en": "Sense Undead", "hash": "f50abbb4068ac9d9", "src": "db2@1.60.1.70124"}
-{"id": 1241115, "field": "description", "en": "Shows the location of all nearby undead on the minimap until cancelled.   Only one type of tracking can be used at a time.", "hash": "07ce0db8a4494832", "src": "db2@1.60.1.70124"}
-{"id": 1241115, "field": "aura", "en": "Detecting Undead.", "hash": "2b625a651d2ae7e3", "src": "db2@1.60.1.70124"}
-{"id": 1241325, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70124"}
-{"id": 1241325, "field": "description", "en": "Sends out a blast wave of magic, inflicting $s1 Arcane damage to nearby enemies.", "hash": "e5bc2450428282dd", "src": "db2@1.60.1.70124"}
-{"id": 1241329, "field": "name", "en": "Malfunction", "hash": "e26a02f72034e3af", "src": "db2@1.60.1.70124"}
-{"id": 1241329, "field": "description", "en": "A malfunction has occurred. Every $t1s arcane energy is released dealing damage to players in a nearby area.", "hash": "221a1b0669861e91", "src": "db2@1.60.1.70124"}
-{"id": 1241329, "field": "aura", "en": "A malfunction has occurred. Every $t1s $1241325s1 arcane energy is inflicted to players within $1241325a1 yds.", "hash": "e5c4a28412fadf5b", "src": "db2@1.60.1.70124"}
-{"id": 1241359, "field": "name", "en": "Arcane Cascade", "hash": "17ae28ba0032c846", "src": "db2@1.60.1.70124"}
-{"id": 1241359, "field": "description", "en": "Expels a cone of arcane energy in front of itself, inflicting $s1 Arcane damage and knocking back all targets struck.", "hash": "509f84f38191292e", "src": "db2@1.60.1.70124"}
-{"id": 1241465, "field": "name", "en": "(DNT) Caldoran RP Stun", "hash": "2aaa81fbd40673aa", "src": "db2@1.60.1.70124"}
-{"id": 1241501, "field": "name", "en": "Focal Blast", "hash": "1d523502b8155679", "src": "db2@1.60.1.70124"}
-{"id": 1241501, "field": "description", "en": "Channels energy forward dealing damage to any targets caught within the blast.", "hash": "34c7fb8cec611a79", "src": "db2@1.60.1.70124"}
-{"id": 1241501, "field": "aura", "en": "Inflicting $1241514s1 Arcane damage to enemies every $1241514t1 sec in front of the caster.", "hash": "e1e19c3b9028d7bc", "src": "db2@1.60.1.70124"}
-{"id": 1241506, "field": "name", "en": "Arcane Bolt", "hash": "8ce91867cb47c09b", "src": "db2@1.60.1.70124"}
-{"id": 1241506, "field": "description", "en": "Inflicts $s1 Arcane damage to an enemy.", "hash": "e247bc1285ca241e", "src": "db2@1.60.1.70124"}
-{"id": 1241514, "field": "name", "en": "Focal Blast", "hash": "1d523502b8155679", "src": "db2@1.60.1.70124"}
-{"id": 1241514, "field": "aura", "en": "$s1 Arcane damage inflicted every $t1 sec.", "hash": "d8708d964c16c02d", "src": "db2@1.60.1.70124"}
-{"id": 1241515, "field": "name", "en": "Bounding Mana", "hash": "c65560aad746aeae", "src": "db2@1.60.1.70124"}
-{"id": 1241515, "field": "description", "en": "$@spelldesc1241523", "hash": "a6b35329e811b55d", "src": "db2@1.60.1.70124"}
-{"id": 1241523, "field": "name", "en": "Bounding Mana", "hash": "c65560aad746aeae", "src": "db2@1.60.1.70124"}
-{"id": 1241523, "field": "description", "en": "Launches a mana infused orb toward a random player that travels out and returns to it's origin. Players hit are inflicted with $s1 Arcane damage.", "hash": "9df769f371e3d1cc", "src": "db2@1.60.1.70124"}
-{"id": 1241523, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.70124"}
-{"id": 1241524, "field": "name", "en": "Bounding Mana", "hash": "c65560aad746aeae", "src": "db2@1.60.1.70124"}
-{"id": 1241524, "field": "description", "en": "$@spelldesc1241523", "hash": "a6b35329e811b55d", "src": "db2@1.60.1.70124"}
-{"id": 1241582, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70124"}
-{"id": 1241582, "field": "description", "en": "Instantly attacks with both weapons for $1241585s2% weapon damage plus an additional ${$1241585m1*$1241585m2/100} with each weapon. Damage increased by $m4% against Poisoned targets. Awards $m1 Combo $LPoint:Points;.", "hash": "31535b05a346c496", "src": "db2@1.60.1.70124"}
-{"id": 1241584, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70124"}
-{"id": 1241584, "field": "description", "en": "Instantly attacks with both weapons for $1241586s2% weapon damage plus an additional ${$1241586m1*$1241586m2/100} with each weapon. Damage increased by $m4% against Poisoned targets. Awards $m1 Combo $LPoint:Points;.", "hash": "ed0e4713da2b6e04", "src": "db2@1.60.1.70124"}
-{"id": 1241585, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70124"}
-{"id": 1241586, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70124"}
-{"id": 1241588, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70124"}
-{"id": 1241590, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70124"}
-{"id": 1241695, "field": "name", "en": "Arcane Ward", "hash": "8fb5cea22d3bcffa", "src": "db2@1.60.1.70124"}
-{"id": 1241695, "field": "aura", "en": "Channeling on an Arcane Ward.", "hash": "fb18ffabbb4bcd82", "src": "db2@1.60.1.70124"}
-{"id": 1241797, "field": "name", "en": "Restless Blades", "hash": "029c9bd49f3c0089", "src": "db2@1.60.1.70124"}
-{"id": 1241797, "field": "description", "en": "Your damaging finishing moves reduce the remaining cooldown of your Adrenaline Rush, Blade Flurry, Evasion, Sprint, and Vanish abilities by $m1 sec per combo point.", "hash": "54748c06df04b20c", "src": "db2@1.60.1.70124"}
-{"id": 1241810, "field": "name", "en": "Cutthroat", "hash": "c37de89ea09871f9", "src": "db2@1.60.1.70124"}
-{"id": 1241810, "field": "aura", "en": "Ambush, Backstab, and Garrote have no positional requirement.", "hash": "37f0c9644ee1428f", "src": "db2@1.60.1.70124"}
-{"id": 1241821, "field": "name", "en": "Stock Ore", "hash": "2bc85fd677f14211", "src": "db2@1.60.1.70124"}
-{"id": 1241821, "field": "description", "en": "Crate $M1 ore of your choosing.", "hash": "069996d43d9c82be", "src": "db2@1.60.1.70124"}
-{"id": 1241930, "field": "name", "en": "[DNT] Test Sound", "hash": "41005e118dd5e7ff", "src": "db2@1.60.1.70124"}
+{"id": 1241057, "field": "name", "en": "Interrupted", "hash": "eae3543bbe1781e4", "src": "db2@1.60.1.70170"}
+{"id": 1241057, "field": "aura", "en": "Interrupted.", "hash": "32541cb7eb6557ed", "src": "db2@1.60.1.70170"}
+{"id": 1241115, "field": "name", "en": "Sense Undead", "hash": "f50abbb4068ac9d9", "src": "db2@1.60.1.70170"}
+{"id": 1241115, "field": "description", "en": "Shows the location of all nearby undead on the minimap until cancelled. Only one type of tracking can be used at a time.", "hash": "07ce0db8a4494832", "src": "db2@1.60.1.70170"}
+{"id": 1241115, "field": "aura", "en": "Detecting Undead.", "hash": "2b625a651d2ae7e3", "src": "db2@1.60.1.70170"}
+{"id": 1241325, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70170"}
+{"id": 1241325, "field": "description", "en": "Sends out a blast wave of magic, inflicting $s1 Arcane damage to nearby enemies.", "hash": "e5bc2450428282dd", "src": "db2@1.60.1.70170"}
+{"id": 1241329, "field": "name", "en": "Malfunction", "hash": "e26a02f72034e3af", "src": "db2@1.60.1.70170"}
+{"id": 1241329, "field": "description", "en": "A malfunction has occurred. Every $t1s arcane energy is released dealing damage to players in a nearby area.", "hash": "221a1b0669861e91", "src": "db2@1.60.1.70170"}
+{"id": 1241329, "field": "aura", "en": "A malfunction has occurred. Every $t1s $1241325s1 arcane energy is inflicted to players within $1241325a1 yds.", "hash": "e5c4a28412fadf5b", "src": "db2@1.60.1.70170"}
+{"id": 1241359, "field": "name", "en": "Arcane Cascade", "hash": "17ae28ba0032c846", "src": "db2@1.60.1.70170"}
+{"id": 1241359, "field": "description", "en": "Expels a cone of arcane energy in front of itself, inflicting $s1 Arcane damage and knocking back all targets struck.", "hash": "509f84f38191292e", "src": "db2@1.60.1.70170"}
+{"id": 1241465, "field": "name", "en": "(DNT) Caldoran RP Stun", "hash": "2aaa81fbd40673aa", "src": "db2@1.60.1.70170"}
+{"id": 1241501, "field": "name", "en": "Focal Blast", "hash": "1d523502b8155679", "src": "db2@1.60.1.70170"}
+{"id": 1241501, "field": "description", "en": "Channels energy forward dealing damage to any targets caught within the blast.", "hash": "34c7fb8cec611a79", "src": "db2@1.60.1.70170"}
+{"id": 1241501, "field": "aura", "en": "Inflicting $1241514s1 Arcane damage to enemies every $1241514t1 sec in front of the caster.", "hash": "e1e19c3b9028d7bc", "src": "db2@1.60.1.70170"}
+{"id": 1241506, "field": "name", "en": "Arcane Bolt", "hash": "8ce91867cb47c09b", "src": "db2@1.60.1.70170"}
+{"id": 1241506, "field": "description", "en": "Inflicts $s1 Arcane damage to an enemy.", "hash": "e247bc1285ca241e", "src": "db2@1.60.1.70170"}
+{"id": 1241514, "field": "name", "en": "Focal Blast", "hash": "1d523502b8155679", "src": "db2@1.60.1.70170"}
+{"id": 1241514, "field": "aura", "en": "$s1 Arcane damage inflicted every $t1 sec.", "hash": "d8708d964c16c02d", "src": "db2@1.60.1.70170"}
+{"id": 1241515, "field": "name", "en": "Bounding Mana", "hash": "c65560aad746aeae", "src": "db2@1.60.1.70170"}
+{"id": 1241515, "field": "description", "en": "$@spelldesc1241523", "hash": "a6b35329e811b55d", "src": "db2@1.60.1.70170"}
+{"id": 1241523, "field": "name", "en": "Bounding Mana", "hash": "c65560aad746aeae", "src": "db2@1.60.1.70170"}
+{"id": 1241523, "field": "description", "en": "Launches a mana infused orb toward a random player that travels out and returns to its origin. Players hit are inflicted with $s1 Arcane damage.", "hash": "2f1ec3eb6e321894", "src": "db2@1.60.1.70170"}
+{"id": 1241523, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.70170"}
+{"id": 1241524, "field": "name", "en": "Bounding Mana", "hash": "c65560aad746aeae", "src": "db2@1.60.1.70170"}
+{"id": 1241524, "field": "description", "en": "$@spelldesc1241523", "hash": "a6b35329e811b55d", "src": "db2@1.60.1.70170"}
+{"id": 1241582, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70170"}
+{"id": 1241582, "field": "description", "en": "Instantly attacks with both weapons for $1241585s2% weapon damage plus an additional ${$1241585m1*$1241585m2/100} with each weapon. Damage increased by $m4% against Poisoned targets. Awards $m1 Combo $LPoint:Points;.", "hash": "31535b05a346c496", "src": "db2@1.60.1.70170"}
+{"id": 1241584, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70170"}
+{"id": 1241584, "field": "description", "en": "Instantly attacks with both weapons for $1241586s2% weapon damage plus an additional ${$1241586m1*$1241586m2/100} with each weapon. Damage increased by $m4% against Poisoned targets. Awards $m1 Combo $LPoint:Points;.", "hash": "ed0e4713da2b6e04", "src": "db2@1.60.1.70170"}
+{"id": 1241585, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70170"}
+{"id": 1241586, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70170"}
+{"id": 1241588, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70170"}
+{"id": 1241590, "field": "name", "en": "Mutilate", "hash": "bc747aa6f7f3601d", "src": "db2@1.60.1.70170"}
+{"id": 1241695, "field": "name", "en": "Arcane Ward", "hash": "8fb5cea22d3bcffa", "src": "db2@1.60.1.70170"}
+{"id": 1241695, "field": "aura", "en": "Channeling on an Arcane Ward.", "hash": "fb18ffabbb4bcd82", "src": "db2@1.60.1.70170"}
+{"id": 1241797, "field": "name", "en": "Restless Blades", "hash": "029c9bd49f3c0089", "src": "db2@1.60.1.70170"}
+{"id": 1241797, "field": "description", "en": "Your damaging finishing moves reduce the remaining cooldown on your Adrenaline Rush, Blade Flurry, Evasion, Sprint, and Vanish abilities by $m1 sec per combo point.", "hash": "0145ecade45c26b6", "src": "db2@1.60.1.70170"}
+{"id": 1241810, "field": "name", "en": "Cutthroat", "hash": "c37de89ea09871f9", "src": "db2@1.60.1.70170"}
+{"id": 1241810, "field": "aura", "en": "Ambush, Backstab, and Garrote have no positional requirement.", "hash": "37f0c9644ee1428f", "src": "db2@1.60.1.70170"}
+{"id": 1241821, "field": "name", "en": "Stock Ore", "hash": "2bc85fd677f14211", "src": "db2@1.60.1.70170"}
+{"id": 1241821, "field": "description", "en": "Create $M1 ore of your choosing.", "hash": "90ab02b97d7c6dec", "src": "db2@1.60.1.70170"}
+{"id": 1241930, "field": "name", "en": "[DNT] Test Sound", "hash": "41005e118dd5e7ff", "src": "db2@1.60.1.70170"}

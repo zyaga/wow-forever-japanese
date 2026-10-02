@@ -1,151 +1,151 @@
-{"id": 1218038, "field": "name", "en": "Inhume", "hash": "51ac49cd4bc3f2c9", "src": "db2@1.60.1.70124"}
-{"id": 1218038, "field": "description", "en": "Bound in ice until the fetters are destroyed.", "hash": "cbb3f329ece688a0", "src": "db2@1.60.1.70124"}
-{"id": 1218038, "field": "aura", "en": "Bound in ice until the fetters are destroyed.", "hash": "cbb3f329ece688a0", "src": "db2@1.60.1.70124"}
-{"id": 1218044, "field": "name", "en": "(DNT) Summon Inhume Chains", "hash": "06a135fa646c64c1", "src": "db2@1.60.1.70124"}
-{"id": 1218071, "field": "name", "en": "Songflower Lullaby", "hash": "c3c0930f125226fc", "src": "db2@1.60.1.70124"}
-{"id": 1218071, "field": "description", "en": "Summon a songflower that grants all your party or raid members $s1% increased chance for a melee, ranged, or spell critical and $s2 increased attributes for $473399d. Exclusive with similar world effects. Unaffected by Chronoboons.", "hash": "e9db065f2ccc14ad", "src": "db2@1.60.1.70124"}
-{"id": 1218071, "field": "aura", "en": "Increases chance for a melee, ranged, or spell critical by $s1% and all attributes by $s2.", "hash": "1e1394660351a360", "src": "db2@1.60.1.70124"}
-{"id": 1218072, "field": "name", "en": "Blessing of Neptulon", "hash": "cefdf74e596426a6", "src": "db2@1.60.1.70124"}
-{"id": 1218072, "field": "description", "en": "Grants all your nearby party or raid members $s1 increased attack power, $s3% increased Stamina, and $s4% increased spell critical strike chance for $473403d. Exclusive with similar world effects. Unaffected by Chronoboons.", "hash": "a55ec68ec17610f0", "src": "db2@1.60.1.70124"}
-{"id": 1218072, "field": "aura", "en": "Increases attack power by $s1, Stamina by $s3%, and spell critical strike chance by $s4%.", "hash": "23a559558f19839a", "src": "db2@1.60.1.70124"}
-{"id": 1218073, "field": "name", "en": "Dark Fortune of Damage", "hash": "67e03b75b893a2ed", "src": "db2@1.60.1.70124"}
-{"id": 1218073, "field": "description", "en": "Grants all your party or raid members $s1% increased damage done for $473450d.", "hash": "4b878a3189f695d2", "src": "db2@1.60.1.70124"}
-{"id": 1218073, "field": "aura", "en": "Increases damage by $s1%.", "hash": "416dea0faa84f579", "src": "db2@1.60.1.70124"}
-{"id": 1218074, "field": "name", "en": "Might of Blackrock", "hash": "35ab1b5277efce88", "src": "db2@1.60.1.70124"}
-{"id": 1218074, "field": "description", "en": "Increases hitpoints by $s1. $s2% haste to melee attacks. $s3 mana regen every 5 seconds. Lasts $473441d.", "hash": "d8f57e365db8c409", "src": "db2@1.60.1.70124"}
-{"id": 1218074, "field": "aura", "en": "Increases hitpoints by $s1. $s2% haste to melee attacks. $s3 mana regen every 5 seconds.", "hash": "c53fc1dfa989ae33", "src": "db2@1.60.1.70124"}
-{"id": 1218075, "field": "name", "en": "Dreams of Zandalar", "hash": "b8515b1772458ce1", "src": "db2@1.60.1.70124"}
-{"id": 1218075, "field": "description", "en": "Grants all your party or raid members $s1% increased movement speed and $s3% increased stats for $473476d.", "hash": "93e448ff380d8deb", "src": "db2@1.60.1.70124"}
-{"id": 1218075, "field": "aura", "en": "Increases movement speed by $s1% and all stats by $s3%.", "hash": "0d29e698f3edc656", "src": "db2@1.60.1.70124"}
-{"id": 1218078, "field": "name", "en": "(DNT) Cancel Inhume", "hash": "4e7e73468d485674", "src": "db2@1.60.1.70124"}
-{"id": 1218085, "field": "name", "en": "(DNT) Glacial Fetters Spawn Visual", "hash": "9318f5a23ff8e391", "src": "db2@1.60.1.70124"}
-{"id": 1218089, "field": "name", "en": "Illimitable Dominion", "hash": "a0125d4fc123c571", "src": "db2@1.60.1.70124"}
-{"id": 1218091, "field": "name", "en": "Quietude", "hash": "866c0de48ba61899", "src": "db2@1.60.1.70124"}
-{"id": 1218092, "field": "name", "en": "Quietude", "hash": "866c0de48ba61899", "src": "db2@1.60.1.70124"}
-{"id": 1218121, "field": "name", "en": "Horn of the Dawn", "hash": "4af1ac18136414c4", "src": "db2@1.60.1.70124"}
-{"id": 1218121, "field": "description", "en": "Rally your nearby party or raid members, granting them $s1% increased spell critical strike chance, $s3% increased melee and ranged critical strike chance, and $s2 increased attack power. Lasts $473387d. Exclusive with similar world effects and unaffected by Chronoboons.", "hash": "e487cf6ecb188fdb", "src": "db2@1.60.1.70124"}
-{"id": 1218121, "field": "aura", "en": "Increases critical chance of spells by $s1%, melee and ranged by $s3% and grants $s2 attack power.", "hash": "04d1ed3388fc5c5d", "src": "db2@1.60.1.70124"}
-{"id": 1218134, "field": "name", "en": "Tranquilizing Shot", "hash": "a7f46e880add1d49", "src": "db2@1.60.1.70124"}
-{"id": 1218134, "field": "description", "en": "Attempts to remove $s1 Frenzy effect from an enemy creature.", "hash": "19756a13844bfc2e", "src": "db2@1.60.1.70124"}
-{"id": 1218154, "field": "name", "en": "Strikes of the Sinister", "hash": "3be53bafe3548756", "src": "db2@1.60.1.70124"}
-{"id": 1218154, "field": "aura", "en": "Sinister Strike hits $s1 additional nearby target.", "hash": "b2d18ca2a8c52783", "src": "db2@1.60.1.70124"}
-{"id": 1218178, "field": "name", "en": "Kill Shot", "hash": "ad1ea0a5418cb698", "src": "db2@1.60.1.70124"}
-{"id": 1218184, "field": "name", "en": "(DNT) Bonus Bar Test", "hash": "bce090fa1e2b4e5b", "src": "db2@1.60.1.70124"}
-{"id": 1218198, "field": "name", "en": "Abhorrent Infestation", "hash": "3c96b9cf0a0b6080", "src": "db2@1.60.1.70124"}
-{"id": 1218198, "field": "description", "en": "The Arachnid Quarter is empowered. While in combat, egg sacs will randomly spawn nearby and explode after a few seconds.", "hash": "d438ca64fa7000bb", "src": "db2@1.60.1.70124"}
-{"id": 1218198, "field": "aura", "en": "The Arachnid Quarter is empowered. While in combat, egg sacs will randomly spawn nearby and explode after a few seconds.", "hash": "d438ca64fa7000bb", "src": "db2@1.60.1.70124"}
-{"id": 1218209, "field": "name", "en": "(DNT) Summon Egg", "hash": "4363dc19cc691043", "src": "db2@1.60.1.70124"}
-{"id": 1218210, "field": "name", "en": "(DNT) Force Cast Egg Summon", "hash": "a562c7bc59387038", "src": "db2@1.60.1.70124"}
-{"id": 1218212, "field": "name", "en": "Egg Sac Eruption", "hash": "ea7df4cc2e0833fc", "src": "db2@1.60.1.70124"}
-{"id": 1218216, "field": "name", "en": "Subjugated Spinners", "hash": "9abb0707988c4b65", "src": "db2@1.60.1.70124"}
-{"id": 1218216, "field": "description", "en": "Deals Nature damage over time. Gives your attacks a chance to spawn spider minions that launch at your enemies.", "hash": "a195c5d54d098309", "src": "db2@1.60.1.70124"}
-{"id": 1218216, "field": "aura", "en": "Deals Nature damage over time. Gives your attacks a chance to spawn spider minions that launch at your enemies.", "hash": "a195c5d54d098309", "src": "db2@1.60.1.70124"}
-{"id": 1218232, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70124"}
-{"id": 1218240, "field": "name", "en": "Kill Shot", "hash": "ad1ea0a5418cb698", "src": "db2@1.60.1.70124"}
-{"id": 1218240, "field": "description", "en": "You attempt to finish off a wounded target, firing a ranged attack dealing $s2% weapon damage plus ${$m1/100*$m2/100*$<damagepower>}. Kill Shot has no minimum range. Kill Shot's cooldown is reset if used on an enemy that has 20% or less health.", "hash": "eae59b9640e5cae2", "src": "db2@1.60.1.70124"}
-{"id": 1218271, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70124"}
-{"id": 1218271, "field": "description", "en": "The forces of the Scourge grow stronger.", "hash": "c72f37946650b80c", "src": "db2@1.60.1.70124"}
-{"id": 1218271, "field": "aura", "en": "The forces of the Scourge grow stronger. Chance to dodge reduced by ${$s1/$u}% and chance to be hit increased by ${$s2/$u}%.\r\n\r\nThe benefits from your Seal of the Dawn cannot exceed Rank $s3.", "hash": "23ad32b4636ce644", "src": "db2@1.60.1.70124"}
-{"id": 1218275, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70124"}
-{"id": 1218275, "field": "description", "en": "The forces of the Scourge grow stronger.", "hash": "c72f37946650b80c", "src": "db2@1.60.1.70124"}
-{"id": 1218275, "field": "aura", "en": "The forces of the Scourge grow stronger. Chance to dodge reduced by ${$s1/$u}% and chance to be hit increased by ${$s2/$u}%. \r\n\r\nThe benefits from your Seal of the Dawn cannot exceed Rank ${$s3/$u}.", "hash": "e33d2031061bfc4c", "src": "db2@1.60.1.70124"}
-{"id": 1218276, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70124"}
-{"id": 1218276, "field": "description", "en": "The forces of the Scourge grow stronger.\r\n", "hash": "c72f37946650b80c", "src": "db2@1.60.1.70124"}
-{"id": 1218276, "field": "aura", "en": "The forces of the Scourge grow stronger. Chance to dodge reduced by ${$s1/$u}% and chance to be hit increased by ${$s2/$u}%.\r\n\r\nThe benefits from your Seal of the Dawn cannot exceed Rank ${$s3/$u}.", "hash": "e33d2031061bfc4c", "src": "db2@1.60.1.70124"}
-{"id": 1218283, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70124"}
-{"id": 1218283, "field": "description", "en": "The Lich King himself has taken notice. No hope remains here.", "hash": "a62b4834f9ab3074", "src": "db2@1.60.1.70124"}
-{"id": 1218283, "field": "aura", "en": "The Lich King himself has taken notice. No hope remains here. Chance to dodge reduced by ${$s1/$u}% and chance to be hit increased by ${$s2/$u}%.\r\n\r\nThe benefits from your Seal of the Dawn cannot exceed Rank ${$s3/$u}.", "hash": "dcc174e42c8e709c", "src": "db2@1.60.1.70124"}
-{"id": 1218285, "field": "name", "en": "Locked and Loading", "hash": "9a213bc4dfe63fcc", "src": "db2@1.60.1.70124"}
-{"id": 1218285, "field": "aura", "en": "Unable to benefit from the Lock and Load buff.", "hash": "faeb76d0e411b4fc", "src": "db2@1.60.1.70124"}
-{"id": 1218309, "field": "name", "en": "Durability Repair (PT)", "hash": "bb0256475aebfe54", "src": "db2@1.60.1.70124"}
-{"id": 1218345, "field": "name", "en": "Glaciate", "hash": "80f8550f464385d1", "src": "db2@1.60.1.70124"}
-{"id": 1218345, "field": "aura", "en": "Target takes $s1% increased damage from the caster's next Ice Lance.", "hash": "ea71cd635d76d785", "src": "db2@1.60.1.70124"}
-{"id": 1218352, "field": "name", "en": "Glaciate", "hash": "80f8550f464385d1", "src": "db2@1.60.1.70124"}
-{"id": 1218352, "field": "description", "en": "Gives your Frost damage spells a $h% chance to apply the Winter's Chill effect, which increases the chance a Frost spell will critically hit the target by $12579s1% for $12579d.  Stacks up to $12579u times.", "hash": "5d65740f6d204296", "src": "db2@1.60.1.70124"}
-{"id": 1218358, "field": "name", "en": "Rabid Frenzy", "hash": "45dbe91bc72f68a7", "src": "db2@1.60.1.70124"}
-{"id": 1218358, "field": "description", "en": "Send the target into a rabid frenzy, increasing melee attack power by $s1 but reducing armor by $s2 for $d.  Rabid enemies will not flee and will ignore Fear and Horror effects.", "hash": "adcaaf07f7716c21", "src": "db2@1.60.1.70124"}
-{"id": 1218358, "field": "aura", "en": "Increases melee attack power by $s1 and decreases armor by $s2.   Target will not flee and will ignore Fear and Horror effects.", "hash": "83fba19790e5fa9c", "src": "db2@1.60.1.70124"}
-{"id": 1218360, "field": "name", "en": "Smash", "hash": "bfa6c905fc6a3a62", "src": "db2@1.60.1.70124"}
-{"id": 1218363, "field": "name", "en": "Sit A While", "hash": "3f4b5e3a75b9bd7e", "src": "db2@1.60.1.70124"}
-{"id": 1218363, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70124"}
-{"id": 1218364, "field": "name", "en": "Free!", "hash": "dc210f9d7d68d5e2", "src": "db2@1.60.1.70124"}
-{"id": 1218364, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70124"}
-{"id": 1218366, "field": "name", "en": "Living Darkness", "hash": "630b8b8552f4a110", "src": "db2@1.60.1.70124"}
-{"id": 1218366, "field": "description", "en": "A chilling, magical darkness washes over you... ", "hash": "99e047cfa3ebbbe0", "src": "db2@1.60.1.70124"}
-{"id": 1218366, "field": "aura", "en": "A chilling, magical darkness washes over you...", "hash": "99e047cfa3ebbbe0", "src": "db2@1.60.1.70124"}
-{"id": 1218367, "field": "name", "en": "Brandish", "hash": "285e6185ed8b9b2f", "src": "db2@1.60.1.70124"}
-{"id": 1218367, "field": "description", "en": "Hold up the Enchanted Torch and attempt to dispel the darkness near Karazhan Crypts.", "hash": "c521877515c15cf6", "src": "db2@1.60.1.70124"}
-{"id": 1218375, "field": "name", "en": "Dark Offering", "hash": "8a84821c31deeb2f", "src": "db2@1.60.1.70124"}
-{"id": 1218415, "field": "name", "en": "Conjure Burning Conduit", "hash": "05886e0ead508bc3", "src": "db2@1.60.1.70124"}
-{"id": 1218423, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Restoration 2P Bonus", "hash": "b0cba74913d28a13", "src": "db2@1.60.1.70124"}
-{"id": 1218423, "field": "description", "en": "Your Lifebloom now has a $s1% chance to heal the target for one application of its dispel amount each time the target takes damage. This effect can only occur once every few seconds.", "hash": "1848efd06fecffb1", "src": "db2@1.60.1.70124"}
-{"id": 1218427, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Restoration 4P Bonus", "hash": "9faeacccfea495e9", "src": "db2@1.60.1.70124"}
-{"id": 1218427, "field": "description", "en": "Each time your Rejuvenation rank 10 or rank 11 heals a target, you have a $s1% chance to restore $1219708m1 mana, $1219706m1 energy, or ${$1219707m1/10} rage to your target.", "hash": "d90deaa16b2edfe5", "src": "db2@1.60.1.70124"}
-{"id": 1218429, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Restoration 6P Bonus", "hash": "8e91b24fe976a1d0", "src": "db2@1.60.1.70124"}
-{"id": 1218429, "field": "description", "en": "Your Rejuvenation and Regrowth refresh their duration to full each time their target is damaged by an Undead enemy.", "hash": "1907f36ea33f2056", "src": "db2@1.60.1.70124"}
-{"id": 1218443, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Balance 2P Bonus", "hash": "168ba4b471fad7ca", "src": "db2@1.60.1.70124"}
-{"id": 1218443, "field": "description", "en": "Your Moonfire and Sunfire deal $s1% more damage.", "hash": "4762831ced0f2994", "src": "db2@1.60.1.70124"}
-{"id": 1218444, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Balance 4P Bonus", "hash": "056eaa375ccce3b1", "src": "db2@1.60.1.70124"}
-{"id": 1218444, "field": "description", "en": "The cooldown of your Starsurge spell is reduced by ${$m1/-1000}.1 sec.", "hash": "a034b5818a9ebe4f", "src": "db2@1.60.1.70124"}
-{"id": 1218445, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Balance 6P Bonus", "hash": "f451afb5479eef98", "src": "db2@1.60.1.70124"}
-{"id": 1218445, "field": "description", "en": "When your Starsurge strikes an Undead target, the remaining duration on your active Starfall is reset to $m1 sec.", "hash": "a0e20048f780a9e8", "src": "db2@1.60.1.70124"}
-{"id": 1218476, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Feral 2P Bonus", "hash": "52a593db1e0e44bd", "src": "db2@1.60.1.70124"}
-{"id": 1218476, "field": "description", "en": "Your Rake now deals its periodic damage every $s1 sec, increasing its total damage over time by $s3%.", "hash": "77191e7b3ece9e33", "src": "db2@1.60.1.70124"}
-{"id": 1218477, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Feral 4P Bonus", "hash": "4188995e08e050a4", "src": "db2@1.60.1.70124"}
-{"id": 1218477, "field": "description", "en": "Your Tiger's Fury cooldown is reduced by $s1%.", "hash": "4db15c399784f155", "src": "db2@1.60.1.70124"}
-{"id": 1218478, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Feral 6P Bonus", "hash": "306b9ee1f3b25c7a", "src": "db2@1.60.1.70124"}
-{"id": 1218478, "field": "description", "en": "Each time you deal Bleed damage to an Undead target, you gain $1218479s1% increased damage and critical damage done to Undead for $1218479d, stacking up to $1218479u times.", "hash": "4064eb1d059d49e5", "src": "db2@1.60.1.70124"}
-{"id": 1218479, "field": "name", "en": "Undead Slaying", "hash": "5c2c0413f79b9e47", "src": "db2@1.60.1.70124"}
-{"id": 1218479, "field": "aura", "en": "Damage and critical damage done to Undead increased by $s1%.", "hash": "d6f5d1053789e3f5", "src": "db2@1.60.1.70124"}
-{"id": 1218482, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Guardian 2P Bonus", "hash": "c480ec456af45593", "src": "db2@1.60.1.70124"}
-{"id": 1218482, "field": "description", "en": "Your Growl ability never misses, and your chance to be Dodged or Parried is reduced by $s1%.", "hash": "5bc5577fde85b004", "src": "db2@1.60.1.70124"}
-{"id": 1218485, "field": "name", "en": "Draught of the Sands", "hash": "104aad10c00d6a88", "src": "db2@1.60.1.70124"}
-{"id": 1218485, "field": "description", "en": "Increases all damage caused against targets in Silithus, Ahn'Qiraj, Eastern Plaguelands, and Naxxramas by $s1% and increases critical damage caused against targets in these areas by an additional $s2%.", "hash": "4212319fbc6718c4", "src": "db2@1.60.1.70124"}
-{"id": 1218485, "field": "aura", "en": "Damage against targets in Silithus, Ahn'Qiraj, Eastern Plaguelands, and Naxxramas increased by $s1%.\r\nCritical damage against targets in these areas is also increased by $s2%.", "hash": "f06a2af86b420a41", "src": "db2@1.60.1.70124"}
-{"id": 1218499, "field": "name", "en": "Burning Conduit", "hash": "1b97e3ffc7218088", "src": "db2@1.60.1.70124"}
-{"id": 1218506, "field": "name", "en": "Growl", "hash": "edb16dc984083904", "src": "db2@1.60.1.70124"}
-{"id": 1218506, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70124"}
-{"id": 1218507, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Guardian 4P Bonus", "hash": "b363f1c855c6617a", "src": "db2@1.60.1.70124"}
-{"id": 1218507, "field": "description", "en": "Reduces the cooldown on your Survival Instincts by ${$m1/-60000} min, and reduces the cooldown on your Berserk ability by ${$m2/-60000} min.", "hash": "ba096367aed0d316", "src": "db2@1.60.1.70124"}
-{"id": 1218509, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Guardian 6P Bonus", "hash": "a246f74b40986d61", "src": "db2@1.60.1.70124"}
-{"id": 1218509, "field": "description", "en": "When you take damage from an Undead enemy, the remaining duration of your active Frenzied Regeneration is reset to $m1 sec. In addition, Frenzied Regeneration will never consume your last $s2 Rage to generate healing.", "hash": "4f329ae2cfa2dcab", "src": "db2@1.60.1.70124"}
-{"id": 1218514, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Ranged 4P Bonus", "hash": "79302bb5ddfb33d4", "src": "db2@1.60.1.70124"}
-{"id": 1218514, "field": "description", "en": "Your Serpent Sting deals $s1% more damage.", "hash": "fa192432bd4b852b", "src": "db2@1.60.1.70124"}
-{"id": 1218515, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Ranged 2P Bonus", "hash": "8a4d2632f32927ed", "src": "db2@1.60.1.70124"}
-{"id": 1218515, "field": "description", "en": "Reduces the cooldown on Chimera Shot, Explosive Shot, and Aimed Shot by ${$m1/-1000}.1 sec, Kill Shot by ${$m2/-1000} sec, and Multi-Shot by ${$m3/-1000} sec.", "hash": "c23782855396a92f", "src": "db2@1.60.1.70124"}
-{"id": 1218569, "field": "name", "en": "[DNT] S03 - AQ Big - Tracking Message", "hash": "497d557a2777e670", "src": "db2@1.60.1.70124"}
-{"id": 1218574, "field": "name", "en": "Critical Aim", "hash": "81cec6eabacf0447", "src": "db2@1.60.1.70124"}
-{"id": 1218574, "field": "aura", "en": "Critical strike chance increased by $s1%.", "hash": "c61631802e8d92e5", "src": "db2@1.60.1.70124"}
-{"id": 1218575, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Ranged 6P Bonus", "hash": "68133138c8cd3fbb", "src": "db2@1.60.1.70124"}
-{"id": 1218575, "field": "description", "en": "You gain $1226739s1% increased damage and critical damage done to Undead for $1226739d each time you hit an Undead enemy with a ranged attack, stacking up to $1226739u times.", "hash": "1245861509376866", "src": "db2@1.60.1.70124"}
-{"id": 1218576, "field": "name", "en": "Satyr Corruption", "hash": "137b720e3ad33416", "src": "db2@1.60.1.70124"}
-{"id": 1218577, "field": "name", "en": "[DNT] S03 - AQ Small - Trial Tracking Message", "hash": "afe1c4aa40ab9c90", "src": "db2@1.60.1.70124"}
-{"id": 1218582, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Melee 2P Bonus", "hash": "3f2052dd66743a8e", "src": "db2@1.60.1.70124"}
-{"id": 1218582, "field": "description", "en": "Your Wyvern Strike and Mongoose Bite deal $s1% more initial damage.", "hash": "164f838fddd04fa0", "src": "db2@1.60.1.70124"}
-{"id": 1218583, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Melee 4P Bonus", "hash": "2e03586051464675", "src": "db2@1.60.1.70124"}
-{"id": 1218583, "field": "description", "en": "Reduces the cooldown on your Wyvern Strike ability by ${$m1/-1000} sec, reduces the cooldown on your Raptor Strike ability by ${$m2/-1000} sec, and reduces the cooldown on your Flanking Strike ability by ${$m3/-1000} sec.", "hash": "e343e3b807038be4", "src": "db2@1.60.1.70124"}
-{"id": 1218585, "field": "name", "en": "[DNT] Dummy Aura", "hash": "dd08df9ac8ca4f3b", "src": "db2@1.60.1.70124"}
-{"id": 1218587, "field": "name", "en": "Undead Slaying", "hash": "5c2c0413f79b9e47", "src": "db2@1.60.1.70124"}
-{"id": 1218587, "field": "aura", "en": "Damage and critical damage done to Undead increased by $s1%.", "hash": "d6f5d1053789e3f5", "src": "db2@1.60.1.70124"}
-{"id": 1218589, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Melee 6P Bonus", "hash": "1ce65de33c18525c", "src": "db2@1.60.1.70124"}
-{"id": 1218589, "field": "description", "en": "You gain $1218587s1% increased damage and critical damage done to Undead for $1218587d each time you hit an Undead enemy with a melee attack, stacking up to $1218587u times. Stacks are lost upon performing a ranged attack.", "hash": "02ea5910b80ddd8b", "src": "db2@1.60.1.70124"}
-{"id": 1218592, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Arcane 2P Bonus", "hash": "7f6825cc218b0093", "src": "db2@1.60.1.70124"}
-{"id": 1218592, "field": "description", "en": "Allies with your Temporal Beacon heal for ${$SPA*$m1/1000+$<healpower>*$400735m1/100} health every $400735t1 sec.", "hash": "8cc45e420c591f87", "src": "db2@1.60.1.70124"}
-{"id": 1218599, "field": "name", "en": "Teleport to Deadwind Pass [DNT]", "hash": "b135209146189d1c", "src": "db2@1.60.1.70124"}
-{"id": 1218624, "field": "name", "en": "Resurrection", "hash": "4e95d3bcfd7d75d3", "src": "db2@1.60.1.70124"}
-{"id": 1218693, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Arcane 4P Bonus", "hash": "6e4b2b4f0c5d0c7a", "src": "db2@1.60.1.70124"}
-{"id": 1218693, "field": "description", "en": "Your Regeneration ability grants your target $s1% increased movement speed while you are channeling, and each time it heals your target, they have a chance to gain $1218695s2% increased attack and casting speed for $1218695d.", "hash": "26c1a19a89e727ea", "src": "db2@1.60.1.70124"}
-{"id": 1218695, "field": "name", "en": "Overclocked", "hash": "7ad0e2fb0ae93abe", "src": "db2@1.60.1.70124"}
-{"id": 1218695, "field": "aura", "en": "Attack and casting speeds increased by $s1%.", "hash": "d3c818285d952efa", "src": "db2@1.60.1.70124"}
-{"id": 1218697, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Arcane 6P Bonus", "hash": "5d2e30d2f72f1850", "src": "db2@1.60.1.70124"}
-{"id": 1218697, "field": "description", "en": "Damage you deal to Undead causes $s1% more chronomantic healing, and you gain mana equal to $s2% of the chronomantic healing you generate from damaging Undead.", "hash": "326c1470f5498163", "src": "db2@1.60.1.70124"}
-{"id": 1218699, "field": "name", "en": "Chronosalvage", "hash": "32f83188ed025920", "src": "db2@1.60.1.70124"}
-{"id": 1218700, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Damage 4P Bonus", "hash": "3730128e28fef174", "src": "db2@1.60.1.70124"}
-{"id": 1218700, "field": "description", "en": "Your Evocation grants you $?a1218232|a1218271|a1218275|a1218276|a1218283|a1224428[$1218701s1%][$1218701s2%] increased damage done every sec you channel it, stacking up to $m2 times and lasting $1218701d.", "hash": "e98502687163a30d", "src": "db2@1.60.1.70124"}
-{"id": 1218701, "field": "name", "en": "Evoker", "hash": "f0f64aadb3154df6", "src": "db2@1.60.1.70124"}
-{"id": 1218701, "field": "aura", "en": "All damage done increased by $w1%.", "hash": "87211d4f0d79893e", "src": "db2@1.60.1.70124"}
-{"id": 1218988, "field": "name", "en": "Subjugated Spinners", "hash": "9abb0707988c4b65", "src": "db2@1.60.1.70124"}
-{"id": 1218993, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Damage 2P Bonus", "hash": "484d0d0b3e2ce58d", "src": "db2@1.60.1.70124"}
-{"id": 1218993, "field": "description", "en": "Reduces the cooldown on your Evocation ability by $s1%.", "hash": "caf8b47bf75ef498", "src": "db2@1.60.1.70124"}
-{"id": 1218995, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Damage 6P Bonus", "hash": "2613181113d0fd5b", "src": "db2@1.60.1.70124"}
-{"id": 1218995, "field": "description", "en": "Your Ignite damage does not decay on Undead targets below $s1% health, and Undead targets below $s2% health take damage as if they were Frozen.", "hash": "ef47dea20383b513", "src": "db2@1.60.1.70124"}
+{"id": 1218038, "field": "name", "en": "Inhume", "hash": "51ac49cd4bc3f2c9", "src": "db2@1.60.1.70170"}
+{"id": 1218038, "field": "description", "en": "Bound in ice until the fetters are destroyed.", "hash": "cbb3f329ece688a0", "src": "db2@1.60.1.70170"}
+{"id": 1218038, "field": "aura", "en": "Bound in ice until the fetters are destroyed.", "hash": "cbb3f329ece688a0", "src": "db2@1.60.1.70170"}
+{"id": 1218044, "field": "name", "en": "(DNT) Summon Inhume Chains", "hash": "06a135fa646c64c1", "src": "db2@1.60.1.70170"}
+{"id": 1218071, "field": "name", "en": "Songflower Lullaby", "hash": "c3c0930f125226fc", "src": "db2@1.60.1.70170"}
+{"id": 1218071, "field": "description", "en": "Summon a songflower that grants all your party or raid members $s1% increased chance for a melee, ranged, or spell critical and $s2 increased attributes for $473399d. Exclusive with similar world effects. Unaffected by Chronoboons.", "hash": "e9db065f2ccc14ad", "src": "db2@1.60.1.70170"}
+{"id": 1218071, "field": "aura", "en": "Increases chance for a melee, ranged, or spell critical by $s1% and all attributes by $s2.", "hash": "1e1394660351a360", "src": "db2@1.60.1.70170"}
+{"id": 1218072, "field": "name", "en": "Blessing of Neptulon", "hash": "cefdf74e596426a6", "src": "db2@1.60.1.70170"}
+{"id": 1218072, "field": "description", "en": "Grants all your nearby party or raid members $s1 increased attack power, $s3% increased Stamina, and $s4% increased spell critical strike chance for $473403d. Exclusive with similar world effects. Unaffected by Chronoboons.", "hash": "a55ec68ec17610f0", "src": "db2@1.60.1.70170"}
+{"id": 1218072, "field": "aura", "en": "Increases attack power by $s1, Stamina by $s3%, and spell critical strike chance by $s4%.", "hash": "23a559558f19839a", "src": "db2@1.60.1.70170"}
+{"id": 1218073, "field": "name", "en": "Dark Fortune of Damage", "hash": "67e03b75b893a2ed", "src": "db2@1.60.1.70170"}
+{"id": 1218073, "field": "description", "en": "Grants all your party or raid members $s1% increased damage done for $473450d.", "hash": "4b878a3189f695d2", "src": "db2@1.60.1.70170"}
+{"id": 1218073, "field": "aura", "en": "Increases damage by $s1%.", "hash": "416dea0faa84f579", "src": "db2@1.60.1.70170"}
+{"id": 1218074, "field": "name", "en": "Might of Blackrock", "hash": "35ab1b5277efce88", "src": "db2@1.60.1.70170"}
+{"id": 1218074, "field": "description", "en": "Increases hitpoints by $s1. $s2% haste to melee attacks. $s3 mana regen every 5 seconds. Lasts $473441d.", "hash": "d8f57e365db8c409", "src": "db2@1.60.1.70170"}
+{"id": 1218074, "field": "aura", "en": "Increases hitpoints by $s1. $s2% haste to melee attacks. $s3 mana regen every 5 seconds.", "hash": "c53fc1dfa989ae33", "src": "db2@1.60.1.70170"}
+{"id": 1218075, "field": "name", "en": "Dreams of Zandalar", "hash": "b8515b1772458ce1", "src": "db2@1.60.1.70170"}
+{"id": 1218075, "field": "description", "en": "Grants all your party or raid members $s1% increased movement speed and $s3% increased stats for $473476d.", "hash": "93e448ff380d8deb", "src": "db2@1.60.1.70170"}
+{"id": 1218075, "field": "aura", "en": "Increases movement speed by $s1% and all stats by $s3%.", "hash": "0d29e698f3edc656", "src": "db2@1.60.1.70170"}
+{"id": 1218078, "field": "name", "en": "(DNT) Cancel Inhume", "hash": "4e7e73468d485674", "src": "db2@1.60.1.70170"}
+{"id": 1218085, "field": "name", "en": "(DNT) Glacial Fetters Spawn Visual", "hash": "9318f5a23ff8e391", "src": "db2@1.60.1.70170"}
+{"id": 1218089, "field": "name", "en": "Illimitable Dominion", "hash": "a0125d4fc123c571", "src": "db2@1.60.1.70170"}
+{"id": 1218091, "field": "name", "en": "Quietude", "hash": "866c0de48ba61899", "src": "db2@1.60.1.70170"}
+{"id": 1218092, "field": "name", "en": "Quietude", "hash": "866c0de48ba61899", "src": "db2@1.60.1.70170"}
+{"id": 1218121, "field": "name", "en": "Horn of the Dawn", "hash": "4af1ac18136414c4", "src": "db2@1.60.1.70170"}
+{"id": 1218121, "field": "description", "en": "Rally your nearby party or raid members, granting them $s1% increased spell critical strike chance, $s3% increased melee and ranged critical strike chance, and $s2 increased attack power. Lasts $473387d. Exclusive with similar world effects and unaffected by Chronoboons.", "hash": "e487cf6ecb188fdb", "src": "db2@1.60.1.70170"}
+{"id": 1218121, "field": "aura", "en": "Increases critical chance of spells by $s1%, melee and ranged by $s3% and grants $s2 attack power.", "hash": "04d1ed3388fc5c5d", "src": "db2@1.60.1.70170"}
+{"id": 1218134, "field": "name", "en": "Tranquilizing Shot", "hash": "a7f46e880add1d49", "src": "db2@1.60.1.70170"}
+{"id": 1218134, "field": "description", "en": "Attempts to remove $s1 Frenzy effect from an enemy creature.", "hash": "19756a13844bfc2e", "src": "db2@1.60.1.70170"}
+{"id": 1218154, "field": "name", "en": "Strikes of the Sinister", "hash": "3be53bafe3548756", "src": "db2@1.60.1.70170"}
+{"id": 1218154, "field": "aura", "en": "Sinister Strike hits $s1 additional nearby target.", "hash": "b2d18ca2a8c52783", "src": "db2@1.60.1.70170"}
+{"id": 1218178, "field": "name", "en": "Kill Shot", "hash": "ad1ea0a5418cb698", "src": "db2@1.60.1.70170"}
+{"id": 1218184, "field": "name", "en": "(DNT) Bonus Bar Test", "hash": "bce090fa1e2b4e5b", "src": "db2@1.60.1.70170"}
+{"id": 1218198, "field": "name", "en": "Abhorrent Infestation", "hash": "3c96b9cf0a0b6080", "src": "db2@1.60.1.70170"}
+{"id": 1218198, "field": "description", "en": "The Arachnid Quarter is empowered. While in combat, egg sacs will randomly spawn nearby and explode after a few seconds.", "hash": "d438ca64fa7000bb", "src": "db2@1.60.1.70170"}
+{"id": 1218198, "field": "aura", "en": "The Arachnid Quarter is empowered. While in combat, egg sacs will randomly spawn nearby and explode after a few seconds.", "hash": "d438ca64fa7000bb", "src": "db2@1.60.1.70170"}
+{"id": 1218209, "field": "name", "en": "(DNT) Summon Egg", "hash": "4363dc19cc691043", "src": "db2@1.60.1.70170"}
+{"id": 1218210, "field": "name", "en": "(DNT) Force Cast Egg Summon", "hash": "a562c7bc59387038", "src": "db2@1.60.1.70170"}
+{"id": 1218212, "field": "name", "en": "Egg Sac Eruption", "hash": "ea7df4cc2e0833fc", "src": "db2@1.60.1.70170"}
+{"id": 1218216, "field": "name", "en": "Subjugated Spinners", "hash": "9abb0707988c4b65", "src": "db2@1.60.1.70170"}
+{"id": 1218216, "field": "description", "en": "Deals Nature damage over time. Gives your attacks a chance to spawn spider minions that launch at your enemies.", "hash": "a195c5d54d098309", "src": "db2@1.60.1.70170"}
+{"id": 1218216, "field": "aura", "en": "Deals Nature damage over time. Gives your attacks a chance to spawn spider minions that launch at your enemies.", "hash": "a195c5d54d098309", "src": "db2@1.60.1.70170"}
+{"id": 1218232, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70170"}
+{"id": 1218240, "field": "name", "en": "Kill Shot", "hash": "ad1ea0a5418cb698", "src": "db2@1.60.1.70170"}
+{"id": 1218240, "field": "description", "en": "You attempt to finish off a wounded target, firing a ranged attack dealing $s2% weapon damage plus ${$m1/100*$m2/100*$<damagepower>}. Kill Shot has no minimum range. Kill Shot's cooldown is reset if used on an enemy that has 20% or less health.", "hash": "eae59b9640e5cae2", "src": "db2@1.60.1.70170"}
+{"id": 1218271, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70170"}
+{"id": 1218271, "field": "description", "en": "The forces of the Scourge grow stronger.", "hash": "c72f37946650b80c", "src": "db2@1.60.1.70170"}
+{"id": 1218271, "field": "aura", "en": "The forces of the Scourge grow stronger. Chance to dodge reduced by ${$s1/$u}% and chance to be hit increased by ${$s2/$u}%.\r\n\r\nThe benefits from your Seal of the Dawn cannot exceed Rank $s3.", "hash": "23ad32b4636ce644", "src": "db2@1.60.1.70170"}
+{"id": 1218275, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70170"}
+{"id": 1218275, "field": "description", "en": "The forces of the Scourge grow stronger.", "hash": "c72f37946650b80c", "src": "db2@1.60.1.70170"}
+{"id": 1218275, "field": "aura", "en": "The forces of the Scourge grow stronger. Chance to dodge reduced by ${$s1/$u}% and chance to be hit increased by ${$s2/$u}%. \r\n\r\nThe benefits from your Seal of the Dawn cannot exceed Rank ${$s3/$u}.", "hash": "e33d2031061bfc4c", "src": "db2@1.60.1.70170"}
+{"id": 1218276, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70170"}
+{"id": 1218276, "field": "description", "en": "The forces of the Scourge grow stronger.\r\n", "hash": "c72f37946650b80c", "src": "db2@1.60.1.70170"}
+{"id": 1218276, "field": "aura", "en": "The forces of the Scourge grow stronger. Chance to dodge reduced by ${$s1/$u}% and chance to be hit increased by ${$s2/$u}%.\r\n\r\nThe benefits from your Seal of the Dawn cannot exceed Rank ${$s3/$u}.", "hash": "e33d2031061bfc4c", "src": "db2@1.60.1.70170"}
+{"id": 1218283, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70170"}
+{"id": 1218283, "field": "description", "en": "The Lich King himself has taken notice. No hope remains here.", "hash": "a62b4834f9ab3074", "src": "db2@1.60.1.70170"}
+{"id": 1218283, "field": "aura", "en": "The Lich King himself has taken notice. No hope remains here. Chance to dodge reduced by ${$s1/$u}% and chance to be hit increased by ${$s2/$u}%.\r\n\r\nThe benefits from your Seal of the Dawn cannot exceed Rank ${$s3/$u}.", "hash": "dcc174e42c8e709c", "src": "db2@1.60.1.70170"}
+{"id": 1218285, "field": "name", "en": "Locked and Loading", "hash": "9a213bc4dfe63fcc", "src": "db2@1.60.1.70170"}
+{"id": 1218285, "field": "aura", "en": "Unable to benefit from the Lock and Load buff.", "hash": "faeb76d0e411b4fc", "src": "db2@1.60.1.70170"}
+{"id": 1218309, "field": "name", "en": "Durability Repair (PT)", "hash": "bb0256475aebfe54", "src": "db2@1.60.1.70170"}
+{"id": 1218345, "field": "name", "en": "Glaciate", "hash": "80f8550f464385d1", "src": "db2@1.60.1.70170"}
+{"id": 1218345, "field": "aura", "en": "Target takes $s1% increased damage from the caster's next Ice Lance.", "hash": "ea71cd635d76d785", "src": "db2@1.60.1.70170"}
+{"id": 1218352, "field": "name", "en": "Glaciate", "hash": "80f8550f464385d1", "src": "db2@1.60.1.70170"}
+{"id": 1218352, "field": "description", "en": "Gives your Frost damage spells a $h% chance to apply the Winter's Chill effect, which increases the chance a Frost spell will critically hit the target by $12579s1% for $12579d.  Stacks up to $12579u times.", "hash": "5d65740f6d204296", "src": "db2@1.60.1.70170"}
+{"id": 1218358, "field": "name", "en": "Rabid Frenzy", "hash": "45dbe91bc72f68a7", "src": "db2@1.60.1.70170"}
+{"id": 1218358, "field": "description", "en": "Send the target into a rabid frenzy, increasing melee attack power by $s1 but reducing armor by $s2 for $d.  Rabid enemies will not flee and will ignore Fear and Horror effects.", "hash": "adcaaf07f7716c21", "src": "db2@1.60.1.70170"}
+{"id": 1218358, "field": "aura", "en": "Increases melee attack power by $s1 and decreases armor by $s2.   Target will not flee and will ignore Fear and Horror effects.", "hash": "83fba19790e5fa9c", "src": "db2@1.60.1.70170"}
+{"id": 1218360, "field": "name", "en": "Smash", "hash": "bfa6c905fc6a3a62", "src": "db2@1.60.1.70170"}
+{"id": 1218363, "field": "name", "en": "Sit A While", "hash": "3f4b5e3a75b9bd7e", "src": "db2@1.60.1.70170"}
+{"id": 1218363, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
+{"id": 1218364, "field": "name", "en": "Free!", "hash": "dc210f9d7d68d5e2", "src": "db2@1.60.1.70170"}
+{"id": 1218364, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
+{"id": 1218366, "field": "name", "en": "Living Darkness", "hash": "630b8b8552f4a110", "src": "db2@1.60.1.70170"}
+{"id": 1218366, "field": "description", "en": "A chilling, magical darkness washes over you... ", "hash": "99e047cfa3ebbbe0", "src": "db2@1.60.1.70170"}
+{"id": 1218366, "field": "aura", "en": "A chilling, magical darkness washes over you...", "hash": "99e047cfa3ebbbe0", "src": "db2@1.60.1.70170"}
+{"id": 1218367, "field": "name", "en": "Brandish", "hash": "285e6185ed8b9b2f", "src": "db2@1.60.1.70170"}
+{"id": 1218367, "field": "description", "en": "Hold up the Enchanted Torch and attempt to dispel the darkness near Karazhan Crypts.", "hash": "c521877515c15cf6", "src": "db2@1.60.1.70170"}
+{"id": 1218375, "field": "name", "en": "Dark Offering", "hash": "8a84821c31deeb2f", "src": "db2@1.60.1.70170"}
+{"id": 1218415, "field": "name", "en": "Conjure Burning Conduit", "hash": "05886e0ead508bc3", "src": "db2@1.60.1.70170"}
+{"id": 1218423, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Restoration 2P Bonus", "hash": "b0cba74913d28a13", "src": "db2@1.60.1.70170"}
+{"id": 1218423, "field": "description", "en": "Your Lifebloom now has a $s1% chance to heal the target for one application of its dispel amount each time the target takes damage. This effect can only occur once every few seconds.", "hash": "1848efd06fecffb1", "src": "db2@1.60.1.70170"}
+{"id": 1218427, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Restoration 4P Bonus", "hash": "9faeacccfea495e9", "src": "db2@1.60.1.70170"}
+{"id": 1218427, "field": "description", "en": "Each time your Rejuvenation rank 10 or rank 11 heals a target, you have a $s1% chance to restore $1219708m1 mana, $1219706m1 energy, or ${$1219707m1/10} rage to your target.", "hash": "d90deaa16b2edfe5", "src": "db2@1.60.1.70170"}
+{"id": 1218429, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Restoration 6P Bonus", "hash": "8e91b24fe976a1d0", "src": "db2@1.60.1.70170"}
+{"id": 1218429, "field": "description", "en": "Your Rejuvenation and Regrowth refresh their duration to full each time their target is damaged by an Undead enemy.", "hash": "1907f36ea33f2056", "src": "db2@1.60.1.70170"}
+{"id": 1218443, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Balance 2P Bonus", "hash": "168ba4b471fad7ca", "src": "db2@1.60.1.70170"}
+{"id": 1218443, "field": "description", "en": "Your Moonfire and Sunfire deal $s1% more damage.", "hash": "4762831ced0f2994", "src": "db2@1.60.1.70170"}
+{"id": 1218444, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Balance 4P Bonus", "hash": "056eaa375ccce3b1", "src": "db2@1.60.1.70170"}
+{"id": 1218444, "field": "description", "en": "The cooldown of your Starsurge spell is reduced by ${$m1/-1000}.1 sec.", "hash": "a034b5818a9ebe4f", "src": "db2@1.60.1.70170"}
+{"id": 1218445, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Balance 6P Bonus", "hash": "f451afb5479eef98", "src": "db2@1.60.1.70170"}
+{"id": 1218445, "field": "description", "en": "When your Starsurge strikes an Undead target, the remaining duration on your active Starfall is reset to $m1 sec.", "hash": "a0e20048f780a9e8", "src": "db2@1.60.1.70170"}
+{"id": 1218476, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Feral 2P Bonus", "hash": "52a593db1e0e44bd", "src": "db2@1.60.1.70170"}
+{"id": 1218476, "field": "description", "en": "Your Rake now deals its periodic damage every $s1 sec, increasing its total damage over time by $s3%.", "hash": "77191e7b3ece9e33", "src": "db2@1.60.1.70170"}
+{"id": 1218477, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Feral 4P Bonus", "hash": "4188995e08e050a4", "src": "db2@1.60.1.70170"}
+{"id": 1218477, "field": "description", "en": "Your Tiger's Fury cooldown is reduced by $s1%.", "hash": "4db15c399784f155", "src": "db2@1.60.1.70170"}
+{"id": 1218478, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Feral 6P Bonus", "hash": "306b9ee1f3b25c7a", "src": "db2@1.60.1.70170"}
+{"id": 1218478, "field": "description", "en": "Each time you deal Bleed damage to an Undead target, you gain $1218479s1% increased damage and critical damage done to Undead for $1218479d, stacking up to $1218479u times.", "hash": "4064eb1d059d49e5", "src": "db2@1.60.1.70170"}
+{"id": 1218479, "field": "name", "en": "Undead Slaying", "hash": "5c2c0413f79b9e47", "src": "db2@1.60.1.70170"}
+{"id": 1218479, "field": "aura", "en": "Damage and critical damage done to Undead increased by $s1%.", "hash": "d6f5d1053789e3f5", "src": "db2@1.60.1.70170"}
+{"id": 1218482, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Guardian 2P Bonus", "hash": "c480ec456af45593", "src": "db2@1.60.1.70170"}
+{"id": 1218482, "field": "description", "en": "Your Growl ability never misses, and your chance to be Dodged or Parried is reduced by $s1%.", "hash": "5bc5577fde85b004", "src": "db2@1.60.1.70170"}
+{"id": 1218485, "field": "name", "en": "Draught of the Sands", "hash": "104aad10c00d6a88", "src": "db2@1.60.1.70170"}
+{"id": 1218485, "field": "description", "en": "Increases all damage caused against targets in Silithus, Ahn'Qiraj, Eastern Plaguelands, and Naxxramas by $s1% and increases critical damage caused against targets in these areas by an additional $s2%.", "hash": "4212319fbc6718c4", "src": "db2@1.60.1.70170"}
+{"id": 1218485, "field": "aura", "en": "Damage against targets in Silithus, Ahn'Qiraj, Eastern Plaguelands, and Naxxramas increased by $s1%.\r\nCritical damage against targets in these areas is also increased by $s2%.", "hash": "f06a2af86b420a41", "src": "db2@1.60.1.70170"}
+{"id": 1218499, "field": "name", "en": "Burning Conduit", "hash": "1b97e3ffc7218088", "src": "db2@1.60.1.70170"}
+{"id": 1218506, "field": "name", "en": "Growl", "hash": "edb16dc984083904", "src": "db2@1.60.1.70170"}
+{"id": 1218506, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70170"}
+{"id": 1218507, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Guardian 4P Bonus", "hash": "b363f1c855c6617a", "src": "db2@1.60.1.70170"}
+{"id": 1218507, "field": "description", "en": "Reduces the cooldown on your Survival Instincts by ${$m1/-60000} min, and reduces the cooldown on your Berserk ability by ${$m2/-60000} min.", "hash": "ba096367aed0d316", "src": "db2@1.60.1.70170"}
+{"id": 1218509, "field": "name", "en": "S03 - Item - Naxxramas - Druid - Guardian 6P Bonus", "hash": "a246f74b40986d61", "src": "db2@1.60.1.70170"}
+{"id": 1218509, "field": "description", "en": "When you take damage from an Undead enemy, the remaining duration of your active Frenzied Regeneration is reset to $m1 sec. In addition, Frenzied Regeneration will never consume your last $s2 Rage to generate healing.", "hash": "4f329ae2cfa2dcab", "src": "db2@1.60.1.70170"}
+{"id": 1218514, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Ranged 4P Bonus", "hash": "79302bb5ddfb33d4", "src": "db2@1.60.1.70170"}
+{"id": 1218514, "field": "description", "en": "Your Serpent Sting deals $s1% more damage.", "hash": "fa192432bd4b852b", "src": "db2@1.60.1.70170"}
+{"id": 1218515, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Ranged 2P Bonus", "hash": "8a4d2632f32927ed", "src": "db2@1.60.1.70170"}
+{"id": 1218515, "field": "description", "en": "Reduces the cooldown on Chimera Shot, Explosive Shot, and Aimed Shot by ${$m1/-1000}.1 sec, Kill Shot by ${$m2/-1000} sec, and Multi-Shot by ${$m3/-1000} sec.", "hash": "c23782855396a92f", "src": "db2@1.60.1.70170"}
+{"id": 1218569, "field": "name", "en": "[DNT] S03 - AQ Big - Tracking Message", "hash": "497d557a2777e670", "src": "db2@1.60.1.70170"}
+{"id": 1218574, "field": "name", "en": "Critical Aim", "hash": "81cec6eabacf0447", "src": "db2@1.60.1.70170"}
+{"id": 1218574, "field": "aura", "en": "Critical strike chance increased by $s1%.", "hash": "c61631802e8d92e5", "src": "db2@1.60.1.70170"}
+{"id": 1218575, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Ranged 6P Bonus", "hash": "68133138c8cd3fbb", "src": "db2@1.60.1.70170"}
+{"id": 1218575, "field": "description", "en": "You gain $1226739s1% increased damage and critical damage done to Undead for $1226739d each time you hit an Undead enemy with a ranged attack, stacking up to $1226739u times.", "hash": "1245861509376866", "src": "db2@1.60.1.70170"}
+{"id": 1218576, "field": "name", "en": "Satyr Corruption", "hash": "137b720e3ad33416", "src": "db2@1.60.1.70170"}
+{"id": 1218577, "field": "name", "en": "[DNT] S03 - AQ Small - Trial Tracking Message", "hash": "afe1c4aa40ab9c90", "src": "db2@1.60.1.70170"}
+{"id": 1218582, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Melee 2P Bonus", "hash": "3f2052dd66743a8e", "src": "db2@1.60.1.70170"}
+{"id": 1218582, "field": "description", "en": "Your Wyvern Strike and Mongoose Bite deal $s1% more initial damage.", "hash": "164f838fddd04fa0", "src": "db2@1.60.1.70170"}
+{"id": 1218583, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Melee 4P Bonus", "hash": "2e03586051464675", "src": "db2@1.60.1.70170"}
+{"id": 1218583, "field": "description", "en": "Reduces the cooldown on your Wyvern Strike ability by ${$m1/-1000} sec, reduces the cooldown on your Raptor Strike ability by ${$m2/-1000} sec, and reduces the cooldown on your Flanking Strike ability by ${$m3/-1000} sec.", "hash": "e343e3b807038be4", "src": "db2@1.60.1.70170"}
+{"id": 1218585, "field": "name", "en": "[DNT] Dummy Aura", "hash": "dd08df9ac8ca4f3b", "src": "db2@1.60.1.70170"}
+{"id": 1218587, "field": "name", "en": "Undead Slaying", "hash": "5c2c0413f79b9e47", "src": "db2@1.60.1.70170"}
+{"id": 1218587, "field": "aura", "en": "Damage and critical damage done to Undead increased by $s1%.", "hash": "d6f5d1053789e3f5", "src": "db2@1.60.1.70170"}
+{"id": 1218589, "field": "name", "en": "S03 - Item - Naxxramas - Hunter - Melee 6P Bonus", "hash": "1ce65de33c18525c", "src": "db2@1.60.1.70170"}
+{"id": 1218589, "field": "description", "en": "You gain $1218587s1% increased damage and critical damage done to Undead for $1218587d each time you hit an Undead enemy with a melee attack, stacking up to $1218587u times. Stacks are lost upon performing a ranged attack.", "hash": "02ea5910b80ddd8b", "src": "db2@1.60.1.70170"}
+{"id": 1218592, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Arcane 2P Bonus", "hash": "7f6825cc218b0093", "src": "db2@1.60.1.70170"}
+{"id": 1218592, "field": "description", "en": "Allies with your Temporal Beacon heal for ${$SPA*$m1/1000+$<healpower>*$400735m1/100} health every $400735t1 sec.", "hash": "8cc45e420c591f87", "src": "db2@1.60.1.70170"}
+{"id": 1218599, "field": "name", "en": "Teleport to Deadwind Pass [DNT]", "hash": "b135209146189d1c", "src": "db2@1.60.1.70170"}
+{"id": 1218624, "field": "name", "en": "Resurrection", "hash": "4e95d3bcfd7d75d3", "src": "db2@1.60.1.70170"}
+{"id": 1218693, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Arcane 4P Bonus", "hash": "6e4b2b4f0c5d0c7a", "src": "db2@1.60.1.70170"}
+{"id": 1218693, "field": "description", "en": "Your Regeneration ability grants your target $s1% increased movement speed while you are channeling, and each time it heals your target, they have a chance to gain $1218695s2% increased attack and casting speed for $1218695d.", "hash": "26c1a19a89e727ea", "src": "db2@1.60.1.70170"}
+{"id": 1218695, "field": "name", "en": "Overclocked", "hash": "7ad0e2fb0ae93abe", "src": "db2@1.60.1.70170"}
+{"id": 1218695, "field": "aura", "en": "Attack and casting speeds increased by $s1%.", "hash": "d3c818285d952efa", "src": "db2@1.60.1.70170"}
+{"id": 1218697, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Arcane 6P Bonus", "hash": "5d2e30d2f72f1850", "src": "db2@1.60.1.70170"}
+{"id": 1218697, "field": "description", "en": "Damage you deal to Undead causes $s1% more chronomantic healing, and you gain mana equal to $s2% of the chronomantic healing you generate from damaging Undead.", "hash": "326c1470f5498163", "src": "db2@1.60.1.70170"}
+{"id": 1218699, "field": "name", "en": "Chronosalvage", "hash": "32f83188ed025920", "src": "db2@1.60.1.70170"}
+{"id": 1218700, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Damage 4P Bonus", "hash": "3730128e28fef174", "src": "db2@1.60.1.70170"}
+{"id": 1218700, "field": "description", "en": "Your Evocation grants you $?a1218232|a1218271|a1218275|a1218276|a1218283|a1224428[$1218701s1%][$1218701s2%] increased damage done every sec you channel it, stacking up to $m2 times and lasting $1218701d.", "hash": "e98502687163a30d", "src": "db2@1.60.1.70170"}
+{"id": 1218701, "field": "name", "en": "Evoker", "hash": "f0f64aadb3154df6", "src": "db2@1.60.1.70170"}
+{"id": 1218701, "field": "aura", "en": "All damage done increased by $w1%.", "hash": "87211d4f0d79893e", "src": "db2@1.60.1.70170"}
+{"id": 1218988, "field": "name", "en": "Subjugated Spinners", "hash": "9abb0707988c4b65", "src": "db2@1.60.1.70170"}
+{"id": 1218993, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Damage 2P Bonus", "hash": "484d0d0b3e2ce58d", "src": "db2@1.60.1.70170"}
+{"id": 1218993, "field": "description", "en": "Reduces the cooldown on your Evocation ability by $s1%.", "hash": "caf8b47bf75ef498", "src": "db2@1.60.1.70170"}
+{"id": 1218995, "field": "name", "en": "S03 - Item - Naxxramas - Mage - Damage 6P Bonus", "hash": "2613181113d0fd5b", "src": "db2@1.60.1.70170"}
+{"id": 1218995, "field": "description", "en": "Your Ignite damage does not decay on Undead targets below $s1% health, and Undead targets below $s2% health take damage as if they were Frozen.", "hash": "ef47dea20383b513", "src": "db2@1.60.1.70170"}

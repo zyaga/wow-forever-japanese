@@ -1,3 +1,3 @@
-{"id": "JOIN_QUEUE", "field": "text", "en": "Request to Join", "hash": "d6f22d9894b99ecd", "src": "db2@1.60.1.70124"}
-{"id": "JOURNEYMAN", "field": "text", "en": "Journeyman", "hash": "b8b3b7cb833773c0", "src": "db2@1.60.1.70124"}
-{"id": "JOURNEY_UNLOCKED_TOAST", "field": "text", "en": "Journey Unlocked", "hash": "a63faa7881163fce", "src": "db2@1.60.1.70124"}
+{"id": "JOIN_QUEUE", "field": "text", "en": "Request to Join", "hash": "d6f22d9894b99ecd", "src": "db2@1.60.1.70170"}
+{"id": "JOURNEYMAN", "field": "text", "en": "Journeyman", "hash": "b8b3b7cb833773c0", "src": "db2@1.60.1.70170"}
+{"id": "JOURNEY_UNLOCKED_TOAST", "field": "text", "en": "Journey Unlocked", "hash": "a63faa7881163fce", "src": "db2@1.60.1.70170"}

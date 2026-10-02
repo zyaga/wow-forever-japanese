@@ -333,6 +333,24 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70124 → 1.60.1.70170 (2026-10-02)
+
+Quest cache: 2,404 records (the all-ids sweep, cut by a logout near the top of the range, then a catch-up scan of
+10,156 ids); 74 quests new to the cache, 26 that 70124 answered are not answered on 70170. Client tables: 31, with
+the build's own hotfixes (4,496 ItemSparse rows added). The wago.tools cross-check: 0 rows differ on all eight
+tables; every row count difference is a hotfix wago's export does not carry (ItemSparse 4,496, SpellName 8, Spell
+16, GlobalStrings 1), and wago has no row ours lacks. The UI extract: 4,412 files, 121 changed from 70124.
+
+| Type | Reworded (shipped line now stale) | New English lines (to draft) | Gone | Drafted |
+|---|---|---|---|---|
+| quest | 111 machine (87 descriptions, 23 objectives, 1 title); 14 more machine lines rejected because a name or number in the English changed | 70 titles, 63 objectives, 67 descriptions | 2 (titles of 1005, 1006, not answered on 70170) | pending |
+| item | 255 tooltips (213 machine, 42 hand corrections) | 41 tooltips (26 flavour lines the bare-label rule used to skip) | 3 | pending |
+| spell | 383 (324 descriptions, 58 auras machine, 1 description hand correction) | 16 descriptions, 17 auras (visible spells; 19 flavour lines) | 16 | pending |
+| objective, area | 8 objectives | 10 objectives | 0 | pending |
+| ui | 34 machine; 2 rejected (`STAT_SPELLHEALING_TOOLTIP`, `STAT_SPELLPOWER_TOOLTIP`: the English gained line breaks) | 32 keys the 70170 windows newly use (combat text options, free bag slots, quest fading, tip of the day, group finder playstyle, stable buttons) | 1 key no longer used | pending |
+| book | 0 | 24 pages (11 unique), left over from earlier builds | 0 | pending |
+| gossip | 0 | 0 | 0 | none |
+
 ### 1.60.1.70009 → 1.60.1.70124 (2026-10-01)
 
 | Type | Reworded | New English lines | Gone | Drafted |

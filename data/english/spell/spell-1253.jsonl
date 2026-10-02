@@ -1,52 +1,52 @@
-{"id": 1253106, "field": "name", "en": "Head Scratcher area", "hash": "baf2c73c9a723230", "src": "db2@1.60.1.70124"}
-{"id": 1253108, "field": "name", "en": "Place Head Scratcher Lure", "hash": "9624e258da0fa2a9", "src": "db2@1.60.1.70124"}
-{"id": 1253123, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70124"}
-{"id": 1253124, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70124"}
-{"id": 1253125, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70124"}
-{"id": 1253126, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70124"}
-{"id": 1253127, "field": "name", "en": "Portal to Dalaran", "hash": "66b818d51e8c4d0e", "src": "db2@1.60.1.70124"}
-{"id": 1253128, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
-{"id": 1253151, "field": "name", "en": "Sanctuary of the Shen'dorei", "hash": "afeeec64c426026b", "src": "db2@1.60.1.70124"}
-{"id": 1253151, "field": "aura", "en": "The Windshapers and the High Order have set aside their differences, for now.\r\n\r\n<Combat between players is currently forbidden on Zephras Isle.>", "hash": "2092681ab9d77ece", "src": "db2@1.60.1.70124"}
-{"id": 1253200, "field": "name", "en": "Fly Away!", "hash": "41e7d768bb7ddcc2", "src": "db2@1.60.1.70124"}
-{"id": 1253200, "field": "aura", "en": "You've startled the forest sprite!", "hash": "06fb2fdf4e367dba", "src": "db2@1.60.1.70124"}
-{"id": 1253298, "field": "name", "en": "[DNT] Head Scratcher", "hash": "82849776937b8cab", "src": "db2@1.60.1.70124"}
-{"id": 1253317, "field": "name", "en": "Slam", "hash": "0b3ba31d857cc8e6", "src": "db2@1.60.1.70124"}
-{"id": 1253317, "field": "description", "en": "Slams an enemy to the ground, inflicting Physical damage and stunning it for $d.", "hash": "b1a2fbcab4ea7eb4", "src": "db2@1.60.1.70124"}
-{"id": 1253317, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
-{"id": 1253321, "field": "name", "en": "Unicorn's Feast", "hash": "07c438012f226ec4", "src": "db2@1.60.1.70124"}
+{"id": 1253106, "field": "name", "en": "Head Scratcher area", "hash": "baf2c73c9a723230", "src": "db2@1.60.1.70170"}
+{"id": 1253108, "field": "name", "en": "Place Head Scratcher Lure", "hash": "9624e258da0fa2a9", "src": "db2@1.60.1.70170"}
+{"id": 1253123, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70170"}
+{"id": 1253124, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70170"}
+{"id": 1253125, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70170"}
+{"id": 1253126, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70170"}
+{"id": 1253127, "field": "name", "en": "Portal to Dalaran", "hash": "66b818d51e8c4d0e", "src": "db2@1.60.1.70170"}
+{"id": 1253128, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
+{"id": 1253151, "field": "name", "en": "Sanctuary of the Shen'dorei", "hash": "afeeec64c426026b", "src": "db2@1.60.1.70170"}
+{"id": 1253151, "field": "aura", "en": "The Windshapers and the High Order have set aside their differences, for now.\r\n\r\n<Combat between players is currently forbidden on Zephras Isle.>", "hash": "2092681ab9d77ece", "src": "db2@1.60.1.70170"}
+{"id": 1253200, "field": "name", "en": "Fly Away!", "hash": "41e7d768bb7ddcc2", "src": "db2@1.60.1.70170"}
+{"id": 1253200, "field": "aura", "en": "You've startled the forest sprite!", "hash": "06fb2fdf4e367dba", "src": "db2@1.60.1.70170"}
+{"id": 1253298, "field": "name", "en": "[DNT] Head Scratcher", "hash": "82849776937b8cab", "src": "db2@1.60.1.70170"}
+{"id": 1253317, "field": "name", "en": "Slam", "hash": "0b3ba31d857cc8e6", "src": "db2@1.60.1.70170"}
+{"id": 1253317, "field": "description", "en": "Slams an enemy to the ground, inflicting Physical damage and stunning it for $d.", "hash": "b1a2fbcab4ea7eb4", "src": "db2@1.60.1.70170"}
+{"id": 1253317, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
+{"id": 1253321, "field": "name", "en": "Unicorn's Feast", "hash": "07c438012f226ec4", "src": "db2@1.60.1.70170"}
 {"id": 1253321, "field": "description", "en": "Unfolds into a Field Repair Bot that can repair damaged items and purchase unwanted goods.  After 10 minutes its internal motor fails.", "hash": "bb250bbd08fc8094", "src": "db2@1.60.1.70124"}
-{"id": 1253348, "field": "name", "en": "You Smell Like Garbage", "hash": "940006494cd815af", "src": "db2@1.60.1.70124"}
-{"id": 1253348, "field": "description", "en": "You smell like garbage. Everything around you probably hates the smell.", "hash": "4640ee708394e804", "src": "db2@1.60.1.70124"}
-{"id": 1253348, "field": "aura", "en": "You smell like garbage. Everything around you probably hates the smell.", "hash": "4640ee708394e804", "src": "db2@1.60.1.70124"}
-{"id": 1253351, "field": "name", "en": "Garbage Smell", "hash": "682109807fcd07bd", "src": "db2@1.60.1.70124"}
-{"id": 1253351, "field": "description", "en": "Taunts all enemies within 30 yards.", "hash": "e6ecacad7830b27d", "src": "db2@1.60.1.70124"}
-{"id": 1253356, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
-{"id": 1253365, "field": "name", "en": "Hard Pull", "hash": "f3fb20dcdbce0723", "src": "db2@1.60.1.70124"}
-{"id": 1253365, "field": "aura", "en": "Your arm needs to rest before giving the lever another crank.", "hash": "4ebcaaa0b1a300f9", "src": "db2@1.60.1.70124"}
-{"id": 1253366, "field": "name", "en": "Hard Pull", "hash": "f3fb20dcdbce0723", "src": "db2@1.60.1.70124"}
-{"id": 1253366, "field": "aura", "en": "Your arm needs to rest before giving the lever another crank.", "hash": "4ebcaaa0b1a300f9", "src": "db2@1.60.1.70124"}
-{"id": 1253371, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70124"}
-{"id": 1253372, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
-{"id": 1253375, "field": "name", "en": "Spectral Presence", "hash": "0984304a869ce849", "src": "db2@1.60.1.70124"}
-{"id": 1253408, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70124"}
-{"id": 1253413, "field": "name", "en": "(DNT) Raise Dead Spawn Spell", "hash": "2f2a07d187a79bbb", "src": "db2@1.60.1.70124"}
-{"id": 1253414, "field": "name", "en": "Dying Will", "hash": "71cd2dbcf48bb7da", "src": "db2@1.60.1.70124"}
-{"id": 1253552, "field": "name", "en": "Foul Volley", "hash": "ed83f7414b471681", "src": "db2@1.60.1.70124"}
-{"id": 1253552, "field": "description", "en": "Shoots poison at an enemy, inflicting $s1 Nature damage, then additional damage every $t2 sec for $d.", "hash": "b50262993fb8c135", "src": "db2@1.60.1.70124"}
-{"id": 1253552, "field": "aura", "en": "$w2 Nature damage inflicted every $t2 sec.", "hash": "d008869eb72f958e", "src": "db2@1.60.1.70124"}
-{"id": 1253568, "field": "name", "en": "Tranquility", "hash": "f3d301a233979744", "src": "db2@1.60.1.70124"}
-{"id": 1253568, "field": "description", "en": "Regenerates all nearby group members for $s1 every $t1 seconds for $d.  Druid must channel to maintain the spell.", "hash": "d1533effba991712", "src": "db2@1.60.1.70124"}
-{"id": 1253568, "field": "aura", "en": "Heals nearby party members for $s1 every $t1 seconds.", "hash": "7cc0de27c16a010f", "src": "db2@1.60.1.70124"}
-{"id": 1253673, "field": "name", "en": "Play Stay A While Scene (DNT)", "hash": "7564b291f6185864", "src": "db2@1.60.1.70124"}
-{"id": 1253722, "field": "name", "en": "Foul Breath", "hash": "7ae438b57fc49421", "src": "db2@1.60.1.70124"}
-{"id": 1253722, "field": "description", "en": "Stars fall from above, inflicting $s1 damage. ", "hash": "e0cf85f6c6c2644d", "src": "db2@1.60.1.70124"}
-{"id": 1253772, "field": "name", "en": "Digging", "hash": "46a7d08363845641", "src": "db2@1.60.1.70124"}
-{"id": 1253880, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70124"}
-{"id": 1253882, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70124"}
-{"id": 1253916, "field": "name", "en": "Bang a Drum", "hash": "1b673835bd54f9b9", "src": "db2@1.60.1.70124"}
-{"id": 1253931, "field": "name", "en": "Blue Beam", "hash": "73103909c841f858", "src": "db2@1.60.1.70124"}
-{"id": 1253931, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70124"}
-{"id": 1253946, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
-{"id": 1253958, "field": "name", "en": "Bang a Drum", "hash": "1b673835bd54f9b9", "src": "db2@1.60.1.70124"}
-{"id": 1253999, "field": "name", "en": "Summon Undead", "hash": "01b2c05ece70050c", "src": "db2@1.60.1.70124"}
+{"id": 1253348, "field": "name", "en": "You Smell Like Garbage", "hash": "940006494cd815af", "src": "db2@1.60.1.70170"}
+{"id": 1253348, "field": "description", "en": "You smell like garbage. Everything around you probably hates the smell.", "hash": "4640ee708394e804", "src": "db2@1.60.1.70170"}
+{"id": 1253348, "field": "aura", "en": "You smell like garbage. Everything around you probably hates the smell.", "hash": "4640ee708394e804", "src": "db2@1.60.1.70170"}
+{"id": 1253351, "field": "name", "en": "Garbage Smell", "hash": "682109807fcd07bd", "src": "db2@1.60.1.70170"}
+{"id": 1253351, "field": "description", "en": "Taunts all enemies within 30 yds.", "hash": "57ecf5cda5f8c0db", "src": "db2@1.60.1.70170"}
+{"id": 1253356, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
+{"id": 1253365, "field": "name", "en": "Hard Pull", "hash": "f3fb20dcdbce0723", "src": "db2@1.60.1.70170"}
+{"id": 1253365, "field": "aura", "en": "Your arm needs to rest before giving the lever another crank.", "hash": "4ebcaaa0b1a300f9", "src": "db2@1.60.1.70170"}
+{"id": 1253366, "field": "name", "en": "Hard Pull", "hash": "f3fb20dcdbce0723", "src": "db2@1.60.1.70170"}
+{"id": 1253366, "field": "aura", "en": "Your arm needs to rest before giving the lever another crank.", "hash": "4ebcaaa0b1a300f9", "src": "db2@1.60.1.70170"}
+{"id": 1253371, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70170"}
+{"id": 1253372, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
+{"id": 1253375, "field": "name", "en": "Spectral Presence", "hash": "0984304a869ce849", "src": "db2@1.60.1.70170"}
+{"id": 1253408, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70170"}
+{"id": 1253413, "field": "name", "en": "(DNT) Raise Dead Spawn Spell", "hash": "2f2a07d187a79bbb", "src": "db2@1.60.1.70170"}
+{"id": 1253414, "field": "name", "en": "Dying Will", "hash": "71cd2dbcf48bb7da", "src": "db2@1.60.1.70170"}
+{"id": 1253552, "field": "name", "en": "Foul Volley", "hash": "ed83f7414b471681", "src": "db2@1.60.1.70170"}
+{"id": 1253552, "field": "description", "en": "Shoots poison at an enemy, inflicting $s1 Nature damage, then additional damage every $t2 sec for $d.", "hash": "b50262993fb8c135", "src": "db2@1.60.1.70170"}
+{"id": 1253552, "field": "aura", "en": "$w2 Nature damage inflicted every $t2 sec.", "hash": "d008869eb72f958e", "src": "db2@1.60.1.70170"}
+{"id": 1253568, "field": "name", "en": "Tranquility", "hash": "f3d301a233979744", "src": "db2@1.60.1.70170"}
+{"id": 1253568, "field": "description", "en": "Regenerates all nearby group members for $s1 every $t1 sec for $d. The Druid must channel to maintain the spell.", "hash": "1216d9a1a7a2d9b0", "src": "db2@1.60.1.70170"}
+{"id": 1253568, "field": "aura", "en": "Heals nearby party members for $s1 every $t1 sec.", "hash": "793ba8c5c7683984", "src": "db2@1.60.1.70170"}
+{"id": 1253673, "field": "name", "en": "Play Stay A While Scene (DNT)", "hash": "7564b291f6185864", "src": "db2@1.60.1.70170"}
+{"id": 1253722, "field": "name", "en": "Foul Breath", "hash": "7ae438b57fc49421", "src": "db2@1.60.1.70170"}
+{"id": 1253722, "field": "description", "en": "Stars fall from above, inflicting $s1 damage. ", "hash": "e0cf85f6c6c2644d", "src": "db2@1.60.1.70170"}
+{"id": 1253772, "field": "name", "en": "Digging", "hash": "46a7d08363845641", "src": "db2@1.60.1.70170"}
+{"id": 1253880, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70170"}
+{"id": 1253882, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70170"}
+{"id": 1253916, "field": "name", "en": "Bang a Drum", "hash": "1b673835bd54f9b9", "src": "db2@1.60.1.70170"}
+{"id": 1253931, "field": "name", "en": "Blue Beam", "hash": "73103909c841f858", "src": "db2@1.60.1.70170"}
+{"id": 1253931, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70170"}
+{"id": 1253946, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
+{"id": 1253958, "field": "name", "en": "Bang a Drum", "hash": "1b673835bd54f9b9", "src": "db2@1.60.1.70170"}
+{"id": 1253999, "field": "name", "en": "Summon Undead", "hash": "01b2c05ece70050c", "src": "db2@1.60.1.70170"}

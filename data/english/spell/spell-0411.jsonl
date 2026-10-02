@@ -1,60 +1,60 @@
-{"id": 411115, "field": "name", "en": "Survival of the Fittest", "hash": "5f2aaf82eb807b2a", "src": "db2@1.60.1.70124"}
-{"id": 411115, "field": "description", "en": "Reduces the chance you'll be critically hit by melee attacks by $s2% and reduces all damage taken by $s1%. Damage taken reduced by an additional $411124s1% while in Bear Form or Dire Bear Form.", "hash": "3228d0f9ce195bc9", "src": "db2@1.60.1.70124"}
-{"id": 411124, "field": "name", "en": "Survival of the Fittest", "hash": "5f2aaf82eb807b2a", "src": "db2@1.60.1.70124"}
-{"id": 411124, "field": "description", "en": "Reduces all damage taken by $s1%.", "hash": "11733ab18a4ddb1f", "src": "db2@1.60.1.70124"}
-{"id": 411128, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70124"}
-{"id": 411128, "field": "description", "en": "Swipe nearby enemies, inflicting $s1% weapon damage and generating $s2 combo $lpoint:points; on your current target.", "hash": "28dca2a5490925f7", "src": "db2@1.60.1.70124"}
-{"id": 411173, "field": "name", "en": "[DNT] Player is in Mokwa Trigger", "hash": "2e719fcaafa0fde5", "src": "db2@1.60.1.70124"}
-{"id": 411186, "field": "name", "en": "Place Bait", "hash": "4725dee5be1ab96a", "src": "db2@1.60.1.70124"}
-{"id": 411186, "field": "description", "en": "Place as bait near a mountain cat's dwelling.", "hash": "8abf567e085d7961", "src": "db2@1.60.1.70124"}
-{"id": 411210, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70124"}
-{"id": 411220, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70124"}
-{"id": 411239, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70124"}
-{"id": 411249, "field": "name", "en": "Track Mokwa (First)", "hash": "f9845148436faf7c", "src": "db2@1.60.1.70124"}
-{"id": 411249, "field": "description", "en": "Place as bait near a beast's dwelling", "hash": "67ab8176a7756895", "src": "db2@1.60.1.70124"}
-{"id": 411253, "field": "name", "en": "Tidal Burst", "hash": "609f0a52e1563f71", "src": "db2@1.60.1.70124"}
-{"id": 411263, "field": "name", "en": "Track Mokwa (Second)", "hash": "e5df279180c133c8", "src": "db2@1.60.1.70124"}
-{"id": 411263, "field": "description", "en": "Place as bait near a beast's dwelling", "hash": "67ab8176a7756895", "src": "db2@1.60.1.70124"}
-{"id": 411272, "field": "name", "en": "Track Mokwa (Third)", "hash": "a7fdb80bdd6aa6d0", "src": "db2@1.60.1.70124"}
-{"id": 411272, "field": "description", "en": "Place as bait near a beast's dwelling", "hash": "67ab8176a7756895", "src": "db2@1.60.1.70124"}
-{"id": 411280, "field": "name", "en": "Tidal Burst", "hash": "609f0a52e1563f71", "src": "db2@1.60.1.70124"}
-{"id": 411282, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70124"}
-{"id": 411284, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70124"}
-{"id": 411583, "field": "name", "en": "Replace Stand with Swim", "hash": "a2fd4144daacd472", "src": "db2@1.60.1.70124"}
-{"id": 411608, "field": "name", "en": "Tame Prairie Dog", "hash": "5f9d9e46e0768037", "src": "db2@1.60.1.70124"}
-{"id": 411608, "field": "aura", "en": "You've made a friend!", "hash": "135ae248dc96d3c5", "src": "db2@1.60.1.70124"}
-{"id": 411622, "field": "name", "en": "Prairie Dog Musk", "hash": "292c03a5f3384fd1", "src": "db2@1.60.1.70124"}
-{"id": 411622, "field": "description", "en": "Your Tame Beast ability also works on prairie dogs (as companion pet)", "hash": "142e02859a25c403", "src": "db2@1.60.1.70124"}
-{"id": 411622, "field": "aura", "en": "Your Tame Beast ability also works on prairie dogs (as companion pet)", "hash": "142e02859a25c403", "src": "db2@1.60.1.70124"}
-{"id": 411624, "field": "name", "en": "Tame Beast", "hash": "239fa1c74e83273e", "src": "db2@1.60.1.70124"}
-{"id": 411624, "field": "description", "en": "Begins taming a beast to be your companion.  Your armor is reduced by $1515s3% while you focus on taming the beast for $1515d.  If you lose the beast's attention for any reason, the taming process will fail.  Once tamed, the beast will be very unhappy and disloyal.  Try feeding the pet immediately to make it happy.", "hash": "78e3ddf3dc89e0f5", "src": "db2@1.60.1.70124"}
-{"id": 411624, "field": "aura", "en": "Taming pet.", "hash": "c7d3fce891c100e9", "src": "db2@1.60.1.70124"}
-{"id": 411631, "field": "name", "en": "Tame Beast", "hash": "239fa1c74e83273e", "src": "db2@1.60.1.70124"}
-{"id": 411631, "field": "description", "en": "Begins taming a beast to be your companion.  Your armor is reduced by $s3% while you focus on taming the beast for $d.  If you lose the beast's attention for any reason, the taming process will fail.  Once tamed, the beast will be very unhappy and disloyal.  Try feeding the pet immediately to make it happy.", "hash": "653847d095f082f7", "src": "db2@1.60.1.70124"}
-{"id": 411631, "field": "aura", "en": "Taming pet.", "hash": "c7d3fce891c100e9", "src": "db2@1.60.1.70124"}
-{"id": 411684, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70124"}
-{"id": 411684, "field": "description", "en": "Charge an enemy, generate $/10;s2 rage, and stun it for $7922d.  ", "hash": "c36522ce24afb461", "src": "db2@1.60.1.70124"}
-{"id": 411688, "field": "name", "en": "Charge Stun", "hash": "e405ddbf51159685", "src": "db2@1.60.1.70124"}
-{"id": 411688, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
-{"id": 411774, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70124"}
-{"id": 411774, "field": "description", "en": "Attacks nearby enemies in a whirlwind of steel that lasts $d. and inflicts normal damage plus $15576s1.", "hash": "b90dc6288fd80aae", "src": "db2@1.60.1.70124"}
-{"id": 411774, "field": "aura", "en": "Attacking all nearby enemies for normal damage plus $15576s1.", "hash": "381b14ac55e93f7e", "src": "db2@1.60.1.70124"}
-{"id": 411775, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70124"}
-{"id": 411777, "field": "name", "en": "Rune of Carve - Give Rune", "hash": "a6e6125353eae274", "src": "db2@1.60.1.70124"}
-{"id": 411956, "field": "name", "en": "Curse of Blackfathom", "hash": "6359355d225af578", "src": "db2@1.60.1.70124"}
-{"id": 411956, "field": "description", "en": "Curses the target with agony, causing $o1 Shadow damage over $d.  This damage is dealt slowly at first, and builds up as the Curse reaches its full duration.", "hash": "7ee34c93b9d0e20f", "src": "db2@1.60.1.70124"}
-{"id": 411956, "field": "aura", "en": "$o1 Shadow damage over $d.", "hash": "1df96f24d68ea68f", "src": "db2@1.60.1.70124"}
-{"id": 411959, "field": "name", "en": "Fear", "hash": "097bdd043b6b8a3a", "src": "db2@1.60.1.70124"}
-{"id": 411959, "field": "description", "en": "Strikes fear in an enemy, causing it to flee in terror for $d. Only 1 target can be feared at a time.", "hash": "790d3c3066703ee4", "src": "db2@1.60.1.70124"}
-{"id": 411959, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70124"}
-{"id": 411961, "field": "name", "en": "Reveal Poacher", "hash": "9069b58a9ac151c3", "src": "db2@1.60.1.70124"}
-{"id": 411973, "field": "name", "en": "Curse of Blackfathom", "hash": "6359355d225af578", "src": "db2@1.60.1.70124"}
-{"id": 411978, "field": "name", "en": "Curse of Blackfathom", "hash": "6359355d225af578", "src": "db2@1.60.1.70124"}
-{"id": 411990, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
-{"id": 411991, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
-{"id": 411992, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
-{"id": 411993, "field": "name", "en": "Shoddy Camouflage", "hash": "25f0c16cf3d73573", "src": "db2@1.60.1.70124"}
-{"id": 411993, "field": "aura", "en": "Someone's hiding in here...", "hash": "948b6f879cf5d1c8", "src": "db2@1.60.1.70124"}
-{"id": 411995, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70124"}
-{"id": 411995, "field": "description", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70124"}
-{"id": 411995, "field": "aura", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70124"}
+{"id": 411115, "field": "name", "en": "Survival of the Fittest", "hash": "5f2aaf82eb807b2a", "src": "db2@1.60.1.70170"}
+{"id": 411115, "field": "description", "en": "Reduces the chance you'll be critically hit by melee attacks by $s2% and reduces all damage taken by $s1%. Damage taken reduced by an additional $411124s1% while in Bear Form or Dire Bear Form.", "hash": "3228d0f9ce195bc9", "src": "db2@1.60.1.70170"}
+{"id": 411124, "field": "name", "en": "Survival of the Fittest", "hash": "5f2aaf82eb807b2a", "src": "db2@1.60.1.70170"}
+{"id": 411124, "field": "description", "en": "Reduces all damage taken by $s1%.", "hash": "11733ab18a4ddb1f", "src": "db2@1.60.1.70170"}
+{"id": 411128, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70170"}
+{"id": 411128, "field": "description", "en": "Swipe nearby enemies, inflicting $s1% weapon damage and generating $s2 combo $lpoint:points; on your current target.", "hash": "28dca2a5490925f7", "src": "db2@1.60.1.70170"}
+{"id": 411173, "field": "name", "en": "[DNT] Player is in Mokwa Trigger", "hash": "2e719fcaafa0fde5", "src": "db2@1.60.1.70170"}
+{"id": 411186, "field": "name", "en": "Place Bait", "hash": "4725dee5be1ab96a", "src": "db2@1.60.1.70170"}
+{"id": 411186, "field": "description", "en": "Place as bait near a mountain cat's dwelling.", "hash": "8abf567e085d7961", "src": "db2@1.60.1.70170"}
+{"id": 411210, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70170"}
+{"id": 411220, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70170"}
+{"id": 411239, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70170"}
+{"id": 411249, "field": "name", "en": "Track Mokwa (First)", "hash": "f9845148436faf7c", "src": "db2@1.60.1.70170"}
+{"id": 411249, "field": "description", "en": "Place as bait near a beast's dwelling", "hash": "67ab8176a7756895", "src": "db2@1.60.1.70170"}
+{"id": 411253, "field": "name", "en": "Tidal Burst", "hash": "609f0a52e1563f71", "src": "db2@1.60.1.70170"}
+{"id": 411263, "field": "name", "en": "Track Mokwa (Second)", "hash": "e5df279180c133c8", "src": "db2@1.60.1.70170"}
+{"id": 411263, "field": "description", "en": "Place as bait near a beast's dwelling", "hash": "67ab8176a7756895", "src": "db2@1.60.1.70170"}
+{"id": 411272, "field": "name", "en": "Track Mokwa (Third)", "hash": "a7fdb80bdd6aa6d0", "src": "db2@1.60.1.70170"}
+{"id": 411272, "field": "description", "en": "Place as bait near a beast's dwelling", "hash": "67ab8176a7756895", "src": "db2@1.60.1.70170"}
+{"id": 411280, "field": "name", "en": "Tidal Burst", "hash": "609f0a52e1563f71", "src": "db2@1.60.1.70170"}
+{"id": 411282, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70170"}
+{"id": 411284, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70170"}
+{"id": 411583, "field": "name", "en": "Replace Stand with Swim", "hash": "a2fd4144daacd472", "src": "db2@1.60.1.70170"}
+{"id": 411608, "field": "name", "en": "Tame Prairie Dog", "hash": "5f9d9e46e0768037", "src": "db2@1.60.1.70170"}
+{"id": 411608, "field": "aura", "en": "You've made a friend!", "hash": "135ae248dc96d3c5", "src": "db2@1.60.1.70170"}
+{"id": 411622, "field": "name", "en": "Prairie Dog Musk", "hash": "292c03a5f3384fd1", "src": "db2@1.60.1.70170"}
+{"id": 411622, "field": "description", "en": "Your Tame Beast ability also works on prairie dogs (as companion pet)", "hash": "142e02859a25c403", "src": "db2@1.60.1.70170"}
+{"id": 411622, "field": "aura", "en": "Your Tame Beast ability also works on prairie dogs (as companion pet)", "hash": "142e02859a25c403", "src": "db2@1.60.1.70170"}
+{"id": 411624, "field": "name", "en": "Tame Beast", "hash": "239fa1c74e83273e", "src": "db2@1.60.1.70170"}
+{"id": 411624, "field": "description", "en": "Begins taming a beast to be your companion.  Your armor is reduced by $1515s3% while you focus on taming the beast for $1515d.  If you lose the beast's attention for any reason, the taming process will fail.  Once tamed, the beast will be very unhappy and disloyal.  Try feeding the pet immediately to make it happy.", "hash": "78e3ddf3dc89e0f5", "src": "db2@1.60.1.70170"}
+{"id": 411624, "field": "aura", "en": "Taming pet.", "hash": "c7d3fce891c100e9", "src": "db2@1.60.1.70170"}
+{"id": 411631, "field": "name", "en": "Tame Beast", "hash": "239fa1c74e83273e", "src": "db2@1.60.1.70170"}
+{"id": 411631, "field": "description", "en": "Begins taming a beast to be your companion.  Your armor is reduced by $s3% while you focus on taming the beast for $d.  If you lose the beast's attention for any reason, the taming process will fail.  Once tamed, the beast will be very unhappy and disloyal.  Try feeding the pet immediately to make it happy.", "hash": "653847d095f082f7", "src": "db2@1.60.1.70170"}
+{"id": 411631, "field": "aura", "en": "Taming pet.", "hash": "c7d3fce891c100e9", "src": "db2@1.60.1.70170"}
+{"id": 411684, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70170"}
+{"id": 411684, "field": "description", "en": "Charge an enemy, generate $/10;s2 rage, and stun it for $7922d.  ", "hash": "c36522ce24afb461", "src": "db2@1.60.1.70170"}
+{"id": 411688, "field": "name", "en": "Charge Stun", "hash": "e405ddbf51159685", "src": "db2@1.60.1.70170"}
+{"id": 411688, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
+{"id": 411774, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70170"}
+{"id": 411774, "field": "description", "en": "Attacks nearby enemies in a whirlwind of steel that lasts $d. and inflicts normal damage plus $15576s1.", "hash": "b90dc6288fd80aae", "src": "db2@1.60.1.70170"}
+{"id": 411774, "field": "aura", "en": "Attacking all nearby enemies for normal damage plus $15576s1.", "hash": "381b14ac55e93f7e", "src": "db2@1.60.1.70170"}
+{"id": 411775, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70170"}
+{"id": 411777, "field": "name", "en": "Rune of Carve - Give Rune", "hash": "a6e6125353eae274", "src": "db2@1.60.1.70170"}
+{"id": 411956, "field": "name", "en": "Curse of Blackfathom", "hash": "6359355d225af578", "src": "db2@1.60.1.70170"}
+{"id": 411956, "field": "description", "en": "Curses the target with agony, causing $o1 Shadow damage over $d.  This damage is dealt slowly at first, and builds up as the Curse reaches its full duration.", "hash": "7ee34c93b9d0e20f", "src": "db2@1.60.1.70170"}
+{"id": 411956, "field": "aura", "en": "$o1 Shadow damage over $d.", "hash": "1df96f24d68ea68f", "src": "db2@1.60.1.70170"}
+{"id": 411959, "field": "name", "en": "Fear", "hash": "097bdd043b6b8a3a", "src": "db2@1.60.1.70170"}
+{"id": 411959, "field": "description", "en": "Strikes fear in an enemy, causing it to flee in terror for $d. Only 1 target can be feared at a time.", "hash": "790d3c3066703ee4", "src": "db2@1.60.1.70170"}
+{"id": 411959, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70170"}
+{"id": 411961, "field": "name", "en": "Reveal Poacher", "hash": "9069b58a9ac151c3", "src": "db2@1.60.1.70170"}
+{"id": 411973, "field": "name", "en": "Curse of Blackfathom", "hash": "6359355d225af578", "src": "db2@1.60.1.70170"}
+{"id": 411978, "field": "name", "en": "Curse of Blackfathom", "hash": "6359355d225af578", "src": "db2@1.60.1.70170"}
+{"id": 411990, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70170"}
+{"id": 411991, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70170"}
+{"id": 411992, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70170"}
+{"id": 411993, "field": "name", "en": "Shoddy Camouflage", "hash": "25f0c16cf3d73573", "src": "db2@1.60.1.70170"}
+{"id": 411993, "field": "aura", "en": "Someone's hiding in here...", "hash": "948b6f879cf5d1c8", "src": "db2@1.60.1.70170"}
+{"id": 411995, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70170"}
+{"id": 411995, "field": "description", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70170"}
+{"id": 411995, "field": "aura", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70170"}

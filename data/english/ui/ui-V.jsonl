@@ -1,179 +1,179 @@
-{"id": "VERTICAL_SYNC", "field": "text", "en": "Vertical Sync", "hash": "d7d287d1ef38a1f0", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_16XANISOTROPIC", "field": "text", "en": "16x Anisotropic", "hash": "252792ccd81764dd", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_2XANISOTROPIC", "field": "text", "en": "2x Anisotropic", "hash": "1f7b33ea2c9c2c3e", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_4XANISOTROPIC", "field": "text", "en": "4x Anisotropic", "hash": "b5582eb6bc3b1372", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_8XANISOTROPIC", "field": "text", "en": "8x Anisotropic", "hash": "e1122453db78e1eb", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_ADVANCEDLIGHT_HIGH", "field": "text", "en": "High number of samples used from environment lights.", "hash": "46182ead259d8641", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_ADVANCEDLIGHT_LOW", "field": "text", "en": "Low number of samples used from environment lights.", "hash": "fc3f5bc454bb1b4c", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_ADVANCEDLIGHT_MEDIUM", "field": "text", "en": "Moderate number of samples used from environment lights.", "hash": "96890bd331d11fd6", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_AGGRESSIVE", "field": "text", "en": "Aggressive", "hash": "2b3203a442eff4fa", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_BILINEAR", "field": "text", "en": "Bilinear", "hash": "4656bb1287c269b2", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_BUILTIN", "field": "text", "en": "Built-in", "hash": "019288dca515ccbe", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_COMBAT_CUES_DISABLED_WARNING", "field": "text", "en": "Disabling this may cause you to miss important visual cues during combat", "hash": "1df5a0a82b497729", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_COMPUTE_EFFECTS_DISABLED", "field": "text", "en": "Low-resolution volume fog with no placements. Compute-based particle collision disabled.", "hash": "100adb20032d84be", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_COMPUTE_EFFECTS_HIGH", "field": "text", "en": "High-resolution volume fog.", "hash": "ec9e32f023f33131", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_COMPUTE_EFFECTS_LOW", "field": "text", "en": "Low-resolution volume fog with reduced placements.", "hash": "510e84e02c2c7bbd", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_COMPUTE_EFFECTS_MEDIUM", "field": "text", "en": "Medium-resolution volume fog.", "hash": "e705f5cfeab27b05", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_COMPUTE_EFFECTS_ULTRA", "field": "text", "en": "Ultra-resolution volume fog with additional placements.", "hash": "d8c411124e962d92", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_DEPTH_EFFECTS_DISABLED", "field": "text", "en": "No particle depth fading or refraction. Traditional sunshafts and glare.", "hash": "d0846eea7993d54f", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_DEPTH_EFFECTS_HIGH", "field": "text", "en": "Particle depth fading and full-resolution refraction. Depth-based sunshafts and glare with improved sampling.", "hash": "da9490ae89dea818", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_DEPTH_EFFECTS_LOW", "field": "text", "en": "Particle depth fading and no refraction. Depth-based sunshafts and glare.", "hash": "9a35fc3bf9a80b08", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_DEPTH_EFFECTS_MEDIUM", "field": "text", "en": "Particle depth fading and low-resolution refraction. Depth-based sunshafts and glare with improved sampling.", "hash": "2dd92656153a58d8", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_DISABLED", "field": "text", "en": "Disabled", "hash": "87d0536130ef09ab", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_ENABLED", "field": "text", "en": "Enabled", "hash": "7af2f804602c291a", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_FAIR", "field": "text", "en": "Fair", "hash": "097ad4f82b8b7a3e", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_HIGH", "field": "text", "en": "High", "hash": "09c18766661d4089", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_LIQUID_DETAIL_FAIR", "field": "text", "en": "Normal map liquid textures, texture based ripples and sky reflection.", "hash": "2fca43a9a6d35d94", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_LIQUID_DETAIL_LOW", "field": "text", "en": "Animated liquid textures, texture based ripples and no reflection.", "hash": "293f47f9cb9c97fc", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_LIQUID_DETAIL_MEDIUM", "field": "text", "en": "Normal map liquid textures, procedural ripples and screen-based reflection.", "hash": "80e806f3f1bdb7e2", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_LIQUID_DETAIL_ULTRA", "field": "text", "en": "Normal map liquid textures, procedural ripples and full reflection.", "hash": "1210acffcc3e9186", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_LOW", "field": "text", "en": "Low", "hash": "00141ff02dc1f063", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_MEDIUM", "field": "text", "en": "Good", "hash": "09a0d015f087e203", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_MONITOR", "field": "text", "en": "Monitor %d", "hash": "6691ee94aee52450", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_MONITOR_PRIMARY", "field": "text", "en": "Primary", "hash": "ba96033132ed6779", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_NEED_CLIENTRESTART", "field": "text", "en": "Changing this option requires a client restart", "hash": "0ae15820fff0136b", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_NEED_UIRELOAD", "field": "text", "en": "Changing this option in-game requires a UI reload.", "hash": "2891b7c799128818", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_NOTCH_MODE_OVERLAP", "field": "text", "en": "Notch is in view and may overlap with user interface", "hash": "68fd78359d97bf43", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_NOTCH_MODE_SHIFT_UI", "field": "text", "en": "Shift user interface down to avoid notch", "hash": "38de6efd17d950c3", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_NOTCH_MODE_WINDOW_BELOW", "field": "text", "en": "Window is below notch with a black bar", "hash": "fd16c7161c788361", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_PBR_LIQUID_DETAIL_HIGH", "field": "text", "en": "High resolution reflections, Bicubic filtering, and flow calculations.", "hash": "a2827f560629defd", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_PBR_LIQUID_DETAIL_LOW", "field": "text", "en": "Low resolution reflections and Bilinear filtering.", "hash": "338c393cb82ba3f9", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_PBR_LIQUID_DETAIL_ULTRA", "field": "text", "en": "Very-High resolution reflections, Bicubic filtering, and flow calculations.", "hash": "473bb2967fce0a3b", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_RECOMMENDED", "field": "text", "en": "Recommended", "hash": "4257c786acc32283", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_RESAMPLE_QUALITY_BICUBIC", "field": "text", "en": "An upscale resulting in a soft image or improved quality SSAA if above 100% render scale.", "hash": "028d565a55a74b08", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_RESAMPLE_QUALITY_BILINEAR", "field": "text", "en": "An upscale resulting in a very soft image or standard quality SSAA if above 100% render scale.", "hash": "19815548a9787ccb", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_RESAMPLE_QUALITY_FSR", "field": "text", "en": "AMD FidelityFX Super Resolution 1.0 is a cutting edge super-optimized spatial upscaling technology that produces impressive image quality at fast framerates.", "hash": "5a47bf5b3e5d44cd", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_RESAMPLE_QUALITY_POINT", "field": "text", "en": "An upscale resulting in a hard, pixelated image.", "hash": "1624b7dbd590123f", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_RT_SHADOW_QUALITY_FAIR", "field": "text", "en": "Ray Traced Shadows from directional light sources at reduced resolution.", "hash": "8fe7a51a0188715e", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_RT_SHADOW_QUALITY_HIGH", "field": "text", "en": "Ray Traced Shadows from directional and local light sources at full resolution.", "hash": "efedaa3313d22670", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_RT_SHADOW_QUALITY_MEDIUM", "field": "text", "en": "Ray Traced Shadows from directional and local light sources at reduced resolution.", "hash": "806a26dce51a0ef5", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SFX_DENSITY_FULL", "field": "text", "en": "Everything", "hash": "65dab1929b0adbce", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SFX_DENSITY_FULL_TOOLTIP", "field": "text", "en": "Always show all spells.", "hash": "f755a9a96de9e56a", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SFX_DENSITY_MIN", "field": "text", "en": "Essential", "hash": "0ae8e2a9a7a96a6c", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SFX_DENSITY_MIN_TOOLTIP", "field": "text", "en": "Only show essential spells. Your own spells are always shown.", "hash": "f5dad98f52a05074", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SFX_DENSITY_REDUCED", "field": "text", "en": "Reduced", "hash": "0791ee56d2b6fac5", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SFX_DENSITY_REDUCED_TOOLTIP", "field": "text", "en": "Reduces the non-essential spells shown.", "hash": "9e33fd55dbc9a434", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_FAIR", "field": "text", "en": "Low-resolution unit shadows. Close distance.", "hash": "5cccc35ae1b698cf", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_HIGH", "field": "text", "en": "High-resolution environment and unit shadows. Far distance.", "hash": "eaef9d28c472b94e", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_LOW", "field": "text", "en": "Blob shadows.", "hash": "d7e3a687edc5e98c", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_MEDIUM", "field": "text", "en": "Low-resolution environment and unit shadows. Medium distance.", "hash": "dc3337a328d20e78", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_ULTRA", "field": "text", "en": "High-resolution environment and unit soft shadows. Far distance.", "hash": "14ebad84f58a693c", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_ULTRA_HIGH", "field": "text", "en": "High-resolution environment and unit soft shadows. Very far distance.", "hash": "60961879751cf018", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_STANDARD", "field": "text", "en": "Standard", "hash": "804b5d3444efecbc", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_TEXTURE_DETAIL_FAIR", "field": "text", "en": "Medium resolution environment textures, low-detail terrain blending and low-resolution character textures.", "hash": "3c88741368d8071c", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_TEXTURE_DETAIL_HIGH", "field": "text", "en": "High resolution environment textures, high-detail terrain blending and high-resolution character textures.", "hash": "7bd42839ece0395f", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_TEXTURE_DETAIL_LOW", "field": "text", "en": "Low resolution environment textures, low-detail terrain blending and low-resolution character textures.", "hash": "bbb9388dd710ea38", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_TRILINEAR", "field": "text", "en": "Trilinear", "hash": "decfad9a01a06349", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_ULTRA", "field": "text", "en": "Ultra", "hash": "e2a4e12d78442cc4", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_ULTRA_HIGH", "field": "text", "en": "Ultra High", "hash": "56d8c28ab06f9810", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_WINDOWED", "field": "text", "en": "Windowed", "hash": "b21182d046bbf47d", "src": "db2@1.60.1.70124"}
-{"id": "VIDEO_OPTIONS_WINDOWED_FULLSCREEN", "field": "text", "en": "Fullscreen (Windowed)", "hash": "3dfb9469f21ae854", "src": "db2@1.60.1.70124"}
-{"id": "VIEW_FRIENDS_OF_FRIENDS", "field": "text", "en": "View Friends", "hash": "68c17799f7c28b1b", "src": "db2@1.60.1.70124"}
-{"id": "VIEW_RENOWN_BUTTON_LABEL", "field": "text", "en": "View Renown", "hash": "4b262af17c776d46", "src": "db2@1.60.1.70124"}
-{"id": "VIGNETTE_SUGGESTED_GROUP_NUM", "field": "text", "en": "Suggested Players [%d]", "hash": "e0b9b82d6f37d68c", "src": "db2@1.60.1.70124"}
-{"id": "VIGNETTE_SUGGESTED_GROUP_NUM_RANGE", "field": "text", "en": "Suggested Players [%d - %d]", "hash": "0b457148c38ebce8", "src": "db2@1.60.1.70124"}
-{"id": "VOICE", "field": "text", "en": "Voice", "hash": "f4969743d3b9c0d7", "src": "db2@1.60.1.70124"}
-{"id": "VOICECHAT_DISABLED", "field": "text", "en": "Voice Chat Disabled", "hash": "8bfae0792bc9bab7", "src": "db2@1.60.1.70124"}
-{"id": "VOICEMACRO_LABEL", "field": "text", "en": "Voice Emote", "hash": "465f18df585983c1", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT", "field": "text", "en": "Voice Chat", "hash": "d15cfb1477a8eae4", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_AUDIO_DUCKING", "field": "text", "en": "Select the level game sounds should adjust to while listening or talking in voice chat.", "hash": "f153ca4894d61581", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_AWAITING_MEMBER_NAME", "field": "text", "en": "Waiting...", "hash": "5240aaec3293acdd", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_CHANNEL_ANNOUNCE", "field": "text", "en": "%1$s %2$s %3$s", "hash": "f6380dc3aea20236", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_CHANNEL_ANNOUNCE_MEMBER_ACTIVE", "field": "text", "en": "%s has joined the voice channel.", "hash": "f79602e603290c81", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_CHANNEL_ANNOUNCE_MEMBER_LEFT", "field": "text", "en": "%s has left the voice channel.", "hash": "f494a651a59fe5f8", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_CHANNEL_ANNOUNCE_PLAYER_LEFT", "field": "text", "en": "You have left the voice channel.", "hash": "140ed46e97da42a2", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_CHANNEL_MANAGEMENT_TIP", "field": "text", "en": "%1$s Press %2$s to manage and join voice chat.", "hash": "0b3af498ce088326", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_CHANNEL_MEMBER_COUNT_ACTIVE", "field": "text", "en": "%d |4player:players; in channel.", "hash": "e5ed0fe6c409a3e8", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_DUCKING_SCALE", "field": "text", "en": "Voice Chat Ducking", "hash": "251a81914eb9cd76", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_INPUT_DEVICE_DEFAULT", "field": "text", "en": "System Default", "hash": "0dac7fb2d96ae54f", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_INVALID_DEVICE", "field": "text", "en": "Invalid Device", "hash": "15d27f66b6e4864b", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_JOIN", "field": "text", "en": "Join Voice Chat", "hash": "6ae0295b4c9712de", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_LEAVE", "field": "text", "en": "Leave Voice Chat", "hash": "91e5c8ab751ab2c7", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_MIC_DEVICE", "field": "text", "en": "Microphone Device", "hash": "e8668cc2057f757c", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_MIC_SENSITIVITY", "field": "text", "en": "Microphone Sensitivity", "hash": "56bd93efe3f9b2b8", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_MIC_VOLUME", "field": "text", "en": "Microphone Volume", "hash": "45e91ead1feb48f1", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_MODE", "field": "text", "en": "Voice Chat Mode", "hash": "53cc1330461a13f9", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_MODE_KEY", "field": "text", "en": "Push to Talk Key", "hash": "2de44460440464bd", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_NOTIFICATION_CHANNEL_ACTIVATED_INSTANCE", "field": "text", "en": "Joined |c%sInstance|r voice chat.", "hash": "5138c0d2342d160e", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_NOTIFICATION_CHANNEL_ACTIVATED_PARTY", "field": "text", "en": "Joined |c%sParty|r voice chat.", "hash": "f5f4cba0a18c8fd1", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_NOTIFICATION_CHANNEL_ACTIVATED_RAID", "field": "text", "en": "Joined |c%sRaid|r voice chat.", "hash": "770d3bf5f64ae081", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_NOTIFICATION_COMMS_MODE_PTT", "field": "text", "en": "Push %s to talk.", "hash": "433f2af4d866f971", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_NOTIFICATION_COMMS_MODE_PTT_UNBOUND", "field": "text", "en": "Push to Talk key not bound.", "hash": "3a0ce5014e29daed", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_NOTIFICATION_COMMS_MODE_VOICE_ACTIVATED", "field": "text", "en": "Open Mic.", "hash": "72e8f6171b02b163", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_OUTPUT_DEVICE", "field": "text", "en": "Output Device", "hash": "87308723f085b845", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_OUTPUT_DEVICE_DEFAULT", "field": "text", "en": "System Default", "hash": "0dac7fb2d96ae54f", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_ACCEPT", "field": "text", "en": "Accept", "hash": "b3c3644e28d78783", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_INSTANCE", "field": "text", "en": "Join |c%sInstance|r voice chat?", "hash": "1f3c34d299cafca8", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_PARTY", "field": "text", "en": "Join |c%sParty|r voice chat?", "hash": "7b922a5b0e8d99a3", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_RAID", "field": "text", "en": "Join |c%sRaid|r voice chat?", "hash": "c63d562590d3fd75", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_SERVICE_CONNECTION_RESTORED", "field": "text", "en": "Restored connection to the voice chat service.", "hash": "9d9a9659bb132730", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_SETTINGS", "field": "text", "en": "Voice Chat Settings", "hash": "02d0388b795052e0", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_TEST_MIC_DEVICE", "field": "text", "en": "Test Microphone", "hash": "c29d04734973aa0f", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_TRANSCRIPTION", "field": "text", "en": "Voice Chat Transcription", "hash": "e09292c0d80750e5", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_TRANSCRIPTION_DISABLE", "field": "text", "en": "Disable Voice Transcription", "hash": "3e5909a915a446f9", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_TRANSCRIPTION_ENABLE", "field": "text", "en": "Enable Voice Transcription", "hash": "a2c447927946a161", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_CHAT_VOLUME", "field": "text", "en": "Voice Chat Volume", "hash": "33f028998c3e8eb3", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_COMMAND_SYNTAX", "field": "text", "en": "Syntax: /voice [party|instance|guild|officer|leave|<communityName>[:<channelName>]]", "hash": "5fcffe128f5a2658", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_TOOLTIP_DEAFEN", "field": "text", "en": "Deafen Voice Chat", "hash": "3066eeb28abe871b", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_TOOLTIP_MUTE_MIC", "field": "text", "en": "Mute", "hash": "0a70367d58c9d02d", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_TOOLTIP_PARENTAL_MUTE_MIC", "field": "text", "en": "Mute|n|nYour account has been marked as voice-chat listen-only in Parental Controls.", "hash": "abe43f0cecfc4753", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_TOOLTIP_PARENTAL_UNMUTE_MIC", "field": "text", "en": "Unmute|n|nYour account has been marked as voice-chat listen-only in Parental Controls.", "hash": "73fc27e7f420ec28", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_TOOLTIP_SILENCED_MUTE_MIC", "field": "text", "en": "Mute|n|n|cffff2020We have silenced your account following multiple reports of abusive chat from other players.|nWhile you are silenced, you can only use voice chat in private channels.|r", "hash": "eec47221f42b376d", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_TOOLTIP_SILENCED_UNMUTE_MIC", "field": "text", "en": "Unmute|n|n|cffff2020We have silenced your account following multiple reports of abusive chat from other players.|nWhile you are silenced, you can only use voice chat in private channels.|r", "hash": "c5a1547afc408d77", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_TOOLTIP_UNDEAFEN", "field": "text", "en": "Undeafen Voice Chat", "hash": "b3e28dcda423e88d", "src": "db2@1.60.1.70124"}
-{"id": "VOICE_TOOLTIP_UNMUTE_MIC", "field": "text", "en": "Unmute", "hash": "1c8b5ce9e1408ee1", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_BOOT_PLAYER", "field": "text", "en": "A vote has been initiated to remove %1$s from the group.\n\nThe reason given was:\n|cffffd200%2$s|r\n\nDo you want to kick %1$s?", "hash": "604db3c3047381f3", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_BOOT_REASON_REQUIRED", "field": "text", "en": "Please enter the reason to vote kick %s:", "hash": "b428f87ce41d4f51", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_TO_ABANDON", "field": "text", "en": "Vote to Abandon", "hash": "2ba6dea65cb20122", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_TO_ABANDON_LEAVING_INSTANCE", "field": "text", "en": "Leaving Instance...", "hash": "d332524cf9dc9596", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_TO_ABANDON_ON_COOLDOWN", "field": "text", "en": "Vote to Abandon is currently on cooldown: |cnWHITE_FONT_COLOR:%s remaining|r", "hash": "59e3614d40c12577", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_TO_ABANDON_PASSED", "field": "text", "en": "Vote Successful", "hash": "68ce99863061f12a", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_TO_ABANDON_PROMPT", "field": "text", "en": "Abandon Instance?", "hash": "a8c4ec04bb511d95", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_TO_ABANDON_VOTED_NO", "field": "text", "en": "You voted No", "hash": "1e812129c71d557b", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_TO_ABANDON_VOTED_YES", "field": "text", "en": "You voted Yes", "hash": "9c16d4feb9cd568a", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_TO_ABANDON_VOTES_NEEDED", "field": "text", "en": "%d votes needed to abandon the instance.", "hash": "7c54ca72a3ff0cde", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_TO_ABANDON_VOTES_NEEDED_KEYHOLDER", "field": "text", "en": "%d votes needed to abandon the instance. As the keyholder, your vote counts as %d.", "hash": "d321f39758231681", "src": "db2@1.60.1.70124"}
-{"id": "VOTE_TO_KICK", "field": "text", "en": "Vote to Kick", "hash": "4b72e961bd3aa6ca", "src": "db2@1.60.1.70124"}
-{"id": "VRN_AMD_UNSUPPORTED", "field": "text", "en": "Unsupported on AMD graphics cards", "hash": "1633088713cc4cde", "src": "db2@1.60.1.70124"}
-{"id": "VRN_APPLE_UNSUPPORTED", "field": "text", "en": "Unsupported on Apple graphics cards", "hash": "7092b3d51aff7ca5", "src": "db2@1.60.1.70124"}
-{"id": "VRN_COMPAT_MODE", "field": "text", "en": "Disabled due to compatibility settings", "hash": "0100fa671e1293ab", "src": "db2@1.60.1.70124"}
-{"id": "VRN_CPUMEM_2GB", "field": "text", "en": "Requires 2GB or more of CPU memory", "hash": "25a8bf1a9d797a7b", "src": "db2@1.60.1.70124"}
-{"id": "VRN_CPUMEM_4GB", "field": "text", "en": "Requires 4GB or more of CPU memory", "hash": "b36df6b450c3bcd3", "src": "db2@1.60.1.70124"}
-{"id": "VRN_CPUMEM_8GB", "field": "text", "en": "Requires 8GB or more of CPU memory", "hash": "cef865edb7584172", "src": "db2@1.60.1.70124"}
-{"id": "VRN_DUALCORE", "field": "text", "en": "Requires a dual-core processor", "hash": "afa8811bcdbf64a9", "src": "db2@1.60.1.70124"}
-{"id": "VRN_DX11_UNSUPPORTED", "field": "text", "en": "Unsupported on DirectX 11", "hash": "bc17c99c1c04c783", "src": "db2@1.60.1.70124"}
-{"id": "VRN_DX12_WIN7_UNSUPPORTED", "field": "text", "en": "Unsupported on DirectX 12 on Windows 7", "hash": "d63c9ac943224b50", "src": "db2@1.60.1.70124"}
-{"id": "VRN_GPU_DRIVER", "field": "text", "en": "Update your graphics card driver", "hash": "7fdd4ef1e923b419", "src": "db2@1.60.1.70124"}
-{"id": "VRN_GRAPHICS", "field": "text", "en": "Unsupported for graphics related reasons", "hash": "aafb8a4f761b137d", "src": "db2@1.60.1.70124"}
-{"id": "VRN_ILLEGAL", "field": "text", "en": "Illegal value", "hash": "5b9e8cc1024f8570", "src": "db2@1.60.1.70124"}
-{"id": "VRN_INTEL_UNSUPPORTED", "field": "text", "en": "Unsupported on Intel graphics cards", "hash": "286d857c17a6e0ad", "src": "db2@1.60.1.70124"}
-{"id": "VRN_LEGACY_UNSUPPORTED", "field": "text", "en": "Unsupported on Legacy backends", "hash": "6a288143784a9d74", "src": "db2@1.60.1.70124"}
-{"id": "VRN_MACOS_UNSUPPORTED", "field": "text", "en": "Unsupported on macOS", "hash": "218ae0c4c9a5b4ca", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_5_0", "field": "text", "en": "Requires a shader model 5 capable graphics card", "hash": "320a3620b030f3de", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_6_0", "field": "text", "en": "Requires a shader model 6 capable graphics card", "hash": "2374648fb5f720e0", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_AMD_GPU", "field": "text", "en": "Requires an AMD graphics card", "hash": "ac14e3742440a298", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_APPLE_GPU", "field": "text", "en": "Requires an Apple graphics card", "hash": "29031762fc7f4e6f", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_DX12", "field": "text", "en": "Requires DirectX 12", "hash": "e56240750e702397", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_DX12_VRS2", "field": "text", "en": "Requires Variable Rate Shading Tier 2 capable GPU", "hash": "dcb1ed924d530bba", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_INTEL_GPU", "field": "text", "en": "Requires an Intel graphics card", "hash": "93f1383e0dcff9e0", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_MACOS_10_13", "field": "text", "en": "Requires macOS 10.13 or above", "hash": "06f350c9bcff88ab", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_MACOS_10_14", "field": "text", "en": "Requires macOS 10.14 or above", "hash": "ef2982de595515e9", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_MACOS_10_15", "field": "text", "en": "Requires macOS 10.15 or above", "hash": "d75fb4f8f5aaa316", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_MACOS_11_0", "field": "text", "en": "Requires macOS 11.0 or above", "hash": "f36ddac7843af67b", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_MACOS_12_0", "field": "text", "en": "Requires macOS 12.0 or above", "hash": "4c724c8f387b97e1", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_MACOS_13_0", "field": "text", "en": "Requires macOS 13.0 or above", "hash": "a576be52ecbc3936", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_NVIDIA_GPU", "field": "text", "en": "Requires an NVIDIA graphics card", "hash": "566d208be4f5af87", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_QUALCOMM_GPU", "field": "text", "en": "Requires a Qualcomm graphics card", "hash": "ff99ad72dae64b5b", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_RT", "field": "text", "en": "Requires a ray tracing capable graphics card", "hash": "f2471ddfaf5bd376", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_WINDOWS_10", "field": "text", "en": "Requires Windows 10 or above", "hash": "83007ea12be93005", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NEEDS_WINDOWS_11", "field": "text", "en": "Requires Windows 11 or above", "hash": "6b36b0bbc83ebd32", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NVAPI_WINE_UNSUPPORTED", "field": "text", "en": "NVAPI is disabled on Wine", "hash": "60818184da6d037d", "src": "db2@1.60.1.70124"}
-{"id": "VRN_NVIDIA_UNSUPPORTED", "field": "text", "en": "Unsupported on NVIDIA graphics cards", "hash": "94aec6906e2fa6e9", "src": "db2@1.60.1.70124"}
-{"id": "VRN_QUADCORE", "field": "text", "en": "Requires a quad-core processor", "hash": "bbc32d0f7d11449b", "src": "db2@1.60.1.70124"}
-{"id": "VRN_QUALCOMM_UNSUPPORTED", "field": "text", "en": "Unsupported on Qualcomm graphics cards", "hash": "4e604ae0c2e73a12", "src": "db2@1.60.1.70124"}
-{"id": "VRN_REMOTE_DESKTOP_UNSUPPORTED", "field": "text", "en": "Unsupported while using Remote Desktop", "hash": "b635d6d02fe091ef", "src": "db2@1.60.1.70124"}
-{"id": "VRN_UNSUPPORTED", "field": "text", "en": "Unsupported on your system", "hash": "fd7bb155e540964b", "src": "db2@1.60.1.70124"}
-{"id": "VRN_WINDOWS_UNSUPPORTED", "field": "text", "en": "Unsupported on Windows", "hash": "9f6b2311e943d29b", "src": "db2@1.60.1.70124"}
-{"id": "VRN_WINE_UNSUPPORTED", "field": "text", "en": "Unsupported on Wine", "hash": "e3e96c8efd1ef951", "src": "db2@1.60.1.70124"}
-{"id": "VRS_MODE", "field": "text", "en": "VRS Mode", "hash": "c969201d696c14ec", "src": "db2@1.60.1.70124"}
+{"id": "VERTICAL_SYNC", "field": "text", "en": "Vertical Sync", "hash": "d7d287d1ef38a1f0", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_16XANISOTROPIC", "field": "text", "en": "16x Anisotropic", "hash": "252792ccd81764dd", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_2XANISOTROPIC", "field": "text", "en": "2x Anisotropic", "hash": "1f7b33ea2c9c2c3e", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_4XANISOTROPIC", "field": "text", "en": "4x Anisotropic", "hash": "b5582eb6bc3b1372", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_8XANISOTROPIC", "field": "text", "en": "8x Anisotropic", "hash": "e1122453db78e1eb", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_ADVANCEDLIGHT_HIGH", "field": "text", "en": "High number of samples used from environment lights.", "hash": "46182ead259d8641", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_ADVANCEDLIGHT_LOW", "field": "text", "en": "Low number of samples used from environment lights.", "hash": "fc3f5bc454bb1b4c", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_ADVANCEDLIGHT_MEDIUM", "field": "text", "en": "Moderate number of samples used from environment lights.", "hash": "96890bd331d11fd6", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_AGGRESSIVE", "field": "text", "en": "Aggressive", "hash": "2b3203a442eff4fa", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_BILINEAR", "field": "text", "en": "Bilinear", "hash": "4656bb1287c269b2", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_BUILTIN", "field": "text", "en": "Built-in", "hash": "019288dca515ccbe", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_COMBAT_CUES_DISABLED_WARNING", "field": "text", "en": "Disabling this may cause you to miss important visual cues during combat", "hash": "1df5a0a82b497729", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_COMPUTE_EFFECTS_DISABLED", "field": "text", "en": "Low-resolution volume fog with no placements. Compute-based particle collision disabled.", "hash": "100adb20032d84be", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_COMPUTE_EFFECTS_HIGH", "field": "text", "en": "High-resolution volume fog.", "hash": "ec9e32f023f33131", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_COMPUTE_EFFECTS_LOW", "field": "text", "en": "Low-resolution volume fog with reduced placements.", "hash": "510e84e02c2c7bbd", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_COMPUTE_EFFECTS_MEDIUM", "field": "text", "en": "Medium-resolution volume fog.", "hash": "e705f5cfeab27b05", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_COMPUTE_EFFECTS_ULTRA", "field": "text", "en": "Ultra-resolution volume fog with additional placements.", "hash": "d8c411124e962d92", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_DEPTH_EFFECTS_DISABLED", "field": "text", "en": "No particle depth fading or refraction. Traditional sunshafts and glare.", "hash": "d0846eea7993d54f", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_DEPTH_EFFECTS_HIGH", "field": "text", "en": "Particle depth fading and full-resolution refraction. Depth-based sunshafts and glare with improved sampling.", "hash": "da9490ae89dea818", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_DEPTH_EFFECTS_LOW", "field": "text", "en": "Particle depth fading and no refraction. Depth-based sunshafts and glare.", "hash": "9a35fc3bf9a80b08", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_DEPTH_EFFECTS_MEDIUM", "field": "text", "en": "Particle depth fading and low-resolution refraction. Depth-based sunshafts and glare with improved sampling.", "hash": "2dd92656153a58d8", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_DISABLED", "field": "text", "en": "Disabled", "hash": "87d0536130ef09ab", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_ENABLED", "field": "text", "en": "Enabled", "hash": "7af2f804602c291a", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_FAIR", "field": "text", "en": "Fair", "hash": "097ad4f82b8b7a3e", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_HIGH", "field": "text", "en": "High", "hash": "09c18766661d4089", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_LIQUID_DETAIL_FAIR", "field": "text", "en": "Normal map liquid textures, texture based ripples and sky reflection.", "hash": "2fca43a9a6d35d94", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_LIQUID_DETAIL_LOW", "field": "text", "en": "Animated liquid textures, texture based ripples and no reflection.", "hash": "293f47f9cb9c97fc", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_LIQUID_DETAIL_MEDIUM", "field": "text", "en": "Normal map liquid textures, procedural ripples and screen-based reflection.", "hash": "80e806f3f1bdb7e2", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_LIQUID_DETAIL_ULTRA", "field": "text", "en": "Normal map liquid textures, procedural ripples and full reflection.", "hash": "1210acffcc3e9186", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_LOW", "field": "text", "en": "Low", "hash": "00141ff02dc1f063", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_MEDIUM", "field": "text", "en": "Good", "hash": "09a0d015f087e203", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_MONITOR", "field": "text", "en": "Monitor %d", "hash": "6691ee94aee52450", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_MONITOR_PRIMARY", "field": "text", "en": "Primary", "hash": "ba96033132ed6779", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_NEED_CLIENTRESTART", "field": "text", "en": "Changing this option requires a client restart", "hash": "0ae15820fff0136b", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_NEED_UIRELOAD", "field": "text", "en": "Changing this option in-game requires a UI reload.", "hash": "2891b7c799128818", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_NOTCH_MODE_OVERLAP", "field": "text", "en": "Notch is in view and may overlap with user interface", "hash": "68fd78359d97bf43", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_NOTCH_MODE_SHIFT_UI", "field": "text", "en": "Shift user interface down to avoid notch", "hash": "38de6efd17d950c3", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_NOTCH_MODE_WINDOW_BELOW", "field": "text", "en": "Window is below notch with a black bar", "hash": "fd16c7161c788361", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_PBR_LIQUID_DETAIL_HIGH", "field": "text", "en": "High resolution reflections, Bicubic filtering, and flow calculations.", "hash": "a2827f560629defd", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_PBR_LIQUID_DETAIL_LOW", "field": "text", "en": "Low resolution reflections and Bilinear filtering.", "hash": "338c393cb82ba3f9", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_PBR_LIQUID_DETAIL_ULTRA", "field": "text", "en": "Very high resolution reflections, Bicubic filtering, and flow calculations.", "hash": "89afaccaee21314e", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_RECOMMENDED", "field": "text", "en": "Recommended", "hash": "4257c786acc32283", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_RESAMPLE_QUALITY_BICUBIC", "field": "text", "en": "An upscale resulting in a soft image or improved quality SSAA if above 100% render scale.", "hash": "028d565a55a74b08", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_RESAMPLE_QUALITY_BILINEAR", "field": "text", "en": "An upscale resulting in a very soft image or standard quality SSAA if above 100% render scale.", "hash": "19815548a9787ccb", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_RESAMPLE_QUALITY_FSR", "field": "text", "en": "AMD FidelityFX Super Resolution 1.0 is a cutting edge super-optimized spatial upscaling technology that produces impressive image quality at fast framerates.", "hash": "5a47bf5b3e5d44cd", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_RESAMPLE_QUALITY_POINT", "field": "text", "en": "An upscale resulting in a hard, pixelated image.", "hash": "1624b7dbd590123f", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_RT_SHADOW_QUALITY_FAIR", "field": "text", "en": "Ray Traced Shadows from directional light sources at reduced resolution.", "hash": "8fe7a51a0188715e", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_RT_SHADOW_QUALITY_HIGH", "field": "text", "en": "Ray Traced Shadows from directional and local light sources at full resolution.", "hash": "efedaa3313d22670", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_RT_SHADOW_QUALITY_MEDIUM", "field": "text", "en": "Ray Traced Shadows from directional and local light sources at reduced resolution.", "hash": "806a26dce51a0ef5", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SFX_DENSITY_FULL", "field": "text", "en": "Everything", "hash": "65dab1929b0adbce", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SFX_DENSITY_FULL_TOOLTIP", "field": "text", "en": "Always show all spells.", "hash": "f755a9a96de9e56a", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SFX_DENSITY_MIN", "field": "text", "en": "Essential", "hash": "0ae8e2a9a7a96a6c", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SFX_DENSITY_MIN_TOOLTIP", "field": "text", "en": "Only show essential spells. Your own spells are always shown.", "hash": "f5dad98f52a05074", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SFX_DENSITY_REDUCED", "field": "text", "en": "Reduced", "hash": "0791ee56d2b6fac5", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SFX_DENSITY_REDUCED_TOOLTIP", "field": "text", "en": "Reduces the non-essential spells shown.", "hash": "9e33fd55dbc9a434", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_FAIR", "field": "text", "en": "Low-resolution unit shadows. Close distance.", "hash": "5cccc35ae1b698cf", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_HIGH", "field": "text", "en": "High-resolution environment and unit shadows. Far distance.", "hash": "eaef9d28c472b94e", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_LOW", "field": "text", "en": "Blob shadows.", "hash": "d7e3a687edc5e98c", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_MEDIUM", "field": "text", "en": "Low-resolution environment and unit shadows. Medium distance.", "hash": "dc3337a328d20e78", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_ULTRA", "field": "text", "en": "High-resolution environment and unit soft shadows. Far distance.", "hash": "14ebad84f58a693c", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_SHADOW_QUALITY_ULTRA_HIGH", "field": "text", "en": "High-resolution environment and unit soft shadows. Very far distance.", "hash": "60961879751cf018", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_STANDARD", "field": "text", "en": "Standard", "hash": "804b5d3444efecbc", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_TEXTURE_DETAIL_FAIR", "field": "text", "en": "Medium resolution environment textures, low-detail terrain blending and low-resolution character textures.", "hash": "3c88741368d8071c", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_TEXTURE_DETAIL_HIGH", "field": "text", "en": "High resolution environment textures, high-detail terrain blending and high-resolution character textures.", "hash": "7bd42839ece0395f", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_TEXTURE_DETAIL_LOW", "field": "text", "en": "Low resolution environment textures, low-detail terrain blending and low-resolution character textures.", "hash": "bbb9388dd710ea38", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_TRILINEAR", "field": "text", "en": "Trilinear", "hash": "decfad9a01a06349", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_ULTRA", "field": "text", "en": "Ultra", "hash": "e2a4e12d78442cc4", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_ULTRA_HIGH", "field": "text", "en": "Ultra High", "hash": "56d8c28ab06f9810", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_WINDOWED", "field": "text", "en": "Windowed", "hash": "b21182d046bbf47d", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_OPTIONS_WINDOWED_FULLSCREEN", "field": "text", "en": "Fullscreen (Windowed)", "hash": "3dfb9469f21ae854", "src": "db2@1.60.1.70170"}
+{"id": "VIEW_FRIENDS_OF_FRIENDS", "field": "text", "en": "View Friends", "hash": "68c17799f7c28b1b", "src": "db2@1.60.1.70170"}
+{"id": "VIEW_RENOWN_BUTTON_LABEL", "field": "text", "en": "View Renown", "hash": "4b262af17c776d46", "src": "db2@1.60.1.70170"}
+{"id": "VIGNETTE_SUGGESTED_GROUP_NUM", "field": "text", "en": "Suggested Players [%d]", "hash": "e0b9b82d6f37d68c", "src": "db2@1.60.1.70170"}
+{"id": "VIGNETTE_SUGGESTED_GROUP_NUM_RANGE", "field": "text", "en": "Suggested Players [%d - %d]", "hash": "0b457148c38ebce8", "src": "db2@1.60.1.70170"}
+{"id": "VOICE", "field": "text", "en": "Voice", "hash": "f4969743d3b9c0d7", "src": "db2@1.60.1.70170"}
+{"id": "VOICECHAT_DISABLED", "field": "text", "en": "Voice Chat Disabled", "hash": "8bfae0792bc9bab7", "src": "db2@1.60.1.70170"}
+{"id": "VOICEMACRO_LABEL", "field": "text", "en": "Voice Emote", "hash": "465f18df585983c1", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT", "field": "text", "en": "Voice Chat", "hash": "d15cfb1477a8eae4", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_AUDIO_DUCKING", "field": "text", "en": "Select the level game sounds should adjust to while listening or talking in voice chat.", "hash": "f153ca4894d61581", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_AWAITING_MEMBER_NAME", "field": "text", "en": "Waiting...", "hash": "5240aaec3293acdd", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_CHANNEL_ANNOUNCE", "field": "text", "en": "%1$s %2$s %3$s", "hash": "f6380dc3aea20236", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_CHANNEL_ANNOUNCE_MEMBER_ACTIVE", "field": "text", "en": "%s has joined the voice channel.", "hash": "f79602e603290c81", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_CHANNEL_ANNOUNCE_MEMBER_LEFT", "field": "text", "en": "%s has left the voice channel.", "hash": "f494a651a59fe5f8", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_CHANNEL_ANNOUNCE_PLAYER_LEFT", "field": "text", "en": "You have left the voice channel.", "hash": "140ed46e97da42a2", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_CHANNEL_MANAGEMENT_TIP", "field": "text", "en": "%1$s Press %2$s to manage and join voice chat.", "hash": "0b3af498ce088326", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_CHANNEL_MEMBER_COUNT_ACTIVE", "field": "text", "en": "%d |4player:players; in channel.", "hash": "e5ed0fe6c409a3e8", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_DUCKING_SCALE", "field": "text", "en": "Voice Chat Ducking", "hash": "251a81914eb9cd76", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_INPUT_DEVICE_DEFAULT", "field": "text", "en": "System Default", "hash": "0dac7fb2d96ae54f", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_INVALID_DEVICE", "field": "text", "en": "Invalid Device", "hash": "15d27f66b6e4864b", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_JOIN", "field": "text", "en": "Join Voice Chat", "hash": "6ae0295b4c9712de", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_LEAVE", "field": "text", "en": "Leave Voice Chat", "hash": "91e5c8ab751ab2c7", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_MIC_DEVICE", "field": "text", "en": "Microphone Device", "hash": "e8668cc2057f757c", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_MIC_SENSITIVITY", "field": "text", "en": "Microphone Sensitivity", "hash": "56bd93efe3f9b2b8", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_MIC_VOLUME", "field": "text", "en": "Microphone Volume", "hash": "45e91ead1feb48f1", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_MODE", "field": "text", "en": "Voice Chat Mode", "hash": "53cc1330461a13f9", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_MODE_KEY", "field": "text", "en": "Push to Talk Key", "hash": "2de44460440464bd", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_NOTIFICATION_CHANNEL_ACTIVATED_INSTANCE", "field": "text", "en": "Joined |c%sInstance|r voice chat.", "hash": "5138c0d2342d160e", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_NOTIFICATION_CHANNEL_ACTIVATED_PARTY", "field": "text", "en": "Joined |c%sParty|r voice chat.", "hash": "f5f4cba0a18c8fd1", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_NOTIFICATION_CHANNEL_ACTIVATED_RAID", "field": "text", "en": "Joined |c%sRaid|r voice chat.", "hash": "770d3bf5f64ae081", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_NOTIFICATION_COMMS_MODE_PTT", "field": "text", "en": "Push %s to talk.", "hash": "433f2af4d866f971", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_NOTIFICATION_COMMS_MODE_PTT_UNBOUND", "field": "text", "en": "Push to Talk key not bound.", "hash": "3a0ce5014e29daed", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_NOTIFICATION_COMMS_MODE_VOICE_ACTIVATED", "field": "text", "en": "Open Mic.", "hash": "72e8f6171b02b163", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_OUTPUT_DEVICE", "field": "text", "en": "Output Device", "hash": "87308723f085b845", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_OUTPUT_DEVICE_DEFAULT", "field": "text", "en": "System Default", "hash": "0dac7fb2d96ae54f", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_ACCEPT", "field": "text", "en": "Accept", "hash": "b3c3644e28d78783", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_INSTANCE", "field": "text", "en": "Join |c%sInstance|r voice chat?", "hash": "1f3c34d299cafca8", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_PARTY", "field": "text", "en": "Join |c%sParty|r voice chat?", "hash": "7b922a5b0e8d99a3", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_RAID", "field": "text", "en": "Join |c%sRaid|r voice chat?", "hash": "c63d562590d3fd75", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_SERVICE_CONNECTION_RESTORED", "field": "text", "en": "Restored connection to the voice chat service.", "hash": "9d9a9659bb132730", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_SETTINGS", "field": "text", "en": "Voice Chat Settings", "hash": "02d0388b795052e0", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_TEST_MIC_DEVICE", "field": "text", "en": "Test Microphone", "hash": "c29d04734973aa0f", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_TRANSCRIPTION", "field": "text", "en": "Voice Chat Transcription", "hash": "e09292c0d80750e5", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_TRANSCRIPTION_DISABLE", "field": "text", "en": "Disable Voice Transcription", "hash": "3e5909a915a446f9", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_TRANSCRIPTION_ENABLE", "field": "text", "en": "Enable Voice Transcription", "hash": "a2c447927946a161", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_VOLUME", "field": "text", "en": "Voice Chat Volume", "hash": "33f028998c3e8eb3", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_COMMAND_SYNTAX", "field": "text", "en": "Syntax: /voice [party|instance|guild|officer|leave|<communityName>[:<channelName>]]", "hash": "5fcffe128f5a2658", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_TOOLTIP_DEAFEN", "field": "text", "en": "Deafen Voice Chat", "hash": "3066eeb28abe871b", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_TOOLTIP_MUTE_MIC", "field": "text", "en": "Mute", "hash": "0a70367d58c9d02d", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_TOOLTIP_PARENTAL_MUTE_MIC", "field": "text", "en": "Mute|n|nYour account has been marked as voice-chat listen-only in Parental Controls.", "hash": "abe43f0cecfc4753", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_TOOLTIP_PARENTAL_UNMUTE_MIC", "field": "text", "en": "Unmute|n|nYour account has been marked as voice-chat listen-only in Parental Controls.", "hash": "73fc27e7f420ec28", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_TOOLTIP_SILENCED_MUTE_MIC", "field": "text", "en": "Mute|n|n|cffff2020We have silenced your account following multiple reports of abusive chat from other players.|nWhile you are silenced, you can only use voice chat in private channels.|r", "hash": "eec47221f42b376d", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_TOOLTIP_SILENCED_UNMUTE_MIC", "field": "text", "en": "Unmute|n|n|cffff2020We have silenced your account following multiple reports of abusive chat from other players.|nWhile you are silenced, you can only use voice chat in private channels.|r", "hash": "c5a1547afc408d77", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_TOOLTIP_UNDEAFEN", "field": "text", "en": "Undeafen Voice Chat", "hash": "b3e28dcda423e88d", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_TOOLTIP_UNMUTE_MIC", "field": "text", "en": "Unmute", "hash": "1c8b5ce9e1408ee1", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_BOOT_PLAYER", "field": "text", "en": "A vote has been initiated to remove %1$s from the group.\n\nThe reason given was:\n|cffffd200%2$s|r\n\nDo you want to kick %1$s?", "hash": "604db3c3047381f3", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_BOOT_REASON_REQUIRED", "field": "text", "en": "Please enter the reason to vote kick %s:", "hash": "b428f87ce41d4f51", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_TO_ABANDON", "field": "text", "en": "Vote to Abandon", "hash": "2ba6dea65cb20122", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_TO_ABANDON_LEAVING_INSTANCE", "field": "text", "en": "Leaving Instance...", "hash": "d332524cf9dc9596", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_TO_ABANDON_ON_COOLDOWN", "field": "text", "en": "Vote to Abandon is currently on cooldown: |cnWHITE_FONT_COLOR:%s remaining|r", "hash": "59e3614d40c12577", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_TO_ABANDON_PASSED", "field": "text", "en": "Vote Successful", "hash": "68ce99863061f12a", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_TO_ABANDON_PROMPT", "field": "text", "en": "Abandon Instance?", "hash": "a8c4ec04bb511d95", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_TO_ABANDON_VOTED_NO", "field": "text", "en": "You voted No", "hash": "1e812129c71d557b", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_TO_ABANDON_VOTED_YES", "field": "text", "en": "You voted Yes", "hash": "9c16d4feb9cd568a", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_TO_ABANDON_VOTES_NEEDED", "field": "text", "en": "%d votes needed to abandon the instance.", "hash": "7c54ca72a3ff0cde", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_TO_ABANDON_VOTES_NEEDED_KEYHOLDER", "field": "text", "en": "%d votes needed to abandon the instance. As the keyholder, your vote counts as %d.", "hash": "d321f39758231681", "src": "db2@1.60.1.70170"}
+{"id": "VOTE_TO_KICK", "field": "text", "en": "Vote to Kick", "hash": "4b72e961bd3aa6ca", "src": "db2@1.60.1.70170"}
+{"id": "VRN_AMD_UNSUPPORTED", "field": "text", "en": "Unsupported on AMD graphics cards", "hash": "1633088713cc4cde", "src": "db2@1.60.1.70170"}
+{"id": "VRN_APPLE_UNSUPPORTED", "field": "text", "en": "Unsupported on Apple graphics cards", "hash": "7092b3d51aff7ca5", "src": "db2@1.60.1.70170"}
+{"id": "VRN_COMPAT_MODE", "field": "text", "en": "Disabled due to compatibility settings", "hash": "0100fa671e1293ab", "src": "db2@1.60.1.70170"}
+{"id": "VRN_CPUMEM_2GB", "field": "text", "en": "Requires 2GB or more of CPU memory", "hash": "25a8bf1a9d797a7b", "src": "db2@1.60.1.70170"}
+{"id": "VRN_CPUMEM_4GB", "field": "text", "en": "Requires 4GB or more of CPU memory", "hash": "b36df6b450c3bcd3", "src": "db2@1.60.1.70170"}
+{"id": "VRN_CPUMEM_8GB", "field": "text", "en": "Requires 8GB or more of CPU memory", "hash": "cef865edb7584172", "src": "db2@1.60.1.70170"}
+{"id": "VRN_DUALCORE", "field": "text", "en": "Requires a dual-core processor", "hash": "afa8811bcdbf64a9", "src": "db2@1.60.1.70170"}
+{"id": "VRN_DX11_UNSUPPORTED", "field": "text", "en": "Unsupported on DirectX 11", "hash": "bc17c99c1c04c783", "src": "db2@1.60.1.70170"}
+{"id": "VRN_DX12_WIN7_UNSUPPORTED", "field": "text", "en": "Unsupported on DirectX 12 on Windows 7", "hash": "d63c9ac943224b50", "src": "db2@1.60.1.70170"}
+{"id": "VRN_GPU_DRIVER", "field": "text", "en": "Update your graphics card driver", "hash": "7fdd4ef1e923b419", "src": "db2@1.60.1.70170"}
+{"id": "VRN_GRAPHICS", "field": "text", "en": "Unsupported for graphics related reasons", "hash": "aafb8a4f761b137d", "src": "db2@1.60.1.70170"}
+{"id": "VRN_ILLEGAL", "field": "text", "en": "Illegal value", "hash": "5b9e8cc1024f8570", "src": "db2@1.60.1.70170"}
+{"id": "VRN_INTEL_UNSUPPORTED", "field": "text", "en": "Unsupported on Intel graphics cards", "hash": "286d857c17a6e0ad", "src": "db2@1.60.1.70170"}
+{"id": "VRN_LEGACY_UNSUPPORTED", "field": "text", "en": "Unsupported on Legacy backends", "hash": "6a288143784a9d74", "src": "db2@1.60.1.70170"}
+{"id": "VRN_MACOS_UNSUPPORTED", "field": "text", "en": "Unsupported on macOS", "hash": "218ae0c4c9a5b4ca", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_5_0", "field": "text", "en": "Requires a shader model 5 capable graphics card", "hash": "320a3620b030f3de", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_6_0", "field": "text", "en": "Requires a shader model 6 capable graphics card", "hash": "2374648fb5f720e0", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_AMD_GPU", "field": "text", "en": "Requires an AMD graphics card", "hash": "ac14e3742440a298", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_APPLE_GPU", "field": "text", "en": "Requires an Apple graphics card", "hash": "29031762fc7f4e6f", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_DX12", "field": "text", "en": "Requires DirectX 12", "hash": "e56240750e702397", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_DX12_VRS2", "field": "text", "en": "Requires Variable Rate Shading Tier 2 capable GPU", "hash": "dcb1ed924d530bba", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_INTEL_GPU", "field": "text", "en": "Requires an Intel graphics card", "hash": "93f1383e0dcff9e0", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_MACOS_10_13", "field": "text", "en": "Requires macOS 10.13 or above", "hash": "06f350c9bcff88ab", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_MACOS_10_14", "field": "text", "en": "Requires macOS 10.14 or above", "hash": "ef2982de595515e9", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_MACOS_10_15", "field": "text", "en": "Requires macOS 10.15 or above", "hash": "d75fb4f8f5aaa316", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_MACOS_11_0", "field": "text", "en": "Requires macOS 11.0 or above", "hash": "f36ddac7843af67b", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_MACOS_12_0", "field": "text", "en": "Requires macOS 12.0 or above", "hash": "4c724c8f387b97e1", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_MACOS_13_0", "field": "text", "en": "Requires macOS 13.0 or above", "hash": "a576be52ecbc3936", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_NVIDIA_GPU", "field": "text", "en": "Requires an NVIDIA graphics card", "hash": "566d208be4f5af87", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_QUALCOMM_GPU", "field": "text", "en": "Requires a Qualcomm graphics card", "hash": "ff99ad72dae64b5b", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_RT", "field": "text", "en": "Requires a ray tracing capable graphics card", "hash": "f2471ddfaf5bd376", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_WINDOWS_10", "field": "text", "en": "Requires Windows 10 or above", "hash": "83007ea12be93005", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NEEDS_WINDOWS_11", "field": "text", "en": "Requires Windows 11 or above", "hash": "6b36b0bbc83ebd32", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NVAPI_WINE_UNSUPPORTED", "field": "text", "en": "NVAPI is disabled on Wine", "hash": "60818184da6d037d", "src": "db2@1.60.1.70170"}
+{"id": "VRN_NVIDIA_UNSUPPORTED", "field": "text", "en": "Unsupported on NVIDIA graphics cards", "hash": "94aec6906e2fa6e9", "src": "db2@1.60.1.70170"}
+{"id": "VRN_QUADCORE", "field": "text", "en": "Requires a quad-core processor", "hash": "bbc32d0f7d11449b", "src": "db2@1.60.1.70170"}
+{"id": "VRN_QUALCOMM_UNSUPPORTED", "field": "text", "en": "Unsupported on Qualcomm graphics cards", "hash": "4e604ae0c2e73a12", "src": "db2@1.60.1.70170"}
+{"id": "VRN_REMOTE_DESKTOP_UNSUPPORTED", "field": "text", "en": "Unsupported while using Remote Desktop", "hash": "b635d6d02fe091ef", "src": "db2@1.60.1.70170"}
+{"id": "VRN_UNSUPPORTED", "field": "text", "en": "Unsupported on your system", "hash": "fd7bb155e540964b", "src": "db2@1.60.1.70170"}
+{"id": "VRN_WINDOWS_UNSUPPORTED", "field": "text", "en": "Unsupported on Windows", "hash": "9f6b2311e943d29b", "src": "db2@1.60.1.70170"}
+{"id": "VRN_WINE_UNSUPPORTED", "field": "text", "en": "Unsupported on Wine", "hash": "e3e96c8efd1ef951", "src": "db2@1.60.1.70170"}
+{"id": "VRS_MODE", "field": "text", "en": "VRS Mode", "hash": "c969201d696c14ec", "src": "db2@1.60.1.70170"}

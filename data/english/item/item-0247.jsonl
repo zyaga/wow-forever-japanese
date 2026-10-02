@@ -1,57 +1,57 @@
-{"id": 247000, "field": "name", "en": "Fel-Tainted Rock", "hash": "b9f3229a7e301270", "src": "db2@1.60.1.70124"}
-{"id": 247000, "field": "description", "en": "Sparkling green vapors rise from this rock. You probably shouldn't touch it with bare skin too much.", "hash": "c47025278bfef762", "src": "db2@1.60.1.70124"}
-{"id": 247001, "field": "name", "en": "Fel-Tainted Branch", "hash": "a7bc42c87a1f3e79", "src": "db2@1.60.1.70124"}
-{"id": 247001, "field": "description", "en": "Sparkling green vapors rise from this branch. Burning it would probably release toxic smoke.", "hash": "0c56538afac114da", "src": "db2@1.60.1.70124"}
-{"id": 247238, "field": "name", "en": "Mana-Siphoning Wand", "hash": "0388d7d3d4ee6f97", "src": "db2@1.60.1.70124"}
-{"id": 247238, "field": "description", "en": "Siphon magic from a Ley Line Rift.", "hash": "c3bcd1fdd5efe1cc", "src": "db2@1.60.1.70124"}
-{"id": 247239, "field": "name", "en": "Lesser Discolored Healing Potion", "hash": "53f4e8d431d7d21a", "src": "db2@1.60.1.70124"}
-{"id": 247239, "field": "description", "en": "Restores $s1 health instantly, however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "998c6850a5009550", "src": "db2@1.60.1.70124"}
-{"id": 247240, "field": "name", "en": "Discolored Healing Potion", "hash": "32796bdac4d54c0a", "src": "db2@1.60.1.70124"}
-{"id": 247240, "field": "description", "en": "Restores $s1 health instantly, however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "998c6850a5009550", "src": "db2@1.60.1.70124"}
-{"id": 247241, "field": "name", "en": "Greater Discolored Healing Potion", "hash": "a1c3c95f86416d83", "src": "db2@1.60.1.70124"}
-{"id": 247241, "field": "description", "en": "Restores $s1 health instantly, however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "998c6850a5009550", "src": "db2@1.60.1.70124"}
-{"id": 247242, "field": "name", "en": "Superior Discolored Healing Potion", "hash": "1edc55adb0dac627", "src": "db2@1.60.1.70124"}
-{"id": 247242, "field": "description", "en": "Restores $s1 health instantly, however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "998c6850a5009550", "src": "db2@1.60.1.70124"}
-{"id": 247684, "field": "name", "en": "Forgotten Ashes", "hash": "20b161d2f14d5005", "src": "db2@1.60.1.70124"}
-{"id": 247684, "field": "description", "en": "All that remains of a terrible thing", "hash": "8b42d1e32f52ba32", "src": "db2@1.60.1.70124"}
-{"id": 247754, "field": "name", "en": "Minor Arcane Elixir", "hash": "d39f0349d6691e73", "src": "db2@1.60.1.70124"}
-{"id": 247754, "field": "description", "en": "Increases spell damage by up to $s1 for $d.", "hash": "bfd948e79e2ad268", "src": "db2@1.60.1.70124"}
-{"id": 247755, "field": "name", "en": "Elixir of Minor Force", "hash": "021d6fb7e86d32a0", "src": "db2@1.60.1.70124"}
-{"id": 247755, "field": "description", "en": "Increases Physical damage by $s1 for $d.", "hash": "aefc85daf80886f1", "src": "db2@1.60.1.70124"}
-{"id": 247786, "field": "name", "en": "Mote of Magic", "hash": "16dfac5d3cc139a0", "src": "db2@1.60.1.70124"}
-{"id": 247786, "field": "description", "en": "Available from enchanting vendors.", "hash": "b01ca2c7fae39532", "src": "db2@1.60.1.70124"}
-{"id": 247789, "field": "name", "en": "Novice's Practice Wand", "hash": "c05ed3592eb44cff", "src": "db2@1.60.1.70124"}
-{"id": 247805, "field": "name", "en": "Stolen Enchanting Supplies", "hash": "78bd98c129eb6fef", "src": "db2@1.60.1.70124"}
-{"id": 247813, "field": "name", "en": "Waterlogged Saw", "hash": "0ace8eabd3a638b5", "src": "db2@1.60.1.70124"}
-{"id": 247816, "field": "name", "en": "Mining Tools", "hash": "6e44831f533eed32", "src": "db2@1.60.1.70124"}
-{"id": 247817, "field": "name", "en": "Waterlogged Axe", "hash": "0ac9e3bc8c345248", "src": "db2@1.60.1.70124"}
-{"id": 247818, "field": "name", "en": "Waterlogged Toolbox", "hash": "2fbff7ef22302f55", "src": "db2@1.60.1.70124"}
-{"id": 247824, "field": "name", "en": "Thunder Applejack", "hash": "52841d8e6c396ad5", "src": "db2@1.60.1.70124"}
-{"id": 247824, "field": "description", "en": "A strong alcoholic beverage.", "hash": "6f5754c9fcdc96aa", "src": "db2@1.60.1.70124"}
-{"id": 247826, "field": "name", "en": "Croaky's Head", "hash": "9a2d8e95c88f1a19", "src": "db2@1.60.1.70124"}
-{"id": 247834, "field": "name", "en": "Nibbled-On Book", "hash": "dc36fd8fb1648b88", "src": "db2@1.60.1.70124"}
-{"id": 247839, "field": "name", "en": "Stolen Book", "hash": "54ccddf49294927c", "src": "db2@1.60.1.70124"}
-{"id": 247839, "field": "description", "en": "Only slightly nibbled on.", "hash": "e17709085a7845c9", "src": "db2@1.60.1.70124"}
-{"id": 247840, "field": "name", "en": "Mining for Dummies", "hash": "3f47ccbb5880f64b", "src": "db2@1.60.1.70124"}
-{"id": 247840, "field": "description", "en": "Increases your Mining skill by $m1. Cannot raise Mining skill over $m2. You will learn Mining if it is not already trained and you do not already know two other professions.\nExplains how to mine using only the ten hundred most common words.", "hash": "c7c42eb66a1eedd9", "src": "db2@1.60.1.70124"}
-{"id": 247841, "field": "name", "en": "Wild Harvest", "hash": "227d9aebfe521f8a", "src": "db2@1.60.1.70124"}
-{"id": 247841, "field": "description", "en": "Increases your Herbalism skill by $m1. Cannot raise Herbalism skill over $m2. You will learn Herbalism if it is not already trained and you do not already know two other professions.\nAn instruction manual for picking wild herbs.", "hash": "75bcda3eb92e1b62", "src": "db2@1.60.1.70124"}
-{"id": 247846, "field": "name", "en": "Pelt Collecting for Beginners", "hash": "e0446baaa5653671", "src": "db2@1.60.1.70124"}
-{"id": 247846, "field": "description", "en": "Increases your Skinning skill by $m1. Cannot raise Skinning skill over $m2. You will learn Skinning if it is not already trained and you do not already know two other professions.\r\n\nA picture book documenting how to collect animal skins.", "hash": "65b23c136eb22a20", "src": "db2@1.60.1.70124"}
-{"id": 247857, "field": "name", "en": "Nibbled-On Book", "hash": "dc36fd8fb1648b88", "src": "db2@1.60.1.70124"}
-{"id": 247862, "field": "name", "en": "Elmpaw's Head", "hash": "6c96dddbad15c4ce", "src": "db2@1.60.1.70124"}
-{"id": 247876, "field": "name", "en": "[DNT] Minimus Tentaculus", "hash": "8df04e2fd95447b9", "src": "db2@1.60.1.70124"}
-{"id": 247876, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70124"}
-{"id": 247877, "field": "name", "en": "Rough Wolf Pelt", "hash": "26d950b896abb402", "src": "db2@1.60.1.70124"}
-{"id": 247883, "field": "name", "en": "Crude Wax Effigy", "hash": "ca101cf85d413eee", "src": "db2@1.60.1.70124"}
-{"id": 247883, "field": "description", "en": "The faint magic within can be extracted with the Disenchanting skill.", "hash": "ffee115d3c8271e8", "src": "db2@1.60.1.70124"}
-{"id": 247884, "field": "name", "en": "Luminous Residue", "hash": "22e9120f8a19be9a", "src": "db2@1.60.1.70124"}
-{"id": 247885, "field": "name", "en": "Useless Goop", "hash": "ea388e9fc462635e", "src": "db2@1.60.1.70124"}
-{"id": 247886, "field": "name", "en": "Sack of \"Picture\" Books", "hash": "d781712dba92034c", "src": "db2@1.60.1.70124"}
-{"id": 247886, "field": "description", "en": "Every book in this sack is a children's picture book. Kobolds clearly can't read, but why do they want these books?", "hash": "8b998b95ebc6018a", "src": "db2@1.60.1.70124"}
-{"id": 247889, "field": "name", "en": "Untainted Soil", "hash": "a5ad1b9cab009f40", "src": "db2@1.60.1.70124"}
-{"id": 247892, "field": "name", "en": "Verdant Leaves", "hash": "f51f0427e4949073", "src": "db2@1.60.1.70124"}
-{"id": 247963, "field": "name", "en": "Herbal Soil Poultice", "hash": "57e0294a6b8ce2b9", "src": "db2@1.60.1.70124"}
-{"id": 247963, "field": "description", "en": "Aids in healing and growth of verdant vegetation.", "hash": "3948b6152b656a84", "src": "db2@1.60.1.70124"}
-{"id": 247970, "field": "name", "en": "Kobold Tracking Kit", "hash": "c157d36f051719de", "src": "db2@1.60.1.70124"}
-{"id": 247970, "field": "description", "en": "Causes nearby kobold tracks to appear on your map.", "hash": "877e0a8a5207ad77", "src": "db2@1.60.1.70124"}
+{"id": 247000, "field": "name", "en": "Fel-Tainted Rock", "hash": "b9f3229a7e301270", "src": "db2@1.60.1.70170"}
+{"id": 247000, "field": "description", "en": "Sparkling green vapors rise from this rock. You probably shouldn't touch it with bare skin too much.", "hash": "c47025278bfef762", "src": "db2@1.60.1.70170"}
+{"id": 247001, "field": "name", "en": "Fel-Tainted Branch", "hash": "a7bc42c87a1f3e79", "src": "db2@1.60.1.70170"}
+{"id": 247001, "field": "description", "en": "Sparkling green vapors rise from this branch. Burning it would probably release toxic smoke.", "hash": "0c56538afac114da", "src": "db2@1.60.1.70170"}
+{"id": 247238, "field": "name", "en": "Mana-Siphoning Wand", "hash": "0388d7d3d4ee6f97", "src": "db2@1.60.1.70170"}
+{"id": 247238, "field": "description", "en": "Siphon magic from a Ley Line Rift.", "hash": "c3bcd1fdd5efe1cc", "src": "db2@1.60.1.70170"}
+{"id": 247239, "field": "name", "en": "Lesser Discolored Healing Potion", "hash": "53f4e8d431d7d21a", "src": "db2@1.60.1.70170"}
+{"id": 247239, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70170"}
+{"id": 247240, "field": "name", "en": "Discolored Healing Potion", "hash": "32796bdac4d54c0a", "src": "db2@1.60.1.70170"}
+{"id": 247240, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70170"}
+{"id": 247241, "field": "name", "en": "Greater Discolored Healing Potion", "hash": "a1c3c95f86416d83", "src": "db2@1.60.1.70170"}
+{"id": 247241, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70170"}
+{"id": 247242, "field": "name", "en": "Superior Discolored Healing Potion", "hash": "1edc55adb0dac627", "src": "db2@1.60.1.70170"}
+{"id": 247242, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70170"}
+{"id": 247684, "field": "name", "en": "Forgotten Ashes", "hash": "20b161d2f14d5005", "src": "db2@1.60.1.70170"}
+{"id": 247684, "field": "description", "en": "All that remains of a terrible thing.", "hash": "433168ba9c421844", "src": "db2@1.60.1.70170"}
+{"id": 247754, "field": "name", "en": "Minor Arcane Elixir", "hash": "d39f0349d6691e73", "src": "db2@1.60.1.70170"}
+{"id": 247754, "field": "description", "en": "Increases spell damage by up to $s1 for $d.", "hash": "bfd948e79e2ad268", "src": "db2@1.60.1.70170"}
+{"id": 247755, "field": "name", "en": "Elixir of Minor Force", "hash": "021d6fb7e86d32a0", "src": "db2@1.60.1.70170"}
+{"id": 247755, "field": "description", "en": "Increases Physical damage by $s1 for $d.", "hash": "aefc85daf80886f1", "src": "db2@1.60.1.70170"}
+{"id": 247786, "field": "name", "en": "Mote of Magic", "hash": "16dfac5d3cc139a0", "src": "db2@1.60.1.70170"}
+{"id": 247786, "field": "description", "en": "Available from enchanting vendors.", "hash": "b01ca2c7fae39532", "src": "db2@1.60.1.70170"}
+{"id": 247789, "field": "name", "en": "Novice's Practice Wand", "hash": "c05ed3592eb44cff", "src": "db2@1.60.1.70170"}
+{"id": 247805, "field": "name", "en": "Stolen Enchanting Supplies", "hash": "78bd98c129eb6fef", "src": "db2@1.60.1.70170"}
+{"id": 247813, "field": "name", "en": "Waterlogged Saw", "hash": "0ace8eabd3a638b5", "src": "db2@1.60.1.70170"}
+{"id": 247816, "field": "name", "en": "Mining Tools", "hash": "6e44831f533eed32", "src": "db2@1.60.1.70170"}
+{"id": 247817, "field": "name", "en": "Waterlogged Axe", "hash": "0ac9e3bc8c345248", "src": "db2@1.60.1.70170"}
+{"id": 247818, "field": "name", "en": "Waterlogged Toolbox", "hash": "2fbff7ef22302f55", "src": "db2@1.60.1.70170"}
+{"id": 247824, "field": "name", "en": "Thunder Applejack", "hash": "52841d8e6c396ad5", "src": "db2@1.60.1.70170"}
+{"id": 247824, "field": "description", "en": "A strong alcoholic beverage.", "hash": "6f5754c9fcdc96aa", "src": "db2@1.60.1.70170"}
+{"id": 247826, "field": "name", "en": "Croaky's Head", "hash": "9a2d8e95c88f1a19", "src": "db2@1.60.1.70170"}
+{"id": 247834, "field": "name", "en": "Nibbled-On Book", "hash": "dc36fd8fb1648b88", "src": "db2@1.60.1.70170"}
+{"id": 247839, "field": "name", "en": "Stolen Book", "hash": "54ccddf49294927c", "src": "db2@1.60.1.70170"}
+{"id": 247839, "field": "description", "en": "Only slightly nibbled on.", "hash": "e17709085a7845c9", "src": "db2@1.60.1.70170"}
+{"id": 247840, "field": "name", "en": "Mining for Dummies", "hash": "3f47ccbb5880f64b", "src": "db2@1.60.1.70170"}
+{"id": 247840, "field": "description", "en": "Increases your Mining skill by $m1. Cannot raise Mining skill over $m2. You will learn Mining if it is not already trained and you do not already know two other professions.\nExplains how to mine using only the ten hundred most common words.", "hash": "c7c42eb66a1eedd9", "src": "db2@1.60.1.70170"}
+{"id": 247841, "field": "name", "en": "Wild Harvest", "hash": "227d9aebfe521f8a", "src": "db2@1.60.1.70170"}
+{"id": 247841, "field": "description", "en": "Increases your Herbalism skill by $m1. Cannot raise Herbalism skill over $m2. You will learn Herbalism if it is not already trained and you do not already know two other professions.\nAn instruction manual for picking wild herbs.", "hash": "75bcda3eb92e1b62", "src": "db2@1.60.1.70170"}
+{"id": 247846, "field": "name", "en": "Pelt Collecting for Beginners", "hash": "e0446baaa5653671", "src": "db2@1.60.1.70170"}
+{"id": 247846, "field": "description", "en": "Increases your Skinning skill by $m1. Cannot raise Skinning skill over $m2. You will learn Skinning if it is not already trained and you do not already know two other professions.\r\n\nA picture book documenting how to collect animal skins.", "hash": "65b23c136eb22a20", "src": "db2@1.60.1.70170"}
+{"id": 247857, "field": "name", "en": "Nibbled-On Book", "hash": "dc36fd8fb1648b88", "src": "db2@1.60.1.70170"}
+{"id": 247862, "field": "name", "en": "Elmpaw's Head", "hash": "6c96dddbad15c4ce", "src": "db2@1.60.1.70170"}
+{"id": 247876, "field": "name", "en": "[DNT] Minimus Tentaculus", "hash": "8df04e2fd95447b9", "src": "db2@1.60.1.70170"}
+{"id": 247876, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
+{"id": 247877, "field": "name", "en": "Rough Wolf Pelt", "hash": "26d950b896abb402", "src": "db2@1.60.1.70170"}
+{"id": 247883, "field": "name", "en": "Crude Wax Effigy", "hash": "ca101cf85d413eee", "src": "db2@1.60.1.70170"}
+{"id": 247883, "field": "description", "en": "The faint magic within can be extracted with the Disenchanting skill.", "hash": "ffee115d3c8271e8", "src": "db2@1.60.1.70170"}
+{"id": 247884, "field": "name", "en": "Luminous Residue", "hash": "22e9120f8a19be9a", "src": "db2@1.60.1.70170"}
+{"id": 247885, "field": "name", "en": "Useless Goop", "hash": "ea388e9fc462635e", "src": "db2@1.60.1.70170"}
+{"id": 247886, "field": "name", "en": "Sack of \"Picture\" Books", "hash": "d781712dba92034c", "src": "db2@1.60.1.70170"}
+{"id": 247886, "field": "description", "en": "Every book in this sack is a children's picture book. Kobolds clearly can't read, but why do they want these books?", "hash": "8b998b95ebc6018a", "src": "db2@1.60.1.70170"}
+{"id": 247889, "field": "name", "en": "Untainted Soil", "hash": "a5ad1b9cab009f40", "src": "db2@1.60.1.70170"}
+{"id": 247892, "field": "name", "en": "Verdant Leaves", "hash": "f51f0427e4949073", "src": "db2@1.60.1.70170"}
+{"id": 247963, "field": "name", "en": "Herbal Soil Poultice", "hash": "57e0294a6b8ce2b9", "src": "db2@1.60.1.70170"}
+{"id": 247963, "field": "description", "en": "Aids in healing and growth of verdant vegetation.", "hash": "3948b6152b656a84", "src": "db2@1.60.1.70170"}
+{"id": 247970, "field": "name", "en": "Kobold Tracking Kit", "hash": "c157d36f051719de", "src": "db2@1.60.1.70170"}
+{"id": 247970, "field": "description", "en": "Causes nearby kobold tracks to appear on your map.", "hash": "877e0a8a5207ad77", "src": "db2@1.60.1.70170"}

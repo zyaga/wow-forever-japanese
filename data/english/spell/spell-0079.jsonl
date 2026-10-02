@@ -1,6 +1,6 @@
-{"id": 79429, "field": "name", "en": "Elemental Resistance Totem", "hash": "666e5b697c0c9aaa", "src": "db2@1.60.1.70124"}
-{"id": 79429, "field": "description", "en": "Summons an Elemental Resistance totem.", "hash": "99090e6f5ef64d5d", "src": "db2@1.60.1.70124"}
-{"id": 79429, "field": "aura", "en": "Resistances increased.", "hash": "591d68d8d18c253c", "src": "db2@1.60.1.70124"}
-{"id": 79431, "field": "name", "en": "Flametongue Totem", "hash": "253b74d942ac6c4d", "src": "db2@1.60.1.70124"}
-{"id": 79431, "field": "description", "en": "Summons an Elemental Resistance totem.", "hash": "99090e6f5ef64d5d", "src": "db2@1.60.1.70124"}
-{"id": 79431, "field": "aura", "en": "Resistances increased.", "hash": "591d68d8d18c253c", "src": "db2@1.60.1.70124"}
+{"id": 79429, "field": "name", "en": "Elemental Resistance Totem", "hash": "666e5b697c0c9aaa", "src": "db2@1.60.1.70170"}
+{"id": 79429, "field": "description", "en": "Summons an Elemental Resistance totem.", "hash": "99090e6f5ef64d5d", "src": "db2@1.60.1.70170"}
+{"id": 79429, "field": "aura", "en": "Resistances increased.", "hash": "591d68d8d18c253c", "src": "db2@1.60.1.70170"}
+{"id": 79431, "field": "name", "en": "Flametongue Totem", "hash": "253b74d942ac6c4d", "src": "db2@1.60.1.70170"}
+{"id": 79431, "field": "description", "en": "Summons an Elemental Resistance totem.", "hash": "99090e6f5ef64d5d", "src": "db2@1.60.1.70170"}
+{"id": 79431, "field": "aura", "en": "Resistances increased.", "hash": "591d68d8d18c253c", "src": "db2@1.60.1.70170"}

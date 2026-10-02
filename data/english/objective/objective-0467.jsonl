@@ -1,12 +1,12 @@
-{"id": 467266, "field": "text", "en": "Obtain Instructions from Nazgrel", "hash": "f58cb0f0510ae433", "src": "wdb@1.60.1.70124"}
-{"id": 467280, "field": "text", "en": "Listen to what Riaani Nightwind has to say", "hash": "30eeeff7490cb5f2", "src": "wdb@1.60.1.70124"}
-{"id": 467281, "field": "text", "en": "Obtain Crystallized lightning from the Shriekling Cave", "hash": "9ae8355d4e86f8de", "src": "wdb@1.60.1.70124"}
-{"id": 467282, "field": "text", "en": "Obtain Enchanted Gyrozephyr from Windsong Lake", "hash": "bb4320ad8fbf03b1", "src": "wdb@1.60.1.70124"}
-{"id": 467283, "field": "text", "en": "Obtain Air Construct Core from the Bandit Camp", "hash": "c8f24d593458d6fa", "src": "wdb@1.60.1.70124"}
-{"id": 467315, "field": "text", "en": "Confront Belathaan Brightwish", "hash": "821feff7d1aa9114", "src": "wdb@1.60.1.70124"}
-{"id": 467563, "field": "text", "en": "Confront Lorthuna", "hash": "90290d9db6630833", "src": "wdb@1.60.1.70124"}
-{"id": 467567, "field": "text", "en": "Speak with Talaanis Shadowsong", "hash": "86fdd1d2cf3a39f5", "src": "wdb@1.60.1.70124"}
-{"id": 467938, "field": "text", "en": "Check in on the Western Watchtower in the Shen'dar Highlands", "hash": "f5953b13e2242cba", "src": "wdb@1.60.1.70124"}
-{"id": 467960, "field": "text", "en": "Collect and read the note", "hash": "dee190b1aef71f80", "src": "wdb@1.60.1.70124"}
-{"id": 467962, "field": "text", "en": "Raani's Favorite Feather", "hash": "43f5fa15775e5d69", "src": "wdb@1.60.1.70124"}
-{"id": 467963, "field": "text", "en": "Shadowsong Family Signet", "hash": "dba3bd94d5a3877c", "src": "wdb@1.60.1.70124"}
+{"id": 467266, "field": "text", "en": "Obtain Instructions from Nazgrel", "hash": "f58cb0f0510ae433", "src": "wdb@1.60.1.70170"}
+{"id": 467280, "field": "text", "en": "Listen to what Riaani Nightwind has to say", "hash": "30eeeff7490cb5f2", "src": "wdb@1.60.1.70170"}
+{"id": 467281, "field": "text", "en": "Obtain Crystallized lightning from the Shriekling Cave", "hash": "9ae8355d4e86f8de", "src": "wdb@1.60.1.70170"}
+{"id": 467282, "field": "text", "en": "Obtain Enchanted Gyrozephyr from Windsong Lake", "hash": "bb4320ad8fbf03b1", "src": "wdb@1.60.1.70170"}
+{"id": 467283, "field": "text", "en": "Obtain Air Construct Core from the Bandit Camp", "hash": "c8f24d593458d6fa", "src": "wdb@1.60.1.70170"}
+{"id": 467315, "field": "text", "en": "Confront Belathaan Brightwish", "hash": "821feff7d1aa9114", "src": "wdb@1.60.1.70170"}
+{"id": 467563, "field": "text", "en": "Confront Lorthuna", "hash": "90290d9db6630833", "src": "wdb@1.60.1.70170"}
+{"id": 467567, "field": "text", "en": "Speak with Talaanis Shadowsong", "hash": "86fdd1d2cf3a39f5", "src": "wdb@1.60.1.70170"}
+{"id": 467938, "field": "text", "en": "Check in on the Western Watchtower in the Shen'dar Highlands", "hash": "f5953b13e2242cba", "src": "wdb@1.60.1.70170"}
+{"id": 467960, "field": "text", "en": "Collect and read the note", "hash": "dee190b1aef71f80", "src": "wdb@1.60.1.70170"}
+{"id": 467962, "field": "text", "en": "Raani's Favorite Feather", "hash": "43f5fa15775e5d69", "src": "wdb@1.60.1.70170"}
+{"id": 467963, "field": "text", "en": "Shadowsong Family Signet", "hash": "dba3bd94d5a3877c", "src": "wdb@1.60.1.70170"}

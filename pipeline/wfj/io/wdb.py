@@ -130,6 +130,7 @@ LAYOUTS = (
     *LAYOUTS,
     replace(_FOREVER_69913, build=70009, evidence="Forever beta 1.60.1.70009, 2,231 of 2,231 records"),
     replace(_FOREVER_69913, build=70124, evidence="Forever beta 1.60.1.70124, 2,325 of 2,325 records"),
+    replace(_FOREVER_69913, build=70170, evidence="Forever beta 1.60.1.70170, 2,404 of 2,404 records"),
 )
 
 

@@ -1,149 +1,149 @@
-{"id": 470009, "field": "name", "en": "Root Self", "hash": "4d9aba80e25926fa", "src": "db2@1.60.1.70124"}
-{"id": 470016, "field": "name", "en": "Flare Breath", "hash": "eba27d8f48eb2dd9", "src": "db2@1.60.1.70124"}
-{"id": 470017, "field": "name", "en": "Flare Breath", "hash": "eba27d8f48eb2dd9", "src": "db2@1.60.1.70124"}
-{"id": 470018, "field": "name", "en": "Flare Breath", "hash": "eba27d8f48eb2dd9", "src": "db2@1.60.1.70124"}
-{"id": 470026, "field": "name", "en": "Flare Breath", "hash": "eba27d8f48eb2dd9", "src": "db2@1.60.1.70124"}
-{"id": 470029, "field": "name", "en": "(DNT) Flare Breath Area Trigger Visuals", "hash": "ffce5a6e4ccc9c71", "src": "db2@1.60.1.70124"}
-{"id": 470031, "field": "name", "en": "War Stomp", "hash": "7b2c5ab10e248a9c", "src": "db2@1.60.1.70124"}
-{"id": 470031, "field": "description", "en": "Inflicts normal damage plus $s3 to nearby enemies, knocking them back and stunning them for $d.", "hash": "476b69d800556dfe", "src": "db2@1.60.1.70124"}
-{"id": 470031, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
-{"id": 470036, "field": "name", "en": "[DNT] Riosus", "hash": "a3304e8109ff8cc8", "src": "db2@1.60.1.70124"}
-{"id": 470037, "field": "name", "en": "Fire Cat Form", "hash": "db45f040a7fdb451", "src": "db2@1.60.1.70124"}
-{"id": 470037, "field": "description", "en": "Attune with the fires within, allowing you to replace your Cat form with a more fiery visage.", "hash": "285a3d7d648ebbd8", "src": "db2@1.60.1.70124"}
-{"id": 470037, "field": "aura", "en": "Taking on a fiery aspect...", "hash": "cbb2b456cf8007c3", "src": "db2@1.60.1.70124"}
-{"id": 470051, "field": "name", "en": "[DNT] Riosus", "hash": "a3304e8109ff8cc8", "src": "db2@1.60.1.70124"}
-{"id": 470052, "field": "name", "en": "Blue Beam", "hash": "73103909c841f858", "src": "db2@1.60.1.70124"}
-{"id": 470052, "field": "aura", "en": "\r\nReduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70124"}
-{"id": 470078, "field": "name", "en": "Libram of Plenty", "hash": "3f824b88359f5e9f", "src": "db2@1.60.1.70124"}
-{"id": 470078, "field": "description", "en": "Your Crusader Strike spell restores an additional $s1% of your maximum mana.", "hash": "e7ed376652dc5212", "src": "db2@1.60.1.70124"}
-{"id": 470079, "field": "name", "en": "Idol of Celestial Focus", "hash": "65bc938515d331f6", "src": "db2@1.60.1.70124"}
-{"id": 470079, "field": "description", "en": "Increases the damage done by Starfall by $s1%, but decreases its radius by $s2%.", "hash": "57f4abd8bbf2f250", "src": "db2@1.60.1.70124"}
-{"id": 470080, "field": "name", "en": "Idol of Feline Focus", "hash": "0dc569ee3e98a2a3", "src": "db2@1.60.1.70124"}
-{"id": 470080, "field": "description", "en": "Your Ferocious Bite ability no longer converts additional energy into damage, and refunds $s1 energy on a Dodge, Miss, or Parry.", "hash": "d8d1e9ae5c6eb2f0", "src": "db2@1.60.1.70124"}
-{"id": 470081, "field": "name", "en": "Totem of Raging Storms", "hash": "e3d98fb78f9b211f", "src": "db2@1.60.1.70124"}
-{"id": 470081, "field": "description", "en": "While a Shield is equipped, your melee attacks with Rockbiter Weapon trigger your Maelstrom Weapon rune $470082s1% more often.", "hash": "6514c9b2d5ad125a", "src": "db2@1.60.1.70124"}
-{"id": 470082, "field": "name", "en": "Totem of Raging Storms", "hash": "e3d98fb78f9b211f", "src": "db2@1.60.1.70124"}
-{"id": 470082, "field": "description", "en": "Increases the frequency of Maelstrom Weapon triggering by $s1%.", "hash": "563a849b7a0c798d", "src": "db2@1.60.1.70124"}
-{"id": 470085, "field": "name", "en": "Sated", "hash": "be10183ea6f61309", "src": "db2@1.60.1.70124"}
-{"id": 470085, "field": "aura", "en": "Cannot benefit from Blessing of Shirvallah.", "hash": "645e640b0394d243", "src": "db2@1.60.1.70124"}
-{"id": 470101, "field": "name", "en": "Loa Summon", "hash": "e3506bedd9b7a5c9", "src": "db2@1.60.1.70124"}
-{"id": 470103, "field": "name", "en": "Thunder Stomp", "hash": "fdf2c43c7e65eb73", "src": "db2@1.60.1.70124"}
-{"id": 470104, "field": "name", "en": "Totem of Storm and Fire", "hash": "4bb05920e70ddf96", "src": "db2@1.60.1.70124"}
-{"id": 470104, "field": "description", "en": "While Rolling Thunder is engraved, Lava Burst casts have a $s1% chance to add an additional charge to your active Lightning Shield.", "hash": "b7f50c122f1ee170", "src": "db2@1.60.1.70124"}
-{"id": 470105, "field": "name", "en": "Totem of the Elements", "hash": "809119c1921ae61d", "src": "db2@1.60.1.70124"}
-{"id": 470105, "field": "description", "en": "Your Elemental Focus talent now has a maximum of ${$s1+1} charges, and is set to ${$s1+1} charges when it triggers.", "hash": "6b2aa54f82e28743", "src": "db2@1.60.1.70124"}
-{"id": 470108, "field": "name", "en": "Petrification", "hash": "0cdeada17e9529e1", "src": "db2@1.60.1.70124"}
-{"id": 470108, "field": "description", "en": "You turn to stone, protecting you from all physical attacks and spells for $d, but during that time you cannot attack, move or cast spells.  You can only have the effect of one flask at a time.", "hash": "7d8a1bc080752992", "src": "db2@1.60.1.70124"}
-{"id": 470108, "field": "aura", "en": "Immune to all attacks and spells.  Cannot attack, move or use spells.", "hash": "16dc02b3b7f74fb7", "src": "db2@1.60.1.70124"}
-{"id": 470117, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70124"}
-{"id": 470118, "field": "name", "en": "[DNT] Red Whelp Summon Visual", "hash": "5116ca2142b14cd1", "src": "db2@1.60.1.70124"}
-{"id": 470124, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
-{"id": 470124, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70124"}
-{"id": 470160, "field": "name", "en": "[DNT] Create Dragontooth Blade", "hash": "990a9514a4add063", "src": "db2@1.60.1.70124"}
-{"id": 470163, "field": "name", "en": "[DNT] Red Whelp Spawn Spell", "hash": "069d94f7c16beabb", "src": "db2@1.60.1.70124"}
-{"id": 470187, "field": "name", "en": "(DNT) Vehicle Force Cast", "hash": "96796b5f876ae589", "src": "db2@1.60.1.70124"}
-{"id": 470188, "field": "name", "en": "(DNT) Move to Vehicle", "hash": "5ef31a59384bf151", "src": "db2@1.60.1.70124"}
-{"id": 470199, "field": "name", "en": "[DNT] Resurrection Sickness Prevention", "hash": "f170102c5c2249c0", "src": "db2@1.60.1.70124"}
-{"id": 470235, "field": "name", "en": "Totem of Astral Flow", "hash": "bf92a71c1226b5ea", "src": "db2@1.60.1.70124"}
-{"id": 470235, "field": "description", "en": "Increases the attack power bonus on Windfury Weapon attacks by $s1.", "hash": "a5087cac3a3c90ff", "src": "db2@1.60.1.70124"}
-{"id": 470240, "field": "name", "en": "Totem of Conductive Currents", "hash": "4cf97a6a4022a9a7", "src": "db2@1.60.1.70124"}
-{"id": 470240, "field": "description", "en": "While Frostbrand Weapon is active on your main hand weapon, your Water Shield triggers reduce the cast time of your next Chain Lightning spell within $470272d1 by $470272s1%, and increases its damage by $470272s1%. Stacking up to 5 times.", "hash": "475ff82fb5d9cfcf", "src": "db2@1.60.1.70124"}
-{"id": 470246, "field": "name", "en": "Libram of Wrath", "hash": "d4193e75636cb1d8", "src": "db2@1.60.1.70124"}
-{"id": 470246, "field": "description", "en": "Causing damage with your Holy Shock spell reduces the cast time and mana cost of your next Holy Wrath cast within $470271d1 by $470271s1%, and increases its damage by $470271s4%. Stacking up to 5 times.", "hash": "1759506a195fe59f", "src": "db2@1.60.1.70124"}
-{"id": 470263, "field": "name", "en": "Libram of Avenging", "hash": "62ebfd28c111497f", "src": "db2@1.60.1.70124"}
-{"id": 470263, "field": "description", "en": "Your Avenger's Shield hits $s2 fewer targets, but will hit its target $s1 times.", "hash": "4d101a0f1c5c411c", "src": "db2@1.60.1.70124"}
-{"id": 470264, "field": "name", "en": "Avenger's Shield", "hash": "ab886431f95fd75a", "src": "db2@1.60.1.70124"}
-{"id": 470265, "field": "name", "en": "Avenger's Shield", "hash": "ab886431f95fd75a", "src": "db2@1.60.1.70124"}
-{"id": 470265, "field": "description", "en": "Hurls a holy shield at the enemy, dealing ${$m1*$<damagepower>/100+0.091*$SPH+0.091*$AP} to ${$M1*$<damagepower>/100+0.091*$SPH+0.091*$AP} Holy damage, Dazing them and then jumping to additional nearby enemies.  Affects $x1 total targets.  Lasts $d.", "hash": "1bc80f475a84a656", "src": "db2@1.60.1.70124"}
-{"id": 470265, "field": "aura", "en": "Dazed.", "hash": "8649cd0f13f4f4b6", "src": "db2@1.60.1.70124"}
-{"id": 470266, "field": "name", "en": "Increased Nourish Healing", "hash": "70e047b84196f775", "src": "db2@1.60.1.70124"}
-{"id": 470266, "field": "description", "en": "Increases healing done by Nourish by up to $s1.", "hash": "3bf51ee9e6c17af3", "src": "db2@1.60.1.70124"}
-{"id": 470269, "field": "name", "en": "Idol of Cruelty", "hash": "0658d97ef8d00eb6", "src": "db2@1.60.1.70124"}
-{"id": 470269, "field": "description", "en": "Increases initial and per application periodic damage done by Lacerate by $s1.", "hash": "d65b62b3ae6781be", "src": "db2@1.60.1.70124"}
-{"id": 470270, "field": "name", "en": "Idol of Feline Focus", "hash": "0dc569ee3e98a2a3", "src": "db2@1.60.1.70124"}
-{"id": 470271, "field": "name", "en": "Libram of Wrath", "hash": "d4193e75636cb1d8", "src": "db2@1.60.1.70124"}
-{"id": 470271, "field": "aura", "en": "Reduces the cast time and mana cost of your next Holy Wrath spell by $s1%, and increases its damage by $s4%.", "hash": "c46452e37d7b17f4", "src": "db2@1.60.1.70124"}
-{"id": 470272, "field": "name", "en": "Totem of Conductive Currents", "hash": "4cf97a6a4022a9a7", "src": "db2@1.60.1.70124"}
-{"id": 470272, "field": "aura", "en": "Reduces the cast time your next Chain Lightning spell by $s1%, and increases its damage by $s3%.", "hash": "60c2ed4ec484d130", "src": "db2@1.60.1.70124"}
-{"id": 470279, "field": "name", "en": "Demonic Aegis", "hash": "a9083f79b4d6809e", "src": "db2@1.60.1.70124"}
-{"id": 470279, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70124"}
-{"id": 470280, "field": "name", "en": "Umbral Slash", "hash": "1f5308fbd68eb8e8", "src": "db2@1.60.1.70124"}
-{"id": 470280, "field": "description", "en": "Deals $s1 Shadow damage split between enemy targets within $a1 yards in front of the caster. ", "hash": "48bc79bff0c413f4", "src": "db2@1.60.1.70124"}
-{"id": 470280, "field": "aura", "en": "Shadow damage taken increased by $s2%", "hash": "c866cf05c021f035", "src": "db2@1.60.1.70124"}
-{"id": 470317, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
-{"id": 470338, "field": "name", "en": "[DNT] Effect", "hash": "a796e6481904e4cc", "src": "db2@1.60.1.70124"}
-{"id": 470345, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70124"}
-{"id": 470345, "field": "description", "en": "Heals $o1 damage over $d.", "hash": "cb31688fb831630b", "src": "db2@1.60.1.70124"}
-{"id": 470345, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
-{"id": 470349, "field": "name", "en": "Dense Runecloth Bandage", "hash": "e731bb6229f3c92b", "src": "db2@1.60.1.70124"}
-{"id": 470359, "field": "name", "en": "Darkclaw Bisque", "hash": "bbc8164300cb6f3f", "src": "db2@1.60.1.70124"}
-{"id": 470361, "field": "name", "en": "Increased Spell Damage", "hash": "ef7773a7898c49a9", "src": "db2@1.60.1.70124"}
-{"id": 470361, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70124"}
-{"id": 470361, "field": "aura", "en": "Spell Damage increased by $s1.", "hash": "3822b22168068a76", "src": "db2@1.60.1.70124"}
-{"id": 470362, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70124"}
-{"id": 470362, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.  If you eat for 10 seconds will also increase your Spell Damage by $470361s1 for $470361d1.", "hash": "cf7a62275b995688", "src": "db2@1.60.1.70124"}
-{"id": 470362, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70124"}
-{"id": 470367, "field": "name", "en": "Increased Healing Power", "hash": "39fe808916aa066d", "src": "db2@1.60.1.70124"}
-{"id": 470367, "field": "description", "en": "Increases Healing done by $s1 for $d.", "hash": "b61e619f0ffcca36", "src": "db2@1.60.1.70124"}
-{"id": 470367, "field": "aura", "en": "Healing done increased by $s1.", "hash": "654efc3d9290fd4f", "src": "db2@1.60.1.70124"}
-{"id": 470369, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70124"}
-{"id": 470369, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.  If you eat for 10 seconds will also increase your Healing done by $470367s1 for $470367d1.", "hash": "74db8454428a0c03", "src": "db2@1.60.1.70124"}
-{"id": 470369, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70124"}
-{"id": 470370, "field": "name", "en": "Smoked Redgill", "hash": "406738b206981050", "src": "db2@1.60.1.70124"}
-{"id": 470451, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70124"}
-{"id": 470454, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
-{"id": 470455, "field": "name", "en": "[DNT] Effect", "hash": "a796e6481904e4cc", "src": "db2@1.60.1.70124"}
-{"id": 470457, "field": "name", "en": "Bounding Shadow", "hash": "af8abb1c26a41f32", "src": "db2@1.60.1.70124"}
-{"id": 470458, "field": "name", "en": "Bounding Shadow", "hash": "af8abb1c26a41f32", "src": "db2@1.60.1.70124"}
-{"id": 470459, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70124"}
-{"id": 470459, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70124"}
-{"id": 470459, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70124"}
-{"id": 470460, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70124"}
-{"id": 470460, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70124"}
-{"id": 470460, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70124"}
-{"id": 470462, "field": "name", "en": "Bounding Shadow", "hash": "af8abb1c26a41f32", "src": "db2@1.60.1.70124"}
-{"id": 470462, "field": "description", "en": "Launches shadow infused orbs towards a random player that travels out and return to it's origin. Players hit are inflicted with $s1 Shadow damage", "hash": "b831927983f8f3c8", "src": "db2@1.60.1.70124"}
-{"id": 470495, "field": "name", "en": "Vulnerable", "hash": "594a99a8dcff61ca", "src": "db2@1.60.1.70124"}
-{"id": 470497, "field": "name", "en": "Exploit Weakness", "hash": "5657768cd26f0e19", "src": "db2@1.60.1.70124"}
-{"id": 470497, "field": "description", "en": "Carve a scale from Nefarian's hide. Only usable when Nefarian has been significantly weakened in battle.", "hash": "c2204a7e4286aad5", "src": "db2@1.60.1.70124"}
-{"id": 470500, "field": "name", "en": "[DNT] Dummy Aura Warrior", "hash": "9141a3f1827d7923", "src": "db2@1.60.1.70124"}
-{"id": 470535, "field": "name", "en": "Nether Strike", "hash": "0b34f8c3af6a24c6", "src": "db2@1.60.1.70124"}
-{"id": 470535, "field": "description", "en": "Inflicts $s1% weapon damage and leaves the target wounded, reducing the effectiveness of any healing by $s2% for $d.", "hash": "9ac3230491b61200", "src": "db2@1.60.1.70124"}
-{"id": 470535, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70124"}
-{"id": 470537, "field": "name", "en": "Exploit Weakness", "hash": "5657768cd26f0e19", "src": "db2@1.60.1.70124"}
-{"id": 470537, "field": "description", "en": "Carve a scale from Nefarian's hide. Only usable when Nefarian has been significantly weakened in battle.", "hash": "c2204a7e4286aad5", "src": "db2@1.60.1.70124"}
-{"id": 470613, "field": "name", "en": "Destroy Simulacrum", "hash": "702c9e83bfe3af52", "src": "db2@1.60.1.70124"}
-{"id": 470613, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70124"}
-{"id": 470614, "field": "name", "en": "Lightning Strike From Sky VFX", "hash": "049266d8ef6cffe3", "src": "db2@1.60.1.70124"}
-{"id": 470665, "field": "name", "en": "Majordomo Teleport Visual", "hash": "8d2d03920d3b2bc7", "src": "db2@1.60.1.70124"}
-{"id": 470713, "field": "name", "en": "Complete Quest", "hash": "1972de08a89437f5", "src": "db2@1.60.1.70124"}
-{"id": 470743, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 470743, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 470744, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 470744, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 470745, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 470745, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 470746, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 470746, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 470748, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 470748, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 470749, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 470749, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 470753, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 470753, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 470784, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70124"}
-{"id": 470788, "field": "name", "en": "Frost Specialization", "hash": "aea82a0c5fd0cb5e", "src": "db2@1.60.1.70124"}
-{"id": 470788, "field": "description", "en": "Chance to hit with Frost spells increased by $s1%. Not cumulative with other ring runes.", "hash": "ec4841c50f9ab9e9", "src": "db2@1.60.1.70124"}
-{"id": 470789, "field": "name", "en": "Fire Specialization", "hash": "e08a323448cdce66", "src": "db2@1.60.1.70124"}
-{"id": 470789, "field": "description", "en": "Chance to hit with Fire spells increased by $s1%. Not cumulative with other ring runes.", "hash": "d09f95a221a4906e", "src": "db2@1.60.1.70124"}
-{"id": 470793, "field": "name", "en": "[DNT] S03 - ZG Raid - Hakkar Defeated Priest Tracking Message", "hash": "78c9df535edd5519", "src": "db2@1.60.1.70124"}
-{"id": 470795, "field": "name", "en": "[DNT] S03 - BWL Raid - Trial Tracking Message", "hash": "a059d9387b66c6b0", "src": "db2@1.60.1.70124"}
-{"id": 470807, "field": "name", "en": "[DNT] Personal Phase Aura", "hash": "b43dbb173b509838", "src": "db2@1.60.1.70124"}
-{"id": 470836, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70124"}
-{"id": 470836, "field": "description", "en": "Creates a cloud of lightning that lasts $d., blasting all enemies in a selected area for $s1  Nature damage and inflicting $s2 additional damage every $t2 sec.", "hash": "9a2f7afedb692864", "src": "db2@1.60.1.70124"}
-{"id": 470856, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
-{"id": 470856, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70124"}
-{"id": 470866, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70124"}
-{"id": 470866, "field": "description", "en": "Creates a cloud of lightning that lasts $d., blasting all enemies in a selected area for $s1  Nature damage and inflicting $s2 additional damage every $t2 sec.", "hash": "9a2f7afedb692864", "src": "db2@1.60.1.70124"}
-{"id": 470868, "field": "name", "en": "Wisp Costume", "hash": "3c0bd1effe2d0083", "src": "db2@1.60.1.70124"}
-{"id": 470868, "field": "aura", "en": "Wisp Costume.   Cannot attack or cast spells while in wisp form.  Right-Click this icon to remove the effect.", "hash": "e8f91a53974f3ea1", "src": "db2@1.60.1.70124"}
+{"id": 470009, "field": "name", "en": "Root Self", "hash": "4d9aba80e25926fa", "src": "db2@1.60.1.70170"}
+{"id": 470016, "field": "name", "en": "Flare Breath", "hash": "eba27d8f48eb2dd9", "src": "db2@1.60.1.70170"}
+{"id": 470017, "field": "name", "en": "Flare Breath", "hash": "eba27d8f48eb2dd9", "src": "db2@1.60.1.70170"}
+{"id": 470018, "field": "name", "en": "Flare Breath", "hash": "eba27d8f48eb2dd9", "src": "db2@1.60.1.70170"}
+{"id": 470026, "field": "name", "en": "Flare Breath", "hash": "eba27d8f48eb2dd9", "src": "db2@1.60.1.70170"}
+{"id": 470029, "field": "name", "en": "(DNT) Flare Breath Area Trigger Visuals", "hash": "ffce5a6e4ccc9c71", "src": "db2@1.60.1.70170"}
+{"id": 470031, "field": "name", "en": "War Stomp", "hash": "7b2c5ab10e248a9c", "src": "db2@1.60.1.70170"}
+{"id": 470031, "field": "description", "en": "Inflicts normal damage plus $s3 to nearby enemies, knocking them back and stunning them for $d.", "hash": "476b69d800556dfe", "src": "db2@1.60.1.70170"}
+{"id": 470031, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
+{"id": 470036, "field": "name", "en": "[DNT] Riosus", "hash": "a3304e8109ff8cc8", "src": "db2@1.60.1.70170"}
+{"id": 470037, "field": "name", "en": "Fire Cat Form", "hash": "db45f040a7fdb451", "src": "db2@1.60.1.70170"}
+{"id": 470037, "field": "description", "en": "Attune with the fires within, allowing you to replace your Cat form with a more fiery visage.", "hash": "285a3d7d648ebbd8", "src": "db2@1.60.1.70170"}
+{"id": 470037, "field": "aura", "en": "Taking on a fiery aspect...", "hash": "cbb2b456cf8007c3", "src": "db2@1.60.1.70170"}
+{"id": 470051, "field": "name", "en": "[DNT] Riosus", "hash": "a3304e8109ff8cc8", "src": "db2@1.60.1.70170"}
+{"id": 470052, "field": "name", "en": "Blue Beam", "hash": "73103909c841f858", "src": "db2@1.60.1.70170"}
+{"id": 470052, "field": "aura", "en": "\r\nReduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70170"}
+{"id": 470078, "field": "name", "en": "Libram of Plenty", "hash": "3f824b88359f5e9f", "src": "db2@1.60.1.70170"}
+{"id": 470078, "field": "description", "en": "Your Crusader Strike spell restores an additional $s1% of your maximum mana.", "hash": "e7ed376652dc5212", "src": "db2@1.60.1.70170"}
+{"id": 470079, "field": "name", "en": "Idol of Celestial Focus", "hash": "65bc938515d331f6", "src": "db2@1.60.1.70170"}
+{"id": 470079, "field": "description", "en": "Increases the damage done by Starfall by $s1%, but decreases its radius by $s2%.", "hash": "57f4abd8bbf2f250", "src": "db2@1.60.1.70170"}
+{"id": 470080, "field": "name", "en": "Idol of Feline Focus", "hash": "0dc569ee3e98a2a3", "src": "db2@1.60.1.70170"}
+{"id": 470080, "field": "description", "en": "Your Ferocious Bite ability no longer converts additional energy into damage, and refunds $s1 energy on a Dodge, Miss, or Parry.", "hash": "d8d1e9ae5c6eb2f0", "src": "db2@1.60.1.70170"}
+{"id": 470081, "field": "name", "en": "Totem of Raging Storms", "hash": "e3d98fb78f9b211f", "src": "db2@1.60.1.70170"}
+{"id": 470081, "field": "description", "en": "While a Shield is equipped, your melee attacks with Rockbiter Weapon trigger your Maelstrom Weapon rune $470082s1% more often.", "hash": "6514c9b2d5ad125a", "src": "db2@1.60.1.70170"}
+{"id": 470082, "field": "name", "en": "Totem of Raging Storms", "hash": "e3d98fb78f9b211f", "src": "db2@1.60.1.70170"}
+{"id": 470082, "field": "description", "en": "Increases the frequency of Maelstrom Weapon triggering by $s1%.", "hash": "563a849b7a0c798d", "src": "db2@1.60.1.70170"}
+{"id": 470085, "field": "name", "en": "Sated", "hash": "be10183ea6f61309", "src": "db2@1.60.1.70170"}
+{"id": 470085, "field": "aura", "en": "Cannot benefit from Blessing of Shirvallah.", "hash": "645e640b0394d243", "src": "db2@1.60.1.70170"}
+{"id": 470101, "field": "name", "en": "Loa Summon", "hash": "e3506bedd9b7a5c9", "src": "db2@1.60.1.70170"}
+{"id": 470103, "field": "name", "en": "Thunder Stomp", "hash": "fdf2c43c7e65eb73", "src": "db2@1.60.1.70170"}
+{"id": 470104, "field": "name", "en": "Totem of Storm and Fire", "hash": "4bb05920e70ddf96", "src": "db2@1.60.1.70170"}
+{"id": 470104, "field": "description", "en": "While Rolling Thunder is engraved, Lava Burst casts have a $s1% chance to add an additional charge to your active Lightning Shield.", "hash": "b7f50c122f1ee170", "src": "db2@1.60.1.70170"}
+{"id": 470105, "field": "name", "en": "Totem of the Elements", "hash": "809119c1921ae61d", "src": "db2@1.60.1.70170"}
+{"id": 470105, "field": "description", "en": "Your Elemental Focus talent now has a maximum of ${$s1+1} charges, and is set to ${$s1+1} charges when it triggers.", "hash": "6b2aa54f82e28743", "src": "db2@1.60.1.70170"}
+{"id": 470108, "field": "name", "en": "Petrification", "hash": "0cdeada17e9529e1", "src": "db2@1.60.1.70170"}
+{"id": 470108, "field": "description", "en": "You turn to stone, protecting you from all physical attacks and spells for $d, but during that time you cannot attack, move or cast spells.  You can only have the effect of one flask at a time.", "hash": "7d8a1bc080752992", "src": "db2@1.60.1.70170"}
+{"id": 470108, "field": "aura", "en": "Immune to all attacks and spells.  Cannot attack, move or use spells.", "hash": "16dc02b3b7f74fb7", "src": "db2@1.60.1.70170"}
+{"id": 470117, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
+{"id": 470118, "field": "name", "en": "[DNT] Red Whelp Summon Visual", "hash": "5116ca2142b14cd1", "src": "db2@1.60.1.70170"}
+{"id": 470124, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
+{"id": 470124, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
+{"id": 470160, "field": "name", "en": "[DNT] Create Dragontooth Blade", "hash": "990a9514a4add063", "src": "db2@1.60.1.70170"}
+{"id": 470163, "field": "name", "en": "[DNT] Red Whelp Spawn Spell", "hash": "069d94f7c16beabb", "src": "db2@1.60.1.70170"}
+{"id": 470187, "field": "name", "en": "(DNT) Vehicle Force Cast", "hash": "96796b5f876ae589", "src": "db2@1.60.1.70170"}
+{"id": 470188, "field": "name", "en": "(DNT) Move to Vehicle", "hash": "5ef31a59384bf151", "src": "db2@1.60.1.70170"}
+{"id": 470199, "field": "name", "en": "[DNT] Resurrection Sickness Prevention", "hash": "f170102c5c2249c0", "src": "db2@1.60.1.70170"}
+{"id": 470235, "field": "name", "en": "Totem of Astral Flow", "hash": "bf92a71c1226b5ea", "src": "db2@1.60.1.70170"}
+{"id": 470235, "field": "description", "en": "Increases the attack power bonus on Windfury Weapon attacks by $s1.", "hash": "a5087cac3a3c90ff", "src": "db2@1.60.1.70170"}
+{"id": 470240, "field": "name", "en": "Totem of Conductive Currents", "hash": "4cf97a6a4022a9a7", "src": "db2@1.60.1.70170"}
+{"id": 470240, "field": "description", "en": "While Frostbrand Weapon is active on your main hand weapon, your Water Shield triggers reduce the cast time of your next Chain Lightning spell within $470272d1 by $470272s1%, and increases its damage by $470272s1%. Stacking up to 5 times.", "hash": "475ff82fb5d9cfcf", "src": "db2@1.60.1.70170"}
+{"id": 470246, "field": "name", "en": "Libram of Wrath", "hash": "d4193e75636cb1d8", "src": "db2@1.60.1.70170"}
+{"id": 470246, "field": "description", "en": "Causing damage with your Holy Shock spell reduces the cast time and mana cost of your next Holy Wrath cast within $470271d1 by $470271s1%, and increases its damage by $470271s4%. Stacking up to 5 times.", "hash": "1759506a195fe59f", "src": "db2@1.60.1.70170"}
+{"id": 470263, "field": "name", "en": "Libram of Avenging", "hash": "62ebfd28c111497f", "src": "db2@1.60.1.70170"}
+{"id": 470263, "field": "description", "en": "Your Avenger's Shield hits $s2 fewer targets, but will hit its target $s1 times.", "hash": "4d101a0f1c5c411c", "src": "db2@1.60.1.70170"}
+{"id": 470264, "field": "name", "en": "Avenger's Shield", "hash": "ab886431f95fd75a", "src": "db2@1.60.1.70170"}
+{"id": 470265, "field": "name", "en": "Avenger's Shield", "hash": "ab886431f95fd75a", "src": "db2@1.60.1.70170"}
+{"id": 470265, "field": "description", "en": "Hurls a holy shield at the enemy, dealing ${$m1*$<damagepower>/100+0.091*$SPH+0.091*$AP} to ${$M1*$<damagepower>/100+0.091*$SPH+0.091*$AP} Holy damage, Dazing them and then jumping to additional nearby enemies.  Affects $x1 total targets.  Lasts $d.", "hash": "1bc80f475a84a656", "src": "db2@1.60.1.70170"}
+{"id": 470265, "field": "aura", "en": "Dazed.", "hash": "8649cd0f13f4f4b6", "src": "db2@1.60.1.70170"}
+{"id": 470266, "field": "name", "en": "Increased Nourish Healing", "hash": "70e047b84196f775", "src": "db2@1.60.1.70170"}
+{"id": 470266, "field": "description", "en": "Increases healing done by Nourish by up to $s1.", "hash": "3bf51ee9e6c17af3", "src": "db2@1.60.1.70170"}
+{"id": 470269, "field": "name", "en": "Idol of Cruelty", "hash": "0658d97ef8d00eb6", "src": "db2@1.60.1.70170"}
+{"id": 470269, "field": "description", "en": "Increases initial and per application periodic damage done by Lacerate by $s1.", "hash": "d65b62b3ae6781be", "src": "db2@1.60.1.70170"}
+{"id": 470270, "field": "name", "en": "Idol of Feline Focus", "hash": "0dc569ee3e98a2a3", "src": "db2@1.60.1.70170"}
+{"id": 470271, "field": "name", "en": "Libram of Wrath", "hash": "d4193e75636cb1d8", "src": "db2@1.60.1.70170"}
+{"id": 470271, "field": "aura", "en": "Reduces the cast time and mana cost of your next Holy Wrath spell by $s1%, and increases its damage by $s4%.", "hash": "c46452e37d7b17f4", "src": "db2@1.60.1.70170"}
+{"id": 470272, "field": "name", "en": "Totem of Conductive Currents", "hash": "4cf97a6a4022a9a7", "src": "db2@1.60.1.70170"}
+{"id": 470272, "field": "aura", "en": "Reduces the cast time your next Chain Lightning spell by $s1%, and increases its damage by $s3%.", "hash": "60c2ed4ec484d130", "src": "db2@1.60.1.70170"}
+{"id": 470279, "field": "name", "en": "Demonic Aegis", "hash": "a9083f79b4d6809e", "src": "db2@1.60.1.70170"}
+{"id": 470279, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70170"}
+{"id": 470280, "field": "name", "en": "Umbral Slash", "hash": "1f5308fbd68eb8e8", "src": "db2@1.60.1.70170"}
+{"id": 470280, "field": "description", "en": "Deals $s1 Shadow damage split between enemy targets within $a1 yards in front of the caster. ", "hash": "48bc79bff0c413f4", "src": "db2@1.60.1.70170"}
+{"id": 470280, "field": "aura", "en": "Shadow damage taken increased by $s2%", "hash": "c866cf05c021f035", "src": "db2@1.60.1.70170"}
+{"id": 470317, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
+{"id": 470338, "field": "name", "en": "[DNT] Effect", "hash": "a796e6481904e4cc", "src": "db2@1.60.1.70170"}
+{"id": 470345, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70170"}
+{"id": 470345, "field": "description", "en": "Heals $o1 damage over $d.", "hash": "cb31688fb831630b", "src": "db2@1.60.1.70170"}
+{"id": 470345, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70170"}
+{"id": 470349, "field": "name", "en": "Dense Runecloth Bandage", "hash": "e731bb6229f3c92b", "src": "db2@1.60.1.70170"}
+{"id": 470359, "field": "name", "en": "Darkclaw Bisque", "hash": "bbc8164300cb6f3f", "src": "db2@1.60.1.70170"}
+{"id": 470361, "field": "name", "en": "Increased Spell Damage", "hash": "ef7773a7898c49a9", "src": "db2@1.60.1.70170"}
+{"id": 470361, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70170"}
+{"id": 470361, "field": "aura", "en": "Spell Damage increased by $s1.", "hash": "3822b22168068a76", "src": "db2@1.60.1.70170"}
+{"id": 470362, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70170"}
+{"id": 470362, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.  If you eat for 10 seconds will also increase your Spell Damage by $470361s1 for $470361d1.", "hash": "cf7a62275b995688", "src": "db2@1.60.1.70170"}
+{"id": 470362, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70170"}
+{"id": 470367, "field": "name", "en": "Increased Healing Power", "hash": "39fe808916aa066d", "src": "db2@1.60.1.70170"}
+{"id": 470367, "field": "description", "en": "Increases Healing done by $s1 for $d.", "hash": "b61e619f0ffcca36", "src": "db2@1.60.1.70170"}
+{"id": 470367, "field": "aura", "en": "Healing done increased by $s1.", "hash": "654efc3d9290fd4f", "src": "db2@1.60.1.70170"}
+{"id": 470369, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70170"}
+{"id": 470369, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.  If you eat for 10 seconds will also increase your Healing done by $470367s1 for $470367d1.", "hash": "74db8454428a0c03", "src": "db2@1.60.1.70170"}
+{"id": 470369, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70170"}
+{"id": 470370, "field": "name", "en": "Smoked Redgill", "hash": "406738b206981050", "src": "db2@1.60.1.70170"}
+{"id": 470451, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70170"}
+{"id": 470454, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
+{"id": 470455, "field": "name", "en": "[DNT] Effect", "hash": "a796e6481904e4cc", "src": "db2@1.60.1.70170"}
+{"id": 470457, "field": "name", "en": "Bounding Shadow", "hash": "af8abb1c26a41f32", "src": "db2@1.60.1.70170"}
+{"id": 470458, "field": "name", "en": "Bounding Shadow", "hash": "af8abb1c26a41f32", "src": "db2@1.60.1.70170"}
+{"id": 470459, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70170"}
+{"id": 470459, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70170"}
+{"id": 470459, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70170"}
+{"id": 470460, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70170"}
+{"id": 470460, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70170"}
+{"id": 470460, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70170"}
+{"id": 470462, "field": "name", "en": "Bounding Shadow", "hash": "af8abb1c26a41f32", "src": "db2@1.60.1.70170"}
+{"id": 470462, "field": "description", "en": "Launches shadow infused orbs towards a random player that travels out and return to it's origin. Players hit are inflicted with $s1 Shadow damage", "hash": "b831927983f8f3c8", "src": "db2@1.60.1.70170"}
+{"id": 470495, "field": "name", "en": "Vulnerable", "hash": "594a99a8dcff61ca", "src": "db2@1.60.1.70170"}
+{"id": 470497, "field": "name", "en": "Exploit Weakness", "hash": "5657768cd26f0e19", "src": "db2@1.60.1.70170"}
+{"id": 470497, "field": "description", "en": "Carve a scale from Nefarian's hide. Only usable when Nefarian has been significantly weakened in battle.", "hash": "c2204a7e4286aad5", "src": "db2@1.60.1.70170"}
+{"id": 470500, "field": "name", "en": "[DNT] Dummy Aura Warrior", "hash": "9141a3f1827d7923", "src": "db2@1.60.1.70170"}
+{"id": 470535, "field": "name", "en": "Nether Strike", "hash": "0b34f8c3af6a24c6", "src": "db2@1.60.1.70170"}
+{"id": 470535, "field": "description", "en": "Inflicts $s1% weapon damage and leaves the target wounded, reducing the effectiveness of any healing by $s2% for $d.", "hash": "9ac3230491b61200", "src": "db2@1.60.1.70170"}
+{"id": 470535, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70170"}
+{"id": 470537, "field": "name", "en": "Exploit Weakness", "hash": "5657768cd26f0e19", "src": "db2@1.60.1.70170"}
+{"id": 470537, "field": "description", "en": "Carve a scale from Nefarian's hide. Only usable when Nefarian has been significantly weakened in battle.", "hash": "c2204a7e4286aad5", "src": "db2@1.60.1.70170"}
+{"id": 470613, "field": "name", "en": "Destroy Simulacrum", "hash": "702c9e83bfe3af52", "src": "db2@1.60.1.70170"}
+{"id": 470613, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
+{"id": 470614, "field": "name", "en": "Lightning Strike From Sky VFX", "hash": "049266d8ef6cffe3", "src": "db2@1.60.1.70170"}
+{"id": 470665, "field": "name", "en": "Majordomo Teleport Visual", "hash": "8d2d03920d3b2bc7", "src": "db2@1.60.1.70170"}
+{"id": 470713, "field": "name", "en": "Complete Quest", "hash": "1972de08a89437f5", "src": "db2@1.60.1.70170"}
+{"id": 470743, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 470743, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 470744, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 470744, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 470745, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 470745, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 470746, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 470746, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 470748, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 470748, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 470749, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 470749, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 470753, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 470753, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 470784, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70170"}
+{"id": 470788, "field": "name", "en": "Frost Specialization", "hash": "aea82a0c5fd0cb5e", "src": "db2@1.60.1.70170"}
+{"id": 470788, "field": "description", "en": "Chance to hit with Frost spells increased by $s1%. Not cumulative with other ring runes.", "hash": "ec4841c50f9ab9e9", "src": "db2@1.60.1.70170"}
+{"id": 470789, "field": "name", "en": "Fire Specialization", "hash": "e08a323448cdce66", "src": "db2@1.60.1.70170"}
+{"id": 470789, "field": "description", "en": "Chance to hit with Fire spells increased by $s1%. Not cumulative with other ring runes.", "hash": "d09f95a221a4906e", "src": "db2@1.60.1.70170"}
+{"id": 470793, "field": "name", "en": "[DNT] S03 - ZG Raid - Hakkar Defeated Priest Tracking Message", "hash": "78c9df535edd5519", "src": "db2@1.60.1.70170"}
+{"id": 470795, "field": "name", "en": "[DNT] S03 - BWL Raid - Trial Tracking Message", "hash": "a059d9387b66c6b0", "src": "db2@1.60.1.70170"}
+{"id": 470807, "field": "name", "en": "[DNT] Personal Phase Aura", "hash": "b43dbb173b509838", "src": "db2@1.60.1.70170"}
+{"id": 470836, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70170"}
+{"id": 470836, "field": "description", "en": "Creates a cloud of lightning that lasts $d., blasting all enemies in a selected area for $s1  Nature damage and inflicting $s2 additional damage every $t2 sec.", "hash": "9a2f7afedb692864", "src": "db2@1.60.1.70170"}
+{"id": 470856, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
+{"id": 470856, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
+{"id": 470866, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70170"}
+{"id": 470866, "field": "description", "en": "Creates a cloud of lightning that lasts $d., blasting all enemies in a selected area for $s1  Nature damage and inflicting $s2 additional damage every $t2 sec.", "hash": "9a2f7afedb692864", "src": "db2@1.60.1.70170"}
+{"id": 470868, "field": "name", "en": "Wisp Costume", "hash": "3c0bd1effe2d0083", "src": "db2@1.60.1.70170"}
+{"id": 470868, "field": "aura", "en": "Wisp Costume.   Cannot attack or cast spells while in wisp form.  Right-Click this icon to remove the effect.", "hash": "e8f91a53974f3ea1", "src": "db2@1.60.1.70170"}

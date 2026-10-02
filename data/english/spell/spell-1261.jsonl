@@ -1,41 +1,41 @@
-{"id": 1261177, "field": "name", "en": "Eavesdrop", "hash": "18a7e1f40edc1bd1", "src": "db2@1.60.1.70124"}
-{"id": 1261177, "field": "aura", "en": "You are very, very sneaky.", "hash": "2b886debdf1fa54f", "src": "db2@1.60.1.70124"}
-{"id": 1261190, "field": "name", "en": "(DNT) Jason's Melancholy", "hash": "2a9fedc49dda7c68", "src": "db2@1.60.1.70124"}
-{"id": 1261191, "field": "name", "en": "(DNT) Jason's Melancholy", "hash": "2a9fedc49dda7c68", "src": "db2@1.60.1.70124"}
-{"id": 1261221, "field": "name", "en": "Launch Glaive", "hash": "901444e0352d5059", "src": "db2@1.60.1.70124"}
-{"id": 1261222, "field": "name", "en": "Launch Glaive", "hash": "901444e0352d5059", "src": "db2@1.60.1.70124"}
-{"id": 1261222, "field": "description", "en": "Launches a sharp glaive towards the enemy.", "hash": "1ddb27a27d45ec6d", "src": "db2@1.60.1.70124"}
-{"id": 1261222, "field": "aura", "en": "Bleeding.", "hash": "d6c5aa1b53b3d005", "src": "db2@1.60.1.70124"}
-{"id": 1261251, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
-{"id": 1261251, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70124"}
-{"id": 1261320, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70124"}
-{"id": 1261320, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70124"}
-{"id": 1261368, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261373, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261374, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261375, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261376, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261377, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261378, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261379, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261381, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261382, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261384, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261385, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70124"}
-{"id": 1261425, "field": "name", "en": "Repairing", "hash": "b29e250954f416a4", "src": "db2@1.60.1.70124"}
-{"id": 1261483, "field": "name", "en": "Thrill of Adventure", "hash": "8ce19057b8a9030f", "src": "db2@1.60.1.70124"}
-{"id": 1261483, "field": "aura", "en": "Regenerating $w1 Health and $w2 Mana every $t1 seconds.", "hash": "fd7a5493099fe3cf", "src": "db2@1.60.1.70124"}
-{"id": 1261692, "field": "name", "en": "Raise Khan", "hash": "c98f0fbc0c9ed97f", "src": "db2@1.60.1.70124"}
-{"id": 1261692, "field": "description", "en": "Resurrect the fallen Khan.", "hash": "941c111c0188fe4e", "src": "db2@1.60.1.70124"}
-{"id": 1261692, "field": "aura", "en": "Being resurrected.", "hash": "3e24263386ee6f9d", "src": "db2@1.60.1.70124"}
-{"id": 1261698, "field": "name", "en": "Play Dead", "hash": "aee78125506c51ed", "src": "db2@1.60.1.70124"}
-{"id": 1261707, "field": "name", "en": "Play Dead", "hash": "aee78125506c51ed", "src": "db2@1.60.1.70124"}
-{"id": 1261770, "field": "name", "en": "Ley Line KC", "hash": "7f6736a7653cfdce", "src": "db2@1.60.1.70124"}
-{"id": 1261773, "field": "name", "en": "Character Title Unlock", "hash": "f6c72c1c37f97b61", "src": "db2@1.60.1.70124"}
-{"id": 1261773, "field": "description", "en": "Completing this quest awards you with the title \"<Name> of the Magram\" for all characters on your account.\r\n\r\nThis title can only be displayed while you are Exalted or higher with the Magram Clan Centaur.", "hash": "41006e61af504bce", "src": "db2@1.60.1.70124"}
-{"id": 1261774, "field": "name", "en": "Character Title Unlock", "hash": "f6c72c1c37f97b61", "src": "db2@1.60.1.70124"}
-{"id": 1261774, "field": "description", "en": "Completing this quest awards you with the title \"<Name> of the Gelkis\" for this character.\r\n\r\nThis title can only be displayed while you are Exalted or higher with the Gelkis Clan Centaur.", "hash": "25a1c3312a1d7854", "src": "db2@1.60.1.70124"}
-{"id": 1261854, "field": "name", "en": "Personal Banking", "hash": "c937671a72023ae9", "src": "db2@1.60.1.70124"}
-{"id": 1261854, "field": "aura", "en": "Personal Banking unavailable.", "hash": "90318efa362cc7d0", "src": "db2@1.60.1.70124"}
-{"id": 1261939, "field": "name", "en": "Tangled", "hash": "3091618354f180e7", "src": "db2@1.60.1.70124"}
-{"id": 1261985, "field": "name", "en": "(DNT) Kathris Vehicle", "hash": "da7284dee8bf89b5", "src": "db2@1.60.1.70124"}
+{"id": 1261177, "field": "name", "en": "Eavesdrop", "hash": "18a7e1f40edc1bd1", "src": "db2@1.60.1.70170"}
+{"id": 1261177, "field": "aura", "en": "You are very, very sneaky.", "hash": "2b886debdf1fa54f", "src": "db2@1.60.1.70170"}
+{"id": 1261190, "field": "name", "en": "(DNT) Jason's Melancholy", "hash": "2a9fedc49dda7c68", "src": "db2@1.60.1.70170"}
+{"id": 1261191, "field": "name", "en": "(DNT) Jason's Melancholy", "hash": "2a9fedc49dda7c68", "src": "db2@1.60.1.70170"}
+{"id": 1261221, "field": "name", "en": "Launch Glaive", "hash": "901444e0352d5059", "src": "db2@1.60.1.70170"}
+{"id": 1261222, "field": "name", "en": "Launch Glaive", "hash": "901444e0352d5059", "src": "db2@1.60.1.70170"}
+{"id": 1261222, "field": "description", "en": "Launches a sharp glaive towards the enemy.", "hash": "1ddb27a27d45ec6d", "src": "db2@1.60.1.70170"}
+{"id": 1261222, "field": "aura", "en": "Bleeding.", "hash": "d6c5aa1b53b3d005", "src": "db2@1.60.1.70170"}
+{"id": 1261251, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
+{"id": 1261251, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
+{"id": 1261320, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70170"}
+{"id": 1261320, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70170"}
+{"id": 1261368, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261373, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261374, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261375, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261376, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261377, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261378, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261379, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261381, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261382, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261384, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261385, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
+{"id": 1261425, "field": "name", "en": "Repairing", "hash": "b29e250954f416a4", "src": "db2@1.60.1.70170"}
+{"id": 1261483, "field": "name", "en": "Thrill of Adventure", "hash": "8ce19057b8a9030f", "src": "db2@1.60.1.70170"}
+{"id": 1261483, "field": "aura", "en": "Regenerating $w1 Health and $w2 Mana every $t1 sec.", "hash": "f627f070f859f803", "src": "db2@1.60.1.70170"}
+{"id": 1261692, "field": "name", "en": "Raise Khan", "hash": "c98f0fbc0c9ed97f", "src": "db2@1.60.1.70170"}
+{"id": 1261692, "field": "description", "en": "Resurrect the fallen Khan.", "hash": "941c111c0188fe4e", "src": "db2@1.60.1.70170"}
+{"id": 1261692, "field": "aura", "en": "Being resurrected.", "hash": "3e24263386ee6f9d", "src": "db2@1.60.1.70170"}
+{"id": 1261698, "field": "name", "en": "Play Dead", "hash": "aee78125506c51ed", "src": "db2@1.60.1.70170"}
+{"id": 1261707, "field": "name", "en": "Play Dead", "hash": "aee78125506c51ed", "src": "db2@1.60.1.70170"}
+{"id": 1261770, "field": "name", "en": "Ley Line KC", "hash": "7f6736a7653cfdce", "src": "db2@1.60.1.70170"}
+{"id": 1261773, "field": "name", "en": "Character Title Unlock", "hash": "f6c72c1c37f97b61", "src": "db2@1.60.1.70170"}
+{"id": 1261773, "field": "description", "en": "Completing this quest awards you with the title \"<Name> of the Magram\" for all characters on your account.\r\n\r\nThis title can only be displayed while you are Exalted or higher with the Magram Clan Centaur.", "hash": "41006e61af504bce", "src": "db2@1.60.1.70170"}
+{"id": 1261774, "field": "name", "en": "Character Title Unlock", "hash": "f6c72c1c37f97b61", "src": "db2@1.60.1.70170"}
+{"id": 1261774, "field": "description", "en": "Completing this quest awards you with the title \"<Name> of the Gelkis\" for this character.\r\n\r\nThis title can only be displayed while you are Exalted or higher with the Gelkis Clan Centaur.", "hash": "25a1c3312a1d7854", "src": "db2@1.60.1.70170"}
+{"id": 1261854, "field": "name", "en": "Personal Banking", "hash": "c937671a72023ae9", "src": "db2@1.60.1.70170"}
+{"id": 1261854, "field": "aura", "en": "Personal Banking unavailable.", "hash": "90318efa362cc7d0", "src": "db2@1.60.1.70170"}
+{"id": 1261939, "field": "name", "en": "Tangled", "hash": "3091618354f180e7", "src": "db2@1.60.1.70170"}
+{"id": 1261985, "field": "name", "en": "(DNT) Kathris Vehicle", "hash": "da7284dee8bf89b5", "src": "db2@1.60.1.70170"}
