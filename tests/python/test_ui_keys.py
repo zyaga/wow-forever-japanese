@@ -19,6 +19,9 @@ ENGLISH_SOURCES = {f"wago@{BUILD}", f"db2@{FOREVER_BUILD}"}
 # They are allowed because the addon never walks the line that reads as the item / spell name and labels are matched
 # per widget; any other exact-line collision is reviewed here. A new collision means a deliberate review: add it here.
 KNOWN_NAME_COLLISIONS = {
+    # Words from the families the served-text inventory added (ADR-051): recipe headers, pet diet words, the recent
+    # allies' interaction words. Restricted family keys, matched only on their own widget (Core/UIStrings.lua).
+    "Arrows", "Fireworks", "Fish", "Leggings",
     "Cloth", "Complete Quest", "Fire", "Fishing Pole", "Frost", "Leather", "Libram", "Mace", "Mail", "Shadow",
     "Shield", "Shirt", "Speed", "Sword", "Thrown", "Totem",
     # Stat / resistance labels, the pet command "Attack", the pet tab "Pet", "Reset", "Inactive",
@@ -155,7 +158,9 @@ def test_no_listed_english_carries_links_key_markup_or_tokens(root):
             if token == "|H" and ln["id"] in static_links:
                 continue
             assert token not in ln["en"], (ln["id"], token)
-        assert not token_dollar.search(ln["en"]), (ln["id"], "$")
+        # an NPC mail body keeps the client's $N / $B: the mail surface fills them the way the quest surface does
+        if not ln["id"].startswith("MailBody:"):
+            assert not token_dollar.search(ln["en"]), (ln["id"], "$")
 
 
 def test_nit_terms_are_consistent(root):
@@ -216,7 +221,8 @@ def test_window_name_collision_keys_are_named_in_a_ui_module(root):
     for key, en in english.items():
         if key in reviewed:
             continue
-        if en not in WINDOW_COLLISIONS or not lines[key]["provenance"]["source"].startswith("draft-ui-windows@"):
+        source_ = lines.get(key, {}).get("provenance", {}).get("source", "")
+        if en not in WINDOW_COLLISIONS or not source_.startswith("draft-ui-windows@"):
             continue
         if f'"{key}"' in source or re.search(rf"\b{key}\s*=", source):
             continue

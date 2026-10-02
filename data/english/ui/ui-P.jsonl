@@ -373,9 +373,25 @@
 {"id": "PVP_REPORT_AFK", "field": "text", "en": "Report player Away", "hash": "c9dda8844240e438", "src": "db2@1.60.1.70170"}
 {"id": "PVP_REPORT_AFK_ALL", "field": "text", "en": "Report all of the above", "hash": "82e2d05067dd13c9", "src": "db2@1.60.1.70170"}
 {"id": "PVP_SCOREBOARD_MATCH_COMPLETE", "field": "text", "en": "Match Complete", "hash": "f1c40aa81f9c8b3a", "src": "db2@1.60.1.70170"}
+{"id": "PetFood:1", "field": "text", "en": "Meat", "hash": "0a6bfc4319433679", "src": "db2@1.60.1.70170"}
+{"id": "PetFood:2", "field": "text", "en": "Fish", "hash": "097cf2544b4ed706", "src": "db2@1.60.1.70170"}
+{"id": "PetFood:3", "field": "text", "en": "Cheese", "hash": "02d527d8414fa0a5", "src": "db2@1.60.1.70170"}
+{"id": "PetFood:4", "field": "text", "en": "Bread", "hash": "95ea349001be58c6", "src": "db2@1.60.1.70170"}
+{"id": "PetFood:5", "field": "text", "en": "Fungus", "hash": "dac98e6e886d7395", "src": "db2@1.60.1.70170"}
+{"id": "PetFood:6", "field": "text", "en": "Fruit", "hash": "dc25428cbced91c9", "src": "db2@1.60.1.70170"}
+{"id": "PetFood:7", "field": "text", "en": "Raw Meat", "hash": "e0b39234e7439fcd", "src": "db2@1.60.1.70170"}
+{"id": "PetFood:8", "field": "text", "en": "Raw Fish", "hash": "dfc48845194f406b", "src": "db2@1.60.1.70170"}
+{"id": "PetLoyalty:1", "field": "text", "en": "Rebellious", "hash": "3abd81c0e2fa7b2a", "src": "db2@1.60.1.70170"}
+{"id": "PetLoyalty:2", "field": "text", "en": "Unruly", "hash": "1d36dceca447541b", "src": "db2@1.60.1.70170"}
+{"id": "PetLoyalty:3", "field": "text", "en": "Submissive", "hash": "4390690e4e7952f1", "src": "db2@1.60.1.70170"}
+{"id": "PetLoyalty:4", "field": "text", "en": "Dependable", "hash": "7980f6abceee3dbd", "src": "db2@1.60.1.70170"}
+{"id": "PetLoyalty:5", "field": "text", "en": "Faithful", "hash": "4c439daf03b35d5a", "src": "db2@1.60.1.70170"}
+{"id": "PetLoyalty:6", "field": "text", "en": "Best Friend", "hash": "85d36998bc237b77", "src": "db2@1.60.1.70170"}
+{"id": "PetLoyalty:7", "field": "text", "en": "(Loyalty Level 7) Loyalty Cap", "hash": "5dcea3cd82185c45", "src": "db2@1.60.1.70170"}
 {"id": "PvpColumn:1101", "field": "text", "en": "Flag Captures", "hash": "82057bc0e63ade13", "src": "db2@1.60.1.70170"}
 {"id": "PvpColumn:1102", "field": "text", "en": "Bases Assaulted", "hash": "eaa9c4d6a4509a2e", "src": "db2@1.60.1.70170"}
 {"id": "PvpColumn:1103", "field": "text", "en": "Bases Defended", "hash": "c95192c2f93a802c", "src": "db2@1.60.1.70170"}
 {"id": "PvpColumnTooltip:1101", "field": "text", "en": "Number of times you have captured the flag", "hash": "ea439d23b4148f9a", "src": "db2@1.60.1.70170"}
 {"id": "PvpColumnTooltip:1102", "field": "text", "en": "Number of times enemy base banners have been removed", "hash": "12b99a969cc6e9f4", "src": "db2@1.60.1.70170"}
 {"id": "PvpColumnTooltip:1103", "field": "text", "en": "Number of times a base capture has been prevented", "hash": "ff594ad98317c252", "src": "db2@1.60.1.70170"}
+{"id": "PvpLongDescription:2997", "field": "text", "en": "- Capture and hold objectives\r\n- Capture the Darkspear Islands Flag\r\n- Earn 2000 resources", "hash": "1bc4198b967c165f", "src": "db2@1.60.1.70170"}

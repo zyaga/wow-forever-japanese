@@ -1058,6 +1058,591 @@
 {"id": "CreatureType:7", "field": "text", "en": "Humanoid", "hash": "fa796906cd30de18", "src": "db2@1.60.1.70170"}
 {"id": "CreatureType:8", "field": "text", "en": "Critter", "hash": "8e7800a1038ae98a", "src": "db2@1.60.1.70170"}
 {"id": "CreatureType:9", "field": "text", "en": "Mechanical", "hash": "9ba1209258c08413", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121217", "field": "text", "en": "Most Alliance Factions at Exalted", "hash": "6576ef642b742d06", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121218", "field": "text", "en": "Exalted with Silverwing Sentinels", "hash": "a53475729db16673", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121219", "field": "text", "en": "Exalted with Wintersaber Trainers", "hash": "4d5d4de8f325847e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121220", "field": "text", "en": "Exalted with Valiance Expedition", "hash": "96eac4f4c862aefe", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121221", "field": "text", "en": "Exalted with The Silver Covenant", "hash": "8410b9d8b30b724b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121222", "field": "text", "en": "Exalted with Ironforge", "hash": "c1b7b64b01d69b99", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121223", "field": "text", "en": "Exalted with Stormpike Guard", "hash": "4cdb0c73a59cb187", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121224", "field": "text", "en": "Exalted with Exodar", "hash": "8995c06d3b0e3a4f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121225", "field": "text", "en": "Exalted with Honor Hold", "hash": "72a536b4180601cf", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121226", "field": "text", "en": "Exalted with Explorers' League", "hash": "7c2ca013b3d4118d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121227", "field": "text", "en": "Exalted with Darnassus", "hash": "fe9d845e88852553", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121228", "field": "text", "en": "Exalted with Gnomeregan", "hash": "56f2746485080931", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121229", "field": "text", "en": "Exalted with The League of Arathor", "hash": "dd4b0941583a8198", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121230", "field": "text", "en": "Exalted with Kurenai", "hash": "e61396f80b3c93ee", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121231", "field": "text", "en": "Exalted with Stormwind", "hash": "517714f6ad013499", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121232", "field": "text", "en": "Exalted with The Sunreavers", "hash": "2d1a820941c21d0a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121233", "field": "text", "en": "Explore Alterac Mountains", "hash": "7d92c71cbcfab8c5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121289", "field": "text", "en": "Alterac Valley Honorable Kills", "hash": "1af9ff587a8fce60", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121331", "field": "text", "en": "Total cheers", "hash": "71451e76a2932b98", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121348", "field": "text", "en": "Northrend", "hash": "e35ddcea108d08de", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121473", "field": "text", "en": "Duels lost", "hash": "7b4f985c536d649e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121743", "field": "text", "en": "Arathi Basin Honorable Kills", "hash": "ccc24e79602a168a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121745", "field": "text", "en": "Alterac Valley Runecloth Bandage", "hash": "2c464a2c547d571d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121748", "field": "text", "en": "Netherweave Bandage", "hash": "1bf023e71d8931f8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121756", "field": "text", "en": "Dense Frostweave Bandage", "hash": "97005bd0182c3010", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121757", "field": "text", "en": "Frostweave Bandage", "hash": "5cbdde894237700f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121761", "field": "text", "en": "Heavy Frostweave Bandage", "hash": "0a2ac9970a9dd553", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121762", "field": "text", "en": "Heavy Netherweave Bandage", "hash": "daac6b3aa5caf8ff", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121764", "field": "text", "en": "Thick Frostweave Bandage", "hash": "33febbc023a06d6f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121781", "field": "text", "en": "Total Killing Blows", "hash": "7afc2e54b0b61c67", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121784", "field": "text", "en": "Weapon skills at maximum skill", "hash": "fb7342642dd4c9b1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121801", "field": "text", "en": "Total kills that grant experience or honor", "hash": "77a5212bcafa68b9", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121802", "field": "text", "en": "Kill an NPC that yields XP", "hash": "2ea02b1bf5132171", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121803", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121888", "field": "text", "en": "10 man raids", "hash": "35adeb7ccf4fae45", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121906", "field": "text", "en": "Talent tree respecs", "hash": "d5ed55429a999b3f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121933", "field": "text", "en": "Warsong Gulch Victories", "hash": "e61b0fc1dbaa28a8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121937", "field": "text", "en": "Blacksmithing plans known", "hash": "b07d298d9c8cbbb3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121940", "field": "text", "en": "Total healing done", "hash": "7007dfcd7f2b5933", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121977", "field": "text", "en": "Alterac Valley battles", "hash": "6913784a422ad0e5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:121982", "field": "text", "en": "Enchanting formulae known", "hash": "8cc60c0777f0a8ee", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122014", "field": "text", "en": "Elixirs consumed", "hash": "374f4bb4056f8a77", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122020", "field": "text", "en": "Elixir of Lion's Strength", "hash": "ed65a6400827e077", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122026", "field": "text", "en": "Elixir of Detect Undead", "hash": "0aefa47d4fa97ab9", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122037", "field": "text", "en": "Elixir of Demonslaying", "hash": "d5c253ff4acb3373", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122038", "field": "text", "en": "Elixir of Detect Demon", "hash": "e0338fc74f464926", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122041", "field": "text", "en": "Elixir of Greater Firepower", "hash": "bb23d7a7c3daecd0", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122048", "field": "text", "en": "Elixir of Armor Piercing", "hash": "c3ad9a6268458aa3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122057", "field": "text", "en": "Elixir of Giants", "hash": "2550dddc0c3ab052", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122060", "field": "text", "en": "Elixir of Water Walking", "hash": "3e8b7a57cbdad2d4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122061", "field": "text", "en": "Weak Troll's Blood Elixir", "hash": "78768fb8846673e8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122077", "field": "text", "en": "Strong Troll's Blood Elixir", "hash": "365070f0943ee48f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122085", "field": "text", "en": "Elixir of Ogre's Strength", "hash": "e651d662984b92c6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122086", "field": "text", "en": "Elixir of Greater Water Breathing", "hash": "04d76f9743abd4ec", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122092", "field": "text", "en": "Elixir of Superior Defense", "hash": "50aed2cd840d2549", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122095", "field": "text", "en": "Elixir of Water Breathing", "hash": "11e5e1c757d548ae", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122103", "field": "text", "en": "Elixir of Detect Lesser Invisibility", "hash": "437b8345d55ff3ec", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122109", "field": "text", "en": "Catseye Elixir", "hash": "dcd249734cfe87a5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122112", "field": "text", "en": "Elixir of Dream Vision", "hash": "8245321204630ecc", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122113", "field": "text", "en": "Elixir of Firepower", "hash": "24831ca480f3f936", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122184", "field": "text", "en": "Total quests", "hash": "16b72edca196e602", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122185", "field": "text", "en": "Daily quests", "hash": "5e8da698f16674e0", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122187", "field": "text", "en": "Demons", "hash": "cac55931890b72c0", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122188", "field": "text", "en": "Beasts", "hash": "d2222de354fa7c87", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122190", "field": "text", "en": "Humanoid", "hash": "fa796906cd30de18", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122191", "field": "text", "en": "Mechanical", "hash": "9ba1209258c08413", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122192", "field": "text", "en": "Undead", "hash": "1b52682ca91260d1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122193", "field": "text", "en": "Unspecified", "hash": "1ca7b602c3a70ae4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122194", "field": "text", "en": "Totems", "hash": "3380b2c00cf3f564", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122195", "field": "text", "en": "Dragonkin", "hash": "c799ea1f7e22e87d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122212", "field": "text", "en": "Warsong Gulch flags returned", "hash": "d88d9755929cf9a6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122233", "field": "text", "en": "Largest heal cast", "hash": "2d692c9e7a0cc2ad", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122235", "field": "text", "en": "Largest hit dealt", "hash": "73150f2bc618544d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122251", "field": "text", "en": "Number of mounts", "hash": "19c7c10a04d53487", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122252", "field": "text", "en": "Beverages", "hash": "8734ac8b769dcca5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122290", "field": "text", "en": "Sulfuron Slammer", "hash": "c41c1edfd8602c6b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122297", "field": "text", "en": "Flagon of Mead", "hash": "c7721899ce79cbb9", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122298", "field": "text", "en": "Flask of Port", "hash": "729b39414fcf1c8b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122322", "field": "text", "en": "Keg of Thunderbrew Lager", "hash": "be6d348faa5ba7fb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122337", "field": "text", "en": "Jug of Bourbon", "hash": "3c44647932bd7c7e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122348", "field": "text", "en": "Half Full Bottle of Prison Moonshine", "hash": "87e6185c018dbf2c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122361", "field": "text", "en": "Winter Veil Eggnogg", "hash": "c0eed92d0ce5f7b5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122370", "field": "text", "en": "Scourgebane Infusion", "hash": "43fd6faab0179a26", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122400", "field": "text", "en": "Bottle of Pinot Noir", "hash": "81e021207ccf26d7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122415", "field": "text", "en": "Bad Egg Nog", "hash": "a06fb020bc705691", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122443", "field": "text", "en": "Food eaten", "hash": "c3e79d47a5489aab", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122445", "field": "text", "en": "Steaming Chicken Soup", "hash": "9553cd99f4681245", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122446", "field": "text", "en": "Spiced Wolf Ribs", "hash": "0ed63c5f0ca015c0", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122448", "field": "text", "en": "Spicy Crawdad", "hash": "06998a2f8df1933d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122449", "field": "text", "en": "Runn Tub Tuber", "hash": "0c15164bb01e10a3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122452", "field": "text", "en": "Stewed Trout", "hash": "d60b65c0b7189f60", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122467", "field": "text", "en": "Oronok's Tuber of Agility", "hash": "3508e2ed71c5c8de", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122471", "field": "text", "en": "Grilled Shadowmoon Tuber", "hash": "1b43cd05630d45cc", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122478", "field": "text", "en": "Sand Pear Pie", "hash": "db900819cf0ca4a5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122479", "field": "text", "en": "Tigule and Foror's Strawberry Ice Cream", "hash": "bc17f3f2fc888e55", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122482", "field": "text", "en": "Edible Fern", "hash": "f1f715129a16dda4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122487", "field": "text", "en": "Sewer Carp", "hash": "992fe241a7875c65", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122491", "field": "text", "en": "Mingo's Fortune Giblets", "hash": "ec042d7bbc5dd495", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122492", "field": "text", "en": "Ravager Egg Omelet", "hash": "43fdc099e5ad1851", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122501", "field": "text", "en": "Dalaran Clam Chowder", "hash": "8d83bbca71707f35", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122504", "field": "text", "en": "Hallow's End Pumpink Treat", "hash": "e0bccd3f6d430489", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122513", "field": "text", "en": "Oronok's Tuber of Strength", "hash": "14092d02e10a8eb8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122517", "field": "text", "en": "Enriched Terocone Juice", "hash": "a9e8928b89b75913", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122519", "field": "text", "en": "Funnel Cake", "hash": "555eee8ef8a945b7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122520", "field": "text", "en": "Giant Sunfish", "hash": "d8ddd6fdfc1eb3d6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122524", "field": "text", "en": "Imperial Manta Steak", "hash": "1f068425ae09c947", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122526", "field": "text", "en": "Rhino Dogs", "hash": "ede79d732d2fe964", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122529", "field": "text", "en": "Critter Bites", "hash": "606c743388c24364", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122535", "field": "text", "en": "Raw Raindbow Fin Albacore", "hash": "d4fc69c64f587b80", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122538", "field": "text", "en": "Blackened Trout", "hash": "b3cbea7c273a6513", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122540", "field": "text", "en": "Lovely Cake Slice", "hash": "8477620559886e13", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122541", "field": "text", "en": "Lynx Steak", "hash": "d91d5a3e3a948475", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122543", "field": "text", "en": "Mead Basted Caribou", "hash": "468d8e003c9ec385", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122547", "field": "text", "en": "Roasted Mystery Beast", "hash": "8c52cc80475ddaaf", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122550", "field": "text", "en": "Tracker Snacks", "hash": "58d5eebba2bf4f2a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122557", "field": "text", "en": "Shoveltusk Steak", "hash": "e738027fa9a6763e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122562", "field": "text", "en": "Edible Stalks", "hash": "f6f2c024baaea302", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122566", "field": "text", "en": "Bag of Popcorn", "hash": "635634af2b82787a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122580", "field": "text", "en": "Honeyed Holiday Ham", "hash": "8f21232aaef5764a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122582", "field": "text", "en": "Skethyl Berries", "hash": "72ba1abaf3ef6f5c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122583", "field": "text", "en": "Snapper Extreme", "hash": "da83ab2f0eb89389", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122585", "field": "text", "en": "Spiced Wyrm Burger", "hash": "c492c8d7886023e2", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122599", "field": "text", "en": "Runn Tum Tuber Suprise", "hash": "45b474ede5ed7e08", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122602", "field": "text", "en": "Grilled Bonescale", "hash": "7070128ee03b4821", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122604", "field": "text", "en": "Hot Buttered Trout", "hash": "1ca8bddd97410c0e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122605", "field": "text", "en": "Hearty Rhino", "hash": "0c70e982134298f1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122612", "field": "text", "en": "Tundra Berries", "hash": "ebee7a0566044f2e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122618", "field": "text", "en": "Clam Bar", "hash": "48eb20425811404b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122619", "field": "text", "en": "Smoked Black Bear Meat", "hash": "b95d509cfd4f085f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122621", "field": "text", "en": "Tek'Abim Banana", "hash": "762430e9eeb25097", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122625", "field": "text", "en": "Tricky Treat", "hash": "5a0a3a88bfb07799", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122627", "field": "text", "en": "G.N.E.R.D.S.", "hash": "7d1a28de0f7cac75", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122640", "field": "text", "en": "Pickled Egg", "hash": "b114b6557054e63a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122641", "field": "text", "en": "Poached Northern Sculpin", "hash": "811e3bab1c4447c4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122645", "field": "text", "en": "Crusader's Rations", "hash": "d4bac74ced426098", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122647", "field": "text", "en": "Fillet of Icefin", "hash": "3d8a9bbaac4d0566", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122656", "field": "text", "en": "Rhinolicious Wyrmsteak", "hash": "c30ed5c459c6714e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122657", "field": "text", "en": "Salted Venison", "hash": "8a43287e1156dbcb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122665", "field": "text", "en": "Fresh Eagle Meat", "hash": "98132ddaa55258b5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122666", "field": "text", "en": "Garadar Sharp", "hash": "3cea096163d2b94c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122679", "field": "text", "en": "Spice Bread", "hash": "7f621ac3a961dbef", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122682", "field": "text", "en": "Sweet Potato Bread", "hash": "7b856d7dbd8c8e98", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122691", "field": "text", "en": "Clefthoof Ribs", "hash": "223c33b6aa98e870", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122692", "field": "text", "en": "Conjured Mana Biscuit", "hash": "fbef6cb24d493679", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122694", "field": "text", "en": "Charred Bear Kabobs", "hash": "76295ecc1f887e2a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122695", "field": "text", "en": "Crusty Flatbread", "hash": "ea724ae2b513b3a2", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122705", "field": "text", "en": "Delicious Baked Ham", "hash": "9a747b4a7da4ca6a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122706", "field": "text", "en": "Dried Mushroom Rations", "hash": "f178dc6bf4db9472", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122708", "field": "text", "en": "Kibler's Bits", "hash": "1d9966b6555b3545", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122718", "field": "text", "en": "Blackened Basilisk", "hash": "0b8b991b2b861fc0", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122719", "field": "text", "en": "Bonestripper Buzzard Hotwings", "hash": "fab80b4f4f8f0c8b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122733", "field": "text", "en": "Dalaran Brownie", "hash": "ee8ebd2327904a69", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122736", "field": "text", "en": "Blackened Dragonfin", "hash": "9edcee5ca142ec9a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122740", "field": "text", "en": "Small Feast", "hash": "36689f27417f3d85", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122743", "field": "text", "en": "Spicy Hot Talbuk", "hash": "712fffd288c67c55", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122745", "field": "text", "en": "Sporeggar Mushroom", "hash": "dc903d8b7a7a5847", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122746", "field": "text", "en": "Springpaw Appetizer", "hash": "26753e8a9f1a441b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122750", "field": "text", "en": "Dalaran Doughnut", "hash": "af479f26e6e05b5a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122756", "field": "text", "en": "Diamond Berries", "hash": "e72a9895435ac727", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122759", "field": "text", "en": "Feltail Delight", "hash": "c6e3be744be1a740", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122767", "field": "text", "en": "Hellfire Spineleaf", "hash": "2eae7877bedbe0e4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122771", "field": "text", "en": "Juicy Bear Burger", "hash": "bedeff66dc79b163", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122773", "field": "text", "en": "Savory Snowplum", "hash": "39cf6917ee45d8ad", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122779", "field": "text", "en": "Marsh Lichen", "hash": "67a21ae0d782dd08", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122780", "field": "text", "en": "Mega Mammoth Meal", "hash": "2ef743fd5e2f7db1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122783", "field": "text", "en": "Mon'Nathal Shortribs", "hash": "1514d2eb6789a5f8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122786", "field": "text", "en": "Naaru Ration", "hash": "a1ae767b912a81b8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122787", "field": "text", "en": "Ogri'la Chicken Fingers", "hash": "ae4038425525722d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122789", "field": "text", "en": "Poached Nettlefish", "hash": "b7569039bced6ec8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122792", "field": "text", "en": "Conjured Mana Pie", "hash": "ca2da084adf1f085", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122795", "field": "text", "en": "Bristly Whisker Catfish", "hash": "58a8bb48ea34cfbc", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122798", "field": "text", "en": "Delicious Chocolate Cake", "hash": "46d8ab99b7404ad8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122799", "field": "text", "en": "Dried Fruit Rations", "hash": "38915389a2025fa1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122802", "field": "text", "en": "Berry Pie Slice", "hash": "1964922e2687bc8c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122803", "field": "text", "en": "Bowels 'n' Brains", "hash": "79f10a17758f9baa", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122805", "field": "text", "en": "Briny Hardcheese", "hash": "e6df45a9cc7a2a8c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122806", "field": "text", "en": "Broiled Bloodfin", "hash": "790c2d04ae9b2252", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122807", "field": "text", "en": "Buzzard Bites", "hash": "3f4c250e03c00d6b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122813", "field": "text", "en": "Ravager Dog", "hash": "294dd5314a8ca4ef", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122815", "field": "text", "en": "Red Velvet Cupcake", "hash": "cd1a01b365e06931", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122821", "field": "text", "en": "Rock-Salted Pretzel", "hash": "e20722f44c23ba19", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122822", "field": "text", "en": "Tender Shovelsteak Steak", "hash": "3be67b299e6d2911", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122824", "field": "text", "en": "Zangar Caps", "hash": "8a002ba660d3cd16", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122825", "field": "text", "en": "Bladespire Bagel", "hash": "32955d134c638de1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122830", "field": "text", "en": "Fisherman's Feast", "hash": "f3194a0698f33d27", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122832", "field": "text", "en": "Grilled Sculpin", "hash": "3a70960e784ca6ea", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122835", "field": "text", "en": "Smoked Salmon", "hash": "552992396000ad8e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122836", "field": "text", "en": "Smoked Talbuk Venison", "hash": "aeebe6eee69c0fb3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122839", "field": "text", "en": "Sparkling Frostcap", "hash": "90f7e1d2d6584918", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122841", "field": "text", "en": "Talbuk Steak", "hash": "9b814c8bd775ff66", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122843", "field": "text", "en": "Underspore Pod", "hash": "d06f8228e6794117", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122844", "field": "text", "en": "Mammoth Meal", "hash": "30e8bda0c64f6c51", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122845", "field": "text", "en": "Winter Veil Loaf", "hash": "44a674bf25229ada", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122846", "field": "text", "en": "Winter Veil Candy", "hash": "81557dfc75d82c02", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122847", "field": "text", "en": "Winter Squid", "hash": "bdca82e6418bf9ae", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122860", "field": "text", "en": "Sizzling Grizzly Flank", "hash": "ff724773a6fc7eb6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122861", "field": "text", "en": "Skyguard Rations", "hash": "eb048fcaaceff68e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122863", "field": "text", "en": "Stolen Ribs", "hash": "56f01ecf51409e1a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122864", "field": "text", "en": "Crunchy Serpent", "hash": "c257281618d54fd4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122865", "field": "text", "en": "Mag'har Mild Cheese", "hash": "6d560a71e2b096ef", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122873", "field": "text", "en": "Gold from vendors", "hash": "49434912f6b0ad61", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122894", "field": "text", "en": "Exalted with The Taunka", "hash": "86f537986566ed16", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122895", "field": "text", "en": "Exalted with Tranquillen", "hash": "5582e55b5a64c1ad", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122896", "field": "text", "en": "Exalted with The Hand of Vengeance", "hash": "7fd4365440cc026f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122897", "field": "text", "en": "Exalted with Warsong Outriders", "hash": "78f164d29a2220d3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122898", "field": "text", "en": "Exalted with Darkspear Trolls", "hash": "eb3a927272b75a22", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122899", "field": "text", "en": "Exalted with Orgrimmar", "hash": "f919f9497f85e57e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122900", "field": "text", "en": "Exalted with Thunder Bluff", "hash": "179cb257832047e5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122901", "field": "text", "en": "Exalted with Warsong Offensive", "hash": "2b95468f9a4e54d2", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122902", "field": "text", "en": "Exalted with The Defilers", "hash": "337da2d9e82c76d8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122903", "field": "text", "en": "Exalted with Undercity", "hash": "8eaad2ab3b98738e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122904", "field": "text", "en": "Exalted with Thrallmar", "hash": "2e83e945c9387771", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122905", "field": "text", "en": "Exalted with Silvermoon City", "hash": "5b89f536f34d92a1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122906", "field": "text", "en": "Exalted with The Mag'har", "hash": "1f544938ca7e5b15", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122908", "field": "text", "en": "Exalted with Frostwolf Clan", "hash": "a0ef13e848af8b45", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122979", "field": "text", "en": "Number of hugs", "hash": "8dc53091a4e2cbe2", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122981", "field": "text", "en": "Need rolls for loot", "hash": "9d17030869f57027", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:122983", "field": "text", "en": "Total facepalms", "hash": "f554335ab36d8b51", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123019", "field": "text", "en": "Arathi Basin victories", "hash": "9c4469eeaffbc2d7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123036", "field": "text", "en": "Total factions encountered", "hash": "6f3327549fee99f6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123038", "field": "text", "en": "10-man instances run", "hash": "152b770a39ea89eb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123076", "field": "text", "en": "Deaths from falling", "hash": "87ca5890234908dc", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123080", "field": "text", "en": "Gold spent on travel", "hash": "9a45a87ec47c3102", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123082", "field": "text", "en": "Gold spent on postage", "hash": "67feb405f1ebfe37", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123086", "field": "text", "en": "Total waves", "hash": "62ec7989460e4460", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123088", "field": "text", "en": "laugh", "hash": "74e72a446fd50960", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123089", "field": "text", "en": "rofl", "hash": "0f63d48bb0fcc08f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123090", "field": "text", "en": "giggle", "hash": "73429e57ba559af5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123091", "field": "text", "en": "chuckle", "hash": "21fe73b1725a2c54", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123092", "field": "text", "en": "guffaw", "hash": "45c493f59bf1fe3e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123116", "field": "text", "en": "Epic items obtained", "hash": "ad4874c0b6e46a78", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123118", "field": "text", "en": "Alterac Valley towers defended", "hash": "dddd0c98e37c577a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123260", "field": "text", "en": "Largest hit received", "hash": "0a56be9db9d1d593", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123276", "field": "text", "en": "Deaths in Alterac Valley", "hash": "5922337b8ada1195", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123280", "field": "text", "en": "Fishing skill", "hash": "bfa1ab224a681311", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123282", "field": "text", "en": "Leatherworking skill", "hash": "dcc6a3b803c9ea96", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123284", "field": "text", "en": "Quests abandoned", "hash": "e09f8897d9e04f6e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123334", "field": "text", "en": "First aid skill", "hash": "68f7c0368ea6a8d1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123459", "field": "text", "en": "Win Battlegrounds", "hash": "6cda029ce011b604", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123469", "field": "text", "en": "Inscription skill", "hash": "5266d5b62d0a9146", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123502", "field": "text", "en": "Critters killed", "hash": "b72bd14d0f2cb2c7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123504", "field": "text", "en": "Deaths from fatigue", "hash": "13d09fcd6a758027", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123506", "field": "text", "en": "Deaths from fire and lava", "hash": "290847ab17fdfc2e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123660", "field": "text", "en": "Revive Spells", "hash": "87b8233eb8ca965a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123661", "field": "text", "en": "Rank 2", "hash": "45ebbbf90065f00e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123663", "field": "text", "en": "Rank 4", "hash": "45ebbbfb0065f010", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123665", "field": "text", "en": "Rank 1", "hash": "45ebbbf80065f00d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123666", "field": "text", "en": "Rank 3", "hash": "45ebbbfa0065f00f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123667", "field": "text", "en": "Rank 5", "hash": "45ebbbfc0065f011", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123674", "field": "text", "en": "Legendary items obtained", "hash": "8514dbd25aa07ef1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123676", "field": "text", "en": "Flight paths taken", "hash": "20fbb8b625a880e5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123709", "field": "text", "en": "Total damage received", "hash": "4be69a3e5789362f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123763", "field": "text", "en": "Flasks consumed", "hash": "762e9df322837471", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123804", "field": "text", "en": "Ruby Slippers", "hash": "7d454c5e58efcb74", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123806", "field": "text", "en": "Deaths from Hogger", "hash": "2e70a4f206311d04", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123809", "field": "text", "en": "Alchemy skill", "hash": "8d5d2575dbd4dc2a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123811", "field": "text", "en": "Body is Epic!", "hash": "c35c61656cd742b7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123812", "field": "text", "en": "Chest is Epic!", "hash": "bcf698f01e78ce26", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123813", "field": "text", "en": "Ring is Epic!", "hash": "732a0a76dbc50a43", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123814", "field": "text", "en": "Weapon is Epic!", "hash": "d229d4b06e09f94c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123815", "field": "text", "en": "Shoulders are Epic!", "hash": "e62b875dc3d60bb6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123816", "field": "text", "en": "Trinket is Epic!", "hash": "379abfd5e368bbb9", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123817", "field": "text", "en": "Bracers are Epic!", "hash": "3412635c18cf890e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123818", "field": "text", "en": "Ranged/Wand/Relic is Epic!", "hash": "cc89b937e460b93c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123820", "field": "text", "en": "Tabard is Epic!", "hash": "5d69dc9978e5b4a9", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123821", "field": "text", "en": "Belt is Epic!", "hash": "5dfe0dc16efbc6e0", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123822", "field": "text", "en": "Necklace is Epic!", "hash": "bef753a8f9180d01", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123823", "field": "text", "en": "Off-hand is Epic!", "hash": "6c24b4c6c6c3e8fb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123825", "field": "text", "en": "Cloak is Epic!", "hash": "5f22af3af01ca90b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123826", "field": "text", "en": "Feet are epic!", "hash": "ff615cbc2689cc15", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123827", "field": "text", "en": "Helm is Epic!", "hash": "5427fd1baab8641c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123828", "field": "text", "en": "Legs are Epic!", "hash": "6d8ec3799d4d02ed", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123829", "field": "text", "en": "Gloves are Epic!", "hash": "29a3d6b20aa895aa", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123830", "field": "text", "en": "20-player raids entered", "hash": "3edf104fbf549f45", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123831", "field": "text", "en": "20-man raids run", "hash": "82dda126e04320cd", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123833", "field": "text", "en": "Cooking skill", "hash": "979db8c18ab77c13", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123836", "field": "text", "en": "Crocolisks in the City", "hash": "b06c80cb503abbbc", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123837", "field": "text", "en": "Bait Bandits", "hash": "eb2fb357777841ef", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123838", "field": "text", "en": "Felblood Fillet", "hash": "13ea285fcf00e002", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123839", "field": "text", "en": "Shrimpin' Ain't Easy", "hash": "b4e97301fe97c43e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123840", "field": "text", "en": "The Ghostfish", "hash": "91bd93d2f9bb318d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123841", "field": "text", "en": "The Jewel of the Sewers", "hash": "626e2003f9fae8fc", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123842", "field": "text", "en": "Dangerously Delicious", "hash": "da6735ee59123010", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123843", "field": "text", "en": "Monsterbelly Appetite", "hash": "b5fe41e310a80ce3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123844", "field": "text", "en": "Blood is Thicker", "hash": "6401f827907134f7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123846", "field": "text", "en": "Fish and other things caught", "hash": "de33108fe3a2488c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123923", "field": "text", "en": "Scarlet Commander Mograine", "hash": "406a5988b0061372", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123925", "field": "text", "en": "Resurrection (Rank 5)", "hash": "77d1eb99ce88dbde", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123926", "field": "text", "en": "Resurrection (Rank 3)", "hash": "77d1ea93ce889c1c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123927", "field": "text", "en": "Resurrection (Rank 2)", "hash": "77d1ea10ce887c3b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123928", "field": "text", "en": "Resurrection (Rank 4)", "hash": "77d1eb16ce88bbfd", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123929", "field": "text", "en": "Resurrection (Rank 1)", "hash": "77d1e98dce885c5a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123934", "field": "text", "en": "Rebirth (Rank 4)", "hash": "d70bc4adb6e162a3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123935", "field": "text", "en": "Rebirth (Rank 3)", "hash": "d70bc42ab6e142c2", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123936", "field": "text", "en": "Rebirth (Rank 2)", "hash": "d70bc3a7b6e122e1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123937", "field": "text", "en": "Rebirth (Rank 1)", "hash": "d70bc324b6e10300", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123939", "field": "text", "en": "Rebirth (Rank 5)", "hash": "d70bc530b6e18284", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:123974", "field": "text", "en": "Arathi Basin battles", "hash": "d88bef07d74c07eb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124049", "field": "text", "en": "Money from vendors", "hash": "bf9de3e69f5ebe87", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124050", "field": "text", "en": "Money looted from creatures", "hash": "30dea9350508805c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124051", "field": "text", "en": "Money from questing", "hash": "340f6cd06ae894a6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124052", "field": "text", "en": "Money from auctions", "hash": "d6049c6254897b08", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124096", "field": "text", "en": "Skinning skill", "hash": "c4b55ce9b903312c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124098", "field": "text", "en": "Engineering skill", "hash": "011909b625852601", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124134", "field": "text", "en": "Bael'Dun Digsite", "hash": "6d4133b7bc8436aa", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124193", "field": "text", "en": "Total NPC kills", "hash": "650bce3b72929329", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124200", "field": "text", "en": "Jewelcrafting", "hash": "1f9d31496aaf1502", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124201", "field": "text", "en": "Inscription", "hash": "ae0587c6bbc98295", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124225", "field": "text", "en": "Highest sale value on an auction", "hash": "6634aaaf1f4628d3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124227", "field": "text", "en": "Total gold looted", "hash": "5c333e30930c4906", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124229", "field": "text", "en": "Most gold ever owned:", "hash": "8c27fce2e03d0087", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124249", "field": "text", "en": "Deaths in Warsong Gulch", "hash": "d4ed3d44841c6b33", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124251", "field": "text", "en": "Killed by Drek'Thar", "hash": "a072fec0266492e8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124253", "field": "text", "en": "Disenchanted items", "hash": "5900dd5f709bddd4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124270", "field": "text", "en": "All", "hash": "00113cf90216a76a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124366", "field": "text", "en": "Factions at revered", "hash": "13c246b5c81abc35", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124408", "field": "text", "en": "Total deaths", "hash": "379af9205d4840ab", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124414", "field": "text", "en": "Factions at honored", "hash": "4cdb94292e5519e4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124434", "field": "text", "en": "Alterac Valley towers captured", "hash": "6f0d2b456c427a7b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124436", "field": "text", "en": "Total healing received", "hash": "cba718f8ad5facc3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124571", "field": "text", "en": "Deaths in instances", "hash": "9a7ebf81eb254546", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124572", "field": "text", "en": "5 man instances", "hash": "676acb89ccfe4676", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124573", "field": "text", "en": "10 man instances", "hash": "3643cdbf512c1aeb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124575", "field": "text", "en": "20 man instances", "hash": "43784a709df1c799", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124576", "field": "text", "en": "40 man instances", "hash": "5de143d2377d2106", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124578", "field": "text", "en": "Participate in Battlegrounds", "hash": "7357799ff4b36907", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124751", "field": "text", "en": "Largest heal received", "hash": "65a708d4c7fb9b56", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124756", "field": "text", "en": "Vanity pets owned", "hash": "8365603dfd9e1d9d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124852", "field": "text", "en": "Arathi Basin Deaths", "hash": "c20c05147179c220", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124913", "field": "text", "en": "Gold spent on talent tree respecs", "hash": "a2aaece732c733df", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:124999", "field": "text", "en": "Fish caught", "hash": "3178393fd18db89a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:125009", "field": "text", "en": "Strand of the Ancients", "hash": "917f86e7fecdfdab", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:125010", "field": "text", "en": "Isle of Conquest", "hash": "7f780d03c456bc25", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:125191", "field": "text", "en": "Warsong Gulch flags captured", "hash": "06e532d7ee230f23", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:125577", "field": "text", "en": "Alterac Valley Killing Blows", "hash": "0b1db8ee28837fd6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:125584", "field": "text", "en": "Exalted Reputations", "hash": "69239702422cbea7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:125714", "field": "text", "en": "Gold spent at barber shops", "hash": "7caeb3a84f4c788b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:125731", "field": "text", "en": "Burning Crusade Areas", "hash": "64142edd0a50a79e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:125811", "field": "text", "en": "Total times playing world's smallest violin", "hash": "e21f74782771d946", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126281", "field": "text", "en": "Herbalism skill", "hash": "3a970636bb3aa32d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126283", "field": "text", "en": "Blacksmithing skill", "hash": "7a6033db6807e1b5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126345", "field": "text", "en": "Revenge is Tasty", "hash": "97f76a5e04a9404b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126346", "field": "text", "en": "Manalicious", "hash": "8608c31b119450d4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126347", "field": "text", "en": "Soup for the Soul", "hash": "d2f770756435411a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126348", "field": "text", "en": "Super Hot Stew", "hash": "c891c027ef3bae4a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126349", "field": "text", "en": "Feast for the Legerddemain - Alliance", "hash": "bcdb64b0dadc5705", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126350", "field": "text", "en": "Feast for the Legerdemain - Horde", "hash": "04a41b4aa0337398", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126351", "field": "text", "en": "Infused Mushroom Meatloaf - Alliance", "hash": "b09311456ac8e862", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126358", "field": "text", "en": "Infused Mushroom Meatloaf - Horde", "hash": "0101754e8fffc60a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126360", "field": "text", "en": "Alchemy recipes known", "hash": "b5945214a4d7f3c6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126787", "field": "text", "en": "Warsong Gulch Honorable Kills", "hash": "02e039146a99e386", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126861", "field": "text", "en": "Killed by Vanndar Stormpike", "hash": "6038a2360ba2cc89", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:126951", "field": "text", "en": "Battlegrounds Played", "hash": "99bf1adb076ae85d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:127086", "field": "text", "en": "Mana Potions consumed", "hash": "0e5e80523ccf1d92", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:127329", "field": "text", "en": "5-man instances run", "hash": "9e0b5d9d42850c5f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:127440", "field": "text", "en": "Duels won", "hash": "26151361620a30fb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:127442", "field": "text", "en": "Total damage done", "hash": "b7869c7ed59c5906", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:127452", "field": "text", "en": "Mining skill", "hash": "8de2ce4f0432f628", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:127613", "field": "text", "en": "Epic Items Looted", "hash": "886dd812d38629c8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:127907", "field": "text", "en": "Legash Encampment", "hash": "19e3f667cc9a29bc", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128069", "field": "text", "en": "Mage Portals", "hash": "07070d95ac5a3cbd", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128078", "field": "text", "en": "Portal to Thunder Bluff", "hash": "d3141b68a0ccb1f3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128170", "field": "text", "en": "Healthstone (1)", "hash": "23514b29ff88caee", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128171", "field": "text", "en": "Master Healthstone (1)", "hash": "7997560113b76874", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128172", "field": "text", "en": "Lesser Healthstone (2)", "hash": "5f51671875242595", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128173", "field": "text", "en": "Greater Healthstone (0)", "hash": "e5416823b6d23bc9", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128174", "field": "text", "en": "Greater Healthstone (1)", "hash": "e54168a6b6d25baa", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128175", "field": "text", "en": "Healthstone (2)", "hash": "23514bacff88eacf", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128176", "field": "text", "en": "Major Healthstone (1)", "hash": "d912b4b96dc72c2e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128177", "field": "text", "en": "Minor Healthstone (1)", "hash": "c28b28a690df1bbb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128178", "field": "text", "en": "Minor Healthstone (2)", "hash": "c28b292990df3b9c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128179", "field": "text", "en": "Master Healthstone (2)", "hash": "7997568413b78855", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128180", "field": "text", "en": "Major Healthstone (2)", "hash": "d912b53c6dc74c0f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128181", "field": "text", "en": "Minor Healthstone (0)", "hash": "c28b282390defbda", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128182", "field": "text", "en": "Greater Healthstone (2)", "hash": "e5416929b6d27b8b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128183", "field": "text", "en": "Healthstone (0)", "hash": "23514aa6ff88ab0d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128184", "field": "text", "en": "Demonic Healthstone", "hash": "914436490e5a436a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128185", "field": "text", "en": "Fel Healthstone", "hash": "b36e5bdfc76993b8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128194", "field": "text", "en": "Major Healthstone (0)", "hash": "d912b4366dc70c4d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128195", "field": "text", "en": "Master Healthstone (0)", "hash": "7997557e13b74893", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128196", "field": "text", "en": "Lesser Healthstone (0)", "hash": "5f5166127523e5d3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128198", "field": "text", "en": "Lesser Healthstone (1)", "hash": "5f516695752405b4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128217", "field": "text", "en": "Total gold from quest rewards", "hash": "c3e82d198615db22", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128256", "field": "text", "en": "Enchanting skill", "hash": "d870a8711aa9779e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128496", "field": "text", "en": "Dalaran Cooking Awards gained", "hash": "90c78ff537d2d7e2", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128506", "field": "text", "en": "Inscriptions known", "hash": "35572634fd03aee1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128509", "field": "text", "en": "Cooking recipes known", "hash": "128f9f0f3aa3e2c7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128585", "field": "text", "en": "Smelting Recipes Known", "hash": "a881565bcbdf9359", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128750", "field": "text", "en": "Alterac Valley victories", "hash": "29f43459096a7d67", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128754", "field": "text", "en": "Auctions Posted", "hash": "f84476aa9c77ae99", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128755", "field": "text", "en": "Health potions used", "hash": "6d6fc7e62ed5b0bd", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128788", "field": "text", "en": "Major healing Draught", "hash": "e59236d3233c248c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:128931", "field": "text", "en": "Total Auction Purchases", "hash": "8d3ff7d8f1049263", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:129052", "field": "text", "en": "Gold Earned from Auctions", "hash": "10236af23927bb3d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:129062", "field": "text", "en": "Warsong Gulch Killing Blows", "hash": "dcf5b643e7a2d4dd", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:129366", "field": "text", "en": "Highest Auction Bid", "hash": "7a5e951978a85fd0", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:129443", "field": "text", "en": "Arathi Basin Killing Blows", "hash": "cbd8a2cc6c303d37", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:129455", "field": "text", "en": "Tailoring Patterns known", "hash": "0c6161f68862bb3c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:129855", "field": "text", "en": "Use Portals", "hash": "366f89cca16a7320", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:131456", "field": "text", "en": "Leatherworking Patterns known", "hash": "9b09fe7b151b0c68", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:131938", "field": "text", "en": "Tailoring skill", "hash": "262bf55142e445fa", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:132088", "field": "text", "en": "Total deaths from other players", "hash": "1fbc17d037a453c1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:132092", "field": "text", "en": "First Aid Manuals learned", "hash": "893fe81e27056e27", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:132275", "field": "text", "en": "Deaths from drowning", "hash": "41d41ed9d7515d25", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:132293", "field": "text", "en": "Win Battleground", "hash": "b0b5734d221807d3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:132821", "field": "text", "en": "Summons accepted", "hash": "bd0f09d998264a07", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:132856", "field": "text", "en": "Engineering Schematics known", "hash": "81d50ed072d15124", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:133360", "field": "text", "en": "Greed rolls on loot", "hash": "197235d10bbc738e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:14324", "field": "text", "en": "Emperor Dagran Thaurissan kills (Blackrock Depths)", "hash": "b8b8b9b09aa1520a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:169195", "field": "text", "en": "Rune Learned - Shared Acquisition - Illari Duskfather (40)", "hash": "122df4965be7dd52", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:169197", "field": "text", "en": "Rune Learned - Shared Acquisition - Dark Riders (40)", "hash": "b42ec7637b4199ab", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:169201", "field": "text", "en": "Rune Learned - Shared Acquisition - Ley Lines (50)", "hash": "87810f7c4575694d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:210009", "field": "text", "en": "S03 - Scarlet Enclave - Boss - Balnazzar - Achievement Credit", "hash": "4f804ba833553469", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:210320", "field": "text", "en": "S03 - Scarlet Enclave - Boss - Balnazzar - Backup Achievement Credit", "hash": "3e93dc27a5ea54d6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:219255", "field": "text", "en": "Level 25 Warrior", "hash": "4236c088d67daff8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:219278", "field": "text", "en": "Level 45 Warrior", "hash": "12a324bc0f28ca74", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:219280", "field": "text", "en": "Level 60 Warrior", "hash": "47a1fc45bab2bf5d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:219282", "field": "text", "en": "Level 25 Druid", "hash": "4ced1287c2c1daa2", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:219284", "field": "text", "en": "Level 45 Druid", "hash": "3bd0180aad93e689", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:219286", "field": "text", "en": "Level 60 Druid", "hash": "a3359f64ec75089f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:219337", "field": "text", "en": "1.60.0 - Can Proceed To Lost Ones Quest Pt. 2", "hash": "8525431e72138efb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221439", "field": "text", "en": "Level 25 Hunter", "hash": "7f1d9066d695e6b5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221463", "field": "text", "en": "Level 45 Hunter", "hash": "bd496242a8a328e9", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221465", "field": "text", "en": "Level 60 Hunter", "hash": "a63da6592fa34d64", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221467", "field": "text", "en": "Level 25 Mage", "hash": "ea53479c659251e0", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221469", "field": "text", "en": "Level 45 Mage", "hash": "53b8ad4810bf7c37", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221471", "field": "text", "en": "Level 60 Mage", "hash": "d38898cf243c5430", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221473", "field": "text", "en": "Level 25 Paladin", "hash": "e5b91d3fce1f5868", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221475", "field": "text", "en": "Level 45 Paladin", "hash": "b625817306ca72e4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221477", "field": "text", "en": "Level 60 Paladin", "hash": "eb2458fcb25467cd", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221479", "field": "text", "en": "Level 25 Priest", "hash": "25e76011c791baaa", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221481", "field": "text", "en": "Level 45 Priest", "hash": "641331ed999efcde", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221483", "field": "text", "en": "Level 60 Priest", "hash": "4d077604209f2159", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221485", "field": "text", "en": "Level 25 Rogue", "hash": "42427dd013cac12b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221487", "field": "text", "en": "Level 45 Rogue", "hash": "31258353fe9ccd01", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221489", "field": "text", "en": "Level 60 Rogue", "hash": "988b0aad3d7def28", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221491", "field": "text", "en": "Level 25 Shaman", "hash": "67dac5f6bb85fe16", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221493", "field": "text", "en": "Level 45 Shaman", "hash": "a60697d28d93404a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221495", "field": "text", "en": "Level 60 Shaman", "hash": "8efadbe9149364c5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221497", "field": "text", "en": "Level 25 Warlock", "hash": "416a7af19dde0fbe", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221499", "field": "text", "en": "Level 45 Warlock", "hash": "11d6df25d6892a29", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221501", "field": "text", "en": "Level 60 Warlock", "hash": "46d5b6ae82131f23", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221503", "field": "text", "en": "150 Skill in Alchemy", "hash": "0b75038f1f9615c9", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221504", "field": "text", "en": "150 Alchemy Skill", "hash": "124ea6db6625f30a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221505", "field": "text", "en": "225 Skill in Alchemy", "hash": "f6a568f583877a47", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221506", "field": "text", "en": "225 Alchemy Skill", "hash": "64bfdb331723a045", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221507", "field": "text", "en": "300 Skill in Alchemy", "hash": "36dda24ffbf9f188", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221508", "field": "text", "en": "300 Alchemy Skill", "hash": "53ffd4cdb996866d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221509", "field": "text", "en": "150 Skill in Blacksmithing", "hash": "7befae1346fa387c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221510", "field": "text", "en": "150 Blacksmithing Skill", "hash": "33e0e8d339dbaf8c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221511", "field": "text", "en": "225 Skill in Blacksmithing", "hash": "9bea628a60553c60", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221512", "field": "text", "en": "225 Blacksmithing Skill", "hash": "a0d78e3268e188ac", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221513", "field": "text", "en": "300 Skill in Blacksmithing", "hash": "a56e1843990ce79b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221514", "field": "text", "en": "300 Blacksmithing Skill", "hash": "0995dc593d4742d9", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221515", "field": "text", "en": "150 Skill in Enchanting", "hash": "9ce22d1448a7db0b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221516", "field": "text", "en": "150 Enchanting Skill", "hash": "e648cb0ded0390ab", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221517", "field": "text", "en": "225 Skill in Enchanting", "hash": "09d8d27877adb42b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221518", "field": "text", "en": "225 Enchanting Skill", "hash": "d179307850f4f53a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221519", "field": "text", "en": "300 Skill in Enchanting", "hash": "7297209a4c136e58", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221520", "field": "text", "en": "300 Enchanting Skill", "hash": "11b169d2c9676c7b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221521", "field": "text", "en": "150 Skill in Engineering", "hash": "8ad865f098723f38", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221522", "field": "text", "en": "150 Engineering Skill", "hash": "5585697e43a4cdce", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221523", "field": "text", "en": "225 Skill in Engineering", "hash": "4d0f06a5a1e157e3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221524", "field": "text", "en": "225 Engineering Skill", "hash": "af494f0855fa361e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221525", "field": "text", "en": "300 Skill in Engineering", "hash": "e6710314a0d51022", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221526", "field": "text", "en": "300 Engineering Skill", "hash": "8c0ea62c0f06e43f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221527", "field": "text", "en": "150 Skill in Leatherworking", "hash": "1ce0408a3cc59c23", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221528", "field": "text", "en": "150 Leatherworking Skill", "hash": "0875e7c268c3cedb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221529", "field": "text", "en": "225 Skill in Leatherworking", "hash": "7a2a99bf8b3cd92f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221530", "field": "text", "en": "225 Leatherworking Skill", "hash": "caac88727232e786", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221531", "field": "text", "en": "300 Skill in Leatherworking", "hash": "58909783a266f51a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221532", "field": "text", "en": "300 Leatherworking Skill", "hash": "640e84e671269fc5", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221533", "field": "text", "en": "150 Skill in Tailoring", "hash": "0e3d523e5648bc2e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221534", "field": "text", "en": "150 Tailoring Skill", "hash": "6c26232e427fd856", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221535", "field": "text", "en": "225 Skill in Tailoring", "hash": "fd7bc8bdcafb4146", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221536", "field": "text", "en": "225 Tailoring Skill", "hash": "f2d46e348369da8f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221537", "field": "text", "en": "300 Skill in Tailoring", "hash": "f6775fcff835b511", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221538", "field": "text", "en": "300 Tailoring Skill", "hash": "1a676cb4a7d8e9b7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221563", "field": "text", "en": "1.60.0 - Complete Dungeon Upgrade Questline - Saving the Best for Last", "hash": "97f8f4b6fa07b099", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221565", "field": "text", "en": "Exalted with Alterac Valley", "hash": "0afc0077347342be", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221566", "field": "text", "en": "Reach exalted reputation with the Frostwolf Clan", "hash": "0dd5022e74298ab7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221567", "field": "text", "en": "Reach exalted reputation with the Stormpike Guard", "hash": "0683f8cea1c55ec3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221568", "field": "text", "en": "Exalted with Arathi Basin", "hash": "9a5d4066e8ffb4be", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221569", "field": "text", "en": "Reach exalted reputation with The Defilers", "hash": "d87e4cc0e77c58b3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221570", "field": "text", "en": "Reach exalted reputation with the League of Arathor", "hash": "70d4c9e73b155fcc", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221571", "field": "text", "en": "Exalted with Warsong Gulch", "hash": "7c642763c033eec0", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221572", "field": "text", "en": "Reach exalted reputation with the Warsong Outriders", "hash": "35bd28eedf40362a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:221573", "field": "text", "en": "Reach exalted reputation with the Silverwing Sentinels", "hash": "4a1b97db0ef30bcb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:223429", "field": "text", "en": "Explore Eastern Kingdoms", "hash": "b96bce651371d9c4", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:223453", "field": "text", "en": "Explore Kalimdor", "hash": "6c1796d0e17b2add", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:223475", "field": "text", "en": "Explore Eastern Kingdoms and Kalimdor", "hash": "719a14e183dba0ac", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:223519", "field": "text", "en": "Exploer Azeroth - Account Wide", "hash": "bca37738c2b6fee7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:223520", "field": "text", "en": "Explorer", "hash": "6603c6598fba43f9", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:22423", "field": "text", "en": "Statistic - High Inquisitor Whitemane", "hash": "6bccd09fa792bc8f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:229457", "field": "text", "en": "Complete Field of Honor: Week 4", "hash": "bb6b1c4fa888d74f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:229460", "field": "text", "en": "Complete Field of Honor: Week 7", "hash": "bb6b1c52a888d752", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:229462", "field": "text", "en": "Complete Field of Honor: Week 10", "hash": "e7cf7cefb258d2b8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230736", "field": "text", "en": "Exalted with Darkspear Islands", "hash": "60ad956702da390d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230737", "field": "text", "en": "Reach exalted reputation with the Darkspear Raiders", "hash": "942fc371765551c7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230738", "field": "text", "en": "Reach exalted reputation with the Theramore Expeditionary Force", "hash": "c5631d07a7fc0cae", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230741", "field": "text", "en": "Rank 7", "hash": "45ebbbfe0065f013", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230743", "field": "text", "en": "Rank 10", "hash": "c7a130c7b1a98f69", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230745", "field": "text", "en": "Rank 13", "hash": "c7a130cab1a98f6c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230747", "field": "text", "en": "Rank 14", "hash": "c7a130cbb1a98f6d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230759", "field": "text", "en": "Novice Spelunker", "hash": "7b595b51b96b1b71", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230766", "field": "text", "en": "Ragefire Chasm or Hall of Thanes", "hash": "91d58bc3d71decf3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230767", "field": "text", "en": "Experienced Spelunker", "hash": "bbb73b7659d4489b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230774", "field": "text", "en": "Scarlet Monastery: Graveyard", "hash": "dad402ccc3378935", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230775", "field": "text", "en": "Scarlet Monastery: Library", "hash": "8cab3c29114a36a0", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230776", "field": "text", "en": "Scarlet Monastery: Armory", "hash": "992bab2ceaaee169", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230777", "field": "text", "en": "Scarlet Monastery: Cathedral", "hash": "152de07de1bcc1ff", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230779", "field": "text", "en": "Master Spelunker", "hash": "415f8f075faf9140", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230790", "field": "text", "en": "Stratholme: Live", "hash": "973afd6a666d5353", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230791", "field": "text", "en": "Stratholme: Dead", "hash": "962779aeeb4a068c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230792", "field": "text", "en": "Dire Maul: East", "hash": "46e62c54b3564f55", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230793", "field": "text", "en": "Dire Maul: North", "hash": "e7a41462a06e10ac", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230794", "field": "text", "en": "Dire Maul: West", "hash": "4950ad5eb48686f1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230797", "field": "text", "en": "Kill Onyxia", "hash": "96b9192a84bd24cf", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230799", "field": "text", "en": "Complete The Barrow Deeps", "hash": "6c6d50baeea3aaeb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230800", "field": "text", "en": "Sonya Darkhallow", "hash": "af30c26cd41855ec", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230801", "field": "text", "en": "Elder Tangleclaw", "hash": "e6974cd47210b2fd", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230802", "field": "text", "en": "Khalith the Dreadspinner", "hash": "cc5b564645861c91", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230803", "field": "text", "en": "Amethrax", "hash": "815e5d9aa52f44bb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230804", "field": "text", "en": "Well of Sorrow", "hash": "fb5b4a311cba482c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230805", "field": "text", "en": "Del'lynar Songwood", "hash": "91ea0bab96d661d2", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230806", "field": "text", "en": "Chillhowl", "hash": "57ca151f661a9e3b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230807", "field": "text", "en": "Ravus and Darlissa", "hash": "8c54e1abbe61835e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230811", "field": "text", "en": "Complete Hyjal Summit", "hash": "48d02c27547b2da1", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230812", "field": "text", "en": "Bandalar", "hash": "3e491077110f0d17", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230813", "field": "text", "en": "Ancient of Decay", "hash": "40a235f6508c4ae7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230814", "field": "text", "en": "Time-Lost Battalion", "hash": "71c351f0b8db8aeb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230815", "field": "text", "en": "Sylvestris Dusksong", "hash": "778caea4d73925b7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230816", "field": "text", "en": "Old Gloomlurker", "hash": "2d68a42cfe1c1e63", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230817", "field": "text", "en": "Gharalis the Abyssal", "hash": "e4104da192ebe3c6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230818", "field": "text", "en": "Kathris the Haunted", "hash": "a5c31f6b27c441bb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230819", "field": "text", "en": "Anara Chillwind", "hash": "534ee3f1f4714b0d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230820", "field": "text", "en": "Elder Minderel", "hash": "6bd48da5cbb2b3ee", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230821", "field": "text", "en": "Tracker Stillwind", "hash": "337f42d7a9450d70", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230822", "field": "text", "en": "Council of Thorns", "hash": "c45b6f8a06e15eee", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230823", "field": "text", "en": "Nythus the Dreambound", "hash": "4a7be5a851473513", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230824", "field": "text", "en": "The Wild King", "hash": "59971a0828d062aa", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230971", "field": "text", "en": "Kill Edwin VanCleef", "hash": "ca9aa1fb18f3a29d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230973", "field": "text", "en": "Kill Rath'mael", "hash": "ce84f56e1cd0585d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230975", "field": "text", "en": "Kill Shade of the Archmage", "hash": "9cf1df849ec3e2a6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230977", "field": "text", "en": "Kill Durgen Dirgehammer", "hash": "11de69f9540f7639", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230979", "field": "text", "en": "Kill Nanaya", "hash": "b583382072876cf3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230980", "field": "text", "en": "Nanaya", "hash": "57d81cd99297b79a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230981", "field": "text", "en": "Kill Blazeroar", "hash": "8612647ff0d043ea", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230982", "field": "text", "en": "Blazeroar", "hash": "b897c3e7892e0750", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230991", "field": "text", "en": "Kill The Wild King", "hash": "05f5dc427ce96611", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:230993", "field": "text", "en": "Kill Sonya Darkhallow", "hash": "5877c5b686613d50", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:231009", "field": "text", "en": "Kill Lyn the Ignored", "hash": "0a92fea9434017ab", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:231011", "field": "text", "en": "Kill Cinder", "hash": "734269bdf4d767b2", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:231015", "field": "text", "en": "Kill Bolt", "hash": "aad94d10f96efca3", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:231017", "field": "text", "en": "Kill Snowtalon", "hash": "79a88c1eaea16305", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:232142", "field": "text", "en": "Explore Shen'dralas", "hash": "cf2581578b9d9277", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:234128", "field": "text", "en": "Explore Azeroth - Account Wide", "hash": "5cca7e31ddeea93e", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:234409", "field": "text", "en": "Rank 6", "hash": "45ebbbfd0065f012", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:234411", "field": "text", "en": "Rank 8", "hash": "45ebbbff0065f014", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:234413", "field": "text", "en": "Rank 9", "hash": "45ebbc000065f015", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:234415", "field": "text", "en": "Rank 11", "hash": "c7a130c8b1a98f6a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:234417", "field": "text", "en": "Rank 12", "hash": "c7a130c9b1a98f6b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:234567", "field": "text", "en": "Tier 1 Achievement", "hash": "bda553b09269e1c0", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:235075", "field": "text", "en": "Darkspear Islands victories", "hash": "8d705f370fb3a518", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:235076", "field": "text", "en": "Darkspear Island victories", "hash": "673a2d619cd2b369", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:235079", "field": "text", "en": "New Criteria Tree", "hash": "5acb88d6ccd5c1fb", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:235082", "field": "text", "en": "Darkspear Islands Honorable Kills", "hash": "ee9f1a6e151a0898", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:235084", "field": "text", "en": "Darkspear Island Killing Blows", "hash": "f3b70804845a97f7", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:235086", "field": "text", "en": "Deaths in Darkspear Islands", "hash": "f5e308a2786e663c", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:235088", "field": "text", "en": "20 man raids", "hash": "8eb25d3f83904fab", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:235097", "field": "text", "en": "40-man raids run", "hash": "9d469a8879ce7a3a", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:235099", "field": "text", "en": "40 man raids", "hash": "40bb40caec119266", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:276", "field": "text", "en": "Chief Ukorz Sandscalp kills (Zul'Farrak)", "hash": "352d649489037e50", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:3820", "field": "text", "en": "Onyxia kills (Onyxia's Lair)", "hash": "8329a649352f634f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:6549", "field": "text", "en": "Lord Godfrey", "hash": "cb9fb48bc9859fe6", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:91546", "field": "text", "en": "Bazzalan kills (Ragefire Chasm)", "hash": "d18e3a6d167df08d", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:91548", "field": "text", "en": "Mutanus the Devourer kills (Wailing Caverns)", "hash": "7282e9443a66b9a8", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:91550", "field": "text", "en": "Bazil Thredd kills (Stormwind Stockade)", "hash": "8f2b5717d856534b", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:91552", "field": "text", "en": "Darkmaster Gandling kills (Scholomance)", "hash": "b134333a37e3d5bc", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:91554", "field": "text", "en": "Baron Rivendare kills (Stratholme)", "hash": "d778f39820d34f30", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:94296", "field": "text", "en": "Has Died", "hash": "46ff9bd7223cb646", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:94307", "field": "text", "en": "Survivor", "hash": "75e5ca7b1263bc46", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:95385", "field": "text", "en": "<Hidden> Adventure Awaits - Reach Max Level of Season of Mastery with the buff Adventure Awaits", "hash": "ba2eb194a8f35230", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:95610", "field": "text", "en": "The Immortal", "hash": "7c6e448c5a5fa96f", "src": "db2@1.60.1.70170"}
+{"id": "CriteriaText:9942", "field": "text", "en": "General Drakkisath kills (Blackrock Spire)", "hash": "2cd17c74c94b5a4c", "src": "db2@1.60.1.70170"}
 {"id": "CurrencyCategory:1", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70170"}
 {"id": "CurrencyCategory:2", "field": "text", "en": "Player vs. Player", "hash": "e05a8e54c9894b2f", "src": "db2@1.60.1.70170"}
 {"id": "CurrencyCategory:22", "field": "text", "en": "Dungeon and Raid", "hash": "c2bae8bf95987e78", "src": "db2@1.60.1.70170"}

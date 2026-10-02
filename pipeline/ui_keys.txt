@@ -12901,3 +12901,1025 @@ STABLE_SLOT_COST_TEXT
 ACTION_LABEL_ROTATE
 # an error line (UIErrorsFrame and chat)
 SPELL_FAILED_CUSTOM_ERROR_667
+# ── Client-table text the served-text inventory found shown on Forever (ADR-051): achievement and Legacy
+# criteria, Legacy and PvP rank rewards, talent requirement lines, profession recipe headers, NPC mail, quest
+# tags and map point descriptions, pet loyalty and diet words, rest state, instance difficulty and entry
+# messages, event toasts, cinematic subtitles, recent allies. Same rules as the blocks above (one key per distinct
+# English, names and developer rows never listed; profession names stay English). CriteriaText lists the
+# criteria of the achievements' own trees; a criterion that is only a name ships as its English. ──
+# CriteriaText (CriteriaTree.Description_lang)
+CriteriaText:276  # Chief Ukorz Sandscalp kills (Zul'Farrak)
+CriteriaText:3820  # Onyxia kills (Onyxia's Lair)
+CriteriaText:6549  # Lord Godfrey
+CriteriaText:9942  # General Drakkisath kills (Blackrock Spire)
+CriteriaText:14324  # Emperor Dagran Thaurissan kills (Blackrock Depths)
+CriteriaText:22423  # Statistic - High Inquisitor Whitemane
+CriteriaText:91546  # Bazzalan kills (Ragefire Chasm) (+1)
+CriteriaText:91548  # Mutanus the Devourer kills (Wailing Caverns) (+1)
+CriteriaText:91550  # Bazil Thredd kills (Stormwind Stockade)
+CriteriaText:91552  # Darkmaster Gandling kills (Scholomance) (+1)
+CriteriaText:91554  # Baron Rivendare kills (Stratholme) (+1)
+CriteriaText:94296  # Has Died
+CriteriaText:94307  # Survivor
+CriteriaText:95385  # <Hidden> Adventure Awaits - Reach Max Level of Season of Mastery with the buff Adventur...
+CriteriaText:95610  # The Immortal
+CriteriaText:121217  # Most Alliance Factions at Exalted
+CriteriaText:121218  # Exalted with Silverwing Sentinels
+CriteriaText:121219  # Exalted with Wintersaber Trainers
+CriteriaText:121220  # Exalted with Valiance Expedition
+CriteriaText:121221  # Exalted with The Silver Covenant
+CriteriaText:121222  # Exalted with Ironforge
+CriteriaText:121223  # Exalted with Stormpike Guard
+CriteriaText:121224  # Exalted with Exodar
+CriteriaText:121225  # Exalted with Honor Hold
+CriteriaText:121226  # Exalted with Explorers' League
+CriteriaText:121227  # Exalted with Darnassus
+CriteriaText:121228  # Exalted with Gnomeregan
+CriteriaText:121229  # Exalted with The League of Arathor
+CriteriaText:121230  # Exalted with Kurenai
+CriteriaText:121231  # Exalted with Stormwind
+CriteriaText:121232  # Exalted with The Sunreavers (+1)
+CriteriaText:121233  # Explore Alterac Mountains
+CriteriaText:121289  # Alterac Valley Honorable Kills
+CriteriaText:121331  # Total cheers
+CriteriaText:121348  # Northrend (+3)
+CriteriaText:121473  # Duels lost
+CriteriaText:121743  # Arathi Basin Honorable Kills
+CriteriaText:121745  # Alterac Valley Runecloth Bandage (+1)
+CriteriaText:121748  # Netherweave Bandage (+1)
+CriteriaText:121756  # Dense Frostweave Bandage (+1)
+CriteriaText:121757  # Frostweave Bandage (+1)
+CriteriaText:121761  # Heavy Frostweave Bandage (+1)
+CriteriaText:121762  # Heavy Netherweave Bandage (+1)
+CriteriaText:121764  # Thick Frostweave Bandage (+1)
+CriteriaText:121781  # Total Killing Blows
+CriteriaText:121784  # Weapon skills at maximum skill
+CriteriaText:121801  # Total kills that grant experience or honor
+CriteriaText:121802  # Kill an NPC that yields XP
+CriteriaText:121803  # Honorable Kills (+2)
+CriteriaText:121888  # 10 man raids
+CriteriaText:121906  # Talent tree respecs
+CriteriaText:121933  # Warsong Gulch Victories
+CriteriaText:121937  # Blacksmithing plans known (+1)
+CriteriaText:121940  # Total healing done
+CriteriaText:121977  # Alterac Valley battles
+CriteriaText:121982  # Enchanting formulae known (+1)
+CriteriaText:122014  # Elixirs consumed
+CriteriaText:122020  # Elixir of Lion's Strength
+CriteriaText:122026  # Elixir of Detect Undead
+CriteriaText:122037  # Elixir of Demonslaying
+CriteriaText:122038  # Elixir of Detect Demon
+CriteriaText:122041  # Elixir of Greater Firepower
+CriteriaText:122048  # Elixir of Armor Piercing
+CriteriaText:122057  # Elixir of Giants
+CriteriaText:122060  # Elixir of Water Walking
+CriteriaText:122061  # Weak Troll's Blood Elixir
+CriteriaText:122077  # Strong Troll's Blood Elixir
+CriteriaText:122085  # Elixir of Ogre's Strength
+CriteriaText:122086  # Elixir of Greater Water Breathing
+CriteriaText:122092  # Elixir of Superior Defense
+CriteriaText:122095  # Elixir of Water Breathing
+CriteriaText:122103  # Elixir of Detect Lesser Invisibility
+CriteriaText:122109  # Catseye Elixir
+CriteriaText:122112  # Elixir of Dream Vision
+CriteriaText:122113  # Elixir of Firepower
+CriteriaText:122184  # Total quests (+1)
+CriteriaText:122185  # Daily quests (+1)
+CriteriaText:122187  # Demons (+2)
+CriteriaText:122188  # Beasts (+2)
+CriteriaText:122190  # Humanoid (+2)
+CriteriaText:122191  # Mechanical (+2)
+CriteriaText:122192  # Undead (+2)
+CriteriaText:122193  # Unspecified (+2)
+CriteriaText:122194  # Totems (+2)
+CriteriaText:122195  # Dragonkin (+2)
+CriteriaText:122212  # Warsong Gulch flags returned
+CriteriaText:122233  # Largest heal cast
+CriteriaText:122235  # Largest hit dealt
+CriteriaText:122251  # Number of mounts
+CriteriaText:122252  # Beverages
+CriteriaText:122290  # Sulfuron Slammer
+CriteriaText:122297  # Flagon of Mead
+CriteriaText:122298  # Flask of Port
+CriteriaText:122322  # Keg of Thunderbrew Lager
+CriteriaText:122337  # Jug of Bourbon
+CriteriaText:122348  # Half Full Bottle of Prison Moonshine
+CriteriaText:122361  # Winter Veil Eggnogg
+CriteriaText:122370  # Scourgebane Infusion
+CriteriaText:122400  # Bottle of Pinot Noir
+CriteriaText:122415  # Bad Egg Nog (+1)
+CriteriaText:122443  # Food eaten
+CriteriaText:122445  # Steaming Chicken Soup
+CriteriaText:122446  # Spiced Wolf Ribs
+CriteriaText:122448  # Spicy Crawdad
+CriteriaText:122449  # Runn Tub Tuber
+CriteriaText:122452  # Stewed Trout
+CriteriaText:122467  # Oronok's Tuber of Agility
+CriteriaText:122471  # Grilled Shadowmoon Tuber
+CriteriaText:122478  # Sand Pear Pie
+CriteriaText:122479  # Tigule and Foror's Strawberry Ice Cream
+CriteriaText:122482  # Edible Fern
+CriteriaText:122487  # Sewer Carp
+CriteriaText:122491  # Mingo's Fortune Giblets
+CriteriaText:122492  # Ravager Egg Omelet
+CriteriaText:122501  # Dalaran Clam Chowder
+CriteriaText:122504  # Hallow's End Pumpink Treat
+CriteriaText:122513  # Oronok's Tuber of Strength
+CriteriaText:122517  # Enriched Terocone Juice
+CriteriaText:122519  # Funnel Cake
+CriteriaText:122520  # Giant Sunfish
+CriteriaText:122524  # Imperial Manta Steak
+CriteriaText:122526  # Rhino Dogs
+CriteriaText:122529  # Critter Bites
+CriteriaText:122535  # Raw Raindbow Fin Albacore
+CriteriaText:122538  # Blackened Trout
+CriteriaText:122540  # Lovely Cake Slice
+CriteriaText:122541  # Lynx Steak
+CriteriaText:122543  # Mead Basted Caribou
+CriteriaText:122547  # Roasted Mystery Beast
+CriteriaText:122550  # Tracker Snacks
+CriteriaText:122557  # Shoveltusk Steak
+CriteriaText:122562  # Edible Stalks
+CriteriaText:122566  # Bag of Popcorn
+CriteriaText:122580  # Honeyed Holiday Ham
+CriteriaText:122582  # Skethyl Berries
+CriteriaText:122583  # Snapper Extreme
+CriteriaText:122585  # Spiced Wyrm Burger
+CriteriaText:122599  # Runn Tum Tuber Suprise
+CriteriaText:122602  # Grilled Bonescale
+CriteriaText:122604  # Hot Buttered Trout
+CriteriaText:122605  # Hearty Rhino
+CriteriaText:122612  # Tundra Berries
+CriteriaText:122618  # Clam Bar
+CriteriaText:122619  # Smoked Black Bear Meat
+CriteriaText:122621  # Tek'Abim Banana
+CriteriaText:122625  # Tricky Treat
+CriteriaText:122627  # G.N.E.R.D.S.
+CriteriaText:122640  # Pickled Egg
+CriteriaText:122641  # Poached Northern Sculpin
+CriteriaText:122645  # Crusader's Rations
+CriteriaText:122647  # Fillet of Icefin
+CriteriaText:122656  # Rhinolicious Wyrmsteak
+CriteriaText:122657  # Salted Venison
+CriteriaText:122665  # Fresh Eagle Meat
+CriteriaText:122666  # Garadar Sharp
+CriteriaText:122679  # Spice Bread
+CriteriaText:122682  # Sweet Potato Bread
+CriteriaText:122691  # Clefthoof Ribs
+CriteriaText:122692  # Conjured Mana Biscuit
+CriteriaText:122694  # Charred Bear Kabobs
+CriteriaText:122695  # Crusty Flatbread
+CriteriaText:122705  # Delicious Baked Ham
+CriteriaText:122706  # Dried Mushroom Rations
+CriteriaText:122708  # Kibler's Bits
+CriteriaText:122718  # Blackened Basilisk
+CriteriaText:122719  # Bonestripper Buzzard Hotwings
+CriteriaText:122733  # Dalaran Brownie
+CriteriaText:122736  # Blackened Dragonfin
+CriteriaText:122740  # Small Feast
+CriteriaText:122743  # Spicy Hot Talbuk
+CriteriaText:122745  # Sporeggar Mushroom
+CriteriaText:122746  # Springpaw Appetizer
+CriteriaText:122750  # Dalaran Doughnut
+CriteriaText:122756  # Diamond Berries
+CriteriaText:122759  # Feltail Delight
+CriteriaText:122767  # Hellfire Spineleaf
+CriteriaText:122771  # Juicy Bear Burger
+CriteriaText:122773  # Savory Snowplum
+CriteriaText:122779  # Marsh Lichen
+CriteriaText:122780  # Mega Mammoth Meal
+CriteriaText:122783  # Mon'Nathal Shortribs
+CriteriaText:122786  # Naaru Ration
+CriteriaText:122787  # Ogri'la Chicken Fingers
+CriteriaText:122789  # Poached Nettlefish
+CriteriaText:122792  # Conjured Mana Pie
+CriteriaText:122795  # Bristly Whisker Catfish
+CriteriaText:122798  # Delicious Chocolate Cake
+CriteriaText:122799  # Dried Fruit Rations
+CriteriaText:122802  # Berry Pie Slice
+CriteriaText:122803  # Bowels 'n' Brains
+CriteriaText:122805  # Briny Hardcheese
+CriteriaText:122806  # Broiled Bloodfin
+CriteriaText:122807  # Buzzard Bites
+CriteriaText:122813  # Ravager Dog
+CriteriaText:122815  # Red Velvet Cupcake
+CriteriaText:122821  # Rock-Salted Pretzel
+CriteriaText:122822  # Tender Shovelsteak Steak
+CriteriaText:122824  # Zangar Caps
+CriteriaText:122825  # Bladespire Bagel
+CriteriaText:122830  # Fisherman's Feast
+CriteriaText:122832  # Grilled Sculpin
+CriteriaText:122835  # Smoked Salmon
+CriteriaText:122836  # Smoked Talbuk Venison
+CriteriaText:122839  # Sparkling Frostcap
+CriteriaText:122841  # Talbuk Steak
+CriteriaText:122843  # Underspore Pod
+CriteriaText:122844  # Mammoth Meal
+CriteriaText:122845  # Winter Veil Loaf
+CriteriaText:122846  # Winter Veil Candy
+CriteriaText:122847  # Winter Squid
+CriteriaText:122860  # Sizzling Grizzly Flank
+CriteriaText:122861  # Skyguard Rations
+CriteriaText:122863  # Stolen Ribs
+CriteriaText:122864  # Crunchy Serpent
+CriteriaText:122865  # Mag'har Mild Cheese
+CriteriaText:122873  # Gold from vendors
+CriteriaText:122894  # Exalted with The Taunka
+CriteriaText:122895  # Exalted with Tranquillen
+CriteriaText:122896  # Exalted with The Hand of Vengeance
+CriteriaText:122897  # Exalted with Warsong Outriders
+CriteriaText:122898  # Exalted with Darkspear Trolls
+CriteriaText:122899  # Exalted with Orgrimmar
+CriteriaText:122900  # Exalted with Thunder Bluff
+CriteriaText:122901  # Exalted with Warsong Offensive
+CriteriaText:122902  # Exalted with The Defilers
+CriteriaText:122903  # Exalted with Undercity
+CriteriaText:122904  # Exalted with Thrallmar
+CriteriaText:122905  # Exalted with Silvermoon City
+CriteriaText:122906  # Exalted with The Mag'har
+CriteriaText:122908  # Exalted with Frostwolf Clan
+CriteriaText:122979  # Number of hugs
+CriteriaText:122981  # Need rolls for loot
+CriteriaText:122983  # Total facepalms
+CriteriaText:123019  # Arathi Basin victories
+CriteriaText:123036  # Total factions encountered
+CriteriaText:123038  # 10-man instances run
+CriteriaText:123076  # Deaths from falling
+CriteriaText:123080  # Gold spent on travel
+CriteriaText:123082  # Gold spent on postage
+CriteriaText:123086  # Total waves
+CriteriaText:123088  # laugh
+CriteriaText:123089  # rofl
+CriteriaText:123090  # giggle
+CriteriaText:123091  # chuckle
+CriteriaText:123092  # guffaw
+CriteriaText:123116  # Epic items obtained
+CriteriaText:123118  # Alterac Valley towers defended
+CriteriaText:123260  # Largest hit received
+CriteriaText:123276  # Deaths in Alterac Valley
+CriteriaText:123280  # Fishing skill
+CriteriaText:123282  # Leatherworking skill
+CriteriaText:123284  # Quests abandoned
+CriteriaText:123334  # First aid skill
+CriteriaText:123459  # Win Battlegrounds
+CriteriaText:123469  # Inscription skill
+CriteriaText:123502  # Critters killed
+CriteriaText:123504  # Deaths from fatigue
+CriteriaText:123506  # Deaths from fire and lava (+1)
+CriteriaText:123660  # Revive Spells
+CriteriaText:123661  # Rank 2 (+1)
+CriteriaText:123663  # Rank 4 (+1)
+CriteriaText:123665  # Rank 1 (+1)
+CriteriaText:123666  # Rank 3 (+3)
+CriteriaText:123667  # Rank 5 (+1)
+CriteriaText:123674  # Legendary items obtained
+CriteriaText:123676  # Flight paths taken
+CriteriaText:123709  # Total damage received
+CriteriaText:123763  # Flasks consumed
+CriteriaText:123804  # Ruby Slippers
+CriteriaText:123806  # Deaths from Hogger (+1)
+CriteriaText:123809  # Alchemy skill
+CriteriaText:123811  # Body is Epic!
+CriteriaText:123812  # Chest is Epic!
+CriteriaText:123813  # Ring is Epic! (+1)
+CriteriaText:123814  # Weapon is Epic!
+CriteriaText:123815  # Shoulders are Epic!
+CriteriaText:123816  # Trinket is Epic! (+1)
+CriteriaText:123817  # Bracers are Epic!
+CriteriaText:123818  # Ranged/Wand/Relic is Epic!
+CriteriaText:123820  # Tabard is Epic!
+CriteriaText:123821  # Belt is Epic!
+CriteriaText:123822  # Necklace is Epic!
+CriteriaText:123823  # Off-hand is Epic!
+CriteriaText:123825  # Cloak is Epic!
+CriteriaText:123826  # Feet are epic!
+CriteriaText:123827  # Helm is Epic!
+CriteriaText:123828  # Legs are Epic!
+CriteriaText:123829  # Gloves are Epic!
+CriteriaText:123830  # 20-player raids entered
+CriteriaText:123831  # 20-man raids run
+CriteriaText:123833  # Cooking skill
+CriteriaText:123836  # Crocolisks in the City
+CriteriaText:123837  # Bait Bandits
+CriteriaText:123838  # Felblood Fillet
+CriteriaText:123839  # Shrimpin' Ain't Easy
+CriteriaText:123840  # The Ghostfish
+CriteriaText:123841  # The Jewel of the Sewers
+CriteriaText:123842  # Dangerously Delicious
+CriteriaText:123843  # Monsterbelly Appetite
+CriteriaText:123844  # Blood is Thicker
+CriteriaText:123846  # Fish and other things caught
+CriteriaText:123923  # Scarlet Commander Mograine
+CriteriaText:123925  # Resurrection (Rank 5)
+CriteriaText:123926  # Resurrection (Rank 3)
+CriteriaText:123927  # Resurrection (Rank 2)
+CriteriaText:123928  # Resurrection (Rank 4)
+CriteriaText:123929  # Resurrection (Rank 1)
+CriteriaText:123934  # Rebirth (Rank 4)
+CriteriaText:123935  # Rebirth (Rank 3)
+CriteriaText:123936  # Rebirth (Rank 2)
+CriteriaText:123937  # Rebirth (Rank 1)
+CriteriaText:123939  # Rebirth (Rank 5)
+CriteriaText:123974  # Arathi Basin battles
+CriteriaText:124049  # Money from vendors (+1)
+CriteriaText:124050  # Money looted from creatures (+1)
+CriteriaText:124051  # Money from questing (+1)
+CriteriaText:124052  # Money from auctions (+1)
+CriteriaText:124096  # Skinning skill
+CriteriaText:124098  # Engineering skill
+CriteriaText:124134  # Bael'Dun Digsite
+CriteriaText:124193  # Total NPC kills
+CriteriaText:124200  # Jewelcrafting (+1)
+CriteriaText:124201  # Inscription (+1)
+CriteriaText:124225  # Highest sale value on an auction
+CriteriaText:124227  # Total gold looted
+CriteriaText:124229  # Most gold ever owned:
+CriteriaText:124249  # Deaths in Warsong Gulch
+CriteriaText:124251  # Killed by Drek'Thar
+CriteriaText:124253  # Disenchanted items
+CriteriaText:124270  # All
+CriteriaText:124366  # Factions at revered
+CriteriaText:124408  # Total deaths
+CriteriaText:124414  # Factions at honored
+CriteriaText:124434  # Alterac Valley towers captured
+CriteriaText:124436  # Total healing received
+CriteriaText:124571  # Deaths in instances
+CriteriaText:124572  # 5 man instances (+1)
+CriteriaText:124573  # 10 man instances
+CriteriaText:124575  # 20 man instances
+CriteriaText:124576  # 40 man instances
+CriteriaText:124578  # Participate in Battlegrounds
+CriteriaText:124751  # Largest heal received
+CriteriaText:124756  # Vanity pets owned
+CriteriaText:124852  # Arathi Basin Deaths
+CriteriaText:124913  # Gold spent on talent tree respecs
+CriteriaText:124999  # Fish caught
+CriteriaText:125009  # Strand of the Ancients (+3)
+CriteriaText:125010  # Isle of Conquest (+3)
+CriteriaText:125191  # Warsong Gulch flags captured
+CriteriaText:125577  # Alterac Valley Killing Blows
+CriteriaText:125584  # Exalted Reputations
+CriteriaText:125714  # Gold spent at barber shops
+CriteriaText:125731  # Burning Crusade Areas (+1)
+CriteriaText:125811  # Total times playing world's smallest violin
+CriteriaText:126281  # Herbalism skill
+CriteriaText:126283  # Blacksmithing skill
+CriteriaText:126345  # Revenge is Tasty
+CriteriaText:126346  # Manalicious
+CriteriaText:126347  # Soup for the Soul
+CriteriaText:126348  # Super Hot Stew
+CriteriaText:126349  # Feast for the Legerddemain - Alliance
+CriteriaText:126350  # Feast for the Legerdemain - Horde
+CriteriaText:126351  # Infused Mushroom Meatloaf - Alliance (+6)
+CriteriaText:126358  # Infused Mushroom Meatloaf - Horde
+CriteriaText:126360  # Alchemy recipes known (+1)
+CriteriaText:126787  # Warsong Gulch Honorable Kills
+CriteriaText:126861  # Killed by Vanndar Stormpike
+CriteriaText:126951  # Battlegrounds Played
+CriteriaText:127086  # Mana Potions consumed
+CriteriaText:127329  # 5-man instances run
+CriteriaText:127440  # Duels won
+CriteriaText:127442  # Total damage done
+CriteriaText:127452  # Mining skill
+CriteriaText:127613  # Epic Items Looted
+CriteriaText:127907  # Legash Encampment
+CriteriaText:128069  # Mage Portals
+CriteriaText:128078  # Portal to Thunder Bluff (+1)
+CriteriaText:128170  # Healthstone (1)
+CriteriaText:128171  # Master Healthstone (1)
+CriteriaText:128172  # Lesser Healthstone (2)
+CriteriaText:128173  # Greater Healthstone (0)
+CriteriaText:128174  # Greater Healthstone (1)
+CriteriaText:128175  # Healthstone (2)
+CriteriaText:128176  # Major Healthstone (1)
+CriteriaText:128177  # Minor Healthstone (1)
+CriteriaText:128178  # Minor Healthstone (2)
+CriteriaText:128179  # Master Healthstone (2)
+CriteriaText:128180  # Major Healthstone (2)
+CriteriaText:128181  # Minor Healthstone (0)
+CriteriaText:128182  # Greater Healthstone (2)
+CriteriaText:128183  # Healthstone (0)
+CriteriaText:128184  # Demonic Healthstone (+5)
+CriteriaText:128185  # Fel Healthstone (+5)
+CriteriaText:128194  # Major Healthstone (0)
+CriteriaText:128195  # Master Healthstone (0)
+CriteriaText:128196  # Lesser Healthstone (0)
+CriteriaText:128198  # Lesser Healthstone (1)
+CriteriaText:128217  # Total gold from quest rewards
+CriteriaText:128256  # Enchanting skill
+CriteriaText:128496  # Dalaran Cooking Awards gained
+CriteriaText:128506  # Inscriptions known (+1)
+CriteriaText:128509  # Cooking recipes known (+1)
+CriteriaText:128585  # Smelting Recipes Known (+1)
+CriteriaText:128750  # Alterac Valley victories
+CriteriaText:128754  # Auctions Posted
+CriteriaText:128755  # Health potions used
+CriteriaText:128788  # Major healing Draught
+CriteriaText:128931  # Total Auction Purchases
+CriteriaText:129052  # Gold Earned from Auctions
+CriteriaText:129062  # Warsong Gulch Killing Blows
+CriteriaText:129366  # Highest Auction Bid
+CriteriaText:129443  # Arathi Basin Killing Blows
+CriteriaText:129455  # Tailoring Patterns known (+1)
+CriteriaText:129855  # Use Portals
+CriteriaText:131456  # Leatherworking Patterns known (+1)
+CriteriaText:131938  # Tailoring skill
+CriteriaText:132088  # Total deaths from other players
+CriteriaText:132092  # First Aid Manuals learned (+1)
+CriteriaText:132275  # Deaths from drowning
+CriteriaText:132293  # Win Battleground
+CriteriaText:132821  # Summons accepted
+CriteriaText:132856  # Engineering Schematics known (+1)
+CriteriaText:133360  # Greed rolls on loot
+CriteriaText:169195  # Rune Learned - Shared Acquisition - Illari Duskfather (40)
+CriteriaText:169197  # Rune Learned - Shared Acquisition - Dark Riders (40)
+CriteriaText:169201  # Rune Learned - Shared Acquisition - Ley Lines (50)
+CriteriaText:210009  # S03 - Scarlet Enclave - Boss - Balnazzar - Achievement Credit
+CriteriaText:210320  # S03 - Scarlet Enclave - Boss - Balnazzar - Backup Achievement Credit
+CriteriaText:219255  # Level 25 Warrior (+1)
+CriteriaText:219278  # Level 45 Warrior (+1)
+CriteriaText:219280  # Level 60 Warrior (+1)
+CriteriaText:219282  # Level 25 Druid (+1)
+CriteriaText:219284  # Level 45 Druid (+1)
+CriteriaText:219286  # Level 60 Druid (+1)
+CriteriaText:219337  # 1.60.0 - Can Proceed To Lost Ones Quest Pt. 2
+CriteriaText:221439  # Level 25 Hunter (+1)
+CriteriaText:221463  # Level 45 Hunter (+1)
+CriteriaText:221465  # Level 60 Hunter (+1)
+CriteriaText:221467  # Level 25 Mage (+1)
+CriteriaText:221469  # Level 45 Mage (+1)
+CriteriaText:221471  # Level 60 Mage (+1)
+CriteriaText:221473  # Level 25 Paladin (+1)
+CriteriaText:221475  # Level 45 Paladin (+1)
+CriteriaText:221477  # Level 60 Paladin (+1)
+CriteriaText:221479  # Level 25 Priest (+1)
+CriteriaText:221481  # Level 45 Priest (+1)
+CriteriaText:221483  # Level 60 Priest (+1)
+CriteriaText:221485  # Level 25 Rogue (+1)
+CriteriaText:221487  # Level 45 Rogue (+1)
+CriteriaText:221489  # Level 60 Rogue (+1)
+CriteriaText:221491  # Level 25 Shaman (+1)
+CriteriaText:221493  # Level 45 Shaman (+1)
+CriteriaText:221495  # Level 60 Shaman (+1)
+CriteriaText:221497  # Level 25 Warlock (+1)
+CriteriaText:221499  # Level 45 Warlock (+1)
+CriteriaText:221501  # Level 60 Warlock (+1)
+CriteriaText:221503  # 150 Skill in Alchemy (+1)
+CriteriaText:221504  # 150 Alchemy Skill (+1)
+CriteriaText:221505  # 225 Skill in Alchemy (+1)
+CriteriaText:221506  # 225 Alchemy Skill (+1)
+CriteriaText:221507  # 300 Skill in Alchemy (+1)
+CriteriaText:221508  # 300 Alchemy Skill (+1)
+CriteriaText:221509  # 150 Skill in Blacksmithing (+1)
+CriteriaText:221510  # 150 Blacksmithing Skill (+1)
+CriteriaText:221511  # 225 Skill in Blacksmithing (+1)
+CriteriaText:221512  # 225 Blacksmithing Skill (+1)
+CriteriaText:221513  # 300 Skill in Blacksmithing (+1)
+CriteriaText:221514  # 300 Blacksmithing Skill (+1)
+CriteriaText:221515  # 150 Skill in Enchanting (+1)
+CriteriaText:221516  # 150 Enchanting Skill (+1)
+CriteriaText:221517  # 225 Skill in Enchanting (+1)
+CriteriaText:221518  # 225 Enchanting Skill (+1)
+CriteriaText:221519  # 300 Skill in Enchanting (+1)
+CriteriaText:221520  # 300 Enchanting Skill (+1)
+CriteriaText:221521  # 150 Skill in Engineering (+1)
+CriteriaText:221522  # 150 Engineering Skill (+1)
+CriteriaText:221523  # 225 Skill in Engineering (+1)
+CriteriaText:221524  # 225 Engineering Skill (+1)
+CriteriaText:221525  # 300 Skill in Engineering (+1)
+CriteriaText:221526  # 300 Engineering Skill (+1)
+CriteriaText:221527  # 150 Skill in Leatherworking (+1)
+CriteriaText:221528  # 150 Leatherworking Skill (+1)
+CriteriaText:221529  # 225 Skill in Leatherworking (+1)
+CriteriaText:221530  # 225 Leatherworking Skill (+1)
+CriteriaText:221531  # 300 Skill in Leatherworking (+1)
+CriteriaText:221532  # 300 Leatherworking Skill (+1)
+CriteriaText:221533  # 150 Skill in Tailoring (+1)
+CriteriaText:221534  # 150 Tailoring Skill (+1)
+CriteriaText:221535  # 225 Skill in Tailoring (+1)
+CriteriaText:221536  # 225 Tailoring Skill (+1)
+CriteriaText:221537  # 300 Skill in Tailoring (+1)
+CriteriaText:221538  # 300 Tailoring Skill (+1)
+CriteriaText:221563  # 1.60.0 - Complete Dungeon Upgrade Questline - Saving the Best for Last (+1)
+CriteriaText:221565  # Exalted with Alterac Valley (+1)
+CriteriaText:221566  # Reach exalted reputation with the Frostwolf Clan (+1)
+CriteriaText:221567  # Reach exalted reputation with the Stormpike Guard (+1)
+CriteriaText:221568  # Exalted with Arathi Basin (+1)
+CriteriaText:221569  # Reach exalted reputation with The Defilers (+1)
+CriteriaText:221570  # Reach exalted reputation with the League of Arathor (+1)
+CriteriaText:221571  # Exalted with Warsong Gulch (+1)
+CriteriaText:221572  # Reach exalted reputation with the Warsong Outriders (+1)
+CriteriaText:221573  # Reach exalted reputation with the Silverwing Sentinels (+1)
+CriteriaText:223429  # Explore Eastern Kingdoms
+CriteriaText:223453  # Explore Kalimdor
+CriteriaText:223475  # Explore Eastern Kingdoms and Kalimdor
+CriteriaText:223519  # Exploer Azeroth - Account Wide
+CriteriaText:223520  # Explorer (+1)
+CriteriaText:229457  # Complete Field of Honor: Week 4 (+3)
+CriteriaText:229460  # Complete Field of Honor: Week 7 (+3)
+CriteriaText:229462  # Complete Field of Honor: Week 10 (+3)
+CriteriaText:230736  # Exalted with Darkspear Islands (+1)
+CriteriaText:230737  # Reach exalted reputation with the Darkspear Raiders (+1)
+CriteriaText:230738  # Reach exalted reputation with the Theramore Expeditionary Force (+1)
+CriteriaText:230741  # Rank 7 (+2)
+CriteriaText:230743  # Rank 10 (+2)
+CriteriaText:230745  # Rank 13 (+2)
+CriteriaText:230747  # Rank 14 (+2)
+CriteriaText:230759  # Novice Spelunker (+1)
+CriteriaText:230766  # Ragefire Chasm or Hall of Thanes (+1)
+CriteriaText:230767  # Experienced Spelunker (+1)
+CriteriaText:230774  # Scarlet Monastery: Graveyard (+1)
+CriteriaText:230775  # Scarlet Monastery: Library (+1)
+CriteriaText:230776  # Scarlet Monastery: Armory (+1)
+CriteriaText:230777  # Scarlet Monastery: Cathedral (+1)
+CriteriaText:230779  # Master Spelunker (+1)
+CriteriaText:230790  # Stratholme: Live (+1)
+CriteriaText:230791  # Stratholme: Dead (+1)
+CriteriaText:230792  # Dire Maul: East (+1)
+CriteriaText:230793  # Dire Maul: North (+1)
+CriteriaText:230794  # Dire Maul: West (+1)
+CriteriaText:230797  # Kill Onyxia (+1)
+CriteriaText:230799  # Complete The Barrow Deeps (+1)
+CriteriaText:230800  # Sonya Darkhallow (+2)
+CriteriaText:230801  # Elder Tangleclaw (+1)
+CriteriaText:230802  # Khalith the Dreadspinner (+1)
+CriteriaText:230803  # Amethrax (+1)
+CriteriaText:230804  # Well of Sorrow (+1)
+CriteriaText:230805  # Del'lynar Songwood (+1)
+CriteriaText:230806  # Chillhowl (+1)
+CriteriaText:230807  # Ravus and Darlissa (+1)
+CriteriaText:230811  # Complete Hyjal Summit (+1)
+CriteriaText:230812  # Bandalar (+1)
+CriteriaText:230813  # Ancient of Decay (+1)
+CriteriaText:230814  # Time-Lost Battalion (+1)
+CriteriaText:230815  # Sylvestris Dusksong (+1)
+CriteriaText:230816  # Old Gloomlurker (+1)
+CriteriaText:230817  # Gharalis the Abyssal (+1)
+CriteriaText:230818  # Kathris the Haunted (+1)
+CriteriaText:230819  # Anara Chillwind (+1)
+CriteriaText:230820  # Elder Minderel (+1)
+CriteriaText:230821  # Tracker Stillwind (+1)
+CriteriaText:230822  # Council of Thorns (+1)
+CriteriaText:230823  # Nythus the Dreambound (+1)
+CriteriaText:230824  # The Wild King (+2)
+CriteriaText:230971  # Kill Edwin VanCleef
+CriteriaText:230973  # Kill Rath'mael
+CriteriaText:230975  # Kill Shade of the Archmage
+CriteriaText:230977  # Kill Durgen Dirgehammer
+CriteriaText:230979  # Kill Nanaya
+CriteriaText:230980  # Nanaya
+CriteriaText:230981  # Kill Blazeroar
+CriteriaText:230982  # Blazeroar
+CriteriaText:230991  # Kill The Wild King
+CriteriaText:230993  # Kill Sonya Darkhallow
+CriteriaText:231009  # Kill Lyn the Ignored
+CriteriaText:231011  # Kill Cinder
+CriteriaText:231015  # Kill Bolt
+CriteriaText:231017  # Kill Snowtalon
+CriteriaText:232142  # Explore Shen'dralas
+CriteriaText:234128  # Explore Azeroth - Account Wide
+CriteriaText:234409  # Rank 6
+CriteriaText:234411  # Rank 8
+CriteriaText:234413  # Rank 9
+CriteriaText:234415  # Rank 11
+CriteriaText:234417  # Rank 12
+CriteriaText:234567  # Tier 1 Achievement
+CriteriaText:235075  # Darkspear Islands victories
+CriteriaText:235076  # Darkspear Island victories
+CriteriaText:235079  # New Criteria Tree (+4)
+CriteriaText:235082  # Darkspear Islands Honorable Kills
+CriteriaText:235084  # Darkspear Island Killing Blows
+CriteriaText:235086  # Deaths in Darkspear Islands
+CriteriaText:235088  # 20 man raids
+CriteriaText:235097  # 40-man raids run (+1)
+CriteriaText:235099  # 40 man raids
+# RenownRewardName (RenownRewards.Name_lang)
+RenownRewardName:1832  # Rank 1 Rewards
+RenownRewardName:1833  # Rank 2 Rewards
+RenownRewardName:1834  # Rank 3 Rewards
+RenownRewardName:1835  # Rank 4 Rewards
+RenownRewardName:1836  # Rank 5 Rewards
+RenownRewardName:1837  # Rank 6 Rewards
+RenownRewardName:1838  # Rank 7 Rewards
+RenownRewardName:1839  # Rank 8 Rewards (+1)
+RenownRewardName:1840  # Rank 9 Rewards
+RenownRewardName:1841  # Rank 10 Rewards
+RenownRewardName:1842  # Rank 11 Rewards (+1)
+RenownRewardName:1843  # Rank 12 Rewards (+1)
+RenownRewardName:1844  # Rank 13 Rewards (+1)
+RenownRewardName:1845  # Rank 14 Rewards
+# RenownRewardDescription (RenownRewards.Description_lang)
+RenownRewardDescription:1832  # Faction Tabard
+RenownRewardDescription:1833  # Insignia Trinket
+RenownRewardDescription:1834  # Faction Cloak
+RenownRewardDescription:1835  # Faction Necklace
+RenownRewardDescription:1836  # Combat Potions
+RenownRewardDescription:1837  # Elite Faction Tabard
+RenownRewardDescription:1839  # Elite Wrist Upgrade
+RenownRewardDescription:1840  # Elite Boot Upgrade
+RenownRewardDescription:1841  # Elite Glove Upgrade
+RenownRewardDescription:1842  # Black War Mounts (+1)
+RenownRewardDescription:1843  # Elite Leg Upgrade
+RenownRewardDescription:1844  # Elite Chest Upgrade
+RenownRewardDescription:1845  # Weapon Arsenal
+RenownRewardDescription:1856  # Join a shootout with your air rifle. You and other players with this rifle can Stun eac...
+RenownRewardDescription:1857  # Summons a tiny spectral bear cub as your companion.|n|n|cFFFFFFFFVisit Innkeeper Wiley ...
+RenownRewardDescription:1858  # Show your dedication with this spectral bear-themed tabard.|n|n|cFFFFFFFFVisit Innkeepe...
+RenownRewardDescription:1859  # Summons and dismisses an Epic rideable spectral bear mount that moves at 100% increased...
+RenownRewardDescription:2008  # Elite Waist Upgrade
+RenownRewardDescription:2010  # Elite Shoulder Upgrade
+RenownRewardDescription:2011  # Elite Helmet Upgrade
+# RenownRewardToast (RenownRewards.ToastDescription_lang)
+RenownRewardToast:1832  # Faction Tabard Unlocked
+RenownRewardToast:1833  # Insignia Trinket Unlocked
+RenownRewardToast:1834  # Cloak Unlocked
+RenownRewardToast:1835  # Necklace Unlocked
+RenownRewardToast:1836  # Access to Combat Potions Unlocked
+RenownRewardToast:1837  # Elite Faction Tabard Unlocked
+RenownRewardToast:1838  # Battle Standard Unlocked
+RenownRewardToast:1839  # Elite Wrist Upgrades Unlocked
+RenownRewardToast:1840  # Elite Boot Upgrade Unlocked
+RenownRewardToast:1841  # Elite Glove Upgrade Unlocked
+RenownRewardToast:1842  # Faction Black War Mounts Unlocked (+1)
+RenownRewardToast:1843  # Elite Leg Upgrades Unlocked
+RenownRewardToast:1844  # Elite Chest Upgrades Unlocked
+RenownRewardToast:1845  # Weapon Arsenal Unlocked
+RenownRewardToast:2008  # Elite Waist Upgrades Unlocked
+RenownRewardToast:2010  # Elite Shoulder Upgrades Unlocked
+RenownRewardToast:2011  # Elite Helmet Upgrades Unlocked
+# SharedString (SharedString.String_lang)
+SharedString:911  # Spend %d more |4point:points; in %s |4Talent:Talents;
+SharedString:992  # Tab 1 (+1)
+SharedString:993  # Tab 2 (+1)
+SharedString:994  # Tab 3 (+1)
+SharedString:995  # Tab 4 (+1)
+SharedString:996  # Tab 5 (+1)
+SharedString:1137  # Are you sure you want to automatically sort your items?|nThis will affect all Account t...
+SharedString:1138  # Account Bank
+SharedString:1139  # The Account Bank offers storage that is shared with all members in your Account.|n|nDo ...
+SharedString:1140  # Enter Warband Bank Tab Name:
+SharedString:1141  # Do you want to purchase an Account Bank tab for:
+SharedString:1142  # Are you sure you want to automatically sort your items?|nThis will affect all tabs.
+SharedString:1143  # Bank
+SharedString:1144  # The Bank offers additional storage for your items.|n|nDo you wish to purchase this tab?
+SharedString:1145  # Enter Bank Tab Name:
+SharedString:1146  # Do you want to purchase a Bank tab for:
+SharedString:1152  # Tab 6
+SharedString:1159  # Classic
+SharedString:1318  # Spend %d more |4point:points; in the %s Legacy Tree
+# TradeSkillCategory (TradeSkillCategory.Name_lang)
+TradeSkillCategory:2436  # Alchemy - UNCATEGORIZED
+TradeSkillCategory:2437  # Blacksmithing - UNCATEGORIZED
+TradeSkillCategory:2438  # Cooking - UNCATEGORIZED
+TradeSkillCategory:2439  # Enchanting - UNCATEGORIZED
+TradeSkillCategory:2440  # Engineering - UNCATEGORIZED
+TradeSkillCategory:2441  # First Aid - UNCATEGORIZED
+TradeSkillCategory:2442  # Fishing - UNCATEGORIZED
+TradeSkillCategory:2443  # Herbalism - UNCATEGORIZED
+TradeSkillCategory:2444  # Leatherworking - UNCATEGORIZED
+TradeSkillCategory:2445  # Mining - UNCATEGORIZED
+TradeSkillCategory:2446  # Skinning - UNCATEGORIZED
+TradeSkillCategory:2447  # Tailoring - UNCATEGORIZED
+TradeSkillCategory:2448  # Reagents (+5)
+TradeSkillCategory:2449  # Potions
+TradeSkillCategory:2450  # Elixirs
+TradeSkillCategory:2451  # Flasks
+TradeSkillCategory:2452  # Lesser Transmutations
+TradeSkillCategory:2453  # Miscellaneous (+4)
+TradeSkillCategory:2454  # Camping (+12)
+TradeSkillCategory:2455  # Weapon Oils
+TradeSkillCategory:2460  # Weapon Stones
+TradeSkillCategory:2461  # Mail Helmets (+1)
+TradeSkillCategory:2462  # Mail Pauldrons (+1)
+TradeSkillCategory:2463  # Mail Chestguards (+1)
+TradeSkillCategory:2464  # Mail Bracers (+1)
+TradeSkillCategory:2465  # Mail Gauntlets (+1)
+TradeSkillCategory:2466  # Mail Belts (+1)
+TradeSkillCategory:2467  # Mail Legguards (+1)
+TradeSkillCategory:2468  # Mail Boots (+1)
+TradeSkillCategory:2469  # Plate Helmets
+TradeSkillCategory:2470  # Plate Pauldrons
+TradeSkillCategory:2471  # Plate Chestguards
+TradeSkillCategory:2472  # Plate Bracers
+TradeSkillCategory:2473  # Plate Gauntlets
+TradeSkillCategory:2474  # Plate Belts
+TradeSkillCategory:2475  # Plate Legguards
+TradeSkillCategory:2476  # Plate Boots
+TradeSkillCategory:2481  # One-Handed Axes
+TradeSkillCategory:2484  # One-Handed Maces
+TradeSkillCategory:2485  # One-Handed Swords
+TradeSkillCategory:2486  # Shields
+TradeSkillCategory:2488  # Inert Enchanting Rods
+TradeSkillCategory:2491  # Runed Enchanting Rods
+TradeSkillCategory:2492  # Wizard Oils
+TradeSkillCategory:2493  # Helmet Enchants
+TradeSkillCategory:2494  # Shoulder Enchants
+TradeSkillCategory:2495  # Chest Enchants
+TradeSkillCategory:2496  # Bracer Enchants
+TradeSkillCategory:2497  # Glove Enchants
+TradeSkillCategory:2498  # Belt Enchants
+TradeSkillCategory:2499  # Pants Enchants
+TradeSkillCategory:2500  # Boots Enchants
+TradeSkillCategory:2501  # Two-Handed Weapon Enchants
+TradeSkillCategory:2502  # Weapon Enchants
+TradeSkillCategory:2503  # Shield Enchants
+TradeSkillCategory:2504  # Off-Hand Enchants
+TradeSkillCategory:2505  # Amulet Enchants
+TradeSkillCategory:2506  # Cloak Enchants
+TradeSkillCategory:2507  # Ring Enchants
+TradeSkillCategory:2508  # Trinket Enchants
+TradeSkillCategory:2509  # Relics
+TradeSkillCategory:2510  # Curios
+TradeSkillCategory:2513  # Off-Hands
+TradeSkillCategory:2515  # Parts
+TradeSkillCategory:2516  # Explosives
+TradeSkillCategory:2517  # Fireworks
+TradeSkillCategory:2518  # Consumable Devices
+TradeSkillCategory:2519  # Devices
+TradeSkillCategory:2520  # Gadgets
+TradeSkillCategory:2521  # Pets and Guardians
+TradeSkillCategory:2522  # Cloth Headgear
+TradeSkillCategory:2523  # Leather Headgear
+TradeSkillCategory:2524  # Mail Headgear
+TradeSkillCategory:2525  # Plate Headgear
+TradeSkillCategory:2526  # Ranged Weapons
+TradeSkillCategory:2527  # Scopes
+TradeSkillCategory:2528  # Ammunition
+TradeSkillCategory:2530  # Bandages
+TradeSkillCategory:2531  # Healing Potions
+TradeSkillCategory:2532  # Poultices
+TradeSkillCategory:2533  # Curatives
+TradeSkillCategory:2537  # Necks
+TradeSkillCategory:2538  # Rings
+TradeSkillCategory:2539  # Crowns
+TradeSkillCategory:2540  # Cuffs
+TradeSkillCategory:2541  # Trinkets
+TradeSkillCategory:2542  # Red Gems
+TradeSkillCategory:2543  # Orange Gems
+TradeSkillCategory:2544  # Yellow Gems
+TradeSkillCategory:2545  # Green Gems
+TradeSkillCategory:2546  # Blue Gems
+TradeSkillCategory:2547  # Purple Gems
+TradeSkillCategory:2548  # Meta Gems
+TradeSkillCategory:2551  # Bags (+1)
+TradeSkillCategory:2552  # Cloaks (+1)
+TradeSkillCategory:2553  # Leather Helmets
+TradeSkillCategory:2554  # Leather Pauldrons
+TradeSkillCategory:2555  # Leather Chestguards
+TradeSkillCategory:2556  # Leather Bracers
+TradeSkillCategory:2557  # Leather Gauntlets
+TradeSkillCategory:2558  # Leather Belts
+TradeSkillCategory:2559  # Leather Legguards
+TradeSkillCategory:2560  # Leather Boots
+TradeSkillCategory:2569  # Armor Kits
+TradeSkillCategory:2570  # Quivers
+TradeSkillCategory:2571  # Ammo Pouches
+TradeSkillCategory:2573  # Arrows
+TradeSkillCategory:2575  # Smelted Bars
+TradeSkillCategory:2577  # Embroideries
+TradeSkillCategory:2579  # Specialty Bags
+TradeSkillCategory:2581  # Hoods
+TradeSkillCategory:2582  # Spaulders
+TradeSkillCategory:2583  # Robes and Vests
+TradeSkillCategory:2584  # Bracers
+TradeSkillCategory:2585  # Gloves
+TradeSkillCategory:2586  # Belts
+TradeSkillCategory:2587  # Leggings
+TradeSkillCategory:2588  # Shoes
+TradeSkillCategory:2589  # Shirts
+TradeSkillCategory:2590  # Dressed for the Occasion
+TradeSkillCategory:2592  # SEASON OF DISCOVERY (+6)
+TradeSkillCategory:2620  # Greater Transmutations
+TradeSkillCategory:2621  # Recovery Potions
+TradeSkillCategory:2632  # Everyday Meals
+TradeSkillCategory:2633  # Strength Food
+TradeSkillCategory:2634  # Agility Food
+TradeSkillCategory:2635  # Intellect Food
+TradeSkillCategory:2636  # Miscellaneous Cuisines
+TradeSkillCategory:2638  # Winter Veil Treats
+TradeSkillCategory:2639  # Meal Prep
+TradeSkillCategory:2640  # Stamina Food
+TradeSkillCategory:2641  # Spell Damage Food
+TradeSkillCategory:2642  # Combat Prowess Food
+TradeSkillCategory:2643  # Attack Power Food
+TradeSkillCategory:2644  # Fisherman's Delights
+TradeSkillCategory:2645  # Delightful Drinks
+TradeSkillCategory:2646  # Soothing Drinks
+TradeSkillCategory:2651  # Draughts
+TradeSkillCategory:2771  # Armor Food
+# MailBody (MailTemplate.Body_lang)
+MailBody:83  # this is a test
+MailBody:84  # Thank you for visiting me, $N. It makes me happy to know we are not forgotten. (+16)
+MailBody:86  # This small token will give no answers, but perhaps it will be of some amusement to you. (+15)
+MailBody:87  # Hello there again.  I'm Gubber Blump.  I hope you are doing real well.  I hope you are ...
+MailBody:93  # Esteemed $N,$B$BI went through the stack of texts you brought me and I decoded the atta...
+MailBody:94  # Greetings, $N!$B$BI'm getting pretty good at sneaking into Cenarion Hold to use their m...
+MailBody:98  # It took much time to translate the high chief's text. I was dismayed by what I found. H...
+MailBody:99  # Thank you for renewing your membership with the Mechanical Engineering Guild, Associate... (+1)
+MailBody:101  # My friend - though my arm is weary from the battle we continue to wage in the Plaguelan...
+MailBody:102  # Ho Ho Hello, $N!  I hope you have a fantastic Feast of Winter Veil!$B$BYou were so nice... (+1)
+MailBody:103  # Thank you for renewing your membership with the Goblin Experimental Engineering Korpora... (+1)
+MailBody:105  # This mail was sent to you because you signed up for Viagra! More text. (+1)
+MailBody:106  # Those rabbits came back!  NO!  Oh, don't bother coming back...
+MailBody:107  # Greetings my friend - though my arm is weary from the battle we continue to wage in the...
+MailBody:108  # Ho ho hello again, $N!$B$BThough I and the good folks of Smokywood Pastures have been q...
+MailBody:109  # Greetings, my friend!  I hope all is well with you.$B$BI thought I would take this time...
+MailBody:110  # Esteemed $N,$B$BThe information you brought to my attention earlier has turned out to b...
+MailBody:111  # I bid you well, my friend.  I hope your fight for the Horde is a glorious one.  I certa...
+MailBody:112  # Greetings, young druid!  I'm quite proud of the effort you put into the training given ...
+MailBody:113  # I bid you well, my friend.  I hope your fight on behalf of the Alliance goes to your sa...
+MailBody:114  # Greetings, young druid!  I've sent you this note as a reminder to check in with me from...
+MailBody:115  # Greetings, young druid!  I've sent you this note as a reminder to check in with me from...
+MailBody:116  # Greetings, young druid!  I'm quite proud of the effort you put into the training given ...
+MailBody:117  # Ho ho hello again, $N!$B$BThough I and the good folks of Smokywood Pastures have been q...
+MailBody:119  # Hello again - I just wanted to drop you a note that things here in Feathermoon Strongho...
+MailBody:120  # Greetings once again - I just wanted to send you word that things here in Camp Mojache ...
+MailBody:122  # $N -$B$BI just wanted to say once again thanks for rescuing Metzen from his kidnappers....
+MailBody:123  # Champion,$B$BThe Blue Dragonflight believes that you are fated for greater things than ...
+MailBody:131  # I was grateful for your visit today, take this as a gift for your Lunar Festival. (+16)
+MailBody:161  # $N -$B$BI just wanted to say once again thanks for rescuing Metzen from his kidnappers....
+MailBody:162  # Need to fix tab ordergin
+MailBody:165  # a
+MailBody:166  # ab
+MailBody:169  # This is a test of the emergency broadcast system.
+MailBody:170  # Hello. What are you talking about?  This isn't crashing?
+MailBody:171  # $N$B$BWith all haste, please open and heed the attached letter.  The Argent Dawn needs ...
+MailBody:172  # $n,$B$BI received this report regarding the document you retrieved from the Scourge. Wh... (+5)
+MailBody:178  # Thanks for playing World of Warcraft!
+MailBody:179  # Here's your reward, you lucky stiff!  Don't spend it all in one auction house....
+MailBody:612  # Greetings $n,  I've been observing your handiwork for some time now. I must say, I'm im...
+MailBody:613  # $n,  Your work has been most satisfactory. The Horn of Xelthos is every bit as marvelou...
+MailBody:614  # Hello again, $n,  I'm sure a rogue of your talents stays quite busy these days, so I'll...
+MailBody:615  # $n,  You have truly outdone yourself. Never would I have dreamed of possessing such an ...
+MailBody:616  # Greetings $n,  Raszel and I have a plan and we are ready for your assistance. Meet us i...
+MailBody:623  # $n,  Ravenholdt's agents have learned that you are delivering artifacts to an entity kn...
+MailBody:624  # Shaw's agents have been as yet unable to find our mutual friend, but they have reported...
+MailBody:642  # The Lich King's unholy reign has gone on long enough. If Azeroth is to be saved, it mus...
+MailBody:643  # Every day, the scourge bring destruction and pestilence to our homelands. Faced with su...
+MailBody:644  # The scourge are all around us. As the undead menace grows, it is imperative that we pre...
+MailBody:652  # Greetings $n,  I hope this letter finds you well. I wanted to thank you for speaking to...
+MailBody:660  # I am a mail that was generated via a quest that can never be in your quest log. Am I st...
+MailBody:661  # Greetings, $n. I just wanted to let you know that I've made my way to Dalaran and retri...
+MailBody:662  # Greetings, $n.  The Supreme Magister has need of your aid. Please take the attached mis...
+# QuestTag (QuestInfo.InfoName_lang)
+QuestTag:1  # Elite
+QuestTag:21  # Life
+QuestTag:41  # PvP
+QuestTag:62  # Raid
+QuestTag:81  # Dungeon
+QuestTag:82  # World Event
+QuestTag:83  # Legendary
+# AreaPoiDescription (AreaPOI.Description_lang)
+AreaPoiDescription:1099  # Alliance Controlled (+17)
+AreaPoiDescription:1102  # Horde Controlled (+17)
+AreaPoiDescription:1352  # Destroyed (+7)
+AreaPoiDescription:1353  # In Conflict (+39)
+AreaPoiDescription:1359  # Kobold Controlled
+AreaPoiDescription:1384  # Trogg Controlled
+AreaPoiDescription:1609  # Uncontrolled (+5)
+AreaPoiDescription:1700  # Tanaris Desert
+AreaPoiDescription:1724  # A Silithyst beast has surfaced (+3)
+AreaPoiDescription:1750  # Contested, Alliance
+AreaPoiDescription:1751  # Progressing, Alliance
+AreaPoiDescription:1752  # Contested, Horde
+AreaPoiDescription:1753  # Progressing, Horde
+AreaPoiDescription:1757  # Alliance, Contested (+2)
+AreaPoiDescription:1759  # Horde, Contested (+2)
+AreaPoiDescription:1760  # Horde, Progressing (+2)
+AreaPoiDescription:1766  # Alliance, Progressing (+2)
+AreaPoiDescription:7640  # Keeper of the Grove - Centrius - Alive
+AreaPoiDescription:7641  # Keeper of the Grove - Larodar - Alive
+AreaPoiDescription:7642  # Keeper of the Grove - Ceredwyn - Alive
+AreaPoiDescription:7643  # Priestess of the Moon - Felore Moonray - Alive
+AreaPoiDescription:7644  # Blademaster - Jubei - Alive
+AreaPoiDescription:7645  # Far Seer - Kazragore - Alive
+AreaPoiDescription:7646  # Blademaster - Tojara - Alive
+AreaPoiDescription:7647  # Blademaster - Moogul - Alive
+AreaPoiDescription:7648  # Blademaster - Jubei - Defeated
+AreaPoiDescription:7649  # Blademaster - Tojara - Defeated
+AreaPoiDescription:7650  # Blademaster - Moogul - Defeated
+AreaPoiDescription:7651  # Keeper of the Grove - Centrius - Dead
+AreaPoiDescription:7652  # Keeper of the Grove - Larodar Dead
+AreaPoiDescription:7653  # Keeper of the Grove - Ceredwyn - Dead
+AreaPoiDescription:7713  # Deliver blood to the Blood Loa's altar! (+4)
+AreaPoiDescription:8768  # Neutral (+4)
+# AreaPoiState (AreaPOIState.Description_lang)
+AreaPoiState:3611  # Contested (+7)
+AreaPoiState:3613  # Horde Controlled (+3)
+AreaPoiState:3614  # Alliance Controlled (+3)
+AreaPoiState:3816  # In Conflict
+# PetLoyalty (PetLoyalty.Name_lang)
+PetLoyalty:1  # Rebellious
+PetLoyalty:2  # Unruly
+PetLoyalty:3  # Submissive
+PetLoyalty:4  # Dependable
+PetLoyalty:5  # Faithful
+PetLoyalty:6  # Best Friend
+PetLoyalty:7  # (Loyalty Level 7) Loyalty Cap
+# PvpLongDescription (Map.PvpLongDescription_lang)
+PvpLongDescription:2997  # - Capture and hold objectives - Capture the Darkspear Islands Flag - Earn 2000 resources
+# Difficulty (Difficulty.Name_lang)
+Difficulty:1  # Normal (+6)
+Difficulty:9  # 40 Player (+1)
+Difficulty:148  # 20 Player (+4)
+Difficulty:197  # 10 Player (+2)
+Difficulty:213  # Infinite
+# EventToastText (UiEventToast.SubIcon_lang)
+EventToastText:479  # Your Lotus Claw enchant allows you to carefully extract a Death Lotus!
+EventToastText:513  # You have reached Rank %d.
+# BroadcastText (BroadcastText.Text_lang)
+BroadcastText:316345  # For thousands of years,
+BroadcastText:316346  # a band of high elven exiles has remained safe
+BroadcastText:316348  # and hidden upon their flying sanctuary of Zephras Isle.
+BroadcastText:316349  # These "Skyborne," as they call themselves,
+BroadcastText:316350  # shared a bond with air elementals
+BroadcastText:316351  # who kept their island aloft in the realm of Skywall.
+BroadcastText:316352  # But in recent years,
+BroadcastText:316353  # the elementals vanished without a trace--
+BroadcastText:316354  # disrupting the delicate magic that kept them safe in their haven amongst the clouds.
+BroadcastText:316355  # Now, a new generation of Skyborne elves face a time of unprecedented change,
+BroadcastText:316356  # and must seek new allies and sources of magic--
+BroadcastText:316358  # to protect their hidden home and secure their future...
+# PetFood (ItemPetFood.Name_lang)
+PetFood:1  # Meat
+PetFood:2  # Fish
+PetFood:3  # Cheese
+PetFood:4  # Bread
+PetFood:5  # Fungus
+PetFood:6  # Fruit
+PetFood:7  # Raw Meat
+PetFood:8  # Raw Fish
+# RestState (Exhaustion.Name_lang)
+RestState:1  # Rested
+RestState:2  # Normal
+# ItemSubClassMask (ItemSubClassMask.Name_lang)
+ItemSubClassMask:3  # Melee Weapon
+ItemSubClassMask:4  # Shield
+ItemSubClassMask:5  # Ranged Weapon
+# RecentAllyType (RolodexType.Description_lang)
+RecentAllyType:1  # Party Member
+RecentAllyType:2  # Raid Member
+RecentAllyType:3  # Trade
+RecentAllyType:4  # Whisper
+RecentAllyType:5  # Public Order Filled By Them
+RecentAllyType:6  # Public Order Filled By You
+RecentAllyType:7  # Personal Order Fill By Them
+RecentAllyType:8  # Personal Order Filled By You
+RecentAllyType:9  # Guild Order Filled By Them
+RecentAllyType:10  # Guild Order Filled By You
+RecentAllyType:11  # Creature Kill
+RecentAllyType:12  # Complete Dungeon
+RecentAllyType:13  # Kill Raid Boss
+RecentAllyType:14  # Kill LFR Boss
+RecentAllyType:15  # Complete Delve
+RecentAllyType:16  # Complete Arena
+RecentAllyType:17  # Complete Battleground
+RecentAllyType:18  # Duel
+RecentAllyType:19  # Pet Battle
+RecentAllyType:20  # PvP Kill
+RecentAllyType:23  # Legacy Friend
+# RecentAllyInteraction (RolodexType.Field_11_2_5_62687_001_lang)
+RecentAllyInteraction:3  # Traded
+RecentAllyInteraction:4  # Whispered
+RecentAllyInteraction:5  # Filled your Public Crafting Order
+RecentAllyInteraction:6  # Filled their Public Crafting Order
+RecentAllyInteraction:7  # Filled your Crafting Order (+1)
+RecentAllyInteraction:8  # Filled their Crafting Order (+1)
+RecentAllyInteraction:11  # Fought Together
+RecentAllyInteraction:12  # Completed Dungeon Together
+RecentAllyInteraction:13  # Raided Together (+1)
+RecentAllyInteraction:15  # Completed Delve Together
+RecentAllyInteraction:16  # Did Arena Together
+RecentAllyInteraction:17  # Fought in Battleground Together
+RecentAllyInteraction:18  # Dueled
+RecentAllyInteraction:19  # Pet Battled
+RecentAllyInteraction:20  # PvPed Together
+RecentAllyInteraction:23  # Legacy Friend
+# FriendshipGain (FriendshipReputation.StandingModified_lang)
+FriendshipGain:513  # You gain %d Rank Points.
+# InstanceEntryMessage (MapDifficulty.Message_lang)
+InstanceEntryMessage:7  # You must be at least level 11 to enter.
+InstanceEntryMessage:8  # You must be at least level 15 to enter. (+1)
+InstanceEntryMessage:10  # You must be at least level 10 to enter. (+2)
+InstanceEntryMessage:15  # You must be at least level 25 to enter. (+1)
+InstanceEntryMessage:17  # You must be at least level 30 to enter.
+InstanceEntryMessage:18  # You must be at least level 19 to enter.
+InstanceEntryMessage:19  # You must be at least level 45 to enter.
+InstanceEntryMessage:20  # You must be at least level 35 to enter.
+InstanceEntryMessage:22  # You must be at least level 20 to enter.
+InstanceEntryMessage:23  # You must be at least level 39 to enter.
+InstanceEntryMessage:24  # You must be at least level 48 to enter.
+InstanceEntryMessage:25  # You must be at least level 42 to enter.
+InstanceEntryMessage:27  # You must be at least level 65 to enter.
+InstanceEntryMessage:28  # You must be at least level 33 to enter.
+InstanceEntryMessage:30  # You must be at least level 37 to enter.
+InstanceEntryMessage:34  # You must be at least level 50 to enter.
+InstanceEntryMessage:35  # You must be at least level 31 to enter.
+# InstanceEntryFailure (MapDifficultyXCondition.FailureDescription_lang)
+InstanceEntryFailure:1553  # This raid is not yet available (+8)
+InstanceEntryFailure:1564  # This Dungeon is currently not available. (+53)
+InstanceEntryFailure:1565  # This dungeon is not yet available (+1)
+InstanceEntryFailure:1992  # This raid is not currently open for testing (+16)
+InstanceEntryFailure:3876  # You must be level 60 to enter
+InstanceEntryFailure:4166  # You are not high enough level to enter this Dungeon. (+5)
+InstanceEntryFailure:4175  # You are not high enough level for this Dungeon. (+49)

@@ -230,6 +230,30 @@
 {"id": "ITEM_UPGRADE_NO_MORE_UPGRADES", "field": "text", "en": "This item cannot be upgraded anymore.", "hash": "37117fe1778e4181", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_VENDOR_STACK_BUY", "field": "text", "en": "<Shift click to buy a different amount>", "hash": "3413f0cee291a047", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_WRITTEN_BY", "field": "text", "en": "Written by %s", "hash": "cae386859fa48097", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:1553", "field": "text", "en": "This raid is not yet available", "hash": "9013d19e5efc6895", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:1564", "field": "text", "en": "This Dungeon is currently not available.", "hash": "59453de0a1ea3018", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:1565", "field": "text", "en": "This dungeon is not yet available", "hash": "67a5bf22b328a6a7", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:1992", "field": "text", "en": "This raid is not currently open for testing", "hash": "f4021e09c6d86143", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:3876", "field": "text", "en": "You must be level 60 to enter", "hash": "fc48c304003541f8", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:4166", "field": "text", "en": "You are not high enough level to enter this Dungeon.", "hash": "48a322eae2def362", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:4175", "field": "text", "en": "You are not high enough level for this Dungeon.", "hash": "315f895f0809e491", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:10", "field": "text", "en": "You must be at least level 10 to enter.", "hash": "8dbd51f7d03d12f7", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:15", "field": "text", "en": "You must be at least level 25 to enter.", "hash": "096bf31454f3d0e5", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:17", "field": "text", "en": "You must be at least level 30 to enter.", "hash": "3fc6358238be55c3", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:18", "field": "text", "en": "You must be at least level 19 to enter.", "hash": "ff560d8fadde7982", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:19", "field": "text", "en": "You must be at least level 45 to enter.", "hash": "bb74d69abd7513a0", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:20", "field": "text", "en": "You must be at least level 35 to enter.", "hash": "627064d70934724b", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:22", "field": "text", "en": "You must be at least level 20 to enter.", "hash": "e6c1c3ba847db45d", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:23", "field": "text", "en": "You must be at least level 39 to enter.", "hash": "b15ef11a165fbc4e", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:24", "field": "text", "en": "You must be at least level 48 to enter.", "hash": "36a7bfd007558b2f", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:25", "field": "text", "en": "You must be at least level 42 to enter.", "hash": "4041ed6973949c22", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:27", "field": "text", "en": "You must be at least level 65 to enter.", "hash": "6d7dba2525f6566c", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:28", "field": "text", "en": "You must be at least level 33 to enter.", "hash": "baf91eb3829ecd41", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:30", "field": "text", "en": "You must be at least level 37 to enter.", "hash": "09e7aafb8fca1744", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:34", "field": "text", "en": "You must be at least level 50 to enter.", "hash": "f1cf1908a13f987e", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:35", "field": "text", "en": "You must be at least level 31 to enter.", "hash": "1381d894fc092837", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:7", "field": "text", "en": "You must be at least level 11 to enter.", "hash": "6178f5099387e57c", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:8", "field": "text", "en": "You must be at least level 15 to enter.", "hash": "b067814ca0b32f7f", "src": "db2@1.60.1.70170"}
 {"id": "ItemNameDescription:13967", "field": "text", "en": "Blue", "hash": "08f48606219811ea", "src": "db2@1.60.1.70170"}
 {"id": "ItemNameDescription:13968", "field": "text", "en": "Green", "hash": "edaec63b5c5355aa", "src": "db2@1.60.1.70170"}
 {"id": "ItemNameDescription:14120", "field": "text", "en": "White", "hash": "0534370fd4ceb206", "src": "db2@1.60.1.70170"}
@@ -274,6 +298,9 @@
 {"id": "ItemSubClass:4:7", "field": "text", "en": "Libram", "hash": "eba5fc3a897271a3", "src": "db2@1.60.1.70170"}
 {"id": "ItemSubClass:4:8", "field": "text", "en": "Idol", "hash": "09e289f0dface0cf", "src": "db2@1.60.1.70170"}
 {"id": "ItemSubClass:4:9", "field": "text", "en": "Totem", "hash": "d17e0d12418feb07", "src": "db2@1.60.1.70170"}
+{"id": "ItemSubClassMask:3", "field": "text", "en": "Melee Weapon", "hash": "b3fa1e032648bc3c", "src": "db2@1.60.1.70170"}
+{"id": "ItemSubClassMask:4", "field": "text", "en": "Shield", "hash": "bba314a98f8932b0", "src": "db2@1.60.1.70170"}
+{"id": "ItemSubClassMask:5", "field": "text", "en": "Ranged Weapon", "hash": "59e915133241766c", "src": "db2@1.60.1.70170"}
 {"id": "ItemSubClassName:0:0", "field": "text", "en": "Explosives", "hash": "a523f6b229cb0256", "src": "db2@1.60.1.70170"}
 {"id": "ItemSubClassName:0:1", "field": "text", "en": "Potions", "hash": "889a67d1d4574851", "src": "db2@1.60.1.70170"}
 {"id": "ItemSubClassName:0:13", "field": "text", "en": "Draughts", "hash": "928809959506dbac", "src": "db2@1.60.1.70170"}

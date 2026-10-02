@@ -1030,3 +1030,40 @@
 {"id": "AchievementTitle:94", "field": "text", "en": "Quests abandoned", "hash": "e09f8897d9e04f6e", "src": "db2@1.60.1.70170"}
 {"id": "AchievementTitle:95", "field": "text", "en": "Average quests completed per day", "hash": "fc8e5a6d8da94905", "src": "db2@1.60.1.70170"}
 {"id": "AchievementTitle:98", "field": "text", "en": "Quests completed", "hash": "2a103432d17b3af9", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1099", "field": "text", "en": "Alliance Controlled", "hash": "1ed78c95c8e1545f", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1102", "field": "text", "en": "Horde Controlled", "hash": "2762433ddf76db3a", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1352", "field": "text", "en": "Destroyed", "hash": "65edc957121c6265", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1353", "field": "text", "en": "In Conflict", "hash": "c69c79bdf80502a4", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1359", "field": "text", "en": "Kobold Controlled", "hash": "ada46957ec2068c9", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1384", "field": "text", "en": "Trogg Controlled", "hash": "4706b1ba7fd6218a", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1609", "field": "text", "en": "Uncontrolled", "hash": "b03f6220c98cc1b8", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1700", "field": "text", "en": "Tanaris Desert", "hash": "c9e1699db95b86e9", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1724", "field": "text", "en": "A Silithyst beast has surfaced", "hash": "22890ca643e65d20", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1750", "field": "text", "en": "Contested, Alliance", "hash": "8b2a583879303d95", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1751", "field": "text", "en": "Progressing, Alliance", "hash": "185974924333e2ab", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1752", "field": "text", "en": "Contested, Horde", "hash": "b61fc8a66d092d49", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1753", "field": "text", "en": "Progressing, Horde", "hash": "ebb469d019ad5f21", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1757", "field": "text", "en": "Alliance, Contested", "hash": "7829503ee2f2de50", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1759", "field": "text", "en": "Horde, Contested", "hash": "80b406e6f988652b", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1760", "field": "text", "en": "Horde, Progressing", "hash": "87ca3df11d07647b", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1766", "field": "text", "en": "Alliance, Progressing", "hash": "ed1bced8b8e54a56", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7640", "field": "text", "en": "Keeper of the Grove - Centrius - Alive", "hash": "64d773533b429126", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7641", "field": "text", "en": "Keeper of the Grove - Larodar - Alive", "hash": "f01bbd82d6b4fbd9", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7642", "field": "text", "en": "Keeper of the Grove - Ceredwyn - Alive", "hash": "04e413be4c136e5a", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7643", "field": "text", "en": "Priestess of the Moon - Felore Moonray - Alive", "hash": "489c3db44b820ca2", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7644", "field": "text", "en": "Blademaster - Jubei - Alive", "hash": "58514c092fe0563b", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7645", "field": "text", "en": "Far Seer - Kazragore - Alive", "hash": "5e3a729c03799f66", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7646", "field": "text", "en": "Blademaster - Tojara - Alive", "hash": "14ca06feabfb7799", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7647", "field": "text", "en": "Blademaster - Moogul - Alive", "hash": "ca543cf2a69cf7e0", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7648", "field": "text", "en": "Blademaster - Jubei - Defeated", "hash": "5e95ee347277ec87", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7649", "field": "text", "en": "Blademaster - Tojara - Defeated", "hash": "a047935b925f2352", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7650", "field": "text", "en": "Blademaster - Moogul - Defeated", "hash": "4812430b0b276ccf", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7651", "field": "text", "en": "Keeper of the Grove - Centrius - Dead", "hash": "c87e27b89eb895f7", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7652", "field": "text", "en": "Keeper of the Grove - Larodar Dead", "hash": "5de147ea838e1e39", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7653", "field": "text", "en": "Keeper of the Grove - Ceredwyn - Dead", "hash": "0c28445147f50f19", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7713", "field": "text", "en": "Deliver blood to the Blood Loa's altar!", "hash": "c1e2c7c1d5161f64", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:8768", "field": "text", "en": "Neutral", "hash": "5f11dc51f812a1f4", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiState:3611", "field": "text", "en": "Contested", "hash": "861f22ece31d1728", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiState:3613", "field": "text", "en": "Horde Controlled", "hash": "2762433ddf76db3a", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiState:3614", "field": "text", "en": "Alliance Controlled", "hash": "1ed78c95c8e1545f", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiState:3816", "field": "text", "en": "In Conflict", "hash": "c69c79bdf80502a4", "src": "db2@1.60.1.70170"}

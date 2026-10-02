@@ -78,3 +78,10 @@
 {"id": "QuestSort:367", "field": "text", "en": "Reputation", "hash": "2aa11d789c011de5", "src": "db2@1.60.1.70170"}
 {"id": "QuestSort:368", "field": "text", "en": "Invasion", "hash": "5958a5877489b783", "src": "db2@1.60.1.70170"}
 {"id": "QuestSort:666", "field": "text", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:1", "field": "text", "en": "Elite", "hash": "c9c69bbf5df18bb1", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:21", "field": "text", "en": "Life", "hash": "0a4abd4c9bbcf0c3", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:41", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:62", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:81", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:82", "field": "text", "en": "World Event", "hash": "b15ceb5fe8eecffd", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:83", "field": "text", "en": "Legendary", "hash": "e1c5cf6aa1cb4056", "src": "db2@1.60.1.70170"}

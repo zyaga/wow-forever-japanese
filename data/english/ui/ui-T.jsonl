@@ -325,3 +325,142 @@
 {"id": "TUTORIAL_TOKEN_SELL_FOR_GOLD", "field": "text", "en": "Sell a WoW Token for gold", "hash": "9b45cc06bee0d5fb", "src": "db2@1.60.1.70170"}
 {"id": "TUTORIAL_VOICE", "field": "text", "en": "You can join or leave voice chat here.", "hash": "d4d8b465aeeae2c8", "src": "db2@1.60.1.70170"}
 {"id": "TYPE", "field": "text", "en": "Type", "hash": "0b615fd246820bea", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2436", "field": "text", "en": "Alchemy - UNCATEGORIZED", "hash": "e8215730da2c9ba6", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2437", "field": "text", "en": "Blacksmithing - UNCATEGORIZED", "hash": "2b700668d93e7562", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2438", "field": "text", "en": "Cooking - UNCATEGORIZED", "hash": "f21be7939871c7b8", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2439", "field": "text", "en": "Enchanting - UNCATEGORIZED", "hash": "bd11fe293c6b81be", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2440", "field": "text", "en": "Engineering - UNCATEGORIZED", "hash": "756d97aabb72630d", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2441", "field": "text", "en": "First Aid - UNCATEGORIZED", "hash": "0c89364cd816eb5c", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2442", "field": "text", "en": "Fishing - UNCATEGORIZED", "hash": "22f8e33e2dbab8de", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2443", "field": "text", "en": "Herbalism - UNCATEGORIZED", "hash": "77d9cffeba9a3176", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2444", "field": "text", "en": "Leatherworking - UNCATEGORIZED", "hash": "d8393025787c9493", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2445", "field": "text", "en": "Mining - UNCATEGORIZED", "hash": "10d474f66719e17f", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2446", "field": "text", "en": "Skinning - UNCATEGORIZED", "hash": "e586641269ecba52", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2447", "field": "text", "en": "Tailoring - UNCATEGORIZED", "hash": "d7f116a978a9dcf2", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2448", "field": "text", "en": "Reagents", "hash": "f7a719e8744e51c0", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2449", "field": "text", "en": "Potions", "hash": "889a67d1d4574851", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2450", "field": "text", "en": "Elixirs", "hash": "1349fc3ecf749ca7", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2451", "field": "text", "en": "Flasks", "hash": "3b135404b389822b", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2452", "field": "text", "en": "Lesser Transmutations", "hash": "d58df28f7a1d665e", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2453", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2454", "field": "text", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2455", "field": "text", "en": "Weapon Oils", "hash": "43d92228fc5b2090", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2460", "field": "text", "en": "Weapon Stones", "hash": "e620d5fd06e5103e", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2461", "field": "text", "en": "Mail Helmets", "hash": "ce0af07e60a9d5e6", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2462", "field": "text", "en": "Mail Pauldrons", "hash": "832e918a6f15abca", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2463", "field": "text", "en": "Mail Chestguards", "hash": "9c7b35d4330f2410", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2464", "field": "text", "en": "Mail Bracers", "hash": "9524b81068fcb78d", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2465", "field": "text", "en": "Mail Gauntlets", "hash": "7a7cf0925773af26", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2466", "field": "text", "en": "Mail Belts", "hash": "dd43fdc0b5515033", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2467", "field": "text", "en": "Mail Legguards", "hash": "41646f30d045938d", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2468", "field": "text", "en": "Mail Boots", "hash": "de9bcee94749a3d2", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2469", "field": "text", "en": "Plate Helmets", "hash": "dc40e5e0a8aa61db", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2470", "field": "text", "en": "Plate Pauldrons", "hash": "224cea9963737759", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2471", "field": "text", "en": "Plate Chestguards", "hash": "25dac585d682ebba", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2472", "field": "text", "en": "Plate Bracers", "hash": "a35aad72b0fd4382", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2473", "field": "text", "en": "Plate Gauntlets", "hash": "199b49a14bd17ab5", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2474", "field": "text", "en": "Plate Belts", "hash": "5774beb45f745f8d", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2475", "field": "text", "en": "Plate Legguards", "hash": "e082c83ac4a35f1c", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2476", "field": "text", "en": "Plate Boots", "hash": "58cc8fddf16cb31b", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2481", "field": "text", "en": "One-Handed Axes", "hash": "11e3a286f24718bb", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2484", "field": "text", "en": "One-Handed Maces", "hash": "f70b30d5433229c6", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2485", "field": "text", "en": "One-Handed Swords", "hash": "d3a073af08003389", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2486", "field": "text", "en": "Shields", "hash": "047394cec4ba0cf2", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2488", "field": "text", "en": "Inert Enchanting Rods", "hash": "6564eb19355d1cc8", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2491", "field": "text", "en": "Runed Enchanting Rods", "hash": "83c10eb94e187a1f", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2492", "field": "text", "en": "Wizard Oils", "hash": "391c24c61f92d272", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2493", "field": "text", "en": "Helmet Enchants", "hash": "c103c152025831cc", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2494", "field": "text", "en": "Shoulder Enchants", "hash": "1f7a9222929324b0", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2495", "field": "text", "en": "Chest Enchants", "hash": "a1813bb08b9e22cd", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2496", "field": "text", "en": "Bracer Enchants", "hash": "2245dd9d36e4372a", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2497", "field": "text", "en": "Glove Enchants", "hash": "5c867b66d7a1c17e", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2498", "field": "text", "en": "Belt Enchants", "hash": "4288b081dc211b87", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2499", "field": "text", "en": "Pants Enchants", "hash": "9f5f851aebf5e57a", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2500", "field": "text", "en": "Boots Enchants", "hash": "993026a937b65056", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2501", "field": "text", "en": "Two-Handed Weapon Enchants", "hash": "16135f047a331b10", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2502", "field": "text", "en": "Weapon Enchants", "hash": "b6b47770db2f4df3", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2503", "field": "text", "en": "Shield Enchants", "hash": "41073ba1a00ffeda", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2504", "field": "text", "en": "Off-Hand Enchants", "hash": "a7e861ec28d6b44b", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2505", "field": "text", "en": "Amulet Enchants", "hash": "4ea3fc42295e796b", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2506", "field": "text", "en": "Cloak Enchants", "hash": "43ad51fa5d41fdc3", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2507", "field": "text", "en": "Ring Enchants", "hash": "57b4ad3648ea5efb", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2508", "field": "text", "en": "Trinket Enchants", "hash": "1c256295508e1071", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2509", "field": "text", "en": "Relics", "hash": "8bdd967f5957d67c", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2510", "field": "text", "en": "Curios", "hash": "e8c664fad1600dba", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2513", "field": "text", "en": "Off-Hands", "hash": "6169368b1b274b18", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2515", "field": "text", "en": "Parts", "hash": "896676f50247eb65", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2516", "field": "text", "en": "Explosives", "hash": "a523f6b229cb0256", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2517", "field": "text", "en": "Fireworks", "hash": "682f427fdbf1928e", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2518", "field": "text", "en": "Consumable Devices", "hash": "77d229abfb57406b", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2519", "field": "text", "en": "Devices", "hash": "60275538301858bf", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2520", "field": "text", "en": "Gadgets", "hash": "53f360072b5af716", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2521", "field": "text", "en": "Pets and Guardians", "hash": "93f0e9bf12ebb87e", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2522", "field": "text", "en": "Cloth Headgear", "hash": "119010d172b46fc5", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2523", "field": "text", "en": "Leather Headgear", "hash": "264d25f13422065a", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2524", "field": "text", "en": "Mail Headgear", "hash": "032f0eb90e458e26", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2525", "field": "text", "en": "Plate Headgear", "hash": "48cba00267b3d3e2", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2526", "field": "text", "en": "Ranged Weapons", "hash": "0245ca1218e093c1", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2527", "field": "text", "en": "Scopes", "hash": "64af3493b10e77ba", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2528", "field": "text", "en": "Ammunition", "hash": "f8b675be3066b388", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2530", "field": "text", "en": "Bandages", "hash": "3e47c357fd3639c6", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2531", "field": "text", "en": "Healing Potions", "hash": "0049ce42431f9a09", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2532", "field": "text", "en": "Poultices", "hash": "34eeb108c97578f3", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2533", "field": "text", "en": "Curatives", "hash": "80b88ebf7e546789", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2537", "field": "text", "en": "Necks", "hash": "66d04e9d3e85a555", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2538", "field": "text", "en": "Rings", "hash": "ad933da41b79dd26", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2539", "field": "text", "en": "Crowns", "hash": "b3ba0331c3fc47e8", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2540", "field": "text", "en": "Cuffs", "hash": "a7df19598cd99784", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2541", "field": "text", "en": "Trinkets", "hash": "6b6b03c2893213f5", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2542", "field": "text", "en": "Red Gems", "hash": "07def52ddff81b7e", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2543", "field": "text", "en": "Orange Gems", "hash": "0389d7ade1de792b", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2544", "field": "text", "en": "Yellow Gems", "hash": "3a0e8fac134c0519", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2545", "field": "text", "en": "Green Gems", "hash": "f7403d17e6d21873", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2546", "field": "text", "en": "Blue Gems", "hash": "73bbc33a8b4b3b18", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2547", "field": "text", "en": "Purple Gems", "hash": "16bd0c8c8a5d9ba9", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2548", "field": "text", "en": "Meta Gems", "hash": "e2ce50dbbcf7c010", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2551", "field": "text", "en": "Bags", "hash": "08f19d87f5eb6a4e", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2552", "field": "text", "en": "Cloaks", "hash": "4a61f8fc332718de", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2553", "field": "text", "en": "Leather Helmets", "hash": "7c3c062cd1f8c93e", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2554", "field": "text", "en": "Leather Pauldrons", "hash": "7b94738c6869eda5", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2555", "field": "text", "en": "Leather Chestguards", "hash": "0236a3f59436e9dc", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2556", "field": "text", "en": "Leather Bracers", "hash": "4355cdbeda4baae5", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2557", "field": "text", "en": "Leather Gauntlets", "hash": "72e2d29450c7f101", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2558", "field": "text", "en": "Leather Belts", "hash": "bf3b5787489116f7", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2559", "field": "text", "en": "Leather Legguards", "hash": "39ca5132c999d568", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2560", "field": "text", "en": "Leather Boots", "hash": "c09328b0da896a85", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2569", "field": "text", "en": "Armor Kits", "hash": "3f1d977ecba332e9", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2570", "field": "text", "en": "Quivers", "hash": "630b5f7885a99e1b", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2571", "field": "text", "en": "Ammo Pouches", "hash": "a221706579b9697f", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2573", "field": "text", "en": "Arrows", "hash": "bd164115a95fd0bf", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2575", "field": "text", "en": "Smelted Bars", "hash": "a23b1f0d395f5285", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2577", "field": "text", "en": "Embroideries", "hash": "0513c5c2c2bd71bf", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2579", "field": "text", "en": "Specialty Bags", "hash": "80f01d642ae33b15", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2581", "field": "text", "en": "Hoods", "hash": "fed83197bab87eb4", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2582", "field": "text", "en": "Spaulders", "hash": "3639f4c1759c1ba3", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2583", "field": "text", "en": "Robes and Vests", "hash": "1c0a20c04ee131f7", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2584", "field": "text", "en": "Bracers", "hash": "4b0c8d19172eca26", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2585", "field": "text", "en": "Gloves", "hash": "3878a427ccaa90ae", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2586", "field": "text", "en": "Belts", "hash": "942e22b8ef432c54", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2587", "field": "text", "en": "Leggings", "hash": "10a0fee9d2b05c26", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2588", "field": "text", "en": "Shoes", "hash": "befee85d70f46c90", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2589", "field": "text", "en": "Shirts", "hash": "bba68045c325a294", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2590", "field": "text", "en": "Dressed for the Occasion", "hash": "3c0e68d9d0f2a5c5", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2592", "field": "text", "en": "SEASON OF DISCOVERY", "hash": "18a0ec4f6deb1946", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2620", "field": "text", "en": "Greater Transmutations", "hash": "c4fd36f933eb7372", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2621", "field": "text", "en": "Recovery Potions", "hash": "53dbd8a5766f2f63", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2632", "field": "text", "en": "Everyday Meals", "hash": "0f663a7c7d6e5b88", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2633", "field": "text", "en": "Strength Food", "hash": "bebabc13b5c6d06f", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2634", "field": "text", "en": "Agility Food", "hash": "215d04cf8036d3e9", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2635", "field": "text", "en": "Intellect Food", "hash": "395f48a5bb655ba3", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2636", "field": "text", "en": "Miscellaneous Cuisines", "hash": "637e43d302b21e3a", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2638", "field": "text", "en": "Winter Veil Treats", "hash": "0bbc149af379a8d7", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2639", "field": "text", "en": "Meal Prep", "hash": "497268c40ff702e7", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2640", "field": "text", "en": "Stamina Food", "hash": "31015cac7779a40f", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2641", "field": "text", "en": "Spell Damage Food", "hash": "970ca0f74a240d55", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2642", "field": "text", "en": "Combat Prowess Food", "hash": "a1509e8f81494094", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2643", "field": "text", "en": "Attack Power Food", "hash": "e3dbd82298173f45", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2644", "field": "text", "en": "Fisherman's Delights", "hash": "cfa320a93ed6255c", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2645", "field": "text", "en": "Delightful Drinks", "hash": "e98ba53f847e39ed", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2646", "field": "text", "en": "Soothing Drinks", "hash": "917948ef6debdffd", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2651", "field": "text", "en": "Draughts", "hash": "928809959506dbac", "src": "db2@1.60.1.70170"}
+{"id": "TradeSkillCategory:2771", "field": "text", "en": "Armor Food", "hash": "3e73a30f206c65de", "src": "db2@1.60.1.70170"}

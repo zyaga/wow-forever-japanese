@@ -253,10 +253,42 @@ resistances.f0  covered-by:globalstrings.f1  # all 7 school names are GlobalStri
 uieventtoast.f0  covered-by:globalstrings.f1  # Level %d, Rank %d are GlobalStrings text
 uieventtoast.f1  covered-by:globalstrings.f1  # You've Reached is GlobalStrings text
 
-# Not decided yet (each is shown in game or may be; see docs/research/2026-10-02-served-text-inventory.md):
-# criteriatree.f0 renownrewards.f0 renownrewards.f1 renownrewards.f2 sharedstring.f0 tradeskillcategory.f0
-# mailtemplate.f0 questinfo.f0 areapoi.f1 areapoistate.f0 petloyalty.f0 map.f5 difficulty.f0 uieventtoast.f3 broadcasttext.f0 rolodextype.f0 rolodextype.f1 transmogsituation.f0
-# transmogsituationtrigger.f0 transmogsituationtrigger.f1 transmogoutfitslotoption.f0 friendshipreputation.f0
-# friendshipreputation.f1 mapdifficulty.f0 mapdifficultyxcondition.f0 itempetfood.f0 exhaustion.f0
-# itemsubclassmask.f0 spellfocusobject.f0 locktype.f0 locktype.f1 locktype.f2 spellrange.f0 spellrange.f1
-# playercondition.f0 spellflyout.f0 spellflyout.f1 toy.f0 servermessages.f0
+# A spell tooltip prints its range from GlobalStrings, not from the SpellRange names
+spellrange.f0  no-display  # in game on 1.60.1.70170, Wrath (SpellRange 4 "Medium Range", 30 yards) shows SPELL_RANGE "30 yd range", already Japanese; melee spells use MELEE_RANGE
+spellrange.f1  no-display  # the short range names (Medium); not printed, as spellrange.f0
+
+# The Collections window on Forever has only the Appearances tab
+toy.f0  no-display  # in game on 1.60.1.70170, ToggleCollectionsJournal(COLLECTIONS_JOURNAL_TAB_INDEX_TOYS) opens Appearances with one tab (Items); there is no Toy Box
+
+# Required tools and spell focus objects ("Requires Anvil", "Requires Ambermill Leyline Focus") are names of things
+spellfocusobject.f0  names  # object names a recipe or spell needs (Anvil, Forge, Ambermill Leyline Focus); names stay English
+
+# Client-table text the inventory found shown on Forever (ADR-051), imported as UI key families
+criteriatree.f0  surface:ui:CriteriaText  # Description_lang: achievement and Legacy criteria (the achievements' own trees)
+renownrewards.f0  surface:ui:RenownRewardName  # Name_lang (reward item names stay English)
+renownrewards.f1  surface:ui:RenownRewardDescription  # Description_lang
+renownrewards.f2  surface:ui:RenownRewardToast  # ToastDescription_lang
+sharedstring.f0  surface:ui:SharedString  # String_lang: talent requirement lines (profession names stay English)
+tradeskillcategory.f0  surface:ui:TradeSkillCategory  # Name_lang: recipe list headers (profession names stay English)
+mailtemplate.f0  surface:ui:MailBody  # Body_lang: NPC mail bodies
+questinfo.f0  surface:ui:QuestTag  # InfoName_lang: quest type tags (Elite, Dungeon)
+areapoi.f1  surface:ui:AreaPoiDescription  # Description_lang: map point tooltip lines (zone and faction names stay English)
+areapoistate.f0  surface:ui:AreaPoiState  # Description_lang
+petloyalty.f0  surface:ui:PetLoyalty  # Name_lang
+map.f5  surface:ui:PvpLongDescription  # PvpLongDescription_lang: the battleground queue subtitle
+difficulty.f0  surface:ui:Difficulty  # Name_lang
+uieventtoast.f3  surface:ui:EventToastText  # SubIcon_lang
+broadcasttext.f0  surface:ui:BroadcastText  # Text_lang: the archive's rows (cinematic subtitles)
+itempetfood.f0  surface:ui:PetFood  # Name_lang: pet diet words
+exhaustion.f0  surface:ui:RestState  # Name_lang (the XXX developer rows never listed)
+itemsubclassmask.f0  surface:ui:ItemSubClassMask  # Name_lang (Requires Melee Weapon)
+rolodextype.f0  surface:ui:RecentAllyType  # Description_lang: the Recent Allies tab (shown on Forever, in game 1.60.1.70170)
+rolodextype.f1  surface:ui:RecentAllyInteraction  # the most recent interaction (Traded, Whispered)
+friendshipreputation.f0  names  # Rank Points: the PvP rank currency's name
+friendshipreputation.f1  surface:ui:FriendshipGain  # StandingModified_lang: You gain %d Rank Points.
+mapdifficulty.f0  surface:ui:InstanceEntryMessage  # Message_lang: the error when entering an instance under its level
+mapdifficultyxcondition.f0  surface:ui:InstanceEntryFailure  # FailureDescription_lang
+
+# Not decided yet (each may be shown; see docs/research/2026-10-02-served-text-inventory.md):
+# playercondition.f0 locktype.f0 locktype.f1 locktype.f2 spellflyout.f0 spellflyout.f1 servermessages.f0
+# transmogsituation.f0 transmogsituationtrigger.f0 transmogsituationtrigger.f1 transmogoutfitslotoption.f0

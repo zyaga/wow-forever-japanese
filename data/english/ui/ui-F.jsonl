@@ -181,3 +181,4 @@
 {"id": "FactionDescription:910", "field": "text", "en": "The descendants of the Bronze Dragonflight are the guardians of time and care little for the mortal races.", "hash": "83782a844c078497", "src": "db2@1.60.1.70170"}
 {"id": "FactionDescription:92", "field": "text", "en": "These centaur have made their home in the southern region of Desolace.  Mortal enemies of the Magram Centaur.", "hash": "1b4b23042452fa32", "src": "db2@1.60.1.70170"}
 {"id": "FactionDescription:93", "field": "text", "en": "These centaur have made their home in the eastern region of Desolace.  Mortal enemies of the Gelkis Centaur.", "hash": "c63dbc46fe15d4b0", "src": "db2@1.60.1.70170"}
+{"id": "FriendshipGain:513", "field": "text", "en": "You gain %d Rank Points.", "hash": "eb811349ae33fbf1", "src": "db2@1.60.1.70170"}

@@ -1526,6 +1526,25 @@
 {"id": "SYSTEM", "field": "text", "en": "System", "hash": "e76722181eb64b46", "src": "db2@1.60.1.70170"}
 {"id": "SYSTEMOPTIONS_MENU", "field": "text", "en": "System", "hash": "e76722181eb64b46", "src": "db2@1.60.1.70170"}
 {"id": "SYSTEM_MESSAGES", "field": "text", "en": "System Messages", "hash": "31423358d9eb7564", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1137", "field": "text", "en": "Are you sure you want to automatically sort your items?|nThis will affect all Account tabs.", "hash": "7b6ac716e505e3cb", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1138", "field": "text", "en": "Account Bank", "hash": "316a9b4cfe9eef63", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1139", "field": "text", "en": "The Account Bank offers storage that is shared with all members in your Account.|n|nDo you wish to purchase this tab?", "hash": "1cffb9c273ba8ad1", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1140", "field": "text", "en": "Enter Warband Bank Tab Name:", "hash": "4bf1d13050c0f541", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1141", "field": "text", "en": "Do you want to purchase an Account Bank tab for:", "hash": "b5526acfa8b00c41", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1142", "field": "text", "en": "Are you sure you want to automatically sort your items?|nThis will affect all tabs.", "hash": "846a7d3c76a4b6e3", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1143", "field": "text", "en": "Bank", "hash": "08f1a114f5ec496d", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1144", "field": "text", "en": "The Bank offers additional storage for your items.|n|nDo you wish to purchase this tab?", "hash": "265c2380694fbcc1", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1145", "field": "text", "en": "Enter Bank Tab Name:", "hash": "8e3733378ff9c376", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1146", "field": "text", "en": "Do you want to purchase a Bank tab for:", "hash": "0af685f1d049f0b5", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1152", "field": "text", "en": "Tab 6", "hash": "cf98f4703e63371f", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1159", "field": "text", "en": "Classic", "hash": "1ccdf9b2919d38fd", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1318", "field": "text", "en": "Spend %d more |4point:points; in the %s Legacy Tree", "hash": "e5d1e01217761594", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:911", "field": "text", "en": "Spend %d more |4point:points; in %s |4Talent:Talents;", "hash": "45dbdaeb4589eab4", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:992", "field": "text", "en": "Tab 1", "hash": "cf98f46b3e63371a", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:993", "field": "text", "en": "Tab 2", "hash": "cf98f46c3e63371b", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:994", "field": "text", "en": "Tab 3", "hash": "cf98f46d3e63371c", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:995", "field": "text", "en": "Tab 4", "hash": "cf98f46e3e63371d", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:996", "field": "text", "en": "Tab 5", "hash": "cf98f46f3e63371e", "src": "db2@1.60.1.70170"}
 {"id": "SkillCategory:10", "field": "text", "en": "Languages", "hash": "6665de684e5a2919", "src": "db2@1.60.1.70170"}
 {"id": "SkillCategory:11", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.70170"}
 {"id": "SkillCategory:222", "field": "text", "en": "Runes", "hash": "af2edfe2bc590dbe", "src": "db2@1.60.1.70170"}

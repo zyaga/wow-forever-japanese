@@ -21,6 +21,10 @@ TEXT_TABLES = (
     "ChrCustomizationCategory", "ChrCustomizationOption", "ChrCustomizationChoice", "ChrCustomizationReq",
     "PVPScoreboardColumnHeader", "GroupFinderCategory", "GroupFinderActivityGrp", "GroupFinderActivity",
     "UiWidgetStringSource", "ItemNameDescription",
+    # the tables the served-text inventory found shown on Forever (ADR-051)
+    "CriteriaTree", "RenownRewards", "SharedString", "TradeSkillCategory", "MailTemplate", "QuestInfo", "AreaPOI",
+    "AreaPOIState", "PetLoyalty", "Map", "Difficulty", "UiEventToast", "BroadcastText", "ItemPetFood", "Exhaustion",
+    "ItemSubClassMask", "RolodexType", "FriendshipReputation", "MapDifficulty", "MapDifficultyXCondition",
 )
 
 

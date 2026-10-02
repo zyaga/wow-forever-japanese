@@ -2824,3 +2824,5 @@
 {"id": "EmoteText:996", "field": "text", "en": "%s raises her eyebrow inquisitively at you.", "hash": "ea46fa7fe502bcbb", "src": "db2@1.60.1.70170"}
 {"id": "EmoteText:997", "field": "text", "en": "%s raises her eyebrow inquisitively.", "hash": "32432f118a9689e7", "src": "db2@1.60.1.70170"}
 {"id": "EmoteText:999", "field": "text", "en": "%s raises a drink to you. Cheers!", "hash": "281aca8edf6bbe23", "src": "db2@1.60.1.70170"}
+{"id": "EventToastText:479", "field": "text", "en": "Your Lotus Claw enchant allows you to carefully extract a Death Lotus!", "hash": "0d1d1b019cf37d28", "src": "db2@1.60.1.70170"}
+{"id": "EventToastText:513", "field": "text", "en": "You have reached Rank %d.", "hash": "b3b64634882ecb1b", "src": "db2@1.60.1.70170"}

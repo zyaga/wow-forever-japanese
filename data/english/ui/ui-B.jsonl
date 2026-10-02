@@ -516,3 +516,15 @@
 {"id": "BY_SOURCE_COMBATLOG_TOOLTIP", "field": "text", "en": "Line color based on caster.", "hash": "3e1cd60377d2e13d", "src": "db2@1.60.1.70170"}
 {"id": "BY_TARGET", "field": "text", "en": "By Target", "hash": "4c1fd6880e6c9a5b", "src": "db2@1.60.1.70170"}
 {"id": "BY_TARGET_COMBATLOG_TOOLTIP", "field": "text", "en": "Line color based on target.", "hash": "2aaf0ff619a124d3", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316345", "field": "text", "en": "For thousands of years,", "hash": "86db738c448a868b", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316346", "field": "text", "en": "a band of high elven exiles has remained safe", "hash": "e55ad36f8210be07", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316348", "field": "text", "en": "and hidden upon their flying sanctuary of Zephras Isle.", "hash": "4372a431f4ce458c", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316349", "field": "text", "en": "These \"Skyborne,\" as they call themselves,", "hash": "8aa20a25f9c45682", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316350", "field": "text", "en": "shared a bond with air elementals", "hash": "55115e31fe018dff", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316351", "field": "text", "en": "who kept their island aloft in the realm of Skywall.", "hash": "ddc29d352d8b190e", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316352", "field": "text", "en": "But in recent years,", "hash": "f7157c638f43e0d0", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316353", "field": "text", "en": "the elementals vanished without a trace--", "hash": "e44574f17659e5b3", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316354", "field": "text", "en": "disrupting the delicate magic that kept them safe in their haven amongst the clouds.", "hash": "68b826077b80c5a2", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316355", "field": "text", "en": "Now, a new generation of Skyborne elves face a time of unprecedented change,", "hash": "5277c2250e18819b", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316356", "field": "text", "en": "and must seek new allies and sources of magic--", "hash": "72650d43a1ce07d9", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316358", "field": "text", "en": "to protect their hidden home and secure their future...", "hash": "a97fa88eebf1e4c0", "src": "db2@1.60.1.70170"}

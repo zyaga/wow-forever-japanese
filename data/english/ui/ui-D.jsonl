@@ -155,6 +155,11 @@
 {"id": "D_HOURS", "field": "text", "en": "%d |4Hour:Hours;", "hash": "290d98f94a3f2c45", "src": "db2@1.60.1.70170"}
 {"id": "D_MINUTES", "field": "text", "en": "%d |4Minute:Minutes;", "hash": "9848a5f16f82c0f8", "src": "db2@1.60.1.70170"}
 {"id": "D_SECONDS", "field": "text", "en": "%d |4Second:Seconds;", "hash": "371f4f3ae823e876", "src": "db2@1.60.1.70170"}
+{"id": "Difficulty:1", "field": "text", "en": "Normal", "hash": "4e2463e728aab060", "src": "db2@1.60.1.70170"}
+{"id": "Difficulty:148", "field": "text", "en": "20 Player", "hash": "1c2634d2348a3786", "src": "db2@1.60.1.70170"}
+{"id": "Difficulty:197", "field": "text", "en": "10 Player", "hash": "fd104bdf4b83966c", "src": "db2@1.60.1.70170"}
+{"id": "Difficulty:213", "field": "text", "en": "Infinite", "hash": "2cd61c93903bed63", "src": "db2@1.60.1.70170"}
+{"id": "Difficulty:9", "field": "text", "en": "40 Player", "hash": "5a5206ae069779ba", "src": "db2@1.60.1.70170"}
 {"id": "DispelType:1", "field": "text", "en": "Magic", "hash": "54ba6cee39dc24ee", "src": "db2@1.60.1.70170"}
 {"id": "DispelType:2", "field": "text", "en": "Curse", "hash": "a7e2445ebc7e62ef", "src": "db2@1.60.1.70170"}
 {"id": "DispelType:3", "field": "text", "en": "Disease", "hash": "1905ab639bf0e92f", "src": "db2@1.60.1.70170"}

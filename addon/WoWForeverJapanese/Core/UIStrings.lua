@@ -37,7 +37,13 @@ local FINGERPRINT_PREFIXES = { "^ItemSubClass:", "^SpellItemEnchantment:", "^Spe
   -- finder, the UI widgets' lines (numbered rows) and the wardrobe's variant words
   "^ItemSubClassName:", "^CustomizationCategory:", "^CustomizationOption:", "^CustomizationChoice:",
   "^CustomizationSource:", "^PvpColumn:", "^PvpColumnTooltip:", "^LfgCategory:", "^LfgActivityGroup:",
-  "^LfgActivity:", "^WidgetText:", "^ItemNameDescription:" }
+  "^LfgActivity:", "^WidgetText:", "^ItemNameDescription:",
+  -- the families the served-text inventory found shown on Forever (ADR-051)
+  "^CriteriaText:", "^RenownRewardName:", "^RenownRewardDescription:", "^RenownRewardToast:", "^SharedString:",
+  "^TradeSkillCategory:", "^MailBody:", "^QuestTag:", "^AreaPoiDescription:", "^AreaPoiState:", "^PetLoyalty:",
+  "^PvpLongDescription:", "^Difficulty:", "^EventToastText:", "^BroadcastText:", "^PetFood:", "^RestState:",
+  "^ItemSubClassMask:", "^RecentAllyType:", "^RecentAllyInteraction:", "^FriendshipLabel:", "^FriendshipGain:",
+  "^InstanceEntryMessage:", "^InstanceEntryFailure:" }
 function UIStrings.isFingerprintKey(key)
   if type(key) ~= "string" then return false end
   for _, p in ipairs(FINGERPRINT_PREFIXES) do
@@ -55,7 +61,12 @@ local RESTRICTED_PREFIXES = { "^FactionDescription:", "^AchievementTitle:", "^Ac
   "^HolidayDescription:", "^CurrencyDescription:", "^CurrencyCategory:", "^DispelType:", "^CreatureType:",
   "^QuestSort:", "^ItemSubClassName:", "^CustomizationCategory:", "^CustomizationOption:", "^CustomizationChoice:",
   "^CustomizationSource:", "^PvpColumn:", "^PvpColumnTooltip:", "^LfgCategory:", "^LfgActivityGroup:",
-  "^LfgActivity:", "^WidgetText:", "^ItemNameDescription:" }
+  "^LfgActivity:", "^WidgetText:", "^ItemNameDescription:",
+  "^CriteriaText:", "^RenownRewardName:", "^RenownRewardDescription:", "^RenownRewardToast:", "^SharedString:",
+  "^TradeSkillCategory:", "^MailBody:", "^QuestTag:", "^AreaPoiDescription:", "^AreaPoiState:", "^PetLoyalty:",
+  "^PvpLongDescription:", "^Difficulty:", "^EventToastText:", "^BroadcastText:", "^PetFood:", "^RestState:",
+  "^ItemSubClassMask:", "^RecentAllyType:", "^RecentAllyInteraction:", "^FriendshipLabel:", "^FriendshipGain:",
+  "^InstanceEntryMessage:", "^InstanceEntryFailure:" }
 function UIStrings.isRestrictedKey(key)
   if type(key) ~= "string" then return false end
   for _, p in ipairs(RESTRICTED_PREFIXES) do
