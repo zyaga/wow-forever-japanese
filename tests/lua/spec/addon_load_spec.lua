@@ -225,7 +225,7 @@ describe("addon loads in TOC order and answers /wfj version", function()
     Stub.fontSetFails = true -- a fresh launch: the bundled font file is not loaded yet
     Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
     assert.is_true(ns.Render.pendingFonts() > 0 or ns.Font.retryPending() > 0)
-    -- the tooltip surface starts its own ticker at load (learning the client's time rule); the font's comes after
+    -- the font retry is the one ticker started on entering the world
     local before = #ticks
     Stub.fireAll("PLAYER_ENTERING_WORLD", true, false)
     assert.are.equal(before + 1, #ticks)

@@ -186,6 +186,9 @@ function TooltipUnit.minimapBlock(text)
   return block, notes
 end
 
+-- The widget the minimap block was written on, to give it the client's face back when the tooltip hides.
+local blockWidget
+
 -- The Unit post-call (tooltip, tooltip data): GameTooltip only (its OnHide releases these records).
 -- → the number of lines shown
 function TooltipUnit.onUnit(tt, data)
@@ -200,6 +203,8 @@ function TooltipUnit.onUnit(tt, data)
     local ja, why = TooltipUnit.minimapBlock(type(fs) == "table" and fs:GetText() or nil)
     if ja and WFJ.State.enabled ~= false and not WFJ.Modifier.isDown() and WFJ.State.areaEnabled("quests") then
       fs:SetText(ja)
+      WFJ.Font.bundle(fs) -- written outside a record, so the face is set here and given back on the tooltip's OnHide
+      blockWidget = fs
       refit()
       notes[#notes + 1] = "minimap block: " .. table.concat(why or {}, ", ")
       if WFJ.Tooltip.trace then
@@ -235,6 +240,7 @@ end
 
 -- HookScript target (GameTooltip OnHide): the frame's lines are gone. → records released
 function TooltipUnit.release()
+  if blockWidget then pcall(WFJ.Font.restore, blockWidget); blockWidget = nil end
   return WFJ.Render.release(SURFACE)
 end
 

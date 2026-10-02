@@ -43,8 +43,7 @@ end
 -- The Japanese line for a unit, with %d where the number goes: a sample put through the dictionary.
 local japanese = {}
 local function japaneseFormat(unit)
-  if japanese[unit] ~= nil then return japanese[unit] or nil end
-  japanese[unit] = false
+  if japanese[unit] then return japanese[unit] end
   local en = english(unit, SAMPLE)
   local index = WFJ.UIIndex
   if not en or not index then return nil end
@@ -92,7 +91,7 @@ function TimeLine.formatter()
     return created
   end)
   if not ok or not f then formatterWhy = "formatter refused: " .. tostring(f); return nil, formatterWhy end
-  formatter = f
+  formatter, formatterWhy = f, nil
   return formatter
 end
 

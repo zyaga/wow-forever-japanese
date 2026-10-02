@@ -17,10 +17,8 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 "UI/Readings.lua",
                 # the fix window and the minimap button script only their own frames
                 "UI/FixWindow.lua", "UI/MinimapButton.lua",
-                # the tooltip trace window (/wfj debug tooltip) and the tooltips' own event frame (auras, the time rule)
-                "UI/Slash.lua", "UI/Tooltip.lua",
-                # the buff bar model's own event frame
-                "UI/BuffIdentity.lua"}
+                # the tooltip trace window (/wfj debug tooltip)
+                "UI/Slash.lua"}
 
 PATTERNS = {
     "PanelTemplates_SetTab": re.compile(r"\bPanelTemplates_SetTab\s*\("),

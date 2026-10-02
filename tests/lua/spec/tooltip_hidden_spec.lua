@@ -194,6 +194,30 @@ describe("UI/Tooltip: hidden passes", function()
         assert.is_truthy(WFJ.Tooltip.hidden.last:find("countdown row 4: no cooldown duration API", 1, true))
       end)
 
+    it("only one hidden data row is the countdown: with more hidden, none is written and the name row stays",
+      function()
+        local WFJ, tt = setup()
+        installFormatter()
+        tt.owner = "ActionButton1"
+        _G.C_Spell.GetSpellCooldownDuration = function() return duration(1.4) end
+        -- the client hides the name row and the countdown row
+        local rows = { { leftText = "hidden name", rightText = "Rank 1" }, SHIELD_ROWS[2], SHIELD_ROWS[3],
+          SHIELD_ROWS[4], SHIELD_ROWS[5] }
+        _G.C_TooltipInfo.GetSpellByID = function() return { id = 17, lines = rows } end
+        hide(HIDDEN, { COUNTDOWN_EN, "hidden name" })
+        spellPass(tt, HIDDEN, 5)
+        assert.are.equal("Power Word: Shield ", text(1))
+        assert.are.equal("Cooldown remaining: 2 sec ", text(4))
+        assert.are.equal(SHIELD_JA, text(5))
+        assert.is_truthy(WFJ.Tooltip.hidden.last:find("hidden data rows left as the client wrote them", 1, true))
+        -- one hidden row again: the countdown is written, never onto row 1
+        _G.C_TooltipInfo.GetSpellByID = function() return { id = 17, lines = SHIELD_ROWS } end
+        hide(HIDDEN, { COUNTDOWN_EN })
+        spellPass(tt, HIDDEN, 5)
+        assert.are.equal("残りクールダウン: 2秒", text(4))
+        assert.are.equal("Power Word: Shield ", text(1))
+      end)
+
     it("the frame's typed description row places the rows when the client's data lacks the countdown", function()
       local WFJ, tt = setup()
       installFormatter()
@@ -272,15 +296,15 @@ describe("UI/Tooltip: hidden passes", function()
   end)
 
   describe("fonts after a hidden pass", function()
-    it("a row a hidden pass dressed keeps the bundled face when the tooltip hides, and a later render on the "
-      .. "same rows (the minimap's quest block, a creature) still wears it", function()
+    it("a row a hidden pass dressed gets the client's face back when the tooltip hides, and a later render on "
+      .. "the same rows wears the bundled face from its own records", function()
       local WFJ, tt = setup()
       tt.owner = "ActionButton1"
       hide(HIDDEN, { COUNTDOWN_EN })
       spellPass(tt, HIDDEN, 5)
-      WFJ.Tooltip.release(tt) -- OnHide: the face is not given back
-      assert.is_true(WFJ.Font.dressed(_G.GameTooltipTextLeft5))
-      assert.are.equal(WFJ.Font.PATH, (_G.GameTooltipTextLeft5:GetFont()))
+      WFJ.Tooltip.release(tt) -- OnHide: every row the pass dressed gets the client's face back
+      assert.is_false(WFJ.Font.dressed(_G.GameTooltipTextLeft5))
+      assert.are_not.equal(WFJ.Font.PATH, (_G.GameTooltipTextLeft5:GetFont()))
       _G.issecretvalue = nil
       -- the next render through records on the same widgets: Japanese in the bundled face, never the client's
       local readable = { "Power Word: Shield", "40 yd range", "Instant cast", SHIELD_DESC }
@@ -308,6 +332,23 @@ describe("UI/Tooltip: hidden passes", function()
       assert.are.equal("Tough Jerky ", text(1))
       assert.are.equal(DATA["item.description"][117].ja, text(2))
       assert.are.equal("売値: 5c", text(3))
+      _G.GetActionInfo = nil
+    end)
+
+    it("an item whose rows do not line up with the client's data is left as the client wrote it", function()
+      local WFJ, tt = setup()
+      tt.owner = { action = 24 }
+      _G.GetActionInfo = function() return "item", 117 end
+      local lines = { "Tough Jerky ", "Cooldown remaining: 75 sec ", JERKY_DESC .. " ", "Sell Price: 5c " }
+      hide(lines, { JERKY })
+      tt.item = { name = "Tough Jerky", link = JERKY }
+      tt.spell = nil
+      tt.primaryInfo = nil
+      tt:writeLines(lines) -- four rows; the data has three
+      Stub.fireTooltipSet(tt, "Item")
+      assert.are.equal(JERKY_DESC .. " ", text(3))
+      assert.are.equal("Cooldown remaining: 75 sec ", text(2))
+      assert.is_truthy(WFJ.Tooltip.hidden.last:find("carry no kind to place by", 1, true))
       _G.GetActionInfo = nil
     end)
 
@@ -492,6 +533,17 @@ describe("UI/TimeLine: the cooldown countdown by Blizzard's one-term rule", func
       assert.is_nil(ok)
       assert.are.equal("no duration object", why)
     end)
+
+  it("a Japanese line the dictionary could not give is asked for again later, not cached as missing", function()
+    local WFJ = setup()
+    installFormatter()
+    WFJ.State.setArea("ui", false)
+    assert.is_nil(WFJ.TimeLine.render(1.4))
+    assert.is_nil(WFJ.TimeLine.formatter())
+    WFJ.State.setArea("ui", true)
+    assert.are.equal("残りクールダウン: 2秒", WFJ.TimeLine.render(1.4))
+    assert.is_not_nil(WFJ.TimeLine.formatter())
+  end)
 
   it("without the client's rule formatter no hidden line is written, and the status says why", function()
     local WFJ = setup()

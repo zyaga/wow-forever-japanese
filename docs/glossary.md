@@ -663,6 +663,26 @@ The list, per [[Surface]], of every UI key a hooked client file can put on scree
 _Avoid_: key list (that is `ui_keys.txt`), string dump
 → [Pipeline](systems/pipeline.md)
 
+**Secret value**:
+A value the Forever client hands an addon sealed: it can be held, passed on and written to the screen (`SetText`), but any read, comparison, concatenation, table index or arithmetic on it raises an error. `issecretvalue` tells one apart; `type()` still answers. In combat an action button's tooltip rows and the cooldown numbers are secret; a buff tooltip's aura id, spell and rows too.
+_Avoid_: hidden string, restricted value, tainted value (taint is a different mechanism)
+→ [Client limits](architecture/client-limits.md)
+
+**Hidden pass**:
+A pass of the tooltip surface over a tooltip whose rows are [[Secret value]]s. It translates the client's own tooltip data for the spell or item id by row position and has the client write the cooldown countdown from its hidden duration; it keeps no record and remembers nothing between passes (`UI/Tooltip.lua`). The opposite is a readable pass, which renders through [[Render record]]s.
+_Avoid_: secret pass (the trace's event names say "secret spell" / "secret item" / "secret aura" for the pass's kind), write-back, memory pass
+→ [Client limits](architecture/client-limits.md)
+
+**Client limit**:
+Something the Forever client keeps from addons by design, with the addon's response written down beside it: a buff tooltip in combat stays English, a cooldown's number is formatted by the client, a combat log line is sealed. Each entry cites the client's own files or an in-game trace. A limit is never worked around by guessing or by remembering across passes.
+_Avoid_: known issue, bug, workaround
+→ [Client limits](architecture/client-limits.md)
+
+**Tooltip trace**:
+The row-by-row record of every pass over a tooltip, kept in memory while `/wfj debug tooltip on` and shown by `/wfj debug tooltip` in a window whose text can be copied. Each entry names the pass's kind, the spell or item id, the owner, each row's kind, text and colour (a [[Secret value]] as `<secret>`), what was written and why; a hidden pass's entry adds every data row, the row map and the countdown's duration. It is the evidence a client-side fix is made from.
+_Avoid_: debug log, dump
+→ [Testing strategy](testing/strategy.md)
+
 ## Release
 
 **Release run**:

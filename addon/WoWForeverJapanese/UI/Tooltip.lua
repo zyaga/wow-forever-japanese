@@ -43,10 +43,10 @@
 --     Lua writer in the extract): peeled off a run line before the Collector reads it; for a trusted (ungated) item
 --     translation the trailer's Japanese is appended to the run's Japanese (the `affix` fill form). A gated entry
 --     keeps the whole line (its align gate sees all of it).
--- Hidden passes (in combat): an action button's tooltip arrives with every row's text secret; the spell or item id
--- stays readable, so the pass translates the client's own tooltip data for that id and writes it onto the rows by
--- position, the countdown by the client's own duration (see "Hidden passes" below). A buff tooltip in combat has no
--- readable handle and is left in English.
+-- Hidden passes (ADR-051, in combat): an action button's tooltip arrives with every row's text secret; the spell or
+-- item id stays readable, so the pass translates the client's own tooltip data for that id and writes it onto the
+-- rows by position, the countdown by the client's own duration (see "Hidden passes" below). A buff tooltip in combat
+-- has no readable handle and is left in English.
 local _, WFJ = ...
 local Tooltip = {}
 WFJ.Tooltip = Tooltip
@@ -425,10 +425,21 @@ local function hiddenDone(n, why)
   return n, why
 end
 
--- A row written on a hidden pass wears the bundled face from then on, as a rendered row does; the client's own
--- font never comes back on it, so the surface's font bookkeeping stays true to what the widget wears.
-local function dressHidden(_, fs)
+-- A row written on a hidden pass wears the bundled face; the frame remembers which rows (by widget, never by
+-- text) and gives them the client's face back when it hides, so no later English row keeps the bundled face.
+local hiddenRows = setmetatable({}, { __mode = "k" })
+
+local function dressHidden(frame, fs)
   WFJ.Font.bundle(fs)
+  hiddenRows[frame] = hiddenRows[frame] or {}
+  hiddenRows[frame][fs] = true
+end
+
+local function undressHidden(frame)
+  local list = hiddenRows[frame]
+  if not list then return end
+  for fs in pairs(list) do pcall(WFJ.Font.restore, fs) end
+  hiddenRows[frame] = nil
 end
 
 local function writeHidden(frame, fs, text)
@@ -522,7 +533,8 @@ local function frameDescriptionRow(frame)
   if type(frame.GetPrimaryTooltipInfo) ~= "function" then return nil end
   local ok, info = pcall(frame.GetPrimaryTooltipInfo, frame)
   if not ok or type(info) ~= "table" then return nil end
-  local kinds = WFJ.TooltipUnit.lineKinds(info.tooltipData)
+  local okK, kinds = pcall(WFJ.TooltipUnit.lineKinds, info.tooltipData)
+  if not okK or type(kinds) ~= "table" then return nil end
   for row, name in pairs(kinds) do
     if name == "SpellDescription" then return row end
   end
@@ -573,7 +585,7 @@ local function showHidden(frame, kind, id, lines)
   local rows, hiddenCount, hiddenRowsList = apiRows(kind, id)
   if not rows then
     how[#how + 1] = hiddenCount -- the reason
-    rows = {}
+    rows, hiddenCount = {}, 0
   else
     how[#how + 1] = ("data rows %d%s"):format(#rows,
       hiddenCount > 0 and (", hidden: " .. hiddenRowsList) or "")
@@ -595,8 +607,13 @@ local function showHidden(frame, kind, id, lines)
   local frameAnchor = kind == "spell.description" and frameDescriptionRow(frame) or nil
   local map, extra = {}, {}
   if #rows > 0 then
-    map, extra = placeRows(#lines, #rows, frameAnchor, first)
-    if not map then how[#how + 1] = extra; map, extra = {}, {} end
+    if kind == "item.description" and #lines ~= #rows then
+      how[#how + 1] = ("the frame has %d rows, the client's data %d, and an item's rows carry no kind to place by")
+        :format(#lines, #rows)
+    else
+      map, extra = placeRows(#lines, #rows, frameAnchor, first)
+      if not map then how[#how + 1] = extra; map, extra = {}, {} end
+    end
   end
   if Tooltip.trace then
     local pairsOut = {}
@@ -667,22 +684,21 @@ local function showHidden(frame, kind, id, lines)
       if type(ja) == "string" then writeHidden(frame, rights[fi].fs, ja); n = n + 1 end
     end
   end
-  -- a data row the client hides is its cooldown countdown (the one secret in a spell or item tooltip): that frame
-  -- row is written from the cooldown as well
-  for fi = 1, #lines do
-    local row = map[fi] and rows[map[fi]]
-    if row and row.hidden and fi ~= descRow then extra[#extra + 1] = fi end
+  -- one hidden data row is the cooldown countdown (the one secret in a spell or item tooltip): that frame row is
+  -- written from the cooldown as well; more than one means the data hides something else, which is left alone
+  if hiddenCount == 1 then
+    for fi = 2, #lines do
+      local row = map[fi] and rows[map[fi]]
+      if row and row.hidden and fi ~= descRow then extra[#extra + 1] = fi end
+    end
+  elseif hiddenCount > 1 then
+    how[#how + 1] = "hidden data rows left as the client wrote them"
   end
   table.sort(extra)
   for _, fi in ipairs(extra) do
     local ok, wrote, note = pcall(writeCountdown, frame, lines[fi].fs, kind, id)
     how[#how + 1] = ("countdown row %d: %s"):format(fi, ok and tostring(note) or ("refused: " .. tostring(wrote)))
     if ok and wrote then n = n + 1 end
-  end
-  if n > 0 then
-    inRefit[frame] = true
-    pcall(refitFor(frame))
-    inRefit[frame] = false
   end
   return hiddenDone(n, table.concat(how, "; "))
 end
@@ -776,6 +792,7 @@ function Tooltip.onCompareShow(frame)
 end
 
 function Tooltip.release(frame)
+  undressHidden(frame)
   return WFJ.Render.release(surfaceOf(frame))
 end
 
@@ -892,8 +909,8 @@ local function auraImpl(frame, method, unit, key, filter, clientLines)
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
-  local how = ("%s(%s, %s, %s) client rows=%s"):format(plain(method), plain(unit), plain(key), plain(filter),
-    plain(clientLines))
+  local how = Tooltip.trace and ("%s(%s, %s, %s) client rows=%s"):format(plain(method), plain(unit), plain(key),
+    plain(filter), plain(clientLines)) or ""
   -- hidden rows: which buff this is stays hidden too (its aura id, spell and icon are secret, and the aura APIs
   -- refuse a secret id from an addon), so nothing can be looked up; the client's English stays, and the frame's
   -- records are let go without reading the rows they held
