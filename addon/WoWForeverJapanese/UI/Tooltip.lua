@@ -256,6 +256,18 @@ local function showEquipLines(surface, id, lines, first, last, refit)
   return matched, n
 end
 
+-- A line text the client marks secret (Forever: FontString:GetText is SecretReturnsForAspect Text) may not be
+-- compared or matched by addon code (an action button's tooltip in combat holds only secret lines); `type()` of one
+-- is still "string", so it is asked about explicitly.
+local function anySecret(texts)
+  local isSecret = Compat.resolve("issecretvalue")
+  if type(isSecret) ~= "function" then return false end
+  for _, text in ipairs(texts) do
+    if isSecret(text) then return true end
+  end
+  return false
+end
+
 local function show(frame, area, kind, id, lines, first, last, name, runArgs)
   local surface = surfaceOf(frame)
   WFJ.Render.forget(surface)
@@ -314,6 +326,8 @@ function Tooltip.onItem(frame)
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
+  -- restricted: leave everything alone, forgetting included (forget compares the widget's text)
+  if anySecret(texts) then return 0 end
   local first, last = Tooltip.itemRun(texts)
   local runArgs = first and peelTrailer(texts, first, last) or nil
   -- The run is read before we write (the client rewrote every line); the Collector refuses our own text anyway.
@@ -336,6 +350,8 @@ function Tooltip.onSpell(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
   local description = Tooltip.spellDescription(id)
+  -- restricted: leave everything alone, forgetting included (forget compares the widget's text)
+  if anySecret(texts) or anySecret({ description }) then return 0 end
   -- Only the API's string becomes data: the positional fallback is a guess.
   if description and description ~= "" then WFJ.Collector.record("spell", id, "description", description) end
   local i = Tooltip.spellLine(texts, description)
@@ -478,17 +494,6 @@ end
 
 -- The aura handler: (frame, method, <that method's arguments>).
 Tooltip.auraErrors = 0
-
--- A line text the client marks secret (Forever: FontString:GetText is SecretReturnsForAspect Text) may not be
--- compared or matched by addon code; `type()` of one is still "string", so it is asked about explicitly.
-local function anySecret(texts)
-  local isSecret = Compat.resolve("issecretvalue")
-  if type(isSecret) ~= "function" then return false end
-  for _, text in ipairs(texts) do
-    if isSecret(text) then return true end
-  end
-  return false
-end
 
 local function auraImpl(frame, method, unit, key, filter, clientLines)
   if inRefit[frame] then return 0 end

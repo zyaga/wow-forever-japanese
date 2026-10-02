@@ -87,6 +87,21 @@ describe("UI/Tooltip hooks the client's data processor", function()
       assert.is_truthy(fs("GameTooltip", 4):GetText():find("シールド", 1, true))
     end)
 
+  it("leaves an item or spell tooltip whose lines are secret alone, with no error", function()
+    -- an action button's tooltip in combat: every line is a secret value, and comparing one raises in game
+    local WFJ, tt = setup()
+    WFJ.Tooltip.init()
+    local secret = {}
+    for _, l in ipairs(SHIELD_LINES) do secret[l] = true end
+    for _, l in ipairs(JERKY_LINES) do secret[l] = true end
+    _G.issecretvalue = function(v) return secret[v] == true end
+    assert.has_no.errors(function() Stub.setSpellTooltip(tt, 17, SHIELD_LINES) end)
+    assert.are.equal(SHIELD_LINES[4], fs("GameTooltip", 4):GetText())
+    assert.has_no.errors(function() Stub.setItemTooltip(tt, JERKY, JERKY_LINES) end)
+    assert.are.equal(JERKY_LINES[2], fs("GameTooltip", 2):GetText())
+    _G.issecretvalue = nil
+  end)
+
   it("ignores a tooltip whose data type is not the one the handler registered for", function()
     local WFJ, tt = setup()
     WFJ.Tooltip.init()
