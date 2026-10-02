@@ -218,6 +218,64 @@ describe("UI/Tooltip: hidden passes", function()
         assert.are.equal("Power Word: Shield ", text(1))
       end)
 
+    it("a data row with no left text and a secret right text is hidden, not read past the hole", function()
+      local WFJ, tt = setup()
+      tt.owner = "ActionButton1"
+      local rows = { { leftText = nil, rightText = "secret rank" }, SHIELD_ROWS[2], SHIELD_ROWS[3], SHIELD_ROWS[4],
+        SHIELD_ROWS[5] }
+      _G.C_TooltipInfo.GetSpellByID = function() return { id = 17, lines = rows } end
+      hide(HIDDEN, { COUNTDOWN_EN, "secret rank" })
+      assert.has_no.errors(function() spellPass(tt, HIDDEN, 5) end)
+      assert.are.equal("Rank 1 ", right(1)) -- left as the client wrote it
+      assert.are.equal(SHIELD_JA, text(5))
+      assert.is_truthy(WFJ.Tooltip.hidden.last:find("hidden: 1,4", 1, true))
+    end)
+
+    it("Alt, the switch or the area off gives every hidden row the client's text and face back at once", function()
+      local WFJ, tt = setup()
+      installFormatter()
+      tt.owner = "ActionButton1"
+      _G.C_Spell.GetSpellCooldownDuration = function() return duration(1.4) end
+      hide(HIDDEN, { COUNTDOWN_EN })
+      spellPass(tt, HIDDEN, 5)
+      assert.are.equal(SHIELD_JA, text(5))
+      assert.are.equal("残りクールダウン: 2秒", text(4))
+      Stub.keys.alt = true; WFJ.Modifier.refresh() -- no rebuild from the client yet
+      assert.are.equal(SHIELD_DESC .. " ", text(5))
+      assert.are.equal("Cooldown remaining: 2 sec ", text(4))
+      assert.are.equal("Rank 1 ", right(1))
+      assert.is_false(WFJ.Font.dressed(_G.GameTooltipTextLeft5))
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      spellPass(tt, HIDDEN, 5) -- the client's next rebuild: Japanese again
+      assert.are.equal(SHIELD_JA, text(5))
+      WFJ.State.setArea("spells", false)
+      assert.are.equal(SHIELD_DESC .. " ", text(5))
+      WFJ.State.setArea("spells", true)
+    end)
+
+    it("a cooldown that is not running, or two rows between the data and the description, writes no countdown",
+      function()
+        local WFJ, tt = setup()
+        installFormatter()
+        tt.owner = "ActionButton1"
+        local zero = duration(1.4)
+        function zero.IsZero() return true end
+        _G.C_Spell.GetSpellCooldownDuration = function() return zero end
+        hide(HIDDEN, { COUNTDOWN_EN })
+        spellPass(tt, HIDDEN, 5)
+        assert.are.equal("Cooldown remaining: 2 sec ", text(4))
+        assert.is_truthy(WFJ.Tooltip.hidden.last:find("countdown row 4: no cooldown running", 1, true))
+        -- the data has three rows before the description, the frame five: not the one countdown row
+        local fourRows = { SHIELD_ROWS[1], SHIELD_ROWS[2], SHIELD_ROWS[5] }
+        _G.C_TooltipInfo.GetSpellByID = function() return { id = 17, lines = fourRows } end
+        _G.C_Spell.GetSpellCooldownDuration = function() return duration(1.4) end
+        spellPass(tt, HIDDEN, 5)
+        assert.are.equal("Cooldown remaining: 2 sec ", text(4))
+        assert.are.equal("Instant cast ", text(3))
+        assert.are.equal(SHIELD_JA, text(5)) -- the description still comes through its typed row
+        assert.is_truthy(WFJ.Tooltip.hidden.last:find("2 frame rows between", 1, true))
+      end)
+
     it("the frame's typed description row places the rows when the client's data lacks the countdown", function()
       local WFJ, tt = setup()
       installFormatter()
@@ -293,6 +351,32 @@ describe("UI/Tooltip: hidden passes", function()
       assert.are.equal(SHIELD_JA, text(4))
       assert.are.equal("射程 40ヤード", text(2))
     end)
+  end)
+
+  describe("records let go on a hidden pass", function()
+    it("a record whose row the client rewrote with secret text is dropped without reading it, and its face given back",
+      function()
+        local WFJ, tt = setup()
+        tt.owner = "ActionButton1"
+        local readable = { "Power Word: Shield", "40 yd range", "Instant cast", SHIELD_DESC }
+        spellPass(tt, readable)
+        assert.are.equal(WFJ.Font.PATH, (_G.GameTooltipTextLeft4:GetFont())) -- the record applied the face
+        hide(HIDDEN, { COUNTDOWN_EN })
+        _G.C_TooltipInfo.GetSpellByID = nil
+        hide(HIDDEN, { COUNTDOWN_EN, SHIELD_DESC })
+        spellPass(tt, HIDDEN, 5) -- nothing can be written: the rows stay the client's, in the client's face
+        assert.are_not.equal(WFJ.Font.PATH, (_G.GameTooltipTextLeft4:GetFont()))
+        assert.are.equal(0, WFJ.SurfaceState.count("tooltip.GameTooltip"))
+        -- a record left behind on a widget the client rewrote with secret text: a refresh drops it without comparing
+        _G.issecretvalue = nil
+        spellPass(tt, readable)
+        assert.is_true(WFJ.SurfaceState.count("tooltip.GameTooltip") > 0)
+        hide(readable)
+        tt:writeLines(readable) -- the client's rewrite, every text secret, no post-call yet
+        assert.has_no.errors(function() WFJ.Render.refresh("tooltip.GameTooltip") end)
+        assert.are.equal(0, WFJ.SurfaceState.count("tooltip.GameTooltip"))
+        assert.are.equal(SHIELD_DESC, text(4)) -- left as the client wrote it
+      end)
   end)
 
   describe("fonts after a hidden pass", function()

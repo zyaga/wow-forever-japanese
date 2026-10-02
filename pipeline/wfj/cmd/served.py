@@ -8,7 +8,8 @@ quest is gone (a quest the server does not answer once may answer the next time)
 would stop its Japanese shipping. Every id Forever served is recorded in `pipeline/served/<kind>.tsv`
 (`id`, the first build that served it, the last build that did), and the step adds this build's ids to it. An
 id this build did not serve keeps its line and its old `last`: that list is a record for a later cleanup, and
-nothing acts on it. A line whose English came from Forever itself (`wdb@1.60…`, `db2@1.60…`) is kept as
+nothing acts on it. A line whose English came from Forever itself (a `wdb@` / `db2@` stamp of any Forever
+build) is kept as
 well. What the step still drops is English that only another client provides for an id Forever has never
 served (Classic Era's quests, items and spells under the union merge).
 
@@ -51,7 +52,14 @@ from wfj.paths import data_root
 KINDS = ("quest", "area", "objective", "item", "spell", "ui")
 # The kinds the served record keeps. area follows its quest and objective its quest's id, so they use quest's.
 RECORDED = ("quest", "item", "spell", "ui")
-FOREVER_SRC = ("wdb@1.60.", "db2@1.60.")
+# Classic Era's own line stays 1.15.x; every other client stamp is a Forever build, whatever its number
+ERA_SRC = ("wdb@1.15.", "db2@1.15.")
+
+
+def forever_src(src: str) -> bool:
+    """Whether an English line's source stamp is the Forever client's own (any build), as opposed to Classic
+    Era's or an outside source such as pfQuest."""
+    return src.startswith(("wdb@", "db2@")) and not src.startswith(ERA_SRC)
 
 
 def record_path(kind: str) -> Path:
@@ -219,7 +227,7 @@ def run_served(a: argparse.Namespace) -> int:
         # A collector dump is not replayed by `make import`: its English is never dropped here (it could not
         # be rebuilt), and `check` does not consult it (ADR-013)
         kept = [ln for ln in lines
-                if str(ln["src"]).startswith(("collector@", *FOREVER_SRC)) or keep[kind](ln)]
+                if str(ln["src"]).startswith("collector@") or forever_src(str(ln["src"])) or keep[kind](ln)]
         if lines and not kept:  # the wrong folder, a truncated table: never empty a kind
             raise ValueError(f"served: every {kind} line would be removed; check the target tables")
         result[kind], removed[kind] = kept, len(lines) - len(kept)

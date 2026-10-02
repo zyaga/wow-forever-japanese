@@ -272,6 +272,16 @@ local function anySecret(texts)
   return false
 end
 
+-- The same over loose values, which may hold a nil before a secret (a list would stop at the hole).
+local function anySecretOf(...)
+  local isSecret = Compat.resolve("issecretvalue")
+  if type(isSecret) ~= "function" then return false end
+  for i = 1, select("#", ...) do
+    if isSecret((select(i, ...))) then return true end
+  end
+  return false
+end
+
 local function ownerOf(frame)
   return type(frame.GetOwner) == "function" and frame:GetOwner() or nil
 end
@@ -283,7 +293,7 @@ local TRACE_MAX = 80
 
 local function plain(v)
   if v == nil then return "nil" end
-  if anySecret({ v }) then return "<secret>" end
+  if anySecretOf(v) then return "<secret>" end
   local t = tostring(v)
   return #t > 70 and (t:sub(1, 70) .. "...") or t
 end
@@ -295,10 +305,10 @@ local function describe(fs)
   local colour = "<colour secret or none>"
   if type(fs.GetTextColor) == "function" then
     local r, g, b = fs:GetTextColor()
-    if not anySecret({ r, g, b }) and type(r) == "number" then colour = ("%.2f,%.2f,%.2f"):format(r, g, b) end
+    if not anySecretOf(r, g, b) and type(r) == "number" then colour = ("%.2f,%.2f,%.2f"):format(r, g, b) end
   end
+  if anySecretOf(text) then return "<secret> " .. colour .. shown end
   if text == nil then return "nil" .. shown end
-  if anySecret({ text }) then return "<secret> " .. colour .. shown end
   if text == "" then return "\"\"" .. shown end
   return "\"" .. plain(text) .. "\" " .. colour .. shown
 end
@@ -425,26 +435,39 @@ local function hiddenDone(n, why)
   return n, why
 end
 
--- A row written on a hidden pass wears the bundled face; the frame remembers which rows (by widget, never by
--- text) and gives them the client's face back when it hides, so no later English row keeps the bundled face.
-local hiddenRows = setmetatable({}, { __mode = "k" })
+-- A row written on a hidden pass wears the bundled face, and the frame keeps the client's own text for it (a
+-- secret value, held but never read) so the row can be given back whole: on the frame's OnHide, and the moment the
+-- modifier is held, the switch is off or the area is off, before the client's next rebuild.
+local hiddenRows = setmetatable({}, { __mode = "k" }) -- [frame] = { [fs] = the client's text | true }
 
-local function dressHidden(frame, fs)
+local function dressHidden(frame, fs, clientText)
   WFJ.Font.bundle(fs)
   hiddenRows[frame] = hiddenRows[frame] or {}
-  hiddenRows[frame][fs] = true
+  if hiddenRows[frame][fs] == nil then hiddenRows[frame][fs] = clientText == nil and true or clientText end
 end
 
-local function undressHidden(frame)
+local function undressHidden(frame, writeBack)
   local list = hiddenRows[frame]
   if not list then return end
-  for fs in pairs(list) do pcall(WFJ.Font.restore, fs) end
+  for fs, clientText in pairs(list) do
+    if writeBack and clientText ~= true then pcall(fs.SetText, fs, clientText) end
+    pcall(WFJ.Font.restore, fs)
+  end
   hiddenRows[frame] = nil
 end
 
 local function writeHidden(frame, fs, text)
+  local clientText = fs:GetText()
   fs:SetText(text)
-  dressHidden(frame, fs)
+  dressHidden(frame, fs, clientText)
+end
+
+-- English wanted now: every frame's hidden rows get the client's text and face back.
+function Tooltip.restoreHidden()
+  local frames = {}
+  for frame in pairs(hiddenRows) do frames[#frames + 1] = frame end
+  for _, frame in ipairs(frames) do undressHidden(frame, true) end
+  return #frames
 end
 
 -- The spell or item on the owner's action slot, when the owner is an action button. GetActionInfo is not a guarded
@@ -453,9 +476,9 @@ local function actionIdOf(frame, want)
   local owner = ownerOf(frame)
   local slot = type(owner) == "table" and owner.action or nil
   local info = Compat.resolve("GetActionInfo")
-  if type(slot) ~= "number" or anySecret({ slot }) or type(info) ~= "function" then return nil end
+  if type(slot) ~= "number" or anySecretOf(slot) or type(info) ~= "function" then return nil end
   local ok, kind, id = pcall(info, slot)
-  if not ok or kind ~= want or type(id) ~= "number" or anySecret({ id }) then return nil end
+  if not ok or kind ~= want or type(id) ~= "number" or anySecretOf(id) then return nil end
   return id
 end
 
@@ -475,8 +498,8 @@ local function apiRows(kind, id)
   local rows, hidden, which = {}, 0, {}
   for i, line in ipairs(data.lines) do
     local left, right, kindOf = line.leftText, line.rightText, line.type
-    local row = { type = not anySecret({ kindOf }) and kindOf or nil }
-    if anySecret({ left, right }) then
+    local row = { type = not anySecretOf(kindOf) and kindOf or nil }
+    if anySecretOf(left, right) then
       row.hidden, row.left = true, ""
       hidden = hidden + 1
       which[#which + 1] = tostring(i)
@@ -501,6 +524,9 @@ local function placeRows(n, m, frameAnchor, dataAnchor)
   if k < 0 then
     return nil, ("the description is row %d on the frame but row %d in the data"):format(frameAnchor, dataAnchor)
   end
+  if k > 1 then
+    return nil, ("%d frame rows between the data's rows and the description: not the one countdown row"):format(k)
+  end
   for i = 1, n do
     if k > 0 and i >= dataAnchor and i < frameAnchor then
       extra[#extra + 1] = i
@@ -523,7 +549,7 @@ local function dataRun(kind, id, texts, rows)
     if want ~= nil and r.type == want then return i, i end
   end
   local description = Tooltip.spellDescription(id)
-  if anySecret({ description }) then return nil end
+  if anySecretOf(description) then return nil end
   local i = Tooltip.spellLine(texts, description)
   return i, i
 end
@@ -545,12 +571,16 @@ end
 -- left, which C_Item.GetItemCooldown gives unguarded [verified: itemdocumentation.lua:434–449]. → true | nil, why
 local function writeCountdown(frame, fs, kind, id)
   local wrote, why
+  local clientText = fs:GetText()
   if kind == "spell.description" then
     local durationOf = Compat.resolve("C_Spell.GetSpellCooldownDuration")
     if type(durationOf) ~= "function" then return nil, "no cooldown duration API" end
     local ok, duration = pcall(durationOf, id)
     if not ok then return nil, "cooldown duration refused: " .. tostring(duration) end
     if not duration then return nil, "no cooldown duration" end
+    -- a zero duration is no cooldown: the row is something else, left as the client wrote it
+    local okZ, zero = pcall(function() return duration:IsZero() end)
+    if okZ and zero == true then return nil, "no cooldown running" end
     wrote, why = WFJ.TimeLine.writeDuration(fs, duration)
     if Tooltip.trace then
       local hasSecret = type(duration) ~= "table" and type(duration.HasSecretValues) == "function"
@@ -562,12 +592,12 @@ local function writeCountdown(frame, fs, kind, id)
     local get, clock = Compat.resolve("C_Item.GetItemCooldown"), Compat.resolve("GetTime")
     if type(get) ~= "function" or type(clock) ~= "function" then return nil, "no item cooldown API" end
     local ok, start, duration = pcall(get, id)
-    if not ok or anySecret({ start, duration }) or type(start) ~= "number" or type(duration) ~= "number" then
+    if not ok or anySecretOf(start, duration) or type(start) ~= "number" or type(duration) ~= "number" then
       return nil, "item cooldown hidden"
     end
     wrote, why = WFJ.TimeLine.writeSeconds(fs, start + duration - clock())
   end
-  if wrote then dressHidden(frame, fs) end
+  if wrote then dressHidden(frame, fs, clientText) end
   return wrote, why
 end
 
@@ -578,9 +608,10 @@ local function showHidden(frame, kind, id, lines)
   -- the records of the last readable pass hold text the client has since rewritten; dropping them would read it
   WFJ.Render.discard(surface)
   if WFJ.State.enabled == false or WFJ.Modifier.isDown() or not WFJ.State.areaEnabled(area) then
+    undressHidden(frame, true)
     return hiddenDone(0, "English wanted")
   end
-  if type(id) ~= "number" or anySecret({ id }) then return hiddenDone(0, "the spell or item itself is hidden") end
+  if type(id) ~= "number" or anySecretOf(id) then return hiddenDone(0, "the spell or item itself is hidden") end
   local how = {}
   local rows, hiddenCount, hiddenRowsList = apiRows(kind, id)
   if not rows then
@@ -634,7 +665,7 @@ local function showHidden(frame, kind, id, lines)
     descEn, descSource = texts[first], "the client's data"
   elseif kind == "spell.description" then
     local d = Tooltip.spellDescription(id)
-    if type(d) == "string" and d ~= "" and not anySecret({ d }) then descEn, descSource = d, "the spell API" end
+    if type(d) == "string" and d ~= "" and not anySecretOf(d) then descEn, descSource = d, "the spell API" end
   end
   local runArgs = (kind == "item.description" and first and descEn) and peelTrailer(texts, first, last) or nil
   if runArgs then -- only an ungated translation takes the trailer's Japanese; a gated one keeps the whole line
@@ -712,8 +743,8 @@ function Tooltip.onItem(frame)
   for i, l in ipairs(lines) do texts[i] = l.text end
   -- hidden rows: nothing is read, matched or dropped (dropping a record reads its widget); the link is checked
   -- after the texts, since the client may hide it too, and then the owner's action slot names the item
-  if anySecret(texts) or anySecret({ link }) then
-    local id = (type(link) == "string" and not anySecret({ link })) and tonumber(link:match("item:(%d+)")) or nil
+  if anySecret(texts) or anySecretOf(link) then
+    local id = (type(link) == "string" and not anySecretOf(link)) and tonumber(link:match("item:(%d+)")) or nil
     id = id or actionIdOf(frame, "item")
     local n, why = showHidden(frame, "item.description", id, lines)
     traceFrame(frame, "secret item", id, lines, ("-> wrote %d (%s)"):format(n, why))
@@ -750,14 +781,14 @@ function Tooltip.onSpell(frame)
   -- hidden rows: nothing is read, matched or dropped (dropping a record reads its widget); the id is checked after
   -- the texts, since the client may hide it too, and then the owner's action slot names the spell
   if anySecret(texts) then
-    if type(id) ~= "number" or anySecret({ id }) then id = actionIdOf(frame, "spell") end
+    if type(id) ~= "number" or anySecretOf(id) then id = actionIdOf(frame, "spell") end
     local n, why = showHidden(frame, "spell.description", id, lines)
     traceFrame(frame, "secret spell", id, lines, ("-> wrote %d (%s)"):format(n, why))
     return n
   end
-  if type(id) ~= "number" or anySecret({ id }) or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
+  if type(id) ~= "number" or anySecretOf(id) or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
   local description = Tooltip.spellDescription(id)
-  if anySecret({ description }) then
+  if anySecretOf(description) then
     local n, why = showHidden(frame, "spell.description", id, lines)
     traceFrame(frame, "secret description", id, lines, ("-> wrote %d (%s)"):format(n, why))
     return n
@@ -1042,6 +1073,9 @@ function Tooltip.init()
         end
       end
     end
+  end
+  for _, event in ipairs({ "enabled", "area", "modifier" }) do
+    WFJ.State.on(event, function() pcall(Tooltip.restoreHidden) end)
   end
   -- Latched last, not first: if a registration or a hook raises, Main's guard records the failure and the
   -- surface stays retryable instead of being stuck permanently half-hooked (item hooked, spell not, no OnHide).

@@ -184,6 +184,11 @@ describe("the HUD's small bars and messages on Forever", function()
     assert.has_no.errors(function() b:UpdateDuration(en("MINUTE_ONELETTER_ABBR"), 4) end)
     assert.are.equal("4 m", b.Duration:GetText())
     assert.are.equal(records, WFJ.SurfaceState.count(WFJ.HudLabels.SURFACE))
+    -- Alt while the line is secret: the record is dropped without comparing the secret, no error
+    Stub.keys.alt = true
+    assert.has_no.errors(function() WFJ.Modifier.refresh() end)
+    assert.are.equal("4 m", b.Duration:GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
     -- readable again: Japanese again
     _G.issecretvalue = nil
     WFJ.HudLabels.init()

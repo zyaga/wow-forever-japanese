@@ -193,6 +193,16 @@ def test_collector_english_is_never_dropped(tmp_path, data):
     assert 26 not in _ids(data, "item")
 
 
+def test_english_from_any_forever_build_is_kept_whatever_its_number(tmp_path, data):
+    """A Forever stamp is any client stamp that is not Classic Era's 1.15 line: a later major version too."""
+    eng = Store(data, english=True)
+    eng.save("item", [*eng.load("item"), _en(4343, "name", "Next line", "db2@1.61.0.80001"),
+                      _en(4344, "name", "Era only", "db2@1.15.9.69722")])
+    assert _run(_client(tmp_path)) == 0
+    assert 4343 in _ids(data, "item")
+    assert 4344 not in _ids(data, "item")
+
+
 def test_a_ui_table_at_another_build_refuses(tmp_path, data, capsys):
     """ui English is kept by the stamp, so every table it comes from must carry the same one."""
     d = _client(tmp_path)
