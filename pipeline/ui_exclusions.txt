@@ -1863,3 +1863,8 @@ PROFESSIONS_NEW_CHOICE_AVAILABLE_SPECIALIZATION  # a micro-button alert of a ret
 UNITNAME_SUMMON_TITLE27  # no words of its own: only the owner's name ("%s")
 UNITNAME_SUMMON_TITLE30  # a name: "The Betrayer" (names stay English)
 UNITNAME_SUMMON_TITLE52  # no words of its own: only the owner's name ("%s")
+QUEST_ITEMS_NEEDED  # no words of its own: an item, object or creature name and its counts ("%2$d/%3$d %1$s", "%2$d x %1$s"); the name stays English
+QUEST_ITEMS_NEEDED_NOPROGRESS  # no words of its own: an item, object or creature name and its counts ("%2$d/%3$d %1$s", "%2$d x %1$s"); the name stays English
+QUEST_OBJECTS_FOUND  # no words of its own: an item, object or creature name and its counts ("%2$d/%3$d %1$s", "%2$d x %1$s"); the name stays English
+QUEST_OBJECTS_FOUND_NOPROGRESS  # no words of its own: an item, object or creature name and its counts ("%2$d/%3$d %1$s", "%2$d x %1$s"); the name stays English
+QUEST_MONSTERS_KILLED_NOPROGRESS  # no words of its own: an item, object or creature name and its counts ("%2$d/%3$d %1$s", "%2$d x %1$s"); the name stays English

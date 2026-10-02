@@ -85,6 +85,7 @@ WFJ.Data.add("ui", {
   ["TEXT_TO_SPEECH_PLAY_SAMPLE"] = { "サンプルを再生", 0x3519b2be, "." },
   ["TEXT_TO_SPEECH_TUTORIAL"] = { "クリックしてテキスト読み上げのオプションを開きます", 0x255a82fb, "." },
   ["TEXT_TO_SPEECH_VOICE_OPTIONS"] = { "音声オプション", 0xb4b08928, "." },
+  ["THREAT_TOOLTIP"] = { "脅威 %d%%", 0x5f8f239f, "." },
   ["TICKET_STATUS"] = { "未解決のチケットがあります。", 0x041f07db, "." },
   ["TICKET_STATUS_NMI"] = { "チケットに追加情報が必要です", 0xfad7b206, "." },
   ["TIMEMANAGER_24HOURMODE"] = { "24時間表示", 0xc6dd9e9f, "." },

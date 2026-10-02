@@ -16,8 +16,8 @@ describe("Lookup.get / Lookup.gossip on the shipped data", function()
   end)
 
   it("returns nil for an unshipped field, an unknown id, and an unknown kind", function()
-    -- never drafted: the English is a leftover test line ("$Tpunk;!  Kill Kobold Vermin, 2 of em. NEW TEST AGAIN")
-    assert.is_nil(L.get("quest.description", 1))
+    -- never drafted: the objective is a bare label ("Log"), which ships as the client's English
+    assert.is_nil(L.get("quest.objectives", 78307))
     assert.is_nil(L.get("quest.progress", 5)) -- no progress English for this quest, so no Japanese ever ships
     assert.is_nil(L.get("quest.title", 999999))
     assert.is_nil(L.get("unit", 1))

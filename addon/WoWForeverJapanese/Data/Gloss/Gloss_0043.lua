@@ -185,7 +185,7 @@ WFJ.Data.add("gloss", {
   [43182] = "侵入する\tしんにゅうする\tmoved into (invaded)",
   [43183] = "侵入する\tしんにゅうする\tventure (break in)",
   [43184] = "侵入する\tしんにゅうする\twill not let (them) trespass",
-  [43185] = "侵入口\tしんにゅうぐち\ta way in (entry point)",
+  [43185] = "侵入口\tしんにゅうぐち\tentry point, break-in route",
   [43186] = "侵入者\tしんにゅうしゃ\tinterloper",
   [43187] = "侵入者\tしんにゅうしゃ\tinterlopers",
   [43188] = "侵入者\tしんにゅうしゃ\tinterlopers (intruders)",

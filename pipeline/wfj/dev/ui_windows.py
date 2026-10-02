@@ -1299,6 +1299,10 @@ DYNAMIC: dict[str, list[str]] = {
         r"CORPSE_TOOLTIP",
         # the owner line under a pet, minion or guardian ("Bob's Pet", the UnitOwner line kind)
         r"UNITNAME_TITLE_[A-Z]+|UNITNAME_SUMMON_TITLE\d+",
+        # lines the compiled client writes into a unit tooltip and no Lua names: threat, the corpse and skull-level
+        # lines, the already-gathered lines, and the item / object / no-progress objective forms
+        r"THREAT_TOOLTIP|CORPSE|UNIT_(TYPE_)?LETHAL_LEVEL(_DEAD)?_TEMPLATE|UNIT_ALREADY_SKINNED_[A-Z]+|UNIT_CAPTURABLE",
+        r"QUEST_(ITEMS_NEEDED|OBJECTS_FOUND|MONSTERS_KILLED)(_NOPROGRESS)?",
     ],
     # the buff frame's durations are SecondsToTimeAbbrev's `*_ONELETTER_ABBR`
     # (blizzard_sharedxml/timeutil.lua:463–480; blizzard_buffframe/buffframe.lua:427, 1203, 1306); the

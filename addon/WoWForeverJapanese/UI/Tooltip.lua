@@ -503,17 +503,24 @@ local function reapply(frame, kind, id, lines)
     local durationOf = Compat.resolve("C_UnitAuras.GetAuraDuration")
     for i = 1, snap.n do
       if WFJ.TimeLine.family(snap.english[i]) == "aura" and lines[i] then
-        local why
-        local okD, duration = pcall(durationOf, snap.auraUnit, snap.auraInstance)
+        local why, ok, wrote, w
+        local okD, duration = false, nil
+        if snap.auraInstance ~= nil then okD, duration = pcall(durationOf, snap.auraUnit, snap.auraInstance) end
+        local clock = Compat.resolve("GetTime")
         if okD and duration then
-          local ok, wrote, w = pcall(WFJ.TimeLine.writeDuration, lines[i].fs, "aura", duration)
+          ok, wrote, w = pcall(WFJ.TimeLine.writeDuration, lines[i].fs, "aura", duration)
+        elseif type(snap.expires) == "number" and snap.expires > 0 and type(clock) == "function" then
+          -- a buff gained hidden: its end time from the cast the buff bar's model followed
+          ok, wrote, w = pcall(WFJ.TimeLine.writeSeconds, lines[i].fs, "aura", snap.expires - clock())
+        end
+        if ok == nil then
+          why = "no aura duration"
+        else
           why = ok and w or ("refused: " .. tostring(wrote))
           if ok and wrote then
             WFJ.Font.bundle(lines[i].fs)
             n = n + 1
           end
-        else
-          why = "no aura duration"
         end
         how = how .. "; time row " .. i .. ": " .. tostring(why)
       end
@@ -885,6 +892,8 @@ local function keepAura(k, snap)
   if not auraMemory[k] then auraMemoryCount = auraMemoryCount + 1 end
   if auraMemoryCount > AURA_MEMORY_MAX then auraMemory, auraMemoryCount = {}, 1 end
   auraMemory[k] = snap
+  -- also by spell, for a buff the client hides entirely (UI/BuffIdentity names it by the buff bar's position)
+  if type(snap.id) == "number" then auraMemory["spell#" .. snap.id] = snap end
 end
 
 -- A readable aura's time line teaches UI/TimeLine the client's rule (seconds left from the aura's expiration time) and
@@ -941,7 +950,9 @@ local function learnAura(unit, instance)
   local at = Tooltip.auraLine(texts)
   for i, en in ipairs(texts) do
     if i == at then
-      local ja = WFJ.Render.preview("tooltip.aura", en, nil, "spells", "spell.aura", aura.spellId)
+      -- the gate checks the live values against the line, as the readable pass does (showRun)
+      local ja = WFJ.Render.preview("tooltip.aura", en, nil, "spells", "spell.aura", aura.spellId,
+        { lines = { en }, nameScope = texts[1] })
       if type(ja) == "string" and ja ~= en then snap[i] = ja end
     elseif i > 1 then
       snap[i] = ui(en)
@@ -1024,6 +1035,20 @@ local function auraImpl(frame, method, unit, key, filter, clientLines)
       kept.key = k
       rendered[frame] = kept
       how = how .. "; from the aura's memory" .. (kept.learnt and " (learnt)" or "")
+    elseif not kept and unit == "player" then
+      -- hidden even which buff it is: the buff bar's model names it by the hovered button's position
+      local spell, instance, expires
+      if WFJ.BuffIdentity then spell, instance, expires = WFJ.BuffIdentity.forTooltip(frame) end
+      kept = spell and auraMemory["spell#" .. spell]
+      if kept then
+        kept.owner, kept.key = ownerOf(frame), "spell#" .. spell
+        kept.auraUnit, kept.auraInstance, kept.expires = "player", instance, expires
+        rendered[frame] = kept
+        how = how .. "; the buff bar's model: spell " .. spell
+      else
+        local why = spell and ("spell " .. spell .. " never seen readable") or instance
+        how = how .. "; aura not known (" .. tostring(why) .. ")"
+      end
     elseif not kept then
       how = how .. "; aura not known" .. (k and "" or " (no instance id)")
     end
@@ -1127,6 +1152,7 @@ function Tooltip.init()
       else pcall(traceFrame, frame, "aura", nil, Tooltip.lines(frame), "-> left, getter not known") end
     end)
     auraHooks = #Tooltip.AURA_ORDER
+    if WFJ.BuffIdentity then pcall(WFJ.BuffIdentity.init) end
     -- the trace only: which GameTooltip call opened a buff tooltip, so a buff the post-call never sees still shows
     local tooltip = Compat.get(DECLARE, "GameTooltip")
     if type(tooltip) == "table" then

@@ -13,7 +13,7 @@ BUILD = "1.15.9.69722"
 # db2@<forever build>; one Forever does not have keeps its Vanilla stamp (the union merge), and that stamp is
 # what `wfj stats --unseen-since` reads to find what the newer client has never had. Both are pinned builds:
 # the assertion is that no line carries an unpinned or unknown source, not that there is only ever one.
-FOREVER_BUILD = "1.60.1.70124"
+FOREVER_BUILD = "1.60.1.70170"
 ENGLISH_SOURCES = {f"wago@{BUILD}", f"db2@{FOREVER_BUILD}"}
 # UI words that are also the exact name of some item or spell (e.g. an item called "Cloth", the spell "Shield").
 # They are allowed because the addon never walks the line that reads as the item / spell name and labels are matched
@@ -21,6 +21,7 @@ ENGLISH_SOURCES = {f"wago@{BUILD}", f"db2@{FOREVER_BUILD}"}
 KNOWN_NAME_COLLISIONS = {
     "Cloth", "Complete Quest", "Fire", "Fishing Pole", "Frost", "Leather", "Libram", "Mace", "Mail", "Shadow",
     "Shield", "Shirt", "Speed", "Sword", "Thrown", "Totem",
+    "Learning",  # the group finder playstyle, shown only through its own key list (UI/GroupFinder.lua)
     # Stat / resistance labels, the pet command "Attack", the pet tab "Pet", "Reset", "Inactive",
     # "Send Mail". Every one shows on a named window label, a key-restricted widget (`only`) or a help tooltip, none
     # of which is ever an item or spell name line (help tooltips never walk item / spell tooltips; spell names are
@@ -105,19 +106,29 @@ DRAFT_SOURCES = {"draft-ui", "draft-ui-level1", "draft-ui-hud", "draft-ui-enchan
                  "draft-ui-leftovers",  # six labels rejected as not Japanese (PvP, 2v2, 3v3, Battle Tag, SSAO)
                  "draft-ui-tutorials",  # the tutorial popup and the tutorial pointer arrows
                  "draft-ui-review",  # lines the interface text review corrected against their windows
-                 "draft-ui-review-role"}  # the "role" lines brought to the settled term
+                 "draft-ui-review-role",  # the "role" lines brought to the settled term
+                 "draft-repull70170-ui-sg12",  # the keys new on 1.60.1.70170 and the lines it reworded
+                 # the last interface lines, the tooltip owner / socket / trade lines and the unit lines the
+                 # tooltip line kinds surfaced
+                 "draft-repull70170-lastui-sg12", "draft-repull70170-kinds-sg12", "draft-repull70170-unitlines-sg12"}
 
 
 def test_every_key_has_one_machine_line_and_its_english(root):
     english = {ln["id"]: ln for ln in Store(root / "data", english=True).load("ui")}
     keys = wago.expand_keys(_keys(root), {k: ln["en"] for k, ln in english.items()})
     lines = {ln["id"]: ln for ln in Store(root / "data").load("ui")}
-    assert set(keys) == set(english) and set(keys) <= set(lines)
-    # A key Forever does not serve left the list and lost its English (the served step, ADR-034); its
-    # machine Japanese stays in data/ as `no_english_id` and ships again if the key is listed again
+    assert set(keys) <= set(english) and set(keys) <= set(lines)
+    # A key that left the list keeps its English when an earlier Forever build served it (ADR-050: the served
+    # record); its machine Japanese stays in data/. Any other unlisted key lost its English (the served step,
+    # ADR-034) and its line is `no_english_id`.
+    record = root / "pipeline" / "served" / "ui.tsv"
+    served = {r.split("\t")[0] for r in record.read_text(encoding="utf-8").splitlines()
+              if r and not r.startswith("#")} if record.is_file() else set()
+    assert set(english) - set(keys) <= served
     for key in set(lines) - set(keys):
         assert lines[key]["provenance"]["class"] == "machine", key
-        assert lines[key]["status"] == "rejected" and "no_english_id" in lines[key]["reasons"], key
+        if key not in english:
+            assert lines[key]["status"] == "rejected" and "no_english_id" in lines[key]["reasons"], key
     batch_models: dict[str, str] = {}
     for key in keys:
         prov = lines[key]["provenance"]

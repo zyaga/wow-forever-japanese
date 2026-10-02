@@ -248,8 +248,74 @@ local function debugTooltip(arg)
   return showTrace()
 end
 
+-- /wfj debug buffs: what the client lets the addon read about the player's buffs right now (in combat too): each shown
+-- buff button's position and whether its aura id is hidden, whether the aura slots are hidden, each buff's spell
+-- secrecy, and the last spell the player cast as the cast event gave it. Facts for telling which buff a hidden
+-- buff tooltip shows; nothing is written.
+local lastCast
+function Slash.watchCasts()
+  local create = WFJ.Compat.resolve("CreateFrame")
+  if type(create) ~= "function" or Slash.castWatcher then return end
+  local f = create("Frame")
+  f:RegisterUnitEvent("UNIT_SPELLCAST_SUCCEEDED", "player")
+  f:SetScript("OnEvent", function(_, _, _, _, spellID) lastCast = spellID end)
+  Slash.castWatcher = f
+end
+
+local function debugBuffs()
+  local isSecret = WFJ.Compat.resolve("issecretvalue") or function() return false end
+  local function show(v)
+    if v == nil then return "nil" end
+    if isSecret(v) then return "<secret>" end
+    return tostring(v)
+  end
+  local inCombat = WFJ.Compat.resolve("InCombatLockdown")
+  say("buffs: in combat %s", show(type(inCombat) == "function" and inCombat()))
+  local frame = WFJ.Compat.resolve("BuffFrame")
+  local tooltip = WFJ.Compat.resolve("GameTooltip")
+  local buttons = type(frame) == "table" and frame.auraFrames or nil
+  if type(buttons) ~= "table" then say("buffs: no BuffFrame.auraFrames") else
+    for i, b in ipairs(buttons) do
+      if type(b) == "table" and b.IsShown and b:IsShown() then
+        local info = type(b.buttonInfo) == "table" and b.buttonInfo or {}
+        local owned = type(tooltip) == "table" and tooltip.IsOwned and tooltip:IsOwned(b)
+        local icon = b.Icon or b.icon
+        local texture = type(icon) == "table" and icon.GetTexture and icon:GetTexture() or nil
+        local fileID = type(icon) == "table" and icon.GetTextureFileID and icon:GetTextureFileID() or nil
+        say("buffs: button %d index %s auraInstanceID %s hovered %s icon %s / %s info.texture %s", i, show(info.index),
+          show(info.auraInstanceID), show(owned), show(texture), show(fileID), show(info.texture))
+      end
+    end
+  end
+  local slots = WFJ.Compat.resolve("C_UnitAuras.GetAuraSlots")
+  if type(slots) == "function" then
+    local ok, token, first = pcall(slots, "player", "HELPFUL", 40)
+    say("buffs: GetAuraSlots ok %s token %s first slot %s", show(ok), show(token), show(first))
+  end
+  local byIndex = WFJ.Compat.resolve("C_UnitAuras.GetAuraDataByIndex")
+  local secrecy = WFJ.Compat.resolve("C_Secrets.GetSpellAuraSecrecy")
+  if type(byIndex) == "function" then
+    for i = 1, 40 do
+      local ok, aura = pcall(byIndex, "player", i, "HELPFUL")
+      if not ok or type(aura) ~= "table" then break end
+      local id = aura.spellId
+      local level = "?"
+      if type(secrecy) == "function" and not isSecret(id) and id then
+        local okS, v = pcall(secrecy, id)
+        level = okS and show(v) or "error"
+      end
+      say("buffs: aura %d spellId %s name %s instance %s secrecy %s", i, show(id), show(aura.name),
+        show(aura.auraInstanceID), level)
+    end
+  end
+  local spellTexture = WFJ.Compat.resolve("C_Spell.GetSpellTexture")
+  local castIcon = (type(spellTexture) == "function" and lastCast and not isSecret(lastCast)) and spellTexture(lastCast)
+  say("buffs: last cast spellID %s, its icon %s", show(lastCast), show(castIcon))
+end
+
 function Slash.debug(sub, arg)
   if sub == "fonts" then return debugFonts() end
+  if sub == "buffs" then return debugBuffs() end
   if sub == "tooltip" then return debugTooltip(arg) end
   if sub == "hash" then return debugHash() end
   if sub == "quest" or sub == "item" or sub == "spell" then return debugRow(sub, arg) end
@@ -304,6 +370,7 @@ function Slash.debug(sub, arg)
     for i, text in ipairs(mm.english or {}) do say("  remembered line %d: %s", i, text) end
   end
   for _, line in ipairs(WFJ.TimeLine.status()) do say("tooltip time, %s", line) end
+  if WFJ.BuffIdentity then say("%s", WFJ.BuffIdentity.status()) end
   local kb = WFJ.Compat.memoryKB()
   say("memory: %s", kb and ("%.1f MB"):format(kb / 1024) or "n/a")
   local c = WFJ.Data.counts
@@ -466,4 +533,5 @@ function Slash.register()
   SLASH_WFJ1 = "/wfj"
   SLASH_WFJ2 = "/wowforeverjapanese"
   SlashCmdList["WFJ"] = function(msg) Slash.handle(msg) end
+  pcall(Slash.watchCasts) -- /wfj debug buffs reports the last cast as the client gave it
 end

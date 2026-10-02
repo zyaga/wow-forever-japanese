@@ -82,6 +82,7 @@
 {"id": "TEXT_TO_SPEECH_PLAY_SAMPLE", "field": "text", "en": "Play Sample", "hash": "3519b2be50dd4aa0", "src": "db2@1.60.1.70170"}
 {"id": "TEXT_TO_SPEECH_TUTORIAL", "field": "text", "en": "Click to open Text To Speech options", "hash": "255a82fbf98606bf", "src": "db2@1.60.1.70170"}
 {"id": "TEXT_TO_SPEECH_VOICE_OPTIONS", "field": "text", "en": "Voice Options", "hash": "b4b08928c19667e2", "src": "db2@1.60.1.70170"}
+{"id": "THREAT_TOOLTIP", "field": "text", "en": "%d%% Threat", "hash": "5f8f239f7dea7270", "src": "db2@1.60.1.70170"}
 {"id": "TICKET_STATUS", "field": "text", "en": "You have an open ticket.", "hash": "041f07db3f1e9768", "src": "db2@1.60.1.70170"}
 {"id": "TICKET_STATUS_NMI", "field": "text", "en": "Your ticket requires additional information", "hash": "fad7b20640aa47c0", "src": "db2@1.60.1.70170"}
 {"id": "TIMEMANAGER_24HOURMODE", "field": "text", "en": "24 Hour Mode", "hash": "c6dd9e9f6850e33f", "src": "db2@1.60.1.70170"}

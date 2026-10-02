@@ -7,7 +7,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
   "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
-  "Core/Collector.lua", "UI/Font.lua", "UI/Render.lua", "UI/Tooltip.lua" }
+  "Core/Collector.lua", "UI/Font.lua", "UI/Render.lua", "UI/TimeLine.lua", "UI/Tooltip.lua",
+  "UI/TooltipUnit.lua" }
 
 -- Rejuvenation-like: the aura line carries the live values the Japanese fills
 local AURA_EN = "Heals 12 damage every 3 seconds."
@@ -67,16 +68,29 @@ local CALLS = {
 describe("UI/Tooltip: buff and debuff tooltips", function()
   after_each(function() Stub.keys.alt = false end)
 
-  it("one UnitAura post-call, which also sees every rebuild; no method is hooked", function()
-    local WFJ = setup()
-    WFJ.Tooltip.init()
-    local _, _, _, _, auras = WFJ.Tooltip.resolved()
-    assert.are.equal(6, auras)
-    assert.are.equal(1, #Stub.tooltipPostCalls[7])
-    for _, c in ipairs(CALLS) do assert.is_nil(Stub.hooks["GameTooltip:" .. c[1]], c[1]) end
-    WFJ.Tooltip.init()
-    assert.are.equal(1, #Stub.tooltipPostCalls[7])
-  end)
+  it("one UnitAura post-call, which also sees every rebuild; a method hook only notes the call in the trace",
+    function()
+      local WFJ, tt = setup()
+      WFJ.Tooltip.init()
+      local _, _, _, _, auras = WFJ.Tooltip.resolved()
+      assert.are.equal(6, auras)
+      assert.are.equal(1, #Stub.tooltipPostCalls[7])
+      WFJ.Tooltip.init()
+      assert.are.equal(1, #Stub.tooltipPostCalls[7])
+      -- the hook writes nothing: with the trace off the call leaves no note, with it on one line names the call
+      aura("player:1:HELPFUL", 774, LINES)
+      tt:SetUnitAura("player", 1, "HELPFUL")
+      assert.are.equal(AURA_SHOWN, text(2))
+      WFJ.Tooltip.trace = {}
+      tt:SetUnitAura("player", 1, "HELPFUL")
+      assert.are.equal(AURA_SHOWN, text(2))
+      local called = 0
+      for _, line in ipairs(WFJ.Tooltip.trace) do
+        if line:find("SetUnitAura(player, 1, HELPFUL) called", 1, true) then called = called + 1 end
+      end
+      assert.are.equal(1, called)
+      WFJ.Tooltip.trace = nil
+    end)
 
   it("a Forever rebuild rewrites the lines without calling a method, and the Japanese comes back", function()
     local WFJ, tt = setup()
@@ -214,10 +228,11 @@ describe("UI/Tooltip: buff and debuff tooltips", function()
     aura("player:1:HELPFUL", 774, LINES)
     tt:SetUnitAura("player", 1, "HELPFUL")
     assert.are.equal(AURA_SHOWN, text(2))
-    -- restricted: the client's text is secret; nothing is compared, nothing forgotten, nothing raised
+    -- restricted: the client's text is secret; nothing is compared or raised, and the last readable pass's
+    -- Japanese is written back (the same tooltip, the same aura), as a spell's secret pass does
     _G.issecretvalue = function(v) return v == "Heals 13 damage every 3 seconds." end
     assert.has_no.errors(function() tt:rebuild({ "Rejuvenation", "Heals 13 damage every 3 seconds.", "" }) end)
-    assert.are.equal("Heals 13 damage every 3 seconds.", text(2))
+    assert.are.equal(AURA_SHOWN, text(2))
     _G.issecretvalue = nil
     -- an error inside the handler: counted, the tooltip left as the client wrote it
     WFJ.UIIndex = { match = function() error("boom") end }

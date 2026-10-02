@@ -26,7 +26,8 @@ local TAIL = {
   "UI/Raid.lua", "UI/MicroMenu.lua", "UI/MenusUnit.lua", "UI/Gamepad.lua", "UI/Menus.lua",
   "UI/MenusTags.lua", "UI/MenusUntagged.lua", "UI/HelpTips.lua",
   -- Gamepad loads before MenusUntagged, which reads its menu keys at load
-  "UI/QuestFrame.lua", "UI/QuestMap.lua", "UI/Tooltip.lua", "UI/TooltipUnit.lua", "UI/GameMenu.lua",
+  "UI/QuestFrame.lua", "UI/QuestMap.lua", "UI/TimeLine.lua", "UI/BuffIdentity.lua", "UI/Tooltip.lua",
+  "UI/TooltipUnit.lua", "UI/GameMenu.lua",
   "UI/Gossip.lua",
   "UI/ItemText.lua", -- every other Forever window (ADR-030)
   "UI/Professions.lua", "UI/Crafting.lua", "UI/CustomerOrders.lua", "UI/QuestTimer.lua", "UI/Trade.lua",
@@ -224,22 +225,25 @@ describe("addon loads in TOC order and answers /wfj version", function()
     Stub.fontSetFails = true -- a fresh launch: the bundled font file is not loaded yet
     Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
     assert.is_true(ns.Render.pendingFonts() > 0 or ns.Font.retryPending() > 0)
+    -- the tooltip surface starts its own ticker at load (learning the client's time rule); the font's comes after
+    local before = #ticks
     Stub.fireAll("PLAYER_ENTERING_WORLD", true, false)
-    assert.are.equal(1, #ticks)
+    assert.are.equal(before + 1, #ticks)
+    local font = ticks[before + 1]
     local probe = ns.Font.startProbe() -- started by PLAYER_ENTERING_WORLD: one visible character asking for our font
     assert.is_table(probe)
     assert.are.equal("あ", probe:GetText())
-    ticks[1].fn(ticks[1].t)
-    assert.is_false(ticks[1].t.cancelled) -- still refused
+    font.fn(font.t)
+    assert.is_false(font.t.cancelled) -- still refused
     Stub.fontSetFails = false
-    ticks[1].fn(ticks[1].t)
-    assert.is_true(ticks[1].t.cancelled)
+    font.fn(font.t)
+    assert.is_true(font.t.cancelled)
     assert.are.same({ ns.Font.PATH, 8, "" }, { probe:GetFont() })
     assert.is_false(ns.Font.stopProbe()) -- already stopped when nothing was pending
     assert.are.equal(0, ns.Render.pendingFonts())
     assert.are.equal(0, ns.Font.retryPending())
     Stub.fireAll("PLAYER_ENTERING_WORLD", false, false)
-    assert.are.equal(1, #ticks) -- nothing pending: no second ticker
+    assert.are.equal(before + 1, #ticks) -- nothing pending: no second font ticker
     _G.C_Timer = nil
   end)
 

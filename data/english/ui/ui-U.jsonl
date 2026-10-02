@@ -74,11 +74,18 @@
 {"id": "UNITNAME_TITLE_OPPONENT", "field": "text", "en": "%s's Opponent", "hash": "7c315c04b65ba0b0", "src": "db2@1.60.1.70170"}
 {"id": "UNITNAME_TITLE_PET", "field": "text", "en": "%s's Pet", "hash": "a7dd81a1e4c34ae5", "src": "db2@1.60.1.70170"}
 {"id": "UNITNAME_TITLE_SQUIRE", "field": "text", "en": "%s's Squire", "hash": "405cd6b97bcaa508", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_ALREADY_SKINNED_BOLTS", "field": "text", "en": "Already salvaged for parts", "hash": "2e5fd9e2089da4a7", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_ALREADY_SKINNED_HERB", "field": "text", "en": "Already gathered herbs", "hash": "06aac52eba632940", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_ALREADY_SKINNED_LEATHER", "field": "text", "en": "Already skinned", "hash": "1c939d34b0cb272a", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_ALREADY_SKINNED_ROCK", "field": "text", "en": "Already mined", "hash": "23ce4b1772f45ee0", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_CAPTURABLE", "field": "text", "en": "Capturable", "hash": "81c9a51dfde78898", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_COLORS", "field": "text", "en": "Unit Colors:", "hash": "9b5a8600078b8dee", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_INSTANCE", "field": "text", "en": "Instance Options", "hash": "c8cfcbdd53e93a2a", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_INTERACT", "field": "text", "en": "Interact", "hash": "a8627b8a9ff4d0a8", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_LOOT", "field": "text", "en": "Loot Options", "hash": "beb718cd0e258470", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_OTHER", "field": "text", "en": "Other Options", "hash": "25a8d189cf23f6e3", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_LETHAL_LEVEL_DEAD_TEMPLATE", "field": "text", "en": "Level ?? Corpse", "hash": "6b49f16f969780a5", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_LETHAL_LEVEL_TEMPLATE", "field": "text", "en": "Level ??", "hash": "aa9868094e7a901d", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_LEVEL_DEAD_TEMPLATE", "field": "text", "en": "Level %d Corpse", "hash": "86782f24e419003b", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_LEVEL_TEMPLATE", "field": "text", "en": "Level %d", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_NAMEPLATES_AUTOMODE", "field": "text", "en": "Always Show Nameplates", "hash": "64e083c80c2999ce", "src": "db2@1.60.1.70170"}
@@ -217,6 +224,7 @@
 {"id": "UNIT_SKINNABLE_HERB", "field": "text", "en": "Requires Herbalism", "hash": "45361f4cdc8d180c", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_SKINNABLE_LEATHER", "field": "text", "en": "Skinnable", "hash": "c8ada3d3a63398ee", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_SKINNABLE_ROCK", "field": "text", "en": "Requires Mining", "hash": "7934e4cfe13304ab", "src": "db2@1.60.1.70170"}
+{"id": "UNIT_TYPE_LETHAL_LEVEL_TEMPLATE", "field": "text", "en": "Level ?? %s", "hash": "f33e72b9d7887f6a", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_TYPE_LEVEL_FACTION_TEMPLATE", "field": "text", "en": "Level %d %s (%s)", "hash": "e781bb465d870bbc", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_TYPE_LEVEL_TEMPLATE", "field": "text", "en": "Level %d %s", "hash": "2fcf25e1a3bdd25f", "src": "db2@1.60.1.70170"}
 {"id": "UNIT_TYPE_PLUS_LEVEL_TEMPLATE", "field": "text", "en": "Level %d Elite %s", "hash": "6bf9a577627e66a4", "src": "db2@1.60.1.70170"}

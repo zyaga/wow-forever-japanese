@@ -961,6 +961,7 @@ WFJ.Data.add("ui", {
   ["COOLDOWN_VIEWER_TRINKET_NO_AURA_TOOLTIP_LABEL"] = { "追跡できるバフなし | トリンケットのバフ %d", 0x938237e5, "." },
   ["COPY_CHARACTER_NAME"] = { "キャラクター名をコピー", 0x0c29b377, "." },
   ["COPY_FILTER"] = { "フィルターをコピー", 0xc6123d91, "." },
+  ["CORPSE"] = { "死体", 0x7f75f651, "." },
   ["CORPSE_RED"] = { "|cffff2020死体|r", 0x7f75f651, "." },
   ["CORPSE_TOOLTIP"] = { "%sの死体", 0x296adee7, "." },
   ["CORRUPTED_ITEM_LOOT_LABEL"] = { "腐敗したアイテム！", 0xbee509f2, "." },

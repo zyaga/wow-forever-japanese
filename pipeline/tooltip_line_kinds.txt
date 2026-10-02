@@ -1,59 +1,62 @@
 # What the addon does with each kind of tooltip line the client tags (Enum.TooltipDataLineType;
 # the list is pipeline/tooltip_line_kinds_inventory.txt, from the client's own API documentation).
-# `<Kind>  # <decision>`, one per kind. A decision starts with one of:
-#   translated: <module and how>     the addon writes this line in Japanese
-#   english: <reason>                the line stays as the client wrote it, and why
-# tests/python/test_tooltip_line_kinds.py fails when an inventoried kind has no decision or a decision names
-# a kind the client does not have. Re-check every decision when a new kind appears on a client build.
-None  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry; a line another addon adds, or the beta bug-report line ("Press F6 to submit an issue", Blizzard_PTRFeedback, `## OnlyBetaAndPTR: 1`, gone at launch), is left as written
+# `<Kind>  # <decision>`, one per kind. A decision is one of:
+#   translated: <UI/Module>; keys: <KEY> <KEY> ...; <why>   the module writes the line from these dictionary keys
+#   translated: <UI/Module>; data: <what>; <why>            the module writes it from the data records (quest, spell,
+#                                                          item, a client-table family), not from fixed keys
+#   english: <reason>                                      the line stays as the client wrote it, and why
+# tests/python/test_tooltip_line_kinds.py fails when an inventoried kind has no decision, a decision names a kind the
+# client does not have, a named key is not a shipped dictionary key, or a UI/TooltipUnit key is not in its key list.
+# Re-check every decision when a new kind appears on a client build.
+None  # translated: UI/Tooltip; data: the structural pass (any UI dictionary entry) on item, spell and aura tooltips; on a unit tooltip UI/TooltipUnit's keys only. A line another addon adds, and the beta bug-report line ("Press F6 to submit an issue", Blizzard_PTRFeedback, `## OnlyBetaAndPTR: 1`, gone at launch), stay as written
 Blank  # english: no text
 UnitName  # english: the unit's name (names stay English)
-GemSocket  # translated: UI/Tooltip's structural pass (EMPTY_SOCKET_*, a UI dictionary family)
+GemSocket  # translated: UI/Tooltip; keys: EMPTY_SOCKET_RED EMPTY_SOCKET_BLUE EMPTY_SOCKET_YELLOW EMPTY_SOCKET_META EMPTY_SOCKET_PRISMATIC; the structural pass
 AzeriteEssenceSlot  # english: not on Forever: the tables carry no Heart of Azeroth (pipeline/forever_addon_dispositions.txt, blizzard_azeriteessenceui)
 AzeriteEssencePower  # english: not on Forever: the tables carry no Heart of Azeroth (pipeline/forever_addon_dispositions.txt, blizzard_azeriteessenceui)
-LearnableSpell  # translated: UI/Tooltip's structural pass when its English is a UI dictionary entry; the spell's name in it stays English
-UnitThreat  # translated: UI/TooltipUnit, when its English is one of the unit keys; its icon is the client's
-QuestObjective  # translated: UI/TooltipUnit (QUEST_MONSTERS_KILLED, QUEST_PLAYERS_KILLED: the creature's name stays English)
+LearnableSpell  # translated: UI/Tooltip; data: the structural pass (any UI dictionary entry); the spell's name in it stays English [unverified in game: which string the client sends]
+UnitThreat  # translated: UI/TooltipUnit; keys: THREAT_TOOLTIP; "%d%% Threat", its icon is the client's
+QuestObjective  # translated: UI/TooltipUnit; keys: QUEST_MONSTERS_KILLED QUEST_PLAYERS_KILLED QUEST_FACTION_NEEDED QUEST_FACTION_NEEDED_NOPROGRESS QUEST_PLAYERS_KILLED_NOPROGRESS; the creature, faction and item names stay English; the item / object count forms have no words (pipeline/ui_exclusions.txt)
 AzeriteItemPowerDescription  # english: not on Forever: no Azerite item in the tables (pipeline/forever_addon_dispositions.txt, blizzard_azeriteui)
 RuneforgeLegendaryPowerDescription  # english: not on Forever: no Shadowlands item in the tables (pipeline/forever_addon_dispositions.txt, blizzard_runeforgeui)
-SellPrice  # translated: UI/Tooltip's structural pass (SELL_PRICE)
+SellPrice  # translated: UI/Tooltip; keys: SELL_PRICE; the structural pass
 ProfessionCraftingQuality  # english: not on Forever: the Dragonflight crafting-quality system (pipeline/ui_exclusions.txt, PROFESSIONS_CRAFTING_*)
 SpellName  # english: the spell's name (names stay English)
-CurrencyTotal  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry
-ItemEnchantmentPermanent  # translated: UI/Tooltip's structural pass (the SpellItemEnchantment family: "+3 Fire Spell Damage")
-UnitOwner  # translated: UI/TooltipUnit (UNITNAME_TITLE_*, UNITNAME_SUMMON_TITLE*: the owner's name stays English)
-QuestTitle  # translated: UI/TooltipUnit: the quest found from the hash of the title the line shows; a title shared by quests whose Japanese differs is left as written
+CurrencyTotal  # english: a currency tooltip (TooltipDataType.Currency) is not hooked yet; tracked with the other unhooked tooltip types (pipeline/tooltip_data_types.txt)
+ItemEnchantmentPermanent  # translated: UI/Tooltip; data: the SpellItemEnchantment family ("+3 Fire Spell Damage"), the structural pass
+UnitOwner  # translated: UI/TooltipUnit; keys: UNITNAME_TITLE_PET UNITNAME_TITLE_MINION UNITNAME_TITLE_GUARDIAN UNITNAME_TITLE_CHARM UNITNAME_TITLE_CREATION UNITNAME_TITLE_COMPANION; the owner's name stays English (and every UNITNAME_SUMMON_TITLE<n> in the dictionary)
+QuestTitle  # translated: UI/TooltipUnit; data: the quest found from the hash of the title the line shows (the quest log decides between quests sharing a title); a title still ambiguous is left as written
 QuestPlayer  # english: a party member's name (names stay English)
 NestedBlock  # english: no text of its own: a container the client fills with other lines, each tagged with its own kind
-ItemBinding  # translated: UI/Tooltip's structural pass (ITEM_BIND_*, ITEM_SOULBOUND)
-EquipSlot  # translated: UI/Tooltip's structural pass (INVTYPE_* left, the item subclass right)
+ItemBinding  # translated: UI/Tooltip; keys: ITEM_BIND_ON_EQUIP ITEM_BIND_ON_PICKUP ITEM_BIND_ON_USE ITEM_BIND_QUEST ITEM_SOULBOUND; the structural pass
+EquipSlot  # translated: UI/Tooltip; keys: INVTYPE_CHEST INVTYPE_HEAD; the structural pass (every INVTYPE_* left, the item subclass right)
 ItemName  # english: the item's name (names stay English)
 Separator  # english: no text
 ToyName  # english: the toy's name (names stay English)
-ToyText  # translated: UI/Tooltip, as the item's description run or a structural line [unverified in game: whether Forever's toy tooltips tag lines this way]
-ToyEffect  # translated: UI/Tooltip, as the item's description run (the "Use:" line) [unverified in game]
-ToyDuration  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry [unverified in game]
-ToyDescription  # translated: UI/Tooltip, as the item's description run [unverified in game]
-ToySource  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry; a vendor or zone name in it stays English [unverified in game]
-GemSocketEnchantment  # translated: UI/Tooltip's structural pass (the SpellItemEnchantment family)
-ItemLevel  # translated: UI/Tooltip's structural pass (ITEM_LEVEL)
+ToyText  # english: a toy box tooltip (TooltipDataType.Toy) is not hooked yet; tracked with the other unhooked tooltip types (pipeline/tooltip_data_types.txt)
+ToyEffect  # english: a toy box tooltip (TooltipDataType.Toy) is not hooked yet (pipeline/tooltip_data_types.txt)
+ToyDuration  # english: a toy box tooltip (TooltipDataType.Toy) is not hooked yet (pipeline/tooltip_data_types.txt)
+ToyDescription  # english: a toy box tooltip (TooltipDataType.Toy) is not hooked yet (pipeline/tooltip_data_types.txt)
+ToySource  # english: a toy box tooltip (TooltipDataType.Toy) is not hooked yet (pipeline/tooltip_data_types.txt)
+GemSocketEnchantment  # translated: UI/Tooltip; data: the SpellItemEnchantment family, the structural pass
+ItemLevel  # translated: UI/Tooltip; keys: ITEM_LEVEL; the structural pass
 ItemUpgradeLevel  # english: not on Forever: item upgrades are a retail-era system (pipeline/ui_exclusions.txt, ITEM_UPGRADE_*)
-SpellPassive  # translated: UI/Tooltip's structural pass (SPELL_PASSIVE)
-SpellDescription  # translated: UI/Tooltip's spell description record (the line equal to the spell's description)
-ItemQuality  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry
-TradeTimeRemaining  # translated: UI/Tooltip's structural pass (BIND_TRADE_TIME_REMAINING)
-FlavorText  # translated: UI/Tooltip's item description run (the quoted flavour text)
-ItemSpellTriggerLearn  # translated: UI/Tooltip's item description run
+SpellPassive  # translated: UI/Tooltip; keys: SPELL_PASSIVE; the structural pass
+SpellDescription  # translated: UI/Tooltip; data: the spell description record (the line equal to the spell's description)
+ItemQuality  # translated: UI/Tooltip; data: the structural pass (any UI dictionary entry) [unverified in game: which string the client sends]
+TradeTimeRemaining  # translated: UI/Tooltip; keys: BIND_TRADE_TIME_REMAINING; the structural pass
+FlavorText  # translated: UI/Tooltip; data: the item description run (the quoted flavour text)
+ItemSpellTriggerLearn  # translated: UI/Tooltip; data: the item description run
 LearnTransmogSet  # english: not on Forever: transmog sets are a retail-era system (pipeline/ui_exclusions.txt, transmog / cosmetics)
 LearnTransmogIllusion  # english: not on Forever: transmog illusions are a retail-era system (pipeline/ui_exclusions.txt, transmog / cosmetics)
-ErrorLine  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry
-DisabledLine  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry
-UsageRequirement  # translated: UI/Tooltip's structural pass (ITEM_MIN_LEVEL, ITEM_REQ_*: a class, race or skill name in it stays English)
-ItemSpellTriggerOnUse  # translated: UI/Tooltip's item description run ("Use:")
-ItemSpellTriggerOnEquip  # translated: UI/Tooltip's item description run, or its Equip lines as UI records ("Equip:")
-ItemSpellTriggerOnProc  # translated: UI/Tooltip's item description run ("Chance on hit:")
-UnitLevel  # translated: UI/TooltipUnit (TOOLTIP_UNIT_LEVEL*, UNIT_*LEVEL_TEMPLATE: a race or class name in it stays English)
-UnitType  # translated: UI/TooltipUnit (the CreatureType family: "Beast")
-UnitDead  # translated: UI/TooltipUnit (CORPSE_TOOLTIP, UNIT_LEVEL_DEAD_TEMPLATE)
-UnitCriteriaProgress  # translated: UI/TooltipUnit, when its English is one of the unit keys [unverified in game: which strings Forever sends]
+ErrorLine  # translated: UI/Tooltip; data: the structural pass (any UI dictionary entry: "Skinnable", the requirement lines in red) [unverified in game: every string the client sends]
+DisabledLine  # translated: UI/Tooltip; data: the structural pass (any UI dictionary entry) [unverified in game: which strings the client sends]
+UsageRequirement  # translated: UI/Tooltip; keys: ITEM_MIN_LEVEL ITEM_REQ_SKILL ITEM_CLASSES_ALLOWED ITEM_RACES_ALLOWED; the structural pass (a class, race or skill name in it stays English)
+ItemSpellTriggerOnUse  # translated: UI/Tooltip; data: the item description run ("Use:")
+ItemSpellTriggerOnEquip  # translated: UI/Tooltip; data: the item description run, or its Equip lines as UI records ("Equip:")
+ItemSpellTriggerOnProc  # translated: UI/Tooltip; data: the item description run ("Chance on hit:")
+UnitLevel  # translated: UI/TooltipUnit; keys: TOOLTIP_UNIT_LEVEL TOOLTIP_UNIT_LEVEL_TYPE UNIT_LEVEL_TEMPLATE UNIT_TYPE_LEVEL_TEMPLATE UNIT_TYPE_LEVEL_FACTION_TEMPLATE UNIT_LETHAL_LEVEL_TEMPLATE UNIT_TYPE_LETHAL_LEVEL_TEMPLATE ELITE PVP_ENABLED; a race or class name in it stays English
+UnitType  # translated: UI/TooltipUnit; data: the CreatureType family ("Beast")
+UnitDead  # translated: UI/TooltipUnit; keys: CORPSE CORPSE_TOOLTIP DEAD UNIT_LEVEL_DEAD_TEMPLATE UNIT_LETHAL_LEVEL_DEAD_TEMPLATE
+UnitCriteriaProgress  # english: scenario / criteria progress lines (UNIT_SCENARIO_PROGRESS_*, UNIT_CRITERIA_PROGRESS_*) are not in the dictionary yet [unverified in game: whether Forever sends them]
 AuraCaster  # english: the caster's name (names stay English)

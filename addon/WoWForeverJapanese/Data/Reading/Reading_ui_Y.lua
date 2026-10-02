@@ -2,17 +2,17 @@
 local _, WFJ = ...
 WFJ.Data.add("reading", {
   ["ui:YELL"] = { text = "叫び=さけび=54231" },
-  ["ui:YELLOW_GEM"] = { text = "黄=き=133509" },
+  ["ui:YELLOW_GEM"] = { text = "黄=き=133511" },
   ["ui:YELL_MESSAGE"] = { text = "叫び=さけび=54231" },
   ["ui:YES"] = { text = "はい=はい=23664" },
   ["ui:YOUR_CLASS_MAY_NOT_PERFORM_ROLE"] = { text = "あなた=あなた=501 クラス=クラス=31572 この=この=8533 ロール=ロール=34395 担当できません=たんとうできません=77911" },
   ["ui:YOUR_ROLE"] = { text = "あなた=あなた=501 ロール=ロール=34395" },
   ["ui:YOU_COLLECTED_LABEL"] = { text = "収集=しゅうしゅう=52568" },
-  ["ui:YOU_EARNED_LABEL"] = { text = "獲得=かくとく=96806" },
+  ["ui:YOU_EARNED_LABEL"] = { text = "獲得=かくとく=96808" },
   ["ui:YOU_LOOT_MONEY"] = { text = "拾いました=ひろいました=78145" },
-  ["ui:YOU_LOOT_MONEY_GUILD"] = { text = "拾いました=ひろいました=78145 ギルドバンク=ギルドバンク=31523 預け入れ=あずけいれ=131157" },
+  ["ui:YOU_LOOT_MONEY_GUILD"] = { text = "拾いました=ひろいました=78145 ギルドバンク=ギルドバンク=31523 預け入れ=あずけいれ=131159" },
   ["ui:YOU_LOOT_MONEY_MOD"] = { text = "拾いました=ひろいました=78145" },
   ["ui:YOU_RECEIVED"] = { text = "入手=にゅうしゅ=46069" },
   ["ui:YOU_RECEIVED_LABEL"] = { text = "入手しました=にゅうしゅしました=46090" },
-  ["ui:YOU_WON_LABEL"] = { text = "獲得=かくとく=96817" },
+  ["ui:YOU_WON_LABEL"] = { text = "獲得=かくとく=96819" },
 })

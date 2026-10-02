@@ -5,7 +5,7 @@
 -- GlobalStrings it fills (TOOLTIP_UNIT_LEVEL*, UNIT_*LEVEL_TEMPLATE, UNIT_SKINNABLE_*, CORPSE_TOOLTIP) [unverified:
 -- which of them this build's C code sends]. A creature's tooltip on Forever also shows its type on a line of its own
 -- ("Beast", the CreatureType row) and, for a quest it counts for, the kill count (QUEST_MONSTERS_KILLED,
--- "0/4 Young Thistle Boar slain": the creature's name stays English) [verified in game: the maintainer's
+-- "0/4 Young Thistle Boar slain": the creature's name stays English) [verified in game: a
 -- screenshot on 1.60.1.70170].
 -- This surface keeps its OWN records, rather than borrowing UI/HelpTooltip's walk:
 -- TooltipDataHandlerMixin:InternalProcessInfo runs the post-calls and then calls `self:Show()` on the next line
@@ -31,7 +31,14 @@ local Compat = WFJ.Compat
 TooltipUnit.KEYS = { "TOOLTIP_UNIT_LEVEL", "TOOLTIP_UNIT_LEVEL_TYPE", "TOOLTIP_UNIT_LEVEL_RACE",
   "TOOLTIP_UNIT_LEVEL_RACE_TYPE", "UNIT_LEVEL_TEMPLATE", "UNIT_TYPE_LEVEL_TEMPLATE", "UNIT_PLUS_LEVEL_TEMPLATE",
   "UNIT_TYPE_PLUS_LEVEL_TEMPLATE", "UNIT_LEVEL_DEAD_TEMPLATE", "UNIT_SKINNABLE_LEATHER", "UNIT_SKINNABLE_HERB",
-  "UNIT_SKINNABLE_ROCK", "UNIT_SKINNABLE_BOLTS", "CORPSE_TOOLTIP", "QUEST_MONSTERS_KILLED", "QUEST_PLAYERS_KILLED" }
+  "UNIT_SKINNABLE_ROCK", "UNIT_SKINNABLE_BOLTS", "CORPSE_TOOLTIP", "QUEST_MONSTERS_KILLED", "QUEST_PLAYERS_KILLED",
+  -- written by the compiled client, named by no Lua: threat, the corpse and skull-level lines, already gathered, and
+  -- the faction / player objective forms; the reputation, race and creature names in them stay as written
+  "THREAT_TOOLTIP", "CORPSE", "DEAD", "PVP_ENABLED", "ELITE", "UNIT_LETHAL_LEVEL_TEMPLATE",
+  "UNIT_TYPE_LETHAL_LEVEL_TEMPLATE", "UNIT_LETHAL_LEVEL_DEAD_TEMPLATE", "UNIT_TYPE_LEVEL_FACTION_TEMPLATE",
+  "UNIT_ALREADY_SKINNED_LEATHER", "UNIT_ALREADY_SKINNED_HERB", "UNIT_ALREADY_SKINNED_ROCK",
+  "UNIT_ALREADY_SKINNED_BOLTS", "UNIT_CAPTURABLE", "QUEST_FACTION_NEEDED", "QUEST_FACTION_NEEDED_NOPROGRESS",
+  "QUEST_PLAYERS_KILLED_NOPROGRESS" }
 -- the owner line under a pet, minion or guardian ("Bob's Pet", the UnitOwner line kind): the owner's name stays English
 for _, k in ipairs({ "UNITNAME_TITLE_CHARM", "UNITNAME_TITLE_COMPANION", "UNITNAME_TITLE_CREATION",
   "UNITNAME_TITLE_GUARDIAN", "UNITNAME_TITLE_MINION", "UNITNAME_TITLE_OPPONENT", "UNITNAME_TITLE_PET",
@@ -45,7 +52,8 @@ for _, i in ipairs({ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 
 end
 -- a creature: the keys, and its type on a line of its own (built per call: the family's keys come from the index)
 local function creatureOnly() return WFJ.Labels.familiesWith(TooltipUnit.KEYS, "CreatureType") end
-local CREATURE_TEMPLATES = { UNIT_TYPE_LEVEL_TEMPLATE = true, UNIT_TYPE_PLUS_LEVEL_TEMPLATE = true }
+local CREATURE_TEMPLATES = { UNIT_TYPE_LEVEL_TEMPLATE = true, UNIT_TYPE_PLUS_LEVEL_TEMPLATE = true,
+  UNIT_TYPE_LETHAL_LEVEL_TEMPLATE = true }
 local PLAYER_KEYS = {}
 for _, k in ipairs(TooltipUnit.KEYS) do
   if not CREATURE_TEMPLATES[k] then PLAYER_KEYS[#PLAYER_KEYS + 1] = k end

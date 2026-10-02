@@ -7,7 +7,7 @@ local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Align.lua", "Core/Sta
   "Core/Modifier.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/SurfaceState.lua", "Core/Normalize.lua",
   "Core/Hash.lua", "Core/Collector.lua", "UI/Font.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
-  "UI/Tooltip.lua", "UI/QuestFrame.lua", "UI/GameMenu.lua" }
+  "UI/TimeLine.lua", "UI/Tooltip.lua", "UI/QuestFrame.lua", "UI/GameMenu.lua" }
 
 -- key → { English the client holds, Japanese }
 local UI = {

@@ -26,6 +26,7 @@ describe("item tooltip carry-overs", function()
     Stub.installQuestAPI(); Stub.installTooltipAPI()
     local files = {}
     for i, f in ipairs(H.UI_FILES) do files[i] = f end
+    files[#files + 1] = "UI/TimeLine.lua"
     files[#files + 1] = "UI/Tooltip.lua"
     WFJ = H.loadChunks(files)
     local rows = H.uiSetup(WFJ, UI)

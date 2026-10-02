@@ -13,7 +13,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
   "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
   "Core/Collector.lua", "UI/Font.lua", "UI/Render.lua",
-  "UI/Tooltip.lua" }
+  "UI/TimeLine.lua", "UI/Tooltip.lua", "UI/TooltipUnit.lua" }
 
 local DATA = {
   -- keyed by the kind the surface asks for; field-qualified because spell has two fields
