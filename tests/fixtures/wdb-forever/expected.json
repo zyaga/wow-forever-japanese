@@ -11,7 +11,12 @@
    "description": "Ok, here's my mug.  Wait!  Let me finish what's in it first... there we go.",
    "area": "",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 5679,
@@ -20,7 +25,12 @@
    "description": "",
    "area": "",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 6843,
@@ -29,7 +39,12 @@
    "description": "",
    "area": "",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 76160,
@@ -38,7 +53,12 @@
    "description": "Maybe your skills lie with poisons, not disguises. The Harpies to the north nest in a tree which produces a resin of potent toxicity. Gather the fallen cones around the nests, then crush them into a salve. When applied to a blade this salve will sear your opponent's wounds into their flesh and turn their blood to salt.",
    "area": "",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 84399,
@@ -47,7 +67,12 @@
    "description": "",
    "area": "",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 91900,
@@ -56,7 +81,12 @@
    "description": "",
    "area": "",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 92596,
@@ -76,7 +106,12 @@
      0,
      "The aura of arcane energy that surrounds you is strong, even for a mage such as yourself. \r\n\r\nCome, let us sit and speak some on the nature of the arcane and the plight of our homeland."
     ]
-   ]
+   ],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 92709,
@@ -90,7 +125,12 @@
      "Listen to Elaadrin"
     ]
    ],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 93165,
@@ -99,7 +139,12 @@
    "description": "The Al'Aketh have visited great tragedy upon our enclave, and blood must be repaid with blood.\r\n\r\nI have an offer for you, stranger. Should you find conflict with these accursed cultists, bring me the ears of those you kill. I will reward you for each that you return with in both coin and, in time, access to the Nightclaw's secrets should you prove yourself to be a true friend.",
    "area": "",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 94978,
@@ -114,7 +159,12 @@
      0,
      ""
     ]
-   ]
+   ],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 95771,
@@ -123,7 +173,12 @@
    "description": "",
    "area": "Scout through the Fargodeep Mine",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   }
  ]
 }
