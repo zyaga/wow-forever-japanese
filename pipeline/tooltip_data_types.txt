@@ -10,26 +10,26 @@ Spell  # hooked: UI/Tooltip; the description and structural lines, the cooldown 
 Unit  # hooked: UI/TooltipUnit; level, creature type, objective, owner, threat and corpse lines, the quest title
 Corpse  # hooked: UI/TooltipUnit; a corpse's lines, as a unit's
 Object  # hooked: UI/TooltipUnit; a game object's lines that are unit keys or a quest title [unverified in game: the requirement lines an object shows]
-Currency  # not hooked: a currency tooltip (camelot blizzard_tokenui.lua:170, 760) has no module yet: its total and description stay English
+Currency  # hooked: UI/TooltipData; every line after the name through the dictionary (the description, totals)
 BattlePet  # not hooked: no GameTooltip setter for it in the Forever UI; pet battles are not on Forever
 UnitAura  # hooked: UI/Tooltip; the aura text, structural lines and the time left
 AzeriteEssence  # not hooked: not on Forever (no Heart of Azeroth in the tables)
-CompanionPet  # not hooked: the companion journal's tooltip (collections classic/blizzard_petcollection.lua:423) has no module yet
-Mount  # not hooked: the mount journal's tooltip (blizzard_mountcollection.lua:653, 1028) has no module yet
+CompanionPet  # hooked: UI/TooltipData; every line after the name through the dictionary
+Mount  # hooked: UI/TooltipData; every line after the name through the dictionary
 PetAction  # not hooked: the pet bar's tooltip is translated through UI/MicroMenu's help-tooltip pass (PET_KEYS), not a post-call
 Achievement  # not hooked: no achievement tooltip setter in the Forever load set [unverified in game: achievement links]
 EnhancedConduit  # not hooked: not on Forever (Shadowlands conduits)
-EquipmentSet  # not hooked: the equipment manager's tooltip (camelot paperdollframe.lua:2691) has no module yet
-InstanceLock  # not hooked: the raid info lock tooltip (raidframe.lua:237) has no module yet
+EquipmentSet  # hooked: UI/TooltipData; every line after the set's name through the dictionary
+InstanceLock  # hooked: UI/TooltipData; every line after the instance name through the dictionary (boss names match no key)
 PvPBrawl  # not hooked: not on Forever (Blizzard_PVPUI is not in the camelot load set)
 RecipeRankInfo  # not hooked: recipe ranks are a retail-era system [unverified in game]
-Totem  # not hooked: the totem bar's tooltip (totemframe.lua:73, 79) has no module yet
-Toy  # not hooked: the toy box tooltip (blizzard_toybox.lua:224) has no module yet
+Totem  # hooked: UI/TooltipData; every line after the totem's name through the dictionary
+Toy  # not hooked: not on Forever (the Collections window shows no Toy Box tab in game)
 CorruptionCleanser  # not hooked: not on Forever (BfA corruption)
 MinimapMouseover  # hooked: UI/TooltipUnit; the minimap's quest block (title and objectives), names kept
 Flyout  # not hooked: no Lua names it [unverified in game: action-bar flyouts]
 Quest  # not hooked: a quest link's tooltip [unverified in game: whether quest links use this type]
-QuestPartyProgress  # not hooked: party members' quest progress (questobjectivetracker.lua:149) has no module yet
+QuestPartyProgress  # hooked: UI/TooltipData; every line after the first through the dictionary (objective templates)
 Macro  # not hooked: no GameTooltip:SetMacro in the Forever UI [unverified in game]
 Debug  # not hooked: developer only
 Outfit  # not hooked: a retail-era transmog outfit tooltip [unverified in game]

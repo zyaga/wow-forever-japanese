@@ -98,7 +98,7 @@ def test_every_tooltip_type_has_one_decision_that_matches_the_hooks():
     assert sorted(types - decisions.keys()) == [], "a tooltip type with no decision"
     assert sorted(decisions.keys() - types) == [], "a decision for a type the client does not have"
     hooked: dict[str, set[str]] = {}
-    for module in ("Tooltip", "TooltipUnit"):
+    for module in ("Tooltip", "TooltipUnit", "TooltipData"):
         text = (ROOT / f"addon/WoWForeverJapanese/UI/{module}.lua").read_text(encoding="utf-8")
         names = set(re.findall(r"AddTooltipPostCall\(types\.(\w+)", text))
         for listed in re.findall(r'for _, name in ipairs\(\{([^}]*)\}\) do\s+if types\[name\]', text):

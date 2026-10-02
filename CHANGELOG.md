@@ -18,6 +18,7 @@ an old setting stops working). A release moves those lines under its version num
 - A creature's tooltip shows its type on its own line and, for a quest it counts toward, the kill count in Japanese; the quest's title under a creature or on the minimap's quest block is Japanese too.
 - The owner line under a pet, minion or guardian ("Bob's Pet") is Japanese.
 - Chat uses the addon's Japanese font for every line and the input box, so Japanese you type and Japanese other players write are visible.
+- Currency, mount, companion, equipment set, raid lock, totem and party quest-progress tooltips show their interface lines in Japanese; the name on the first line stays English.
 
 ### Changed
 - The game text is read from Forever build 1.60.1.70170.

@@ -1702,6 +1702,7 @@ UI\Labels.lua
 UI\HtmlText.lua
 UI\LoadOnDemand.lua
 UI\HelpTooltip.lua
+UI\TooltipData.lua
 UI\SettingsKeys.lua
 UI\LabelTree.lua
 UI\TooltipLines.lua

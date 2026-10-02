@@ -28,7 +28,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
         "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
         "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
-        "UI/HelpTooltip.lua",
+        "UI/HelpTooltip.lua", "UI/TooltipData.lua",
         # ADR-030: shared helpers
         "UI/SettingsKeys.lua", "UI/LabelTree.lua", "UI/TooltipLines.lua",
         "UI/Character.lua", "UI/Reputation.lua", "UI/Skills.lua",

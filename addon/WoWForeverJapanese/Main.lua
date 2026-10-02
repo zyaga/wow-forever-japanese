@@ -186,6 +186,7 @@ function WFJ.OnLoad()
   -- load-on-demand Blizzard addons (their ADDON_LOADED is forwarded below; ADR-016). Before the surfaces.
   step("buttontext", WFJ.ButtonText.init)
   step("helptooltip", WFJ.HelpTooltip.init)
+  step("tooltipdata", WFJ.TooltipData.init) -- tooltip-data kinds with no module of their own
   step("loadondemand", function()
     WFJ.LoadOnDemand.init(function(name)
       return type(C_AddOns) == "table" and type(C_AddOns.IsAddOnLoaded) == "function" and C_AddOns.IsAddOnLoaded(name)
