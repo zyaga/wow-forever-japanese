@@ -391,6 +391,10 @@ the table above, and every table has 0 valid hotfix rows: nothing differs, and e
 
 `make forever-table-counts` with the 70124 hotfix cache: every count identical to the 70009 run (Covenant 2, RenownRewards 22, BattlePetSpecies 115, the rest 0), 0 hotfix rows on any of them. Every `no-content` disposition still holds.
 
+#### Re-run on build 1.60.1.70170 (2026-10-02)
+
+The UI extract (fresh community listfile, `--list` of every `interface/addons` path) gave 4,412 files, 121 of them changed from 70124. The windows that changed in a way the addon follows: the Legacy window (its "Available points" text now refreshes through a currency callback), the stable (the diet tooltip owner is `PetStableFrame.diet`, out of the model scene; a gamepad slot-cost line), the character window (a 4th sidebar tab, Titles, with a title pane; the pet tab is now 4th), the group finder (a playstyle label on a result row and a playstyle dropdown on the listing), and the quest window (the classic letter-by-letter fade of the quest description). The achievement window's new camelot file only sets `ACHIEVEMENTUI_MAX_SUMMARY_ACHIEVEMENTS = 0` and needs nothing.
+
 ### 6. `unreachable`: no entry point in the camelot load set (9)
 
 | addon | evidence |

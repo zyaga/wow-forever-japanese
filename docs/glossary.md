@@ -118,7 +118,7 @@ _Avoid_: file id, fdid (in prose)
 → [ADR-021](adr/021-client-tables-from-the-local-archive.md)
 
 **Layout hash**:
-The fingerprint in a [[DB2 table]]'s header of its field layout. A table's column map is pinned **per build**, to each layout hash it has been verified on (Classic Era 1.15.9.69722 and every Forever build since 1.60.1.69913, 1.60.1.70124 included), each pin carrying the citation that verified it; a hash nobody has verified stops that table, naming every layout that has been, so a moved field never becomes wrong English. Re-verifying is `wfj.dev.verify_columns` against a second installed client, not a hash bump.
+The fingerprint in a [[DB2 table]]'s header of its field layout. A table's column map is pinned **per build**, to each layout hash it has been verified on (Classic Era 1.15.9.69722 and every Forever build since 1.60.1.69913, 1.60.1.70124 and 1.60.1.70170 included), each pin carrying the citation that verified it; a hash nobody has verified stops that table, naming every layout that has been, so a moved field never becomes wrong English. Re-verifying is `wfj.dev.verify_columns` against a second installed client, not a hash bump.
 _Avoid_: schema version, table hash (a different header value, which names the table)
 → [ADR-021](adr/021-client-tables-from-the-local-archive.md) · [ADR-027](adr/027-column-maps-verified-per-build.md)
 
