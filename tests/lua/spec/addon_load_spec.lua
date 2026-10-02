@@ -12,7 +12,8 @@ local TAIL = {
   "Core/Collector.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", -- the fix reports
   "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
-  "UI/ButtonText.lua", "UI/Labels.lua", "UI/LoadOnDemand.lua", "UI/HelpTooltip.lua",
+  "UI/ButtonText.lua", "UI/Labels.lua", "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
+  "UI/HelpTooltip.lua",
   -- shared helpers (ADR-030)
   "UI/SettingsKeys.lua", "UI/LabelTree.lua", "UI/TooltipLines.lua",
   -- the always-visible windows

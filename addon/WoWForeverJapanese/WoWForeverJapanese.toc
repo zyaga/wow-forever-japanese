@@ -1699,6 +1699,7 @@ UI\Readings.lua
 UI\Render.lua
 UI\ButtonText.lua
 UI\Labels.lua
+UI\HtmlText.lua
 UI\LoadOnDemand.lua
 UI\HelpTooltip.lua
 UI\SettingsKeys.lua

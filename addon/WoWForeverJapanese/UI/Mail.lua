@@ -196,25 +196,8 @@ end
 
 -- ── the letter's body ──────────────────────────────────────────────
 -- logical: what GetText reports, the client's text as written or the text SurfaceState asked us to show.
-local body = { html = nil, logical = nil, writing = false }
+local body = WFJ.HtmlText.new(true) -- the client writes the body with ignoreMarkup (mailframe.lua:776-777)
 Mail.body = body
-function body:GetText() return self.logical end
-function body:SetText(text)
-  self.writing = true
-  local ok, err = pcall(self.html.SetText, self.html, text, true)
-  self.writing = false
-  if not ok then error(err, 0) end
-  self.logical = text
-end
-function body:GetFont()
-  if type(self.html.GetFont) ~= "function" then return nil end
-  return self.html:GetFont("P")
-end
-function body:SetFont(path, size, flags) -- SimpleHTML's SetFont returns nothing: a refusal is read back
-  if type(self.html.SetFont) ~= "function" then return false end
-  self.html:SetFont("P", path, size, flags)
-  return (self:GetFont()) == path
-end
 
 -- The player's name as the client spells it, or nil while it is not known.
 local function playerName()

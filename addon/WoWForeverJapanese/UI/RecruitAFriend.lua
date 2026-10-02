@@ -141,32 +141,13 @@ function RecruitAFriend.onClaimOrView() return RecruitAFriend.show("claimOrView"
 function RecruitAFriend.onDescription() return RecruitAFriend.show("rewardsDescription") end
 function RecruitAFriend.onClaimLegacy() return RecruitAFriend.show("claimLegacy") end
 
--- The no-recruits SimpleHTML seen as a FontString: GetText is the text of record (the client's last write, or ours),
--- SetText writes the SimpleHTML, the font is its P text type's [unverified: that plain SimpleHTML text draws with the P
--- font; in-game check]. As UI/CommunitiesGuild's event log.
-local html = { frame = nil, logical = nil, writing = false }
-function html:GetText() return self.logical end
-function html:SetText(text)
-  self.writing = true
-  local ok, err = pcall(self.frame.SetText, self.frame, text)
-  self.writing = false
-  if not ok then error(err, 0) end
-  self.logical = text
-end
-function html:GetFont()
-  if type(self.frame.GetFont) ~= "function" then return nil end
-  return self.frame:GetFont("P")
-end
-function html:SetFont(path, size, flags) -- SimpleHTML's SetFont returns nothing: a refusal is read back
-  if type(self.frame.SetFont) ~= "function" then return false end
-  self.frame:SetFont("P", path, size, flags)
-  return (self:GetFont()) == path
-end
+-- The no-recruits SimpleHTML seen as a FontString (UI/HtmlText).
+local html = WFJ.HtmlText.new()
 RecruitAFriend.noRecruitsHtml = html
 
 -- The no-recruits text, `text` being what the client wrote (SetNoRecruitsText's argument). → 1 | 0
 function RecruitAFriend.onNoRecruits(_, text)
-  if html.writing or type(html.frame) ~= "table" then return 0 end
+  if html.writing or type(html.html) ~= "table" then return 0 end
   html.logical = type(text) == "string" and text or nil
   local n = WFJ.Labels.show(SURFACE, "noRecruits", html, nil, NO_RECRUITS)
   WFJ.Render.updateBanner(SURFACE)
@@ -211,7 +192,7 @@ function RecruitAFriend.init()
   if type(recruits) == "table" and type(util) == "table" and type(util.AddInitializedFrameCallback) == "function" then
     util.AddInitializedFrameCallback(recruits, RecruitAFriend.onRow, RecruitAFriend, true)
   end
-  html.frame = get("noRecruits")
+  html.html = get("noRecruits")
   hookMethod(frame, "SetNoRecruitsText", RecruitAFriend.onNoRecruits)
   RecruitAFriend.onNoRecruits(frame, get("noRecruitsEnglish")) -- written once by OnLoad, before this module
   if WFJ.TooltipLines then

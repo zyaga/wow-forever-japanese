@@ -129,25 +129,8 @@ function CommunitiesGuild.onRewardTooltip()
 end
 
 -- ── the guild event log ─────────────────────────────────────────────
-local log = { html = nil, logical = nil, writing = false }
+local log = WFJ.HtmlText.new()
 CommunitiesGuild.log = log
-function log:GetText() return self.logical end
-function log:SetText(text)
-  self.writing = true
-  local ok, err = pcall(self.html.SetText, self.html, text)
-  self.writing = false
-  if not ok then error(err, 0) end
-  self.logical = text
-end
-function log:GetFont()
-  if type(self.html.GetFont) ~= "function" then return nil end
-  return self.html:GetFont("P")
-end
-function log:SetFont(path, size, flags) -- SimpleHTML's SetFont returns nothing: a refusal is read back
-  if type(self.html.SetFont) ~= "function" then return false end
-  self.html:SetFont("P", path, size, flags)
-  return (self:GetFont()) == path
-end
 
 -- The log text the client wrote, line by line. → n lines shown in Japanese (0: the text stays as written)
 function CommunitiesGuild.showLog()
