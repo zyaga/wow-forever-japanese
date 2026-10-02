@@ -1297,6 +1297,8 @@ DYNAMIC: dict[str, list[str]] = {
         r"UNIT_(TYPE_)?(PLUS_)?LEVEL_TEMPLATE|UNIT_LEVEL_DEAD_TEMPLATE",
         r"UNIT_SKINNABLE_[A-Z]+",
         r"CORPSE_TOOLTIP",
+        # the owner line under a pet, minion or guardian ("Bob's Pet", the UnitOwner line kind)
+        r"UNITNAME_TITLE_[A-Z]+|UNITNAME_SUMMON_TITLE\d+",
     ],
     # the buff frame's durations are SecondsToTimeAbbrev's `*_ONELETTER_ABBR`
     # (blizzard_sharedxml/timeutil.lua:463–480; blizzard_buffframe/buffframe.lua:427, 1203, 1306); the

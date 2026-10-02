@@ -1,0 +1,59 @@
+# What the addon does with each kind of tooltip line the client tags (Enum.TooltipDataLineType;
+# the list is pipeline/tooltip_line_kinds_inventory.txt, from the client's own API documentation).
+# `<Kind>  # <decision>`, one per kind. A decision starts with one of:
+#   translated: <module and how>     the addon writes this line in Japanese
+#   english: <reason>                the line stays as the client wrote it, and why
+# tests/python/test_tooltip_line_kinds.py fails when an inventoried kind has no decision or a decision names
+# a kind the client does not have. Re-check every decision when a new kind appears on a client build.
+None  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry; a line another addon adds, or the beta bug-report line ("Press F6 to submit an issue", Blizzard_PTRFeedback, `## OnlyBetaAndPTR: 1`, gone at launch), is left as written
+Blank  # english: no text
+UnitName  # english: the unit's name (names stay English)
+GemSocket  # translated: UI/Tooltip's structural pass (EMPTY_SOCKET_*, a UI dictionary family)
+AzeriteEssenceSlot  # english: not on Forever: the tables carry no Heart of Azeroth (pipeline/forever_addon_dispositions.txt, blizzard_azeriteessenceui)
+AzeriteEssencePower  # english: not on Forever: the tables carry no Heart of Azeroth (pipeline/forever_addon_dispositions.txt, blizzard_azeriteessenceui)
+LearnableSpell  # translated: UI/Tooltip's structural pass when its English is a UI dictionary entry; the spell's name in it stays English
+UnitThreat  # translated: UI/TooltipUnit, when its English is one of the unit keys; its icon is the client's
+QuestObjective  # translated: UI/TooltipUnit (QUEST_MONSTERS_KILLED, QUEST_PLAYERS_KILLED: the creature's name stays English)
+AzeriteItemPowerDescription  # english: not on Forever: no Azerite item in the tables (pipeline/forever_addon_dispositions.txt, blizzard_azeriteui)
+RuneforgeLegendaryPowerDescription  # english: not on Forever: no Shadowlands item in the tables (pipeline/forever_addon_dispositions.txt, blizzard_runeforgeui)
+SellPrice  # translated: UI/Tooltip's structural pass (SELL_PRICE)
+ProfessionCraftingQuality  # english: not on Forever: the Dragonflight crafting-quality system (pipeline/ui_exclusions.txt, PROFESSIONS_CRAFTING_*)
+SpellName  # english: the spell's name (names stay English)
+CurrencyTotal  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry
+ItemEnchantmentPermanent  # translated: UI/Tooltip's structural pass (the SpellItemEnchantment family: "+3 Fire Spell Damage")
+UnitOwner  # translated: UI/TooltipUnit (UNITNAME_TITLE_*, UNITNAME_SUMMON_TITLE*: the owner's name stays English)
+QuestTitle  # translated: UI/TooltipUnit: the quest found from the hash of the title the line shows; a title shared by quests whose Japanese differs is left as written
+QuestPlayer  # english: a party member's name (names stay English)
+NestedBlock  # english: no text of its own: a container the client fills with other lines, each tagged with its own kind
+ItemBinding  # translated: UI/Tooltip's structural pass (ITEM_BIND_*, ITEM_SOULBOUND)
+EquipSlot  # translated: UI/Tooltip's structural pass (INVTYPE_* left, the item subclass right)
+ItemName  # english: the item's name (names stay English)
+Separator  # english: no text
+ToyName  # english: the toy's name (names stay English)
+ToyText  # translated: UI/Tooltip, as the item's description run or a structural line [unverified in game: whether Forever's toy tooltips tag lines this way]
+ToyEffect  # translated: UI/Tooltip, as the item's description run (the "Use:" line) [unverified in game]
+ToyDuration  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry [unverified in game]
+ToyDescription  # translated: UI/Tooltip, as the item's description run [unverified in game]
+ToySource  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry; a vendor or zone name in it stays English [unverified in game]
+GemSocketEnchantment  # translated: UI/Tooltip's structural pass (the SpellItemEnchantment family)
+ItemLevel  # translated: UI/Tooltip's structural pass (ITEM_LEVEL)
+ItemUpgradeLevel  # english: not on Forever: item upgrades are a retail-era system (pipeline/ui_exclusions.txt, ITEM_UPGRADE_*)
+SpellPassive  # translated: UI/Tooltip's structural pass (SPELL_PASSIVE)
+SpellDescription  # translated: UI/Tooltip's spell description record (the line equal to the spell's description)
+ItemQuality  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry
+TradeTimeRemaining  # translated: UI/Tooltip's structural pass (BIND_TRADE_TIME_REMAINING)
+FlavorText  # translated: UI/Tooltip's item description run (the quoted flavour text)
+ItemSpellTriggerLearn  # translated: UI/Tooltip's item description run
+LearnTransmogSet  # english: not on Forever: transmog sets are a retail-era system (pipeline/ui_exclusions.txt, transmog / cosmetics)
+LearnTransmogIllusion  # english: not on Forever: transmog illusions are a retail-era system (pipeline/ui_exclusions.txt, transmog / cosmetics)
+ErrorLine  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry
+DisabledLine  # translated: UI/Tooltip's structural pass, when its English is a UI dictionary entry
+UsageRequirement  # translated: UI/Tooltip's structural pass (ITEM_MIN_LEVEL, ITEM_REQ_*: a class, race or skill name in it stays English)
+ItemSpellTriggerOnUse  # translated: UI/Tooltip's item description run ("Use:")
+ItemSpellTriggerOnEquip  # translated: UI/Tooltip's item description run, or its Equip lines as UI records ("Equip:")
+ItemSpellTriggerOnProc  # translated: UI/Tooltip's item description run ("Chance on hit:")
+UnitLevel  # translated: UI/TooltipUnit (TOOLTIP_UNIT_LEVEL*, UNIT_*LEVEL_TEMPLATE: a race or class name in it stays English)
+UnitType  # translated: UI/TooltipUnit (the CreatureType family: "Beast")
+UnitDead  # translated: UI/TooltipUnit (CORPSE_TOOLTIP, UNIT_LEVEL_DEAD_TEMPLATE)
+UnitCriteriaProgress  # translated: UI/TooltipUnit, when its English is one of the unit keys [unverified in game: which strings Forever sends]
+AuraCaster  # english: the caster's name (names stay English)

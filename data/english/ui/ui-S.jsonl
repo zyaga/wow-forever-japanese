@@ -207,6 +207,9 @@
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAGS_LABEL", "field": "text", "en": "Add Tags", "hash": "665f7529dccdb758", "src": "db2@1.60.1.70170"}
 {"id": "SOCIAL_UI_BATTLE_NET_TITLE_FRIEND_EDIT_NAME_BUTTON_LABEL", "field": "text", "en": "Edit Name", "hash": "5ac0876f2d0f8516", "src": "db2@1.60.1.70170"}
 {"id": "SOCIAL_UI_PERSONAL_BATTLE_TAG_COPIED_NOTICE", "field": "text", "en": "BattleTag copied to clipboard.", "hash": "6e7c0e7ddd50c7ea", "src": "db2@1.60.1.70170"}
+{"id": "SOCKET_ITEM_MIN_SKILL", "field": "text", "en": "Socket Requires %s (%d)", "hash": "193cc398e4cb8fcd", "src": "db2@1.60.1.70170"}
+{"id": "SOCKET_ITEM_REQ_LEVEL", "field": "text", "en": "Socket Requires Level %d", "hash": "f144c9e49e1a8bc0", "src": "db2@1.60.1.70170"}
+{"id": "SOCKET_ITEM_REQ_SKILL", "field": "text", "en": "Socket Requires %s", "hash": "34b858fd2c01b514", "src": "db2@1.60.1.70170"}
 {"id": "SOLD_BY_COLON", "field": "text", "en": "Sold By:", "hash": "0ecf47e95a142f52", "src": "db2@1.60.1.70170"}
 {"id": "SOLO", "field": "text", "en": "Solo", "hash": "0b3c71db9166f2d6", "src": "db2@1.60.1.70170"}
 {"id": "SOULBIND_DIALOG_INSTALL_CONDUIT_UNUSABLE", "field": "text", "en": "This socket is currently inactive. Are you sure you want to add a Conduit here?", "hash": "7d9daa18eec9a062", "src": "db2@1.60.1.70170"}

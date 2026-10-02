@@ -1860,3 +1860,6 @@ RECENT_ALLIES_CATEGORIES_FILTER_LABEL  # only in SocialUIFrame: the recent-allie
 PROFESSION_EQUIPMENT_NEWITEM_TOOL_HELPTIP  # a HelpTip callout of a retail-era system (profession equipment) with no Classic-content counterpart on Forever [unverified in game] (blizzard_tutorials/blizzard_tutorials_professions.lua:258; its siblings are excluded too)
 PROFESSION_EQUIPMENT_NEWITEM_ACCESSORY_HELPTIP  # a HelpTip callout of a retail-era system (profession equipment) with no Classic-content counterpart on Forever [unverified in game] (blizzard_tutorials/blizzard_tutorials_professions.lua:258; its siblings are excluded too)
 PROFESSIONS_NEW_CHOICE_AVAILABLE_SPECIALIZATION  # a micro-button alert of a retail-era system (profession specializations, C_ProfSpecs) with no Classic-content counterpart on Forever [unverified in game] (blizzard_tutorials/blizzard_tutorials_professions.lua:506)
+UNITNAME_SUMMON_TITLE27  # no words of its own: only the owner's name ("%s")
+UNITNAME_SUMMON_TITLE30  # a name: "The Betrayer" (names stay English)
+UNITNAME_SUMMON_TITLE52  # no words of its own: only the owner's name ("%s")

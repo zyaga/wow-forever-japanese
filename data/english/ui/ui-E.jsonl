@@ -14,6 +14,30 @@
 {"id": "EMPOWERS", "field": "text", "en": "Empowers", "hash": "d80e4634b6a72782", "src": "db2@1.60.1.70170"}
 {"id": "EMPOWERS_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when an empower spell starts or completes.", "hash": "cd1f72185c9e4aa9", "src": "db2@1.60.1.70170"}
 {"id": "EMPTY", "field": "text", "en": "Empty", "hash": "c9eabead07235a1c", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET", "field": "text", "en": "Level %d Socket", "hash": "3cb906c79fc143d3", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_BLUE", "field": "text", "en": "Blue Socket", "hash": "ae16610741ff24ee", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_COGWHEEL", "field": "text", "en": "Cogwheel Socket", "hash": "d5946454390f10bd", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_CYPHER", "field": "text", "en": "Crystallic Socket", "hash": "a94d41f386a85339", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_DOMINATION", "field": "text", "en": "Domination Socket", "hash": "a7b9ed4bacd69889", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_FIBER", "field": "text", "en": "Fiber Socket", "hash": "542a745996a50eb5", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_FRAGRANCE", "field": "text", "en": "Fragrance Socket", "hash": "a32b61f5f81e531e", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_HYDRAULIC", "field": "text", "en": "Sha-Touched", "hash": "2e3eb53e605e1f45", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_META", "field": "text", "en": "Meta Socket", "hash": "70cf101ea1349b0b", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_NO_COLOR", "field": "text", "en": "Prismatic Socket", "hash": "9dc62c0dea8d85b0", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_PRIMORDIAL", "field": "text", "en": "Primordial Socket", "hash": "49f82bcd0fa7058c", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_PRISMATIC", "field": "text", "en": "Prismatic Socket", "hash": "9dc62c0dea8d85b0", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_PUNCHCARDBLUE", "field": "text", "en": "Blue Punchcard Socket", "hash": "86e7452b3ebcfda3", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_PUNCHCARDRED", "field": "text", "en": "Red Punchcard Socket", "hash": "cbd4a4eab94affb0", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_PUNCHCARDYELLOW", "field": "text", "en": "Yellow Punchcard Socket", "hash": "15d672631b57195d", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_RED", "field": "text", "en": "Red Socket", "hash": "19652e5c02317098", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_SINGINGSEA", "field": "text", "en": "Singing Sea Socket", "hash": "a01dc3322e095957", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_SINGINGTHUNDER", "field": "text", "en": "Singing Thunder Socket", "hash": "923dee356e1b5b18", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_SINGINGWIND", "field": "text", "en": "Singing Wind Socket", "hash": "7cc78c71434672b6", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_SINGING_SEA", "field": "text", "en": "Singing Sea Socket", "hash": "a01dc3322e095957", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_SINGING_THUNDER", "field": "text", "en": "Singing Thunder Socket", "hash": "923dee356e1b5b18", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_SINGING_WIND", "field": "text", "en": "Singing Wind Socket", "hash": "7cc78c71434672b6", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_TINKER", "field": "text", "en": "Tinker Socket", "hash": "2762392ba803db20", "src": "db2@1.60.1.70170"}
+{"id": "EMPTY_SOCKET_YELLOW", "field": "text", "en": "Yellow Socket", "hash": "52811b8793cb8bfe", "src": "db2@1.60.1.70170"}
 {"id": "EMPTY_STABLE_SLOT", "field": "text", "en": "|cffffffffEmpty Stable Slot|r", "hash": "518802d91a7da041", "src": "db2@1.60.1.70170"}
 {"id": "ENABLE", "field": "text", "en": "Enable", "hash": "62a601e2dc587706", "src": "db2@1.60.1.70170"}
 {"id": "ENABLED_FOR_SOME", "field": "text", "en": "This addon is only enabled for some characters.", "hash": "91678a1466e9365b", "src": "db2@1.60.1.70170"}
