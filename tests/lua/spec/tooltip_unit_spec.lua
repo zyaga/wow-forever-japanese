@@ -95,6 +95,9 @@ describe("UI/TooltipUnit: the creature type", function()
     TOOLTIP_UNIT_LEVEL_RACE_TYPE = { "Level %s %s (%s)", "レベル%s %s (%s)" },
     ["DispelType:1"] = { "Magic", "魔法" }, -- another family's row: never a creature type
     RAID = { "Raid", "レイド" }, -- a dictionary word: never a creature type
+    ["CreatureType:1"] = { "Beast", "野獣" },
+    QUEST_MONSTERS_KILLED = { "%2$d/%3$d %1$s slain", "%1$sを倒す: %2$d/%3$d" },
+    TOOLTIP_UNIT_LEVEL = { "Level %s", "レベル %s" },
   }
   local function left(i) return _G["GameTooltipTextLeft" .. i]:GetText() end
   local function hover(lines, data)
@@ -144,6 +147,20 @@ describe("UI/TooltipUnit: the creature type", function()
     hover({ "Hogger", "Level 11 Elite Humanoid" })
     assert.are.equal("レベル11 エリート 人型", left(2))
   end)
+
+  it("a creature's type on its own line and its quest kill count translate; the creature's name stays English",
+    function()
+      hover({ "Young Thistle Boar", "Level 2", "Beast", "The Balance of Nature", "0/4 Young Thistle Boar slain" })
+      assert.are.equal("レベル 2", left(2))
+      assert.are.equal("野獣", left(3))
+      assert.are.equal("The Balance of Nature", left(4)) -- a quest title: keyed by quest id, not by its text
+      assert.is_truthy(left(5):find("Young Thistle Boarを倒す: 0/4", 1, true))
+      -- a player's tooltip never takes the creature types: "Undead" alone is a race there
+      _G.C_PlayerInfo = { GUIDIsPlayer = function() return true end }
+      hover({ "Someone", "Level 60", "Undead" }, { guid = "Player-1-00000001" })
+      assert.are.equal("Undead", left(3))
+      _G.C_PlayerInfo = nil
+    end)
 
   it("a word no CreatureType row has (a pet family, another family's row, a dictionary word) is kept", function()
     hover({ "Timber Wolf", "Level 10 Wolf" })
