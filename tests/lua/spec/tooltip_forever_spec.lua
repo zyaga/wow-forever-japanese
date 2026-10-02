@@ -211,6 +211,51 @@ describe("UI/Tooltip hooks the client's data processor", function()
     WFJ.Tooltip.trace = nil
   end)
 
+  it("colours hidden too: the countdown goes right above the description, the first gold row (the 70170 trace)",
+    function()
+      -- Wrath on 1.60.1.70170: name, mana, cast, description (gold), a blank and the beta's report line (gold);
+      -- the countdown comes in as row 4, and a secret pass hides the colours as well as the text
+      local WFJ, tt = setup()
+      WFJ.Tooltip.init()
+      tt.owner = "ActionButton2"
+      _G.ITEM_COOLDOWN_TIME = "Cooldown remaining: %s"
+      local SIX = { "Power Word: Shield", "40 yd range", "Instant cast", SHIELD_LINES[4], " ", "Press F6" }
+      local SEVEN = { SIX[1], SIX[2], SIX[3], "Cooldown remaining: 2 sec", SIX[4], SIX[5], SIX[6] }
+      local function paint(n, firstGold)
+        for i = 1, n do
+          local g = i >= firstGold
+          fs("GameTooltip", i):SetTextColor(1, g and 0.82 or 1, g and 0 or 1)
+        end
+      end
+      local function pass(lines, firstGold, hidden)
+        tt:writeLines(lines)
+        paint(#lines, firstGold)
+        if hidden then
+          local secret = {}
+          for _, l in ipairs(lines) do secret[l] = true end
+          _G.issecretvalue = function(v) return secret[v] == true or type(v) == "number" and v ~= 17 end
+        else
+          _G.issecretvalue = nil
+        end
+        Stub.fireTooltipSet(tt, "Spell")
+        _G.issecretvalue = nil
+      end
+      tt.spell = { name = SIX[1], id = 17 }
+      pass(SIX, 4, false)
+      local ja = fs("GameTooltip", 4):GetText()
+      assert.is_truthy(ja:find("シールド", 1, true))
+      pass(SEVEN, 5, true) -- the countdown came: the description is row 5 now
+      assert.are.equal(ja, fs("GameTooltip", 5):GetText())
+      assert.are.equal("Cooldown remaining: 2 sec", fs("GameTooltip", 4):GetText())
+      assert.are.equal("Press F6", fs("GameTooltip", 7):GetText())
+      pass(SEVEN, 5, false) -- a readable pass with the countdown
+      assert.are.equal(ja, fs("GameTooltip", 5):GetText())
+      pass(SIX, 4, true) -- the countdown went: the description is row 4 again
+      assert.are.equal(ja, fs("GameTooltip", 4):GetText())
+      assert.are.equal(" ", fs("GameTooltip", 5):GetText())
+      _G.ITEM_COOLDOWN_TIME = nil
+    end)
+
   it("ignores a tooltip whose data type is not the one the handler registered for", function()
     local WFJ, tt = setup()
     WFJ.Tooltip.init()

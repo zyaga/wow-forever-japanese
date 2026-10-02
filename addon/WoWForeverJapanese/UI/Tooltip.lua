@@ -289,6 +289,9 @@ local function colourOf(fs)
   return ("%.2f,%.2f,%.2f"):format(r, g, b)
 end
 
+-- A description's colour in a spell or item tooltip, NORMAL_FONT_COLOR, as colourOf writes it.
+local GOLD = "1.00,0.82,0.00"
+
 -- The countdown a tooltip shows while the spell or item cools down ("Cooldown remaining: 2 sec"): its number moves
 -- every second, so a remembered one is never written back.
 local function isCountdown(english)
@@ -300,9 +303,11 @@ end
 
 -- Where each remembered row is on a secret pass with another row count. A row comes or goes in the middle (the
 -- countdown sits right above the description), so rows are matched from the top while their colours agree and from
--- the bottom while they agree. When the client hides the colours too, one row more or less is taken to be that
--- countdown: every row but the last stays, the last stays last. A written row that cannot be placed means nothing is
--- written. → { [old row] = new row } | nil, and how the rows were placed
+-- the bottom while they agree. When the client hides the colours too (a secret pass does), one row more or less is
+-- taken to be that countdown, which the client puts right above the description: the first gold row of the
+-- remembered pass (the trace on 1.60.1.70170: Wrath's 6 rows became 7 with the countdown as row 4). Rows above it stay,
+-- rows from it on move by one. A written row that cannot be placed means nothing is written.
+-- → { [old row] = new row } | nil, and how the rows were placed
 local function rowMap(snap, lines)
   local m, n = snap.n, #lines
   local now, hidden = {}, false
@@ -321,7 +326,19 @@ local function rowMap(snap, lines)
     end
     how = "colour"
   elseif math.abs(m - n) == 1 then
-    top, bottom, how = math.min(m, n) - 1, 1, "countdown"
+    local gold
+    for i = 1, m do
+      if snap.colours[i] == GOLD then gold = i; break end
+    end
+    if not gold then return nil, "colours hidden, no remembered description row" end
+    if n == m + 1 then -- the countdown came, above the description
+      top, bottom = gold - 1, m - gold + 1
+    elseif gold >= 2 and isCountdown(snap.english[gold - 1]) then -- the remembered countdown went
+      top, bottom = gold - 2, m - gold + 1
+    else
+      return nil, "colours hidden, the row that went is not the countdown"
+    end
+    how = "countdown"
   else
     return nil, "colours hidden"
   end
