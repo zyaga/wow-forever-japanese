@@ -117,6 +117,7 @@ local CANDIDATES = {
   timerFrame        = { "QuestInfoTimerFrame" },
   timerText         = { "QuestInfoTimerText" },
   showTimer         = { "QuestInfo_ShowTimer" },
+  showRewards       = { "QuestInfo_ShowRewards" },
 }
 
 -- A declared client function, called only when it is one. → its returns | nil
@@ -317,6 +318,19 @@ function QuestFrame.onDisplay(template, parentFrame)
   return 0
 end
 
+-- hooksecurefunc target (QuestInfo_ShowRewards): the client redraws the rewards on its own when a reward item's data
+-- arrives (QUEST_ITEM_UPDATE, mainline/questframe.lua:75–84) or a spell is learned (:92–96), writing the English
+-- reward headings again (questinfo.lua:765) after the panel was shown. The open panel is shown again.
+function QuestFrame.onShowRewards()
+  local function visible(key)
+    local f = Compat.get(DECLARE, key)
+    return type(f) == "table" and type(f.IsVisible) == "function" and f:IsVisible()
+  end
+  if visible("detailChild") then return QuestFrame.showPanel("detail") end
+  if visible("rewardChild") then return QuestFrame.showPanel("reward") end
+  return 0
+end
+
 -- HookScript target on QuestFrameProgressPanel's OnShow: runs after the client's writer.
 function QuestFrame.onProgress()
   return QuestFrame.showPanel("progress")
@@ -423,6 +437,9 @@ function QuestFrame.init(d)
   end
   hookScript("frame", "OnHide", QuestFrame.release)
   hookScript("timerFrame", "OnUpdate", QuestFrame.showTimer)
+  if type(Compat.get(DECLARE, "showRewards")) == "function" then
+    hooksecurefunc("QuestInfo_ShowRewards", QuestFrame.onShowRewards)
+  end
   if type(Compat.get(DECLARE, "showTimer")) == "function" then
     hooksecurefunc("QuestInfo_ShowTimer", QuestFrame.showTimer)
   end

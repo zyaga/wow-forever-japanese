@@ -28,6 +28,7 @@ an old setting stops working). A release moves those lines under its version num
 - The README and the CurseForge page explain that a buff on the target frame always shows English: the game draws that tooltip in a window addons cannot touch.
 - The Legacy window's available points and the stable's pet diet tooltip are in Japanese again on the new build.
 - Chat lines keep the right size after you change the chat font size.
+- The quest window's reward headings ("You will be able to choose one of these rewards:", "You will also receive:") stay Japanese when the game loads a reward item's details after the window opens.
 - Lines that stopped being translated because a game update did not list them for a while are translated again. A later update no longer takes Japanese away from something the game has shown before.
 
 ## 0.1.0-alpha.4 - 2026-10-01

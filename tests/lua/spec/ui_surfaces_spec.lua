@@ -225,6 +225,10 @@ describe("the ui area on its surfaces", function()
       assert.are.equal("推奨人数 [3]", QuestInfoGroupSize:GetText()) -- a template label gets its live value
       assert.are.equal("経験値:", QuestInfoRewardsFrame.XPFrame.ReceiveText:GetText())
       assert.is_nil(SS.get("questframe.detail", "ui.learnLabel"))
+      -- a reward item's data arrives: the client redraws the rewards in English (QuestInfo_ShowRewards)
+      QuestInfoRewardsFrame.ItemChooseText:SetText(_G.REWARD_CHOICES)
+      WFJ.QuestFrame.onShowRewards()
+      assert.are.equal("以下の報酬から1つ選択できます:", QuestInfoRewardsFrame.ItemChooseText:GetText())
 
       Stub.showProgress()
       assert.are.equal("必要なアイテム:", QuestProgressRequiredItemsText:GetText())
