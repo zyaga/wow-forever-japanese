@@ -60,11 +60,6 @@ small popup shows how to read it, its dictionary form, and a short English meani
 line whose English has changed since it was translated shows **[要更新 / English Changed]**. Either marker can be
 turned off.
 
-**Buffs during a fight.** While you are in combat, the tooltip of a buff icon (the icons under the minimap) stays in
-English. The game hides which buff it is from addons during a fight, so the addon cannot look up its Japanese. It is
-Japanese again the moment the fight ends. Spell tooltips on your action bar stay Japanese in combat, the cooldown
-countdown too.
-
 **Settings.** Open **Esc > Options > AddOns > WoW Forever Japanese**, or type `/wfj config`. You can turn the whole
 translation on or off, turn each area on or off (quests, NPC talk, tooltips, the interface, books), change the key
 you hold for English, set a key that switches translation on and off, and turn the markers, the popup dictionary and
@@ -99,6 +94,22 @@ under **English Collector** in the settings.
    ![The translation report form on GitHub](docs/images/report-issue.jpg)
 
 Other problems or ideas: [open an issue](https://github.com/zyaga/wow-forever-japanese/issues).
+
+## FAQ
+
+**Why is a buff's tooltip in English during a fight?** While you are in combat, the game hides from addons which
+buff an icon under the minimap is. The addon cannot look up a translation for a buff it is not told about, so that
+tooltip stays in the game's English until the fight ends. Then it is Japanese again. Spell tooltips on your action
+bar stay Japanese in combat, the cooldown countdown too.
+
+**Why are names still in English?** On purpose. Names of people, places, creatures, items and spells are never
+changed, so what you read matches what other players say and what guides call things.
+
+**What do the markers mean?** **[未翻訳 / Not Translated]** means the line has no translation yet and is shown in
+the game's English. **[要更新 / English Changed]** means the English changed after the line was translated. Both can
+be turned off in the settings.
+
+**Which game does it work with?** World of Warcraft: Forever only.
 
 ## Credits
 
@@ -172,8 +183,6 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
 **マーカー。** まだ翻訳のない行は **[未翻訳 / Not Translated]** と表示され、英語のままになります。翻訳後に英語が変わった行には **[要更新 / English Changed]** が付きます。どちらも非表示にできます。
 
-**戦闘中のバフ。** 戦闘中は、バフアイコン（ミニマップの下のアイコン）のツールチップが英語のままになります。戦闘中、ゲームはどのバフかをアドオンに隠すため、日本語を引けません。戦闘が終わると、すぐに日本語に戻ります。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
-
 **設定。** **Esc > オプション > AddOns > WoW Forever Japanese**、または `/wfj config` で開きます。翻訳全体や項目ごとのオン・オフ、英語表示キーの変更、翻訳を切り替えるキーの設定、マーカー・ポップアップ辞書・ミニマップボタンの表示を切り替えられます。
 
 ![アドオンの設定画面](docs/images/settings.jpg)
@@ -197,6 +206,16 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
    ![GitHub の翻訳の報告フォーム](docs/images/report-issue.jpg)
 
 そのほかの問題や提案は [Issue](https://github.com/zyaga/wow-forever-japanese/issues) へどうぞ。
+
+### よくある質問
+
+**戦闘中、バフのツールチップが英語なのはなぜ？** 戦闘中、ゲームはミニマップの下のアイコンがどのバフなのかをアドオンに隠します。どのバフかわからなければ翻訳を引けないため、そのツールチップは戦闘が終わるまでゲームの英語のままです。戦闘が終わると日本語に戻ります。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
+
+**名前が英語のままなのはなぜ？** 意図した仕様です。人物・地名・モンスター・アイテム・呪文の名前は変えません。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。
+
+**マーカーは何を表している？** **[未翻訳 / Not Translated]** はまだ翻訳がなく、ゲームの英語のまま表示されている行です。**[要更新 / English Changed]** は翻訳のあとで英語の原文が変わった行です。どちらも設定で非表示にできます。
+
+**どのゲームで使える？** World of Warcraft: Forever 専用です。
 
 ### クレジット
 

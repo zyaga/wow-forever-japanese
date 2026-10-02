@@ -26,7 +26,6 @@ branch; leave them out until the repository is public.
 - **NPC dialogue:** the talk window, speech bubbles, NPC lines in chat and boss emotes.
 - **Books, letters and plaques.**
 - **Item and spell tooltips**, and buff and debuff text, with the game's live numbers filled in.
-- **In combat**, a buff icon's tooltip stays in English: the game hides which buff it is from addons during a fight. It is Japanese again when the fight ends. Spell tooltips on your action bar stay Japanese in combat, countdown included.
 - **The interface:** windows, labels, menus, popups and messages.
 
 Names of people, places, creatures, items and spells stay in <span style="color:#8CB8E8;">English</span> everywhere, so you can still talk with other players, read guides and search by name.
@@ -53,6 +52,16 @@ Install it with the CurseForge app (make sure your **Forever** install is select
 
 Click the <span style="color:#E0605A;">**字**</span> minimap button (or type **/wfj fix**), pick the line you just read, choose what is wrong, and paste the report into the form on GitHub: https://github.com/zyaga/wow-forever-japanese/issues
 
+### <span style="color:#E8C77E;">FAQ</span>
+
+**Why is a buff's tooltip in English during a fight?** While you are in combat, the game hides from addons which buff an icon under the minimap is. The addon cannot look up a translation for a buff it is not told about, so that tooltip stays in the game's English until the fight ends. Then it is Japanese again. Spell tooltips on your action bar stay Japanese in combat, the cooldown countdown too.
+
+**Why are names still in English?** On purpose, so what you read matches what other players say and what guides call things.
+
+**What do the markers mean?** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> means the line has no translation yet and is shown in the game's English. <span style="color:#E8C77E;">[要更新 / English Changed]</span> means the English changed after the line was translated. Both can be turned off in the settings.
+
+**Which game does it work with?** World of Warcraft: Forever only.
+
 ### <span style="color:#E8C77E;">Credits</span>
 
 The hand-written translations are the work of the Japanese translators of WoWJapanizer, QuestJapanizer and CraftJapanizer_Quest, listed by name in `ATTRIBUTION.md`, which ships inside the addon. Lines those projects did not cover are machine-drafted and marked as such in the project's data.
@@ -77,7 +86,6 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 - **NPC の会話:** 会話ウィンドウ、吹き出し、チャットに流れる NPC のセリフ、ボスのエモート
 - **本・手紙・銘板**
 - **アイテムと呪文のツールチップ**、バフ・デバフの説明（数値はゲームの実際の値が入ります）
-- **戦闘中**は、バフアイコンのツールチップは英語のままです（戦闘中、ゲームはどのバフかをアドオンに隠します）。戦闘が終わると日本語に戻ります。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 - **インターフェース:** ウィンドウ、ラベル、メニュー、ポップアップ、メッセージ
 
 人物・地名・モンスター・アイテム・呪文の名前はすべて<span style="color:#8CB8E8;">英語</span>のままです。ほかのプレイヤーとの会話や、攻略情報の検索にそのまま使えます。
@@ -101,6 +109,16 @@ CurseForge アプリでインストールしてください（**Forever** のイ
 ### <span style="color:#E8C77E;">翻訳の問題を報告する</span>
 
 ミニマップの <span style="color:#E0605A;">**字**</span> ボタン（または **/wfj fix**）を押し、直前に読んだ行を選んで何が問題かを選び、表示された報告文を GitHub のフォームに貼り付けてください: https://github.com/zyaga/wow-forever-japanese/issues
+
+### <span style="color:#E8C77E;">よくある質問</span>
+
+**戦闘中、バフのツールチップが英語なのはなぜ？** 戦闘中、ゲームはミニマップの下のアイコンがどのバフなのかをアドオンに隠します。どのバフかわからなければ翻訳を引けないため、そのツールチップは戦闘が終わるまでゲームの英語のままです。戦闘が終わると日本語に戻ります。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
+
+**名前が英語のままなのはなぜ？** 意図した仕様です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。
+
+**マーカーは何を表している？** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> はまだ翻訳がなく、ゲームの英語のまま表示されている行です。<span style="color:#E8C77E;">[要更新 / English Changed]</span> は翻訳のあとで英語の原文が変わった行です。どちらも設定で非表示にできます。
+
+**どのゲームで使える？** World of Warcraft: Forever 専用です。
 
 ### <span style="color:#E8C77E;">クレジット</span>
 
