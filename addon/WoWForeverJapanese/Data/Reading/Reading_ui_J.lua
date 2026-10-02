@@ -3,5 +3,5 @@ local _, WFJ = ...
 WFJ.Data.add("reading", {
   ["ui:JOIN_QUEUE"] = { text = "参加=さんか=52230 リクエスト=リクエスト=34113" },
   ["ui:JOURNEYMAN"] = { text = "一人前=いちにんまえ=34603" },
-  ["ui:JOURNEY_UNLOCKED_TOAST"] = { text = "ジャーニー=ジャーニー=32070 解放=かいほう=115956" },
+  ["ui:JOURNEY_UNLOCKED_TOAST"] = { text = "ジャーニー=ジャーニー=32070 解放=かいほう=115955" },
 })
