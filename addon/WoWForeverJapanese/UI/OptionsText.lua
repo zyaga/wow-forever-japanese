@@ -203,6 +203,7 @@ Text.SLASH = {
   "/wfj collector [on | off | status | path | clear]",
   "/wfj debug [hash | quest <id> | item <id> | spell <id>]",
   "/wfj debug [gossip | book | objective | fonts | ui [scan]]",
+  "/wfj debug tooltip [on | off]  (record spell / item tooltip passes)",
 }
 
 -- Text.REPORT_URL is the issue tracker's new-issue page (the collector page uses Collector.ISSUE_URL).

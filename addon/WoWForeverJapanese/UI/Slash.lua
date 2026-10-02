@@ -202,8 +202,52 @@ local function debugFonts()
     WFJ.Font.retryPending())
 end
 
+-- /wfj debug tooltip [on | off]: record every pass over a spell or item tooltip (UI/Tooltip's trace) and show it in
+-- a window whose text selects itself on a click, to copy out.
+local traceWindow
+local function showTrace()
+  local lines = WFJ.Tooltip.trace or {}
+  local text = #lines == 0 and "(nothing recorded: /wfj debug tooltip on, then hover the tooltip)"
+    or table.concat(lines, "\n")
+  if not traceWindow then
+    local W = WFJ.OptionsWidgets
+    local f = CreateFrame("Frame", "WFJTooltipTrace", WFJ.Compat.resolve("UIParent"), "ButtonFrameTemplate")
+    f:SetSize(760, 520)
+    f:SetPoint("CENTER")
+    f:SetFrameStrata("DIALOG")
+    f:EnableMouse(true)
+    f:SetMovable(true)
+    f:RegisterForDrag("LeftButton")
+    f:SetScript("OnDragStart", f.StartMoving)
+    f:SetScript("OnDragStop", f.StopMovingOrSizing)
+    if f.SetTitle then f:SetTitle("WFJ tooltip trace") end
+    if ButtonFrameTemplate_HidePortrait then ButtonFrameTemplate_HidePortrait(f) end
+    f.text = W.scrollText(f, 14, -64, 730, 440)
+    local special = WFJ.Compat.resolve("UISpecialFrames") -- Escape closes it
+    if type(special) == "table" then table.insert(special, "WFJTooltipTrace") end
+    traceWindow = f
+  end
+  traceWindow.text.setText(text)
+  traceWindow:Show()
+  say("tooltip trace: %d passes shown; click the text, Ctrl+A, Ctrl+C", #lines)
+end
+
+local function debugTooltip(arg)
+  arg = arg and arg:lower()
+  if arg == "on" then
+    WFJ.Tooltip.trace = {}
+    return say("tooltip trace: on (every spell / item tooltip pass is recorded; /wfj debug tooltip to see it)")
+  end
+  if arg == "off" then
+    WFJ.Tooltip.trace = nil
+    return say("tooltip trace: off")
+  end
+  return showTrace()
+end
+
 function Slash.debug(sub, arg)
   if sub == "fonts" then return debugFonts() end
+  if sub == "tooltip" then return debugTooltip(arg) end
   if sub == "hash" then return debugHash() end
   if sub == "quest" or sub == "item" or sub == "spell" then return debugRow(sub, arg) end
   if sub == "gossip" then return debugGossip() end

@@ -298,40 +298,55 @@ local function isCountdown(english)
   return head ~= nil and head ~= "" and english:sub(1, #head) == head
 end
 
--- The remembered lines moved onto a secret pass with another line count. A line comes or goes in the middle (the
--- countdown sits above the description), so lines are matched from the top while their colours agree and from the
--- bottom while they agree; every written line must be matched one way or the other, or nothing is written.
--- → { [new index] = text } | nil
-local function byColour(snap, lines)
-  local now = {}
+-- Where each remembered row is on a secret pass with another row count. A row comes or goes in the middle (the
+-- countdown sits right above the description), so rows are matched from the top while their colours agree and from
+-- the bottom while they agree. When the client hides the colours too, one row more or less is taken to be that
+-- countdown: every row but the last stays, the last stays last. A written row that cannot be placed means nothing is
+-- written. → { [old row] = new row } | nil, and how the rows were placed
+local function rowMap(snap, lines)
+  local m, n = snap.n, #lines
+  local now, hidden = {}, false
   for i, l in ipairs(lines) do
     now[i] = colourOf(l.fs)
-    if now[i] == nil then return nil end
+    if now[i] == nil then hidden = true end
   end
-  local was, m, n = snap.colours, snap.n, #lines
-  local top = 0
-  while top < m and top < n and was[top + 1] ~= nil and was[top + 1] == now[top + 1] do top = top + 1 end
-  local bottom = 0
-  while bottom < m - top and bottom < n - top and was[m - bottom] ~= nil and was[m - bottom] == now[n - bottom] do
-    bottom = bottom + 1
+  local top, bottom, how
+  if not hidden then
+    local was = snap.colours
+    top = 0
+    while top < m and top < n and was[top + 1] ~= nil and was[top + 1] == now[top + 1] do top = top + 1 end
+    bottom = 0
+    while bottom < m - top and bottom < n - top and was[m - bottom] ~= nil and was[m - bottom] == now[n - bottom] do
+      bottom = bottom + 1
+    end
+    how = "colour"
+  elseif math.abs(m - n) == 1 then
+    top, bottom, how = math.min(m, n) - 1, 1, "countdown"
+  else
+    return nil, "colours hidden"
   end
-  local out = {}
+  local map = {}
   for i = 1, m do
-    if snap[i] and not isCountdown(snap.english[i]) then
-      if i <= top then
-        out[i] = snap[i]
-      elseif i > m - bottom then
-        out[n - (m - i)] = snap[i]
-      else
-        return nil
-      end
+    local written = (snap[i] or snap.right[i]) and not isCountdown(snap.english[i])
+    if i <= top then
+      map[i] = i
+    elseif i > m - bottom then
+      map[i] = n - (m - i)
+    elseif written then
+      return nil, how .. ": row " .. i .. " unplaced"
     end
   end
-  return out
+  return map, how
 end
 
-local function remember(frame, kind, id, area, lines)
-  local snap = { kind = kind, id = id, n = #lines, area = area, owner = ownerOf(frame), english = {}, colours = {} }
+-- `rights`: the right column as read before this pass wrote ("Rank 1", "30 yd range": the structural pass writes it)
+local function remember(frame, kind, id, area, lines, rights)
+  local snap = { kind = kind, id = id, n = #lines, area = area, owner = ownerOf(frame), english = {}, colours = {},
+    right = {} }
+  for i, r in ipairs(rights) do
+    local now = r.fs:GetText()
+    if now ~= r.text then snap.right[i] = now end
+  end
   for i, l in ipairs(lines) do
     snap.english[i] = l.text
     snap.colours[i] = colourOf(l.fs)
@@ -352,39 +367,92 @@ end
 
 local function reapply(frame, kind, id, lines)
   local snap = rendered[frame]
-  if not snap then return skip("nothing") end
-  if snap.kind ~= kind then return skip("other") end
-  local target -- { [index] = text }: the remembered lines where they are now
-  if snap.n == #lines then
-    target = {}
-    for i = 1, snap.n do
-      if not isCountdown(snap.english[i]) then target[i] = snap[i] end
-    end
-  else
-    target = byColour(snap, lines)
-    if not target then
-      -- what the counter cannot say: which line came or went (the readable pass's English, line by line)
-      Tooltip.lastMismatch = { remembered = snap.n, secret = #lines, english = snap.english }
-      return skip("lines")
-    end
-  end
-  if snap.owner ~= ownerOf(frame) then return skip("owner") end
+  if not snap then return skip("nothing"), "nothing remembered" end
+  if snap.kind ~= kind then return skip("other"), "remembered another kind" end
+  if snap.owner ~= ownerOf(frame) then return skip("owner"), "another owner" end
   -- the spell or item itself may be withheld on a secret pass: then the same owner (an action button) stands for it
-  if type(id) == "number" and not anySecret({ id }) and snap.id ~= id then return skip("other") end
+  if type(id) == "number" and not anySecret({ id }) and snap.id ~= id then
+    return skip("other"), "another spell or item"
+  end
   if WFJ.State.enabled == false or WFJ.Modifier.isDown() or not WFJ.State.areaEnabled(snap.area) then
-    return skip("off")
+    return skip("off"), "English wanted"
+  end
+  local map, how
+  if snap.n == #lines then
+    map, how = {}, "same rows"
+    for i = 1, snap.n do map[i] = i end
+  else
+    map, how = rowMap(snap, lines)
+    if not map then
+      Tooltip.lastMismatch = { remembered = snap.n, secret = #lines, english = snap.english }
+      return skip("lines"), how
+    end
   end
   Tooltip.secretPasses.reapplied = Tooltip.secretPasses.reapplied + 1
+  local rights = Tooltip.lines(frame, "Right")
   local n = 0
-  for i, l in ipairs(lines) do
-    if target[i] then
-      l.fs:SetText(target[i])
-      WFJ.Font.bundle(l.fs)
-      n = n + 1
+  for old, new in pairs(map) do
+    if not isCountdown(snap.english[old]) then
+      if snap[old] and lines[new] then
+        lines[new].fs:SetText(snap[old])
+        WFJ.Font.bundle(lines[new].fs)
+        n = n + 1
+      end
+      if snap.right[old] and rights[new] then
+        rights[new].fs:SetText(snap.right[old])
+        WFJ.Font.bundle(rights[new].fs)
+        n = n + 1
+      end
     end
   end
-  return n
+  return n, how
 end
+
+-- ── The tooltip trace (/wfj debug tooltip): every pass over a spell or item tooltip, row by row ──
+-- Off unless asked for. A secret value is never compared, concatenated or measured: it is written as <secret>.
+Tooltip.trace = nil
+local TRACE_MAX = 80
+
+local function plain(v)
+  if v == nil then return "nil" end
+  if anySecret({ v }) then return "<secret>" end
+  local t = tostring(v)
+  return #t > 70 and (t:sub(1, 70) .. "...") or t
+end
+
+local function describe(fs)
+  if type(fs) ~= "table" then return "-" end
+  local text = fs:GetText()
+  local shown = type(fs.IsShown) == "function" and fs:IsShown() and "" or " hidden"
+  local colour = colourOf(fs) or "<colour secret or none>"
+  if text == nil then return "nil" .. shown end
+  if anySecret({ text }) then return "<secret> " .. colour .. shown end
+  if text == "" then return "\"\"" .. shown end
+  return "\"" .. plain(text) .. "\" " .. colour .. shown
+end
+
+local function traceFrame(frame, event, id, lines, note)
+  if not Tooltip.trace then return end
+  local owner = ownerOf(frame)
+  local ownerName = type(owner) == "table" and type(owner.GetName) == "function" and plain(owner:GetName())
+    or plain(owner)
+  local clock = Compat.resolve("date")
+  local stamp = type(clock) == "function" and clock("%H:%M:%S") or ""
+  local out = { ("[%s] %s %s id=%s owner=%s rows=%d %s"):format(stamp, plain(frame:GetName()), event,
+    plain(id), ownerName, #lines, note or "") }
+  local rights = Tooltip.lines(frame, "Right")
+  for i, l in ipairs(lines) do
+    out[#out + 1] = ("  %d L %s | R %s"):format(i, describe(l.fs), describe(rights[i] and rights[i].fs))
+  end
+  local snap = rendered[frame]
+  if snap then
+    out[#out + 1] = ("  remembered: %s id=%s rows=%d"):format(plain(snap.kind), plain(snap.id), snap.n)
+  end
+  local t = Tooltip.trace
+  t[#t + 1] = table.concat(out, "\n")
+  if #t > TRACE_MAX then table.remove(t, 1) end
+end
+Tooltip.traceFrame = traceFrame
 
 local function show(frame, area, kind, id, lines, first, last, name, runArgs)
   local surface = surfaceOf(frame)
@@ -444,7 +512,11 @@ function Tooltip.onItem(frame)
   for i, l in ipairs(lines) do texts[i] = l.text end
   -- restricted: nothing is read or matched, forgetting included (forget compares the widget's text); checked
   -- before the link, which a secret pass may withhold
-  if anySecret(texts) or anySecret({ link }) then return reapply(frame, "item.description", nil, lines) end
+  if anySecret(texts) or anySecret({ link }) then
+    local n, why = reapply(frame, "item.description", nil, lines)
+    traceFrame(frame, "secret item", nil, lines, ("-> wrote %d (%s)"):format(n, why))
+    return n
+  end
   local id = type(link) == "string" and tonumber(link:match("item:(%d+)")) or nil
   if not id or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
   local first, last = Tooltip.itemRun(texts)
@@ -457,8 +529,10 @@ function Tooltip.onItem(frame)
     if not (entry and entry.status == ".") then runArgs = nil end
   end
   -- No run still has structural lines.
+  local rights = Tooltip.lines(frame, "Right")
   local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs)
-  remember(frame, "item.description", id, "items", lines)
+  remember(frame, "item.description", id, "items", lines, rights)
+  traceFrame(frame, "readable item", id, lines, ("-> rendered %d"):format(n))
   return n
 end
 
@@ -471,16 +545,26 @@ function Tooltip.onSpell(frame)
   for i, l in ipairs(lines) do texts[i] = l.text end
   -- restricted: nothing is read or matched, forgetting included (forget compares the widget's text); checked
   -- before the id, which a secret pass may withhold
-  if anySecret(texts) or anySecret({ id }) then return reapply(frame, "spell.description", id, lines) end
+  if anySecret(texts) or anySecret({ id }) then
+    local n, why = reapply(frame, "spell.description", id, lines)
+    traceFrame(frame, "secret spell", id, lines, ("-> wrote %d (%s)"):format(n, why))
+    return n
+  end
   if type(id) ~= "number" or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
   local description = Tooltip.spellDescription(id)
-  if anySecret({ description }) then return reapply(frame, "spell.description", id, lines) end
+  if anySecret({ description }) then
+    local n, why = reapply(frame, "spell.description", id, lines)
+    traceFrame(frame, "secret description", id, lines, ("-> wrote %d (%s)"):format(n, why))
+    return n
+  end
   -- Only the API's string becomes data: the positional fallback is a guess.
   if description and description ~= "" then WFJ.Collector.record("spell", id, "description", description) end
   local i = Tooltip.spellLine(texts, description)
   -- "spell.description": a bare "spell" would not name one field (spells also have `aura`)
+  local rights = Tooltip.lines(frame, "Right")
   local n = show(frame, "spells", "spell.description", id, lines, i, i, spellName)
-  remember(frame, "spell.description", id, "spells", lines)
+  remember(frame, "spell.description", id, "spells", lines, rights)
+  traceFrame(frame, "readable spell", id, lines, ("-> rendered %d"):format(n))
   return n
 end
 

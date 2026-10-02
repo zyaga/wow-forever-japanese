@@ -192,6 +192,25 @@ describe("UI/Tooltip hooks the client's data processor", function()
     _G.issecretvalue, _G.ITEM_COOLDOWN_TIME = nil, nil
   end)
 
+  it("the trace records each pass row by row and writes a secret value as <secret>, never reading it", function()
+    local WFJ, tt = setup()
+    WFJ.Tooltip.init()
+    WFJ.Tooltip.trace = {}
+    tt.owner = "ActionButton1"
+    Stub.setSpellTooltip(tt, 17, SHIELD_LINES)
+    local secret = {}
+    for _, l in ipairs(SHIELD_LINES) do secret[l] = true end
+    _G.issecretvalue = function(v) return secret[v] == true end
+    assert.has_no.errors(function() Stub.setSpellTooltip(tt, 17, SHIELD_LINES) end)
+    _G.issecretvalue = nil
+    assert.are.equal(2, #WFJ.Tooltip.trace)
+    assert.is_truthy(WFJ.Tooltip.trace[1]:find("readable spell", 1, true))
+    assert.is_truthy(WFJ.Tooltip.trace[2]:find("secret spell", 1, true))
+    assert.is_truthy(WFJ.Tooltip.trace[2]:find("<secret>", 1, true))
+    assert.is_truthy(WFJ.Tooltip.trace[2]:find("-> wrote 1 (same rows)", 1, true))
+    WFJ.Tooltip.trace = nil
+  end)
+
   it("ignores a tooltip whose data type is not the one the handler registered for", function()
     local WFJ, tt = setup()
     WFJ.Tooltip.init()
