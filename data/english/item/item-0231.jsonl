@@ -1,383 +1,383 @@
-{"id": 231298, "field": "name", "en": "Scroll of Lesser Spatial Mending", "hash": "91537be3bd1257a1", "src": "db2@1.60.1.70124"}
-{"id": 231298, "field": "description", "en": "Close a targeted small Fel portal. May draw unwanted attention from the other side.", "hash": "a89f2449f102cfff", "src": "db2@1.60.1.70124"}
-{"id": 231304, "field": "name", "en": "Scroll: SERELS PATALIS GNEMIND", "hash": "0ed326cb197ed6b4", "src": "db2@1.60.1.70124"}
-{"id": 231304, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70124"}
-{"id": 231386, "field": "name", "en": "Flawless Black Dragonscale", "hash": "1b65169c146c97e2", "src": "db2@1.60.1.70124"}
-{"id": 231386, "field": "description", "en": "This scale is immense and flawless. Only the most venerable dragons possess scales of this quality.", "hash": "dff698bc680a79c9", "src": "db2@1.60.1.70124"}
-{"id": 231530, "field": "name", "en": "Warlord's Plate Armor", "hash": "1ca8cfd4d63d5d9c", "src": "db2@1.60.1.70124"}
+{"id": 231298, "field": "name", "en": "Scroll of Lesser Spatial Mending", "hash": "91537be3bd1257a1", "src": "db2@1.60.1.70170"}
+{"id": 231298, "field": "description", "en": "Close a targeted small Fel portal. May draw unwanted attention from the other side.", "hash": "a89f2449f102cfff", "src": "db2@1.60.1.70170"}
+{"id": 231304, "field": "name", "en": "Scroll: SERELS PATALIS GNEMIND", "hash": "0ed326cb197ed6b4", "src": "db2@1.60.1.70170"}
+{"id": 231304, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70170"}
+{"id": 231386, "field": "name", "en": "Flawless Black Dragonscale", "hash": "1b65169c146c97e2", "src": "db2@1.60.1.70170"}
+{"id": 231386, "field": "description", "en": "This scale is immense and flawless. Only the most venerable dragons possess scales of this quality.", "hash": "dff698bc680a79c9", "src": "db2@1.60.1.70170"}
+{"id": 231530, "field": "name", "en": "Warlord's Plate Armor", "hash": "1ca8cfd4d63d5d9c", "src": "db2@1.60.1.70170"}
 {"id": 231530, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231531, "field": "name", "en": "General's Plate Boots", "hash": "e98773abd870308c", "src": "db2@1.60.1.70124"}
+{"id": 231531, "field": "name", "en": "General's Plate Boots", "hash": "e98773abd870308c", "src": "db2@1.60.1.70170"}
 {"id": 231531, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 231532, "field": "name", "en": "General's Plate Gauntlets", "hash": "1ac6757ee3e8d676", "src": "db2@1.60.1.70124"}
-{"id": 231532, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70124"}
-{"id": 231533, "field": "name", "en": "General's Plate Leggings", "hash": "5a056889393ed7b6", "src": "db2@1.60.1.70124"}
+{"id": 231532, "field": "name", "en": "General's Plate Gauntlets", "hash": "1ac6757ee3e8d676", "src": "db2@1.60.1.70170"}
+{"id": 231532, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70170"}
+{"id": 231533, "field": "name", "en": "General's Plate Leggings", "hash": "5a056889393ed7b6", "src": "db2@1.60.1.70170"}
 {"id": 231533, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231534, "field": "name", "en": "Warlord's Plate Shoulders", "hash": "228b02a357b77ef8", "src": "db2@1.60.1.70124"}
+{"id": 231534, "field": "name", "en": "Warlord's Plate Shoulders", "hash": "228b02a357b77ef8", "src": "db2@1.60.1.70170"}
 {"id": 231534, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 231535, "field": "name", "en": "Warlord's Plate Headpiece", "hash": "179900721a82f185", "src": "db2@1.60.1.70124"}
+{"id": 231535, "field": "name", "en": "Warlord's Plate Headpiece", "hash": "179900721a82f185", "src": "db2@1.60.1.70170"}
 {"id": 231535, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231536, "field": "name", "en": "Field Marshal's Plate Armor", "hash": "e184042dc58f9f3f", "src": "db2@1.60.1.70124"}
+{"id": 231536, "field": "name", "en": "Field Marshal's Plate Armor", "hash": "e184042dc58f9f3f", "src": "db2@1.60.1.70170"}
 {"id": 231536, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231537, "field": "name", "en": "Field Marshal's Plate Shoulderguards", "hash": "e927a45e75e1990b", "src": "db2@1.60.1.70124"}
+{"id": 231537, "field": "name", "en": "Field Marshal's Plate Shoulderguards", "hash": "e927a45e75e1990b", "src": "db2@1.60.1.70170"}
 {"id": 231537, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 231538, "field": "name", "en": "Field Marshal's Plate Helm", "hash": "839f8e3eb0c8a019", "src": "db2@1.60.1.70124"}
+{"id": 231538, "field": "name", "en": "Field Marshal's Plate Helm", "hash": "839f8e3eb0c8a019", "src": "db2@1.60.1.70170"}
 {"id": 231538, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231539, "field": "name", "en": "Marshal's Plate Boots", "hash": "888c31ab878f371b", "src": "db2@1.60.1.70124"}
+{"id": 231539, "field": "name", "en": "Marshal's Plate Boots", "hash": "888c31ab878f371b", "src": "db2@1.60.1.70170"}
 {"id": 231539, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 231540, "field": "name", "en": "Marshal's Plate Legguards", "hash": "160237e9974a514a", "src": "db2@1.60.1.70124"}
+{"id": 231540, "field": "name", "en": "Marshal's Plate Legguards", "hash": "160237e9974a514a", "src": "db2@1.60.1.70170"}
 {"id": 231540, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231541, "field": "name", "en": "Marshal's Plate Gauntlets", "hash": "4f1ab94b1e786ce3", "src": "db2@1.60.1.70124"}
-{"id": 231541, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70124"}
-{"id": 231543, "field": "name", "en": "Field Marshal's Leather Chestpiece", "hash": "0b42a6b1f7e584ed", "src": "db2@1.60.1.70124"}
+{"id": 231541, "field": "name", "en": "Marshal's Plate Gauntlets", "hash": "4f1ab94b1e786ce3", "src": "db2@1.60.1.70170"}
+{"id": 231541, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70170"}
+{"id": 231543, "field": "name", "en": "Field Marshal's Leather Chestpiece", "hash": "0b42a6b1f7e584ed", "src": "db2@1.60.1.70170"}
 {"id": 231543, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231544, "field": "name", "en": "Marshal's Leather Handgrips", "hash": "263c2e135d91ea27", "src": "db2@1.60.1.70124"}
+{"id": 231544, "field": "name", "en": "Marshal's Leather Handgrips", "hash": "263c2e135d91ea27", "src": "db2@1.60.1.70170"}
 {"id": 231544, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231545, "field": "name", "en": "Field Marshal's Leather Mask", "hash": "d37a5ae3a0f2dba5", "src": "db2@1.60.1.70124"}
+{"id": 231545, "field": "name", "en": "Field Marshal's Leather Mask", "hash": "d37a5ae3a0f2dba5", "src": "db2@1.60.1.70170"}
 {"id": 231545, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231546, "field": "name", "en": "Marshal's Leather Footguards", "hash": "69c5d1f0768ce0a8", "src": "db2@1.60.1.70124"}
-{"id": 231546, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70124"}
-{"id": 231547, "field": "name", "en": "Field Marshal's Leather Epaulets", "hash": "3a97b719d3c013fe", "src": "db2@1.60.1.70124"}
+{"id": 231546, "field": "name", "en": "Marshal's Leather Footguards", "hash": "69c5d1f0768ce0a8", "src": "db2@1.60.1.70170"}
+{"id": 231546, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70170"}
+{"id": 231547, "field": "name", "en": "Field Marshal's Leather Epaulets", "hash": "3a97b719d3c013fe", "src": "db2@1.60.1.70170"}
 {"id": 231547, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 231548, "field": "name", "en": "Marshal's Leather Leggings", "hash": "7e5337c92a58ae8a", "src": "db2@1.60.1.70124"}
+{"id": 231548, "field": "name", "en": "Marshal's Leather Leggings", "hash": "7e5337c92a58ae8a", "src": "db2@1.60.1.70170"}
 {"id": 231548, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "e382aefff8399a75", "src": "wago@1.15.9.69722"}
-{"id": 231549, "field": "name", "en": "Warlord's Leather Breastplate", "hash": "1ba33d38997b39b2", "src": "db2@1.60.1.70124"}
+{"id": 231549, "field": "name", "en": "Warlord's Leather Breastplate", "hash": "1ba33d38997b39b2", "src": "db2@1.60.1.70170"}
 {"id": 231549, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "e382aefff8399a75", "src": "wago@1.15.9.69722"}
-{"id": 231551, "field": "name", "en": "Warlord's Leather Spaulders", "hash": "dcafdfde857e7b1b", "src": "db2@1.60.1.70124"}
+{"id": 231551, "field": "name", "en": "Warlord's Leather Spaulders", "hash": "dcafdfde857e7b1b", "src": "db2@1.60.1.70170"}
 {"id": 231551, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 231552, "field": "name", "en": "General's Leather Treads", "hash": "87521a6e74fff6cb", "src": "db2@1.60.1.70124"}
-{"id": 231552, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70124"}
-{"id": 231553, "field": "name", "en": "Warlord's Leather Helm", "hash": "16a413eea08cfd67", "src": "db2@1.60.1.70124"}
+{"id": 231552, "field": "name", "en": "General's Leather Treads", "hash": "87521a6e74fff6cb", "src": "db2@1.60.1.70170"}
+{"id": 231552, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70170"}
+{"id": 231553, "field": "name", "en": "Warlord's Leather Helm", "hash": "16a413eea08cfd67", "src": "db2@1.60.1.70170"}
 {"id": 231553, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "e382aefff8399a75", "src": "wago@1.15.9.69722"}
-{"id": 231554, "field": "name", "en": "General's Leather Legguards", "hash": "90c9b47dde49992e", "src": "db2@1.60.1.70124"}
+{"id": 231554, "field": "name", "en": "General's Leather Legguards", "hash": "90c9b47dde49992e", "src": "db2@1.60.1.70170"}
 {"id": 231554, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "e382aefff8399a75", "src": "wago@1.15.9.69722"}
-{"id": 231555, "field": "name", "en": "General's Leather Mitts", "hash": "810f2577175e6793", "src": "db2@1.60.1.70124"}
+{"id": 231555, "field": "name", "en": "General's Leather Mitts", "hash": "810f2577175e6793", "src": "db2@1.60.1.70170"}
 {"id": 231555, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231557, "field": "name", "en": "Field Marshal's Chain Pauldrons", "hash": "776c8799ae881a44", "src": "db2@1.60.1.70124"}
+{"id": 231557, "field": "name", "en": "Field Marshal's Chain Pauldrons", "hash": "776c8799ae881a44", "src": "db2@1.60.1.70170"}
 {"id": 231557, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "6525ed322515ef84", "src": "wago@1.15.9.69722"}
-{"id": 231558, "field": "name", "en": "Marshal's Chain Legplates", "hash": "49d7a5829621241b", "src": "db2@1.60.1.70124"}
+{"id": 231558, "field": "name", "en": "Marshal's Chain Legplates", "hash": "49d7a5829621241b", "src": "db2@1.60.1.70170"}
 {"id": 231558, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 231560, "field": "name", "en": "Marshal's Chain Grips", "hash": "b7bdb0b50d2e9222", "src": "db2@1.60.1.70124"}
-{"id": 231560, "field": "description", "en": "Increases the damage done by your Raptor Strike by $s1%.", "hash": "ef4467a5a4b11bf4", "src": "db2@1.60.1.70124"}
-{"id": 231561, "field": "name", "en": "Marshal's Chain Sabatons", "hash": "784da11b25162c61", "src": "db2@1.60.1.70124"}
+{"id": 231560, "field": "name", "en": "Marshal's Chain Grips", "hash": "b7bdb0b50d2e9222", "src": "db2@1.60.1.70170"}
+{"id": 231560, "field": "description", "en": "Increases the damage done by your Raptor Strike by $s1%.", "hash": "ef4467a5a4b11bf4", "src": "db2@1.60.1.70170"}
+{"id": 231561, "field": "name", "en": "Marshal's Chain Sabatons", "hash": "784da11b25162c61", "src": "db2@1.60.1.70170"}
 {"id": 231561, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "6525ed322515ef84", "src": "wago@1.15.9.69722"}
-{"id": 231562, "field": "name", "en": "Field Marshal's Chain Greathelm", "hash": "4bd85687afd7be21", "src": "db2@1.60.1.70124"}
+{"id": 231562, "field": "name", "en": "Field Marshal's Chain Greathelm", "hash": "4bd85687afd7be21", "src": "db2@1.60.1.70170"}
 {"id": 231562, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 231563, "field": "name", "en": "Field Marshal's Chain Armor", "hash": "b88b9f136034b6db", "src": "db2@1.60.1.70124"}
+{"id": 231563, "field": "name", "en": "Field Marshal's Chain Armor", "hash": "b88b9f136034b6db", "src": "db2@1.60.1.70170"}
 {"id": 231563, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 231564, "field": "name", "en": "General's Chain Sabatons", "hash": "878990f4d2e4b7f0", "src": "db2@1.60.1.70124"}
+{"id": 231564, "field": "name", "en": "General's Chain Sabatons", "hash": "878990f4d2e4b7f0", "src": "db2@1.60.1.70170"}
 {"id": 231564, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "6525ed322515ef84", "src": "wago@1.15.9.69722"}
-{"id": 231565, "field": "name", "en": "Warlord's Chain Pauldrons", "hash": "55570c6865d02529", "src": "db2@1.60.1.70124"}
+{"id": 231565, "field": "name", "en": "Warlord's Chain Pauldrons", "hash": "55570c6865d02529", "src": "db2@1.60.1.70170"}
 {"id": 231565, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "6525ed322515ef84", "src": "wago@1.15.9.69722"}
-{"id": 231566, "field": "name", "en": "Warlord's Chain Armor", "hash": "f3b06ab570e27538", "src": "db2@1.60.1.70124"}
+{"id": 231566, "field": "name", "en": "Warlord's Chain Armor", "hash": "f3b06ab570e27538", "src": "db2@1.60.1.70170"}
 {"id": 231566, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 231567, "field": "name", "en": "General's Chain Legplates", "hash": "158361b55b918dbf", "src": "db2@1.60.1.70124"}
+{"id": 231567, "field": "name", "en": "General's Chain Legplates", "hash": "158361b55b918dbf", "src": "db2@1.60.1.70170"}
 {"id": 231567, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 231568, "field": "name", "en": "Warlord's Chain Greathelm", "hash": "29c2db56671fc906", "src": "db2@1.60.1.70124"}
+{"id": 231568, "field": "name", "en": "Warlord's Chain Greathelm", "hash": "29c2db56671fc906", "src": "db2@1.60.1.70170"}
 {"id": 231568, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 231569, "field": "name", "en": "General's Chain Grips", "hash": "18b8f2ba5e0f8b93", "src": "db2@1.60.1.70124"}
-{"id": 231569, "field": "description", "en": "Increases the damage done by your Raptor Strike by $s1%.", "hash": "ef4467a5a4b11bf4", "src": "db2@1.60.1.70124"}
-{"id": 231570, "field": "name", "en": "General's Chain Greaves", "hash": "fdceeec64aa797f0", "src": "db2@1.60.1.70124"}
+{"id": 231569, "field": "name", "en": "General's Chain Grips", "hash": "18b8f2ba5e0f8b93", "src": "db2@1.60.1.70170"}
+{"id": 231569, "field": "description", "en": "Increases the damage done by your Raptor Strike by $s1%.", "hash": "ef4467a5a4b11bf4", "src": "db2@1.60.1.70170"}
+{"id": 231570, "field": "name", "en": "General's Chain Greaves", "hash": "fdceeec64aa797f0", "src": "db2@1.60.1.70170"}
 {"id": 231570, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 231571, "field": "name", "en": "Warlord's Chain Helm", "hash": "3d692d52394a3843", "src": "db2@1.60.1.70124"}
+{"id": 231571, "field": "name", "en": "Warlord's Chain Helm", "hash": "3d692d52394a3843", "src": "db2@1.60.1.70170"}
 {"id": 231571, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231572, "field": "name", "en": "Warlord's Chain Shoulders", "hash": "1cb4a9e547052b09", "src": "db2@1.60.1.70124"}
+{"id": 231572, "field": "name", "en": "Warlord's Chain Shoulders", "hash": "1cb4a9e547052b09", "src": "db2@1.60.1.70170"}
 {"id": 231572, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 231573, "field": "name", "en": "Warlord's Chain Hauberk", "hash": "84e8d19235e3540c", "src": "db2@1.60.1.70124"}
+{"id": 231573, "field": "name", "en": "Warlord's Chain Hauberk", "hash": "84e8d19235e3540c", "src": "db2@1.60.1.70170"}
 {"id": 231573, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231574, "field": "name", "en": "General's Chain Legguards", "hash": "dbd79b594c0866ff", "src": "db2@1.60.1.70124"}
+{"id": 231574, "field": "name", "en": "General's Chain Legguards", "hash": "dbd79b594c0866ff", "src": "db2@1.60.1.70170"}
 {"id": 231574, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231575, "field": "name", "en": "General's Chain Vices", "hash": "1ed04f345d527a29", "src": "db2@1.60.1.70124"}
-{"id": 231575, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70124"}
-{"id": 231576, "field": "name", "en": "Field Marshal's Chain Shoulders", "hash": "3eca25168fbd2024", "src": "db2@1.60.1.70124"}
+{"id": 231575, "field": "name", "en": "General's Chain Vices", "hash": "1ed04f345d527a29", "src": "db2@1.60.1.70170"}
+{"id": 231575, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70170"}
+{"id": 231576, "field": "name", "en": "Field Marshal's Chain Shoulders", "hash": "3eca25168fbd2024", "src": "db2@1.60.1.70170"}
 {"id": 231576, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 231577, "field": "name", "en": "Marshal's Chain Legguards", "hash": "102bdf2b8697fd5b", "src": "db2@1.60.1.70124"}
+{"id": 231577, "field": "name", "en": "Marshal's Chain Legguards", "hash": "102bdf2b8697fd5b", "src": "db2@1.60.1.70170"}
 {"id": 231577, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231578, "field": "name", "en": "Marshal's Chain Vices", "hash": "bdd50d2f0c7180b8", "src": "db2@1.60.1.70124"}
-{"id": 231578, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70124"}
-{"id": 231579, "field": "name", "en": "Marshal's Chain Greaves", "hash": "d2b31dcd61f8c019", "src": "db2@1.60.1.70124"}
+{"id": 231578, "field": "name", "en": "Marshal's Chain Vices", "hash": "bdd50d2f0c7180b8", "src": "db2@1.60.1.70170"}
+{"id": 231578, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70170"}
+{"id": 231579, "field": "name", "en": "Marshal's Chain Greaves", "hash": "d2b31dcd61f8c019", "src": "db2@1.60.1.70170"}
 {"id": 231579, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 231580, "field": "name", "en": "Field Marshal's Chain Helm", "hash": "508058b64cb481cb", "src": "db2@1.60.1.70124"}
+{"id": 231580, "field": "name", "en": "Field Marshal's Chain Helm", "hash": "508058b64cb481cb", "src": "db2@1.60.1.70170"}
 {"id": 231580, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231581, "field": "name", "en": "Field Marshal's Chain Hauberk", "hash": "cf51f56fa496e399", "src": "db2@1.60.1.70124"}
+{"id": 231581, "field": "name", "en": "Field Marshal's Chain Hauberk", "hash": "cf51f56fa496e399", "src": "db2@1.60.1.70170"}
 {"id": 231581, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231582, "field": "name", "en": "Field Marshal's Dreadweave Robe", "hash": "81c627ffed8fcbb4", "src": "db2@1.60.1.70124"}
+{"id": 231582, "field": "name", "en": "Field Marshal's Dreadweave Robe", "hash": "81c627ffed8fcbb4", "src": "db2@1.60.1.70170"}
 {"id": 231582, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231583, "field": "name", "en": "Field Marshal's Dreadweave Shoulders", "hash": "f84cb9a39a96faf8", "src": "db2@1.60.1.70124"}
+{"id": 231583, "field": "name", "en": "Field Marshal's Dreadweave Shoulders", "hash": "f84cb9a39a96faf8", "src": "db2@1.60.1.70170"}
 {"id": 231583, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231584, "field": "name", "en": "Field Marshal's Coronal", "hash": "7743f2209aac462f", "src": "db2@1.60.1.70124"}
+{"id": 231584, "field": "name", "en": "Field Marshal's Coronal", "hash": "7743f2209aac462f", "src": "db2@1.60.1.70170"}
 {"id": 231584, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231585, "field": "name", "en": "Marshal's Dreadweave Boots", "hash": "23e7e6ac144e128b", "src": "db2@1.60.1.70124"}
+{"id": 231585, "field": "name", "en": "Marshal's Dreadweave Boots", "hash": "23e7e6ac144e128b", "src": "db2@1.60.1.70170"}
 {"id": 231585, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231586, "field": "name", "en": "Marshal's Dreadweave Gloves", "hash": "1497e0e64fbce9b6", "src": "db2@1.60.1.70124"}
-{"id": 231586, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70124"}
-{"id": 231587, "field": "name", "en": "Marshal's Dreadweave Leggings", "hash": "fa9fefa2a7a39eff", "src": "db2@1.60.1.70124"}
+{"id": 231586, "field": "name", "en": "Marshal's Dreadweave Gloves", "hash": "1497e0e64fbce9b6", "src": "db2@1.60.1.70170"}
+{"id": 231586, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70170"}
+{"id": 231587, "field": "name", "en": "Marshal's Dreadweave Leggings", "hash": "fa9fefa2a7a39eff", "src": "db2@1.60.1.70170"}
 {"id": 231587, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231588, "field": "name", "en": "General's Dreadweave Pants", "hash": "50a8ab2eaa10a811", "src": "db2@1.60.1.70124"}
+{"id": 231588, "field": "name", "en": "General's Dreadweave Pants", "hash": "50a8ab2eaa10a811", "src": "db2@1.60.1.70170"}
 {"id": 231588, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231589, "field": "name", "en": "General's Dreadweave Gloves", "hash": "2fe2932dc8926b2d", "src": "db2@1.60.1.70124"}
-{"id": 231589, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70124"}
-{"id": 231590, "field": "name", "en": "Warlord's Dreadweave Hood", "hash": "5e59ab661ec9ecba", "src": "db2@1.60.1.70124"}
+{"id": 231589, "field": "name", "en": "General's Dreadweave Gloves", "hash": "2fe2932dc8926b2d", "src": "db2@1.60.1.70170"}
+{"id": 231589, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70170"}
+{"id": 231590, "field": "name", "en": "Warlord's Dreadweave Hood", "hash": "5e59ab661ec9ecba", "src": "db2@1.60.1.70170"}
 {"id": 231590, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231591, "field": "name", "en": "Warlord's Dreadweave Robe", "hash": "5fb0accea4d7d699", "src": "db2@1.60.1.70124"}
+{"id": 231591, "field": "name", "en": "Warlord's Dreadweave Robe", "hash": "5fb0accea4d7d699", "src": "db2@1.60.1.70170"}
 {"id": 231591, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231592, "field": "name", "en": "Warlord's Dreadweave Mantle", "hash": "bcbad065b2850d6a", "src": "db2@1.60.1.70124"}
+{"id": 231592, "field": "name", "en": "Warlord's Dreadweave Mantle", "hash": "bcbad065b2850d6a", "src": "db2@1.60.1.70170"}
 {"id": 231592, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231593, "field": "name", "en": "General's Dreadweave Boots", "hash": "5cc9343e38e54bb4", "src": "db2@1.60.1.70124"}
+{"id": 231593, "field": "name", "en": "General's Dreadweave Boots", "hash": "5cc9343e38e54bb4", "src": "db2@1.60.1.70170"}
 {"id": 231593, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231594, "field": "name", "en": "Warlord's Silk Amice", "hash": "1113f07d0288eb24", "src": "db2@1.60.1.70124"}
+{"id": 231594, "field": "name", "en": "Warlord's Silk Amice", "hash": "1113f07d0288eb24", "src": "db2@1.60.1.70170"}
 {"id": 231594, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nDecreases the magical resistances of your spell targets by $s1.", "hash": "6180faf66b350699", "src": "wago@1.15.9.69722"}
-{"id": 231595, "field": "name", "en": "General's Silk Trousers", "hash": "61cc6bb882ce1234", "src": "db2@1.60.1.70124"}
+{"id": 231595, "field": "name", "en": "General's Silk Trousers", "hash": "61cc6bb882ce1234", "src": "db2@1.60.1.70170"}
 {"id": 231595, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231596, "field": "name", "en": "Warlord's Silk Raiment", "hash": "08a5d72b58f7ed97", "src": "db2@1.60.1.70124"}
+{"id": 231596, "field": "name", "en": "Warlord's Silk Raiment", "hash": "08a5d72b58f7ed97", "src": "db2@1.60.1.70170"}
 {"id": 231596, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231597, "field": "name", "en": "General's Silk Boots", "hash": "f958a6d7d6312cf3", "src": "db2@1.60.1.70124"}
+{"id": 231597, "field": "name", "en": "General's Silk Boots", "hash": "f958a6d7d6312cf3", "src": "db2@1.60.1.70170"}
 {"id": 231597, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 231599, "field": "name", "en": "General's Silk Gauntlets", "hash": "f7012bd499ee80e6", "src": "db2@1.60.1.70124"}
-{"id": 231599, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Arcane Blast.", "hash": "a28ca1371dff8ac8", "src": "db2@1.60.1.70124"}
-{"id": 231600, "field": "name", "en": "General's Silk Handwraps", "hash": "877f231cd9c41143", "src": "db2@1.60.1.70124"}
-{"id": 231600, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70124"}
-{"id": 231601, "field": "name", "en": "Warlord's Silk Cowl", "hash": "56629f8f17b78fe7", "src": "db2@1.60.1.70124"}
+{"id": 231599, "field": "name", "en": "General's Silk Gauntlets", "hash": "f7012bd499ee80e6", "src": "db2@1.60.1.70170"}
+{"id": 231599, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Arcane Blast.", "hash": "a28ca1371dff8ac8", "src": "db2@1.60.1.70170"}
+{"id": 231600, "field": "name", "en": "General's Silk Handwraps", "hash": "877f231cd9c41143", "src": "db2@1.60.1.70170"}
+{"id": 231600, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70170"}
+{"id": 231601, "field": "name", "en": "Warlord's Silk Cowl", "hash": "56629f8f17b78fe7", "src": "db2@1.60.1.70170"}
 {"id": 231601, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231602, "field": "name", "en": "Field Marshal's Silk Spaulders", "hash": "97c0d1b307abc3b4", "src": "db2@1.60.1.70124"}
+{"id": 231602, "field": "name", "en": "Field Marshal's Silk Spaulders", "hash": "97c0d1b307abc3b4", "src": "db2@1.60.1.70170"}
 {"id": 231602, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nDecreases the magical resistances of your spell targets by $s1.", "hash": "6180faf66b350699", "src": "wago@1.15.9.69722"}
-{"id": 231603, "field": "name", "en": "Field Marshal's Silk Vestments", "hash": "9de095c5fa564d58", "src": "db2@1.60.1.70124"}
+{"id": 231603, "field": "name", "en": "Field Marshal's Silk Vestments", "hash": "9de095c5fa564d58", "src": "db2@1.60.1.70170"}
 {"id": 231603, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231604, "field": "name", "en": "Field Marshal's Coronet", "hash": "7743f4349aacc5bb", "src": "db2@1.60.1.70124"}
+{"id": 231604, "field": "name", "en": "Field Marshal's Coronet", "hash": "7743f4349aacc5bb", "src": "db2@1.60.1.70170"}
 {"id": 231604, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231605, "field": "name", "en": "Marshal's Silk Leggings", "hash": "7ada681876baa95e", "src": "db2@1.60.1.70124"}
+{"id": 231605, "field": "name", "en": "Marshal's Silk Leggings", "hash": "7ada681876baa95e", "src": "db2@1.60.1.70170"}
 {"id": 231605, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231606, "field": "name", "en": "Marshal's Silk Footwraps", "hash": "2f43f4cd33d7cd09", "src": "db2@1.60.1.70124"}
+{"id": 231606, "field": "name", "en": "Marshal's Silk Footwraps", "hash": "2f43f4cd33d7cd09", "src": "db2@1.60.1.70170"}
 {"id": 231606, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 231608, "field": "name", "en": "Marshal's Silk Gauntlets", "hash": "e7c53bfbec1ff546", "src": "db2@1.60.1.70124"}
-{"id": 231608, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Arcane Blast.", "hash": "a28ca1371dff8ac8", "src": "db2@1.60.1.70124"}
-{"id": 231609, "field": "name", "en": "Marshal's Silk Handwraps", "hash": "784333432bf585b4", "src": "db2@1.60.1.70124"}
-{"id": 231609, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70124"}
-{"id": 231610, "field": "name", "en": "General's Satin Treads", "hash": "6dfa4016c7b90c9c", "src": "db2@1.60.1.70124"}
+{"id": 231608, "field": "name", "en": "Marshal's Silk Gauntlets", "hash": "e7c53bfbec1ff546", "src": "db2@1.60.1.70170"}
+{"id": 231608, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Arcane Blast.", "hash": "a28ca1371dff8ac8", "src": "db2@1.60.1.70170"}
+{"id": 231609, "field": "name", "en": "Marshal's Silk Handwraps", "hash": "784333432bf585b4", "src": "db2@1.60.1.70170"}
+{"id": 231609, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70170"}
+{"id": 231610, "field": "name", "en": "General's Satin Treads", "hash": "6dfa4016c7b90c9c", "src": "db2@1.60.1.70170"}
 {"id": 231610, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231611, "field": "name", "en": "Warlord's Satin Epaulets", "hash": "48b34ff279cd1d93", "src": "db2@1.60.1.70124"}
+{"id": 231611, "field": "name", "en": "Warlord's Satin Epaulets", "hash": "48b34ff279cd1d93", "src": "db2@1.60.1.70170"}
 {"id": 231611, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231612, "field": "name", "en": "Warlord's Satin Robes", "hash": "4e8ed2e3a4652867", "src": "db2@1.60.1.70124"}
+{"id": 231612, "field": "name", "en": "Warlord's Satin Robes", "hash": "4e8ed2e3a4652867", "src": "db2@1.60.1.70170"}
 {"id": 231612, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 231613, "field": "name", "en": "General's Satin Grips", "hash": "49980ece97e3cbec", "src": "db2@1.60.1.70124"}
-{"id": 231613, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70124"}
-{"id": 231614, "field": "name", "en": "General's Satin Leggings", "hash": "d4f8af14c875b8e7", "src": "db2@1.60.1.70124"}
+{"id": 231613, "field": "name", "en": "General's Satin Grips", "hash": "49980ece97e3cbec", "src": "db2@1.60.1.70170"}
+{"id": 231613, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70170"}
+{"id": 231614, "field": "name", "en": "General's Satin Leggings", "hash": "d4f8af14c875b8e7", "src": "db2@1.60.1.70170"}
 {"id": 231614, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 231615, "field": "name", "en": "Warlord's Satin Crown", "hash": "47ab7d96707d3b0d", "src": "db2@1.60.1.70124"}
+{"id": 231615, "field": "name", "en": "Warlord's Satin Crown", "hash": "47ab7d96707d3b0d", "src": "db2@1.60.1.70170"}
 {"id": 231615, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 231616, "field": "name", "en": "Field Marshal's Satin Crown", "hash": "0c86b1f45fcf7cb0", "src": "db2@1.60.1.70124"}
+{"id": 231616, "field": "name", "en": "Field Marshal's Satin Crown", "hash": "0c86b1f45fcf7cb0", "src": "db2@1.60.1.70170"}
 {"id": 231616, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 231617, "field": "name", "en": "Marshal's Satin Grips", "hash": "e89cccc94702d27b", "src": "db2@1.60.1.70124"}
-{"id": 231617, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70124"}
-{"id": 231618, "field": "name", "en": "Field Marshal's Satin Robe", "hash": "d9107161176b4dad", "src": "db2@1.60.1.70124"}
+{"id": 231617, "field": "name", "en": "Marshal's Satin Grips", "hash": "e89cccc94702d27b", "src": "db2@1.60.1.70170"}
+{"id": 231617, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70170"}
+{"id": 231618, "field": "name", "en": "Field Marshal's Satin Robe", "hash": "d9107161176b4dad", "src": "db2@1.60.1.70170"}
 {"id": 231618, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 231619, "field": "name", "en": "Marshal's Satin Leggings", "hash": "c5bcbf3b1aa72d58", "src": "db2@1.60.1.70124"}
+{"id": 231619, "field": "name", "en": "Marshal's Satin Leggings", "hash": "c5bcbf3b1aa72d58", "src": "db2@1.60.1.70170"}
 {"id": 231619, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 231620, "field": "name", "en": "Marshal's Satin Treads", "hash": "cd67791c73c87619", "src": "db2@1.60.1.70124"}
+{"id": 231620, "field": "name", "en": "Marshal's Satin Treads", "hash": "cd67791c73c87619", "src": "db2@1.60.1.70170"}
 {"id": 231620, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231621, "field": "name", "en": "Field Marshal's Satin Epaulets", "hash": "5c80aac7840145d9", "src": "db2@1.60.1.70124"}
+{"id": 231621, "field": "name", "en": "Field Marshal's Satin Epaulets", "hash": "5c80aac7840145d9", "src": "db2@1.60.1.70170"}
 {"id": 231621, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231622, "field": "name", "en": "Field Marshal's Satin Hood", "hash": "d7b96ff9915d63bd", "src": "db2@1.60.1.70124"}
+{"id": 231622, "field": "name", "en": "Field Marshal's Satin Hood", "hash": "d7b96ff9915d63bd", "src": "db2@1.60.1.70170"}
 {"id": 231622, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231623, "field": "name", "en": "Marshal's Satin Handwraps", "hash": "ca15caeae2d00776", "src": "db2@1.60.1.70124"}
-{"id": 231623, "field": "description", "en": "Reduces the duration of your Weakened Soul by ${$m1/-1000} sec.", "hash": "8a93c1226dcc084e", "src": "db2@1.60.1.70124"}
-{"id": 231624, "field": "name", "en": "Field Marshal's Satin Tunic", "hash": "37566bedd19fcdad", "src": "db2@1.60.1.70124"}
+{"id": 231623, "field": "name", "en": "Marshal's Satin Handwraps", "hash": "ca15caeae2d00776", "src": "db2@1.60.1.70170"}
+{"id": 231623, "field": "description", "en": "Reduces the duration of your Weakened Soul by ${$m1/-1000} sec.", "hash": "8a93c1226dcc084e", "src": "db2@1.60.1.70170"}
+{"id": 231624, "field": "name", "en": "Field Marshal's Satin Tunic", "hash": "37566bedd19fcdad", "src": "db2@1.60.1.70170"}
 {"id": 231624, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231626, "field": "name", "en": "Marshal's Satin Legguards", "hash": "007f52451bcc5b91", "src": "db2@1.60.1.70124"}
+{"id": 231626, "field": "name", "en": "Marshal's Satin Legguards", "hash": "007f52451bcc5b91", "src": "db2@1.60.1.70170"}
 {"id": 231626, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231627, "field": "name", "en": "Marshal's Satin Walkers", "hash": "02795581428e6557", "src": "db2@1.60.1.70124"}
+{"id": 231627, "field": "name", "en": "Marshal's Satin Walkers", "hash": "02795581428e6557", "src": "db2@1.60.1.70170"}
 {"id": 231627, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231628, "field": "name", "en": "Field Marshal's Satin Mantle", "hash": "118bd17d1df3e081", "src": "db2@1.60.1.70124"}
+{"id": 231628, "field": "name", "en": "Field Marshal's Satin Mantle", "hash": "118bd17d1df3e081", "src": "db2@1.60.1.70170"}
 {"id": 231628, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231630, "field": "name", "en": "General's Satin Walkers", "hash": "2d95267a2b3d3d2e", "src": "db2@1.60.1.70124"}
+{"id": 231630, "field": "name", "en": "General's Satin Walkers", "hash": "2d95267a2b3d3d2e", "src": "db2@1.60.1.70170"}
 {"id": 231630, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231631, "field": "name", "en": "Warlord's Satin Mantle", "hash": "556005f9d0b59681", "src": "db2@1.60.1.70124"}
+{"id": 231631, "field": "name", "en": "Warlord's Satin Mantle", "hash": "556005f9d0b59681", "src": "db2@1.60.1.70170"}
 {"id": 231631, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231632, "field": "name", "en": "Warlord's Satin Tunic", "hash": "727b378fe24d8c0a", "src": "db2@1.60.1.70124"}
+{"id": 231632, "field": "name", "en": "Warlord's Satin Tunic", "hash": "727b378fe24d8c0a", "src": "db2@1.60.1.70170"}
 {"id": 231632, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231633, "field": "name", "en": "General's Satin Handwraps", "hash": "95c1871da840711a", "src": "db2@1.60.1.70124"}
-{"id": 231633, "field": "description", "en": "Reduces the duration of your Weakened Soul by ${$m1/-1000} sec.", "hash": "8a93c1226dcc084e", "src": "db2@1.60.1.70124"}
-{"id": 231634, "field": "name", "en": "General's Satin Legguards", "hash": "cc2b0e73e13cc524", "src": "db2@1.60.1.70124"}
+{"id": 231633, "field": "name", "en": "General's Satin Handwraps", "hash": "95c1871da840711a", "src": "db2@1.60.1.70170"}
+{"id": 231633, "field": "description", "en": "Reduces the duration of your Weakened Soul by ${$m1/-1000} sec.", "hash": "8a93c1226dcc084e", "src": "db2@1.60.1.70170"}
+{"id": 231634, "field": "name", "en": "General's Satin Legguards", "hash": "cc2b0e73e13cc524", "src": "db2@1.60.1.70170"}
 {"id": 231634, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231635, "field": "name", "en": "Warlord's Satin Hood", "hash": "c4a244957df31a35", "src": "db2@1.60.1.70124"}
+{"id": 231635, "field": "name", "en": "Warlord's Satin Hood", "hash": "c4a244957df31a35", "src": "db2@1.60.1.70170"}
 {"id": 231635, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231639, "field": "name", "en": "Marshal's Lamellar Legguards", "hash": "3a1b8c45583a2cf9", "src": "db2@1.60.1.70124"}
+{"id": 231639, "field": "name", "en": "Marshal's Lamellar Legguards", "hash": "3a1b8c45583a2cf9", "src": "db2@1.60.1.70170"}
 {"id": 231639, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 231640, "field": "name", "en": "Field Marshal's Lamellar Helmet", "hash": "b8e89160d664095a", "src": "db2@1.60.1.70124"}
+{"id": 231640, "field": "name", "en": "Field Marshal's Lamellar Helmet", "hash": "b8e89160d664095a", "src": "db2@1.60.1.70170"}
 {"id": 231640, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.\nRestores $s1 mana per 5 sec.", "hash": "f76a6e485371a703", "src": "wago@1.15.9.69722"}
-{"id": 231641, "field": "name", "en": "Field Marshal's Lamellar Chestplate", "hash": "db99952f51674e27", "src": "db2@1.60.1.70124"}
+{"id": 231641, "field": "name", "en": "Field Marshal's Lamellar Chestplate", "hash": "db99952f51674e27", "src": "db2@1.60.1.70170"}
 {"id": 231641, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.\nRestores $s1 mana per 5 sec.", "hash": "f76a6e485371a703", "src": "wago@1.15.9.69722"}
-{"id": 231642, "field": "name", "en": "Warden's Herb Bag", "hash": "6d815790fdbcd35e", "src": "db2@1.60.1.70124"}
-{"id": 231642, "field": "description", "en": "Free range wild herbs. No monoculture here.", "hash": "6f3b10c2b9a389bb", "src": "db2@1.60.1.70124"}
-{"id": 231643, "field": "name", "en": "Marshal's Lamellar Gloves", "hash": "13370009e01614c4", "src": "db2@1.60.1.70124"}
-{"id": 231643, "field": "description", "en": "Increases the critical strike chance of your Holy Shock by $s1%.", "hash": "80b211150e5254f8", "src": "db2@1.60.1.70124"}
-{"id": 231644, "field": "name", "en": "Warden's Enchanting Bag", "hash": "8b740df24616a06d", "src": "db2@1.60.1.70124"}
-{"id": 231644, "field": "description", "en": "Enchantment!", "hash": "cc68ab5d3dd08623", "src": "db2@1.60.1.70124"}
-{"id": 231645, "field": "name", "en": "Field Marshal's Lamellar Pauldrons", "hash": "9fbdfa3897359465", "src": "db2@1.60.1.70124"}
+{"id": 231642, "field": "name", "en": "Warden's Herb Bag", "hash": "6d815790fdbcd35e", "src": "db2@1.60.1.70170"}
+{"id": 231642, "field": "description", "en": "Free range wild herbs. No monoculture here.", "hash": "6f3b10c2b9a389bb", "src": "db2@1.60.1.70170"}
+{"id": 231643, "field": "name", "en": "Marshal's Lamellar Gloves", "hash": "13370009e01614c4", "src": "db2@1.60.1.70170"}
+{"id": 231643, "field": "description", "en": "Increases the critical strike chance of your Holy Shock by $s1%.", "hash": "80b211150e5254f8", "src": "db2@1.60.1.70170"}
+{"id": 231644, "field": "name", "en": "Warden's Enchanting Bag", "hash": "8b740df24616a06d", "src": "db2@1.60.1.70170"}
+{"id": 231644, "field": "description", "en": "Enchantment!", "hash": "cc68ab5d3dd08623", "src": "db2@1.60.1.70170"}
+{"id": 231645, "field": "name", "en": "Field Marshal's Lamellar Pauldrons", "hash": "9fbdfa3897359465", "src": "db2@1.60.1.70170"}
 {"id": 231645, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231646, "field": "name", "en": "Marshal's Lamellar Greaves", "hash": "07e9ba897df29598", "src": "db2@1.60.1.70124"}
+{"id": 231646, "field": "name", "en": "Marshal's Lamellar Greaves", "hash": "07e9ba897df29598", "src": "db2@1.60.1.70170"}
 {"id": 231646, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231647, "field": "name", "en": "Marshal's Lamellar Leggings", "hash": "935e2f11d6bf4814", "src": "db2@1.60.1.70124"}
+{"id": 231647, "field": "name", "en": "Marshal's Lamellar Leggings", "hash": "935e2f11d6bf4814", "src": "db2@1.60.1.70170"}
 {"id": 231647, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231648, "field": "name", "en": "Field Marshal's Lamellar Headguard", "hash": "bfc8cb72f5f7d114", "src": "db2@1.60.1.70124"}
+{"id": 231648, "field": "name", "en": "Field Marshal's Lamellar Headguard", "hash": "bfc8cb72f5f7d114", "src": "db2@1.60.1.70170"}
 {"id": 231648, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231649, "field": "name", "en": "Field Marshal's Lamellar Breastplate", "hash": "b90832925933c0c4", "src": "db2@1.60.1.70124"}
+{"id": 231649, "field": "name", "en": "Field Marshal's Lamellar Breastplate", "hash": "b90832925933c0c4", "src": "db2@1.60.1.70170"}
 {"id": 231649, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231650, "field": "name", "en": "Marshal's Lamellar Gauntlets", "hash": "73340da7df684881", "src": "db2@1.60.1.70124"}
-{"id": 231650, "field": "description", "en": "Your damaging Judgements deal $s1 additional damage.", "hash": "71c97da06f3216d7", "src": "db2@1.60.1.70124"}
-{"id": 231651, "field": "name", "en": "Field Marshal's Lamellar Shoulders", "hash": "671b97b5786a9a45", "src": "db2@1.60.1.70124"}
+{"id": 231650, "field": "name", "en": "Marshal's Lamellar Gauntlets", "hash": "73340da7df684881", "src": "db2@1.60.1.70170"}
+{"id": 231650, "field": "description", "en": "Your damaging Judgements deal $s1 additional damage.", "hash": "71c97da06f3216d7", "src": "db2@1.60.1.70170"}
+{"id": 231651, "field": "name", "en": "Field Marshal's Lamellar Shoulders", "hash": "671b97b5786a9a45", "src": "db2@1.60.1.70170"}
 {"id": 231651, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231652, "field": "name", "en": "Marshal's Lamellar Sabatons", "hash": "b33fd347fc856d2b", "src": "db2@1.60.1.70124"}
+{"id": 231652, "field": "name", "en": "Marshal's Lamellar Sabatons", "hash": "b33fd347fc856d2b", "src": "db2@1.60.1.70170"}
 {"id": 231652, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231653, "field": "name", "en": "Warlord's Mail Hauberk", "hash": "7d51a28220c8b3f1", "src": "db2@1.60.1.70124"}
+{"id": 231653, "field": "name", "en": "Warlord's Mail Hauberk", "hash": "7d51a28220c8b3f1", "src": "db2@1.60.1.70170"}
 {"id": 231653, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231654, "field": "name", "en": "Warlord's Mail Pauldrons", "hash": "7fb52ae7141e247d", "src": "db2@1.60.1.70124"}
+{"id": 231654, "field": "name", "en": "Warlord's Mail Pauldrons", "hash": "7fb52ae7141e247d", "src": "db2@1.60.1.70170"}
 {"id": 231654, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231655, "field": "name", "en": "General's Mail Vices", "hash": "3c039dfdc3938a34", "src": "db2@1.60.1.70124"}
+{"id": 231655, "field": "name", "en": "General's Mail Vices", "hash": "3c039dfdc3938a34", "src": "db2@1.60.1.70170"}
 {"id": 231655, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231656, "field": "name", "en": "General's Mail Greaves", "hash": "723b75152f845303", "src": "db2@1.60.1.70124"}
-{"id": 231656, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70124"}
-{"id": 231657, "field": "name", "en": "Warlord's Mail Headguard", "hash": "9fbffc2172e0612c", "src": "db2@1.60.1.70124"}
+{"id": 231656, "field": "name", "en": "General's Mail Greaves", "hash": "723b75152f845303", "src": "db2@1.60.1.70170"}
+{"id": 231656, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70170"}
+{"id": 231657, "field": "name", "en": "Warlord's Mail Headguard", "hash": "9fbffc2172e0612c", "src": "db2@1.60.1.70170"}
 {"id": 231657, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231658, "field": "name", "en": "General's Mail Legguards", "hash": "5ace4a6407a7fbaa", "src": "db2@1.60.1.70124"}
+{"id": 231658, "field": "name", "en": "General's Mail Legguards", "hash": "5ace4a6407a7fbaa", "src": "db2@1.60.1.70170"}
 {"id": 231658, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231659, "field": "name", "en": "Warlord's Mail Spaulders", "hash": "20d916d0f25f31a9", "src": "db2@1.60.1.70124"}
+{"id": 231659, "field": "name", "en": "Warlord's Mail Spaulders", "hash": "20d916d0f25f31a9", "src": "db2@1.60.1.70170"}
 {"id": 231659, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231660, "field": "name", "en": "General's Mail Gauntlets", "hash": "93e6cbc68ed61732", "src": "db2@1.60.1.70124"}
+{"id": 231660, "field": "name", "en": "General's Mail Gauntlets", "hash": "93e6cbc68ed61732", "src": "db2@1.60.1.70170"}
 {"id": 231660, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231661, "field": "name", "en": "General's Mail Sabatons", "hash": "1b1249feb38c3732", "src": "db2@1.60.1.70124"}
-{"id": 231661, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70124"}
-{"id": 231662, "field": "name", "en": "Warlord's Mail Breastplate", "hash": "4a768bca1eefc7c6", "src": "db2@1.60.1.70124"}
+{"id": 231661, "field": "name", "en": "General's Mail Sabatons", "hash": "1b1249feb38c3732", "src": "db2@1.60.1.70170"}
+{"id": 231661, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70170"}
+{"id": 231662, "field": "name", "en": "Warlord's Mail Breastplate", "hash": "4a768bca1eefc7c6", "src": "db2@1.60.1.70170"}
 {"id": 231662, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231663, "field": "name", "en": "Warlord's Mail Helm", "hash": "be68271ae261443b", "src": "db2@1.60.1.70124"}
+{"id": 231663, "field": "name", "en": "Warlord's Mail Helm", "hash": "be68271ae261443b", "src": "db2@1.60.1.70170"}
 {"id": 231663, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231664, "field": "name", "en": "General's Mail Leggings", "hash": "fb30a5c38dc6121b", "src": "db2@1.60.1.70124"}
+{"id": 231664, "field": "name", "en": "General's Mail Leggings", "hash": "fb30a5c38dc6121b", "src": "db2@1.60.1.70170"}
 {"id": 231664, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231665, "field": "name", "en": "Warlord's Mail Epaulets", "hash": "f905785398abce19", "src": "db2@1.60.1.70124"}
+{"id": 231665, "field": "name", "en": "Warlord's Mail Epaulets", "hash": "f905785398abce19", "src": "db2@1.60.1.70170"}
 {"id": 231665, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 231666, "field": "name", "en": "General's Mail Gloves", "hash": "2f629dcb7c731b77", "src": "db2@1.60.1.70124"}
+{"id": 231666, "field": "name", "en": "General's Mail Gloves", "hash": "2f629dcb7c731b77", "src": "db2@1.60.1.70170"}
 {"id": 231666, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 231667, "field": "name", "en": "General's Mail Boots", "hash": "ddc25d5ad9565833", "src": "db2@1.60.1.70124"}
-{"id": 231667, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70124"}
-{"id": 231668, "field": "name", "en": "Warlord's Mail Chestguard", "hash": "da50cefa65a89f03", "src": "db2@1.60.1.70124"}
+{"id": 231667, "field": "name", "en": "General's Mail Boots", "hash": "ddc25d5ad9565833", "src": "db2@1.60.1.70170"}
+{"id": 231667, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70170"}
+{"id": 231668, "field": "name", "en": "Warlord's Mail Chestguard", "hash": "da50cefa65a89f03", "src": "db2@1.60.1.70170"}
 {"id": 231668, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 231669, "field": "name", "en": "Warlord's Mail Skullcap", "hash": "02171098d9092075", "src": "db2@1.60.1.70124"}
+{"id": 231669, "field": "name", "en": "Warlord's Mail Skullcap", "hash": "02171098d9092075", "src": "db2@1.60.1.70170"}
 {"id": 231669, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 231670, "field": "name", "en": "General's Mail Pants", "hash": "d1a1d44a4a81b4a1", "src": "db2@1.60.1.70124"}
+{"id": 231670, "field": "name", "en": "General's Mail Pants", "hash": "d1a1d44a4a81b4a1", "src": "db2@1.60.1.70170"}
 {"id": 231670, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 231671, "field": "name", "en": "General's Dragonhide Greaves", "hash": "2503718e2478b800", "src": "db2@1.60.1.70124"}
+{"id": 231671, "field": "name", "en": "General's Dragonhide Greaves", "hash": "2503718e2478b800", "src": "db2@1.60.1.70170"}
 {"id": 231671, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231672, "field": "name", "en": "Warlord's Dragonhide Pauldrons", "hash": "49f18defacc7653c", "src": "db2@1.60.1.70124"}
+{"id": 231672, "field": "name", "en": "Warlord's Dragonhide Pauldrons", "hash": "49f18defacc7653c", "src": "db2@1.60.1.70170"}
 {"id": 231672, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231673, "field": "name", "en": "General's Dragonhide Legguards", "hash": "fae970887384ecab", "src": "db2@1.60.1.70124"}
+{"id": 231673, "field": "name", "en": "General's Dragonhide Legguards", "hash": "fae970887384ecab", "src": "db2@1.60.1.70170"}
 {"id": 231673, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231674, "field": "name", "en": "Warlord's Dragonhide Tunic", "hash": "ec2effec62685dc6", "src": "db2@1.60.1.70124"}
+{"id": 231674, "field": "name", "en": "Warlord's Dragonhide Tunic", "hash": "ec2effec62685dc6", "src": "db2@1.60.1.70170"}
 {"id": 231674, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231675, "field": "name", "en": "Warlord's Dragonhide Headdress", "hash": "34ed601bd6737660", "src": "db2@1.60.1.70124"}
+{"id": 231675, "field": "name", "en": "Warlord's Dragonhide Headdress", "hash": "34ed601bd6737660", "src": "db2@1.60.1.70170"}
 {"id": 231675, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231676, "field": "name", "en": "General's Dragonhide Gauntlets", "hash": "3401f1effab30833", "src": "db2@1.60.1.70124"}
-{"id": 231676, "field": "description", "en": "Increases the duration of your Barkskin by ${$m1/1000} sec.", "hash": "8598ff6f45f44932", "src": "db2@1.60.1.70124"}
-{"id": 231677, "field": "name", "en": "General's Dragonhide Gloves", "hash": "0f87518ebdb9ffc3", "src": "db2@1.60.1.70124"}
-{"id": 231677, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Wrath.", "hash": "62fc21714cd03512", "src": "db2@1.60.1.70124"}
-{"id": 231678, "field": "name", "en": "Warlord's Dragonhide Helm", "hash": "92be543076330942", "src": "db2@1.60.1.70124"}
+{"id": 231676, "field": "name", "en": "General's Dragonhide Gauntlets", "hash": "3401f1effab30833", "src": "db2@1.60.1.70170"}
+{"id": 231676, "field": "description", "en": "Increases the duration of your Barkskin by ${$m1/1000} sec.", "hash": "8598ff6f45f44932", "src": "db2@1.60.1.70170"}
+{"id": 231677, "field": "name", "en": "General's Dragonhide Gloves", "hash": "0f87518ebdb9ffc3", "src": "db2@1.60.1.70170"}
+{"id": 231677, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Wrath.", "hash": "62fc21714cd03512", "src": "db2@1.60.1.70170"}
+{"id": 231678, "field": "name", "en": "Warlord's Dragonhide Helm", "hash": "92be543076330942", "src": "db2@1.60.1.70170"}
 {"id": 231678, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231679, "field": "name", "en": "Warlord's Dragonhide Armor", "hash": "9e434f2b2ad1874d", "src": "db2@1.60.1.70124"}
+{"id": 231679, "field": "name", "en": "Warlord's Dragonhide Armor", "hash": "9e434f2b2ad1874d", "src": "db2@1.60.1.70170"}
 {"id": 231679, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231680, "field": "name", "en": "General's Dragonhide Pants", "hash": "2182d7a1c9df2151", "src": "db2@1.60.1.70124"}
+{"id": 231680, "field": "name", "en": "General's Dragonhide Pants", "hash": "2182d7a1c9df2151", "src": "db2@1.60.1.70170"}
 {"id": 231680, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231681, "field": "name", "en": "Warlord's Dragonhide Spaulders", "hash": "eb1579d38b087279", "src": "db2@1.60.1.70124"}
+{"id": 231681, "field": "name", "en": "Warlord's Dragonhide Spaulders", "hash": "eb1579d38b087279", "src": "db2@1.60.1.70170"}
 {"id": 231681, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231682, "field": "name", "en": "General's Dragonhide Boots", "hash": "2da360b158b3c4f4", "src": "db2@1.60.1.70124"}
+{"id": 231682, "field": "name", "en": "General's Dragonhide Boots", "hash": "2da360b158b3c4f4", "src": "db2@1.60.1.70170"}
 {"id": 231682, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231683, "field": "name", "en": "General's Dragonhide Treads", "hash": "3d34e64641c96873", "src": "db2@1.60.1.70124"}
+{"id": 231683, "field": "name", "en": "General's Dragonhide Treads", "hash": "3d34e64641c96873", "src": "db2@1.60.1.70170"}
 {"id": 231683, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231684, "field": "name", "en": "Warlord's Dragonhide Shoulders", "hash": "114f2b6c8dfc6b1c", "src": "db2@1.60.1.70124"}
+{"id": 231684, "field": "name", "en": "Warlord's Dragonhide Shoulders", "hash": "114f2b6c8dfc6b1c", "src": "db2@1.60.1.70170"}
 {"id": 231684, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231685, "field": "name", "en": "General's Dragonhide Leggings", "hash": "7786d6eb70cd6018", "src": "db2@1.60.1.70124"}
+{"id": 231685, "field": "name", "en": "General's Dragonhide Leggings", "hash": "7786d6eb70cd6018", "src": "db2@1.60.1.70170"}
 {"id": 231685, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231686, "field": "name", "en": "Warlord's Dragonhide Chestpiece", "hash": "f3984598568126c2", "src": "db2@1.60.1.70124"}
+{"id": 231686, "field": "name", "en": "Warlord's Dragonhide Chestpiece", "hash": "f3984598568126c2", "src": "db2@1.60.1.70170"}
 {"id": 231686, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231687, "field": "name", "en": "Warlord's Dragonhide Headguard", "hash": "69fc5f290b89a1fc", "src": "db2@1.60.1.70124"}
+{"id": 231687, "field": "name", "en": "Warlord's Dragonhide Headguard", "hash": "69fc5f290b89a1fc", "src": "db2@1.60.1.70170"}
 {"id": 231687, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231688, "field": "name", "en": "General's Dragonhide Grips", "hash": "85cd44d543ae085f", "src": "db2@1.60.1.70124"}
-{"id": 231688, "field": "description", "en": "Reduces the mana cost of your shapeshifts by $s1.", "hash": "d3e6c51b983d0b71", "src": "db2@1.60.1.70124"}
-{"id": 231689, "field": "name", "en": "Field Marshal's Dragonhide Headguard", "hash": "8fc8b17add1e516e", "src": "db2@1.60.1.70124"}
+{"id": 231688, "field": "name", "en": "General's Dragonhide Grips", "hash": "85cd44d543ae085f", "src": "db2@1.60.1.70170"}
+{"id": 231688, "field": "description", "en": "Reduces the mana cost of your shapeshifts by $s1.", "hash": "d3e6c51b983d0b71", "src": "db2@1.60.1.70170"}
+{"id": 231689, "field": "name", "en": "Field Marshal's Dragonhide Headguard", "hash": "8fc8b17add1e516e", "src": "db2@1.60.1.70170"}
 {"id": 231689, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231690, "field": "name", "en": "Field Marshal's Dragonhide Chestpiece", "hash": "4b26656f8b6fe39d", "src": "db2@1.60.1.70124"}
+{"id": 231690, "field": "name", "en": "Field Marshal's Dragonhide Chestpiece", "hash": "4b26656f8b6fe39d", "src": "db2@1.60.1.70170"}
 {"id": 231690, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231691, "field": "name", "en": "Marshal's Dragonhide Leggings", "hash": "f53dd9ae86d1fbbc", "src": "db2@1.60.1.70124"}
+{"id": 231691, "field": "name", "en": "Marshal's Dragonhide Leggings", "hash": "f53dd9ae86d1fbbc", "src": "db2@1.60.1.70170"}
 {"id": 231691, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 231692, "field": "name", "en": "Marshal's Dragonhide Treads", "hash": "21ea33ffc8f3e6eb", "src": "db2@1.60.1.70124"}
+{"id": 231692, "field": "name", "en": "Marshal's Dragonhide Treads", "hash": "21ea33ffc8f3e6eb", "src": "db2@1.60.1.70170"}
 {"id": 231692, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231693, "field": "name", "en": "Field Marshal's Dragonhide Shoulders", "hash": "371b7dbd5f911a9f", "src": "db2@1.60.1.70124"}
+{"id": 231693, "field": "name", "en": "Field Marshal's Dragonhide Shoulders", "hash": "371b7dbd5f911a9f", "src": "db2@1.60.1.70170"}
 {"id": 231693, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 231694, "field": "name", "en": "Marshal's Dragonhide Grips", "hash": "4cebf7431f16cf36", "src": "db2@1.60.1.70124"}
-{"id": 231694, "field": "description", "en": "Reduces the mana cost of your shapeshifts by $s1.", "hash": "d3e6c51b983d0b71", "src": "db2@1.60.1.70124"}
-{"id": 231695, "field": "name", "en": "Field Marshal's Dragonhide Helm", "hash": "b4d3cf61beeafe5d", "src": "db2@1.60.1.70124"}
+{"id": 231694, "field": "name", "en": "Marshal's Dragonhide Grips", "hash": "4cebf7431f16cf36", "src": "db2@1.60.1.70170"}
+{"id": 231694, "field": "description", "en": "Reduces the mana cost of your shapeshifts by $s1.", "hash": "d3e6c51b983d0b71", "src": "db2@1.60.1.70170"}
+{"id": 231695, "field": "name", "en": "Field Marshal's Dragonhide Helm", "hash": "b4d3cf61beeafe5d", "src": "db2@1.60.1.70170"}
 {"id": 231695, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231696, "field": "name", "en": "Field Marshal's Dragonhide Armor", "hash": "0f4159985b2ed2f6", "src": "db2@1.60.1.70124"}
+{"id": 231696, "field": "name", "en": "Field Marshal's Dragonhide Armor", "hash": "0f4159985b2ed2f6", "src": "db2@1.60.1.70170"}
 {"id": 231696, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231697, "field": "name", "en": "Marshal's Dragonhide Pants", "hash": "e8a18a0aa547e828", "src": "db2@1.60.1.70124"}
+{"id": 231697, "field": "name", "en": "Marshal's Dragonhide Pants", "hash": "e8a18a0aa547e828", "src": "db2@1.60.1.70170"}
 {"id": 231697, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231698, "field": "name", "en": "Marshal's Dragonhide Boots", "hash": "f4c2131a341c8bcb", "src": "db2@1.60.1.70124"}
+{"id": 231698, "field": "name", "en": "Marshal's Dragonhide Boots", "hash": "f4c2131a341c8bcb", "src": "db2@1.60.1.70170"}
 {"id": 231698, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 231699, "field": "name", "en": "Field Marshal's Dragonhide Spaulders", "hash": "10e1cc295c9d21fc", "src": "db2@1.60.1.70124"}
+{"id": 231699, "field": "name", "en": "Field Marshal's Dragonhide Spaulders", "hash": "10e1cc295c9d21fc", "src": "db2@1.60.1.70170"}
 {"id": 231699, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 231700, "field": "name", "en": "Marshal's Dragonhide Gloves", "hash": "f43c9f4244e47e4c", "src": "db2@1.60.1.70124"}
-{"id": 231700, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Wrath.", "hash": "62fc21714cd03512", "src": "db2@1.60.1.70124"}
-{"id": 231701, "field": "name", "en": "Field Marshal's Dragonhide Headdress", "hash": "5ab9b26ca80825e3", "src": "db2@1.60.1.70124"}
+{"id": 231700, "field": "name", "en": "Marshal's Dragonhide Gloves", "hash": "f43c9f4244e47e4c", "src": "db2@1.60.1.70170"}
+{"id": 231700, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Wrath.", "hash": "62fc21714cd03512", "src": "db2@1.60.1.70170"}
+{"id": 231701, "field": "name", "en": "Field Marshal's Dragonhide Headdress", "hash": "5ab9b26ca80825e3", "src": "db2@1.60.1.70170"}
 {"id": 231701, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231702, "field": "name", "en": "Field Marshal's Dragonhide Tunic", "hash": "5d2d0a5992c5a96f", "src": "db2@1.60.1.70124"}
+{"id": 231702, "field": "name", "en": "Field Marshal's Dragonhide Tunic", "hash": "5d2d0a5992c5a96f", "src": "db2@1.60.1.70170"}
 {"id": 231702, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231703, "field": "name", "en": "Marshal's Dragonhide Legguards", "hash": "4f8fdb965c6ac26d", "src": "db2@1.60.1.70124"}
+{"id": 231703, "field": "name", "en": "Marshal's Dragonhide Legguards", "hash": "4f8fdb965c6ac26d", "src": "db2@1.60.1.70170"}
 {"id": 231703, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231704, "field": "name", "en": "Marshal's Dragonhide Greaves", "hash": "2dca36f31623859d", "src": "db2@1.60.1.70124"}
+{"id": 231704, "field": "name", "en": "Marshal's Dragonhide Greaves", "hash": "2dca36f31623859d", "src": "db2@1.60.1.70170"}
 {"id": 231704, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231705, "field": "name", "en": "Field Marshal's Dragonhide Pauldrons", "hash": "6fbde0407e5c14bf", "src": "db2@1.60.1.70124"}
+{"id": 231705, "field": "name", "en": "Field Marshal's Dragonhide Pauldrons", "hash": "6fbde0407e5c14bf", "src": "db2@1.60.1.70170"}
 {"id": 231705, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 231706, "field": "name", "en": "Marshal's Dragonhide Gauntlets", "hash": "88a85cf8e398ddf5", "src": "db2@1.60.1.70124"}
-{"id": 231706, "field": "description", "en": "Increases the duration of your Barkskin by ${$m1/1000} sec.", "hash": "8598ff6f45f44932", "src": "db2@1.60.1.70124"}
-{"id": 231732, "field": "name", "en": "Suspicious Supplies", "hash": "8c50b3cdeacf76d9", "src": "db2@1.60.1.70124"}
-{"id": 231732, "field": "description", "en": "Place and open the strange supplies Xirath gave you.\nStrange energy emanates from the bag. Best to not look.", "hash": "a127c47acb8b1c04", "src": "db2@1.60.1.70124"}
-{"id": 231778, "field": "name", "en": "Mountain Spring Water", "hash": "71c3825d9b1c96c5", "src": "db2@1.60.1.70124"}
-{"id": 231778, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70124"}
-{"id": 231789, "field": "name", "en": "Sigil of the Keeper", "hash": "ed97a029c88c9220", "src": "db2@1.60.1.70124"}
-{"id": 231792, "field": "name", "en": "Soul of Mischief", "hash": "8301aad1f87b3ac8", "src": "db2@1.60.1.70124"}
-{"id": 231792, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70124"}
-{"id": 231793, "field": "name", "en": "Depleted Scythe of Chaos (Mischief)", "hash": "574b1b0e0dc14782", "src": "db2@1.60.1.70124"}
-{"id": 231794, "field": "name", "en": "Depleted Scythe of Chaos (Void)", "hash": "d1ecbb1a3fffadce", "src": "db2@1.60.1.70124"}
-{"id": 231795, "field": "name", "en": "Depleted Scythe of Chaos (Enthralling)", "hash": "3f57b948cf253b6c", "src": "db2@1.60.1.70124"}
-{"id": 231796, "field": "name", "en": "Depleted Scythe of Chaos (Devouring)", "hash": "48230b340e5c0dc0", "src": "db2@1.60.1.70124"}
-{"id": 231797, "field": "name", "en": "Soul of the Void", "hash": "a4df28c1df80d17f", "src": "db2@1.60.1.70124"}
-{"id": 231797, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70124"}
-{"id": 231798, "field": "name", "en": "Soul of Enthralling", "hash": "909e8c6d6408a9f3", "src": "db2@1.60.1.70124"}
-{"id": 231798, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70124"}
-{"id": 231799, "field": "name", "en": "Soul of Devouring", "hash": "e202e0097739024c", "src": "db2@1.60.1.70124"}
-{"id": 231799, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70124"}
-{"id": 231800, "field": "name", "en": "Soul of Des'Altek", "hash": "752185381b559b9f", "src": "db2@1.60.1.70124"}
-{"id": 231800, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70124"}
-{"id": 231828, "field": "name", "en": "Rune of Meditation Specialization", "hash": "437da805b22fc4f0", "src": "db2@1.60.1.70124"}
-{"id": 231828, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 231829, "field": "name", "en": "Rune of Healing Specialization", "hash": "42f5ac5c3a700c49", "src": "db2@1.60.1.70124"}
-{"id": 231829, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 231836, "field": "name", "en": "Glowing Scroll of Spatial Mending", "hash": "4b8b544aef1474ce", "src": "db2@1.60.1.70124"}
-{"id": 231836, "field": "description", "en": "Close a targeted Fel portal. May draw unwanted attention from the other side.", "hash": "22b41ad4a72c577b", "src": "db2@1.60.1.70124"}
-{"id": 231837, "field": "name", "en": "Shadow Carving", "hash": "a99f8f60290f2e2a", "src": "db2@1.60.1.70124"}
-{"id": 231837, "field": "description", "en": "It appears to attract shadow energy.", "hash": "8f063f9b571e57e0", "src": "db2@1.60.1.70124"}
-{"id": 231841, "field": "name", "en": "Blood of the Lightbringer", "hash": "bc4d27a2caad1a39", "src": "db2@1.60.1.70124"}
-{"id": 231841, "field": "description", "en": "This small reliquary is filled with a small sample of blood. There is a partially torn parchment label on the underside that bears a single word: \"Uther\".", "hash": "b34a66e384506a1c", "src": "db2@1.60.1.70124"}
-{"id": 231843, "field": "name", "en": "First Sigil Fragment", "hash": "4a227a60177fc434", "src": "db2@1.60.1.70124"}
-{"id": 231843, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70124"}
-{"id": 231844, "field": "name", "en": "Second Sigil Fragment", "hash": "a270fd96d6f31224", "src": "db2@1.60.1.70124"}
-{"id": 231844, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70124"}
-{"id": 231845, "field": "name", "en": "Third Sigil Fragment", "hash": "bfa4088ad4dc10d5", "src": "db2@1.60.1.70124"}
-{"id": 231845, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70124"}
-{"id": 231877, "field": "name", "en": "Tyler's Balanced Bobble", "hash": "1d8d4d719c4e7788", "src": "db2@1.60.1.70124"}
-{"id": 231887, "field": "name", "en": "Test Dagger", "hash": "474f1476f3dffdf3", "src": "db2@1.60.1.70124"}
-{"id": 231887, "field": "description", "en": "Wounds the target causing them to bleed for $o1 damage over $d.", "hash": "47f171f505d2c468", "src": "db2@1.60.1.70124"}
-{"id": 231901, "field": "name", "en": "Truthbearer", "hash": "e16a8326ada67c73", "src": "db2@1.60.1.70124"}
-{"id": 231903, "field": "name", "en": "Scrap of Torn Cloth", "hash": "629bda3031074969", "src": "db2@1.60.1.70124"}
-{"id": 231903, "field": "description", "en": "A small scrap of cloth from Uther the Lightbringer's tunic containing a few flecks of blood.", "hash": "b2029588a1734bbc", "src": "db2@1.60.1.70124"}
-{"id": 231904, "field": "name", "en": "Tarnished Horn", "hash": "3d4e495399bb9242", "src": "db2@1.60.1.70124"}
-{"id": 231904, "field": "description", "en": "Sound the horn to call Aeonas back to you should you get separated. This will also cancel any magical disguises you have active.", "hash": "da655baacb27a54b", "src": "db2@1.60.1.70124"}
-{"id": 231909, "field": "name", "en": "Crystallized Starlight", "hash": "aa13eff9d413f306", "src": "db2@1.60.1.70124"}
-{"id": 231909, "field": "description", "en": "Attune with the heavens, allowing you to replace your Moonkin form with a more celestial visage.", "hash": "7d88df025b23e3a9", "src": "db2@1.60.1.70124"}
+{"id": 231706, "field": "name", "en": "Marshal's Dragonhide Gauntlets", "hash": "88a85cf8e398ddf5", "src": "db2@1.60.1.70170"}
+{"id": 231706, "field": "description", "en": "Increases the duration of your Barkskin by ${$m1/1000} sec.", "hash": "8598ff6f45f44932", "src": "db2@1.60.1.70170"}
+{"id": 231732, "field": "name", "en": "Suspicious Supplies", "hash": "8c50b3cdeacf76d9", "src": "db2@1.60.1.70170"}
+{"id": 231732, "field": "description", "en": "Place and open the strange supplies Xirath gave you.\nStrange energy emanates from the bag. Best to not look.", "hash": "a127c47acb8b1c04", "src": "db2@1.60.1.70170"}
+{"id": 231778, "field": "name", "en": "Mountain Spring Water", "hash": "71c3825d9b1c96c5", "src": "db2@1.60.1.70170"}
+{"id": 231778, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70170"}
+{"id": 231789, "field": "name", "en": "Sigil of the Keeper", "hash": "ed97a029c88c9220", "src": "db2@1.60.1.70170"}
+{"id": 231792, "field": "name", "en": "Soul of Mischief", "hash": "8301aad1f87b3ac8", "src": "db2@1.60.1.70170"}
+{"id": 231792, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70170"}
+{"id": 231793, "field": "name", "en": "Depleted Scythe of Chaos (Mischief)", "hash": "574b1b0e0dc14782", "src": "db2@1.60.1.70170"}
+{"id": 231794, "field": "name", "en": "Depleted Scythe of Chaos (Void)", "hash": "d1ecbb1a3fffadce", "src": "db2@1.60.1.70170"}
+{"id": 231795, "field": "name", "en": "Depleted Scythe of Chaos (Enthralling)", "hash": "3f57b948cf253b6c", "src": "db2@1.60.1.70170"}
+{"id": 231796, "field": "name", "en": "Depleted Scythe of Chaos (Devouring)", "hash": "48230b340e5c0dc0", "src": "db2@1.60.1.70170"}
+{"id": 231797, "field": "name", "en": "Soul of the Void", "hash": "a4df28c1df80d17f", "src": "db2@1.60.1.70170"}
+{"id": 231797, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70170"}
+{"id": 231798, "field": "name", "en": "Soul of Enthralling", "hash": "909e8c6d6408a9f3", "src": "db2@1.60.1.70170"}
+{"id": 231798, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70170"}
+{"id": 231799, "field": "name", "en": "Soul of Devouring", "hash": "e202e0097739024c", "src": "db2@1.60.1.70170"}
+{"id": 231799, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70170"}
+{"id": 231800, "field": "name", "en": "Soul of Des'Altek", "hash": "752185381b559b9f", "src": "db2@1.60.1.70170"}
+{"id": 231800, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70170"}
+{"id": 231828, "field": "name", "en": "Rune of Meditation Specialization", "hash": "437da805b22fc4f0", "src": "db2@1.60.1.70170"}
+{"id": 231828, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 231829, "field": "name", "en": "Rune of Healing Specialization", "hash": "42f5ac5c3a700c49", "src": "db2@1.60.1.70170"}
+{"id": 231829, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 231836, "field": "name", "en": "Glowing Scroll of Spatial Mending", "hash": "4b8b544aef1474ce", "src": "db2@1.60.1.70170"}
+{"id": 231836, "field": "description", "en": "Close a targeted Fel portal. May draw unwanted attention from the other side.", "hash": "22b41ad4a72c577b", "src": "db2@1.60.1.70170"}
+{"id": 231837, "field": "name", "en": "Shadow Carving", "hash": "a99f8f60290f2e2a", "src": "db2@1.60.1.70170"}
+{"id": 231837, "field": "description", "en": "It appears to attract shadow energy.", "hash": "8f063f9b571e57e0", "src": "db2@1.60.1.70170"}
+{"id": 231841, "field": "name", "en": "Blood of the Lightbringer", "hash": "bc4d27a2caad1a39", "src": "db2@1.60.1.70170"}
+{"id": 231841, "field": "description", "en": "This small reliquary is filled with a small sample of blood. There is a partially torn parchment label on the underside that bears a single word: \"Uther\".", "hash": "b34a66e384506a1c", "src": "db2@1.60.1.70170"}
+{"id": 231843, "field": "name", "en": "First Sigil Fragment", "hash": "4a227a60177fc434", "src": "db2@1.60.1.70170"}
+{"id": 231843, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70170"}
+{"id": 231844, "field": "name", "en": "Second Sigil Fragment", "hash": "a270fd96d6f31224", "src": "db2@1.60.1.70170"}
+{"id": 231844, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70170"}
+{"id": 231845, "field": "name", "en": "Third Sigil Fragment", "hash": "bfa4088ad4dc10d5", "src": "db2@1.60.1.70170"}
+{"id": 231845, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70170"}
+{"id": 231877, "field": "name", "en": "Tyler's Balanced Bobble", "hash": "1d8d4d719c4e7788", "src": "db2@1.60.1.70170"}
+{"id": 231887, "field": "name", "en": "Test Dagger", "hash": "474f1476f3dffdf3", "src": "db2@1.60.1.70170"}
+{"id": 231887, "field": "description", "en": "Wounds the target causing them to bleed for $o1 damage over $d.", "hash": "47f171f505d2c468", "src": "db2@1.60.1.70170"}
+{"id": 231901, "field": "name", "en": "Truthbearer", "hash": "e16a8326ada67c73", "src": "db2@1.60.1.70170"}
+{"id": 231903, "field": "name", "en": "Scrap of Torn Cloth", "hash": "629bda3031074969", "src": "db2@1.60.1.70170"}
+{"id": 231903, "field": "description", "en": "A small scrap of cloth from Uther the Lightbringer's tunic containing a few flecks of blood.", "hash": "b2029588a1734bbc", "src": "db2@1.60.1.70170"}
+{"id": 231904, "field": "name", "en": "Tarnished Horn", "hash": "3d4e495399bb9242", "src": "db2@1.60.1.70170"}
+{"id": 231904, "field": "description", "en": "Sound the horn to call Aeonas back to you should you get separated. This will also cancel any magical disguises you have active.", "hash": "da655baacb27a54b", "src": "db2@1.60.1.70170"}
+{"id": 231909, "field": "name", "en": "Crystallized Starlight", "hash": "aa13eff9d413f306", "src": "db2@1.60.1.70170"}
+{"id": 231909, "field": "description", "en": "Attune with the heavens, allowing you to replace your Moonkin form with a more celestial visage.", "hash": "7d88df025b23e3a9", "src": "db2@1.60.1.70170"}

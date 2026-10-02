@@ -682,3 +682,40 @@ def test_an_area_draft_imports_as_machine_and_the_lint_accepts_the_kind(tmp_path
     assert line["provenance"]["source"] == "draft-area-sg1@2026-09-27"
     tb.write_jsonl(draft, [{"ref": "a", "ja": "カーノビーの救出"}])  # the name must stay English
     assert translate_lint.main([str(batch), str(draft)]) == 1
+
+
+@pytest.fixture
+def flavour(client):
+    data = client / "data"
+    english = Store(data, english=True)
+    english.save("item", english.load("item") + [
+        _client_en(9532, "description", "Made With Love", FOREVER),
+        _client_en(269327, "description", "Umbrinoth", FOREVER),
+        _client_en(21146, "description", "-Hinterlands", FOREVER),
+        _client_en(5000, "name", "Umbrinoth", FOREVER),
+    ])
+    english.save("spell", english.load("spell") + [
+        _client_en(324, "name", "Lightning Shield", FOREVER),
+        _client_en(21991, "aura", "Lightning Shield", FOREVER),
+        _client_en(9179, "aura", "Stunned", FOREVER),
+    ])
+    english.save("unit", [_client_en(1, "name", "Hinterlands", FOREVER)])
+    return client
+
+
+def test_cut_drafts_tooltip_flavour_text_written_in_title_case(flavour):
+    """A tooltip line with no lower-case word is flavour text, not a bare label to skip: it is cut, marked
+    `title_case` so the lint checks its `names`, and a sentence row is unchanged."""
+    rows = {r["en"]: r for r in tb.cut(flavour / "data", "item_description", 20, flavour / "b.jsonl", src=FOREVER)}
+    assert rows["Made With Love"]["title_case"] is True and "name_only" not in rows["Made With Love"]
+    assert "title_case" not in rows["Quenches your thirst."] and "names" not in rows["Quenches your thirst."]
+    auras = {r["en"]: r for r in tb.cut(flavour / "data", "spell_aura", 20, flavour / "b.jsonl", src=FOREVER)}
+    assert auras["Stunned"]["title_case"] is True and "name_only" not in auras["Stunned"]
+
+
+def test_cut_marks_a_tooltip_line_that_is_only_a_name(flavour):
+    rows = {r["en"]: r for r in tb.cut(flavour / "data", "item_description", 20, flavour / "b.jsonl", src=FOREVER)}
+    assert rows["Umbrinoth"]["name_only"] is True
+    assert rows["-Hinterlands"]["name_only"] is True  # a zone in a list, with its dash
+    auras = {r["en"]: r for r in tb.cut(flavour / "data", "spell_aura", 20, flavour / "b.jsonl", src=FOREVER)}
+    assert auras["Lightning Shield"]["name_only"] is True  # a spell name

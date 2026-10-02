@@ -1,11 +1,11 @@
-{"id": 1275511, "field": "name", "en": "Wounded", "hash": "8bb39feca1bb97ce", "src": "db2@1.60.1.70124"}
-{"id": 1275511, "field": "aura", "en": "Bleeding out from a vicious wound.", "hash": "d1b3d02bbedce9bd", "src": "db2@1.60.1.70124"}
-{"id": 1275552, "field": "name", "en": "Growing Flames", "hash": "30480bfc4d8447f2", "src": "db2@1.60.1.70124"}
-{"id": 1275553, "field": "name", "en": "Growing Flames", "hash": "30480bfc4d8447f2", "src": "db2@1.60.1.70124"}
-{"id": 1275553, "field": "aura", "en": "The fire is growing in strength over time.", "hash": "2f1206c7e1918f68", "src": "db2@1.60.1.70124"}
-{"id": 1275832, "field": "name", "en": "No Man's Land", "hash": "cdcddab8f4d06a35", "src": "db2@1.60.1.70124"}
-{"id": 1275832, "field": "aura", "en": "You are where you should not be...", "hash": "0b90d906e592e8d9", "src": "db2@1.60.1.70124"}
-{"id": 1275834, "field": "name", "en": "Teleport to Redridge", "hash": "a9bf6ba62d51a066", "src": "db2@1.60.1.70124"}
-{"id": 1275865, "field": "name", "en": "No Man's Land", "hash": "cdcddab8f4d06a35", "src": "db2@1.60.1.70124"}
-{"id": 1275865, "field": "aura", "en": "You are where you should not be...", "hash": "0b90d906e592e8d9", "src": "db2@1.60.1.70124"}
-{"id": 1275867, "field": "name", "en": "Teleport to Darkwhisper Gorge", "hash": "72ecb8576d3f708e", "src": "db2@1.60.1.70124"}
+{"id": 1275511, "field": "name", "en": "Wounded", "hash": "8bb39feca1bb97ce", "src": "db2@1.60.1.70170"}
+{"id": 1275511, "field": "aura", "en": "Bleeding out from a vicious wound.", "hash": "d1b3d02bbedce9bd", "src": "db2@1.60.1.70170"}
+{"id": 1275552, "field": "name", "en": "Growing Flames", "hash": "30480bfc4d8447f2", "src": "db2@1.60.1.70170"}
+{"id": 1275553, "field": "name", "en": "Growing Flames", "hash": "30480bfc4d8447f2", "src": "db2@1.60.1.70170"}
+{"id": 1275553, "field": "aura", "en": "The fire is growing in strength over time.", "hash": "2f1206c7e1918f68", "src": "db2@1.60.1.70170"}
+{"id": 1275832, "field": "name", "en": "No Man's Land", "hash": "cdcddab8f4d06a35", "src": "db2@1.60.1.70170"}
+{"id": 1275832, "field": "aura", "en": "You are where you should not be...", "hash": "0b90d906e592e8d9", "src": "db2@1.60.1.70170"}
+{"id": 1275834, "field": "name", "en": "Teleport to Redridge", "hash": "a9bf6ba62d51a066", "src": "db2@1.60.1.70170"}
+{"id": 1275865, "field": "name", "en": "No Man's Land", "hash": "cdcddab8f4d06a35", "src": "db2@1.60.1.70170"}
+{"id": 1275865, "field": "aura", "en": "You are where you should not be...", "hash": "0b90d906e592e8d9", "src": "db2@1.60.1.70170"}
+{"id": 1275867, "field": "name", "en": "Teleport to Darkwhisper Gorge", "hash": "72ecb8576d3f708e", "src": "db2@1.60.1.70170"}

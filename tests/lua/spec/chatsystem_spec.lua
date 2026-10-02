@@ -271,6 +271,28 @@ describe("SYSTEM chat lines", function()
     for _, line in ipairs(f.visibleLines) do assert.are.equal("Fonts\\ARIALN.TTF", line.font.path) end
   end)
 
+  it("a row given the chat font back follows a later chat font size change; a row never dressed is untouched",
+    function()
+      local f = _G.ChatFrame1
+      system(f, "Your party is full.")
+      f:Refresh()
+      local row = f.visibleLines[2]
+      f:AddMessage("Ostara says: hey", 1, 1, 1, SAY) -- English takes the dressed row: the chat font back
+      f:AddMessage("Ostara says: again", 1, 1, 1, SAY)
+      f:Refresh()
+      assert.are.equal(14, row.font.size)
+      f.fontObject.font.size = 18 -- the player picks a bigger chat font: the client changes the object
+      f:Refresh() -- SetFontObject(same object) leaves the restored row's SetFont in place
+      assert.are.equal("Fonts\\ARIALN.TTF", row.font.path)
+      assert.are.equal(18, row.font.size)
+      local never = Stub.fontString("", "Fonts\\ARIALN.TTF", 14)
+      assert.is_false(WFJ.Font.follow(never, f.fontObject)) -- a row that never wore the bundled face
+      assert.are.equal(0, never.calls.SetFont)
+      local calls = row.calls.addonSetFont
+      f:Refresh() -- already the object's font: nothing set again
+      assert.are.equal(calls, row.calls.addonSetFont)
+    end)
+
   it("in game: Alt gives the row the chat font back, release the bundled face at the chat size", function()
     local f = _G.ChatFrame1
     system(f, "Your party is full.")

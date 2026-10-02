@@ -1,177 +1,177 @@
-{"id": 1308017, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70124"}
-{"id": 1308018, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
-{"id": 1308019, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
-{"id": 1308020, "field": "name", "en": "Nightsaber Leggings", "hash": "4a2a4e1672b87c74", "src": "db2@1.60.1.70124"}
-{"id": 1308020, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}. This effect is doubled at Night.", "hash": "66c4bda3f557d2c1", "src": "db2@1.60.1.70124"}
-{"id": 1308021, "field": "name", "en": "Nightsaber Leggings", "hash": "4a2a4e1672b87c74", "src": "db2@1.60.1.70124"}
-{"id": 1308021, "field": "aura", "en": "Harder to detect at Night. Stealth level increased.", "hash": "228d20e589b50dee", "src": "db2@1.60.1.70124"}
-{"id": 1308022, "field": "name", "en": "Foreststalker", "hash": "10d77713736e415d", "src": "db2@1.60.1.70124"}
-{"id": 1308022, "field": "description", "en": "Increases your effective stealth level by ${$s1/5} in Forest and Grassland areas.", "hash": "fa463cc7f6061cf1", "src": "db2@1.60.1.70124"}
-{"id": 1308022, "field": "aura", "en": "In a Forest or Grassland area, Stealth level increased.", "hash": "565098281cde8034", "src": "db2@1.60.1.70124"}
-{"id": 1308023, "field": "name", "en": "Dawnbloom", "hash": "5c93dccbeb076866", "src": "db2@1.60.1.70124"}
-{"id": 1308023, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects. This effect is doubled during the Day.", "hash": "bc018319be757f52", "src": "db2@1.60.1.70124"}
-{"id": 1308024, "field": "name", "en": "Dawnbloom", "hash": "5c93dccbeb076866", "src": "db2@1.60.1.70124"}
-{"id": 1308024, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70124"}
-{"id": 1308024, "field": "aura", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70124"}
-{"id": 1308027, "field": "name", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70124"}
-{"id": 1308029, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
-{"id": 1308030, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70124"}
-{"id": 1308031, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70124"}
-{"id": 1308032, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70124"}
-{"id": 1308033, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70124"}
-{"id": 1308034, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70124"}
-{"id": 1308035, "field": "name", "en": "Controller Timer", "hash": "3676a58beef2f0cb", "src": "db2@1.60.1.70124"}
-{"id": 1308095, "field": "name", "en": "Invisible Dagger", "hash": "24e1060e2b7cae8c", "src": "db2@1.60.1.70124"}
-{"id": 1308117, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70124"}
-{"id": 1308117, "field": "description", "en": "Fill the crate with any bundle from the following list:", "hash": "98a4860bd00787b3", "src": "db2@1.60.1.70124"}
-{"id": 1308118, "field": "name", "en": "Seed of Eternity", "hash": "48835e020a46e599", "src": "db2@1.60.1.70124"}
-{"id": 1308118, "field": "description", "en": "Increases healing received by up to $s1 for $d.", "hash": "f70197eb66113d2b", "src": "db2@1.60.1.70124"}
-{"id": 1308118, "field": "aura", "en": "Healing received increased by up to $s1.", "hash": "a27c27042fcc6e3e", "src": "db2@1.60.1.70124"}
-{"id": 1308128, "field": "name", "en": "Prism of Duality", "hash": "8e434b8f6ead617a", "src": "db2@1.60.1.70124"}
-{"id": 1308128, "field": "description", "en": "Chance on harmful spellcast to deal $1308132s1 Nature or Arcane damage. Deals $s1 times as much damage to Elves.", "hash": "a4025a16e0e25af0", "src": "db2@1.60.1.70124"}
-{"id": 1308131, "field": "name", "en": "Prism of Duality", "hash": "8e434b8f6ead617a", "src": "db2@1.60.1.70124"}
-{"id": 1308131, "field": "description", "en": "Deals $s1 Nature damage. Deals $1308128s1 times as much damage to Elves.", "hash": "5411725dc52ce8a8", "src": "db2@1.60.1.70124"}
-{"id": 1308132, "field": "name", "en": "Prism of Duality", "hash": "8e434b8f6ead617a", "src": "db2@1.60.1.70124"}
-{"id": 1308132, "field": "description", "en": "Deals $s1 Arcane damage. Deals $1308128s1 times as much damage to Elves.", "hash": "d0092bd12f27debb", "src": "db2@1.60.1.70124"}
-{"id": 1308177, "field": "name", "en": "Weakened", "hash": "9315793a3b038f27", "src": "db2@1.60.1.70124"}
-{"id": 1308177, "field": "description", "en": "Vulnerable to Amberhall's Soulstone.", "hash": "ba266e43e19ed436", "src": "db2@1.60.1.70124"}
-{"id": 1308177, "field": "aura", "en": "Vulnerable to Amberhall's Soulstone.", "hash": "ba266e43e19ed436", "src": "db2@1.60.1.70124"}
-{"id": 1308178, "field": "name", "en": "Whimsical Waistwrap", "hash": "d4e6cc45e2656be1", "src": "db2@1.60.1.70124"}
-{"id": 1308179, "field": "name", "en": "Gizmo Girdle", "hash": "d31940a6fc403fd3", "src": "db2@1.60.1.70124"}
-{"id": 1308180, "field": "name", "en": "Clanking Cord", "hash": "962b88b8c9b80034", "src": "db2@1.60.1.70124"}
-{"id": 1308182, "field": "name", "en": "Serrated Strap", "hash": "eec1a6b2caed2164", "src": "db2@1.60.1.70124"}
-{"id": 1308183, "field": "name", "en": "Floppy Goggles", "hash": "d2f64261f0f4a84a", "src": "db2@1.60.1.70124"}
-{"id": 1308184, "field": "name", "en": "Bent Goggles", "hash": "916e89084f7cd1aa", "src": "db2@1.60.1.70124"}
-{"id": 1308185, "field": "name", "en": "Stuckbutton Goggles", "hash": "189ed442b5d323f4", "src": "db2@1.60.1.70124"}
-{"id": 1308186, "field": "name", "en": "Dented Goggles", "hash": "cef799ad229c134b", "src": "db2@1.60.1.70124"}
-{"id": 1308237, "field": "name", "en": "Increase Spell Dam Dragonkin 53", "hash": "69b10af6993d57bd", "src": "db2@1.60.1.70124"}
-{"id": 1308237, "field": "description", "en": "Increases damage done to Dragonkin by magical spells and effects by up to $s1.", "hash": "075c4e516546cc17", "src": "db2@1.60.1.70124"}
-{"id": 1308246, "field": "name", "en": "Malignant Rotclaw Flesh", "hash": "d5daf5c6a2b3bcb0", "src": "db2@1.60.1.70124"}
-{"id": 1308246, "field": "description", "en": "Offer the flesh to Carnage, the Razormaw alpha.", "hash": "08e356eff9c138bc", "src": "db2@1.60.1.70124"}
-{"id": 1308247, "field": "name", "en": "Malignant Rotclaw Flesh", "hash": "d5daf5c6a2b3bcb0", "src": "db2@1.60.1.70124"}
-{"id": 1308247, "field": "description", "en": "Offer the flesh to Carnage, the Razormaw alpha.", "hash": "08e356eff9c138bc", "src": "db2@1.60.1.70124"}
-{"id": 1308250, "field": "name", "en": "Gift of Cenarius", "hash": "51f371d806ee914f", "src": "db2@1.60.1.70124"}
-{"id": 1308250, "field": "description", "en": "Receive Cenarius' Gift for $d.", "hash": "d0d2b2cf4b7e1e6d", "src": "db2@1.60.1.70124"}
-{"id": 1308250, "field": "aura", "en": "Blessed by Cenarius.", "hash": "80b7b14b842e9f43", "src": "db2@1.60.1.70124"}
-{"id": 1308263, "field": "name", "en": "Create Arcane Censer", "hash": "5c839215269352e9", "src": "db2@1.60.1.70124"}
-{"id": 1308283, "field": "name", "en": "Summon Shadowgale Squirrel", "hash": "3bd942c2f24aa8ca", "src": "db2@1.60.1.70124"}
-{"id": 1308283, "field": "description", "en": "Right Click to summon and dismiss your Shadowgale Squirrel.", "hash": "f9bc922a57871115", "src": "db2@1.60.1.70124"}
-{"id": 1308302, "field": "name", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70124"}
-{"id": 1308318, "field": "name", "en": "Dominate Will", "hash": "7bc5795aa3352e02", "src": "db2@1.60.1.70124"}
-{"id": 1308318, "field": "aura", "en": "Subjugating control.", "hash": "a34134d7d8d67b55", "src": "db2@1.60.1.70124"}
-{"id": 1308351, "field": "name", "en": "Snowrunners", "hash": "7229bc77991e4087", "src": "db2@1.60.1.70124"}
-{"id": 1308351, "field": "description", "en": "Increases damage and healing done by up to $s1 for all magical spells and effects. This effect is doubled in Snowy areas.", "hash": "427f066583330c95", "src": "db2@1.60.1.70124"}
-{"id": 1308352, "field": "name", "en": "Snowrunners", "hash": "7229bc77991e4087", "src": "db2@1.60.1.70124"}
-{"id": 1308352, "field": "aura", "en": "In a Snowy area, spell damage and healing increased by an additional $s1.", "hash": "924e46ed6d5a8235", "src": "db2@1.60.1.70124"}
-{"id": 1308377, "field": "name", "en": "Create Tome of Dalaran", "hash": "6ee30ae67c995b15", "src": "db2@1.60.1.70124"}
-{"id": 1308377, "field": "description", "en": "Use at the Ambermill Leyline Focus to create the Tome of Dalaran.", "hash": "901081738f9e77f6", "src": "db2@1.60.1.70124"}
-{"id": 1308379, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70124"}
-{"id": 1308380, "field": "name", "en": "Push Loot", "hash": "e3c1b9af9e83bd53", "src": "db2@1.60.1.70124"}
-{"id": 1308458, "field": "name", "en": "Carved Stone Trinket stashed", "hash": "9946115b04b79a7d", "src": "db2@1.60.1.70124"}
-{"id": 1308461, "field": "name", "en": "Rift Portal", "hash": "6e04019953a3beaa", "src": "db2@1.60.1.70124"}
-{"id": 1308462, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70124"}
-{"id": 1308463, "field": "name", "en": "Split", "hash": "c0108e27d04bc10e", "src": "db2@1.60.1.70124"}
-{"id": 1308463, "field": "description", "en": "Split the target in two, causing $o1 Shadow damage over $d. Deals $s2 times as much damage if applied while in front of the target.", "hash": "bd980a16cda7060d", "src": "db2@1.60.1.70124"}
-{"id": 1308463, "field": "aura", "en": "Taking for $w1 Shadow damage every $t1 sec.", "hash": "565725cc9d94c6fd", "src": "db2@1.60.1.70124"}
-{"id": 1308473, "field": "name", "en": "Poisoned Blades", "hash": "5457d12ee654ad8d", "src": "db2@1.60.1.70124"}
-{"id": 1308473, "field": "description", "en": "The caster coats their weapons in a noxious poison causing their weapon attacks to have a chance of inflicting $s1 additional Nature damage.", "hash": "eb044a65cdc31319", "src": "db2@1.60.1.70124"}
-{"id": 1308473, "field": "aura", "en": "Melee attacks have a chance to inflict $1308474s1 additional Nature damage.", "hash": "e5631fc90124ed47", "src": "db2@1.60.1.70124"}
-{"id": 1308474, "field": "name", "en": "Poisoned Blades", "hash": "5457d12ee654ad8d", "src": "db2@1.60.1.70124"}
-{"id": 1308474, "field": "description", "en": "$@spelldesc1308473", "hash": "5cf0a44897d1696f", "src": "db2@1.60.1.70124"}
-{"id": 1308511, "field": "name", "en": "Bitter Cold", "hash": "902ffff5eee71839", "src": "db2@1.60.1.70124"}
-{"id": 1308511, "field": "aura", "en": "In a Snowy area, critical strike chance increased by an additional $s1%.", "hash": "430e00d321be6110", "src": "db2@1.60.1.70124"}
-{"id": 1308516, "field": "name", "en": "Bitter Cold", "hash": "902ffff5eee71839", "src": "db2@1.60.1.70124"}
-{"id": 1308516, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%. This effect is doubled in Snowy areas.", "hash": "375b73abc567c6a8", "src": "db2@1.60.1.70124"}
-{"id": 1308517, "field": "name", "en": "Teleport Just a Lil' Bit", "hash": "350666fc19678d07", "src": "db2@1.60.1.70124"}
-{"id": 1308520, "field": "name", "en": "Guidance of Ursoc", "hash": "74e214fc51acd63d", "src": "db2@1.60.1.70124"}
-{"id": 1308520, "field": "description", "en": "Movement speed increased by $s1% in Forest and Grassland areas.", "hash": "ace399bb0519f0fb", "src": "db2@1.60.1.70124"}
-{"id": 1308520, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70124"}
-{"id": 1308526, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70124"}
-{"id": 1308527, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70124"}
-{"id": 1308527, "field": "description", "en": "$@spelldesc1307423", "hash": "5cce541e0a68d60b", "src": "db2@1.60.1.70124"}
-{"id": 1308527, "field": "aura", "en": "Activating.", "hash": "3cfa7e61d95a7b10", "src": "db2@1.60.1.70124"}
-{"id": 1308528, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70124"}
-{"id": 1308528, "field": "description", "en": "Activate a Goaz Warder.", "hash": "3e261b236c4833f1", "src": "db2@1.60.1.70124"}
-{"id": 1308531, "field": "name", "en": "Wisdom of Ursol", "hash": "9120cdf49d21abed", "src": "db2@1.60.1.70124"}
-{"id": 1308531, "field": "description", "en": "Restores $s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "7686c001b584b5bb", "src": "db2@1.60.1.70124"}
-{"id": 1308531, "field": "aura", "en": "In a Forest or Grassland area, restoring $s1 Mana every 5 sec.", "hash": "28d6301df4d151cd", "src": "db2@1.60.1.70124"}
-{"id": 1308568, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70124"}
-{"id": 1308568, "field": "description", "en": "Heals an ally every $t1 sec. for $d.", "hash": "61f0e6eb9544de7b", "src": "db2@1.60.1.70124"}
-{"id": 1308568, "field": "aura", "en": "Damage healed every $t1 sec.", "hash": "7668097caf4a4e47", "src": "db2@1.60.1.70124"}
-{"id": 1308643, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
-{"id": 1308646, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70124"}
-{"id": 1308651, "field": "name", "en": "Chill", "hash": "a621f4a06a7bbd9c", "src": "db2@1.60.1.70124"}
-{"id": 1308651, "field": "aura", "en": "Rapidly cooling the target.", "hash": "7e8e31c7df9ff6a8", "src": "db2@1.60.1.70124"}
-{"id": 1308652, "field": "name", "en": "Teleport: Dalaran", "hash": "2a9fae8757d3431e", "src": "db2@1.60.1.70124"}
-{"id": 1308652, "field": "description", "en": "Teleports the caster to Dalaran.", "hash": "a416287d9400fbd0", "src": "db2@1.60.1.70124"}
-{"id": 1308660, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
-{"id": 1308663, "field": "name", "en": "Walk on Air", "hash": "2eefbca881e46ffb", "src": "db2@1.60.1.70124"}
-{"id": 1308663, "field": "description", "en": "Glide downward through the air for $d while controlling your direction of travel.", "hash": "31bc45ebd8c05dcd", "src": "db2@1.60.1.70124"}
-{"id": 1308663, "field": "aura", "en": "Walking on air.", "hash": "d8b3ea96201811a9", "src": "db2@1.60.1.70124"}
-{"id": 1308664, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
-{"id": 1308665, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70124"}
-{"id": 1308704, "field": "name", "en": "Curse of the Eye", "hash": "1cbe6a16fc0b234a", "src": "db2@1.60.1.70124"}
-{"id": 1308704, "field": "description", "en": "Curses a target by lowering damage done by $m1 for $d", "hash": "2d56a58b356c6a53", "src": "db2@1.60.1.70124"}
-{"id": 1308704, "field": "aura", "en": "Cursed by the Eye of Paleth!\r\nPhysical damage dealt is reduced by $s1.\r\nCasting speed reduced by $s2%.", "hash": "4bb16095dc66e6df", "src": "db2@1.60.1.70124"}
-{"id": 1308705, "field": "name", "en": "Curse of the Eye", "hash": "1cbe6a16fc0b234a", "src": "db2@1.60.1.70124"}
-{"id": 1308705, "field": "description", "en": "Curses a target by lowering damage done by $m1 for $d", "hash": "2d56a58b356c6a53", "src": "db2@1.60.1.70124"}
-{"id": 1308705, "field": "aura", "en": "Cursed by the Eye of Paleth!\r\nPhysical damage dealt is reduced by $s1.\r\nCasting speed reduced by $s2%.", "hash": "4bb16095dc66e6df", "src": "db2@1.60.1.70124"}
-{"id": 1308707, "field": "name", "en": "Curse of the Eye", "hash": "1cbe6a16fc0b234a", "src": "db2@1.60.1.70124"}
-{"id": 1308707, "field": "description", "en": "Curses an enemy with the Eye of Paleth, reducing the Physical damage it deals by $10653s1 and slowing its spellcasting by $10653s2% for $10653d.", "hash": "f7e31f615fc434d6", "src": "db2@1.60.1.70124"}
-{"id": 1308718, "field": "name", "en": "Fel Ash", "hash": "10329a6f4c80b08a", "src": "db2@1.60.1.70124"}
-{"id": 1308733, "field": "name", "en": "Overdrive", "hash": "dc3ce40fc7f1fc85", "src": "db2@1.60.1.70124"}
-{"id": 1308733, "field": "description", "en": "Increases Haste by $s1% for $d.", "hash": "b0ddc558b3e40b67", "src": "db2@1.60.1.70124"}
-{"id": 1308733, "field": "aura", "en": "Haste increased by $s1%.", "hash": "269d2af7c7638c8d", "src": "db2@1.60.1.70124"}
-{"id": 1308764, "field": "name", "en": "Might of Bedrock", "hash": "2956658744eec6f7", "src": "db2@1.60.1.70124"}
-{"id": 1308764, "field": "description", "en": "Strength increased by $s1 in Mountainous areas.", "hash": "cba6c44e9bb4cd6b", "src": "db2@1.60.1.70124"}
-{"id": 1308764, "field": "aura", "en": "In a Mountainous area, Strength increased by $s1.", "hash": "e2393eeaeead7aae", "src": "db2@1.60.1.70124"}
-{"id": 1308769, "field": "name", "en": "Talusguard", "hash": "0ede0406b0892480", "src": "db2@1.60.1.70124"}
-{"id": 1308769, "field": "description", "en": "Increases your chance to Block attacks with a shield by ${$s1/5}.1%. This effect is doubled in Mountainous areas.", "hash": "8d25e1c95d82da08", "src": "db2@1.60.1.70124"}
-{"id": 1308770, "field": "name", "en": "Talusguard", "hash": "0ede0406b0892480", "src": "db2@1.60.1.70124"}
-{"id": 1308770, "field": "aura", "en": "In a Mountainous area, chance to Block attacks with a shield increased by an additional ${$s1/5}.1%.", "hash": "fd0cc63c99e2ad4e", "src": "db2@1.60.1.70124"}
-{"id": 1308772, "field": "name", "en": "Crafting", "hash": "158708dc421f4687", "src": "db2@1.60.1.70124"}
-{"id": 1308777, "field": "name", "en": "Shield Spike", "hash": "8cd4d2f2c2c78f32", "src": "db2@1.60.1.70124"}
-{"id": 1308777, "field": "description", "en": "Deals $s1 Physical damage every time you block.", "hash": "2cbf03aa59105126", "src": "db2@1.60.1.70124"}
-{"id": 1308816, "field": "name", "en": "Stillwater Striders", "hash": "6984c5834fd5ccb3", "src": "db2@1.60.1.70124"}
-{"id": 1308816, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1/14}.1%. This effect is doubled while in or on Water.", "hash": "e3393badf6457006", "src": "db2@1.60.1.70124"}
-{"id": 1308817, "field": "name", "en": "Stillwater Striders", "hash": "6984c5834fd5ccb3", "src": "db2@1.60.1.70124"}
-{"id": 1308817, "field": "aura", "en": "Critical strike chance increased by ${$s1/14}.1%.", "hash": "a5f6f62af34152fc", "src": "db2@1.60.1.70124"}
-{"id": 1308836, "field": "name", "en": "Bloodsail Admiral Title", "hash": "8dc7697b812cf7a7", "src": "db2@1.60.1.70124"}
-{"id": 1308836, "field": "description", "en": "Gain the ability to display the \"Bloodsail Admiral\" title on this character as long as you remain in good standing with the Bloodsail Buccaneers.", "hash": "c306b438147cdb8b", "src": "db2@1.60.1.70124"}
-{"id": 1308843, "field": "name", "en": "Hexcalibur", "hash": "3448bc607ef69002", "src": "db2@1.60.1.70124"}
-{"id": 1308843, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1 for $d.", "hash": "c0d351812af879f2", "src": "db2@1.60.1.70124"}
-{"id": 1308843, "field": "aura", "en": "Damage and healing done by magical spells and effects increased by up to $s1.", "hash": "bbc332ecbc754915", "src": "db2@1.60.1.70124"}
-{"id": 1308854, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70124"}
-{"id": 1308861, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70124"}
-{"id": 1308870, "field": "name", "en": "Summon Weevil K. Neevil", "hash": "ccb2d0e9467b5699", "src": "db2@1.60.1.70124"}
-{"id": 1308870, "field": "description", "en": "Right Click to summon and dismiss your weevil.", "hash": "dcb15f31bee49013", "src": "db2@1.60.1.70124"}
-{"id": 1308883, "field": "name", "en": "Create", "hash": "b25d3b61e697ac2e", "src": "db2@1.60.1.70124"}
-{"id": 1308884, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308885, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308886, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308887, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308888, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308889, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308890, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308891, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308892, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308893, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308894, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308895, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308896, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70124"}
-{"id": 1308910, "field": "name", "en": "Venomclasp Cleansing", "hash": "0ed49b9b49c5de08", "src": "db2@1.60.1.70124"}
-{"id": 1308910, "field": "description", "en": "Removes $s1 poison effect.", "hash": "ac41a7c72a797e50", "src": "db2@1.60.1.70124"}
-{"id": 1308910, "field": "aura", "en": "Removes $s1 poison effect.", "hash": "ac41a7c72a797e50", "src": "db2@1.60.1.70124"}
-{"id": 1308911, "field": "name", "en": "Venomclasp Cleansing", "hash": "0ed49b9b49c5de08", "src": "db2@1.60.1.70124"}
-{"id": 1308911, "field": "description", "en": "Your healing spells have a $h% chance to remove $1297369s1 Poison effect from the target.", "hash": "163f309db1c1a7e3", "src": "db2@1.60.1.70124"}
-{"id": 1308913, "field": "name", "en": "Manablade", "hash": "54553c70be651db0", "src": "db2@1.60.1.70124"}
-{"id": 1308913, "field": "description", "en": "Your melee attacks have a chance to grant mana.", "hash": "d34e0530d6f3d912", "src": "db2@1.60.1.70124"}
-{"id": 1308914, "field": "name", "en": "Iceknife", "hash": "90bf87484f0d1b3a", "src": "db2@1.60.1.70124"}
-{"id": 1308917, "field": "name", "en": "Mother's Watch", "hash": "6df0cbe49fab2819", "src": "db2@1.60.1.70124"}
-{"id": 1308917, "field": "description", "en": "Remove $s1 Disarm effect from target ally.", "hash": "5af749bdfdf5cee4", "src": "db2@1.60.1.70124"}
-{"id": 1308917, "field": "aura", "en": "Remove a Disarm effect.", "hash": "3af9e5cf45e6f98f", "src": "db2@1.60.1.70124"}
-{"id": 1308935, "field": "name", "en": "Striking", "hash": "dd4208b65219054b", "src": "db2@1.60.1.70124"}
-{"id": 1308937, "field": "name", "en": "Arcane Missile", "hash": "04f27817daa449f2", "src": "db2@1.60.1.70124"}
-{"id": 1308937, "field": "description", "en": "Launches an Arcane Missile at the enemy, causing $s1 Arcane damage.", "hash": "4df8039b4115341d", "src": "db2@1.60.1.70124"}
-{"id": 1308939, "field": "name", "en": "Totem of Elders", "hash": "98fe56e93d2a0277", "src": "db2@1.60.1.70124"}
-{"id": 1308939, "field": "description", "en": "Fire Nova damage extends the duration of your Flame Shock on the target by ${$s1/1000} sec. Against Beasts, this duration is extended by an additional ${$s2/1000} sec.", "hash": "282524ea9448eb91", "src": "db2@1.60.1.70124"}
+{"id": 1308017, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
+{"id": 1308018, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
+{"id": 1308019, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
+{"id": 1308020, "field": "name", "en": "Nightsaber Leggings", "hash": "4a2a4e1672b87c74", "src": "db2@1.60.1.70170"}
+{"id": 1308020, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}. This effect is doubled at Night.", "hash": "66c4bda3f557d2c1", "src": "db2@1.60.1.70170"}
+{"id": 1308021, "field": "name", "en": "Nightsaber Leggings", "hash": "4a2a4e1672b87c74", "src": "db2@1.60.1.70170"}
+{"id": 1308021, "field": "aura", "en": "Harder to detect at Night. Stealth level increased.", "hash": "228d20e589b50dee", "src": "db2@1.60.1.70170"}
+{"id": 1308022, "field": "name", "en": "Foreststalker", "hash": "10d77713736e415d", "src": "db2@1.60.1.70170"}
+{"id": 1308022, "field": "description", "en": "Increases your effective stealth level by ${$s1/5} in Forest and Grassland areas.", "hash": "fa463cc7f6061cf1", "src": "db2@1.60.1.70170"}
+{"id": 1308022, "field": "aura", "en": "In a Forest or Grassland area, Stealth level increased.", "hash": "565098281cde8034", "src": "db2@1.60.1.70170"}
+{"id": 1308023, "field": "name", "en": "Dawnbloom", "hash": "5c93dccbeb076866", "src": "db2@1.60.1.70170"}
+{"id": 1308023, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects. This effect is doubled during the Day.", "hash": "bc018319be757f52", "src": "db2@1.60.1.70170"}
+{"id": 1308024, "field": "name", "en": "Dawnbloom", "hash": "5c93dccbeb076866", "src": "db2@1.60.1.70170"}
+{"id": 1308024, "field": "description", "en": "Healing increased by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "05b0f1de68dccfeb", "src": "db2@1.60.1.70170"}
+{"id": 1308024, "field": "aura", "en": "Healing increased by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "05b0f1de68dccfeb", "src": "db2@1.60.1.70170"}
+{"id": 1308027, "field": "name", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70170"}
+{"id": 1308029, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
+{"id": 1308030, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
+{"id": 1308031, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
+{"id": 1308032, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
+{"id": 1308033, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
+{"id": 1308034, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
+{"id": 1308035, "field": "name", "en": "Controller Timer", "hash": "3676a58beef2f0cb", "src": "db2@1.60.1.70170"}
+{"id": 1308095, "field": "name", "en": "Invisible Dagger", "hash": "24e1060e2b7cae8c", "src": "db2@1.60.1.70170"}
+{"id": 1308117, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70170"}
+{"id": 1308117, "field": "description", "en": "Fill the crate with any bundle from the following list:", "hash": "98a4860bd00787b3", "src": "db2@1.60.1.70170"}
+{"id": 1308118, "field": "name", "en": "Seed of Eternity", "hash": "48835e020a46e599", "src": "db2@1.60.1.70170"}
+{"id": 1308118, "field": "description", "en": "Increases healing received by up to $s1 for $d.", "hash": "f70197eb66113d2b", "src": "db2@1.60.1.70170"}
+{"id": 1308118, "field": "aura", "en": "Healing received increased by up to $s1.", "hash": "a27c27042fcc6e3e", "src": "db2@1.60.1.70170"}
+{"id": 1308128, "field": "name", "en": "Prism of Duality", "hash": "8e434b8f6ead617a", "src": "db2@1.60.1.70170"}
+{"id": 1308128, "field": "description", "en": "Chance on harmful spellcast to deal $1308132s1 Nature or Arcane damage. Deals $s1 times as much damage to Elves.", "hash": "a4025a16e0e25af0", "src": "db2@1.60.1.70170"}
+{"id": 1308131, "field": "name", "en": "Prism of Duality", "hash": "8e434b8f6ead617a", "src": "db2@1.60.1.70170"}
+{"id": 1308131, "field": "description", "en": "Deals $s1 Nature damage. Deals $1308128s1 times as much damage to Elves.", "hash": "5411725dc52ce8a8", "src": "db2@1.60.1.70170"}
+{"id": 1308132, "field": "name", "en": "Prism of Duality", "hash": "8e434b8f6ead617a", "src": "db2@1.60.1.70170"}
+{"id": 1308132, "field": "description", "en": "Deals $s1 Arcane damage. Deals $1308128s1 times as much damage to Elves.", "hash": "d0092bd12f27debb", "src": "db2@1.60.1.70170"}
+{"id": 1308177, "field": "name", "en": "Weakened", "hash": "9315793a3b038f27", "src": "db2@1.60.1.70170"}
+{"id": 1308177, "field": "description", "en": "Vulnerable to Amberhall's Soulstone.", "hash": "ba266e43e19ed436", "src": "db2@1.60.1.70170"}
+{"id": 1308177, "field": "aura", "en": "Vulnerable to Amberhall's Soulstone.", "hash": "ba266e43e19ed436", "src": "db2@1.60.1.70170"}
+{"id": 1308178, "field": "name", "en": "Whimsical Waistwrap", "hash": "d4e6cc45e2656be1", "src": "db2@1.60.1.70170"}
+{"id": 1308179, "field": "name", "en": "Gizmo Girdle", "hash": "d31940a6fc403fd3", "src": "db2@1.60.1.70170"}
+{"id": 1308180, "field": "name", "en": "Clanking Cord", "hash": "962b88b8c9b80034", "src": "db2@1.60.1.70170"}
+{"id": 1308182, "field": "name", "en": "Serrated Strap", "hash": "eec1a6b2caed2164", "src": "db2@1.60.1.70170"}
+{"id": 1308183, "field": "name", "en": "Floppy Goggles", "hash": "d2f64261f0f4a84a", "src": "db2@1.60.1.70170"}
+{"id": 1308184, "field": "name", "en": "Bent Goggles", "hash": "916e89084f7cd1aa", "src": "db2@1.60.1.70170"}
+{"id": 1308185, "field": "name", "en": "Stuckbutton Goggles", "hash": "189ed442b5d323f4", "src": "db2@1.60.1.70170"}
+{"id": 1308186, "field": "name", "en": "Dented Goggles", "hash": "cef799ad229c134b", "src": "db2@1.60.1.70170"}
+{"id": 1308237, "field": "name", "en": "Increase Spell Dam Dragonkin 53", "hash": "69b10af6993d57bd", "src": "db2@1.60.1.70170"}
+{"id": 1308237, "field": "description", "en": "Increases damage done to Dragonkin by magical spells and effects by up to $s1.", "hash": "075c4e516546cc17", "src": "db2@1.60.1.70170"}
+{"id": 1308246, "field": "name", "en": "Malignant Rotclaw Flesh", "hash": "d5daf5c6a2b3bcb0", "src": "db2@1.60.1.70170"}
+{"id": 1308246, "field": "description", "en": "Offer the flesh to Carnage, the Razormaw alpha.", "hash": "08e356eff9c138bc", "src": "db2@1.60.1.70170"}
+{"id": 1308247, "field": "name", "en": "Malignant Rotclaw Flesh", "hash": "d5daf5c6a2b3bcb0", "src": "db2@1.60.1.70170"}
+{"id": 1308247, "field": "description", "en": "Offer the flesh to Carnage, the Razormaw alpha.", "hash": "08e356eff9c138bc", "src": "db2@1.60.1.70170"}
+{"id": 1308250, "field": "name", "en": "Gift of Cenarius", "hash": "51f371d806ee914f", "src": "db2@1.60.1.70170"}
+{"id": 1308250, "field": "description", "en": "Receive Cenarius' Gift for $d.", "hash": "d0d2b2cf4b7e1e6d", "src": "db2@1.60.1.70170"}
+{"id": 1308250, "field": "aura", "en": "Blessed by Cenarius.", "hash": "80b7b14b842e9f43", "src": "db2@1.60.1.70170"}
+{"id": 1308263, "field": "name", "en": "Create Arcane Censer", "hash": "5c839215269352e9", "src": "db2@1.60.1.70170"}
+{"id": 1308283, "field": "name", "en": "Summon Shadowgale Squirrel", "hash": "3bd942c2f24aa8ca", "src": "db2@1.60.1.70170"}
+{"id": 1308283, "field": "description", "en": "Right Click to summon and dismiss your Shadowgale Squirrel.", "hash": "f9bc922a57871115", "src": "db2@1.60.1.70170"}
+{"id": 1308302, "field": "name", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70170"}
+{"id": 1308318, "field": "name", "en": "Dominate Will", "hash": "7bc5795aa3352e02", "src": "db2@1.60.1.70170"}
+{"id": 1308318, "field": "aura", "en": "Subjugating control.", "hash": "a34134d7d8d67b55", "src": "db2@1.60.1.70170"}
+{"id": 1308351, "field": "name", "en": "Snowrunners", "hash": "7229bc77991e4087", "src": "db2@1.60.1.70170"}
+{"id": 1308351, "field": "description", "en": "Increases damage and healing done by up to $s1 for all magical spells and effects. This effect is doubled in Snowy areas.", "hash": "427f066583330c95", "src": "db2@1.60.1.70170"}
+{"id": 1308352, "field": "name", "en": "Snowrunners", "hash": "7229bc77991e4087", "src": "db2@1.60.1.70170"}
+{"id": 1308352, "field": "aura", "en": "In a Snowy area, spell damage and healing increased by an additional $s1.", "hash": "924e46ed6d5a8235", "src": "db2@1.60.1.70170"}
+{"id": 1308377, "field": "name", "en": "Create Tome of Dalaran", "hash": "6ee30ae67c995b15", "src": "db2@1.60.1.70170"}
+{"id": 1308377, "field": "description", "en": "Use at the Ambermill Leyline Focus to create the Tome of Dalaran.", "hash": "901081738f9e77f6", "src": "db2@1.60.1.70170"}
+{"id": 1308379, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70170"}
+{"id": 1308380, "field": "name", "en": "Push Loot", "hash": "e3c1b9af9e83bd53", "src": "db2@1.60.1.70170"}
+{"id": 1308458, "field": "name", "en": "Carved Stone Trinket stashed", "hash": "9946115b04b79a7d", "src": "db2@1.60.1.70170"}
+{"id": 1308461, "field": "name", "en": "Rift Portal", "hash": "6e04019953a3beaa", "src": "db2@1.60.1.70170"}
+{"id": 1308462, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70170"}
+{"id": 1308463, "field": "name", "en": "Split", "hash": "c0108e27d04bc10e", "src": "db2@1.60.1.70170"}
+{"id": 1308463, "field": "description", "en": "Split the target in two, inflicting $o1 Shadow damage over $d. Deals $s2 times as much damage if applied while in front of the target.", "hash": "157f7eb687000900", "src": "db2@1.60.1.70170"}
+{"id": 1308463, "field": "aura", "en": "Inflicting $w1 Shadow damage every $t1 sec.", "hash": "47c56fa8b9e72d4d", "src": "db2@1.60.1.70170"}
+{"id": 1308473, "field": "name", "en": "Poisoned Blades", "hash": "5457d12ee654ad8d", "src": "db2@1.60.1.70170"}
+{"id": 1308473, "field": "description", "en": "Coat your weapons in a noxious poison, causing your weapon attacks to have a chance of inflicting $s1 additional Nature damage.", "hash": "625b181f9218e474", "src": "db2@1.60.1.70170"}
+{"id": 1308473, "field": "aura", "en": "Melee attacks have a chance to inflict $1308474s1 additional Nature damage.", "hash": "e5631fc90124ed47", "src": "db2@1.60.1.70170"}
+{"id": 1308474, "field": "name", "en": "Poisoned Blades", "hash": "5457d12ee654ad8d", "src": "db2@1.60.1.70170"}
+{"id": 1308474, "field": "description", "en": "$@spelldesc1308473", "hash": "5cf0a44897d1696f", "src": "db2@1.60.1.70170"}
+{"id": 1308511, "field": "name", "en": "Bitter Cold", "hash": "902ffff5eee71839", "src": "db2@1.60.1.70170"}
+{"id": 1308511, "field": "aura", "en": "In a Snowy area, critical strike chance increased by an additional $s1%.", "hash": "430e00d321be6110", "src": "db2@1.60.1.70170"}
+{"id": 1308516, "field": "name", "en": "Bitter Cold", "hash": "902ffff5eee71839", "src": "db2@1.60.1.70170"}
+{"id": 1308516, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%. This effect is doubled in Snowy areas.", "hash": "375b73abc567c6a8", "src": "db2@1.60.1.70170"}
+{"id": 1308517, "field": "name", "en": "Teleport Just a Lil' Bit", "hash": "350666fc19678d07", "src": "db2@1.60.1.70170"}
+{"id": 1308520, "field": "name", "en": "Guidance of Ursoc", "hash": "74e214fc51acd63d", "src": "db2@1.60.1.70170"}
+{"id": 1308520, "field": "description", "en": "Movement speed increased by $s1% in Forest and Grassland areas.", "hash": "ace399bb0519f0fb", "src": "db2@1.60.1.70170"}
+{"id": 1308520, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70170"}
+{"id": 1308526, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70170"}
+{"id": 1308527, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70170"}
+{"id": 1308527, "field": "description", "en": "$@spelldesc1307423", "hash": "5cce541e0a68d60b", "src": "db2@1.60.1.70170"}
+{"id": 1308527, "field": "aura", "en": "Activating.", "hash": "3cfa7e61d95a7b10", "src": "db2@1.60.1.70170"}
+{"id": 1308528, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70170"}
+{"id": 1308528, "field": "description", "en": "Activate a Goaz Warder.", "hash": "3e261b236c4833f1", "src": "db2@1.60.1.70170"}
+{"id": 1308531, "field": "name", "en": "Wisdom of Ursol", "hash": "9120cdf49d21abed", "src": "db2@1.60.1.70170"}
+{"id": 1308531, "field": "description", "en": "Restores $s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "7686c001b584b5bb", "src": "db2@1.60.1.70170"}
+{"id": 1308531, "field": "aura", "en": "In a Forest or Grassland area, restoring $s1 Mana every 5 sec.", "hash": "28d6301df4d151cd", "src": "db2@1.60.1.70170"}
+{"id": 1308568, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70170"}
+{"id": 1308568, "field": "description", "en": "Heals an ally every $t1 sec. for $d.", "hash": "61f0e6eb9544de7b", "src": "db2@1.60.1.70170"}
+{"id": 1308568, "field": "aura", "en": "Damage healed every $t1 sec.", "hash": "7668097caf4a4e47", "src": "db2@1.60.1.70170"}
+{"id": 1308643, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
+{"id": 1308646, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
+{"id": 1308651, "field": "name", "en": "Chill", "hash": "a621f4a06a7bbd9c", "src": "db2@1.60.1.70170"}
+{"id": 1308651, "field": "aura", "en": "Rapidly cooling the target.", "hash": "7e8e31c7df9ff6a8", "src": "db2@1.60.1.70170"}
+{"id": 1308652, "field": "name", "en": "Teleport: Dalaran", "hash": "2a9fae8757d3431e", "src": "db2@1.60.1.70170"}
+{"id": 1308652, "field": "description", "en": "Teleports you to Dalaran.", "hash": "da80458c9a9a8bd8", "src": "db2@1.60.1.70170"}
+{"id": 1308660, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
+{"id": 1308663, "field": "name", "en": "Walk on Air", "hash": "2eefbca881e46ffb", "src": "db2@1.60.1.70170"}
+{"id": 1308663, "field": "description", "en": "Glide downward through the air for $d while controlling your direction of travel.", "hash": "31bc45ebd8c05dcd", "src": "db2@1.60.1.70170"}
+{"id": 1308663, "field": "aura", "en": "Walking on air.", "hash": "d8b3ea96201811a9", "src": "db2@1.60.1.70170"}
+{"id": 1308664, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
+{"id": 1308665, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
+{"id": 1308704, "field": "name", "en": "Curse of the Eye", "hash": "1cbe6a16fc0b234a", "src": "db2@1.60.1.70170"}
+{"id": 1308704, "field": "description", "en": "Curses a target by lowering damage done by $m1 for $d", "hash": "2d56a58b356c6a53", "src": "db2@1.60.1.70170"}
+{"id": 1308704, "field": "aura", "en": "Cursed by the Eye of Paleth!\r\nPhysical damage dealt is reduced by $s1.\r\nCasting speed reduced by $s2%.", "hash": "4bb16095dc66e6df", "src": "db2@1.60.1.70170"}
+{"id": 1308705, "field": "name", "en": "Curse of the Eye", "hash": "1cbe6a16fc0b234a", "src": "db2@1.60.1.70170"}
+{"id": 1308705, "field": "description", "en": "Curses a target by lowering damage done by $m1 for $d", "hash": "2d56a58b356c6a53", "src": "db2@1.60.1.70170"}
+{"id": 1308705, "field": "aura", "en": "Cursed by the Eye of Paleth!\r\nPhysical damage dealt is reduced by $s1.\r\nCasting speed reduced by $s2%.", "hash": "4bb16095dc66e6df", "src": "db2@1.60.1.70170"}
+{"id": 1308707, "field": "name", "en": "Curse of the Eye", "hash": "1cbe6a16fc0b234a", "src": "db2@1.60.1.70170"}
+{"id": 1308707, "field": "description", "en": "Curses an enemy with the Eye of Paleth, reducing the Physical damage it deals by $10653s1 and slowing its spellcasting by $10653s2% for $10653d.", "hash": "f7e31f615fc434d6", "src": "db2@1.60.1.70170"}
+{"id": 1308718, "field": "name", "en": "Fel Ash", "hash": "10329a6f4c80b08a", "src": "db2@1.60.1.70170"}
+{"id": 1308733, "field": "name", "en": "Overdrive", "hash": "dc3ce40fc7f1fc85", "src": "db2@1.60.1.70170"}
+{"id": 1308733, "field": "description", "en": "Increases Haste by $s1% for $d.", "hash": "b0ddc558b3e40b67", "src": "db2@1.60.1.70170"}
+{"id": 1308733, "field": "aura", "en": "Haste increased by $s1%.", "hash": "269d2af7c7638c8d", "src": "db2@1.60.1.70170"}
+{"id": 1308764, "field": "name", "en": "Might of Bedrock", "hash": "2956658744eec6f7", "src": "db2@1.60.1.70170"}
+{"id": 1308764, "field": "description", "en": "Strength increased by $s1 in Mountainous areas.", "hash": "cba6c44e9bb4cd6b", "src": "db2@1.60.1.70170"}
+{"id": 1308764, "field": "aura", "en": "In a Mountainous area, Strength increased by $s1.", "hash": "e2393eeaeead7aae", "src": "db2@1.60.1.70170"}
+{"id": 1308769, "field": "name", "en": "Talusguard", "hash": "0ede0406b0892480", "src": "db2@1.60.1.70170"}
+{"id": 1308769, "field": "description", "en": "Increases your chance to Block attacks with a shield by ${$s1/5}.1%. This effect is doubled in Mountainous areas.", "hash": "8d25e1c95d82da08", "src": "db2@1.60.1.70170"}
+{"id": 1308770, "field": "name", "en": "Talusguard", "hash": "0ede0406b0892480", "src": "db2@1.60.1.70170"}
+{"id": 1308770, "field": "aura", "en": "In a Mountainous area, chance to Block attacks with a shield increased by an additional ${$s1/5}.1%.", "hash": "fd0cc63c99e2ad4e", "src": "db2@1.60.1.70170"}
+{"id": 1308772, "field": "name", "en": "Crafting", "hash": "158708dc421f4687", "src": "db2@1.60.1.70170"}
+{"id": 1308777, "field": "name", "en": "Shield Spike", "hash": "8cd4d2f2c2c78f32", "src": "db2@1.60.1.70170"}
+{"id": 1308777, "field": "description", "en": "Deals $s1 Physical damage every time you block.", "hash": "2cbf03aa59105126", "src": "db2@1.60.1.70170"}
+{"id": 1308816, "field": "name", "en": "Stillwater Striders", "hash": "6984c5834fd5ccb3", "src": "db2@1.60.1.70170"}
+{"id": 1308816, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1/14}.1%. This effect is doubled while in or on Water.", "hash": "e3393badf6457006", "src": "db2@1.60.1.70170"}
+{"id": 1308817, "field": "name", "en": "Stillwater Striders", "hash": "6984c5834fd5ccb3", "src": "db2@1.60.1.70170"}
+{"id": 1308817, "field": "aura", "en": "Critical strike chance increased by ${$s1/14}.1%.", "hash": "a5f6f62af34152fc", "src": "db2@1.60.1.70170"}
+{"id": 1308836, "field": "name", "en": "Bloodsail Admiral Title", "hash": "8dc7697b812cf7a7", "src": "db2@1.60.1.70170"}
+{"id": 1308836, "field": "description", "en": "Gain the ability to display the \"Bloodsail Admiral\" title on this character as long as you remain in good standing with the Bloodsail Buccaneers.", "hash": "c306b438147cdb8b", "src": "db2@1.60.1.70170"}
+{"id": 1308843, "field": "name", "en": "Hexcalibur", "hash": "3448bc607ef69002", "src": "db2@1.60.1.70170"}
+{"id": 1308843, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1 for $d.", "hash": "c0d351812af879f2", "src": "db2@1.60.1.70170"}
+{"id": 1308843, "field": "aura", "en": "Damage and healing done by magical spells and effects increased by up to $s1.", "hash": "bbc332ecbc754915", "src": "db2@1.60.1.70170"}
+{"id": 1308854, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
+{"id": 1308861, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
+{"id": 1308870, "field": "name", "en": "Summon Weevil K. Neevil", "hash": "ccb2d0e9467b5699", "src": "db2@1.60.1.70170"}
+{"id": 1308870, "field": "description", "en": "Right Click to summon and dismiss your weevil.", "hash": "dcb15f31bee49013", "src": "db2@1.60.1.70170"}
+{"id": 1308883, "field": "name", "en": "Create", "hash": "b25d3b61e697ac2e", "src": "db2@1.60.1.70170"}
+{"id": 1308884, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308885, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308886, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308887, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308888, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308889, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308890, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308891, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308892, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308893, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308894, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308895, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308896, "field": "name", "en": "Traveler's Sign", "hash": "85e043c0783eaf27", "src": "db2@1.60.1.70170"}
+{"id": 1308910, "field": "name", "en": "Venomclasp Cleansing", "hash": "0ed49b9b49c5de08", "src": "db2@1.60.1.70170"}
+{"id": 1308910, "field": "description", "en": "Remove $s1 poison effect.", "hash": "396a13ff6f01c693", "src": "db2@1.60.1.70170"}
+{"id": 1308910, "field": "aura", "en": "Removes $s1 poison effect.", "hash": "ac41a7c72a797e50", "src": "db2@1.60.1.70170"}
+{"id": 1308911, "field": "name", "en": "Venomclasp Cleansing", "hash": "0ed49b9b49c5de08", "src": "db2@1.60.1.70170"}
+{"id": 1308911, "field": "description", "en": "Your healing spells have a $h% chance to remove $1297369s1 Poison effect from the target.", "hash": "163f309db1c1a7e3", "src": "db2@1.60.1.70170"}
+{"id": 1308913, "field": "name", "en": "Manablade", "hash": "54553c70be651db0", "src": "db2@1.60.1.70170"}
+{"id": 1308913, "field": "description", "en": "Your melee attacks have a chance to grant Mana.", "hash": "a1973b06f9a3e9f6", "src": "db2@1.60.1.70170"}
+{"id": 1308914, "field": "name", "en": "Iceknife", "hash": "90bf87484f0d1b3a", "src": "db2@1.60.1.70170"}
+{"id": 1308917, "field": "name", "en": "Mother's Watch", "hash": "6df0cbe49fab2819", "src": "db2@1.60.1.70170"}
+{"id": 1308917, "field": "description", "en": "Remove $s1 Disarm effect from target ally.", "hash": "5af749bdfdf5cee4", "src": "db2@1.60.1.70170"}
+{"id": 1308917, "field": "aura", "en": "Remove a Disarm effect.", "hash": "3af9e5cf45e6f98f", "src": "db2@1.60.1.70170"}
+{"id": 1308935, "field": "name", "en": "Striking", "hash": "dd4208b65219054b", "src": "db2@1.60.1.70170"}
+{"id": 1308937, "field": "name", "en": "Arcane Missile", "hash": "04f27817daa449f2", "src": "db2@1.60.1.70170"}
+{"id": 1308937, "field": "description", "en": "Launches an Arcane Missile at the enemy, causing $s1 Arcane damage.", "hash": "4df8039b4115341d", "src": "db2@1.60.1.70170"}
+{"id": 1308939, "field": "name", "en": "Totem of Elders", "hash": "98fe56e93d2a0277", "src": "db2@1.60.1.70170"}
+{"id": 1308939, "field": "description", "en": "Fire Nova damage extends the duration of your Flame Shock on the target by ${$s1/1000} sec. Against Beasts, this duration is extended by an additional ${$s2/1000} sec.", "hash": "282524ea9448eb91", "src": "db2@1.60.1.70170"}

@@ -22,8 +22,12 @@ refuses it (`wfj.dev.rule_baked_numbers`); and quest description / objectives,
 where the hand-written text is cut short (`rule_held_back --field`).
 
 A bare label (no lower-case word, no token, no sentence punctuation: `Stratholme`, `Auction House`) has
-nothing to translate and ships as the English (`has_prose`). Lines sharing one English text become one row, so
-each text is drafted once. The English is shown in the form the addon's data uses (`model_english`).
+nothing to translate and ships as the English (`has_prose`). A tooltip line is never a bare label: item
+flavour text is written in title case (`Made With Love`), so a tooltip row without prose is cut like a quest
+title, marked `title_case` and given its `names`; one whose whole English is an item, spell or creature name
+(`Lightning Shield`) is marked `name_only` too, and its draft may be that name in English letters. Lines
+sharing one English text become one row, so each text is drafted once. The English is shown in the form the
+addon's data uses (`model_english`).
 
 Kinds: quest `progress` / `completion`, gossip `text`, book page `text`. A book page written as HTML keeps its
 tags and line breaks as they are.
@@ -119,6 +123,22 @@ def has_prose(en: str) -> bool:
     ships as the English; `Yes?` and `Greetings, {name}.` are drafted."""
     text = _CODES.sub(" ", _GENDER.sub(r"\1", en))
     return bool(_LOWER_WORD.search(text) or _PROSE_MARK.search(text))
+
+
+def _cuttable(kind: str, en: str) -> bool:
+    """A title-case kind is never a bare label ("Blackrock Menace" is still a title to translate), nor is a
+    tooltip line ("Soft Like Pudding" is flavour text); any other line needs prose."""
+    return kind in TITLE_CASE_KINDS or kind in TEMPLATE_KINDS or has_prose(en)
+
+
+def _title_case_rows(kind: str, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """The rows the lint checks by their `names`: every row of a title-case kind, and a tooltip row
+    without prose."""
+    if kind in TITLE_CASE_KINDS:
+        return rows
+    if kind in TEMPLATE_KINDS:
+        return [r for r in rows if not has_prose(r["en"])]
+    return []
 
 
 def style_version(repo: Path) -> int:
@@ -372,12 +392,34 @@ def title_names(title: str, vocab: set[str], known: set[str]) -> list[str]:
     return list(dict.fromkeys(found))
 
 
-def _annotate_names(rows: list[dict[str, Any]], data: Path) -> None:
+def every_name(data: Path) -> set[str]:
+    """Every item, spell and creature name, one word or more: a tooltip line that is exactly one of them
+    (`Umbrinoth`, `Lightning Shield`) is a name, which stays in English letters."""
+    english = Store(data, english=True)
+    return {ln["en"] for type_ in ("item", "spell", "unit") for ln in english.load(type_)
+            if ln["field"] == "name" and ln.get("en")}
+
+
+def _name_only(en: str, all_names: set[str]) -> bool:
+    """The whole line, less a leading list dash, is a name the client knows. Only a known name counts: the
+    corpus test would call `Squishy` a name, and a draft could then keep flavour text in English."""
+    return en.strip().lstrip("-").strip() in all_names
+
+
+def _annotate_names(rows: list[dict[str, Any]], data: Path, kind: str) -> None:
+    rows = _title_case_rows(kind, rows)
+    if not rows:
+        return
     vocab, known = lowercase_vocab(data), known_names(data)
+    all_names = every_name(data) if kind in TEMPLATE_KINDS else set()
     for row in rows:
         names = title_names(row["en"], vocab, known)
         if names:
             row["names"] = names
+        if kind in TEMPLATE_KINDS:
+            row["title_case"] = True
+            if _name_only(row["en"], all_names):
+                row["name_only"] = True
 
 
 def _summary(label: str, rows: list[dict[str, Any]]) -> str:
@@ -470,9 +512,7 @@ def cut(  # noqa: PLR0913, PLR0917 - one parameter per CLI option; tests and the
     selected = list(selected)
     spells = spell_english(data) if kind in TEMPLATE_KINDS else {}
     selected, not_expanded = expand_included(kind, selected, spells)
-    # a title-case kind is never a bare label: "Blackrock Menace" has no lower-case word and is still a title
-    # to translate
-    rows = [r for r in group(kind, selected, items) if kind in TITLE_CASE_KINDS or has_prose(r["en"])]
+    rows = [r for r in group(kind, selected, items) if _cuttable(kind, r["en"])]
     dropped: list[dict[str, Any]] = [
         {"id": ln["id"], "field": ln["field"], "reason": reason} for ln, reason in not_expanded
     ]
@@ -507,7 +547,7 @@ def cut(  # noqa: PLR0913, PLR0917 - one parameter per CLI option; tests and the
             if kind == "book":
                 hashes = {ln["hash"] for ln in listed}
                 listed = [ln for ln in selected if ln["hash"] in hashes]
-            rows = [r for r in group(kind, listed, items) if kind in TITLE_CASE_KINDS or has_prose(r["en"])]
+            rows = [r for r in group(kind, listed, items) if _cuttable(kind, r["en"])]
             if kind in SLOT_KINDS:
                 rows = _annotate_slots(rows)
         else:
@@ -519,8 +559,7 @@ def cut(  # noqa: PLR0913, PLR0917 - one parameter per CLI option; tests and the
             print(f"listed but not selectable ({len(missed)}; a hand-written variant without --held-back, "
                   f"no English, or no prose): {', '.join(map(str, missed[:20]))}")
     batch = rows[:size]
-    if kind in TITLE_CASE_KINDS:
-        _annotate_names(batch, data)
+    _annotate_names(batch, data, kind)
     write_jsonl(out, batch)
     print(_summary(f"batch {out.name}", batch))
     return batch

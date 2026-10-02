@@ -10,7 +10,7 @@ WFJ.Data.add("spell", {
   [401617] = { "印のついた場所で宝を掘り出します", nil, 0xcb9fbb49, nil, "um" },
   [401681] = { "Comphrehension Primerで呪文のメモを解読し、新しいEngraving呪文を習得します。", nil, 0x1278ff25, nil, "um" },
   [401722] = { "外套にArcane Barrageのルーンを刻みます：\n\n$I1\n敵の対象に複数のミサイルを放ち、$N1のArcaneダメージを与えます。この呪文には$N2%の確率でMissile Barrageを発動させる効果もあります。", nil, 0x948d9b5e, nil, "um" },
-  [401749] = { "兜にHot Streakのルーンを刻みます：\n\n$I1\nFireball、Frostfire Bolt、Fire Blast、Scorchによる非周期のクリティカルで、$D1の間Hot Streakを得ます。Hot StreakはPyroblastの詠唱時間を$N2%短縮し、最大$N3回まで累積します。", nil, 0xcad31fdf, nil, "um" },
+  [401749] = { "兜にHot Streakのルーンを刻みます：\n\n$I1\nFireball、Frostfire Bolt、Fire Blast、Scorchによる非周期的なクリティカルで、$D1以内に詠唱する次のPyroblastの詠唱時間が$N2%短縮されます。最大$N3回まで累積します。", nil, 0xcad31fdf, nil, "um" },
   [401752] = { "ブーツにBrain Freezeのルーンを刻みます：\n\n$I1\n冷却効果を持つFrostダメージ呪文に、$N1%の確率で次のFireball、Spellfrost Bolt、Balefire Bolt、Frostfire Boltを即時詠唱にし、マナを消費しなくする効果が付きます。", nil, 0x90851280, nil, "um" },
   [401754] = { "兜にAdvanced Wardingのルーンを刻みます：\n\n$I1\nMana Shield、Frost Ward、Fire Wardを任意の味方の対象に使えるようになり、吸収するダメージが$N1%増加します。またMana Shieldは吸収したダメージあたりのマナ消費が$N2%減少します。さらに、Remove Lesser CurseがRemove Greater Curseに置き換わります。\n\n$I2\n味方の対象からCurseを$N3個、有害なMagic効果を$N4個取り除きます。", nil, 0xae017b08, nil, "um" },
   [401757] = { "手袋にArcane Blastのルーンを刻みます：\n\n$I1\n対象にエネルギーを叩きつけ、$N1のArcaneダメージを与えます。Arcane Blastを詠唱するたびに、他のすべての呪文のダメージが$N2%増加し、Arcane Blastのマナ消費が$N3%増加します。効果は最大$N4回まで累積し、$D1の間、または他のダメージ呪文を詠唱するまで持続します。", nil, 0x8e71b319, nil, "um" },

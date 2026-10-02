@@ -1,187 +1,187 @@
-{"id": 1269045, "field": "name", "en": "Dreamfall", "hash": "911a79659a7c5b95", "src": "db2@1.60.1.70124"}
-{"id": 1269045, "field": "description", "en": "Throws the Emerald Dream into turmoil, inflicting $1269185s1 nature damage to all players every $t1 sec.", "hash": "aaec70d541fb753b", "src": "db2@1.60.1.70124"}
-{"id": 1269045, "field": "aura", "en": "Inflicts $1269185s1 nature damage to all players every $t1 sec.", "hash": "8e482975ddd704d5", "src": "db2@1.60.1.70124"}
-{"id": 1269047, "field": "name", "en": "Convoke the Spirits", "hash": "67cca5ba94703d98", "src": "db2@1.60.1.70124"}
-{"id": 1269047, "field": "description", "en": "Summons a Wild Spirit every $T1 sec.These spirits will close in on the Wild King's enemies and detonate.", "hash": "d1de0b7995d6888e", "src": "db2@1.60.1.70124"}
-{"id": 1269047, "field": "aura", "en": "Summoning a Wild Spirit every $T1 sec.", "hash": "b24c4e5cd7e76b39", "src": "db2@1.60.1.70124"}
-{"id": 1269048, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70124"}
-{"id": 1269048, "field": "description", "en": "$@spelldesc<1269532>\r\n", "hash": "705ff1913c61b353", "src": "db2@1.60.1.70124"}
-{"id": 1269048, "field": "aura", "en": "Conjuring a pool of Assimilation magic at a random location every $T1 sec.", "hash": "467c1db782e9b83c", "src": "db2@1.60.1.70124"}
-{"id": 1269135, "field": "name", "en": "Apparition", "hash": "8c67eeb5e218a9b6", "src": "db2@1.60.1.70124"}
-{"id": 1269140, "field": "name", "en": "Prototype Recalibrator", "hash": "67432b94557a282d", "src": "db2@1.60.1.70124"}
-{"id": 1269140, "field": "description", "en": "Tinker with your prototype gadget, hoping for a positive result.", "hash": "e4d582e10983aef8", "src": "db2@1.60.1.70124"}
-{"id": 1269140, "field": "aura", "en": "Blending in with the taller races.", "hash": "fc7a6e6b9dde50e2", "src": "db2@1.60.1.70124"}
-{"id": 1269150, "field": "name", "en": "Wild Form", "hash": "444714b98f11c8a5", "src": "db2@1.60.1.70124"}
-{"id": 1269150, "field": "description", "en": "Overwhelmed by his own powers, the Wild King has assumed a horrific new form, granting access to the abilities of several Wild Gods.", "hash": "02f04316353c03de", "src": "db2@1.60.1.70124"}
-{"id": 1269150, "field": "aura", "en": "Assumed a horrific form, granting access to the abilities of several Wild Gods.", "hash": "294a98aa86e1b48e", "src": "db2@1.60.1.70124"}
-{"id": 1269155, "field": "name", "en": "SAF-T Dynamite", "hash": "b8bdba31a3b25721", "src": "db2@1.60.1.70124"}
-{"id": 1269155, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yard radius.", "hash": "d71f6a9c9fc6e969", "src": "db2@1.60.1.70124"}
-{"id": 1269161, "field": "name", "en": "SAF-T Copper Bomb", "hash": "69d50df5d806557d", "src": "db2@1.60.1.70124"}
-{"id": 1269161, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 3 yard radius for $d. Any damage will break the effect.", "hash": "4d64dd8a8c20d71a", "src": "db2@1.60.1.70124"}
-{"id": 1269161, "field": "aura", "en": "Stunned. Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70124"}
-{"id": 1269185, "field": "name", "en": "Dreamfall", "hash": "911a79659a7c5b95", "src": "db2@1.60.1.70124"}
-{"id": 1269185, "field": "description", "en": "$@spelldesc<1269045>", "hash": "6fb4b21c7d529289", "src": "db2@1.60.1.70124"}
-{"id": 1269192, "field": "name", "en": "EZ-Thro Copper Bomb XL", "hash": "f30c7e05dbeea927", "src": "db2@1.60.1.70124"}
-{"id": 1269192, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yard radius for $d. Any damage will break the effect.", "hash": "c82dc519609e2a6c", "src": "db2@1.60.1.70124"}
-{"id": 1269192, "field": "aura", "en": "Stunned. Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70124"}
-{"id": 1269216, "field": "name", "en": "SAF-T Bronze Bomb", "hash": "4db3e710f7401716", "src": "db2@1.60.1.70124"}
-{"id": 1269216, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 3 yard radius for $d.  Any damage will break the effect.", "hash": "4d64dd8a8c20d71a", "src": "db2@1.60.1.70124"}
-{"id": 1269216, "field": "aura", "en": "Stunned.  Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70124"}
-{"id": 1269264, "field": "name", "en": "SAF-T Jumbo Dynamite", "hash": "afbde7f157557a61", "src": "db2@1.60.1.70124"}
-{"id": 1269264, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yard radius.", "hash": "d71f6a9c9fc6e969", "src": "db2@1.60.1.70124"}
-{"id": 1269265, "field": "name", "en": "Shafety Sheep", "hash": "b2536eca724174d0", "src": "db2@1.60.1.70124"}
-{"id": 1269265, "field": "description", "en": "Summons an Explosive Sheep which will charge at a nearby enemy and explode for $4050s1 damage.  Lasts for 3 min or until it explodes.", "hash": "43fd6d0f7607b3bc", "src": "db2@1.60.1.70124"}
-{"id": 1269268, "field": "name", "en": "EZ-Thro Bronze Mortar", "hash": "bf4f90940da5d3f1", "src": "db2@1.60.1.70124"}
-{"id": 1269268, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yard radius for $d.  Any damage will break the effect.", "hash": "c82dc519609e2a6c", "src": "db2@1.60.1.70124"}
-{"id": 1269268, "field": "aura", "en": "Stunned.  Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70124"}
-{"id": 1269270, "field": "name", "en": "EZ-Thro Grenade", "hash": "0ca9193be4715c40", "src": "db2@1.60.1.70124"}
-{"id": 1269270, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yard radius.", "hash": "d71f6a9c9fc6e969", "src": "db2@1.60.1.70124"}
-{"id": 1269272, "field": "name", "en": "SAF-T Bomb", "hash": "5caa78becc97239e", "src": "db2@1.60.1.70124"}
-{"id": 1269272, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yard radius for $d.  Any damage will break the effect.", "hash": "c82dc519609e2a6c", "src": "db2@1.60.1.70124"}
-{"id": 1269272, "field": "aura", "en": "Stunned.  Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70124"}
-{"id": 1269278, "field": "name", "en": "Tru-Trigger Frag Bomb", "hash": "19922d57bc6e181a", "src": "db2@1.60.1.70124"}
-{"id": 1269278, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 8 yard radius for $d. Any damage will break the effect.", "hash": "005b20771f5a2767", "src": "db2@1.60.1.70124"}
-{"id": 1269278, "field": "aura", "en": "Stunned. Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70124"}
-{"id": 1269282, "field": "name", "en": "SAF-T Clever Dynamite", "hash": "27656d47c8dafc7f", "src": "db2@1.60.1.70124"}
-{"id": 1269282, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yard radius.", "hash": "d71f6a9c9fc6e969", "src": "db2@1.60.1.70124"}
-{"id": 1269323, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70124"}
-{"id": 1269323, "field": "description", "en": "Creates a cloud of lightning that lasts $d., blasting all enemies in a selected area for $s1 Nature damage and inflicting $s2 additional damage every $t2 sec.", "hash": "9a2f7afedb692864", "src": "db2@1.60.1.70124"}
-{"id": 1269330, "field": "name", "en": "EZ-Thro Thorium Grenade", "hash": "c12c35ced5e8f142", "src": "db2@1.60.1.70124"}
-{"id": 1269330, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets for $d in a 3 yard radius.  Any damage will break the effect.", "hash": "4fab66fcf48d8e74", "src": "db2@1.60.1.70124"}
-{"id": 1269330, "field": "aura", "en": "Stunned.  Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70124"}
-{"id": 1269334, "field": "name", "en": "EZ-Thro Dark Bomb", "hash": "28c06a34e236ceb7", "src": "db2@1.60.1.70124"}
-{"id": 1269334, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a $a1 yard radius for $d.  Any damage will break the effect.", "hash": "fe8b4b47fbf2d99f", "src": "db2@1.60.1.70124"}
-{"id": 1269334, "field": "aura", "en": "Stunned.  Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70124"}
-{"id": 1269337, "field": "name", "en": "EZ-Thro Mana Bomb", "hash": "9a8fdb048db77f48", "src": "db2@1.60.1.70124"}
-{"id": 1269337, "field": "description", "en": "Burns $s1 mana from those in the blast radius and does 50% of the mana drained in damage to the target.  Also Silences targets in the blast for $d.", "hash": "123e3d0df0b10366", "src": "db2@1.60.1.70124"}
-{"id": 1269337, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.70124"}
-{"id": 1269339, "field": "name", "en": "Mount Hyjal Transporter", "hash": "9700f279f65c5f0b", "src": "db2@1.60.1.70124"}
-{"id": 1269339, "field": "description", "en": "Rips the dimensional walls asunder and transports you to Kaylaena's Workshop on Mount Hyjal. Technical problems have a high chance to occur with this mad combination of goblin and gnomish engineering.", "hash": "abd5597ccfc1ba71", "src": "db2@1.60.1.70124"}
-{"id": 1269351, "field": "name", "en": "Mount Hyjal Transporter", "hash": "9700f279f65c5f0b", "src": "db2@1.60.1.70124"}
-{"id": 1269353, "field": "name", "en": "Mount Hyjal Transporter Failure", "hash": "0b1f8e25c2944f4b", "src": "db2@1.60.1.70124"}
-{"id": 1269354, "field": "name", "en": "Ketharas' Hyjal Stew", "hash": "c83b37df794ccacc", "src": "db2@1.60.1.70124"}
-{"id": 1269354, "field": "description", "en": "Restores $o1 health and $o2 mana over $d. Must remain seated while eating.", "hash": "043d7c8bb7b6996b", "src": "db2@1.60.1.70124"}
-{"id": 1269354, "field": "aura", "en": "Restores $/5;s1 health and $/5;s2 mana per second.", "hash": "41faa5202f91ed91", "src": "db2@1.60.1.70124"}
-{"id": 1269404, "field": "name", "en": "Shrouding Bolt", "hash": "76c18258a022f87f", "src": "db2@1.60.1.70124"}
-{"id": 1269404, "field": "description", "en": "Directs a bolt of negative energy at the enemy inflicting $s1 Shadow damage and increasing the amount of damage taken by $@spellname1269404 by $s2% per stack for $d.", "hash": "a1d2102868bf3b40", "src": "db2@1.60.1.70124"}
-{"id": 1269404, "field": "aura", "en": "You take $s2% increased damage from Shrouding Bolt.", "hash": "83a74b533c3299c8", "src": "db2@1.60.1.70124"}
-{"id": 1269428, "field": "name", "en": "Swelled with Power", "hash": "f3840ad0e4607641", "src": "db2@1.60.1.70124"}
-{"id": 1269428, "field": "aura", "en": "All grown up.", "hash": "4c47bacba40293ea", "src": "db2@1.60.1.70124"}
-{"id": 1269433, "field": "name", "en": "Earthgrab", "hash": "41ed911a93b561b7", "src": "db2@1.60.1.70124"}
-{"id": 1269433, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70124"}
-{"id": 1269434, "field": "name", "en": "Flame Crash", "hash": "e14e91fc6a2fd78b", "src": "db2@1.60.1.70124"}
-{"id": 1269434, "field": "description", "en": "Do damage divided up evenly among all affected targets", "hash": "4e9595300a1e8390", "src": "db2@1.60.1.70124"}
-{"id": 1269436, "field": "name", "en": "Zephras Finale Convo Trigger", "hash": "0228edc812e7ba81", "src": "db2@1.60.1.70124"}
-{"id": 1269456, "field": "name", "en": "Cyclone Teleport Spawn VFX", "hash": "2cef2cb88c528244", "src": "db2@1.60.1.70124"}
-{"id": 1269457, "field": "name", "en": "Fireball Volley", "hash": "21ed0071a1c80493", "src": "db2@1.60.1.70124"}
-{"id": 1269457, "field": "description", "en": "Inflicts Fire damage to nearby enemies.", "hash": "209abb758c56cb46", "src": "db2@1.60.1.70124"}
-{"id": 1269462, "field": "name", "en": "Zephras Finale Convo Trigger", "hash": "0228edc812e7ba81", "src": "db2@1.60.1.70124"}
-{"id": 1269464, "field": "name", "en": "Portal to Valanaar", "hash": "f5a6aaf8e265a8e0", "src": "db2@1.60.1.70124"}
-{"id": 1269465, "field": "name", "en": "Portal to Valanaar", "hash": "f5a6aaf8e265a8e0", "src": "db2@1.60.1.70124"}
-{"id": 1269466, "field": "name", "en": "Portal: Valanaar", "hash": "a4e212c98565ba54", "src": "db2@1.60.1.70124"}
-{"id": 1269471, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
-{"id": 1269471, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70124"}
-{"id": 1269507, "field": "name", "en": "Detonate", "hash": "a7e295b0d227bcf1", "src": "db2@1.60.1.70124"}
-{"id": 1269508, "field": "name", "en": "Detonate", "hash": "a7e295b0d227bcf1", "src": "db2@1.60.1.70124"}
-{"id": 1269508, "field": "description", "en": "Inflicts $s1% nature damage to all players within $r1 yards.", "hash": "9ed4d103f48f3c11", "src": "db2@1.60.1.70124"}
-{"id": 1269509, "field": "name", "en": "Convoke the Spirits", "hash": "67cca5ba94703d98", "src": "db2@1.60.1.70124"}
-{"id": 1269510, "field": "name", "en": "Convoke the Spirits", "hash": "67cca5ba94703d98", "src": "db2@1.60.1.70124"}
-{"id": 1269510, "field": "description", "en": "$@spelldesc<1269047>", "hash": "6fb4b3227d52d24b", "src": "db2@1.60.1.70124"}
-{"id": 1269516, "field": "name", "en": "(DNT) Spawn Spell", "hash": "566ef1edf1251920", "src": "db2@1.60.1.70124"}
-{"id": 1269525, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70124"}
-{"id": 1269525, "field": "description", "en": "$@spelldesc<1269532>\r\n", "hash": "705ff1913c61b353", "src": "db2@1.60.1.70124"}
-{"id": 1269526, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70124"}
-{"id": 1269526, "field": "description", "en": "$@spelldesc<1269532>", "hash": "705ff1913c61b353", "src": "db2@1.60.1.70124"}
-{"id": 1269532, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70124"}
-{"id": 1269532, "field": "description", "en": "Creates a pool of powerful absorbing magics. Players within this magic suffer $S1 nature damage, transferring that much health to the Wild King every $T1 sec.", "hash": "a9c53908250c7c15", "src": "db2@1.60.1.70124"}
-{"id": 1269532, "field": "aura", "en": "Inflicts $S1 Nature damage every $T1 sec, transfering that much health to the Wild King.", "hash": "53a50c8725f35b3f", "src": "db2@1.60.1.70124"}
-{"id": 1269546, "field": "name", "en": "Shriek", "hash": "bcd8d7b29810f6e0", "src": "db2@1.60.1.70124"}
-{"id": 1269546, "field": "description", "en": "Deals $s1 Shadow damage to enemies within $a1 yards, interrupting any spells being cast for $d.", "hash": "0ffcb4caee8bd16c", "src": "db2@1.60.1.70124"}
-{"id": 1269554, "field": "name", "en": "Haunt", "hash": "fcf98a7216dbfb9c", "src": "db2@1.60.1.70124"}
-{"id": 1269554, "field": "description", "en": "Haunts nearby enemies, inflicting Shadow damage.", "hash": "2a8f2b0761401824", "src": "db2@1.60.1.70124"}
-{"id": 1269555, "field": "name", "en": "Soul Rip", "hash": "72e7cba76ec163ee", "src": "db2@1.60.1.70124"}
-{"id": 1269555, "field": "description", "en": "Attempts to sunder the soul of a nearby enemy. When the Phantasm is dispelled it will cause damage to the dispeller and summon a Phantasm at the targets location that travels toward the caster.", "hash": "2e16c97045a07d27", "src": "db2@1.60.1.70124"}
-{"id": 1269555, "field": "aura", "en": "Your soul is beginning to fracture. After $d you are stunned for $1269557d and create a Fragmented Soul", "hash": "1fdf525a2edd7a18", "src": "db2@1.60.1.70124"}
-{"id": 1269557, "field": "name", "en": "Fractured Soul", "hash": "67f9fc09c90fc0a0", "src": "db2@1.60.1.70124"}
-{"id": 1269557, "field": "description", "en": "Inflicts 15% of nearby targets health as Shadow damage.", "hash": "5d59259163ce9d1f", "src": "db2@1.60.1.70124"}
-{"id": 1269557, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
-{"id": 1269558, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70124"}
-{"id": 1269558, "field": "description", "en": "$@spelldesc<1269532>\r\n", "hash": "705ff1913c61b353", "src": "db2@1.60.1.70124"}
-{"id": 1269572, "field": "name", "en": "[DNT] Tainted Vilethorn", "hash": "9aaf3b708b85cf7a", "src": "db2@1.60.1.70124"}
-{"id": 1269573, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70124"}
-{"id": 1269574, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70124"}
-{"id": 1269577, "field": "name", "en": "Store Quill", "hash": "e21aab7539def286", "src": "db2@1.60.1.70124"}
-{"id": 1269577, "field": "description", "en": "Gain the ability to purchase Forgery Quills from an uncertified scribe, which allow you to reroll any Craftsman's Writ into a new one of Apprentice skill.", "hash": "b03a21e372497ef0", "src": "db2@1.60.1.70124"}
-{"id": 1269580, "field": "name", "en": "Store Quill", "hash": "e21aab7539def286", "src": "db2@1.60.1.70124"}
-{"id": 1269580, "field": "description", "en": "Gain the ability to purchase Forgery Quills from an uncertified scribe, which allow you to reroll any Craftsman's Writ into a new one of Journeyman skill.", "hash": "ba977918874e2022", "src": "db2@1.60.1.70124"}
-{"id": 1269581, "field": "name", "en": "Store Quill", "hash": "e21aab7539def286", "src": "db2@1.60.1.70124"}
-{"id": 1269581, "field": "description", "en": "Gain the ability to purchase Forgery Quills from an uncertified scribe, which allow you to reroll any Craftsman's Writ into a new one of Expert skill.", "hash": "1d7d9a67cfbff03c", "src": "db2@1.60.1.70124"}
-{"id": 1269582, "field": "name", "en": "Store Quill", "hash": "e21aab7539def286", "src": "db2@1.60.1.70124"}
-{"id": 1269582, "field": "description", "en": "Gain the ability to purchase Forgery Quills from an uncertified scribe, which allow you to reroll any Craftsman's Writ into a new one of Artisan skill.", "hash": "b5f9d7c70b9ee010", "src": "db2@1.60.1.70124"}
-{"id": 1269585, "field": "name", "en": "Dreadful Screech", "hash": "d5b5dce888466bf4", "src": "db2@1.60.1.70124"}
-{"id": 1269585, "field": "description", "en": "The Wild King releases a dreadful screech, causing all players within $r1 yards to run in fear for $t1 sec.", "hash": "0ee9671f006a3760", "src": "db2@1.60.1.70124"}
-{"id": 1269585, "field": "aura", "en": "Feared.", "hash": "5a2205f292a109c9", "src": "db2@1.60.1.70124"}
-{"id": 1269600, "field": "name", "en": "Forge Delivery Receipt", "hash": "bdf1acc421e89626", "src": "db2@1.60.1.70124"}
-{"id": 1269600, "field": "description", "en": "Slap a forged delivery receipt onto an empty Waylaid Crate, allowing you to return it to the $?pc923[Durotar Supply and Logistics][Azeroth Commerce Authority] for +$s2 reputation.", "hash": "aae3ce9d0b3d9c19", "src": "db2@1.60.1.70124"}
-{"id": 1269603, "field": "name", "en": "Dire Laceration", "hash": "880c101f03ff4080", "src": "db2@1.60.1.70124"}
-{"id": 1269603, "field": "aura", "en": "Bleeding for $S1 damage every $T1 sec.", "hash": "b19a98cb8da85554", "src": "db2@1.60.1.70124"}
-{"id": 1269624, "field": "name", "en": "Malignancy", "hash": "eb0403d4d4934f9d", "src": "db2@1.60.1.70124"}
-{"id": 1269624, "field": "aura", "en": "Suffering $S1 Nature damage every $T1 sec.", "hash": "ac4e457403eee153", "src": "db2@1.60.1.70124"}
-{"id": 1269632, "field": "name", "en": "Silken Tomb", "hash": "882eed249bb980aa", "src": "db2@1.60.1.70124"}
-{"id": 1269670, "field": "name", "en": "Open Letter", "hash": "c337cd3bc61e2377", "src": "db2@1.60.1.70124"}
-{"id": 1269670, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Apprentice craftsman.", "hash": "fa77d3b2034559b2", "src": "db2@1.60.1.70124"}
-{"id": 1269671, "field": "name", "en": "Open Letter", "hash": "c337cd3bc61e2377", "src": "db2@1.60.1.70124"}
-{"id": 1269671, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for a Journeyman craftsman.", "hash": "a551b36f37e4a98b", "src": "db2@1.60.1.70124"}
-{"id": 1269673, "field": "name", "en": "Open Letter", "hash": "c337cd3bc61e2377", "src": "db2@1.60.1.70124"}
-{"id": 1269673, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Expert craftsman.", "hash": "0619fbeee3615328", "src": "db2@1.60.1.70124"}
-{"id": 1269675, "field": "name", "en": "Open Letter", "hash": "c337cd3bc61e2377", "src": "db2@1.60.1.70124"}
-{"id": 1269675, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Artisan craftsman.", "hash": "83e5145ddbdb2855", "src": "db2@1.60.1.70124"}
-{"id": 1269692, "field": "name", "en": "Water Sample", "hash": "ff00d1f7dbb3e195", "src": "db2@1.60.1.70124"}
-{"id": 1269692, "field": "description", "en": "Fill with water from the snowmelt pond in front of Deadwood Den.", "hash": "10266eb8f382ef82", "src": "db2@1.60.1.70124"}
-{"id": 1269707, "field": "name", "en": "Trigger Aura", "hash": "d3b069d8e37a7661", "src": "db2@1.60.1.70124"}
-{"id": 1269767, "field": "name", "en": "Silken Tomb", "hash": "882eed249bb980aa", "src": "db2@1.60.1.70124"}
-{"id": 1269767, "field": "aura", "en": "Tightly wrapped in webbing, unable to move or act.", "hash": "239cd57cc6aa4f06", "src": "db2@1.60.1.70124"}
-{"id": 1269770, "field": "name", "en": "Silken Tomb", "hash": "882eed249bb980aa", "src": "db2@1.60.1.70124"}
-{"id": 1269772, "field": "name", "en": "Silken Tomb", "hash": "882eed249bb980aa", "src": "db2@1.60.1.70124"}
-{"id": 1269864, "field": "name", "en": "Savage Charge", "hash": "57b849b570535512", "src": "db2@1.60.1.70124"}
-{"id": 1269865, "field": "name", "en": "Savage Charge", "hash": "57b849b570535512", "src": "db2@1.60.1.70124"}
-{"id": 1269868, "field": "name", "en": "Savage Slam", "hash": "6484fa5871391852", "src": "db2@1.60.1.70124"}
-{"id": 1269868, "field": "description", "en": "Charges to a target, deals $s1 physical damage to all targets within 15 yards, stunning them for $d.\r\n", "hash": "e55ccc39d6ab1dca", "src": "db2@1.60.1.70124"}
-{"id": 1269872, "field": "name", "en": "Haunt", "hash": "fcf98a7216dbfb9c", "src": "db2@1.60.1.70124"}
-{"id": 1269872, "field": "description", "en": "Haunts nearby enemies, inflicting $s1 Shadow damage every $t1 sec.", "hash": "bdea9dd1ff786076", "src": "db2@1.60.1.70124"}
-{"id": 1269872, "field": "aura", "en": "Inflicting $s1 Shadow damage to enemies within $1269554a1 yds.", "hash": "6a805694c52148fa", "src": "db2@1.60.1.70124"}
-{"id": 1269874, "field": "name", "en": "Savage Charge", "hash": "57b849b570535512", "src": "db2@1.60.1.70124"}
-{"id": 1269877, "field": "name", "en": "Savage Slam", "hash": "6484fa5871391852", "src": "db2@1.60.1.70124"}
-{"id": 1269877, "field": "description", "en": "Deals $s1 physical damage to all targets within 15 yards, stunning them for $d.", "hash": "32c9c45b127e943d", "src": "db2@1.60.1.70124"}
-{"id": 1269877, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
-{"id": 1269904, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70124"}
-{"id": 1269904, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, causing Nature damage to each.", "hash": "91b98b1ace781456", "src": "db2@1.60.1.70124"}
-{"id": 1269910, "field": "name", "en": "Convoke the Spirits", "hash": "67cca5ba94703d98", "src": "db2@1.60.1.70124"}
-{"id": 1269929, "field": "name", "en": "Dust Storm", "hash": "9d838f3cd03522e9", "src": "db2@1.60.1.70124"}
-{"id": 1269929, "field": "description", "en": "Increases agility by $s1 for the duration of the sandstorm.", "hash": "3ab79b2036a3d3f1", "src": "db2@1.60.1.70124"}
-{"id": 1269929, "field": "aura", "en": "Agility increased by $w1 during the sandstorm. You should seek First Aid for your irritated skin.", "hash": "7a93c56048328784", "src": "db2@1.60.1.70124"}
-{"id": 1269930, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70124"}
-{"id": 1269931, "field": "name", "en": "Dreamfall", "hash": "911a79659a7c5b95", "src": "db2@1.60.1.70124"}
-{"id": 1269933, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70124"}
-{"id": 1269934, "field": "name", "en": "Crown of the Heavens", "hash": "83764ec86051479f", "src": "db2@1.60.1.70124"}
-{"id": 1269934, "field": "description", "en": "Instantly activates the effects of Convoke the Spirits, Assimilation and Dreamfall for the remainder of the encounter.", "hash": "9e59b3a84db3dba8", "src": "db2@1.60.1.70124"}
-{"id": 1269940, "field": "name", "en": "Soul Vigor", "hash": "faa82b7f2ab389a6", "src": "db2@1.60.1.70124"}
-{"id": 1269945, "field": "name", "en": "Soul Vigor", "hash": "faa82b7f2ab389a6", "src": "db2@1.60.1.70124"}
-{"id": 1269955, "field": "name", "en": "Fel Ash", "hash": "10329a6f4c80b08a", "src": "db2@1.60.1.70124"}
-{"id": 1269955, "field": "description", "en": "Increases Shadow damage done and taken by $s1% for the duration of the fel-touched ash.", "hash": "d2a4954644102821", "src": "db2@1.60.1.70124"}
-{"id": 1269955, "field": "aura", "en": "Shadow damage done and taken increased by $w1% during the fel-touched ash. You should find a way to cleanse yourself.", "hash": "002db11045ed27b6", "src": "db2@1.60.1.70124"}
-{"id": 1269957, "field": "name", "en": "Sweltering Heat", "hash": "20ef0b134079a8df", "src": "db2@1.60.1.70124"}
-{"id": 1269957, "field": "description", "en": "Increases strength by $s1 for the duration of the heat wave.", "hash": "f78f2b5f77fc30b7", "src": "db2@1.60.1.70124"}
-{"id": 1269957, "field": "aura", "en": "Strength increased by $w1 during the heat wave. You are also thirsty.", "hash": "39b071173925d5dd", "src": "db2@1.60.1.70124"}
-{"id": 1269958, "field": "name", "en": "Torrential Rain", "hash": "221e363e513d4f8b", "src": "db2@1.60.1.70124"}
-{"id": 1269958, "field": "description", "en": "Increases spirit by $s1 for the duration of the rain.", "hash": "8773f27df550c63e", "src": "db2@1.60.1.70124"}
-{"id": 1269958, "field": "aura", "en": "Spirit increased by $w1 during the torrential rain. You should dry off.", "hash": "1b032bec12c017fa", "src": "db2@1.60.1.70124"}
-{"id": 1269960, "field": "name", "en": "Sleeting Snow", "hash": "a97f9277612cdf12", "src": "db2@1.60.1.70124"}
-{"id": 1269960, "field": "description", "en": "Increases stamina by $s1 for the duration of the snowstorm.", "hash": "540882c4b54b37a3", "src": "db2@1.60.1.70124"}
-{"id": 1269960, "field": "aura", "en": "Stamina increased by $w1 during the snowstorm. You are also very hungry.", "hash": "6332a2fbfd7bcdd4", "src": "db2@1.60.1.70124"}
-{"id": 1269962, "field": "name", "en": "Scorching Sun", "hash": "411820e97849f24d", "src": "db2@1.60.1.70124"}
-{"id": 1269962, "field": "description", "en": "Increases damage and healing done by magical spells and effects by $s1% for the duration of the intense sunlight.", "hash": "68bd918a0eb5c749", "src": "db2@1.60.1.70124"}
-{"id": 1269962, "field": "aura", "en": "Damage and healing done by magical spells and effects increased by $w1% in the intense sunlight. You should cool off.", "hash": "b547d29384afeee9", "src": "db2@1.60.1.70124"}
-{"id": 1269966, "field": "name", "en": "Galeforce Wind", "hash": "f113441ed1ae49fc", "src": "db2@1.60.1.70124"}
-{"id": 1269966, "field": "description", "en": "Increases intellect by $s1 for the duration of the wind.", "hash": "beb1c725b1b3f840", "src": "db2@1.60.1.70124"}
-{"id": 1269966, "field": "aura", "en": "Intellect increased by $w1 during the galeforce wind. You should find a Charged Stone to stay grounded.", "hash": "1006e9f9488cdcc0", "src": "db2@1.60.1.70124"}
+{"id": 1269045, "field": "name", "en": "Dreamfall", "hash": "911a79659a7c5b95", "src": "db2@1.60.1.70170"}
+{"id": 1269045, "field": "description", "en": "Throws the Emerald Dream into turmoil, inflicting $1269185s1 Nature damage to all players every $t1 sec.", "hash": "60a6e54c840c7dcd", "src": "db2@1.60.1.70170"}
+{"id": 1269045, "field": "aura", "en": "Inflicts $1269185s1 Nature damage to all players every $t1 sec.", "hash": "44029dec1fe80d78", "src": "db2@1.60.1.70170"}
+{"id": 1269047, "field": "name", "en": "Convoke the Spirits", "hash": "67cca5ba94703d98", "src": "db2@1.60.1.70170"}
+{"id": 1269047, "field": "description", "en": "Summons a Wild Spirit every $T1 sec. These spirits will close in on the Wild King's enemies and detonate.", "hash": "344a81aefffc04cd", "src": "db2@1.60.1.70170"}
+{"id": 1269047, "field": "aura", "en": "Summoning a Wild Spirit every $T1 sec.", "hash": "b24c4e5cd7e76b39", "src": "db2@1.60.1.70170"}
+{"id": 1269048, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70170"}
+{"id": 1269048, "field": "description", "en": "$@spelldesc<1269532>\r\n", "hash": "705ff1913c61b353", "src": "db2@1.60.1.70170"}
+{"id": 1269048, "field": "aura", "en": "Conjuring a pool of Assimilation magic at a random location every $T1 sec.", "hash": "467c1db782e9b83c", "src": "db2@1.60.1.70170"}
+{"id": 1269135, "field": "name", "en": "Apparition", "hash": "8c67eeb5e218a9b6", "src": "db2@1.60.1.70170"}
+{"id": 1269140, "field": "name", "en": "Prototype Recalibrator", "hash": "67432b94557a282d", "src": "db2@1.60.1.70170"}
+{"id": 1269140, "field": "description", "en": "Tinker with your prototype gadget, hoping for a positive result.", "hash": "e4d582e10983aef8", "src": "db2@1.60.1.70170"}
+{"id": 1269140, "field": "aura", "en": "Blending in with the taller races.", "hash": "fc7a6e6b9dde50e2", "src": "db2@1.60.1.70170"}
+{"id": 1269150, "field": "name", "en": "Wild Form", "hash": "444714b98f11c8a5", "src": "db2@1.60.1.70170"}
+{"id": 1269150, "field": "description", "en": "Overwhelmed by his own powers, the Wild King has assumed a horrific new form, granting access to the abilities of several Wild Gods.", "hash": "02f04316353c03de", "src": "db2@1.60.1.70170"}
+{"id": 1269150, "field": "aura", "en": "Assumed a horrific form, granting access to the abilities of several Wild Gods.", "hash": "294a98aa86e1b48e", "src": "db2@1.60.1.70170"}
+{"id": 1269155, "field": "name", "en": "SAF-T Dynamite", "hash": "b8bdba31a3b25721", "src": "db2@1.60.1.70170"}
+{"id": 1269155, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.", "hash": "84db7f3dc99c67e6", "src": "db2@1.60.1.70170"}
+{"id": 1269161, "field": "name", "en": "SAF-T Copper Bomb", "hash": "69d50df5d806557d", "src": "db2@1.60.1.70170"}
+{"id": 1269161, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 3 yd radius for $d. Any damage will break the effect.", "hash": "1f15bb8e35cef00c", "src": "db2@1.60.1.70170"}
+{"id": 1269161, "field": "aura", "en": "Stunned. Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70170"}
+{"id": 1269185, "field": "name", "en": "Dreamfall", "hash": "911a79659a7c5b95", "src": "db2@1.60.1.70170"}
+{"id": 1269185, "field": "description", "en": "$@spelldesc<1269045>", "hash": "6fb4b21c7d529289", "src": "db2@1.60.1.70170"}
+{"id": 1269192, "field": "name", "en": "EZ-Thro Copper Bomb XL", "hash": "f30c7e05dbeea927", "src": "db2@1.60.1.70170"}
+{"id": 1269192, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yd radius for $d. Any damage will break the effect.", "hash": "109f3d4746b30855", "src": "db2@1.60.1.70170"}
+{"id": 1269192, "field": "aura", "en": "Stunned. Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70170"}
+{"id": 1269216, "field": "name", "en": "SAF-T Bronze Bomb", "hash": "4db3e710f7401716", "src": "db2@1.60.1.70170"}
+{"id": 1269216, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 3 yd radius for $d. Any damage will break the effect.", "hash": "1f15bb8e35cef00c", "src": "db2@1.60.1.70170"}
+{"id": 1269216, "field": "aura", "en": "Stunned. Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70170"}
+{"id": 1269264, "field": "name", "en": "SAF-T Jumbo Dynamite", "hash": "afbde7f157557a61", "src": "db2@1.60.1.70170"}
+{"id": 1269264, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.", "hash": "84db7f3dc99c67e6", "src": "db2@1.60.1.70170"}
+{"id": 1269265, "field": "name", "en": "Shafety Sheep", "hash": "b2536eca724174d0", "src": "db2@1.60.1.70170"}
+{"id": 1269265, "field": "description", "en": "Summons an Explosive Sheep which will charge at a nearby enemy and explode for $4050s1 damage. Lasts for 3 min or until it explodes.", "hash": "43fd6d0f7607b3bc", "src": "db2@1.60.1.70170"}
+{"id": 1269268, "field": "name", "en": "EZ-Thro Bronze Mortar", "hash": "bf4f90940da5d3f1", "src": "db2@1.60.1.70170"}
+{"id": 1269268, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yd radius for $d. Any damage will break the effect.", "hash": "109f3d4746b30855", "src": "db2@1.60.1.70170"}
+{"id": 1269268, "field": "aura", "en": "Stunned. Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70170"}
+{"id": 1269270, "field": "name", "en": "EZ-Thro Grenade", "hash": "0ca9193be4715c40", "src": "db2@1.60.1.70170"}
+{"id": 1269270, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.", "hash": "84db7f3dc99c67e6", "src": "db2@1.60.1.70170"}
+{"id": 1269272, "field": "name", "en": "SAF-T Bomb", "hash": "5caa78becc97239e", "src": "db2@1.60.1.70170"}
+{"id": 1269272, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yd radius for $d. Any damage will break the effect.", "hash": "109f3d4746b30855", "src": "db2@1.60.1.70170"}
+{"id": 1269272, "field": "aura", "en": "Stunned. Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70170"}
+{"id": 1269278, "field": "name", "en": "Tru-Trigger Frag Bomb", "hash": "19922d57bc6e181a", "src": "db2@1.60.1.70170"}
+{"id": 1269278, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in an 8 yd radius for $d. Any damage will break the effect.", "hash": "85812201d9bfb491", "src": "db2@1.60.1.70170"}
+{"id": 1269278, "field": "aura", "en": "Stunned. Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70170"}
+{"id": 1269282, "field": "name", "en": "SAF-T Clever Dynamite", "hash": "27656d47c8dafc7f", "src": "db2@1.60.1.70170"}
+{"id": 1269282, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.", "hash": "84db7f3dc99c67e6", "src": "db2@1.60.1.70170"}
+{"id": 1269323, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70170"}
+{"id": 1269323, "field": "description", "en": "Creates a cloud of lightning that lasts $d, blasting all enemies in a selected area for $s1 Nature damage and inflicting $s2 additional damage every $t2 sec.", "hash": "cfc441dfb0f69f96", "src": "db2@1.60.1.70170"}
+{"id": 1269330, "field": "name", "en": "EZ-Thro Thorium Grenade", "hash": "c12c35ced5e8f142", "src": "db2@1.60.1.70170"}
+{"id": 1269330, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets for $d in a 3 yd radius. Any damage will break the effect.", "hash": "e2992ae1ee0fe63e", "src": "db2@1.60.1.70170"}
+{"id": 1269330, "field": "aura", "en": "Stunned. Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70170"}
+{"id": 1269334, "field": "name", "en": "EZ-Thro Dark Bomb", "hash": "28c06a34e236ceb7", "src": "db2@1.60.1.70170"}
+{"id": 1269334, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a $a1 yd radius for $d. Any damage will break the effect.", "hash": "6f87d6d33321022f", "src": "db2@1.60.1.70170"}
+{"id": 1269334, "field": "aura", "en": "Stunned. Any damage will break the effect.", "hash": "83abe74bcb7163a1", "src": "db2@1.60.1.70170"}
+{"id": 1269337, "field": "name", "en": "EZ-Thro Mana Bomb", "hash": "9a8fdb048db77f48", "src": "db2@1.60.1.70170"}
+{"id": 1269337, "field": "description", "en": "Burns $s1 mana from those in the blast radius and deals 50% of the mana drained in damage to the target. Also Silences targets in the blast for $d.", "hash": "d08b899999e4054a", "src": "db2@1.60.1.70170"}
+{"id": 1269337, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.70170"}
+{"id": 1269339, "field": "name", "en": "Mount Hyjal Transporter", "hash": "9700f279f65c5f0b", "src": "db2@1.60.1.70170"}
+{"id": 1269339, "field": "description", "en": "Rips the dimensional walls asunder and transports you to Kaylaena's Workshop on Mount Hyjal. Technical problems have a high chance to occur with this mad combination of goblin and gnomish engineering.", "hash": "abd5597ccfc1ba71", "src": "db2@1.60.1.70170"}
+{"id": 1269351, "field": "name", "en": "Mount Hyjal Transporter", "hash": "9700f279f65c5f0b", "src": "db2@1.60.1.70170"}
+{"id": 1269353, "field": "name", "en": "Mount Hyjal Transporter Failure", "hash": "0b1f8e25c2944f4b", "src": "db2@1.60.1.70170"}
+{"id": 1269354, "field": "name", "en": "Ketharas' Hyjal Stew", "hash": "c83b37df794ccacc", "src": "db2@1.60.1.70170"}
+{"id": 1269354, "field": "description", "en": "Restores $o1 health and $o2 mana over $d. Must remain seated while eating.", "hash": "043d7c8bb7b6996b", "src": "db2@1.60.1.70170"}
+{"id": 1269354, "field": "aura", "en": "Restores $/5;s1 health and $/5;s2 mana per sec.", "hash": "602a9085b0a86207", "src": "db2@1.60.1.70170"}
+{"id": 1269404, "field": "name", "en": "Shrouding Bolt", "hash": "76c18258a022f87f", "src": "db2@1.60.1.70170"}
+{"id": 1269404, "field": "description", "en": "Directs a bolt of negative energy at the enemy, inflicting $s1 Shadow damage and increasing the amount of damage taken by $@spellname1269404 by $s2% per stack for $d.", "hash": "8c85a5d2f7dfb203", "src": "db2@1.60.1.70170"}
+{"id": 1269404, "field": "aura", "en": "You take $s2% increased damage from Shrouding Bolt.", "hash": "83a74b533c3299c8", "src": "db2@1.60.1.70170"}
+{"id": 1269428, "field": "name", "en": "Swelled with Power", "hash": "f3840ad0e4607641", "src": "db2@1.60.1.70170"}
+{"id": 1269428, "field": "aura", "en": "All grown up.", "hash": "4c47bacba40293ea", "src": "db2@1.60.1.70170"}
+{"id": 1269433, "field": "name", "en": "Earthgrab", "hash": "41ed911a93b561b7", "src": "db2@1.60.1.70170"}
+{"id": 1269433, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70170"}
+{"id": 1269434, "field": "name", "en": "Flame Crash", "hash": "e14e91fc6a2fd78b", "src": "db2@1.60.1.70170"}
+{"id": 1269434, "field": "description", "en": "Do damage divided up evenly among all affected targets", "hash": "4e9595300a1e8390", "src": "db2@1.60.1.70170"}
+{"id": 1269436, "field": "name", "en": "Zephras Finale Convo Trigger", "hash": "0228edc812e7ba81", "src": "db2@1.60.1.70170"}
+{"id": 1269456, "field": "name", "en": "Cyclone Teleport Spawn VFX", "hash": "2cef2cb88c528244", "src": "db2@1.60.1.70170"}
+{"id": 1269457, "field": "name", "en": "Fireball Volley", "hash": "21ed0071a1c80493", "src": "db2@1.60.1.70170"}
+{"id": 1269457, "field": "description", "en": "Inflicts Fire damage to nearby enemies.", "hash": "209abb758c56cb46", "src": "db2@1.60.1.70170"}
+{"id": 1269462, "field": "name", "en": "Zephras Finale Convo Trigger", "hash": "0228edc812e7ba81", "src": "db2@1.60.1.70170"}
+{"id": 1269464, "field": "name", "en": "Portal to Valanaar", "hash": "f5a6aaf8e265a8e0", "src": "db2@1.60.1.70170"}
+{"id": 1269465, "field": "name", "en": "Portal to Valanaar", "hash": "f5a6aaf8e265a8e0", "src": "db2@1.60.1.70170"}
+{"id": 1269466, "field": "name", "en": "Portal: Valanaar", "hash": "a4e212c98565ba54", "src": "db2@1.60.1.70170"}
+{"id": 1269471, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
+{"id": 1269471, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
+{"id": 1269507, "field": "name", "en": "Detonate", "hash": "a7e295b0d227bcf1", "src": "db2@1.60.1.70170"}
+{"id": 1269508, "field": "name", "en": "Detonate", "hash": "a7e295b0d227bcf1", "src": "db2@1.60.1.70170"}
+{"id": 1269508, "field": "description", "en": "Inflicts $s1% Nature damage to all players within $r1 yds.", "hash": "890db5f205e00efc", "src": "db2@1.60.1.70170"}
+{"id": 1269509, "field": "name", "en": "Convoke the Spirits", "hash": "67cca5ba94703d98", "src": "db2@1.60.1.70170"}
+{"id": 1269510, "field": "name", "en": "Convoke the Spirits", "hash": "67cca5ba94703d98", "src": "db2@1.60.1.70170"}
+{"id": 1269510, "field": "description", "en": "$@spelldesc<1269047>", "hash": "6fb4b3227d52d24b", "src": "db2@1.60.1.70170"}
+{"id": 1269516, "field": "name", "en": "(DNT) Spawn Spell", "hash": "566ef1edf1251920", "src": "db2@1.60.1.70170"}
+{"id": 1269525, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70170"}
+{"id": 1269525, "field": "description", "en": "$@spelldesc<1269532>\r\n", "hash": "705ff1913c61b353", "src": "db2@1.60.1.70170"}
+{"id": 1269526, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70170"}
+{"id": 1269526, "field": "description", "en": "$@spelldesc<1269532>", "hash": "705ff1913c61b353", "src": "db2@1.60.1.70170"}
+{"id": 1269532, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70170"}
+{"id": 1269532, "field": "description", "en": "Creates a pool of powerful absorbing magics. Players within this magic suffer $S1 Nature damage, transferring that much health to the Wild King every $T1 sec.", "hash": "c0bceeb7a8e688bf", "src": "db2@1.60.1.70170"}
+{"id": 1269532, "field": "aura", "en": "Inflicts $S1 Nature damage every $T1 sec, transferring that much health to the Wild King.", "hash": "44f7df9def071021", "src": "db2@1.60.1.70170"}
+{"id": 1269546, "field": "name", "en": "Shriek", "hash": "bcd8d7b29810f6e0", "src": "db2@1.60.1.70170"}
+{"id": 1269546, "field": "description", "en": "Deals $s1 Shadow damage to enemies within $a1 yds, interrupting any spells being cast for $d.", "hash": "7cf70e2159ab2cd0", "src": "db2@1.60.1.70170"}
+{"id": 1269554, "field": "name", "en": "Haunt", "hash": "fcf98a7216dbfb9c", "src": "db2@1.60.1.70170"}
+{"id": 1269554, "field": "description", "en": "Haunts nearby enemies, inflicting Shadow damage.", "hash": "2a8f2b0761401824", "src": "db2@1.60.1.70170"}
+{"id": 1269555, "field": "name", "en": "Soul Rip", "hash": "72e7cba76ec163ee", "src": "db2@1.60.1.70170"}
+{"id": 1269555, "field": "description", "en": "Attempts to sunder the soul of a nearby enemy. When the Phantasm is dispelled it will cause damage to the dispeller and summon a Phantasm at the target's location that travels toward the caster.", "hash": "3677b72bc4123f1e", "src": "db2@1.60.1.70170"}
+{"id": 1269555, "field": "aura", "en": "Your soul is beginning to fracture. After $d you are stunned for $1269557d and create a Fragmented Soul", "hash": "1fdf525a2edd7a18", "src": "db2@1.60.1.70170"}
+{"id": 1269557, "field": "name", "en": "Fractured Soul", "hash": "67f9fc09c90fc0a0", "src": "db2@1.60.1.70170"}
+{"id": 1269557, "field": "description", "en": "Inflicts 15% of nearby target's health as Shadow damage.", "hash": "0d557366e00882cc", "src": "db2@1.60.1.70170"}
+{"id": 1269557, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
+{"id": 1269558, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70170"}
+{"id": 1269558, "field": "description", "en": "$@spelldesc<1269532>\r\n", "hash": "705ff1913c61b353", "src": "db2@1.60.1.70170"}
+{"id": 1269572, "field": "name", "en": "[DNT] Tainted Vilethorn", "hash": "9aaf3b708b85cf7a", "src": "db2@1.60.1.70170"}
+{"id": 1269573, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70170"}
+{"id": 1269574, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70170"}
+{"id": 1269577, "field": "name", "en": "Store Quill", "hash": "e21aab7539def286", "src": "db2@1.60.1.70170"}
+{"id": 1269577, "field": "description", "en": "Gain the ability to purchase Forgery Quills from an uncertified scribe, which allow you to reroll any Craftsman's Writ into a new one of Apprentice skill.", "hash": "b03a21e372497ef0", "src": "db2@1.60.1.70170"}
+{"id": 1269580, "field": "name", "en": "Store Quill", "hash": "e21aab7539def286", "src": "db2@1.60.1.70170"}
+{"id": 1269580, "field": "description", "en": "Gain the ability to purchase Forgery Quills from an uncertified scribe, which allow you to reroll any Craftsman's Writ into a new one of Journeyman skill.", "hash": "ba977918874e2022", "src": "db2@1.60.1.70170"}
+{"id": 1269581, "field": "name", "en": "Store Quill", "hash": "e21aab7539def286", "src": "db2@1.60.1.70170"}
+{"id": 1269581, "field": "description", "en": "Gain the ability to purchase Forgery Quills from an uncertified scribe, which allow you to reroll any Craftsman's Writ into a new one of Expert skill.", "hash": "1d7d9a67cfbff03c", "src": "db2@1.60.1.70170"}
+{"id": 1269582, "field": "name", "en": "Store Quill", "hash": "e21aab7539def286", "src": "db2@1.60.1.70170"}
+{"id": 1269582, "field": "description", "en": "Gain the ability to purchase Forgery Quills from an uncertified scribe, which allow you to reroll any Craftsman's Writ into a new one of Artisan skill.", "hash": "b5f9d7c70b9ee010", "src": "db2@1.60.1.70170"}
+{"id": 1269585, "field": "name", "en": "Dreadful Screech", "hash": "d5b5dce888466bf4", "src": "db2@1.60.1.70170"}
+{"id": 1269585, "field": "description", "en": "The Wild King releases a dreadful screech, causing all players within $r1 yds to run in fear for $t1 sec.", "hash": "af591da805b8f371", "src": "db2@1.60.1.70170"}
+{"id": 1269585, "field": "aura", "en": "Feared.", "hash": "5a2205f292a109c9", "src": "db2@1.60.1.70170"}
+{"id": 1269600, "field": "name", "en": "Forge Delivery Receipt", "hash": "bdf1acc421e89626", "src": "db2@1.60.1.70170"}
+{"id": 1269600, "field": "description", "en": "Slap a forged delivery receipt onto an empty Waylaid Crate, allowing you to return it to the $?pc923[Durotar Supply and Logistics][Azeroth Commerce Authority] for +$s2 reputation.", "hash": "aae3ce9d0b3d9c19", "src": "db2@1.60.1.70170"}
+{"id": 1269603, "field": "name", "en": "Dire Laceration", "hash": "880c101f03ff4080", "src": "db2@1.60.1.70170"}
+{"id": 1269603, "field": "aura", "en": "Bleeding for $S1 damage every $T1 sec.", "hash": "b19a98cb8da85554", "src": "db2@1.60.1.70170"}
+{"id": 1269624, "field": "name", "en": "Malignancy", "hash": "eb0403d4d4934f9d", "src": "db2@1.60.1.70170"}
+{"id": 1269624, "field": "aura", "en": "Suffering $S1 Nature damage every $T1 sec.", "hash": "ac4e457403eee153", "src": "db2@1.60.1.70170"}
+{"id": 1269632, "field": "name", "en": "Silken Tomb", "hash": "882eed249bb980aa", "src": "db2@1.60.1.70170"}
+{"id": 1269670, "field": "name", "en": "Open Letter", "hash": "c337cd3bc61e2377", "src": "db2@1.60.1.70170"}
+{"id": 1269670, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Apprentice craftsman.", "hash": "fa77d3b2034559b2", "src": "db2@1.60.1.70170"}
+{"id": 1269671, "field": "name", "en": "Open Letter", "hash": "c337cd3bc61e2377", "src": "db2@1.60.1.70170"}
+{"id": 1269671, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for a Journeyman craftsman.", "hash": "a551b36f37e4a98b", "src": "db2@1.60.1.70170"}
+{"id": 1269673, "field": "name", "en": "Open Letter", "hash": "c337cd3bc61e2377", "src": "db2@1.60.1.70170"}
+{"id": 1269673, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Expert craftsman.", "hash": "0619fbeee3615328", "src": "db2@1.60.1.70170"}
+{"id": 1269675, "field": "name", "en": "Open Letter", "hash": "c337cd3bc61e2377", "src": "db2@1.60.1.70170"}
+{"id": 1269675, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Artisan craftsman.", "hash": "83e5145ddbdb2855", "src": "db2@1.60.1.70170"}
+{"id": 1269692, "field": "name", "en": "Water Sample", "hash": "ff00d1f7dbb3e195", "src": "db2@1.60.1.70170"}
+{"id": 1269692, "field": "description", "en": "Fill with water from the snowmelt pond in front of Deadwood Den.", "hash": "10266eb8f382ef82", "src": "db2@1.60.1.70170"}
+{"id": 1269707, "field": "name", "en": "Trigger Aura", "hash": "d3b069d8e37a7661", "src": "db2@1.60.1.70170"}
+{"id": 1269767, "field": "name", "en": "Silken Tomb", "hash": "882eed249bb980aa", "src": "db2@1.60.1.70170"}
+{"id": 1269767, "field": "aura", "en": "Tightly wrapped in webbing, unable to move or act.", "hash": "239cd57cc6aa4f06", "src": "db2@1.60.1.70170"}
+{"id": 1269770, "field": "name", "en": "Silken Tomb", "hash": "882eed249bb980aa", "src": "db2@1.60.1.70170"}
+{"id": 1269772, "field": "name", "en": "Silken Tomb", "hash": "882eed249bb980aa", "src": "db2@1.60.1.70170"}
+{"id": 1269864, "field": "name", "en": "Savage Charge", "hash": "57b849b570535512", "src": "db2@1.60.1.70170"}
+{"id": 1269865, "field": "name", "en": "Savage Charge", "hash": "57b849b570535512", "src": "db2@1.60.1.70170"}
+{"id": 1269868, "field": "name", "en": "Savage Slam", "hash": "6484fa5871391852", "src": "db2@1.60.1.70170"}
+{"id": 1269868, "field": "description", "en": "Charges to a target, deals $s1 Physical damage to all targets within 15 yds, stunning them for $d.\r\n", "hash": "570eff0cb82d9ec5", "src": "db2@1.60.1.70170"}
+{"id": 1269872, "field": "name", "en": "Haunt", "hash": "fcf98a7216dbfb9c", "src": "db2@1.60.1.70170"}
+{"id": 1269872, "field": "description", "en": "Haunts nearby enemies, inflicting $s1 Shadow damage every $t1 sec.", "hash": "bdea9dd1ff786076", "src": "db2@1.60.1.70170"}
+{"id": 1269872, "field": "aura", "en": "Inflicting $s1 Shadow damage to enemies within $1269554a1 yds.", "hash": "6a805694c52148fa", "src": "db2@1.60.1.70170"}
+{"id": 1269874, "field": "name", "en": "Savage Charge", "hash": "57b849b570535512", "src": "db2@1.60.1.70170"}
+{"id": 1269877, "field": "name", "en": "Savage Slam", "hash": "6484fa5871391852", "src": "db2@1.60.1.70170"}
+{"id": 1269877, "field": "description", "en": "Deals $s1 Physical damage to all targets within 15 yds, stunning them for $d.", "hash": "b104116b0df71b3e", "src": "db2@1.60.1.70170"}
+{"id": 1269877, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
+{"id": 1269904, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70170"}
+{"id": 1269904, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, causing Nature damage to each.", "hash": "91b98b1ace781456", "src": "db2@1.60.1.70170"}
+{"id": 1269910, "field": "name", "en": "Convoke the Spirits", "hash": "67cca5ba94703d98", "src": "db2@1.60.1.70170"}
+{"id": 1269929, "field": "name", "en": "Dust Storm", "hash": "9d838f3cd03522e9", "src": "db2@1.60.1.70170"}
+{"id": 1269929, "field": "description", "en": "Increases agility by $s1 for the duration of the sandstorm.", "hash": "3ab79b2036a3d3f1", "src": "db2@1.60.1.70170"}
+{"id": 1269929, "field": "aura", "en": "Agility increased by $w1 during the sandstorm. You should seek First Aid for your irritated skin.", "hash": "7a93c56048328784", "src": "db2@1.60.1.70170"}
+{"id": 1269930, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70170"}
+{"id": 1269931, "field": "name", "en": "Dreamfall", "hash": "911a79659a7c5b95", "src": "db2@1.60.1.70170"}
+{"id": 1269933, "field": "name", "en": "Assimilation", "hash": "928912e8f690ffa7", "src": "db2@1.60.1.70170"}
+{"id": 1269934, "field": "name", "en": "Crown of the Heavens", "hash": "83764ec86051479f", "src": "db2@1.60.1.70170"}
+{"id": 1269934, "field": "description", "en": "Instantly activates the effects of Convoke the Spirits, Assimilation, and Dreamfall for the remainder of the encounter.", "hash": "86ac26041a810d4e", "src": "db2@1.60.1.70170"}
+{"id": 1269940, "field": "name", "en": "Soul Vigor", "hash": "faa82b7f2ab389a6", "src": "db2@1.60.1.70170"}
+{"id": 1269945, "field": "name", "en": "Soul Vigor", "hash": "faa82b7f2ab389a6", "src": "db2@1.60.1.70170"}
+{"id": 1269955, "field": "name", "en": "Fel Ash", "hash": "10329a6f4c80b08a", "src": "db2@1.60.1.70170"}
+{"id": 1269955, "field": "description", "en": "Increases Shadow damage done and taken by $s1% for the duration of the fel-touched ash.", "hash": "d2a4954644102821", "src": "db2@1.60.1.70170"}
+{"id": 1269955, "field": "aura", "en": "Shadow damage done and taken increased by $w1% during the fel-touched ash. You should find a way to cleanse yourself.", "hash": "002db11045ed27b6", "src": "db2@1.60.1.70170"}
+{"id": 1269957, "field": "name", "en": "Sweltering Heat", "hash": "20ef0b134079a8df", "src": "db2@1.60.1.70170"}
+{"id": 1269957, "field": "description", "en": "Increases strength by $s1 for the duration of the heat wave.", "hash": "f78f2b5f77fc30b7", "src": "db2@1.60.1.70170"}
+{"id": 1269957, "field": "aura", "en": "Strength increased by $w1 during the heat wave. You are also thirsty.", "hash": "39b071173925d5dd", "src": "db2@1.60.1.70170"}
+{"id": 1269958, "field": "name", "en": "Torrential Rain", "hash": "221e363e513d4f8b", "src": "db2@1.60.1.70170"}
+{"id": 1269958, "field": "description", "en": "Increases spirit by $s1 for the duration of the rain.", "hash": "8773f27df550c63e", "src": "db2@1.60.1.70170"}
+{"id": 1269958, "field": "aura", "en": "Spirit increased by $w1 during the torrential rain. You should dry off.", "hash": "1b032bec12c017fa", "src": "db2@1.60.1.70170"}
+{"id": 1269960, "field": "name", "en": "Sleeting Snow", "hash": "a97f9277612cdf12", "src": "db2@1.60.1.70170"}
+{"id": 1269960, "field": "description", "en": "Increases stamina by $s1 for the duration of the snowstorm.", "hash": "540882c4b54b37a3", "src": "db2@1.60.1.70170"}
+{"id": 1269960, "field": "aura", "en": "Stamina increased by $w1 during the snowstorm. You are also very hungry.", "hash": "6332a2fbfd7bcdd4", "src": "db2@1.60.1.70170"}
+{"id": 1269962, "field": "name", "en": "Scorching Sun", "hash": "411820e97849f24d", "src": "db2@1.60.1.70170"}
+{"id": 1269962, "field": "description", "en": "Increases damage and healing done by magical spells and effects by $s1% for the duration of the intense sunlight.", "hash": "68bd918a0eb5c749", "src": "db2@1.60.1.70170"}
+{"id": 1269962, "field": "aura", "en": "Damage and healing done by magical spells and effects increased by $w1% in the intense sunlight. You should cool off.", "hash": "b547d29384afeee9", "src": "db2@1.60.1.70170"}
+{"id": 1269966, "field": "name", "en": "Galeforce Wind", "hash": "f113441ed1ae49fc", "src": "db2@1.60.1.70170"}
+{"id": 1269966, "field": "description", "en": "Increases intellect by $s1 for the duration of the wind.", "hash": "beb1c725b1b3f840", "src": "db2@1.60.1.70170"}
+{"id": 1269966, "field": "aura", "en": "Intellect increased by $w1 during the galeforce wind. You should find a Charged Stone to stay grounded.", "hash": "1006e9f9488cdcc0", "src": "db2@1.60.1.70170"}

@@ -1,104 +1,104 @@
-{"id": 448084, "field": "name", "en": "Restless Dreams", "hash": "637fea63a5865566", "src": "db2@1.60.1.70124"}
-{"id": 448084, "field": "description", "en": "Increases damage done by spells by up to $s1, healing done by up to $s3, and mana regeneration by $s2 mana per 5 sec for $d. The benefits of this flask only apply in areas under the influence of the nightmare.", "hash": "2ec808350fc9cf30", "src": "db2@1.60.1.70124"}
-{"id": 448084, "field": "aura", "en": "Spell damage increased by $s1, healing increased by $s3, and regenerating $s2 mana per 5 sec.", "hash": "b564e8f9de9f8b9f", "src": "db2@1.60.1.70124"}
-{"id": 448085, "field": "name", "en": "Flask of Restless Dreams", "hash": "396989bcae1a7a3d", "src": "db2@1.60.1.70124"}
-{"id": 448106, "field": "name", "en": "Summon Spire Spiderling", "hash": "dcc4b8afeb646d2a", "src": "db2@1.60.1.70124"}
-{"id": 448107, "field": "name", "en": "Blood Howl", "hash": "9a11e1a9d6b5d289", "src": "db2@1.60.1.70124"}
-{"id": 448107, "field": "description", "en": "Increases the Physical damage taken by nearby enemies by $s1 for $d.", "hash": "c6df084003e83a65", "src": "db2@1.60.1.70124"}
-{"id": 448107, "field": "aura", "en": "Physical damage taken is increased by $s1.", "hash": "a01a31bd30595039", "src": "db2@1.60.1.70124"}
-{"id": 448149, "field": "name", "en": "Hyjal's Wisdom", "hash": "9d53f1515a1f9f30", "src": "db2@1.60.1.70124"}
-{"id": 448149, "field": "description", "en": "Learn a new Engraving ability.", "hash": "83c8b2f0b56d7036", "src": "db2@1.60.1.70124"}
-{"id": 448152, "field": "name", "en": "[DNT] Tanaris Arena Bounds", "hash": "de2fab26e2c28ec3", "src": "db2@1.60.1.70124"}
-{"id": 448156, "field": "name", "en": "Spare Change", "hash": "0b4027a717b95b65", "src": "db2@1.60.1.70124"}
-{"id": 448156, "field": "description", "en": "Reach into your coin purse and throw a handful of currency at your foes.", "hash": "db52295e4853c009", "src": "db2@1.60.1.70124"}
-{"id": 448156, "field": "aura", "en": "Pelted in the face with a handful of coins.", "hash": "5e730b4c47ade8e7", "src": "db2@1.60.1.70124"}
-{"id": 448159, "field": "name", "en": "[DNT] Spawn Gos Greasebasher (Player)", "hash": "0965b65b516b0b6d", "src": "db2@1.60.1.70124"}
-{"id": 448160, "field": "name", "en": "Spare Change", "hash": "0b4027a717b95b65", "src": "db2@1.60.1.70124"}
-{"id": 448160, "field": "description", "en": "Reach into your coin purse and throw a handful of currency at your foes.", "hash": "db52295e4853c009", "src": "db2@1.60.1.70124"}
-{"id": 448160, "field": "aura", "en": "Pelted in the face with a handful of coins.", "hash": "5e730b4c47ade8e7", "src": "db2@1.60.1.70124"}
-{"id": 448223, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70124"}
-{"id": 448223, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70124"}
-{"id": 448226, "field": "name", "en": "[DNT] Spawn Gos Greasebasher", "hash": "c2bda225ccd7f2f6", "src": "db2@1.60.1.70124"}
-{"id": 448231, "field": "name", "en": "[DNT] Spawn Wandering Swordsman (Player)", "hash": "ef573e3f44ca096b", "src": "db2@1.60.1.70124"}
-{"id": 448232, "field": "name", "en": "[DNT] Spawn Wandering Swordsman", "hash": "c9d20b9048cffe45", "src": "db2@1.60.1.70124"}
-{"id": 448244, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70124"}
-{"id": 448245, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70124"}
-{"id": 448246, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70124"}
-{"id": 448246, "field": "description", "en": "$@spelldesc445575", "hash": "b3676a6c2c7857b2", "src": "db2@1.60.1.70124"}
-{"id": 448253, "field": "name", "en": "[DNT] Spawn Kajind (Player)", "hash": "168e596a69db2196", "src": "db2@1.60.1.70124"}
-{"id": 448255, "field": "name", "en": "[DNT] Spawn Kajind", "hash": "d1e782d0ee076898", "src": "db2@1.60.1.70124"}
-{"id": 448259, "field": "name", "en": "[DNT] Arena Victory", "hash": "e3e49166ee17039a", "src": "db2@1.60.1.70124"}
-{"id": 448283, "field": "name", "en": "[DNT] Cosmetic - Alpha Fade 0.2", "hash": "c516b0a79876ae55", "src": "db2@1.60.1.70124"}
-{"id": 448308, "field": "name", "en": "Parry Aura", "hash": "1c6fe20fab5daf23", "src": "db2@1.60.1.70124"}
-{"id": 448323, "field": "name", "en": "Summon Fire Elemental", "hash": "7d3a9b2c3b115676", "src": "db2@1.60.1.70124"}
-{"id": 448323, "field": "description", "en": "Summons $s1 $lFire Elemental:Fire Elementals; to accompany the caster until dismissed.", "hash": "592ec6a809416c2e", "src": "db2@1.60.1.70124"}
-{"id": 448324, "field": "name", "en": "Increased Critical 2 - All", "hash": "94aafb1631b8cb2f", "src": "db2@1.60.1.70124"}
-{"id": 448324, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%.", "hash": "ff9a12de55e3926a", "src": "db2@1.60.1.70124"}
-{"id": 448325, "field": "name", "en": "[DNT] Arena Defeat", "hash": "146d3c110d3acc6a", "src": "db2@1.60.1.70124"}
-{"id": 448340, "field": "name", "en": "[DNT] Summoned Quest Mob Damage Modifier", "hash": "f7c3d4403837f901", "src": "db2@1.60.1.70124"}
-{"id": 448358, "field": "name", "en": "GNO XP Grant [DNT]", "hash": "484c378c5f96fb1a", "src": "db2@1.60.1.70124"}
-{"id": 448359, "field": "name", "en": "GNO XP Grant [DNT]", "hash": "484c378c5f96fb1a", "src": "db2@1.60.1.70124"}
-{"id": 448381, "field": "name", "en": "Close Fel Portal", "hash": "250ec13feeca680c", "src": "db2@1.60.1.70124"}
-{"id": 448381, "field": "description", "en": "Close a targeted Fel portal. May draw unwanted attention from the other side.", "hash": "22b41ad4a72c577b", "src": "db2@1.60.1.70124"}
-{"id": 448406, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70124"}
-{"id": 448409, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70124"}
-{"id": 448415, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70124"}
-{"id": 448415, "field": "description", "en": "Become Inanimate!", "hash": "a034376ba037fc8e", "src": "db2@1.60.1.70124"}
-{"id": 448415, "field": "aura", "en": "If I don't move, maybe they won't see me?", "hash": "7afcb13711cffb93", "src": "db2@1.60.1.70124"}
-{"id": 448434, "field": "name", "en": "[DNT] Create area trigger", "hash": "abb4886b2b497b83", "src": "db2@1.60.1.70124"}
-{"id": 448450, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70124"}
-{"id": 448451, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70124"}
-{"id": 448467, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70124"}
-{"id": 448471, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70124"}
-{"id": 448472, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70124"}
-{"id": 448510, "field": "name", "en": "[DNT] Fel Portal Visual Aura", "hash": "3452394b3c3eaad8", "src": "db2@1.60.1.70124"}
-{"id": 448526, "field": "name", "en": "Slime Time", "hash": "ccbb16b2a7572a55", "src": "db2@1.60.1.70124"}
-{"id": 448545, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.70124"}
-{"id": 448572, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70124"}
-{"id": 448572, "field": "description", "en": "Puts the enemy target to sleep for up to $d.  Any damage caused will awaken the target.  Only one target can be asleep at a time.", "hash": "261241119b7aa486", "src": "db2@1.60.1.70124"}
-{"id": 448572, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70124"}
-{"id": 448573, "field": "name", "en": "Triple Bolt", "hash": "949aebeff5f755a6", "src": "db2@1.60.1.70124"}
-{"id": 448573, "field": "description", "en": "Deals elemental damage.", "hash": "61024fa5da584b77", "src": "db2@1.60.1.70124"}
-{"id": 448573, "field": "aura", "en": "Elemental damage inflicted.", "hash": "8ecf024b070b2c44", "src": "db2@1.60.1.70124"}
-{"id": 448574, "field": "name", "en": "Triple Bolt", "hash": "949aebeff5f755a6", "src": "db2@1.60.1.70124"}
-{"id": 448574, "field": "description", "en": "Deals elemental damage.", "hash": "61024fa5da584b77", "src": "db2@1.60.1.70124"}
-{"id": 448574, "field": "aura", "en": "Elemental damage inflicted.\r\n$@spellaura438136", "hash": "b214105bf217d335", "src": "db2@1.60.1.70124"}
-{"id": 448575, "field": "name", "en": "Triple Chomp", "hash": "1be519d32ebe2961", "src": "db2@1.60.1.70124"}
-{"id": 448575, "field": "aura", "en": "Unleashes a devastating combo of three Physical attacks in rapid succession.", "hash": "890bf4527747a59b", "src": "db2@1.60.1.70124"}
-{"id": 448576, "field": "name", "en": "Triple Chomp", "hash": "1be519d32ebe2961", "src": "db2@1.60.1.70124"}
-{"id": 448602, "field": "name", "en": "[DNT] Wing Buffet Visuals Test", "hash": "d03fac479582b899", "src": "db2@1.60.1.70124"}
-{"id": 448603, "field": "name", "en": "[DNT] Wing Buffet Visuals Test - Stalker", "hash": "86f563251c8c0b06", "src": "db2@1.60.1.70124"}
-{"id": 448614, "field": "name", "en": "Bargain Bush", "hash": "c40533359b1eb693", "src": "db2@1.60.1.70124"}
-{"id": 448614, "field": "description", "en": "Don a bush, for whatever reason you may have.", "hash": "67140bce25d90018", "src": "db2@1.60.1.70124"}
-{"id": 448614, "field": "aura", "en": "Just a totally normal bush.", "hash": "cafeb393c33727e8", "src": "db2@1.60.1.70124"}
-{"id": 448618, "field": "name", "en": "Empty Supply Crate", "hash": "e099808203748bf2", "src": "db2@1.60.1.70124"}
-{"id": 448618, "field": "description", "en": "Find a use for all those empty supply crates.", "hash": "c9840bb0fa07583f", "src": "db2@1.60.1.70124"}
-{"id": 448618, "field": "aura", "en": "Hope there isn't a snake in here with you.", "hash": "767d1bfafd90ac61", "src": "db2@1.60.1.70124"}
-{"id": 448624, "field": "name", "en": "Scroll of Spatial Mending", "hash": "866b0d27fb58e765", "src": "db2@1.60.1.70124"}
-{"id": 448624, "field": "description", "en": "Creates a Scroll of Spatial Mending.", "hash": "8c913c21acbab2b8", "src": "db2@1.60.1.70124"}
-{"id": 448627, "field": "name", "en": "Attune Leyline", "hash": "591179335562ef03", "src": "db2@1.60.1.70124"}
-{"id": 448627, "field": "description", "en": "Attempt to attune to a targeted Leyline Conflux.", "hash": "85dfe0f25c907da1", "src": "db2@1.60.1.70124"}
-{"id": 448629, "field": "name", "en": "Intercept Supplies", "hash": "a4af18b02f1e245f", "src": "db2@1.60.1.70124"}
-{"id": 448629, "field": "description", "en": "You sometimes find additional Waylaid supplies from enemies.", "hash": "f153f509099a4f93", "src": "db2@1.60.1.70124"}
-{"id": 448642, "field": "name", "en": "Dreamharvest", "hash": "c57f7a217d263b39", "src": "db2@1.60.1.70124"}
-{"id": 448642, "field": "aura", "en": "Missing some armor...", "hash": "569cbd4b6bd8758a", "src": "db2@1.60.1.70124"}
-{"id": 448653, "field": "name", "en": "Dreamharvest", "hash": "c57f7a217d263b39", "src": "db2@1.60.1.70124"}
-{"id": 448653, "field": "aura", "en": "Missing some armor...", "hash": "569cbd4b6bd8758a", "src": "db2@1.60.1.70124"}
-{"id": 448686, "field": "name", "en": "Zila Gular", "hash": "9d440931d1b28e0c", "src": "db2@1.60.1.70124"}
-{"id": 448686, "field": "description", "en": "Increases the damage of your next non-channeled Affliction based damage over time spell by $s1%.", "hash": "e87150bd2884c3b5", "src": "db2@1.60.1.70124"}
-{"id": 448686, "field": "aura", "en": "Damage of your next non-channeled Affliction based damage over time spell increased by $s1%.", "hash": "0e62a99149dab7eb", "src": "db2@1.60.1.70124"}
-{"id": 448707, "field": "name", "en": "War Stomp", "hash": "7b2c5ab10e248a9c", "src": "db2@1.60.1.70124"}
-{"id": 448707, "field": "description", "en": "Knocks nearby enemies back.", "hash": "9e3e0fa7a5795dbd", "src": "db2@1.60.1.70124"}
-{"id": 448717, "field": "name", "en": "Knockback", "hash": "6f4cb8c92b85e539", "src": "db2@1.60.1.70124"}
-{"id": 448779, "field": "name", "en": "Wake Up Dead", "hash": "ff3c24c24af66d4e", "src": "db2@1.60.1.70124"}
-{"id": 448779, "field": "aura", "en": "Hard sleep.", "hash": "11982e2f850b8d03", "src": "db2@1.60.1.70124"}
-{"id": 448809, "field": "name", "en": "Blinkmissile", "hash": "d7eb0c585b8f6e2f", "src": "db2@1.60.1.70124"}
-{"id": 448809, "field": "aura", "en": "Inflicts magical damage to enemies.", "hash": "1a0e9b5e6b6f8248", "src": "db2@1.60.1.70124"}
-{"id": 448824, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.70124"}
-{"id": 448824, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70124"}
-{"id": 448828, "field": "name", "en": "Overdrive", "hash": "dc3ce40fc7f1fc85", "src": "db2@1.60.1.70124"}
-{"id": 448828, "field": "description", "en": "Immobilizes the caster, but increases its attack speed by $s2% for $d.", "hash": "2e04aab13642b2bb", "src": "db2@1.60.1.70124"}
-{"id": 448828, "field": "aura", "en": "Immobilized.\r\nAttack speed increased by $s2%.", "hash": "18b423dd56bd2818", "src": "db2@1.60.1.70124"}
-{"id": 448956, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70124"}
-{"id": 448994, "field": "name", "en": "[DNT] Void Zone Visual", "hash": "dc34f57209da76dc", "src": "db2@1.60.1.70124"}
-{"id": 448995, "field": "name", "en": "Rune Scrying", "hash": "fcd38cb9cae69aca", "src": "db2@1.60.1.70124"}
+{"id": 448084, "field": "name", "en": "Restless Dreams", "hash": "637fea63a5865566", "src": "db2@1.60.1.70170"}
+{"id": 448084, "field": "description", "en": "Increases damage done by spells by up to $s1, healing done by up to $s3, and mana regeneration by $s2 mana per 5 sec for $d. The benefits of this flask only apply in areas under the influence of the nightmare.", "hash": "2ec808350fc9cf30", "src": "db2@1.60.1.70170"}
+{"id": 448084, "field": "aura", "en": "Spell damage increased by $s1, healing increased by $s3, and regenerating $s2 mana per 5 sec.", "hash": "b564e8f9de9f8b9f", "src": "db2@1.60.1.70170"}
+{"id": 448085, "field": "name", "en": "Flask of Restless Dreams", "hash": "396989bcae1a7a3d", "src": "db2@1.60.1.70170"}
+{"id": 448106, "field": "name", "en": "Summon Spire Spiderling", "hash": "dcc4b8afeb646d2a", "src": "db2@1.60.1.70170"}
+{"id": 448107, "field": "name", "en": "Blood Howl", "hash": "9a11e1a9d6b5d289", "src": "db2@1.60.1.70170"}
+{"id": 448107, "field": "description", "en": "Increases the Physical damage taken by nearby enemies by $s1 for $d.", "hash": "c6df084003e83a65", "src": "db2@1.60.1.70170"}
+{"id": 448107, "field": "aura", "en": "Physical damage taken is increased by $s1.", "hash": "a01a31bd30595039", "src": "db2@1.60.1.70170"}
+{"id": 448149, "field": "name", "en": "Hyjal's Wisdom", "hash": "9d53f1515a1f9f30", "src": "db2@1.60.1.70170"}
+{"id": 448149, "field": "description", "en": "Learn a new Engraving ability.", "hash": "83c8b2f0b56d7036", "src": "db2@1.60.1.70170"}
+{"id": 448152, "field": "name", "en": "[DNT] Tanaris Arena Bounds", "hash": "de2fab26e2c28ec3", "src": "db2@1.60.1.70170"}
+{"id": 448156, "field": "name", "en": "Spare Change", "hash": "0b4027a717b95b65", "src": "db2@1.60.1.70170"}
+{"id": 448156, "field": "description", "en": "Reach into your coin purse and throw a handful of currency at your foes.", "hash": "db52295e4853c009", "src": "db2@1.60.1.70170"}
+{"id": 448156, "field": "aura", "en": "Pelted in the face with a handful of coins.", "hash": "5e730b4c47ade8e7", "src": "db2@1.60.1.70170"}
+{"id": 448159, "field": "name", "en": "[DNT] Spawn Gos Greasebasher (Player)", "hash": "0965b65b516b0b6d", "src": "db2@1.60.1.70170"}
+{"id": 448160, "field": "name", "en": "Spare Change", "hash": "0b4027a717b95b65", "src": "db2@1.60.1.70170"}
+{"id": 448160, "field": "description", "en": "Reach into your coin purse and throw a handful of currency at your foes.", "hash": "db52295e4853c009", "src": "db2@1.60.1.70170"}
+{"id": 448160, "field": "aura", "en": "Pelted in the face with a handful of coins.", "hash": "5e730b4c47ade8e7", "src": "db2@1.60.1.70170"}
+{"id": 448223, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70170"}
+{"id": 448223, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70170"}
+{"id": 448226, "field": "name", "en": "[DNT] Spawn Gos Greasebasher", "hash": "c2bda225ccd7f2f6", "src": "db2@1.60.1.70170"}
+{"id": 448231, "field": "name", "en": "[DNT] Spawn Wandering Swordsman (Player)", "hash": "ef573e3f44ca096b", "src": "db2@1.60.1.70170"}
+{"id": 448232, "field": "name", "en": "[DNT] Spawn Wandering Swordsman", "hash": "c9d20b9048cffe45", "src": "db2@1.60.1.70170"}
+{"id": 448244, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70170"}
+{"id": 448245, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70170"}
+{"id": 448246, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70170"}
+{"id": 448246, "field": "description", "en": "$@spelldesc445575", "hash": "b3676a6c2c7857b2", "src": "db2@1.60.1.70170"}
+{"id": 448253, "field": "name", "en": "[DNT] Spawn Kajind (Player)", "hash": "168e596a69db2196", "src": "db2@1.60.1.70170"}
+{"id": 448255, "field": "name", "en": "[DNT] Spawn Kajind", "hash": "d1e782d0ee076898", "src": "db2@1.60.1.70170"}
+{"id": 448259, "field": "name", "en": "[DNT] Arena Victory", "hash": "e3e49166ee17039a", "src": "db2@1.60.1.70170"}
+{"id": 448283, "field": "name", "en": "[DNT] Cosmetic - Alpha Fade 0.2", "hash": "c516b0a79876ae55", "src": "db2@1.60.1.70170"}
+{"id": 448308, "field": "name", "en": "Parry Aura", "hash": "1c6fe20fab5daf23", "src": "db2@1.60.1.70170"}
+{"id": 448323, "field": "name", "en": "Summon Fire Elemental", "hash": "7d3a9b2c3b115676", "src": "db2@1.60.1.70170"}
+{"id": 448323, "field": "description", "en": "Summons $s1 $lFire Elemental:Fire Elementals; to accompany the caster until dismissed.", "hash": "592ec6a809416c2e", "src": "db2@1.60.1.70170"}
+{"id": 448324, "field": "name", "en": "Increased Critical 2 - All", "hash": "94aafb1631b8cb2f", "src": "db2@1.60.1.70170"}
+{"id": 448324, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%.", "hash": "ff9a12de55e3926a", "src": "db2@1.60.1.70170"}
+{"id": 448325, "field": "name", "en": "[DNT] Arena Defeat", "hash": "146d3c110d3acc6a", "src": "db2@1.60.1.70170"}
+{"id": 448340, "field": "name", "en": "[DNT] Summoned Quest Mob Damage Modifier", "hash": "f7c3d4403837f901", "src": "db2@1.60.1.70170"}
+{"id": 448358, "field": "name", "en": "GNO XP Grant [DNT]", "hash": "484c378c5f96fb1a", "src": "db2@1.60.1.70170"}
+{"id": 448359, "field": "name", "en": "GNO XP Grant [DNT]", "hash": "484c378c5f96fb1a", "src": "db2@1.60.1.70170"}
+{"id": 448381, "field": "name", "en": "Close Fel Portal", "hash": "250ec13feeca680c", "src": "db2@1.60.1.70170"}
+{"id": 448381, "field": "description", "en": "Close a targeted Fel portal. May draw unwanted attention from the other side.", "hash": "22b41ad4a72c577b", "src": "db2@1.60.1.70170"}
+{"id": 448406, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70170"}
+{"id": 448409, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70170"}
+{"id": 448415, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70170"}
+{"id": 448415, "field": "description", "en": "Become Inanimate!", "hash": "a034376ba037fc8e", "src": "db2@1.60.1.70170"}
+{"id": 448415, "field": "aura", "en": "If I don't move, maybe they won't see me?", "hash": "7afcb13711cffb93", "src": "db2@1.60.1.70170"}
+{"id": 448434, "field": "name", "en": "[DNT] Create area trigger", "hash": "abb4886b2b497b83", "src": "db2@1.60.1.70170"}
+{"id": 448450, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70170"}
+{"id": 448451, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70170"}
+{"id": 448467, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70170"}
+{"id": 448471, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70170"}
+{"id": 448472, "field": "name", "en": "Lledra's Vehicle Test [DNT]", "hash": "24198759ebba4747", "src": "db2@1.60.1.70170"}
+{"id": 448510, "field": "name", "en": "[DNT] Fel Portal Visual Aura", "hash": "3452394b3c3eaad8", "src": "db2@1.60.1.70170"}
+{"id": 448526, "field": "name", "en": "Slime Time", "hash": "ccbb16b2a7572a55", "src": "db2@1.60.1.70170"}
+{"id": 448545, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.70170"}
+{"id": 448572, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70170"}
+{"id": 448572, "field": "description", "en": "Puts the enemy target to sleep for up to $d.  Any damage caused will awaken the target.  Only one target can be asleep at a time.", "hash": "261241119b7aa486", "src": "db2@1.60.1.70170"}
+{"id": 448572, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70170"}
+{"id": 448573, "field": "name", "en": "Triple Bolt", "hash": "949aebeff5f755a6", "src": "db2@1.60.1.70170"}
+{"id": 448573, "field": "description", "en": "Deals elemental damage.", "hash": "61024fa5da584b77", "src": "db2@1.60.1.70170"}
+{"id": 448573, "field": "aura", "en": "Elemental damage inflicted.", "hash": "8ecf024b070b2c44", "src": "db2@1.60.1.70170"}
+{"id": 448574, "field": "name", "en": "Triple Bolt", "hash": "949aebeff5f755a6", "src": "db2@1.60.1.70170"}
+{"id": 448574, "field": "description", "en": "Deals elemental damage.", "hash": "61024fa5da584b77", "src": "db2@1.60.1.70170"}
+{"id": 448574, "field": "aura", "en": "Elemental damage inflicted.\r\n$@spellaura438136", "hash": "b214105bf217d335", "src": "db2@1.60.1.70170"}
+{"id": 448575, "field": "name", "en": "Triple Chomp", "hash": "1be519d32ebe2961", "src": "db2@1.60.1.70170"}
+{"id": 448575, "field": "aura", "en": "Unleashes a devastating combo of three Physical attacks in rapid succession.", "hash": "890bf4527747a59b", "src": "db2@1.60.1.70170"}
+{"id": 448576, "field": "name", "en": "Triple Chomp", "hash": "1be519d32ebe2961", "src": "db2@1.60.1.70170"}
+{"id": 448602, "field": "name", "en": "[DNT] Wing Buffet Visuals Test", "hash": "d03fac479582b899", "src": "db2@1.60.1.70170"}
+{"id": 448603, "field": "name", "en": "[DNT] Wing Buffet Visuals Test - Stalker", "hash": "86f563251c8c0b06", "src": "db2@1.60.1.70170"}
+{"id": 448614, "field": "name", "en": "Bargain Bush", "hash": "c40533359b1eb693", "src": "db2@1.60.1.70170"}
+{"id": 448614, "field": "description", "en": "Don a bush, for whatever reason you may have.", "hash": "67140bce25d90018", "src": "db2@1.60.1.70170"}
+{"id": 448614, "field": "aura", "en": "Just a totally normal bush.", "hash": "cafeb393c33727e8", "src": "db2@1.60.1.70170"}
+{"id": 448618, "field": "name", "en": "Empty Supply Crate", "hash": "e099808203748bf2", "src": "db2@1.60.1.70170"}
+{"id": 448618, "field": "description", "en": "Find a use for all those empty supply crates.", "hash": "c9840bb0fa07583f", "src": "db2@1.60.1.70170"}
+{"id": 448618, "field": "aura", "en": "Hope there isn't a snake in here with you.", "hash": "767d1bfafd90ac61", "src": "db2@1.60.1.70170"}
+{"id": 448624, "field": "name", "en": "Scroll of Spatial Mending", "hash": "866b0d27fb58e765", "src": "db2@1.60.1.70170"}
+{"id": 448624, "field": "description", "en": "Creates a Scroll of Spatial Mending.", "hash": "8c913c21acbab2b8", "src": "db2@1.60.1.70170"}
+{"id": 448627, "field": "name", "en": "Attune Leyline", "hash": "591179335562ef03", "src": "db2@1.60.1.70170"}
+{"id": 448627, "field": "description", "en": "Attempt to attune to a targeted Leyline Conflux.", "hash": "85dfe0f25c907da1", "src": "db2@1.60.1.70170"}
+{"id": 448629, "field": "name", "en": "Intercept Supplies", "hash": "a4af18b02f1e245f", "src": "db2@1.60.1.70170"}
+{"id": 448629, "field": "description", "en": "You sometimes find additional Waylaid supplies from enemies.", "hash": "f153f509099a4f93", "src": "db2@1.60.1.70170"}
+{"id": 448642, "field": "name", "en": "Dreamharvest", "hash": "c57f7a217d263b39", "src": "db2@1.60.1.70170"}
+{"id": 448642, "field": "aura", "en": "Missing some armor...", "hash": "569cbd4b6bd8758a", "src": "db2@1.60.1.70170"}
+{"id": 448653, "field": "name", "en": "Dreamharvest", "hash": "c57f7a217d263b39", "src": "db2@1.60.1.70170"}
+{"id": 448653, "field": "aura", "en": "Missing some armor...", "hash": "569cbd4b6bd8758a", "src": "db2@1.60.1.70170"}
+{"id": 448686, "field": "name", "en": "Zila Gular", "hash": "9d440931d1b28e0c", "src": "db2@1.60.1.70170"}
+{"id": 448686, "field": "description", "en": "Increases the damage of your next non-channeled Affliction based damage over time spell by $s1%.", "hash": "e87150bd2884c3b5", "src": "db2@1.60.1.70170"}
+{"id": 448686, "field": "aura", "en": "Damage of your next non-channeled Affliction based damage over time spell increased by $s1%.", "hash": "0e62a99149dab7eb", "src": "db2@1.60.1.70170"}
+{"id": 448707, "field": "name", "en": "War Stomp", "hash": "7b2c5ab10e248a9c", "src": "db2@1.60.1.70170"}
+{"id": 448707, "field": "description", "en": "Knocks nearby enemies back.", "hash": "9e3e0fa7a5795dbd", "src": "db2@1.60.1.70170"}
+{"id": 448717, "field": "name", "en": "Knockback", "hash": "6f4cb8c92b85e539", "src": "db2@1.60.1.70170"}
+{"id": 448779, "field": "name", "en": "Wake Up Dead", "hash": "ff3c24c24af66d4e", "src": "db2@1.60.1.70170"}
+{"id": 448779, "field": "aura", "en": "Hard sleep.", "hash": "11982e2f850b8d03", "src": "db2@1.60.1.70170"}
+{"id": 448809, "field": "name", "en": "Blinkmissile", "hash": "d7eb0c585b8f6e2f", "src": "db2@1.60.1.70170"}
+{"id": 448809, "field": "aura", "en": "Inflicts magical damage to enemies.", "hash": "1a0e9b5e6b6f8248", "src": "db2@1.60.1.70170"}
+{"id": 448824, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.70170"}
+{"id": 448824, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70170"}
+{"id": 448828, "field": "name", "en": "Overdrive", "hash": "dc3ce40fc7f1fc85", "src": "db2@1.60.1.70170"}
+{"id": 448828, "field": "description", "en": "Immobilizes the caster, but increases its attack speed by $s2% for $d.", "hash": "2e04aab13642b2bb", "src": "db2@1.60.1.70170"}
+{"id": 448828, "field": "aura", "en": "Immobilized.\r\nAttack speed increased by $s2%.", "hash": "18b423dd56bd2818", "src": "db2@1.60.1.70170"}
+{"id": 448956, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70170"}
+{"id": 448994, "field": "name", "en": "[DNT] Void Zone Visual", "hash": "dc34f57209da76dc", "src": "db2@1.60.1.70170"}
+{"id": 448995, "field": "name", "en": "Rune Scrying", "hash": "fcd38cb9cae69aca", "src": "db2@1.60.1.70170"}

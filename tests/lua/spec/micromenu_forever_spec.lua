@@ -8,6 +8,7 @@ local MM = require("tests.lua.spec.stub_micromenu")
 
 local FILES = {}
 for i, f in ipairs(H.UI_FILES) do FILES[i] = f end
+FILES[#FILES + 1] = "UI/TimeLine.lua" -- the tooltip surface reads its time lines
 FILES[#FILES + 1] = "UI/Tooltip.lua" -- only to prove the item tooltip's records survive a help pass
 FILES[#FILES + 1] = "UI/MicroMenu.lua"
 FILES[#FILES + 1] = "UI/GameMenu.lua"

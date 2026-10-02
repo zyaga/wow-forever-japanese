@@ -1,313 +1,313 @@
-{"id": 226201, "field": "name", "en": "Squire Cuthbert's Blade", "hash": "825371ed1d7e2547", "src": "db2@1.60.1.70124"}
-{"id": 226201, "field": "description", "en": "The sword is dented and chipped, but it feels well-balanced in your hand.", "hash": "f7c57abea5b22adf", "src": "db2@1.60.1.70124"}
-{"id": 226207, "field": "name", "en": "Echo of Anastari", "hash": "dcb21522ec5017e3", "src": "db2@1.60.1.70124"}
-{"id": 226207, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70124"}
-{"id": 226208, "field": "name", "en": "Echo of Barthilas", "hash": "27418ea138f566c9", "src": "db2@1.60.1.70124"}
-{"id": 226208, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70124"}
-{"id": 226209, "field": "name", "en": "Echo of Dathrohan", "hash": "b4f51f4cd9737e50", "src": "db2@1.60.1.70124"}
-{"id": 226209, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70124"}
-{"id": 226210, "field": "name", "en": "Echo of Maleki", "hash": "d780324f6a3852cd", "src": "db2@1.60.1.70124"}
-{"id": 226210, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70124"}
-{"id": 226211, "field": "name", "en": "Echo of Nerub'enkan", "hash": "0148a83d2508a5eb", "src": "db2@1.60.1.70124"}
-{"id": 226211, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70124"}
-{"id": 226212, "field": "name", "en": "Echo of Ramstein", "hash": "685d423d41f7d2ef", "src": "db2@1.60.1.70124"}
-{"id": 226212, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70124"}
-{"id": 226213, "field": "name", "en": "Echo of Rivendare", "hash": "52da79ab4ebf72c3", "src": "db2@1.60.1.70124"}
-{"id": 226213, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70124"}
-{"id": 226214, "field": "name", "en": "Echo of Willey", "hash": "371aab59acb60e50", "src": "db2@1.60.1.70124"}
-{"id": 226214, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70124"}
-{"id": 226252, "field": "name", "en": "Rune of the Guerrilla", "hash": "c6a2d0699e84441b", "src": "db2@1.60.1.70124"}
-{"id": 226252, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226374, "field": "name", "en": "Occult Poison I", "hash": "acdf0860690afab2", "src": "db2@1.60.1.70124"}
-{"id": 226374, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $458820o1 Nature damage over $458820d and causing the enemy to take $458820s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $458820u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "ac6b5ded306f2c8f", "src": "db2@1.60.1.70124"}
-{"id": 226404, "field": "name", "en": "Tarnished Undermine Real", "hash": "9b9e26e133643f36", "src": "db2@1.60.1.70124"}
-{"id": 226404, "field": "description", "en": "This currency is slowly being phased out of circulation, but it still enjoys a very favorable exchange rate throughout the Eastern Kingdoms and Kalimdor.", "hash": "20a8567e9c353ecb", "src": "db2@1.60.1.70124"}
-{"id": 226405, "field": "name", "en": "Damaged Undermine Supply Crate", "hash": "07f156371d2c4ab0", "src": "db2@1.60.1.70124"}
-{"id": 226405, "field": "description", "en": "This dented and damaged crate looks like it quite literally fell off the back of a zeppelin", "hash": "68f7e7f87fe82eaf", "src": "db2@1.60.1.70124"}
-{"id": 226406, "field": "name", "en": "Rune of Sword Specialization", "hash": "d15699c8b0e1315b", "src": "db2@1.60.1.70124"}
-{"id": 226406, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226407, "field": "name", "en": "Rune of Axe Specialization", "hash": "6b3d31d66c584ac0", "src": "db2@1.60.1.70124"}
-{"id": 226407, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226408, "field": "name", "en": "Rune of Mace Specialization", "hash": "c653fbf7ad57bcd3", "src": "db2@1.60.1.70124"}
-{"id": 226408, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226409, "field": "name", "en": "Rune of Dagger Specialization", "hash": "d72d04e336984254", "src": "db2@1.60.1.70124"}
-{"id": 226409, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226410, "field": "name", "en": "Rune of Ranged Weapon Specialization", "hash": "c85ca0ecee34a92a", "src": "db2@1.60.1.70124"}
-{"id": 226410, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226411, "field": "name", "en": "Rune of Fist Weapon Specialization", "hash": "b9c2a55a37b62280", "src": "db2@1.60.1.70124"}
-{"id": 226411, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226412, "field": "name", "en": "Rune of Pole Weapon Specialization", "hash": "381a8b3c54100037", "src": "db2@1.60.1.70124"}
-{"id": 226412, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226413, "field": "name", "en": "Rune of Arcane Specialization", "hash": "0a5223bd847ad996", "src": "db2@1.60.1.70124"}
-{"id": 226413, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226414, "field": "name", "en": "Rune of Fire Specialization", "hash": "57423965552a10e0", "src": "db2@1.60.1.70124"}
-{"id": 226414, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226415, "field": "name", "en": "Rune of Frost Specialization", "hash": "6ed3d6c168f418c2", "src": "db2@1.60.1.70124"}
-{"id": 226415, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226416, "field": "name", "en": "Rune of Nature Specialization", "hash": "ea936e6e8b4687f4", "src": "db2@1.60.1.70124"}
-{"id": 226416, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226417, "field": "name", "en": "Rune of Shadow Specialization", "hash": "8bf34d84dfd573a0", "src": "db2@1.60.1.70124"}
-{"id": 226417, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226418, "field": "name", "en": "Rune of Holy Specialization", "hash": "b8bcf0256c4d8596", "src": "db2@1.60.1.70124"}
-{"id": 226418, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226419, "field": "name", "en": "Rune of Feral Combat Specialization", "hash": "4567f34026daf5a6", "src": "db2@1.60.1.70124"}
-{"id": 226419, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226420, "field": "name", "en": "Finely Crafted Bust", "hash": "b47026cb8ea77bfc", "src": "db2@1.60.1.70124"}
-{"id": 226420, "field": "description", "en": "A finely crafted work of art. This item would not look out of place in a private collection or museum.", "hash": "1890778aca18abef", "src": "db2@1.60.1.70124"}
-{"id": 226421, "field": "name", "en": "PLACEHOLDER_ASHBRINGER_QUESTITEM_01", "hash": "d3210890bd73fd97", "src": "db2@1.60.1.70124"}
-{"id": 226421, "field": "description", "en": "PH - Totally real, not-fake quest starter item for Ashbringer quest. Super duper real. Totally not a joke.", "hash": "2427c14cbbcd1fb8", "src": "db2@1.60.1.70124"}
-{"id": 226472, "field": "name", "en": "Stratholme Shadow Jar", "hash": "10f4a78928f7350f", "src": "db2@1.60.1.70124"}
-{"id": 226472, "field": "description", "en": "Capture the echo of a powerful denizen of Stratholme. Only usable on corpses.", "hash": "1cb2d8f8a185feb4", "src": "db2@1.60.1.70124"}
-{"id": 226526, "field": "name", "en": "Busted Gizmo", "hash": "30cc5e0f34cc6d0a", "src": "db2@1.60.1.70124"}
-{"id": 226526, "field": "description", "en": "Might be salvagable...?", "hash": "57952c8807ff29c5", "src": "db2@1.60.1.70124"}
-{"id": 226546, "field": "name", "en": "Desert Sonar", "hash": "04306e8ba4c4bd69", "src": "db2@1.60.1.70124"}
-{"id": 226546, "field": "description", "en": "Detect large objects beneath the sand.\nEmit a high-pitched sonar frequency.", "hash": "8f691110a3e7d0cf", "src": "db2@1.60.1.70124"}
-{"id": 226587, "field": "name", "en": "Rune of Shelling", "hash": "91d821155dd214d2", "src": "db2@1.60.1.70124"}
-{"id": 226587, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226678, "field": "name", "en": "Premonition and Combat Foresight", "hash": "408dc12992af714f", "src": "db2@1.60.1.70124"}
+{"id": 226201, "field": "name", "en": "Squire Cuthbert's Blade", "hash": "825371ed1d7e2547", "src": "db2@1.60.1.70170"}
+{"id": 226201, "field": "description", "en": "The sword is dented and chipped, but it feels well-balanced in your hand.", "hash": "f7c57abea5b22adf", "src": "db2@1.60.1.70170"}
+{"id": 226207, "field": "name", "en": "Echo of Anastari", "hash": "dcb21522ec5017e3", "src": "db2@1.60.1.70170"}
+{"id": 226207, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70170"}
+{"id": 226208, "field": "name", "en": "Echo of Barthilas", "hash": "27418ea138f566c9", "src": "db2@1.60.1.70170"}
+{"id": 226208, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70170"}
+{"id": 226209, "field": "name", "en": "Echo of Dathrohan", "hash": "b4f51f4cd9737e50", "src": "db2@1.60.1.70170"}
+{"id": 226209, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70170"}
+{"id": 226210, "field": "name", "en": "Echo of Maleki", "hash": "d780324f6a3852cd", "src": "db2@1.60.1.70170"}
+{"id": 226210, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70170"}
+{"id": 226211, "field": "name", "en": "Echo of Nerub'enkan", "hash": "0148a83d2508a5eb", "src": "db2@1.60.1.70170"}
+{"id": 226211, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70170"}
+{"id": 226212, "field": "name", "en": "Echo of Ramstein", "hash": "685d423d41f7d2ef", "src": "db2@1.60.1.70170"}
+{"id": 226212, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70170"}
+{"id": 226213, "field": "name", "en": "Echo of Rivendare", "hash": "52da79ab4ebf72c3", "src": "db2@1.60.1.70170"}
+{"id": 226213, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70170"}
+{"id": 226214, "field": "name", "en": "Echo of Willey", "hash": "371aab59acb60e50", "src": "db2@1.60.1.70170"}
+{"id": 226214, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70170"}
+{"id": 226252, "field": "name", "en": "Rune of the Guerrilla", "hash": "c6a2d0699e84441b", "src": "db2@1.60.1.70170"}
+{"id": 226252, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226374, "field": "name", "en": "Occult Poison I", "hash": "acdf0860690afab2", "src": "db2@1.60.1.70170"}
+{"id": 226374, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $458820o1 Nature damage over $458820d and causing the enemy to take $458820s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $458820u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "ac6b5ded306f2c8f", "src": "db2@1.60.1.70170"}
+{"id": 226404, "field": "name", "en": "Tarnished Undermine Real", "hash": "9b9e26e133643f36", "src": "db2@1.60.1.70170"}
+{"id": 226404, "field": "description", "en": "This currency is slowly being phased out of circulation, but it still enjoys a very favorable exchange rate throughout the Eastern Kingdoms and Kalimdor.", "hash": "20a8567e9c353ecb", "src": "db2@1.60.1.70170"}
+{"id": 226405, "field": "name", "en": "Damaged Undermine Supply Crate", "hash": "07f156371d2c4ab0", "src": "db2@1.60.1.70170"}
+{"id": 226405, "field": "description", "en": "This dented and damaged crate looks like it quite literally fell off the back of a zeppelin", "hash": "68f7e7f87fe82eaf", "src": "db2@1.60.1.70170"}
+{"id": 226406, "field": "name", "en": "Rune of Sword Specialization", "hash": "d15699c8b0e1315b", "src": "db2@1.60.1.70170"}
+{"id": 226406, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226407, "field": "name", "en": "Rune of Axe Specialization", "hash": "6b3d31d66c584ac0", "src": "db2@1.60.1.70170"}
+{"id": 226407, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226408, "field": "name", "en": "Rune of Mace Specialization", "hash": "c653fbf7ad57bcd3", "src": "db2@1.60.1.70170"}
+{"id": 226408, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226409, "field": "name", "en": "Rune of Dagger Specialization", "hash": "d72d04e336984254", "src": "db2@1.60.1.70170"}
+{"id": 226409, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226410, "field": "name", "en": "Rune of Ranged Weapon Specialization", "hash": "c85ca0ecee34a92a", "src": "db2@1.60.1.70170"}
+{"id": 226410, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226411, "field": "name", "en": "Rune of Fist Weapon Specialization", "hash": "b9c2a55a37b62280", "src": "db2@1.60.1.70170"}
+{"id": 226411, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226412, "field": "name", "en": "Rune of Pole Weapon Specialization", "hash": "381a8b3c54100037", "src": "db2@1.60.1.70170"}
+{"id": 226412, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226413, "field": "name", "en": "Rune of Arcane Specialization", "hash": "0a5223bd847ad996", "src": "db2@1.60.1.70170"}
+{"id": 226413, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226414, "field": "name", "en": "Rune of Fire Specialization", "hash": "57423965552a10e0", "src": "db2@1.60.1.70170"}
+{"id": 226414, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226415, "field": "name", "en": "Rune of Frost Specialization", "hash": "6ed3d6c168f418c2", "src": "db2@1.60.1.70170"}
+{"id": 226415, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226416, "field": "name", "en": "Rune of Nature Specialization", "hash": "ea936e6e8b4687f4", "src": "db2@1.60.1.70170"}
+{"id": 226416, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226417, "field": "name", "en": "Rune of Shadow Specialization", "hash": "8bf34d84dfd573a0", "src": "db2@1.60.1.70170"}
+{"id": 226417, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226418, "field": "name", "en": "Rune of Holy Specialization", "hash": "b8bcf0256c4d8596", "src": "db2@1.60.1.70170"}
+{"id": 226418, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226419, "field": "name", "en": "Rune of Feral Combat Specialization", "hash": "4567f34026daf5a6", "src": "db2@1.60.1.70170"}
+{"id": 226419, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226420, "field": "name", "en": "Finely Crafted Bust", "hash": "b47026cb8ea77bfc", "src": "db2@1.60.1.70170"}
+{"id": 226420, "field": "description", "en": "A finely crafted work of art. This item would not look out of place in a private collection or museum.", "hash": "1890778aca18abef", "src": "db2@1.60.1.70170"}
+{"id": 226421, "field": "name", "en": "PLACEHOLDER_ASHBRINGER_QUESTITEM_01", "hash": "d3210890bd73fd97", "src": "db2@1.60.1.70170"}
+{"id": 226421, "field": "description", "en": "PH - Totally real, not-fake quest starter item for Ashbringer quest. Super duper real. Totally not a joke.", "hash": "2427c14cbbcd1fb8", "src": "db2@1.60.1.70170"}
+{"id": 226472, "field": "name", "en": "Stratholme Shadow Jar", "hash": "10f4a78928f7350f", "src": "db2@1.60.1.70170"}
+{"id": 226472, "field": "description", "en": "Capture the echo of a powerful denizen of Stratholme. Only usable on corpses.", "hash": "1cb2d8f8a185feb4", "src": "db2@1.60.1.70170"}
+{"id": 226526, "field": "name", "en": "Busted Gizmo", "hash": "30cc5e0f34cc6d0a", "src": "db2@1.60.1.70170"}
+{"id": 226526, "field": "description", "en": "Might be salvagable...?", "hash": "57952c8807ff29c5", "src": "db2@1.60.1.70170"}
+{"id": 226546, "field": "name", "en": "Desert Sonar", "hash": "04306e8ba4c4bd69", "src": "db2@1.60.1.70170"}
+{"id": 226546, "field": "description", "en": "Detect large objects beneath the sand.\nEmit a high-pitched sonar frequency.", "hash": "8f691110a3e7d0cf", "src": "db2@1.60.1.70170"}
+{"id": 226587, "field": "name", "en": "Rune of Shelling", "hash": "91d821155dd214d2", "src": "db2@1.60.1.70170"}
+{"id": 226587, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226678, "field": "name", "en": "Premonition and Combat Foresight", "hash": "408dc12992af714f", "src": "db2@1.60.1.70170"}
 {"id": 226678, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "wago@1.15.9.69722"}
-{"id": 226679, "field": "name", "en": "Timeless Wanderer's Insights", "hash": "f293ea8d3a303ece", "src": "db2@1.60.1.70124"}
-{"id": 226679, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226680, "field": "name", "en": "Rune of the First Warrior", "hash": "57205cfa2118cb25", "src": "db2@1.60.1.70124"}
-{"id": 226680, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226694, "field": "name", "en": "Rune of Defense Specialization", "hash": "d1e8efc566f2e294", "src": "db2@1.60.1.70124"}
-{"id": 226694, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 226698, "field": "name", "en": "Vertically Composited Patch Hampler", "hash": "17e443b0c35fc64c", "src": "db2@1.60.1.70124"}
-{"id": 226699, "field": "name", "en": "Brass-fitted Flam-Tamp Flange", "hash": "6ca1754eaf6a287e", "src": "db2@1.60.1.70124"}
+{"id": 226679, "field": "name", "en": "Timeless Wanderer's Insights", "hash": "f293ea8d3a303ece", "src": "db2@1.60.1.70170"}
+{"id": 226679, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226680, "field": "name", "en": "Rune of the First Warrior", "hash": "57205cfa2118cb25", "src": "db2@1.60.1.70170"}
+{"id": 226680, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226694, "field": "name", "en": "Rune of Defense Specialization", "hash": "d1e8efc566f2e294", "src": "db2@1.60.1.70170"}
+{"id": 226694, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 226698, "field": "name", "en": "Vertically Composited Patch Hampler", "hash": "17e443b0c35fc64c", "src": "db2@1.60.1.70170"}
+{"id": 226699, "field": "name", "en": "Brass-fitted Flam-Tamp Flange", "hash": "6ca1754eaf6a287e", "src": "db2@1.60.1.70170"}
 {"id": 226699, "field": "description", "en": "Includes bracket caps and half-seized sprats", "hash": "6fc726318610ba8d", "src": "wago@1.15.9.69722"}
-{"id": 226772, "field": "name", "en": "Feralheart Sash", "hash": "221d779361497bf4", "src": "db2@1.60.1.70124"}
+{"id": 226772, "field": "name", "en": "Feralheart Sash", "hash": "221d779361497bf4", "src": "db2@1.60.1.70170"}
 {"id": 226772, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 226773, "field": "name", "en": "Feralheart Cowl", "hash": "1ffc4a71c25e6f81", "src": "db2@1.60.1.70124"}
+{"id": 226773, "field": "name", "en": "Feralheart Cowl", "hash": "1ffc4a71c25e6f81", "src": "db2@1.60.1.70170"}
 {"id": 226773, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 226774, "field": "name", "en": "Feralheart Galoshes", "hash": "7972a30bc16bf0ac", "src": "db2@1.60.1.70124"}
+{"id": 226774, "field": "name", "en": "Feralheart Galoshes", "hash": "7972a30bc16bf0ac", "src": "db2@1.60.1.70170"}
 {"id": 226774, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 226775, "field": "name", "en": "Feralheart Wraps", "hash": "bd8d7f06ffb6b9ad", "src": "db2@1.60.1.70124"}
+{"id": 226775, "field": "name", "en": "Feralheart Wraps", "hash": "bd8d7f06ffb6b9ad", "src": "db2@1.60.1.70170"}
 {"id": 226775, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 226776, "field": "name", "en": "Feralheart Vest", "hash": "22856c9419626723", "src": "db2@1.60.1.70124"}
+{"id": 226776, "field": "name", "en": "Feralheart Vest", "hash": "22856c9419626723", "src": "db2@1.60.1.70170"}
 {"id": 226776, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 226777, "field": "name", "en": "Feralheart Hands", "hash": "b3fc0a48bfabff53", "src": "db2@1.60.1.70124"}
+{"id": 226777, "field": "name", "en": "Feralheart Hands", "hash": "b3fc0a48bfabff53", "src": "db2@1.60.1.70170"}
 {"id": 226777, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 226778, "field": "name", "en": "Feralheart Spaulders", "hash": "4059e842cd3402c1", "src": "db2@1.60.1.70124"}
+{"id": 226778, "field": "name", "en": "Feralheart Spaulders", "hash": "4059e842cd3402c1", "src": "db2@1.60.1.70170"}
 {"id": 226778, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 226779, "field": "name", "en": "Feralheart Kilt", "hash": "210d1f7a15cb1aa5", "src": "db2@1.60.1.70124"}
+{"id": 226779, "field": "name", "en": "Feralheart Kilt", "hash": "210d1f7a15cb1aa5", "src": "db2@1.60.1.70170"}
 {"id": 226779, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 226780, "field": "name", "en": "Feralheart Cord", "hash": "1ffc47dac25dd014", "src": "db2@1.60.1.70124"}
+{"id": 226780, "field": "name", "en": "Feralheart Cord", "hash": "1ffc47dac25dd014", "src": "db2@1.60.1.70170"}
 {"id": 226780, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226781, "field": "name", "en": "Feralheart Sandals", "hash": "0e3750656e7e89ec", "src": "db2@1.60.1.70124"}
+{"id": 226781, "field": "name", "en": "Feralheart Sandals", "hash": "0e3750656e7e89ec", "src": "db2@1.60.1.70170"}
 {"id": 226781, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226782, "field": "name", "en": "Feralheart Bindings", "hash": "fe6cf8d5c3d5a41b", "src": "db2@1.60.1.70124"}
+{"id": 226782, "field": "name", "en": "Feralheart Bindings", "hash": "fe6cf8d5c3d5a41b", "src": "db2@1.60.1.70170"}
 {"id": 226782, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226783, "field": "name", "en": "Feralheart Embrace", "hash": "25e0c245db669a51", "src": "db2@1.60.1.70124"}
+{"id": 226783, "field": "name", "en": "Feralheart Embrace", "hash": "25e0c245db669a51", "src": "db2@1.60.1.70170"}
 {"id": 226783, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226784, "field": "name", "en": "Feralheart Gauntlets", "hash": "96845b61d750f8e0", "src": "db2@1.60.1.70124"}
+{"id": 226784, "field": "name", "en": "Feralheart Gauntlets", "hash": "96845b61d750f8e0", "src": "db2@1.60.1.70170"}
 {"id": 226784, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226785, "field": "name", "en": "Feralheart Mantle", "hash": "0392ec24214bba5d", "src": "db2@1.60.1.70124"}
+{"id": 226785, "field": "name", "en": "Feralheart Mantle", "hash": "0392ec24214bba5d", "src": "db2@1.60.1.70170"}
 {"id": 226785, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226786, "field": "name", "en": "Feralheart Headdress", "hash": "8a31ce85189f06b9", "src": "db2@1.60.1.70124"}
+{"id": 226786, "field": "name", "en": "Feralheart Headdress", "hash": "8a31ce85189f06b9", "src": "db2@1.60.1.70170"}
 {"id": 226786, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 226787, "field": "name", "en": "Feralheart Pants", "hash": "4069c505b701f92a", "src": "db2@1.60.1.70124"}
+{"id": 226787, "field": "name", "en": "Feralheart Pants", "hash": "4069c505b701f92a", "src": "db2@1.60.1.70170"}
 {"id": 226787, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226788, "field": "name", "en": "Feralheart Bands", "hash": "4aa9c462862d0282", "src": "db2@1.60.1.70124"}
+{"id": 226788, "field": "name", "en": "Feralheart Bands", "hash": "4aa9c462862d0282", "src": "db2@1.60.1.70170"}
 {"id": 226788, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226789, "field": "name", "en": "Feralheart Girdle", "hash": "ab6bdec825814dc8", "src": "db2@1.60.1.70124"}
-{"id": 226790, "field": "name", "en": "Feralheart Epaulets", "hash": "baba3d59a942b6f0", "src": "db2@1.60.1.70124"}
+{"id": 226789, "field": "name", "en": "Feralheart Girdle", "hash": "ab6bdec825814dc8", "src": "db2@1.60.1.70170"}
+{"id": 226790, "field": "name", "en": "Feralheart Epaulets", "hash": "baba3d59a942b6f0", "src": "db2@1.60.1.70170"}
 {"id": 226790, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226791, "field": "name", "en": "Feralheart Trousers", "hash": "e5f28d4b88f5f3ea", "src": "db2@1.60.1.70124"}
+{"id": 226791, "field": "name", "en": "Feralheart Trousers", "hash": "e5f28d4b88f5f3ea", "src": "db2@1.60.1.70170"}
 {"id": 226791, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226792, "field": "name", "en": "Feralheart Cap", "hash": "40bb8befb1a87171", "src": "db2@1.60.1.70124"}
+{"id": 226792, "field": "name", "en": "Feralheart Cap", "hash": "40bb8befb1a87171", "src": "db2@1.60.1.70170"}
 {"id": 226792, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226793, "field": "name", "en": "Feralheart Fists", "hash": "91f461db80f1f17f", "src": "db2@1.60.1.70124"}
+{"id": 226793, "field": "name", "en": "Feralheart Fists", "hash": "91f461db80f1f17f", "src": "db2@1.60.1.70170"}
 {"id": 226793, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226794, "field": "name", "en": "Feralheart Walkers", "hash": "bed7dd84f4bd5a1a", "src": "db2@1.60.1.70124"}
-{"id": 226795, "field": "name", "en": "Feralheart Tunic", "hash": "894ea8b43ec9a902", "src": "db2@1.60.1.70124"}
+{"id": 226794, "field": "name", "en": "Feralheart Walkers", "hash": "bed7dd84f4bd5a1a", "src": "db2@1.60.1.70170"}
+{"id": 226795, "field": "name", "en": "Feralheart Tunic", "hash": "894ea8b43ec9a902", "src": "db2@1.60.1.70170"}
 {"id": 226795, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226796, "field": "name", "en": "Feralheart Wristguards", "hash": "a2d09ede405efb3d", "src": "db2@1.60.1.70124"}
+{"id": 226796, "field": "name", "en": "Feralheart Wristguards", "hash": "a2d09ede405efb3d", "src": "db2@1.60.1.70170"}
 {"id": 226796, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
-{"id": 226797, "field": "name", "en": "Feralheart Waistguard", "hash": "21a493222d2ab6e3", "src": "db2@1.60.1.70124"}
+{"id": 226797, "field": "name", "en": "Feralheart Waistguard", "hash": "21a493222d2ab6e3", "src": "db2@1.60.1.70170"}
 {"id": 226797, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
-{"id": 226798, "field": "name", "en": "Feralheart Pauldrons", "hash": "9f35fc59eef2f584", "src": "db2@1.60.1.70124"}
+{"id": 226798, "field": "name", "en": "Feralheart Pauldrons", "hash": "9f35fc59eef2f584", "src": "db2@1.60.1.70170"}
 {"id": 226798, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 226799, "field": "name", "en": "Feralheart Legguards", "hash": "5d6bd9ff5022dd58", "src": "db2@1.60.1.70124"}
+{"id": 226799, "field": "name", "en": "Feralheart Legguards", "hash": "5d6bd9ff5022dd58", "src": "db2@1.60.1.70170"}
 {"id": 226799, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
-{"id": 226801, "field": "name", "en": "Feralheart Faceguard", "hash": "0838a1fda2baaca5", "src": "db2@1.60.1.70124"}
+{"id": 226801, "field": "name", "en": "Feralheart Faceguard", "hash": "0838a1fda2baaca5", "src": "db2@1.60.1.70170"}
 {"id": 226801, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
-{"id": 226802, "field": "name", "en": "Feralheart Grips", "hash": "a4b4323930d0e038", "src": "db2@1.60.1.70124"}
+{"id": 226802, "field": "name", "en": "Feralheart Grips", "hash": "a4b4323930d0e038", "src": "db2@1.60.1.70170"}
 {"id": 226802, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
-{"id": 226803, "field": "name", "en": "Feralheart Treads", "hash": "0d6060c2e58c3d32", "src": "db2@1.60.1.70124"}
+{"id": 226803, "field": "name", "en": "Feralheart Treads", "hash": "0d6060c2e58c3d32", "src": "db2@1.60.1.70170"}
 {"id": 226803, "field": "description", "en": "Increases your chance to dodge an attack by $s1%.\nIncreased Defense +$s1.", "hash": "c1d8dbcf31791222", "src": "wago@1.15.9.69722"}
-{"id": 226804, "field": "name", "en": "Feralheart Armor", "hash": "3b62f7f30732d289", "src": "db2@1.60.1.70124"}
+{"id": 226804, "field": "name", "en": "Feralheart Armor", "hash": "3b62f7f30732d289", "src": "db2@1.60.1.70170"}
 {"id": 226804, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 226825, "field": "name", "en": "Darkmantle Tunic", "hash": "37c4aa389acca395", "src": "db2@1.60.1.70124"}
+{"id": 226825, "field": "name", "en": "Darkmantle Tunic", "hash": "37c4aa389acca395", "src": "db2@1.60.1.70170"}
 {"id": 226825, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226826, "field": "name", "en": "Darkmantle Spaulders", "hash": "d683ba2437296bd5", "src": "db2@1.60.1.70124"}
+{"id": 226826, "field": "name", "en": "Darkmantle Spaulders", "hash": "d683ba2437296bd5", "src": "db2@1.60.1.70170"}
 {"id": 226826, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226827, "field": "name", "en": "Darkmantle Pants", "hash": "eedfc6841304f3ce", "src": "db2@1.60.1.70124"}
+{"id": 226827, "field": "name", "en": "Darkmantle Pants", "hash": "eedfc6841304f3ce", "src": "db2@1.60.1.70170"}
 {"id": 226827, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226828, "field": "name", "en": "Darkmantle Grips", "hash": "532a33bd8cd3dacb", "src": "db2@1.60.1.70124"}
-{"id": 226829, "field": "name", "en": "Darkmantle Cap", "hash": "79904eb980a16ab1", "src": "db2@1.60.1.70124"}
-{"id": 226829, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70124"}
-{"id": 226830, "field": "name", "en": "Darkmantle Bracers", "hash": "e25a243e0fb13752", "src": "db2@1.60.1.70124"}
+{"id": 226828, "field": "name", "en": "Darkmantle Grips", "hash": "532a33bd8cd3dacb", "src": "db2@1.60.1.70170"}
+{"id": 226829, "field": "name", "en": "Darkmantle Cap", "hash": "79904eb980a16ab1", "src": "db2@1.60.1.70170"}
+{"id": 226829, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70170"}
+{"id": 226830, "field": "name", "en": "Darkmantle Bracers", "hash": "e25a243e0fb13752", "src": "db2@1.60.1.70170"}
 {"id": 226830, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226831, "field": "name", "en": "Darkmantle Footpads", "hash": "80e8997e2867e95d", "src": "db2@1.60.1.70124"}
-{"id": 226831, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70124"}
-{"id": 226832, "field": "name", "en": "Darkmantle Belt", "hash": "34b706d21c43e0ca", "src": "db2@1.60.1.70124"}
-{"id": 226856, "field": "name", "en": "Guided Buoyancy Accelerant", "hash": "3fb33fe17443352c", "src": "db2@1.60.1.70124"}
-{"id": 226856, "field": "description", "en": "Increases swim speed by $s1% for $d1.\nProperty of D.E.L.T.A  Deepsea Exploration and Liquefaction Technologies Alliance", "hash": "a6734b083a4ea772", "src": "db2@1.60.1.70124"}
-{"id": 226857, "field": "name", "en": "Battleboots of Heroism", "hash": "98d8cccbf6f5f53c", "src": "db2@1.60.1.70124"}
+{"id": 226831, "field": "name", "en": "Darkmantle Footpads", "hash": "80e8997e2867e95d", "src": "db2@1.60.1.70170"}
+{"id": 226831, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70170"}
+{"id": 226832, "field": "name", "en": "Darkmantle Belt", "hash": "34b706d21c43e0ca", "src": "db2@1.60.1.70170"}
+{"id": 226856, "field": "name", "en": "Guided Buoyancy Accelerant", "hash": "3fb33fe17443352c", "src": "db2@1.60.1.70170"}
+{"id": 226856, "field": "description", "en": "Increases swim speed by $s1% for $d1.\nProperty of D.E.L.T.A  Deepsea Exploration and Liquefaction Technologies Alliance", "hash": "a6734b083a4ea772", "src": "db2@1.60.1.70170"}
+{"id": 226857, "field": "name", "en": "Battleboots of Heroism", "hash": "98d8cccbf6f5f53c", "src": "db2@1.60.1.70170"}
 {"id": 226857, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226858, "field": "name", "en": "Spaulders of Heroism", "hash": "92e4082f6a00a405", "src": "db2@1.60.1.70124"}
+{"id": 226858, "field": "name", "en": "Spaulders of Heroism", "hash": "92e4082f6a00a405", "src": "db2@1.60.1.70170"}
 {"id": 226858, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226859, "field": "name", "en": "Legplates of Heroism", "hash": "cec763f5e75d251d", "src": "db2@1.60.1.70124"}
+{"id": 226859, "field": "name", "en": "Legplates of Heroism", "hash": "cec763f5e75d251d", "src": "db2@1.60.1.70170"}
 {"id": 226859, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226860, "field": "name", "en": "Crown of Heroism", "hash": "77a34c70a0ad2b63", "src": "db2@1.60.1.70124"}
+{"id": 226860, "field": "name", "en": "Crown of Heroism", "hash": "77a34c70a0ad2b63", "src": "db2@1.60.1.70170"}
 {"id": 226860, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226861, "field": "name", "en": "Gauntlets of Heroism", "hash": "1b55acb3c93570ab", "src": "db2@1.60.1.70124"}
+{"id": 226861, "field": "name", "en": "Gauntlets of Heroism", "hash": "1b55acb3c93570ab", "src": "db2@1.60.1.70170"}
 {"id": 226861, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226862, "field": "name", "en": "Breastplate of Heroism", "hash": "4c57d1ba5d467cf5", "src": "db2@1.60.1.70124"}
+{"id": 226862, "field": "name", "en": "Breastplate of Heroism", "hash": "4c57d1ba5d467cf5", "src": "db2@1.60.1.70170"}
 {"id": 226862, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226863, "field": "name", "en": "Bracers of Heroism", "hash": "8220ccc1a1ed01ed", "src": "db2@1.60.1.70124"}
-{"id": 226864, "field": "name", "en": "Belt of Heroism", "hash": "97c3ccdee0a34b85", "src": "db2@1.60.1.70124"}
+{"id": 226863, "field": "name", "en": "Bracers of Heroism", "hash": "8220ccc1a1ed01ed", "src": "db2@1.60.1.70170"}
+{"id": 226864, "field": "name", "en": "Belt of Heroism", "hash": "97c3ccdee0a34b85", "src": "db2@1.60.1.70170"}
 {"id": 226864, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226865, "field": "name", "en": "Wristguards of Heroism", "hash": "e79d625f3968303f", "src": "db2@1.60.1.70124"}
+{"id": 226865, "field": "name", "en": "Wristguards of Heroism", "hash": "e79d625f3968303f", "src": "db2@1.60.1.70170"}
 {"id": 226865, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
-{"id": 226866, "field": "name", "en": "Waistguard of Heroism", "hash": "aeffbe06f383d7db", "src": "db2@1.60.1.70124"}
+{"id": 226866, "field": "name", "en": "Waistguard of Heroism", "hash": "aeffbe06f383d7db", "src": "db2@1.60.1.70170"}
 {"id": 226866, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 226867, "field": "name", "en": "Pauldrons of Heroism", "hash": "edae479815c324b8", "src": "db2@1.60.1.70124"}
+{"id": 226867, "field": "name", "en": "Pauldrons of Heroism", "hash": "edae479815c324b8", "src": "db2@1.60.1.70170"}
 {"id": 226867, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 226868, "field": "name", "en": "Legguards of Heroism", "hash": "51c24f5c137e76da", "src": "db2@1.60.1.70124"}
+{"id": 226868, "field": "name", "en": "Legguards of Heroism", "hash": "51c24f5c137e76da", "src": "db2@1.60.1.70170"}
 {"id": 226868, "field": "description", "en": "Increased Defense +$s1.\nIncreases the block value of your shield by $s1.", "hash": "bee122f0f2c80c4b", "src": "wago@1.15.9.69722"}
-{"id": 226869, "field": "name", "en": "Faceguard of Heroism", "hash": "a9dc5627cd26cc91", "src": "db2@1.60.1.70124"}
+{"id": 226869, "field": "name", "en": "Faceguard of Heroism", "hash": "a9dc5627cd26cc91", "src": "db2@1.60.1.70170"}
 {"id": 226869, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 226870, "field": "name", "en": "Handguards of Heroism", "hash": "e871200d7e193578", "src": "db2@1.60.1.70124"}
+{"id": 226870, "field": "name", "en": "Handguards of Heroism", "hash": "e871200d7e193578", "src": "db2@1.60.1.70170"}
 {"id": 226870, "field": "description", "en": "Increases your chance to block attacks with a shield by $s1%.\nIncreased Defense +$s1.", "hash": "391ade669ec79696", "src": "wago@1.15.9.69722"}
-{"id": 226871, "field": "name", "en": "Sabatons of Heroism", "hash": "aac02fdc03365b1e", "src": "db2@1.60.1.70124"}
+{"id": 226871, "field": "name", "en": "Sabatons of Heroism", "hash": "aac02fdc03365b1e", "src": "db2@1.60.1.70170"}
 {"id": 226871, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 226872, "field": "name", "en": "Chestguard of Heroism", "hash": "a7b2a0420bd72d97", "src": "db2@1.60.1.70124"}
+{"id": 226872, "field": "name", "en": "Chestguard of Heroism", "hash": "a7b2a0420bd72d97", "src": "db2@1.60.1.70170"}
 {"id": 226872, "field": "description", "en": "Increases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "f5619653707f841b", "src": "wago@1.15.9.69722"}
-{"id": 226881, "field": "name", "en": "Beastmaster's Treads", "hash": "6c9c21c5afe93ddb", "src": "db2@1.60.1.70124"}
-{"id": 226881, "field": "description", "en": "Increases damage dealt by your pet by 3%.", "hash": "2524d080611dbd76", "src": "db2@1.60.1.70124"}
-{"id": 226882, "field": "name", "en": "Beastmaster's Pants", "hash": "66451891719d1257", "src": "db2@1.60.1.70124"}
+{"id": 226881, "field": "name", "en": "Beastmaster's Treads", "hash": "6c9c21c5afe93ddb", "src": "db2@1.60.1.70170"}
+{"id": 226881, "field": "description", "en": "Increases damage dealt by your pet by 3%.", "hash": "2524d080611dbd76", "src": "db2@1.60.1.70170"}
+{"id": 226882, "field": "name", "en": "Beastmaster's Pants", "hash": "66451891719d1257", "src": "db2@1.60.1.70170"}
 {"id": 226882, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226883, "field": "name", "en": "Beastmaster's Gauntlets", "hash": "db65ed3812ea985f", "src": "db2@1.60.1.70124"}
-{"id": 226883, "field": "description", "en": "Increases your pet's critical strike chance by 2%.", "hash": "31d1d90493345380", "src": "db2@1.60.1.70124"}
-{"id": 226884, "field": "name", "en": "Beastmaster's Mantle", "hash": "62cead27eba8baf5", "src": "db2@1.60.1.70124"}
+{"id": 226883, "field": "name", "en": "Beastmaster's Gauntlets", "hash": "db65ed3812ea985f", "src": "db2@1.60.1.70170"}
+{"id": 226883, "field": "description", "en": "Increases your pet's critical strike chance by 2%.", "hash": "31d1d90493345380", "src": "db2@1.60.1.70170"}
+{"id": 226884, "field": "name", "en": "Beastmaster's Mantle", "hash": "62cead27eba8baf5", "src": "db2@1.60.1.70170"}
 {"id": 226884, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226885, "field": "name", "en": "Beastmaster's Bindings", "hash": "fb0b07a03bb39ffd", "src": "db2@1.60.1.70124"}
+{"id": 226885, "field": "name", "en": "Beastmaster's Bindings", "hash": "fb0b07a03bb39ffd", "src": "db2@1.60.1.70170"}
 {"id": 226885, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226886, "field": "name", "en": "Beastmaster's Tunic", "hash": "af29fc40f964c21e", "src": "db2@1.60.1.70124"}
-{"id": 226886, "field": "description", "en": "Increases your pet's armor by 10%.", "hash": "e8f62873b18fb354", "src": "db2@1.60.1.70124"}
-{"id": 226887, "field": "name", "en": "Beastmaster's Cap", "hash": "8ffa105b1382bb44", "src": "db2@1.60.1.70124"}
-{"id": 226887, "field": "description", "en": "Increases your pet's maximum health by 3%.", "hash": "d6fe213b413c10fa", "src": "db2@1.60.1.70124"}
-{"id": 226888, "field": "name", "en": "Beastmaster's Belt", "hash": "acd51cef7d0c97f6", "src": "db2@1.60.1.70124"}
+{"id": 226886, "field": "name", "en": "Beastmaster's Tunic", "hash": "af29fc40f964c21e", "src": "db2@1.60.1.70170"}
+{"id": 226886, "field": "description", "en": "Increases your pet's armor by 10%.", "hash": "e8f62873b18fb354", "src": "db2@1.60.1.70170"}
+{"id": 226887, "field": "name", "en": "Beastmaster's Cap", "hash": "8ffa105b1382bb44", "src": "db2@1.60.1.70170"}
+{"id": 226887, "field": "description", "en": "Increases your pet's maximum health by 3%.", "hash": "d6fe213b413c10fa", "src": "db2@1.60.1.70170"}
+{"id": 226888, "field": "name", "en": "Beastmaster's Belt", "hash": "acd51cef7d0c97f6", "src": "db2@1.60.1.70170"}
 {"id": 226888, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226905, "field": "name", "en": "Deathmist Belt", "hash": "3e8b7f8b6b3c3f95", "src": "db2@1.60.1.70124"}
+{"id": 226905, "field": "name", "en": "Deathmist Belt", "hash": "3e8b7f8b6b3c3f95", "src": "db2@1.60.1.70170"}
 {"id": 226905, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 226906, "field": "name", "en": "Deathmist Robe", "hash": "40b2f268696ce6cf", "src": "db2@1.60.1.70124"}
+{"id": 226906, "field": "name", "en": "Deathmist Robe", "hash": "40b2f268696ce6cf", "src": "db2@1.60.1.70170"}
 {"id": 226906, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 226907, "field": "name", "en": "Deathmist Bracers", "hash": "c6e77740534c08a2", "src": "db2@1.60.1.70124"}
+{"id": 226907, "field": "name", "en": "Deathmist Bracers", "hash": "c6e77740534c08a2", "src": "db2@1.60.1.70170"}
 {"id": 226907, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 226908, "field": "name", "en": "Deathmist Sandals", "hash": "f74fd2446796440c", "src": "db2@1.60.1.70124"}
+{"id": 226908, "field": "name", "en": "Deathmist Sandals", "hash": "f74fd2446796440c", "src": "db2@1.60.1.70170"}
 {"id": 226908, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 226909, "field": "name", "en": "Deathmist Mask", "hash": "4003cc9c6ed38c0a", "src": "db2@1.60.1.70124"}
+{"id": 226909, "field": "name", "en": "Deathmist Mask", "hash": "4003cc9c6ed38c0a", "src": "db2@1.60.1.70170"}
 {"id": 226909, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 226910, "field": "name", "en": "Deathmist Leggings", "hash": "71a6d21932f5ca6f", "src": "db2@1.60.1.70124"}
+{"id": 226910, "field": "name", "en": "Deathmist Leggings", "hash": "71a6d21932f5ca6f", "src": "db2@1.60.1.70170"}
 {"id": 226910, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 226911, "field": "name", "en": "Deathmist Wraps", "hash": "73bd474ed78040e1", "src": "db2@1.60.1.70124"}
+{"id": 226911, "field": "name", "en": "Deathmist Wraps", "hash": "73bd474ed78040e1", "src": "db2@1.60.1.70170"}
 {"id": 226911, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 226912, "field": "name", "en": "Deathmist Mantle", "hash": "3e06683e30ca85ef", "src": "db2@1.60.1.70124"}
+{"id": 226912, "field": "name", "en": "Deathmist Mantle", "hash": "3e06683e30ca85ef", "src": "db2@1.60.1.70170"}
 {"id": 226912, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 226929, "field": "name", "en": "Sorcerer's Bindings", "hash": "0f868d39e7ec4da4", "src": "db2@1.60.1.70124"}
+{"id": 226929, "field": "name", "en": "Sorcerer's Bindings", "hash": "0f868d39e7ec4da4", "src": "db2@1.60.1.70170"}
 {"id": 226929, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 226930, "field": "name", "en": "Sorcerer's Gauntlets", "hash": "569b482b4dc3ddb8", "src": "db2@1.60.1.70124"}
+{"id": 226930, "field": "name", "en": "Sorcerer's Gauntlets", "hash": "569b482b4dc3ddb8", "src": "db2@1.60.1.70170"}
 {"id": 226930, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 226931, "field": "name", "en": "Sorcerer's Sandals", "hash": "4ed5cca30a9eea05", "src": "db2@1.60.1.70124"}
+{"id": 226931, "field": "name", "en": "Sorcerer's Sandals", "hash": "4ed5cca30a9eea05", "src": "db2@1.60.1.70170"}
 {"id": 226931, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 226932, "field": "name", "en": "Sorcerer's Robes", "hash": "cfb4787b3429d579", "src": "db2@1.60.1.70124"}
+{"id": 226932, "field": "name", "en": "Sorcerer's Robes", "hash": "cfb4787b3429d579", "src": "db2@1.60.1.70170"}
 {"id": 226932, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 226933, "field": "name", "en": "Sorcerer's Leggings", "hash": "3b35ef0889a80c74", "src": "db2@1.60.1.70124"}
+{"id": 226933, "field": "name", "en": "Sorcerer's Leggings", "hash": "3b35ef0889a80c74", "src": "db2@1.60.1.70170"}
 {"id": 226933, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 226934, "field": "name", "en": "Sorcerer's Belt", "hash": "825cdc367fcb05dc", "src": "db2@1.60.1.70124"}
+{"id": 226934, "field": "name", "en": "Sorcerer's Belt", "hash": "825cdc367fcb05dc", "src": "db2@1.60.1.70170"}
 {"id": 226934, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 226935, "field": "name", "en": "Sorcerer's Crown", "hash": "c8d1232e0041e81f", "src": "db2@1.60.1.70124"}
+{"id": 226935, "field": "name", "en": "Sorcerer's Crown", "hash": "c8d1232e0041e81f", "src": "db2@1.60.1.70170"}
 {"id": 226935, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 226936, "field": "name", "en": "Sorcerer's Mantle", "hash": "6ba3c40bfd85f3b9", "src": "db2@1.60.1.70124"}
+{"id": 226936, "field": "name", "en": "Sorcerer's Mantle", "hash": "6ba3c40bfd85f3b9", "src": "db2@1.60.1.70170"}
 {"id": 226936, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 226945, "field": "name", "en": "Virtuous Robe", "hash": "48ac730962e2318d", "src": "db2@1.60.1.70124"}
+{"id": 226945, "field": "name", "en": "Virtuous Robe", "hash": "48ac730962e2318d", "src": "db2@1.60.1.70170"}
 {"id": 226945, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226946, "field": "name", "en": "Virtuous Skirt", "hash": "41453a9311e499c2", "src": "db2@1.60.1.70124"}
+{"id": 226946, "field": "name", "en": "Virtuous Skirt", "hash": "41453a9311e499c2", "src": "db2@1.60.1.70170"}
 {"id": 226946, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226947, "field": "name", "en": "Virtuous Crown", "hash": "295b897a18e68456", "src": "db2@1.60.1.70124"}
+{"id": 226947, "field": "name", "en": "Virtuous Crown", "hash": "295b897a18e68456", "src": "db2@1.60.1.70170"}
 {"id": 226947, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 226948, "field": "name", "en": "Virtuous Belt", "hash": "4685002c64b18a53", "src": "db2@1.60.1.70124"}
+{"id": 226948, "field": "name", "en": "Virtuous Belt", "hash": "4685002c64b18a53", "src": "db2@1.60.1.70170"}
 {"id": 226948, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 226949, "field": "name", "en": "Virtuous Bracers", "hash": "bc101d81a017e9f3", "src": "db2@1.60.1.70124"}
+{"id": 226949, "field": "name", "en": "Virtuous Bracers", "hash": "bc101d81a017e9f3", "src": "db2@1.60.1.70170"}
 {"id": 226949, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226950, "field": "name", "en": "Virtuous Mitts", "hash": "d7b13bdae940dddd", "src": "db2@1.60.1.70124"}
+{"id": 226950, "field": "name", "en": "Virtuous Mitts", "hash": "d7b13bdae940dddd", "src": "db2@1.60.1.70170"}
 {"id": 226950, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226951, "field": "name", "en": "Virtuous Mantle", "hash": "d2761b55951e1d42", "src": "db2@1.60.1.70124"}
+{"id": 226951, "field": "name", "en": "Virtuous Mantle", "hash": "d2761b55951e1d42", "src": "db2@1.60.1.70170"}
 {"id": 226951, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226952, "field": "name", "en": "Virtuous Sandals", "hash": "ec787885b462255d", "src": "db2@1.60.1.70124"}
+{"id": 226952, "field": "name", "en": "Virtuous Sandals", "hash": "ec787885b462255d", "src": "db2@1.60.1.70170"}
 {"id": 226952, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 226953, "field": "name", "en": "Virtuous Wraps", "hash": "886a19c54ba3e60f", "src": "db2@1.60.1.70124"}
+{"id": 226953, "field": "name", "en": "Virtuous Wraps", "hash": "886a19c54ba3e60f", "src": "db2@1.60.1.70170"}
 {"id": 226953, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "wago@1.15.9.69722"}
-{"id": 226954, "field": "name", "en": "Virtuous Cord", "hash": "46a9ef2319cce323", "src": "db2@1.60.1.70124"}
+{"id": 226954, "field": "name", "en": "Virtuous Cord", "hash": "46a9ef2319cce323", "src": "db2@1.60.1.70170"}
 {"id": 226954, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "wago@1.15.9.69722"}
-{"id": 226955, "field": "name", "en": "Virtuous Epaulets", "hash": "7611c7f3a6219835", "src": "db2@1.60.1.70124"}
+{"id": 226955, "field": "name", "en": "Virtuous Epaulets", "hash": "7611c7f3a6219835", "src": "db2@1.60.1.70170"}
 {"id": 226955, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "wago@1.15.9.69722"}
-{"id": 226956, "field": "name", "en": "Virtuous Leggings", "hash": "e573e53e62704430", "src": "db2@1.60.1.70124"}
+{"id": 226956, "field": "name", "en": "Virtuous Leggings", "hash": "e573e53e62704430", "src": "db2@1.60.1.70170"}
 {"id": 226956, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "wago@1.15.9.69722"}
-{"id": 226957, "field": "name", "en": "Virtuous Cowl", "hash": "46a9f1ba19cd8290", "src": "db2@1.60.1.70124"}
+{"id": 226957, "field": "name", "en": "Virtuous Cowl", "hash": "46a9f1ba19cd8290", "src": "db2@1.60.1.70170"}
 {"id": 226957, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage done by Shadow spells and effects by up to $s1.", "hash": "4c842ba39dd26645", "src": "wago@1.15.9.69722"}
-{"id": 226958, "field": "name", "en": "Virtuous Hands", "hash": "7ed8a5070b992bb5", "src": "db2@1.60.1.70124"}
+{"id": 226958, "field": "name", "en": "Virtuous Hands", "hash": "7ed8a5070b992bb5", "src": "db2@1.60.1.70170"}
 {"id": 226958, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "wago@1.15.9.69722"}
-{"id": 226959, "field": "name", "en": "Virtuous Slippers", "hash": "b063260122ddfa71", "src": "db2@1.60.1.70124"}
+{"id": 226959, "field": "name", "en": "Virtuous Slippers", "hash": "b063260122ddfa71", "src": "db2@1.60.1.70170"}
 {"id": 226959, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "wago@1.15.9.69722"}
-{"id": 226960, "field": "name", "en": "Virtuous Gown", "hash": "473328284f6d52b0", "src": "db2@1.60.1.70124"}
+{"id": 226960, "field": "name", "en": "Virtuous Gown", "hash": "473328284f6d52b0", "src": "db2@1.60.1.70170"}
 {"id": 226960, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "wago@1.15.9.69722"}
-{"id": 226969, "field": "name", "en": "Soulforge Spaulders", "hash": "08fb795482a76ff6", "src": "db2@1.60.1.70124"}
+{"id": 226969, "field": "name", "en": "Soulforge Spaulders", "hash": "08fb795482a76ff6", "src": "db2@1.60.1.70170"}
 {"id": 226969, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226970, "field": "name", "en": "Soulforge Bracers", "hash": "846f2709c5f6a188", "src": "db2@1.60.1.70124"}
-{"id": 226971, "field": "name", "en": "Soulforge Belt", "hash": "e95b064e0e8340c3", "src": "db2@1.60.1.70124"}
+{"id": 226970, "field": "name", "en": "Soulforge Bracers", "hash": "846f2709c5f6a188", "src": "db2@1.60.1.70170"}
+{"id": 226971, "field": "name", "en": "Soulforge Belt", "hash": "e95b064e0e8340c3", "src": "db2@1.60.1.70170"}
 {"id": 226971, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226972, "field": "name", "en": "Soulforge Legplates", "hash": "5fb93168151f714d", "src": "db2@1.60.1.70124"}
+{"id": 226972, "field": "name", "en": "Soulforge Legplates", "hash": "5fb93168151f714d", "src": "db2@1.60.1.70170"}
 {"id": 226972, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226973, "field": "name", "en": "Soulforge Breastplate", "hash": "73746f2ef1d97a48", "src": "db2@1.60.1.70124"}
+{"id": 226973, "field": "name", "en": "Soulforge Breastplate", "hash": "73746f2ef1d97a48", "src": "db2@1.60.1.70170"}
 {"id": 226973, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 226974, "field": "name", "en": "Soulforge Warboots", "hash": "34e463e2d35351d9", "src": "db2@1.60.1.70124"}
+{"id": 226974, "field": "name", "en": "Soulforge Warboots", "hash": "34e463e2d35351d9", "src": "db2@1.60.1.70170"}
 {"id": 226974, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226975, "field": "name", "en": "Soulforge Gauntlets", "hash": "5f25ec738cc46615", "src": "db2@1.60.1.70124"}
+{"id": 226975, "field": "name", "en": "Soulforge Gauntlets", "hash": "5f25ec738cc46615", "src": "db2@1.60.1.70170"}
 {"id": 226975, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226976, "field": "name", "en": "Soulforge Greathelm", "hash": "3c435c59a5b60696", "src": "db2@1.60.1.70124"}
+{"id": 226976, "field": "name", "en": "Soulforge Greathelm", "hash": "3c435c59a5b60696", "src": "db2@1.60.1.70170"}
 {"id": 226976, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 226977, "field": "name", "en": "Soulforge Bindings", "hash": "4266637b01af3a8d", "src": "db2@1.60.1.70124"}
+{"id": 226977, "field": "name", "en": "Soulforge Bindings", "hash": "4266637b01af3a8d", "src": "db2@1.60.1.70170"}
 {"id": 226977, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226978, "field": "name", "en": "Soulforge Cord", "hash": "e97ff545c39e9982", "src": "db2@1.60.1.70124"}
+{"id": 226978, "field": "name", "en": "Soulforge Cord", "hash": "e97ff545c39e9982", "src": "db2@1.60.1.70170"}
 {"id": 226978, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 226979, "field": "name", "en": "Soulforge Epaulets", "hash": "feb3a7fae71c4d51", "src": "db2@1.60.1.70124"}
+{"id": 226979, "field": "name", "en": "Soulforge Epaulets", "hash": "feb3a7fae71c4d51", "src": "db2@1.60.1.70170"}
 {"id": 226979, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 226980, "field": "name", "en": "Soulforge Leggings", "hash": "6e15c54aa36af94c", "src": "db2@1.60.1.70124"}
+{"id": 226980, "field": "name", "en": "Soulforge Leggings", "hash": "6e15c54aa36af94c", "src": "db2@1.60.1.70170"}
 {"id": 226980, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 226981, "field": "name", "en": "Soulforge Crown", "hash": "7ce0ae7fbf4eb64a", "src": "db2@1.60.1.70124"}
+{"id": 226981, "field": "name", "en": "Soulforge Crown", "hash": "7ce0ae7fbf4eb64a", "src": "db2@1.60.1.70170"}
 {"id": 226981, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 226982, "field": "name", "en": "Soulforge Fists", "hash": "b056219f73474fd5", "src": "db2@1.60.1.70124"}
+{"id": 226982, "field": "name", "en": "Soulforge Fists", "hash": "b056219f73474fd5", "src": "db2@1.60.1.70170"}
 {"id": 226982, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226983, "field": "name", "en": "Soulforge Treads", "hash": "99658259390073e5", "src": "db2@1.60.1.70124"}
+{"id": 226983, "field": "name", "en": "Soulforge Treads", "hash": "99658259390073e5", "src": "db2@1.60.1.70170"}
 {"id": 226983, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 226984, "field": "name", "en": "Soulforge Embrace", "hash": "cc80f3ed4728ed68", "src": "db2@1.60.1.70124"}
+{"id": 226984, "field": "name", "en": "Soulforge Embrace", "hash": "cc80f3ed4728ed68", "src": "db2@1.60.1.70170"}
 {"id": 226984, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 226985, "field": "name", "en": "Soulforge Wristguards", "hash": "f976260098aa2370", "src": "db2@1.60.1.70124"}
+{"id": 226985, "field": "name", "en": "Soulforge Wristguards", "hash": "f976260098aa2370", "src": "db2@1.60.1.70170"}
 {"id": 226985, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
-{"id": 226986, "field": "name", "en": "Soulforge Waistguard", "hash": "cc51cec7a1d67f9f", "src": "db2@1.60.1.70124"}
+{"id": 226986, "field": "name", "en": "Soulforge Waistguard", "hash": "cc51cec7a1d67f9f", "src": "db2@1.60.1.70170"}
 {"id": 226986, "field": "description", "en": "Increases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "f5619653707f841b", "src": "wago@1.15.9.69722"}
-{"id": 226987, "field": "name", "en": "Soulforge Pauldrons", "hash": "67d78d6ba46662b9", "src": "db2@1.60.1.70124"}
+{"id": 226987, "field": "name", "en": "Soulforge Pauldrons", "hash": "67d78d6ba46662b9", "src": "db2@1.60.1.70170"}
 {"id": 226987, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
-{"id": 226988, "field": "name", "en": "Soulforge Legguards", "hash": "260d6b1105964a8d", "src": "db2@1.60.1.70124"}
+{"id": 226988, "field": "name", "en": "Soulforge Legguards", "hash": "260d6b1105964a8d", "src": "db2@1.60.1.70170"}
 {"id": 226988, "field": "description", "en": "Increases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "f5619653707f841b", "src": "wago@1.15.9.69722"}
-{"id": 226989, "field": "name", "en": "Soulforge Faceguard", "hash": "d0da330a582e19da", "src": "db2@1.60.1.70124"}
+{"id": 226989, "field": "name", "en": "Soulforge Faceguard", "hash": "d0da330a582e19da", "src": "db2@1.60.1.70170"}
 {"id": 226989, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
-{"id": 226990, "field": "name", "en": "Soulforge Handguards", "hash": "1d427054043ea06e", "src": "db2@1.60.1.70124"}
+{"id": 226990, "field": "name", "en": "Soulforge Handguards", "hash": "1d427054043ea06e", "src": "db2@1.60.1.70170"}
 {"id": 226990, "field": "description", "en": "Increases your chance to block attacks with a shield by $s1%.\nIncreased Defense +$s1.", "hash": "391ade669ec79696", "src": "wago@1.15.9.69722"}
-{"id": 226991, "field": "name", "en": "Soulforge Sabatons", "hash": "8df76980c9311e63", "src": "db2@1.60.1.70124"}
+{"id": 226991, "field": "name", "en": "Soulforge Sabatons", "hash": "8df76980c9311e63", "src": "db2@1.60.1.70170"}
 {"id": 226991, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 226992, "field": "name", "en": "Soulforge Chestguards", "hash": "e057cff0975fa8d1", "src": "db2@1.60.1.70124"}
+{"id": 226992, "field": "name", "en": "Soulforge Chestguards", "hash": "e057cff0975fa8d1", "src": "db2@1.60.1.70170"}
 {"id": 226992, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}

@@ -93,6 +93,11 @@ local DROPDOWNS = {
   category = { BROWSE .. ".CategoryDropdown", { "CATEGORY", "LFG_TYPE_NONE", "LFG_SELF_LISTING" } },
   activity = { BROWSE .. ".ActivityDropdown", { "LFGBROWSE_ACTIVITY_HEADER_DEFAULT", "LFGBROWSE_ACTIVITY_HEADER" } },
   role = { LISTING .. ".GroupRoleButtons.RoleDropdown", { "TANK", "HEALER", "DAMAGER" } },
+  -- the listing's playstyle: the chosen one, or the required prompt in a colour code while none is chosen
+  -- [verified: forever-ui-1.60.1.70170 blizzard_lfgvanilla_listing.lua:849–876]
+  playstyle = { LISTING .. ".ActivityView.PlayStyleDropdown", { "GROUP_FINDER_GENERAL_PLAYSTYLE1",
+    "GROUP_FINDER_GENERAL_PLAYSTYLE2", "GROUP_FINDER_GENERAL_PLAYSTYLE3", "GROUP_FINDER_GENERAL_PLAYSTYLE4",
+    "GROUP_FINDER_PLAYSTYLE_REQUIRED" } },
 }
 
 local ROLE_TIP = { only = { "ROLE_DESCRIPTION_TANK", "ROLE_DESCRIPTION_HEALER", "ROLE_DESCRIPTION_DAMAGER",
@@ -127,6 +132,10 @@ local CANDIDATES = {
 local ROW_ACTIVITY_KEYS = { "LFG_SELF_LISTING", "LFGBROWSE_ACTIVITY_COUNT", "LFGBROWSE_ACTIVITY_MATCHING_COUNT" }
 local ROW_ROLES = { only = { "LFG_TOOLTIP_ROLES" } }
 local ROW_CATEGORY = { only = { "LFG_LIST_CATEGORY_SOLO_PLAYERS", "LFG_LIST_CATEGORY_GROUPS" } }
+-- a result's playstyle line, GetGeneralPlaystyleString (blizzard_lfgutil/mainline/lfgutil.lua:315–326;
+-- blizzard_lfgvanilla_browse.lua:465–466)
+local ROW_PLAYSTYLE = { only = { "GROUP_FINDER_GENERAL_PLAYSTYLE1", "GROUP_FINDER_GENERAL_PLAYSTYLE2",
+  "GROUP_FINDER_GENERAL_PLAYSTYLE3", "GROUP_FINDER_GENERAL_PLAYSTYLE4" } }
 local ROW_DELIST = { only = { "LFG_LIST_UNLIST" } }
 
 local function get(key) return Compat.get(SURFACE, key) end
@@ -172,6 +181,9 @@ function GroupFinder.onRow(a, b)
   end
   if type(row.CategoryLabel) == "table" then
     show(SURFACE, rowKey(row.CategoryLabel), row.CategoryLabel, nil, ROW_CATEGORY)
+  end
+  if type(row.PlaystyleLabel) == "table" then
+    show(SURFACE, rowKey(row.PlaystyleLabel), row.PlaystyleLabel, nil, ROW_PLAYSTYLE)
   end
   local display = row.DataDisplay
   if type(display) == "table" then

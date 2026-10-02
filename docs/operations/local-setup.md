@@ -97,9 +97,9 @@ These need the import inputs ([Import inputs](#import-inputs)) or an installed F
 | Target | Runs |
 |---|---|
 | `make data` | `import` → `check` → `generate`. Rebuilds the imported text of `data/` from the pinned inputs. Corrections, machine drafts, rulings and prior English baselines are carried ([ADR-012](../adr/012-human-decisions-survive-regeneration.md), [ADR-014](../adr/014-machine-drafted-text-and-ui-dictionary.md)), so a line whose English changed comes out `stale` |
-| `make import` | `wdb-preflight` (every client, before anything is written), then one `wfj import predecessor` pass with the lineage files, then the shared English (pfQuest, VMaNGOS), then per client in `CLIENTS` order (`classic-era`, then `forever`) the quest cache, ids, client text and UI strings, all merged. The later client wins where it has a line. Last, `import-served` drops the English for ids the Forever client does not list, so only what Forever can show is generated ([ADR-034](../adr/034-forever-is-the-only-target.md)); the Japanese stays in `data/` |
+| `make import` | `wdb-preflight` (every client, before anything is written), then one `wfj import predecessor` pass with the lineage files, then the shared English (pfQuest, VMaNGOS), then per client in `CLIENTS` order (`classic-era`, then `forever`) the quest cache, ids, client text and UI strings, all merged. The later client wins where it has a line. Last, `import-served` drops the English for ids no Forever build has served, so Classic Era-only content is not generated ([ADR-034](../adr/034-forever-is-the-only-target.md)). It is additive: an id an earlier Forever build served keeps its English, and the step records every served id in `pipeline/served/<kind>.tsv` ([ADR-050](../adr/050-english-is-additive.md)); the Japanese stays in `data/` |
 | `make import-english` | only the English imports: refreshes `data/english/` and leaves `data/` lines (rulings, prior hashes) alone; `make check` then derives the same `stale` lines a full `make data` does |
-| `make import-served` | the last step of `import` / `import-english`, runnable alone. Refuses, writing nothing, on a missing input, unstamped or mixed-stamp CSVs, a cache of another build, or a kind that would lose every line |
+| `make import-served` | the last step of `import` / `import-english`, runnable alone. Updates the served record `pipeline/served/<kind>.tsv` and prints, per kind, how many ids an earlier build served that this build did not (their English is kept). Refuses, writing nothing, on a missing input, unstamped or mixed-stamp CSVs, a cache of another build, or a kind that would lose every line |
 | `make rebuild-check` | the rebuild proof: deletes `data/english/**/*.jsonl`, runs `make data`, and fails, listing the changed files, if anything under `data/` or the addon differs from `HEAD`. Refuses on uncommitted changes to `data/`, the addon, `pipeline/` or the `Makefile`, or a missing shared input |
 | `make tables-extract WOW_DIR=<client folder> [CLIENT=forever] [HOTFIXES=<path>\|HOTFIXES=]` | reads the client tables (`ItemSparse`, `SpellName`, `Spell`, `GlobalStrings`, `ItemSubClass`, `SpellItemEnchantment`, `QuestV2`, `ItemEffect`, `ItemXItemEffect`) from the installed client's local archive, with its hotfix cache applied, into the client's input folder as CSVs, and stamps them `db2@<build>` ([ADR-021](../adr/021-client-tables-from-the-local-archive.md)). Read-only on the game folder, no network, all or nothing. Refuses an install of another build than the client's pin |
 | `make wago-fetch CLIENT=classic-era` | downloads the same tables from wago.tools at the Classic Era build and stamps them `wago@<build>`. All or nothing. Refuses a client pinned to `db2` tables unless `CLIENT_DIR=<elsewhere>` (the cross-check form) |
@@ -144,9 +144,9 @@ Drift tests regenerate each pair in memory and fail if the result differs from t
 predecessors/
 ├── clients/
 │   ├── classic-era-1.15.9.69722/   wago tables (stamped wago@1.15.9.69722), questcache.wdb, missing.txt
-│   └── forever-1.60.1.70124/       db2 tables (stamped db2@1.60.1.70124), questcache.wdb, missing.txt
+│   └── forever-1.60.1.70170/       db2 tables (stamped db2@1.60.1.70170), questcache.wdb, missing.txt
 ├── classic-wow-quest-japanese-translator/  classic-wow-tooltips-japanese-translator/  lineage/
-└── pfquest-quests.lua  vmangos/  forever-ui-1.60.1.70124/
+└── pfquest-quests.lua  vmangos/  forever-ui-1.60.1.70170/
 ```
 
 Staging a client folder (the preflight refuses the import until every client's folder is complete):
@@ -249,6 +249,8 @@ pipeline/wfj/               core/ (pure rules: normalize, hashing, align, status
                             cmd/ (the `wfj` verbs) · dev/ (maintainer tools: batches, inventories, fixtures, vectors)
 pipeline/*.txt, *.tsv       curated lists: allowlist, ui_keys, ui_exclusions, not-names, glossary, name lists, and the
                             generated inventories (ui_inventory, forever_addons, visible_spells, …)
+pipeline/served/            the served record, one <kind>.tsv per kind: every id a Forever build served (written by
+                            the served step, committed)
 data/                       SCHEMA · one folder per type (checked lines with provenance) · english/ · reading/
 vectors/                    the Python ↔ Lua contract vectors (hash, align, report)
 tests/                      python/ · lua/spec/ · fixtures/ (small excerpts of real inputs, cut by dev/cut_*.py, and a

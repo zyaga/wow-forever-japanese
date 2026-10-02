@@ -1,562 +1,562 @@
-{"id": 220000, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission II", "hash": "b1893bcec61ee1dd", "src": "db2@1.60.1.70124"}
-{"id": 220000, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220001, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission III", "hash": "d9399c75de7fe9e1", "src": "db2@1.60.1.70124"}
-{"id": 220001, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220002, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission IV", "hash": "b1893bdbc61ee1ea", "src": "db2@1.60.1.70124"}
-{"id": 220002, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220003, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission V", "hash": "e7f35e4ae2e1fbe1", "src": "db2@1.60.1.70124"}
-{"id": 220003, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220004, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission VI", "hash": "b1894275c620804a", "src": "db2@1.60.1.70124"}
-{"id": 220004, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220005, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission VII", "hash": "d93d03ea121b5abf", "src": "db2@1.60.1.70124"}
-{"id": 220005, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220006, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission VIII", "hash": "2a3903323a080979", "src": "db2@1.60.1.70124"}
-{"id": 220006, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220007, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission IX", "hash": "b1893bddc61ee1ec", "src": "db2@1.60.1.70124"}
-{"id": 220007, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220008, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission X", "hash": "e7f35e4ce2e1fbe3", "src": "db2@1.60.1.70124"}
-{"id": 220008, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220009, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XI", "hash": "b189437bc620c00c", "src": "db2@1.60.1.70124"}
-{"id": 220009, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220010, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XII", "hash": "d93d89fc1a0be241", "src": "db2@1.60.1.70124"}
-{"id": 220010, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220011, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XIII", "hash": "2a7d9e6854d7f188", "src": "db2@1.60.1.70124"}
-{"id": 220011, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220012, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XIV", "hash": "d93d8a091a0be24e", "src": "db2@1.60.1.70124"}
-{"id": 220012, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220013, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XV", "hash": "b1894388c620c019", "src": "db2@1.60.1.70124"}
-{"id": 220013, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220014, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XVI", "hash": "d93d90a31a0d80ae", "src": "db2@1.60.1.70124"}
-{"id": 220014, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220015, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XVII", "hash": "2a8105dd88736255", "src": "db2@1.60.1.70124"}
-{"id": 220015, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220016, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XVIII", "hash": "c00600c9e652d8cb", "src": "db2@1.60.1.70124"}
-{"id": 220016, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220017, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission I", "hash": "82b06a5a6d50a3e8", "src": "db2@1.60.1.70124"}
-{"id": 220017, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220018, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission II", "hash": "e0466da1d7ba0e8d", "src": "db2@1.60.1.70124"}
-{"id": 220018, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220019, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission III", "hash": "c40a1be6224ba5e3", "src": "db2@1.60.1.70124"}
-{"id": 220019, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220020, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission IV", "hash": "e0466daed7ba0e9a", "src": "db2@1.60.1.70124"}
-{"id": 220020, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220021, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission V", "hash": "82b06a676d50a3f5", "src": "db2@1.60.1.70124"}
-{"id": 220021, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220022, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission VI", "hash": "e0467448d7bbacfa", "src": "db2@1.60.1.70124"}
-{"id": 220022, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220023, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission VII", "hash": "c40d835b55e716b0", "src": "db2@1.60.1.70124"}
-{"id": 220023, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220024, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission VIII", "hash": "52ea39ce7bdaf6cb", "src": "db2@1.60.1.70124"}
-{"id": 220024, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220025, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission IX", "hash": "e0466db0d7ba0e9c", "src": "db2@1.60.1.70124"}
-{"id": 220025, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220026, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission X", "hash": "82b06a696d50a3f7", "src": "db2@1.60.1.70124"}
-{"id": 220026, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220027, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XI", "hash": "e046754ed7bbecbc", "src": "db2@1.60.1.70124"}
-{"id": 220027, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220028, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XII", "hash": "c40e096d5dd79e32", "src": "db2@1.60.1.70124"}
-{"id": 220028, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220029, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XIII", "hash": "532ed50496aadeda", "src": "db2@1.60.1.70124"}
-{"id": 220029, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220030, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XIV", "hash": "c40e097a5dd79e3f", "src": "db2@1.60.1.70124"}
-{"id": 220030, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220031, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XV", "hash": "e046755bd7bbecc9", "src": "db2@1.60.1.70124"}
-{"id": 220031, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220032, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XVI", "hash": "c40e10145dd93c9f", "src": "db2@1.60.1.70124"}
-{"id": 220032, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220033, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XVII", "hash": "53323c79ca464fa7", "src": "db2@1.60.1.70124"}
-{"id": 220033, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220034, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XVIII", "hash": "92b4f3064b72e740", "src": "db2@1.60.1.70124"}
-{"id": 220034, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220035, "field": "name", "en": "Nightmare Incursions: Feralas Mission I", "hash": "6151b321ac31662b", "src": "db2@1.60.1.70124"}
-{"id": 220035, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220036, "field": "name", "en": "Nightmare Incursions: Feralas Mission II", "hash": "ccceab2152cb6d95", "src": "db2@1.60.1.70124"}
-{"id": 220036, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220037, "field": "name", "en": "Nightmare Incursions: Feralas Mission III", "hash": "cdc1943467110a7d", "src": "db2@1.60.1.70124"}
-{"id": 220037, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220038, "field": "name", "en": "Nightmare Incursions: Feralas Mission IV", "hash": "ccceab2e52cb6da2", "src": "db2@1.60.1.70124"}
-{"id": 220038, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220039, "field": "name", "en": "Nightmare Incursions: Feralas Mission V", "hash": "6151b32eac316638", "src": "db2@1.60.1.70124"}
-{"id": 220039, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220040, "field": "name", "en": "Nightmare Incursions: Feralas Mission VI", "hash": "ccceb1c852cd0c02", "src": "db2@1.60.1.70124"}
-{"id": 220040, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220041, "field": "name", "en": "Nightmare Incursions: Feralas Mission VII", "hash": "cdc4fba99aac7b4a", "src": "db2@1.60.1.70124"}
-{"id": 220041, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220042, "field": "name", "en": "Nightmare Incursions: Feralas Mission VIII", "hash": "4bccc9d1d48799b5", "src": "db2@1.60.1.70124"}
-{"id": 220042, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220043, "field": "name", "en": "Nightmare Incursions: Feralas Mission IX", "hash": "ccceab3052cb6da4", "src": "db2@1.60.1.70124"}
-{"id": 220043, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220044, "field": "name", "en": "Nightmare Incursions: Feralas Mission X", "hash": "6151b330ac31663a", "src": "db2@1.60.1.70124"}
-{"id": 220044, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220045, "field": "name", "en": "Nightmare Incursions: Feralas Mission XI", "hash": "ccceb2ce52cd4bc4", "src": "db2@1.60.1.70124"}
-{"id": 220045, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220046, "field": "name", "en": "Nightmare Incursions: Feralas Mission XII", "hash": "cdc581bba29d02cc", "src": "db2@1.60.1.70124"}
-{"id": 220046, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220047, "field": "name", "en": "Nightmare Incursions: Feralas Mission XIII", "hash": "4c116507ef5781c4", "src": "db2@1.60.1.70124"}
-{"id": 220047, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220048, "field": "name", "en": "Nightmare Incursions: Feralas Mission XIV", "hash": "cdc581c8a29d02d9", "src": "db2@1.60.1.70124"}
-{"id": 220048, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220049, "field": "name", "en": "Nightmare Incursions: Feralas Mission XV", "hash": "ccceb2db52cd4bd1", "src": "db2@1.60.1.70124"}
-{"id": 220049, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220050, "field": "name", "en": "Nightmare Incursions: Feralas Mission XVI", "hash": "cdc58862a29ea139", "src": "db2@1.60.1.70124"}
-{"id": 220050, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220051, "field": "name", "en": "Nightmare Incursions: Feralas Mission XVII", "hash": "4c14cc7c22f2f2a2", "src": "db2@1.60.1.70124"}
-{"id": 220051, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220052, "field": "name", "en": "Nightmare Incursions: Feralas Mission XVIII", "hash": "eea4a47b22e928a5", "src": "db2@1.60.1.70124"}
-{"id": 220052, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70124"}
-{"id": 220053, "field": "name", "en": "Deputization Authorization: Ashenvale Mission I", "hash": "89ba7ad922be74d5", "src": "db2@1.60.1.70124"}
-{"id": 220053, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220054, "field": "name", "en": "Deputization Authorization: Ashenvale Mission II", "hash": "7a6cdeb2998ac401", "src": "db2@1.60.1.70124"}
-{"id": 220054, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220055, "field": "name", "en": "Deputization Authorization: Ashenvale Mission III", "hash": "a5b5f695c0b3a928", "src": "db2@1.60.1.70124"}
-{"id": 220055, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220056, "field": "name", "en": "Deputization Authorization: Ashenvale Mission IV", "hash": "7a6cdebf998ac40e", "src": "db2@1.60.1.70124"}
-{"id": 220056, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220057, "field": "name", "en": "Deputization Authorization: Ashenvale Mission V", "hash": "89ba7ae622be74e2", "src": "db2@1.60.1.70124"}
-{"id": 220057, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220058, "field": "name", "en": "Deputization Authorization: Ashenvale Mission VI", "hash": "7a6ce559998c626e", "src": "db2@1.60.1.70124"}
-{"id": 220058, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220059, "field": "name", "en": "Deputization Authorization: Ashenvale Mission VII", "hash": "a5b95e0af44f19f5", "src": "db2@1.60.1.70124"}
-{"id": 220059, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220060, "field": "name", "en": "Deputization Authorization: Ashenvale Mission VIII", "hash": "cddb210b4dac80ca", "src": "db2@1.60.1.70124"}
-{"id": 220060, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220061, "field": "name", "en": "Deputization Authorization: Ashenvale Mission IX", "hash": "7a6cdec1998ac410", "src": "db2@1.60.1.70124"}
-{"id": 220061, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220062, "field": "name", "en": "Deputization Authorization: Ashenvale Mission X", "hash": "89ba7ae822be74e4", "src": "db2@1.60.1.70124"}
-{"id": 220062, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220063, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XI", "hash": "7a6ce65f998ca230", "src": "db2@1.60.1.70124"}
-{"id": 220063, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220064, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XII", "hash": "a5b9e41cfc3fa177", "src": "db2@1.60.1.70124"}
-{"id": 220064, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220065, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XIII", "hash": "ce1fbc41687c68d9", "src": "db2@1.60.1.70124"}
-{"id": 220065, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220066, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XIV", "hash": "a5b9e429fc3fa184", "src": "db2@1.60.1.70124"}
-{"id": 220066, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220067, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XV", "hash": "7a6ce66c998ca23d", "src": "db2@1.60.1.70124"}
-{"id": 220067, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220068, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XVI", "hash": "a5b9eac3fc413fe4", "src": "db2@1.60.1.70124"}
-{"id": 220068, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220069, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XVII", "hash": "ce2323b69c17d9a6", "src": "db2@1.60.1.70124"}
-{"id": 220069, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220070, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XVIII", "hash": "7bfb48781452af9f", "src": "db2@1.60.1.70124"}
-{"id": 220070, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220071, "field": "name", "en": "Deputization Authorization: Hinterlands Mission I", "hash": "4f2cc47a4f84632f", "src": "db2@1.60.1.70124"}
-{"id": 220071, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220072, "field": "name", "en": "Deputization Authorization: Hinterlands Mission II", "hash": "83e88b7feb5e85de", "src": "db2@1.60.1.70124"}
-{"id": 220072, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220073, "field": "name", "en": "Deputization Authorization: Hinterlands Mission III", "hash": "7fff6395504b7ca6", "src": "db2@1.60.1.70124"}
-{"id": 220073, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220074, "field": "name", "en": "Deputization Authorization: Hinterlands Mission IV", "hash": "83e88b8ceb5e85eb", "src": "db2@1.60.1.70124"}
-{"id": 220074, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220075, "field": "name", "en": "Deputization Authorization: Hinterlands Mission V", "hash": "4f2cc4874f84633c", "src": "db2@1.60.1.70124"}
-{"id": 220075, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220076, "field": "name", "en": "Deputization Authorization: Hinterlands Mission VI", "hash": "83e89226eb60244b", "src": "db2@1.60.1.70124"}
-{"id": 220076, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220077, "field": "name", "en": "Deputization Authorization: Hinterlands Mission VII", "hash": "8002cb0a83e6ed73", "src": "db2@1.60.1.70124"}
-{"id": 220077, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220078, "field": "name", "en": "Deputization Authorization: Hinterlands Mission VIII", "hash": "816de7ace4b8b688", "src": "db2@1.60.1.70124"}
-{"id": 220078, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220079, "field": "name", "en": "Deputization Authorization: Hinterlands Mission IX", "hash": "83e88b8eeb5e85ed", "src": "db2@1.60.1.70124"}
-{"id": 220079, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220080, "field": "name", "en": "Deputization Authorization: Hinterlands Mission X", "hash": "4f2cc4894f84633e", "src": "db2@1.60.1.70124"}
-{"id": 220080, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220081, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XI", "hash": "83e8932ceb60640d", "src": "db2@1.60.1.70124"}
-{"id": 220081, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220082, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XII", "hash": "8003511c8bd774f5", "src": "db2@1.60.1.70124"}
-{"id": 220082, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220083, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XIII", "hash": "81b282e2ff889e97", "src": "db2@1.60.1.70124"}
-{"id": 220083, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220084, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XIV", "hash": "800351298bd77502", "src": "db2@1.60.1.70124"}
-{"id": 220084, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220085, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XV", "hash": "83e89339eb60641a", "src": "db2@1.60.1.70124"}
-{"id": 220085, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220086, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XVI", "hash": "800357c38bd91362", "src": "db2@1.60.1.70124"}
-{"id": 220086, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220087, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XVII", "hash": "81b5ea5733240f75", "src": "db2@1.60.1.70124"}
-{"id": 220087, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220088, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XVIII", "hash": "6016ec1850912d5c", "src": "db2@1.60.1.70124"}
-{"id": 220088, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220089, "field": "name", "en": "Deputization Authorization: Feralas Mission I", "hash": "4698a8c05c7740aa", "src": "db2@1.60.1.70124"}
-{"id": 220089, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220090, "field": "name", "en": "Deputization Authorization: Feralas Mission II", "hash": "201e5b3db5a52f66", "src": "db2@1.60.1.70124"}
-{"id": 220090, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220091, "field": "name", "en": "Deputization Authorization: Feralas Mission III", "hash": "6f88b0d0a6ed836d", "src": "db2@1.60.1.70124"}
-{"id": 220091, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220092, "field": "name", "en": "Deputization Authorization: Feralas Mission IV", "hash": "201e5b4ab5a52f73", "src": "db2@1.60.1.70124"}
-{"id": 220092, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220093, "field": "name", "en": "Deputization Authorization: Feralas Mission V", "hash": "4698a8cd5c7740b7", "src": "db2@1.60.1.70124"}
-{"id": 220093, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220094, "field": "name", "en": "Deputization Authorization: Feralas Mission VI", "hash": "201e61e4b5a6cdd3", "src": "db2@1.60.1.70124"}
-{"id": 220094, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220095, "field": "name", "en": "Deputization Authorization: Feralas Mission VII", "hash": "6f8c1845da88f43a", "src": "db2@1.60.1.70124"}
-{"id": 220095, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220096, "field": "name", "en": "Deputization Authorization: Feralas Mission VIII", "hash": "14b06cb5a7f37bd9", "src": "db2@1.60.1.70124"}
-{"id": 220096, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220097, "field": "name", "en": "Deputization Authorization: Feralas Mission IX", "hash": "201e5b4cb5a52f75", "src": "db2@1.60.1.70124"}
-{"id": 220097, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220098, "field": "name", "en": "Deputization Authorization: Feralas Mission X", "hash": "4698a8cf5c7740b9", "src": "db2@1.60.1.70124"}
-{"id": 220098, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220099, "field": "name", "en": "Deputization Authorization: Feralas Mission XI", "hash": "201e62eab5a70d95", "src": "db2@1.60.1.70124"}
-{"id": 220099, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220100, "field": "name", "en": "Deputization Authorization: Feralas Mission XII", "hash": "6f8c9e57e2797bbc", "src": "db2@1.60.1.70124"}
-{"id": 220100, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220101, "field": "name", "en": "Deputization Authorization: Feralas Mission XIII", "hash": "14f507ebc2c363e8", "src": "db2@1.60.1.70124"}
-{"id": 220101, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220102, "field": "name", "en": "Deputization Authorization: Feralas Mission XIV", "hash": "6f8c9e64e2797bc9", "src": "db2@1.60.1.70124"}
-{"id": 220102, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220103, "field": "name", "en": "Deputization Authorization: Feralas Mission XV", "hash": "201e62f7b5a70da2", "src": "db2@1.60.1.70124"}
-{"id": 220103, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220104, "field": "name", "en": "Deputization Authorization: Feralas Mission XVI", "hash": "6f8ca4fee27b1a29", "src": "db2@1.60.1.70124"}
-{"id": 220104, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220105, "field": "name", "en": "Deputization Authorization: Feralas Mission XVII", "hash": "14f86f60f65ed4b5", "src": "db2@1.60.1.70124"}
-{"id": 220105, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220106, "field": "name", "en": "Deputization Authorization: Feralas Mission XVIII", "hash": "bb20fe9b051ce7ec", "src": "db2@1.60.1.70124"}
-{"id": 220106, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70124"}
-{"id": 220164, "field": "name", "en": "Rune of the Gladiator", "hash": "60928dbc9035cf38", "src": "db2@1.60.1.70124"}
-{"id": 220164, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220165, "field": "name", "en": "Rune of Wrath", "hash": "aac254d8257eefc9", "src": "db2@1.60.1.70124"}
-{"id": 220165, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220166, "field": "name", "en": "Fiery Infernal Core", "hash": "f4dc2b348d489bb9", "src": "db2@1.60.1.70124"}
-{"id": 220167, "field": "name", "en": "Shimmering Grave Dust", "hash": "4a743130120b972b", "src": "db2@1.60.1.70124"}
-{"id": 220167, "field": "description", "en": "Grave dust from the resting place of one murdered by those most loved...", "hash": "595f352f838a9b08", "src": "db2@1.60.1.70124"}
-{"id": 220168, "field": "name", "en": "Triple-Brewed Molten Lager", "hash": "788ba1c9ca54693c", "src": "db2@1.60.1.70124"}
-{"id": 220168, "field": "description", "en": "An elixir of fire, created with steady hands and an unsteady mind...", "hash": "297076f62e878a6b", "src": "db2@1.60.1.70124"}
-{"id": 220169, "field": "name", "en": "Symbol of Faith", "hash": "ec641f15068487dc", "src": "db2@1.60.1.70124"}
-{"id": 220169, "field": "description", "en": "A symbol of faith, gifted from one with newly discovered purpose...", "hash": "ebc057634e9128be", "src": "db2@1.60.1.70124"}
-{"id": 220213, "field": "name", "en": "Fel Lifeblood", "hash": "532ddbcdf5a86b92", "src": "db2@1.60.1.70124"}
-{"id": 220214, "field": "name", "en": "Infernal Chain Link", "hash": "a68ef40dac16e042", "src": "db2@1.60.1.70124"}
-{"id": 220216, "field": "name", "en": "Infernal Lasso", "hash": "07a60fe4118ca704", "src": "db2@1.60.1.70124"}
-{"id": 220216, "field": "description", "en": "Weaken Calefactus the Unleashed.", "hash": "bcba3518e9505e31", "src": "db2@1.60.1.70124"}
-{"id": 220217, "field": "name", "en": "Rune of the Ravenous", "hash": "dc4f0f9560edaf1b", "src": "db2@1.60.1.70124"}
-{"id": 220217, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220345, "field": "name", "en": "Sanguine Sorcery", "hash": "b07ca90062e39043", "src": "db2@1.60.1.70124"}
-{"id": 220345, "field": "description", "en": "Outlines a variety of powerful blood rituals. A controversial addition to any library's collection.", "hash": "d9cba5ad5c0ba268", "src": "db2@1.60.1.70124"}
-{"id": 220346, "field": "name", "en": "Legends of the Tidesages", "hash": "caf7c331c2292471", "src": "db2@1.60.1.70124"}
-{"id": 220346, "field": "description", "en": "Covered in illegible notes and diagrams scrawled by an unsteady hand. It could still be a decent addition to any library's collection.", "hash": "e3ef334cb5aa06a6", "src": "db2@1.60.1.70124"}
-{"id": 220347, "field": "name", "en": "The Liminal and the Arcane", "hash": "99a14583161d2a15", "src": "db2@1.60.1.70124"}
-{"id": 220347, "field": "description", "en": "The words swim on the page, defying attempts to read them. A puzzling addition to any library's collection.", "hash": "fbfc8bcb5dbba787", "src": "db2@1.60.1.70124"}
-{"id": 220348, "field": "name", "en": "Everyday Etiquette", "hash": "cb655342bbe93a80", "src": "db2@1.60.1.70124"}
-{"id": 220348, "field": "description", "en": "A guide to the role of elementary magic in polite Highborne society.  A fine addition to any library's collection.", "hash": "4cbbb1a5f98c9669", "src": "db2@1.60.1.70124"}
-{"id": 220349, "field": "name", "en": "Stonewrought Design", "hash": "eff6b9fbc8236e9d", "src": "db2@1.60.1.70124"}
-{"id": 220349, "field": "description", "en": "Sturdy architectural techniques capable of withstanding all but the most cataclysmic disasters.  A fine addition to any library's collection.", "hash": "0f4f478383e184e0", "src": "db2@1.60.1.70124"}
-{"id": 220350, "field": "name", "en": "Venomous Journeys", "hash": "12b3333fea2e7a71", "src": "db2@1.60.1.70124"}
-{"id": 220350, "field": "description", "en": "Notes on the mind-altering properties of various toxins and venoms.  A fine addition to any library's collection.", "hash": "9a63e4015dbc687f", "src": "db2@1.60.1.70124"}
-{"id": 220351, "field": "name", "en": "Murky Air Sapta", "hash": "7af026ba06f67764", "src": "db2@1.60.1.70124"}
-{"id": 220351, "field": "description", "en": "Allows the shaman to see elemental spirits.\nA murky concoction. Strange ill-gotten influence taints the otherwise recognizable magic.", "hash": "30414fb112d10418", "src": "db2@1.60.1.70124"}
-{"id": 220352, "field": "name", "en": "A Mind of Metal", "hash": "db1a6c5d87da9b03", "src": "db2@1.60.1.70124"}
-{"id": 220352, "field": "description", "en": "Dwarven techniques for applying magic to metallurgy, strip-mining and heavy industry.  An informative, if bleak, addition to any library's collection.", "hash": "5e1acf713316093d", "src": "db2@1.60.1.70124"}
-{"id": 220353, "field": "name", "en": "Conjurer's Codex", "hash": "36983124473a6f5d", "src": "db2@1.60.1.70124"}
-{"id": 220353, "field": "description", "en": "A pre-war collection of spells and arcane theories that have largely fallen out of modern use.  A fine addition to any library's collection.", "hash": "c9653d3e76057909", "src": "db2@1.60.1.70124"}
-{"id": 220360, "field": "name", "en": "Rune of Efflorescence", "hash": "514dfbbfaf5a6aec", "src": "db2@1.60.1.70124"}
-{"id": 220360, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220375, "field": "name", "en": "Fragment of Air", "hash": "b004fb6c1838fd20", "src": "db2@1.60.1.70124"}
-{"id": 220375, "field": "description", "en": "Combine the Fragment of Air with Elemental Essences. May help with finding the corrupted shrine.", "hash": "13e8c532b5606773", "src": "db2@1.60.1.70124"}
-{"id": 220446, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70124"}
-{"id": 220510, "field": "name", "en": "Elemental Essence", "hash": "0c7314a01f89382e", "src": "db2@1.60.1.70124"}
-{"id": 220525, "field": "name", "en": "Glowing Fragment of Air", "hash": "d9c98f9ca47e3256", "src": "db2@1.60.1.70124"}
-{"id": 220606, "field": "name", "en": "Idol of the Dream", "hash": "ee8c6fe51e7595ae", "src": "db2@1.60.1.70124"}
-{"id": 220606, "field": "description", "en": "Increases the duration of Rip by ${$s1/1000} sec.", "hash": "cde0715980454591", "src": "db2@1.60.1.70124"}
-{"id": 220610, "field": "name", "en": "Rune of Mental Dexterity", "hash": "33b3941ab9debe72", "src": "db2@1.60.1.70124"}
-{"id": 220610, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220612, "field": "name", "en": "Rune of Tidal Waves", "hash": "e2d2b3f3015369eb", "src": "db2@1.60.1.70124"}
-{"id": 220612, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220613, "field": "name", "en": "Rune of Rolling Thunder", "hash": "74bab0e6515692f1", "src": "db2@1.60.1.70124"}
-{"id": 220613, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220614, "field": "name", "en": "Rune of Static Shock", "hash": "4b41c0a527600b92", "src": "db2@1.60.1.70124"}
-{"id": 220614, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220616, "field": "name", "en": "Rune of Overcharged", "hash": "ad41fc13a0264cc0", "src": "db2@1.60.1.70124"}
-{"id": 220616, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220617, "field": "name", "en": "Rune of Pandemic", "hash": "84ea956abf04b10e", "src": "db2@1.60.1.70124"}
-{"id": 220617, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220618, "field": "name", "en": "Rune of Immolation Aura", "hash": "cca521cffe1f523b", "src": "db2@1.60.1.70124"}
-{"id": 220618, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220682, "field": "name", "en": "Rune of the Unbridled", "hash": "78fbf13b8cf70bc8", "src": "db2@1.60.1.70124"}
-{"id": 220682, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220687, "field": "name", "en": "Rune of the Raptor", "hash": "e39ca1003e7d1ac3", "src": "db2@1.60.1.70124"}
-{"id": 220687, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220754, "field": "name", "en": "Rune of the Windstorm", "hash": "cac33d303911862d", "src": "db2@1.60.1.70124"}
-{"id": 220754, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220775, "field": "name", "en": "Engineering Exchange Ticket", "hash": "1493faa8716c6d87", "src": "db2@1.60.1.70124"}
-{"id": 220775, "field": "description", "en": "It just says 'I.O.U' with a smiley face next to it.", "hash": "f96ea3980c34ef33", "src": "db2@1.60.1.70124"}
-{"id": 220791, "field": "name", "en": "Rune of the Jungle Cat", "hash": "97b8c2a59c369e6a", "src": "db2@1.60.1.70124"}
-{"id": 220791, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220792, "field": "name", "en": "Scroll of Spatial Mending", "hash": "866b0d27fb58e765", "src": "db2@1.60.1.70124"}
-{"id": 220792, "field": "description", "en": "Close a targeted Fel portal. May draw unwanted attention from the other side.", "hash": "22b41ad4a72c577b", "src": "db2@1.60.1.70124"}
-{"id": 220794, "field": "name", "en": "Knight's Plate Hauberk", "hash": "2ed19412f89db6cc", "src": "db2@1.60.1.70124"}
+{"id": 220000, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission II", "hash": "b1893bcec61ee1dd", "src": "db2@1.60.1.70170"}
+{"id": 220000, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220001, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission III", "hash": "d9399c75de7fe9e1", "src": "db2@1.60.1.70170"}
+{"id": 220001, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220002, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission IV", "hash": "b1893bdbc61ee1ea", "src": "db2@1.60.1.70170"}
+{"id": 220002, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220003, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission V", "hash": "e7f35e4ae2e1fbe1", "src": "db2@1.60.1.70170"}
+{"id": 220003, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220004, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission VI", "hash": "b1894275c620804a", "src": "db2@1.60.1.70170"}
+{"id": 220004, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220005, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission VII", "hash": "d93d03ea121b5abf", "src": "db2@1.60.1.70170"}
+{"id": 220005, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220006, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission VIII", "hash": "2a3903323a080979", "src": "db2@1.60.1.70170"}
+{"id": 220006, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220007, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission IX", "hash": "b1893bddc61ee1ec", "src": "db2@1.60.1.70170"}
+{"id": 220007, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220008, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission X", "hash": "e7f35e4ce2e1fbe3", "src": "db2@1.60.1.70170"}
+{"id": 220008, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220009, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XI", "hash": "b189437bc620c00c", "src": "db2@1.60.1.70170"}
+{"id": 220009, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220010, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XII", "hash": "d93d89fc1a0be241", "src": "db2@1.60.1.70170"}
+{"id": 220010, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220011, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XIII", "hash": "2a7d9e6854d7f188", "src": "db2@1.60.1.70170"}
+{"id": 220011, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220012, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XIV", "hash": "d93d8a091a0be24e", "src": "db2@1.60.1.70170"}
+{"id": 220012, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220013, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XV", "hash": "b1894388c620c019", "src": "db2@1.60.1.70170"}
+{"id": 220013, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220014, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XVI", "hash": "d93d90a31a0d80ae", "src": "db2@1.60.1.70170"}
+{"id": 220014, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220015, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XVII", "hash": "2a8105dd88736255", "src": "db2@1.60.1.70170"}
+{"id": 220015, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220016, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission XVIII", "hash": "c00600c9e652d8cb", "src": "db2@1.60.1.70170"}
+{"id": 220016, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220017, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission I", "hash": "82b06a5a6d50a3e8", "src": "db2@1.60.1.70170"}
+{"id": 220017, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220018, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission II", "hash": "e0466da1d7ba0e8d", "src": "db2@1.60.1.70170"}
+{"id": 220018, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220019, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission III", "hash": "c40a1be6224ba5e3", "src": "db2@1.60.1.70170"}
+{"id": 220019, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220020, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission IV", "hash": "e0466daed7ba0e9a", "src": "db2@1.60.1.70170"}
+{"id": 220020, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220021, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission V", "hash": "82b06a676d50a3f5", "src": "db2@1.60.1.70170"}
+{"id": 220021, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220022, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission VI", "hash": "e0467448d7bbacfa", "src": "db2@1.60.1.70170"}
+{"id": 220022, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220023, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission VII", "hash": "c40d835b55e716b0", "src": "db2@1.60.1.70170"}
+{"id": 220023, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220024, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission VIII", "hash": "52ea39ce7bdaf6cb", "src": "db2@1.60.1.70170"}
+{"id": 220024, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220025, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission IX", "hash": "e0466db0d7ba0e9c", "src": "db2@1.60.1.70170"}
+{"id": 220025, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220026, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission X", "hash": "82b06a696d50a3f7", "src": "db2@1.60.1.70170"}
+{"id": 220026, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220027, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XI", "hash": "e046754ed7bbecbc", "src": "db2@1.60.1.70170"}
+{"id": 220027, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220028, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XII", "hash": "c40e096d5dd79e32", "src": "db2@1.60.1.70170"}
+{"id": 220028, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220029, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XIII", "hash": "532ed50496aadeda", "src": "db2@1.60.1.70170"}
+{"id": 220029, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220030, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XIV", "hash": "c40e097a5dd79e3f", "src": "db2@1.60.1.70170"}
+{"id": 220030, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220031, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XV", "hash": "e046755bd7bbecc9", "src": "db2@1.60.1.70170"}
+{"id": 220031, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220032, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XVI", "hash": "c40e10145dd93c9f", "src": "db2@1.60.1.70170"}
+{"id": 220032, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220033, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XVII", "hash": "53323c79ca464fa7", "src": "db2@1.60.1.70170"}
+{"id": 220033, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220034, "field": "name", "en": "Nightmare Incursions: Hinterlands Mission XVIII", "hash": "92b4f3064b72e740", "src": "db2@1.60.1.70170"}
+{"id": 220034, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220035, "field": "name", "en": "Nightmare Incursions: Feralas Mission I", "hash": "6151b321ac31662b", "src": "db2@1.60.1.70170"}
+{"id": 220035, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220036, "field": "name", "en": "Nightmare Incursions: Feralas Mission II", "hash": "ccceab2152cb6d95", "src": "db2@1.60.1.70170"}
+{"id": 220036, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220037, "field": "name", "en": "Nightmare Incursions: Feralas Mission III", "hash": "cdc1943467110a7d", "src": "db2@1.60.1.70170"}
+{"id": 220037, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220038, "field": "name", "en": "Nightmare Incursions: Feralas Mission IV", "hash": "ccceab2e52cb6da2", "src": "db2@1.60.1.70170"}
+{"id": 220038, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220039, "field": "name", "en": "Nightmare Incursions: Feralas Mission V", "hash": "6151b32eac316638", "src": "db2@1.60.1.70170"}
+{"id": 220039, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220040, "field": "name", "en": "Nightmare Incursions: Feralas Mission VI", "hash": "ccceb1c852cd0c02", "src": "db2@1.60.1.70170"}
+{"id": 220040, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220041, "field": "name", "en": "Nightmare Incursions: Feralas Mission VII", "hash": "cdc4fba99aac7b4a", "src": "db2@1.60.1.70170"}
+{"id": 220041, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220042, "field": "name", "en": "Nightmare Incursions: Feralas Mission VIII", "hash": "4bccc9d1d48799b5", "src": "db2@1.60.1.70170"}
+{"id": 220042, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220043, "field": "name", "en": "Nightmare Incursions: Feralas Mission IX", "hash": "ccceab3052cb6da4", "src": "db2@1.60.1.70170"}
+{"id": 220043, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220044, "field": "name", "en": "Nightmare Incursions: Feralas Mission X", "hash": "6151b330ac31663a", "src": "db2@1.60.1.70170"}
+{"id": 220044, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220045, "field": "name", "en": "Nightmare Incursions: Feralas Mission XI", "hash": "ccceb2ce52cd4bc4", "src": "db2@1.60.1.70170"}
+{"id": 220045, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220046, "field": "name", "en": "Nightmare Incursions: Feralas Mission XII", "hash": "cdc581bba29d02cc", "src": "db2@1.60.1.70170"}
+{"id": 220046, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220047, "field": "name", "en": "Nightmare Incursions: Feralas Mission XIII", "hash": "4c116507ef5781c4", "src": "db2@1.60.1.70170"}
+{"id": 220047, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220048, "field": "name", "en": "Nightmare Incursions: Feralas Mission XIV", "hash": "cdc581c8a29d02d9", "src": "db2@1.60.1.70170"}
+{"id": 220048, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220049, "field": "name", "en": "Nightmare Incursions: Feralas Mission XV", "hash": "ccceb2db52cd4bd1", "src": "db2@1.60.1.70170"}
+{"id": 220049, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220050, "field": "name", "en": "Nightmare Incursions: Feralas Mission XVI", "hash": "cdc58862a29ea139", "src": "db2@1.60.1.70170"}
+{"id": 220050, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220051, "field": "name", "en": "Nightmare Incursions: Feralas Mission XVII", "hash": "4c14cc7c22f2f2a2", "src": "db2@1.60.1.70170"}
+{"id": 220051, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220052, "field": "name", "en": "Nightmare Incursions: Feralas Mission XVIII", "hash": "eea4a47b22e928a5", "src": "db2@1.60.1.70170"}
+{"id": 220052, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70170"}
+{"id": 220053, "field": "name", "en": "Deputization Authorization: Ashenvale Mission I", "hash": "89ba7ad922be74d5", "src": "db2@1.60.1.70170"}
+{"id": 220053, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220054, "field": "name", "en": "Deputization Authorization: Ashenvale Mission II", "hash": "7a6cdeb2998ac401", "src": "db2@1.60.1.70170"}
+{"id": 220054, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220055, "field": "name", "en": "Deputization Authorization: Ashenvale Mission III", "hash": "a5b5f695c0b3a928", "src": "db2@1.60.1.70170"}
+{"id": 220055, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220056, "field": "name", "en": "Deputization Authorization: Ashenvale Mission IV", "hash": "7a6cdebf998ac40e", "src": "db2@1.60.1.70170"}
+{"id": 220056, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220057, "field": "name", "en": "Deputization Authorization: Ashenvale Mission V", "hash": "89ba7ae622be74e2", "src": "db2@1.60.1.70170"}
+{"id": 220057, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220058, "field": "name", "en": "Deputization Authorization: Ashenvale Mission VI", "hash": "7a6ce559998c626e", "src": "db2@1.60.1.70170"}
+{"id": 220058, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220059, "field": "name", "en": "Deputization Authorization: Ashenvale Mission VII", "hash": "a5b95e0af44f19f5", "src": "db2@1.60.1.70170"}
+{"id": 220059, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220060, "field": "name", "en": "Deputization Authorization: Ashenvale Mission VIII", "hash": "cddb210b4dac80ca", "src": "db2@1.60.1.70170"}
+{"id": 220060, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220061, "field": "name", "en": "Deputization Authorization: Ashenvale Mission IX", "hash": "7a6cdec1998ac410", "src": "db2@1.60.1.70170"}
+{"id": 220061, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220062, "field": "name", "en": "Deputization Authorization: Ashenvale Mission X", "hash": "89ba7ae822be74e4", "src": "db2@1.60.1.70170"}
+{"id": 220062, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220063, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XI", "hash": "7a6ce65f998ca230", "src": "db2@1.60.1.70170"}
+{"id": 220063, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220064, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XII", "hash": "a5b9e41cfc3fa177", "src": "db2@1.60.1.70170"}
+{"id": 220064, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220065, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XIII", "hash": "ce1fbc41687c68d9", "src": "db2@1.60.1.70170"}
+{"id": 220065, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220066, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XIV", "hash": "a5b9e429fc3fa184", "src": "db2@1.60.1.70170"}
+{"id": 220066, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220067, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XV", "hash": "7a6ce66c998ca23d", "src": "db2@1.60.1.70170"}
+{"id": 220067, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220068, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XVI", "hash": "a5b9eac3fc413fe4", "src": "db2@1.60.1.70170"}
+{"id": 220068, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220069, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XVII", "hash": "ce2323b69c17d9a6", "src": "db2@1.60.1.70170"}
+{"id": 220069, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220070, "field": "name", "en": "Deputization Authorization: Ashenvale Mission XVIII", "hash": "7bfb48781452af9f", "src": "db2@1.60.1.70170"}
+{"id": 220070, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220071, "field": "name", "en": "Deputization Authorization: Hinterlands Mission I", "hash": "4f2cc47a4f84632f", "src": "db2@1.60.1.70170"}
+{"id": 220071, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220072, "field": "name", "en": "Deputization Authorization: Hinterlands Mission II", "hash": "83e88b7feb5e85de", "src": "db2@1.60.1.70170"}
+{"id": 220072, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220073, "field": "name", "en": "Deputization Authorization: Hinterlands Mission III", "hash": "7fff6395504b7ca6", "src": "db2@1.60.1.70170"}
+{"id": 220073, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220074, "field": "name", "en": "Deputization Authorization: Hinterlands Mission IV", "hash": "83e88b8ceb5e85eb", "src": "db2@1.60.1.70170"}
+{"id": 220074, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220075, "field": "name", "en": "Deputization Authorization: Hinterlands Mission V", "hash": "4f2cc4874f84633c", "src": "db2@1.60.1.70170"}
+{"id": 220075, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220076, "field": "name", "en": "Deputization Authorization: Hinterlands Mission VI", "hash": "83e89226eb60244b", "src": "db2@1.60.1.70170"}
+{"id": 220076, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220077, "field": "name", "en": "Deputization Authorization: Hinterlands Mission VII", "hash": "8002cb0a83e6ed73", "src": "db2@1.60.1.70170"}
+{"id": 220077, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220078, "field": "name", "en": "Deputization Authorization: Hinterlands Mission VIII", "hash": "816de7ace4b8b688", "src": "db2@1.60.1.70170"}
+{"id": 220078, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220079, "field": "name", "en": "Deputization Authorization: Hinterlands Mission IX", "hash": "83e88b8eeb5e85ed", "src": "db2@1.60.1.70170"}
+{"id": 220079, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220080, "field": "name", "en": "Deputization Authorization: Hinterlands Mission X", "hash": "4f2cc4894f84633e", "src": "db2@1.60.1.70170"}
+{"id": 220080, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220081, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XI", "hash": "83e8932ceb60640d", "src": "db2@1.60.1.70170"}
+{"id": 220081, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220082, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XII", "hash": "8003511c8bd774f5", "src": "db2@1.60.1.70170"}
+{"id": 220082, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220083, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XIII", "hash": "81b282e2ff889e97", "src": "db2@1.60.1.70170"}
+{"id": 220083, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220084, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XIV", "hash": "800351298bd77502", "src": "db2@1.60.1.70170"}
+{"id": 220084, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220085, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XV", "hash": "83e89339eb60641a", "src": "db2@1.60.1.70170"}
+{"id": 220085, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220086, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XVI", "hash": "800357c38bd91362", "src": "db2@1.60.1.70170"}
+{"id": 220086, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220087, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XVII", "hash": "81b5ea5733240f75", "src": "db2@1.60.1.70170"}
+{"id": 220087, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220088, "field": "name", "en": "Deputization Authorization: Hinterlands Mission XVIII", "hash": "6016ec1850912d5c", "src": "db2@1.60.1.70170"}
+{"id": 220088, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220089, "field": "name", "en": "Deputization Authorization: Feralas Mission I", "hash": "4698a8c05c7740aa", "src": "db2@1.60.1.70170"}
+{"id": 220089, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220090, "field": "name", "en": "Deputization Authorization: Feralas Mission II", "hash": "201e5b3db5a52f66", "src": "db2@1.60.1.70170"}
+{"id": 220090, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220091, "field": "name", "en": "Deputization Authorization: Feralas Mission III", "hash": "6f88b0d0a6ed836d", "src": "db2@1.60.1.70170"}
+{"id": 220091, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220092, "field": "name", "en": "Deputization Authorization: Feralas Mission IV", "hash": "201e5b4ab5a52f73", "src": "db2@1.60.1.70170"}
+{"id": 220092, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220093, "field": "name", "en": "Deputization Authorization: Feralas Mission V", "hash": "4698a8cd5c7740b7", "src": "db2@1.60.1.70170"}
+{"id": 220093, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220094, "field": "name", "en": "Deputization Authorization: Feralas Mission VI", "hash": "201e61e4b5a6cdd3", "src": "db2@1.60.1.70170"}
+{"id": 220094, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220095, "field": "name", "en": "Deputization Authorization: Feralas Mission VII", "hash": "6f8c1845da88f43a", "src": "db2@1.60.1.70170"}
+{"id": 220095, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220096, "field": "name", "en": "Deputization Authorization: Feralas Mission VIII", "hash": "14b06cb5a7f37bd9", "src": "db2@1.60.1.70170"}
+{"id": 220096, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220097, "field": "name", "en": "Deputization Authorization: Feralas Mission IX", "hash": "201e5b4cb5a52f75", "src": "db2@1.60.1.70170"}
+{"id": 220097, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220098, "field": "name", "en": "Deputization Authorization: Feralas Mission X", "hash": "4698a8cf5c7740b9", "src": "db2@1.60.1.70170"}
+{"id": 220098, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220099, "field": "name", "en": "Deputization Authorization: Feralas Mission XI", "hash": "201e62eab5a70d95", "src": "db2@1.60.1.70170"}
+{"id": 220099, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220100, "field": "name", "en": "Deputization Authorization: Feralas Mission XII", "hash": "6f8c9e57e2797bbc", "src": "db2@1.60.1.70170"}
+{"id": 220100, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220101, "field": "name", "en": "Deputization Authorization: Feralas Mission XIII", "hash": "14f507ebc2c363e8", "src": "db2@1.60.1.70170"}
+{"id": 220101, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220102, "field": "name", "en": "Deputization Authorization: Feralas Mission XIV", "hash": "6f8c9e64e2797bc9", "src": "db2@1.60.1.70170"}
+{"id": 220102, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220103, "field": "name", "en": "Deputization Authorization: Feralas Mission XV", "hash": "201e62f7b5a70da2", "src": "db2@1.60.1.70170"}
+{"id": 220103, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220104, "field": "name", "en": "Deputization Authorization: Feralas Mission XVI", "hash": "6f8ca4fee27b1a29", "src": "db2@1.60.1.70170"}
+{"id": 220104, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220105, "field": "name", "en": "Deputization Authorization: Feralas Mission XVII", "hash": "14f86f60f65ed4b5", "src": "db2@1.60.1.70170"}
+{"id": 220105, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220106, "field": "name", "en": "Deputization Authorization: Feralas Mission XVIII", "hash": "bb20fe9b051ce7ec", "src": "db2@1.60.1.70170"}
+{"id": 220106, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70170"}
+{"id": 220164, "field": "name", "en": "Rune of the Gladiator", "hash": "60928dbc9035cf38", "src": "db2@1.60.1.70170"}
+{"id": 220164, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220165, "field": "name", "en": "Rune of Wrath", "hash": "aac254d8257eefc9", "src": "db2@1.60.1.70170"}
+{"id": 220165, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220166, "field": "name", "en": "Fiery Infernal Core", "hash": "f4dc2b348d489bb9", "src": "db2@1.60.1.70170"}
+{"id": 220167, "field": "name", "en": "Shimmering Grave Dust", "hash": "4a743130120b972b", "src": "db2@1.60.1.70170"}
+{"id": 220167, "field": "description", "en": "Grave dust from the resting place of one murdered by those most loved...", "hash": "595f352f838a9b08", "src": "db2@1.60.1.70170"}
+{"id": 220168, "field": "name", "en": "Triple-Brewed Molten Lager", "hash": "788ba1c9ca54693c", "src": "db2@1.60.1.70170"}
+{"id": 220168, "field": "description", "en": "An elixir of fire, created with steady hands and an unsteady mind...", "hash": "297076f62e878a6b", "src": "db2@1.60.1.70170"}
+{"id": 220169, "field": "name", "en": "Symbol of Faith", "hash": "ec641f15068487dc", "src": "db2@1.60.1.70170"}
+{"id": 220169, "field": "description", "en": "A symbol of faith, gifted from one with newly discovered purpose...", "hash": "ebc057634e9128be", "src": "db2@1.60.1.70170"}
+{"id": 220213, "field": "name", "en": "Fel Lifeblood", "hash": "532ddbcdf5a86b92", "src": "db2@1.60.1.70170"}
+{"id": 220214, "field": "name", "en": "Infernal Chain Link", "hash": "a68ef40dac16e042", "src": "db2@1.60.1.70170"}
+{"id": 220216, "field": "name", "en": "Infernal Lasso", "hash": "07a60fe4118ca704", "src": "db2@1.60.1.70170"}
+{"id": 220216, "field": "description", "en": "Weaken Calefactus the Unleashed.", "hash": "bcba3518e9505e31", "src": "db2@1.60.1.70170"}
+{"id": 220217, "field": "name", "en": "Rune of the Ravenous", "hash": "dc4f0f9560edaf1b", "src": "db2@1.60.1.70170"}
+{"id": 220217, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220345, "field": "name", "en": "Sanguine Sorcery", "hash": "b07ca90062e39043", "src": "db2@1.60.1.70170"}
+{"id": 220345, "field": "description", "en": "Outlines a variety of powerful blood rituals. A controversial addition to any library's collection.", "hash": "d9cba5ad5c0ba268", "src": "db2@1.60.1.70170"}
+{"id": 220346, "field": "name", "en": "Legends of the Tidesages", "hash": "caf7c331c2292471", "src": "db2@1.60.1.70170"}
+{"id": 220346, "field": "description", "en": "Covered in illegible notes and diagrams scrawled by an unsteady hand. It could still be a decent addition to any library's collection.", "hash": "e3ef334cb5aa06a6", "src": "db2@1.60.1.70170"}
+{"id": 220347, "field": "name", "en": "The Liminal and the Arcane", "hash": "99a14583161d2a15", "src": "db2@1.60.1.70170"}
+{"id": 220347, "field": "description", "en": "The words swim on the page, defying attempts to read them. A puzzling addition to any library's collection.", "hash": "fbfc8bcb5dbba787", "src": "db2@1.60.1.70170"}
+{"id": 220348, "field": "name", "en": "Everyday Etiquette", "hash": "cb655342bbe93a80", "src": "db2@1.60.1.70170"}
+{"id": 220348, "field": "description", "en": "A guide to the role of elementary magic in polite Highborne society.  A fine addition to any library's collection.", "hash": "4cbbb1a5f98c9669", "src": "db2@1.60.1.70170"}
+{"id": 220349, "field": "name", "en": "Stonewrought Design", "hash": "eff6b9fbc8236e9d", "src": "db2@1.60.1.70170"}
+{"id": 220349, "field": "description", "en": "Sturdy architectural techniques capable of withstanding all but the most cataclysmic disasters.  A fine addition to any library's collection.", "hash": "0f4f478383e184e0", "src": "db2@1.60.1.70170"}
+{"id": 220350, "field": "name", "en": "Venomous Journeys", "hash": "12b3333fea2e7a71", "src": "db2@1.60.1.70170"}
+{"id": 220350, "field": "description", "en": "Notes on the mind-altering properties of various toxins and venoms.  A fine addition to any library's collection.", "hash": "9a63e4015dbc687f", "src": "db2@1.60.1.70170"}
+{"id": 220351, "field": "name", "en": "Murky Air Sapta", "hash": "7af026ba06f67764", "src": "db2@1.60.1.70170"}
+{"id": 220351, "field": "description", "en": "Allows the shaman to see elemental spirits.\nA murky concoction. Strange ill-gotten influence taints the otherwise recognizable magic.", "hash": "30414fb112d10418", "src": "db2@1.60.1.70170"}
+{"id": 220352, "field": "name", "en": "A Mind of Metal", "hash": "db1a6c5d87da9b03", "src": "db2@1.60.1.70170"}
+{"id": 220352, "field": "description", "en": "Dwarven techniques for applying magic to metallurgy, strip-mining and heavy industry.  An informative, if bleak, addition to any library's collection.", "hash": "5e1acf713316093d", "src": "db2@1.60.1.70170"}
+{"id": 220353, "field": "name", "en": "Conjurer's Codex", "hash": "36983124473a6f5d", "src": "db2@1.60.1.70170"}
+{"id": 220353, "field": "description", "en": "A pre-war collection of spells and arcane theories that have largely fallen out of modern use.  A fine addition to any library's collection.", "hash": "c9653d3e76057909", "src": "db2@1.60.1.70170"}
+{"id": 220360, "field": "name", "en": "Rune of Efflorescence", "hash": "514dfbbfaf5a6aec", "src": "db2@1.60.1.70170"}
+{"id": 220360, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220375, "field": "name", "en": "Fragment of Air", "hash": "b004fb6c1838fd20", "src": "db2@1.60.1.70170"}
+{"id": 220375, "field": "description", "en": "Combine the Fragment of Air with Elemental Essences. May help with finding the corrupted shrine.", "hash": "13e8c532b5606773", "src": "db2@1.60.1.70170"}
+{"id": 220446, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70170"}
+{"id": 220510, "field": "name", "en": "Elemental Essence", "hash": "0c7314a01f89382e", "src": "db2@1.60.1.70170"}
+{"id": 220525, "field": "name", "en": "Glowing Fragment of Air", "hash": "d9c98f9ca47e3256", "src": "db2@1.60.1.70170"}
+{"id": 220606, "field": "name", "en": "Idol of the Dream", "hash": "ee8c6fe51e7595ae", "src": "db2@1.60.1.70170"}
+{"id": 220606, "field": "description", "en": "Increases the duration of Rip by ${$s1/1000} sec.", "hash": "cde0715980454591", "src": "db2@1.60.1.70170"}
+{"id": 220610, "field": "name", "en": "Rune of Mental Dexterity", "hash": "33b3941ab9debe72", "src": "db2@1.60.1.70170"}
+{"id": 220610, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220612, "field": "name", "en": "Rune of Tidal Waves", "hash": "e2d2b3f3015369eb", "src": "db2@1.60.1.70170"}
+{"id": 220612, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220613, "field": "name", "en": "Rune of Rolling Thunder", "hash": "74bab0e6515692f1", "src": "db2@1.60.1.70170"}
+{"id": 220613, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220614, "field": "name", "en": "Rune of Static Shock", "hash": "4b41c0a527600b92", "src": "db2@1.60.1.70170"}
+{"id": 220614, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220616, "field": "name", "en": "Rune of Overcharged", "hash": "ad41fc13a0264cc0", "src": "db2@1.60.1.70170"}
+{"id": 220616, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220617, "field": "name", "en": "Rune of Pandemic", "hash": "84ea956abf04b10e", "src": "db2@1.60.1.70170"}
+{"id": 220617, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220618, "field": "name", "en": "Rune of Immolation Aura", "hash": "cca521cffe1f523b", "src": "db2@1.60.1.70170"}
+{"id": 220618, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220682, "field": "name", "en": "Rune of the Unbridled", "hash": "78fbf13b8cf70bc8", "src": "db2@1.60.1.70170"}
+{"id": 220682, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220687, "field": "name", "en": "Rune of the Raptor", "hash": "e39ca1003e7d1ac3", "src": "db2@1.60.1.70170"}
+{"id": 220687, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220754, "field": "name", "en": "Rune of the Windstorm", "hash": "cac33d303911862d", "src": "db2@1.60.1.70170"}
+{"id": 220754, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220775, "field": "name", "en": "Engineering Exchange Ticket", "hash": "1493faa8716c6d87", "src": "db2@1.60.1.70170"}
+{"id": 220775, "field": "description", "en": "It just says 'I.O.U' with a smiley face next to it.", "hash": "f96ea3980c34ef33", "src": "db2@1.60.1.70170"}
+{"id": 220791, "field": "name", "en": "Rune of the Jungle Cat", "hash": "97b8c2a59c369e6a", "src": "db2@1.60.1.70170"}
+{"id": 220791, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220792, "field": "name", "en": "Scroll of Spatial Mending", "hash": "866b0d27fb58e765", "src": "db2@1.60.1.70170"}
+{"id": 220792, "field": "description", "en": "Close a targeted Fel portal. May draw unwanted attention from the other side.", "hash": "22b41ad4a72c577b", "src": "db2@1.60.1.70170"}
+{"id": 220794, "field": "name", "en": "Knight's Plate Hauberk", "hash": "2ed19412f89db6cc", "src": "db2@1.60.1.70170"}
 {"id": 220794, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220795, "field": "name", "en": "Knight-Lieutenant's Plate Pauldrons", "hash": "27141754bf3406d3", "src": "db2@1.60.1.70124"}
+{"id": 220795, "field": "name", "en": "Knight-Lieutenant's Plate Pauldrons", "hash": "27141754bf3406d3", "src": "db2@1.60.1.70170"}
 {"id": 220795, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220796, "field": "name", "en": "Blood Guard's Plate Pauldrons", "hash": "7f69d3dffe7d43e9", "src": "db2@1.60.1.70124"}
+{"id": 220796, "field": "name", "en": "Blood Guard's Plate Pauldrons", "hash": "7f69d3dffe7d43e9", "src": "db2@1.60.1.70170"}
 {"id": 220796, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220797, "field": "name", "en": "Knight's Plate Leggings", "hash": "3ce0318bd28c4a6f", "src": "db2@1.60.1.70124"}
+{"id": 220797, "field": "name", "en": "Knight's Plate Leggings", "hash": "3ce0318bd28c4a6f", "src": "db2@1.60.1.70170"}
 {"id": 220797, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220798, "field": "name", "en": "Stone Guard's Plate Leggings", "hash": "c65dc58de81aff5b", "src": "db2@1.60.1.70124"}
+{"id": 220798, "field": "name", "en": "Stone Guard's Plate Leggings", "hash": "c65dc58de81aff5b", "src": "db2@1.60.1.70170"}
 {"id": 220798, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220799, "field": "name", "en": "Sergeant Major's Plate Greaves", "hash": "74fd7abf6b6c4bb5", "src": "db2@1.60.1.70124"}
-{"id": 220800, "field": "name", "en": "First Sergeant's Plate Greaves", "hash": "d10beedb751860f1", "src": "db2@1.60.1.70124"}
-{"id": 220801, "field": "name", "en": "Stone Guard's Plate Armor", "hash": "cd1f0d071021cf6f", "src": "db2@1.60.1.70124"}
+{"id": 220799, "field": "name", "en": "Sergeant Major's Plate Greaves", "hash": "74fd7abf6b6c4bb5", "src": "db2@1.60.1.70170"}
+{"id": 220800, "field": "name", "en": "First Sergeant's Plate Greaves", "hash": "d10beedb751860f1", "src": "db2@1.60.1.70170"}
+{"id": 220801, "field": "name", "en": "Stone Guard's Plate Armor", "hash": "cd1f0d071021cf6f", "src": "db2@1.60.1.70170"}
 {"id": 220801, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220803, "field": "name", "en": "Blood Guard's Plate Helm", "hash": "2fba3eb99aa73d09", "src": "db2@1.60.1.70124"}
+{"id": 220803, "field": "name", "en": "Blood Guard's Plate Helm", "hash": "2fba3eb99aa73d09", "src": "db2@1.60.1.70170"}
 {"id": 220803, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 220804, "field": "name", "en": "Knight-Lieutenant's Plate Helm", "hash": "0f8f310a196b4611", "src": "db2@1.60.1.70124"}
+{"id": 220804, "field": "name", "en": "Knight-Lieutenant's Plate Helm", "hash": "0f8f310a196b4611", "src": "db2@1.60.1.70170"}
 {"id": 220804, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 220806, "field": "name", "en": "Sergeant Major's Plate Gauntlets", "hash": "7434805d810a03c2", "src": "db2@1.60.1.70124"}
-{"id": 220807, "field": "name", "en": "First Sergeant's Plate Gauntlets", "hash": "791a61e01e0177c2", "src": "db2@1.60.1.70124"}
-{"id": 220808, "field": "name", "en": "Knight-Lieutenant's Imbued Pauldrons", "hash": "62847d1ff8c9a619", "src": "db2@1.60.1.70124"}
+{"id": 220806, "field": "name", "en": "Sergeant Major's Plate Gauntlets", "hash": "7434805d810a03c2", "src": "db2@1.60.1.70170"}
+{"id": 220807, "field": "name", "en": "First Sergeant's Plate Gauntlets", "hash": "791a61e01e0177c2", "src": "db2@1.60.1.70170"}
+{"id": 220808, "field": "name", "en": "Knight-Lieutenant's Imbued Pauldrons", "hash": "62847d1ff8c9a619", "src": "db2@1.60.1.70170"}
 {"id": 220808, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220809, "field": "name", "en": "Knight's Imbued Leggings", "hash": "0f0c4819927c057e", "src": "db2@1.60.1.70124"}
+{"id": 220809, "field": "name", "en": "Knight's Imbued Leggings", "hash": "0f0c4819927c057e", "src": "db2@1.60.1.70170"}
 {"id": 220809, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220810, "field": "name", "en": "Knight-Lieutenant's Imbued Helmet", "hash": "be348f18920fc7fc", "src": "db2@1.60.1.70124"}
+{"id": 220810, "field": "name", "en": "Knight-Lieutenant's Imbued Helmet", "hash": "be348f18920fc7fc", "src": "db2@1.60.1.70170"}
 {"id": 220810, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220811, "field": "name", "en": "Sergeant Major's Imbued Greaves", "hash": "49dc595f34a56a0e", "src": "db2@1.60.1.70124"}
+{"id": 220811, "field": "name", "en": "Sergeant Major's Imbued Greaves", "hash": "49dc595f34a56a0e", "src": "db2@1.60.1.70170"}
 {"id": 220811, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220812, "field": "name", "en": "Sergeant Major's Imbued Gauntlets", "hash": "444dfb868ad27f1c", "src": "db2@1.60.1.70124"}
+{"id": 220812, "field": "name", "en": "Sergeant Major's Imbued Gauntlets", "hash": "444dfb868ad27f1c", "src": "db2@1.60.1.70170"}
 {"id": 220812, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 220813, "field": "name", "en": "Knight's Imbued Armor", "hash": "e13b5cc71fcb09e2", "src": "db2@1.60.1.70124"}
+{"id": 220813, "field": "name", "en": "Knight's Imbued Armor", "hash": "e13b5cc71fcb09e2", "src": "db2@1.60.1.70170"}
 {"id": 220813, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220814, "field": "name", "en": "Sergeant Major's Lamellar Boots", "hash": "2df3156058478382", "src": "db2@1.60.1.70124"}
+{"id": 220814, "field": "name", "en": "Sergeant Major's Lamellar Boots", "hash": "2df3156058478382", "src": "db2@1.60.1.70170"}
 {"id": 220814, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 220815, "field": "name", "en": "Knight's Lamellar Chestplate", "hash": "856a6d65009e5bd5", "src": "db2@1.60.1.70124"}
+{"id": 220815, "field": "name", "en": "Knight's Lamellar Chestplate", "hash": "856a6d65009e5bd5", "src": "db2@1.60.1.70170"}
 {"id": 220815, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 220816, "field": "name", "en": "Knight's Lamellar Legplates", "hash": "8b3d8c518484ce23", "src": "db2@1.60.1.70124"}
+{"id": 220816, "field": "name", "en": "Knight's Lamellar Legplates", "hash": "8b3d8c518484ce23", "src": "db2@1.60.1.70170"}
 {"id": 220816, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 220817, "field": "name", "en": "Sergeant Major's Lamellar Gauntlets", "hash": "1b2cdae964f1de75", "src": "db2@1.60.1.70124"}
+{"id": 220817, "field": "name", "en": "Sergeant Major's Lamellar Gauntlets", "hash": "1b2cdae964f1de75", "src": "db2@1.60.1.70170"}
 {"id": 220817, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220818, "field": "name", "en": "Knight-Lieutenant's Lamellar Pauldrons", "hash": "ac54a0b404d859ac", "src": "db2@1.60.1.70124"}
+{"id": 220818, "field": "name", "en": "Knight-Lieutenant's Lamellar Pauldrons", "hash": "ac54a0b404d859ac", "src": "db2@1.60.1.70170"}
 {"id": 220818, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 220819, "field": "name", "en": "Knight-Lieutenant's Lamellar Helm", "hash": "c9b0e35a8da49e31", "src": "db2@1.60.1.70124"}
+{"id": 220819, "field": "name", "en": "Knight-Lieutenant's Lamellar Helm", "hash": "c9b0e35a8da49e31", "src": "db2@1.60.1.70170"}
 {"id": 220819, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 220820, "field": "name", "en": "Blood Guard's Mail Helmet", "hash": "ca69ddcc970d1466", "src": "db2@1.60.1.70124"}
+{"id": 220820, "field": "name", "en": "Blood Guard's Mail Helmet", "hash": "ca69ddcc970d1466", "src": "db2@1.60.1.70170"}
 {"id": 220820, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220821, "field": "name", "en": "Blood Guard's Chain Helmet", "hash": "74db5568aa8cbbb7", "src": "db2@1.60.1.70124"}
+{"id": 220821, "field": "name", "en": "Blood Guard's Chain Helmet", "hash": "74db5568aa8cbbb7", "src": "db2@1.60.1.70170"}
 {"id": 220821, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220822, "field": "name", "en": "Knight-Lieutenant's Chain Helmet", "hash": "0ec2e3254063178f", "src": "db2@1.60.1.70124"}
+{"id": 220822, "field": "name", "en": "Knight-Lieutenant's Chain Helmet", "hash": "0ec2e3254063178f", "src": "db2@1.60.1.70170"}
 {"id": 220822, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220823, "field": "name", "en": "Blood Guard's Mail Epaulets", "hash": "eeca403acfd61f2f", "src": "db2@1.60.1.70124"}
+{"id": 220823, "field": "name", "en": "Blood Guard's Mail Epaulets", "hash": "eeca403acfd61f2f", "src": "db2@1.60.1.70170"}
 {"id": 220823, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220824, "field": "name", "en": "Blood Guard's Chain Epaulets", "hash": "9f14d8b3fa795a99", "src": "db2@1.60.1.70124"}
+{"id": 220824, "field": "name", "en": "Blood Guard's Chain Epaulets", "hash": "9f14d8b3fa795a99", "src": "db2@1.60.1.70170"}
 {"id": 220824, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220825, "field": "name", "en": "Knight-Lieutenant's Chain Epaulets", "hash": "a250c5ac70619955", "src": "db2@1.60.1.70124"}
+{"id": 220825, "field": "name", "en": "Knight-Lieutenant's Chain Epaulets", "hash": "a250c5ac70619955", "src": "db2@1.60.1.70170"}
 {"id": 220825, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220826, "field": "name", "en": "Stone Guard's Mail Armor", "hash": "da32f5815207db42", "src": "db2@1.60.1.70124"}
+{"id": 220826, "field": "name", "en": "Stone Guard's Mail Armor", "hash": "da32f5815207db42", "src": "db2@1.60.1.70170"}
 {"id": 220826, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220827, "field": "name", "en": "Stone Guard's Chain Armor", "hash": "a426a7edaac6e6fa", "src": "db2@1.60.1.70124"}
+{"id": 220827, "field": "name", "en": "Stone Guard's Chain Armor", "hash": "a426a7edaac6e6fa", "src": "db2@1.60.1.70170"}
 {"id": 220827, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220828, "field": "name", "en": "Knight's Chain Armor", "hash": "eb0a46a038fa55c0", "src": "db2@1.60.1.70124"}
+{"id": 220828, "field": "name", "en": "Knight's Chain Armor", "hash": "eb0a46a038fa55c0", "src": "db2@1.60.1.70170"}
 {"id": 220828, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220829, "field": "name", "en": "Sergeant Major's Chain Gauntlets", "hash": "6e5e279f7057afd3", "src": "db2@1.60.1.70124"}
-{"id": 220830, "field": "name", "en": "First Sergeant's Chain Gauntlets", "hash": "734409220d4f23d3", "src": "db2@1.60.1.70124"}
-{"id": 220831, "field": "name", "en": "First Sergeant's Mail Gauntlets", "hash": "b9c05a47f82df50f", "src": "db2@1.60.1.70124"}
+{"id": 220829, "field": "name", "en": "Sergeant Major's Chain Gauntlets", "hash": "6e5e279f7057afd3", "src": "db2@1.60.1.70170"}
+{"id": 220830, "field": "name", "en": "First Sergeant's Chain Gauntlets", "hash": "734409220d4f23d3", "src": "db2@1.60.1.70170"}
+{"id": 220831, "field": "name", "en": "First Sergeant's Mail Gauntlets", "hash": "b9c05a47f82df50f", "src": "db2@1.60.1.70170"}
 {"id": 220831, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220832, "field": "name", "en": "Knight's Chain Legplates", "hash": "2b783d7079890ddf", "src": "db2@1.60.1.70124"}
+{"id": 220832, "field": "name", "en": "Knight's Chain Legplates", "hash": "2b783d7079890ddf", "src": "db2@1.60.1.70170"}
 {"id": 220832, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220833, "field": "name", "en": "Stone Guard's Chain Legplates", "hash": "86bafbd4b3ded2ea", "src": "db2@1.60.1.70124"}
+{"id": 220833, "field": "name", "en": "Stone Guard's Chain Legplates", "hash": "86bafbd4b3ded2ea", "src": "db2@1.60.1.70170"}
 {"id": 220833, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220834, "field": "name", "en": "Stone Guard's Mail Legplates", "hash": "00d26dc4c60d4a0f", "src": "db2@1.60.1.70124"}
+{"id": 220834, "field": "name", "en": "Stone Guard's Mail Legplates", "hash": "00d26dc4c60d4a0f", "src": "db2@1.60.1.70170"}
 {"id": 220834, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 220835, "field": "name", "en": "First Sergeant's Mail Sabatons", "hash": "7b1db88242098b62", "src": "db2@1.60.1.70124"}
-{"id": 220835, "field": "description", "en": "Minor increase to running and swimming speed. Does not stack with similar effects.", "hash": "51f5d912a9ff42ee", "src": "db2@1.60.1.70124"}
-{"id": 220836, "field": "name", "en": "First Sergeant's Chain Sabatons", "hash": "ad631f753c3c95de", "src": "db2@1.60.1.70124"}
-{"id": 220837, "field": "name", "en": "Sergeant Major's Chain Sabatons", "hash": "91fdb436e56b939d", "src": "db2@1.60.1.70124"}
-{"id": 220838, "field": "name", "en": "Stone Guard's Inscribed Chestpiece", "hash": "3d7a890e76f97a21", "src": "db2@1.60.1.70124"}
+{"id": 220835, "field": "name", "en": "First Sergeant's Mail Sabatons", "hash": "7b1db88242098b62", "src": "db2@1.60.1.70170"}
+{"id": 220835, "field": "description", "en": "Minor increase to running and swimming speed. Does not stack with similar effects.", "hash": "51f5d912a9ff42ee", "src": "db2@1.60.1.70170"}
+{"id": 220836, "field": "name", "en": "First Sergeant's Chain Sabatons", "hash": "ad631f753c3c95de", "src": "db2@1.60.1.70170"}
+{"id": 220837, "field": "name", "en": "Sergeant Major's Chain Sabatons", "hash": "91fdb436e56b939d", "src": "db2@1.60.1.70170"}
+{"id": 220838, "field": "name", "en": "Stone Guard's Inscribed Chestpiece", "hash": "3d7a890e76f97a21", "src": "db2@1.60.1.70170"}
 {"id": 220838, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 220839, "field": "name", "en": "Stone Guard's Inscribed Legplates", "hash": "212ae82e3b162090", "src": "db2@1.60.1.70124"}
+{"id": 220839, "field": "name", "en": "Stone Guard's Inscribed Legplates", "hash": "212ae82e3b162090", "src": "db2@1.60.1.70170"}
 {"id": 220839, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 220840, "field": "name", "en": "First Sergeant's Inscribed Sabatons", "hash": "eefbef592984e236", "src": "db2@1.60.1.70124"}
-{"id": 220840, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70124"}
-{"id": 220841, "field": "name", "en": "Blood Guard's Inscribed Shoulder Pads", "hash": "afe13fb9740b4205", "src": "db2@1.60.1.70124"}
+{"id": 220840, "field": "name", "en": "First Sergeant's Inscribed Sabatons", "hash": "eefbef592984e236", "src": "db2@1.60.1.70170"}
+{"id": 220840, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70170"}
+{"id": 220841, "field": "name", "en": "Blood Guard's Inscribed Shoulder Pads", "hash": "afe13fb9740b4205", "src": "db2@1.60.1.70170"}
 {"id": 220841, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 220842, "field": "name", "en": "Blood Guard's Inscribed Skullcap", "hash": "3222d7865b7b5ca1", "src": "db2@1.60.1.70124"}
+{"id": 220842, "field": "name", "en": "Blood Guard's Inscribed Skullcap", "hash": "3222d7865b7b5ca1", "src": "db2@1.60.1.70170"}
 {"id": 220842, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 220843, "field": "name", "en": "First Sergeant's Inscribed Gauntlets", "hash": "04766b785b18bd86", "src": "db2@1.60.1.70124"}
+{"id": 220843, "field": "name", "en": "First Sergeant's Inscribed Gauntlets", "hash": "04766b785b18bd86", "src": "db2@1.60.1.70170"}
 {"id": 220843, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 220844, "field": "name", "en": "Stone Guard's Pulsing Breastplate", "hash": "b4f8c68d79ef3db9", "src": "db2@1.60.1.70124"}
+{"id": 220844, "field": "name", "en": "Stone Guard's Pulsing Breastplate", "hash": "b4f8c68d79ef3db9", "src": "db2@1.60.1.70170"}
 {"id": 220844, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 220845, "field": "name", "en": "First Sergeant's Pulsing Gauntlets", "hash": "ff4a488e8ae62504", "src": "db2@1.60.1.70124"}
+{"id": 220845, "field": "name", "en": "First Sergeant's Pulsing Gauntlets", "hash": "ff4a488e8ae62504", "src": "db2@1.60.1.70170"}
 {"id": 220845, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220846, "field": "name", "en": "First Sergeant's Pulsing Greaves", "hash": "e00bebc0b99dbfa1", "src": "db2@1.60.1.70124"}
-{"id": 220846, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70124"}
-{"id": 220847, "field": "name", "en": "Stone Guard's Pulsing Legplates", "hash": "405738e7484f0fa5", "src": "db2@1.60.1.70124"}
+{"id": 220846, "field": "name", "en": "First Sergeant's Pulsing Greaves", "hash": "e00bebc0b99dbfa1", "src": "db2@1.60.1.70170"}
+{"id": 220846, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70170"}
+{"id": 220847, "field": "name", "en": "Stone Guard's Pulsing Legplates", "hash": "405738e7484f0fa5", "src": "db2@1.60.1.70170"}
 {"id": 220847, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 220848, "field": "name", "en": "Blood Guard's Pulsing Helmet", "hash": "5e5c0f3a4a191740", "src": "db2@1.60.1.70124"}
+{"id": 220848, "field": "name", "en": "Blood Guard's Pulsing Helmet", "hash": "5e5c0f3a4a191740", "src": "db2@1.60.1.70170"}
 {"id": 220848, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 220849, "field": "name", "en": "Blood Guard's Pulsing Shoulders", "hash": "079ab227b61c9163", "src": "db2@1.60.1.70124"}
+{"id": 220849, "field": "name", "en": "Blood Guard's Pulsing Shoulders", "hash": "079ab227b61c9163", "src": "db2@1.60.1.70170"}
 {"id": 220849, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220850, "field": "name", "en": "Knight-Lieutenant's Leather Headband", "hash": "978c801a56d973fe", "src": "db2@1.60.1.70124"}
+{"id": 220850, "field": "name", "en": "Knight-Lieutenant's Leather Headband", "hash": "978c801a56d973fe", "src": "db2@1.60.1.70170"}
 {"id": 220850, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 220851, "field": "name", "en": "Blood Guard's Leather Headband", "hash": "cb6bfc1cd49e5445", "src": "db2@1.60.1.70124"}
+{"id": 220851, "field": "name", "en": "Blood Guard's Leather Headband", "hash": "cb6bfc1cd49e5445", "src": "db2@1.60.1.70170"}
 {"id": 220851, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 220852, "field": "name", "en": "Knight-Lieutenant's Leather Shoulders", "hash": "8ea79adc5fb81121", "src": "db2@1.60.1.70124"}
+{"id": 220852, "field": "name", "en": "Knight-Lieutenant's Leather Shoulders", "hash": "8ea79adc5fb81121", "src": "db2@1.60.1.70170"}
 {"id": 220852, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 220853, "field": "name", "en": "Blood Guard's Leather Shoulders", "hash": "1a041069c0ead2c1", "src": "db2@1.60.1.70124"}
+{"id": 220853, "field": "name", "en": "Blood Guard's Leather Shoulders", "hash": "1a041069c0ead2c1", "src": "db2@1.60.1.70170"}
 {"id": 220853, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 220854, "field": "name", "en": "Knight's Leather Armor", "hash": "538b9d196f38de67", "src": "db2@1.60.1.70124"}
+{"id": 220854, "field": "name", "en": "Knight's Leather Armor", "hash": "538b9d196f38de67", "src": "db2@1.60.1.70170"}
 {"id": 220854, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 220855, "field": "name", "en": "Stone Guard's Leather Armor", "hash": "4301d2fe40a46b10", "src": "db2@1.60.1.70124"}
+{"id": 220855, "field": "name", "en": "Stone Guard's Leather Armor", "hash": "4301d2fe40a46b10", "src": "db2@1.60.1.70170"}
 {"id": 220855, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 220856, "field": "name", "en": "Sergeant Major's Leather Gauntlets", "hash": "bb9969cd35e558a4", "src": "db2@1.60.1.70124"}
+{"id": 220856, "field": "name", "en": "Sergeant Major's Leather Gauntlets", "hash": "bb9969cd35e558a4", "src": "db2@1.60.1.70170"}
 {"id": 220856, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 220857, "field": "name", "en": "First Sergeant's Leather Gauntlets", "hash": "11b3a6d595b46662", "src": "db2@1.60.1.70124"}
+{"id": 220857, "field": "name", "en": "First Sergeant's Leather Gauntlets", "hash": "11b3a6d595b46662", "src": "db2@1.60.1.70170"}
 {"id": 220857, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 220858, "field": "name", "en": "Knight's Leather Pants", "hash": "58926a2b1f080519", "src": "db2@1.60.1.70124"}
+{"id": 220858, "field": "name", "en": "Knight's Leather Pants", "hash": "58926a2b1f080519", "src": "db2@1.60.1.70170"}
 {"id": 220858, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 220859, "field": "name", "en": "Stone Guard's Leather Pants", "hash": "4808a010f07391b1", "src": "db2@1.60.1.70124"}
+{"id": 220859, "field": "name", "en": "Stone Guard's Leather Pants", "hash": "4808a010f07391b1", "src": "db2@1.60.1.70170"}
 {"id": 220859, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 220860, "field": "name", "en": "Sergeant Major's Leather Boots", "hash": "c4c1ccd444b291b7", "src": "db2@1.60.1.70124"}
-{"id": 220860, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70124"}
-{"id": 220861, "field": "name", "en": "First Sergeant's Leather Boots", "hash": "20d040f54e5ea6f3", "src": "db2@1.60.1.70124"}
-{"id": 220861, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70124"}
-{"id": 220862, "field": "name", "en": "Sergeant Major's Crackling Leather Boots", "hash": "a32d04574adca8b7", "src": "db2@1.60.1.70124"}
+{"id": 220860, "field": "name", "en": "Sergeant Major's Leather Boots", "hash": "c4c1ccd444b291b7", "src": "db2@1.60.1.70170"}
+{"id": 220860, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70170"}
+{"id": 220861, "field": "name", "en": "First Sergeant's Leather Boots", "hash": "20d040f54e5ea6f3", "src": "db2@1.60.1.70170"}
+{"id": 220861, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70170"}
+{"id": 220862, "field": "name", "en": "Sergeant Major's Crackling Leather Boots", "hash": "a32d04574adca8b7", "src": "db2@1.60.1.70170"}
 {"id": 220862, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 220863, "field": "name", "en": "First Sergeant's Crackling Leather Boots", "hash": "e4fbac3c2b08e5b6", "src": "db2@1.60.1.70124"}
+{"id": 220863, "field": "name", "en": "First Sergeant's Crackling Leather Boots", "hash": "e4fbac3c2b08e5b6", "src": "db2@1.60.1.70170"}
 {"id": 220863, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 220864, "field": "name", "en": "Knight's Crackling Leather Leggings", "hash": "2b734b3a5ca44857", "src": "db2@1.60.1.70124"}
+{"id": 220864, "field": "name", "en": "Knight's Crackling Leather Leggings", "hash": "2b734b3a5ca44857", "src": "db2@1.60.1.70170"}
 {"id": 220864, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "9c3d16346da207a2", "src": "wago@1.15.9.69722"}
-{"id": 220865, "field": "name", "en": "Stone Guard's Crackling Leather Leggings", "hash": "818f6658650e34f1", "src": "db2@1.60.1.70124"}
+{"id": 220865, "field": "name", "en": "Stone Guard's Crackling Leather Leggings", "hash": "818f6658650e34f1", "src": "db2@1.60.1.70170"}
 {"id": 220865, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "9c3d16346da207a2", "src": "wago@1.15.9.69722"}
-{"id": 220866, "field": "name", "en": "Sergeant Major's Crackling Leather Gauntlets", "hash": "8fa0c35f05fc5bf1", "src": "db2@1.60.1.70124"}
+{"id": 220866, "field": "name", "en": "Sergeant Major's Crackling Leather Gauntlets", "hash": "8fa0c35f05fc5bf1", "src": "db2@1.60.1.70170"}
 {"id": 220866, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 220867, "field": "name", "en": "First Sergeant's Crackling Leather Gauntlets", "hash": "12117307d682abb2", "src": "db2@1.60.1.70124"}
+{"id": 220867, "field": "name", "en": "First Sergeant's Crackling Leather Gauntlets", "hash": "12117307d682abb2", "src": "db2@1.60.1.70170"}
 {"id": 220867, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 220868, "field": "name", "en": "Knight's Crackling Leather Tunic", "hash": "efa3ac474414d19c", "src": "db2@1.60.1.70124"}
+{"id": 220868, "field": "name", "en": "Knight's Crackling Leather Tunic", "hash": "efa3ac474414d19c", "src": "db2@1.60.1.70170"}
 {"id": 220868, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220869, "field": "name", "en": "Stone Guard's Crackling Leather Tunic", "hash": "35d7c41969f96dfe", "src": "db2@1.60.1.70124"}
+{"id": 220869, "field": "name", "en": "Stone Guard's Crackling Leather Tunic", "hash": "35d7c41969f96dfe", "src": "db2@1.60.1.70170"}
 {"id": 220869, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220870, "field": "name", "en": "Knight-Lieutenant's Crackling Leather Spaulders", "hash": "e5c2548a696cf3ac", "src": "db2@1.60.1.70124"}
+{"id": 220870, "field": "name", "en": "Knight-Lieutenant's Crackling Leather Spaulders", "hash": "e5c2548a696cf3ac", "src": "db2@1.60.1.70170"}
 {"id": 220870, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 220871, "field": "name", "en": "Blood Guard's Crackling Leather Spaulders", "hash": "0af2a75ddc092391", "src": "db2@1.60.1.70124"}
+{"id": 220871, "field": "name", "en": "Blood Guard's Crackling Leather Spaulders", "hash": "0af2a75ddc092391", "src": "db2@1.60.1.70170"}
 {"id": 220871, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 220872, "field": "name", "en": "Knight-Lieutenant's Crackling Leather Helmet", "hash": "1b918308c414d195", "src": "db2@1.60.1.70124"}
+{"id": 220872, "field": "name", "en": "Knight-Lieutenant's Crackling Leather Helmet", "hash": "1b918308c414d195", "src": "db2@1.60.1.70170"}
 {"id": 220872, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 220873, "field": "name", "en": "Blood Guard's Crackling Leather Helmet", "hash": "67611fa07be9eb27", "src": "db2@1.60.1.70124"}
+{"id": 220873, "field": "name", "en": "Blood Guard's Crackling Leather Helmet", "hash": "67611fa07be9eb27", "src": "db2@1.60.1.70170"}
 {"id": 220873, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 220874, "field": "name", "en": "Knight-Lieutenant's Restored Leather Helm", "hash": "a27c045d5d8c673f", "src": "db2@1.60.1.70124"}
+{"id": 220874, "field": "name", "en": "Knight-Lieutenant's Restored Leather Helm", "hash": "a27c045d5d8c673f", "src": "db2@1.60.1.70170"}
 {"id": 220874, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220875, "field": "name", "en": "Blood Guard's Restored Leather Helm", "hash": "69fb514c25b2cb73", "src": "db2@1.60.1.70124"}
+{"id": 220875, "field": "name", "en": "Blood Guard's Restored Leather Helm", "hash": "69fb514c25b2cb73", "src": "db2@1.60.1.70170"}
 {"id": 220875, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220876, "field": "name", "en": "Knight-Lieutenant's Restored Leather Spaulders", "hash": "4913eb0c8f8e3485", "src": "db2@1.60.1.70124"}
+{"id": 220876, "field": "name", "en": "Knight-Lieutenant's Restored Leather Spaulders", "hash": "4913eb0c8f8e3485", "src": "db2@1.60.1.70170"}
 {"id": 220876, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220877, "field": "name", "en": "Blood Guard's Restored Leather Spaulders", "hash": "495c97a655515e7b", "src": "db2@1.60.1.70124"}
+{"id": 220877, "field": "name", "en": "Blood Guard's Restored Leather Spaulders", "hash": "495c97a655515e7b", "src": "db2@1.60.1.70170"}
 {"id": 220877, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220878, "field": "name", "en": "Knight's Restored Leather Jerkin", "hash": "7a8fd3dc75d4ddc8", "src": "db2@1.60.1.70124"}
+{"id": 220878, "field": "name", "en": "Knight's Restored Leather Jerkin", "hash": "7a8fd3dc75d4ddc8", "src": "db2@1.60.1.70170"}
 {"id": 220878, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220879, "field": "name", "en": "Stone Guard's Restored Leather Jerkin", "hash": "c0c3eba99bb97a2a", "src": "db2@1.60.1.70124"}
+{"id": 220879, "field": "name", "en": "Stone Guard's Restored Leather Jerkin", "hash": "c0c3eba99bb97a2a", "src": "db2@1.60.1.70170"}
 {"id": 220879, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220880, "field": "name", "en": "Sergeant Major's Restored Leather Gloves", "hash": "f2cc966d1ccecced", "src": "db2@1.60.1.70124"}
+{"id": 220880, "field": "name", "en": "Sergeant Major's Restored Leather Gloves", "hash": "f2cc966d1ccecced", "src": "db2@1.60.1.70170"}
 {"id": 220880, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220881, "field": "name", "en": "First Sergeant's Restored Leather Gloves", "hash": "349b3e57fcfb09db", "src": "db2@1.60.1.70124"}
+{"id": 220881, "field": "name", "en": "First Sergeant's Restored Leather Gloves", "hash": "349b3e57fcfb09db", "src": "db2@1.60.1.70170"}
 {"id": 220881, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220882, "field": "name", "en": "Knight's Restored Leather Leggings", "hash": "cd7ec8b6caa122f5", "src": "db2@1.60.1.70124"}
+{"id": 220882, "field": "name", "en": "Knight's Restored Leather Leggings", "hash": "cd7ec8b6caa122f5", "src": "db2@1.60.1.70170"}
 {"id": 220882, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 220883, "field": "name", "en": "Stone Guard's Restored Leather Leggings", "hash": "e78ea1d5dfd5f16b", "src": "db2@1.60.1.70124"}
+{"id": 220883, "field": "name", "en": "Stone Guard's Restored Leather Leggings", "hash": "e78ea1d5dfd5f16b", "src": "db2@1.60.1.70170"}
 {"id": 220883, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 220884, "field": "name", "en": "Sergeant Major's Restored Leather Boots", "hash": "17ec363aea43c10d", "src": "db2@1.60.1.70124"}
+{"id": 220884, "field": "name", "en": "Sergeant Major's Restored Leather Boots", "hash": "17ec363aea43c10d", "src": "db2@1.60.1.70170"}
 {"id": 220884, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220885, "field": "name", "en": "First Sergeant's Restored Leather Boots", "hash": "f73423f3668b27a3", "src": "db2@1.60.1.70124"}
+{"id": 220885, "field": "name", "en": "First Sergeant's Restored Leather Boots", "hash": "f73423f3668b27a3", "src": "db2@1.60.1.70170"}
 {"id": 220885, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220886, "field": "name", "en": "Knight's Dreadweave Vest", "hash": "3e76daad55c6f960", "src": "db2@1.60.1.70124"}
+{"id": 220886, "field": "name", "en": "Knight's Dreadweave Vest", "hash": "3e76daad55c6f960", "src": "db2@1.60.1.70170"}
 {"id": 220886, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220887, "field": "name", "en": "Knight-Lieutenant's Dreadweave Mantle", "hash": "4878d9cf89caaacd", "src": "db2@1.60.1.70124"}
+{"id": 220887, "field": "name", "en": "Knight-Lieutenant's Dreadweave Mantle", "hash": "4878d9cf89caaacd", "src": "db2@1.60.1.70170"}
 {"id": 220887, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220888, "field": "name", "en": "Knight's Dreadweave Leggings", "hash": "fc1f777d5b83490e", "src": "db2@1.60.1.70124"}
+{"id": 220888, "field": "name", "en": "Knight's Dreadweave Leggings", "hash": "fc1f777d5b83490e", "src": "db2@1.60.1.70170"}
 {"id": 220888, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220889, "field": "name", "en": "Knight-Lieutenant's Dreadweave Hat", "hash": "8d065373052e8453", "src": "db2@1.60.1.70124"}
+{"id": 220889, "field": "name", "en": "Knight-Lieutenant's Dreadweave Hat", "hash": "8d065373052e8453", "src": "db2@1.60.1.70170"}
 {"id": 220889, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220890, "field": "name", "en": "Sergeant Major's Dreadweave Gloves", "hash": "2199c71b99000f0a", "src": "db2@1.60.1.70124"}
+{"id": 220890, "field": "name", "en": "Sergeant Major's Dreadweave Gloves", "hash": "2199c71b99000f0a", "src": "db2@1.60.1.70170"}
 {"id": 220890, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 220891, "field": "name", "en": "Sergeant Major's Dreadweave Boots", "hash": "2018c54157897e30", "src": "db2@1.60.1.70124"}
+{"id": 220891, "field": "name", "en": "Sergeant Major's Dreadweave Boots", "hash": "2018c54157897e30", "src": "db2@1.60.1.70170"}
 {"id": 220891, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 220892, "field": "name", "en": "Knight's Satin Armor", "hash": "1be962b972ce9619", "src": "db2@1.60.1.70124"}
+{"id": 220892, "field": "name", "en": "Knight's Satin Armor", "hash": "1be962b972ce9619", "src": "db2@1.60.1.70170"}
 {"id": 220892, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220893, "field": "name", "en": "Knight's Satin Leggings", "hash": "b7d3781661c32bb1", "src": "db2@1.60.1.70124"}
+{"id": 220893, "field": "name", "en": "Knight's Satin Leggings", "hash": "b7d3781661c32bb1", "src": "db2@1.60.1.70170"}
 {"id": 220893, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220894, "field": "name", "en": "Knight-Lieutenant's Satin Pads", "hash": "64b7cf8d2daa96c7", "src": "db2@1.60.1.70124"}
+{"id": 220894, "field": "name", "en": "Knight-Lieutenant's Satin Pads", "hash": "64b7cf8d2daa96c7", "src": "db2@1.60.1.70170"}
 {"id": 220894, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220895, "field": "name", "en": "Sergeant Major's Satin Boots", "hash": "990b4afe3e2bbe1f", "src": "db2@1.60.1.70124"}
+{"id": 220895, "field": "name", "en": "Sergeant Major's Satin Boots", "hash": "990b4afe3e2bbe1f", "src": "db2@1.60.1.70170"}
 {"id": 220895, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220896, "field": "name", "en": "Knight-Lieutenant's Satin Cover", "hash": "a7c1e2687c6ae399", "src": "db2@1.60.1.70124"}
+{"id": 220896, "field": "name", "en": "Knight-Lieutenant's Satin Cover", "hash": "a7c1e2687c6ae399", "src": "db2@1.60.1.70170"}
 {"id": 220896, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220897, "field": "name", "en": "Sergeant Major's Satin Gloves", "hash": "05b43808f357fb60", "src": "db2@1.60.1.70124"}
+{"id": 220897, "field": "name", "en": "Sergeant Major's Satin Gloves", "hash": "05b43808f357fb60", "src": "db2@1.60.1.70170"}
 {"id": 220897, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220898, "field": "name", "en": "First Sergeant's Satin Gloves", "hash": "b648d926ad5c7d23", "src": "db2@1.60.1.70124"}
+{"id": 220898, "field": "name", "en": "First Sergeant's Satin Gloves", "hash": "b648d926ad5c7d23", "src": "db2@1.60.1.70170"}
 {"id": 220898, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220899, "field": "name", "en": "Blood Guard's Satin Cover", "hash": "1dc9e34a55080d29", "src": "db2@1.60.1.70124"}
+{"id": 220899, "field": "name", "en": "Blood Guard's Satin Cover", "hash": "1dc9e34a55080d29", "src": "db2@1.60.1.70170"}
 {"id": 220899, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220900, "field": "name", "en": "First Sergeant's Satin Boots", "hash": "407fb9aa28849454", "src": "db2@1.60.1.70124"}
+{"id": 220900, "field": "name", "en": "First Sergeant's Satin Boots", "hash": "407fb9aa28849454", "src": "db2@1.60.1.70170"}
 {"id": 220900, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 220901, "field": "name", "en": "Blood Guard's Satin Pads", "hash": "84e2dd3caee68dbf", "src": "db2@1.60.1.70124"}
+{"id": 220901, "field": "name", "en": "Blood Guard's Satin Pads", "hash": "84e2dd3caee68dbf", "src": "db2@1.60.1.70170"}
 {"id": 220901, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220902, "field": "name", "en": "Stone Guard's Satin Leggings", "hash": "41510c1d7751e09d", "src": "db2@1.60.1.70124"}
+{"id": 220902, "field": "name", "en": "Stone Guard's Satin Leggings", "hash": "41510c1d7751e09d", "src": "db2@1.60.1.70170"}
 {"id": 220902, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220903, "field": "name", "en": "Stone Guard's Satin Armor", "hash": "d505c401e49b2753", "src": "db2@1.60.1.70124"}
+{"id": 220903, "field": "name", "en": "Stone Guard's Satin Armor", "hash": "d505c401e49b2753", "src": "db2@1.60.1.70170"}
 {"id": 220903, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 220904, "field": "name", "en": "Stone Guard's Dreadweave Vest", "hash": "99b99911901cbe6b", "src": "db2@1.60.1.70124"}
+{"id": 220904, "field": "name", "en": "Stone Guard's Dreadweave Vest", "hash": "99b99911901cbe6b", "src": "db2@1.60.1.70170"}
 {"id": 220904, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220905, "field": "name", "en": "Blood Guard's Dreadweave Mantle", "hash": "d3d54f57eafd6c6d", "src": "db2@1.60.1.70124"}
+{"id": 220905, "field": "name", "en": "Blood Guard's Dreadweave Mantle", "hash": "d3d54f57eafd6c6d", "src": "db2@1.60.1.70170"}
 {"id": 220905, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220906, "field": "name", "en": "Stone Guard's Dreadweave Leggings", "hash": "eff68e1f155e2a0e", "src": "db2@1.60.1.70124"}
+{"id": 220906, "field": "name", "en": "Stone Guard's Dreadweave Leggings", "hash": "eff68e1f155e2a0e", "src": "db2@1.60.1.70170"}
 {"id": 220906, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220907, "field": "name", "en": "Blood Guard's Dreadweave Hat", "hash": "89ca667a8f464597", "src": "db2@1.60.1.70124"}
+{"id": 220907, "field": "name", "en": "Blood Guard's Dreadweave Hat", "hash": "89ca667a8f464597", "src": "db2@1.60.1.70170"}
 {"id": 220907, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 220908, "field": "name", "en": "First Sergeant's Dreadweave Gloves", "hash": "77b4041ef8cf1cc8", "src": "db2@1.60.1.70124"}
+{"id": 220908, "field": "name", "en": "First Sergeant's Dreadweave Gloves", "hash": "77b4041ef8cf1cc8", "src": "db2@1.60.1.70170"}
 {"id": 220908, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 220909, "field": "name", "en": "First Sergeant's Dreadweave Boots", "hash": "a1bb2b544411a08b", "src": "db2@1.60.1.70124"}
+{"id": 220909, "field": "name", "en": "First Sergeant's Dreadweave Boots", "hash": "a1bb2b544411a08b", "src": "db2@1.60.1.70170"}
 {"id": 220909, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 220913, "field": "name", "en": "Rune of Demolition", "hash": "93467cda91631c91", "src": "db2@1.60.1.70124"}
-{"id": 220913, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 220914, "field": "name", "en": "Broken Geode Hammer", "hash": "f1cb6deb3742d468", "src": "db2@1.60.1.70124"}
-{"id": 220914, "field": "description", "en": "The head has split open.", "hash": "ad3345207eeb272e", "src": "db2@1.60.1.70124"}
-{"id": 220915, "field": "name", "en": "Idol of the Raging Shambler", "hash": "b1f0f7f2844e7c01", "src": "db2@1.60.1.70124"}
-{"id": 220915, "field": "description", "en": "Kill 5 enemies with Nature damage while affected by Barkskin. Then, use this idol to learn a new ability.", "hash": "5c343ad263d4553d", "src": "db2@1.60.1.70124"}
-{"id": 220916, "field": "name", "en": "Thunderstomp Stegodon Horn", "hash": "af8d9715281be388", "src": "db2@1.60.1.70124"}
-{"id": 220917, "field": "name", "en": "Box of Scarlet Dye", "hash": "4792e65f0cfb68d7", "src": "db2@1.60.1.70124"}
-{"id": 220918, "field": "name", "en": "Waylaid Supplies: Undermine Clam Chowder", "hash": "90ae9e60e7f01add", "src": "db2@1.60.1.70124"}
-{"id": 220918, "field": "description", "en": "Add $q2 Undermine Clam Chowder to complete the shipment.", "hash": "0335946e8b3dedd6", "src": "db2@1.60.1.70124"}
-{"id": 220919, "field": "name", "en": "Waylaid Supplies: Nightfin Soup", "hash": "c37eb8179be5a982", "src": "db2@1.60.1.70124"}
-{"id": 220919, "field": "description", "en": "Add $q2 Nightfin Soup to complete the shipment.", "hash": "c497076e983531a0", "src": "db2@1.60.1.70124"}
-{"id": 220920, "field": "name", "en": "Waylaid Supplies: Tender Wolf Steaks", "hash": "b72f62e0f1a29664", "src": "db2@1.60.1.70124"}
-{"id": 220920, "field": "description", "en": "Add $q2 Tender Wolf Steaks to complete the shipment.", "hash": "2f05f5d6aa40274d", "src": "db2@1.60.1.70124"}
-{"id": 220921, "field": "name", "en": "Waylaid Supplies: Heavy Mageweave Bandages", "hash": "951d03069b277c54", "src": "db2@1.60.1.70124"}
-{"id": 220921, "field": "description", "en": "Add $q2 Heavy Mageweave Bandages to complete the shipment.", "hash": "7f77a4e195d1f240", "src": "db2@1.60.1.70124"}
-{"id": 220922, "field": "name", "en": "Waylaid Supplies: Sungrass", "hash": "c5854666f1891c2f", "src": "db2@1.60.1.70124"}
-{"id": 220922, "field": "description", "en": "Add $q2 Sungrass to complete the shipment.", "hash": "021a197208249257", "src": "db2@1.60.1.70124"}
-{"id": 220923, "field": "name", "en": "Waylaid Supplies: Dreamfoil", "hash": "4419ae4d495ab1e9", "src": "db2@1.60.1.70124"}
-{"id": 220923, "field": "description", "en": "Add $q2 Dreamfoil to complete the shipment.", "hash": "c505f97784b31b0f", "src": "db2@1.60.1.70124"}
-{"id": 220924, "field": "name", "en": "Waylaid Supplies: Truesilver Bars", "hash": "205c583418ac12b5", "src": "db2@1.60.1.70124"}
-{"id": 220924, "field": "description", "en": "Add $q2 Truesilver Bars to complete the shipment.", "hash": "c0dc5a2488bbfcf8", "src": "db2@1.60.1.70124"}
-{"id": 220925, "field": "name", "en": "Waylaid Supplies: Thorium Bars", "hash": "43a03d1d42fbd747", "src": "db2@1.60.1.70124"}
-{"id": 220925, "field": "description", "en": "Add $q2 Thorium Bars to complete the shipment.", "hash": "66b845471244ad7e", "src": "db2@1.60.1.70124"}
-{"id": 220926, "field": "name", "en": "Waylaid Supplies: Rugged Leather", "hash": "d9becb931ad1ad23", "src": "db2@1.60.1.70124"}
-{"id": 220926, "field": "description", "en": "Add $q2 Rugged Leather to complete the shipment.", "hash": "4953a39a694d41ce", "src": "db2@1.60.1.70124"}
-{"id": 220927, "field": "name", "en": "Waylaid Supplies: Thick Hide", "hash": "a3d563397e209f93", "src": "db2@1.60.1.70124"}
-{"id": 220927, "field": "description", "en": "Add $q2 Thick Hide to complete the shipment.", "hash": "91e14df6843d2ce7", "src": "db2@1.60.1.70124"}
-{"id": 220928, "field": "name", "en": "Waylaid Supplies: Enchanted Thorium Bars", "hash": "22be3ab8080dbd9a", "src": "db2@1.60.1.70124"}
-{"id": 220928, "field": "description", "en": "Add $q2 Enchanted Thorium Bars to complete the shipment.", "hash": "23d60eb47e60760d", "src": "db2@1.60.1.70124"}
-{"id": 220929, "field": "name", "en": "Waylaid Supplies: Superior Mana Potions", "hash": "8c365dbc110188df", "src": "db2@1.60.1.70124"}
-{"id": 220929, "field": "description", "en": "Add $q2 Superior Mana Potions to complete the shipment.", "hash": "7130802f00d8635b", "src": "db2@1.60.1.70124"}
-{"id": 220930, "field": "name", "en": "Waylaid Supplies: Major Healing Potions", "hash": "e31678c197eeb569", "src": "db2@1.60.1.70124"}
-{"id": 220930, "field": "description", "en": "Add $q2 Major Healing Potions to complete the shipment.", "hash": "239b1b4f1d9d8af8", "src": "db2@1.60.1.70124"}
-{"id": 220931, "field": "name", "en": "Waylaid Supplies: Hi-Explosive Bombs", "hash": "f4892bb74d48aafa", "src": "db2@1.60.1.70124"}
-{"id": 220931, "field": "description", "en": "Add $q2 Hi-Explosive Bombs to complete the shipment.", "hash": "b8c7c63bee7ccb07", "src": "db2@1.60.1.70124"}
-{"id": 220932, "field": "name", "en": "Waylaid Supplies: Thorium Grenades", "hash": "4301281d816e8880", "src": "db2@1.60.1.70124"}
-{"id": 220932, "field": "description", "en": "Add $q2 Thorium Grenades to complete the shipment.", "hash": "ebe0edd4fd3af95b", "src": "db2@1.60.1.70124"}
-{"id": 220933, "field": "name", "en": "Waylaid Supplies: Thorium Rifles", "hash": "93b63db52ff744b2", "src": "db2@1.60.1.70124"}
-{"id": 220933, "field": "description", "en": "Add $q2 Thorium Rifles to complete the shipment.", "hash": "c8adba3a7d4c3267", "src": "db2@1.60.1.70124"}
-{"id": 220934, "field": "name", "en": "Waylaid Supplies: Mithril Coifs", "hash": "04d05cabd6f42d4e", "src": "db2@1.60.1.70124"}
-{"id": 220934, "field": "description", "en": "Add $q2 Mithril Coifs to complete the shipment.", "hash": "0eebbad89d5140fb", "src": "db2@1.60.1.70124"}
-{"id": 220935, "field": "name", "en": "Waylaid Supplies: Thorium Belts", "hash": "9b86ebad7c38b61a", "src": "db2@1.60.1.70124"}
-{"id": 220935, "field": "description", "en": "Add $q2 Thorium Belts to complete the shipment.", "hash": "ff7ad5070424b971", "src": "db2@1.60.1.70124"}
-{"id": 220936, "field": "name", "en": "Waylaid Supplies: Truesilver Gauntlets", "hash": "8e4329636b43a5b9", "src": "db2@1.60.1.70124"}
-{"id": 220936, "field": "description", "en": "Add $q2 Truesilver Gauntlets to complete the shipment.", "hash": "92d0992e987d9454", "src": "db2@1.60.1.70124"}
-{"id": 220937, "field": "name", "en": "Waylaid Supplies: Rugged Armor Kits", "hash": "025063e3ccfbe6aa", "src": "db2@1.60.1.70124"}
-{"id": 220937, "field": "description", "en": "Add $q2 Rugged Armor Kits to complete the shipment.", "hash": "3f629868049ca9f4", "src": "db2@1.60.1.70124"}
-{"id": 220938, "field": "name", "en": "Waylaid Supplies: Wicked Leather Bracers", "hash": "af615d6b866ba65b", "src": "db2@1.60.1.70124"}
-{"id": 220938, "field": "description", "en": "Add $q2 Wicked Leather Bracers to complete the shipment.", "hash": "0629667de1c332e7", "src": "db2@1.60.1.70124"}
-{"id": 220939, "field": "name", "en": "Waylaid Supplies: Runic Leather Bracers", "hash": "1e514188194a5791", "src": "db2@1.60.1.70124"}
-{"id": 220939, "field": "description", "en": "Add $q2 Runic Leather Bracers to complete the shipment.", "hash": "97412d1e0d0c4425", "src": "db2@1.60.1.70124"}
-{"id": 220940, "field": "name", "en": "Waylaid Supplies: Black Mageweave Headbands", "hash": "cf5cc030e586415a", "src": "db2@1.60.1.70124"}
-{"id": 220940, "field": "description", "en": "Add $q2 Black Mageweave Headbands to complete the shipment.", "hash": "006aff6837e13de7", "src": "db2@1.60.1.70124"}
-{"id": 220941, "field": "name", "en": "Waylaid Supplies: Runecloth Belts", "hash": "46aca1fd244bbfe5", "src": "db2@1.60.1.70124"}
-{"id": 220941, "field": "description", "en": "Add $q2 Runecloth Belts to complete the shipment.", "hash": "cd91ba5ffacbe557", "src": "db2@1.60.1.70124"}
-{"id": 220942, "field": "name", "en": "Waylaid Supplies: Tuxedo Shirts", "hash": "bcb1656b2795306d", "src": "db2@1.60.1.70124"}
-{"id": 220942, "field": "description", "en": "Add $q2 Tuxedo Shirts to complete the shipment.", "hash": "2f0afb5d9310794a", "src": "db2@1.60.1.70124"}
+{"id": 220913, "field": "name", "en": "Rune of Demolition", "hash": "93467cda91631c91", "src": "db2@1.60.1.70170"}
+{"id": 220913, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 220914, "field": "name", "en": "Broken Geode Hammer", "hash": "f1cb6deb3742d468", "src": "db2@1.60.1.70170"}
+{"id": 220914, "field": "description", "en": "The head has split open.", "hash": "ad3345207eeb272e", "src": "db2@1.60.1.70170"}
+{"id": 220915, "field": "name", "en": "Idol of the Raging Shambler", "hash": "b1f0f7f2844e7c01", "src": "db2@1.60.1.70170"}
+{"id": 220915, "field": "description", "en": "Kill 5 enemies with Nature damage while affected by Barkskin. Then, use this idol to learn a new ability.", "hash": "5c343ad263d4553d", "src": "db2@1.60.1.70170"}
+{"id": 220916, "field": "name", "en": "Thunderstomp Stegodon Horn", "hash": "af8d9715281be388", "src": "db2@1.60.1.70170"}
+{"id": 220917, "field": "name", "en": "Box of Scarlet Dye", "hash": "4792e65f0cfb68d7", "src": "db2@1.60.1.70170"}
+{"id": 220918, "field": "name", "en": "Waylaid Supplies: Undermine Clam Chowder", "hash": "90ae9e60e7f01add", "src": "db2@1.60.1.70170"}
+{"id": 220918, "field": "description", "en": "Add $q2 Undermine Clam Chowder to complete the shipment.", "hash": "0335946e8b3dedd6", "src": "db2@1.60.1.70170"}
+{"id": 220919, "field": "name", "en": "Waylaid Supplies: Nightfin Soup", "hash": "c37eb8179be5a982", "src": "db2@1.60.1.70170"}
+{"id": 220919, "field": "description", "en": "Add $q2 Nightfin Soup to complete the shipment.", "hash": "c497076e983531a0", "src": "db2@1.60.1.70170"}
+{"id": 220920, "field": "name", "en": "Waylaid Supplies: Tender Wolf Steaks", "hash": "b72f62e0f1a29664", "src": "db2@1.60.1.70170"}
+{"id": 220920, "field": "description", "en": "Add $q2 Tender Wolf Steaks to complete the shipment.", "hash": "2f05f5d6aa40274d", "src": "db2@1.60.1.70170"}
+{"id": 220921, "field": "name", "en": "Waylaid Supplies: Heavy Mageweave Bandages", "hash": "951d03069b277c54", "src": "db2@1.60.1.70170"}
+{"id": 220921, "field": "description", "en": "Add $q2 Heavy Mageweave Bandages to complete the shipment.", "hash": "7f77a4e195d1f240", "src": "db2@1.60.1.70170"}
+{"id": 220922, "field": "name", "en": "Waylaid Supplies: Sungrass", "hash": "c5854666f1891c2f", "src": "db2@1.60.1.70170"}
+{"id": 220922, "field": "description", "en": "Add $q2 Sungrass to complete the shipment.", "hash": "021a197208249257", "src": "db2@1.60.1.70170"}
+{"id": 220923, "field": "name", "en": "Waylaid Supplies: Dreamfoil", "hash": "4419ae4d495ab1e9", "src": "db2@1.60.1.70170"}
+{"id": 220923, "field": "description", "en": "Add $q2 Dreamfoil to complete the shipment.", "hash": "c505f97784b31b0f", "src": "db2@1.60.1.70170"}
+{"id": 220924, "field": "name", "en": "Waylaid Supplies: Truesilver Bars", "hash": "205c583418ac12b5", "src": "db2@1.60.1.70170"}
+{"id": 220924, "field": "description", "en": "Add $q2 Truesilver Bars to complete the shipment.", "hash": "c0dc5a2488bbfcf8", "src": "db2@1.60.1.70170"}
+{"id": 220925, "field": "name", "en": "Waylaid Supplies: Thorium Bars", "hash": "43a03d1d42fbd747", "src": "db2@1.60.1.70170"}
+{"id": 220925, "field": "description", "en": "Add $q2 Thorium Bars to complete the shipment.", "hash": "66b845471244ad7e", "src": "db2@1.60.1.70170"}
+{"id": 220926, "field": "name", "en": "Waylaid Supplies: Rugged Leather", "hash": "d9becb931ad1ad23", "src": "db2@1.60.1.70170"}
+{"id": 220926, "field": "description", "en": "Add $q2 Rugged Leather to complete the shipment.", "hash": "4953a39a694d41ce", "src": "db2@1.60.1.70170"}
+{"id": 220927, "field": "name", "en": "Waylaid Supplies: Thick Hide", "hash": "a3d563397e209f93", "src": "db2@1.60.1.70170"}
+{"id": 220927, "field": "description", "en": "Add $q2 Thick Hide to complete the shipment.", "hash": "91e14df6843d2ce7", "src": "db2@1.60.1.70170"}
+{"id": 220928, "field": "name", "en": "Waylaid Supplies: Enchanted Thorium Bars", "hash": "22be3ab8080dbd9a", "src": "db2@1.60.1.70170"}
+{"id": 220928, "field": "description", "en": "Add $q2 Enchanted Thorium Bars to complete the shipment.", "hash": "23d60eb47e60760d", "src": "db2@1.60.1.70170"}
+{"id": 220929, "field": "name", "en": "Waylaid Supplies: Superior Mana Potions", "hash": "8c365dbc110188df", "src": "db2@1.60.1.70170"}
+{"id": 220929, "field": "description", "en": "Add $q2 Superior Mana Potions to complete the shipment.", "hash": "7130802f00d8635b", "src": "db2@1.60.1.70170"}
+{"id": 220930, "field": "name", "en": "Waylaid Supplies: Major Healing Potions", "hash": "e31678c197eeb569", "src": "db2@1.60.1.70170"}
+{"id": 220930, "field": "description", "en": "Add $q2 Major Healing Potions to complete the shipment.", "hash": "239b1b4f1d9d8af8", "src": "db2@1.60.1.70170"}
+{"id": 220931, "field": "name", "en": "Waylaid Supplies: Hi-Explosive Bombs", "hash": "f4892bb74d48aafa", "src": "db2@1.60.1.70170"}
+{"id": 220931, "field": "description", "en": "Add $q2 Hi-Explosive Bombs to complete the shipment.", "hash": "b8c7c63bee7ccb07", "src": "db2@1.60.1.70170"}
+{"id": 220932, "field": "name", "en": "Waylaid Supplies: Thorium Grenades", "hash": "4301281d816e8880", "src": "db2@1.60.1.70170"}
+{"id": 220932, "field": "description", "en": "Add $q2 Thorium Grenades to complete the shipment.", "hash": "ebe0edd4fd3af95b", "src": "db2@1.60.1.70170"}
+{"id": 220933, "field": "name", "en": "Waylaid Supplies: Thorium Rifles", "hash": "93b63db52ff744b2", "src": "db2@1.60.1.70170"}
+{"id": 220933, "field": "description", "en": "Add $q2 Thorium Rifles to complete the shipment.", "hash": "c8adba3a7d4c3267", "src": "db2@1.60.1.70170"}
+{"id": 220934, "field": "name", "en": "Waylaid Supplies: Mithril Coifs", "hash": "04d05cabd6f42d4e", "src": "db2@1.60.1.70170"}
+{"id": 220934, "field": "description", "en": "Add $q2 Mithril Coifs to complete the shipment.", "hash": "0eebbad89d5140fb", "src": "db2@1.60.1.70170"}
+{"id": 220935, "field": "name", "en": "Waylaid Supplies: Thorium Belts", "hash": "9b86ebad7c38b61a", "src": "db2@1.60.1.70170"}
+{"id": 220935, "field": "description", "en": "Add $q2 Thorium Belts to complete the shipment.", "hash": "ff7ad5070424b971", "src": "db2@1.60.1.70170"}
+{"id": 220936, "field": "name", "en": "Waylaid Supplies: Truesilver Gauntlets", "hash": "8e4329636b43a5b9", "src": "db2@1.60.1.70170"}
+{"id": 220936, "field": "description", "en": "Add $q2 Truesilver Gauntlets to complete the shipment.", "hash": "92d0992e987d9454", "src": "db2@1.60.1.70170"}
+{"id": 220937, "field": "name", "en": "Waylaid Supplies: Rugged Armor Kits", "hash": "025063e3ccfbe6aa", "src": "db2@1.60.1.70170"}
+{"id": 220937, "field": "description", "en": "Add $q2 Rugged Armor Kits to complete the shipment.", "hash": "3f629868049ca9f4", "src": "db2@1.60.1.70170"}
+{"id": 220938, "field": "name", "en": "Waylaid Supplies: Wicked Leather Bracers", "hash": "af615d6b866ba65b", "src": "db2@1.60.1.70170"}
+{"id": 220938, "field": "description", "en": "Add $q2 Wicked Leather Bracers to complete the shipment.", "hash": "0629667de1c332e7", "src": "db2@1.60.1.70170"}
+{"id": 220939, "field": "name", "en": "Waylaid Supplies: Runic Leather Bracers", "hash": "1e514188194a5791", "src": "db2@1.60.1.70170"}
+{"id": 220939, "field": "description", "en": "Add $q2 Runic Leather Bracers to complete the shipment.", "hash": "97412d1e0d0c4425", "src": "db2@1.60.1.70170"}
+{"id": 220940, "field": "name", "en": "Waylaid Supplies: Black Mageweave Headbands", "hash": "cf5cc030e586415a", "src": "db2@1.60.1.70170"}
+{"id": 220940, "field": "description", "en": "Add $q2 Black Mageweave Headbands to complete the shipment.", "hash": "006aff6837e13de7", "src": "db2@1.60.1.70170"}
+{"id": 220941, "field": "name", "en": "Waylaid Supplies: Runecloth Belts", "hash": "46aca1fd244bbfe5", "src": "db2@1.60.1.70170"}
+{"id": 220941, "field": "description", "en": "Add $q2 Runecloth Belts to complete the shipment.", "hash": "cd91ba5ffacbe557", "src": "db2@1.60.1.70170"}
+{"id": 220942, "field": "name", "en": "Waylaid Supplies: Tuxedo Shirts", "hash": "bcb1656b2795306d", "src": "db2@1.60.1.70170"}
+{"id": 220942, "field": "description", "en": "Add $q2 Tuxedo Shirts to complete the shipment.", "hash": "2f0afb5d9310794a", "src": "db2@1.60.1.70170"}

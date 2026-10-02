@@ -120,7 +120,7 @@ WFJ.Data.add("ui", {
   ["WidgetText:18043"] = { "プレイヤーの残りライフ: %1$s", 0x947d2a8e, "." },
   ["WidgetText:18044"] = { "プレイヤーの残り死亡可能回数", 0xf265175c, "." },
   ["WidgetText:18234"] = { "プレイヤーの残りライフ: %1$s", 0x947d2a8e, "." },
-  ["WidgetText:21040"] = { "Valanaarの軍勢が攻撃の準備をしている！戦いに備えよ。", 0x0c4c938c, "." },
+  ["WidgetText:21040"] = { "Valanaarの軍勢が攻撃の準備をしている！戦いに備えよ。", 0xa2a2ee1a, "." },
   ["WidgetText:21041"] = { "Rohaashi Spiresへの襲撃開始まで", 0xb2067ce5, "." },
   ["WidgetText:22115"] = { "Allianceが旗を奪った", 0x82d5adfd, "." },
   ["WidgetText:22116"] = { "HordeがRuinsを占領した", 0xce9f5f6f, "." },

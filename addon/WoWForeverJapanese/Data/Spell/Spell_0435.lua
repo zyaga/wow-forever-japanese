@@ -9,6 +9,7 @@ WFJ.Data.add("spell", {
   [435180] = { nil, "Water of Elune'araを運んでいます。", nil, 0x8943bfe5, "mu" },
   [435185] = { "集めたPartial Spell Notesを組み合わせて、新しいEngraving呪文を習得できる巻物を作ります。", nil, 0xaa4b1cb2, nil, "um" },
   [435218] = { "Wind SpiritにOfferingを捧げ、信仰を示します。", "Wind Spiritに信仰の証を示します。", 0x69dd8697, 0x2536d7ab, "uu" },
+  [435317] = { "クーガーの檻を開ける", nil, 0x301667bd, nil, "um" },
   [435359] = { "アーマーを$N1増加させますが、移動速度が$N2%低下します。この効果は解除できず、$D1持続します。", "アーマーが$N1増加します。\n移動速度が$N2%低下しています。", 0x7b087caf, 0xecfe6169, "uu" },
   [435481] = { "Weaponに永続的なエンチャントを施し、すべての呪文と攻撃が、ときどき機械系のクリーチャーに$N1の追加ダメージを与えるようにします。", nil, 0x7694b78d, nil, "um" },
   [435531] = { "Cat、Bear、Dire Bearフォームでのみ、Attack Powerが+$N1されます。", nil, 0xa798bce2, nil, "um" },

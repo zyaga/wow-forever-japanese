@@ -167,3 +167,10 @@ def test_dots_only_english_may_stay_dots_only(tmp_path):
     d = decide(line("……", "progress"), scope, AL, "000c2356b6a1e74a")
     assert "not_japanese" not in d.reasons and d.status == "trusted"
     assert decide(line("……", "completion"), scope, AL, "1111111111111111").reasons == ["not_japanese"]
+
+
+def test_an_item_line_that_is_only_a_name_ships_in_english_letters_only_under_a_ruling():
+    accept = {"ruling": "accept", "by": "maintainer", "date": "2026-10-01"}
+    assert decide(line("Umbrinoth"), ITEM, AL, "h").reasons == ["not_japanese"]
+    d = decide(line("Umbrinoth", ruling=accept), ITEM, AL, "h")
+    assert "not_japanese" not in d.reasons

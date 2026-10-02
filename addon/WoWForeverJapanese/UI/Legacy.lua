@@ -105,6 +105,10 @@ local CANDIDATES = {
   selection = { FRAME .. ".TreePage.LegacyTreeSelectionPanel" },
   cards = { FRAME .. ".ChallengesPage.DetailPane.ScrollBox" }, scrollUtil = { "ScrollUtil" },
   categories = { LIST .. ".ScrollBox" },
+  -- the label's writer: OnLoad registers RefreshText itself as a currency callback, so a hook on the frame's field
+  -- never runs; UpdateCurrencyInfo fires it on every show and points change [verified: forever-ui-1.60.1.70170
+  -- blizzard_legacysystem/blizzard_legacysystemutil.lua:55-73, blizzard_legacytree.lua:107, 291-293]
+  system = { "LegacySystem" },
 }
 
 local function get(key) return Compat.get(SURFACE, key) end
@@ -136,7 +140,7 @@ function Legacy.onTree()
   return WFJ.Labels.show(SURFACE, "treeLabel", get("treeLabel"), nil, TREE)
 end
 
--- hooksecurefunc target (LegacyTreePointSummary:RefreshText). → 1 | 0
+-- hooksecurefunc target (LegacyTreePointSummary:RefreshText, LegacySystem.UpdateCurrencyInfo). → 1 | 0
 function Legacy.onAvailable()
   return WFJ.Labels.show(SURFACE, "available", get("available"), nil, AVAILABLE)
 end
@@ -212,6 +216,7 @@ function Legacy.setup()
   if type(frame.HookScript) == "function" then frame:HookScript("OnShow", Legacy.showStatic) end
   hook(get("panel"), "SelectTree", Legacy.onTree)
   hook(get("summary"), "RefreshText", Legacy.onAvailable)
+  hook(get("system"), "UpdateCurrencyInfo", Legacy.onAvailable)
   hook(get("pointsBar"), "Update", Legacy.onPointsBar)
   hook(get("selection"), "RefreshTreeButtons", Legacy.onTreeButtons)
   local cards, util = get("cards"), get("scrollUtil")

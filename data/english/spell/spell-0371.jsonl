@@ -1,32 +1,32 @@
-{"id": 371046, "field": "name", "en": "Summon Claw Tentacles", "hash": "bf89db85e754e106", "src": "db2@1.60.1.70124"}
-{"id": 371047, "field": "name", "en": "Summon Eye Tentacles", "hash": "199164090dde33bb", "src": "db2@1.60.1.70124"}
-{"id": 371048, "field": "name", "en": "Summon Giant Claw Tentacles", "hash": "618ac6ce50356b81", "src": "db2@1.60.1.70124"}
-{"id": 371049, "field": "name", "en": "Ground Rupture", "hash": "7b7eededf40ba5bf", "src": "db2@1.60.1.70124"}
-{"id": 371054, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70124"}
-{"id": 371060, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70124"}
-{"id": 371075, "field": "name", "en": "Summon Illusory Claw Tentacles", "hash": "c2218cf53aab6d02", "src": "db2@1.60.1.70124"}
-{"id": 371076, "field": "name", "en": "Summon Illusory Claw Tentacles", "hash": "c2218cf53aab6d02", "src": "db2@1.60.1.70124"}
-{"id": 371077, "field": "name", "en": "Summon Illusory Claw Tentacles", "hash": "c2218cf53aab6d02", "src": "db2@1.60.1.70124"}
-{"id": 371078, "field": "name", "en": "Summon Illusory Claw Tentacles", "hash": "c2218cf53aab6d02", "src": "db2@1.60.1.70124"}
-{"id": 371081, "field": "name", "en": "Summon Illusory Eye Tentacles", "hash": "69b5b96a4172c65a", "src": "db2@1.60.1.70124"}
-{"id": 371082, "field": "name", "en": "Summon Illusory Eye Tentacles", "hash": "69b5b96a4172c65a", "src": "db2@1.60.1.70124"}
-{"id": 371084, "field": "name", "en": "Summon Illusory Eye Tentacles", "hash": "69b5b96a4172c65a", "src": "db2@1.60.1.70124"}
-{"id": 371100, "field": "name", "en": "Summon Illusory Eye Tentacles", "hash": "69b5b96a4172c65a", "src": "db2@1.60.1.70124"}
-{"id": 371102, "field": "name", "en": "Summon Illusory Giant Claw Tentacles", "hash": "21c8db7af0d530eb", "src": "db2@1.60.1.70124"}
-{"id": 371104, "field": "name", "en": "Summon Illusory Giant Claw Tentacles", "hash": "21c8db7af0d530eb", "src": "db2@1.60.1.70124"}
-{"id": 371105, "field": "name", "en": "Summon Illusory Giant Claw Tentacles", "hash": "21c8db7af0d530eb", "src": "db2@1.60.1.70124"}
-{"id": 371106, "field": "name", "en": "Summon Illusory Giant Claw Tentacles", "hash": "21c8db7af0d530eb", "src": "db2@1.60.1.70124"}
-{"id": 371119, "field": "name", "en": "Summon Portal Ground State", "hash": "cfb4e923532e8b3a", "src": "db2@1.60.1.70124"}
-{"id": 371121, "field": "name", "en": "Summon Portal Ground State", "hash": "cfb4e923532e8b3a", "src": "db2@1.60.1.70124"}
-{"id": 371123, "field": "name", "en": "Summon Giant Portal Ground State", "hash": "421562542e37f7f4", "src": "db2@1.60.1.70124"}
-{"id": 371206, "field": "name", "en": "Servant of Chaos", "hash": "31488842017a302f", "src": "db2@1.60.1.70124"}
-{"id": 371206, "field": "aura", "en": "You serve C'Thun now, mortal.", "hash": "2b32d8f8f5c0a7ae", "src": "db2@1.60.1.70124"}
-{"id": 371286, "field": "name", "en": "Teleport Giant Hook Tentacle", "hash": "b76b3e4752a3bda3", "src": "db2@1.60.1.70124"}
-{"id": 371626, "field": "name", "en": "[DNT] Transform to Small Portal", "hash": "56ae97c5370cc593", "src": "db2@1.60.1.70124"}
-{"id": 371627, "field": "name", "en": "[DNT] Transform to Giant Portal", "hash": "d5429e2d342f5ccb", "src": "db2@1.60.1.70124"}
-{"id": 371628, "field": "name", "en": "[DNT] Transform to Claw", "hash": "6de8bf005d5debac", "src": "db2@1.60.1.70124"}
-{"id": 371629, "field": "name", "en": "[DNT] Transform to Eye", "hash": "cffc76ba8283cdf5", "src": "db2@1.60.1.70124"}
-{"id": 371630, "field": "name", "en": "[DNT] Transform to Giant Claw", "hash": "fdc665bce618b4a5", "src": "db2@1.60.1.70124"}
-{"id": 371656, "field": "name", "en": "Quick Sand", "hash": "ea0e46f38415f064", "src": "db2@1.60.1.70124"}
-{"id": 371656, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70124"}
-{"id": 371740, "field": "name", "en": "Quick Sand", "hash": "ea0e46f38415f064", "src": "db2@1.60.1.70124"}
+{"id": 371046, "field": "name", "en": "Summon Claw Tentacles", "hash": "bf89db85e754e106", "src": "db2@1.60.1.70170"}
+{"id": 371047, "field": "name", "en": "Summon Eye Tentacles", "hash": "199164090dde33bb", "src": "db2@1.60.1.70170"}
+{"id": 371048, "field": "name", "en": "Summon Giant Claw Tentacles", "hash": "618ac6ce50356b81", "src": "db2@1.60.1.70170"}
+{"id": 371049, "field": "name", "en": "Ground Rupture", "hash": "7b7eededf40ba5bf", "src": "db2@1.60.1.70170"}
+{"id": 371054, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70170"}
+{"id": 371060, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70170"}
+{"id": 371075, "field": "name", "en": "Summon Illusory Claw Tentacles", "hash": "c2218cf53aab6d02", "src": "db2@1.60.1.70170"}
+{"id": 371076, "field": "name", "en": "Summon Illusory Claw Tentacles", "hash": "c2218cf53aab6d02", "src": "db2@1.60.1.70170"}
+{"id": 371077, "field": "name", "en": "Summon Illusory Claw Tentacles", "hash": "c2218cf53aab6d02", "src": "db2@1.60.1.70170"}
+{"id": 371078, "field": "name", "en": "Summon Illusory Claw Tentacles", "hash": "c2218cf53aab6d02", "src": "db2@1.60.1.70170"}
+{"id": 371081, "field": "name", "en": "Summon Illusory Eye Tentacles", "hash": "69b5b96a4172c65a", "src": "db2@1.60.1.70170"}
+{"id": 371082, "field": "name", "en": "Summon Illusory Eye Tentacles", "hash": "69b5b96a4172c65a", "src": "db2@1.60.1.70170"}
+{"id": 371084, "field": "name", "en": "Summon Illusory Eye Tentacles", "hash": "69b5b96a4172c65a", "src": "db2@1.60.1.70170"}
+{"id": 371100, "field": "name", "en": "Summon Illusory Eye Tentacles", "hash": "69b5b96a4172c65a", "src": "db2@1.60.1.70170"}
+{"id": 371102, "field": "name", "en": "Summon Illusory Giant Claw Tentacles", "hash": "21c8db7af0d530eb", "src": "db2@1.60.1.70170"}
+{"id": 371104, "field": "name", "en": "Summon Illusory Giant Claw Tentacles", "hash": "21c8db7af0d530eb", "src": "db2@1.60.1.70170"}
+{"id": 371105, "field": "name", "en": "Summon Illusory Giant Claw Tentacles", "hash": "21c8db7af0d530eb", "src": "db2@1.60.1.70170"}
+{"id": 371106, "field": "name", "en": "Summon Illusory Giant Claw Tentacles", "hash": "21c8db7af0d530eb", "src": "db2@1.60.1.70170"}
+{"id": 371119, "field": "name", "en": "Summon Portal Ground State", "hash": "cfb4e923532e8b3a", "src": "db2@1.60.1.70170"}
+{"id": 371121, "field": "name", "en": "Summon Portal Ground State", "hash": "cfb4e923532e8b3a", "src": "db2@1.60.1.70170"}
+{"id": 371123, "field": "name", "en": "Summon Giant Portal Ground State", "hash": "421562542e37f7f4", "src": "db2@1.60.1.70170"}
+{"id": 371206, "field": "name", "en": "Servant of Chaos", "hash": "31488842017a302f", "src": "db2@1.60.1.70170"}
+{"id": 371206, "field": "aura", "en": "You serve C'Thun now, mortal.", "hash": "2b32d8f8f5c0a7ae", "src": "db2@1.60.1.70170"}
+{"id": 371286, "field": "name", "en": "Teleport Giant Hook Tentacle", "hash": "b76b3e4752a3bda3", "src": "db2@1.60.1.70170"}
+{"id": 371626, "field": "name", "en": "[DNT] Transform to Small Portal", "hash": "56ae97c5370cc593", "src": "db2@1.60.1.70170"}
+{"id": 371627, "field": "name", "en": "[DNT] Transform to Giant Portal", "hash": "d5429e2d342f5ccb", "src": "db2@1.60.1.70170"}
+{"id": 371628, "field": "name", "en": "[DNT] Transform to Claw", "hash": "6de8bf005d5debac", "src": "db2@1.60.1.70170"}
+{"id": 371629, "field": "name", "en": "[DNT] Transform to Eye", "hash": "cffc76ba8283cdf5", "src": "db2@1.60.1.70170"}
+{"id": 371630, "field": "name", "en": "[DNT] Transform to Giant Claw", "hash": "fdc665bce618b4a5", "src": "db2@1.60.1.70170"}
+{"id": 371656, "field": "name", "en": "Quick Sand", "hash": "ea0e46f38415f064", "src": "db2@1.60.1.70170"}
+{"id": 371656, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70170"}
+{"id": 371740, "field": "name", "en": "Quick Sand", "hash": "ea0e46f38415f064", "src": "db2@1.60.1.70170"}

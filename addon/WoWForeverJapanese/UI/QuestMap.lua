@@ -139,11 +139,22 @@ local function hookScript(key, script, fn)
   return false
 end
 
+-- The details scroll frame's range callback lays out the rewards from QuestInfoFrame.rewardsFrame.numRows
+-- (QuestLogQuestDetailsMixin:AdjustRewardsFrameContainer → QuestInfo_GetNumRewardRows, questinfo.lua:1065–1068,
+-- questmapframe.lua:1015–1026), which is nil until QuestInfo_ShowRewards has run: a refit before then raised in
+-- Blizzard's code. The client runs that layout itself once the rewards are shown, so the refit waits for them, and
+-- an error in the client's callback is caught rather than shown.
+local function rewardsReady()
+  local info = Compat.resolve("QuestInfoFrame")
+  local rewards = type(info) == "table" and info.rewardsFrame or nil
+  return type(rewards) ~= "table" or type(rewards.numRows) == "number"
+end
+
 local function refitFor(scrollKey)
   return function()
     local scroll = get(scrollKey)
-    if type(scroll) == "table" and type(scroll.UpdateScrollChildRect) == "function" then
-      scroll:UpdateScrollChildRect()
+    if type(scroll) == "table" and type(scroll.UpdateScrollChildRect) == "function" and rewardsReady() then
+      pcall(scroll.UpdateScrollChildRect, scroll)
     end
   end
 end
@@ -323,6 +334,27 @@ local function completeTag(en)
   return en:sub(1, #en - #paren - 1), " " .. ja
 end
 
+-- One objective line's Japanese without a record (a tooltip the client rebuilds every frame), by the same lookups as
+-- showObjective. → Japanese | nil
+function QuestMap.objectiveJapanese(en, surface)
+  if type(en) ~= "string" or en == "" then return nil end
+  local core, tag = completeTag(en)
+  local ui, objectives = WFJ.UIIndex, WFJ.ObjectiveIndex
+  local id, args, kind
+  if objectives then id, args, kind = objectives:match(core) end
+  if id then
+    args.after = args.after .. tag
+    return WFJ.Render.preview(surface, en, nil, "quests", kind, id, { args = args, compact = true })
+  end
+  local key
+  if ui then key, args = ui:matchOnly(core, QuestMap.OBJECTIVE_KEYS) end
+  if key then
+    return WFJ.Render.preview(surface, en, nil, "quests", "ui", key,
+      { args = { form = "affix", before = "", after = tag, inner = args }, compact = true })
+  end
+  return nil
+end
+
 -- One objective line on `fs` as record `recKey`. `refit` (optional) lays the line's owner out again after a write.
 -- → 1 when shown (or still ours), else 0 and the record is dropped
 function QuestMap.showObjective(surface, recKey, fs, refit)
@@ -365,25 +397,32 @@ end
 -- SetText writes them back around it, GetFont / SetFont go to the widget. One adapter per widget (weak-keyed), so a
 -- record keeps its widget identity across pooled reuse (SurfaceState: one record per widget); the decoration is set on
 -- every show.
+-- A decoration with words of its own ("%s (low level)") has a Japanese suffix too: written around a Japanese title,
+-- the English one around the English title (the modifier held), and either is stripped when reading.
 local adapters = setmetatable({}, { __mode = "k" })
-local function decorated(fs, prefix, suffix)
+local function decorated(fs, prefix, suffix, jaSuffix, en)
   local a = adapters[fs]
   if not a then
     a = { prefix = "", suffix = "" }
     function a.GetText()
-      local text, p, x = fs:GetText(), a.prefix, a.suffix
-      if (p ~= "" or x ~= "") and type(text) == "string" and #text >= #p + #x and text:sub(1, #p) == p
-          and (x == "" or text:sub(-#x) == x) then
-        return text:sub(#p + 1, #text - #x)
+      local text, p = fs:GetText(), a.prefix
+      if type(text) ~= "string" or text:sub(1, #p) ~= p then return text end
+      for _, x in ipairs({ a.suffix, a.jaSuffix }) do
+        if (p ~= "" or x ~= "") and #text >= #p + #x and (x == "" or text:sub(-#x) == x) then
+          return text:sub(#p + 1, #text - #x)
+        end
       end
       return text
     end
-    function a.SetText(_, text) fs:SetText(a.prefix .. (text or "") .. a.suffix) end
+    function a.SetText(_, text)
+      local x = (a.jaSuffix and text ~= a.en) and a.jaSuffix or a.suffix
+      fs:SetText(a.prefix .. (text or "") .. x)
+    end
     function a.GetFont() return fs:GetFont() end
     function a.SetFont(_, path, size, flags) return fs:SetFont(path, size, flags) end
     adapters[fs] = a
   end
-  a.prefix, a.suffix = prefix, suffix
+  a.prefix, a.suffix, a.jaSuffix, a.en = prefix, suffix, jaSuffix, en
   return a
 end
 
@@ -400,9 +439,29 @@ QuestMap.splitPrefix = splitPrefix
 -- The decorations a title may carry around its API English, kept verbatim: camelot's level prefix, and the tracker's
 -- difficulty colour wrap "|cAARRGGBB" .. title .. "|r" around it (SetQuestTitleLevelAndDifficultyColor with
 -- showQuestDifficultyColor on: difficultyutil.lua:84–96). → prefix, suffix | nil (any other decoration)
+-- The quest-row wrappers with words of their own (the talk and quest windows, gossipframeshared.lua:27–39,
+-- questframe.lua): split around their "%s", with the dictionary's Japanese suffix. → prefix, suffix, jaSuffix | nil
+local WRAPPERS = { "TRIVIAL_QUEST_DISPLAY", "IGNORED_QUEST_DISPLAY" }
+local function wrapper(text, en)
+  for _, key in ipairs(WRAPPERS) do
+    local template = Compat.resolve(key)
+    local head, tail
+    if type(template) == "string" then head, tail = template:match("^(.-)%%s(.*)$") end
+    if head and text == head .. en .. tail then
+      local entry = WFJ.Lookup.get("ui", key)
+      local jaHead, jaTail
+      if type(entry) == "table" and type(entry.ja) == "string" then jaHead, jaTail = entry.ja:match("^(.-)%%s(.*)$") end
+      return head, tail, (jaHead == head and jaTail) or nil
+    end
+  end
+  return nil
+end
+
 local function decoration(text, en)
   if type(text) ~= "string" or type(en) ~= "string" then return nil end
   if text == en then return "", "" end
+  local wp, ws, wj = wrapper(text, en)
+  if wp then return wp, ws, wj end
   local color, inner = text:match("^(|c%x%x%x%x%x%x%x%x)(.*)|r$")
   local head, suffix = color or "", color and "|r" or ""
   inner = inner or text
@@ -416,7 +475,7 @@ QuestMap.decoration = decoration
 -- Drops `key` and any other record on this widget's adapter: a reused block or row that no longer shows its old quest
 -- must not keep that quest's record (and its font) for the rest of the session.
 local function dropWidget(surface, key, fs)
-  WFJ.SurfaceState.drop(surface, key)
+  if key then WFJ.SurfaceState.drop(surface, key) end
   local a = type(fs) == "table" and adapters[fs] or nil
   if not a then return end
   for k, rec in pairs(WFJ.SurfaceState.records(surface)) do
@@ -426,7 +485,9 @@ end
 
 -- One quest title on a list row or a tracker header. `refit` (optional) lays the widget's owner out again after a
 -- write. → 1 when shown, else 0 (and that quest's record, and any other on the widget, is dropped)
-local function showTitle(surface, questID, fs, refit)
+QuestMap.dropWidget = dropWidget
+
+local function showTitle(surface, questID, fs, refit, given, row)
   local key = "title." .. tostring(questID)
   local titleFor = get("titleFor")
   local canRead = type(fs) == "table" and type(fs.GetText) == "function" and type(fs.SetText) == "function"
@@ -435,13 +496,14 @@ local function showTitle(surface, questID, fs, refit)
     dropWidget(surface, key, fs)
     return 0
   end
-  local en = titleFor(questID)
+  -- `given`: the title the caller's API returned (an offered quest is not in the log, so titleFor has none)
+  local en = given or titleFor(questID)
   if type(en) ~= "string" or en == "" then
     dropWidget(surface, key, fs)
     return 0
   end
   WFJ.Collector.record("quest", questID, "title", en)
-  local prefix, suffix = decoration(fs:GetText(), en)
+  local prefix, suffix, jaSuffix = decoration(fs:GetText(), en)
   -- the adapter may already carry this widget's record (our Japanese inside the decoration): same record
   local a = adapters[fs]
   local rec = WFJ.SurfaceState.get(surface, key)
@@ -450,10 +512,11 @@ local function showTitle(surface, questID, fs, refit)
     dropWidget(surface, key, fs)
     return 0
   end
-  WFJ.Render.show(surface, key, decorated(fs, prefix, suffix), en, "quests", "quest.title", questID,
-    { live = en, refit = refit, compact = true })
+  WFJ.Render.show(surface, key, decorated(fs, prefix, suffix, jaSuffix, en), en, "quests", "quest.title", questID,
+    { live = en, refit = refit, compact = true, row = row })
   return 1
 end
+QuestMap.showTitle = showTitle
 
 -- A list objective row: keyed by the row frame (pooled, so never a position); its height follows a line that wraps
 -- differently in Japanese. The client sized the quest's title button to the sum of its English heights

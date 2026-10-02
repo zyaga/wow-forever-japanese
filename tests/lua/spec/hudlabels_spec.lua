@@ -169,6 +169,33 @@ describe("the HUD's small bars and messages on Forever", function()
     assert.are.equal("9秒", later.Duration:GetText())
   end)
 
+  it("an aura's duration that is a secret value is left as the client wrote it, unread", function()
+    local b = _G.BuffFrame.auraFrames[1]
+    b:UpdateDuration(en("MINUTE_ONELETTER_ABBR"), 5)
+    assert.are.equal("5分", b.Duration:GetText())
+    -- in combat: the client's line can be a value the addon may write but not compare
+    local secret = { ["4 m"] = true }
+    _G.issecretvalue = function(v) return secret[v] == true end
+    WFJ.HudLabels.init() -- the name resolves again now the client has it
+    local records = WFJ.SurfaceState.count(WFJ.HudLabels.SURFACE)
+    b.Duration.text = "4 m"
+    assert.are.equal(0, WFJ.HudLabels.onDuration(b))
+    assert.are.equal("4 m", b.Duration:GetText())
+    assert.has_no.errors(function() b:UpdateDuration(en("MINUTE_ONELETTER_ABBR"), 4) end)
+    assert.are.equal("4 m", b.Duration:GetText())
+    assert.are.equal(records, WFJ.SurfaceState.count(WFJ.HudLabels.SURFACE))
+    -- Alt while the line is secret: the record is dropped without comparing the secret, no error
+    Stub.keys.alt = true
+    assert.has_no.errors(function() WFJ.Modifier.refresh() end)
+    assert.are.equal("4 m", b.Duration:GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    -- readable again: Japanese again
+    _G.issecretvalue = nil
+    WFJ.HudLabels.init()
+    b:UpdateDuration(en("MINUTE_ONELETTER_ABBR"), 3)
+    assert.are.equal("3分", b.Duration:GetText())
+  end)
+
   it("the FPS counter's bound form is Japanese with its number; the bare number stays", function()
     local fs = _G.FramerateFrame.FramerateText
     fs:SetFormattedText(en("FPS_COUNTER_CPU_BOUND"), 59.94)

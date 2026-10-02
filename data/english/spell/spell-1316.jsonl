@@ -1,97 +1,97 @@
-{"id": 1316039, "field": "name", "en": "Fire Blast", "hash": "bf7fd8d732ef40f5", "src": "db2@1.60.1.70124"}
-{"id": 1316039, "field": "description", "en": "Sear your target's flesh dealing $s1 Fire damage.", "hash": "1793e6c194a9a59a", "src": "db2@1.60.1.70124"}
-{"id": 1316048, "field": "name", "en": "Transformative Cocoon", "hash": "2fdfe48d0e37035d", "src": "db2@1.60.1.70124"}
-{"id": 1316048, "field": "description", "en": "$@spelldesc1301167", "hash": "5bffbb71ae10d212", "src": "db2@1.60.1.70124"}
-{"id": 1316048, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70124"}
-{"id": 1316049, "field": "name", "en": "Transformative Cocoon", "hash": "2fdfe48d0e37035d", "src": "db2@1.60.1.70124"}
-{"id": 1316051, "field": "name", "en": "Raider's Seal", "hash": "bd1754593e2557e9", "src": "db2@1.60.1.70124"}
-{"id": 1316051, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1316052s1 to all Resistances in Forest and Grassland areas.", "hash": "f0b47016864934c3", "src": "db2@1.60.1.70124"}
-{"id": 1316052, "field": "name", "en": "Raider's Seal", "hash": "bd1754593e2557e9", "src": "db2@1.60.1.70124"}
-{"id": 1316052, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70124"}
-{"id": 1316053, "field": "name", "en": "Enriched Seal", "hash": "2e53f15d977ad5c3", "src": "db2@1.60.1.70124"}
-{"id": 1316053, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1316054s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "cc097fdd7f6b88b0", "src": "db2@1.60.1.70124"}
-{"id": 1316054, "field": "name", "en": "Enriched Seal", "hash": "2e53f15d977ad5c3", "src": "db2@1.60.1.70124"}
-{"id": 1316054, "field": "aura", "en": "In a Forest or Grassland area, restoring an additional $s1 Mana every 5 seconds.", "hash": "f0b58277076e6441", "src": "db2@1.60.1.70124"}
-{"id": 1316055, "field": "name", "en": "Darkspear Voodoo Seal", "hash": "211211ea4c70de0d", "src": "db2@1.60.1.70124"}
-{"id": 1316055, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1316054s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "cc097fdd7f6b88b0", "src": "db2@1.60.1.70124"}
-{"id": 1316056, "field": "name", "en": "Darkspear Voodoo Seal", "hash": "211211ea4c70de0d", "src": "db2@1.60.1.70124"}
-{"id": 1316056, "field": "aura", "en": "In a Forest or Grassland area, restoring an additional $s1 Mana every 5 seconds.", "hash": "f0b58277076e6441", "src": "db2@1.60.1.70124"}
-{"id": 1316057, "field": "name", "en": "Volunteer's Lucky Seal", "hash": "ff2764ffed3445f6", "src": "db2@1.60.1.70124"}
-{"id": 1316057, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1316058s1 to all Resistances in Forest and Grassland areas.", "hash": "c550f541b8f57d9e", "src": "db2@1.60.1.70124"}
-{"id": 1316058, "field": "name", "en": "Volunteer's Lucky Seal", "hash": "ff2764ffed3445f6", "src": "db2@1.60.1.70124"}
-{"id": 1316058, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70124"}
-{"id": 1316101, "field": "name", "en": "Repentance Duration Increase", "hash": "72e4027cc402616b", "src": "db2@1.60.1.70124"}
-{"id": 1316101, "field": "description", "en": "Increases the duration of your Repentance by ${$m1/1000} sec.", "hash": "6cf4f47da880c362", "src": "db2@1.60.1.70124"}
-{"id": 1316319, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70124"}
-{"id": 1316319, "field": "description", "en": "All ranged auto-attacks conjure an icy bolt to blast your current target, inflicting $29502s1 Frost damage.", "hash": "ac0ced4629ae20f6", "src": "db2@1.60.1.70124"}
-{"id": 1316346, "field": "name", "en": "Sliced Ankle", "hash": "1d4213b908aa3642", "src": "db2@1.60.1.70124"}
-{"id": 1316346, "field": "description", "en": "Slice the target's ankle, slowing movement speed by $s1% for $d.", "hash": "606561ce2c5251e8", "src": "db2@1.60.1.70124"}
-{"id": 1316346, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70124"}
-{"id": 1316379, "field": "name", "en": "Cosmetic - Sleep Zzz", "hash": "6c482b86aed17049", "src": "db2@1.60.1.70124"}
-{"id": 1316382, "field": "name", "en": "Dust Storm", "hash": "9d838f3cd03522e9", "src": "db2@1.60.1.70124"}
-{"id": 1316382, "field": "description", "en": "Kicks up dust inflicting $s1 Physical damage to enemies within $a1 yds and reducing hit chance with attacks by $s2%.", "hash": "81edd466da4e9279", "src": "db2@1.60.1.70124"}
-{"id": 1316382, "field": "aura", "en": "Hit chance with attacks reduced by $s2%.", "hash": "a92b486e75907c31", "src": "db2@1.60.1.70124"}
-{"id": 1316387, "field": "name", "en": "Muculent Rot", "hash": "46e2cc6cb8723555", "src": "db2@1.60.1.70124"}
-{"id": 1316387, "field": "description", "en": "$@spelldesc1316388", "hash": "6e397ce257f3dd00", "src": "db2@1.60.1.70124"}
-{"id": 1316387, "field": "aura", "en": "Spirit and Stamina reduced by $s1%.", "hash": "ebb721b47991cd9c", "src": "db2@1.60.1.70124"}
-{"id": 1316388, "field": "name", "en": "Muculent Rot", "hash": "46e2cc6cb8723555", "src": "db2@1.60.1.70124"}
-{"id": 1316388, "field": "description", "en": "Has a chance to affect the current target with $@spellname1316387 reducing the targets Spirit and Stamina by $1316387s1% for $1316387d.\r\n", "hash": "82ddbfaae27293eb", "src": "db2@1.60.1.70124"}
-{"id": 1316474, "field": "name", "en": "Moonfire", "hash": "eda7a4c188a2324b", "src": "db2@1.60.1.70124"}
-{"id": 1316474, "field": "description", "en": "Burns the enemy for Arcane damage and inflicts additional damage over $d.", "hash": "ba2c738b36f59f68", "src": "db2@1.60.1.70124"}
-{"id": 1316474, "field": "aura", "en": "Arcane damage inflicted every $t1 sec.", "hash": "91a112e842fa9bcb", "src": "db2@1.60.1.70124"}
-{"id": 1316480, "field": "name", "en": "Entangling Roots", "hash": "2c0883989bcc14e2", "src": "db2@1.60.1.70124"}
-{"id": 1316480, "field": "description", "en": "Entangles nearby enemies in roots, inflicting $s2  Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "1aa34ea31f92069b", "src": "db2@1.60.1.70124"}
-{"id": 1316480, "field": "aura", "en": "Immobilized.\r\n$s2 Nature damage inflicted every $t2 sec.", "hash": "4d35cbbaf3cbec29", "src": "db2@1.60.1.70124"}
-{"id": 1316489, "field": "name", "en": "Highland Venom", "hash": "e46ce7e5275b85e1", "src": "db2@1.60.1.70124"}
-{"id": 1316489, "field": "description", "en": "Reduces the movement speed of an enemy by $s1%, and reduces all physical and magical damage it deals by $s2. Lasts $d.", "hash": "942dc1e7d09a648a", "src": "db2@1.60.1.70124"}
-{"id": 1316489, "field": "aura", "en": "Movement speed reduced by $s1%.\r\nPhysical and magical damage dealt is reduced by $s2.", "hash": "261ea1c50685d364", "src": "db2@1.60.1.70124"}
-{"id": 1316555, "field": "name", "en": "Slam", "hash": "0b3ba31d857cc8e6", "src": "db2@1.60.1.70124"}
-{"id": 1316555, "field": "description", "en": "Slams the opponent, causing Physical damage.", "hash": "609964377e4118dd", "src": "db2@1.60.1.70124"}
-{"id": 1316579, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70124"}
-{"id": 1316579, "field": "description", "en": "Shoots at an enemy, inflicting Physical damage.", "hash": "75634826c9339361", "src": "db2@1.60.1.70124"}
-{"id": 1316591, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70124"}
-{"id": 1316591, "field": "description", "en": "$@spelldesc1247428", "hash": "a780e1c7348929df", "src": "db2@1.60.1.70124"}
-{"id": 1316595, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70124"}
-{"id": 1316595, "field": "description", "en": "$@spelldesc1247432", "hash": "a780e244348949ba", "src": "db2@1.60.1.70124"}
-{"id": 1316596, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70124"}
-{"id": 1316596, "field": "description", "en": "$@spelldesc1247432", "hash": "a780e244348949ba", "src": "db2@1.60.1.70124"}
-{"id": 1316597, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70124"}
-{"id": 1316597, "field": "description", "en": "$@spelldesc1247437", "hash": "a780e249348949bf", "src": "db2@1.60.1.70124"}
-{"id": 1316598, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70124"}
-{"id": 1316598, "field": "description", "en": "$@spelldesc1247442", "hash": "a780e2c73489699b", "src": "db2@1.60.1.70124"}
-{"id": 1316601, "field": "name", "en": "Heal", "hash": "09c07834563b7243", "src": "db2@1.60.1.70124"}
-{"id": 1316601, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70124"}
-{"id": 1316612, "field": "name", "en": "Hook Shove", "hash": "4a2eec4e52954a1a", "src": "db2@1.60.1.70124"}
-{"id": 1316612, "field": "description", "en": "Shoots at an enemy, inflicting Physical damage.", "hash": "75634826c9339361", "src": "db2@1.60.1.70124"}
-{"id": 1316677, "field": "name", "en": "Wrath", "hash": "068926d83b1c1c5d", "src": "db2@1.60.1.70124"}
-{"id": 1316677, "field": "description", "en": "Hurls a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "b05756c5b4997492", "src": "db2@1.60.1.70124"}
-{"id": 1316680, "field": "name", "en": "Forceful Wrath", "hash": "8da6896c0b161964", "src": "db2@1.60.1.70124"}
-{"id": 1316680, "field": "description", "en": "Shoots at an enemy, inflicting Nature damage.", "hash": "7ac08e5848110026", "src": "db2@1.60.1.70124"}
-{"id": 1316697, "field": "name", "en": "Wrack", "hash": "06891e283b19fe6f", "src": "db2@1.60.1.70124"}
-{"id": 1316697, "field": "description", "en": "Tears the target apart from within, dealing $s1 Shadow damage every $t sec and increasing the damage they take from your other Shadow damage over time effects by $s2%. Lasts $d.", "hash": "1a6b75448198af71", "src": "db2@1.60.1.70124"}
-{"id": 1316697, "field": "aura", "en": "Deals $s1 Shadow damage every $t1 sec and increases damage taken from the caster's other Shadow damage over time effects by $s2%.", "hash": "4418e1ba145e1114", "src": "db2@1.60.1.70124"}
-{"id": 1316778, "field": "name", "en": "Summon Minimule", "hash": "af99e75d6a0c956a", "src": "db2@1.60.1.70124"}
-{"id": 1316778, "field": "description", "en": "Right Click to summon and dismiss your Minimule.", "hash": "ce6196a59d1a1349", "src": "db2@1.60.1.70124"}
-{"id": 1316794, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70124"}
-{"id": 1316794, "field": "description", "en": "$@spelldesc1270940", "hash": "db3b35a8074a8e92", "src": "db2@1.60.1.70124"}
-{"id": 1316847, "field": "name", "en": "Summon Wolf", "hash": "88141967c3ae5c11", "src": "db2@1.60.1.70124"}
-{"id": 1316847, "field": "description", "en": "Summons a wolf that will protect you for $d.", "hash": "d462c5fc37da3f12", "src": "db2@1.60.1.70124"}
-{"id": 1316865, "field": "name", "en": "Immolate", "hash": "c1cd0d857455f570", "src": "db2@1.60.1.70124"}
-{"id": 1316865, "field": "description", "en": "Burns the target for $s1 Fire damage every $t1 sec for $d.", "hash": "9a11784e89af553a", "src": "db2@1.60.1.70124"}
-{"id": 1316865, "field": "aura", "en": "$s1 Fire damage inflicted every $t1 sec.", "hash": "5a5656deae0c1567", "src": "db2@1.60.1.70124"}
-{"id": 1316872, "field": "name", "en": "Unknown", "hash": "7743ba191b88efe6", "src": "db2@1.60.1.70124"}
-{"id": 1316872, "field": "description", "en": "Unlocked in a future patch.", "hash": "3e092a44b6033234", "src": "db2@1.60.1.70124"}
-{"id": 1316928, "field": "name", "en": "Underwater Breathing", "hash": "e40b82b9ad430735", "src": "db2@1.60.1.70124"}
-{"id": 1316928, "field": "description", "en": "Underwater breath lasts $s1% longer than normal.", "hash": "8f8e90b191cb5bf7", "src": "db2@1.60.1.70124"}
-{"id": 1316990, "field": "name", "en": "Legacy Reputation Reward (Hardcore placeholder)", "hash": "981bddd6eae2e509", "src": "db2@1.60.1.70124"}
-{"id": 1316990, "field": "description", "en": "Increases your Legacy reputation by $s1.\r\n", "hash": "d1cc2c2bea4b7d21", "src": "db2@1.60.1.70124"}
-{"id": 1316991, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
-{"id": 1316991, "field": "description", "en": "Healing for $s1 every $1316992t2 sec. for $1316992d.", "hash": "f396bf7c13e0f53c", "src": "db2@1.60.1.70124"}
-{"id": 1316992, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
-{"id": 1316992, "field": "description", "en": "Healing every $t2 sec for $d.", "hash": "032d56b0f6b6fb7e", "src": "db2@1.60.1.70124"}
-{"id": 1316993, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
-{"id": 1316993, "field": "description", "en": "Dealing $s1 Holy damage every $1316994t2 sec.", "hash": "cfa7974f38fd63f4", "src": "db2@1.60.1.70124"}
-{"id": 1316994, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
-{"id": 1316994, "field": "description", "en": "Deals Holy damage every $t2 sec.", "hash": "703b6482d69e198b", "src": "db2@1.60.1.70124"}
-{"id": 1316995, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70124"}
-{"id": 1316995, "field": "description", "en": "Launches a volley of holy light at the target, causing $1316993s1 Holy damage to an enemy, or $1316991s1 healing to an ally, instantly and every $402261t2 sec for $402261d.", "hash": "761a741e212f71a3", "src": "db2@1.60.1.70124"}
+{"id": 1316039, "field": "name", "en": "Fire Blast", "hash": "bf7fd8d732ef40f5", "src": "db2@1.60.1.70170"}
+{"id": 1316039, "field": "description", "en": "Sear your target's flesh, dealing $s1 Fire damage.", "hash": "f81f284debd32e39", "src": "db2@1.60.1.70170"}
+{"id": 1316048, "field": "name", "en": "Transformative Cocoon", "hash": "2fdfe48d0e37035d", "src": "db2@1.60.1.70170"}
+{"id": 1316048, "field": "description", "en": "$@spelldesc1301167", "hash": "5bffbb71ae10d212", "src": "db2@1.60.1.70170"}
+{"id": 1316048, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70170"}
+{"id": 1316049, "field": "name", "en": "Transformative Cocoon", "hash": "2fdfe48d0e37035d", "src": "db2@1.60.1.70170"}
+{"id": 1316051, "field": "name", "en": "Raider's Seal", "hash": "bd1754593e2557e9", "src": "db2@1.60.1.70170"}
+{"id": 1316051, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1316052s1 to all Resistances in Forest and Grassland areas.", "hash": "f0b47016864934c3", "src": "db2@1.60.1.70170"}
+{"id": 1316052, "field": "name", "en": "Raider's Seal", "hash": "bd1754593e2557e9", "src": "db2@1.60.1.70170"}
+{"id": 1316052, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70170"}
+{"id": 1316053, "field": "name", "en": "Enriched Seal", "hash": "2e53f15d977ad5c3", "src": "db2@1.60.1.70170"}
+{"id": 1316053, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1316054s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "cc097fdd7f6b88b0", "src": "db2@1.60.1.70170"}
+{"id": 1316054, "field": "name", "en": "Enriched Seal", "hash": "2e53f15d977ad5c3", "src": "db2@1.60.1.70170"}
+{"id": 1316054, "field": "aura", "en": "In a Forest or Grassland area, restoring an additional $s1 Mana every 5 sec.", "hash": "c3cfc82208cf79fc", "src": "db2@1.60.1.70170"}
+{"id": 1316055, "field": "name", "en": "Darkspear Voodoo Seal", "hash": "211211ea4c70de0d", "src": "db2@1.60.1.70170"}
+{"id": 1316055, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1316054s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "cc097fdd7f6b88b0", "src": "db2@1.60.1.70170"}
+{"id": 1316056, "field": "name", "en": "Darkspear Voodoo Seal", "hash": "211211ea4c70de0d", "src": "db2@1.60.1.70170"}
+{"id": 1316056, "field": "aura", "en": "In a Forest or Grassland area, restoring an additional $s1 Mana every 5 sec.", "hash": "c3cfc82208cf79fc", "src": "db2@1.60.1.70170"}
+{"id": 1316057, "field": "name", "en": "Volunteer's Lucky Seal", "hash": "ff2764ffed3445f6", "src": "db2@1.60.1.70170"}
+{"id": 1316057, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1316058s1 to all Resistances in Forest and Grassland areas.", "hash": "c550f541b8f57d9e", "src": "db2@1.60.1.70170"}
+{"id": 1316058, "field": "name", "en": "Volunteer's Lucky Seal", "hash": "ff2764ffed3445f6", "src": "db2@1.60.1.70170"}
+{"id": 1316058, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70170"}
+{"id": 1316101, "field": "name", "en": "Repentance Duration Increase", "hash": "72e4027cc402616b", "src": "db2@1.60.1.70170"}
+{"id": 1316101, "field": "description", "en": "Increases the duration of your Repentance by ${$m1/1000} sec.", "hash": "6cf4f47da880c362", "src": "db2@1.60.1.70170"}
+{"id": 1316319, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70170"}
+{"id": 1316319, "field": "description", "en": "All ranged auto-attacks conjure an icy bolt to blast your current target, inflicting $29502s1 Frost damage.", "hash": "ac0ced4629ae20f6", "src": "db2@1.60.1.70170"}
+{"id": 1316346, "field": "name", "en": "Sliced Ankle", "hash": "1d4213b908aa3642", "src": "db2@1.60.1.70170"}
+{"id": 1316346, "field": "description", "en": "Slice the target's ankle, slowing movement speed by $s1% for $d.", "hash": "606561ce2c5251e8", "src": "db2@1.60.1.70170"}
+{"id": 1316346, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70170"}
+{"id": 1316379, "field": "name", "en": "Cosmetic - Sleep Zzz", "hash": "6c482b86aed17049", "src": "db2@1.60.1.70170"}
+{"id": 1316382, "field": "name", "en": "Dust Storm", "hash": "9d838f3cd03522e9", "src": "db2@1.60.1.70170"}
+{"id": 1316382, "field": "description", "en": "Kicks up dust, inflicting $s1 Physical damage to enemies within $a1 yds and reducing hit chance with attacks by $s2%.", "hash": "ce59fc0f87c3bc14", "src": "db2@1.60.1.70170"}
+{"id": 1316382, "field": "aura", "en": "Hit chance with attacks reduced by $s2%.", "hash": "a92b486e75907c31", "src": "db2@1.60.1.70170"}
+{"id": 1316387, "field": "name", "en": "Muculent Rot", "hash": "46e2cc6cb8723555", "src": "db2@1.60.1.70170"}
+{"id": 1316387, "field": "description", "en": "$@spelldesc1316388", "hash": "6e397ce257f3dd00", "src": "db2@1.60.1.70170"}
+{"id": 1316387, "field": "aura", "en": "Spirit and Stamina reduced by $s1%.", "hash": "ebb721b47991cd9c", "src": "db2@1.60.1.70170"}
+{"id": 1316388, "field": "name", "en": "Muculent Rot", "hash": "46e2cc6cb8723555", "src": "db2@1.60.1.70170"}
+{"id": 1316388, "field": "description", "en": "Has a chance to affect the current target with $@spellname1316387, reducing the target's Spirit and Stamina by $1316387s1% for $1316387d.\r\n", "hash": "a14e2133aed47517", "src": "db2@1.60.1.70170"}
+{"id": 1316474, "field": "name", "en": "Moonfire", "hash": "eda7a4c188a2324b", "src": "db2@1.60.1.70170"}
+{"id": 1316474, "field": "description", "en": "Burns the enemy for Arcane damage and inflicts additional damage over $d.", "hash": "ba2c738b36f59f68", "src": "db2@1.60.1.70170"}
+{"id": 1316474, "field": "aura", "en": "Arcane damage inflicted every $t1 sec.", "hash": "91a112e842fa9bcb", "src": "db2@1.60.1.70170"}
+{"id": 1316480, "field": "name", "en": "Entangling Roots", "hash": "2c0883989bcc14e2", "src": "db2@1.60.1.70170"}
+{"id": 1316480, "field": "description", "en": "Entangles nearby enemies in roots, inflicting $s2 Nature damage every $t2 sec and immobilizing them for up to $d.", "hash": "53e9621a858f33ca", "src": "db2@1.60.1.70170"}
+{"id": 1316480, "field": "aura", "en": "Immobilized.\r\n$s2 Nature damage inflicted every $t2 sec.", "hash": "4d35cbbaf3cbec29", "src": "db2@1.60.1.70170"}
+{"id": 1316489, "field": "name", "en": "Highland Venom", "hash": "e46ce7e5275b85e1", "src": "db2@1.60.1.70170"}
+{"id": 1316489, "field": "description", "en": "Reduces the movement speed of an enemy by $s1%, and reduces all physical and magical damage it deals by $s2.", "hash": "5ac38bffb9714552", "src": "db2@1.60.1.70170"}
+{"id": 1316489, "field": "aura", "en": "Movement speed reduced by $s1%.\r\nPhysical and magical damage dealt is reduced by $s2.", "hash": "261ea1c50685d364", "src": "db2@1.60.1.70170"}
+{"id": 1316555, "field": "name", "en": "Slam", "hash": "0b3ba31d857cc8e6", "src": "db2@1.60.1.70170"}
+{"id": 1316555, "field": "description", "en": "Slams the opponent, causing Physical damage.", "hash": "609964377e4118dd", "src": "db2@1.60.1.70170"}
+{"id": 1316579, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70170"}
+{"id": 1316579, "field": "description", "en": "Shoots at an enemy, inflicting Physical damage.", "hash": "75634826c9339361", "src": "db2@1.60.1.70170"}
+{"id": 1316591, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70170"}
+{"id": 1316591, "field": "description", "en": "$@spelldesc1247428", "hash": "a780e1c7348929df", "src": "db2@1.60.1.70170"}
+{"id": 1316595, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70170"}
+{"id": 1316595, "field": "description", "en": "$@spelldesc1247432", "hash": "a780e244348949ba", "src": "db2@1.60.1.70170"}
+{"id": 1316596, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70170"}
+{"id": 1316596, "field": "description", "en": "$@spelldesc1247432", "hash": "a780e244348949ba", "src": "db2@1.60.1.70170"}
+{"id": 1316597, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70170"}
+{"id": 1316597, "field": "description", "en": "$@spelldesc1247437", "hash": "a780e249348949bf", "src": "db2@1.60.1.70170"}
+{"id": 1316598, "field": "name", "en": "Stock Crate", "hash": "287b3da561732480", "src": "db2@1.60.1.70170"}
+{"id": 1316598, "field": "description", "en": "$@spelldesc1247442", "hash": "a780e2c73489699b", "src": "db2@1.60.1.70170"}
+{"id": 1316601, "field": "name", "en": "Heal", "hash": "09c07834563b7243", "src": "db2@1.60.1.70170"}
+{"id": 1316601, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70170"}
+{"id": 1316612, "field": "name", "en": "Hook Shove", "hash": "4a2eec4e52954a1a", "src": "db2@1.60.1.70170"}
+{"id": 1316612, "field": "description", "en": "Shoots at an enemy, inflicting Physical damage.", "hash": "75634826c9339361", "src": "db2@1.60.1.70170"}
+{"id": 1316677, "field": "name", "en": "Wrath", "hash": "068926d83b1c1c5d", "src": "db2@1.60.1.70170"}
+{"id": 1316677, "field": "description", "en": "Hurls a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "b05756c5b4997492", "src": "db2@1.60.1.70170"}
+{"id": 1316680, "field": "name", "en": "Forceful Wrath", "hash": "8da6896c0b161964", "src": "db2@1.60.1.70170"}
+{"id": 1316680, "field": "description", "en": "Shoots at an enemy, inflicting Nature damage.", "hash": "7ac08e5848110026", "src": "db2@1.60.1.70170"}
+{"id": 1316697, "field": "name", "en": "Wrack", "hash": "06891e283b19fe6f", "src": "db2@1.60.1.70170"}
+{"id": 1316697, "field": "description", "en": "Tears the target apart from within, inflicting $s1 Shadow damage every $t sec and increasing the damage they take from your other Shadow damage over time effects by $s2% for $d.", "hash": "1cf32663d57d914f", "src": "db2@1.60.1.70170"}
+{"id": 1316697, "field": "aura", "en": "Inflicts $s1 Shadow damage every $t1 sec and increases damage taken from the caster's other Shadow damage over time effects by $s2%.", "hash": "a6b0493a33f3bb6b", "src": "db2@1.60.1.70170"}
+{"id": 1316778, "field": "name", "en": "Summon Minimule", "hash": "af99e75d6a0c956a", "src": "db2@1.60.1.70170"}
+{"id": 1316778, "field": "description", "en": "Right Click to summon and dismiss your Minimule.", "hash": "ce6196a59d1a1349", "src": "db2@1.60.1.70170"}
+{"id": 1316794, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70170"}
+{"id": 1316794, "field": "description", "en": "$@spelldesc1270940", "hash": "db3b35a8074a8e92", "src": "db2@1.60.1.70170"}
+{"id": 1316847, "field": "name", "en": "Summon Wolf", "hash": "88141967c3ae5c11", "src": "db2@1.60.1.70170"}
+{"id": 1316847, "field": "description", "en": "Summons a wolf that will protect you for $d.", "hash": "d462c5fc37da3f12", "src": "db2@1.60.1.70170"}
+{"id": 1316865, "field": "name", "en": "Immolate", "hash": "c1cd0d857455f570", "src": "db2@1.60.1.70170"}
+{"id": 1316865, "field": "description", "en": "Burns the target for $s1 Fire damage every $t1 sec for $d.", "hash": "9a11784e89af553a", "src": "db2@1.60.1.70170"}
+{"id": 1316865, "field": "aura", "en": "$s1 Fire damage inflicted every $t1 sec.", "hash": "5a5656deae0c1567", "src": "db2@1.60.1.70170"}
+{"id": 1316872, "field": "name", "en": "Unknown", "hash": "7743ba191b88efe6", "src": "db2@1.60.1.70170"}
+{"id": 1316872, "field": "description", "en": "Unlocked in a future patch.", "hash": "3e092a44b6033234", "src": "db2@1.60.1.70170"}
+{"id": 1316928, "field": "name", "en": "Underwater Breathing", "hash": "e40b82b9ad430735", "src": "db2@1.60.1.70170"}
+{"id": 1316928, "field": "description", "en": "Underwater breath lasts $s1% longer than normal.", "hash": "8f8e90b191cb5bf7", "src": "db2@1.60.1.70170"}
+{"id": 1316990, "field": "name", "en": "Legacy Reputation Reward (Hardcore placeholder)", "hash": "981bddd6eae2e509", "src": "db2@1.60.1.70170"}
+{"id": 1316990, "field": "description", "en": "Increases your Legacy reputation by $s1.\r\n", "hash": "d1cc2c2bea4b7d21", "src": "db2@1.60.1.70170"}
+{"id": 1316991, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70170"}
+{"id": 1316991, "field": "description", "en": "Healing for $s1 every $1316992t2 sec for $1316992d.", "hash": "1b4918cfa126e42c", "src": "db2@1.60.1.70170"}
+{"id": 1316992, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70170"}
+{"id": 1316992, "field": "description", "en": "Healing every $t2 sec for $d.", "hash": "032d56b0f6b6fb7e", "src": "db2@1.60.1.70170"}
+{"id": 1316993, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70170"}
+{"id": 1316993, "field": "description", "en": "Dealing $s1 Holy damage every $1316994t2 sec.", "hash": "cfa7974f38fd63f4", "src": "db2@1.60.1.70170"}
+{"id": 1316994, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70170"}
+{"id": 1316994, "field": "description", "en": "Deals Holy damage every $t2 sec.", "hash": "703b6482d69e198b", "src": "db2@1.60.1.70170"}
+{"id": 1316995, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70170"}
+{"id": 1316995, "field": "description", "en": "Launches a volley of holy light at the target, causing $1316993s1 Holy damage to an enemy, or $1316991s1 healing to an ally, instantly and every $402261t2 sec for $402261d.", "hash": "761a741e212f71a3", "src": "db2@1.60.1.70170"}

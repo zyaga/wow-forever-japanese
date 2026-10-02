@@ -1,45 +1,45 @@
-{"id": 1260001, "field": "name", "en": "Debilitated", "hash": "2525f041da6becf6", "src": "db2@1.60.1.70124"}
-{"id": 1260031, "field": "name", "en": "Dispel Curse", "hash": "daaa447083da0a52", "src": "db2@1.60.1.70124"}
-{"id": 1260031, "field": "description", "en": "Attempt to dispel the necromantic curse on the Accursed Skull.", "hash": "9b828052922be77c", "src": "db2@1.60.1.70124"}
-{"id": 1260041, "field": "name", "en": "Aggro Area", "hash": "46ba05d7b1b3dfa9", "src": "db2@1.60.1.70124"}
-{"id": 1260167, "field": "name", "en": "RP Summon", "hash": "7f347a7c3e98147d", "src": "db2@1.60.1.70124"}
-{"id": 1260168, "field": "name", "en": "Gelkis Banner", "hash": "3b029f5ca9d8b6f7", "src": "db2@1.60.1.70124"}
-{"id": 1260189, "field": "name", "en": "Touch of the Grave", "hash": "6266a614d1dbf11d", "src": "db2@1.60.1.70124"}
-{"id": 1260189, "field": "description", "en": "Your spells and attacks have a $h% chance to drain Health from the target, up to $s1% of your maximum Health.", "hash": "9589e941c756b22f", "src": "db2@1.60.1.70124"}
-{"id": 1260198, "field": "name", "en": "Touch of the Grave", "hash": "6266a614d1dbf11d", "src": "db2@1.60.1.70124"}
-{"id": 1260198, "field": "description", "en": "Steals life from target enemy equal to $1260189s1% of the caster's maximum Health.", "hash": "a87ad4ba335a02c0", "src": "db2@1.60.1.70124"}
-{"id": 1260201, "field": "name", "en": "Touch of the Grave", "hash": "6266a614d1dbf11d", "src": "db2@1.60.1.70124"}
-{"id": 1260201, "field": "description", "en": "Your spells and attacks have a $h% chance to drain Health from the target, up to $s1% of your maximum Health.", "hash": "9589e941c756b22f", "src": "db2@1.60.1.70124"}
-{"id": 1260248, "field": "name", "en": "Mod Pet Spell Power Test", "hash": "80f15ed2cd41d925", "src": "db2@1.60.1.70124"}
-{"id": 1260270, "field": "name", "en": "Rapid Regeneration", "hash": "d51fa4741042f01d", "src": "db2@1.60.1.70124"}
-{"id": 1260270, "field": "description", "en": "Regenerate $o1% of your maximum Health over $d. Any movement, action, or damage taken will cancel the effect.", "hash": "5eacd496214a3e64", "src": "db2@1.60.1.70124"}
-{"id": 1260270, "field": "aura", "en": "Regenerating $o1% of maximum Health over $d.", "hash": "992721f47cd34a86", "src": "db2@1.60.1.70124"}
-{"id": 1260282, "field": "name", "en": "Stick Brain [DNT]", "hash": "389c14de6136785e", "src": "db2@1.60.1.70124"}
-{"id": 1260283, "field": "name", "en": "Throw Stick", "hash": "a1c2d53a390260bb", "src": "db2@1.60.1.70124"}
-{"id": 1260287, "field": "name", "en": "Catch Stick", "hash": "4732d8bf4801c713", "src": "db2@1.60.1.70124"}
-{"id": 1260424, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70124"}
-{"id": 1260424, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70124"}
-{"id": 1260464, "field": "name", "en": "Burn Stick", "hash": "1973dd6a08c60ee8", "src": "db2@1.60.1.70124"}
-{"id": 1260464, "field": "description", "en": "Burn the stick at the brazier in Outcast Hideaway.", "hash": "c5877eb223033212", "src": "db2@1.60.1.70124"}
-{"id": 1260566, "field": "name", "en": "Ritual", "hash": "d329fffa6fe461e7", "src": "db2@1.60.1.70124"}
-{"id": 1260576, "field": "name", "en": "Windblast", "hash": "39495669788e74b2", "src": "db2@1.60.1.70124"}
-{"id": 1260576, "field": "description", "en": "Knocks back nearby enemies.", "hash": "ca58d281436516bd", "src": "db2@1.60.1.70124"}
-{"id": 1260576, "field": "aura", "en": "Windsmacked!", "hash": "c1c430148396e3a8", "src": "db2@1.60.1.70124"}
-{"id": 1260586, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70124"}
-{"id": 1260588, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70124"}
-{"id": 1260590, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70124"}
-{"id": 1260618, "field": "name", "en": "Burning Things", "hash": "76fed4104fb6b32b", "src": "db2@1.60.1.70124"}
-{"id": 1260618, "field": "description", "en": "You light nearby centaur tents on fire.", "hash": "a3b7bed0fbd60e44", "src": "db2@1.60.1.70124"}
-{"id": 1260624, "field": "name", "en": "Burning Tent", "hash": "8d1813b80a65506d", "src": "db2@1.60.1.70124"}
-{"id": 1260626, "field": "name", "en": "Carry Stag", "hash": "54187ff2a85a4a3e", "src": "db2@1.60.1.70124"}
-{"id": 1260639, "field": "name", "en": "Carry Stag", "hash": "54187ff2a85a4a3e", "src": "db2@1.60.1.70124"}
-{"id": 1260645, "field": "name", "en": "Burn Tent", "hash": "6205dd8bb7573010", "src": "db2@1.60.1.70124"}
-{"id": 1260645, "field": "description", "en": "Throw the burning stick to attempt to light centaur tents on fire.", "hash": "6a626c9210da619f", "src": "db2@1.60.1.70124"}
-{"id": 1260650, "field": "name", "en": "Bash", "hash": "08f1a3a0f5ece8cf", "src": "db2@1.60.1.70124"}
-{"id": 1260650, "field": "description", "en": "Stuns an enemy, rendering it unable to move or attack for $d.", "hash": "79289398718d04d2", "src": "db2@1.60.1.70124"}
-{"id": 1260650, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
-{"id": 1260685, "field": "name", "en": "Bloody Explosion", "hash": "5ef1d3c808a62573", "src": "db2@1.60.1.70124"}
-{"id": 1260686, "field": "name", "en": "Carry Stag", "hash": "54187ff2a85a4a3e", "src": "db2@1.60.1.70124"}
-{"id": 1260743, "field": "name", "en": "[DNT] Pet Run Away Test", "hash": "e7007b01ce5dde32", "src": "db2@1.60.1.70124"}
-{"id": 1260743, "field": "description", "en": "Causes your pet to run away from you.", "hash": "8be81e3b1c09b902", "src": "db2@1.60.1.70124"}
-{"id": 1260789, "field": "name", "en": "Tracked", "hash": "ff9eab8733953f0c", "src": "db2@1.60.1.70124"}
+{"id": 1260001, "field": "name", "en": "Debilitated", "hash": "2525f041da6becf6", "src": "db2@1.60.1.70170"}
+{"id": 1260031, "field": "name", "en": "Dispel Curse", "hash": "daaa447083da0a52", "src": "db2@1.60.1.70170"}
+{"id": 1260031, "field": "description", "en": "Attempt to dispel the necromantic curse on the Accursed Skull.", "hash": "9b828052922be77c", "src": "db2@1.60.1.70170"}
+{"id": 1260041, "field": "name", "en": "Aggro Area", "hash": "46ba05d7b1b3dfa9", "src": "db2@1.60.1.70170"}
+{"id": 1260167, "field": "name", "en": "RP Summon", "hash": "7f347a7c3e98147d", "src": "db2@1.60.1.70170"}
+{"id": 1260168, "field": "name", "en": "Gelkis Banner", "hash": "3b029f5ca9d8b6f7", "src": "db2@1.60.1.70170"}
+{"id": 1260189, "field": "name", "en": "Touch of the Grave", "hash": "6266a614d1dbf11d", "src": "db2@1.60.1.70170"}
+{"id": 1260189, "field": "description", "en": "Your spells and attacks have a $h% chance to drain Health from the target, up to $s1% of your maximum Health.", "hash": "9589e941c756b22f", "src": "db2@1.60.1.70170"}
+{"id": 1260198, "field": "name", "en": "Touch of the Grave", "hash": "6266a614d1dbf11d", "src": "db2@1.60.1.70170"}
+{"id": 1260198, "field": "description", "en": "Steals life from target enemy equal to $1260189s1% of your maximum Health.", "hash": "8d303b7b33249a6f", "src": "db2@1.60.1.70170"}
+{"id": 1260201, "field": "name", "en": "Touch of the Grave", "hash": "6266a614d1dbf11d", "src": "db2@1.60.1.70170"}
+{"id": 1260201, "field": "description", "en": "Your spells and attacks have a $h% chance to drain Health from the target, up to $s1% of your maximum Health.", "hash": "9589e941c756b22f", "src": "db2@1.60.1.70170"}
+{"id": 1260248, "field": "name", "en": "Mod Pet Spell Power Test", "hash": "80f15ed2cd41d925", "src": "db2@1.60.1.70170"}
+{"id": 1260270, "field": "name", "en": "Rapid Regeneration", "hash": "d51fa4741042f01d", "src": "db2@1.60.1.70170"}
+{"id": 1260270, "field": "description", "en": "Regenerate $o1% of your maximum Health over $d. Any movement, action, or damage taken will cancel the effect.", "hash": "5eacd496214a3e64", "src": "db2@1.60.1.70170"}
+{"id": 1260270, "field": "aura", "en": "Regenerating $o1% of maximum Health over $d.", "hash": "992721f47cd34a86", "src": "db2@1.60.1.70170"}
+{"id": 1260282, "field": "name", "en": "Stick Brain [DNT]", "hash": "389c14de6136785e", "src": "db2@1.60.1.70170"}
+{"id": 1260283, "field": "name", "en": "Throw Stick", "hash": "a1c2d53a390260bb", "src": "db2@1.60.1.70170"}
+{"id": 1260287, "field": "name", "en": "Catch Stick", "hash": "4732d8bf4801c713", "src": "db2@1.60.1.70170"}
+{"id": 1260424, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70170"}
+{"id": 1260424, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70170"}
+{"id": 1260464, "field": "name", "en": "Burn Stick", "hash": "1973dd6a08c60ee8", "src": "db2@1.60.1.70170"}
+{"id": 1260464, "field": "description", "en": "Burn the stick at the brazier in Outcast Hideaway.", "hash": "c5877eb223033212", "src": "db2@1.60.1.70170"}
+{"id": 1260566, "field": "name", "en": "Ritual", "hash": "d329fffa6fe461e7", "src": "db2@1.60.1.70170"}
+{"id": 1260576, "field": "name", "en": "Windblast", "hash": "39495669788e74b2", "src": "db2@1.60.1.70170"}
+{"id": 1260576, "field": "description", "en": "Knocks back nearby enemies.", "hash": "ca58d281436516bd", "src": "db2@1.60.1.70170"}
+{"id": 1260576, "field": "aura", "en": "Windsmacked!", "hash": "c1c430148396e3a8", "src": "db2@1.60.1.70170"}
+{"id": 1260586, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
+{"id": 1260588, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
+{"id": 1260590, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
+{"id": 1260618, "field": "name", "en": "Burning Things", "hash": "76fed4104fb6b32b", "src": "db2@1.60.1.70170"}
+{"id": 1260618, "field": "description", "en": "You light nearby centaur tents on fire.", "hash": "a3b7bed0fbd60e44", "src": "db2@1.60.1.70170"}
+{"id": 1260624, "field": "name", "en": "Burning Tent", "hash": "8d1813b80a65506d", "src": "db2@1.60.1.70170"}
+{"id": 1260626, "field": "name", "en": "Carry Stag", "hash": "54187ff2a85a4a3e", "src": "db2@1.60.1.70170"}
+{"id": 1260639, "field": "name", "en": "Carry Stag", "hash": "54187ff2a85a4a3e", "src": "db2@1.60.1.70170"}
+{"id": 1260645, "field": "name", "en": "Burn Tent", "hash": "6205dd8bb7573010", "src": "db2@1.60.1.70170"}
+{"id": 1260645, "field": "description", "en": "Throw the burning stick to attempt to light centaur tents on fire.", "hash": "6a626c9210da619f", "src": "db2@1.60.1.70170"}
+{"id": 1260650, "field": "name", "en": "Bash", "hash": "08f1a3a0f5ece8cf", "src": "db2@1.60.1.70170"}
+{"id": 1260650, "field": "description", "en": "Stuns an enemy, rendering it unable to move or attack for $d.", "hash": "79289398718d04d2", "src": "db2@1.60.1.70170"}
+{"id": 1260650, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
+{"id": 1260685, "field": "name", "en": "Bloody Explosion", "hash": "5ef1d3c808a62573", "src": "db2@1.60.1.70170"}
+{"id": 1260686, "field": "name", "en": "Carry Stag", "hash": "54187ff2a85a4a3e", "src": "db2@1.60.1.70170"}
+{"id": 1260743, "field": "name", "en": "[DNT] Pet Run Away Test", "hash": "e7007b01ce5dde32", "src": "db2@1.60.1.70170"}
+{"id": 1260743, "field": "description", "en": "Causes your pet to run away from you.", "hash": "8be81e3b1c09b902", "src": "db2@1.60.1.70170"}
+{"id": 1260789, "field": "name", "en": "Tracked", "hash": "ff9eab8733953f0c", "src": "db2@1.60.1.70170"}

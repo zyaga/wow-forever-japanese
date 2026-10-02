@@ -415,7 +415,8 @@ function ChatSystem.show(frame)
     else
       if ours then line:SetText(jaToEn[ja]) end
       -- setting a font reads nothing from the line, so a secret line gets its font back like any other
-      WFJ.Font.restore(line, fontObject)
+      -- a row given its font back earlier follows a later change of the frame's font size (Font.follow)
+      if not WFJ.Font.restore(line, fontObject) then WFJ.Font.follow(line, fontObject) end
     end
     if ours then n = n + 1 end
   end

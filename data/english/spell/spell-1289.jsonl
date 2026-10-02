@@ -1,193 +1,193 @@
-{"id": 1289053, "field": "name", "en": "Multi-Shot", "hash": "9c9367a3ec99d445", "src": "db2@1.60.1.70124"}
-{"id": 1289055, "field": "name", "en": "Multi-Shot", "hash": "9c9367a3ec99d445", "src": "db2@1.60.1.70124"}
-{"id": 1289121, "field": "name", "en": "Emerald Communion", "hash": "d4576d86855da9e6", "src": "db2@1.60.1.70124"}
-{"id": 1289122, "field": "name", "en": "Emerald Communion", "hash": "d4576d86855da9e6", "src": "db2@1.60.1.70124"}
-{"id": 1289123, "field": "name", "en": "Emerald Communion", "hash": "d4576d86855da9e6", "src": "db2@1.60.1.70124"}
-{"id": 1289124, "field": "name", "en": "Emerald Communion", "hash": "d4576d86855da9e6", "src": "db2@1.60.1.70124"}
-{"id": 1289125, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70124"}
-{"id": 1289125, "field": "description", "en": "Increases the caster's attack speed by $s2% and the Physical damage it deals by $s1 for $d.", "hash": "1d3f8a492f089bd8", "src": "db2@1.60.1.70124"}
-{"id": 1289125, "field": "aura", "en": "Physical damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "bc6c8e1d090dadea", "src": "db2@1.60.1.70124"}
-{"id": 1289126, "field": "name", "en": "Emerald Weakness", "hash": "bedf0c9a4ff214bd", "src": "db2@1.60.1.70124"}
-{"id": 1289126, "field": "description", "en": "Reduces healing received by $s1%.\r\n", "hash": "d7cfffefd4353b7c", "src": "db2@1.60.1.70124"}
-{"id": 1289126, "field": "aura", "en": "Healing received reduced by $s1%.", "hash": "628af43a17163e89", "src": "db2@1.60.1.70124"}
-{"id": 1289127, "field": "name", "en": "Emerald Influence", "hash": "29cebf7df8a4ec36", "src": "db2@1.60.1.70124"}
-{"id": 1289127, "field": "aura", "en": "Applies $@spellname1289126 to enemies within $a2 yds", "hash": "0d44e1aa1c2af051", "src": "db2@1.60.1.70124"}
-{"id": 1289128, "field": "name", "en": "Barkskin", "hash": "a9a3711f5cf7157f", "src": "db2@1.60.1.70124"}
-{"id": 1289128, "field": "description", "en": "Reduces the damage it takes by $s1% for $d.", "hash": "495750bfcfaeaf6c", "src": "db2@1.60.1.70124"}
-{"id": 1289128, "field": "aura", "en": "Damage taken is reduced by $s1%.", "hash": "a5bce47cf001ff05", "src": "db2@1.60.1.70124"}
-{"id": 1289129, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70124"}
-{"id": 1289129, "field": "description", "en": "$@spelldesc1289130", "hash": "edfb8da1bf1a645f", "src": "db2@1.60.1.70124"}
-{"id": 1289130, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70124"}
-{"id": 1289130, "field": "description", "en": "The caster calls down a hurricane that lasts for $1289129d that inflicts $s1 Nature damage every $t1 sec to all enemies in the area and reduces their movement speed by $s2%.", "hash": "ea44c04fa74ec793", "src": "db2@1.60.1.70124"}
-{"id": 1289130, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.\r\n$s2% reduced movement speed.", "hash": "6dc7210b9b7d4122", "src": "db2@1.60.1.70124"}
-{"id": 1289131, "field": "name", "en": "Astral Weakness", "hash": "537e4b6c24dee90c", "src": "db2@1.60.1.70124"}
-{"id": 1289131, "field": "aura", "en": "Reduces Arcane, and Nature resistances by $s1. Increases Arcane, and Nature damage taken by $s2%.", "hash": "c32ebfbeaad9ae71", "src": "db2@1.60.1.70124"}
-{"id": 1289132, "field": "name", "en": "Astral Influence", "hash": "374be3e0ca80bb78", "src": "db2@1.60.1.70124"}
-{"id": 1289132, "field": "aura", "en": "Applies $@spellname1289131 to enemies within $a2 yds.", "hash": "fc88881fb08ef5d3", "src": "db2@1.60.1.70124"}
-{"id": 1289133, "field": "name", "en": "Mass Insect Swarm", "hash": "62c33beba381e326", "src": "db2@1.60.1.70124"}
-{"id": 1289133, "field": "description", "en": "The enemy target is swarmed by insects, decreasing their chance to hit with attacks by $s2% and causing $o1 Nature damage over $d.", "hash": "c1011ca5d063778a", "src": "db2@1.60.1.70124"}
-{"id": 1289133, "field": "aura", "en": "Chance to hit with attacks decreased by $s2% and $s1 Nature damage every $t1 sec.", "hash": "d1ca9f2a4d8a0356", "src": "db2@1.60.1.70124"}
-{"id": 1289134, "field": "name", "en": "Lunar Guidance", "hash": "5ca769a9683e80a8", "src": "db2@1.60.1.70124"}
-{"id": 1289134, "field": "aura", "en": "Grants $@spellname1289135 to allies within $a3 yds.", "hash": "9c3a8bfd982f50b2", "src": "db2@1.60.1.70124"}
-{"id": 1289135, "field": "name", "en": "Lunar Guidance", "hash": "5ca769a9683e80a8", "src": "db2@1.60.1.70124"}
-{"id": 1289135, "field": "aura", "en": "Damage done increased by $s1%.", "hash": "33ad9bd9e06ffdeb", "src": "db2@1.60.1.70124"}
-{"id": 1289136, "field": "name", "en": "Dire Cat Form", "hash": "c0b980e7274c8bc3", "src": "db2@1.60.1.70124"}
-{"id": 1289136, "field": "aura", "en": "Assumed the form of a dire cat.", "hash": "93bd38a34758ed14", "src": "db2@1.60.1.70124"}
-{"id": 1289137, "field": "name", "en": "Dire Bear Form", "hash": "e431c9a2b75f7812", "src": "db2@1.60.1.70124"}
-{"id": 1289137, "field": "aura", "en": "Assumed the form of a dire bear.", "hash": "88caa64a852f22d8", "src": "db2@1.60.1.70124"}
-{"id": 1289138, "field": "name", "en": "Savage Guidance", "hash": "4135aa4f983e490d", "src": "db2@1.60.1.70124"}
-{"id": 1289138, "field": "aura", "en": "Grants $@spellname1289139 to allies within $a3 yds.", "hash": "cf34840c3eefab76", "src": "db2@1.60.1.70124"}
-{"id": 1289139, "field": "name", "en": "Savage Guidance", "hash": "4135aa4f983e490d", "src": "db2@1.60.1.70124"}
-{"id": 1289139, "field": "aura", "en": "Damage taken reduced by $s1%.", "hash": "a4f10210fada6a4f", "src": "db2@1.60.1.70124"}
-{"id": 1289140, "field": "name", "en": "Rake", "hash": "0b167935cc6b2a4d", "src": "db2@1.60.1.70124"}
-{"id": 1289140, "field": "description", "en": "Rake the target for $s1 damage and an additional $o2 damage over $d.", "hash": "d23334a8a2d20780", "src": "db2@1.60.1.70124"}
-{"id": 1289140, "field": "aura", "en": "Bleeding for $s2 damage every $t2 seconds.", "hash": "59c933abdac9a533", "src": "db2@1.60.1.70124"}
-{"id": 1289141, "field": "name", "en": "Rip", "hash": "0015af0d4592c79c", "src": "db2@1.60.1.70124"}
-{"id": 1289141, "field": "description", "en": "Reduces an enemy's movement speed by $s1% for $d and deals $s2 Physical damage every $t2 sec.", "hash": "89beff5f2df29acf", "src": "db2@1.60.1.70124"}
-{"id": 1289141, "field": "aura", "en": "Bleeding for $s2 damage every $t2 seconds.\r\nMovement speed reduced by $s1%.", "hash": "883a6a881eac96e4", "src": "db2@1.60.1.70124"}
-{"id": 1289142, "field": "name", "en": "Ferocious Bite", "hash": "d02e75969ae52d33", "src": "db2@1.60.1.70124"}
-{"id": 1289143, "field": "name", "en": "Stun", "hash": "0b3dc5a2a5416483", "src": "db2@1.60.1.70124"}
-{"id": 1289143, "field": "aura", "en": "Stunned.\r\nTaking increased Physical and Magical damage.", "hash": "5784be2ababdbd66", "src": "db2@1.60.1.70124"}
-{"id": 1289144, "field": "name", "en": "Maul", "hash": "0a6afa530964a501", "src": "db2@1.60.1.70124"}
-{"id": 1289144, "field": "description", "en": "Increases the next attack by $s1 damage.", "hash": "5ec91c64bdbf41c3", "src": "db2@1.60.1.70124"}
-{"id": 1289145, "field": "name", "en": "Empowering Roar", "hash": "fcae0720fdee382d", "src": "db2@1.60.1.70124"}
-{"id": 1289145, "field": "description", "en": "Increases nearby allies' damage by $s1% for $d.", "hash": "ce729af18d27ad6e", "src": "db2@1.60.1.70124"}
-{"id": 1289145, "field": "aura", "en": "Damage increased by $s1%.", "hash": "b556e36189b38b27", "src": "db2@1.60.1.70124"}
-{"id": 1289195, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70124"}
-{"id": 1289195, "field": "description", "en": "Permanently unlock \"the Alchemist\" title for all characters on your account.\r\n\r\nCharacters that wish to display this title must have $s2 skill in Alchemy.", "hash": "55ca655965ff2cba", "src": "db2@1.60.1.70124"}
-{"id": 1289196, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70124"}
-{"id": 1289196, "field": "description", "en": "Permanently unlock \"the Blacksmith\" title for all characters on your account.\n\nCharacters that wish to display this title must have $s2 skill in Blacksmithing.", "hash": "5b3a336cac905286", "src": "db2@1.60.1.70124"}
-{"id": 1289197, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70124"}
-{"id": 1289197, "field": "description", "en": "Permanently unlock \"the Enchanter\" title for all characters on your account.\n\nCharacters that wish to display this title must have $s2 skill in Enchanting.", "hash": "ed9a35c3b7ad76e4", "src": "db2@1.60.1.70124"}
-{"id": 1289198, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70124"}
-{"id": 1289198, "field": "description", "en": "Permanently unlock \"the Engineer\" title for all characters on your account.\n\nCharacters that wish to display this title must have $s2 skill in Engineering.", "hash": "480bd183622464a2", "src": "db2@1.60.1.70124"}
-{"id": 1289199, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70124"}
-{"id": 1289199, "field": "description", "en": "Permanently unlock \"the Leatherworker\" title for all characters on your account.\n\nCharacters that wish to display this title must have $s2 skill in Leatherworking.", "hash": "b9a01b896862eb3d", "src": "db2@1.60.1.70124"}
-{"id": 1289200, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70124"}
-{"id": 1289200, "field": "description", "en": "Permanently unlock \"the Tailor\" title for all characters on your account.\n\nCharacters that wish to display this title must have $s2 skill in Tailoring.", "hash": "ba41d3f02a7eedb4", "src": "db2@1.60.1.70124"}
-{"id": 1289210, "field": "name", "en": "Fletching Wood Bundle", "hash": "0c62735247d47fa7", "src": "db2@1.60.1.70124"}
-{"id": 1289210, "field": "description", "en": "Fletch to create Makeshift Stickin' Spears.", "hash": "696ff13b6a2183e5", "src": "db2@1.60.1.70124"}
-{"id": 1289220, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70124"}
-{"id": 1289238, "field": "name", "en": "Tiger's Fury", "hash": "ae4896c360bd4329", "src": "db2@1.60.1.70124"}
-{"id": 1289238, "field": "description", "en": "Increases Physical damage done by $s1% for $d.", "hash": "895da44bdba35534", "src": "db2@1.60.1.70124"}
-{"id": 1289238, "field": "aura", "en": "Increases Physical damage done by $s1%.", "hash": "4bd3d5503fd7ca80", "src": "db2@1.60.1.70124"}
-{"id": 1289248, "field": "name", "en": "Makeshift Stickin' Spear", "hash": "c3c34ad0147c5990", "src": "db2@1.60.1.70124"}
-{"id": 1289248, "field": "description", "en": "Impales a Freshwater Crocolisk.", "hash": "9def4bd643661038", "src": "db2@1.60.1.70124"}
-{"id": 1289249, "field": "name", "en": "Rooted", "hash": "3bd080d9e263d645", "src": "db2@1.60.1.70124"}
-{"id": 1289250, "field": "name", "en": "Impaled", "hash": "5964d8e0e75257ae", "src": "db2@1.60.1.70124"}
-{"id": 1289250, "field": "description", "en": "Inflicts Physical damage to an enemy every $t1 sec. for $d.", "hash": "922b603531dadde0", "src": "db2@1.60.1.70124"}
-{"id": 1289250, "field": "aura", "en": "Physical damage inflicted every $t1 sec.", "hash": "c8fd5ef350c4cc8c", "src": "db2@1.60.1.70124"}
-{"id": 1289255, "field": "name", "en": "Rock Throw", "hash": "d4893c24d7d2f281", "src": "db2@1.60.1.70124"}
-{"id": 1289256, "field": "name", "en": "Rock Throw", "hash": "d4893c24d7d2f281", "src": "db2@1.60.1.70124"}
-{"id": 1289277, "field": "name", "en": "Rock Throw", "hash": "d4893c24d7d2f281", "src": "db2@1.60.1.70124"}
-{"id": 1289292, "field": "name", "en": "Rock Throw", "hash": "d4893c24d7d2f281", "src": "db2@1.60.1.70124"}
-{"id": 1289305, "field": "name", "en": "Transmute: Red Power Crystal to Blue Power Crystal", "hash": "a07b6e07446b8ebe", "src": "db2@1.60.1.70124"}
-{"id": 1289305, "field": "description", "en": "Transmutes a Red Power Crystal into a Blue Power Crystal.", "hash": "db58d7c01a52fde1", "src": "db2@1.60.1.70124"}
-{"id": 1289375, "field": "name", "en": "Biting Chill", "hash": "e0fdff617b3d9382", "src": "db2@1.60.1.70124"}
-{"id": 1289375, "field": "description", "en": "The freezing winds of the Southern Peaks reduce your movement speed and inflict Frost damage periodically.", "hash": "122146b1f3683f83", "src": "db2@1.60.1.70124"}
-{"id": 1289375, "field": "aura", "en": "$s1 Frost damage inflicted every $t1 sec.\r\nMovement speed reduced by $s2%.", "hash": "2b0696ec23786ecb", "src": "db2@1.60.1.70124"}
-{"id": 1289378, "field": "name", "en": "Warmth", "hash": "300b1dc9d5b11005", "src": "db2@1.60.1.70124"}
-{"id": 1289378, "field": "aura", "en": "The embers of Fiery Burst protect you from the effects of Biting Cold.", "hash": "695df5ab188caf0a", "src": "db2@1.60.1.70124"}
-{"id": 1289402, "field": "name", "en": "Ensemble: Shen'dorei Magister's Garb", "hash": "7312d6ce7a3328d5", "src": "db2@1.60.1.70124"}
-{"id": 1289402, "field": "description", "en": "Collect the appearances of this armor set.", "hash": "3bcf52b26d5663c8", "src": "db2@1.60.1.70124"}
-{"id": 1289404, "field": "name", "en": "(DNT) Linken' Boots of Iron", "hash": "7a400e3bcfea7ddb", "src": "db2@1.60.1.70124"}
-{"id": 1289407, "field": "name", "en": "Ensemble: Shen'dorei Peacekeeper's Garb", "hash": "8cb610268e455b23", "src": "db2@1.60.1.70124"}
-{"id": 1289407, "field": "description", "en": "Collect the appearances of this armor set.", "hash": "3bcf52b26d5663c8", "src": "db2@1.60.1.70124"}
-{"id": 1289413, "field": "name", "en": "(DNT) Linken' Boots of Iron", "hash": "7a400e3bcfea7ddb", "src": "db2@1.60.1.70124"}
-{"id": 1289417, "field": "name", "en": "Ensemble: Shen'dorei Skyseer's Garb", "hash": "a439780e9e5cbc84", "src": "db2@1.60.1.70124"}
-{"id": 1289417, "field": "description", "en": "Collect the appearances of this armor set.", "hash": "3bcf52b26d5663c8", "src": "db2@1.60.1.70124"}
-{"id": 1289419, "field": "name", "en": "Ensemble: Al'Aketh Zealot's Garb", "hash": "2908f79b4e674335", "src": "db2@1.60.1.70124"}
-{"id": 1289419, "field": "description", "en": "Collect the appearances of this armor set.", "hash": "3bcf52b26d5663c8", "src": "db2@1.60.1.70124"}
-{"id": 1289422, "field": "name", "en": "Explorers' League Drawing Kit", "hash": "8332b92424018721", "src": "db2@1.60.1.70124"}
-{"id": 1289422, "field": "description", "en": "Use to sketch a location on the Shapers Terrace map.", "hash": "b47b9010dc82c81c", "src": "db2@1.60.1.70124"}
-{"id": 1289425, "field": "name", "en": "Interesting Landmark", "hash": "5baa5191b5577cb0", "src": "db2@1.60.1.70124"}
-{"id": 1289428, "field": "name", "en": "The Drunken Dwarf", "hash": "b6e55f0a8f742a86", "src": "db2@1.60.1.70124"}
-{"id": 1289428, "field": "description", "en": "Another mug, aye.", "hash": "da214a55eca81d01", "src": "db2@1.60.1.70124"}
-{"id": 1289429, "field": "name", "en": "Set Health", "hash": "fa36dceea82e4d4d", "src": "db2@1.60.1.70124"}
-{"id": 1289430, "field": "name", "en": "Soul Consumption", "hash": "f5444eeb60db24f2", "src": "db2@1.60.1.70124"}
-{"id": 1289431, "field": "name", "en": "Shadow Vent", "hash": "ecd0c7dcef120e67", "src": "db2@1.60.1.70124"}
-{"id": 1289431, "field": "description", "en": "Creates a vent of pure shadow that deals periodic Shadow damage.", "hash": "f464c127db8f4b11", "src": "db2@1.60.1.70124"}
-{"id": 1289433, "field": "name", "en": "Shadow Vent", "hash": "ecd0c7dcef120e67", "src": "db2@1.60.1.70124"}
-{"id": 1289433, "field": "aura", "en": "$s1 Shadow damage every $t1 sec.", "hash": "b42367aef52ef947", "src": "db2@1.60.1.70124"}
-{"id": 1289434, "field": "name", "en": "Cause Insanity", "hash": "d6974d45d47c32cb", "src": "db2@1.60.1.70124"}
-{"id": 1289434, "field": "description", "en": "Drives an enemy target temporarily insane, speeding its attacks by $s2% and its movement by $s3%, as well as causing it to attack its own allies for $d.", "hash": "5f517374402320a2", "src": "db2@1.60.1.70124"}
-{"id": 1289434, "field": "aura", "en": "Charmed.\r\nAttack speed increased by $s2%.\r\nMovement speed increased by $s3%.", "hash": "5efc4777b6355373", "src": "db2@1.60.1.70124"}
-{"id": 1289435, "field": "name", "en": "Tortured Mind", "hash": "a1f68acd809dbd5c", "src": "db2@1.60.1.70124"}
-{"id": 1289435, "field": "description", "en": "Ghostly whispers tear at your mind...\r\n", "hash": "90dbac7bf88b1b7e", "src": "db2@1.60.1.70124"}
-{"id": 1289435, "field": "aura", "en": "Ghostly whispers tear at your mind...", "hash": "90dbac7bf88b1b7e", "src": "db2@1.60.1.70124"}
-{"id": 1289447, "field": "name", "en": "Frost Nova", "hash": "814b760c7d985bff", "src": "db2@1.60.1.70124"}
-{"id": 1289447, "field": "description", "en": "Inflicts Frost damage to nearby enemies, immobilizing them for up to $d.", "hash": "1eb0ef79be5f0091", "src": "db2@1.60.1.70124"}
-{"id": 1289447, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70124"}
-{"id": 1289448, "field": "name", "en": "Frostbolt Volley", "hash": "d4a94c82b55f152f", "src": "db2@1.60.1.70124"}
-{"id": 1289448, "field": "description", "en": "Inflicts $s2 Frost damage to nearby enemies, reducing their movement speed by $s1% for $d.", "hash": "e513fa9266cd5c3a", "src": "db2@1.60.1.70124"}
-{"id": 1289448, "field": "aura", "en": "Movement speed reduced by $s1%.", "hash": "08fe36e785e78519", "src": "db2@1.60.1.70124"}
-{"id": 1289449, "field": "name", "en": "Glaive", "hash": "369506dddd61e54a", "src": "db2@1.60.1.70124"}
-{"id": 1289449, "field": "description", "en": "Throws a glaive at an enemy, inflicting Physical damage and then bouncing to nearby targets.\r\n", "hash": "2da9572ca186e083", "src": "db2@1.60.1.70124"}
-{"id": 1289450, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70124"}
-{"id": 1289450, "field": "description", "en": "Heals the target of $o1 damage over $d.", "hash": "582e08224b9bc638", "src": "db2@1.60.1.70124"}
-{"id": 1289450, "field": "aura", "en": "Healing $s1 damage every $t1 seconds.", "hash": "4b6eb5c18f90afd1", "src": "db2@1.60.1.70124"}
-{"id": 1289451, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70124"}
-{"id": 1289451, "field": "description", "en": "Inflicts $s1 Nature damage to an enemy.", "hash": "269958fb4c3a7136", "src": "db2@1.60.1.70124"}
-{"id": 1289452, "field": "name", "en": "Faerie Fire", "hash": "e9b99dcf49f432d1", "src": "db2@1.60.1.70124"}
-{"id": 1289452, "field": "description", "en": "Reduces an enemy's armor by $s1 for $d. While affected, the target cannot use stealth or invisibility.", "hash": "8b009da88c970c26", "src": "db2@1.60.1.70124"}
-{"id": 1289452, "field": "aura", "en": "Armor reduced by $s1.\r\nCannot use stealth or invisibility.", "hash": "0730b87ee0dcc680", "src": "db2@1.60.1.70124"}
-{"id": 1289453, "field": "name", "en": "Shadowmeld", "hash": "083b84d70600d4a0", "src": "db2@1.60.1.70124"}
-{"id": 1289453, "field": "description", "en": "Puts the caster in stealth mode for $d.", "hash": "4b1b0f76138058e8", "src": "db2@1.60.1.70124"}
-{"id": 1289453, "field": "aura", "en": "Shadowmelded.", "hash": "87ac43123a661283", "src": "db2@1.60.1.70124"}
-{"id": 1289484, "field": "name", "en": "Set 1% HP", "hash": "e6833b2a73008765", "src": "db2@1.60.1.70124"}
-{"id": 1289489, "field": "name", "en": "[DNT] Lion Summon Trigger", "hash": "0ab90770959ba61f", "src": "db2@1.60.1.70124"}
-{"id": 1289490, "field": "name", "en": "Tallstrider Call", "hash": "2bffd4137807a8b0", "src": "db2@1.60.1.70124"}
-{"id": 1289490, "field": "description", "en": "Mimic the sound of a wounded tallstrider.", "hash": "6d060b2d7f42584b", "src": "db2@1.60.1.70124"}
-{"id": 1289530, "field": "name", "en": "Wrath", "hash": "068926d83b1c1c5d", "src": "db2@1.60.1.70124"}
-{"id": 1289530, "field": "description", "en": "Hurls a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "b05756c5b4997492", "src": "db2@1.60.1.70124"}
-{"id": 1289531, "field": "name", "en": "Blooming Rot", "hash": "902a1ce973bf991f", "src": "db2@1.60.1.70124"}
-{"id": 1289531, "field": "description", "en": "Increases the time betwen an enemy's attacks by $s1% and its casting by $s2%, as well as adding $h% chance to spread the contagion to an ally when hit. Lasts $d.", "hash": "6495f09bd01fb540", "src": "db2@1.60.1.70124"}
-{"id": 1289531, "field": "aura", "en": "Time between attacks increased by $s1%.\r\nCasting speed reduced by $s2%.\r\n$h% chance to spread contagion to allies when hit.", "hash": "447aa966034df1f4", "src": "db2@1.60.1.70124"}
-{"id": 1289532, "field": "name", "en": "Blooming Rot", "hash": "902a1ce973bf991f", "src": "db2@1.60.1.70124"}
-{"id": 1289532, "field": "description", "en": "$@spelldesc<1289531>.", "hash": "ea7dc11c8dcb0f7b", "src": "db2@1.60.1.70124"}
-{"id": 1289532, "field": "aura", "en": "Time between attacks increased by $s1%.\r\nCasting speed reduced by $s2%.\r\n$h% chance to spread contagion to allies when hit.", "hash": "447aa966034df1f4", "src": "db2@1.60.1.70124"}
-{"id": 1289537, "field": "name", "en": "Stormcrow", "hash": "14a7b32d89fcfa14", "src": "db2@1.60.1.70124"}
-{"id": 1289537, "field": "aura", "en": "Assumed the form of a stormcrow.", "hash": "fac137e575143577", "src": "db2@1.60.1.70124"}
-{"id": 1289546, "field": "name", "en": "Bear Form", "hash": "d74361bb63f15e0f", "src": "db2@1.60.1.70124"}
-{"id": 1289546, "field": "aura", "en": "Assumed the form of a bear.", "hash": "3f64ef6f1d19fd82", "src": "db2@1.60.1.70124"}
-{"id": 1289610, "field": "name", "en": "Roar", "hash": "0b1a1ea203fda02f", "src": "db2@1.60.1.70124"}
-{"id": 1289610, "field": "description", "en": "Lets out a mighty roar, increasing attack speed by $s1% for $d.", "hash": "6c243215975118b8", "src": "db2@1.60.1.70124"}
-{"id": 1289610, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70124"}
-{"id": 1289654, "field": "name", "en": "Gift of Galloping", "hash": "bfb28af6b0ee48d8", "src": "db2@1.60.1.70124"}
-{"id": 1289654, "field": "description", "en": "Increases mounted movement speed by $s1%, stacking with all other mounted movement speed bonuses. Lasts $d real time.\r\n", "hash": "981fb30db39f027a", "src": "db2@1.60.1.70124"}
-{"id": 1289654, "field": "aura", "en": "Mounted movement speed increased by $s1%.", "hash": "71cfcb4cae034082", "src": "db2@1.60.1.70124"}
-{"id": 1289655, "field": "name", "en": "Hold Dynamite", "hash": "2a9d12b4d0f8626e", "src": "db2@1.60.1.70124"}
-{"id": 1289681, "field": "name", "en": "Bloodthrill", "hash": "90a95465c96e4ca8", "src": "db2@1.60.1.70124"}
-{"id": 1289681, "field": "aura", "en": "Overpower recently activated by Bloodthrill.", "hash": "ef2efe5c5e17b96a", "src": "db2@1.60.1.70124"}
-{"id": 1289682, "field": "name", "en": "Bloodthrill", "hash": "90a95465c96e4ca8", "src": "db2@1.60.1.70124"}
-{"id": 1289682, "field": "description", "en": "Your Main Hand melee attacks against enemies afflicted by your Rend have a $s1% chance to allow the use of your Overpower ability on the target. Lasts $1289681d.", "hash": "51d237f9394b9185", "src": "db2@1.60.1.70124"}
-{"id": 1289695, "field": "name", "en": "Main Gauche", "hash": "cd3cc36df1314024", "src": "db2@1.60.1.70124"}
-{"id": 1289695, "field": "description", "en": "Grants a chance for your main hand melee auto attacks to make an instant attack with your off-hand weapon for $s2% of normal damage.", "hash": "514f8a23d45c92ef", "src": "db2@1.60.1.70124"}
-{"id": 1289714, "field": "name", "en": "Power Sap", "hash": "90ce44dbe9e0abd7", "src": "db2@1.60.1.70124"}
-{"id": 1289714, "field": "description", "en": "Significantly reduces the target's power.", "hash": "f27344c7d5b3e016", "src": "db2@1.60.1.70124"}
-{"id": 1289714, "field": "aura", "en": "Power reduced.", "hash": "aece4811f50c439e", "src": "db2@1.60.1.70124"}
-{"id": 1289718, "field": "name", "en": "Swat Paletusk", "hash": "67cb0776f8cd435b", "src": "db2@1.60.1.70124"}
-{"id": 1289718, "field": "description", "en": "Swat a Young Pale to send back to Bolder'ok.", "hash": "76a6e4afea4b4dcc", "src": "db2@1.60.1.70124"}
-{"id": 1289723, "field": "name", "en": "Welcoming Campfire", "hash": "985749a78c7aefbc", "src": "db2@1.60.1.70124"}
-{"id": 1289723, "field": "aura", "en": "Grants various camp benefits after $d spent sitting near the campfire. You may also craft using tradeskills, as long as you do not move.", "hash": "9d7820d438fe3908", "src": "db2@1.60.1.70124"}
-{"id": 1289727, "field": "name", "en": "Repair and Recharge Pylon", "hash": "0402f0f985fa06ac", "src": "db2@1.60.1.70124"}
-{"id": 1289727, "field": "description", "en": "Repair a damaged pylon in Shen'dralas with $s1 Coalesced Mana Crystals.", "hash": "7ff1b38763020983", "src": "db2@1.60.1.70124"}
-{"id": 1289849, "field": "name", "en": "Main Gauche", "hash": "cd3cc36df1314024", "src": "db2@1.60.1.70124"}
-{"id": 1289849, "field": "description", "en": "Grants a chance for your main hand melee auto attacks to trigger an instant extra attack with your off-hand weapon for $s1% of normal damage.\r\n", "hash": "a0145a51ed1026a1", "src": "db2@1.60.1.70124"}
-{"id": 1289866, "field": "name", "en": "Phantasmal Blade", "hash": "9ce610f7e5c1b1a6", "src": "db2@1.60.1.70124"}
-{"id": 1289866, "field": "description", "en": "Execute severely wounded wildlife within Shen'dralas.", "hash": "47b5e0611c071bef", "src": "db2@1.60.1.70124"}
-{"id": 1289894, "field": "name", "en": "Ghostly Beast", "hash": "5df7cfb182fbcd2c", "src": "db2@1.60.1.70124"}
-{"id": 1289914, "field": "name", "en": "Cyclone", "hash": "04b014a485b7bef9", "src": "db2@1.60.1.70124"}
-{"id": 1289914, "field": "description", "en": "$@spelldesc1289941\r\n", "hash": "edfda66ddedca249", "src": "db2@1.60.1.70124"}
-{"id": 1289916, "field": "name", "en": "Cyclone", "hash": "04b014a485b7bef9", "src": "db2@1.60.1.70124"}
-{"id": 1289916, "field": "description", "en": "$@spelldesc1289941", "hash": "edfda66ddedca249", "src": "db2@1.60.1.70124"}
-{"id": 1289927, "field": "name", "en": "Renewing Fog", "hash": "e1aa6f64109d23e2", "src": "db2@1.60.1.70124"}
-{"id": 1289927, "field": "description", "en": "Heals for $S1% of maximum health  every $T1 sec as long as Old Gloomlurker is near.", "hash": "c614c079099954ff", "src": "db2@1.60.1.70124"}
-{"id": 1289927, "field": "aura", "en": "Healing for $S1% of maximum health  every $T1 sec.", "hash": "4d2c10b5bce583d2", "src": "db2@1.60.1.70124"}
-{"id": 1289931, "field": "name", "en": "Near Death", "hash": "e58e79b9de2ac6c0", "src": "db2@1.60.1.70124"}
-{"id": 1289941, "field": "name", "en": "Cyclonic Winds", "hash": "81f0c5d1203c60ef", "src": "db2@1.60.1.70124"}
-{"id": 1289941, "field": "description", "en": "Summons a cyclone that travels outward and then returns, tossing any enemies impacted into the air dealing $s1 Nature damage. Targets are stunned them for$d and have their Healing reduced by $s3%.", "hash": "fe3b6f7eaa9e35d1", "src": "db2@1.60.1.70124"}
-{"id": 1289941, "field": "aura", "en": "Stunned. Healing effects reduced by $s3%.", "hash": "2ca71bd8c5020f61", "src": "db2@1.60.1.70124"}
-{"id": 1289998, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70124"}
-{"id": 1289998, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70124"}
-{"id": 1289999, "field": "name", "en": "RAF No AI Re-evaluate", "hash": "f78c154e33dbac7b", "src": "db2@1.60.1.70124"}
+{"id": 1289053, "field": "name", "en": "Multi-Shot", "hash": "9c9367a3ec99d445", "src": "db2@1.60.1.70170"}
+{"id": 1289055, "field": "name", "en": "Multi-Shot", "hash": "9c9367a3ec99d445", "src": "db2@1.60.1.70170"}
+{"id": 1289121, "field": "name", "en": "Emerald Communion", "hash": "d4576d86855da9e6", "src": "db2@1.60.1.70170"}
+{"id": 1289122, "field": "name", "en": "Emerald Communion", "hash": "d4576d86855da9e6", "src": "db2@1.60.1.70170"}
+{"id": 1289123, "field": "name", "en": "Emerald Communion", "hash": "d4576d86855da9e6", "src": "db2@1.60.1.70170"}
+{"id": 1289124, "field": "name", "en": "Emerald Communion", "hash": "d4576d86855da9e6", "src": "db2@1.60.1.70170"}
+{"id": 1289125, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70170"}
+{"id": 1289125, "field": "description", "en": "Increases the caster's attack speed by $s2% and the Physical damage it deals by $s1 for $d.", "hash": "1d3f8a492f089bd8", "src": "db2@1.60.1.70170"}
+{"id": 1289125, "field": "aura", "en": "Physical damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "bc6c8e1d090dadea", "src": "db2@1.60.1.70170"}
+{"id": 1289126, "field": "name", "en": "Emerald Weakness", "hash": "bedf0c9a4ff214bd", "src": "db2@1.60.1.70170"}
+{"id": 1289126, "field": "description", "en": "Reduces healing received by $s1%.\r\n", "hash": "d7cfffefd4353b7c", "src": "db2@1.60.1.70170"}
+{"id": 1289126, "field": "aura", "en": "Healing received reduced by $s1%.", "hash": "628af43a17163e89", "src": "db2@1.60.1.70170"}
+{"id": 1289127, "field": "name", "en": "Emerald Influence", "hash": "29cebf7df8a4ec36", "src": "db2@1.60.1.70170"}
+{"id": 1289127, "field": "aura", "en": "Applies $@spellname1289126 to enemies within $a2 yds", "hash": "0d44e1aa1c2af051", "src": "db2@1.60.1.70170"}
+{"id": 1289128, "field": "name", "en": "Barkskin", "hash": "a9a3711f5cf7157f", "src": "db2@1.60.1.70170"}
+{"id": 1289128, "field": "description", "en": "Reduces the damage it takes by $s1% for $d.", "hash": "495750bfcfaeaf6c", "src": "db2@1.60.1.70170"}
+{"id": 1289128, "field": "aura", "en": "Damage taken is reduced by $s1%.", "hash": "a5bce47cf001ff05", "src": "db2@1.60.1.70170"}
+{"id": 1289129, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70170"}
+{"id": 1289129, "field": "description", "en": "$@spelldesc1289130", "hash": "edfb8da1bf1a645f", "src": "db2@1.60.1.70170"}
+{"id": 1289130, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70170"}
+{"id": 1289130, "field": "description", "en": "The caster calls down a hurricane that lasts for $1289129d that inflicts $s1 Nature damage every $t1 sec to all enemies in the area and reduces their movement speed by $s2%.", "hash": "ea44c04fa74ec793", "src": "db2@1.60.1.70170"}
+{"id": 1289130, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.\r\n$s2% reduced movement speed.", "hash": "6dc7210b9b7d4122", "src": "db2@1.60.1.70170"}
+{"id": 1289131, "field": "name", "en": "Astral Weakness", "hash": "537e4b6c24dee90c", "src": "db2@1.60.1.70170"}
+{"id": 1289131, "field": "aura", "en": "Reduces Arcane and Nature resistances by $s1%. Increases Arcane and Nature damage taken by $s2%.", "hash": "a48340697e56edf4", "src": "db2@1.60.1.70170"}
+{"id": 1289132, "field": "name", "en": "Astral Influence", "hash": "374be3e0ca80bb78", "src": "db2@1.60.1.70170"}
+{"id": 1289132, "field": "aura", "en": "Applies $@spellname1289131 to enemies within $a2 yds.", "hash": "fc88881fb08ef5d3", "src": "db2@1.60.1.70170"}
+{"id": 1289133, "field": "name", "en": "Mass Insect Swarm", "hash": "62c33beba381e326", "src": "db2@1.60.1.70170"}
+{"id": 1289133, "field": "description", "en": "The enemy target is swarmed by insects, decreasing their chance to hit with attacks by $s2% and causing $o1 Nature damage over $d.", "hash": "c1011ca5d063778a", "src": "db2@1.60.1.70170"}
+{"id": 1289133, "field": "aura", "en": "Chance to hit with attacks decreased by $s2% and $s1 Nature damage every $t1 sec.", "hash": "d1ca9f2a4d8a0356", "src": "db2@1.60.1.70170"}
+{"id": 1289134, "field": "name", "en": "Lunar Guidance", "hash": "5ca769a9683e80a8", "src": "db2@1.60.1.70170"}
+{"id": 1289134, "field": "aura", "en": "Grants $@spellname1289135 to allies within $a3 yds.", "hash": "9c3a8bfd982f50b2", "src": "db2@1.60.1.70170"}
+{"id": 1289135, "field": "name", "en": "Lunar Guidance", "hash": "5ca769a9683e80a8", "src": "db2@1.60.1.70170"}
+{"id": 1289135, "field": "aura", "en": "Damage done increased by $s1%.", "hash": "33ad9bd9e06ffdeb", "src": "db2@1.60.1.70170"}
+{"id": 1289136, "field": "name", "en": "Dire Cat Form", "hash": "c0b980e7274c8bc3", "src": "db2@1.60.1.70170"}
+{"id": 1289136, "field": "aura", "en": "Assumed the form of a dire cat.", "hash": "93bd38a34758ed14", "src": "db2@1.60.1.70170"}
+{"id": 1289137, "field": "name", "en": "Dire Bear Form", "hash": "e431c9a2b75f7812", "src": "db2@1.60.1.70170"}
+{"id": 1289137, "field": "aura", "en": "Assumed the form of a dire bear.", "hash": "88caa64a852f22d8", "src": "db2@1.60.1.70170"}
+{"id": 1289138, "field": "name", "en": "Savage Guidance", "hash": "4135aa4f983e490d", "src": "db2@1.60.1.70170"}
+{"id": 1289138, "field": "aura", "en": "Grants $@spellname1289139 to allies within $a3 yds.", "hash": "cf34840c3eefab76", "src": "db2@1.60.1.70170"}
+{"id": 1289139, "field": "name", "en": "Savage Guidance", "hash": "4135aa4f983e490d", "src": "db2@1.60.1.70170"}
+{"id": 1289139, "field": "aura", "en": "Damage taken reduced by $s1%.", "hash": "a4f10210fada6a4f", "src": "db2@1.60.1.70170"}
+{"id": 1289140, "field": "name", "en": "Rake", "hash": "0b167935cc6b2a4d", "src": "db2@1.60.1.70170"}
+{"id": 1289140, "field": "description", "en": "Rake the target for $s1 damage and an additional $o2 damage over $d.", "hash": "d23334a8a2d20780", "src": "db2@1.60.1.70170"}
+{"id": 1289140, "field": "aura", "en": "Bleeding for $s2 damage every $t2 sec.", "hash": "5f97c262ebe5f0df", "src": "db2@1.60.1.70170"}
+{"id": 1289141, "field": "name", "en": "Rip", "hash": "0015af0d4592c79c", "src": "db2@1.60.1.70170"}
+{"id": 1289141, "field": "description", "en": "Reduces an enemy's movement speed by $s1% for $d and deals $s2 Physical damage every $t2 sec.", "hash": "89beff5f2df29acf", "src": "db2@1.60.1.70170"}
+{"id": 1289141, "field": "aura", "en": "Bleeding for $s2 damage every $t2 sec.\r\nMovement speed reduced by $s1%.", "hash": "089bec1e66fcb9d2", "src": "db2@1.60.1.70170"}
+{"id": 1289142, "field": "name", "en": "Ferocious Bite", "hash": "d02e75969ae52d33", "src": "db2@1.60.1.70170"}
+{"id": 1289143, "field": "name", "en": "Stun", "hash": "0b3dc5a2a5416483", "src": "db2@1.60.1.70170"}
+{"id": 1289143, "field": "aura", "en": "Stunned.\r\nTaking increased Physical and Magical damage.", "hash": "5784be2ababdbd66", "src": "db2@1.60.1.70170"}
+{"id": 1289144, "field": "name", "en": "Maul", "hash": "0a6afa530964a501", "src": "db2@1.60.1.70170"}
+{"id": 1289144, "field": "description", "en": "Increases the next attack by $s1 damage.", "hash": "5ec91c64bdbf41c3", "src": "db2@1.60.1.70170"}
+{"id": 1289145, "field": "name", "en": "Empowering Roar", "hash": "fcae0720fdee382d", "src": "db2@1.60.1.70170"}
+{"id": 1289145, "field": "description", "en": "Increases nearby allies' damage by $s1% for $d.", "hash": "ce729af18d27ad6e", "src": "db2@1.60.1.70170"}
+{"id": 1289145, "field": "aura", "en": "Damage increased by $s1%.", "hash": "b556e36189b38b27", "src": "db2@1.60.1.70170"}
+{"id": 1289195, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70170"}
+{"id": 1289195, "field": "description", "en": "Permanently unlock \"the Alchemist\" title for all characters on your account.\r\n\r\nCharacters that wish to display this title must have $s2 skill in Alchemy.", "hash": "55ca655965ff2cba", "src": "db2@1.60.1.70170"}
+{"id": 1289196, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70170"}
+{"id": 1289196, "field": "description", "en": "Permanently unlock \"the Blacksmith\" title for all characters on your account.\n\nCharacters that wish to display this title must have $s2 skill in Blacksmithing.", "hash": "5b3a336cac905286", "src": "db2@1.60.1.70170"}
+{"id": 1289197, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70170"}
+{"id": 1289197, "field": "description", "en": "Permanently unlock \"the Enchanter\" title for all characters on your account.\n\nCharacters that wish to display this title must have $s2 skill in Enchanting.", "hash": "ed9a35c3b7ad76e4", "src": "db2@1.60.1.70170"}
+{"id": 1289198, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70170"}
+{"id": 1289198, "field": "description", "en": "Permanently unlock \"the Engineer\" title for all characters on your account.\n\nCharacters that wish to display this title must have $s2 skill in Engineering.", "hash": "480bd183622464a2", "src": "db2@1.60.1.70170"}
+{"id": 1289199, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70170"}
+{"id": 1289199, "field": "description", "en": "Permanently unlock \"the Leatherworker\" title for all characters on your account.\n\nCharacters that wish to display this title must have $s2 skill in Leatherworking.", "hash": "b9a01b896862eb3d", "src": "db2@1.60.1.70170"}
+{"id": 1289200, "field": "name", "en": "Redeem Certification", "hash": "9f7437b204b2cb68", "src": "db2@1.60.1.70170"}
+{"id": 1289200, "field": "description", "en": "Permanently unlock \"the Tailor\" title for all characters on your account.\n\nCharacters that wish to display this title must have $s2 skill in Tailoring.", "hash": "ba41d3f02a7eedb4", "src": "db2@1.60.1.70170"}
+{"id": 1289210, "field": "name", "en": "Fletching Wood Bundle", "hash": "0c62735247d47fa7", "src": "db2@1.60.1.70170"}
+{"id": 1289210, "field": "description", "en": "Fletch to create Makeshift Stickin' Spears.", "hash": "696ff13b6a2183e5", "src": "db2@1.60.1.70170"}
+{"id": 1289220, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
+{"id": 1289238, "field": "name", "en": "Tiger's Fury", "hash": "ae4896c360bd4329", "src": "db2@1.60.1.70170"}
+{"id": 1289238, "field": "description", "en": "Increases Physical damage done by $s1% for $d.", "hash": "895da44bdba35534", "src": "db2@1.60.1.70170"}
+{"id": 1289238, "field": "aura", "en": "Increases Physical damage done by $s1%.", "hash": "4bd3d5503fd7ca80", "src": "db2@1.60.1.70170"}
+{"id": 1289248, "field": "name", "en": "Makeshift Stickin' Spear", "hash": "c3c34ad0147c5990", "src": "db2@1.60.1.70170"}
+{"id": 1289248, "field": "description", "en": "Impales a Freshwater Crocolisk.", "hash": "9def4bd643661038", "src": "db2@1.60.1.70170"}
+{"id": 1289249, "field": "name", "en": "Rooted", "hash": "3bd080d9e263d645", "src": "db2@1.60.1.70170"}
+{"id": 1289250, "field": "name", "en": "Impaled", "hash": "5964d8e0e75257ae", "src": "db2@1.60.1.70170"}
+{"id": 1289250, "field": "description", "en": "Inflicts Physical damage to an enemy every $t1 sec for $d.", "hash": "fa8ccd3ae954973c", "src": "db2@1.60.1.70170"}
+{"id": 1289250, "field": "aura", "en": "$s1 Physical damage inflicted every $t1 sec.", "hash": "936495c8f3d8ac17", "src": "db2@1.60.1.70170"}
+{"id": 1289255, "field": "name", "en": "Rock Throw", "hash": "d4893c24d7d2f281", "src": "db2@1.60.1.70170"}
+{"id": 1289256, "field": "name", "en": "Rock Throw", "hash": "d4893c24d7d2f281", "src": "db2@1.60.1.70170"}
+{"id": 1289277, "field": "name", "en": "Rock Throw", "hash": "d4893c24d7d2f281", "src": "db2@1.60.1.70170"}
+{"id": 1289292, "field": "name", "en": "Rock Throw", "hash": "d4893c24d7d2f281", "src": "db2@1.60.1.70170"}
+{"id": 1289305, "field": "name", "en": "Transmute: Red Power Crystal to Blue Power Crystal", "hash": "a07b6e07446b8ebe", "src": "db2@1.60.1.70170"}
+{"id": 1289305, "field": "description", "en": "Transmutes a Red Power Crystal into a Blue Power Crystal.", "hash": "db58d7c01a52fde1", "src": "db2@1.60.1.70170"}
+{"id": 1289375, "field": "name", "en": "Biting Chill", "hash": "e0fdff617b3d9382", "src": "db2@1.60.1.70170"}
+{"id": 1289375, "field": "description", "en": "The freezing winds of the Southern Peaks reduce your movement speed and inflict Frost damage periodically.", "hash": "122146b1f3683f83", "src": "db2@1.60.1.70170"}
+{"id": 1289375, "field": "aura", "en": "$s1 Frost damage inflicted every $t1 sec.\r\nMovement speed reduced by $s2%.", "hash": "2b0696ec23786ecb", "src": "db2@1.60.1.70170"}
+{"id": 1289378, "field": "name", "en": "Warmth", "hash": "300b1dc9d5b11005", "src": "db2@1.60.1.70170"}
+{"id": 1289378, "field": "aura", "en": "The embers of Fiery Burst protect you from the effects of Biting Cold.", "hash": "695df5ab188caf0a", "src": "db2@1.60.1.70170"}
+{"id": 1289402, "field": "name", "en": "Ensemble: Shen'dorei Magister's Garb", "hash": "7312d6ce7a3328d5", "src": "db2@1.60.1.70170"}
+{"id": 1289402, "field": "description", "en": "Collect the appearances of this armor set.", "hash": "3bcf52b26d5663c8", "src": "db2@1.60.1.70170"}
+{"id": 1289404, "field": "name", "en": "(DNT) Linken' Boots of Iron", "hash": "7a400e3bcfea7ddb", "src": "db2@1.60.1.70170"}
+{"id": 1289407, "field": "name", "en": "Ensemble: Shen'dorei Peacekeeper's Garb", "hash": "8cb610268e455b23", "src": "db2@1.60.1.70170"}
+{"id": 1289407, "field": "description", "en": "Collect the appearances of this armor set.", "hash": "3bcf52b26d5663c8", "src": "db2@1.60.1.70170"}
+{"id": 1289413, "field": "name", "en": "(DNT) Linken' Boots of Iron", "hash": "7a400e3bcfea7ddb", "src": "db2@1.60.1.70170"}
+{"id": 1289417, "field": "name", "en": "Ensemble: Shen'dorei Skyseer's Garb", "hash": "a439780e9e5cbc84", "src": "db2@1.60.1.70170"}
+{"id": 1289417, "field": "description", "en": "Collect the appearances of this armor set.", "hash": "3bcf52b26d5663c8", "src": "db2@1.60.1.70170"}
+{"id": 1289419, "field": "name", "en": "Ensemble: Al'Aketh Zealot's Garb", "hash": "2908f79b4e674335", "src": "db2@1.60.1.70170"}
+{"id": 1289419, "field": "description", "en": "Collect the appearances of this armor set.", "hash": "3bcf52b26d5663c8", "src": "db2@1.60.1.70170"}
+{"id": 1289422, "field": "name", "en": "Explorers' League Drawing Kit", "hash": "8332b92424018721", "src": "db2@1.60.1.70170"}
+{"id": 1289422, "field": "description", "en": "Use to sketch a location on the Shapers Terrace map.", "hash": "b47b9010dc82c81c", "src": "db2@1.60.1.70170"}
+{"id": 1289425, "field": "name", "en": "Interesting Landmark", "hash": "5baa5191b5577cb0", "src": "db2@1.60.1.70170"}
+{"id": 1289428, "field": "name", "en": "The Drunken Dwarf", "hash": "b6e55f0a8f742a86", "src": "db2@1.60.1.70170"}
+{"id": 1289428, "field": "description", "en": "Another mug, aye.", "hash": "da214a55eca81d01", "src": "db2@1.60.1.70170"}
+{"id": 1289429, "field": "name", "en": "Set Health", "hash": "fa36dceea82e4d4d", "src": "db2@1.60.1.70170"}
+{"id": 1289430, "field": "name", "en": "Soul Consumption", "hash": "f5444eeb60db24f2", "src": "db2@1.60.1.70170"}
+{"id": 1289431, "field": "name", "en": "Shadow Vent", "hash": "ecd0c7dcef120e67", "src": "db2@1.60.1.70170"}
+{"id": 1289431, "field": "description", "en": "Creates a vent of pure shadow that deals periodic Shadow damage.", "hash": "f464c127db8f4b11", "src": "db2@1.60.1.70170"}
+{"id": 1289433, "field": "name", "en": "Shadow Vent", "hash": "ecd0c7dcef120e67", "src": "db2@1.60.1.70170"}
+{"id": 1289433, "field": "aura", "en": "$s1 Shadow damage every $t1 sec.", "hash": "b42367aef52ef947", "src": "db2@1.60.1.70170"}
+{"id": 1289434, "field": "name", "en": "Cause Insanity", "hash": "d6974d45d47c32cb", "src": "db2@1.60.1.70170"}
+{"id": 1289434, "field": "description", "en": "Drives an enemy target temporarily insane, speeding its attacks by $s2% and its movement by $s3%, as well as causing it to attack its own allies for $d.", "hash": "5f517374402320a2", "src": "db2@1.60.1.70170"}
+{"id": 1289434, "field": "aura", "en": "Charmed.\r\nAttack speed increased by $s2%.\r\nMovement speed increased by $s3%.", "hash": "5efc4777b6355373", "src": "db2@1.60.1.70170"}
+{"id": 1289435, "field": "name", "en": "Tortured Mind", "hash": "a1f68acd809dbd5c", "src": "db2@1.60.1.70170"}
+{"id": 1289435, "field": "description", "en": "Ghostly whispers tear at your mind...\r\n", "hash": "90dbac7bf88b1b7e", "src": "db2@1.60.1.70170"}
+{"id": 1289435, "field": "aura", "en": "Ghostly whispers tear at your mind...", "hash": "90dbac7bf88b1b7e", "src": "db2@1.60.1.70170"}
+{"id": 1289447, "field": "name", "en": "Frost Nova", "hash": "814b760c7d985bff", "src": "db2@1.60.1.70170"}
+{"id": 1289447, "field": "description", "en": "Inflicts Frost damage to nearby enemies, immobilizing them for up to $d.", "hash": "1eb0ef79be5f0091", "src": "db2@1.60.1.70170"}
+{"id": 1289447, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70170"}
+{"id": 1289448, "field": "name", "en": "Frostbolt Volley", "hash": "d4a94c82b55f152f", "src": "db2@1.60.1.70170"}
+{"id": 1289448, "field": "description", "en": "Inflicts $s2 Frost damage to nearby enemies, reducing their movement speed by $s1% for $d.", "hash": "e513fa9266cd5c3a", "src": "db2@1.60.1.70170"}
+{"id": 1289448, "field": "aura", "en": "Movement speed reduced by $s1%.", "hash": "08fe36e785e78519", "src": "db2@1.60.1.70170"}
+{"id": 1289449, "field": "name", "en": "Glaive", "hash": "369506dddd61e54a", "src": "db2@1.60.1.70170"}
+{"id": 1289449, "field": "description", "en": "Throws a glaive at an enemy, inflicting Physical damage and then bouncing to nearby targets.\r\n", "hash": "2da9572ca186e083", "src": "db2@1.60.1.70170"}
+{"id": 1289450, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70170"}
+{"id": 1289450, "field": "description", "en": "Heals the target for $s1 every $t1 sec.", "hash": "025b3f59c882f103", "src": "db2@1.60.1.70170"}
+{"id": 1289450, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70170"}
+{"id": 1289451, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70170"}
+{"id": 1289451, "field": "description", "en": "Inflicts $s1 Nature damage to an enemy.", "hash": "269958fb4c3a7136", "src": "db2@1.60.1.70170"}
+{"id": 1289452, "field": "name", "en": "Faerie Fire", "hash": "e9b99dcf49f432d1", "src": "db2@1.60.1.70170"}
+{"id": 1289452, "field": "description", "en": "Reduces an enemy's armor by $s1 for $d. While affected, the target cannot use stealth or invisibility.", "hash": "8b009da88c970c26", "src": "db2@1.60.1.70170"}
+{"id": 1289452, "field": "aura", "en": "Armor reduced by $s1.\r\nCannot use stealth or invisibility.", "hash": "0730b87ee0dcc680", "src": "db2@1.60.1.70170"}
+{"id": 1289453, "field": "name", "en": "Shadowmeld", "hash": "083b84d70600d4a0", "src": "db2@1.60.1.70170"}
+{"id": 1289453, "field": "description", "en": "Enter stealth mode for $d.", "hash": "2b8d6e92eb39906a", "src": "db2@1.60.1.70170"}
+{"id": 1289453, "field": "aura", "en": "Shadowmelded.", "hash": "87ac43123a661283", "src": "db2@1.60.1.70170"}
+{"id": 1289484, "field": "name", "en": "Set 1% HP", "hash": "e6833b2a73008765", "src": "db2@1.60.1.70170"}
+{"id": 1289489, "field": "name", "en": "[DNT] Lion Summon Trigger", "hash": "0ab90770959ba61f", "src": "db2@1.60.1.70170"}
+{"id": 1289490, "field": "name", "en": "Tallstrider Call", "hash": "2bffd4137807a8b0", "src": "db2@1.60.1.70170"}
+{"id": 1289490, "field": "description", "en": "Mimic the sound of a wounded tallstrider.", "hash": "6d060b2d7f42584b", "src": "db2@1.60.1.70170"}
+{"id": 1289530, "field": "name", "en": "Wrath", "hash": "068926d83b1c1c5d", "src": "db2@1.60.1.70170"}
+{"id": 1289530, "field": "description", "en": "Hurls a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "b05756c5b4997492", "src": "db2@1.60.1.70170"}
+{"id": 1289531, "field": "name", "en": "Blooming Rot", "hash": "902a1ce973bf991f", "src": "db2@1.60.1.70170"}
+{"id": 1289531, "field": "description", "en": "Increases the time between an enemy's attacks by $s1% and its casting speed by $s2%, adding a $h% chance to spread the contagion to an ally when hit.", "hash": "8d2894814614bac4", "src": "db2@1.60.1.70170"}
+{"id": 1289531, "field": "aura", "en": "Time between attacks increased by $s1%.\r\nCasting speed reduced by $s2%.\r\n$h% chance to spread contagion to allies when hit.", "hash": "447aa966034df1f4", "src": "db2@1.60.1.70170"}
+{"id": 1289532, "field": "name", "en": "Blooming Rot", "hash": "902a1ce973bf991f", "src": "db2@1.60.1.70170"}
+{"id": 1289532, "field": "description", "en": "$@spelldesc<1289531>.", "hash": "ea7dc11c8dcb0f7b", "src": "db2@1.60.1.70170"}
+{"id": 1289532, "field": "aura", "en": "Time between attacks increased by $s1%.\r\nCasting speed reduced by $s2%.\r\n$h% chance to spread contagion to allies when hit.", "hash": "447aa966034df1f4", "src": "db2@1.60.1.70170"}
+{"id": 1289537, "field": "name", "en": "Stormcrow", "hash": "14a7b32d89fcfa14", "src": "db2@1.60.1.70170"}
+{"id": 1289537, "field": "aura", "en": "Assumed the form of a stormcrow.", "hash": "fac137e575143577", "src": "db2@1.60.1.70170"}
+{"id": 1289546, "field": "name", "en": "Bear Form", "hash": "d74361bb63f15e0f", "src": "db2@1.60.1.70170"}
+{"id": 1289546, "field": "aura", "en": "Assumed the form of a bear.", "hash": "3f64ef6f1d19fd82", "src": "db2@1.60.1.70170"}
+{"id": 1289610, "field": "name", "en": "Roar", "hash": "0b1a1ea203fda02f", "src": "db2@1.60.1.70170"}
+{"id": 1289610, "field": "description", "en": "Lets out a mighty roar, increasing attack speed by $s1% for $d.", "hash": "6c243215975118b8", "src": "db2@1.60.1.70170"}
+{"id": 1289610, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70170"}
+{"id": 1289654, "field": "name", "en": "Gift of Galloping", "hash": "bfb28af6b0ee48d8", "src": "db2@1.60.1.70170"}
+{"id": 1289654, "field": "description", "en": "Increases mounted movement speed by $s1% for $d, stacking with all other mounted movement speed bonuses. This expires while offline.", "hash": "76b8b83f23ad25c2", "src": "db2@1.60.1.70170"}
+{"id": 1289654, "field": "aura", "en": "Mounted movement speed increased by $s1%.", "hash": "71cfcb4cae034082", "src": "db2@1.60.1.70170"}
+{"id": 1289655, "field": "name", "en": "Hold Dynamite", "hash": "2a9d12b4d0f8626e", "src": "db2@1.60.1.70170"}
+{"id": 1289681, "field": "name", "en": "Bloodthrill", "hash": "90a95465c96e4ca8", "src": "db2@1.60.1.70170"}
+{"id": 1289681, "field": "aura", "en": "Overpower recently activated by Bloodthrill.", "hash": "ef2efe5c5e17b96a", "src": "db2@1.60.1.70170"}
+{"id": 1289682, "field": "name", "en": "Bloodthrill", "hash": "90a95465c96e4ca8", "src": "db2@1.60.1.70170"}
+{"id": 1289682, "field": "description", "en": "Your Main Hand melee attacks against enemies afflicted by your Rend have a $s1% chance to allow the use of your Overpower ability on the target. Lasts $1289681d.", "hash": "51d237f9394b9185", "src": "db2@1.60.1.70170"}
+{"id": 1289695, "field": "name", "en": "Main Gauche", "hash": "cd3cc36df1314024", "src": "db2@1.60.1.70170"}
+{"id": 1289695, "field": "description", "en": "Grants a chance for your Main Hand melee auto attacks to make an instant attack with your Off Hand weapon for $s2% of normal damage.", "hash": "bc93c727b6e8bbbc", "src": "db2@1.60.1.70170"}
+{"id": 1289714, "field": "name", "en": "Power Sap", "hash": "90ce44dbe9e0abd7", "src": "db2@1.60.1.70170"}
+{"id": 1289714, "field": "description", "en": "Significantly reduces the target's power.", "hash": "f27344c7d5b3e016", "src": "db2@1.60.1.70170"}
+{"id": 1289714, "field": "aura", "en": "Power reduced.", "hash": "aece4811f50c439e", "src": "db2@1.60.1.70170"}
+{"id": 1289718, "field": "name", "en": "Swat Paletusk", "hash": "67cb0776f8cd435b", "src": "db2@1.60.1.70170"}
+{"id": 1289718, "field": "description", "en": "Swat a Young Pale to send back to Bolder'ok.", "hash": "76a6e4afea4b4dcc", "src": "db2@1.60.1.70170"}
+{"id": 1289723, "field": "name", "en": "Welcoming Campfire", "hash": "985749a78c7aefbc", "src": "db2@1.60.1.70170"}
+{"id": 1289723, "field": "aura", "en": "Grants various camp benefits after $d spent sitting near the campfire. You may also craft using tradeskills, as long as you do not move.", "hash": "9d7820d438fe3908", "src": "db2@1.60.1.70170"}
+{"id": 1289727, "field": "name", "en": "Repair and Recharge Pylon", "hash": "0402f0f985fa06ac", "src": "db2@1.60.1.70170"}
+{"id": 1289727, "field": "description", "en": "Repair a damaged pylon in Shen'dralas with $s1 Coalesced Mana Crystals.", "hash": "7ff1b38763020983", "src": "db2@1.60.1.70170"}
+{"id": 1289849, "field": "name", "en": "Main Gauche", "hash": "cd3cc36df1314024", "src": "db2@1.60.1.70170"}
+{"id": 1289849, "field": "description", "en": "Grants a chance for your Main Hand melee auto attacks to trigger an instant extra attack with your Off Hand weapon for $s1% of normal damage.\r\n", "hash": "ff921709e34b93bb", "src": "db2@1.60.1.70170"}
+{"id": 1289866, "field": "name", "en": "Phantasmal Blade", "hash": "9ce610f7e5c1b1a6", "src": "db2@1.60.1.70170"}
+{"id": 1289866, "field": "description", "en": "Execute severely wounded wildlife within Shen'dralas.", "hash": "47b5e0611c071bef", "src": "db2@1.60.1.70170"}
+{"id": 1289894, "field": "name", "en": "Ghostly Beast", "hash": "5df7cfb182fbcd2c", "src": "db2@1.60.1.70170"}
+{"id": 1289914, "field": "name", "en": "Cyclone", "hash": "04b014a485b7bef9", "src": "db2@1.60.1.70170"}
+{"id": 1289914, "field": "description", "en": "$@spelldesc1289941\r\n", "hash": "edfda66ddedca249", "src": "db2@1.60.1.70170"}
+{"id": 1289916, "field": "name", "en": "Cyclone", "hash": "04b014a485b7bef9", "src": "db2@1.60.1.70170"}
+{"id": 1289916, "field": "description", "en": "$@spelldesc1289941", "hash": "edfda66ddedca249", "src": "db2@1.60.1.70170"}
+{"id": 1289927, "field": "name", "en": "Renewing Fog", "hash": "e1aa6f64109d23e2", "src": "db2@1.60.1.70170"}
+{"id": 1289927, "field": "description", "en": "Heals for $S1% of maximum health every $T1 sec as long as Old Gloomlurker is near.", "hash": "c614c079099954ff", "src": "db2@1.60.1.70170"}
+{"id": 1289927, "field": "aura", "en": "Healing for $s1% of maximum health every $t1 sec.", "hash": "7e09b1662274853f", "src": "db2@1.60.1.70170"}
+{"id": 1289931, "field": "name", "en": "Near Death", "hash": "e58e79b9de2ac6c0", "src": "db2@1.60.1.70170"}
+{"id": 1289941, "field": "name", "en": "Cyclonic Winds", "hash": "81f0c5d1203c60ef", "src": "db2@1.60.1.70170"}
+{"id": 1289941, "field": "description", "en": "Summons a cyclone that travels outward and then returns, tossing any enemies impacted into the air, inflicting $s1 Nature damage. Targets are stunned for $d and have their healing reduced by $s3%.", "hash": "bb54ec91da78f2fa", "src": "db2@1.60.1.70170"}
+{"id": 1289941, "field": "aura", "en": "Stunned. \r\nHealing effects reduced by $s3%.", "hash": "2ca71bd8c5020f61", "src": "db2@1.60.1.70170"}
+{"id": 1289998, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70170"}
+{"id": 1289998, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70170"}
+{"id": 1289999, "field": "name", "en": "RAF No AI Re-evaluate", "hash": "f78c154e33dbac7b", "src": "db2@1.60.1.70170"}

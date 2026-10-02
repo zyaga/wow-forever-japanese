@@ -71,7 +71,7 @@ _Avoid_: validation (too broad), fuzzy match
 → [Pipeline](systems/pipeline.md)
 
 **Reason code**:
-The machine-readable reason(s) `wfj check` writes on a [[Rejected entry]]: `no_english_id` (no [[English source]] for the ID: no source has it, or the [[Served step]] dropped it because the Forever client does not list the ID; the line keeps the English it was last checked against, so English that returns reworded makes it [[Stale]]), `not_japanese`, `duplicate_conflict`, `alignment_failed:<name>`, `numbers_changed:<n>`, `truncated:<ja paragraphs>/<en paragraphs>`, `specifiers_changed:<detail>` (a [[UI string]] whose Japanese does not take its English template's arguments), `ruled_reject` (the only candidate is a variant a person ruled `reject`, which would otherwise pass), `markup_changed:<detail>` (a [[UI string]] whose Japanese does not keep its English colour codes and line breaks, or carries a malformed [[Plural grammar]] group). One entry can carry several.
+The machine-readable reason(s) `wfj check` writes on a [[Rejected entry]]: `no_english_id` (no [[English source]] for the ID: no source has it, or the [[Served step]] dropped it because no Forever build has served the ID; the line keeps the English it was last checked against, so English that returns reworded makes it [[Stale]]), `not_japanese`, `duplicate_conflict`, `alignment_failed:<name>`, `numbers_changed:<n>`, `truncated:<ja paragraphs>/<en paragraphs>`, `specifiers_changed:<detail>` (a [[UI string]] whose Japanese does not take its English template's arguments), `ruled_reject` (the only candidate is a variant a person ruled `reject`, which would otherwise pass), `markup_changed:<detail>` (a [[UI string]] whose Japanese does not keep its English colour codes and line breaks, or carries a malformed [[Plural grammar]] group). One entry can carry several.
 _Avoid_: error, failure reason
 → [Data model](architecture/data-model.md)
 
@@ -118,7 +118,7 @@ _Avoid_: file id, fdid (in prose)
 → [ADR-021](adr/021-client-tables-from-the-local-archive.md)
 
 **Layout hash**:
-The fingerprint in a [[DB2 table]]'s header of its field layout. A table's column map is pinned **per build**, to each layout hash it has been verified on (Classic Era 1.15.9.69722 and every Forever build since 1.60.1.69913, 1.60.1.70124 included), each pin carrying the citation that verified it; a hash nobody has verified stops that table, naming every layout that has been, so a moved field never becomes wrong English. Re-verifying is `wfj.dev.verify_columns` against a second installed client, not a hash bump.
+The fingerprint in a [[DB2 table]]'s header of its field layout. A table's column map is pinned **per build**, to each layout hash it has been verified on (Classic Era 1.15.9.69722 and every Forever build since 1.60.1.69913, 1.60.1.70124 and 1.60.1.70170 included), each pin carrying the citation that verified it; a hash nobody has verified stops that table, naming every layout that has been, so a moved field never becomes wrong English. Re-verifying is `wfj.dev.verify_columns` against a second installed client, not a hash bump.
 _Avoid_: schema version, table hash (a different header value, which names the table)
 → [ADR-021](adr/021-client-tables-from-the-local-archive.md) · [ADR-027](adr/027-column-maps-verified-per-build.md)
 
@@ -132,10 +132,15 @@ The file `tables-source.txt` beside the [[DB2 table]] CSVs, one line per table: 
 _Avoid_: manifest, build file, provenance (that is the per-entry record on Japanese lines)
 → [ADR-021](adr/021-client-tables-from-the-local-archive.md) · [Local setup](operations/local-setup.md)
 
+**Served record**:
+The committed files `pipeline/served/<kind>.tsv` (kinds quest, item, spell, ui; area and objective lines follow their quest): every id any Forever build has served, one `id<TAB>first build<TAB>last build` row per id under a `#` header line. The [[Served step]] adds the current build's ids and moves their last build forward. An id the current build did not serve keeps its row and its older last build, and keeps its English. Nothing acts on an old last build; the record is there for a possible later cleanup.
+_Avoid_: gone list, removed list, served cache (nothing in it is removed or expires)
+→ [ADR-050](adr/050-english-is-additive.md) · [Pipeline](systems/pipeline.md)
+
 **Served step**:
-The last step of `make import` / `make import-english` (`wfj import english served`, `make import-served`): it prunes `data/english` to what the Forever client lists: quest English whose id is in Forever's QuestV2 or its [[Quest cache]], [[Objective text]] whose quest is kept (mapped through Forever's cache, then Classic Era's; an objective no cache maps is kept), item English whose id is in ItemSparse, spell English whose id is in SpellName, and [[UI string]] English whose `src` is the Forever tables' [[Source stamp]]. Book and gossip English is untouched. Forever's own tables decide, not where the English came from: a quest Forever lists but the server has not answered yet keeps its Classic Era English and ships. Japanese in `data/` is never touched; a line whose English was pruned becomes `no_english_id` and ships again when a later harvest lists the id.
-_Avoid_: served filter (it prunes the English store, not the build), Forever filter, target filter
-→ [ADR-034](adr/034-forever-is-the-only-target.md) · [Pipeline](systems/pipeline.md) · [Data model](architecture/data-model.md)
+The last step of `make import` / `make import-english` (`wfj import english served`, `make import-served`). It is additive: it drops English only for ids Forever has never served, and never removes a line whose English came from Forever itself. What a build serves: quest ids in Forever's QuestV2 or its [[Quest cache]] (placeholders included), item ids in ItemSparse, spell ids in SpellName, and [[UI string]] keys whose English carries the Forever tables' [[Source stamp]] and that are in `ui_keys.txt`. It adds those ids to the [[Served record]], and keeps every line whose id is in the record, from this build or an earlier one. [[Objective text]] follows its quest (mapped through Forever's cache, then Classic Era's; an objective no cache maps is kept). Book and gossip English is untouched. Forever's own tables decide, not where the English came from: a quest Forever lists but the server has not answered yet keeps its Classic Era English and ships. An id an earlier build served and this one did not keeps its English; the import prints how many. Japanese in `data/` is never touched; a line whose English was dropped becomes `no_english_id` and ships again when a later harvest lists the id.
+_Avoid_: served filter (it narrows the English store, not the build), Forever filter, target filter, "gone" (for an id the current build did not serve; its English is kept)
+→ [ADR-034](adr/034-forever-is-the-only-target.md) · [ADR-050](adr/050-english-is-additive.md) · [Pipeline](systems/pipeline.md) · [Data model](architecture/data-model.md)
 
 **Tooltip text**:
 The English prose of an item or spell tooltip below its name, as the client tables hold it: a spell's `Description_lang`; for an item, the descriptions of its effect spells the tooltip prints (trigger types Use, Equip, Chance on hit, Use without delay) then its flavour text, so an item's "Use:" line is a **spell's** `Description_lang` reached through the item→effect join, never `ItemSparse.Description_lang`, which holds only the flavour line and is often empty. A raw template (`Restores $o1 health over $d.`): the numbers are filled in only when the client renders it, so offline it catches rewording (the entry goes [[Stale]]) but never a changed number. Stored as the `description` field.
@@ -657,6 +662,26 @@ _Avoid_: clear, reset
 The list, per [[Surface]], of every UI key a hooked client file can put on screen, enumerated from source by `wfj.dev.ui_inventory`. There is one, the Forever client's: `pipeline/ui_inventory.txt`, built by `make ui-inventory` from a client UI extract and its GlobalStrings (its file map `FOREVER_WINDOWS` covers every `surface` [[Disposition]]). Every inventoried key is in `pipeline/ui_keys.txt` or excluded with a reason in `pipeline/ui_exclusions.txt`; the coverage test holds the inventory to that.
 _Avoid_: key list (that is `ui_keys.txt`), string dump
 → [Pipeline](systems/pipeline.md)
+
+**Secret value**:
+A value the Forever client hands an addon sealed: it can be held, passed on and written to the screen (`SetText`), but any read, comparison, concatenation, table index or arithmetic on it raises an error. `issecretvalue` tells one apart; `type()` still answers. In combat an action button's tooltip rows and the cooldown numbers are secret; a buff tooltip's aura id, spell and rows too.
+_Avoid_: hidden string, restricted value, tainted value (taint is a different mechanism)
+→ [Client limits](architecture/client-limits.md)
+
+**Hidden pass**:
+A pass of the tooltip surface over a tooltip whose rows are [[Secret value]]s. It translates the client's own tooltip data for the spell or item id by row position and has the client write the cooldown countdown from its hidden duration; it keeps no record and remembers nothing between passes (`UI/Tooltip.lua`). The opposite is a readable pass, which renders through [[Render record]]s.
+_Avoid_: secret pass (the trace's event names say "secret spell" / "secret item" / "secret aura" for the pass's kind), write-back, memory pass
+→ [Client limits](architecture/client-limits.md)
+
+**Client limit**:
+Something the Forever client keeps from addons by design, with the addon's response written down beside it: a buff tooltip in combat stays English, a cooldown's number is formatted by the client, a combat log line is sealed. Each entry cites the client's own files or an in-game trace. A limit is never worked around by guessing or by remembering across passes.
+_Avoid_: known issue, bug, workaround
+→ [Client limits](architecture/client-limits.md)
+
+**Tooltip trace**:
+The row-by-row record of every pass over a tooltip, kept in memory while `/wfj debug tooltip on` and shown by `/wfj debug tooltip` in a window whose text can be copied. Each entry names the pass's kind, the spell or item id, the owner, each row's kind, text and colour (a [[Secret value]] as `<secret>`), what was written and why; a hidden pass's entry adds every data row, the row map and the countdown's duration. It is the evidence a client-side fix is made from.
+_Avoid_: debug log, dump
+→ [Testing strategy](testing/strategy.md)
 
 ## Release
 

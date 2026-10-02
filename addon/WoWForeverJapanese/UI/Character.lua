@@ -39,9 +39,11 @@
 --     pane keys, on its own surface "character.title"; and because a player may be named "Skills" or "Currency",
 --     UpdateTitle is post-hooked too: when the active pane is not one of the five, the title is the name and its
 --     record is released (the client's English, the name, is put back).
--- Not translated: PetLoyaltyText (client text), the XP / pet XP bars, and
--- the title pane (PaperDollFrame.TitleManagerPane is created hidden and camelot never shows it: it is not one of
--- PAPERDOLL_SIDEBARS, paperdollframeconstants.lua:23, paperdollframe.lua:99–107).
+--   the title pane (PaperDollFrame.TitleManagerPane, the third of PAPERDOLL_SIDEBARS, paperdollframeconstants.lua:23):
+--     a pooled row's text is written by PaperDollTitlesPane_InitButton (paperdollframe.lua:3243–3246). The first row is
+--     PLAYER_TITLE_NONE (:3304); every other row is a title the character earned, a name, left as written. Rows are
+--     walked from the ScrollBox's initialized-frame callback, restricted to that one key.
+-- Not translated: PetLoyaltyText (client text) and the XP / pet XP bars.
 local _, WFJ = ...
 local Character = {}
 WFJ.Character = Character
@@ -77,7 +79,7 @@ for _, slot in ipairs({ "Head", "Neck", "Shoulder", "Back", "Chest", "Shirt", "T
   OWNERS[#OWNERS + 1] = "Character" .. slot .. "Slot"
 end
 for i = 1, 6 do OWNERS[#OWNERS + 1] = "CharacterFrameModeTab" .. i end
-for i = 1, 3 do OWNERS[#OWNERS + 1] = "PaperDollSidebarTab" .. i end
+for i = 1, 4 do OWNERS[#OWNERS + 1] = "PaperDollSidebarTab" .. i end
 OWNERS[#OWNERS + 1] = "CharacterFrameRightPaneToggleButton"
 
 -- camelot stat pane: the category headers and the stat words a row's Label can hold
@@ -101,6 +103,7 @@ local POPUP_HEADER_ONLY = { only = { "GEARSETS_POPUP_TEXT" } }
 local ICON_TEXT_ONLY = { only = { "ICON_SELECTION_CLICK", "ICON_SELECTION_NOTINLIST" } }
 local DELETE_ONLY = { only = { "DELETE" } }
 local SETTINGS_ONLY = { only = { "EQUIPMENT_SET_SETTINGS" } }
+local TITLE_NONE_ONLY = { only = { "PLAYER_TITLE_NONE" } }
 Character.CAMELOT_KEYS = { category = CATEGORY_ONLY.only, stat = STAT_ONLY.only, level = LEVEL_ONLY.only,
   equipmentManager = { "EQUIPSET_EQUIP", "SAVE", "PAPERDOLL_NEWEQUIPMENTSET", "GEARSETS_POPUP_TEXT",
     "ICON_SELECTION_CLICK", "ICON_SELECTION_NOTINLIST", "DELETE", "EQUIPMENT_SET_SETTINGS" } }
@@ -116,8 +119,21 @@ local function declareAll()
   Compat.declare(SURFACE, "petStatsBox", { "CharacterStatsPanePetScrollBox.ScrollBox" })
   Compat.declare(SURFACE, "scrollUtil", { "ScrollUtil" })
   Compat.declare(SURFACE, "equipPane", { "PaperDollFrame.EquipmentManagerPane" })
+  Compat.declare(SURFACE, "titleBox", { "PaperDollFrame.TitleManagerPane.ScrollBox" })
   Compat.declare(SURFACE, "gearPopup", { "GearManagerPopupFrame" })
   Compat.declare(SURFACE, "frame", { "CharacterFrame" })
+end
+
+local titleRowKey = WFJ.Labels.keyer("title.") -- a pooled title row's record key
+
+-- The title pane's ScrollUtil callback: (owner, frame, elementData) on initialization, (frame, elementData) on the
+-- existing-frames pass. Only the "No Title" row is a dictionary word. Returns nothing (ForEachFrame stops at the first
+-- truthy return).
+function Character.onTitleRow(a, b)
+  local row = a
+  if a == Character then row = b end
+  if type(row) ~= "table" or type(row.text) ~= "table" then return end
+  WFJ.Labels.show(SURFACE, titleRowKey(row), row.text, nil, TITLE_NONE_ONLY)
 end
 
 -- hooksecurefunc target for PaperDollFrame_SetLevel and PaperDollFrame_SetPetLevel.
@@ -246,6 +262,10 @@ function Character.init()
     local setBox = field(get("equipPane"), "ScrollBox")
     if type(setBox) == "table" then
       util.AddInitializedFrameCallback(setBox, Character.onGearSetRow, Character, true)
+    end
+    local titleBox = get("titleBox")
+    if type(titleBox) == "table" then
+      util.AddInitializedFrameCallback(titleBox, Character.onTitleRow, Character, true)
     end
   end
   Character.showEquipmentManager()

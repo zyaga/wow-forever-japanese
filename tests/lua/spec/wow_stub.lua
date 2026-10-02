@@ -85,6 +85,10 @@ function Stub.fontString(text, path, size, flags)
   function fs:SetJustifyV(j) self.justifyV = j end
   function fs:ClearAllPoints() self.point = nil end
   function fs:SetTextColor(r, g, b, a) self.color = { r, g, b, a } end
+  function fs:GetTextColor() -- white unless set, as a client FontString's default
+    local c = self.color or { 1, 1, 1, 1 }
+    return c[1], c[2], c[3], c[4]
+  end
   function fs.GetObjectType() return "FontString" end -- region walks (Labels.region)
   function fs:IsVisible() return self.shown end
   if Stub.fontStrings then Stub.fontStrings[#Stub.fontStrings + 1] = fs end
@@ -292,6 +296,8 @@ function Stub.install(tocPath)
     }
     function frame:RegisterEvent(e) self.events[e] = true end
     function frame:UnregisterEvent(e) self.events[e] = nil end
+    -- the unit filter is recorded but not applied: a spec fires the event with the unit it means
+    function frame:RegisterUnitEvent(e, ...) self.events[e] = { ... } end
     function frame:SetScript(k, fn) self.scripts[k] = fn end
     function frame:GetScript(k) return self.scripts[k] end
     function frame:HookScript(k, fn)

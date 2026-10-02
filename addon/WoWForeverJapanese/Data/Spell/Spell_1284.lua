@@ -5,5 +5,5 @@ WFJ.Data.add("spell", {
   [1284035] = { "フェルの汚染に冒された病気の動物を治療します。", nil, 0xc145bd63, nil, "um" },
   [1284701] = { "フェルの灰で実験された動物にConcoction of Cleansingを使用します。", nil, 0x8ab34ce5, nil, "um" },
   [1284734] = { "走る速度と泳ぐ速度を$N1%上昇させます。", "走る速度と泳ぐ速度が$N1%上昇しています。", 0x8cde9701, 0x9f1cfad8, "uu" },
-  [1284783] = { "Barkskin Burrowのfurbolgとの評判を永続的に上げます。", nil, 0x3bb4bd5c, nil, "um" },
+  [1284783] = { "Barkskin Burrowのfurbolgとの評判を永続的に上げます。", nil, 0x900cff67, nil, "um" },
 })

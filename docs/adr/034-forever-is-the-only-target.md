@@ -1,5 +1,8 @@
 # ADR-034: Forever is the only target; Classic Era is an input
 
+- **Amended by:** [ADR-050](050-english-is-additive.md), decision 4. The served step is now additive: it never removes
+  English for an id any Forever build has served, or English that came from Forever itself. It still drops English
+  that only Classic Era provides for an id Forever has never served. The text below is the decision as first made.
 - **Status:** Accepted. `UI/Guild.lua`, `UI/Honor.lua`, `UI/QuestLog.lua` and `UI/Camelot.lua` deleted; the Era-only
   names and branches removed from the shared surface files, and the client-detection guards removed (`Main.lua`, the
   TOC, `UI/*.lua`); `UI/Tooltip.lua` (one hook path), `UI/Trainer.lua`

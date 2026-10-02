@@ -16,7 +16,9 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 # the word-reading box scripts only its own covers (hover) and never a Blizzard frame
                 "UI/Readings.lua",
                 # the fix window and the minimap button script only their own frames
-                "UI/FixWindow.lua", "UI/MinimapButton.lua"}
+                "UI/FixWindow.lua", "UI/MinimapButton.lua",
+                # the tooltip trace window (/wfj debug tooltip)
+                "UI/Slash.lua"}
 
 PATTERNS = {
     "PanelTemplates_SetTab": re.compile(r"\bPanelTemplates_SetTab\s*\("),

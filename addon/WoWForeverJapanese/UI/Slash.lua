@@ -202,8 +202,55 @@ local function debugFonts()
     WFJ.Font.retryPending())
 end
 
+-- /wfj debug tooltip [on | off]: record every pass over a spell or item tooltip (UI/Tooltip's trace) and show it in
+-- a window whose text selects itself on a click, to copy out.
+local traceWindow
+local function showTrace()
+  local lines = WFJ.Tooltip.trace or {}
+  local text = #lines == 0 and "(nothing recorded: /wfj debug tooltip on, then hover the tooltip)"
+    or table.concat(lines, "\n")
+  if not traceWindow then
+    local W = WFJ.OptionsWidgets
+    local f = CreateFrame("Frame", "WFJTooltipTrace", WFJ.Compat.resolve("UIParent"), "ButtonFrameTemplate")
+    f:SetSize(760, 520)
+    f:SetPoint("CENTER")
+    if f.SetFrameStrata then f:SetFrameStrata("DIALOG") end
+    if f.SetMovable and f.RegisterForDrag then -- dragged by its frame
+      f:EnableMouse(true)
+      f:SetMovable(true)
+      f:RegisterForDrag("LeftButton")
+      f:SetScript("OnDragStart", f.StartMoving)
+      f:SetScript("OnDragStop", f.StopMovingOrSizing)
+    end
+    if f.SetTitle then f:SetTitle("WFJ tooltip trace") end
+    if ButtonFrameTemplate_HidePortrait then ButtonFrameTemplate_HidePortrait(f) end
+    f.text = W.scrollText(f, 14, -64, 730, 440)
+    local special = WFJ.Compat.resolve("UISpecialFrames") -- Escape closes it
+    if type(special) == "table" then table.insert(special, "WFJTooltipTrace") end
+    traceWindow = f
+  end
+  -- `|` doubled: the edit box shows a colour code or a link as the characters it is, not as a colour
+  traceWindow.text:setText((text:gsub("|", "||")))
+  traceWindow:Show()
+  say("tooltip trace: %d passes shown; click the text, Ctrl+A, Ctrl+C", #lines)
+end
+
+local function debugTooltip(arg)
+  arg = arg and arg:lower()
+  if arg == "on" then
+    WFJ.Tooltip.trace = {}
+    return say("tooltip trace: on (every spell / item tooltip pass is recorded; /wfj debug tooltip to see it)")
+  end
+  if arg == "off" then
+    WFJ.Tooltip.trace = nil
+    return say("tooltip trace: off")
+  end
+  return showTrace()
+end
+
 function Slash.debug(sub, arg)
   if sub == "fonts" then return debugFonts() end
+  if sub == "tooltip" then return debugTooltip(arg) end
   if sub == "hash" then return debugHash() end
   if sub == "quest" or sub == "item" or sub == "spell" then return debugRow(sub, arg) end
   if sub == "gossip" then return debugGossip() end
@@ -248,6 +295,10 @@ function Slash.debug(sub, arg)
   say("tooltip frames: %d/%d · hook path: %s · spell description API: %s · aura hooks: %d · aura errors: %d",
     got, want, tostring(path), api and "present" or "absent (positional rule)", auras or 0,
     WFJ.Tooltip.auraErrors or 0)
+  local hp = WFJ.Tooltip.hidden
+  say("hidden tooltips: %d written from the client's own tooltip data · %d left as the client wrote them%s",
+    hp.written, hp.left, hp.last and (" · last: " .. hp.last) or "")
+  say("tooltip time: %s", WFJ.TimeLine.status())
   local kb = WFJ.Compat.memoryKB()
   say("memory: %s", kb and ("%.1f MB"):format(kb / 1024) or "n/a")
   local c = WFJ.Data.counts

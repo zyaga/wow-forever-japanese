@@ -108,7 +108,7 @@ WFJ.Data.add("spell", {
   [3662] = { "集中している間、ペットの体力を毎秒$N1回復します。効果時間は$D1です。", "毎秒$N1回復します。", 0x71fdce4e, 0x153c160c, "uu" },
   [3674] = { "対象にBlack Arrowを放ち、$D1かけて移動速度を$N1%下げ、$N2のShadowダメージを与え、マナを$N3吸い取ります。", "移動速度が$N1%低下しています。$N3秒ごとに$N2のShadowダメージを受けます。$N5秒ごとにマナを$N4吸い取られます。", 0x8c6b820a, 0xfb4012e7, "uu" },
   [3678] = { "Altar of the Tidesで刃を使います。", nil, 0x4cfc6f75, nil, "um" },
-  [3680] = { "$D1の間、服用者に下級の透明化効果を与えます。", nil, 0xd4b2ec73, nil, "um" },
+  [3680] = { "$D1の間、服用者に下級の透明化効果を与えます。", "Lesser Invisibility", 0xd4b2ec73, 0x9f0f000c, "uu" },
   [3693] = { "Burning Spirit（Rank 4）を習得します。", nil, 0xe845e9ae, nil, "um" },
   [3694] = { "Seal of Reckoning（Rank 1）を習得します。", nil, 0x8d37dada, nil, "um" },
   [3695] = { "Seal of Reckoning（Rank 2）を習得します。", nil, 0x8d381de3, nil, "um" },

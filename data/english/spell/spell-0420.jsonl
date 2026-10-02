@@ -1,73 +1,73 @@
-{"id": 420355, "field": "name", "en": "Corrupted Totem", "hash": "7f5445264b096f8e", "src": "db2@1.60.1.70124"}
-{"id": 420484, "field": "name", "en": "Empty Snapjaw Nest - Give Rune", "hash": "a7234ab4589bc6d5", "src": "db2@1.60.1.70124"}
-{"id": 420493, "field": "name", "en": "Ferocious  Idol", "hash": "d11d431e64e2e74d", "src": "db2@1.60.1.70124"}
-{"id": 420493, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70124"}
-{"id": 420526, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70124"}
-{"id": 420526, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70124"}
-{"id": 420526, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70124"}
-{"id": 420535, "field": "name", "en": "Pickpocket", "hash": "bc35e08047edcb78", "src": "db2@1.60.1.70124"}
-{"id": 420535, "field": "description", "en": "Attempt to steal items from the target.", "hash": "35ea6ffc6330bb0c", "src": "db2@1.60.1.70124"}
-{"id": 420535, "field": "aura", "en": "Attempt to steal items from the target.", "hash": "35ea6ffc6330bb0c", "src": "db2@1.60.1.70124"}
-{"id": 420536, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70124"}
-{"id": 420536, "field": "description", "en": "Puts the caster in stealth mode for $d.", "hash": "4b1b0f76138058e8", "src": "db2@1.60.1.70124"}
-{"id": 420536, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70124"}
-{"id": 420543, "field": "name", "en": "On the Move", "hash": "004d2297d409928b", "src": "db2@1.60.1.70124"}
-{"id": 420543, "field": "aura", "en": "Moving too fast to be hit", "hash": "4fe56afe2772e66e", "src": "db2@1.60.1.70124"}
-{"id": 420576, "field": "name", "en": "Adventure Admission", "hash": "1f722172e99da575", "src": "db2@1.60.1.70124"}
-{"id": 420657, "field": "name", "en": "Give Horde Warbanner", "hash": "942ae906690dcf73", "src": "db2@1.60.1.70124"}
-{"id": 420664, "field": "name", "en": "Place Egg", "hash": "c7dfdd7c022605f5", "src": "db2@1.60.1.70124"}
-{"id": 420666, "field": "name", "en": "Place Warbanner", "hash": "ec250d49c3da122e", "src": "db2@1.60.1.70124"}
-{"id": 420667, "field": "name", "en": "Horde Warbanner", "hash": "c74d4a30b2c42474", "src": "db2@1.60.1.70124"}
-{"id": 420667, "field": "aura", "en": "Carrying a banner of the Horde.\r\n(Drops on death)", "hash": "15efcfe1b3facc80", "src": "db2@1.60.1.70124"}
-{"id": 420673, "field": "name", "en": "Destroy Alliance Warbanner", "hash": "79f017472ef42b62", "src": "db2@1.60.1.70124"}
-{"id": 420684, "field": "name", "en": "Lightning Spear", "hash": "8f75599d81fac0e7", "src": "db2@1.60.1.70124"}
-{"id": 420684, "field": "description", "en": "Draw a magical lightning spear and hurl it towards an enemy.", "hash": "c44b4eb14ba00afe", "src": "db2@1.60.1.70124"}
-{"id": 420684, "field": "aura", "en": "Draw a magical lightning spear and hurl it towards an enemy.", "hash": "c44b4eb14ba00afe", "src": "db2@1.60.1.70124"}
-{"id": 420687, "field": "name", "en": "Northwatch Warbanner Trap", "hash": "8b128c784882f0ac", "src": "db2@1.60.1.70124"}
-{"id": 420709, "field": "name", "en": "Feed Soul", "hash": "66e7a0721726ae34", "src": "db2@1.60.1.70124"}
-{"id": 420710, "field": "name", "en": "Glowy (Red Black Eyes)", "hash": "b88cda599f89cc31", "src": "db2@1.60.1.70124"}
-{"id": 420710, "field": "description", "en": "Crazed.", "hash": "02d4316d211a8d7c", "src": "db2@1.60.1.70124"}
-{"id": 420711, "field": "name", "en": "Hungry Gargoyle Statue - Give Rune", "hash": "87e413531b41d622", "src": "db2@1.60.1.70124"}
-{"id": 420725, "field": "name", "en": "Delwynna - Trade Owl Head For Rune Fragment", "hash": "28a2a242b224092d", "src": "db2@1.60.1.70124"}
-{"id": 420728, "field": "name", "en": "Delwynna - Trade Tiger Head For Rune Fragment", "hash": "e87e686fbbca3a51", "src": "db2@1.60.1.70124"}
-{"id": 420729, "field": "name", "en": "Delwynna - Trade Spider Head For Rune Fragment", "hash": "6504dc95c216e752", "src": "db2@1.60.1.70124"}
-{"id": 420744, "field": "name", "en": "Altar of Thorns", "hash": "661054317d5c9655", "src": "db2@1.60.1.70124"}
-{"id": 420744, "field": "aura", "en": "Your sacrifice will be grueling...", "hash": "7d6dcfbc800126a3", "src": "db2@1.60.1.70124"}
-{"id": 420749, "field": "name", "en": "Altar of Thorns - Give Rune", "hash": "234887a3182a4bf4", "src": "db2@1.60.1.70124"}
-{"id": 420758, "field": "name", "en": "Dreamform", "hash": "911e26f6d210cf6a", "src": "db2@1.60.1.70124"}
-{"id": 420794, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70124"}
-{"id": 420794, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70124"}
-{"id": 420799, "field": "name", "en": "Tempest Icon", "hash": "b6c028da25879228", "src": "db2@1.60.1.70124"}
-{"id": 420799, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70124"}
-{"id": 420803, "field": "name", "en": "Tempest Icon Fire Dummy", "hash": "0cd2bf9ca690d2c3", "src": "db2@1.60.1.70124"}
-{"id": 420804, "field": "name", "en": "Tempest Icon Nature Dummy", "hash": "c3752adb865fbfc9", "src": "db2@1.60.1.70124"}
-{"id": 420805, "field": "name", "en": "Tempest Icon Frost Dummy", "hash": "75adc87a7ce564df", "src": "db2@1.60.1.70124"}
-{"id": 420818, "field": "name", "en": "Desert Mirage", "hash": "d6e5b6b0b6c105aa", "src": "db2@1.60.1.70124"}
-{"id": 420818, "field": "aura", "en": "An illusion of the barren land", "hash": "4bd608c1d041c72a", "src": "db2@1.60.1.70124"}
-{"id": 420825, "field": "name", "en": "Mirage", "hash": "e94ab0fb6dff9ba5", "src": "db2@1.60.1.70124"}
-{"id": 420825, "field": "aura", "en": "An illusion of the barren land", "hash": "4bd608c1d041c72a", "src": "db2@1.60.1.70124"}
-{"id": 420843, "field": "name", "en": "Mirage Blink", "hash": "2c8ebf5e2ecd9bf4", "src": "db2@1.60.1.70124"}
-{"id": 420843, "field": "description", "en": "Teleports the caster 20 yd. backward unless something is in the way. Also frees the caster from any bonds.", "hash": "de8cab98989f2698", "src": "db2@1.60.1.70124"}
-{"id": 420843, "field": "aura", "en": "Blinking...", "hash": "e8b15d2fefd96faf", "src": "db2@1.60.1.70124"}
-{"id": 420850, "field": "name", "en": "Creeping Nightmare", "hash": "4ad98d4d020617ed", "src": "db2@1.60.1.70124"}
-{"id": 420855, "field": "name", "en": "Hunter/Priest Epic Anti-Cheat Teleport Targeting", "hash": "3ba34361d659dba2", "src": "db2@1.60.1.70124"}
-{"id": 420861, "field": "name", "en": "Creeping Nightmare", "hash": "4ad98d4d020617ed", "src": "db2@1.60.1.70124"}
-{"id": 420862, "field": "name", "en": "Hunter/Priest Epic Anti-Cheat Teleport Effect", "hash": "07cd41969749b114", "src": "db2@1.60.1.70124"}
-{"id": 420868, "field": "name", "en": "Dream Copy", "hash": "6fc7f9585c00a736", "src": "db2@1.60.1.70124"}
-{"id": 420872, "field": "name", "en": "Dream Copy", "hash": "6fc7f9585c00a736", "src": "db2@1.60.1.70124"}
-{"id": 420873, "field": "name", "en": "Dream Copy", "hash": "6fc7f9585c00a736", "src": "db2@1.60.1.70124"}
-{"id": 420877, "field": "name", "en": "Helping Hand", "hash": "32c2831086876406", "src": "db2@1.60.1.70124"}
-{"id": 420877, "field": "aura", "en": "The hand will open for a savior", "hash": "22a2e27442ecfb2a", "src": "db2@1.60.1.70124"}
-{"id": 420878, "field": "name", "en": "Helping Hand", "hash": "32c2831086876406", "src": "db2@1.60.1.70124"}
-{"id": 420878, "field": "aura", "en": "The hand has opened for you", "hash": "667ff165bac6d0b4", "src": "db2@1.60.1.70124"}
-{"id": 420879, "field": "name", "en": "Open Helping Hand", "hash": "63d208d16b12024d", "src": "db2@1.60.1.70124"}
-{"id": 420899, "field": "name", "en": "Ignite Powder Keg", "hash": "f9aec8ef414d7ebc", "src": "db2@1.60.1.70124"}
-{"id": 420901, "field": "name", "en": "Powder Keg Explosion", "hash": "d8083d770fb4fc03", "src": "db2@1.60.1.70124"}
-{"id": 420964, "field": "name", "en": "Fishing Harpoon", "hash": "7dd088c29cb27673", "src": "db2@1.60.1.70124"}
-{"id": 420964, "field": "description", "en": "Throw harpoon at target (40 yd. range)", "hash": "7b4e67042e5304bb", "src": "db2@1.60.1.70124"}
-{"id": 420964, "field": "aura", "en": "Max health and damage greatly reduced.", "hash": "09814f56d4d7752b", "src": "db2@1.60.1.70124"}
-{"id": 420990, "field": "name", "en": "Dream Copy", "hash": "6fc7f9585c00a736", "src": "db2@1.60.1.70124"}
-{"id": 420993, "field": "name", "en": "Dream Copy", "hash": "6fc7f9585c00a736", "src": "db2@1.60.1.70124"}
-{"id": 420998, "field": "name", "en": "Retribution Aura", "hash": "3ff07382343dabaf", "src": "db2@1.60.1.70124"}
-{"id": 420998, "field": "description", "en": "Causes $s1 Holy damage to any creature that strikes a nearby party member. Players may only have one aura on them per paladin at any one time. The aura lasts until cancelled.", "hash": "b2ca9267c9ede335", "src": "db2@1.60.1.70124"}
-{"id": 420998, "field": "aura", "en": "$s1 Holy damage inflicted to melee attackers.", "hash": "210150aa7d5ae399", "src": "db2@1.60.1.70124"}
+{"id": 420355, "field": "name", "en": "Corrupted Totem", "hash": "7f5445264b096f8e", "src": "db2@1.60.1.70170"}
+{"id": 420484, "field": "name", "en": "Empty Snapjaw Nest - Give Rune", "hash": "a7234ab4589bc6d5", "src": "db2@1.60.1.70170"}
+{"id": 420493, "field": "name", "en": "Ferocious  Idol", "hash": "d11d431e64e2e74d", "src": "db2@1.60.1.70170"}
+{"id": 420493, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70170"}
+{"id": 420526, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70170"}
+{"id": 420526, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70170"}
+{"id": 420526, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70170"}
+{"id": 420535, "field": "name", "en": "Pickpocket", "hash": "bc35e08047edcb78", "src": "db2@1.60.1.70170"}
+{"id": 420535, "field": "description", "en": "Attempt to steal items from the target.", "hash": "35ea6ffc6330bb0c", "src": "db2@1.60.1.70170"}
+{"id": 420535, "field": "aura", "en": "Attempt to steal items from the target.", "hash": "35ea6ffc6330bb0c", "src": "db2@1.60.1.70170"}
+{"id": 420536, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70170"}
+{"id": 420536, "field": "description", "en": "Puts the caster in stealth mode for $d.", "hash": "4b1b0f76138058e8", "src": "db2@1.60.1.70170"}
+{"id": 420536, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70170"}
+{"id": 420543, "field": "name", "en": "On the Move", "hash": "004d2297d409928b", "src": "db2@1.60.1.70170"}
+{"id": 420543, "field": "aura", "en": "Moving too fast to be hit", "hash": "4fe56afe2772e66e", "src": "db2@1.60.1.70170"}
+{"id": 420576, "field": "name", "en": "Adventure Admission", "hash": "1f722172e99da575", "src": "db2@1.60.1.70170"}
+{"id": 420657, "field": "name", "en": "Give Horde Warbanner", "hash": "942ae906690dcf73", "src": "db2@1.60.1.70170"}
+{"id": 420664, "field": "name", "en": "Place Egg", "hash": "c7dfdd7c022605f5", "src": "db2@1.60.1.70170"}
+{"id": 420666, "field": "name", "en": "Place Warbanner", "hash": "ec250d49c3da122e", "src": "db2@1.60.1.70170"}
+{"id": 420667, "field": "name", "en": "Horde Warbanner", "hash": "c74d4a30b2c42474", "src": "db2@1.60.1.70170"}
+{"id": 420667, "field": "aura", "en": "Carrying a banner of the Horde.\r\n(Drops on death)", "hash": "15efcfe1b3facc80", "src": "db2@1.60.1.70170"}
+{"id": 420673, "field": "name", "en": "Destroy Alliance Warbanner", "hash": "79f017472ef42b62", "src": "db2@1.60.1.70170"}
+{"id": 420684, "field": "name", "en": "Lightning Spear", "hash": "8f75599d81fac0e7", "src": "db2@1.60.1.70170"}
+{"id": 420684, "field": "description", "en": "Draw a magical lightning spear and hurl it towards an enemy.", "hash": "c44b4eb14ba00afe", "src": "db2@1.60.1.70170"}
+{"id": 420684, "field": "aura", "en": "Draw a magical lightning spear and hurl it towards an enemy.", "hash": "c44b4eb14ba00afe", "src": "db2@1.60.1.70170"}
+{"id": 420687, "field": "name", "en": "Northwatch Warbanner Trap", "hash": "8b128c784882f0ac", "src": "db2@1.60.1.70170"}
+{"id": 420709, "field": "name", "en": "Feed Soul", "hash": "66e7a0721726ae34", "src": "db2@1.60.1.70170"}
+{"id": 420710, "field": "name", "en": "Glowy (Red Black Eyes)", "hash": "b88cda599f89cc31", "src": "db2@1.60.1.70170"}
+{"id": 420710, "field": "description", "en": "Crazed.", "hash": "02d4316d211a8d7c", "src": "db2@1.60.1.70170"}
+{"id": 420711, "field": "name", "en": "Hungry Gargoyle Statue - Give Rune", "hash": "87e413531b41d622", "src": "db2@1.60.1.70170"}
+{"id": 420725, "field": "name", "en": "Delwynna - Trade Owl Head For Rune Fragment", "hash": "28a2a242b224092d", "src": "db2@1.60.1.70170"}
+{"id": 420728, "field": "name", "en": "Delwynna - Trade Tiger Head For Rune Fragment", "hash": "e87e686fbbca3a51", "src": "db2@1.60.1.70170"}
+{"id": 420729, "field": "name", "en": "Delwynna - Trade Spider Head For Rune Fragment", "hash": "6504dc95c216e752", "src": "db2@1.60.1.70170"}
+{"id": 420744, "field": "name", "en": "Altar of Thorns", "hash": "661054317d5c9655", "src": "db2@1.60.1.70170"}
+{"id": 420744, "field": "aura", "en": "Your sacrifice will be grueling...", "hash": "7d6dcfbc800126a3", "src": "db2@1.60.1.70170"}
+{"id": 420749, "field": "name", "en": "Altar of Thorns - Give Rune", "hash": "234887a3182a4bf4", "src": "db2@1.60.1.70170"}
+{"id": 420758, "field": "name", "en": "Dreamform", "hash": "911e26f6d210cf6a", "src": "db2@1.60.1.70170"}
+{"id": 420794, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70170"}
+{"id": 420794, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70170"}
+{"id": 420799, "field": "name", "en": "Tempest Icon", "hash": "b6c028da25879228", "src": "db2@1.60.1.70170"}
+{"id": 420799, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70170"}
+{"id": 420803, "field": "name", "en": "Tempest Icon Fire Dummy", "hash": "0cd2bf9ca690d2c3", "src": "db2@1.60.1.70170"}
+{"id": 420804, "field": "name", "en": "Tempest Icon Nature Dummy", "hash": "c3752adb865fbfc9", "src": "db2@1.60.1.70170"}
+{"id": 420805, "field": "name", "en": "Tempest Icon Frost Dummy", "hash": "75adc87a7ce564df", "src": "db2@1.60.1.70170"}
+{"id": 420818, "field": "name", "en": "Desert Mirage", "hash": "d6e5b6b0b6c105aa", "src": "db2@1.60.1.70170"}
+{"id": 420818, "field": "aura", "en": "An illusion of the barren land", "hash": "4bd608c1d041c72a", "src": "db2@1.60.1.70170"}
+{"id": 420825, "field": "name", "en": "Mirage", "hash": "e94ab0fb6dff9ba5", "src": "db2@1.60.1.70170"}
+{"id": 420825, "field": "aura", "en": "An illusion of the barren land", "hash": "4bd608c1d041c72a", "src": "db2@1.60.1.70170"}
+{"id": 420843, "field": "name", "en": "Mirage Blink", "hash": "2c8ebf5e2ecd9bf4", "src": "db2@1.60.1.70170"}
+{"id": 420843, "field": "description", "en": "Teleports the caster 20 yd. backward unless something is in the way. Also frees the caster from any bonds.", "hash": "de8cab98989f2698", "src": "db2@1.60.1.70170"}
+{"id": 420843, "field": "aura", "en": "Blinking...", "hash": "e8b15d2fefd96faf", "src": "db2@1.60.1.70170"}
+{"id": 420850, "field": "name", "en": "Creeping Nightmare", "hash": "4ad98d4d020617ed", "src": "db2@1.60.1.70170"}
+{"id": 420855, "field": "name", "en": "Hunter/Priest Epic Anti-Cheat Teleport Targeting", "hash": "3ba34361d659dba2", "src": "db2@1.60.1.70170"}
+{"id": 420861, "field": "name", "en": "Creeping Nightmare", "hash": "4ad98d4d020617ed", "src": "db2@1.60.1.70170"}
+{"id": 420862, "field": "name", "en": "Hunter/Priest Epic Anti-Cheat Teleport Effect", "hash": "07cd41969749b114", "src": "db2@1.60.1.70170"}
+{"id": 420868, "field": "name", "en": "Dream Copy", "hash": "6fc7f9585c00a736", "src": "db2@1.60.1.70170"}
+{"id": 420872, "field": "name", "en": "Dream Copy", "hash": "6fc7f9585c00a736", "src": "db2@1.60.1.70170"}
+{"id": 420873, "field": "name", "en": "Dream Copy", "hash": "6fc7f9585c00a736", "src": "db2@1.60.1.70170"}
+{"id": 420877, "field": "name", "en": "Helping Hand", "hash": "32c2831086876406", "src": "db2@1.60.1.70170"}
+{"id": 420877, "field": "aura", "en": "The hand will open for a savior", "hash": "22a2e27442ecfb2a", "src": "db2@1.60.1.70170"}
+{"id": 420878, "field": "name", "en": "Helping Hand", "hash": "32c2831086876406", "src": "db2@1.60.1.70170"}
+{"id": 420878, "field": "aura", "en": "The hand has opened for you", "hash": "667ff165bac6d0b4", "src": "db2@1.60.1.70170"}
+{"id": 420879, "field": "name", "en": "Open Helping Hand", "hash": "63d208d16b12024d", "src": "db2@1.60.1.70170"}
+{"id": 420899, "field": "name", "en": "Ignite Powder Keg", "hash": "f9aec8ef414d7ebc", "src": "db2@1.60.1.70170"}
+{"id": 420901, "field": "name", "en": "Powder Keg Explosion", "hash": "d8083d770fb4fc03", "src": "db2@1.60.1.70170"}
+{"id": 420964, "field": "name", "en": "Fishing Harpoon", "hash": "7dd088c29cb27673", "src": "db2@1.60.1.70170"}
+{"id": 420964, "field": "description", "en": "Throw harpoon at target (40 yd. range)", "hash": "7b4e67042e5304bb", "src": "db2@1.60.1.70170"}
+{"id": 420964, "field": "aura", "en": "Max health and damage greatly reduced.", "hash": "09814f56d4d7752b", "src": "db2@1.60.1.70170"}
+{"id": 420990, "field": "name", "en": "Dream Copy", "hash": "6fc7f9585c00a736", "src": "db2@1.60.1.70170"}
+{"id": 420993, "field": "name", "en": "Dream Copy", "hash": "6fc7f9585c00a736", "src": "db2@1.60.1.70170"}
+{"id": 420998, "field": "name", "en": "Retribution Aura", "hash": "3ff07382343dabaf", "src": "db2@1.60.1.70170"}
+{"id": 420998, "field": "description", "en": "Causes $s1 Holy damage to any creature that strikes a nearby party member. Players may only have one aura on them per paladin at any one time. The aura lasts until cancelled.", "hash": "b2ca9267c9ede335", "src": "db2@1.60.1.70170"}
+{"id": 420998, "field": "aura", "en": "$s1 Holy damage inflicted to melee attackers.", "hash": "210150aa7d5ae399", "src": "db2@1.60.1.70170"}

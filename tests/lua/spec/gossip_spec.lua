@@ -6,6 +6,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 -- the UI files too; a quest-prepended option shows its prepend through UI/Labels
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
+FILES[#FILES + 1] = "UI/QuestMap.lua" -- a quest row's title goes through its title helper
 FILES[#FILES + 1] = "UI/Gossip.lua"
 
 local PLAYER = { name = "Reyn", class = "Hunter", race = "Night Elf" }

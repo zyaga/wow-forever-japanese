@@ -2,7 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("spell", {
   [1270470] = { "変身呪文のマナコストを$N1減少させます。", nil, 0xd507d082, nil, "um" },
-  [1270478] = { "Lightning Boltのマナコストを$N1減少させます。", nil, 0xf8a2122d, nil, "um" },
+  [1270478] = { "Flame ShockとLightning Boltのマナコストを$N1減少させます。", nil, 0xb8ccd48e, nil, "um" },
   [1270490] = { "アイテムから得るアーマーを$N1%増加させます。", nil, 0xf6b6e46c, nil, "um" },
   [1270492] = { "トーテムのマナコストを$N1%減少させます。", nil, 0xa905b49a, nil, "um" },
   [1270940] = { "所持しているSAF-TまたはEZ-Thro製の装置のうち、爆発を伴わないものの使用回数を$N1回復します。爆発物に使うのはまったくもってUnsafeです。", nil, 0x848cf013, nil, "um" },

@@ -1,4 +1,4 @@
-{"id": "ZONE", "field": "text", "en": "Zone", "hash": "0c2c92146f3edecb", "src": "db2@1.60.1.70124"}
-{"id": "ZONE_COLON", "field": "text", "en": "Zone:", "hash": "3acec094633d511f", "src": "db2@1.60.1.70124"}
-{"id": "ZOOM_IN", "field": "text", "en": "Zoom In", "hash": "4045483acda2ea80", "src": "db2@1.60.1.70124"}
-{"id": "ZOOM_OUT", "field": "text", "en": "Zoom Out", "hash": "e3758c8d8e69c3ec", "src": "db2@1.60.1.70124"}
+{"id": "ZONE", "field": "text", "en": "Zone", "hash": "0c2c92146f3edecb", "src": "db2@1.60.1.70170"}
+{"id": "ZONE_COLON", "field": "text", "en": "Zone:", "hash": "3acec094633d511f", "src": "db2@1.60.1.70170"}
+{"id": "ZOOM_IN", "field": "text", "en": "Zoom In", "hash": "4045483acda2ea80", "src": "db2@1.60.1.70170"}
+{"id": "ZOOM_OUT", "field": "text", "en": "Zoom Out", "hash": "e3758c8d8e69c3ec", "src": "db2@1.60.1.70170"}

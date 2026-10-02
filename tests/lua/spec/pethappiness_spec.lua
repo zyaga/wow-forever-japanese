@@ -17,7 +17,7 @@ local function build()
   local pet = CreateFrame("Frame", "PetFrameHappiness")
   CreateFrame("Frame", "PetPaperDollPetHappinessInfo")
   local stable = CreateFrame("Frame", "PetStableFrame")
-  R.tree(stable, { ["modelScene.diet"] = { frame = true } })
+  R.tree(stable, { diet = { frame = true } })
   return pet
 end
 
@@ -40,7 +40,7 @@ R.suite(getfenv(1), {
     { "the character window's and the stable's indicators are owners too", function()
       onEnter(_G.PetPaperDollPetHappinessInfo, { "Unhappy" })
       assert.are.equal("不満", _G.GameTooltipTextLeft1:GetText())
-      onEnter(_G.PetStableFrame.modelScene.diet, { "Happy", "|cffffd200Diet:|r Meat, Fish" })
+      onEnter(_G.PetStableFrame.diet, { "Happy", "|cffffd200Diet:|r Meat, Fish" })
       assert.are.equal("満足", _G.GameTooltipTextLeft1:GetText())
     end },
   },
@@ -52,7 +52,7 @@ R.suite(getfenv(1), {
   end,
   wrong = function()
     _G.PetPaperDollPetHappinessInfo = "x"
-    _G.PetStableFrame.modelScene = 3
+    _G.PetStableFrame.diet = 3
     return function(f)
       onEnter(f, { "Unhappy" })
       assert.are.equal("不満", _G.GameTooltipTextLeft1:GetText())

@@ -1,150 +1,150 @@
-{"id": 430021, "field": "name", "en": "Primal Insight", "hash": "901e127992fd60da", "src": "db2@1.60.1.70124"}
-{"id": 430021, "field": "description", "en": "Consider at a Thistlefur dreamcatcher high in the canopy to receive a prophecy.", "hash": "b0a15c39998e4de7", "src": "db2@1.60.1.70124"}
-{"id": 430025, "field": "name", "en": "Demonic Grace", "hash": "1416e0ed04ca8c10", "src": "db2@1.60.1.70124"}
-{"id": 430025, "field": "aura", "en": "Dodge chance increased by $425463s1%. \r\nMaster's critical strike chance increased by $425463s2%.", "hash": "52812710ecfcc06f", "src": "db2@1.60.1.70124"}
-{"id": 430134, "field": "name", "en": "[DNT] Arcane Shard Trigger A", "hash": "2dd1072600f8acc5", "src": "db2@1.60.1.70124"}
-{"id": 430139, "field": "name", "en": "Arcane Charge", "hash": "74c031e0c304674b", "src": "db2@1.60.1.70124"}
-{"id": 430139, "field": "aura", "en": "Building arcane energy.", "hash": "5296f3e36d8e2416", "src": "db2@1.60.1.70124"}
-{"id": 430141, "field": "name", "en": "Arcane Shards - Give Rune", "hash": "e6cac82ada7ce36b", "src": "db2@1.60.1.70124"}
-{"id": 430182, "field": "name", "en": "[DNT] Arcane Shard Trigger B", "hash": "2dd1072700f8acc6", "src": "db2@1.60.1.70124"}
-{"id": 430185, "field": "name", "en": "[DNT] Arcane Shard Trigger C", "hash": "2dd1072800f8acc7", "src": "db2@1.60.1.70124"}
-{"id": 430231, "field": "name", "en": "Comprehend Language", "hash": "9aa57301eab3324d", "src": "db2@1.60.1.70124"}
-{"id": 430236, "field": "name", "en": "Decipher Scroll", "hash": "7f7e621b6026e0c2", "src": "db2@1.60.1.70124"}
-{"id": 430236, "field": "description", "en": "Decipher the scroll. Who knows what magic it contains?", "hash": "8899c8a167fe84d9", "src": "db2@1.60.1.70124"}
-{"id": 430318, "field": "name", "en": "Reintegration", "hash": "9f5cdb0ad37cc4d8", "src": "db2@1.60.1.70124"}
-{"id": 430318, "field": "description", "en": "Brings a dead player back to life with $s1% of their health and mana.  Cannot be used when in combat.", "hash": "71cd66d448b71132", "src": "db2@1.60.1.70124"}
-{"id": 430352, "field": "name", "en": "Ashenvale Rallying Cry", "hash": "ed3ca22024124ff8", "src": "db2@1.60.1.70124"}
-{"id": 430352, "field": "description", "en": "Increases all damage and healing done by $s1% for $d.", "hash": "738b070573dd8374", "src": "db2@1.60.1.70124"}
-{"id": 430352, "field": "aura", "en": "Increases all damage and healing done by $s1%.", "hash": "4dceee09c0e2e607", "src": "db2@1.60.1.70124"}
-{"id": 430373, "field": "name", "en": "Portal to Zoram Strand", "hash": "b02115d89b29680b", "src": "db2@1.60.1.70124"}
-{"id": 430374, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430374, "field": "description", "en": "Add $q2 Bronze Bars to complete the shipment.", "hash": "2b6c94b0e095b474", "src": "db2@1.60.1.70124"}
-{"id": 430375, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430375, "field": "description", "en": "Add $q2 Silver Bars to complete the shipment.", "hash": "37cac78c33e719c5", "src": "db2@1.60.1.70124"}
-{"id": 430376, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430376, "field": "description", "en": "Add $q2 Medium Leather to complete the shipment.", "hash": "6289ead22ddbe792", "src": "db2@1.60.1.70124"}
-{"id": 430377, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430377, "field": "description", "en": "Add $q2 Light Hide to complete the shipment.", "hash": "0258b8cf7c7435c1", "src": "db2@1.60.1.70124"}
-{"id": 430378, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430378, "field": "description", "en": "Add $q2 Bruiseweed to complete the shipment.", "hash": "d714841dffb62889", "src": "db2@1.60.1.70124"}
-{"id": 430380, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430380, "field": "description", "en": "Add $q2 Swiftthistle to complete the shipment.", "hash": "91060fbd2e4f9a70", "src": "db2@1.60.1.70124"}
-{"id": 430383, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430383, "field": "description", "en": "Add $q2 Lesser Mana Potions to complete the shipment.", "hash": "ecadaa1608a63c47", "src": "db2@1.60.1.70124"}
-{"id": 430385, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430385, "field": "description", "en": "Add $q2 Rough Bronze Boots to complete the shipment.", "hash": "e86fb9546a30f4c3", "src": "db2@1.60.1.70124"}
-{"id": 430387, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430387, "field": "description", "en": "Add $q2 Silver Skeleton Keys to complete the shipment.", "hash": "98d48549c354f1d4", "src": "db2@1.60.1.70124"}
-{"id": 430388, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430388, "field": "description", "en": "Add $q2 Runed Silver Rods to complete the shipment.", "hash": "d407c5bdf60e794b", "src": "db2@1.60.1.70124"}
-{"id": 430389, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430389, "field": "description", "en": "Add $q2 Minor Mana Oil to complete the shipment.", "hash": "1c08372e1d986bf1", "src": "db2@1.60.1.70124"}
-{"id": 430391, "field": "name", "en": "Hit Weapon +2", "hash": "1367ee4a9763e78a", "src": "db2@1.60.1.70124"}
-{"id": 430391, "field": "description", "en": "An enchanted edge increases your chance to hit by $s1%. This has no effect outside of Blackfathom Deeps.", "hash": "facd5ed1e30bc052", "src": "db2@1.60.1.70124"}
-{"id": 430392, "field": "name", "en": "Sharpen Weapon - Hit", "hash": "748446e7d4974f05", "src": "db2@1.60.1.70124"}
-{"id": 430392, "field": "description", "en": "While applied to the target weapon increases Hit Chance by 2% for 30 minutes. This has no effect outside of Blackfathom Deeps.", "hash": "829d3d0df205d419", "src": "db2@1.60.1.70124"}
-{"id": 430393, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430393, "field": "description", "en": "Add $q2 Small Bronze Bombs to complete the shipment.", "hash": "f052d4cd82449f0b", "src": "db2@1.60.1.70124"}
-{"id": 430394, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430394, "field": "description", "en": "Add $q2 Ornate Spyglasses to complete the shipment.", "hash": "119e3188a24a5f32", "src": "db2@1.60.1.70124"}
-{"id": 430395, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430395, "field": "description", "en": "Add $q2 Dark Leather Cloaks to complete the shipment.", "hash": "a781f34349a08196", "src": "db2@1.60.1.70124"}
-{"id": 430396, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430396, "field": "description", "en": "Add $q2 Hillman's Shoulders to complete the shipment.", "hash": "dd7b1c8a568edaf3", "src": "db2@1.60.1.70124"}
-{"id": 430397, "field": "name", "en": "Blackfathom Sharpening Stone", "hash": "7da601c34c5e2e7f", "src": "db2@1.60.1.70124"}
-{"id": 430399, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430399, "field": "description", "en": "Add $q2 Gray Woolen Shirts to complete the shipment.", "hash": "e0d23c1ba5d3fe5d", "src": "db2@1.60.1.70124"}
-{"id": 430401, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430401, "field": "description", "en": "Add $q2 Pearl-clasped Cloaks to complete the shipment.", "hash": "d58ca070d0ab0143", "src": "db2@1.60.1.70124"}
-{"id": 430402, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430402, "field": "description", "en": "Add $q2 Smoked Sagefish to complete the shipment.", "hash": "2e0719f58bbd15ca", "src": "db2@1.60.1.70124"}
-{"id": 430403, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430403, "field": "description", "en": "Add $q2 Smoked Bear Meat to complete the shipment.", "hash": "2a8a60afef999692", "src": "db2@1.60.1.70124"}
-{"id": 430404, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430404, "field": "description", "en": "Add $q2 Goblin Deviled Clams to complete the shipment.", "hash": "fcc3a5db02bf42cb", "src": "db2@1.60.1.70124"}
-{"id": 430405, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430405, "field": "description", "en": "Add $q2 Heavy Wool Bandages to complete the shipment.", "hash": "0446fd9677f103fa", "src": "db2@1.60.1.70124"}
-{"id": 430406, "field": "name", "en": "Increased Mana Regen and Spell Hit", "hash": "d3114386b2037ca3", "src": "db2@1.60.1.70124"}
-{"id": 430406, "field": "description", "en": "Restores $s1 mana per $t1 sec and Increases Spell Hit by 2%. This effect only applies within Blackfathom Deeps.", "hash": "34458caa9cac4e8a", "src": "db2@1.60.1.70124"}
-{"id": 430407, "field": "name", "en": "Consume Partial Supplies", "hash": "b3af9464166751a2", "src": "db2@1.60.1.70124"}
-{"id": 430409, "field": "name", "en": "Blackfathom Mana Oil", "hash": "988e8f37ca51c3ba", "src": "db2@1.60.1.70124"}
-{"id": 430409, "field": "description", "en": "Creates Blackfathom Mana Oil.", "hash": "268f97e30a69160e", "src": "db2@1.60.1.70124"}
-{"id": 430419, "field": "name", "en": "Decipher Scroll", "hash": "7f7e621b6026e0c2", "src": "db2@1.60.1.70124"}
-{"id": 430419, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70124"}
-{"id": 430420, "field": "name", "en": "Anointed By Elune", "hash": "66c479a5773bbf0f", "src": "db2@1.60.1.70124"}
-{"id": 430420, "field": "aura", "en": "A nearby shrine is dedicated to Elune, increasing your Intellect by $s1%.", "hash": "510e01fd3c3cbba6", "src": "db2@1.60.1.70124"}
-{"id": 430421, "field": "name", "en": "Anointed By The Loa", "hash": "8dd0eb4940298ed8", "src": "db2@1.60.1.70124"}
-{"id": 430421, "field": "aura", "en": "A nearby shrine is dedicated to the loa, increasing your Stamina by $s1%.", "hash": "f8bd63bef3b3635c", "src": "db2@1.60.1.70124"}
-{"id": 430422, "field": "name", "en": "Anointed By Undeath", "hash": "1f541aa81072957d", "src": "db2@1.60.1.70124"}
-{"id": 430422, "field": "aura", "en": "A nearby shrine is dedicated to undeath, increasing your Armor by $s1%.", "hash": "ede3c90589d7c900", "src": "db2@1.60.1.70124"}
-{"id": 430432, "field": "name", "en": "Battle Hardened", "hash": "3da65b0f2049422b", "src": "db2@1.60.1.70124"}
-{"id": 430432, "field": "description", "en": "Reduces all damage taken and chance to be critically hit by $s1% in Warsong Gulch.", "hash": "96c116adb59baf46", "src": "db2@1.60.1.70124"}
-{"id": 430432, "field": "aura", "en": "Reduces chance to be critically hit and damage taken by $s1%.", "hash": "a3728c824f5aa48a", "src": "db2@1.60.1.70124"}
-{"id": 430472, "field": "name", "en": "Single-Minded Fury", "hash": "028500e614f8949d", "src": "db2@1.60.1.70124"}
-{"id": 430491, "field": "name", "en": "WoW Variety Show - Health Drain!", "hash": "3aedef3e43921b47", "src": "db2@1.60.1.70124"}
-{"id": 430491, "field": "description", "en": "Unlucky! Your total health has been reduced by 10% for 20 minutes.", "hash": "341185ef9e825cc2", "src": "db2@1.60.1.70124"}
-{"id": 430491, "field": "aura", "en": "Health decreased by 10%", "hash": "b098f0ba2acc18c7", "src": "db2@1.60.1.70124"}
-{"id": 430492, "field": "name", "en": "WoW Variety Show - Healthy Competition!", "hash": "d2238dac7c13664b", "src": "db2@1.60.1.70124"}
-{"id": 430492, "field": "description", "en": "You feel invigorated! Your total health has been increased by 25% for 20 minutes.", "hash": "205ba086c298dc39", "src": "db2@1.60.1.70124"}
-{"id": 430492, "field": "aura", "en": "Health increased by 25%.", "hash": "9e8a39a8b8d6f301", "src": "db2@1.60.1.70124"}
-{"id": 430493, "field": "name", "en": "WoW Variety Show - Unhealthy!", "hash": "1216e06dc6cc77d9", "src": "db2@1.60.1.70124"}
-{"id": 430493, "field": "description", "en": "You feel unhealthy! Your natural health regen has been reduced by 100% for 20 minutes.", "hash": "0f0a1bcd62c31340", "src": "db2@1.60.1.70124"}
-{"id": 430493, "field": "aura", "en": "Health regeneration decreased by 100%.", "hash": "5cd95939634a4d09", "src": "db2@1.60.1.70124"}
-{"id": 430494, "field": "name", "en": "WoW Variety Show - Blazing Speed!", "hash": "e09f70d7f28d64a5", "src": "db2@1.60.1.70124"}
-{"id": 430494, "field": "description", "en": "You feel fast! Your movement speed has been increased by 50% for 20 minutes.", "hash": "9a8b4553ae1eddef", "src": "db2@1.60.1.70124"}
-{"id": 430494, "field": "aura", "en": "Movement speed increased by 50%.", "hash": "dcc1d3b625652391", "src": "db2@1.60.1.70124"}
-{"id": 430495, "field": "name", "en": "WoW Variety Show - Lethargy!", "hash": "88aad86f0fbe77c3", "src": "db2@1.60.1.70124"}
-{"id": 430495, "field": "description", "en": "You feel sluggish! Your movement speed has been decreased by 25% for 20 minutes.", "hash": "c439e27ff89702b2", "src": "db2@1.60.1.70124"}
-{"id": 430495, "field": "aura", "en": "Movement speed decreased by 25%.", "hash": "9c38ce50cdd328a3", "src": "db2@1.60.1.70124"}
-{"id": 430496, "field": "name", "en": "WoW Variety Show - The Winds of Inspiration!", "hash": "1de654a7d1f0d068", "src": "db2@1.60.1.70124"}
-{"id": 430496, "field": "description", "en": "You feel inspired! Experience gains increased by $s1%.", "hash": "3e825e6ea3288cb2", "src": "db2@1.60.1.70124"}
-{"id": 430496, "field": "aura", "en": "Experience gains increased by $s1%.", "hash": "2bdeacf125561c0b", "src": "db2@1.60.1.70124"}
-{"id": 430497, "field": "name", "en": "WoW Variety Show - Back to Goldshire!", "hash": "b5445339e0c0855f", "src": "db2@1.60.1.70124"}
-{"id": 430497, "field": "description", "en": "Oh no! You've been demoted back to newbie!", "hash": "e168b782eb285bfb", "src": "db2@1.60.1.70124"}
-{"id": 430497, "field": "aura", "en": "Recently teleported back to Goldshire. Bummer!", "hash": "19402a51a82350b0", "src": "db2@1.60.1.70124"}
-{"id": 430499, "field": "name", "en": "WoW Variety Show - Back to Razor Hill!", "hash": "46c400af9d69bcf0", "src": "db2@1.60.1.70124"}
-{"id": 430499, "field": "description", "en": "Oh no! You've been demoted back to newbie!", "hash": "e168b782eb285bfb", "src": "db2@1.60.1.70124"}
-{"id": 430499, "field": "aura", "en": "Recently teleported back to Razor Hill. Bummer!", "hash": "052321e085ed7b26", "src": "db2@1.60.1.70124"}
-{"id": 430501, "field": "name", "en": "WoW Variety Show - Slightly Tipsy!", "hash": "1e30e64e091742ac", "src": "db2@1.60.1.70124"}
-{"id": 430501, "field": "description", "en": "You feel unsteady! ", "hash": "b4af00034da19cd1", "src": "db2@1.60.1.70124"}
-{"id": 430501, "field": "aura", "en": "You feel a bit woozy!", "hash": "f4e9a2f5471c7fee", "src": "db2@1.60.1.70124"}
-{"id": 430565, "field": "name", "en": "Summon Bat Loa", "hash": "bf1453c9012ee525", "src": "db2@1.60.1.70124"}
-{"id": 430571, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70124"}
-{"id": 430585, "field": "name", "en": "Increased Mana Regen and Spell Hit", "hash": "d3114386b2037ca3", "src": "db2@1.60.1.70124"}
-{"id": 430585, "field": "description", "en": "While applied to the target weapon restores 12 mana per 5 sec and Increases Spell Hit by 2% for $t1 minutes. This effect only applies within Blackfathom Deeps.\r\n", "hash": "da5f364a805dc05d", "src": "db2@1.60.1.70124"}
-{"id": 430587, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70124"}
-{"id": 430723, "field": "name", "en": "Triple Puncture", "hash": "ce052c3b2913b5de", "src": "db2@1.60.1.70124"}
-{"id": 430723, "field": "description", "en": "Inflicts Physical damage to an enemy every $t1 sec. for $d.", "hash": "922b603531dadde0", "src": "db2@1.60.1.70124"}
-{"id": 430723, "field": "aura", "en": "Physical damage inflicted every $t1 sec.", "hash": "c8fd5ef350c4cc8c", "src": "db2@1.60.1.70124"}
-{"id": 430771, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430771, "field": "description", "en": "Add $q2 Rough Stone to complete the shipment.", "hash": "79e2e22d7233337f", "src": "db2@1.60.1.70124"}
-{"id": 430773, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430773, "field": "description", "en": "Add $q2 Healing Potions to complete the shipment.", "hash": "b779cd03f87c3b44", "src": "db2@1.60.1.70124"}
-{"id": 430776, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 430776, "field": "description", "en": "Add $q2 Elixir of Firepower to complete the shipment.", "hash": "fe005c23aee7e9e6", "src": "db2@1.60.1.70124"}
-{"id": 430818, "field": "name", "en": "[DNT] Mob Damage Modifier", "hash": "6895eb661c80b8c9", "src": "db2@1.60.1.70124"}
-{"id": 430947, "field": "name", "en": "Boon of Blackfathom", "hash": "940a8e3475f16ba8", "src": "db2@1.60.1.70124"}
-{"id": 430947, "field": "description", "en": "Increases hit chance of spells by 3%, critical chance of melee, and ranged by 2%, grants 20 attack power, 25 spell damage, and increases movement speed by 20%. 120 minute duration.", "hash": "bd1770ab89d36167", "src": "db2@1.60.1.70124"}
-{"id": 430947, "field": "aura", "en": "Increases hit chance of spells by 3%, critical chance of melee, and ranged by 2%, grants 20 attack power, 25 spell damage, and increases movement speed by 20%. 120 minute duration.", "hash": "bd1770ab89d36167", "src": "db2@1.60.1.70124"}
-{"id": 430948, "field": "name", "en": "Arcane Recovery", "hash": "0dc0c5c282486db0", "src": "db2@1.60.1.70124"}
-{"id": 430948, "field": "description", "en": "Restores $s1 mana per $t1 sec.", "hash": "6c7dd0eb4e1cedac", "src": "db2@1.60.1.70124"}
-{"id": 430948, "field": "aura", "en": "Restores $s1 mana per $t1 sec.", "hash": "6c7dd0eb4e1cedac", "src": "db2@1.60.1.70124"}
-{"id": 430949, "field": "name", "en": "Arcane Accuracy", "hash": "1e99acedff1e1db6", "src": "db2@1.60.1.70124"}
-{"id": 430949, "field": "description", "en": "Increases your chance to hit with spells by $s1%. ", "hash": "34eef4035e6f1b3c", "src": "db2@1.60.1.70124"}
-{"id": 430949, "field": "aura", "en": "Increases your chance to hit with spells by $s1%.", "hash": "34eef4035e6f1b3c", "src": "db2@1.60.1.70124"}
-{"id": 430950, "field": "name", "en": "Arcane Protection - Fire", "hash": "3144846ccd62379f", "src": "db2@1.60.1.70124"}
-{"id": 430950, "field": "description", "en": "Increases your fire resistance by $s1 for $d1. ", "hash": "27b13d3a75b1ea1f", "src": "db2@1.60.1.70124"}
-{"id": 430950, "field": "aura", "en": "Increases your fire resistance by $s1 for $d1.", "hash": "27b13d3a75b1ea1f", "src": "db2@1.60.1.70124"}
-{"id": 430951, "field": "name", "en": "Arcane Protection - Frost", "hash": "3743bcb754d15e4d", "src": "db2@1.60.1.70124"}
-{"id": 430951, "field": "description", "en": "Increases your frost resistance by $s1 for $d1. ", "hash": "e45c5522ad95feb1", "src": "db2@1.60.1.70124"}
-{"id": 430951, "field": "aura", "en": "Increases your frost resistance by $s1 for $d1.", "hash": "e45c5522ad95feb1", "src": "db2@1.60.1.70124"}
-{"id": 430952, "field": "name", "en": "Arcane Power", "hash": "110a50b8b6e0bfb1", "src": "db2@1.60.1.70124"}
-{"id": 430952, "field": "description", "en": "Improves your chance to get a critical strike with spells by ${$s1}.1%.", "hash": "d715ed9529f6f64e", "src": "db2@1.60.1.70124"}
-{"id": 430952, "field": "aura", "en": "Improves your chance to get a critical strike with spells by $s1%.", "hash": "0b08362e3ef02cd7", "src": "db2@1.60.1.70124"}
-{"id": 430959, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70124"}
-{"id": 430984, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70124"}
-{"id": 430989, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70124"}
-{"id": 430990, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70124"}
-{"id": 430991, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70124"}
-{"id": 430996, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70124"}
-{"id": 430999, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70124"}
+{"id": 430021, "field": "name", "en": "Primal Insight", "hash": "901e127992fd60da", "src": "db2@1.60.1.70170"}
+{"id": 430021, "field": "description", "en": "Consider at a Thistlefur dreamcatcher high in the canopy to receive a prophecy.", "hash": "b0a15c39998e4de7", "src": "db2@1.60.1.70170"}
+{"id": 430025, "field": "name", "en": "Demonic Grace", "hash": "1416e0ed04ca8c10", "src": "db2@1.60.1.70170"}
+{"id": 430025, "field": "aura", "en": "Dodge chance increased by $425463s1%. \r\nMaster's critical strike chance increased by $425463s2%.", "hash": "52812710ecfcc06f", "src": "db2@1.60.1.70170"}
+{"id": 430134, "field": "name", "en": "[DNT] Arcane Shard Trigger A", "hash": "2dd1072600f8acc5", "src": "db2@1.60.1.70170"}
+{"id": 430139, "field": "name", "en": "Arcane Charge", "hash": "74c031e0c304674b", "src": "db2@1.60.1.70170"}
+{"id": 430139, "field": "aura", "en": "Building arcane energy.", "hash": "5296f3e36d8e2416", "src": "db2@1.60.1.70170"}
+{"id": 430141, "field": "name", "en": "Arcane Shards - Give Rune", "hash": "e6cac82ada7ce36b", "src": "db2@1.60.1.70170"}
+{"id": 430182, "field": "name", "en": "[DNT] Arcane Shard Trigger B", "hash": "2dd1072700f8acc6", "src": "db2@1.60.1.70170"}
+{"id": 430185, "field": "name", "en": "[DNT] Arcane Shard Trigger C", "hash": "2dd1072800f8acc7", "src": "db2@1.60.1.70170"}
+{"id": 430231, "field": "name", "en": "Comprehend Language", "hash": "9aa57301eab3324d", "src": "db2@1.60.1.70170"}
+{"id": 430236, "field": "name", "en": "Decipher Scroll", "hash": "7f7e621b6026e0c2", "src": "db2@1.60.1.70170"}
+{"id": 430236, "field": "description", "en": "Decipher the scroll. Who knows what magic it contains?", "hash": "8899c8a167fe84d9", "src": "db2@1.60.1.70170"}
+{"id": 430318, "field": "name", "en": "Reintegration", "hash": "9f5cdb0ad37cc4d8", "src": "db2@1.60.1.70170"}
+{"id": 430318, "field": "description", "en": "Brings a dead player back to life with $s1% of their health and mana.  Cannot be used when in combat.", "hash": "71cd66d448b71132", "src": "db2@1.60.1.70170"}
+{"id": 430352, "field": "name", "en": "Ashenvale Rallying Cry", "hash": "ed3ca22024124ff8", "src": "db2@1.60.1.70170"}
+{"id": 430352, "field": "description", "en": "Increases all damage and healing done by $s1% for $d.", "hash": "738b070573dd8374", "src": "db2@1.60.1.70170"}
+{"id": 430352, "field": "aura", "en": "Increases all damage and healing done by $s1%.", "hash": "4dceee09c0e2e607", "src": "db2@1.60.1.70170"}
+{"id": 430373, "field": "name", "en": "Portal to Zoram Strand", "hash": "b02115d89b29680b", "src": "db2@1.60.1.70170"}
+{"id": 430374, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430374, "field": "description", "en": "Add $q2 Bronze Bars to complete the shipment.", "hash": "2b6c94b0e095b474", "src": "db2@1.60.1.70170"}
+{"id": 430375, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430375, "field": "description", "en": "Add $q2 Silver Bars to complete the shipment.", "hash": "37cac78c33e719c5", "src": "db2@1.60.1.70170"}
+{"id": 430376, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430376, "field": "description", "en": "Add $q2 Medium Leather to complete the shipment.", "hash": "6289ead22ddbe792", "src": "db2@1.60.1.70170"}
+{"id": 430377, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430377, "field": "description", "en": "Add $q2 Light Hide to complete the shipment.", "hash": "0258b8cf7c7435c1", "src": "db2@1.60.1.70170"}
+{"id": 430378, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430378, "field": "description", "en": "Add $q2 Bruiseweed to complete the shipment.", "hash": "d714841dffb62889", "src": "db2@1.60.1.70170"}
+{"id": 430380, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430380, "field": "description", "en": "Add $q2 Swiftthistle to complete the shipment.", "hash": "91060fbd2e4f9a70", "src": "db2@1.60.1.70170"}
+{"id": 430383, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430383, "field": "description", "en": "Add $q2 Lesser Mana Potions to complete the shipment.", "hash": "ecadaa1608a63c47", "src": "db2@1.60.1.70170"}
+{"id": 430385, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430385, "field": "description", "en": "Add $q2 Rough Bronze Boots to complete the shipment.", "hash": "e86fb9546a30f4c3", "src": "db2@1.60.1.70170"}
+{"id": 430387, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430387, "field": "description", "en": "Add $q2 Silver Skeleton Keys to complete the shipment.", "hash": "98d48549c354f1d4", "src": "db2@1.60.1.70170"}
+{"id": 430388, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430388, "field": "description", "en": "Add $q2 Runed Silver Rods to complete the shipment.", "hash": "d407c5bdf60e794b", "src": "db2@1.60.1.70170"}
+{"id": 430389, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430389, "field": "description", "en": "Add $q2 Minor Mana Oil to complete the shipment.", "hash": "1c08372e1d986bf1", "src": "db2@1.60.1.70170"}
+{"id": 430391, "field": "name", "en": "Hit Weapon +2", "hash": "1367ee4a9763e78a", "src": "db2@1.60.1.70170"}
+{"id": 430391, "field": "description", "en": "An enchanted edge increases your chance to hit by $s1%. This has no effect outside of Blackfathom Deeps.", "hash": "facd5ed1e30bc052", "src": "db2@1.60.1.70170"}
+{"id": 430392, "field": "name", "en": "Sharpen Weapon - Hit", "hash": "748446e7d4974f05", "src": "db2@1.60.1.70170"}
+{"id": 430392, "field": "description", "en": "While applied to the target weapon increases Hit Chance by 2% for 30 minutes. This has no effect outside of Blackfathom Deeps.", "hash": "829d3d0df205d419", "src": "db2@1.60.1.70170"}
+{"id": 430393, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430393, "field": "description", "en": "Add $q2 Small Bronze Bombs to complete the shipment.", "hash": "f052d4cd82449f0b", "src": "db2@1.60.1.70170"}
+{"id": 430394, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430394, "field": "description", "en": "Add $q2 Ornate Spyglasses to complete the shipment.", "hash": "119e3188a24a5f32", "src": "db2@1.60.1.70170"}
+{"id": 430395, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430395, "field": "description", "en": "Add $q2 Dark Leather Cloaks to complete the shipment.", "hash": "a781f34349a08196", "src": "db2@1.60.1.70170"}
+{"id": 430396, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430396, "field": "description", "en": "Add $q2 Hillman's Shoulders to complete the shipment.", "hash": "dd7b1c8a568edaf3", "src": "db2@1.60.1.70170"}
+{"id": 430397, "field": "name", "en": "Blackfathom Sharpening Stone", "hash": "7da601c34c5e2e7f", "src": "db2@1.60.1.70170"}
+{"id": 430399, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430399, "field": "description", "en": "Add $q2 Gray Woolen Shirts to complete the shipment.", "hash": "e0d23c1ba5d3fe5d", "src": "db2@1.60.1.70170"}
+{"id": 430401, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430401, "field": "description", "en": "Add $q2 Pearl-clasped Cloaks to complete the shipment.", "hash": "d58ca070d0ab0143", "src": "db2@1.60.1.70170"}
+{"id": 430402, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430402, "field": "description", "en": "Add $q2 Smoked Sagefish to complete the shipment.", "hash": "2e0719f58bbd15ca", "src": "db2@1.60.1.70170"}
+{"id": 430403, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430403, "field": "description", "en": "Add $q2 Smoked Bear Meat to complete the shipment.", "hash": "2a8a60afef999692", "src": "db2@1.60.1.70170"}
+{"id": 430404, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430404, "field": "description", "en": "Add $q2 Goblin Deviled Clams to complete the shipment.", "hash": "fcc3a5db02bf42cb", "src": "db2@1.60.1.70170"}
+{"id": 430405, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430405, "field": "description", "en": "Add $q2 Heavy Wool Bandages to complete the shipment.", "hash": "0446fd9677f103fa", "src": "db2@1.60.1.70170"}
+{"id": 430406, "field": "name", "en": "Increased Mana Regen and Spell Hit", "hash": "d3114386b2037ca3", "src": "db2@1.60.1.70170"}
+{"id": 430406, "field": "description", "en": "Restores $s1 mana per $t1 sec and Increases Spell Hit by 2%. This effect only applies within Blackfathom Deeps.", "hash": "34458caa9cac4e8a", "src": "db2@1.60.1.70170"}
+{"id": 430407, "field": "name", "en": "Consume Partial Supplies", "hash": "b3af9464166751a2", "src": "db2@1.60.1.70170"}
+{"id": 430409, "field": "name", "en": "Blackfathom Mana Oil", "hash": "988e8f37ca51c3ba", "src": "db2@1.60.1.70170"}
+{"id": 430409, "field": "description", "en": "Creates Blackfathom Mana Oil.", "hash": "268f97e30a69160e", "src": "db2@1.60.1.70170"}
+{"id": 430419, "field": "name", "en": "Decipher Scroll", "hash": "7f7e621b6026e0c2", "src": "db2@1.60.1.70170"}
+{"id": 430419, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70170"}
+{"id": 430420, "field": "name", "en": "Anointed By Elune", "hash": "66c479a5773bbf0f", "src": "db2@1.60.1.70170"}
+{"id": 430420, "field": "aura", "en": "A nearby shrine is dedicated to Elune, increasing your Intellect by $s1%.", "hash": "510e01fd3c3cbba6", "src": "db2@1.60.1.70170"}
+{"id": 430421, "field": "name", "en": "Anointed By The Loa", "hash": "8dd0eb4940298ed8", "src": "db2@1.60.1.70170"}
+{"id": 430421, "field": "aura", "en": "A nearby shrine is dedicated to the loa, increasing your Stamina by $s1%.", "hash": "f8bd63bef3b3635c", "src": "db2@1.60.1.70170"}
+{"id": 430422, "field": "name", "en": "Anointed By Undeath", "hash": "1f541aa81072957d", "src": "db2@1.60.1.70170"}
+{"id": 430422, "field": "aura", "en": "A nearby shrine is dedicated to undeath, increasing your Armor by $s1%.", "hash": "ede3c90589d7c900", "src": "db2@1.60.1.70170"}
+{"id": 430432, "field": "name", "en": "Battle Hardened", "hash": "3da65b0f2049422b", "src": "db2@1.60.1.70170"}
+{"id": 430432, "field": "description", "en": "Reduces all damage taken and chance to be critically hit by $s1% in Warsong Gulch.", "hash": "96c116adb59baf46", "src": "db2@1.60.1.70170"}
+{"id": 430432, "field": "aura", "en": "Reduces chance to be critically hit and damage taken by $s1%.", "hash": "a3728c824f5aa48a", "src": "db2@1.60.1.70170"}
+{"id": 430472, "field": "name", "en": "Single-Minded Fury", "hash": "028500e614f8949d", "src": "db2@1.60.1.70170"}
+{"id": 430491, "field": "name", "en": "WoW Variety Show - Health Drain!", "hash": "3aedef3e43921b47", "src": "db2@1.60.1.70170"}
+{"id": 430491, "field": "description", "en": "Unlucky! Your total health has been reduced by 10% for 20 minutes.", "hash": "341185ef9e825cc2", "src": "db2@1.60.1.70170"}
+{"id": 430491, "field": "aura", "en": "Health decreased by 10%", "hash": "b098f0ba2acc18c7", "src": "db2@1.60.1.70170"}
+{"id": 430492, "field": "name", "en": "WoW Variety Show - Healthy Competition!", "hash": "d2238dac7c13664b", "src": "db2@1.60.1.70170"}
+{"id": 430492, "field": "description", "en": "You feel invigorated! Your total health has been increased by 25% for 20 minutes.", "hash": "205ba086c298dc39", "src": "db2@1.60.1.70170"}
+{"id": 430492, "field": "aura", "en": "Health increased by 25%.", "hash": "9e8a39a8b8d6f301", "src": "db2@1.60.1.70170"}
+{"id": 430493, "field": "name", "en": "WoW Variety Show - Unhealthy!", "hash": "1216e06dc6cc77d9", "src": "db2@1.60.1.70170"}
+{"id": 430493, "field": "description", "en": "You feel unhealthy! Your natural health regen has been reduced by 100% for 20 minutes.", "hash": "0f0a1bcd62c31340", "src": "db2@1.60.1.70170"}
+{"id": 430493, "field": "aura", "en": "Health regeneration decreased by 100%.", "hash": "5cd95939634a4d09", "src": "db2@1.60.1.70170"}
+{"id": 430494, "field": "name", "en": "WoW Variety Show - Blazing Speed!", "hash": "e09f70d7f28d64a5", "src": "db2@1.60.1.70170"}
+{"id": 430494, "field": "description", "en": "You feel fast! Your movement speed has been increased by 50% for 20 minutes.", "hash": "9a8b4553ae1eddef", "src": "db2@1.60.1.70170"}
+{"id": 430494, "field": "aura", "en": "Movement speed increased by 50%.", "hash": "dcc1d3b625652391", "src": "db2@1.60.1.70170"}
+{"id": 430495, "field": "name", "en": "WoW Variety Show - Lethargy!", "hash": "88aad86f0fbe77c3", "src": "db2@1.60.1.70170"}
+{"id": 430495, "field": "description", "en": "You feel sluggish! Your movement speed has been decreased by 25% for 20 minutes.", "hash": "c439e27ff89702b2", "src": "db2@1.60.1.70170"}
+{"id": 430495, "field": "aura", "en": "Movement speed decreased by 25%.", "hash": "9c38ce50cdd328a3", "src": "db2@1.60.1.70170"}
+{"id": 430496, "field": "name", "en": "WoW Variety Show - The Winds of Inspiration!", "hash": "1de654a7d1f0d068", "src": "db2@1.60.1.70170"}
+{"id": 430496, "field": "description", "en": "You feel inspired! Experience gains increased by $s1%.", "hash": "3e825e6ea3288cb2", "src": "db2@1.60.1.70170"}
+{"id": 430496, "field": "aura", "en": "Experience gains increased by $s1%.", "hash": "2bdeacf125561c0b", "src": "db2@1.60.1.70170"}
+{"id": 430497, "field": "name", "en": "WoW Variety Show - Back to Goldshire!", "hash": "b5445339e0c0855f", "src": "db2@1.60.1.70170"}
+{"id": 430497, "field": "description", "en": "Oh no! You've been demoted back to newbie!", "hash": "e168b782eb285bfb", "src": "db2@1.60.1.70170"}
+{"id": 430497, "field": "aura", "en": "Recently teleported back to Goldshire. Bummer!", "hash": "19402a51a82350b0", "src": "db2@1.60.1.70170"}
+{"id": 430499, "field": "name", "en": "WoW Variety Show - Back to Razor Hill!", "hash": "46c400af9d69bcf0", "src": "db2@1.60.1.70170"}
+{"id": 430499, "field": "description", "en": "Oh no! You've been demoted back to newbie!", "hash": "e168b782eb285bfb", "src": "db2@1.60.1.70170"}
+{"id": 430499, "field": "aura", "en": "Recently teleported back to Razor Hill. Bummer!", "hash": "052321e085ed7b26", "src": "db2@1.60.1.70170"}
+{"id": 430501, "field": "name", "en": "WoW Variety Show - Slightly Tipsy!", "hash": "1e30e64e091742ac", "src": "db2@1.60.1.70170"}
+{"id": 430501, "field": "description", "en": "You feel unsteady! ", "hash": "b4af00034da19cd1", "src": "db2@1.60.1.70170"}
+{"id": 430501, "field": "aura", "en": "You feel a bit woozy!", "hash": "f4e9a2f5471c7fee", "src": "db2@1.60.1.70170"}
+{"id": 430565, "field": "name", "en": "Summon Bat Loa", "hash": "bf1453c9012ee525", "src": "db2@1.60.1.70170"}
+{"id": 430571, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70170"}
+{"id": 430585, "field": "name", "en": "Increased Mana Regen and Spell Hit", "hash": "d3114386b2037ca3", "src": "db2@1.60.1.70170"}
+{"id": 430585, "field": "description", "en": "While applied to the target weapon restores 12 mana per 5 sec and Increases Spell Hit by 2% for $t1 minutes. This effect only applies within Blackfathom Deeps.\r\n", "hash": "da5f364a805dc05d", "src": "db2@1.60.1.70170"}
+{"id": 430587, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70170"}
+{"id": 430723, "field": "name", "en": "Triple Puncture", "hash": "ce052c3b2913b5de", "src": "db2@1.60.1.70170"}
+{"id": 430723, "field": "description", "en": "Inflicts Physical damage to an enemy every $t1 sec. for $d.", "hash": "922b603531dadde0", "src": "db2@1.60.1.70170"}
+{"id": 430723, "field": "aura", "en": "Physical damage inflicted every $t1 sec.", "hash": "c8fd5ef350c4cc8c", "src": "db2@1.60.1.70170"}
+{"id": 430771, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430771, "field": "description", "en": "Add $q2 Rough Stone to complete the shipment.", "hash": "79e2e22d7233337f", "src": "db2@1.60.1.70170"}
+{"id": 430773, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430773, "field": "description", "en": "Add $q2 Healing Potions to complete the shipment.", "hash": "b779cd03f87c3b44", "src": "db2@1.60.1.70170"}
+{"id": 430776, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 430776, "field": "description", "en": "Add $q2 Elixir of Firepower to complete the shipment.", "hash": "fe005c23aee7e9e6", "src": "db2@1.60.1.70170"}
+{"id": 430818, "field": "name", "en": "[DNT] Mob Damage Modifier", "hash": "6895eb661c80b8c9", "src": "db2@1.60.1.70170"}
+{"id": 430947, "field": "name", "en": "Boon of Blackfathom", "hash": "940a8e3475f16ba8", "src": "db2@1.60.1.70170"}
+{"id": 430947, "field": "description", "en": "Increases hit chance of spells by 3%, critical chance of melee, and ranged by 2%, grants 20 attack power, 25 spell damage, and increases movement speed by 20%. 120 minute duration.", "hash": "bd1770ab89d36167", "src": "db2@1.60.1.70170"}
+{"id": 430947, "field": "aura", "en": "Increases hit chance of spells by 3%, critical chance of melee, and ranged by 2%, grants 20 attack power, 25 spell damage, and increases movement speed by 20%. 120 minute duration.", "hash": "bd1770ab89d36167", "src": "db2@1.60.1.70170"}
+{"id": 430948, "field": "name", "en": "Arcane Recovery", "hash": "0dc0c5c282486db0", "src": "db2@1.60.1.70170"}
+{"id": 430948, "field": "description", "en": "Restores $s1 mana per $t1 sec.", "hash": "6c7dd0eb4e1cedac", "src": "db2@1.60.1.70170"}
+{"id": 430948, "field": "aura", "en": "Restores $s1 mana per $t1 sec.", "hash": "6c7dd0eb4e1cedac", "src": "db2@1.60.1.70170"}
+{"id": 430949, "field": "name", "en": "Arcane Accuracy", "hash": "1e99acedff1e1db6", "src": "db2@1.60.1.70170"}
+{"id": 430949, "field": "description", "en": "Increases your chance to hit with spells by $s1%. ", "hash": "34eef4035e6f1b3c", "src": "db2@1.60.1.70170"}
+{"id": 430949, "field": "aura", "en": "Increases your chance to hit with spells by $s1%.", "hash": "34eef4035e6f1b3c", "src": "db2@1.60.1.70170"}
+{"id": 430950, "field": "name", "en": "Arcane Protection - Fire", "hash": "3144846ccd62379f", "src": "db2@1.60.1.70170"}
+{"id": 430950, "field": "description", "en": "Increases your fire resistance by $s1 for $d1. ", "hash": "27b13d3a75b1ea1f", "src": "db2@1.60.1.70170"}
+{"id": 430950, "field": "aura", "en": "Increases your fire resistance by $s1 for $d1.", "hash": "27b13d3a75b1ea1f", "src": "db2@1.60.1.70170"}
+{"id": 430951, "field": "name", "en": "Arcane Protection - Frost", "hash": "3743bcb754d15e4d", "src": "db2@1.60.1.70170"}
+{"id": 430951, "field": "description", "en": "Increases your frost resistance by $s1 for $d1. ", "hash": "e45c5522ad95feb1", "src": "db2@1.60.1.70170"}
+{"id": 430951, "field": "aura", "en": "Increases your frost resistance by $s1 for $d1.", "hash": "e45c5522ad95feb1", "src": "db2@1.60.1.70170"}
+{"id": 430952, "field": "name", "en": "Arcane Power", "hash": "110a50b8b6e0bfb1", "src": "db2@1.60.1.70170"}
+{"id": 430952, "field": "description", "en": "Improves your chance to get a critical strike with spells by ${$s1}.1%.", "hash": "d715ed9529f6f64e", "src": "db2@1.60.1.70170"}
+{"id": 430952, "field": "aura", "en": "Improves your chance to get a critical strike with spells by $s1%.", "hash": "0b08362e3ef02cd7", "src": "db2@1.60.1.70170"}
+{"id": 430959, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70170"}
+{"id": 430984, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70170"}
+{"id": 430989, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70170"}
+{"id": 430990, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70170"}
+{"id": 430991, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70170"}
+{"id": 430996, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70170"}
+{"id": 430999, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70170"}

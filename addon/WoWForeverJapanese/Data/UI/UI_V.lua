@@ -42,7 +42,7 @@ WFJ.Data.add("ui", {
   ["VIDEO_OPTIONS_NOTCH_MODE_WINDOW_BELOW"] = { "ウィンドウをノッチの下に置き、黒い帯を表示します", 0xfd16c716, "." },
   ["VIDEO_OPTIONS_PBR_LIQUID_DETAIL_HIGH"] = { "高解像度の反射、Bicubicフィルタリング、流れの計算。", 0xa2827f56, "." },
   ["VIDEO_OPTIONS_PBR_LIQUID_DETAIL_LOW"] = { "低解像度の反射とBilinearフィルタリング。", 0x338c393c, "." },
-  ["VIDEO_OPTIONS_PBR_LIQUID_DETAIL_ULTRA"] = { "非常に高解像度の反射、Bicubicフィルタリング、流れの計算。", 0x473bb296, "." },
+  ["VIDEO_OPTIONS_PBR_LIQUID_DETAIL_ULTRA"] = { "非常に高解像度の反射、Bicubicフィルタリング、流れの計算。", 0x89afacca, "." },
   ["VIDEO_OPTIONS_RECOMMENDED"] = { "おすすめ", 0x4257c786, "." },
   ["VIDEO_OPTIONS_RESAMPLE_QUALITY_BICUBIC"] = { "柔らかい画像になるアップスケール。レンダースケールが100%を超える場合は高品質なSSAAになります。", 0x028d565a, "." },
   ["VIDEO_OPTIONS_RESAMPLE_QUALITY_BILINEAR"] = { "とても柔らかい画像になるアップスケール。レンダースケールが100%を超える場合は標準品質のSSAAになります。", 0x19815548, "." },

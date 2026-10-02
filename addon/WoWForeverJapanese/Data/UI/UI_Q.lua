@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("ui", {
   ["QUESTLOG_BUTTON"] = { "クエストログ", 0xac526ca3, "." },
+  ["QUESTLOG_NO_QUESTS_TEXT"] = { "進行中のクエストはありません", 0xbd82d186, "." },
   ["QUEST_ACCEPT"] = { "%sが%sを開始しようとしています\nあなたも参加しますか？", 0x62b9bd59, "." },
   ["QUEST_ACCEPT_LOG_FULL"] = { "%sが%sを開始しようとしています\nクエストログがいっぱいです。クエストログに空きを\n作れば、このクエストに参加できます。", 0xaf684344, "." },
   ["QUEST_BG_DARK"] = { "黒", 0x951b57d7, "." },
@@ -42,6 +43,7 @@ WFJ.Data.add("ui", {
   ["QUEST_WATCH_POPUP_CLICK_TO_COMPLETE_TASK"] = { "クリックで完了", 0x7384eefe, "." },
   ["QUEST_WATCH_POPUP_CLICK_TO_VIEW"] = { "クリックでクエストを表示", 0xb893297b, "." },
   ["QUEST_WATCH_POPUP_QUEST_DISCOVERED"] = { "クエスト発見！", 0xd19e1cb9, "." },
+  ["QUEST_WATCH_TOOLTIP"] = { "クエストをShift-クリックすると、クエスト追跡リストに追加または削除できます。", 0xc7db7b66, "." },
   ["QUEST_WAYPOINT_FINAL"] = { "最終目的地を表示", 0xdc2080c1, "." },
   ["QUEST_WAYPOINT_ROUTE"] = { "移動ルートを表示", 0x2b61ae05, "." },
   ["QUEUED_FOR"] = { "%sのキューに登録中", 0x70d55ebe, "." },

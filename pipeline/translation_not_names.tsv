@@ -571,3 +571,44 @@ b7de9bc46d	rogue	Only one rogue clan still operated in secret: "renegade", not t
 30af432d5f	Cracked	The Cracked and Cursed (item flavour text)
 30af432d5f	Cursed	The Cracked and Cursed (item flavour text)
 7e846184c3	Lost	Loa of the Lost (item flavour text)
+8e81a4cc76	Wasteland	In a Wasteland area, restoring $s1 Mana every 5 sec.
+5c3d3e7574	Swamp	In a Swamp area, restoring $s1 Health every 5 sec.
+8308dd0b95	Snowy	In a Snowy area, healing done increased by up to $w1 and spell damage done increased by up to $w2.
+c3cfc82208	Forest	In a Forest or Grassland area, restoring an additional $s1 Mana every 5 sec.
+c3cfc82208	Grassland	In a Forest or Grassland area, restoring an additional $s1 Mana every 5 sec.
+095b613c4a	Click	Right Click to summon and dismiss your Pachimara.
+6d502f061d	Click	Right Click to summon and dismiss your Minfernal.
+96d3031f3e	Click	Right Click to summon and dismiss Wimdy.
+f535b1a7c1	Click	Right Click to summon and dismiss your snowy wolf pup.
+e997402704	Mana	Applies Light's Vigil to the target for $1310909d. Your next Holy Shock cast on them triggers no cooldown and causes enemy targets to suffer $1310914s1 Holy damage and refund $s2% of Light's Vigil's Mana cost, or allied targets to heal their party for $1310912s1. You may only have one Light's Vigil active per party.
+2f89cc8e95	Mana	Applies Light's Vigil to the target for $1311593d. Your next Holy Shock cast on them triggers no cooldown and causes enemy targets to suffer $1311592s1 Holy damage and refund $s2% of Light's Vigil's Mana cost, or allied targets to heal their party for $1311591s1. You may only have one Light's Vigil active per party.
+a1b180c044	Mana	Applies Light's Vigil to the target for $1311597d. Your next Holy Shock cast on them triggers no cooldown and causes enemy targets to suffer $1311598s1 Holy damage and refund $s2% of Light's Vigil's Mana cost, or allied targets to heal their party for $1311596s1. You may only have one Light's Vigil active per party.
+9f753fd20d	Maximum	Drink to gain $s1 Maximum Health and $s2 Armor. Lasts for $d.
+9f753fd20d	Health	Drink to gain $s1 Maximum Health and $s2 Armor. Lasts for $d.
+1edae9e0af	Pudding	Soft Like Pudding (item flavour text; プリン)
+dd56ba4a0e	Squishy	Squishy, Smelly, Slimy (item flavour text)
+60543dec9e	Edition	Limited Edition (item flavour text; 限定版)
+4d08b39008	Pummeler	Azeroth's Best Pummeler (item flavour text; one who pummels, 殴り屋)
+84a1b41353	Emperor	The Emperor's Tomb (item flavour text; the title on its own, glossary 皇帝)
+f5f3f9282c	Tale	A Tale of a Female Troll and Her Tiger (book subtitle, ordinary words)
+f5f3f9282c	Female	A Tale of a Female Troll and Her Tiger (book subtitle, ordinary words)
+f5f3f9282c	Troll	A Tale of a Female Troll and Her Tiger (the race, glossary トロール)
+f5f3f9282c	Her	A Tale of a Female Troll and Her Tiger (book subtitle, ordinary words)
+f5f3f9282c	Tiger	A Tale of a Female Troll and Her Tiger (a real animal, 虎)
+96d3031f3e	Right	Right Click to summon and dismiss Wimdy. (右クリック)
+96d3031f3e	Click	Right Click to summon and dismiss Wimdy. (右クリック)
+9f753fd20d	Maximum	Drink to gain $s1 Maximum Health and $s2 Armor. Lasts for $d. (最大体力)
+9f753fd20d	Health	Drink to gain $s1 Maximum Health and $s2 Armor. Lasts for $d. (最大体力)
+3f206564f3	Melee	Permanently enchant a Melee Weapon to have a chance to trigger Revelation (近接武器, the shipped term)
+3f206564f3	Weapon	Permanently enchant a Melee Weapon to have a chance to trigger Revelation (近接武器, the shipped term)
+b67e7fc630	Temp	Violent Winds (Temp Disabled)
+cb4d2d845d	Opportunistic	Opportunistic Education
+e4e830064c	Prehistoric	Prehistoric Prism
+e87e8bcfa8	Disarmament	Forced Disarmament
+d08c6a0c07	High	Praise be to Elune, and to your Light, {name}. About this time, many of our order learn abilities reflecting their faith in Elune. If knowledge serves me, I believe the same holds true for your order 
+d08c6a0c07	Priestesses	Praise be to Elune, and to your Light, {name}. About this time, many of our order learn abilities reflecting their faith in Elune. If knowledge serves me, I believe the same holds true for your order 
+0e5c55b85f	Leader	Wanted! Incinerator Gar'im, Leader of an orc incursion in Render's Valley. Purported to be working with the Blackrock of Stonewatch Keep. Beware of Incinerator Gar'im. He and his Shadowcasters are ext
+a1d51fdc18	Collect	[PH] Collect frogs
+7ee77c4a32	Collect	[PH] Collect grapes from the vineyard
+8c52eb3d3a	Tpunk	$Tpunk;! Kill Kobold Vermin, 2 of em. NEW TEST AGAIN
+b140d6364c	Tpunk	$Tpunk;! Kill Kobold Vermin, 2 of em.

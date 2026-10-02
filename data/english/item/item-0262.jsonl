@@ -1,31 +1,31 @@
-{"id": 262357, "field": "name", "en": "Wind Hollow Essence", "hash": "53d0544adbaf1c26", "src": "db2@1.60.1.70124"}
-{"id": 262433, "field": "name", "en": "Ketharas' Hyjal Stew", "hash": "c83b37df794ccacc", "src": "db2@1.60.1.70124"}
-{"id": 262433, "field": "description", "en": "Restores $o1 health and $o2 mana over $d. Must remain seated while eating.", "hash": "043d7c8bb7b6996b", "src": "db2@1.60.1.70124"}
-{"id": 262640, "field": "name", "en": "Feed Satchel", "hash": "75063d0eab029997", "src": "db2@1.60.1.70124"}
-{"id": 262668, "field": "name", "en": "Wind-Infused Bough", "hash": "f749b19a2a39c221", "src": "db2@1.60.1.70124"}
-{"id": 262668, "field": "description", "en": "Headless wind whistles a soft chill through the enchanted branches.", "hash": "fed89728db4716ea", "src": "db2@1.60.1.70124"}
-{"id": 262764, "field": "name", "en": "Durotar Supply and Logistics Tabard", "hash": "1924383cb000a07d", "src": "db2@1.60.1.70124"}
-{"id": 262765, "field": "name", "en": "Azeroth Commerce Authority Tabard", "hash": "61f1e984afb6fcea", "src": "db2@1.60.1.70124"}
-{"id": 262766, "field": "name", "en": "Reins of the Pack Kodo", "hash": "f270ae9cd621b3c2", "src": "db2@1.60.1.70124"}
-{"id": 262766, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70124"}
-{"id": 262801, "field": "name", "en": "Barkskin Satchel", "hash": "16d7da56003c60dc", "src": "db2@1.60.1.70124"}
-{"id": 262801, "field": "description", "en": "Stitched with mottled but sturdy leather.", "hash": "deca135dc0b2e237", "src": "db2@1.60.1.70124"}
-{"id": 262802, "field": "name", "en": "Moonveil Moss", "hash": "95d3f18ab77b1768", "src": "db2@1.60.1.70124"}
-{"id": 262803, "field": "name", "en": "Burrow Beetle Bits", "hash": "86b3fb5758accdfd", "src": "db2@1.60.1.70124"}
-{"id": 262816, "field": "name", "en": "Intact Owl Body", "hash": "3a5113d376c7dac5", "src": "db2@1.60.1.70124"}
-{"id": 262818, "field": "name", "en": "Bear Berries", "hash": "f0691b844d680079", "src": "db2@1.60.1.70124"}
-{"id": 262887, "field": "name", "en": "Sealed Apprentice's Writ", "hash": "d27e0e1137d30ba1", "src": "db2@1.60.1.70124"}
-{"id": 262887, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Apprentice craftsman.\nA pending crafting order intercepted in transit. Perhaps you can be the means to its end.", "hash": "e122c0d1f44a6a73", "src": "db2@1.60.1.70124"}
-{"id": 262888, "field": "name", "en": "Sealed Journeyman's Writ", "hash": "dcdb65464cd7acd3", "src": "db2@1.60.1.70124"}
-{"id": 262888, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for a Journeyman craftsman.\nA pending crafting order intercepted in transit. Perhaps you can be the means to its end.", "hash": "31898eee48b4bef7", "src": "db2@1.60.1.70124"}
-{"id": 262889, "field": "name", "en": "Sealed Expert's Writ", "hash": "e77e281d1f479c52", "src": "db2@1.60.1.70124"}
-{"id": 262889, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Expert craftsman.\nA pending crafting order intercepted in transit. Perhaps you can be the means to its end.", "hash": "ce5a553290d6ad67", "src": "db2@1.60.1.70124"}
-{"id": 262890, "field": "name", "en": "Sealed Artisan's Writ", "hash": "850a2de6a4021994", "src": "db2@1.60.1.70124"}
-{"id": 262890, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Artisan craftsman.\nA pending crafting order intercepted in transit. Perhaps you can be the means to its end.", "hash": "0ae5a4e93afda3ae", "src": "db2@1.60.1.70124"}
-{"id": 262896, "field": "name", "en": "Forger's Quill", "hash": "74ffc4e5242932f9", "src": "db2@1.60.1.70124"}
-{"id": 262896, "field": "description", "en": "Rewrite an undesired Craftsman's Writ, resulting in a random writ from the same tier.", "hash": "03dc560aa783bb8d", "src": "db2@1.60.1.70124"}
-{"id": 262902, "field": "name", "en": "Forged Delivery Receipt", "hash": "e868a1cd4a769182", "src": "db2@1.60.1.70124"}
-{"id": 262902, "field": "description", "en": "Slap a forged delivery receipt onto an empty Waylaid Crate, allowing you to return it to the $?pc923[Durotar Supply and Logistics][Azeroth Commerce Authority] for +$s2 reputation.", "hash": "aae3ce9d0b3d9c19", "src": "db2@1.60.1.70124"}
-{"id": 262913, "field": "name", "en": "Fel-Tainted Bear Heart", "hash": "7aaeb7b9c11e0e37", "src": "db2@1.60.1.70124"}
-{"id": 262917, "field": "name", "en": "Notarized Shipping Container", "hash": "e69da2f629885035", "src": "db2@1.60.1.70124"}
-{"id": 262917, "field": "description", "en": "An empty crate that should be returned to your faction's local trade representatives in the interest of reducing future shipping costs.", "hash": "2fbb3d683e49ef2a", "src": "db2@1.60.1.70124"}
+{"id": 262357, "field": "name", "en": "Wind Hollow Essence", "hash": "53d0544adbaf1c26", "src": "db2@1.60.1.70170"}
+{"id": 262433, "field": "name", "en": "Ketharas' Hyjal Stew", "hash": "c83b37df794ccacc", "src": "db2@1.60.1.70170"}
+{"id": 262433, "field": "description", "en": "Restores $o1 health and $o2 mana over $d. Must remain seated while eating.", "hash": "043d7c8bb7b6996b", "src": "db2@1.60.1.70170"}
+{"id": 262640, "field": "name", "en": "Feed Satchel", "hash": "75063d0eab029997", "src": "db2@1.60.1.70170"}
+{"id": 262668, "field": "name", "en": "Wind-Infused Bough", "hash": "f749b19a2a39c221", "src": "db2@1.60.1.70170"}
+{"id": 262668, "field": "description", "en": "Headless wind whistles a soft chill through the enchanted branches.", "hash": "fed89728db4716ea", "src": "db2@1.60.1.70170"}
+{"id": 262764, "field": "name", "en": "Durotar Supply and Logistics Tabard", "hash": "1924383cb000a07d", "src": "db2@1.60.1.70170"}
+{"id": 262765, "field": "name", "en": "Azeroth Commerce Authority Tabard", "hash": "61f1e984afb6fcea", "src": "db2@1.60.1.70170"}
+{"id": 262766, "field": "name", "en": "Reins of the Pack Kodo", "hash": "f270ae9cd621b3c2", "src": "db2@1.60.1.70170"}
+{"id": 262766, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70170"}
+{"id": 262801, "field": "name", "en": "Barkskin Satchel", "hash": "16d7da56003c60dc", "src": "db2@1.60.1.70170"}
+{"id": 262801, "field": "description", "en": "Stitched with mottled but sturdy leather.", "hash": "deca135dc0b2e237", "src": "db2@1.60.1.70170"}
+{"id": 262802, "field": "name", "en": "Moonveil Moss", "hash": "95d3f18ab77b1768", "src": "db2@1.60.1.70170"}
+{"id": 262803, "field": "name", "en": "Burrow Beetle Bits", "hash": "86b3fb5758accdfd", "src": "db2@1.60.1.70170"}
+{"id": 262816, "field": "name", "en": "Intact Owl Body", "hash": "3a5113d376c7dac5", "src": "db2@1.60.1.70170"}
+{"id": 262818, "field": "name", "en": "Bear Berries", "hash": "f0691b844d680079", "src": "db2@1.60.1.70170"}
+{"id": 262887, "field": "name", "en": "Sealed Apprentice's Writ", "hash": "d27e0e1137d30ba1", "src": "db2@1.60.1.70170"}
+{"id": 262887, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Apprentice craftsman.\nA pending crafting order intercepted in transit. Perhaps you can be the means to its end.", "hash": "e122c0d1f44a6a73", "src": "db2@1.60.1.70170"}
+{"id": 262888, "field": "name", "en": "Sealed Journeyman's Writ", "hash": "dcdb65464cd7acd3", "src": "db2@1.60.1.70170"}
+{"id": 262888, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for a Journeyman craftsman.\nA pending crafting order intercepted in transit. Perhaps you can be the means to its end.", "hash": "31898eee48b4bef7", "src": "db2@1.60.1.70170"}
+{"id": 262889, "field": "name", "en": "Sealed Expert's Writ", "hash": "e77e281d1f479c52", "src": "db2@1.60.1.70170"}
+{"id": 262889, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Expert craftsman.\nA pending crafting order intercepted in transit. Perhaps you can be the means to its end.", "hash": "ce5a553290d6ad67", "src": "db2@1.60.1.70170"}
+{"id": 262890, "field": "name", "en": "Sealed Artisan's Writ", "hash": "850a2de6a4021994", "src": "db2@1.60.1.70170"}
+{"id": 262890, "field": "description", "en": "Tear open the envelope to reveal the writ. The resulting order will be for an Artisan craftsman.\nA pending crafting order intercepted in transit. Perhaps you can be the means to its end.", "hash": "0ae5a4e93afda3ae", "src": "db2@1.60.1.70170"}
+{"id": 262896, "field": "name", "en": "Forger's Quill", "hash": "74ffc4e5242932f9", "src": "db2@1.60.1.70170"}
+{"id": 262896, "field": "description", "en": "Rewrite an undesired Craftsman's Writ, resulting in a random writ from the same tier.", "hash": "03dc560aa783bb8d", "src": "db2@1.60.1.70170"}
+{"id": 262902, "field": "name", "en": "Forged Delivery Receipt", "hash": "e868a1cd4a769182", "src": "db2@1.60.1.70170"}
+{"id": 262902, "field": "description", "en": "Slap a forged delivery receipt onto an empty Waylaid Crate, allowing you to return it to the $?pc923[Durotar Supply and Logistics][Azeroth Commerce Authority] for +$s2 reputation.", "hash": "aae3ce9d0b3d9c19", "src": "db2@1.60.1.70170"}
+{"id": 262913, "field": "name", "en": "Fel-Tainted Bear Heart", "hash": "7aaeb7b9c11e0e37", "src": "db2@1.60.1.70170"}
+{"id": 262917, "field": "name", "en": "Notarized Shipping Container", "hash": "e69da2f629885035", "src": "db2@1.60.1.70170"}
+{"id": 262917, "field": "description", "en": "An empty crate that should be returned to your faction's local trade representatives in the interest of reducing future shipping costs.", "hash": "2fbb3d683e49ef2a", "src": "db2@1.60.1.70170"}

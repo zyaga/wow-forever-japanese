@@ -105,8 +105,8 @@ def _evaluate(
     wordless = scope.kind == "ui" and _no_words(scope.raw.get(field_name))
     # a gossip line may carry the same ruling: a label that is only a name, a class or
     # profession name, an internal string or a line in a made-up language ships as the English it
-    # is, without the missing marker
-    kept_english = scope.kind in ("ui", "gossip") and accepted
+    # is, without the missing marker; so may an item or spell line that is only a name (`Umbrinoth`)
+    kept_english = scope.kind in ("ui", "gossip", "item", "spell") and accepted
     dots = field_name in scope.dotted and DOTS.fullmatch(ja) is not None
     if not language.is_japanese(ja, field_name) and not wordless and not kept_english and not dots:
         return [NOT_JAPANESE], []

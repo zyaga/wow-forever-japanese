@@ -1,93 +1,93 @@
-{"id": 1319047, "field": "name", "en": "Graverobber's Shovel", "hash": "9bc847669c302692", "src": "db2@1.60.1.70124"}
-{"id": 1319047, "field": "description", "en": "+$s1 Attack Power, doubled against Undead targets.", "hash": "235b154da5584267", "src": "db2@1.60.1.70124"}
-{"id": 1319092, "field": "name", "en": "Arrows", "hash": "bd164115a95fd0bf", "src": "db2@1.60.1.70124"}
-{"id": 1319114, "field": "name", "en": "DNT Green Glow", "hash": "96ea10333f435b99", "src": "db2@1.60.1.70124"}
-{"id": 1319154, "field": "name", "en": "Small Purple Rocket", "hash": "b135a1a68c1c901c", "src": "db2@1.60.1.70124"}
-{"id": 1319155, "field": "name", "en": "Small White Rocket", "hash": "2f2d7a6b9c8bfef1", "src": "db2@1.60.1.70124"}
-{"id": 1319156, "field": "name", "en": "Small Yellow Rocket", "hash": "4464cc06828edb2b", "src": "db2@1.60.1.70124"}
-{"id": 1319157, "field": "name", "en": "Large Purple Rocket", "hash": "15f657309099a7c9", "src": "db2@1.60.1.70124"}
-{"id": 1319158, "field": "name", "en": "Large White Rocket", "hash": "cc485a928161d200", "src": "db2@1.60.1.70124"}
-{"id": 1319159, "field": "name", "en": "Large Yellow Rocket", "hash": "a925818b870bf2d8", "src": "db2@1.60.1.70124"}
-{"id": 1319160, "field": "name", "en": "Purple Rocket Cluster", "hash": "35375a239eab1763", "src": "db2@1.60.1.70124"}
-{"id": 1319161, "field": "name", "en": "White Rocket Cluster", "hash": "23ca03054027dbe4", "src": "db2@1.60.1.70124"}
-{"id": 1319162, "field": "name", "en": "Yellow Rocket Cluster", "hash": "a146bd54ff686095", "src": "db2@1.60.1.70124"}
-{"id": 1319163, "field": "name", "en": "Large Purple Rocket Cluster", "hash": "185eeca202431d61", "src": "db2@1.60.1.70124"}
-{"id": 1319164, "field": "name", "en": "Large White Rocket Cluster", "hash": "7f6a8ee17ca59269", "src": "db2@1.60.1.70124"}
-{"id": 1319165, "field": "name", "en": "Large Yellow Rocket Cluster", "hash": "846e4fd363006693", "src": "db2@1.60.1.70124"}
-{"id": 1319201, "field": "name", "en": "Screen Shake", "hash": "5dde4a6708545552", "src": "db2@1.60.1.70124"}
-{"id": 1319202, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70124"}
-{"id": 1319202, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70124"}
-{"id": 1319206, "field": "name", "en": "Mod Creature Spell Hit Chance", "hash": "f6c072cd6611d560", "src": "db2@1.60.1.70124"}
-{"id": 1319206, "field": "description", "en": "Increase target creature's spell hit chance by 1%. Stacks!", "hash": "431ef4b0ed4c50bd", "src": "db2@1.60.1.70124"}
-{"id": 1319206, "field": "aura", "en": "This creature has an extra spell $M1% hit chance.", "hash": "aafa145e84c9b829", "src": "db2@1.60.1.70124"}
-{"id": 1319256, "field": "name", "en": "Summon Ravenlock", "hash": "83810977f5ba7698", "src": "db2@1.60.1.70124"}
-{"id": 1319256, "field": "description", "en": "Summon Loren Ravenlock to assist you in battle against Umbrinoth.", "hash": "d36af0d1518bfd42", "src": "db2@1.60.1.70124"}
-{"id": 1319257, "field": "name", "en": "Holy Strike", "hash": "f3fe690d41758a44", "src": "db2@1.60.1.70124"}
-{"id": 1319257, "field": "description", "en": "Consecrates the caster's weapon, inflicting $s1 additional damage on its next attack. All damage inflicted is based on Holy magic.", "hash": "d04665c0cd6af27f", "src": "db2@1.60.1.70124"}
-{"id": 1319258, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70124"}
-{"id": 1319258, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70124"}
-{"id": 1319259, "field": "name", "en": "Crusader Strike", "hash": "803d227f2d23d8b5", "src": "db2@1.60.1.70124"}
-{"id": 1319259, "field": "description", "en": "Inflicts $s1 damage to an enemy and increases the Holy damage it takes by $s2 per Crusader Strike. Can be applied up to 2 times. Lasts $d.", "hash": "473d6a1d2cc964f4", "src": "db2@1.60.1.70124"}
-{"id": 1319259, "field": "aura", "en": "Holy damage taken is increased.", "hash": "6508d97f817d05a9", "src": "db2@1.60.1.70124"}
-{"id": 1319260, "field": "name", "en": "Aura of Zeal", "hash": "4a94b6dd5a56d361", "src": "db2@1.60.1.70124"}
-{"id": 1319260, "field": "description", "en": "Increases Haste by $s1% for all allies within $r yards.", "hash": "9e41a959231698ec", "src": "db2@1.60.1.70124"}
-{"id": 1319260, "field": "aura", "en": "Haste increased by $s1%.", "hash": "269d2af7c7638c8d", "src": "db2@1.60.1.70124"}
-{"id": 1319289, "field": "name", "en": "Druid Forms", "hash": "baa097f3cee8cdb0", "src": "db2@1.60.1.70124"}
-{"id": 1319289, "field": "description", "en": "Shapeshift in one of several powerful forms, enhancing your combat capabilities.\r\n\r\n$?pc164317[$@spellicon9634 $@spellname9634\r\n$@spelldesc9634][$@spellicon5487 $@spellname5487\r\n$@spelldesc5487]\r\n\r\n$?pc117122[$@spellicon768 $@spellname768\r\n$@spelldesc768][]\r\n\r\n$?pc117124[$@spellicon783 $@spellname783\r\n$@spelldesc783][]\r\n\r\n$?pc117126[$@spellicon1066 $@spellname1066\r\n$@spelldesc1066][]\r\n\r\n$?pc164521[$@spellicon24858 $@spellname24858\r\n$@spelldesc24858][]", "hash": "f70e3432ca66a9ff", "src": "db2@1.60.1.70124"}
-{"id": 1319309, "field": "name", "en": "Druidic Auras", "hash": "26269012345ad726", "src": "db2@1.60.1.70124"}
-{"id": 1319309, "field": "description", "en": "$@spellicon24907 $@spellname24907\r\n$@spellaura24907\r\n\r\n$@spellicon24932 $@spellname24932\r\n$@spellaura24932", "hash": "6b190f28e5b8623b", "src": "db2@1.60.1.70124"}
-{"id": 1319310, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70124"}
-{"id": 1319310, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Armor..", "hash": "fe356216a3386491", "src": "db2@1.60.1.70124"}
-{"id": 1319310, "field": "aura", "en": "Your Armor is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "0725885c7eee980b", "src": "db2@1.60.1.70124"}
-{"id": 1319311, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70124"}
-{"id": 1319311, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 seconds eating you will become well fed and gain $s2 Armor for $1319310d. $@spelldesc1243969", "hash": "b481a44c7ff35b77", "src": "db2@1.60.1.70124"}
-{"id": 1319313, "field": "name", "en": "Plated Armorfish", "hash": "7a243bc83cb6b6f4", "src": "db2@1.60.1.70124"}
-{"id": 1319355, "field": "name", "en": "Start Duel", "hash": "4bfa7b4f1068d1e5", "src": "db2@1.60.1.70124"}
-{"id": 1319378, "field": "name", "en": "Waxing Moon", "hash": "9449e837b1660db9", "src": "db2@1.60.1.70124"}
-{"id": 1319378, "field": "description", "en": "Deals $s1 Arcane damage.", "hash": "14797f2fd977bd4e", "src": "db2@1.60.1.70124"}
-{"id": 1319378, "field": "aura", "en": "Deals $s1 Arcane damage.", "hash": "14797f2fd977bd4e", "src": "db2@1.60.1.70124"}
-{"id": 1319382, "field": "name", "en": "Waning Moon", "hash": "5d6ecee69723c2c6", "src": "db2@1.60.1.70124"}
-{"id": 1319382, "field": "description", "en": "Increases Strength by $s1 for $d.", "hash": "eb1f7146ea4ef927", "src": "db2@1.60.1.70124"}
-{"id": 1319382, "field": "aura", "en": "Strength increased by $s1.", "hash": "90d8a2f83ee1c8bf", "src": "db2@1.60.1.70124"}
-{"id": 1319421, "field": "name", "en": "Motivated", "hash": "527ad3dc5a3fe0c9", "src": "db2@1.60.1.70124"}
-{"id": 1319421, "field": "description", "en": "Motivate a member of the Deathguard.", "hash": "664cd0c89e730e98", "src": "db2@1.60.1.70124"}
-{"id": 1319421, "field": "aura", "en": "Back on task.", "hash": "da9be9e62184dd1d", "src": "db2@1.60.1.70124"}
-{"id": 1319423, "field": "name", "en": "Krol'dok Speed", "hash": "cf8ae251a89fb725", "src": "db2@1.60.1.70124"}
-{"id": 1319423, "field": "description", "en": "Movement speed increased by $s1% in Stranglethorn Vale and Riverglades.", "hash": "32625600d3dec654", "src": "db2@1.60.1.70124"}
-{"id": 1319423, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70124"}
-{"id": 1319426, "field": "name", "en": "Krol'dok Speed", "hash": "cf8ae251a89fb725", "src": "db2@1.60.1.70124"}
-{"id": 1319426, "field": "description", "en": "Movement speed increased by $s1% in Stranglethorn Vale and Riverglades.", "hash": "32625600d3dec654", "src": "db2@1.60.1.70124"}
-{"id": 1319426, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70124"}
-{"id": 1319427, "field": "name", "en": "Krol'dok Speed", "hash": "cf8ae251a89fb725", "src": "db2@1.60.1.70124"}
-{"id": 1319427, "field": "description", "en": "Movement speed increased by $s1% in Stranglethorn Vale and Riverglades.", "hash": "32625600d3dec654", "src": "db2@1.60.1.70124"}
-{"id": 1319427, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70124"}
-{"id": 1319439, "field": "name", "en": "Gather Power", "hash": "56f75567f13db343", "src": "db2@1.60.1.70124"}
-{"id": 1319446, "field": "name", "en": "Mod Creature Haste", "hash": "e8ad3e50c070a982", "src": "db2@1.60.1.70124"}
-{"id": 1319446, "field": "description", "en": "Increase target creature's haste by 1%. Stacks!", "hash": "396ab4ea99f3a9dd", "src": "db2@1.60.1.70124"}
-{"id": 1319446, "field": "aura", "en": "This creature has an extra $M1% haste.", "hash": "bc3c3d5652f8461d", "src": "db2@1.60.1.70124"}
-{"id": 1319453, "field": "name", "en": "Festive Mystery Gift", "hash": "c3c762fefc3eb29d", "src": "db2@1.60.1.70124"}
-{"id": 1319453, "field": "description", "en": "Place a festive present for someone to unwrap.", "hash": "fade3fef675ca8a4", "src": "db2@1.60.1.70124"}
-{"id": 1319456, "field": "name", "en": "Festive Mystery Gift", "hash": "c3c762fefc3eb29d", "src": "db2@1.60.1.70124"}
-{"id": 1319468, "field": "name", "en": "Create Item", "hash": "afadcc2f172246a1", "src": "db2@1.60.1.70124"}
-{"id": 1319489, "field": "name", "en": "Create Item", "hash": "afadcc2f172246a1", "src": "db2@1.60.1.70124"}
-{"id": 1319507, "field": "name", "en": "Stances", "hash": "436bcd6674c75c63", "src": "db2@1.60.1.70124"}
-{"id": 1319507, "field": "description", "en": "Assume a combat stance, altering available abilities and combat bonuses.\r\n\r\n$@spellicon2457 $@spellname2457\r\n$@spelldesc2457\r\n\r\n$?pc164518[$@spellicon71 $@spellname71\r\n$@spelldesc71][]\r\n\r\n$?pc164519[$@spellicon2458 $@spellname2458\r\n$@spelldesc2458][]", "hash": "ce77aeb4a388ec79", "src": "db2@1.60.1.70124"}
-{"id": 1319508, "field": "name", "en": "Create Item", "hash": "afadcc2f172246a1", "src": "db2@1.60.1.70124"}
-{"id": 1319539, "field": "name", "en": "Tomb Weed", "hash": "739d084a832a3a9f", "src": "db2@1.60.1.70124"}
-{"id": 1319539, "field": "aura", "en": "Spirit reduced by $s1.", "hash": "9eeea2854a64f2c3", "src": "db2@1.60.1.70124"}
-{"id": 1319550, "field": "name", "en": "Force of Nature", "hash": "76b661984cc42adc", "src": "db2@1.60.1.70124"}
-{"id": 1319611, "field": "name", "en": "Emerald Stasis", "hash": "a72a8cc4bf5d07d6", "src": "db2@1.60.1.70124"}
-{"id": 1319611, "field": "description", "en": "Communing with the Emerald Dream to subdue Nythus.", "hash": "663f60a86acb3ffd", "src": "db2@1.60.1.70124"}
-{"id": 1319611, "field": "aura", "en": "Communing with the Emerald Dream to subdue Nythus.", "hash": "663f60a86acb3ffd", "src": "db2@1.60.1.70124"}
-{"id": 1319623, "field": "name", "en": "Emerald Stasis", "hash": "a72a8cc4bf5d07d6", "src": "db2@1.60.1.70124"}
-{"id": 1319632, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70124"}
-{"id": 1319632, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70124"}
-{"id": 1319652, "field": "name", "en": "Curses", "hash": "e8c8fe36f911747a", "src": "db2@1.60.1.70124"}
-{"id": 1319652, "field": "description", "en": "Afflict your target with a powerful curse.\r\n\r\n$@spelldesc1319669\r\n\r\n$?pc164590[$@spellicon704 $@spellname704\r\n$@spelldesc704][]$?pc164591[$@spellicon7658 $@spellname7658\r\n$@spelldesc7658][]$?pc164592[$@spellicon7659 $@spellname7659\r\n$@spelldesc7659][]$?pc164593[$@spellicon11717 $@spellname11717\r\n$@spelldesc11717][]\r\n\r\n$?pc164724[$@spellicon18223 $@spellname18223\r\n$@spelldesc18223][]", "hash": "bb2f01c9cb6b7bdd", "src": "db2@1.60.1.70124"}
-{"id": 1319666, "field": "name", "en": "[DNT] Cosmetic Nature Channel", "hash": "4722a38a578a4792", "src": "db2@1.60.1.70124"}
-{"id": 1319669, "field": "name", "en": "Curses", "hash": "e8c8fe36f911747a", "src": "db2@1.60.1.70124"}
-{"id": 1319669, "field": "description", "en": "$?pc164709[$@spellicon440892 $@spellname440892 \r\n$@spelldesc440892 ][]$?pc164710[$@spellicon1311676 $@spellname1311676 \r\n$@spelldesc1311676 ][]$?pc164712[$@spellicon1311677 $@spellname1311677\r\n$@spelldesc1311677][]$?pc164714[$@spellicon1311680 $@spellname1311680\r\n$@spelldesc1311680][]\r\n\r\n$?pc164596[$@spellicon702 $@spellname702\r\n$@spelldesc702][]$?pc164597[$@spellicon1108 $@spellname1108\r\n$@spelldesc1108][]$?pc164598[$@spellicon6205 $@spellname6205\r\n$@spelldesc6205][]$?pc164599[$@spellicon7646 $@spellname7646\r\n$@spelldesc7646][]$?pc164600[$@spellicon11707 $@spellname11707\r\n$@spelldesc11707][]$?pc164601[$@spellicon11708 $@spellname11708\r\n$@spelldesc11708][]\r\n\r\n$?pc164594[$@spellicon1714 $@spellname1714\r\n$@spelldesc1714][]$?pc164595[$@spellicon11719 $@spellname11719\r\n$@spelldesc11719][]", "hash": "9a4c6c494b0198ee", "src": "db2@1.60.1.70124"}
-{"id": 1319759, "field": "name", "en": "Banes", "hash": "93a56ab1c1920589", "src": "db2@1.60.1.70124"}
-{"id": 1319759, "field": "description", "en": "Afflict your target with a powerful bane.\r\n\r\n$?pc164577[$@spellicon980 $@spellname980\r\n$@spelldesc980][]$?pc164578[$@spellicon1014 $@spellname1014\r\n$@spelldesc1014][]$?pc164579[$@spellicon6217 $@spellname6217\r\n$@spelldesc6217][]$?pc164580[$@spellicon11711 $@spellname11711\r\n$@spelldesc11711][]$?pc164581[$@spellicon11712 $@spellname11712\r\n$@spelldesc11712][]$?pc164582[$@spellicon11713 $@spellname11713\r\n$@spelldesc11713][]\r\n\r\n$?pc164747[$@spellicon603 $@spellname603\r\n$@spelldesc603][]\r\n$?pc164748[$@spellicon1225228 $@spellname1225228\r\n$@spelldesc1225228][]", "hash": "6dd1a61281afb08b", "src": "db2@1.60.1.70124"}
-{"id": 1319792, "field": "name", "en": "Aura of Rot", "hash": "a4b6c1581c5c2fae", "src": "db2@1.60.1.70124"}
-{"id": 1319792, "field": "description", "en": "Inflicts $s1 Nature damage to nearby enemies.", "hash": "b85c687d43fbdd3a", "src": "db2@1.60.1.70124"}
+{"id": 1319047, "field": "name", "en": "Graverobber's Shovel", "hash": "9bc847669c302692", "src": "db2@1.60.1.70170"}
+{"id": 1319047, "field": "description", "en": "+$s1 Attack Power, doubled against Undead targets.", "hash": "235b154da5584267", "src": "db2@1.60.1.70170"}
+{"id": 1319092, "field": "name", "en": "Arrows", "hash": "bd164115a95fd0bf", "src": "db2@1.60.1.70170"}
+{"id": 1319114, "field": "name", "en": "DNT Green Glow", "hash": "96ea10333f435b99", "src": "db2@1.60.1.70170"}
+{"id": 1319154, "field": "name", "en": "Small Purple Rocket", "hash": "b135a1a68c1c901c", "src": "db2@1.60.1.70170"}
+{"id": 1319155, "field": "name", "en": "Small White Rocket", "hash": "2f2d7a6b9c8bfef1", "src": "db2@1.60.1.70170"}
+{"id": 1319156, "field": "name", "en": "Small Yellow Rocket", "hash": "4464cc06828edb2b", "src": "db2@1.60.1.70170"}
+{"id": 1319157, "field": "name", "en": "Large Purple Rocket", "hash": "15f657309099a7c9", "src": "db2@1.60.1.70170"}
+{"id": 1319158, "field": "name", "en": "Large White Rocket", "hash": "cc485a928161d200", "src": "db2@1.60.1.70170"}
+{"id": 1319159, "field": "name", "en": "Large Yellow Rocket", "hash": "a925818b870bf2d8", "src": "db2@1.60.1.70170"}
+{"id": 1319160, "field": "name", "en": "Purple Rocket Cluster", "hash": "35375a239eab1763", "src": "db2@1.60.1.70170"}
+{"id": 1319161, "field": "name", "en": "White Rocket Cluster", "hash": "23ca03054027dbe4", "src": "db2@1.60.1.70170"}
+{"id": 1319162, "field": "name", "en": "Yellow Rocket Cluster", "hash": "a146bd54ff686095", "src": "db2@1.60.1.70170"}
+{"id": 1319163, "field": "name", "en": "Large Purple Rocket Cluster", "hash": "185eeca202431d61", "src": "db2@1.60.1.70170"}
+{"id": 1319164, "field": "name", "en": "Large White Rocket Cluster", "hash": "7f6a8ee17ca59269", "src": "db2@1.60.1.70170"}
+{"id": 1319165, "field": "name", "en": "Large Yellow Rocket Cluster", "hash": "846e4fd363006693", "src": "db2@1.60.1.70170"}
+{"id": 1319201, "field": "name", "en": "Screen Shake", "hash": "5dde4a6708545552", "src": "db2@1.60.1.70170"}
+{"id": 1319202, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
+{"id": 1319202, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
+{"id": 1319206, "field": "name", "en": "Mod Creature Spell Hit Chance", "hash": "f6c072cd6611d560", "src": "db2@1.60.1.70170"}
+{"id": 1319206, "field": "description", "en": "Increase target creature's spell hit chance by 1%. Stacks!", "hash": "431ef4b0ed4c50bd", "src": "db2@1.60.1.70170"}
+{"id": 1319206, "field": "aura", "en": "This creature has an extra spell $M1% hit chance.", "hash": "aafa145e84c9b829", "src": "db2@1.60.1.70170"}
+{"id": 1319256, "field": "name", "en": "Summon Ravenlock", "hash": "83810977f5ba7698", "src": "db2@1.60.1.70170"}
+{"id": 1319256, "field": "description", "en": "Summon Loren Ravenlock to assist you in battle against Umbrinoth.", "hash": "d36af0d1518bfd42", "src": "db2@1.60.1.70170"}
+{"id": 1319257, "field": "name", "en": "Holy Strike", "hash": "f3fe690d41758a44", "src": "db2@1.60.1.70170"}
+{"id": 1319257, "field": "description", "en": "Consecrate your weapon, inflicting $s1 additional damage on the next attack. All damage inflicted is based on Holy magic.", "hash": "786657549103eb94", "src": "db2@1.60.1.70170"}
+{"id": 1319258, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70170"}
+{"id": 1319258, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70170"}
+{"id": 1319259, "field": "name", "en": "Crusader Strike", "hash": "803d227f2d23d8b5", "src": "db2@1.60.1.70170"}
+{"id": 1319259, "field": "description", "en": "Inflicts $s1 damage to an enemy and increases the Holy damage it takes by $s2 per Crusader Strike for $d. Can be applied up to 2 times. ", "hash": "35834ea51c3df7ca", "src": "db2@1.60.1.70170"}
+{"id": 1319259, "field": "aura", "en": "Holy damage taken is increased.", "hash": "6508d97f817d05a9", "src": "db2@1.60.1.70170"}
+{"id": 1319260, "field": "name", "en": "Aura of Zeal", "hash": "4a94b6dd5a56d361", "src": "db2@1.60.1.70170"}
+{"id": 1319260, "field": "description", "en": "Increases Haste by $s1% for all allies within $r yds.", "hash": "a8949f969aa2e40e", "src": "db2@1.60.1.70170"}
+{"id": 1319260, "field": "aura", "en": "Haste increased by $s1%.", "hash": "269d2af7c7638c8d", "src": "db2@1.60.1.70170"}
+{"id": 1319289, "field": "name", "en": "Druid Forms", "hash": "baa097f3cee8cdb0", "src": "db2@1.60.1.70170"}
+{"id": 1319289, "field": "description", "en": "Shapeshift in one of several powerful forms, enhancing your combat capabilities.\r\n\r\n$?pc164317[$@spellicon9634 $@spellname9634\r\n$@spelldesc9634][$@spellicon5487 $@spellname5487\r\n$@spelldesc5487]\r\n\r\n$?pc117122[$@spellicon768 $@spellname768\r\n$@spelldesc768][]\r\n\r\n$?pc117124[$@spellicon783 $@spellname783\r\n$@spelldesc783][]\r\n\r\n$?pc117126[$@spellicon1066 $@spellname1066\r\n$@spelldesc1066][]\r\n\r\n$?pc164521[$@spellicon24858 $@spellname24858\r\n$@spelldesc24858][]", "hash": "f70e3432ca66a9ff", "src": "db2@1.60.1.70170"}
+{"id": 1319309, "field": "name", "en": "Druidic Auras", "hash": "26269012345ad726", "src": "db2@1.60.1.70170"}
+{"id": 1319309, "field": "description", "en": "$@spellicon24907 $@spellname24907\r\n$@spellaura24907\r\n\r\n$@spellicon24932 $@spellname24932\r\n$@spellaura24932", "hash": "6b190f28e5b8623b", "src": "db2@1.60.1.70170"}
+{"id": 1319310, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
+{"id": 1319310, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Armor.", "hash": "cd2d5aa05a549bb4", "src": "db2@1.60.1.70170"}
+{"id": 1319310, "field": "aura", "en": "Your Armor is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "0725885c7eee980b", "src": "db2@1.60.1.70170"}
+{"id": 1319311, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
+{"id": 1319311, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating you will become well fed and gain $s2 Armor for $1319310d. $@spelldesc1243969", "hash": "a37508daa16aed9e", "src": "db2@1.60.1.70170"}
+{"id": 1319313, "field": "name", "en": "Plated Armorfish", "hash": "7a243bc83cb6b6f4", "src": "db2@1.60.1.70170"}
+{"id": 1319355, "field": "name", "en": "Start Duel", "hash": "4bfa7b4f1068d1e5", "src": "db2@1.60.1.70170"}
+{"id": 1319378, "field": "name", "en": "Waxing Moon", "hash": "9449e837b1660db9", "src": "db2@1.60.1.70170"}
+{"id": 1319378, "field": "description", "en": "Inflicts $s1 Arcane damage.", "hash": "ebbc0ec3b2b6f88e", "src": "db2@1.60.1.70170"}
+{"id": 1319378, "field": "aura", "en": "Inflicts $s1 Arcane damage.", "hash": "ebbc0ec3b2b6f88e", "src": "db2@1.60.1.70170"}
+{"id": 1319382, "field": "name", "en": "Waning Moon", "hash": "5d6ecee69723c2c6", "src": "db2@1.60.1.70170"}
+{"id": 1319382, "field": "description", "en": "Increases Strength by $s1 for $d.", "hash": "eb1f7146ea4ef927", "src": "db2@1.60.1.70170"}
+{"id": 1319382, "field": "aura", "en": "Strength increased by $s1.", "hash": "90d8a2f83ee1c8bf", "src": "db2@1.60.1.70170"}
+{"id": 1319421, "field": "name", "en": "Motivated", "hash": "527ad3dc5a3fe0c9", "src": "db2@1.60.1.70170"}
+{"id": 1319421, "field": "description", "en": "Motivate a member of the Deathguard.", "hash": "664cd0c89e730e98", "src": "db2@1.60.1.70170"}
+{"id": 1319421, "field": "aura", "en": "Back on task.", "hash": "da9be9e62184dd1d", "src": "db2@1.60.1.70170"}
+{"id": 1319423, "field": "name", "en": "Krol'dok Speed", "hash": "cf8ae251a89fb725", "src": "db2@1.60.1.70170"}
+{"id": 1319423, "field": "description", "en": "Increases movement speed by $s1% in Stranglethorn Vale and Riverglades.", "hash": "1dd0ad7eb550098f", "src": "db2@1.60.1.70170"}
+{"id": 1319423, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70170"}
+{"id": 1319426, "field": "name", "en": "Krol'dok Speed", "hash": "cf8ae251a89fb725", "src": "db2@1.60.1.70170"}
+{"id": 1319426, "field": "description", "en": "Increases movement speed by $s1% in Stranglethorn Vale and Riverglades.", "hash": "1dd0ad7eb550098f", "src": "db2@1.60.1.70170"}
+{"id": 1319426, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70170"}
+{"id": 1319427, "field": "name", "en": "Krol'dok Speed", "hash": "cf8ae251a89fb725", "src": "db2@1.60.1.70170"}
+{"id": 1319427, "field": "description", "en": "Increases movement speed by $s1% in Stranglethorn Vale and Riverglades.", "hash": "1dd0ad7eb550098f", "src": "db2@1.60.1.70170"}
+{"id": 1319427, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70170"}
+{"id": 1319439, "field": "name", "en": "Gather Power", "hash": "56f75567f13db343", "src": "db2@1.60.1.70170"}
+{"id": 1319446, "field": "name", "en": "Mod Creature Haste", "hash": "e8ad3e50c070a982", "src": "db2@1.60.1.70170"}
+{"id": 1319446, "field": "description", "en": "Increase target creature's haste by 1%. Stacks!", "hash": "396ab4ea99f3a9dd", "src": "db2@1.60.1.70170"}
+{"id": 1319446, "field": "aura", "en": "This creature has an extra $M1% haste.", "hash": "bc3c3d5652f8461d", "src": "db2@1.60.1.70170"}
+{"id": 1319453, "field": "name", "en": "Festive Mystery Gift", "hash": "c3c762fefc3eb29d", "src": "db2@1.60.1.70170"}
+{"id": 1319453, "field": "description", "en": "Place a festive present for someone to unwrap.", "hash": "fade3fef675ca8a4", "src": "db2@1.60.1.70170"}
+{"id": 1319456, "field": "name", "en": "Festive Mystery Gift", "hash": "c3c762fefc3eb29d", "src": "db2@1.60.1.70170"}
+{"id": 1319468, "field": "name", "en": "Create Item", "hash": "afadcc2f172246a1", "src": "db2@1.60.1.70170"}
+{"id": 1319489, "field": "name", "en": "Create Item", "hash": "afadcc2f172246a1", "src": "db2@1.60.1.70170"}
+{"id": 1319507, "field": "name", "en": "Stances", "hash": "436bcd6674c75c63", "src": "db2@1.60.1.70170"}
+{"id": 1319507, "field": "description", "en": "Assume a combat stance, altering available abilities and combat bonuses.\r\n\r\n$@spellicon2457 $@spellname2457\r\n$@spelldesc2457\r\n\r\n$?pc164518[$@spellicon71 $@spellname71\r\n$@spelldesc71][]\r\n\r\n$?pc164519[$@spellicon2458 $@spellname2458\r\n$@spelldesc2458][]", "hash": "ce77aeb4a388ec79", "src": "db2@1.60.1.70170"}
+{"id": 1319508, "field": "name", "en": "Create Item", "hash": "afadcc2f172246a1", "src": "db2@1.60.1.70170"}
+{"id": 1319539, "field": "name", "en": "Tomb Weed", "hash": "739d084a832a3a9f", "src": "db2@1.60.1.70170"}
+{"id": 1319539, "field": "aura", "en": "Spirit reduced by $s1.", "hash": "9eeea2854a64f2c3", "src": "db2@1.60.1.70170"}
+{"id": 1319550, "field": "name", "en": "Force of Nature", "hash": "76b661984cc42adc", "src": "db2@1.60.1.70170"}
+{"id": 1319611, "field": "name", "en": "Emerald Stasis", "hash": "a72a8cc4bf5d07d6", "src": "db2@1.60.1.70170"}
+{"id": 1319611, "field": "description", "en": "Commune with the Emerald Dream to subdue Nythus.", "hash": "d3f8a4cd5a1a42ec", "src": "db2@1.60.1.70170"}
+{"id": 1319611, "field": "aura", "en": "Communing with the Emerald Dream to subdue Nythus.", "hash": "663f60a86acb3ffd", "src": "db2@1.60.1.70170"}
+{"id": 1319623, "field": "name", "en": "Emerald Stasis", "hash": "a72a8cc4bf5d07d6", "src": "db2@1.60.1.70170"}
+{"id": 1319632, "field": "name", "en": "Holy Light", "hash": "4ae05da8f5d0fbe2", "src": "db2@1.60.1.70170"}
+{"id": 1319632, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70170"}
+{"id": 1319652, "field": "name", "en": "Curses", "hash": "e8c8fe36f911747a", "src": "db2@1.60.1.70170"}
+{"id": 1319652, "field": "description", "en": "Afflict your target with a powerful curse.\r\n\r\n$@spelldesc1319669\r\n\r\n$?pc164590[$@spellicon704 $@spellname704\r\n$@spelldesc704][]$?pc164591[$@spellicon7658 $@spellname7658\r\n$@spelldesc7658][]$?pc164592[$@spellicon7659 $@spellname7659\r\n$@spelldesc7659][]$?pc164593[$@spellicon11717 $@spellname11717\r\n$@spelldesc11717][]\r\n\r\n$?pc164724[$@spellicon18223 $@spellname18223\r\n$@spelldesc18223][]", "hash": "bb2f01c9cb6b7bdd", "src": "db2@1.60.1.70170"}
+{"id": 1319666, "field": "name", "en": "[DNT] Cosmetic Nature Channel", "hash": "4722a38a578a4792", "src": "db2@1.60.1.70170"}
+{"id": 1319669, "field": "name", "en": "Curses", "hash": "e8c8fe36f911747a", "src": "db2@1.60.1.70170"}
+{"id": 1319669, "field": "description", "en": "$?pc164709[$@spellicon440892 $@spellname440892 \r\n$@spelldesc440892 ][]$?pc164710[$@spellicon1311676 $@spellname1311676 \r\n$@spelldesc1311676 ][]$?pc164712[$@spellicon1311677 $@spellname1311677\r\n$@spelldesc1311677][]$?pc164714[$@spellicon1311680 $@spellname1311680\r\n$@spelldesc1311680][]\r\n\r\n$?pc164596[$@spellicon702 $@spellname702\r\n$@spelldesc702][]$?pc164597[$@spellicon1108 $@spellname1108\r\n$@spelldesc1108][]$?pc164598[$@spellicon6205 $@spellname6205\r\n$@spelldesc6205][]$?pc164599[$@spellicon7646 $@spellname7646\r\n$@spelldesc7646][]$?pc164600[$@spellicon11707 $@spellname11707\r\n$@spelldesc11707][]$?pc164601[$@spellicon11708 $@spellname11708\r\n$@spelldesc11708][]\r\n\r\n$?pc164594[$@spellicon1714 $@spellname1714\r\n$@spelldesc1714][]$?pc164595[$@spellicon11719 $@spellname11719\r\n$@spelldesc11719][]", "hash": "9a4c6c494b0198ee", "src": "db2@1.60.1.70170"}
+{"id": 1319759, "field": "name", "en": "Banes", "hash": "93a56ab1c1920589", "src": "db2@1.60.1.70170"}
+{"id": 1319759, "field": "description", "en": "Afflict your target with a powerful bane.\r\n\r\n$?pc164577[$@spellicon980 $@spellname980\r\n$@spelldesc980][]$?pc164578[$@spellicon1014 $@spellname1014\r\n$@spelldesc1014][]$?pc164579[$@spellicon6217 $@spellname6217\r\n$@spelldesc6217][]$?pc164580[$@spellicon11711 $@spellname11711\r\n$@spelldesc11711][]$?pc164581[$@spellicon11712 $@spellname11712\r\n$@spelldesc11712][]$?pc164582[$@spellicon11713 $@spellname11713\r\n$@spelldesc11713][]\r\n\r\n$?pc164747[$@spellicon603 $@spellname603\r\n$@spelldesc603][]\r\n$?pc164748[$@spellicon1225228 $@spellname1225228\r\n$@spelldesc1225228][]", "hash": "6dd1a61281afb08b", "src": "db2@1.60.1.70170"}
+{"id": 1319792, "field": "name", "en": "Aura of Rot", "hash": "a4b6c1581c5c2fae", "src": "db2@1.60.1.70170"}
+{"id": 1319792, "field": "description", "en": "Inflicts $s1 Nature damage to nearby enemies.", "hash": "b85c687d43fbdd3a", "src": "db2@1.60.1.70170"}

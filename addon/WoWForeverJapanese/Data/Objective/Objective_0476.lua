@@ -70,6 +70,8 @@ WFJ.Data.add("objective", {
   [476662] = { "Elune's Lightを使う", 0x6eca65f6, "." },
   [476663] = { "Shadowmeldを使う", 0x1f55e7d4, "." },
   [476752] = { "Skyborne PortalでStormwindへ向かう", 0xc5bd6dc3, "." },
+  [476843] = { "Sealed Company RequestをHillsbradの評議会に届けた", 0xd02048e6, "." },
+  [476846] = { "Fallrook VarietalをDun Garokに届けた", 0xa250ae2e, "." },
   [476860] = { "西の小瓶を置く", 0x3fd1ac41, "." },
   [476861] = { "北の小瓶を置く", 0xbf6465fc, "." },
   [476862] = { "南の小瓶を置く", 0x102f0d64, "." },

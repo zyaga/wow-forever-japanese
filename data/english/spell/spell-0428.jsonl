@@ -1,128 +1,128 @@
-{"id": 428090, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70124"}
-{"id": 428113, "field": "name", "en": "Dark Ritual Portal", "hash": "08267e9b6518899f", "src": "db2@1.60.1.70124"}
-{"id": 428131, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70124"}
-{"id": 428172, "field": "name", "en": "Dark Ritual Stalker", "hash": "07e76efb5a8fcd1d", "src": "db2@1.60.1.70124"}
-{"id": 428221, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70124"}
-{"id": 428226, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70124"}
-{"id": 428229, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70124"}
-{"id": 428238, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70124"}
-{"id": 428238, "field": "aura", "en": "Survive the ritual.", "hash": "0bd96c0c09cac5c0", "src": "db2@1.60.1.70124"}
-{"id": 428252, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70124"}
-{"id": 428279, "field": "name", "en": "Dark Ritual Failed", "hash": "3e04c131ec7bb973", "src": "db2@1.60.1.70124"}
-{"id": 428297, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70124"}
-{"id": 428424, "field": "name", "en": "Phoenix Bindings", "hash": "d79a240e2d7c2317", "src": "db2@1.60.1.70124"}
-{"id": 428482, "field": "name", "en": "Shadow Seep", "hash": "ec69da6c46d9136c", "src": "db2@1.60.1.70124"}
-{"id": 428482, "field": "aura", "en": "Max health lowered by $w1% and Shadow damage taken increased by $w2%.", "hash": "de95b958368be2bc", "src": "db2@1.60.1.70124"}
-{"id": 428483, "field": "name", "en": "Shadow Seep", "hash": "ec69da6c46d9136c", "src": "db2@1.60.1.70124"}
-{"id": 428483, "field": "aura", "en": "Fortified by Shadow magic seeping from Aku'mai. Health increased by $w2%.", "hash": "bc9040d41d0e0ad8", "src": "db2@1.60.1.70124"}
-{"id": 428484, "field": "name", "en": "Mirror Void Elemental", "hash": "5e53f7f192ac0e70", "src": "db2@1.60.1.70124"}
-{"id": 428485, "field": "name", "en": "Mirror Void Elemental", "hash": "5e53f7f192ac0e70", "src": "db2@1.60.1.70124"}
-{"id": 428489, "field": "name", "en": "Planar Shift", "hash": "659c63793938dc6f", "src": "db2@1.60.1.70124"}
-{"id": 428489, "field": "description", "en": "Momentarily enter another plane of existence, instantly reducing threat as well as reducing all damage taken and damage dealt by $M% for $d. ", "hash": "0d5e0c0d3c95b960", "src": "db2@1.60.1.70124"}
-{"id": 428489, "field": "aura", "en": "Your physical body has entered another plane of existence. All damage taken and dealt is reduced.", "hash": "3e633c66313c8893", "src": "db2@1.60.1.70124"}
-{"id": 428490, "field": "name", "en": "Judgement", "hash": "56dd0411fae79a7d", "src": "db2@1.60.1.70124"}
-{"id": 428490, "field": "description", "en": "Judgement generates an additional $s1% threat against its target. ", "hash": "548d013e27b0d415", "src": "db2@1.60.1.70124"}
-{"id": 428491, "field": "name", "en": "Increased Aura Radii", "hash": "eaae06fdaa7ce0b7", "src": "db2@1.60.1.70124"}
-{"id": 428491, "field": "description", "en": "Your Devotion Aura also reduces all spell damage taken by $s1%. ", "hash": "c895e854b6f12f8c", "src": "db2@1.60.1.70124"}
-{"id": 428567, "field": "name", "en": "Trap Critter", "hash": "91cb2f0cfc8355c4", "src": "db2@1.60.1.70124"}
-{"id": 428567, "field": "description", "en": "Catch a critter to be used as bait.", "hash": "72483e0745501edb", "src": "db2@1.60.1.70124"}
-{"id": 428604, "field": "name", "en": "Place Bait", "hash": "4725dee5be1ab96a", "src": "db2@1.60.1.70124"}
-{"id": 428604, "field": "description", "en": "Place critter as bait.", "hash": "9480a4dba0e35cd5", "src": "db2@1.60.1.70124"}
-{"id": 428606, "field": "name", "en": "[DNT] Summon Gharrik", "hash": "15640113d7105797", "src": "db2@1.60.1.70124"}
-{"id": 428658, "field": "name", "en": "Mysterious Traveler", "hash": "88e4d7571a940794", "src": "db2@1.60.1.70124"}
-{"id": 428665, "field": "name", "en": "Summon Corrosive Droplets", "hash": "39499ad271c90e8a", "src": "db2@1.60.1.70124"}
-{"id": 428687, "field": "name", "en": "[DNT] S03 - 40 - Hunter 40 Quest - Remove Quest Items", "hash": "480e5a83d49cd745", "src": "db2@1.60.1.70124"}
-{"id": 428700, "field": "name", "en": "Summon Corrosive Droplets", "hash": "39499ad271c90e8a", "src": "db2@1.60.1.70124"}
-{"id": 428708, "field": "name", "en": "Frenzied Regeneration", "hash": "22db465e57ce4950", "src": "db2@1.60.1.70124"}
-{"id": 428708, "field": "description", "en": "Converts resources into health every second for $d. Up to $s1 Rage, $s2 Energy, or $s3% base Mana is converted per second into up to $s4% health.", "hash": "60a09161e5d74e92", "src": "db2@1.60.1.70124"}
-{"id": 428708, "field": "aura", "en": "Converting resources into health.", "hash": "1bfa0d3b01a9df53", "src": "db2@1.60.1.70124"}
-{"id": 428710, "field": "name", "en": "Elemental Instability", "hash": "b3321d942d6ee69b", "src": "db2@1.60.1.70124"}
-{"id": 428710, "field": "aura", "en": "The elemental's binding magics are unravelling, radiating raw mana on nearby players.", "hash": "d7aae66fd9bb7bfa", "src": "db2@1.60.1.70124"}
-{"id": 428713, "field": "name", "en": "Barkskin", "hash": "a9a3711f5cf7157f", "src": "db2@1.60.1.70124"}
-{"id": 428713, "field": "description", "en": "The target's skin becomes as tough as bark. Physical damage taken is reduced by $s2%.  While protected, damaging attacks will not cause spellcasting delays. Lasts $d.", "hash": "a3962e6a2f446192", "src": "db2@1.60.1.70124"}
-{"id": 428713, "field": "aura", "en": "Physical damage taken is reduced by $s2%. While protected, damaging attacks will not cause spellcasting delays.", "hash": "94e200c6c3bd6206", "src": "db2@1.60.1.70124"}
-{"id": 428717, "field": "name", "en": "T.N.T.", "hash": "b95f6f159ba1b2ac", "src": "db2@1.60.1.70124"}
-{"id": 428717, "field": "description", "en": "Increases the damage done by Explosive Shot and all your damaging traps by $s1%. Additionally, the initial damage of Explosive Trap and the total periodic damage of your Immolation Trap are increased by $s3% of your melee or ranged Attack Power.", "hash": "41837b4a3f296cff", "src": "db2@1.60.1.70124"}
-{"id": 428723, "field": "name", "en": "Hateful Bite", "hash": "42eca4bbb6a61167", "src": "db2@1.60.1.70124"}
-{"id": 428724, "field": "name", "en": "Hateful Bite", "hash": "42eca4bbb6a61167", "src": "db2@1.60.1.70124"}
-{"id": 428726, "field": "name", "en": "Focus Fire", "hash": "f784b3211829fb50", "src": "db2@1.60.1.70124"}
-{"id": 428726, "field": "description", "en": "Consumes all applications of Frenzy from your pet, increasing your ranged attack speed by $s1% and granting $s2 Focus to your pet for each application of Frenzy consumed. Lasts $d.\r\n\r\nYour pet gains Frenzy each time it uses a Basic Attack, increasing its melee attack speed by $428728s1% for $428728d, stacking up to $428728u times.", "hash": "822ef164da6f0edf", "src": "db2@1.60.1.70124"}
-{"id": 428726, "field": "aura", "en": "Increases ranged attack speed by $w1%.", "hash": "3092f5a573613085", "src": "db2@1.60.1.70124"}
-{"id": 428728, "field": "name", "en": "Frenzy", "hash": "a4ed88dc0ed0da9b", "src": "db2@1.60.1.70124"}
-{"id": 428728, "field": "description", "en": "Increases pet's melee attack speed by $s1% for $d.", "hash": "c2205de3ae8dc3b9", "src": "db2@1.60.1.70124"}
-{"id": 428728, "field": "aura", "en": "Increases pet's melee attack speed by $s1%.", "hash": "389c7132b75c663a", "src": "db2@1.60.1.70124"}
-{"id": 428732, "field": "name", "en": "Corrosive Pool", "hash": "3168d390f22b7275", "src": "db2@1.60.1.70124"}
-{"id": 428733, "field": "name", "en": "Corrosive Pool", "hash": "3168d390f22b7275", "src": "db2@1.60.1.70124"}
-{"id": 428733, "field": "aura", "en": "The corrupted waters cling to you.", "hash": "c24bd8e8353aa613", "src": "db2@1.60.1.70124"}
-{"id": 428738, "field": "name", "en": "Advanced Warding", "hash": "35e86b2802f1b270", "src": "db2@1.60.1.70124"}
-{"id": 428738, "field": "description", "en": "Increases the magnitude of your Mana Shield, Frost Ward, and Fire Ward by $s1%, and decreases mana drained by Mana Shield by $s2% per damage done.", "hash": "407137e16286469f", "src": "db2@1.60.1.70124"}
-{"id": 428739, "field": "name", "en": "Deep Freeze", "hash": "9bc8b7617919e7c7", "src": "db2@1.60.1.70124"}
-{"id": 428739, "field": "description", "en": "Stuns the target for $d.  Only usable on Frozen targets.  Deals ${$428917m1*$<power>/100*$<frostdamage>} to ${$428917M1*$<power>/100*$<frostdamage>} damage to targets permanently immune to Stun. This damage benefits from, but does not consume, stacks of Glaciate.", "hash": "477daf2a966c05c4", "src": "db2@1.60.1.70124"}
-{"id": 428739, "field": "aura", "en": "Stunned and Frozen.", "hash": "f27e935de7caf4d9", "src": "db2@1.60.1.70124"}
-{"id": 428740, "field": "name", "en": "Corrosive Pool", "hash": "3168d390f22b7275", "src": "db2@1.60.1.70124"}
-{"id": 428741, "field": "name", "en": "Molten Armor", "hash": "5af61ad5fceacaa0", "src": "db2@1.60.1.70124"}
-{"id": 428741, "field": "description", "en": "Causes ${$428743m1/100*$<power>} Fire damage when hit, increases your spell critical strike chance by $s3%, and reduces the chance you are critically hit by $s2%.  Only one type of Armor spell can be active on the Mage at any time.  Lasts $d.", "hash": "27550fe0dca16ea3", "src": "db2@1.60.1.70124"}
-{"id": 428741, "field": "aura", "en": "Causes Fire damage to attackers.  Chance to receive a critical hit reduced by $s2%.  Spell critical strike chance increased by $s3%.", "hash": "870914a3ddc3220a", "src": "db2@1.60.1.70124"}
-{"id": 428743, "field": "name", "en": "Molten Armor", "hash": "5af61ad5fceacaa0", "src": "db2@1.60.1.70124"}
-{"id": 428761, "field": "name", "en": "Elemental Instability", "hash": "b3321d942d6ee69b", "src": "db2@1.60.1.70124"}
-{"id": 428796, "field": "name", "en": "Consume Partial Supplies", "hash": "b3af9464166751a2", "src": "db2@1.60.1.70124"}
-{"id": 428828, "field": "name", "en": "Summon Cleansing Elemental", "hash": "5c175a3e3c5cb0ce", "src": "db2@1.60.1.70124"}
-{"id": 428837, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428837, "field": "description", "en": "Add $q2 Light Leather to complete the shipment.", "hash": "7a0e45b24050cd76", "src": "db2@1.60.1.70124"}
-{"id": 428838, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428838, "field": "description", "en": "Add $q2 Peacebloom to complete the shipment.", "hash": "f297f7714ebf03e1", "src": "db2@1.60.1.70124"}
-{"id": 428840, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428840, "field": "description", "en": "Add $q2 Silverleaf to complete the shipment.", "hash": "6d8888a0fd2aeee2", "src": "db2@1.60.1.70124"}
-{"id": 428842, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428842, "field": "description", "en": "Add $q2 Minor Healing Potions to complete the shipment.", "hash": "f877dcba41b11730", "src": "db2@1.60.1.70124"}
-{"id": 428843, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428843, "field": "description", "en": "Add $q2 Copper Shortswords to complete the shipment.", "hash": "b80648aef6e87154", "src": "db2@1.60.1.70124"}
-{"id": 428844, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428844, "field": "description", "en": "Add $q2 Runed Copper Pants to complete the shipment.", "hash": "d4542fc8f4c465f8", "src": "db2@1.60.1.70124"}
-{"id": 428845, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428845, "field": "description", "en": "Add $q2 Lesser Magic Wands to complete the shipment.", "hash": "5b7e14eb41286f0a", "src": "db2@1.60.1.70124"}
-{"id": 428846, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428846, "field": "description", "en": "Add $q2 Minor Wizard Oil to complete the shipment.", "hash": "7a19cb6ce537a812", "src": "db2@1.60.1.70124"}
-{"id": 428847, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428847, "field": "description", "en": "Add $q2 Rough Copper Bombs to complete the shipment.", "hash": "08f90955b5229687", "src": "db2@1.60.1.70124"}
-{"id": 428848, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428848, "field": "description", "en": "Add $q2 Rough Boomsticks to complete the shipment.", "hash": "2688911fd1c49be5", "src": "db2@1.60.1.70124"}
-{"id": 428849, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428849, "field": "description", "en": "Add $q2 Handstitched Leather Belts to complete the shipment.", "hash": "2972836133f0d525", "src": "db2@1.60.1.70124"}
-{"id": 428850, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428850, "field": "description", "en": "Add $q2 Embossed Leather Vests to complete the shipment.", "hash": "2d577b122e10fc89", "src": "db2@1.60.1.70124"}
-{"id": 428851, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428851, "field": "description", "en": "Add $q2 Brown Linen Pants to complete the shipment.", "hash": "f2488b2aae3b24ef", "src": "db2@1.60.1.70124"}
-{"id": 428853, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428853, "field": "description", "en": "Add $q2 Brown Linen Robes to complete the shipment.", "hash": "7cddac62a175a59c", "src": "db2@1.60.1.70124"}
-{"id": 428855, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428855, "field": "description", "en": "Add $q2 Herb Baked Eggs to complete the shipment.", "hash": "4b1ea0254d34b107", "src": "db2@1.60.1.70124"}
-{"id": 428856, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428856, "field": "description", "en": "Add $q2 Spiced Wolf Meat to complete the shipment.", "hash": "0eea74a239bc22ff", "src": "db2@1.60.1.70124"}
-{"id": 428857, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428857, "field": "description", "en": "Add $q2 Brilliant Smallfish to complete the shipment.", "hash": "277cbe9e92e7afc3", "src": "db2@1.60.1.70124"}
-{"id": 428858, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70124"}
-{"id": 428858, "field": "description", "en": "Add $q2 Heavy Linen Bandages to complete the shipment.", "hash": "0da3bb2e89780a6f", "src": "db2@1.60.1.70124"}
-{"id": 428861, "field": "name", "en": "Displacement", "hash": "827353745f918b69", "src": "db2@1.60.1.70124"}
-{"id": 428861, "field": "description", "en": "Teleports back to where you last cast Blink from and resets the cooldown on Blink. Only usable within $428865d of casting Blink.", "hash": "04eae6387fbde514", "src": "db2@1.60.1.70124"}
-{"id": 428863, "field": "name", "en": "Displacement", "hash": "827353745f918b69", "src": "db2@1.60.1.70124"}
-{"id": 428863, "field": "description", "en": "Gain the Displacement ability:\r\n\r\n$@spellicon428861\r\n$@spelldesc428861", "hash": "0e540e26a1100f2e", "src": "db2@1.60.1.70124"}
-{"id": 428865, "field": "name", "en": "Blinked", "hash": "f3db5b0a50903de8", "src": "db2@1.60.1.70124"}
-{"id": 428865, "field": "aura", "en": "Location of recent Blink recorded.", "hash": "b1b8de144bdee3f9", "src": "db2@1.60.1.70124"}
-{"id": 428872, "field": "name", "en": "Balefire Bolt", "hash": "650f033b488ab926", "src": "db2@1.60.1.70124"}
-{"id": 428878, "field": "name", "en": "Balefire Bolt", "hash": "650f033b488ab926", "src": "db2@1.60.1.70124"}
-{"id": 428878, "field": "description", "en": "Unleash a reality-distorting burst of raw magic at your enemy, dealing ${$<power>*$m1/100} to ${$<power>*$M1/100} Chimeric damage.\r\n\r\nIncreasing your Balefire Bolt and Pyroblast damage by $s3%, decreasing your Spirit by $s2%, and stacking up to $u times for $d. If your Spirit reaches 0, you die.\r\n\r\nThis spell will be checked against the lower of the target's Arcane, Fire, and Frost resists.", "hash": "607fa16e3dda74b6", "src": "db2@1.60.1.70124"}
-{"id": 428878, "field": "aura", "en": "Increases damage dealt by Balefire Bolt and Pyroblast by $s3% but decreases Spirit by $s2%. Reaching 0 Spirit is fatal.", "hash": "ee03cbbc798a0633", "src": "db2@1.60.1.70124"}
-{"id": 428885, "field": "name", "en": "Temporal Anomaly", "hash": "515228b0328c504b", "src": "db2@1.60.1.70124"}
-{"id": 428885, "field": "description", "en": "Launches an orb of temporal energy which slowly moves forward and every $428888t1 sec grants all nearby party members a shield absorbing ${$428895m1*$<power>/100} damage for $428895d. This shield accumulates additional value if party members remain near the orb.", "hash": "193330510e7fca6e", "src": "db2@1.60.1.70124"}
-{"id": 428888, "field": "name", "en": "Temporal Anomaly", "hash": "515228b0328c504b", "src": "db2@1.60.1.70124"}
-{"id": 428895, "field": "name", "en": "Temporal Anomaly", "hash": "515228b0328c504b", "src": "db2@1.60.1.70124"}
-{"id": 428895, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70124"}
-{"id": 428909, "field": "name", "en": "Light's Grace", "hash": "cce4215188f778e1", "src": "db2@1.60.1.70124"}
-{"id": 428909, "field": "description", "en": "Your Holy Light spell reduces the cast time of your next Holy Light spell by ${$428912m1/-1000}.1 sec. Lasts $428912d.", "hash": "557e7a316bcdcb0d", "src": "db2@1.60.1.70124"}
-{"id": 428912, "field": "name", "en": "Light's Grace", "hash": "cce4215188f778e1", "src": "db2@1.60.1.70124"}
-{"id": 428912, "field": "aura", "en": "Reduces the cast time of your next Holy Light by ${$m1/-1000}.1 sec.", "hash": "6857efefb351e6d1", "src": "db2@1.60.1.70124"}
-{"id": 428917, "field": "name", "en": "Deep Freeze", "hash": "9bc8b7617919e7c7", "src": "db2@1.60.1.70124"}
-{"id": 428920, "field": "name", "en": "Deep Freeze", "hash": "9bc8b7617919e7c7", "src": "db2@1.60.1.70124"}
-{"id": 428996, "field": "name", "en": "Tim's Test Sanctuary", "hash": "1eec2fe52a29e18c", "src": "db2@1.60.1.70124"}
-{"id": 428998, "field": "name", "en": "Tim's Test Area Trigger", "hash": "1c3137afcf157bfb", "src": "db2@1.60.1.70124"}
+{"id": 428090, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70170"}
+{"id": 428113, "field": "name", "en": "Dark Ritual Portal", "hash": "08267e9b6518899f", "src": "db2@1.60.1.70170"}
+{"id": 428131, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70170"}
+{"id": 428172, "field": "name", "en": "Dark Ritual Stalker", "hash": "07e76efb5a8fcd1d", "src": "db2@1.60.1.70170"}
+{"id": 428221, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70170"}
+{"id": 428226, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70170"}
+{"id": 428229, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70170"}
+{"id": 428238, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70170"}
+{"id": 428238, "field": "aura", "en": "Survive the ritual.", "hash": "0bd96c0c09cac5c0", "src": "db2@1.60.1.70170"}
+{"id": 428252, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70170"}
+{"id": 428279, "field": "name", "en": "Dark Ritual Failed", "hash": "3e04c131ec7bb973", "src": "db2@1.60.1.70170"}
+{"id": 428297, "field": "name", "en": "Dark Ritual", "hash": "681407d716daaca2", "src": "db2@1.60.1.70170"}
+{"id": 428424, "field": "name", "en": "Phoenix Bindings", "hash": "d79a240e2d7c2317", "src": "db2@1.60.1.70170"}
+{"id": 428482, "field": "name", "en": "Shadow Seep", "hash": "ec69da6c46d9136c", "src": "db2@1.60.1.70170"}
+{"id": 428482, "field": "aura", "en": "Max health lowered by $w1% and Shadow damage taken increased by $w2%.", "hash": "de95b958368be2bc", "src": "db2@1.60.1.70170"}
+{"id": 428483, "field": "name", "en": "Shadow Seep", "hash": "ec69da6c46d9136c", "src": "db2@1.60.1.70170"}
+{"id": 428483, "field": "aura", "en": "Fortified by Shadow magic seeping from Aku'mai. Health increased by $w2%.", "hash": "bc9040d41d0e0ad8", "src": "db2@1.60.1.70170"}
+{"id": 428484, "field": "name", "en": "Mirror Void Elemental", "hash": "5e53f7f192ac0e70", "src": "db2@1.60.1.70170"}
+{"id": 428485, "field": "name", "en": "Mirror Void Elemental", "hash": "5e53f7f192ac0e70", "src": "db2@1.60.1.70170"}
+{"id": 428489, "field": "name", "en": "Planar Shift", "hash": "659c63793938dc6f", "src": "db2@1.60.1.70170"}
+{"id": 428489, "field": "description", "en": "Momentarily enter another plane of existence, instantly reducing threat as well as reducing all damage taken and damage dealt by $M% for $d. ", "hash": "0d5e0c0d3c95b960", "src": "db2@1.60.1.70170"}
+{"id": 428489, "field": "aura", "en": "Your physical body has entered another plane of existence. All damage taken and dealt is reduced.", "hash": "3e633c66313c8893", "src": "db2@1.60.1.70170"}
+{"id": 428490, "field": "name", "en": "Judgement", "hash": "56dd0411fae79a7d", "src": "db2@1.60.1.70170"}
+{"id": 428490, "field": "description", "en": "Judgement generates an additional $s1% threat against its target. ", "hash": "548d013e27b0d415", "src": "db2@1.60.1.70170"}
+{"id": 428491, "field": "name", "en": "Increased Aura Radii", "hash": "eaae06fdaa7ce0b7", "src": "db2@1.60.1.70170"}
+{"id": 428491, "field": "description", "en": "Your Devotion Aura also reduces all spell damage taken by $s1%. ", "hash": "c895e854b6f12f8c", "src": "db2@1.60.1.70170"}
+{"id": 428567, "field": "name", "en": "Trap Critter", "hash": "91cb2f0cfc8355c4", "src": "db2@1.60.1.70170"}
+{"id": 428567, "field": "description", "en": "Catch a critter to be used as bait.", "hash": "72483e0745501edb", "src": "db2@1.60.1.70170"}
+{"id": 428604, "field": "name", "en": "Place Bait", "hash": "4725dee5be1ab96a", "src": "db2@1.60.1.70170"}
+{"id": 428604, "field": "description", "en": "Place critter as bait.", "hash": "9480a4dba0e35cd5", "src": "db2@1.60.1.70170"}
+{"id": 428606, "field": "name", "en": "[DNT] Summon Gharrik", "hash": "15640113d7105797", "src": "db2@1.60.1.70170"}
+{"id": 428658, "field": "name", "en": "Mysterious Traveler", "hash": "88e4d7571a940794", "src": "db2@1.60.1.70170"}
+{"id": 428665, "field": "name", "en": "Summon Corrosive Droplets", "hash": "39499ad271c90e8a", "src": "db2@1.60.1.70170"}
+{"id": 428687, "field": "name", "en": "[DNT] S03 - 40 - Hunter 40 Quest - Remove Quest Items", "hash": "480e5a83d49cd745", "src": "db2@1.60.1.70170"}
+{"id": 428700, "field": "name", "en": "Summon Corrosive Droplets", "hash": "39499ad271c90e8a", "src": "db2@1.60.1.70170"}
+{"id": 428708, "field": "name", "en": "Frenzied Regeneration", "hash": "22db465e57ce4950", "src": "db2@1.60.1.70170"}
+{"id": 428708, "field": "description", "en": "Converts resources into health every second for $d. Up to $s1 Rage, $s2 Energy, or $s3% base Mana is converted per second into up to $s4% health.", "hash": "60a09161e5d74e92", "src": "db2@1.60.1.70170"}
+{"id": 428708, "field": "aura", "en": "Converting resources into health.", "hash": "1bfa0d3b01a9df53", "src": "db2@1.60.1.70170"}
+{"id": 428710, "field": "name", "en": "Elemental Instability", "hash": "b3321d942d6ee69b", "src": "db2@1.60.1.70170"}
+{"id": 428710, "field": "aura", "en": "The elemental's binding magics are unravelling, radiating raw mana on nearby players.", "hash": "d7aae66fd9bb7bfa", "src": "db2@1.60.1.70170"}
+{"id": 428713, "field": "name", "en": "Barkskin", "hash": "a9a3711f5cf7157f", "src": "db2@1.60.1.70170"}
+{"id": 428713, "field": "description", "en": "The target's skin becomes as tough as bark. Physical damage taken is reduced by $s2%.  While protected, damaging attacks will not cause spellcasting delays. Lasts $d.", "hash": "a3962e6a2f446192", "src": "db2@1.60.1.70170"}
+{"id": 428713, "field": "aura", "en": "Physical damage taken is reduced by $s2%. While protected, damaging attacks will not cause spellcasting delays.", "hash": "94e200c6c3bd6206", "src": "db2@1.60.1.70170"}
+{"id": 428717, "field": "name", "en": "T.N.T.", "hash": "b95f6f159ba1b2ac", "src": "db2@1.60.1.70170"}
+{"id": 428717, "field": "description", "en": "Increases the damage done by Explosive Shot and all your damaging traps by $s1%. Additionally, the initial damage of Explosive Trap and the total periodic damage of your Immolation Trap are increased by $s3% of your melee or ranged Attack Power.", "hash": "41837b4a3f296cff", "src": "db2@1.60.1.70170"}
+{"id": 428723, "field": "name", "en": "Hateful Bite", "hash": "42eca4bbb6a61167", "src": "db2@1.60.1.70170"}
+{"id": 428724, "field": "name", "en": "Hateful Bite", "hash": "42eca4bbb6a61167", "src": "db2@1.60.1.70170"}
+{"id": 428726, "field": "name", "en": "Focus Fire", "hash": "f784b3211829fb50", "src": "db2@1.60.1.70170"}
+{"id": 428726, "field": "description", "en": "Consumes all applications of Frenzy from your pet, increasing your ranged attack speed by $s1% and granting $s2 Focus to your pet for each application of Frenzy consumed. Lasts $d.\r\n\r\nYour pet gains Frenzy each time it uses a Basic Attack, increasing its melee attack speed by $428728s1% for $428728d, stacking up to $428728u times.", "hash": "822ef164da6f0edf", "src": "db2@1.60.1.70170"}
+{"id": 428726, "field": "aura", "en": "Increases ranged attack speed by $w1%.", "hash": "3092f5a573613085", "src": "db2@1.60.1.70170"}
+{"id": 428728, "field": "name", "en": "Frenzy", "hash": "a4ed88dc0ed0da9b", "src": "db2@1.60.1.70170"}
+{"id": 428728, "field": "description", "en": "Increases pet's melee attack speed by $s1% for $d.", "hash": "c2205de3ae8dc3b9", "src": "db2@1.60.1.70170"}
+{"id": 428728, "field": "aura", "en": "Increases pet's melee attack speed by $s1%.", "hash": "389c7132b75c663a", "src": "db2@1.60.1.70170"}
+{"id": 428732, "field": "name", "en": "Corrosive Pool", "hash": "3168d390f22b7275", "src": "db2@1.60.1.70170"}
+{"id": 428733, "field": "name", "en": "Corrosive Pool", "hash": "3168d390f22b7275", "src": "db2@1.60.1.70170"}
+{"id": 428733, "field": "aura", "en": "The corrupted waters cling to you.", "hash": "c24bd8e8353aa613", "src": "db2@1.60.1.70170"}
+{"id": 428738, "field": "name", "en": "Advanced Warding", "hash": "35e86b2802f1b270", "src": "db2@1.60.1.70170"}
+{"id": 428738, "field": "description", "en": "Increases the magnitude of your Mana Shield, Frost Ward, and Fire Ward by $s1%, and decreases mana drained by Mana Shield by $s2% per damage done.", "hash": "407137e16286469f", "src": "db2@1.60.1.70170"}
+{"id": 428739, "field": "name", "en": "Deep Freeze", "hash": "9bc8b7617919e7c7", "src": "db2@1.60.1.70170"}
+{"id": 428739, "field": "description", "en": "Stuns the target for $d.  Only usable on Frozen targets.  Deals ${$428917m1*$<power>/100*$<frostdamage>} to ${$428917M1*$<power>/100*$<frostdamage>} damage to targets permanently immune to Stun. This damage benefits from, but does not consume, stacks of Glaciate.", "hash": "477daf2a966c05c4", "src": "db2@1.60.1.70170"}
+{"id": 428739, "field": "aura", "en": "Stunned and Frozen.", "hash": "f27e935de7caf4d9", "src": "db2@1.60.1.70170"}
+{"id": 428740, "field": "name", "en": "Corrosive Pool", "hash": "3168d390f22b7275", "src": "db2@1.60.1.70170"}
+{"id": 428741, "field": "name", "en": "Molten Armor", "hash": "5af61ad5fceacaa0", "src": "db2@1.60.1.70170"}
+{"id": 428741, "field": "description", "en": "Causes ${$428743m1/100*$<power>} Fire damage when hit, increases your spell critical strike chance by $s3%, and reduces the chance you are critically hit by $s2%.  Only one type of Armor spell can be active on the Mage at any time.  Lasts $d.", "hash": "27550fe0dca16ea3", "src": "db2@1.60.1.70170"}
+{"id": 428741, "field": "aura", "en": "Causes Fire damage to attackers.  Chance to receive a critical hit reduced by $s2%.  Spell critical strike chance increased by $s3%.", "hash": "870914a3ddc3220a", "src": "db2@1.60.1.70170"}
+{"id": 428743, "field": "name", "en": "Molten Armor", "hash": "5af61ad5fceacaa0", "src": "db2@1.60.1.70170"}
+{"id": 428761, "field": "name", "en": "Elemental Instability", "hash": "b3321d942d6ee69b", "src": "db2@1.60.1.70170"}
+{"id": 428796, "field": "name", "en": "Consume Partial Supplies", "hash": "b3af9464166751a2", "src": "db2@1.60.1.70170"}
+{"id": 428828, "field": "name", "en": "Summon Cleansing Elemental", "hash": "5c175a3e3c5cb0ce", "src": "db2@1.60.1.70170"}
+{"id": 428837, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428837, "field": "description", "en": "Add $q2 Light Leather to complete the shipment.", "hash": "7a0e45b24050cd76", "src": "db2@1.60.1.70170"}
+{"id": 428838, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428838, "field": "description", "en": "Add $q2 Peacebloom to complete the shipment.", "hash": "f297f7714ebf03e1", "src": "db2@1.60.1.70170"}
+{"id": 428840, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428840, "field": "description", "en": "Add $q2 Silverleaf to complete the shipment.", "hash": "6d8888a0fd2aeee2", "src": "db2@1.60.1.70170"}
+{"id": 428842, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428842, "field": "description", "en": "Add $q2 Minor Healing Potions to complete the shipment.", "hash": "f877dcba41b11730", "src": "db2@1.60.1.70170"}
+{"id": 428843, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428843, "field": "description", "en": "Add $q2 Copper Shortswords to complete the shipment.", "hash": "b80648aef6e87154", "src": "db2@1.60.1.70170"}
+{"id": 428844, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428844, "field": "description", "en": "Add $q2 Runed Copper Pants to complete the shipment.", "hash": "d4542fc8f4c465f8", "src": "db2@1.60.1.70170"}
+{"id": 428845, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428845, "field": "description", "en": "Add $q2 Lesser Magic Wands to complete the shipment.", "hash": "5b7e14eb41286f0a", "src": "db2@1.60.1.70170"}
+{"id": 428846, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428846, "field": "description", "en": "Add $q2 Minor Wizard Oil to complete the shipment.", "hash": "7a19cb6ce537a812", "src": "db2@1.60.1.70170"}
+{"id": 428847, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428847, "field": "description", "en": "Add $q2 Rough Copper Bombs to complete the shipment.", "hash": "08f90955b5229687", "src": "db2@1.60.1.70170"}
+{"id": 428848, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428848, "field": "description", "en": "Add $q2 Rough Boomsticks to complete the shipment.", "hash": "2688911fd1c49be5", "src": "db2@1.60.1.70170"}
+{"id": 428849, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428849, "field": "description", "en": "Add $q2 Handstitched Leather Belts to complete the shipment.", "hash": "2972836133f0d525", "src": "db2@1.60.1.70170"}
+{"id": 428850, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428850, "field": "description", "en": "Add $q2 Embossed Leather Vests to complete the shipment.", "hash": "2d577b122e10fc89", "src": "db2@1.60.1.70170"}
+{"id": 428851, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428851, "field": "description", "en": "Add $q2 Brown Linen Pants to complete the shipment.", "hash": "f2488b2aae3b24ef", "src": "db2@1.60.1.70170"}
+{"id": 428853, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428853, "field": "description", "en": "Add $q2 Brown Linen Robes to complete the shipment.", "hash": "7cddac62a175a59c", "src": "db2@1.60.1.70170"}
+{"id": 428855, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428855, "field": "description", "en": "Add $q2 Herb Baked Eggs to complete the shipment.", "hash": "4b1ea0254d34b107", "src": "db2@1.60.1.70170"}
+{"id": 428856, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428856, "field": "description", "en": "Add $q2 Spiced Wolf Meat to complete the shipment.", "hash": "0eea74a239bc22ff", "src": "db2@1.60.1.70170"}
+{"id": 428857, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428857, "field": "description", "en": "Add $q2 Brilliant Smallfish to complete the shipment.", "hash": "277cbe9e92e7afc3", "src": "db2@1.60.1.70170"}
+{"id": 428858, "field": "name", "en": "Replace Supplies", "hash": "8b1617ef4059d363", "src": "db2@1.60.1.70170"}
+{"id": 428858, "field": "description", "en": "Add $q2 Heavy Linen Bandages to complete the shipment.", "hash": "0da3bb2e89780a6f", "src": "db2@1.60.1.70170"}
+{"id": 428861, "field": "name", "en": "Displacement", "hash": "827353745f918b69", "src": "db2@1.60.1.70170"}
+{"id": 428861, "field": "description", "en": "Teleports back to where you last cast Blink from and resets the cooldown on Blink. Only usable within $428865d of casting Blink.", "hash": "04eae6387fbde514", "src": "db2@1.60.1.70170"}
+{"id": 428863, "field": "name", "en": "Displacement", "hash": "827353745f918b69", "src": "db2@1.60.1.70170"}
+{"id": 428863, "field": "description", "en": "Gain the Displacement ability:\r\n\r\n$@spellicon428861\r\n$@spelldesc428861", "hash": "0e540e26a1100f2e", "src": "db2@1.60.1.70170"}
+{"id": 428865, "field": "name", "en": "Blinked", "hash": "f3db5b0a50903de8", "src": "db2@1.60.1.70170"}
+{"id": 428865, "field": "aura", "en": "Location of recent Blink recorded.", "hash": "b1b8de144bdee3f9", "src": "db2@1.60.1.70170"}
+{"id": 428872, "field": "name", "en": "Balefire Bolt", "hash": "650f033b488ab926", "src": "db2@1.60.1.70170"}
+{"id": 428878, "field": "name", "en": "Balefire Bolt", "hash": "650f033b488ab926", "src": "db2@1.60.1.70170"}
+{"id": 428878, "field": "description", "en": "Unleash a reality-distorting burst of raw magic at your enemy, dealing ${$<power>*$m1/100} to ${$<power>*$M1/100} Chimeric damage.\r\n\r\nIncreasing your Balefire Bolt and Pyroblast damage by $s3%, decreasing your Spirit by $s2%, and stacking up to $u times for $d. If your Spirit reaches 0, you die.\r\n\r\nThis spell will be checked against the lower of the target's Arcane, Fire, and Frost resists.", "hash": "607fa16e3dda74b6", "src": "db2@1.60.1.70170"}
+{"id": 428878, "field": "aura", "en": "Increases damage dealt by Balefire Bolt and Pyroblast by $s3% but decreases Spirit by $s2%. Reaching 0 Spirit is fatal.", "hash": "ee03cbbc798a0633", "src": "db2@1.60.1.70170"}
+{"id": 428885, "field": "name", "en": "Temporal Anomaly", "hash": "515228b0328c504b", "src": "db2@1.60.1.70170"}
+{"id": 428885, "field": "description", "en": "Launches an orb of temporal energy which slowly moves forward and every $428888t1 sec grants all nearby party members a shield absorbing ${$428895m1*$<power>/100} damage for $428895d. This shield accumulates additional value if party members remain near the orb.", "hash": "193330510e7fca6e", "src": "db2@1.60.1.70170"}
+{"id": 428888, "field": "name", "en": "Temporal Anomaly", "hash": "515228b0328c504b", "src": "db2@1.60.1.70170"}
+{"id": 428895, "field": "name", "en": "Temporal Anomaly", "hash": "515228b0328c504b", "src": "db2@1.60.1.70170"}
+{"id": 428895, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70170"}
+{"id": 428909, "field": "name", "en": "Light's Grace", "hash": "cce4215188f778e1", "src": "db2@1.60.1.70170"}
+{"id": 428909, "field": "description", "en": "Your Holy Light spell reduces the cast time of your next Holy Light spell by ${$428912m1/-1000}.1 sec. Lasts $428912d.", "hash": "557e7a316bcdcb0d", "src": "db2@1.60.1.70170"}
+{"id": 428912, "field": "name", "en": "Light's Grace", "hash": "cce4215188f778e1", "src": "db2@1.60.1.70170"}
+{"id": 428912, "field": "aura", "en": "Reduces the cast time of your next Holy Light by ${$m1/-1000}.1 sec.", "hash": "6857efefb351e6d1", "src": "db2@1.60.1.70170"}
+{"id": 428917, "field": "name", "en": "Deep Freeze", "hash": "9bc8b7617919e7c7", "src": "db2@1.60.1.70170"}
+{"id": 428920, "field": "name", "en": "Deep Freeze", "hash": "9bc8b7617919e7c7", "src": "db2@1.60.1.70170"}
+{"id": 428996, "field": "name", "en": "Tim's Test Sanctuary", "hash": "1eec2fe52a29e18c", "src": "db2@1.60.1.70170"}
+{"id": 428998, "field": "name", "en": "Tim's Test Area Trigger", "hash": "1c3137afcf157bfb", "src": "db2@1.60.1.70170"}

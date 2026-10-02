@@ -219,13 +219,26 @@ function L.load(state)
   function points.RefreshText(self, info)
     self.AvailablePointsLabel.text = string.format(G("LEGACY_POINTS_AVAILABLE"),
       string.format(G("LEGACY_POINTS_AMOUNT"), info.available))
-    self.tooltipText = string.format(G("LEGACY_POINTS_SEASONAL_CAP"), info.cap)
   end
+  -- 1.60.1.70170 (blizzard_legacytree.lua:291-305): the tooltip is built on enter from the shared currency info
   function points.OnEnter(self)
     _G.GameTooltip:SetOwner(self)
-    _G.GameTooltip:SetText(self.tooltipText)
+    _G.GameTooltip:SetText(string.format(G("LEGACY_POINTS_SEASONAL_CAP"), _G.LegacySystem.GetCurrencyInfo().cap))
   end
-  points:RefreshText(state)
+  -- 1.60.1.70170 (blizzard_legacysystemutil.lua:55-73): OnLoad registers the method itself, so a later hook on the
+  -- frame's RefreshText field never runs; UpdateCurrencyInfo fires every registered method
+  local callbacks = {}
+  L.currency = state
+  _G.LegacySystem = { name = "LegacySystem" }
+  function _G.LegacySystem.GetCurrencyInfo() return L.currency end
+  function _G.LegacySystem.RegisterCurrencyInfoCallback(owner, method)
+    method(owner, L.currency)
+    callbacks[#callbacks + 1] = { owner, method }
+  end
+  function _G.LegacySystem.UpdateCurrencyInfo()
+    for _, c in ipairs(callbacks) do c[2](c[1], L.currency) end
+  end
+  _G.LegacySystem.RegisterCurrencyInfoCallback(points, points.RefreshText)
   panel:SelectTree(1)
 
   track:Show() -- LegacySystemFrameMixin:OnLoad → SelectPage(1)
@@ -235,7 +248,8 @@ end
 
 function L.unload()
   _G.LegacySystemFrame = nil
-  L.cards = nil
+  _G.LegacySystem = nil
+  L.cards, L.currency = nil, nil
 end
 
 return L

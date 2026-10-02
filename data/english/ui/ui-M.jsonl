@@ -1,188 +1,189 @@
-{"id": "MACRO", "field": "text", "en": "Macro", "hash": "54b9657129fc34df", "src": "db2@1.60.1.70124"}
-{"id": "MACROFRAME_CHAR_LIMIT", "field": "text", "en": "%d/255 Characters Used", "hash": "5269200bd3f799dd", "src": "db2@1.60.1.70124"}
-{"id": "MACROS", "field": "text", "en": "Macros", "hash": "5adeea1d7111d24c", "src": "db2@1.60.1.70124"}
-{"id": "MACRO_ACTION_FORBIDDEN", "field": "text", "en": "A macro script has been blocked from an action only available to the Blizzard UI.", "hash": "6378604ce2983c0e", "src": "db2@1.60.1.70124"}
-{"id": "MACRO_POPUP_TEXT", "field": "text", "en": "Enter Macro Name (Max 16 Characters):", "hash": "c30d203d54ca0c51", "src": "db2@1.60.1.70124"}
-{"id": "MAC_DISABLE_OS_SHORTCUTS", "field": "text", "en": "Disable OS Keyboard Shortcuts", "hash": "94b084fcf9ff853d", "src": "db2@1.60.1.70124"}
-{"id": "MAC_DISABLE_OS_SHORTCUTS_TOOLTIP", "field": "text", "en": "Disables the operating system keyboard shortcuts. Use this if you don't want to accidentally fire operating system shortcuts during the game.", "hash": "099682cb8abeb16e", "src": "db2@1.60.1.70124"}
-{"id": "MAC_INPUT_MONITORING1014", "field": "text", "en": "For Push to Talk to work when World of Warcraft is not in focus, you must grant \"Accessibility\" permission to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "76ea366586c93658", "src": "db2@1.60.1.70124"}
-{"id": "MAC_INPUT_MONITORING1015", "field": "text", "en": "For Push to Talk to work when World of Warcraft is not in focus, you must grant \"Input Monitoring\" permission to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "1ed2a95b46435d0d", "src": "db2@1.60.1.70124"}
-{"id": "MAC_MIC_PERMISSIONS_OPEN_BUTTON", "field": "text", "en": "System Preferences", "hash": "b13d4a4d0258078f", "src": "db2@1.60.1.70124"}
-{"id": "MAC_MIC_PREMISSIONS_NOTIFICATION", "field": "text", "en": "In order to use voice chat, you must grant \"Microphone\" permission to %s in Security & Privacy preferences, located in System Preferences.", "hash": "e875edea1394a1f5", "src": "db2@1.60.1.70124"}
-{"id": "MAC_OPEN_UNIVERSAL_ACCESS", "field": "text", "en": "In order to use this option accessibility needs to be enabled. Please check the option \"Enable access for assistive devices\" in the Universal Access System Preferences panel. Would you like to open the System Preferences now?", "hash": "a088b1a8ecffe3b5", "src": "db2@1.60.1.70124"}
-{"id": "MAC_OPEN_UNIVERSAL_ACCESS1090", "field": "text", "en": "In order to use this option, you must grant access to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "431c500e9791a0da", "src": "db2@1.60.1.70124"}
-{"id": "MAC_SETTINGS_LABEL", "field": "text", "en": "Keyboard Options", "hash": "3752377e27d40891", "src": "db2@1.60.1.70124"}
-{"id": "MAC_USE_COMMAND_LEFT_CLICK_AS_RIGHT_CLICK", "field": "text", "en": "Command left click as right click", "hash": "979aee04e3768a53", "src": "db2@1.60.1.70124"}
-{"id": "MAC_USE_COMMAND_LEFT_CLICK_AS_RIGHT_CLICK_TOOLTIP", "field": "text", "en": "Hold down Command key and left click to simulate a right click.", "hash": "616b62093825829d", "src": "db2@1.60.1.70124"}
-{"id": "MAIL_COD_ERROR", "field": "text", "en": "C.O.D. must be <= %d", "hash": "ff8a2d0cbd7d1ba6", "src": "db2@1.60.1.70124"}
-{"id": "MAIL_COD_ERROR_COLORBLIND", "field": "text", "en": "C.O.D. must be <= %1$d%2$s", "hash": "3ab56409f3ee5f5f", "src": "db2@1.60.1.70124"}
-{"id": "MAIL_LETTER_TOOLTIP", "field": "text", "en": "Click to make a permanent\ncopy of this letter.", "hash": "f1c80860ff60a47b", "src": "db2@1.60.1.70124"}
-{"id": "MAIL_MULTIPLE_ITEMS", "field": "text", "en": "Multiple items", "hash": "d33c49772d40336c", "src": "db2@1.60.1.70124"}
-{"id": "MAIL_RETURN", "field": "text", "en": "Return", "hash": "8cf32f6bf43c81ee", "src": "db2@1.60.1.70124"}
-{"id": "MAIL_SUBJECT_LABEL", "field": "text", "en": "Subject:", "hash": "ea6e56ea05bee93a", "src": "db2@1.60.1.70124"}
-{"id": "MAIL_TO_LABEL", "field": "text", "en": "To:", "hash": "001637fb4d840e2e", "src": "db2@1.60.1.70124"}
-{"id": "MAINASSIST", "field": "text", "en": "Main Assist", "hash": "23d6cc19b177476f", "src": "db2@1.60.1.70124"}
-{"id": "MAINHANDSLOT", "field": "text", "en": "Main Hand", "hash": "0733afc2db5fe73b", "src": "db2@1.60.1.70124"}
-{"id": "MAINMENUBAR_BANDWIDTH_LABEL", "field": "text", "en": "Bandwidth %d Mbps", "hash": "5a21ba97c005a045", "src": "db2@1.60.1.70124"}
-{"id": "MAINMENUBAR_COMMUNICATION_PROTOCOL_LABEL", "field": "text", "en": "Communication Protocol:\nHome: %s\nWorld: %s", "hash": "4565aadfbe186123", "src": "db2@1.60.1.70124"}
-{"id": "MAINMENUBAR_DOWNLOAD_PERCENT_LABEL", "field": "text", "en": "Download %d %% complete", "hash": "24c426b8b243640a", "src": "db2@1.60.1.70124"}
-{"id": "MAINMENUBAR_FPS_LABEL", "field": "text", "en": "Framerate: %.0f fps", "hash": "eb38af9e43d8c0a3", "src": "db2@1.60.1.70124"}
-{"id": "MAINMENUBAR_LATENCY_LABEL", "field": "text", "en": "Latency:\n%.0f ms (home)\n%.0f ms (world)", "hash": "b0e94216c5a456f4", "src": "db2@1.60.1.70124"}
-{"id": "MAINMENUBAR_PROTOCOLS_LABEL", "field": "text", "en": "Internet Protocols:\nHome: %s\nWorld: %s", "hash": "051654dea0365045", "src": "db2@1.60.1.70124"}
-{"id": "MAINMENU_BUTTON", "field": "text", "en": "Game Menu", "hash": "4880ed18b0a44df1", "src": "db2@1.60.1.70124"}
-{"id": "MAINTANK", "field": "text", "en": "Main Tank", "hash": "08cf530d7c3f57ad", "src": "db2@1.60.1.70124"}
-{"id": "MAIN_ASSIST", "field": "text", "en": "Main Assist", "hash": "23d6cc19b177476f", "src": "db2@1.60.1.70124"}
-{"id": "MAIN_HELP_BUTTON_TOOLTIP", "field": "text", "en": "Click this to toggle on/off the help system for this frame.", "hash": "18a8ef5313a73483", "src": "db2@1.60.1.70124"}
-{"id": "MAIN_TANK", "field": "text", "en": "Main Tank", "hash": "08cf530d7c3f57ad", "src": "db2@1.60.1.70124"}
-{"id": "MAJOR_FACTION_RENOWN_LEVEL_TOAST", "field": "text", "en": "Renown %d", "hash": "ff986135f8acf86d", "src": "db2@1.60.1.70124"}
-{"id": "MAKE_INTERACTABLE", "field": "text", "en": "Make Interactive", "hash": "7f3e9c8a93c43412", "src": "db2@1.60.1.70124"}
-{"id": "MAKE_MODERATOR", "field": "text", "en": "Make Moderator", "hash": "a9079abc2837458d", "src": "db2@1.60.1.70124"}
-{"id": "MAKE_UNINTERACTABLE", "field": "text", "en": "Make Noninteractive", "hash": "f3269a031dca1918", "src": "db2@1.60.1.70124"}
-{"id": "MANA", "field": "text", "en": "Mana", "hash": "0a6af6b30963c5cf", "src": "db2@1.60.1.70124"}
-{"id": "MANA_COST", "field": "text", "en": "%s Mana", "hash": "5663926ae64ea98e", "src": "db2@1.60.1.70124"}
-{"id": "MANA_COST_LARGE", "field": "text", "en": "%s Mana", "hash": "5663926ae64ea98e", "src": "db2@1.60.1.70124"}
-{"id": "MANA_COST_LARGE_PER_TIME", "field": "text", "en": "%s Mana, plus %s per sec", "hash": "cfe15bccef2f4171", "src": "db2@1.60.1.70124"}
-{"id": "MANA_COST_LARGE_PER_TIME_NO_BASE", "field": "text", "en": "%s Mana per sec", "hash": "a77b0fffb8e7265b", "src": "db2@1.60.1.70124"}
-{"id": "MANA_COST_PER_TIME", "field": "text", "en": "%s Mana, plus %s per sec", "hash": "cfe15bccef2f4171", "src": "db2@1.60.1.70124"}
-{"id": "MANA_COST_PER_TIME_NO_BASE", "field": "text", "en": "%s Mana per sec", "hash": "a77b0fffb8e7265b", "src": "db2@1.60.1.70124"}
-{"id": "MANA_LOW", "field": "text", "en": "Mana Low", "hash": "22c27d8619672024", "src": "db2@1.60.1.70124"}
-{"id": "MANA_REGEN", "field": "text", "en": "Mana Regen", "hash": "87a7ea9d2db2cbcd", "src": "db2@1.60.1.70124"}
-{"id": "MANA_REGEN_TOOLTIP", "field": "text", "en": "Amount of mana regenerated every 5 seconds.", "hash": "0b56d1a088dca022", "src": "db2@1.60.1.70124"}
-{"id": "MAP_AND_QUEST_LOG", "field": "text", "en": "Map & Quest Log", "hash": "efa63473381cfa8c", "src": "db2@1.60.1.70124"}
-{"id": "MAP_FILTER", "field": "text", "en": "Map Filter", "hash": "7f7da9eb903cc7d7", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_CATEGORY_ACTIVITIES", "field": "text", "en": "Activities", "hash": "69b7e5a8d540a60a", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_CATEGORY_MOVEMENT", "field": "text", "en": "Movement", "hash": "31395e64bb1d7b43", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_CATEGORY_QUESTS", "field": "text", "en": "Quests", "hash": "a84737c440533b3c", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_DUNGEON", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_DUNGEON_TOOLTIP", "field": "text", "en": "Instanced content that rewards loot, intended for a party of up to five adventurers", "hash": "02531063a3d852d0", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_FLIGHTPOINT", "field": "text", "en": "Flightpoint", "hash": "c859eb205aa054a4", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_FLIGHTPOINT_TOOLTIP", "field": "text", "en": "Transports you to a different area in the same region", "hash": "80eee10f02c06371", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_FRAME_LABEL", "field": "text", "en": "Map Legend", "hash": "1db12966ff3a28b3", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_INPROGRESS", "field": "text", "en": "In Progress", "hash": "035705ae6022e043", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_INPROGRESS_TOOLTIP", "field": "text", "en": "Quests that are currently in progress", "hash": "c9e98bca0dd6fe13", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_LOCALSTORY", "field": "text", "en": "Quest", "hash": "9d9ed56bb9b5eac9", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_LOCALSTORY_TOOLTIP", "field": "text", "en": "Quests that explore local cultures and side adventures", "hash": "aac2af3afd4631bb", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_RAID", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_RAID_TOOLTIP", "field": "text", "en": "Challenging content that is intended for large groups of players, and provides valuable loot", "hash": "abe5be8afcf02ae0", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_REPEATABLE", "field": "text", "en": "Repeatable", "hash": "7f9b420726464b7a", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_REPEATABLE_TOOLTIP", "field": "text", "en": "Time-gated quests", "hash": "c6ff3454c95c30c9", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_TURNIN", "field": "text", "en": "Turn In", "hash": "1dfa4d8edf7cda66", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LEGEND_TURNIN_TOOLTIP", "field": "text", "en": "Quests that are ready to be turned in", "hash": "2e960038c70770f0", "src": "db2@1.60.1.70124"}
-{"id": "MAP_LINK_POI_TOOLTIP_INSTRUCTION_LINE", "field": "text", "en": "<Right Click to show map>", "hash": "c59a798ab65c7bed", "src": "db2@1.60.1.70124"}
-{"id": "MAP_PIN", "field": "text", "en": "Map Pin", "hash": "593f117214acd3d7", "src": "db2@1.60.1.70124"}
-{"id": "MAP_PIN_INVALID_MAP", "field": "text", "en": "You can't place a pin on this map.", "hash": "c60b7bee8f1fa937", "src": "db2@1.60.1.70124"}
-{"id": "MAP_PIN_REMOVE", "field": "text", "en": "<Ctrl click to remove pin>", "hash": "6614cf3fcd9f6309", "src": "db2@1.60.1.70124"}
-{"id": "MAP_PIN_SHARING", "field": "text", "en": "Map Pin Sharing", "hash": "faee4fafee2d84bc", "src": "db2@1.60.1.70124"}
-{"id": "MAP_PIN_SHARING_TOOLTIP", "field": "text", "en": "You can share this location with other players by inserting a link into chat.|n|n|cff20ff20<Shift click to share pin in chat>|r", "hash": "8e33053e91792b9a", "src": "db2@1.60.1.70124"}
-{"id": "MAP_PIN_SHARING_TOOLTIP_GAMEPAD", "field": "text", "en": "You can share this location with other players by inserting a link into chat.", "hash": "42b8244043ecea99", "src": "db2@1.60.1.70124"}
-{"id": "MAP_PIN_TOGGLE_FOCUS", "field": "text", "en": "Toggle Focus on Marker", "hash": "a7321faa42c899f1", "src": "db2@1.60.1.70124"}
-{"id": "MAP_PIN_TOGGLE_QUEST_DETAILS", "field": "text", "en": "Toggle Quest Details", "hash": "1cfdfdfb017c41b1", "src": "db2@1.60.1.70124"}
-{"id": "MAP_PIN_TOGGLE_QUEST_FOCUS", "field": "text", "en": "Toggle Focus on Quest", "hash": "26fb4f98d41ca19d", "src": "db2@1.60.1.70124"}
-{"id": "MAP_PIN_TOOLTIP", "field": "text", "en": "Place a locational pin on the map that can be tracked and shared with other players.", "hash": "3c4eaab5e1a80be2", "src": "db2@1.60.1.70124"}
-{"id": "MAP_PIN_TOOLTIP_INSTRUCTIONS", "field": "text", "en": "Click this button and then the map to drop a pin or <Ctrl click directly on the map>", "hash": "12345b83326e1f2b", "src": "db2@1.60.1.70124"}
-{"id": "MAP_QUEST_DIFFICULTY_TEXT", "field": "text", "en": "Quest Difficulty Color", "hash": "c8b16e9f08779089", "src": "db2@1.60.1.70124"}
-{"id": "MARKED_AFK", "field": "text", "en": "You are now Away.", "hash": "8f496a7aa86f23ee", "src": "db2@1.60.1.70124"}
-{"id": "MARKED_AFK_MESSAGE", "field": "text", "en": "You are now Away: %s", "hash": "fcb2418f1e2195b6", "src": "db2@1.60.1.70124"}
-{"id": "MARKED_DND", "field": "text", "en": "You are now Busy: %s", "hash": "ba0bafe7a40b6688", "src": "db2@1.60.1.70124"}
-{"id": "MASTERY_POINTS_SPENT", "field": "text", "en": "%1$s Talents: %2$s", "hash": "31aa1e8c7c884a70", "src": "db2@1.60.1.70124"}
-{"id": "MASTER_LOOTER", "field": "text", "en": "Master Looter", "hash": "efe504b71ce1013e", "src": "db2@1.60.1.70124"}
-{"id": "MASTER_VOLUME", "field": "text", "en": "Master Volume", "hash": "c2a9573aa8030c86", "src": "db2@1.60.1.70124"}
-{"id": "MAXFPS", "field": "text", "en": "Max Foreground FPS", "hash": "a5c49dd730ec366a", "src": "db2@1.60.1.70124"}
-{"id": "MAXFPSBK", "field": "text", "en": "Max Background FPS", "hash": "7f56c4a790cdc622", "src": "db2@1.60.1.70124"}
-{"id": "MAXFPSBK_CHECK", "field": "text", "en": "Max Background FPS Toggle", "hash": "717b234ec225d12e", "src": "db2@1.60.1.70124"}
-{"id": "MAXFPS_CHECK", "field": "text", "en": "Max Foreground FPS Toggle", "hash": "6d91107d60401809", "src": "db2@1.60.1.70124"}
-{"id": "MAX_FOLLOW_DIST", "field": "text", "en": "Max Camera Distance", "hash": "2476ec1bf7a6ad18", "src": "db2@1.60.1.70124"}
-{"id": "MELEE", "field": "text", "en": "Melee", "hash": "5544f07d8354c84f", "src": "db2@1.60.1.70124"}
-{"id": "MELEE_ATTACK_POWER", "field": "text", "en": "Attack Power", "hash": "3e6a7d38952902e8", "src": "db2@1.60.1.70124"}
-{"id": "MELEE_ATTACK_POWER_PET_HUNTER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Attack|r damage per second by %s\n\nIncreased by 10%% of |cFFFFFFFFMaster's Attack Power|r from whichever is higher: |cFFFFFFFFMelee|r or |cFFFFFFFFRanged|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "ee59c16bf8c90931", "src": "db2@1.60.1.70124"}
-{"id": "MELEE_ATTACK_POWER_PET_WARLOCK_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Attack|r damage per second by %s\n\nIncreased by %d%% of |cFFFFFFFFMaster's Spell Damage|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "30d50bc86f52c49c", "src": "db2@1.60.1.70124"}
-{"id": "MELEE_ATTACK_POWER_SPELL_POWER_TOOLTIP", "field": "text", "en": "Increases damage with melee weapons by %s damage per second.\nIncreases Spell Power by %s.", "hash": "4056ffb9c73edb6e", "src": "db2@1.60.1.70124"}
-{"id": "MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "34915b5a5f273d16", "src": "db2@1.60.1.70124"}
-{"id": "MELEE_COMBATLOG_TOOLTIP", "field": "text", "en": "Shows natural melee swings.", "hash": "955ac911684d7746", "src": "db2@1.60.1.70124"}
-{"id": "MELEE_RANGE", "field": "text", "en": "Melee Range", "hash": "f1637dbeb255aec7", "src": "db2@1.60.1.70124"}
-{"id": "MEMBERS", "field": "text", "en": "Members", "hash": "1b84a352863f959d", "src": "db2@1.60.1.70124"}
-{"id": "MERCHANT", "field": "text", "en": "Merchant", "hash": "106536ca8c572d49", "src": "db2@1.60.1.70124"}
-{"id": "MERCHANT_BUYBACK", "field": "text", "en": "Merchant Buyback", "hash": "c735ca60c08dbd07", "src": "db2@1.60.1.70124"}
-{"id": "MERCHANT_HONOR_POINTS", "field": "text", "en": "%d Honor", "hash": "489729254ef6fbcd", "src": "db2@1.60.1.70124"}
-{"id": "MERCHANT_PAGE_NUMBER", "field": "text", "en": "Page %s of %s", "hash": "1b9b1c44e408bd66", "src": "db2@1.60.1.70124"}
-{"id": "MESSAGE_SOURCES", "field": "text", "en": "Message Sources", "hash": "11dec7a35abd7f5e", "src": "db2@1.60.1.70124"}
-{"id": "MESSAGE_TYPES", "field": "text", "en": "Message Types", "hash": "6e594ccda350343c", "src": "db2@1.60.1.70124"}
-{"id": "META_GEM", "field": "text", "en": "Meta", "hash": "0a6c05e919459419", "src": "db2@1.60.1.70124"}
-{"id": "MIDDLE_BUTTON_STRING", "field": "text", "en": "Middle Button", "hash": "2c4f78c6be2b58a4", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_AUCTIONEER", "field": "text", "en": "Auctioneer", "hash": "1131d7bece67901d", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_BANKER", "field": "text", "en": "Banker", "hash": "8da72588e7d3e6cd", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_BATTLEMASTER", "field": "text", "en": "Battlemaster", "hash": "f7abce0bb335533b", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_FLIGHTMASTER", "field": "text", "en": "Flight Master", "hash": "2887c2668433ee40", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_INNKEEPER", "field": "text", "en": "Innkeeper", "hash": "efa922913a7475ca", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_MAILBOX", "field": "text", "en": "Mailbox", "hash": "e892d8f83e954ceb", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_REPAIR", "field": "text", "en": "Repair", "hash": "8c64b7b46f3647d7", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_STABLEMASTER", "field": "text", "en": "Stable Master", "hash": "73010bae05a9562e", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_TARGET", "field": "text", "en": "Target", "hash": "3d7ca112c9409d27", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_TOOLTIP_NONE", "field": "text", "en": "Click to enable and disable tracking types.", "hash": "2f1ae827ebb562d5", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_TRAINER_CLASS", "field": "text", "en": "Class Trainer", "hash": "f7271dda0743f646", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_TRAINER_PROFESSION", "field": "text", "en": "Profession Trainers", "hash": "bed3f8b8567ed448", "src": "db2@1.60.1.70124"}
-{"id": "MINIMAP_TRACKING_TRIVIAL_QUESTS", "field": "text", "en": "Low-Level Quests", "hash": "a7abfcddaeafe4f9", "src": "db2@1.60.1.70124"}
-{"id": "MINIMUM_CHARACTER_NAME_SIZE_TEXT", "field": "text", "en": "Minimum Character Name Size", "hash": "000605679bff0879", "src": "db2@1.60.1.70124"}
-{"id": "MINUTES", "field": "text", "en": "|4Minute:Minutes;", "hash": "fb46cad156f06a82", "src": "db2@1.60.1.70124"}
-{"id": "MINUTES_ABBR", "field": "text", "en": "%d |4Min:Min;", "hash": "94dafd154cf7b8ed", "src": "db2@1.60.1.70124"}
-{"id": "MINUTE_ONELETTER_ABBR", "field": "text", "en": "%d m", "hash": "050f77b8fd04b931", "src": "db2@1.60.1.70124"}
-{"id": "MISCELLANEOUS", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70124"}
-{"id": "MISS", "field": "text", "en": "Miss", "hash": "0a6d119c2926834e", "src": "db2@1.60.1.70124"}
-{"id": "MISSES", "field": "text", "en": "Misses", "hash": "e971b44042dc1393", "src": "db2@1.60.1.70124"}
-{"id": "MONEY_LOOT", "field": "text", "en": "Money Loot", "hash": "0d9eaafc6215b241", "src": "db2@1.60.1.70124"}
-{"id": "MONEY_TTS_LABEL", "field": "text", "en": "Money Loot", "hash": "0d9eaafc6215b241", "src": "db2@1.60.1.70124"}
-{"id": "MONSTER_BOSS_EMOTE", "field": "text", "en": "Boss Emote", "hash": "6730ebecbd2147a4", "src": "db2@1.60.1.70124"}
-{"id": "MONSTER_BOSS_WHISPER", "field": "text", "en": "Boss Whisper", "hash": "d0013136a2495616", "src": "db2@1.60.1.70124"}
-{"id": "MONSTER_EMOTE", "field": "text", "en": "Creature Emote", "hash": "019c294127f02f18", "src": "db2@1.60.1.70124"}
-{"id": "MONSTER_SAY", "field": "text", "en": "Creature Say", "hash": "a1b4a209a7432c5a", "src": "db2@1.60.1.70124"}
-{"id": "MONSTER_WHISPER", "field": "text", "en": "Creature Whisper", "hash": "4ed31336bbe4c8d4", "src": "db2@1.60.1.70124"}
-{"id": "MONSTER_YELL", "field": "text", "en": "Creature Yell", "hash": "c03dc3c084b96c5e", "src": "db2@1.60.1.70124"}
-{"id": "MONTHLY_ACTIVITIES_PROGRESSED", "field": "text", "en": "Traveler's Log Progress", "hash": "db55adde8d29fb4d", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_APRIL", "field": "text", "en": "April", "hash": "841b4e9e3ba06119", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_AUGUST", "field": "text", "en": "August", "hash": "f0479e8a4a78e9d8", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_DECEMBER", "field": "text", "en": "December", "hash": "446e5eb42968e8b3", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_FEBRUARY", "field": "text", "en": "February", "hash": "1d118b367be2be9a", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_JANUARY", "field": "text", "en": "January", "hash": "2373c9098d15baf6", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_JULY", "field": "text", "en": "July", "hash": "0a0949a8b090f51a", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_JUNE", "field": "text", "en": "June", "hash": "0a094a9ab09134c8", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_MARCH", "field": "text", "en": "March", "hash": "54bd4b4465864ef8", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_MAY", "field": "text", "en": "May", "hash": "00145bd131b875d8", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_NOVEMBER", "field": "text", "en": "November", "hash": "a8aa136b249c9711", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_OCTOBER", "field": "text", "en": "October", "hash": "0a7e8f11c91fe2d0", "src": "db2@1.60.1.70124"}
-{"id": "MONTH_SEPTEMBER", "field": "text", "en": "September", "hash": "35a173bdf0b59bc9", "src": "db2@1.60.1.70124"}
-{"id": "MOTION_SICKNESS_CHECKBOX", "field": "text", "en": "Motion Sickness", "hash": "77d30be78de1c10c", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT", "field": "text", "en": "Mount", "hash": "569e58862d1fd16c", "src": "db2@1.60.1.70124"}
-{"id": "MOUNTS", "field": "text", "en": "Mounts", "hash": "53074de1835383dd", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_EQUIPMENT_EXEMPT", "field": "text", "en": "Your active mount doesn't benefit from Mount Equipment because it already has an ability.", "hash": "2eb1bac11431ef3e", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_EQUIPMENT_NOTICE", "field": "text", "en": "Enhance your mounts with Mount Equipment", "hash": "2215fdcfee782843", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_EQUIPMENT_UNLOCK_REQUIREMENT", "field": "text", "en": "Mount Equipment unlocked at Level %s", "hash": "a2dc8cf9c859e1ce", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_JOURNAL_FILTER_AQUATIC", "field": "text", "en": "Aquatic", "hash": "f9a71aa2fb1b7196", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_JOURNAL_FILTER_DRAGONRIDING", "field": "text", "en": "Skyriding", "hash": "aa8e2f1daf310c88", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_JOURNAL_FILTER_FLYING", "field": "text", "en": "Flying", "hash": "3e47fdafcd961cfd", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_JOURNAL_FILTER_GROUND", "field": "text", "en": "Ground", "hash": "a1caab90023268a9", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_JOURNAL_FILTER_RIDEALONG", "field": "text", "en": "Ride Along", "hash": "084afd0b73dc21e9", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_JOURNAL_FILTER_TYPE", "field": "text", "en": "Type", "hash": "0b615fd246820bea", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_JOURNAL_FILTER_UNUSABLE", "field": "text", "en": "Unusable", "hash": "30b200f9434fe8c9", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_JOURNAL_PLAYER", "field": "text", "en": "Show Character", "hash": "9152dbe14619fcf9", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_JOURNAL_STEADY_FLIGHT_ONLY", "field": "text", "en": "Steady Flight Only", "hash": "8da7f1166aa19cd7", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_SUMMON_TOOLTIP", "field": "text", "en": "Summons or dismisses your selected mount.", "hash": "fd0e2178081678cf", "src": "db2@1.60.1.70124"}
-{"id": "MOUNT_UNWRAP_TOOLTIP", "field": "text", "en": "Open to receive your new mount.", "hash": "d0870fac7fa95703", "src": "db2@1.60.1.70124"}
-{"id": "MOUSEOVER_CAST_KEY", "field": "text", "en": "Mouseover Cast Key", "hash": "7cb4fdbdf44a860e", "src": "db2@1.60.1.70124"}
-{"id": "MOUSE_LABEL", "field": "text", "en": "Mouse", "hash": "569e5b062d2070c2", "src": "db2@1.60.1.70124"}
-{"id": "MOUSE_LOOK_SPEED", "field": "text", "en": "Mouse Look Speed", "hash": "5d09a14588298f8a", "src": "db2@1.60.1.70124"}
-{"id": "MOUSE_SENSITIVITY", "field": "text", "en": "Mouse Sensitivity", "hash": "6ad232e6f8f004fc", "src": "db2@1.60.1.70124"}
-{"id": "MOVE_FILTER_DOWN", "field": "text", "en": "Move Filter Down", "hash": "72f4249c862b684e", "src": "db2@1.60.1.70124"}
-{"id": "MOVE_FILTER_UP", "field": "text", "en": "Move Filter Up", "hash": "1021f880847ca8e4", "src": "db2@1.60.1.70124"}
-{"id": "MOVE_PAD", "field": "text", "en": "Show Move Pad", "hash": "c0bee15e707d98f0", "src": "db2@1.60.1.70124"}
-{"id": "MOVE_TO_INACTIVE", "field": "text", "en": "Move to Inactive", "hash": "ea61766abc3512bc", "src": "db2@1.60.1.70124"}
-{"id": "MOVE_TO_NEW_WINDOW", "field": "text", "en": "Move to New Window", "hash": "aaa34bf534f2fbc9", "src": "db2@1.60.1.70124"}
-{"id": "MOVE_TO_WHISPER_WINDOW", "field": "text", "en": "Move to Whisper Window", "hash": "10dbeccdebf8d0d9", "src": "db2@1.60.1.70124"}
-{"id": "MSAA_LABEL", "field": "text", "en": "Multisample Techniques", "hash": "c106a767e32e5dad", "src": "db2@1.60.1.70124"}
-{"id": "MULTISAMPLE_ALPHA_TEST", "field": "text", "en": "Multisample Alpha-Test", "hash": "88886bb7f71bf1a4", "src": "db2@1.60.1.70124"}
-{"id": "MULTI_CAST_TOOLTIP_NO_TOTEM", "field": "text", "en": "No Totem", "hash": "0018e222550fa9d1", "src": "db2@1.60.1.70124"}
-{"id": "MUSIC_VOLUME", "field": "text", "en": "Music", "hash": "576ba176759e62a1", "src": "db2@1.60.1.70124"}
-{"id": "MUTE", "field": "text", "en": "Mute", "hash": "0a70367d58c9d02d", "src": "db2@1.60.1.70124"}
-{"id": "MUTE_SILENCED", "field": "text", "en": "Mute (Player is silenced)", "hash": "e753adf8230eb537", "src": "db2@1.60.1.70124"}
-{"id": "MYTHIC_PLUS_DESERTER_CONSEQUENCE", "field": "text", "en": "A Deserter's Badge will be visible in Mythic+ group finder.", "hash": "91fd16b5734d9f47", "src": "db2@1.60.1.70124"}
-{"id": "MYTHIC_PLUS_DESERTER_FLAGGED", "field": "text", "en": "You have been flagged as a Keystone Deserter by repeatedly leaving Mythic+ instances.", "hash": "97c9ef28ebf4e3cb", "src": "db2@1.60.1.70124"}
-{"id": "MY_ORDERS", "field": "text", "en": "My Orders", "hash": "e103bc2783f96983", "src": "db2@1.60.1.70124"}
+{"id": "MACRO", "field": "text", "en": "Macro", "hash": "54b9657129fc34df", "src": "db2@1.60.1.70170"}
+{"id": "MACROFRAME_CHAR_LIMIT", "field": "text", "en": "%d/255 Characters Used", "hash": "5269200bd3f799dd", "src": "db2@1.60.1.70170"}
+{"id": "MACROS", "field": "text", "en": "Macros", "hash": "5adeea1d7111d24c", "src": "db2@1.60.1.70170"}
+{"id": "MACRO_ACTION_FORBIDDEN", "field": "text", "en": "A macro script has been blocked from an action only available to the Blizzard UI.", "hash": "6378604ce2983c0e", "src": "db2@1.60.1.70170"}
+{"id": "MACRO_POPUP_TEXT", "field": "text", "en": "Enter Macro Name (Max 16 Characters):", "hash": "c30d203d54ca0c51", "src": "db2@1.60.1.70170"}
+{"id": "MAC_DISABLE_OS_SHORTCUTS", "field": "text", "en": "Disable OS Keyboard Shortcuts", "hash": "94b084fcf9ff853d", "src": "db2@1.60.1.70170"}
+{"id": "MAC_DISABLE_OS_SHORTCUTS_TOOLTIP", "field": "text", "en": "Disables the operating system keyboard shortcuts. Use this if you don't want to accidentally fire operating system shortcuts during the game.", "hash": "099682cb8abeb16e", "src": "db2@1.60.1.70170"}
+{"id": "MAC_INPUT_MONITORING1014", "field": "text", "en": "For Push to Talk to work when World of Warcraft is not in focus, you must grant \"Accessibility\" permission to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "76ea366586c93658", "src": "db2@1.60.1.70170"}
+{"id": "MAC_INPUT_MONITORING1015", "field": "text", "en": "For Push to Talk to work when World of Warcraft is not in focus, you must grant \"Input Monitoring\" permission to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "1ed2a95b46435d0d", "src": "db2@1.60.1.70170"}
+{"id": "MAC_MIC_PERMISSIONS_OPEN_BUTTON", "field": "text", "en": "System Preferences", "hash": "b13d4a4d0258078f", "src": "db2@1.60.1.70170"}
+{"id": "MAC_MIC_PREMISSIONS_NOTIFICATION", "field": "text", "en": "In order to use voice chat, you must grant \"Microphone\" permission to %s in Security & Privacy preferences, located in System Preferences.", "hash": "e875edea1394a1f5", "src": "db2@1.60.1.70170"}
+{"id": "MAC_OPEN_UNIVERSAL_ACCESS", "field": "text", "en": "In order to use this option accessibility needs to be enabled. Please check the option \"Enable access for assistive devices\" in the Universal Access System Preferences panel. Would you like to open the System Preferences now?", "hash": "a088b1a8ecffe3b5", "src": "db2@1.60.1.70170"}
+{"id": "MAC_OPEN_UNIVERSAL_ACCESS1090", "field": "text", "en": "In order to use this option, you must grant access to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "431c500e9791a0da", "src": "db2@1.60.1.70170"}
+{"id": "MAC_SETTINGS_LABEL", "field": "text", "en": "Keyboard Options", "hash": "3752377e27d40891", "src": "db2@1.60.1.70170"}
+{"id": "MAC_USE_COMMAND_LEFT_CLICK_AS_RIGHT_CLICK", "field": "text", "en": "Command left click as right click", "hash": "979aee04e3768a53", "src": "db2@1.60.1.70170"}
+{"id": "MAC_USE_COMMAND_LEFT_CLICK_AS_RIGHT_CLICK_TOOLTIP", "field": "text", "en": "Hold down Command key and left click to simulate a right click.", "hash": "616b62093825829d", "src": "db2@1.60.1.70170"}
+{"id": "MAIL_COD_ERROR", "field": "text", "en": "C.O.D. must be <= %d", "hash": "ff8a2d0cbd7d1ba6", "src": "db2@1.60.1.70170"}
+{"id": "MAIL_COD_ERROR_COLORBLIND", "field": "text", "en": "C.O.D. must be <= %1$d%2$s", "hash": "3ab56409f3ee5f5f", "src": "db2@1.60.1.70170"}
+{"id": "MAIL_LETTER_TOOLTIP", "field": "text", "en": "Click to make a permanent\ncopy of this letter.", "hash": "f1c80860ff60a47b", "src": "db2@1.60.1.70170"}
+{"id": "MAIL_MULTIPLE_ITEMS", "field": "text", "en": "Multiple items", "hash": "d33c49772d40336c", "src": "db2@1.60.1.70170"}
+{"id": "MAIL_RETURN", "field": "text", "en": "Return", "hash": "8cf32f6bf43c81ee", "src": "db2@1.60.1.70170"}
+{"id": "MAIL_SUBJECT_LABEL", "field": "text", "en": "Subject:", "hash": "ea6e56ea05bee93a", "src": "db2@1.60.1.70170"}
+{"id": "MAIL_TO_LABEL", "field": "text", "en": "To:", "hash": "001637fb4d840e2e", "src": "db2@1.60.1.70170"}
+{"id": "MAINASSIST", "field": "text", "en": "Main Assist", "hash": "23d6cc19b177476f", "src": "db2@1.60.1.70170"}
+{"id": "MAINHANDSLOT", "field": "text", "en": "Main Hand", "hash": "0733afc2db5fe73b", "src": "db2@1.60.1.70170"}
+{"id": "MAINMENUBAR_BANDWIDTH_LABEL", "field": "text", "en": "Bandwidth %d Mbps", "hash": "5a21ba97c005a045", "src": "db2@1.60.1.70170"}
+{"id": "MAINMENUBAR_COMMUNICATION_PROTOCOL_LABEL", "field": "text", "en": "Communication Protocol:\nHome: %s\nWorld: %s", "hash": "4565aadfbe186123", "src": "db2@1.60.1.70170"}
+{"id": "MAINMENUBAR_DOWNLOAD_PERCENT_LABEL", "field": "text", "en": "Download %d %% complete", "hash": "24c426b8b243640a", "src": "db2@1.60.1.70170"}
+{"id": "MAINMENUBAR_FPS_LABEL", "field": "text", "en": "Framerate: %.0f fps", "hash": "eb38af9e43d8c0a3", "src": "db2@1.60.1.70170"}
+{"id": "MAINMENUBAR_LATENCY_LABEL", "field": "text", "en": "Latency:\n%.0f ms (home)\n%.0f ms (world)", "hash": "b0e94216c5a456f4", "src": "db2@1.60.1.70170"}
+{"id": "MAINMENUBAR_PROTOCOLS_LABEL", "field": "text", "en": "Internet Protocols:\nHome: %s\nWorld: %s", "hash": "051654dea0365045", "src": "db2@1.60.1.70170"}
+{"id": "MAINMENU_BUTTON", "field": "text", "en": "Game Menu", "hash": "4880ed18b0a44df1", "src": "db2@1.60.1.70170"}
+{"id": "MAINTANK", "field": "text", "en": "Main Tank", "hash": "08cf530d7c3f57ad", "src": "db2@1.60.1.70170"}
+{"id": "MAIN_ASSIST", "field": "text", "en": "Main Assist", "hash": "23d6cc19b177476f", "src": "db2@1.60.1.70170"}
+{"id": "MAIN_HELP_BUTTON_TOOLTIP", "field": "text", "en": "Click this to toggle on/off the help system for this frame.", "hash": "18a8ef5313a73483", "src": "db2@1.60.1.70170"}
+{"id": "MAIN_TANK", "field": "text", "en": "Main Tank", "hash": "08cf530d7c3f57ad", "src": "db2@1.60.1.70170"}
+{"id": "MAJOR_FACTION_RENOWN_LEVEL_TOAST", "field": "text", "en": "Renown %d", "hash": "ff986135f8acf86d", "src": "db2@1.60.1.70170"}
+{"id": "MAKE_INTERACTABLE", "field": "text", "en": "Make Interactive", "hash": "7f3e9c8a93c43412", "src": "db2@1.60.1.70170"}
+{"id": "MAKE_MODERATOR", "field": "text", "en": "Make Moderator", "hash": "a9079abc2837458d", "src": "db2@1.60.1.70170"}
+{"id": "MAKE_UNINTERACTABLE", "field": "text", "en": "Make Noninteractive", "hash": "f3269a031dca1918", "src": "db2@1.60.1.70170"}
+{"id": "MANA", "field": "text", "en": "Mana", "hash": "0a6af6b30963c5cf", "src": "db2@1.60.1.70170"}
+{"id": "MANA_COST", "field": "text", "en": "%s Mana", "hash": "5663926ae64ea98e", "src": "db2@1.60.1.70170"}
+{"id": "MANA_COST_LARGE", "field": "text", "en": "%s Mana", "hash": "5663926ae64ea98e", "src": "db2@1.60.1.70170"}
+{"id": "MANA_COST_LARGE_PER_TIME", "field": "text", "en": "%s Mana, plus %s per sec", "hash": "cfe15bccef2f4171", "src": "db2@1.60.1.70170"}
+{"id": "MANA_COST_LARGE_PER_TIME_NO_BASE", "field": "text", "en": "%s Mana per sec", "hash": "a77b0fffb8e7265b", "src": "db2@1.60.1.70170"}
+{"id": "MANA_COST_PER_TIME", "field": "text", "en": "%s Mana, plus %s per sec", "hash": "cfe15bccef2f4171", "src": "db2@1.60.1.70170"}
+{"id": "MANA_COST_PER_TIME_NO_BASE", "field": "text", "en": "%s Mana per sec", "hash": "a77b0fffb8e7265b", "src": "db2@1.60.1.70170"}
+{"id": "MANA_LOW", "field": "text", "en": "Mana Low", "hash": "22c27d8619672024", "src": "db2@1.60.1.70170"}
+{"id": "MANA_REGEN", "field": "text", "en": "Mana Regen", "hash": "87a7ea9d2db2cbcd", "src": "db2@1.60.1.70170"}
+{"id": "MANA_REGEN_TOOLTIP", "field": "text", "en": "Amount of mana regenerated every 5 seconds.", "hash": "0b56d1a088dca022", "src": "db2@1.60.1.70170"}
+{"id": "MAP_AND_QUEST_LOG", "field": "text", "en": "Map & Quest Log", "hash": "efa63473381cfa8c", "src": "db2@1.60.1.70170"}
+{"id": "MAP_FILTER", "field": "text", "en": "Map Filter", "hash": "7f7da9eb903cc7d7", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_CATEGORY_ACTIVITIES", "field": "text", "en": "Activities", "hash": "69b7e5a8d540a60a", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_CATEGORY_MOVEMENT", "field": "text", "en": "Movement", "hash": "31395e64bb1d7b43", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_CATEGORY_QUESTS", "field": "text", "en": "Quests", "hash": "a84737c440533b3c", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_DUNGEON", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_DUNGEON_TOOLTIP", "field": "text", "en": "Instanced content that rewards loot, intended for a party of up to five adventurers", "hash": "02531063a3d852d0", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_FLIGHTPOINT", "field": "text", "en": "Flightpoint", "hash": "c859eb205aa054a4", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_FLIGHTPOINT_TOOLTIP", "field": "text", "en": "Transports you to a different area in the same region", "hash": "80eee10f02c06371", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_FRAME_LABEL", "field": "text", "en": "Map Legend", "hash": "1db12966ff3a28b3", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_INPROGRESS", "field": "text", "en": "In Progress", "hash": "035705ae6022e043", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_INPROGRESS_TOOLTIP", "field": "text", "en": "Quests that are currently in progress", "hash": "c9e98bca0dd6fe13", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_LOCALSTORY", "field": "text", "en": "Quest", "hash": "9d9ed56bb9b5eac9", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_LOCALSTORY_TOOLTIP", "field": "text", "en": "Quests that explore local cultures and side adventures", "hash": "aac2af3afd4631bb", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_RAID", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_RAID_TOOLTIP", "field": "text", "en": "Challenging content that is intended for large groups of players, and provides valuable loot", "hash": "abe5be8afcf02ae0", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_REPEATABLE", "field": "text", "en": "Repeatable", "hash": "7f9b420726464b7a", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_REPEATABLE_TOOLTIP", "field": "text", "en": "Time-gated quests", "hash": "c6ff3454c95c30c9", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_TURNIN", "field": "text", "en": "Turn In", "hash": "1dfa4d8edf7cda66", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LEGEND_TURNIN_TOOLTIP", "field": "text", "en": "Quests that are ready to be turned in", "hash": "2e960038c70770f0", "src": "db2@1.60.1.70170"}
+{"id": "MAP_LINK_POI_TOOLTIP_INSTRUCTION_LINE", "field": "text", "en": "<Right Click to show map>", "hash": "c59a798ab65c7bed", "src": "db2@1.60.1.70170"}
+{"id": "MAP_PIN", "field": "text", "en": "Map Pin", "hash": "593f117214acd3d7", "src": "db2@1.60.1.70170"}
+{"id": "MAP_PIN_INVALID_MAP", "field": "text", "en": "You can't place a pin on this map.", "hash": "c60b7bee8f1fa937", "src": "db2@1.60.1.70170"}
+{"id": "MAP_PIN_REMOVE", "field": "text", "en": "<Ctrl click to remove pin>", "hash": "6614cf3fcd9f6309", "src": "db2@1.60.1.70170"}
+{"id": "MAP_PIN_SHARING", "field": "text", "en": "Map Pin Sharing", "hash": "faee4fafee2d84bc", "src": "db2@1.60.1.70170"}
+{"id": "MAP_PIN_SHARING_TOOLTIP", "field": "text", "en": "You can share this location with other players by inserting a link into chat.|n|n|cff20ff20<Shift click to share pin in chat>|r", "hash": "8e33053e91792b9a", "src": "db2@1.60.1.70170"}
+{"id": "MAP_PIN_SHARING_TOOLTIP_GAMEPAD", "field": "text", "en": "You can share this location with other players by inserting a link into chat.", "hash": "42b8244043ecea99", "src": "db2@1.60.1.70170"}
+{"id": "MAP_PIN_TOGGLE_FOCUS", "field": "text", "en": "Toggle Focus on Marker", "hash": "a7321faa42c899f1", "src": "db2@1.60.1.70170"}
+{"id": "MAP_PIN_TOGGLE_QUEST_DETAILS", "field": "text", "en": "Toggle Quest Details", "hash": "1cfdfdfb017c41b1", "src": "db2@1.60.1.70170"}
+{"id": "MAP_PIN_TOGGLE_QUEST_FOCUS", "field": "text", "en": "Toggle Focus on Quest", "hash": "26fb4f98d41ca19d", "src": "db2@1.60.1.70170"}
+{"id": "MAP_PIN_TOOLTIP", "field": "text", "en": "Place a locational pin on the map that can be tracked and shared with other players.", "hash": "3c4eaab5e1a80be2", "src": "db2@1.60.1.70170"}
+{"id": "MAP_PIN_TOOLTIP_INSTRUCTIONS", "field": "text", "en": "Click this button and then the map to drop a pin or <Ctrl click directly on the map>", "hash": "12345b83326e1f2b", "src": "db2@1.60.1.70170"}
+{"id": "MAP_QUEST_DIFFICULTY_TEXT", "field": "text", "en": "Quest Difficulty Color", "hash": "c8b16e9f08779089", "src": "db2@1.60.1.70170"}
+{"id": "MARKED_AFK", "field": "text", "en": "You are now Away.", "hash": "8f496a7aa86f23ee", "src": "db2@1.60.1.70170"}
+{"id": "MARKED_AFK_MESSAGE", "field": "text", "en": "You are now Away: %s", "hash": "fcb2418f1e2195b6", "src": "db2@1.60.1.70170"}
+{"id": "MARKED_DND", "field": "text", "en": "You are now Busy: %s", "hash": "ba0bafe7a40b6688", "src": "db2@1.60.1.70170"}
+{"id": "MASTERY_POINTS_SPENT", "field": "text", "en": "%1$s Talents: %2$s", "hash": "31aa1e8c7c884a70", "src": "db2@1.60.1.70170"}
+{"id": "MASTER_LOOTER", "field": "text", "en": "Master Looter", "hash": "efe504b71ce1013e", "src": "db2@1.60.1.70170"}
+{"id": "MASTER_VOLUME", "field": "text", "en": "Master Volume", "hash": "c2a9573aa8030c86", "src": "db2@1.60.1.70170"}
+{"id": "MAXFPS", "field": "text", "en": "Max Foreground FPS", "hash": "a5c49dd730ec366a", "src": "db2@1.60.1.70170"}
+{"id": "MAXFPSBK", "field": "text", "en": "Max Background FPS", "hash": "7f56c4a790cdc622", "src": "db2@1.60.1.70170"}
+{"id": "MAXFPSBK_CHECK", "field": "text", "en": "Max Background FPS Toggle", "hash": "717b234ec225d12e", "src": "db2@1.60.1.70170"}
+{"id": "MAXFPS_CHECK", "field": "text", "en": "Max Foreground FPS Toggle", "hash": "6d91107d60401809", "src": "db2@1.60.1.70170"}
+{"id": "MAX_FOLLOW_DIST", "field": "text", "en": "Max Camera Distance", "hash": "2476ec1bf7a6ad18", "src": "db2@1.60.1.70170"}
+{"id": "MELEE", "field": "text", "en": "Melee", "hash": "5544f07d8354c84f", "src": "db2@1.60.1.70170"}
+{"id": "MELEE_ATTACK", "field": "text", "en": "Melee Attack", "hash": "20711bdf775b3c89", "src": "db2@1.60.1.69913"}
+{"id": "MELEE_ATTACK_POWER", "field": "text", "en": "Attack Power", "hash": "3e6a7d38952902e8", "src": "db2@1.60.1.70170"}
+{"id": "MELEE_ATTACK_POWER_PET_HUNTER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Attack|r damage per second by %s\n\nIncreased by 10%% of |cFFFFFFFFMaster's Attack Power|r from whichever is higher: |cFFFFFFFFMelee|r or |cFFFFFFFFRanged|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "ee59c16bf8c90931", "src": "db2@1.60.1.70170"}
+{"id": "MELEE_ATTACK_POWER_PET_WARLOCK_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Attack|r damage per second by %s\n\nIncreased by %d%% of |cFFFFFFFFMaster's Spell Damage|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "30d50bc86f52c49c", "src": "db2@1.60.1.70170"}
+{"id": "MELEE_ATTACK_POWER_SPELL_POWER_TOOLTIP", "field": "text", "en": "Increases damage with melee weapons by %s damage per second.\nIncreases Spell Power by %s.", "hash": "4056ffb9c73edb6e", "src": "db2@1.60.1.70170"}
+{"id": "MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "34915b5a5f273d16", "src": "db2@1.60.1.70170"}
+{"id": "MELEE_COMBATLOG_TOOLTIP", "field": "text", "en": "Shows natural melee swings.", "hash": "955ac911684d7746", "src": "db2@1.60.1.70170"}
+{"id": "MELEE_RANGE", "field": "text", "en": "Melee Range", "hash": "f1637dbeb255aec7", "src": "db2@1.60.1.70170"}
+{"id": "MEMBERS", "field": "text", "en": "Members", "hash": "1b84a352863f959d", "src": "db2@1.60.1.70170"}
+{"id": "MERCHANT", "field": "text", "en": "Merchant", "hash": "106536ca8c572d49", "src": "db2@1.60.1.70170"}
+{"id": "MERCHANT_BUYBACK", "field": "text", "en": "Merchant Buyback", "hash": "c735ca60c08dbd07", "src": "db2@1.60.1.70170"}
+{"id": "MERCHANT_HONOR_POINTS", "field": "text", "en": "%d Honor", "hash": "489729254ef6fbcd", "src": "db2@1.60.1.70170"}
+{"id": "MERCHANT_PAGE_NUMBER", "field": "text", "en": "Page %s of %s", "hash": "1b9b1c44e408bd66", "src": "db2@1.60.1.70170"}
+{"id": "MESSAGE_SOURCES", "field": "text", "en": "Message Sources", "hash": "11dec7a35abd7f5e", "src": "db2@1.60.1.70170"}
+{"id": "MESSAGE_TYPES", "field": "text", "en": "Message Types", "hash": "6e594ccda350343c", "src": "db2@1.60.1.70170"}
+{"id": "META_GEM", "field": "text", "en": "Meta", "hash": "0a6c05e919459419", "src": "db2@1.60.1.70170"}
+{"id": "MIDDLE_BUTTON_STRING", "field": "text", "en": "Middle Button", "hash": "2c4f78c6be2b58a4", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_AUCTIONEER", "field": "text", "en": "Auctioneer", "hash": "1131d7bece67901d", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_BANKER", "field": "text", "en": "Banker", "hash": "8da72588e7d3e6cd", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_BATTLEMASTER", "field": "text", "en": "Battlemaster", "hash": "f7abce0bb335533b", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_FLIGHTMASTER", "field": "text", "en": "Flight Master", "hash": "2887c2668433ee40", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_INNKEEPER", "field": "text", "en": "Innkeeper", "hash": "efa922913a7475ca", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_MAILBOX", "field": "text", "en": "Mailbox", "hash": "e892d8f83e954ceb", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_REPAIR", "field": "text", "en": "Repair", "hash": "8c64b7b46f3647d7", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_STABLEMASTER", "field": "text", "en": "Stable Master", "hash": "73010bae05a9562e", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_TARGET", "field": "text", "en": "Target", "hash": "3d7ca112c9409d27", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_TOOLTIP_NONE", "field": "text", "en": "Click to enable and disable tracking types.", "hash": "2f1ae827ebb562d5", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_TRAINER_CLASS", "field": "text", "en": "Class Trainer", "hash": "f7271dda0743f646", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_TRAINER_PROFESSION", "field": "text", "en": "Profession Trainers", "hash": "bed3f8b8567ed448", "src": "db2@1.60.1.70170"}
+{"id": "MINIMAP_TRACKING_TRIVIAL_QUESTS", "field": "text", "en": "Low-Level Quests", "hash": "a7abfcddaeafe4f9", "src": "db2@1.60.1.70170"}
+{"id": "MINIMUM_CHARACTER_NAME_SIZE_TEXT", "field": "text", "en": "Minimum Character Name Size", "hash": "000605679bff0879", "src": "db2@1.60.1.70170"}
+{"id": "MINUTES", "field": "text", "en": "|4Minute:Minutes;", "hash": "fb46cad156f06a82", "src": "db2@1.60.1.70170"}
+{"id": "MINUTES_ABBR", "field": "text", "en": "%d |4Min:Min;", "hash": "94dafd154cf7b8ed", "src": "db2@1.60.1.70170"}
+{"id": "MINUTE_ONELETTER_ABBR", "field": "text", "en": "%d m", "hash": "050f77b8fd04b931", "src": "db2@1.60.1.70170"}
+{"id": "MISCELLANEOUS", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70170"}
+{"id": "MISS", "field": "text", "en": "Miss", "hash": "0a6d119c2926834e", "src": "db2@1.60.1.70170"}
+{"id": "MISSES", "field": "text", "en": "Misses", "hash": "e971b44042dc1393", "src": "db2@1.60.1.70170"}
+{"id": "MONEY_LOOT", "field": "text", "en": "Money Loot", "hash": "0d9eaafc6215b241", "src": "db2@1.60.1.70170"}
+{"id": "MONEY_TTS_LABEL", "field": "text", "en": "Money Loot", "hash": "0d9eaafc6215b241", "src": "db2@1.60.1.70170"}
+{"id": "MONSTER_BOSS_EMOTE", "field": "text", "en": "Boss Emote", "hash": "6730ebecbd2147a4", "src": "db2@1.60.1.70170"}
+{"id": "MONSTER_BOSS_WHISPER", "field": "text", "en": "Boss Whisper", "hash": "d0013136a2495616", "src": "db2@1.60.1.70170"}
+{"id": "MONSTER_EMOTE", "field": "text", "en": "Creature Emote", "hash": "019c294127f02f18", "src": "db2@1.60.1.70170"}
+{"id": "MONSTER_SAY", "field": "text", "en": "Creature Say", "hash": "a1b4a209a7432c5a", "src": "db2@1.60.1.70170"}
+{"id": "MONSTER_WHISPER", "field": "text", "en": "Creature Whisper", "hash": "4ed31336bbe4c8d4", "src": "db2@1.60.1.70170"}
+{"id": "MONSTER_YELL", "field": "text", "en": "Creature Yell", "hash": "c03dc3c084b96c5e", "src": "db2@1.60.1.70170"}
+{"id": "MONTHLY_ACTIVITIES_PROGRESSED", "field": "text", "en": "Traveler's Log Progress", "hash": "db55adde8d29fb4d", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_APRIL", "field": "text", "en": "April", "hash": "841b4e9e3ba06119", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_AUGUST", "field": "text", "en": "August", "hash": "f0479e8a4a78e9d8", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_DECEMBER", "field": "text", "en": "December", "hash": "446e5eb42968e8b3", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_FEBRUARY", "field": "text", "en": "February", "hash": "1d118b367be2be9a", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_JANUARY", "field": "text", "en": "January", "hash": "2373c9098d15baf6", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_JULY", "field": "text", "en": "July", "hash": "0a0949a8b090f51a", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_JUNE", "field": "text", "en": "June", "hash": "0a094a9ab09134c8", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_MARCH", "field": "text", "en": "March", "hash": "54bd4b4465864ef8", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_MAY", "field": "text", "en": "May", "hash": "00145bd131b875d8", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_NOVEMBER", "field": "text", "en": "November", "hash": "a8aa136b249c9711", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_OCTOBER", "field": "text", "en": "October", "hash": "0a7e8f11c91fe2d0", "src": "db2@1.60.1.70170"}
+{"id": "MONTH_SEPTEMBER", "field": "text", "en": "September", "hash": "35a173bdf0b59bc9", "src": "db2@1.60.1.70170"}
+{"id": "MOTION_SICKNESS_CHECKBOX", "field": "text", "en": "Motion Sickness", "hash": "77d30be78de1c10c", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT", "field": "text", "en": "Mount", "hash": "569e58862d1fd16c", "src": "db2@1.60.1.70170"}
+{"id": "MOUNTS", "field": "text", "en": "Mounts", "hash": "53074de1835383dd", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_EQUIPMENT_EXEMPT", "field": "text", "en": "Your active mount doesn't benefit from Mount Equipment because it already has an ability.", "hash": "2eb1bac11431ef3e", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_EQUIPMENT_NOTICE", "field": "text", "en": "Enhance your mounts with Mount Equipment", "hash": "2215fdcfee782843", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_EQUIPMENT_UNLOCK_REQUIREMENT", "field": "text", "en": "Mount Equipment unlocked at Level %s", "hash": "a2dc8cf9c859e1ce", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_JOURNAL_FILTER_AQUATIC", "field": "text", "en": "Aquatic", "hash": "f9a71aa2fb1b7196", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_JOURNAL_FILTER_DRAGONRIDING", "field": "text", "en": "Skyriding", "hash": "aa8e2f1daf310c88", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_JOURNAL_FILTER_FLYING", "field": "text", "en": "Flying", "hash": "3e47fdafcd961cfd", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_JOURNAL_FILTER_GROUND", "field": "text", "en": "Ground", "hash": "a1caab90023268a9", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_JOURNAL_FILTER_RIDEALONG", "field": "text", "en": "Ride Along", "hash": "084afd0b73dc21e9", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_JOURNAL_FILTER_TYPE", "field": "text", "en": "Type", "hash": "0b615fd246820bea", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_JOURNAL_FILTER_UNUSABLE", "field": "text", "en": "Unusable", "hash": "30b200f9434fe8c9", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_JOURNAL_PLAYER", "field": "text", "en": "Show Character", "hash": "9152dbe14619fcf9", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_JOURNAL_STEADY_FLIGHT_ONLY", "field": "text", "en": "Steady Flight Only", "hash": "8da7f1166aa19cd7", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_SUMMON_TOOLTIP", "field": "text", "en": "Summons or dismisses your selected mount.", "hash": "fd0e2178081678cf", "src": "db2@1.60.1.70170"}
+{"id": "MOUNT_UNWRAP_TOOLTIP", "field": "text", "en": "Open to receive your new mount.", "hash": "d0870fac7fa95703", "src": "db2@1.60.1.70170"}
+{"id": "MOUSEOVER_CAST_KEY", "field": "text", "en": "Mouseover Cast Key", "hash": "7cb4fdbdf44a860e", "src": "db2@1.60.1.70170"}
+{"id": "MOUSE_LABEL", "field": "text", "en": "Mouse", "hash": "569e5b062d2070c2", "src": "db2@1.60.1.70170"}
+{"id": "MOUSE_LOOK_SPEED", "field": "text", "en": "Mouse Look Speed", "hash": "5d09a14588298f8a", "src": "db2@1.60.1.70170"}
+{"id": "MOUSE_SENSITIVITY", "field": "text", "en": "Mouse Sensitivity", "hash": "6ad232e6f8f004fc", "src": "db2@1.60.1.70170"}
+{"id": "MOVE_FILTER_DOWN", "field": "text", "en": "Move Filter Down", "hash": "72f4249c862b684e", "src": "db2@1.60.1.70170"}
+{"id": "MOVE_FILTER_UP", "field": "text", "en": "Move Filter Up", "hash": "1021f880847ca8e4", "src": "db2@1.60.1.70170"}
+{"id": "MOVE_PAD", "field": "text", "en": "Show Move Pad", "hash": "c0bee15e707d98f0", "src": "db2@1.60.1.70170"}
+{"id": "MOVE_TO_INACTIVE", "field": "text", "en": "Move to Inactive", "hash": "ea61766abc3512bc", "src": "db2@1.60.1.70170"}
+{"id": "MOVE_TO_NEW_WINDOW", "field": "text", "en": "Move to New Window", "hash": "aaa34bf534f2fbc9", "src": "db2@1.60.1.70170"}
+{"id": "MOVE_TO_WHISPER_WINDOW", "field": "text", "en": "Move to Whisper Window", "hash": "10dbeccdebf8d0d9", "src": "db2@1.60.1.70170"}
+{"id": "MSAA_LABEL", "field": "text", "en": "Multisample Techniques", "hash": "c106a767e32e5dad", "src": "db2@1.60.1.70170"}
+{"id": "MULTISAMPLE_ALPHA_TEST", "field": "text", "en": "Multisample Alpha-Test", "hash": "88886bb7f71bf1a4", "src": "db2@1.60.1.70170"}
+{"id": "MULTI_CAST_TOOLTIP_NO_TOTEM", "field": "text", "en": "No Totem", "hash": "0018e222550fa9d1", "src": "db2@1.60.1.70170"}
+{"id": "MUSIC_VOLUME", "field": "text", "en": "Music", "hash": "576ba176759e62a1", "src": "db2@1.60.1.70170"}
+{"id": "MUTE", "field": "text", "en": "Mute", "hash": "0a70367d58c9d02d", "src": "db2@1.60.1.70170"}
+{"id": "MUTE_SILENCED", "field": "text", "en": "Mute (Player is silenced)", "hash": "e753adf8230eb537", "src": "db2@1.60.1.70170"}
+{"id": "MYTHIC_PLUS_DESERTER_CONSEQUENCE", "field": "text", "en": "A Deserter's Badge will be visible in Mythic+ group finder.", "hash": "91fd16b5734d9f47", "src": "db2@1.60.1.70170"}
+{"id": "MYTHIC_PLUS_DESERTER_FLAGGED", "field": "text", "en": "You have been flagged as a Keystone Deserter by repeatedly leaving Mythic+ instances.", "hash": "97c9ef28ebf4e3cb", "src": "db2@1.60.1.70170"}
+{"id": "MY_ORDERS", "field": "text", "en": "My Orders", "hash": "e103bc2783f96983", "src": "db2@1.60.1.70170"}

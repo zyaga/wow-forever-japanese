@@ -7,6 +7,7 @@ WFJ.Data.add("objective", {
   [467282] = { "Windsong LakeからEnchanted Gyrozephyrを入手する", 0xbb4320ad, "." },
   [467283] = { "Bandit CampからAir Construct Coreを入手する", 0xc8f24d59, "." },
   [467315] = { "Belathaan Brightwishと対決する", 0x821feff7, "." },
+  [467316] = { "Living Stormsを倒す", 0x82957904, "." },
   [467563] = { "Lorthunaと対決する", 0x90290d9d, "." },
   [467567] = { "Talaanis Shadowsongと話す", 0x86fdd1d2, "." },
   [467938] = { "Shen'dar HighlandsのWestern Watchtowerの様子を確かめる", 0xf5953b13, "." },

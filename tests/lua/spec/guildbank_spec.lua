@@ -149,6 +149,20 @@ C.suite(getfenv(1), {
         assert.are.equal("Fonts\\ARIALN.TTF", log.visibleLines[1].font.path)
         assert.are.equal(12, log.visibleLines[1].font.size)
       end },
+    { "guildBankLog: a row given the log's font back follows a later change of the font's size", function(_, WFJ)
+        local log = _G.GuildBankMessageFrame
+        log:Clear()
+        log:AddMessage(BOB .. " deposited " .. LINEN .. " x 3" .. AGO)
+        log:Refresh()
+        assert.are.equal(WFJ.Font.PATH, log.visibleLines[1].font.path)
+        log:AddMessage(BOB .. " sneezed" .. AGO)
+        log:Refresh()
+        assert.are.equal(12, log.visibleLines[1].font.size)
+        log.fontObject.font.size = 15
+        log:Refresh()
+        assert.are.equal("Fonts\\ARIALN.TTF", log.visibleLines[1].font.path)
+        assert.are.equal(15, log.visibleLines[1].font.size)
+      end },
     { "the buy-tab tooltip translates; a tab's name tooltip does not", function(frame)
       C.tooltip(frame.BankTabs[2].Button, { en("BUY_GUILDBANK_TAB") })
       assert.are.equal("ギルド銀行タブを購入", _G.GameTooltipTextLeft1:GetText())

@@ -1,63 +1,63 @@
-{"id": 205019, "field": "name", "en": "Tainted Soul Shard", "hash": "4b49434f6bcab598", "src": "db2@1.60.1.70124"}
-{"id": 205020, "field": "name", "en": "Pure Soul Shard", "hash": "078245bec35a5a5d", "src": "db2@1.60.1.70124"}
-{"id": 205022, "field": "name", "en": "Rune of Soul Siphon", "hash": "66f505d000b84159", "src": "db2@1.60.1.70124"}
-{"id": 205022, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 205181, "field": "name", "en": "Unidentified Artifact", "hash": "dbf51f68c132e9dc", "src": "db2@1.60.1.70124"}
-{"id": 205181, "field": "description", "en": "Some esoteric magical object. A more experienced Warlock could probably tell you more.", "hash": "fdae9e0e2a2556e5", "src": "db2@1.60.1.70124"}
-{"id": 205182, "field": "name", "en": "Powerless Artifact", "hash": "6f46747d074b4083", "src": "db2@1.60.1.70124"}
-{"id": 205182, "field": "description", "en": "Offer your blood to power the artifact.", "hash": "091653f67276a4fb", "src": "db2@1.60.1.70124"}
-{"id": 205183, "field": "name", "en": "Fel-Powered Artifact", "hash": "1260d559744cc399", "src": "db2@1.60.1.70124"}
-{"id": 205184, "field": "name", "en": "Acolyte's Note", "hash": "4c0e4256cddcceb4", "src": "db2@1.60.1.70124"}
-{"id": 205215, "field": "name", "en": "Rune of Tactics", "hash": "2e4527d5840062fe", "src": "db2@1.60.1.70124"}
-{"id": 205215, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 205218, "field": "name", "en": "Libram of Discovery", "hash": "8c807960bc0c5f45", "src": "db2@1.60.1.70124"}
-{"id": 205218, "field": "description", "en": "Achieve a state of Inspiration by slaying 5 foes, then use to learn a new ability.", "hash": "a01c85c5e7fbffc0", "src": "db2@1.60.1.70124"}
-{"id": 205228, "field": "name", "en": "Rune of Chaos Bolt", "hash": "47836118529e0594", "src": "db2@1.60.1.70124"}
-{"id": 205228, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 205230, "field": "name", "en": "Rune of Haunting", "hash": "5b8732713cdfff94", "src": "db2@1.60.1.70124"}
-{"id": 205230, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 205364, "field": "name", "en": "Acolyte's Knapsack", "hash": "97ddd2f88fbe9dd3", "src": "db2@1.60.1.70124"}
-{"id": 205420, "field": "name", "en": "Libram of Judgement", "hash": "8730e86247a34998", "src": "db2@1.60.1.70124"}
-{"id": 205420, "field": "description", "en": "Learn a new ability after unleashing 10 seals onto your enemies", "hash": "83ee0e5c6cdc59fd", "src": "db2@1.60.1.70124"}
-{"id": 205683, "field": "name", "en": "Rune of Rebuke", "hash": "93cc428bfb623251", "src": "db2@1.60.1.70124"}
-{"id": 205683, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 205685, "field": "name", "en": "Rune of Aegis", "hash": "26d8459ee6e0ced5", "src": "db2@1.60.1.70124"}
-{"id": 205685, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 205863, "field": "name", "en": "Corrupted Libram", "hash": "e044ada4944c5958", "src": "db2@1.60.1.70124"}
-{"id": 205864, "field": "name", "en": "Charred Note", "hash": "1bb0c9d717520a6d", "src": "db2@1.60.1.70124"}
-{"id": 205897, "field": "name", "en": "Rune of Divine Light", "hash": "f54d5d574e927602", "src": "db2@1.60.1.70124"}
-{"id": 205897, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 205905, "field": "name", "en": "Memory of a Devout Champion", "hash": "4125390429865981", "src": "db2@1.60.1.70124"}
-{"id": 205905, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70124"}
-{"id": 205932, "field": "name", "en": "Prophecy of a King's Demise", "hash": "8107e35ca5864e38", "src": "db2@1.60.1.70124"}
-{"id": 205932, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70124"}
-{"id": 205940, "field": "name", "en": "Memory of a Dark Purpose", "hash": "af9efbb902259ad4", "src": "db2@1.60.1.70124"}
-{"id": 205940, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70124"}
-{"id": 205942, "field": "name", "en": "Chimaeric Epiphany", "hash": "9310b674b5e1b61f", "src": "db2@1.60.1.70124"}
-{"id": 205943, "field": "name", "en": "Prophecy of a Desecrated Citadel", "hash": "b1805674f3053f22", "src": "db2@1.60.1.70124"}
-{"id": 205943, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70124"}
-{"id": 205944, "field": "name", "en": "Reciprocal Epiphany", "hash": "9d54cbb8746b02cc", "src": "db2@1.60.1.70124"}
-{"id": 205944, "field": "description", "en": "Learn a new Engraving ability.", "hash": "83c8b2f0b56d7036", "src": "db2@1.60.1.70124"}
-{"id": 205945, "field": "name", "en": "Memory of an Imprisoned Savior", "hash": "67761a27135e26ca", "src": "db2@1.60.1.70124"}
-{"id": 205945, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70124"}
-{"id": 205946, "field": "name", "en": "Memory of a Leader's Betrayal", "hash": "2394d2e556237969", "src": "db2@1.60.1.70124"}
-{"id": 205946, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70124"}
-{"id": 205947, "field": "name", "en": "Prophecy of a Desecrated Citadel", "hash": "b1805674f3053f22", "src": "db2@1.60.1.70124"}
-{"id": 205947, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70124"}
-{"id": 205948, "field": "name", "en": "Anodyne Epiphany", "hash": "8e73ccde9e135aaf", "src": "db2@1.60.1.70124"}
-{"id": 205949, "field": "name", "en": "Manifold Epiphany", "hash": "d33c2467a23e6bd2", "src": "db2@1.60.1.70124"}
-{"id": 205949, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 205950, "field": "name", "en": "Tenebrous Epiphany", "hash": "16fa4b39b6ee31e4", "src": "db2@1.60.1.70124"}
-{"id": 205950, "field": "description", "en": "Learn a new Engraving ability.", "hash": "83c8b2f0b56d7036", "src": "db2@1.60.1.70124"}
-{"id": 205951, "field": "name", "en": "Memory of a Troubled Acolyte", "hash": "31a2d0e6e707cb50", "src": "db2@1.60.1.70124"}
-{"id": 205951, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70124"}
-{"id": 205952, "field": "name", "en": "Memory of a Shattered World", "hash": "a25cb5d27b8d409d", "src": "db2@1.60.1.70124"}
-{"id": 205952, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70124"}
-{"id": 205953, "field": "name", "en": "Prophecy of a Broken Vow", "hash": "88c94dbb1c9fc9fe", "src": "db2@1.60.1.70124"}
-{"id": 205953, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70124"}
-{"id": 205961, "field": "name", "en": "Mulgore Bird Meat", "hash": "0c2c30d0214519b8", "src": "db2@1.60.1.70124"}
-{"id": 205961, "field": "description", "en": "Place as bait near a mountain cat's dwelling.", "hash": "8abf567e085d7961", "src": "db2@1.60.1.70124"}
-{"id": 205979, "field": "name", "en": "Rune of Flanking", "hash": "88c7391ea81d7ebf", "src": "db2@1.60.1.70124"}
-{"id": 205979, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 205995, "field": "name", "en": "Prairie Dog Musk", "hash": "292c03a5f3384fd1", "src": "db2@1.60.1.70124"}
-{"id": 205995, "field": "description", "en": "Your Tame Beast ability also works on prairie dogs (as companion pet)", "hash": "142e02859a25c403", "src": "db2@1.60.1.70124"}
+{"id": 205019, "field": "name", "en": "Tainted Soul Shard", "hash": "4b49434f6bcab598", "src": "db2@1.60.1.70170"}
+{"id": 205020, "field": "name", "en": "Pure Soul Shard", "hash": "078245bec35a5a5d", "src": "db2@1.60.1.70170"}
+{"id": 205022, "field": "name", "en": "Rune of Soul Siphon", "hash": "66f505d000b84159", "src": "db2@1.60.1.70170"}
+{"id": 205022, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 205181, "field": "name", "en": "Unidentified Artifact", "hash": "dbf51f68c132e9dc", "src": "db2@1.60.1.70170"}
+{"id": 205181, "field": "description", "en": "Some esoteric magical object. A more experienced Warlock could probably tell you more.", "hash": "fdae9e0e2a2556e5", "src": "db2@1.60.1.70170"}
+{"id": 205182, "field": "name", "en": "Powerless Artifact", "hash": "6f46747d074b4083", "src": "db2@1.60.1.70170"}
+{"id": 205182, "field": "description", "en": "Offer your blood to power the artifact.", "hash": "091653f67276a4fb", "src": "db2@1.60.1.70170"}
+{"id": 205183, "field": "name", "en": "Fel-Powered Artifact", "hash": "1260d559744cc399", "src": "db2@1.60.1.70170"}
+{"id": 205184, "field": "name", "en": "Acolyte's Note", "hash": "4c0e4256cddcceb4", "src": "db2@1.60.1.70170"}
+{"id": 205215, "field": "name", "en": "Rune of Tactics", "hash": "2e4527d5840062fe", "src": "db2@1.60.1.70170"}
+{"id": 205215, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 205218, "field": "name", "en": "Libram of Discovery", "hash": "8c807960bc0c5f45", "src": "db2@1.60.1.70170"}
+{"id": 205218, "field": "description", "en": "Achieve a state of Inspiration by slaying 5 foes, then use to learn a new ability.", "hash": "a01c85c5e7fbffc0", "src": "db2@1.60.1.70170"}
+{"id": 205228, "field": "name", "en": "Rune of Chaos Bolt", "hash": "47836118529e0594", "src": "db2@1.60.1.70170"}
+{"id": 205228, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 205230, "field": "name", "en": "Rune of Haunting", "hash": "5b8732713cdfff94", "src": "db2@1.60.1.70170"}
+{"id": 205230, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 205364, "field": "name", "en": "Acolyte's Knapsack", "hash": "97ddd2f88fbe9dd3", "src": "db2@1.60.1.70170"}
+{"id": 205420, "field": "name", "en": "Libram of Judgement", "hash": "8730e86247a34998", "src": "db2@1.60.1.70170"}
+{"id": 205420, "field": "description", "en": "Learn a new ability after unleashing 10 seals onto your enemies", "hash": "83ee0e5c6cdc59fd", "src": "db2@1.60.1.70170"}
+{"id": 205683, "field": "name", "en": "Rune of Rebuke", "hash": "93cc428bfb623251", "src": "db2@1.60.1.70170"}
+{"id": 205683, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 205685, "field": "name", "en": "Rune of Aegis", "hash": "26d8459ee6e0ced5", "src": "db2@1.60.1.70170"}
+{"id": 205685, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 205863, "field": "name", "en": "Corrupted Libram", "hash": "e044ada4944c5958", "src": "db2@1.60.1.70170"}
+{"id": 205864, "field": "name", "en": "Charred Note", "hash": "1bb0c9d717520a6d", "src": "db2@1.60.1.70170"}
+{"id": 205897, "field": "name", "en": "Rune of Divine Light", "hash": "f54d5d574e927602", "src": "db2@1.60.1.70170"}
+{"id": 205897, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 205905, "field": "name", "en": "Memory of a Devout Champion", "hash": "4125390429865981", "src": "db2@1.60.1.70170"}
+{"id": 205905, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70170"}
+{"id": 205932, "field": "name", "en": "Prophecy of a King's Demise", "hash": "8107e35ca5864e38", "src": "db2@1.60.1.70170"}
+{"id": 205932, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70170"}
+{"id": 205940, "field": "name", "en": "Memory of a Dark Purpose", "hash": "af9efbb902259ad4", "src": "db2@1.60.1.70170"}
+{"id": 205940, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70170"}
+{"id": 205942, "field": "name", "en": "Chimaeric Epiphany", "hash": "9310b674b5e1b61f", "src": "db2@1.60.1.70170"}
+{"id": 205943, "field": "name", "en": "Prophecy of a Desecrated Citadel", "hash": "b1805674f3053f22", "src": "db2@1.60.1.70170"}
+{"id": 205943, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70170"}
+{"id": 205944, "field": "name", "en": "Reciprocal Epiphany", "hash": "9d54cbb8746b02cc", "src": "db2@1.60.1.70170"}
+{"id": 205944, "field": "description", "en": "Learn a new Engraving ability.", "hash": "83c8b2f0b56d7036", "src": "db2@1.60.1.70170"}
+{"id": 205945, "field": "name", "en": "Memory of an Imprisoned Savior", "hash": "67761a27135e26ca", "src": "db2@1.60.1.70170"}
+{"id": 205945, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70170"}
+{"id": 205946, "field": "name", "en": "Memory of a Leader's Betrayal", "hash": "2394d2e556237969", "src": "db2@1.60.1.70170"}
+{"id": 205946, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70170"}
+{"id": 205947, "field": "name", "en": "Prophecy of a Desecrated Citadel", "hash": "b1805674f3053f22", "src": "db2@1.60.1.70170"}
+{"id": 205947, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70170"}
+{"id": 205948, "field": "name", "en": "Anodyne Epiphany", "hash": "8e73ccde9e135aaf", "src": "db2@1.60.1.70170"}
+{"id": 205949, "field": "name", "en": "Manifold Epiphany", "hash": "d33c2467a23e6bd2", "src": "db2@1.60.1.70170"}
+{"id": 205949, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 205950, "field": "name", "en": "Tenebrous Epiphany", "hash": "16fa4b39b6ee31e4", "src": "db2@1.60.1.70170"}
+{"id": 205950, "field": "description", "en": "Learn a new Engraving ability.", "hash": "83c8b2f0b56d7036", "src": "db2@1.60.1.70170"}
+{"id": 205951, "field": "name", "en": "Memory of a Troubled Acolyte", "hash": "31a2d0e6e707cb50", "src": "db2@1.60.1.70170"}
+{"id": 205951, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70170"}
+{"id": 205952, "field": "name", "en": "Memory of a Shattered World", "hash": "a25cb5d27b8d409d", "src": "db2@1.60.1.70170"}
+{"id": 205952, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70170"}
+{"id": 205953, "field": "name", "en": "Prophecy of a Broken Vow", "hash": "88c94dbb1c9fc9fe", "src": "db2@1.60.1.70170"}
+{"id": 205953, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70170"}
+{"id": 205961, "field": "name", "en": "Mulgore Bird Meat", "hash": "0c2c30d0214519b8", "src": "db2@1.60.1.70170"}
+{"id": 205961, "field": "description", "en": "Place as bait near a mountain cat's dwelling.", "hash": "8abf567e085d7961", "src": "db2@1.60.1.70170"}
+{"id": 205979, "field": "name", "en": "Rune of Flanking", "hash": "88c7391ea81d7ebf", "src": "db2@1.60.1.70170"}
+{"id": 205979, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 205995, "field": "name", "en": "Prairie Dog Musk", "hash": "292c03a5f3384fd1", "src": "db2@1.60.1.70170"}
+{"id": 205995, "field": "description", "en": "Your Tame Beast ability also works on prairie dogs (as companion pet)", "hash": "142e02859a25c403", "src": "db2@1.60.1.70170"}

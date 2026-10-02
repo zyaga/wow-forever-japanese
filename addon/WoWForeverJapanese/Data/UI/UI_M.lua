@@ -96,6 +96,7 @@ WFJ.Data.add("ui", {
   ["MAXFPS_CHECK"] = { "最大フォアグラウンドFPSの切り替え", 0x6d91107d, "." },
   ["MAX_FOLLOW_DIST"] = { "カメラの最大距離", 0x2476ec1b, "." },
   ["MELEE"] = { "近接", 0x5544f07d, "." },
+  ["MELEE_ATTACK"] = { "近接攻撃", 0x20711bdf, "." },
   ["MELEE_ATTACK_POWER"] = { "攻撃力", 0x3e6a7d38, "." },
   ["MELEE_ATTACK_POWER_PET_HUNTER_TOOLTIP"] = { "|cFFFFFFFF近接攻撃|rの秒間ダメージが%s上昇\n\n|cFFFFFFFF主人の攻撃力|r (|cFFFFFFFF近接|rと|cFFFFFFFF遠隔|rの高いほう) の10%%で上昇\n\n|cffBCBCBC攻撃力14ごとに秒間ダメージが1増加|r", 0xee59c16b, "." },
   ["MELEE_ATTACK_POWER_PET_WARLOCK_TOOLTIP"] = { "|cFFFFFFFF近接攻撃|rの秒間ダメージが%s上昇\n\n|cFFFFFFFF主人の呪文ダメージ|rの%d%%で上昇\n\n|cffBCBCBC攻撃力14ごとに秒間ダメージが1増加|r", 0x30d50bc8, "." },

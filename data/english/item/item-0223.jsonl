@@ -1,50 +1,50 @@
-{"id": 223073, "field": "name", "en": "Knight-Lieutenant's Mail Epaulets", "hash": "b047c6ed765b1f4f", "src": "db2@1.60.1.70124"}
+{"id": 223073, "field": "name", "en": "Knight-Lieutenant's Mail Epaulets", "hash": "b047c6ed765b1f4f", "src": "db2@1.60.1.70170"}
 {"id": 223073, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 223074, "field": "name", "en": "Knight's Mail Legplates", "hash": "7754d9bdb07e9523", "src": "db2@1.60.1.70124"}
+{"id": 223074, "field": "name", "en": "Knight's Mail Legplates", "hash": "7754d9bdb07e9523", "src": "db2@1.60.1.70170"}
 {"id": 223074, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 223075, "field": "name", "en": "Knight-Lieutenant's Mail Helmet", "hash": "5461dcefbe6fead6", "src": "db2@1.60.1.70124"}
+{"id": 223075, "field": "name", "en": "Knight-Lieutenant's Mail Helmet", "hash": "5461dcefbe6fead6", "src": "db2@1.60.1.70170"}
 {"id": 223075, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 223076, "field": "name", "en": "Sergeant Major's Mail Gauntlets", "hash": "9e5aef08a15cf2df", "src": "db2@1.60.1.70124"}
+{"id": 223076, "field": "name", "en": "Sergeant Major's Mail Gauntlets", "hash": "9e5aef08a15cf2df", "src": "db2@1.60.1.70170"}
 {"id": 223076, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 223077, "field": "name", "en": "Sergeant Major's Mail Sabatons", "hash": "1f0f4466385d7626", "src": "db2@1.60.1.70124"}
-{"id": 223077, "field": "description", "en": "Minor increase to running and swimming speed. Does not stack with similar effects.", "hash": "51f5d912a9ff42ee", "src": "db2@1.60.1.70124"}
-{"id": 223078, "field": "name", "en": "Knight's Mail Armor", "hash": "2cd108510317d45c", "src": "db2@1.60.1.70124"}
+{"id": 223077, "field": "name", "en": "Sergeant Major's Mail Sabatons", "hash": "1f0f4466385d7626", "src": "db2@1.60.1.70170"}
+{"id": 223077, "field": "description", "en": "Minor increase to running and swimming speed. Does not stack with similar effects.", "hash": "51f5d912a9ff42ee", "src": "db2@1.60.1.70170"}
+{"id": 223078, "field": "name", "en": "Knight's Mail Armor", "hash": "2cd108510317d45c", "src": "db2@1.60.1.70170"}
 {"id": 223078, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 223147, "field": "name", "en": "Spell Notes: Balefire Bolt", "hash": "7addab66b040edcb", "src": "db2@1.60.1.70124"}
-{"id": 223147, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 223148, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70124"}
-{"id": 223149, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70124"}
-{"id": 223150, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70124"}
-{"id": 223151, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70124"}
-{"id": 223163, "field": "name", "en": "Formula: Scroll of Spatial Mending", "hash": "841d8e9131ccc26f", "src": "db2@1.60.1.70124"}
-{"id": 223163, "field": "description", "en": "Teaches you to create a Scroll of Spatial Mending.", "hash": "1057dec337e45853", "src": "db2@1.60.1.70124"}
-{"id": 223168, "field": "name", "en": "Worldcore Fragment", "hash": "69159bfd41bc2e27", "src": "db2@1.60.1.70124"}
-{"id": 223168, "field": "description", "en": "Attempt to attune to a targeted Leyline Conflux.", "hash": "85dfe0f25c907da1", "src": "db2@1.60.1.70124"}
-{"id": 223171, "field": "name", "en": "Scroll of Geomancy", "hash": "43deebda759543ca", "src": "db2@1.60.1.70124"}
-{"id": 223171, "field": "description", "en": "Attempt to attune to a targeted Leyline Conflux.", "hash": "85dfe0f25c907da1", "src": "db2@1.60.1.70124"}
-{"id": 223173, "field": "name", "en": "Hidden Belt (DNT)", "hash": "abe5d28e6b8100a1", "src": "db2@1.60.1.70124"}
-{"id": 223174, "field": "name", "en": "Hidden Boots (DNT)", "hash": "32ef991525e4ae0e", "src": "db2@1.60.1.70124"}
-{"id": 223175, "field": "name", "en": "Hidden Cloak (DNT)", "hash": "cb065ad9b0aebe95", "src": "db2@1.60.1.70124"}
-{"id": 223177, "field": "name", "en": "Hidden Helm (DNT)", "hash": "2c481b5abe643bcb", "src": "db2@1.60.1.70124"}
-{"id": 223178, "field": "name", "en": "Hidden Bracers (DNT)", "hash": "0e73127068251f8b", "src": "db2@1.60.1.70124"}
-{"id": 223180, "field": "name", "en": "Hidden Gloves (DNT)", "hash": "d56a7a15d4c5f14b", "src": "db2@1.60.1.70124"}
-{"id": 223181, "field": "name", "en": "Hidden Shoulders (DNT)", "hash": "2251a98ed44ad2e3", "src": "db2@1.60.1.70124"}
-{"id": 223182, "field": "name", "en": "Hidden Pants (DNT)", "hash": "f525ddad5e47d6f8", "src": "db2@1.60.1.70124"}
-{"id": 223183, "field": "name", "en": "Hidden Chest (DNT)", "hash": "b395f43268c3e848", "src": "db2@1.60.1.70124"}
-{"id": 223288, "field": "name", "en": "Rune of the Hammer", "hash": "1008e9974b1980e8", "src": "db2@1.60.1.70124"}
-{"id": 223288, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70124"}
-{"id": 223323, "field": "name", "en": "Shirt", "hash": "befd5ccf59247478", "src": "db2@1.60.1.70124"}
-{"id": 223330, "field": "name", "en": "Pulsating Eye", "hash": "a3bb69542d8c7410", "src": "db2@1.60.1.70124"}
-{"id": 223331, "field": "name", "en": "Pulsating Eye", "hash": "a3bb69542d8c7410", "src": "db2@1.60.1.70124"}
-{"id": 223332, "field": "name", "en": "Vibrating Eye", "hash": "99a0d163ff5696f9", "src": "db2@1.60.1.70124"}
-{"id": 223333, "field": "name", "en": "Baleful Eye", "hash": "2ebe9f395ebfdb57", "src": "db2@1.60.1.70124"}
-{"id": 223334, "field": "name", "en": "Glowing Eye", "hash": "f4af598f4ec4f33e", "src": "db2@1.60.1.70124"}
-{"id": 223335, "field": "name", "en": "Oozing Eye", "hash": "53d5fb31cf8ea403", "src": "db2@1.60.1.70124"}
-{"id": 223336, "field": "name", "en": "Piercing Eye", "hash": "93e6b451db6fe671", "src": "db2@1.60.1.70124"}
-{"id": 223337, "field": "name", "en": "Burning Eye", "hash": "26310f2397b37b67", "src": "db2@1.60.1.70124"}
-{"id": 223912, "field": "name", "en": "Purification Potion", "hash": "bca79df1aa70ab61", "src": "db2@1.60.1.70124"}
-{"id": 223912, "field": "description", "en": "Attempts to remove one Curse, one Disease and one Poison from the Imbiber.", "hash": "28825c19b745c967", "src": "db2@1.60.1.70124"}
-{"id": 223913, "field": "name", "en": "Major Healing Potion", "hash": "7c81100c52c5ba77", "src": "db2@1.60.1.70124"}
-{"id": 223913, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70124"}
-{"id": 223914, "field": "name", "en": "Greater Healing Potion", "hash": "9dd18a948e91f0a1", "src": "db2@1.60.1.70124"}
-{"id": 223914, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70124"}
+{"id": 223147, "field": "name", "en": "Spell Notes: Balefire Bolt", "hash": "7addab66b040edcb", "src": "db2@1.60.1.70170"}
+{"id": 223147, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 223148, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70170"}
+{"id": 223149, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70170"}
+{"id": 223150, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70170"}
+{"id": 223151, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70170"}
+{"id": 223163, "field": "name", "en": "Formula: Scroll of Spatial Mending", "hash": "841d8e9131ccc26f", "src": "db2@1.60.1.70170"}
+{"id": 223163, "field": "description", "en": "Teaches you to create a Scroll of Spatial Mending.", "hash": "1057dec337e45853", "src": "db2@1.60.1.70170"}
+{"id": 223168, "field": "name", "en": "Worldcore Fragment", "hash": "69159bfd41bc2e27", "src": "db2@1.60.1.70170"}
+{"id": 223168, "field": "description", "en": "Attempt to attune to a targeted Leyline Conflux.", "hash": "85dfe0f25c907da1", "src": "db2@1.60.1.70170"}
+{"id": 223171, "field": "name", "en": "Scroll of Geomancy", "hash": "43deebda759543ca", "src": "db2@1.60.1.70170"}
+{"id": 223171, "field": "description", "en": "Attempt to attune to a targeted Leyline Conflux.", "hash": "85dfe0f25c907da1", "src": "db2@1.60.1.70170"}
+{"id": 223173, "field": "name", "en": "Hidden Belt (DNT)", "hash": "abe5d28e6b8100a1", "src": "db2@1.60.1.70170"}
+{"id": 223174, "field": "name", "en": "Hidden Boots (DNT)", "hash": "32ef991525e4ae0e", "src": "db2@1.60.1.70170"}
+{"id": 223175, "field": "name", "en": "Hidden Cloak (DNT)", "hash": "cb065ad9b0aebe95", "src": "db2@1.60.1.70170"}
+{"id": 223177, "field": "name", "en": "Hidden Helm (DNT)", "hash": "2c481b5abe643bcb", "src": "db2@1.60.1.70170"}
+{"id": 223178, "field": "name", "en": "Hidden Bracers (DNT)", "hash": "0e73127068251f8b", "src": "db2@1.60.1.70170"}
+{"id": 223180, "field": "name", "en": "Hidden Gloves (DNT)", "hash": "d56a7a15d4c5f14b", "src": "db2@1.60.1.70170"}
+{"id": 223181, "field": "name", "en": "Hidden Shoulders (DNT)", "hash": "2251a98ed44ad2e3", "src": "db2@1.60.1.70170"}
+{"id": 223182, "field": "name", "en": "Hidden Pants (DNT)", "hash": "f525ddad5e47d6f8", "src": "db2@1.60.1.70170"}
+{"id": 223183, "field": "name", "en": "Hidden Chest (DNT)", "hash": "b395f43268c3e848", "src": "db2@1.60.1.70170"}
+{"id": 223288, "field": "name", "en": "Rune of the Hammer", "hash": "1008e9974b1980e8", "src": "db2@1.60.1.70170"}
+{"id": 223288, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
+{"id": 223323, "field": "name", "en": "Shirt", "hash": "befd5ccf59247478", "src": "db2@1.60.1.70170"}
+{"id": 223330, "field": "name", "en": "Pulsating Eye", "hash": "a3bb69542d8c7410", "src": "db2@1.60.1.70170"}
+{"id": 223331, "field": "name", "en": "Pulsating Eye", "hash": "a3bb69542d8c7410", "src": "db2@1.60.1.70170"}
+{"id": 223332, "field": "name", "en": "Vibrating Eye", "hash": "99a0d163ff5696f9", "src": "db2@1.60.1.70170"}
+{"id": 223333, "field": "name", "en": "Baleful Eye", "hash": "2ebe9f395ebfdb57", "src": "db2@1.60.1.70170"}
+{"id": 223334, "field": "name", "en": "Glowing Eye", "hash": "f4af598f4ec4f33e", "src": "db2@1.60.1.70170"}
+{"id": 223335, "field": "name", "en": "Oozing Eye", "hash": "53d5fb31cf8ea403", "src": "db2@1.60.1.70170"}
+{"id": 223336, "field": "name", "en": "Piercing Eye", "hash": "93e6b451db6fe671", "src": "db2@1.60.1.70170"}
+{"id": 223337, "field": "name", "en": "Burning Eye", "hash": "26310f2397b37b67", "src": "db2@1.60.1.70170"}
+{"id": 223912, "field": "name", "en": "Purification Potion", "hash": "bca79df1aa70ab61", "src": "db2@1.60.1.70170"}
+{"id": 223912, "field": "description", "en": "Attempts to remove one Curse, one Disease and one Poison from the Imbiber.", "hash": "28825c19b745c967", "src": "db2@1.60.1.70170"}
+{"id": 223913, "field": "name", "en": "Major Healing Potion", "hash": "7c81100c52c5ba77", "src": "db2@1.60.1.70170"}
+{"id": 223913, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70170"}
+{"id": 223914, "field": "name", "en": "Greater Healing Potion", "hash": "9dd18a948e91f0a1", "src": "db2@1.60.1.70170"}
+{"id": 223914, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70170"}

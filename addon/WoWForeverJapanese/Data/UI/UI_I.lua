@@ -10,6 +10,7 @@ WFJ.Data.add("ui", {
   ["IGNORE_DIALOG"] = { "無視", 0xd7988f8c, "." },
   ["IGNORE_ERRORS"] = { "無視", 0xd7988f8c, "." },
   ["IGNORE_LIST"] = { "無視リスト", 0xe2b87768, "." },
+  ["IGNORE_PLAYER"] = { "プレイヤーを無視", 0x600ff359, "." },
   ["IGNORE_REMOVE"] = { "無視を解除", 0xee876699, "." },
   ["IGR_BILLING_NAG_DIALOG"] = { "IGRのプレイ時間がまもなく終了します。まもなく接続が切断されます。", 0xf7097375, "." },
   ["IMMUNE"] = { "無効", 0x40ca1806, "." },

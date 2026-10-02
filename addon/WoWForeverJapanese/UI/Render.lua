@@ -21,6 +21,12 @@ Render.fontFailureSurfaces = {}
 local pendingFonts = setmetatable({}, { __mode = "k" })
 Render.BLANK = " " -- what a companion line shows while its primary is applied
 
+-- The client's secret test, for the record machine (which reads no global itself).
+SS.secret = function(v)
+  local f = WFJ.Compat and WFJ.Compat.resolve("issecretvalue")
+  return type(f) == "function" and f(v) == true
+end
+
 function Render.init(T)
   translator = T
 end
@@ -112,11 +118,12 @@ end
 
 -- The text and font the policy would show for an element that has no record: a widget the client only measures
 -- with (the gossip ScrollBox's measure widgets) → text, font | nil (show the English as is). Writes nothing.
-function Render.preview(surface, en, font, area, kind, id)
+-- `ctx` (optional): as Render.show's (a UI template's `args`).
+function Render.preview(surface, en, font, area, kind, id, ctx)
   if not translator then return nil end
-  local text, f = desired({ surface = surface, en = en, font = font,
-    meta = { area = area, kind = kind, id = id } })
-  return text, f
+  local text, f, action = desired({ surface = surface, en = en, font = font,
+    meta = { area = area, kind = kind, id = id, ctx = ctx } })
+  return text, f, action
 end
 
 -- Refreshes the banner `surface` shares: the messages of every marker any primary record on those surfaces
@@ -213,6 +220,7 @@ end
 local function stale(rec)
   if not rec.fs or not rec.fs.GetText then return false end
   local current = rec.fs:GetText()
+  if SS.secret(current) then return true end -- the client rewrote the widget with text the addon may not read
   if rec.applied ~= nil then return current ~= rec.applied end
   return current ~= rec.en
 end
@@ -319,6 +327,14 @@ end
 function Render.forget(surface)
   detachAll(surface)
   local n = SS.dropAll(surface)
+  updateBanner(surface)
+  return n
+end
+
+-- Forgets a surface whose widgets now hold text the addon may not read (see SurfaceState.discard). Nothing is written.
+function Render.discard(surface)
+  detachAll(surface)
+  local n = SS.discard(surface)
   updateBanner(surface)
   return n
 end

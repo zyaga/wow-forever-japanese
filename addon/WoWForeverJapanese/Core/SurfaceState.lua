@@ -151,7 +151,8 @@ function SurfaceState.drop(surface, key)
   local rec = SurfaceState.get(surface, key)
   if not rec then return false end
   local wrote = false
-  if rec.applied ~= nil and rec.fs:GetText() == rec.applied then
+  local current = rec.fs:GetText()
+  if rec.applied ~= nil and not SurfaceState.secret(current) and current == rec.applied then
     rec.fs:SetText(rec.en)
     wrote = true
   end
@@ -174,6 +175,23 @@ function SurfaceState.dropAll(surface)
   records[surface] = nil
   return n
 end
+
+-- Forgets a surface's records without reading or writing any widget: for a pass whose lines the client has rewritten
+-- with text the addon may not compare (a tooltip in combat), where drop would have to read them. → records forgotten
+function SurfaceState.discard(surface)
+  local b = bucket(surface)
+  if not b then return 0 end
+  local n = 0
+  for _, rec in pairs(b) do
+    n = n + 1
+    if rec.appliedFont then rec.fs:SetFont(rec.font.path, rec.font.size, rec.font.flags) end -- no text is read
+  end
+  records[surface] = nil
+  return n
+end
+
+-- Whether a value may not be read (the client's secret values): Render sets it from the client. Default: never.
+SurfaceState.secret = function() return false end
 
 function SurfaceState.records(surface)
   return bucket(surface) or {}

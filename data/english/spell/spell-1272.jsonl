@@ -1,168 +1,168 @@
-{"id": 1272014, "field": "name", "en": "Halaan's Gift", "hash": "9f31373824d2feb7", "src": "db2@1.60.1.70124"}
-{"id": 1272014, "field": "description", "en": "Changes the caster's viewpoint to the targeted location.  Lasts $d.  Only useable outdoors.", "hash": "ca3ee912cd8e13be", "src": "db2@1.60.1.70124"}
-{"id": 1272014, "field": "aura", "en": "Cannot move while using Halaan's Gift.", "hash": "2eee86f02a69c873", "src": "db2@1.60.1.70124"}
-{"id": 1272073, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70124"}
-{"id": 1272073, "field": "description", "en": "How to pull ore and stone from mineral veins for use in Engineering and Blacksmithing. Requires a Mining Pick.", "hash": "15b4b224bd226776", "src": "db2@1.60.1.70124"}
-{"id": 1272112, "field": "name", "en": "Red Eyes", "hash": "079f9293148c7f8c", "src": "db2@1.60.1.70124"}
-{"id": 1272212, "field": "name", "en": "Tin Lode", "hash": "9d65d7f63b3e6b7f", "src": "db2@1.60.1.70124"}
-{"id": 1272212, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272212, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272213, "field": "name", "en": "Silver Lode", "hash": "970e48828222ab37", "src": "db2@1.60.1.70124"}
-{"id": 1272213, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272213, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272214, "field": "name", "en": "Iron Lode", "hash": "b622c7a371f88cde", "src": "db2@1.60.1.70124"}
-{"id": 1272214, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272214, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272215, "field": "name", "en": "Gold Lode", "hash": "205f60c80f8bd4b3", "src": "db2@1.60.1.70124"}
-{"id": 1272215, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272215, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272216, "field": "name", "en": "Mithil Lode", "hash": "fed39c8e37f8c9ed", "src": "db2@1.60.1.70124"}
-{"id": 1272216, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272216, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272217, "field": "name", "en": "Truesilver Lode", "hash": "ffe5429b37b0e8e4", "src": "db2@1.60.1.70124"}
-{"id": 1272217, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272217, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272218, "field": "name", "en": "Dark Iron Lode", "hash": "4f45448d5662f394", "src": "db2@1.60.1.70124"}
-{"id": 1272218, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272218, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272219, "field": "name", "en": "Thorium Lode", "hash": "a782af009807ac5a", "src": "db2@1.60.1.70124"}
-{"id": 1272219, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272219, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272220, "field": "name", "en": "Rich Thorium Lode", "hash": "500aefb9789797a1", "src": "db2@1.60.1.70124"}
-{"id": 1272220, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272220, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272221, "field": "name", "en": "Heavy Thorium Lode", "hash": "46d6cd424a792b3b", "src": "db2@1.60.1.70124"}
-{"id": 1272221, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272221, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70124"}
-{"id": 1272222, "field": "name", "en": "Enormous Herb", "hash": "5e70c65129c2b4ed", "src": "db2@1.60.1.70124"}
-{"id": 1272222, "field": "description", "en": "Collecting herbs.\r\n", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272223, "field": "name", "en": "Collecting Herb", "hash": "2b84cebf271e841c", "src": "db2@1.60.1.70124"}
-{"id": 1272224, "field": "name", "en": "Peacebloom", "hash": "f9b9ea4b4203ac1d", "src": "db2@1.60.1.70124"}
-{"id": 1272224, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272224, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272274, "field": "name", "en": "Silverleaf", "hash": "d2b0c7f2e7c2bf39", "src": "db2@1.60.1.70124"}
-{"id": 1272274, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272274, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272275, "field": "name", "en": "Earthroot", "hash": "436624e49b45d12f", "src": "db2@1.60.1.70124"}
-{"id": 1272275, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272275, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272340, "field": "name", "en": "Mageroyal", "hash": "6acc1c5ca3938003", "src": "db2@1.60.1.70124"}
-{"id": 1272340, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272340, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272343, "field": "name", "en": "Briarthorn", "hash": "2e2c255e25a24f7e", "src": "db2@1.60.1.70124"}
-{"id": 1272343, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272343, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272356, "field": "name", "en": "Stranglekelp", "hash": "1abc6a82bf396b95", "src": "db2@1.60.1.70124"}
-{"id": 1272356, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272356, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272366, "field": "name", "en": "Everlasting Bond", "hash": "daaef3ae20b6182a", "src": "db2@1.60.1.70124"}
-{"id": 1272367, "field": "name", "en": "Bruiseweed", "hash": "634a60f7b6727a93", "src": "db2@1.60.1.70124"}
-{"id": 1272367, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272367, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272368, "field": "name", "en": "Wild Steelbloom", "hash": "2a85571a66e08af0", "src": "db2@1.60.1.70124"}
-{"id": 1272368, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272368, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272369, "field": "name", "en": "Grave Moss", "hash": "4281dca15a7a0acd", "src": "db2@1.60.1.70124"}
-{"id": 1272369, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272369, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272370, "field": "name", "en": "Kingsblood", "hash": "91cd25619aa95d46", "src": "db2@1.60.1.70124"}
-{"id": 1272370, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272370, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272371, "field": "name", "en": "Everlasting Bond", "hash": "daaef3ae20b6182a", "src": "db2@1.60.1.70124"}
-{"id": 1272371, "field": "aura", "en": "Sharing health with Stormwraith.", "hash": "a7dfa7bff8e71d9c", "src": "db2@1.60.1.70124"}
-{"id": 1272417, "field": "name", "en": "Liferoot", "hash": "c601138a164cdee8", "src": "db2@1.60.1.70124"}
-{"id": 1272417, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272417, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272418, "field": "name", "en": "Fadeleaf", "hash": "5be95dec8deaa1ac", "src": "db2@1.60.1.70124"}
-{"id": 1272418, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272418, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272419, "field": "name", "en": "Goldthorn", "hash": "e69fb79cabde178e", "src": "db2@1.60.1.70124"}
-{"id": 1272419, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272419, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272420, "field": "name", "en": "Khadgar's Whisker", "hash": "c3a1f2f833a4a734", "src": "db2@1.60.1.70124"}
-{"id": 1272420, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272420, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272436, "field": "name", "en": "Wintersbite", "hash": "e928decbcbafdfed", "src": "db2@1.60.1.70124"}
-{"id": 1272436, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272436, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272441, "field": "name", "en": "Symbol of Life", "hash": "8d5d5fc00b801ee1", "src": "db2@1.60.1.70124"}
-{"id": 1272446, "field": "name", "en": "Everlasting Bond", "hash": "daaef3ae20b6182a", "src": "db2@1.60.1.70124"}
-{"id": 1272446, "field": "aura", "en": "Sharing health with Sylvestris Dusksong.", "hash": "bb65c276bebe69e4", "src": "db2@1.60.1.70124"}
-{"id": 1272447, "field": "name", "en": "Everlasting Bond", "hash": "daaef3ae20b6182a", "src": "db2@1.60.1.70124"}
-{"id": 1272490, "field": "name", "en": "Firebloom", "hash": "f7279deade94f5c6", "src": "db2@1.60.1.70124"}
-{"id": 1272490, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272490, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272492, "field": "name", "en": "Purple Lotus", "hash": "fbdada36ee8e8b91", "src": "db2@1.60.1.70124"}
-{"id": 1272492, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272492, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272494, "field": "name", "en": "Sungrass", "hash": "81b629fa61ca20dd", "src": "db2@1.60.1.70124"}
-{"id": 1272494, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272494, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272495, "field": "name", "en": "Ghost Mushroom", "hash": "ae62be953841fcc6", "src": "db2@1.60.1.70124"}
-{"id": 1272495, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272495, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272496, "field": "name", "en": "Golden Sansam", "hash": "3deed392fcdda47d", "src": "db2@1.60.1.70124"}
-{"id": 1272496, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272496, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272529, "field": "name", "en": "Blindweed", "hash": "831500671fd9d666", "src": "db2@1.60.1.70124"}
-{"id": 1272529, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272529, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272530, "field": "name", "en": "Dreamfoil", "hash": "911e225ad20fb080", "src": "db2@1.60.1.70124"}
-{"id": 1272530, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272530, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272531, "field": "name", "en": "Mountain Silversage", "hash": "c8a659e5cc04fb2f", "src": "db2@1.60.1.70124"}
-{"id": 1272531, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272531, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272532, "field": "name", "en": "Gromsblood", "hash": "bc5b411ad17f5728", "src": "db2@1.60.1.70124"}
-{"id": 1272532, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272532, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272591, "field": "name", "en": "Rain of Arrows", "hash": "715ef5fef34832a7", "src": "db2@1.60.1.70124"}
-{"id": 1272591, "field": "description", "en": "$@spelldesc<1272606>", "hash": "f125c781f7018953", "src": "db2@1.60.1.70124"}
-{"id": 1272594, "field": "name", "en": "Rain of Arrows", "hash": "715ef5fef34832a7", "src": "db2@1.60.1.70124"}
-{"id": 1272606, "field": "name", "en": "Rain of Arrows", "hash": "715ef5fef34832a7", "src": "db2@1.60.1.70124"}
-{"id": 1272606, "field": "description", "en": "Causes arrows to rain from the sky at the location of a random target, inflicting $S1% damage every $T1 sec.", "hash": "192f7b47bbb8761f", "src": "db2@1.60.1.70124"}
-{"id": 1272606, "field": "aura", "en": "Inflicts $S1 physical damage every $T1 sec.", "hash": "87b1528d60471a75", "src": "db2@1.60.1.70124"}
-{"id": 1272615, "field": "name", "en": "Clear Transmog Outfit", "hash": "c39c477b4c54f433", "src": "db2@1.60.1.70124"}
-{"id": 1272651, "field": "name", "en": "Black Lotus", "hash": "c1ba95ed41e5b74d", "src": "db2@1.60.1.70124"}
-{"id": 1272651, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272651, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272655, "field": "name", "en": "Plaguebloom", "hash": "8f2c5a3283b302a0", "src": "db2@1.60.1.70124"}
-{"id": 1272655, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272655, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272660, "field": "name", "en": "Arthas' Tears", "hash": "0108ce4750d9f0c0", "src": "db2@1.60.1.70124"}
-{"id": 1272660, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272660, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272665, "field": "name", "en": "Icecap", "hash": "9029cec1c8025a5f", "src": "db2@1.60.1.70124"}
-{"id": 1272665, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272665, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272737, "field": "name", "en": "Marefoil", "hash": "6074e4ca109504b4", "src": "db2@1.60.1.70124"}
-{"id": 1272737, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272737, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272739, "field": "name", "en": "Demonsage", "hash": "fa74338fd39448f0", "src": "db2@1.60.1.70124"}
-{"id": 1272739, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272739, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70124"}
-{"id": 1272758, "field": "name", "en": "Ricochet", "hash": "4da1f9f0326c998a", "src": "db2@1.60.1.70124"}
-{"id": 1272758, "field": "description", "en": "Strikes an enemy with an arrow that bounces to another nearby enemy. The spell affects up to $x1 targets, causing $s1 physical damage to each.", "hash": "3353c4126718da63", "src": "db2@1.60.1.70124"}
-{"id": 1272767, "field": "name", "en": "Ricochet", "hash": "4da1f9f0326c998a", "src": "db2@1.60.1.70124"}
-{"id": 1272771, "field": "name", "en": "Charged Shot", "hash": "fa79d7ccb30c137f", "src": "db2@1.60.1.70124"}
-{"id": 1272771, "field": "description", "en": "Deals $S1 physical damage to the current enemy target.", "hash": "58bb82840eb8fa6e", "src": "db2@1.60.1.70124"}
-{"id": 1272794, "field": "name", "en": "Elune's Grace", "hash": "2e4562779402b0df", "src": "db2@1.60.1.70124"}
-{"id": 1272794, "field": "description", "en": "Elune blesses Sylvestris, reducing all incoming damage by $S1%.", "hash": "2af8c8dcd3be7d7e", "src": "db2@1.60.1.70124"}
-{"id": 1272794, "field": "aura", "en": "Damage reduced by $S1%.", "hash": "2391512336f1d82f", "src": "db2@1.60.1.70124"}
-{"id": 1272804, "field": "name", "en": "Elune's Grace", "hash": "2e4562779402b0df", "src": "db2@1.60.1.70124"}
-{"id": 1272804, "field": "description", "en": "Elune blesses Stormwraith, reducing all incoming damage by $S1%.\r\n", "hash": "c29e5f1d5bf3c4a1", "src": "db2@1.60.1.70124"}
-{"id": 1272804, "field": "aura", "en": "Damage taken reduced by $S1%.", "hash": "a0a74eb04ddbe94e", "src": "db2@1.60.1.70124"}
-{"id": 1272829, "field": "name", "en": "Ride Hippogryph", "hash": "419036c7b00df602", "src": "db2@1.60.1.70124"}
-{"id": 1272941, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70124"}
-{"id": 1272941, "field": "description", "en": "Shoots at an enemy, inflicting Physical damage.", "hash": "75634826c9339361", "src": "db2@1.60.1.70124"}
-{"id": 1272959, "field": "name", "en": "Storm Leap", "hash": "f49fcabf6d1e635b", "src": "db2@1.60.1.70124"}
-{"id": 1272959, "field": "description", "en": "$@spelldesc1272962", "hash": "db7fd1e6221ab665", "src": "db2@1.60.1.70124"}
-{"id": 1272962, "field": "name", "en": "Storm Leap", "hash": "f49fcabf6d1e635b", "src": "db2@1.60.1.70124"}
-{"id": 1272962, "field": "description", "en": " Leaps to a target, dealing $s1 nature damage and slowing the target and all units within $a1 yards by $S2% for $d.", "hash": "dd3a6d219cf2b38b", "src": "db2@1.60.1.70124"}
-{"id": 1272962, "field": "aura", "en": "Slowed by $S2% for $d.", "hash": "5aad331a442673db", "src": "db2@1.60.1.70124"}
-{"id": 1272973, "field": "name", "en": "Ruination", "hash": "72622da49be010c4", "src": "db2@1.60.1.70124"}
-{"id": 1272973, "field": "description", "en": "Applies a powerful curse to the target, dealing $s1 shadow damage after $d.", "hash": "7a3aa2ed01301a15", "src": "db2@1.60.1.70124"}
-{"id": 1272973, "field": "aura", "en": "Deals $s1 shadow damage after $d.", "hash": "b89ed6871aa24507", "src": "db2@1.60.1.70124"}
-{"id": 1272982, "field": "name", "en": "Rupture", "hash": "925da3d1185e038e", "src": "db2@1.60.1.70124"}
-{"id": 1272982, "field": "description", "en": "Ruptures the target, causing them to bleed for $s1% damage every $T2 sec for $d.", "hash": "3a5d14a410ed5f09", "src": "db2@1.60.1.70124"}
-{"id": 1272982, "field": "aura", "en": "Suffering $S2 damage every $T2 sec.", "hash": "106fe86e24420b92", "src": "db2@1.60.1.70124"}
+{"id": 1272014, "field": "name", "en": "Halaan's Gift", "hash": "9f31373824d2feb7", "src": "db2@1.60.1.70170"}
+{"id": 1272014, "field": "description", "en": "Changes your viewpoint to the targeted location. Lasts $d. Only useable outdoors.", "hash": "e1fb26949e73dedc", "src": "db2@1.60.1.70170"}
+{"id": 1272014, "field": "aura", "en": "Cannot move while using Halaan's Gift.", "hash": "2eee86f02a69c873", "src": "db2@1.60.1.70170"}
+{"id": 1272073, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70170"}
+{"id": 1272073, "field": "description", "en": "How to pull ore and stone from mineral veins for use in Engineering and Blacksmithing. Requires a Mining Pick.", "hash": "15b4b224bd226776", "src": "db2@1.60.1.70170"}
+{"id": 1272112, "field": "name", "en": "Red Eyes", "hash": "079f9293148c7f8c", "src": "db2@1.60.1.70170"}
+{"id": 1272212, "field": "name", "en": "Tin Lode", "hash": "9d65d7f63b3e6b7f", "src": "db2@1.60.1.70170"}
+{"id": 1272212, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272212, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272213, "field": "name", "en": "Silver Lode", "hash": "970e48828222ab37", "src": "db2@1.60.1.70170"}
+{"id": 1272213, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272213, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272214, "field": "name", "en": "Iron Lode", "hash": "b622c7a371f88cde", "src": "db2@1.60.1.70170"}
+{"id": 1272214, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272214, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272215, "field": "name", "en": "Gold Lode", "hash": "205f60c80f8bd4b3", "src": "db2@1.60.1.70170"}
+{"id": 1272215, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272215, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272216, "field": "name", "en": "Mithril Lode", "hash": "1d6c02162d1019eb", "src": "db2@1.60.1.70170"}
+{"id": 1272216, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272216, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272217, "field": "name", "en": "Truesilver Lode", "hash": "ffe5429b37b0e8e4", "src": "db2@1.60.1.70170"}
+{"id": 1272217, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272217, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272218, "field": "name", "en": "Dark Iron Lode", "hash": "4f45448d5662f394", "src": "db2@1.60.1.70170"}
+{"id": 1272218, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272218, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272219, "field": "name", "en": "Thorium Lode", "hash": "a782af009807ac5a", "src": "db2@1.60.1.70170"}
+{"id": 1272219, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272219, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272220, "field": "name", "en": "Rich Thorium Lode", "hash": "500aefb9789797a1", "src": "db2@1.60.1.70170"}
+{"id": 1272220, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272220, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272221, "field": "name", "en": "Heavy Thorium Lode", "hash": "46d6cd424a792b3b", "src": "db2@1.60.1.70170"}
+{"id": 1272221, "field": "description", "en": "Mining.\r\n\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272221, "field": "aura", "en": "Mining.", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
+{"id": 1272222, "field": "name", "en": "Enormous Herb", "hash": "5e70c65129c2b4ed", "src": "db2@1.60.1.70170"}
+{"id": 1272222, "field": "description", "en": "Collecting herbs.\r\n", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272223, "field": "name", "en": "Collecting Herb", "hash": "2b84cebf271e841c", "src": "db2@1.60.1.70170"}
+{"id": 1272224, "field": "name", "en": "Peacebloom", "hash": "f9b9ea4b4203ac1d", "src": "db2@1.60.1.70170"}
+{"id": 1272224, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272224, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272274, "field": "name", "en": "Silverleaf", "hash": "d2b0c7f2e7c2bf39", "src": "db2@1.60.1.70170"}
+{"id": 1272274, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272274, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272275, "field": "name", "en": "Earthroot", "hash": "436624e49b45d12f", "src": "db2@1.60.1.70170"}
+{"id": 1272275, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272275, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272340, "field": "name", "en": "Mageroyal", "hash": "6acc1c5ca3938003", "src": "db2@1.60.1.70170"}
+{"id": 1272340, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272340, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272343, "field": "name", "en": "Briarthorn", "hash": "2e2c255e25a24f7e", "src": "db2@1.60.1.70170"}
+{"id": 1272343, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272343, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272356, "field": "name", "en": "Stranglekelp", "hash": "1abc6a82bf396b95", "src": "db2@1.60.1.70170"}
+{"id": 1272356, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272356, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272366, "field": "name", "en": "Everlasting Bond", "hash": "daaef3ae20b6182a", "src": "db2@1.60.1.70170"}
+{"id": 1272367, "field": "name", "en": "Bruiseweed", "hash": "634a60f7b6727a93", "src": "db2@1.60.1.70170"}
+{"id": 1272367, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272367, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272368, "field": "name", "en": "Wild Steelbloom", "hash": "2a85571a66e08af0", "src": "db2@1.60.1.70170"}
+{"id": 1272368, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272368, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272369, "field": "name", "en": "Grave Moss", "hash": "4281dca15a7a0acd", "src": "db2@1.60.1.70170"}
+{"id": 1272369, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272369, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272370, "field": "name", "en": "Kingsblood", "hash": "91cd25619aa95d46", "src": "db2@1.60.1.70170"}
+{"id": 1272370, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272370, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272371, "field": "name", "en": "Everlasting Bond", "hash": "daaef3ae20b6182a", "src": "db2@1.60.1.70170"}
+{"id": 1272371, "field": "aura", "en": "Sharing health with Stormwraith.", "hash": "a7dfa7bff8e71d9c", "src": "db2@1.60.1.70170"}
+{"id": 1272417, "field": "name", "en": "Liferoot", "hash": "c601138a164cdee8", "src": "db2@1.60.1.70170"}
+{"id": 1272417, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272417, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272418, "field": "name", "en": "Fadeleaf", "hash": "5be95dec8deaa1ac", "src": "db2@1.60.1.70170"}
+{"id": 1272418, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272418, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272419, "field": "name", "en": "Goldthorn", "hash": "e69fb79cabde178e", "src": "db2@1.60.1.70170"}
+{"id": 1272419, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272419, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272420, "field": "name", "en": "Khadgar's Whisker", "hash": "c3a1f2f833a4a734", "src": "db2@1.60.1.70170"}
+{"id": 1272420, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272420, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272436, "field": "name", "en": "Wintersbite", "hash": "e928decbcbafdfed", "src": "db2@1.60.1.70170"}
+{"id": 1272436, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272436, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272441, "field": "name", "en": "Symbol of Life", "hash": "8d5d5fc00b801ee1", "src": "db2@1.60.1.70170"}
+{"id": 1272446, "field": "name", "en": "Everlasting Bond", "hash": "daaef3ae20b6182a", "src": "db2@1.60.1.70170"}
+{"id": 1272446, "field": "aura", "en": "Sharing health with Sylvestris Dusksong.", "hash": "bb65c276bebe69e4", "src": "db2@1.60.1.70170"}
+{"id": 1272447, "field": "name", "en": "Everlasting Bond", "hash": "daaef3ae20b6182a", "src": "db2@1.60.1.70170"}
+{"id": 1272490, "field": "name", "en": "Firebloom", "hash": "f7279deade94f5c6", "src": "db2@1.60.1.70170"}
+{"id": 1272490, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272490, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272492, "field": "name", "en": "Purple Lotus", "hash": "fbdada36ee8e8b91", "src": "db2@1.60.1.70170"}
+{"id": 1272492, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272492, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272494, "field": "name", "en": "Sungrass", "hash": "81b629fa61ca20dd", "src": "db2@1.60.1.70170"}
+{"id": 1272494, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272494, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272495, "field": "name", "en": "Ghost Mushroom", "hash": "ae62be953841fcc6", "src": "db2@1.60.1.70170"}
+{"id": 1272495, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272495, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272496, "field": "name", "en": "Golden Sansam", "hash": "3deed392fcdda47d", "src": "db2@1.60.1.70170"}
+{"id": 1272496, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272496, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272529, "field": "name", "en": "Blindweed", "hash": "831500671fd9d666", "src": "db2@1.60.1.70170"}
+{"id": 1272529, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272529, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272530, "field": "name", "en": "Dreamfoil", "hash": "911e225ad20fb080", "src": "db2@1.60.1.70170"}
+{"id": 1272530, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272530, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272531, "field": "name", "en": "Mountain Silversage", "hash": "c8a659e5cc04fb2f", "src": "db2@1.60.1.70170"}
+{"id": 1272531, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272531, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272532, "field": "name", "en": "Gromsblood", "hash": "bc5b411ad17f5728", "src": "db2@1.60.1.70170"}
+{"id": 1272532, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272532, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272591, "field": "name", "en": "Rain of Arrows", "hash": "715ef5fef34832a7", "src": "db2@1.60.1.70170"}
+{"id": 1272591, "field": "description", "en": "$@spelldesc<1272606>", "hash": "f125c781f7018953", "src": "db2@1.60.1.70170"}
+{"id": 1272594, "field": "name", "en": "Rain of Arrows", "hash": "715ef5fef34832a7", "src": "db2@1.60.1.70170"}
+{"id": 1272606, "field": "name", "en": "Rain of Arrows", "hash": "715ef5fef34832a7", "src": "db2@1.60.1.70170"}
+{"id": 1272606, "field": "description", "en": "Causes arrows to rain from the sky at the location of a random target, inflicting $S1% Physical damage every $T1 sec.", "hash": "0e8e329e2d0686ea", "src": "db2@1.60.1.70170"}
+{"id": 1272606, "field": "aura", "en": "Inflicts $S1 Physical damage every $T1 sec.", "hash": "8f0277cd4bdba6ae", "src": "db2@1.60.1.70170"}
+{"id": 1272615, "field": "name", "en": "Clear Transmog Outfit", "hash": "c39c477b4c54f433", "src": "db2@1.60.1.70170"}
+{"id": 1272651, "field": "name", "en": "Black Lotus", "hash": "c1ba95ed41e5b74d", "src": "db2@1.60.1.70170"}
+{"id": 1272651, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272651, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272655, "field": "name", "en": "Plaguebloom", "hash": "8f2c5a3283b302a0", "src": "db2@1.60.1.70170"}
+{"id": 1272655, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272655, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272660, "field": "name", "en": "Arthas' Tears", "hash": "0108ce4750d9f0c0", "src": "db2@1.60.1.70170"}
+{"id": 1272660, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272660, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272665, "field": "name", "en": "Icecap", "hash": "9029cec1c8025a5f", "src": "db2@1.60.1.70170"}
+{"id": 1272665, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272665, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272737, "field": "name", "en": "Marefoil", "hash": "6074e4ca109504b4", "src": "db2@1.60.1.70170"}
+{"id": 1272737, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272737, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272739, "field": "name", "en": "Demonsage", "hash": "fa74338fd39448f0", "src": "db2@1.60.1.70170"}
+{"id": 1272739, "field": "description", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272739, "field": "aura", "en": "Collecting herbs.", "hash": "ba5129b20548846e", "src": "db2@1.60.1.70170"}
+{"id": 1272758, "field": "name", "en": "Ricochet", "hash": "4da1f9f0326c998a", "src": "db2@1.60.1.70170"}
+{"id": 1272758, "field": "description", "en": "Strikes an enemy with an arrow that bounces to another nearby enemy. The spell affects up to $x1 targets, causing $s1 Physical damage to each.", "hash": "089b6f1d12fdbb01", "src": "db2@1.60.1.70170"}
+{"id": 1272767, "field": "name", "en": "Ricochet", "hash": "4da1f9f0326c998a", "src": "db2@1.60.1.70170"}
+{"id": 1272771, "field": "name", "en": "Charged Shot", "hash": "fa79d7ccb30c137f", "src": "db2@1.60.1.70170"}
+{"id": 1272771, "field": "description", "en": "Deals $S1 Physical damage to the current enemy target.", "hash": "57251aab2fbbbc9a", "src": "db2@1.60.1.70170"}
+{"id": 1272794, "field": "name", "en": "Elune's Grace", "hash": "2e4562779402b0df", "src": "db2@1.60.1.70170"}
+{"id": 1272794, "field": "description", "en": "Elune blesses Sylvestris, reducing all incoming damage by $S1%.", "hash": "2af8c8dcd3be7d7e", "src": "db2@1.60.1.70170"}
+{"id": 1272794, "field": "aura", "en": "Damage reduced by $S1%.", "hash": "2391512336f1d82f", "src": "db2@1.60.1.70170"}
+{"id": 1272804, "field": "name", "en": "Elune's Grace", "hash": "2e4562779402b0df", "src": "db2@1.60.1.70170"}
+{"id": 1272804, "field": "description", "en": "Elune blesses Stormwraith, reducing all incoming damage by $S1%.\r\n", "hash": "c29e5f1d5bf3c4a1", "src": "db2@1.60.1.70170"}
+{"id": 1272804, "field": "aura", "en": "Damage taken reduced by $S1%.", "hash": "a0a74eb04ddbe94e", "src": "db2@1.60.1.70170"}
+{"id": 1272829, "field": "name", "en": "Ride Hippogryph", "hash": "419036c7b00df602", "src": "db2@1.60.1.70170"}
+{"id": 1272941, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70170"}
+{"id": 1272941, "field": "description", "en": "Shoots at an enemy, inflicting Physical damage.", "hash": "75634826c9339361", "src": "db2@1.60.1.70170"}
+{"id": 1272959, "field": "name", "en": "Storm Leap", "hash": "f49fcabf6d1e635b", "src": "db2@1.60.1.70170"}
+{"id": 1272959, "field": "description", "en": "$@spelldesc1272962", "hash": "db7fd1e6221ab665", "src": "db2@1.60.1.70170"}
+{"id": 1272962, "field": "name", "en": "Storm Leap", "hash": "f49fcabf6d1e635b", "src": "db2@1.60.1.70170"}
+{"id": 1272962, "field": "description", "en": "Leaps to a target, dealing $s1 nature damage and slowing the target and all units within $a1 yards by $S2% for $d.", "hash": "dd3a6d219cf2b38b", "src": "db2@1.60.1.70170"}
+{"id": 1272962, "field": "aura", "en": "Slowed by $S2% for $d.", "hash": "5aad331a442673db", "src": "db2@1.60.1.70170"}
+{"id": 1272973, "field": "name", "en": "Ruination", "hash": "72622da49be010c4", "src": "db2@1.60.1.70170"}
+{"id": 1272973, "field": "description", "en": "Applies a powerful curse to the target, dealing $s1 shadow damage after $d.", "hash": "7a3aa2ed01301a15", "src": "db2@1.60.1.70170"}
+{"id": 1272973, "field": "aura", "en": "Deals $s1 shadow damage after $d.", "hash": "b89ed6871aa24507", "src": "db2@1.60.1.70170"}
+{"id": 1272982, "field": "name", "en": "Rupture", "hash": "925da3d1185e038e", "src": "db2@1.60.1.70170"}
+{"id": 1272982, "field": "description", "en": "Ruptures the target, causing them to bleed for $s1% damage every $T2 sec for $d.", "hash": "3a5d14a410ed5f09", "src": "db2@1.60.1.70170"}
+{"id": 1272982, "field": "aura", "en": "Suffering $S2 damage every $T2 sec.", "hash": "106fe86e24420b92", "src": "db2@1.60.1.70170"}

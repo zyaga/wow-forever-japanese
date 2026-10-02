@@ -1,118 +1,118 @@
-{"id": 432029, "field": "name", "en": "Desolace Ritual Begin", "hash": "c651a57e995728e9", "src": "db2@1.60.1.70124"}
-{"id": 432039, "field": "name", "en": "Transform", "hash": "debc0793699d2c0d", "src": "db2@1.60.1.70124"}
-{"id": 432041, "field": "name", "en": "Tidal Waves", "hash": "ce91f3d92e52f474", "src": "db2@1.60.1.70124"}
-{"id": 432041, "field": "aura", "en": "Reduces the cast time of Healing Wave by $s1%, reduces the cast time of Chain Heal by $s3%, and increases the critical strike chance of Lesser Healing Wave by $s2%.", "hash": "8883524271700b20", "src": "db2@1.60.1.70124"}
-{"id": 432042, "field": "name", "en": "Tidal Waves", "hash": "ce91f3d92e52f474", "src": "db2@1.60.1.70124"}
-{"id": 432042, "field": "description", "en": "When you cast Chain Heal or Riptide you gain $s1 charges of Tidal Waves, which reduces the cast time of your Healing Wave by $432041s1%, reduces the cast time of your Chain Heal by $432041s3%, and increases the critical effect chance of your Lesser Healing Wave by $432041s2%.", "hash": "5bd738d9f99b362c", "src": "db2@1.60.1.70124"}
-{"id": 432056, "field": "name", "en": "Rolling Thunder", "hash": "7467de74c235daba", "src": "db2@1.60.1.70124"}
-{"id": 432056, "field": "description", "en": "Lightning Bolt and Chain Lightning have a $h% chance to add an additional charge to your active Lightning Shield, up to a maximum of $s1 Charges.\r\n\r\nEarth Shock now releases all Lightning Shield charges above $s2, dealing their damage to the target, and energizing you for $s3% of your maximum mana per charge released.", "hash": "48bbdb1b9202bea4", "src": "db2@1.60.1.70124"}
-{"id": 432062, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70124"}
-{"id": 432064, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70124"}
-{"id": 432069, "field": "name", "en": "Tangled Causality", "hash": "b7e780c2a1055cbb", "src": "db2@1.60.1.70124"}
-{"id": 432069, "field": "aura", "en": "Fire and Frost spell damage done reduced by $s1% and unable to cast Ice Block.", "hash": "025602eae50f0918", "src": "db2@1.60.1.70124"}
-{"id": 432085, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70124"}
-{"id": 432106, "field": "name", "en": "Ritual Sacrifice", "hash": "69cab09a5c4e5eb7", "src": "db2@1.60.1.70124"}
-{"id": 432109, "field": "name", "en": "Give Key", "hash": "1e07f1c209a3719f", "src": "db2@1.60.1.70124"}
-{"id": 432115, "field": "name", "en": "[DNT] Fight Illari", "hash": "b882a0bf1ed5e75e", "src": "db2@1.60.1.70124"}
-{"id": 432129, "field": "name", "en": "Rolling Thunder", "hash": "7467de74c235daba", "src": "db2@1.60.1.70124"}
-{"id": 432134, "field": "name", "en": "Static Shock", "hash": "ee1f7320a5bfc435", "src": "db2@1.60.1.70124"}
-{"id": 432134, "field": "description", "en": "Your Lightning Shield now has ${$m1+3} charges, and your melee attacks have a $h% chance (${$h/2}% chance while dual-wielding) to trigger one of those charges, immediately damaging your target.", "hash": "187c92ca3e9b5d71", "src": "db2@1.60.1.70124"}
-{"id": 432137, "field": "name", "en": "Automatic Crowd Pummeler", "hash": "f8e73ce5debbca01", "src": "db2@1.60.1.70124"}
-{"id": 432137, "field": "description", "en": "Permanently enchants a shoulder slot item to increase your attack speed by $s1%.", "hash": "9815bc9632183364", "src": "db2@1.60.1.70124"}
-{"id": 432139, "field": "name", "en": "Automatic Crowd Pummeler", "hash": "f8e73ce5debbca01", "src": "db2@1.60.1.70124"}
-{"id": 432139, "field": "description", "en": "Permanently enchants a shoulder slot item to increase your attack speed by $432137s1%.", "hash": "2fdeb6e917aac83f", "src": "db2@1.60.1.70124"}
-{"id": 432140, "field": "name", "en": "Overcharged", "hash": "99013bf9cd25d749", "src": "db2@1.60.1.70124"}
-{"id": 432140, "field": "description", "en": "Your Lightning Shield never loses charges, now has a $m2 sec cooldown, and deals damage to all enemies within $432143a1 yards.", "hash": "dc5c83d820825e1a", "src": "db2@1.60.1.70124"}
-{"id": 432143, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 432143, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 432144, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 432144, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 432145, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 432145, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 432146, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 432146, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 432147, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 432147, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 432148, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 432148, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 432149, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70124"}
-{"id": 432149, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70124"}
-{"id": 432155, "field": "name", "en": "Desolace Ritual", "hash": "e0b748ef9de4aa5c", "src": "db2@1.60.1.70124"}
-{"id": 432190, "field": "name", "en": "Wolfshead Trophy", "hash": "9bed83f619a8149c", "src": "db2@1.60.1.70124"}
-{"id": 432190, "field": "description", "en": "Permanently enchant a helm slot item, causing you to gain 20 energy or 5 rage when shapeshifting into Cat or Bear form.", "hash": "8b0dbf5fe8b71126", "src": "db2@1.60.1.70124"}
-{"id": 432216, "field": "name", "en": "Desolace Ritual", "hash": "e0b748ef9de4aa5c", "src": "db2@1.60.1.70124"}
-{"id": 432222, "field": "name", "en": "Tremble in Fear", "hash": "86fff80278cfe415", "src": "db2@1.60.1.70124"}
-{"id": 432222, "field": "aura", "en": "Feared.", "hash": "5a2205f292a109c9", "src": "db2@1.60.1.70124"}
-{"id": 432233, "field": "name", "en": "Tidal Waves", "hash": "ce91f3d92e52f474", "src": "db2@1.60.1.70124"}
-{"id": 432233, "field": "description", "en": "Gain the Tidal Waves ability:\r\n\r\n$@spellicon432042\r\n$@spelldesc432042", "hash": "e6de46aacaebd0fe", "src": "db2@1.60.1.70124"}
-{"id": 432234, "field": "name", "en": "Engrave Helm - Tidal Waves", "hash": "2f661dfffc7ccb64", "src": "db2@1.60.1.70124"}
-{"id": 432234, "field": "description", "en": "Engrave your helm with the Tidal Waves rune:\r\n\r\n$@spellicon432042\r\n$@spelldesc432042", "hash": "8a2b3c8fe9773c4e", "src": "db2@1.60.1.70124"}
-{"id": 432235, "field": "name", "en": "Rolling Thunder", "hash": "7467de74c235daba", "src": "db2@1.60.1.70124"}
-{"id": 432235, "field": "description", "en": "Gain the Rolling Thunder ability:\r\n\r\n$@spellicon432056\r\n$@spelldesc432056", "hash": "256c6f0192d0f98f", "src": "db2@1.60.1.70124"}
-{"id": 432236, "field": "name", "en": "Engrave Bracers - Rolling Thunder", "hash": "af449def6f696a7a", "src": "db2@1.60.1.70124"}
-{"id": 432236, "field": "description", "en": "Engrave your bracers with the Rolling Thunder rune:\r\n\r\n$@spellicon432056\r\n$@spelldesc432056", "hash": "e55dbaeb3ce5b6b5", "src": "db2@1.60.1.70124"}
-{"id": 432237, "field": "name", "en": "Static Shock", "hash": "ee1f7320a5bfc435", "src": "db2@1.60.1.70124"}
-{"id": 432237, "field": "description", "en": "Gain the Static Shock ability:\r\n\r\n$@spellicon432134\r\n$@spelldesc432134", "hash": "4e86219a3e4dff8d", "src": "db2@1.60.1.70124"}
-{"id": 432238, "field": "name", "en": "Engrave Bracers - Static Shock", "hash": "ba175dc87fc697a8", "src": "db2@1.60.1.70124"}
-{"id": 432238, "field": "description", "en": "Engrave your bracers with the Static Shock rune:\r\n\r\n$@spellicon432134\r\n$@spelldesc432134", "hash": "307f3a02c663f6e6", "src": "db2@1.60.1.70124"}
-{"id": 432240, "field": "name", "en": "Overcharged", "hash": "99013bf9cd25d749", "src": "db2@1.60.1.70124"}
-{"id": 432240, "field": "description", "en": "Gain the Overcharged ability:\r\n\r\n$@spellicon432140\r\n$@spelldesc432140", "hash": "fda66310565d1e13", "src": "db2@1.60.1.70124"}
-{"id": 432241, "field": "name", "en": "Engrave Bracers - Overcharged", "hash": "022264dc741e6852", "src": "db2@1.60.1.70124"}
-{"id": 432241, "field": "description", "en": "Engrave your bracers with the Overcharged rune:\r\n\r\n$@spellicon432140\r\n$@spelldesc432140", "hash": "a17d3e6e0f0b1767", "src": "db2@1.60.1.70124"}
-{"id": 432255, "field": "name", "en": "Focused Attacks", "hash": "896d1983cf580942", "src": "db2@1.60.1.70124"}
-{"id": 432256, "field": "name", "en": "Focused Attacks", "hash": "896d1983cf580942", "src": "db2@1.60.1.70124"}
-{"id": 432256, "field": "description", "en": "You gain $432255s1 Energy every time you deal a melee or ranged critical strike.", "hash": "a8dca855e04a7477", "src": "db2@1.60.1.70124"}
-{"id": 432259, "field": "name", "en": "Combat Potency", "hash": "5b4d9c084f26f018", "src": "db2@1.60.1.70124"}
-{"id": 432259, "field": "description", "en": "You have a $m1% chance to gain $432260s1 Energy every time you deal melee damage with your off-hand weapon.", "hash": "fbdf1f4747b1975a", "src": "db2@1.60.1.70124"}
-{"id": 432260, "field": "name", "en": "Combat Potency", "hash": "5b4d9c084f26f018", "src": "db2@1.60.1.70124"}
-{"id": 432264, "field": "name", "en": "Honor Among Thieves", "hash": "22d1e459fb16e061", "src": "db2@1.60.1.70124"}
-{"id": 432264, "field": "description", "en": "When any player in your party critically hits with a spell or ability, you gain a combo point on your current target.  This effect cannot occur more than once every second.", "hash": "5321d81b35e8f926", "src": "db2@1.60.1.70124"}
-{"id": 432266, "field": "name", "en": "Honor Among Thieves", "hash": "22d1e459fb16e061", "src": "db2@1.60.1.70124"}
-{"id": 432268, "field": "name", "en": "Honor Among Thieves", "hash": "22d1e459fb16e061", "src": "db2@1.60.1.70124"}
-{"id": 432271, "field": "name", "en": "Cut to the Chase", "hash": "76949183af06140f", "src": "db2@1.60.1.70124"}
-{"id": 432271, "field": "description", "en": "Your Eviscerate and Envenom abilities refresh either your Slice and Dice or your Blade Dance duration to its 5 combo point maximum. If both are active, only the one with shortest remaining duration will be refreshed.", "hash": "fcd617bbd0661e3f", "src": "db2@1.60.1.70124"}
-{"id": 432273, "field": "name", "en": "Unfair Advantage", "hash": "2b844d4696186c6d", "src": "db2@1.60.1.70124"}
-{"id": 432273, "field": "description", "en": "Whenever you dodge or parry an attack you gain an Unfair Advantage, striking back for $432274s2% of your main hand weapon's damage and gaining $432274s3 combo $lpoint:points;. This cannot occur more than once per second.", "hash": "fcd179422a8dbea0", "src": "db2@1.60.1.70124"}
-{"id": 432274, "field": "name", "en": "Unfair Advantage", "hash": "2b844d4696186c6d", "src": "db2@1.60.1.70124"}
-{"id": 432275, "field": "name", "en": "Carnage", "hash": "77d7998bd3c899be", "src": "db2@1.60.1.70124"}
-{"id": 432275, "field": "aura", "en": "Taking $s1% increased damage from the abilities of a Rogue with an active Bleed effect.", "hash": "ec22056b07a13836", "src": "db2@1.60.1.70124"}
-{"id": 432276, "field": "name", "en": "Carnage", "hash": "77d7998bd3c899be", "src": "db2@1.60.1.70124"}
-{"id": 432276, "field": "description", "en": "Your abilities deal $432275s1% increased damage to targets afflicted by one of your Bleed effects. Your Rupture also heals you for $s2% of the damage it deals.", "hash": "4bf0c3296e5e16ae", "src": "db2@1.60.1.70124"}
-{"id": 432288, "field": "name", "en": "Rowboat", "hash": "25b8ca8d3e6aa670", "src": "db2@1.60.1.70124"}
-{"id": 432289, "field": "name", "en": "Rowboat", "hash": "25b8ca8d3e6aa670", "src": "db2@1.60.1.70124"}
-{"id": 432290, "field": "name", "en": "Focused Attacks", "hash": "896d1983cf580942", "src": "db2@1.60.1.70124"}
-{"id": 432290, "field": "description", "en": "Gain the Focused Attacks ability:\r\n\r\n$@spellicon432256\r\n$@spelldesc432256", "hash": "c9dac5a71eab4e5b", "src": "db2@1.60.1.70124"}
-{"id": 432291, "field": "name", "en": "Engrave Helm - Focused Attacks", "hash": "88e1570571834e9d", "src": "db2@1.60.1.70124"}
-{"id": 432291, "field": "description", "en": "Engrave your helm with the Focused Attacks rune:\r\n\r\n$@spellicon432256\r\n$@spelldesc432256", "hash": "8516edd3c2f5ffc6", "src": "db2@1.60.1.70124"}
-{"id": 432292, "field": "name", "en": "Combat Potency", "hash": "5b4d9c084f26f018", "src": "db2@1.60.1.70124"}
-{"id": 432292, "field": "description", "en": "Gain the Combat Potency ability:\r\n\r\n$@spellicon432259\r\n$@spelldesc432259", "hash": "340ff0356fb4e422", "src": "db2@1.60.1.70124"}
-{"id": 432293, "field": "name", "en": "Engrave Helm - Combat Potency", "hash": "6511eaab9c56c7c6", "src": "db2@1.60.1.70124"}
-{"id": 432293, "field": "description", "en": "Engrave your helm with the Combat Potency rune:\r\n\r\n$@spellicon432259\r\n$@spelldesc432259", "hash": "495bf4a62c4b73af", "src": "db2@1.60.1.70124"}
-{"id": 432294, "field": "name", "en": "Honor Among Thieves", "hash": "22d1e459fb16e061", "src": "db2@1.60.1.70124"}
-{"id": 432294, "field": "description", "en": "Gain the Honor Among Thieves ability:\r\n\r\n$@spellicon432264\r\n$@spelldesc432264", "hash": "f656a65d54452679", "src": "db2@1.60.1.70124"}
-{"id": 432295, "field": "name", "en": "Engrave Helm - Honor Among Thieves", "hash": "1cbddc137a9c7fa9", "src": "db2@1.60.1.70124"}
-{"id": 432295, "field": "description", "en": "Engrave your helm with the Honor Among Thieves rune:\r\n\r\n$@spellicon432264\r\n$@spelldesc432264", "hash": "2bd127e77fd40e36", "src": "db2@1.60.1.70124"}
-{"id": 432296, "field": "name", "en": "Cut to the Chase", "hash": "76949183af06140f", "src": "db2@1.60.1.70124"}
-{"id": 432296, "field": "description", "en": "Gain the Cut to the Chase ability:\r\n\r\n$@spellicon432271\r\n$@spelldesc432271", "hash": "af7f6c9b6241df7f", "src": "db2@1.60.1.70124"}
-{"id": 432297, "field": "name", "en": "Engrave Bracers - Cut to the Chase", "hash": "958a8e0a27befc90", "src": "db2@1.60.1.70124"}
-{"id": 432297, "field": "description", "en": "Engrave your bracers with the Cut to the Chase rune:\r\n\r\n$@spellicon432271\r\n$@spelldesc432271", "hash": "7d169149f1a7e093", "src": "db2@1.60.1.70124"}
-{"id": 432298, "field": "name", "en": "Carnage", "hash": "77d7998bd3c899be", "src": "db2@1.60.1.70124"}
-{"id": 432298, "field": "description", "en": "Gain the Carnage ability:\r\n\r\n$@spellicon432276\r\n$@spelldesc432276", "hash": "76750ebe9340945a", "src": "db2@1.60.1.70124"}
-{"id": 432299, "field": "name", "en": "Engrave Bracers - Carnage", "hash": "91dd2040ef37d294", "src": "db2@1.60.1.70124"}
-{"id": 432299, "field": "description", "en": "Engrave your bracers with the Carnage rune:\r\n\r\n$@spellicon432276\r\n$@spelldesc432276", "hash": "f0efc1320a8d13f7", "src": "db2@1.60.1.70124"}
-{"id": 432300, "field": "name", "en": "Unfair Advantage", "hash": "2b844d4696186c6d", "src": "db2@1.60.1.70124"}
-{"id": 432300, "field": "description", "en": "Gain the Unfair Advantage ability:\r\n\r\n$@spellicon432273\r\n$@spelldesc432273", "hash": "722714cc3ff0a452", "src": "db2@1.60.1.70124"}
-{"id": 432301, "field": "name", "en": "Engrave Bracers - Unfair Advantage", "hash": "4a7a49cd0ed154ee", "src": "db2@1.60.1.70124"}
-{"id": 432301, "field": "description", "en": "Engrave your bracers with the Unfair Advantage rune:\r\n\r\n$@spellicon432273\r\n$@spelldesc432273", "hash": "f11d0a7e3add1f00", "src": "db2@1.60.1.70124"}
-{"id": 432308, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70124"}
-{"id": 432308, "field": "aura", "en": "Physical damage inflicted every $t1 sec.", "hash": "c8fd5ef350c4cc8c", "src": "db2@1.60.1.70124"}
-{"id": 432330, "field": "name", "en": "Channel", "hash": "2e0ff5fb7494fa4e", "src": "db2@1.60.1.70124"}
-{"id": 432407, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70124"}
-{"id": 432417, "field": "name", "en": "Remove Self-Found Soul", "hash": "87c90f72338812a5", "src": "db2@1.60.1.70124"}
-{"id": 432422, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70124"}
-{"id": 432423, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70124"}
-{"id": 432439, "field": "name", "en": "Channel", "hash": "2e0ff5fb7494fa4e", "src": "db2@1.60.1.70124"}
-{"id": 432467, "field": "name", "en": "Transform", "hash": "debc0793699d2c0d", "src": "db2@1.60.1.70124"}
-{"id": 432639, "field": "name", "en": "Increased Hit Chance 01", "hash": "ad3254a227bed138", "src": "db2@1.60.1.70124"}
-{"id": 432639, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70124"}
-{"id": 432773, "field": "name", "en": "[DNT] Decayed Ancient Sapling", "hash": "680616d3970dc3c6", "src": "db2@1.60.1.70124"}
+{"id": 432029, "field": "name", "en": "Desolace Ritual Begin", "hash": "c651a57e995728e9", "src": "db2@1.60.1.70170"}
+{"id": 432039, "field": "name", "en": "Transform", "hash": "debc0793699d2c0d", "src": "db2@1.60.1.70170"}
+{"id": 432041, "field": "name", "en": "Tidal Waves", "hash": "ce91f3d92e52f474", "src": "db2@1.60.1.70170"}
+{"id": 432041, "field": "aura", "en": "Reduces the cast time of Healing Wave by $s1%, reduces the cast time of Chain Heal by $s3%, and increases the critical strike chance of Lesser Healing Wave by $s2%.", "hash": "8883524271700b20", "src": "db2@1.60.1.70170"}
+{"id": 432042, "field": "name", "en": "Tidal Waves", "hash": "ce91f3d92e52f474", "src": "db2@1.60.1.70170"}
+{"id": 432042, "field": "description", "en": "When you cast Chain Heal or Riptide you gain $s1 charges of Tidal Waves, which reduces the cast time of your Healing Wave by $432041s1%, reduces the cast time of your Chain Heal by $432041s3%, and increases the critical effect chance of your Lesser Healing Wave by $432041s2%.", "hash": "5bd738d9f99b362c", "src": "db2@1.60.1.70170"}
+{"id": 432056, "field": "name", "en": "Rolling Thunder", "hash": "7467de74c235daba", "src": "db2@1.60.1.70170"}
+{"id": 432056, "field": "description", "en": "Lightning Bolt and Chain Lightning have a $h% chance to add an additional charge to your active Lightning Shield, up to a maximum of $s1 Charges.\r\n\r\nEarth Shock now releases all Lightning Shield charges above $s2, dealing their damage to the target, and energizing you for $s3% of your maximum mana per charge released.", "hash": "48bbdb1b9202bea4", "src": "db2@1.60.1.70170"}
+{"id": 432062, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70170"}
+{"id": 432064, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70170"}
+{"id": 432069, "field": "name", "en": "Tangled Causality", "hash": "b7e780c2a1055cbb", "src": "db2@1.60.1.70170"}
+{"id": 432069, "field": "aura", "en": "Fire and Frost spell damage done reduced by $s1% and unable to cast Ice Block.", "hash": "025602eae50f0918", "src": "db2@1.60.1.70170"}
+{"id": 432085, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70170"}
+{"id": 432106, "field": "name", "en": "Ritual Sacrifice", "hash": "69cab09a5c4e5eb7", "src": "db2@1.60.1.70170"}
+{"id": 432109, "field": "name", "en": "Give Key", "hash": "1e07f1c209a3719f", "src": "db2@1.60.1.70170"}
+{"id": 432115, "field": "name", "en": "[DNT] Fight Illari", "hash": "b882a0bf1ed5e75e", "src": "db2@1.60.1.70170"}
+{"id": 432129, "field": "name", "en": "Rolling Thunder", "hash": "7467de74c235daba", "src": "db2@1.60.1.70170"}
+{"id": 432134, "field": "name", "en": "Static Shock", "hash": "ee1f7320a5bfc435", "src": "db2@1.60.1.70170"}
+{"id": 432134, "field": "description", "en": "Your Lightning Shield now has ${$m1+3} charges, and your melee attacks have a $h% chance (${$h/2}% chance while dual-wielding) to trigger one of those charges, immediately damaging your target.", "hash": "187c92ca3e9b5d71", "src": "db2@1.60.1.70170"}
+{"id": 432137, "field": "name", "en": "Automatic Crowd Pummeler", "hash": "f8e73ce5debbca01", "src": "db2@1.60.1.70170"}
+{"id": 432137, "field": "description", "en": "Permanently enchants a shoulder slot item to increase your attack speed by $s1%.", "hash": "9815bc9632183364", "src": "db2@1.60.1.70170"}
+{"id": 432139, "field": "name", "en": "Automatic Crowd Pummeler", "hash": "f8e73ce5debbca01", "src": "db2@1.60.1.70170"}
+{"id": 432139, "field": "description", "en": "Permanently enchants a shoulder slot item to increase your attack speed by $432137s1%.", "hash": "2fdeb6e917aac83f", "src": "db2@1.60.1.70170"}
+{"id": 432140, "field": "name", "en": "Overcharged", "hash": "99013bf9cd25d749", "src": "db2@1.60.1.70170"}
+{"id": 432140, "field": "description", "en": "Your Lightning Shield never loses charges, now has a $m2 sec cooldown, and deals damage to all enemies within $432143a1 yards.", "hash": "dc5c83d820825e1a", "src": "db2@1.60.1.70170"}
+{"id": 432143, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 432143, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 432144, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 432144, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 432145, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 432145, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 432146, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 432146, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 432147, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 432147, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 432148, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 432148, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 432149, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
+{"id": 432149, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70170"}
+{"id": 432155, "field": "name", "en": "Desolace Ritual", "hash": "e0b748ef9de4aa5c", "src": "db2@1.60.1.70170"}
+{"id": 432190, "field": "name", "en": "Wolfshead Trophy", "hash": "9bed83f619a8149c", "src": "db2@1.60.1.70170"}
+{"id": 432190, "field": "description", "en": "Permanently enchant a helm slot item, causing you to gain 20 energy or 5 rage when shapeshifting into Cat or Bear form.", "hash": "8b0dbf5fe8b71126", "src": "db2@1.60.1.70170"}
+{"id": 432216, "field": "name", "en": "Desolace Ritual", "hash": "e0b748ef9de4aa5c", "src": "db2@1.60.1.70170"}
+{"id": 432222, "field": "name", "en": "Tremble in Fear", "hash": "86fff80278cfe415", "src": "db2@1.60.1.70170"}
+{"id": 432222, "field": "aura", "en": "Feared.", "hash": "5a2205f292a109c9", "src": "db2@1.60.1.70170"}
+{"id": 432233, "field": "name", "en": "Tidal Waves", "hash": "ce91f3d92e52f474", "src": "db2@1.60.1.70170"}
+{"id": 432233, "field": "description", "en": "Gain the Tidal Waves ability:\r\n\r\n$@spellicon432042\r\n$@spelldesc432042", "hash": "e6de46aacaebd0fe", "src": "db2@1.60.1.70170"}
+{"id": 432234, "field": "name", "en": "Engrave Helm - Tidal Waves", "hash": "2f661dfffc7ccb64", "src": "db2@1.60.1.70170"}
+{"id": 432234, "field": "description", "en": "Engrave your helm with the Tidal Waves rune:\r\n\r\n$@spellicon432042\r\n$@spelldesc432042", "hash": "8a2b3c8fe9773c4e", "src": "db2@1.60.1.70170"}
+{"id": 432235, "field": "name", "en": "Rolling Thunder", "hash": "7467de74c235daba", "src": "db2@1.60.1.70170"}
+{"id": 432235, "field": "description", "en": "Gain the Rolling Thunder ability:\r\n\r\n$@spellicon432056\r\n$@spelldesc432056", "hash": "256c6f0192d0f98f", "src": "db2@1.60.1.70170"}
+{"id": 432236, "field": "name", "en": "Engrave Bracers - Rolling Thunder", "hash": "af449def6f696a7a", "src": "db2@1.60.1.70170"}
+{"id": 432236, "field": "description", "en": "Engrave your bracers with the Rolling Thunder rune:\r\n\r\n$@spellicon432056\r\n$@spelldesc432056", "hash": "e55dbaeb3ce5b6b5", "src": "db2@1.60.1.70170"}
+{"id": 432237, "field": "name", "en": "Static Shock", "hash": "ee1f7320a5bfc435", "src": "db2@1.60.1.70170"}
+{"id": 432237, "field": "description", "en": "Gain the Static Shock ability:\r\n\r\n$@spellicon432134\r\n$@spelldesc432134", "hash": "4e86219a3e4dff8d", "src": "db2@1.60.1.70170"}
+{"id": 432238, "field": "name", "en": "Engrave Bracers - Static Shock", "hash": "ba175dc87fc697a8", "src": "db2@1.60.1.70170"}
+{"id": 432238, "field": "description", "en": "Engrave your bracers with the Static Shock rune:\r\n\r\n$@spellicon432134\r\n$@spelldesc432134", "hash": "307f3a02c663f6e6", "src": "db2@1.60.1.70170"}
+{"id": 432240, "field": "name", "en": "Overcharged", "hash": "99013bf9cd25d749", "src": "db2@1.60.1.70170"}
+{"id": 432240, "field": "description", "en": "Gain the Overcharged ability:\r\n\r\n$@spellicon432140\r\n$@spelldesc432140", "hash": "fda66310565d1e13", "src": "db2@1.60.1.70170"}
+{"id": 432241, "field": "name", "en": "Engrave Bracers - Overcharged", "hash": "022264dc741e6852", "src": "db2@1.60.1.70170"}
+{"id": 432241, "field": "description", "en": "Engrave your bracers with the Overcharged rune:\r\n\r\n$@spellicon432140\r\n$@spelldesc432140", "hash": "a17d3e6e0f0b1767", "src": "db2@1.60.1.70170"}
+{"id": 432255, "field": "name", "en": "Focused Attacks", "hash": "896d1983cf580942", "src": "db2@1.60.1.70170"}
+{"id": 432256, "field": "name", "en": "Focused Attacks", "hash": "896d1983cf580942", "src": "db2@1.60.1.70170"}
+{"id": 432256, "field": "description", "en": "You gain $432255s1 Energy every time you deal a melee or ranged critical strike.", "hash": "a8dca855e04a7477", "src": "db2@1.60.1.70170"}
+{"id": 432259, "field": "name", "en": "Combat Potency", "hash": "5b4d9c084f26f018", "src": "db2@1.60.1.70170"}
+{"id": 432259, "field": "description", "en": "You have a $m1% chance to gain $432260s1 Energy every time you deal melee damage with your off-hand weapon.", "hash": "fbdf1f4747b1975a", "src": "db2@1.60.1.70170"}
+{"id": 432260, "field": "name", "en": "Combat Potency", "hash": "5b4d9c084f26f018", "src": "db2@1.60.1.70170"}
+{"id": 432264, "field": "name", "en": "Honor Among Thieves", "hash": "22d1e459fb16e061", "src": "db2@1.60.1.70170"}
+{"id": 432264, "field": "description", "en": "When any player in your party critically hits with a spell or ability, you gain a combo point on your current target.  This effect cannot occur more than once every second.", "hash": "5321d81b35e8f926", "src": "db2@1.60.1.70170"}
+{"id": 432266, "field": "name", "en": "Honor Among Thieves", "hash": "22d1e459fb16e061", "src": "db2@1.60.1.70170"}
+{"id": 432268, "field": "name", "en": "Honor Among Thieves", "hash": "22d1e459fb16e061", "src": "db2@1.60.1.70170"}
+{"id": 432271, "field": "name", "en": "Cut to the Chase", "hash": "76949183af06140f", "src": "db2@1.60.1.70170"}
+{"id": 432271, "field": "description", "en": "Your Eviscerate and Envenom abilities refresh either your Slice and Dice or your Blade Dance duration to its 5 combo point maximum. If both are active, only the one with shortest remaining duration will be refreshed.", "hash": "fcd617bbd0661e3f", "src": "db2@1.60.1.70170"}
+{"id": 432273, "field": "name", "en": "Unfair Advantage", "hash": "2b844d4696186c6d", "src": "db2@1.60.1.70170"}
+{"id": 432273, "field": "description", "en": "Whenever you dodge or parry an attack you gain an Unfair Advantage, striking back for $432274s2% of your main hand weapon's damage and gaining $432274s3 combo $lpoint:points;. This cannot occur more than once per second.", "hash": "fcd179422a8dbea0", "src": "db2@1.60.1.70170"}
+{"id": 432274, "field": "name", "en": "Unfair Advantage", "hash": "2b844d4696186c6d", "src": "db2@1.60.1.70170"}
+{"id": 432275, "field": "name", "en": "Carnage", "hash": "77d7998bd3c899be", "src": "db2@1.60.1.70170"}
+{"id": 432275, "field": "aura", "en": "Taking $s1% increased damage from the abilities of a Rogue with an active Bleed effect.", "hash": "ec22056b07a13836", "src": "db2@1.60.1.70170"}
+{"id": 432276, "field": "name", "en": "Carnage", "hash": "77d7998bd3c899be", "src": "db2@1.60.1.70170"}
+{"id": 432276, "field": "description", "en": "Your abilities deal $432275s1% increased damage to targets afflicted by one of your Bleed effects. Your Rupture also heals you for $s2% of the damage it deals.", "hash": "4bf0c3296e5e16ae", "src": "db2@1.60.1.70170"}
+{"id": 432288, "field": "name", "en": "Rowboat", "hash": "25b8ca8d3e6aa670", "src": "db2@1.60.1.70170"}
+{"id": 432289, "field": "name", "en": "Rowboat", "hash": "25b8ca8d3e6aa670", "src": "db2@1.60.1.70170"}
+{"id": 432290, "field": "name", "en": "Focused Attacks", "hash": "896d1983cf580942", "src": "db2@1.60.1.70170"}
+{"id": 432290, "field": "description", "en": "Gain the Focused Attacks ability:\r\n\r\n$@spellicon432256\r\n$@spelldesc432256", "hash": "c9dac5a71eab4e5b", "src": "db2@1.60.1.70170"}
+{"id": 432291, "field": "name", "en": "Engrave Helm - Focused Attacks", "hash": "88e1570571834e9d", "src": "db2@1.60.1.70170"}
+{"id": 432291, "field": "description", "en": "Engrave your helm with the Focused Attacks rune:\r\n\r\n$@spellicon432256\r\n$@spelldesc432256", "hash": "8516edd3c2f5ffc6", "src": "db2@1.60.1.70170"}
+{"id": 432292, "field": "name", "en": "Combat Potency", "hash": "5b4d9c084f26f018", "src": "db2@1.60.1.70170"}
+{"id": 432292, "field": "description", "en": "Gain the Combat Potency ability:\r\n\r\n$@spellicon432259\r\n$@spelldesc432259", "hash": "340ff0356fb4e422", "src": "db2@1.60.1.70170"}
+{"id": 432293, "field": "name", "en": "Engrave Helm - Combat Potency", "hash": "6511eaab9c56c7c6", "src": "db2@1.60.1.70170"}
+{"id": 432293, "field": "description", "en": "Engrave your helm with the Combat Potency rune:\r\n\r\n$@spellicon432259\r\n$@spelldesc432259", "hash": "495bf4a62c4b73af", "src": "db2@1.60.1.70170"}
+{"id": 432294, "field": "name", "en": "Honor Among Thieves", "hash": "22d1e459fb16e061", "src": "db2@1.60.1.70170"}
+{"id": 432294, "field": "description", "en": "Gain the Honor Among Thieves ability:\r\n\r\n$@spellicon432264\r\n$@spelldesc432264", "hash": "f656a65d54452679", "src": "db2@1.60.1.70170"}
+{"id": 432295, "field": "name", "en": "Engrave Helm - Honor Among Thieves", "hash": "1cbddc137a9c7fa9", "src": "db2@1.60.1.70170"}
+{"id": 432295, "field": "description", "en": "Engrave your helm with the Honor Among Thieves rune:\r\n\r\n$@spellicon432264\r\n$@spelldesc432264", "hash": "2bd127e77fd40e36", "src": "db2@1.60.1.70170"}
+{"id": 432296, "field": "name", "en": "Cut to the Chase", "hash": "76949183af06140f", "src": "db2@1.60.1.70170"}
+{"id": 432296, "field": "description", "en": "Gain the Cut to the Chase ability:\r\n\r\n$@spellicon432271\r\n$@spelldesc432271", "hash": "af7f6c9b6241df7f", "src": "db2@1.60.1.70170"}
+{"id": 432297, "field": "name", "en": "Engrave Bracers - Cut to the Chase", "hash": "958a8e0a27befc90", "src": "db2@1.60.1.70170"}
+{"id": 432297, "field": "description", "en": "Engrave your bracers with the Cut to the Chase rune:\r\n\r\n$@spellicon432271\r\n$@spelldesc432271", "hash": "7d169149f1a7e093", "src": "db2@1.60.1.70170"}
+{"id": 432298, "field": "name", "en": "Carnage", "hash": "77d7998bd3c899be", "src": "db2@1.60.1.70170"}
+{"id": 432298, "field": "description", "en": "Gain the Carnage ability:\r\n\r\n$@spellicon432276\r\n$@spelldesc432276", "hash": "76750ebe9340945a", "src": "db2@1.60.1.70170"}
+{"id": 432299, "field": "name", "en": "Engrave Bracers - Carnage", "hash": "91dd2040ef37d294", "src": "db2@1.60.1.70170"}
+{"id": 432299, "field": "description", "en": "Engrave your bracers with the Carnage rune:\r\n\r\n$@spellicon432276\r\n$@spelldesc432276", "hash": "f0efc1320a8d13f7", "src": "db2@1.60.1.70170"}
+{"id": 432300, "field": "name", "en": "Unfair Advantage", "hash": "2b844d4696186c6d", "src": "db2@1.60.1.70170"}
+{"id": 432300, "field": "description", "en": "Gain the Unfair Advantage ability:\r\n\r\n$@spellicon432273\r\n$@spelldesc432273", "hash": "722714cc3ff0a452", "src": "db2@1.60.1.70170"}
+{"id": 432301, "field": "name", "en": "Engrave Bracers - Unfair Advantage", "hash": "4a7a49cd0ed154ee", "src": "db2@1.60.1.70170"}
+{"id": 432301, "field": "description", "en": "Engrave your bracers with the Unfair Advantage rune:\r\n\r\n$@spellicon432273\r\n$@spelldesc432273", "hash": "f11d0a7e3add1f00", "src": "db2@1.60.1.70170"}
+{"id": 432308, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70170"}
+{"id": 432308, "field": "aura", "en": "Physical damage inflicted every $t1 sec.", "hash": "c8fd5ef350c4cc8c", "src": "db2@1.60.1.70170"}
+{"id": 432330, "field": "name", "en": "Channel", "hash": "2e0ff5fb7494fa4e", "src": "db2@1.60.1.70170"}
+{"id": 432407, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70170"}
+{"id": 432417, "field": "name", "en": "Remove Self-Found Soul", "hash": "87c90f72338812a5", "src": "db2@1.60.1.70170"}
+{"id": 432422, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70170"}
+{"id": 432423, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70170"}
+{"id": 432439, "field": "name", "en": "Channel", "hash": "2e0ff5fb7494fa4e", "src": "db2@1.60.1.70170"}
+{"id": 432467, "field": "name", "en": "Transform", "hash": "debc0793699d2c0d", "src": "db2@1.60.1.70170"}
+{"id": 432639, "field": "name", "en": "Increased Hit Chance 01", "hash": "ad3254a227bed138", "src": "db2@1.60.1.70170"}
+{"id": 432639, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70170"}
+{"id": 432773, "field": "name", "en": "[DNT] Decayed Ancient Sapling", "hash": "680616d3970dc3c6", "src": "db2@1.60.1.70170"}

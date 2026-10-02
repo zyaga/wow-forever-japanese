@@ -1,110 +1,110 @@
-{"id": 1259002, "field": "name", "en": "Rescue Gelkis Captive", "hash": "58b16478b290b13a", "src": "db2@1.60.1.70124"}
-{"id": 1259093, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70124"}
-{"id": 1259093, "field": "description", "en": "Attempt to raise undead by hurling shadowy magic toward suspicious bones.", "hash": "f184c59499d289c8", "src": "db2@1.60.1.70124"}
-{"id": 1259104, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70124"}
-{"id": 1259125, "field": "name", "en": "Stray Mana", "hash": "256b46786e5609b2", "src": "db2@1.60.1.70124"}
-{"id": 1259231, "field": "name", "en": "Infusion of Wind", "hash": "a02f8bd5a56be1b8", "src": "db2@1.60.1.70124"}
-{"id": 1259231, "field": "description", "en": "Restores $s1 mana and $s2 health. This item cannot be used outside of Skywall.", "hash": "9acbc41c2689281e", "src": "db2@1.60.1.70124"}
-{"id": 1259243, "field": "name", "en": "Mana Eruption", "hash": "6cfd1bf22f628f42", "src": "db2@1.60.1.70124"}
-{"id": 1259243, "field": "description", "en": "Suffer $s2% maximum health as Arcane damage and lose $s1% of your maximum mana from walking through unstable mana.", "hash": "e42b44db40652d28", "src": "db2@1.60.1.70124"}
-{"id": 1259246, "field": "name", "en": "Mana Coalescence", "hash": "9274d5268a8e1b84", "src": "db2@1.60.1.70124"}
-{"id": 1259246, "field": "description", "en": "Recovers $s1 maximum mana and allows you to claim the stray mana as an item.", "hash": "6269545183a4bbb2", "src": "db2@1.60.1.70124"}
-{"id": 1259284, "field": "name", "en": "Shen'dralas Ghost", "hash": "a0056806f1c821ca", "src": "db2@1.60.1.70124"}
-{"id": 1259326, "field": "name", "en": "Potent Anti-Venom", "hash": "fc337fac8d5d893b", "src": "db2@1.60.1.70124"}
-{"id": 1259326, "field": "description", "en": "Target is cured of poisons up to level 45.", "hash": "82ffcc162584be5f", "src": "db2@1.60.1.70124"}
-{"id": 1259327, "field": "name", "en": "[DNT] Complete Quest", "hash": "4a24b7dd4103160a", "src": "db2@1.60.1.70124"}
-{"id": 1259330, "field": "name", "en": "Simple Poultice", "hash": "4b17938347abb59c", "src": "db2@1.60.1.70124"}
-{"id": 1259330, "field": "description", "en": "Target is cured of diseases up to level 25. Not useable in combat.", "hash": "07bf5278860732c0", "src": "db2@1.60.1.70124"}
-{"id": 1259332, "field": "name", "en": "Clever Poultice", "hash": "57c84fa829d81abf", "src": "db2@1.60.1.70124"}
-{"id": 1259332, "field": "description", "en": "Target is cured of diseases up to level 35. Not useable in combat.", "hash": "4db50d13cf2d5d35", "src": "db2@1.60.1.70124"}
-{"id": 1259333, "field": "name", "en": "Superior Poultice", "hash": "94f90864e38ad776", "src": "db2@1.60.1.70124"}
-{"id": 1259333, "field": "description", "en": "Target is cured of diseases up to level 45. Not useable in combat.", "hash": "93aac7ae185387bb", "src": "db2@1.60.1.70124"}
-{"id": 1259334, "field": "name", "en": "Powerful Poultice", "hash": "e28534384d450521", "src": "db2@1.60.1.70124"}
-{"id": 1259334, "field": "description", "en": "Target is cured of diseases up to level 65. Not useable in combat.", "hash": "1f963ce9aa9fdca5", "src": "db2@1.60.1.70124"}
-{"id": 1259335, "field": "name", "en": "Woolen Tourniquet", "hash": "e884b528b465dcd9", "src": "db2@1.60.1.70124"}
-{"id": 1259335, "field": "description", "en": "Target is cured of bleeds up to level 30. Not useable in combat.", "hash": "45ab3dfaabc1b247", "src": "db2@1.60.1.70124"}
-{"id": 1259336, "field": "name", "en": "Leather Tourniquet", "hash": "02a8cd7059d66720", "src": "db2@1.60.1.70124"}
-{"id": 1259336, "field": "description", "en": "Target is cured of bleeds up to level 45. Not useable in combat.", "hash": "ee0e039b35218298", "src": "db2@1.60.1.70124"}
-{"id": 1259337, "field": "name", "en": "Surgical Tourniquet", "hash": "5804762e9fe44836", "src": "db2@1.60.1.70124"}
-{"id": 1259337, "field": "description", "en": "Target is cured of bleeds up to level 65. Not useable in combat.", "hash": "79f978d6c76dd782", "src": "db2@1.60.1.70124"}
-{"id": 1259338, "field": "name", "en": "Entangle", "hash": "83ddf79630d9a041", "src": "db2@1.60.1.70124"}
-{"id": 1259338, "field": "description", "en": "Entangles an enemy in roots, immobilizing it for up to $d.", "hash": "96c3c5c2d404c3a3", "src": "db2@1.60.1.70124"}
-{"id": 1259338, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70124"}
-{"id": 1259341, "field": "name", "en": "Potent Anti-Venom", "hash": "fc337fac8d5d893b", "src": "db2@1.60.1.70124"}
-{"id": 1259341, "field": "description", "en": "Creates a Vial of Potent Anti-Venom.", "hash": "467dc32a9f2f278f", "src": "db2@1.60.1.70124"}
-{"id": 1259342, "field": "name", "en": "Simple Poultice", "hash": "4b17938347abb59c", "src": "db2@1.60.1.70124"}
-{"id": 1259342, "field": "description", "en": "Creates a Simple Poultice.", "hash": "93da47d0e8daae8e", "src": "db2@1.60.1.70124"}
-{"id": 1259343, "field": "name", "en": "Clever Poultice", "hash": "57c84fa829d81abf", "src": "db2@1.60.1.70124"}
-{"id": 1259343, "field": "description", "en": "Creates a Clever Poultice.", "hash": "124a8ee2121e903b", "src": "db2@1.60.1.70124"}
-{"id": 1259344, "field": "name", "en": "Superior Poultice", "hash": "94f90864e38ad776", "src": "db2@1.60.1.70124"}
-{"id": 1259344, "field": "description", "en": "Creates a Superior Poultice.", "hash": "689ef251dfd11bfb", "src": "db2@1.60.1.70124"}
-{"id": 1259345, "field": "name", "en": "Powerful Poultice", "hash": "e28534384d450521", "src": "db2@1.60.1.70124"}
-{"id": 1259345, "field": "description", "en": "Creates a Powerful Poultice.", "hash": "1759609557f9b630", "src": "db2@1.60.1.70124"}
-{"id": 1259347, "field": "name", "en": "Woolen Tourniquet", "hash": "e884b528b465dcd9", "src": "db2@1.60.1.70124"}
-{"id": 1259347, "field": "description", "en": "Creates a Woolen Tourniquet.", "hash": "29185b74f5f7712f", "src": "db2@1.60.1.70124"}
-{"id": 1259348, "field": "name", "en": "Leather Tourniquet", "hash": "02a8cd7059d66720", "src": "db2@1.60.1.70124"}
-{"id": 1259348, "field": "description", "en": "Creates a Leather Tourniquet.", "hash": "7bc2cee7babb0c33", "src": "db2@1.60.1.70124"}
-{"id": 1259349, "field": "name", "en": "Surgical Tourniquet", "hash": "5804762e9fe44836", "src": "db2@1.60.1.70124"}
-{"id": 1259349, "field": "description", "en": "Creates a Surgical Tourniquet.", "hash": "1944b815baef1df2", "src": "db2@1.60.1.70124"}
-{"id": 1259410, "field": "name", "en": "Portal to Rohaashi Spires", "hash": "82ce5121124aa3c6", "src": "db2@1.60.1.70124"}
-{"id": 1259412, "field": "name", "en": "Open Portal", "hash": "608d7da2a69d5edc", "src": "db2@1.60.1.70124"}
-{"id": 1259416, "field": "name", "en": "Walk on Air", "hash": "2eefbca881e46ffb", "src": "db2@1.60.1.70124"}
-{"id": 1259416, "field": "description", "en": "Glide downward through the air for $d while controlling your direction of travel.", "hash": "31bc45ebd8c05dcd", "src": "db2@1.60.1.70124"}
-{"id": 1259416, "field": "aura", "en": "Walking on air.", "hash": "d8b3ea96201811a9", "src": "db2@1.60.1.70124"}
-{"id": 1259417, "field": "name", "en": "Walking on Air", "hash": "e837873e77270693", "src": "db2@1.60.1.70124"}
-{"id": 1259487, "field": "name", "en": "(DNT) Cosmetic Kneel", "hash": "a8db71b0f86b8452", "src": "db2@1.60.1.70124"}
-{"id": 1259489, "field": "name", "en": "(DNT) Cosmetic Cry", "hash": "bb3f291d30f1adb0", "src": "db2@1.60.1.70124"}
-{"id": 1259496, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70124"}
-{"id": 1259630, "field": "name", "en": "Newborn Shriekling", "hash": "f8c832f7b65ab72f", "src": "db2@1.60.1.70124"}
-{"id": 1259630, "field": "description", "en": "This shriekling is newly born and has poor eyesight. Enemy detection range is greatly reduced.\r\n", "hash": "4bc69be66c0060c8", "src": "db2@1.60.1.70124"}
-{"id": 1259630, "field": "aura", "en": "This shriekling is newly born and has poor eyesight. Enemy detection range is greatly reduced.", "hash": "4bc69be66c0060c8", "src": "db2@1.60.1.70124"}
-{"id": 1259652, "field": "name", "en": "Shock", "hash": "befee74f70f42cc6", "src": "db2@1.60.1.70124"}
-{"id": 1259652, "field": "description", "en": "Instantly throws a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "40d9deb75ef49ffa", "src": "db2@1.60.1.70124"}
-{"id": 1259686, "field": "name", "en": "Skysight", "hash": "12dbcb811cf93946", "src": "db2@1.60.1.70124"}
-{"id": 1259686, "field": "description", "en": "Attempt to draw power from a convergence of elements and receive its blessing, increasing your movement and mounted movement speeds by $1259688s1%. Lasts $1259688d if no elemental convergence is nearby, and $1270893d if one is found.\r\n", "hash": "3ff56f83f39b1d70", "src": "db2@1.60.1.70124"}
-{"id": 1259688, "field": "name", "en": "Elemental Blessing", "hash": "3cdd12de343534e1", "src": "db2@1.60.1.70124"}
-{"id": 1259688, "field": "aura", "en": "Movement speed and mounted movement speed increased by $s1%.", "hash": "c7a5c1df13671e14", "src": "db2@1.60.1.70124"}
-{"id": 1259691, "field": "name", "en": "Energized", "hash": "1d4e881ce9f9cdfa", "src": "db2@1.60.1.70124"}
-{"id": 1259691, "field": "aura", "en": "Mana and health regeneration rate increased by $s1%.", "hash": "df5d4faceedb3787", "src": "db2@1.60.1.70124"}
-{"id": 1259705, "field": "name", "en": "Read Ley Line", "hash": "0efcdaa38e2e1930", "src": "db2@1.60.1.70124"}
-{"id": 1259705, "field": "description", "en": "Attempt to tap into the power of a nearby ley line, increasing your Health and Mana regeneration by $1259691s1%. Lasts $1270842d if no ley line is nearby, and $1259691d if one is found.", "hash": "d1d7eb3b512348ba", "src": "db2@1.60.1.70124"}
-{"id": 1259707, "field": "name", "en": "Elemental Insight", "hash": "f62fc999f809cfb8", "src": "db2@1.60.1.70124"}
-{"id": 1259707, "field": "description", "en": "Damage dealt versus Elementals increased by $s1%.", "hash": "2f8ae69a5845e940", "src": "db2@1.60.1.70124"}
-{"id": 1259710, "field": "name", "en": "Wind Blessed", "hash": "a0d38651f3d1aabd", "src": "db2@1.60.1.70124"}
-{"id": 1259710, "field": "description", "en": "Increases your spellcasting, melee, and ranged Haste by $s1%.", "hash": "85cf8100d8429301", "src": "db2@1.60.1.70124"}
-{"id": 1259718, "field": "name", "en": "Will to Survive", "hash": "51e683ed33a4506c", "src": "db2@1.60.1.70124"}
-{"id": 1259718, "field": "description", "en": "Instantly removes all Stun effects.", "hash": "36e53d9fe2a379ab", "src": "db2@1.60.1.70124"}
-{"id": 1259719, "field": "name", "en": "Mace Specialization", "hash": "4f9bf4cba0fb7a59", "src": "db2@1.60.1.70124"}
-{"id": 1259719, "field": "description", "en": "Increases your critical strike chance with all spells and attacks by $s1% while you have a mace or two-handed mace equipped.", "hash": "77db3c0dcd60950b", "src": "db2@1.60.1.70124"}
-{"id": 1259721, "field": "name", "en": "Big Game Hunter", "hash": "e01b3baa7007be8b", "src": "db2@1.60.1.70124"}
-{"id": 1259721, "field": "description", "en": "Damage dealt versus Beasts increased by $s1%.", "hash": "6cc360383ee2d797", "src": "db2@1.60.1.70124"}
-{"id": 1259799, "field": "name", "en": "Elune's Light", "hash": "84d6cc6d0dc1cff4", "src": "db2@1.60.1.70124"}
-{"id": 1259799, "field": "description", "en": "Increases your critical strike chance with all spells and attacks by $s1% for $d.", "hash": "682cca8c83963fb2", "src": "db2@1.60.1.70124"}
-{"id": 1259799, "field": "aura", "en": "Critical strike chance with all spells and attacks increased by $s1%.", "hash": "9bebb88985b4c411", "src": "db2@1.60.1.70124"}
-{"id": 1259802, "field": "name", "en": "Expansive Mind", "hash": "14a05e1a080f3354", "src": "db2@1.60.1.70124"}
-{"id": 1259802, "field": "description", "en": "Maximum Rage increased by $s1%.", "hash": "3100005346c3f79a", "src": "db2@1.60.1.70124"}
-{"id": 1259803, "field": "name", "en": "Expansive Mind", "hash": "14a05e1a080f3354", "src": "db2@1.60.1.70124"}
-{"id": 1259803, "field": "description", "en": "Maximum Energy increased by $s1%.", "hash": "9d9dbaf60cf62d45", "src": "db2@1.60.1.70124"}
-{"id": 1259812, "field": "name", "en": "Eureka!", "hash": "8660c8430cc15f30", "src": "db2@1.60.1.70124"}
-{"id": 1259812, "field": "description", "en": "Your next $n damaging abilities have their Energy cost reduced by $s1% and deal $s2% more damage.", "hash": "0cdc57cb1a8bc6bb", "src": "db2@1.60.1.70124"}
-{"id": 1259812, "field": "aura", "en": "Next $s4 damaging abilities cost $w1% less Energy and deal $w2% more damage.", "hash": "7b4a4504fc6fc6ae", "src": "db2@1.60.1.70124"}
-{"id": 1259813, "field": "name", "en": "Eureka!", "hash": "8660c8430cc15f30", "src": "db2@1.60.1.70124"}
-{"id": 1259813, "field": "description", "en": "Your next $n damaging abilities have their Rage cost reduced by $s1% and deal $s2% more damage.", "hash": "1df35708132b6018", "src": "db2@1.60.1.70124"}
-{"id": 1259813, "field": "aura", "en": "Next $s4 damaging abilities cost $w1% less Rage and deal $w2% more damage.", "hash": "c401ff95aebf8555", "src": "db2@1.60.1.70124"}
-{"id": 1259817, "field": "name", "en": "Eureka!", "hash": "8660c8430cc15f30", "src": "db2@1.60.1.70124"}
-{"id": 1259817, "field": "description", "en": "Your next $n damaging abilities have their Mana cost reduced by $s1% and deal $s2% more damage.", "hash": "313c732ea6cd1c66", "src": "db2@1.60.1.70124"}
-{"id": 1259817, "field": "aura", "en": "Next $s4 damaging abilities cost $w1% less Mana and deal $w2% more damage.", "hash": "a39b58589c4df8c5", "src": "db2@1.60.1.70124"}
-{"id": 1259821, "field": "name", "en": "Eureka!", "hash": "8660c8430cc15f30", "src": "db2@1.60.1.70124"}
-{"id": 1259821, "field": "description", "en": "Your next $n damaging abilities have their Mana cost reduced by $s1% and deal $s2% more damage.", "hash": "313c732ea6cd1c66", "src": "db2@1.60.1.70124"}
-{"id": 1259821, "field": "aura", "en": "Next $s4 damaging abilities cost $w1% less Mana and deal $w2% more damage.", "hash": "a39b58589c4df8c5", "src": "db2@1.60.1.70124"}
-{"id": 1259823, "field": "name", "en": "Eureka!", "hash": "8660c8430cc15f30", "src": "db2@1.60.1.70124"}
-{"id": 1259823, "field": "description", "en": "Your next $n damaging or healing abilities have their Mana cost reduced by $s1% and deal $s2% more damage or healing.", "hash": "9bb2412a474438a5", "src": "db2@1.60.1.70124"}
-{"id": 1259823, "field": "aura", "en": "Next $s4 damaging or healing abilities cost $w1% less Mana and deal $w2% more damage or healing.", "hash": "259ee9bcce42811c", "src": "db2@1.60.1.70124"}
-{"id": 1259892, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70124"}
-{"id": 1259904, "field": "name", "en": "Create Draenethyst Staff", "hash": "30d8719b22777b8c", "src": "db2@1.60.1.70124"}
-{"id": 1259904, "field": "description", "en": "Augment Uthek's Staff with a Draenethyst Crystal.", "hash": "40bee7fb818005e3", "src": "db2@1.60.1.70124"}
-{"id": 1259907, "field": "name", "en": "Drums of War", "hash": "9b5e1cd226f2322d", "src": "db2@1.60.1.70124"}
-{"id": 1259907, "field": "description", "en": "Your drumbeat inspires allies, increasing the movement speed and mounted movement speed of all party members within $a1 yards by $s1% for $d.", "hash": "75722a0e7ae1e4af", "src": "db2@1.60.1.70124"}
-{"id": 1259907, "field": "aura", "en": "$s1% increased movement speed and mounted movement speed.", "hash": "f10f757a67ca80bc", "src": "db2@1.60.1.70124"}
-{"id": 1259918, "field": "name", "en": "Plainsrunning", "hash": "345427fdb1b2447e", "src": "db2@1.60.1.70124"}
-{"id": 1259918, "field": "description", "en": "Gain $s1% increased movement speed every $s2 sec spent moving, up to a maximum of $s3% increase. Taking damage or standing still will reduce this effect.", "hash": "b4cd132ed2a5d405", "src": "db2@1.60.1.70124"}
+{"id": 1259002, "field": "name", "en": "Rescue Gelkis Captive", "hash": "58b16478b290b13a", "src": "db2@1.60.1.70170"}
+{"id": 1259093, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70170"}
+{"id": 1259093, "field": "description", "en": "Attempt to raise undead by hurling shadowy magic toward suspicious bones.", "hash": "f184c59499d289c8", "src": "db2@1.60.1.70170"}
+{"id": 1259104, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70170"}
+{"id": 1259125, "field": "name", "en": "Stray Mana", "hash": "256b46786e5609b2", "src": "db2@1.60.1.70170"}
+{"id": 1259231, "field": "name", "en": "Infusion of Wind", "hash": "a02f8bd5a56be1b8", "src": "db2@1.60.1.70170"}
+{"id": 1259231, "field": "description", "en": "Restores $s1 mana and $s2 health. This item cannot be used outside of Skywall.", "hash": "9acbc41c2689281e", "src": "db2@1.60.1.70170"}
+{"id": 1259243, "field": "name", "en": "Mana Eruption", "hash": "6cfd1bf22f628f42", "src": "db2@1.60.1.70170"}
+{"id": 1259243, "field": "description", "en": "Suffer $s2% maximum health as Arcane damage and lose $s1% of your maximum mana from walking through unstable mana.", "hash": "e42b44db40652d28", "src": "db2@1.60.1.70170"}
+{"id": 1259246, "field": "name", "en": "Mana Coalescence", "hash": "9274d5268a8e1b84", "src": "db2@1.60.1.70170"}
+{"id": 1259246, "field": "description", "en": "Recovers $s1 maximum mana and allows you to claim the stray mana as an item.", "hash": "6269545183a4bbb2", "src": "db2@1.60.1.70170"}
+{"id": 1259284, "field": "name", "en": "Shen'dralas Ghost", "hash": "a0056806f1c821ca", "src": "db2@1.60.1.70170"}
+{"id": 1259326, "field": "name", "en": "Potent Anti-Venom", "hash": "fc337fac8d5d893b", "src": "db2@1.60.1.70170"}
+{"id": 1259326, "field": "description", "en": "Target is cured of poisons up to level 45.", "hash": "82ffcc162584be5f", "src": "db2@1.60.1.70170"}
+{"id": 1259327, "field": "name", "en": "[DNT] Complete Quest", "hash": "4a24b7dd4103160a", "src": "db2@1.60.1.70170"}
+{"id": 1259330, "field": "name", "en": "Simple Poultice", "hash": "4b17938347abb59c", "src": "db2@1.60.1.70170"}
+{"id": 1259330, "field": "description", "en": "Target is cured of diseases up to level 25. Not usable in combat.", "hash": "72b1a31e3b399eff", "src": "db2@1.60.1.70170"}
+{"id": 1259332, "field": "name", "en": "Clever Poultice", "hash": "57c84fa829d81abf", "src": "db2@1.60.1.70170"}
+{"id": 1259332, "field": "description", "en": "Target is cured of diseases up to level 35. Not usable in combat.", "hash": "b9943eeb14dec02b", "src": "db2@1.60.1.70170"}
+{"id": 1259333, "field": "name", "en": "Superior Poultice", "hash": "94f90864e38ad776", "src": "db2@1.60.1.70170"}
+{"id": 1259333, "field": "description", "en": "Target is cured of diseases up to level 45. Not usable in combat.", "hash": "0076dabdee83e146", "src": "db2@1.60.1.70170"}
+{"id": 1259334, "field": "name", "en": "Powerful Poultice", "hash": "e28534384d450521", "src": "db2@1.60.1.70170"}
+{"id": 1259334, "field": "description", "en": "Target is cured of diseases up to level 65. Not usable in combat.", "hash": "8e3c1257a1ce239e", "src": "db2@1.60.1.70170"}
+{"id": 1259335, "field": "name", "en": "Woolen Tourniquet", "hash": "e884b528b465dcd9", "src": "db2@1.60.1.70170"}
+{"id": 1259335, "field": "description", "en": "Target is cured of bleeds up to level 30. Not usable in combat.", "hash": "405b7fca53825340", "src": "db2@1.60.1.70170"}
+{"id": 1259336, "field": "name", "en": "Leather Tourniquet", "hash": "02a8cd7059d66720", "src": "db2@1.60.1.70170"}
+{"id": 1259336, "field": "description", "en": "Target is cured of bleeds up to level 45. Not usable in combat.", "hash": "35eae8df8a4bb14e", "src": "db2@1.60.1.70170"}
+{"id": 1259337, "field": "name", "en": "Surgical Tourniquet", "hash": "5804762e9fe44836", "src": "db2@1.60.1.70170"}
+{"id": 1259337, "field": "description", "en": "Target is cured of bleeds up to level 65. Not usable in combat.", "hash": "c3b020793d95f3a6", "src": "db2@1.60.1.70170"}
+{"id": 1259338, "field": "name", "en": "Entangle", "hash": "83ddf79630d9a041", "src": "db2@1.60.1.70170"}
+{"id": 1259338, "field": "description", "en": "Entangles an enemy in roots, immobilizing it for up to $d.", "hash": "96c3c5c2d404c3a3", "src": "db2@1.60.1.70170"}
+{"id": 1259338, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70170"}
+{"id": 1259341, "field": "name", "en": "Potent Anti-Venom", "hash": "fc337fac8d5d893b", "src": "db2@1.60.1.70170"}
+{"id": 1259341, "field": "description", "en": "Creates a Vial of Potent Anti-Venom.", "hash": "467dc32a9f2f278f", "src": "db2@1.60.1.70170"}
+{"id": 1259342, "field": "name", "en": "Simple Poultice", "hash": "4b17938347abb59c", "src": "db2@1.60.1.70170"}
+{"id": 1259342, "field": "description", "en": "Creates a Simple Poultice.", "hash": "93da47d0e8daae8e", "src": "db2@1.60.1.70170"}
+{"id": 1259343, "field": "name", "en": "Clever Poultice", "hash": "57c84fa829d81abf", "src": "db2@1.60.1.70170"}
+{"id": 1259343, "field": "description", "en": "Creates a Clever Poultice.", "hash": "124a8ee2121e903b", "src": "db2@1.60.1.70170"}
+{"id": 1259344, "field": "name", "en": "Superior Poultice", "hash": "94f90864e38ad776", "src": "db2@1.60.1.70170"}
+{"id": 1259344, "field": "description", "en": "Creates a Superior Poultice.", "hash": "689ef251dfd11bfb", "src": "db2@1.60.1.70170"}
+{"id": 1259345, "field": "name", "en": "Powerful Poultice", "hash": "e28534384d450521", "src": "db2@1.60.1.70170"}
+{"id": 1259345, "field": "description", "en": "Creates a Powerful Poultice.", "hash": "1759609557f9b630", "src": "db2@1.60.1.70170"}
+{"id": 1259347, "field": "name", "en": "Woolen Tourniquet", "hash": "e884b528b465dcd9", "src": "db2@1.60.1.70170"}
+{"id": 1259347, "field": "description", "en": "Creates a Woolen Tourniquet.", "hash": "29185b74f5f7712f", "src": "db2@1.60.1.70170"}
+{"id": 1259348, "field": "name", "en": "Leather Tourniquet", "hash": "02a8cd7059d66720", "src": "db2@1.60.1.70170"}
+{"id": 1259348, "field": "description", "en": "Creates a Leather Tourniquet.", "hash": "7bc2cee7babb0c33", "src": "db2@1.60.1.70170"}
+{"id": 1259349, "field": "name", "en": "Surgical Tourniquet", "hash": "5804762e9fe44836", "src": "db2@1.60.1.70170"}
+{"id": 1259349, "field": "description", "en": "Creates a Surgical Tourniquet.", "hash": "1944b815baef1df2", "src": "db2@1.60.1.70170"}
+{"id": 1259410, "field": "name", "en": "Portal to Rohaashi Spires", "hash": "82ce5121124aa3c6", "src": "db2@1.60.1.70170"}
+{"id": 1259412, "field": "name", "en": "Open Portal", "hash": "608d7da2a69d5edc", "src": "db2@1.60.1.70170"}
+{"id": 1259416, "field": "name", "en": "Walk on Air", "hash": "2eefbca881e46ffb", "src": "db2@1.60.1.70170"}
+{"id": 1259416, "field": "description", "en": "Glide downward through the air for $d while controlling your direction of travel.", "hash": "31bc45ebd8c05dcd", "src": "db2@1.60.1.70170"}
+{"id": 1259416, "field": "aura", "en": "Walking on air.", "hash": "d8b3ea96201811a9", "src": "db2@1.60.1.70170"}
+{"id": 1259417, "field": "name", "en": "Walking on Air", "hash": "e837873e77270693", "src": "db2@1.60.1.70170"}
+{"id": 1259487, "field": "name", "en": "(DNT) Cosmetic Kneel", "hash": "a8db71b0f86b8452", "src": "db2@1.60.1.70170"}
+{"id": 1259489, "field": "name", "en": "(DNT) Cosmetic Cry", "hash": "bb3f291d30f1adb0", "src": "db2@1.60.1.70170"}
+{"id": 1259496, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
+{"id": 1259630, "field": "name", "en": "Newborn Shriekling", "hash": "f8c832f7b65ab72f", "src": "db2@1.60.1.70170"}
+{"id": 1259630, "field": "description", "en": "This shriekling is newly born and has poor eyesight. Enemy detection range is greatly reduced.\r\n", "hash": "4bc69be66c0060c8", "src": "db2@1.60.1.70170"}
+{"id": 1259630, "field": "aura", "en": "This shriekling is newly born and has poor eyesight. Enemy detection range is greatly reduced.", "hash": "4bc69be66c0060c8", "src": "db2@1.60.1.70170"}
+{"id": 1259652, "field": "name", "en": "Shock", "hash": "befee74f70f42cc6", "src": "db2@1.60.1.70170"}
+{"id": 1259652, "field": "description", "en": "Instantly throws a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "40d9deb75ef49ffa", "src": "db2@1.60.1.70170"}
+{"id": 1259686, "field": "name", "en": "Skysight", "hash": "12dbcb811cf93946", "src": "db2@1.60.1.70170"}
+{"id": 1259686, "field": "description", "en": "Attempt to draw power from a convergence of elements and receive its blessing, increasing your movement and mounted movement speeds by $1259688s1%. Lasts $1259688d if no elemental convergence is nearby, and $1270893d if one is found.\r\n", "hash": "3ff56f83f39b1d70", "src": "db2@1.60.1.70170"}
+{"id": 1259688, "field": "name", "en": "Elemental Blessing", "hash": "3cdd12de343534e1", "src": "db2@1.60.1.70170"}
+{"id": 1259688, "field": "aura", "en": "Movement speed and mounted movement speed increased by $s1%.", "hash": "c7a5c1df13671e14", "src": "db2@1.60.1.70170"}
+{"id": 1259691, "field": "name", "en": "Energized", "hash": "1d4e881ce9f9cdfa", "src": "db2@1.60.1.70170"}
+{"id": 1259691, "field": "aura", "en": "Mana and health regeneration rate increased by $s1%.", "hash": "df5d4faceedb3787", "src": "db2@1.60.1.70170"}
+{"id": 1259705, "field": "name", "en": "Read Ley Line", "hash": "0efcdaa38e2e1930", "src": "db2@1.60.1.70170"}
+{"id": 1259705, "field": "description", "en": "Attempt to tap into the power of a nearby ley line, increasing your Health and Mana regeneration by $1259691s1%. Lasts $1270842d if no ley line is nearby, and $1259691d if one is found.", "hash": "d1d7eb3b512348ba", "src": "db2@1.60.1.70170"}
+{"id": 1259707, "field": "name", "en": "Elemental Insight", "hash": "f62fc999f809cfb8", "src": "db2@1.60.1.70170"}
+{"id": 1259707, "field": "description", "en": "Damage dealt versus Elementals increased by $s1%.", "hash": "2f8ae69a5845e940", "src": "db2@1.60.1.70170"}
+{"id": 1259710, "field": "name", "en": "Wind Blessed", "hash": "a0d38651f3d1aabd", "src": "db2@1.60.1.70170"}
+{"id": 1259710, "field": "description", "en": "Increases your spellcasting, melee, and ranged Haste by $s1%.", "hash": "85cf8100d8429301", "src": "db2@1.60.1.70170"}
+{"id": 1259718, "field": "name", "en": "Will to Survive", "hash": "51e683ed33a4506c", "src": "db2@1.60.1.70170"}
+{"id": 1259718, "field": "description", "en": "Instantly removes all Stun effects.", "hash": "36e53d9fe2a379ab", "src": "db2@1.60.1.70170"}
+{"id": 1259719, "field": "name", "en": "Mace Specialization", "hash": "4f9bf4cba0fb7a59", "src": "db2@1.60.1.70170"}
+{"id": 1259719, "field": "description", "en": "Increases your critical strike chance with all spells and attacks by $s1% while you have a mace or two-handed mace equipped.", "hash": "77db3c0dcd60950b", "src": "db2@1.60.1.70170"}
+{"id": 1259721, "field": "name", "en": "Big Game Hunter", "hash": "e01b3baa7007be8b", "src": "db2@1.60.1.70170"}
+{"id": 1259721, "field": "description", "en": "Damage dealt versus Beasts increased by $s1%.", "hash": "6cc360383ee2d797", "src": "db2@1.60.1.70170"}
+{"id": 1259799, "field": "name", "en": "Elune's Light", "hash": "84d6cc6d0dc1cff4", "src": "db2@1.60.1.70170"}
+{"id": 1259799, "field": "description", "en": "Increases your critical strike chance with all spells and attacks by $s1% for $d.", "hash": "682cca8c83963fb2", "src": "db2@1.60.1.70170"}
+{"id": 1259799, "field": "aura", "en": "Critical strike chance with all spells and attacks increased by $s1%.", "hash": "9bebb88985b4c411", "src": "db2@1.60.1.70170"}
+{"id": 1259802, "field": "name", "en": "Expansive Mind", "hash": "14a05e1a080f3354", "src": "db2@1.60.1.70170"}
+{"id": 1259802, "field": "description", "en": "Maximum Rage increased by $s1%.", "hash": "3100005346c3f79a", "src": "db2@1.60.1.70170"}
+{"id": 1259803, "field": "name", "en": "Expansive Mind", "hash": "14a05e1a080f3354", "src": "db2@1.60.1.70170"}
+{"id": 1259803, "field": "description", "en": "Maximum Energy increased by $s1%.", "hash": "9d9dbaf60cf62d45", "src": "db2@1.60.1.70170"}
+{"id": 1259812, "field": "name", "en": "Eureka!", "hash": "8660c8430cc15f30", "src": "db2@1.60.1.70170"}
+{"id": 1259812, "field": "description", "en": "Your next $n non-periodic damaging abilities have their Energy cost reduced by $s1% and deal $s2% more damage.", "hash": "36e16d02baf1859f", "src": "db2@1.60.1.70170"}
+{"id": 1259812, "field": "aura", "en": "Next $s4 non-periodic damaging abilities cost $w1% less Energy and deal $w2% more damage.", "hash": "3344d7762ee9406b", "src": "db2@1.60.1.70170"}
+{"id": 1259813, "field": "name", "en": "Eureka!", "hash": "8660c8430cc15f30", "src": "db2@1.60.1.70170"}
+{"id": 1259813, "field": "description", "en": "Your next $n non-periodic damaging abilities have their Rage cost reduced by $s1% and deal $s2% more damage.", "hash": "77e7e2313806e6fc", "src": "db2@1.60.1.70170"}
+{"id": 1259813, "field": "aura", "en": "Next $s4 non-periodic damaging abilities cost $w1% less Rage and deal $w2% more damage.", "hash": "a57b78bdfdbc1ca1", "src": "db2@1.60.1.70170"}
+{"id": 1259817, "field": "name", "en": "Eureka!", "hash": "8660c8430cc15f30", "src": "db2@1.60.1.70170"}
+{"id": 1259817, "field": "description", "en": "Your next $n damaging abilities have their Mana cost reduced by $s1% and deal $s2% more damage.", "hash": "313c732ea6cd1c66", "src": "db2@1.60.1.70170"}
+{"id": 1259817, "field": "aura", "en": "Next $s4 damaging abilities cost $w1% less Mana and deal $w2% more damage.", "hash": "a39b58589c4df8c5", "src": "db2@1.60.1.70170"}
+{"id": 1259821, "field": "name", "en": "Eureka!", "hash": "8660c8430cc15f30", "src": "db2@1.60.1.70170"}
+{"id": 1259821, "field": "description", "en": "Your next $n non-periodic damaging abilities have their Mana cost reduced by $s1% and deal $s2% more damage.", "hash": "8b30fe57cba8a34a", "src": "db2@1.60.1.70170"}
+{"id": 1259821, "field": "aura", "en": "Next $s4 non-periodic damaging abilities cost $w1% less Mana and deal $w2% more damage.", "hash": "8514d180eb4a9011", "src": "db2@1.60.1.70170"}
+{"id": 1259823, "field": "name", "en": "Eureka!", "hash": "8660c8430cc15f30", "src": "db2@1.60.1.70170"}
+{"id": 1259823, "field": "description", "en": "Your next $n non-periodic damaging or healing abilities have their Mana cost reduced by $s1% and deal $s2% more damage or healing.", "hash": "ac15df08fe2b4ac4", "src": "db2@1.60.1.70170"}
+{"id": 1259823, "field": "aura", "en": "Next $s4 non-periodic damaging or healing abilities cost $w1% less Mana and deal $w2% more damage or healing.", "hash": "9851bd6171e56339", "src": "db2@1.60.1.70170"}
+{"id": 1259892, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
+{"id": 1259904, "field": "name", "en": "Create Draenethyst Staff", "hash": "30d8719b22777b8c", "src": "db2@1.60.1.70170"}
+{"id": 1259904, "field": "description", "en": "Augment Uthek's Staff with a Draenethyst Crystal.", "hash": "40bee7fb818005e3", "src": "db2@1.60.1.70170"}
+{"id": 1259907, "field": "name", "en": "Drums of War", "hash": "9b5e1cd226f2322d", "src": "db2@1.60.1.70170"}
+{"id": 1259907, "field": "description", "en": "Your drumbeat inspires allies, increasing the movement speed and mounted movement speed of all party members within $a1 yds by $s1% for $d.", "hash": "62554af96eb3cfc2", "src": "db2@1.60.1.70170"}
+{"id": 1259907, "field": "aura", "en": "$s1% increased movement speed and mounted movement speed.", "hash": "f10f757a67ca80bc", "src": "db2@1.60.1.70170"}
+{"id": 1259918, "field": "name", "en": "Plainsrunning", "hash": "345427fdb1b2447e", "src": "db2@1.60.1.70170"}
+{"id": 1259918, "field": "description", "en": "Gain $s1% increased movement speed every $s2 sec spent moving, up to a maximum of $s3% increase. Taking damage or standing still will reduce this effect.", "hash": "b4cd132ed2a5d405", "src": "db2@1.60.1.70170"}

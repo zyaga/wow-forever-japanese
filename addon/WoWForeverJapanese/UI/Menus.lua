@@ -186,6 +186,9 @@ Menus.TAGS = {
     keys = { "LFG_LIST_IGNORE_SUGGESTED_LEVEL" } },
   MENU_LFG_BROWSE_CATEGORY = { source = "blizzard_lfgvanilla_browse.lua:999",
     keys = { "LFG_TYPE_NONE", "LFG_SELF_LISTING" } },
+  MENU_LFG_FRAME_GROUP_PLAYSTYLE = { source = "blizzard_lfgvanilla_listing.lua:870",
+    keys = { "GROUP_FINDER_GENERAL_PLAYSTYLE1", "GROUP_FINDER_GENERAL_PLAYSTYLE2", "GROUP_FINDER_GENERAL_PLAYSTYLE3",
+      "GROUP_FINDER_GENERAL_PLAYSTYLE4" } },
   -- the friends list's status: "|T<texture>|t Available" (the `icon` label form) (camelot friendsframe.lua:565–576)
   MENU_FRIENDS_STATUS = { source = "camelot friendsframe.lua:565",
     keys = { "FRIENDS_LIST_AVAILABLE", "FRIENDS_LIST_AWAY", "FRIENDS_LIST_BUSY" } },

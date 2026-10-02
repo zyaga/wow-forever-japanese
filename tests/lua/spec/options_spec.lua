@@ -13,6 +13,16 @@ local function pageFrames(page)
   return out
 end
 
+-- the shipped quest count as the header prints it (thousands separated), read from the generated data
+local function shippedQuests(WFJ)
+  local s = tostring(WFJ.Data.meta.counts.quest)
+  while true do
+    local t, k = s:gsub("^(%d+)(%d%d%d)", "%1,%2")
+    s = t
+    if k == 0 then return s end
+  end
+end
+
 describe("Settings pages from the registry and PAGES", function()
   local WFJ, S, O, list
 
@@ -153,8 +163,9 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_true(control("area.gossip").widget:GetChecked()) -- stale until shown
     O.pages.main:Show()
     assert.is_false(control("area.gossip").widget:GetChecked())
-    assert.is_truthy(O.frame.subtitle:GetText():find("1.2 MB", 1, true))
-    assert.is_truthy(O.frame.subtitle:GetText():find("4,572 quests", 1, true)) -- the shipped quest count
+    assert.is_truthy(O.frame.subtitle.en:GetText():find("1.2 MB", 1, true))
+    -- translation is off here: English
+    assert.is_truthy(O.frame.subtitle.en:GetText():find(shippedQuests(WFJ) .. " quests", 1, true))
   end)
 
   it("the page title is the addon's name, the same in both languages", function()
@@ -166,7 +177,7 @@ describe("Settings pages from the registry and PAGES", function()
   it("the header shows the TOC version as written (a release version already starts with v)", function()
     WFJ.VERSION = "v0.1.0-alpha.1"
     O.pages.main:Show()
-    local text = O.frame.subtitle:GetText()
+    local text = O.frame.subtitle.en:GetText()
     assert.are.equal(1, text:find("v0.1.0-alpha.1 · ", 1, true))
     assert.is_nil(text:find("vv", 1, true))
   end)
@@ -343,11 +354,16 @@ describe("Settings pages from the registry and PAGES", function()
   it("the about page has the header, how to open settings, the slash list and the report link", function()
     local about = O.pages.about
     about:Show()
-    assert.is_truthy(about.subtitle:GetText():find("4,572 quests", 1, true)) -- the shipped quest count
+    -- the shipped quest count
+    assert.is_truthy(about.subtitle.en:GetText():find("クエスト " .. shippedQuests(WFJ), 1, true))
     local texts = {}
     for _, fs in ipairs(about.children) do if fs.GetText then texts[#texts + 1] = fs:GetText() end end
     local all = table.concat(texts, "\n")
     assert.is_truthy(all:find(WFJ.OptionsText.T["about.open"].ja, 1, true))
+    -- the reveal key by name, and both markers as they show
+    assert.is_truthy(all:find("Altを押している間は", 1, true))
+    assert.is_truthy(all:find(WFJ.MARKER.stale .. "　翻訳後に", 1, true))
+    assert.is_truthy(all:find(WFJ.MARKER.missing .. "　まだ翻訳", 1, true))
     assert.is_truthy(all:find("/wfj config [collector | about]", 1, true))
     assert.are.equal(WFJ.OptionsText.REPORT_URL, O.copyBoxes["about.report"]:GetText())
   end)

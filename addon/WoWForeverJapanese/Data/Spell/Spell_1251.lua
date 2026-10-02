@@ -21,5 +21,5 @@ WFJ.Data.add("spell", {
   [1251946] = { "$D1の間、Spell Healingを$N1増加させます。", "Spell Healingが$N1増加しています。", 0xca86de19, 0xad9f770f, "uu" },
   [1251947] = { "$D1の間、Spell Healingを$N1増加させます。", "Spell Healingが$N1増加しています。", 0xca86de19, 0xad9f770f, "uu" },
   [1251948] = { "$D1の間、Spell Healingを$N1増加させます。", "Spell Healingが$N1増加しています。", 0xca86de19, 0xad9f770f, "uu" },
-  [1251986] = { "Venomous Bloodを$N1スタック得ます。Bleedダメージを受けるたびに、$N2ヤード以内の近くの敵に1スタックが広がります。効果時間は最大$D1です。\n\nVenomous Bloodは効果が切れたとき、スタックごとに$N4のNatureダメージを与えます。", "Bleedダメージを受けるたびに、その一回分が$N1~$N2ヤード以内の周囲の敵1体に飛び散ります。\n\nこの効果が切れると、$N3のNatureダメージを受けます。", 0x8b848925, 0xb70e5371, "uu" },
+  [1251986] = { "Venomous Bloodを$N1スタック得ます。Bleedダメージを受けるたびに、$N2ヤード以内の近くの敵に1スタックが広がります。効果時間は最大$D1です。\n\nVenomous Bloodは効果が切れたとき、スタックごとに$N4のNatureダメージを与えます。", "Bleedダメージを受けるたびに、その一回分が$N1ヤード以内の近くの敵一体に飛び散ります。\n\nこの効果が切れると、$N3のNatureダメージを受けます。", 0x8b848925, 0xfa7853a3, "uu" },
 })

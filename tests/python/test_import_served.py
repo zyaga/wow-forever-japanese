@@ -177,6 +177,7 @@ def test_a_cache_of_another_build_refuses(data, tmp_path, capsys):
 
 
 def test_a_kind_that_would_lose_every_line_refuses(data, tmp_path, capsys):
+    Store(data, english=True).save("spell", [_en(18, "aura", "Era aura", ERA)])  # Forever English is always kept
     before = _snapshot(data)
     assert _run(_client(tmp_path, spells=(99999,))) == 1
     assert "every spell line" in capsys.readouterr().err
@@ -192,6 +193,16 @@ def test_collector_english_is_never_dropped(tmp_path, data):
     assert 26 not in _ids(data, "item")
 
 
+def test_english_from_any_forever_build_is_kept_whatever_its_number(tmp_path, data):
+    """A Forever stamp is any client stamp that is not Classic Era's 1.15 line: a later major version too."""
+    eng = Store(data, english=True)
+    eng.save("item", [*eng.load("item"), _en(4343, "name", "Next line", "db2@1.61.0.80001"),
+                      _en(4344, "name", "Era only", "db2@1.15.9.69722")])
+    assert _run(_client(tmp_path)) == 0
+    assert 4343 in _ids(data, "item")
+    assert 4344 not in _ids(data, "item")
+
+
 def test_a_ui_table_at_another_build_refuses(tmp_path, data, capsys):
     """ui English is kept by the stamp, so every table it comes from must carry the same one."""
     d = _client(tmp_path)
@@ -203,9 +214,36 @@ def test_a_ui_table_at_another_build_refuses(tmp_path, data, capsys):
     assert _snapshot(data) == before
 
 
-def test_a_ui_key_that_left_the_curated_list_loses_its_english(tmp_path, data):
-    """The dictionary is `ui_keys.txt`: under the union merge a dropped key would otherwise keep its English."""
+def test_a_ui_key_that_left_the_curated_list_keeps_its_english(tmp_path, data):
+    """Additive: a key Forever served keeps its English after it leaves `ui_keys.txt`."""
     eng = Store(data, english=True)
     eng.save("ui", [*eng.load("ui"), _en("CANCEL", "text", "Cancel", FOREVER)])
     assert _run(_client(tmp_path), keys=_keys_file(tmp_path, keys=("CANCEL",))) == 0
-    assert _ids(data, "ui") == {"CANCEL"}
+    assert _ids(data, "ui") == {"ACCEPT", "CANCEL"}
+
+
+def test_every_served_id_is_recorded_with_its_first_and_last_build(data, tmp_path):
+    assert _run(_client(tmp_path)) == 0
+    record = (tmp_path / "pipeline" / "served" / "item.tsv").read_text().splitlines()
+    assert record[0].startswith("# every item id a Forever build served")
+    assert record[1:] == ["25\t1.60.1.69913\t1.60.1.69913"]
+    assert "1665\t1.60.1.69913\t1.60.1.69913" in (tmp_path / "pipeline" / "served" / "quest.tsv").read_text()
+
+
+def test_an_id_an_earlier_build_served_keeps_its_english_and_its_last_build(data, tmp_path, capsys):
+    """The scans are not proof a quest is gone: one an earlier build served stays, Japanese shipping, and the
+    record keeps the last build that served it (a list for a later cleanup; nothing acts on it)."""
+    served = tmp_path / "pipeline" / "served"
+    served.mkdir(parents=True)
+    (served / "quest.tsv").write_text("# record\n9999\t1.60.1.69893\t1.60.1.69893\n")
+    (served / "item.tsv").write_text("# record\n26\t1.60.1.69893\t1.60.1.69893\n")
+    assert _run(_client(tmp_path)) == 0
+    out = capsys.readouterr().out
+    assert 9999 in _ids(data, "quest") and 9999 in _ids(data, "area") and 26 in _ids(data, "item")
+    assert "9999\t1.60.1.69893\t1.60.1.69893" in (served / "quest.tsv").read_text()  # last build unchanged
+    assert "served quest: 1 ids an earlier build served, not served on 1.60.1.69913: kept" in out
+
+
+def test_a_dry_run_writes_no_record(data, tmp_path):
+    assert _run(_client(tmp_path), "--dry-run") == 0
+    assert not (tmp_path / "pipeline" / "served").exists()

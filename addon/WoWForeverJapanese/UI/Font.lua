@@ -31,6 +31,10 @@ end
 -- InitializeFontString, scrollingmessageframe.lua:642, 716). So each is remembered with the font it had, and given
 -- a font back directly once it shows anything else.
 local dressed = setmetatable({}, { __mode = "k" }) -- fs → { path, size, flags } it had before the bundled face
+-- The rows Font.restore gave a font back to. That font is a SetFont, a fixed size: when the player later changes the
+-- chat font size, the client changes the frame's font object, and the refresh's SetFontObject(same object) leaves
+-- the SetFont in place, so the row keeps the old size until Font.follow gives it the object's font again.
+local restored = setmetatable({}, { __mode = "k" })
 
 -- The bundled face on `fs`, at `fontObject`'s size and flags when given (the owner's font: a row may still hold a
 -- size an earlier fit shrank it to), else at its own. → the size set, or nil when the client refused the font
@@ -60,7 +64,21 @@ function Font.restore(fs, fontObject)
   if type(path) ~= "string" then path, size, flags = dressed[fs][1], dressed[fs][2], dressed[fs][3] end
   if type(path) ~= "string" or fs:SetFont(path, size, flags or "") == false then return false end
   dressed[fs] = nil
+  restored[fs] = true
   return true
+end
+
+-- A row Font.restore gave a font back to, given `fontObject`'s font again when its face or size no longer matches
+-- (the player changed the chat font size since). A row that never wore the bundled face, or wears it now, is left
+-- alone. → true when it set the font
+function Font.follow(fs, fontObject)
+  if type(fs) ~= "table" or not restored[fs] or dressed[fs] then return false end
+  if type(fontObject) ~= "table" or type(fontObject.GetFont) ~= "function" then return false end
+  local path, size, flags = fontObject:GetFont()
+  if type(path) ~= "string" then return false end
+  local hasPath, hasSize = fs:GetFont()
+  if hasPath == path and hasSize == size then return false end
+  return fs:SetFont(path, size, flags or "") ~= false
 end
 
 -- → the number still refused after one more try

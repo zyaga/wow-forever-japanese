@@ -1,112 +1,112 @@
-{"id": 473384, "field": "name", "en": "Summon Squire", "hash": "419b88343be690e3", "src": "db2@1.60.1.70124"}
-{"id": 473384, "field": "description", "en": "Use the manual to call your Argent Squire for a training lesson in combat with the Silithid. Silithids killed in the squire's presence will increase your reputation with the Argent Dawn.", "hash": "ec5a51f01694466e", "src": "db2@1.60.1.70124"}
-{"id": 473384, "field": "aura", "en": "Your squire is accompanying you. Gaining Argent Dawn reputation for killing Silithids.", "hash": "70ae358657bb9ff2", "src": "db2@1.60.1.70124"}
-{"id": 473387, "field": "name", "en": "Horn of the Dawn", "hash": "4af1ac18136414c4", "src": "db2@1.60.1.70124"}
-{"id": 473387, "field": "description", "en": "Rally your nearby party or raid members, granting them $s1% increased spell critical strike chance, $s3% increased melee and ranged critical strike chance, and $s2 increased attack power. Lasts $d. Exclusive with similar world effects and unaffected by Chronoboons.", "hash": "87cc436eff33f558", "src": "db2@1.60.1.70124"}
-{"id": 473387, "field": "aura", "en": "Increases critical chance of spells by $s1%, melee and ranged by $s3% and grants $s2 attack power.", "hash": "04d1ed3388fc5c5d", "src": "db2@1.60.1.70124"}
-{"id": 473399, "field": "name", "en": "Songflower Lullaby", "hash": "c3c0930f125226fc", "src": "db2@1.60.1.70124"}
-{"id": 473399, "field": "description", "en": "Summon a songflower that grants all your party or raid members $s1% increased chance for a melee, ranged, or spell critical by and $s2 increased attributes by for $d. Exclusive with similar world effects. Unaffected by Chronoboons.", "hash": "6a7a8d25b583d996", "src": "db2@1.60.1.70124"}
-{"id": 473399, "field": "aura", "en": "Increases chance for a melee, ranged, or spell critical by $s1% and all attributes by $s2.", "hash": "1e1394660351a360", "src": "db2@1.60.1.70124"}
-{"id": 473403, "field": "name", "en": "Blessing of Neptulon", "hash": "cefdf74e596426a6", "src": "db2@1.60.1.70124"}
-{"id": 473403, "field": "description", "en": "Grants all your nearby party or raid members $s1 increased attack power, $s3% increased Stamina, and $s4% increased spell critical strike chance for $d. Exclusive with similar world effects. Unaffected by Chronoboons.", "hash": "b78582ac4aa2a3de", "src": "db2@1.60.1.70124"}
-{"id": 473403, "field": "aura", "en": "Increases attack power by $s1, Stamina by $s3%, and spell critical strike chance by $s4%.", "hash": "23a559558f19839a", "src": "db2@1.60.1.70124"}
-{"id": 473441, "field": "name", "en": "Might of Blackrock", "hash": "35ab1b5277efce88", "src": "db2@1.60.1.70124"}
-{"id": 473441, "field": "description", "en": "Increases hitpoints by $s1. $s2% haste to melee attacks. $s3 mana regen every 5 seconds.", "hash": "c53fc1dfa989ae33", "src": "db2@1.60.1.70124"}
-{"id": 473441, "field": "aura", "en": "Increases hitpoints by $s1. $s2% haste to melee attacks. $s3 mana regen every 5 seconds.", "hash": "c53fc1dfa989ae33", "src": "db2@1.60.1.70124"}
-{"id": 473450, "field": "name", "en": "Dark Fortune of Damage", "hash": "67e03b75b893a2ed", "src": "db2@1.60.1.70124"}
-{"id": 473450, "field": "description", "en": "Grants all your party or raid members $s1% increased damage done for $d.", "hash": "74575d7f4981a5b7", "src": "db2@1.60.1.70124"}
-{"id": 473450, "field": "aura", "en": "Increases damage by $s1%.", "hash": "416dea0faa84f579", "src": "db2@1.60.1.70124"}
-{"id": 473466, "field": "name", "en": "Firewater Cauldron", "hash": "ddad7a3b20b2bff5", "src": "db2@1.60.1.70124"}
-{"id": 473466, "field": "description", "en": "Summon a cauldron of Firewater for $d, useable by all members of your party or raid to increase melee attack power by $473469s1 and size for $473469d.", "hash": "0fcd9860aa08192e", "src": "db2@1.60.1.70124"}
-{"id": 473469, "field": "name", "en": "Cleansed Firewater", "hash": "bd9445a8a26e763b", "src": "db2@1.60.1.70124"}
-{"id": 473469, "field": "description", "en": "Increases your melee attack power by $s1 and size for $d.", "hash": "1f3c4cc7717a4e8e", "src": "db2@1.60.1.70124"}
-{"id": 473469, "field": "aura", "en": "Increases size, and melee attack power by $s1.", "hash": "1bbffd493b2090d8", "src": "db2@1.60.1.70124"}
-{"id": 473476, "field": "name", "en": "Dreams of Zandalar", "hash": "b8515b1772458ce1", "src": "db2@1.60.1.70124"}
-{"id": 473476, "field": "description", "en": "Grants all your party or raid members $s1% increased movement speed and $s3% increased stats for $d.", "hash": "2d11f2b515d278cc", "src": "db2@1.60.1.70124"}
-{"id": 473476, "field": "aura", "en": "Increases movement speed by $s1% and all stats by $s3%.", "hash": "0d29e698f3edc656", "src": "db2@1.60.1.70124"}
-{"id": 473477, "field": "name", "en": "Songflower Serenade", "hash": "907215a2e47fc905", "src": "db2@1.60.1.70124"}
-{"id": 473482, "field": "name", "en": "Elemental Disjunction", "hash": "dcf380a06d2a707e", "src": "db2@1.60.1.70124"}
-{"id": 473482, "field": "description", "en": "Weakens Elemental members of the Abyssal Council in Silithus, reducing all damage they deal by $s1%. Lasts $d.", "hash": "093a0b91d4c00361", "src": "db2@1.60.1.70124"}
-{"id": 473482, "field": "aura", "en": "Damage done decreased by $s1%.", "hash": "618d76ee1578bf9a", "src": "db2@1.60.1.70124"}
-{"id": 473493, "field": "name", "en": "Explosive Sand Trap", "hash": "06bf45320c1cbdfe", "src": "db2@1.60.1.70124"}
-{"id": 473493, "field": "description", "en": "Place a trap at a nearby location that explodes when a Silithid from Hive'Ashi, Hive'Regal, or Hive'Zora approaches, causing the Silithid to take $473496s1% of its health in damage every $473496t sec for $473496d.", "hash": "c93b98f433b2cda6", "src": "db2@1.60.1.70124"}
-{"id": 473496, "field": "name", "en": "Explosive Sand Trap", "hash": "06bf45320c1cbdfe", "src": "db2@1.60.1.70124"}
-{"id": 473496, "field": "aura", "en": "Taking $s1% of health in Fire damage every $t1 seconds.", "hash": "cf9f53483bad8d80", "src": "db2@1.60.1.70124"}
-{"id": 473525, "field": "name", "en": "Freez-O-Matic Ray", "hash": "c5440cf8434d8d5e", "src": "db2@1.60.1.70124"}
-{"id": 473525, "field": "description", "en": "Freezes a Silithid within the Hive'Ashi, Hive'Regal, or Hive'Zora hives for $d. Effect broken by any damage.", "hash": "3bfe5a1c31013d2f", "src": "db2@1.60.1.70124"}
-{"id": 473544, "field": "name", "en": "Sneaking", "hash": "4eec4e14353fe7b0", "src": "db2@1.60.1.70124"}
-{"id": 473544, "field": "description", "en": "Inhaling this incense causes you to fade into the shadows, allowing you to sneak around while inside Hive'Ashi, Hive'Regal, or Hive'Zora, but reduces your speed by $s2%.  Lasts $d.", "hash": "2b7ea238a01def6d", "src": "db2@1.60.1.70124"}
-{"id": 473544, "field": "aura", "en": "Stealthed.  Movement slowed by $s2%.", "hash": "baa2cba737f8a41f", "src": "db2@1.60.1.70124"}
-{"id": 473561, "field": "name", "en": "Lasso", "hash": "432fe0338a961155", "src": "db2@1.60.1.70124"}
-{"id": 473561, "field": "description", "en": "Throw the ancient rope to restrain a silithid of Hive'Ashi, Hive'Regal, or Hive'Zora and pull them toward you. May not be used on enemies higher than level ${$PL+1} or which are marked as boss enemies.", "hash": "cf94065525b0af3a", "src": "db2@1.60.1.70124"}
-{"id": 473568, "field": "name", "en": "Lasso", "hash": "432fe0338a961155", "src": "db2@1.60.1.70124"}
-{"id": 473570, "field": "name", "en": "Lasso", "hash": "432fe0338a961155", "src": "db2@1.60.1.70124"}
-{"id": 473570, "field": "aura", "en": "Immune to Stun.", "hash": "fd2ef3a2f23f5350", "src": "db2@1.60.1.70124"}
-{"id": 473666, "field": "name", "en": "Argent Dawn", "hash": "a4082bd8ef54e5ef", "src": "db2@1.60.1.70124"}
-{"id": 473687, "field": "name", "en": "Argent Dawn", "hash": "a4082bd8ef54e5ef", "src": "db2@1.60.1.70124"}
-{"id": 473687, "field": "aura", "en": "While an argent squire is present in your party or raid, killing silithids in Hive'Ashi, Hive'Regal, and Hive'Zora grants reputation with the Argent Dawn.", "hash": "3775c50894169f88", "src": "db2@1.60.1.70124"}
-{"id": 473698, "field": "name", "en": "Combat Training", "hash": "4ffbc5e6a4f702be", "src": "db2@1.60.1.70124"}
-{"id": 473701, "field": "name", "en": "Taunt", "hash": "cf9e164389d9f53e", "src": "db2@1.60.1.70124"}
-{"id": 473701, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70124"}
-{"id": 473701, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70124"}
-{"id": 473702, "field": "name", "en": "Summon Ancient", "hash": "af7f0951b7e69043", "src": "db2@1.60.1.70124"}
-{"id": 473702, "field": "description", "en": "Use the branch to call an Ancient of War to assist you in fighting Silithids.", "hash": "65c2a94ba0e4cae7", "src": "db2@1.60.1.70124"}
-{"id": 473847, "field": "name", "en": "Summon Light Green Qiraji Battle Tank", "hash": "2c70a54ddac8ba12", "src": "db2@1.60.1.70124"}
-{"id": 473847, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473848, "field": "name", "en": "Summon Light Green Qiraji Battle Tank", "hash": "2c70a54ddac8ba12", "src": "db2@1.60.1.70124"}
-{"id": 473848, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473848, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473849, "field": "name", "en": "Gilded Demise", "hash": "06b695892cc04bdc", "src": "db2@1.60.1.70124"}
-{"id": 473853, "field": "name", "en": "Summon Light Green Qiraji Battle Tank", "hash": "2c70a54ddac8ba12", "src": "db2@1.60.1.70124"}
-{"id": 473853, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473853, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473855, "field": "name", "en": "Summon Light Green Qiraji Battle Tank", "hash": "2c70a54ddac8ba12", "src": "db2@1.60.1.70124"}
-{"id": 473855, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473855, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473856, "field": "name", "en": "Summon Dark Blue Qiraji Battle Tank", "hash": "dedcdfe83581a692", "src": "db2@1.60.1.70124"}
-{"id": 473856, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473858, "field": "name", "en": "Summon Dark Blue Qiraji Battle Tank", "hash": "dedcdfe83581a692", "src": "db2@1.60.1.70124"}
-{"id": 473858, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473858, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473859, "field": "name", "en": "Summon Dark Blue Qiraji Battle Tank", "hash": "dedcdfe83581a692", "src": "db2@1.60.1.70124"}
-{"id": 473859, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473859, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473860, "field": "name", "en": "Summon Dark Blue Qiraji Battle Tank", "hash": "dedcdfe83581a692", "src": "db2@1.60.1.70124"}
-{"id": 473860, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473860, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473862, "field": "name", "en": "Summon Light Blue Qiraji Battle Tank", "hash": "7b13efadfebd2b61", "src": "db2@1.60.1.70124"}
-{"id": 473862, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473869, "field": "name", "en": "Summon Light Blue Qiraji Battle Tank", "hash": "7b13efadfebd2b61", "src": "db2@1.60.1.70124"}
-{"id": 473869, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473869, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473870, "field": "name", "en": "Summon Light Blue Qiraji Battle Tank", "hash": "7b13efadfebd2b61", "src": "db2@1.60.1.70124"}
-{"id": 473870, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473870, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473871, "field": "name", "en": "Summon Light Blue Qiraji Battle Tank", "hash": "7b13efadfebd2b61", "src": "db2@1.60.1.70124"}
-{"id": 473871, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473871, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473872, "field": "name", "en": "Summon Orange Qiraji Battle Tank", "hash": "3d8223dd3a4ca537", "src": "db2@1.60.1.70124"}
-{"id": 473872, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473874, "field": "name", "en": "Summon Orange Qiraji Battle Tank", "hash": "3d8223dd3a4ca537", "src": "db2@1.60.1.70124"}
-{"id": 473874, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473874, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473875, "field": "name", "en": "Summon Orange Qiraji Battle Tank", "hash": "3d8223dd3a4ca537", "src": "db2@1.60.1.70124"}
-{"id": 473875, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473875, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473877, "field": "name", "en": "Summon Orange Qiraji Battle Tank", "hash": "3d8223dd3a4ca537", "src": "db2@1.60.1.70124"}
-{"id": 473877, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473877, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473881, "field": "name", "en": "Summon Twilight Qiraji Battle Tank", "hash": "033578576d8fb415", "src": "db2@1.60.1.70124"}
-{"id": 473881, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473882, "field": "name", "en": "Summon Twilight Qiraji Battle Tank", "hash": "033578576d8fb415", "src": "db2@1.60.1.70124"}
-{"id": 473882, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473882, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473886, "field": "name", "en": "Summon Twilight Qiraji Battle Tank", "hash": "033578576d8fb415", "src": "db2@1.60.1.70124"}
-{"id": 473886, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473886, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473887, "field": "name", "en": "Summon Twilight Qiraji Battle Tank", "hash": "033578576d8fb415", "src": "db2@1.60.1.70124"}
-{"id": 473887, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70124"}
-{"id": 473887, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
-{"id": 473900, "field": "name", "en": "Summon Tamed Silithid Tank", "hash": "0f861a6cfb23a034", "src": "db2@1.60.1.70124"}
-{"id": 473900, "field": "description", "en": "Emits a high frequency sound, forcing a silithid tank to burrow out from its home beneath the Temple of Ahn'Qiraj. The silithid is obedient to the summoner and can be used as a mount within the Temple of Ahn'Qiraj. Any hostile action towards the rider forces the tank underground.", "hash": "78dbdc3f0b7a6cf4", "src": "db2@1.60.1.70124"}
-{"id": 473900, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70124"}
+{"id": 473384, "field": "name", "en": "Summon Squire", "hash": "419b88343be690e3", "src": "db2@1.60.1.70170"}
+{"id": 473384, "field": "description", "en": "Use the manual to call your Argent Squire for a training lesson in combat with the Silithid. Silithids killed in the squire's presence will increase your reputation with the Argent Dawn.", "hash": "ec5a51f01694466e", "src": "db2@1.60.1.70170"}
+{"id": 473384, "field": "aura", "en": "Your squire is accompanying you. Gaining Argent Dawn reputation for killing Silithids.", "hash": "70ae358657bb9ff2", "src": "db2@1.60.1.70170"}
+{"id": 473387, "field": "name", "en": "Horn of the Dawn", "hash": "4af1ac18136414c4", "src": "db2@1.60.1.70170"}
+{"id": 473387, "field": "description", "en": "Rally your nearby party or raid members, granting them $s1% increased spell critical strike chance, $s3% increased melee and ranged critical strike chance, and $s2 increased attack power. Lasts $d. Exclusive with similar world effects and unaffected by Chronoboons.", "hash": "87cc436eff33f558", "src": "db2@1.60.1.70170"}
+{"id": 473387, "field": "aura", "en": "Increases critical chance of spells by $s1%, melee and ranged by $s3% and grants $s2 attack power.", "hash": "04d1ed3388fc5c5d", "src": "db2@1.60.1.70170"}
+{"id": 473399, "field": "name", "en": "Songflower Lullaby", "hash": "c3c0930f125226fc", "src": "db2@1.60.1.70170"}
+{"id": 473399, "field": "description", "en": "Summon a songflower that grants all your party or raid members $s1% increased chance for a melee, ranged, or spell critical by and $s2 increased attributes by for $d. Exclusive with similar world effects. Unaffected by Chronoboons.", "hash": "6a7a8d25b583d996", "src": "db2@1.60.1.70170"}
+{"id": 473399, "field": "aura", "en": "Increases chance for a melee, ranged, or spell critical by $s1% and all attributes by $s2.", "hash": "1e1394660351a360", "src": "db2@1.60.1.70170"}
+{"id": 473403, "field": "name", "en": "Blessing of Neptulon", "hash": "cefdf74e596426a6", "src": "db2@1.60.1.70170"}
+{"id": 473403, "field": "description", "en": "Grants all your nearby party or raid members $s1 increased attack power, $s3% increased Stamina, and $s4% increased spell critical strike chance for $d. Exclusive with similar world effects. Unaffected by Chronoboons.", "hash": "b78582ac4aa2a3de", "src": "db2@1.60.1.70170"}
+{"id": 473403, "field": "aura", "en": "Increases attack power by $s1, Stamina by $s3%, and spell critical strike chance by $s4%.", "hash": "23a559558f19839a", "src": "db2@1.60.1.70170"}
+{"id": 473441, "field": "name", "en": "Might of Blackrock", "hash": "35ab1b5277efce88", "src": "db2@1.60.1.70170"}
+{"id": 473441, "field": "description", "en": "Increases hitpoints by $s1. $s2% haste to melee attacks. $s3 mana regen every 5 seconds.", "hash": "c53fc1dfa989ae33", "src": "db2@1.60.1.70170"}
+{"id": 473441, "field": "aura", "en": "Increases hitpoints by $s1. $s2% haste to melee attacks. $s3 mana regen every 5 seconds.", "hash": "c53fc1dfa989ae33", "src": "db2@1.60.1.70170"}
+{"id": 473450, "field": "name", "en": "Dark Fortune of Damage", "hash": "67e03b75b893a2ed", "src": "db2@1.60.1.70170"}
+{"id": 473450, "field": "description", "en": "Grants all your party or raid members $s1% increased damage done for $d.", "hash": "74575d7f4981a5b7", "src": "db2@1.60.1.70170"}
+{"id": 473450, "field": "aura", "en": "Increases damage by $s1%.", "hash": "416dea0faa84f579", "src": "db2@1.60.1.70170"}
+{"id": 473466, "field": "name", "en": "Firewater Cauldron", "hash": "ddad7a3b20b2bff5", "src": "db2@1.60.1.70170"}
+{"id": 473466, "field": "description", "en": "Summon a cauldron of Firewater for $d, useable by all members of your party or raid to increase melee attack power by $473469s1 and size for $473469d.", "hash": "0fcd9860aa08192e", "src": "db2@1.60.1.70170"}
+{"id": 473469, "field": "name", "en": "Cleansed Firewater", "hash": "bd9445a8a26e763b", "src": "db2@1.60.1.70170"}
+{"id": 473469, "field": "description", "en": "Increases your melee attack power by $s1 and size for $d.", "hash": "1f3c4cc7717a4e8e", "src": "db2@1.60.1.70170"}
+{"id": 473469, "field": "aura", "en": "Increases size, and melee attack power by $s1.", "hash": "1bbffd493b2090d8", "src": "db2@1.60.1.70170"}
+{"id": 473476, "field": "name", "en": "Dreams of Zandalar", "hash": "b8515b1772458ce1", "src": "db2@1.60.1.70170"}
+{"id": 473476, "field": "description", "en": "Grants all your party or raid members $s1% increased movement speed and $s3% increased stats for $d.", "hash": "2d11f2b515d278cc", "src": "db2@1.60.1.70170"}
+{"id": 473476, "field": "aura", "en": "Increases movement speed by $s1% and all stats by $s3%.", "hash": "0d29e698f3edc656", "src": "db2@1.60.1.70170"}
+{"id": 473477, "field": "name", "en": "Songflower Serenade", "hash": "907215a2e47fc905", "src": "db2@1.60.1.70170"}
+{"id": 473482, "field": "name", "en": "Elemental Disjunction", "hash": "dcf380a06d2a707e", "src": "db2@1.60.1.70170"}
+{"id": 473482, "field": "description", "en": "Weakens Elemental members of the Abyssal Council in Silithus, reducing all damage they deal by $s1%. Lasts $d.", "hash": "093a0b91d4c00361", "src": "db2@1.60.1.70170"}
+{"id": 473482, "field": "aura", "en": "Damage done decreased by $s1%.", "hash": "618d76ee1578bf9a", "src": "db2@1.60.1.70170"}
+{"id": 473493, "field": "name", "en": "Explosive Sand Trap", "hash": "06bf45320c1cbdfe", "src": "db2@1.60.1.70170"}
+{"id": 473493, "field": "description", "en": "Place a trap at a nearby location that explodes when a Silithid from Hive'Ashi, Hive'Regal, or Hive'Zora approaches, causing the Silithid to take $473496s1% of its health in damage every $473496t sec for $473496d.", "hash": "c93b98f433b2cda6", "src": "db2@1.60.1.70170"}
+{"id": 473496, "field": "name", "en": "Explosive Sand Trap", "hash": "06bf45320c1cbdfe", "src": "db2@1.60.1.70170"}
+{"id": 473496, "field": "aura", "en": "Taking $s1% of health in Fire damage every $t1 seconds.", "hash": "cf9f53483bad8d80", "src": "db2@1.60.1.70170"}
+{"id": 473525, "field": "name", "en": "Freez-O-Matic Ray", "hash": "c5440cf8434d8d5e", "src": "db2@1.60.1.70170"}
+{"id": 473525, "field": "description", "en": "Freezes a Silithid within the Hive'Ashi, Hive'Regal, or Hive'Zora hives for $d. Effect broken by any damage.", "hash": "3bfe5a1c31013d2f", "src": "db2@1.60.1.70170"}
+{"id": 473544, "field": "name", "en": "Sneaking", "hash": "4eec4e14353fe7b0", "src": "db2@1.60.1.70170"}
+{"id": 473544, "field": "description", "en": "Inhaling this incense causes you to fade into the shadows, allowing you to sneak around while inside Hive'Ashi, Hive'Regal, or Hive'Zora, but reduces your speed by $s2%.  Lasts $d.", "hash": "2b7ea238a01def6d", "src": "db2@1.60.1.70170"}
+{"id": 473544, "field": "aura", "en": "Stealthed.  Movement slowed by $s2%.", "hash": "baa2cba737f8a41f", "src": "db2@1.60.1.70170"}
+{"id": 473561, "field": "name", "en": "Lasso", "hash": "432fe0338a961155", "src": "db2@1.60.1.70170"}
+{"id": 473561, "field": "description", "en": "Throw the ancient rope to restrain a silithid of Hive'Ashi, Hive'Regal, or Hive'Zora and pull them toward you. May not be used on enemies higher than level ${$PL+1} or which are marked as boss enemies.", "hash": "cf94065525b0af3a", "src": "db2@1.60.1.70170"}
+{"id": 473568, "field": "name", "en": "Lasso", "hash": "432fe0338a961155", "src": "db2@1.60.1.70170"}
+{"id": 473570, "field": "name", "en": "Lasso", "hash": "432fe0338a961155", "src": "db2@1.60.1.70170"}
+{"id": 473570, "field": "aura", "en": "Immune to Stun.", "hash": "fd2ef3a2f23f5350", "src": "db2@1.60.1.70170"}
+{"id": 473666, "field": "name", "en": "Argent Dawn", "hash": "a4082bd8ef54e5ef", "src": "db2@1.60.1.70170"}
+{"id": 473687, "field": "name", "en": "Argent Dawn", "hash": "a4082bd8ef54e5ef", "src": "db2@1.60.1.70170"}
+{"id": 473687, "field": "aura", "en": "While an argent squire is present in your party or raid, killing silithids in Hive'Ashi, Hive'Regal, and Hive'Zora grants reputation with the Argent Dawn.", "hash": "3775c50894169f88", "src": "db2@1.60.1.70170"}
+{"id": 473698, "field": "name", "en": "Combat Training", "hash": "4ffbc5e6a4f702be", "src": "db2@1.60.1.70170"}
+{"id": 473701, "field": "name", "en": "Taunt", "hash": "cf9e164389d9f53e", "src": "db2@1.60.1.70170"}
+{"id": 473701, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70170"}
+{"id": 473701, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70170"}
+{"id": 473702, "field": "name", "en": "Summon Ancient", "hash": "af7f0951b7e69043", "src": "db2@1.60.1.70170"}
+{"id": 473702, "field": "description", "en": "Use the branch to call an Ancient of War to assist you in fighting Silithids.", "hash": "65c2a94ba0e4cae7", "src": "db2@1.60.1.70170"}
+{"id": 473847, "field": "name", "en": "Summon Light Green Qiraji Battle Tank", "hash": "2c70a54ddac8ba12", "src": "db2@1.60.1.70170"}
+{"id": 473847, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473848, "field": "name", "en": "Summon Light Green Qiraji Battle Tank", "hash": "2c70a54ddac8ba12", "src": "db2@1.60.1.70170"}
+{"id": 473848, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473848, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473849, "field": "name", "en": "Gilded Demise", "hash": "06b695892cc04bdc", "src": "db2@1.60.1.70170"}
+{"id": 473853, "field": "name", "en": "Summon Light Green Qiraji Battle Tank", "hash": "2c70a54ddac8ba12", "src": "db2@1.60.1.70170"}
+{"id": 473853, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473853, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473855, "field": "name", "en": "Summon Light Green Qiraji Battle Tank", "hash": "2c70a54ddac8ba12", "src": "db2@1.60.1.70170"}
+{"id": 473855, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473855, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473856, "field": "name", "en": "Summon Dark Blue Qiraji Battle Tank", "hash": "dedcdfe83581a692", "src": "db2@1.60.1.70170"}
+{"id": 473856, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473858, "field": "name", "en": "Summon Dark Blue Qiraji Battle Tank", "hash": "dedcdfe83581a692", "src": "db2@1.60.1.70170"}
+{"id": 473858, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473858, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473859, "field": "name", "en": "Summon Dark Blue Qiraji Battle Tank", "hash": "dedcdfe83581a692", "src": "db2@1.60.1.70170"}
+{"id": 473859, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473859, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473860, "field": "name", "en": "Summon Dark Blue Qiraji Battle Tank", "hash": "dedcdfe83581a692", "src": "db2@1.60.1.70170"}
+{"id": 473860, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473860, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473862, "field": "name", "en": "Summon Light Blue Qiraji Battle Tank", "hash": "7b13efadfebd2b61", "src": "db2@1.60.1.70170"}
+{"id": 473862, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473869, "field": "name", "en": "Summon Light Blue Qiraji Battle Tank", "hash": "7b13efadfebd2b61", "src": "db2@1.60.1.70170"}
+{"id": 473869, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473869, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473870, "field": "name", "en": "Summon Light Blue Qiraji Battle Tank", "hash": "7b13efadfebd2b61", "src": "db2@1.60.1.70170"}
+{"id": 473870, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473870, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473871, "field": "name", "en": "Summon Light Blue Qiraji Battle Tank", "hash": "7b13efadfebd2b61", "src": "db2@1.60.1.70170"}
+{"id": 473871, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473871, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473872, "field": "name", "en": "Summon Orange Qiraji Battle Tank", "hash": "3d8223dd3a4ca537", "src": "db2@1.60.1.70170"}
+{"id": 473872, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473874, "field": "name", "en": "Summon Orange Qiraji Battle Tank", "hash": "3d8223dd3a4ca537", "src": "db2@1.60.1.70170"}
+{"id": 473874, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473874, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473875, "field": "name", "en": "Summon Orange Qiraji Battle Tank", "hash": "3d8223dd3a4ca537", "src": "db2@1.60.1.70170"}
+{"id": 473875, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473875, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473877, "field": "name", "en": "Summon Orange Qiraji Battle Tank", "hash": "3d8223dd3a4ca537", "src": "db2@1.60.1.70170"}
+{"id": 473877, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473877, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473881, "field": "name", "en": "Summon Twilight Qiraji Battle Tank", "hash": "033578576d8fb415", "src": "db2@1.60.1.70170"}
+{"id": 473881, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473882, "field": "name", "en": "Summon Twilight Qiraji Battle Tank", "hash": "033578576d8fb415", "src": "db2@1.60.1.70170"}
+{"id": 473882, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473882, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473886, "field": "name", "en": "Summon Twilight Qiraji Battle Tank", "hash": "033578576d8fb415", "src": "db2@1.60.1.70170"}
+{"id": 473886, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473886, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473887, "field": "name", "en": "Summon Twilight Qiraji Battle Tank", "hash": "033578576d8fb415", "src": "db2@1.60.1.70170"}
+{"id": 473887, "field": "description", "en": "Summons and dismisses a rideable Qiraji battle tank. This is a very fast mount.", "hash": "46e67ef36b93a5dd", "src": "db2@1.60.1.70170"}
+{"id": 473887, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
+{"id": 473900, "field": "name", "en": "Summon Tamed Silithid Tank", "hash": "0f861a6cfb23a034", "src": "db2@1.60.1.70170"}
+{"id": 473900, "field": "description", "en": "Emits a high frequency sound, forcing a silithid tank to burrow out from its home beneath the Temple of Ahn'Qiraj. The silithid is obedient to the summoner and can be used as a mount within the Temple of Ahn'Qiraj. Any hostile action towards the rider forces the tank underground.", "hash": "78dbdc3f0b7a6cf4", "src": "db2@1.60.1.70170"}
+{"id": 473900, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}

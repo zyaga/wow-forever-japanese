@@ -1,3 +1,3 @@
-{"id": "XPBAR_LABEL", "field": "text", "en": "XP Bar", "hash": "f61e262663a65949", "src": "db2@1.60.1.70124"}
-{"id": "XP_STATUS_BAR_TEXT", "field": "text", "en": "XP: %d/%d", "hash": "faf4f2d78f8515c6", "src": "db2@1.60.1.70124"}
-{"id": "XP_TEXT_BANKED_XP_HEADER", "field": "text", "en": "Banked XP", "hash": "0514d90a19f201d0", "src": "db2@1.60.1.70124"}
+{"id": "XPBAR_LABEL", "field": "text", "en": "XP Bar", "hash": "f61e262663a65949", "src": "db2@1.60.1.70170"}
+{"id": "XP_STATUS_BAR_TEXT", "field": "text", "en": "XP: %d/%d", "hash": "faf4f2d78f8515c6", "src": "db2@1.60.1.70170"}
+{"id": "XP_TEXT_BANKED_XP_HEADER", "field": "text", "en": "Banked XP", "hash": "0514d90a19f201d0", "src": "db2@1.60.1.70170"}

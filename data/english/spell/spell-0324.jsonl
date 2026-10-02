@@ -1,4 +1,4 @@
-{"id": 324270, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70124"}
-{"id": 324270, "field": "aura", "en": "Deals $s3 damage every $t3 sec.\r\nSpreads to nearby allies.", "hash": "f772803c2fa01490", "src": "db2@1.60.1.70124"}
-{"id": 324271, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70124"}
-{"id": 324271, "field": "aura", "en": "Deals $s1 damage every $t1 sec.\r\nSpreads to nearby allies.", "hash": "b98943818dbe3cc7", "src": "db2@1.60.1.70124"}
+{"id": 324270, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70170"}
+{"id": 324270, "field": "aura", "en": "Deals $s3 damage every $t3 sec.\r\nSpreads to nearby allies.", "hash": "f772803c2fa01490", "src": "db2@1.60.1.70170"}
+{"id": 324271, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70170"}
+{"id": 324271, "field": "aura", "en": "Deals $s1 damage every $t1 sec.\r\nSpreads to nearby allies.", "hash": "b98943818dbe3cc7", "src": "db2@1.60.1.70170"}

@@ -3,7 +3,10 @@
 -- ore lines. The client builds the unit tooltip from C_TooltipInfo and then runs the TooltipDataProcessor post-calls
 -- for Enum.TooltipDataType.Unit (the same system UI/Tooltip uses for items, spells and auras); the lines are
 -- GlobalStrings it fills (TOOLTIP_UNIT_LEVEL*, UNIT_*LEVEL_TEMPLATE, UNIT_SKINNABLE_*, CORPSE_TOOLTIP) [unverified:
--- which of them this build's C code sends].
+-- which of them this build's C code sends]. A creature's tooltip on Forever also shows its type on a line of its own
+-- ("Beast", the CreatureType row) and, for a quest it counts for, the kill count (QUEST_MONSTERS_KILLED,
+-- "0/4 Young Thistle Boar slain": the creature's name stays English) [verified in game: a
+-- screenshot on 1.60.1.70170].
 -- This surface keeps its OWN records, rather than borrowing UI/HelpTooltip's walk:
 -- TooltipDataHandlerMixin:InternalProcessInfo runs the post-calls and then calls `self:Show()` on the next line
 -- [verified: blizzard_sharedxmlgame/tooltip/tooltipdatahandler.lua:298–300], and HelpTooltip's own Show hook treats a
@@ -28,9 +31,29 @@ local Compat = WFJ.Compat
 TooltipUnit.KEYS = { "TOOLTIP_UNIT_LEVEL", "TOOLTIP_UNIT_LEVEL_TYPE", "TOOLTIP_UNIT_LEVEL_RACE",
   "TOOLTIP_UNIT_LEVEL_RACE_TYPE", "UNIT_LEVEL_TEMPLATE", "UNIT_TYPE_LEVEL_TEMPLATE", "UNIT_PLUS_LEVEL_TEMPLATE",
   "UNIT_TYPE_PLUS_LEVEL_TEMPLATE", "UNIT_LEVEL_DEAD_TEMPLATE", "UNIT_SKINNABLE_LEATHER", "UNIT_SKINNABLE_HERB",
-  "UNIT_SKINNABLE_ROCK", "UNIT_SKINNABLE_BOLTS", "CORPSE_TOOLTIP" }
-local ONLY = { only = TooltipUnit.KEYS }
-local CREATURE_TEMPLATES = { UNIT_TYPE_LEVEL_TEMPLATE = true, UNIT_TYPE_PLUS_LEVEL_TEMPLATE = true }
+  "UNIT_SKINNABLE_ROCK", "UNIT_SKINNABLE_BOLTS", "CORPSE_TOOLTIP", "QUEST_MONSTERS_KILLED", "QUEST_PLAYERS_KILLED",
+  -- written by the compiled client, named by no Lua: threat, the corpse and skull-level lines, already gathered, and
+  -- the faction / player objective forms; the reputation, race and creature names in them stay as written
+  "THREAT_TOOLTIP", "CORPSE", "DEAD", "PVP_ENABLED", "ELITE", "UNIT_LETHAL_LEVEL_TEMPLATE",
+  "UNIT_TYPE_LETHAL_LEVEL_TEMPLATE", "UNIT_LETHAL_LEVEL_DEAD_TEMPLATE", "UNIT_TYPE_LEVEL_FACTION_TEMPLATE",
+  "UNIT_ALREADY_SKINNED_LEATHER", "UNIT_ALREADY_SKINNED_HERB", "UNIT_ALREADY_SKINNED_ROCK",
+  "UNIT_ALREADY_SKINNED_BOLTS", "UNIT_CAPTURABLE", "QUEST_FACTION_NEEDED", "QUEST_FACTION_NEEDED_NOPROGRESS",
+  "QUEST_PLAYERS_KILLED_NOPROGRESS" }
+-- the owner line under a pet, minion or guardian ("Bob's Pet", the UnitOwner line kind): the owner's name stays English
+for _, k in ipairs({ "UNITNAME_TITLE_CHARM", "UNITNAME_TITLE_COMPANION", "UNITNAME_TITLE_CREATION",
+  "UNITNAME_TITLE_GUARDIAN", "UNITNAME_TITLE_MINION", "UNITNAME_TITLE_OPPONENT", "UNITNAME_TITLE_PET",
+  "UNITNAME_TITLE_SQUIRE" }) do
+  TooltipUnit.KEYS[#TooltipUnit.KEYS + 1] = k
+end
+for _, i in ipairs({ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+  28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 53, 54, 55, 56, 57,
+  58, 59, 60, 61 }) do
+  TooltipUnit.KEYS[#TooltipUnit.KEYS + 1] = "UNITNAME_SUMMON_TITLE" .. i
+end
+-- a creature: the keys, and its type on a line of its own (built per call: the family's keys come from the index)
+local function creatureOnly() return WFJ.Labels.familiesWith(TooltipUnit.KEYS, "CreatureType") end
+local CREATURE_TEMPLATES = { UNIT_TYPE_LEVEL_TEMPLATE = true, UNIT_TYPE_PLUS_LEVEL_TEMPLATE = true,
+  UNIT_TYPE_LETHAL_LEVEL_TEMPLATE = true }
 local PLAYER_KEYS = {}
 for _, k in ipairs(TooltipUnit.KEYS) do
   if not CREATURE_TEMPLATES[k] then PLAYER_KEYS[#PLAYER_KEYS + 1] = k end
@@ -62,6 +85,110 @@ local function refitFor(tt)
   end
 end
 
+-- Each row's line kind (Enum.TooltipDataLineType name) from the tooltip data: the client sets `lineIndex` on every
+-- line it writes [verified: blizzard_sharedxmlgame/tooltip/tooltipdatahandler.lua:319–335]. → { [row] = kind }
+function TooltipUnit.lineKinds(data)
+  local out = {}
+  local enum = Compat.resolve("Enum.TooltipDataLineType")
+  if type(data) ~= "table" or type(data.lines) ~= "table" or type(enum) ~= "table" then return out end
+  local names = {}
+  for name, value in pairs(enum) do names[value] = name end
+  for _, line in ipairs(data.lines) do
+    local row, kind = line.lineIndex, line.type
+    if type(row) == "number" and kind ~= nil then out[row] = names[kind] end
+  end
+  return out
+end
+
+-- Quest titles by the hash of their English (the addon ships no English): built on first use. → { [h1] = { ids } }
+local titleIds
+local function titlesByHash()
+  if titleIds then return titleIds end
+  titleIds = {}
+  for id in pairs(WFJ.Data.quest) do
+    local entry = WFJ.Lookup.get("quest.title", id)
+    if entry and entry.h1 then
+      titleIds[entry.h1] = titleIds[entry.h1] or {}
+      table.insert(titleIds[entry.h1], id)
+    end
+  end
+  return titleIds
+end
+
+-- The quest a title line names. Quests sharing one English title (a chain's parts) are told apart by the quest log:
+-- the client shows a quest title on a unit only for a quest the player has; still several → only when their Japanese
+-- agrees. → quest id | nil, why
+function TooltipUnit.questFor(title)
+  local isSecret = Compat.resolve("issecretvalue")
+  if type(title) ~= "string" or title == "" or (type(isSecret) == "function" and isSecret(title)) then
+    return nil, "no readable title"
+  end
+  local h1 = WFJ.Hash.h32x2(WFJ.Normalize.v1(WFJ.Collector.text(title)))
+  local ids = titlesByHash()[h1]
+  if not ids then return nil, "no quest with that title" end
+  if #ids > 1 then
+    local inLog = Compat.resolve("C_QuestLog.GetLogIndexForQuestID")
+    if type(inLog) == "function" then
+      local held = {}
+      for _, id in ipairs(ids) do
+        local ok, index = pcall(inLog, id)
+        if ok and type(index) == "number" then held[#held + 1] = id end
+      end
+      if #held >= 1 then ids = held end
+    end
+  end
+  local first, ja = ids[1], nil
+  for _, id in ipairs(ids) do
+    local entry = WFJ.Lookup.get("quest.title", id)
+    local text = entry and entry.ja
+    if ja == nil then ja = text elseif text ~= ja then return nil, "quests sharing the title differ" end
+  end
+  return first
+end
+
+-- The minimap mouseover is one line holding a block the client builds: names (a quest giver), a quest title, a colour
+-- code, then the objectives as "- 2/7 Young Nightsaber slain" (seen in game). Each part is read on its own: a title
+-- by its hash, an objective through UI/QuestMap's objective lookups, anything else (a name) kept as written. The
+-- client rebuilds it every frame, so it is written without a record. → the block in Japanese | nil, notes
+function TooltipUnit.minimapBlock(text)
+  local isSecret = Compat.resolve("issecretvalue")
+  if type(text) ~= "string" or not text:find("\n", 1, true)
+    or (type(isSecret) == "function" and isSecret(text)) then
+    return nil
+  end
+  local out, changed, notes = {}, false, {}
+  for segment in (text .. "\n"):gmatch("(.-)\n") do
+    local head = segment:match("^|c%x%x%x%x%x%x%x%x") or ""
+    local rest = segment:sub(#head + 1)
+    local tail = rest:match("|c%x%x%x%x%x%x%x%x$") or rest:match("|r$") or ""
+    local core = rest:sub(1, #rest - #tail)
+    local dash, objective = core:match("^(%- )(.+)$")
+    local ja
+    if objective then
+      local o = WFJ.QuestMap.objectiveJapanese(objective, SURFACE)
+      if o and o ~= objective then ja = dash .. o end
+    else
+      local id = TooltipUnit.questFor(core)
+      if id then
+        local t = WFJ.Render.preview(SURFACE, core, nil, "quests", "quest.title", id, { live = core, compact = true })
+        if t and t ~= core then ja = t; notes[#notes + 1] = "title quest " .. id end
+      end
+    end
+    if ja then changed = true end
+    out[#out + 1] = head .. (ja or core) .. tail
+  end
+  if not changed then return nil, notes end
+  -- the client draws the block in the line's gold (NORMAL_FONT_COLOR) up to its own white code, but rebuilt with our
+  -- text the line comes back white (seen in the trace: 1.00,0.82,0.00 on the first pass, 1.00,1.00,1.00 after), so the
+  -- gold is written into the text itself
+  local block = table.concat(out, "\n")
+  if not block:find("^|c") then block = "|cffffd100" .. block end
+  return block, notes
+end
+
+-- The widget the minimap block was written on, to give it the client's face back when the tooltip hides.
+local blockWidget
+
 -- The Unit post-call (tooltip, tooltip data): GameTooltip only (its OnHide releases these records).
 -- → the number of lines shown
 function TooltipUnit.onUnit(tt, data)
@@ -69,17 +196,53 @@ function TooltipUnit.onUnit(tt, data)
   local name = tt:GetName()
   if type(name) ~= "string" then return 0 end
   local lines = math.min(tt:NumLines() or 0, MAX_LINES)
-  local refit, n, only = refitFor(tt), 0, isPlayer(data) and ONLY_PLAYER or ONLY
-  for i = 2, lines do -- line 1 is the unit's name: never read, never written
+  local refit, n, only = refitFor(tt), 0, isPlayer(data) and ONLY_PLAYER or creatureOnly()
+  local kinds, notes = TooltipUnit.lineKinds(data), {}
+  if lines == 1 then
+    local fs = Compat.resolve(name .. "TextLeft1")
+    local ja, why = TooltipUnit.minimapBlock(type(fs) == "table" and fs:GetText() or nil)
+    if ja and WFJ.State.enabled ~= false and not WFJ.Modifier.isDown() and WFJ.State.areaEnabled("quests") then
+      fs:SetText(ja)
+      WFJ.Font.bundle(fs) -- written outside a record, so the face is set here and given back on the tooltip's OnHide
+      blockWidget = fs
+      refit()
+      notes[#notes + 1] = "minimap block: " .. table.concat(why or {}, ", ")
+      if WFJ.Tooltip.trace then
+        pcall(WFJ.Tooltip.traceFrame, tt, "minimap", nil, WFJ.Tooltip.lines(tt), "-> wrote 1 (" .. notes[1] .. ")")
+      end
+      return 1
+    end
+  end
+  -- line 1 is the unit's or object's name: never read, never written; a minimap mouseover starts with a quest title
+  local first = kinds[1] == "QuestTitle" and 1 or 2
+  for i = first, lines do
     local fs = Compat.resolve(name .. "TextLeft" .. i)
-    if type(fs) == "table" then n = n + WFJ.Labels.show(SURFACE, "L" .. i, fs, refit, only) end
+    if type(fs) == "table" then
+      if kinds[i] == "QuestTitle" then
+        local title = fs:GetText()
+        local id, why = TooltipUnit.questFor(title)
+        if id and WFJ.Render.show(SURFACE, "L" .. i, fs, title, "quests", "quest.title", id, { refit = refit }) then
+          n = n + 1
+        elseif not id then
+          WFJ.SurfaceState.drop(SURFACE, "L" .. i) -- an earlier tooltip's record on this row
+        end
+        notes[#notes + 1] = ("row %d quest title: %s"):format(i, id and ("quest " .. id) or why)
+      else
+        n = n + WFJ.Labels.show(SURFACE, "L" .. i, fs, refit, only)
+      end
+    end
   end
   for i = lines + 1, MAX_LINES do WFJ.SurfaceState.drop(SURFACE, "L" .. i) end
+  if WFJ.Tooltip.trace then
+    pcall(WFJ.Tooltip.traceFrame, tt, "unit", nil, WFJ.Tooltip.lines(tt), ("-> wrote %d%s"):format(n,
+      #notes > 0 and (" (" .. table.concat(notes, "; ") .. ")") or ""))
+  end
   return n
 end
 
 -- HookScript target (GameTooltip OnHide): the frame's lines are gone. → records released
 function TooltipUnit.release()
+  if blockWidget then pcall(WFJ.Font.restore, blockWidget); blockWidget = nil end
   return WFJ.Render.release(SURFACE)
 end
 
@@ -94,6 +257,11 @@ function TooltipUnit.init()
   local tt = Compat.get(SURFACE, "GameTooltip")
   if type(tt) ~= "table" or type(tt.HookScript) ~= "function" then return false end
   processor.AddTooltipPostCall(types.Unit, TooltipUnit.onUnit)
+  -- the other tooltips whose lines are a unit's or a quest's: the minimap mouseover (a quest's title and objectives,
+  -- GameTooltip:SetMinimapMouseover, blizzard_minimap/mainline/minimap.lua:271), a game object, a corpse
+  for _, name in ipairs({ "MinimapMouseover", "Object", "Corpse" }) do
+    if types[name] ~= nil then processor.AddTooltipPostCall(types[name], TooltipUnit.onUnit) end
+  end
   tt:HookScript("OnHide", TooltipUnit.release)
   hooked = true
   return true

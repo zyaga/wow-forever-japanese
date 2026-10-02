@@ -1,41 +1,41 @@
 {"id": 25, "field": "text", "en": "Scout the gazebo on Mystral Lake that overlooks the nearby Alliance outpost.", "hash": "6d7c00f9f9e85550", "src": "wdb@1.15.9.69722"}
-{"id": 28, "field": "text", "en": "Complete the Trial of the Lake.", "hash": "aaf8a7542f5e14ae", "src": "wdb@1.60.1.70124"}
-{"id": 29, "field": "text", "en": "Complete the Trial of the Lake.", "hash": "aaf8a7542f5e14ae", "src": "wdb@1.60.1.70124"}
-{"id": 62, "field": "text", "en": "Scout through the Fargodeep Mine", "hash": "773ecf4fb3f1c211", "src": "wdb@1.60.1.70124"}
-{"id": 76, "field": "text", "en": "Scout through the Jasperlode Mine", "hash": "3e03037f13956e5e", "src": "wdb@1.60.1.70124"}
-{"id": 155, "field": "text", "en": "Escort The Defias Traitor to discover where VanCleef is hiding", "hash": "b144c0d8084e51ba", "src": "wdb@1.60.1.70124"}
+{"id": 28, "field": "text", "en": "Complete the Trial of the Lake.", "hash": "aaf8a7542f5e14ae", "src": "wdb@1.60.1.70170"}
+{"id": 29, "field": "text", "en": "Complete the Trial of the Lake.", "hash": "aaf8a7542f5e14ae", "src": "wdb@1.60.1.70170"}
+{"id": 62, "field": "text", "en": "Scout through the Fargodeep Mine", "hash": "773ecf4fb3f1c211", "src": "wdb@1.60.1.70170"}
+{"id": 76, "field": "text", "en": "Scout through the Jasperlode Mine", "hash": "3e03037f13956e5e", "src": "wdb@1.60.1.70170"}
+{"id": 155, "field": "text", "en": "Escort The Defias Traitor to discover where VanCleef is hiding", "hash": "b144c0d8084e51ba", "src": "wdb@1.60.1.70170"}
 {"id": 201, "field": "text", "en": "Locate the hunters' camp", "hash": "ed3d156da5e724c6", "src": "wdb@1.15.9.69722"}
-{"id": 219, "field": "text", "en": "Escort Corporal Keeshan back to Redridge", "hash": "fe81f3f5a710b46e", "src": "wdb@1.60.1.70124"}
-{"id": 273, "field": "text", "en": "Find Huldar, Miran, and Saean", "hash": "2964b23871e09573", "src": "wdb@1.60.1.70124"}
-{"id": 287, "field": "text", "en": "Fully explore Frostmane Hold", "hash": "a45a74ca60b3d301", "src": "wdb@1.60.1.70124"}
-{"id": 309, "field": "text", "en": "Escort Miran to the excavation site", "hash": "8397cf94c8648c6b", "src": "wdb@1.60.1.70124"}
-{"id": 434, "field": "text", "en": "Overhear Lescovar and Marzon's Conversation", "hash": "5f8d89b597d49209", "src": "wdb@1.60.1.70124"}
-{"id": 435, "field": "text", "en": "Erland must reach Rane Yorick", "hash": "707ada30e8e552ca", "src": "wdb@1.60.1.70124"}
-{"id": 437, "field": "text", "en": "Enter the Dead Fields", "hash": "c9160b6254ff5aa6", "src": "wdb@1.60.1.70124"}
-{"id": 452, "field": "text", "en": "Aid Faerleia in killing the Pyrewood Council", "hash": "670e8d298b87e7a7", "src": "wdb@1.60.1.70124"}
-{"id": 455, "field": "text", "en": "Traverse Dun Algaz", "hash": "457bc8fb31956222", "src": "wdb@1.60.1.70124"}
+{"id": 219, "field": "text", "en": "Escort Corporal Keeshan back to Redridge", "hash": "fe81f3f5a710b46e", "src": "wdb@1.60.1.70170"}
+{"id": 273, "field": "text", "en": "Find Huldar, Miran, and Saean", "hash": "2964b23871e09573", "src": "wdb@1.60.1.70170"}
+{"id": 287, "field": "text", "en": "Fully explore Frostmane Hold", "hash": "a45a74ca60b3d301", "src": "wdb@1.60.1.70170"}
+{"id": 309, "field": "text", "en": "Escort Miran to the excavation site", "hash": "8397cf94c8648c6b", "src": "wdb@1.60.1.70170"}
+{"id": 434, "field": "text", "en": "Overhear Lescovar and Marzon's Conversation", "hash": "5f8d89b597d49209", "src": "wdb@1.60.1.70170"}
+{"id": 435, "field": "text", "en": "Erland must reach Rane Yorick", "hash": "707ada30e8e552ca", "src": "wdb@1.60.1.70170"}
+{"id": 437, "field": "text", "en": "Enter the Dead Fields", "hash": "c9160b6254ff5aa6", "src": "wdb@1.60.1.70170"}
+{"id": 452, "field": "text", "en": "Aid Faerleia in killing the Pyrewood Council", "hash": "670e8d298b87e7a7", "src": "wdb@1.60.1.70170"}
+{"id": 455, "field": "text", "en": "Traverse Dun Algaz", "hash": "457bc8fb31956222", "src": "wdb@1.60.1.70170"}
 {"id": 503, "field": "text", "en": "Find where Gol'dir is being held", "hash": "e3201db4b3c5fa70", "src": "wdb@1.15.9.69722"}
 {"id": 578, "field": "text", "en": "Locate the haunted island", "hash": "bf109e254ed9c113", "src": "wdb@1.15.9.69722"}
-{"id": 590, "field": "text", "en": "Defeat Calvin Montague", "hash": "ef6338363993be24", "src": "wdb@1.60.1.70124"}
+{"id": 590, "field": "text", "en": "Defeat Calvin Montague", "hash": "ef6338363993be24", "src": "wdb@1.60.1.70170"}
 {"id": 648, "field": "text", "en": "Escort OOX-17/TN to Steamwheedle Port", "hash": "74d5a35458ed3d0e", "src": "wdb@1.15.9.69722"}
 {"id": 660, "field": "text", "en": "Protect Kinelory", "hash": "1ba904899e6daa70", "src": "wdb@1.15.9.69722"}
 {"id": 665, "field": "text", "en": "Defend Professor Phizzlethorpe", "hash": "d7bbf4e8ea8e6ac6", "src": "wdb@1.15.9.69722"}
 {"id": 667, "field": "text", "en": "Defend Shakes O'Breen", "hash": "8119f1b1520a09d9", "src": "wdb@1.15.9.69722"}
-{"id": 731, "field": "text", "en": "Escort Prospector Remtravel", "hash": "db48c5745511b627", "src": "wdb@1.60.1.70124"}
-{"id": 754, "field": "text", "en": "Cleanse the Winterhoof Water Well", "hash": "74ab3bd422daa56a", "src": "wdb@1.60.1.70124"}
-{"id": 758, "field": "text", "en": "Cleanse the Thunderhorn Water Well", "hash": "7ec8b4cbbd5ae563", "src": "wdb@1.60.1.70124"}
-{"id": 760, "field": "text", "en": "Cleanse the Wildmane Well", "hash": "c38bb5cfae4b3da6", "src": "wdb@1.60.1.70124"}
-{"id": 809, "field": "text", "en": "Destroy the Demon Seed", "hash": "07a58f1053c1bc40", "src": "wdb@1.60.1.70124"}
+{"id": 731, "field": "text", "en": "Escort Prospector Remtravel", "hash": "db48c5745511b627", "src": "wdb@1.60.1.70170"}
+{"id": 754, "field": "text", "en": "Cleanse the Winterhoof Water Well", "hash": "74ab3bd422daa56a", "src": "wdb@1.60.1.70170"}
+{"id": 758, "field": "text", "en": "Cleanse the Thunderhorn Water Well", "hash": "7ec8b4cbbd5ae563", "src": "wdb@1.60.1.70170"}
+{"id": 760, "field": "text", "en": "Cleanse the Wildmane Well", "hash": "c38bb5cfae4b3da6", "src": "wdb@1.60.1.70170"}
+{"id": 809, "field": "text", "en": "Destroy the Demon Seed", "hash": "07a58f1053c1bc40", "src": "wdb@1.60.1.70170"}
 {"id": 836, "field": "text", "en": "Escort OOX-09/HL to the shoreline beyond Overlook Cliff", "hash": "ee69b80a9323d877", "src": "wdb@1.15.9.69722"}
-{"id": 863, "field": "text", "en": "Escort Wizzlecrank out of the Venture Co. drill site", "hash": "d4a28152c21913e1", "src": "wdb@1.60.1.70124"}
-{"id": 870, "field": "text", "en": "Explore the waters of the Forgotten Pools", "hash": "e4a84a11577b6c7a", "src": "wdb@1.60.1.70124"}
-{"id": 898, "field": "text", "en": "Escort Gilthares Firebough back to Ratchet", "hash": "170203ae431375a0", "src": "wdb@1.60.1.70124"}
+{"id": 863, "field": "text", "en": "Escort Wizzlecrank out of the Venture Co. drill site", "hash": "d4a28152c21913e1", "src": "wdb@1.60.1.70170"}
+{"id": 870, "field": "text", "en": "Explore the waters of the Forgotten Pools", "hash": "e4a84a11577b6c7a", "src": "wdb@1.60.1.70170"}
+{"id": 898, "field": "text", "en": "Escort Gilthares Firebough back to Ratchet", "hash": "170203ae431375a0", "src": "wdb@1.60.1.70170"}
 {"id": 910, "field": "text", "en": "Go to the docks of Ratchet in the Barrens.", "hash": "cc5f78c9e561adb4", "src": "wdb@1.15.9.69722"}
 {"id": 911, "field": "text", "en": "Go to the Mor'shan Rampart in the Barrens.", "hash": "e4eedaba2d62c8dd", "src": "wdb@1.15.9.69722"}
-{"id": 938, "field": "text", "en": "Lead Mist safely to Sentinel Arynia Cloudsbreak", "hash": "0117e5b14d295e68", "src": "wdb@1.60.1.70124"}
-{"id": 944, "field": "text", "en": "Enter the Master's Glaive", "hash": "b278edafb521fd2a", "src": "wdb@1.60.1.70124"}
-{"id": 945, "field": "text", "en": "Escort Therylune away from the Master's Glaive", "hash": "fc6a9000fae8db46", "src": "wdb@1.60.1.70124"}
-{"id": 976, "field": "text", "en": "Protect Feero Ironhand", "hash": "a0bbd177192d1a18", "src": "wdb@1.60.1.70124"}
-{"id": 984, "field": "text", "en": "Find a corrupt furbolg camp", "hash": "c559475d5d6b6234", "src": "wdb@1.60.1.70124"}
-{"id": 994, "field": "text", "en": "Help Volcor to the road", "hash": "0fbf00a13f60f868", "src": "wdb@1.60.1.70124"}
-{"id": 995, "field": "text", "en": "Help Volcor escape the cave", "hash": "23c9cd8b3d87fe6b", "src": "wdb@1.60.1.70124"}
+{"id": 938, "field": "text", "en": "Lead Mist safely to Sentinel Arynia Cloudsbreak", "hash": "0117e5b14d295e68", "src": "wdb@1.60.1.70170"}
+{"id": 944, "field": "text", "en": "Enter the Master's Glaive", "hash": "b278edafb521fd2a", "src": "wdb@1.60.1.70170"}
+{"id": 945, "field": "text", "en": "Escort Therylune away from the Master's Glaive", "hash": "fc6a9000fae8db46", "src": "wdb@1.60.1.70170"}
+{"id": 976, "field": "text", "en": "Protect Feero Ironhand", "hash": "a0bbd177192d1a18", "src": "wdb@1.60.1.70170"}
+{"id": 984, "field": "text", "en": "Find a corrupt furbolg camp", "hash": "c559475d5d6b6234", "src": "wdb@1.60.1.70170"}
+{"id": 994, "field": "text", "en": "Help Volcor to the road", "hash": "0fbf00a13f60f868", "src": "wdb@1.60.1.70170"}
+{"id": 995, "field": "text", "en": "Help Volcor escape the cave", "hash": "23c9cd8b3d87fe6b", "src": "wdb@1.60.1.70170"}

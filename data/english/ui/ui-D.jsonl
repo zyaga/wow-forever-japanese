@@ -1,156 +1,161 @@
-{"id": "DAMAGE", "field": "text", "en": "Damage", "hash": "848ad1ccd5cce111", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGER", "field": "text", "en": "Damage", "hash": "848ad1ccd5cce111", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_DONE_TOOLTIP", "field": "text", "en": "The total amount of damage done", "hash": "9442c4ef8aa9fe0d", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_DONE_TOOLTIP_TITLE", "field": "text", "en": "Damage Done", "hash": "e2bf7f96916e3610", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_AVOIDABLE_DAMAGE_NOT_ACTIVE", "field": "text", "en": "Avoidable damage tracking is only active in current season instances", "hash": "6c02907f4e3efc61", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_CATEGORY_ACTIONS", "field": "text", "en": "Actions", "hash": "27ee61e0fe10921b", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_CATEGORY_DAMAGE", "field": "text", "en": "Damage", "hash": "848ad1ccd5cce111", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_CATEGORY_HEALING", "field": "text", "en": "Healing", "hash": "c2baab72fd40c9e9", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_COMBAT_NUMBER", "field": "text", "en": "Combat %d", "hash": "dbf4737996184f46", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_CURRENT_SESSION", "field": "text", "en": "Current Segment", "hash": "1b32e81f6766ebd7", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_HIDE_WINDOW", "field": "text", "en": "Delete Window", "hash": "1debf4dd5645cc0b", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_LABEL", "field": "text", "en": "Damage Meter", "hash": "a4a43f79926b31ca", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_LOCK_WINDOW", "field": "text", "en": "Lock Window", "hash": "cf6273e21a4161ea", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_MAKE_INTERACTABLE", "field": "text", "en": "Make Interactive", "hash": "7f3e9c8a93c43412", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_MAKE_UNINTERACTABLE", "field": "text", "en": "Make Noninteractive", "hash": "f3269a031dca1918", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_OPEN_EDIT_MODE", "field": "text", "en": "Edit Mode", "hash": "5aa1dfb7d73a26ab", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_OPEN_SETTINGS", "field": "text", "en": "Settings", "hash": "fea5ab6e7e75a1d4", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_OVERALL_SESSION", "field": "text", "en": "Overall", "hash": "ae69267f6ada8186", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_RESET_ALL_SESSIONS", "field": "text", "en": "Reset Data", "hash": "ca5e8af366093f45", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_SHOW_NEW_WINDOW", "field": "text", "en": "Create New Window", "hash": "347d824ed4a74442", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_TYPE_ABSORBS", "field": "text", "en": "Absorbs", "hash": "1baaf48829f36d89", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_TYPE_AVOIDABLE_DAMAGE_TAKEN", "field": "text", "en": "Avoidable Damage Taken", "hash": "00538022e1e07aba", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_TYPE_DAMAGE_DONE", "field": "text", "en": "Damage Done", "hash": "e2bf7f96916e3610", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_TYPE_DAMAGE_TAKEN", "field": "text", "en": "Damage Taken", "hash": "1ef8a9f4517a7c2b", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_TYPE_DEATHS", "field": "text", "en": "Deaths", "hash": "c92b0208fc0495d4", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_TYPE_DISPELS", "field": "text", "en": "Dispels", "hash": "1a8009a9bf489575", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_TYPE_ENEMY_DAMAGE_TAKEN", "field": "text", "en": "Enemy Damage Taken", "hash": "110d204cc2cff529", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_TYPE_HEALING_DONE", "field": "text", "en": "Healing Done", "hash": "bb912c4d2cb3b2ba", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_TYPE_INTERRUPTS", "field": "text", "en": "Interrupts", "hash": "de9e12449e2726ad", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_METER_UNLOCK_WINDOW", "field": "text", "en": "Unlock Window", "hash": "6f1034ee54ca46ae", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_NUMBER", "field": "text", "en": "Damage Number", "hash": "537b3eb701aefaa5", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_SCHOOL2", "field": "text", "en": "Holy", "hash": "09c31c3c7def7685", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_SCHOOL3", "field": "text", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_SCHOOL4", "field": "text", "en": "Nature", "hash": "58ab279e326bdbc9", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_SCHOOL5", "field": "text", "en": "Frost", "hash": "dc23b574a51d3a0d", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_SCHOOL6", "field": "text", "en": "Shadow", "hash": "ba9066642051ae69", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_SCHOOL7", "field": "text", "en": "Arcane", "hash": "bb1005d928b3b0c1", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_SCHOOL_TEXT", "field": "text", "en": "Damage School", "hash": "0071cfa65d7741e2", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_SHIELD", "field": "text", "en": "Damage Shields", "hash": "34089d957b6d8b1a", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_SHIELD_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when a spell or ability deals damage in reaction to a melee swing, such as Thorns.", "hash": "8e254530aff91d1a", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_TEMPLATE", "field": "text", "en": "%s - %s Damage", "hash": "eb5cdc0ca475a23f", "src": "db2@1.60.1.70124"}
-{"id": "DAMAGE_TEMPLATE_WITH_SCHOOL", "field": "text", "en": "%s - %s %s Damage", "hash": "0c0febc93e690f16", "src": "db2@1.60.1.70124"}
-{"id": "DANGEROUS_SCRIPTS_WARNING", "field": "text", "en": "You are attempting to run a custom script. Running scripts could compromise your character causing the loss of items or gold.|n|nAllow custom scripts?", "hash": "c19debd9f941f560", "src": "db2@1.60.1.70124"}
-{"id": "DAYS_ABBR", "field": "text", "en": "%d |4Day:Days;", "hash": "7d61147f604734c2", "src": "db2@1.60.1.70124"}
-{"id": "DAY_ONELETTER_ABBR", "field": "text", "en": "%d d", "hash": "050f77affd04b928", "src": "db2@1.60.1.70124"}
-{"id": "DEAD", "field": "text", "en": "Dead", "hash": "093741c0209ba21d", "src": "db2@1.60.1.70124"}
-{"id": "DEATHS", "field": "text", "en": "Deaths", "hash": "c92b0208fc0495d4", "src": "db2@1.60.1.70124"}
-{"id": "DEATHS_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when something dies.", "hash": "dc29003a9063ac3d", "src": "db2@1.60.1.70124"}
-{"id": "DEATHS_TOOLTIP", "field": "text", "en": "Number of times you were killed", "hash": "165320d404bf8c08", "src": "db2@1.60.1.70124"}
-{"id": "DEATHS_TOOLTIP_TITLE", "field": "text", "en": "Deaths", "hash": "c92b0208fc0495d4", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_CORPSE_SKINNED", "field": "text", "en": "Insignia Taken - You can only resurrect at the graveyard", "hash": "432f5f43c2e659bb", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_RECAP", "field": "text", "en": "Recap", "hash": "ad0722c0ba2e6463", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_RECAP_AVOIDABLE_SPELL", "field": "text", "en": "Avoidable", "hash": "5e15790b03edb894", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_RECAP_CAST_BY_TT", "field": "text", "en": "%s by %s", "hash": "a8b69d4d46fc57dd", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_RECAP_CURR_HP_TT", "field": "text", "en": "%s sec before death at %s%% health.", "hash": "e1373a554cca13d9", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_RECAP_DAMAGE_TT", "field": "text", "en": "%s %s", "hash": "98ecaae23ca42057", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_RECAP_DEADLY_SPELL", "field": "text", "en": "Deadly", "hash": "c926d38abc80d94e", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_RECAP_DEATH_TT", "field": "text", "en": "Killing blow at %s%% health.", "hash": "c213e66b60670eec", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_RECAP_TITLE", "field": "text", "en": "Death Recap", "hash": "481ed3babd4a9c7d", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_RECAP_UNAVAILABLE", "field": "text", "en": "Death Recap unavailable.", "hash": "a0421d4a5d3854df", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_RELEASE", "field": "text", "en": "Release Spirit", "hash": "c59333f3254dc9ee", "src": "db2@1.60.1.70124"}
-{"id": "DEATH_RELEASE_TIMER", "field": "text", "en": "%d %s until release", "hash": "0fdb60bace53bd64", "src": "db2@1.60.1.70124"}
-{"id": "DECLINE", "field": "text", "en": "Decline", "hash": "130b4cc464bb7440", "src": "db2@1.60.1.70124"}
-{"id": "DECOR_LIGHT_RADIUS_INDICATOR_ENABLED", "field": "text", "en": "Light Radius Indicators", "hash": "37e28b4d8836ae30", "src": "db2@1.60.1.70124"}
-{"id": "DECOR_LIGHT_RADIUS_INDICATOR_TYPE_ALWAYS", "field": "text", "en": "Always", "hash": "546bd5befb55233f", "src": "db2@1.60.1.70124"}
-{"id": "DECOR_LIGHT_RADIUS_INDICATOR_TYPE_NEVER", "field": "text", "en": "Never", "hash": "66d5453589f1ed61", "src": "db2@1.60.1.70124"}
-{"id": "DECOR_LIGHT_RADIUS_INDICATOR_TYPE_OVERLAP", "field": "text", "en": "Overlap", "hash": "ae6c024596840c2a", "src": "db2@1.60.1.70124"}
-{"id": "DEFAULT", "field": "text", "en": "Default", "hash": "463e3d831da663af", "src": "db2@1.60.1.70124"}
-{"id": "DEFAULT_AGILITY_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFCritical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFArmor|r by %d\nIncreases |cFFFFFFFFDodge|r chance by %.1f%%", "hash": "e7ddd01b4f077cf2", "src": "db2@1.60.1.70124"}
-{"id": "DEFAULT_INTELLECT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMana|r by %d\nIncreases |cFFFFFFFFSpell Critical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFWeapon Skill|r improvement rate", "hash": "a74baece1faa5df9", "src": "db2@1.60.1.70124"}
-{"id": "DEFAULT_SPIRIT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFHealth Regeneration|r by %d per 5 sec while not in combat\n\nIncreases |cFFFFFFFFMana Regeneration|r by %d per 5 sec while not casting\n\n|cffBCBCBCMana Regeneration from Spirit is halted for 5 sec after spending Mana|r", "hash": "ea474ca00328c88f", "src": "db2@1.60.1.70124"}
-{"id": "DEFAULT_STAMINA_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFHealth|r by %s", "hash": "08a3110dee5e9cc9", "src": "db2@1.60.1.70124"}
-{"id": "DEFAULT_STATDEFENSE_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFDodge|r, |cFFFFFFFFBlock|r, and |cFFFFFFFFParry|r chance by %.2f%%, and decreases chance to be |cFFFFFFFFHit|r or |cFFFFFFFFCritically Hit|r by %.2f%%\n\n|cffBCBCBCCritical Strikes from creatures deal 200%% damage. Creatures 3+ levels above you can land Crushing Blows for 150%% damage\n\n|cffBCBCBCAt 440 Defense, cannot be Critically Hit by|r |cFFFF5A5ARaid Bosses|r |cFFBCBCBC(-5.60%% Critical Strike chance)|r", "hash": "b6508a162264c28d", "src": "db2@1.60.1.70124"}
-{"id": "DEFAULT_STRENGTH_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFAttack Power|r by %d", "hash": "5c51decbf51f051e", "src": "db2@1.60.1.70124"}
-{"id": "DEFENSE", "field": "text", "en": "Defense", "hash": "46c5a236377d389e", "src": "db2@1.60.1.70124"}
-{"id": "DEFLECT", "field": "text", "en": "Deflect", "hash": "47b35e01f1988500", "src": "db2@1.60.1.70124"}
-{"id": "DELETE", "field": "text", "en": "Delete", "hash": "caa07040d3f1985e", "src": "db2@1.60.1.70124"}
-{"id": "DELETE_GOOD_ITEM", "field": "text", "en": "Do you want to destroy %s?\n\nType \"DELETE\" into the field to confirm.", "hash": "d69b2a9edb1ea13e", "src": "db2@1.60.1.70124"}
-{"id": "DELETE_GOOD_ITEM_GAMEPAD", "field": "text", "en": "Do you want to destroy %s?\n\nPress the button sequence to confirm.", "hash": "004423c40543a34a", "src": "db2@1.60.1.70124"}
-{"id": "DELETE_GOOD_QUEST_ITEM", "field": "text", "en": "Do you want to destroy %s?\n|cffff2020Destroying this item will also abandon any related quests.|r\n\nType \"DELETE\" into the field to confirm.", "hash": "07372b289624038a", "src": "db2@1.60.1.70124"}
-{"id": "DELETE_GOOD_QUEST_ITEM_GAMEPAD", "field": "text", "en": "Do you want to destroy %s?\n|cffff2020Destroying this item will also abandon any related quests.|r\n\nPress the button sequence to confirm.", "hash": "f9c746f1f3002510", "src": "db2@1.60.1.70124"}
-{"id": "DELETE_ITEM", "field": "text", "en": "Do you want to destroy %s?", "hash": "d2aa07a0bf6855be", "src": "db2@1.60.1.70124"}
-{"id": "DELETE_MAIL_CONFIRMATION", "field": "text", "en": "Deleting this mail will also destroy %s", "hash": "b102a95e4db8a9fa", "src": "db2@1.60.1.70124"}
-{"id": "DELETE_MONEY_CONFIRMATION", "field": "text", "en": "Deleting this mail will also destroy:", "hash": "0c550ba4cc8143e7", "src": "db2@1.60.1.70124"}
-{"id": "DELETE_QUEST_ITEM", "field": "text", "en": "Do you want to destroy %s?\n\n|cffff2020Destroying this item will also abandon any related quests.|r", "hash": "7bb5b52a5fb3ae71", "src": "db2@1.60.1.70124"}
-{"id": "DEMOTE", "field": "text", "en": "Demote", "hash": "cac55c35890c31f8", "src": "db2@1.60.1.70124"}
-{"id": "DEPOSIT", "field": "text", "en": "Deposit", "hash": "f7a7138c868dcfb0", "src": "db2@1.60.1.70124"}
-{"id": "DEPOSIT_COLON", "field": "text", "en": "Deposit:", "hash": "ba7f03546ecaf6bb", "src": "db2@1.60.1.70124"}
-{"id": "DEPTH_EFFECTS", "field": "text", "en": "Depth Effects", "hash": "061e7087874c0384", "src": "db2@1.60.1.70124"}
-{"id": "DESCRIPTION_OF_YOUR_GROUP", "field": "text", "en": "More details about your group (optional)", "hash": "6d487bec0295358a", "src": "db2@1.60.1.70124"}
-{"id": "DIALOG_INSTRUCTION_REPLACE_MOUNT_EQUIPMENT", "field": "text", "en": "Are you sure you want to replace this Mount Equipment? The existing one will be destroyed.", "hash": "dbe1a05d5a6c4824", "src": "db2@1.60.1.70124"}
-{"id": "DIALOG_VOLUME", "field": "text", "en": "Dialog", "hash": "0f5fc69257ed54d3", "src": "db2@1.60.1.70124"}
-{"id": "DISABLE", "field": "text", "en": "Disable", "hash": "187cb46b6a487dab", "src": "db2@1.60.1.70124"}
-{"id": "DISABLE_ALL_ADDONS", "field": "text", "en": "Disable All", "hash": "ee6846b6f50ec0f2", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_CHANNEL_LINK_PROMPT", "field": "text", "en": "Link", "hash": "0a4ac16a9bbdefd1", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_CHAT_MESSAGE_CLICK_DELETE", "field": "text", "en": "Delete", "hash": "caa07040d3f1985e", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_GUILD_LINKED_CHANNEL", "field": "text", "en": "Channel: %s", "hash": "29c51ab1e3866423", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_GUILD_LINKED_SERVER", "field": "text", "en": "Server: %s", "hash": "1c3cdc6953def928", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_GUILD_NEED_TO_OAUTH", "field": "text", "en": "In order to link this guild to Discord you need to authenticate with your character", "hash": "321f0f86200fc811", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_GUILD_SERVER_CHANNEL_LINKED", "field": "text", "en": "Discord Linked", "hash": "6ae3fe0722d4e693", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_GUILD_SETTING_CHANNEL_LIST_EMPTY", "field": "text", "en": "No valid channels to link.  Make sure you have Manage Channels permission on the server.", "hash": "95b0d1dd02c89e4a", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_GUILD_SETTING_SEPARATE_STREAM", "field": "text", "en": "Separate Discord chat from Guild chat", "hash": "4fd3fcc5c34a899a", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_MESSAGE_ATTACHMENT", "field": "text", "en": "Sent an attachment", "hash": "788501a9db64092b", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_MESSAGE_EMBED", "field": "text", "en": "Sent an embed", "hash": "55637f8ffd88a433", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_MESSAGE_EMOJI", "field": "text", "en": "Sent an emoji", "hash": "5566e9983124b47b", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_MESSAGE_FAILED_TO_SEND", "field": "text", "en": "Message delivery error. View message on Discord.", "hash": "4d45e3008831ce36", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_MESSAGE_FORWARD", "field": "text", "en": "Forwarded ", "hash": "625b347aa0921f4d", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_MESSAGE_POLL", "field": "text", "en": "Sent a poll", "hash": "e25e01795eec7dc5", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_MESSAGE_STICKER", "field": "text", "en": "Sent a sticker", "hash": "59f1e0e54b6fc6c2", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_PLAYER_NAME", "field": "text", "en": "Discord Player Name", "hash": "625464fb0993f221", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_SELECT_CHANNEL", "field": "text", "en": "Discord Channel:", "hash": "f5f6845c1a9852b7", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_SELECT_SERVER", "field": "text", "en": "Discord Server:", "hash": "fd2cea440525628e", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_SERVER_UNLINK_PROMPT", "field": "text", "en": "Unlink", "hash": "1c65e7d62434ae96", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_SETUP_OAUTH", "field": "text", "en": "Setup OAuth", "hash": "e24d78666461e7c4", "src": "db2@1.60.1.70124"}
-{"id": "DISCORD_VALID_SERVER_CHANNEL_LIST", "field": "text", "en": "Channels for server %s:", "hash": "4f6354755abc10df", "src": "db2@1.60.1.70124"}
-{"id": "DISPELS", "field": "text", "en": "Dispels", "hash": "1a8009a9bf489575", "src": "db2@1.60.1.70124"}
-{"id": "DISPEL_AURA_COMBATLOG_TOOLTIP", "field": "text", "en": "Show when an aura is removed, broken, or stolen.", "hash": "34385c2c69d1dbdb", "src": "db2@1.60.1.70124"}
-{"id": "DISPLAY", "field": "text", "en": "Display", "hash": "1a81d94ddb111117", "src": "db2@1.60.1.70124"}
-{"id": "DISPLAY_LABEL", "field": "text", "en": "Display", "hash": "1a81d94ddb111117", "src": "db2@1.60.1.70124"}
-{"id": "DISPLAY_MODE", "field": "text", "en": "Display Mode", "hash": "60589513c6e4b2f9", "src": "db2@1.60.1.70124"}
-{"id": "DISPLAY_PERSONAL_RESOURCE", "field": "text", "en": "Personal Resource Display", "hash": "39968ee81c9441bf", "src": "db2@1.60.1.70124"}
-{"id": "DODGE", "field": "text", "en": "Dodge", "hash": "b89e786b1363f723", "src": "db2@1.60.1.70124"}
-{"id": "DODGE_CHANCE", "field": "text", "en": "Dodge Chance", "hash": "62f36c0d965c5042", "src": "db2@1.60.1.70124"}
-{"id": "DONE_BY", "field": "text", "en": "Done By:", "hash": "17beec26faeaa9a9", "src": "db2@1.60.1.70124"}
-{"id": "DONE_TO", "field": "text", "en": "Done To:", "hash": "17c39daa425e2e82", "src": "db2@1.60.1.70124"}
-{"id": "DPS_TEMPLATE", "field": "text", "en": "(%s damage per second)", "hash": "b854293d4a973159", "src": "db2@1.60.1.70124"}
-{"id": "DRAINS", "field": "text", "en": "Drains", "hash": "ad5a65d92242e4fd", "src": "db2@1.60.1.70124"}
-{"id": "DRESSING_ROOM_APPEARANCE_LIST", "field": "text", "en": "Appearance List", "hash": "25025aa41a3e95e3", "src": "db2@1.60.1.70124"}
-{"id": "DRESSUP_FRAME", "field": "text", "en": "Dressing Room", "hash": "0c3bc3d2efb75e83", "src": "db2@1.60.1.70124"}
-{"id": "DRUID_AGILITY_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFCritical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFAttack Power|r in Cat Form by %d\nIncreases |cFFFFFFFFArmor|r by %d\nIncreases |cFFFFFFFFDodge|r chance by %.1f%%", "hash": "4215a27ae85d0b68", "src": "db2@1.60.1.70124"}
-{"id": "DRUID_MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r\nIncreased by |cFFFFFFFFStrength|r and |cFFFFFFFFAgility|r in Cat Form\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "521672393feb4fe6", "src": "db2@1.60.1.70124"}
-{"id": "DUAL_SPEC_PRIMARY", "field": "text", "en": "Primary", "hash": "ba96033132ed6779", "src": "db2@1.60.1.70124"}
-{"id": "DUAL_SPEC_SECONDARY", "field": "text", "en": "Secondary", "hash": "bbbf56ded9fff809", "src": "db2@1.60.1.70124"}
-{"id": "DUEL", "field": "text", "en": "Duel", "hash": "093b746460205db9", "src": "db2@1.60.1.70124"}
-{"id": "DUEL_OUTOFBOUNDS_TIMER", "field": "text", "en": "Exiting duel area, you will forfeit in %d %s.", "hash": "f593ee01c3fee397", "src": "db2@1.60.1.70124"}
-{"id": "DUEL_REQUESTED", "field": "text", "en": "%s has challenged you to a duel.", "hash": "9a28cdc512aab28b", "src": "db2@1.60.1.70124"}
-{"id": "DUEL_TO_DEATH", "field": "text", "en": "Duel to the Death", "hash": "c247f7d5f0c3b234", "src": "db2@1.60.1.70124"}
-{"id": "DUEL_TO_THE_DEATH_CHALLENGE_CONFIRM", "field": "text", "en": "Are you sure you want to challenge %s to a duel to the death?\n\nYour opponent will be able to kill you, and death is permanent on Hardcore Realms.\n\nType \"I Agree\" to issue the challenge.", "hash": "6421076536fcfdd5", "src": "db2@1.60.1.70124"}
-{"id": "DUEL_TO_THE_DEATH_REQUEST_CONFIRM", "field": "text", "en": "Are you sure you want to accept this duel to the death?\n\nYour opponent will be able to kill you, and death is permanent on Hardcore Realms.\n\nType \"I Agree\" to accept the challenge.", "hash": "d29671129f81659f", "src": "db2@1.60.1.70124"}
-{"id": "DUNGEONS_BUTTON", "field": "text", "en": "Group Finder", "hash": "be7119ca58a84a6f", "src": "db2@1.60.1.70124"}
-{"id": "DUNGEON_COMPLETED", "field": "text", "en": "Dungeon Complete!", "hash": "3515daa19b6740c8", "src": "db2@1.60.1.70124"}
-{"id": "DUNGEON_DIFFICULTY_5PLAYER", "field": "text", "en": "5 Player", "hash": "5f1643fdfc4bde6f", "src": "db2@1.60.1.70124"}
-{"id": "DUNGEON_DIFFICULTY_BANNER_TOOLTIP", "field": "text", "en": "%s Difficulty", "hash": "e7433d599eed3cdf", "src": "db2@1.60.1.70124"}
-{"id": "DUNGEON_DIFFICULTY_BANNER_TOOLTIP_PLAYER_COUNT", "field": "text", "en": "%d/%d Players", "hash": "fd953a4fdffe21fc", "src": "db2@1.60.1.70124"}
-{"id": "DUNGEON_MAP_PIN_FALLBACK_NAME", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70124"}
-{"id": "DUNGEON_POI_TOOLTIP_INSTRUCTION_LINE", "field": "text", "en": "<Right Click to open Adventure Guide>", "hash": "fa1152d3030c5866", "src": "db2@1.60.1.70124"}
-{"id": "DURABILITYDAMAGE_DEATH", "field": "text", "en": "Your equipped items suffer a %d%% durability loss.", "hash": "57fa69783cc9d1e7", "src": "db2@1.60.1.70124"}
-{"id": "DURABILITY_TEMPLATE", "field": "text", "en": "Durability %d / %d", "hash": "f7e21f32a083a0bf", "src": "db2@1.60.1.70124"}
-{"id": "D_DAYS", "field": "text", "en": "%d |4Day:Days;", "hash": "7d61147f604734c2", "src": "db2@1.60.1.70124"}
-{"id": "D_HOURS", "field": "text", "en": "%d |4Hour:Hours;", "hash": "290d98f94a3f2c45", "src": "db2@1.60.1.70124"}
-{"id": "D_MINUTES", "field": "text", "en": "%d |4Minute:Minutes;", "hash": "9848a5f16f82c0f8", "src": "db2@1.60.1.70124"}
-{"id": "D_SECONDS", "field": "text", "en": "%d |4Second:Seconds;", "hash": "371f4f3ae823e876", "src": "db2@1.60.1.70124"}
-{"id": "DispelType:1", "field": "text", "en": "Magic", "hash": "54ba6cee39dc24ee", "src": "db2@1.60.1.70124"}
-{"id": "DispelType:2", "field": "text", "en": "Curse", "hash": "a7e2445ebc7e62ef", "src": "db2@1.60.1.70124"}
-{"id": "DispelType:3", "field": "text", "en": "Disease", "hash": "1905ab639bf0e92f", "src": "db2@1.60.1.70124"}
-{"id": "DispelType:4", "field": "text", "en": "Poison", "hash": "43f9da16eae9c502", "src": "db2@1.60.1.70124"}
+{"id": "DAMAGE", "field": "text", "en": "Damage", "hash": "848ad1ccd5cce111", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGER", "field": "text", "en": "Damage", "hash": "848ad1ccd5cce111", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_DONE_TOOLTIP", "field": "text", "en": "The total amount of damage done", "hash": "9442c4ef8aa9fe0d", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_DONE_TOOLTIP_TITLE", "field": "text", "en": "Damage Done", "hash": "e2bf7f96916e3610", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_AVOIDABLE_DAMAGE_NOT_ACTIVE", "field": "text", "en": "No avoidable damage has been dealt. Avoidable damage tracking may not be available in all content.", "hash": "8c82079da8910a6d", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_CATEGORY_ACTIONS", "field": "text", "en": "Actions", "hash": "27ee61e0fe10921b", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_CATEGORY_DAMAGE", "field": "text", "en": "Damage", "hash": "848ad1ccd5cce111", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_CATEGORY_HEALING", "field": "text", "en": "Healing", "hash": "c2baab72fd40c9e9", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_COMBAT_NUMBER", "field": "text", "en": "Combat %d", "hash": "dbf4737996184f46", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_CURRENT_SESSION", "field": "text", "en": "Current Segment", "hash": "1b32e81f6766ebd7", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_HIDE_WINDOW", "field": "text", "en": "Delete Window", "hash": "1debf4dd5645cc0b", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_LABEL", "field": "text", "en": "Damage Meter", "hash": "a4a43f79926b31ca", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_LOCK_WINDOW", "field": "text", "en": "Lock Window", "hash": "cf6273e21a4161ea", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_MAKE_INTERACTABLE", "field": "text", "en": "Make Interactive", "hash": "7f3e9c8a93c43412", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_MAKE_UNINTERACTABLE", "field": "text", "en": "Make Noninteractive", "hash": "f3269a031dca1918", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_OPEN_EDIT_MODE", "field": "text", "en": "Edit Mode", "hash": "5aa1dfb7d73a26ab", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_OPEN_SETTINGS", "field": "text", "en": "Settings", "hash": "fea5ab6e7e75a1d4", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_OVERALL_SESSION", "field": "text", "en": "Overall", "hash": "ae69267f6ada8186", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_RESET_ALL_SESSIONS", "field": "text", "en": "Reset Data", "hash": "ca5e8af366093f45", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_SHOW_NEW_WINDOW", "field": "text", "en": "Create New Window", "hash": "347d824ed4a74442", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_TYPE_ABSORBS", "field": "text", "en": "Absorbs", "hash": "1baaf48829f36d89", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_TYPE_AVOIDABLE_DAMAGE_TAKEN", "field": "text", "en": "Avoidable Damage Taken", "hash": "00538022e1e07aba", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_TYPE_DAMAGE_DONE", "field": "text", "en": "Damage Done", "hash": "e2bf7f96916e3610", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_TYPE_DAMAGE_TAKEN", "field": "text", "en": "Damage Taken", "hash": "1ef8a9f4517a7c2b", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_TYPE_DEATHS", "field": "text", "en": "Deaths", "hash": "c92b0208fc0495d4", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_TYPE_DISPELS", "field": "text", "en": "Dispels", "hash": "1a8009a9bf489575", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_TYPE_ENEMY_DAMAGE_TAKEN", "field": "text", "en": "Enemy Damage Taken", "hash": "110d204cc2cff529", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_TYPE_HEALING_DONE", "field": "text", "en": "Healing Done", "hash": "bb912c4d2cb3b2ba", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_TYPE_INTERRUPTS", "field": "text", "en": "Interrupts", "hash": "de9e12449e2726ad", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_METER_UNLOCK_WINDOW", "field": "text", "en": "Unlock Window", "hash": "6f1034ee54ca46ae", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_NUMBER", "field": "text", "en": "Damage Number", "hash": "537b3eb701aefaa5", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_PER_SECOND", "field": "text", "en": "Damage per Second", "hash": "f5da31fe9206cb6d", "src": "db2@1.60.1.69913"}
+{"id": "DAMAGE_SCHOOL2", "field": "text", "en": "Holy", "hash": "09c31c3c7def7685", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_SCHOOL3", "field": "text", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_SCHOOL4", "field": "text", "en": "Nature", "hash": "58ab279e326bdbc9", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_SCHOOL5", "field": "text", "en": "Frost", "hash": "dc23b574a51d3a0d", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_SCHOOL6", "field": "text", "en": "Shadow", "hash": "ba9066642051ae69", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_SCHOOL7", "field": "text", "en": "Arcane", "hash": "bb1005d928b3b0c1", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_SCHOOL_TEXT", "field": "text", "en": "Damage School", "hash": "0071cfa65d7741e2", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_SHIELD", "field": "text", "en": "Damage Shields", "hash": "34089d957b6d8b1a", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_SHIELD_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when a spell or ability deals damage in reaction to a melee swing, such as Thorns.", "hash": "8e254530aff91d1a", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_TEMPLATE", "field": "text", "en": "%s - %s Damage", "hash": "eb5cdc0ca475a23f", "src": "db2@1.60.1.70170"}
+{"id": "DAMAGE_TEMPLATE_WITH_SCHOOL", "field": "text", "en": "%s - %s %s Damage", "hash": "0c0febc93e690f16", "src": "db2@1.60.1.70170"}
+{"id": "DANGEROUS_SCRIPTS_WARNING", "field": "text", "en": "You are attempting to run a custom script. Running scripts could compromise your character causing the loss of items or gold.|n|nAllow custom scripts?", "hash": "c19debd9f941f560", "src": "db2@1.60.1.70170"}
+{"id": "DAYS_ABBR", "field": "text", "en": "%d |4Day:Days;", "hash": "7d61147f604734c2", "src": "db2@1.60.1.70170"}
+{"id": "DAY_ONELETTER_ABBR", "field": "text", "en": "%d d", "hash": "050f77affd04b928", "src": "db2@1.60.1.70170"}
+{"id": "DEAD", "field": "text", "en": "Dead", "hash": "093741c0209ba21d", "src": "db2@1.60.1.70170"}
+{"id": "DEATHS", "field": "text", "en": "Deaths", "hash": "c92b0208fc0495d4", "src": "db2@1.60.1.70170"}
+{"id": "DEATHS_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when something dies.", "hash": "dc29003a9063ac3d", "src": "db2@1.60.1.70170"}
+{"id": "DEATHS_TOOLTIP", "field": "text", "en": "Number of times you were killed", "hash": "165320d404bf8c08", "src": "db2@1.60.1.70170"}
+{"id": "DEATHS_TOOLTIP_TITLE", "field": "text", "en": "Deaths", "hash": "c92b0208fc0495d4", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_CORPSE_SKINNED", "field": "text", "en": "Insignia Taken - You can only resurrect at the graveyard", "hash": "432f5f43c2e659bb", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RECAP", "field": "text", "en": "Recap", "hash": "ad0722c0ba2e6463", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RECAP_AVOIDABLE_SPELL", "field": "text", "en": "Avoidable", "hash": "5e15790b03edb894", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RECAP_CAST_BY_TT", "field": "text", "en": "%s by %s", "hash": "a8b69d4d46fc57dd", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RECAP_CURR_HP_TT", "field": "text", "en": "%s sec before death at %s%% health.", "hash": "e1373a554cca13d9", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RECAP_DAMAGE_TT", "field": "text", "en": "%s %s", "hash": "98ecaae23ca42057", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RECAP_DEADLY_SPELL", "field": "text", "en": "Deadly", "hash": "c926d38abc80d94e", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RECAP_DEATH_TT", "field": "text", "en": "Killing blow at %s%% health.", "hash": "c213e66b60670eec", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RECAP_TITLE", "field": "text", "en": "Death Recap", "hash": "481ed3babd4a9c7d", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RECAP_UNAVAILABLE", "field": "text", "en": "Death Recap unavailable.", "hash": "a0421d4a5d3854df", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RELEASE", "field": "text", "en": "Release Spirit", "hash": "c59333f3254dc9ee", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RELEASE_TIMER", "field": "text", "en": "%d %s until release", "hash": "0fdb60bace53bd64", "src": "db2@1.60.1.70170"}
+{"id": "DECLINE", "field": "text", "en": "Decline", "hash": "130b4cc464bb7440", "src": "db2@1.60.1.70170"}
+{"id": "DECOR_LIGHT_RADIUS_INDICATOR_ENABLED", "field": "text", "en": "Light Radius Indicators", "hash": "37e28b4d8836ae30", "src": "db2@1.60.1.70170"}
+{"id": "DECOR_LIGHT_RADIUS_INDICATOR_TYPE_ALWAYS", "field": "text", "en": "Always", "hash": "546bd5befb55233f", "src": "db2@1.60.1.70170"}
+{"id": "DECOR_LIGHT_RADIUS_INDICATOR_TYPE_NEVER", "field": "text", "en": "Never", "hash": "66d5453589f1ed61", "src": "db2@1.60.1.70170"}
+{"id": "DECOR_LIGHT_RADIUS_INDICATOR_TYPE_OVERLAP", "field": "text", "en": "Overlap", "hash": "ae6c024596840c2a", "src": "db2@1.60.1.70170"}
+{"id": "DEFAULT", "field": "text", "en": "Default", "hash": "463e3d831da663af", "src": "db2@1.60.1.70170"}
+{"id": "DEFAULT_AGILITY_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFCritical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFArmor|r by %d\nIncreases |cFFFFFFFFDodge|r chance by %.1f%%", "hash": "e7ddd01b4f077cf2", "src": "db2@1.60.1.70170"}
+{"id": "DEFAULT_INTELLECT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMana|r by %d\nIncreases |cFFFFFFFFSpell Critical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFWeapon Skill|r improvement rate", "hash": "a74baece1faa5df9", "src": "db2@1.60.1.70170"}
+{"id": "DEFAULT_SPIRIT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFHealth Regeneration|r by %d per 5 sec while not in combat\n\nIncreases |cFFFFFFFFMana Regeneration|r by %d per 5 sec while not casting\n\n|cffBCBCBCMana Regeneration from Spirit is halted for 5 sec after spending Mana|r", "hash": "ea474ca00328c88f", "src": "db2@1.60.1.70170"}
+{"id": "DEFAULT_STAMINA_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFHealth|r by %s", "hash": "08a3110dee5e9cc9", "src": "db2@1.60.1.70170"}
+{"id": "DEFAULT_STATDEFENSE_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFDodge|r, |cFFFFFFFFBlock|r, and |cFFFFFFFFParry|r chance by %.2f%%, and decreases chance to be |cFFFFFFFFHit|r or |cFFFFFFFFCritically Hit|r by %.2f%%\n\n|cffBCBCBCCritical Strikes from creatures deal 200%% damage. Creatures 3+ levels above you can land Crushing Blows for 150%% damage\n\n|cffBCBCBCAt 440 Defense, cannot be Critically Hit by|r |cFFFF5A5ARaid Bosses|r |cFFBCBCBC(-5.60%% Critical Strike chance)|r", "hash": "b6508a162264c28d", "src": "db2@1.60.1.70170"}
+{"id": "DEFAULT_STRENGTH_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFAttack Power|r by %d", "hash": "5c51decbf51f051e", "src": "db2@1.60.1.70170"}
+{"id": "DEFENSE", "field": "text", "en": "Defense", "hash": "46c5a236377d389e", "src": "db2@1.60.1.70170"}
+{"id": "DEFENSE_TOOLTIP", "field": "text", "en": "Defense", "hash": "46c5a236377d389e", "src": "db2@1.60.1.69913"}
+{"id": "DEFLECT", "field": "text", "en": "Deflect", "hash": "47b35e01f1988500", "src": "db2@1.60.1.70170"}
+{"id": "DELETE", "field": "text", "en": "Delete", "hash": "caa07040d3f1985e", "src": "db2@1.60.1.70170"}
+{"id": "DELETE_GOOD_ITEM", "field": "text", "en": "Do you want to destroy %s?\n\nType \"DELETE\" into the field to confirm.", "hash": "d69b2a9edb1ea13e", "src": "db2@1.60.1.70170"}
+{"id": "DELETE_GOOD_ITEM_GAMEPAD", "field": "text", "en": "Do you want to destroy %s?\n\nPress the button sequence to confirm.", "hash": "004423c40543a34a", "src": "db2@1.60.1.70170"}
+{"id": "DELETE_GOOD_QUEST_ITEM", "field": "text", "en": "Do you want to destroy %s?\n|cffff2020Destroying this item will also abandon any related quests.|r\n\nType \"DELETE\" into the field to confirm.", "hash": "07372b289624038a", "src": "db2@1.60.1.70170"}
+{"id": "DELETE_GOOD_QUEST_ITEM_GAMEPAD", "field": "text", "en": "Do you want to destroy %s?\n|cffff2020Destroying this item will also abandon any related quests.|r\n\nPress the button sequence to confirm.", "hash": "f9c746f1f3002510", "src": "db2@1.60.1.70170"}
+{"id": "DELETE_ITEM", "field": "text", "en": "Do you want to destroy %s?", "hash": "d2aa07a0bf6855be", "src": "db2@1.60.1.70170"}
+{"id": "DELETE_MAIL_CONFIRMATION", "field": "text", "en": "Deleting this mail will also destroy %s", "hash": "b102a95e4db8a9fa", "src": "db2@1.60.1.70170"}
+{"id": "DELETE_MONEY_CONFIRMATION", "field": "text", "en": "Deleting this mail will also destroy:", "hash": "0c550ba4cc8143e7", "src": "db2@1.60.1.70170"}
+{"id": "DELETE_QUEST_ITEM", "field": "text", "en": "Do you want to destroy %s?\n\n|cffff2020Destroying this item will also abandon any related quests.|r", "hash": "7bb5b52a5fb3ae71", "src": "db2@1.60.1.70170"}
+{"id": "DEMOTE", "field": "text", "en": "Demote", "hash": "cac55c35890c31f8", "src": "db2@1.60.1.70170"}
+{"id": "DEPOSIT", "field": "text", "en": "Deposit", "hash": "f7a7138c868dcfb0", "src": "db2@1.60.1.70170"}
+{"id": "DEPOSIT_COLON", "field": "text", "en": "Deposit:", "hash": "ba7f03546ecaf6bb", "src": "db2@1.60.1.70170"}
+{"id": "DEPTH_EFFECTS", "field": "text", "en": "Depth Effects", "hash": "061e7087874c0384", "src": "db2@1.60.1.70170"}
+{"id": "DESCRIPTION_OF_YOUR_GROUP", "field": "text", "en": "More details about your group (optional)", "hash": "6d487bec0295358a", "src": "db2@1.60.1.70170"}
+{"id": "DESCRIPTION_OF_YOUR_GROUP_MANDATORY", "field": "text", "en": "More details about your group", "hash": "b9813c47a28bd7e8", "src": "db2@1.60.1.70170"}
+{"id": "DIALOG_INSTRUCTION_REPLACE_MOUNT_EQUIPMENT", "field": "text", "en": "Are you sure you want to replace this Mount Equipment? The existing one will be destroyed.", "hash": "dbe1a05d5a6c4824", "src": "db2@1.60.1.70170"}
+{"id": "DIALOG_VOLUME", "field": "text", "en": "Dialog", "hash": "0f5fc69257ed54d3", "src": "db2@1.60.1.70170"}
+{"id": "DISABLE", "field": "text", "en": "Disable", "hash": "187cb46b6a487dab", "src": "db2@1.60.1.70170"}
+{"id": "DISABLE_ALL_ADDONS", "field": "text", "en": "Disable All", "hash": "ee6846b6f50ec0f2", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_CHANNEL_LINK_PROMPT", "field": "text", "en": "Link", "hash": "0a4ac16a9bbdefd1", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_CHAT_MESSAGE_CLICK_DELETE", "field": "text", "en": "Delete", "hash": "caa07040d3f1985e", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_GUILD_LINKED_CHANNEL", "field": "text", "en": "Channel: %s", "hash": "29c51ab1e3866423", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_GUILD_LINKED_SERVER", "field": "text", "en": "Server: %s", "hash": "1c3cdc6953def928", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_GUILD_NEED_TO_OAUTH", "field": "text", "en": "In order to link this guild to Discord you need to authenticate with your character", "hash": "321f0f86200fc811", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_GUILD_SERVER_CHANNEL_LINKED", "field": "text", "en": "Discord Linked", "hash": "6ae3fe0722d4e693", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_GUILD_SETTING_CHANNEL_LIST_EMPTY", "field": "text", "en": "No valid channels to link. Make sure you have Manage Channels permission on the server.", "hash": "95b0d1dd02c89e4a", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_GUILD_SETTING_SEPARATE_STREAM", "field": "text", "en": "Separate Discord chat from Guild chat", "hash": "4fd3fcc5c34a899a", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_MESSAGE_ATTACHMENT", "field": "text", "en": "Sent an attachment", "hash": "788501a9db64092b", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_MESSAGE_EMBED", "field": "text", "en": "Sent an embed", "hash": "55637f8ffd88a433", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_MESSAGE_EMOJI", "field": "text", "en": "Sent an emoji", "hash": "5566e9983124b47b", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_MESSAGE_FAILED_TO_SEND", "field": "text", "en": "Message delivery error. View message on Discord.", "hash": "4d45e3008831ce36", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_MESSAGE_FORWARD", "field": "text", "en": "Forwarded ", "hash": "625b347aa0921f4d", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_MESSAGE_POLL", "field": "text", "en": "Sent a poll", "hash": "e25e01795eec7dc5", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_MESSAGE_STICKER", "field": "text", "en": "Sent a sticker", "hash": "59f1e0e54b6fc6c2", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_PLAYER_NAME", "field": "text", "en": "Discord Player Name", "hash": "625464fb0993f221", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_SELECT_CHANNEL", "field": "text", "en": "Discord Channel:", "hash": "f5f6845c1a9852b7", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_SELECT_SERVER", "field": "text", "en": "Discord Server:", "hash": "fd2cea440525628e", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_SERVER_UNLINK_PROMPT", "field": "text", "en": "Unlink", "hash": "1c65e7d62434ae96", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_SETUP_OAUTH", "field": "text", "en": "Setup OAuth", "hash": "e24d78666461e7c4", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_VALID_SERVER_CHANNEL_LIST", "field": "text", "en": "Channels for server %s:", "hash": "4f6354755abc10df", "src": "db2@1.60.1.70170"}
+{"id": "DISHONORABLE_KILLS", "field": "text", "en": "Dishonorable Kills", "hash": "2b16af2338722b2e", "src": "db2@1.60.1.69913"}
+{"id": "DISPELS", "field": "text", "en": "Dispels", "hash": "1a8009a9bf489575", "src": "db2@1.60.1.70170"}
+{"id": "DISPEL_AURA_COMBATLOG_TOOLTIP", "field": "text", "en": "Show when an aura is removed, broken, or stolen.", "hash": "34385c2c69d1dbdb", "src": "db2@1.60.1.70170"}
+{"id": "DISPLAY", "field": "text", "en": "Display", "hash": "1a81d94ddb111117", "src": "db2@1.60.1.70170"}
+{"id": "DISPLAY_FREE_BAG_SLOTS", "field": "text", "en": "Show Free Bag Space", "hash": "d5a3471231788d3f", "src": "db2@1.60.1.70170"}
+{"id": "DISPLAY_LABEL", "field": "text", "en": "Display", "hash": "1a81d94ddb111117", "src": "db2@1.60.1.70170"}
+{"id": "DISPLAY_MODE", "field": "text", "en": "Display Mode", "hash": "60589513c6e4b2f9", "src": "db2@1.60.1.70170"}
+{"id": "DISPLAY_PERSONAL_RESOURCE", "field": "text", "en": "Personal Resource Display", "hash": "39968ee81c9441bf", "src": "db2@1.60.1.70170"}
+{"id": "DODGE", "field": "text", "en": "Dodge", "hash": "b89e786b1363f723", "src": "db2@1.60.1.70170"}
+{"id": "DODGE_CHANCE", "field": "text", "en": "Dodge Chance", "hash": "62f36c0d965c5042", "src": "db2@1.60.1.70170"}
+{"id": "DONE_BY", "field": "text", "en": "Done By:", "hash": "17beec26faeaa9a9", "src": "db2@1.60.1.70170"}
+{"id": "DONE_TO", "field": "text", "en": "Done To:", "hash": "17c39daa425e2e82", "src": "db2@1.60.1.70170"}
+{"id": "DPS_TEMPLATE", "field": "text", "en": "(%s damage per second)", "hash": "b854293d4a973159", "src": "db2@1.60.1.70170"}
+{"id": "DRAINS", "field": "text", "en": "Drains", "hash": "ad5a65d92242e4fd", "src": "db2@1.60.1.70170"}
+{"id": "DRESSING_ROOM_APPEARANCE_LIST", "field": "text", "en": "Appearance List", "hash": "25025aa41a3e95e3", "src": "db2@1.60.1.70170"}
+{"id": "DRESSUP_FRAME", "field": "text", "en": "Dressing Room", "hash": "0c3bc3d2efb75e83", "src": "db2@1.60.1.70170"}
+{"id": "DRUID_AGILITY_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFCritical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFAttack Power|r in Cat Form by %d\nIncreases |cFFFFFFFFArmor|r by %d\nIncreases |cFFFFFFFFDodge|r chance by %.1f%%", "hash": "4215a27ae85d0b68", "src": "db2@1.60.1.70170"}
+{"id": "DRUID_MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r\nIncreased by |cFFFFFFFFStrength|r and |cFFFFFFFFAgility|r in Cat Form\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "521672393feb4fe6", "src": "db2@1.60.1.70170"}
+{"id": "DUAL_SPEC_PRIMARY", "field": "text", "en": "Primary", "hash": "ba96033132ed6779", "src": "db2@1.60.1.70170"}
+{"id": "DUAL_SPEC_SECONDARY", "field": "text", "en": "Secondary", "hash": "bbbf56ded9fff809", "src": "db2@1.60.1.70170"}
+{"id": "DUEL", "field": "text", "en": "Duel", "hash": "093b746460205db9", "src": "db2@1.60.1.70170"}
+{"id": "DUEL_OUTOFBOUNDS_TIMER", "field": "text", "en": "Exiting duel area, you will forfeit in %d %s.", "hash": "f593ee01c3fee397", "src": "db2@1.60.1.70170"}
+{"id": "DUEL_REQUESTED", "field": "text", "en": "%s has challenged you to a duel.", "hash": "9a28cdc512aab28b", "src": "db2@1.60.1.70170"}
+{"id": "DUEL_TO_DEATH", "field": "text", "en": "Duel to the Death", "hash": "c247f7d5f0c3b234", "src": "db2@1.60.1.70170"}
+{"id": "DUEL_TO_THE_DEATH_CHALLENGE_CONFIRM", "field": "text", "en": "Are you sure you want to challenge %s to a duel to the death?\n\nYour opponent will be able to kill you, and death is permanent on Hardcore Realms.\n\nType \"I Agree\" to issue the challenge.", "hash": "6421076536fcfdd5", "src": "db2@1.60.1.70170"}
+{"id": "DUEL_TO_THE_DEATH_REQUEST_CONFIRM", "field": "text", "en": "Are you sure you want to accept this duel to the death?\n\nYour opponent will be able to kill you, and death is permanent on Hardcore Realms.\n\nType \"I Agree\" to accept the challenge.", "hash": "d29671129f81659f", "src": "db2@1.60.1.70170"}
+{"id": "DUNGEONS_BUTTON", "field": "text", "en": "Group Finder", "hash": "be7119ca58a84a6f", "src": "db2@1.60.1.70170"}
+{"id": "DUNGEON_COMPLETED", "field": "text", "en": "Dungeon Complete!", "hash": "3515daa19b6740c8", "src": "db2@1.60.1.70170"}
+{"id": "DUNGEON_DIFFICULTY_5PLAYER", "field": "text", "en": "5 Player", "hash": "5f1643fdfc4bde6f", "src": "db2@1.60.1.70170"}
+{"id": "DUNGEON_DIFFICULTY_BANNER_TOOLTIP", "field": "text", "en": "%s Difficulty", "hash": "e7433d599eed3cdf", "src": "db2@1.60.1.70170"}
+{"id": "DUNGEON_DIFFICULTY_BANNER_TOOLTIP_PLAYER_COUNT", "field": "text", "en": "%d/%d Players", "hash": "fd953a4fdffe21fc", "src": "db2@1.60.1.70170"}
+{"id": "DUNGEON_MAP_PIN_FALLBACK_NAME", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70170"}
+{"id": "DUNGEON_POI_TOOLTIP_INSTRUCTION_LINE", "field": "text", "en": "<Right Click to open Adventure Guide>", "hash": "fa1152d3030c5866", "src": "db2@1.60.1.70170"}
+{"id": "DURABILITYDAMAGE_DEATH", "field": "text", "en": "Your equipped items suffer a %d%% durability loss.", "hash": "57fa69783cc9d1e7", "src": "db2@1.60.1.70170"}
+{"id": "DURABILITY_TEMPLATE", "field": "text", "en": "Durability %d / %d", "hash": "f7e21f32a083a0bf", "src": "db2@1.60.1.70170"}
+{"id": "D_DAYS", "field": "text", "en": "%d |4Day:Days;", "hash": "7d61147f604734c2", "src": "db2@1.60.1.70170"}
+{"id": "D_HOURS", "field": "text", "en": "%d |4Hour:Hours;", "hash": "290d98f94a3f2c45", "src": "db2@1.60.1.70170"}
+{"id": "D_MINUTES", "field": "text", "en": "%d |4Minute:Minutes;", "hash": "9848a5f16f82c0f8", "src": "db2@1.60.1.70170"}
+{"id": "D_SECONDS", "field": "text", "en": "%d |4Second:Seconds;", "hash": "371f4f3ae823e876", "src": "db2@1.60.1.70170"}
+{"id": "DispelType:1", "field": "text", "en": "Magic", "hash": "54ba6cee39dc24ee", "src": "db2@1.60.1.70170"}
+{"id": "DispelType:2", "field": "text", "en": "Curse", "hash": "a7e2445ebc7e62ef", "src": "db2@1.60.1.70170"}
+{"id": "DispelType:3", "field": "text", "en": "Disease", "hash": "1905ab639bf0e92f", "src": "db2@1.60.1.70170"}
+{"id": "DispelType:4", "field": "text", "en": "Poison", "hash": "43f9da16eae9c502", "src": "db2@1.60.1.70170"}
