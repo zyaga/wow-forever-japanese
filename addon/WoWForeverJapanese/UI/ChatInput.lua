@@ -1,7 +1,7 @@
 -- UI/ChatInput.lua: the chat input box in the bundled Japanese face while it holds Japanese. The client's chat font
 -- has no kana or kanji, so Japanese the player types (or pastes) shows as nothing. Each chat frame's edit box
 -- (frame.editBox, floatingchatframe.xml:555) gets an OnTextChanged hook: text with a CJK character wears the bundled
--- face at the box's own size, any other text gets the box's font object back. Nothing is translated here.
+-- face at the box's own size, any other text gets back the font the box had before. Nothing is translated here.
 local _, WFJ = ...
 local ChatInput = {}
 WFJ.ChatInput = ChatInput
@@ -26,7 +26,8 @@ function ChatInput.follow(box)
   if hasJapanese(box:GetText()) then
     if not WFJ.Font.dressed(box) then WFJ.Font.bundle(box, fontObject) end
   elseif WFJ.Font.dressed(box) then
-    WFJ.Font.restore(box, fontObject)
+    -- the font the box had before, as remembered: in game the box kept the bundled face through its font object
+    WFJ.Font.restore(box)
   end
   return WFJ.Font.dressed(box)
 end
