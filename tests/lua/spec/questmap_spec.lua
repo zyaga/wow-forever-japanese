@@ -74,6 +74,24 @@ describe("UI/QuestMap: the camelot quest log", function()
       assert.is_true(_G.QuestMapDetailsScrollFrame.calls.UpdateScrollChildRect > 0) -- the pane's refit
     end)
 
+    it("waits for the rewards before refitting, and an error in the client's scroll callback is not raised",
+      function()
+        -- QuestInfo_GetNumRewardRows reads rewardsFrame.numRows, nil until the client has shown the rewards
+        _G.QuestInfoFrame = _G.QuestInfoFrame or CreateFrame("Frame", "QuestInfoFrame")
+        _G.QuestInfoFrame.rewardsFrame = {}
+        local scroll = _G.QuestMapDetailsScrollFrame
+        local before = scroll.calls.UpdateScrollChildRect
+        Q.showDetails(5)
+        assert.are.equal("狼の毛皮", QuestInfoTitleHeader:GetText())
+        assert.are.equal(before, scroll.calls.UpdateScrollChildRect) -- no refit yet
+        _G.QuestInfoFrame.rewardsFrame.numRows = 0
+        local update = scroll.UpdateScrollChildRect
+        scroll.UpdateScrollChildRect = function() error("the client's callback raised") end
+        assert.has_no.errors(function() Q.showDetails(6) end)
+        scroll.UpdateScrollChildRect = update
+        _G.QuestInfoFrame.rewardsFrame = nil
+      end)
+
     it("renders the popup's quest on the same widgets, on its own surface", function()
       Q.showPopup(5)
       assert.are.equal("狼の毛皮", QuestInfoTitleHeader:GetText())

@@ -95,6 +95,22 @@ describe("/wfj covers every setting", function()
     assert.is_truthy(Stub.prints[1]:find("unknown command 'bogus'", 1, true))
   end)
 
+  it("debug tooltip turns the trace on and off and shows it in a window, colour codes as text", function()
+    local F = require("tests.lua.spec.stub_fixwindow")
+    F.install() -- the window templates (ButtonFrameTemplate, ScrollingEditBoxTemplate)
+    F.scrollUtil()
+    wfj("debug tooltip on")
+    assert.are.same({}, WFJ.Tooltip.trace)
+    WFJ.Tooltip.trace[1] = "[12:00:00] GameTooltip secret spell id=<secret> |cffffd100gold|r"
+    wfj("debug tooltip")
+    local window = _G.WFJTooltipTrace
+    assert.is_truthy(window and window:IsShown())
+    assert.are.equal("[12:00:00] GameTooltip secret spell id=<secret> ||cffffd100gold||r", window.text.value)
+    assert.is_truthy(Stub.prints[#Stub.prints]:find("1 passes shown", 1, true))
+    wfj("debug tooltip off")
+    assert.is_nil(WFJ.Tooltip.trace)
+  end)
+
   it("debug sub-verbs read the shipped data", function()
     wfj("debug hash")
     local n = #H.vectors().cases

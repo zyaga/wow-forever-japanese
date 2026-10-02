@@ -214,12 +214,14 @@ local function showTrace()
     local f = CreateFrame("Frame", "WFJTooltipTrace", WFJ.Compat.resolve("UIParent"), "ButtonFrameTemplate")
     f:SetSize(760, 520)
     f:SetPoint("CENTER")
-    f:SetFrameStrata("DIALOG")
-    f:EnableMouse(true)
-    f:SetMovable(true)
-    f:RegisterForDrag("LeftButton")
-    f:SetScript("OnDragStart", f.StartMoving)
-    f:SetScript("OnDragStop", f.StopMovingOrSizing)
+    if f.SetFrameStrata then f:SetFrameStrata("DIALOG") end
+    if f.SetMovable and f.RegisterForDrag then -- dragged by its frame
+      f:EnableMouse(true)
+      f:SetMovable(true)
+      f:RegisterForDrag("LeftButton")
+      f:SetScript("OnDragStart", f.StartMoving)
+      f:SetScript("OnDragStop", f.StopMovingOrSizing)
+    end
     if f.SetTitle then f:SetTitle("WFJ tooltip trace") end
     if ButtonFrameTemplate_HidePortrait then ButtonFrameTemplate_HidePortrait(f) end
     f.text = W.scrollText(f, 14, -64, 730, 440)
@@ -227,7 +229,8 @@ local function showTrace()
     if type(special) == "table" then table.insert(special, "WFJTooltipTrace") end
     traceWindow = f
   end
-  traceWindow.text.setText(text)
+  -- `|` doubled: the edit box shows a colour code or a link as the characters it is, not as a colour
+  traceWindow.text:setText((text:gsub("|", "||")))
   traceWindow:Show()
   say("tooltip trace: %d passes shown; click the text, Ctrl+A, Ctrl+C", #lines)
 end

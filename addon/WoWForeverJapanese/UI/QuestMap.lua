@@ -139,11 +139,22 @@ local function hookScript(key, script, fn)
   return false
 end
 
+-- The details scroll frame's range callback lays out the rewards from QuestInfoFrame.rewardsFrame.numRows
+-- (QuestLogQuestDetailsMixin:AdjustRewardsFrameContainer → QuestInfo_GetNumRewardRows, questinfo.lua:1065–1068,
+-- questmapframe.lua:1015–1026), which is nil until QuestInfo_ShowRewards has run: a refit before then raised in
+-- Blizzard's code. The client runs that layout itself once the rewards are shown, so the refit waits for them, and
+-- an error in the client's callback is caught rather than shown.
+local function rewardsReady()
+  local info = Compat.resolve("QuestInfoFrame")
+  local rewards = type(info) == "table" and info.rewardsFrame or nil
+  return type(rewards) ~= "table" or type(rewards.numRows) == "number"
+end
+
 local function refitFor(scrollKey)
   return function()
     local scroll = get(scrollKey)
-    if type(scroll) == "table" and type(scroll.UpdateScrollChildRect) == "function" then
-      scroll:UpdateScrollChildRect()
+    if type(scroll) == "table" and type(scroll.UpdateScrollChildRect) == "function" and rewardsReady() then
+      pcall(scroll.UpdateScrollChildRect, scroll)
     end
   end
 end
