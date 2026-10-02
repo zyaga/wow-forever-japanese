@@ -834,9 +834,18 @@ function Tooltip.onCompareShow(frame)
       local key = index:matchOnly(htext, COMPARE_HEADER_KEYS)
       if key and WFJ.Render.show(surface, "ui.header", header, htext, "ui", "ui", key, {}) then n = n + 1 end
     end
+    -- after the delta header, each line is a stat change the client formats ("-11 Armor"): a stat template
+    local deltas = false
     for i, l in ipairs(Tooltip.lines(frame)) do
       local key, args
-      if l.text ~= "" then key, args = index:matchOnly(l.text, COMPARE_KEYS) end
+      if l.text ~= "" then
+        key, args = index:matchOnly(l.text, COMPARE_KEYS)
+        if key == "ITEM_DELTA_DESCRIPTION" or key == "ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION" then
+          deltas = true
+        elseif not key and deltas and not anySecret({ l.text }) then
+          key, args = index:match(l.text)
+        end
+      end
       local ctx = { args = args, refit = refit }
       if key and WFJ.Render.show(surface, "ui.L" .. i, l.fs, l.text, "ui", "ui", key, ctx) then n = n + 1 end
     end
@@ -1064,6 +1073,11 @@ function Tooltip.init()
       frame:HookScript("OnHide", function(self) Tooltip.release(self) end)
       if HEADED[name] and type(frame.Show) == "function" then -- the comparison's appended lines
         hooksecurefunc(frame, "Show", Tooltip.onCompareShow)
+        -- Forever's comparison manager shows its frames with SetShown, never Show
+        -- [verified: blizzard_sharedxmlgame/tooltip/tooltipcomparisonmanager.lua:53-54]
+        if type(frame.SetShown) == "function" then
+          hooksecurefunc(frame, "SetShown", function(f, shown) if shown then Tooltip.onCompareShow(f) end end)
+        end
       end
     end
   end
