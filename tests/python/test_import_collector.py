@@ -113,6 +113,9 @@ def test_the_client_own_files_are_kept_and_literal_class_words_restored(tmp_path
     assert by[(458, "completion")]["hash"] == key(normalize_v1(want))
     assert by[(458, "completion")]["src"] == "collector@1.15.9.69722"
     assert by[(9, "description")]["en"] == "Cache."  # the same client's quest cache stays
+    capsys.readouterr()
+    assert run(["english", "collector", _write(tmp_path, text)]) == 0  # the same dump again: the literal stays
+    assert {(ln["id"], ln["field"]): ln for ln in english.load("quest")}[(458, "completion")]["en"] == want
     assert "quest 9 description (kept wdb@1.15.9.69722)" in capsys.readouterr().out
 
 

@@ -419,7 +419,11 @@ def run_collector(a: argparse.Namespace) -> int:
             elif cur["hash"] == en.hash_:
                 c["unchanged"] += 1
             elif source_name(cur) == "collector" or not _same_client(cur["src"], en.build):
-                text = en.en if source_name(cur) == "collector" else _restore_literals(en.en, cur["en"])
+                # an earlier dump's line may hold a literal class or race word put back from a stand-in
+                text = _restore_literals(en.en, cur["en"])
+                if hash_key(normalize_v1(text)) == cur["hash"]:
+                    c["unchanged"] += 1
+                    continue
                 src = f"collector@{en.build}"
                 h = hash_key(normalize_v1(text))
                 lines[index[k]] = english_line(en.id_, en.field, text, h, src, npcs=en.npcs)
