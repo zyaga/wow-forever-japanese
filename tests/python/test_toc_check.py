@@ -43,8 +43,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/MenusUnit.lua", "UI/Gamepad.lua", "UI/Menus.lua", "UI/MenusTags.lua", "UI/MenusUntagged.lua",  # menu entries; Gamepad loads before MenusUntagged
         "UI/HelpTips.lua",  # HelpTip callouts
         "UI/QuestFrame.lua", "UI/QuestMap.lua",
-        "UI/TimeLine.lua",  # tooltip time lines, before the tooltips that write them
-        "UI/BuffIdentity.lua",  # which buff a hidden buff-bar tooltip shows
+        "UI/TimeLine.lua",  # the cooldown countdown, before the tooltips that write it
         "UI/Tooltip.lua",
         "UI/TooltipUnit.lua",  # the unit mouseover lines
         "UI/GameMenu.lua", "UI/Gossip.lua",

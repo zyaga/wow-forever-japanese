@@ -175,6 +175,17 @@ function SurfaceState.dropAll(surface)
   return n
 end
 
+-- Forgets a surface's records without reading or writing any widget: for a pass whose lines the client has rewritten
+-- with text the addon may not compare (a tooltip in combat), where drop would have to read them. → records forgotten
+function SurfaceState.discard(surface)
+  local b = bucket(surface)
+  if not b then return 0 end
+  local n = 0
+  for _ in pairs(b) do n = n + 1 end
+  records[surface] = nil
+  return n
+end
+
 function SurfaceState.records(surface)
   return bucket(surface) or {}
 end

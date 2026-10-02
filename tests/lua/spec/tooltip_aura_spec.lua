@@ -228,12 +228,15 @@ describe("UI/Tooltip: buff and debuff tooltips", function()
     aura("player:1:HELPFUL", 774, LINES)
     tt:SetUnitAura("player", 1, "HELPFUL")
     assert.are.equal(AURA_SHOWN, text(2))
-    -- restricted: the client's text is secret; nothing is compared or raised, and the last readable pass's
-    -- Japanese is written back (the same tooltip, the same aura), as a spell's secret pass does
+    -- restricted: the client's text is secret and so is which buff it is; nothing is compared or raised, and the
+    -- client's own line stays (a buff in combat has no readable handle to look its Japanese up by)
     _G.issecretvalue = function(v) return v == "Heals 13 damage every 3 seconds." end
     assert.has_no.errors(function() tt:rebuild({ "Rejuvenation", "Heals 13 damage every 3 seconds.", "" }) end)
-    assert.are.equal(AURA_SHOWN, text(2))
+    assert.are.equal("Heals 13 damage every 3 seconds.", text(2))
     _G.issecretvalue = nil
+    -- readable again: the Japanese comes back on its own
+    tt:rebuild(LINES)
+    assert.are.equal(AURA_SHOWN, text(2))
     -- an error inside the handler: counted, the tooltip left as the client wrote it
     WFJ.UIIndex = { match = function() error("boom") end }
     local before = WFJ.Tooltip.auraErrors

@@ -26,7 +26,7 @@ local TAIL = {
   "UI/Raid.lua", "UI/MicroMenu.lua", "UI/MenusUnit.lua", "UI/Gamepad.lua", "UI/Menus.lua",
   "UI/MenusTags.lua", "UI/MenusUntagged.lua", "UI/HelpTips.lua",
   -- Gamepad loads before MenusUntagged, which reads its menu keys at load
-  "UI/QuestFrame.lua", "UI/QuestMap.lua", "UI/TimeLine.lua", "UI/BuffIdentity.lua", "UI/Tooltip.lua",
+  "UI/QuestFrame.lua", "UI/QuestMap.lua", "UI/TimeLine.lua", "UI/Tooltip.lua",
   "UI/TooltipUnit.lua", "UI/GameMenu.lua",
   "UI/Gossip.lua",
   "UI/ItemText.lua", -- every other Forever window (ADR-030)

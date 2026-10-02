@@ -60,6 +60,11 @@ small popup shows how to read it, its dictionary form, and a short English meani
 line whose English has changed since it was translated shows **[要更新 / English Changed]**. Either marker can be
 turned off.
 
+**Buffs during a fight.** While you are in combat, the tooltip of a buff icon (the icons under the minimap) stays in
+English. The game hides which buff it is from addons during a fight, so the addon cannot look up its Japanese. It is
+Japanese again the moment the fight ends. Spell tooltips on your action bar stay Japanese in combat, the cooldown
+countdown too.
+
 **Settings.** Open **Esc > Options > AddOns > WoW Forever Japanese**, or type `/wfj config`. You can turn the whole
 translation on or off, turn each area on or off (quests, NPC talk, tooltips, the interface, books), change the key
 you hold for English, set a key that switches translation on and off, and turn the markers, the popup dictionary and
@@ -166,6 +171,8 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 ![クエスト本文の単語の上に読み方と意味が表示されたポップアップ辞書](docs/images/word-card.jpg)
 
 **マーカー。** まだ翻訳のない行は **[未翻訳 / Not Translated]** と表示され、英語のままになります。翻訳後に英語が変わった行には **[要更新 / English Changed]** が付きます。どちらも非表示にできます。
+
+**戦闘中のバフ。** 戦闘中は、バフアイコン（ミニマップの下のアイコン）のツールチップが英語のままになります。戦闘中、ゲームはどのバフかをアドオンに隠すため、日本語を引けません。戦闘が終わると、すぐに日本語に戻ります。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 
 **設定。** **Esc > オプション > AddOns > WoW Forever Japanese**、または `/wfj config` で開きます。翻訳全体や項目ごとのオン・オフ、英語表示キーの変更、翻訳を切り替えるキーの設定、マーカー・ポップアップ辞書・ミニマップボタンの表示を切り替えられます。
 

@@ -1,18 +1,9 @@
 WFJ_DB = {
-	["buffIdentity"] = {
-		["build"] = "1.15.9.69722",
-		["confirmed"] = 0,
-		["selfSpells"] = {
-		},
-	},
 	["build"] = {
 		["addon"] = "@project-version@",
 	},
 	["schema"] = 1,
 	["settings"] = {
-	},
-	["timeRule"] = {
-		["build"] = "1.15.9.69722",
 	},
 }
 WFJ_Collector = {

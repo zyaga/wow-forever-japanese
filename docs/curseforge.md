@@ -26,6 +26,7 @@ branch; leave them out until the repository is public.
 - **NPC dialogue:** the talk window, speech bubbles, NPC lines in chat and boss emotes.
 - **Books, letters and plaques.**
 - **Item and spell tooltips**, and buff and debuff text, with the game's live numbers filled in.
+- **In combat**, a buff icon's tooltip stays in English: the game hides which buff it is from addons during a fight. It is Japanese again when the fight ends. Spell tooltips on your action bar stay Japanese in combat, countdown included.
 - **The interface:** windows, labels, menus, popups and messages.
 
 Names of people, places, creatures, items and spells stay in <span style="color:#8CB8E8;">English</span> everywhere, so you can still talk with other players, read guides and search by name.
@@ -76,6 +77,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 - **NPC の会話:** 会話ウィンドウ、吹き出し、チャットに流れる NPC のセリフ、ボスのエモート
 - **本・手紙・銘板**
 - **アイテムと呪文のツールチップ**、バフ・デバフの説明（数値はゲームの実際の値が入ります）
+- **戦闘中**は、バフアイコンのツールチップは英語のままです（戦闘中、ゲームはどのバフかをアドオンに隠します）。戦闘が終わると日本語に戻ります。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 - **インターフェース:** ウィンドウ、ラベル、メニュー、ポップアップ、メッセージ
 
 人物・地名・モンスター・アイテム・呪文の名前はすべて<span style="color:#8CB8E8;">英語</span>のままです。ほかのプレイヤーとの会話や、攻略情報の検索にそのまま使えます。

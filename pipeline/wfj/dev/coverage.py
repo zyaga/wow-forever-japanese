@@ -57,7 +57,8 @@ _WORD = re.compile(r"[A-Za-z]{2,}")
 
 def nothing_to_translate(type_: str, en: str, title: str | None, field: str = "") -> str | None:
     """Why a line has nothing to translate, or None: a placeholder quest (`<UNUSED>`, `<NYI>`, `REUSE`, never
-    drafted), a book page that is "Missing Text", only pictures / markup, or a cipher, and a quest or book line
+    drafted), a book page that is "Missing Text", only pictures / markup, or a cipher, and a quest or book
+    line
     that is a bare label (`has_prose`: no lower-case word, token or sentence punctuation: a name and a colon,
     a name and two years, "Log"). A quest title is never a bare label: titles are written in title case."""
     if type_ == "quest" and title is not None and PLACEHOLDER_TITLE.search(title):
