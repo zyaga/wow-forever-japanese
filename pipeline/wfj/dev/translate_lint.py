@@ -313,6 +313,8 @@ def _check_branches(
         sub = {**row, "en": v.en}
         sub.pop("branches", None)
         reasons += [f"v{i}:{r}" for r in check_row(sub, text, allowlist, glossary, required, not_names)]
+    if b.sectioned:  # its paragraphs are told apart by their opening words (align.section_prefix)
+        return reasons
     shapes = [v.shape for v in b.variants]
     pairs = align.indistinguishable(texts, [v.en for v in b.variants], shapes, allowlist)
     if not reasons and align.never_shown(pairs, len(texts)):

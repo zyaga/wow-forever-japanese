@@ -1,3 +1,4 @@
+{"id": "3b0ab5c67453f7fb", "field": "text", "en": "The roots and ferns speak well of you, small one. Although I have many names, I answer to few. But you may call me Rethiel.\n\nAnd you must harken... for these lands weep from festered wounds, and I would charge you to heal them.", "hash": "3b0ab5c67453f7fb", "src": "forever-vo@025070f", "npcs": [1244]}
 {"id": "3b0b244bd6b66153", "field": "text", "en": "We've done it!  Victory to the Alliance!", "hash": "3b0b244bd6b66153", "src": "vmangos@13b49dc"}
 {"id": "3b102456f3892c77", "field": "text", "en": "Interesting, continue please.", "hash": "3b102456f3892c77", "src": "vmangos@13b49dc"}
 {"id": "3b1b4da7b982c88f", "field": "text", "en": "I wish to speak to the spirits, Tiev.", "hash": "3b1b4da7b982c88f", "src": "vmangos@13b49dc"}
@@ -27,6 +28,7 @@
 {"id": "3b91df635183bf58", "field": "text", "en": "We have to kill more trolls!  Kill enough and I'll blow the door to the troll chief!", "hash": "3b91df635183bf58", "src": "vmangos@13b49dc"}
 {"id": "3b94ee06e8676e2e", "field": "text", "en": "%s collapses but the broken body rises again!", "hash": "3b94ee06e8676e2e", "src": "vmangos@13b49dc"}
 {"id": "3b94f9aac673cf9f", "field": "text", "en": "<The silver necklace in your hands gleams gently as you examine it. The small crescent moon shape is evocative of Mother Moon herself.\r\n\r\nUpon flipping the necklace over there is a small inscription: \"We love you, Maliynn\". Perhaps it belongs to Maliynn in Astranaar?>", "hash": "3b94f9aac673cf9f", "src": "wdb@1.60.1.70170"}
+{"id": "3ba6a37f99b5c574", "field": "text", "en": "Greetings, citizen. How may I help you today?", "hash": "3ba6a37f99b5c574", "src": "forever-vo@025070f", "npcs": [275491]}
 {"id": "3bade6d222eee3a5", "field": "text", "en": "You can count on me, Jeztor.", "hash": "3bade6d222eee3a5", "src": "vmangos@13b49dc"}
 {"id": "3bb49b77f727d647", "field": "text", "en": "Understand this, Eranikus wants nothing more than to be brought to Azeroth from the Dream. Once he is out, he will stop at nothing to destroy my physical manifestation. This, however, is the only way in which you could recover the scepter shard.", "hash": "3bb49b77f727d647", "src": "vmangos@13b49dc"}
 {"id": "3bc278a509a38933", "field": "text", "en": "I would be delighted to aid you in the commencement of your pursuit! Let me grab my spinner and we'll get started...", "hash": "3bc278a509a38933", "src": "vmangos@13b49dc"}

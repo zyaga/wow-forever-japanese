@@ -23,6 +23,7 @@ WFJ.Data.add("spell", {
   [1229730] = { nil, "目が見えず、方向感覚を失っています。", nil, 0xc5a7aaff, "mu" },
   [1229737] = { "Basic Campfireを作製します。", nil, 0x7d3775e0, nil, "um" },
   [1229739] = { nil, "キャンプファイアの近くに$D1座っていると、周りに置いた追加のキャンプ用品に応じて、さまざまなキャンプの恩恵を得られます。", nil, 0x139e85ad, "mu" },
+  [1229741] = { nil, { sections = { head = "以下のキャンプの恩恵を得た：", hkey = "f304a344ad78df5c", { n = 96, key = "9b2391e2eaadc0b3", ja = "Tent：少量の休息経験値を得た。この効果は$D1に一度しか受けられない。", shape = "1/1" }, { n = 20, key = "5b112b98aecda9a3", ja = "Mana Well：$N2秒ごとにマナを$N1回復する。", shape = "2/0" }, { n = 40, key = "7e07cc29f7e75847", ja = "Sharpening Wheel：筋力が$N1上昇。", shape = "1/0" }, { n = 35, key = "463d4ef043ccc953", ja = "Enchanted Lute：アーマーが$N1、全能力値が$N2、全耐性が$N3上昇。", shape = "3/0" }, { n = 36, key = "9a6053bc10d6b738", ja = "First Aid Kit：スタミナが$N1上昇。", shape = "1/0" }, { n = 34, key = "0ffd1c67d208dbcc", ja = "Fish Bowl：全能力値が$N1%上昇。", shape = "1/0" }, { n = 39, key = "8b42e75a1d5ca282", ja = "Incense Candle：知力が$N1上昇。", shape = "1/0" }, { n = 43, key = "40fe173f8028cb2e", ja = "Lodestone：近接攻撃力が$N1上昇。", shape = "1/0" }, { n = 76, key = "0db3043f9a4e5b00", ja = "Camp Chair：すべての呪文と攻撃のクリティカル率が$N1%上昇。", shape = "1/0" }, { n = 36, key = "1e3c59517911ef82", ja = "Faction Banner：精神が$N1上昇。", shape = "1/0" } } }, nil, 0xa862eba5, "mu" },
   [1229745] = { "Fish Bowlを作製します。", nil, 0x06662444, nil, "um" },
   [1229760] = { "侵入者に大きな物理ダメージを与え、$D1の間スタンさせます。", "スタンしています。", 0xc54908f1, 0x27f95286, "uu" },
 })

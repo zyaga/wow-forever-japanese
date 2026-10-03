@@ -200,8 +200,13 @@ UIStrings.argKinds = argKinds
 local function luaFormatted(key)
   return key:sub(1, 18) == "ERROR_CLUB_ACTION_" or key:sub(1, 20) == "CLUB_REMOVED_REASON_"
 end
+-- The short stat names ("Avoidance", "Spell Power") are item and spell names too: only the comparison's stat change
+-- lines ask for them (UI/Tooltip matchStatChange).
+function UIStrings.isStatNameKey(key)
+  return type(key) == "string" and key:sub(1, 9) == "ITEM_MOD_" and key:sub(-6) == "_SHORT"
+end
 local function keyOnly(key)
-  return UIStrings.ONLY[key]
+  return UIStrings.ONLY[key] or UIStrings.isStatNameKey(key)
     or ((isErrorKey(key) or luaFormatted(key) or isChatKey(key)) and not UIStrings.ERROR_UNRESTRICTED[key])
 end
 UIStrings.keyOnly = keyOnly
@@ -387,9 +392,18 @@ end
 
 -- Exact string, then templates. → key, args | nil. `allow` (optional): a function(key) → bool that limits the
 -- template scan to some keys; every caller but matchOnly's fallback passes none.
+-- Whether every key answering an exact word is asked for by key only (the short stat names), so the open match
+-- never takes it. → bool
+function Index:keyOnlyWord(key)
+  for _, k in ipairs(self.synonyms[key] or { key }) do
+    if not UIStrings.isStatNameKey(k) then return false end
+  end
+  return true
+end
+
 function Index:core(text, allow)
   local key = self:exactKey(text)
-  if key and (not allow or allow(key)) then return key, nil end
+  if key and (allow and allow(key) or (not allow and not self:keyOnlyWord(key))) then return key, nil end
   for _, t in ipairs(self.templates) do
     if (allow and allow(t.key) or (not allow and not t.only))
         and (t.word == "" or text:find(t.word, 1, true)) then

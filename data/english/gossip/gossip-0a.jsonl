@@ -23,6 +23,7 @@
 {"id": "0a9794a30eb9b26b", "field": "text", "en": "Have you heard the good news, $c? The Alliance has completed all of its war effort collections! Now we simply await the Horde to finish theirs. When they do, we'll begin shipping all of the war materiel over to Silithus, and it shouldn't be long after that until the Ahn'Qiraj War begins.", "hash": "0a9794a30eb9b26b", "src": "vmangos@13b49dc"}
 {"id": "0a990ce52140834e", "field": "text", "en": "Masters, I pledge this $r to you!", "hash": "0a990ce52140834e", "src": "vmangos@13b49dc"}
 {"id": "0aa002db1ea90525", "field": "text", "en": "Yes, Torta. Whatever your heart desires...", "hash": "0aa002db1ea90525", "src": "vmangos@13b49dc"}
+{"id": "0aa60e6689ee983d", "field": "text", "en": "Anyway, I should probably get back to work. Speaking of, do you have any food or valuables that I could lift off of you? Maybe some windstones? Could always use more windstones?", "hash": "0aa60e6689ee983d", "src": "forever-vo@025070f", "npcs": [256514]}
 {"id": "0aadf78c98110ff6", "field": "text", "en": "Progeny of Aegwynn, he that would be the last Guardian of Tirisfal... Medivh.", "hash": "0aadf78c98110ff6", "src": "vmangos@13b49dc"}
 {"id": "0ab28d67ff930cef", "field": "text", "en": "Go, my servant.  Send word of Stonetalon to Apothecary Zamah.", "hash": "0ab28d67ff930cef", "src": "vmangos@13b49dc"}
 {"id": "0ab47a722e45cc8b", "field": "text", "en": "My entrails are leaking out! HELP!", "hash": "0ab47a722e45cc8b", "src": "vmangos@13b49dc"}

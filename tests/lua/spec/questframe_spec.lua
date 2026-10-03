@@ -88,6 +88,29 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     WFJ.ShippedGossipKey, DATA.gossip = nil, nil
   end)
 
+  it("a repeated quest's progress with no Japanese of its own takes the text keyed by its English", function()
+    DATA.gossip = { kp = { ja = "良い焚き火は、あらゆる良いキャンプの土台です。", status = "." } }
+    local recorded = {}
+    local record = WFJ.Collector.record
+    WFJ.Collector.record = function(kind, id, field, en) recorded[#recorded + 1] = { kind, id, field, en } end
+    WFJ.ShippedGossipKey = function(text) if text == "A good campfire is the foundation to any good camp." then
+      return "kp" end end
+    WFJ.IsQuestFieldEnglish = function(id) return id == 2 end -- quest 2 has its own translation
+    setQuest(9)
+    Stub.quest.progress = "A good campfire is the foundation to any good camp."
+    Stub.showProgress()
+    assert.are.equal("良い焚き火は、あらゆる良いキャンプの土台です。", QuestProgressText:GetText())
+    assert.are.same({ "quest", 9, "progress", "A good campfire is the foundation to any good camp." }, recorded[2])
+    -- the quest's own translation wins where it has one
+    setQuest(2)
+    Stub.quest.progress = "Did you get it?"
+    WFJ.ShippedGossipKey = function() return "kp" end
+    Stub.showProgress()
+    assert.are.equal("まだか？", QuestProgressText:GetText())
+    WFJ.ShippedGossipKey, WFJ.IsQuestFieldEnglish, DATA.gossip = nil, nil, nil
+    WFJ.Collector.record = record
+  end)
+
   it("detail window translates title / description / objectives by field with the API id; refit runs",
   function()
     Stub.showDetail()
@@ -108,6 +131,34 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     assert.is_true(QuestDetailScrollFrame.calls.UpdateScrollChildRect >= 1)
     assert.are.equal(0, QuestRewardScrollFrame.calls.UpdateScrollChildRect)
     assert.are.same({ "quest.title", 2 }, lookups[1])
+  end)
+
+  it("a reward redraw (item data arriving on a first open) keeps the Japanese prose and the banner", function()
+    Stub.showDetail()
+    QF.onShowRewards()
+    assert.are.equal("Sharptalonの鉤爪", QuestInfoTitleHeader:GetText())
+    assert.are.equal("Silverwind Refugeの説明文", QuestInfoDescriptionText:GetText())
+    assert.are.equal("Sharptalonを倒せ", QuestInfoObjectivesText:GetText())
+    assert.are.equal(3, SS.count(DETAIL))
+    assert.are.equal(WFJ.MARKER.stale, QF.banner:GetText())
+    -- the records still release to the client's English
+    QuestFrame:Hide()
+    assert.are.equal("Sharptalon's Claw", QuestInfoTitleHeader:GetText())
+
+    Stub.showReward()
+    QF.onShowRewards()
+    assert.are.equal("Sharptalonの鉤爪", QuestInfoTitleHeader:GetText())
+    assert.are.equal("よくやった", QuestInfoRewardText:GetText())
+  end)
+
+  it("a redraw after the client wrote another quest on the same widgets translates the new quest", function()
+    Stub.showDetail()
+    setQuest(3)
+    Stub.quest.title = "Another Quest"
+    QuestInfoTitleHeader:SetText("Another Quest") -- the client's writer, without our hook
+    QF.onShowRewards()
+    assert.are.equal("Another Quest", QuestInfoTitleHeader:GetText())
+    assert.are.equal(3, SS.get(DETAIL, "title").meta.id) -- the new quest's record, not the old one kept
   end)
 
   it("progress (through the panel's OnShow) then reward: five fields on two surfaces", function()

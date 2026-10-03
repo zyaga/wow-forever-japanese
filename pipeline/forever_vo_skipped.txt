@@ -1,0 +1,7 @@
+# NPC greetings from forever-vo's captures that are never imported (ADR-055): <gossip key>	<reason>.
+# A key is the hash of the greeting's English, as data/english/gossip keys it.
+53ebce35d7d39d12	in Thalassian, an invented in-game language: nothing to translate
+73e14183ffa4b8ac	damaged in the captures: the submitter's addon replaced every 'it' with the player's name token
+9b36e36bf6f1d999	in Thalassian, an invented in-game language: nothing to translate
+dfe6e6f778156e95	in Thalassian, an invented in-game language: nothing to translate
+e0a71b19a948b5d1	in Thalassian, an invented in-game language: nothing to translate

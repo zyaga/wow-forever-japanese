@@ -25,6 +25,7 @@
 {"id": "e877f3e7f5c00ea3", "field": "text", "en": "For the time being, that area is free of Scourge influence. I fear it will only be a matter of time before they return.", "hash": "e877f3e7f5c00ea3", "src": "vmangos@13b49dc"}
 {"id": "e88413e700a0b553", "field": "text", "en": "The markings of this tablet show ancient diagrams and hold dire words of power.$B$BYou believe it is an alchemical recipe, but it is beyond your skill...", "hash": "e88413e700a0b553", "src": "vmangos@13b49dc"}
 {"id": "e8880c7c3ce83a37", "field": "text", "en": "My scepter will once again become whole!", "hash": "e8880c7c3ce83a37", "src": "vmangos@13b49dc"}
+{"id": "e88872178af0481d", "field": "text", "en": "They named it Bandarion Keep. I wonder what Garek would make of that?", "hash": "e88872178af0481d", "src": "forever-vo@025070f", "npcs": [267008]}
 {"id": "e88a6fed1dfecd6f", "field": "text", "en": "Lovely song, isn't it?", "hash": "e88a6fed1dfecd6f", "src": "vmangos@13b49dc"}
 {"id": "e88bbdcf2689a256", "field": "text", "en": "If you insert tab A into slot B then of course it's going to go BOOM! Here, let me show you what I have and then you can ask Lilliam about how to put it together so it doesn't blow up.", "hash": "e88bbdcf2689a256", "src": "vmangos@13b49dc"}
 {"id": "e892d8f83e954ceb", "field": "text", "en": "Mailbox", "hash": "e892d8f83e954ceb", "src": "vmangos@13b49dc"}
@@ -32,6 +33,7 @@
 {"id": "e8978b0928de1f9a", "field": "text", "en": "Don't crowd me, people!", "hash": "e8978b0928de1f9a", "src": "vmangos@13b49dc"}
 {"id": "e8a7042299228cef", "field": "text", "en": "Interesting, interesting... I know of a druid that lives atop the hill above the Wailing Caverns, $n. She might be able to tell you more about this shard you have found.$B$BNow, I must get back to work!", "hash": "e8a7042299228cef", "src": "vmangos@13b49dc"}
 {"id": "e8b52a9013618a5f", "field": "text", "en": "COME FORTH, MY SERVANTS! DEFEND YOUR MASTER!", "hash": "e8b52a9013618a5f", "src": "vmangos@13b49dc"}
+{"id": "e8b8bcb94581e2e1", "field": "text", "en": "Of course! Which profession would you like me to guide you towards?\r\n\r\nI will mark your map with the location of a local trainer of your choice. Remember that you can visit trainers in capital cities for more thorough training.", "hash": "e8b8bcb94581e2e1", "src": "forever-vo@025070f", "npcs": [247229, 267287, 267321, 267323]}
 {"id": "e8b9e35dffd30953", "field": "text", "en": "Start doing something before I replace that target dummy with you and begin a warm up session of my own!", "hash": "e8b9e35dffd30953", "src": "vmangos@13b49dc"}
 {"id": "e8c1fec59423a1ce", "field": "text", "en": "The tag on this present reads: \"For ages 40 and up.\"", "hash": "e8c1fec59423a1ce", "src": "vmangos@13b49dc"}
 {"id": "e8c231a13bb1f5c7", "field": "text", "en": "Elder Skygleam can be found near the Ravencrest Monument in Azshara.", "hash": "e8c231a13bb1f5c7", "src": "vmangos@13b49dc"}

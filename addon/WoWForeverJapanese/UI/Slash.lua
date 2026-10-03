@@ -90,7 +90,9 @@ local function debugRow(type_, idText)
       any = true
       print(("  %s.%s: %s (h1 %s) %s"):format(type_, field, WFJ.STATUS[e.status] or e.status,
         e.h1 and WFJ.Hash.hex8(e.h1) or "-", -- no h1: checked against another field
-        e.variants and ("%d branch variants"):format(#e.variants) or short(e.ja))) -- a branch line
+        e.variants and ("%d branch variants"):format(#e.variants) -- a branch line
+          or e.sections and ("%d sections"):format(#e.sections) -- a heading with optional paragraphs
+          or short(e.ja)))
     else
       print(("  %s.%s: -"):format(type_, field))
     end
@@ -255,6 +257,7 @@ local function debugTooltip(arg)
   arg = arg and arg:lower()
   if arg == "on" then
     WFJ.Tooltip.trace = {}
+    WFJ.Tooltip.installCallTrace()
     return say("tooltip trace: on (every spell / item tooltip pass is recorded; /wfj debug tooltip to see it)")
   end
   if arg == "off" then

@@ -28,6 +28,7 @@
 {"id": "36d8875b35381c87", "field": "text", "en": "Alright, alright! I think I can figure out how to operate this thing...", "hash": "36d8875b35381c87", "src": "vmangos@13b49dc"}
 {"id": "36dcbc2fd140552b", "field": "text", "en": "Kel'Thuzad say to tell you... DIE!", "hash": "36dcbc2fd140552b", "src": "vmangos@13b49dc"}
 {"id": "36dcbf965b885c07", "field": "text", "en": "The caverns below us are a source of strange and wondrous hides, but you must take care if you venture into their depths, $n. Remember that your own skin is far more valuable.", "hash": "36dcbf965b885c07", "src": "vmangos@13b49dc"}
+{"id": "36de48cbc9f53e97", "field": "text", "en": "Have you heard the good news about Al'Akir, the Windlord?", "hash": "36de48cbc9f53e97", "src": "forever-vo@025070f", "npcs": [252068]}
 {"id": "36dfb7808ee38f0b", "field": "text", "en": "Stormwind Counting House is located by the front gates in the trade district of Stormwind. And when you get tired of counting your money, be sure to stop by the Gilded Rose for a drink.", "hash": "36dfb7808ee38f0b", "src": "vmangos@13b49dc"}
 {"id": "36e385aaa6e5d7a7", "field": "text", "en": "%s bows low before you.", "hash": "36e385aaa6e5d7a7", "src": "vmangos@13b49dc"}
 {"id": "36f72a0bc1640799", "field": "text", "en": "You challenge the charge of the Blue Dragonflight? DIE, vermin.", "hash": "36f72a0bc1640799", "src": "vmangos@13b49dc"}

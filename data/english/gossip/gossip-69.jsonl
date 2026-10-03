@@ -26,11 +26,13 @@
 {"id": "69992b88f3bbc042", "field": "text", "en": "I've got all the cooking supplies you'll ever need, mon!", "hash": "69992b88f3bbc042", "src": "vmangos@13b49dc"}
 {"id": "699de0ad9f92a993", "field": "text", "en": "You've made the right decision, $c.  You'll find our battlemaster, Glordrum Steelbeard, in the Hall of Arms.  Good luck, $n!", "hash": "699de0ad9f92a993", "src": "vmangos@13b49dc"}
 {"id": "69a2a3705aad5dd5", "field": "text", "en": "The Light of Elune shine upon thee, $n!  You will find Aethalas, our battlemaster, on the Warrior's Terrace.  She will aid you on your way to Warsong Gulch.", "hash": "69a2a3705aad5dd5", "src": "vmangos@13b49dc"}
+{"id": "69a5668e2272f902", "field": "text", "en": "It appears the winds have brought you my way! I am happy to train you in the ways of cooking if you have the inclination to learn.", "hash": "69a5668e2272f902", "src": "forever-vo@025070f", "npcs": [257006]}
 {"id": "69a75e72f6b1d94a", "field": "text", "en": "The Inn", "hash": "69a75e72f6b1d94a", "src": "vmangos@13b49dc"}
 {"id": "69afbf9275ba517b", "field": "text", "en": "The inn", "hash": "69afbf9275ba517b", "src": "vmangos@13b49dc"}
 {"id": "69b31eb4c38a2ba3", "field": "text", "en": "The spirits have guided you to me. How may I be of service?", "hash": "69b31eb4c38a2ba3", "src": "vmangos@13b49dc"}
 {"id": "69b82965959bb45d", "field": "text", "en": "Stop pulling her hair out!", "hash": "69b82965959bb45d", "src": "vmangos@13b49dc"}
 {"id": "69baad7508e8c38a", "field": "text", "en": "Greetings, mortals!  I have been activated by the Discs of Norgannon to assist you!", "hash": "69baad7508e8c38a", "src": "vmangos@13b49dc"}
+{"id": "69cea6b631a1eeaf", "field": "text", "en": "Just thinking. It's scary out here these days, you know? Any minute this section of the island could drop out from under me and I'd go tumbling... somewhere? Tell me, do you even know what happens to $r who fall off the island?", "hash": "69cea6b631a1eeaf", "src": "forever-vo@025070f", "npcs": [256514]}
 {"id": "69d621fbd758e572", "field": "text", "en": "Hello there, $c.  Normally I'd be out on the beat looking after the folk of Stormwind, but a lot of the Stormwind guards are fighting in other lands.  So here I am, deputized and offering bounties when I'd rather be on patrol...", "hash": "69d621fbd758e572", "src": "vmangos@13b49dc"}
 {"id": "69d82b9669260cb6", "field": "text", "en": "Long is the way, and hard, the road you have traveled. Few reach such status amongst our ranks. You are a great friend of the Zandalar empire, $n.$B$BLegendary perhaps... Yes... Perhaps.", "hash": "69d82b9669260cb6", "src": "vmangos@13b49dc"}
 {"id": "69dab2ba8d81d003", "field": "text", "en": "You must save him!", "hash": "69dab2ba8d81d003", "src": "vmangos@13b49dc"}

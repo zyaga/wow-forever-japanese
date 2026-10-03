@@ -158,7 +158,8 @@ def test_plan_ships_the_alias_in_the_female_keys_shard_and_reports_it(tmp_path: 
     assert f'["{fk}"] = {{ "ケナリウスの加護を。\\n\\n私はTajarri。", "." }}' in female
     assert report == {"aliases": {"gossip": 1, "book": 0},
                       "dropped": {"gossip": [], "book": []},
-                      "ambiguous": {"gossip": [], "book": []}}
+                      "ambiguous": {"gossip": [], "book": []},
+                      "quest_keyed": 0}
     assert "gossip = 1" in planned["Data/Meta.lua"]  # Meta counts lines, not alias keys
     quest = planned[schema.shard_relpath("quest", 3)]
     assert lua_writer.h1_literal(_k(female_variant(QUEST_EN))) in quest

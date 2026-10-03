@@ -1,7 +1,9 @@
 from wfj.dev.gen_attribution import (
+    FOREVER_VO,
     LABELS,
     correctors_section,
     data_translators,
+    english_sources,
     listed_translators,
     main,
     render,
@@ -98,3 +100,22 @@ def test_regeneration_keeps_the_correctors_section(root, tmp_path):
     assert section in again
     assert again.index(section) < again.index("## Lineage")
     assert again.replace(section, "") == first
+
+
+def test_forever_vo_is_credited_exactly_while_its_lines_remain(root):
+    """forever-vo's credit and license (ADR-055) stand in ATTRIBUTION.md exactly while some English line in
+    data/english/ comes from it. When this fails, run `python -m wfj.dev.gen_attribution`: it adds or drops the
+    credit to match the data."""
+    text = (root / "ATTRIBUTION.md").read_text(encoding="utf-8")
+    credited = "## forever-vo license" in text and "github.com/quinn-dougherty/forever-vo" in text
+    assert credited == (FOREVER_VO in english_sources(root / "data"))
+
+
+def test_without_forever_vo_lines_the_credit_leaves_no_trace():
+    tags = ["A", "b"]
+    without, with_ = render(tags), render(tags, {FOREVER_VO, "vmangos"})
+    assert "forever-vo" not in without
+    assert "\n\n## pfQuest license" in without and "\n\n## This project" in without
+    assert "## forever-vo license" in with_ and "Copyright (c) 2026 Quinn Dougherty" in with_
+    assert "\n\n## pfQuest license" in with_ and "\n\n## forever-vo license" in with_
+    assert "\n\n## This project" in with_

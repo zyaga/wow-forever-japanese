@@ -34,6 +34,7 @@
 {"id": "35d64bfc06cf6953", "field": "text", "en": "I have lost my Blade of Vaulted Secrets. Are you able to replace it for me?", "hash": "35d64bfc06cf6953", "src": "vmangos@13b49dc"}
 {"id": "35d84acdb5f9ca48", "field": "text", "en": "I ordered a few shipments of new perfumes and colognes from the city. After I get them unpacked, check back and I'll have them for sale.", "hash": "35d84acdb5f9ca48", "src": "vmangos@13b49dc"}
 {"id": "35d9c7df4f8011c5", "field": "text", "en": "Hero, I have urgent business with Corporal Splithoof.", "hash": "35d9c7df4f8011c5", "src": "vmangos@13b49dc"}
+{"id": "35dcc299de151f70", "field": "text", "en": "I suppose that is true. I and the rest of my elites used to belong to an order known as the Empyrean Blades. We were the personal guard of our former leader, the Shal'nan. \r\n\r\nIn the current, uncertain times we do what we can to help lead the peacekeepers citizen militia, since we are the closest thing to professional soldiers left on Zephras.", "hash": "35dcc299de151f70", "src": "forever-vo@025070f", "npcs": [252383]}
 {"id": "35ded2e53b592928", "field": "text", "en": "Sunken Temple", "hash": "35ded2e53b592928", "src": "vmangos@13b49dc"}
 {"id": "35e0c6651914b4d5", "field": "text", "en": "I'm going to die, I just know it!", "hash": "35e0c6651914b4d5", "src": "vmangos@13b49dc"}
 {"id": "35e360b69f2033e6", "field": "text", "en": "So you've conquered a small spot of land. A minor setback! The Scourge still reign here!", "hash": "35e360b69f2033e6", "src": "vmangos@13b49dc"}

@@ -9,6 +9,7 @@
 {"id": "192fb6f4e9516da1", "field": "text", "en": "Thank you, $n.  You have tempered the cold rage in my heart.", "hash": "192fb6f4e9516da1", "src": "vmangos@13b49dc"}
 {"id": "19308a28a0e728cb", "field": "text", "en": "Where is your Medallion of Station, little one?  You may not speak with a Duke without proof of title...", "hash": "19308a28a0e728cb", "src": "vmangos@13b49dc"}
 {"id": "19311b09b6772789", "field": "text", "en": "%s emerges to protect the Fathom Stone!", "hash": "19311b09b6772789", "src": "vmangos@13b49dc"}
+{"id": "193a86649c8b1e30", "field": "text", "en": "I was invited to visit Dalaran on behalf of the Cenarion Circle. I find this place equal parts wondrous... and unsettling.\r\n\r\nAs for you, young $C--If you have not yet done so, seek out Sheldras Moontree in Stormwind. He will teach you to reach the Cenarion Circle enclave at Moonglade.", "hash": "193a86649c8b1e30", "src": "forever-vo@025070f", "npcs": [270459]}
 {"id": "19554cea2a9c2385", "field": "text", "en": "An honorable... death.", "hash": "19554cea2a9c2385", "src": "vmangos@13b49dc"}
 {"id": "196235cc0620c841", "field": "text", "en": "I'm out of the building again.  Now I'll move one more waypoint...", "hash": "196235cc0620c841", "src": "vmangos@13b49dc"}
 {"id": "1965faa48265406a", "field": "text", "en": "Lysta, summon in the captives.", "hash": "1965faa48265406a", "src": "vmangos@13b49dc"}

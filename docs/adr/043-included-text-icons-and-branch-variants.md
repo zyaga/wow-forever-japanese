@@ -113,3 +113,18 @@ Claims about the client this design rests on ([principle 9](../architecture/prin
   client prints the other branch.
 - **Drop shadowed variants.** Rejected: the shadowing variant would then pass alone on the shadowed variant's
   line and show the wrong branch.
+
+## Amendment (2026-10-03): sectioned lines
+
+A line with more than `MAX_VARIANTS` combinations is still shipped when it has one shape: a heading paragraph with
+no code, then optional paragraphs, each its own `$?<cond>[<paragraph>][]` with an empty else, each beginning with
+words before its first code (the Camp Benefits aura, spell 1229741: "Tent: …", "Mana Well: …", one per camp item
+the player has). Its 2^n combinations are too many to ship, and many show the same values, so the addon could not
+tell them apart. Instead `align.branching` returns its variants as the heading alone and the heading with each
+paragraph (`sectioned`), which drafting, lint and the Japanese renumbering use unchanged, and `generate` ships
+`{ sections = { head, hkey, { n, key, ja, shape }… } }`: the heading's Japanese and the hash of its English, and per
+paragraph the byte length and hash of its opening words, its Japanese numbered to its own values and its shape.
+No English ships. The addon (`Align.sections`) splits the live text at its blank lines, checks the heading, finds
+every other paragraph by its opening words, requires its exact shape and fills it with `Align.check`. A paragraph
+found by none, or one that does not fit, leaves the whole line English. The "could be confused" checks do not
+apply: the paragraphs are told apart by their opening words.

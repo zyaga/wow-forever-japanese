@@ -1,4 +1,5 @@
 {"id": "8401f39e0172e6fc", "field": "text", "en": "%s reaches into his pack and pulls out the encoded tablets.", "hash": "8401f39e0172e6fc", "src": "vmangos@13b49dc"}
+{"id": "8403ec4c0acc1018", "field": "text", "en": "This dock connects Stormwind to the lands of the kaldorei via Auberdine, the port town of Darkshore. If you wish to travel there, the boat arrives frequently.", "hash": "8403ec4c0acc1018", "src": "forever-vo@025070f", "npcs": [276318]}
 {"id": "840f8b43730dc376", "field": "text", "en": "Be warned, mortal, it is exceptionally rare that one of the lesser clans in this citadel would hold such an item. Your search could take decades. I recommend you destroy these beasts without impunity.", "hash": "840f8b43730dc376", "src": "vmangos@13b49dc"}
 {"id": "8410c6a7115262c7", "field": "text", "en": "Open fire!", "hash": "8410c6a7115262c7", "src": "vmangos@13b49dc"}
 {"id": "841609e08f476ed9", "field": "text", "en": "The Defiler... must warn Thrall... ", "hash": "841609e08f476ed9", "src": "vmangos@13b49dc"}

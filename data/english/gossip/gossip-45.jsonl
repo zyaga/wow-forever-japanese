@@ -23,6 +23,7 @@
 {"id": "457e66ce58fa3c51", "field": "text", "en": "Find the Wind Rider Master at the top of The Sky Tower in the Valley of Strength. Doras will make sure you find your way to the battle you seek.", "hash": "457e66ce58fa3c51", "src": "vmangos@13b49dc"}
 {"id": "4590b956e921e27c", "field": "text", "en": "You merely prolong the inevitable, $r. Succumb. She will free your misguided soul.", "hash": "4590b956e921e27c", "src": "vmangos@13b49dc"}
 {"id": "45980b4f981becdd", "field": "text", "en": "%s lowers the sound of his voice to a whisper.", "hash": "45980b4f981becdd", "src": "vmangos@13b49dc"}
+{"id": "459d0cbea3ece8f0", "field": "text", "en": "It's my job to get the Paladins of Bandarion Keep set up with proper arms and armor. It's not much, but it's honest work.\r\n\r\nI've got a thing or two for sale as well, should you need gear.", "hash": "459d0cbea3ece8f0", "src": "forever-vo@025070f", "npcs": [276067]}
 {"id": "45a1160aeb73debe", "field": "text", "en": "Friendly", "hash": "45a1160aeb73debe", "src": "vmangos@13b49dc"}
 {"id": "45a22b426024c228", "field": "text", "en": "We must go and gather with the other Disciples. There is much work to be done before I can make another attempt to restore the Barrens. Farewell, brave souls!", "hash": "45a22b426024c228", "src": "vmangos@13b49dc"}
 {"id": "45a25ef248c7ca7c", "field": "text", "en": "Are you sure this is the right way? Maybe we should go this way instead...", "hash": "45a25ef248c7ca7c", "src": "vmangos@13b49dc"}

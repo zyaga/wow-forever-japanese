@@ -8,6 +8,7 @@
 {"id": "11291b16b35a7db0", "field": "text", "en": "The final battle for Kalimdor is upon us. The supreme commander of the Might of Kalimdor orders his troops to march upon Ahn'Qiraj and destroy all in their path.", "hash": "11291b16b35a7db0", "src": "vmangos@13b49dc"}
 {"id": "112adb4159d347ea", "field": "text", "en": "Let your death serve as an example!", "hash": "112adb4159d347ea", "src": "vmangos@13b49dc"}
 {"id": "112fdb44b0f2c310", "field": "text", "en": "$N, I've come to find out how rampant the effects of Fel Moss are throughout Darkshore. The corruption of Teldrassil and our surrounding lands really concerns the druids of the Cenarian Circle, and all Night elves.$B$BIt is my goal to find out why this has happened and to put an end to it.", "hash": "112fdb44b0f2c310", "src": "vmangos@13b49dc"}
+{"id": "113391a9a41af576", "field": "text", "en": "Paladins in War Quarter on outer ring. You find them at main building.", "hash": "113391a9a41af576", "src": "forever-vo@025070f", "npcs": [5624]}
 {"id": "1135eecfa03eea78", "field": "text", "en": "Ready for another lesson? All right, then. First, relax. You gotta stay loose to stir a potion just right.", "hash": "1135eecfa03eea78", "src": "vmangos@13b49dc"}
 {"id": "1136a0ec6faf3f85", "field": "text", "en": "I have duty in an hour, but until then... bottom's up!", "hash": "1136a0ec6faf3f85", "src": "vmangos@13b49dc"}
 {"id": "11383c07c9e04207", "field": "text", "en": "Greetings, I am Baros Alexston, City Architect of Stormwind.", "hash": "11383c07c9e04207", "src": "vmangos@13b49dc"}

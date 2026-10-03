@@ -106,7 +106,7 @@ describe("the ui area on its surfaces", function()
     assert.are.equal("売値: 12c", left(9):GetText())
     assert.are.equal(WFJ.Font.PATH, (left(2):GetFont()))
     assert.are.equal(WFJ.Font.PATH, (right(3):GetFont()))
-    assert.are.equal(1, tt.calls.Show) -- one refit for the hover
+    assert.are.equal(2, tt.calls.Show) -- one refit for the hover (two Shows)
   end)
 
   it("the description run keeps the item description path and its lines are never ui records", function()
@@ -116,7 +116,7 @@ describe("the ui area on its surfaces", function()
     assert.are.equal(ITEM_JA, left(4):GetText())
     assert.is_nil(SS.get("tooltip.GameTooltip", "ui.L4"))
     assert.are.equal("売値: 12c", left(5):GetText())
-    assert.are.equal(1, tt.calls.Show)
+    assert.are.equal(2, tt.calls.Show) -- one refit (two Shows)
   end)
 
   it("a spell tooltip's cost / range / cast lines translate; the description line is left alone", function()

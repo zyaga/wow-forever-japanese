@@ -115,8 +115,17 @@ def rows(
 _FILLED = re.compile(r"\$[ND]\d")
 
 
-def variants_literal(variants: list[tuple[str, str]]) -> str:
-    """A branch line's slot: its variants' Japanese, then their shapes (`<values>/<durations>`)."""
+def variants_literal(variants: list[tuple[str, str]] | dict[str, Any]) -> str:
+    """A branch line's slot: its variants' Japanese, then their shapes (`<values>/<durations>`). A sectioned
+    line (`generate._sections`) ships `{ sections = { head, hkey, { n, key, ja, shape }… } }` instead."""
+    if isinstance(variants, dict):
+        secs = ", ".join(
+            f"{{ n = {s['n']}, key = {lua_string(s['key'])}, ja = {lua_string(s['ja'])}, "
+            f"shape = {lua_string(s['shape'])} }}"
+            for s in variants["sections"]
+        )
+        head, hkey = lua_string(variants["head"]), lua_string(variants["hkey"])
+        return f"{{ sections = {{ head = {head}, hkey = {hkey}, {secs} }} }}"
     texts = ", ".join(lua_string(ja) for ja, _ in variants)
     shapes = ", ".join(lua_string(shape) for _, shape in variants)
     return f"{{ {texts}, shape = {{ {shapes} }} }}"
@@ -304,7 +313,11 @@ def meta_text(schema_version: int, english: dict[str, list[str]], counts: dict[s
     more than one. A source normally has exactly one; the quest cache has two, because two clients served
     different subsets of the quests and a union import keeps both (ADR-020). The per-line
     `english.src` is the exact version in every case; this is the summary."""
-    eng = ", ".join(f"{k} = {lua_string('+'.join(sorted(v)))}" for k, v in sorted(english.items()))
+    # a source name that is not a Lua identifier ("forever-vo") is written as a bracketed string key
+    eng = ", ".join(
+        f"{k if k.isidentifier() else '[' + lua_string(k) + ']'} = {lua_string('+'.join(sorted(v)))}"
+        for k, v in sorted(english.items())
+    )
     cnt = ", ".join(f"{k} = {counts.get(k, 0)}" for k in schema.TOC_ORDER)
     fields = ", ".join(
         f"{t} = {{ {', '.join(lua_string(f) for f in schema.SLOTS[t]['fields'])} }}" for t in schema.TYPES

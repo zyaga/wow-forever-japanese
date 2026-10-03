@@ -52,11 +52,13 @@ end
 
 -- The chat event handler for a monster line: the formatter and the AddMessage call it makes.
 local lineID = 0
-local function npc(frame, typeId, template, body, speaker)
+local function npc(frame, typeId, template, body, speaker, guid, target, language)
   lineID = lineID + 1
   local function formatter(msg) return format(template .. msg, speaker, speaker) end
-  local args = { body, speaker, n = 11 }
+  local args = { body, speaker, language or "", n = 12 }
+  args[5] = target
   args[11] = lineID
+  args[12] = guid
   frame:AddMessage(formatter(body), 1, 1, 0.6, typeId, nil, nil, "CHAT_MSG_MONSTER", args, formatter)
 end
 
@@ -134,6 +136,34 @@ describe("NPC speech", function()
     assert.are.equal("Hoggerは狂乱状態になった！", f:Last())
     npc(f, YELL, "%s yells: ", "Something no one translated!", "Bob")
     assert.are.equal("Bobの叫び: Something no one translated!", f:Last()) -- the prefix alone
+  end)
+
+  it("every NPC line goes to the Collector with its speaker, translated or not; a secret line does not", function()
+    local recorded = {}
+    WFJ.Collector = { recordGossip = function(text, guid) recorded[#recorded + 1] = { text, guid } end }
+    local f = _G.ChatFrame1
+    npc(f, SAY, "%s says: ", "Something no one translated!", "Lyreena", "Creature-0-1-2-3-216000-00001")
+    npc(f, SAY, "%s says: ", "Stay close, Testplayer!", "Ralph", "Creature-0-1-2-3-1234-00002")
+    secrets["A secret line."] = true
+    npc(f, SAY, "%s says: ", "A secret line.", "Ralph", "Creature-0-1-2-3-1234-00002")
+    assert.are.same({ { "Something no one translated!", "Creature-0-1-2-3-216000-00001" },
+      { "Stay close, Testplayer!", "Creature-0-1-2-3-1234-00002" } }, recorded)
+    -- a line to another player is never recorded (it may hold their name); one to this player is
+    _G.UnitName = function() return "Testplayer" end
+    npc(f, SAY, "%s says: ", "Thank you, Otherguy!", "Ralph", "Creature-0-1-2-3-1234-00002", "Otherguy")
+    npc(f, SAY, "%s says: ", "Thank you, Testplayer!", "Ralph", "Creature-0-1-2-3-1234-00002", "Testplayer")
+    assert.are.equal(3, #recorded)
+    assert.are.equal("Thank you, Testplayer!", recorded[3][1])
+    -- a language this character does not know arrives scrambled and is not recorded; a known one is
+    _G.GetNumLanguages = function() return 2 end
+    _G.GetLanguageByIndex = function(i) return ({ "Common", "Darnassian" })[i], i end
+    npc(f, SAY, "%s says: ", "Lok tar ogar!", "Grunt", "Creature-0-1-2-3-1234-00003", nil, "Orcish")
+    npc(f, SAY, "%s says: ", "Elune guide you.", "Sentinel", "Creature-0-1-2-3-1234-00004", nil, "Darnassian")
+    assert.are.equal(4, #recorded)
+    assert.are.equal("Elune guide you.", recorded[4][1])
+    _G.GetNumLanguages, _G.GetLanguageByIndex = nil, nil
+    _G.UnitName = nil
+    WFJ.Collector = nil
   end)
 
   it("a stale row, a draft that lost %s, or a secret line stays English", function()

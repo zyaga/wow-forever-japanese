@@ -22,6 +22,7 @@
 {"id": "22b18bf91b57c0ec", "field": "text", "en": "Me Grimlok, king!", "hash": "22b18bf91b57c0ec", "src": "vmangos@13b49dc"}
 {"id": "22b1e0eed87f2c39", "field": "text", "en": "Ish nu!  That's enough!", "hash": "22b1e0eed87f2c39", "src": "vmangos@13b49dc"}
 {"id": "22b31c6e90f9f0b9", "field": "text", "en": "Now I'm the one who feels rough around the edges, I honestly don't think there's anything left I can teach you. But you know who can? Bengus Deepforge in Ironforge, now there's a dwarf that knows his steel. Go look him up in The Great Forge of Ironforge, see if he's up to having a new trainee under him.", "hash": "22b31c6e90f9f0b9", "src": "vmangos@13b49dc"}
+{"id": "22b5d6c11828c714", "field": "text", "en": "What has brought you to the Earthen Ring?", "hash": "22b5d6c11828c714", "src": "forever-vo@025070f", "npcs": [262558]}
 {"id": "22b67b17851ec7c7", "field": "text", "en": "We hunger for vengeance.", "hash": "22b67b17851ec7c7", "src": "vmangos@13b49dc"}
 {"id": "22c0cffb3350b748", "field": "text", "en": "%s shakes his head in disappointment.", "hash": "22c0cffb3350b748", "src": "vmangos@13b49dc"}
 {"id": "22c7db75d4734b0a", "field": "text", "en": "I am not fooled by your disguise, temptress. Your time to die has come.", "hash": "22c7db75d4734b0a", "src": "vmangos@13b49dc"}

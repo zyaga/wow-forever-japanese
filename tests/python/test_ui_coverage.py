@@ -105,7 +105,7 @@ def test_first_ui_pass_keys_are_resolved(root):
     keys = set(wago.read_keys(root / "pipeline/ui_keys.txt"))
     assert "HONOR" in keys
     excluded = _exclusions(root)
-    assert "no Forever UI file writes it" in excluded["ITEM_MOD_STAMINA_SHORT"]
+    assert "ITEM_MOD_STAMINA_SHORT" in keys  # a stat change line's name (the comparison tooltip)
     assert "repair mode" in excluded["REPAIR_COST"]
 
 

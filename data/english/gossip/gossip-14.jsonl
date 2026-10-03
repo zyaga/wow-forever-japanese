@@ -1,5 +1,7 @@
 {"id": "1400f25964c456a3", "field": "text", "en": "Wow, it's 3 degrees Kraklenheit. Keep looking.", "hash": "1400f25964c456a3", "src": "vmangos@13b49dc"}
+{"id": "1409675888b9021e", "field": "text", "en": "Great ta meet ya.", "hash": "1409675888b9021e", "src": "forever-vo@025070f", "npcs": [49808]}
 {"id": "140bf47189880464", "field": "text", "en": "%s forces one of his Firesworn minions to erupt!", "hash": "140bf47189880464", "src": "vmangos@13b49dc"}
+{"id": "1417aa370bfa4666", "field": "text", "en": "We've had trouble with shipments going missing across Azeroth. If you find any, I'd appreciate if you could return them to me.", "hash": "1417aa370bfa4666", "src": "forever-vo@025070f", "npcs": [256386, 256390]}
 {"id": "141b729f3618d5d0", "field": "text", "en": "It's a little damaged, but I should still be able to get some good information from this.", "hash": "141b729f3618d5d0", "src": "vmangos@13b49dc"}
 {"id": "1422a3d6cc1fc075", "field": "text", "en": "You should not be here! Slay them!", "hash": "1422a3d6cc1fc075", "src": "vmangos@13b49dc"}
 {"id": "142517aac9561a3f", "field": "text", "en": "OH NOES!! BRB AS DRAGON! <PH>", "hash": "142517aac9561a3f", "src": "vmangos@13b49dc"}

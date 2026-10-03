@@ -24,6 +24,7 @@
 {"id": "5475eaabd126ccac", "field": "text", "en": "Is it? Call out to them, Servitor.", "hash": "5475eaabd126ccac", "src": "vmangos@13b49dc"}
 {"id": "547ad6651b4db0be", "field": "text", "en": "You are beyond my level of expertise. Georgio Bolero, the master of Duncan's Textiles around the corner could help you advance your skills.", "hash": "547ad6651b4db0be", "src": "vmangos@13b49dc"}
 {"id": "54805afa085bc7f7", "field": "text", "en": "This is it, $n. My stuff should be in that room. Cover me, I'm going in!", "hash": "54805afa085bc7f7", "src": "vmangos@13b49dc"}
+{"id": "5486f890fa35a178", "field": "text", "en": "<Lady Sylvanas Windrunner regards you silently.>", "hash": "5486f890fa35a178", "src": "forever-vo@025070f", "npcs": [10181]}
 {"id": "54875ae89acbe73d", "field": "text", "en": "You know not what you do!  We must destroy you for your own good.", "hash": "54875ae89acbe73d", "src": "vmangos@13b49dc"}
 {"id": "548b8baaaeb03352", "field": "text", "en": "Ha ha! I have Betsy!", "hash": "548b8baaaeb03352", "src": "vmangos@13b49dc"}
 {"id": "549a9eac32159f92", "field": "text", "en": "Get those parts moving down to the ship!", "hash": "549a9eac32159f92", "src": "vmangos@13b49dc"}

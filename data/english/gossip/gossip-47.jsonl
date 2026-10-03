@@ -8,6 +8,7 @@
 {"id": "47433483bd0d8bf3", "field": "text", "en": "It is my duty and honor to die for the Abyssal Council!", "hash": "47433483bd0d8bf3", "src": "vmangos@13b49dc"}
 {"id": "4748987b3ac38977", "field": "text", "en": "You want my help? You got it. What do you need?", "hash": "4748987b3ac38977", "src": "vmangos@13b49dc"}
 {"id": "4749ed814c126b16", "field": "text", "en": "Your discs are now ready!  Engage the Discs of Norgannon once again to retrieve them!", "hash": "4749ed814c126b16", "src": "vmangos@13b49dc"}
+{"id": "475938aab59d6b34", "field": "text", "en": "On a clear day, you can even see Blackrock Mountain from here. It's both beautiful and terrifying at the same time.", "hash": "475938aab59d6b34", "src": "forever-vo@025070f", "npcs": [264936]}
 {"id": "4759db9c81bac275", "field": "text", "en": "You'll find the Mage Trainer, Cain Firesong, upstairs on the landing at the Gallows' End Tavern, which is on the southeast end of Brill.  I guess he checked in too late to get a room.", "hash": "4759db9c81bac275", "src": "vmangos@13b49dc"}
 {"id": "4760a888d757f635", "field": "text", "en": "I need a ride.", "hash": "4760a888d757f635", "src": "vmangos@13b49dc"}
 {"id": "4761cd0695929b55", "field": "text", "en": "%s begins to billow smoke and catches on fire! You get the feeling you should RUN!", "hash": "4761cd0695929b55", "src": "vmangos@13b49dc"}

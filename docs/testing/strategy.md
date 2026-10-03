@@ -478,6 +478,15 @@ The pop-up dialogs, the tooltip frames of their own, the dressing room's custom-
 
 **Not level-1:** the Battle.net friend-online toast (needs a Battle.net friend logging in), a battleground ready dialog, the auction house's Back / Available / Deposit words, the recipe form's "Reagents:" header (素材, needs a profession; the spell tooltip's reagents line keeps 触媒), the PvP scoreboard's two-line headers, the calendar's community dropdown (needs a community), the vehicle leave button, the barber shop camera tooltips, the Release Spirit countdown (needs dying); check each when the character gets there. Party Sync never shows on Forever (ADR-037).
 
+### Tooltip layout and sectioned lines checklist
+
+1. Hover a bag item with a long Japanese description (Wild Harvest) for a few seconds: the description keeps one
+   set of line breaks; it never jumps between two. If it does, `/wfj debug tooltip on`, hover again and read the
+   call trace (`/wfj debug tooltip`): it names every call that laid the tooltip out.
+2. Rest at a camp until the Camp Benefits buff shows, then hover it: the heading and one paragraph per camp item
+   are Japanese, the item names stay English, the numbers and the duration are the live ones.
+3. Hover an item whose description has gold flavour text under a green Use: line: the flavour text stays gold.
+
 ### Readings checklist
 The word-reading box on quest and NPC-talk prose ([Readings](../systems/readings.md), [ADR-036](../adr/036-readings-hover-word-lists.md)). With a **fresh level-1 Night Elf** in Shadowglen. A crash to desktop at any step is a failure: record the step and the text under the mouse.
 

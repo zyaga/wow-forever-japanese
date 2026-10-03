@@ -151,63 +151,199 @@
 {"id": "ITEM_MIN_LEVEL", "field": "text", "en": "Requires Level %d", "hash": "6616ed3bf3ef068f", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MIN_SKILL", "field": "text", "en": "Requires %s (%d)", "hash": "3b59ba17f69f83c4", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_AGILITY", "field": "text", "en": "%c%s Agility", "hash": "895fceadc74a054e", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_AGILITY_OR_INTELLECT_SHORT", "field": "text", "en": "Agility or Intellect", "hash": "8d401ec9c646889f", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_AGILITY_OR_STRENGTH_OR_INTELLECT_SHORT", "field": "text", "en": "Agility or Strength or Intellect", "hash": "0308186ef25363db", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_AGILITY_OR_STRENGTH_SHORT", "field": "text", "en": "Agility or Strength", "hash": "c0133245e052b16a", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_AGILITY_SHORT", "field": "text", "en": "Agility", "hash": "554e1493408ac51a", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_ALCHEMY", "field": "text", "en": "Increases alchemy skill by %s.", "hash": "10363244cb42d526", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ALCHEMY_SHORT", "field": "text", "en": "Alchemy Skill", "hash": "5ba65b4bfe84ed0e", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_ARCANE_DAMAGE_DONE", "field": "text", "en": "Increases arcane damage done by up to %s.", "hash": "440552e75664fd45", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ARCANE_DAMAGE_DONE_SHORT", "field": "text", "en": "Arcane Damage", "hash": "f6fbb0ef598785a5", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_ARCANE_PENETRATION", "field": "text", "en": "Increases arcane piercing by %s.", "hash": "128707bbfef4b742", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ARCANE_PENETRATION_SHORT", "field": "text", "en": "Arcane Piercing", "hash": "1acf8d4abeccfbc6", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ARMOR_PENETRATION_RATING_SHORT", "field": "text", "en": "Armor Piercing", "hash": "7a632ad09a68298b", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_ATTACK_POWER", "field": "text", "en": "Increases attack power by %s.", "hash": "58e5e475515adddf", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ATTACK_POWER_SHORT", "field": "text", "en": "Attack Power", "hash": "3e6a7d38952902e8", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ATTACK_POWER_VS_BEAST_SHORT", "field": "text", "en": "Attack Power Vs Beasts", "hash": "23c16445f1556527", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ATTACK_POWER_VS_DEMON_SHORT", "field": "text", "en": "Attack Power Vs Demons", "hash": "1c648f9325665b71", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ATTACK_POWER_VS_DRAGONKIN_SHORT", "field": "text", "en": "Attack Power Vs Dragonkin", "hash": "4eea7ce2fc170b8c", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ATTACK_POWER_VS_ELEMENTAL_SHORT", "field": "text", "en": "Attack Power Vs Elementals", "hash": "d7ae8e4701871f5e", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ATTACK_POWER_VS_GIANT_SHORT", "field": "text", "en": "Attack Power Vs Giants", "hash": "538c687cf0d6629b", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ATTACK_POWER_VS_HUMANOID_SHORT", "field": "text", "en": "Attack Power Vs Humanoids", "hash": "b37153c3c0cdf0f7", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ATTACK_POWER_VS_MECHANICAL_SHORT", "field": "text", "en": "Attack Power Vs Mechanical", "hash": "d9dc39259c932fe1", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ATTACK_POWER_VS_UNDEAD_SHORT", "field": "text", "en": "Attack Power Vs Undead", "hash": "6cf19e89456d4982", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_AXES", "field": "text", "en": "Increases axes skill by %s.", "hash": "db1f722b233921fa", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_AXES_SHORT", "field": "text", "en": "Axes Skill", "hash": "04048a9be4798c01", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_BLACKSMITHING", "field": "text", "en": "Increases blacksmithing skill by %s.", "hash": "55f9cc4206b698ce", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_BLACKSMITHING_SHORT", "field": "text", "en": "Blacksmithing Skill", "hash": "48a969b18ab7f299", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_BLOCK_RATING_SHORT", "field": "text", "en": "Block", "hash": "951f0255d90185db", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_BLOCK_VALUE", "field": "text", "en": "Increases the block value of your shield by %s.", "hash": "90057b449b47381f", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_BLOCK_VALUE_SHORT", "field": "text", "en": "Block Value", "hash": "22941b5ad9fa0ac4", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_BOWS", "field": "text", "en": "Increases bows skill by %s.", "hash": "56d9f5a617e3bfd1", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_BOWS_SHORT", "field": "text", "en": "Bows Skill", "hash": "3a70bde890f5da74", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_COOKING", "field": "text", "en": "Increases cooking skill by %s.", "hash": "f1a781015d8d3ba0", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_COOKING_SHORT", "field": "text", "en": "Cooking Skill", "hash": "65e6ee97ad678cf7", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CRAFTING_SPEED_SHORT", "field": "text", "en": "Crafting Speed", "hash": "ccf13c30c1f39c67", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CRIT_MELEE_RATING_SHORT", "field": "text", "en": "Critical Strike (Melee)", "hash": "882b04536767a7c2", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CRIT_RANGED_RATING_SHORT", "field": "text", "en": "Critical Strike (Ranged)", "hash": "6acfadadade24bea", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CRIT_RATING_SHORT", "field": "text", "en": "Critical Strike", "hash": "a69d2a57f6ade53f", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CRIT_SPELL_RATING_SHORT", "field": "text", "en": "Critical Strike (Spell)", "hash": "2d6d592a22a82b95", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CRIT_TAKEN_MELEE_RATING_SHORT", "field": "text", "en": "Critical Strike Avoidance (Melee)", "hash": "ab5f5b53396c5f47", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CRIT_TAKEN_RANGED_RATING_SHORT", "field": "text", "en": "Critical Strike Avoidance (Ranged)", "hash": "6e983307d6405175", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CRIT_TAKEN_RATING_SHORT", "field": "text", "en": "Critical Strike Avoidance", "hash": "4060b3a1eb687680", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CRIT_TAKEN_SPELL_RATING_SHORT", "field": "text", "en": "Critical Strike Avoidance (Spell)", "hash": "50a1b02af4ace309", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_CROSSBOWS", "field": "text", "en": "Increases crossbows skill by %s.", "hash": "e5b6f670e250f456", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CROSSBOWS_SHORT", "field": "text", "en": "Crossbows Skill", "hash": "05cfd96c7a4afa15", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CR_AVOIDANCE_SHORT", "field": "text", "en": "Avoidance", "hash": "5e1898dc338fc6b7", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CR_LIFESTEAL_SHORT", "field": "text", "en": "Leech", "hash": "43b563ea88a02ece", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CR_MULTISTRIKE_SHORT", "field": "text", "en": "Multistrike", "hash": "2a34a9d10a05a322", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CR_SPEED_SHORT", "field": "text", "en": "Speed", "hash": "c00eb6ccb4816733", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CR_STURDINESS_SHORT", "field": "text", "en": "Indestructible", "hash": "d3fb0987dd3b0a38", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CR_UNUSED_1_SHORT", "field": "text", "en": "Multi-Strike", "hash": "e857e51b4256aa1c", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CR_UNUSED_3_SHORT", "field": "text", "en": "Speed", "hash": "c00eb6ccb4816733", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CR_UNUSED_4_SHORT", "field": "text", "en": "Leech", "hash": "43b563ea88a02ece", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CR_UNUSED_5_SHORT", "field": "text", "en": "Avoidance", "hash": "5e1898dc338fc6b7", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CR_UNUSED_6_SHORT", "field": "text", "en": "Indestructible", "hash": "d3fb0987dd3b0a38", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_CR_UNUSED_9_SHORT", "field": "text", "en": "Versatility", "hash": "ef86492fe35fe42c", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_DAGGERS", "field": "text", "en": "Increases daggers skill by %s.", "hash": "2099cd66668644ad", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_DAGGERS_SHORT", "field": "text", "en": "Daggers Skill", "hash": "b007d5d2bb231660", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_DAMAGE_PER_SECOND_SHORT", "field": "text", "en": "damage per second", "hash": "a1dd7c96f80b3c14", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_DEFENSE_SKILL_RATING_SHORT", "field": "text", "en": "Defense", "hash": "46c5a236377d389e", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_DEFTNESS_SHORT", "field": "text", "en": "Deftness", "hash": "3e6c0e39c715dc8c", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_DODGE_RATING_SHORT", "field": "text", "en": "Dodge", "hash": "b89e786b1363f723", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_DUAL_WIELD", "field": "text", "en": "Increases dual wield skill by %s.", "hash": "4ec315d373feaeeb", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_DUAL_WIELD_SHORT", "field": "text", "en": "Dual Wield Skill", "hash": "7d6506c57129ebfc", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_ENCHANTING", "field": "text", "en": "Increases enchanting skill by %s.", "hash": "b9f4e61f2e031be9", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ENCHANTING_SHORT", "field": "text", "en": "Enchanting Skill", "hash": "a6b9de473d598882", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_ENGINEERING", "field": "text", "en": "Increases engineering skill by %s.", "hash": "3e228fe1c520ced3", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_ENGINEERING_SHORT", "field": "text", "en": "Engineering Skill", "hash": "cf623f87483536e5", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_EXPERTISE_RATING_SHORT", "field": "text", "en": "Expertise", "hash": "883f3a646d9f0462", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_EXTRA_ARMOR_SHORT", "field": "text", "en": "Bonus Armor", "hash": "59590396d2ad69d8", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_FERAL_ATTACK_POWER", "field": "text", "en": "Increases attack power by %s in Cat, Bear, Dire Bear, and Moonkin forms only.", "hash": "cb166f6a23799a2b", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_FERAL_ATTACK_POWER_SHORT", "field": "text", "en": "Attack Power In Forms", "hash": "13411354ced92508", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_FINESSE_SHORT", "field": "text", "en": "Finesse", "hash": "2aab381733fe59c2", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_FIRE_DAMAGE_DONE", "field": "text", "en": "Increases fire damage done by up to %s.", "hash": "a42b3d2d7c2fe177", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_FIRE_DAMAGE_DONE_SHORT", "field": "text", "en": "Fire Damage", "hash": "35f4a00f258f16de", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_FIRE_PENETRATION", "field": "text", "en": "Increases fire piercing by %s.", "hash": "4dc4c980c9995738", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_FIRE_PENETRATION_SHORT", "field": "text", "en": "Fire Piercing", "hash": "782458aed8081776", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_FIRST_AID", "field": "text", "en": "Increases first aid skill by %s.", "hash": "af9c14410aa62ac4", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_FIRST_AID_SHORT", "field": "text", "en": "First Aid Skill", "hash": "5483d838908296a8", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_FISHING", "field": "text", "en": "Increases fishing skill by %s.", "hash": "3ed97ca2d65f4ecb", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_FISHING_SHORT", "field": "text", "en": "Fishing Skill", "hash": "8deae0f86d1823f5", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_FIST_WEAPONS", "field": "text", "en": "Increases fist weapons skill by %s.", "hash": "37ac2f4c6b4d97c1", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_FIST_WEAPONS_SHORT", "field": "text", "en": "Fist Weapons Skill", "hash": "e4a06792bea25e90", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_FROST_DAMAGE_DONE", "field": "text", "en": "Increases frost damage done by up to %s.", "hash": "4a9f283c8109a695", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_FROST_DAMAGE_DONE_SHORT", "field": "text", "en": "Frost Damage", "hash": "816d81a77446af26", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_FROST_PENETRATION", "field": "text", "en": "Increases frost piercing by %s.", "hash": "8ff9fd0da7f0296c", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_FROST_PENETRATION_SHORT", "field": "text", "en": "Frost Piercing", "hash": "c26f71d5afcd12d8", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_GUNS", "field": "text", "en": "Increases guns skill by %s.", "hash": "57045fd6d5ca8fe4", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_GUNS_SHORT", "field": "text", "en": "Guns Skill", "hash": "4b059533f4182d8c", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HASTE_RATING_SHORT", "field": "text", "en": "Haste", "hash": "fcf907630eec3351", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_HEALTH", "field": "text", "en": "%c%s Health", "hash": "daccd199f0464151", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_HEALTH_REGEN", "field": "text", "en": "Restores %s health per 5 sec.", "hash": "6400c233cb047b13", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_HEALTH_REGENERATION", "field": "text", "en": "Restores %s health per 5 sec.", "hash": "6400c233cb047b13", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HEALTH_REGENERATION_SHORT", "field": "text", "en": "Health Regeneration", "hash": "1a163128f516f290", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HEALTH_REGEN_SHORT", "field": "text", "en": "Health Per 5 Sec.", "hash": "43de1b0fe2ad6dde", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HEALTH_SHORT", "field": "text", "en": "Health", "hash": "b73a1e59226a9e9f", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_HERBALISM", "field": "text", "en": "Increases herbalism skill by %s.", "hash": "70cbac09f1ad66be", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HERBALISM_SHORT", "field": "text", "en": "Herbalism Skill", "hash": "08e03c0cddeab411", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HIT_MELEE_RATING_SHORT", "field": "text", "en": "Hit (Melee)", "hash": "ad514fc06191e060", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HIT_RANGED_RATING_SHORT", "field": "text", "en": "Hit (Ranged)", "hash": "6d6846d3a9d9246e", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HIT_RATING_SHORT", "field": "text", "en": "Hit", "hash": "001310b71de02216", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HIT_SPELL_RATING_SHORT", "field": "text", "en": "Hit (Spell)", "hash": "5293a4971cd26433", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HIT_TAKEN_MELEE_RATING_SHORT", "field": "text", "en": "Hit Avoidance (Melee)", "hash": "79978ce2a2ff5fe7", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HIT_TAKEN_RANGED_RATING_SHORT", "field": "text", "en": "Hit Avoidance (Ranged)", "hash": "f5598eb26d881d9b", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HIT_TAKEN_RATING_SHORT", "field": "text", "en": "Hit Avoidance", "hash": "947712184394b604", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HIT_TAKEN_SPELL_RATING_SHORT", "field": "text", "en": "Hit Avoidance (Spell)", "hash": "1ed9e1b95e3fe3ba", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_HOLY_DAMAGE_DONE", "field": "text", "en": "Increases holy damage done by up to %s.", "hash": "0b20b9b998ad27ec", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_HOLY_DAMAGE_DONE_SHORT", "field": "text", "en": "Holy Damage", "hash": "e90bd44a0c32bb93", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_INGENUITY_SHORT", "field": "text", "en": "Ingenuity", "hash": "b9caee048b1224f2", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_INSPIRATION_SHORT", "field": "text", "en": "Inspiration", "hash": "34d9dbfc7ded1408", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_INTELLECT", "field": "text", "en": "%c%s Intellect", "hash": "3ae163f6b33a90b6", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_INTELLECT_SHORT", "field": "text", "en": "Intellect", "hash": "c28cc6dd1d57f7d2", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_JEWELCRAFTING_SHORT", "field": "text", "en": "Jewelcrafting Skill", "hash": "53dcad4c073feb02", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_LEATHERWORKING", "field": "text", "en": "Increases leatherworking skill by %s.", "hash": "5d1b4d1fd9464c9a", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_LEATHERWORKING_SHORT", "field": "text", "en": "Leatherworking Skill", "hash": "ab0fd98e2679fb7a", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_MACES", "field": "text", "en": "Increases maces skill by %s.", "hash": "c9eb23396979d701", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_MACES_SHORT", "field": "text", "en": "Maces Skill", "hash": "2d6ebe600f214cc4", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_MANA", "field": "text", "en": "%c%s Mana", "hash": "0573cdacfbe13efb", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_MANA_REGENERATION", "field": "text", "en": "Restores %s mana per 5 sec.", "hash": "819f9a05d9c5f06b", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_MANA_REGENERATION_SHORT", "field": "text", "en": "Mana Regeneration per 5 sec", "hash": "e250858f5b4e4b25", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_MANA_SHORT", "field": "text", "en": "Mana", "hash": "0a6af6b30963c5cf", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_MASTERY_RATING_SHORT", "field": "text", "en": "Mastery", "hash": "992f2fa46ae712cb", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_MELEE_ATTACK_POWER_SHORT", "field": "text", "en": "Melee Attack Power", "hash": "bd1720800a5e8013", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_MINING", "field": "text", "en": "Increases mining skill by %s.", "hash": "d1d5adfb842e8f8b", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_MINING_SHORT", "field": "text", "en": "Mining Skill", "hash": "5c2c042526e3070c", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_MULTICRAFT_SHORT", "field": "text", "en": "Multicraft", "hash": "549d68b8f5dc4b92", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_NATURE_DAMAGE_DONE", "field": "text", "en": "Increases nature damage done by up to %s.", "hash": "4b92bc66d90662a5", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_NATURE_DAMAGE_DONE_SHORT", "field": "text", "en": "Nature Damage", "hash": "ea4a5881787ddd4b", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_NATURE_PENETRATION", "field": "text", "en": "Increases nature piercing by %s.", "hash": "d3f04288a2166849", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_NATURE_PENETRATION_SHORT", "field": "text", "en": "Nature Piercing", "hash": "3e6e96cd726f09aa", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_PARRY_RATING_SHORT", "field": "text", "en": "Parry", "hash": "896675f50247aba9", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_PERCEPTION_SHORT", "field": "text", "en": "Perception", "hash": "df146c38923e138f", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_PHYSICAL_DAMAGE_DONE", "field": "text", "en": "Increases physical damage done by up to %s.", "hash": "3cc06a9d3b717f84", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_PHYSICAL_DAMAGE_DONE_SHORT", "field": "text", "en": "Physical Damage", "hash": "a23cf3d754e83288", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_POLEARMS", "field": "text", "en": "Increases polearms skill by %s.", "hash": "3b1ca9cbff9a6290", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_POLEARMS_SHORT", "field": "text", "en": "Polearms Skill", "hash": "ceb4173b13512c0a", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_POWER_REGEN0_SHORT", "field": "text", "en": "Mana Per 5 Sec.", "hash": "b0878983a57b5fef", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_POWER_REGEN1_SHORT", "field": "text", "en": "Rage Per 5 Sec.", "hash": "efe0a694e1ba113b", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_POWER_REGEN2_SHORT", "field": "text", "en": "Focus Per 5 Sec.", "hash": "b353f873a563a3a4", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_POWER_REGEN3_SHORT", "field": "text", "en": "Energy Per 5 Sec.", "hash": "539d6baaaca85aa4", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_POWER_REGEN4_SHORT", "field": "text", "en": "Happiness Per 5 Sec.", "hash": "1d4f4340a6c8feb9", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_POWER_REGEN5_SHORT", "field": "text", "en": "Runes Per 5 Sec.", "hash": "c5e2c112b9058160", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_POWER_REGEN6_SHORT", "field": "text", "en": "Runic Power Per 5 Sec.", "hash": "e684bc2290852554", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_PVP_POWER_SHORT", "field": "text", "en": "PvP Power", "hash": "38d46305b28dacd9", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_PVP_PRIMARY_STAT_SHORT", "field": "text", "en": "PvP Power", "hash": "38d46305b28dacd9", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_RANGED_ATTACK_POWER", "field": "text", "en": "Increases ranged attack power by %s.", "hash": "780228f3f23c9e5a", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_RANGED_ATTACK_POWER_SHORT", "field": "text", "en": "Ranged Attack Power", "hash": "2839b759bde88dab", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_RESILIENCE_RATING_SHORT", "field": "text", "en": "PvP Resilience", "hash": "989c1fd006299f8a", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_RESOURCEFULNESS_SHORT", "field": "text", "en": "Resourcefulness", "hash": "8e42266ec3a51840", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_SHADOW_DAMAGE_DONE", "field": "text", "en": "Increases shadow damage done by up to %s.", "hash": "183d62a9d36f1eb1", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SHADOW_DAMAGE_DONE_SHORT", "field": "text", "en": "Shadow Damage", "hash": "01fb941b4e0fb3f6", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_SHADOW_PENETRATION", "field": "text", "en": "Increases shadow piercing by %s.", "hash": "67ff69da423e117d", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SHADOW_PENETRATION_SHORT", "field": "text", "en": "Shadow Piercing", "hash": "7641cd0e8c092a36", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_SKINNING", "field": "text", "en": "Increases skinning skill by %s.", "hash": "d760963ebce05046", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SKINNING_SHORT", "field": "text", "en": "Skinning Skill", "hash": "92fe92bfdbb34210", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_SPELL_DAMAGE_DONE", "field": "text", "en": "Increases damage done by magical spells and effects by up to %s.", "hash": "a2dc6e126675a3ce", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_DAMAGE_DONE_SHORT", "field": "text", "en": "Spell Damage", "hash": "b7ec98f1ef2b209d", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_DAMAGE_VS_BEAST_SHORT", "field": "text", "en": "Spell Damage Vs Beasts", "hash": "d8a315177b43f47c", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_DAMAGE_VS_DEMON_SHORT", "field": "text", "en": "Spell Damage Vs Demons", "hash": "d1464065af54eab5", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_DAMAGE_VS_DRAGONKIN_SHORT", "field": "text", "en": "Spell Damage Vs Dragonkin", "hash": "321ce613fa4829a8", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_DAMAGE_VS_ELEMENTAL_SHORT", "field": "text", "en": "Spell Damage Vs Elementals", "hash": "1a7a62145d57f620", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_DAMAGE_VS_GIANT_SHORT", "field": "text", "en": "Spell Damage Vs Giants", "hash": "086e19537ac4f1f0", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_DAMAGE_VS_HUMANOID_SHORT", "field": "text", "en": "Spell Damage Vs Humanoids", "hash": "96a3bcf4beff0f13", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_DAMAGE_VS_MECHANICAL_SHORT", "field": "text", "en": "Spell Damage Vs Mechanical", "hash": "1ca80cf2f86406a3", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_DAMAGE_VS_UNDEAD_SHORT", "field": "text", "en": "Spell Damage Vs Undead", "hash": "21d34f60cf5bd8c6", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_SPELL_HEALING_DONE", "field": "text", "en": "Increases healing done by magical spells and effects by up to %s.", "hash": "7f20e4dd03d0c195", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_HEALING_DONE_SHORT", "field": "text", "en": "Spell Healing", "hash": "0dc393e8b2c8cdae", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_SPELL_PENETRATION", "field": "text", "en": "Increases spell piercing by %s.", "hash": "cbb8eb0340ea59b0", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_PENETRATION_SHORT", "field": "text", "en": "Spell Piercing", "hash": "efffe8c890665048", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_POWER_SHORT", "field": "text", "en": "Spell Power", "hash": "1c48bc044d2700e4", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_SPELL_RESISTANCE_ALL_SCHOOLS", "field": "text", "en": "Increases spell resistance by %s.", "hash": "9307905499d9d795", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPELL_RESISTANCE_ALL_SCHOOLS_SHORT", "field": "text", "en": "Spell Resistance", "hash": "638e05be0036ef66", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_SPIRIT", "field": "text", "en": "%c%s Spirit", "hash": "6ba6e0728853e274", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SPIRIT_SHORT", "field": "text", "en": "Spirit", "hash": "48142d32ba783fb1", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_STAMINA", "field": "text", "en": "%c%s Stamina", "hash": "775cd0a485f15df5", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_STAMINA_SHORT", "field": "text", "en": "Stamina", "hash": "434b168aff321db0", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_STAVES", "field": "text", "en": "Increases staves skill by %s.", "hash": "5564df05e423d7f3", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_STAVES_SHORT", "field": "text", "en": "Staves Skill", "hash": "9a15c2798bf9a5a3", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_STRENGTH", "field": "text", "en": "%c%s Strength", "hash": "3c83d1190d95f23f", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_STRENGTH_OR_INTELLECT_SHORT", "field": "text", "en": "Strength or Intellect", "hash": "6c95355654231df0", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_STRENGTH_SHORT", "field": "text", "en": "Strength", "hash": "9771954476b71b43", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_SWORDS", "field": "text", "en": "Increases swords skill by %s.", "hash": "fcfe61b747e4538a", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_SWORDS_SHORT", "field": "text", "en": "Swords Skill", "hash": "d476429549044bdd", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_TAILORING", "field": "text", "en": "Increases tailoring skill by %s.", "hash": "be9eaa77976a961d", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_TAILORING_SHORT", "field": "text", "en": "Tailoring Skill", "hash": "f4752b22659456de", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_THROWN", "field": "text", "en": "Increases thrown skill by %s.", "hash": "80af1b0cb229a033", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_THROWN_SHORT", "field": "text", "en": "Thrown Skill", "hash": "76cc380eb0a9e33f", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_TWOHANDED_AXES", "field": "text", "en": "Increases two-handed axes skill by %s.", "hash": "6a6c228266043828", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_TWOHANDED_AXES_SHORT", "field": "text", "en": "Two-Handed Axes Skill", "hash": "c40168a1067b5277", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_TWOHANDED_MACES", "field": "text", "en": "Increases two-handed maces skill by %s.", "hash": "1e295ea1b5a874d0", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_TWOHANDED_MACES_SHORT", "field": "text", "en": "Two-Handed Maces Skill", "hash": "6bd45d5c29b72e85", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_TWOHANDED_SWORDS", "field": "text", "en": "Increases two-handed swords skill by %s.", "hash": "18d6c63ce1f9b8b5", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_TWOHANDED_SWORDS_SHORT", "field": "text", "en": "Two-Handed Swords Skill", "hash": "c2769e29cd164dbd", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_MOD_WANDS", "field": "text", "en": "Increases wands skill by %s.", "hash": "05ee1407a1dd5ce5", "src": "db2@1.60.1.70170"}
+{"id": "ITEM_MOD_WANDS_SHORT", "field": "text", "en": "Wands Skill", "hash": "51429c8a3ded6be5", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_NAMES", "field": "text", "en": "Item Names", "hash": "3413b7a250c01ca5", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_NAMES_SHOW_BRACES_COMBATLOG_TOOLTIP", "field": "text", "en": "Show braces around item names.", "hash": "2913bb05a3dd728a", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_NO_DROP", "field": "text", "en": "No Drop", "hash": "57c0c1aca01af04b", "src": "db2@1.60.1.70170"}

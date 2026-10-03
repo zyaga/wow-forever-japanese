@@ -161,12 +161,19 @@ function Tooltip.spellDescription(id)
   return type(d) == "string" and d or ""
 end
 
+-- Shown twice: on Forever every layout of a wrapped Japanese line alternates between two line breaks when a word
+-- sits on the wrap edge (the tooltip trace shows the wrapped width going 242, 249, 242 … with nothing else
+-- changing). A refresh lays the tooltip out three times (the client's English, this refit, one more Show), so the
+-- line came out the other way on every refresh and flickered. A second Show here makes the count even, so every
+-- refresh ends on the same line breaks. [likely: the tooltip trace in game, Forever 1.60.1.70205; in-game check in
+-- docs/testing/strategy.md]
 local function refitFor(frame)
   local fn = refits[frame]
   if fn then return fn end
   fn = function()
     if inRefit[frame] then return end
     inRefit[frame] = true
+    frame:Show()
     frame:Show()
     inRefit[frame] = false
   end
@@ -181,13 +188,16 @@ end
 -- Hands the run to Render: line `first` is the primary ("desc"), the rest companions ("desc.<i>", follow "desc").
 -- Records from the previous hover on this frame are forgotten first (the client rewrote every line). A run whose
 -- first line is empty is refused: an empty English is never a translation target (addon-modules §7).
+local runColors -- below anySecretOf, which it needs
+
 local function showRun(surface, area, kind, id, lines, first, last, refit, runArgs)
   local texts = {}
   for i = first, last do texts[#texts + 1] = lines[i].text end
   local n = 0
   -- line 1 is the name: never replaced, never a number source, but a name the Japanese may legitimately use
   if WFJ.Render.show(surface, "desc", lines[first].fs, lines[first].text, area, kind, id,
-      { lines = texts, nameScope = lines[1] and lines[1].text or nil, refit = refit, args = runArgs }) then
+      { lines = texts, nameScope = lines[1] and lines[1].text or nil, refit = refit, args = runArgs,
+        partColors = runColors(lines, first, last) }) then
     n = n + 1
   end
   for i = first + 1, last do
@@ -283,6 +293,35 @@ local function anySecretOf(...)
   return false
 end
 
+-- The colours of a run's non-empty parts (each line, split at the line breaks inside it) for Render's partColors:
+-- nil where a part has the first line's colour, "ffRRGGBB" where it differs (the gold flavour text under a green
+-- Use: line). → colors | nil (all one colour, or a colour the client keeps secret)
+function runColors(lines, first, last)
+  local function hex(fs)
+    if type(fs.GetTextColor) ~= "function" then return nil end
+    local r, g, b = fs:GetTextColor()
+    if anySecretOf(r, g, b) or type(r) ~= "number" then return nil end
+    return ("ff%02x%02x%02x"):format(math.floor(r * 255 + 0.5), math.floor(g * 255 + 0.5), math.floor(b * 255 + 0.5))
+  end
+  local base = hex(lines[first].fs)
+  if not base then return nil end
+  local colors, differs = { n = 0 }, false
+  for i = first, last do
+    if lines[i].text ~= "" then
+      local c = hex(lines[i].fs)
+      if not c then return nil end
+      for part in (lines[i].text .. "\n"):gmatch("(.-)\n") do
+        if part ~= "" then
+          colors.n = colors.n + 1
+          if c ~= base then colors[colors.n], differs = c, true end
+        end
+      end
+    end
+  end
+  return differs and colors or nil
+end
+
+
 local function ownerOf(frame)
   return type(frame.GetOwner) == "function" and frame:GetOwner() or nil
 end
@@ -290,7 +329,7 @@ end
 -- ── The tooltip trace (/wfj debug tooltip): every pass over a spell or item tooltip, row by row ──
 -- Off unless asked for. A secret value is never compared, concatenated or measured: it is written as <secret>.
 Tooltip.trace = nil
-local TRACE_MAX = 80
+local TRACE_MAX = 400
 
 -- A long value is cut at 70 bytes, moved back to the start of a character: a cut inside a Japanese character is
 -- not UTF-8, and an edit box given text that is not UTF-8 shows none of it.
@@ -309,6 +348,28 @@ local function plain(v)
 end
 Tooltip.plain = plain
 
+-- A widget's laid-out size for the trace: " w=<width> sw=<string width> h=<height> n=<lines>", each part only when the
+-- client has the method and the value may be read. A wrapped line that moves between passes shows here.
+local GEOMETRY = { { "w", "GetWidth" }, { "sw", "GetStringWidth" }, { "ww", "GetWrappedWidth" }, { "h", "GetHeight" },
+  { "n", "GetNumLines" } }
+local function geometry(widget)
+  local parts = {}
+  for _, g in ipairs(GEOMETRY) do
+    local fn = widget[g[2]]
+    if type(fn) == "function" then
+      local ok, v = pcall(fn, widget)
+      if ok and type(v) == "number" and not anySecretOf(v) then parts[#parts + 1] = ("%s=%.1f"):format(g[1], v) end
+    end
+  end
+  if type(widget.GetFont) == "function" then -- the face a wrap was measured in
+    local ok, path, size = pcall(widget.GetFont, widget)
+    if ok and type(path) == "string" and type(size) == "number" and not anySecretOf(path, size) then
+      parts[#parts + 1] = ("font=%s@%.1f"):format(path:match("[^\\/]+$") or path, size)
+    end
+  end
+  return #parts > 0 and (" " .. table.concat(parts, " ")) or ""
+end
+
 local function describe(fs)
   if type(fs) ~= "table" then return "-" end
   local text = fs:GetText()
@@ -321,7 +382,7 @@ local function describe(fs)
   if anySecretOf(text) then return "<secret> " .. colour .. shown end
   if text == nil then return "nil" .. shown end
   if text == "" then return "\"\"" .. shown end
-  return "\"" .. plain(text) .. "\" " .. colour .. shown
+  return "\"" .. plain(text) .. "\" " .. colour .. shown .. geometry(fs)
 end
 
 local function traceFrame(frame, event, id, lines, note)
@@ -331,8 +392,8 @@ local function traceFrame(frame, event, id, lines, note)
     or plain(owner)
   local clock = Compat.resolve("date")
   local stamp = type(clock) == "function" and clock("%H:%M:%S") or ""
-  local out = { ("[%s] %s %s id=%s owner=%s rows=%d %s"):format(stamp, plain(frame:GetName()), event,
-    plain(id), ownerName, #lines, note or "") }
+  local out = { ("[%s] %s %s id=%s owner=%s rows=%d%s %s"):format(stamp, plain(frame:GetName()), event,
+    plain(id), ownerName, #lines, geometry(frame), note or "") }
   local rights = Tooltip.lines(frame, "Right")
   local kinds = {}
   if type(frame.GetPrimaryTooltipInfo) == "function" then
@@ -376,6 +437,54 @@ local function traceNote(text)
   t[#t + 1] = line
   if #t > TRACE_MAX then table.remove(t, 1) end
 end
+
+-- The calls that can lay a tooltip line out again, for the trace: on GameTooltip's wrapped left lines, SetText,
+-- SetFont and SetWidth; on GameTooltip itself, Show, SetPadding and SetMinimumWidth. Each logs the method, the
+-- first wrapped line's size right after the call and the caller (debugstack), so a wrap that moves between
+-- passes names the call that moved it. Installed once, the first time the trace is turned on; logs only while
+-- it is on.
+local callHooks = false
+local function callNote(method, fs)
+  if not Tooltip.trace then return end
+  local stack = Compat.resolve("debugstack")
+  local caller = type(stack) == "function" and (stack(3, 1, 0) or ""):gsub("%s+$", "") or ""
+  traceNote(("call %s%s ->%s · %s"):format(method, fs and (" " .. plain(fs:GetName())) or "", geometry(fs or {}),
+    plain(caller)))
+end
+local function wrappedLine(frame)
+  for _, l in ipairs(Tooltip.lines(frame)) do
+    local ok, n = pcall(l.fs.GetNumLines, l.fs)
+    if ok and type(n) == "number" and not anySecretOf(n) and n > 1 then return l.fs end
+  end
+  return nil
+end
+function Tooltip.installCallTrace()
+  if callHooks then return end
+  local tip = Compat.resolve("GameTooltip")
+  if type(tip) ~= "table" then return end
+  callHooks = true
+  for _, m in ipairs({ "Show", "SetPadding", "SetMinimumWidth" }) do
+    if type(tip[m]) == "function" then
+      hooksecurefunc(tip, m, function(self)
+        if Tooltip.trace then callNote("GameTooltip:" .. m, wrappedLine(self)) end
+      end)
+    end
+  end
+  for i = 1, 30 do
+    local fs = Compat.resolve("GameTooltipTextLeft" .. i)
+    if type(fs) == "table" then
+      for _, m in ipairs({ "SetText", "SetFont", "SetWidth" }) do
+        if type(fs[m]) == "function" then
+          hooksecurefunc(fs, m, function(self)
+            if not Tooltip.trace then return end
+            local ok, n = pcall(self.GetNumLines, self)
+            if ok and type(n) == "number" and not anySecretOf(n) and n > 1 then callNote(m, self) end
+          end)
+        end
+      end
+    end
+  end
+end
 Tooltip.traceNote = traceNote
 
 local function show(frame, area, kind, id, lines, first, last, name, runArgs)
@@ -383,7 +492,7 @@ local function show(frame, area, kind, id, lines, first, last, name, runArgs)
   WFJ.Render.forget(surface)
   if first and lines[first].text == "" then first, last = nil, nil end
   local refit = refitFor(frame)
-  -- One refit for the whole hover: the per-record refit is a no-op while inRefit is set, then Show() runs once.
+  -- One refit for the whole hover: the per-record refit is a no-op while inRefit is set, then the refit runs once.
   -- The flag is cleared even when a write errors, so the frame is never left silently unhandled.
   inRefit[frame] = true
   local ok, n = pcall(function()
@@ -780,6 +889,7 @@ function Tooltip.onItem(frame)
     traceFrame(frame, "item without an id", nil, lines, "-> 0 (link " .. plain(link) .. ")")
     return 0
   end
+  traceFrame(frame, "item as the client laid it out", id, lines, "")
   local first, last = Tooltip.itemRun(texts)
   local runArgs = first and peelTrailer(texts, first, last) or nil
   -- The run is read before we write (the client rewrote every line); the Collector refuses our own text anyway.
@@ -792,6 +902,11 @@ function Tooltip.onItem(frame)
   -- No run still has structural lines.
   local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs)
   traceFrame(frame, "readable item", id, lines, ("-> rendered %d"):format(n))
+  -- the same tooltip one frame later, as the client drew it: a wrap that moves after this pass shows there
+  local after = Tooltip.trace and Compat.resolve("C_Timer.After")
+  if type(after) == "function" then
+    after(0, function() traceFrame(frame, "item one frame later", id, Tooltip.lines(frame), "") end)
+  end
   return n
 end
 
@@ -861,6 +976,28 @@ function Tooltip.matchColoured(index, text)
   end
   return key, args
 end
+-- A stat change with no template of its own: "<signed number> <short stat name>" ("+0.7 damage per second", the
+-- ITEM_MOD_*_SHORT names the client's C_TooltipComparison.GetItemComparisonDelta writes), the number possibly
+-- coloured. The name must be one of those stat names; it shows as "<Japanese name> <number as written>".
+-- → key, args | nil
+local statNameKeys = setmetatable({}, { __mode = "k" }) -- index → the list of its stat name keys
+function Tooltip.matchStatChange(index, text)
+  local bare = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+  local name = bare:match("^[%+%-][%d%.,]+ (.+)$")
+  if not name or #text <= #name + 1 or text:sub(-#name - 1) ~= " " .. name then return nil end
+  local keys = statNameKeys[index]
+  if not keys then
+    keys = {}
+    for k in pairs(index.rows or {}) do
+      if WFJ.UIStrings.isStatNameKey(k) then keys[#keys + 1] = k end
+    end
+    statNameKeys[index] = keys
+  end
+  local key, args = index:matchOnly(name, keys)
+  if not key or args ~= nil then return nil end
+  return key, { form = "number", rest = text:sub(1, #text - #name - 1) }
+end
+
 local COMPARE_HEADER_KEYS = { "EQUIPPED", "IF_EQUIPPED_TOGETHER" }
 Tooltip.COMPARE_HEADER_KEYS = COMPARE_HEADER_KEYS
 function Tooltip.onCompareShow(frame)
@@ -886,6 +1023,7 @@ function Tooltip.onCompareShow(frame)
           deltas = true
         elseif not key and deltas and not anySecret({ l.text }) then
           key, args = Tooltip.matchColoured(index, l.text)
+          if not key then key, args = Tooltip.matchStatChange(index, l.text) end
         end
       end
       local ctx = { args = args, refit = refit }

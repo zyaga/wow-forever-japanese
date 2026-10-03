@@ -7,6 +7,8 @@
 --          marker(name) → bool, align(ja, lines) → ok[, text] [optional; absent = unaligned entries fail closed],
 --          alignVariants(variants, shapes, lines, nameScope) → ok[, text] [optional; an entry with
 --            `variants` (a branch line, ADR-043) goes through it on the gated path; absent → fails closed],
+--          alignSections(sections, lines, nameScope) → ok[, text] [optional; an entry with `sections` (a
+--            sectioned line) goes through it the same way; absent → fails closed],
 --          expand(ja) → ja [optional; player tokens, applied to every `apply` text after the align gate],
 --          fill(ja, args) → text|nil [optional; UI templates, run when ctx.args is present, before expand;
 --          nil = the Japanese needs a value the live line did not have → fails closed],
@@ -84,6 +86,7 @@ function Translator.new(deps)
     if deps.modifierHeld() then return "leave" end
 
     local entry = deps.lookup(kind, id)
+    if entry ~= nil and entry.sections ~= nil then return T.sections(entry, ctx) end
     if entry ~= nil and entry.variants ~= nil then return T.variants(entry, ctx) end
     if entry == nil or entry.ja == nil or entry.ja == "" then return none() end
 
@@ -121,6 +124,19 @@ function Translator.new(deps)
     if status ~= "unaligned" and status ~= "stale" then return none("not_shipped") end
     if deps.alignVariants == nil then return none("unaligned_ungated") end
     local ok, text = deps.alignVariants(entry.variants, entry.shapes, ctx and ctx.lines, ctx and ctx.nameScope)
+    if not ok or type(text) ~= "string" or text == "" then return none("align_failed") end
+    local payload = { ja = shown(text) }
+    if status == "stale" and deps.marker("stale") then payload.marker = "stale" end
+    return "apply", payload
+  end
+
+  -- A sectioned line: a heading and optional paragraphs, each found by the words it begins with. Gated like a
+  -- branch line: every live paragraph must be found and fit, otherwise English.
+  function T.sections(entry, ctx)
+    local status = STATUS[entry.status]
+    if status ~= "unaligned" and status ~= "stale" then return none("not_shipped") end
+    if deps.alignSections == nil then return none("unaligned_ungated") end
+    local ok, text = deps.alignSections(entry.sections, ctx and ctx.lines, ctx and ctx.nameScope)
     if not ok or type(text) ~= "string" or text == "" then return none("align_failed") end
     local payload = { ja = shown(text) }
     if status == "stale" and deps.marker("stale") then payload.marker = "stale" end

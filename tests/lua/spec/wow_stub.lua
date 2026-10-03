@@ -813,6 +813,8 @@ function Stub.tooltipFrame(name)
         local fs = _G[name .. "Text" .. side .. i]
         if not fs then fs = Stub.namedFontString(name .. "Text" .. side .. i, "", "Fonts\\FRIZQT__.TTF", 12, "") end
         fs.text = text -- the client's own write: not counted as ours
+        -- a line given as { left, right, color = { r, g, b } } is written in that colour; any other in the default
+        if side == "Left" then fs.color = type(line) == "table" and line.color or nil end
       end
     end
     for i = #lines + 1, #self.lines do

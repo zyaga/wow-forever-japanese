@@ -542,10 +542,11 @@ describe("UI/Tooltip: hidden passes", function()
       local tail = "\n  (seen 3 times, last 12:00:00)"
       assert.are.equal(tail, t[1]:sub(-#tail))
       assert.are.equal(1, select(2, t[1]:gsub("seen %d+ times", ""))) -- the count is replaced, not appended
-      Stub.setItemTooltip(tt, JERKY, JERKY_LINES) -- another pass starts a new entry
-      assert.are.equal(2, #t)
-      Stub.setSpellTooltip(tt, 17, SHIELD_LINES) -- and the spell again is a new entry after it
+      Stub.setItemTooltip(tt, JERKY, JERKY_LINES) -- another pass starts new entries: as laid out, then rendered
       assert.are.equal(3, #t)
+      assert.truthy(t[2]:find("item as the client laid it out", 1, true))
+      Stub.setSpellTooltip(tt, 17, SHIELD_LINES) -- and the spell again is a new entry after it
+      assert.are.equal(4, #t)
       WFJ.Tooltip.trace = nil
     end)
 

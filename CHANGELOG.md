@@ -9,6 +9,20 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Japanese for the progress and turn-in text of 421 quests (630 lines), mostly ones new in Forever, from text Forever players recorded with the forever-vo addon. Its NPC greetings are read too.
+- What NPCs say in chat is now recorded by the addon's collector, so Forever's own NPC speech can be translated.
+
+### Fixed
+- A quest window opened for the first time after logging in no longer turns back to English when its reward items finish loading.
+- The stat changes in an item comparison ("+0.7 damage per second") show the stat in Japanese, the number as the game writes it.
+- Long Japanese tooltip text no longer jumps between two line breaks while you hover a bag item.
+- An item's quoted flavour text keeps its gold colour in Japanese instead of taking the colour of the line above it.
+- NPC lines that use your class or race in the plural ("druids like yourself") now show their Japanese.
+- A quest Forever repeats under several ids (such as Camping 101) shows the progress and turn-in text already translated for another copy, when its own text is the same.
+- An error when hovering a creature whose quest title the game keeps hidden from addons.
+- The Camp Benefits buff shows in Japanese, whichever camp items you have.
+
 ## 0.1.0-alpha.5 - 2026-10-03
 
 ### Added

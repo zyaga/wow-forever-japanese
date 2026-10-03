@@ -128,6 +128,12 @@ def test_meta_text_joins_a_source_served_by_two_clients():
     assert 'english = { wdb = "1.15.9.69722+1.60.1.69913" }' in text  # sorted, not insertion order
 
 
+def test_meta_text_brackets_a_source_name_that_is_not_an_identifier():
+    """`forever-vo` (ADR-055) has a hyphen: a bare key would not be Lua."""
+    text = lua_writer.meta_text(1, {"forever-vo": ["025070f"], "vmangos": ["13b49dc"]}, {})
+    assert 'english = { ["forever-vo"] = "025070f", vmangos = "13b49dc" }' in text
+
+
 def test_toc_block_uses_backslashes():
     block = lua_writer.toc_block(["Data/Meta.lua", "Data/Quest/Quest_0000.lua"])
     assert block == [schema.TOC_BEGIN, "Data\\Meta.lua", "Data\\Quest\\Quest_0000.lua", schema.TOC_END]

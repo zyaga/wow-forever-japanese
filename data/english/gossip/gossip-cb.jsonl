@@ -12,6 +12,7 @@
 {"id": "cb2ae403a0edc651", "field": "text", "en": "Celebras, I lost my Scepter...", "hash": "cb2ae403a0edc651", "src": "vmangos@13b49dc"}
 {"id": "cb31c9cd25b67333", "field": "text", "en": "I am the latest incarnation of automated vendors... we will rule the world one day... don't tell my boss that I am skimming money off his merchandise...", "hash": "cb31c9cd25b67333", "src": "vmangos@13b49dc"}
 {"id": "cb3257c6f40ff1f7", "field": "text", "en": "Head on over to the Blue Recluse. Where everybody knows your name!", "hash": "cb3257c6f40ff1f7", "src": "vmangos@13b49dc"}
+{"id": "cb32fd9cc5e83d57", "field": "text", "en": "Great choice. I have marked that location on your map.", "hash": "cb32fd9cc5e83d57", "src": "forever-vo@025070f", "npcs": [247229, 267287, 267321, 267323]}
 {"id": "cb339cb65cd964b3", "field": "text", "en": "Soon we shall bring about the return of the old gods.", "hash": "cb339cb65cd964b3", "src": "vmangos@13b49dc"}
 {"id": "cb39a807bd8a06af", "field": "text", "en": "Think you the master is daunted by your games? We will never fall to you!", "hash": "cb39a807bd8a06af", "src": "vmangos@13b49dc"}
 {"id": "cb409d78c6e15079", "field": "text", "en": "Maybe... you could carry me?", "hash": "cb409d78c6e15079", "src": "vmangos@13b49dc"}
@@ -39,6 +40,7 @@
 {"id": "cbcc136a5c6ab52f", "field": "text", "en": "Och! Ye seek training in the way of the warrior, do ye?  Kelstrum Stonebreaker will put ye through yer paces!  Just march yerself over to the Hall of Arms east of the gates of Ironforge. ", "hash": "cbcc136a5c6ab52f", "src": "vmangos@13b49dc"}
 {"id": "cbd585a35d7d7541", "field": "text", "en": "The battle rages, and both our captain and the captain of our enemy are slain!$B$BDrek'Thar now leads us from Frostwolf Keep, and the dwarf Vanndar Stormpike hides deep in Dun Baldar.  Defeat Vanndar and claim victory for the Horde!", "hash": "cbd585a35d7d7541", "src": "vmangos@13b49dc"}
 {"id": "cbe36745a181a856", "field": "text", "en": "Crybaby! Crybaby!", "hash": "cbe36745a181a856", "src": "vmangos@13b49dc"}
+{"id": "cbebe5a9504cf573", "field": "text", "en": "Greetings, $c! I have but one goal: the cataloging and recording of all knowledge related to the history of Duskwood and Darkshire. Perhaps you could help me in my endeavor?", "hash": "cbebe5a9504cf573", "src": "forever-vo@025070f", "npcs": [268]}
 {"id": "cbeea509e2e5009d", "field": "text", "en": "Don't forget the orphans of Stormwind!", "hash": "cbeea509e2e5009d", "src": "vmangos@13b49dc"}
 {"id": "cbf01e618c4754e7", "field": "text", "en": "Here in Darnassus you will find skilled trainers who have perfected the skills of their chosen class through ages of training and dedication.  I will guide you to one who can become your mentor, you have but to name your chosen path.", "hash": "cbf01e618c4754e7", "src": "vmangos@13b49dc"}
 {"id": "cbf4d7c1cf09058c", "field": "text", "en": "Oh, we are going to get along just fine, $n.", "hash": "cbf4d7c1cf09058c", "src": "vmangos@13b49dc"}

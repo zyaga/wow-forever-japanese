@@ -103,6 +103,9 @@ def gender_report_lines(report: dict[str, Any]) -> list[str]:
     lines = [f"generate: gender aliases: {added} added · {len(dropped)} dropped · {len(ambiguous)} ambiguous"]
     lines += [f"  dropped alias {item}" for item in dropped]
     lines += [f"  ambiguous female variant {item}" for item in ambiguous]
+    if "quest_keyed" in report:
+        n = report["quest_keyed"]
+        lines.append(f"generate: repeated quests' progress / turn-in text keyed by its English: {n}")
     return lines
 
 
@@ -164,6 +167,35 @@ def _branch_english(
     return raw, ""
 
 
+def _sections(b: align.Branching, texts: list[str]) -> str | dict[str, Any]:
+    """A sectioned line's slot data (align, SECTIONED lines): the heading's Japanese and the key of its
+    English, and per optional paragraph the byte length and key of the words it begins with, its Japanese
+    (numbered to its own values) and its shape. The keys are hashes; no English ships.
+    → data | the reason it ships nothing"""
+    head_en, head_ja = b.variants[0].en, texts[0]
+    # each paragraph's shape and numbering count its own values only, as the addon reads them; a heading
+    # with a value (a literal number) would shift both
+    if b.variants[0].shape != "0/0":
+        return "sections_head_has_values"
+    sections = []
+    for v, ja in zip(b.variants[1:], texts[1:], strict=True):
+        if not ja.startswith(head_ja):
+            return "sections_head_mismatch"
+        prefix = align.section_prefix(v.en[len(head_en):])
+        body = ja[len(head_ja):].rstrip()
+        if not body:
+            return "empty_variant"
+        sections.append({"n": len(prefix.encode("utf-8")), "key": hash_key(normalize_v1(prefix)), "ja": body,
+                         "shape": v.shape})
+    if len({s["key"] for s in sections}) != len(sections):
+        return "sections_indistinguishable"
+    # the addon takes the first section whose opening words fit, so no opening may begin another's
+    openings = [align.section_prefix(v.en[len(head_en):]) for v in b.variants[1:]]
+    if any(a != b_ and b_.startswith(a) for a in openings for b_ in openings):
+        return "sections_indistinguishable"
+    return {"head": head_ja.rstrip(), "hkey": hash_key(normalize_v1(head_en.strip())), "sections": sections}
+
+
 def _branch_refusal(
     ln: dict[str, Any],
     en_by: dict[tuple[int, str], str],
@@ -182,6 +214,8 @@ def _branch_refusal(
         return "; ".join(bad)
     if any(not t.strip() for t in texts):
         return "empty_variant"
+    if b.sectioned:
+        return _sections(b, texts)
     shapes = [v.shape for v in b.variants]
     name = en_by.get((ln["id"], "name"), "")
     pairs = align.indistinguishable(texts, [f"{v.en}\n{name}" for v in b.variants], shapes, allowlist)
@@ -209,9 +243,10 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
         report.update(aliases={}, dropped={}, ambiguous={})
     _plan_id_types(store, english_store, out, counts, english, report)
     alias_of: dict[str, dict[str, str]] = {}
-    _plan_keyed_types(store, english_store, out, counts, english, report, alias_of)
+    quest_keyed = quest_text_aliases(store.load("quest"), english_store.load("quest"))
+    _plan_keyed_types(store, english_store, out, counts, english, report, alias_of, quest_keyed)
     _plan_ui(store, english_store, out, counts, english)
-    _plan_readings(store, out, counts, alias_of)
+    _plan_readings(store, out, counts, alias_of, quest_keyed)
     # One version per source is still the rule, and a mixed store is still a data error, except for the
     # sources two clients serve (`schema.MULTI_VERSION_SOURCES`), where a union import keeps both builds'
     # lines on purpose (ADR-020). Meta records every version of those, sorted; the per-line
@@ -290,6 +325,45 @@ def _plan_id_types(
             out[schema.shard_relpath(type_, nnnn)] = lua_writer.shard_text(type_, nnnn, shard_rows)
 
 
+QUEST_KEYED_FIELDS = ("progress", "completion")
+
+
+def quest_text_aliases(
+    quest_lines: list[dict[str, Any]], english_lines: list[dict[str, Any]]
+) -> dict[str, tuple[int, str]]:
+    """Forever repeats a quest under several ids (one per start area or profession) with the same text, and a
+    copy often has no progress or turn-in English of its own. For a title several quests share, where a copy
+    lacks the field's English, every trusted translation of that field among the copies also ships keyed by
+    the hash of its English, so the copy finds it by the live text (ADR-054). Only an exact English match
+    shows it. A text with a `$G` code ships under its female wording's key too: the key keeps the male
+    branch, and a female character's live text is the other. The lowest quest id answers a key two copies
+    hold. → {key: (quest id, field)}"""
+    english: dict[int, dict[str, dict[str, Any]]] = {}
+    for ln in english_lines:
+        english.setdefault(ln["id"], {})[ln["field"]] = ln
+    trusted = {
+        (ln["id"], ln["field"]) for ln in quest_lines if ln["status"] == "trusted" and lua_writer.shipped(ln)
+    }
+    families: dict[str, list[int]] = {}
+    for id_, fields in english.items():
+        if "title" in fields:
+            families.setdefault(fields["title"]["hash"], []).append(id_)
+    out: dict[str, tuple[int, str]] = {}
+    for ids in families.values():
+        if len(ids) < 2:
+            continue
+        for field in QUEST_KEYED_FIELDS:
+            if all(field in english[i] for i in ids):
+                continue  # every copy has its own English: each is found by its own id
+            for i in sorted(ids):
+                if (i, field) in trusted and field in english[i]:
+                    out.setdefault(english[i][field]["hash"], (i, field))
+                    fkey = _female_key(english[i][field])
+                    if fkey:
+                        out.setdefault(fkey, (i, field))
+    return out
+
+
 def _plan_keyed_types(
     store: Store,
     english_store: Store,
@@ -298,8 +372,10 @@ def _plan_keyed_types(
     english: dict[str, set[str]],
     report: dict[str, Any] | None,
     alias_of: dict[str, dict[str, str]] | None = None,
+    quest_keyed: dict[str, tuple[int, str]] | None = None,
 ) -> None:
-    """The shards of every type keyed by an English hash (gossip, …), with their gender aliases.
+    """The shards of every type keyed by an English hash (gossip, …), with their gender aliases and the
+    repeated quests' text (`quest_keyed`, from quest_text_aliases; entries not shipped are removed from it).
     `alias_of`, when given, receives {type: {alias key: the key it repeats}} for the readings."""
     for type_ in schema.KEYED_TYPES:
         lines = store.load(type_)
@@ -313,6 +389,19 @@ def _plan_keyed_types(
         if alias_of is not None:
             alias_of[type_] = {f: k for k, f in index.items() if f in aliases and k in k_rows}
         k_rows = {**k_rows, **aliases}
+        if type_ == "gossip" and quest_keyed is not None:
+            # a repeated quest's progress / turn-in text, keyed by its English (quest_text_aliases); a key the
+            # gossip data already holds keeps its own row
+            quest_rows = lua_writer.rows("quest", store.load("quest"))
+            slot = {f: n for n, f in enumerate(schema.SLOTS["quest"]["fields"])}
+            for key, (qid, field) in sorted(quest_keyed.items()):
+                row = quest_rows.get(qid)
+                if key in k_rows or row is None or row[slot[field]] == "nil":
+                    quest_keyed.pop(key)
+                    continue
+                k_rows[key] = [row[slot[field]], lua_writer.lua_string(".")]
+            if report is not None:
+                report["quest_keyed"] = len(quest_keyed)
         if type_ != "gossip":  # gossip's english.src names the key primitive, not a source version
             _note_versions(english, lines)
         by_nn: dict[str, dict[str, list[str]]] = {}
@@ -363,6 +452,7 @@ def _plan_readings(
     out: dict[str, str],
     counts: dict[str, int],
     alias_of: dict[str, dict[str, str]] | None = None,
+    quest_keyed: dict[str, tuple[int, str]] | None = None,
 ) -> None:
     """The readings shards and the meanings table they point into. A gender alias key (the female variant of
     a line, repeated under its own English hash) gets its line's reading too: the addon finds a female
@@ -384,6 +474,14 @@ def _plan_readings(
             current[type_] = current[type_] + [
                 by_key[key] | {"id": alias} for alias, key in sorted(aliases.items()) if key in by_key
             ]
+    # a repeated quest's text shipped under its English key carries that quest line's reading
+    if quest_keyed:
+        by_line = {(rec["id"], rec["field"]): rec for rec in current.get("quest", [])}
+        current["gossip"] = current.get("gossip", []) + [
+            by_line[line] | {"id": key, "field": "text"}
+            for key, line in sorted(quest_keyed.items())
+            if line in by_line
+        ]
     # the word popup's meanings (ADR-039), each distinct one stored once and numbered; a reading row
     # points at its word's number.
     meanings = glosses.table(r for recs in current.values() for r in recs)

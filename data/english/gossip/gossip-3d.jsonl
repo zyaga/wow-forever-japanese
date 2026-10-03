@@ -26,6 +26,8 @@
 {"id": "3d8aaec7e8ebb391", "field": "text", "en": "Earthen Templar!  I hold your crest of beckoning.  Heed my summons!", "hash": "3d8aaec7e8ebb391", "src": "vmangos@13b49dc"}
 {"id": "3d96988b3a0f12b9", "field": "text", "en": "Confess and we shall set you free.", "hash": "3d96988b3a0f12b9", "src": "vmangos@13b49dc"}
 {"id": "3d98ecf32f7174bd", "field": "text", "en": "With the sanction of Lord Varimathras, the Deathstalkers' numbers grow. More blades to strike at our enemies when they least expect it.", "hash": "3d98ecf32f7174bd", "src": "vmangos@13b49dc"}
+{"id": "3db750c4c4cd346d", "field": "text", "en": "I am told the farms of Westfall once supplied a bounty of crops for Stormwind. But now, the soil is barren and most of the farmers have fled.\r\n\r\nOn behalf of Darnassus I would like to offer my aid in replenishing this land. Will you assist me?", "hash": "3db750c4c4cd346d", "src": "forever-vo@025070f", "npcs": [253092]}
+{"id": "3dbdb4902e01c32d", "field": "text", "en": "My darlings... my darlings...", "hash": "3dbdb4902e01c32d", "src": "forever-vo@025070f", "npcs": [272450]}
 {"id": "3dc0dff54b79e582", "field": "text", "en": "No one's going to save you now, human!", "hash": "3dc0dff54b79e582", "src": "vmangos@13b49dc"}
 {"id": "3dc2fe4952d957ab", "field": "text", "en": "Old king got dead?  That's unpossible!", "hash": "3dc2fe4952d957ab", "src": "vmangos@13b49dc"}
 {"id": "3dcaaaa53fa711bf", "field": "text", "en": "What? I don't know of any warlock trainers in Stormwind. \n\nAlthough... There have been some sightings of demonic activity over by The Slaughtered Lamb in the Mage Quarter. I suppose you could check there.", "hash": "3dcaaaa53fa711bf", "src": "vmangos@13b49dc"}

@@ -14,11 +14,13 @@
 {"id": "d13fde2cb4421e6a", "field": "text", "en": "Cleansing the world of impure scum isn't an easy job, Nancy. Someone's got to do it.", "hash": "d13fde2cb4421e6a", "src": "vmangos@13b49dc"}
 {"id": "d13fdee4df0f03e0", "field": "text", "en": "I can make it the rest of the way, $n.  THANKS!", "hash": "d13fdee4df0f03e0", "src": "vmangos@13b49dc"}
 {"id": "d13ffe4355c5eeaa", "field": "text", "en": "Life is like a carefully woven tapestry.", "hash": "d13ffe4355c5eeaa", "src": "vmangos@13b49dc"}
+{"id": "d14195a1fefdcf8a", "field": "text", "en": "<The mountaineer clearly fought bravely before meeting her end at the weapons of the troggs.>", "hash": "d14195a1fefdcf8a", "src": "forever-vo@025070f", "npcs": [269153]}
 {"id": "d147f47efd7393a6", "field": "text", "en": "I did not doubt you for even one second, $n.$B$BHere are your orders, $n. I know that you will not let me down.\n", "hash": "d147f47efd7393a6", "src": "vmangos@13b49dc"}
 {"id": "d14900cc98a23317", "field": "text", "en": "Metzen's eyes light up with reindeer joy as you sprinkle the dust on him.  He shakes his antlers at you and breathes out a heavy sigh of what sounds like relief.$B$BAround you, magical energy begins to swell.  It would seem that something's about to happen!", "hash": "d14900cc98a23317", "src": "vmangos@13b49dc"}
 {"id": "d14f2db9464e82e6", "field": "text", "en": "You have not yet learned the basics, wanderer. Have you spoken to my assistant, Lalina Summermoon? Perhaps you should.", "hash": "d14f2db9464e82e6", "src": "vmangos@13b49dc"}
 {"id": "d150dad95418fa96", "field": "text", "en": "Wha... what's happening?", "hash": "d150dad95418fa96", "src": "vmangos@13b49dc"}
 {"id": "d172757d4ea2762d", "field": "text", "en": "Oh well... Maybe next time.", "hash": "d172757d4ea2762d", "src": "vmangos@13b49dc"}
+{"id": "d1732731ef893ccb", "field": "text", "en": "Gales greetings, friend. Is there something I can help you with?", "hash": "d1732731ef893ccb", "src": "forever-vo@025070f", "npcs": [252479, 253004, 257004, 257008, 257019, 257021]}
 {"id": "d1799ec788612e01", "field": "text", "en": "Niby, you are stupid.", "hash": "d1799ec788612e01", "src": "vmangos@13b49dc"}
 {"id": "d17caf7fd12d8c38", "field": "text", "en": "Have you any Darkmoon Faire cards?  Come speak with me to learn more about them if you dare!", "hash": "d17caf7fd12d8c38", "src": "vmangos@13b49dc"}
 {"id": "d186c8877f9a31ab", "field": "text", "en": "VanCleef pay big for you heads!", "hash": "d186c8877f9a31ab", "src": "vmangos@13b49dc"}

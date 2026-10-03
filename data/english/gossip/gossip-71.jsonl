@@ -27,6 +27,8 @@
 {"id": "71cf8ff062d651f1", "field": "text", "en": "Well, I'm not sure how far I'll make it in this state... I'm feeling kind of faint...", "hash": "71cf8ff062d651f1", "src": "vmangos@13b49dc"}
 {"id": "71daee17a41374ec", "field": "text", "en": "Too late, friends! Nefarius' corruption has taken hold...I cannot...control myself.\n", "hash": "71daee17a41374ec", "src": "vmangos@13b49dc"}
 {"id": "71ddaaa6086c6056", "field": "text", "en": "Highborne spirits! Be at peace! The Crystal of Zin-Malor is whole once again!", "hash": "71ddaaa6086c6056", "src": "vmangos@13b49dc"}
+{"id": "71ea3ebc5d16110f", "field": "text", "en": "Welcome to the Calmbreeze Inn, traveler. Would you like some refreshment?", "hash": "71ea3ebc5d16110f", "src": "forever-vo@025070f", "npcs": [254089, 255940]}
 {"id": "71f07c8458ebe4d2", "field": "text", "en": "Hahah!", "hash": "71f07c8458ebe4d2", "src": "vmangos@13b49dc"}
 {"id": "71f4a879500d9751", "field": "text", "en": "You will never stop the Forsaken, $r. The Dark Lady shall make you suffer.", "hash": "71f4a879500d9751", "src": "vmangos@13b49dc"}
 {"id": "71fabdb09e0cbf97", "field": "text", "en": "Aha!  That's it!", "hash": "71fabdb09e0cbf97", "src": "vmangos@13b49dc"}
+{"id": "71fbfad1e2055d64", "field": "text", "en": "Welcome to Fairweather Stables! I would love to provide you one of our fine galestriders, but it seems like you may not yet have enough experience to ride one.\r\n\r\nThey are temperamental at times and are prone to toss newer riders if not handled correctly. I would be more than happy to provide the training for you once you are a more seasoned adventurer and have enough coin!", "hash": "71fbfad1e2055d64", "src": "forever-vo@025070f", "npcs": [265756]}

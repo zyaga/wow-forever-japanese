@@ -1,5 +1,6 @@
 {"id": "3f010f93b023727e", "field": "text", "en": "Tell me about something else...", "hash": "3f010f93b023727e", "src": "vmangos@13b49dc"}
 {"id": "3f0257a4201da5c3", "field": "text", "en": "Plenty of good mining to be had in Durotar, or so I hear.  So good in fact that we have a Mining Trainer right here in Razor Hill.  You'll find Krunn next to the heated forge in the northwest corner of town.", "hash": "3f0257a4201da5c3", "src": "vmangos@13b49dc"}
+{"id": "3f0a6f56dfc2eaee", "field": "text", "en": "Greetings, $c. Do you come seeking the blessings of the Windlord?", "hash": "3f0a6f56dfc2eaee", "src": "forever-vo@025070f", "npcs": [251904]}
 {"id": "3f0b8ce0eadd3f0a", "field": "text", "en": "You have outgrown any teachings I could offer. Go with the blessing of the Earth Mother. Seek out the tauren Tarn in the northwestern shops of Thunder Bluff's central plateau. Be guided by his wisdom.", "hash": "3f0b8ce0eadd3f0a", "src": "vmangos@13b49dc"}
 {"id": "3f0d08c2aee54ccf", "field": "text", "en": "The spirits are restless!", "hash": "3f0d08c2aee54ccf", "src": "vmangos@13b49dc"}
 {"id": "3f0fc069be1ee74e", "field": "text", "en": "Sandwich?  What?  You makin' a sandwich for me, pop?", "hash": "3f0fc069be1ee74e", "src": "vmangos@13b49dc"}
@@ -15,6 +16,7 @@
 {"id": "3f28cdd8237b284f", "field": "text", "en": "Glyx and I have an understanding: he keeps me supplied, and I keep him rich. Seriously! What that pirate charges me for a measly pouch of crumpled kingsblood... it's enough to make a grown goblin cry.", "hash": "3f28cdd8237b284f", "src": "vmangos@13b49dc"}
 {"id": "3f2d54afc7afd3a4", "field": "text", "en": "For Broxigar!", "hash": "3f2d54afc7afd3a4", "src": "vmangos@13b49dc"}
 {"id": "3f2e527a90618cda", "field": "text", "en": "What is Juju?", "hash": "3f2e527a90618cda", "src": "vmangos@13b49dc"}
+{"id": "3f2e72274e8d8f1c", "field": "text", "en": "Take it, then. It seems Zygand is too busy for the agonizing trip here to retrieve it himself.", "hash": "3f2e72274e8d8f1c", "src": "forever-vo@025070f", "npcs": [1496]}
 {"id": "3f3586f7e41e824d", "field": "text", "en": "The Stormpike Aid Station is in Dun Baldar, right outside the Dun Baldar barracks.$B$BThe Horde currently controls it.", "hash": "3f3586f7e41e824d", "src": "vmangos@13b49dc"}
 {"id": "3f35f225e1f5991c", "field": "text", "en": "Yes, I have seen the shaman you seek. Last I saw her, she was to the west of here. She hides in the hills above the Razormane tribe. If you're clever, you'll be able to find a path to her hut in the hills. It is not too far north of here. That path should allow you to find her without fighting through the quilboar.", "hash": "3f35f225e1f5991c", "src": "vmangos@13b49dc"}
 {"id": "3f3a560497a1b8da", "field": "text", "en": "Poor Dorius. If I ever get my hands on those Dark Irons, so help me...", "hash": "3f3a560497a1b8da", "src": "vmangos@13b49dc"}

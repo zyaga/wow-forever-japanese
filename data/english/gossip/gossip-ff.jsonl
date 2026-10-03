@@ -26,6 +26,7 @@
 {"id": "ff89e8ce3c552c28", "field": "text", "en": "Clean this place up! We will not live in such squalor.", "hash": "ff89e8ce3c552c28", "src": "vmangos@13b49dc"}
 {"id": "ff9624548e072fc1", "field": "text", "en": "Ah, here at last! It's going to feel so good to get rid of these barrels.", "hash": "ff9624548e072fc1", "src": "vmangos@13b49dc"}
 {"id": "ff9bdec4fdeec5ee", "field": "text", "en": "What are the Paragons of Power?", "hash": "ff9bdec4fdeec5ee", "src": "vmangos@13b49dc"}
+{"id": "ffa223922dcb99eb", "field": "text", "en": "Greetings, adventurer.", "hash": "ffa223922dcb99eb", "src": "forever-vo@025070f", "npcs": [1949]}
 {"id": "ffa48fb8ad4bc95f", "field": "text", "en": "Teacher, when are we gonna see the sparkly Mage Tower?", "hash": "ffa48fb8ad4bc95f", "src": "vmangos@13b49dc"}
 {"id": "ffaca6741b285d92", "field": "text", "en": "Feralas - Screecher Spirit - On Quest Default Greeting", "hash": "ffaca6741b285d92", "src": "vmangos@13b49dc"}
 {"id": "ffb0656c8dac3f04", "field": "text", "en": "An excellent question! We have many things for sale here at the faire. If you are interested in food and drink, then head over to Stamp and Sylannia's booth. My favorite is the Darkmoon Special Reserve.\n\nIf you'd rather purchase something more exotic, then Lhara may have just the thing for you. She specializes in rarities from all over the world.\n\nAnd then there is Flik running around here somewhere. If you can grab him he sells balls for throwing and frogs to keep as pets.\n", "hash": "ffb0656c8dac3f04", "src": "vmangos@13b49dc"}

@@ -2,6 +2,7 @@
 {"id": "8b08facbd5b421b4", "field": "text", "en": "The time has come for me to once again make my wares available to all who travel near Sentinel Hill! Come one, come all!", "hash": "8b08facbd5b421b4", "src": "vmangos@13b49dc"}
 {"id": "8b0f0d5ba83cd210", "field": "text", "en": "I have lost my Ring of the Gathering Storm. Are you able to replace it for me?", "hash": "8b0f0d5ba83cd210", "src": "vmangos@13b49dc"}
 {"id": "8b20f109b420eb0e", "field": "text", "en": "Bethekk, your priestess calls upon your might!", "hash": "8b20f109b420eb0e", "src": "vmangos@13b49dc"}
+{"id": "8b24ae18e68ebd33", "field": "text", "en": "Welcome to Valanaar, $c.", "hash": "8b24ae18e68ebd33", "src": "forever-vo@025070f", "npcs": [252476]}
 {"id": "8b24c8fec5658257", "field": "text", "en": "%s is resurrected by a nearby ally!", "hash": "8b24c8fec5658257", "src": "vmangos@13b49dc"}
 {"id": "8b252036937ff4d5", "field": "text", "en": "Hello stranger, and welcome to the untamed majesty of Un'Goro Crater!$B$BMy name is Williden Marshal.  My sister, our companions, and I make up Marshal Expeditions - scientists and explorers of Azeroth's wild and great unknown.$B$BWe've hit a bit of a rough patch here, and we're looking for some help if you have the time!", "hash": "8b252036937ff4d5", "src": "vmangos@13b49dc"}
 {"id": "8b2e9c8305029a7b", "field": "text", "en": "VanCleef sends word that the plans are underway. But he's heard rumors about someone snooping about.", "hash": "8b2e9c8305029a7b", "src": "vmangos@13b49dc"}

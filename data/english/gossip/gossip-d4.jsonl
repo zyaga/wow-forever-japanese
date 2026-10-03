@@ -13,6 +13,7 @@
 {"id": "d435dc8bd16d347c", "field": "text", "en": "Tell me more about Forging Armor.", "hash": "d435dc8bd16d347c", "src": "vmangos@13b49dc"}
 {"id": "d43b49dec48bd34a", "field": "text", "en": "Follow me.", "hash": "d43b49dec48bd34a", "src": "vmangos@13b49dc"}
 {"id": "d43ecd8af0044646", "field": "text", "en": "%s performs one last service for Ragnaros...", "hash": "d43ecd8af0044646", "src": "vmangos@13b49dc"}
+{"id": "d442c682c2a0f5d1", "field": "text", "en": "No! No, no, no! This can't be. I'd rather be dead than Forsaken! \r\n\r\n<The Frightened $C raises her weapon, preparing to attack!>", "hash": "d442c682c2a0f5d1", "src": "forever-vo@025070f", "npcs": [246143]}
 {"id": "d4496bbc249d0ca1", "field": "text", "en": "Hi $n!$B$BI have to work on my devices, but eventually... I'm going to need someone to get me dragon eggs!", "hash": "d4496bbc249d0ca1", "src": "vmangos@13b49dc"}
 {"id": "d44a3e491f9bfa5b", "field": "text", "en": "I feel... dizzy.  It's so hot... in... here...", "hash": "d44a3e491f9bfa5b", "src": "vmangos@13b49dc"}
 {"id": "d4561e9f5c65e5c5", "field": "text", "en": "Horgus is slain!  Take heart, defenders of Darrowshire!", "hash": "d4561e9f5c65e5c5", "src": "vmangos@13b49dc"}

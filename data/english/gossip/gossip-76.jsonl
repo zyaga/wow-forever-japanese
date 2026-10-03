@@ -34,6 +34,7 @@
 {"id": "76a82426ff3d8116", "field": "text", "en": "This will do nicely.  Now to the task at hand!", "hash": "76a82426ff3d8116", "src": "vmangos@13b49dc"}
 {"id": "76aa88be4bbd5cd1", "field": "text", "en": "I am Krathok, overseer of these craftsmen.", "hash": "76aa88be4bbd5cd1", "src": "vmangos@13b49dc"}
 {"id": "76aab025725ecad1", "field": "text", "en": "For the Blue!", "hash": "76aab025725ecad1", "src": "vmangos@13b49dc"}
+{"id": "76af7fc20ebbdbd5", "field": "text", "en": "What do you need of me, child of Zephras?", "hash": "76af7fc20ebbdbd5", "src": "forever-vo@025070f", "npcs": [251361]}
 {"id": "76b2e40ba48ad0ea", "field": "text", "en": "The deeds are mine, brother! Soon you shall be out of my way for good!", "hash": "76b2e40ba48ad0ea", "src": "vmangos@13b49dc"}
 {"id": "76b6808ca06b80f5", "field": "text", "en": "If we are to make our place in this world, then we will do so through study, and through the will to ignore our fading human instincts.", "hash": "76b6808ca06b80f5", "src": "vmangos@13b49dc"}
 {"id": "76c63b3a18a37701", "field": "text", "en": "In these trying times, a simple donation of cloth can go a long way to help those less fortunate than ourselves.  Cloth goes a long way to making garments and bandages - both important for the war effort!$B$BIf you are interested in donating cloth pieces to the orcs of Orgrimmar, I will gladly accept them and make sure you receive the proper recognition for doing so.$B$BFor the Horde!", "hash": "76c63b3a18a37701", "src": "vmangos@13b49dc"}

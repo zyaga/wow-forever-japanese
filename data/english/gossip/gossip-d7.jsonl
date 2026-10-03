@@ -13,6 +13,7 @@
 {"id": "d74597c540bdd054", "field": "text", "en": "The Dun Baldar North Bunker protects the eastern entrance to Dun Baldar.$B$BIt is controlled by the Alliance.", "hash": "d74597c540bdd054", "src": "vmangos@13b49dc"}
 {"id": "d7466c50a5286b2e", "field": "text", "en": "%s is reduced to rubble, but still continues to fight", "hash": "d7466c50a5286b2e", "src": "vmangos@13b49dc"}
 {"id": "d746c031bbdd7259", "field": "text", "en": "Would a fly without wings be called a walk?", "hash": "d746c031bbdd7259", "src": "vmangos@13b49dc"}
+{"id": "d74a2d3c65e14b11", "field": "text", "en": "<Constable Aonda wears an intense look on her face, clearly deep in thought.>", "hash": "d74a2d3c65e14b11", "src": "forever-vo@025070f", "npcs": [251523]}
 {"id": "d74cc61c5aade82b", "field": "text", "en": "sneezes voilently!", "hash": "d74cc61c5aade82b", "src": "vmangos@13b49dc"}
 {"id": "d75478c2b1ba6b56", "field": "text", "en": "Sending ground assaults takes huge amounts of supplies!", "hash": "d75478c2b1ba6b56", "src": "vmangos@13b49dc"}
 {"id": "d75d730365052449", "field": "text", "en": "Kill the guards, take the Warden alive!", "hash": "d75d730365052449", "src": "vmangos@13b49dc"}
@@ -34,6 +35,7 @@
 {"id": "d7b7e3264977657b", "field": "text", "en": "The time has come, Guse. You fly again!", "hash": "d7b7e3264977657b", "src": "vmangos@13b49dc"}
 {"id": "d7c326d7a30364ff", "field": "text", "en": "My apologies, Lady Prestor.\n", "hash": "d7c326d7a30364ff", "src": "vmangos@13b49dc"}
 {"id": "d7c35c0c51c63fad", "field": "text", "en": "Hmm? Oh yes, I can teach you something if you desire. But stay away from Sumi and Tumi, they are not for the likes of you. Saru only let's those of great skill approach his daughters.", "hash": "d7c35c0c51c63fad", "src": "vmangos@13b49dc"}
+{"id": "d7cafbcaa59714f6", "field": "text", "en": "Ah, I am afraid you and I have no business at this time.\r\n\r\nIf you end up fulfilling some contracts with the trade authority then perhaps we will have something to discuss later.", "hash": "d7cafbcaa59714f6", "src": "forever-vo@025070f", "npcs": [256742]}
 {"id": "d7cb0690f600b027", "field": "text", "en": "To summon a Dreadsteed, you must first create a Circle of Greater Summoning.  A portal to Xoroth may only be created from within such a circle.$B$BThe Circle of Greater Summoning requires three powerful implements: a Bell of Dethmoora, a Wheel of the Black March and a Doomsday Candle.", "hash": "d7cb0690f600b027", "src": "vmangos@13b49dc"}
 {"id": "d7dd5d370180e277", "field": "text", "en": "Take that! Oh... I must have hit the wrong button... Wait, try this one!", "hash": "d7dd5d370180e277", "src": "vmangos@13b49dc"}
 {"id": "d7e047bfdb57fb83", "field": "text", "en": "I require aid.", "hash": "d7e047bfdb57fb83", "src": "vmangos@13b49dc"}

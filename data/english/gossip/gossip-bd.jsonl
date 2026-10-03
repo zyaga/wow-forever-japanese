@@ -14,6 +14,7 @@
 {"id": "bd76e7df6927e22f", "field": "text", "en": "Ah yes, and promptly delivered.  As always, it's a pleasure doing business with you, Corbett.", "hash": "bd76e7df6927e22f", "src": "vmangos@13b49dc"}
 {"id": "bd81dbc609feccf1", "field": "text", "en": "There is an alchemist that lives up in the hills between Northshire and Stormwind that might be of some help.  Why don't you go pay him a visit?", "hash": "bd81dbc609feccf1", "src": "vmangos@13b49dc"}
 {"id": "bd842c7c4560eb50", "field": "text", "en": "Now that the coast is clear...", "hash": "bd842c7c4560eb50", "src": "vmangos@13b49dc"}
+{"id": "bd8f93b52b585608", "field": "text", "en": "Howdy there, traveler!", "hash": "bd8f93b52b585608", "src": "forever-vo@025070f", "npcs": [263399]}
 {"id": "bd91a66a2544ab86", "field": "text", "en": "Commonly found on the lesser chromatic flight: Whelps, broodlings, lesser wyrmkin.", "hash": "bd91a66a2544ab86", "src": "vmangos@13b49dc"}
 {"id": "bda2b6db9bb96a3e", "field": "text", "en": "Dang! Fish aren't biting here either. I am gonna go back to my ol' fishin' hole!", "hash": "bda2b6db9bb96a3e", "src": "vmangos@13b49dc"}
 {"id": "bdaf005b935384b2", "field": "text", "en": "When time permits, we must speak at length.  For we have much to discuss.", "hash": "bdaf005b935384b2", "src": "vmangos@13b49dc"}
@@ -23,6 +24,7 @@
 {"id": "bdbb467ff697e00e", "field": "text", "en": "Can't help ya, $n. I only train rogues.", "hash": "bdbb467ff697e00e", "src": "vmangos@13b49dc"}
 {"id": "bdbe5e72dc9d39ce", "field": "text", "en": "Umi sent you, didn't she?! She told me to expect a surprise, but I never thought that this is what she meant!", "hash": "bdbe5e72dc9d39ce", "src": "vmangos@13b49dc"}
 {"id": "bdc4197d3534ef1c", "field": "text", "en": "Krathok, I was once an armorsmith and wish to retake the hammer once more! Teach me the way of the armorsmith.", "hash": "bdc4197d3534ef1c", "src": "vmangos@13b49dc"}
+{"id": "bdc79895acd32bae", "field": "text", "en": "How can I help you?", "hash": "bdc79895acd32bae", "src": "forever-vo@025070f", "npcs": [6306, 267325, 267331, 267334, 267337]}
 {"id": "bdcc98fd71b9c1c1", "field": "text", "en": "I smell an intruder...", "hash": "bdcc98fd71b9c1c1", "src": "vmangos@13b49dc"}
 {"id": "bdd0526097fe4877", "field": "text", "en": "You know who can really show you some things? Nogg! You go find him in Orgrimmar.", "hash": "bdd0526097fe4877", "src": "vmangos@13b49dc"}
 {"id": "bdd0c9030d15e495", "field": "text", "en": "You'd better not be causing trouble, $n!", "hash": "bdd0c9030d15e495", "src": "vmangos@13b49dc"}

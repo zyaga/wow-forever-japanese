@@ -90,9 +90,10 @@ describe("Lookup.get / Lookup.gossip on the shipped data", function()
       for id, row in pairs(WFJ.Data[t]) do
         for i, f in ipairs(WFJ.SLOTS[t].fields) do
           local e = L.get(#WFJ.SLOTS[t].fields > 1 and (t .. "." .. f) or t, id)
-          -- a branch line is a table of variants instead (none empty)
+          -- a branch line is a table of variants instead (none empty), a sectioned line its heading and
+          -- paragraphs
           if row[i] ~= nil then
-            assert.is_true(e.variants and #e.variants > 0 or #e.ja > 0, t .. id)
+            assert.is_true(e.variants and #e.variants > 0 or e.sections and #e.sections > 0 or #e.ja > 0, t .. id)
           else
             assert.is_nil(e)
           end

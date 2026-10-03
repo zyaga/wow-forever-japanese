@@ -209,6 +209,10 @@ function WFJ.OnLoad()
     alignVariants = function(variants, shapes, lines, nameScope)
       return WFJ.Align.checkVariants(variants, shapes, lines, nameScope, spellDuration)
     end,
+    -- a sectioned line's heading and paragraphs, each found by the words it begins with
+    alignSections = function(sections, lines, nameScope)
+      return WFJ.Align.sections(sections, lines, nameScope, spellDuration)
+    end,
     expand = expand, -- {name}/{class}/{race} per player
     -- a trusted line's `$N<k>` / `$D<k>` filled from the live text, with no gate: a quest's
     -- count is in the line the player is shown, not in the text the server sent.

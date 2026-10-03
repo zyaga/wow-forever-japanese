@@ -11,6 +11,7 @@ local DATA = {
   -- keyed by the kind the surface asks for; field-qualified because spell has two fields
   ["item.description"] = {
     [117] = { ja = "18秒間でhealthを61回復。回復中は\n座っている必要があります。", status = "u" },
+    [2001] = { ja = "Herbalismのスキルを2上昇させます。\n野生のハーブを摘むための取扱説明書。", status = "u" },
     [724] = { ja = "21秒間でhealthを243回復。10秒以上食事に時間をかけると、15分間StaminaとSpiritを4上昇させます。", status = "u" },
     [6948] = { ja = "【使用】Hearthstoneの場所に戻ります。", status = "u" },
   },
@@ -58,7 +59,7 @@ describe("UI/Tooltip: item and spell tooltips", function()
     assert.are.equal("Sell Price: 5c", fs("GameTooltip", 3):GetText())
     assert.are.equal(0, fs("GameTooltip", 1).calls.SetText)
     assert.are.equal(0, fs("GameTooltip", 3).calls.SetText)
-    assert.are.equal(1, tt.calls.Show) -- one refit
+    assert.are.equal(2, tt.calls.Show) -- one refit, two Shows (the layout count stays even)
     assert.are.equal(1, SS.count("tooltip.GameTooltip"))
   end)
 
@@ -74,7 +75,31 @@ describe("UI/Tooltip: item and spell tooltips", function()
     assert.are.equal("Binds when picked up", fs("GameTooltip", 2):GetText())
     assert.are.equal("Sell Price: 5c", fs("GameTooltip", 6):GetText())
     assert.are.equal(3, SS.count("tooltip.GameTooltip"))
-    assert.are.equal(1, tt.calls.Show)
+    assert.are.equal(2, tt.calls.Show) -- one refit (two Shows)
+  end)
+
+  it("a flavour line in another colour keeps its colour in the Japanese; one colour adds nothing", function()
+    local GREEN, GOLD = { 0, 1, 0 }, { 1, 0.82, 0 }
+    Stub.setItemTooltip(tt, "|Hitem:2001:0:0:0:0:0:0:0|h[Wild Harvest]|h", {
+      "Wild Harvest", { "Use: Increases your Herbalism skill by 2.", color = GREEN },
+      { '"An instruction manual for picking wild herbs."', color = GOLD } })
+    assert.are.equal("Herbalismのスキルを2上昇させます。\n|cffffd100野生のハーブを摘むための取扱説明書。|r",
+      fs("GameTooltip", 2):GetText())
+    Stub.setItemTooltip(tt, "|Hitem:2001:0:0:0:0:0:0:0|h[Wild Harvest]|h", {
+      "Wild Harvest", { "Use: Increases your Herbalism skill by 2.", color = GREEN },
+      { '"An instruction manual for picking wild herbs."', color = GREEN } })
+    assert.are.equal(DATA["item.description"][2001].ja, fs("GameTooltip", 2):GetText())
+    Stub.keys.alt = true; WFJ.Modifier.refresh() -- Alt shows the client's English, colour and all
+    assert.are.equal("Use: Increases your Herbalism skill by 2.", fs("GameTooltip", 2):GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+  end)
+
+  it("part colours skip empty parts on both sides: a blank line or a paragraph break never shifts them", function()
+    local cp = WFJ.Render.colourParts
+    local gold = { n = 2, [2] = "ffffd100" }
+    assert.are.equal("説明。\n\n|cffffd100フレーバー。|r", cp("説明。\n\nフレーバー。", gold))
+    assert.are.equal("説明。\n|cffffd100フレーバー。|r", cp("説明。\nフレーバー。", gold))
+    assert.are.equal("一。\n二。\n三。", cp("一。\n二。\n三。", gold)) -- parts do not line up: as it is
   end)
 
   it("no description run, no item, or a gate failure → nothing written", function()
@@ -228,7 +253,7 @@ describe("UI/Tooltip: item and spell tooltips", function()
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.is_truthy(fs("GameTooltip", 2):GetText():find("^Use: Restores 243"))
     assert.are.equal('"Tastes like liver."', fs("GameTooltip", 3):GetText())
-    assert.are.equal(1, tt.calls.Show)
+    assert.are.equal(2, tt.calls.Show) -- one refit (two Shows)
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     assert.are.equal(DATA["item.description"][724].ja, fs("GameTooltip", 2):GetText())
     assert.are.equal(WFJ.Render.BLANK, fs("GameTooltip", 3):GetText())
@@ -243,7 +268,7 @@ describe("UI/Tooltip: item and spell tooltips", function()
     Stub.setItemTooltip(tt, JERKY, JERKY_LINES)
     assert.are.equal(DATA["item.description"][117].ja, fs("GameTooltip", 2):GetText())
     assert.are.equal(1, fs("GameTooltip", 2).calls.SetText)
-    assert.are.equal(1, tt.calls.Show)
+    assert.are.equal(2, tt.calls.Show) -- one refit (two Shows)
     assert.are.equal(1, SS.count("tooltip.GameTooltip"))
   end)
 

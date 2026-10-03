@@ -1,4 +1,5 @@
 {"id": "60010ac12ba06000", "field": "text", "en": "How interesting... the Stone possesses great magical potential, but in a purely raw form...", "hash": "60010ac12ba06000", "src": "vmangos@13b49dc"}
+{"id": "600228f9cb01be05", "field": "text", "en": "The skycutter that arrives here will take you right to Dalaran City.", "hash": "600228f9cb01be05", "src": "forever-vo@025070f", "npcs": [275269]}
 {"id": "6008cd3f3eb50aa4", "field": "text", "en": "Spirits of Water, I give you praise, and I beg of you a favor. You have heard $n's pleas, and I trust $ghis:her; intent is noble. Please, will you aid us?", "hash": "6008cd3f3eb50aa4", "src": "vmangos@13b49dc"}
 {"id": "600cec5684480ff4", "field": "text", "en": "Leave this sacred place or perish!", "hash": "600cec5684480ff4", "src": "vmangos@13b49dc"}
 {"id": "600df1dce5be9123", "field": "text", "en": "The Great One will smash you!", "hash": "600df1dce5be9123", "src": "vmangos@13b49dc"}
@@ -11,6 +12,7 @@
 {"id": "603427210dab9a79", "field": "text", "en": "Forgive me, $n! Your death only adds to my failure! ", "hash": "603427210dab9a79", "src": "vmangos@13b49dc"}
 {"id": "603bccf17be772dc", "field": "text", "en": "Worthless $n!  Your friends will join you soon enough!", "hash": "603bccf17be772dc", "src": "vmangos@13b49dc"}
 {"id": "603e294f2182d8a3", "field": "text", "en": "I am ready to begin.", "hash": "603e294f2182d8a3", "src": "vmangos@13b49dc"}
+{"id": "6048201cfe702e82", "field": "text", "en": "Of course we trade in gold! It is a universal currency, after all.\r\n\r\nHowever, we have our own system for exchanges made amongst ourselves. It is known as Merchant's Favor, and it effectively abstracts away the ever-fluctuating value of gold and silver. This ensures consistent, fair, and equitable trade between members of the Azeroth Commerce Authority. Before you ask, no, it cannot be liquidated into gold.\r\n\r\nWe still use gold for simple trades such as basic threads or alchemy vials, you know - everyday crafts. Otherwise we rely on Merchant's Favor.\r\n\r\nThe more you help with our lost shipments and influx of crafting orders, the more Favor you will earn!", "hash": "6048201cfe702e82", "src": "forever-vo@025070f", "npcs": [256391]}
 {"id": "604df8d9d4037280", "field": "text", "en": "I wish to see my enemies, Ryson. Show them to me.", "hash": "604df8d9d4037280", "src": "vmangos@13b49dc"}
 {"id": "604ebac2035c954d", "field": "text", "en": "You there. You're welcome to take the contents of my cauldron. It was to be the second stage of my plan - amorous clothing.", "hash": "604ebac2035c954d", "src": "vmangos@13b49dc"}
 {"id": "60526e0b544ae8c0", "field": "text", "en": "Reginald... I... I am sorry.", "hash": "60526e0b544ae8c0", "src": "vmangos@13b49dc"}

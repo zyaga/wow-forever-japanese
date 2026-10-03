@@ -297,7 +297,8 @@ def _annotate_branches(row: dict[str, Any]) -> None:
         return
     texts = [v.en for v in b.variants]
     pairs = align.indistinguishable(texts, texts, [v.shape for v in b.variants], set(), english=True)
-    if align.never_shown(pairs, len(texts)):
+    # a sectioned line's paragraphs are told apart by their opening words, not by which variant passes
+    if not b.sectioned and align.never_shown(pairs, len(texts)):
         row[_DROPPED] = "branches_indistinguishable"
         return
     row["slots"] = b.slots

@@ -41,4 +41,5 @@ WFJ.Data.add("gossip", {
   ["b7e35903aba8f524"] = { "肉体も精神も強い。これに勝る組み合わせはない！Hunter's HallにいるSark Ragetotemのもとで、自らの運命を見つけるがいい。", "." },
   ["b7ee32bb93e247e6"] = { "Colossusを研究し理解することが、Qirajiに対して必要な優位を我々にもたらしてくれる。", "." },
   ["b7fcdec6b7db1938"] = { "Frostwolf GraveyardがAllianceに奪われた！", "." },
+  ["b7ff2d79351b6cff"] = { "影の裂け目へ行き、その地区の中心近くにいるSpellweaver Mon'yeを訪ねるといい。", "." },
 })

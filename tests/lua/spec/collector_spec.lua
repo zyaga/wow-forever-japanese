@@ -638,3 +638,40 @@ describe("Core/Collector short names and h1f", function()
     assert.is_table(collected.entries)
   end)
 end)
+
+
+describe("Core/Collector plural class and race words", function()
+  local C, N, Hs
+  before_each(function()
+    local ns = loadCollector()
+    C, N, Hs = ns.Collector, ns.Normalize, ns.Hash
+  end)
+  local function key(en) return Hs.key(N.v1(en)) end
+  local function has(list, k)
+    for _, v in ipairs(list) do if v == k then return true end end
+    return false
+  end
+
+  it("a plural the server built from $cs or $Rs finds the line stored with the token", function()
+    local druid = { name = "Wowforever", class = "Druid", race = "Night Elf" }
+    local live = "Well met, Wowforever. It is good to see that druids like yourself are taking an active part."
+    assert.is_true(has(C.keys(live, druid),
+      key("Well met, $n. It is good to see that $cs like yourself are taking an active part.")))
+    local orc = { name = "Grok", class = "Warrior", race = "Orc" }
+    assert.is_true(has(C.keys("Orcs like you, Grok, are welcome.", orc), key("$Rs like you, $N, are welcome.")))
+  end)
+
+  it("a literal plural still finds the line stored with the word", function()
+    local druid = { name = "Wowforever", class = "Druid", race = "Night Elf" }
+    local live = "The druids of Moonglade await, Wowforever."
+    assert.is_true(has(C.keys(live, druid), key("The druids of Moonglade await, $N.")))
+  end)
+end)
+
+describe("Core/Collector recorded text keeps a literal plural", function()
+  it("an Orc reading 'the orcs of Durotar' records the word, not $Rs", function()
+    local ns = loadCollector()
+    local orc = { name = "Grok", class = "Warrior", race = "Orc" }
+    assert.are.equal("Kill the orcs of Durotar, $N.", ns.Collector.text("Kill the orcs of Durotar, Grok.", orc))
+  end)
+end)

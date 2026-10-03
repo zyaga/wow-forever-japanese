@@ -19,6 +19,7 @@
 {"id": "ca52fba6e1b37752", "field": "text", "en": "Aha!  There it is.", "hash": "ca52fba6e1b37752", "src": "vmangos@13b49dc"}
 {"id": "ca6ff14700ce168e", "field": "text", "en": "Alright! Alright! We surrender... Just put your weapons down, I'll cooperate!", "hash": "ca6ff14700ce168e", "src": "vmangos@13b49dc"}
 {"id": "ca71b8a5ced3b2d3", "field": "text", "en": "May your elders bless you, $n, and bring you luck in the coming year.", "hash": "ca71b8a5ced3b2d3", "src": "vmangos@13b49dc"}
+{"id": "ca73de4a58b7f38b", "field": "text", "en": "Pleased to meet you! If you like to tinker, you have come to the right place!", "hash": "ca73de4a58b7f38b", "src": "forever-vo@025070f", "npcs": [256733]}
 {"id": "ca7d815d670ae7ea", "field": "text", "en": "If you are looking to become a mighty paladin, there is no better teacher then Lord Grayson Shadowbreaker. He can be found in the Cathedral of Light in Cathedral Square.", "hash": "ca7d815d670ae7ea", "src": "vmangos@13b49dc"}
 {"id": "ca820b23db15e805", "field": "text", "en": "Die, $R!  These lands belong to the Stonesplinter Tribe!", "hash": "ca820b23db15e805", "src": "vmangos@13b49dc"}
 {"id": "ca856c88f471610b", "field": "text", "en": "What's happening?", "hash": "ca856c88f471610b", "src": "vmangos@13b49dc"}

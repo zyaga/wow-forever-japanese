@@ -15,6 +15,7 @@
 {"id": "4641f6a1582cfcfd", "field": "text", "en": "Good day, Elling!  Hullo Elaine!  Let me have a wheel of bleu cheese, eh?", "hash": "4641f6a1582cfcfd", "src": "vmangos@13b49dc"}
 {"id": "4642f9e280d27436", "field": "text", "en": "Hip hip, hoorah!", "hash": "4642f9e280d27436", "src": "vmangos@13b49dc"}
 {"id": "464728cfea218e38", "field": "text", "en": "Quite the riveting tale.  Now I know why there was so much dust on that book.", "hash": "464728cfea218e38", "src": "vmangos@13b49dc"}
+{"id": "464e73002c357179", "field": "text", "en": "Greetings, $c.\r\n\r\nI can show you how to weave magic about yourself to change the appearance of your equipment, if you so desire. Do you wish to utilize my services?", "hash": "464e73002c357179", "src": "forever-vo@025070f", "npcs": [270513, 270581, 270582]}
 {"id": "4653241155467559", "field": "text", "en": "%s holds the limp body of Taelan Fordring and softly sobs.", "hash": "4653241155467559", "src": "vmangos@13b49dc"}
 {"id": "465ad121b64fa674", "field": "text", "en": "Tell me of Drek'Thar.", "hash": "465ad121b64fa674", "src": "vmangos@13b49dc"}
 {"id": "465b376b5b71c1c2", "field": "text", "en": "Auction House", "hash": "465b376b5b71c1c2", "src": "vmangos@13b49dc"}
@@ -57,4 +58,5 @@
 {"id": "46f0a780f880dda6", "field": "text", "en": "I've got a lot going on out here in Desolace, $N. Roetten wants us to pick up some reagents for one of our clients as well as fetch some of these lost items.$B$BSeein' as you're here to help out, why don't we get started?", "hash": "46f0a780f880dda6", "src": "vmangos@13b49dc"}
 {"id": "46f30266f8100ece", "field": "text", "en": "%s points to the parchment on the ground.", "hash": "46f30266f8100ece", "src": "vmangos@13b49dc"}
 {"id": "46fac97e1fed0da7", "field": "text", "en": "Another fine day in the jungle!  It's going to be quite a hunt, I can feel it.  Once Barnil is done cleaning the guns, I'm taking the hunting party deep into the twisting vines.  Not such a bad way for an old war vet to spend his retirement, eh?", "hash": "46fac97e1fed0da7", "src": "vmangos@13b49dc"}
+{"id": "46ff34188b9e6fe2", "field": "text", "en": "Well well!  You've come to the right place to learn Mining, boyo!  Geofram Bouldertoe himself resides at the Deepmountain Mining Guild.  Ye couldn't ask for a better instructor than him.", "hash": "46ff34188b9e6fe2", "src": "forever-vo@025070f", "npcs": [5595]}
 {"id": "46ff448296f5760b", "field": "text", "en": "%s emerges from the shadows to defend the cauldron!", "hash": "46ff448296f5760b", "src": "vmangos@13b49dc"}
