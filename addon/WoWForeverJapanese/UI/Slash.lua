@@ -457,6 +457,10 @@ function Slash.handle(msg)
     return say("readings %s", fmt(S.get("readings.enabled")))
   end
   if lower == "togglekey" then return Slash.togglekey(words[2], words[3]) end
+  if lower == "log" then -- the diagnostics log (Core/Diag): the last N entries, 10 by default
+    for _, line in ipairs(WFJ.Diag.lines(words[2])) do say("%s", line) end
+    return
+  end
   if lower == "collector" and Slash.collector(words[2] and words[2]:lower(), words[3] and words[3]:lower()) then
     return
   end

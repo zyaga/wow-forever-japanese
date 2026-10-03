@@ -305,7 +305,7 @@ function Q.install()
         function line.GetHeight(l) return l.h end
         self.usedLines[objectiveKey] = line
       end
-      line.parentBlock, line.used = self, true -- GetLine (:97–100)
+      line.parentBlock, line.used, line.objectiveKey = self, true, objectiveKey -- GetLine (:97–101)
       line.Text.text = text
       local h = line.Text:GetHeight()
       line:SetHeight(h)
@@ -345,9 +345,10 @@ function Q.install()
     else
       block.height = block.height + Q.OBJECTIVE_HEIGHT -- one objective line (AddObjective)
     end
-    block:SetHeight(block.height)                     -- LayoutBlock
+    self:LayoutBlock(block)
     return true
   end
+  function tracker.LayoutBlock(_, block) block:SetHeight(block.height) end -- module.lua:349–354
   function Q.updateTracker()
     for _, id in ipairs(Q.log) do
       if Q.watched[id] then
@@ -356,7 +357,18 @@ function Q.install()
         tracker.UpdateSingle(tracker, quest) -- EnumQuestWatchData: func(self, quest), func read at call time
       end
     end
+    tracker:UpdateHeight()
   end
+  -- UpdateHeight (module.lua:223–231): the module frame from its contentsHeight, the sum of its blocks' height fields
+  -- (InternalAddBlock, :417); the frame height is recorded as tracker.frameHeight
+  function tracker:UpdateHeight()
+    local sum = 0
+    for _, block in pairs(self.usedBlocks) do sum = sum + (block.height or 0) end
+    self.contentsHeight = sum
+    self.frameHeight = sum
+  end
+  function tracker.SetHeight(t, h) t.frameHeight = h end
+  function tracker.GetHeight(t) return t.frameHeight end
   Stub.loadedAddons.Blizzard_ObjectiveTracker = true
   return Q
 end

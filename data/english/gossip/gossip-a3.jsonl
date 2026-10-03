@@ -31,5 +31,6 @@
 {"id": "a3de7cc6a4b74960", "field": "text", "en": "%s is jolted back to life!", "hash": "a3de7cc6a4b74960", "src": "vmangos@13b49dc"}
 {"id": "a3e1eba3f344a026", "field": "text", "en": "You're fired! <Cough...Cork clears throat.> I mean, help!", "hash": "a3e1eba3f344a026", "src": "vmangos@13b49dc"}
 {"id": "a3e4eea3794ed215", "field": "text", "en": "You like candy?  I like candy.", "hash": "a3e4eea3794ed215", "src": "vmangos@13b49dc"}
+{"id": "a3e8381856fc7023", "field": "text", "en": "What about the Al'Aketh? Can they help?", "hash": "a3e8381856fc7023", "src": "collector@1.60.1.70205", "npcs": [251902]}
 {"id": "a3f33c7d254703b6", "field": "text", "en": "The Light burns bright in you, Davil.  I will enjoy snuffing it out!", "hash": "a3f33c7d254703b6", "src": "vmangos@13b49dc"}
 {"id": "a3f6b893f57b6a67", "field": "text", "en": "Then let us pretend that you undergo the long and arduous task of creating the bane necessary to break through the demonic wards placed upon the triad. What would be your next course of action? To face the Defiler in his lair?$B$B<Loramus laughs.>\n", "hash": "a3f6b893f57b6a67", "src": "vmangos@13b49dc"}

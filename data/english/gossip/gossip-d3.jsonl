@@ -28,6 +28,7 @@
 {"id": "d3cbf7702babc5c8", "field": "text", "en": "%s spits on the corpse of the fallen zealot.", "hash": "d3cbf7702babc5c8", "src": "vmangos@13b49dc"}
 {"id": "d3cccba5dd162ef7", "field": "text", "en": "I'm finished.  The parchment is made.  Now, return to Gorzeeki...", "hash": "d3cccba5dd162ef7", "src": "vmangos@13b49dc"}
 {"id": "d3cf21e9bb9205c1", "field": "text", "en": "Cherry pie is my favoritist food in all of Azeroth.", "hash": "d3cf21e9bb9205c1", "src": "vmangos@13b49dc"}
+{"id": "d3d6202ada6b18df", "field": "text", "en": "The Wind Spirits have left us.$B$BNow, only mindless echoes remain. Be wary, however. These winds are neither kind, nor gentle.", "hash": "d3d6202ada6b18df", "src": "collector@1.60.1.70205", "npcs": [249363]}
 {"id": "d3dcfef744adb4db", "field": "text", "en": "This forest can be confusing! Be careful out there.", "hash": "d3dcfef744adb4db", "src": "vmangos@13b49dc"}
 {"id": "d3eeda5f3a0b2862", "field": "text", "en": "WHO DARES?! You shall be destroyed!", "hash": "d3eeda5f3a0b2862", "src": "vmangos@13b49dc"}
 {"id": "d3f12fac7367f76d", "field": "text", "en": "Do you expect me to cower before the mighty legion of $n?$B$BYou are nothing to me. Less than nothing. Had I desired your head, it would have been presented to me on a pike.$B$BYou have made the mistake that all mortals make.$B$B<Lord Victor Nefarius sighs.>$B$BTime does strange things to those that use it as a form of currency.\n", "hash": "d3f12fac7367f76d", "src": "vmangos@13b49dc"}

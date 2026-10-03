@@ -196,10 +196,29 @@ local function filled(index, key, args, en)
   return ja
 end
 
+-- The death recap link the client posts in chat: DEATH_RECAP_LINK, "|cff71d5ff|Hdeath:%i|h[You died.]|h"; its label,
+-- written there literally, is DEATH_RECAP_TEXT's English [verified: Forever GlobalStrings 1.60.1.70170]. Only the
+-- label inside a `death:` link changes; the link, its id and its colour stay exactly as the client wrote them, and
+-- only while the client's own DEATH_RECAP_TEXT is the English the shipped row was checked against. → line | nil
+function ChatSystem.deathLink(line)
+  local index = WFJ.UIIndex
+  local row = index and index.rows and index.rows.DEATH_RECAP_TEXT
+  if type(line) ~= "string" or type(row) ~= "table" or row[3] ~= "." or type(index.hash) ~= "function" then
+    return nil
+  end
+  local en = Compat.resolve("DEATH_RECAP_TEXT")
+  if type(en) ~= "string" or en == "" or index.hash(en) ~= row[2] then return nil end
+  local label = ("|h[" .. en .. "]|h"):gsub("%p", "%%%0")
+  local out, n = line:gsub("(|Hdeath:%d+)" .. label, function(link) return link .. "|h[" .. row[1] .. "]|h" end)
+  return n > 0 and out or nil
+end
+
 -- `faction` (optional): the line is a reputation line, which may also be a FriendshipGain row.
 function ChatSystem.translate(en, exactOnly, faction)
   local index = WFJ.UIIndex
   if not index or type(en) ~= "string" or en == "" then return nil end
+  local death = ChatSystem.deathLink(en)
+  if death then return death end
   local key, args = index:exactKey(en), nil
   if not key and not exactOnly then
     key, args = index:matchOnly(en, faction and factionKeys(index) or chatKeys(index))

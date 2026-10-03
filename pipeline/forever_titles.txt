@@ -15,7 +15,7 @@ blizzard_eventtrace blizzard_eventtrace/blizzard_eventtrace.lua:111 key EVENTTRA
 blizzard_flightmap blizzard_flightmap/blizzard_flightmap.lua:17 key FLIGHT_MAP flightmap  # titleText is FLIGHT_MAP from ResetTitleAndPortraitIcon (:12–14); the other value, FLIGHT_MAP_BASTION, is written only for the Shadowlands Bastion texture kit (fm_flightpathdataprovider.lua:40–48), excluded. UI/FlightMap: Labels.title on FlightMapFrame.BorderFrame, only FLIGHT_MAP
 blizzard_framexml blizzard_framexml/achievementdisplayframe.lua:14 dynamic  # the body of that method (self.Title:SetText(title)); same consumer
 blizzard_framexml blizzard_framexml/achievementdisplayframe.lua:9 dynamic  # AchievementDisplayMixin:SetTitle(self.title), the template's own method writing self.Title, not the PortraitFrame title; its only consumer is blizzard_alliedracesui (alliedracesframeui.xml:143, unreachable)
-blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:2461 key IGNORE_LIST friends  # the ignore list window, Labels.title, friends_camelot_spec
+blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:2462 key IGNORE_LIST friends  # the ignore list window, Labels.title, friends_camelot_spec
 blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:452 key CONTACTS_LIST_TITLE friends  # Labels.title, friends_camelot_spec
 blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:455 key CONTACTS_RECENT_ALLIES_TITLE friends  # Labels.title, friends_camelot_spec
 blizzard_friendsframe blizzard_friendsframe/camelot/friendsframe.lua:458 key RECRUIT_A_FRIEND friends  # Labels.title, friends_camelot_spec
@@ -27,7 +27,7 @@ blizzard_inspectui blizzard_inspectui/camelot/blizzard_inspectui.lua:168 name  #
 blizzard_iteminteractionui blizzard_iteminteractionui/blizzard_iteminteractionui.lua:265 dynamic  # frameData.titleText: the interaction's own data (C_ItemInteraction), not a GlobalString; kept in UI/ItemInteraction's NEVER_TOUCH, iteminteraction_spec
 blizzard_itemupgradeui blizzard_itemupgradeui/mainline/blizzard_itemupgradeui.lua:22 key ITEM_UPGRADE itemupgrade  # UI/ItemUpgrade Labels.title, itemupgrade_spec; ITEM_UPGRADE is un-excluded (unexclude.txt)
 blizzard_legacysystem blizzard_legacysystem/blizzard_legacychallenges.lua:36 key LEGACY_CHALLENGE_FRAME_TITLE legacy  # ChallengesPage OnShow; UI/Legacy.lua Labels.title
-blizzard_legacysystem blizzard_legacysystem/blizzard_legacyrewardtrack.lua:31 key LEGACY_TRACK_FRAME_TITLE legacy  # RewardTrackPage OnShow; UI/Legacy.lua Labels.title restricted to the three page titles
+blizzard_legacysystem blizzard_legacysystem/blizzard_legacyrewardtrack.lua:24 key LEGACY_TRACK_FRAME_TITLE legacy  # RewardTrackPage OnShow; UI/Legacy.lua Labels.title restricted to the three page titles
 blizzard_legacysystem blizzard_legacysystem/blizzard_legacytree.lua:25 key LEGACY_TREE_FRAME_TITLE legacy  # TreePage OnShow; UI/Legacy.lua Labels.title
 blizzard_mailframe blizzard_mailframe/mailframe.lua:217 key INBOX mail  # rendered today by UI/Mail after MailFrameTab_OnClick (its own resolution, not Labels.title), mail_camelot_spec
 blizzard_mailframe blizzard_mailframe/mailframe.lua:225 key SENDMAIL mail  # rendered today by UI/Mail after MailFrameTab_OnClick, mail_camelot_spec
@@ -59,7 +59,7 @@ blizzard_professionscustomerorders blizzard_professionscustomerorders/blizzard_p
 blizzard_professionstemplates blizzard_professionstemplates/blizzard_professionsqualitydialog.lua:11 dynamic  # PROFESSIONS_QUALITY_DIALOG_TITLE on the reagent-quality dialog, opened only for a crafting-quality reagent slot (Dragonflight; not displayed for Vanilla recipes, excluded with that reason, in-game check)
 blizzard_scrappingmachineui blizzard_scrappingmachineui/blizzard_scrappingmachineui.lua:51 name  # SCRAPPING_MACHINE_TITLE ("Shred-Master Mk1"): a machine's name (names stay in English), kept in UI/ScrappingMachine's NEVER_TOUCH, scrappingmachine_spec
 blizzard_scrappingmachineui blizzard_scrappingmachineui/blizzard_scrappingmachineui.lua:65 name  # C_ScrappingMachineUI.GetScrappingMachineName(): the machine's name from the server, never touched
-blizzard_settingsdefinitions_frame blizzard_settingsdefinitions_frame/nameplates.lua:878 key NAMEPLATES_LABEL settingstutorials  # NamePlatesTutorialMixin:OnLoad SetTitle; Labels.title with the Options keys
+blizzard_settingsdefinitions_frame blizzard_settingsdefinitions_frame/nameplates.lua:879 key NAMEPLATES_LABEL settingstutorials  # NamePlatesTutorialMixin:OnLoad SetTitle; Labels.title with the Options keys
 blizzard_settingsdefinitions_frame blizzard_settingsdefinitions_frame/pingsystem.lua:157 key PING_SYSTEM_TUTORIAL_LABEL settingstutorials  # PingSystemTutorialMixin:OnLoad SetTitle; Labels.title with the Options keys
 blizzard_sharedxml blizzard_sharedxml/modelpreviewframe.lua:10 dynamic  # ModelPreviewFrame's PREVIEW title; the frame is shown only by blizzard_storeui (blizzard_shared_storeuiinsecure.lua:25–90): the store family's disposition, not a retail_lib window
 blizzard_sharedxml blizzard_sharedxml/portraitframe.lua:12 dynamic  # the SetTitle helper itself (PortraitFrameMixin:SetTitle writes TitleContainer.TitleText); each caller's site is dispositioned where it calls it; Labels.title hooks this per window
@@ -73,7 +73,7 @@ blizzard_uipanels_game blizzard_uipanels_game/camelot/characterframe.lua:257 key
 blizzard_uipanels_game blizzard_uipanels_game/mainline/bankframetemplates.lua:1176 dynamic  # the definition of BankPanelPromptMixin:SetTitle(title): it writes the prompt's own Title FontString, not a window title; its one caller passes client data (:1242)
 blizzard_uipanels_game blizzard_uipanels_game/mainline/bankframetemplates.lua:1242 dynamic  # tabData.purchasePromptTitle: C_Bank data (the bank-tab purchase prompt), not a GlobalString
 blizzard_uipanels_game blizzard_uipanels_game/mainline/bankframetemplates.lua:23 ruled  # BANK stays English by a recorded decision; the other value, ACCOUNT_BANK_PANEL_TITLE, is the account (warband) bank's
-blizzard_uipanels_game blizzard_uipanels_game/mainline/containerframe.lua:2914 key COMBINED_BAG_TITLE bags  # rendered today by UI/Bags after ContainerFrame_GenerateFrame (its own per-bag-id resolution, not Labels.title), bags_camelot_spec
+blizzard_uipanels_game blizzard_uipanels_game/mainline/containerframe.lua:2918 key COMBINED_BAG_TITLE bags  # rendered today by UI/Bags after ContainerFrame_GenerateFrame (its own per-bag-id resolution, not Labels.title), bags_camelot_spec
 blizzard_uipanels_game blizzard_uipanels_game/mainline/containerframe.lua:917 name  # C_Container.GetBagName: the bag's item name (names stay in English); UI/Bags drops it
 blizzard_uipanels_game blizzard_uipanels_game/mainline/itemtextframe.lua:35 name  # ItemTextGetItem(): the book / letter / plaque's name
 blizzard_uipanels_game blizzard_uipanels_game/mainline/merchantframe.lua:275 name  # UnitName("npc"): the merchant's name (names stay in English); Labels.title's `only` MERCHANT_BUYBACK drops it

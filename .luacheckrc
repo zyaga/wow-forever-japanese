@@ -33,7 +33,7 @@ read_globals = {
 
 -- Globals the addon defines (SavedVariables, slash registrations, bindings).
 globals = {
-  "SlashCmdList", "WFJ_DB", "WFJ_Collector", "SLASH_WFJ1", "SLASH_WFJ2", "BINDING_HEADER_WFJ", "BINDING_NAME_WFJ_TOGGLE",
+  "SlashCmdList", "WFJ_DB", "WFJ_Collector", "WFJ_Log", "SLASH_WFJ1", "SLASH_WFJ2", "BINDING_HEADER_WFJ", "BINDING_NAME_WFJ_TOGGLE",
   "WFJ_ToggleTranslation", "WFJ_RevealKey", "BINDING_NAME_WFJ_REVEAL",
   -- The TOC's AddonCompartmentFunc handlers (Blizzard's addon dropdown calls them by name)
   "WFJ_OnAddonCompartmentClick", "WFJ_OnAddonCompartmentEnter", "WFJ_OnAddonCompartmentLeave",

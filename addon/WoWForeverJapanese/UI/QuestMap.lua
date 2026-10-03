@@ -657,12 +657,17 @@ function QuestMap.onListUpdate()
         end
       end
     end
-    -- the rows' objective lines (and a complete quest's completion line, which matches nothing and stays)
+    -- the rows' objective lines; a complete quest's row is its completion text (GetQuestLogCompletionText), which
+    -- for a quest with no counted objectives is the quest's whole objective text, shown as the tracker shows it
+    -- [verified: blizzard_uipanels_game/mainline/questmapframe.lua:1891–1896, row.questID :1893]
     local objectives = type(scroll) == "table" and scroll.objectiveFramePool or nil
     if type(objectives) == "table" and type(objectives.EnumerateActive) == "function" then
       for row in objectives:EnumerateActive() do
         if type(row) == "table" then
-          QuestMap.showObjective(LIST, listObjectiveKey(row), row.Text, listObjectiveRefit(row))
+          local key, refit = listObjectiveKey(row), listObjectiveRefit(row)
+          if QuestMap.showObjective(LIST, key, row.Text, refit) == 0 then
+            QuestMap.showQuestText(LIST, key, row.Text, row.questID, refit)
+          end
         end
       end
     end
@@ -705,16 +710,67 @@ end
 -- ObjectiveTrackerBlockMixin:SetHeader writes the English, measures HeaderText:GetHeight() and stores it as
 -- block.height; AddObjective then adds each line's height and LayoutBlock sizes the block from block.height, the next
 -- block anchored to its BOTTOM [verified: blizzard_objectivetrackerblock.lua:134–158, 161–205;
--- blizzard_objectivetrackermodule.lua:254–282, 341–354, 422–446]. So a header is translated from a post-hook on the
--- BLOCK's SetHeader, before the objectives and the layout, and its height change goes into block.height. The
--- same refit serves a later rewrite (the modifier, a toggle) after the layout: block.height moves by the header's
--- height change and the block is sized again, which moves the blocks anchored below it. No MarkDirty: a relayout
--- re-runs SetHeader, our hook writes again, and a dirty mark from there would loop every frame. A modifier toggle does
--- not correct the module's contentsHeight (the next update recomputes it) [in-game check: a long title with the
--- tracker near its height limit].
-local headerHeights = setmetatable({}, { __mode = "k" }) -- block → the header height block.height was last built on
+-- blizzard_objectivetrackermodule.lua:254–282, 341–354, 422–446]. block.height is never written here: the module adds
+-- it into its contentsHeight (module.lua:417), which the container and Edit Mode's layout pass read, so a value this
+-- addon wrote there taints that whole pass (in game: the action bars' protected SetPoint blocked, the scenario
+-- tracker's aura read refused). The height the Japanese adds or removes is kept in `extra` instead and put on the
+-- block's frame only: after LayoutBlock (a post-hook on the module), and at once when a refit runs after the layout
+-- (the modifier, a toggle). The module's frame is sized the same way: UpdateHeight sets it from contentsHeight
+-- (module.lua:223–231) and the container anchors the next module and the background to its bottom (container.lua:
+-- 100–118), so a post-hook on UpdateHeight adds its blocks' extra to the frame, never to contentsHeight. contentsHeight
+-- stays the English one, so a tracker near its height limit may cut a block a line early or late [in-game check: a
+-- long title with the tracker near its height limit].
+local headerBase = setmetatable({}, { __mode = "k" }) -- block → its header's height in the English, at SetHeader
+local extra = setmetatable({}, { __mode = "k" }) -- block → { header = px, lines = { [line] = px } }
 local blockRefits = setmetatable({}, { __mode = "k" })
 local blocksHooked = setmetatable({}, { __mode = "k" })
+local blockModule = setmetatable({}, { __mode = "k" }) -- block → the module that last laid it out
+local moduleBase = setmetatable({}, { __mode = "k" }) -- module → the frame height its own UpdateHeight gave it
+
+local function extraOf(block)
+  local e = extra[block]
+  if not e then return 0 end
+  local total = e.header or 0
+  -- a line counts only while the block holds it: Reset clears `used` to nil and FreeLine leaves parentBlock set
+  -- [verified: blizzard_objectivetrackerblock.lua:39–40, 98–101]
+  local held = type(block.usedLines) == "table" and block.usedLines or {}
+  for line, px in pairs(e.lines) do
+    if line.used and held[line.objectiveKey] == line then total = total + px end
+  end
+  return total
+end
+
+-- The module's frame at the client's height plus its laid-out blocks' extra.
+function QuestMap.sizeModule(module)
+  local base = moduleBase[module]
+  if type(base) ~= "number" or type(module.SetHeight) ~= "function" then return end
+  local px = 0
+  for block, m in pairs(blockModule) do
+    if m == module and block.used ~= false then px = px + extraOf(block) end
+  end
+  module:SetHeight(base + px)
+end
+-- post-hook on a tracker module's UpdateHeight
+local function onModuleHeight(module)
+  if type(module) ~= "table" or type(module.GetHeight) ~= "function" then return end
+  moduleBase[module] = module:GetHeight()
+  QuestMap.sizeModule(module)
+end
+
+-- The block's frame at the client's height plus ours, and its module's frame with it.
+function QuestMap.sizeBlock(block)
+  if type(block) ~= "table" or type(block.height) ~= "number" or type(block.SetHeight) ~= "function" then return end
+  if not extra[block] then return end
+  local want = block.height + extraOf(block)
+  if type(block.GetHeight) == "function" and math.abs(block:GetHeight() - want) <= 0.5 then return end
+  block:SetHeight(want)
+  if blockModule[block] then QuestMap.sizeModule(blockModule[block]) end
+end
+-- post-hook on a tracker module's LayoutBlock(block)
+local function onLayoutBlock(module, block)
+  if type(block) == "table" then blockModule[block] = module end
+  QuestMap.sizeBlock(block)
+end
 
 local function blockRefit(block)
   local fn = blockRefits[block]
@@ -722,22 +778,25 @@ local function blockRefit(block)
   fn = function()
     local fs = block.HeaderText
     if type(fs) ~= "table" or type(fs.GetHeight) ~= "function" then return end
-    local h, old = fs:GetHeight(), headerHeights[block]
-    if type(h) ~= "number" then return end
-    headerHeights[block] = h
-    if type(old) ~= "number" or type(block.height) ~= "number" or h == old then return end
-    block.height = block.height + (h - old)
-    if type(block.SetHeight) == "function" then block:SetHeight(block.height) end
+    local h, base = fs:GetHeight(), headerBase[block]
+    if type(h) ~= "number" or type(base) ~= "number" then return end
+    local e = extra[block] or { lines = {} }
+    extra[block] = e
+    if e.header == h - base then return end
+    e.header = h - base
+    QuestMap.sizeBlock(block)
   end
   blockRefits[block] = fn
   return fn
 end
 
--- hooksecurefunc target on a block's SetHeader (and the late path below). → 1 | 0
+-- hooksecurefunc target on a block's SetHeader (and the late path below): a new layout of the block starts, so the
+-- height ours added is measured again. → 1 | 0
 function QuestMap.onBlockHeader(block)
   if type(block) ~= "table" then return 0 end
   local fs = block.HeaderText
-  if type(fs) == "table" and type(fs.GetHeight) == "function" then headerHeights[block] = fs:GetHeight() end
+  if type(fs) == "table" and type(fs.GetHeight) == "function" then headerBase[block] = fs:GetHeight() end
+  extra[block] = { header = 0, lines = {} }
   local n = showTitle(TRACKER, block.id, fs, blockRefit(block))
   WFJ.Render.updateBanner(TRACKER)
   return n
@@ -746,10 +805,11 @@ end
 -- ── tracker objective lines ─────────────────────────────────────────────────────────────────────────────────────
 -- AddObjective sets the line's text, sizes the line to the text's height and adds that height to block.height; the
 -- layout then sizes the block from block.height (blizzard_objectivetrackerblock.lua:161–209). A post-hook on the
--- BLOCK's AddObjective translates the line before the layout; its refit moves the line's height and block.height by
--- the text's height change, the way the header's refit does, only while the line is still sized to its text (an
--- overrideHeight line is left as the client sized it).
-local lineHeights = setmetatable({}, { __mode = "k" }) -- line → the text height its size was last built on
+-- BLOCK's AddObjective translates the line before the layout; its refit sizes the line to the Japanese and keeps the
+-- difference in the block's `extra` (block.height is never written, above), only while the line is still sized to
+-- its text (an overrideHeight line is left as the client sized it).
+local lineHeights = setmetatable({}, { __mode = "k" }) -- line → its text height in the English, at AddObjective
+local lineSizes = setmetatable({}, { __mode = "k" }) -- line → the height this addon last gave it
 local lineRefits = setmetatable({}, { __mode = "k" })
 local trackerObjectiveKey = WFJ.Labels.keyer("line.")
 
@@ -760,17 +820,19 @@ local function lineRefit(block, line)
   fn.run = function()
     local fs = line.Text
     if type(fs) ~= "table" or type(fs.GetHeight) ~= "function" or type(line.GetHeight) ~= "function" then return end
-    local h, old = fs:GetHeight(), lineHeights[line]
-    if type(h) ~= "number" then return end
-    lineHeights[line] = h
-    if type(old) ~= "number" or h == old or math.abs(line:GetHeight() - old) > 0.5 then return end
+    local h, base = fs:GetHeight(), lineHeights[line]
+    if type(h) ~= "number" or type(base) ~= "number" then return end
+    local sized = lineSizes[line] or base
+    if math.abs(line:GetHeight() - sized) > 0.5 then return end
     -- a freed line keeps its text and our record, but it is no longer this block's
-    if line.parentBlock ~= block or line.used == false then return end
+    if line.parentBlock ~= block or not line.used then return end
+    if h == sized then return end
     line:SetHeight(h)
-    if type(block.height) == "number" then
-      block.height = block.height + (h - old)
-      if type(block.SetHeight) == "function" then block:SetHeight(block.height) end
-    end
+    lineSizes[line] = h
+    local e = extra[block] or { lines = {} }
+    extra[block] = e
+    e.lines[line] = h - base
+    QuestMap.sizeBlock(block)
   end
   lineRefits[line] = fn
   return fn.run
@@ -782,7 +844,8 @@ function QuestMap.onAddObjective(block, objectiveKey)
   local line = type(lines) == "table" and lines[objectiveKey] or nil
   if type(line) ~= "table" or type(line.Text) ~= "table" then return 0 end
   local fs = line.Text
-  if type(fs.GetHeight) == "function" then lineHeights[line] = fs:GetHeight() end
+  if type(fs.GetHeight) == "function" then lineHeights[line], lineSizes[line] = fs:GetHeight(), nil end
+  if extra[block] then extra[block].lines[line] = nil end -- re-added: measured again from the English
   local recKey, refit = trackerObjectiveKey(line), lineRefit(block, line)
   local n = QuestMap.showObjective(TRACKER_OBJECTIVES, recKey, fs, refit)
   if n == 0 then n = QuestMap.showQuestText(TRACKER_OBJECTIVES, recKey, fs, block.id, refit) end
@@ -801,7 +864,9 @@ function QuestMap.showQuestText(surface, recKey, fs, questID, refit)
   if type(WFJ.IsQuestFieldEnglish) ~= "function" or not WFJ.IsQuestFieldEnglish(questID, "objectives", en) then
     return 0
   end
-  return WFJ.Render.show(surface, recKey, fs, en, "quests", "quest.objectives", questID, { refit = refit }) and 1 or 0
+  -- a list or tracker row: compact (never the missing marker inline), checked against the live English
+  return WFJ.Render.show(surface, recKey, fs, en, "quests", "quest.objectives", questID,
+    { refit = refit, compact = true, live = en }) and 1 or 0
 end
 
 -- ── content-tracking lines ──────────────────────────────────────────────────────────────────────────────────────
@@ -823,7 +888,8 @@ function QuestMap.onContentObjective(block, objectiveKey)
   local line = type(lines) == "table" and lines[objectiveKey] or nil
   if type(line) ~= "table" or type(line.Text) ~= "table" then return 0 end
   local fs = line.Text
-  if type(fs.GetHeight) == "function" then lineHeights[line] = fs:GetHeight() end
+  if type(fs.GetHeight) == "function" then lineHeights[line], lineSizes[line] = fs:GetHeight(), nil end
+  if extra[block] then extra[block].lines[line] = nil end -- re-added: measured again from the English
   local n = WFJ.Labels.show(TRACKER_OBJECTIVES, trackerObjectiveKey(line), fs, lineRefit(block, line), CONTENT_ONLY)
   WFJ.Render.updateBanner(TRACKER_OBJECTIVES)
   return n
@@ -833,6 +899,8 @@ end
 function QuestMap.onContentBlock(module, id, template)
   if type(module) ~= "table" or type(module.GetExistingBlock) ~= "function" then return end
   local block = module:GetExistingBlock(id, template)
+  -- GetBlock resets the block for a new layout and a content block has no SetHeader hook: its extra starts over here
+  if type(block) == "table" then extra[block] = nil end
   if type(block) ~= "table" or contentBlocksHooked[block] or type(block.AddObjective) ~= "function" then return end
   contentBlocksHooked[block] = true
   hooksecurefunc(block, "AddObjective", QuestMap.onContentObjective)
@@ -865,11 +933,13 @@ function QuestMap.onTrackerUpdate(module, quest)
   local block = module:GetExistingBlock(questID)
   if type(block) ~= "table" or block.id ~= questID then return 0 end
   if hookBlock(block) then
-    -- built before we loaded: its lines were written without us too
+    -- built before we loaded: its lines were written without us too. The header first: it starts the block's
+    -- extra over, which would otherwise drop the lines' just recorded
+    local n = QuestMap.onBlockHeader(block)
     if type(block.usedLines) == "table" then
       for objectiveKey in pairs(block.usedLines) do QuestMap.onAddObjective(block, objectiveKey) end
     end
-    return QuestMap.onBlockHeader(block)
+    return n
   end
   return 0
 end
@@ -959,6 +1029,10 @@ function QuestMap.hookTrackers()
   hookMethod("questTracker", "UpdateSingle", QuestMap.onTrackerUpdate)
   hookMethod("campaignTracker", "UpdateSingle", QuestMap.onTrackerUpdate)
   hookMethod("adventureTracker", "GetBlock", QuestMap.onContentBlock)
+  for _, key in ipairs({ "questTracker", "campaignTracker", "adventureTracker" }) do
+    hookMethod(key, "LayoutBlock", onLayoutBlock) -- the block's frame takes the height the Japanese adds
+    hookMethod(key, "UpdateHeight", onModuleHeight) -- and so does the module's frame
+  end
   -- the headers' writers, called by method on the instance (a later Init / SetHeader); both already ran once for a
   -- tracker loaded before us, so the headers are shown now too
   hookMethod("trackerFrame", "Init", QuestMap.showTrackerLabels)

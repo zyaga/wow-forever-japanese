@@ -10,6 +10,7 @@
 {"id": "9d34a3c13518b6b4", "field": "text", "en": "Me smell stench of the living!", "hash": "9d34a3c13518b6b4", "src": "vmangos@13b49dc"}
 {"id": "9d3b29d679699ef1", "field": "text", "en": "Bring it on!", "hash": "9d3b29d679699ef1", "src": "vmangos@13b49dc"}
 {"id": "9d3ea46fe561671d", "field": "text", "en": "The Stormpike Graveyard was taken by the Horde!", "hash": "9d3ea46fe561671d", "src": "vmangos@13b49dc"}
+{"id": "9d3ffd35d2b66513", "field": "text", "en": "May you tell me more about the state of Zephras Isle and the Windshapers?", "hash": "9d3ffd35d2b66513", "src": "collector@1.60.1.70205", "npcs": [251487]}
 {"id": "9d483e0c650d9e7b", "field": "text", "en": "I have come to learn, Daio.", "hash": "9d483e0c650d9e7b", "src": "vmangos@13b49dc"}
 {"id": "9d4a547634de8b4f", "field": "text", "en": "Rise and defend your master!", "hash": "9d4a547634de8b4f", "src": "vmangos@13b49dc"}
 {"id": "9d4d41e5c5556545", "field": "text", "en": "Off to Orgrimmar with you, $n!", "hash": "9d4d41e5c5556545", "src": "vmangos@13b49dc"}

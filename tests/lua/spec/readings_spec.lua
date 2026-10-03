@@ -223,6 +223,18 @@ describe("Readings", function()
       assert.is_nil(cover.scripts.OnUpdate)
     end)
 
+    it("in combat a line with no cover yet gets none (the propagate call is protected); out of combat it does",
+    function()
+      local fs = questFs()
+      Stub.combat = true
+      R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+      assert.is_nil(coverOf(fs))
+      Stub.combat = false
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.is_true(coverOf(fs).propagate)
+    end)
+
     it("the modifier (English) detaches; letting go attaches again", function()
       local fs = questFs()
       R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)

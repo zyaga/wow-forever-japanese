@@ -10,9 +10,11 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
+- A problem log for the addon (`/wfj log`). It notes when the game blocks the addon or a hooked part of the game stops answering, and keeps it across reloads so a problem can be traced afterwards.
 - Japanese for the progress and turn-in text of 421 quests (630 lines), mostly ones new in Forever, from text Forever players recorded with the forever-vo addon. Its NPC greetings are read too.
 - What NPCs say in chat is now recorded by the addon's collector, so Forever's own NPC speech can be translated.
 - Send the English the addon recorded straight from the game: the **Send English** button on the English Collector page (or `/wfj collector send`) gives you one link that opens a filled-in GitHub issue. Click **I sent it** afterwards, and the next send holds only new lines. Lines that have a translation by then are left out.
+- Japanese for 31 NPC lines on Zephras Isle, the Skyborne starting area, recorded by the addon's collector.
 
 ### Changed
 - The collector's issue form is now *Collected English*, filled in from the game's send window. The saved file is only needed for a send too long to paste, and the settings page shows where it is (the beta's own folder on the beta).
@@ -26,6 +28,11 @@ an old setting stops working). A release moves those lines under its version num
 - A quest Forever repeats under several ids (such as Camping 101) shows the progress and turn-in text already translated for another copy, when its own text is the same.
 - An error when hovering a creature whose quest title the game keeps hidden from addons.
 - The Camp Benefits buff shows in Japanese, whichever camp items you have.
+- A stat gain in an item comparison ("+17 Armor") keeps its green number in Japanese.
+- "Interface action failed because of an AddOn" in combat, when a Japanese line appeared for the first time.
+- Lua errors and blocked action bars when the game rearranged the screen (a level up, Edit Mode): the quest tracker no longer changes a value the game's own layout reads.
+- The death recap link in chat ("[You died.]") shows in Japanese.
+- In the quest log list, a finished quest with no counted objectives shows its objective line in Japanese, as the tracker already did.
 
 ## 0.1.0-alpha.5 - 2026-10-03
 

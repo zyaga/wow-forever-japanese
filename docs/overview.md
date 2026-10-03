@@ -12,7 +12,7 @@
 - [Glossary](glossary.md): the project's vocabulary
 - [Roadmap](roadmap.md): what is done and what is next
 - [Decisions](adr/): why things are the way they are
-- [Architecture](architecture/) · [Systems](systems/): how it works ([Readings](systems/readings.md): the word card; [Fix reports](systems/fix-reports.md): reporting a line from the game)
+- [Architecture](architecture/) · [Systems](systems/): how it works ([Readings](systems/readings.md): the word card; [Fix reports](systems/fix-reports.md): reporting a line from the game; [Diagnostics](systems/diagnostics.md): the addon's problem log)
 - [Content](content/translation-style-guide.md): the translation style guide
 - [Research](research/): client surveys and mechanisms behind the decisions
 - [Testing](testing/strategy.md)

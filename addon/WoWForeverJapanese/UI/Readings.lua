@@ -238,9 +238,15 @@ local function onLeave(cover)
   clearHover(cover)
 end
 
+-- → the FontString's cover, made on first need; nil in combat when there is none yet: SetPropagateMouseMotion is a
+-- protected call the client blocks in combat [verified: forever blizzard_apidocumentationgenerated/
+-- simplescriptregionapidocumentation.lua:689–691, IsProtectedFunction], so a line shown first in combat gets its
+-- cover the next time it is attached out of combat.
 local function coverFor(fs)
   local cover = covers[fs]
   if cover then return cover end
+  local inCombat = Compat.resolve("InCombatLockdown")
+  if type(inCombat) == "function" and inCombat() then return nil end
   cover = CreateFrame("Frame", nil, fs:GetParent())
   cover:SetAllPoints(fs)
   cover:SetMouseMotionEnabled(true)
@@ -329,6 +335,7 @@ function View.attach(rec)
   end
   local fs = region(rec)
   local cover = coverFor(fs)
+  if not cover then return false end
   -- QuestInfo_Display moves its FontStrings between the quest window's panels, the quest map details pane and
   -- its popup (UI/QuestMap.lua: re-parented [verified: mainline/questinfo.lua:99–110]); the cover follows, or it
   -- would stay under a hidden parent and never see the mouse.

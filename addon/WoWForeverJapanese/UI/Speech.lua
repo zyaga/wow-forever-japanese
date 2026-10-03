@@ -258,6 +258,7 @@ local function hookFrame(frame)
   if hooked[frame] or type(frame.AddMessage) ~= "function" then return 0 end
   hooked[frame] = true
   hooksecurefunc(frame, "AddMessage", Speech.onAddMessage)
+  WFJ.Diag.watch(frame, "AddMessage", WFJ.Diag.nameOf(frame))
   return 1
 end
 

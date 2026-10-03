@@ -101,6 +101,40 @@ local function colourParts(ja, colors)
 end
 Render.colourParts = colourParts
 
+-- Coloured runs of the English no argument carried ({ run, code }, from Tooltip.matchColoured): each run the
+-- Japanese holds exactly once as a whole (no digit, "." or "," right before or after it, so "+1" is never part of
+-- "+10") is wrapped in its colour; any other run is left as it is. Every place is found in the Japanese as written,
+-- then the colours go in from the right, so one never lands inside another's code. → text
+local function standsAlone(ja, at, stop)
+  local before, after = ja:sub(at - 1, at - 1), ja:sub(stop + 1, stop + 1)
+  return not before:find("[%d%.,]") and not after:find("[%d%.,]")
+end
+local function colourRuns(ja, runs)
+  local places = {}
+  for _, r in ipairs(runs) do
+    local found, from = nil, 1
+    while true do
+      local at, stop = ja:find(r.run, from, true)
+      if not at then break end
+      if standsAlone(ja, at, stop) then
+        if found then found = false break end
+        found = { at = at, stop = stop, code = r.code }
+      end
+      from = at + 1
+    end
+    if found then places[#places + 1] = found end
+  end
+  table.sort(places, function(a, b) return a.at > b.at end)
+  for i, p in ipairs(places) do
+    local nextPlace = places[i - 1] -- the one to the right, already in
+    if not nextPlace or p.stop < nextPlace.at then
+      ja = ja:sub(1, p.at - 1) .. p.code .. ja:sub(p.at, p.stop) .. "|r" .. ja:sub(p.stop + 1)
+    end
+  end
+  return ja
+end
+Render.colourRuns = colourRuns
+
 local function desiredOf(rec)
   local m = rec.meta or {}
   local action, payload = translator.resolve(m.area, m.kind, m.id, m.ctx)
@@ -109,6 +143,7 @@ local function desiredOf(rec)
     local prefix = (inline and payload.marker) and inlineMarker(rec, payload.marker) or ""
     local ja = payload.ja
     if m.ctx and m.ctx.partColors then ja = colourParts(ja, m.ctx.partColors) end
+    if m.ctx and m.ctx.runColours then ja = colourRuns(ja, m.ctx.runColours) end
     return prefix .. ja, WFJ.Font.bundled(rec.font), action, payload.marker
   elseif action == "none" and payload and payload.marker then
     -- A compact row (a quest list title, a tracker header or objective) never carries the missing marker:

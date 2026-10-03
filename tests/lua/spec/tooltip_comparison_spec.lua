@@ -15,6 +15,7 @@ local UI = {
   INVTYPE_WEAPONMAINHAND = { "Main Hand", "メインハンド" },
   ARMOR_TEMPLATE = { "%s Armor", "アーマー %s" },
   ITEM_MOD_DAMAGE_PER_SECOND_SHORT = { "damage per second", "秒間ダメージ" },
+  ["SpellItemEnchantment:387"] = { "+17 Armor", "アーマー +17" }, -- an enchantment's whole text
 }
 local DATA = {
   [1001] = { ja = "体力を50回復する。", status = "." }, -- trusted, ungated
@@ -74,13 +75,16 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
     tt:AddLine(_G.ITEM_DELTA_DESCRIPTION)
     tt:AddLine("-11 Armor")
     tt:AddLine("|cffff2020-3|r Armor") -- the client colours the number on its own
+    tt:AddLine("|cff20ff20+17|r Armor") -- a gain, green; its bare text is the enchantment's whole string
     tt:SetShown(true)
     assert.are.equal("このアイテムを置き換えると、次の能力値の変化が起こります:", _G.ShoppingTooltip1TextLeft4:GetText())
     assert.are.equal("アーマー -11", _G.ShoppingTooltip1TextLeft5:GetText())
     assert.are.equal("アーマー |cffff2020-3|r", _G.ShoppingTooltip1TextLeft6:GetText())
+    assert.are.equal("アーマー |cff20ff20+17|r", _G.ShoppingTooltip1TextLeft7:GetText())
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal("-11 Armor", _G.ShoppingTooltip1TextLeft5:GetText())
     assert.are.equal("|cffff2020-3|r Armor", _G.ShoppingTooltip1TextLeft6:GetText())
+    assert.are.equal("|cff20ff20+17|r Armor", _G.ShoppingTooltip1TextLeft7:GetText())
   end)
 
   it("a stat change with only a short stat name shows the Japanese name, the number as the client wrote it",

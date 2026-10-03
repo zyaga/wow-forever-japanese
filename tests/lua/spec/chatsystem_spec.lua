@@ -45,6 +45,7 @@ local UI = {
   -- a friendship's rank points (FriendshipReputation, a client-table family the reputation line names)
   ["FriendshipGain:513"] = { "You gain %d Rank Points.", "ランクポイントを%d獲得した。" },
   ["ServerMessage:1"] = { "[SERVER] Shutdown in %s", "[サーバー] %s後にシャットダウン" },
+  DEATH_RECAP_TEXT = { "You died.", "死亡しました。" }, -- the label of DEATH_RECAP_LINK's death: link
 }
 local NAMES = { "CHAT_FRAMES", "ChatTypeInfo", "ChatFrame1", "ChatFrame2", "FCF_OpenTemporaryWindow",
   "issecretvalue" }
@@ -163,6 +164,17 @@ describe("SYSTEM chat lines", function()
     assert.are.equal("You gain 25 Rank Points.", f:Last())
     f:AddMessage("Your party is full.", 0.5, 0.5, 1, FACTION) -- the chat keys still reach a reputation line
     assert.are.equal("パーティーがいっぱいです。", f:Last())
+  end)
+
+  it("the death recap link keeps its link, id and colour; only its label is Japanese", function()
+    local f = _G.ChatFrame1
+    system(f, "|cff71d5ff|Hdeath:42|h[You died.]|h")
+    assert.are.equal("|cff71d5ff|Hdeath:42|h[死亡しました。]|h", f:Last())
+    system(f, "|cff71d5ff|Hitem:42|h[You died.]|h") -- another link type is not the death recap
+    assert.are.equal("|cff71d5ff|Hitem:42|h[You died.]|h", f:Last())
+    _G.DEATH_RECAP_TEXT = "You have died." -- the client's English is not the one the row was checked against
+    system(f, "|cff71d5ff|Hdeath:43|h[You have died.]|h")
+    assert.are.equal("|cff71d5ff|Hdeath:43|h[You have died.]|h", f:Last())
   end)
 
   it("a SYSTEM line is rewritten in the history when it arrives; others stay", function()

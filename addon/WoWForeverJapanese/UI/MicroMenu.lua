@@ -108,6 +108,7 @@ local function hookXPText(bar, recKey)
   if xpHooked[bar] or type(bar.UpdateCurrentText) ~= "function" or type(bar.OverlayFrame) ~= "table" then return end
   xpHooked[bar] = true
   hooksecurefunc(bar, "UpdateCurrentText", function(self) MicroMenu.showXPText(self, recKey) end)
+  WFJ.Diag.watch(bar, "UpdateCurrentText", recKey)
   MicroMenu.showXPText(bar, recKey)
 end
 

@@ -15,6 +15,7 @@
 {"id": "2b70707ef7435e81", "field": "text", "en": "Only if I were about five feet taller, then I would show these blasphemous demons a thing or two! Help!", "hash": "2b70707ef7435e81", "src": "vmangos@13b49dc"}
 {"id": "2b72d03324436ad6", "field": "text", "en": "My banishment is ended! Let the blood flow!", "hash": "2b72d03324436ad6", "src": "vmangos@13b49dc"}
 {"id": "2b8530a8bdc891a0", "field": "text", "en": "They all go to the Spire but none ever come back... just like Bijou.", "hash": "2b8530a8bdc891a0", "src": "vmangos@13b49dc"}
+{"id": "2b8af182d83a029b", "field": "text", "en": "Hello, $C.", "hash": "2b8af182d83a029b", "src": "collector@1.60.1.70205", "npcs": [251362]}
 {"id": "2b9680d953e4fbb5", "field": "text", "en": "Hey Jangdor - can you teach me again how to make a Wild Leather Helmet again?", "hash": "2b9680d953e4fbb5", "src": "vmangos@13b49dc"}
 {"id": "2b96c239b7151025", "field": "text", "en": "Where is Elder Skygleam?", "hash": "2b96c239b7151025", "src": "vmangos@13b49dc"}
 {"id": "2b974602ba2ec117", "field": "text", "en": "I have a rock in my nose.", "hash": "2b974602ba2ec117", "src": "vmangos@13b49dc"}

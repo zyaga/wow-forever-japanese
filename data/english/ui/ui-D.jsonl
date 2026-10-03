@@ -57,6 +57,7 @@
 {"id": "DEATH_RECAP_DAMAGE_TT", "field": "text", "en": "%s %s", "hash": "98ecaae23ca42057", "src": "db2@1.60.1.70170"}
 {"id": "DEATH_RECAP_DEADLY_SPELL", "field": "text", "en": "Deadly", "hash": "c926d38abc80d94e", "src": "db2@1.60.1.70170"}
 {"id": "DEATH_RECAP_DEATH_TT", "field": "text", "en": "Killing blow at %s%% health.", "hash": "c213e66b60670eec", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RECAP_TEXT", "field": "text", "en": "You died.", "hash": "88928e25df1b1572", "src": "db2@1.60.1.70170"}
 {"id": "DEATH_RECAP_TITLE", "field": "text", "en": "Death Recap", "hash": "481ed3babd4a9c7d", "src": "db2@1.60.1.70170"}
 {"id": "DEATH_RECAP_UNAVAILABLE", "field": "text", "en": "Death Recap unavailable.", "hash": "a0421d4a5d3854df", "src": "db2@1.60.1.70170"}
 {"id": "DEATH_RELEASE", "field": "text", "en": "Release Spirit", "hash": "c59333f3254dc9ee", "src": "db2@1.60.1.70170"}

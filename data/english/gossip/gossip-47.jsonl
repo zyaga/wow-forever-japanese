@@ -25,6 +25,7 @@
 {"id": "4796ed04c40c5a5a", "field": "text", "en": "The Darkmoon Faire has come to town!  Be sure to experience the most thrilling show you'll ever see!", "hash": "4796ed04c40c5a5a", "src": "vmangos@13b49dc"}
 {"id": "4796ed22c40c5a78", "field": "text", "en": "The Darkmoon Faire has come to town!  Be sure to experience the most thrilling show you'll ever see?", "hash": "4796ed22c40c5a78", "src": "vmangos@13b49dc"}
 {"id": "4797c005591022a3", "field": "text", "en": "Season's greetings, and peace to you!", "hash": "4797c005591022a3", "src": "vmangos@13b49dc"}
+{"id": "479c8ff4281497dd", "field": "text", "en": "Constable, can you tell me what is happening here in the Shen'dar Highlands?", "hash": "479c8ff4281497dd", "src": "collector@1.60.1.70205", "npcs": [251523]}
 {"id": "47a69c2b8850d66b", "field": "text", "en": "Let the coils of hate unfurl!", "hash": "47a69c2b8850d66b", "src": "vmangos@13b49dc"}
 {"id": "47a81e8f6ae667d0", "field": "text", "en": "Greetings $c, I am the leatherworking trainer for Thunder Bluff.  What may I assist you with?", "hash": "47a81e8f6ae667d0", "src": "vmangos@13b49dc"}
 {"id": "47ac8e0d94aa744b", "field": "text", "en": "None shall pass!", "hash": "47ac8e0d94aa744b", "src": "vmangos@13b49dc"}
