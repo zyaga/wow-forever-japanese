@@ -27,6 +27,7 @@
 {"id": "0293f4713ea5280d", "field": "text", "en": "Get him out of there!", "hash": "0293f4713ea5280d", "src": "vmangos@13b49dc"}
 {"id": "0295528a8cacb170", "field": "text", "en": "I am Jin'rokh the Breaker, envoy of Mugamba: Fist of Rastakhan!$B$BMy dealings are with warriors and heathens.", "hash": "0295528a8cacb170", "src": "vmangos@13b49dc"}
 {"id": "02a5401a3e74210b", "field": "text", "en": "I am a master blacksmith, Omarion.", "hash": "02a5401a3e74210b", "src": "vmangos@13b49dc"}
+{"id": "02a9b8b4ced538a5", "field": "text", "en": "Lorthuna is performing some sort of ritual up there. She may be trying to bring down the wards!\r\n\r\nThe help we sent for has not yet arrived, but we'll just have to manage with what we have. When you are ready, let me know and we'll go confront her.", "hash": "02a9b8b4ced538a5", "src": "forever-vo@025070f", "npcs": [253847, 253849]}
 {"id": "02ae2aa1d6c0eab1", "field": "text", "en": "My redemption? You are bold, little one. My redemption comes by the will of my god.", "hash": "02ae2aa1d6c0eab1", "src": "vmangos@13b49dc"}
 {"id": "02af82d14e327b1f", "field": "text", "en": "The Magistrate has fallen! Make your escape, my brothers.", "hash": "02af82d14e327b1f", "src": "vmangos@13b49dc"}
 {"id": "02b24c682f325635", "field": "text", "en": "Very good.  Our supply cache grows...", "hash": "02b24c682f325635", "src": "vmangos@13b49dc"}

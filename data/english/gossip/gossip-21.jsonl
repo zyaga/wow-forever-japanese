@@ -1,4 +1,5 @@
 {"id": "21024faa8e63a3bb", "field": "text", "en": "The master's will is done.", "hash": "21024faa8e63a3bb", "src": "vmangos@13b49dc"}
+{"id": "21070250c4d688af", "field": "text", "en": "You don't look like much, but something tells me you are right. I think I'll just sit here a bit longer. Thanks for the chat, stranger.", "hash": "21070250c4d688af", "src": "forever-vo@025070f", "npcs": [256514]}
 {"id": "2113e0ac81fb4bb1", "field": "text", "en": "Wow!  $n, that dream dust is powerful stuff!", "hash": "2113e0ac81fb4bb1", "src": "vmangos@13b49dc"}
 {"id": "211b20db793a7217", "field": "text", "en": "Masses of wolves are to the east, and whoever lived at Malden's Orchard is gone.", "hash": "211b20db793a7217", "src": "vmangos@13b49dc"}
 {"id": "21213745d88169bb", "field": "text", "en": "You'd better not tattle on me!", "hash": "21213745d88169bb", "src": "vmangos@13b49dc"}
@@ -42,3 +43,4 @@
 {"id": "21ed3e29db13698f", "field": "text", "en": "Oh brother, not this again... Have a seat $g sonny:missy;.$B$BI'm sure Rutgar has told you some of this story already so I'll spare you the boring details and get right down to the nitty gritty.", "hash": "21ed3e29db13698f", "src": "vmangos@13b49dc"}
 {"id": "21f2c6ec74f55d10", "field": "text", "en": "Your deaths feed my strength!", "hash": "21f2c6ec74f55d10", "src": "vmangos@13b49dc"}
 {"id": "21f50b800008877b", "field": "text", "en": "Iceblood Tower was destroyed by the Alliance!", "hash": "21f50b800008877b", "src": "vmangos@13b49dc"}
+{"id": "21f6fcb886c2bc76", "field": "text", "en": "<Othmar's head looks at you from nearby.>\r\n\r\nWhat... You... Want...\r\n\r\nFilthy... $r...", "hash": "21f6fcb886c2bc76", "src": "forever-vo@025070f", "npcs": [271613]}

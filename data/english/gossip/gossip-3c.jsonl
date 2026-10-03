@@ -14,6 +14,7 @@
 {"id": "3c5237b5dc862531", "field": "text", "en": "Emperor Thaurissan does not wish to be disturbed! Turn back now or face your doom, weak mortals!", "hash": "3c5237b5dc862531", "src": "vmangos@13b49dc"}
 {"id": "3c599235eebc42a8", "field": "text", "en": "Who dares summon me?", "hash": "3c599235eebc42a8", "src": "vmangos@13b49dc"}
 {"id": "3c5aaadd1d92e521", "field": "text", "en": "Yes.  Give me the spell to summon the avatar.", "hash": "3c5aaadd1d92e521", "src": "vmangos@13b49dc"}
+{"id": "3c5ebb3b3331d6ca", "field": "text", "en": "You look like you could use a few enchants. You have come to the right place!", "hash": "3c5ebb3b3331d6ca", "src": "forever-vo@025070f", "npcs": [256732]}
 {"id": "3c6368379103cf3e", "field": "text", "en": "Thanks a lot, $n.  We couldn't have made it without you.  Oh, and if I had mentioned before something about repaying you for saving us, well... you can forget it!", "hash": "3c6368379103cf3e", "src": "vmangos@13b49dc"}
 {"id": "3c65cd8c014df631", "field": "text", "en": "I'd like a new invitation to the Lunar Festival.", "hash": "3c65cd8c014df631", "src": "vmangos@13b49dc"}
 {"id": "3c6b0d4ac3004df1", "field": "text", "en": "Druids and your silly shapeshifting. Lets see it in action!", "hash": "3c6b0d4ac3004df1", "src": "vmangos@13b49dc"}
@@ -38,6 +39,7 @@
 {"id": "3ca63548a3f31cba", "field": "text", "en": "Hi, $n.  No hard feelings, ok?", "hash": "3ca63548a3f31cba", "src": "vmangos@13b49dc"}
 {"id": "3cae78b239930147", "field": "text", "en": "Five tickets or two-hundred and fifty, it doesn't matter friend, everybody is a winner!", "hash": "3cae78b239930147", "src": "vmangos@13b49dc"}
 {"id": "3cbe49ee9b95d6e7", "field": "text", "en": "Kah Mistrunner at Mountaintop Bait & Tackle on the high rise will show you the way to find inner peace and serenity while fishing for your next meal.", "hash": "3cbe49ee9b95d6e7", "src": "vmangos@13b49dc"}
+{"id": "3cc2152a16f9178b", "field": "text", "en": "The spirits of the wind may have left us, but the power of the elements is not entirely out of reach for those with the patience to seek them out.\r\n\r\nIf you are initiated in the ways of the $c, I can help you grasp them.", "hash": "3cc2152a16f9178b", "src": "forever-vo@025070f", "npcs": [251374, 252382, 254082]}
 {"id": "3cc4f9b09cf0aba0", "field": "text", "en": "Karnik, me friend, I wish I could see you with me own eyes again, but we need'ta talk of Ragnaros. His influence is spreading.", "hash": "3cc4f9b09cf0aba0", "src": "vmangos@13b49dc"}
 {"id": "3cc58c0c09937daf", "field": "text", "en": "%s uses his index finger to make a cutting motion across his neck.", "hash": "3cc58c0c09937daf", "src": "vmangos@13b49dc"}
 {"id": "3cc8c2472923b812", "field": "text", "en": "Please, champion, protect our people.", "hash": "3cc8c2472923b812", "src": "vmangos@13b49dc"}

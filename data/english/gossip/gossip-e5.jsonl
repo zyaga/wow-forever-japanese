@@ -34,4 +34,6 @@
 {"id": "e5d5708eccbcd53e", "field": "text", "en": "Oh, I'm sorry, but you know more about leather than I do at this point. Talk to Faldron over there if you wish to learn more.", "hash": "e5d5708eccbcd53e", "src": "vmangos@13b49dc"}
 {"id": "e5dbebcf5cd41ef1", "field": "text", "en": "%s becomes enraged from seeing a cub die!", "hash": "e5dbebcf5cd41ef1", "src": "vmangos@13b49dc"}
 {"id": "e5de72b8ea9c61af", "field": "text", "en": "You!  Enter the fray!", "hash": "e5de72b8ea9c61af", "src": "vmangos@13b49dc"}
+{"id": "e5e63056373f5d77", "field": "text", "en": "Greetings, friend! I have ample supply of leather and hides, and I know a few techniques I might be willing to share. Interested in doing business?", "hash": "e5e63056373f5d77", "src": "forever-vo@025070f", "npcs": [248201]}
 {"id": "e5f7e7a0bb888ca6", "field": "text", "en": "Your gods can't save you now, $c.", "hash": "e5f7e7a0bb888ca6", "src": "vmangos@13b49dc"}
+{"id": "e5fdaf6791e1ed8d", "field": "text", "en": "A little bit of a lot of things. Mostly I take the soft and weak and reshape them into hardened fighters once again.\r\n\r\nIt's a tough world out there, and even our own people mistrust us. We need to be tough and self-reliant if we are to fit into this \"horde\" with the rest of our people.", "hash": "e5fdaf6791e1ed8d", "src": "forever-vo@025070f", "npcs": [246389]}

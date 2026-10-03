@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-03 at commit `5f5851e8`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-03 at commit `ec6a6bee`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -10,14 +10,14 @@
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
 | Quest text | 20,082 | 19,971 | 111 | 100.0% | 0 |
-| NPC dialogue (gossip, speech) | 10,663 | 10,663 | 0 | 100.0% | 0 |
+| NPC dialogue (gossip, speech) | 10,834 | 10,663 | 0 | 98.4% | 171 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 409 | 372 | 37 | 100.0% | 0 |
 | Exploration / event objectives | 218 | 216 | 2 | 100.0% | 0 |
 | Item descriptions | 10,124 | 8,611 | 0 | 85.1% | 1,513 |
 | Spell tooltips + auras | 25,458 | 25,270 | 0 | 99.3% | 188 |
 | Interface strings | 15,842 | 15,842 | 0 | 100.0% | 0 |
-| **All** | **84,053** | | | **98.0%** | **1,701** |
+| **All** | **84,224** | | | **97.8%** | **1,872** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 330, gossip 81, item 888, spell 300, ui 313.
@@ -38,6 +38,7 @@ professions, internal strings): quest 330, gossip 81, item 888, spell 300, ui 31
 
 | Surface | Why | Lines |
 |---|---|---|
+| NPC dialogue (gossip, speech) | no Japanese yet | 171 |
 | Item descriptions | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 1,511 |
 | Item descriptions | no Japanese yet: the template uses a code drafting cannot place yet (too_many_variants) | 1 |
 | Item descriptions | no Japanese yet: the template uses a code drafting cannot place yet (branches_indistinguishable) | 1 |

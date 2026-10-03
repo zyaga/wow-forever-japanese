@@ -20,6 +20,7 @@
 {"id": "344dd3614d79d586", "field": "text", "en": "Isillien!", "hash": "344dd3614d79d586", "src": "vmangos@13b49dc"}
 {"id": "344f58a29e31d1ea", "field": "text", "en": "Remember when Danath gathered all the mercenaries of Stormwind together and we marched to fight at Nethergarde?", "hash": "344f58a29e31d1ea", "src": "vmangos@13b49dc"}
 {"id": "34511cbb35947a7f", "field": "text", "en": "If you think you have the strength to pound good metal into weapons and armor for the Horde look for Dwukk next to the heated forge in the northwest corner of Razor Hill.", "hash": "34511cbb35947a7f", "src": "vmangos@13b49dc"}
+{"id": "3453250b67e1fb6f", "field": "text", "en": "Lookin' to fish? Then you'll need the proper tools.", "hash": "3453250b67e1fb6f", "src": "forever-vo@025070f", "npcs": [8508]}
 {"id": "345a0be31d7728f7", "field": "text", "en": "My strength wanes, mortal. I have done as promised, the way is clear. I now return to whence I came.", "hash": "345a0be31d7728f7", "src": "vmangos@13b49dc"}
 {"id": "346a238eddc1a559", "field": "text", "en": "Need some supplies?", "hash": "346a238eddc1a559", "src": "vmangos@13b49dc"}
 {"id": "347195942cde9fee", "field": "text", "en": "Your potion-making skills are beyond mine. Seek out the undead Doctor Herbert Halsey in the Apothecarium of the Undercity. He has the skill to train you further, and you can witness firsthand his people's plight.", "hash": "347195942cde9fee", "src": "vmangos@13b49dc"}
@@ -37,6 +38,7 @@
 {"id": "34ad0837c7446169", "field": "text", "en": "OK Fengus, where you at?!  You come call me a gnoll lover while I give you da hammer upside da head!", "hash": "34ad0837c7446169", "src": "vmangos@13b49dc"}
 {"id": "34ae7ced898f2662", "field": "text", "en": "%s lets out a deep roar, alerting nearby allies and becoming enraged!", "hash": "34ae7ced898f2662", "src": "vmangos@13b49dc"}
 {"id": "34b5b6f60425e928", "field": "text", "en": "Lysta, summon forth... the abomination!", "hash": "34b5b6f60425e928", "src": "vmangos@13b49dc"}
+{"id": "34bb5550702f7f71", "field": "text", "en": "How can I help you, friend?", "hash": "34bb5550702f7f71", "src": "forever-vo@025070f", "npcs": [6300]}
 {"id": "34c3c622d667b01a", "field": "text", "en": "Where is Elder Riversong?", "hash": "34c3c622d667b01a", "src": "vmangos@13b49dc"}
 {"id": "34c43ab65c5391b9", "field": "text", "en": "All is gathered, $c. All is being transported for final preparation to Silithus and should arrive within a day. All of our combined forces await the $g hero : heroine; that will complete the reunification of the Scepter of the Shifting Sands, ring the gong and begin the Ahn'Qiraj War.", "hash": "34c43ab65c5391b9", "src": "vmangos@13b49dc"}
 {"id": "34c60ac7e6f31b82", "field": "text", "en": "I do hope they stay alive long enough for me to... introduce myself.", "hash": "34c60ac7e6f31b82", "src": "vmangos@13b49dc"}

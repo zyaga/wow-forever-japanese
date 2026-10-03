@@ -33,6 +33,7 @@
 {"id": "43b4a4be2d3e6a89", "field": "text", "en": "A $C called $n? You'll make a fine breakfast!", "hash": "43b4a4be2d3e6a89", "src": "vmangos@13b49dc"}
 {"id": "43b52babc310c83b", "field": "text", "en": "I'll stay behind and guard the wreck. Hurry! Hopefully no one will notice the smoke...", "hash": "43b52babc310c83b", "src": "vmangos@13b49dc"}
 {"id": "43c16414ec2abcef", "field": "text", "en": "The Alliance has taken the Irondeep Mine!", "hash": "43c16414ec2abcef", "src": "vmangos@13b49dc"}
+{"id": "43c17b2623854fd1", "field": "text", "en": "Oh yeah. Us gots it right here.", "hash": "43c17b2623854fd1", "src": "forever-vo@025070f", "npcs": [10666]}
 {"id": "43c56166e54e3d17", "field": "text", "en": "Of course there's no danger in everything catching flames and exploding like a huge helium bomb. This baby will get you to Undercity faster and safer than any boat, and the view is truly breathtaking. Speaking of breath, smoking is not allowed while on board the zeppelin", "hash": "43c56166e54e3d17", "src": "vmangos@13b49dc"}
 {"id": "43d0c85e50ef4dc6", "field": "text", "en": "My thoughts exactly.", "hash": "43d0c85e50ef4dc6", "src": "vmangos@13b49dc"}
 {"id": "43d0f1da79bcf1aa", "field": "text", "en": "I wish to purchase another Elune's Candle.", "hash": "43d0f1da79bcf1aa", "src": "vmangos@13b49dc"}

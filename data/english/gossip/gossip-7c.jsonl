@@ -20,6 +20,7 @@
 {"id": "7c961f7154360fb2", "field": "text", "en": "The Horde has taken the stables!", "hash": "7c961f7154360fb2", "src": "vmangos@13b49dc"}
 {"id": "7ca1d6a8ed27330a", "field": "text", "en": "Surely you do not think that you will get away with this incursion. They will come for me and you shall pay for your insolence.", "hash": "7ca1d6a8ed27330a", "src": "vmangos@13b49dc"}
 {"id": "7cac39bbffb8128e", "field": "text", "en": "It is... as it should be. ", "hash": "7cac39bbffb8128e", "src": "vmangos@13b49dc"}
+{"id": "7caf7f53ce2f076b", "field": "text", "en": "Adventurer! The wind bridge leading to the other spire is unstable. You may need to wait here with me until it returns.", "hash": "7caf7f53ce2f076b", "src": "forever-vo@025070f", "npcs": [256635]}
 {"id": "7cb1aa2cfba5c3dc", "field": "text", "en": "Would you like a flight to Rut'theran Village, courtesy of the Cenarion Circle?", "hash": "7cb1aa2cfba5c3dc", "src": "vmangos@13b49dc"}
 {"id": "7cb2135bd7cc042a", "field": "text", "en": "No matter how much one learns, there is always more to know.", "hash": "7cb2135bd7cc042a", "src": "vmangos@13b49dc"}
 {"id": "7cb3a348d9d08b52", "field": "text", "en": "%s draws power to him...", "hash": "7cb3a348d9d08b52", "src": "vmangos@13b49dc"}

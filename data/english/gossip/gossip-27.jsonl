@@ -34,5 +34,6 @@
 {"id": "27e50bbfc1256316", "field": "text", "en": "%s grumbles.", "hash": "27e50bbfc1256316", "src": "vmangos@13b49dc"}
 {"id": "27e6e1710883555b", "field": "text", "en": "Oh dear, where is the \"Codex of Defense?\" Lydros will be most assuredly displeased.", "hash": "27e6e1710883555b", "src": "vmangos@13b49dc"}
 {"id": "27eb2e9b1214245f", "field": "text", "en": "Yes!?", "hash": "27eb2e9b1214245f", "src": "vmangos@13b49dc"}
+{"id": "27f46cda551c794d", "field": "text", "en": "Us is busy with important things!", "hash": "27f46cda551c794d", "src": "forever-vo@025070f", "npcs": [10666]}
 {"id": "27fa866940e0216f", "field": "text", "en": "I'll consider that the next time I run into one of these things.", "hash": "27fa866940e0216f", "src": "vmangos@13b49dc"}
 {"id": "27fc745eac042bea", "field": "text", "en": "Very fine equipment you make, very fine indeed. Go to the Orc's home of Orgrimmar and seek out a smith named Saru Steelfury. One thing you must give the Orcs, they make beautiful instruments of death.", "hash": "27fc745eac042bea", "src": "vmangos@13b49dc"}

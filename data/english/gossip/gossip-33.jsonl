@@ -12,6 +12,7 @@
 {"id": "333ec183aa4ad845", "field": "text", "en": "%s swaggers heavily.", "hash": "333ec183aa4ad845", "src": "vmangos@13b49dc"}
 {"id": "3340533ebf761ca3", "field": "text", "en": "You are welcome, have a nice day.", "hash": "3340533ebf761ca3", "src": "vmangos@13b49dc"}
 {"id": "334589cebe5d8b96", "field": "text", "en": "What does Dadanga like to eat?\n", "hash": "334589cebe5d8b96", "src": "vmangos@13b49dc"}
+{"id": "3346d37f9cc660ea", "field": "text", "en": "The ingots are for display only!", "hash": "3346d37f9cc660ea", "src": "forever-vo@025070f", "npcs": [256730]}
 {"id": "3347503aacf34dff", "field": "text", "en": "Welcome one and all to the Darkmoon Faire, the greatest event in all the world!  We have it all... delicious food, strong drink, exotic artifacts, fortunes read, amazing prizes and excitement without end!  Don't forget to turn in your Darkmoon Faire Prize Tickets to Gelvas Grimegate!  All it takes is five or more and you're on your way to the most wondrous prizes on all of Azeroth.  Everybody is a winner!", "hash": "3347503aacf34dff", "src": "vmangos@13b49dc"}
 {"id": "334adcef17724e42", "field": "text", "en": "Tell me about graveyards.", "hash": "334adcef17724e42", "src": "vmangos@13b49dc"}
 {"id": "33559eb0c56f68ad", "field": "text", "en": "Making it out of here without a blade in your back or poison in your veins would be an accomplishment.", "hash": "33559eb0c56f68ad", "src": "vmangos@13b49dc"}

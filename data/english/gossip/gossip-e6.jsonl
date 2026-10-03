@@ -32,6 +32,7 @@
 {"id": "e6ae75f1160c3112", "field": "text", "en": "I have lost my Cloak of the Gathering Storm. Are you able to replace it for me?", "hash": "e6ae75f1160c3112", "src": "vmangos@13b49dc"}
 {"id": "e6b27eef0245d289", "field": "text", "en": "I wish to purchase from you.", "hash": "e6b27eef0245d289", "src": "vmangos@13b49dc"}
 {"id": "e6c18cdda63ea1f7", "field": "text", "en": "Wait...you are not my husband.  But he must have sent you.  And you...look..delicious!", "hash": "e6c18cdda63ea1f7", "src": "vmangos@13b49dc"}
+{"id": "e6c6e6120ea5cbeb", "field": "text", "en": "You might think that just because we live on a floating island, there would be no need for miners like me. After so many thousands of years however, we still manage to dig up a lot of interesting things. \r\n\r\nIt's almost like there's some invisible force, constantly creating new mineral deposits every so often. That's magic for you though, right?\r\n\r\nRegardless, if you need training as a miner them I'm your shen'dorei.", "hash": "e6c6e6120ea5cbeb", "src": "forever-vo@025070f", "npcs": [252388, 257022]}
 {"id": "e6c78102f03c8cca", "field": "text", "en": "I've misplaced the Brazier of Beckoning!", "hash": "e6c78102f03c8cca", "src": "vmangos@13b49dc"}
 {"id": "e6c8e6949e03cb21", "field": "text", "en": "Look alive, dogs! We got an operation to run here!", "hash": "e6c8e6949e03cb21", "src": "vmangos@13b49dc"}
 {"id": "e6ce3dca2c4bd8b5", "field": "text", "en": "There's one of the Scourge, right over there!", "hash": "e6ce3dca2c4bd8b5", "src": "vmangos@13b49dc"}

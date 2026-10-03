@@ -34,3 +34,4 @@
 {"id": "2bed231a8c8a1ca9", "field": "text", "en": "Oh, there you are!", "hash": "2bed231a8c8a1ca9", "src": "vmangos@13b49dc"}
 {"id": "2bee2e3cafd6773a", "field": "text", "en": "Stay down, Wretch!", "hash": "2bee2e3cafd6773a", "src": "vmangos@13b49dc"}
 {"id": "2bf4530ada571b45", "field": "text", "en": "%s scans the mill", "hash": "2bf4530ada571b45", "src": "vmangos@13b49dc"}
+{"id": "2bfdc52597a635a5", "field": "text", "en": "Greetings $c, I can teach you skills and techniques.", "hash": "2bfdc52597a635a5", "src": "forever-vo@025070f", "npcs": [251507]}

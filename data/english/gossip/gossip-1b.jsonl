@@ -14,6 +14,7 @@
 {"id": "1b3d62880bece4ba", "field": "text", "en": "The battle for Warsong Gulch is a battle that we cannot lose.  We fight for our honor and we fight for our land, and no orc or misguided ally will take them from us!", "hash": "1b3d62880bece4ba", "src": "vmangos@13b49dc"}
 {"id": "1b5261271e50a5c0", "field": "text", "en": "Dat's da attitude! Grab a needle and thread and let's get jammin'!", "hash": "1b5261271e50a5c0", "src": "vmangos@13b49dc"}
 {"id": "1b5513f7c6d8ce32", "field": "text", "en": "%s appears lost in contemplation.", "hash": "1b5513f7c6d8ce32", "src": "vmangos@13b49dc"}
+{"id": "1b561d1b378f313b", "field": "text", "en": "<Mivin gestures toward his wares and back at you again with a smile, but says nothing.>", "hash": "1b561d1b378f313b", "src": "forever-vo@025070f", "npcs": [256735]}
 {"id": "1b5a78a1042418c6", "field": "text", "en": "We feel nothing. Our souls remain here, in limbo. We are unable to leave until our remains are found and spirits laid to rest.", "hash": "1b5a78a1042418c6", "src": "vmangos@13b49dc"}
 {"id": "1b676ced5da7944a", "field": "text", "en": "Take the Symbol of Life and use it to resurrect Deathguard Falgan at Venomweb Vale.", "hash": "1b676ced5da7944a", "src": "wdb@1.60.1.70170"}
 {"id": "1b6e9f605c3bc5bd", "field": "text", "en": "I'm afraid you're out of my league, friend! You should go see Nogg in Orgrimmar, he'll take you to the next level!", "hash": "1b6e9f605c3bc5bd", "src": "vmangos@13b49dc"}

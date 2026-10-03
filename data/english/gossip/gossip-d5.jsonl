@@ -7,6 +7,7 @@
 {"id": "d51aee2010516cf1", "field": "text", "en": "Let's see if we can find out where these Troggs are coming from.... and put a stop to the invasion!", "hash": "d51aee2010516cf1", "src": "vmangos@13b49dc"}
 {"id": "d51fcffa57f9e156", "field": "text", "en": "Da spirits be strong wit you, mon. What kin dis troll do for ya?", "hash": "d51fcffa57f9e156", "src": "vmangos@13b49dc"}
 {"id": "d527187435e8fbfe", "field": "text", "en": "This stout sure smells strong!", "hash": "d527187435e8fbfe", "src": "vmangos@13b49dc"}
+{"id": "d52e37687ff863a5", "field": "text", "en": "Welcome back to the light, friend. Do you require training?", "hash": "d52e37687ff863a5", "src": "forever-vo@025070f", "npcs": [244808]}
 {"id": "d530893c87ca2aca", "field": "text", "en": "You'll find one of those outside the Bank of Orgrimmar in the middle of the Valley of Strength.", "hash": "d530893c87ca2aca", "src": "vmangos@13b49dc"}
 {"id": "d53f4c8980b53861", "field": "text", "en": "Unfortunately, the night elf defense was untenable and Rajaxx knew that they could not hold out much longer. Their tenacity, however, was causing great frustration to Rajaxx and causing even more frustration to his king. Wait, kings? Incredible...\n", "hash": "d53f4c8980b53861", "src": "vmangos@13b49dc"}
 {"id": "d541bcb5bd4b8fb9", "field": "text", "en": "Curse you!", "hash": "d541bcb5bd4b8fb9", "src": "vmangos@13b49dc"}
@@ -18,6 +19,7 @@
 {"id": "d5719c85343a1d5c", "field": "text", "en": "Malfurion!", "hash": "d5719c85343a1d5c", "src": "vmangos@13b49dc"}
 {"id": "d5721c72c7bb75f6", "field": "text", "en": "Tell me... tell me everything!", "hash": "d5721c72c7bb75f6", "src": "vmangos@13b49dc"}
 {"id": "d5772dc9fff3715c", "field": "text", "en": "RAAAAAAAR!", "hash": "d5772dc9fff3715c", "src": "vmangos@13b49dc"}
+{"id": "d577ea9a23e2a4d5", "field": "text", "en": "<Novice Warrior gulps.>\r\n\r\nI can do this.", "hash": "d577ea9a23e2a4d5", "src": "forever-vo@025070f", "npcs": [10721]}
 {"id": "d57a4e71d2fc0079", "field": "text", "en": "Finally! Put some fingers in your ears, your brain mighta just grown five sizes and I'm worried it might leak out.$B$BSo, the Dark Irons spared his life and took him prisoner. Their leader, some self-important, uppity fella named Thauris-something, took Ironfoe for himself. And that was the last I saw of ol' Windsor... *hic* 'scuse me.\n", "hash": "d57a4e71d2fc0079", "src": "vmangos@13b49dc"}
 {"id": "d5800f7799ffc13a", "field": "text", "en": "DO NOT LET HER ESCAPE!", "hash": "d5800f7799ffc13a", "src": "vmangos@13b49dc"}
 {"id": "d5815ba064d5a476", "field": "text", "en": "Mennet said I should ask you for a set of thieves' tools.", "hash": "d5815ba064d5a476", "src": "vmangos@13b49dc"}

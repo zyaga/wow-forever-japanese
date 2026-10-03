@@ -9,7 +9,7 @@ from wfj.cmd.import_ import run
 from wfj.core.hashing import key
 from wfj.core.model import english_line, validate_line
 from wfj.core.normalize import normalize_v1
-from wfj.io.forever_vo import read_captures
+from wfj.io.forever_vo import read_captures, read_greetings
 from wfj.io.jsonl_store import Store
 
 SRC = "forever-vo@025070f"
@@ -23,12 +23,18 @@ def _entry(qid, event, title, text, build="70205"):
     return {"questID": qid, "event": event, "title": title, "text": text, "build": build}
 
 
-def _captures(folder: Path, submissions: list[list[dict]]) -> Path:
+def _captures(folder: Path, submissions: list[list[dict]], gossip: list[list[dict]] | None = None) -> Path:
     (folder / "captures").mkdir(parents=True)
     for i, entries in enumerate(submissions):
         doc = {"origin": f"issue-{i}", "quests": {f"{e['questID']}-{e['event']}-{n}": e for n, e in enumerate(entries)}}
+        if gossip:
+            doc["gossip"] = {f"g{n}": g for n, g in enumerate(gossip[i])}
         (folder / "captures" / f"issue-{i}.json").write_text(json.dumps(doc), encoding="utf-8")
     return folder
+
+
+def _greeting(text, npc="1992"):
+    return {"event": "gossip", "text": text, "npc": npc, "isObject": None}
 
 
 def _data(tmp_path: Path, monkeypatch, lines) -> Path:
@@ -118,3 +124,34 @@ def test_bad_commit_is_refused(tmp_path, monkeypatch, capsys):
     assert run(["english", "forever-vo", str(tmp_path), "--commit", "latest"]) != 0
     assert "--commit must be" in capsys.readouterr().err
     assert Store(data, english=True).load("quest") == []
+
+
+def test_greetings_from_english_submissions_two_agreeing(tmp_path):
+    hello, hallo = "Greetings, traveler.", "Seid gegrüßt, Reisender."
+    en = [_entry(97977, "progress", "Nature's Call", "Totems?")]
+    de = [_entry(97977, "progress", "Ruf der Natur", "Totems?")]
+    folder = _captures(
+        tmp_path / "fvo",
+        [en, en, de, de, []],
+        [[_greeting(hello, "1992"), _greeting("Only one sent this.")], [_greeting(hello, "1993")],
+         [_greeting(hallo)], [_greeting(hallo)], [_greeting(hello)]],  # the last: no quest to tell its language
+    )
+    got = read_greetings(folder, TITLES)
+    assert [(g.en, g.origins, g.npcs) for g in got] == [(hello, 2, [1992, 1993])]
+
+
+def test_import_adds_only_greetings_no_source_holds(tmp_path, monkeypatch):
+    held = _line("70f068541ce5e138", "text", "Goodbye.", "vmangos@13b49dc")
+    held = {**held, "id": key(normalize_v1("Goodbye.")), "hash": key(normalize_v1("Goodbye."))}
+    data = _data(tmp_path, monkeypatch, [_line(97977, "title", "Nature's Call", "wdb@1.60.1.70205")])
+    Store(data, english=True).save("gossip", [held])
+    en = [_entry(97977, "progress", "Nature's Call", "Totems?")]
+    folder = _captures(tmp_path / "fvo", [en, en],
+                       [[_greeting("Greetings, traveler."), _greeting("Goodbye.")]] * 2)
+    assert run(["english", "forever-vo", str(folder), "--commit", "025070f"]) == 0
+    got = {ln["en"]: ln for ln in Store(data, english=True).load("gossip")}
+    assert got["Goodbye."] == held
+    new = got["Greetings, traveler."]
+    assert new["src"] == SRC and new["id"] == new["hash"] == key(normalize_v1("Greetings, traveler."))
+    assert new["npcs"] == [1992]
+    assert validate_line("gossip", new, english=True) == []

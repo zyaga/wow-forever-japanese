@@ -1,4 +1,5 @@
 {"id": "9002d728d2b5825a", "field": "text", "en": "The Earth Mother holds many secrets and Brek Stonehoof can help you to discover some of them.  You will find him on the lower rise at Stonehoof Geology.", "hash": "9002d728d2b5825a", "src": "vmangos@13b49dc"}
+{"id": "9004a8f2c5d6ab80", "field": "text", "en": "Why should I pace myself if this is working?", "hash": "9004a8f2c5d6ab80", "src": "forever-vo@025070f", "npcs": [11046]}
 {"id": "900a841ecae88141", "field": "text", "en": "Elder Brightspear can be found wandering amongst the ruins of Kel'Theril in Winterspring.", "hash": "900a841ecae88141", "src": "vmangos@13b49dc"}
 {"id": "900d2b9e41000baa", "field": "text", "en": "And should one die, two shall rise!", "hash": "900d2b9e41000baa", "src": "vmangos@13b49dc"}
 {"id": "901095e91f13947d", "field": "text", "en": "You may find storage for your worldly goods at the bank of Darnassus, which lies in the center of our wondrous city.", "hash": "901095e91f13947d", "src": "vmangos@13b49dc"}
@@ -18,6 +19,7 @@
 {"id": "9077f2c349e5ee93", "field": "text", "en": "Come to learn, eh? Well I just might have some work for you, scrub.", "hash": "9077f2c349e5ee93", "src": "vmangos@13b49dc"}
 {"id": "9081a99972091cac", "field": "text", "en": "Since the fall of Dalaran and the destruction of Quel'Thalas, wares of this sort have been hard to come by. But Lucan Cordell and some of our other Tradesman have been doing a fine job of filling our orders with quality merchandise.", "hash": "9081a99972091cac", "src": "vmangos@13b49dc"}
 {"id": "90828eac1f34f7bb", "field": "text", "en": "What's the worst that could happen?", "hash": "90828eac1f34f7bb", "src": "vmangos@13b49dc"}
+{"id": "908c9e5642ffee0c", "field": "text", "en": "All travelers bound for Mulgore should depart here.", "hash": "908c9e5642ffee0c", "src": "forever-vo@025070f", "npcs": [275270]}
 {"id": "908cdcb262607de9", "field": "text", "en": "You have come too far to fail. Stand back, mortals.", "hash": "908cdcb262607de9", "src": "vmangos@13b49dc"}
 {"id": "90944d578b640736", "field": "text", "en": "I'm not a journeyman herbalist -- am I able to still assist you in your work?", "hash": "90944d578b640736", "src": "vmangos@13b49dc"}
 {"id": "9094ef980d3d38b4", "field": "text", "en": "I only wish I had more students like you. Not many will venture so far into enemy territory. I salute your courage.", "hash": "9094ef980d3d38b4", "src": "vmangos@13b49dc"}

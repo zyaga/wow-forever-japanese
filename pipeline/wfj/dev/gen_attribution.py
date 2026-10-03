@@ -121,7 +121,7 @@ IPA Font License v1.0 (see `addon/WoWForeverJapanese/Fonts/`). Details: `docs/le
 FOREVER_VO = "forever-vo"
 FOREVER_VO_SOURCE = """\
 - forever-vo (https://github.com/quinn-dougherty/forever-vo), under the MIT License (below): quest progress
-  and turn-in text that players of the Forever client recorded with its addon and sent in.
+  and turn-in text and NPC greetings that players of the Forever client recorded with its addon and sent in.
 """
 FOREVER_VO_LICENSE = """
 ## forever-vo license

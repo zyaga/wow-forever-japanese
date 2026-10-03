@@ -20,6 +20,7 @@
 {"id": "ec7c9ed51b0fc866", "field": "text", "en": "Welcome to the races!  Enjoy your stay, and don't bet all your money in one place!", "hash": "ec7c9ed51b0fc866", "src": "vmangos@13b49dc"}
 {"id": "ec8772658ba7576a", "field": "text", "en": "%s guzzles down the ale!", "hash": "ec8772658ba7576a", "src": "vmangos@13b49dc"}
 {"id": "ec8c1c7a3d803e76", "field": "text", "en": "$n!  What are you doing talking to me?  You should be out fighting the Horde!$B$BI have assault orders for one of our field marshals in the Field of Strife, but I need someone I can count on.$B$BPerhaps if your standing with the Stormpike militia were higher, I could count on you...", "hash": "ec8c1c7a3d803e76", "src": "vmangos@13b49dc"}
+{"id": "ec8f1052661006bd", "field": "text", "en": "Yo, $c, what's good?", "hash": "ec8f1052661006bd", "src": "forever-vo@025070f", "npcs": [210845]}
 {"id": "ec960058d7ad2e61", "field": "text", "en": "I need a Cenarion beacon.", "hash": "ec960058d7ad2e61", "src": "vmangos@13b49dc"}
 {"id": "ec96b95bd8459e90", "field": "text", "en": "I live only to serve our King.", "hash": "ec96b95bd8459e90", "src": "vmangos@13b49dc"}
 {"id": "ec9e2f366325bce5", "field": "text", "en": "I am eager to hear what so angry an orc has to say...", "hash": "ec9e2f366325bce5", "src": "vmangos@13b49dc"}

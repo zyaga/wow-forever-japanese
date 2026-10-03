@@ -14,6 +14,7 @@
 {"id": "6f389aa51d2a6ced", "field": "text", "en": "There is something you wish to discuss, $c... come, sit by me.", "hash": "6f389aa51d2a6ced", "src": "vmangos@13b49dc"}
 {"id": "6f45b639bc777601", "field": "text", "en": "Kahil, it was a mighty effort. Come back and rest up. Narrisha will clean this up for us.", "hash": "6f45b639bc777601", "src": "vmangos@13b49dc"}
 {"id": "6f4c405c204b9957", "field": "text", "en": "Greetings, $c.  It is the time of the Harvest Festival - a time of great bounties and a time of remembrance.  We partake of feasts to celebrate all we have to be thankful of, and we remember our ancestors and past heroes to give thanks to the legacy they gave us.$B$BPlease feel free to partake of the feast being offered here.  Also, I am offering some fireworks to help celebrate this joyous time of year.", "hash": "6f4c405c204b9957", "src": "vmangos@13b49dc"}
+{"id": "6f4dff8d16a88580", "field": "text", "en": "I have the finest meats in Orgrimmar.", "hash": "6f4dff8d16a88580", "src": "forever-vo@025070f", "npcs": [3368]}
 {"id": "6f5aa93197116f47", "field": "text", "en": "Take that, beast!", "hash": "6f5aa93197116f47", "src": "vmangos@13b49dc"}
 {"id": "6f5dad2dae96d1f6", "field": "text", "en": "Tailoring can come in very handy. I once had to sew my arm back on.", "hash": "6f5dad2dae96d1f6", "src": "vmangos@13b49dc"}
 {"id": "6f5e368d1cb14897", "field": "text", "en": "I promise you this much: The Valley will be ours.", "hash": "6f5e368d1cb14897", "src": "vmangos@13b49dc"}

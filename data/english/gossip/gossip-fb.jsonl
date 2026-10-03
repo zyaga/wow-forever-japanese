@@ -19,6 +19,7 @@
 {"id": "fb74c862027cfe18", "field": "text", "en": "I'm so tired *pant pant*", "hash": "fb74c862027cfe18", "src": "vmangos@13b49dc"}
 {"id": "fb77df1ea00811b2", "field": "text", "en": "Oh, no! We've run out of time. ", "hash": "fb77df1ea00811b2", "src": "vmangos@13b49dc"}
 {"id": "fb7c06d353b2b603", "field": "text", "en": "Och!  Now that's a skill worth knowing.  Tognus beats the anvil with a fury ye don't see often.  Why don't ye go talk him up and see what he can teach ye?", "hash": "fb7c06d353b2b603", "src": "vmangos@13b49dc"}
+{"id": "fb7e33b6896e789c", "field": "text", "en": "<The $R lying before you is unconscious.>", "hash": "fb7e33b6896e789c", "src": "forever-vo@025070f", "npcs": [253002]}
 {"id": "fb80cc507ab6e6da", "field": "text", "en": "Show me what hooch you've got to sell, Kreeg.", "hash": "fb80cc507ab6e6da", "src": "vmangos@13b49dc"}
 {"id": "fb82c5fb2542d324", "field": "text", "en": "Jeztor lives! Time to light up the Valley sky, Commander.", "hash": "fb82c5fb2542d324", "src": "vmangos@13b49dc"}
 {"id": "fb86896cdf3e4181", "field": "text", "en": "Sorry, Huldar... But it seems I've misled you.", "hash": "fb86896cdf3e4181", "src": "vmangos@13b49dc"}

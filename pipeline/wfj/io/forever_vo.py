@@ -1,6 +1,6 @@
 """Reader for forever-vo's capture files (github.com/quinn-dougherty/forever-vo, MIT): quest progress and
-turn-in text that players of the Forever client recorded with that project's addon and sent in. The server
-sends this text only at the NPC, so no client file holds it (ADR-055).
+turn-in text and NPC greetings that players of the Forever client recorded with that project's addon and sent
+in. The server sends this text only at the NPC, so no client file holds it (ADR-055).
 
 Each `captures/*.json` is one player's submission: `origin` (the issue it came from) and `quests`, a map of
 entries `{questID, event, title, text, build, …}`. Only `progress` and `complete` events are read.
@@ -102,3 +102,54 @@ def read_captures(folder: Path, titles: Mapping[int, str]) -> Result:
     skipped["one_submission"] = few
     skipped["disagreed_resolved"] = disagreed
     return Result(captures, skipped)
+
+
+@dataclass
+class Greeting:
+    en: str
+    origins: int
+    npcs: list[int]
+
+
+def english_origins(folder: Path, titles: Mapping[int, str]) -> set[str]:
+    """The submissions from an English client: at least one quest entry whose title equals the English title
+    we hold, and none whose title differs. A submission is one player's client, so its greetings share its
+    language; one with no quest entry to tell by is left out."""
+    good: set[str] = set()
+    for path in sorted((folder / "captures").glob("*.json")):
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        origin = str(doc.get("origin") or path.stem)
+        seen = [(titles.get(int(e["questID"])), e.get("title")) for e in (doc.get("quests") or {}).values()]
+        known = [(ours, theirs) for ours, theirs in seen if ours is not None]
+        if known and all(ours == theirs for ours, theirs in known):
+            good.add(origin)
+    return good
+
+
+def read_greetings(folder: Path, titles: Mapping[int, str]) -> list[Greeting]:
+    """The NPC greetings (`gossip` entries) at least MIN_ORIGINS English submissions sent, compared
+    normalized, each with the creature ids that said it. → sorted by text"""
+    english = english_origins(folder, titles)
+    by: dict[str, tuple[str, set[str], set[int]]] = {}
+    for path in sorted((folder / "captures").glob("*.json")):
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        origin = str(doc.get("origin") or path.stem)
+        if origin not in english:
+            continue
+        for entry in (doc.get("gossip") or {}).values():
+            text = entry.get("text")
+            if entry.get("event") != "gossip" or not isinstance(text, str) or not text.strip():
+                continue
+            norm = normalize_v1(text)
+            if not norm:
+                continue
+            _, origins, npcs = by.setdefault(norm, (text, set(), set()))
+            origins.add(origin)
+            npc = str(entry.get("npc") or "")
+            if npc.isdigit() and 0 < int(npc) < 2**31 and not entry.get("isObject"):
+                npcs.add(int(npc))
+    return [
+        Greeting(text, len(origins), sorted(npcs))
+        for _, (text, origins, npcs) in sorted(by.items())
+        if len(origins) >= MIN_ORIGINS
+    ]

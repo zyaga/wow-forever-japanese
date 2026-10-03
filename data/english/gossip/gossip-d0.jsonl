@@ -1,5 +1,6 @@
 {"id": "d001a1805997a24a", "field": "text", "en": "Data access granted.  Have a nice day!\n\n01001110 01100001 01110100 01100001 01101100 01101001 01100101 00100000 01010000 01101111 01110010 01110100 01101101 01100001 01101110 00100000 01010010 01101111 01100011 01101011 01110011", "hash": "d001a1805997a24a", "src": "vmangos@13b49dc"}
 {"id": "d00d76f99da6c0e4", "field": "text", "en": "Alas... I am sorry to say I cannot currently give you your fortune, as you have recently received a fortune reading from me.$B$BReturn to me several hours from when you first received your fortune.  The forces of Fate will have properly recalibrated themselves, and I will be able to see into your future.", "hash": "d00d76f99da6c0e4", "src": "vmangos@13b49dc"}
+{"id": "d010dcc39319e546", "field": "text", "en": "Oi, what do you want?", "hash": "d010dcc39319e546", "src": "forever-vo@025070f", "npcs": [259190]}
 {"id": "d01de45166da4d03", "field": "text", "en": "Are you so eager to die? I will be happy to accommodate you...", "hash": "d01de45166da4d03", "src": "vmangos@13b49dc"}
 {"id": "d029618373c7816a", "field": "text", "en": "Narain, I need another special kit.", "hash": "d029618373c7816a", "src": "vmangos@13b49dc"}
 {"id": "d02a50fc0c9d6c3a", "field": "text", "en": "I am interested in tailor training.", "hash": "d02a50fc0c9d6c3a", "src": "vmangos@13b49dc"}
@@ -33,4 +34,5 @@
 {"id": "d0dbcb58c9022c6f", "field": "text", "en": "Tower Point was destroyed by the Alliance!", "hash": "d0dbcb58c9022c6f", "src": "vmangos@13b49dc"}
 {"id": "d0e503bd869d015f", "field": "text", "en": "Show your courage, men and women of Azeroth!  Drive back the Qiraji invaders!", "hash": "d0e503bd869d015f", "src": "vmangos@13b49dc"}
 {"id": "d0e5fa584a294b0a", "field": "text", "en": "Beware, $n!  Look to the west!", "hash": "d0e5fa584a294b0a", "src": "vmangos@13b49dc"}
+{"id": "d0fb8845b2cbd889", "field": "text", "en": "I'm hoping to open my very own shop soon! In the meantime, would you like to buy anything?\r\n\r\nEvery bit counts towards funding my dream!", "hash": "d0fb8845b2cbd889", "src": "forever-vo@025070f", "npcs": [28989]}
 {"id": "d0fb88a1cf394f7c", "field": "text", "en": "I know it'll work this time...", "hash": "d0fb88a1cf394f7c", "src": "vmangos@13b49dc"}

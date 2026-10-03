@@ -21,6 +21,7 @@
 {"id": "0046e0466525e0a0", "field": "text", "en": "The Frostwolf Relief Hut lies in Frostwolf Keep, south of the Frostwolf Towers.$B$BThe Alliance currently controls it.", "hash": "0046e0466525e0a0", "src": "vmangos@13b49dc"}
 {"id": "004dcb42d7fc65ff", "field": "text", "en": "There are several battlegrounds from which to choose.  To which battlemaster shall I send you?", "hash": "004dcb42d7fc65ff", "src": "vmangos@13b49dc"}
 {"id": "0053e8152b45869a", "field": "text", "en": "Shirvallah, fill me with your RAGE!", "hash": "0053e8152b45869a", "src": "vmangos@13b49dc"}
+{"id": "0054c30ca498dbba", "field": "text", "en": "As a $c, you are one of a select group that can conjure a portal to transport you back to this very place.  I can teach you if you are ready.", "hash": "0054c30ca498dbba", "src": "forever-vo@025070f", "npcs": [4165, 5958]}
 {"id": "0055b5630679875c", "field": "text", "en": "It's up and....it's good!", "hash": "0055b5630679875c", "src": "vmangos@13b49dc"}
 {"id": "0056137af31d7ff9", "field": "text", "en": "%s raises his mug to his eye, and frowns.", "hash": "0056137af31d7ff9", "src": "vmangos@13b49dc"}
 {"id": "005847de91a591ea", "field": "text", "en": "I've been spotted!  $n incoming! Help!", "hash": "005847de91a591ea", "src": "vmangos@13b49dc"}

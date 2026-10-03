@@ -40,4 +40,5 @@
 {"id": "e2f83e95d1210f3a", "field": "text", "en": "%s is found!", "hash": "e2f83e95d1210f3a", "src": "vmangos@13b49dc"}
 {"id": "e2fd2d7caa451eb2", "field": "text", "en": "Of course I will help!", "hash": "e2fd2d7caa451eb2", "src": "vmangos@13b49dc"}
 {"id": "e2fd5b78f3b1e20b", "field": "text", "en": "Greetings!", "hash": "e2fd5b78f3b1e20b", "src": "vmangos@13b49dc"}
+{"id": "e2fd5b85f3b1e218", "field": "text", "en": "Greetings.", "hash": "e2fd5b85f3b1e218", "src": "forever-vo@025070f", "npcs": [167, 3001, 3608, 3955, 4598, 6297]}
 {"id": "e2ff15a9680e16c9", "field": "text", "en": "Cloaking systems online!  CLUCK!  Engaging cloak for transport to Booty Bay!", "hash": "e2ff15a9680e16c9", "src": "vmangos@13b49dc"}

@@ -589,7 +589,19 @@ def run_forever_vo(a: argparse.Namespace) -> int:
             continue
         lines.append(english_line(cap.id_, cap.field, cap.en, h, src))
     merged = merge_source("quest", existing, lines, "forever-vo", outranked_by=("collector",))
+    # NPC greetings: keyed by the hash of their English like every gossip line, so only a key no other source
+    # holds is added; this source's earlier greetings are replaced as a set
+    gossip = store.load("gossip")
+    others = [ln for ln in gossip if source_name(ln) != "forever-vo"]
+    held = {ln["id"] for ln in others}
+    greetings = []
+    for g in forever_vo.read_greetings(Path(a.folder), titles):
+        k = hash_key(normalize_v1(g.en))
+        if k in held:
+            continue
+        greetings.append(english_line(k, "text", g.en, k, src, npcs=g.npcs))
     store.save("quest", merged)
+    store.save("gossip", others + greetings)
     fields = Counter(ln["field"] for ln in lines)
     print(
         f"english quest: {len(lines)} lines ({src}): progress {fields['progress']} · completion "
@@ -597,6 +609,7 @@ def run_forever_vo(a: argparse.Namespace) -> int:
         f"already held, other wording {c['held']}"
     )
     print("skipped: " + ", ".join(f"{k} {v}" for k, v in sorted(result.skipped.items())))
+    print(f"english gossip: {len(greetings)} NPC greetings ({src}) no other source holds")
     return 0
 
 
