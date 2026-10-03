@@ -44,9 +44,10 @@ held 577 submissions with about 27,000 quest lines from builds 69913 to 70205.
    7 to the wrong wording.
 4. **It fills gaps only.** A (quest, field) another source already holds is left alone. Where VMaNGOS has the line,
    a capture differs mostly in form (`$B` written out, one gender's word for a `$g` choice), and replacing it would
-   mark a hand-written translation stale for nothing. Our own collector outranks forever-vo, and a VMaNGOS line
-   replaces a forever-vo line for the same field, so an update ends where a fresh import does, whichever source was
-   imported first.
+   mark a hand-written translation stale for nothing. Our own collector outranks forever-vo, and VMaNGOS, a
+   vanilla stand-in, never replaces a forever-vo line: what Forever players saw in game wins. forever-vo's lines are
+   fields VMaNGOS has no text for (591 of the 630 are Forever's own quests, ids from 90000), so the order the two
+   are imported in changes the result only if a VMaNGOS update adds one of those fields.
 5. **NPC greetings** carry no quest title, so the language is told per submission: a submission in which at least 90% of
    the quest entries we can check carry the English title we hold is an English client, and its greetings count.
    Not all of them must match: Forever renames a quest now and then, and an older capture keeps the old title. At
