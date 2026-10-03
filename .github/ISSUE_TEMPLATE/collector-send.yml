@@ -15,8 +15,8 @@ body:
 
         **What it contains:** the English game text the addon recorded: quest text, NPC dialogue with the ids of
         the NPCs who said it, item and spell descriptions, and NPC names, keyed by game id, with the game build
-        and the addon version. Your character's name is never stored; next to a line that names your
-        class or race, the class and race are noted. It holds **no character name, account, realm, location, chat
+        and the addon version. Your character's name is never stored. Your character's class and race are noted
+        too, because some lines change with them. It holds **no character name, account, realm, location, chat
         or time data.** Wording that depends on your character's gender ("sir" / "madam") is kept as your game
         shows it. This issue is public.
 
@@ -29,7 +29,7 @@ body:
 
         **中身:** アドオンが記録したゲームの英語テキストです。クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、
         NPC の名前が、ゲーム内 ID ごとに、ゲームのビルドとアドオンのバージョンと一緒に入っています。
-        キャラクター名は保存されません。クラスや種族の名前を含む行には、そのクラスと種族が記録されます。
+        キャラクター名は保存されません。一部の文章はクラスや種族で変わるため、キャラクターのクラスと種族も記録されます。
         **キャラクター名・アカウント・レルム・位置・チャット・時刻の情報は含まれません。**
         キャラクターの性別で変わる言い回し（"sir" / "madam"）はゲームの表示どおりに残ります。この Issue は公開されます。
   - type: textarea
