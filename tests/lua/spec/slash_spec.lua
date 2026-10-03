@@ -135,6 +135,15 @@ describe("/wfj covers every setting", function()
     wfj("debug spell " .. tostring((next(WFJ.Data.spell))))
     assert.is_truthy(Stub.prints[1]:find("spell.description: unaligned", 1, true))
     Stub.prints = {}
+    -- a sectioned line (a heading with optional paragraphs) has no single Japanese text to print
+    local get = WFJ.Lookup.get
+    WFJ.Lookup.get = function(kind) -- luacheck: ignore 212
+      if kind == "spell.aura" then return { status = "t", h1 = 1, sections = { head = "見出し", {}, {} } } end
+    end
+    wfj("debug spell 1229741")
+    WFJ.Lookup.get = get
+    assert.is_truthy(table.concat(Stub.prints, "\n"):find("spell.aura: t (h1 00000001) 2 sections", 1, true))
+    Stub.prints = {}
     wfj("debug gossip")
     assert.is_truthy(Stub.prints[1]:find(("gossip entries: %d"):format(WFJ.Data.count("gossip")), 1, true))
     Stub.prints = {}

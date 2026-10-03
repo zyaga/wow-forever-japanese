@@ -9,7 +9,7 @@ from wfj.cmd.import_ import run
 from wfj.core.hashing import key
 from wfj.core.model import english_line, validate_line
 from wfj.core.normalize import normalize_v1
-from wfj.io.forever_vo import read_captures, read_greetings
+from wfj.io.forever_vo import english_origins, read_captures, read_greetings
 from wfj.io.jsonl_store import Store
 
 SRC = "forever-vo@025070f"
@@ -184,3 +184,12 @@ def test_a_malformed_entry_is_counted_not_fatal(tmp_path):
     assert [(c.id_, c.field) for c in result.captures] == [(97977, "completion")]
     assert result.skipped["malformed"] == 2
     read_greetings(folder, TITLES)  # the language check reads past it too
+
+
+def test_a_submission_with_a_few_renamed_titles_is_still_english(tmp_path):
+    titles = {i: f"Quest {i}" for i in range(1, 21)}
+    english = [_entry(i, "complete", f"Quest {i}", "Done.") for i in range(1, 20)] + [
+        _entry(20, "complete", "Quest 20 (old name)", "Done.")]  # renamed after this capture
+    german = [_entry(i, "complete", f"Quest {i} (de)", "Fertig.") for i in range(1, 21)]
+    folder = _captures(tmp_path / "fvo", [english, german])
+    assert english_origins(folder, titles) == {"issue-0"}

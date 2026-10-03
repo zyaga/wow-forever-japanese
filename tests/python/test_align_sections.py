@@ -52,3 +52,13 @@ def test_an_opening_that_begins_another_opening_ships_nothing():
     assert _sections(b, texts) == "sections_indistinguishable"
     other = align.branching(en.replace("Tent: You rest well", "Lodge: You rest well"))
     assert isinstance(_sections(other, texts), dict)
+
+
+def test_a_heading_with_a_number_ships_nothing():
+    from wfj.cmd.generate import _sections
+    parts = ["Tent: Rest $1d.", "Banner: Up $2w1.", "Well: Up $3w1.", "Chair: Up $4w1.", "Pot: Up $5w1."]
+    en = "Gained 5 camp benefits:\r\n\r\n" + "".join(f"$?a{i}[{p}\r\n\r\n][]" for i, p in enumerate(parts, 1))
+    b = align.branching(en)
+    assert b.sectioned
+    texts = ["見出し5\n\n"] + [f"見出し5\n\n部分{i}\n\n" for i in range(1, len(b.variants))]
+    assert _sections(b, texts) == "sections_head_has_values"

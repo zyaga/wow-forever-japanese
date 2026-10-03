@@ -293,9 +293,9 @@ local function anySecretOf(...)
   return false
 end
 
--- The colours of a run's non-blank lines for Render's partColors: nil where a line has the first line's colour,
--- "ffRRGGBB" where it differs (the gold flavour text under a green Use: line). → colors | nil (all one colour, or
--- a colour the client keeps secret)
+-- The colours of a run's non-empty parts (each line, split at the line breaks inside it) for Render's partColors:
+-- nil where a part has the first line's colour, "ffRRGGBB" where it differs (the gold flavour text under a green
+-- Use: line). → colors | nil (all one colour, or a colour the client keeps secret)
 function runColors(lines, first, last)
   local function hex(fs)
     if type(fs.GetTextColor) ~= "function" then return nil end
@@ -310,8 +310,12 @@ function runColors(lines, first, last)
     if lines[i].text ~= "" then
       local c = hex(lines[i].fs)
       if not c then return nil end
-      colors.n = colors.n + 1
-      if c ~= base then colors[colors.n], differs = c, true end
+      for part in (lines[i].text .. "\n"):gmatch("(.-)\n") do
+        if part ~= "" then
+          colors.n = colors.n + 1
+          if c ~= base then colors[colors.n], differs = c, true end
+        end
+      end
     end
   end
   return differs and colors or nil

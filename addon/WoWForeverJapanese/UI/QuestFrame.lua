@@ -240,7 +240,8 @@ function QuestFrame.showPanel(panelName)
     if rec and rec.fs == fs and rec.applied ~= nil and rec.en == en and isText(fs) and fs:GetText() == rec.applied then
       n = n + 1
     elseif isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en and variant then
-      WFJ.Render.show(panel.surface, field, fs, en, "quests", "gossip", variant, { refit = panel.refit })
+      -- live: the values a quest line fills in (`$N1`) come from this text
+      WFJ.Render.show(panel.surface, field, fs, en, "quests", "gossip", variant, { refit = panel.refit, live = en })
       n = n + 1
     elseif isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en then
       -- live: the API English, for the stale marker's live check (ADR-019)

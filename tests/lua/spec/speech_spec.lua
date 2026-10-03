@@ -52,10 +52,10 @@ end
 
 -- The chat event handler for a monster line: the formatter and the AddMessage call it makes.
 local lineID = 0
-local function npc(frame, typeId, template, body, speaker, guid, target)
+local function npc(frame, typeId, template, body, speaker, guid, target, language)
   lineID = lineID + 1
   local function formatter(msg) return format(template .. msg, speaker, speaker) end
-  local args = { body, speaker, n = 12 }
+  local args = { body, speaker, language or "", n = 12 }
   args[5] = target
   args[11] = lineID
   args[12] = guid
@@ -154,6 +154,14 @@ describe("NPC speech", function()
     npc(f, SAY, "%s says: ", "Thank you, Testplayer!", "Ralph", "Creature-0-1-2-3-1234-00002", "Testplayer")
     assert.are.equal(3, #recorded)
     assert.are.equal("Thank you, Testplayer!", recorded[3][1])
+    -- a language this character does not know arrives scrambled and is not recorded; a known one is
+    _G.GetNumLanguages = function() return 2 end
+    _G.GetLanguageByIndex = function(i) return ({ "Common", "Darnassian" })[i], i end
+    npc(f, SAY, "%s says: ", "Lok tar ogar!", "Grunt", "Creature-0-1-2-3-1234-00003", nil, "Orcish")
+    npc(f, SAY, "%s says: ", "Elune guide you.", "Sentinel", "Creature-0-1-2-3-1234-00004", nil, "Darnassian")
+    assert.are.equal(4, #recorded)
+    assert.are.equal("Elune guide you.", recorded[4][1])
+    _G.GetNumLanguages, _G.GetLanguageByIndex = nil, nil
     _G.UnitName = nil
     WFJ.Collector = nil
   end)

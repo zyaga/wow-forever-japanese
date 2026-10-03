@@ -531,10 +531,9 @@ def run_vmangos(a: argparse.Namespace) -> int:
     # Merge every type before writing any: a refused merge must not leave another type's merge written.
     # a line a client recorded in game (the collector) outranks VMaNGOS, a stand-in (ADR-053)
     merged_book = merge_source("book", store.load("book"), books, "vmangos", outranked_by=("collector",))
-    # so does what forever-vo's players recorded in game (ADR-055)
-    merged_quest = merge_source(
-        "quest", store.load("quest"), quest, "vmangos", outranked_by=("collector", "forever-vo")
-    )
+    # forever-vo only fills what no other source holds (ADR-055), so a VMaNGOS line replaces one of its lines:
+    # an update then ends where a fresh import does, whichever order the two ran in
+    merged_quest = merge_source("quest", store.load("quest"), quest, "vmangos", outranked_by=("collector",))
     existing = store.load("gossip")
     mine = {ln["id"]: ln for ln in existing if source_name(ln) == "vmangos"}
     if not by_key and mine:

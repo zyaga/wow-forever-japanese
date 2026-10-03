@@ -94,6 +94,14 @@ describe("UI/Tooltip: item and spell tooltips", function()
     Stub.keys.alt = false; WFJ.Modifier.refresh()
   end)
 
+  it("part colours skip empty parts on both sides: a blank line or a paragraph break never shifts them", function()
+    local cp = WFJ.Render.colourParts
+    local gold = { n = 2, [2] = "ffffd100" }
+    assert.are.equal("説明。\n\n|cffffd100フレーバー。|r", cp("説明。\n\nフレーバー。", gold))
+    assert.are.equal("説明。\n|cffffd100フレーバー。|r", cp("説明。\nフレーバー。", gold))
+    assert.are.equal("一。\n二。\n三。", cp("一。\n二。\n三。", gold)) -- parts do not line up: as it is
+  end)
+
   it("no description run, no item, or a gate failure → nothing written", function()
     WFJ.Settings.set("marker.missing", false) -- on by default; this test reads the text, not the marker
     Stub.setItemTooltip(tt, "|Hitem:117:0:0:0:0:0:0:0|h[x]|h",

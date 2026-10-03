@@ -173,6 +173,10 @@ def _sections(b: align.Branching, texts: list[str]) -> str | dict[str, Any]:
     (numbered to its own values) and its shape. The keys are hashes; no English ships.
     → data | the reason it ships nothing"""
     head_en, head_ja = b.variants[0].en, texts[0]
+    # each paragraph's shape and numbering count its own values only, as the addon reads them; a heading
+    # with a value (a literal number) would shift both
+    if b.variants[0].shape != "0/0":
+        return "sections_head_has_values"
     sections = []
     for v, ja in zip(b.variants[1:], texts[1:], strict=True):
         if not ja.startswith(head_ja):

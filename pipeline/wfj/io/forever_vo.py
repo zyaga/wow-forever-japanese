@@ -25,6 +25,7 @@ from wfj.core.normalize import normalize_v1
 FIELDS = {"progress": "progress", "complete": "completion"}
 MIN_ORIGINS = 2
 TOKENS = ("{name}", "{class}", "{race}")
+ENGLISH_SHARE = 0.9  # of a submission's known quest titles that must be our English ones
 
 
 @dataclass
@@ -125,9 +126,11 @@ class Greeting:
 
 
 def english_origins(folder: Path, titles: Mapping[int, str]) -> set[str]:
-    """The submissions from an English client: at least one quest entry whose title equals the English title
-    we hold, and none whose title differs. A submission is one player's client, so its greetings share its
-    language; one with no quest entry to tell by is left out."""
+    """The submissions from an English client: at least ENGLISH_SHARE of the quest entries whose id we know
+    carry the English title we hold. A submission is one player's client, so its greetings share its
+    language; one with no quest entry to tell by is left out. Not every title must match: Forever renames a
+    quest now and then, and a capture from before the rename holds the old title (at the pin, English clients
+    match 94.7% or more, the German ones none)."""
     good: set[str] = set()
     for path in sorted((folder / "captures").glob("*.json")):
         doc = json.loads(path.read_text(encoding="utf-8"))
@@ -135,7 +138,7 @@ def english_origins(folder: Path, titles: Mapping[int, str]) -> set[str]:
         seen = [(titles.get(q), e.get("title")) for e in (doc.get("quests") or {}).values()
                 if (q := _qid(e)) is not None]
         known = [(ours, theirs) for ours, theirs in seen if ours is not None]
-        if known and all(ours == theirs for ours, theirs in known):
+        if known and sum(ours == theirs for ours, theirs in known) >= ENGLISH_SHARE * len(known):
             good.add(origin)
     return good
 

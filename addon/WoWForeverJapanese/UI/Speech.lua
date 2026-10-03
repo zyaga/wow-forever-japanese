@@ -154,6 +154,18 @@ function Speech.scheduleScan()
 end
 
 -- hooksecurefunc target (a chat frame's AddMessage). → 1 | 0
+-- true for no language ("" or nil) or one of this character's languages; a secret, or no way to list them, → false
+function Speech.knownLanguage(language)
+  if language == nil or (not secret(language) and language == "") then return true end
+  if secret(language) then return false end
+  local count, byIndex = Compat.resolve("GetNumLanguages"), Compat.resolve("GetLanguageByIndex")
+  if type(count) ~= "function" or type(byIndex) ~= "function" then return false end
+  for i = 1, count() or 0 do
+    if byIndex(i) == language then return true end
+  end
+  return false
+end
+
 function Speech.onAddMessage(frame, line, _, _, _, typeId, _, _, _, eventArgs, formatter)
   local byId = typeIds()
   local name = byId and byId[typeId]
@@ -167,11 +179,14 @@ function Speech.onAddMessage(frame, line, _, _, _, typeId, _, _, _, eventArgs, f
   -- id from the event's GUID (eventArgs[12]); NPC speech is in no client file, so playing is how it is found. A
   -- line the NPC says to another player (eventArgs[5], the target) may hold that player's name, which would end
   -- up in public data: only lines to no one or to this player are recorded.
-  local guid, target = eventArgs[12], eventArgs[5]
+  -- A line in a language this character does not know (eventArgs[3], shown as "[Orcish] …") arrives scrambled,
+  -- so only lines in no language or a known one are recorded [verified: chatframeoverrides.lua:581, the language
+  -- header; chatframemenubutton.lua:120, the known languages].
+  local guid, target, language = eventArgs[12], eventArgs[5], eventArgs[3]
   local me = Compat.resolve("UnitName")
   me = type(me) == "function" and me("player") or nil
   local toOther = type(target) == "string" and target ~= "" and not secret(target) and target ~= me
-  if WFJ.Collector and not secret(guid) and not secret(target) and not toOther then
+  if WFJ.Collector and not secret(guid) and not secret(target) and not toOther and Speech.knownLanguage(language) then
     WFJ.Collector.recordGossip(en, guid)
   end
   if not WFJ.ChatSystem.on(AREA) then return 0 end
