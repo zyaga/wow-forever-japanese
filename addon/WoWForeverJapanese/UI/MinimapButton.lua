@@ -116,6 +116,7 @@ function MinimapButton.items()
       isSelected = function() return S.get("enabled") == true end,
       action = function() S.set("enabled", not S.get("enabled")) end },
     { kind = "button", text = tx("button.reportLine"), action = function() WFJ.FixWindow.open() end },
+    { kind = "button", text = tx("button.reportBug"), action = function() WFJ.ReportWindow.open() end },
     { kind = "button", text = tx("button.settings"), action = function() C.openOptions() end },
     { kind = "button", text = tx("minimap.hide"), action = function() S.set("minimapButton", false) end },
   }

@@ -65,6 +65,18 @@ describe("/wfj covers every setting", function()
     assert.are.equal(14, n)
   end)
 
+  it("/wfj bug opens the report window on Bug; /wfj log ends with the Lua error count", function()
+    local opened, real = 0, WFJ.ReportWindow.open
+    WFJ.ReportWindow.open = function() opened = opened + 1 end
+    wfj("bug")
+    wfj("BUG")
+    WFJ.ReportWindow.open = real
+    assert.are.equal(2, opened)
+    Stub.prints = {}
+    wfj("log")
+    assert.are.equal("WFJ: errors: 0 recorded, 0 not sent (/wfj bug)", Stub.prints[#Stub.prints])
+  end)
+
   it("reads a setting when no value is given; rejects a bad value with the reason", function()
     wfj("modifier")
     assert.is_truthy(Stub.prints[#Stub.prints]:find("modifier = alt", 1, true))

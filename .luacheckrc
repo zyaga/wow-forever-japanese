@@ -29,6 +29,11 @@ read_globals = {
   -- Mainline/SharedUIPanelTemplates.lua:111].
   "time", "CreateFramePool", "CreateScrollBoxListLinearView", "ScrollUtil", "CreateDataProvider",
   "ScrollBoxConstants", "ButtonFrameTemplate_HidePortrait",
+  -- The addon's own Lua errors (Core/ErrorLog, ADR-057): the handler it wraps, the stack at the error, and the check
+  -- that a value may be read [verified: forever-ui Blizzard_ScriptErrors/Blizzard_ScriptErrors.lua:49–101,
+  -- FrameScriptDocumentation.lua:65 canaccessvalue, :171 GetCallstackHeight, :189 GetErrorCallstackHeight].
+  "geterrorhandler", "seterrorhandler", "debugstack", "GetCallstackHeight", "GetErrorCallstackHeight",
+  "canaccessvalue",
 }
 
 -- Globals the addon defines (SavedVariables, slash registrations, bindings).

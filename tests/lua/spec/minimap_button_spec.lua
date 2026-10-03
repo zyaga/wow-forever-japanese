@@ -6,11 +6,15 @@ local F = require("tests.lua.spec.stub_fixwindow")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/State.lua",
   "Core/Settings.lua", "Core/Modifier.lua", "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",
   "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/FixWindow.lua", "UI/MinimapButton.lua" }
+-- the report window, for the menu's bug item (loaded on top: its own files need the collector's send)
+local REPORT = { "Core/Collector.lua", "Core/CollectorSend.lua", "Core/ErrorLog.lua", "Core/BugReport.lua",
+  "UI/ReportWindow.lua" }
 
 local function load(saved)
   Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
   F.install()
   local WFJ = H.loadChunks(FILES)
+  H.loadChunks(REPORT, WFJ)
   WFJ.Compat.init(function(name) return _G[name] end)
   local db = WFJ.Settings.load(saved, 1, {})
   WFJ.Reports.load(db)
@@ -82,7 +86,7 @@ describe("the minimap button", function()
     assert.are.equal("recent", WFJ.FixWindow.current)
   end)
 
-  it("right-click opens the menu: title, translation on / off, report, settings, hide", function()
+  it("right-click opens the menu: title, translation on / off, report, bug or idea, settings, hide", function()
     b:click("RightButton")
     local menu = F.menus[1]
     assert.are.equal(b, menu.owner)
@@ -90,8 +94,8 @@ describe("the minimap button", function()
     for i, el in ipairs(menu.elements) do texts[i] = el.kind .. ":" .. el.text end
     -- a divider sets the switch apart from the actions
     assert.are.same({ "title:WoW Forever Japanese", "checkbox:翻訳オン", "divider:",
-      "button:翻訳を報告", "button:設定", "button:このボタンを隠す" }, texts)
-    for _, i in ipairs({ 2, 4, 5, 6 }) do assert.are.equal(1, #menu.elements[i].initializers) end -- bundled font
+      "button:翻訳を報告", "button:不具合・提案を報告", "button:設定", "button:このボタンを隠す" }, texts)
+    for _, i in ipairs({ 2, 4, 5, 6, 7 }) do assert.are.equal(1, #menu.elements[i].initializers) end -- bundled font
   end)
 
   it("the checkbox is the master switch, the same state as the settings checkbox", function()
@@ -106,19 +110,22 @@ describe("the minimap button", function()
     assert.is_true(cb.a())
   end)
 
-  it("report opens the fix window; settings opens the addon's settings", function()
+  it("report opens the fix window; bug or idea opens the report window; settings opens the settings", function()
     b:click("RightButton")
     local opened
     WFJ.Compat.openOptions = function(page) opened = page or "main" end
     F.menus[1].elements[4].a()
     assert.is_true(_G.WFJFixWindow:IsShown())
     F.menus[1].elements[5].a()
+    assert.is_true(_G.WFJReportWindow:IsShown())
+    assert.are.equal("bug", WFJ.ReportWindow.mode)
+    F.menus[1].elements[6].a()
     assert.are.equal("main", opened)
   end)
 
   it("Hide this button turns the setting off; turning it on shows the button again", function()
     b:click("RightButton")
-    F.menus[1].elements[6].a()
+    F.menus[1].elements[7].a()
     assert.is_false(WFJ.Settings.get("minimapButton"))
     assert.is_false(b:IsShown())
     assert.is_true(WFJ.Settings.set("minimapButton", "on")) -- as /wfj minimapButton on does

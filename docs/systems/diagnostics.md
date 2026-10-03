@@ -18,17 +18,33 @@ Every entry also carries the local time (`at`), seconds since the client started
 
 A `hook` or `blocked` entry also prints one chat line, once per session, ending in "/wfj log shows it".
 
+## The addon's own Lua errors
+Forever hides Lua errors by default, so a player never sees an error in this addon's code. `Core/ErrorLog.lua` keeps them in the same table, under `WFJ_Log.errors`, for a bug report ([fix reports](fix-reports.md), "Bug and idea reports"; [ADR-057](../adr/057-catching-the-addons-own-lua-errors.md)).
+
+- **How it catches them.** `Core/ErrorLog.lua` is the first file in the TOC, so it catches load errors in every other file. At load it reads the client's current error handler (`geterrorhandler`) and sets a wrapper (`seterrorhandler`). The wrapper records the error inside `pcall` and then always calls the previous handler with the same arguments, so the game's Lua error window, BugSack and other addons see every error as before. An error raised while recording is never recorded again.
+- **Errors a setup step catches.** A setup step in `Main.lua` runs inside its own `pcall` (the step guard), so its error never reaches the handler. The guard hands it to `ErrorLog.recordCaught`, which keeps it the same way, from the message alone (no stack is left to read).
+- **The stack.** `ErrorLog.stack` reads it the way the client's own handler (`Blizzard_ScriptErrors.lua`) does: the current callstack height less the error's. Because that level comes from the error's own height, the extra wrapper frame does not change what the client prints. A handler called directly, outside an error, has no error height and uses offset 0, as the client does. On a client without the height functions there is no stack, and the message alone decides. The wrapper's own `Core/ErrorLog.lua` frames are left out of the stored stack.
+- **Only errors raised in this addon's files.** An error is kept only when it was raised in a file under `WoWForeverJapanese/`. The file that decides is the one the message names at its start (`path:line:` or `[string "..."]:line:`). For a message without one, it is the top Lua frame of the stack, skipping `[C]` frames, `(tail call)` and the wrapper's own frames. A path counts as ours when `ForeverJapanese/` (or `\`) follows `WoW` after a `/`, `\`, `@` or the start, or follows the client's front-truncated form, as in `...rface/AddOns/WoWForeverJapanese/UI/MinimapButton.lua:144:`. An error whose message names another addon's or Blizzard's file is not ours, even when this addon's code is lower in the stack. A `/run error("x")` typed in chat names `[string "..."]` and is not kept. A value the client marks as secret (`canaccessvalue`) is not read.
+- **What is stored.** Each entry holds `msg` (500 bytes at most, cut on a UTF-8 boundary), `stack` (12 lines and 1,000 bytes at most), `n` (how often), `first` and `last` (local time) and `sent`. No local variables. The same error again adds to `n` and moves `last`. For matching, table, function, userdata and thread addresses in the message are blanked, so the same error raised on another table is one entry. A repeat of an error already sent starts over as a new one: `sent` is cleared, `n` is 1 and `first` restarts.
+- **Cap.** 30 errors. Over that, the oldest sent error goes first. With none sent, the newest is dropped, so the first errors (most often the cause of the rest) are kept.
+- **The player's name.** Written as `<name>` wherever it appears as a whole word in a message or stack, before the message is cut to length. A name that is a file name in a path (`/Main.lua`) is left alone, since the report needs the file. The scrub runs again at `PLAYER_ENTERING_WORLD` for an error caught before the name was known.
+- **Before the log loads.** Errors caught before `WFJ_Log` loads are held in memory and merged when it loads: a repeat adds its count and keeps the later time, and an entry caught before the clock was set up gets the load time. A saved entry that is not a table with a string message is dropped at load.
+- **Chat line.** The first error stored in a session prints one line: `WFJ: the addon hit a Lua error. /wfj bug reports it.`
+- **No setting.** Nothing turns capture on or off.
+
+**Another error addon.** BugGrabber (the part of BugSack that catches errors) sets its own handler, never calls the one before it, and then makes `seterrorhandler` do nothing. `!BugGrabber` loads before this addon. With it present this addon's wrapper sees no errors. At `PLAYER_ENTERING_WORLD`, once every addon has loaded, `ErrorLog.checkOurs` compares the active handler with the wrapper. When they differ (and none of this addon's errors reached the wrapper this session), the report window's bug summary says another addon catches Lua errors and asks the player to paste this addon's errors from it. The addon never reads BugGrabber's store: that would be a dependency on another addon.
+
 ## Adding to it
 `WFJ.Diag.log(kind, message, fields)` from any module. `fields` holds strings, numbers and booleans; anything else is stored as its type name. `WFJ.Diag.watch(frame, method, label)` after a `hooksecurefunc` on a single frame adds that hook to the checks (every 5 seconds).
 
 Watched now: chat frames' `AddMessage` (`UI/Speech`), chat edit boxes' `UpdateHeader` (`UI/ChatTabs`), the XP bars' `UpdateCurrentText` (`UI/MicroMenu`), gamepad prompts' `SetPromptText` (`UI/Gamepad`).
 
 ## Reading it
-- In game: `/wfj log` prints the last 10 entries, `/wfj log 30` the last 30 (at most 50).
+- In game: `/wfj log` prints the last 10 entries, `/wfj log 30` the last 30 (at most 50), then one line with the Lua errors: `errors: N recorded, M not sent (/wfj bug)`.
 - After the session: `WTF/Account/<ACCOUNT>/SavedVariables/WoWForeverJapanese.lua`, the `WFJ_Log` table. The client writes it on logout, `/reload` and exit, not on a crash.
 
 ## Privacy
-No game text, no character, realm or account name, no chat, no location. Frame and function names, counts and times only.
+No game text, no character, realm or account name, no chat, no location. Frame and function names, counts and times only. A stored Lua error holds the error's own message and stack, with the player's name written as `<name>`; stack paths start at `Interface/AddOns/`, never the account folder.
 
 ## Key files
-`addon/WoWForeverJapanese/Core/Diag.lua` · `Main.lua` (load, session, start) · `UI/Slash.lua` (`log`) · `tests/lua/spec/diag_spec.lua`
+`addon/WoWForeverJapanese/Core/Diag.lua` · `Core/ErrorLog.lua` · `Main.lua` (load, session, start, the error deps) · `UI/Slash.lua` (`log`) · `tests/lua/spec/diag_spec.lua` · `tests/lua/spec/errorlog_spec.lua`

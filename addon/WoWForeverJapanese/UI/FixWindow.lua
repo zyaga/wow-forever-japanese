@@ -132,32 +132,7 @@ local function typeLabel(type_)
 end
 
 local function build()
-  local UIParent = WFJ.Compat.resolve("UIParent")
-  -- the client's current window frame: title bar, a 60 px strip for the tabs, an inset panel
-  -- [verified: ButtonFrameTemplate Blizzard_SharedXML/Mainline/
-  -- SharedUIPanelTemplates.xml:711 (Inset TOPLEFT 4,-60 / BOTTOMRIGHT -6,26), ButtonFrameTemplate_HidePortrait
-  -- SharedUIPanelTemplates.lua:111, SetTitle / GetTitleText PortraitFrame.lua:4–28; camelot's FriendsFrame and
-  -- AddonList use it]
-  local f = CreateFrame("Frame", "WFJFixWindow", UIParent, "ButtonFrameTemplate")
-  ButtonFrameTemplate_HidePortrait(f)
-  f:SetSize(WIDTH, HEIGHT)
-  f:SetPoint("CENTER")
-  -- above the client's own overlays (the beta's Issue Reporter button sits over DIALOG)
-  f:SetFrameStrata("FULLSCREEN_DIALOG")
-  f:SetToplevel(true)
-  f:SetMovable(true)
-  f:SetClampedToScreen(true)
-  f:EnableMouse(true)
-  f:RegisterForDrag("LeftButton")
-  f:SetScript("OnDragStart", function(self) self:StartMoving() end)
-  f:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
-  -- Esc closes it like the client's own panels [verified: UISpecialFrames + CloseSpecialWindows,
-  -- Blizzard_UIParentPanelManager/Shared/UIParentPanelManager.lua:1106]
-  local special = WFJ.Compat.resolve("UISpecialFrames")
-  if type(special) == "table" then special[#special + 1] = "WFJFixWindow" end
-  f:SetTitle("")
-  f.title = f:GetTitleText()
-  f:Hide()
+  local f = W.toolWindow("WFJFixWindow", WIDTH, HEIGHT)
 
   -- tabs: the client's own tab widget, hanging off the window's top edge
   -- [verified: TabSystemTemplate / TabSystemTopButtonTemplate, Blizzard_SharedXML/Shared/TabSystem/

@@ -17,7 +17,7 @@ def test_real_toc_fields_and_load_order(root):
     assert "Esc > Options > AddOns" in meta["Notes"]
     assert "Hold Alt to see" not in meta["Notes"]
     # Dependency order as shipped: Core, then Data, the generated block, the Lookup slot, then the UI modules.
-    head = ["Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua"]
+    head = ["Core/ErrorLog.lua", "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua"]
     tail = [
         "Core/Lookup.lua", "Core/Readings.lua", "Core/Glosses.lua",
         "Core/Align.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
@@ -26,7 +26,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/SurfaceState.lua",
         "Core/Collector.lua", "Core/CollectorSend.lua",  # the collector and its send
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
-        "Core/Diag.lua",  # the problem log
+        "Core/Diag.lua", "Core/BugReport.lua",  # the problem log, the bug report link
         "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
         "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
         "UI/HelpTooltip.lua", "UI/TooltipData.lua",
@@ -80,7 +80,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/Scan.lua",
         # the settings pages' copy, widgets, key capture, the modifier's override binding, the AddOn List button
         "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua",
-            "UI/FixWindow.lua", "UI/CollectorSendWindow.lua",  # the fix window, the collector send window
+            "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/ReportWindow.lua",  # the tool windows
             "UI/MinimapButton.lua",  # the minimap button
             "UI/RevealBinding.lua",
         "UI/AddonListButton.lua", "UI/Options.lua", "UI/Slash.lua", "Main.lua",
