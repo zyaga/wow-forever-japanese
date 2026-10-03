@@ -73,14 +73,32 @@ local function keyOf(type_)
 end
 local gossipKey = keyOf("gossip")
 
+-- Whether `text` is the English quest `id`'s `field` ships under: one of its fingerprints (as the live check reads
+-- them) is the entry's h1 or female-variant h1. → boolean
+function WFJ.IsQuestFieldEnglish(id, field, text)
+  local entry = WFJ.Lookup.get("quest." .. field, id)
+  if type(entry) ~= "table" or type(text) ~= "string" or (entry.h1 == nil and entry.h1f == nil) then return false end
+  for _, h in ipairs(WFJ.Collector.fingerprints(text, collectorPlayer())) do
+    if h == entry.h1 or h == entry.h1f then return true end
+  end
+  return false
+end
+
 -- The gossip key a translation of `text` is actually shipped under, or nil: quest text the client shows with no id
 -- the addon can read (a quest's conditional description, its completion log line) is keyed like NPC dialogue.
+-- Memoized per text (the minimap's quest block asks every frame); the memo is dropped at 256 entries.
+local shippedMemo, shippedCount = {}, 0
 function WFJ.ShippedGossipKey(text)
   if type(text) ~= "string" or text == "" then return nil end
+  local hit = shippedMemo[text]
+  if hit ~= nil then return hit or nil end
+  local found = false
   for _, k in ipairs(WFJ.Collector.keys(text, collectorPlayer())) do
-    if WFJ.Lookup.keyed("gossip", k) then return k end
+    if WFJ.Lookup.keyed("gossip", k) then found = k; break end
   end
-  return nil
+  if shippedCount >= 256 then shippedMemo, shippedCount = {}, 0 end
+  shippedMemo[text], shippedCount = found, shippedCount + 1
+  return found or nil
 end
 
 local function expand(ja)

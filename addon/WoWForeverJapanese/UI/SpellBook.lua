@@ -199,14 +199,14 @@ function SpellBook.onDisplayedSpells()
   book:ForEachDisplayedSpell(function(item)
     local slot = slotOf(item)
     if not slot then return end
-    seen["sub." .. slot], seen["req." .. slot] = true, true
+    seen["sub." .. slot], seen["req." .. slot], seen["name." .. slot] = true, true, true
     hookItem(item)
     n = n + SpellBook.showItem(item)
   end)
   n = n + showHeaders(book, seen)
   local gone = {}
   for key in pairs(WFJ.SurfaceState.records(SURFACE)) do
-    if (key:find("^sub%.") or key:find("^req%.") or key:find("^header%.")) and not seen[key] then
+    if (key:find("^sub%.") or key:find("^req%.") or key:find("^name%.") or key:find("^header%.")) and not seen[key] then
       gone[#gone + 1] = key
     end
   end

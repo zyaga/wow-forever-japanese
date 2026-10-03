@@ -235,7 +235,9 @@ end
 
 local function showField(pane, field, en, id)
   local fs = get(field)
-  local variant = field == "description" and type(WFJ.ShippedGossipKey) == "function" and WFJ.ShippedGossipKey(en)
+  local variant = field == "description" and type(WFJ.ShippedGossipKey) == "function"
+    and not (type(WFJ.IsQuestFieldEnglish) == "function" and WFJ.IsQuestFieldEnglish(id, field, en))
+      and WFJ.ShippedGossipKey(en)
   if variant and isText(fs) and fs:GetText() == en then
     -- a conditional description (another wording for this character), keyed by its English
     WFJ.Render.show(pane.info, field, fs, en, "quests", "gossip", variant, { refit = pane.refit, compact = true })
@@ -795,11 +797,10 @@ function QuestMap.showQuestText(surface, recKey, fs, questID, refit)
   if type(questID) ~= "number" or not isText(fs) then return 0 end
   local en = fs:GetText()
   if type(en) ~= "string" or en == "" then return 0 end
-  local lookup = WFJ.Lookup and WFJ.Lookup.get
-  local entry = type(lookup) == "function" and lookup("quest.objectives", questID) or nil
-  if not (entry and entry.h1) then return 0 end
-  local h1 = WFJ.Hash.h32x2(WFJ.Normalize.v1(WFJ.Collector.text(en)))
-  if h1 ~= entry.h1 then return 0 end
+  -- the quest's objectives English, read as the live check reads it (player words, the female variant)
+  if type(WFJ.IsQuestFieldEnglish) ~= "function" or not WFJ.IsQuestFieldEnglish(questID, "objectives", en) then
+    return 0
+  end
   return WFJ.Render.show(surface, recKey, fs, en, "quests", "quest.objectives", questID, { refit = refit }) and 1 or 0
 end
 

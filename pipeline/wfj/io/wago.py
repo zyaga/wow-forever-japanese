@@ -182,7 +182,6 @@ TEXT_FAMILIES: dict[str, tuple[str, str]] = {
     "ItemSubClassMask": ("ItemSubClassMask", "Name_lang"),
     "RecentAllyType": ("RolodexType", "Description_lang"),
     "RecentAllyInteraction": ("RolodexType", "Field_11_2_5_62687_001_lang"),
-    "FriendshipLabel": ("FriendshipReputation", "Description_lang"),
     "FriendshipGain": ("FriendshipReputation", "StandingModified_lang"),
     "InstanceEntryMessage": ("MapDifficulty", "Message_lang"),
     "InstanceEntryFailure": ("MapDifficultyXCondition", "FailureDescription_lang"),

@@ -134,6 +134,25 @@ describe("UI/Tooltip: buff and debuff tooltips", function()
     assert.is_truthy(text(2):find(AURA_SHOWN, 1, true))
   end)
 
+  it("a buff no level-1 character sees (Campfire Nearby) and a spell description from the served-text round show"
+    .. " their Japanese; Alt shows the English", function()
+    local WFJ, tt = setup()
+    local campfire = "The pleasant smoke of a campfire drifts in the air from somewhere nearby."
+    DATA["spell.aura"][1283391] = { ja = "どこか近くから、キャンプファイアの心地よい煙が漂ってきます。", status = "u" }
+    DATA["spell.description"][45] = { ja = "周囲の敵をノックバックします。", status = "u" }
+    WFJ.Tooltip.init()
+    aura("player:4:HELPFUL", 1283391, { "Campfire Nearby", campfire, "" })
+    tt:SetUnitAura("player", 4, "HELPFUL")
+    assert.are.equal("どこか近くから、キャンプファイアの心地よい煙が漂ってきます。", text(2))
+    assert.are.equal("Campfire Nearby", text(1)) -- the name stays English
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal(campfire, text(2))
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    Stub.spellDescriptions[45] = "Knocks nearby enemies back."
+    Stub.setSpellTooltip(tt, 45, { "Knockback", "Knocks nearby enemies back." })
+    assert.are.equal("周囲の敵をノックバックします。", text(2))
+  end)
+
   it("a spell with a description and no aura shows no Japanese on its aura tooltip", function()
     local WFJ, tt = setup()
     WFJ.Settings.set("marker.missing", false) -- on by default; this test reads the text, not the marker

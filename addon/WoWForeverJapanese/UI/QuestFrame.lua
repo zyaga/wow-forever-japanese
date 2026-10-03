@@ -221,13 +221,17 @@ function QuestFrame.showPanel(panelName)
     local field, widgetKey, getter = spec[1], spec[2], spec[3]
     local fs = Compat.get(DECLARE, widgetKey)
     local en = getter()
-    -- The API English is the truth even when the widget is decorated: record before the equality guard.
-    WFJ.Collector.record("quest", id, field, en)
+    -- a conditional description (another wording of the quest for this character), keyed by its English: only
+    -- when the line is not the quest's own description
+    local variant = field == "description" and type(WFJ.ShippedGossipKey) == "function"
+      and not (type(WFJ.IsQuestFieldEnglish) == "function" and WFJ.IsQuestFieldEnglish(id, field, en))
+      and WFJ.ShippedGossipKey(en)
+    -- The API English is the truth even when the widget is decorated: record before the equality guard. A variant
+    -- is never recorded as the quest's description: other characters see the quest's own wording.
+    if not variant then WFJ.Collector.record("quest", id, field, en) end
     -- The widget must show exactly the API English; anything else (empty, decoration, a moved widget) is left
     -- alone, and a record from an earlier quest on that widget is dropped, never restored over the new text.
-    local variant = field == "description" and type(WFJ.ShippedGossipKey) == "function" and WFJ.ShippedGossipKey(en)
     if isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en and variant then
-      -- a conditional description (another wording of the quest for this character), keyed by its English
       WFJ.Render.show(panel.surface, field, fs, en, "quests", "gossip", variant, { refit = panel.refit })
       n = n + 1
     elseif isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en then

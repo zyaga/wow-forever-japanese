@@ -30,11 +30,10 @@
 -- stay English (a pair still in some history is never forgotten).
 -- Font: the chat fonts have no Japanese member, so the bundled face is put on every visible line showing one of our
 -- Japanese strings from the frame's AddOnDisplayRefreshedCallback (:164–175) with SetFont directly (a deferred font
--- retry would land on a pooled English line; in game), shrunk until it fits the line's laid-out height (fit). The
+-- retry would land on a pooled English line), shrunk until it fits the line's laid-out height (fit). The
 -- visible lines are fixed rows the messages move through, and the refresh's re-init (SetFontObject with the frame's
--- own object, scrollingmessageframe.lua:642, 716) does not undo our SetFont (in game: every row a Japanese line had
--- passed showed later English in the bundled face). So each row given the bundled face is remembered (Font.bundle)
--- and given the frame's font back directly (Font.restore) once it shows anything else.
+-- own object, scrollingmessageframe.lua:642, 716) does not undo a SetFont. Every visible row wears the bundled face
+-- at the frame's size (ChatSystem.show), English included, so a player's Japanese shows too.
 local _, WFJ = ...
 local ChatSystem = {}
 WFJ.ChatSystem = ChatSystem

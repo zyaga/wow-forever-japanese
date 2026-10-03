@@ -1,9 +1,9 @@
 -- UI/ChatInput.lua: the chat input box, its channel header and the header's ": " suffix always in the bundled
--- Japanese face. The client's chat font has no kana or kanji, so Japanese the player types or pastes showed as
--- nothing; switching faces as the text changed left the header measured in one face and shown in the other (in
--- game: the typed text started 50 px late after "/1"). One face throughout means the client's own header layout
--- (chatframeeditbox.lua:640, 696–710) always measures what is shown. Each chat frame's edit box (frame.editBox,
--- floatingchatframe.xml:555) is dressed once and again whenever it shows. Nothing is translated here.
+-- Japanese face. The client's chat font has no kana or kanji, so Japanese the player types or pastes would show as
+-- nothing. One face throughout, whatever the box holds and whether the addon is on or off, means the client's own
+-- header layout (chatframeeditbox.lua:640, 696–710) always measures the face that is shown. Each chat frame's edit
+-- box (frame.editBox, floatingchatframe.xml:555) is dressed once and again whenever it shows. Nothing is translated
+-- here.
 local _, WFJ = ...
 local ChatInput = {}
 WFJ.ChatInput = ChatInput

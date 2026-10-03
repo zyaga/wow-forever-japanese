@@ -4,8 +4,8 @@
         --listfile <community listfile> [--hotfixes <Cache/ADB/enUS/DBCache.bin>] \
         [--previous pipeline/served_columns.txt] > served_columns.txt
 
-Coverage used to be measured over lists someone chose (which spells a player is likely to see). This
-measures it over what the client actually ships instead: every DB2 table in the local archive, every text
+Coverage is measured over what the client actually ships, never over a list someone chose: every DB2 table
+in the local archive, every text
 column in each one, and the rows the hotfix cache adds. Each column then needs a line in
 `pipeline/served_dispositions.txt` saying which surface covers it or why it is left out
 (`tests/python/test_served_inventory.py`), so a table or column a new build adds fails the gate until someone

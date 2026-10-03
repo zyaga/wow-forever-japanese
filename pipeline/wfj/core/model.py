@@ -106,7 +106,6 @@ UI_FAMILIES = (
     "ItemSubClassMask",
     "RecentAllyType",
     "RecentAllyInteraction",
-    "FriendshipLabel",
     "FriendshipGain",
     "InstanceEntryMessage",
     "InstanceEntryFailure",

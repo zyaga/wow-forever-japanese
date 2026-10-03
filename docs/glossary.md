@@ -148,7 +148,7 @@ _Avoid_: player-visible set, visible spells, what a player is likely to see (the
 → [ADR-052](adr/052-coverage-by-served-data.md) · [Data model](architecture/data-model.md) · [Pipeline](systems/pipeline.md)
 
 **Disposition**:
-What one served column of the [[Served-text inventory]] is, from a closed set: `surface:<type>.<field>` or `surface:ui:<Family>` (the addon ships it in Japanese), `names` (names stay English), `internal` (developer text the client never prints), `no-display` (prose the Forever client has no place for), `covered-by:<column>` (the same text reaches the screen through another column) or `empty`. `internal`, `no-display` and `covered-by` carry evidence. Every served column has exactly one.
+What one served column of the [[Served-text inventory]] is, from a closed set: `surface:<type>.<field>`, `surface:<type>.*` (every field of that type) or `surface:ui:<Family>` (the addon ships it in Japanese), `names` (names stay English), `internal` (developer text the client never prints), `no-display` (prose the Forever client has no place for), `covered-by:<column>` (the same text reaches the screen through another column) or `empty`. `internal`, `no-display` and `covered-by` carry evidence. Every served column has exactly one.
 _Avoid_: exclusion (that is a UI key in `ui_exclusions.txt`), status (that is per [[Entry]]), skip
 → [ADR-052](adr/052-coverage-by-served-data.md) · [Data model](architecture/data-model.md)
 

@@ -16,6 +16,7 @@ local UI = {
   ["EventToastText:479"] = { "Your Lotus Claw enchant allows you to carefully extract a Death Lotus!",
     "Lotus Clawのエンチャントで慎重にDeath Lotusを採取できる！" },
   ["FriendshipGain:513"] = { "You gain %d Rank Points.", "ランクポイントを%d獲得した。" },
+  ["ServerMessage:1"] = { "[SERVER] Shutdown in %s", "[サーバー] %s後にシャットダウン" },
   -- a restricted family outside the templated ones: a row with an argument stays unresolved, as before
   ["CriteriaText:7"] = { "%d kills", "%d体撃破" },
   -- a global-string template with the same shape: the open match keeps finding it
@@ -35,19 +36,20 @@ describe("templated client-table rows", function()
   end)
   after_each(function() H.uiTeardown() end)
 
-  it("are templated only in the three families, and only when the Japanese takes an argument", function()
+  it("are templated only in the four families, and only when the Japanese takes an argument", function()
     local U = WFJ.UIStrings
     assert.is_true(U.isTemplatedKey("SharedString:911"))
     assert.is_true(U.isTemplatedKey("EventToastText:1"))
     assert.is_true(U.isTemplatedKey("FriendshipGain:1"))
+    assert.is_true(U.isTemplatedKey("ServerMessage:1"))
     assert.is_false(U.isTemplatedKey("CriteriaText:7"))
     assert.is_false(U.isTemplatedKey("EmoteText:1"))
     assert.is_false(U.isTemplatedKey("LEVEL_GAINED"))
     assert.is_false(U.isTemplatedKey(nil))
-    -- counted: four templated and two plain restricted rows hashed, the criteria template unresolved
+    -- counted: five templated and two plain restricted rows hashed, the criteria template unresolved
     assert.are.same({ "CriteriaText:7" }, index.problems.unresolved)
     assert.are.equal(1, index.counts.indexed)
-    assert.are.equal(6, index.counts.hashed)
+    assert.are.equal(7, index.counts.hashed)
   end)
 
   it("a rank-points chat line is the FriendshipGain row with the live number", function()
@@ -124,5 +126,15 @@ describe("templated client-table rows", function()
     index = WFJ.UIIndex
     assert.are.same({ "FriendshipGain:1", "FriendshipGain:2" }, index.problems.ambiguous)
     assert.is_nil(index:matchOnly("You gain 25 Rank Points.", fam("FriendshipGain")))
+  end)
+
+  it("a server notice is found by its text before the trailing argument, only in the asked-for family", function()
+    local key, args = index:matchTail("[SERVER] Shutdown in 15 Minutes", fam("ServerMessage"))
+    assert.are.equal("ServerMessage:1", key)
+    assert.are.equal("15 Minutes", args[1])
+    assert.are.equal("[サーバー] 15 Minutes後にシャットダウン", japanese(key, args))
+    assert.is_nil(index:matchTail("[SERVER] Shutdown in 15 Minutes", fam("FriendshipGain"))) -- another family
+    assert.is_nil(index:matchTail("Something else entirely", fam("ServerMessage")))
+    assert.is_nil(index:matchTail("[SERVER] Shutdown in 15 Minutes", {})) -- no family asked for: nothing hashed
   end)
 end)

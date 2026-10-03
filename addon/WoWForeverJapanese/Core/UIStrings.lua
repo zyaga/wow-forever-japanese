@@ -49,7 +49,7 @@ local FINGERPRINT_PREFIXES = { "^ItemSubClass:", "^SpellItemEnchantment:", "^Spe
   "^PlayerConditionFailure:", "^LockTypeName:", "^LockTypeResource:", "^LockTypeVerb:", "^FlyoutName:",
   "^FlyoutDescription:", "^ServerMessage:", "^TransmogSituation:", "^TransmogTrigger:",
   "^TransmogTriggerDescription:", "^TransmogSlotOption:",
-  "^ItemSubClassMask:", "^RecentAllyType:", "^RecentAllyInteraction:", "^FriendshipLabel:", "^FriendshipGain:",
+  "^ItemSubClassMask:", "^RecentAllyType:", "^RecentAllyInteraction:", "^FriendshipGain:",
   "^InstanceEntryMessage:", "^InstanceEntryFailure:" }
 function UIStrings.isFingerprintKey(key)
   if type(key) ~= "string" then return false end
@@ -75,7 +75,7 @@ local RESTRICTED_PREFIXES = { "^FactionDescription:", "^AchievementTitle:", "^Ac
   "^PlayerConditionFailure:", "^LockTypeName:", "^LockTypeResource:", "^LockTypeVerb:", "^FlyoutName:",
   "^FlyoutDescription:", "^ServerMessage:", "^TransmogSituation:", "^TransmogTrigger:",
   "^TransmogTriggerDescription:", "^TransmogSlotOption:",
-  "^ItemSubClassMask:", "^RecentAllyType:", "^RecentAllyInteraction:", "^FriendshipLabel:", "^FriendshipGain:",
+  "^ItemSubClassMask:", "^RecentAllyType:", "^RecentAllyInteraction:", "^FriendshipGain:",
   "^InstanceEntryMessage:", "^InstanceEntryFailure:" }
 function UIStrings.isRestrictedKey(key)
   if type(key) ~= "string" then return false end
@@ -872,6 +872,7 @@ end
 function Index:matchTail(text, keys)
   if type(text) ~= "string" or text == "" or type(keys) ~= "table" or next(self.byTemplate) == nil then return nil end
   local set = asSet(keys)
+  if next(set) == nil then return nil end
   for pos = #text - 1, 1, -1 do
     if text:byte(pos) == 32 then
       local template = (text:sub(1, pos):gsub("%%", "%%%%")) .. "%s"

@@ -119,6 +119,15 @@ def test_the_client_own_files_are_kept_and_literal_class_words_restored(tmp_path
     assert "quest 9 description (kept wdb@1.15.9.69722)" in capsys.readouterr().out
 
 
+def test_restore_literals_puts_back_only_a_class_or_race_word():
+    from wfj.cmd.import_english import _restore_literals
+
+    assert _restore_literals("A wise $C sent you.", "A wise druid sent you.") == "A wise druid sent you."
+    assert _restore_literals("Young $R, hello.", "Young night elf, hello.") == "Young night elf, hello."
+    # a reworded line: the old text's word there is no class or race, so the token stays
+    assert _restore_literals("Seek the $C trainer.", "Seek the Elder trainer.") == "Seek the $C trainer."
+
+
 def test_unchanged_import_writes_nothing(tmp_path: Path, monkeypatch):
     data = _data_dir(tmp_path, monkeypatch)
     Store(data, english=True).save(
@@ -265,3 +274,13 @@ def test_npcs_are_allowed_only_on_gossip_english():
     quest = english_line(2, "title", "T", key("T"), "pfquest@7786596")
     quest["npcs"] = [1]
     assert any("unexpected keys" in p for p in validate_line("quest", quest, english=True))
+
+
+def test_an_older_client_never_replaces_what_forever_recorded():
+    from wfj.cmd.import_english import _without_recorded
+
+    rec = english_line(5, "description", "Forever's words.", key(normalize_v1("Forever's words.")), "collector@1.60.1.70170")
+    era = english_line(5, "description", "Era words.", key(normalize_v1("Era words.")), "wdb@1.15.9.69722")
+    forever = english_line(5, "description", "Cache words.", key(normalize_v1("Cache words.")), "wdb@1.60.1.70170")
+    assert _without_recorded([rec], [era]) == []  # Classic Era's cache is a stand-in
+    assert _without_recorded([rec], [forever]) == [forever]  # the same client's own cache keeps its place

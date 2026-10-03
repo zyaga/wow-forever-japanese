@@ -345,6 +345,7 @@ def _merge_fields(
     mine = lambda ln: source_name(ln) in CLIENT_TABLE_SOURCES and ln["field"] in fields  # noqa: E731
     if not new and any(mine(ln) for ln in existing):
         raise ValueError(f"refusing to replace existing {type_} {'/'.join(fields)} lines with zero lines")
+    new = _without_recorded(existing, new)
     keys = {(ln["id"], ln["field"]) for ln in new}
     kept = [
         ln
@@ -354,9 +355,29 @@ def _merge_fields(
     return kept + new
 
 
+def _without_recorded(existing: list[dict[str, Any]], new: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """`new` without the (id, field)s a client recorded in game on another client line than `new`'s: what the
+    Forever client showed outranks an older client's files (ADR-053), and the same client's own files keep
+    their place."""
+    if not new:
+        return new
+    build = str(new[0]["src"]).split("@", 1)[-1]
+    held = {
+        (ln["id"], ln["field"])
+        for ln in existing
+        if source_name(ln) == "collector" and not _same_client(str(ln["src"]), build)
+    }
+    return [ln for ln in new if (ln["id"], ln["field"]) not in held]
+
+
 _VERSION = re.compile(r"^(\d+\.\d+)\.")
 _WORDS = re.compile(r"\$[A-Za-z]|[A-Za-z']+|[^\sA-Za-z']")
 _PLAYER_TOKENS = {"$C", "$c", "$R", "$r"}
+# the words a recording player's class or race can be: only these are put back for a `$C` / `$R`
+_CLASS_RACE = frozenset({
+    "warrior", "paladin", "hunter", "rogue", "priest", "shaman", "mage", "warlock", "druid",
+    "human", "orc", "dwarf", "night elf", "undead", "tauren", "gnome", "troll",
+})
 
 
 def _same_client(src: str, build: str) -> bool:
@@ -377,7 +398,7 @@ def _restore_literals(recorded: str, stand_in: str) -> str:
     out, last = [], 0
     for op, i1, i2, j1, j2 in SequenceMatcher(None, ow, tw, autojunk=False).get_opcodes():
         swap = op == "replace" and i2 - i1 == 1 and ow[i1] in _PLAYER_TOKENS and 1 <= j2 - j1 <= 2
-        if swap and all(t.isalpha() for t in tw[j1:j2]):
+        if swap and " ".join(tw[j1:j2]).lower() in _CLASS_RACE:
             out.append(recorded[last : ours[i1].start()])
             out.append(stand_in[theirs[j1].start() : theirs[j2 - 1].end()])
             last = ours[i1].end()
@@ -576,6 +597,8 @@ def run_wdb(a: argparse.Namespace) -> int:
     cached = {q.id for q in cache.quests} | set(cache.placeholders)
     gone, same_build = _check_shrink(existing, cached, src, path.name, a.allow_shrink)
     union = getattr(a, "merge", "replace") == "union"
+    # what a client recorded in game outranks an older client's cache
+    lines = _without_recorded(existing, lines)
     merged = merge_source("quest", existing, lines, "wdb", union, answered=set(cached))
     if union:
         merged = take_answered_whole(merged, cached)

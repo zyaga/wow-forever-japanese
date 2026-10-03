@@ -151,13 +151,16 @@ do
     PS.pending[self.slotIndex or -1] = nil -- ClearSpellData cancels the load callback
     local spell = PS.spells[self.elementData.slotIndex]
     self.slotIndex, self.spellBank = self.elementData.slotIndex, self.elementData.spellBank
-    self.spellBookItemInfo = { name = spell.name, isPassive = spell.passive }
+    -- a flyout entry (Portal, Summon Demon) is typed Flyout (spellbookitem.lua:203)
+    self.spellBookItemInfo = { name = spell.name, isPassive = spell.passive,
+      itemType = spell.flyout and _G.Enum.SpellBookItemType.Flyout or _G.Enum.SpellBookItemType.Spell }
     self:UpdateVisuals()
   end
   function item.Init(self, elementData) self.elementData = elementData; self:UpdateSpellData() end
 end
 
 local function installPlayerSpellsFrame()
+  _G.Enum.SpellBookItemType = _G.Enum.SpellBookItemType or { Spell = 1, Flyout = 4 }
   PS.spells, PS.book, PS.pending, PS.perPage = {}, {}, {}, 3
   PS.calls = { UpdateFrameTitle = 0, UpdateControls = 0 }
   local host = CreateFrame("Frame", "PlayerSpellsFrame")

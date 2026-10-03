@@ -13,11 +13,24 @@ WFJ.TooltipData = TooltipData
 
 local Compat = WFJ.Compat
 local OPTS = { from = 2 }
-
-local function walk(tt)
-  if type(tt) ~= "table" or tt ~= Compat.resolve("GameTooltip") then return 0 end
-  return WFJ.HelpTooltip.adopt(tt, OPTS)
+-- The kinds whose later lines are names too (a set's items, a lock's bosses, party members' names): only the
+-- strings those tooltips show around them, never the whole dictionary, so no name meets a dictionary word.
+-- [unverified in game: the lines each carries]
+local function restricted(keys) return { from = 2, only = keys } end
+local LOCK_OPTS = restricted({ "BOSS_ALIVE", "BOSS_DEAD", "LOCKED" })
+local SET_OPTS = restricted({ "EQUIPMENT_MANAGER_IGNORE_SLOT", "EQUIPMENT_MANAGER_PLACE_IN_BAGS" })
+local function partyOpts()
+  local QM = WFJ.QuestMap
+  return restricted(type(QM) == "table" and QM.OBJECTIVE_KEYS or {})
 end
+
+local function walkWith(opts)
+  return function(tt)
+    if type(tt) ~= "table" or tt ~= Compat.resolve("GameTooltip") then return 0 end
+    return WFJ.HelpTooltip.adopt(tt, type(opts) == "function" and opts() or opts)
+  end
+end
+local walk = walkWith(OPTS)
 TooltipData.walk = walk
 
 -- A spellbook or action-bar flyout's tooltip: its name and description, both SpellFlyout rows (a category, not a
@@ -39,10 +52,12 @@ function TooltipData.init()
   if types.Currency ~= nil then processor.AddTooltipPostCall(types.Currency, walk) end
   if types.Mount ~= nil then processor.AddTooltipPostCall(types.Mount, walk) end
   if types.CompanionPet ~= nil then processor.AddTooltipPostCall(types.CompanionPet, walk) end
-  if types.EquipmentSet ~= nil then processor.AddTooltipPostCall(types.EquipmentSet, walk) end
-  if types.InstanceLock ~= nil then processor.AddTooltipPostCall(types.InstanceLock, walk) end
+  if types.EquipmentSet ~= nil then processor.AddTooltipPostCall(types.EquipmentSet, walkWith(SET_OPTS)) end
+  if types.InstanceLock ~= nil then processor.AddTooltipPostCall(types.InstanceLock, walkWith(LOCK_OPTS)) end
   if types.Totem ~= nil then processor.AddTooltipPostCall(types.Totem, walk) end
-  if types.QuestPartyProgress ~= nil then processor.AddTooltipPostCall(types.QuestPartyProgress, walk) end
+  if types.QuestPartyProgress ~= nil then
+    processor.AddTooltipPostCall(types.QuestPartyProgress, walkWith(partyOpts))
+  end
   if types.Flyout ~= nil then processor.AddTooltipPostCall(types.Flyout, walkFlyout) end
   return true
 end

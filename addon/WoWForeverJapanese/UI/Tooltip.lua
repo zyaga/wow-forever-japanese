@@ -293,7 +293,7 @@ Tooltip.trace = nil
 local TRACE_MAX = 80
 
 -- A long value is cut at 70 bytes, moved back to the start of a character: a cut inside a Japanese character is
--- not UTF-8, and an edit box given text that is not UTF-8 shows none of it (the trace window came up blank in game).
+-- not UTF-8, and an edit box given text that is not UTF-8 shows none of it.
 local function plain(v)
   if v == nil then return "nil" end
   if anySecretOf(v) then return "<secret>" end
@@ -847,9 +847,13 @@ function Tooltip.matchColoured(index, text)
   if key then return key, args end
   local bare = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
   if bare == text then return nil end
-  key, args = index:match(bare)
+  local shared
+  key, shared = index:match(bare)
   if not key then return nil end
-  for i, a in pairs(args or {}) do
+  -- the index memoizes `args` per text: a copy takes the colour, never the memo
+  args = {}
+  for k, v in pairs(shared or {}) do args[k] = v end
+  for i, a in pairs(shared or {}) do
     if type(i) == "number" and type(a) == "string" and a ~= "" then
       local coloured = text:match("(|c%x%x%x%x%x%x%x%x" .. a:gsub("%p", "%%%0") .. "|r)")
       if coloured then args[i] = coloured end

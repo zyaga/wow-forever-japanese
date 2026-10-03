@@ -41,7 +41,23 @@ or column it does not read is invisible to coverage, and a new build can add one
    `tests/python/test_served_inventory.py`.
 4. **No gap without a reason.** A served line of a surface that has neither shipped Japanese nor a stated reason
    (a names list, nothing to translate, English waiting on the Forever tables, an exclusion with its reason) is a
-   gap. `tests/python/test_coverage.py` fails on any gap.
+   gap. `tests/python/test_coverage.py` fails on any gap. Two reasons come from the drafting and curation rules
+   rather than from the data:
+   - **A template drafting cannot place.** An item or spell tooltip line with no Japanese that
+     `translate_batch.undraftable` lists (the lines `translate_batch cut` would leave out of every batch) is stated
+     as `the template uses a code drafting cannot place yet (<reason>)`, with the reason `cut` gives: an unsupported
+     code (`unsupported_code:$@spelldesc`), an included spell with no English (`missing_included_spell:<id>`),
+     branches the addon could never tell apart (`branches_indistinguishable`), `too_many_variants`,
+     `unclosed_branch` or `uncountable`. These lines wait on drafting support, not on a batch, so counting them as
+     plain gaps would hide why no batch takes them.
+   - **A client-table row its family leaves out.** An interface line keyed `<Family>:<id>` that is not in
+     `pipeline/ui_keys.txt` (`coverage.ui_left_out`) is counted as nothing to translate, with the reason `a
+     client-table row its family's key list leaves out (a name or developer row, ADR-042)`. The family blocks of
+     the key list are curated ([ADR-042](042-client-table-text-families.md)): they list one key per distinct
+     English, whose fingerprint covers every other row with that English, and they never list names or developer
+     rows. A family is restricted, so the addon matches only listed rows, and the other rows are either already
+     covered by a listed fingerprint or are names that stay English. Counting them as gaps would ask for
+     translations the curation rules forbid.
 5. **The inventory moves with the build.** `make coverage` refuses when `served_columns.txt` is from another build
    than the Makefile's `forever_BUILD`, or when a served column has no disposition. Regenerating the inventory
    prints its delta against the committed file: the columns a patch added, dropped or changed. That delta is the
@@ -56,7 +72,9 @@ or column it does not read is invisible to coverage, and a new build can add one
 ## Consequences
 
 - Coverage reports what is actually left. On 1.60.1.70170 spell tooltips and auras count 25,458 served lines
-  instead of the visible subset; 10,369 ship Japanese and 15,064 are gaps (9,810 descriptions, 5,254 auras).
+  instead of the visible subset. When the scope changed, 10,369 of them shipped Japanese and 15,064 were gaps
+  (9,810 descriptions, 5,254 auras). Now 25,270 ship Japanese and 188 are not done, each with a stated reason,
+  and 98.0% of all 83,287 served lines are done ([coverage](../operations/coverage.md)).
 - A new table, a new column or a column that starts to carry text is caught at the next re-pull, as a line with no
   disposition, rather than found later by a player.
 - The inventory doubles as an independent check on the pinned column maps: on 1.60.1.70170 the byte-level
@@ -71,8 +89,8 @@ or column it does not read is invisible to coverage, and a new build can add one
 - The load-set sweep's first run decided 1,325 interface strings no window file named: 739 translated and 586
   excluded with a reason; 10 more were excluded for link markup and 9 for equalling an item or spell name.
 - The translation work grows by about 15,000 spell lines, and the addon's spell data grows with them.
-- One table (`collectablesourcevendorsparse`, a secondary-key layout) cannot be read yet; it is listed as
-  `unreadable` and still needs a disposition.
+- One table (`collectablesourcevendorsparse`, a secondary-key layout) cannot be read yet. It is listed as
+  `unreadable`, and its disposition is `internal`: its name and its sibling tables hold developer labels only.
 
 ## Alternatives considered
 

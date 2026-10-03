@@ -19,8 +19,8 @@ Mount  # hooked: UI/TooltipData; every line after the name through the dictionar
 PetAction  # not hooked: the pet bar's tooltip is translated through UI/MicroMenu's help-tooltip pass (PET_KEYS), not a post-call
 Achievement  # not hooked: no achievement tooltip setter in the Forever load set [unverified in game: achievement links]
 EnhancedConduit  # not hooked: not on Forever (Shadowlands conduits)
-EquipmentSet  # hooked: UI/TooltipData; every line after the set's name through the dictionary
-InstanceLock  # hooked: UI/TooltipData; every line after the instance name through the dictionary (boss names match no key)
+EquipmentSet  # hooked: UI/TooltipData; the equipment manager's own lines only (the set's items are names)
+InstanceLock  # hooked: UI/TooltipData; a boss's Available / Defeated and Locked only (boss names stay English)
 PvPBrawl  # not hooked: not on Forever (Blizzard_PVPUI is not in the camelot load set)
 RecipeRankInfo  # not hooked: recipe ranks are a retail-era system [unverified in game]
 Totem  # hooked: UI/TooltipData; every line after the totem's name through the dictionary
@@ -29,7 +29,7 @@ CorruptionCleanser  # not hooked: not on Forever (BfA corruption)
 MinimapMouseover  # hooked: UI/TooltipUnit; the minimap's quest block (title and objectives), names kept
 Flyout  # hooked: UI/TooltipData; the flyout's name and description, SpellFlyout rows matched in their own families
 Quest  # not hooked: a quest link's tooltip [unverified in game: whether quest links use this type]
-QuestPartyProgress  # hooked: UI/TooltipData; every line after the first through the dictionary (objective templates)
+QuestPartyProgress  # hooked: UI/TooltipData; the objective templates only (party members' names stay English)
 Macro  # not hooked: no GameTooltip:SetMacro in the Forever UI [unverified in game]
 Debug  # not hooked: developer only
 Outfit  # not hooked: a retail-era transmog outfit tooltip [unverified in game]

@@ -62,11 +62,11 @@ function ChatTabs.registerTabs()
   return n
 end
 
--- The typed text's start, moved by the header's change in width: the client has just laid the English header out
--- and set the inset (chatframeeditbox.lua:640, 696–710), so `base` holds that inset and the English's width, and the
--- Japanese moves it by exactly the difference. Recomputing the client's whole formula drifted from it (in game: the
--- text started 26 px late after "/1"). A capped header (the suffix shown) keeps the client's inset: its width is
--- fixed at half the box. English back on the header → the client's inset again.
+-- The typed text's start, moved by the header's change in width only: the client has just laid the English header
+-- out and set the inset (chatframeeditbox.lua:640, 696–710), so `bases` keeps that inset and the English's width,
+-- and our Japanese moves it by the difference, which keeps whatever else the client added to the inset. A capped
+-- header (the suffix shown) keeps the client's inset: its width is fixed at half the box. English back on the
+-- header gives the client's inset.
 local bases = setmetatable({}, { __mode = "k" }) -- box → { left, text, width } as the client left it
 
 local function fitHeader(box)
