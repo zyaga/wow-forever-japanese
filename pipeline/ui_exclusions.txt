@@ -2195,7 +2195,7 @@ RENOWN_REWARD_ITEM_NAME_FORMAT  # a name: "%s" holding the reward item name (bli
 RENOWN_REWARD_SPELL_NAME_FORMAT  # a name: "%s" holding the reward spell name (blizzard_framexmlutil/renownrewardutil.lua:23)
 RENOWN_REWARD_TRANSMOGSET_NAME_FORMAT  # a name: "%s" holding the appearance set name (blizzard_framexmlutil/renownrewardutil.lua:42)
 RENOWN_REWARD_TRANSMOG_NAME_FORMAT  # a name: "%s" holding the appearance item name (blizzard_framexmlutil/renownrewardutil.lua:37)
-REPUTATION_STATUS_BAR_LABEL_ACCOUNT_WIDE  # a name-carrying composite: a suffix joined to a faction name on the reputation bar, for a Warband account-wide reputation, a retail-era system (blizzard_statustrackingbar/shared/reputationbar.lua:148; pipeline/forever_addon_dispositions.txt:246)
+REPUTATION_STATUS_BAR_LABEL_ACCOUNT_WIDE  # permanent: a name-carrying composite: a suffix joined to a faction name on the reputation bar, for a Warband account-wide reputation, a retail-era system (blizzard_statustrackingbar/shared/reputationbar.lua:148; pipeline/forever_addon_dispositions.txt:246)
 REQUIRES_OR_SPECIALIZATIONS  # not displayed on Forever: an Azerite power tooltip line (AzeriteUtil.GenerateRequiredSpecTooltipLine), and the Forever tables carry no Azerite item (pipeline/forever_addon_dispositions.txt:30; blizzard_framexmlutil/azeriteutil.lua:79)
 REQUIRES_SPECIALIZATION  # not displayed on Forever: an Azerite power tooltip line (AzeriteUtil.GenerateRequiredSpecTooltipLine), and the Forever tables carry no Azerite item (pipeline/forever_addon_dispositions.txt:30; blizzard_framexmlutil/azeriteutil.lua:81)
 RESTRICT_CHAT_CHATFRAME_FORMAT  # no words of its own: "%s %s" joins the suppressed-chat notice and a link (blizzard_chatframebase/mainline/chatframeoverrides.lua:256)

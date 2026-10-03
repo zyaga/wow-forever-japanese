@@ -209,7 +209,8 @@ def test_progress_and_completion_ship_with_their_own_vmangos_hash(root):
         if ln["status"] == "trusted":
             en = english[(ln["id"], ln["field"])]
             assert ln["english"] == {"hash": en["hash"], "src": en["src"]}, (ln["id"], ln["field"])
-            assert en["src"].startswith("vmangos@")
+            # VMaNGOS, or Forever's own turn-in text a client recorded in game (ADR-053)
+            assert en["src"].startswith(("vmangos@", "collector@1.60.")), (ln["id"], ln["field"], en["src"])
     by = _by(_quest_lines(root))
     h = by[(33, "completion")]["english"]["hash"]
     shard = (root / "addon/WoWForeverJapanese/Data/Quest/Quest_0000.lua").read_text(encoding="utf-8")
