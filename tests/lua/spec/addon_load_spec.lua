@@ -251,6 +251,26 @@ describe("addon loads in TOC order and answers /wfj version", function()
     _G.C_Timer = nil
   end)
 
+  it("keeps a problem log: a session on load, a blocked action naming this addon, /wfj log prints it", function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI(); Stub.installItemTextAPI()
+    Loader.load("WoWForeverJapanese")
+    Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
+    assert.are.equal(1, WFJ_Log.version)
+    assert.are.equal("session", WFJ_Log.entries[#WFJ_Log.entries].kind)
+    Stub.prints = {}
+    Stub.fireAll("ADDON_ACTION_BLOCKED", "SomeOtherAddon", "CastSpellByName()")
+    Stub.fireAll("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "MainActionBar:SetPointBase()")
+    Stub.fireAll("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "MainActionBar:SetPointBase()")
+    local last = WFJ_Log.entries[#WFJ_Log.entries]
+    assert.are.same({ "blocked", "MainActionBar:SetPointBase()", 2 }, { last.kind, last.fn, last.n })
+    assert.are.equal(1, #Stub.prints) -- one chat line per session
+    Stub.prints = {}
+    SlashCmdList.WFJ("log 1")
+    assert.are.equal(1, #Stub.prints)
+    assert.is_truthy(Stub.prints[1]:find("MainActionBar:SetPointBase() ×2", 1, true))
+  end)
+
   it("creates WFJ_Collector on load and discloses once, on the first PLAYER_ENTERING_WORLD", function()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI(); Stub.installItemTextAPI()

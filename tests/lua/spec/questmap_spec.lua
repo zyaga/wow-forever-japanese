@@ -320,6 +320,17 @@ describe("UI/QuestMap: the camelot quest log", function()
       assert.are.equal(ja + Q.OBJECTIVE_HEIGHT, block.laidOut)
     end)
 
+    it("the module's frame grows by its blocks' Japanese extra; its contentsHeight stays the client's", function()
+      Q.watched = { [5] = true }
+      Q.updateTracker()
+      local tracker, block = _G.QuestObjectiveTracker, _G.QuestObjectiveTracker.usedBlocks[5]
+      assert.are.equal(block.height, tracker.contentsHeight)
+      assert.are.equal(block.laidOut, tracker.frameHeight)
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal(block.laidOut, tracker.frameHeight)
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+    end)
+
     it("the addon never assigns a tracker block's height field (the client's own layout writes it)", function()
       local src = assert(io.open(H.ADDON_DIR .. "/UI/QuestMap.lua")):read("*a")
       assert.is_nil(src:find("%.height%s*=[^=]"))

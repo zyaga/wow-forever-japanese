@@ -12,7 +12,7 @@ The project's non-negotiable rules (Blizzard API only, names stay in English, Ja
 ```
 wow-forever-japanese/
 ├── addon/WoWForeverJapanese/        the shipped folder (the packager zips only this)
-│   ├── WoWForeverJapanese.toc       @project-version@ · Interface from clients.toml · SavedVariables: WFJ_DB, WFJ_Collector
+│   ├── WoWForeverJapanese.toc       @project-version@ · Interface from clients.toml · SavedVariables: WFJ_DB, WFJ_Collector, WFJ_Log
 │   ├── Core/   pure logic: Const Compat Normalize Hash Data Lookup Align Objectives Placeholders State Settings
 │   │           Modifier Translator UIStrings SurfaceState Collector Readings Glosses RecentLines Reports ReportText
 │   ├── UI/     Font Render ButtonText Labels LoadOnDemand HelpTooltip QuestFrame QuestMap Gossip ItemText Tooltip

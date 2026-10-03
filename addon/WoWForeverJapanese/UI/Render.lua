@@ -102,12 +102,33 @@ end
 Render.colourParts = colourParts
 
 -- Coloured runs of the English no argument carried ({ run, code }, from Tooltip.matchColoured): each run the
--- Japanese holds exactly once, as plain text, is wrapped in its colour; any other run is left as it is. → text
+-- Japanese holds exactly once as a whole (no digit, "." or "," right before or after it, so "+1" is never part of
+-- "+10") is wrapped in its colour; any other run is left as it is. Every place is found in the Japanese as written,
+-- then the colours go in from the right, so one never lands inside another's code. → text
+local function standsAlone(ja, at, stop)
+  local before, after = ja:sub(at - 1, at - 1), ja:sub(stop + 1, stop + 1)
+  return not before:find("[%d%.,]") and not after:find("[%d%.,]")
+end
 local function colourRuns(ja, runs)
+  local places = {}
   for _, r in ipairs(runs) do
-    local at, stop = ja:find(r.run, 1, true)
-    if at and not ja:find(r.run, stop + 1, true) then
-      ja = ja:sub(1, at - 1) .. r.code .. r.run .. "|r" .. ja:sub(stop + 1)
+    local found, from = nil, 1
+    while true do
+      local at, stop = ja:find(r.run, from, true)
+      if not at then break end
+      if standsAlone(ja, at, stop) then
+        if found then found = false break end
+        found = { at = at, stop = stop, code = r.code }
+      end
+      from = at + 1
+    end
+    if found then places[#places + 1] = found end
+  end
+  table.sort(places, function(a, b) return a.at > b.at end)
+  for i, p in ipairs(places) do
+    local nextPlace = places[i - 1] -- the one to the right, already in
+    if not nextPlace or p.stop < nextPlace.at then
+      ja = ja:sub(1, p.at - 1) .. p.code .. ja:sub(p.at, p.stop) .. "|r" .. ja:sub(p.stop + 1)
     end
   end
   return ja

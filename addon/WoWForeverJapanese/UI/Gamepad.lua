@@ -205,7 +205,7 @@ local function hookPrompts()
     local forbidden = type(frame) == "table" and type(frame.IsForbidden) == "function" and frame:IsForbidden()
     if type(frame) == "table" and not forbidden and frame.SetPromptText == original then
       hooksecurefunc(frame, "SetPromptText", Gamepad.onPrompt)
-      WFJ.Diag.watch(frame, "SetPromptText", "prompt")
+      WFJ.Diag.watch(frame, "SetPromptText", WFJ.Diag.nameOf(frame))
       if originalFont and frame.SetPromptFont == originalFont then
         hooksecurefunc(frame, "SetPromptFont", Gamepad.onPromptFont)
       end

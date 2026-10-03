@@ -196,11 +196,10 @@ local function filled(index, key, args, en)
   return ja
 end
 
--- `faction` (optional): the line is a reputation line, which may also be a FriendshipGain row.
--- The death recap link the client posts in chat: DEATH_RECAP_LINK, "|cff71d5ff|Hdeath:%i|h[You died.]|h"; its label is
--- DEATH_RECAP_TEXT [verified: Forever GlobalStrings 1.60.1.70170]. Only the label inside a `death:` link changes; the
--- link, its id and its colour stay exactly as the client wrote them, and only while the client's own DEATH_RECAP_TEXT
--- is the English the shipped row was checked against. → line | nil
+-- The death recap link the client posts in chat: DEATH_RECAP_LINK, "|cff71d5ff|Hdeath:%i|h[You died.]|h"; its label,
+-- written there literally, is DEATH_RECAP_TEXT's English [verified: Forever GlobalStrings 1.60.1.70170]. Only the
+-- label inside a `death:` link changes; the link, its id and its colour stay exactly as the client wrote them, and
+-- only while the client's own DEATH_RECAP_TEXT is the English the shipped row was checked against. → line | nil
 function ChatSystem.deathLink(line)
   local index = WFJ.UIIndex
   local row = index and index.rows and index.rows.DEATH_RECAP_TEXT
@@ -214,6 +213,7 @@ function ChatSystem.deathLink(line)
   return n > 0 and out or nil
 end
 
+-- `faction` (optional): the line is a reputation line, which may also be a FriendshipGain row.
 function ChatSystem.translate(en, exactOnly, faction)
   local index = WFJ.UIIndex
   if not index or type(en) ~= "string" or en == "" then return nil end

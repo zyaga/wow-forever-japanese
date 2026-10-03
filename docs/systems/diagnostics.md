@@ -9,12 +9,12 @@ Some failures only show in a long play session: a hooked method that stops worki
 | Kind | When | Fields |
 |---|---|---|
 | `session` | each load (login or `/reload`) | client build, addon version, the surfaces whose setup failed |
-| `init` | each surface whose setup failed at load | the surface, the error (300 characters at most) |
+| `init` | each surface whose setup failed, at load or later (a load-on-demand window) | the surface, the error (300 characters at most) |
 | `blocked` | the client's `ADDON_ACTION_BLOCKED` or `ADDON_ACTION_FORBIDDEN` naming this addon | the event, the protected function |
-| `hook` | a method the addon post-hooked on one frame (`Diag.watch`) no longer reads as a function | frame, method, what it reads as, its type on the frame's own table and on what the frame inherits |
+| `hook` | a method the addon post-hooked on one frame (`Diag.watch`) no longer reads as a function, or is another function than the hook the addon left there (`seen = replaced`) | frame, method, what it reads as, its type on the frame's own table and on what the frame inherits |
 | `memory` | every 5 minutes | the Lua memory |
 
-Every entry also carries the local time (`at`), seconds since the client started (`up`) and the Lua memory in KB (`memKB`). The same kind and message again in one session adds to that entry's count (`n`) and last time (`last`) instead of a new entry, so something repeating every few seconds never pushes the rest out. The log keeps the newest 500 entries; session entries are dropped last.
+Every entry also carries the local time (`at`), seconds since the client started (`up`) and the Lua memory in KB (`memKB`). The same kind and message again in one session adds to that entry's count (`n`) and last time (`last`) instead of a new entry, so something repeating every few seconds never pushes the rest out. The log keeps 500 entries: over that, the oldest memory sample goes first, then the oldest problem, then the oldest session, and it never keeps more than 50 sessions.
 
 A `hook` or `blocked` entry also prints one chat line, once per session, ending in "/wfj log shows it".
 
@@ -24,7 +24,7 @@ A `hook` or `blocked` entry also prints one chat line, once per session, ending 
 Watched now: chat frames' `AddMessage` (`UI/Speech`), chat edit boxes' `UpdateHeader` (`UI/ChatTabs`), the XP bars' `UpdateCurrentText` (`UI/MicroMenu`), gamepad prompts' `SetPromptText` (`UI/Gamepad`).
 
 ## Reading it
-- In game: `/wfj log` prints the last 10 entries, `/wfj log 30` the last 30.
+- In game: `/wfj log` prints the last 10 entries, `/wfj log 30` the last 30 (at most 50).
 - After the session: `WTF/Account/<ACCOUNT>/SavedVariables/WoWForeverJapanese.lua`, the `WFJ_Log` table. The client writes it on logout, `/reload` and exit, not on a crash.
 
 ## Privacy

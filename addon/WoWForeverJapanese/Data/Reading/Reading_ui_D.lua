@@ -58,6 +58,7 @@ WFJ.Data.add("reading", {
   ["ui:DEATH_RECAP_CURR_HP_TT"] = { text = "死亡=しぼう=92891 秒=びょう=106640 前=まえ=51036 体力=たいりょく=42727" },
   ["ui:DEATH_RECAP_DEADLY_SPELL"] = { text = "致命的=ちめいてき=113970" },
   ["ui:DEATH_RECAP_DEATH_TT"] = { text = "体力=たいりょく=42727 とどめの一撃=とどめのいちげき=20341" },
+  ["ui:DEATH_RECAP_TEXT"] = { text = "死亡しました=しぼうしました=92900" },
   ["ui:DEATH_RECAP_TITLE"] = { text = "死亡=しぼう=92891 記録=きろく=121625" },
   ["ui:DEATH_RECAP_UNAVAILABLE"] = { text = "死亡=しぼう=92891 記録=きろく=121625 利用できません=りようできません=50708" },
   ["ui:DEATH_RELEASE"] = { text = "霊魂=れいこん=135514 解放=かいほう=120278" },

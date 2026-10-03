@@ -112,3 +112,4 @@ WHO_LIST  # asked for by UI/Friends.lua: the client passes the string by referen
 YELLOW_GEM  # asked for by UI/ItemSocketing.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 TRANSMOGRIFY_TOOLTIP_ITEM_UNKNOWN_APPEARANCE_KNOWN  # asked for by UI/Tooltip.lua's structural pass: the C client writes this item tooltip line itself, so no scanned file names it
 TRANSMOGRIFY_TOOLTIP_REVERT  # asked for by UI/Tooltip.lua's structural pass: the C client writes this item tooltip line itself, so no scanned file names it
+DEATH_RECAP_TEXT  # asked for by UI/ChatSystem.lua: the label of DEATH_RECAP_LINK, the death recap link the C client posts in chat itself, so no scanned file names it

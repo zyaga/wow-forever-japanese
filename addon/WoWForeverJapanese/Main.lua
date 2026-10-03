@@ -161,6 +161,7 @@ local function step(name, fn)
   local ok, value = pcall(fn)
   if ok then return value end
   WFJ.initErrors[#WFJ.initErrors + 1] = { surface = name, err = tostring(value) }
+  if WFJ.Diag then WFJ.Diag.initFailed(name, value) end
   return nil
 end
 

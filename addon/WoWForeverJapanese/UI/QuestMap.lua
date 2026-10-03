@@ -715,29 +715,62 @@ end
 -- addon wrote there taints that whole pass (in game: the action bars' protected SetPoint blocked, the scenario
 -- tracker's aura read refused). The height the Japanese adds or removes is kept in `extra` instead and put on the
 -- block's frame only: after LayoutBlock (a post-hook on the module), and at once when a refit runs after the layout
--- (the modifier, a toggle). The module's contentsHeight stays the English one, so a tracker near its height limit may
--- cut a block a line early or late [in-game check: a long title with the tracker near its height limit].
+-- (the modifier, a toggle). The module's frame is sized the same way: UpdateHeight sets it from contentsHeight
+-- (module.lua:223–231) and the container anchors the next module and the background to its bottom (container.lua:
+-- 100–118), so a post-hook on UpdateHeight adds its blocks' extra to the frame, never to contentsHeight. contentsHeight
+-- stays the English one, so a tracker near its height limit may cut a block a line early or late [in-game check: a
+-- long title with the tracker near its height limit].
 local headerBase = setmetatable({}, { __mode = "k" }) -- block → its header's height in the English, at SetHeader
 local extra = setmetatable({}, { __mode = "k" }) -- block → { header = px, lines = { [line] = px } }
 local blockRefits = setmetatable({}, { __mode = "k" })
 local blocksHooked = setmetatable({}, { __mode = "k" })
+local blockModule = setmetatable({}, { __mode = "k" }) -- block → the module that last laid it out
+local moduleBase = setmetatable({}, { __mode = "k" }) -- module → the frame height its own UpdateHeight gave it
 
 local function extraOf(block)
   local e = extra[block]
   if not e then return 0 end
   local total = e.header or 0
+  -- a line counts only while the block holds it: Reset clears `used` to nil and FreeLine leaves parentBlock set
+  -- [verified: blizzard_objectivetrackerblock.lua:39–40, 98–101]
+  local held = type(block.usedLines) == "table" and block.usedLines or {}
   for line, px in pairs(e.lines) do
-    if line.parentBlock == block and line.used ~= false then total = total + px end
+    if line.used and held[line.objectiveKey] == line then total = total + px end
   end
   return total
 end
 
--- The block's frame at the client's height plus ours. Also the post-hook on a tracker module's LayoutBlock(block).
+-- The module's frame at the client's height plus its laid-out blocks' extra.
+function QuestMap.sizeModule(module)
+  local base = moduleBase[module]
+  if type(base) ~= "number" or type(module.SetHeight) ~= "function" then return end
+  local px = 0
+  for block, m in pairs(blockModule) do
+    if m == module and block.used ~= false then px = px + extraOf(block) end
+  end
+  module:SetHeight(base + px)
+end
+-- post-hook on a tracker module's UpdateHeight
+local function onModuleHeight(module)
+  if type(module) ~= "table" or type(module.GetHeight) ~= "function" then return end
+  moduleBase[module] = module:GetHeight()
+  QuestMap.sizeModule(module)
+end
+
+-- The block's frame at the client's height plus ours, and its module's frame with it.
 function QuestMap.sizeBlock(block)
   if type(block) ~= "table" or type(block.height) ~= "number" or type(block.SetHeight) ~= "function" then return end
-  if extra[block] then block:SetHeight(block.height + extraOf(block)) end
+  if not extra[block] then return end
+  local want = block.height + extraOf(block)
+  if type(block.GetHeight) == "function" and math.abs(block:GetHeight() - want) <= 0.5 then return end
+  block:SetHeight(want)
+  if blockModule[block] then QuestMap.sizeModule(blockModule[block]) end
 end
-local function onLayoutBlock(_, block) QuestMap.sizeBlock(block) end
+-- post-hook on a tracker module's LayoutBlock(block)
+local function onLayoutBlock(module, block)
+  if type(block) == "table" then blockModule[block] = module end
+  QuestMap.sizeBlock(block)
+end
 
 local function blockRefit(block)
   local fn = blockRefits[block]
@@ -792,7 +825,7 @@ local function lineRefit(block, line)
     local sized = lineSizes[line] or base
     if math.abs(line:GetHeight() - sized) > 0.5 then return end
     -- a freed line keeps its text and our record, but it is no longer this block's
-    if line.parentBlock ~= block or line.used == false then return end
+    if line.parentBlock ~= block or not line.used then return end
     if h == sized then return end
     line:SetHeight(h)
     lineSizes[line] = h
@@ -831,7 +864,9 @@ function QuestMap.showQuestText(surface, recKey, fs, questID, refit)
   if type(WFJ.IsQuestFieldEnglish) ~= "function" or not WFJ.IsQuestFieldEnglish(questID, "objectives", en) then
     return 0
   end
-  return WFJ.Render.show(surface, recKey, fs, en, "quests", "quest.objectives", questID, { refit = refit }) and 1 or 0
+  -- a list or tracker row: compact (never the missing marker inline), checked against the live English
+  return WFJ.Render.show(surface, recKey, fs, en, "quests", "quest.objectives", questID,
+    { refit = refit, compact = true, live = en }) and 1 or 0
 end
 
 -- ── content-tracking lines ──────────────────────────────────────────────────────────────────────────────────────
@@ -864,6 +899,8 @@ end
 function QuestMap.onContentBlock(module, id, template)
   if type(module) ~= "table" or type(module.GetExistingBlock) ~= "function" then return end
   local block = module:GetExistingBlock(id, template)
+  -- GetBlock resets the block for a new layout and a content block has no SetHeader hook: its extra starts over here
+  if type(block) == "table" then extra[block] = nil end
   if type(block) ~= "table" or contentBlocksHooked[block] or type(block.AddObjective) ~= "function" then return end
   contentBlocksHooked[block] = true
   hooksecurefunc(block, "AddObjective", QuestMap.onContentObjective)
@@ -896,11 +933,13 @@ function QuestMap.onTrackerUpdate(module, quest)
   local block = module:GetExistingBlock(questID)
   if type(block) ~= "table" or block.id ~= questID then return 0 end
   if hookBlock(block) then
-    -- built before we loaded: its lines were written without us too
+    -- built before we loaded: its lines were written without us too. The header first: it starts the block's
+    -- extra over, which would otherwise drop the lines' just recorded
+    local n = QuestMap.onBlockHeader(block)
     if type(block.usedLines) == "table" then
       for objectiveKey in pairs(block.usedLines) do QuestMap.onAddObjective(block, objectiveKey) end
     end
-    return QuestMap.onBlockHeader(block)
+    return n
   end
   return 0
 end
@@ -992,6 +1031,7 @@ function QuestMap.hookTrackers()
   hookMethod("adventureTracker", "GetBlock", QuestMap.onContentBlock)
   for _, key in ipairs({ "questTracker", "campaignTracker", "adventureTracker" }) do
     hookMethod(key, "LayoutBlock", onLayoutBlock) -- the block's frame takes the height the Japanese adds
+    hookMethod(key, "UpdateHeight", onModuleHeight) -- and so does the module's frame
   end
   -- the headers' writers, called by method on the instance (a later Init / SetHeader); both already ran once for a
   -- tracker loaded before us, so the headers are shown now too

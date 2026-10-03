@@ -94,6 +94,17 @@ describe("UI/Tooltip: item and spell tooltips", function()
     Stub.keys.alt = false; WFJ.Modifier.refresh()
   end)
 
+  it("colourRuns colours a whole number found once, from the right, never inside a longer number", function()
+    local cr = WFJ.Render.colourRuns
+    local G, R = "|cff20ff20", "|cffff2020"
+    assert.are.equal("アーマー " .. G .. "+17|r", cr("アーマー +17", { { run = "+17", code = G } }))
+    assert.are.equal("アーマー +170", cr("アーマー +170", { { run = "+17", code = G } })) -- part of a longer number
+    assert.are.equal("+1 と +1", cr("+1 と +1", { { run = "+1", code = G } })) -- twice: left alone
+    -- two runs: both coloured, neither inside the other's code ("20" also appears in the code)
+    assert.are.equal(G .. "+20|r / " .. R .. "-5|r",
+      cr("+20 / -5", { { run = "+20", code = G }, { run = "-5", code = R } }))
+  end)
+
   it("part colours skip empty parts on both sides: a blank line or a paragraph break never shifts them", function()
     local cp = WFJ.Render.colourParts
     local gold = { n = 2, [2] = "ffffd100" }
