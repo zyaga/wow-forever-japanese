@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.1.0-alpha.5 - 2026-10-03
+
 ### Added
 - Japanese for about 16,900 more spell and buff tooltip lines, so nearly every spell the Forever client serves has Japanese, and for 1,998 more interface strings, with word cards.
 - Japanese for the quest, item, spell and interface text the Forever build 1.60.1.70170 added or reworded.
