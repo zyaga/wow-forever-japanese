@@ -2,6 +2,8 @@
 local _, WFJ = ...
 WFJ.Data.add("spell", {
   [454017] = { "Fel ScarまたはRiftを、Legionの支配する宇宙の奥深くにある世界とつなげます。予測できない危険な効果が起こるかもしれません。", nil, 0x2c3e94e3, nil, "um" },
+  [454042] = { nil, "呪文ダメージが$N1増加します。", nil, 0x62dc133a, "mu" },
+  [454204] = { nil, "裂け目が不安定になっています。", nil, 0xb39de444, "mu" },
   [454466] = { "Fel ScarまたはRiftを、Legionの支配する宇宙の奥深くにある世界とつなげます。予測できない危険な効果が起こるかもしれません。", nil, 0x2c3e94e3, nil, "um" },
   [454469] = { "Legion Portal Tunerに過剰な力を注ぎ込みます。", nil, 0x8db069f9, nil, "um" },
 })

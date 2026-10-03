@@ -6,6 +6,8 @@ WFJ.Data.add("ui", {
   ["KEY_BINDING_NAME_AND_KEY"] = { "%s（%s）", 0x515ea73e, "." },
   ["KEY_BINDING_TOOLTIP"] = { "<右クリックで割り当て解除>", 0xddf7d0f8, "." },
   ["KEY_BOUND"] = { "キーを割り当てました", 0x6d8aee77, "." },
+  ["KEY_MOUSEWHEELDOWN"] = { "マウスホイール下", 0xbd4d8f88, "." },
+  ["KEY_MOUSEWHEELUP"] = { "マウスホイール上", 0x4e672236, "." },
   ["KEY_UNBOUND_ERROR"] = { "|cffff0000アクション「%s」の割り当てが解除されました！|r", 0x34112563, "." },
   ["KILLING_BLOW_TOOLTIP"] = { "あなた自身がとどめを刺した敵プレイヤー", 0xde750b8c, "." },
   ["KILLING_BLOW_TOOLTIP_TITLE"] = { "とどめ回数", 0xfcbc1456, "." },

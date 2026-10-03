@@ -2,4 +2,5 @@
 local _, WFJ = ...
 WFJ.Data.add("spell", {
   [42609] = { "右クリックでsinister squashlingを召喚/退散します。", nil, 0x53b9546c, nil, "um" },
+  [42896] = { "対象にエネルギーを浴びせ、$N1のArcaneダメージを与えます。Arcane Blastを唱えるたびに、すべてのArcane呪文のダメージが$N2%増加し、Arcane Blastの消費マナが$N3%増加します。効果は最大$N4回まで重なり、$D1の間、またはArcane Blast以外のArcaneダメージ呪文を唱えるまで続きます。", nil, 0xb0e80e08, nil, "um" },
 })

@@ -474,6 +474,25 @@ def _in_scope(
     return english
 
 
+def undraftable(data: Path, kind: str) -> dict[tuple[Any, str], str]:
+    """The tooltip lines of `kind` a batch can never take, with the reason `cut` gives when it leaves them out
+    (a template code drafting cannot place, an inclusion it cannot splice, branches the addon could never tell
+    apart). `make coverage` states them as the reason the line has no Japanese. → {(id, field): reason}"""
+    if kind not in TEMPLATE_KINDS:
+        return {}
+    type_, field = KINDS[kind]
+    english = [ln for ln in Store(data, english=True).load(type_) if ln["field"] == field]
+    kept, not_expanded = expand_included(kind, english, spell_english(data))
+    out = {(ln["id"], ln["field"]): reason for ln, reason in not_expanded}
+    rows = [r for r in group(kind, kept, None) if _cuttable(kind, r["en"])]
+    _annotate_slots(rows)
+    for r in rows:
+        if r["slots"] is None:
+            for t in r["targets"]:
+                out[(t[0], t[1])] = r.get(_DROPPED, "uncountable")
+    return out
+
+
 def cut(  # noqa: PLR0913, PLR0917 - one parameter per CLI option; tests and the CLI pass them by name
     data: Path,
     kind: str,

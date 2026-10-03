@@ -245,11 +245,9 @@
 {"id": "CATEGORIZE", "field": "text", "en": "Categorize", "hash": "d57af3ae3d24e4d5", "src": "db2@1.60.1.70170"}
 {"id": "CATEGORY", "field": "text", "en": "Category", "hash": "ad30b2beaaf7304f", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_ANIMALS_CAT", "field": "text", "en": "Cat", "hash": "0011bd720a05d049", "src": "db2@1.60.1.70170"}
-{"id": "CDMSND_ANIMALS_CHICKEN", "field": "text", "en": "Chicken", "hash": "b90389c14c88ae79", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_ANIMALS_COW", "field": "text", "en": "Cow", "hash": "0011c49f0a078e9a", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_ANIMALS_GOAT", "field": "text", "en": "Goat", "hash": "09a0c8fbf08623c5", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_ANIMALS_LION", "field": "text", "en": "Lion", "hash": "0a4ac1f09bbe0fb5", "src": "db2@1.60.1.70170"}
-{"id": "CDMSND_ANIMALS_PANTHER", "field": "text", "en": "Panther", "hash": "5f837af91cfd81be", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_ANIMALS_RATTLESNAKE", "field": "text", "en": "Rattlesnake", "hash": "6c15275542f1c4f5", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_ANIMALS_SHEEP", "field": "text", "en": "Sheep", "hash": "befc4a004941c703", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_ANIMALS_WOLF", "field": "text", "en": "Wolf", "hash": "0bc5a83ec706c2eb", "src": "db2@1.60.1.70170"}
@@ -319,7 +317,6 @@
 {"id": "CDMSND_WAR2_PIG_SQUEAL", "field": "text", "en": "PigSqueal", "hash": "c3877a8f70618b4d", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_WAR2_SAWS", "field": "text", "en": "Saws", "hash": "0b38cd0259d49cf7", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_WAR2_SEAL", "field": "text", "en": "Seal", "hash": "0b39cddd69b2ee9e", "src": "db2@1.60.1.70170"}
-{"id": "CDMSND_WAR2_SLOW", "field": "text", "en": "Slow", "hash": "0b3baa51857e873e", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_WAR2_SMITH", "field": "text", "en": "Smith", "hash": "bfa8e1d01c2c785c", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_WAR2_SYNTH_STINGER", "field": "text", "en": "SynthStinger", "hash": "234fb399b1bc5015", "src": "db2@1.60.1.70170"}
 {"id": "CDMSND_WAR2_TRUMPET_RALLY", "field": "text", "en": "TrumpetRally", "hash": "0cb959aa8479aaea", "src": "db2@1.60.1.70170"}

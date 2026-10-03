@@ -365,6 +365,7 @@ WFJ.Data.add("ui", {
   ["OPTION_WHISPER_MODE_POPOUT"] = { "新しいささやきを新しいタブに表示します。", 0x509c8334, "." },
   ["OPTION_WHISPER_MODE_POPOUT_AND_INLINE"] = { "新しいささやきを新しいタブと通常のチャットタブの両方に表示します。", 0xf1cdd2f1, "." },
   ["OPT_OUT_LOOT_TITLE"] = { "戦利品をパス：%s", 0x0e6f5441, "." },
+  ["ORIBOS_GREAT_VAULT_POI_TOOLTIP_INSTRUCTIONS"] = { "右クリックでGreat Vaultをプレビュー", 0x3f50c5e1, "." },
   ["OR_CAPS"] = { "または", 0x000028bf, "." },
   ["OTHER"] = { "その他", 0x7a61dd1d, "." },
   ["OTHER_DECOR_LIGHT_RADIUS_INDICATOR_TYPE"] = { "その他の装飾", 0xef89852b, "." },

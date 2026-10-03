@@ -256,7 +256,7 @@ def test_server_only_text_keeps_its_translation_floor(root):
 
 def test_gendered_quest_fields_ship_h1f_and_keyed_aliases_as_measured(root, plan_report):
     """ADR-024: the shipped quest fields whose English has a `$G` code carry the female-variant h1: 145 rows,
-    154 fields across them; quest 8234's completion is one of them. 188 shipped gossip lines (NPC speech
+    154 fields across them; quest 8234's completion is one of them. 189 shipped gossip lines (NPC speech
     included) and 10 book pages get a gender alias; none is dropped or ambiguous. A data PR that moves these
     counts updates them knowingly."""
     from wfj.cmd import generate
@@ -272,7 +272,7 @@ def test_gendered_quest_fields_ship_h1f_and_keyed_aliases_as_measured(root, plan
     assert sum(1 for r in gendered for v in r[11:] if v != "nil") == 154
     assert rows[8234][-1] == "0xf0af4ecb"  # completion h1f
     # 10 shipped book pages whose English has a `$G` code get an alias too
-    assert report["aliases"] == {"gossip": 188, "book": 10}
+    assert report["aliases"] == {"gossip": 189, "book": 10}
     assert all(keys == [] for keys in report["dropped"].values())
     assert all(hashes == [] for hashes in report["ambiguous"].values())
     shard = planned["Data/Quest/Quest_0008.lua"]

@@ -10,6 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
+- Japanese for about 16,900 more spell and buff tooltip lines, so nearly every spell the Forever client serves has Japanese, and for 1,998 more interface strings, with word cards.
 - Japanese for the quest, item, spell and interface text the Forever build 1.60.1.70170 added or reworded.
 - Item flavour lines such as "Made With Love" are translated.
 - The character window's new Titles tab is in Japanese, and so is the "No Title" row of its title list. The titles you earn are names and stay English.

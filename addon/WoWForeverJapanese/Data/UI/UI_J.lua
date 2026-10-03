@@ -2,6 +2,9 @@
 local _, WFJ = ...
 WFJ.Data.add("ui", {
   ["JOIN_QUEUE"] = { "参加をリクエスト", 0xd6f22d98, "." },
+  ["JOIN_THE_ALLIANCE"] = { "Allianceに\n加わる", 0x5fc8e0f3, "." },
+  ["JOIN_THE_HORDE"] = { "Hordeに\n加わる", 0xe1cbeb61, "." },
   ["JOURNEYMAN"] = { "一人前", 0xb8b3b7cb, "." },
+  ["JOURNEYS_MAX_RENOWN_LABEL"] = { "最大名声", 0xb547a5c4, "." },
   ["JOURNEY_UNLOCKED_TOAST"] = { "ジャーニー解放", 0xa63faa78, "." },
 })

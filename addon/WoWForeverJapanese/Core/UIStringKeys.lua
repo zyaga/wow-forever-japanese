@@ -622,6 +622,9 @@ UIStrings.SPELL_DURATIONS = { "INT_SPELL_DURATION_DAYS", "INT_SPELL_DURATION_HOU
 -- line that starts with a dictionary word ("Return to Verner", "Frost Resistance increased by 30"). They are matched
 -- only where a widget asks for them by key (matchOnly), never by an unrestricted match.
 UIStrings.ONLY = { COOLDOWN_VIEWER_SETTINGS_ACTION_ADD_ALERT = true,
+  -- a renown reward's "Mount: %s" / "Illusion: %s": the name of an item or spell, so only where the renown window asks
+  RENOWN_REWARD_FOLLOWER_NAME_FORMAT = true, RENOWN_REWARD_ILLUSION_NAME_FORMAT = true,
+  RENOWN_REWARD_MOUNT_NAME_FORMAT = true, RENOWN_REWARD_TITLE_NAME_FORMAT = true,
   QUEST_MONSTERS_KILLED = true, QUEST_PLAYERS_KILLED = true, QUEST_PLAYERS_KILLED_NOPROGRESS = true,
   QUEST_FACTION_NEEDED = true, QUEST_FACTION_NEEDED_NOPROGRESS = true, COMMUNITIES_CALENDAR_EVENT_FORMAT = true,
   -- "%s (%s)" and "Level %s" take almost any line: only where a widget asks for them

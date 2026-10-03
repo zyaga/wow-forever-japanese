@@ -130,7 +130,6 @@
 {"id": "PING_TARGET_OPTION_ENVIRONMENT", "field": "text", "en": "Environment", "hash": "4a0ef41667d461ed", "src": "db2@1.60.1.70170"}
 {"id": "PING_TARGET_OPTION_UNITS", "field": "text", "en": "Units", "hash": "e2e69c1867696b5c", "src": "db2@1.60.1.70170"}
 {"id": "PING_TYPE_ASSIST", "field": "text", "en": "Assist", "hash": "cec4b0c0fde02e30", "src": "db2@1.60.1.70170"}
-{"id": "PING_TYPE_ATTACK", "field": "text", "en": "Attack", "hash": "e072942b4a6e859a", "src": "db2@1.60.1.70170"}
 {"id": "PING_TYPE_ON_MY_WAY", "field": "text", "en": "On My Way", "hash": "7806045af8a6edb1", "src": "db2@1.60.1.70170"}
 {"id": "PING_TYPE_WARNING", "field": "text", "en": "Warning", "hash": "95cfae04a34f3e22", "src": "db2@1.60.1.70170"}
 {"id": "PING_VOLUME", "field": "text", "en": "Ping Volume", "hash": "92c49c5dbbb1db8d", "src": "db2@1.60.1.70170"}
@@ -370,7 +369,6 @@
 {"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70170"}
 {"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT_PERC", "field": "text", "en": "Health Percentage", "hash": "15099a8ea8df1765", "src": "db2@1.60.1.70170"}
 {"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_USECLASSCOLORS", "field": "text", "en": "Display Class Colors", "hash": "5dae710d10680a3b", "src": "db2@1.60.1.70170"}
-{"id": "PVP_CONQUEST", "field": "text", "en": "Conquest", "hash": "7e5ee10d76f42892", "src": "db2@1.60.1.70170"}
 {"id": "PVP_CONQUEST_CHANGE", "field": "text", "en": "%s Conquest", "hash": "4b9311d40c07282d", "src": "db2@1.60.1.70170"}
 {"id": "PVP_ENABLED", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70170"}
 {"id": "PVP_FLAG", "field": "text", "en": "Player vs. Player", "hash": "e05a8e54c9894b2f", "src": "db2@1.60.1.70170"}

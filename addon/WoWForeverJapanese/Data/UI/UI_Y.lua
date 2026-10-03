@@ -7,6 +7,7 @@ WFJ.Data.add("ui", {
   ["YES"] = { "はい", 0x00178243, "." },
   ["YOUR_CLASS_MAY_NOT_PERFORM_ROLE"] = { "あなたのクラスはこのロールを担当できません。", 0x22cc9461, "." },
   ["YOUR_ROLE"] = { "あなたのロール", 0x6c3c037f, "." },
+  ["YOU_ARE_NOT_SPECIALIZED_IN_ROLE"] = { "このロールに対応する専門化ではありません。", 0xbfd95797, "." },
   ["YOU_COLLECTED_LABEL"] = { "収集", 0xc050fff6, "." },
   ["YOU_EARNED_LABEL"] = { "獲得", 0xe34c8f22, "." },
   ["YOU_LOOT_MONEY"] = { "%sを拾いました", 0x64b51f40, "." },

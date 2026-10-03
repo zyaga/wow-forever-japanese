@@ -1656,12 +1656,9 @@
 {"id": "STOPWATCH_TITLE", "field": "text", "en": "Stopwatch", "hash": "cce41fc08931c180", "src": "db2@1.60.1.70170"}
 {"id": "STOP_SUPER_TRACK_QUEST", "field": "text", "en": "Remove Focus", "hash": "0b1d0b5044cf01f3", "src": "db2@1.60.1.70170"}
 {"id": "STRING_SCHOOL_ARCANE", "field": "text", "en": "Arcane", "hash": "bb1005d928b3b0c1", "src": "db2@1.60.1.70170"}
-{"id": "STRING_SCHOOL_FIRE", "field": "text", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70170"}
-{"id": "STRING_SCHOOL_FROST", "field": "text", "en": "Frost", "hash": "dc23b574a51d3a0d", "src": "db2@1.60.1.70170"}
 {"id": "STRING_SCHOOL_HOLY", "field": "text", "en": "Holy", "hash": "09c31c3c7def7685", "src": "db2@1.60.1.70170"}
 {"id": "STRING_SCHOOL_NATURE", "field": "text", "en": "Nature", "hash": "58ab279e326bdbc9", "src": "db2@1.60.1.70170"}
 {"id": "STRING_SCHOOL_PHYSICAL", "field": "text", "en": "Physical", "hash": "8e6e1afcac1879b6", "src": "db2@1.60.1.70170"}
-{"id": "STRING_SCHOOL_SHADOW", "field": "text", "en": "Shadow", "hash": "ba9066642051ae69", "src": "db2@1.60.1.70170"}
 {"id": "SUBSCRIPTION_INTERSTITIAL_SUBSCRIBE_BUTTON", "field": "text", "en": "SUBSCRIBE NOW", "hash": "bfe8df08bce4824b", "src": "db2@1.60.1.70170"}
 {"id": "SUBSCRIPTION_INTERSTITIAL_SUBSCRIBE_FIRST_LINE", "field": "text", "en": "CONTINUE", "hash": "7485ff4ca92c0c41", "src": "db2@1.60.1.70170"}
 {"id": "SUBSCRIPTION_INTERSTITIAL_SUBSCRIBE_SECOND_LINE", "field": "text", "en": "YOUR", "hash": "0c01d67b62cb558f", "src": "db2@1.60.1.70170"}

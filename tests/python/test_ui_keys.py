@@ -95,7 +95,12 @@ def _keys(root: Path) -> list[str]:
 
 
 # The draft batches the dictionary is made of (each line's `provenance.source` names one).
-DRAFT_SOURCES = {"draft-ui", "draft-ui-level1", "draft-ui-hud", "draft-ui-enchant", "draft-ui-beta-forever-bags",
+DRAFT_SOURCES = {"draft-ui",
+                 # the served-text round: every string the loaded Forever files name, in seven parts
+                 *(f"draft-served-ui-{i}" for i in range(7)),
+                 "draft-ui-compare", "draft-ui-appearance",  # the comparison tooltip and its appearance lines
+                 "draft-ui-tracker", "draft-ui-wrap",  # the tracker's finished-quest lines; a popup's line break
+                 "draft-ui-level1", "draft-ui-hud", "draft-ui-enchant", "draft-ui-beta-forever-bags",
                  "draft-ui-beta-forever-collisions",
                  "draft-ui-beta-duration-float",  # Forever prints SPELL_DURATION_* as %.1f, not %.2f
                  "draft-ui-retarget",  # the camelot surfaces' keys

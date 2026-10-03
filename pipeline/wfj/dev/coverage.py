@@ -33,7 +33,7 @@ from typing import Any
 from wfj.core import readings
 from wfj.dev import served_dispositions
 from wfj.dev.served_columns import inventory_build, read_inventory
-from wfj.dev.translate_batch import AREA_NAMES, OBJECTIVE_NAMES, has_prose, objective_names
+from wfj.dev.translate_batch import AREA_NAMES, OBJECTIVE_NAMES, has_prose, objective_names, undraftable
 from wfj.emit.lua_writer import shipped
 from wfj.io.jsonl_store import Store
 from wfj.io.wdb import PLACEHOLDER_TITLE
@@ -125,6 +125,12 @@ def measure(root: Path) -> dict[str, Any]:
     store, english = Store(root), Store(root, english=True)
     types: dict[str, Any] = {}
     ui_keys, ui_excluded = _ui_lists(repo)
+    # tooltip lines a batch can never take (a code drafting cannot place): their reason, stated
+    blocked: dict[tuple[str, Any, str], str] = {}
+    tooltip_kinds = (("item_description", "item"), ("spell_description", "spell"), ("spell_aura", "spell"))
+    for kind, type_ in tooltip_kinds:
+        for (id_, field), reason in undraftable(root, kind).items():
+            blocked[(type_, id_, field)] = reason
     for type_, fields in SURFACE_FIELDS.items():
         en = [ln for ln in english.load(type_) if ln["field"] in fields]
         names = set(objective_names(repo, NAMES_LISTS[type_])) if type_ in NAMES_LISTS else set()
@@ -151,6 +157,9 @@ def measure(root: Path) -> dict[str, Any]:
                 if type_ in ("item", "spell") and src == "wago":
                     wait = (": no text from the Forever tables on this build yet"
                             " (English still from Classic Era); rechecked at each re-pull")
+                block = blocked.get((type_, ln["id"], ln["field"])) if j is None else None
+                if block:
+                    wait = f": the template uses a code drafting cannot place yet ({block})"
                 missing[_why(j) + wait] += 1
                 if not wait and (j is None or not j.get("reasons")):
                     uncounted += 1

@@ -545,7 +545,6 @@
 {"id": "BOSSES_KILLED", "field": "text", "en": "%d/%d Bosses Defeated", "hash": "e396fdc410a81c2e", "src": "db2@1.60.1.70170"}
 {"id": "BOSS_ALIVE", "field": "text", "en": "Available", "hash": "08bd63f84d058c1c", "src": "db2@1.60.1.70170"}
 {"id": "BOSS_BANNER_LOOT_SET", "field": "text", "en": "Set: %s", "hash": "cd26777775fe95cc", "src": "db2@1.60.1.70170"}
-{"id": "BOSS_DEAD", "field": "text", "en": "Defeated", "hash": "356454e4c49b3a01", "src": "db2@1.60.1.70170"}
 {"id": "BOSS_KILL_SUBTITLE", "field": "text", "en": "has been defeated", "hash": "36d57d7fa1d3b3b1", "src": "db2@1.60.1.70170"}
 {"id": "BOSS_YOU_DEFEATED", "field": "text", "en": "You Defeated", "hash": "f9cd9a33b0724803", "src": "db2@1.60.1.70170"}
 {"id": "BREATH_LABEL", "field": "text", "en": "Breath", "hash": "b6d8efc4950e0225", "src": "db2@1.60.1.70170"}

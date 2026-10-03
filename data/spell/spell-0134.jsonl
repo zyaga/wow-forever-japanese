@@ -1,0 +1,1 @@
+{"id": 134735, "field": "aura", "ja": "クリティカル回復で受ける回復量が$N1%減少します。$?$w2>0[\r\n受けるダメージが$N2増加します。][]", "status": "unaligned", "checks": [], "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-served-sa1-sg12@2026-10-02", "imported": "2026-10-02"}, "english": {"hash": "7ccfc72760197519", "src": "db2@1.60.1.70170"}, "reasons": [], "conflicts": []}
