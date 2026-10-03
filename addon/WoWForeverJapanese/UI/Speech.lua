@@ -162,7 +162,12 @@ function Speech.onAddMessage(frame, line, _, _, _, typeId, _, _, _, eventArgs, f
     return 0
   end
   local en, lineID = eventArgs[1], eventArgs[11]
-  if type(en) ~= "string" or secret(en) or secret(line) or not WFJ.ChatSystem.on(AREA) then return 0 end
+  if type(en) ~= "string" or secret(en) or secret(line) then return 0 end
+  -- what the NPC said goes to the Collector like a gossip line, keyed the same way, with the speaker's creature
+  -- id from the event's GUID (eventArgs[12]); NPC speech is in no client file, so playing is how it is found
+  local guid = eventArgs[12]
+  if WFJ.Collector and not secret(guid) then WFJ.Collector.recordGossip(en, guid) end
+  if not WFJ.ChatSystem.on(AREA) then return 0 end
   local ja = Speech.translate(en)
   local jaLine = line
   if ja then
