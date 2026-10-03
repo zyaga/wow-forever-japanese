@@ -9,7 +9,7 @@ local SendWindow = {}
 WFJ.CollectorSendWindow = SendWindow
 
 local W, Text = WFJ.OptionsWidgets, WFJ.OptionsText
-local WIDTH, HEIGHT, LEFT = 560, 470, 16
+local WIDTH, HEIGHT, LEFT = 560, 490, 16
 local INNER = WIDTH - 2 * LEFT
 
 SendWindow.frame = nil
@@ -81,6 +81,30 @@ local function showLabel(l, on, key, ...)
   if on then W.setPair(l, pair(key, ...)) else W.setPair(l, "", "") end
 end
 
+-- Each row below step 2 sits under the one before it: a step's copy wraps to two lines in either language (the
+-- paste step does at this width), so fixed heights put a box over its second line.
+local GAP = 8
+function SendWindow.layout()
+  local f = SendWindow.frame
+  local function below(widget, anchor, x, gap)
+    widget:ClearAllPoints()
+    widget:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", x or 0, -(gap or GAP))
+  end
+  local last = f.step2.en
+  if f.text.frame:IsShown() then
+    below(f.text.frame, last)
+    last = f.text.frame
+  elseif f.path:IsShown() then
+    below(f.path, last, 6) -- InputBoxTemplate's left cap sits outside the frame
+    last = f.path
+  end
+  below(f.step3.en, last, last == f.path and -6 or 0, 12)
+  below(f.step4.en, f.step3.en, 0, 12)
+  f.sent:ClearAllPoints()
+  f.sent:SetPoint("LEFT", f.step4.en, "LEFT", 310, 0)
+  below(f.message.en, f.step4.en, 0, 18)
+end
+
 -- Fills the window from a pack (Core/CollectorSend.pack).
 -- The summary line's copy per mode: link, paste and file share one.
 local SUMMARY = { link = "send.summary", paste = "send.summary", file = "send.summary",
@@ -103,6 +127,7 @@ local function fill(pk)
   showLabel(f.step3, steps, "send.step3")
   showLabel(f.step4, steps, "send.step4")
   show(f.sent, steps)
+  SendWindow.layout()
   -- the saved file holds only what the client wrote at the last logout or /reload
   if attach and pk.later > 0 then W.setPair(f.message, pair("send.later", pk.later))
   else W.setPair(f.message, "", "") end

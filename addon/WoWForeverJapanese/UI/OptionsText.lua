@@ -68,10 +68,8 @@ Text.T = {
   ["collector.paused"] = { en = "paused (file from a newer version)", ja = "一時停止（新しいバージョンのファイル）" },
   ["collector.errors"] = { en = "%s errors", ja = "エラー%s件" },
   ["collector.path"] = {
-    en = "If a send is too long to paste, attach this file (zipped) to the same issue. It is saved when you log out "
-      .. "or /reload, in:",
-    ja = "長すぎて貼り付けられない場合は、このファイルを zip にして同じ Issue に添付してください。"
-      .. "ログアウトまたは /reload 時に次の場所へ保存されます：",
+    en = "Too long to paste? Zip this file and attach it to the same issue:",
+    ja = "貼り付けられない長さなら、このファイルを zip にして同じ Issue に添付：",
   },
   ["collector.steps"] = {
     en = "1. Click Send English.\n"
@@ -107,24 +105,23 @@ Text.T = {
   },
   ["send.step2.link"] = { en = "2. The form opens filled in.", ja = "2. 入力済みのフォームが開きます。" },
   ["send.step2.paste"] = {
-    en = "2. The text is too long for the link. Copy it (click it, then Ctrl+C) and paste it into the form's box:",
-    ja = "2. リンクに入りきらない長さです。この文字列をコピーして（クリックして Ctrl+C）、フォームの欄に貼り付けます：",
+    en = "2. Copy this text too (click it, then Ctrl+C) and paste it into the form:",
+    ja = "2. この文字列もコピーして（クリックして Ctrl+C）、フォームに貼り付けます：",
   },
   ["send.step2.file"] = {
-    en = "2. Zip this file (the game saves it when you log out or /reload) and drag it into the form's box:",
-    ja = "2. このファイル（ログアウトまたは /reload 時に保存されます）を zip にして、フォームの欄にドラッグします：",
+    en = "2. Zip this file and drag it into the form (/reload first saves it):",
+    ja = "2. このファイルを zip にしてフォームにドラッグします（先に /reload で保存）：",
   },
   ["send.step3"] = { en = "3. Submit the issue on GitHub.", ja = "3. GitHub で Issue を送信します。" },
   ["send.step4"] = { en = "4. Then click:", ja = "4. 送信したらクリック：" },
   ["send.sent"] = { en = "I sent it", ja = "送信しました" },
   ["send.later"] = {
-    en = "%s lines recorded since you logged in are not in the file yet: type /reload first, then open this again.",
-    ja = "ログイン後に記録した %s 行はまだファイルに入っていません。先に /reload してから、もう一度開いてください。",
+    en = "%s new lines are not in the file yet: /reload, then open this again.",
+    ja = "新しい %s 行はまだファイルにありません。/reload してから開き直してください。",
   },
   ["send.markedFull"] = {
-    en = "%s lines marked as sent. The collector is full: once the issue is in, Clear collected English on the "
-      .. "settings page makes room again.",
-    ja = "%s 行を送信済みにしました。記録が上限に達しています。Issue が届いたら、設定の「記録した英語を消去」で空きを作れます。",
+    en = "%s lines marked as sent. Full: Clear collected English makes room.",
+    ja = "%s 行を送信済みにしました。上限です。「記録した英語を消去」で空きを作れます。",
   },
   ["send.marked"] = {
     en = "%s lines marked as sent. The next send holds only new lines.",
