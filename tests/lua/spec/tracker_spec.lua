@@ -481,7 +481,8 @@ end)
 
 -- A tracked achievement's criteria lines: AddAchievement writes each with block:AddObjective(criteriaIndex,
 -- criteriaString) → line.Text, kept in block.usedLines (blizzard_achievementobjectivetracker.lua:130-152;
--- blizzard_objectivetrackerblock.lua:79-98, 161-208). The CriteriaText family only.
+-- blizzard_objectivetrackerblock.lua:79-98, 161-208). The CriteriaText family, and AchievementDescription for an
+-- achievement whose one line is its description.
 describe("the tracker's achievement criteria", function()
   local WFJ
 
@@ -489,6 +490,7 @@ describe("the tracker's achievement criteria", function()
   for k, v in pairs(UI) do ROWS[k] = v end
   ROWS["AchievementTitle:6"] = { "Level 10", "レベル10" }
   ROWS["CriteriaText:121233"] = { "Explore Alterac Mountains", "アルターク山脈を探検する" }
+  ROWS["AchievementDescription:16"] = { "Reach level 20.", "レベル20に到達する。" }
 
   local function alt(down)
     Stub.keys.alt = down
@@ -540,5 +542,11 @@ describe("the tracker's achievement criteria", function()
     assert.are.equal("アルターク山脈を探検する", lines[1].Text:GetText())
     m:AddAchievement(6, "Level 10", { "Hogger" }) -- the line reused for a name: back to the client's text
     assert.are.equal("Hogger", lines[1].Text:GetText())
+  end)
+
+  it("an achievement with no criteria of its own shows its description: the AchievementDescription row", function()
+    local m = _G.AchievementObjectiveTracker
+    m:AddAchievement(16, "Level 20", { "Reach level 20." })
+    assert.are.equal("レベル20に到達する。", m:GetExistingBlock(16).usedLines[1].Text:GetText())
   end)
 end)

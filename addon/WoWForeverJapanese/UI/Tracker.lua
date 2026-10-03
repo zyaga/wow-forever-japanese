@@ -142,7 +142,8 @@ function Tracker.onAchievement(module, achievementID)
   local n = WFJ.Labels.show(SURFACE, achievementKey(block), block.HeaderText, nil,
     WFJ.Labels.families("AchievementTitle"))
   if type(block.usedLines) == "table" then
-    local only = WFJ.Labels.families("CriteriaText")
+    -- an achievement with no criteria of its own shows its description as the line (lua:183): AchievementDescription
+    local only = WFJ.Labels.families("CriteriaText", "AchievementDescription")
     for _, line in pairs(block.usedLines) do
       local text = type(line) == "table" and line.Text or nil
       if type(text) == "table" then n = n + WFJ.Labels.show(SURFACE, criterionKey(text), text, nil, only) end
