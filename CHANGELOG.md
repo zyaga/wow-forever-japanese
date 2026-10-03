@@ -21,6 +21,7 @@ an old setting stops working). A release moves those lines under its version num
 - NPC lines that use your class or race in the plural ("druids like yourself") now show their Japanese.
 - A quest Forever repeats under several ids (such as Camping 101) shows the progress and turn-in text already translated for another copy, when its own text is the same.
 - An error when hovering a creature whose quest title the game keeps hidden from addons.
+- The Camp Benefits buff shows in Japanese, whichever camp items you have.
 
 ## 0.1.0-alpha.5 - 2026-10-03
 

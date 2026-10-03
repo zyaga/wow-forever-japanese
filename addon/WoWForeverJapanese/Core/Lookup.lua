@@ -48,7 +48,9 @@ function Lookup.get(kind, id)
   if ja == nil then return nil end
   local entry = { status = row[slots.status]:sub(i, i), h1 = row[i + slots.hash],
     h1f = slots.female and row[i + slots.female] or nil }
-  if type(ja) == "table" then
+  if type(ja) == "table" and ja.sections then
+    entry.sections = ja.sections -- a sectioned line: shown paragraph by paragraph (Align.sections)
+  elseif type(ja) == "table" then
     entry.variants, entry.shapes = ja, ja.shape
   else
     entry.ja = ja

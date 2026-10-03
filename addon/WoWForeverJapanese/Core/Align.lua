@@ -387,6 +387,44 @@ function Align.check(ja, lines, nameScope, duration)
   return true, text
 end
 
+-- A SECTIONED line: a heading paragraph, then optional paragraphs the client prints one per thing the player has
+-- (the Camp Benefits aura: "Tent: …", "Mana Well: …"). It ships the heading's Japanese with the key of its English,
+-- and per paragraph the byte length and key of the words it begins with, its Japanese and its shape. The live
+-- text is split at its blank lines: the first paragraph must be the heading, and every other one is found by its
+-- opening words and filled from its own values with `check`. A paragraph found by none, or one that does not fit,
+-- leaves the whole line English. → ok, text
+local function paragraphsOf(text)
+  local out = {}
+  for p in (text:gsub("\r\n", "\n") .. "\n\n"):gmatch("(.-)\n%s*\n") do
+    p = p:gsub("^%s+", ""):gsub("%s+$", "")
+    if p ~= "" then out[#out + 1] = p end
+  end
+  return out
+end
+
+function Align.sections(sec, lines, nameScope, duration)
+  if type(sec) ~= "table" or type(lines) ~= "table" or #lines == 0 then return false end
+  local N, H = WFJ.Normalize, WFJ.Hash
+  if not N or not H then return false end
+  local paras = paragraphsOf(table.concat(lines, "\n"))
+  if #paras == 0 or H.key(N.v1(paras[1])) ~= sec.hkey then return false end
+  local out = { sec.head }
+  for i = 2, #paras do
+    local p, found = paras[i], nil
+    for _, s in ipairs(sec) do
+      if #p >= s.n and H.key(N.v1(p:sub(1, s.n))) == s.key then found = s; break end
+    end
+    if not found then return false end
+    -- the paragraph shows exactly the values its Japanese is numbered for, no more
+    local plain = Align.textures(p)
+    if #Align.values(plain) .. "/" .. #Align.durations(plain, duration) ~= found.shape then return false end
+    local ok, text = Align.check(found.ja, { p }, nameScope, duration)
+    if not ok then return false end
+    out[#out + 1] = text
+  end
+  return true, table.concat(out, "\n\n")
+end
+
 -- A branch line (`$?<cond>[A][B]`, ADR-043) ships one Japanese per branch combination, each numbered to
 -- its own reading order, with its shape "<values>/<durations>": what `values` / `durations` read off a live
 -- line showing that combination. The client chose the branch; the addon reads which one from the live line and

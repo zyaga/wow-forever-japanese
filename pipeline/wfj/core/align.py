@@ -710,6 +710,9 @@ class Branching:
     skeleton: tuple = ()
     reason: str | None = None
     code_values: tuple[int, ...] = field(default=())
+    # a SECTIONED line (see `_sectioned_combos`): its variants are the heading alone, then the heading with
+    # each optional paragraph, in order; the addon shows it paragraph by paragraph (`Align.sections`)
+    sectioned: bool = False
 
 
 def has_branches(en: str) -> bool:
@@ -721,10 +724,14 @@ def branching(en: str) -> Branching:
     parts = parse_branches(en or "")
     if parts is None:
         return Branching(reason="unclosed_branch")
+    sectioned = False
     try:
         combos = _combos(parts)
     except _Stop as e:
-        return Branching(reason=str(e))
+        combos = _sectioned_combos(parts) if str(e) == "too_many_variants" else None
+        if combos is None:
+            return Branching(reason=str(e))
+        sectioned = True
     segs = _segments(parts)
     counted: list[tuple[frozenset[tuple[int, int]], list[Slot]]] = []
     for text, path in segs:
@@ -762,7 +769,68 @@ def branching(en: str) -> Branching:
         text = ICON.sub(lambda m, imap=imap: f"$I{imap[int(m.group(1))]}", text)
         variants.append(Variant(choice, text, tuple(active), durs, icons))
     code_values = tuple(k for k, (_, x) in enumerate(full, 1) if x.kind in ("code", "sum"))
-    return Branching(tuple(variants), len(full), j, _skeleton(parts), None, code_values)
+    return Branching(tuple(variants), len(full), j, _skeleton(parts), None, code_values, sectioned)
+
+
+# SECTIONED lines. A heading paragraph followed by optional paragraphs, each its own `$?<cond>[<paragraph>][]`
+# with an empty else (the Camp Benefits aura: "Tent: …", "Mana Well: …", one per camp item the player has),
+# has 2^n combinations: too many to ship, and many show the same values, so the addon could not tell them
+# apart. Each optional paragraph begins with words of its own before its first value ("Tent: You received"),
+# so the addon recognises it by those words (their hash, never the English) and shows it on its own. Such a
+# line is drafted like any branch line; its variants are the heading alone, then the heading with each
+# paragraph alone.
+SECTION_PREFIX_MIN = 6
+_BREAK_END = re.compile(r"(?:\r?\n|\$[Bb]){2,}$")
+
+
+def _sectioned_combos(parts: tuple) -> list[tuple[frozenset[tuple[int, int]], str]] | None:
+    """The heading-alone and heading-plus-one-paragraph combinations of a SECTIONED template, or None when
+    the template does not have that shape: a heading with no code, then conditionals each with exactly one
+    non-empty branch that is one whole paragraph (it ends in a paragraph break and holds no conditional) and
+    begins with words before its first code."""
+    if not parts or not isinstance(parts[0], str) or "$" in parts[0] or not _BREAK_END.search(parts[0]):
+        return None
+    conds = []
+    for p in parts[1:]:
+        if isinstance(p, str):
+            if p.strip():
+                return None
+            continue
+        branch = p.branches[0] if len(p.branches) == 2 and not p.branches[1] else ()
+        if len(branch) != 1 or not isinstance(branch[0], str):
+            return None
+        if len(section_prefix(branch[0])) < SECTION_PREFIX_MIN:
+            return None
+        conds.append(p)
+    # every paragraph but the last ends in a break: the next one starts a paragraph of its own
+    if any(not _BREAK_END.search(c.branches[0][0]) for c in conds[:-1]):
+        return None
+    if len(conds) < 2:
+        return None
+    off = frozenset((c.id, 1) for c in conds)
+    out = [(off, parts[0])]
+    for c in conds:
+        out.append(((off - {(c.id, 1)}) | {(c.id, 0)}, parts[0] + c.branches[0][0]))
+    return out
+
+
+def section_prefix(body: str) -> str:
+    """The words a section paragraph begins with before its first code: what the addon recognises it by."""
+    head = body.split("$", 1)[0]
+    return head if re.search(r"[A-Za-z]{2}", head) else ""
+
+
+def _text_of(parts: tuple, choice: frozenset[tuple[int, int]]) -> str:
+    """The text of one branch combination of `parts`."""
+    out = []
+    for p in parts:
+        if isinstance(p, str):
+            out.append(p)
+            continue
+        for bi, br in enumerate(p.branches):
+            if (p.id, bi) in choice:
+                out.append(_text_of(br, choice))
+    return "".join(out)
 
 
 _PLACE = re.compile(r"\$([NDI])(\d+)")
@@ -778,10 +846,13 @@ def ja_variants(ja: str, b: Branching) -> tuple[list[str] | None, list[str]]:
     parts = parse_branches(ja or "")
     if parts is None or _skeleton(parts) != b.skeleton:
         return None, ["branch_skeleton"]
-    try:
-        texts = dict(_combos(parts))
-    except _Stop:
-        return None, ["branch_skeleton"]
+    if b.sectioned:
+        texts = {v.choice: _text_of(parts, v.choice) for v in b.variants}
+    else:
+        try:
+            texts = dict(_combos(parts))
+        except _Stop:
+            return None, ["branch_skeleton"]
     out: list[str] = []
     bad: list[str] = []
     for v in b.variants:

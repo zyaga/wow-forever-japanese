@@ -115,8 +115,17 @@ def rows(
 _FILLED = re.compile(r"\$[ND]\d")
 
 
-def variants_literal(variants: list[tuple[str, str]]) -> str:
-    """A branch line's slot: its variants' Japanese, then their shapes (`<values>/<durations>`)."""
+def variants_literal(variants: list[tuple[str, str]] | dict[str, Any]) -> str:
+    """A branch line's slot: its variants' Japanese, then their shapes (`<values>/<durations>`). A sectioned
+    line (`generate._sections`) ships `{ sections = { head, hkey, { n, key, ja, shape }… } }` instead."""
+    if isinstance(variants, dict):
+        secs = ", ".join(
+            f"{{ n = {s['n']}, key = {lua_string(s['key'])}, ja = {lua_string(s['ja'])}, "
+            f"shape = {lua_string(s['shape'])} }}"
+            for s in variants["sections"]
+        )
+        head, hkey = lua_string(variants["head"]), lua_string(variants["hkey"])
+        return f"{{ sections = {{ head = {head}, hkey = {hkey}, {secs} }} }}"
     texts = ", ".join(lua_string(ja) for ja, _ in variants)
     shapes = ", ".join(lua_string(shape) for _, shape in variants)
     return f"{{ {texts}, shape = {{ {shapes} }} }}"

@@ -167,6 +167,27 @@ def _branch_english(
     return raw, ""
 
 
+def _sections(b: align.Branching, texts: list[str]) -> str | dict[str, Any]:
+    """A sectioned line's slot data (align, SECTIONED lines): the heading's Japanese and the key of its
+    English, and per optional paragraph the byte length and key of the words it begins with, its Japanese
+    (numbered to its own values) and its shape. The keys are hashes; no English ships.
+    → data | the reason it ships nothing"""
+    head_en, head_ja = b.variants[0].en, texts[0]
+    sections = []
+    for v, ja in zip(b.variants[1:], texts[1:], strict=True):
+        if not ja.startswith(head_ja):
+            return "sections_head_mismatch"
+        prefix = align.section_prefix(v.en[len(head_en):])
+        body = ja[len(head_ja):].rstrip()
+        if not body:
+            return "empty_variant"
+        sections.append({"n": len(prefix.encode("utf-8")), "key": hash_key(normalize_v1(prefix)), "ja": body,
+                         "shape": v.shape})
+    if len({s["key"] for s in sections}) != len(sections):
+        return "sections_indistinguishable"
+    return {"head": head_ja.rstrip(), "hkey": hash_key(normalize_v1(head_en.strip())), "sections": sections}
+
+
 def _branch_refusal(
     ln: dict[str, Any],
     en_by: dict[tuple[int, str], str],
@@ -185,6 +206,8 @@ def _branch_refusal(
         return "; ".join(bad)
     if any(not t.strip() for t in texts):
         return "empty_variant"
+    if b.sectioned:
+        return _sections(b, texts)
     shapes = [v.shape for v in b.variants]
     name = en_by.get((ln["id"], "name"), "")
     pairs = align.indistinguishable(texts, [f"{v.en}\n{name}" for v in b.variants], shapes, allowlist)
