@@ -40,7 +40,7 @@ def test_contributing_states_the_terms_and_the_setup(root):
 def test_licensing_names_every_source_and_the_bsd_notice(root):
     text = _read(root, "docs/legal/licensing.md")
     for needle in ("Forever client tables", "Forever quest cache", "Classic Era quest cache", "VMaNGOS",
-                   "wago.tools", "pfQuest", "forever-vo", "139,806", "BSD", "IPA", "not legal advice"):
+                   "wago.tools", "pfQuest", "forever-vo", "139,796", "BSD", "IPA", "not legal advice"):
         assert needle in text, needle
     assert "GPLv2 chain" not in text
     attribution = _read(root, "ATTRIBUTION.md")

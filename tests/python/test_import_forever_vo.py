@@ -155,3 +155,18 @@ def test_import_adds_only_greetings_no_source_holds(tmp_path, monkeypatch):
     assert new["src"] == SRC and new["id"] == new["hash"] == key(normalize_v1("Greetings, traveler."))
     assert new["npcs"] == [1992]
     assert validate_line("gossip", new, english=True) == []
+
+
+def test_a_gender_alias_wording_and_a_skipped_key_are_not_imported(tmp_path, monkeypatch):
+    both = "Welcome, $gsir:madam;."
+    k = key(normalize_v1(both))
+    data = _data(tmp_path, monkeypatch, [_line(97977, "title", "Nature's Call", "wdb@1.60.1.70205")])
+    Store(data, english=True).save("gossip", [english_line(k, "text", both, k, "vmangos@13b49dc")])
+    en = [_entry(97977, "progress", "Nature's Call", "Totems?")]
+    folder = _captures(tmp_path / "fvo", [en, en],
+                       [[_greeting("Welcome, madam."), _greeting("Nostyec, mod."), _greeting("Hello there.")]] * 2)
+    skip = tmp_path / "skip.txt"
+    skip.write_text(f"# reasons\n{key(normalize_v1('Nostyec, mod.'))}\tin Thalassian\n", encoding="utf-8")
+    assert run(["english", "forever-vo", str(folder), "--commit", "025070f", "--skip", str(skip)]) == 0
+    got = sorted(ln["en"] for ln in Store(data, english=True).load("gossip"))
+    assert got == ["Hello there.", both]  # the female wording rides the alias; the skipped key stays out

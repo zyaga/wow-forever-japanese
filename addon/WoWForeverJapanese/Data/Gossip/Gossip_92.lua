@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("gossip", {
   ["9202e58eb0b05c97"] = { "ようこそ、ご機嫌いかが、英雄よ！両大陸とその先の各地からの最新ニュースをお届けしますよ。", "." },
+  ["920f80f4ad83df0d"] = { "風の便りを。何かお手伝いできることは？", "." },
   ["921387bee7ff7d92"] = { "Valley of Strengthの上方、西にあるValley of SpiritsのDarkbriar Lodgeで、Pephredoに話しかけるといい。", "." },
   ["9221093d2a013bb3"] = { "魔導書を見せてくれ。", "." },
   ["92280cd76b2feecc"] = { "衛兵！衛兵！", "." },

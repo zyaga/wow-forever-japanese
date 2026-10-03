@@ -217,7 +217,7 @@ import-shared-english:
 	cd pipeline && $(PY) -m wfj import english pfquest $(PFQUEST) --commit $(PFQUEST_SHA)
 	cd pipeline && $(PY) -m wfj import english vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA)
 	@test "$$(git -C "$(FOREVER_VO)" rev-parse --short=7 HEAD)" = "$(FOREVER_VO_SHA)" || { echo "import: $(FOREVER_VO) is not at FOREVER_VO_SHA $(FOREVER_VO_SHA)"; exit 1; }
-	cd pipeline && $(PY) -m wfj import english forever-vo $(FOREVER_VO) --commit $(FOREVER_VO_SHA)
+	cd pipeline && $(PY) -m wfj import english forever-vo $(FOREVER_VO) --commit $(FOREVER_VO_SHA) --skip forever_vo_skipped.txt
 
 # One client's English (CLIENT=<client>): its quest cache, then its tables (names, tooltip text, UI strings).
 import-client:

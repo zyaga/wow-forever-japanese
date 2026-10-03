@@ -42,6 +42,7 @@ WFJ.Data.add("gossip", {
   ["73b021aef3c66692"] = { "一人、また一人と、この件に関わったほぼ全員がこの亡霊どもの餌食になった。手を引くと決めても責めはしないよ、{name}。", "." },
   ["73bbbe00067e7af5"] = { "何までだ、Eva？知らなければならないんだ。", "." },
   ["73bd28f9fa4c21a2"] = { "ああ、Ansekhwaの知恵を求めているのだな。Thunder Bluff Weaponsの下段の台地で彼を探すといい。", "." },
+  ["73c1d7c79e6df47d"] = { "しーっ！ 隠れ場所がばれちゃうよ！", "." },
   ["73c48bfa5c4800b6"] = { "IronforgeのTimberline Armsにいるドワーフの武器師範Buliwyfは、拳武器、銃、片手斧と両手斧、片手メイスと両手メイスを教えている。\n\nIronforgeのTimberline Armsにいるノームの武器師範Bixi Wobblebonkは、クロスボウ、短剣、投擲武器を教えている。\n\nStormwindのWeller's Arsenalにいる人間の武器師範Woo Pingは、クロスボウ、短剣、片手剣と両手剣、長柄武器、杖を教えている。", "." },
   ["73c64232049c98be"] = { "StormpikeのOfficersはまだ何人生きているのだ、Drek'Thar？", "." },
   ["73cac74942f24bee"] = { "どんな役割？", "." },

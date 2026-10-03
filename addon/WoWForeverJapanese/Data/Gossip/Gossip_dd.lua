@@ -24,6 +24,7 @@ WFJ.Data.add("gossip", {
   ["ddb9d4eda71d319a"] = { "Snowfall Graveyardを支配しているのはどちらだ？", "." },
   ["ddc9d9bd6a1984fb"] = { "MAGNIのために！", "." },
   ["ddceaa4afea9b1ea"] = { "%sはBloodpetalの芽にもやを加えた。", "." },
+  ["ddd4983e2faf7796"] = { "やあ、{class}。私はGnomereganの亡命者たちを率いるHigh Tinker Mekkatorqueだ。", "." },
   ["ddda4cdf2de7edfd"] = { "Burning Innだ。", "." },
   ["dde4b97b977bfc65"] = { "偉大なるショーへようこそ、友よ。さあ前へ出て死ぬがいい！", "." },
   ["ddeb4c2955e25171"] = { "ごきげんよう、友よ。Azeroth一の見世物へようこそ!\n\nさあ、どうぞこちらへ。我々が用意したものをすべて味わっていってくれ。Darkmoon Faireがこの広大で不思議な世界から掘り出してきた驚異に、目を見張るがいい! いくつになっても子供心が喜ぶ興奮を届けるため、我々は金に糸目をつけていないのだ!", "." },

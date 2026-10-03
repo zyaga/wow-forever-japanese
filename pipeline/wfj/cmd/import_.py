@@ -131,6 +131,9 @@ def _add_english(sub: Any) -> None:
     fv = esub.add_parser("forever-vo")
     fv.add_argument("folder")
     fv.add_argument("--commit", required=True)
+    fv.add_argument(
+        "--skip", metavar="FILE", help="greeting keys never imported, `<key>\\t<reason>` per line"
+    )
     fv.set_defaults(fn=run_forever_vo)
     wd = esub.add_parser("wdb")
     wd.add_argument("--merge", choices=("replace", "union"), default="replace", help=MERGE_HELP)

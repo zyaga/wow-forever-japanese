@@ -14,6 +14,7 @@ WFJ.Data.add("gossip", {
   ["d33b57a5a3287049"] = { "%sはうめいた。", "." },
   ["d34146fb4cffcc9d"] = { "Alteracには2つの鉱山がある。Alliance領のIrondeepと、Horde領のColdtooth鉱山だ。どちらの鉱山も鉱物の豊かな産地で、かつては余剰物資を貯蔵するのに使われていた。\n\n今では、これらの鉱山はHorde、Alliance、そして土地の住人たちによって絶え間なく奪い合われている。", "." },
   ["d343319736d58496"] = { "Valley of HonorにあるHall of the Braveを探して、Grezz Ragefistと話してくれ。ここでの勤務が終わったら報告に戻る、と伝えておいてくれ。", "." },
+  ["d34cdc39cef759a7"] = { "武器が必要かな、旅の人？これほど見事な刃は、ほかのどこにも見つからないと保証しよう。", "." },
   ["d3564fb521f9ab41"] = { "真の信者たちよ、我がもとへ来たれ。そして汝らの未来を見るがよい！", "." },
   ["d35d8995dd5667d4"] = { "1000年前、War of the Shifting Sandsが終わったとき、我らの同胞3名が身を犠牲にしてQirajiをこの広間の中に押しとどめ、その間にAnachronosとStaghelmがAhn'Qirajを封じた。\n\n我々はそれぞれ、Scarab Wallが破られることがあれば、Merithra、Arygos、Caelestraszを探しに行くと誓ったのだ。\n\nそして壁は破られた……ゆえに我々は来た。", "." },
   ["d363ea4f70233843"] = { "Kalimdorのために！", "." },

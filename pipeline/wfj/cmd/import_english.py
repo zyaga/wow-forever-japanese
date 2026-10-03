@@ -18,7 +18,7 @@ from typing import Any
 
 from wfj.core.hashing import key as hash_key
 from wfj.core.model import english_line, validate_line
-from wfj.core.normalize import normalize_for, normalize_v1
+from wfj.core.normalize import female_variant, normalize_for, normalize_v1
 from wfj.io import forever_vo, tables_stamp, vmangos, wago, wdb
 from wfj.io.collector_dump import read_dump
 from wfj.io.jsonl_store import Store
@@ -594,10 +594,21 @@ def run_forever_vo(a: argparse.Namespace) -> int:
     gossip = store.load("gossip")
     others = [ln for ln in gossip if source_name(ln) != "forever-vo"]
     held = {ln["id"] for ln in others}
+    # a `$G` line already speaks for its female wording too (the gender alias generate ships, ADR-024)
+    for ln in others:
+        female = female_variant(ln["en"])
+        if female is not None:
+            held.add(hash_key(normalize_v1(female)))
+    # `--skip`: greetings never imported, each with its reason (an invented language, damaged text)
+    skipped = set()
+    if a.skip:
+        for raw in Path(a.skip).read_text(encoding="utf-8").splitlines():
+            if raw.strip() and not raw.startswith("#"):
+                skipped.add(raw.split("\t", 1)[0].strip())
     greetings = []
     for g in forever_vo.read_greetings(Path(a.folder), titles):
         k = hash_key(normalize_v1(g.en))
-        if k in held:
+        if k in held or k in skipped:
             continue
         greetings.append(english_line(k, "text", g.en, k, src, npcs=g.npcs))
     store.save("quest", merged)

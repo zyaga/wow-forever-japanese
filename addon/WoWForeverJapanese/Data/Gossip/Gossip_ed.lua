@@ -42,5 +42,6 @@ WFJ.Data.add("gossip", {
   ["edd59effacc3deb8"] = { "中に何が入るかはまだわからないんだ。まずPat NagleとMichael Backusが話し合わないと……", "." },
   ["edd7e4bcf709b71f"] = { "失くした？どういうことだ？", "." },
   ["ede8bf1873c2c607"] = { "Elder Ragetotemはどこにいる？", "." },
+  ["edf89ec406c054c7"] = { "AzerothへのHigh Orderの輸送船は、Valanaarの南東の端にある、いちばん奥の船着き場にある。", "." },
   ["edfd520624838b79"] = { "ごきげんよう、Loramus。Blasted Landsからの知らせを持ってきた。", "." },
 })
