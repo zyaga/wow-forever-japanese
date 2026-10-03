@@ -255,6 +255,7 @@ local function debugTooltip(arg)
   arg = arg and arg:lower()
   if arg == "on" then
     WFJ.Tooltip.trace = {}
+    WFJ.Tooltip.installCallTrace()
     return say("tooltip trace: on (every spell / item tooltip pass is recorded; /wfj debug tooltip to see it)")
   end
   if arg == "off" then

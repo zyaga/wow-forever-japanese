@@ -161,12 +161,18 @@ function Tooltip.spellDescription(id)
   return type(d) == "string" and d or ""
 end
 
+-- Shown twice: on Forever every layout of a wrapped Japanese line alternates between two line breaks when a word
+-- sits on the wrap edge (the tooltip trace shows the wrapped width going 242, 249, 242 … with nothing else
+-- changing). A refresh lays the tooltip out three times (the client's English, this refit, one more Show), so the
+-- line came out the other way on every refresh and flickered. A second Show here makes the count even, so every
+-- refresh ends on the same line breaks.
 local function refitFor(frame)
   local fn = refits[frame]
   if fn then return fn end
   fn = function()
     if inRefit[frame] then return end
     inRefit[frame] = true
+    frame:Show()
     frame:Show()
     inRefit[frame] = false
   end
@@ -290,7 +296,7 @@ end
 -- ── The tooltip trace (/wfj debug tooltip): every pass over a spell or item tooltip, row by row ──
 -- Off unless asked for. A secret value is never compared, concatenated or measured: it is written as <secret>.
 Tooltip.trace = nil
-local TRACE_MAX = 80
+local TRACE_MAX = 400
 
 -- A long value is cut at 70 bytes, moved back to the start of a character: a cut inside a Japanese character is
 -- not UTF-8, and an edit box given text that is not UTF-8 shows none of it.
@@ -397,6 +403,51 @@ local function traceNote(text)
   Tooltip.traceLast, Tooltip.traceRepeat = text, 1
   t[#t + 1] = line
   if #t > TRACE_MAX then table.remove(t, 1) end
+end
+
+-- The calls that can lay a tooltip line out again, for the trace: on GameTooltip's wrapped left lines, SetText,
+-- SetFont and SetWidth; on GameTooltip itself, Show, SetPadding and SetMinimumWidth. Each logs the method, the
+-- first wrapped line's size right after the call and the caller (debugstack), so a wrap that moves between
+-- passes names the call that moved it. Installed once, the first time the trace is turned on; logs only while
+-- it is on.
+local callHooks = false
+local function callNote(method, fs)
+  if not Tooltip.trace then return end
+  local stack = Compat.resolve("debugstack")
+  local caller = type(stack) == "function" and (stack(3, 1, 0) or ""):gsub("%s+$", "") or ""
+  traceNote(("call %s%s ->%s · %s"):format(method, fs and (" " .. plain(fs:GetName())) or "", geometry(fs or {}),
+    plain(caller)))
+end
+local function wrappedLine(frame)
+  for _, l in ipairs(Tooltip.lines(frame)) do
+    local ok, n = pcall(l.fs.GetNumLines, l.fs)
+    if ok and type(n) == "number" and not anySecretOf(n) and n > 1 then return l.fs end
+  end
+  return nil
+end
+function Tooltip.installCallTrace()
+  if callHooks then return end
+  local tip = Compat.resolve("GameTooltip")
+  if type(tip) ~= "table" then return end
+  callHooks = true
+  for _, m in ipairs({ "Show", "SetPadding", "SetMinimumWidth" }) do
+    if type(tip[m]) == "function" then
+      hooksecurefunc(tip, m, function(self) callNote("GameTooltip:" .. m, wrappedLine(self)) end)
+    end
+  end
+  for i = 1, 30 do
+    local fs = Compat.resolve("GameTooltipTextLeft" .. i)
+    if type(fs) == "table" then
+      for _, m in ipairs({ "SetText", "SetFont", "SetWidth" }) do
+        if type(fs[m]) == "function" then
+          hooksecurefunc(fs, m, function(self)
+            local ok, n = pcall(self.GetNumLines, self)
+            if ok and type(n) == "number" and not anySecretOf(n) and n > 1 then callNote(m, self) end
+          end)
+        end
+      end
+    end
+  end
 end
 Tooltip.traceNote = traceNote
 
