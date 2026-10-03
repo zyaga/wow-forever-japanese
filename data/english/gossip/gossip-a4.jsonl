@@ -41,5 +41,6 @@
 {"id": "a4e506ad724413a7", "field": "text", "en": "Kneel, Grark.", "hash": "a4e506ad724413a7", "src": "vmangos@13b49dc"}
 {"id": "a4e7c77551632cd0", "field": "text", "en": "Care to learn how to gather leather from slain beasts? Or do you need some new tools?", "hash": "a4e7c77551632cd0", "src": "collector@1.60.1.70170", "npcs": [267333]}
 {"id": "a4eacd2166595458", "field": "text", "en": "%s holds high the items $n gave him...", "hash": "a4eacd2166595458", "src": "vmangos@13b49dc"}
+{"id": "a4f17e3ab1ab189a", "field": "text", "en": "I can teach you to swing a blacksmith's hammer, if you are willing to learn.", "hash": "a4f17e3ab1ab189a", "src": "forever-vo@025070f", "npcs": [251913]}
 {"id": "a4f1afa5a691ea01", "field": "text", "en": "%s gasps.", "hash": "a4f1afa5a691ea01", "src": "vmangos@13b49dc"}
 {"id": "a4f555325ea003a9", "field": "text", "en": "Bodley, tell me what's going on.", "hash": "a4f555325ea003a9", "src": "vmangos@13b49dc"}

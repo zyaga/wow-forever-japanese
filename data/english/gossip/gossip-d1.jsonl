@@ -20,7 +20,7 @@
 {"id": "d14f2db9464e82e6", "field": "text", "en": "You have not yet learned the basics, wanderer. Have you spoken to my assistant, Lalina Summermoon? Perhaps you should.", "hash": "d14f2db9464e82e6", "src": "vmangos@13b49dc"}
 {"id": "d150dad95418fa96", "field": "text", "en": "Wha... what's happening?", "hash": "d150dad95418fa96", "src": "vmangos@13b49dc"}
 {"id": "d172757d4ea2762d", "field": "text", "en": "Oh well... Maybe next time.", "hash": "d172757d4ea2762d", "src": "vmangos@13b49dc"}
-{"id": "d1732731ef893ccb", "field": "text", "en": "Gales greetings, friend. Is there something I can help you with?", "hash": "d1732731ef893ccb", "src": "forever-vo@025070f", "npcs": [252479, 253004, 257008, 257021]}
+{"id": "d1732731ef893ccb", "field": "text", "en": "Gales greetings, friend. Is there something I can help you with?", "hash": "d1732731ef893ccb", "src": "forever-vo@025070f", "npcs": [252479, 253004, 257004, 257008, 257019, 257021]}
 {"id": "d1799ec788612e01", "field": "text", "en": "Niby, you are stupid.", "hash": "d1799ec788612e01", "src": "vmangos@13b49dc"}
 {"id": "d17caf7fd12d8c38", "field": "text", "en": "Have you any Darkmoon Faire cards?  Come speak with me to learn more about them if you dare!", "hash": "d17caf7fd12d8c38", "src": "vmangos@13b49dc"}
 {"id": "d186c8877f9a31ab", "field": "text", "en": "VanCleef pay big for you heads!", "hash": "d186c8877f9a31ab", "src": "vmangos@13b49dc"}

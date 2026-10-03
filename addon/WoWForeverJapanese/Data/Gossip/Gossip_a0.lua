@@ -33,6 +33,7 @@ WFJ.Data.add("gossip", {
   ["a08339d91e3c25a4"] = { "Deadmines", "." },
   ["a08522b8e20ffd9f"] = { "%sは強力な呪文を唱え始めた。", "." },
   ["a0888a9f9d9225b0"] = { "Falthir、Zandalar Madcap's Mantleを失くしてしまった。代わりのものはあるか?", "." },
+  ["a08ed463765a5d4c"] = { "ああ、少々しゃべりすぎたな。Valanaarの港に立ち寄ることがあれば、Elaadrin Evengaleを訪ねるといい。Elaadrinはかつて私の弟子だったが、今ではHigh OrderのChief Magisterを務めている。頑固だが有能な男だ。これからは彼と、君のような若い{race}が、我々の民の希望を担って進んでいくのだ。", "." },
   ["a0913ed8dcb298bd"] = { "ええ、ぜひ。", "." },
   ["a095b6a6a2e0572b"] = { "私は何をすればいい、Rabine?", "." },
   ["a097fb0ec77cf499"] = { "Eranikusという名の誰か……いや、何かと言うべきか、心当たりはあるか?", "." },

@@ -30,12 +30,14 @@
 {"id": "15bd6e2470d49e42", "field": "text", "en": "Icebane Gauntlets.", "hash": "15bd6e2470d49e42", "src": "vmangos@13b49dc"}
 {"id": "15c840747bf66b61", "field": "text", "en": "Yes $gbrother : sister;, how may I assist you?", "hash": "15c840747bf66b61", "src": "vmangos@13b49dc"}
 {"id": "15c9a1326ebaca4f", "field": "text", "en": "Whew... I need a smoke and the touch of a fine gnomish woman - not particularly in that order!$B$BI've been stuck inside the belly of that thing for months! What day is it anyway? Ah, nevermind. All that matters is that I'm finally out.$B$BWOOO HOOO!", "hash": "15c9a1326ebaca4f", "src": "vmangos@13b49dc"}
+{"id": "15cc7176ac63714a", "field": "text", "en": "If I knew that then I suspect that life here on Zephras would be much, much easier. So many of our struggles and conflicts revolve around that very mystery.\r\n\r\nI appreciate your curiosity on this matter but I'm afraid that is all I have to say about this for today.", "hash": "15cc7176ac63714a", "src": "forever-vo@025070f", "npcs": [252383]}
 {"id": "15d12bbc1a6230b2", "field": "text", "en": "What is a \"resilient foundation of construction\"?", "hash": "15d12bbc1a6230b2", "src": "vmangos@13b49dc"}
 {"id": "15d1c5135e747c26", "field": "text", "en": "You lost?", "hash": "15d1c5135e747c26", "src": "vmangos@13b49dc"}
 {"id": "15ddcadd80453181", "field": "text", "en": "This land belongs to the Dark Iron Dwarves.  Prepare to see the afterlife, $C!", "hash": "15ddcadd80453181", "src": "vmangos@13b49dc"}
 {"id": "15e55a5b8b0208f3", "field": "text", "en": "Amazing!  It worked!  $n, I have your armor.", "hash": "15e55a5b8b0208f3", "src": "vmangos@13b49dc"}
 {"id": "15e7c7c8851ddbd7", "field": "text", "en": "Dirge Quikcleave of Gadgetzan is a master of the culinary arts.  To better yourself you will need to seek him out.", "hash": "15e7c7c8851ddbd7", "src": "vmangos@13b49dc"}
 {"id": "15e9c80658ae96bb", "field": "text", "en": "Elder Morndeep spends time at the Ring of Law in Blackrock Depths.", "hash": "15e9c80658ae96bb", "src": "vmangos@13b49dc"}
+{"id": "15ec35ea3ef370b0", "field": "text", "en": "The $c who flinches is the $c who dies. If you would look death in the face as a $c, I will teach you how not to flinch.", "hash": "15ec35ea3ef370b0", "src": "forever-vo@025070f", "npcs": [251964, 252377, 254088]}
 {"id": "15f0eb24adaf5a31", "field": "text", "en": "Tell me about the iCoke gift box promotion.", "hash": "15f0eb24adaf5a31", "src": "vmangos@13b49dc"}
 {"id": "15f6163212b78ad9", "field": "text", "en": "What was that noise?", "hash": "15f6163212b78ad9", "src": "vmangos@13b49dc"}
 {"id": "15f6cfc4e1ed769f", "field": "text", "en": "%s is weakened by the orb!", "hash": "15f6cfc4e1ed769f", "src": "vmangos@13b49dc"}

@@ -8,6 +8,7 @@
 {"id": "ea1ceaa381fb2be4", "field": "text", "en": "This collection of scrolls contains various logistic and strategic information, as well as coded correspondences.", "hash": "ea1ceaa381fb2be4", "src": "vmangos@13b49dc"}
 {"id": "ea1f79a44f1fdabb", "field": "text", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "vmangos@13b49dc"}
 {"id": "ea28f8d0ddc27675", "field": "text", "en": "What goods have I earned the right to purchase for use in Warsong Gulch?", "hash": "ea28f8d0ddc27675", "src": "vmangos@13b49dc"}
+{"id": "ea2dd2e8cbdcd1e4", "field": "text", "en": "Unless you are here on business pertaining to V.L.O., I'm afraid I won't have a lot of time for chatter. If you want to pitch in and help out around town, I'll certainly put you to work though.\r\n\r\nOh, what does V.L.O. stand for? Village Live Operations, of course. Even frontier towns like these don't manage themselves. Between major incidents, unplanned wind power outages, and bug infestations, keeping this place moving forward is no joke.", "hash": "ea2dd2e8cbdcd1e4", "src": "forever-vo@025070f", "npcs": [251906]}
 {"id": "ea30e585795a0029", "field": "text", "en": "WHO KILL GOR'TESH!?!? WHO DO THIS?!", "hash": "ea30e585795a0029", "src": "vmangos@13b49dc"}
 {"id": "ea370192885b94a5", "field": "text", "en": "Rin'ji can see the road now, $n. Rin'ji knows the way home.", "hash": "ea370192885b94a5", "src": "vmangos@13b49dc"}
 {"id": "ea38f1bcb41cb9ed", "field": "text", "en": "Hm... I don't think this blinking red light is a good thing...", "hash": "ea38f1bcb41cb9ed", "src": "vmangos@13b49dc"}

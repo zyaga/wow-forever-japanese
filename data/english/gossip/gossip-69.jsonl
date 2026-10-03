@@ -26,6 +26,7 @@
 {"id": "69992b88f3bbc042", "field": "text", "en": "I've got all the cooking supplies you'll ever need, mon!", "hash": "69992b88f3bbc042", "src": "vmangos@13b49dc"}
 {"id": "699de0ad9f92a993", "field": "text", "en": "You've made the right decision, $c.  You'll find our battlemaster, Glordrum Steelbeard, in the Hall of Arms.  Good luck, $n!", "hash": "699de0ad9f92a993", "src": "vmangos@13b49dc"}
 {"id": "69a2a3705aad5dd5", "field": "text", "en": "The Light of Elune shine upon thee, $n!  You will find Aethalas, our battlemaster, on the Warrior's Terrace.  She will aid you on your way to Warsong Gulch.", "hash": "69a2a3705aad5dd5", "src": "vmangos@13b49dc"}
+{"id": "69a5668e2272f902", "field": "text", "en": "It appears the winds have brought you my way! I am happy to train you in the ways of cooking if you have the inclination to learn.", "hash": "69a5668e2272f902", "src": "forever-vo@025070f", "npcs": [257006]}
 {"id": "69a75e72f6b1d94a", "field": "text", "en": "The Inn", "hash": "69a75e72f6b1d94a", "src": "vmangos@13b49dc"}
 {"id": "69afbf9275ba517b", "field": "text", "en": "The inn", "hash": "69afbf9275ba517b", "src": "vmangos@13b49dc"}
 {"id": "69b31eb4c38a2ba3", "field": "text", "en": "The spirits have guided you to me. How may I be of service?", "hash": "69b31eb4c38a2ba3", "src": "vmangos@13b49dc"}

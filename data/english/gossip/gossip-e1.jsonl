@@ -33,11 +33,13 @@
 {"id": "e1af311db6524b64", "field": "text", "en": "Why don't you try looking in the Lion's Pride Inn?  The cook there might be able to teach you a few good recipes.", "hash": "e1af311db6524b64", "src": "vmangos@13b49dc"}
 {"id": "e1b8528d15db4181", "field": "text", "en": "Daylight is still upon us so let's see that axe of yours chopping some more wood.", "hash": "e1b8528d15db4181", "src": "vmangos@13b49dc"}
 {"id": "e1c28885ef692074", "field": "text", "en": "Patchwerk want to play!", "hash": "e1c28885ef692074", "src": "vmangos@13b49dc"}
+{"id": "e1c2fc8c037d2b8f", "field": "text", "en": "Does your heart beat in rhythm with the winds?", "hash": "e1c2fc8c037d2b8f", "src": "forever-vo@025070f", "npcs": [252068]}
 {"id": "e1c4d9917ce234c6", "field": "text", "en": "Who is this Lar'korwi you spoke of?", "hash": "e1c4d9917ce234c6", "src": "vmangos@13b49dc"}
 {"id": "e1d514e8b8e95b37", "field": "text", "en": "Present the trinkets, Maltrake.", "hash": "e1d514e8b8e95b37", "src": "vmangos@13b49dc"}
 {"id": "e1ea0c1299ba0fe6", "field": "text", "en": "Please, go on.", "hash": "e1ea0c1299ba0fe6", "src": "vmangos@13b49dc"}
 {"id": "e1ea23b43ec4302f", "field": "text", "en": "You find it, you keep it! Don't tell no one that Rin'ji talked to you!", "hash": "e1ea23b43ec4302f", "src": "vmangos@13b49dc"}
 {"id": "e1ea353cdfe10488", "field": "text", "en": "The enemy is upon us, stand ready!", "hash": "e1ea353cdfe10488", "src": "vmangos@13b49dc"}
+{"id": "e1f2707afa37cdda", "field": "text", "en": "Welcome to Shen'dar Village, some of the best fishing this side of the mountain range. If you are looking to catch fish I can teach you, for a price.", "hash": "e1f2707afa37cdda", "src": "forever-vo@025070f", "npcs": [251992]}
 {"id": "e1f5ef15819f5967", "field": "text", "en": "Uggel", "hash": "e1f5ef15819f5967", "src": "vmangos@13b49dc"}
 {"id": "e1f87c5e53fff943", "field": "text", "en": "Kildrath tends to overdramatize the situation. For example, \"Garona: A Study on Stealth and Treachery,\" has been stolen over 400 times.$B$BThe mark of the Athenaeum protects the tomes, preventing any unauthorized viewings.", "hash": "e1f87c5e53fff943", "src": "vmangos@13b49dc"}
 {"id": "e1fb6d9eab2be0b0", "field": "text", "en": "Spending coin is NOT the reason for the Feast of Winter Veil!", "hash": "e1fb6d9eab2be0b0", "src": "vmangos@13b49dc"}

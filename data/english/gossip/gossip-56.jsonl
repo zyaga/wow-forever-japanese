@@ -26,6 +26,7 @@
 {"id": "56c3b068052780bd", "field": "text", "en": "Please, light this while I am channeling.", "hash": "56c3b068052780bd", "src": "vmangos@13b49dc"}
 {"id": "56c5c9011dcb09d3", "field": "text", "en": "If I am to teach you the secrets of summoning an infernal servant, you must destroy Kroshius and bring me the infernal core from his burning remains. This, however, is not as easy as it sounds. Kroshius has all but burned out completely. You must reignite his corpse and raise him from the rubble. To do this, however, you must gather some components from other demonic entities.$B$BMy imp, Impsy, shall set you on your way.", "hash": "56c5c9011dcb09d3", "src": "vmangos@13b49dc"}
 {"id": "56c793390354a581", "field": "text", "en": "I'm here for the gold.", "hash": "56c793390354a581", "src": "vmangos@13b49dc"}
+{"id": "56c8c62713c326bf", "field": "text", "en": "The $c trainer can be found over in the High Order's lodge, on the southeastern edge of town.", "hash": "56c8c62713c326bf", "src": "forever-vo@025070f", "npcs": [252477, 253474]}
 {"id": "56d45e9ee58127af", "field": "text", "en": "Let me think about it, Zamael.", "hash": "56d45e9ee58127af", "src": "vmangos@13b49dc"}
 {"id": "56d51b956fb45b5d", "field": "text", "en": "They teach me to sneak good.  You find them in Rogues' Quarter on outer ring of Undercity.", "hash": "56d51b956fb45b5d", "src": "vmangos@13b49dc"}
 {"id": "56d7c5f37d2d1809", "field": "text", "en": "Do not fail us!", "hash": "56d7c5f37d2d1809", "src": "vmangos@13b49dc"}

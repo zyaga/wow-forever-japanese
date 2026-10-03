@@ -9,6 +9,7 @@
 {"id": "6f29101e041a7a1b", "field": "text", "en": "Be bathed in the power of the Warchief! Drink in his might! Battle for the glory of the Horde!", "hash": "6f29101e041a7a1b", "src": "vmangos@13b49dc"}
 {"id": "6f2af6ca2d1f0480", "field": "text", "en": "Unfortunately you are not yet strong enough to survive in Warsong Gulch, $c.", "hash": "6f2af6ca2d1f0480", "src": "vmangos@13b49dc"}
 {"id": "6f2de2f7f512837c", "field": "text", "en": "You seek Kardris Dreamseeker.  She and the other shaman are in the entrance room to Thrall's Fortress in the Valley of Wisdom.", "hash": "6f2de2f7f512837c", "src": "vmangos@13b49dc"}
+{"id": "6f30efa02aebdb81", "field": "text", "en": "<The roiling cloud of living lightning before you seems to crackle menacingly as you approach. It might be best to leave. Quickly.>", "hash": "6f30efa02aebdb81", "src": "forever-vo@025070f", "npcs": [251662]}
 {"id": "6f314f415c188ade", "field": "text", "en": "I would like to check my deposit box.", "hash": "6f314f415c188ade", "src": "vmangos@13b49dc"}
 {"id": "6f31944e14703c24", "field": "text", "en": "You have disturbed my rest, $c.  Now face my wrath!", "hash": "6f31944e14703c24", "src": "vmangos@13b49dc"}
 {"id": "6f389aa51d2a6ced", "field": "text", "en": "There is something you wish to discuss, $c... come, sit by me.", "hash": "6f389aa51d2a6ced", "src": "vmangos@13b49dc"}

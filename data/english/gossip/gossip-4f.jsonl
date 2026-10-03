@@ -16,6 +16,7 @@
 {"id": "4f7adc392cf21656", "field": "text", "en": "The Venture Company based around Windshear Crag in Stonetalon keeps their supplies in locked boxes.", "hash": "4f7adc392cf21656", "src": "vmangos@13b49dc"}
 {"id": "4f7b14158b41d5bf", "field": "text", "en": "Superb! Because of your help, my people stand a chance of re-taking our beloved city. Three cheers to you!", "hash": "4f7b14158b41d5bf", "src": "vmangos@13b49dc"}
 {"id": "4f7b3d6c8c2f7e85", "field": "text", "en": "Move to the stairs and defend!", "hash": "4f7b3d6c8c2f7e85", "src": "vmangos@13b49dc"}
+{"id": "4f85a2c33280c205", "field": "text", "en": "<The Skyborne lying before you is unconscious.>", "hash": "4f85a2c33280c205", "src": "forever-vo@025070f", "npcs": [253002]}
 {"id": "4f889d402aa046bb", "field": "text", "en": "There's never an end to the chores around here.", "hash": "4f889d402aa046bb", "src": "forever-vo@025070f", "npcs": [1684]}
 {"id": "4f89760f790f3ad5", "field": "text", "en": "By the stars! A spirit has been summoned!", "hash": "4f89760f790f3ad5", "src": "vmangos@13b49dc"}
 {"id": "4f8dad2d5210553f", "field": "text", "en": "Father, you had the bowl of fruit? Right?", "hash": "4f8dad2d5210553f", "src": "vmangos@13b49dc"}

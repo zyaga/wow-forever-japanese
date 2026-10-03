@@ -13,6 +13,7 @@
 {"id": "d74597c540bdd054", "field": "text", "en": "The Dun Baldar North Bunker protects the eastern entrance to Dun Baldar.$B$BIt is controlled by the Alliance.", "hash": "d74597c540bdd054", "src": "vmangos@13b49dc"}
 {"id": "d7466c50a5286b2e", "field": "text", "en": "%s is reduced to rubble, but still continues to fight", "hash": "d7466c50a5286b2e", "src": "vmangos@13b49dc"}
 {"id": "d746c031bbdd7259", "field": "text", "en": "Would a fly without wings be called a walk?", "hash": "d746c031bbdd7259", "src": "vmangos@13b49dc"}
+{"id": "d74a2d3c65e14b11", "field": "text", "en": "<Constable Aonda wears an intense look on her face, clearly deep in thought.>", "hash": "d74a2d3c65e14b11", "src": "forever-vo@025070f", "npcs": [251523]}
 {"id": "d74cc61c5aade82b", "field": "text", "en": "sneezes voilently!", "hash": "d74cc61c5aade82b", "src": "vmangos@13b49dc"}
 {"id": "d75478c2b1ba6b56", "field": "text", "en": "Sending ground assaults takes huge amounts of supplies!", "hash": "d75478c2b1ba6b56", "src": "vmangos@13b49dc"}
 {"id": "d75d730365052449", "field": "text", "en": "Kill the guards, take the Warden alive!", "hash": "d75d730365052449", "src": "vmangos@13b49dc"}

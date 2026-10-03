@@ -30,6 +30,7 @@
 {"id": "a08339d91e3c25a4", "field": "text", "en": "Deadmines", "hash": "a08339d91e3c25a4", "src": "vmangos@13b49dc"}
 {"id": "a08522b8e20ffd9f", "field": "text", "en": "%s begins to cast a powerful spell.", "hash": "a08522b8e20ffd9f", "src": "vmangos@13b49dc"}
 {"id": "a0888a9f9d9225b0", "field": "text", "en": "Falthir, I have lost my Zandalar Madcap's Mantle. Do you have a replacement?", "hash": "a0888a9f9d9225b0", "src": "vmangos@13b49dc"}
+{"id": "a08ed463765a5d4c", "field": "text", "en": "Alas, I have prattled on long enough. Should you find yourself in the port of Valanaar, seek out Elaadrin Evengale. Elaadrin was once my student, but now he serves as the Chief Magister of the High Order. He is headstrong and capable, and it's now up to him and young $R such as yourself to carry the hopes for our people forward.", "hash": "a08ed463765a5d4c", "src": "forever-vo@025070f", "npcs": [251903]}
 {"id": "a0913ed8dcb298bd", "field": "text", "en": "Yes, please do.", "hash": "a0913ed8dcb298bd", "src": "vmangos@13b49dc"}
 {"id": "a095b6a6a2e0572b", "field": "text", "en": "What would you have me do, Rabine?", "hash": "a095b6a6a2e0572b", "src": "vmangos@13b49dc"}
 {"id": "a097fb0ec77cf499", "field": "text", "en": "Do you know someone... or something, rather, by the name of Eranikus?", "hash": "a097fb0ec77cf499", "src": "vmangos@13b49dc"}
