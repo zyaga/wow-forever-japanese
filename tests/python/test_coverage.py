@@ -75,3 +75,11 @@ def test_an_interface_line_off_the_key_list_needs_a_reason():
     assert coverage.ui_left_out("CustomizationChoice:54525", keys, excluded) == coverage.UI_FAMILY_LEFT_OUT
     # a GlobalString neither shipped nor excluded is a gap
     assert coverage.ui_left_out("NEW_STRING_THIS_BUILD", keys, excluded) is None
+
+
+def test_a_spell_once_off_the_visible_list_ships_its_japanese(root: Path):
+    # coverage counts every served spell line, and the round translated them: Campfire Nearby's buff text was off
+    # the old visible-spell list and now ships Japanese in the generated data the addon loads
+    shard = (root / "addon/WoWForeverJapanese/Data/Spell/Spell_1283.lua").read_text(encoding="utf-8")
+    line = next(ln for ln in shard.splitlines() if "[1283391]" in ln)
+    assert "キャンプファイア" in line
