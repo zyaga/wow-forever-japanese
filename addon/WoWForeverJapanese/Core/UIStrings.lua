@@ -699,6 +699,13 @@ function Index.formatArgs(_, key, en, ...) -- called as index:formatArgs; the in
       args[p.arg] = text
     end
   end
+  -- a quest's title shows in Japanese here too, as on the chat line the same template writes
+  local kinds = argKinds(key)
+  for i, kind in pairs(kinds or {}) do
+    if kind == "questTitle" and type(args[i]) == "string" and type(UIStrings.questTitle) == "function" then
+      args[i] = UIStrings.questTitle(args[i]) or args[i]
+    end
+  end
   return args
 end
 
@@ -865,20 +872,28 @@ function Index:matchCounted(text)
   return key, args
 end
 
--- A line whose template ends in one text argument ("[SERVER] Shutdown in %s"), when the client hands the caller no
--- template: each prefix of the line that ends at a space, followed by `%s`, is fingerprinted, and one that is a
--- templated row's h1 among `keys` is that row, the rest of the line its argument. The English is never shipped.
--- → key, args | nil
+-- A server notice among `keys`: a plain row ("[SERVER] Shutdown cancelled") by its whole fingerprint, else a row whose
+-- template ends in one text argument ("[SERVER] Shutdown in %s"), when the client hands the caller no template: each
+-- prefix of the line that ends at one of its first TAIL_SPACES spaces, followed by `%s`, is fingerprinted, and one
+-- that is a templated row's h1 among `keys` is that row, the rest of the line its argument. The English is never
+-- shipped. → key, args | nil
+UIStrings.TAIL_SPACES = 8 -- the longest shipped prefix has 5 (test_ui_strings checks every row against this)
 function Index:matchTail(text, keys)
-  if type(text) ~= "string" or text == "" or type(keys) ~= "table" or next(self.byTemplate) == nil then return nil end
+  if type(text) ~= "string" or text == "" or type(keys) ~= "table" then return nil end
   local set = asSet(keys)
   if next(set) == nil then return nil end
-  for pos = #text - 1, 1, -1 do
-    if text:byte(pos) == 32 then
-      local template = (text:sub(1, pos):gsub("%%", "%%%%")) .. "%s"
-      local key = self.byTemplate[self.hash(template)]
-      if key and set[key] then return key, { text:sub(pos + 1), key = key } end
-    end
+  for _, k in ipairs(self:restrictedKeys(text)) do
+    if set[k] then return k, nil end
+  end
+  if next(self.byTemplate) == nil then return nil end
+  local spaces, pos = 0, 0
+  while spaces < UIStrings.TAIL_SPACES do
+    pos = text:find(" ", pos + 1, true)
+    if not pos or pos >= #text then return nil end
+    spaces = spaces + 1
+    local template = (text:sub(1, pos):gsub("%%", "%%%%")) .. "%s"
+    local key = self.byTemplate[self.hash(template)]
+    if key and set[key] then return key, { text:sub(pos + 1), key = key } end
   end
   return nil
 end

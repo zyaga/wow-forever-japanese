@@ -280,6 +280,10 @@ describe("SYSTEM chat lines", function()
     assert.are.equal(14, ja.font.size)
     assert.are.equal(WFJ.Font.PATH, en.font.path) -- a player's Japanese would show here too
     assert.are.equal(14, en.font.size)
+    -- a refresh that changes nothing sets no font again (busy chat refreshes many times a second)
+    local before = en.calls.SetFont or 0
+    f:Refresh()
+    assert.are.equal(before, en.calls.SetFont or 0)
   end)
 
   it("an English row keeps the bundled face at the chat size, and follows a later chat font size change",

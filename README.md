@@ -69,8 +69,8 @@ the minimap button on or off.
 
 **English it has no Japanese for.** When the game shows English the addon has no translation for (quest text, NPC
 dialogue with the id of the NPC who said it, item and spell descriptions, NPC names), the addon notes that English
-in its saved settings file, so it can be translated later. Your character's name is stored as a placeholder; no
-account, realm or location is stored. Nothing is sent anywhere: the file stays on your computer unless you choose
+in its saved settings file, so it can be translated later. Your character's name is stored as a placeholder, and
+next to a line that names your class or race, the class and race are noted; no account, realm or location is stored. Nothing is sent anywhere: the file stays on your computer unless you choose
 to attach it to an issue. It is on by default, the addon says so in chat the first time, and you can turn it off
 under **English Collector** in the settings.
 
@@ -193,7 +193,7 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
 ![アドオンの設定画面](docs/images/settings.jpg)
 
-**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。キャラクター名はプレースホルダーに置き換えて保存し、アカウント・レルム・位置は保存しません。どこにも送信されません。自分で Issue に添付しない限り、ファイルはあなたのパソコンの中にあります。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
+**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。キャラクター名はプレースホルダーに置き換えて保存し、クラスや種族が出てくる行にはそのクラスと種族を書き添えます。アカウント・レルム・位置は保存しません。どこにも送信されません。自分で Issue に添付しない限り、ファイルはあなたのパソコンの中にあります。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
 
 ![英語テキスト収集の設定画面。記録をオフにするスイッチがある](docs/images/collector.jpg)
 

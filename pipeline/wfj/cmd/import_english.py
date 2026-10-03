@@ -372,12 +372,11 @@ def _without_recorded(existing: list[dict[str, Any]], new: list[dict[str, Any]])
 
 _VERSION = re.compile(r"^(\d+\.\d+)\.")
 _WORDS = re.compile(r"\$[A-Za-z]|[A-Za-z']+|[^\sA-Za-z']")
-_PLAYER_TOKENS = {"$C", "$c", "$R", "$r"}
+_PLAYER_TOKENS = {"$C": 0, "$c": 0, "$R": 1, "$r": 1}  # → which of the recording player's (class, race)
 # the words a recording player's class or race can be: only these are put back for a `$C` / `$R`
-_CLASS_RACE = frozenset({
-    "warrior", "paladin", "hunter", "rogue", "priest", "shaman", "mage", "warlock", "druid",
-    "human", "orc", "dwarf", "night elf", "undead", "tauren", "gnome", "troll",
-})
+_CLASS = ("warrior", "paladin", "hunter", "rogue", "priest", "shaman", "mage", "warlock", "druid")
+_RACE = ("human", "orc", "dwarf", "night elf", "undead", "tauren", "gnome", "troll")
+_CLASS_RACE = frozenset(_CLASS + _RACE)
 
 
 def _same_client(src: str, build: str) -> bool:
@@ -387,18 +386,25 @@ def _same_client(src: str, build: str) -> bool:
     return bool(theirs and ours and theirs.group(1) == ours.group(1))
 
 
-def _restore_literals(recorded: str, stand_in: str) -> str:
-    """The collector writes the recording player's class and race as `$C` / `$R` wherever the words occur, so
-    "a wise druid", recorded by a druid, comes back as "a wise $C". Where the stand-in has a literal word at
-    that spot, the literal is put back: a druid's dump cannot tell the two apart, the stand-in can."""
+def _restore_literals(recorded: str, stand_in: str, player: tuple[str, str] | None) -> str:
+    """The collector writes the recording player's class and race as `$C` / `$R` wherever the words occur,
+    so "a wise druid", recorded by a druid, comes back as "a wise $C". Where the stand-in has that player's
+    own word at that spot, the literal is put back: the line says "druid" to everyone. A different word there
+    ("warrior" where a mage recorded `$C`) means the line follows the reader's class, so the token stays.
+    With no recorded player nothing is put back."""
     from difflib import SequenceMatcher
 
+    if player is None:
+        return recorded
+    own = tuple(w.lower() for w in player)
     ours, theirs = list(_WORDS.finditer(recorded)), list(_WORDS.finditer(stand_in))
     ow, tw = [m.group() for m in ours], [m.group() for m in theirs]
     out, last = [], 0
     for op, i1, i2, j1, j2 in SequenceMatcher(None, ow, tw, autojunk=False).get_opcodes():
-        swap = op == "replace" and i2 - i1 == 1 and ow[i1] in _PLAYER_TOKENS and 1 <= j2 - j1 <= 2
-        if swap and " ".join(tw[j1:j2]).lower() in _CLASS_RACE:
+        one = op == "replace" and i2 - i1 == 1 and 1 <= j2 - j1 <= 2
+        slot = _PLAYER_TOKENS.get(ow[i1]) if one else None
+        word = " ".join(tw[j1:j2]).lower()
+        if slot is not None and word in _CLASS_RACE and word == own[slot]:
             out.append(recorded[last : ours[i1].start()])
             out.append(stand_in[theirs[j1].start() : theirs[j2 - 1].end()])
             last = ours[i1].end()
@@ -406,14 +412,21 @@ def _restore_literals(recorded: str, stand_in: str) -> str:
     return "".join(out)
 
 
+def _earlier_literals(recorded: str, stand_in: str) -> set[str]:
+    """Every text `_restore_literals` could make of `recorded` against `stand_in` for any class and race:
+    only to recognise a line an earlier import already gave its literal back, never to write one."""
+    return {_restore_literals(recorded, stand_in, (c, r)) for c in _CLASS for r in _RACE}
+
+
 def run_collector(a: argparse.Namespace) -> int:
     """Add a collector dump to `data/english/`. What the Forever client shows is the English, so per (type,
     id, field): absent → added; same hash → unchanged; another hash → replaced, unless the line came from the
     same client's own files (its tables or quest cache, `_same_client`), which are kept and listed as differs.
-    A replaced stand-in (pfQuest, VMaNGOS, an older client) gets its literal class or race words back
-    (`_restore_literals`). A gossip line is keyed by its hash, so it is only ever added or unchanged; the NPC
-    ids a dump names are unioned into its `npcs` (counted `npcs`). Invalid entries are counted by reason,
-    never written."""
+    A replaced stand-in (pfQuest, VMaNGOS, an older client) gets its literal class or race words back where
+    they are the recording player's own (`_restore_literals`). An older client's item or spell template is
+    never replaced by a live line (listed as differs). A gossip line is keyed by its hash, so it is only ever
+    added or unchanged; the NPC ids a dump names are unioned into its `npcs` (counted `npcs`). Invalid
+    entries are counted by reason, never written."""
     root = data_root()
     path = Path(a.file)
     dump = read_dump(path.read_text(encoding="utf-8-sig"))
@@ -441,10 +454,18 @@ def run_collector(a: argparse.Namespace) -> int:
                 c["npcs"] += 1
             elif cur["hash"] == en.hash_:
                 c["unchanged"] += 1
+            elif type_ in ("item", "spell") and "$" in cur["en"]:
+                # an older client's template ("$o1 damage over $d"): the live line has one player's numbers in
+                # it, so it would cost the drafts their codes and ship that player's numbers as the English
+                c["differs"] += 1
+                differs.append(f"  {type_} {en.id_} {en.field} (kept the template from {cur['src']})")
             elif source_name(cur) == "collector" or not _same_client(cur["src"], en.build):
-                # an earlier dump's line may hold a literal class or race word put back from a stand-in
-                text = _restore_literals(en.en, cur["en"])
-                if hash_key(normalize_v1(text)) == cur["hash"]:
+                text = _restore_literals(en.en, cur["en"], en.player)
+                # an earlier dump's line may hold a literal word put back from a stand-in: kept as it is
+                earlier = _earlier_literals(en.en, cur["en"]) if source_name(cur) == "collector" else set()
+                if hash_key(normalize_v1(text)) == cur["hash"] or any(
+                    hash_key(normalize_v1(t)) == cur["hash"] for t in earlier
+                ):
                     c["unchanged"] += 1
                     continue
                 src = f"collector@{en.build}"

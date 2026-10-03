@@ -20,8 +20,8 @@ kept the stand-in's hash forever, and every disagreement waited on a person who 
 client itself.
 
 The collector records the player's class and race as `$C` / `$R` wherever the words occur. A druid recording
-"young $R, a wise druid" writes "young $R, a wise $C": the dump alone cannot tell a literal class word from a
-token.
+"young $R, a wise druid" writes "young $R, a wise $C": the text alone cannot tell a literal class word from a
+token, and the saved file is shared by every character on the account.
 
 ## Decision
 
@@ -33,15 +33,21 @@ token.
    tables, its quest cache: a `src` whose version shares major.minor with the dump's build, `_same_client`) is
    kept and listed as `differs from the client's own files (kept)`. The client's files carry the templates the
    recorded text was rendered from, so they stay the reference.
-3. **Literal class and race words are put back.** When a recorded line replaces a stand-in, a `$C` / `$R` (or
-   lowercase form) in the recorded text that lines up, word by word, with one or two literal words in the stand-in
-   takes those words back (`_restore_literals`). Re-importing the same or another dump compares the restored text,
-   so a restored word survives re-imports.
-4. **`check` consults collector English for quest and gossip.** `CONSULTED_COLLECTOR_TYPES = ("quest", "gossip")`
+3. **Literal class and race words are put back, only the recorder's own.** A line holding `$C` / `$R` carries
+   the recording character's class and race (`p = "Class|Race"`). When a recorded line replaces a stand-in, a
+   `$C` (or `$c`) in the recorded text that lines up, word by word, with the recorder's own class in the stand-in
+   takes that word back, and a `$R` the recorder's own race (`_restore_literals`). A different word there
+   ("warrior" where a mage recorded `$C`) means the line follows the reader's class, so the token stays; an entry
+   with no `p` gets nothing back. Re-importing compares the restored text, and a line an earlier import already
+   gave a literal back is kept as it is, so a restored word survives re-imports.
+4. **An older client's item or spell template is kept.** A stored item or spell line from another game version
+   that holds `$` codes (`$o1`, `$d`) is never replaced by a recorded line, which has one player's numbers filled
+   in; it is listed under differs.
+5. **`check` consults collector English for quest and gossip.** `CONSULTED_COLLECTOR_TYPES = ("quest", "gossip")`
    in `pipeline/wfj/cmd/check.py`: for these types collector lines build scopes like any other source, so their
    hashes become the lines' English. Item and spell collector English stays unconsulted: it is recorded with the
    numbers filled in, while the client tables hold the templates the alignment check needs.
-5. **The live check tries race-only and class-only candidates.** `candidates` in `Core/Collector.lua` adds a
+6. **The live check tries race-only and class-only candidates.** `candidates` in `Core/Collector.lua` adds a
    fingerprint with only the race replaced and one with only the class replaced, so a line that says one literally
    and the other as a token is known.
 

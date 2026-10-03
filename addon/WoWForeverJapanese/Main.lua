@@ -86,18 +86,26 @@ end
 
 -- The gossip key a translation of `text` is actually shipped under, or nil: quest text the client shows with no id
 -- the addon can read (a quest's conditional description, its completion log line) is keyed like NPC dialogue.
--- Memoized per text (the minimap's quest block asks every frame); the memo is dropped at 256 entries.
-local shippedMemo, shippedCount = {}, 0
+-- Memoized per player and text (the minimap's quest block asks every frame; the keys depend on the player's name,
+-- class and race); the memo is dropped at 256 entries. Nothing is memoized before the player is known, so an early
+-- miss is asked again.
+local shippedMemo, shippedCount, shippedWho = {}, 0, nil
 function WFJ.ShippedGossipKey(text)
   if type(text) ~= "string" or text == "" then return nil end
+  local p = collectorPlayer()
+  local known = type(p.name) == "string" and type(p.class) == "string" and type(p.race) == "string"
+  local who = known and (p.name .. "|" .. p.class .. "|" .. p.race) or nil
+  if who ~= shippedWho then shippedMemo, shippedCount, shippedWho = {}, 0, who end
   local hit = shippedMemo[text]
   if hit ~= nil then return hit or nil end
   local found = false
-  for _, k in ipairs(WFJ.Collector.keys(text, collectorPlayer())) do
+  for _, k in ipairs(WFJ.Collector.keys(text, p)) do
     if WFJ.Lookup.keyed("gossip", k) then found = k; break end
   end
-  if shippedCount >= 256 then shippedMemo, shippedCount = {}, 0 end
-  shippedMemo[text], shippedCount = found, shippedCount + 1
+  if who then
+    if shippedCount >= 256 then shippedMemo, shippedCount = {}, 0 end
+    shippedMemo[text], shippedCount = found, shippedCount + 1
+  end
   return found or nil
 end
 

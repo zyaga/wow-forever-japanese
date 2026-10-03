@@ -6,6 +6,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 local UI = {
   ERR_QUEST_COMPLETE_S = { "%s completed.", "%sを完了しました。" },
   ERR_QUEST_ACCEPTED_S = { "Quest accepted: %s", "クエスト受諾: %s" },
+  QUEST_ACCEPT = { "%s is starting the quest \"%s\". Would you like to as well?",
+    "%sがクエスト「%s」を開始します。あなたも開始しますか？" },
 }
 
 describe("quest titles inside system lines", function()
@@ -32,6 +34,17 @@ describe("quest titles inside system lines", function()
     assert.are.equal("自然界のバランスを完了しました。", japanese("The Balance of Nature completed."))
     assert.are.equal("クエスト受諾: 自然界のバランス", japanese("Quest accepted: The Balance of Nature"))
     assert.are.equal("Verdant Sigilを完了しました。", japanese("Verdant Sigil completed."))
+  end)
+
+  it("a dialog filled from its own arguments shows the title in Japanese too; the name stays", function()
+    WFJ.UIStrings.questTitle = function(t) return t == "The Balance of Nature" and "自然界のバランス" or nil end
+    local en = _G.QUEST_ACCEPT
+    local args = index:formatArgs("QUEST_ACCEPT", en, "Reyn", "The Balance of Nature")
+    assert.are.equal("Reynがクエスト「自然界のバランス」を開始します。あなたも開始しますか？",
+      index:fill(index.rows.QUEST_ACCEPT[1], args))
+    args = index:formatArgs("QUEST_ACCEPT", en, "Reyn", "Verdant Sigil")
+    assert.are.equal("Reynがクエスト「Verdant Sigil」を開始します。あなたも開始しますか？",
+      index:fill(index.rows.QUEST_ACCEPT[1], args))
   end)
 
   it("with no resolver the title is kept as written", function()

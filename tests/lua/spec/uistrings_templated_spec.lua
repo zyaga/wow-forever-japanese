@@ -17,6 +17,7 @@ local UI = {
     "Lotus Clawのエンチャントで慎重にDeath Lotusを採取できる！" },
   ["FriendshipGain:513"] = { "You gain %d Rank Points.", "ランクポイントを%d獲得した。" },
   ["ServerMessage:1"] = { "[SERVER] Shutdown in %s", "[サーバー] %s後にシャットダウン" },
+  ["ServerMessage:4"] = { "[SERVER] Shutdown cancelled", "[サーバー] シャットダウンは中止されました" },
   -- a restricted family outside the templated ones: a row with an argument stays unresolved, as before
   ["CriteriaText:7"] = { "%d kills", "%d体撃破" },
   -- a global-string template with the same shape: the open match keeps finding it
@@ -46,10 +47,10 @@ describe("templated client-table rows", function()
     assert.is_false(U.isTemplatedKey("EmoteText:1"))
     assert.is_false(U.isTemplatedKey("LEVEL_GAINED"))
     assert.is_false(U.isTemplatedKey(nil))
-    -- counted: five templated and two plain restricted rows hashed, the criteria template unresolved
+    -- counted: five templated and three plain restricted rows hashed, the criteria template unresolved
     assert.are.same({ "CriteriaText:7" }, index.problems.unresolved)
     assert.are.equal(1, index.counts.indexed)
-    assert.are.equal(7, index.counts.hashed)
+    assert.are.equal(8, index.counts.hashed)
   end)
 
   it("a rank-points chat line is the FriendshipGain row with the live number", function()
@@ -136,5 +137,7 @@ describe("templated client-table rows", function()
     assert.is_nil(index:matchTail("[SERVER] Shutdown in 15 Minutes", fam("FriendshipGain"))) -- another family
     assert.is_nil(index:matchTail("Something else entirely", fam("ServerMessage")))
     assert.is_nil(index:matchTail("[SERVER] Shutdown in 15 Minutes", {})) -- no family asked for: nothing hashed
+    -- a notice with no argument is its whole fingerprint
+    assert.are.equal("ServerMessage:4", (index:matchTail("[SERVER] Shutdown cancelled", fam("ServerMessage"))))
   end)
 end)

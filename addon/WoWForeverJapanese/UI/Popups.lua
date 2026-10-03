@@ -226,8 +226,9 @@ function Popups.onUpdate(dialog)
   if type(first) ~= "table" or type(first.GetText) ~= "function" then first = nil end
   local last = seen[dialog]
   if last and last.text == dialog.Text:GetText() and last.label == (first and first:GetText()) then return end
-  showText(dialog, dialog.dialogInfo)
-  if first and dialog.acceptDelay == nil then showWord(first, dialog.dialogInfo.button1) end
+  local info = shownInfo(dialog, dialog.dialogInfo) -- GENERIC_CONFIRMATION: the caller's text and buttons
+  showText(dialog, info)
+  if first and dialog.acceptDelay == nil then showWord(first, info.button1) end
   seen[dialog] = { text = dialog.Text:GetText(), label = first and first:GetText() or nil }
 end
 

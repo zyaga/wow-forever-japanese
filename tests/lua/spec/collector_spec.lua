@@ -233,6 +233,13 @@ describe("Core/Collector", function()
       local db = C.load(nil, deps())
       C.record("quest", 9, "description", "Well met, Reyn.\n\n  The Hunter awaits.\n")
       assert.are.equal("Well met, $N.$B$BThe $C awaits.", db.entries["quest:9:description"].e)
+      -- a $C / $R line names the recording character, so the pipeline knows whose word the token was
+      assert.are.equal("Hunter|Night Elf", db.entries["quest:9:description"].p)
+      C.record("quest", 10, "description", "Well met, Reyn.")
+      assert.is_nil(db.entries["quest:10:description"].p) -- no class or race token: nothing more stored
+      -- the file reloads with it, and the byte count includes it
+      local again = C.load(db, deps())
+      assert.are.equal("Hunter|Night Elf", again.entries["quest:9:description"].p)
     end)
 
     it("a break inside a link label never splits the link", function()
@@ -468,8 +475,8 @@ describe("Core/Collector gossip kind", function()
     assert.are.equal("recorded", C.recordGossip(raw, INN))
     local e = db.entries["gossip:" .. key .. ":text"]
     assert.are.same({ t = "gossip", i = key, f = "text", h = key, e = "Well met, $N. A $C needs rest too.", b = 1,
-      n = { 6740 } }, e)
-    assert.are.equal(C.size("gossip:" .. key .. ":text", e.e, e.n), db.bytes)
+      n = { 6740 }, p = "Hunter|Night Elf" }, e)
+    assert.are.equal(C.size("gossip:" .. key .. ":text", e.e, e.n, e.p), db.bytes)
     assert.are.equal(WFJ.Hash.key(WFJ.Normalize.v1(e.e)), key)
     assert.are.equal("seen", C.recordGossip(raw, INN)) -- memo
   end)
@@ -550,7 +557,8 @@ describe("Collector through the loaded addon", function()
     local n = 0
     for key, e in pairs(db.entries) do
       n = n + 1
-      local shape = { t = 1, i = 1, f = 1, h = 1, e = 1, b = 1, n = 1 } -- n: a gossip entry's NPC ids
+      -- n: a gossip entry's NPC ids; p: "Class|Race" next to a $C / $R line
+      local shape = { t = 1, i = 1, f = 1, h = 1, e = 1, b = 1, n = 1, p = 1 }
       for k in pairs(e) do assert.is_truthy(shape[k], key .. "." .. k) end
     end
     assert.is_true(n >= 8)

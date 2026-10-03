@@ -26,6 +26,7 @@ an old setting stops working). A release moves those lines under its version num
 ### Changed
 - The game text is read from Forever build 1.60.1.70170.
 - The settings page title no longer wraps, the help page names your reveal key and both markers, and settings text has more space between lines.
+- Next to a line that names your class or race, the English collector also notes that class and race, so a word that belongs to the line can be told apart from a word that changes with each player.
 
 ### Fixed
 - A spell on your action bar keeps its Japanese tooltip in combat, the cooldown countdown included. A buff icon's tooltip stays English during a fight, because the game hides which buff it is from addons, and is Japanese again when the fight ends.

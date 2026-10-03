@@ -364,6 +364,24 @@ describe("addon loads in TOC order and answers /wfj version", function()
     _G.UNKNOWNOBJECT = unknown
   end)
 
+  it("the shipped gossip key of quest text: asked again until the player is known, and per character", function()
+    local keyed = WFJ.Lookup.keyed
+    local text = "Well met, Reyn. Go now."
+    local want = WFJ.Collector.key(text, { name = "Reyn", class = "Hunter", race = "Night Elf" })
+    WFJ.Lookup.keyed = function(type_, k) return type_ == "gossip" and k == want and { ja = "x" } or nil end
+    local unknown = _G.UNKNOWNOBJECT
+    _G.UNKNOWNOBJECT = "Reyn" -- the player record has not loaded: the name is the client's placeholder
+    assert.is_nil(WFJ.ShippedGossipKey(text))
+    _G.UNKNOWNOBJECT = unknown
+    assert.are.equal(want, WFJ.ShippedGossipKey(text)) -- the early miss was not kept
+    local name = _G.UnitName
+    _G.UnitName = function() return "Ostara" end -- another character: its own keys
+    assert.is_nil(WFJ.ShippedGossipKey(text))
+    _G.UnitName = name
+    assert.are.equal(want, WFJ.ShippedGossipKey(text))
+    WFJ.Lookup.keyed = keyed
+  end)
+
   it("fills an unaligned item's placeholders from the live tooltip, on the real shards", function()
     local tt = _G.GameTooltip
     -- The client's own duration strings, as the real one defines them. UIStrings admits a row only when the

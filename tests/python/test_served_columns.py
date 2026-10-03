@@ -75,6 +75,18 @@ def test_table_columns_apply_hotfix_rows():
     assert col.line() == "school.f0  rows=2  text=2  distinct=2"
 
 
+def test_a_malformed_hotfix_row_is_skipped_not_the_table():
+    buf, _ = wdc5([[(1, ["Frost", 3]), (2, ["Fire", 4])]], {0}, field_count=2)
+    fixes = {
+        3: _hotfix(dbcache.VALID, b"Arcane\0" + struct.pack("<I", 5)),
+        4: _hotfix(dbcache.VALID, b"no terminator"),  # cut short: unreadable
+    }
+    skipped: list[str] = []
+    [col] = sc.table_columns("school", buf, [], fixes, skipped)
+    assert (col.rows, col.text) == (3, 3)  # the table's rows and the good hotfix row
+    assert len(skipped) == 1 and skipped[0].startswith("school row 4:")
+
+
 class FakeArchive:
     def __init__(self, files: dict[int, bytes]):
         self.files = files
@@ -98,7 +110,7 @@ def test_inventory_lists_text_columns_unreadable_tables_and_unnamed_hotfixes():
         "hash-00000099.*  hotfix-only: rows=1",
         "school.f0  rows=1  text=1  distinct=1",
     ]
-    assert counts == {"tables": 3, "with_text": 1, "unreadable": 1}
+    assert counts == {"tables": 3, "with_text": 1, "unreadable": 1, "skipped_hotfix_rows": 0}
 
 
 def test_db2_files_from_the_listfile(tmp_path: Path):

@@ -10,7 +10,7 @@ WFJ_Collector = {
 	["builds"] = {
 		"1.15.9.69722", -- [1]
 	},
-	["bytes"] = 2540,
+	["bytes"] = 2596,
 	["capped"] = false,
 	["disclosed"] = true,
 	["entries"] = {
@@ -46,6 +46,7 @@ WFJ_Collector = {
 			["n"] = {
 				295, -- [1]
 			},
+			["p"] = "Hunter|Night Elf",
 			["t"] = "gossip",
 		},
 		["item:117:description"] = {
@@ -70,6 +71,7 @@ WFJ_Collector = {
 			["f"] = "completion",
 			["h"] = "c75682d198f31fe3",
 			["i"] = 2,
+			["p"] = "Hunter|Night Elf",
 			["t"] = "quest",
 		},
 		["quest:2:description"] = {

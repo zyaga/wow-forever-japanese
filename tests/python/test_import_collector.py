@@ -105,7 +105,9 @@ def test_the_client_own_files_are_kept_and_literal_class_words_restored(tmp_path
         ],
     )
     new = "I see you found me, young $R. Melithar is a wise $C to have sent you. Take a book."
-    text = dump(entry("quest", 458, "completion", new), entry("quest", 9, "description", "Other."))
+    text = dump(
+        entry("quest", 458, "completion", new, p="Druid|Night Elf"), entry("quest", 9, "description", "Other.")
+    )
     assert run(["english", "collector", _write(tmp_path, text)]) == 0
     by = {(ln["id"], ln["field"]): ln for ln in english.load("quest")}
     want = "I see you found me, young $R. Melithar is a wise druid to have sent you. Take a book."
@@ -119,13 +121,41 @@ def test_the_client_own_files_are_kept_and_literal_class_words_restored(tmp_path
     assert "quest 9 description (kept wdb@1.15.9.69722)" in capsys.readouterr().out
 
 
-def test_restore_literals_puts_back_only_a_class_or_race_word():
+def test_restore_literals_puts_back_only_the_recording_player_own_word():
     from wfj.cmd.import_english import _restore_literals
 
-    assert _restore_literals("A wise $C sent you.", "A wise druid sent you.") == "A wise druid sent you."
-    assert _restore_literals("Young $R, hello.", "Young night elf, hello.") == "Young night elf, hello."
+    druid = ("Druid", "Night Elf")
+    assert _restore_literals("A wise $C sent you.", "A wise druid sent you.", druid) == "A wise druid sent you."
+    assert _restore_literals("Young $R, hello.", "Young night elf, hello.", druid) == "Young night elf, hello."
     # a reworded line: the old text's word there is no class or race, so the token stays
-    assert _restore_literals("Seek the $C trainer.", "Seek the Elder trainer.") == "Seek the $C trainer."
+    assert _restore_literals("Seek the $C trainer.", "Seek the Elder trainer.", druid) == "Seek the $C trainer."
+    # a mage recorded `$C` where the stand-in says "warrior": the line follows the reader's class
+    mage = ("Mage", "Human")
+    assert _restore_literals("Hail, young $C.", "Hail, young warrior.", mage) == "Hail, young $C."
+    # the class slot is never filled with the race word, and with no recorded player nothing is put back
+    assert _restore_literals("Hail, $C.", "Hail, human.", mage) == "Hail, $C."
+    assert _restore_literals("A wise $C sent you.", "A wise druid sent you.", None) == "A wise $C sent you."
+
+
+def test_an_older_client_item_or_spell_template_is_kept(tmp_path: Path, monkeypatch, capsys):
+    data = _data_dir(tmp_path, monkeypatch)
+    english = Store(data, english=True)
+    tpl = "Deals $o1 Fire damage over $d."
+    english.save("spell", [english_line(7, "description", tpl, key(normalize_v1(tpl)), "wago@1.15.8.1")])
+    text = dump(entry("spell", 7, "description", "Deals 120 Fire damage over 12 sec."))
+    assert run(["english", "collector", _write(tmp_path, text)]) == 0
+    assert english.load("spell")[0]["en"] == tpl
+    assert "spell 7 description (kept the template from wago@1.15.8.1)" in capsys.readouterr().out
+
+
+def test_an_older_dump_keeps_a_literal_an_earlier_import_put_back(tmp_path: Path, monkeypatch):
+    data = _data_dir(tmp_path, monkeypatch)
+    english = Store(data, english=True)
+    kept = "Melithar is a wise druid to have sent you."
+    english.save("quest", [english_line(458, "completion", kept, key(normalize_v1(kept)), "collector@1.60.1.70170")])
+    text = dump(entry("quest", 458, "completion", "Melithar is a wise $C to have sent you."))  # no `p`
+    assert run(["english", "collector", _write(tmp_path, text)]) == 0
+    assert english.load("quest")[0]["en"] == kept
 
 
 def test_unchanged_import_writes_nothing(tmp_path: Path, monkeypatch):

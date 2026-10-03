@@ -4,6 +4,7 @@ GlobalStrings) is either in the dictionary (pipeline/ui_keys.txt) or deliberatel
 (pipeline/ui_exclusions.txt); every inventoried surface has an addon module and every module's surface is
 inventoried. Forever is the only target, so there is no Classic Era inventory."""
 
+import json
 import re
 from pathlib import Path
 
@@ -158,3 +159,21 @@ def test_no_exclusion_blames_an_unhooked_widget(root):
     # found untranslatable, so none may stay
     assert not [k for k, reason in _exclusions(root).items() if "does not hook" in reason]
 
+
+def test_every_server_notice_template_fits_the_tail_scan():
+    """`Index:matchTail` fingerprints a server notice's prefix only up to its first `TAIL_SPACES` spaces (a chat
+    line no other row matched pays at most that many hashes): every shipped `ServerMessage` template ending in
+    `%s` must have its argument after no more spaces than that."""
+    root = Path(__file__).resolve().parents[2]
+    lua = (root / "addon/WoWForeverJapanese/Core/UIStrings.lua").read_text(encoding="utf-8")
+    cap = int(re.search(r"UIStrings\.TAIL_SPACES = (\d+)", lua).group(1))
+    seen = 0
+    for path in sorted((root / "data/english/ui").glob("*.jsonl")):
+        for raw in path.read_text(encoding="utf-8").splitlines():
+            if '"ServerMessage:' not in raw:
+                continue
+            en = json.loads(raw)["en"]
+            if en.endswith("%s"):
+                seen += 1
+                assert en[:-2].count(" ") <= cap, en
+    assert seen > 0

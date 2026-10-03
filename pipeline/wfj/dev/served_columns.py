@@ -73,9 +73,15 @@ def db2_files(listfile: Path) -> dict[str, int]:
 
 
 def table_columns(
-    name: str, buf: bytes, encrypted: list[tuple[int, int, str]], fixes: dict[int, dbcache.Hotfix]
+    name: str,
+    buf: bytes,
+    encrypted: list[tuple[int, int, str]],
+    fixes: dict[int, dbcache.Hotfix],
+    skipped: list[str] | None = None,
 ) -> list[Column]:
-    """The text columns of one table, the hotfix rows applied where they can be read without a column map."""
+    """The text columns of one table, the hotfix rows applied where they can be read without a column map. A
+    hotfix row that cannot be read is left out (its table's own row stays) and named in `skipped`: one bad row
+    must not hide every column of its table."""
     fields = sorted(db2.text_fields(buf, encrypted, name))
     if not fields:
         return []
@@ -85,7 +91,12 @@ def table_columns(
         if not fix.replaces:
             rows.pop(rid, None)
         elif leading:
-            values = dbcache.leading_strings(fix.data, len(fields))
+            try:
+                values = dbcache.leading_strings(fix.data, len(fields))
+            except ValueError as e:
+                if skipped is not None:
+                    skipped.append(f"{name} row {rid}: {e}")
+                continue
             rows[rid] = tuple(values) + (None,) * (max(fields) + 1 - len(values))
     out = []
     for fn in fields:
@@ -99,7 +110,8 @@ def inventory(
 ) -> tuple[list[str], dict[str, int]]:
     """(lines, counts) for every listed table the build ships: its text columns, or `unreadable`."""
     lines: list[str] = []
-    counts = {"tables": 0, "with_text": 0, "unreadable": 0}
+    counts = {"tables": 0, "with_text": 0, "unreadable": 0, "skipped_hotfix_rows": 0}
+    skipped: list[str] = []
     named_hashes: set[int] = set()
     for name, fdid in sorted(tables.items()):
         if not archive.ships(fdid):
@@ -110,7 +122,7 @@ def inventory(
             header = db2.read_header(buf, name)
             named_hashes.add(header.table_hash)
             fixes = hotfixes.by_table.get(header.table_hash, {}) if hotfixes else {}
-            columns = table_columns(name, buf, encrypted, fixes)
+            columns = table_columns(name, buf, encrypted, fixes, skipped)
         except (casc.CascError, db2.Db2Error, ValueError) as e:
             counts["unreadable"] += 1
             lines.append(f"{name}.*  unreadable: {str(e).replace(chr(10), ' ')}")
@@ -122,6 +134,9 @@ def inventory(
         valid = sum(1 for h in fixes.values() if h.replaces)
         if table_hash not in named_hashes and valid:
             lines.append(f"hash-{table_hash:08x}.*  hotfix-only: rows={valid}")
+    counts["skipped_hotfix_rows"] = len(skipped)
+    for note in skipped:
+        print(f"served-columns: hotfix row skipped: {note}", file=sys.stderr)
     return sorted(lines), counts
 
 
@@ -219,6 +234,7 @@ def main(argv: list[str] | None = None) -> int:
     print(
         f"# tables: {counts['tables']} shipped, {counts['with_text']} with text,"
         f" {counts['unreadable']} unreadable"
+        + (f", {counts['skipped_hotfix_rows']} hotfix rows skipped" if counts["skipped_hotfix_rows"] else "")
     )
     for line in lines:
         print(line)
