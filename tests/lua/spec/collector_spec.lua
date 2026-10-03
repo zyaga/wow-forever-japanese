@@ -361,9 +361,103 @@ describe("Core/Collector", function()
     end)
   end)
 
+  -- the send marker: what a send carries (Collector.pending) and what I sent it marks (Collector.markSent)
+  describe("send", function()
+    local function keysOf(list)
+      local out = {}
+      for i, item in ipairs(list) do out[i] = item.key end
+      return out
+    end
+
+    it("pending holds the unsent entries sorted by key; markSent marks exactly the ones given", function()
+      local db = C.load(nil, deps())
+      C.record("quest", 7, "title", "B Title")
+      C.record("quest", 3, "title", "A Title")
+      C.record("item", 9, "description", "Shiny.")
+      assert.are.same({ "item:9:description", "quest:3:title", "quest:7:title" }, keysOf(C.pending()))
+      local before = db.bytes
+      assert.are.equal(1, C.markSent({ { key = "quest:3:title", h = db.entries["quest:3:title"].h } }))
+      assert.are.equal(before + C.sentSize("quest:3:title"), db.bytes) -- counts toward the cap
+      assert.are.same({ "item:9:description", "quest:7:title" }, keysOf(C.pending()))
+      assert.are.same({ "item:9:description", "quest:3:title", "quest:7:title" }, keysOf(C.pending(true)))
+      assert.are.equal(2, C.status().unsent)
+      assert.is_truthy(C.describe():find("3 entries (2 unsent)", 1, true))
+    end)
+
+    it("a line replaced after it was sent is unsent again; a stale mark is not written", function()
+      local db = C.load(nil, deps())
+      C.record("quest", 7, "description", "First wording.")
+      local old = db.entries["quest:7:description"].h
+      C.markSent({ { key = "quest:7:description", h = old } })
+      assert.are.same({}, C.pending())
+      C.record("quest", 7, "description", "Second wording.")
+      assert.are.equal(1, #C.pending())
+      assert.are.equal(0, C.markSent({ { key = "quest:7:description", h = old } })) -- the pack was made before
+      assert.are.equal(1, #C.pending())
+    end)
+
+    it("leaves out a line that ships in Japanese now, and counts it", function()
+      C.load(nil, deps())
+      C.record("quest", 2, "title", "Sharptalon's Claw")
+      C.record("quest", 3, "title", "Still English")
+      shipped["quest.title"] = { [2] = { ja = "x", status = ".", h1 = h1Of("Sharptalon's Claw") } }
+      local list, left = C.pending()
+      assert.are.same({ "quest:3:title" }, keysOf(list))
+      assert.are.equal(1, left)
+    end)
+
+    it("leaves out a gossip line shipped under its key; an NPC name always goes", function()
+      C.load(nil, deps())
+      C.recordGossip("Hello there, traveler.", nil)
+      C.recordNpc("Creature-0-0-0-0-3100-0000000000", "Senani Thunderheart")
+      local list, left = C.pending()
+      assert.are.equal(2, #list)
+      assert.are.equal(0, left)
+      shipped.gossip = { [C.key("Hello there, traveler.", PLAYER)] = { ja = "やあ。", status = "." } }
+      list, left = C.pending()
+      assert.are.same({ "npc:3100:name" }, keysOf(list))
+      assert.are.equal(1, left)
+    end)
+
+    it("clear empties the marks; load keeps valid marks and drops the rest", function()
+      local db = C.load(nil, deps())
+      C.record("quest", 7, "title", "B Title")
+      C.markSent({ { key = "quest:7:title", h = db.entries["quest:7:title"].h } })
+      C.clear()
+      assert.are.same({}, db.sent)
+      local good = { t = "quest", i = 2, f = "title", h = "0123456789abcdef", e = "Title", b = 1 }
+      local saved = C.load({ version = 1, builds = { "1.15.9.69722" }, entries = { ["quest:2:title"] = good },
+        sent = { ["quest:2:title"] = "0123456789abcdef", ["quest:9:title"] = "0123456789abcdef",
+          ["quest:2:x"] = 5 } }, deps())
+      assert.are.same({ ["quest:2:title"] = "0123456789abcdef" }, saved.sent)
+      assert.are.equal(C.size("quest:2:title", "Title") + C.sentSize("quest:2:title"), saved.bytes)
+      assert.are.same({}, C.load({ version = 1, sent = "x" }, deps()).sent)
+    end)
+
+    it("a file from a newer version sends nothing and is never marked", function()
+      local saved = { version = 2, entries = { ["quest:2:title"] = { t = "quest", i = 2, f = "title",
+        h = "0123456789abcdef", e = "Title", b = 1 } }, builds = { "1.15.9.69722" } }
+      C.load(saved, deps())
+      assert.are.same({}, C.pending(true))
+      assert.are.equal(0, C.markSent({ { key = "quest:2:title", h = "0123456789abcdef" } }))
+      assert.is_nil(saved.sent)
+    end)
+
+    it("path names the beta's folder only on a beta client", function()
+      C.load(nil, deps())
+      assert.are.equal(C.PATH, C.path())
+      local d = deps()
+      d.beta = function() return true end
+      C.load(nil, d)
+      assert.are.equal(
+        "World of Warcraft\\_classic_beta_\\WTF\\Account\\<ACCOUNT>\\SavedVariables\\WoWForeverJapanese.lua", C.path())
+    end)
+  end)
+
   describe("load", function()
     it("nil becomes a fresh version-1 dump", function()
-      assert.are.same({ version = 1, disclosed = false, builds = {}, bytes = 0, capped = false, entries = {} },
+      assert.are.same({ version = 1, disclosed = false, builds = {}, bytes = 0, capped = false, entries = {},
+        sent = {} },
         C.load(nil, deps()))
     end)
 
@@ -553,7 +647,7 @@ describe("Collector through the loaded addon", function()
     local top = {}
     for k in pairs(db) do top[#top + 1] = k end
     table.sort(top)
-    assert.are.same({ "builds", "bytes", "capped", "disclosed", "entries", "version" }, top)
+    assert.are.same({ "builds", "bytes", "capped", "disclosed", "entries", "sent", "version" }, top)
     local n = 0
     for key, e in pairs(db.entries) do
       n = n + 1

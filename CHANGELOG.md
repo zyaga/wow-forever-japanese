@@ -12,6 +12,10 @@ an old setting stops working). A release moves those lines under its version num
 ### Added
 - Japanese for the progress and turn-in text of 421 quests (630 lines), mostly ones new in Forever, from text Forever players recorded with the forever-vo addon. Its NPC greetings are read too.
 - What NPCs say in chat is now recorded by the addon's collector, so Forever's own NPC speech can be translated.
+- Send the English the addon recorded straight from the game: the **Send English** button on the English Collector page (or `/wfj collector send`) gives you one link that opens a filled-in GitHub issue. Click **I sent it** afterwards, and the next send holds only new lines. Lines that have a translation by then are left out.
+
+### Changed
+- The collector's issue form is now *Collected English*, filled in from the game's send window. The saved file is only needed for a send too long to paste, and the settings page shows where it is (the beta's own folder on the beta).
 
 ### Fixed
 - A quest window opened for the first time after logging in no longer turns back to English when its reward items finish loading.

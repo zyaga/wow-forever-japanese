@@ -71,9 +71,9 @@ def test_only_the_release_job_can_write(root):
             release_job = _block(text, "release", 2)
             assert writes == [w for w in re.findall(r"(?m)^ +[\w-]+: write\b.*$", release_job)], name
             assert [w.split("#")[0].strip() for w in writes] == ["contents: write"]
-        elif name == "report-check.yml":
-            # the fix-report check (ADR-045) comments on and labels the issue it reads; its one job may
-            # write issues, and nothing else
+        elif name in ("report-check.yml", "collector-check.yml"):
+            # the fix-report check (ADR-045) and the collector-send check (ADR-056) comment on and label the
+            # issue they read; their one job may write issues, and nothing else
             check_job = _block(text, "check", 2)
             assert writes == [w for w in re.findall(r"(?m)^ +[\w-]+: write\b.*$", check_job)], name
             assert [w.split("#")[0].strip() for w in writes] == ["issues: write"]

@@ -55,9 +55,9 @@ Text.T = {
 
   ["collector.explain"] = {
     en = "The addon notes English it has no translation for.\n"
-      .. "Nothing is sent anywhere: you choose whether to attach the file to an issue.",
+      .. "Nothing is sent anywhere unless you send it yourself with the steps below.",
     ja = "翻訳がない英語テキストを記録します。\n"
-      .. "自動で送信されることはありません。ファイルを報告に添付するかどうかは自分で決められます。",
+      .. "下の手順で自分で送らない限り、どこにも送信されることはありません。",
   },
   ["collector.status"] = { en = "Status", ja = "状態" },
   -- the status line in the page's language (the slash command keeps Collector.describe's English)
@@ -67,8 +67,66 @@ Text.T = {
   ["collector.full"] = { en = "full", ja = "上限に達しました" },
   ["collector.paused"] = { en = "paused (file from a newer version)", ja = "一時停止（新しいバージョンのファイル）" },
   ["collector.errors"] = { en = "%s errors", ja = "エラー%s件" },
-  ["collector.path"] = { en = "Saved when you log out or /reload, in:", ja = "ログアウトまたは /reload 時に次の場所へ保存されます：" },
-  ["collector.issue"] = { en = "Send it with an issue:", ja = "報告に添付して送る：" },
+  ["collector.path"] = {
+    en = "Too long to paste? Zip this file and attach it to the same issue:",
+    ja = "貼り付けられない長さなら、このファイルを zip にして同じ Issue に添付：",
+  },
+  ["collector.steps"] = {
+    en = "1. Click Send English.\n"
+      .. "2. Copy the link in the window (click it, then Ctrl+C) and open it in your web browser.\n"
+      .. "3. If the window shows a second box, copy that text into the form's box too.\n"
+      .. "4. Submit the issue on GitHub, then click I sent it.",
+    ja = "1.「英語を送る」をクリックします。\n"
+      .. "2. ウィンドウのリンクをコピーして（クリックして Ctrl+C）、ブラウザで開きます。\n"
+      .. "3. ウィンドウに2つ目の欄があれば、その文字列もフォームの欄に貼り付けます。\n"
+      .. "4. GitHub で Issue を送信してから「送信しました」をクリックします。",
+  },
+  ["collector.send"] = { en = "Send English", ja = "英語を送る" },
+  ["send.title"] = { en = "Send collected English", ja = "記録した英語を送る" },
+  ["send.summary.empty"] = {
+    en = "Nothing new to send. /wfj collector send all sends every line again.",
+    ja = "新しく送るものはありません。/wfj collector send all ですべての行をもう一度送れます。",
+  },
+  ["send.summary.unavailable"] = {
+    en = "This game client cannot pack the text, so the saved file goes with the issue instead.",
+    ja = "このゲームクライアントでは文字列にまとめられないため、代わりに保存ファイルを Issue に添付します。",
+  },
+  ["send.summary.readonly"] = {
+    en = "The saved file is from a newer version of the addon. Update the addon to send it.",
+    ja = "保存ファイルは新しいバージョンのアドオンのものです。送るにはアドオンを更新してください。",
+  },
+  ["send.summary"] = {
+    en = "%s lines to send in one issue (%s already in Japanese, left out).",
+    ja = "1つの Issue で %s 行を送ります（日本語訳がある %s 行は除きます）。",
+  },
+  ["send.step1"] = {
+    en = "1. Copy this link (click it, then Ctrl+C) and open it in your web browser:",
+    ja = "1. このリンクをコピーして（クリックして Ctrl+C）、ブラウザで開きます：",
+  },
+  ["send.step2.link"] = { en = "2. The form opens filled in.", ja = "2. 入力済みのフォームが開きます。" },
+  ["send.step2.paste"] = {
+    en = "2. Copy this text too (click it, then Ctrl+C) and paste it into the form:",
+    ja = "2. この文字列もコピーして（クリックして Ctrl+C）、フォームに貼り付けます：",
+  },
+  ["send.step2.file"] = {
+    en = "2. Zip this file and drag it into the form (/reload first saves it):",
+    ja = "2. このファイルを zip にしてフォームにドラッグします（先に /reload で保存）：",
+  },
+  ["send.step3"] = { en = "3. Submit the issue on GitHub.", ja = "3. GitHub で Issue を送信します。" },
+  ["send.step4"] = { en = "4. Then click:", ja = "4. 送信したらクリック：" },
+  ["send.sent"] = { en = "I sent it", ja = "送信しました" },
+  ["send.later"] = {
+    en = "%s new lines are not in the file yet: /reload, then open this again.",
+    ja = "新しい %s 行はまだファイルにありません。/reload してから開き直してください。",
+  },
+  ["send.markedFull"] = {
+    en = "%s lines marked as sent. Full: Clear collected English makes room.",
+    ja = "%s 行を送信済みにしました。上限です。「記録した英語を消去」で空きを作れます。",
+  },
+  ["send.marked"] = {
+    en = "%s lines marked as sent. The next send holds only new lines.",
+    ja = "%s 行を送信済みにしました。次回は新しい行だけを送ります。",
+  },
   ["collector.clear"] = { en = "Clear collected English", ja = "記録した英語を消去" },
   ["collector.confirm"] = { en = "Click again to clear %s entries", ja = "もう一度クリックで%s件を消去" },
   ["collector.cleared"] = { en = "Cleared %s entries", ja = "%s件を消去しました" },
@@ -200,13 +258,13 @@ Text.SLASH = {
   "/wfj area quests off  ·  /wfj marker missing on",
   "/wfj readings [on | off]  ·  /wfj glosses [on | off]",
   "/wfj config [collector | about]  ·  /wfj fix  (report a line)",
-  "/wfj collector [on | off | status | path | clear]",
+  "/wfj collector [on | off | status | path | clear | send [all]]",
   "/wfj debug [hash | quest <id> | item <id> | spell <id>]",
   "/wfj debug [gossip | book | objective | fonts | ui [scan]]",
   "/wfj debug tooltip [on | off]  (record spell / item tooltip passes)",
 }
 
--- Text.REPORT_URL is the issue tracker's new-issue page (the collector page uses Collector.ISSUE_URL).
+-- Text.REPORT_URL is the issue tracker's new-issue page (the collector send window uses Collector.ISSUE_URL).
 Text.REPORT_URL = "https://github.com/zyaga/wow-forever-japanese/issues/new/choose"
 -- the translation-report issue form the fix window's report is pasted into
 Text.FIX_URL = "https://github.com/zyaga/wow-forever-japanese/issues/new?template=translation-report.yml"

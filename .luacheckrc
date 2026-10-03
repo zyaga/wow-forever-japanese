@@ -7,7 +7,7 @@ codes = true
 -- Blizzard API surface the addon uses. Every new API call is a reviewable diff here.
 read_globals = {
   "C_AddOns", "CreateFrame", "GetTime", "print", "strsplit", "tostring", "tonumber",
-  "UnitName", "UnitClass", "UnitRace", "UnitGUID", "GetBuildInfo", "UnitSex", "UNKNOWNOBJECT",
+  "UnitName", "UnitClass", "UnitRace", "UnitGUID", "GetBuildInfo", "IsBetaBuild", "UnitSex", "UNKNOWNOBJECT",
   "IsAltKeyDown", "IsControlKeyDown", "IsShiftKeyDown",
   -- Quest surfaces: the hook primitive + the quest / quest-log getters. Frame and writer names are
   -- reached through Compat's injected env and inventoried in UI/QuestFrame.lua / UI/QuestMap.lua.

@@ -20,7 +20,7 @@ from wfj.core.hashing import key as hash_key
 from wfj.core.model import english_line, validate_line
 from wfj.core.normalize import female_variant, normalize_for, normalize_v1
 from wfj.io import forever_vo, tables_stamp, vmangos, wago, wdb
-from wfj.io.collector_dump import read_dump
+from wfj.io.collector_dump import Dump, read_dump
 from wfj.io.jsonl_store import Store
 from wfj.io.lua_reader import as_int_id, parse_assignment
 from wfj.paths import data_root
@@ -427,15 +427,20 @@ def run_collector(a: argparse.Namespace) -> int:
     never replaced by a live line (listed as differs). A gossip line is keyed by its hash, so it is only ever
     added or unchanged; the NPC ids a dump names are unioned into its `npcs` (counted `npcs`). Invalid
     entries are counted by reason, never written."""
-    root = data_root()
     path = Path(a.file)
-    dump = read_dump(path.read_text(encoding="utf-8-sig"))
-    store = Store(root, english=True)
+    return import_dump(read_dump(path.read_text(encoding="utf-8-sig")), path.name)
+
+
+def import_dump(dump: Dump, label: str) -> int:
+    """Merge a read dump into `data/english/` (run_collector's rules) and print its table. `label` names
+    where it came from (a file name, or an issue) on the summary line. → 0"""
+    store = Store(data_root(), english=True)
     by_type: dict[str, list[Any]] = {}
     for en in dump.entries:
         by_type.setdefault(en.type_, []).append(en)
     counts: dict[str, Counter] = {}
     differs: list[str] = []
+    replaced: list[str] = []
     for type_ in sorted(by_type):
         lines = store.load(type_)
         index = {(ln["id"], ln["field"]): i for i, ln in enumerate(lines)}
@@ -470,6 +475,7 @@ def run_collector(a: argparse.Namespace) -> int:
                     continue
                 src = f"collector@{en.build}"
                 h = hash_key(normalize_v1(text))
+                replaced.append(f"  {type_} {en.id_} {en.field} (was {cur['src']})")
                 lines[index[k]] = english_line(en.id_, en.field, text, h, src, npcs=en.npcs)
                 c["replaced"] += 1
             else:
@@ -479,7 +485,7 @@ def run_collector(a: argparse.Namespace) -> int:
             store.save(type_, lines)
         counts[type_] = c
     builds = sorted({en.build for en in dump.entries})
-    print(f"english collector: {path.name} · {len(dump.entries)} entries · builds {', '.join(builds) or '-'}")
+    print(f"english collector: {label} · {len(dump.entries)} entries · builds {', '.join(builds) or '-'}")
     print(f"{'type':6} {'added':>6} {'unchanged':>9} {'replaced':>8} {'differs':>7}")
     for type_, c in counts.items():
         print(f"{type_:6} {c['added']:6} {c['unchanged']:9} {c['replaced']:8} {c['differs']:7}")
@@ -487,6 +493,9 @@ def run_collector(a: argparse.Namespace) -> int:
         print(f"gossip lines that gained an NPC: {counts['gossip']['npcs']}")
     rejected = ", ".join(f"{r} {n}" for r, n in sorted(dump.rejected.items())) or "none"
     print(f"rejected: {rejected}")
+    if replaced:  # what a review of the data diff should look at first
+        print("replaced:")
+        print("\n".join(replaced))
     if differs:
         print("differs from the client's own files (kept):")
         print("\n".join(differs))

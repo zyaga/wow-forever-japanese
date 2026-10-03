@@ -153,7 +153,7 @@ def _address_problem(key: str, kind: Any, fld: Any, id_: int | str | None) -> st
         return "bad_kind"
     if fld not in KINDS[kind][1]:
         return "bad_field"
-    if isinstance(id_, int) and id_ < 1:
+    if isinstance(id_, int) and not 1 <= id_ <= MAX_ID:  # a game id is a 32-bit field
         return "bad_id"
     return None
 

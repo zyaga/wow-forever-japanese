@@ -87,7 +87,8 @@ The Lua and luarocks versions CI uses are the inputs of `.github/actions/lua-too
 | `make validate` | `wfj validate $(VALIDATE_FLAGS)` then `luac`: the CI gate. Schema, the provenance rule, English hash collisions, referential integrity, regenerate-and-diff of `Data/` and the TOC block, no unknown player placeholder on a shipped line, UI strings that keep their English specifiers, colour codes and line breaks and are unambiguous, and the readings. `VALIDATE_FLAGS="--base origin/main"` adds the check that no human line became machine (CI passes it on pull requests) |
 | `make coverage` | how much of the game ships in Japanese → [Coverage](coverage.md). Run it before every pull request that changes `data/`; a test fails while the committed file is out of date |
 | `make import-draft DRAFT=<file.jsonl> TYPE=<type> NAME=<draft name> MODEL=<model id> [CRITIC=<model id>] DATE=<YYYY-MM-DD> [REVERIFY=1]` | merges machine-drafted text into `data/<type>/` as `machine` variants; never edits a `human` or `correction` variant. See [Machine drafts](#machine-drafts) |
-| `make import-collector DUMP=<file>` | adds one player's collector dump to `data/english/`, replacing stand-in English with what the Forever client showed. The path may contain spaces. See [Collector dumps](#collector-dumps) |
+| `make import-collector DUMP=<file>` | adds one player's collector dump (a SavedVariables file at hand) to `data/english/`, replacing stand-in English with what the Forever client showed. The path may contain spaces. See [Collector dumps](#collector-dumps) |
+| `make collector-intake ISSUE=N [BODY=<saved issue body>]` | a player's collector send (a `collector-send` issue): reads the string or the attached file and imports it with the same rules: [Collector sends](collector-sends.md) |
 | `make report-intake ISSUE=N` / `make report-apply ISSUE=N MODEL=<model id>` | a player's fix report: [Fix reports](fix-reports.md) |
 
 ### Import and client tooling
@@ -188,7 +189,7 @@ The source tags in `data/` (`cqjt@<sha>`, `ctjt@<sha>`, `qjp@<version>`, `cjq@<v
 
 ## Collector dumps
 
-A collector dump is a player's SavedVariables file, handed in through the `collector-dump` issue form. In game, `/wfj collector path` prints where it is: `<World of Warcraft folder>/<client folder>/WTF/Account/<ACCOUNT>/SavedVariables/WoWForeverJapanese.lua`. It is not committed.
+Players send what their game recorded from the game itself, in a `collector-send` issue; take those with `make collector-intake ISSUE=N` ([Collector sends](collector-sends.md)), which ends in the same merge as below. This section is for a SavedVariables file at hand. In game, `/wfj collector path` prints where it is: `<World of Warcraft folder>/<client folder>/WTF/Account/<ACCOUNT>/SavedVariables/WoWForeverJapanese.lua` (`_classic_beta_` as the client folder on the beta). It is not committed.
 
 ```sh
 make import-collector DUMP="<path to WoWForeverJapanese.lua>"

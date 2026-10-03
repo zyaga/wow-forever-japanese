@@ -1,6 +1,6 @@
 # ADR-013: The collector records only unknown English, normalized for privacy, and its import never overwrites a curated source
 
-- **Status:** Accepted. Implemented in `Core/Collector.lua`, the surfaces' record calls, `UI/Slash.lua`, `pipeline/wfj/io/collector_dump.py`, `pipeline/wfj/cmd/import_.py`, `pipeline/wfj/cmd/check.py` (`UNCONSULTED_SOURCES`) and `.github/ISSUE_TEMPLATE/collector-dump.yml`.
+- **Status:** Accepted. Implemented in `Core/Collector.lua`, the surfaces' record calls, `UI/Slash.lua`, `pipeline/wfj/io/collector_dump.py`, `pipeline/wfj/cmd/import_.py`, `pipeline/wfj/cmd/check.py` (`UNCONSULTED_SOURCES`) and the collector issue form (now `.github/ISSUE_TEMPLATE/collector-send.yml`, [ADR-056](056-collector-send-string.md)).
 - **Date:** 2026-09-14
 - **Amended by:** [ADR-053](053-forever-shown-english-is-the-english.md), decision 3. The import now replaces a stand-in line (VMaNGOS, pfQuest, an older client) with the English the Forever client showed, keeps the same client's own tables and quest cache, and `check` consults collector English for quest and gossip.
 

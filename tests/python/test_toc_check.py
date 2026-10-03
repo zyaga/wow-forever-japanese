@@ -24,7 +24,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua",
         "Core/Objectives.lua",  # objective lines
         "Core/SurfaceState.lua",
-        "Core/Collector.lua",
+        "Core/Collector.lua", "Core/CollectorSend.lua",  # the collector and its send
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
         "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
         "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
@@ -79,7 +79,8 @@ def test_real_toc_fields_and_load_order(root):
         "UI/Scan.lua",
         # the settings pages' copy, widgets, key capture, the modifier's override binding, the AddOn List button
         "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua",
-            "UI/FixWindow.lua", "UI/MinimapButton.lua",  # the fix window, the minimap button
+            "UI/FixWindow.lua", "UI/CollectorSendWindow.lua",  # the fix window, the collector send window
+            "UI/MinimapButton.lua",  # the minimap button
             "UI/RevealBinding.lua",
         "UI/AddonListButton.lua", "UI/Options.lua", "UI/Slash.lua", "Main.lua",
     ]

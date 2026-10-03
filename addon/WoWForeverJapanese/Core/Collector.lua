@@ -3,7 +3,7 @@
 -- Pure: every world access is an injected dep (Main wires them); no frame access (lint-core-gate).
 --   Collector.load(saved, deps) → the table to keep in WFJ_Collector
 --     deps = { enabled(), lookup(kind, id) → {h1}|nil, player() → {name, class, race}, build() → string|nil,
---              print(msg) }
+--              print(msg), beta() → true on a beta client (optional) }
 --   Collector.record(kind, id, field, raw) → result[, reason]   never raises
 --     "off" · "known" · "seen" · "recorded" · "replaced" · "capped" · "refused", reason · "error", message
 --   Collector.recordGossip(raw, guid) → result[, reason]   never raises (keyed by the gossip key, `n` = NPC ids)
@@ -13,6 +13,12 @@
 --   Collector.fingerprints(raw, player, masked) → each candidate's h1, inconclusive: the quest live check
 --     (ADR-019); `masked`: digit runs `#` first, for a quest line filled from live values
 --   Collector.recordNpc(guid, name) · Collector.disclose() · Collector.status() · Collector.clear()
+--   Collector.pending(all) → the entries a send carries, sorted by key: { { key, entry }, … } (unsent ones, or every
+--     one with `all`), leaving out lines that ship in Japanese now; and how many were left out for that
+--   Collector.markSent(list) · list = { { key = …, h = … }, … }: the player sent these (the `sent` map)
+--   Collector.buildName(b) → the build string an entry's `b` points at
+--   Collector.onDisk(key, h) → whether the saved file holds that entry (it was loaded with it) · isReadOnly()
+--   Collector.path() → where the file is saved: PATH, with the beta's folder named on a beta client
 -- Privacy by construction: the stored text is normalize_v1 per paragraph, written in Blizzard's own tokens: the
 -- player's name as $N (and, for quests, class/race as $C/$R), paragraph breaks as $B$B, the pfQuest convention; no
 -- GUID, time, realm, zone, character or account field exists in the shape.
@@ -24,8 +30,10 @@ local Normalize, Hash = WFJ.Normalize, WFJ.Hash
 
 Collector.VERSION = 1
 Collector.CAP_BYTES = 4 * 1024 * 1024 -- estimate of the SavedVariables text (Collector.size); a constant, no setting
-Collector.ISSUE_URL = "https://github.com/zyaga/wow-forever-japanese/issues/new?template=collector-dump.yml"
+Collector.ISSUE_URL = "https://github.com/zyaga/wow-forever-japanese/issues/new?template=collector-send.yml"
 Collector.PATH = "World of Warcraft\\<client folder>\\WTF\\Account\\<ACCOUNT>\\SavedVariables\\WoWForeverJapanese.lua"
+-- the beta client's folder under World of Warcraft (the Forever beta install)
+Collector.BETA_FOLDER = "_classic_beta_"
 
 -- kind → field set.
 Collector.KINDS = {
@@ -45,6 +53,9 @@ Collector.SKIP = { item = { [6948] = true }, spell = { [8690] = true, [556] = tr
 local ENTRY_KEYS = { t = true, i = true, f = true, h = true, e = true, b = true, n = true, p = true }
 
 local db, deps
+-- key → hash of every entry the file held when it was loaded: what the saved file on disk holds until the next
+-- logout or /reload, so a send of the file itself marks only those
+local onDisk = {}
 local readOnly, cappedPrinted, errors, lastError = false, false, 0, nil
 local memo = {} -- key → { raw, result, reason }: the same text again this session answers without re-hashing
 -- NPC speech adds an entry per distinct line heard, so the memo is dropped at MEMO_CAP entries (a dropped entry is
@@ -180,7 +191,17 @@ end
 -- ── Dump ───────────────────────────────────────────────────────────────────
 
 local function fresh()
-  return { version = Collector.VERSION, disclosed = false, builds = {}, bytes = 0, capped = false, entries = {} }
+  return { version = Collector.VERSION, disclosed = false, builds = {}, bytes = 0, capped = false, entries = {},
+    sent = {} }
+end
+
+-- Estimated SavedVariables text of one `sent` row (`\t\t["<key>"] = "<16 hex>",`).
+function Collector.sentSize(key)
+  return #key + 30
+end
+
+local function isHash(h)
+  return type(h) == "string" and #h == 16 and h:match("^[0-9a-f]+$") ~= nil
 end
 
 local function positiveInt(v)
@@ -215,7 +236,7 @@ local function validEntry(key, e, builds)
     return false
   end
   if key ~= e.t .. ":" .. e.i .. ":" .. e.f then return false end
-  if type(e.h) ~= "string" or not e.h:match("^[0-9a-f]+$") or #e.h ~= 16 then return false end
+  if not isHash(e.h) then return false end
   if type(e.e) ~= "string" or e.e == "" then return false end
   if e.b ~= nil and (type(e.b) ~= "number" or type(builds[e.b]) ~= "string") then return false end
   if e.p ~= nil and type(e.p) ~= "string" then return false end
@@ -224,7 +245,7 @@ end
 
 function Collector.load(saved, d)
   deps, readOnly, cappedPrinted, errors, lastError = d, false, false, 0, nil
-  memo, memoCount = {}, 0
+  memo, memoCount, onDisk = {}, 0, {}
   if type(saved) ~= "table" then
     db = fresh()
     return db
@@ -242,8 +263,19 @@ function Collector.load(saved, d)
   for key, e in pairs(saved.entries) do
     if validEntry(key, e, saved.builds) then
       bytes = bytes + Collector.size(key, e.e, e.n, e.p)
+      onDisk[key] = e.h
     else
       saved.entries[key] = nil
+    end
+  end
+  -- `sent`: entry key → the hash that was sent. A row for an entry that is gone, or not a hash, is dropped. The field
+  -- is new in the same file version: an older addon leaves a top-level field it does not know as it is.
+  if type(saved.sent) ~= "table" then saved.sent = {} end
+  for key, h in pairs(saved.sent) do
+    if type(key) ~= "string" or not isHash(h) or saved.entries[key] == nil then
+      saved.sent[key] = nil
+    else
+      bytes = bytes + Collector.sentSize(key)
     end
   end
   saved.bytes = bytes
@@ -289,6 +321,28 @@ local function withNpc(entry, npc)
   return out
 end
 
+-- Whether Japanese ships for this English: `e` is the stored text, `h1` its first hash half. Gossip is looked up
+-- under each key in `keys`; an NPC name never ships in Japanese (names stay English).
+local function shipped(kind, id, field, e, h1, keys)
+  if kind == "gossip" then
+    for _, k in ipairs(keys) do
+      if deps.lookup("gossip", k) then return true end
+    end
+    return false
+  end
+  if kind == "npc" then return false end
+  local entry = deps.lookup(kind .. "." .. field, id) -- field-qualified: spell has two fields
+  if entry and (entry.h1 == h1 or (entry.h1f ~= nil and entry.h1f == h1)) then return true end
+  -- a shipped quest line filled from the live values (`$N<k>` for `Collect $1oa …`) ships a masked h1
+  -- (`fingerprints(…, masked)`): the count is the server's, a rewording is new English.
+  -- Item / spell templates are recorded this way too.
+  if kind == "quest" and entry and type(entry.ja) == "string" and entry.ja:find("%$[ND]%d") then
+    local m1 = Hash.h32x2(Collector.mask(Normalize.v1(e)))
+    if entry.h1 == m1 or (entry.h1f ~= nil and entry.h1f == m1) then return true end
+  end
+  return false
+end
+
 -- kind "gossip": `id` and `key` are derived from the text; `npc` is the speaker's creature id or nil.
 local function evaluate(kind, id, field, raw, key, npc)
   if Collector.SKIP[kind] and Collector.SKIP[kind][id] then return "refused", "skip" end
@@ -325,21 +379,9 @@ local function evaluate(kind, id, field, raw, key, npc)
 
   if kind == "gossip" then
     id, key = h, "gossip:" .. h .. ":text"
-    -- the key is the hash: a row shipped under any candidate key is this English
-    for _, k in ipairs(Collector.keys(raw, player)) do
-      if deps.lookup("gossip", k) then return "known" end
-    end
-  elseif kind ~= "npc" then
-    local entry = deps.lookup(kind .. "." .. field, id) -- field-qualified: spell has two fields
-    if entry and (entry.h1 == h1 or (entry.h1f ~= nil and entry.h1f == h1)) then return "known" end
-    -- a shipped quest line filled from the live values (`$N<k>` for `Collect $1oa …`) ships a masked h1
-    -- (`fingerprints(…, masked)`): the count is the server's, a rewording is new English.
-    -- Item / spell templates are recorded this way too.
-    if kind == "quest" and entry and type(entry.ja) == "string" and entry.ja:find("%$[ND]%d") then
-      local m1 = Hash.h32x2(Collector.mask(Normalize.v1(e)))
-      if entry.h1 == m1 or (entry.h1f ~= nil and entry.h1f == m1) then return "known" end
-    end
   end
+  -- gossip: the key is the hash, and a row shipped under any candidate key is this English
+  if shipped(kind, id, field, e, h1, kind == "gossip" and Collector.keys(raw, player) or nil) then return "known" end
 
   local old = db.entries[key]
   local n = kind == "gossip" and npc and { npc } or nil
@@ -353,7 +395,7 @@ local function evaluate(kind, id, field, raw, key, npc)
     db.capped = true
     if not cappedPrinted then
       cappedPrinted = true
-      deps.print(("WFJ: collector full (%s). /wfj collector path to hand it off, /wfj collector clear to start over.")
+      deps.print(("WFJ: collector full (%s). /wfj collector send to send it, /wfj collector clear to start over.")
         :format(Collector.formatBytes(Collector.CAP_BYTES)))
     end
     return "capped"
@@ -542,7 +584,7 @@ function Collector.disclose()
     .. "Your character's name is replaced; next to a line that names your class or race, the class and race are "
     .. "noted; no account, realm or location is stored (wording that depends on your "
     .. "character's gender is kept as the game shows it). Nothing leaves your disk unless you send it.")
-  deps.print("WFJ: /wfj collector off to stop · /wfj collector path to share the file.")
+  deps.print("WFJ: /wfj collector off to stop · /wfj collector send to send what it recorded.")
   db.disclosed = true
   return true
 end
@@ -553,13 +595,15 @@ function Collector.formatBytes(n)
 end
 
 function Collector.status()
-  local n = 0
+  local n, unsent = 0, 0
   if db and type(db.entries) == "table" then
     for _ in pairs(db.entries) do n = n + 1 end
+    unsent = #Collector.pending()
   end
   return {
     enabled = deps ~= nil and deps.enabled() or false,
     entries = n,
+    unsent = unsent,
     bytes = db and tonumber(db.bytes) or 0,
     cap = Collector.CAP_BYTES,
     capped = db ~= nil and db.capped == true,
@@ -568,11 +612,12 @@ function Collector.status()
   }
 end
 
--- "on · 12 entries · 3.4 KB of 4.0 MB[ · full][ · paused (file from a newer version)][ · N errors]"
+-- "on · 12 entries[ (3 unsent)] · 3.4 KB of 4.0 MB[ · full][ · paused (file from a newer version)][ · N errors]"
 function Collector.describe()
   local s = Collector.status()
-  local out = ("%s · %d %s · %s of %s"):format(s.enabled and "on" or "off", s.entries,
-    s.entries == 1 and "entry" or "entries", Collector.formatBytes(s.bytes), Collector.formatBytes(s.cap))
+  local unsent = s.entries > 0 and (" (%d unsent)"):format(s.unsent) or ""
+  local out = ("%s · %d %s%s · %s of %s"):format(s.enabled and "on" or "off", s.entries,
+    s.entries == 1 and "entry" or "entries", unsent, Collector.formatBytes(s.bytes), Collector.formatBytes(s.cap))
   if s.capped then out = out .. " · full" end
   if s.readOnly then out = out .. " · paused (file from a newer version)" end
   if s.errors > 0 then out = out .. (" · %d %s"):format(s.errors, s.errors == 1 and "error" or "errors") end
@@ -583,7 +628,74 @@ end
 function Collector.clear()
   if not db or readOnly then return nil end
   local n = Collector.status().entries
-  db.entries, db.builds, db.bytes, db.capped = {}, {}, 0, false
+  db.entries, db.builds, db.bytes, db.capped, db.sent = {}, {}, 0, false, {}
   cappedPrinted, memo, memoCount = false, {}, 0
+  return n
+end
+
+-- ── Send ───────────────────────────────────────────────────────────────────
+
+-- The entries a send carries, sorted by key: those not sent yet (a line replaced since it was sent counts as not
+-- sent), or every entry with `all`. A line that ships in Japanese now is left out and counted: the collector recorded
+-- it before a release translated it. → { { key = …, entry = … }, … }, the number left out, their { key, h }
+function Collector.pending(all)
+  local out, left, leftList = {}, 0, {}
+  if not db or not deps or readOnly or type(db.entries) ~= "table" then return out, left, leftList end
+  local sent = type(db.sent) == "table" and db.sent or {}
+  for key, e in pairs(db.entries) do
+    if all or sent[key] ~= e.h then
+      local h1 = tonumber(e.h:sub(1, 8), 16)
+      local ok, yes = pcall(shipped, e.t, e.i, e.f, e.e, h1, { e.h })
+      if ok and yes then
+        left = left + 1
+        leftList[left] = { key = key, h = e.h }
+      else
+        out[#out + 1] = { key = key, entry = e }
+      end
+    end
+  end
+  table.sort(out, function(x, y) return x.key < y.key end)
+  return out, left, leftList
+end
+
+-- Whether the saved file on disk holds this entry with this hash: it was in the file when the addon loaded it.
+-- The client writes the file only at logout or /reload, so a line recorded since then is not in it yet.
+function Collector.onDisk(key, h)
+  return onDisk[key] ~= nil and onDisk[key] == h
+end
+
+-- Whether the file is from a newer version of the addon (recording paused, nothing to send).
+function Collector.isReadOnly()
+  return readOnly
+end
+
+function Collector.path()
+  local beta = deps and type(deps.beta) == "function" and deps.beta() == true
+  if not beta then return Collector.PATH end
+  return (Collector.PATH:gsub("<client folder>", Collector.BETA_FOLDER))
+end
+
+-- The build string of a build index `b` (an entry's `b`), or nil.
+function Collector.buildName(b)
+  if not db or type(db.builds) ~= "table" or b == nil then return nil end
+  local v = db.builds[b]
+  return type(v) == "string" and v or nil
+end
+
+-- Notes that the player sent these entries (`list` = { { key, h }, … }, from a pack). Only an entry still stored with
+-- that same hash is marked: one replaced since the pack was made stays unsent. A file from a newer version is never
+-- written. → the number marked
+function Collector.markSent(list)
+  if not db or readOnly or type(list) ~= "table" then return 0 end
+  if type(db.sent) ~= "table" then db.sent = {} end
+  local n = 0
+  for _, item in ipairs(list) do
+    local e = db.entries[item.key]
+    if e and e.h == item.h then
+      if db.sent[item.key] == nil then db.bytes = db.bytes + Collector.sentSize(item.key) end
+      db.sent[item.key] = item.h
+      n = n + 1
+    end
+  end
   return n
 end

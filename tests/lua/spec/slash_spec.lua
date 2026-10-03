@@ -334,7 +334,7 @@ describe("/wfj collector", function()
   it("prints the status line bare and with status", function()
     WFJ.Collector.record("quest", 9999, "title", "A Forever Quest")
     wfj("collector")
-    assert.is_truthy(last():find("WFJ: collector on · 1 entry · ", 1, true))
+    assert.is_truthy(last():find("WFJ: collector on · 1 entry (1 unsent) · ", 1, true))
     assert.is_truthy(last():find(" of 4.0 MB", 1, true))
     wfj("collector status")
     assert.is_truthy(last():find("WFJ: collector on · 1 entry", 1, true))
@@ -351,7 +351,7 @@ describe("/wfj collector", function()
     assert.is_truthy(last():find("collector.enabled = off", 1, true))
   end)
 
-  it("path prints <ACCOUNT> as a literal placeholder, the counts and the issue link", function()
+  it("path prints <ACCOUNT> as a literal placeholder, the counts and how to send", function()
     WFJ.Collector.record("quest", 9999, "title", "A Forever Quest")
     wfj("collector path")
     local text = table.concat(Stub.prints, "\n")
@@ -359,7 +359,19 @@ describe("/wfj collector", function()
     assert.is_truthy(text:find("SavedVariables\\WoWForeverJapanese.lua", 1, true))
     assert.is_truthy(text:find("log out or /reload", 1, true))
     assert.is_truthy(text:find("1 entry", 1, true))
-    assert.is_truthy(text:find(WFJ.Collector.ISSUE_URL, 1, true))
+    assert.is_truthy(text:find("/wfj collector send", 1, true))
+    assert.is_truthy(text:find("<client folder>", 1, true)) -- the stub client is no beta
+  end)
+
+  it("send opens the send window; send all packs every line again", function()
+    local opened = {}
+    local real = WFJ.CollectorSendWindow.open
+    WFJ.CollectorSendWindow.open = function(all) opened[#opened + 1] = all end
+    wfj("collector send")
+    wfj("collector send all")
+    wfj("collector SEND ALL")
+    WFJ.CollectorSendWindow.open = real
+    assert.are.same({ false, true, true }, opened)
   end)
 
   it("clear empties the dump, keeps the disclosure flag and prints the count", function()

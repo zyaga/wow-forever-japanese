@@ -35,7 +35,7 @@ Options.PAGES = {
   { id = "collector", title = "page.collector", sections = {
     { title = "section.collector",
       rows = { "collectorExplain", "collector.enabled", "collectorStatus", "collectorClear" } },
-    { title = "section.files", rows = { "collectorPath", "collectorIssue" } },
+    { title = "section.files", rows = { "collectorSteps", "collectorSend", "collectorPath" } },
   } },
   { id = "about", title = "page.about", header = true, sections = {
     { title = "section.help", rows = { "aboutHold", "aboutReadings", "aboutMarkers", "aboutOpen" } },
@@ -254,12 +254,27 @@ local function copyRow(key, value)
     local en, ja = Text.get(key)
     local labelHeight = W.labelHeight(W.label(page, en, ja, x, y, width), 22)
     Options.copyBoxes = Options.copyBoxes or {}
+    -- a function value is read when the page is built (the collector knows the client only after it loads)
+    if type(value) == "function" then value = value() end
     Options.copyBoxes[key] = W.copyBox(page, x, y - labelHeight, width - 12, value)
     return labelHeight + 28
   end
 end
-A.collectorPath = copyRow("collector.path", WFJ.Collector.PATH)
-A.collectorIssue = copyRow("collector.issue", WFJ.Collector.ISSUE_URL)
+A.collectorPath = copyRow("collector.path", function() return WFJ.Collector.path() end)
+
+function A.collectorSteps(page, x, y, width)
+  local en, ja = Text.get("collector.steps")
+  return W.labelHeight(W.label(page, en, ja, x, y, width), 72)
+end
+
+-- Opens the send window (UI/CollectorSendWindow) with the lines not sent yet.
+function A.collectorSend(page, x, y)
+  local en, ja = Text.get("collector.send")
+  local b = W.button(page, en, ja, 160, function() WFJ.CollectorSendWindow.open(false) end)
+  b:SetPoint("TOPLEFT", x, y)
+  Options.collectorSend = b
+  return 30
+end
 A.reportLink = copyRow("about.report", Text.REPORT_URL)
 
 -- The About page's way into the fix window (report a line the player just saw).
