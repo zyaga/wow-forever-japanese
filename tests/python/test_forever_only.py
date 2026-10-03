@@ -3,17 +3,15 @@ English), but the addon carries no Era-only file, name or client gate, the build
 lists, and the docs describe one target."""
 
 import re
-import subprocess
 from pathlib import Path
 
-import pytest
+from local_inputs import forever_client, need
 
 from wfj.emit import lua_writer, schema
 from wfj.io import wago, wdb
 from wfj.io.jsonl_store import Store
 
 ADDON = Path("addon/WoWForeverJapanese")
-FOREVER = "forever-1.60.1.70170"
 
 # Globals only the Classic Era UI defines (the Era target survey in docs/research/). A name
 # preceded by a word character or a dot is another name or a Forever child key (`PlayerSpellsFrame.SpellBookFrame`,
@@ -74,21 +72,8 @@ def test_no_generated_folder_outlives_its_kind(root):
     assert dirs == set(schema.FILE_PREFIX.values())
 
 
-def _forever_dir(root) -> Path | None:
-    """The pinned Forever client folder under the main checkout's predecessors/ (gitignored; absent in CI)."""
-    try:
-        common = subprocess.run(["git", "rev-parse", "--path-format=absolute", "--git-common-dir"], cwd=root,
-                                capture_output=True, text=True, check=True).stdout.strip()
-    except (OSError, subprocess.CalledProcessError):
-        return None
-    d = Path(common).parent / "predecessors" / "clients" / FOREVER
-    return d if (d / "QuestV2.csv").is_file() else None
-
-
 def test_shipped_ids_are_listed_by_forever(root):
-    d = _forever_dir(root)
-    if d is None:
-        pytest.skip("no Forever client folder (predecessors/clients) on this machine")
+    d = need(forever_client(root), "the Forever client folder")
     served = {
         "quest": wago.read_ids(d / "QuestV2.csv") | set(wdb.read_ids(d / "questcache.wdb")[1]),
         "item": wago.read_ids(d / "ItemSparse.csv"),

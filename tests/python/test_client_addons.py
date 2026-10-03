@@ -105,9 +105,39 @@ def test_gate_matches_the_mainline_family_only():
 def test_titles_lists_window_set_title_sites_only(tmp_path):
     found = client_addons.titles(_tree(tmp_path))
     assert found == [
-        ("blizzard_panels", "blizzard_panels/shared/always.lua", 1, "PANEL_TITLE"),
-        ("blizzard_panels", "blizzard_panels/camelot/frame.lua", 1, 'format(OTHER, "x")'),
+        ("blizzard_panels", "blizzard_panels/shared/always.lua", 1, "PANEL_TITLE",
+         "blizzard_panels/shared/always.lua@main"),
+        ("blizzard_panels", "blizzard_panels/camelot/frame.lua", 1, 'format(OTHER, "x")',
+         "blizzard_panels/camelot/frame.lua@main"),
     ]  # a tooltip's SetTitle is not a window title
+
+
+def test_a_title_site_is_named_by_its_function_and_keeps_the_name_when_lines_move(tmp_path):
+    addons = _tree(tmp_path)
+    body = (
+        "function PanelMixin:OnLoad()\n"
+        "    self:SetTitle(PANEL_TITLE);\n"
+        "    self:SetScript(\"OnShow\", function(f)\n"
+        "        f:SetTitle(OTHER_TITLE);\n"  # an anonymous function counts as the named one around it
+        "    end);\n"
+        "end\n"
+        "local function update(frame)\n"
+        "    frame:SetTitle(name);\n"
+        "end\n"
+        "Panel.Refresh = function(self)\n"
+        "    self:SetTitle(REFRESH_TITLE);\n"
+        "end\n"
+        "Panel:SetTitle(TOP_TITLE);\n"  # after a top-level end: outside any function
+    )
+    always = addons / "blizzard_panels" / "shared" / "always.lua"
+    always.write_text(body, encoding="utf-8")
+    sites = [(n, s) for _, rel, n, _, s in client_addons.titles(addons) if rel.endswith("always.lua")]
+    base = "blizzard_panels/shared/always.lua@"
+    assert sites == [(2, base + "PanelMixin:OnLoad~1"), (4, base + "PanelMixin:OnLoad~2"), (8, base + "update"),
+                     (11, base + "Panel.Refresh"), (13, base + "main")]
+    always.write_text("-- three lines\n-- added\n-- above\n" + body, encoding="utf-8")
+    moved = [s for _, rel, _, _, s in client_addons.titles(addons) if rel.endswith("always.lua")]
+    assert moved == [s for _, s in sites]
 
 
 def test_main_output_and_usage(tmp_path):

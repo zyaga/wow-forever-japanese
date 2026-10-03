@@ -4,11 +4,10 @@ disposition with a reason (pipeline/forever_addon_dispositions.txt), the `surfac
 file map (FOREVER_WINDOWS) name each other, and every window `SetTitle(` call site of a surface addon is
 dispositioned (pipeline/forever_titles.txt)."""
 
-import os
 import re
 from pathlib import Path
 
-import pytest
+from local_inputs import forever_ui, need
 
 from wfj.dev import client_addons, ui_inventory
 
@@ -92,9 +91,9 @@ def _titles() -> list[tuple[str, str, str, list[str]]]:
     for ln in _lines("pipeline/forever_titles.txt"):
         body, _, reason = ln.partition("#")
         parts = body.split()
-        assert len(parts) >= 3 and reason.strip(), f"a title needs `<addon> <path>:<line> <kind> […] # reason`: {ln!r}"
+        assert len(parts) >= 3 and reason.strip(), f"a title needs `<addon> <path>@<function> <kind> […] # reason`: {ln!r}"
         addon, site, kind, rest = parts[0], parts[1], parts[2], parts[3:]
-        assert kind in TITLE_KINDS and re.fullmatch(r"\S+\.lua:\d+", site), ln
+        assert kind in TITLE_KINDS and re.fullmatch(r"\S+\.lua@[\w.:]+(~\d+)?", site), ln
         out.append((addon, site, kind, rest))
     return out
 
@@ -115,12 +114,16 @@ def test_title_dispositions_are_well_formed():
 
 
 def test_every_set_title_site_of_a_surface_addon_is_dispositioned():
-    default = ROOT / "predecessors/forever-ui-1.60.1.70170/interface/addons"
-    addons = Path(os.environ["WFJ_FOREVER_UI"]) if "WFJ_FOREVER_UI" in os.environ else default
-    if not addons.is_dir():
-        pytest.skip("no Forever UI extract")
+    addons = need(forever_ui(ROOT), "the Forever UI extract")
     surface_addons = {a for a, (kind, _, _) in _dispositions().items() if kind == "surface"}
-    found = {f"{rel}:{n}" for _, rel, n, _ in client_addons.titles(addons, surface_addons)}
-    listed = {site for _, site, _, _ in _titles()}
-    assert not found - listed, f"SetTitle sites with no disposition: {sorted(found - listed)}"
-    assert not listed - found, f"dispositioned sites the client does not have: {sorted(listed - found)}"
+    found = {site: (f"{rel}:{n}", arg) for _, rel, n, arg, site in client_addons.titles(addons, surface_addons)}
+    listed = {site: (kind, rest) for _, site, kind, rest in _titles()}
+    assert not found.keys() - listed.keys(), f"SetTitle sites with no disposition: {sorted(found.keys() - listed.keys())}"
+    assert not listed.keys() - found.keys(), \
+        f"dispositioned sites the client does not have: {sorted(listed.keys() - found.keys())}"
+    # a `key` site whose call names one global string must still name that one: a client that changes the
+    # argument at the same place fails here, not in game
+    changed = [f"{site} ({found[site][0]}): SetTitle({found[site][1]}), listed {rest[0]}"
+               for site, (kind, rest) in listed.items()
+               if kind == "key" and re.fullmatch(r"[A-Z][A-Z0-9_]*", found[site][1]) and found[site][1] != rest[0]]
+    assert not changed, f"key sites whose SetTitle argument changed: {changed}"

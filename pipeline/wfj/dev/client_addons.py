@@ -21,7 +21,10 @@ Forever is game type `camelot`, a member of the `mainline` family (ADR-029):
 
 The default output is one `<addon> <state> <files>` line per addon, sorted: state is `gated` (the header keeps
 camelot out), `glue`, `lod` (LoadOnDemand) or `login`; files is the size of the camelot load set found in the
-extract. `--titles` lists every `SetTitle(` call site in the load sets as `<addon> <path>:<line> <argument>`.
+extract. `--titles` lists every `SetTitle(` call site in the load sets as
+`<addon> <site> <argument>  # line <n>`. `<site>` is `<path>@<function>`: the named function
+the call is in, `main` outside any, with `~<k>` added for the k-th call when one function
+makes more than one. A site keeps its name when lines above it move.
 `--files` prints an addon's load set. pipeline/forever_addon_dispositions.txt gives every `login` / `lod`
 addon a disposition; tests/python/test_forever_windows.py holds the two files together.
 """
@@ -41,6 +44,9 @@ _HEADER = re.compile(r"^##\s*([\w-]+)\s*:\s*(.*?)\s*$")
 _INCLUDE = re.compile(r'<(?:Include|Script)\s+file\s*=\s*"([^"]+)"', re.I)
 _FILE = re.compile(r"(\S+\.(?:lua|xml))", re.I)
 _SET_TITLE = re.compile(r"[:.]SetTitle\(\s*([^;\n]*?)\s*\)\s*;?\s*(?:--.*)?$")
+# A named function's first line: `function A.b:c(`, `local function d(`, `e.f = function(`.
+_FUNCTION = re.compile(r"^\s*(?:local\s+)?function\s+([\w.:]+)\s*\(|^\s*([\w.:]+)\s*=\s*function\s*\(")
+_TOP_END = re.compile(r"^end\b")
 _PATH_TOKENS = {"family": "Mainline", "game": "Camelot"}
 
 
@@ -140,8 +146,13 @@ def sweep(addons: Path, index: dict[str, Path] | None = None) -> list[tuple[str,
     return rows
 
 
-def titles(addons: Path, only: set[str] | None = None) -> list[tuple[str, str, int, str]]:
-    """(addon, path, line, SetTitle argument) for every `SetTitle(` call in the in-game load sets."""
+def titles(addons: Path, only: set[str] | None = None) -> list[tuple[str, str, int, str, str]]:
+    """(addon, path, line, SetTitle argument, site) for every `SetTitle(` call in the in-game load sets.
+
+    The site names the call by its path and the named function it is in: an anonymous
+    function counts as part of the named one around it, and a top-level `end` closes it.
+    `~<k>` is added when that function holds more than one call.
+    """
     index = file_index(addons)
     out = []
     for addon, _, files in sweep(addons, index):
@@ -151,11 +162,25 @@ def titles(addons: Path, only: set[str] | None = None) -> list[tuple[str, str, i
             if not rel.endswith(".lua"):
                 continue
             text = index[rel].read_text(encoding="utf-8-sig", errors="ignore")
+            found, function = [], "main"
             for n, line in enumerate(text.splitlines(), 1):
+                if m := _FUNCTION.match(line):
+                    if not line.startswith((" ", "\t")) or function == "main":
+                        function = m.group(1) or m.group(2)
+                elif _TOP_END.match(line):
+                    function = "main"
                 if "GameTooltip_SetTitle" in line or "Tooltip:SetTitle" in line:
                     continue
                 if m := _SET_TITLE.search(line.rstrip()):
-                    out.append((addon, rel, n, m.group(1)))
+                    found.append((n, m.group(1), function))
+            per = {}
+            for _, _, function in found:
+                per[function] = per.get(function, 0) + 1
+            seen = {}
+            for n, arg, function in found:
+                seen[function] = seen.get(function, 0) + 1
+                site = f"{rel}@{function}" + (f"~{seen[function]}" if per[function] > 1 else "")
+                out.append((addon, rel, n, arg, site))
     return out
 
 
@@ -168,8 +193,8 @@ def main(argv: list[str]) -> int:
         return 2
     addons, names = Path(argv[0]), {a.casefold() for a in argv[1:]}
     if mode == "titles":
-        for addon, rel, n, arg in titles(addons, names or None):
-            print(f"{addon} {rel}:{n} {arg}")
+        for addon, _, n, arg, site in titles(addons, names or None):
+            print(f"{addon} {site} {arg}  # line {n}")
     elif mode == "files":
         for addon, _, files in sweep(addons):
             if addon in names:

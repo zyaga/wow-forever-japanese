@@ -8,6 +8,7 @@ from contextlib import redirect_stdout
 from pathlib import Path
 
 import pytest
+from local_inputs import forever_client, forever_ui, need
 
 from wfj.dev import ui_inventory
 
@@ -70,17 +71,11 @@ def test_main_stamps_the_header_and_takes_no_client(tmp_path):
     assert _run(["--client", "era", str(forever), str(gs)])[0] == 2
 
 
-def _source(env: str, default: Path) -> Path | None:
-    path = Path(os.environ[env]) if env in os.environ else default
-    return path if path.exists() else None
-
-
 def test_forever_output_matches_the_committed_inventory(root):
-    # Needs a Forever UI extract + its GlobalStrings: WFJ_FOREVER_UI=<extract>/interface/addons, WFJ_FOREVER_GLOBALSTRINGS
-    addons = _source("WFJ_FOREVER_UI", root / "predecessors/forever-ui-1.60.1.70170/interface/addons")
-    gs = _source("WFJ_FOREVER_GLOBALSTRINGS", root / "predecessors/clients/forever-1.60.1.70170/GlobalStrings.csv")
-    if addons is None or gs is None:
-        pytest.skip("no Forever UI extract")
+    # The pinned build's UI extract and GlobalStrings (WFJ_FOREVER_UI / WFJ_FOREVER_GLOBALSTRINGS override them)
+    addons = need(forever_ui(root), "the Forever UI extract")
+    gs_default = forever_client(root) / "GlobalStrings.csv"
+    gs = need(Path(os.environ.get("WFJ_FOREVER_GLOBALSTRINGS", gs_default)), "the Forever GlobalStrings.csv")
     code, out = _run([str(addons), str(gs)])
     assert code == 0
     assert out == (root / "pipeline/ui_inventory.txt").read_text(encoding="utf-8")
