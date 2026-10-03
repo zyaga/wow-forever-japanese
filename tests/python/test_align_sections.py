@@ -40,3 +40,15 @@ def test_sections_ship_as_their_own_lua_slot():
         {"n": 6, "key": "abcd", "ja": "Tent：休息", "shape": "1/1"}]})
     assert lit == ('{ sections = { head = "見出し", hkey = "00ff", '
                    '{ n = 6, key = "abcd", ja = "Tent：休息", shape = "1/1" } } }')
+
+
+def test_an_opening_that_begins_another_opening_ships_nothing():
+    from wfj.cmd.generate import _sections
+    parts = ["Tent: You rest $1d.", "Tent: You rest well $2w1.", "Banner: Up $3w1.", "Well: Up $4w1.", "Chair: Up $5w1."]
+    en = "Head:\r\n\r\n" + "".join(f"$?a{i}[{p}\r\n\r\n][]" for i, p in enumerate(parts, 1))
+    b = align.branching(en)
+    assert b.sectioned
+    texts = ["見出し\n\n"] + [f"見出し\n\n部分{i}\n\n" for i in range(1, len(b.variants))]
+    assert _sections(b, texts) == "sections_indistinguishable"
+    other = align.branching(en.replace("Tent: You rest well", "Lodge: You rest well"))
+    assert isinstance(_sections(other, texts), dict)

@@ -47,6 +47,14 @@ local ENTRY_KEYS = { t = true, i = true, f = true, h = true, e = true, b = true,
 local db, deps
 local readOnly, cappedPrinted, errors, lastError = false, false, 0, nil
 local memo = {} -- key → { raw, result, reason }: the same text again this session answers without re-hashing
+-- NPC speech adds an entry per distinct line heard, so the memo is dropped at MEMO_CAP entries (a dropped entry is
+-- only evaluated again, never recorded twice: the stored entry answers "seen")
+local MEMO_CAP, memoCount = 4096, 0
+local function remember(key, value)
+  if memoCount >= MEMO_CAP then memo, memoCount = {}, 0 end
+  if memo[key] == nil then memoCount = memoCount + 1 end
+  memo[key] = value
+end
 
 WFJ.Settings.define{ id = "collector.enabled", kind = "boolean", default = true,
   label = "Record English for future translations", ja = "今後の翻訳のために英語テキストを記録する" }
@@ -90,15 +98,16 @@ end
 -- normalize_v1's exact-case replacement leaves alone; quest text gets the lowercase forms replaced too, so the
 -- stored text matches pfQuest's `$c` and the field is recognised as known.
 -- A plural the server built from the token ("$cs like yourself" → "druids like yourself") is the word plus "s"
--- as one word, which no whole-word match finds: it becomes the token plus "s", as normalize_v1 writes "$cs". A
--- literal plural in a line is still found through the candidates without the class or race.
+-- as one word, which no whole-word match finds. Only the lookup candidate marked `plural` (Collector.keys, last)
+-- turns it into the token plus "s", as normalize_v1 writes "$cs": recorded text keeps a literal plural as written,
+-- since the import could not put the word back into a stand-in line.
 local function replaceLower(text, player)
   for _, pair in ipairs({ { player.class, "{class}" }, { player.race, "{race}" } }) do
     local word = pair[1]
     if type(word) == "string" and word ~= "" then
-      text = Normalize.replaceWord(text, word .. "s", pair[2] .. "s")
+      if player.plural then text = Normalize.replaceWord(text, word .. "s", pair[2] .. "s") end
       if word:lower() ~= word then
-        text = Normalize.replaceWord(text, word:lower() .. "s", pair[2] .. "s")
+        if player.plural then text = Normalize.replaceWord(text, word:lower() .. "s", pair[2] .. "s") end
         text = Normalize.replaceWord(text, word:lower(), pair[2])
       end
     end
@@ -215,7 +224,7 @@ end
 
 function Collector.load(saved, d)
   deps, readOnly, cappedPrinted, errors, lastError = d, false, false, 0, nil
-  memo = {}
+  memo, memoCount = {}, 0
   if type(saved) ~= "table" then
     db = fresh()
     return db
@@ -378,7 +387,7 @@ local function recordImpl(kind, id, field, raw)
   -- refusals that depend on state that can still change (no player name or build yet).
   if result ~= "capped" and reason ~= "no_player" and reason ~= "no_build" then
     local replay = (result == "recorded" or result == "replaced") and "seen" or result
-    memo[key] = { raw = raw, result = replay, reason = reason }
+    remember(key, { raw = raw, result = replay, reason = reason })
   end
   return result, reason
 end
@@ -404,7 +413,7 @@ local function recordGossipImpl(raw, guid)
   local result, reason = evaluate("gossip", nil, "text", raw, nil, npc)
   if result ~= "capped" and reason ~= "no_player" and reason ~= "no_build" then
     local replay = (result == "recorded" or result == "replaced") and "seen" or result
-    memo[mkey] = { result = replay, reason = reason }
+    remember(mkey, { result = replay, reason = reason })
   end
   return result, reason
 end
@@ -441,6 +450,12 @@ local function candidates(player)
   if type(name) == "string" and name ~= "" and codePoints(name) < 3 then
     list[6] = { name = name, class = player.class, race = player.race, short = true }
     list[7] = { name = name, short = true }
+  end
+  -- last: the class or race plural as the token ("druids" → "{class}s"); a line stored with the literal plural
+  -- is found first by the candidates without them
+  if name then
+    list[#list + 1] = { name = name, class = player.class, race = player.race, short = list[6] and true or nil,
+      plural = true }
   end
   return list
 end
@@ -569,6 +584,6 @@ function Collector.clear()
   if not db or readOnly then return nil end
   local n = Collector.status().entries
   db.entries, db.builds, db.bytes, db.capped = {}, {}, 0, false
-  cappedPrinted, memo = false, {}
+  cappedPrinted, memo, memoCount = false, {}, 0
   return n
 end

@@ -52,10 +52,11 @@ end
 
 -- The chat event handler for a monster line: the formatter and the AddMessage call it makes.
 local lineID = 0
-local function npc(frame, typeId, template, body, speaker, guid)
+local function npc(frame, typeId, template, body, speaker, guid, target)
   lineID = lineID + 1
   local function formatter(msg) return format(template .. msg, speaker, speaker) end
   local args = { body, speaker, n = 12 }
+  args[5] = target
   args[11] = lineID
   args[12] = guid
   frame:AddMessage(formatter(body), 1, 1, 0.6, typeId, nil, nil, "CHAT_MSG_MONSTER", args, formatter)
@@ -147,6 +148,13 @@ describe("NPC speech", function()
     npc(f, SAY, "%s says: ", "A secret line.", "Ralph", "Creature-0-1-2-3-1234-00002")
     assert.are.same({ { "Something no one translated!", "Creature-0-1-2-3-216000-00001" },
       { "Stay close, Testplayer!", "Creature-0-1-2-3-1234-00002" } }, recorded)
+    -- a line to another player is never recorded (it may hold their name); one to this player is
+    _G.UnitName = function() return "Testplayer" end
+    npc(f, SAY, "%s says: ", "Thank you, Otherguy!", "Ralph", "Creature-0-1-2-3-1234-00002", "Otherguy")
+    npc(f, SAY, "%s says: ", "Thank you, Testplayer!", "Ralph", "Creature-0-1-2-3-1234-00002", "Testplayer")
+    assert.are.equal(3, #recorded)
+    assert.are.equal("Thank you, Testplayer!", recorded[3][1])
+    _G.UnitName = nil
     WFJ.Collector = nil
   end)
 

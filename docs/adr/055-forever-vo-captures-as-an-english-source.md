@@ -57,7 +57,12 @@ held 577 submissions with about 27,000 quest lines from builds 69913 to 70205.
   English exactly, which is good evidence the captures are accurate.
 - A text one player sent stays out until a second sends it; refreshing the pin picks those up.
 - The two-submission rule counts the `origin` each capture file names, so one person filing two issues passes it.
-  The backstop is the pinned commit: a pin is moved by a person, who reads what the new captures add.
+  Measured at the pin: of 576 submissions, 341 hold nothing another submission lacks (most likely the same player
+  re-uploading a growing file), which leaves about 235 distinct players. Counted that way, 46 of the 791 imported
+  lines rest on one player. They stay: a re-upload repeats what that client showed, and a line that is wrong shows
+  the stale marker where the live English differs. The backstop is the pinned commit: a pin is moved by a person,
+  who reads what the new captures add. A capture entry that is not a well-formed quest record is counted as
+  `malformed` and skipped.
 - A capture written for one gender (`brother` / `sister`) ships that wording; a player of the other gender sees the
   stale marker until our collector records their version.
 - **Removing the source** is a data change, not a code hunt: when a better source or our collector has replaced

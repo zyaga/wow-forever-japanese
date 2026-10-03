@@ -667,3 +667,11 @@ describe("Core/Collector plural class and race words", function()
     assert.is_true(has(C.keys(live, druid), key("The druids of Moonglade await, $N.")))
   end)
 end)
+
+describe("Core/Collector recorded text keeps a literal plural", function()
+  it("an Orc reading 'the orcs of Durotar' records the word, not $Rs", function()
+    local ns = loadCollector()
+    local orc = { name = "Grok", class = "Warrior", race = "Orc" }
+    assert.are.equal("Kill the orcs of Durotar, $N.", ns.Collector.text("Kill the orcs of Durotar, Grok.", orc))
+  end)
+end)

@@ -55,22 +55,35 @@ def _build(value: object) -> int:
         return 0
 
 
+def _qid(entry: object) -> int | None:
+    """A capture entry's quest id, or None for an entry that is not a well-formed quest record."""
+    if not isinstance(entry, dict):
+        return None
+    try:
+        return int(entry["questID"])
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
 def read_captures(folder: Path, titles: Mapping[int, str]) -> Result:
     """Every (quest id, field) the captures under `folder/captures` agree on. → Result (sorted by key)"""
     files = sorted((folder / "captures").glob("*.json"))
     if not files:
         raise ValueError(f"forever-vo: no captures/*.json under {folder}")
     by: dict[tuple[int, str], dict[str, Candidate]] = {}
-    skipped = {"other_language": 0, "no_title": 0}
+    skipped = {"other_language": 0, "no_title": 0, "malformed": 0}
     for path in files:
         doc = json.loads(path.read_text(encoding="utf-8"))
         origin = str(doc.get("origin") or path.stem)
         for entry in (doc.get("quests") or {}).values():
+            qid = _qid(entry)
+            if qid is None:
+                skipped["malformed"] += 1
+                continue
             field_ = FIELDS.get(entry.get("event"))
             text = entry.get("text")
             if field_ is None or not isinstance(text, str) or not text.strip():
                 continue
-            qid = int(entry["questID"])
             title = titles.get(qid)
             if title is None:
                 skipped["no_title"] += 1
@@ -119,7 +132,8 @@ def english_origins(folder: Path, titles: Mapping[int, str]) -> set[str]:
     for path in sorted((folder / "captures").glob("*.json")):
         doc = json.loads(path.read_text(encoding="utf-8"))
         origin = str(doc.get("origin") or path.stem)
-        seen = [(titles.get(int(e["questID"])), e.get("title")) for e in (doc.get("quests") or {}).values()]
+        seen = [(titles.get(q), e.get("title")) for e in (doc.get("quests") or {}).values()
+                if (q := _qid(e)) is not None]
         known = [(ours, theirs) for ours, theirs in seen if ours is not None]
         if known and all(ours == theirs for ours, theirs in known):
             good.add(origin)

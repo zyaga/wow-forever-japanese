@@ -185,6 +185,10 @@ def _sections(b: align.Branching, texts: list[str]) -> str | dict[str, Any]:
                          "shape": v.shape})
     if len({s["key"] for s in sections}) != len(sections):
         return "sections_indistinguishable"
+    # the addon takes the first section whose opening words fit, so no opening may begin another's
+    openings = [align.section_prefix(v.en[len(head_en):]) for v in b.variants[1:]]
+    if any(a != b_ and b_.startswith(a) for a in openings for b_ in openings):
+        return "sections_indistinguishable"
     return {"head": head_ja.rstrip(), "hkey": hash_key(normalize_v1(head_en.strip())), "sections": sections}
 
 

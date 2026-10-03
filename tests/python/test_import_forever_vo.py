@@ -170,3 +170,17 @@ def test_a_gender_alias_wording_and_a_skipped_key_are_not_imported(tmp_path, mon
     assert run(["english", "forever-vo", str(folder), "--commit", "025070f", "--skip", str(skip)]) == 0
     got = sorted(ln["en"] for ln in Store(data, english=True).load("gossip"))
     assert got == ["Hello there.", both]  # the female wording rides the alias; the skipped key stays out
+
+
+def test_a_malformed_entry_is_counted_not_fatal(tmp_path):
+    folder = _captures(tmp_path / "fvo", [[_entry(97977, "complete", "Nature's Call", DONE)],
+                                          [_entry(97977, "complete", "Nature's Call", DONE)]])
+    path = folder / "captures" / "issue-0.json"
+    doc = json.loads(path.read_text(encoding="utf-8"))
+    doc["quests"]["bad"] = {"event": "complete", "text": "No id."}
+    doc["quests"]["worse"] = "not a record"
+    path.write_text(json.dumps(doc), encoding="utf-8")
+    result = read_captures(folder, TITLES)
+    assert [(c.id_, c.field) for c in result.captures] == [(97977, "completion")]
+    assert result.skipped["malformed"] == 2
+    read_greetings(folder, TITLES)  # the language check reads past it too
