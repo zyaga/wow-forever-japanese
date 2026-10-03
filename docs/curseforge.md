@@ -42,7 +42,7 @@ Point at a Japanese word in quest text, NPC dialogue, a book page or a window la
 
 ### <span style="color:#E8C77E;">What the addon records</span>
 
-When the game shows English the addon has no translation for, the addon notes that English in its saved settings file, so it can be translated later. Your character's name is never stored. Your character's class and race are noted too, because some lines change with them. No account, realm or location is stored. Nothing is sent anywhere unless you send it yourself. You can turn it off under **English Collector** in the settings.
+When the game shows English the addon has no translation for, the addon notes that English in its saved settings file, so it can be translated later. It saves your class and race, because some game lines change depending on them. It never saves your character's name, account, realm or location. Nothing is sent anywhere unless you send it yourself. You can turn it off under **English Collector** in the settings.
 
 To send what it noted, click **Send English** on that page (or type **/wfj collector send**). Copy the link the window shows, open it in your web browser and submit the GitHub issue form it opens, already filled in; then click **I sent it** in the game. If the window shows a second box, paste that text into the form too. When the window says the text is too long even to paste, it asks you to zip the saved file and drag it into the same form (type **/reload** first if you played since logging in).
 
@@ -109,7 +109,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 ### <span style="color:#E8C77E;">アドオンが記録するもの</span>
 
-ゲームに表示された英語のうち、アドオンに日本語訳がないものは、あとで翻訳できるようにアドオンの設定ファイルに記録されます。キャラクター名は保存されません。一部の文章はクラスや種族で変わるため、キャラクターのクラスと種族も記録されます。アカウント・レルム・位置は保存しません。自分で送らない限り、どこにも送信されません。設定の **英語テキスト収集** でオフにできます。
+ゲームに表示された英語のうち、アドオンに日本語訳がないものは、あとで翻訳できるようにアドオンの設定ファイルに記録されます。クラスと種族は保存されます。ゲームの文章の一部がそれによって変わるためです。キャラクター名、アカウント、レルム、位置は保存されません。自分で送らない限り、どこにも送信されません。設定の **英語テキスト収集** でオフにできます。
 
 記録した英語を送るには、そのページの **英語を送る** をクリックします（**/wfj collector send** でも同じです）。ウィンドウに表示されたリンクをコピーしてブラウザで開き、入力済みで開く GitHub の Issue フォームを送信してから、ゲーム内で **送信しました** をクリックします。ウィンドウに 2 つ目の欄があるときは、その文字列もフォームに貼り付けてください。貼り付けられないほど長いとウィンドウに表示されたときは、保存ファイルを zip にして同じフォームにドラッグするよう案内されます（ログイン後に遊んだ場合は先に **/reload** してください）。
 

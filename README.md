@@ -75,8 +75,7 @@ the minimap button on or off.
 
 **English it has no Japanese for.** When the game shows English the addon has no translation for (quest text, NPC
 dialogue with the id of the NPC who said it, item and spell descriptions, NPC names), the addon notes that English
-in its saved settings file, so it can be translated later. Your character's name is never stored.
-Your character's class and race are noted too, because some lines change with them. No account, realm or location is stored. Nothing is sent anywhere unless you send it yourself. It is on by
+in its saved settings file, so it can be translated later. It saves your class and race, because some game lines change depending on them. It never saves your character's name, account, realm or location. Nothing is sent anywhere unless you send it yourself. It is on by
 default, the addon says so in chat the first time, and you can turn it off under **English Collector** in the
 settings.
 
@@ -209,7 +208,7 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
 ![アドオンの設定画面](docs/images/settings.jpg)
 
-**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。キャラクター名は保存されません。一部の文章はクラスや種族で変わるため、キャラクターのクラスと種族も記録されます。アカウント・レルム・位置は保存しません。自分で送らない限り、どこにも送信されません。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
+**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。クラスと種族は保存されます。ゲームの文章の一部がそれによって変わるためです。キャラクター名、アカウント、レルム、位置は保存されません。自分で送らない限り、どこにも送信されません。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
 
 **記録した英語の送り方。** 設定の **英語テキスト収集** ページで **英語を送る** をクリックします（`/wfj collector send` と入力しても同じです）。まだ送っていない行が 1 つのリンクにまとめられたウィンドウが開きます。リンクをコピーして（クリックして Ctrl+C）ブラウザで開くと、入力済みの GitHub の Issue フォームが開きます。ウィンドウに 2 つ目の欄があるときは、リンクに入りきらない長さです。その文字列もフォームの欄に貼り付けてください。Issue を送信したら、ゲーム内で **送信しました** をクリックします。次回は新しい行だけを送ります。その時点で翻訳がある行は除かれます。貼り付けられないほど長いとウィンドウに表示されたときは、保存ファイルを zip にして同じフォームにドラッグするよう案内されます（ログイン後に遊んだ場合は先に `/reload` してください）。
 
