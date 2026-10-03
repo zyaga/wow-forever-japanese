@@ -14,6 +14,7 @@ local UI = {
   ITEM_SPELL_MAX_USABLE_LEVEL = { " (Requires level %d or below)", "(レベル%d以下が必要)" },
   INVTYPE_WEAPONMAINHAND = { "Main Hand", "メインハンド" },
   ARMOR_TEMPLATE = { "%s Armor", "アーマー %s" },
+  ITEM_MOD_DAMAGE_PER_SECOND_SHORT = { "damage per second", "秒間ダメージ" },
 }
 local DATA = {
   [1001] = { ja = "体力を50回復する。", status = "." }, -- trusted, ungated
@@ -80,6 +81,25 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal("-11 Armor", _G.ShoppingTooltip1TextLeft5:GetText())
     assert.are.equal("|cffff2020-3|r Armor", _G.ShoppingTooltip1TextLeft6:GetText())
+  end)
+
+  it("a stat change with only a short stat name shows the Japanese name, the number as the client wrote it",
+  function()
+    local tt = _G.ShoppingTooltip1
+    Stub.setItemTooltip(tt, "|Hitem:2:0:0:0|h[Staff]|h", { "Handcrafted Staff", "(1.4 damage per second)" })
+    tt:AddLine(" ")
+    tt:AddLine(_G.ITEM_DELTA_DESCRIPTION)
+    tt:AddLine("|cff20ff20+0.7|r damage per second") -- seen in game: the number green, the name white
+    tt:AddLine("-2 damage per second")
+    tt:AddLine("+3 Unknown Stat") -- a name the dictionary does not hold stays as written
+    tt:SetShown(true)
+    assert.are.equal("秒間ダメージ |cff20ff20+0.7|r", _G.ShoppingTooltip1TextLeft5:GetText())
+    assert.are.equal("秒間ダメージ -2", _G.ShoppingTooltip1TextLeft6:GetText())
+    assert.are.equal("+3 Unknown Stat", _G.ShoppingTooltip1TextLeft7:GetText())
+    assert.are.equal("(1.4 damage per second)", _G.ShoppingTooltip1TextLeft2:GetText()) -- before the header: not ours
+    assert.is_nil(WFJ.UIIndex:match("damage per second")) -- a stat name is asked for by key only (names collide)
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal("|cff20ff20+0.7|r damage per second", _G.ShoppingTooltip1TextLeft5:GetText())
   end)
 
   it("a trusted item translation gets the max-usable-level trailer in Japanese; the Collector sees no trailer",

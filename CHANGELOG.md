@@ -11,6 +11,7 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Fixed
 - A quest window opened for the first time after logging in no longer turns back to English when its reward items finish loading.
+- The stat changes in an item comparison ("+0.7 damage per second") show the stat in Japanese, the number as the game writes it.
 
 ## 0.1.0-alpha.5 - 2026-10-03
 

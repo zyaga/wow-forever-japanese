@@ -311,7 +311,8 @@ Tooltip.plain = plain
 
 -- A widget's laid-out size for the trace: " w=<width> sw=<string width> h=<height> n=<lines>", each part only when the
 -- client has the method and the value may be read. A wrapped line that moves between passes shows here.
-local GEOMETRY = { { "w", "GetWidth" }, { "sw", "GetStringWidth" }, { "h", "GetHeight" }, { "n", "GetNumLines" } }
+local GEOMETRY = { { "w", "GetWidth" }, { "sw", "GetStringWidth" }, { "ww", "GetWrappedWidth" }, { "h", "GetHeight" },
+  { "n", "GetNumLines" } }
 local function geometry(widget)
   local parts = {}
   for _, g in ipairs(GEOMETRY) do
@@ -319,6 +320,12 @@ local function geometry(widget)
     if type(fn) == "function" then
       local ok, v = pcall(fn, widget)
       if ok and type(v) == "number" and not anySecretOf(v) then parts[#parts + 1] = ("%s=%.1f"):format(g[1], v) end
+    end
+  end
+  if type(widget.GetFont) == "function" then -- the face a wrap was measured in
+    local ok, path, size = pcall(widget.GetFont, widget)
+    if ok and type(path) == "string" and type(size) == "number" and not anySecretOf(path, size) then
+      parts[#parts + 1] = ("font=%s@%.1f"):format(path:match("[^\\/]+$") or path, size)
     end
   end
   return #parts > 0 and (" " .. table.concat(parts, " ")) or ""
@@ -808,6 +815,11 @@ function Tooltip.onItem(frame)
   -- No run still has structural lines.
   local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs)
   traceFrame(frame, "readable item", id, lines, ("-> rendered %d"):format(n))
+  -- the same tooltip one frame later, as the client drew it: a wrap that moves after this pass shows there
+  local after = Tooltip.trace and Compat.resolve("C_Timer.After")
+  if type(after) == "function" then
+    after(0, function() traceFrame(frame, "item one frame later", id, Tooltip.lines(frame), "") end)
+  end
   return n
 end
 
@@ -877,6 +889,28 @@ function Tooltip.matchColoured(index, text)
   end
   return key, args
 end
+-- A stat change with no template of its own: "<signed number> <short stat name>" ("+0.7 damage per second", the
+-- ITEM_MOD_*_SHORT names the client's C_TooltipComparison.GetItemComparisonDelta writes), the number possibly
+-- coloured. The name must be one of those stat names; it shows as "<Japanese name> <number as written>".
+-- → key, args | nil
+local statNameKeys = setmetatable({}, { __mode = "k" }) -- index → the list of its stat name keys
+function Tooltip.matchStatChange(index, text)
+  local bare = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+  local name = bare:match("^[%+%-][%d%.,]+ (.+)$")
+  if not name or #text <= #name + 1 or text:sub(-#name - 1) ~= " " .. name then return nil end
+  local keys = statNameKeys[index]
+  if not keys then
+    keys = {}
+    for k in pairs(index.rows or {}) do
+      if WFJ.UIStrings.isStatNameKey(k) then keys[#keys + 1] = k end
+    end
+    statNameKeys[index] = keys
+  end
+  local key, args = index:matchOnly(name, keys)
+  if not key or args ~= nil then return nil end
+  return key, { form = "number", rest = text:sub(1, #text - #name - 1) }
+end
+
 local COMPARE_HEADER_KEYS = { "EQUIPPED", "IF_EQUIPPED_TOGETHER" }
 Tooltip.COMPARE_HEADER_KEYS = COMPARE_HEADER_KEYS
 function Tooltip.onCompareShow(frame)
@@ -902,6 +936,7 @@ function Tooltip.onCompareShow(frame)
           deltas = true
         elseif not key and deltas and not anySecret({ l.text }) then
           key, args = Tooltip.matchColoured(index, l.text)
+          if not key then key, args = Tooltip.matchStatChange(index, l.text) end
         end
       end
       local ctx = { args = args, refit = refit }

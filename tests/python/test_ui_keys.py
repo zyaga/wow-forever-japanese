@@ -121,7 +121,8 @@ DRAFT_SOURCES = {"draft-ui",
                  "draft-repull70170-ui-sg12",  # the keys new on 1.60.1.70170 and the lines it reworded
                  # the last interface lines, the tooltip owner / socket / trade lines and the unit lines the
                  # tooltip line kinds surfaced
-                 "draft-repull70170-lastui-sg12", "draft-repull70170-kinds-sg12", "draft-repull70170-unitlines-sg12"}
+                 "draft-repull70170-lastui-sg12", "draft-repull70170-kinds-sg12", "draft-repull70170-unitlines-sg12",
+                 "draft-ui-stat-changes"}  # the short stat names of the comparison's stat change lines
 
 
 def test_every_key_has_one_machine_line_and_its_english(root):
@@ -202,7 +203,9 @@ def test_ui_words_that_equal_a_name_are_the_reviewed_list(root):
     # ship nothing and are never matched
     english = {ln["id"]: ln["en"] for ln in Store(root / "data", english=True).load("ui")}
     keys = set(wago.expand_keys(_keys(root), english))
-    ui = {en for key, en in english.items() if key in keys}
+    # the short stat names are asked for by key only, by the comparison's stat change lines
+    # (Core/UIStrings isStatNameKey), so a name that equals one is never matched by them
+    ui = {en for key, en in english.items() if key in keys and not (key.startswith("ITEM_MOD_") and key.endswith("_SHORT"))}
     assert ui & names == KNOWN_NAME_COLLISIONS
 
 
