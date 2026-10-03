@@ -88,6 +88,29 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     WFJ.ShippedGossipKey, DATA.gossip = nil, nil
   end)
 
+  it("a repeated quest's progress with no Japanese of its own takes the text keyed by its English", function()
+    DATA.gossip = { kp = { ja = "良い焚き火は、あらゆる良いキャンプの土台です。", status = "." } }
+    local recorded = {}
+    local record = WFJ.Collector.record
+    WFJ.Collector.record = function(kind, id, field, en) recorded[#recorded + 1] = { kind, id, field, en } end
+    WFJ.ShippedGossipKey = function(text) if text == "A good campfire is the foundation to any good camp." then
+      return "kp" end end
+    WFJ.IsQuestFieldEnglish = function(id) return id == 2 end -- quest 2 has its own translation
+    setQuest(9)
+    Stub.quest.progress = "A good campfire is the foundation to any good camp."
+    Stub.showProgress()
+    assert.are.equal("良い焚き火は、あらゆる良いキャンプの土台です。", QuestProgressText:GetText())
+    assert.are.same({ "quest", 9, "progress", "A good campfire is the foundation to any good camp." }, recorded[2])
+    -- the quest's own translation wins where it has one
+    setQuest(2)
+    Stub.quest.progress = "Did you get it?"
+    WFJ.ShippedGossipKey = function() return "kp" end
+    Stub.showProgress()
+    assert.are.equal("まだか？", QuestProgressText:GetText())
+    WFJ.ShippedGossipKey, WFJ.IsQuestFieldEnglish, DATA.gossip = nil, nil, nil
+    WFJ.Collector.record = record
+  end)
+
   it("detail window translates title / description / objectives by field with the API id; refit runs",
   function()
     Stub.showDetail()

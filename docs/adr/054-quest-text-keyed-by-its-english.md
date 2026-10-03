@@ -47,6 +47,14 @@ to a quest id, but that id is not readable where they show, or (for a variant) n
      (`completionLogKey` in `UI/QuestMap.lua`), before the UI objective templates.
 4. **A logged exception.** This is an exception to the rule that only text with no game id is keyed by the hash of
    its English, approved by the maintainer on 2026-10-03. It covers these two texts from the quest cache only.
+5. **Repeated quests (amended 2026-10-03, approved by the maintainer).** Forever repeats a quest under several ids
+   (one per start area or profession) with the same text, and a copy often has no progress or turn-in English of
+   its own. `generate` (`quest_text_aliases`) groups quests by English title; where a copy lacks the field's
+   English, every trusted translation of that field among the copies also ships in the gossip table keyed by
+   the hash of its English, with its reading (the lowest quest id answers a key two copies hold; a key the gossip
+   data already holds keeps its own row). The quest window shows a progress or turn-in text from its keyed row
+   only when the live text is not the quest's own, as for a conditional description, and records it as the
+   quest's own English. Only an exact English match shows it.
 
 ## Consequences
 

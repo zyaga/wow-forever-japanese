@@ -40,6 +40,7 @@ WFJ.Data.add("gossip", {
   ["d1c755bbacaa1fbe"] = { "卓越への道には、乗り越えねばならぬ障害が数多くある。そなたの道も例外ではない……", "." },
   ["d1c7b9c7a190f643"] = { "Regtharと話すといい。彼は賢く、あなたが求めるものを見つける手助けをしてくれる。", "." },
   ["d1cf2e776d3ae716"] = { "Darkmoon Faireが町にやってくる！見逃すな！", "." },
+  ["d1cff4b78584f18e"] = { "敵の血こそがmark of honorだ。お前はそのmarkを持っているか?", "." },
   ["d1d0d4aad327371a"] = { "Tower Point EastはField of Strifeと南のHorde領との間の峠を押さえている。\n\nAllianceが支配している。East Frostwolf TowerはFrostwolf VillageとFrostwolf Keepの間の門を守っている。\n\nAllianceが支配している。", "." },
   ["d1d3fed4d2d5c738"] = { "今のは「護衛しやすい」とはとても言えなかったな。こいつらを迂回する道を探そう。南の、あの岩の方へ向かおう。岩の間をすり抜ければ、ogreを避けられるかもしれない。", "." },
   ["d1d52e793fa1ae39"] = { "あいつらはちょっと狩りと採集をしてるだけじゃねえか。それの何が悪いってんだ？？", "." },

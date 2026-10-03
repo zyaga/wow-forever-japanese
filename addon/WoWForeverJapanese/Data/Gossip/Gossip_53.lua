@@ -17,6 +17,7 @@ WFJ.Data.add("gossip", {
   ["53421fa25cad893e"] = { "Rut'theran Ferryに行くには、Darnassusへ行き、TeldrassilのふもとにあるRut'theran Villageへのポータルを使う必要があります。", "." },
   ["5348e4d1faf5bb06"] = { "私はただお仕えするためだけに生きております、大族長！ あなたのお導きがなければ、私の人生は空虚で無意味です。", "." },
   ["534d4d999983d8a6"] = { "%sは苦しみにもだえている。Discipleが突破しかけているようだ。", "." },
+  ["5354bf2d0785db08"] = { "scorpidは手なずけられたか?", "." },
   ["5358d7d322332ff8"] = { "Hall of the Braveへ行け。そこにいるThe DefilerのDeze Snowbaneが、Arathi Basinへ行く手助けをしてくれるだろう。", "." },
   ["535933a1c59debbb"] = { "さあな、Jill。俺たちがさぼってる時にKlavenが下りてきたら、俺たちもあいつらの仲間入りかもしれないぞ！", "." },
   ["535dc65e7afed0c1"] = { "Hordeの民よ、Orgrimmarの市民よ、集まって、Hordeの英雄を称えよ！この日、{name}は我らが栄光ある大族長の庇護のもと、Black Dragonflightに致命の一撃を加えた。竜の母、Onyxiaは討ち取られたのだ！", "." },

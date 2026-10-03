@@ -76,7 +76,7 @@ FILE_PREFIX = {
 # `wago` likewise: `MERGE=union` is the Makefile default and `TABLES_SRC=wago` too, so a `WAGO_BUILD` bump
 # keeps the rows the new build dropped at the old one; refusing them would block the build with no import
 # able to clear it.
-# the collector records what the client showed at the build it ran on, and dumps add up across builds (ADR-053)
+# the collector records what the client showed at the build it ran on; dumps add up across builds (ADR-053)
 MULTI_VERSION_SOURCES = frozenset({"wdb", "db2", "wago", "collector"})
 GENERATED_TYPES = (*TYPES, *KEYED_TYPES, "ui")
 # TOC load order: the translation types, then the readings (a reading row is only ever read after

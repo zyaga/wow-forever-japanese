@@ -143,6 +143,7 @@ end
 
 -- Per panel: its surface id, its refit (one closure each, so Render.refresh dedupes it), and
 -- { field, widget key, English getter } rows. Getters are called at hook time, never cached.
+local KEYED_FIELDS = { description = true, progress = true, completion = true }
 local function title() return call("getTitle") end
 local PANELS = {
   detail   = { surface = "questframe.detail", refit = refitFor("detailScroll"),
@@ -221,14 +222,16 @@ function QuestFrame.showPanel(panelName)
     local field, widgetKey, getter = spec[1], spec[2], spec[3]
     local fs = Compat.get(DECLARE, widgetKey)
     local en = getter()
-    -- a conditional description (another wording of the quest for this character), keyed by its English: only
-    -- when the line is not the quest's own description
-    local variant = field == "description" and type(WFJ.ShippedGossipKey) == "function"
+    -- text keyed by its English, used only when the line is not the quest's own (ADR-054): a conditional
+    -- description (another wording of the quest for this character), or the progress / turn-in text of a quest
+    -- Forever repeats under another id with the same text
+    local variant = KEYED_FIELDS[field] and type(WFJ.ShippedGossipKey) == "function"
       and not (type(WFJ.IsQuestFieldEnglish) == "function" and WFJ.IsQuestFieldEnglish(id, field, en))
       and WFJ.ShippedGossipKey(en)
-    -- The API English is the truth even when the widget is decorated: record before the equality guard. A variant
-    -- is never recorded as the quest's description: other characters see the quest's own wording.
-    if not variant then WFJ.Collector.record("quest", id, field, en) end
+    -- The API English is the truth even when the widget is decorated: record before the equality guard. A
+    -- conditional description is never recorded as the quest's description: other characters see the quest's own
+    -- wording. A repeated quest's progress / turn-in text is this quest's own, and is recorded.
+    if not (variant and field == "description") then WFJ.Collector.record("quest", id, field, en) end
     -- The panel is shown again without the client rewriting its prose (a reward redraw, see onShowRewards): a
     -- field that still shows our text for the same English is kept as it is.
     local rec = WFJ.SurfaceState.get(panel.surface, field)
