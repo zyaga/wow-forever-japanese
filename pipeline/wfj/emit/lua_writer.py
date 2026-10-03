@@ -304,7 +304,11 @@ def meta_text(schema_version: int, english: dict[str, list[str]], counts: dict[s
     more than one. A source normally has exactly one; the quest cache has two, because two clients served
     different subsets of the quests and a union import keeps both (ADR-020). The per-line
     `english.src` is the exact version in every case; this is the summary."""
-    eng = ", ".join(f"{k} = {lua_string('+'.join(sorted(v)))}" for k, v in sorted(english.items()))
+    # a source name that is not a Lua identifier ("forever-vo") is written as a bracketed string key
+    eng = ", ".join(
+        f"{k if k.isidentifier() else '[' + lua_string(k) + ']'} = {lua_string('+'.join(sorted(v)))}"
+        for k, v in sorted(english.items())
+    )
     cnt = ", ".join(f"{k} = {counts.get(k, 0)}" for k in schema.TOC_ORDER)
     fields = ", ".join(
         f"{t} = {{ {', '.join(lua_string(f) for f in schema.SLOTS[t]['fields'])} }}" for t in schema.TYPES

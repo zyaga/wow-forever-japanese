@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-03 at commit `5dbc3c55`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-03 at commit `5f5851e8`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -9,7 +9,7 @@
 
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
-| Quest text | 19,452 | 19,341 | 111 | 100.0% | 0 |
+| Quest text | 20,082 | 19,971 | 111 | 100.0% | 0 |
 | NPC dialogue (gossip, speech) | 10,663 | 10,663 | 0 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 409 | 372 | 37 | 100.0% | 0 |
@@ -17,7 +17,7 @@
 | Item descriptions | 10,124 | 8,611 | 0 | 85.1% | 1,513 |
 | Spell tooltips + auras | 25,458 | 25,270 | 0 | 99.3% | 188 |
 | Interface strings | 15,842 | 15,842 | 0 | 100.0% | 0 |
-| **All** | **83,423** | | | **98.0%** | **1,701** |
+| **All** | **84,053** | | | **98.0%** | **1,701** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 330, gossip 81, item 888, spell 300, ui 313.
@@ -358,9 +358,9 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 18,037 | 18,037 | 100.0% | 177 | 285,931 | 100.0% |
+| quest | 18,667 | 18,667 | 100.0% | 177 | 297,688 | 100.0% |
 | gossip | 10,535 | 10,535 | 100.0% | 0 | 98,907 | 100.0% |
-| ui | 15,137 | 15,001 | 99.1% | 0 | 45,892 | 100.0% |
+| ui | 15,137 | 15,137 | 100.0% | 0 | 46,152 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,571 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages

@@ -9,9 +9,13 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Japanese for the progress and turn-in text of 421 quests (630 lines), mostly ones new in Forever, from text Forever players recorded with the forever-vo addon.
+
 ### Fixed
 - A quest window opened for the first time after logging in no longer turns back to English when its reward items finish loading.
 - The stat changes in an item comparison ("+0.7 damage per second") show the stat in Japanese, the number as the game writes it.
+- Long Japanese tooltip text no longer jumps between two line breaks while you hover a bag item.
 
 ## 0.1.0-alpha.5 - 2026-10-03
 

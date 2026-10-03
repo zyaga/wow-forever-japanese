@@ -713,3 +713,8 @@ dfc476c4c2	Suffer	[DNT] Suffer $s1% maximum health in damage every $t1 (spell to
 63221200cf	Power	Your Healing Power is increased by $w1. $?a1243969[Experie (spell tooltip: a capitalised game word, not a name)
 f2330c6cc0	Critical	Your Critical Strike chance is increased by $w1%. $?a (spell tooltip: a capitalised game word, not a name)
 f2330c6cc0	Strike	Your Critical Strike chance is increased by $w1%. $?a1243969 (spell tooltip: a capitalised game word, not a name)
+836efca15a	rogue	some of his people went rogue and came here
+d5051e8019	priest	while you managed to take out the priest (a cult priest, not the class)
+fc5f93be96	warrior	These warriors will always be remembered (fallen fighters, not the class)
+e50ff968e2	But	until you tap into them, But that's the best part (a capitalised But mid-sentence)
+da487b25fa	Village	The Village I can understand, but the tower? (Shen'dar Village, named just before)

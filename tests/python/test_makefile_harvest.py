@@ -37,13 +37,13 @@ def test_clients_are_pinned_oldest_first(makefile):
 
 @pytest.mark.parametrize("target", ["import", "import-english"])
 def test_every_client_is_imported_in_order_after_the_shared_sources(root, tmp_path, target):
-    """pfQuest and VMaNGOS once, then per client, oldest first, its quest cache
+    """pfQuest, VMaNGOS and forever-vo once, then per client, oldest first, its quest cache
     (after both, so it outranks pfQuest) and its three table imports, each from that client's own folder, at its
     build and label, under union. The preflight of every client runs before the first write."""
     out = _dry(root, target, f"INPUTS={tmp_path}")
     steps = [ln for ln in out if "-m wfj import " in ln and "--dry-run" not in ln]
     verbs = [ln.split("-m wfj import ", 1)[1].split()[1 if " english " in ln else 0] for ln in steps]
-    shared = (["predecessor"] if target == "import" else []) + ["pfquest", "vmangos"]
+    shared = (["predecessor"] if target == "import" else []) + ["pfquest", "vmangos", "forever-vo"]
     # the served step runs last, once, after every client
     assert verbs == shared + ["wdb", "wago-ids", "client-text", "wago-ui"] * 2 + ["served"], verbs
     first_write = out.index(steps[0])
@@ -246,8 +246,9 @@ def test_every_english_import_passes_the_merge_mode(makefile):
     for ln in lines:
         verb = ln.split("import english ", 1)[1].split()[0]
         # one source at one version, so there is nothing for a second client to hold: pfQuest is a repo at a
-        # commit, VMaNGOS a database snapshot, and the collector dump is this client's own recording
-        if verb in ("pfquest", "vmangos", "collector"):
+        # commit, VMaNGOS a database snapshot, forever-vo a capture set at a commit, and the collector dump is
+        # this client's own recording
+        if verb in ("pfquest", "vmangos", "forever-vo", "collector"):
             continue
         # `served` merges nothing; it only removes English for ids Forever does not serve
         if verb == "served":
