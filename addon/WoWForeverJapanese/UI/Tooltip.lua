@@ -187,13 +187,16 @@ end
 -- Hands the run to Render: line `first` is the primary ("desc"), the rest companions ("desc.<i>", follow "desc").
 -- Records from the previous hover on this frame are forgotten first (the client rewrote every line). A run whose
 -- first line is empty is refused: an empty English is never a translation target (addon-modules §7).
+local runColors -- below anySecretOf, which it needs
+
 local function showRun(surface, area, kind, id, lines, first, last, refit, runArgs)
   local texts = {}
   for i = first, last do texts[#texts + 1] = lines[i].text end
   local n = 0
   -- line 1 is the name: never replaced, never a number source, but a name the Japanese may legitimately use
   if WFJ.Render.show(surface, "desc", lines[first].fs, lines[first].text, area, kind, id,
-      { lines = texts, nameScope = lines[1] and lines[1].text or nil, refit = refit, args = runArgs }) then
+      { lines = texts, nameScope = lines[1] and lines[1].text or nil, refit = refit, args = runArgs,
+        partColors = runColors(lines, first, last) }) then
     n = n + 1
   end
   for i = first + 1, last do
@@ -288,6 +291,31 @@ local function anySecretOf(...)
   end
   return false
 end
+
+-- The colours of a run's non-blank lines for Render's partColors: nil where a line has the first line's colour,
+-- "ffRRGGBB" where it differs (the gold flavour text under a green Use: line). → colors | nil (all one colour, or
+-- a colour the client keeps secret)
+function runColors(lines, first, last)
+  local function hex(fs)
+    if type(fs.GetTextColor) ~= "function" then return nil end
+    local r, g, b = fs:GetTextColor()
+    if anySecretOf(r, g, b) or type(r) ~= "number" then return nil end
+    return ("ff%02x%02x%02x"):format(math.floor(r * 255 + 0.5), math.floor(g * 255 + 0.5), math.floor(b * 255 + 0.5))
+  end
+  local base = hex(lines[first].fs)
+  if not base then return nil end
+  local colors, differs = { n = 0 }, false
+  for i = first, last do
+    if lines[i].text ~= "" then
+      local c = hex(lines[i].fs)
+      if not c then return nil end
+      colors.n = colors.n + 1
+      if c ~= base then colors[colors.n], differs = c, true end
+    end
+  end
+  return differs and colors or nil
+end
+
 
 local function ownerOf(frame)
   return type(frame.GetOwner) == "function" and frame:GetOwner() or nil

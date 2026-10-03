@@ -82,13 +82,29 @@ Render.inlineMarker = inlineMarker
 -- and its own English otherwise (including when the primary shows English + the missing marker:
 -- a missing translation never touches the other lines). It never resolves the policy itself.
 local desired
+-- A run of lines shown as one (a tooltip's description and its flavour text): `colors[i]` is the colour of the
+-- i-th line when it differs from the first line's ("ffRRGGBB"), and the Japanese has one part per line, split
+-- at its line breaks. Each such part is wrapped in its line's colour; a Japanese whose parts do not line up
+-- with the lines is left as it is. → text
+local function colourParts(ja, colors)
+  local parts = {}
+  for part in (ja .. "\n"):gmatch("(.-)\n") do parts[#parts + 1] = part end
+  if #parts ~= colors.n then return ja end
+  for i = 1, #parts do
+    if colors[i] and parts[i] ~= "" then parts[i] = "|c" .. colors[i] .. parts[i] .. "|r" end
+  end
+  return table.concat(parts, "\n")
+end
+
 local function desiredOf(rec)
   local m = rec.meta or {}
   local action, payload = translator.resolve(m.area, m.kind, m.id, m.ctx)
   local inline = banners[rec.surface] == nil
   if action == "apply" then
     local prefix = (inline and payload.marker) and inlineMarker(rec, payload.marker) or ""
-    return prefix .. payload.ja, WFJ.Font.bundled(rec.font), action, payload.marker
+    local ja = payload.ja
+    if m.ctx and m.ctx.partColors then ja = colourParts(ja, m.ctx.partColors) end
+    return prefix .. ja, WFJ.Font.bundled(rec.font), action, payload.marker
   elseif action == "none" and payload and payload.marker then
     -- A compact row (a quest list title, a tracker header or objective) never carries the missing marker:
     -- markers are messages at the top of a window, not a tag on every row; its window says it

@@ -11,6 +11,7 @@ local DATA = {
   -- keyed by the kind the surface asks for; field-qualified because spell has two fields
   ["item.description"] = {
     [117] = { ja = "18秒間でhealthを61回復。回復中は\n座っている必要があります。", status = "u" },
+    [2001] = { ja = "Herbalismのスキルを2上昇させます。\n野生のハーブを摘むための取扱説明書。", status = "u" },
     [724] = { ja = "21秒間でhealthを243回復。10秒以上食事に時間をかけると、15分間StaminaとSpiritを4上昇させます。", status = "u" },
     [6948] = { ja = "【使用】Hearthstoneの場所に戻ります。", status = "u" },
   },
@@ -75,6 +76,22 @@ describe("UI/Tooltip: item and spell tooltips", function()
     assert.are.equal("Sell Price: 5c", fs("GameTooltip", 6):GetText())
     assert.are.equal(3, SS.count("tooltip.GameTooltip"))
     assert.are.equal(2, tt.calls.Show) -- one refit (two Shows)
+  end)
+
+  it("a flavour line in another colour keeps its colour in the Japanese; one colour adds nothing", function()
+    local GREEN, GOLD = { 0, 1, 0 }, { 1, 0.82, 0 }
+    Stub.setItemTooltip(tt, "|Hitem:2001:0:0:0:0:0:0:0|h[Wild Harvest]|h", {
+      "Wild Harvest", { "Use: Increases your Herbalism skill by 2.", color = GREEN },
+      { '"An instruction manual for picking wild herbs."', color = GOLD } })
+    assert.are.equal("Herbalismのスキルを2上昇させます。\n|cffffd100野生のハーブを摘むための取扱説明書。|r",
+      fs("GameTooltip", 2):GetText())
+    Stub.setItemTooltip(tt, "|Hitem:2001:0:0:0:0:0:0:0|h[Wild Harvest]|h", {
+      "Wild Harvest", { "Use: Increases your Herbalism skill by 2.", color = GREEN },
+      { '"An instruction manual for picking wild herbs."', color = GREEN } })
+    assert.are.equal(DATA["item.description"][2001].ja, fs("GameTooltip", 2):GetText())
+    Stub.keys.alt = true; WFJ.Modifier.refresh() -- Alt shows the client's English, colour and all
+    assert.are.equal("Use: Increases your Herbalism skill by 2.", fs("GameTooltip", 2):GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
   end)
 
   it("no description run, no item, or a gate failure → nothing written", function()
