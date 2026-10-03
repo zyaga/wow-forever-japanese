@@ -5,6 +5,6 @@ WFJ.Data.add("reading", {
   ["ui:JOIN_THE_ALLIANCE"] = { text = "加わる=くわわる=51629" },
   ["ui:JOIN_THE_HORDE"] = { text = "加わる=くわわる=51629" },
   ["ui:JOURNEYMAN"] = { text = "一人前=いちにんまえ=35712" },
-  ["ui:JOURNEYS_MAX_RENOWN_LABEL"] = { text = "最大=さいだい=88195 名声=めいせい=56999" },
-  ["ui:JOURNEY_UNLOCKED_TOAST"] = { text = "ジャーニー=ジャーニー=33069 解放=かいほう=119861" },
+  ["ui:JOURNEYS_MAX_RENOWN_LABEL"] = { text = "最大=さいだい=88196 名声=めいせい=56999" },
+  ["ui:JOURNEY_UNLOCKED_TOAST"] = { text = "ジャーニー=ジャーニー=33069 解放=かいほう=119863" },
 })

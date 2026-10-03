@@ -16,6 +16,7 @@
 {"id": "56820c3599c30fde", "field": "text", "en": "Hello, brother.", "hash": "56820c3599c30fde", "src": "vmangos@13b49dc"}
 {"id": "56860d0f58993bd9", "field": "text", "en": "Any friend of the animals is a friend of mine.  The Hunter's Hall is what you seek.  It sits atop the Hunter Rise.", "hash": "56860d0f58993bd9", "src": "vmangos@13b49dc"}
 {"id": "5688056f505f3ccc", "field": "text", "en": "Be on your guard! There are reports of a humungous worm close to Hive'Zora!", "hash": "5688056f505f3ccc", "src": "vmangos@13b49dc"}
+{"id": "568c5326930cf704", "field": "text", "en": "I would like to see your wares.", "hash": "568c5326930cf704", "src": "collector@1.60.1.70205", "npcs": [3608]}
 {"id": "568fd58e973d58ea", "field": "text", "en": "%s vanishes.", "hash": "568fd58e973d58ea", "src": "vmangos@13b49dc"}
 {"id": "56925038e9f18777", "field": "text", "en": "We are but so close to developing the New Plague that our Dark Lady desires with such fervor.", "hash": "56925038e9f18777", "src": "vmangos@13b49dc"}
 {"id": "5695d296067d0b5d", "field": "text", "en": "Another day gone by...", "hash": "5695d296067d0b5d", "src": "vmangos@13b49dc"}
