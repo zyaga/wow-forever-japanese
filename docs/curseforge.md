@@ -2,8 +2,8 @@
 
 The text of the addon's CurseForge project page. It is the README condensed; when one changes, change the other.
 Paste everything under "Description" into the project's description with the editor set to Markdown. The
-`<span style="color:…">` tags are the editor's own colour syntax. The images load from the repository's `main`
-branch; leave them out until the repository is public.
+`<span style="color:…">` tags are the editor's own colour syntax. The page has no images: the maintainer
+prefers it as text only.
 
 - **Project name:** WoW Forever Japanese (日本語化)
 - **Summary:** Play WoW Forever in Japanese: quests, NPC dialogue, tooltips and menus, with the English one
@@ -11,8 +11,6 @@ branch; leave them out until the repository is public.
 - **Categories:** Quests & Leveling; also Tooltip, Chat & Communication, Miscellaneous.
 
 ## Description
-
-![The quest window in Japanese](https://raw.githubusercontent.com/zyaga/wow-forever-japanese/main/docs/images/hero.jpg)
 
 <span style="color:#E8C77E;">**日本語の説明は下にあります。**</span>
 
@@ -33,8 +31,6 @@ Names of people, places, creatures, items and spells stay in <span style="color:
 ### <span style="color:#E8C77E;">Popup dictionary</span>
 
 Point at a Japanese word in quest text, NPC dialogue, a book page or a window label, and a small popup shows its reading, its dictionary form and a short English meaning of the word as that sentence uses it. Nothing is drawn until the pointer is on a word.
-
-![The popup dictionary showing a word's reading and meaning](https://raw.githubusercontent.com/zyaga/wow-forever-japanese/main/docs/images/word-card.jpg)
 
 ### <span style="color:#E8C77E;">Settings</span>
 
