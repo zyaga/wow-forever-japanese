@@ -18,6 +18,7 @@ an old setting stops working). A release moves those lines under its version num
 - The stat changes in an item comparison ("+0.7 damage per second") show the stat in Japanese, the number as the game writes it.
 - Long Japanese tooltip text no longer jumps between two line breaks while you hover a bag item.
 - An item's quoted flavour text keeps its gold colour in Japanese instead of taking the colour of the line above it.
+- NPC lines that use your class or race in the plural ("druids like yourself") now show their Japanese.
 
 ## 0.1.0-alpha.5 - 2026-10-03
 

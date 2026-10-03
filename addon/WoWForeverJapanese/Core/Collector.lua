@@ -89,11 +89,18 @@ end
 -- Blizzard's lowercase $c / $r print the class / race in lowercase ("Journey forth, young druid"), which
 -- normalize_v1's exact-case replacement leaves alone; quest text gets the lowercase forms replaced too, so the
 -- stored text matches pfQuest's `$c` and the field is recognised as known.
+-- A plural the server built from the token ("$cs like yourself" → "druids like yourself") is the word plus "s"
+-- as one word, which no whole-word match finds: it becomes the token plus "s", as normalize_v1 writes "$cs". A
+-- literal plural in a line is still found through the candidates without the class or race.
 local function replaceLower(text, player)
   for _, pair in ipairs({ { player.class, "{class}" }, { player.race, "{race}" } }) do
     local word = pair[1]
-    if type(word) == "string" and word ~= "" and word:lower() ~= word then
-      text = Normalize.replaceWord(text, word:lower(), pair[2])
+    if type(word) == "string" and word ~= "" then
+      text = Normalize.replaceWord(text, word .. "s", pair[2] .. "s")
+      if word:lower() ~= word then
+        text = Normalize.replaceWord(text, word:lower() .. "s", pair[2] .. "s")
+        text = Normalize.replaceWord(text, word:lower(), pair[2])
+      end
     end
   end
   return text
