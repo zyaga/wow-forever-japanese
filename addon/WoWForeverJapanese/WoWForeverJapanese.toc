@@ -1734,6 +1734,7 @@ Core\UIStrings.lua
 Core\Objectives.lua
 Core\SurfaceState.lua
 Core\Collector.lua
+Core\CollectorSend.lua
 Core\RecentLines.lua
 Core\Reports.lua
 Core\ReportText.lua
@@ -1903,6 +1904,7 @@ UI\OptionsText.lua
 UI\OptionsWidgets.lua
 UI\KeyCapture.lua
 UI\FixWindow.lua
+UI\CollectorSendWindow.lua
 UI\MinimapButton.lua
 UI\RevealBinding.lua
 UI\AddonListButton.lua

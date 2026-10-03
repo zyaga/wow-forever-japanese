@@ -70,9 +70,17 @@ the minimap button on or off.
 **English it has no Japanese for.** When the game shows English the addon has no translation for (quest text, NPC
 dialogue with the id of the NPC who said it, item and spell descriptions, NPC names), the addon notes that English
 in its saved settings file, so it can be translated later. Your character's name is stored as a placeholder, and
-next to a line that names your class or race, the class and race are noted; no account, realm or location is stored. Nothing is sent anywhere: the file stays on your computer unless you choose
-to attach it to an issue. It is on by default, the addon says so in chat the first time, and you can turn it off
-under **English Collector** in the settings.
+next to a line that names your class or race, the class and race are noted; no account, realm or location is stored. Nothing is sent anywhere unless you send it yourself. It is on by
+default, the addon says so in chat the first time, and you can turn it off under **English Collector** in the
+settings.
+
+**Sending the English it noted.** On the **English Collector** settings page, click **Send English** (or type
+`/wfj collector send`). A window packs the lines you have not sent yet into one link: copy it (click it, then
+Ctrl+C), open it in your web browser, and a GitHub issue form opens already filled in. If the window shows a second
+box, the text was too long for the link: copy it into the form's box too. Submit the issue, then click **I sent it**
+in the game, so the next send holds only new lines. Lines that have a translation by then are left out. When the
+window says the text is too long even to paste, it asks you to zip the saved file and drag it into the same form
+(type `/reload` first if you played since logging in).
 
 ![The English Collector settings page, with the switch that turns recording off](docs/images/collector.jpg)
 
@@ -193,7 +201,9 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
 ![アドオンの設定画面](docs/images/settings.jpg)
 
-**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。キャラクター名はプレースホルダーに置き換えて保存し、クラスや種族が出てくる行にはそのクラスと種族を書き添えます。アカウント・レルム・位置は保存しません。どこにも送信されません。自分で Issue に添付しない限り、ファイルはあなたのパソコンの中にあります。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
+**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。キャラクター名はプレースホルダーに置き換えて保存し、クラスや種族が出てくる行にはそのクラスと種族を書き添えます。アカウント・レルム・位置は保存しません。自分で送らない限り、どこにも送信されません。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
+
+**記録した英語の送り方。** 設定の **英語テキスト収集** ページで **英語を送る** をクリックします（`/wfj collector send` と入力しても同じです）。まだ送っていない行が 1 つのリンクにまとめられたウィンドウが開きます。リンクをコピーして（クリックして Ctrl+C）ブラウザで開くと、入力済みの GitHub の Issue フォームが開きます。ウィンドウに 2 つ目の欄があるときは、リンクに入りきらない長さです。その文字列もフォームの欄に貼り付けてください。Issue を送信したら、ゲーム内で **送信しました** をクリックします。次回は新しい行だけを送ります。その時点で翻訳がある行は除かれます。貼り付けられないほど長いとウィンドウに表示されたときは、保存ファイルを zip にして同じフォームにドラッグするよう案内されます（ログイン後に遊んだ場合は先に `/reload` してください）。
 
 ![英語テキスト収集の設定画面。記録をオフにするスイッチがある](docs/images/collector.jpg)
 

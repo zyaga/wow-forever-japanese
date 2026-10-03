@@ -15,8 +15,8 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 "UI/AddonListButton.lua",
                 # the word-reading box scripts only its own covers (hover) and never a Blizzard frame
                 "UI/Readings.lua",
-                # the fix window and the minimap button script only their own frames
-                "UI/FixWindow.lua", "UI/MinimapButton.lua",
+                # the fix window, the collector send window and the minimap button script only their own frames
+                "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/MinimapButton.lua",
                 # the tooltip trace window (/wfj debug tooltip)
                 "UI/Slash.lua"}
 

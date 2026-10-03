@@ -189,7 +189,28 @@ function WFJ.OnLoad()
       return version .. "." .. tostring(build)
     end,
     print = print,
+    -- [verified: forever-ui Blizzard_APIDocumentationGenerated/BuildDocumentation.lua:48 IsBetaBuild; that it is
+    -- true on the Forever beta client is unverified: checklist 8 of docs/testing/strategy.md looks at the path shown]
+    beta = function() return type(IsBetaBuild) == "function" and IsBetaBuild() == true end,
   }) end) or WFJ_Collector
+  -- the client's own encoder [verified: forever-ui Blizzard_APIDocumentationGenerated/EncodingUtilDocumentation.lua
+  -- (Environment "All"; CompressionMethod.Zlib, Base64Variant.StandardUrlSafe), used the same way by
+  -- Blizzard_CooldownViewer/CooldownViewerSettingsDataStoreSerialization.lua:277–281]. A client without it leaves
+  -- the send window on the file fallback.
+  step("collectorsend", function() WFJ.CollectorSend.init({
+    version = function() return WFJ.VERSION end,
+    encode = function(payload)
+      local U, E = _G.C_EncodingUtil, _G.Enum
+      if type(U) ~= "table" or type(E) ~= "table" or not E.CompressionMethod or not E.Base64Variant then return nil end
+      if type(U.SerializeJSON) ~= "function" or type(U.CompressString) ~= "function"
+        or type(U.EncodeBase64) ~= "function" then return nil end
+      local json = U.SerializeJSON(payload)
+      if type(json) ~= "string" then return nil end
+      local packed = U.CompressString(json, E.CompressionMethod.Zlib)
+      if type(packed) ~= "string" then return nil end
+      return U.EncodeBase64(packed, E.Base64Variant.StandardUrlSafe)
+    end,
+  }) end)
 
   step("uiindex", WFJ.BuildUIIndex)
   step("objectiveindex", WFJ.BuildObjectiveIndex)

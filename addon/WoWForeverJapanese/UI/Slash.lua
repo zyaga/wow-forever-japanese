@@ -17,8 +17,9 @@
 --   /wfj debug ui scan        English still showing on visible frames: "hook?" = the dictionary knows it, "key?" = not
 --   /wfj debug fonts          the refused-font retry: timer state, one pending widget, then a retry now
 --   /wfj version              the addon, normalization and Lua versions
---   /wfj collector [on|off|status|path|clear]   the English collector; other words fall through to settings;
---                             clear asks for the same command again within 5 s (like the page's two clicks)
+--   /wfj collector [on|off|status|path|clear|send [all]]   the English collector; other words fall through to
+--                             settings; clear asks for the same command again within 5 s (like the page's two
+--                             clicks); send opens the send window (all: every line again)
 --   /wfj glosses [on|off]     readings.glosses · /wfj readings [on|off]  readings.enabled
 --   /wfj togglekey [<key>|none]   the toggle binding the settings page's Set key / Unbind row writes
 local _, WFJ = ...
@@ -333,10 +334,10 @@ function Slash.debug(sub, arg)
   if WFJ.Options.buildError then say("settings panel failed to build: %s", WFJ.Options.buildError) end
 end
 
-local COLLECTOR_VERBS = { on = true, off = true, status = true, path = true, clear = true }
+local COLLECTOR_VERBS = { on = true, off = true, status = true, path = true, clear = true, send = true }
 
 -- /wfj collector … → true when handled; any other second word is left to the registry grammar.
-function Slash.collector(sub)
+function Slash.collector(sub, arg)
   local C = WFJ.Collector
   if sub ~= nil and not COLLECTOR_VERBS[sub] then return false end
   if sub == "on" or sub == "off" then
@@ -344,9 +345,13 @@ function Slash.collector(sub)
   elseif sub == "path" then
     local st = C.status()
     say("collected English is saved when you log out or /reload, in:")
-    print("  " .. C.PATH)
-    say("%d %s · %s. Attach the file (zipped) to an issue: %s", st.entries, st.entries == 1 and "entry" or "entries",
-      C.formatBytes(st.bytes), C.ISSUE_URL)
+    print("  " .. C.path())
+    say("%d %s · %s. /wfj collector send sends them; a file too long to paste is attached (zipped) to the same issue",
+      st.entries, st.entries == 1 and "entry" or "entries", C.formatBytes(st.bytes))
+    return true
+  elseif sub == "send" then
+    -- `all`: every entry again, for a send that was copied but never submitted
+    WFJ.CollectorSendWindow.open(arg == "all")
     return true
   elseif sub == "clear" then
     local st = C.status() -- nothing to lose (empty, or a newer version's file that is never cleared): no ask
@@ -452,7 +457,9 @@ function Slash.handle(msg)
     return say("readings %s", fmt(S.get("readings.enabled")))
   end
   if lower == "togglekey" then return Slash.togglekey(words[2], words[3]) end
-  if lower == "collector" and Slash.collector(words[2] and words[2]:lower()) then return end
+  if lower == "collector" and Slash.collector(words[2] and words[2]:lower(), words[3] and words[3]:lower()) then
+    return
+  end
 
   local id, value = settingFromWords(words)
   if id then

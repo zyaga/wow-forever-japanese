@@ -9,7 +9,7 @@ local TAIL = {
   "Core/Modifier.lua",
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
-  "Core/Collector.lua",
+  "Core/Collector.lua", "Core/CollectorSend.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", -- the fix reports
   "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
   "UI/ButtonText.lua", "UI/Labels.lua", "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
@@ -61,7 +61,8 @@ local TAIL = {
   "UI/Tutorial.lua", -- the tutorial popup
   "UI/Popups.lua",
   "UI/Scan.lua",
-  "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/FixWindow.lua", "UI/MinimapButton.lua",
+  "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/FixWindow.lua",
+  "UI/CollectorSendWindow.lua", "UI/MinimapButton.lua",
   "UI/RevealBinding.lua",
   "UI/AddonListButton.lua",
   "UI/Options.lua", "UI/Slash.lua", "Main.lua", -- the settings pages' modules
@@ -255,7 +256,8 @@ describe("addon loads in TOC order and answers /wfj version", function()
     Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI(); Stub.installItemTextAPI()
     Loader.load("WoWForeverJapanese")
     Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
-    assert.are.same({ version = 1, disclosed = false, builds = {}, bytes = 0, capped = false, entries = {} },
+    assert.are.same({ version = 1, disclosed = false, builds = {}, bytes = 0, capped = false, entries = {},
+      sent = {} },
       WFJ_Collector)
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI(); Stub.installItemTextAPI()

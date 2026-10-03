@@ -50,7 +50,7 @@ def test_licensing_names_every_source_and_the_bsd_notice(root):
     assert not re.search(r"\bendorse(d|s)? (this|the) project\b|\bofficial\b", attribution.split("## Lineage")[0])
 
 
-@pytest.mark.parametrize("form", ["translation-report.yml", "bug-report.yml", "collector-dump.yml", "idea.yml"])
+@pytest.mark.parametrize("form", ["translation-report.yml", "bug-report.yml", "collector-send.yml", "idea.yml"])
 def test_issue_forms_speak_both_languages(root, form):
     """The name, every description and every consent line of a form carry Japanese beside the English."""
     text = _read(root, f".github/ISSUE_TEMPLATE/{form}")
@@ -61,7 +61,7 @@ def test_issue_forms_speak_both_languages(root, form):
         assert re.search(r"[぀-ヿ一-鿿]", ln), f"{form}: no Japanese in: {ln[:60]}"
 
 
-@pytest.mark.parametrize("form", ["translation-report.yml", "bug-report.yml", "collector-dump.yml", "idea.yml"])
+@pytest.mark.parametrize("form", ["translation-report.yml", "bug-report.yml", "collector-send.yml", "idea.yml"])
 def test_issue_form_values_are_plain_yaml(root, form):
     """An unquoted value holds no `: ` and no ` #`: either one ends the value early or breaks the file, and
     GitHub then hides the form."""

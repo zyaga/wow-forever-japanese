@@ -328,7 +328,6 @@ describe("Settings pages from the registry and PAGES", function()
     box:SetText("edited")
     box.scripts.OnTextChanged(box, true)
     assert.are.equal(WFJ.Collector.PATH, box:GetText())
-    assert.are.equal(WFJ.Collector.ISSUE_URL, O.copyBoxes["collector.issue"]:GetText())
     local n = WFJ.Collector.status().entries
     local clears = 0
     local realClear = WFJ.Collector.clear
@@ -349,6 +348,18 @@ describe("Settings pages from the registry and PAGES", function()
     now = 200
     O.refresh()
     assert.are.equal(ja("collector.clear"), O.collectorClear.caption:GetText())
+  end)
+
+  it("the send section: numbered steps, Send English opens the send window, the file's path", function()
+    local opened = {}
+    WFJ.CollectorSendWindow = { open = function(all) opened[#opened + 1] = all end }
+    assert.are.equal(ja("collector.send"), O.collectorSend.caption:GetText())
+    O.collectorSend.scripts.OnClick(O.collectorSend, "LeftButton")
+    assert.are.same({ false }, opened)
+    local steps = select(2, WFJ.OptionsText.get("collector.steps"))
+    for n = 1, 4 do assert.is_truthy(steps:find(n .. ".", 1, true), n) end
+    assert.are.equal(WFJ.Collector.path(), O.copyBoxes["collector.path"]:GetText())
+    assert.is_nil(O.copyBoxes["collector.issue"])
   end)
 
   it("the about page has the header, how to open settings, the slash list and the report link", function()

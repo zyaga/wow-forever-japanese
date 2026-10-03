@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: coverage-py coverage-lua lint-public report-intake report-apply coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -341,7 +341,8 @@ forever-titles: ## list every SetTitle( call site in the camelot load sets (the 
 	@test -d "$(FOREVER_UI)" || { echo "forever-titles: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }
 	@cd pipeline && $(PY) -m wfj.dev.client_addons --titles "$(FOREVER_UI)"
 
-# A player's SavedVariables file (WoWForeverJapanese.lua) handed off through the collector-dump issue template.
+# A player's SavedVariables file (WoWForeverJapanese.lua), attached to a collector-send issue when the send was too long
+# to paste (collector-intake reads such an issue by itself; this is for a file at hand).
 DUMP ?=
 
 import-collector: ## add one collector dump to data/english/ (replaces stand-in lines, keeps the client's own files): DUMP=<file>
@@ -363,6 +364,10 @@ stats: ## coverage report over data/ (no writes)
 
 coverage: ## how much of the game ships in Japanese → docs/operations/coverage.md (run before every data pull request)
 	cd pipeline && $(PY) -m wfj.dev.coverage --out ../docs/operations/coverage.md --build $(forever_BUILD)
+
+collector-intake: ## a player's collector send (GitHub issue ISSUE=N, or a saved body BODY=<file> ISSUE=N) → data/english/
+	@test -n "$(ISSUE)" || { echo "usage: make collector-intake ISSUE=<n> [BODY=<saved issue body>]"; exit 2; }
+	cd pipeline && $(PY) -m wfj collector intake $(if $(BODY),--file $(abspath $(BODY)) --number $(ISSUE),--issue $(ISSUE))
 
 report-intake: ## a player's fix report (GitHub issue ISSUE=N, or a saved body REPORT=<file> ISSUE=N) → batches/reports/issue-N/triage.jsonl
 	@test -n "$(ISSUE)" || { echo "usage: make report-intake ISSUE=<n> [REPORT=<saved issue body>] [CREDIT=<name>] [FORCE=1]"; exit 2; }

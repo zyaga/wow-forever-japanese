@@ -1,19 +1,30 @@
-"""The collector-dump issue form states what the file holds and asks for the build."""
+"""The collector-send issue form states what a send holds and has the box the send window's link fills in."""
 
 import re
 
 
-def test_collector_dump_issue_form(root):
-    path = root / ".github/ISSUE_TEMPLATE/collector-dump.yml"
-    text = path.read_text(encoding="utf-8")
+def test_collector_send_issue_form(root):
+    text = (root / ".github/ISSUE_TEMPLATE/collector-send.yml").read_text(encoding="utf-8")
     for top in ("name:", "description:", "body:"):
         assert re.search(rf"^{top}", text, re.M), top
-    for field_id in ("id: client", "id: client-build", "id: addon-version", "id: dump", "id: consent"):
+    assert re.search(r'^labels: \["collector-send"\]$', text, re.M)
+    for field_id in ("id: dump", "id: note", "id: consent"):
         assert field_id in text, field_id
-    assert text.count("required: true") >= 4
-    assert "type: dropdown" in text and "type: checkboxes" in text
-    assert "WFJ_Collector" in text
-    for word in ("character", "account", "realm", "location"):
+    assert "type: checkboxes" in text and text.count("required: true") >= 2
+    for word in ("character", "account", "realm", "location", "WoWForeverJapanese.lua", "WFJC1:", "I sent it"):
         assert word in text, word
+    assert not (root / ".github/ISSUE_TEMPLATE/collector-dump.yml").exists()
+
+
+def test_the_link_and_the_form_agree(root):
+    """The send window's link opens this form and fills its `dump` box; the check reads the box by its label."""
+    from wfj.io import collector_send
+
     collector = (root / "addon/WoWForeverJapanese/Core/Collector.lua").read_text(encoding="utf-8")
-    assert "issues/new?template=collector-dump.yml" in collector
+    send = (root / "addon/WoWForeverJapanese/Core/CollectorSend.lua").read_text(encoding="utf-8")
+    form = (root / ".github/ISSUE_TEMPLATE/collector-send.yml").read_text(encoding="utf-8")
+    assert "issues/new?template=collector-send.yml" in collector
+    assert '"&dump="' in send
+    assert f'CollectorSend.PREFIX = "{collector_send.PREFIX}"' in send
+    assert f"label: {collector_send.DUMP_LABEL}\n" in form
+    assert "label: Permission\n" in form

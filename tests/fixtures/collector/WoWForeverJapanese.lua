@@ -123,5 +123,7 @@ WFJ_Collector = {
 			["t"] = "spell",
 		},
 	},
+	["sent"] = {
+	},
 	["version"] = 1,
 }
