@@ -26,6 +26,7 @@
 {"id": "ab90378e3df779c9", "field": "text", "en": "Run! They are coming!", "hash": "ab90378e3df779c9", "src": "vmangos@13b49dc"}
 {"id": "ab916f510b8ff8d1", "field": "text", "en": "1 minute until the battle for Alterac Valley begins.", "hash": "ab916f510b8ff8d1", "src": "vmangos@13b49dc"}
 {"id": "aba3dbe111642bf7", "field": "text", "en": "Can you give me directions?", "hash": "aba3dbe111642bf7", "src": "vmangos@13b49dc"}
+{"id": "aba938d654c700ff", "field": "text", "en": "You must remember that while this realm has been our home for millennia, we will always be somewhat alien to this place. We are not in the terrestrial world that birthed our people. We are in the realm of Skywall, a part of the elemental plane.$B$BWe arrived here as the guests of spirits with whom we found common cause in ages past. Now that we Shen'dorei find ourselves bereft of their presence--and potentially--their protection, there's no telling how the other denizens of this plane may perceive us.", "hash": "aba938d654c700ff", "src": "collector@1.60.1.70205", "npcs": [251902]}
 {"id": "abafa51881bd6f33", "field": "text", "en": "Whatcha need?", "hash": "abafa51881bd6f33", "src": "vmangos@13b49dc"}
 {"id": "abb44b5c2b1c7a1d", "field": "text", "en": "This $C intrudes on our work! Die fool!", "hash": "abb44b5c2b1c7a1d", "src": "vmangos@13b49dc"}
 {"id": "abb79822aec3319f", "field": "text", "en": "That's troll business.  Look for Un'Thuwa in Sen'jin Village down south.", "hash": "abb79822aec3319f", "src": "vmangos@13b49dc"}

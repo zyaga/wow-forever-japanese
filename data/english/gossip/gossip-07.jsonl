@@ -24,6 +24,7 @@
 {"id": "079023dd5e954503", "field": "text", "en": "I am an officer of the city, working in the capacity of the Undercity's census.  Since our liberation from the Scourge, we have tried to keep an accurate track of our city's populace.  Through arcane methods and sharpened mental discipline, I am able to access these records.  If you have business with me accordingly, please proceed.  You should know if you do, at any rate.", "hash": "079023dd5e954503", "src": "vmangos@13b49dc"}
 {"id": "0790819de82e15c4", "field": "text", "en": "These trees are quite glorious, aren't they? ", "hash": "0790819de82e15c4", "src": "vmangos@13b49dc"}
 {"id": "0791aec9a33a2a25", "field": "text", "en": "I have lost my Blade of Eternal Justice. Are you able to replace it for me?", "hash": "0791aec9a33a2a25", "src": "vmangos@13b49dc"}
+{"id": "0792b0d44d6aa012", "field": "text", "en": "What may I do for you, fellow windshaper?", "hash": "0792b0d44d6aa012", "src": "collector@1.60.1.70205", "npcs": [251487]}
 {"id": "07933ece98940286", "field": "text", "en": "We made it!  Thanks again!  I'm going to run ahead!", "hash": "07933ece98940286", "src": "vmangos@13b49dc"}
 {"id": "079aa4829122850c", "field": "text", "en": "Back to learn more, $n? Come over here and show me you are ready.", "hash": "079aa4829122850c", "src": "vmangos@13b49dc"}
 {"id": "07a1595f0fc2658b", "field": "text", "en": "We survived!", "hash": "07a1595f0fc2658b", "src": "vmangos@13b49dc"}

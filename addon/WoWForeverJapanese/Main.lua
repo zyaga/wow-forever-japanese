@@ -166,6 +166,15 @@ end
 
 function WFJ.OnLoad()
   WFJ.initErrors = {}
+  -- `or WFJ_Log` for the same reason as WFJ_DB below: a failed load never hands the client an empty global
+  WFJ_Log = step("diag", function()
+    WFJ.Diag.setDeps({ now = GetTime, mem = function() return collectgarbage("count") end,
+      clock = function()
+        local clock = WFJ.Compat.resolve("date")
+        return type(clock) == "function" and clock("%Y-%m-%d %H:%M:%S") or ""
+      end, print = print })
+    return WFJ.Diag.load(WFJ_Log)
+  end) or WFJ_Log
   step("compat", function() WFJ.Compat.init(function(name) return _G[name] end) end)
 
   -- `or WFJ_DB` / `or WFJ_Collector` is load-bearing, not defensive noise: these two ARE the SavedVariables
@@ -336,6 +345,9 @@ function WFJ.OnLoad()
   step("scan", WFJ.Scan.init) -- /wfj debug ui scan
   step("slash", WFJ.Slash.register)
   step("minimapbutton", function() WFJ.MinimapButton.init(WFJ_DB) end) -- the fix-report minimap button
+  step("diag.timer", function()
+    if type(C_Timer) == "table" then C_Timer.NewTicker(WFJ.Diag.CHECK_INTERVAL, WFJ.Diag.tick) end
+  end)
 
   -- The settings pages lean on client templates; a failure there must not take /wfj down with it (three
   -- pages, one AddOns category + two subcategories). The page error keeps its own field (the settings surface
@@ -349,6 +361,12 @@ function WFJ.OnLoad()
   end
   -- the AddOn List's "Settings" button; retried on Blizzard_AddOnList's ADDON_LOADED
   step("addonlistbutton", WFJ.AddonListButton.install)
+  step("diag.session", function()
+    local version, build = GetBuildInfo()
+    WFJ.Diag.session({ build = tostring(version) .. "." .. tostring(build),
+      version = WFJ.VERSION,
+      initErrors = WFJ.initErrors })
+  end)
 end
 
 local frame = CreateFrame("Frame")
@@ -363,6 +381,7 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
       self:RegisterEvent("PLAYER_ENTERING_WORLD")
       self:RegisterEvent("PLAYER_REGEN_DISABLED")
       self:RegisterEvent("PLAYER_REGEN_ENABLED")
+      for _, blocked in ipairs(WFJ.Diag.BLOCK_EVENTS) do self:RegisterEvent(blocked) end
     else
       -- Guarded like the load sequence. These run the deferred setup for the talent frame, the trainer and the
       -- raid roster; a failure in the first must not stop the second from running for the same event.
@@ -374,6 +393,8 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
         step("loadondemand." .. tostring(name), function() WFJ.LoadOnDemand.loaded(name) end)
       end
     end
+  elseif event == "ADDON_ACTION_BLOCKED" or event == "ADDON_ACTION_FORBIDDEN" then
+    WFJ.Diag.onBlocked(event, name, ..., ADDON)
   elseif event == "PLAYER_REGEN_DISABLED" then
     WFJ.Options.setCombat(true)
   elseif event == "PLAYER_REGEN_ENABLED" then

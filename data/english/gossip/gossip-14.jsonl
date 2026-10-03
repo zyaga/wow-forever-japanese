@@ -24,6 +24,7 @@
 {"id": "1476692ed667b84c", "field": "text", "en": "Take that!  The Drywhiskers will prevail!", "hash": "1476692ed667b84c", "src": "vmangos@13b49dc"}
 {"id": "1478e1889c68a0b0", "field": "text", "en": "Quickly! $n attacks!", "hash": "1478e1889c68a0b0", "src": "vmangos@13b49dc"}
 {"id": "147d4137ca0b2477", "field": "text", "en": "May your spirit burn brightly, $n.", "hash": "147d4137ca0b2477", "src": "vmangos@13b49dc"}
+{"id": "148d2d1534e7dabc", "field": "text", "en": "What can you tell me about the status of the Windshapers?", "hash": "148d2d1534e7dabc", "src": "collector@1.60.1.70205", "npcs": [251487]}
 {"id": "14acf86805a68210", "field": "text", "en": "And thank you, $n.  Without your aid I may never have found my way to the Forsaken.", "hash": "14acf86805a68210", "src": "vmangos@13b49dc"}
 {"id": "14b160668350d72d", "field": "text", "en": "Hey Bly!  Bilgewizzle wants his divino-matic rod back!", "hash": "14b160668350d72d", "src": "vmangos@13b49dc"}
 {"id": "14b59e336e3a024e", "field": "text", "en": "But something went wrong, didn't it?", "hash": "14b59e336e3a024e", "src": "vmangos@13b49dc"}

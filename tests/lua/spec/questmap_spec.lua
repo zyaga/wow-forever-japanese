@@ -304,21 +304,25 @@ describe("UI/QuestMap: the camelot quest log", function()
       assert.is_nil(QM.decoration("Wolf Pelts - (Failed)", "Wolf Pelts"))
     end)
 
-    it("the block is laid out on the Japanese header's height, and again after the modifier", function()
+    it("the block's frame is laid out on the Japanese header's height, and again after the modifier; block.height, " ..
+      "which the module adds into its contentsHeight, is never written by the addon", function()
       Q.watched = { [5] = true }
       Q.updateTracker()
       local block = _G.QuestObjectiveTracker.usedBlocks[5]
       local ja = block.HeaderText:GetHeight()
       assert.are.equal("狼の毛皮", block.HeaderText:GetText())
-      assert.are.equal(ja + Q.OBJECTIVE_HEIGHT, block.height)
       assert.are.equal(ja + Q.OBJECTIVE_HEIGHT, block.laidOut)
       Stub.keys.alt = true; WFJ.Modifier.refresh()
       local en = block.HeaderText:GetHeight()
       assert.are_not.equal(ja, en) -- the bundled font measures differently
-      assert.are.equal(en + Q.OBJECTIVE_HEIGHT, block.height)
       assert.are.equal(en + Q.OBJECTIVE_HEIGHT, block.laidOut)
       Stub.keys.alt = false; WFJ.Modifier.refresh()
       assert.are.equal(ja + Q.OBJECTIVE_HEIGHT, block.laidOut)
+    end)
+
+    it("the addon never assigns a tracker block's height field (the client's own layout writes it)", function()
+      local src = assert(io.open(H.ADDON_DIR .. "/UI/QuestMap.lua")):read("*a")
+      assert.is_nil(src:find("%.height%s*=[^=]"))
     end)
 
     it("a block built before the addon hooked is translated after the layout, its height corrected", function()

@@ -21,6 +21,7 @@
 {"id": "8b884d15f2365b9b", "field": "text", "en": "My brother, no!", "hash": "8b884d15f2365b9b", "src": "vmangos@13b49dc"}
 {"id": "8b8e352e7ce27002", "field": "text", "en": "We elves have a long history.  Let us hope this history does not return to haunt us.", "hash": "8b8e352e7ce27002", "src": "vmangos@13b49dc"}
 {"id": "8b935cbcc4963949", "field": "text", "en": "I wish it were true, $n, but it will take more than you alone to overcome the forces of Razelikh and his subordinates.$B$BGather a suitable group of adventurers and would-be heroes and free my men of their eternal torture! Eighteen stones you must shatter.$B$BFight hard and die with honor, $n.", "hash": "8b935cbcc4963949", "src": "vmangos@13b49dc"}
+{"id": "8b97ce3a2cc4dcc0", "field": "text", "en": "What of this \"Windlord\"? Is Al'Akir real, or a creation of the cult?", "hash": "8b97ce3a2cc4dcc0", "src": "collector@1.60.1.70205", "npcs": [251902]}
 {"id": "8b99c393aa88ce9e", "field": "text", "en": "I'm a test spirit healer.", "hash": "8b99c393aa88ce9e", "src": "vmangos@13b49dc"}
 {"id": "8b9e2c705c4ce07b", "field": "text", "en": "Looks like you're too late, $c. We have all of the roast raptor that we need; killed, cooked and salted. Anyway, it looks like some of the others around here could use some help. You should go check with them. I'm going to see if they'll let me go home now.", "hash": "8b9e2c705c4ce07b", "src": "vmangos@13b49dc"}
 {"id": "8ba7bea14ccae981", "field": "text", "en": "Truly amazing, Gerard. How did you do it?", "hash": "8ba7bea14ccae981", "src": "vmangos@13b49dc"}

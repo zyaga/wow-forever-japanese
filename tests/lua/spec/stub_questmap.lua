@@ -345,9 +345,10 @@ function Q.install()
     else
       block.height = block.height + Q.OBJECTIVE_HEIGHT -- one objective line (AddObjective)
     end
-    block:SetHeight(block.height)                     -- LayoutBlock
+    self:LayoutBlock(block)
     return true
   end
+  function tracker.LayoutBlock(_, block) block:SetHeight(block.height) end -- module.lua:349–354
   function Q.updateTracker()
     for _, id in ipairs(Q.log) do
       if Q.watched[id] then

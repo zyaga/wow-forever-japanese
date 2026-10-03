@@ -172,12 +172,12 @@ describe("UI/QuestMap: objective lines", function()
       Q.quests[9].leaderboard = { { text = "0/1 Archive Burned" } }
       local block, lines = trackerLines()
       assert.are.equal(lines[1]:GetHeight(), lines[1].Text:GetHeight()) -- the line is sized to the Japanese
-      local laid, ja = block.height, lines[1].Text:GetHeight()
+      local laid, ja = block.laidOut, lines[1].Text:GetHeight()
       Stub.keys.alt = true; WFJ.Modifier.refresh()
       assert.are.equal("0/1 Archive Burned", lines[1].Text:GetText())
       assert.are.equal(lines[1]:GetHeight(), lines[1].Text:GetHeight())
       assert.are_not.equal(ja, lines[1].Text:GetHeight()) -- the stub wraps the Japanese onto a second line
-      assert.are.equal(laid + (lines[1].Text:GetHeight() - ja), block.height)
+      assert.are.equal(laid + (lines[1].Text:GetHeight() - ja), block.laidOut)
       Stub.keys.alt = false; WFJ.Modifier.refresh()
       assert.are.equal("0/1 Archiveを焼き払う", lines[1].Text:GetText())
     end)
@@ -188,6 +188,22 @@ describe("UI/QuestMap: objective lines", function()
       for row in _G.QuestScrollFrame.objectiveFramePool:EnumerateActive() do texts[row.Text:GetText()] = true end
       assert.is_true(texts["Kobold Verminを倒す: 3/10"])
       assert.is_true(texts["0/1 Archiveを焼き払う"])
+    end)
+
+    it("a finished quest's list row (its completion text, the whole objective text) is the quest's Japanese",
+    function()
+      local h1 = (WFJ.Hash.h32x2(WFJ.Normalize.v1(QUEST.objectives)))
+      DATA["quest.objectives"] = { [9] = { ja = "記録庫を焼き払え。", status = ".", h1 = h1 } }
+      WFJ.Lookup = { get = function(kind, id) return DATA[kind] and DATA[kind][id] end }
+      WFJ.IsQuestFieldEnglish = function(id, field, text)
+        local e = DATA["quest." .. field] and DATA["quest." .. field][id]
+        return e ~= nil and WFJ.Hash.h32x2(WFJ.Normalize.v1(text)) == e.h1
+      end
+      Q.quests[9].leaderboard = { { text = QUEST.objectives } }
+      Q.updateList()
+      local texts = {}
+      for row in _G.QuestScrollFrame.objectiveFramePool:EnumerateActive() do texts[row.Text:GetText()] = true end
+      assert.is_true(texts["記録庫を焼き払え。"])
     end)
 
     it("the map details' objectives, a finished one with its (Complete) tag in Japanese", function()

@@ -575,6 +575,18 @@ describe("Core/Collector gossip kind", function()
     assert.are.equal("seen", C.recordGossip(raw, INN)) -- memo
   end)
 
+  it("records a greeting for a race the addon has no word for, the lowercase class as $C", function()
+    local db = C.load(nil, deps())
+    player = { name = "Reyn", class = "Hunter", race = "High Elf" } -- a Forever race outside Placeholders.RACE
+    local raw = "Hello, hunter."
+    local key = C.key(raw, player)
+    assert.are.equal("recorded", C.recordGossip(raw, INN))
+    assert.are.same({ t = "gossip", i = key, f = "text", h = key, e = "Hello, $C.", b = 1, n = { 6740 },
+      p = "Hunter|High Elf" }, db.entries["gossip:" .. key .. ":text"])
+    assert.are.equal("seen", C.recordGossip(raw, GUARD))
+    assert.are.same({ 1423, 6740 }, db.entries["gossip:" .. key .. ":text"].n)
+  end)
+
   it("a shipped row for the key makes the line known", function()
     local db = C.load(nil, deps())
     local raw = "Greetings, traveller."

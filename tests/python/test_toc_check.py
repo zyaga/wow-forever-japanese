@@ -9,7 +9,7 @@ CLIENTS = "pipeline/clients.toml"
 def test_real_toc_fields_and_load_order(root):
     meta, files = toc_check.parse_toc(root / TOC)
     assert meta["Version"] == "@project-version@"
-    assert meta["SavedVariables"] == "WFJ_DB, WFJ_Collector"
+    assert meta["SavedVariables"] == "WFJ_DB, WFJ_Collector, WFJ_Log"
     assert meta["Interface"].isdigit()
     # An icon for the AddOn List (a client icon Blizzard's own Vanilla/QuestInfo.xml references) and Notes
     # that say where the settings are.
@@ -26,6 +26,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/SurfaceState.lua",
         "Core/Collector.lua", "Core/CollectorSend.lua",  # the collector and its send
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
+        "Core/Diag.lua",  # the problem log
         "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
         "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
         "UI/HelpTooltip.lua", "UI/TooltipData.lua",

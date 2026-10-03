@@ -101,6 +101,19 @@ local function colourParts(ja, colors)
 end
 Render.colourParts = colourParts
 
+-- Coloured runs of the English no argument carried ({ run, code }, from Tooltip.matchColoured): each run the
+-- Japanese holds exactly once, as plain text, is wrapped in its colour; any other run is left as it is. → text
+local function colourRuns(ja, runs)
+  for _, r in ipairs(runs) do
+    local at, stop = ja:find(r.run, 1, true)
+    if at and not ja:find(r.run, stop + 1, true) then
+      ja = ja:sub(1, at - 1) .. r.code .. r.run .. "|r" .. ja:sub(stop + 1)
+    end
+  end
+  return ja
+end
+Render.colourRuns = colourRuns
+
 local function desiredOf(rec)
   local m = rec.meta or {}
   local action, payload = translator.resolve(m.area, m.kind, m.id, m.ctx)
@@ -109,6 +122,7 @@ local function desiredOf(rec)
     local prefix = (inline and payload.marker) and inlineMarker(rec, payload.marker) or ""
     local ja = payload.ja
     if m.ctx and m.ctx.partColors then ja = colourParts(ja, m.ctx.partColors) end
+    if m.ctx and m.ctx.runColours then ja = colourRuns(ja, m.ctx.runColours) end
     return prefix .. ja, WFJ.Font.bundled(rec.font), action, payload.marker
   elseif action == "none" and payload and payload.marker then
     -- A compact row (a quest list title, a tracker header or objective) never carries the missing marker:

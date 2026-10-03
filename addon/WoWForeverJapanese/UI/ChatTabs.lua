@@ -112,6 +112,7 @@ function ChatTabs.registerEditBoxes()
     if not headerHooked[box] and type(box.UpdateHeader) == "function" then
       headerHooked[box] = true
       hooksecurefunc(box, "UpdateHeader", ChatTabs.onHeader)
+      WFJ.Diag.watch(box, "UpdateHeader", WFJ.Diag.nameOf(box))
       n = n + 1
     end
   end

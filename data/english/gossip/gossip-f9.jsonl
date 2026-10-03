@@ -15,6 +15,7 @@
 {"id": "f96595a6d6c9038d", "field": "text", "en": "Elune be with you, $c.", "hash": "f96595a6d6c9038d", "src": "vmangos@13b49dc"}
 {"id": "f96ac5f7d53fae38", "field": "text", "en": "$n, I am in need of your help once again.", "hash": "f96ac5f7d53fae38", "src": "vmangos@13b49dc"}
 {"id": "f96c7527f82d8e85", "field": "text", "en": "Hmm, it would seem Keever needs a new subject. If that fool Abernathy keeps taking Keever's subjects, Keever may have to have a word with him.", "hash": "f96c7527f82d8e85", "src": "vmangos@13b49dc"}
+{"id": "f9706fafc56b9df1", "field": "text", "en": "Alas, I have prattled on long enough. Seek out my apprentice Ayessa Dawnsinger in the port of Valanaar if you find yourself out that way. She still hears the song--if only faintly. I am old and much of my power has left me. Ayessa represents the future of our people and the path we must now walk to survive. It's up to her and young skyborne such as yourself to carry the hopes for our people forward.", "hash": "f9706fafc56b9df1", "src": "collector@1.60.1.70205", "npcs": [251902]}
 {"id": "f976ce3f5aeac77e", "field": "text", "en": "Wait!  It appears our lookout has spotted something.", "hash": "f976ce3f5aeac77e", "src": "vmangos@13b49dc"}
 {"id": "f9804223306be7ec", "field": "text", "en": "Delicious!", "hash": "f9804223306be7ec", "src": "vmangos@13b49dc"}
 {"id": "f9867c6f18b14f28", "field": "text", "en": "I'm telling Mommy!", "hash": "f9867c6f18b14f28", "src": "vmangos@13b49dc"}

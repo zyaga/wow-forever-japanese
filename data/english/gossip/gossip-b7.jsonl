@@ -21,6 +21,7 @@
 {"id": "b780d0dc9601a577", "field": "text", "en": "It's good to be the king!  Now, let's get back to what you were talking about before...", "hash": "b780d0dc9601a577", "src": "vmangos@13b49dc"}
 {"id": "b784f2f4bdabecdc", "field": "text", "en": "No better place to learn First Aid than under the watchful eye of Shaina Fuller at the Cathedral of Light.  \n\nTo get there, just look for the yellow rooftops, or the towering spire of the Cathedral itself which you can see from almost anywhere in the city.", "hash": "b784f2f4bdabecdc", "src": "vmangos@13b49dc"}
 {"id": "b7893fe49f40afbb", "field": "text", "en": "You mean, you don't know? The sword that you carry on your back - it is known as Ashbringer; named after its original owner.", "hash": "b7893fe49f40afbb", "src": "vmangos@13b49dc"}
+{"id": "b7912278b19219a6", "field": "text", "en": "How can you be so sure? If we've never dealt with the windlord directly, surely it's worth a try?", "hash": "b7912278b19219a6", "src": "collector@1.60.1.70205", "npcs": [251902]}
 {"id": "b79549fec67f9808", "field": "text", "en": "I no longer have my Zandalar Demoniac's Robe. Can you provide a replacement?", "hash": "b79549fec67f9808", "src": "vmangos@13b49dc"}
 {"id": "b79af7960d76fdce", "field": "text", "en": "Yeah, you're a real brainiac.  Just how smart do you think you are, Slip'kik?", "hash": "b79af7960d76fdce", "src": "vmangos@13b49dc"}
 {"id": "b7a3793ac3b44a79", "field": "text", "en": "What do you seek, $c?", "hash": "b7a3793ac3b44a79", "src": "vmangos@13b49dc"}

@@ -54,6 +54,7 @@ WFJ.Data.add("gossip", {
   ["3cdca2b08ddf07ca"] = { "お尋ねいただき、とても嬉しく思います。Sir Malory WheelerはRoyal Quarterで、我らがDark Ladyのおそばに控えています。", "." },
   ["3cdd0bf7fa80d467"] = { "我らの幼子たちの命を絞り取ろうと待ち構え、行く手のすべてを殺す。奴らは神のためにそうするのだ。", "." },
   ["3cde6c4ddf81e71c"] = { "Frazierがダウン！Frazierがダウン！ダウンしたのは……え？Frazierじゃなかった？", "." },
+  ["3cee35cfee2d5757"] = { "<黙っている>", "." },
   ["3cf1722af894056d"] = { "Eastern Plaguelandsは今、攻撃を受けているか？", "." },
   ["3cfefadfd72ed5a5"] = { "逃げたければ逃げろ、愚か者ども！どのみちお前たちの運命は決まっている！", "." },
 })

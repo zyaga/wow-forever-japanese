@@ -955,26 +955,40 @@ local COMPARE_KEYS = { "ITEM_DELTA_DESCRIPTION", "ITEM_DELTA_MULTIPLE_COMPARISON
 Tooltip.COMPARE_KEYS = COMPARE_KEYS
 
 -- A stat change line colours its number on its own ("|cffff2020-11|r Armor", seen in game): the line is matched with
--- its colour codes taken out, and an argument the client had coloured gets its colour back in the Japanese.
--- → key, args | nil
+-- its colour codes taken out, and an argument the client had coloured gets its colour back in the Japanese. A
+-- coloured run no argument holds (the bare line is a whole fixed string: "+17 Armor" is also an enchantment's text)
+-- is returned as { run, code } pairs, for the renderer to colour where the Japanese has the same run.
+-- → key, args, runs | nil
 function Tooltip.matchColoured(index, text)
   local key, args = index:match(text)
-  if key then return key, args end
-  local bare = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
-  if bare == text then return nil end
-  local shared
-  key, shared = index:match(bare)
-  if not key then return nil end
-  -- the index memoizes `args` per text: a copy takes the colour, never the memo
-  args = {}
-  for k, v in pairs(shared or {}) do args[k] = v end
-  for i, a in pairs(shared or {}) do
-    if type(i) == "number" and type(a) == "string" and a ~= "" then
-      local coloured = text:match("(|c%x%x%x%x%x%x%x%x" .. a:gsub("%p", "%%%0") .. "|r)")
-      if coloured then args[i] = coloured end
+  if not key then
+    local bare = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+    if bare == text then return nil end
+    local shared
+    key, shared = index:match(bare)
+    if not key then return nil end
+    -- the index memoizes `args` per text: a copy takes the colour, never the memo
+    args = {}
+    for k, v in pairs(shared or {}) do args[k] = v end
+    for i, a in pairs(shared or {}) do
+      if type(i) == "number" and type(a) == "string" and a ~= "" then
+        local coloured = text:match("(|c%x%x%x%x%x%x%x%x" .. a:gsub("%p", "%%%0") .. "|r)")
+        if coloured then args[i] = coloured end
+      end
     end
   end
-  return key, args
+  local runs
+  for coloured, code, run in text:gmatch("((|c%x%x%x%x%x%x%x%x)([^|]+)|r)") do
+    local held = false
+    for _, a in pairs(args or {}) do
+      if type(a) == "string" and a:find(coloured, 1, true) then held = true end
+    end
+    if not held then
+      runs = runs or {}
+      runs[#runs + 1] = { run = run, code = code }
+    end
+  end
+  return key, args, runs
 end
 -- A stat change with no template of its own: "<signed number> <short stat name>" ("+0.7 damage per second", the
 -- ITEM_MOD_*_SHORT names the client's C_TooltipComparison.GetItemComparisonDelta writes), the number possibly
@@ -1016,17 +1030,17 @@ function Tooltip.onCompareShow(frame)
     -- after the delta header, each line is a stat change the client formats ("-11 Armor"): a stat template
     local deltas = false
     for i, l in ipairs(Tooltip.lines(frame)) do
-      local key, args
+      local key, args, runs
       if l.text ~= "" then
         key, args = index:matchOnly(l.text, COMPARE_KEYS)
         if key == "ITEM_DELTA_DESCRIPTION" or key == "ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION" then
           deltas = true
         elseif not key and deltas and not anySecret({ l.text }) then
-          key, args = Tooltip.matchColoured(index, l.text)
+          key, args, runs = Tooltip.matchColoured(index, l.text)
           if not key then key, args = Tooltip.matchStatChange(index, l.text) end
         end
       end
-      local ctx = { args = args, refit = refit }
+      local ctx = { args = args, refit = refit, runColours = runs }
       if key and WFJ.Render.show(surface, "ui.L" .. i, l.fs, l.text, "ui", "ui", key, ctx) then n = n + 1 end
     end
   end)

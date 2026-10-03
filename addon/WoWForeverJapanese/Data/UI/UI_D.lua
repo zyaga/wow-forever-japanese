@@ -60,6 +60,7 @@ WFJ.Data.add("ui", {
   ["DEATH_RECAP_DAMAGE_TT"] = { "%s %s", 0x98ecaae2, "." },
   ["DEATH_RECAP_DEADLY_SPELL"] = { "致命的", 0xc926d38a, "." },
   ["DEATH_RECAP_DEATH_TT"] = { "体力%s%%でとどめの一撃。", 0xc213e66b, "." },
+  ["DEATH_RECAP_TEXT"] = { "死亡しました。", 0x88928e25, "." },
   ["DEATH_RECAP_TITLE"] = { "死亡の記録", 0x481ed3ba, "." },
   ["DEATH_RECAP_UNAVAILABLE"] = { "死亡の記録は利用できません。", 0xa0421d4a, "." },
   ["DEATH_RELEASE"] = { "霊魂を解放", 0xc59333f3, "." },
