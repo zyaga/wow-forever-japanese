@@ -1,6 +1,6 @@
 """wfj import english …: the English sources: pfQuest, the client tables (wago-ids, client-text, wago-ui),
-the collector, VMaNGOS and the quest cache (split out of cmd/import_.py by source; see its docstring and
-docs/systems/pipeline.md).
+the collector, VMaNGOS, forever-vo and the quest cache (split out of cmd/import_.py by source; see its
+docstring and docs/systems/pipeline.md).
 
 English importers merge by source: an importer replaces its own lines and any line whose (id, field)
 it provides, and keeps every other source's lines. The collector import replaces any stand-in
@@ -19,7 +19,7 @@ from typing import Any
 from wfj.core.hashing import key as hash_key
 from wfj.core.model import english_line, validate_line
 from wfj.core.normalize import normalize_for, normalize_v1
-from wfj.io import tables_stamp, vmangos, wago, wdb
+from wfj.io import forever_vo, tables_stamp, vmangos, wago, wdb
 from wfj.io.collector_dump import read_dump
 from wfj.io.jsonl_store import Store
 from wfj.io.lua_reader import as_int_id, parse_assignment
@@ -531,7 +531,10 @@ def run_vmangos(a: argparse.Namespace) -> int:
     # Merge every type before writing any: a refused merge must not leave another type's merge written.
     # a line a client recorded in game (the collector) outranks VMaNGOS, a stand-in (ADR-053)
     merged_book = merge_source("book", store.load("book"), books, "vmangos", outranked_by=("collector",))
-    merged_quest = merge_source("quest", store.load("quest"), quest, "vmangos", outranked_by=("collector",))
+    # so does what forever-vo's players recorded in game (ADR-055)
+    merged_quest = merge_source(
+        "quest", store.load("quest"), quest, "vmangos", outranked_by=("collector", "forever-vo")
+    )
     existing = store.load("gossip")
     mine = {ln["id"]: ln for ln in existing if source_name(ln) == "vmangos"}
     if not by_key and mine:
@@ -560,6 +563,40 @@ def run_vmangos(a: argparse.Namespace) -> int:
     kept = len(by_key) - len(gossip)
     print(f"english gossip: {len(gossip)} keys ({src}); {kept} already present from another source")
     print(f"english book: {len(books)} pages ({src})")
+    return 0
+
+
+def run_forever_vo(a: argparse.Namespace) -> int:
+    """Quest progress and turn-in English from forever-vo's player captures (ADR-055; reader in
+    io/forever_vo). It only fills a (quest, field) no other source holds: where VMaNGOS has the line, a
+    capture differs mostly in form (`$B` written out, one gender's word for a `$g` choice), and replacing it
+    would mark its translation stale for nothing; a real rewording reaches us through our own collector,
+    which outranks every stand-in. Source-owned merge, so a later run replaces its earlier lines."""
+    if not _COMMIT.match(a.commit or ""):
+        raise ValueError(f"forever-vo: --commit must be a 7–40 hex commit, got {a.commit!r}")
+    store = Store(data_root(), english=True)
+    existing = store.load("quest")
+    titles = {ln["id"]: ln["en"] for ln in existing if ln["field"] == "title"}
+    result = forever_vo.read_captures(Path(a.folder), titles)
+    src = f"forever-vo@{a.commit}"
+    have = {(ln["id"], ln["field"]): ln["hash"] for ln in existing if source_name(ln) != "forever-vo"}
+    lines, c = [], Counter()
+    for cap in result.captures:
+        h = hash_key(normalize_v1(cap.en))
+        k = (cap.id_, cap.field)
+        if k in have:
+            c["same" if have[k] == h else "held"] += 1
+            continue
+        lines.append(english_line(cap.id_, cap.field, cap.en, h, src))
+    merged = merge_source("quest", existing, lines, "forever-vo", outranked_by=("collector",))
+    store.save("quest", merged)
+    fields = Counter(ln["field"] for ln in lines)
+    print(
+        f"english quest: {len(lines)} lines ({src}): progress {fields['progress']} · completion "
+        f"{fields['completion']} · already held, same text {c['same']} · "
+        f"already held, other wording {c['held']}"
+    )
+    print("skipped: " + ", ".join(f"{k} {v}" for k, v in sorted(result.skipped.items())))
     return 0
 
 

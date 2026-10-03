@@ -12,6 +12,7 @@ tests/python/test_attribution.py fails when `data/` holds a translator the file 
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from pathlib import Path
 
@@ -85,7 +86,7 @@ cache, the Classic Era quest cache, wago.tools DB2 exports (`ItemSparse`, `Spell
 - pfQuest (`db/enUS/quests.lua`, https://github.com/shagu/pfQuest), under the MIT License (below);
 - the VMaNGOS world database (https://github.com/vmangos/core, release `db_latest`, snapshot `db-13b49dc`),
   GPL-2.0: quest progress and completion text, gossip and book pages.
-
+<FOREVER_VO_SOURCE>
 ## pfQuest license
 
 > MIT License
@@ -106,7 +107,7 @@ cache, the Classic Era quest cache, wago.tools DB2 exports (`ItemSparse`, `Spell
 > EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
 > AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 > OR OTHER DEALINGS IN THE SOFTWARE.
-
+<FOREVER_VO_LICENSE>
 ## This project
 
 WoW Forever Japanese ships its own code and translations under GPL-2.0-or-later (see `LICENSE`); every
@@ -114,6 +115,47 @@ translated line keeps its provenance in `data/` (`provenance.translator`). The E
 is Blizzard Entertainment's and is not licensed by this project. The bundled font is IPA UI Gothic under the
 IPA Font License v1.0 (see `addon/WoWForeverJapanese/Fonts/`). Details: `docs/legal/licensing.md`.
 """
+
+# forever-vo's credit is written only while some English line still comes from it (ADR-055): once another
+# source has replaced every one, a regeneration drops the credit with them.
+FOREVER_VO = "forever-vo"
+FOREVER_VO_SOURCE = """\
+- forever-vo (https://github.com/quinn-dougherty/forever-vo), under the MIT License (below): quest progress
+  and turn-in text that players of the Forever client recorded with its addon and sent in.
+"""
+FOREVER_VO_LICENSE = """
+## forever-vo license
+
+> MIT License
+>
+> Copyright (c) 2026 Quinn Dougherty
+>
+> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+> associated documentation files (the "Software"), to deal in the Software without restriction, including
+> without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the
+> following conditions:
+>
+> The above copyright notice and this permission notice shall be included in all copies or substantial
+> portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+> LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+> EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+> AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+> OR OTHER DEALINGS IN THE SOFTWARE.
+"""
+
+
+def english_sources(root: Path) -> set[str]:
+    """The source names (`src` before the `@`) of every line in `data/english/`."""
+    names: set[str] = set()
+    for path in sorted((root / "english").glob("*/*.jsonl")):
+        for raw in path.read_text(encoding="utf-8").splitlines():
+            if raw.strip():
+                names.add(str(json.loads(raw)["src"]).split("@", 1)[0])
+    return names
+
 
 # Tags that name a project or a community, not a person.
 LABELS = ("CraftJapanizer", "WoWJapanizer", "questjapanizer-wiki")
@@ -180,12 +222,16 @@ def with_correctors(text: str, entries: dict[str, list[int]]) -> str:
     return text[:at] + section + text[at:]
 
 
-def render(tags: list[str]) -> str:
+def render(tags: list[str], sources: set[str] | frozenset[str] = frozenset()) -> str:
+    """The whole file. `sources`: the English source names in `data/english/` (english_sources)."""
     lines = ["# Attribution", "", f"## Translators ({len(tags)} tags, as recorded in the corpus)", ""]
     lines += [f"- {t}" for t in tags]
     if any(t in LABELS for t in tags):
         lines += ["", LABEL_NOTE.rstrip("\n")]
-    lines += ["", LINEAGE]
+    vo = FOREVER_VO in sources
+    lineage = LINEAGE.replace("<FOREVER_VO_SOURCE>\n", (FOREVER_VO_SOURCE if vo else "") + "\n")
+    lineage = lineage.replace("<FOREVER_VO_LICENSE>\n", (FOREVER_VO_LICENSE if vo else "") + "\n")
+    lines += ["", lineage]
     return "\n".join(lines)
 
 
@@ -202,7 +248,7 @@ def main(argv: list[str] | None = None) -> int:
         tags |= set(translators(a.corpus.read_text(encoding="utf-8-sig")))
     # the Correctors section is written by `wfj report apply` from data/; a regeneration keeps it
     kept = _SECTION.search(before)
-    text = render(_sorted(tags))
+    text = render(_sorted(tags), english_sources(a.data or data_root()))
     if kept:
         at = text.find("## Lineage")
         # render always writes Lineage; without it the kept section goes at the end rather than being lost

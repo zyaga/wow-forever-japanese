@@ -149,6 +149,10 @@ RELABEL_TRANSLATOR ?= CraftJapanizer=questjapanizer-wiki
 # snapshot of vmangos/core release `db_latest`, asset db-sqlite-<sha>.zip (ADR-019).
 VMANGOS_DB   ?= $(INPUTS)/vmangos/mangos.sqlite
 VMANGOS_SHA  ?= 13b49dc
+# Quest progress / turn-in English Forever players recorded with forever-vo's addon (MIT; ADR-055): a clone of
+# github.com/quinn-dougherty/forever-vo checked out at FOREVER_VO_SHA (`git -C $(FOREVER_VO) checkout <sha>`).
+FOREVER_VO     ?= $(INPUTS)/forever-vo
+FOREVER_VO_SHA ?= 025070f
 # Blizzard's cached quest title / objectives / description: the client's questcache.wdb after a
 # quest scan, copied in with `make wdb-copy`. WDB_BUILD must
 # be the build in the file's header (ADR-020). QuestV2 (the client's own table) is the scan plan and the coverage denominator.
@@ -212,6 +216,8 @@ import-served: ## drop the English for ids the Forever tables do not list (ADR-0
 import-shared-english:
 	cd pipeline && $(PY) -m wfj import english pfquest $(PFQUEST) --commit $(PFQUEST_SHA)
 	cd pipeline && $(PY) -m wfj import english vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA)
+	@test "$$(git -C "$(FOREVER_VO)" rev-parse --short=7 HEAD)" = "$(FOREVER_VO_SHA)" || { echo "import: $(FOREVER_VO) is not at FOREVER_VO_SHA $(FOREVER_VO_SHA)"; exit 1; }
+	cd pipeline && $(PY) -m wfj import english forever-vo $(FOREVER_VO) --commit $(FOREVER_VO_SHA)
 
 # One client's English (CLIENT=<client>): its quest cache, then its tables (names, tooltip text, UI strings).
 import-client:
@@ -380,7 +386,7 @@ rebuild-check: ## empty data/english (collector lines kept), run `make data` fro
 	@$(ONE_CLIENT_GUARD)
 	@test -z "$$(git status --porcelain -- data $(ADDON) pipeline Makefile)" || { echo "rebuild-check: data/, $(ADDON), pipeline/ or the Makefile has uncommitted changes; commit or restore them first"; git status --short -- data $(ADDON) pipeline Makefile | head; exit 1; }
 	@$(MAKE) -s wdb-preflight
-	@for f in "$(PRED_QUEST)" "$(PRED_TOOLTIP)" "$(QJP)" "$(CJQ)" "$(PFQUEST)" "$(VMANGOS_DB)" "$(UI_KEYS)"; do test -e "$$f" || { echo "rebuild-check: shared input missing: $$f; nothing deleted"; exit 1; }; done
+	@for f in "$(PRED_QUEST)" "$(PRED_TOOLTIP)" "$(QJP)" "$(CJQ)" "$(PFQUEST)" "$(VMANGOS_DB)" "$(FOREVER_VO)" "$(UI_KEYS)"; do test -e "$$f" || { echo "rebuild-check: shared input missing: $$f; nothing deleted"; exit 1; }; done
 	@# the collector's lines (English a client recorded in game) are no pinned input's: kept, ADR-053
 	cd pipeline && $(PY) -m wfj.dev.reset_english ../data/english
 	@# one job, stop at the first error: `data` is import → check → generate over the files just deleted

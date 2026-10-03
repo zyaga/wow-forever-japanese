@@ -17,6 +17,7 @@
                          (item / spell tooltip text and buff text, raw client templates)
   wfj import english collector <SavedVariables/WoWForeverJapanese.lua>
   wfj import english vmangos <mangos.sqlite> --commit SHA   (quest progress/completion + gossip)
+  wfj import english forever-vo <checkout> --commit SHA     (quest progress/completion players recorded)
   wfj import english wdb <questcache.wdb> --build VERSION [--questv2 QuestV2.csv [--missing PATH]]
                          [--allow-shrink] [--dry-run]
                          (Blizzard's cached quest title / objectives / description, ADR-020)
@@ -60,6 +61,7 @@ from wfj.cmd.import_english import (
     SRC_HELP,
     run_client_text,
     run_collector,
+    run_forever_vo,
     run_pfquest,
     run_vmangos,
     run_wago,
@@ -126,6 +128,10 @@ def _add_english(sub: Any) -> None:
     vm.add_argument("file")
     vm.add_argument("--commit", required=True)
     vm.set_defaults(fn=run_vmangos)
+    fv = esub.add_parser("forever-vo")
+    fv.add_argument("folder")
+    fv.add_argument("--commit", required=True)
+    fv.set_defaults(fn=run_forever_vo)
     wd = esub.add_parser("wdb")
     wd.add_argument("--merge", choices=("replace", "union"), default="replace", help=MERGE_HELP)
     wd.add_argument("file")
