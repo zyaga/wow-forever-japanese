@@ -1,4 +1,4 @@
--- The client-table words that sit inside a sentence the dictionary already translates (ADR-051): a pet's diet
+-- The client-table words that sit inside a sentence the dictionary already translates (ADR-052): a pet's diet
 -- (PetFood, a comma-separated list), the rest state (RestState) and "Requires <weapon kind>" (ItemSubClassMask).
 -- Each is shown in Japanese only when it is that family's row; anything else in the slot is kept as written.
 local H = require("tests.lua.spec.helpers")

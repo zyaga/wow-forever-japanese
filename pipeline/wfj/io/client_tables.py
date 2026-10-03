@@ -352,7 +352,7 @@ def _forever_text(
     return Table(name, file_data_id, layout_hash, field_count, columns, unwritten_strings)
 
 
-# The text families the served-text inventory found shown on Forever (ADR-051). Each written column was
+# The text families the served-text inventory found shown on Forever (ADR-052). Each written column was
 # matched to wago.tools' export of 1.60.1.70170, row for row: every row of every written column is the same
 # (the inventory's research note in docs/research/ has the table). Every written column is the row id or a
 # leading string field, so a hotfix is read as its leading strings; an unwritten string before a written one
@@ -415,6 +415,30 @@ _SERVED_TEXT_TABLES = (
     _forever_text(
         "MapDifficultyXCondition", 1375435, 0xD514B4CA, 3, (_c("ID", ID), _c("FailureDescription_lang", 0))
     ),
+    _forever_text(
+        "PlayerCondition", 1045411, 0x1D743D99, 86, (_c("ID", ID), _c("Failure_description_lang", 0))
+    ),
+    # field 3 (CursorName) is a cursor file token
+    _forever_text(
+        "LockType",
+        1284823,
+        0xAF114F71,
+        6,
+        (_c("ID", ID), _c("Name_lang", 0), _c("ResourceName_lang", 1), _c("Verb_lang", 2)),
+    ),
+    _forever_text(
+        "SpellFlyout", 1146819, 0xBE7036C6, 6, (_c("ID", ID), _c("Name_lang", 0), _c("Description_lang", 1))
+    ),
+    _forever_text("ServerMessages", 1301141, 0x022C43AA, 1, (_c("ID", ID), _c("Text_lang", 0))),
+    _forever_text("TransmogSituation", 7211446, 0xFA6B434F, 6, (_c("ID", ID), _c("Name_lang", 0))),
+    _forever_text(
+        "TransmogSituationTrigger",
+        7210468,
+        0x7833CAB8,
+        5,
+        (_c("ID", ID), _c("Name_lang", 0), _c("Description_lang", 1)),
+    ),
+    _forever_text("TransmogOutfitSlotOption", 7299793, 0x8C80370F, 7, (_c("ID", ID), _c("Name_lang", 0))),
 )
 
 TABLES: dict[str, Table] = {

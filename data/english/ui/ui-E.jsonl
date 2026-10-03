@@ -3,6 +3,7 @@
 {"id": "EDIT_MODE_HELPTIPS_SELECT_FRAMES", "field": "text", "en": "Click on any highlighted UI element on the HUD to get started.", "hash": "2f8f52f91f56775b", "src": "db2@1.60.1.70170"}
 {"id": "EDIT_MODE_HELPTIPS_SHOW_HIDDEN_FRAMES", "field": "text", "en": "Use the checkboxes to customize UI elements that are not normally visible.", "hash": "032cb4388447ab47", "src": "db2@1.60.1.70170"}
 {"id": "EDIT_MODE_HELPTIP_BUTTON_TOOLTIP", "field": "text", "en": "Click on this to toggle on/off the help system for Edit Mode.", "hash": "e809b2fe5abd4f76", "src": "db2@1.60.1.70170"}
+{"id": "EJECT_PASSENGER", "field": "text", "en": "Eject Passenger", "hash": "0006f9c3cfc721d6", "src": "db2@1.60.1.70170"}
 {"id": "ELITE", "field": "text", "en": "Elite", "hash": "c9c69bbf5df18bb1", "src": "db2@1.60.1.70170"}
 {"id": "EMBLEM_BACKGROUND", "field": "text", "en": "Background", "hash": "6f309c25fa86c239", "src": "db2@1.60.1.70170"}
 {"id": "EMBLEM_BORDER", "field": "text", "en": "Border", "hash": "83ee7f28327cd54d", "src": "db2@1.60.1.70170"}
@@ -79,6 +80,7 @@
 {"id": "ENABLE_SWING_TIMER", "field": "text", "en": "Enable Swing Timer", "hash": "fa192b295b05e384", "src": "db2@1.60.1.70170"}
 {"id": "ENABLE_SWING_TIMER_TOOLTIP", "field": "text", "en": "Show timing bars for your equipped weapon auto attacks, helping you see when your next swing or shot will occur.", "hash": "8017e587a32b8b50", "src": "db2@1.60.1.70170"}
 {"id": "ENABLE_TEXT_TO_SPEECH", "field": "text", "en": "Read Chat Text out loud", "hash": "fc3958adb2ebeeca", "src": "db2@1.60.1.70170"}
+{"id": "ENABLE_VOICECHAT", "field": "text", "en": "Enable Voice Chat", "hash": "f924afcff440a5ff", "src": "db2@1.60.1.70170"}
 {"id": "ENCHANTED_TOOLTIP_LINE", "field": "text", "en": "Enchanted: %s", "hash": "a4d1df5d22b98771", "src": "db2@1.60.1.70170"}
 {"id": "ENCHANTS", "field": "text", "en": "Enchants", "hash": "4938d6b8cca2464e", "src": "db2@1.60.1.70170"}
 {"id": "ENCHANT_AURA_COMBATLOG_TOOLTIP", "field": "text", "en": "Show when a weapon enchantment is gained or removed.", "hash": "44b6aaca17f39d69", "src": "db2@1.60.1.70170"}
@@ -201,6 +203,7 @@
 {"id": "ERROR_COMMUNITIES_WRONG_FACTION", "field": "text", "en": "Player is wrong faction.", "hash": "17c6bd2dd80059cf", "src": "db2@1.60.1.70170"}
 {"id": "ERROR_COMMUNITIES_WRONG_REGION", "field": "text", "en": "Link is for the wrong region.", "hash": "3f9b6ea8344be7e8", "src": "db2@1.60.1.70170"}
 {"id": "ERROR_NO_FRAME_TO_FOCUS", "field": "text", "en": "No interface frame to focus!", "hash": "c6ffd8fe9dd60ecd", "src": "db2@1.60.1.70170"}
+{"id": "ERROR_SLASH_CHANGEACTIONBAR", "field": "text", "en": "Appropriate format is /changeactionbar x where x is an action bar page number in the range %d to %d.", "hash": "302d8cd2e26175e1", "src": "db2@1.60.1.70170"}
 {"id": "ERROR_SLASH_COMMENTATOROVERRIDE", "field": "text", "en": "Usage: /overridename <original name> <override name>", "hash": "6f870e1eb65ab660", "src": "db2@1.60.1.70170"}
 {"id": "ERROR_SLASH_COMMENTATOROVERRIDE_EXAMPLE", "field": "text", "en": "Example: /overridename Hans Franz", "hash": "adaf807db374005c", "src": "db2@1.60.1.70170"}
 {"id": "ERROR_SLASH_COMMENTATOR_ASSIGNPLAYER", "field": "text", "en": "Usage: /assignplayer <player name> <teamName name>", "hash": "435ae7265674f675", "src": "db2@1.60.1.70170"}
@@ -208,6 +211,8 @@
 {"id": "ERROR_SLASH_COMMENTATOR_NAMETEAM", "field": "text", "en": "Usage: /nameteam <team index> <team name>", "hash": "911098c4a524372c", "src": "db2@1.60.1.70170"}
 {"id": "ERROR_SLASH_COMMENTATOR_NAMETEAM_EXAMPLE", "field": "text", "en": "Example: /nameteam 1 Brawling Buddies", "hash": "889614b3c1b3825a", "src": "db2@1.60.1.70170"}
 {"id": "ERROR_SLASH_EDITMODE_CANNOT_ENTER", "field": "text", "en": "Cannot enter edit mode at this time", "hash": "af686ad0fb0fd9ac", "src": "db2@1.60.1.70170"}
+{"id": "ERROR_SLASH_EQUIP_TO_SLOT", "field": "text", "en": "Appropriate format is /equipslot x [item name] where x is an equippable item slot in the range %d to %d.", "hash": "1ceabbd5bac9ca29", "src": "db2@1.60.1.70170"}
+{"id": "ERROR_SLASH_SWAPACTIONBAR", "field": "text", "en": "Appropriate format is /swapactionbar x y where x and y are action bar page numbers in the range %d to %d.", "hash": "4b2694a070027923", "src": "db2@1.60.1.70170"}
 {"id": "ERR_2HANDED_EQUIPPED", "field": "text", "en": "Cannot equip that with a two-handed weapon.", "hash": "c02b0379c4063b3e", "src": "db2@1.60.1.70170"}
 {"id": "ERR_2HSKILLNOTFOUND", "field": "text", "en": "You cannot dual-wield", "hash": "412c9afd5a6c0cf0", "src": "db2@1.60.1.70170"}
 {"id": "ERR_ABILITY_COOLDOWN", "field": "text", "en": "Ability is not ready yet.", "hash": "b5202944da824989", "src": "db2@1.60.1.70170"}

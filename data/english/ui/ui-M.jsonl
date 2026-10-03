@@ -2,6 +2,7 @@
 {"id": "MACROFRAME_CHAR_LIMIT", "field": "text", "en": "%d/255 Characters Used", "hash": "5269200bd3f799dd", "src": "db2@1.60.1.70170"}
 {"id": "MACROS", "field": "text", "en": "Macros", "hash": "5adeea1d7111d24c", "src": "db2@1.60.1.70170"}
 {"id": "MACRO_ACTION_FORBIDDEN", "field": "text", "en": "A macro script has been blocked from an action only available to the Blizzard UI.", "hash": "6378604ce2983c0e", "src": "db2@1.60.1.70170"}
+{"id": "MACRO_POPUP_CHOOSE_ICON", "field": "text", "en": "Choose an Icon:", "hash": "59742d38fb94afe1", "src": "db2@1.60.1.70170"}
 {"id": "MACRO_POPUP_TEXT", "field": "text", "en": "Enter Macro Name (Max 16 Characters):", "hash": "c30d203d54ca0c51", "src": "db2@1.60.1.70170"}
 {"id": "MAC_DISABLE_OS_SHORTCUTS", "field": "text", "en": "Disable OS Keyboard Shortcuts", "hash": "94b084fcf9ff853d", "src": "db2@1.60.1.70170"}
 {"id": "MAC_DISABLE_OS_SHORTCUTS_TOOLTIP", "field": "text", "en": "Disables the operating system keyboard shortcuts. Use this if you don't want to accidentally fire operating system shortcuts during the game.", "hash": "099682cb8abeb16e", "src": "db2@1.60.1.70170"}
@@ -34,6 +35,7 @@
 {"id": "MAIN_ASSIST", "field": "text", "en": "Main Assist", "hash": "23d6cc19b177476f", "src": "db2@1.60.1.70170"}
 {"id": "MAIN_HELP_BUTTON_TOOLTIP", "field": "text", "en": "Click this to toggle on/off the help system for this frame.", "hash": "18a8ef5313a73483", "src": "db2@1.60.1.70170"}
 {"id": "MAIN_TANK", "field": "text", "en": "Main Tank", "hash": "08cf530d7c3f57ad", "src": "db2@1.60.1.70170"}
+{"id": "MAJOR_FACTION_MAX_RENOWN_REACHED", "field": "text", "en": "Maximum Renown", "hash": "b547a5c4dfecb476", "src": "db2@1.60.1.70170"}
 {"id": "MAJOR_FACTION_RENOWN_LEVEL_TOAST", "field": "text", "en": "Renown %d", "hash": "ff986135f8acf86d", "src": "db2@1.60.1.70170"}
 {"id": "MAKE_INTERACTABLE", "field": "text", "en": "Make Interactive", "hash": "7f3e9c8a93c43412", "src": "db2@1.60.1.70170"}
 {"id": "MAKE_MODERATOR", "field": "text", "en": "Make Moderator", "hash": "a9079abc2837458d", "src": "db2@1.60.1.70170"}
@@ -175,12 +177,16 @@
 {"id": "MOVE_FILTER_DOWN", "field": "text", "en": "Move Filter Down", "hash": "72f4249c862b684e", "src": "db2@1.60.1.70170"}
 {"id": "MOVE_FILTER_UP", "field": "text", "en": "Move Filter Up", "hash": "1021f880847ca8e4", "src": "db2@1.60.1.70170"}
 {"id": "MOVE_PAD", "field": "text", "en": "Show Move Pad", "hash": "c0bee15e707d98f0", "src": "db2@1.60.1.70170"}
+{"id": "MOVE_PAD_LOCKED", "field": "text", "en": "Lock Window", "hash": "cf6273e21a4161ea", "src": "db2@1.60.1.70170"}
+{"id": "MOVE_PAD_PRESS_AND_HOLD_MODE", "field": "text", "en": "Press and Hold Movement", "hash": "56c562348275c024", "src": "db2@1.60.1.70170"}
 {"id": "MOVE_TO_INACTIVE", "field": "text", "en": "Move to Inactive", "hash": "ea61766abc3512bc", "src": "db2@1.60.1.70170"}
 {"id": "MOVE_TO_NEW_WINDOW", "field": "text", "en": "Move to New Window", "hash": "aaa34bf534f2fbc9", "src": "db2@1.60.1.70170"}
 {"id": "MOVE_TO_WHISPER_WINDOW", "field": "text", "en": "Move to Whisper Window", "hash": "10dbeccdebf8d0d9", "src": "db2@1.60.1.70170"}
 {"id": "MSAA_LABEL", "field": "text", "en": "Multisample Techniques", "hash": "c106a767e32e5dad", "src": "db2@1.60.1.70170"}
 {"id": "MULTISAMPLE_ALPHA_TEST", "field": "text", "en": "Multisample Alpha-Test", "hash": "88886bb7f71bf1a4", "src": "db2@1.60.1.70170"}
 {"id": "MULTI_CAST_TOOLTIP_NO_TOTEM", "field": "text", "en": "No Totem", "hash": "0018e222550fa9d1", "src": "db2@1.60.1.70170"}
+{"id": "MUSIC_DISABLED", "field": "text", "en": "Music Disabled", "hash": "274af892db732bb7", "src": "db2@1.60.1.70170"}
+{"id": "MUSIC_ENABLED", "field": "text", "en": "Music Enabled", "hash": "f747ef7fc0bf0b80", "src": "db2@1.60.1.70170"}
 {"id": "MUSIC_VOLUME", "field": "text", "en": "Music", "hash": "576ba176759e62a1", "src": "db2@1.60.1.70170"}
 {"id": "MUTE", "field": "text", "en": "Mute", "hash": "0a70367d58c9d02d", "src": "db2@1.60.1.70170"}
 {"id": "MUTE_SILENCED", "field": "text", "en": "Mute (Player is silenced)", "hash": "e753adf8230eb537", "src": "db2@1.60.1.70170"}

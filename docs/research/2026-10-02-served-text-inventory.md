@@ -6,7 +6,7 @@
 - **Build:** Forever beta 1.60.1.70170 (`wow_classic_beta`), read-only, offline
   ([ADR-021](../adr/021-client-tables-from-the-local-archive.md)).
 - **Artifacts:** `pipeline/served_columns.txt` (generated, `make served-columns`) and
-  `pipeline/served_dispositions.txt` (hand-written). Decision: [ADR-051](../adr/051-coverage-by-served-data.md).
+  `pipeline/served_dispositions.txt` (hand-written). Decision: [ADR-052](../adr/052-coverage-by-served-data.md).
 
 ## Options
 
@@ -146,7 +146,7 @@ are shown are new surfaces for the maintainer to approve.
 ## Recommendation
 
 Measure coverage against the inventory and require a disposition for every served column
-([ADR-051](../adr/051-coverage-by-served-data.md)). Regenerate the inventory on every build and read its delta as
+([ADR-052](../adr/052-coverage-by-served-data.md)). Regenerate the inventory on every build and read its delta as
 part of the harvest. Translate the spell gaps first (largest, already a surface), then decide the 39 open columns.
 
 ## Related

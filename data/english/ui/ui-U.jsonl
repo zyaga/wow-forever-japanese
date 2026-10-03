@@ -248,6 +248,7 @@
 {"id": "UPGRADE", "field": "text", "en": "Upgrade", "hash": "289afa4140fc03f7", "src": "db2@1.60.1.70170"}
 {"id": "UPGRADED_RECIPE_LEARNED_TITLE", "field": "text", "en": "Recipe Upgraded!", "hash": "618c32c8c2552c18", "src": "db2@1.60.1.70170"}
 {"id": "UPGRADE_MISSING_ITEM", "field": "text", "en": "Drag an item here to upgrade it.", "hash": "7e2b333e540e2461", "src": "db2@1.60.1.70170"}
+{"id": "USE", "field": "text", "en": "Use", "hash": "00167d3b517cd19e", "src": "db2@1.60.1.70170"}
 {"id": "USED", "field": "text", "en": "Already Known", "hash": "cfa7e4969ed1b699", "src": "db2@1.60.1.70170"}
 {"id": "USEIPV6", "field": "text", "en": "Enable IPv6 when available", "hash": "1cec9db8a1f2702b", "src": "db2@1.60.1.70170"}
 {"id": "USER_SURVEY_DIALOG_TEXT", "field": "text", "en": "We'd like to invite you to answer a few questions about your World of Warcraft experience! Clicking Yes will open an external browser window to fill out the survey.", "hash": "d8efec9b011164b0", "src": "db2@1.60.1.70170"}

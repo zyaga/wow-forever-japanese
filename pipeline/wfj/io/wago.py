@@ -161,7 +161,7 @@ TEXT_FAMILIES: dict[str, tuple[str, str]] = {
     "LfgActivity": ("GroupFinderActivity", "FullName_lang"),
     "WidgetText": ("UiWidgetStringSource", "Value_lang"),
     "ItemNameDescription": ("ItemNameDescription", "Description_lang"),
-    # the families the served-text inventory found shown on Forever (ADR-051)
+    # the families the served-text inventory found shown on Forever (ADR-052)
     "CriteriaText": ("CriteriaTree", "Description_lang"),
     "RenownRewardName": ("RenownRewards", "Name_lang"),
     "RenownRewardDescription": ("RenownRewards", "Description_lang"),
@@ -186,6 +186,17 @@ TEXT_FAMILIES: dict[str, tuple[str, str]] = {
     "FriendshipGain": ("FriendshipReputation", "StandingModified_lang"),
     "InstanceEntryMessage": ("MapDifficulty", "Message_lang"),
     "InstanceEntryFailure": ("MapDifficultyXCondition", "FailureDescription_lang"),
+    "PlayerConditionFailure": ("PlayerCondition", "Failure_description_lang"),
+    "LockTypeName": ("LockType", "Name_lang"),
+    "LockTypeResource": ("LockType", "ResourceName_lang"),
+    "LockTypeVerb": ("LockType", "Verb_lang"),
+    "FlyoutName": ("SpellFlyout", "Name_lang"),
+    "FlyoutDescription": ("SpellFlyout", "Description_lang"),
+    "ServerMessage": ("ServerMessages", "Text_lang"),
+    "TransmogSituation": ("TransmogSituation", "Name_lang"),
+    "TransmogTrigger": ("TransmogSituationTrigger", "Name_lang"),
+    "TransmogTriggerDescription": ("TransmogSituationTrigger", "Description_lang"),
+    "TransmogSlotOption": ("TransmogOutfitSlotOption", "Name_lang"),
 }
 FAMILY_TABLES = tuple(dict.fromkeys(t for t, _ in TEXT_FAMILIES.values()))
 

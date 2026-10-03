@@ -263,7 +263,7 @@ toy.f0  no-display  # in game on 1.60.1.70170, ToggleCollectionsJournal(COLLECTI
 # Required tools and spell focus objects ("Requires Anvil", "Requires Ambermill Leyline Focus") are names of things
 spellfocusobject.f0  names  # object names a recipe or spell needs (Anvil, Forge, Ambermill Leyline Focus); names stay English
 
-# Client-table text the inventory found shown on Forever (ADR-051), imported as UI key families
+# Client-table text the inventory found shown on Forever (ADR-052), imported as UI key families
 criteriatree.f0  surface:ui:CriteriaText  # Description_lang: achievement and Legacy criteria (the achievements' own trees)
 renownrewards.f0  surface:ui:RenownRewardName  # Name_lang (reward item names stay English)
 renownrewards.f1  surface:ui:RenownRewardDescription  # Description_lang
@@ -292,3 +292,14 @@ mapdifficultyxcondition.f0  surface:ui:InstanceEntryFailure  # FailureDescriptio
 # Not decided yet (each may be shown; see docs/research/2026-10-02-served-text-inventory.md):
 # playercondition.f0 locktype.f0 locktype.f1 locktype.f2 spellflyout.f0 spellflyout.f1 servermessages.f0
 # transmogsituation.f0 transmogsituationtrigger.f0 transmogsituationtrigger.f1 transmogoutfitslotoption.f0
+playercondition.f0  surface:ui:PlayerConditionFailure  # Failure_description_lang: a requirement line (Requires Frostwolf Clan - Exalted); faction names inside stay English
+locktype.f0  surface:ui:LockTypeName  # Name_lang: the lock action (Pick Lock, Disarm Trap); the gathering skills (Herbalism, Mining, Fishing) are names and left out
+locktype.f1  surface:ui:LockTypeResource  # ResourceName_lang: what the lock opens (Locked Items, Herbs)
+locktype.f2  surface:ui:LockTypeVerb  # Verb_lang: the action verb (Pick, Gather)
+spellflyout.f0  surface:ui:FlyoutName  # Name_lang: a spellbook flyout's name (Portal, Summon Demon)
+spellflyout.f1  surface:ui:FlyoutDescription  # Description_lang: the flyout's tooltip description
+servermessages.f0  surface:ui:ServerMessage  # Text_lang: server notices in chat ([SERVER] Shutdown in %s); the bare %s row and the DEBUG row are left out
+transmogsituation.f0  surface:ui:TransmogSituation  # Name_lang: the transmog outfit window's situation options
+transmogsituationtrigger.f0  surface:ui:TransmogTrigger  # Name_lang: the outfit window's situation groups
+transmogsituationtrigger.f1  surface:ui:TransmogTriggerDescription  # Description_lang: the situation group's help text
+transmogoutfitslotoption.f0  surface:ui:TransmogSlotOption  # Name_lang: the outfit window's slot options (One Handed Weapon, Cloth)

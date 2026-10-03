@@ -1,4 +1,4 @@
-# ADR-051: Coverage by served data
+# ADR-052: Coverage by served data
 
 - **Status:** Accepted
 - **Date:** 2026-10-02

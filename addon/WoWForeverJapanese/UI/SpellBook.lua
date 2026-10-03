@@ -21,8 +21,9 @@
 --   ContinueWithCancelOnSpellLoad (:190–199), and a data refresh re-runs UpdateVisuals without the event (:81–109), so
 --   each item seen gets instance post-hooks on UpdateSubName and UpdateVisuals (both called as self:…). Records are
 --   keyed by the item's spell slot (spellBank.slotIndex), never by its position on the page; a slot no longer shown is
---   dropped on the next walk. Item .Name (the spell name) is never read or written. The subtext is matched only
---   against the rank / passive / profession-rank keys and the listed SpellSubtext:<spellID> fingerprint rows
+--   dropped on the next walk. Item .Name (the spell name) is never read or written, except a flyout's name
+--   (showFlyoutName). The subtext is matched only against the rank / passive / profession-rank keys and the listed
+--   SpellSubtext:<spellID> fingerprint rows
 --   ("Racial Passive", "Summon"): it is client data.
 -- - Settings menu: the "show all spell ranks" checkbox is a Menu element under the tag "MENU_SPELL_BOOK_SETTINGS"
 --   (spellbook/blizzard_spellbookframe.lua:191, 205–226; camelot/spellbook/blizzard_spellbookframe.lua:9–43; not for
@@ -120,12 +121,26 @@ function SpellBook.showItemSub(item)
   return WFJ.Labels.show(SURFACE, "sub." .. slot, item.SubName, nil, { only = SUBTEXT_KEYS })
 end
 
--- One item's subtext and required-level line. → the number of dictionary words
+-- A flyout item's name (Portal, Summon Demon): a SpellFlyout row, a category rather than a spell, so it is matched
+-- in that family only (blizzard_spellbookitem.lua:184, 203). A spell item's name is never read. → 1 | 0
+local function showFlyoutName(item, slot)
+  local info = item.spellBookItemInfo
+  local enum = Compat.resolve("Enum")
+  local flyout = type(enum) == "table" and type(enum.SpellBookItemType) == "table" and enum.SpellBookItemType.Flyout
+  if type(info) ~= "table" or flyout == nil or info.itemType ~= flyout then
+    WFJ.SurfaceState.drop(SURFACE, "name." .. slot) -- a pooled item that showed a flyout before
+    return 0
+  end
+  return WFJ.Labels.show(SURFACE, "name." .. slot, item.Name, nil, WFJ.Labels.families("FlyoutName"))
+end
+
+-- One item's subtext, required-level line and, for a flyout, its name. → the number of dictionary words
 function SpellBook.showItem(item)
   local slot = slotOf(item)
   if not slot then return 0 end
   return SpellBook.showItemSub(item)
     + WFJ.Labels.show(SURFACE, "req." .. slot, item.RequiredLevel, nil, { only = REQUIRED_KEYS })
+    + showFlyoutName(item, slot)
 end
 
 -- The pool builds an item and runs Init → UpdateSpellData → UpdateVisuals →

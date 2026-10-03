@@ -129,7 +129,7 @@ UI_KEYS            ?= $(CURDIR)/pipeline/ui_keys.txt
 # are read from these clients' folders only (ADR-042). Forever is the only target (ADR-034) and the import-served step drops
 # ui English no Forever table stamps, so the other clients are not asked for the tables.
 FAMILY_CLIENTS     := forever
-FAMILY_TABLES      := Faction Achievement Achievement_Category SkillLine SkillLineCategory EmotesTextData HolidayDescriptions CurrencyTypes CurrencyCategory SpellDispelType CreatureType QuestSort ChrCustomizationCategory ChrCustomizationOption ChrCustomizationChoice ChrCustomizationReq PVPScoreboardColumnHeader GroupFinderCategory GroupFinderActivityGrp GroupFinderActivity UiWidgetStringSource ItemNameDescription CriteriaTree RenownRewards SharedString TradeSkillCategory MailTemplate QuestInfo AreaPOI AreaPOIState PetLoyalty Map Difficulty UiEventToast BroadcastText ItemPetFood Exhaustion ItemSubClassMask RolodexType FriendshipReputation MapDifficulty MapDifficultyXCondition
+FAMILY_TABLES      := Faction Achievement Achievement_Category SkillLine SkillLineCategory EmotesTextData HolidayDescriptions CurrencyTypes CurrencyCategory SpellDispelType CreatureType QuestSort ChrCustomizationCategory ChrCustomizationOption ChrCustomizationChoice ChrCustomizationReq PVPScoreboardColumnHeader GroupFinderCategory GroupFinderActivityGrp GroupFinderActivity UiWidgetStringSource ItemNameDescription CriteriaTree RenownRewards SharedString TradeSkillCategory MailTemplate QuestInfo AreaPOI AreaPOIState PetLoyalty Map Difficulty UiEventToast BroadcastText ItemPetFood Exhaustion ItemSubClassMask RolodexType FriendshipReputation MapDifficulty MapDifficultyXCondition PlayerCondition LockType SpellFlyout ServerMessages TransmogSituation TransmogSituationTrigger TransmogOutfitSlotOption
 FAMILY_ARGS         = $(if $(filter $(CLIENT),$(FAMILY_CLIENTS)),--families "$(CLIENT_DIR)/")
 FAMILY_CSVS         = $(if $(filter $(CLIENT),$(FAMILY_CLIENTS)),$(foreach t,$(FAMILY_TABLES),"$(CLIENT_DIR)/$(t).csv"))
 # Bump only when the inputs change: it is written into every line's provenance.imported, so a
@@ -317,6 +317,7 @@ ui-inventory: ## regenerate pipeline/ui_inventory.txt from a Forever UI extract 
 	@test -d "$(FOREVER_UI)" || { echo "ui-inventory: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }
 	@test -f "$(FOREVER_GLOBALSTRINGS)" || { echo "ui-inventory: no GlobalStrings at $(FOREVER_GLOBALSTRINGS) (FOREVER_GLOBALSTRINGS=<csv>)"; exit 1; }
 	cd pipeline && $(PY) -m wfj.dev.ui_inventory "$(FOREVER_UI)" "$(FOREVER_GLOBALSTRINGS)" > ui_inventory.txt.tmp && mv ui_inventory.txt.tmp ui_inventory.txt
+	cd pipeline && $(PY) -m wfj.dev.ui_loadset "$(FOREVER_UI)" "$(FOREVER_GLOBALSTRINGS)" > ui_loadset.txt.tmp && mv ui_loadset.txt.tmp ui_loadset.txt
 
 tooltip-line-kinds: ## regenerate pipeline/tooltip_line_kinds_inventory.txt and tooltip_data_types_inventory.txt from a Forever UI extract (commit the result): [FOREVER_UI=<Interface/AddOns>]
 	@test -d "$(FOREVER_UI)" || { echo "tooltip-line-kinds: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }

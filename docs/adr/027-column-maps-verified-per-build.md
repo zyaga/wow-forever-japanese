@@ -70,7 +70,7 @@ two fields, 16 → 18, verified by cross-build agreement over the 6,047 ids both
 layout is refused. A table that later gains an import moves its map into `client_tables` with it.
 
 The visible-spell scope tool (`dev/visible_spells.py`, which pinned `SkillLineAbility` and `TraitDefinition` the
-same way) was removed by [ADR-051](051-coverage-by-served-data.md): coverage now counts every spell the client
+same way) was removed by [ADR-052](052-coverage-by-served-data.md): coverage now counts every spell the client
 serves. The served-text inventory that replaced it (`dev/served_columns.py`) finds text columns from the bytes and
 needs no map; on 1.60.1.70170 it matches the pinned maps of all 31 tables the pipeline reads, which is a second,
 independent check on those pins.

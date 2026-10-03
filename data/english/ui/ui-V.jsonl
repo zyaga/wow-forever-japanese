@@ -69,6 +69,7 @@
 {"id": "VIDEO_OPTIONS_ULTRA_HIGH", "field": "text", "en": "Ultra High", "hash": "56d8c28ab06f9810", "src": "db2@1.60.1.70170"}
 {"id": "VIDEO_OPTIONS_WINDOWED", "field": "text", "en": "Windowed", "hash": "b21182d046bbf47d", "src": "db2@1.60.1.70170"}
 {"id": "VIDEO_OPTIONS_WINDOWED_FULLSCREEN", "field": "text", "en": "Fullscreen (Windowed)", "hash": "3dfb9469f21ae854", "src": "db2@1.60.1.70170"}
+{"id": "VIDEO_QUALITY_LABEL6", "field": "text", "en": "Custom", "hash": "e8eb93f28a72eb0f", "src": "db2@1.60.1.70170"}
 {"id": "VIEW_FRIENDS_OF_FRIENDS", "field": "text", "en": "View Friends", "hash": "68c17799f7c28b1b", "src": "db2@1.60.1.70170"}
 {"id": "VIEW_RENOWN_BUTTON_LABEL", "field": "text", "en": "View Renown", "hash": "4b262af17c776d46", "src": "db2@1.60.1.70170"}
 {"id": "VIGNETTE_SUGGESTED_GROUP_NUM", "field": "text", "en": "Suggested Players [%d]", "hash": "e0b9b82d6f37d68c", "src": "db2@1.60.1.70170"}
@@ -86,6 +87,7 @@
 {"id": "VOICE_CHAT_CHANNEL_MANAGEMENT_TIP", "field": "text", "en": "%1$s Press %2$s to manage and join voice chat.", "hash": "0b3af498ce088326", "src": "db2@1.60.1.70170"}
 {"id": "VOICE_CHAT_CHANNEL_MEMBER_COUNT_ACTIVE", "field": "text", "en": "%d |4player:players; in channel.", "hash": "e5ed0fe6c409a3e8", "src": "db2@1.60.1.70170"}
 {"id": "VOICE_CHAT_DUCKING_SCALE", "field": "text", "en": "Voice Chat Ducking", "hash": "251a81914eb9cd76", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_CHAT_ERROR_CODE_FORMATTER", "field": "text", "en": "(VoiceError: %d)", "hash": "00505b7ee99c92ae", "src": "db2@1.60.1.70170"}
 {"id": "VOICE_CHAT_INPUT_DEVICE_DEFAULT", "field": "text", "en": "System Default", "hash": "0dac7fb2d96ae54f", "src": "db2@1.60.1.70170"}
 {"id": "VOICE_CHAT_INVALID_DEVICE", "field": "text", "en": "Invalid Device", "hash": "15d27f66b6e4864b", "src": "db2@1.60.1.70170"}
 {"id": "VOICE_CHAT_JOIN", "field": "text", "en": "Join Voice Chat", "hash": "6ae0295b4c9712de", "src": "db2@1.60.1.70170"}
@@ -123,6 +125,7 @@
 {"id": "VOICE_TOOLTIP_SILENCED_UNMUTE_MIC", "field": "text", "en": "Unmute|n|n|cffff2020We have silenced your account following multiple reports of abusive chat from other players.|nWhile you are silenced, you can only use voice chat in private channels.|r", "hash": "c5a1547afc408d77", "src": "db2@1.60.1.70170"}
 {"id": "VOICE_TOOLTIP_UNDEAFEN", "field": "text", "en": "Undeafen Voice Chat", "hash": "b3e28dcda423e88d", "src": "db2@1.60.1.70170"}
 {"id": "VOICE_TOOLTIP_UNMUTE_MIC", "field": "text", "en": "Unmute", "hash": "1c8b5ce9e1408ee1", "src": "db2@1.60.1.70170"}
+{"id": "VOICE_TRANSCRIPTION_MUTED", "field": "text", "en": "Muted - No Voice Transcription or Text to Speech messages are being sent.", "hash": "0c0448937937edd1", "src": "db2@1.60.1.70170"}
 {"id": "VOTE_BOOT_PLAYER", "field": "text", "en": "A vote has been initiated to remove %1$s from the group.\n\nThe reason given was:\n|cffffd200%2$s|r\n\nDo you want to kick %1$s?", "hash": "604db3c3047381f3", "src": "db2@1.60.1.70170"}
 {"id": "VOTE_BOOT_REASON_REQUIRED", "field": "text", "en": "Please enter the reason to vote kick %s:", "hash": "b428f87ce41d4f51", "src": "db2@1.60.1.70170"}
 {"id": "VOTE_TO_ABANDON", "field": "text", "en": "Vote to Abandon", "hash": "2ba6dea65cb20122", "src": "db2@1.60.1.70170"}

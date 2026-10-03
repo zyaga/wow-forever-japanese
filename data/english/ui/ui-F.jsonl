@@ -62,7 +62,9 @@
 {"id": "FILTER_TO_UNKNOWN_COMBATLOG_TOOLTIP", "field": "text", "en": "Actions performed on invisible targets.", "hash": "d336591ae41095f7", "src": "db2@1.60.1.70170"}
 {"id": "FINGER0SLOT", "field": "text", "en": "Finger", "hash": "0824fa71156d7be2", "src": "db2@1.60.1.70170"}
 {"id": "FINGER1SLOT", "field": "text", "en": "Finger", "hash": "0824fa71156d7be2", "src": "db2@1.60.1.70170"}
+{"id": "FINISH", "field": "text", "en": "Finish", "hash": "082587a31d5fc1a8", "src": "db2@1.60.1.70170"}
 {"id": "FLASH_LOW_HEALTH_WARNING", "field": "text", "en": "Do Not Flash Screen at Low Health", "hash": "bd52db7546f20e98", "src": "db2@1.60.1.70170"}
+{"id": "FLEX_RAID", "field": "text", "en": "Flexible Raid", "hash": "be552bee6e9a1a04", "src": "db2@1.60.1.70170"}
 {"id": "FLIGHT_MAP", "field": "text", "en": "Flight Map", "hash": "73d7f16ca6bfd810", "src": "db2@1.60.1.70170"}
 {"id": "FLIGHT_MAP_CLICK_TO_ZOOM_HINT", "field": "text", "en": "Click to Zoom In", "hash": "84d46667fda48361", "src": "db2@1.60.1.70170"}
 {"id": "FLIGHT_MAP_CLICK_TO_ZOOM_IN", "field": "text", "en": "<Click to Zoom In>", "hash": "0976eefbcaddffe1", "src": "db2@1.60.1.70170"}
@@ -83,6 +85,7 @@
 {"id": "FORMATTING", "field": "text", "en": "Formatting", "hash": "6af237161e8de3ae", "src": "db2@1.60.1.70170"}
 {"id": "FPS_COUNTER_CPU_BOUND", "field": "text", "en": "%.1f CPU Bound", "hash": "20144e10ae95ea71", "src": "db2@1.60.1.70170"}
 {"id": "FPS_COUNTER_GPU_BOUND", "field": "text", "en": "%.1f GPU Bound", "hash": "9c6bf1c852b06ed9", "src": "db2@1.60.1.70170"}
+{"id": "FRAMERATE_LABEL", "field": "text", "en": "FPS:", "hash": "097655e5e80c3cce", "src": "db2@1.60.1.70170"}
 {"id": "FRAME_ACTION_ACCEPT", "field": "text", "en": "Accept", "hash": "b3c3644e28d78783", "src": "db2@1.60.1.70170"}
 {"id": "FRAME_ACTION_AMOUNT", "field": "text", "en": "Amount", "hash": "64ec564bbe63eee8", "src": "db2@1.60.1.70170"}
 {"id": "FRAME_ACTION_BACK", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70170"}
@@ -106,10 +109,15 @@
 {"id": "FRAME_ACTION_ZOOM", "field": "text", "en": "Zoom", "hash": "0c2c929f6f3efeb4", "src": "db2@1.60.1.70170"}
 {"id": "FRAME_LABEL_MAIN_MENU", "field": "text", "en": "Main Menu", "hash": "07e03ffeae48ba7e", "src": "db2@1.60.1.70170"}
 {"id": "FREE_FOR_ALL_TERRITORY", "field": "text", "en": "(PvP Area)", "hash": "7a60b81770f0de26", "src": "db2@1.60.1.70170"}
+{"id": "FRIEND", "field": "text", "en": "Friend", "hash": "a5745dbe20b4ca4f", "src": "db2@1.60.1.70170"}
 {"id": "FRIENDS", "field": "text", "en": "Friends", "hash": "aa8bfa51a365a614", "src": "db2@1.60.1.70170"}
 {"id": "FRIENDS_FRIENDS_CHOICE_EVERYONE", "field": "text", "en": "Everyone", "hash": "9897aa391749a3b1", "src": "db2@1.60.1.70170"}
 {"id": "FRIENDS_FRIENDS_CHOICE_MUTUAL", "field": "text", "en": "Mutual Friends", "hash": "e81bd0dfcc19bec4", "src": "db2@1.60.1.70170"}
 {"id": "FRIENDS_FRIENDS_CHOICE_POTENTIAL", "field": "text", "en": "Potential Friends", "hash": "57cefaf041cc8a8b", "src": "db2@1.60.1.70170"}
+{"id": "FRIENDS_FRIENDS_HEADER", "field": "text", "en": "Friends of %s", "hash": "053be9ffc450db1f", "src": "db2@1.60.1.70170"}
+{"id": "FRIENDS_FRIENDS_MUTUAL_TEXT", "field": "text", "en": "(Mutual)", "hash": "faf07abc7e81eefc", "src": "db2@1.60.1.70170"}
+{"id": "FRIENDS_FRIENDS_REQUESTED_TEXT", "field": "text", "en": "(request sent)", "hash": "8154d34dedce67d5", "src": "db2@1.60.1.70170"}
+{"id": "FRIENDS_FRIENDS_WAITING", "field": "text", "en": "Searching...", "hash": "9541ddd08150215b", "src": "db2@1.60.1.70170"}
 {"id": "FRIENDS_LEVEL_TEMPLATE", "field": "text", "en": "Level %d %s", "hash": "2fcf25e1a3bdd25f", "src": "db2@1.60.1.70170"}
 {"id": "FRIENDS_LIST", "field": "text", "en": "Friends List", "hash": "43a8bd234b8b0eba", "src": "db2@1.60.1.70170"}
 {"id": "FRIENDS_LIST_AVAILABLE", "field": "text", "en": "Available", "hash": "08bd63f84d058c1c", "src": "db2@1.60.1.70170"}
@@ -123,6 +131,19 @@
 {"id": "FRIEND_REQUESTS", "field": "text", "en": "Friend Requests (%d)", "hash": "1290633f8e33c95b", "src": "db2@1.60.1.70170"}
 {"id": "FROM", "field": "text", "en": "From:", "hash": "dc23b228a51c7a8d", "src": "db2@1.60.1.70170"}
 {"id": "FULLDATE", "field": "text", "en": "%1$s, %2$s %3$d %4$d", "hash": "85fea8eee30fa674", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_APRIL", "field": "text", "en": "April", "hash": "841b4e9e3ba06119", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_AUGUST", "field": "text", "en": "August", "hash": "f0479e8a4a78e9d8", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_DECEMBER", "field": "text", "en": "December", "hash": "446e5eb42968e8b3", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_FEBRUARY", "field": "text", "en": "February", "hash": "1d118b367be2be9a", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_JANUARY", "field": "text", "en": "January", "hash": "2373c9098d15baf6", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_JULY", "field": "text", "en": "July", "hash": "0a0949a8b090f51a", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_JUNE", "field": "text", "en": "June", "hash": "0a094a9ab09134c8", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_MARCH", "field": "text", "en": "March", "hash": "54bd4b4465864ef8", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_MAY", "field": "text", "en": "May", "hash": "00145bd131b875d8", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_NOVEMBER", "field": "text", "en": "November", "hash": "a8aa136b249c9711", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_OCTOBER", "field": "text", "en": "October", "hash": "0a7e8f11c91fe2d0", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_MONTH_SEPTEMBER", "field": "text", "en": "September", "hash": "35a173bdf0b59bc9", "src": "db2@1.60.1.70170"}
+{"id": "FULLDATE_NO_YEAR", "field": "text", "en": "%1$s, %2$s %3$d", "hash": "c5a256aef65096a4", "src": "db2@1.60.1.70170"}
 {"id": "FULL_TEXT_COMBATLOG_TOOLTIP", "field": "text", "en": "Show combat log entries as full sentences.", "hash": "be1cba5d5dce59ed", "src": "db2@1.60.1.70170"}
 {"id": "FXAA_CMAA_LABEL", "field": "text", "en": "Image-Based Techniques", "hash": "e9dab29f5f6a9f07", "src": "db2@1.60.1.70170"}
 {"id": "FX_VOLUME", "field": "text", "en": "Effects", "hash": "f6f9bfd5b2f2ae71", "src": "db2@1.60.1.70170"}
@@ -181,4 +202,42 @@
 {"id": "FactionDescription:910", "field": "text", "en": "The descendants of the Bronze Dragonflight are the guardians of time and care little for the mortal races.", "hash": "83782a844c078497", "src": "db2@1.60.1.70170"}
 {"id": "FactionDescription:92", "field": "text", "en": "These centaur have made their home in the southern region of Desolace.  Mortal enemies of the Magram Centaur.", "hash": "1b4b23042452fa32", "src": "db2@1.60.1.70170"}
 {"id": "FactionDescription:93", "field": "text", "en": "These centaur have made their home in the eastern region of Desolace.  Mortal enemies of the Gelkis Centaur.", "hash": "c63dbc46fe15d4b0", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:248", "field": "text", "en": "Creates a portal, teleporting group members who use it to a major city.", "hash": "2fca858501421cd1", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:249", "field": "text", "en": "Creates a portal, teleporting group members who use it to a major city.", "hash": "2fca858501421cd1", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:250", "field": "text", "en": "Teleports you to a major city.", "hash": "e53b14b6a1f9c231", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:251", "field": "text", "en": "Teleports you to a major city.", "hash": "e53b14b6a1f9c231", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:252", "field": "text", "en": "Your resistances to spells.", "hash": "be79a3f454f04b66", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:253", "field": "text", "en": "Take on aspects of nature.", "hash": "8208bcc88126f692", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:257", "field": "text", "en": "Your weapon skill determines your effectiveness in combat, affecting your chance to hit, critically hit, and avoid being dodged or parried, as well as the damage reduction of your Glancing Blows.", "hash": "ea9a871d9b16bb48", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:259", "field": "text", "en": "Summons a Demon under the command of the Warlock.", "hash": "5104a88b1d34fe17", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:261", "field": "text", "en": "Commands the Imp to cast spells.", "hash": "4bd30cc93b150ad8", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:262", "field": "text", "en": "Shapeshift into a different form.", "hash": "ec60c366587c92fc", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:263", "field": "text", "en": "Places Retribution Blessings on friendly targets.", "hash": "95f6dc0cb8202ea3", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:264", "field": "text", "en": "Places a Blessing on friendly targets.", "hash": "9dada550bb286429", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:265", "field": "text", "en": "Places Protection Blessings on friendly targets.", "hash": "f0f0f29d58904dc9", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:267", "field": "text", "en": "Manage your pets.", "hash": "6cf5003c6d417669", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:268", "field": "text", "en": "Track your quarry.", "hash": "740d7b53dcd72ac9", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:269", "field": "text", "en": "Activate a combat stance.", "hash": "fad68bcc9ee7df7c", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:270", "field": "text", "en": "Activate a protective aura for your group.", "hash": "86f23c32b6108f9d", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:272", "field": "text", "en": "Blessings that target all members of your group that share the same class.", "hash": "b94cbb3ace12cec9", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutDescription:273", "field": "text", "en": "Short-duration Blessings used to save a single target.", "hash": "5802504787408fda", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:248", "field": "text", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:249", "field": "text", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:250", "field": "text", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:251", "field": "text", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:252", "field": "text", "en": "Spell Resistances", "hash": "f1acf1a7d745c37f", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:253", "field": "text", "en": "Aspect", "hash": "ce5cb39b45c5450e", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:257", "field": "text", "en": "Weapon Proficiencies", "hash": "e2273d8aa3037201", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:259", "field": "text", "en": "Summon Demon", "hash": "536db90a0be8fcfd", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:261", "field": "text", "en": "Imp Spells", "hash": "93516c1d4a045437", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:262", "field": "text", "en": "Shapeshift", "hash": "668f9e62aaddbb91", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:263", "field": "text", "en": "Retribution Blessings", "hash": "c6b84d09c47ca71d", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:264", "field": "text", "en": "Blessings", "hash": "9f4f7be4d8f89549", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:265", "field": "text", "en": "Protection Blessings", "hash": "0cd856af8de9d6a8", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:267", "field": "text", "en": "Pet Utilities", "hash": "2a15eb7277916320", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:268", "field": "text", "en": "Tracking", "hash": "ce32da4878b198ed", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:269", "field": "text", "en": "Stances", "hash": "436bcd6674c75c63", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:270", "field": "text", "en": "Auras", "hash": "84c6ce94fea72635", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:272", "field": "text", "en": "Greater Blessings", "hash": "d7ed2f4120e59aa0", "src": "db2@1.60.1.70170"}
+{"id": "FlyoutName:273", "field": "text", "en": "Utility Blessings", "hash": "14234556abcfc89d", "src": "db2@1.60.1.70170"}
 {"id": "FriendshipGain:513", "field": "text", "en": "You gain %d Rank Points.", "hash": "eb811349ae33fbf1", "src": "db2@1.60.1.70170"}

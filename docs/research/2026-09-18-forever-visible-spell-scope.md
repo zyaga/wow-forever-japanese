@@ -1,6 +1,6 @@
 # What spells a player can actually be shown on Forever
 
-> **Superseded by [ADR-051](../adr/051-coverage-by-served-data.md) (coverage by served data).** Coverage and
+> **Superseded by [ADR-052](../adr/052-coverage-by-served-data.md) (coverage by served data).** Coverage and
 > translation now take every spell the client serves; the artifact `pipeline/visible_spells.txt` and the tool
 > `dev/visible_spells.py` were removed. Kept as the record of why the scope was tried and what it missed.
 

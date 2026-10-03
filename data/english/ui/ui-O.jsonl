@@ -362,6 +362,7 @@
 {"id": "OPTION_WHISPER_MODE_POPOUT", "field": "text", "en": "New Whispers will be displayed in a new tab.", "hash": "509c833473d61e15", "src": "db2@1.60.1.70170"}
 {"id": "OPTION_WHISPER_MODE_POPOUT_AND_INLINE", "field": "text", "en": "New Whispers will be displayed in a new tab and in your regular chat tabs.", "hash": "f1cdd2f1b484b3ce", "src": "db2@1.60.1.70170"}
 {"id": "OPT_OUT_LOOT_TITLE", "field": "text", "en": "Pass on Loot: %s", "hash": "0e6f544164091403", "src": "db2@1.60.1.70170"}
+{"id": "ORIBOS_GREAT_VAULT_POI_TOOLTIP_INSTRUCTIONS", "field": "text", "en": "Right Click to preview the Great Vault", "hash": "3f50c5e16ff06922", "src": "db2@1.60.1.70170"}
 {"id": "OR_CAPS", "field": "text", "en": "OR", "hash": "000028bf0009d6c1", "src": "db2@1.60.1.70170"}
 {"id": "OTHER", "field": "text", "en": "Other", "hash": "7a61dd1d7a6004c7", "src": "db2@1.60.1.70170"}
 {"id": "OTHER_DECOR_LIGHT_RADIUS_INDICATOR_TYPE", "field": "text", "en": "Other Decor", "hash": "ef89852bef9c9600", "src": "db2@1.60.1.70170"}

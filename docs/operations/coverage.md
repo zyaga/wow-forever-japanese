@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-02 at commit `b02d276`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-02 at commit `9d6444e1`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -10,17 +10,17 @@
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
 | Quest text | 19,452 | 19,341 | 111 | 100.0% | 0 |
-| NPC dialogue (gossip, speech) | 10,641 | 10,641 | 0 | 100.0% | 0 |
+| NPC dialogue (gossip, speech) | 10,643 | 10,643 | 0 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 409 | 372 | 37 | 100.0% | 0 |
 | Exploration / event objectives | 218 | 216 | 2 | 100.0% | 0 |
 | Item descriptions | 10,124 | 8,611 | 0 | 85.1% | 1,513 |
 | Spell tooltips + auras | 25,458 | 10,369 | 0 | 40.7% | 15,089 |
-| Interface strings | 14,690 | 13,697 | 0 | 93.2% | 993 |
-| **All** | **82,249** | | | **78.6%** | **17,595** |
+| Interface strings | 15,715 | 13,708 | 9 | 87.3% | 1,998 |
+| **All** | **83,276** | | | **77.7%** | **18,600** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
-professions, internal strings): quest 329, gossip 81, item 888, spell 285, ui 86.
+professions, internal strings): quest 330, gossip 81, item 888, spell 285, ui 86.
 
 ### Nothing to translate (counted as done)
 
@@ -33,6 +33,7 @@ professions, internal strings): quest 329, gossip 81, item 888, spell 285, ui 86
 | Book / letter pages | Missing Text / picture-only page | 49 |
 | Book / letter pages | picture-only or cipher page | 2 |
 | Book / letter pages | a bare label: names and numbers only (ships as the English) | 1 |
+| Interface strings | left out with its reason in `pipeline/ui_exclusions.txt` | 9 |
 
 ### What is not done yet
 
@@ -43,7 +44,7 @@ professions, internal strings): quest 329, gossip 81, item 888, spell 285, ui 86
 | Spell tooltips + auras | no Japanese yet | 15,064 |
 | Spell tooltips + auras | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 23 |
 | Spell tooltips + auras | rejected: ruled_reject | 2 |
-| Interface strings | no Japanese yet | 993 |
+| Interface strings | no Japanese yet | 1,998 |
 
 ## Served text inventory
 
@@ -54,13 +55,12 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Disposition | Columns | Lines |
 |---|---|---|
-| Shipped through a surface above | 59 | 82,925 |
+| Shipped through a surface above | 70 | 83,224 |
 | Names (stay English) | 55 | 69,037 |
 | Internal (never printed) | 96 | 370,638 |
 | No place in the Forever client | 29 | 1,899 |
 | Same text as another column | 7 | 10,965 |
 | Empty on this build | 3 | 0 |
-| No disposition yet | 11 | 299 |
 
 ### Every column
 
@@ -197,9 +197,9 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `lightskybox.f0` | internal | 26 | model file paths |
 | `liquidtype.f0` | internal | 53 | liquid type names (Water, Ocean) used by tools |
 | `locale.f0` | internal | 13 | locale names for the glue screen language list |
-| `locktype.f0` | none | 23 |  |
-| `locktype.f1` | none | 23 |  |
-| `locktype.f2` | none | 19 |  |
+| `locktype.f0` | surface:ui:LockTypeName | 23 | Name_lang: the lock action (Pick Lock, Disarm Trap); the gathering skills (Herbalism, Mining, Fishing) are names and left out |
+| `locktype.f1` | surface:ui:LockTypeResource | 23 | ResourceName_lang: what the lock opens (Locked Items, Herbs) |
+| `locktype.f2` | surface:ui:LockTypeVerb | 19 | Verb_lang: the action verb (Pick, Gather) |
 | `locktype.f3` | internal | 3 | tokens (PickLock, GatherHerbs) |
 | `mailtemplate.f0` | surface:ui:MailBody | 111 | Body_lang: NPC mail bodies |
 | `manifestinterfacedata.f0` | internal | 134,289 | interface file folders |
@@ -220,7 +220,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `pagetextmaterial.f0` | internal | 6 | page background material names |
 | `paperdollitemframe.f0` | internal | 48 | frame names (HeadSlot) |
 | `petloyalty.f0` | surface:ui:PetLoyalty | 8 | Name_lang |
-| `playercondition.f0` | none | 97 |  |
+| `playercondition.f0` | surface:ui:PlayerConditionFailure | 97 | Failure_description_lang: a requirement line (Requires Frostwolf Clan - Exalted); faction names inside stay English |
 | `powerdisplay.f0` | internal | 5 | GlobalStrings keys (POWER_TYPE_MANA) |
 | `powertype.f0` | internal | 6 | power tokens (MANA) |
 | `powertype.f1` | internal | 6 | GlobalStrings keys (MANA_COST) |
@@ -245,7 +245,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `scenescripttext.f1` | internal | 145 | Lua source |
 | `screeneffect.f0` | internal | 77 | effect names (Ghost Screen Effect) |
 | `screenlocation.f0` | internal | 12 | position names (Center) |
-| `servermessages.f0` | none | 15 |  |
+| `servermessages.f0` | surface:ui:ServerMessage | 15 | Text_lang: server notices in chat ([SERVER] Shutdown in %s); the bare %s row and the DEBUG row are left out |
 | `sharedstring.f0` | surface:ui:SharedString | 37 | String_lang: talent requirement lines (profession names stay English) |
 | `skillline.f0` | names | 154 | DisplayName_lang: skill and profession names |
 | `skillline.f2` | surface:ui:SkillLineDescription | 56 | Description_lang |
@@ -263,8 +263,8 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `spelldiminish.f0` | no-display | 11 | stored, never printed (blizzard_spelldiminishui/blizzard_spelldiminishuitemplates.lua:21-22; arena frames show icons) |
 | `spelldispeltype.f0` | surface:ui:DispelType | 11 | Name_lang |
 | `spelldispeltype.f1` | internal | 4 | InternalName: the same four words, upper-case tokens for code |
-| `spellflyout.f0` | none | 19 |  |
-| `spellflyout.f1` | none | 19 |  |
+| `spellflyout.f0` | surface:ui:FlyoutName | 19 | Name_lang: a spellbook flyout's name (Portal, Summon Demon) |
+| `spellflyout.f1` | surface:ui:FlyoutDescription | 19 | Description_lang: the flyout's tooltip description |
 | `spellfocusobject.f0` | names | 243 | object names a recipe or spell needs (Anvil, Forge, Ambermill Leyline Focus); names stay English |
 | `spellitemenchantment.f0` | surface:ui:SpellItemEnchantment | 2,215 | Name_lang: enchant lines on item tooltips |
 | `spellkeyboundoverride.f0` | internal | 1 | a key token (JUMP) |
@@ -291,12 +291,12 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `traitdefinition.f0` | internal | 1 | one numeric override string (16972) |
 | `transmogoutfitentry.f1` | names | 3 | outfit names the player gives (Outfit 1) |
 | `transmogoutfitslotinfo.f0` | internal | 15 | slot tokens (HEADSLOT) |
-| `transmogoutfitslotoption.f0` | none | 42 |  |
+| `transmogoutfitslotoption.f0` | surface:ui:TransmogSlotOption | 42 | Name_lang: the outfit window's slot options (One Handed Weapon, Cloth) |
 | `transmogset.f0` | names | 7 | set names |
 | `transmogsetgroup.f0` | names | 2 | set names |
-| `transmogsituation.f0` | none | 30 |  |
-| `transmogsituationtrigger.f0` | none | 7 |  |
-| `transmogsituationtrigger.f1` | none | 5 |  |
+| `transmogsituation.f0` | surface:ui:TransmogSituation | 30 | Name_lang: the transmog outfit window's situation options |
+| `transmogsituationtrigger.f0` | surface:ui:TransmogTrigger | 7 | Name_lang: the outfit window's situation groups |
+| `transmogsituationtrigger.f1` | surface:ui:TransmogTriggerDescription | 5 | Description_lang: the situation group's help text |
 | `uicamera.f0` | internal | 380 | camera names |
 | `uicameratype.f0` | internal | 10 | camera type names |
 | `uieventtoast.f0` | covered-by:globalstrings.f1 | 2 | Level %d, Rank %d are GlobalStrings text |
@@ -331,9 +331,9 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 18,037 | 18,037 | 100.0% | 177 | 285,915 | 100.0% |
-| gossip | 10,513 | 10,513 | 100.0% | 0 | 98,175 | 100.0% |
-| ui | 13,265 | 13,265 | 100.0% | 0 | 39,889 | 100.0% |
+| quest | 18,037 | 18,037 | 100.0% | 177 | 285,931 | 100.0% |
+| gossip | 10,515 | 10,515 | 100.0% | 0 | 98,190 | 100.0% |
+| ui | 13,276 | 13,276 | 100.0% | 0 | 39,924 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,571 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages

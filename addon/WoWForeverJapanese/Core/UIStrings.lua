@@ -42,10 +42,13 @@ local FINGERPRINT_PREFIXES = { "^ItemSubClass:", "^SpellItemEnchantment:", "^Spe
   "^ItemSubClassName:", "^CustomizationCategory:", "^CustomizationOption:", "^CustomizationChoice:",
   "^CustomizationSource:", "^PvpColumn:", "^PvpColumnTooltip:", "^LfgCategory:", "^LfgActivityGroup:",
   "^LfgActivity:", "^WidgetText:", "^ItemNameDescription:",
-  -- the families the served-text inventory found shown on Forever (ADR-051)
+  -- the families the served-text inventory found shown on Forever (ADR-052)
   "^CriteriaText:", "^RenownRewardName:", "^RenownRewardDescription:", "^RenownRewardToast:", "^SharedString:",
   "^TradeSkillCategory:", "^MailBody:", "^QuestTag:", "^AreaPoiDescription:", "^AreaPoiState:", "^PetLoyalty:",
   "^PvpLongDescription:", "^Difficulty:", "^EventToastText:", "^BroadcastText:", "^PetFood:", "^RestState:",
+  "^PlayerConditionFailure:", "^LockTypeName:", "^LockTypeResource:", "^LockTypeVerb:", "^FlyoutName:",
+  "^FlyoutDescription:", "^ServerMessage:", "^TransmogSituation:", "^TransmogTrigger:",
+  "^TransmogTriggerDescription:", "^TransmogSlotOption:",
   "^ItemSubClassMask:", "^RecentAllyType:", "^RecentAllyInteraction:", "^FriendshipLabel:", "^FriendshipGain:",
   "^InstanceEntryMessage:", "^InstanceEntryFailure:" }
 function UIStrings.isFingerprintKey(key)
@@ -69,6 +72,9 @@ local RESTRICTED_PREFIXES = { "^FactionDescription:", "^AchievementTitle:", "^Ac
   "^CriteriaText:", "^RenownRewardName:", "^RenownRewardDescription:", "^RenownRewardToast:", "^SharedString:",
   "^TradeSkillCategory:", "^MailBody:", "^QuestTag:", "^AreaPoiDescription:", "^AreaPoiState:", "^PetLoyalty:",
   "^PvpLongDescription:", "^Difficulty:", "^EventToastText:", "^BroadcastText:", "^PetFood:", "^RestState:",
+  "^PlayerConditionFailure:", "^LockTypeName:", "^LockTypeResource:", "^LockTypeVerb:", "^FlyoutName:",
+  "^FlyoutDescription:", "^ServerMessage:", "^TransmogSituation:", "^TransmogTrigger:",
+  "^TransmogTriggerDescription:", "^TransmogSlotOption:",
   "^ItemSubClassMask:", "^RecentAllyType:", "^RecentAllyInteraction:", "^FriendshipLabel:", "^FriendshipGain:",
   "^InstanceEntryMessage:", "^InstanceEntryFailure:" }
 function UIStrings.isRestrictedKey(key)
@@ -87,7 +93,7 @@ end
 -- TEMPLATED rows: the restricted families whose English is a format string the client fills (talent requirement
 -- lines, the rank toast, the friendship rank-points chat line). Only their rows whose Japanese takes an argument are
 -- templated; a row with none stays a plain restricted fingerprint row. → bool
-local TEMPLATED_PREFIXES = { "^SharedString:", "^EventToastText:", "^FriendshipGain:" }
+local TEMPLATED_PREFIXES = { "^SharedString:", "^EventToastText:", "^FriendshipGain:", "^ServerMessage:" }
 function UIStrings.isTemplatedKey(key)
   if type(key) ~= "string" then return false end
   for _, p in ipairs(TEMPLATED_PREFIXES) do
@@ -857,6 +863,23 @@ function Index:matchCounted(text)
   if not key then return nil end
   args.key = key
   return key, args
+end
+
+-- A line whose template ends in one text argument ("[SERVER] Shutdown in %s"), when the client hands the caller no
+-- template: each prefix of the line that ends at a space, followed by `%s`, is fingerprinted, and one that is a
+-- templated row's h1 among `keys` is that row, the rest of the line its argument. The English is never shipped.
+-- → key, args | nil
+function Index:matchTail(text, keys)
+  if type(text) ~= "string" or text == "" or type(keys) ~= "table" or next(self.byTemplate) == nil then return nil end
+  local set = asSet(keys)
+  for pos = #text - 1, 1, -1 do
+    if text:byte(pos) == 32 then
+      local template = (text:sub(1, pos):gsub("%%", "%%%%")) .. "%s"
+      local key = self.byTemplate[self.hash(template)]
+      if key and set[key] then return key, { text:sub(pos + 1), key = key } end
+    end
+  end
+  return nil
 end
 
 -- A live line against a template English the client itself hands the caller (a talent condition's tooltipFormat):

@@ -60,7 +60,14 @@
 {"id": "DEATH_RECAP_TITLE", "field": "text", "en": "Death Recap", "hash": "481ed3babd4a9c7d", "src": "db2@1.60.1.70170"}
 {"id": "DEATH_RECAP_UNAVAILABLE", "field": "text", "en": "Death Recap unavailable.", "hash": "a0421d4a5d3854df", "src": "db2@1.60.1.70170"}
 {"id": "DEATH_RELEASE", "field": "text", "en": "Release Spirit", "hash": "c59333f3254dc9ee", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RELEASE_NOTIMER", "field": "text", "en": "You have died. Release to the nearest graveyard?", "hash": "dfc25ebea8f73afd", "src": "db2@1.60.1.70170"}
+{"id": "DEATH_RELEASE_SPECTATOR", "field": "text", "en": "You have died.  Release spirit to enter Spectator Mode.", "hash": "a19f25e982b169fe", "src": "db2@1.60.1.70170"}
 {"id": "DEATH_RELEASE_TIMER", "field": "text", "en": "%d %s until release", "hash": "0fdb60bace53bd64", "src": "db2@1.60.1.70170"}
+{"id": "DEBUFF_SYMBOL_BLEED", "field": "text", "en": "Bl", "hash": "000022320008386e", "src": "db2@1.60.1.70170"}
+{"id": "DEBUFF_SYMBOL_CURSE", "field": "text", "en": "Cu", "hash": "000022be00085858", "src": "db2@1.60.1.70170"}
+{"id": "DEBUFF_SYMBOL_DISEASE", "field": "text", "en": "Di", "hash": "000023350008782d", "src": "db2@1.60.1.70170"}
+{"id": "DEBUFF_SYMBOL_MAGIC", "field": "text", "en": "Ma", "hash": "000027c80009970e", "src": "db2@1.60.1.70170"}
+{"id": "DEBUFF_SYMBOL_POISON", "field": "text", "en": "Po", "hash": "0000295f0009f6bf", "src": "db2@1.60.1.70170"}
 {"id": "DECLINE", "field": "text", "en": "Decline", "hash": "130b4cc464bb7440", "src": "db2@1.60.1.70170"}
 {"id": "DECOR_LIGHT_RADIUS_INDICATOR_ENABLED", "field": "text", "en": "Light Radius Indicators", "hash": "37e28b4d8836ae30", "src": "db2@1.60.1.70170"}
 {"id": "DECOR_LIGHT_RADIUS_INDICATOR_TYPE_ALWAYS", "field": "text", "en": "Always", "hash": "546bd5befb55233f", "src": "db2@1.60.1.70170"}
@@ -115,6 +122,7 @@
 {"id": "DISCORD_SELECT_SERVER", "field": "text", "en": "Discord Server:", "hash": "fd2cea440525628e", "src": "db2@1.60.1.70170"}
 {"id": "DISCORD_SERVER_UNLINK_PROMPT", "field": "text", "en": "Unlink", "hash": "1c65e7d62434ae96", "src": "db2@1.60.1.70170"}
 {"id": "DISCORD_SETUP_OAUTH", "field": "text", "en": "Setup OAuth", "hash": "e24d78666461e7c4", "src": "db2@1.60.1.70170"}
+{"id": "DISCORD_USER_WITH_ID", "field": "text", "en": "Discord Message from %s", "hash": "1c240e8a198af5e0", "src": "db2@1.60.1.70170"}
 {"id": "DISCORD_VALID_SERVER_CHANNEL_LIST", "field": "text", "en": "Channels for server %s:", "hash": "4f6354755abc10df", "src": "db2@1.60.1.70170"}
 {"id": "DISHONORABLE_KILLS", "field": "text", "en": "Dishonorable Kills", "hash": "2b16af2338722b2e", "src": "db2@1.60.1.69913"}
 {"id": "DISPELS", "field": "text", "en": "Dispels", "hash": "1a8009a9bf489575", "src": "db2@1.60.1.70170"}
@@ -126,9 +134,12 @@
 {"id": "DISPLAY_PERSONAL_RESOURCE", "field": "text", "en": "Personal Resource Display", "hash": "39968ee81c9441bf", "src": "db2@1.60.1.70170"}
 {"id": "DODGE", "field": "text", "en": "Dodge", "hash": "b89e786b1363f723", "src": "db2@1.60.1.70170"}
 {"id": "DODGE_CHANCE", "field": "text", "en": "Dodge Chance", "hash": "62f36c0d965c5042", "src": "db2@1.60.1.70170"}
+{"id": "DONE", "field": "text", "en": "Done", "hash": "0939e6c2484fe615", "src": "db2@1.60.1.70170"}
 {"id": "DONE_BY", "field": "text", "en": "Done By:", "hash": "17beec26faeaa9a9", "src": "db2@1.60.1.70170"}
 {"id": "DONE_TO", "field": "text", "en": "Done To:", "hash": "17c39daa425e2e82", "src": "db2@1.60.1.70170"}
 {"id": "DPS_TEMPLATE", "field": "text", "en": "(%s damage per second)", "hash": "b854293d4a973159", "src": "db2@1.60.1.70170"}
+{"id": "DRAG_MODEL", "field": "text", "en": "Drag", "hash": "093aa938543712ed", "src": "db2@1.60.1.70170"}
+{"id": "DRAG_MODEL_TOOLTIP", "field": "text", "en": "Right-click on character and drag to move it within the window.", "hash": "4fb6188c39d4b450", "src": "db2@1.60.1.70170"}
 {"id": "DRAINS", "field": "text", "en": "Drains", "hash": "ad5a65d92242e4fd", "src": "db2@1.60.1.70170"}
 {"id": "DRESSING_ROOM_APPEARANCE_LIST", "field": "text", "en": "Appearance List", "hash": "25025aa41a3e95e3", "src": "db2@1.60.1.70170"}
 {"id": "DRESSUP_FRAME", "field": "text", "en": "Dressing Room", "hash": "0c3bc3d2efb75e83", "src": "db2@1.60.1.70170"}
@@ -142,6 +153,7 @@
 {"id": "DUEL_TO_DEATH", "field": "text", "en": "Duel to the Death", "hash": "c247f7d5f0c3b234", "src": "db2@1.60.1.70170"}
 {"id": "DUEL_TO_THE_DEATH_CHALLENGE_CONFIRM", "field": "text", "en": "Are you sure you want to challenge %s to a duel to the death?\n\nYour opponent will be able to kill you, and death is permanent on Hardcore Realms.\n\nType \"I Agree\" to issue the challenge.", "hash": "6421076536fcfdd5", "src": "db2@1.60.1.70170"}
 {"id": "DUEL_TO_THE_DEATH_REQUEST_CONFIRM", "field": "text", "en": "Are you sure you want to accept this duel to the death?\n\nYour opponent will be able to kill you, and death is permanent on Hardcore Realms.\n\nType \"I Agree\" to accept the challenge.", "hash": "d29671129f81659f", "src": "db2@1.60.1.70170"}
+{"id": "DUNGEONS", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70170"}
 {"id": "DUNGEONS_BUTTON", "field": "text", "en": "Group Finder", "hash": "be7119ca58a84a6f", "src": "db2@1.60.1.70170"}
 {"id": "DUNGEON_COMPLETED", "field": "text", "en": "Dungeon Complete!", "hash": "3515daa19b6740c8", "src": "db2@1.60.1.70170"}
 {"id": "DUNGEON_DIFFICULTY_5PLAYER", "field": "text", "en": "5 Player", "hash": "5f1643fdfc4bde6f", "src": "db2@1.60.1.70170"}

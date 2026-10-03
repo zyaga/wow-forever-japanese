@@ -66,6 +66,13 @@ HEADERS = {
     "FriendshipReputation": ["ID", "Description_lang", "StandingModified_lang"],
     "MapDifficulty": ["ID", "Message_lang"],
     "MapDifficultyXCondition": ["ID", "FailureDescription_lang"],
+    "PlayerCondition": ["ID", "Failure_description_lang"],
+    "LockType": ["ID", "Name_lang", "ResourceName_lang", "Verb_lang"],
+    "SpellFlyout": ["ID", "Name_lang", "Description_lang"],
+    "ServerMessages": ["ID", "Text_lang"],
+    "TransmogSituation": ["ID", "Name_lang"],
+    "TransmogSituationTrigger": ["ID", "Name_lang", "Description_lang"],
+    "TransmogOutfitSlotOption": ["ID", "Name_lang"],
 }
 
 

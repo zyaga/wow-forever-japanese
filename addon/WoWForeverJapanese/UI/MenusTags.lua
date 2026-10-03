@@ -17,6 +17,22 @@ local FILTER_ALL = { "CHECK_ALL", "UNCHECK_ALL", "SOURCES" }
 local ALERT_BUTTONS = { "COOLDOWN_VIEWER_SETTINGS_ALERT_MENU_BUTTON_TOOLTIP_EDIT",
   "COOLDOWN_VIEWER_SETTINGS_ALERT_MENU_BUTTON_TOOLTIP_DELETE", "COOLDOWN_VIEWER_SETTINGS_ALERT_MENU_PLAY_SAMPLE" }
 
+-- `<family>:<id>` keys for the listed ids (a client-table family a menu's entries come from)
+local function rows(family, ids)
+  local out = {}
+  for _, id in ipairs(ids) do out[#out + 1] = family .. ":" .. id end
+  return out
+end
+-- the transmog outfit window's situation options and slot options (TransmogSituation / TransmogOutfitSlotOption)
+local SITUATION_IDS = {
+  1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+  41,
+}
+local SLOT_OPTION_IDS = {
+  1, 2, 5, 7, 8, 9, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42,
+  43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55,
+}
+
 local function join(...)
   local out = {}
   for _, list in ipairs({ ... }) do for _, key in ipairs(list) do out[#out + 1] = key end end
@@ -178,10 +194,12 @@ local TAGS = {
   MENU_RAID_FRAME_DIFFICULTY = { source = "blizzard_compactraidframemanager.lua:215",
     keys = { "PLAYER_DIFFICULTY1", "PLAYER_DIFFICULTY2", "PLAYER_DIFFICULTY6" } },
   -- the transmogrifier (blizzard_transmog/blizzard_transmogtemplates.lua:32, 488, 1503, 1706; blizzard_transmog.lua:
-  -- 2676): option names are client-table names; a custom set's delete is red-wrapped
+  -- 2676): slot and situation option names are client-table rows; a custom set's delete is red-wrapped
   MENU_TRANSMOG_OUTFIT_ENTRY = { source = "blizzard_transmogtemplates.lua:32", keys = { "TRANSMOG_EDIT_OUTFIT_SLOT" } },
   MENU_TRANSMOG_OPTIONS = { source = "blizzard_transmogtemplates.lua:488",
-    keys = { "TRANSMOG_ARTIFACT_OPTIONS_HEADER" } },
+    keys = join({ "TRANSMOG_ARTIFACT_OPTIONS_HEADER" }, rows("TransmogSlotOption", SLOT_OPTION_IDS)) },
+  MENU_TRANSMOG_SITUATION = { source = "blizzard_transmogtemplates.lua:1921",
+    keys = rows("TransmogSituation", SITUATION_IDS) },
   MENU_TRANSMOG_SETS_MODEL_FILTER = { source = "blizzard_transmogtemplates.lua:1503",
     keys = join(SET_FAVORITE, { "TRANSMOG_SET_OPEN_COLLECTION" }) },
   MENU_TRANSMOG_CUSTOM_SETS_MODEL_FILTER = { source = "blizzard_transmogtemplates.lua:1706", keys = {

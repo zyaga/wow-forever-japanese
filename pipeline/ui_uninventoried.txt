@@ -55,21 +55,12 @@ COMBAT_FACTION_CHANGE  # asked for by UI/ChatSystem.lua: the client passes the s
 COMBAT_HONOR_GAIN  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 COMBAT_MISC_INFO  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 COMBAT_XP_GAIN  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-D_DAYS  # asked for by UI/PvPRank.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-D_HOURS  # asked for by UI/PvPRank.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-D_MINUTES  # asked for by UI/PvPRank.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-D_SECONDS  # asked for by UI/PvPRank.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 ENCOUNTER_EVENT  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 ERRORS  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 EXHAUSTION_LABEL  # asked for by UI/HudLabels.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 FACTION_INACTIVE  # asked for by UI/Reputation.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 FACTION_OTHER  # asked for by UI/Reputation.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-FRIENDS_FRIENDS_CHOICE_EVERYONE  # asked for by UI/Menus.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-FRIENDS_FRIENDS_CHOICE_MUTUAL  # asked for by UI/Menus.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-FRIENDS_FRIENDS_CHOICE_POTENTIAL  # asked for by UI/Menus.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 FRIENDS_LIST  # asked for by UI/Friends.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-HOURS_ABBR  # asked for by UI/Mail.lua, UI/Raid.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-ICON_SELECTION_NOTINLIST  # asked for by UI/Character.lua, UI/Macro.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 INSTANCE_CHAT_LEADER  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 INT_SPELL_DURATION_DAYS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 INT_SPELL_DURATION_HOURS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
@@ -90,27 +81,22 @@ MINIMAP_TRACKING_STABLEMASTER  # asked for by UI/Menus.lua: the client passes th
 MINIMAP_TRACKING_TARGET  # asked for by UI/Menus.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 MINIMAP_TRACKING_TRAINER_CLASS  # asked for by UI/Menus.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 MINIMAP_TRACKING_TRAINER_PROFESSION  # asked for by UI/Menus.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-MINUTES_ABBR  # asked for by UI/Mail.lua, UI/Raid.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 MONSTER_BOSS_EMOTE  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 MONSTER_BOSS_WHISPER  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 MONSTER_SAY  # asked for by UI/Speech.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 NEWBIE_TOOLTIP_CHATMENU  # asked for by UI/Friends.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 NEWBIE_TOOLTIP_XPBAR  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-OFFICER  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 OPENING  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 PARTY_LEADER  # asked for by UI/ChatConfig.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 PET_BATTLE_INFO  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 PET_INFO  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-PING  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 PRISMATIC_GEM  # asked for by UI/ItemSocketing.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 QUEST_FACTION_NEEDED  # asked for by UI/QuestMap.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 QUEST_FACTION_NEEDED_NOPROGRESS  # asked for by UI/QuestMap.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 QUEST_LOG  # asked for by UI/QuestMap.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 QUEST_PLAYERS_KILLED  # asked for by UI/QuestMap.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 QUEST_PLAYERS_KILLED_NOPROGRESS  # asked for by UI/QuestMap.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-RAID_WARNING  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 RED_GEM  # asked for by UI/ItemSocketing.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-SECONDS_ABBR  # asked for by UI/Mail.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 SPELL_DURATION_DAYS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 SPELL_DURATION_HOURS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 SPELL_DURATION_MIN  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
@@ -119,23 +105,10 @@ SPELL_TIME_REMAINING_DAYS  # a line the C client writes into an aura tooltip ("5
 SPELL_TIME_REMAINING_HOURS  # a line the C client writes into an aura tooltip ("5 min remaining"): no Lua names it; UI/Tooltip matches it
 SPELL_TIME_REMAINING_MIN  # a line the C client writes into an aura tooltip ("5 min remaining"): no Lua names it; UI/Tooltip matches it
 SPELL_TIME_REMAINING_SEC  # a line the C client writes into an aura tooltip ("5 min remaining"): no Lua names it; UI/Tooltip matches it
-TALENT_BUTTON_TOOLTIP_SELECTION_CHOICE_ERROR  # asked for by UI/Talents.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-TALENT_BUTTON_TOOLTIP_SELECTION_COST_ERROR  # asked for by UI/Talents.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-TALENT_BUTTON_TOOLTIP_SELECTION_CURRENT_INSTRUCTIONS  # asked for by UI/Talents.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-TALENT_BUTTON_TOOLTIP_SELECTION_ERROR  # asked for by UI/Talents.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 TARGETICONS  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 TRADESKILLS  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 UNSPENT_TALENT_POINTS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-WHO  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 WHO_LIST  # asked for by UI/Friends.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 YELLOW_GEM  # asked for by UI/ItemSocketing.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-FRAME_ACTION_CONFIRM  # asked for by UI/Gamepad.lua: the icon selector's gamepad footer (blizzard_sharedxml/mainline/shareduipaneltemplates.lua:2077–2079), a shared template file no surface scans
-FRAME_ACTION_EXIT  # asked for by UI/Gamepad.lua: the icon selector's gamepad footer (blizzard_sharedxml/mainline/shareduipaneltemplates.lua:2077–2079), a shared template file no surface scans
-GROUP_FINDER_GENERAL_PLAYSTYLE1  # asked for by UI/GroupFinder.lua and UI/Menus.lua: written by blizzard_lfgutil/mainline/lfgutil.lua:317-323 (the playstyle string), a file the inventory does not scan
-GROUP_FINDER_GENERAL_PLAYSTYLE2  # asked for by UI/GroupFinder.lua and UI/Menus.lua: written by blizzard_lfgutil/mainline/lfgutil.lua:317-323 (the playstyle string), a file the inventory does not scan
-GROUP_FINDER_GENERAL_PLAYSTYLE3  # asked for by UI/GroupFinder.lua and UI/Menus.lua: written by blizzard_lfgutil/mainline/lfgutil.lua:317-323 (the playstyle string), a file the inventory does not scan
-GROUP_FINDER_GENERAL_PLAYSTYLE4  # asked for by UI/GroupFinder.lua and UI/Menus.lua: written by blizzard_lfgutil/mainline/lfgutil.lua:317-323 (the playstyle string), a file the inventory does not scan
-EQUIPPED  # asked for by UI/Tooltip.lua: written by blizzard_sharedxmlgame/tooltip/tooltipcomparisonmanager.lua:241-247 (the comparison tab), a file the inventory does not scan
-IF_EQUIPPED_TOGETHER  # asked for by UI/Tooltip.lua: written by blizzard_sharedxmlgame/tooltip/tooltipcomparisonmanager.lua:241-247 (the comparison tab), a file the inventory does not scan
 TRANSMOGRIFY_TOOLTIP_ITEM_UNKNOWN_APPEARANCE_KNOWN  # asked for by UI/Tooltip.lua's structural pass: the C client writes this item tooltip line itself, so no scanned file names it
 TRANSMOGRIFY_TOOLTIP_REVERT  # asked for by UI/Tooltip.lua's structural pass: the C client writes this item tooltip line itself, so no scanned file names it

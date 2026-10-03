@@ -104,6 +104,15 @@ local function chatKeys(index)
   return chatSet
 end
 
+-- The server's own notices ("[SERVER] Shutdown in 15 Minutes"): ServerMessages rows the client prints as system lines.
+local serverSet, serverIndex
+local function serverKeys(index)
+  if serverIndex ~= index then
+    serverSet, serverIndex = WFJ.UIStrings.familyKeys(index.rows, "ServerMessage"), index
+  end
+  return serverSet
+end
+
 -- A reputation line (COMBAT_FACTION_CHANGE) may also be a FriendshipGain row ("You gain 25 Rank Points.",
 -- FriendshipReputation's StandingModified text, the number filled in by the client: UIStrings index:matchCounted). The
 -- family is named for that chat type only, so no other line is ever taken for one.
@@ -196,7 +205,13 @@ function ChatSystem.translate(en, exactOnly, faction)
   if not key and not exactOnly then
     key, args = index:matchOnly(en, faction and factionKeys(index) or chatKeys(index))
   end
-  return filled(index, key, args, en)
+  local ja = filled(index, key, args, en)
+  -- a server notice: its time argument is text, so no digit fingerprint finds it (Index:matchTail)
+  if not ja and not exactOnly and type(index.matchTail) == "function" then
+    key, args = index:matchTail(en, serverKeys(index))
+    ja = filled(index, key, args, en)
+  end
+  return ja
 end
 
 -- communitiesChat: the Japanese for a line that may only be one of `keys` (a list): exact or template,

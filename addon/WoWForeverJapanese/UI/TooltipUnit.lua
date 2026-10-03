@@ -51,7 +51,13 @@ for _, i in ipairs({ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 
   TooltipUnit.KEYS[#TooltipUnit.KEYS + 1] = "UNITNAME_SUMMON_TITLE" .. i
 end
 -- a creature: the keys, and its type on a line of its own (built per call: the family's keys come from the index)
-local function creatureOnly() return WFJ.Labels.familiesWith(TooltipUnit.KEYS, "CreatureType") end
+-- a creature's or a game object's lines: the unit keys, the creature type, and an object's lock and requirement text
+-- (LockType's action / what it opens / verb, PlayerCondition's failure text, both client-table rows the C client
+-- writes) [unverified in game: which object lines carry them]
+local function creatureOnly()
+  return WFJ.Labels.familiesWith(TooltipUnit.KEYS, "CreatureType", "LockTypeName", "LockTypeResource", "LockTypeVerb",
+    "PlayerConditionFailure")
+end
 local CREATURE_TEMPLATES = { UNIT_TYPE_LEVEL_TEMPLATE = true, UNIT_TYPE_PLUS_LEVEL_TEMPLATE = true,
   UNIT_TYPE_LETHAL_LEVEL_TEMPLATE = true }
 local PLAYER_KEYS = {}

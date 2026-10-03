@@ -1,4 +1,5 @@
 {"id": "LABEL_NOTE", "field": "text", "en": "Note", "hash": "0a90f1e2ce602da6", "src": "db2@1.60.1.69913"}
+{"id": "LAIR", "field": "text", "en": "Lair", "hash": "0a48a69a7bfb326b", "src": "db2@1.60.1.70170"}
 {"id": "LANGUAGE", "field": "text", "en": "Language", "hash": "200c80b7245dad8f", "src": "db2@1.60.1.70170"}
 {"id": "LANGUAGES_LABEL", "field": "text", "en": "Languages", "hash": "6665de684e5a2919", "src": "db2@1.60.1.70170"}
 {"id": "LANGUAGES_SETTINGS_LABEL", "field": "text", "en": "Languages and Social", "hash": "8e37708bf9c00218", "src": "db2@1.60.1.70170"}
@@ -38,6 +39,7 @@
 {"id": "LEGACY_POINTS_AVAILABLE", "field": "text", "en": "Available points: %s", "hash": "26e090e9c6a82c30", "src": "db2@1.60.1.70170"}
 {"id": "LEGACY_POINTS_CURR_MAX", "field": "text", "en": "Legacy Points %d / %d", "hash": "456671a29a675106", "src": "db2@1.60.1.70170"}
 {"id": "LEGACY_POINTS_SEASONAL_CAP", "field": "text", "en": "You can spend up to your current seasonal cap of %d Legacy Points in total.", "hash": "1eb1757069c73bc2", "src": "db2@1.60.1.70170"}
+{"id": "LEGACY_RAID_DIFFICULTY", "field": "text", "en": "Legacy Raid Difficulty", "hash": "74347f5a73281844", "src": "db2@1.60.1.70170"}
 {"id": "LEGACY_REWARD_TRACK_POINTS", "field": "text", "en": "Legacy Points", "hash": "910fcb2e2d68b87c", "src": "db2@1.60.1.70170"}
 {"id": "LEGACY_REWARD_TRACK_TAB_TOOLTIP", "field": "text", "en": "Legacy Rewards", "hash": "c550e5ab0dc73daf", "src": "db2@1.60.1.70170"}
 {"id": "LEGACY_TRACK_FRAME_TITLE", "field": "text", "en": "Progress Track", "hash": "dfaca278617fb6eb", "src": "db2@1.60.1.70170"}
@@ -66,6 +68,7 @@
 {"id": "LFG_LIST_BOSSES_DEFEATED", "field": "text", "en": "Bosses Defeated:", "hash": "48c7638718ff81ed", "src": "db2@1.60.1.70170"}
 {"id": "LFG_LIST_CATEGORY_GROUPS", "field": "text", "en": "Groups", "hash": "a1caaca50232a87a", "src": "db2@1.60.1.70170"}
 {"id": "LFG_LIST_CATEGORY_SOLO_PLAYERS", "field": "text", "en": "Players", "hash": "4aab3a4b031feeb1", "src": "db2@1.60.1.70170"}
+{"id": "LFG_LIST_CONVERT_TO_RAID_WARNING", "field": "text", "en": "Inviting this player or group will convert your party to a raid.", "hash": "05d50f9414783ba4", "src": "db2@1.60.1.70170"}
 {"id": "LFG_LIST_EDIT", "field": "text", "en": "Edit Listing", "hash": "b676b14ff35cc03f", "src": "db2@1.60.1.70170"}
 {"id": "LFG_LIST_ENTRY_DELISTED", "field": "text", "en": "This group has been delisted.", "hash": "9a754798f662324b", "src": "db2@1.60.1.70170"}
 {"id": "LFG_LIST_ENTRY_EXPIRED_TIMEOUT", "field": "text", "en": "Your group has been delisted for inactivity. You may relist the group if you are still looking for applicants.", "hash": "e02d1b6e8bb890c0", "src": "db2@1.60.1.70170"}
@@ -113,6 +116,8 @@
 {"id": "LINK_TRANSMOG_CUSTOM_SET_HELPTIP", "field": "text", "en": "Share this custom set by linking it in chat or online", "hash": "e41985b35cf6e216", "src": "db2@1.60.1.70170"}
 {"id": "LIQUID_DETAIL", "field": "text", "en": "Liquid Detail", "hash": "d49ed48502ce8259", "src": "db2@1.60.1.70170"}
 {"id": "LIST_MY_GROUP", "field": "text", "en": "List My Group", "hash": "6016fe7535036cf0", "src": "db2@1.60.1.70170"}
+{"id": "LOADOUT_ERROR_BAD_STRING", "field": "text", "en": "Error: Invalid loadout code", "hash": "9172c9b4d758becb", "src": "db2@1.60.1.70170"}
+{"id": "LOADOUT_ERROR_SERIALIZATION_VERSION_MISMATCH", "field": "text", "en": "Error: The loadout you are trying to import was saved from an old version", "hash": "67a09002cbd7c6a9", "src": "db2@1.60.1.70170"}
 {"id": "LOAD_ADDON", "field": "text", "en": "Load AddOn", "hash": "356cacdff3428c5d", "src": "db2@1.60.1.70170"}
 {"id": "LOCALE_AUDIO_LABEL", "field": "text", "en": "Audio", "hash": "84c3282ac71470ab", "src": "db2@1.60.1.70170"}
 {"id": "LOCALE_TEXT_LABEL", "field": "text", "en": "Text", "hash": "0b5c2745f71dbfdc", "src": "db2@1.60.1.70170"}
@@ -163,6 +168,7 @@
 {"id": "LOOT_MONEY_SPLIT_MOD", "field": "text", "en": "Your share of the loot is %s (+%s)", "hash": "e0b3e9d83fbe3394", "src": "db2@1.60.1.70170"}
 {"id": "LOOT_NEED_BEFORE_GREED", "field": "text", "en": "Loot: Need Before Greed", "hash": "b29ea0e38ee9599c", "src": "db2@1.60.1.70170"}
 {"id": "LOOT_NO_DROP", "field": "text", "en": "Looting %s will bind it to you.", "hash": "2eb6aac15c1552f4", "src": "db2@1.60.1.70170"}
+{"id": "LOOT_NO_DROP_DISENCHANT", "field": "text", "en": "Disenchanting %s will destroy it.", "hash": "1125e5aa0f4e4ab9", "src": "db2@1.60.1.70170"}
 {"id": "LOOT_ROLLS", "field": "text", "en": "Loot Rolls", "hash": "34b198eeb939e021", "src": "db2@1.60.1.70170"}
 {"id": "LOOT_ROLL_DISENCHANT", "field": "text", "en": "%s has selected Disenchant for: %s", "hash": "14834e972f3b6e78", "src": "db2@1.60.1.70170"}
 {"id": "LOOT_ROLL_INELIGIBLE_REASON1", "field": "text", "en": "Your class may not roll need on this item.", "hash": "b20d0b3015a30aad", "src": "db2@1.60.1.70170"}
@@ -229,3 +235,59 @@
 {"id": "LfgCategory:118", "field": "text", "en": "Battlegrounds", "hash": "ee710fa995072d7b", "src": "db2@1.60.1.70170"}
 {"id": "LfgCategory:120", "field": "text", "en": "Custom", "hash": "e8eb93f28a72eb0f", "src": "db2@1.60.1.70170"}
 {"id": "LfgCategory:2", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:1", "field": "text", "en": "Pick Lock", "hash": "f1d14809b8c9a304", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:10", "field": "text", "en": "Quick Open", "hash": "e988f97d8a00f9b6", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:11", "field": "text", "en": "Quick Close", "hash": "adec8c5be82f2298", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:12", "field": "text", "en": "Open Tinkering", "hash": "0096fcefe74c4196", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:13", "field": "text", "en": "Open Kneeling", "hash": "97644ddaa4c1e562", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:14", "field": "text", "en": "Open Attacking", "hash": "18d10264ddcbbd4e", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:16", "field": "text", "en": "Blasting", "hash": "461797401d173ac5", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:17", "field": "text", "en": "Slow Open", "hash": "f862a57155cbee85", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:18", "field": "text", "en": "Slow Close", "hash": "474f8a5f9934ef07", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:209", "field": "text", "en": "Open Tinkering", "hash": "0096fcefe74c4196", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:211", "field": "text", "en": "Kobold Tracks", "hash": "7b5d08668f66b99e", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:24", "field": "text", "en": "Beast Tracking", "hash": "cfa853c15dd1bf65", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:245", "field": "text", "en": "Comprehend Scroll", "hash": "63c3d078da437095", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:4", "field": "text", "en": "Disarm Trap", "hash": "80ea2e4c066e8d1a", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:5", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:8", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeName:9", "field": "text", "en": "Arm Trap", "hash": "1fd055edac5c9abe", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:1", "field": "text", "en": "Locked Items", "hash": "3df9edee32ec3af3", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:10", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:11", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:12", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:13", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:14", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:16", "field": "text", "en": "Locked Items", "hash": "3df9edee32ec3af3", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:17", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:18", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:19", "field": "text", "en": "Fish", "hash": "097cf2544b4ed706", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:2", "field": "text", "en": "Herbs", "hash": "fd81f19e409181ea", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:209", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:211", "field": "text", "en": "Kobold Tracks", "hash": "7b5d08668f66b99e", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:24", "field": "text", "en": "Beast Tracks", "hash": "8af06f9d79086eda", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:245", "field": "text", "en": "Scroll", "hash": "6515dde9554eef38", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:3", "field": "text", "en": "Ore Deposits", "hash": "fc8b9ecad4a35b31", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:4", "field": "text", "en": "Trap", "hash": "0b5f82f12ab6537f", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:5", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:8", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeResource:9", "field": "text", "en": "Trap", "hash": "0b5f82f12ab6537f", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:1", "field": "text", "en": "Pick", "hash": "0ad3f235d15c6144", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:10", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:11", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:12", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:13", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:14", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:16", "field": "text", "en": "Blast", "hash": "951b6010a16fcf66", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:17", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:18", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:19", "field": "text", "en": "Fish", "hash": "097cf2544b4ed706", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:2", "field": "text", "en": "Gather", "hash": "7809a82fc40b2615", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:209", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:24", "field": "text", "en": "Track", "hash": "d1dffb309e5a7ffe", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:245", "field": "text", "en": "Comprehend", "hash": "260ed2f1a8ea3162", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:3", "field": "text", "en": "Mine", "hash": "0a6d0eff2925e3db", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:4", "field": "text", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:5", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:8", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70170"}
+{"id": "LockTypeVerb:9", "field": "text", "en": "Arm", "hash": "0011400c021766b1", "src": "db2@1.60.1.70170"}

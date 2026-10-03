@@ -8,7 +8,7 @@ local _, WFJ = ...
 local ChatInput = {}
 WFJ.ChatInput = ChatInput
 
-local SURFACE = "chat.input"
+local SURFACE = "chatsystem.input"
 local Compat = WFJ.Compat
 
 ChatInput.NEVER_TOUCH = {}

@@ -85,7 +85,7 @@ local WINDOW_NAMESPACES = { "character", "reputation", "skills", "spellbook", "t
   "channels", "quickjoin", "recentallies", "recruitafriend", "reportframe", "helpframe", "statusnotices",
   "bnettoast", "settingspanel", "settingstutorials", "editmode", "quickkeybind", "colorpicker", "chatconfig",
   "texttospeech", "chattabs", "combatlog", "addonlist", "scripterrors", "splash", "eventtrace", "chromietime",
-  "alerts", "errors", "chatsystem", "chat.input", "speech", "bossbanner", "cinematic", "coinpickup", "combatfeedback",
+  "alerts", "errors", "chatsystem", "speech", "bossbanner", "cinematic", "coinpickup", "combatfeedback",
   "equipmentflyout",
   "ghostframe",
   "guildinvite", "instanceabandon", "instancedifficulty", "loothistory", "lossofcontrol", "majorfactiontoast",

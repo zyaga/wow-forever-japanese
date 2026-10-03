@@ -19,7 +19,7 @@ ENGLISH_SOURCES = {f"wago@{BUILD}", f"db2@{FOREVER_BUILD}"}
 # They are allowed because the addon never walks the line that reads as the item / spell name and labels are matched
 # per widget; any other exact-line collision is reviewed here. A new collision means a deliberate review: add it here.
 KNOWN_NAME_COLLISIONS = {
-    # Words from the families the served-text inventory added (ADR-051): recipe headers, pet diet words, the recent
+    # Words from the families the served-text inventory added (ADR-052): recipe headers, pet diet words, the recent
     # allies' interaction words. Restricted family keys, matched only on their own widget (Core/UIStrings.lua).
     "Arrows", "Fireworks", "Fish", "Leggings",
     "Cloth", "Complete Quest", "Fire", "Fishing Pole", "Frost", "Leather", "Libram", "Mace", "Mail", "Shadow",
@@ -84,6 +84,9 @@ KNOWN_NAME_COLLISIONS = {
     # (UIStrings.OWN): out of the by-English index, so no unrestricted match ever answers it; only the popup's title
     # (UI/Tutorial.lua, `only` TUTORIAL_TITLE<n>) shows it
     "Swimming",
+    # restricted client-table rows (LockType, SpellFlyout), matched only where a widget names their family: a lock
+    # action or a spellbook flyout, never a spell or item name line
+    "Beast Tracking", "Comprehend Scroll", "Disarm", "Disarm Trap", "Pick Lock", "Portal", "Stances", "Teleport", "Trap",
 }
 
 

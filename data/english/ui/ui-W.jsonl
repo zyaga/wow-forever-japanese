@@ -1,13 +1,24 @@
 {"id": "WAISTSLOT", "field": "text", "en": "Waist", "hash": "0444175ef6f6e5f7", "src": "db2@1.60.1.70170"}
 {"id": "WARDROBE", "field": "text", "en": "Appearances", "hash": "41e1cef6c0b33eee", "src": "db2@1.60.1.70170"}
+{"id": "WARDROBE_ALTERNATE_ITEMS", "field": "text", "en": "Other items that unlock this slot:", "hash": "bff44223be0df5fe", "src": "db2@1.60.1.70170"}
 {"id": "WARDROBE_ITEMS", "field": "text", "en": "Items", "hash": "110ed23534f93bbc", "src": "db2@1.60.1.70170"}
 {"id": "WARDROBE_NO_SEARCH", "field": "text", "en": "Search is not available for this category.", "hash": "1243854b76526627", "src": "db2@1.60.1.70170"}
+{"id": "WARDROBE_OTHER_ITEMS", "field": "text", "en": "Other items using this appearance:", "hash": "a1b7f79c96a86286", "src": "db2@1.60.1.70170"}
 {"id": "WARDROBE_SETS", "field": "text", "en": "Sets", "hash": "0b39d79d69b54c58", "src": "db2@1.60.1.70170"}
 {"id": "WARDROBE_SHORTCUTS_TUTORIAL_1", "field": "text", "en": "Interface Shortcuts|n|n|cFFFFD200[Right Click]|r|nFavorite an appearance|n|n|cFFFFD200[Ctrl Click]|r|nPreview appearance|n|n", "hash": "c1adb1d7fbb96ef6", "src": "db2@1.60.1.70170"}
 {"id": "WARDROBE_SHORTCUTS_TUTORIAL_2", "field": "text", "en": "|cFFFFD200[Shift Click]|r", "hash": "b8f08f336fa2e83d", "src": "db2@1.60.1.70170"}
 {"id": "WARDROBE_SHORTCUTS_TUTORIAL_3", "field": "text", "en": "Track or untrack an item|n", "hash": "8510b4805ac5c5ca", "src": "db2@1.60.1.70170"}
+{"id": "WARDROBE_TOOLTIP_BOSS_DROP_FORMAT", "field": "text", "en": "Boss Drop: %s", "hash": "4b4c84618b923854", "src": "db2@1.60.1.70170"}
+{"id": "WARDROBE_TOOLTIP_BOSS_DROP_FORMAT_WITH_DIFFICULTIES", "field": "text", "en": "Boss Drop: %s (%s)", "hash": "082414e2d96e07f6", "src": "db2@1.60.1.70170"}
+{"id": "WARDROBE_TOOLTIP_CYCLE", "field": "text", "en": "Press Tab to cycle through items.", "hash": "eadbcec06c16469d", "src": "db2@1.60.1.70170"}
+{"id": "WARDROBE_TOOLTIP_DUNGEONS", "field": "text", "en": "Dungeons in %s", "hash": "3235906800f820a7", "src": "db2@1.60.1.70170"}
+{"id": "WARDROBE_TOOLTIP_ENCOUNTER_SOURCE", "field": "text", "en": "%s in %s", "hash": "221d43e04bee57ce", "src": "db2@1.60.1.70170"}
+{"id": "WARDROBE_TOOLTIP_RAIDS", "field": "text", "en": "Raids in %s", "hash": "15ac327c8ee0d0df", "src": "db2@1.60.1.70170"}
+{"id": "WARDROBE_TOOLTIP_TRANSMOGRIFIER", "field": "text", "en": "Visit a Transmogrifier to apply this appearance to your outfit.", "hash": "8b8bfb02dc6693ca", "src": "db2@1.60.1.70170"}
 {"id": "WARDROBE_TRACKING_TUTORIAL", "field": "text", "en": "You have not collected this appearance yet! Shift Click to begin tracking it.", "hash": "6faff71a4a88c161", "src": "db2@1.60.1.70170"}
+{"id": "WARDROBE_TRANSMOGRIFY_AS", "field": "text", "en": "Transmogrify as:", "hash": "cc6a1d42004d0e55", "src": "db2@1.60.1.70170"}
 {"id": "WARFRONTS_LEAVE", "field": "text", "en": "Leave Warfront", "hash": "ecd9b5b9fa91ab59", "src": "db2@1.60.1.70170"}
+{"id": "WARGAME", "field": "text", "en": "War Game", "hash": "4b86ce2d3a512285", "src": "db2@1.60.1.70170"}
 {"id": "WARGAME_CHALLENGED", "field": "text", "en": "|cffffd200%s|r has challenged your group to a War Game in |cffffd200%s|r!", "hash": "3212894c69c275ee", "src": "db2@1.60.1.70170"}
 {"id": "WARGAME_IS_READY", "field": "text", "en": "Your War Game is ready!", "hash": "cd78e51a3603513b", "src": "db2@1.60.1.70170"}
 {"id": "WARN_LEAVE_RESTRICTED_CHALLENGE_MODE", "field": "text", "en": "Penalty Timer|n|n|cffffd200If you don't return to the instance within the remaining time, you will be kicked from the instance group and receive a penalty for leaving.|r|n|nTime Remaining: %d sec", "hash": "617a93e58738970e", "src": "db2@1.60.1.70170"}
@@ -15,6 +26,10 @@
 {"id": "WARRIOR_INTELLECT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFWeapon Skill|r improvement rate", "hash": "f79f01e1188490d5", "src": "db2@1.60.1.70170"}
 {"id": "WARRIOR_SPIRIT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFHealth Regeneration|r by %d per 5 sec while not in combat", "hash": "11847c42cb6d1b29", "src": "db2@1.60.1.70170"}
 {"id": "WARRIOR_STRENGTH_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFAttack Power|r by %d\nIncreases |cFFFFFFFFBlock Value|r by %d", "hash": "be95ff635ef2ba7a", "src": "db2@1.60.1.70170"}
+{"id": "WAR_CAMPAIGN_CHAPTER_REWARD_TEXT", "field": "text", "en": "Completing this chapter will reward you with:", "hash": "ad253dc77dadf81c", "src": "db2@1.60.1.70170"}
+{"id": "WAR_CAMPAIGN_DONE_DESCRIPTION", "field": "text", "en": "You completed the current campaign so far. More content will be added in the future.", "hash": "f1becac02e8731b5", "src": "db2@1.60.1.70170"}
+{"id": "WAR_MODE_BONUS_PERCENTAGE_FORMAT", "field": "text", "en": "|cff1eff00+%1$d%% War Mode Bonus|r", "hash": "547d308641a11868", "src": "db2@1.60.1.70170"}
+{"id": "WAR_MODE_BONUS_PERCENTAGE_XP_FORMAT", "field": "text", "en": "|cff1eff00+%1$d%% War Mode Bonus|r", "hash": "547d308641a11868", "src": "db2@1.60.1.70170"}
 {"id": "WAR_WITHIN_LANDING_PAGE_ALERT_MAJOR_FACTION_UNLOCKED", "field": "text", "en": "Major Faction Unlocked", "hash": "0689f3cd4c0bc4b4", "src": "db2@1.60.1.70170"}
 {"id": "WATER_COLLISION", "field": "text", "en": "Water Collision", "hash": "4984ce6279b988e6", "src": "db2@1.60.1.70170"}
 {"id": "WEAPON_ENCHANTMENT", "field": "text", "en": "Weapon Enchantment", "hash": "c3d8433bb9a5018f", "src": "db2@1.60.1.70170"}
@@ -54,6 +69,7 @@
 {"id": "WORLD", "field": "text", "en": "World", "hash": "0626ad84d65fc103", "src": "db2@1.60.1.70170"}
 {"id": "WORLDMAP_BUTTON", "field": "text", "en": "World Map", "hash": "cdc6abf08f3d4114", "src": "db2@1.60.1.70170"}
 {"id": "WORLD_MAP", "field": "text", "en": "Map", "hash": "00145bc831b875cf", "src": "db2@1.60.1.70170"}
+{"id": "WORLD_MAP_ACTIVITY_TRACKER_RING_TOOLTIP", "field": "text", "en": "<Left-Click to cycle available activities>|n<Right-Click to untrack faction>", "hash": "6e92281fd78e2da2", "src": "db2@1.60.1.70170"}
 {"id": "WORLD_MAP_CROSSHAIR_COORDS", "field": "text", "en": "Crosshair: %.1f, %.1f", "hash": "2f238e3fd01c608f", "src": "db2@1.60.1.70170"}
 {"id": "WORLD_MAP_CROSSHAIR_COORDS_INTEGER", "field": "text", "en": "Crosshair: %d, %d", "hash": "455639a13d0c6e9e", "src": "db2@1.60.1.70170"}
 {"id": "WORLD_MAP_CURSOR_COORDS", "field": "text", "en": "Cursor: %.1f, %.1f", "hash": "fcd38b51bd6b8b22", "src": "db2@1.60.1.70170"}
@@ -66,6 +82,7 @@
 {"id": "WORLD_MAP_PLAYER_COORDS_MAP_NAME_INTEGER", "field": "text", "en": "Player (%3$s): %1$d, %2$d", "hash": "e2843c3095e740f4", "src": "db2@1.60.1.70170"}
 {"id": "WORLD_MAP_TUTORIAL2", "field": "text", "en": "Your quests will be listed here based on the Current Map.", "hash": "49370e17e2180fed", "src": "db2@1.60.1.70170"}
 {"id": "WORLD_MAP_TUTORIAL5", "field": "text", "en": "Hover over icons for more information and to highlight them on the map.", "hash": "f14e3add6078f254", "src": "db2@1.60.1.70170"}
+{"id": "WORLD_MARKER", "field": "text", "en": "World Marker %d", "hash": "cbc4d9e159a8eb0e", "src": "db2@1.60.1.70170"}
 {"id": "WORLD_PVP_DESERTER", "field": "text", "en": "You cannot enter %s until your deserter debuff wears off.", "hash": "89dd1780216b5909", "src": "db2@1.60.1.70170"}
 {"id": "WORLD_PVP_ENTER", "field": "text", "en": "You have been called to join the %s battle! Join now?|nTime remaining: %d %s", "hash": "600b4872646f44da", "src": "db2@1.60.1.70170"}
 {"id": "WORLD_PVP_EXITED_BATTLE", "field": "text", "en": "You have exited the battle for %s.", "hash": "8146c5936d774a8c", "src": "db2@1.60.1.70170"}
@@ -84,6 +101,8 @@
 {"id": "WORLD_QUEST_COMPLETE", "field": "text", "en": "World Quest Complete!", "hash": "3a356b1d56011193", "src": "db2@1.60.1.70170"}
 {"id": "WORLD_QUEST_REWARD_FILTERS_TITLE", "field": "text", "en": "Rewards:", "hash": "2d6ea58b43389134", "src": "db2@1.60.1.70170"}
 {"id": "WORLD_QUEST_TOOLTIP_DESCRIPTION", "field": "text", "en": "Completing this world quest will reward you with:", "hash": "a31bf9488d79780a", "src": "db2@1.60.1.70170"}
+{"id": "WORLD_TIER_HEROIC", "field": "text", "en": "Heroic", "hash": "b982091992393fba", "src": "db2@1.60.1.70170"}
+{"id": "WORLD_TIER_MYTHIC", "field": "text", "en": "Mythic", "hash": "026c878e93419549", "src": "db2@1.60.1.70170"}
 {"id": "WOW_FRIEND_DESCRIPTION", "field": "text", "en": "Send an invite by entering their character name. If the character is on a different realm, you must include the realm name: 'character-realm'. These friends are restricted by character and game. The recipient must accept the request to become friends.", "hash": "9fe4713677890960", "src": "db2@1.60.1.70170"}
 {"id": "WOW_LABS_LEAVE_QUEUE", "field": "text", "en": "Leave Queue", "hash": "a75e8ce8c1374309", "src": "db2@1.60.1.70170"}
 {"id": "WOW_LABS_PLUNDERSTORM_FORMED", "field": "text", "en": "A lobby has been found for:", "hash": "eab87ed3b6702cca", "src": "db2@1.60.1.70170"}

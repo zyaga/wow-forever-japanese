@@ -110,6 +110,17 @@ UI_FAMILIES = (
     "FriendshipGain",
     "InstanceEntryMessage",
     "InstanceEntryFailure",
+    "PlayerConditionFailure",
+    "LockTypeName",
+    "LockTypeResource",
+    "LockTypeVerb",
+    "FlyoutName",
+    "FlyoutDescription",
+    "ServerMessage",
+    "TransmogSituation",
+    "TransmogTrigger",
+    "TransmogTriggerDescription",
+    "TransmogSlotOption",
 )
 # The restricted families (ADR-042): the addon finds their rows only where a widget names the
 # family, so each family is a vocabulary of its own: its Japanese may differ from an open key's (or another

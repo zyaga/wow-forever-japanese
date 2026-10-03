@@ -3,7 +3,8 @@
 -- (tooltipdatahandler.lua): a currency (camelot blizzard_tokenui.lua:170, 760), a mount or companion
 -- (blizzard_mountcollection.lua:653, classic blizzard_petcollection.lua:423), an equipment set (camelot
 -- paperdollframe.lua:2691), a raid lock (raidframe.lua:237), a totem (totemframe.lua:73), and party members' quest
--- progress (questobjectivetracker.lua:149). Line 1 is the thing's name and stays English; every later line goes
+-- progress (questobjectivetracker.lua:149), and a spell flyout (matched in its own families). Line 1 is the thing's
+-- name and stays English; every later line goes
 -- through the dictionary on UI/HelpTooltip's surface (HelpTooltip.adopt: released on OnHide, re-rendered on Alt).
 -- [unverified in game: which lines each kind carries; a line matching no key stays as the client wrote it]
 local _, WFJ = ...
@@ -18,6 +19,14 @@ local function walk(tt)
   return WFJ.HelpTooltip.adopt(tt, OPTS)
 end
 TooltipData.walk = walk
+
+-- A spellbook or action-bar flyout's tooltip: its name and description, both SpellFlyout rows (a category, not a
+-- spell), matched in those two families only, line 1 included.
+local function walkFlyout(tt)
+  if type(tt) ~= "table" or tt ~= Compat.resolve("GameTooltip") then return 0 end
+  return WFJ.HelpTooltip.adopt(tt, WFJ.Labels.families("FlyoutName", "FlyoutDescription"))
+end
+TooltipData.walkFlyout = walkFlyout
 
 -- → true when the post-calls were registered
 function TooltipData.init()
@@ -34,5 +43,6 @@ function TooltipData.init()
   if types.InstanceLock ~= nil then processor.AddTooltipPostCall(types.InstanceLock, walk) end
   if types.Totem ~= nil then processor.AddTooltipPostCall(types.Totem, walk) end
   if types.QuestPartyProgress ~= nil then processor.AddTooltipPostCall(types.QuestPartyProgress, walk) end
+  if types.Flyout ~= nil then processor.AddTooltipPostCall(types.Flyout, walkFlyout) end
   return true
 end

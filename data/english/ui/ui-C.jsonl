@@ -1,14 +1,17 @@
 {"id": "CAA_COMBAT_AUDIO_ALERTS_LABEL", "field": "text", "en": "Combat Audio Alerts", "hash": "669ca62507d8da36", "src": "db2@1.60.1.70170"}
+{"id": "CAA_COMMAND_SYNTAX_ERROR", "field": "text", "en": "Invalid Combat Audio Alert command. Type \"/ttscombat help\" to see a list of commands.", "hash": "afc57e3277a63860", "src": "db2@1.60.1.70170"}
 {"id": "CAA_DEBUFF_SELF_ALERT_FORMAT_DEBUFF_TYPE", "field": "text", "en": "Voice: \"%s debuff\"", "hash": "af62827174ccc5c9", "src": "db2@1.60.1.70170"}
 {"id": "CAA_DEBUFF_SELF_ALERT_LABEL", "field": "text", "en": "Debuff Self Alert", "hash": "c495da2868298dab", "src": "db2@1.60.1.70170"}
 {"id": "CAA_DEBUFF_SELF_ALERT_TOOLTIP", "field": "text", "en": "Announces when you can dispel a debuff on yourself", "hash": "6383b404c11f34c9", "src": "db2@1.60.1.70170"}
 {"id": "CAA_ENABLE_COMBAT_AUDIO_ALERTS", "field": "text", "en": "Enable Combat Audio Alerts", "hash": "f72805f622014815", "src": "db2@1.60.1.70170"}
 {"id": "CAA_ENABLE_COMBAT_AUDIO_ALERTS_TOOLTIP", "field": "text", "en": "Enables the use of combat audio alerts. This can be toggled using the chat command /ttscombat.", "hash": "e2cdfb8bb6078e89", "src": "db2@1.60.1.70170"}
+{"id": "CAA_HELP_OVERVIEW", "field": "text", "en": "Combat Audio Alert Commands: |nType /ttscombat to enable Combat Audio Alerts or set an option by typing /ttscombat followed by one of the commands below:", "hash": "ffe286a364c1d181", "src": "db2@1.60.1.70170"}
 {"id": "CAA_PULSE_PLAYER_HEALTH_LABEL", "field": "text", "en": "Pulse Your Health", "hash": "473836cf0785bc33", "src": "db2@1.60.1.70170"}
 {"id": "CAA_PULSE_PLAYER_HEALTH_TOOLTIP", "field": "text", "en": "Plays a repeating sound that speeds up as your health decreases", "hash": "460ff17bab89007c", "src": "db2@1.60.1.70170"}
 {"id": "CAA_PULSE_PLAYER_HEALTH_VOLUME_TOOLTIP", "field": "text", "en": "Adjusts the volume for the health pulse", "hash": "c6116c360d2f5b8d", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAMPLE_DEBUFFNAME", "field": "text", "en": "Deadly Sting", "hash": "4cc9a8e458650451", "src": "db2@1.60.1.69913"}
 {"id": "CAA_SAMPLE_DISPELTTYPE", "field": "text", "en": "Magic", "hash": "54ba6cee39dc24ee", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAMPLE_RESOURCENAME", "field": "text", "en": "Power", "hash": "8b47fceed1ceb863", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAMPLE_SPELLNAME", "field": "text", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.69913"}
 {"id": "CAA_SAY_CASTS_END_OF_CAST", "field": "text", "en": "End of cast", "hash": "bae1eaa32a6cd323", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_CASTS_START_OF_CAST", "field": "text", "en": "Start of cast", "hash": "9966b1fc125d53fd", "src": "db2@1.60.1.70170"}
@@ -23,6 +26,7 @@
 {"id": "CAA_SAY_IF_TARGETED_FORMAT_TARGETED_NO_NAME", "field": "text", "en": "Voice: \"You're targeted\"", "hash": "b0aad238a9752441", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_IF_TARGETED_LABEL", "field": "text", "en": "Say If Targeted", "hash": "66c8c4e95d09b406", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_IF_TARGETED_TOOLTIP", "field": "text", "en": "Choose a phrase or sound to indicate that you are targeted by an enemy. This setting is saved per talent specialization.", "hash": "a15104998b08e00b", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_PARTY_HEALTH_FREQUENCY", "field": "text", "en": "Say Party Health Frequency", "hash": "07458e28b3e25279", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PARTY_HEALTH_FREQUENCY_LABEL", "field": "text", "en": "Frequency", "hash": "13d9cd1a22aa9897", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PARTY_HEALTH_FREQUENCY_TOOLTIP", "field": "text", "en": "Adjust the relative frequency of party health callouts", "hash": "3d9569c62bd4e280", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PARTY_HEALTH_LABEL", "field": "text", "en": "Say Party Health", "hash": "0322c85498e44fe0", "src": "db2@1.60.1.70170"}
@@ -39,9 +43,11 @@
 {"id": "CAA_SAY_PLAYER_CASTS_TOOLTIP", "field": "text", "en": "Says when you cast an ability", "hash": "fe66754f6ee38cd6", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PLAYER_CASTS_VOICE_TOOLTIP", "field": "text", "en": "Choose the voice that says your casts", "hash": "76643fadfad4cf08", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PLAYER_CASTS_VOLUME_TOOLTIP", "field": "text", "en": "Adjusts the volume for your cast callouts", "hash": "8d4be29bc4d89a1f", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_PLAYER_HEALTH_FORMAT", "field": "text", "en": "Say Your Health Format", "hash": "cb1b0f1a32bc36a1", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PLAYER_HEALTH_FORMAT_LABEL", "field": "text", "en": "Format", "hash": "720206ef9c5d5fd5", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PLAYER_HEALTH_FORMAT_TOOLTIP", "field": "text", "en": "Choose the wording it will use to say your health, using 20% as an example", "hash": "224a52df9c38824e", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PLAYER_HEALTH_LABEL", "field": "text", "en": "Say Your Health", "hash": "d543dee803342d88", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_PLAYER_HEALTH_THROTTLE", "field": "text", "en": "Say Your Health Throttle", "hash": "f5e20961afc30f2e", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PLAYER_HEALTH_THROTTLE_LABEL", "field": "text", "en": "Throttle", "hash": "46dd0a3a22444803", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PLAYER_HEALTH_THROTTLE_TOOLTIP", "field": "text", "en": "Limits the time between health callouts to reduce noise", "hash": "95c5a32cfdaa0b10", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PLAYER_HEALTH_TOOLTIP", "field": "text", "en": "Says your health when it crosses certain percentages", "hash": "1284d6088b7b95ec", "src": "db2@1.60.1.70170"}
@@ -55,6 +61,13 @@
 {"id": "CAA_SAY_PLAYER_RESOURCE_TOOLTIP", "field": "text", "en": "Says your %s when it crosses certain percentages. This setting is saved per talent specialization.", "hash": "36704f277be001e6", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PLAYER_RESOURCE_VOICE_TOOLTIP", "field": "text", "en": "Choose the voice that says your %s. This setting is saved per talent specialization.", "hash": "21be8631e99aa323", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_PLAYER_RESOURCE_VOLUME_TOOLTIP", "field": "text", "en": "Adjusts the volume for %s callouts. This setting is saved per talent specialization.", "hash": "66d740556a06d0a0", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_RESOURCE_1", "field": "text", "en": "Say Resource 1", "hash": "d5e668ceebb7fb8f", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_RESOURCE_1_FORMAT", "field": "text", "en": "Say Resource 1 Format", "hash": "9867ec90ff7d249d", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_RESOURCE_1_THROTTLE", "field": "text", "en": "Say Resource 1 Throttle", "hash": "4b8b72294199802c", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_RESOURCE_2", "field": "text", "en": "Say Resource 2", "hash": "d5e668cfebb7fb90", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_RESOURCE_2_FORMAT", "field": "text", "en": "Say Resource 2 Format", "hash": "0fd96f5474e62a99", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_RESOURCE_2_THROTTLE", "field": "text", "en": "Say Resource 2 Throttle", "hash": "33c1a443ddef0d59", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_TARGET_CASTS_FORMAT", "field": "text", "en": "Say Target Casts Format", "hash": "88512fa62305c0c7", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_FORMAT_LABEL", "field": "text", "en": "Format", "hash": "720206ef9c5d5fd5", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_FORMAT_TOOLTIP", "field": "text", "en": "Choose the wording it will use to say your target's cast", "hash": "d174ca216cc51e10", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_INTERRUPT_LABEL", "field": "text", "en": "Interruptible Cast Alert", "hash": "4ffcce82852de61d", "src": "db2@1.60.1.70170"}
@@ -63,17 +76,21 @@
 {"id": "CAA_SAY_TARGET_CASTS_INTERRUPT_TEXT", "field": "text", "en": "Voice: \"Interruptible Cast\"", "hash": "f0ec5064ab3dd80b", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_INTERRUPT_TOOLTIP", "field": "text", "en": "Announces when the target starts casting something that you can interrupt with an ability", "hash": "9bc745bc0a1eb4ee", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_LABEL", "field": "text", "en": "Say Target Casts", "hash": "275fff6a40e77b1d", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_TARGET_CASTS_MIN_CAST_TIME", "field": "text", "en": "Say Target Casts Min Cast Time", "hash": "ddf19091127d6e1e", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_MIN_CAST_TIME_LABEL", "field": "text", "en": "Minimum Cast Time", "hash": "13781adee05aca54", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_MIN_CAST_TIME_TOOLTIP", "field": "text", "en": "Sets the minimum cast time of abilities to be announced. Set this to zero to include instant cast abilities.", "hash": "adbc689c6b9065ef", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_TARGET_CASTS_THROTTLE", "field": "text", "en": "Say Target Casts Throttle", "hash": "c74d7adc5907c2c8", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_THROTTLE_LABEL", "field": "text", "en": "Throttle", "hash": "46dd0a3a22444803", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_THROTTLE_TOOLTIP", "field": "text", "en": "Limits the time between target cast callouts to reduce noise", "hash": "b80e15f144cfd8e0", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_TOOLTIP", "field": "text", "en": "Says when your target casts an ability", "hash": "9e55aaf17d3ee8c3", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_VOICE_TOOLTIP", "field": "text", "en": "Choose the voice that says your target's casts", "hash": "8361f5335fabd2be", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CASTS_VOLUME_TOOLTIP", "field": "text", "en": "Adjusts the volume for your target's cast callouts", "hash": "b1dd70f4aad8deac", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_CAST_INTERRUPT_SUCCESS_TEXT", "field": "text", "en": "Voice: \"Target interrupted\"", "hash": "6cac92f78e876e98", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_TARGET_HEALTH_FORMAT", "field": "text", "en": "Say Target Health Format", "hash": "2b6abc2070480851", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_HEALTH_FORMAT_LABEL", "field": "text", "en": "Format", "hash": "720206ef9c5d5fd5", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_HEALTH_FORMAT_TOOLTIP", "field": "text", "en": "Choose the wording it will use to say your target's health, using 20% as an example", "hash": "f0b27ba553e7ed0a", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_HEALTH_LABEL", "field": "text", "en": "Say Target Health", "hash": "53807ac315a56ac4", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_TARGET_HEALTH_THROTTLE", "field": "text", "en": "Say Target Health Throttle", "hash": "32f6df87f0c6bb30", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_HEALTH_THROTTLE_LABEL", "field": "text", "en": "Throttle", "hash": "46dd0a3a22444803", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_HEALTH_THROTTLE_TOOLTIP", "field": "text", "en": "Limits the time between target health callouts to reduce noise", "hash": "df20fb8eaff44d8e", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_HEALTH_TOOLTIP", "field": "text", "en": "Says your target's health when it crosses certain percentages", "hash": "3020adaaa1a44180", "src": "db2@1.60.1.70170"}
@@ -81,9 +98,14 @@
 {"id": "CAA_SAY_TARGET_HEALTH_VOLUME_TOOLTIP", "field": "text", "en": "Adjusts the volume for target health callouts", "hash": "e6e451d7a7912b7e", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_NAME_LABEL", "field": "text", "en": "Say Target Name", "hash": "b1a7006f3521618f", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_TARGET_NAME_TOOLTIP", "field": "text", "en": "Says the name of the target when you select it", "hash": "41539bba21b1f2d4", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_YOUR_CASTS_FORMAT", "field": "text", "en": "Say Your Casts Format", "hash": "c4297e727eecdc45", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_YOUR_CASTS_MIN_CAST_TIME", "field": "text", "en": "Say Your Casts Min Cast Time", "hash": "84005f269c66ac15", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_YOUR_CASTS_THROTTLE", "field": "text", "en": "Say Your Casts Throttle", "hash": "7e87f26452bfa4ce", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_YOUR_DEBUFFS_FORMAT", "field": "text", "en": "Say Your Debuffs Format", "hash": "07b59d941982ce91", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_YOUR_DEBUFFS_FORMAT_LABEL", "field": "text", "en": "Format", "hash": "720206ef9c5d5fd5", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_YOUR_DEBUFFS_FORMAT_TOOLTIP", "field": "text", "en": "Choose the wording it will use to say your debuff", "hash": "70f47b4d8eff0416", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_YOUR_DEBUFFS_LABEL", "field": "text", "en": "Say Your Debuffs", "hash": "61af0d396c034e8a", "src": "db2@1.60.1.70170"}
+{"id": "CAA_SAY_YOUR_DEBUFFS_MIN_DURATION", "field": "text", "en": "Say Your Debuffs Min Duration", "hash": "b156ed0eb295080a", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_YOUR_DEBUFFS_MIN_DURATION_LABEL", "field": "text", "en": "Minimum Duration", "hash": "adc7c4bc8f8e5a70", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_YOUR_DEBUFFS_MIN_DURATION_TOOLTIP", "field": "text", "en": "Sets the minimum duration of debuffs to be announced", "hash": "cee1731a221b0c84", "src": "db2@1.60.1.70170"}
 {"id": "CAA_SAY_YOUR_DEBUFFS_TOOLTIP", "field": "text", "en": "Says when a debuff is applied to you", "hash": "cd4e50d295b16d9d", "src": "db2@1.60.1.70170"}
@@ -135,6 +157,12 @@
 {"id": "CALENDAR_EVENT_INVITEDBY_YOURSELF", "field": "text", "en": "This is your event", "hash": "18ace4612c616b18", "src": "db2@1.60.1.70170"}
 {"id": "CALENDAR_EVENT_PICKER_TITLE", "field": "text", "en": "Select an Event", "hash": "f31164eded9467e3", "src": "db2@1.60.1.70170"}
 {"id": "CALENDAR_FILTERS", "field": "text", "en": "Filters", "hash": "098eac9787acd2e4", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_FILTER_BATTLEGROUND", "field": "text", "en": "Battleground Call to Arms", "hash": "753eb92c46290351", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_FILTER_DARKMOON", "field": "text", "en": "Darkmoon Faire", "hash": "a5548691fddcf6e9", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_FILTER_HOLIDAYS", "field": "text", "en": "Holidays", "hash": "4dd7f4acb3d27214", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_FILTER_RAID_LOCKOUTS", "field": "text", "en": "Active Raid Lockouts", "hash": "23d3f3a65741cb64", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_FILTER_RAID_RESETS", "field": "text", "en": "Raid Resets", "hash": "5a19e16a15438bea", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_FILTER_WEEKLY_HOLIDAYS", "field": "text", "en": "Weekly Holidays", "hash": "b2777925ac4b3de1", "src": "db2@1.60.1.70170"}
 {"id": "CALENDAR_GUILDEVENT_INVITEDBY_YOURSELF", "field": "text", "en": "This is your guild event", "hash": "21612f21a5b7fc86", "src": "db2@1.60.1.70170"}
 {"id": "CALENDAR_HOLIDAYFRAME_BEGINSENDS", "field": "text", "en": "%1$s|n|nBegins: %2$s %3$s|nEnds: %4$s %5$s", "hash": "423a6862b54e8830", "src": "db2@1.60.1.70170"}
 {"id": "CALENDAR_INVITELIST_CLEARMODERATOR", "field": "text", "en": "Remove Moderator Status", "hash": "14e99244ef2dfbba", "src": "db2@1.60.1.70170"}
@@ -152,6 +180,15 @@
 {"id": "CALENDAR_REMOVE_INVITATION", "field": "text", "en": "Remove Invitation", "hash": "6934a58a2fb398cf", "src": "db2@1.60.1.70170"}
 {"id": "CALENDAR_SIGNEDUP_FOR_GUILDEVENT_WITH_STATUS", "field": "text", "en": "Signed up (%s)", "hash": "8f541626d0c1d447", "src": "db2@1.60.1.70170"}
 {"id": "CALENDAR_SIGNUP", "field": "text", "en": "Sign Up ", "hash": "ddfd3fde236050d6", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_STATUS_ACCEPTED", "field": "text", "en": "Accepted", "hash": "7520102b0dad4c2d", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_STATUS_CONFIRMED", "field": "text", "en": "Confirmed", "hash": "0af5b69b400df9d1", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_STATUS_DECLINED", "field": "text", "en": "Declined", "hash": "bec848dd3bd5c1df", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_STATUS_INVITED", "field": "text", "en": "Invited", "hash": "bf4fef86fd5cbce0", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_STATUS_NOT_SIGNEDUP", "field": "text", "en": "Not Signed Up", "hash": "6eddd678a7c59fe9", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_STATUS_OUT", "field": "text", "en": "Out", "hash": "0014ec1a39ab7ae9", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_STATUS_SIGNEDUP", "field": "text", "en": "Signed Up", "hash": "d2bf6490dc296e8e", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_STATUS_STANDBY", "field": "text", "en": "Standby", "hash": "436c0eec78bf4087", "src": "db2@1.60.1.70170"}
+{"id": "CALENDAR_STATUS_TENTATIVE", "field": "text", "en": "Tentative", "hash": "a60d1addac88b919", "src": "db2@1.60.1.70170"}
 {"id": "CALENDAR_TENTATIVE_INVITATION", "field": "text", "en": "Tentative Invitation", "hash": "8a39d0b2a641378d", "src": "db2@1.60.1.70170"}
 {"id": "CALENDAR_TEXTURE_PICKER_TITLE_DUNGEON", "field": "text", "en": "Select a Dungeon", "hash": "0314afe554c3bafa", "src": "db2@1.60.1.70170"}
 {"id": "CALENDAR_TEXTURE_PICKER_TITLE_RAID", "field": "text", "en": "Select a Raid", "hash": "223c17519e6732bd", "src": "db2@1.60.1.70170"}
@@ -183,6 +220,7 @@
 {"id": "CALENDAR_VIEW_EVENT_TENTATIVE", "field": "text", "en": "Tentative", "hash": "a60d1addac88b919", "src": "db2@1.60.1.70170"}
 {"id": "CALENDAR_VIEW_GUILD_EVENT", "field": "text", "en": "View Guild Event", "hash": "b73a33eb7c55c947", "src": "db2@1.60.1.70170"}
 {"id": "CALENDER_INVITE_SELECT_COMMUNITY", "field": "text", "en": "Select Community", "hash": "cad82ed3705919fd", "src": "db2@1.60.1.70170"}
+{"id": "CALLING_QUEST_TOOLTIP_DESCRIPTION", "field": "text", "en": "Completing this Calling will reward you with:", "hash": "ae2c3e4beb25e255", "src": "db2@1.60.1.70170"}
 {"id": "CAMERA_ALWAYS", "field": "text", "en": "Always adjust camera", "hash": "9a61534bdf2cf7e2", "src": "db2@1.60.1.70170"}
 {"id": "CAMERA_CTM_FOLLOWING_STYLE", "field": "text", "en": "Camera Following Style", "hash": "9bb16b7f8e3e4417", "src": "db2@1.60.1.70170"}
 {"id": "CAMERA_FOLLOWING_STYLE", "field": "text", "en": "Camera Following Style", "hash": "9bb16b7f8e3e4417", "src": "db2@1.60.1.70170"}
@@ -191,15 +229,113 @@
 {"id": "CAMERA_NEVER", "field": "text", "en": "Never adjust camera", "hash": "f541afd360575cc5", "src": "db2@1.60.1.70170"}
 {"id": "CAMERA_SMART", "field": "text", "en": "Only horizontal when moving", "hash": "7f4e47a38e7d7ec9", "src": "db2@1.60.1.70170"}
 {"id": "CAMERA_SMARTER", "field": "text", "en": "Only when moving", "hash": "1d9d21c3691cf146", "src": "db2@1.60.1.70170"}
+{"id": "CAMPAIGN_PROGRESS_CHAPTERS", "field": "text", "en": "Campaign: |cffffd200%1$d/%2$d Chapters|r", "hash": "f18e643e8dd89c81", "src": "db2@1.60.1.70170"}
+{"id": "CAMPAIGN_PROGRESS_CHAPTERS_PERCENT", "field": "text", "en": "Campaign: |cffffd200%d%%|r", "hash": "4fbb11d784ba225c", "src": "db2@1.60.1.70170"}
+{"id": "CAMPAIGN_PROGRESS_CHAPTERS_PERCENT_TOOLTIP", "field": "text", "en": "|cffffd200Campaign Progress (%d%%)|r|n|n", "hash": "ceaebbb33941071c", "src": "db2@1.60.1.70170"}
+{"id": "CAMPAIGN_PROGRESS_CHAPTERS_TOOLTIP", "field": "text", "en": "|cffffd200Campaign Progress|n|cffffffff%1$d/%2$d Chapters|r|n|n", "hash": "f74dc12ca83f2d71", "src": "db2@1.60.1.70170"}
 {"id": "CAMP_TIMER", "field": "text", "en": "%d %s until logout", "hash": "3f25f7e214afc2ae", "src": "db2@1.60.1.70170"}
 {"id": "CANCEL", "field": "text", "en": "Cancel", "hash": "892958da199b72dc", "src": "db2@1.60.1.70170"}
 {"id": "CANCEL_AUCTION_CONFIRMATION", "field": "text", "en": "You will lose your initial deposit by canceling this auction.", "hash": "d094afb86ecd4fcc", "src": "db2@1.60.1.70170"}
 {"id": "CANCEL_AUCTION_CONFIRMATION_MONEY", "field": "text", "en": "Canceling this auction will cost you your deposit and:", "hash": "a91dd7c256428347", "src": "db2@1.60.1.70170"}
 {"id": "CANCEL_SIGN_UP", "field": "text", "en": "Cancel Sign Up", "hash": "cc4c7d79f39deeec", "src": "db2@1.60.1.70170"}
+{"id": "CAN_NOT_RELEASE_IN_COMBAT", "field": "text", "en": "A member of your group is in combat.", "hash": "ca38e101d60cb722", "src": "db2@1.60.1.70170"}
+{"id": "CAN_NOT_RELEASE_RIGHT_NOW", "field": "text", "en": "You cannot release right now.", "hash": "ab62ecee4013792d", "src": "db2@1.60.1.70170"}
 {"id": "CAPPED_MONEY_TRIAL", "field": "text", "en": "Free Trial money cap reached.", "hash": "6c200ba94de9e08a", "src": "db2@1.60.1.70170"}
 {"id": "CASH_ON_DELIVERY", "field": "text", "en": "C.O.D.", "hash": "05b8aee5bee35d7a", "src": "db2@1.60.1.70170"}
 {"id": "CATEGORIZE", "field": "text", "en": "Categorize", "hash": "d57af3ae3d24e4d5", "src": "db2@1.60.1.70170"}
 {"id": "CATEGORY", "field": "text", "en": "Category", "hash": "ad30b2beaaf7304f", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_ANIMALS_CAT", "field": "text", "en": "Cat", "hash": "0011bd720a05d049", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_ANIMALS_CHICKEN", "field": "text", "en": "Chicken", "hash": "b90389c14c88ae79", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_ANIMALS_COW", "field": "text", "en": "Cow", "hash": "0011c49f0a078e9a", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_ANIMALS_GOAT", "field": "text", "en": "Goat", "hash": "09a0c8fbf08623c5", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_ANIMALS_LION", "field": "text", "en": "Lion", "hash": "0a4ac1f09bbe0fb5", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_ANIMALS_PANTHER", "field": "text", "en": "Panther", "hash": "5f837af91cfd81be", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_ANIMALS_RATTLESNAKE", "field": "text", "en": "Rattlesnake", "hash": "6c15275542f1c4f5", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_ANIMALS_SHEEP", "field": "text", "en": "Sheep", "hash": "befc4a004941c703", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_ANIMALS_WOLF", "field": "text", "en": "Wolf", "hash": "0bc5a83ec706c2eb", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_DEVICES_AIR_HORN", "field": "text", "en": "AirHorn", "hash": "e580bc05ef0f99fd", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_DEVICES_BIKE_HORN", "field": "text", "en": "BikeHorn", "hash": "ff86b830e4d54bf2", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_DEVICES_BOAT_HORN", "field": "text", "en": "BoatHorn", "hash": "6fd9a3b3c6b99e4e", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_DEVICES_CASH_REGISTER", "field": "text", "en": "CashRegister", "hash": "793fc7b200403f00", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_DEVICES_JACKPOT_BELL", "field": "text", "en": "JackpotBell", "hash": "3c652a15b521ff02", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_DEVICES_JACKPOT_COINS", "field": "text", "en": "JackpotCoins", "hash": "faa88012a9d55ae8", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_DEVICES_JACKPOT_FAIL", "field": "text", "en": "JackpotFail", "hash": "3ced52d4dae06079", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_DEVICES_ROTARY_PHONE_DIAL", "field": "text", "en": "RotaryPhoneDial", "hash": "19c242cc93b1c2ef", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_DEVICES_ROTARY_PHONE_RING", "field": "text", "en": "RotaryPhoneRing", "hash": "1ba287e84f62b9d1", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_DEVICES_STOVE_PIPE", "field": "text", "en": "StovePipe", "hash": "73bd11bf365e47fd", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_DEVICES_TRASHCAN_LID", "field": "text", "en": "TrashcanLid", "hash": "b3443fa3710661fc", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_IMPACTS_ANVIL_STRIKE", "field": "text", "en": "AnvilStrike", "hash": "a676c5d27a7a6f5e", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_IMPACTS_BUBBLE_SMASH", "field": "text", "en": "BubbleSmash", "hash": "8d383a3736630258", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_IMPACTS_LOW_THUD", "field": "text", "en": "LowThud", "hash": "e7a69001656c723f", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_IMPACTS_METAL_CLANKS", "field": "text", "en": "MetalClanks", "hash": "28aa7b3b45a8661c", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_IMPACTS_METAL_RATTLE", "field": "text", "en": "MetalRattle", "hash": "26e169470f2eb5ee", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_IMPACTS_METAL_SCRAPE", "field": "text", "en": "MetalScrape", "hash": "45378eb4b850ef01", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_IMPACTS_METAL_WARBLE", "field": "text", "en": "MetalWarble", "hash": "102d918f449a5c9a", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_IMPACTS_POP_CLICK", "field": "text", "en": "PopClick", "hash": "5d80a2f919715efb", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_IMPACTS_STRANGE_CLANG", "field": "text", "en": "StrangeClang", "hash": "e56d64c566d7fbd2", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_IMPACTS_SWORD_SCRAPE", "field": "text", "en": "SwordScrape", "hash": "3cf37270dc396249", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_BELL_RING", "field": "text", "en": "BellRing", "hash": "a475a87e66ab8ff8", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_BELL_TRILL", "field": "text", "en": "BellTrill", "hash": "4c841501a5dd4a8e", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_BRASS", "field": "text", "en": "Brass", "hash": "95e931b1f1df8792", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_CHIME_ASCENDING", "field": "text", "en": "ChimeAscending", "hash": "894b8ae9860dfb0e", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_GUITAR_CHUG", "field": "text", "en": "GuitarChug", "hash": "a1e4a30894c5fcdd", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_GUITAR_PINCH", "field": "text", "en": "GuitarPinch", "hash": "bc52278c7f294fed", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_PITCH_PIPE_DISTRESSED", "field": "text", "en": "PitchPipeDistressed", "hash": "1281444fa211f584", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_PITCH_PIPE_NOTE", "field": "text", "en": "PitchPipeNote", "hash": "79c51fc5e092e294", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_SYNTH_BIG", "field": "text", "en": "SynthBig", "hash": "37540c2008ebf317", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_SYNTH_BUZZ", "field": "text", "en": "SynthBuzz", "hash": "5005638b99760e4c", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_SYNTH_HIGH", "field": "text", "en": "SynthHigh", "hash": "50d006f6ba403ba8", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_INSTRUMENTS_WARHORN", "field": "text", "en": "Warhorn", "hash": "950370ab6ab19c06", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_BELL_STRIKE", "field": "text", "en": "BellStrike", "hash": "5061d282ec91164b", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_BELL_TREE", "field": "text", "en": "BellTree", "hash": "a4bc9a68a534bae5", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_BIG_POT", "field": "text", "en": "BigPot", "hash": "191dac0596224fc8", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_BLADES", "field": "text", "en": "Blades", "hash": "4cfe34eb31d62255", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_COFFEE_MUG", "field": "text", "en": "CoffeeMug", "hash": "1d62fce56a617423", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_COW_BELL", "field": "text", "en": "CowBell", "hash": "8af403f665e82115", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_FINGER_SNAP", "field": "text", "en": "FingerSnap", "hash": "5d038eef32fd6efc", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_GUITAR", "field": "text", "en": "Guitar", "hash": "d5a5b33f4a884cbc", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_KALIMBA", "field": "text", "en": "Kalimba", "hash": "b3728818b3990fad", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_METAL_BLADE_DROP", "field": "text", "en": "MetalBladeDrop", "hash": "e2794b42c7a8d87a", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_METAL_BLADE_ON_ROD", "field": "text", "en": "MetalBladeOnRod", "hash": "a4978bf5d8f28d85", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_METAL_IMPACT", "field": "text", "en": "MetalImpact", "hash": "215117d52347bea6", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_MINI_WOOD_XYLOPHONE", "field": "text", "en": "MiniWoodXylophone", "hash": "9321d8552a57677c", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_PAPER_CUP", "field": "text", "en": "PaperCup", "hash": "d150f9acbff20c1b", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_SHEET_METAL", "field": "text", "en": "SheetMetal", "hash": "a1fb4e8b06bde386", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_STOVE_PIPE", "field": "text", "en": "StovePipe", "hash": "73bd11bf365e47fd", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_STOVE_PIPE_BLADE", "field": "text", "en": "StovePipeBlade", "hash": "b0d2fc5d836e79fe", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_SWORD_SHING", "field": "text", "en": "SwordShing", "hash": "fd37bed63a540f70", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_SYNTH_BLEEP", "field": "text", "en": "SynthBleep", "hash": "f187ac6ae0774971", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_SYNTH_BLURP", "field": "text", "en": "SynthBlurp", "hash": "f18be3a11ffd23ff", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_SYNTH_ERROR", "field": "text", "en": "SynthError", "hash": "27020d9901432fb9", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_SYNTH_HIGH", "field": "text", "en": "SynthHigh", "hash": "50d006f6ba403ba8", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_TRIANGLE", "field": "text", "en": "Triangle", "hash": "87a02c5de770ff52", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_WATER_DROP", "field": "text", "en": "WaterDrop", "hash": "c8f5735d3a3d44b0", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_WINE_BOTTLE", "field": "text", "en": "WineBottle", "hash": "cbe59bec792650c4", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_SHORT_WOOD_XYLOPHONE", "field": "text", "en": "WoodXylophone", "hash": "494d35f585a5a52a", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_ABSTRACT_WHOOSH", "field": "text", "en": "AbstractWhoosh", "hash": "f5470822bbcce941", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_CHOIR", "field": "text", "en": "Choir", "hash": "a6238553824cf485", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_CONSTRUCTION", "field": "text", "en": "Construction", "hash": "3c947b053253e2f2", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_MAGIC_CHIMES", "field": "text", "en": "MagicChimes", "hash": "0fd3f8c19395937c", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_PIG_SQUEAL", "field": "text", "en": "PigSqueal", "hash": "c3877a8f70618b4d", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_SAWS", "field": "text", "en": "Saws", "hash": "0b38cd0259d49cf7", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_SEAL", "field": "text", "en": "Seal", "hash": "0b39cddd69b2ee9e", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_SLOW", "field": "text", "en": "Slow", "hash": "0b3baa51857e873e", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_SMITH", "field": "text", "en": "Smith", "hash": "bfa8e1d01c2c785c", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_SYNTH_STINGER", "field": "text", "en": "SynthStinger", "hash": "234fb399b1bc5015", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_TRUMPET_RALLY", "field": "text", "en": "TrumpetRally", "hash": "0cb959aa8479aaea", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR2_ZIPPY_MAGIC", "field": "text", "en": "ZippyMagic", "hash": "e923c3e91d8d1bb3", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_BELL", "field": "text", "en": "Bell", "hash": "08f2ac3305cd18c1", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_CRUNCHY_BELL", "field": "text", "en": "CrunchyBell", "hash": "bdcf5ac449a24792", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_DRUM_SPLASH", "field": "text", "en": "DrumSplash", "hash": "5594975f84ff549c", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_ERROR", "field": "text", "en": "Error", "hash": "ca96c630d21b064f", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_FANFARE", "field": "text", "en": "Fanfare", "hash": "4ea6718deda419bb", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_GATE_OPEN", "field": "text", "en": "GateOpen", "hash": "87bfb39342d30ca1", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_GOLD", "field": "text", "en": "Gold", "hash": "09a0ce8cf0878260", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_MAGIC_SHIMMER", "field": "text", "en": "MagicShimmer", "hash": "64a589c24c7d8f1e", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_RINGOUT", "field": "text", "en": "Ringout", "hash": "a34f2a3241fc7086", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_ROOSTER", "field": "text", "en": "Rooster", "hash": "9b939082bed7b178", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_SHIMMER_BELL", "field": "text", "en": "ShimmerBell", "hash": "9c81461b4c1ab174", "src": "db2@1.60.1.70170"}
+{"id": "CDMSND_WAR3_WOLF_HOWL", "field": "text", "en": "WolfHowl", "hash": "1518a78ab86f10c1", "src": "db2@1.60.1.70170"}
 {"id": "CDMVIS_FLASH", "field": "text", "en": "Flash", "hash": "db5239481d19cd46", "src": "db2@1.60.1.70170"}
 {"id": "CDMVIS_FLASH_BLUE", "field": "text", "en": "Flash (Blue)", "hash": "9c00654aab74cd3e", "src": "db2@1.60.1.70170"}
 {"id": "CDMVIS_FLASH_CYAN", "field": "text", "en": "Flash (Cyan)", "hash": "af46d461694284f8", "src": "db2@1.60.1.70170"}
@@ -210,11 +346,13 @@
 {"id": "CDMVIS_MARCHING_ANTS_CYAN", "field": "text", "en": "Marching Ants (Cyan)", "hash": "34b7d7b4e5563026", "src": "db2@1.60.1.70170"}
 {"id": "CDMVIS_MARCHING_ANTS_GREEN", "field": "text", "en": "Marching Ants (Green)", "hash": "6dcb927a404202fd", "src": "db2@1.60.1.70170"}
 {"id": "CDMVIS_MARCHING_ANTS_RED", "field": "text", "en": "Marching Ants (Red)", "hash": "ae5c85166df22937", "src": "db2@1.60.1.70170"}
+{"id": "CENSORED_MESSAGE_SENT", "field": "text", "en": "%s |cffffff00Message flagged as potentially inappropriate.|r", "hash": "35e9b8c3d1214553", "src": "db2@1.60.1.70170"}
 {"id": "CENSOR_SOURCE_EVERYONE", "field": "text", "en": "Everyone", "hash": "9897aa391749a3b1", "src": "db2@1.60.1.70170"}
 {"id": "CENSOR_SOURCE_EXCLUDE", "field": "text", "en": "Real Time Chat Filtering", "hash": "9fc1662b6604966d", "src": "db2@1.60.1.70170"}
 {"id": "CENSOR_SOURCE_EXCLUDE_FRIENDS", "field": "text", "en": "Everyone except friends", "hash": "33fbc77f123af8e9", "src": "db2@1.60.1.70170"}
 {"id": "CENSOR_SOURCE_EXCLUDE_FRIENDS_AND_GUILD", "field": "text", "en": "Everyone except friends and guildmates", "hash": "e4d043ba1f09d9ee", "src": "db2@1.60.1.70170"}
 {"id": "CENSOR_SOURCE_NO_ONE", "field": "text", "en": "No one", "hash": "432814f3e550ab8c", "src": "db2@1.60.1.70170"}
+{"id": "CHALLENGE_MODE_ITEM_POWER_LEVEL", "field": "text", "en": "Mythic Level %d", "hash": "45a8aa6d7708e5e4", "src": "db2@1.60.1.70170"}
 {"id": "CHANCE_TO_BLOCK", "field": "text", "en": "%.2f%% chance to block", "hash": "6cf78bc1515ccf17", "src": "db2@1.60.1.70170"}
 {"id": "CHANCE_TO_CRIT", "field": "text", "en": "%.2f%% chance to crit", "hash": "530c58fc7958d543", "src": "db2@1.60.1.70170"}
 {"id": "CHANCE_TO_DODGE", "field": "text", "en": "%.2f%% chance to dodge", "hash": "907701d78bbf404e", "src": "db2@1.60.1.70170"}
@@ -222,7 +360,9 @@
 {"id": "CHANGE_MACRO_NAME_ICON", "field": "text", "en": "Change Name/Icon", "hash": "dadd8a80751638b5", "src": "db2@1.60.1.70170"}
 {"id": "CHANNEL", "field": "text", "en": "Channel", "hash": "2e0ff5fb7494fa4e", "src": "db2@1.60.1.70170"}
 {"id": "CHANNELS", "field": "text", "en": "Channels", "hash": "922ae057814067c5", "src": "db2@1.60.1.70170"}
+{"id": "CHANNEL_CHANNEL_NAME", "field": "text", "en": "Channel Name", "hash": "9db1ca01f24c2b04", "src": "db2@1.60.1.70170"}
 {"id": "CHANNEL_INVITE", "field": "text", "en": "Who would you like to invite to %s?", "hash": "5bce9696c39ce5b2", "src": "db2@1.60.1.70170"}
+{"id": "CHANNEL_NEW_CHANNEL", "field": "text", "en": "New Channel", "hash": "affd0859a257752a", "src": "db2@1.60.1.70170"}
 {"id": "CHANNEL_PASSWORD", "field": "text", "en": "Enter a password for %s.", "hash": "3cc2f6825f50df85", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER", "field": "text", "en": "Character", "hash": "d58d30af5f5bc7fe", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_ACHIEVEMENT_DESCRIPTION", "field": "text", "en": "Progress towards this achievement is tracked for each character.", "hash": "e57680d01db39be4", "src": "db2@1.60.1.70170"}
@@ -230,6 +370,7 @@
 {"id": "CHARACTER_BUTTON", "field": "text", "en": "Character Info", "hash": "ada6a1e7b90cd026", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_CUSTOMIZATION_CHOICE_TOOLTIP", "field": "text", "en": "%d: %s", "hash": "3d482f826519bdb5", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_CUSTOMIZE_POPOUT_UNSELECTED_OPTION", "field": "text", "en": "-Select-", "hash": "45817d76ec9a34d2", "src": "db2@1.60.1.70170"}
+{"id": "CHARACTER_FORM", "field": "text", "en": "%s Form", "hash": "55771fc3400b3180", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_FRAME_TAB_CHARACTER", "field": "text", "en": "Character", "hash": "d58d30af5f5bc7fe", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_FRAME_TAB_CURRENCY", "field": "text", "en": "Currency", "hash": "b80b704eeac5f277", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_FRAME_TAB_PVP", "field": "text", "en": "Player vs. Player", "hash": "e05a8e54c9894b2f", "src": "db2@1.60.1.70170"}
@@ -239,6 +380,8 @@
 {"id": "CHARACTER_FRIEND_INFO", "field": "text", "en": "This is a character you have enjoyed playing with on your realm, You can party and chat with this character.", "hash": "bb16cf382839f5fa", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_FRIEND_LABEL", "field": "text", "en": "Enter character's name", "hash": "5ca98506d401f196", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_INFO", "field": "text", "en": "Character Info", "hash": "ada6a1e7b90cd026", "src": "db2@1.60.1.70170"}
+{"id": "CHARACTER_LINK_CLASS_LEVEL_SPEC_TOOLTIP", "field": "text", "en": "Level %d %s (%s)", "hash": "e781bb465d870bbc", "src": "db2@1.60.1.70170"}
+{"id": "CHARACTER_LINK_ITEM_LEVEL_TOOLTIP", "field": "text", "en": "Item Level: %d", "hash": "fdaf85ec24004814", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_MODELS", "field": "text", "en": "Character Models", "hash": "b693ec6f0757453c", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_SPECIFIC_KEYBINDINGS", "field": "text", "en": "Character Specific Keybindings", "hash": "59203d9d83cde35a", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_SPECIFIC_KEYBINDING_TOOLTIP", "field": "text", "en": "Click this to toggle between global key bindings and key bindings specific to this character.", "hash": "ce1ccd0fab45c90e", "src": "db2@1.60.1.70170"}
@@ -246,6 +389,9 @@
 {"id": "CHARACTER_SPECIFIC_SETTINGS", "field": "text", "en": "Character Specific Settings", "hash": "97ff3602e283a1fa", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_SPECIFIC_SETTINGS_TOOLTIP", "field": "text", "en": "Click this to toggle between global settings and settings specific to this character.", "hash": "fbdfd22781713b69", "src": "db2@1.60.1.70170"}
 {"id": "CHARACTER_UPGRADE_FINISH_BUTTON_POPUP_TEXT", "field": "text", "en": "|cnHIGHLIGHT_FONT_COLOR:Are you sure you want to |rBoost|cnHIGHLIGHT_FONT_COLOR: this character? You can't change your selection after this step.|r", "hash": "b65ef085066d94aa", "src": "db2@1.60.1.70170"}
+{"id": "CHAR_CUSTOMIZATION_TOOLTIP_MUTE_SOUND", "field": "text", "en": "Mute Sound", "hash": "a7ba66891596b549", "src": "db2@1.60.1.70170"}
+{"id": "CHAR_CUSTOMIZATION_TOOLTIP_PLAY_VOICE_SAMPLE", "field": "text", "en": "Play Sample Voice Line", "hash": "49c9adbdd2fd479c", "src": "db2@1.60.1.70170"}
+{"id": "CHAR_CUSTOMIZATION_TOOLTIP_UNMUTE_SOUND", "field": "text", "en": "Unmute Sound", "hash": "379a816c63e464cd", "src": "db2@1.60.1.70170"}
 {"id": "CHAT", "field": "text", "en": "Chat", "hash": "0915bd509f1c7960", "src": "db2@1.60.1.70170"}
 {"id": "CHATCONFIG_HEADER", "field": "text", "en": "%s Config", "hash": "3b68de57754d4fe5", "src": "db2@1.60.1.70170"}
 {"id": "CHATLOGDISABLED", "field": "text", "en": "Chat logging disabled.", "hash": "879790139fe4125f", "src": "db2@1.60.1.70170"}
@@ -263,27 +409,36 @@
 {"id": "CHAT_CONFIG_CHANNEL_SETTINGS_TITLE_WITH_DRAG_INSTRUCTIONS", "field": "text", "en": "Channels |cff808080(Drag to Reorder)|r", "hash": "c2c79c544985af53", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_DEFAULTS", "field": "text", "en": "Chat Defaults", "hash": "6a6ce0353db24f20", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_DND_GET", "field": "text", "en": "%s does not wish to be disturbed: ", "hash": "f6cd86940d38d0e1", "src": "db2@1.60.1.70170"}
+{"id": "CHAT_FILTERED", "field": "text", "en": "Unable to send chat to %s because your message contained reserved words.", "hash": "5b7e517c20411dbf", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_FLAG_AFK", "field": "text", "en": "<Away>", "hash": "7808bbbff2416769", "src": "db2@1.60.1.69913"}
 {"id": "CHAT_FLAG_DND", "field": "text", "en": "<Busy>", "hash": "89568d7cfdd0c267", "src": "db2@1.60.1.69913"}
 {"id": "CHAT_GUILD_SEND", "field": "text", "en": "Guild: ", "hash": "d5a39c482ac68e1f", "src": "db2@1.60.1.70170"}
+{"id": "CHAT_IGNORED", "field": "text", "en": "%s is ignoring you.", "hash": "bd32e91be76a3123", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_INSTANCE_CHAT_SEND", "field": "text", "en": "Instance: ", "hash": "09c7c2dc0d9e7f95", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_INVALID_NAME_NOTICE", "field": "text", "en": "Invalid channel name", "hash": "175587e614586641", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_INVITE_NOTICE_POPUP", "field": "text", "en": "%2$s has invited you to join the channel '%1$s'.", "hash": "b428d84cb7f5ddc5", "src": "db2@1.60.1.70170"}
+{"id": "CHAT_JOIN", "field": "text", "en": "Join", "hash": "0a07b5de98befee6", "src": "db2@1.60.1.70170"}
+{"id": "CHAT_JOIN_HELP", "field": "text", "en": "Type /join <channelname> [password] to create a channel or join an existing one.", "hash": "e0ea6c00fc323058", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_LABEL", "field": "text", "en": "Chat", "hash": "0915bd509f1c7960", "src": "db2@1.60.1.70170"}
+{"id": "CHAT_LEAVE", "field": "text", "en": "Leave", "hash": "43b4617c78c17d7a", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_LEAVE_CHANNEL_PREVENTED", "field": "text", "en": "Unable to manually leave chat channel: %s", "hash": "eb5a708f45acc285", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_MONSTER_SAY_GET", "field": "text", "en": "%s says: ", "hash": "cfffe7fd342932a0", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_MONSTER_WHISPER_GET", "field": "text", "en": "%s whispers: ", "hash": "d06123982836f4e9", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_MONSTER_YELL_GET", "field": "text", "en": "%s yells: ", "hash": "9984aed4f03121e5", "src": "db2@1.60.1.70170"}
+{"id": "CHAT_MSG_BLOCK_CHAT_CHANNEL_INVITE", "field": "text", "en": "You have blocked chat channel invites.", "hash": "fc0c2af9e3262e6f", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_MSG_GUILD_DISCORD", "field": "text", "en": "Guild Discord", "hash": "d7d88424b44f0e2a", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_OFFICER_SEND", "field": "text", "en": "Officer: ", "hash": "526f337880a49c81", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_OWNER", "field": "text", "en": "Make Owner", "hash": "c1e054df942b930a", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_PARTY_SEND", "field": "text", "en": "Party: ", "hash": "4f6ee409b6b7e30d", "src": "db2@1.60.1.70170"}
+{"id": "CHAT_PASSWORD", "field": "text", "en": "Set Password", "hash": "3b18e6f1cc268c16", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_PASSWORD_NOTICE_POPUP", "field": "text", "en": "Please enter a password for '%1$s'.", "hash": "ce5f7c998a2ecb6a", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_RAID_SEND", "field": "text", "en": "Raid: ", "hash": "ac7f7fdd9c608a38", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_RAID_WARNING_GET", "field": "text", "en": "[Raid Warning] %s: ", "hash": "e79497492bbdb455", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_RAID_WARNING_SEND", "field": "text", "en": "Raid Warning: ", "hash": "1451907b55f95d40", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_SAY_GET", "field": "text", "en": "%s says: ", "hash": "cfffe7fd342932a0", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_SAY_SEND", "field": "text", "en": "Say: ", "hash": "0b38cdcf59d4dc80", "src": "db2@1.60.1.70170"}
+{"id": "CHAT_SERVER_DISCONNECTED_MESSAGE", "field": "text", "en": "You have been disconnected from the Chat Server and may be unable to send or receive messages.", "hash": "0232dfa9d1dba7fa", "src": "db2@1.60.1.70170"}
+{"id": "CHAT_SERVER_RECONNECTED_MESSAGE", "field": "text", "en": "You have been reconnected to the Chat Server and may send or receive messages.", "hash": "5ee9c2b971a3277a", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_SETTINGS_ADDITIONAL_COLORS", "field": "text", "en": "Additional Colors:", "hash": "6200c5bd2014051d", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_STYLE", "field": "text", "en": "Chat Style", "hash": "bb37f2ac44d8e2a9", "src": "db2@1.60.1.70170"}
 {"id": "CHAT_TAB_NAME", "field": "text", "en": "%s Tab", "hash": "4127b8ffe6bda8d3", "src": "db2@1.60.1.70170"}
@@ -347,6 +502,7 @@
 {"id": "CLICK_CAST_TITLE", "field": "text", "en": "Bind spells and macros to mouse clicks", "hash": "f7b2440519277194", "src": "db2@1.60.1.70170"}
 {"id": "CLICK_CAST_UNSAVED", "field": "text", "en": "You have unsaved Click Cast Bindings. You will lose any changes if you close now.", "hash": "4cb0903e271e30fb", "src": "db2@1.60.1.70170"}
 {"id": "CLICK_CHEST_TO_CLAIM_REWARD", "field": "text", "en": "Click chest to claim reward", "hash": "c4dbe99872dcca36", "src": "db2@1.60.1.70170"}
+{"id": "CLICK_FOR_MORE_INFO", "field": "text", "en": "Click for more information", "hash": "788dd660029c49db", "src": "db2@1.60.1.70170"}
 {"id": "CLICK_HERE_FOR_MORE_INFO", "field": "text", "en": "Click here for more information.", "hash": "02e0238a8e77874b", "src": "db2@1.60.1.70170"}
 {"id": "CLICK_QUEST_DETAILS", "field": "text", "en": "<Click to view Quest Details>", "hash": "ca4ca7bd40a5469d", "src": "db2@1.60.1.70170"}
 {"id": "CLICK_TO_MOVE", "field": "text", "en": "Click-to-Move", "hash": "38f5af110d916e7a", "src": "db2@1.60.1.70170"}
@@ -404,6 +560,9 @@
 {"id": "CLUB_FINDER_JOINED", "field": "text", "en": "Joined", "hash": "5edec001edd536ff", "src": "db2@1.60.1.70170"}
 {"id": "CLUB_FINDER_JOINED_ANOTHER", "field": "text", "en": "Joined Another", "hash": "b846c645fe93a623", "src": "db2@1.60.1.70170"}
 {"id": "CLUB_FINDER_LEADER", "field": "text", "en": "Leader: |cffffffff%s|r", "hash": "1fa73bee3cf83aaa", "src": "db2@1.60.1.70170"}
+{"id": "CLUB_FINDER_LINK_COMMUNITY", "field": "text", "en": "[Community: %s]", "hash": "71f0c5a9d99f7bf9", "src": "db2@1.60.1.70170"}
+{"id": "CLUB_FINDER_LINK_GUILD", "field": "text", "en": "[Guild: %s]", "hash": "56ccdbf525caeab8", "src": "db2@1.60.1.70170"}
+{"id": "CLUB_FINDER_LINK_POST_IN_CHAT", "field": "text", "en": "Link Post in Chat", "hash": "25c2cb1bf64744a8", "src": "db2@1.60.1.70170"}
 {"id": "CLUB_FINDER_LIST_COMMUNITY", "field": "text", "en": "List in Community Finder", "hash": "ec981a70966f5140", "src": "db2@1.60.1.70170"}
 {"id": "CLUB_FINDER_LIST_GUILD", "field": "text", "en": "List My Guild in Guild Finder", "hash": "d411e444ca464ba0", "src": "db2@1.60.1.70170"}
 {"id": "CLUB_FINDER_LOOKING_FOR", "field": "text", "en": "Looking For:", "hash": "f91cc3985d19f09d", "src": "db2@1.60.1.70170"}
@@ -455,6 +614,7 @@
 {"id": "CLUB_FINDER_TYPE_GUILD", "field": "text", "en": "Guild", "hash": "ee16bebb146d1fea", "src": "db2@1.60.1.70170"}
 {"id": "CLUB_INVITER_FAIL_COMMUNITY_CAPACITY", "field": "text", "en": "You cannot invite new members, your community is full.", "hash": "5b2f119115c39b65", "src": "db2@1.60.1.70170"}
 {"id": "CLUB_INVITER_FAIL_GUILD_CAPACITY", "field": "text", "en": "You cannot invite new members, your guild is full.", "hash": "e0f68ef10082acdd", "src": "db2@1.60.1.70170"}
+{"id": "CLUB_INVITE_HYPERLINK_TEXT", "field": "text", "en": "[Join: %s]", "hash": "80639b11bbd718f2", "src": "db2@1.60.1.70170"}
 {"id": "CLUB_REMOVED_REASON_BANNED", "field": "text", "en": "You have been banned from %s.", "hash": "4e24d3ef151e69fe", "src": "db2@1.60.1.70170"}
 {"id": "CLUB_REMOVED_REASON_CLUB_DESTROYED", "field": "text", "en": "You have been removed from %s because it was disbanded.", "hash": "3e43b3c8a8d951cb", "src": "db2@1.60.1.70170"}
 {"id": "CLUB_REMOVED_REASON_REMOVED", "field": "text", "en": "You have been removed from %s.", "hash": "20be0fbdb616b68f", "src": "db2@1.60.1.70170"}
@@ -463,6 +623,8 @@
 {"id": "COD_CONFIRMATION", "field": "text", "en": "Accepting this item will cost:", "hash": "74290b7e11bf64f8", "src": "db2@1.60.1.70170"}
 {"id": "COD_INSUFFICIENT_MONEY", "field": "text", "en": "You do not have enough money to pay the C.O.D. charges.", "hash": "f6f44186b442e1ea", "src": "db2@1.60.1.70170"}
 {"id": "COINPICKUP_CANCEL", "field": "text", "en": "Cancel", "hash": "892958da199b72dc", "src": "db2@1.60.1.70170"}
+{"id": "COLDSWAP_TEXT_CONFIRM_GAMEPAD", "field": "text", "en": "Swap to Gamepad input mode?", "hash": "d384948376c80303", "src": "db2@1.60.1.70170"}
+{"id": "COLDSWAP_TEXT_CONFIRM_MKB", "field": "text", "en": "Swap to Mouse + Keyboard input mode?", "hash": "d4617a560e24031d", "src": "db2@1.60.1.70170"}
 {"id": "COLLECTED", "field": "text", "en": "Collected", "hash": "3e728695d5235bc6", "src": "db2@1.60.1.70170"}
 {"id": "COLLECTED_APPEARANCE", "field": "text", "en": "Appearance Collection", "hash": "6e293c76f384e2bd", "src": "db2@1.60.1.70170"}
 {"id": "COLLECTIONS", "field": "text", "en": "Account Collections", "hash": "a642643d00f82ac3", "src": "db2@1.60.1.70170"}
@@ -600,12 +762,24 @@
 {"id": "COMBAT_ZONE", "field": "text", "en": "(Combat Zone)", "hash": "c148762d86a2e4aa", "src": "db2@1.60.1.70170"}
 {"id": "COMBINED_BAG_TITLE", "field": "text", "en": "Combined Backpack", "hash": "e1091827faab6fde", "src": "db2@1.60.1.70170"}
 {"id": "COMBO_POINTS", "field": "text", "en": "Combo |4Point:Points;", "hash": "951705fd195f6fbd", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_ADD_DIALOG_BATTLE_NET_LABEL", "field": "text", "en": "Create Blizzard Group", "hash": "92435751ce80c3d7", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_ADD_DIALOG_CREATE_BNET_DESCRIPTION", "field": "text", "en": "- Great for cross-game friends|n- Invite any player (members join as their BattleTag)", "hash": "656422708316f421", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_ADD_DIALOG_CREATE_BNET_LABEL", "field": "text", "en": "Create Blizzard Group", "hash": "92435751ce80c3d7", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_ADD_DIALOG_CREATE_WOW_DESCRIPTION", "field": "text", "en": "- Great for in-game friends|n- Invite characters from any realm|n- Calendar and Quick Join support", "hash": "2a9c28c7367babd8", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_ADD_DIALOG_CREATE_WOW_DESCRIPTION_NO_FACTION", "field": "text", "en": "- Great for in-game friends|n- Invite characters from any realm|n- Calendar and Quick Join support", "hash": "2a9c28c7367babd8", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_ADD_DIALOG_CREATE_WOW_LABEL", "field": "text", "en": "Create World of Warcraft Community (%s or Cross-Faction)", "hash": "34ff9239b590c2b8", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_ADD_DIALOG_CREATE_WOW_LABEL_NO_FACTION", "field": "text", "en": "Create World of Warcraft Community", "hash": "29182c28d6f4a047", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_ADD_DIALOG_INVITE_LINK_DESCRIPTION", "field": "text", "en": "Enter a community's invitation link or code:", "hash": "5773bc7dd5e0d56a", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_ADD_DIALOG_INVITE_LINK_JOIN", "field": "text", "en": "Join", "hash": "0a07b5de98befee6", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_ADD_DIALOG_INVITE_LINK_LABEL", "field": "text", "en": "Join Community", "hash": "7796c8365e74078c", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_ADD_DIALOG_LABEL", "field": "text", "en": "Add Community", "hash": "699defc0e6629629", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_ADD_TO_CHAT", "field": "text", "en": "Add to Chat Window", "hash": "4500a93f0fbc8ad8", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_ADD_TO_CHAT_DROP_DOWN_CHAT_SETTINGS", "field": "text", "en": "Settings", "hash": "fea5ab6e7e75a1d4", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_ADD_TO_CHAT_DROP_DOWN_NEW_CHAT_WINDOW", "field": "text", "en": "New Window", "hash": "dc2f886e4bfd390c", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_ADD_TO_CHAT_DROP_DOWN_TITLE", "field": "text", "en": "Chat Window", "hash": "f920208344ed1233", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CALENDAR_CLICK_TO_ADD_INSTRUCTIONS", "field": "text", "en": "<Click to Add Community Event>", "hash": "29e61574760dd37e", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CALENDAR_EVENT_FORMAT", "field": "text", "en": "%s at %s", "hash": "967d62f5a50a1434", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CALENDAR_ONGOING_EVENT_PREFIX", "field": "text", "en": "Event occurring now", "hash": "ceac5db20d37dde7", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CALENDAR_TODAY", "field": "text", "en": "Today", "hash": "d179da82020b2f7f", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CALENDAR_TOOLTIP_TITLE", "field": "text", "en": "Bulletin", "hash": "f22f77216a764912", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CHANNEL_ADDED_TO_CHAT_WINDOW", "field": "text", "en": "[%d. %s] has been added to this chat window.", "hash": "066206be2e1c0512", "src": "db2@1.60.1.70170"}
@@ -619,13 +793,25 @@
 {"id": "COMMUNITIES_CHAT_FRAME_YESTERDAY_NOTIFICATION", "field": "text", "en": "Yesterday", "hash": "0ee909e73298ee12", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CHAT_TAB_TOOLTIP", "field": "text", "en": "Chat", "hash": "0915bd509f1c7960", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CREATE_CHANNEL", "field": "text", "en": "Create Channel", "hash": "76fd30f977adfe9a", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_COMMUNITY", "field": "text", "en": "Create Community", "hash": "afc3528e432732ff", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CREATE_DIALOG_AVATAR_PICKER_INSTRUCTIONS", "field": "text", "en": "Select an Icon", "hash": "b6288aeeac6f9de5", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_DIALOG_BATTLE_NET_LABEL", "field": "text", "en": "Create Blizzard Group", "hash": "92435751ce80c3d7", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CREATE_DIALOG_DESCRIPTION_INSTRUCTIONS", "field": "text", "en": "Optional description of your community", "hash": "9366be56c277ad19", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CREATE_DIALOG_DESCRIPTION_INSTRUCTIONS_BATTLE_NET", "field": "text", "en": "Optional description of your group", "hash": "63df1c9a7f34b189", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_DIALOG_DESCRIPTION_LABEL", "field": "text", "en": "Community Description", "hash": "8b9ee281297bfee9", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_DIALOG_DESCRIPTION_LABEL_BATTLE_NET", "field": "text", "en": "Group Description", "hash": "617862e492f2bbde", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CREATE_DIALOG_ICON_SELECTION_BUTTON", "field": "text", "en": "Change", "hash": "024e46992f68b3c4", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CREATE_DIALOG_NAME_AND_SHORT_NAME_ERROR", "field": "text", "en": "Name|n%s|n|nShort Name|n%s", "hash": "598ad89380226b95", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CREATE_DIALOG_NAME_ERROR", "field": "text", "en": "Name|n%s", "hash": "e27ad7a02bf384db", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_DIALOG_NAME_INSTRUCTIONS", "field": "text", "en": "The name of your community", "hash": "d8ab39d812e40836", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_DIALOG_NAME_INSTRUCTIONS_BATTLE_NET", "field": "text", "en": "The name of your group", "hash": "e342a35b5cf3813e", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_CREATE_DIALOG_SHORT_NAME_ERROR", "field": "text", "en": "Short Name|n%s", "hash": "14a904aad2990ea2", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_DIALOG_SHORT_NAME_INSTRUCTIONS", "field": "text", "en": "A shorter version of the group name", "hash": "b87c453f7ddc2b06", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_DIALOG_SHORT_NAME_INSTRUCTIONS_CHARACTER", "field": "text", "en": "A shorter version of the community name", "hash": "5aad0652dfd4973d", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_DIALOG_SHORT_NAME_INSTRUCTIONS_TOOLTIP", "field": "text", "en": "This is used to keep the length of channel names shorter in chat windows.", "hash": "b8758b4b3f9d6b25", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_DIALOG_SHORT_NAME_LABEL", "field": "text", "en": "Short Name", "hash": "607a861dc682d436", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_DIALOG_WOW_LABEL", "field": "text", "en": "Create World of Warcraft Community", "hash": "29182c28d6f4a047", "src": "db2@1.60.1.70170"}
+{"id": "COMMUNITIES_CREATE_GROUP", "field": "text", "en": "Create Group", "hash": "c29218d4cabc816f", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_EDIT_CHANNEL", "field": "text", "en": "Edit Channel", "hash": "23e6c376b6735cf5", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_EDIT_DIALOG_CROSS_FACTION", "field": "text", "en": "Cross-Faction", "hash": "414d02368a4882d1", "src": "db2@1.60.1.70170"}
 {"id": "COMMUNITIES_FRAME_JUMP_TO_UNREAD", "field": "text", "en": "Unread", "hash": "1d32a6a664c1b94b", "src": "db2@1.60.1.70170"}
@@ -773,22 +959,34 @@
 {"id": "CONFIRM_COMBAT_FILTER_DEFAULTS", "field": "text", "en": "Do you really want to reset your filters to their default values?", "hash": "6fd1f523ec32e8cb", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_COMBAT_FILTER_DELETE", "field": "text", "en": "Do you really want to delete this filter?", "hash": "a2ba744dfce18f92", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_COMPLETE_EXPENSIVE_QUEST", "field": "text", "en": "Completing this quest requires the following amount of gold. Are you sure you want to complete this quest?", "hash": "5acf5e749d2ebc83", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_CONTINUE", "field": "text", "en": "Do you wish to continue?", "hash": "e25a92912bb31223", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_DELETE_EQUIPMENT_SET", "field": "text", "en": "Are you sure you want to delete the equipment set %s?", "hash": "d118e76cdf466922", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_DELETE_MACRO", "field": "text", "en": "Do you want to delete this macro?", "hash": "750d3cba662c3e59", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_DELETING_CHARACTER_SPECIFIC_BINDINGS", "field": "text", "en": "Really switch to general key bindings?  All key bindings specific to this character will be permanantly deleted.", "hash": "c5a10aa1c1582156", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_DESTROY_CHARACTER_COMMUNITY", "field": "text", "en": "Are you sure you want to delete the community \"%s\"? This can't be undone.|n|nType \"DELETE\" into the field to confirm.", "hash": "3478e23900a4b6d1", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_DESTROY_COMMUNITY", "field": "text", "en": "Are you sure you want to delete the group \"%s\"? This can't be undone.|n|nType \"DELETE\" into the field to confirm.", "hash": "623317c48186823d", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_DESTROY_COMMUNITY_STREAM_LABEL", "field": "text", "en": "Are you sure you want to delete the channel %s?", "hash": "39436c98a3127fbf", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_GARRISON_FOLLOWER_TEMPORARY_ABILITY", "field": "text", "en": "Are you sure you want to grant %s this temporary ability?", "hash": "f940ea5b1fe6bb96", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_GLYPH_PLACEMENT_NO_COST", "field": "text", "en": "Are you sure you want to inscribe %s?  This will replace %s.", "hash": "4e0bf3297a4633a3", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_GLYPH_REMOVAL", "field": "text", "en": "Are you sure you want to remove %s?", "hash": "e8828bac735c5c61", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_GUILD_DISBAND", "field": "text", "en": "Do you really want to disband your guild?", "hash": "3ebe72b3ec7fec9e", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_GUILD_LEAVE", "field": "text", "en": "Really leave %s?", "hash": "321aa38e7b48690b", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_GUILD_PROMOTE", "field": "text", "en": "Really promote %s to Guildmaster?", "hash": "35a0a784220e8e65", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_HIGH_COST_ITEM", "field": "text", "en": "Are you sure you wish to purchase %s for the following amount?", "hash": "f434c8a227fc8058", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_ITEM_USE", "field": "text", "en": "Are you sure you want to use this item?", "hash": "954c56411ec56ea6", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_LAUNCH_URL", "field": "text", "en": "Clicking \"Okay\" will open a window in your web browser.", "hash": "abe49769547ecd50", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_LEAVE_AND_DESTROY_CHARACTER_COMMUNITY", "field": "text", "en": "Leave and Delete Community?", "hash": "37fd8ef4c5dce3fb", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_LEAVE_AND_DESTROY_CHARACTER_COMMUNITY_SUBTEXT", "field": "text", "en": "Leaving the community will also delete it. Are you sure you want to delete the community? This can't be undone.", "hash": "8e7fea7da4e7673f", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_LEAVE_AND_DESTROY_COMMUNITY", "field": "text", "en": "Leave and Delete Group?", "hash": "61797696fc6d8c4f", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_LEAVE_AND_DESTROY_COMMUNITY_SUBTEXT", "field": "text", "en": "Leaving the group will also delete it. Are you sure you want to delete the group? This can't be undone.", "hash": "19eba1eee087dbcc", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_LEAVE_ARENA", "field": "text", "en": "Leave Arena?", "hash": "b8726862b18d21d6", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_LEAVE_BATTLEFIELD", "field": "text", "en": "Leave Battleground?", "hash": "f4ff6f88656f79d4", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_LEAVE_CHARACTER_COMMUNITY", "field": "text", "en": "Leave Community?", "hash": "592e14623968fe27", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_LEAVE_CHARACTER_COMMUNITY_SUBTEXT", "field": "text", "en": "Are you sure you want to leave %s?", "hash": "c810c11276b3c4f0", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_LEAVE_COMMUNITY", "field": "text", "en": "Leave Group?", "hash": "9ee5131c3ca25f12", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_LEAVE_COMMUNITY_SUBTEXT", "field": "text", "en": "Are you sure you want to leave %s?", "hash": "c810c11276b3c4f0", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_LEAVE_INSTANCE_PARTY", "field": "text", "en": "Leave Instance Group?\n\nYou will not be able to return to this instance once you leave the group.", "hash": "c5267aa51682787d", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_LEAVE_RATED_MATCH_WITH_PENALTY", "field": "text", "en": "Leaving the match now will cause you to lose at least |cnORANGE_FONT_COLOR:%d|r rating and you will be afflicted by %s of %s.|n|nYou will not receive Honor or Conquest for your completed rounds if you leave now.|n|nAre you sure you want to leave the match?", "hash": "e507189573cd7caf", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_LEAVE_RESTRICTED_CHALLENGE_MODE", "field": "text", "en": "Leave Instance Group?|n|n|cffff2020Repeatedly leaving Mythic+ instances will cause you to be flagged as a Keystone Deserter.|r", "hash": "6d129cc5b7b6aa0f", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_LOOT_DISTRIBUTION", "field": "text", "en": "You wish to assign %s to %s.  Is this correct?", "hash": "a68b95a8c5f68098", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_MERCHANT_TRADE_TIMER_REMOVAL", "field": "text", "en": "Selling %s will make it non-tradeable, even if you buy it back.", "hash": "54c09c3be5de704f", "src": "db2@1.60.1.70170"}
@@ -802,6 +1000,7 @@
 {"id": "CONFIRM_REFUND_MAX_HONOR", "field": "text", "en": "You are close to the maximum number of Honor. Selling this item will result in the loss of %d Honor. Proceed?", "hash": "f3354b0e81dcc8d7", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_REFUND_MAX_HONOR_AND_ARENA", "field": "text", "en": "You are close to the maximum number of Honor. Selling this item will result in the loss of %1$d Honor and %2$d arena points. Proceed?", "hash": "3db70c1d30f0c7e9", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_REFUND_TOKEN_ITEM", "field": "text", "en": "Are you sure you wish to get a refund of %s for the following item?%s", "hash": "b3b330083464ed6b", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_REMOVE_CHARACTER_COMMUNITY_MEMBER_LABEL", "field": "text", "en": "Are you sure you want to remove %s from the community?", "hash": "90bc2ef6022fd2ca", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_REMOVE_COMMUNITY_MEMBER_LABEL", "field": "text", "en": "Are you sure you want to remove %s from the group?", "hash": "6f6affbe2743ddb0", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_REMOVE_WOW_FRIEND", "field": "text", "en": "Are you sure you want to remove this friend from your list? This action cannot be undone.", "hash": "2af5a87262999d6d", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_RESET_CHALLENGE_MODE", "field": "text", "en": "Do you really want to reset the dungeon?", "hash": "4c57362633641804", "src": "db2@1.60.1.70170"}
@@ -814,8 +1013,19 @@
 {"id": "CONFIRM_SUMMON_STARTING_AREA", "field": "text", "en": "%s wants to summon you to %s.\n\nYou will be unable to return to this starting zone.\n\nThe spell will be canceled in %d %s.", "hash": "30ffbe00c49e5419", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_SURRENDER_ARENA", "field": "text", "en": "Surrender?", "hash": "fa4cbac557469b1a", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_TEXT_TO_SPEECH_RESET", "field": "text", "en": "Do you want to reset all text to speech settings to default?", "hash": "e81fc45a48bf7e4a", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_UPGRADE_ITEM", "field": "text", "en": "Are you sure you wish to spend %s to upgrade the following item?", "hash": "6ebad073074032b7", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_UPGRADE_ITEM_BIND", "field": "text", "en": "Are you sure you wish to spend %s to upgrade the following item? Upgrading will cause this item to become soulbound.", "hash": "0252d3a10cdd0237", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_XP_LOSS_AGAIN", "field": "text", "en": "Remember, if you find your corpse there is no penalty.  Are you sure you want to take 50%% durability damage (equipped and inventory) and incur %s of Resurrection Sickness?", "hash": "4fae835afdd8c2ff", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_XP_LOSS_NO_SICKNESS_NO_DURABILITY", "field": "text", "en": "You can find your corpse and resurrect at that location. Players that are below level 10 can resurrect here with no penalty.", "hash": "36aa310a661addb6", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_YOUR_ROLE", "field": "text", "en": "Confirm your role:", "hash": "e6ad91114eb48bd8", "src": "db2@1.60.1.70170"}
+{"id": "CONQUEST_BRACKET_NAME_2V2", "field": "text", "en": "2v2 Arena", "hash": "6066aa1bad28107d", "src": "db2@1.60.1.70170"}
+{"id": "CONQUEST_BRACKET_NAME_3V3", "field": "text", "en": "3v3 Arenas", "hash": "b430c2121bf5a309", "src": "db2@1.60.1.70170"}
+{"id": "CONQUEST_BRACKET_NAME_BATTLEGROUND_BLITZ", "field": "text", "en": "Rated Battleground Blitz", "hash": "15e167961302cf18", "src": "db2@1.60.1.70170"}
+{"id": "CONQUEST_BRACKET_NAME_RBG", "field": "text", "en": "Rated Battlegrounds", "hash": "60d3b7a143a01fa4", "src": "db2@1.60.1.70170"}
+{"id": "CONQUEST_BRACKET_NAME_SOLO_SHUFFLE", "field": "text", "en": "Rated Solo Shuffle", "hash": "78eba2d177e3a961", "src": "db2@1.60.1.70170"}
+{"id": "CONQUEST_PVP_WEEK_CONQUEST_COMPLETE", "field": "text", "en": "You've earned all available Conquest.  Check back next week.", "hash": "2f77942e4fcab2fc", "src": "db2@1.60.1.70170"}
+{"id": "CONQUEST_PVP_WEEK_NO_CONQUEST", "field": "text", "en": "Earn Conquest to purchase Rated PvP items.", "hash": "0368eb023331bab8", "src": "db2@1.60.1.70170"}
+{"id": "CONQUEST_REQUIRES_PVP_SEASON", "field": "text", "en": "Conquest can only be earned during an active PvP season.", "hash": "b3a3a7324103b4fb", "src": "db2@1.60.1.70170"}
 {"id": "CONTACTS_LIST_TITLE", "field": "text", "en": "Contacts", "hash": "b0596e54ffa42ea9", "src": "db2@1.60.1.70170"}
 {"id": "CONTACTS_MENU_BROADCAST_BUTTON_NAME", "field": "text", "en": "Broadcast", "hash": "c38755c4a1db74d1", "src": "db2@1.60.1.70170"}
 {"id": "CONTACTS_MENU_IGNORE_BUTTON_NAME", "field": "text", "en": "Ignore List", "hash": "e2b877686191a833", "src": "db2@1.60.1.70170"}
@@ -823,21 +1033,28 @@
 {"id": "CONTACTS_RECENT_ALLIES_TAB_NAME", "field": "text", "en": "Recent Allies", "hash": "4254ca7cfc6f210f", "src": "db2@1.60.1.70170"}
 {"id": "CONTACTS_RECENT_ALLIES_TITLE", "field": "text", "en": "Recent Allies", "hash": "4254ca7cfc6f210f", "src": "db2@1.60.1.70170"}
 {"id": "CONTACTS_TAB_TITLE", "field": "text", "en": "Contacts", "hash": "b0596e54ffa42ea9", "src": "db2@1.60.1.70170"}
+{"id": "CONTAINER_CAMPAIGN_PROGRESS", "field": "text", "en": "Campaign", "hash": "8cda0d5a9c045697", "src": "db2@1.60.1.70170"}
 {"id": "CONTAINER_SLOTS", "field": "text", "en": "%d Slot %s", "hash": "005a2172abd01db7", "src": "db2@1.60.1.70170"}
 {"id": "CONTENT_TRACKING_ALREADYTRACKED_ERROR_TEXT", "field": "text", "en": "Already tracked", "hash": "23fc90192a711f6f", "src": "db2@1.60.1.70170"}
 {"id": "CONTENT_TRACKING_CHAT_LINK_ERROR_TEXT", "field": "text", "en": "This can't be linked in chat", "hash": "f79e06ceff87bd20", "src": "db2@1.60.1.70170"}
+{"id": "CONTENT_TRACKING_CHECKMARK_TOOLTIP_TITLE", "field": "text", "en": "Currently tracked", "hash": "723fd7539575246b", "src": "db2@1.60.1.70170"}
+{"id": "CONTENT_TRACKING_DISABLED_TOOLTIP_PROMPT", "field": "text", "en": "Tracking currently unavailable", "hash": "24d8123531bda66a", "src": "db2@1.60.1.70170"}
 {"id": "CONTENT_TRACKING_LOCATION_UNAVAILABLE", "field": "text", "en": "|cffff0000Location unavailable|r", "hash": "f3ae7ef16a4e35d8", "src": "db2@1.60.1.70170"}
 {"id": "CONTENT_TRACKING_MAP_TOGGLE", "field": "text", "en": "Tracked Items", "hash": "3b6a2ae2637d54fa", "src": "db2@1.60.1.70170"}
 {"id": "CONTENT_TRACKING_MAXTRACKED_ERROR_TEXT", "field": "text", "en": "The tracking limit has been reached", "hash": "0f839d35318bd186", "src": "db2@1.60.1.70170"}
 {"id": "CONTENT_TRACKING_OPEN_JOURNAL_OPTION", "field": "text", "en": "Open Collections", "hash": "2843afa45d20ce54", "src": "db2@1.60.1.70170"}
 {"id": "CONTENT_TRACKING_RETRIEVING_INFO", "field": "text", "en": "|cffff0000Retrieving information...|r", "hash": "26e84badb5a6b566", "src": "db2@1.60.1.70170"}
 {"id": "CONTENT_TRACKING_ROUTE_UNAVAILABLE", "field": "text", "en": "|cffff0000Route unavailable|r", "hash": "57a8ee7704a54fed", "src": "db2@1.60.1.70170"}
+{"id": "CONTENT_TRACKING_TRACKABLE_TOOLTIP_PROMPT", "field": "text", "en": "<Shift click to track this item>", "hash": "bacbc38525bc4021", "src": "db2@1.60.1.70170"}
 {"id": "CONTENT_TRACKING_UNTRACKABLE_ERROR_TEXT", "field": "text", "en": "This item can't be tracked", "hash": "6d5c6165e792008e", "src": "db2@1.60.1.70170"}
+{"id": "CONTENT_TRACKING_UNTRACKABLE_TOOLTIP_PROMPT", "field": "text", "en": "Tracking unavailable for this item", "hash": "b4a015fbf5272ec1", "src": "db2@1.60.1.70170"}
+{"id": "CONTENT_TRACKING_UNTRACK_TOOLTIP_PROMPT", "field": "text", "en": "<Shift click to stop tracking>", "hash": "f268ea332e34da2c", "src": "db2@1.60.1.70170"}
 {"id": "CONTESTED_TERRITORY", "field": "text", "en": "(Contested Territory)", "hash": "ac41c9e10dd30e85", "src": "db2@1.60.1.70170"}
 {"id": "CONTEXT_ACTION_LABEL_APPLY", "field": "text", "en": "Apply", "hash": "841aca2233b03947", "src": "db2@1.60.1.70170"}
 {"id": "CONTEXT_ACTION_LABEL_AUTO_CAST", "field": "text", "en": "Toggle Auto Cast", "hash": "4215e0151b7c330d", "src": "db2@1.60.1.70170"}
 {"id": "CONTEXT_ACTION_LABEL_BIND_TO_GAMEPAD_ACTION_BAR", "field": "text", "en": "Bind", "hash": "08f3b95515ae677f", "src": "db2@1.60.1.70170"}
 {"id": "CONTEXT_ACTION_LABEL_BUY", "field": "text", "en": "Buy", "hash": "001184aa06100a21", "src": "db2@1.60.1.70170"}
+{"id": "CONTEXT_ACTION_LABEL_CANCEL_BUFF", "field": "text", "en": "Cancel Buff", "hash": "93f269972e933c2c", "src": "db2@1.60.1.70170"}
 {"id": "CONTEXT_ACTION_LABEL_CAST", "field": "text", "en": "Cast", "hash": "0913f1478354dceb", "src": "db2@1.60.1.70170"}
 {"id": "CONTEXT_ACTION_LABEL_CHARACTER_VIEWER", "field": "text", "en": "Character Viewer", "hash": "250f4fd0808b1b73", "src": "db2@1.60.1.70170"}
 {"id": "CONTEXT_ACTION_LABEL_CHOOSE_REWARD", "field": "text", "en": "Choose Reward", "hash": "db55a72888454ed1", "src": "db2@1.60.1.70170"}
@@ -944,6 +1161,13 @@
 {"id": "COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS", "field": "text", "en": "Enter search text", "hash": "6e0eb90008d9bc9d", "src": "db2@1.60.1.70170"}
 {"id": "COOLDOWN_VIEWER_SETTINGS_SHOW_OPTIONS", "field": "text", "en": "Options", "hash": "cf6c009bd04a5d3a", "src": "db2@1.60.1.70170"}
 {"id": "COOLDOWN_VIEWER_SETTINGS_SHOW_UNLEARNED", "field": "text", "en": "Show Unlearned", "hash": "8d7d1f0423c7f02a", "src": "db2@1.60.1.70170"}
+{"id": "COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_ANIMALS", "field": "text", "en": "Animals", "hash": "360c5728e8f34279", "src": "db2@1.60.1.70170"}
+{"id": "COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_DEVICES", "field": "text", "en": "Devices", "hash": "60275538301858bf", "src": "db2@1.60.1.70170"}
+{"id": "COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_IMPACTS", "field": "text", "en": "Impacts", "hash": "5962854bc399d423", "src": "db2@1.60.1.70170"}
+{"id": "COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_INSTRUMENTS", "field": "text", "en": "Instruments", "hash": "301864d6883a07d1", "src": "db2@1.60.1.70170"}
+{"id": "COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_SHORT", "field": "text", "en": "Short", "hash": "befeef0570f60afe", "src": "db2@1.60.1.70170"}
+{"id": "COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_WAR2", "field": "text", "en": "Warcraft 2", "hash": "78c4c9cdb8ac50aa", "src": "db2@1.60.1.70170"}
+{"id": "COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_WAR3", "field": "text", "en": "Warcraft 3", "hash": "78c4c9ceb8ac50ab", "src": "db2@1.60.1.70170"}
 {"id": "COOLDOWN_VIEWER_SETTINGS_TAB_BUFFS", "field": "text", "en": "Buffs", "hash": "96516308adef1809", "src": "db2@1.60.1.70170"}
 {"id": "COOLDOWN_VIEWER_SETTINGS_TAB_GROUP_AURAS", "field": "text", "en": "Group Buffs", "hash": "47965ef3cbbe7203", "src": "db2@1.60.1.70170"}
 {"id": "COOLDOWN_VIEWER_SETTINGS_TAB_GROUP_AURAS_DISABLED_TOOLTIP", "field": "text", "en": "This feature is not available for your current specialization.", "hash": "d318af772c55f2b0", "src": "db2@1.60.1.70170"}
@@ -963,6 +1187,7 @@
 {"id": "CORPSE_TOOLTIP", "field": "text", "en": "Corpse of %s", "hash": "296adee79d4c3bc6", "src": "db2@1.60.1.70170"}
 {"id": "CORRUPTED_ITEM_LOOT_LABEL", "field": "text", "en": "Corrupted Item!", "hash": "bee509f23e72bff1", "src": "db2@1.60.1.70170"}
 {"id": "COSTS_LABEL", "field": "text", "en": "Cost:", "hash": "a714b61d70070e39", "src": "db2@1.60.1.70170"}
+{"id": "COUNTDOWN_CANCEL_ENCOUNTER_START", "field": "text", "en": "Encounter started, countdown timer canceled.", "hash": "e269b4822b45cef7", "src": "db2@1.60.1.70170"}
 {"id": "COUNTDOWN_FOR_COOLDOWNS_TEXT", "field": "text", "en": "Show Numbers for Cooldowns", "hash": "032dfd541c11518a", "src": "db2@1.60.1.70170"}
 {"id": "CRAFTING_ORDERS_IGNORE_CONFIRMATION", "field": "text", "en": "Are you sure you want to ignore %s?", "hash": "8626eee7f5aa0544", "src": "db2@1.60.1.70170"}
 {"id": "CRAFTING_ORDER_FAILED_ACCOUNT_ITEMS", "field": "text", "en": "You currently cannot use reagents from the Account bank in a crafting order. Place them in your bags or the Reagent bank to use them in this order.", "hash": "063af66c177a2f98", "src": "db2@1.60.1.70170"}
@@ -991,6 +1216,9 @@
 {"id": "CRF_READY_CHECK", "field": "text", "en": "Ready Check", "hash": "5e4133d1643cd35c", "src": "db2@1.60.1.70170"}
 {"id": "CRF_ROLE_POLL", "field": "text", "en": "Role Poll", "hash": "725de93299ff39f9", "src": "db2@1.60.1.70170"}
 {"id": "CRF_SETTINGS", "field": "text", "en": "Settings", "hash": "fea5ab6e7e75a1d4", "src": "db2@1.60.1.70170"}
+{"id": "CRITERIA_COMPLETED", "field": "text", "en": "Completed", "hash": "5c5aff58a419fd96", "src": "db2@1.60.1.70170"}
+{"id": "CRITERIA_COMPLETED_DATE", "field": "text", "en": "Completed %s", "hash": "33dc67334af43b01", "src": "db2@1.60.1.70170"}
+{"id": "CRITERIA_NOT_COMPLETED", "field": "text", "en": "Not completed", "hash": "db368f0f908a51fe", "src": "db2@1.60.1.70170"}
 {"id": "CROSS_FACTION_CLUB_FINDER_SEARCH_OPTION", "field": "text", "en": "Cross-Faction", "hash": "414d02368a4882d1", "src": "db2@1.60.1.70170"}
 {"id": "CROSS_FACTION_COMMUNITIES_HELPTIP", "field": "text", "en": "You can change your community to Cross-Faction in Settings", "hash": "3e9fa7075149b450", "src": "db2@1.60.1.70170"}
 {"id": "CR_BLOCK_TOOLTIP", "field": "text", "en": "Blocking reduces damage of an attack by %0.2f%%.\n|cff888888(Against an evenly matched enemy)|r", "hash": "266a408904ad7667", "src": "db2@1.60.1.70170"}

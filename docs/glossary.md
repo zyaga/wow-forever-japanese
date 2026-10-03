@@ -145,17 +145,17 @@ _Avoid_: served filter (it narrows the English store, not the build), Forever fi
 **Served-text inventory**:
 Every text column of every [[DB2 table]] the Forever install ships, plus each server cache (`Cache/WDB/enUS/*.wdb`), with row and text counts: the generated, committed `pipeline/served_columns.txt` (`make served-columns`, once per build), paired with the hand-written `pipeline/served_dispositions.txt` that gives each column a [[Disposition]]. It is what coverage and translation scope are measured against. Its delta against the previous build lists the columns a patch added, dropped or changed. Not the [[Served record]], which lists ids, not columns.
 _Avoid_: player-visible set, visible spells, what a player is likely to see (the scope it replaced)
-→ [ADR-051](adr/051-coverage-by-served-data.md) · [Data model](architecture/data-model.md) · [Pipeline](systems/pipeline.md)
+→ [ADR-052](adr/052-coverage-by-served-data.md) · [Data model](architecture/data-model.md) · [Pipeline](systems/pipeline.md)
 
 **Disposition**:
 What one served column of the [[Served-text inventory]] is, from a closed set: `surface:<type>.<field>` or `surface:ui:<Family>` (the addon ships it in Japanese), `names` (names stay English), `internal` (developer text the client never prints), `no-display` (prose the Forever client has no place for), `covered-by:<column>` (the same text reaches the screen through another column) or `empty`. `internal`, `no-display` and `covered-by` carry evidence. Every served column has exactly one.
 _Avoid_: exclusion (that is a UI key in `ui_exclusions.txt`), status (that is per [[Entry]]), skip
-→ [ADR-051](adr/051-coverage-by-served-data.md) · [Data model](architecture/data-model.md)
+→ [ADR-052](adr/052-coverage-by-served-data.md) · [Data model](architecture/data-model.md)
 
 **Gap**:
 In coverage: a served line of a surface that has neither shipped Japanese nor a stated reason (a names list, nothing to translate, English still waiting on the Forever tables, an exclusion with its reason). Gaps are the build's translation list; `tests/python/test_coverage.py` fails while any remain, and [Coverage](operations/coverage.md) counts them.
 _Avoid_: missing (a missing line can have a reason), untranslated, to-do
-→ [ADR-051](adr/051-coverage-by-served-data.md) · [Coverage](operations/coverage.md)
+→ [ADR-052](adr/052-coverage-by-served-data.md) · [Coverage](operations/coverage.md)
 
 **Tooltip text**:
 The English prose of an item or spell tooltip below its name, as the client tables hold it: a spell's `Description_lang`; for an item, the descriptions of its effect spells the tooltip prints (trigger types Use, Equip, Chance on hit, Use without delay) then its flavour text, so an item's "Use:" line is a **spell's** `Description_lang` reached through the item→effect join, never `ItemSparse.Description_lang`, which holds only the flavour line and is often empty. A raw template (`Restores $o1 health over $d.`): the numbers are filled in only when the client renders it, so offline it catches rewording (the entry goes [[Stale]]) but never a changed number. Stored as the `description` field.

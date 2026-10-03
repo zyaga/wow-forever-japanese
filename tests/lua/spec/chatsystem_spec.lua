@@ -44,6 +44,7 @@ local UI = {
   COMMUNITIES_MESSAGE_OF_THE_DAY_FORMAT = { "Message of the Day: \"%s\"", "今日のメッセージ: 「%s」" },
   -- a friendship's rank points (FriendshipReputation, a client-table family the reputation line names)
   ["FriendshipGain:513"] = { "You gain %d Rank Points.", "ランクポイントを%d獲得した。" },
+  ["ServerMessage:1"] = { "[SERVER] Shutdown in %s", "[サーバー] %s後にシャットダウン" },
 }
 local NAMES = { "CHAT_FRAMES", "ChatTypeInfo", "ChatFrame1", "ChatFrame2", "FCF_OpenTemporaryWindow",
   "issecretvalue" }
@@ -139,6 +140,12 @@ describe("SYSTEM chat lines", function()
     H.uiTeardown()
     Stub.keys.alt = false
     for _, n in ipairs(NAMES) do _G[n] = nil end
+  end)
+
+  it("a server notice is its ServerMessages row, the time kept as the client wrote it", function()
+    local f = _G.ChatFrame1
+    system(f, "[SERVER] Shutdown in 15:00")
+    assert.are.equal("[サーバー] 15:00後にシャットダウン", f:Last())
   end)
 
   it("a reputation line is the FriendshipGain row with the live number; no other chat type takes it", function()

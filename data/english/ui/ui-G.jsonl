@@ -94,10 +94,13 @@
 {"id": "GENERAL_MACROS", "field": "text", "en": "General Macros", "hash": "d250f72a6394de08", "src": "db2@1.60.1.70170"}
 {"id": "GENERIC_ITEM_CONVERSION_SLOT_TOOLTIP", "field": "text", "en": "Insert an eligible item to convert to a set item.", "hash": "f64835c8f62cd737", "src": "db2@1.60.1.70170"}
 {"id": "GENERIC_MONEY_GAINED_RECEIPT", "field": "text", "en": "You gained: |cffffffff%s|r", "hash": "6aa618b890a635f2", "src": "db2@1.60.1.70170"}
+{"id": "GENERIC_TRAIT_FRAME_CONFIRM_PURCHASE", "field": "text", "en": "Are you sure you want to unlock this talent?", "hash": "5553db0bb532eae2", "src": "db2@1.60.1.70170"}
+{"id": "GENERIC_TRAIT_FRAME_CONFIRM_PURCHASE_FORMAT", "field": "text", "en": "Are you sure you want to spend %s to unlock this talent?", "hash": "d4ea8f0c32d15511", "src": "db2@1.60.1.70170"}
 {"id": "GENERIC_TRAIT_FRAME_EDGE_REQUIREMENTS_BUTTON_TOOLTIP", "field": "text", "en": "Requires all preceding talents", "hash": "402ec3a42c5b4012", "src": "db2@1.60.1.70170"}
 {"id": "GENERIC_TRAIT_FRAME_INTERNAL_ERROR", "field": "text", "en": "Internal error. Try again later.", "hash": "be2cf1d3edaddac6", "src": "db2@1.60.1.70170"}
 {"id": "GLOBAL_CHANNELS", "field": "text", "en": "Channels", "hash": "922ae057814067c5", "src": "db2@1.60.1.70170"}
 {"id": "GM_CHAT", "field": "text", "en": "Chatting with a GM", "hash": "3b2ce1eb397aafa0", "src": "db2@1.60.1.70170"}
+{"id": "GM_CHAT_LAST_SESSION", "field": "text", "en": "In your last session, you were speaking with %s.", "hash": "e2eff4b6bf80c919", "src": "db2@1.60.1.70170"}
 {"id": "GM_CHAT_STATUS_READY", "field": "text", "en": "GM Chat Request", "hash": "da2480ea906e0c82", "src": "db2@1.60.1.70170"}
 {"id": "GM_CHAT_STATUS_READY_DESCRIPTION", "field": "text", "en": "A GM would like to chat with you. Click here to begin.", "hash": "55ac2b8d63445bc1", "src": "db2@1.60.1.70170"}
 {"id": "GM_RESPONSE_ALERT", "field": "text", "en": "You have received a ticket response. Click here to read it.", "hash": "d7c1b29a992fee48", "src": "db2@1.60.1.70170"}
@@ -265,9 +268,12 @@
 {"id": "GUILD_NAME_ALERT_MEMBER_HELP", "field": "text", "en": "Your guildmaster must pick a new name within the guidelines of our naming policy.", "hash": "41d7652fcbc93839", "src": "db2@1.60.1.70170"}
 {"id": "GUILD_NAME_ALERT_WARNING", "field": "text", "en": "Your guild has been flagged for a rename.", "hash": "a415f88b17dfd312", "src": "db2@1.60.1.70170"}
 {"id": "GUILD_NEWS", "field": "text", "en": "Guild News", "hash": "50f016d77d206e02", "src": "db2@1.60.1.70170"}
+{"id": "GUILD_NEWS_DUNGEON_ENCOUNTER_HEROIC", "field": "text", "en": "|cffd10000[Heroic: %s]|r", "hash": "d0990339bf520bed", "src": "db2@1.60.1.70170"}
+{"id": "GUILD_NEWS_DUNGEON_ENCOUNTER_MYTHIC", "field": "text", "en": "|cffd10000[Mythic: %s]|r", "hash": "11905b2562a54959", "src": "db2@1.60.1.70170"}
 {"id": "GUILD_NEWS_FILTERS", "field": "text", "en": "Guild News Filters", "hash": "e56e1926f66e8ce4", "src": "db2@1.60.1.70170"}
 {"id": "GUILD_NEWS_LINK_ITEM", "field": "text", "en": "Link Item to Chat", "hash": "0befbce6ec1ee9a5", "src": "db2@1.60.1.70170"}
 {"id": "GUILD_NEWS_MAKE_STICKY", "field": "text", "en": "Make Sticky", "hash": "ee876e5f5f89aaf0", "src": "db2@1.60.1.70170"}
+{"id": "GUILD_NEWS_MOTD", "field": "text", "en": "MotD: %s", "hash": "f00499fa1e26c0ab", "src": "db2@1.60.1.70170"}
 {"id": "GUILD_NEWS_REMOVE_STICKY", "field": "text", "en": "Remove Sticky", "hash": "ce22481f12b9cb87", "src": "db2@1.60.1.70170"}
 {"id": "GUILD_NEWS_TITLE", "field": "text", "en": "Guild News", "hash": "50f016d77d206e02", "src": "db2@1.60.1.70170"}
 {"id": "GUILD_NEWS_VIEW_ACHIEVEMENT", "field": "text", "en": "View Achievement", "hash": "4b4094cd3fcd4b40", "src": "db2@1.60.1.70170"}

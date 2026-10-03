@@ -27,7 +27,7 @@ Totem  # hooked: UI/TooltipData; every line after the totem's name through the d
 Toy  # not hooked: not on Forever (the Collections window shows no Toy Box tab in game)
 CorruptionCleanser  # not hooked: not on Forever (BfA corruption)
 MinimapMouseover  # hooked: UI/TooltipUnit; the minimap's quest block (title and objectives), names kept
-Flyout  # not hooked: no Lua names it [unverified in game: action-bar flyouts]
+Flyout  # hooked: UI/TooltipData; the flyout's name and description, SpellFlyout rows matched in their own families
 Quest  # not hooked: a quest link's tooltip [unverified in game: whether quest links use this type]
 QuestPartyProgress  # hooked: UI/TooltipData; every line after the first through the dictionary (objective templates)
 Macro  # not hooked: no GameTooltip:SetMacro in the Forever UI [unverified in game]
