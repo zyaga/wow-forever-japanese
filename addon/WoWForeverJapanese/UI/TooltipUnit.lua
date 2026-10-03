@@ -126,7 +126,8 @@ end
 -- agrees. → quest id | nil, why
 function TooltipUnit.questFor(title)
   local isSecret = Compat.resolve("issecretvalue")
-  if type(title) ~= "string" or title == "" or (type(isSecret) == "function" and isSecret(title)) then
+  -- the secret check first: comparing or searching a secret value is itself an error
+  if type(title) ~= "string" or (type(isSecret) == "function" and isSecret(title)) or title == "" then
     return nil, "no readable title"
   end
   local h1 = WFJ.Hash.h32x2(WFJ.Normalize.v1(WFJ.Collector.text(title)))
@@ -171,8 +172,8 @@ WFJ.UIStrings.questTitle = TooltipUnit.titleJapanese
 -- → the block in Japanese | nil, notes
 function TooltipUnit.minimapBlock(text, single)
   local isSecret = Compat.resolve("issecretvalue")
-  if type(text) ~= "string" or (not single and not text:find("\n", 1, true))
-    or (type(isSecret) == "function" and isSecret(text)) then
+  if type(text) ~= "string" or (type(isSecret) == "function" and isSecret(text))
+    or (not single and not text:find("\n", 1, true)) then
     return nil
   end
   local out, changed, notes = {}, false, {}
