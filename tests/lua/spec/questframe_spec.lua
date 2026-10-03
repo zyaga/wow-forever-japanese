@@ -110,6 +110,34 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     assert.are.same({ "quest.title", 2 }, lookups[1])
   end)
 
+  it("a reward redraw (item data arriving on a first open) keeps the Japanese prose and the banner", function()
+    Stub.showDetail()
+    QF.onShowRewards()
+    assert.are.equal("Sharptalonの鉤爪", QuestInfoTitleHeader:GetText())
+    assert.are.equal("Silverwind Refugeの説明文", QuestInfoDescriptionText:GetText())
+    assert.are.equal("Sharptalonを倒せ", QuestInfoObjectivesText:GetText())
+    assert.are.equal(3, SS.count(DETAIL))
+    assert.are.equal(WFJ.MARKER.stale, QF.banner:GetText())
+    -- the records still release to the client's English
+    QuestFrame:Hide()
+    assert.are.equal("Sharptalon's Claw", QuestInfoTitleHeader:GetText())
+
+    Stub.showReward()
+    QF.onShowRewards()
+    assert.are.equal("Sharptalonの鉤爪", QuestInfoTitleHeader:GetText())
+    assert.are.equal("よくやった", QuestInfoRewardText:GetText())
+  end)
+
+  it("a redraw after the client wrote another quest on the same widgets translates the new quest", function()
+    Stub.showDetail()
+    setQuest(3)
+    Stub.quest.title = "Another Quest"
+    QuestInfoTitleHeader:SetText("Another Quest") -- the client's writer, without our hook
+    QF.onShowRewards()
+    assert.are.equal("Another Quest", QuestInfoTitleHeader:GetText())
+    assert.are.equal(3, SS.get(DETAIL, "title").meta.id) -- the new quest's record, not the old one kept
+  end)
+
   it("progress (through the panel's OnShow) then reward: five fields on two surfaces", function()
     Stub.showProgress()
     assert.are.equal("Sharptalonの鉤爪", QuestProgressTitleText:GetText())

@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- A quest window opened for the first time after logging in no longer turns back to English when its reward items finish loading.
+
 ## 0.1.0-alpha.5 - 2026-10-03
 
 ### Added

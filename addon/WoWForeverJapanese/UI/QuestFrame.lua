@@ -229,9 +229,14 @@ function QuestFrame.showPanel(panelName)
     -- The API English is the truth even when the widget is decorated: record before the equality guard. A variant
     -- is never recorded as the quest's description: other characters see the quest's own wording.
     if not variant then WFJ.Collector.record("quest", id, field, en) end
+    -- The panel is shown again without the client rewriting its prose (a reward redraw, see onShowRewards): a
+    -- field that still shows our text for the same English is kept as it is.
+    local rec = WFJ.SurfaceState.get(panel.surface, field)
     -- The widget must show exactly the API English; anything else (empty, decoration, a moved widget) is left
     -- alone, and a record from an earlier quest on that widget is dropped, never restored over the new text.
-    if isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en and variant then
+    if rec and rec.fs == fs and rec.applied ~= nil and rec.en == en and isText(fs) and fs:GetText() == rec.applied then
+      n = n + 1
+    elseif isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en and variant then
       WFJ.Render.show(panel.surface, field, fs, en, "quests", "gossip", variant, { refit = panel.refit })
       n = n + 1
     elseif isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en then
