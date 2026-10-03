@@ -158,9 +158,9 @@ end
 function Speech.knownLanguage(language)
   if language == nil or (not secret(language) and language == "") then return true end
   if secret(language) then return false end
-  local count, byIndex = Compat.resolve("GetNumLanguages"), Compat.resolve("GetLanguageByIndex")
-  if type(count) ~= "function" or type(byIndex) ~= "function" then return false end
-  for i = 1, count() or 0 do
+  local numLanguages, byIndex = Compat.resolve("GetNumLanguages"), Compat.resolve("GetLanguageByIndex")
+  if type(numLanguages) ~= "function" or type(byIndex) ~= "function" then return false end
+  for i = 1, numLanguages() or 0 do
     if byIndex(i) == language then return true end
   end
   return false
