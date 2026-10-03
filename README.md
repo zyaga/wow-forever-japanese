@@ -60,6 +60,12 @@ small popup shows how to read it, its dictionary form, and a short English meani
 line whose English has changed since it was translated shows **[要更新 / English Changed]**. Either marker can be
 turned off.
 
+**Why some text is still in English.** Some English is not in the game's files at all: NPC dialogue, a quest's text
+when you check its progress or hand it in, and what NPCs say in chat come from the server only when a player sees
+them. A line nobody has recorded yet has no Japanese, so it stays in English with the **[未翻訳 / Not Translated]**
+marker. The addon notes such lines as you play (see below), and once someone sends them in, a later update
+translates them.
+
 **Settings.** Open **Esc > Options > AddOns > WoW Forever Japanese**, or type `/wfj config`. You can turn the whole
 translation on or off, turn each area on or off (quests, NPC talk, tooltips, the interface, books), change the key
 you hold for English, set a key that switches translation on and off, and turn the markers, the popup dictionary and
@@ -69,8 +75,7 @@ the minimap button on or off.
 
 **English it has no Japanese for.** When the game shows English the addon has no translation for (quest text, NPC
 dialogue with the id of the NPC who said it, item and spell descriptions, NPC names), the addon notes that English
-in its saved settings file, so it can be translated later. Your character's name is stored as a placeholder, and
-next to a line that names your class or race, the class and race are noted; no account, realm or location is stored. Nothing is sent anywhere unless you send it yourself. It is on by
+in its saved settings file, so it can be translated later. It saves your class and race, because some game lines change depending on them. It never saves your character's name, account, realm or location. Nothing is sent anywhere unless you send it yourself. It is on by
 default, the addon says so in chat the first time, and you can turn it off under **English Collector** in the
 settings.
 
@@ -82,7 +87,7 @@ in the game, so the next send holds only new lines. Lines that have a translatio
 window says the text is too long even to paste, it asks you to zip the saved file and drag it into the same form
 (type `/reload` first if you played since logging in).
 
-![The English Collector settings page, with the switch that turns recording off](docs/images/collector.jpg)
+![The English Collector settings page, with the steps and the Send English button](docs/images/collector.jpg)
 
 ## Reporting a bad translation
 
@@ -197,15 +202,17 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
 **マーカー。** まだ翻訳のない行は **[未翻訳 / Not Translated]** と表示され、英語のままになります。翻訳後に英語が変わった行には **[要更新 / English Changed]** が付きます。どちらも非表示にできます。
 
+**英語のまま残るテキスト。** NPC の会話、クエストの進行中や報告時の文章、チャットに出る NPC のセリフなど、一部の英語はゲームのファイルに入っておらず、プレイヤーが目にしたときにだけサーバーから届きます。まだ誰も記録していない行には日本語訳がないため、**[未翻訳 / Not Translated]** マーカー付きの英語のまま表示されます。アドオンはこうした行をプレイ中に記録します（下記）。誰かが送ってくれれば、以降の更新で翻訳されます。
+
 **設定。** **Esc > オプション > AddOns > WoW Forever Japanese**、または `/wfj config` で開きます。翻訳全体や項目ごとのオン・オフ、英語表示キーの変更、翻訳を切り替えるキーの設定、マーカー・ポップアップ辞書・ミニマップボタンの表示を切り替えられます。
 
 ![アドオンの設定画面](docs/images/settings.jpg)
 
-**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。キャラクター名はプレースホルダーに置き換えて保存し、クラスや種族が出てくる行にはそのクラスと種族を書き添えます。アカウント・レルム・位置は保存しません。自分で送らない限り、どこにも送信されません。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
+**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。クラスと種族は保存されます。ゲームの文章の一部がそれによって変わるためです。キャラクター名、アカウント、レルム、位置は保存されません。自分で送らない限り、どこにも送信されません。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
 
 **記録した英語の送り方。** 設定の **英語テキスト収集** ページで **英語を送る** をクリックします（`/wfj collector send` と入力しても同じです）。まだ送っていない行が 1 つのリンクにまとめられたウィンドウが開きます。リンクをコピーして（クリックして Ctrl+C）ブラウザで開くと、入力済みの GitHub の Issue フォームが開きます。ウィンドウに 2 つ目の欄があるときは、リンクに入りきらない長さです。その文字列もフォームの欄に貼り付けてください。Issue を送信したら、ゲーム内で **送信しました** をクリックします。次回は新しい行だけを送ります。その時点で翻訳がある行は除かれます。貼り付けられないほど長いとウィンドウに表示されたときは、保存ファイルを zip にして同じフォームにドラッグするよう案内されます（ログイン後に遊んだ場合は先に `/reload` してください）。
 
-![英語テキスト収集の設定画面。記録をオフにするスイッチがある](docs/images/collector.jpg)
+![英語テキスト収集の設定画面。手順と「英語を送る」ボタンがある](docs/images/collector-ja.jpg)
 
 ### 翻訳の問題を報告する
 

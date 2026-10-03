@@ -15,8 +15,8 @@ body:
 
         **What it contains:** the English game text the addon recorded: quest text, NPC dialogue with the ids of
         the NPCs who said it, item and spell descriptions, and NPC names, keyed by game id, with the game build
-        and the addon version. Your character's name is replaced by a placeholder; next to a line that names your
-        class or race, the class and race are noted. It holds **no character name, account, realm, location, chat
+        and the addon version. It saves your class and race, because some game lines change depending on
+        them. It holds **no character name, account, realm, location, chat
         or time data.** Wording that depends on your character's gender ("sir" / "madam") is kept as your game
         shows it. A zipped saved file also holds the addon's settings and its problem log (`WFJ_Log`: times, Lua
         memory, and the names of game functions and frames that failed). This issue is public.
@@ -30,7 +30,7 @@ body:
 
         **中身:** アドオンが記録したゲームの英語テキストです。クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、
         NPC の名前が、ゲーム内 ID ごとに、ゲームのビルドとアドオンのバージョンと一緒に入っています。
-        キャラクター名はプレースホルダーに置き換えられます。クラスや種族の名前を含む行には、そのクラスと種族が記録されます。
+        クラスと種族は保存されます。ゲームの文章の一部がそれによって変わるためです。
         **キャラクター名・アカウント・レルム・位置・チャット・時刻の情報は含まれません。**
         キャラクターの性別で変わる言い回し（"sir" / "madam"）はゲームの表示どおりに残ります。
         zip にした保存ファイルには、アドオンの設定と問題ログ（`WFJ_Log`：時刻、Lua のメモリ量、失敗したゲームの関数やフレームの名前）も含まれます。
