@@ -165,7 +165,8 @@ end
 -- sits on the wrap edge (the tooltip trace shows the wrapped width going 242, 249, 242 … with nothing else
 -- changing). A refresh lays the tooltip out three times (the client's English, this refit, one more Show), so the
 -- line came out the other way on every refresh and flickered. A second Show here makes the count even, so every
--- refresh ends on the same line breaks.
+-- refresh ends on the same line breaks. [likely: the tooltip trace in game, Forever 1.60.1.70205; in-game check in
+-- docs/testing/strategy.md]
 local function refitFor(frame)
   local fn = refits[frame]
   if fn then return fn end
@@ -460,7 +461,9 @@ function Tooltip.installCallTrace()
   callHooks = true
   for _, m in ipairs({ "Show", "SetPadding", "SetMinimumWidth" }) do
     if type(tip[m]) == "function" then
-      hooksecurefunc(tip, m, function(self) callNote("GameTooltip:" .. m, wrappedLine(self)) end)
+      hooksecurefunc(tip, m, function(self)
+        if Tooltip.trace then callNote("GameTooltip:" .. m, wrappedLine(self)) end
+      end)
     end
   end
   for i = 1, 30 do
@@ -469,6 +472,7 @@ function Tooltip.installCallTrace()
       for _, m in ipairs({ "SetText", "SetFont", "SetWidth" }) do
         if type(fs[m]) == "function" then
           hooksecurefunc(fs, m, function(self)
+            if not Tooltip.trace then return end
             local ok, n = pcall(self.GetNumLines, self)
             if ok and type(n) == "number" and not anySecretOf(n) and n > 1 then callNote(m, self) end
           end)
@@ -484,7 +488,7 @@ local function show(frame, area, kind, id, lines, first, last, name, runArgs)
   WFJ.Render.forget(surface)
   if first and lines[first].text == "" then first, last = nil, nil end
   local refit = refitFor(frame)
-  -- One refit for the whole hover: the per-record refit is a no-op while inRefit is set, then Show() runs once.
+  -- One refit for the whole hover: the per-record refit is a no-op while inRefit is set, then the refit runs once.
   -- The flag is cleared even when a write errors, so the frame is never left silently unhandled.
   inRefit[frame] = true
   local ok, n = pcall(function()

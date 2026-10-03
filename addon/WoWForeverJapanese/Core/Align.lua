@@ -392,7 +392,7 @@ end
 -- and per paragraph the byte length and key of the words it begins with, its Japanese and its shape. The live
 -- text is split at its blank lines: the first paragraph must be the heading, and every other one is found by its
 -- opening words and filled from its own values with `check`. A paragraph found by none, or one that does not fit,
--- leaves the whole line English. → ok, text
+-- leaves the whole line English. [verified: in game, the Camp Benefits aura with its Tent paragraph] → ok, text
 local function paragraphsOf(text)
   local out = {}
   for p in (text:gsub("\r\n", "\n") .. "\n\n"):gmatch("(.-)\n%s*\n") do

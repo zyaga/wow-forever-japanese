@@ -22,7 +22,7 @@ The bundled font is the one exception (below).
 
 ## English game text
 
-All English text in `data/english/` (139,796 lines) is Blizzard Entertainment's, whichever copy it was read
+All English text in `data/english/` (139,813 lines) is Blizzard Entertainment's, whichever copy it was read
 from. It is kept to align translations with their source and to hash it; the addon never ships it (the player
 always sees the live English the client writes; see [principles](../architecture/principles.md#4-the-addon-never-ships-stored-english)).
 Publishing it in the repository follows the long-standing practice of open WoW data projects such as pfQuest,
@@ -38,7 +38,7 @@ ownership.
 | wago.tools DB2 exports | 2,015 | item and spell text | Blizzard game data |
 | pfQuest | 357 | quest text | MIT |
 | forever-vo player captures ([ADR-055](../adr/055-forever-vo-captures-as-an-english-source.md)) | 791 | quest progress and turn-in text, and NPC greetings, that no other source has, recorded by Forever players with forever-vo's addon | MIT |
-| The addon's own collector | 13 | text the maintainer's client recorded in game | Blizzard game data |
+| The addon's own collector | 30 | text the maintainer's client recorded in game | Blizzard game data |
 
 Sources whose terms forbid it are never used; nothing is scraped from Wowhead or similar sites. The Forever beta
 carries no confidentiality terms: Blizzard's license makes a beta test confidential only when Blizzard announces it

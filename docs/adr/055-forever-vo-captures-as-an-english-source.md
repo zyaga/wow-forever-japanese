@@ -28,10 +28,11 @@ held 577 submissions with about 27,000 quest lines from builds 69913 to 70205.
 
 ## Decision
 
-1. **forever-vo is an allowed English source** for quest progress and turn-in text and NPC greetings (the gossip
-   window's text) (the maintainer's approval, recorded in the project's rules). It is read from a clone pinned by commit (`FOREVER_VO`, `FOREVER_VO_SHA` in the
-   Makefile) by `wfj import english forever-vo` (`run_forever_vo` in `pipeline/wfj/cmd/import_english.py`, reader
-   `pipeline/wfj/io/forever_vo.py`). Lines carry `src: forever-vo@<commit>`.
+1. **forever-vo is an allowed English source** for quest progress and turn-in text and for NPC greetings, the
+   gossip window's text. The maintainer approved it, and the project's rules record it. It is read from a clone
+   pinned by commit (`FOREVER_VO`, `FOREVER_VO_SHA` in the Makefile) by `wfj import english forever-vo`
+   (`run_forever_vo` in `pipeline/wfj/cmd/import_english.py`, reader `pipeline/wfj/io/forever_vo.py`). Lines carry
+   `src: forever-vo@<commit>`.
 2. **Only English clients.** The captures name no client language, and some come from German clients. An entry
    counts only when its quest title equals the English title we hold for that quest id.
 3. **Two submissions must agree.** A text is taken only when at least two separate submissions sent it (compared
@@ -55,6 +56,8 @@ held 577 submissions with about 27,000 quest lines from builds 69913 to 70205.
   German entries and 75 fields where submissions disagreed but a majority decided. 636 more matched our existing
   English exactly, which is good evidence the captures are accurate.
 - A text one player sent stays out until a second sends it; refreshing the pin picks those up.
+- The two-submission rule counts the `origin` each capture file names, so one person filing two issues passes it.
+  The backstop is the pinned commit: a pin is moved by a person, who reads what the new captures add.
 - A capture written for one gender (`brother` / `sister`) ships that wording; a player of the other gender sees the
   stale marker until our collector records their version.
 - **Removing the source** is a data change, not a code hunt: when a better source or our collector has replaced
