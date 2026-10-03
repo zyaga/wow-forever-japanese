@@ -2,6 +2,7 @@
 
 - **Status:** Accepted. Implemented in `Core/Collector.lua`, the surfaces' record calls, `UI/Slash.lua`, `pipeline/wfj/io/collector_dump.py`, `pipeline/wfj/cmd/import_.py`, `pipeline/wfj/cmd/check.py` (`UNCONSULTED_SOURCES`) and `.github/ISSUE_TEMPLATE/collector-dump.yml`.
 - **Date:** 2026-09-14
+- **Amended by:** [ADR-053](053-forever-shown-english-is-the-english.md), decision 3. The import now replaces a stand-in line (VMaNGOS, pfQuest, an older client) with the English the Forever client showed, keeps the same client's own tables and quest cache, and `check` consults collector English for quest and gossip.
 
 ## Context
 Quest progress/completion text, Forever-new quests, rendered item/spell descriptions and NPC names exist only in players' clients. The addon ships no English (ADR-002), only the first 32 bits of each field's English hash (`h1`, ADR-008). The Forever beta is the moment to harvest this text. Players will post the file publicly on GitHub, so it must be private by construction, and the repo's English store must not be damaged by a bad, old or divergent dump. `data/english/` already holds curated English from pfQuest (quests) and wago (item/spell names), and an importer that rewrites a whole type would delete any other source's lines.

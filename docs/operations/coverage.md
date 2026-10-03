@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-02 at commit `9d6444e1`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-02 at commit `53ad6047`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -10,14 +10,14 @@
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
 | Quest text | 19,452 | 19,341 | 111 | 100.0% | 0 |
-| NPC dialogue (gossip, speech) | 10,643 | 10,643 | 0 | 100.0% | 0 |
+| NPC dialogue (gossip, speech) | 10,663 | 10,643 | 0 | 99.8% | 20 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 409 | 372 | 37 | 100.0% | 0 |
 | Exploration / event objectives | 218 | 216 | 2 | 100.0% | 0 |
 | Item descriptions | 10,124 | 8,611 | 0 | 85.1% | 1,513 |
 | Spell tooltips + auras | 25,458 | 10,369 | 0 | 40.7% | 15,089 |
 | Interface strings | 15,715 | 13,708 | 9 | 87.3% | 1,998 |
-| **All** | **83,276** | | | **77.7%** | **18,600** |
+| **All** | **83,296** | | | **77.6%** | **18,620** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 330, gossip 81, item 888, spell 285, ui 86.
@@ -39,6 +39,7 @@ professions, internal strings): quest 330, gossip 81, item 888, spell 285, ui 86
 
 | Surface | Why | Lines |
 |---|---|---|
+| NPC dialogue (gossip, speech) | no Japanese yet | 20 |
 | Item descriptions | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 1,511 |
 | Item descriptions | no Japanese yet | 2 |
 | Spell tooltips + auras | no Japanese yet | 15,064 |
@@ -320,7 +321,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `wdb-npccache.*` | surface:gossip.text | 0 | NPC dialogue; gossip English comes from VMaNGOS and the in-game collector (docs/systems/collector.md) |
 | `wdb-pagetextcache.*` | surface:book.text | 0 | book and letter pages; English from VMaNGOS and the collector |
 | `wdb-petitioncache.*` | internal | 0 | player-written guild charter names and text, never game text |
-| `wdb-questcache.*` | surface:quest.* | 2,406 | quest text, objectives and area text; the whole server set is harvested by the quest scan (docs/operations/beta-day-harvest.md) |
+| `wdb-questcache.*` | surface:quest.* | 2,406 | quest text, objectives and area text, plus each conditional description and completion log line keyed like NPC dialogue; the whole server set is harvested by the quest scan (docs/operations/beta-day-harvest.md) |
 | `wmoareatable.f0` | names | 7,660 | area names inside buildings |
 | `worldstateexpression.f0` | internal | 3,968 | encoded expressions |
 | `zoneintromusictable.f0` | internal | 54 | music names |

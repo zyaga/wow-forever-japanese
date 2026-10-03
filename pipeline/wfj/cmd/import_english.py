@@ -104,7 +104,9 @@ def run_pfquest(a: argparse.Namespace) -> int:
             lines.append(english_line(id_, field, en, hash_key(normalize_v1(en)), src))
     store = Store(root, english=True)
     # the quest cache's English outranks pfQuest's (ADR-020 decision 5), whichever build wrote it
-    store.save("quest", merge_source("quest", store.load("quest"), lines, "pfquest", outranked_by=("wdb",)))
+    # what a client recorded in game (the collector) and the client's own cache outrank pfQuest (ADR-053)
+    merged = merge_source("quest", store.load("quest"), lines, "pfquest", outranked_by=("wdb", "collector"))
+    store.save("quest", merged)
     print(f"english quest: {len({ln['id'] for ln in lines})} ids, {len(lines)} lines ({src})")
     return 0
 
@@ -485,8 +487,9 @@ def run_vmangos(a: argparse.Namespace) -> int:
     ]
     store = Store(data_root(), english=True)
     # Merge every type before writing any: a refused merge must not leave another type's merge written.
-    merged_book = merge_source("book", store.load("book"), books, "vmangos")
-    merged_quest = merge_source("quest", store.load("quest"), quest, "vmangos")
+    # a line a client recorded in game (the collector) outranks VMaNGOS, a stand-in (ADR-053)
+    merged_book = merge_source("book", store.load("book"), books, "vmangos", outranked_by=("collector",))
+    merged_quest = merge_source("quest", store.load("quest"), quest, "vmangos", outranked_by=("collector",))
     existing = store.load("gossip")
     mine = {ln["id"]: ln for ln in existing if source_name(ln) == "vmangos"}
     if not by_key and mine:
@@ -577,6 +580,8 @@ def run_wdb(a: argparse.Namespace) -> int:
     if union:
         merged = take_answered_whole(merged, cached)
     merged_objectives = _merge_objectives(store.load("objective"), objective_lines, union)
+    gossip_lines = _wdb_keyed_lines(cache, src)
+    merged_gossip, added_gossip = _add_keyed(store.load("gossip"), gossip_lines)
     prior_area = store.load(AREA_TYPE)
     merged_area = _merge_area(prior_area, area_lines, cached, union)
     before_area = {(ln["id"], ln["field"]): ln["hash"] for ln in prior_area}
@@ -594,6 +599,7 @@ def run_wdb(a: argparse.Namespace) -> int:
         store.save("quest", merged)
         store.save("objective", merged_objectives, allow_empty=True)
         store.save(AREA_TYPE, merged_area, allow_empty=True)
+        store.save("gossip", merged_gossip, allow_empty=True)
     records = len(cache.quests) + len(cache.placeholders)
     print(
         f"english quest ({src}){' [dry run: nothing written]' if a.dry_run else ''}: {records} records · "
@@ -611,7 +617,8 @@ def run_wdb(a: argparse.Namespace) -> int:
         c = counts[f]
         print(f"{f:12} {c['same']:6} {c['changed']:7} {c['new']:6}")
     print(f"english objective ({src}): {len(objective_lines)} objective texts")
-    _print_conditional(cache)
+    kinds = "conditional descriptions, completion logs"
+    print(f"english gossip ({src}): {len(gossip_lines)} keyed texts ({kinds}), {added_gossip} new")
     if questv2 is not None:
         _print_questv2(questv2, unanswered, cached, a.missing)
     return 0
@@ -700,18 +707,35 @@ def _change_kind(before: dict[tuple[Any, str], str], ln: dict[str, Any]) -> str:
     return "new" if prior is None else "same" if prior == ln["hash"] else "changed"
 
 
-def _print_conditional(cache: wdb.WdbCache) -> None:
-    """Report the conditional description variants the cache holds."""
-    # Forever serves a conditional variant of a quest's description (a mage's wording of the
-    # same quest, say). The reader holds them so the payload adds up; they are reported, not imported,
-    # because an entry is keyed by its PlayerCondition and that key is not designed yet.
-    conditional = [(q.id, cond) for q in cache.quests for cond in q.conditional if cond[2].strip()]
-    if conditional:
-        shown = ", ".join(f"quest {qid}/condition {c[0]}" for qid, c in conditional[:5])
-        print(
-            f"conditional quest text in this cache: {len(conditional)} entries across "
-            f"{len({qid for qid, _ in conditional})} quests ({shown}…): read, not imported"
-        )
+def _wdb_keyed_lines(cache: wdb.WdbCache, src: str) -> list[dict[str, Any]]:
+    """The quest cache's text the client shows with no id the addon can read, keyed like NPC dialogue by the
+    hash of its English (ADR-005): a quest's conditional description (another wording of the same quest for a
+    class or race, shown in the quest window in place of the default) and its completion log line (the
+    tracker's and the quest log's line once the quest is ready). The addon finds them by the live text's
+    fingerprint."""
+    out: dict[str, dict[str, Any]] = {}
+    for q in cache.quests:
+        texts = [t for _, _, t in q.conditional] + [q.completion_log]
+        for en in texts:
+            norm = normalize_v1(en or "")
+            if norm:
+                k = hash_key(norm)
+                out.setdefault(k, english_line(k, "text", en, k, src))
+    return [out[k] for k in sorted(out)]
+
+
+def _add_keyed(existing: list[dict[str, Any]], new: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int]:
+    """Keyed English is additive: a key already present (from VMaNGOS, the collector or an earlier cache)
+    keeps its line; a key holding other English is reported, never resolved silently. → (lines, added)"""
+    present = {ln["id"]: ln for ln in existing}
+    added = []
+    for ln in new:
+        cur = present.get(ln["id"])
+        if cur is None:
+            added.append(ln)
+        elif normalize_v1(cur["en"]) != normalize_v1(ln["en"]):
+            raise ValueError(f"wdb: gossip hash {ln['id']} names two texts: {cur['en']!r} and {ln['en']!r}")
+    return existing + added, len(added)
 
 
 def _print_questv2(questv2: set[int], unanswered: list[int], cached: set[int], missing: str | None) -> None:

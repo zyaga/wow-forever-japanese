@@ -225,7 +225,12 @@ function QuestFrame.showPanel(panelName)
     WFJ.Collector.record("quest", id, field, en)
     -- The widget must show exactly the API English; anything else (empty, decoration, a moved widget) is left
     -- alone, and a record from an earlier quest on that widget is dropped, never restored over the new text.
-    if isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en then
+    local variant = field == "description" and type(WFJ.ShippedGossipKey) == "function" and WFJ.ShippedGossipKey(en)
+    if isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en and variant then
+      -- a conditional description (another wording of the quest for this character), keyed by its English
+      WFJ.Render.show(panel.surface, field, fs, en, "quests", "gossip", variant, { refit = panel.refit })
+      n = n + 1
+    elseif isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en then
       -- live: the API English, for the stale marker's live check (ADR-019)
       WFJ.Render.show(panel.surface, field, fs, en, "quests", "quest." .. field, id, { refit = panel.refit, live = en })
       n = n + 1

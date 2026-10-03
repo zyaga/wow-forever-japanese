@@ -30,8 +30,8 @@
   wfj import draft <type> <draft.jsonl> --model ID [--critic ID] --date D --name NAME   (ADR-014)
 
 English importers merge by source: an importer replaces its own lines and any line whose
-(id, field) it provides, and keeps every other source's lines. The collector import only adds (see
-run_collector).
+(id, field) it provides, and keeps every other source's lines; a collector line (English a client recorded in
+game) outranks pfQuest and VMaNGOS, and the collector import replaces those stand-ins (ADR-053).
 
 Every line written is `status: pending` (`check` assigns real statuses). Duplicate (id, field) pairs
 with identical Japanese collapse (origins recorded); different Japanese lands in `conflicts`.

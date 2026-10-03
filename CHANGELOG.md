@@ -19,6 +19,8 @@ an old setting stops working). A release moves those lines under its version num
 - The owner line under a pet, minion or guardian ("Bob's Pet") is Japanese.
 - Chat uses the addon's Japanese font for every line and the input box, so Japanese you type and Japanese other players write are visible.
 - Currency, mount, companion, equipment set, raid lock, totem and party quest-progress tooltips show their interface lines in Japanese; the name on the first line stays English.
+- A quest's other wording for your class or race, and the line the tracker shows once some quests are ready, are read from the quest cache so they can be translated.
+- Server notices in chat, spellbook flyouts, the transmog window's situation options and lock and requirement lines on objects can show Japanese.
 
 ### Changed
 - The game text is read from Forever build 1.60.1.70170.

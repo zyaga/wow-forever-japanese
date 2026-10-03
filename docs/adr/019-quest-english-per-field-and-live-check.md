@@ -2,6 +2,7 @@
 
 - **Status:** Accepted. Implemented in `pipeline/wfj/io/vmangos.py`, `pipeline/wfj/cmd/import_.py` (`import english vmangos`), `pipeline/wfj/core/status.py` (`Scope.srcs`), `pipeline/wfj/cmd/check.py` (`english_ref`, `fallback_baseline`, `OWN_ENGLISH_LATER`, `english.of`), `pipeline/wfj/emit/lua_writer.py` (no `h1` for a fallback-hash quest field), `pipeline/wfj/core/report.py` (`stale_rows`, gossip header), `pipeline/wfj/cmd/stats.py` (`--stale`, `--dump`), `pipeline/wfj/dev/gen_attribution.py` (VMaNGOS attribution), `Makefile` (`VMANGOS_DB`, `VMANGOS_SHA`), `addon/WoWForeverJapanese/Core/Collector.lua` (`fingerprints`, `MEMO_MAX`), `Core/Translator.lua` (the `fingerprints` dep and the live rule), `Main.lua`, `UI/QuestFrame.lua`, `UI/QuestLog.lua`, `UI/Render.lua` (`ctx.live`). In-game verification is checklist 15.
 - **Date:** 2026-09-14
+- **Amended by:** [ADR-053](053-forever-shown-english-is-the-english.md): `check` consults collector English for quest and gossip, the collector import replaces a pfQuest or VMaNGOS line for the same (id, field), and a collector line outranks VMaNGOS on a later import.
 
 ## Context
 Quest progress and turn-in (completion) text, NPC gossip and book text are **server-only**. No client API returns them by id, no DB2 table holds them, and the client cache does not either: a quest-ID scan of `questcache.wdb` (Classic Era 1.15.9.69722) found title, objectives and description only. They cannot be pre-verified on the Forever beta.

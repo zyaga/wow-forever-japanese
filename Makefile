@@ -338,7 +338,7 @@ forever-titles: ## list every SetTitle( call site in the camelot load sets (the 
 # A player's SavedVariables file (WoWForeverJapanese.lua) handed off through the collector-dump issue template.
 DUMP ?=
 
-import-collector: ## add one collector dump to data/english/ (never overwrites pfQuest / wago lines): DUMP=<file>
+import-collector: ## add one collector dump to data/english/ (replaces stand-in lines, keeps the client's own files): DUMP=<file>
 	@test -n "$(DUMP)" || { echo "usage: make import-collector DUMP=<path to WoWForeverJapanese.lua>"; exit 2; }
 	@D="$(DUMP)"; case "$$D" in /*) ;; *) D="$$PWD/$$D";; esac; \
 		cd pipeline && $(PY) -m wfj import english collector "$$D"
@@ -376,12 +376,13 @@ data: import check generate ## import → check → generate. Rebuilds imported 
 # The rebuild proof. From an empty data/english, `make data` over every client's pinned inputs must give back
 # the committed data/ and the addon's generated files. Refuses a dirty data/ or addon (nothing is deleted then);
 # otherwise the tree is what HEAD has again after a pass, and any difference is printed and fails the target.
-rebuild-check: ## empty data/english, run `make data` from the pinned inputs of every client, fail on any difference from HEAD (needs a clean data/ + addon)
+rebuild-check: ## empty data/english (collector lines kept), run `make data` from the pinned inputs of every client, fail on any difference from HEAD (needs a clean data/ + addon)
 	@$(ONE_CLIENT_GUARD)
 	@test -z "$$(git status --porcelain -- data $(ADDON) pipeline Makefile)" || { echo "rebuild-check: data/, $(ADDON), pipeline/ or the Makefile has uncommitted changes; commit or restore them first"; git status --short -- data $(ADDON) pipeline Makefile | head; exit 1; }
 	@$(MAKE) -s wdb-preflight
 	@for f in "$(PRED_QUEST)" "$(PRED_TOOLTIP)" "$(QJP)" "$(CJQ)" "$(PFQUEST)" "$(VMANGOS_DB)" "$(UI_KEYS)"; do test -e "$$f" || { echo "rebuild-check: shared input missing: $$f; nothing deleted"; exit 1; }; done
-	find data/english -name '*.jsonl' -delete
+	@# the collector's lines (English a client recorded in game) are no pinned input's: kept, ADR-053
+	cd pipeline && $(PY) -m wfj.dev.reset_english ../data/english
 	@# one job, stop at the first error: `data` is import → check → generate over the files just deleted
 	@$(MAKE) -s -j1 -S data || { echo "rebuild-check: the rebuild failed part-way; restore the tree with: git checkout -- data $(ADDON) && git clean -fd -- data $(ADDON)"; exit 1; }
 	@if [ -n "$$(git status --porcelain -- data $(ADDON))" ]; then git status --short -- data $(ADDON) | head -40; git diff --stat -- data $(ADDON) | tail -1; echo "rebuild-check: the rebuild differs from HEAD"; exit 1; fi

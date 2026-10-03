@@ -73,6 +73,16 @@ local function keyOf(type_)
 end
 local gossipKey = keyOf("gossip")
 
+-- The gossip key a translation of `text` is actually shipped under, or nil: quest text the client shows with no id
+-- the addon can read (a quest's conditional description, its completion log line) is keyed like NPC dialogue.
+function WFJ.ShippedGossipKey(text)
+  if type(text) ~= "string" or text == "" then return nil end
+  for _, k in ipairs(WFJ.Collector.keys(text, collectorPlayer())) do
+    if WFJ.Lookup.keyed("gossip", k) then return k end
+  end
+  return nil
+end
+
 local function expand(ja)
   if not WFJ.Placeholders.mayHaveTokens(ja) then return ja end -- token-free text never touches the client
   return (WFJ.Placeholders.expand(ja, player()))

@@ -144,8 +144,8 @@ class WdbQuest:
     # (QuestObjective id, text) per objective with its own text ("Rescue Drull"), in record order
     objective_texts: tuple[tuple[int, str], ...] = ()
     # (PlayerCondition id, quest-giver id, text) per conditional-text entry, in record order. Forever
-    # serves a variant of a quest's text per condition. Read so the payload is accounted for, and reported;
-    # **not imported**: an entry is keyed by its condition, and that key is not designed yet.
+    # serves a variant of a quest's description per condition; the import keys each text by the hash of its
+    # English, as NPC dialogue is (cmd/import_english._wdb_keyed_lines).
     conditional: tuple[tuple[int, int, str], ...] = ()
     # the other five strings: the quest frame portrait's giver text and name, its turn-in text and name,
     # and the completion log (GetQuestLogCompletionText: the tracker's and the quest log's line once the

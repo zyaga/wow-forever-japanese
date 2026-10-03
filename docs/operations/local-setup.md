@@ -87,7 +87,7 @@ The Lua and luarocks versions CI uses are the inputs of `.github/actions/lua-too
 | `make validate` | `wfj validate $(VALIDATE_FLAGS)` then `luac`: the CI gate. Schema, the provenance rule, English hash collisions, referential integrity, regenerate-and-diff of `Data/` and the TOC block, no unknown player placeholder on a shipped line, UI strings that keep their English specifiers, colour codes and line breaks and are unambiguous, and the readings. `VALIDATE_FLAGS="--base origin/main"` adds the check that no human line became machine (CI passes it on pull requests) |
 | `make coverage` | how much of the game ships in Japanese → [Coverage](coverage.md). Run it before every pull request that changes `data/`; a test fails while the committed file is out of date |
 | `make import-draft DRAFT=<file.jsonl> TYPE=<type> NAME=<draft name> MODEL=<model id> [CRITIC=<model id>] DATE=<YYYY-MM-DD> [REVERIFY=1]` | merges machine-drafted text into `data/<type>/` as `machine` variants; never edits a `human` or `correction` variant. See [Machine drafts](#machine-drafts) |
-| `make import-collector DUMP=<file>` | adds one player's collector dump to `data/english/`. See [Collector dumps](#collector-dumps) |
+| `make import-collector DUMP=<file>` | adds one player's collector dump to `data/english/`, replacing stand-in English with what the Forever client showed. The path may contain spaces. See [Collector dumps](#collector-dumps) |
 | `make report-intake ISSUE=N` / `make report-apply ISSUE=N MODEL=<model id>` | a player's fix report: [Fix reports](fix-reports.md) |
 
 ### Import and client tooling
@@ -107,7 +107,7 @@ These need the import inputs ([Import inputs](#import-inputs)) or an installed F
 | `make wdb-preflight` | the first step of `import` / `import-english`: for every client, the quest cache and the QuestV2 / Spell / ItemEffect CSVs must exist, the cache must decode and the table stamps must match the pins. Nothing is written |
 | `make served-columns WOW_DIR=<client folder> [LISTFILE=<community listfile>]` | regenerate `pipeline/served_columns.txt`, every text column of every client table the install ships plus its server caches, and print what the build added, dropped or changed. Tables are named through the community listfile (default `$(INPUTS)/community-listfile.csv`). Give each new column a disposition in `pipeline/served_dispositions.txt`; commit both. Read-only, no network ([ADR-052](../adr/052-coverage-by-served-data.md)) |
 | `make level1-spells WOW_DIR=<client folder>` | regenerate `pipeline/level1_spells.txt` (the spells a fresh level-1 character has) from the installed client; commit the result |
-| `make ui-inventory` / `make forever-addons` / `make forever-titles` | from a Forever UI extract: the UI strings each hooked surface can show (`pipeline/ui_inventory.txt`), every Blizzard addon and its load state (`pipeline/forever_addons.txt`), and every `SetTitle(` call site. Commit the generated files; tests read them |
+| `make ui-inventory` / `make forever-addons` / `make forever-titles` | from a Forever UI extract: the UI strings each hooked surface can show (`pipeline/ui_inventory.txt`) and every other string a loaded file of a translated addon names (`pipeline/ui_loadset.txt`, the load-set sweep), every Blizzard addon and its load state (`pipeline/forever_addons.txt`), and every `SetTitle(` call site. Commit the generated files; tests read them |
 | `make forever-table-counts WOW_DIR=<client folder>` | row counts of the client tables behind windows with no content on Forever; re-run per build |
 
 `python -m wfj.dev.client_ui --wow "<World of Warcraft folder>" --product wow_classic_beta --out <dir> --listfile <id;path csv>` extracts the interface files (FrameXML, `Blizzard_*`) from a local install, read-only. The path list must include every addon's `.toc` for `make forever-addons` to resolve load sets. `python -m wfj.dev.client_surface` builds the list of client names the addon depends on and the `WFJProbe` addon that checks them in game.
@@ -191,10 +191,12 @@ The source tags in `data/` (`cqjt@<sha>`, `ctjt@<sha>`, `qjp@<version>`, `cjq@<v
 A collector dump is a player's SavedVariables file, handed in through the `collector-dump` issue form. In game, `/wfj collector path` prints where it is: `<World of Warcraft folder>/<client folder>/WTF/Account/<ACCOUNT>/SavedVariables/WoWForeverJapanese.lua`. It is not committed.
 
 ```sh
-make import-collector DUMP=<path to WoWForeverJapanese.lua>
+make import-collector DUMP="<path to WoWForeverJapanese.lua>"
 ```
 
-Lines are tagged `collector@<client build>`. Entries that fail validation are counted by reason and not written; a `differs` row means a pfQuest, VMaNGOS, quest cache or client-table line was kept and a person decides. Importing a dump is safe to commit: `check`, `validate` and `stats` ignore `collector@` English (`UNCONSULTED_SOURCES` in `pipeline/wfj/cmd/check.py`), so no status, hash or yield figure changes ([Collector](../systems/collector.md)).
+The path may contain spaces (the SavedVariables folder of a default install does); quote it.
+
+Lines are tagged `collector@<client build>`. Entries that fail validation are counted by reason and not written. What the Forever client showed is the English ([ADR-053](../adr/053-forever-shown-english-is-the-english.md)): a recorded line replaces a stand-in (pfQuest, VMaNGOS, an older client's quest cache or tables), and a literal class or race word the stand-in has where the dump wrote `$C` / `$R` is put back. A line from the same client's own tables or quest cache is kept and listed under `differs from the client's own files (kept)`. `check` consults collector quest and gossip English, so an import can change those lines' hashes and statuses: run `make check` after it and review the delta before committing. Item and spell collector English is stored but not consulted. Running `make import-english` again replaces collector lines for any (id, field) pfQuest or VMaNGOS provides, so import the dumps again after it ([Collector](../systems/collector.md)).
 
 ## Machine drafts
 

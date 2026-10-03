@@ -46,6 +46,12 @@ or column it does not read is invisible to coverage, and a new build can add one
    than the Makefile's `forever_BUILD`, or when a served column has no disposition. Regenerating the inventory
    prints its delta against the committed file: the columns a patch added, dropped or changed. That delta is the
    per-build check of the harvest runbook.
+6. **Every interface string a loaded file names is decided.** The window inventory scans the files each hooked
+   window names. `make ui-inventory` also writes `pipeline/ui_loadset.txt` (`dev/ui_loadset.py`): every
+   GlobalStrings name that any loaded file of a Blizzard addon with disposition `surface`, `planned` or `library`
+   mentions, minus the window inventory's keys. An addon marked `unreachable`, `no-content`, `not-a-window` or
+   `no-text` is covered by that reason as a whole. `tests/python/test_ui_coverage.py` fails on any listed string
+   in neither `ui_keys.txt` nor `ui_exclusions.txt`.
 
 ## Consequences
 
@@ -59,7 +65,11 @@ or column it does not read is invisible to coverage, and a new build can add one
 - The community listfile is now an input of every re-pull. A stale listfile misses a table new on that build, so
   the runbook refreshes it with the one the UI extract uses.
 - Dispositions are hand work: 171 tables with text gave 254 columns to decide. Columns that are shown in game and
-  have no surface yet stay listed as not decided until a surface reads them or a reason is written.
+  have no surface yet stay listed as not decided until a surface reads them or a reason is written. On
+  1.60.1.70170 every column is decided; the last eleven became UI key families
+  ([research note](../research/2026-10-02-served-text-inventory.md#follow-up-every-open-column-decided)).
+- The load-set sweep's first run decided 1,325 interface strings no window file named: 739 translated and 586
+  excluded with a reason; 10 more were excluded for link markup and 9 for equalling an item or spell name.
 - The translation work grows by about 15,000 spell lines, and the addon's spell data grows with them.
 - One table (`collectablesourcevendorsparse`, a secondary-key layout) cannot be read yet; it is listed as
   `unreadable` and still needs a disposition.

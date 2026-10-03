@@ -217,7 +217,7 @@ _Avoid_: female hash (on its own; say the female variant's key or `h1f`), gender
 → [Data model](architecture/data-model.md) · [ADR-024](adr/024-gender-variants-and-short-name-candidates.md)
 
 **Gender alias**:
-A generated keyed row (gossip, book page) repeated under its English's [[Female variant]] key, so a female character's live English finds the same Japanese. Exists only in the generated Lua. A real row under that key wins; aliases on one key with different Japanese are all dropped, and that key shows the live English. `generate` reports the counts and the dropped keys.
+A generated keyed row (gossip, book page) repeated under its English's [[Female variant]] key, so a female character's live English finds the same Japanese. The line's word list ([[Reading]]) is shipped under the alias key too, so the female line has word cards. Exists only in the generated Lua. A real row under that key wins; aliases on one key with different Japanese are all dropped, and that key shows the live English. `generate` reports the counts and the dropped keys.
 _Avoid_: gender key, female row, duplicate row
 → [Pipeline](systems/pipeline.md) · [ADR-024](adr/024-gender-variants-and-short-name-candidates.md)
 
@@ -513,9 +513,9 @@ _Avoid_: scraper, dump mode, logger, tracker
 → [Collector](systems/collector.md) · [ADR-013](adr/013-collector-english.md)
 
 **Collector dump**:
-The `WFJ_Collector` SavedVariables table, and the player's `WoWForeverJapanese.lua` file that carries it: the [[Collector]]'s entries keyed `<kind>:<id>:<field>`, each only normalized text in Blizzard's tokens (`$N`, `$C` / `$R` in quest and gossip text, paragraphs joined with `$B$B` as pfQuest writes them), its hash and a client-build index; no character, account, realm, location or time. Handed off manually as a GitHub issue attachment and read by `wfj import english collector`, which only adds English and never overwrites a curated source; `check`, `validate` and `stats` do not consult imported collector English until a re-check policy is decided.
+The `WFJ_Collector` SavedVariables table, and the player's `WoWForeverJapanese.lua` file that carries it: the [[Collector]]'s entries keyed `<kind>:<id>:<field>`, each only normalized text in Blizzard's tokens (`$N`, `$C` / `$R` in quest and gossip text, paragraphs joined with `$B$B` as pfQuest writes them), its hash and a client-build index; no character, account, realm, location or time. Handed off manually as a GitHub issue attachment and read by `wfj import english collector`, which takes what the Forever client showed as the English: it replaces stand-in English (pfQuest, VMaNGOS, an older client) and keeps the same client's own tables and quest cache. `check`, `validate` and `stats` consult imported quest and gossip English; item and spell English is stored, not consulted.
 _Avoid_: upload, telemetry, log file, export, `WFJ_DB` (that is the settings table)
-→ [Collector](systems/collector.md)
+→ [Collector](systems/collector.md) · [ADR-053](adr/053-forever-shown-english-is-the-english.md)
 
 **Known English**:
 Live English whose hash matches the 32-bit source-hash prefix (`h1`) shipped for that field, so the addon recognises it and the [[Collector]] does not record it. Anything else (never shipped, changed since the check, or a field whose shipped hash belongs to another field: quest progress/completion, item/spell descriptions today) is unknown and recorded.
@@ -585,7 +585,7 @@ _Avoid_: overlay, hit frame, hover frame, mask
 → [Readings](systems/readings.md)
 
 **Live check**:
-The addon's comparison, on a quest surface, of a quest field's [[Live English]] fingerprints (the `h1` of each [[Gossip key]]-style candidate: full, name only, nothing replaced) with the field's shipped `h1`, or its [[Female variant]]'s `h1f`. It decides the [[Stale marker]]: no fingerprint equal → the Japanese shows with the marker; one equal → no marker, whatever the build-time status. No equal fingerprint while a name under 3 code points occurs in the text (the fingerprints include short-name candidates), no fingerprints (the player's name, class or race not known yet) or no shipped `h1` (a field checked against another field's English) → the build-time status decides. It never withholds a translation.
+The addon's comparison, on a quest surface, of a quest field's [[Live English]] fingerprints (the `h1` of each [[Gossip key]]-style candidate: full, race only, class only, name only, nothing replaced) with the field's shipped `h1`, or its [[Female variant]]'s `h1f`. It decides the [[Stale marker]]: no fingerprint equal → the Japanese shows with the marker; one equal → no marker, whatever the build-time status. No equal fingerprint while a name under 3 code points occurs in the text (the fingerprints include short-name candidates), no fingerprints (the player's name, class or race not known yet) or no shipped `h1` (a field checked against another field's English) → the build-time status decides. It never withholds a translation.
 _Avoid_: runtime stale check, live gate (the align gate is a different thing)
 → [Addon modules](architecture/addon-modules.md) · [ADR-019](adr/019-quest-english-per-field-and-live-check.md)
 

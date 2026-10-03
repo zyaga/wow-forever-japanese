@@ -208,7 +208,7 @@ zonemusic.f0  internal  # music names
 
 # Server caches (Cache/WDB/enUS): the text the server sends. The client keeps only what it has been sent, so a
 # cache's record count says what this install has seen, not what the server holds.
-wdb-questcache.*  surface:quest.*  # quest text, objectives and area text; the whole server set is harvested by the quest scan (docs/operations/beta-day-harvest.md)
+wdb-questcache.*  surface:quest.*  # quest text, objectives and area text, plus each conditional description and completion log line keyed like NPC dialogue; the whole server set is harvested by the quest scan (docs/operations/beta-day-harvest.md)
 wdb-npccache.*  surface:gossip.text  # NPC dialogue; gossip English comes from VMaNGOS and the in-game collector (docs/systems/collector.md)
 wdb-pagetextcache.*  surface:book.text  # book and letter pages; English from VMaNGOS and the collector
 wdb-creaturecache.*  names  # creature names and their titles (<Innkeeper>); UI/TooltipUnit.lua leaves line 1 and title lines as the client wrote them
@@ -289,9 +289,7 @@ friendshipreputation.f1  surface:ui:FriendshipGain  # StandingModified_lang: You
 mapdifficulty.f0  surface:ui:InstanceEntryMessage  # Message_lang: the error when entering an instance under its level
 mapdifficultyxcondition.f0  surface:ui:InstanceEntryFailure  # FailureDescription_lang
 
-# Not decided yet (each may be shown; see docs/research/2026-10-02-served-text-inventory.md):
-# playercondition.f0 locktype.f0 locktype.f1 locktype.f2 spellflyout.f0 spellflyout.f1 servermessages.f0
-# transmogsituation.f0 transmogsituationtrigger.f0 transmogsituationtrigger.f1 transmogoutfitslotoption.f0
+# The second set of client-table families (docs/research/2026-10-02-served-text-inventory.md):
 playercondition.f0  surface:ui:PlayerConditionFailure  # Failure_description_lang: a requirement line (Requires Frostwolf Clan - Exalted); faction names inside stay English
 locktype.f0  surface:ui:LockTypeName  # Name_lang: the lock action (Pick Lock, Disarm Trap); the gathering skills (Herbalism, Mining, Fishing) are names and left out
 locktype.f1  surface:ui:LockTypeResource  # ResourceName_lang: what the lock opens (Locked Items, Herbs)

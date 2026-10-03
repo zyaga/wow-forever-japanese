@@ -143,11 +143,37 @@ yet" row: `criteriatree.f0`, `renownrewards.f0` `f1` `f2`, `sharedstring.f0`, `t
 `toy.f0`, `servermessages.f0`. Each needs either a surface that reads it or a written reason, and the ones that
 are shown are new surfaces for the maintainer to approve.
 
+## Follow-up: every open column decided
+
+All 39 columns listed above now have a disposition in `pipeline/served_dispositions.txt`; none is left "not
+decided". The last eleven (`playercondition.f0`, `locktype.f0` `f1` `f2`, `spellflyout.f0` `f1`,
+`servermessages.f0`, `transmogsituation.f0`, `transmogsituationtrigger.f0` `f1`, `transmogoutfitslotoption.f0`)
+became UI key families. Each table is read from the install and was matched to wago.tools' 1.60.1.70170 export row
+for row.
+
+| Column | Family | Where it is matched |
+|---|---|---|
+| `playercondition.f0` | `PlayerConditionFailure` | requirement lines on object tooltips (`UI/TooltipUnit`) [unverified in game] |
+| `locktype.f0` / `f1` / `f2` | `LockTypeName` / `LockTypeResource` / `LockTypeVerb` | lock lines on object tooltips (`UI/TooltipUnit`) [unverified in game]; Herbalism, Mining and Fishing are skill names and left out, as are the developer rows |
+| `spellflyout.f0` / `f1` | `FlyoutName` / `FlyoutDescription` | the spellbook's flyout names (`UI/SpellBook`) and the flyout tooltip (`UI/TooltipData`, `Flyout` type) |
+| `servermessages.f0` | `ServerMessage` | server notices in system chat (`UI/ChatSystem`); a templated family, matched by `Index:matchTail` because the time argument is text; the bare `%s` row and the DEBUG row are left out |
+| `transmogsituation.f0` | `TransmogSituation` | the outfit window's situation menu (`UI/MenusTags`, `MENU_TRANSMOG_SITUATION`) |
+| `transmogsituationtrigger.f0` / `f1` | `TransmogTrigger` / `TransmogTriggerDescription` | each situation group's title and hover (`UI/Transmog`) |
+| `transmogoutfitslotoption.f0` | `TransmogSlotOption` | the slot options menu (`UI/MenusTags`, `MENU_TRANSMOG_OPTIONS`) |
+
+The same pass closed a blind spot on the interface side. The window inventory (`pipeline/ui_inventory.txt`) scans
+the files each hooked window names; a string named only in another loaded file was never decided. The load-set sweep
+(`dev/ui_loadset.py`, `pipeline/ui_loadset.txt`) reads every loaded file of each Blizzard addon whose disposition is
+`surface`, `planned` or `library`, and `tests/python/test_ui_coverage.py` fails on any string it finds that is
+neither translated nor excluded. Its first run decided 1,325 strings: 739 translated, 586 excluded with a reason,
+plus 10 excluded for link markup and 9 for equalling an item or spell name.
+
 ## Recommendation
 
 Measure coverage against the inventory and require a disposition for every served column
 ([ADR-052](../adr/052-coverage-by-served-data.md)). Regenerate the inventory on every build and read its delta as
-part of the harvest. Translate the spell gaps first (largest, already a surface), then decide the 39 open columns.
+part of the harvest. Translate the spell gaps first (largest, already a surface), then decide the 39 open columns (done; see the
+follow-up above).
 
 ## Related
 

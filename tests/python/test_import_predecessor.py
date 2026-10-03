@@ -163,7 +163,8 @@ def test_committed_data_validates(root):
         "wdb@1.60.1.70170", "db2@1.60.1.70170",  # Forever's pinned build
     }
     # Additive (ADR-050): a line an earlier Forever build served keeps that build's stamp
-    earlier_forever = re.compile(r"^(wdb|db2)@1\.60\.1\.\d+$")
+    # and English the Forever client showed in game, recorded by the collector (ADR-053)
+    earlier_forever = re.compile(r"^(wdb|db2|collector)@1\.60\.1\.\d+$")
     for type_ in ("quest", "item", "spell"):
         for line in english.load(type_):
             assert validate_line(type_, line, english=True) == [], (type_, line["id"], line["field"])

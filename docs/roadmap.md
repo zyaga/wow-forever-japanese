@@ -12,7 +12,7 @@
 
 ## Phase 3: Beta (in progress)
 - **Goal:** verify the addon on the Forever client, harvest its English, and measure what changed.
-- **Done:** the addon runs on the Forever beta and targets it alone ([ADR-034](adr/034-forever-is-the-only-target.md)). The client tables and the quest cache are read from the installed client ([ADR-020](adr/020-quest-cache-harvest.md), [ADR-021](adr/021-client-tables-from-the-local-archive.md)), currently at build 1.60.1.70170.
+- **Done:** the addon runs on the Forever beta and targets it alone ([ADR-034](adr/034-forever-is-the-only-target.md)). The client tables and the quest cache are read from the installed client ([ADR-020](adr/020-quest-cache-harvest.md), [ADR-021](adr/021-client-tables-from-the-local-archive.md)), currently at build 1.60.1.70170. The English the collector records in game replaces stand-in English for quest and gossip text and is checked like any source ([ADR-053](adr/053-forever-shown-english-is-the-english.md)).
 - **Open:** the in-game checks listed in [Testing strategy](testing/strategy.md). Most surfaces pass their stub-client tests and await a look in game on Forever.
 
 ## Phase 4: Translation (in progress)
@@ -21,6 +21,7 @@
 - **Open:**
   - **Item and spell descriptions whose English source is still the Classic Era input.** They wait for the Forever client's own English, then go through a [translation batch](operations/translation-batches.md).
   - **Each new Forever build.** Re-pull the English, redraft machine lines whose English moved, and review stale hand-written lines against their new English ([Release → Forever patch day](operations/release.md#forever-patch-day)).
+  - **Quest turn-in and progress text Forever reworded.** Only the server sends it, at the NPC, so those quests show the stale marker until the text is seen in game and the collector dump is imported ([Collector](systems/collector.md)).
   - **Player reports** as they arrive.
 
 ## Release
@@ -33,6 +34,5 @@
 - **Two menu words with a different Japanese elsewhere** ("Slots" in the professions filter, "Ground" in the mount filter), not yet given their own Japanese.
 - **The combat log** stays English: Forever hands addons a sealed string with no readable English ([ADR-035](adr/035-ui-errors-frame-surface.md)).
 - **Inline icons in tooltips**: whether the client prints `$@spellicon` as a texture escape the addon can copy is an in-game check; until it passes, those lines may show English ([ADR-043](adr/043-included-text-icons-and-branch-variants.md)).
-- **Collector English**: imported dumps are stored, not consulted. A re-check policy would decide whether they may change a line's status ([ADR-013](adr/013-collector-english.md)).
 - **The QuestJapanizer wiki**: some complete hand-written quest descriptions exist only there, and its terms leave reuse to its administrator ([ADR-011](adr/011-provenance-layers-and-completeness.md)).
 - **Memory**: the generated data with readings and meanings is large; its size is revisited once the translation work is done.

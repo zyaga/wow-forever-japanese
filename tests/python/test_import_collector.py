@@ -146,8 +146,8 @@ def test_pfquest_keeps_collector_lines_it_does_not_provide(root, tmp_path: Path,
     by = {(ln["id"], ln["field"]): ln for ln in Store(data, english=True).load("quest")}
     assert by[(2, "progress")]["src"].startswith("collector@")  # pfQuest has no progress: kept
     assert by[(99999, "title")]["src"].startswith("collector@")
-    assert by[(2, "title")]["src"] == "pfquest@7786596"  # pfQuest provides it: replaced
-    assert by[(2, "title")]["en"] == "Sharptalon's Claw"
+    assert by[(2, "title")]["src"].startswith("collector@")  # what a client recorded outranks pfQuest (ADR-053)
+    assert by[(2, "title")]["en"] == "Collector title"
 
 
 def test_wago_keeps_collector_descriptions(root, tmp_path: Path, monkeypatch):

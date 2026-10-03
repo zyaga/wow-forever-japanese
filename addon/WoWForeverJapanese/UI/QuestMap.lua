@@ -235,6 +235,12 @@ end
 
 local function showField(pane, field, en, id)
   local fs = get(field)
+  local variant = field == "description" and type(WFJ.ShippedGossipKey) == "function" and WFJ.ShippedGossipKey(en)
+  if variant and isText(fs) and fs:GetText() == en then
+    -- a conditional description (another wording for this character), keyed by its English
+    WFJ.Render.show(pane.info, field, fs, en, "quests", "gossip", variant, { refit = pane.refit, compact = true })
+    return 1
+  end
   if isText(fs) and type(en) == "string" and en ~= "" and fs:GetText() == en then
     -- live: the API English, for the stale marker's live check (ADR-019); compact below the title, so a quest
     -- gets one missing marker, on its title
@@ -336,6 +342,12 @@ local function completeTag(en)
   return en:sub(1, #en - #paren - 1), " " .. ja
 end
 
+-- A quest's completion log line ("Speak with Deathguard Billmuth at Tyr's Watch."), the line the tracker and the
+-- quest log show once the quest is ready: quest-cache text keyed like NPC dialogue. → key | nil
+local function completionLogKey(core)
+  return type(WFJ.ShippedGossipKey) == "function" and WFJ.ShippedGossipKey(core) or nil
+end
+
 -- One objective line's Japanese without a record (a tooltip the client rebuilds every frame), by the same lookups as
 -- showObjective. → Japanese | nil
 function QuestMap.objectiveJapanese(en, surface)
@@ -347,6 +359,11 @@ function QuestMap.objectiveJapanese(en, surface)
   if id then
     args.after = args.after .. tag
     return WFJ.Render.preview(surface, en, nil, "quests", kind, id, { args = args, compact = true })
+  end
+  local keyed = completionLogKey(core)
+  if keyed then
+    return WFJ.Render.preview(surface, en, nil, "quests", "gossip", keyed,
+      { args = { form = "affix", before = "", after = tag }, compact = true })
   end
   local key
   if ui then key, args = ui:matchOnly(core, QuestMap.OBJECTIVE_KEYS) end
@@ -380,6 +397,12 @@ function QuestMap.showObjective(surface, recKey, fs, refit)
   if id then
     args.after = args.after .. tag
     WFJ.Render.show(surface, recKey, fs, en, "quests", kind, id, { refit = refit, args = args, compact = true })
+    return 1
+  end
+  local keyed = completionLogKey(core)
+  if keyed then
+    WFJ.Render.show(surface, recKey, fs, en, "quests", "gossip", keyed,
+      { refit = refit, args = { form = "affix", before = "", after = tag }, compact = true })
     return 1
   end
   local key
