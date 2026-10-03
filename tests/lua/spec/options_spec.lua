@@ -362,7 +362,7 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_nil(O.copyBoxes["collector.issue"])
   end)
 
-  it("the about page has the header, how to open settings, the slash list and the report link", function()
+  it("the about page has the header, how to open settings, the slash list and the bug or idea button", function()
     local about = O.pages.about
     about:Show()
     -- the shipped quest count
@@ -376,7 +376,15 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_truthy(all:find(WFJ.MARKER.stale .. "　翻訳後に", 1, true))
     assert.is_truthy(all:find(WFJ.MARKER.missing .. "　まだ翻訳", 1, true))
     assert.is_truthy(all:find("/wfj config [collector | about]", 1, true))
-    assert.are.equal(WFJ.OptionsText.REPORT_URL, O.copyBoxes["about.report"]:GetText())
+    assert.is_truthy(all:find("/wfj bug", 1, true))
+    assert.is_truthy(all:find(WFJ.OptionsText.T["about.bug"].ja, 1, true))
+    -- one way in: the button opens the report window; the bare new-issue link is gone
+    assert.is_nil(O.copyBoxes["about.report"])
+    local opened = false
+    WFJ.ReportWindow = { open = function() opened = true end }
+    assert.are.equal(select(2, WFJ.OptionsText.get("button.reportBug")), O.reportBug.caption:GetText())
+    O.reportBug.scripts.OnClick(O.reportBug, "LeftButton")
+    assert.is_true(opened)
   end)
 
   it("never takes keyboard input outside a capture: pages built hidden, no OnKeyDown until a capture starts", function()

@@ -28,3 +28,16 @@ def test_the_link_and_the_form_agree(root):
     assert f'CollectorSend.PREFIX = "{collector_send.PREFIX}"' in send
     assert f"label: {collector_send.DUMP_LABEL}\n" in form
     assert "label: Permission\n" in form
+
+
+def test_the_bug_link_and_the_bug_form_agree(root):
+    """The report window's bug link fills the bug form's fields by their ids, and opens the idea form by name."""
+    report = (root / "addon/WoWForeverJapanese/Core/BugReport.lua").read_text(encoding="utf-8")
+    bug = (root / ".github/ISSUE_TEMPLATE/bug-report.yml").read_text(encoding="utf-8")
+    assert '"bug-report.yml"' in report and '"idea.yml"' in report
+    assert (root / ".github/ISSUE_TEMPLATE/idea.yml").is_file()
+    fields = dict(re.findall(r'(build|version|errors) = "([a-z-]+)"', report))
+    assert fields == {"build": "client-build", "version": "addon-version", "errors": "errors"}
+    for field_id in fields.values():
+        assert re.search(rf"^    id: {field_id}$", bug, re.M), field_id
+    assert "/wfj bug" in bug

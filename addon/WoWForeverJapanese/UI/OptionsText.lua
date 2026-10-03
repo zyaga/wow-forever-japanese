@@ -127,6 +127,51 @@ Text.T = {
     en = "%s lines marked as sent. The next send holds only new lines.",
     ja = "%s 行を送信済みにしました。次回は新しい行だけを送ります。",
   },
+  -- the report window (UI/ReportWindow): a bug or an idea; its link and I sent it reuse send.step1 / step4 / sent
+  ["report.title"] = { en = "Report a bug or an idea", ja = "不具合・提案を送る" },
+  ["report.bug"] = { en = "Bug", ja = "不具合" },
+  ["report.idea"] = { en = "Idea", ja = "提案" },
+  ["report.summary.errors"] = {
+    en = "%s new Lua errors from this addon go with the report.",
+    ja = "このアドオンの新しい Lua エラー %s 件を報告に含めます。",
+  },
+  ["report.summary.none"] = {
+    en = "No new Lua errors from this addon. Build and version go with it.",
+    ja = "新しい Lua エラーはありません。ビルドとバージョンを送ります。",
+  },
+  ["report.summary.other"] = {
+    en = "Another addon (BugSack or similar) catches Lua errors: paste ours from it.",
+    ja = "別のアドオン（BugSack など）がエラーを取得中。そこから貼り付けてください。",
+  },
+  ["report.summary.idea"] = {
+    en = "Ideas and code changes go to GitHub (a GitHub account is needed).",
+    ja = "提案やコードの変更は GitHub に送ります（GitHub アカウントが必要）。",
+  },
+  ["report.step2.link"] = {
+    en = "2. The form opens with build, version and errors filled in.",
+    ja = "2. ビルド・バージョン・エラーが入力済みのフォームが開きます。",
+  },
+  ["report.step2.paste"] = {
+    en = "2. Copy this text (click, Ctrl+C) into the form's Lua errors box:",
+    ja = "2. この文字列をコピーして、フォームの Lua エラー欄に貼り付けます：",
+  },
+  ["report.step3"] = {
+    en = "3. Write what happened, then submit the issue on GitHub.",
+    ja = "3. 起きたことを書いて、GitHub で Issue を送信します。",
+  },
+  ["report.idea.step2"] = {
+    en = "2. Write your idea, then submit the issue on GitHub.",
+    ja = "2. 提案を書いて、GitHub で Issue を送信します。",
+  },
+  ["report.marked"] = {
+    en = "%s errors marked as sent. The next report holds only new ones.",
+    ja = "%s 件を送信済みにしました。次回は新しいエラーだけを送ります。",
+  },
+  ["about.bug"] = {
+    en = "Something not working, or an idea? Send it from here.",
+    ja = "不具合や提案は、ここから送れます。",
+  },
+  ["button.reportBug"] = { en = "Report a bug or idea", ja = "不具合・提案を報告" },
   ["collector.clear"] = { en = "Clear collected English", ja = "記録した英語を消去" },
   ["collector.confirm"] = { en = "Click again to clear %s entries", ja = "もう一度クリックで%s件を消去" },
   ["collector.cleared"] = { en = "Cleared %s entries", ja = "%s件を消去しました" },
@@ -154,7 +199,6 @@ Text.T = {
     ja = "データ：クエスト %s・アイテム %s・呪文 %s・UI文字列 %s" },
   ["header.noData"] = { en = "data: none", ja = "データ：なし" },
   ["header.noMemory"] = { en = "memory n/a", ja = "メモリ不明" },
-  ["about.report"] = { en = "Other problems (bugs, suggestions):", ja = "その他の問題（不具合・要望）：" },
 
   -- the fix window (UI/FixWindow) and the About page's way into it
   ["about.fix"] = {
@@ -258,6 +302,7 @@ Text.SLASH = {
   "/wfj area quests off  ·  /wfj marker missing on",
   "/wfj readings [on | off]  ·  /wfj glosses [on | off]",
   "/wfj config [collector | about]  ·  /wfj fix  (report a line)",
+  "/wfj bug  (report a bug or an idea)",
   "/wfj collector [on | off | status | path | clear | send [all]]",
   "/wfj log [<n>]  (the problem log)",
   "/wfj debug [hash | quest <id> | item <id> | spell <id>]",
@@ -265,8 +310,6 @@ Text.SLASH = {
   "/wfj debug tooltip [on | off]  (record spell / item tooltip passes)",
 }
 
--- Text.REPORT_URL is the issue tracker's new-issue page (the collector send window uses Collector.ISSUE_URL).
-Text.REPORT_URL = "https://github.com/zyaga/wow-forever-japanese/issues/new/choose"
 -- the translation-report issue form the fix window's report is pasted into
 Text.FIX_URL = "https://github.com/zyaga/wow-forever-japanese/issues/new?template=translation-report.yml"
 

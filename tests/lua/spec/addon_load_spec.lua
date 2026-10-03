@@ -3,7 +3,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 local Loader = require("tests.lua.spec.loader")
 
 -- Hand-written files in dependency order; the generated block (Meta, Vectors, shards) sits between HEAD and TAIL.
-local HEAD = { "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua" }
+local HEAD = { "Core/ErrorLog.lua", "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua",
+  "Core/Data.lua" }
 local TAIL = {
   "Core/Lookup.lua", "Core/Readings.lua", "Core/Glosses.lua", "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
   "Core/Modifier.lua",
@@ -11,6 +12,7 @@ local TAIL = {
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
   "Core/Collector.lua", "Core/CollectorSend.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
+  "Core/BugReport.lua",
   "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
   "UI/ButtonText.lua", "UI/Labels.lua", "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
   "UI/HelpTooltip.lua", "UI/TooltipData.lua",
@@ -62,7 +64,7 @@ local TAIL = {
   "UI/Popups.lua",
   "UI/Scan.lua",
   "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/FixWindow.lua",
-  "UI/CollectorSendWindow.lua", "UI/MinimapButton.lua",
+  "UI/CollectorSendWindow.lua", "UI/ReportWindow.lua", "UI/MinimapButton.lua",
   "UI/RevealBinding.lua",
   "UI/AddonListButton.lua",
   "UI/Options.lua", "UI/Slash.lua", "Main.lua", -- the settings pages' modules
@@ -267,7 +269,8 @@ describe("addon loads in TOC order and answers /wfj version", function()
     assert.are.equal(1, #Stub.prints) -- one chat line per session
     Stub.prints = {}
     SlashCmdList.WFJ("log 1")
-    assert.are.equal(1, #Stub.prints)
+    assert.are.equal(2, #Stub.prints) -- the entry, then the Lua error count
+    assert.are.equal("WFJ: errors: 0 recorded, 0 not sent (/wfj bug)", Stub.prints[2])
     assert.is_truthy(Stub.prints[1]:find("MainActionBar:SetPointBase() ×2", 1, true))
   end)
 

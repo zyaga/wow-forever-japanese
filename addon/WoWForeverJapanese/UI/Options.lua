@@ -40,7 +40,7 @@ Options.PAGES = {
   { id = "about", title = "page.about", header = true, sections = {
     { title = "section.help", rows = { "aboutHold", "aboutReadings", "aboutMarkers", "aboutOpen" } },
     { title = "section.slash", rows = { "slashHelp" } },
-    { rows = { "aboutFix", "reportLink" } }, -- the fix window, then the issue tracker
+    { rows = { "aboutFix", "aboutBug" } }, -- the fix window, then the bug and idea window
   } },
 }
 
@@ -275,7 +275,6 @@ function A.collectorSend(page, x, y)
   Options.collectorSend = b
   return 30
 end
-A.reportLink = copyRow("about.report", Text.REPORT_URL)
 
 -- The About page's way into the fix window (report a line the player just saw).
 function A.aboutFix(page, x, y, width)
@@ -285,6 +284,17 @@ function A.aboutFix(page, x, y, width)
   local b = W.button(page, en, ja, 150, function() WFJ.FixWindow.open() end)
   b:SetPoint("TOPLEFT", x, y - h) -- under its sentence
   Options.reportLine = b
+  return h + 36
+end
+
+-- The About page's way into the report window (a bug or an idea).
+function A.aboutBug(page, x, y, width)
+  local en, ja = Text.get("about.bug")
+  local h = W.labelHeight(W.label(page, en, ja, x, y, width), 24) - 6
+  en, ja = Text.get("button.reportBug")
+  local b = W.button(page, en, ja, 150, function() WFJ.ReportWindow.open() end)
+  b:SetPoint("TOPLEFT", x, y - h) -- under its sentence
+  Options.reportBug = b
   return h + 36
 end
 

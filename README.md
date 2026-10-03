@@ -106,7 +106,16 @@ window says the text is too long even to paste, it asks you to zip the saved fil
 
    ![The translation report form on GitHub](docs/images/report-issue.jpg)
 
-Other problems or ideas: [open an issue](https://github.com/zyaga/wow-forever-japanese/issues).
+## Reporting a bug or an idea
+
+Type `/wfj bug` (or right-click the **字** button and choose **Report a bug or idea**, or use the button on the
+About page of the settings). A window opens with a link: copy it (click it, then Ctrl+C) and open it in your web
+browser. The bug report form opens with the game build, the addon version and any Lua errors raised in the addon's own
+files already filled in. Write what happened and submit the issue, then click **I sent it** in the game, so the next report holds
+only new errors. If the window shows a second box, copy that text into the form's Lua errors field. Choose
+**Idea** at the top of the window for a link to the idea form instead. You need a GitHub account, and the issue is
+public. If you use BugSack or a similar addon, it catches Lua errors first: the window says so, and you can paste
+this addon's errors from it.
 
 ## FAQ
 
@@ -228,7 +237,9 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
    ![GitHub の翻訳の報告フォーム](docs/images/report-issue.jpg)
 
-そのほかの問題や提案は [Issue](https://github.com/zyaga/wow-forever-japanese/issues) へどうぞ。
+### 不具合や提案を送る
+
+`/wfj bug` と入力します（**字** ボタンを右クリックして **不具合・提案を報告** を選ぶか、設定の About ページのボタンでも開けます）。リンクが入ったウィンドウが開きます。リンクをコピーして（クリックして Ctrl+C）ブラウザで開くと、ゲームのビルド、アドオンのバージョン、アドオン自身のファイルで起きた Lua エラーが入力済みの不具合報告フォームが開きます。起きたことを書いて Issue を送信したら、ゲーム内で **送信しました** をクリックします。次回は新しいエラーだけを送ります。ウィンドウに 2 つ目の欄があるときは、その文字列をフォームの Lua エラー欄に貼り付けてください。ウィンドウ上部で **提案** を選ぶと、提案フォームへのリンクになります。GitHub アカウントが必要で、Issue は公開されます。BugSack などのアドオンを使っている場合は、そちらが先に Lua エラーを取得します。ウィンドウにその旨が表示されるので、そこからこのアドオンのエラーを貼り付けてください。
 
 ### よくある質問
 
