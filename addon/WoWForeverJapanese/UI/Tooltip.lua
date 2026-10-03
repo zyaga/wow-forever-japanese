@@ -309,6 +309,21 @@ local function plain(v)
 end
 Tooltip.plain = plain
 
+-- A widget's laid-out size for the trace: " w=<width> sw=<string width> h=<height> n=<lines>", each part only when the
+-- client has the method and the value may be read. A wrapped line that moves between passes shows here.
+local GEOMETRY = { { "w", "GetWidth" }, { "sw", "GetStringWidth" }, { "h", "GetHeight" }, { "n", "GetNumLines" } }
+local function geometry(widget)
+  local parts = {}
+  for _, g in ipairs(GEOMETRY) do
+    local fn = widget[g[2]]
+    if type(fn) == "function" then
+      local ok, v = pcall(fn, widget)
+      if ok and type(v) == "number" and not anySecretOf(v) then parts[#parts + 1] = ("%s=%.1f"):format(g[1], v) end
+    end
+  end
+  return #parts > 0 and (" " .. table.concat(parts, " ")) or ""
+end
+
 local function describe(fs)
   if type(fs) ~= "table" then return "-" end
   local text = fs:GetText()
@@ -321,7 +336,7 @@ local function describe(fs)
   if anySecretOf(text) then return "<secret> " .. colour .. shown end
   if text == nil then return "nil" .. shown end
   if text == "" then return "\"\"" .. shown end
-  return "\"" .. plain(text) .. "\" " .. colour .. shown
+  return "\"" .. plain(text) .. "\" " .. colour .. shown .. geometry(fs)
 end
 
 local function traceFrame(frame, event, id, lines, note)
@@ -331,8 +346,8 @@ local function traceFrame(frame, event, id, lines, note)
     or plain(owner)
   local clock = Compat.resolve("date")
   local stamp = type(clock) == "function" and clock("%H:%M:%S") or ""
-  local out = { ("[%s] %s %s id=%s owner=%s rows=%d %s"):format(stamp, plain(frame:GetName()), event,
-    plain(id), ownerName, #lines, note or "") }
+  local out = { ("[%s] %s %s id=%s owner=%s rows=%d%s %s"):format(stamp, plain(frame:GetName()), event,
+    plain(id), ownerName, #lines, geometry(frame), note or "") }
   local rights = Tooltip.lines(frame, "Right")
   local kinds = {}
   if type(frame.GetPrimaryTooltipInfo) == "function" then
@@ -780,6 +795,7 @@ function Tooltip.onItem(frame)
     traceFrame(frame, "item without an id", nil, lines, "-> 0 (link " .. plain(link) .. ")")
     return 0
   end
+  traceFrame(frame, "item as the client laid it out", id, lines, "")
   local first, last = Tooltip.itemRun(texts)
   local runArgs = first and peelTrailer(texts, first, last) or nil
   -- The run is read before we write (the client rewrote every line); the Collector refuses our own text anyway.
