@@ -13,8 +13,11 @@
 --     unlocked empty slot (lua:178–185, :227); a filled slot's tooltip is the pet's name and "Level n Family"
 --     (lua:223–224), which the restriction leaves alone;
 --   PetStableFrame.loyaltyLevel: format(LOYALTY_LEVEL, n) (lua:137, :275–280).
--- Never touched: PetStableLevelText (pet name, "Level n" and the family joined at run time, lua:125–127),
--- PetStableLoyaltyText (the loyalty rank's name, lua:130), the loyalty level number. The window has no title
+-- The loyalty rank: StableFrameMixin:SelectPet writes PetStableLoyaltyText:SetText(petInfo.loyaltyName)
+-- (camelot/blizzard_stableui.lua:283), a PetLoyalty row's English. Shown with the static labels and after SelectPet
+-- (post-hooked on the instance), restricted to the PetLoyalty family, so any other text there stays English.
+-- Never touched: PetStableLevelText (pet name, "Level n" and the family joined at run time, lua:278–282), the
+-- loyalty level number. The window has no title
 -- (no SetTitle call in the addon), and the money frames are numbers.
 -- Release on the frame's OnHide.
 local _, WFJ = ...
@@ -25,13 +28,14 @@ local SURFACE = "stable"
 Stable.SURFACE = SURFACE
 local Compat = WFJ.Compat
 
-Stable.NEVER_TOUCH = { "PetStableLevelText", "PetStableLoyaltyText", "PetStableFrame.loyaltyLevel.levelText" }
+Stable.NEVER_TOUCH = { "PetStableLevelText", "PetStableFrame.loyaltyLevel.levelText" }
 
 local CANDIDATES = {
   frame = { "PetStableFrame" }, slotText = { "PetStableSlotText" }, costLabel = { "PetStableCostLabel" },
   purchase = { "PetStableFrame.purchaseButton" }, loyalty = { "PetStableFrame.loyaltyLevel" },
   -- shown in gamepad mode while a slot can be bought (blizzard_stableui.xml:131, blizzard_stableui.lua:236)
   slotCost = { "PetStableFrame.GamepadSlotCostText" },
+  loyaltyText = { "PetStableLoyaltyText" },
   current = { "PetStableCurrentPet" }, stabled1 = { "PetStableStabledPet1" }, stabled2 = { "PetStableStabledPet2" },
 }
 
@@ -45,13 +49,15 @@ local LOYALTY_TOOLTIP = { only = { "LOYALTY_LEVEL" } }
 
 local function get(key) return Compat.get(SURFACE, key) end
 
--- HookScript("OnShow") / hooksecurefunc(PetStableFrame, "Update") target. → the number of dictionary words found.
+-- HookScript("OnShow") / hooksecurefunc(PetStableFrame, "Update" / "SelectPet") target. → the number of dictionary
+-- words found.
 function Stable.onShow()
   local list = {}
   for _, s in ipairs(STATIC) do list[#list + 1] = { s[1], get(s[1]), s[2] } end
   for _, r in ipairs(REGIONS) do
     list[#list + 1] = { "region." .. r[1], WFJ.Labels.region(get(r[1]), r[2]), { only = { r[2] } } }
   end
+  list[#list + 1] = { "loyaltyText", get("loyaltyText"), WFJ.Labels.families("PetLoyalty") }
   return WFJ.Labels.showAll(SURFACE, list)
 end
 
@@ -73,6 +79,7 @@ function Stable.init()
     frame:HookScript("OnHide", Stable.release)
   end
   if type(frame.Update) == "function" then hooksecurefunc(frame, "Update", Stable.onShow) end
+  if type(frame.SelectPet) == "function" then hooksecurefunc(frame, "SelectPet", Stable.onShow) end
   for _, key in ipairs({ "current", "stabled1", "stabled2" }) do
     WFJ.HelpTooltip.register(get(key), SLOT_TOOLTIP)
   end

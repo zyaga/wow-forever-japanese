@@ -306,17 +306,18 @@ FOREVER = Path(__file__).resolve().parents[1] / "fixtures" / "wdb-forever" / "qu
 FOREVER_BUILD = "1.60.1.69913"
 
 
-def test_imports_the_forever_cache_and_reports_its_conditional_text(tmp_path, monkeypatch, capsys):
-    """The Forever build imports through the same path, and the conditional description it carries is
-    reported rather than silently dropped (it has no key design yet)."""
+def test_imports_the_forever_cache_and_its_conditional_text(tmp_path, monkeypatch, capsys):
+    """The Forever build imports through the same path, and the conditional description it carries becomes
+    keyed English (the empty entry of quest 94978 writes nothing)."""
     data = _data(tmp_path, monkeypatch)
     assert run(["english", "wdb", str(FOREVER), "--build", FOREVER_BUILD]) == 0
     out = capsys.readouterr().out
     src = f"wdb@{FOREVER_BUILD}"
     assert f"english quest ({src}): 12 records · 11 quests · 1 placeholders dropped" in out
-    # the conditional entry with text is reported; the empty one (quest 94978) is not counted
-    assert "conditional quest text in this cache: 1 entries across 1 quests" in out
-    assert "quest 92596/condition 137886" in out and "read, not imported" in out
+    assert f"english gossip ({src}): 1 keyed texts" in out
+    text = next(t for q in read_quests(FOREVER).quests if q.id == 92596 for _, _, t in q.conditional)
+    gossip = {ln["id"]: ln for ln in Store(data, english=True).load("gossip")}
+    assert gossip[key(normalize_v1(text))]["en"] == text
 
     got = {(ln["id"], ln["field"]): ln for ln in Store(data, english=True).load("quest")}
     cache = {q.id: q for q in read_quests(FOREVER).quests}
@@ -441,3 +442,31 @@ def test_under_union_pfquest_does_not_fill_a_field_the_answered_quest_left_empty
     merged = take_answered_whole(merged, {5639})
     got = {(r["id"], r["field"]) for r in merged}
     assert got == {(5639, "title"), (5639, "completion"), (7, "objectives")}
+
+
+def test_conditional_descriptions_and_completion_logs_are_keyed_text():
+    """A quest's conditional description and its completion log line become keyed English (gossip, by the hash
+    of the text): the client shows them with no id the addon can read. Keyed English is additive."""
+    from types import SimpleNamespace
+
+    import pytest as _pytest
+
+    from wfj.cmd.import_english import _add_keyed, _wdb_keyed_lines
+
+    quests = [
+        SimpleNamespace(conditional=((137888, 3595, "You are born kaldorei, druid."), (0, 0, "")),
+                        completion_log="Speak with Deathguard Billmuth at Tyr's Watch."),
+        SimpleNamespace(conditional=(), completion_log=""),
+    ]
+    lines = _wdb_keyed_lines(SimpleNamespace(quests=quests), SRC)
+    assert sorted(ln["en"] for ln in lines) == [
+        "Speak with Deathguard Billmuth at Tyr's Watch.", "You are born kaldorei, druid."]
+    for ln in lines:
+        assert ln["id"] == ln["hash"] == key(normalize_v1(ln["en"])) and ln["src"] == SRC
+        assert validate_line("gossip", ln, english=True) == []
+    vm = english_line(lines[0]["id"], "text", lines[0]["en"], lines[0]["id"], "vmangos@13b49dc")
+    merged, added = _add_keyed([vm], lines)
+    assert added == 1 and merged[0] is vm  # a key another source has keeps its line
+    clash = dict(vm, en="Other English")
+    with _pytest.raises(ValueError, match="names two texts"):
+        _add_keyed([clash], lines)

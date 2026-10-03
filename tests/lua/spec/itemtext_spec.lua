@@ -157,6 +157,21 @@ describe("UI/ItemText: the book window", function()
       end
     end)
 
+  it("an unnamed font object the page made for itself is never set back (a font object loop in game)", function()
+    local anon = { GetName = function() return nil end }
+    html.GetFontObject = function() return anon end
+    html.SetFontObject = function(_, _, obj)
+      if obj == anon then error("ItemTextPageText:SetFontObject(): Can't create a font object loop") end
+    end
+    ship({ [PAGE_DATA] = PAGE_JA })
+    Stub.openItemText({ PAGE_LIVE })
+    Stub.keys.alt = true
+    assert.has_no.errors(function() WFJ.Modifier.refresh() end)
+    assert.are.equal(PAGE_LIVE, html.text)
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal(PAGE_JA, drawn())
+  end)
+
   it("the English font comes back even when the engine ignores re-assigning the same font object", function()
     Client.stickyObjects = true
     ship({ [PAGE_DATA] = PAGE_JA })

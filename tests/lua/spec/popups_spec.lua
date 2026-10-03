@@ -83,6 +83,7 @@ describe("the StaticPopup dialogs on Forever", function()
     D.DEATH = { text = _G.DEATH_RELEASE_TIMER, button1 = _G.DEATH_RELEASE, timeout = 90,
       GetExpirationText = _G.GameDialogDefsUtil.GetDefaultExpirationText }
     D.SERVER = { text = "", button1 = _G.YES }
+    D.GENERIC_CONFIRMATION = { text = "" } -- its OnShow writes the caller's text and buttons
     D.AGE_VERIFICATION_RESTRICTED_MINOR = { text = _G.SOCIAL_FEATURES_UNAVAILABLE,
       subText = _G.SOCIAL_FEATURES_UNAVAILABLE_DESCRIPTION, button1 = _G.OKAY }
     assert.is_true(WFJ.Popups.init())
@@ -161,6 +162,19 @@ describe("the StaticPopup dialogs on Forever", function()
     b1:SetText("Yes") -- :541–547: the delay ended, the English label back
     _G.StaticPopup_OnUpdate(d, 0.1)
     assert.are.equal("はい", b1:GetText())
+  end)
+
+  it("a generic confirmation keeps the caller's text and buttons Japanese when the client rewrites them", function()
+    local data = { text = _G.CONFIRM_RESET_INSTANCES }
+    local d = _G.StaticPopup_Show("GENERIC_CONFIRMATION", nil, nil, data)
+    d.Text:SetText(data.text) -- shareddialogdefs.lua:1-8: OnShow writes the caller's text and YES / NO
+    d.ButtonContainer.Buttons[1]:SetText("Yes")
+    WFJ.Popups.onShow(d)
+    assert.are.equal("すべてのインスタンスをリセットしますか？", d.Text:GetText())
+    assert.are.equal("はい", d.ButtonContainer.Buttons[1]:GetText())
+    d.ButtonContainer.Buttons[1]:SetText("Yes") -- an accept delay ended: the English label back
+    _G.StaticPopup_OnUpdate(d, 0.1)
+    assert.are.equal("はい", d.ButtonContainer.Buttons[1]:GetText())
   end)
 
   it("two shown dialogs of one type: the call's own (by data) gets its buttons", function()

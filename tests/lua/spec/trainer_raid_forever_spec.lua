@@ -16,6 +16,7 @@ local UI = {
   TRAIN = { "Train", "訓練" }, FILTER = { "Filter", "フィルター" }, APPRENTICE = { "Apprentice", "見習い" },
   PARENS_TEMPLATE = { "(%s)", "(%s)" },
   REQUIRES_LABEL = { "Requires:", "必要:" }, TRAINER_REQ_LEVEL = { "Level |cffffffff%d|r", "レベル |cffffffff%d|r" },
+  ["SpellSubtext:12178"] = { "Level 4", "レベル4" }, -- a spell's subtext that reads like a requirement item
   ITEM_SPELL_KNOWN = { "Already known", "習得済み" },
   TRAINER_REQ_SKILL_RANK = { "%s (|cffffffff%d|r)", "%s (|cffffffff%d|r)" }, RANK = { "Rank", "ランク" },
   TOOLTIP_TALENT_RANK_CURRENT_ONLY = { "Rank %d", "ランク %d" },
@@ -28,6 +29,8 @@ local UI = {
   RAID_INFORMATION = { "Raid Information", "レイドの情報" }, INSTANCE = { "Instance", "インスタンス" },
   RAID_INSTANCE_EXPIRES_EXPIRED = { "Expired", "期限切れ" }, DAYS_ABBR = { "%d |4Day:Days;", "%d日" },
   RAID_INFO_WORLD_BOSS = { "World Boss", "ワールドボス" }, EXTENDED = { "Extended", "延長済み" },
+  -- a saved instance's difficultyName (GetSavedInstanceInfo, raidframe.lua:157–158; client-table row, ADR-042)
+  ["Difficulty:9"] = { "40 Player", "40人" },
   -- Forever GlobalStrings @1.60.1.69913
   TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS = { "You can only learn two primary professions",
     "主要専門技能は2つまでしか習得できません" },
@@ -140,6 +143,19 @@ describe("trainer and raid on the Forever client", function()
       Stub.keys.alt = false; WFJ.Modifier.refresh()
       frame:Hide()
       assert.are.equal(en("ITEM_SPELL_KNOWN"), b2.subText:GetText()) -- released on hide
+    end)
+
+    it("a requirement item is read as a list item even when a spell subtext row has the same English", function()
+      loadTrainerUI()
+      WFJ.Trainer.init()
+      local b1 = row(1, { name = "Mark of the Wild", sub = "Rank 1" })
+      local b2 = row(2, { name = "Moonfire", level = 4 })
+      local b3 = row(3, { name = "Rejuvenation", level = 4 })
+      local b4 = row(4, { name = "Thorns", level = 6 })
+      assert.are.equal("", b1.subText:GetText())
+      assert.are.equal("必要: レベル |cffffffff4|r", b2.subText:GetText())
+      assert.are.equal("必要: レベル |cffffffff4|r", b3.subText:GetText())
+      assert.are.equal("必要: レベル |cffffffff6|r", b4.subText:GetText())
     end)
 
     it("'(Rank 2)' translates through the `entry` argument (a template inside the parentheses); a capture that is"
@@ -309,9 +325,24 @@ describe("trainer and raid on the Forever client", function()
       assert.are.equal(ja("RAID_INFO_WORLD_BOSS"), r.difficulty:GetText())
       assert.are.equal(ja("EXTENDED"), r.extended:GetText())
       assert.are.equal("Onyxia", r.name:GetText())
-      infoRow(r, { name = "Molten Core", reset = "3 Days 4 Hr", difficulty = "40 Player" })
+      infoRow(r, { name = "Molten Core", reset = "3 Days 4 Hr", difficulty = "Heroic" })
       assert.are.equal("3 Days 4 Hr", r.reset:GetText())
+      assert.are.equal("Heroic", r.difficulty:GetText()) -- no Difficulty row: English
+    end)
+
+    it("a saved instance's difficulty is a Difficulty row's Japanese; Alt shows English; the name stays", function()
+      installRaid()
+      WFJ.Raid.init()
+      local r = infoRow(nil, { name = "Molten Core", reset = "3 Days", difficulty = "40 Player" })
+      assert.are.equal("40人", r.difficulty:GetText())
+      assert.are.equal("Molten Core", r.name:GetText())
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
       assert.are.equal("40 Player", r.difficulty:GetText())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("40人", r.difficulty:GetText())
+      infoRow(r, { name = "40 Player", reset = "3 Days", difficulty = en("RAID_INFO_WORLD_BOSS") })
+      assert.are.equal("40 Player", r.name:GetText()) -- a name never matches, even a family row's English
+      assert.are.equal(ja("RAID_INFO_WORLD_BOSS"), r.difficulty:GetText())
     end)
 
     it("a class button's UIParent-anchored tooltip: Main Tank / Pets with the count kept; a class "

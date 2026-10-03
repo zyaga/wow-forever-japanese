@@ -1,6 +1,7 @@
 -- The pet stable on Forever: UI/Stable.lua over a PetStableFrame replayed from camelot
 -- blizzard_stableui/camelot/blizzard_stableui.xml (:76–305) and .lua (SelectPet :113–160, slot Update :214–238,
--- slot / loyalty OnEnter :178–185, :275–280). Pet names, families and loyalty ranks stay English.
+-- slot / loyalty OnEnter :178–185, :275–280). Pet names and families stay English; the loyalty rank is a PetLoyalty
+-- row's Japanese (SelectPet, camelot/blizzard_stableui.lua:283).
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
@@ -17,6 +18,7 @@ local UI = {
   EMPTY_STABLE_SLOT = { "|cffffffffEmpty Stable Slot|r", "|cffffffff空の厩舎スロット|r" },
   LOYALTY_LEVEL = { "Loyalty Level %d", "忠誠度レベル %d" },
   CLOSE = { "Close", "閉じる" }, -- a dictionary word a pet can be named after
+  ["PetLoyalty:6"] = { "Best Friend", "親友" }, -- client-table row (fingerprint: no global; ADR-042)
 }
 
 local function en(key) return _G[key] end
@@ -104,16 +106,32 @@ describe("the pet stable on Forever", function()
       assert.are.equal("費用:", _G.PetStableCostLabel:GetText())
     end)
 
-  it("names stay English: the pet line, the loyalty rank and the loyalty number are never recorded", function()
+  it("names stay English: the pet line and the loyalty number are never recorded; a loyalty text that is no"
+    .. " PetLoyalty row stays English", function()
     _G.PetStableFrame:Show()
     _G.PetStableFrame:SelectPet({ name = "Close", level = 12, family = "Boar", loyalty = "Close" })
     WFJ.Stable.onShow()
     assert.are.equal("Close Level 12 Boar", _G.PetStableLevelText:GetText())
-    assert.are.equal("Close", _G.PetStableLoyaltyText:GetText())
-    assert.are.equal(0, WFJ.Labels.show("stable", "x", _G.PetStableLoyaltyText))
+    assert.are.equal("Close", _G.PetStableLoyaltyText:GetText()) -- a dictionary word, but no PetLoyalty row
     assert.is_true(unrecorded(_G.PetStableLoyaltyText))
     assert.is_true(unrecorded(_G.PetStableLevelText))
     assert.is_true(unrecorded(_G.PetStableFrame.loyaltyLevel.levelText))
+  end)
+
+  it("the loyalty rank is a PetLoyalty row's Japanese after SelectPet; Alt shows English", function()
+    _G.PetStableFrame:Show()
+    _G.PetStableFrame:SelectPet({ name = "Grimfang", level = 40, family = "Wolf", loyalty = "Best Friend" })
+    assert.are.equal("親友", _G.PetStableLoyaltyText:GetText())
+    assert.are.equal("Grimfang Level 40 Wolf", _G.PetStableLevelText:GetText())
+    alt(true)
+    assert.are.equal("Best Friend", _G.PetStableLoyaltyText:GetText())
+    alt(false)
+    assert.are.equal("親友", _G.PetStableLoyaltyText:GetText())
+    _G.PetStableFrame:SelectPet({ name = "Grimfang", level = 40, family = "Wolf", loyalty = "Close" })
+    assert.are.equal("Close", _G.PetStableLoyaltyText:GetText())
+    _G.PetStableFrame:SelectPet({ name = "Grimfang", level = 40, family = "Wolf", loyalty = "Best Friend" })
+    _G.PetStableFrame:Hide()
+    assert.are.equal("Best Friend", _G.PetStableLoyaltyText:GetText()) -- released on OnHide
   end)
 
   it("tooltips: an empty slot and the loyalty level translate; a pet's name tooltip does not", function()
@@ -138,6 +156,7 @@ describe("the pet stable on Forever", function()
   it("hooks install once", function()
     assert.is_false(WFJ.Stable.init())
     assert.are.equal(1, #Stub.hooks["PetStableFrame:Update"])
+    assert.are.equal(1, #Stub.hooks["PetStableFrame:SelectPet"])
   end)
 
   it("a client name bound to the wrong type degrades to English with no error", function()

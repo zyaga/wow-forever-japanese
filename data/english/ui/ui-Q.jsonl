@@ -7,6 +7,15 @@
 {"id": "QUEST_BG_LIGHT1", "field": "text", "en": "Brown", "hash": "95ecde362973bbb0", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_BG_LIGHT2", "field": "text", "en": "White", "hash": "0534370fd4ceb206", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_BG_LIGHT3", "field": "text", "en": "Grey", "hash": "09a19427fc6f6e91", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_CLASSIFICATION_CALLING", "field": "text", "en": "Calling", "hash": "0e42d44e9f3cb20f", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_CLASSIFICATION_CAMPAIGN", "field": "text", "en": "Campaign", "hash": "8cda0d5a9c045697", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_CLASSIFICATION_IMPORTANT", "field": "text", "en": "Important", "hash": "b5df194615d42ea9", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_CLASSIFICATION_LEGENDARY", "field": "text", "en": "Legendary", "hash": "e1c5cf6aa1cb4056", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_CLASSIFICATION_META", "field": "text", "en": "Meta", "hash": "0a6c05e919459419", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_CLASSIFICATION_QUESTLINE", "field": "text", "en": "Storyline", "hash": "e87e9d86d1e80646", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_CLASSIFICATION_QUESTLINE_WITH_NAME", "field": "text", "en": "Storyline (%s)", "hash": "2521ebe5658ee90d", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_CLASSIFICATION_RECURRING", "field": "text", "en": "Repeatable", "hash": "7f9b420726464b7a", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_CLASSIFICATION_RECURRING_WITH_TIME", "field": "text", "en": "Repeatable (%s left)", "hash": "9d951c5fab1428bf", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_DESCRIPTION", "field": "text", "en": "Description", "hash": "6173958c6c516f23", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_DIFFICULTY_FILTER_DESCRIPTION", "field": "text", "en": "Color quest titles by difficulty", "hash": "2c41bb115941273e", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_FACTION_NEEDED", "field": "text", "en": "%2$s / %3$s %1$s", "hash": "077e6ace9b63111c", "src": "db2@1.60.1.70170"}
@@ -30,16 +39,21 @@
 {"id": "QUEST_PLAYERS_KILLED_NOPROGRESS", "field": "text", "en": "%2$s Players x %1$d", "hash": "950bb0ead023b2d6", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_PREPEND", "field": "text", "en": "(Quest)", "hash": "e43328ae9fda8947", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_REWARDS", "field": "text", "en": "Rewards", "hash": "526c53558d8b389a", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_REWARDS_CONTAINS_ONE_TIME_REP_BONUS", "field": "text", "en": "Awards a one-time Account reputation bonus", "hash": "687e9ae8181398ab", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_REWARDS_IS_ONE_TIME_REP_BONUS", "field": "text", "en": "This is a one-time Account reputation bonus", "hash": "c4fd21f48ad1c270", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_SESSION_REPLAY_QUEST_REMOVED", "field": "text", "en": "Replay Quest Removed: %s", "hash": "b2ec17b8f3bfcfa2", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_SETTINGS_LABEL", "field": "text", "en": "Quests", "hash": "a84737c440533b3c", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_SUGGESTED_GROUP_NUM", "field": "text", "en": "Suggested Players [%d]", "hash": "e0b9b82d6f37d68c", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_TEXT_PREVIEW_BODY", "field": "text", "en": "This preview showcases what your quest description will look like in the quest offer pane when you opt for the alternative background color.", "hash": "795adc6870a59ee5", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_TEXT_PREVIEW_TITLE", "field": "text", "en": "Example", "hash": "4f9851a7b2e6384c", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_TIMERS", "field": "text", "en": "Quest Timers", "hash": "0266d7ae81679c44", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_WATCH_CLICK_TO_COMPLETE", "field": "text", "en": "(click to complete)", "hash": "456e672e28b74d67", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WATCH_POPUP_CLICK_TO_COMPLETE", "field": "text", "en": "Click to complete quest", "hash": "59e154ca98da8d59", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WATCH_POPUP_CLICK_TO_COMPLETE_TASK", "field": "text", "en": "Click to complete", "hash": "7384eefe5de44b4b", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WATCH_POPUP_CLICK_TO_VIEW", "field": "text", "en": "Click to view quest", "hash": "b893297b0ed729d3", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WATCH_POPUP_QUEST_DISCOVERED", "field": "text", "en": "Quest Discovered!", "hash": "d19e1cb98601bec1", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_WATCH_QUEST_COMPLETE", "field": "text", "en": "Quest Complete", "hash": "0dfc39873eac418e", "src": "db2@1.60.1.70170"}
+{"id": "QUEST_WATCH_QUEST_READY", "field": "text", "en": "Ready for turn-in", "hash": "5c68785dcd5cf59d", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WATCH_TOOLTIP", "field": "text", "en": "Shift click a quest to add or remove a quest from your quest watch list.", "hash": "c7db7b66f843a4c5", "src": "db2@1.60.1.69913"}
 {"id": "QUEST_WAYPOINT_FINAL", "field": "text", "en": "Show Final Destination", "hash": "dc2080c1d41b9a45", "src": "db2@1.60.1.70170"}
 {"id": "QUEST_WAYPOINT_ROUTE", "field": "text", "en": "Show Travel Route", "hash": "2b61ae05ef72ad5f", "src": "db2@1.60.1.70170"}
@@ -55,6 +69,10 @@
 {"id": "QUEUED_STATUS_SUSPENDED", "field": "text", "en": "Paused", "hash": "4fd57fbf5af4fe01", "src": "db2@1.60.1.70170"}
 {"id": "QUEUED_STATUS_UNKNOWN", "field": "text", "en": "Unknown", "hash": "7743ba191b88efe6", "src": "db2@1.60.1.70170"}
 {"id": "QUEUED_STATUS_WAITING", "field": "text", "en": "Waiting", "hash": "f8a216c81d807b1e", "src": "db2@1.60.1.70170"}
+{"id": "QUEUE_STATUS_WOWHACK_LEAVE", "field": "text", "en": "Leave Story", "hash": "ca5a48d4195693fb", "src": "db2@1.60.1.70170"}
+{"id": "QUEUE_STATUS_WOWHACK_TELEPORT_IN", "field": "text", "en": "Return to the Story", "hash": "a469e2fffa819140", "src": "db2@1.60.1.70170"}
+{"id": "QUEUE_STATUS_WOWHACK_TELEPORT_OUT", "field": "text", "en": "Teleport to Quillgrave", "hash": "5bc65ecffae2c526", "src": "db2@1.60.1.70170"}
+{"id": "QUEUE_STATUS_WOWHACK_TITLE", "field": "text", "en": "Tales of the Storyteller", "hash": "d78c893276cec497", "src": "db2@1.60.1.70170"}
 {"id": "QUICK_BUTTON_COMBATLOG_TOOLTIP", "field": "text", "en": "Places a shortcut to this filter on the chat window.", "hash": "1b200db921cbd8a9", "src": "db2@1.60.1.70170"}
 {"id": "QUICK_JOIN", "field": "text", "en": "Quick Join", "hash": "e8dd3479c301714b", "src": "db2@1.60.1.70170"}
 {"id": "QUICK_JOIN_ALREADY_IN_PARTY", "field": "text", "en": "You are already in a group. You must leave your group to join this queue.", "hash": "2e0e2d7397837425", "src": "db2@1.60.1.70170"}
@@ -78,3 +96,10 @@
 {"id": "QuestSort:367", "field": "text", "en": "Reputation", "hash": "2aa11d789c011de5", "src": "db2@1.60.1.70170"}
 {"id": "QuestSort:368", "field": "text", "en": "Invasion", "hash": "5958a5877489b783", "src": "db2@1.60.1.70170"}
 {"id": "QuestSort:666", "field": "text", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:1", "field": "text", "en": "Elite", "hash": "c9c69bbf5df18bb1", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:21", "field": "text", "en": "Life", "hash": "0a4abd4c9bbcf0c3", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:41", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:62", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:81", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:82", "field": "text", "en": "World Event", "hash": "b15ceb5fe8eecffd", "src": "db2@1.60.1.70170"}
+{"id": "QuestTag:83", "field": "text", "en": "Legendary", "hash": "e1c5cf6aa1cb4056", "src": "db2@1.60.1.70170"}

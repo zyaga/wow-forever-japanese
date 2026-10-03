@@ -27,6 +27,8 @@ local UI = {
   ["SpellSubtext:5227"] = { "Racial Passive", "種族パッシブ" }, ["SpellSubtext:2481"] = { "Racial", "種族" },
   -- "Summon": an exact global string (BATTLE_PET_SUMMON) with the same Japanese as the fingerprint row
   BATTLE_PET_SUMMON = { "Summon", "呼び出す" }, ["SpellSubtext:126"] = { "Summon", "呼び出す" },
+  -- a flyout's name: a SpellFlyout row, matched only on a Flyout-typed item
+  ["FlyoutName:248"] = { "Portal", "ポータル" },
 }
 
 describe("spellbook on the Forever client", function()
@@ -147,6 +149,24 @@ describe("spellbook on the Forever client", function()
       alt(false)
       assert.are.equal("ページ 2/2", pageText():GetText())
     end)
+
+    it("a flyout item's name is its SpellFlyout row; a spell of the same name stays; a page turn drops it",
+      function()
+        PS.spells[10] = { name = "Portal", subtext = "", cached = true, flyout = true }
+        PS.spells[11] = { name = "Portal", subtext = "Rank 1", cached = true } -- a spell named like the flyout
+        PS.openSpellBook()
+        local it = items()
+        assert.are.equal("ポータル", it[1].Name:GetText())
+        assert.are.equal("Portal", it[2].Name:GetText())
+        alt(true)
+        assert.are.equal("Portal", it[1].Name:GetText())
+        alt(false)
+        assert.are.equal("ポータル", it[1].Name:GetText())
+        _G.PlayerSpellsFrame.SpellBookFrame:DisplayPage(2) -- the item now shows another spell: no record kept
+        for _, item in ipairs(_G.PlayerSpellsFrame.SpellBookFrame.pool) do
+          if item.Name:GetText() ~= "ポータル" then assert.is_false(recorded(item.Name)) end
+        end
+      end)
 
     it("each displayed item's subtext and required-level line translate; spell names are never touched", function()
       PS.openSpellBook()

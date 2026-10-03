@@ -1,6 +1,8 @@
 {"id": "ICON_SELECTION_CLICK", "field": "text", "en": "Click to view in the list", "hash": "0439ee6fbbfdb04f", "src": "db2@1.60.1.70170"}
+{"id": "ICON_SELECTION_DRAG", "field": "text", "en": "Drag an icon here to use it as your display", "hash": "cadc704fe1558571", "src": "db2@1.60.1.70170"}
 {"id": "ICON_SELECTION_NOTINLIST", "field": "text", "en": "This icon is not in the list", "hash": "f3864f642ae0b51f", "src": "db2@1.60.1.70170"}
 {"id": "ICON_SELECTION_TITLE_CURRENT", "field": "text", "en": "Currently Selected", "hash": "d4b26efa1f3ba217", "src": "db2@1.60.1.70170"}
+{"id": "IF_EQUIPPED_TOGETHER", "field": "text", "en": "Equipped With", "hash": "04c7664dc43ecc10", "src": "db2@1.60.1.70170"}
 {"id": "IGNORE", "field": "text", "en": "Ignore", "hash": "d7988f8c6bf93789", "src": "db2@1.60.1.70170"}
 {"id": "IGNORED", "field": "text", "en": "Ignored", "hash": "5311772e13c44b5f", "src": "db2@1.60.1.70170"}
 {"id": "IGNORED_QUEST_DISPLAY", "field": "text", "en": "|cff000000%s (ignored)|r", "hash": "4d41b04c8d765d83", "src": "db2@1.60.1.70170"}
@@ -32,12 +34,16 @@
 {"id": "INSTANCE_ENTRANCES_FILTER_DESCRIPTION", "field": "text", "en": "Instanced content that rewards loot, intended for groups of adventurers", "hash": "47ec9d8c1ec68a6f", "src": "db2@1.60.1.70170"}
 {"id": "INSTANCE_LEAVE", "field": "text", "en": "Leave Instance", "hash": "80b4780201f4b6d6", "src": "db2@1.60.1.70170"}
 {"id": "INSTANCE_LOCK_TIMER", "field": "text", "en": "You have entered an instance already in progress! You will be saved to %1$s in %2$s!", "hash": "6e072ce11a0c9a30", "src": "db2@1.60.1.70170"}
+{"id": "INSTANCE_LOCK_TIMER_PREVIOUSLY_SAVED", "field": "text", "en": "You have entered an |cffffd200extended|r instance. You will be saved to %1$s in %2$s!", "hash": "c95c9f3fdac5a059", "src": "db2@1.60.1.70170"}
+{"id": "INSTANCE_LOCK_WARNING", "field": "text", "en": "You have entered an instance already in progress! If a boss is killed, you will be saved to %1$s.", "hash": "14fd81f902888f0f", "src": "db2@1.60.1.70170"}
+{"id": "INSTANCE_LOCK_WARNING_PREVIOUSLY_SAVED", "field": "text", "en": "You have entered an |cffffd200extended|r instance. If a boss is killed, you will be saved to %1$s.", "hash": "36efe79e00c901d5", "src": "db2@1.60.1.70170"}
 {"id": "INSTANCE_PARTY_LEAVE", "field": "text", "en": "Leave Instance Group", "hash": "8ca1e942a29ea3ae", "src": "db2@1.60.1.70170"}
 {"id": "INSTANCE_RESET_FAILED", "field": "text", "en": "Cannot reset %s.  There are players still inside the instance.", "hash": "d7b2f78f7f18dd00", "src": "db2@1.60.1.70170"}
 {"id": "INSTANCE_RESET_FAILED_OFFLINE", "field": "text", "en": "Cannot reset %s.  There are players offline in your party.", "hash": "f24d833380fec0cd", "src": "db2@1.60.1.70170"}
 {"id": "INSTANCE_RESET_FAILED_ZONING", "field": "text", "en": "Cannot reset %s.  There are players in your party attempting to zone into an instance.", "hash": "29128e6fc81d11f1", "src": "db2@1.60.1.70170"}
 {"id": "INSTANCE_RESET_SUCCESS", "field": "text", "en": "%s has been reset.", "hash": "c1f28253a9c1eef4", "src": "db2@1.60.1.70170"}
 {"id": "INSTANCE_SHUTDOWN_MESSAGE", "field": "text", "en": "Not enough players. The game will end in %s", "hash": "cfb75b85069f14e8", "src": "db2@1.60.1.70170"}
+{"id": "INSTANCE_UNAVAILABLE_OTHER_NO_VALID_ROLES", "field": "text", "en": "%s has no valid roles.", "hash": "bc0535310cb45add", "src": "db2@1.60.1.70170"}
 {"id": "INSTANCE_WALK_IN_LEAVE", "field": "text", "en": "Leave Delve", "hash": "c10946d8b499838b", "src": "db2@1.60.1.70170"}
 {"id": "INTERACT_ICONS_DEFAULT", "field": "text", "en": "NPCs Only (Default)", "hash": "ce96e1acc285791b", "src": "db2@1.60.1.70170"}
 {"id": "INTERACT_ICONS_OPTION", "field": "text", "en": "Interact Key Icons", "hash": "1f9272b2714b0bf8", "src": "db2@1.60.1.70170"}
@@ -61,9 +67,25 @@
 {"id": "INVERT_MOUSE", "field": "text", "en": "Invert Mouse", "hash": "823191c7bef70db4", "src": "db2@1.60.1.70170"}
 {"id": "INVITATION", "field": "text", "en": "%s invites you to a group.", "hash": "e38d7130910f3b63", "src": "db2@1.60.1.70170"}
 {"id": "INVITE", "field": "text", "en": "Invite", "hash": "53896770d7d0fd4d", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_EDITBOX_INSTRUCTIONS", "field": "text", "en": "Real ID or BattleTag", "hash": "07be35b1fea6a11b", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND", "field": "text", "en": "Enter a Battle.net friend", "hash": "31952602444d682f", "src": "db2@1.60.1.70170"}
 {"id": "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG", "field": "text", "en": "Enter a BattleTag.", "hash": "d736d1a1a2a578ba", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER", "field": "text", "en": "Enter character name-server name.", "hash": "a241277821253396", "src": "db2@1.60.1.70170"}
 {"id": "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_TEXT", "field": "text", "en": "Invite Member", "hash": "ce1b8be1c0246ee1", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_COMMUNITY_MEMBER_POPUP_OPEN_INVITE_MANAGER", "field": "text", "en": "Invite Link", "hash": "d19f7019dad3f4a5", "src": "db2@1.60.1.70170"}
 {"id": "INVITE_COMMUNITY_MEMBER_POPUP_SEND_INVITE", "field": "text", "en": "Send", "hash": "0b39d47c69b48d03", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_QUEUE_WARNING", "field": "text", "en": "If %s joins your group, you will be removed from the following queues:", "hash": "d1301cd03527e215", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_REQUEST", "field": "text", "en": "%s has requested to join your group.", "hash": "b4021aa4732449f9", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_REQUEST_COMMUNITY", "field": "text", "en": "%s's community mate %s has requested to join your group.", "hash": "04d86f12c47d50a2", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_REQUEST_COMMUNITY_QUICKJOIN", "field": "text", "en": "%s's community mate %s has requested to join your group through Quick Join.", "hash": "de86b4c0b6316b3c", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_REQUEST_FRIEND", "field": "text", "en": "%s's friend %s has requested to join your group.", "hash": "92f65173214b87d5", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_REQUEST_FRIEND_QUICKJOIN", "field": "text", "en": "%s's friend %s has requested to join your group through Quick Join.", "hash": "1819c9bcd3098f88", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_REQUEST_FROM_COMMUNITY", "field": "text", "en": "%s from %s has requested to join your group.", "hash": "722b46df290fab7e", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_REQUEST_FROM_COMMUNITY_QUICKJOIN", "field": "text", "en": "%s from %s has requested to join your group through Quick Join.", "hash": "ea62e2b3d37158fd", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_REQUEST_GUILD", "field": "text", "en": "%s's guildmate %s has requested to join your group.", "hash": "178206ab05321e16", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_REQUEST_GUILD_QUICKJOIN", "field": "text", "en": "%s's guildmate %s has requested to join your group through Quick Join.", "hash": "4806c37e7469ef7c", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_REQUEST_QUICKJOIN", "field": "text", "en": "%s has requested to join your group through Quick Join.", "hash": "a3eb8e32cb2b578e", "src": "db2@1.60.1.70170"}
+{"id": "INVITE_CONFIRMATION_SUGGEST", "field": "text", "en": "%s has suggested that you invite %s to join your group.", "hash": "369926478b9dc8ce", "src": "db2@1.60.1.70170"}
 {"id": "INVTYPE_2HWEAPON", "field": "text", "en": "Two-Hand", "hash": "5e55518b1fba7104", "src": "db2@1.60.1.70170"}
 {"id": "INVTYPE_AMMO", "field": "text", "en": "Ammo", "hash": "08d277669827629d", "src": "db2@1.60.1.70170"}
 {"id": "INVTYPE_BAG", "field": "text", "en": "Bag", "hash": "00117a5c060d8c7b", "src": "db2@1.60.1.70170"}
@@ -230,6 +252,30 @@
 {"id": "ITEM_UPGRADE_NO_MORE_UPGRADES", "field": "text", "en": "This item cannot be upgraded anymore.", "hash": "37117fe1778e4181", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_VENDOR_STACK_BUY", "field": "text", "en": "<Shift click to buy a different amount>", "hash": "3413f0cee291a047", "src": "db2@1.60.1.70170"}
 {"id": "ITEM_WRITTEN_BY", "field": "text", "en": "Written by %s", "hash": "cae386859fa48097", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:1553", "field": "text", "en": "This raid is not yet available", "hash": "9013d19e5efc6895", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:1564", "field": "text", "en": "This Dungeon is currently not available.", "hash": "59453de0a1ea3018", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:1565", "field": "text", "en": "This dungeon is not yet available", "hash": "67a5bf22b328a6a7", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:1992", "field": "text", "en": "This raid is not currently open for testing", "hash": "f4021e09c6d86143", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:3876", "field": "text", "en": "You must be level 60 to enter", "hash": "fc48c304003541f8", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:4166", "field": "text", "en": "You are not high enough level to enter this Dungeon.", "hash": "48a322eae2def362", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryFailure:4175", "field": "text", "en": "You are not high enough level for this Dungeon.", "hash": "315f895f0809e491", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:10", "field": "text", "en": "You must be at least level 10 to enter.", "hash": "8dbd51f7d03d12f7", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:15", "field": "text", "en": "You must be at least level 25 to enter.", "hash": "096bf31454f3d0e5", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:17", "field": "text", "en": "You must be at least level 30 to enter.", "hash": "3fc6358238be55c3", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:18", "field": "text", "en": "You must be at least level 19 to enter.", "hash": "ff560d8fadde7982", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:19", "field": "text", "en": "You must be at least level 45 to enter.", "hash": "bb74d69abd7513a0", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:20", "field": "text", "en": "You must be at least level 35 to enter.", "hash": "627064d70934724b", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:22", "field": "text", "en": "You must be at least level 20 to enter.", "hash": "e6c1c3ba847db45d", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:23", "field": "text", "en": "You must be at least level 39 to enter.", "hash": "b15ef11a165fbc4e", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:24", "field": "text", "en": "You must be at least level 48 to enter.", "hash": "36a7bfd007558b2f", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:25", "field": "text", "en": "You must be at least level 42 to enter.", "hash": "4041ed6973949c22", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:27", "field": "text", "en": "You must be at least level 65 to enter.", "hash": "6d7dba2525f6566c", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:28", "field": "text", "en": "You must be at least level 33 to enter.", "hash": "baf91eb3829ecd41", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:30", "field": "text", "en": "You must be at least level 37 to enter.", "hash": "09e7aafb8fca1744", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:34", "field": "text", "en": "You must be at least level 50 to enter.", "hash": "f1cf1908a13f987e", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:35", "field": "text", "en": "You must be at least level 31 to enter.", "hash": "1381d894fc092837", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:7", "field": "text", "en": "You must be at least level 11 to enter.", "hash": "6178f5099387e57c", "src": "db2@1.60.1.70170"}
+{"id": "InstanceEntryMessage:8", "field": "text", "en": "You must be at least level 15 to enter.", "hash": "b067814ca0b32f7f", "src": "db2@1.60.1.70170"}
 {"id": "ItemNameDescription:13967", "field": "text", "en": "Blue", "hash": "08f48606219811ea", "src": "db2@1.60.1.70170"}
 {"id": "ItemNameDescription:13968", "field": "text", "en": "Green", "hash": "edaec63b5c5355aa", "src": "db2@1.60.1.70170"}
 {"id": "ItemNameDescription:14120", "field": "text", "en": "White", "hash": "0534370fd4ceb206", "src": "db2@1.60.1.70170"}
@@ -274,6 +320,9 @@
 {"id": "ItemSubClass:4:7", "field": "text", "en": "Libram", "hash": "eba5fc3a897271a3", "src": "db2@1.60.1.70170"}
 {"id": "ItemSubClass:4:8", "field": "text", "en": "Idol", "hash": "09e289f0dface0cf", "src": "db2@1.60.1.70170"}
 {"id": "ItemSubClass:4:9", "field": "text", "en": "Totem", "hash": "d17e0d12418feb07", "src": "db2@1.60.1.70170"}
+{"id": "ItemSubClassMask:3", "field": "text", "en": "Melee Weapon", "hash": "b3fa1e032648bc3c", "src": "db2@1.60.1.70170"}
+{"id": "ItemSubClassMask:4", "field": "text", "en": "Shield", "hash": "bba314a98f8932b0", "src": "db2@1.60.1.70170"}
+{"id": "ItemSubClassMask:5", "field": "text", "en": "Ranged Weapon", "hash": "59e915133241766c", "src": "db2@1.60.1.70170"}
 {"id": "ItemSubClassName:0:0", "field": "text", "en": "Explosives", "hash": "a523f6b229cb0256", "src": "db2@1.60.1.70170"}
 {"id": "ItemSubClassName:0:1", "field": "text", "en": "Potions", "hash": "889a67d1d4574851", "src": "db2@1.60.1.70170"}
 {"id": "ItemSubClassName:0:13", "field": "text", "en": "Draughts", "hash": "928809959506dbac", "src": "db2@1.60.1.70170"}

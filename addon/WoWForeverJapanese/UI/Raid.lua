@@ -14,7 +14,9 @@
 --   "All <assistant icon>" carries texture markup and stays English (curation rule).
 -- Saved-instance rows are ScrollBox rows (RaidInfoFrame.ScrollBox) built by an element initializer: a row's reset is
 -- `button.reset` (lowercase; xml:56, lua:142–165), SecondsToTime(reset, true, nil, 3) or "|cff808080Expired|r"; its
--- difficulty RAID_INFO_WORLD_BOSS for a world boss (lua:164) and the EXTENDED label (xml:62). They are followed with
+-- difficulty RAID_INFO_WORLD_BOSS for a world boss (lua:164) or, for a saved instance, GetSavedInstanceInfo's
+-- difficultyName (lua:157–158), a Difficulty row's English (restricted to that family), and the EXTENDED label
+-- (xml:62). They are followed with
 -- ScrollUtil.AddInitializedFrameCallback, Blizzard's own subscriber API; its iterateExisting pass calls the callback
 -- as (frame, elementData) while later initializations call it as (owner, frame, elementData), so both shapes are
 -- accepted. A reset of one unit matches its duration template; a two- or three-unit reset ("3 Days 4 Hr") matches no
@@ -49,7 +51,7 @@ local Compat = WFJ.Compat
 -- NUM_RAID_GROUPS, MEMBERS_PER_RAID_GROUP, MAX_RAID_MEMBERS [verified: Blizzard_FrameXMLBase/Shared/Constants.lua:1–3]
 local GROUPS, SLOTS, MEMBERS = 8, 5, 40
 local RESET_KEYS = { "RAID_INSTANCE_EXPIRES_EXPIRED", "DAYS_ABBR", "HOURS_ABBR", "MINUTES_ABBR" }
-local DIFFICULTY_KEYS = { "RAID_INFO_WORLD_BOSS" } -- other difficulties are the API's own names
+local DIFFICULTY_KEYS = { "RAID_INFO_WORLD_BOSS" } -- and the Difficulty family (difficultyOpts)
 local EXTEND_KEYS = { "EXTEND_RAID_LOCK", "UNEXTEND_RAID_LOCK", "REACTIVATE_RAID_LOCK" }
 local EXTENDED_KEYS = { "EXTENDED" }
 
@@ -143,7 +145,8 @@ function Raid.onRow(a, b)
   local key = rowKey(frame)
   WFJ.Labels.show(SURFACE, key, reset, nil, { only = RESET_KEYS })
   if type(frame.difficulty) == "table" then
-    WFJ.Labels.show(SURFACE, key .. ".difficulty", frame.difficulty, nil, { only = DIFFICULTY_KEYS })
+    WFJ.Labels.show(SURFACE, key .. ".difficulty", frame.difficulty, nil,
+      WFJ.Labels.familiesWith(DIFFICULTY_KEYS, "Difficulty"))
   end
   if type(frame.extended) == "table" then
     WFJ.Labels.show(SURFACE, key .. ".extended", frame.extended, nil, { only = EXTENDED_KEYS })

@@ -91,7 +91,7 @@ def test_merge_keeps_other_sources_and_gossip_npcs(tmp_path, monkeypatch, vmango
     assert _run(_db(vmangos_db)) == 0
     quest = {(ln["id"], ln["field"]): ln for ln in store.load("quest")}
     assert quest[(33, "title")] == pf
-    assert quest[(33, "completion")]["src"] == SRC  # vmangos provides this (id, field): source-owned merge
+    assert quest[(33, "completion")] == col  # what a client recorded in game outranks VMaNGOS (ADR-053)
     kept = [ln for ln in store.load("gossip") if ln["id"] == k]
     assert kept == [gossip]  # a key already present keeps its line and its npcs
 

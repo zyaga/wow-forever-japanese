@@ -9,6 +9,10 @@ local UI = {
   RENOWN_REWARD_CAPSTONE_TOOLTIP_TITLE = { "Major Milestone", "大きな節目" },
   RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE = { "Renown %d Rewards", "名声 %d の報酬" },
   RANK = { "Rank", "ランク" },
+  ["RenownRewardToast:1832"] = { "Faction Tabard Unlocked", "陣営タバード解放" },
+  ["RenownRewardToast:1833"] = { "Insignia Trinket Unlocked", "記章トリンケット解放" },
+  ["RenownRewardName:1832"] = { "Rank 1 Rewards", "ランク1の報酬" },
+  ["RenownRewardDescription:1832"] = { "Faction Tabard", "陣営タバード" },
 }
 local NAMES = { "MajorFactionsRenownToast", "MajorFactionUnlockToast" }
 
@@ -19,7 +23,7 @@ local function install()
   r.RewardIconMouseOver = CreateFrame("Frame")
   function r.PlayBanner(self, data)
     self.RenownLabel.text = ("Renown %d"):format(data.renownLevel)
-    self.RewardDescription.text = "Rank"
+    self.RewardDescription.text = data.description or "Rank" -- toastDescriptions joined with "|n" (:70-81)
   end
   local u = CreateFrame("Frame", "MajorFactionUnlockToast")
   u.name = "MajorFactionUnlockToast"
@@ -78,4 +82,41 @@ describe("the major faction banners on Forever", function()
     local bare = X.load("UI/MajorFactionToast.lua", UI)
     assert.has_no.errors(function() assert.is_false(bare.MajorFactionToast.init()) end)
   end)
+
+  it("the reward description's RenownRewardToast rows are Japanese, joined pieces too; Alt shows English", function()
+    local toast = _G.MajorFactionsRenownToast
+    toast:PlayBanner({ renownLevel = 1, description = "Faction Tabard Unlocked" })
+    assert.are.equal("陣営タバード解放", toast.RewardDescription:GetText())
+    toast:PlayBanner({ renownLevel = 2, description = "Faction Tabard Unlocked|nInsignia Trinket Unlocked" })
+    assert.are.equal("陣営タバード解放|n記章トリンケット解放", toast.RewardDescription:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal("Faction Tabard Unlocked|nInsignia Trinket Unlocked", toast.RewardDescription:GetText())
+    X.alt(WFJ, false)
+    assert.are.equal("陣営タバード解放|n記章トリンケット解放", toast.RewardDescription:GetText())
+  end)
+
+  it("a reward description with a piece no row has, or another family's row, stays as the client wrote it", function()
+    local toast = _G.MajorFactionsRenownToast
+    toast:PlayBanner({ renownLevel = 1, description = "Faction Tabard Unlocked|nGryphon Rider's Lance" })
+    assert.are.equal("Faction Tabard Unlocked|nGryphon Rider's Lance", toast.RewardDescription:GetText())
+    toast:PlayBanner({ renownLevel = 1, description = "Faction Tabard" }) -- a RenownRewardDescription row
+    assert.are.equal("Faction Tabard", toast.RewardDescription:GetText())
+    toast:PlayBanner({ renownLevel = 1, description = "" })
+    assert.are.equal("", toast.RewardDescription:GetText())
+  end)
+
+  it("the reward tooltip shows a single reward's RenownRewardName / RenownRewardDescription rows in Japanese",
+    function()
+      local owner = _G.MajorFactionsRenownToast.RewardIconMouseOver
+      _G.GameTooltip:SetOwner(owner)
+      _G.GameTooltip:SetText("Rank 1 Rewards")
+      _G.GameTooltip:AddLine("Faction Tabard")
+      _G.GameTooltip:Show()
+      assert.are.equal("ランク1の報酬", _G.GameTooltipTextLeft1:GetText())
+      assert.are.equal("陣営タバード", _G.GameTooltipTextLeft2:GetText())
+      _G.GameTooltip:SetOwner(owner)
+      _G.GameTooltip:SetText("Faction Tabard Unlocked") -- a RenownRewardToast row: not this tooltip's family
+      _G.GameTooltip:Show()
+      assert.are.equal("Faction Tabard Unlocked", _G.GameTooltipTextLeft1:GetText())
+    end)
 end)

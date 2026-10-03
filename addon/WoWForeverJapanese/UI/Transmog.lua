@@ -39,7 +39,9 @@
 --   …): "<text> |cffffd200(<key>)|r", the `binding` form (lua:857–864, blizzard_sharedxml/bindingutil.lua:175–186);
 --   each situation's dropdown default text, red- or grey-wrapped TRANSMOG_SITUATIONS_NO_VALID_OPTIONS
 --   (TransmogWardrobeSituationsMixin:Refresh, lua:3104–3120; the `wrapped` form), after Refresh and each UpdateText.
--- Never touched: outfit, set and custom-set names, appearance / item / illusion names, situation option names, the
+-- Each situation group's title and hover, and the situation and slot option menus (UI/MenusTags), are client-table
+--   rows (TransmogSituationTrigger, TransmogSituation, TransmogOutfitSlotOption) matched in their own families.
+-- Never touched: outfit, set and custom-set names, appearance / item / illusion names, the
 --   search boxes, the outfit popup's name EditBox, money. The item models' NEW badge (NewVisual.NewString,
 --   blizzard_transmogtemplates.xml:1029) needs no hook: NEW_CAPS ships as "NEW" (kept in English letters),
 --   which is what the badge already shows.
@@ -188,6 +190,13 @@ function Transmog.onSituations()
     local dropdown = type(situation) == "table" and situation.Dropdown or nil
     if type(dropdown) == "table" and type(dropdown.Text) == "table" then
       n = n + WFJ.Labels.dropdown(SURFACE, situationKey(dropdown), dropdown, SITUATION)
+      -- its hover: the group's name and help text (TransmogSituationMixin:Init, blizzard_transmogtemplates.lua:1937)
+      WFJ.HelpTooltip.register(dropdown, WFJ.Labels.families("TransmogTrigger", "TransmogTriggerDescription"))
+    end
+    -- the group's title (Locations, Movement): a TransmogSituationTrigger row (lua:1897-1898)
+    if type(situation) == "table" and type(situation.Title) == "table" then
+      n = n + WFJ.Labels.show(SURFACE, situationKey(situation.Title), situation.Title, nil,
+        WFJ.Labels.families("TransmogTrigger"))
     end
   end
   WFJ.Render.updateBanner(SURFACE)

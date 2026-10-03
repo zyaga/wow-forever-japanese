@@ -3,6 +3,8 @@ local _, WFJ = ...
 WFJ.Data.add("spell", {
   [453017] = { "回復がクリティカルになると一定の確率で近くの味方3人を$N2回復し、呪文がクリティカルヒットすると一定の確率で近くの敵3体に$N4の自然ダメージを与えます。", "呪文のクリティカル治療効果に、周囲の味方最大$N1人を$N2回復する可能性があります。", 0x376f5ceb, 0x25f66d43, "uu" },
   [453053] = { "Cat、Bear、Dire Bearフォームでのみ、Attack Powerが+$N1されます。", nil, 0xa798bce2, nil, "um" },
+  [453482] = { "天と調和し、Moonkin形態をより天上の姿に置き換えられるようになります。", "星霊の姿をまといつつあります……", 0x7d88df02, 0xf73bad51, "uu" },
+  [453622] = { "Feral Combatのスキルが$N1上昇します。他の指輪のルーンとは重複しません。", nil, 0x3a8a2bf4, nil, "um" },
   [453635] = { "指輪にSword Specializationのルーンを刻みます：\n\n$I1\nSwordsとTwo-Handed Swordsのスキルが$N1上昇します。この効果は種族ボーナスや他の指輪のルーンとは重複しません。", nil, 0x619fe816, nil, "um" },
   [453688] = { "指輪にAxe Specializationのルーンを刻みます：\n\n$I1\nAxesとTwo-Handed Axesのスキルが$N1上昇します。この効果は種族ボーナスや他の指輪のルーンとは重複しません。", nil, 0x80944dc1, nil, "um" },
   [453689] = { "指輪にMace Specializationのルーンを刻みます：\n\n$I1\nMacesとTwo-Handed Macesのスキルが$N1上昇します。この効果は種族ボーナスや他の指輪のルーンとは重複しません。", nil, 0xf8361805, nil, "um" },

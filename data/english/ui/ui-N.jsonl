@@ -33,6 +33,9 @@
 {"id": "NEWBIE_TOOLTIP_IGNOREPLAYER", "field": "text", "en": "Adds a player to your ignore list. You will no longer see messages or other text from players on your ignore list, nor will these players be able to communicate with you in any other way.", "hash": "8e10dd0a106b5312", "src": "db2@1.60.1.69913"}
 {"id": "NEWBIE_TOOLTIP_LATENCY", "field": "text", "en": "The time it takes to talk with the game server. Consistently high (red) latencies may indicate a problem with your Internet connection.", "hash": "a22e1634f270813f", "src": "db2@1.60.1.70170"}
 {"id": "NEWBIE_TOOLTIP_LFGPARENT", "field": "text", "en": "A tool to find a group to complete a dungeon.", "hash": "d05fc90fe30366d1", "src": "db2@1.60.1.70170"}
+{"id": "NEWBIE_TOOLTIP_LFG_LIST_EDIT", "field": "text", "en": "Edit your current group listing.", "hash": "65c0a3258c4168a8", "src": "db2@1.60.1.70170"}
+{"id": "NEWBIE_TOOLTIP_LFG_LIST_TAB_1", "field": "text", "en": "List the group activities you're interested in.", "hash": "eaf175e68597ba86", "src": "db2@1.60.1.70170"}
+{"id": "NEWBIE_TOOLTIP_LFG_LIST_TAB_2", "field": "text", "en": "Browse player listings to form a group.", "hash": "fa986fb68bd737f7", "src": "db2@1.60.1.70170"}
 {"id": "NEWBIE_TOOLTIP_LOOKINGFORGUILDTAB", "field": "text", "en": "Allows you to find a guild.", "hash": "0d270ade785b7769", "src": "db2@1.60.1.70170"}
 {"id": "NEWBIE_TOOLTIP_MAINMENU", "field": "text", "en": "Modify your settings, change your hotkeys or exit the game.", "hash": "97dbb009b743c4e4", "src": "db2@1.60.1.70170"}
 {"id": "NEWBIE_TOOLTIP_MEMORY", "field": "text", "en": "How much memory your AddOns are using. You can get to the addon management page from the character select screen.", "hash": "68f4dc9017b552d6", "src": "db2@1.60.1.70170"}
@@ -73,6 +76,7 @@
 {"id": "NOTCH_MODE_WINDOW_BELOW", "field": "text", "en": "Window Below", "hash": "d25176d96101838f", "src": "db2@1.60.1.70170"}
 {"id": "NOTE_COLON", "field": "text", "en": "Note:", "hash": "682bc6f90810ee03", "src": "db2@1.60.1.70170"}
 {"id": "NOT_APPLICABLE", "field": "text", "en": "N/A", "hash": "0014850c35aa7f6f", "src": "db2@1.60.1.70170"}
+{"id": "NOT_BEST_ARMOR_TYPE_WARNING", "field": "text", "en": "|cnRED_FONT_COLOR:This is not your preferred armor type.|r", "hash": "99d19734e0fcd31f", "src": "db2@1.60.1.70170"}
 {"id": "NOT_BOUND", "field": "text", "en": "Not Bound", "hash": "29eea9ca7b0bd97e", "src": "db2@1.60.1.70170"}
 {"id": "NOT_COLLECTED", "field": "text", "en": "Not Collected", "hash": "da90f878a0bf8d21", "src": "db2@1.60.1.70170"}
 {"id": "NOT_ENOUGH_CURRENCY", "field": "text", "en": "Not enough %s", "hash": "9d77f78a3031360d", "src": "db2@1.60.1.70170"}
@@ -98,8 +102,18 @@
 {"id": "NPC_NAMES_DROPDOWN_NONE_TOOLTIP", "field": "text", "en": "Do not display names for any NPCs", "hash": "b23d5a4c62142db0", "src": "db2@1.60.1.70170"}
 {"id": "NPC_NAMES_DROPDOWN_TRACKED", "field": "text", "en": "Quest NPCs", "hash": "2e6a0447df2886ff", "src": "db2@1.60.1.70170"}
 {"id": "NPC_NAMES_DROPDOWN_TRACKED_TOOLTIP", "field": "text", "en": "Display names for NPCs involved with quests, as well as tracked NPCs using the minimap tracker.", "hash": "f9c9b36f8a3c9ead", "src": "db2@1.60.1.70170"}
+{"id": "NPEV2_CHAT_AVAILABLE", "field": "text", "en": "Newcomer Chat is now available.", "hash": "4678a6a0cc7a1ffb", "src": "db2@1.60.1.70170"}
+{"id": "NPEV2_CHAT_NEWCOMER_GRADUATION", "field": "text", "en": "You've graduated from Newcomer Chat! You'll be removed the next time you log on. Feel free to ask any questions in General Chat (%s) from now on.", "hash": "9b5cdaba3f0486a1", "src": "db2@1.60.1.70170"}
+{"id": "NPEV2_CHAT_NEWCOMER_GRADUATION_REMINDER", "field": "text", "en": "|A:newplayerchat-chaticon-guide:0:0:0:0|a|cff00ff00You've graduated from Newcomer Chat!|r Feel free to ask any questions in General (%s) from now on.", "hash": "18aa6f6c3a265039", "src": "db2@1.60.1.70170"}
+{"id": "NPEV2_CHAT_UNAVAILABLE", "field": "text", "en": "Newcomer Chat is temporarily unavailable.", "hash": "e12f7088647a7970", "src": "db2@1.60.1.70170"}
+{"id": "NPEV2_REGIONAL_CHAT_AVAILABLE", "field": "text", "en": "Regional Chat Service is now available.", "hash": "5edf22c9a4915d21", "src": "db2@1.60.1.70170"}
+{"id": "NPEV2_REGIONAL_CHAT_UNAVAILABLE", "field": "text", "en": "Regional Chat Service is temporarily unavailable.", "hash": "414c9f53f895fbc2", "src": "db2@1.60.1.70170"}
 {"id": "NPEV2_SELECT_TALENTS_TAB", "field": "text", "en": "Select the |cFF00FFFFTalents|r Tab", "hash": "a183d3f96d233a10", "src": "db2@1.60.1.70170"}
 {"id": "NPEV2_SPEC_TUTORIAL_GOSSIP_CLOSED", "field": "text", "en": "View your |cFF00FFFFcombat specializations|r", "hash": "461e4352d6558384", "src": "db2@1.60.1.70170"}
+{"id": "NPE_ABANDON_A_RETURN", "field": "text", "en": "Go Back", "hash": "6694c8e4eaaef5b2", "src": "db2@1.60.1.70170"}
+{"id": "NPE_ABANDON_A_WARNING", "field": "text", "en": "You've traveled too far away from Stormwind.|n|nIf you continue, you'll be removed from the tutorial.|n|nWould you like to go back to Stormwind?|n|n|n", "hash": "adbd8f7cbcc7091f", "src": "db2@1.60.1.70170"}
+{"id": "NPE_ABANDON_H_RETURN", "field": "text", "en": "Go Back", "hash": "6694c8e4eaaef5b2", "src": "db2@1.60.1.70170"}
+{"id": "NPE_ABANDON_H_WARNING", "field": "text", "en": "You've traveled too far away from Orgrimmar.|n|nIf you continue, you'll be removed from the tutorial.|n|nWould you like to go back to Orgrimmar?|n|n|n", "hash": "65b5e49ed6603d34", "src": "db2@1.60.1.70170"}
 {"id": "NPE_ABANDON_LEAVE_TUTORIAL", "field": "text", "en": "End Tutorial", "hash": "fb6c9f3f89523e6c", "src": "db2@1.60.1.70170"}
 {"id": "NUM_FREE_SLOTS", "field": "text", "en": "%d Empty |4Slot:Slots; (Total)", "hash": "add4fc8ae4bdbc37", "src": "db2@1.60.1.70170"}
 {"id": "NUM_GUILDBANK_TABS_PURCHASED", "field": "text", "en": "(%d/%d tabs purchased)", "hash": "4c227a9c18eccf38", "src": "db2@1.60.1.70170"}

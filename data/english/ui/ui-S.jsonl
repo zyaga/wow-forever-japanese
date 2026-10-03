@@ -26,10 +26,12 @@
 {"id": "SEARCH_LOADING_TEXT", "field": "text", "en": "Loading...", "hash": "0467fd8e3491e8b1", "src": "db2@1.60.1.70170"}
 {"id": "SEARCH_PROGRESS_BAR_TEXT", "field": "text", "en": "Searching", "hash": "845b4b2de4bdc050", "src": "db2@1.60.1.70170"}
 {"id": "SEARCH_QUEST_LOG", "field": "text", "en": "Search Quest Log", "hash": "75b500d9cb0debb3", "src": "db2@1.60.1.70170"}
+{"id": "SEARCH_RESULTS_SHOW_COUNT", "field": "text", "en": "Show All %d Results", "hash": "ed6c54dd849977db", "src": "db2@1.60.1.70170"}
 {"id": "SEASON_ENDS_IN_TIME", "field": "text", "en": "Season ends in: %s", "hash": "7b47c1bff25c690c", "src": "db2@1.60.1.70170"}
 {"id": "SECONDARYHANDSLOT", "field": "text", "en": "Off Hand", "hash": "4d66f8e7f5edf7c5", "src": "db2@1.60.1.70170"}
 {"id": "SECONDS", "field": "text", "en": "|4Second:Seconds;", "hash": "9a1d741acf919200", "src": "db2@1.60.1.70170"}
 {"id": "SECONDS_ABBR", "field": "text", "en": "%d |4Sec:Sec;", "hash": "c0d6c24876b683bb", "src": "db2@1.60.1.70170"}
+{"id": "SECONDS_FLOAT", "field": "text", "en": "%.1f |4Second:Seconds;", "hash": "12c67dc546ae435f", "src": "db2@1.60.1.70170"}
 {"id": "SECONDS_FLOAT_ABBR", "field": "text", "en": "%.1f |4Sec:Sec;", "hash": "427d247482e8c646", "src": "db2@1.60.1.70170"}
 {"id": "SECOND_ONELETTER_ABBR", "field": "text", "en": "%d s", "hash": "050f77befd04b937", "src": "db2@1.60.1.70170"}
 {"id": "SELECTED_DECOR_LIGHT_RADIUS_INDICATOR_TYPE", "field": "text", "en": "Selected Decor", "hash": "df37f7364ae8c474", "src": "db2@1.60.1.70170"}
@@ -118,8 +120,12 @@
 {"id": "SHAKE_INTENSITY_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70170"}
 {"id": "SHAKE_INTENSITY_REDUCED", "field": "text", "en": "Reduced", "hash": "0791ee56d2b6fac5", "src": "db2@1.60.1.70170"}
 {"id": "SHAMAN_STRENGTH_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFAttack Power|r by %d\nIncreases |cFFFFFFFFBlock Value|r by %d", "hash": "be95ff635ef2ba7a", "src": "db2@1.60.1.70170"}
+{"id": "SHARD_TRANSFER_ANYTIME", "field": "text", "en": "Refreshing your world at any time. Characters and creatures around you may change.", "hash": "bd1230542528d832", "src": "db2@1.60.1.70170"}
+{"id": "SHARD_TRANSFER_COUNTDOWN_MESSAGE", "field": "text", "en": "The world around you will refresh in %s %s. Make sure you are out of combat and in a safe area, or click here to refresh now.", "hash": "59cee98f9b5a3b38", "src": "db2@1.60.1.70170"}
+{"id": "SHARD_TRANSFER_COUNTDOWN_STATIC_POPUP_MESSAGE", "field": "text", "en": "The world around you will refresh in %s %s. Make sure you are out of combat and in a safe area, or select refresh now.", "hash": "8ec497b073da5d36", "src": "db2@1.60.1.70170"}
 {"id": "SHARD_TRANSFER_NOW", "field": "text", "en": "Refresh the world now.", "hash": "0d91fc7834a347d4", "src": "db2@1.60.1.70170"}
 {"id": "SHARD_TRANSFER_NOW_BUTTON", "field": "text", "en": "Refresh Now", "hash": "6fa1f9d53455faed", "src": "db2@1.60.1.70170"}
+{"id": "SHARD_TRANSFER_REFRESH_MESSAGE", "field": "text", "en": "World refresh in %s %s", "hash": "cab124f040dfbaab", "src": "db2@1.60.1.70170"}
 {"id": "SHARE_IN_CHAT", "field": "text", "en": "Share in Chat", "hash": "3692fb77f1813ff5", "src": "db2@1.60.1.70170"}
 {"id": "SHARE_QUEST", "field": "text", "en": "Share Quest", "hash": "4c5c8cb2179f54c3", "src": "db2@1.60.1.70170"}
 {"id": "SHARE_QUEST_ABBREV", "field": "text", "en": "Share", "hash": "befb447839625661", "src": "db2@1.60.1.70170"}
@@ -171,9 +177,142 @@
 {"id": "SKILL_DETAIL_SELECT_PROMPT", "field": "text", "en": "Select a skill to view its details.", "hash": "abea83e70312b4c3", "src": "db2@1.60.1.70170"}
 {"id": "SKILL_RANK_UP", "field": "text", "en": "Your skill in %s has increased to %d.", "hash": "6366729862af4d40", "src": "db2@1.60.1.70170"}
 {"id": "SKIP", "field": "text", "en": "Hold to Skip", "hash": "0d802ce6892fafbd", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_CONFIRMATION", "field": "text", "en": "%s set to %s", "hash": "6cf662a51de1bfc4", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_CONFIRMATION_DISABLED", "field": "text", "en": "%s set to Disabled", "hash": "7927daa05b44862b", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_CONFIRMATION_ENABLED", "field": "text", "en": "%s set to Enabled", "hash": "441ea11df62ece4c", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_CONFIRMATION_ENABLED_WITH_HELP", "field": "text", "en": "%s set to Enabled. For options, type /ttscombat help.", "hash": "c34616164fdf30cf", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_DISABLED_WARNING", "field": "text", "en": "Combat Audio Alerts are currently disabled. To enable them, type /ttscombat.", "hash": "5128e965234b86c1", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_DEBUFF_SELF_ALERT", "field": "text", "en": "Announces when you can dispel a debuff on yourself", "hash": "6383b404c11f34c9", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_DEBUFF_SELF_ALERT_SOUND", "field": "text", "en": "sound:[%d - %d] - Choose a sound to indicate when you can dispel a debuff on yourself", "hash": "bf50aacfc9388e69", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_HELP", "field": "text", "en": "Show the help menu that lists all commands", "hash": "4833a86504238b99", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_PLAY_SOUND", "field": "text", "en": "[%d - %d] - Plays a combat audio alert sound", "hash": "73acfd6cd04657fc", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_PULSE_YOUR_HEALTH", "field": "text", "en": "[%d - %d] - Pulses your health when it is below this percentage", "hash": "ba2058b72e9cb8a9", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_PULSE_YOUR_HEALTH_VOLUME", "field": "text", "en": "[%d - %d] - Choose the volume to use when pulsing your health", "hash": "e54f80e8780ba0d0", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_COMBAT_END", "field": "text", "en": "Choose a phrase or sound to indicate combat has ended", "hash": "13db049329dcbce1", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_COMBAT_END_SOUND", "field": "text", "en": "sound:[%d - %d] - Choose a sound to indicate combat has ended", "hash": "743421e5a88a14b3", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_COMBAT_START", "field": "text", "en": "Choose a phrase or sound to indicate combat has started", "hash": "98de7c14656944be", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_COMBAT_START_SOUND", "field": "text", "en": "sound:[%d - %d] Choose a sound to indicate that combat has started", "hash": "478dcb7424b56c73", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_IF_TARGETED", "field": "text", "en": "[%d - %d] - Choose a phrase or sound to indicate that you are targeted by an enemy", "hash": "43afea71c5ad3b03", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_IF_TARGETED_SOUND", "field": "text", "en": "sound:[%d - %d] - Choose a sound to indicate that you are targeted by an enemy", "hash": "1d33f48f5f22eddb", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_PARTY_HEALTH", "field": "text", "en": "[%d - %d] - When in a party, calls out party members that need healing by their party number", "hash": "e78b255831904b63", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_PARTY_HEALTH_FREQUENCY", "field": "text", "en": "[%s - %d] - Adjust the relative frequency of party health callouts", "hash": "233a76608288e5c4", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_PARTY_HEALTH_VOICE", "field": "text", "en": "[%d - %d] - Choose the voice to use when saying party health", "hash": "ae03bb611e3a0405", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_PARTY_HEALTH_VOLUME", "field": "text", "en": "[%d - %d] - Choose the volume to use when saying party health", "hash": "8df6df8ec0f7099d", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_RESOURCE_1", "field": "text", "en": "[%d - %d] - Says your first combat resource when it crosses certain percentages", "hash": "632676c6177906e0", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_RESOURCE_1_FORMAT", "field": "text", "en": "[%d - %d] - Choose the format to use when saying your first combat resource", "hash": "d375ec76706a5aee", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_RESOURCE_1_THROTTLE", "field": "text", "en": "[%d - %d] - Choose the seconds of throttle to use when saying your first combat resource", "hash": "5b608a5d4697adaf", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_RESOURCE_1_VOICE", "field": "text", "en": "[%d - %d] - Choose the voice to use when saying your first combat resource", "hash": "f388d22d6ae96b5f", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_RESOURCE_1_VOLUME", "field": "text", "en": "[%d - %d] - Choose the volume to use when saying your first combat resource", "hash": "6933d388c2b0b358", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_RESOURCE_2", "field": "text", "en": "[%d - %d] - Says your second combat resource when it crosses certain percentages", "hash": "c3cd38ea7e334df7", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_RESOURCE_2_FORMAT", "field": "text", "en": "[%d - %d] - Choose the format to use when saying your second combat resource", "hash": "b74e8b2eb2f68e50", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_RESOURCE_2_THROTTLE", "field": "text", "en": "[%d - %d] - Choose the seconds of throttle to use when saying your second combat resource", "hash": "445d57326dd1506c", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_RESOURCE_2_VOICE", "field": "text", "en": "[%d - %d] - Choose the voice to use when saying your second combat resource", "hash": "20fa18283fa1a502", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_RESOURCE_2_VOLUME", "field": "text", "en": "[%d - %d] - Choose the volume to use when saying your second combat resource", "hash": "577bc856877fc7a9", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_CASTS", "field": "text", "en": "[%d - %d] - Select what to say when your target casts an ability", "hash": "4c56c1c672bb570b", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_CASTS_FORMAT", "field": "text", "en": "[%d - %d] - Choose the wording to use to say your target's casts", "hash": "562384f32601f91f", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_CASTS_INTERRUPT", "field": "text", "en": "Announces when the target starts casting something that you can interrupt with an ability", "hash": "9bc745bc0a1eb4ee", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_CASTS_INTERRUPT_SOUND", "field": "text", "en": "sound:[%d - %d] - Choose a sound to indicate when the target starts casting something that you can interrupt with an ability", "hash": "2a51844a7762c842", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_CASTS_INTERRUPT_SUCCESS", "field": "text", "en": "Announces when the target is successfully interrupted", "hash": "a6403a967cf94649", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_CASTS_INTERRUPT_SUCCESS_SOUND", "field": "text", "en": "sound:[%d - %d] - Choose a sound to indicate when the target is successfully interrupted", "hash": "a8c837c019b9b182", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_CASTS_MIN_CAST_TIME", "field": "text", "en": "[%d - %d] - Sets the minimum cast time of target abilities to be announced", "hash": "64c524be30a62f22", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_CASTS_THROTTLE", "field": "text", "en": "[%d - %d] - Choose the seconds of throttle to use when saying your target's casts", "hash": "0b9b4e2d5f00c3a0", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_CASTS_VOICE", "field": "text", "en": "[%d - %d] - Choose the voice to use to say your target's casts", "hash": "b6445867806cfd50", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_CASTS_VOLUME", "field": "text", "en": "[%d - %d] - Choose the volume to use to say your target's casts", "hash": "38483b08078b9a39", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_HEALTH", "field": "text", "en": "[%d - %d] - Says your target's health when it crosses certain percentages", "hash": "2ea0d76a7573c82d", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_HEALTH_FORMAT", "field": "text", "en": "[%d - %d] - Choose the format to use when saying your target's health", "hash": "22fae9e55da94b8c", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_HEALTH_THROTTLE", "field": "text", "en": "[%d - %d] - Choose the seconds of throttle to use when saying your target's health", "hash": "1dd9c84699a64296", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_HEALTH_VOICE", "field": "text", "en": "[%d - %d] - Choose the voice to use when saying your target's health", "hash": "4a41482fabf6f475", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_HEALTH_VOLUME", "field": "text", "en": "[%d - %d] - Choose the volume to use when saying your target's health", "hash": "2e5131d794f70e9b", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_TARGET_NAME", "field": "text", "en": "Says the name of the target when you select it", "hash": "41539bba21b1f2d4", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_CASTS", "field": "text", "en": "[%d - %d] - Select what to say when you cast an ability", "hash": "3138dfe9a1132087", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_CASTS_FORMAT", "field": "text", "en": "[%d - %d] - Choose the wording to use to say your cast", "hash": "fb928766f6504465", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_CASTS_MIN_CAST_TIME", "field": "text", "en": "[%d - %d] - Sets the minimum cast time of abilities to be announced", "hash": "1767da5212e048fe", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_CASTS_THROTTLE", "field": "text", "en": "[%d - %d] - Choose the seconds of throttle to use when saying your casts", "hash": "6059f5b4e4442808", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_CASTS_VOICE", "field": "text", "en": "[%d - %d] - Choose the voice to use to say your casts", "hash": "c08b6dde8bc805a4", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_CASTS_VOLUME", "field": "text", "en": "[%d - %d] - Choose the volume to use to say your casts", "hash": "6187e6662a3c0173", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_DEBUFFS", "field": "text", "en": "Says when a debuff is applied to you", "hash": "cd4e50d295b16d9d", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_DEBUFFS_FORMAT", "field": "text", "en": "[%d - %d] - Choose the format to use when saying your debuff", "hash": "a0e3446b0ae3fbe4", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_DEBUFFS_MIN_DURATION", "field": "text", "en": "[%d - %d] - Choose the minimum duration of a debuff for it to be announced", "hash": "86aa26fa182d4529", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_DEBUFFS_VOICE", "field": "text", "en": "[%d - %d] - Choose the voice to use when saying your debuffs", "hash": "325ce6de72f6658f", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_DEBUFFS_VOLUME", "field": "text", "en": "[%d - %d] - Choose the volume to use when saying your debuffs", "hash": "12500b0b15b36b38", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_HEALTH", "field": "text", "en": "[%d - %d] - Says your health when it crosses certain percentages", "hash": "2236295b28ac7135", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_HEALTH_FORMAT", "field": "text", "en": "[%d - %d] - Choose the format to use when saying your health", "hash": "8ecfd12b9fea0c9c", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_HEALTH_THROTTLE", "field": "text", "en": "[%d - %d] - Choose the seconds of throttle to use when saying your health", "hash": "7b698332e30b3416", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_HEALTH_VOICE", "field": "text", "en": "[%d - %d] - Choose the voice to use when saying your health", "hash": "5bbe5bb1d85ae292", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SAY_YOUR_HEALTH_VOLUME", "field": "text", "en": "[%d - %d] - Choose the volume to use when saying your health", "hash": "74e74c551fa5085b", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SOUND", "field": "text", "en": "To use a specific sound (not listed here), type \"%s sound:\" and a number", "hash": "3f81d8451e70ff14", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SPEED", "field": "text", "en": "[%s - %d] - Adjust the rate of speech for combat audio alerts", "hash": "0c97570cc8151b0b", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_SUBOPTION_INVALID", "field": "text", "en": "Type the previous command and the option number:", "hash": "688c800e682a8422", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_VOICE", "field": "text", "en": "[%d - %d] - Choose the primary voice for combat audio alerts", "hash": "a8c8f76e0367311f", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_VOLUME", "field": "text", "en": "[%d - %d] - Choose the primary volume for combat audio alerts", "hash": "a1e438c7ee891948", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_WHEN_TARGET_DIES", "field": "text", "en": "[%d - %d] - Choose a phrase to indicate your target has died", "hash": "e26f1825fae208e8", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_HELP_WHEN_TARGET_DIES_SOUND", "field": "text", "en": "sound:[%d - %d] - Choose a sound to indicate your target has died", "hash": "101fc1041227c771", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_PULSE_YOUR_HEALTH_VOLUME_NARRATED", "field": "text", "en": "Pulse Your Health Volume", "hash": "7f1bf7007620d1d8", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_PARTY_HEALTH_VOICE_CHANGED_CONFIRMATION", "field": "text", "en": "Combat Audio Alert Say Party Health Voice set to %s", "hash": "0977a3f8a9a90c53", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_PARTY_HEALTH_VOLUME_NARRATED", "field": "text", "en": "Say Party Health Volume", "hash": "40e45248d13369e0", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_RESOURCE_1_VOICE_CHANGED_CONFIRMATION", "field": "text", "en": "Combat Audio Alert Say Resource 1 Voice set to %s", "hash": "8b57890978ea5738", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_RESOURCE_1_VOLUME_NARRATED", "field": "text", "en": "Say Resource 1 Volume", "hash": "4fe0f34be76baa0a", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_RESOURCE_2_VOICE_CHANGED_CONFIRMATION", "field": "text", "en": "Combat Audio Alert Say Resource 2 Voice set to %s", "hash": "4d3357bfe290d0a5", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_RESOURCE_2_VOLUME_NARRATED", "field": "text", "en": "Say Resource 2 Volume", "hash": "c752760a5cd4b006", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_TARGET_CASTS_VOICE_CHANGED_CONFIRMATION", "field": "text", "en": "Combat Audio Alert Say Target's Casts Voice set to %s", "hash": "1d649c6893c980b6", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_TARGET_CASTS_VOLUME_NARRATED", "field": "text", "en": "Say Target Casts Volume", "hash": "3fca36610af44634", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_TARGET_HEALTH_VOICE_CHANGED_CONFIRMATION", "field": "text", "en": "Combat Audio Alert Say Target Health Voice set to %s", "hash": "e7d03e709c51f7b3", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_TARGET_HEALTH_VOLUME_NARRATED", "field": "text", "en": "Say Target Health Volume", "hash": "e2e3c2d658368dbe", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_YOUR_CASTS_VOICE_CHANGED_CONFIRMATION", "field": "text", "en": "Combat Audio Alert Say Your Casts Voice set to %s", "hash": "4cd612958bcc1647", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_YOUR_CASTS_VOLUME_NARRATED", "field": "text", "en": "Say Your Casts Volume", "hash": "7ba2852d66db61b2", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_YOUR_DEBUFFS_VOICE_CHANGED_CONFIRMATION", "field": "text", "en": "Combat Audio Alert Say Your Debuffs Voice set to %s", "hash": "42c733b0d598d017", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_YOUR_DEBUFFS_VOLUME_NARRATED", "field": "text", "en": "Say Your Debuffs Volume", "hash": "bf2ea44a017153fe", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_YOUR_HEALTH_VOICE_CHANGED_CONFIRMATION", "field": "text", "en": "Combat Audio Alert Say Your Health Voice set to %s", "hash": "da85fc0a99e5e64f", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_SAY_YOUR_HEALTH_VOLUME_NARRATED", "field": "text", "en": "Say Your Health Volume", "hash": "829415d51aaabc0e", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_CAA_VOICE_CHANGED_CONFIRMATION", "field": "text", "en": "Combat Audio Alert Voice set to %s", "hash": "b026539122b3009c", "src": "db2@1.60.1.70170"}
 {"id": "SLASH_COMMENTATOROVERRIDE_SUCCESS", "field": "text", "en": "Player |cffffffff%s|r will now be known as |cffffffff%s|r.", "hash": "d239e1d0ec67883e", "src": "db2@1.60.1.70170"}
 {"id": "SLASH_COMMENTATOR_ASSIGNPLAYER_SUCCESS", "field": "text", "en": "Player |cffffffff%s|r is now on team |cffffffff%s|r (player and team names are case-sensitive).", "hash": "4e35d781617b0663", "src": "db2@1.60.1.70170"}
 {"id": "SLASH_COMMENTATOR_NAMETEAM_SUCCESS", "field": "text", "en": "Team |cffffffff%s|r will now be known as |cffffffff%s|r.", "hash": "02ef5dedbade28d0", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_ALTVOICE_CHANGED_CONFIRMATION", "field": "text", "en": "Alternate Voice set to %s", "hash": "886d6036275f1e33", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_CONFIRMATION_DISABLED", "field": "text", "en": "%s set to Disabled", "hash": "7927daa05b44862b", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_CONFIRMATION_ENABLED", "field": "text", "en": "%s set to Enabled", "hash": "441ea11df62ece4c", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_CONFIRMATION_RESET", "field": "text", "en": "Text to Speech settings have been restored to defaults.", "hash": "65fff5fa78b245f6", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_ACHIEVEMENT", "field": "text", "en": "Enable or disable achievement announce", "hash": "daa7386073667499", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_ALTSAMPLE", "field": "text", "en": "Speaks sample text in the alternate voice used for system narration", "hash": "c468c0319ed975de", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_ALTSYSTEMVOICE", "field": "text", "en": "Toggle the use of an alternate voice for system message narration", "hash": "a1f66b12b9fe69ba", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_ALTVOICE", "field": "text", "en": "[%d - %d] - Set alternate voice option to the given voice", "hash": "ceecfb6667c0dabe", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_BLIZZARD", "field": "text", "en": "Enable or disable blizzard whisper messages", "hash": "70697859a3ae6f49", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_BOSS_EMOTE", "field": "text", "en": "Enable or disable boss emotes", "hash": "3505286828d117a0", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_BOSS_WHISPER", "field": "text", "en": "Enable or disable boss whispers", "hash": "200e0667f5d3423d", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_CHANNEL", "field": "text", "en": "Enable or disable the given channel", "hash": "99ebd223eba301b2", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_CREATURE_EMOTE", "field": "text", "en": "Enable or disable creature emotes", "hash": "327c234dd6c4f468", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_CREATURE_SAY", "field": "text", "en": "Enable or disable creature messages", "hash": "358877acac6abf1e", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_CREATURE_WHISPER", "field": "text", "en": "Enable or disable creature whispers", "hash": "2ce6c422551078d4", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_CREATURE_YELL", "field": "text", "en": "Enable or disable creature yells", "hash": "75d4f8e61e511056", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_CURRENCY", "field": "text", "en": "Enable or disable achievement currency messages", "hash": "c25ef2ee132366c5", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_DEFAULT", "field": "text", "en": "Restore Text to Speech defaults", "hash": "dfe7ac577690726d", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_EMOTE", "field": "text", "en": "Enable or disable emote messages", "hash": "59c94a8e0eae431d", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_GUILD", "field": "text", "en": "Enable or disable guild messages", "hash": "bdaa0d82b0e1e325", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_GUILDLEADER", "field": "text", "en": "Enable or disable officer messages", "hash": "989e3d40ef845e2d", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_HELP", "field": "text", "en": "Show the help menu that lists all commands", "hash": "4833a86504238b99", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_INSTANCE", "field": "text", "en": "Enable or disable instance messages", "hash": "98cb46d36e8a8e3d", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_INSTANCELEADER", "field": "text", "en": "Enable or disable instance leader messages", "hash": "ca5e4d7b5d0517ec", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_LOOT", "field": "text", "en": "Enable or disable achievement item loot messages", "hash": "0cebe22942f5993d", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_MONEY", "field": "text", "en": "Enable or disable achievement money loot messages", "hash": "e113f1ef736b9889", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_MYMESSAGES", "field": "text", "en": "Enable or disable self-narration", "hash": "74f64fbe5c124b9a", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_PARTY", "field": "text", "en": "Enable or disable party messages", "hash": "2207513573e233d8", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_PARTYLEADER", "field": "text", "en": "Enable or disable party leader messages", "hash": "b9a10ef0e7f06017", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_PING", "field": "text", "en": "Enable or disable ping messages", "hash": "c737923c74092150", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_PLAYACTIVITY", "field": "text", "en": "Play a sound for chat window activity", "hash": "b7846ce994dad614", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_PLAYLINE", "field": "text", "en": "Play a sound separating chat lines", "hash": "4d8ee7a96922be4d", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_RAID", "field": "text", "en": "Enable or disable raid messages", "hash": "3e53add0ad3e7ab0", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_RAIDLEADER", "field": "text", "en": "Enable or disable raid leader messages", "hash": "cd10149ee2d99dde", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_RAID_WARNING", "field": "text", "en": "Enable or disable raid warning messages", "hash": "d66b9953c86605ce", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_SAMPLE", "field": "text", "en": "Speaks sample text", "hash": "4b12d4a5757ccf5f", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_SAY", "field": "text", "en": "Enable or disable say messages", "hash": "e9c0a81ed7633415", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_SAYNAME", "field": "text", "en": "Say <Character Name> in speech", "hash": "442e517c9eb85314", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_SETTINGS", "field": "text", "en": "Read out current settings", "hash": "4219aa08f002d179", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_STOP", "field": "text", "en": "Stop the narration that is currently playing", "hash": "bca73a9d993e360e", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_SYSTEM", "field": "text", "en": "Enable or disable system messages", "hash": "0e7c1e1afcce44ed", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_VOICE", "field": "text", "en": "[%d - %d] - Set voice option to the given voice", "hash": "c4f4917507944bca", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_WHISPER", "field": "text", "en": "Enable or disable whisper messages", "hash": "9d19e6a15087cc48", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_HELP_YELL", "field": "text", "en": "Enable or disable yell messages", "hash": "3c35749c6d39ef85", "src": "db2@1.60.1.70170"}
+{"id": "SLASH_TEXTTOSPEECH_VOICE_CHANGED_CONFIRMATION", "field": "text", "en": "Voice set to %s", "hash": "6a66fe47e339f6c7", "src": "db2@1.60.1.70170"}
 {"id": "SLOW", "field": "text", "en": "Slow", "hash": "0b3baa51857e873e", "src": "db2@1.60.1.70170"}
 {"id": "SL_SET_CONVERSION_MULTIPLE_CHARGES_REMAINING", "field": "text", "en": "You can upgrade %d more items after this before the Catalyst needs to recharge.", "hash": "0e9d048bfa0eb3f9", "src": "db2@1.60.1.70170"}
 {"id": "SL_SET_CONVERSION_ONE_CHARGE_REMAINING", "field": "text", "en": "After upgrading this item, the Catalyst will need %s to recharge.", "hash": "66946211a0a173a7", "src": "db2@1.60.1.70170"}
@@ -205,6 +344,16 @@
 {"id": "SOCIAL_QUEUE_QUEUED_FOR_STANDALONE", "field": "text", "en": "Queued for", "hash": "7e8f509ae83c0a26", "src": "db2@1.60.1.70170"}
 {"id": "SOCIAL_SHARE_TEXT", "field": "text", "en": "Share", "hash": "befb447839625661", "src": "db2@1.60.1.70170"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAGS_LABEL", "field": "text", "en": "Add Tags", "hash": "665f7529dccdb758", "src": "db2@1.60.1.70170"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DELVE", "field": "text", "en": "Delves", "hash": "caa4dc3a176c3a1f", "src": "db2@1.60.1.70170"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DPS", "field": "text", "en": "DPS", "hash": "0011f7a70dfbf5f8", "src": "db2@1.60.1.70170"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DUNGEONS", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70170"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_HEALER", "field": "text", "en": "Healer", "hash": "b73a16b62268c07a", "src": "db2@1.60.1.70170"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_PROFESSIONS", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.70170"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_PVP", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70170"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_QUESTING", "field": "text", "en": "Questing", "hash": "8e17b88b46b07ab0", "src": "db2@1.60.1.70170"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_RAIDING", "field": "text", "en": "Raiding", "hash": "6effbef49b1050c4", "src": "db2@1.60.1.70170"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_ROLEPLAYING", "field": "text", "en": "Roleplaying", "hash": "9fa36e66be1e1aa0", "src": "db2@1.60.1.70170"}
+{"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_TANK", "field": "text", "en": "Tank", "hash": "0b5b15fae73b7205", "src": "db2@1.60.1.70170"}
 {"id": "SOCIAL_UI_BATTLE_NET_TITLE_FRIEND_EDIT_NAME_BUTTON_LABEL", "field": "text", "en": "Edit Name", "hash": "5ac0876f2d0f8516", "src": "db2@1.60.1.70170"}
 {"id": "SOCIAL_UI_PERSONAL_BATTLE_TAG_COPIED_NOTICE", "field": "text", "en": "BattleTag copied to clipboard.", "hash": "6e7c0e7ddd50c7ea", "src": "db2@1.60.1.70170"}
 {"id": "SOCKET_ITEM_MIN_SKILL", "field": "text", "en": "Socket Requires %s (%d)", "hash": "193cc398e4cb8fcd", "src": "db2@1.60.1.70170"}
@@ -214,11 +363,15 @@
 {"id": "SOLO", "field": "text", "en": "Solo", "hash": "0b3c71db9166f2d6", "src": "db2@1.60.1.70170"}
 {"id": "SOULBIND_DIALOG_INSTALL_CONDUIT_UNUSABLE", "field": "text", "en": "This socket is currently inactive. Are you sure you want to add a Conduit here?", "hash": "7d9daa18eec9a062", "src": "db2@1.60.1.70170"}
 {"id": "SOULBIND_DIALOG_MOVE_CONDUIT", "field": "text", "en": "A Conduit can only be placed in one slot at a time, so it has been removed from its previous slot.", "hash": "29e8f7f8860a1944", "src": "db2@1.60.1.70170"}
+{"id": "SOUND_DISABLED", "field": "text", "en": "All sound is currently disabled", "hash": "dddd9e3a67815e64", "src": "db2@1.60.1.70170"}
+{"id": "SOUND_EFFECTS_DISABLED", "field": "text", "en": "Sound Effects Disabled", "hash": "ae8b3c9558f380ac", "src": "db2@1.60.1.70170"}
+{"id": "SOUND_EFFECTS_ENABLED", "field": "text", "en": "Sound Effects Enabled", "hash": "1f65bd39083834ef", "src": "db2@1.60.1.70170"}
 {"id": "SOURCES", "field": "text", "en": "Sources", "hash": "b971c80b7d08cf9d", "src": "db2@1.60.1.70170"}
 {"id": "SPECIAL", "field": "text", "en": "Special", "hash": "9a19b2a4aea44c9d", "src": "db2@1.60.1.70170"}
 {"id": "SPECIALIZATION", "field": "text", "en": "Specialization", "hash": "3477492c268fa0c4", "src": "db2@1.60.1.70170"}
 {"id": "SPEC_INVOLUNTARILY_CHANGED", "field": "text", "en": "Your Specialization was changed because it has been disabled.", "hash": "95b46ce4e3d14f6a", "src": "db2@1.60.1.70170"}
 {"id": "SPEECH_TO_TEXT_HEADER", "field": "text", "en": "Speech to text allows you to add closed captioning in a voice channel.", "hash": "bb206d302abc4ae5", "src": "db2@1.60.1.70170"}
+{"id": "SPEECH_TO_TEXT_JOINED", "field": "text", "en": "Joined Voice Transcription. Only members who are in the same Voice Chat Channel and have Transcribe Voice Chat enabled can see the transcription log.", "hash": "509e358f6dd13283", "src": "db2@1.60.1.70170"}
 {"id": "SPEECH_TO_TEXT_STARTED", "field": "text", "en": "Transcription started.", "hash": "bd99af121c1360d6", "src": "db2@1.60.1.70170"}
 {"id": "SPEECH_TO_TEXT_SUBTEXT", "field": "text", "en": "For more information see our |cff00aaff|HurlIndex:15|hPrivacy Policy|h|r", "hash": "80a57642169b0c2b", "src": "db2@1.60.1.70170"}
 {"id": "SPEECH_TO_TEXT_TUTORIAL", "field": "text", "en": "Toggles Voice Transciption on for the channel", "hash": "86786c26bd40ff40", "src": "db2@1.60.1.70170"}
@@ -1502,6 +1655,10 @@
 {"id": "STAT_WARRIOR_CRIT_BONUS", "field": "text", "en": "Increased by |cFFFFFFFFAgility|r for Attacks\r\n\n|cFFBCBCBCMelee and Ranged critical strikes deal 100%% increased damage\n\nSpell and Healing critical strikes are 50%% more effective\n\nMost periodic effects can critically strike|r", "hash": "1ef4ccf5affdddc9", "src": "db2@1.60.1.70170"}
 {"id": "STOPWATCH_TITLE", "field": "text", "en": "Stopwatch", "hash": "cce41fc08931c180", "src": "db2@1.60.1.70170"}
 {"id": "STOP_SUPER_TRACK_QUEST", "field": "text", "en": "Remove Focus", "hash": "0b1d0b5044cf01f3", "src": "db2@1.60.1.70170"}
+{"id": "STRING_SCHOOL_ARCANE", "field": "text", "en": "Arcane", "hash": "bb1005d928b3b0c1", "src": "db2@1.60.1.70170"}
+{"id": "STRING_SCHOOL_HOLY", "field": "text", "en": "Holy", "hash": "09c31c3c7def7685", "src": "db2@1.60.1.70170"}
+{"id": "STRING_SCHOOL_NATURE", "field": "text", "en": "Nature", "hash": "58ab279e326bdbc9", "src": "db2@1.60.1.70170"}
+{"id": "STRING_SCHOOL_PHYSICAL", "field": "text", "en": "Physical", "hash": "8e6e1afcac1879b6", "src": "db2@1.60.1.70170"}
 {"id": "SUBSCRIPTION_INTERSTITIAL_SUBSCRIBE_BUTTON", "field": "text", "en": "SUBSCRIBE NOW", "hash": "bfe8df08bce4824b", "src": "db2@1.60.1.70170"}
 {"id": "SUBSCRIPTION_INTERSTITIAL_SUBSCRIBE_FIRST_LINE", "field": "text", "en": "CONTINUE", "hash": "7485ff4ca92c0c41", "src": "db2@1.60.1.70170"}
 {"id": "SUBSCRIPTION_INTERSTITIAL_SUBSCRIBE_SECOND_LINE", "field": "text", "en": "YOUR", "hash": "0c01d67b62cb558f", "src": "db2@1.60.1.70170"}
@@ -1529,6 +1686,38 @@
 {"id": "SYSTEM", "field": "text", "en": "System", "hash": "e76722181eb64b46", "src": "db2@1.60.1.70170"}
 {"id": "SYSTEMOPTIONS_MENU", "field": "text", "en": "System", "hash": "e76722181eb64b46", "src": "db2@1.60.1.70170"}
 {"id": "SYSTEM_MESSAGES", "field": "text", "en": "System Messages", "hash": "31423358d9eb7564", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:1", "field": "text", "en": "[SERVER] Shutdown in %s", "hash": "4fb53f3577e118d8", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:11", "field": "text", "en": "Your ticket will be serviced soon.", "hash": "2f33a85626e43b79", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:12", "field": "text", "en": "Wait time currently unavailable.", "hash": "fcfc9f651e6810e4", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:13", "field": "text", "en": "Average ticket wait time:\n %s", "hash": "ade219b5636440f2", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:17", "field": "text", "en": "[SERVER] Cross realm shutdown in %s", "hash": "f7cc9ea5ff0f6294", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:18", "field": "text", "en": "[SERVER] Cross realm restart in %s", "hash": "d60d7c61cac938a4", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:2", "field": "text", "en": "[SERVER] Restart in %s", "hash": "78ec160a0d1d40a6", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:4", "field": "text", "en": "[SERVER] Shutdown cancelled", "hash": "c9d86e99cd17578a", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:5", "field": "text", "en": "[SERVER] Restart cancelled", "hash": "57601e1d499948ae", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:6", "field": "text", "en": "[SERVER] Battleground shutdown in %s", "hash": "30d1aea480cb540c", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:7", "field": "text", "en": "[SERVER] Battleground restart in %s", "hash": "f9a9dc413190d7f0", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:8", "field": "text", "en": "[SERVER] Instance shutdown in %s", "hash": "6d970d16bb203590", "src": "db2@1.60.1.70170"}
+{"id": "ServerMessage:9", "field": "text", "en": "[SERVER] Instance restart in %s", "hash": "2cefc3964bd41bbf", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1137", "field": "text", "en": "Are you sure you want to automatically sort your items?|nThis will affect all Account tabs.", "hash": "7b6ac716e505e3cb", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1138", "field": "text", "en": "Account Bank", "hash": "316a9b4cfe9eef63", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1139", "field": "text", "en": "The Account Bank offers storage that is shared with all members in your Account.|n|nDo you wish to purchase this tab?", "hash": "1cffb9c273ba8ad1", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1140", "field": "text", "en": "Enter Warband Bank Tab Name:", "hash": "4bf1d13050c0f541", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1141", "field": "text", "en": "Do you want to purchase an Account Bank tab for:", "hash": "b5526acfa8b00c41", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1142", "field": "text", "en": "Are you sure you want to automatically sort your items?|nThis will affect all tabs.", "hash": "846a7d3c76a4b6e3", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1143", "field": "text", "en": "Bank", "hash": "08f1a114f5ec496d", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1144", "field": "text", "en": "The Bank offers additional storage for your items.|n|nDo you wish to purchase this tab?", "hash": "265c2380694fbcc1", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1145", "field": "text", "en": "Enter Bank Tab Name:", "hash": "8e3733378ff9c376", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1146", "field": "text", "en": "Do you want to purchase a Bank tab for:", "hash": "0af685f1d049f0b5", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1152", "field": "text", "en": "Tab 6", "hash": "cf98f4703e63371f", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1159", "field": "text", "en": "Classic", "hash": "1ccdf9b2919d38fd", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:1318", "field": "text", "en": "Spend %d more |4point:points; in the %s Legacy Tree", "hash": "e5d1e01217761594", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:911", "field": "text", "en": "Spend %d more |4point:points; in %s |4Talent:Talents;", "hash": "45dbdaeb4589eab4", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:992", "field": "text", "en": "Tab 1", "hash": "cf98f46b3e63371a", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:993", "field": "text", "en": "Tab 2", "hash": "cf98f46c3e63371b", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:994", "field": "text", "en": "Tab 3", "hash": "cf98f46d3e63371c", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:995", "field": "text", "en": "Tab 4", "hash": "cf98f46e3e63371d", "src": "db2@1.60.1.70170"}
+{"id": "SharedString:996", "field": "text", "en": "Tab 5", "hash": "cf98f46f3e63371e", "src": "db2@1.60.1.70170"}
 {"id": "SkillCategory:10", "field": "text", "en": "Languages", "hash": "6665de684e5a2919", "src": "db2@1.60.1.70170"}
 {"id": "SkillCategory:11", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.70170"}
 {"id": "SkillCategory:222", "field": "text", "en": "Runes", "hash": "af2edfe2bc590dbe", "src": "db2@1.60.1.70170"}

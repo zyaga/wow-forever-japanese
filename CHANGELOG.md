@@ -10,6 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
+- Japanese for about 16,900 more spell and buff tooltip lines, so nearly every spell the Forever client serves has Japanese, and for 1,998 more interface strings, with word cards.
 - Japanese for the quest, item, spell and interface text the Forever build 1.60.1.70170 added or reworded.
 - Item flavour lines such as "Made With Love" are translated.
 - The character window's new Titles tab is in Japanese, and so is the "No Title" row of its title list. The titles you earn are names and stay English.
@@ -17,15 +18,22 @@ an old setting stops working). A release moves those lines under its version num
 - Quest titles are Japanese in the NPC talk window's quest rows and on the quest greeting panel's buttons.
 - A creature's tooltip shows its type on its own line and, for a quest it counts toward, the kill count in Japanese; the quest's title under a creature or on the minimap's quest block is Japanese too.
 - The owner line under a pet, minion or guardian ("Bob's Pet") is Japanese.
+- Chat uses the addon's Japanese font for every line and the input box, so Japanese you type and Japanese other players write are visible.
+- Currency, mount, companion, equipment set, raid lock, totem and party quest-progress tooltips show their interface lines in Japanese; the name on the first line stays English.
+- A quest's other wording for your class or race, and the line the tracker shows once some quests are ready, are read from the quest cache so they can be translated.
+- Server notices in chat, spellbook flyouts, the transmog window's situation options and lock and requirement lines on objects can show Japanese.
 
 ### Changed
 - The game text is read from Forever build 1.60.1.70170.
 - The settings page title no longer wraps, the help page names your reveal key and both markers, and settings text has more space between lines.
+- Next to a line that names your class or race, the English collector also notes that class and race, so a word that belongs to the line can be told apart from a word that changes with each player.
 
 ### Fixed
 - A spell on your action bar keeps its Japanese tooltip in combat, the cooldown countdown included. A buff icon's tooltip stays English during a fight, because the game hides which buff it is from addons, and is Japanese again when the fight ends.
+- The README and the CurseForge page explain that a buff on the target frame always shows English: the game draws that tooltip in a window addons cannot touch.
 - The Legacy window's available points and the stable's pet diet tooltip are in Japanese again on the new build.
 - Chat lines keep the right size after you change the chat font size.
+- The quest window's reward headings ("You will be able to choose one of these rewards:", "You will also receive:") stay Japanese when the game loads a reward item's details after the window opens.
 - Lines that stopped being translated because a game update did not list them for a while are translated again. A later update no longer takes Japanese away from something the game has shown before.
 
 ## 0.1.0-alpha.4 - 2026-10-01

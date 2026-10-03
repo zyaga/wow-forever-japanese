@@ -37,6 +37,10 @@ local UI = {
   -- rank titles: in the dictionary, and never shown in Japanese on this surface
   PVP_RANK_0_NAME = { "Civilian", "民間人" }, PVP_RANK_1_NAME = { "Combatant I", "コンバタントI" },
   RANK = { "Rank", "ランク" },
+  -- renown reward rows (C_MajorFactions.GetRenownRewardsForLevel description / name / toastDescription)
+  ["RenownRewardDescription:1832"] = { "Faction Tabard", "陣営タバード" },
+  ["RenownRewardName:1832"] = { "Rank 1 Rewards", "ランク1の報酬" },
+  ["RenownRewardToast:1832"] = { "Faction Tabard Unlocked", "陣営タバード解放" },
 }
 
 -- A CreateFramePoolCollection-like pool of side-pane rows (characterframe.lua:840–845).
@@ -44,6 +48,7 @@ local function rowPool()
   local p = { active = {}, inactive = {} }
   function p.Acquire(self)
     local row = table.remove(self.inactive) or { Label = Stub.fontString("") }
+    function row.SetHeight(r, h) r.height = h end
     self.active[#self.active + 1] = row
     return row
   end
@@ -84,6 +89,8 @@ local function installPvPRank()
   function detail.Description.GetFontString() return descText end
   function detail.Description.SetText(_, t) descText.text = t end
   detail.rowPools = rowPool()
+  detail.layouts = 0
+  function detail.LayoutRows(self) self.layouts = self.layouts + 1 end -- Content:Layout (characterframe.lua:946)
 
   local function row(text) detail.rowPools:Acquire().Label.text = text end
   function frame.UpdateSeasonCountdownTimer(self)
@@ -126,7 +133,8 @@ local function installPvPRank()
       row(string.format(en("PVP_RANK_WEEKLY_CAP_INCREASE"), info.weekCap))
     end
     row(string.format(en("PVP_RANK_NEXT_REWARD"), info.rank + 1))
-    row("Rank") -- a reward's description (server text), here one that is also a dictionary word
+    -- the next rewards' descriptions (AddIconRow, :198-211): by default one that is also a dictionary word
+    for _, description in ipairs(info.rewards or { "Rank" }) do row(description) end
     row(en("PVP_RANK_REWARDS_VENDOR_HORDE"))
   end
   return frame
@@ -240,5 +248,23 @@ describe("the PvP rank panel on Forever", function()
     local bare = H.loadChunks(FILES)
     H.uiSetup(bare, UI)
     assert.has_no.errors(function() assert.is_false(bare.PvPRank.init()) end)
+  end)
+
+  it("a reward row's RenownRewardDescription row is Japanese and the pane is laid out again; Alt shows English;"
+    .. " a description with no row and another family's row stay", function()
+    P.info.rewards = { "Faction Tabard", "Gryphon Rider's Lance", "Rank 1 Rewards", "Faction Tabard Unlocked" }
+    local detail = _G.PVPRankFrame.DetailFrame
+    local before = detail.layouts
+    detail:Refresh()
+    local l = labels()
+    assert.are.equal("陣営タバード", l[5])
+    assert.are.equal("Gryphon Rider's Lance", l[6]) -- an item's name: no row
+    assert.are.equal("Rank 1 Rewards", l[7]) -- a RenownRewardName row: not this widget's family
+    assert.are.equal("Faction Tabard Unlocked", l[8]) -- a RenownRewardToast row: not this widget's family
+    assert.is_true(detail.layouts > before)
+    alt(true)
+    assert.are.equal("Faction Tabard", labels()[5])
+    alt(false)
+    assert.are.equal("陣営タバード", labels()[5])
   end)
 end)

@@ -62,21 +62,23 @@ function ChatTabs.registerTabs()
   return n
 end
 
--- The client's header sizing, again (chatframeeditbox.lua:640, 696–710): the typed text starts after the header.
+-- The typed text's start, moved by the header's change in width only: the client has just laid the English header
+-- out and set the inset (chatframeeditbox.lua:640, 696–710), so `bases` keeps that inset and the English's width,
+-- and our Japanese moves it by the difference, which keeps whatever else the client added to the inset. A capped
+-- header (the suffix shown) keeps the client's inset: its width is fixed at half the box. English back on the
+-- header gives the client's inset.
+local bases = setmetatable({}, { __mode = "k" }) -- box → { left, text, width } as the client left it
+
 local function fitHeader(box)
-  local name = box:GetName()
-  local header, suffix = Compat.resolve(name .. "Header"), Compat.resolve(name .. "HeaderSuffix")
-  if type(header) ~= "table" or type(box.SetTextInsets) ~= "function" then return end
-  header:SetWidth(0)
-  local width = (header:GetRight() or 0) - (header:GetLeft() or 0)
-  local half = ((box:GetRight() or 0) - (box:GetLeft() or 0)) / 2
-  local capped = width > half
-  if capped then header:SetWidth(half) end
-  if type(suffix) == "table" then suffix:SetShown(capped) end
-  local lang = box.languageHeader
-  local langWidth = (type(lang) == "table" and lang:IsShown()) and lang:GetWidth() or 0
-  local suffixWidth = (capped and type(suffix) == "table") and suffix:GetWidth() or 0
-  box:SetTextInsets(HEADER_PAD + header:GetWidth() + suffixWidth + langWidth, HEADER_RIGHT, 0, 0)
+  local base = bases[box]
+  local header = Compat.resolve(box:GetName() .. "Header")
+  if not base or type(header) ~= "table" or type(box.SetTextInsets) ~= "function" then return end
+  local suffix = Compat.resolve(box:GetName() .. "HeaderSuffix")
+  local left = base.left
+  if header:GetText() ~= base.text and not (type(suffix) == "table" and suffix:IsShown()) then
+    left = math.max(HEADER_PAD, base.left + header:GetStringWidth() - base.width)
+  end
+  box:SetTextInsets(left, HEADER_RIGHT, 0, 0)
 end
 
 local refits = setmetatable({}, { __mode = "k" })
@@ -90,6 +92,9 @@ function ChatTabs.onHeader(box)
   if not refit then
     refit = function() fitHeader(box) end
     refits[box] = refit
+  end
+  if type(box.GetTextInsets) == "function" then
+    bases[box] = { left = (box:GetTextInsets()), text = header:GetText(), width = header:GetStringWidth() }
   end
   local n = WFJ.Labels.show(SURFACE, "header." .. box:GetName(), header, refit, HEADER)
   if n > 0 then fitHeader(box) end

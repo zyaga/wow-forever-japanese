@@ -21,8 +21,12 @@ def _allowlist() -> dict[str, str]:
 
 
 def _inventory() -> set[str]:
-    text = (ROOT / "pipeline/ui_inventory.txt").read_text(encoding="utf-8")
-    return {ln.split()[1] for ln in text.splitlines() if ln.strip() and not ln.startswith("#")}
+    # the window inventory and the load-set sweep (strings any loaded file of a translated addon names)
+    out = set()
+    for name in ("ui_inventory.txt", "ui_loadset.txt"):
+        text = (ROOT / "pipeline" / name).read_text(encoding="utf-8")
+        out |= {ln.split()[1] for ln in text.splitlines() if ln.strip() and not ln.startswith("#")}
+    return out
 
 
 def test_every_listed_key_is_inventoried_or_allowed_with_a_reason():

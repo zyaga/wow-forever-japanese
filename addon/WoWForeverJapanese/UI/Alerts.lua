@@ -44,7 +44,9 @@
 -- Description (EVENT_TOAST_*_DESCRIPTION) (blizzard_framexml/eventtoastmanager.lua:327–365, 490–492, 623–626,
 -- 658–661). A post-hook on the frame's DisplayToast walks the displayed toast's title fields, each restricted to the
 -- level-up words [unverified: that the client's level-up toast is LEVEL_GAINED "Level %d" / LEVEL_UP_YOU_REACHED;
--- the in-game checklist]; any other toast's title (a scenario, a zone) matches none of them and stays as written.
+-- the in-game checklist] or to the EventToastText family (UiEventToast's text, "You have reached Rank 5.": the
+-- client fills the row's number before the toast is shown, so it is matched by its digits, UIStrings
+-- index:matchCounted); any other toast's title (a scenario, a zone) matches none of them and stays as written.
 local _, WFJ = ...
 local Alerts = {}
 WFJ.Alerts = Alerts
@@ -94,10 +96,13 @@ local function showRecipeName(name)
     part and { form = "seq", parts = { part, star or "" } })
 end
 
--- The event toast's text fields (see the header)
-local TOAST_TITLE = { only = { "LEVEL_GAINED", "LEVEL_UP_YOU_REACHED" } }
-local TOAST_FIELDS = { Title = TOAST_TITLE, SubTitle = TOAST_TITLE,
-  Description = { only = { "EVENT_TOAST_EXPANDED_DESCRIPTION", "EVENT_TOAST_NOT_EXPANDED_DESCRIPTION" } } }
+-- The event toast's text fields (see the header). The title opts are built per index (Labels.familiesWith).
+local TOAST_TITLE_KEYS = { "LEVEL_GAINED", "LEVEL_UP_YOU_REACHED" }
+local TOAST_DESCRIPTION = { only = { "EVENT_TOAST_EXPANDED_DESCRIPTION", "EVENT_TOAST_NOT_EXPANDED_DESCRIPTION" } }
+local function toastFields()
+  local title = WFJ.Labels.familiesWith(TOAST_TITLE_KEYS, "EventToastText")
+  return { Title = title, SubTitle = title, Description = TOAST_DESCRIPTION }
+end
 
 -- hooksecurefunc target (AlertFrame_ShowNewAlert): `alert` is the pooled alert frame, its text already written.
 -- → the number of dictionary words found.
@@ -121,8 +126,9 @@ function Alerts.onToast(manager)
   local toast = type(manager) == "table" and manager.currentDisplayingToast or nil
   if type(toast) ~= "table" then return 0 end
   local n = 0
+  local fields = toastFields()
   for _, host in ipairs({ toast, type(toast.Contents) == "table" and toast.Contents or nil }) do
-    for field, opts in pairs(TOAST_FIELDS) do
+    for field, opts in pairs(fields) do
       local widget = host[field]
       if type(widget) == "table" then n = n + WFJ.Labels.show(SURFACE, widgetKey(widget), widget, nil, opts) end
     end

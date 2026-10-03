@@ -24,6 +24,7 @@ local function editBox(name)
   function header:GetWidth() return self:GetRight() end
   function header:SetFormattedText(fmt, ...) self:SetText(string.format(fmt, ...)) end
   local suffix = Stub.fontString(": ")
+  suffix.shown = false -- the client shows it only for a capped header
   function suffix:SetShown(v) self.shown = v end
   function suffix.GetWidth() return 12 end
   local box = { chatType = "SAY", target = nil }
@@ -31,11 +32,14 @@ local function editBox(name)
   function box.GetLeft() return 0 end
   function box.GetRight() return 400 end
   function box:SetTextInsets(l) self.inset = l end
+  function box:GetTextInsets() return self.inset or 0, 13, 0, 0 end
+  function header:GetStringWidth() return #(self.text or "") * 6 end
+  function suffix:IsShown() return self.shown == true end
   function box:UpdateHeader()
     header:SetWidth(0)
     if self.chatType == "WHISPER" then header:SetFormattedText(_G.CHAT_WHISPER_SEND, self.target)
     else header:SetText(_G["CHAT_" .. self.chatType .. "_SEND"]) end
-    self:SetTextInsets(15 + header:GetWidth(), 13, 0, 0)
+    self:SetTextInsets(15 + header:GetWidth() + (self.extra or 0), 13, 0, 0)
   end
   _G[name], _G[name .. "Header"], _G[name .. "HeaderSuffix"] = box, header, suffix
   return box, header
@@ -150,6 +154,13 @@ describe("the chat frame's hovers on Forever", function()
     _G.CHAT_CHANNEL_SEND = "[1. General]: "
     box:UpdateHeader()
     assert.are.equal("[1. General]: ", header:GetText())
+    assert.are.equal(15 + #"[1. General]: " * 6, box.inset)
+    Stub.keys.alt = true; WFJ.Modifier.refresh(); Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal(15 + #"[1. General]: " * 6, box.inset) -- a refit never moves the client's inset for English
+    -- whatever else the client adds to the inset is kept: the Japanese moves it by the width difference only
+    box.chatType, box.extra = "SAY", 30
+    box:UpdateHeader()
+    assert.are.equal(15 + #"発言： " * 6 + 30, box.inset)
     assert.are.equal(0, WFJ.ChatTabs.registerEditBoxes()) -- hooked once
     for _, n in ipairs({ "ChatFrame1EditBox", "ChatFrame1EditBoxHeader", "ChatFrame1EditBoxHeaderSuffix",
       "CHAT_CHANNEL_SEND" }) do _G[n] = nil end

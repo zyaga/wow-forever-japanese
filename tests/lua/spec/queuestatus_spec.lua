@@ -18,6 +18,9 @@ local UI = {
   RAID = { "Raid", "レイド" }, -- a dictionary word a queue may be NAMED
   -- The queue timer's "< 1 minute" (queuestatusframe.lua:1083–1086), a duration entry of the `time` kind
   TIME_IN_QUEUE = { "Time In Queue: %s", "待機時間: %s" }, LESS_THAN_ONE_MINUTE = { "< 1 minute", "1分未満" },
+  -- an active battlefield's long description, GetBattlefieldStatus's 11th return (queuestatusframe.lua:801,
+  -- 812–815; client-table row: no global; ADR-042)
+  ["PvpLongDescription:7"] = { "Capture the enemy flag three times.", "敵の旗を3回奪取せよ。" },
 }
 local function en(key) return UI[key][1] end
 local function ja(key) return UI[key][2] end
@@ -118,6 +121,23 @@ describe("the queue status panel on Forever", function()
     Stub.keys.alt = true
     WFJ.Modifier.refresh()
     assert.are.equal(en("QUEUED_STATUS_WAITING"), e.Status:GetText())
+  end)
+
+  it("an active battlefield's SubTitle is a PvpLongDescription row's Japanese; Alt shows English; other subtitles"
+    .. " stay English", function()
+    Q = { { title = "Warsong Gulch", status = "In Progress", subtitle = "Capture the enemy flag three times." },
+      { title = "Arathi Basin", status = "In Progress", subtitle = "Raid" } }
+    _G.QueueStatusFrame:Update()
+    local list = entries()
+    assert.are.equal("敵の旗を3回奪取せよ。", list[1].SubTitle:GetText())
+    assert.are.equal("Warsong Gulch", list[1].Title:GetText())
+    assert.are.equal("Raid", list[2].SubTitle:GetText()) -- a dictionary word, no family row: English
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    assert.are.equal("Capture the enemy flag three times.", list[1].SubTitle:GetText())
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
+    assert.are.equal("敵の旗を3回奪取せよ。", list[1].SubTitle:GetText())
   end)
 
   it("pooled entries are keyed by widget: a reused entry shows its new lines", function()

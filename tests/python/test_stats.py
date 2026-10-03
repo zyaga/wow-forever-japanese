@@ -141,8 +141,8 @@ def _dump(path: Path, entries: dict[tuple[int, str], str]) -> Path:
 
 
 def test_stale_report_reads_a_dump_where_a_curated_source_has_the_field(tmp_path: Path, monkeypatch, capsys):
-    """A reachable state: VMaNGOS owns the completion English, so `import english collector` keeps it
-    and stores nothing; `stats --stale --dump` still lists the line whose live English differs."""
+    """A dump not imported yet: `stats --stale --dump` lists the line whose live English differs from the
+    stored VMaNGOS English."""
     data = tmp_path / "data"
     data.mkdir()
     (data / "SCHEMA").write_text("1\n")
@@ -151,10 +151,6 @@ def test_stale_report_reads_a_dump_where_a_curated_source_has_the_field(tmp_path
     Store(data).save("quest", [_q(9, "completion", "よくやった", "trusted", "Well done."),
                                _q(9, "progress", "まだか", "trusted", "Not yet?")])
     dump = _dump(tmp_path / "WoWForeverJapanese.lua", {(9, "completion"): "Well done, hero.", (9, "progress"): "Not yet?"})
-    from wfj.cmd import import_
-
-    assert import_.run(["english", "collector", str(dump)]) == 0
-    assert [ln["src"] for ln in Store(data, english=True).load("quest")] == [VM, VM]  # the dump stored nothing
     out = tmp_path / "stale.jsonl"
     assert stats.run(["--stale", str(out)]) == 0
     assert out.read_text() == ""

@@ -45,6 +45,7 @@
 {"id": "ACHIEVEMENT_PROGRESSED", "field": "text", "en": "Achievement Progress", "hash": "554f9a603076bde3", "src": "db2@1.60.1.70170"}
 {"id": "ACHIEVEMENT_SUMMARY_CATEGORY", "field": "text", "en": "Summary", "hash": "1171d7d7a3f82303", "src": "db2@1.60.1.70170"}
 {"id": "ACHIEVEMENT_TITLE", "field": "text", "en": "Account Achievement Points", "hash": "f98a70dfb12a8232", "src": "db2@1.60.1.70170"}
+{"id": "ACHIEVEMENT_TOOLTIP_COMPLETE", "field": "text", "en": "Achievement earned by %1$s on %2$d/%3$02d/20%4$02d", "hash": "c9caa8935fb5443b", "src": "db2@1.60.1.70170"}
 {"id": "ACHIEVEMENT_UNLOCKED", "field": "text", "en": "Achievement Earned", "hash": "a715f658e4f993b0", "src": "db2@1.60.1.70170"}
 {"id": "ACHIEVEMENT_WATCH_TOO_MANY", "field": "text", "en": "You may only track %d achievements at a time.", "hash": "9ea6169b44c01e64", "src": "db2@1.60.1.70170"}
 {"id": "ACTIONBARS_LABEL", "field": "text", "en": "Action Bars", "hash": "4a126ad3c2d7f70c", "src": "db2@1.60.1.70170"}
@@ -55,6 +56,8 @@
 {"id": "ACTION_LABEL_CHAT_CHANNELS", "field": "text", "en": "Chat Channels", "hash": "0abe456189a2a9e2", "src": "db2@1.60.1.70170"}
 {"id": "ACTION_LABEL_DELETE_SET", "field": "text", "en": "Delete Set", "hash": "89a8c24e9e7cd44a", "src": "db2@1.60.1.70170"}
 {"id": "ACTION_LABEL_EQUIP_SET", "field": "text", "en": "Equip Set", "hash": "8b50a661ae8eca3e", "src": "db2@1.60.1.70170"}
+{"id": "ACTION_LABEL_RANDOMIZE_APPEARANCE", "field": "text", "en": "Randomize Appearance", "hash": "8a67f054c8ce5c2a", "src": "db2@1.60.1.70170"}
+{"id": "ACTION_LABEL_RANDOMIZE_NAME", "field": "text", "en": "Randomize Name", "hash": "fb357e20b12fc5bc", "src": "db2@1.60.1.70170"}
 {"id": "ACTION_LABEL_RESET_VIEW", "field": "text", "en": "Reset View", "hash": "ccca108a7718a7cc", "src": "db2@1.60.1.70170"}
 {"id": "ACTION_LABEL_ROTATE", "field": "text", "en": "Rotate", "hash": "3c7712e35a007150", "src": "db2@1.60.1.70170"}
 {"id": "ACTION_LABEL_SAVE_SET", "field": "text", "en": "Save Set", "hash": "11c69471fd9d2db0", "src": "db2@1.60.1.70170"}
@@ -111,11 +114,13 @@
 {"id": "ADDON_LIST_PERFORMANCE_WARNING_TOOLTIP", "field": "text", "en": "AddOn CPU usage exceeds the threshold.\nDisable some addons to improve performance.", "hash": "42a020cba8ebf404", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_LIST_RESET_ALL_TO_DEFAULT", "field": "text", "en": "Reset All to Default", "hash": "1496493736147eab", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_LIST_RESET_TO_DEFAULT", "field": "text", "en": "Reset to Default", "hash": "119ecbc8cbfc89a0", "src": "db2@1.60.1.70170"}
+{"id": "ADDON_LOAD_FAILED", "field": "text", "en": "Couldn't load %s: %s", "hash": "62838f4258c279eb", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_MISSING", "field": "text", "en": "Missing", "hash": "7530490f79acfebc", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_NOT_AVAILABLE", "field": "text", "en": "Not Available", "hash": "a4dbd5db18a1bd77", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_NO_ACTIVE_INTERFACE", "field": "text", "en": "No active UI", "hash": "1bceb62f19d3de45", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_PERFORMANCE_OVERALL_ERROR_TEXT", "field": "text", "en": "Your AddOns have exceeded the memory usage or CPU threshold. Please disable some AddOns to improve performance.", "hash": "94156d0ea230cdd0", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_PERFORMANCE_SPECIFIC_ERROR_TEXT", "field": "text", "en": "AddOn %s has exceeded the performance threshold for memory usage or CPU. Please disable this addon to improve performance.", "hash": "917ff7997a0ee54f", "src": "db2@1.60.1.70170"}
+{"id": "ADDON_PERFORMANCE_SPECIFIC_WARNING_TEXT", "field": "text", "en": "%s is close to reaching the performance threshold, which may impact game stability. Consider disabling this AddOn.", "hash": "7aae5ffbdca06679", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_UNKNOWN_ERROR", "field": "text", "en": "Unknown load problem", "hash": "4fb6e9a447c78231", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_USER_ADDONS_DISABLED", "field": "text", "en": "User addons disabled", "hash": "e7028c49da3e2126", "src": "db2@1.60.1.70170"}
 {"id": "ADDON_WRONG_ACTIVE_INTERFACE", "field": "text", "en": "Wrong active UI", "hash": "299ac15ee930c7ef", "src": "db2@1.60.1.70170"}
@@ -141,7 +146,9 @@
 {"id": "ADVENTURE_TRACKING_MODULE_HEADER_TEXT", "field": "text", "en": "Collections", "hash": "2bcc5c8bc405575d", "src": "db2@1.60.1.70170"}
 {"id": "ADVENTURE_TRACKING_OPEN_PROFESSION_ERROR_TEXT", "field": "text", "en": "You don't know this profession", "hash": "f20a1f843b1c3a02", "src": "db2@1.60.1.70170"}
 {"id": "AFK", "field": "text", "en": "Away", "hash": "08d50fa6bfd889a5", "src": "db2@1.60.1.70170"}
+{"id": "AGE_RESTRICTED_CHAT_MINOR", "field": "text", "en": "You can't send or receive chat messages because social features are unavailable on accounts belonging to minors.", "hash": "dbdebc80fab29c2b", "src": "db2@1.60.1.70170"}
 {"id": "AGE_RESTRICTED_CHAT_MINOR_TOOLTIP", "field": "text", "en": "Chat and other social features are unavailable on accounts belonging to minors.", "hash": "5b5c5bbcd8232aaa", "src": "db2@1.60.1.70170"}
+{"id": "AGE_RESTRICTED_CHAT_UNVERIFIED", "field": "text", "en": "You can't send or receive chat messages until age verification is completed. Visit Battle.net Account Settings to verify your age.", "hash": "d80c29be2609befe", "src": "db2@1.60.1.70170"}
 {"id": "AGE_RESTRICTED_CHAT_UNVERIFIED_TOOLTIP", "field": "text", "en": "Verify your age in Battle.net Account Settings to enable chat and other social features", "hash": "015f6912bbb53f47", "src": "db2@1.60.1.70170"}
 {"id": "AGE_RESTRICTED_VOICE_CHAT_MINOR_TOOLTIP", "field": "text", "en": "Voice chat and other social features are unavailable on accounts belonging to minors.", "hash": "f7e3c176e569d518", "src": "db2@1.60.1.70170"}
 {"id": "AGE_RESTRICTED_VOICE_CHAT_UNVERIFIED_TOOLTIP", "field": "text", "en": "Verify your age in Battle.net Account Settings to enable voice chat and other social features", "hash": "9d6c346b98aeab7c", "src": "db2@1.60.1.70170"}
@@ -152,10 +159,14 @@
 {"id": "ALL", "field": "text", "en": "All", "hash": "00113cf90216a76a", "src": "db2@1.60.1.70170"}
 {"id": "ALL_ASSIST_DESCRIPTION", "field": "text", "en": "If checked, all raid members will have the permissions of a Raid Assistant.", "hash": "89dc2c203944ae93", "src": "db2@1.60.1.70170"}
 {"id": "ALL_ASSIST_LABEL", "field": "text", "en": "All |TInterface\\GroupFrame\\UI-Group-AssistantIcon:20:20:0:1|t", "hash": "00113cf90216a76a", "src": "db2@1.60.1.70170"}
+{"id": "ALL_ASSIST_LABEL_SHORT", "field": "text", "en": "All", "hash": "00113cf90216a76a", "src": "db2@1.60.1.70170"}
 {"id": "ALL_ASSIST_NOT_LEADER_ERROR", "field": "text", "en": "Only the Raid Leader may change this option.", "hash": "3f341e77781593c9", "src": "db2@1.60.1.70170"}
+{"id": "ALL_BOSSES_ALIVE", "field": "text", "en": "All Bosses are |cff20ff20alive|r.", "hash": "c1854176417949ad", "src": "db2@1.60.1.70170"}
+{"id": "ALL_CLASSES", "field": "text", "en": "All Classes", "hash": "e1be1ea617a0745a", "src": "db2@1.60.1.70170"}
 {"id": "ALL_SETTINGS", "field": "text", "en": "All Settings", "hash": "c5899a37bb5b2044", "src": "db2@1.60.1.70170"}
 {"id": "ALL_SPECS", "field": "text", "en": "All Specializations", "hash": "4cd9d3a591935eb8", "src": "db2@1.60.1.70170"}
 {"id": "ALREADY_FRIEND_FMT", "field": "text", "en": "%s is already your friend.", "hash": "81f2d77d7caae321", "src": "db2@1.60.1.70170"}
+{"id": "ALTERED_FORMS_COUNT_FORMAT", "field": "text", "en": "(%d)", "hash": "056603daab2c6040", "src": "db2@1.60.1.70170"}
 {"id": "ALTERNATE_SCREEN_EFFECTS", "field": "text", "en": "Enable Photosensitivity Mode", "hash": "6358b9aae04f212b", "src": "db2@1.60.1.70170"}
 {"id": "ALT_KEY", "field": "text", "en": "ALT key", "hash": "538b9a6a6adb972e", "src": "db2@1.60.1.70170"}
 {"id": "AMBIENCE_VOLUME", "field": "text", "en": "Ambience", "hash": "cd52b138646620eb", "src": "db2@1.60.1.70170"}
@@ -178,6 +189,9 @@
 {"id": "ARACHNOPHOBIA_MODE_CHECKBOX_TOOLTIP", "field": "text", "en": "Replace spiders with alternative creatures. This doesn't affect gameplay or difficulty.", "hash": "21b61bb1883b2c70", "src": "db2@1.60.1.70170"}
 {"id": "ARCHAEOLOGY_DIGSITE_COMPLETE_TOAST_FRAME_TITLE", "field": "text", "en": "Digsite Complete", "hash": "9eac30ee7867b8e9", "src": "db2@1.60.1.70170"}
 {"id": "AREA_SPIRIT_HEAL", "field": "text", "en": "Resurrection in %d %s", "hash": "b03f55fed7ff7d17", "src": "db2@1.60.1.70170"}
+{"id": "ARENA", "field": "text", "en": "Arena", "hash": "845c84e322d577b5", "src": "db2@1.60.1.70170"}
+{"id": "ARENA_2V2", "field": "text", "en": "2v2", "hash": "000d5456c68bed9a", "src": "db2@1.60.1.70170"}
+{"id": "ARENA_3V3", "field": "text", "en": "3v3", "hash": "000d9760ca84315c", "src": "db2@1.60.1.70170"}
 {"id": "ARENA_COMPLETE_MESSAGE", "field": "text", "en": "The battle has ended. This arena will close in %s", "hash": "68ffe23cfc0c5ad8", "src": "db2@1.60.1.70170"}
 {"id": "ARENA_IS_READY", "field": "text", "en": "Your Arena is ready!", "hash": "66e295eafd23f00c", "src": "db2@1.60.1.70170"}
 {"id": "ARENA_SPECTATOR", "field": "text", "en": "You are in Spectator Mode. To abandon this battle, right click the Arena icon on the minimap and select 'Leave Arena'.", "hash": "b382047a2ae51162", "src": "db2@1.60.1.70170"}
@@ -192,10 +206,13 @@
 {"id": "ASSIGN_LOOT", "field": "text", "en": "Assign Loot", "hash": "0a24bddeb0185d69", "src": "db2@1.60.1.70170"}
 {"id": "ASSISTED_COMBAT_HIGHLIGHT_DIALOG_WARNING", "field": "text", "en": "Assisted Highlight will only suggest visible abilities.", "hash": "1ec815c21490e513", "src": "db2@1.60.1.70170"}
 {"id": "ASSISTED_COMBAT_HIGHLIGHT_LABEL", "field": "text", "en": "Assisted Highlight", "hash": "cdc3728ff78f292c", "src": "db2@1.60.1.70170"}
+{"id": "ASSISTED_COMBAT_HIGHLIGHT_SPELL_INCLUDED", "field": "text", "en": "Included in Assisted Highlight.", "hash": "135764bb0b814edb", "src": "db2@1.60.1.70170"}
 {"id": "ASSISTED_COMBAT_LABEL", "field": "text", "en": "Combat Assistant", "hash": "2472934f4f62beb3", "src": "db2@1.60.1.70170"}
 {"id": "ASSISTED_COMBAT_ROTATION_ACTION_BUTTON_HELPTIP", "field": "text", "en": "The Single-Button Assistant will suggest damage abilities for you. Use it like any other ability.", "hash": "d23d6eae7be316a2", "src": "db2@1.60.1.70170"}
 {"id": "ASSISTED_COMBAT_ROTATION_REDUCE_HIGHLIGHTS", "field": "text", "en": "Reduce Highlights on Abilities", "hash": "513c35aafec39a35", "src": "db2@1.60.1.70170"}
+{"id": "ASSISTED_COMBAT_ROTATION_SPELL_INCLUDED", "field": "text", "en": "Included in Single-Button Assistant.", "hash": "302569b1fd0e1f82", "src": "db2@1.60.1.70170"}
 {"id": "ASSISTED_COMBAT_ROTATION_VIEW_SPELLBOOK", "field": "text", "en": "View in Spellbook", "hash": "795a43c3935766b5", "src": "db2@1.60.1.70170"}
+{"id": "ASSISTED_COMBAT_SPELL_INCLUDED", "field": "text", "en": "Included in both Assisted Highlight and Single-Button Assistant.", "hash": "cc7d2e3f798c2bc0", "src": "db2@1.60.1.70170"}
 {"id": "ATTACHMENT_TEXT", "field": "text", "en": "Drag an item here to include it with your mail", "hash": "c9c466825326d2cc", "src": "db2@1.60.1.70170"}
 {"id": "ATTACK_COLON", "field": "text", "en": "Attack:", "hash": "daa1d475cd51b018", "src": "db2@1.60.1.69913"}
 {"id": "ATTACK_SPEED", "field": "text", "en": "Attack Speed", "hash": "7331371677dbb1b8", "src": "db2@1.60.1.70170"}
@@ -350,6 +367,10 @@
 {"id": "AUTHENTICATOR_GUILD_RANK_CHANGE", "field": "text", "en": "This action would make the lowest guild rank require an Authenticator.", "hash": "f94757340a591ec9", "src": "db2@1.60.1.70170"}
 {"id": "AUTHENTICATOR_GUILD_RANK_IN_USE", "field": "text", "en": "You can't set this option on a guild rank in use.", "hash": "754b1b2f5b07c3e8", "src": "db2@1.60.1.70170"}
 {"id": "AUTHENTICATOR_GUILD_RANK_LAST", "field": "text", "en": "You can't set this option on the lowest guild rank.", "hash": "285da433b19a7219", "src": "db2@1.60.1.70170"}
+{"id": "AUTOCOMPLETE_LABEL_FRIEND", "field": "text", "en": "(Friend)", "hash": "5448683efbce93b4", "src": "db2@1.60.1.70170"}
+{"id": "AUTOCOMPLETE_LABEL_GROUP", "field": "text", "en": "(Party)", "hash": "8b5ad52c163f3162", "src": "db2@1.60.1.70170"}
+{"id": "AUTOCOMPLETE_LABEL_GUILD", "field": "text", "en": "(Guild)", "hash": "118f8d708a4ddc63", "src": "db2@1.60.1.70170"}
+{"id": "AUTOCOMPLETE_LABEL_INTERACTED", "field": "text", "en": "(Whispered)", "hash": "d0a3520112365316", "src": "db2@1.60.1.70170"}
 {"id": "AUTOFOLLOWSTART", "field": "text", "en": "Following %s.", "hash": "c8e6142cc9caadd5", "src": "db2@1.60.1.70170"}
 {"id": "AUTOFOLLOWSTOP", "field": "text", "en": "You stop following %s.", "hash": "efdf4cc0ffbb40d2", "src": "db2@1.60.1.70170"}
 {"id": "AUTO_ACCEPT_QUICK_JOIN_TEXT", "field": "text", "en": "Auto Accept Quick Join Requests", "hash": "1aae53698293b60e", "src": "db2@1.60.1.70170"}
@@ -1030,3 +1051,40 @@
 {"id": "AchievementTitle:94", "field": "text", "en": "Quests abandoned", "hash": "e09f8897d9e04f6e", "src": "db2@1.60.1.70170"}
 {"id": "AchievementTitle:95", "field": "text", "en": "Average quests completed per day", "hash": "fc8e5a6d8da94905", "src": "db2@1.60.1.70170"}
 {"id": "AchievementTitle:98", "field": "text", "en": "Quests completed", "hash": "2a103432d17b3af9", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1099", "field": "text", "en": "Alliance Controlled", "hash": "1ed78c95c8e1545f", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1102", "field": "text", "en": "Horde Controlled", "hash": "2762433ddf76db3a", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1352", "field": "text", "en": "Destroyed", "hash": "65edc957121c6265", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1353", "field": "text", "en": "In Conflict", "hash": "c69c79bdf80502a4", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1359", "field": "text", "en": "Kobold Controlled", "hash": "ada46957ec2068c9", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1384", "field": "text", "en": "Trogg Controlled", "hash": "4706b1ba7fd6218a", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1609", "field": "text", "en": "Uncontrolled", "hash": "b03f6220c98cc1b8", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1700", "field": "text", "en": "Tanaris Desert", "hash": "c9e1699db95b86e9", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1724", "field": "text", "en": "A Silithyst beast has surfaced", "hash": "22890ca643e65d20", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1750", "field": "text", "en": "Contested, Alliance", "hash": "8b2a583879303d95", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1751", "field": "text", "en": "Progressing, Alliance", "hash": "185974924333e2ab", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1752", "field": "text", "en": "Contested, Horde", "hash": "b61fc8a66d092d49", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1753", "field": "text", "en": "Progressing, Horde", "hash": "ebb469d019ad5f21", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1757", "field": "text", "en": "Alliance, Contested", "hash": "7829503ee2f2de50", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1759", "field": "text", "en": "Horde, Contested", "hash": "80b406e6f988652b", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1760", "field": "text", "en": "Horde, Progressing", "hash": "87ca3df11d07647b", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:1766", "field": "text", "en": "Alliance, Progressing", "hash": "ed1bced8b8e54a56", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7640", "field": "text", "en": "Keeper of the Grove - Centrius - Alive", "hash": "64d773533b429126", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7641", "field": "text", "en": "Keeper of the Grove - Larodar - Alive", "hash": "f01bbd82d6b4fbd9", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7642", "field": "text", "en": "Keeper of the Grove - Ceredwyn - Alive", "hash": "04e413be4c136e5a", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7643", "field": "text", "en": "Priestess of the Moon - Felore Moonray - Alive", "hash": "489c3db44b820ca2", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7644", "field": "text", "en": "Blademaster - Jubei - Alive", "hash": "58514c092fe0563b", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7645", "field": "text", "en": "Far Seer - Kazragore - Alive", "hash": "5e3a729c03799f66", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7646", "field": "text", "en": "Blademaster - Tojara - Alive", "hash": "14ca06feabfb7799", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7647", "field": "text", "en": "Blademaster - Moogul - Alive", "hash": "ca543cf2a69cf7e0", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7648", "field": "text", "en": "Blademaster - Jubei - Defeated", "hash": "5e95ee347277ec87", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7649", "field": "text", "en": "Blademaster - Tojara - Defeated", "hash": "a047935b925f2352", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7650", "field": "text", "en": "Blademaster - Moogul - Defeated", "hash": "4812430b0b276ccf", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7651", "field": "text", "en": "Keeper of the Grove - Centrius - Dead", "hash": "c87e27b89eb895f7", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7652", "field": "text", "en": "Keeper of the Grove - Larodar Dead", "hash": "5de147ea838e1e39", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7653", "field": "text", "en": "Keeper of the Grove - Ceredwyn - Dead", "hash": "0c28445147f50f19", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:7713", "field": "text", "en": "Deliver blood to the Blood Loa's altar!", "hash": "c1e2c7c1d5161f64", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiDescription:8768", "field": "text", "en": "Neutral", "hash": "5f11dc51f812a1f4", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiState:3611", "field": "text", "en": "Contested", "hash": "861f22ece31d1728", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiState:3613", "field": "text", "en": "Horde Controlled", "hash": "2762433ddf76db3a", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiState:3614", "field": "text", "en": "Alliance Controlled", "hash": "1ed78c95c8e1545f", "src": "db2@1.60.1.70170"}
+{"id": "AreaPoiState:3816", "field": "text", "en": "In Conflict", "hash": "c69c79bdf80502a4", "src": "db2@1.60.1.70170"}

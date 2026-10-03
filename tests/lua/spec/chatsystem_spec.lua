@@ -42,10 +42,13 @@ local UI = {
   COMMUNITIES_CHAT_FRAME_TODAY_NOTIFICATION = { "Today", "今日" },
   COMMUNITIES_CHAT_FRAME_UNREAD_MESSAGES_NOTIFICATION = { "Unread Messages", "未読メッセージ" },
   COMMUNITIES_MESSAGE_OF_THE_DAY_FORMAT = { "Message of the Day: \"%s\"", "今日のメッセージ: 「%s」" },
+  -- a friendship's rank points (FriendshipReputation, a client-table family the reputation line names)
+  ["FriendshipGain:513"] = { "You gain %d Rank Points.", "ランクポイントを%d獲得した。" },
+  ["ServerMessage:1"] = { "[SERVER] Shutdown in %s", "[サーバー] %s後にシャットダウン" },
 }
 local NAMES = { "CHAT_FRAMES", "ChatTypeInfo", "ChatFrame1", "ChatFrame2", "FCF_OpenTemporaryWindow",
   "issecretvalue" }
-local SYSTEM, SAY, LOOT, XP = 1, 2, 3, 4
+local SYSTEM, SAY, LOOT, XP, FACTION = 1, 2, 3, 4, 5
 
 local clock = 0
 local function chatFrame()
@@ -93,7 +96,8 @@ end
 local secrets = {}
 local function install()
   _G.ChatTypeInfo = { SYSTEM = { id = SYSTEM, r = 1, g = 1, b = 0 }, SAY = { id = SAY, r = 1, g = 1, b = 1 },
-    LOOT = { id = LOOT, r = 0, g = 0.7, b = 0 }, COMBAT_XP_GAIN = { id = XP, r = 0.4, g = 0.4, b = 1 } }
+    LOOT = { id = LOOT, r = 0, g = 0.7, b = 0 }, COMBAT_XP_GAIN = { id = XP, r = 0.4, g = 0.4, b = 1 },
+    COMBAT_FACTION_CHANGE = { id = FACTION, r = 0.5, g = 0.5, b = 1 } }
   _G.ChatFrame1 = chatFrame()
   _G.CHAT_FRAMES = { "ChatFrame1" }
   _G.FCF_OpenTemporaryWindow = function()
@@ -138,6 +142,29 @@ describe("SYSTEM chat lines", function()
     for _, n in ipairs(NAMES) do _G[n] = nil end
   end)
 
+  it("a server notice is its ServerMessages row, the time kept as the client wrote it", function()
+    local f = _G.ChatFrame1
+    system(f, "[SERVER] Shutdown in 15:00")
+    assert.are.equal("[サーバー] 15:00後にシャットダウン", f:Last())
+  end)
+
+  it("a reputation line is the FriendshipGain row with the live number; no other chat type takes it", function()
+    local f = _G.ChatFrame1
+    f:AddMessage("You gain 25 Rank Points.", 0.5, 0.5, 1, FACTION)
+    assert.are.equal("ランクポイントを25獲得した。", f:Last())
+    f:Refresh()
+    alt(WFJ, true)
+    assert.are.equal("You gain 25 Rank Points.", f.visibleLines[2]:GetText())
+    alt(WFJ, false)
+    assert.are.equal("ランクポイントを25獲得した。", f.visibleLines[2]:GetText())
+    system(f, "You gain 25 Rank Points.") -- a SYSTEM line does not name the family
+    assert.are.equal("You gain 25 Rank Points.", f:Last())
+    f:AddMessage("You gain 25 Rank Points.", 1, 1, 1) -- an untyped line: exact English only
+    assert.are.equal("You gain 25 Rank Points.", f:Last())
+    f:AddMessage("Your party is full.", 0.5, 0.5, 1, FACTION) -- the chat keys still reach a reputation line
+    assert.are.equal("パーティーがいっぱいです。", f:Last())
+  end)
+
   it("a SYSTEM line is rewritten in the history when it arrives; others stay", function()
     local f = _G.ChatFrame1
     system(f, "Your party is full.")
@@ -166,7 +193,7 @@ describe("SYSTEM chat lines", function()
     alt(WFJ, true)
     assert.are.equal("Your party is full.", top:GetText())
     assert.are.equal("Kobold Vermin slain: 1/10", bottom:GetText())
-    assert.are.equal("Fonts\\ARIALN.TTF", top.font.path)
+    assert.are.equal(WFJ.Font.PATH, top.font.path) -- every chat line wears the bundled face, English too
     f:Refresh() -- scrolling / a new line while held: still English
     assert.are.equal("Your party is full.", top:GetText())
     alt(WFJ, false)
@@ -242,7 +269,7 @@ describe("SYSTEM chat lines", function()
     assert.are.equal("パーティーがいっぱいです。", f:Last())
   end)
 
-  it("the bundled face goes on the visible lines showing our Japanese, at their size", function()
+  it("the bundled face goes on every visible line, our Japanese and any English, at the chat size", function()
     local f = _G.ChatFrame1
     system(f, "Your party is full.")
     system(f, "Welcome to the realm.")
@@ -251,49 +278,34 @@ describe("SYSTEM chat lines", function()
     assert.are.equal("パーティーがいっぱいです。", ja:GetText())
     assert.are.equal(WFJ.Font.PATH, ja.font.path)
     assert.are.equal(14, ja.font.size)
-    assert.are.equal("Fonts\\ARIALN.TTF", en.font.path)
+    assert.are.equal(WFJ.Font.PATH, en.font.path) -- a player's Japanese would show here too
+    assert.are.equal(14, en.font.size)
+    -- a refresh that changes nothing sets no font again (busy chat refreshes many times a second)
+    local before = en.calls.SetFont or 0
+    f:Refresh()
+    assert.are.equal(before, en.calls.SetFont or 0)
   end)
 
-  it("in game: a row that showed our Japanese gets the chat font back for the English after it", function()
-    local f = _G.ChatFrame1
-    system(f, "Your party is full.")
-    f:Refresh()
-    local row = f.visibleLines[2] -- the newest row
-    assert.are.equal(WFJ.Font.PATH, row.font.path)
-    f:AddMessage("Ostara says: hey", 1, 1, 1, SAY) -- the Japanese moves up a row; English takes this one
-    f:Refresh()
-    assert.are.equal("Ostara says: hey", row:GetText())
-    assert.are.equal("Fonts\\ARIALN.TTF", row.font.path)
-    assert.are.equal(14, row.font.size)
-    assert.are.equal(WFJ.Font.PATH, f.visibleLines[1].font.path) -- the Japanese in its new row
-    f:AddMessage("Ostara says: again", 1, 1, 1, SAY)
-    f:Refresh()
-    for _, line in ipairs(f.visibleLines) do assert.are.equal("Fonts\\ARIALN.TTF", line.font.path) end
-  end)
-
-  it("a row given the chat font back follows a later chat font size change; a row never dressed is untouched",
+  it("an English row keeps the bundled face at the chat size, and follows a later chat font size change",
     function()
       local f = _G.ChatFrame1
       system(f, "Your party is full.")
       f:Refresh()
       local row = f.visibleLines[2]
-      f:AddMessage("Ostara says: hey", 1, 1, 1, SAY) -- English takes the dressed row: the chat font back
-      f:AddMessage("Ostara says: again", 1, 1, 1, SAY)
+      f:AddMessage("Ostara says: hey", 1, 1, 1, SAY) -- the Japanese moves up a row; English takes this one
       f:Refresh()
+      assert.are.equal("Ostara says: hey", row:GetText())
+      assert.are.equal(WFJ.Font.PATH, row.font.path)
       assert.are.equal(14, row.font.size)
       f.fontObject.font.size = 18 -- the player picks a bigger chat font: the client changes the object
-      f:Refresh() -- SetFontObject(same object) leaves the restored row's SetFont in place
-      assert.are.equal("Fonts\\ARIALN.TTF", row.font.path)
-      assert.are.equal(18, row.font.size)
-      local never = Stub.fontString("", "Fonts\\ARIALN.TTF", 14)
-      assert.is_false(WFJ.Font.follow(never, f.fontObject)) -- a row that never wore the bundled face
-      assert.are.equal(0, never.calls.SetFont)
-      local calls = row.calls.addonSetFont
-      f:Refresh() -- already the object's font: nothing set again
-      assert.are.equal(calls, row.calls.addonSetFont)
+      f:Refresh()
+      for _, line in ipairs(f.visibleLines) do
+        assert.are.equal(WFJ.Font.PATH, line.font.path)
+        assert.are.equal(18, line.font.size)
+      end
     end)
 
-  it("in game: Alt gives the row the chat font back, release the bundled face at the chat size", function()
+  it("Alt shows the English in the bundled face at the chat size; release the Japanese at the chat size", function()
     local f = _G.ChatFrame1
     system(f, "Your party is full.")
     f:Refresh()
@@ -301,7 +313,8 @@ describe("SYSTEM chat lines", function()
     row.font.size = 11 -- a size an earlier fit shrank it to
     alt(WFJ, true)
     assert.are.equal("Your party is full.", row:GetText())
-    assert.are.equal("Fonts\\ARIALN.TTF", row.font.path)
+    assert.are.equal(WFJ.Font.PATH, row.font.path)
+    assert.are.equal(14, row.font.size)
     alt(WFJ, false)
     assert.are.equal(WFJ.Font.PATH, row.font.path)
     assert.are.equal(14, row.font.size) -- from the frame's font, not the row's leftover size

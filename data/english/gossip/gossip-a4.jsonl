@@ -39,6 +39,7 @@
 {"id": "a4de044414909735", "field": "text", "en": "The Scepter of the Shifting Sands is whole once more, $n.$B$BIt is you who must lead your armies into the cursed fortress city of Ahn'Qiraj and mete justice to its inhabitants.$B$BVenture to Silithus and present the Scepter of the Shifting Sands to Jonathan the Revelator.\n", "hash": "a4de044414909735", "src": "vmangos@13b49dc"}
 {"id": "a4dec0e4cdf4d444", "field": "text", "en": "Uh oh....", "hash": "a4dec0e4cdf4d444", "src": "vmangos@13b49dc"}
 {"id": "a4e506ad724413a7", "field": "text", "en": "Kneel, Grark.", "hash": "a4e506ad724413a7", "src": "vmangos@13b49dc"}
+{"id": "a4e7c77551632cd0", "field": "text", "en": "Care to learn how to gather leather from slain beasts? Or do you need some new tools?", "hash": "a4e7c77551632cd0", "src": "collector@1.60.1.70170", "npcs": [267333]}
 {"id": "a4eacd2166595458", "field": "text", "en": "%s holds high the items $n gave him...", "hash": "a4eacd2166595458", "src": "vmangos@13b49dc"}
 {"id": "a4f1afa5a691ea01", "field": "text", "en": "%s gasps.", "hash": "a4f1afa5a691ea01", "src": "vmangos@13b49dc"}
 {"id": "a4f555325ea003a9", "field": "text", "en": "Bodley, tell me what's going on.", "hash": "a4f555325ea003a9", "src": "vmangos@13b49dc"}

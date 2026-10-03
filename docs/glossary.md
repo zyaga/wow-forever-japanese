@@ -142,6 +142,21 @@ The last step of `make import` / `make import-english` (`wfj import english serv
 _Avoid_: served filter (it narrows the English store, not the build), Forever filter, target filter, "gone" (for an id the current build did not serve; its English is kept)
 → [ADR-034](adr/034-forever-is-the-only-target.md) · [ADR-050](adr/050-english-is-additive.md) · [Pipeline](systems/pipeline.md) · [Data model](architecture/data-model.md)
 
+**Served-text inventory**:
+Every text column of every [[DB2 table]] the Forever install ships, plus each server cache (`Cache/WDB/enUS/*.wdb`), with row and text counts: the generated, committed `pipeline/served_columns.txt` (`make served-columns`, once per build), paired with the hand-written `pipeline/served_dispositions.txt` that gives each column a [[Disposition]]. It is what coverage and translation scope are measured against. Its delta against the previous build lists the columns a patch added, dropped or changed. Not the [[Served record]], which lists ids, not columns.
+_Avoid_: player-visible set, visible spells, what a player is likely to see (the scope it replaced)
+→ [ADR-052](adr/052-coverage-by-served-data.md) · [Data model](architecture/data-model.md) · [Pipeline](systems/pipeline.md)
+
+**Disposition**:
+What one served column of the [[Served-text inventory]] is, from a closed set: `surface:<type>.<field>`, `surface:<type>.*` (every field of that type) or `surface:ui:<Family>` (the addon ships it in Japanese), `names` (names stay English), `internal` (developer text the client never prints), `no-display` (prose the Forever client has no place for), `covered-by:<column>` (the same text reaches the screen through another column) or `empty`. `internal`, `no-display` and `covered-by` carry evidence. Every served column has exactly one.
+_Avoid_: exclusion (that is a UI key in `ui_exclusions.txt`), status (that is per [[Entry]]), skip
+→ [ADR-052](adr/052-coverage-by-served-data.md) · [Data model](architecture/data-model.md)
+
+**Gap**:
+In coverage: a served line of a surface that has neither shipped Japanese nor a stated reason (a names list, nothing to translate, English still waiting on the Forever tables, an exclusion with its reason). Gaps are the build's translation list; `tests/python/test_coverage.py` fails while any remain, and [Coverage](operations/coverage.md) counts them.
+_Avoid_: missing (a missing line can have a reason), untranslated, to-do
+→ [ADR-052](adr/052-coverage-by-served-data.md) · [Coverage](operations/coverage.md)
+
 **Tooltip text**:
 The English prose of an item or spell tooltip below its name, as the client tables hold it: a spell's `Description_lang`; for an item, the descriptions of its effect spells the tooltip prints (trigger types Use, Equip, Chance on hit, Use without delay) then its flavour text, so an item's "Use:" line is a **spell's** `Description_lang` reached through the item→effect join, never `ItemSparse.Description_lang`, which holds only the flavour line and is often empty. A raw template (`Restores $o1 health over $d.`): the numbers are filled in only when the client renders it, so offline it catches rewording (the entry goes [[Stale]]) but never a changed number. Stored as the `description` field.
 _Avoid_: description (the field name, also used for quests), name (a separate field), rendered tooltip (what the [[Collector]] records, with numbers)
@@ -202,7 +217,7 @@ _Avoid_: female hash (on its own; say the female variant's key or `h1f`), gender
 → [Data model](architecture/data-model.md) · [ADR-024](adr/024-gender-variants-and-short-name-candidates.md)
 
 **Gender alias**:
-A generated keyed row (gossip, book page) repeated under its English's [[Female variant]] key, so a female character's live English finds the same Japanese. Exists only in the generated Lua. A real row under that key wins; aliases on one key with different Japanese are all dropped, and that key shows the live English. `generate` reports the counts and the dropped keys.
+A generated keyed row (gossip, book page) repeated under its English's [[Female variant]] key, so a female character's live English finds the same Japanese. The line's word list ([[Reading]]) is shipped under the alias key too, so the female line has word cards. Exists only in the generated Lua. A real row under that key wins; aliases on one key with different Japanese are all dropped, and that key shows the live English. `generate` reports the counts and the dropped keys.
 _Avoid_: gender key, female row, duplicate row
 → [Pipeline](systems/pipeline.md) · [ADR-024](adr/024-gender-variants-and-short-name-candidates.md)
 
@@ -498,9 +513,9 @@ _Avoid_: scraper, dump mode, logger, tracker
 → [Collector](systems/collector.md) · [ADR-013](adr/013-collector-english.md)
 
 **Collector dump**:
-The `WFJ_Collector` SavedVariables table, and the player's `WoWForeverJapanese.lua` file that carries it: the [[Collector]]'s entries keyed `<kind>:<id>:<field>`, each only normalized text in Blizzard's tokens (`$N`, `$C` / `$R` in quest and gossip text, paragraphs joined with `$B$B` as pfQuest writes them), its hash and a client-build index; no character, account, realm, location or time. Handed off manually as a GitHub issue attachment and read by `wfj import english collector`, which only adds English and never overwrites a curated source; `check`, `validate` and `stats` do not consult imported collector English until a re-check policy is decided.
+The `WFJ_Collector` SavedVariables table, and the player's `WoWForeverJapanese.lua` file that carries it: the [[Collector]]'s entries keyed `<kind>:<id>:<field>`, each only normalized text in Blizzard's tokens (`$N`, `$C` / `$R` in quest and gossip text, paragraphs joined with `$B$B` as pfQuest writes them), its hash and a client-build index; no character, account, realm, location or time. Handed off manually as a GitHub issue attachment and read by `wfj import english collector`, which takes what the Forever client showed as the English: it replaces stand-in English (pfQuest, VMaNGOS, an older client) and keeps the same client's own tables and quest cache. `check`, `validate` and `stats` consult imported quest and gossip English; item and spell English is stored, not consulted.
 _Avoid_: upload, telemetry, log file, export, `WFJ_DB` (that is the settings table)
-→ [Collector](systems/collector.md)
+→ [Collector](systems/collector.md) · [ADR-053](adr/053-forever-shown-english-is-the-english.md)
 
 **Known English**:
 Live English whose hash matches the 32-bit source-hash prefix (`h1`) shipped for that field, so the addon recognises it and the [[Collector]] does not record it. Anything else (never shipped, changed since the check, or a field whose shipped hash belongs to another field: quest progress/completion, item/spell descriptions today) is unknown and recorded.
@@ -570,7 +585,7 @@ _Avoid_: overlay, hit frame, hover frame, mask
 → [Readings](systems/readings.md)
 
 **Live check**:
-The addon's comparison, on a quest surface, of a quest field's [[Live English]] fingerprints (the `h1` of each [[Gossip key]]-style candidate: full, name only, nothing replaced) with the field's shipped `h1`, or its [[Female variant]]'s `h1f`. It decides the [[Stale marker]]: no fingerprint equal → the Japanese shows with the marker; one equal → no marker, whatever the build-time status. No equal fingerprint while a name under 3 code points occurs in the text (the fingerprints include short-name candidates), no fingerprints (the player's name, class or race not known yet) or no shipped `h1` (a field checked against another field's English) → the build-time status decides. It never withholds a translation.
+The addon's comparison, on a quest surface, of a quest field's [[Live English]] fingerprints (the `h1` of each [[Gossip key]]-style candidate: full, race only, class only, name only, nothing replaced) with the field's shipped `h1`, or its [[Female variant]]'s `h1f`. It decides the [[Stale marker]]: no fingerprint equal → the Japanese shows with the marker; one equal → no marker, whatever the build-time status. No equal fingerprint while a name under 3 code points occurs in the text (the fingerprints include short-name candidates), no fingerprints (the player's name, class or race not known yet) or no shipped `h1` (a field checked against another field's English) → the build-time status decides. It never withholds a translation.
 _Avoid_: runtime stale check, live gate (the align gate is a different thing)
 → [Addon modules](architecture/addon-modules.md) · [ADR-019](adr/019-quest-english-per-field-and-live-check.md)
 

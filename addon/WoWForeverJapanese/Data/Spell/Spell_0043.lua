@@ -2,4 +2,6 @@
 local _, WFJ = ...
 WFJ.Data.add("spell", {
   [43308] = { "近場の釣り場がminimapに現れます。", "Fishを探しています。", 0xdd2472bd, 0xe5f3a7f3, "uu" },
+  [43680] = { "チームメイトがあなたを怠慢で報告しました！PvP戦闘に参加しないと、Inactiveとされ、Honor Pointsを受け取れなくなります。", "チームメイトから怠慢を報告されました！PvP戦闘に参加しないと、Inactiveとしてマークされ、Honor Pointsを受け取れなくなります。", 0xbce38590, 0xbce38590, "uu" },
+  [43681] = { "PvP戦闘に参加するまでHonor Pointsを受け取れません。\nInactiveのままでいると戦場から追い出されます。", "PvP戦闘に参加するまでHonor Pointsを受け取れません。\nInactiveのままでいると戦場から追い出されます。", 0x152fece1, 0x152fece1, "uu" },
 })

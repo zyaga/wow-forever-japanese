@@ -42,7 +42,7 @@ Point at a Japanese word in quest text, NPC dialogue, a book page or a window la
 
 ### <span style="color:#E8C77E;">What the addon records</span>
 
-When the game shows English the addon has no translation for, the addon notes that English in its saved settings file, so it can be translated later. Your character's name is stored as a placeholder; no account, realm or location is stored. Nothing is sent anywhere: the file stays on your computer unless you choose to attach it to an issue. You can turn it off under **English Collector** in the settings.
+When the game shows English the addon has no translation for, the addon notes that English in its saved settings file, so it can be translated later. Your character's name is stored as a placeholder, and next to a line that names your class or race, the class and race are noted; no account, realm or location is stored. Nothing is sent anywhere: the file stays on your computer unless you choose to attach it to an issue. You can turn it off under **English Collector** in the settings.
 
 ### <span style="color:#E8C77E;">Install</span>
 
@@ -54,11 +54,18 @@ Click the <span style="color:#E0605A;">**字**</span> minimap button (or type **
 
 ### <span style="color:#E8C77E;">FAQ</span>
 
-**Why is a buff's tooltip in English during a fight?** While you are in combat, the game hides from addons which buff an icon under the minimap is. The addon cannot look up a translation for a buff it is not told about, so that tooltip stays in the game's English until the fight ends. Then it is Japanese again. Spell tooltips on your action bar stay Japanese in combat, the cooldown countdown too.
+**Why is a buff's tooltip sometimes in English?** There are two cases.
+
+- **In combat.** The game hides from addons which buff an icon under the minimap is, so its tooltip stays in the game's English until the fight ends. Then it is Japanese again.
+- **On the target frame.** Buffs and debuffs there always stay English: the game draws their tooltip in a window no addon is allowed to touch.
+
+Your own buffs under the minimap and those on party frames are Japanese out of combat. Spell tooltips on your action bar stay Japanese in combat, the cooldown countdown too.
 
 **Why are names still in English?** On purpose, so what you read matches what other players say and what guides call things.
 
-**What do the markers mean?** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> means the line has no translation yet and is shown in the game's English. <span style="color:#E8C77E;">[要更新 / English Changed]</span> means the English changed after the line was translated. Both can be turned off in the settings.
+**What do the markers mean?** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> means the line has no translation yet and is shown in the game's English. <span style="color:#E8C77E;">[要更新 / English Changed]</span> means the English changed after the line was translated.
+
+Both can be turned off in the settings.
 
 **Which game does it work with?** World of Warcraft: Forever only.
 
@@ -100,7 +107,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 ### <span style="color:#E8C77E;">アドオンが記録するもの</span>
 
-ゲームに表示された英語のうち、アドオンに日本語訳がないものは、あとで翻訳できるようにアドオンの設定ファイルに記録されます。キャラクター名はプレースホルダーに置き換えて保存し、アカウント・レルム・位置は保存しません。どこにも送信されません。自分で Issue に添付しない限り、ファイルはあなたのパソコンの中にあります。設定の **英語テキスト収集** でオフにできます。
+ゲームに表示された英語のうち、アドオンに日本語訳がないものは、あとで翻訳できるようにアドオンの設定ファイルに記録されます。キャラクター名はプレースホルダーに置き換えて保存し、クラスや種族が出てくる行にはそのクラスと種族を書き添えます。アカウント・レルム・位置は保存しません。どこにも送信されません。自分で Issue に添付しない限り、ファイルはあなたのパソコンの中にあります。設定の **英語テキスト収集** でオフにできます。
 
 ### <span style="color:#E8C77E;">インストール</span>
 
@@ -112,11 +119,18 @@ CurseForge アプリでインストールしてください（**Forever** のイ
 
 ### <span style="color:#E8C77E;">よくある質問</span>
 
-**戦闘中、バフのツールチップが英語なのはなぜ？** 戦闘中、ゲームはミニマップの下のアイコンがどのバフなのかをアドオンに隠します。どのバフかわからなければ翻訳を引けないため、そのツールチップは戦闘が終わるまでゲームの英語のままです。戦闘が終わると日本語に戻ります。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
+**バフのツールチップが英語になることがあるのはなぜ？** 理由は二つあります。
+
+- **戦闘中。** ゲームはミニマップの下のアイコンがどのバフなのかをアドオンに隠すため、そのツールチップは戦闘が終わるまでゲームの英語のままです。戦闘が終わると日本語に戻ります。
+- **ターゲットフレーム。** ここに表示されるバフとデバフは常に英語です。ゲームがそのツールチップを、アドオンが触れることのできないウィンドウに表示するためです。
+
+ミニマップの下の自分のバフとパーティーフレームのバフは、戦闘外なら日本語で表示されます。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 
 **名前が英語のままなのはなぜ？** 意図した仕様です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。
 
-**マーカーは何を表している？** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> はまだ翻訳がなく、ゲームの英語のまま表示されている行です。<span style="color:#E8C77E;">[要更新 / English Changed]</span> は翻訳のあとで英語の原文が変わった行です。どちらも設定で非表示にできます。
+**マーカーは何を表している？** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> はまだ翻訳がなく、ゲームの英語のまま表示されている行です。<span style="color:#E8C77E;">[要更新 / English Changed]</span> は翻訳のあとで英語の原文が変わった行です。
+
+どちらも設定で非表示にできます。
 
 **どのゲームで使える？** World of Warcraft: Forever 専用です。
 

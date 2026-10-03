@@ -9,11 +9,17 @@
 --   MajorFactionUnlockToast.HeaderText     JOURNEY_UNLOCKED_TOAST or
 --                                          WAR_WITHIN_LANDING_PAGE_ALERT_MAJOR_FACTION_UNLOCKED (unlocktoast.lua:46,
 --                                          48; the XML default, unlocktoast.xml:18)
+--   MajorFactionsRenownToast.RewardDescription  the level's rewards' toastDescription, joined with "|n"
+--                                          (SetupRewardVisuals, renowntoast.lua:50-88, called from PlayBanner :102):
+--                                          each piece the RenownRewardToast family, all or nothing, "|n" kept; a
+--                                          piece with no shipped row leaves the whole text as the client wrote it
 --   the reward icon's tooltip (owner MajorFactionsRenownToast.RewardIconMouseOver, renowntoast.lua:117–158):
 --     RENOWN_REWARD_CAPSTONE_TOOLTIP_TITLE / _DESC / _DESC2, RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE "Renown %d
---     Rewards". A single reward's title and description are its name and server text; "- %s" lines carry reward
---     names: the owner is registered with exactly the four keys, so none of those is ever matched.
--- Never touched: MajorFactionUnlockToast.FactionName (a faction), RewardDescription (server text).
+--     Rewards", and a single reward's title and description (RenownRewardUtil.GetRenownRewardInfo: the reward's
+--     name and description), the RenownRewardName and RenownRewardDescription families. "- %s" lines carry reward
+--     names inside a template that is not in the set, so they are never matched; an item's, a mount's or a spell's
+--     own name has no row and stays English.
+-- Never touched: MajorFactionUnlockToast.FactionName (a faction).
 -- Without either frame nothing is hooked.
 local _, WFJ = ...
 local MajorFactionToast = {}
@@ -23,23 +29,45 @@ local SURFACE = "majorfactiontoast"
 MajorFactionToast.SURFACE = SURFACE
 local Compat = WFJ.Compat
 
-MajorFactionToast.NEVER_TOUCH = { "MajorFactionUnlockToast.FactionName", "MajorFactionsRenownToast.RewardDescription" }
+MajorFactionToast.NEVER_TOUCH = { "MajorFactionUnlockToast.FactionName" }
 
 local CANDIDATES = {
   renown = { "MajorFactionsRenownToast" }, renownLabel = { "MajorFactionsRenownToast.RenownLabel" },
   rewardOwner = { "MajorFactionsRenownToast.RewardIconMouseOver" },
+  rewardDescription = { "MajorFactionsRenownToast.RewardDescription" },
   unlock = { "MajorFactionUnlockToast" }, unlockHeader = { "MajorFactionUnlockToast.HeaderText" },
 }
 local RENOWN = { only = { "MAJOR_FACTION_RENOWN_LEVEL_TOAST" } }
 local UNLOCK = { only = { "JOURNEY_UNLOCKED_TOAST", "WAR_WITHIN_LANDING_PAGE_ALERT_MAJOR_FACTION_UNLOCKED" } }
-local TOOLTIP = { only = { "RENOWN_REWARD_CAPSTONE_TOOLTIP_TITLE", "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC",
-  "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC2", "RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE" } }
+local TOOLTIP_KEYS = { "RENOWN_REWARD_CAPSTONE_TOOLTIP_TITLE", "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC",
+  "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC2", "RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE" }
 
 local function get(key) return Compat.get(SURFACE, key) end
 
--- hooksecurefunc target (MajorFactionsRenownToast:PlayBanner). → 1 | 0
+-- The reward description: every "|n"-joined piece a RenownRewardToast row, or the client's text untouched. → 1 | 0
+function MajorFactionToast.showRewardDescription()
+  local fs = WFJ.Labels.widget(get("rewardDescription"))
+  if not fs then return 0 end
+  local rec = WFJ.SurfaceState.get(SURFACE, "rewardDescription")
+  if rec and rec.fs == fs and rec.applied ~= nil and fs:GetText() == rec.applied then return 1 end -- still ours
+  local text, parts = fs:GetText(), {}
+  if type(text) ~= "string" or text == "" then return WFJ.Labels.showArgs(SURFACE, "rewardDescription", fs, nil) end
+  local only = WFJ.Labels.families("RenownRewardToast").only
+  for piece in (text .. "|n"):gmatch("(.-)|n") do
+    local part = WFJ.Labels.part(piece, only)
+    if not part then return WFJ.Labels.showArgs(SURFACE, "rewardDescription", fs, nil) end
+    if #parts > 0 then parts[#parts + 1] = "|n" end
+    parts[#parts + 1] = part
+  end
+  return WFJ.Labels.showArgs(SURFACE, "rewardDescription", fs, parts[1].key, { form = "seq", parts = parts })
+end
+
+-- hooksecurefunc target (MajorFactionsRenownToast:PlayBanner). → the number of dictionary words found
 function MajorFactionToast.onRenown()
-  return WFJ.Labels.show(SURFACE, "renown", get("renownLabel"), nil, RENOWN)
+  local n = WFJ.Labels.show(SURFACE, "renown", get("renownLabel"), nil, RENOWN)
+    + MajorFactionToast.showRewardDescription()
+  WFJ.Render.updateBanner(SURFACE)
+  return n
 end
 
 -- hooksecurefunc target (MajorFactionUnlockToast:PlayBanner). → 1 | 0
@@ -62,6 +90,9 @@ function MajorFactionToast.init()
     hooksecurefunc(unlock, "PlayBanner", MajorFactionToast.onUnlock)
   end
   local owner = get("rewardOwner")
-  if type(owner) == "table" then WFJ.HelpTooltip.register(owner, TOOLTIP) end
+  if type(owner) == "table" then
+    WFJ.HelpTooltip.register(owner,
+      WFJ.Labels.familiesWith(TOOLTIP_KEYS, "RenownRewardName", "RenownRewardDescription"))
+  end
   return true
 end

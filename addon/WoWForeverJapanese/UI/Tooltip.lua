@@ -21,16 +21,17 @@
 -- so there line 1 is a header and the name is found by its text.
 -- The run of an item with no translation gets its "Equip: <stat template>" lines as ui records (showEquipLines).
 -- Auras: a buff or debuff tooltip is GameTooltip:SetUnitAura / SetUnitBuff / SetUnitDebuff or their
--- *ByAuraInstanceID twins: buff frame, target, party, raid, compact frames, nameplates [verified: Forever 1.60.1
--- blizzard_buffframe/buffframe.lua:1145–1149, unitframe/mainline/targetframe.xml:45,
--- shared/partymemberframe.lua:202–206]. Forever types them Enum.TooltipDataType.UnitAura and GetSpell answers only
--- for Spell (tooltiputil.lua:25–31), so the Spell post-call never sees one; the surface registers a UnitAura
--- post-call, which fires on the first build and on every rebuild. The spell id comes from C_UnitAuras with the
--- call's own arguments, as Blizzard's PTR reporter does (blizzard_ptrfeedback_tooltips.lua:22–32). The aura text is
--- line 2 [likely: tooltipdatahandler.lua writes it from C_TooltipInfo data; in-game check in
--- docs/testing/strategy.md]: refused when empty or a UI-dictionary line, and the runtime gate refuses a line
--- whose names and numbers do not fit. An owner with UpdateTooltip re-shows the aura about 5 times a second while
--- hovered; each pass forgets and re-renders, as item tooltips do.
+-- *ByAuraInstanceID twins: buff frame, target of target, party, raid, compact frames, nameplates [verified: Forever
+-- 1.60.1 blizzard_buffframe/buffframe.lua:1145–1149, unitframe/mainline/targetframe.xml:45,
+-- shared/partymemberframe.lua:202–206]. The target frame's own aura buttons use AuraButtonTooltip, a forbidden
+-- frame no addon can reach (docs/architecture/client-limits.md). Forever types them Enum.TooltipDataType.UnitAura
+-- and GetSpell answers only for Spell (tooltiputil.lua:25–31), so the Spell post-call never sees one; the surface
+-- registers a UnitAura post-call, which fires on the first build and on every rebuild. The spell id comes from
+-- C_UnitAuras with the call's own arguments, as Blizzard's PTR reporter does
+-- (blizzard_ptrfeedback_tooltips.lua:22–32). The aura text is line 2 [likely: tooltipdatahandler.lua writes it
+-- from C_TooltipInfo data; in-game check in docs/testing/strategy.md]: refused when empty or a UI-dictionary line,
+-- and the runtime gate refuses a line whose names and numbers do not fit. An owner with UpdateTooltip re-shows the
+-- aura about 5 times a second while hovered; each pass forgets and re-renders, as item tooltips do.
 -- ADR-038:
 --   comparison tooltips: after the compared item's lines (ProcessInfo), TooltipComparisonManager appends the delta
 --     header ITEM_DELTA_DESCRIPTION / ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION and, with cycling on,
@@ -291,12 +292,22 @@ end
 Tooltip.trace = nil
 local TRACE_MAX = 80
 
+-- A long value is cut at 70 bytes, moved back to the start of a character: a cut inside a Japanese character is
+-- not UTF-8, and an edit box given text that is not UTF-8 shows none of it.
 local function plain(v)
   if v == nil then return "nil" end
   if anySecretOf(v) then return "<secret>" end
   local t = tostring(v)
-  return #t > 70 and (t:sub(1, 70) .. "...") or t
+  if #t <= 70 then return t end
+  local cut = 70
+  while cut > 0 do
+    local b = t:byte(cut + 1)
+    if not b or b < 0x80 or b >= 0xC0 then break end -- the next byte starts a character
+    cut = cut - 1
+  end
+  return t:sub(1, cut) .. "..."
 end
+Tooltip.plain = plain
 
 local function describe(fs)
   if type(fs) ~= "table" then return "-" end
@@ -578,9 +589,10 @@ local function writeCountdown(frame, fs, kind, id)
     local ok, duration = pcall(durationOf, id)
     if not ok then return nil, "cooldown duration refused: " .. tostring(duration) end
     if not duration then return nil, "no cooldown duration" end
-    -- a zero duration is no cooldown: the row is something else, left as the client wrote it
+    -- a zero duration is no cooldown: the row is something else, left as the client wrote it. In combat IsZero's
+    -- answer is itself a secret boolean, never compared (a Lua error in game): the client's formatter writes it
     local okZ, zero = pcall(function() return duration:IsZero() end)
-    if okZ and zero == true then return nil, "no cooldown running" end
+    if okZ and not anySecretOf(zero) and zero == true then return nil, "no cooldown running" end
     wrote, why = WFJ.TimeLine.writeDuration(fs, duration)
     if Tooltip.trace then
       local hasSecret = type(duration) ~= "table" and type(duration.HasSecretValues) == "function"
@@ -734,10 +746,22 @@ local function showHidden(frame, kind, id, lines)
   return hiddenDone(n, table.concat(how, "; "))
 end
 
+-- A tooltip's item: (name, link). GameTooltip and ItemRefTooltip answer GetItem; a comparison tooltip only carries
+-- its tooltip data, read through Blizzard's own TooltipUtil.GetDisplayedItem
+-- [verified: blizzard_sharedxmlgame/tooltip/tooltiputil.lua:9-21].
+function Tooltip.itemOf(frame)
+  if type(frame.GetItem) == "function" then return frame:GetItem() end
+  local displayed = Compat.resolve("TooltipUtil.GetDisplayedItem")
+  if type(displayed) ~= "function" then return nil end
+  local ok, name, link = pcall(displayed, frame)
+  if not ok then return nil end
+  return name, link
+end
+
 -- The Item post-call's target.
 function Tooltip.onItem(frame)
-  if inRefit[frame] then return 0 end
-  local itemName, link = frame:GetItem()
+  if inRefit[frame] then return 0 end -- our own refit re-runs the post-call; nothing new to read
+  local itemName, link = Tooltip.itemOf(frame)
   local lines = Tooltip.lines(frame)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
@@ -751,7 +775,11 @@ function Tooltip.onItem(frame)
     return n
   end
   local id = type(link) == "string" and tonumber(link:match("item:(%d+)")) or nil
-  if not id or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
+  if not id or id <= 0 then
+    WFJ.Render.forget(surfaceOf(frame))
+    traceFrame(frame, "item without an id", nil, lines, "-> 0 (link " .. plain(link) .. ")")
+    return 0
+  end
   local first, last = Tooltip.itemRun(texts)
   local runArgs = first and peelTrailer(texts, first, last) or nil
   -- The run is read before we write (the client rewrote every line); the Collector refuses our own text anyway.
@@ -792,9 +820,16 @@ function Tooltip.onSpell(frame)
   -- Only the API's string becomes data: the positional fallback is a guess.
   if description and description ~= "" then WFJ.Collector.record("spell", id, "description", description) end
   local i = Tooltip.spellLine(texts, description)
+  local how = ""
+  if not i and type(description) == "string" and description ~= "" then
+    -- the API's text differs from the tooltip's line (a trainer's spell the player has not learned): the row the
+    -- client typed SpellDescription is the description, still gated by the live line's numbers
+    i = frameDescriptionRow(frame)
+    how = (" (api description %q differs; typed row %s)"):format(plain(description), tostring(i))
+  end
   -- "spell.description": a bare "spell" would not name one field (spells also have `aura`)
   local n = show(frame, "spells", "spell.description", id, lines, i, i, spellName)
-  traceFrame(frame, "readable spell", id, lines, ("-> rendered %d"):format(n))
+  traceFrame(frame, "readable spell", id, lines, ("-> rendered %d%s"):format(n, how))
   return n
 end
 
@@ -803,15 +838,56 @@ local COMPARE_KEYS = { "ITEM_DELTA_DESCRIPTION", "ITEM_DELTA_MULTIPLE_COMPARISON
   "ITEM_COMPARISON_SWAP_ITEM_MAINHAND_DESCRIPTION", "ITEM_COMPARISON_SWAP_ITEM_OFFHAND_DESCRIPTION",
   "ITEM_COMPARISON_CYCLING_DISABLED_MSG_MAINHAND", "ITEM_COMPARISON_CYCLING_DISABLED_MSG_OFFHAND" }
 Tooltip.COMPARE_KEYS = COMPARE_KEYS
+
+-- A stat change line colours its number on its own ("|cffff2020-11|r Armor", seen in game): the line is matched with
+-- its colour codes taken out, and an argument the client had coloured gets its colour back in the Japanese.
+-- → key, args | nil
+function Tooltip.matchColoured(index, text)
+  local key, args = index:match(text)
+  if key then return key, args end
+  local bare = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+  if bare == text then return nil end
+  local shared
+  key, shared = index:match(bare)
+  if not key then return nil end
+  -- the index memoizes `args` per text: a copy takes the colour, never the memo
+  args = {}
+  for k, v in pairs(shared or {}) do args[k] = v end
+  for i, a in pairs(shared or {}) do
+    if type(i) == "number" and type(a) == "string" and a ~= "" then
+      local coloured = text:match("(|c%x%x%x%x%x%x%x%x" .. a:gsub("%p", "%%%0") .. "|r)")
+      if coloured then args[i] = coloured end
+    end
+  end
+  return key, args
+end
+local COMPARE_HEADER_KEYS = { "EQUIPPED", "IF_EQUIPPED_TOGETHER" }
+Tooltip.COMPARE_HEADER_KEYS = COMPARE_HEADER_KEYS
 function Tooltip.onCompareShow(frame)
   local index = WFJ.UIIndex
-  if inRefit[frame] or not index or not (frame.GetItem and frame:GetItem()) then return 0 end
+  if inRefit[frame] or not index or not Tooltip.itemOf(frame) then return 0 end
   local surface, refit, n = surfaceOf(frame), refitFor(frame), 0
   inRefit[frame] = true
   local ok, err = pcall(function()
+    -- the "Equipped" tab above the comparison (tooltipcomparisonmanager.lua:241-247)
+    local header = type(frame.CompareHeader) == "table" and frame.CompareHeader.Label or nil
+    local htext = type(header) == "table" and type(header.GetText) == "function" and header:GetText() or nil
+    if type(htext) == "string" and htext ~= "" and not anySecret({ htext }) then
+      local key = index:matchOnly(htext, COMPARE_HEADER_KEYS)
+      if key and WFJ.Render.show(surface, "ui.header", header, htext, "ui", "ui", key, {}) then n = n + 1 end
+    end
+    -- after the delta header, each line is a stat change the client formats ("-11 Armor"): a stat template
+    local deltas = false
     for i, l in ipairs(Tooltip.lines(frame)) do
       local key, args
-      if l.text ~= "" then key, args = index:matchOnly(l.text, COMPARE_KEYS) end
+      if l.text ~= "" then
+        key, args = index:matchOnly(l.text, COMPARE_KEYS)
+        if key == "ITEM_DELTA_DESCRIPTION" or key == "ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION" then
+          deltas = true
+        elseif not key and deltas and not anySecret({ l.text }) then
+          key, args = Tooltip.matchColoured(index, l.text)
+        end
+      end
       local ctx = { args = args, refit = refit }
       if key and WFJ.Render.show(surface, "ui.L" .. i, l.fs, l.text, "ui", "ui", key, ctx) then n = n + 1 end
     end
@@ -819,6 +895,7 @@ function Tooltip.onCompareShow(frame)
   inRefit[frame] = false
   if not ok then error(err, 0) end
   if n > 0 then refit() end
+  traceFrame(frame, "comparison lines", nil, Tooltip.lines(frame), ("-> rendered %d"):format(n))
   return n
 end
 
@@ -854,12 +931,31 @@ end
 -- (blizzard_sharedxmlgame/tooltip/tooltiputil.lua), and where that method is absent the registration's own type is
 -- trusted. A frame missing the reader `on*` needs (GetItem / GetSpell) is refused, never called.
 -- → the frame | nil
+-- With the trace on, a refused frame leaves one line saying which frame and why, so a tooltip that never turns
+-- Japanese shows up in the trace instead of leaving no pass at all; the same line twice in a row is kept once.
+local function traceRefusal(tt, want, why)
+  local t = Tooltip.trace
+  if not t then return end
+  local ok, name = pcall(function() return tt:GetName() end)
+  local line = ("%s refused (type %s): %s"):format(ok and plain(name) or "?", plain(want), why)
+  if t[#t] ~= line then t[#t + 1] = line end
+end
+
 local function dataFrame(tt, want, reader)
   if type(tt) ~= "table" or type(tt.GetName) ~= "function" then return nil end
-  if type(tt.IsTooltipType) == "function" and not tt:IsTooltipType(want) then return nil end
+  if type(tt.IsTooltipType) == "function" and not tt:IsTooltipType(want) then
+    traceRefusal(tt, want, "IsTooltipType is false")
+    return nil
+  end
   local name = tt:GetName()
-  if type(name) ~= "string" or not Tooltip.IS_SURFACE[name] then return nil end
-  if type(tt[reader]) ~= "function" then return nil end
+  if type(name) ~= "string" or not Tooltip.IS_SURFACE[name] then
+    traceRefusal(tt, want, "not one of the declared frames")
+    return nil
+  end
+  if type(tt[reader]) ~= "function" then
+    traceRefusal(tt, want, "no " .. reader)
+    return nil
+  end
   return tt
 end
 
@@ -1002,7 +1098,10 @@ function Tooltip.init()
   Tooltip.path = processor and "dataprocessor" or "none"
   if processor then
     processor.AddTooltipPostCall(types.Item, function(tt)
-      local frame = dataFrame(tt, types.Item, "GetItem")
+      -- a comparison tooltip has no GetItem (ShoppingTooltipTemplate is TooltipDataHandlerMixin only,
+      -- blizzard_gametooltip/mainline/gametooltip.xml:109); it carries its tooltip data, which Tooltip.itemOf reads
+      local frame = dataFrame(tt, types.Item, type(tt) == "table" and tt.GetItem == nil and "GetPrimaryTooltipData"
+        or "GetItem")
       if frame then Tooltip.onItem(frame) end
     end)
     processor.AddTooltipPostCall(types.Spell, function(tt)
@@ -1017,6 +1116,11 @@ function Tooltip.init()
       frame:HookScript("OnHide", function(self) Tooltip.release(self) end)
       if HEADED[name] and type(frame.Show) == "function" then -- the comparison's appended lines
         hooksecurefunc(frame, "Show", Tooltip.onCompareShow)
+        -- Forever's comparison manager shows its frames with SetShown, never Show
+        -- [verified: blizzard_sharedxmlgame/tooltip/tooltipcomparisonmanager.lua:53-54]
+        if type(frame.SetShown) == "function" then
+          hooksecurefunc(frame, "SetShown", function(f, shown) if shown then Tooltip.onCompareShow(f) end end)
+        end
       end
     end
   end

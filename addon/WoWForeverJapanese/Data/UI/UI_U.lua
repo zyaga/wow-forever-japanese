@@ -251,6 +251,7 @@ WFJ.Data.add("ui", {
   ["UPGRADE"] = { "強化", 0x289afa41, "." },
   ["UPGRADED_RECIPE_LEARNED_TITLE"] = { "レシピがアップグレード！", 0x618c32c8, "." },
   ["UPGRADE_MISSING_ITEM"] = { "強化するアイテムをここにドラッグしてください。", 0x7e2b333e, "." },
+  ["USE"] = { "使用", 0x00167d3b, "." },
   ["USED"] = { "習得済み", 0xcfa7e496, "." },
   ["USEIPV6"] = { "利用可能ならIPv6を有効にする", 0x1cec9db8, "." },
   ["USER_SURVEY_DIALOG_TEXT"] = { "World of Warcraftでの体験について、いくつかの質問にお答えいただけませんか？「はい」をクリックすると、外部ブラウザのウィンドウでアンケートが開きます。", 0xd8efec9b, "." },

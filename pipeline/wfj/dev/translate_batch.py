@@ -39,8 +39,7 @@ will print, so a draft knows the `$N<k>` range (`null` where the template makes 
 row: `{"ref", "ja"}`.
 
 `--src PREFIX` keeps only English from one source (`db2@1.60.1.69913` drafts what the Forever
-pull served and skips the lines still carrying Classic Era's English). `--visible FILE` keeps only the ids in
-a visible-spell artifact.
+pull served and skips the lines still carrying Classic Era's English).
 `expand` refuses a draft name that does not end in `-sg<N>` for the style guide's current version, so every
 machine line's `provenance.source` records which style guide produced it.
 """
@@ -444,21 +443,14 @@ def _in_scope(
     type_: str,
     english: list[dict[str, Any]],
     src: str | None,
-    visible: Path | None,
 ) -> list[dict[str, Any]]:
-    """The English lines a cut may draft: served by the chosen build, visible, not a name or a placeholder."""
+    """The English lines a cut may draft: served by the chosen build, not a name or a placeholder."""
     # Draft only text this build actually served. `--src db2@1.60.1.69913` keeps the lines the Forever
     # pull provided and drops the ones still carrying Classic Era's English, which the union merge kept.
     if src:
         english = [ln for ln in english if ln.get("src", "").startswith(src)]
         if not english:
             raise SystemExit(f"translate_batch: no {type_} English has src starting {src!r}")
-    # for spells, only the ones a player can be shown (`make visible-spells`).
-    if visible is not None:
-        from wfj.dev.visible_spells import read_artifact
-
-        seen = set(read_artifact(visible))
-        english = [ln for ln in english if ln["id"] in seen]
     if kind in NAMES_LISTS:
         # an objective (or area text) that is only a name is listed in its names list, never drafted;
         # a missing list would draft every name-only objective, so stop instead
@@ -482,6 +474,25 @@ def _in_scope(
     return english
 
 
+def undraftable(data: Path, kind: str) -> dict[tuple[Any, str], str]:
+    """The tooltip lines of `kind` a batch can never take, with the reason `cut` gives when it leaves them out
+    (a template code drafting cannot place, an inclusion it cannot splice, branches the addon could never tell
+    apart). `make coverage` states them as the reason the line has no Japanese. → {(id, field): reason}"""
+    if kind not in TEMPLATE_KINDS:
+        return {}
+    type_, field = KINDS[kind]
+    english = [ln for ln in Store(data, english=True).load(type_) if ln["field"] == field]
+    kept, not_expanded = expand_included(kind, english, spell_english(data))
+    out = {(ln["id"], ln["field"]): reason for ln, reason in not_expanded}
+    rows = [r for r in group(kind, kept, None) if _cuttable(kind, r["en"])]
+    _annotate_slots(rows)
+    for r in rows:
+        if r["slots"] is None:
+            for t in r["targets"]:
+                out[(t[0], t[1])] = r.get(_DROPPED, "uncountable")
+    return out
+
+
 def cut(  # noqa: PLR0913, PLR0917 - one parameter per CLI option; tests and the CLI pass them by name
     data: Path,
     kind: str,
@@ -492,7 +503,6 @@ def cut(  # noqa: PLR0913, PLR0917 - one parameter per CLI option; tests and the
     redraft: bool = False,
     held_back: bool = False,
     src: str | None = None,
-    visible: Path | None = None,
 ) -> list[dict[str, Any]]:
     if redraft and ids is None:
         raise SystemExit("translate_batch: --redraft needs --ids (the lines to re-draft)")
@@ -504,7 +514,7 @@ def cut(  # noqa: PLR0913, PLR0917 - one parameter per CLI option; tests and the
     type_, field = KINDS[kind]
     version = style_version(data.parent)
     english = Store(data, english=True).load(type_)
-    english = _in_scope(data, kind, type_, english, src, visible)
+    english = _in_scope(data, kind, type_, english, src)
     items = quest_items(english, Store(data, english=True).load("item")) if type_ == "quest" else None
     selected = eligible(
         english, Store(data).load(type_), field, version, redraft_older, redraft, held_back
@@ -619,11 +629,6 @@ def main(argv: list[str]) -> int:
         "--src",
         help="only English whose src starts with this (`db2@1.60.1.69913` for the Forever pull)",
     )
-    c.add_argument(
-        "--visible",
-        type=Path,
-        help="only ids in this visible-spell artifact (pipeline/visible_spells.txt)",
-    )
     c.add_argument("--out", type=Path, required=True)
     e = sub.add_parser("expand")
     e.add_argument("ok_file", type=Path)
@@ -642,7 +647,6 @@ def main(argv: list[str]) -> int:
             args.redraft,
             args.held_back,
             args.src,
-            args.visible,
         )
     else:
         expand(args.ok_file, args.name, args.out, style_version(data.parent))

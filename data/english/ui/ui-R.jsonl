@@ -157,6 +157,8 @@
 {"id": "RECOMMENDED", "field": "text", "en": "Recommended", "hash": "4257c786acc32283", "src": "db2@1.60.1.70170"}
 {"id": "RECOVER_CORPSE", "field": "text", "en": "Resurrect now?", "hash": "f82441dbb767f253", "src": "db2@1.60.1.70170"}
 {"id": "RECOVER_CORPSE_INSTANCE", "field": "text", "en": "You must enter the instance to recover your corpse", "hash": "01e3a754ee62304d", "src": "db2@1.60.1.70170"}
+{"id": "RECOVER_CORPSE_TIMER", "field": "text", "en": "%d %s until resurrection", "hash": "c91ccc07d9332323", "src": "db2@1.60.1.70170"}
+{"id": "RECRUITING_FRIENDS_DISABLED", "field": "text", "en": "Recruit A Friend is unavailable due to your privacy settings. ", "hash": "a485c2f58ed3448e", "src": "db2@1.60.1.70170"}
 {"id": "RECRUIT_A_FRIEND", "field": "text", "en": "Recruit A Friend", "hash": "0c392ed6e77a9921", "src": "db2@1.60.1.70170"}
 {"id": "RED_GEM", "field": "text", "en": "Red", "hash": "0015acf54592480c", "src": "db2@1.60.1.70170"}
 {"id": "REFLECT", "field": "text", "en": "Reflect", "hash": "297925a19fd4ad3f", "src": "db2@1.60.1.70170"}
@@ -169,11 +171,14 @@
 {"id": "RELEASE_PET_BUTTON_LABEL", "field": "text", "en": "Release", "hash": "91da4847eb9cecd0", "src": "db2@1.60.1.70170"}
 {"id": "RELICSLOT", "field": "text", "en": "Relic", "hash": "ad09821cdde9c527", "src": "db2@1.60.1.70170"}
 {"id": "RELOADUI", "field": "text", "en": "Reload UI", "hash": "12ae60fa9f4f4b81", "src": "db2@1.60.1.70170"}
+{"id": "REMIX_EARLY_CHARACTER_CONVERSION_NOTICE", "field": "text", "en": "Your Timerunner character has been transported to the main timeline.|n|nRemix event items have been removed.", "hash": "2c765434609c3f41", "src": "db2@1.60.1.70170"}
 {"id": "REMIX_END_OF_EVENT_NOTICE", "field": "text", "en": "The Timerunning event has ended.  You have been transported back to your home timeline.\r\n\r\nItems from the event have been removed.\r\n", "hash": "6d28278b4b00ee0e", "src": "db2@1.60.1.70170"}
+{"id": "REMOTE_TEXT_TO_SPEECH", "field": "text", "en": "Enter text to be read out with text to speech for other players.", "hash": "da471f7e3a37b660", "src": "db2@1.60.1.70170"}
 {"id": "REMOVE", "field": "text", "en": "Remove", "hash": "8c017ffbfe93bea6", "src": "db2@1.60.1.70170"}
 {"id": "REMOVE_AUTHENTICATOR_FROM_RANK", "field": "text", "en": "Are you sure you want to remove the Authenticator requirement from the %s rank? You won't be able to reapply it as long as there are guild members with this rank.", "hash": "9cde0ea6aa750307", "src": "db2@1.60.1.70170"}
 {"id": "REMOVE_FAVORITE_STATUS", "field": "text", "en": "Remove from Favorites", "hash": "ef4e4c7c17b8e3ef", "src": "db2@1.60.1.70170"}
 {"id": "REMOVE_FRIEND", "field": "text", "en": "Remove Friend", "hash": "e54f8be338d810c1", "src": "db2@1.60.1.70170"}
+{"id": "REMOVE_GUILDMEMBER_LABEL", "field": "text", "en": "Are you sure you want to remove %s from the guild?", "hash": "a343ef9a4fd7c38e", "src": "db2@1.60.1.70170"}
 {"id": "REMOVE_MODERATOR", "field": "text", "en": "Remove Moderator", "hash": "8ab27db7ca8f737d", "src": "db2@1.60.1.70170"}
 {"id": "REMOVE_PLAYER", "field": "text", "en": "Remove Player", "hash": "4e1b058c12de4498", "src": "db2@1.60.1.69913"}
 {"id": "RENAME_CHAT_WINDOW", "field": "text", "en": "Rename Window", "hash": "04c81f86912ef09e", "src": "db2@1.60.1.70170"}
@@ -181,10 +186,24 @@
 {"id": "RENAME_GUILD_LABEL", "field": "text", "en": "Enter new guild name:", "hash": "f253234bd05c9f21", "src": "db2@1.60.1.70170"}
 {"id": "RENDER_SCALE", "field": "text", "en": "Render Scale", "hash": "be81b53c139f3356", "src": "db2@1.60.1.70170"}
 {"id": "RENOWN_LEVEL_LABEL", "field": "text", "en": "Renown %d", "hash": "ff986135f8acf86d", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_LEVEL_UP_SKIP_BUTTON", "field": "text", "en": "Skip", "hash": "0b3b642f81858430", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_ACCOUNT_UNLOCK_LABEL", "field": "text", "en": "Account Reward", "hash": "a312847347c88fb5", "src": "db2@1.60.1.70170"}
 {"id": "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC", "field": "text", "en": "These rewards will be granted to you to recognize your unwavering commitment to the covenant.", "hash": "cdb9c2c45b13d969", "src": "db2@1.60.1.70170"}
 {"id": "RENOWN_REWARD_CAPSTONE_TOOLTIP_DESC2", "field": "text", "en": "Rewards:", "hash": "2d6ea58b43389134", "src": "db2@1.60.1.70170"}
 {"id": "RENOWN_REWARD_CAPSTONE_TOOLTIP_TITLE", "field": "text", "en": "Major Milestone", "hash": "07ce51bf1ee47e37", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_FOLLOWER_DESCRIPTION", "field": "text", "en": "This character will join your team of adventurers.", "hash": "093f433602b81c67", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_FOLLOWER_NAME_FORMAT", "field": "text", "en": "Companion: %s", "hash": "2956358d10f2d9a8", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_ILLUSION_DESCRIPTION", "field": "text", "en": "This weapon enchantment appearance will be added to your collection.", "hash": "b3997a2f255cbb59", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_ILLUSION_NAME_FORMAT", "field": "text", "en": "Illusion: %s", "hash": "47a61515c31cc1cd", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_ITEM_DESCRIPTION", "field": "text", "en": "You will gain this item.", "hash": "24a3307c66cc3d8a", "src": "db2@1.60.1.70170"}
 {"id": "RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE", "field": "text", "en": "Renown %d Rewards", "hash": "f7e6b5efd0a508c3", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_MOUNT_DESCRIPTION", "field": "text", "en": "You will be granted this mount.", "hash": "3282c28c0e0d98a0", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_MOUNT_NAME_FORMAT", "field": "text", "en": "Mount: %s", "hash": "c857a1e9b15d686f", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_SPELL_DESCRIPTION", "field": "text", "en": "This spell will be cast on you.", "hash": "1730ead6310ae876", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_TITLE_DESCRIPTION", "field": "text", "en": "You will earn this title.", "hash": "57160ed033b313e4", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_TITLE_NAME_FORMAT", "field": "text", "en": "Title: %s", "hash": "223ef71247ae4b11", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_TRANSMOGSET_DESCRIPTION", "field": "text", "en": "These appearances will become available for purchase from the Renown Quartermaster.", "hash": "b1583feab3e02c6e", "src": "db2@1.60.1.70170"}
+{"id": "RENOWN_REWARD_TRANSMOG_DESCRIPTION", "field": "text", "en": "This appearance will become available for purchase from the Renown Quartermaster.", "hash": "790f599657248d33", "src": "db2@1.60.1.70170"}
 {"id": "REPAIR_ALL_ITEMS", "field": "text", "en": "Repair All Items", "hash": "1f5bcd63d655dea3", "src": "db2@1.60.1.70170"}
 {"id": "REPAIR_AN_ITEM", "field": "text", "en": "Repair an Item", "hash": "b37b118b43e6b3f3", "src": "db2@1.60.1.70170"}
 {"id": "REPAIR_ARMOR_TOOLTIP_BREAKING", "field": "text", "en": "The durability of your armor is getting low. Visit a vendor in town to repair the item before it breaks.", "hash": "8dee460c61352f3f", "src": "db2@1.60.1.70170"}
@@ -277,6 +296,7 @@
 {"id": "RESET_CHAT_WINDOW", "field": "text", "en": "This will reset your chat windows to default settings.\nYou will lose any custom settings.", "hash": "9064aca0bb410b03", "src": "db2@1.60.1.70170"}
 {"id": "RESET_CHAT_WINDOW_POSITIONS", "field": "text", "en": "Reset Chat Positions", "hash": "14038f8052ad8280", "src": "db2@1.60.1.70170"}
 {"id": "RESET_INSTANCES", "field": "text", "en": "Reset all instances", "hash": "5b03b930a3e08a0b", "src": "db2@1.60.1.70170"}
+{"id": "RESET_POSITION", "field": "text", "en": "Reset Position", "hash": "4a936dc1f0a99e08", "src": "db2@1.60.1.70170"}
 {"id": "RESET_TO_DEFAULT", "field": "text", "en": "Reset To Default", "hash": "0ad88897414ae2bd", "src": "db2@1.60.1.70170"}
 {"id": "RESET_TUTORIALS", "field": "text", "en": "Reset Tutorials", "hash": "e91f3fa0bd312146", "src": "db2@1.60.1.70170"}
 {"id": "RESIST", "field": "text", "en": "Resist", "hash": "8ccdbded373180ca", "src": "db2@1.60.1.70170"}
@@ -312,6 +332,8 @@
 {"id": "RESURRECT", "field": "text", "en": "Resurrections", "hash": "36ab5a6ffc8b3476", "src": "db2@1.60.1.70170"}
 {"id": "RESURRECT_REQUEST", "field": "text", "en": "%s wants to resurrect you.  You will be afflicted with resurrection sickness.", "hash": "fc6362a3cb080861", "src": "db2@1.60.1.70170"}
 {"id": "RESURRECT_REQUEST_NO_SICKNESS", "field": "text", "en": "%s wants to resurrect you", "hash": "cc53d488bde41ade", "src": "db2@1.60.1.70170"}
+{"id": "RESURRECT_REQUEST_NO_SICKNESS_TIMER", "field": "text", "en": "%s wants to resurrect you and will be able to in %d %s", "hash": "92fd4616448141d0", "src": "db2@1.60.1.70170"}
+{"id": "RESURRECT_REQUEST_TIMER", "field": "text", "en": "%s wants to resurrect you and will be able to in %d %s.  You will be afflicted with resurrection sickness.", "hash": "29c8ddc0422907be", "src": "db2@1.60.1.70170"}
 {"id": "RETRIEVING_DATA", "field": "text", "en": "Retrieving data", "hash": "485f180a9da6a05c", "src": "db2@1.60.1.70170"}
 {"id": "RETRIEVING_INVITE_LIST", "field": "text", "en": "Retrieving invite list", "hash": "78003d81efba8243", "src": "db2@1.60.1.70170"}
 {"id": "RETURN_TO_GAME", "field": "text", "en": "Return to Game", "hash": "b443b5b57723e9c5", "src": "db2@1.60.1.70170"}
@@ -329,6 +351,8 @@
 {"id": "RID_FRIEND_REQUEST_INFO", "field": "text", "en": "This should be a person you know and trust in real life. You will be able to chat with them no matter which Blizzard game you are playing. If you accept their friend request your real name will be displayed to all of their friends.", "hash": "d0ff4bb5c724b3f6", "src": "db2@1.60.1.70170"}
 {"id": "RIGHTSHOULDERSLOT", "field": "text", "en": "Right Shoulder", "hash": "279b21157fbef384", "src": "db2@1.60.1.70170"}
 {"id": "RIGHT_BUTTON_STRING", "field": "text", "en": "Right Button", "hash": "0d664c5f143bd758", "src": "db2@1.60.1.70170"}
+{"id": "RIGHT_CLICK_FOR_LESS", "field": "text", "en": "Right click for less", "hash": "de4206d6d5d6ed97", "src": "db2@1.60.1.70170"}
+{"id": "RIGHT_CLICK_FOR_MORE", "field": "text", "en": "Right click for more", "hash": "de66f23a8af16742", "src": "db2@1.60.1.70170"}
 {"id": "ROGUE_AGILITY_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFCritical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFAttack Power|r by %d\nIncreases |cFFFFFFFFRanged Attack Power|r by %d\nIncreases |cFFFFFFFFArmor|r by %d\nIncreases |cFFFFFFFFDodge|r chance by %.1f%%", "hash": "1b87af750624ca4d", "src": "db2@1.60.1.70170"}
 {"id": "ROGUE_INTELLECT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFWeapon Skill|r improvement rate", "hash": "f79f01e1188490d5", "src": "db2@1.60.1.70170"}
 {"id": "ROGUE_MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r and |cFFFFFFFFAgility|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "118d6e69333c5868", "src": "db2@1.60.1.70170"}
@@ -343,6 +367,7 @@
 {"id": "ROLE_REMOVED_INFORM_WITH_SOURCE", "field": "text", "en": "%s no longer has a selected role. (Changed by %s.)", "hash": "a0da82517e246242", "src": "db2@1.60.1.70170"}
 {"id": "ROTATE_LEFT", "field": "text", "en": "Rotate Left", "hash": "31b565b5c793689b", "src": "db2@1.60.1.70170"}
 {"id": "ROTATE_RIGHT", "field": "text", "en": "Rotate Right", "hash": "d9aec5c7b550ee4d", "src": "db2@1.60.1.70170"}
+{"id": "ROTATE_TOOLTIP", "field": "text", "en": "Left-click on character and drag to rotate.", "hash": "cc1880cd059c0f5f", "src": "db2@1.60.1.70170"}
 {"id": "RPE_ASSISTED_HIGHLIGHT_KEEP_ON", "field": "text", "en": "Keep On", "hash": "277fa63d8d7f291b", "src": "db2@1.60.1.70170"}
 {"id": "RPE_ASSISTED_HIGHLIGHT_TURN_CHOICE", "field": "text", "en": "Keep Assisted Highlight on?|n|n|cnNORMAL_FONT_COLOR:During the Catch Up Experience, Assisted Highlight was turned on. This enabled highlights that recommend the next ability to use from your action bars.|n|nWould you like to keep it on?|r You can change it in Options at any point.", "hash": "3590995388d567c1", "src": "db2@1.60.1.70170"}
 {"id": "RPE_ASSISTED_HIGHLIGHT_TURN_OFF", "field": "text", "en": "Turn Off", "hash": "57173e79a300be9e", "src": "db2@1.60.1.70170"}
@@ -350,3 +375,93 @@
 {"id": "RUNEFORGE_LEGENDARY_COST_LABEL", "field": "text", "en": "Costs:", "hash": "7f994fe550f46d8f", "src": "db2@1.60.1.70170"}
 {"id": "RUNES", "field": "text", "en": "Runes", "hash": "af2edfe2bc590dbe", "src": "db2@1.60.1.70170"}
 {"id": "RUNIC_POWER", "field": "text", "en": "Runic Power", "hash": "28c47219663d4a0c", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:11", "field": "text", "en": "Fought Together", "hash": "cb1c1374f24bab3a", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:12", "field": "text", "en": "Completed Dungeon Together", "hash": "30f2ccf32accf73b", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:13", "field": "text", "en": "Raided Together", "hash": "299d4af0a8cb5a61", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:15", "field": "text", "en": "Completed Delve Together", "hash": "619e2ab5e3bfb235", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:16", "field": "text", "en": "Did Arena Together", "hash": "fb88cd1d4a528c9b", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:17", "field": "text", "en": "Fought in Battleground Together", "hash": "d7ce80e2f3b46a16", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:18", "field": "text", "en": "Dueled", "hash": "e28d83a90089dfd7", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:19", "field": "text", "en": "Pet Battled", "hash": "b333a30db165a1de", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:20", "field": "text", "en": "PvPed Together", "hash": "34bcd40bc04a4aa5", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:23", "field": "text", "en": "Legacy Friend", "hash": "f28b9b6f770c7113", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:3", "field": "text", "en": "Traded", "hash": "659dcc0227031455", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:4", "field": "text", "en": "Whispered", "hash": "ebef0971b4bb89cd", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:5", "field": "text", "en": "Filled your Public Crafting Order", "hash": "fe6580b999670028", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:6", "field": "text", "en": "Filled their Public Crafting Order", "hash": "753afd4ec393a80c", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:7", "field": "text", "en": "Filled your Crafting Order", "hash": "e53bd1b396f742e9", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyInteraction:8", "field": "text", "en": "Filled their Crafting Order", "hash": "d6cca10e7fb4b042", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:1", "field": "text", "en": "Party Member", "hash": "36f1f02bed626560", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:10", "field": "text", "en": "Guild Order Filled By You", "hash": "68a9a826a084a05c", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:11", "field": "text", "en": "Creature Kill", "hash": "be5e916ad8eb22e8", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:12", "field": "text", "en": "Complete Dungeon", "hash": "646f0419c46767ba", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:13", "field": "text", "en": "Kill Raid Boss", "hash": "9c26c43a87e74081", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:14", "field": "text", "en": "Kill LFR Boss", "hash": "bcc40e2eac35bafb", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:15", "field": "text", "en": "Complete Delve", "hash": "331d98ef9bf6b82a", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:16", "field": "text", "en": "Complete Arena", "hash": "00308d8011b3c4e1", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:17", "field": "text", "en": "Complete Battleground", "hash": "dffa257140f3c699", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:18", "field": "text", "en": "Duel", "hash": "093b746460205db9", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:19", "field": "text", "en": "Pet Battle", "hash": "18d17e4f0cc1e704", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:2", "field": "text", "en": "Raid Member", "hash": "6fb5c4df2138d7ec", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:20", "field": "text", "en": "PvP Kill", "hash": "730e294d8ae56d34", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:23", "field": "text", "en": "Legacy Friend", "hash": "f28b9b6f770c7113", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:3", "field": "text", "en": "Trade", "hash": "d1dffbad9e5a9fd9", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:4", "field": "text", "en": "Whisper", "hash": "d91fab3ce6a4e8ed", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:5", "field": "text", "en": "Public Order Filled By Them", "hash": "048a45af3b87b836", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:6", "field": "text", "en": "Public Order Filled By You", "hash": "59eed646b447780b", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:7", "field": "text", "en": "Personal Order Fill By Them", "hash": "52d9a3f7273f4a93", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:8", "field": "text", "en": "Personal Order Filled By You", "hash": "b89e50c5e558797e", "src": "db2@1.60.1.70170"}
+{"id": "RecentAllyType:9", "field": "text", "en": "Guild Order Filled By Them", "hash": "8e23ab724529cc91", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1832", "field": "text", "en": "Faction Tabard", "hash": "3fbc96ee610af61a", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1833", "field": "text", "en": "Insignia Trinket", "hash": "7fed4e1e3d9bc81a", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1834", "field": "text", "en": "Faction Cloak", "hash": "bc34569c6d7fdddd", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1835", "field": "text", "en": "Faction Necklace", "hash": "4982a9b818bc0e73", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1836", "field": "text", "en": "Combat Potions", "hash": "5bd71b1888c0629c", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1837", "field": "text", "en": "Elite Faction Tabard", "hash": "809a8edcf9d31b88", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1839", "field": "text", "en": "Elite Wrist Upgrade", "hash": "f8750e00f33af46f", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1840", "field": "text", "en": "Elite Boot Upgrade", "hash": "ce8dd3fa4f8cf871", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1841", "field": "text", "en": "Elite Glove Upgrade", "hash": "eab6ab50758c0dba", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1842", "field": "text", "en": "Black War Mounts", "hash": "0a49d6b1027c915f", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1843", "field": "text", "en": "Elite Leg Upgrade", "hash": "d19491db68d630d8", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1844", "field": "text", "en": "Elite Chest Upgrade", "hash": "25ddb691d49dc6c2", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1845", "field": "text", "en": "Weapon Arsenal", "hash": "5c38c9eacb5b9407", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1856", "field": "text", "en": "Join a shootout with your air rifle. You and other players with this rifle can Stun each other. Even keeps score!|n|n|cFFFFFFFFVisit Innkeeper Wiley in Ratchet to claim your reward.|R", "hash": "8849bce8501cd680", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1857", "field": "text", "en": "Summons a tiny spectral bear cub as your companion.|n|n|cFFFFFFFFVisit Innkeeper Wiley in Ratchet to claim your reward.|R", "hash": "ad9ab9d2c6b208fd", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1858", "field": "text", "en": "Show your dedication with this spectral bear-themed tabard.|n|n|cFFFFFFFFVisit Innkeeper Wiley in Ratchet to claim your reward.|R", "hash": "cfa9355992d71278", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:1859", "field": "text", "en": "Summons and dismisses an Epic rideable spectral bear mount that moves at 100% increased speed.|n|n|cFFFFFFFFVisit Innkeeper Wiley in Ratchet to claim your reward.|R", "hash": "2ebf20b69c90d822", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:2008", "field": "text", "en": "Elite Waist Upgrade", "hash": "0f297ff4faf03cfe", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:2010", "field": "text", "en": "Elite Shoulder Upgrade", "hash": "4971f239ecd4032d", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardDescription:2011", "field": "text", "en": "Elite Helmet Upgrade", "hash": "8f844418931159e0", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1832", "field": "text", "en": "Rank 1 Rewards", "hash": "81e9d2a8d5b1007d", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1833", "field": "text", "en": "Rank 2 Rewards", "hash": "a0ffbb96beb7a197", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1834", "field": "text", "en": "Rank 3 Rewards", "hash": "c015a484a7be42b1", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1835", "field": "text", "en": "Rank 4 Rewards", "hash": "df2b8d7290c4e3cb", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1836", "field": "text", "en": "Rank 5 Rewards", "hash": "fe41766079cb84e5", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1837", "field": "text", "en": "Rank 6 Rewards", "hash": "1d575f5362d225ff", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1838", "field": "text", "en": "Rank 7 Rewards", "hash": "3c6d48414bd8c719", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1839", "field": "text", "en": "Rank 8 Rewards", "hash": "5b83312f34df6833", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1840", "field": "text", "en": "Rank 9 Rewards", "hash": "7a991a1d1de6094d", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1841", "field": "text", "en": "Rank 10 Rewards", "hash": "7f33625bc77fccb6", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1842", "field": "text", "en": "Rank 11 Rewards", "hash": "9e494b49b0866dd0", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1843", "field": "text", "en": "Rank 12 Rewards", "hash": "bd5f3437998d0eea", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1844", "field": "text", "en": "Rank 13 Rewards", "hash": "dc751d258293b004", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardName:1845", "field": "text", "en": "Rank 14 Rewards", "hash": "fb8b06136b9a511e", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1832", "field": "text", "en": "Faction Tabard Unlocked", "hash": "ad117088dfbcf0f1", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1833", "field": "text", "en": "Insignia Trinket Unlocked", "hash": "bc1887bab2fecb93", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1834", "field": "text", "en": "Cloak Unlocked", "hash": "0d8fed48b8f81263", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1835", "field": "text", "en": "Necklace Unlocked", "hash": "6d6491b6c1f37659", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1836", "field": "text", "en": "Access to Combat Potions Unlocked", "hash": "fa4649bf2e917103", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1837", "field": "text", "en": "Elite Faction Tabard Unlocked", "hash": "7c19b8129f2c7982", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1838", "field": "text", "en": "Battle Standard Unlocked", "hash": "790e6b94576b3dd7", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1839", "field": "text", "en": "Elite Wrist Upgrades Unlocked", "hash": "a985b6d79e47b131", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1840", "field": "text", "en": "Elite Boot Upgrade Unlocked", "hash": "8a6b13917d2bb54e", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1841", "field": "text", "en": "Elite Glove Upgrade Unlocked", "hash": "afae67fdc16f05c3", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1842", "field": "text", "en": "Faction Black War Mounts Unlocked", "hash": "37931c078ad84a40", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1843", "field": "text", "en": "Elite Leg Upgrades Unlocked", "hash": "f24740a1aec0c04c", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1844", "field": "text", "en": "Elite Chest Upgrades Unlocked", "hash": "d934226a478fa207", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:1845", "field": "text", "en": "Weapon Arsenal Unlocked", "hash": "e78fc516224c5eb1", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:2008", "field": "text", "en": "Elite Waist Upgrades Unlocked", "hash": "49b483e01c3ea730", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:2010", "field": "text", "en": "Elite Shoulder Upgrades Unlocked", "hash": "a8916783ef9f65ce", "src": "db2@1.60.1.70170"}
+{"id": "RenownRewardToast:2011", "field": "text", "en": "Elite Helmet Upgrades Unlocked", "hash": "9e4bd8517135d151", "src": "db2@1.60.1.70170"}
+{"id": "RestState:1", "field": "text", "en": "Rested", "hash": "8cd0981662daabb7", "src": "db2@1.60.1.70170"}
+{"id": "RestState:2", "field": "text", "en": "Normal", "hash": "4e2463e728aab060", "src": "db2@1.60.1.70170"}

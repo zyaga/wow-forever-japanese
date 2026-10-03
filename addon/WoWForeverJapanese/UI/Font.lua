@@ -40,11 +40,14 @@ local restored = setmetatable({}, { __mode = "k" })
 -- size an earlier fit shrank it to), else at its own. → the size set, or nil when the client refused the font
 function Font.bundle(fs, fontObject)
   local path, size, flags = fs:GetFont()
+  local curSize, curFlags = size, flags or ""
   if type(fontObject) == "table" and type(fontObject.GetFont) == "function" then
     local _, objSize, objFlags = fontObject:GetFont()
     size, flags = objSize or size, objFlags or flags
   end
   size, flags = size or Font.DEFAULT_SIZE, flags or ""
+  -- already wearing exactly this: chat dresses every visible row on every refresh, so most calls change nothing
+  if dressed[fs] and path == Font.PATH and curSize == size and curFlags == flags then return size end
   if fs:SetFont(Font.PATH, size, flags) == false then return nil end
   if not dressed[fs] then dressed[fs] = { path, size, flags } end
   return size

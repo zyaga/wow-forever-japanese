@@ -3,7 +3,8 @@ the collector, VMaNGOS and the quest cache (split out of cmd/import_.py by sourc
 docs/systems/pipeline.md).
 
 English importers merge by source: an importer replaces its own lines and any line whose (id, field)
-it provides, and keeps every other source's lines. The collector import only adds (see run_collector)."""
+it provides, and keeps every other source's lines. The collector import replaces any stand-in
+(see run_collector)."""
 
 from __future__ import annotations
 
@@ -103,7 +104,9 @@ def run_pfquest(a: argparse.Namespace) -> int:
             lines.append(english_line(id_, field, en, hash_key(normalize_v1(en)), src))
     store = Store(root, english=True)
     # the quest cache's English outranks pfQuest's (ADR-020 decision 5), whichever build wrote it
-    store.save("quest", merge_source("quest", store.load("quest"), lines, "pfquest", outranked_by=("wdb",)))
+    # what a client recorded in game (the collector) and the client's own cache outrank pfQuest (ADR-053)
+    merged = merge_source("quest", store.load("quest"), lines, "pfquest", outranked_by=("wdb", "collector"))
+    store.save("quest", merged)
     print(f"english quest: {len({ln['id'] for ln in lines})} ids, {len(lines)} lines ({src})")
     return 0
 
@@ -342,6 +345,7 @@ def _merge_fields(
     mine = lambda ln: source_name(ln) in CLIENT_TABLE_SOURCES and ln["field"] in fields  # noqa: E731
     if not new and any(mine(ln) for ln in existing):
         raise ValueError(f"refusing to replace existing {type_} {'/'.join(fields)} lines with zero lines")
+    new = _without_recorded(existing, new)
     keys = {(ln["id"], ln["field"]) for ln in new}
     kept = [
         ln
@@ -351,12 +355,78 @@ def _merge_fields(
     return kept + new
 
 
+def _without_recorded(existing: list[dict[str, Any]], new: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """`new` without the (id, field)s a client recorded in game on another client line than `new`'s: what the
+    Forever client showed outranks an older client's files (ADR-053), and the same client's own files keep
+    their place."""
+    if not new:
+        return new
+    build = str(new[0]["src"]).split("@", 1)[-1]
+    held = {
+        (ln["id"], ln["field"])
+        for ln in existing
+        if source_name(ln) == "collector" and not _same_client(str(ln["src"]), build)
+    }
+    return [ln for ln in new if (ln["id"], ln["field"]) not in held]
+
+
+_VERSION = re.compile(r"^(\d+\.\d+)\.")
+_WORDS = re.compile(r"\$[A-Za-z]|[A-Za-z']+|[^\sA-Za-z']")
+_PLAYER_TOKENS = {"$C": 0, "$c": 0, "$R": 1, "$r": 1}  # → which of the recording player's (class, race)
+# the words a recording player's class or race can be: only these are put back for a `$C` / `$R`
+_CLASS = ("warrior", "paladin", "hunter", "rogue", "priest", "shaman", "mage", "warlock", "druid")
+_RACE = ("human", "orc", "dwarf", "night elf", "undead", "tauren", "gnome", "troll")
+_CLASS_RACE = frozenset(_CLASS + _RACE)
+
+
+def _same_client(src: str, build: str) -> bool:
+    """True when `src` was read from the same game line as `build` (both `1.60.…`): that client's own text
+    (its tables, its quest cache, an earlier dump), not a stand-in from another server or game version."""
+    theirs, ours = _VERSION.match(src.split("@", 1)[-1]), _VERSION.match(build)
+    return bool(theirs and ours and theirs.group(1) == ours.group(1))
+
+
+def _restore_literals(recorded: str, stand_in: str, player: tuple[str, str] | None) -> str:
+    """The collector writes the recording player's class and race as `$C` / `$R` wherever the words occur,
+    so "a wise druid", recorded by a druid, comes back as "a wise $C". Where the stand-in has that player's
+    own word at that spot, the literal is put back: the line says "druid" to everyone. A different word there
+    ("warrior" where a mage recorded `$C`) means the line follows the reader's class, so the token stays.
+    With no recorded player nothing is put back."""
+    from difflib import SequenceMatcher
+
+    if player is None:
+        return recorded
+    own = tuple(w.lower() for w in player)
+    ours, theirs = list(_WORDS.finditer(recorded)), list(_WORDS.finditer(stand_in))
+    ow, tw = [m.group() for m in ours], [m.group() for m in theirs]
+    out, last = [], 0
+    for op, i1, i2, j1, j2 in SequenceMatcher(None, ow, tw, autojunk=False).get_opcodes():
+        one = op == "replace" and i2 - i1 == 1 and 1 <= j2 - j1 <= 2
+        slot = _PLAYER_TOKENS.get(ow[i1]) if one else None
+        word = " ".join(tw[j1:j2]).lower()
+        if slot is not None and word in _CLASS_RACE and word == own[slot]:
+            out.append(recorded[last : ours[i1].start()])
+            out.append(stand_in[theirs[j1].start() : theirs[j2 - 1].end()])
+            last = ours[i1].end()
+    out.append(recorded[last:])
+    return "".join(out)
+
+
+def _earlier_literals(recorded: str, stand_in: str) -> set[str]:
+    """Every text `_restore_literals` could make of `recorded` against `stand_in` for any class and race:
+    only to recognise a line an earlier import already gave its literal back, never to write one."""
+    return {_restore_literals(recorded, stand_in, (c, r)) for c in _CLASS for r in _RACE}
+
+
 def run_collector(a: argparse.Namespace) -> int:
-    """Add a collector dump to `data/english/`. Per (type, id, field): absent → added; same hash → unchanged;
-    an earlier collector line with another hash → replaced; a curated line (pfQuest, wago) with another hash →
-    kept and listed as differs; a person decides (ADR-013). A gossip line is keyed by its hash, so
-    it is only ever added or unchanged; the NPC ids a dump names are unioned into its `npcs` (counted
-    `npcs`). Invalid entries are counted by reason, never written."""
+    """Add a collector dump to `data/english/`. What the Forever client shows is the English, so per (type,
+    id, field): absent → added; same hash → unchanged; another hash → replaced, unless the line came from the
+    same client's own files (its tables or quest cache, `_same_client`), which are kept and listed as differs.
+    A replaced stand-in (pfQuest, VMaNGOS, an older client) gets its literal class or race words back where
+    they are the recording player's own (`_restore_literals`). An older client's item or spell template is
+    never replaced by a live line (listed as differs). A gossip line is keyed by its hash, so it is only ever
+    added or unchanged; the NPC ids a dump names are unioned into its `npcs` (counted `npcs`). Invalid
+    entries are counted by reason, never written."""
     root = data_root()
     path = Path(a.file)
     dump = read_dump(path.read_text(encoding="utf-8-sig"))
@@ -384,8 +454,23 @@ def run_collector(a: argparse.Namespace) -> int:
                 c["npcs"] += 1
             elif cur["hash"] == en.hash_:
                 c["unchanged"] += 1
-            elif source_name(cur) == "collector":
-                lines[index[k]] = line
+            elif type_ in ("item", "spell") and "$" in cur["en"]:
+                # an older client's template ("$o1 damage over $d"): the live line has one player's numbers in
+                # it, so it would cost the drafts their codes and ship that player's numbers as the English
+                c["differs"] += 1
+                differs.append(f"  {type_} {en.id_} {en.field} (kept the template from {cur['src']})")
+            elif source_name(cur) == "collector" or not _same_client(cur["src"], en.build):
+                text = _restore_literals(en.en, cur["en"], en.player)
+                # an earlier dump's line may hold a literal word put back from a stand-in: kept as it is
+                earlier = _earlier_literals(en.en, cur["en"]) if source_name(cur) == "collector" else set()
+                if hash_key(normalize_v1(text)) == cur["hash"] or any(
+                    hash_key(normalize_v1(t)) == cur["hash"] for t in earlier
+                ):
+                    c["unchanged"] += 1
+                    continue
+                src = f"collector@{en.build}"
+                h = hash_key(normalize_v1(text))
+                lines[index[k]] = english_line(en.id_, en.field, text, h, src, npcs=en.npcs)
                 c["replaced"] += 1
             else:
                 c["differs"] += 1
@@ -403,7 +488,7 @@ def run_collector(a: argparse.Namespace) -> int:
     rejected = ", ".join(f"{r} {n}" for r, n in sorted(dump.rejected.items())) or "none"
     print(f"rejected: {rejected}")
     if differs:
-        print("differs from a curated source (not applied):")
+        print("differs from the client's own files (kept):")
         print("\n".join(differs))
     return 0
 
@@ -444,8 +529,9 @@ def run_vmangos(a: argparse.Namespace) -> int:
     ]
     store = Store(data_root(), english=True)
     # Merge every type before writing any: a refused merge must not leave another type's merge written.
-    merged_book = merge_source("book", store.load("book"), books, "vmangos")
-    merged_quest = merge_source("quest", store.load("quest"), quest, "vmangos")
+    # a line a client recorded in game (the collector) outranks VMaNGOS, a stand-in (ADR-053)
+    merged_book = merge_source("book", store.load("book"), books, "vmangos", outranked_by=("collector",))
+    merged_quest = merge_source("quest", store.load("quest"), quest, "vmangos", outranked_by=("collector",))
     existing = store.load("gossip")
     mine = {ln["id"]: ln for ln in existing if source_name(ln) == "vmangos"}
     if not by_key and mine:
@@ -532,10 +618,14 @@ def run_wdb(a: argparse.Namespace) -> int:
     cached = {q.id for q in cache.quests} | set(cache.placeholders)
     gone, same_build = _check_shrink(existing, cached, src, path.name, a.allow_shrink)
     union = getattr(a, "merge", "replace") == "union"
+    # what a client recorded in game outranks an older client's cache
+    lines = _without_recorded(existing, lines)
     merged = merge_source("quest", existing, lines, "wdb", union, answered=set(cached))
     if union:
         merged = take_answered_whole(merged, cached)
     merged_objectives = _merge_objectives(store.load("objective"), objective_lines, union)
+    gossip_lines = _wdb_keyed_lines(cache, src)
+    merged_gossip, added_gossip = _add_keyed(store.load("gossip"), gossip_lines)
     prior_area = store.load(AREA_TYPE)
     merged_area = _merge_area(prior_area, area_lines, cached, union)
     before_area = {(ln["id"], ln["field"]): ln["hash"] for ln in prior_area}
@@ -553,6 +643,7 @@ def run_wdb(a: argparse.Namespace) -> int:
         store.save("quest", merged)
         store.save("objective", merged_objectives, allow_empty=True)
         store.save(AREA_TYPE, merged_area, allow_empty=True)
+        store.save("gossip", merged_gossip, allow_empty=True)
     records = len(cache.quests) + len(cache.placeholders)
     print(
         f"english quest ({src}){' [dry run: nothing written]' if a.dry_run else ''}: {records} records · "
@@ -570,7 +661,8 @@ def run_wdb(a: argparse.Namespace) -> int:
         c = counts[f]
         print(f"{f:12} {c['same']:6} {c['changed']:7} {c['new']:6}")
     print(f"english objective ({src}): {len(objective_lines)} objective texts")
-    _print_conditional(cache)
+    kinds = "conditional descriptions, completion logs"
+    print(f"english gossip ({src}): {len(gossip_lines)} keyed texts ({kinds}), {added_gossip} new")
     if questv2 is not None:
         _print_questv2(questv2, unanswered, cached, a.missing)
     return 0
@@ -659,18 +751,35 @@ def _change_kind(before: dict[tuple[Any, str], str], ln: dict[str, Any]) -> str:
     return "new" if prior is None else "same" if prior == ln["hash"] else "changed"
 
 
-def _print_conditional(cache: wdb.WdbCache) -> None:
-    """Report the conditional description variants the cache holds."""
-    # Forever serves a conditional variant of a quest's description (a mage's wording of the
-    # same quest, say). The reader holds them so the payload adds up; they are reported, not imported,
-    # because an entry is keyed by its PlayerCondition and that key is not designed yet.
-    conditional = [(q.id, cond) for q in cache.quests for cond in q.conditional if cond[2].strip()]
-    if conditional:
-        shown = ", ".join(f"quest {qid}/condition {c[0]}" for qid, c in conditional[:5])
-        print(
-            f"conditional quest text in this cache: {len(conditional)} entries across "
-            f"{len({qid for qid, _ in conditional})} quests ({shown}…): read, not imported"
-        )
+def _wdb_keyed_lines(cache: wdb.WdbCache, src: str) -> list[dict[str, Any]]:
+    """The quest cache's text the client shows with no id the addon can read, keyed like NPC dialogue by the
+    hash of its English (ADR-005): a quest's conditional description (another wording of the same quest for a
+    class or race, shown in the quest window in place of the default) and its completion log line (the
+    tracker's and the quest log's line once the quest is ready). The addon finds them by the live text's
+    fingerprint."""
+    out: dict[str, dict[str, Any]] = {}
+    for q in cache.quests:
+        texts = [t for _, _, t in q.conditional] + [q.completion_log]
+        for en in texts:
+            norm = normalize_v1(en or "")
+            if norm:
+                k = hash_key(norm)
+                out.setdefault(k, english_line(k, "text", en, k, src))
+    return [out[k] for k in sorted(out)]
+
+
+def _add_keyed(existing: list[dict[str, Any]], new: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int]:
+    """Keyed English is additive: a key already present (from VMaNGOS, the collector or an earlier cache)
+    keeps its line; a key holding other English is reported, never resolved silently. → (lines, added)"""
+    present = {ln["id"]: ln for ln in existing}
+    added = []
+    for ln in new:
+        cur = present.get(ln["id"])
+        if cur is None:
+            added.append(ln)
+        elif normalize_v1(cur["en"]) != normalize_v1(ln["en"]):
+            raise ValueError(f"wdb: gossip hash {ln['id']} names two texts: {cur['en']!r} and {ln['en']!r}")
+    return existing + added, len(added)
 
 
 def _print_questv2(questv2: set[int], unanswered: list[int], cached: set[int], missing: str | None) -> None:

@@ -63,6 +63,7 @@ class Entry:
     hash_: str
     build: str
     npcs: tuple[int, ...] = ()  # gossip: the creature ids that said the line
+    player: tuple[str, str] | None = None  # (class, race) of the character that recorded a `$C` / `$R` line
 
 
 @dataclass
@@ -130,7 +131,18 @@ def check_entry(key: Any, raw: Any, builds: list[Any]) -> tuple[Entry | None, st
         return None, "no_build"
     if not _BUILD.match(builds[b - 1]):
         return None, "no_build"
-    return Entry(KINDS[kind][0], id_, fld, e["e"], e["h"], builds[b - 1], npcs), None
+    return Entry(KINDS[kind][0], id_, fld, e["e"], e["h"], builds[b - 1], npcs, _player(e.get("p"))), None
+
+
+def _player(raw: Any) -> tuple[str, str] | None:
+    """`p`, "Class|Race" of the recording character, written only on a line holding `$C` / `$R`; anything else
+    (absent, an older dump, malformed) is no player, and no literal is put back for that line."""
+    if not isinstance(raw, str):
+        return None
+    parts = raw.split("|")
+    if len(parts) != 2 or not all(part.strip() for part in parts):
+        return None
+    return parts[0].strip(), parts[1].strip()
 
 
 def _address_problem(key: str, kind: Any, fld: Any, id_: int | str | None) -> str | None:

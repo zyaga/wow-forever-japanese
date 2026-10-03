@@ -117,6 +117,7 @@ local CANDIDATES = {
   timerFrame        = { "QuestInfoTimerFrame" },
   timerText         = { "QuestInfoTimerText" },
   showTimer         = { "QuestInfo_ShowTimer" },
+  showRewards       = { "QuestInfo_ShowRewards" },
 }
 
 -- A declared client function, called only when it is one. → its returns | nil
@@ -220,11 +221,20 @@ function QuestFrame.showPanel(panelName)
     local field, widgetKey, getter = spec[1], spec[2], spec[3]
     local fs = Compat.get(DECLARE, widgetKey)
     local en = getter()
-    -- The API English is the truth even when the widget is decorated: record before the equality guard.
-    WFJ.Collector.record("quest", id, field, en)
+    -- a conditional description (another wording of the quest for this character), keyed by its English: only
+    -- when the line is not the quest's own description
+    local variant = field == "description" and type(WFJ.ShippedGossipKey) == "function"
+      and not (type(WFJ.IsQuestFieldEnglish) == "function" and WFJ.IsQuestFieldEnglish(id, field, en))
+      and WFJ.ShippedGossipKey(en)
+    -- The API English is the truth even when the widget is decorated: record before the equality guard. A variant
+    -- is never recorded as the quest's description: other characters see the quest's own wording.
+    if not variant then WFJ.Collector.record("quest", id, field, en) end
     -- The widget must show exactly the API English; anything else (empty, decoration, a moved widget) is left
     -- alone, and a record from an earlier quest on that widget is dropped, never restored over the new text.
-    if isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en then
+    if isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en and variant then
+      WFJ.Render.show(panel.surface, field, fs, en, "quests", "gossip", variant, { refit = panel.refit })
+      n = n + 1
+    elseif isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en then
       -- live: the API English, for the stale marker's live check (ADR-019)
       WFJ.Render.show(panel.surface, field, fs, en, "quests", "quest." .. field, id, { refit = panel.refit, live = en })
       n = n + 1
@@ -314,6 +324,19 @@ function QuestFrame.onDisplay(template, parentFrame)
     forgetQuestMap()
     return QuestFrame.showPanel("reward")
   end
+  return 0
+end
+
+-- hooksecurefunc target (QuestInfo_ShowRewards): the client redraws the rewards on its own when a reward item's data
+-- arrives (QUEST_ITEM_UPDATE, mainline/questframe.lua:75–84) or a spell is learned (:92–96), writing the English
+-- reward headings again (questinfo.lua:765) after the panel was shown. The open panel is shown again.
+function QuestFrame.onShowRewards()
+  local function visible(key)
+    local f = Compat.get(DECLARE, key)
+    return type(f) == "table" and type(f.IsVisible) == "function" and f:IsVisible()
+  end
+  if visible("detailChild") then return QuestFrame.showPanel("detail") end
+  if visible("rewardChild") then return QuestFrame.showPanel("reward") end
   return 0
 end
 
@@ -423,6 +446,9 @@ function QuestFrame.init(d)
   end
   hookScript("frame", "OnHide", QuestFrame.release)
   hookScript("timerFrame", "OnUpdate", QuestFrame.showTimer)
+  if type(Compat.get(DECLARE, "showRewards")) == "function" then
+    hooksecurefunc("QuestInfo_ShowRewards", QuestFrame.onShowRewards)
+  end
   if type(Compat.get(DECLARE, "showTimer")) == "function" then
     hooksecurefunc("QuestInfo_ShowTimer", QuestFrame.showTimer)
   end

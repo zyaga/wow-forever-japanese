@@ -31,6 +31,12 @@ local UI = {
   MAP_PIN_TOGGLE_FOCUS = { "Toggle Focus on Marker", "マーカーへのフォーカスを切り替え" },
   MAP_PIN_TOGGLE_QUEST_FOCUS = { "Toggle Focus on Quest", "クエストへのフォーカスを切り替え" },
   MAP_PIN_TOGGLE_QUEST_DETAILS = { "Toggle Quest Details", "クエストの詳細を切り替え" },
+  -- client-table rows (fingerprints: no global; ADR-042): a quest's tag (C_QuestLog.GetQuestTagInfo().tagName,
+  -- questutils.lua:670–678) and an area POI's description (areapoiutil.lua:22–24)
+  ["QuestTag:81"] = { "Dungeon", "ダンジョン" }, -- the same English as DUNGEON_MAP_PIN_FALLBACK_NAME
+  ["QuestTag:62"] = { "Raid", "レイド" },
+  ["AreaPoiDescription:5"] = { "Horde controlled", "ホードの支配下" },
+  ["AreaPoiState:2"] = { "Under attack", "攻撃を受けている" },
 }
 
 local function en(key) return _G[key] end
@@ -127,6 +133,46 @@ describe("map pin tooltips on Forever", function()
     assert.are.equal(icon .. "Toggle Quest Details", Maps.line(4))
     Stub.keys.alt = false; WFJ.Modifier.refresh()
   end)
+
+  it("a quest pin's and a quest blob's tag line is a QuestTag row's Japanese, the atlas kept, also with the icons"
+    .. " hidden; Alt shows English; a quest titled like a tag stays", function()
+    local atlas = "|A:questlog-questtypeicon-dungeon:20:20|a" -- CreateAtlasMarkup, then "%s %s" (questutils.lua:51)
+    local pin = Maps.pin("QuestPinTemplate")
+    Maps.tooltip(pin, { "Dungeon", atlas .. " Dungeon", "- 3/10 Kobold Vermin slain" })
+    assert.are.equal("Dungeon", Maps.line(1)) -- the quest's title
+    assert.are.equal(atlas .. " ダンジョン", Maps.line(2))
+    assert.are.equal("- 3/10 Kobold Vermin slain", Maps.line(3))
+    alt(true)
+    assert.are.equal(atlas .. " Dungeon", Maps.line(2))
+    alt(false)
+    assert.are.equal(atlas .. " ダンジョン", Maps.line(2))
+    Maps.tooltip(pin, { "The Defias Brotherhood", atlas .. " Dungeon" }) -- the same pin hovered again
+    assert.are.equal(atlas .. " ダンジョン", Maps.line(2))
+    local blob = Maps.pin("QuestBlobPinTemplate")
+    Maps.tooltip(blob, { "Onyxia's Lair", "Raid" }) -- QuestUtil.IsQuestTagIconHidden(): the tag alone
+    assert.are.equal("Onyxia's Lair", Maps.line(1))
+    assert.are.equal("レイド", Maps.line(2))
+    Maps.tooltip(blob, { "Raid", atlas .. " Elite" }) -- a title like a tag; a tag with no row
+    assert.are.equal("Raid", Maps.line(1))
+    assert.are.equal(atlas .. " Elite", Maps.line(2))
+    Maps.tooltip(Maps.pin("DungeonEntrancePinTemplate"), { "Deadmines", "Dungeon" }) -- not a tag pin
+    assert.are.equal("ダンジョン", Maps.line(2)) -- DUNGEON_MAP_PIN_FALLBACK_NAME, the pin's own key
+  end)
+
+  it("an area POI's description is an AreaPoiDescription or AreaPoiState row's Japanese; the POI's name stays",
+    function()
+      local poi = Maps.pin("AreaPOIPinTemplate")
+      Maps.tooltip(poi, { "Horde controlled", "Horde controlled" }) -- a POI named like its description
+      assert.are.equal("Horde controlled", Maps.line(1))
+      assert.are.equal("ホードの支配下", Maps.line(2))
+      alt(true)
+      assert.are.equal("Horde controlled", Maps.line(2))
+      alt(false)
+      Maps.tooltip(Maps.pin("AreaPOIEventPinTemplate"), { "Stromgarde Keep", "Under attack" })
+      assert.are.equal("攻撃を受けている", Maps.line(2))
+      Maps.tooltip(poi, { "Tarren Mill", "Close" }) -- a dictionary word, no family row
+      assert.are.equal("Close", Maps.line(2))
+    end)
 
   it("an unlisted template, a frame with no template and a wrong-typed template are left alone with no error",
     function()

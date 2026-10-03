@@ -8,6 +8,10 @@
 {"id": "HAVE_MAIL", "field": "text", "en": "You have unread mail", "hash": "542a3a3eea6cf7c8", "src": "db2@1.60.1.70170"}
 {"id": "HAVE_MAIL_FROM", "field": "text", "en": "Unread mail from:", "hash": "f1aac7a84b2d3f66", "src": "db2@1.60.1.70170"}
 {"id": "HD_TEXTURES_BUTTON", "field": "text", "en": "Get HD Textures", "hash": "a2f6713c3ff667fb", "src": "db2@1.60.1.70170"}
+{"id": "HD_TEXTURES_DLG_ACCEPT", "field": "text", "en": "Download", "hash": "979bc41a5c7d7e18", "src": "db2@1.60.1.70170"}
+{"id": "HD_TEXTURES_DLG_ACCEPT_MAC", "field": "text", "en": "Exit Game", "hash": "aeae9f4b7b6c4fce", "src": "db2@1.60.1.70170"}
+{"id": "HD_TEXTURES_DLG_TEXT", "field": "text", "en": "Clicking the Download button will exit the game and open the Battle.net desktop app where you can download the textures.", "hash": "291e47a638079a2a", "src": "db2@1.60.1.70170"}
+{"id": "HD_TEXTURES_DLG_TEXT_MAC", "field": "text", "en": "Clicking the Exit Game button will exit the game and open a webpage with instructions on how to download the textures through the Battle.net desktop app.", "hash": "beeae5c7ddcd8ed1", "src": "db2@1.60.1.70170"}
 {"id": "HEADSLOT", "field": "text", "en": "Head", "hash": "09c0782c563b723b", "src": "db2@1.60.1.70170"}
 {"id": "HEAD_BOB", "field": "text", "en": "Head Bob", "hash": "0f44687875c38ce9", "src": "db2@1.60.1.70170"}
 {"id": "HEALER", "field": "text", "en": "Healer", "hash": "b73a16b62268c07a", "src": "db2@1.60.1.70170"}
@@ -36,6 +40,8 @@
 {"id": "HELP_FRAME_TITLE", "field": "text", "en": "Customer Support", "hash": "c8016ecaa41136db", "src": "db2@1.60.1.70170"}
 {"id": "HELP_TEXT_SIMPLE", "field": "text", "en": "Type '/help' for a listing of a few commands.", "hash": "a6867b5068b51bc8", "src": "db2@1.60.1.70170"}
 {"id": "HELP_TICKET_QUEUE_DISABLED", "field": "text", "en": "GM Help Tickets are currently unavailable.", "hash": "9ed29200d0ad4b67", "src": "db2@1.60.1.70170"}
+{"id": "HELP_TIP_BUTTON_GOT_IT", "field": "text", "en": "Got It", "hash": "6db6b7c8d70793ba", "src": "db2@1.60.1.70170"}
+{"id": "HELP_TIP_EXIT", "field": "text", "en": "Exit", "hash": "095e8d2ef9719c87", "src": "db2@1.60.1.70170"}
 {"id": "HIDE", "field": "text", "en": "Hide", "hash": "09c185da661ce0e3", "src": "db2@1.60.1.70170"}
 {"id": "HIGH", "field": "text", "en": "High", "hash": "09c18766661d4089", "src": "db2@1.60.1.70170"}
 {"id": "HIGHLIGHTING", "field": "text", "en": "Highlighting:", "hash": "c3ec4f34da49429b", "src": "db2@1.60.1.70170"}
@@ -46,6 +52,7 @@
 {"id": "HIGH_BIDDER", "field": "text", "en": "High Bidder", "hash": "8200952d7098808d", "src": "db2@1.60.1.69913"}
 {"id": "HIGH_DEFINITION", "field": "text", "en": "High Definition", "hash": "f35f9b557776fb7e", "src": "db2@1.60.1.70170"}
 {"id": "HIGH_DEFINITION_TOOLTIP", "field": "text", "en": "Higher-detail character model fidelity.", "hash": "fc7aa305c6db4afe", "src": "db2@1.60.1.70170"}
+{"id": "HOME", "field": "text", "en": "Home", "hash": "09c31cab7def9652", "src": "db2@1.60.1.70170"}
 {"id": "HONOR", "field": "text", "en": "Honor", "hash": "fed7f42eb6c1999d", "src": "db2@1.60.1.70170"}
 {"id": "HONORABLE_KILLS", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.69913"}
 {"id": "HONORABLE_KILLS_TOOLTIP", "field": "text", "en": "Enemy players that you or the group you are in did damage to before they died", "hash": "e4ccc64988ba59a6", "src": "db2@1.60.1.70170"}
@@ -54,15 +61,23 @@
 {"id": "HONOR_CONTRIBUTION_POINTS", "field": "text", "en": "Honor", "hash": "fed7f42eb6c1999d", "src": "db2@1.60.1.69913"}
 {"id": "HONOR_HIGHEST_RANK", "field": "text", "en": "Highest Rank", "hash": "70b91fb4be2be06b", "src": "db2@1.60.1.69913"}
 {"id": "HONOR_LASTWEEK", "field": "text", "en": "Last Week", "hash": "de361c818c6c52c8", "src": "db2@1.60.1.69913"}
+{"id": "HONOR_LEVEL_LABEL", "field": "text", "en": "Honor Level %d", "hash": "5841c80d475bc802", "src": "db2@1.60.1.70170"}
 {"id": "HONOR_LEVEL_TOOLTIP", "field": "text", "en": "Honor Level %d", "hash": "5841c80d475bc802", "src": "db2@1.60.1.70170"}
 {"id": "HONOR_LIFETIME", "field": "text", "en": "Lifetime", "hash": "c6441b75194af0a0", "src": "db2@1.60.1.69913"}
+{"id": "HONOR_REWARD_ARTIFACT_POWER", "field": "text", "en": "Artifact Power Reward", "hash": "7d0256b6fcc810b2", "src": "db2@1.60.1.70170"}
+{"id": "HONOR_REWARD_MONEY", "field": "text", "en": "Money Reward", "hash": "37f25d297fc7944e", "src": "db2@1.60.1.70170"}
+{"id": "HONOR_REWARD_TITLE_TOOLTIP", "field": "text", "en": "Title", "hash": "d0b03efdf12111e8", "src": "db2@1.60.1.70170"}
 {"id": "HONOR_THIS_SESSION", "field": "text", "en": "Today", "hash": "d179da82020b2f7f", "src": "db2@1.60.1.69913"}
 {"id": "HONOR_YESTERDAY", "field": "text", "en": "Yesterday", "hash": "0ee909e73298ee12", "src": "db2@1.60.1.69913"}
+{"id": "HONOR_YOUVE_REACHED", "field": "text", "en": "You've Reached", "hash": "4a4a8f2204265ced", "src": "db2@1.60.1.70170"}
+{"id": "HORDE_CHEER", "field": "text", "en": "For the Horde!", "hash": "d2b403e1d9b2559e", "src": "db2@1.60.1.70170"}
 {"id": "HOSTILE", "field": "text", "en": "Hostile", "hash": "d2eedd39445dc5a1", "src": "db2@1.60.1.70170"}
 {"id": "HOT_ITEM", "field": "text", "en": "Hot Item!", "hash": "eaf28319a0d0f728", "src": "db2@1.60.1.70170"}
 {"id": "HOT_ITEM_SELLER", "field": "text", "en": "Seller:", "hash": "477e25d02eec1d39", "src": "db2@1.60.1.70170"}
 {"id": "HOURS_ABBR", "field": "text", "en": "%d |4Hr:Hr;", "hash": "5778098008180a93", "src": "db2@1.60.1.70170"}
 {"id": "HOUR_ONELETTER_ABBR", "field": "text", "en": "%d h", "hash": "050f77b3fd04b92c", "src": "db2@1.60.1.70170"}
+{"id": "HOUSING_DASHBOARD_NEIGHBORHOOD_FAVOR", "field": "text", "en": "%s/%s House XP|n|n|cff20ff20House XP is earned by completing Endeavors, Endeavor tasks, and collecting Decor of Uncommon or better rarity for the first time|r", "hash": "1b17230c00f19b4b", "src": "db2@1.60.1.70170"}
+{"id": "HOUSING_DASHBOARD_REWARD_ESTATE_XP", "field": "text", "en": "Neighborhood Favor", "hash": "e4f1cc520b61f2ba", "src": "db2@1.60.1.70170"}
 {"id": "HOUSING_MICROBUTTON_NPE_RESTRICTED_TOOLTIP", "field": "text", "en": "This feature becomes available after completing Exile's Reach.", "hash": "264a4a5a1af54d2c", "src": "db2@1.60.1.70170"}
 {"id": "HOUSING_MICRO_BUTTON", "field": "text", "en": "Housing Dashboard", "hash": "3369c1b0e77dffde", "src": "db2@1.60.1.70170"}
 {"id": "HOUSING_SETTINGS_LABEL", "field": "text", "en": "Housing", "hash": "f5e7fd4874cb104b", "src": "db2@1.60.1.70170"}
@@ -74,6 +89,7 @@
 {"id": "HUD_EDIT_MODE_BAGS_LABEL", "field": "text", "en": "Bags", "hash": "08f19d87f5eb6a4e", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_BOSS_FRAMES_LABEL", "field": "text", "en": "Boss Frames", "hash": "1f6f82bc169358a6", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_BUFFS_AND_DEBUFFS_LABEL", "field": "text", "en": "Buffs and Debuffs", "hash": "a0a825efbbfb2a32", "src": "db2@1.60.1.70170"}
+{"id": "HUD_EDIT_MODE_BUFF_FRAME_LABEL", "field": "text", "en": "Buff Frame", "hash": "f613352a4eabddc3", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_CAST_BAR_LABEL", "field": "text", "en": "Cast Bar", "hash": "af6abe967eb04910", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_CHARACTER_LAYOUTS_HEADER", "field": "text", "en": "%s Specific", "hash": "a85bea400c9bbdcc", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_CHARACTER_SPECIFIC_LAYOUT", "field": "text", "en": "Character Specific Layout", "hash": "6bc3facc6cbd4b41", "src": "db2@1.60.1.70170"}
@@ -88,6 +104,7 @@
 {"id": "HUD_EDIT_MODE_COPY_TO_CLIPBOARD_NOTICE", "field": "text", "en": "Edit Mode layout \"%s\" copied to clipboard.", "hash": "fc57a037fcc7641d", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_DAMAGE_METER_DISABLED_TOOLTIP", "field": "text", "en": "The Damage Meter is currently disabled. Enable it in the Game Menu in Options > Advanced Options > Damage Meter.", "hash": "11fb7c9c28a65581", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_DAMAGE_METER_LABEL", "field": "text", "en": "Damage Meter", "hash": "a4a43f79926b31ca", "src": "db2@1.60.1.70170"}
+{"id": "HUD_EDIT_MODE_DEBUFF_FRAME_LABEL", "field": "text", "en": "Debuff Frame", "hash": "2b0f0664c70d6f4b", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_DELETE_LAYOUT", "field": "text", "en": "Delete Layout", "hash": "c44b3c8b1d2aa676", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_DELETE_LAYOUT_DIALOG_TITLE", "field": "text", "en": "Are you sure you want to delete the layout|n%s?", "hash": "2575a0916afb3032", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_DURABILITY_FRAME_LABEL", "field": "text", "en": "Equipment Durability", "hash": "415f291b9d4fb8e0", "src": "db2@1.60.1.70170"}
@@ -110,6 +127,7 @@
 {"id": "HUD_EDIT_MODE_EXPAND_OPTIONS", "field": "text", "en": "Expand options |A:editmode-down-arrow:16:11:0:-7|a", "hash": "ebb5c25a228f24b0", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_EXPERIENCE_BAR_LABEL", "field": "text", "en": "Experience Bar", "hash": "0848a33fe5fcd744", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_EXTERNAL_DEFENSIVES_DISABLED_TOOLTIP", "field": "text", "en": "To customize External Defensives, enable the corresponding option under Gameplay > Gameplay Enhancements", "hash": "baa8dad38203004c", "src": "db2@1.60.1.70170"}
+{"id": "HUD_EDIT_MODE_EXTERNAL_DEFENSIVES_FRAME_LABEL", "field": "text", "en": "External Defensives Frame", "hash": "84df4924a370707b", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_EXTERNAL_DEFENSIVES_LABEL", "field": "text", "en": "External Defensives", "hash": "a64b327afcdc1fdc", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_EXTRA_ABILITIES_LABEL", "field": "text", "en": "Extra Abilities", "hash": "dd19a8dca2f65319", "src": "db2@1.60.1.70170"}
 {"id": "HUD_EDIT_MODE_FOCUS_FRAME_LABEL", "field": "text", "en": "Focus Frame", "hash": "aa17f7b00780d85a", "src": "db2@1.60.1.70170"}

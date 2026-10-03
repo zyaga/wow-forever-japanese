@@ -57,7 +57,10 @@
 {"id": "BASE_GRAPHICS_QUALITY", "field": "text", "en": "Base Game Quality", "hash": "91835310107374ae", "src": "db2@1.60.1.70170"}
 {"id": "BASE_SETTINGS_TAB", "field": "text", "en": "Base", "hash": "08f1a39df5ece8cc", "src": "db2@1.60.1.70170"}
 {"id": "BATTLEFIELDMINIMAP_OPACITY_LABEL", "field": "text", "en": "Change Opacity", "hash": "d6fc1b9185b7906e", "src": "db2@1.60.1.70170"}
+{"id": "BATTLEFIELD_BORDER_WARNING", "field": "text", "en": "You have left the Battle for %s.\n\nYour reservation will be lost in %s.", "hash": "68cf00bfb17a10b4", "src": "db2@1.60.1.70170"}
 {"id": "BATTLEFIELD_MINIMAP", "field": "text", "en": "Zone Map", "hash": "5b82fe133d9918ff", "src": "db2@1.60.1.70170"}
+{"id": "BATTLEGROUNDS", "field": "text", "en": "Battlegrounds", "hash": "ee710fa995072d7b", "src": "db2@1.60.1.70170"}
+{"id": "BATTLEGROUND_10V10", "field": "text", "en": "10v10", "hash": "62ad720902d57d08", "src": "db2@1.60.1.70170"}
 {"id": "BATTLEGROUND_COMPLETE_MESSAGE", "field": "text", "en": "The battle has ended. This battleground will close in %s", "hash": "b408689bb12d45c7", "src": "db2@1.60.1.70170"}
 {"id": "BATTLEGROUND_ENEMY_AVERAGE_RATING", "field": "text", "en": "Enemy Team's Matchmaking Value: |cffffffff%d|r", "hash": "6fc23557f03a31bd", "src": "db2@1.60.1.70170"}
 {"id": "BATTLEGROUND_IS_READY", "field": "text", "en": "Your Battleground is ready!", "hash": "41e03d016a291792", "src": "db2@1.60.1.70170"}
@@ -429,10 +432,76 @@
 {"id": "BLIZZARD_COMBAT_LOG_MENU_SPELL_LINK", "field": "text", "en": "Link %s to chat.", "hash": "f5a183e60fee07d6", "src": "db2@1.60.1.70170"}
 {"id": "BLIZZARD_COMMUNITIES_SERVICES_UNAVAILABLE", "field": "text", "en": "Unavailable|n|nBlizzard services are currently unavailable.", "hash": "5391978a617af885", "src": "db2@1.60.1.70170"}
 {"id": "BLIZZARD_STORE", "field": "text", "en": "Shop", "hash": "0b3a9e26759d7833", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_CLIENT_RESTRICTED", "field": "text", "en": "Feature has been disabled because you are on a restricted character.", "hash": "e5c91441ed48623b", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_ITEM_UNAVAILABLE", "field": "text", "en": "This item is temporarily unavailable for purchase. Please try again later.", "hash": "c84de4b32638204c", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_ALREADY_OWNED", "field": "text", "en": "You already have this product!", "hash": "7772c733cd814c71", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_BATTLEPAY_DISABLED", "field": "text", "en": "An error was encountered. Please come back later.", "hash": "80251879e609f0cc", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_CONSUMABLE_TOKEN_OWNED", "field": "text", "en": "All WoW Tokens bought from the auction house must be redeemed before you can buy one from the Shop.", "hash": "7007ac99ba2061d6", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_INSUFFICIENT_BALANCE", "field": "text", "en": "You don't have enough balance for this purchase. Please visit Account Management to add balance.", "hash": "48c99b54f7980855", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_OTHER", "field": "text", "en": "There was a problem with your order. Please try again.", "hash": "7034d210cf119f99", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_PARENTAL_CONTROLS", "field": "text", "en": "Purchasing is disabled by Parental Controls. Please visit Account Management.", "hash": "26885caa4e529f3c", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_PAYMENT", "field": "text", "en": "You don't have a valid payment method. Please visit Account Management.", "hash": "efbfd0f5e21ec431", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_PURCHASE_DENIED", "field": "text", "en": "Please contact Customer Service.", "hash": "c6b7e239c23c173c", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_ALREADY_OWNED", "field": "text", "en": "Already Owned", "hash": "17132c090f28c734", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_BATTLEPAY_DISABLED", "field": "text", "en": "Shop Error", "hash": "fdff0832b8295977", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_CLIENT_RESTRICTED", "field": "text", "en": "Purchasing Restricted", "hash": "c34a069abe724a72", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_CONSUMABLE_TOKEN_OWNED", "field": "text", "en": "Shop Error", "hash": "fdff0832b8295977", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_INSUFFICIENT_BALANCE", "field": "text", "en": "Insufficient Balance", "hash": "2790b9d1947762b9", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_OTHER", "field": "text", "en": "Shop Error", "hash": "fdff0832b8295977", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_PARENTAL_CONTROLS", "field": "text", "en": "Purchasing Disabled", "hash": "5d4247833e607d1b", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_PAYMENT", "field": "text", "en": "Payment Failed", "hash": "55bf04d64fba8f00", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_PURCHASE_DENIED", "field": "text", "en": "Purchase Denied", "hash": "90c9b46e4d70fad2", "src": "db2@1.60.1.70170"}
 {"id": "BLIZZARD_STORE_ERROR_UNAVAILABLE", "field": "text", "en": "The shop is currently unavailable.", "hash": "728670953f7a16e6", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_ERROR_YOU_OWN_TOO_MANY_OF_THIS", "field": "text", "en": "You have too many of that item already.", "hash": "df061b106c682cf3", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_INTERNAL_ERROR", "field": "text", "en": "Internal Error", "hash": "6d4b2ea4349a6f4e", "src": "db2@1.60.1.70170"}
 {"id": "BLIZZARD_STORE_PROCESSING", "field": "text", "en": "Processing...", "hash": "3f26d499791bf0c6", "src": "db2@1.60.1.70170"}
 {"id": "BLIZZARD_STORE_PURCHASE_COMPLETE", "field": "text", "en": "Product Delivered!", "hash": "9517ce6e1e2bfcfa", "src": "db2@1.60.1.70170"}
 {"id": "BLIZZARD_STORE_PURCHASE_COMPLETE_DESC", "field": "text", "en": "Your item has been delivered.", "hash": "f3667703ef663d55", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_ALLIANCE_NOT_ELIGIBLE", "field": "text", "en": "- This transfer is not currently available for this character's faction.", "hash": "bdec4e7c099f287b", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_ALREADY_RENAME_FLAGGED", "field": "text", "en": "- Your Guild Master character has a pending name change. Complete the name change and try again.", "hash": "702683065b2c1e9f", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_ARENA_TEAM_CAPTAIN", "field": "text", "en": "- This character is an arena team captain.  Please transfer the rank to another character and try again.", "hash": "accf4c46a79f718f", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_BATTLEPAY_DELIVERY_PENDING", "field": "text", "en": "- You have another transaction in progress. Please try again later.", "hash": "68e31f63c5e29eb5", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_BOOSTED_TOO_RECENTLY", "field": "text", "en": "- This character used a Character Boost too recently. Try again later.", "hash": "66dbc7fc65b7db82", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_BOOST_THROTTLE", "field": "text", "en": "Maximum number of character boosts reached for the day. Please try again tomorrow.", "hash": "bca3dae133120c98", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_CANNOT_MOVE_GUILDMASTER", "field": "text", "en": "- Please hand over guild leadership or disband your guild and try again.", "hash": "31bc10fc5bc7f5b9", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_CHARACTER_HAS_VAS_PENDING", "field": "text", "en": "- This character already has a pending service. Please wait until that is complete to try again.", "hash": "eadcf3b11b59e4f6", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_CHARACTER_LOCKED", "field": "text", "en": "- This character is locked.", "hash": "b96ac0c24f15f2b2", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_CUSTOMIZE_ALREADY_REQUESTED", "field": "text", "en": "- This character has the requested service pending.", "hash": "8b5a90a844678a73", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_DISALLOWED_DESTINATION_ACCOUNT", "field": "text", "en": "- The destination World of Warcraft account is locked or is a trial account.", "hash": "6fe1cd20d8cc0d33", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_DISALLOWED_SOURCE_ACCOUNT", "field": "text", "en": "- The source World of Warcraft account is locked or is a trial account.", "hash": "3978dde5593dca8b", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_DUPLICATE_CHARACTER_NAME", "field": "text", "en": "- This name is already in use on this realm.", "hash": "4ce867b34229a297", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_FACTION_CHANGE_TOO_SOON", "field": "text", "en": "- This character is still on cooldown for this service.", "hash": "ce01c06954f3d8e9", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_AUCTIONS", "field": "text", "en": "- This character has active auctions. Please cancel them and try again.", "hash": "2fdb67efbd48e4e8", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_CAGED_BATTLE_PET", "field": "text", "en": "- This character has a caged battle pet. Please remove it and try again.", "hash": "9ebf22f0c0065497", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_CRAFTING_ORDERS", "field": "text", "en": "- Please clear all pending and claimed crafting orders on this character.", "hash": "d7ec6645f3bffd97", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_HEIRLOOM", "field": "text", "en": "- This character has heirlooms. Please delete them and try again.", "hash": "650d79e2d4769f4c", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_MAIL", "field": "text", "en": "- Please clear the mail from this character's mailbox.", "hash": "5d36df733a518291", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_WOW_TOKEN", "field": "text", "en": "- Please sell or redeem all WoW Tokens on this character.", "hash": "0c3fa8c3a5d50538", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HOUSE_NEIGHBORHOOD_OWNER", "field": "text", "en": "- This service cannot be used on a character that owns a House or a Neighborhood", "hash": "4e1ba725809dcbd9", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_INELIGIBLE_MAP_ID", "field": "text", "en": "- Please complete the starting area for this character.", "hash": "37ef20052ba2e78e", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_INELIGIBLE_TARGET_REALM", "field": "text", "en": "- The selected realm is not accepting character transfers at this time.", "hash": "e55bbeae2d2297a1", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_INVALID_DESTINATION_ACCOUNT", "field": "text", "en": "- The destination World of Warcraft account is invalid.", "hash": "d69ec245e620156a", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_INVALID_SOURCE_ACCOUNT", "field": "text", "en": "- The source World of Warcraft account is invalid.", "hash": "ead25b37521e3e87", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_CUSTOMIZE_TOO_SOON", "field": "text", "en": "- This character is still on cooldown for this service.", "hash": "ce01c06954f3d8e9", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_RENAME_TOO_RECENT", "field": "text", "en": "- This character is still on cooldown for this service.", "hash": "ce01c06954f3d8e9", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_SAVE_TOO_DISTANT", "field": "text", "en": "- This character hasn't logged in recently. Log in with this character, log out, and try again.", "hash": "62f5d528b0d85113", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_SAVE_TOO_RECENT", "field": "text", "en": "- This character was logged in recently.|nPlease wait several minutes and try again.", "hash": "1d603e9b38357ee6", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_LOWER_BOX_LEVEL", "field": "text", "en": "- The destination World of Warcraft account must be upgraded to the same expansion level.", "hash": "d6f1f46effc3b1ca", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_MAX_CHARACTERS_ON_SERVER", "field": "text", "en": "- The destination realm already has the maximum number of characters allowed.", "hash": "b4a4df2819b9506c", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NAME_NOT_AVAILABLE", "field": "text", "en": "- This name is not available on that realm.", "hash": "d839fbb73d1bfae7", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NEEDS_ERA_CHOICE", "field": "text", "en": "- Choose an expansion on the character select screen\n- Activate Clone on the character select screen", "hash": "11ec5118467be3c7", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NEW_LEADER_INVALID", "field": "text", "en": "- The character you chose to be the new Guild Master is not a valid choice. Please choose someone else.", "hash": "523fe7fd4d7497ee", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NEW_PLAYER_EXPERIENCE", "field": "text", "en": "- Finish the tutorial experience first", "hash": "9b7afde002b172e5", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NOT_GUILD_MASTER", "field": "text", "en": "- Only Guild Masters can use Guild Services. This character is not a Guild Master.", "hash": "050a4b2e89c29570", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NOT_IN_GUILD", "field": "text", "en": "- You must be in a Guild in order to use Guild Services. This character is not in a Guild.", "hash": "cb86bfa6d34a5929", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_OTHER", "field": "text", "en": "An error was encountered. Please come back later.", "hash": "80251879e609f0cc", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_PENDING_ITEM_AUDIT", "field": "text", "en": "- This character's inventory contains items that cannot be transferred.", "hash": "e55c4e1bc5bb845d", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_PVE_TO_PVP_TRANSFER_NOT_ALLOWED", "field": "text", "en": "- You cannot transfer between a PvE server and a PvP server", "hash": "c3502fa0bfd642ea", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_RACE_CLASS_COMBO_INELIGIBLE", "field": "text", "en": "- This character does not have any eligible races to change to.", "hash": "eba8f1536846ee02", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_REALM_NOT_ELIGIBLE", "field": "text", "en": "- Please select a different realm.", "hash": "68722130fc2f65ff", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_TOO_MUCH_MONEY_FOR_LEVEL", "field": "text", "en": "- This character's gold exceeds the maximum they can transfer at their level (%s).", "hash": "e73fa60ddd2128f3", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_UNDER_MIN_LEVEL_REQ", "field": "text", "en": "- This character does not meet the minimum level requirement.", "hash": "a335a8459caf1a01", "src": "db2@1.60.1.70170"}
+{"id": "BLIZZARD_STORE_VAS_INVALID_NAME", "field": "text", "en": "- This name is invalid; please choose another name.", "hash": "8de5ec470f0dfcc1", "src": "db2@1.60.1.70170"}
 {"id": "BLOCK", "field": "text", "en": "Block", "hash": "951f0255d90185db", "src": "db2@1.60.1.70170"}
 {"id": "BLOCKED_INVITES", "field": "text", "en": "Blocked Invite", "hash": "4a1be1d305d949b2", "src": "db2@1.60.1.70170"}
 {"id": "BLOCK_CHANCE", "field": "text", "en": "Block Chance", "hash": "805d3336b80346ab", "src": "db2@1.60.1.70170"}
@@ -450,7 +519,12 @@
 {"id": "BNET_LAST_ONLINE_TIME", "field": "text", "en": "last online %s ago", "hash": "c28734f0a4fd5b95", "src": "db2@1.60.1.70170"}
 {"id": "BN_BLOCK_FAILED_TOO_MANY_CID", "field": "text", "en": "You've already blocked the maximum number of characters through Blizzard services.", "hash": "6a3a1ddb5f7e04f0", "src": "db2@1.60.1.70170"}
 {"id": "BN_BLOCK_FAILED_TOO_MANY_RID", "field": "text", "en": "You have already blocked the maximum number of Real ID and BattleTag players.", "hash": "d98ef671b6458d22", "src": "db2@1.60.1.70170"}
+{"id": "BN_CHAT_CONNECTED", "field": "text", "en": "You are now connected to Blizzard services.", "hash": "13ce93d60c42d27f", "src": "db2@1.60.1.70170"}
+{"id": "BN_CHAT_DISCONNECTED", "field": "text", "en": "You have been disconnected from Blizzard services.", "hash": "5e31fca213833f95", "src": "db2@1.60.1.70170"}
 {"id": "BN_INLINE_TOAST_ALERT", "field": "text", "en": "Blizzard Services Alerts", "hash": "db9b79abf2f2b73a", "src": "db2@1.60.1.70170"}
+{"id": "BN_INLINE_TOAST_BROADCAST", "field": "text", "en": "|TInterface\\FriendsFrame\\UI-Toast-ToastIcons.tga:16:16:0:0:128:64:2:29:2:29|t%s: %s", "hash": "4495de4674d735c8", "src": "db2@1.60.1.70170"}
+{"id": "BN_INLINE_TOAST_BROADCAST_INFORM", "field": "text", "en": "|TInterface\\FriendsFrame\\UI-Toast-ToastIcons.tga:16:16:0:0:128:64:2:29:2:29|tYour broadcast has been sent.", "hash": "2f534e1e604db7ac", "src": "db2@1.60.1.70170"}
+{"id": "BN_INLINE_TOAST_FRIEND_PENDING", "field": "text", "en": "|TInterface\\FriendsFrame\\UI-Toast-ToastIcons.tga:16:16:0:0:128:64:98:127:2:29|tYou have %s friend |4request:requests;.", "hash": "b24129da1fc0abad", "src": "db2@1.60.1.70170"}
 {"id": "BN_TOAST_NEW_CLUB_INVITATION", "field": "text", "en": "You've been invited to|n%s", "hash": "f6af3f91f5308e08", "src": "db2@1.60.1.70170"}
 {"id": "BN_TOAST_NEW_INVITE", "field": "text", "en": "You have received a new friend request.", "hash": "03cd8ed0f8bf1963", "src": "db2@1.60.1.70170"}
 {"id": "BN_TOAST_OFFLINE", "field": "text", "en": "has gone |cffff0000offline|r.", "hash": "0d96260c19a5b2fd", "src": "db2@1.60.1.70170"}
@@ -458,12 +532,18 @@
 {"id": "BN_TOAST_PENDING_INVITES", "field": "text", "en": "You have |cff82c5ff%d|r friend |4request:requests;.", "hash": "e51702d6a78dadab", "src": "db2@1.60.1.70170"}
 {"id": "BN_UNABLE_TO_RESOLVE_NAME", "field": "text", "en": "Unable to whisper '%s'. Blizzard services may be unavailable.", "hash": "f69dbafb0b128df8", "src": "db2@1.60.1.70170"}
 {"id": "BN_WHISPER", "field": "text", "en": "Blizzard Whispers", "hash": "69754276676633d3", "src": "db2@1.60.1.70170"}
+{"id": "BODY_1", "field": "text", "en": "Body 1", "hash": "82139cdbca2273c2", "src": "db2@1.60.1.70170"}
+{"id": "BODY_2", "field": "text", "en": "Body 2", "hash": "82139cdcca2273c3", "src": "db2@1.60.1.70170"}
 {"id": "BONUS_OBJECTIVE_BANNER", "field": "text", "en": "Bonus Objective", "hash": "ef275c185d50cff0", "src": "db2@1.60.1.70170"}
+{"id": "BONUS_OBJECTIVE_REWARD_FORMAT", "field": "text", "en": "|T%1$s:16:16|t %2$s", "hash": "050262083687fd09", "src": "db2@1.60.1.70170"}
+{"id": "BONUS_OBJECTIVE_REWARD_WITH_COUNT_FORMAT", "field": "text", "en": "|T%1$s:16:16|t %2$s %3$s", "hash": "6e9ec2325e4d0162", "src": "db2@1.60.1.70170"}
 {"id": "BONUS_OBJECTIVE_TOOLTIP_DESCRIPTION", "field": "text", "en": "Completing this bonus objective will reward you with:", "hash": "f482134f212fad59", "src": "db2@1.60.1.70170"}
 {"id": "BONUS_REPUTATION_TITLE", "field": "text", "en": "Bonus Reputation", "hash": "f69722e535c3b898", "src": "db2@1.60.1.70170"}
 {"id": "BONUS_REPUTATION_TOOLTIP", "field": "text", "en": "Your account has unlocked bonus reputation gain with this faction.", "hash": "59ed2320babdbefe", "src": "db2@1.60.1.70170"}
 {"id": "BOOSTED_CHAR_SPELL_TEMPLOCK", "field": "text", "en": "Temporarily Locked", "hash": "aa479b19f7fb4c29", "src": "db2@1.60.1.70170"}
+{"id": "BOSSES", "field": "text", "en": "Bosses:", "hash": "969b55eaa58e2295", "src": "db2@1.60.1.70170"}
 {"id": "BOSSES_KILLED", "field": "text", "en": "%d/%d Bosses Defeated", "hash": "e396fdc410a81c2e", "src": "db2@1.60.1.70170"}
+{"id": "BOSS_ALIVE", "field": "text", "en": "Available", "hash": "08bd63f84d058c1c", "src": "db2@1.60.1.70170"}
 {"id": "BOSS_BANNER_LOOT_SET", "field": "text", "en": "Set: %s", "hash": "cd26777775fe95cc", "src": "db2@1.60.1.70170"}
 {"id": "BOSS_KILL_SUBTITLE", "field": "text", "en": "has been defeated", "hash": "36d57d7fa1d3b3b1", "src": "db2@1.60.1.70170"}
 {"id": "BOSS_YOU_DEFEATED", "field": "text", "en": "You Defeated", "hash": "f9cd9a33b0724803", "src": "db2@1.60.1.70170"}
@@ -476,6 +556,7 @@
 {"id": "BROWSE_NO_RESULTS", "field": "text", "en": "No items found", "hash": "106da9f3c35ba5bb", "src": "db2@1.60.1.70170"}
 {"id": "BROWSE_ORDERS", "field": "text", "en": "Place Order", "hash": "4ed922e8f3e6dbb9", "src": "db2@1.60.1.70170"}
 {"id": "BROWSE_SEARCH_TEXT", "field": "text", "en": "Choose search criteria and press \"Search\"", "hash": "da97ce14ee30f84c", "src": "db2@1.60.1.70170"}
+{"id": "BUFF_STACKS_OVERFLOW", "field": "text", "en": "*", "hash": "0000002a0000002a", "src": "db2@1.60.1.70170"}
 {"id": "BUILDING_DAMAGE", "field": "text", "en": "Siege", "hash": "bf1e9896d6a9fab9", "src": "db2@1.60.1.70170"}
 {"id": "BUILDING_DAMAGE_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when a spell or ability deals damage to a destructible building.", "hash": "ef69791f1d51da86", "src": "db2@1.60.1.70170"}
 {"id": "BUILDING_HEAL", "field": "text", "en": "Repairs", "hash": "d78a02f2516918d3", "src": "db2@1.60.1.70170"}
@@ -517,3 +598,15 @@
 {"id": "BY_SOURCE_COMBATLOG_TOOLTIP", "field": "text", "en": "Line color based on caster.", "hash": "3e1cd60377d2e13d", "src": "db2@1.60.1.70170"}
 {"id": "BY_TARGET", "field": "text", "en": "By Target", "hash": "4c1fd6880e6c9a5b", "src": "db2@1.60.1.70170"}
 {"id": "BY_TARGET_COMBATLOG_TOOLTIP", "field": "text", "en": "Line color based on target.", "hash": "2aaf0ff619a124d3", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316345", "field": "text", "en": "For thousands of years,", "hash": "86db738c448a868b", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316346", "field": "text", "en": "a band of high elven exiles has remained safe", "hash": "e55ad36f8210be07", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316348", "field": "text", "en": "and hidden upon their flying sanctuary of Zephras Isle.", "hash": "4372a431f4ce458c", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316349", "field": "text", "en": "These \"Skyborne,\" as they call themselves,", "hash": "8aa20a25f9c45682", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316350", "field": "text", "en": "shared a bond with air elementals", "hash": "55115e31fe018dff", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316351", "field": "text", "en": "who kept their island aloft in the realm of Skywall.", "hash": "ddc29d352d8b190e", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316352", "field": "text", "en": "But in recent years,", "hash": "f7157c638f43e0d0", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316353", "field": "text", "en": "the elementals vanished without a trace--", "hash": "e44574f17659e5b3", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316354", "field": "text", "en": "disrupting the delicate magic that kept them safe in their haven amongst the clouds.", "hash": "68b826077b80c5a2", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316355", "field": "text", "en": "Now, a new generation of Skyborne elves face a time of unprecedented change,", "hash": "5277c2250e18819b", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316356", "field": "text", "en": "and must seek new allies and sources of magic--", "hash": "72650d43a1ce07d9", "src": "db2@1.60.1.70170"}
+{"id": "BroadcastText:316358", "field": "text", "en": "to protect their hidden home and secure their future...", "hash": "a97fa88eebf1e4c0", "src": "db2@1.60.1.70170"}

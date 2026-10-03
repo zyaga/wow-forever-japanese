@@ -2,4 +2,5 @@
 local _, WFJ = ...
 WFJ.Data.add("spell", {
   [1273312] = { "Rog'mar Traineeに食料を与えます。", nil, 0x2442a699, nil, "um" },
+  [1273320] = { "空腹が治まります。", "空腹がおさまりました。", 0x6368ccf5, 0x6368ccf5, "uu" },
 })

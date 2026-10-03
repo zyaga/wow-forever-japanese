@@ -13,6 +13,7 @@ local UI = {
     "%sでメインハンドのアイテムを切り替えます。" },
   ITEM_SPELL_MAX_USABLE_LEVEL = { " (Requires level %d or below)", "(レベル%d以下が必要)" },
   INVTYPE_WEAPONMAINHAND = { "Main Hand", "メインハンド" },
+  ARMOR_TEMPLATE = { "%s Armor", "アーマー %s" },
 }
 local DATA = {
   [1001] = { ja = "体力を50回復する。", status = "." }, -- trusted, ungated
@@ -38,6 +39,8 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
       if kind == "item.description" then return DATA[id] end
     end })
     WFJ.Lookup = { get = function(kind, id) return kind == "item.description" and DATA[id] or nil end }
+    -- a C method on the client that never calls the Lua Show; here it only records the state
+    _G.ShoppingTooltip1.SetShown = function(self, shown) self.wfjShown = shown end
     WFJ.Tooltip.init()
   end)
 
@@ -61,6 +64,22 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
     assert.are.equal("メインハンド", _G.ShoppingTooltip1TextLeft3:GetText()) -- its record kept
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal(_G.ITEM_DELTA_DESCRIPTION, _G.ShoppingTooltip1TextLeft5:GetText())
+  end)
+
+  it("Forever shows the frame with SetShown: the delta header and a stat change after it are Japanese", function()
+    local tt = _G.ShoppingTooltip1
+    Stub.setItemTooltip(tt, "|Hitem:2:0:0:0|h[Boots]|h", { "Ragged Leather Boots", "16 Armor" })
+    tt:AddLine(" ")
+    tt:AddLine(_G.ITEM_DELTA_DESCRIPTION)
+    tt:AddLine("-11 Armor")
+    tt:AddLine("|cffff2020-3|r Armor") -- the client colours the number on its own
+    tt:SetShown(true)
+    assert.are.equal("このアイテムを置き換えると、次の能力値の変化が起こります:", _G.ShoppingTooltip1TextLeft4:GetText())
+    assert.are.equal("アーマー -11", _G.ShoppingTooltip1TextLeft5:GetText())
+    assert.are.equal("アーマー |cffff2020-3|r", _G.ShoppingTooltip1TextLeft6:GetText())
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal("-11 Armor", _G.ShoppingTooltip1TextLeft5:GetText())
+    assert.are.equal("|cffff2020-3|r Armor", _G.ShoppingTooltip1TextLeft6:GetText())
   end)
 
   it("a trusted item translation gets the max-usable-level trailer in Japanese; the Collector sees no trailer",

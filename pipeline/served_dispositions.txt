@@ -1,0 +1,303 @@
+# What each text column the client serves is (pipeline/served_columns.txt): the surface that ships it in
+# Japanese, or why it is left out. One `<table>.f<field>  <disposition>  # evidence` per column; the kinds are
+# described in pipeline/wfj/dev/served_dispositions.py. tests/python/test_served_inventory.py fails on a served
+# column with no line here, a line for a column no longer served, and internal / no-display / covered-by
+# without evidence. Field numbers are the DB2 field index; the wago.tools column name is given where known.
+
+# Achievement window, Legacy window, Statistics (ADR-042)
+achievement.f0  surface:ui:AchievementDescription  # Description_lang
+achievement.f1  surface:ui:AchievementTitle  # Title_lang
+achievement.f2  surface:ui:AchievementReward  # Reward_lang
+achievement_category.f0  surface:ui:AchievementCategory  # Name_lang
+
+# Character customization (barber shop, character create is a glue screen)
+chrcustomizationcategory.f0  surface:ui:CustomizationCategory  # CategoryName_lang
+chrcustomizationchoice.f0  surface:ui:CustomizationChoice  # Name_lang
+chrcustomizationoption.f0  surface:ui:CustomizationOption  # Name_lang
+chrcustomizationreq.f0  surface:ui:CustomizationSource  # ReqSource_lang
+
+# Currencies, factions, skills, emotes, holidays, quest log headers (ADR-042)
+creaturetype.f0  surface:ui:CreatureType  # Name_lang
+currencycategory.f0  surface:ui:CurrencyCategory  # Name_lang
+currencytypes.f0  names  # Name_lang: currency names (Honor Points, Darkmoon Prize Ticket)
+currencytypes.f1  surface:ui:CurrencyDescription  # Description_lang
+emotestextdata.f0  surface:ui:EmoteText  # Text_lang
+faction.f0  names  # Name_lang
+faction.f1  surface:ui:FactionDescription  # Description_lang
+holidaydescriptions.f0  surface:ui:HolidayDescription  # Description_lang
+holidaynames.f0  names  # Name_lang: event names (Darkmoon Faire)
+questsort.f0  surface:ui:QuestSort  # SortName_lang
+skillline.f0  names  # DisplayName_lang: skill and profession names
+skillline.f2  surface:ui:SkillLineDescription  # Description_lang
+skilllinecategory.f0  surface:ui:SkillCategory  # Name_lang
+
+# Group finder, PvP scoreboard, widgets, item tooltip pieces (ADR-042)
+groupfinderactivity.f0  surface:ui:LfgActivity  # FullName_lang (dungeon names stay English; the curated list keeps the rest)
+groupfinderactivity.f1  covered-by:groupfinderactivity.f0  # ShortName_lang: the same dungeon names, shortened
+groupfinderactivitygrp.f0  surface:ui:LfgActivityGroup  # Name_lang
+groupfindercategory.f0  surface:ui:LfgCategory  # Name_lang
+itemnamedescription.f0  surface:ui:ItemNameDescription  # Description_lang
+itemsubclass.f0  surface:ui:ItemSubClass  # DisplayName_lang
+itemsubclass.f1  surface:ui:ItemSubClassName  # VerboseName_lang
+pvpscoreboardcolumnheader.f0  surface:ui:PvpColumn  # Name_lang
+pvpscoreboardcolumnheader.f1  surface:ui:PvpColumnTooltip  # Tooltip_lang
+pvpscoreboardcolumnheader.f2  covered-by:pvpscoreboardcolumnheader.f0  # the same three header names (Flag Captures, Bases Assaulted)
+pvpstat.f0  covered-by:pvpscoreboardcolumnheader.f0  # the same stat names as the scoreboard headers
+spelldispeltype.f0  surface:ui:DispelType  # Name_lang
+spelldispeltype.f1  internal  # InternalName: the same four words, upper-case tokens for code
+spellitemenchantment.f0  surface:ui:SpellItemEnchantment  # Name_lang: enchant lines on item tooltips
+uiwidgetstringsource.f0  surface:ui:WidgetText  # Value_lang
+
+# Interface strings
+globalstrings.f0  internal  # BaseTag: the key, not shown
+globalstrings.f1  surface:ui:GlobalStrings  # TagText_lang, inventoried key by key in pipeline/ui_inventory.txt (ui_keys.txt or ui_exclusions.txt)
+
+# Items
+itemsparse.f0  surface:item.description  # Description_lang
+itemsparse.f1  empty  # Display3_lang
+itemsparse.f2  empty  # Display2_lang
+itemsparse.f3  empty  # Display1_lang
+itemsparse.f4  names  # Display_lang: item names
+itemsearchname.f0  covered-by:itemsparse.f0  # item names again, for the search index; the names in itemsparse.f4 stay English and this table carries nothing else
+itemset.f0  names  # item set names (The Gladiator)
+itemlimitcategory.f0  names  # item names (Signet Ring of the Bronze Dragonflight)
+totemcategory.f0  names  # totem and tool item names (Earth Totem)
+
+# Spells
+spell.f0  surface:ui:SpellSubtext  # NameSubtext_lang: Racial Passive and the like; Rank N stays English
+spell.f1  surface:spell.description  # Description_lang
+spell.f2  surface:spell.aura  # AuraDescription_lang
+spellname.f0  names  # Name_lang: spell names
+spelloverridename.f0  names  # one spell name
+spellshapeshiftform.f0  names  # form names (Cat Form), spell names
+spellcategory.f0  internal  # developer category names (Direct Damage - Spell); no Forever display site (docs/research/2026-09-26-client-table-text.md)
+spellmechanic.f0  internal  # lower-case mechanic names (charmed, dazed); no Forever display site (docs/research/2026-09-26-client-table-text.md)
+spelldescriptionvariables.f0  internal  # formulas ($power=${...})
+spellmissilemotion.f0  internal  # missile motion names
+spellkeyboundoverride.f0  internal  # a key token (JUMP)
+spellscript.f0  internal  # script name
+spellscript.f1  internal  # Lua source
+spellscript.f2  internal  # author name of a script
+
+# Names of people, places, creatures, mounts, classes, races (names stay English)
+areapoi.f0  names  # place names (Anvilmar, Brill)
+areaconditionaldata.f0  names  # place names (The Drunken Dwarf)
+areatable.f1  names  # AreaName_lang: zone and subzone names
+auctionhouse.f0  names  # auction house names (Stormwind Auction House)
+chrclasses.f0  names  # class names
+chrclasses.f2  names  # class names
+chrclasses.f8  names  # class names, female form
+chrclasses.f9  names  # class names, male form
+chrraces.f1  names  # race names
+chrraces.f2  names  # race names
+chrraces.f3  names  # race names
+chrraces.f6  names  # race names
+chrraces.f11  names  # race kind names (Elf)
+chrspecialization.f0  names  # specialization names
+chrspecialization.f1  names  # specialization names
+chartitles.f0  names  # player titles (Bloodsail Admiral %s), names
+chartitles.f1  names  # player titles, female form
+creature.f0  names  # companion and creature names
+creature.f2  names  # a creature title (Lord of Terror)
+creaturefamily.f0  names  # pet family names (docs/research/2026-09-26-client-table-text.md)
+dungeonencounter.f0  names  # boss names
+factiongroup.f0  names  # Player, Alliance, Horde, Monster
+factiongroup.f1  names  # Alliance, Horde
+gameobjects.f0  names  # object names (Old Coast Road)
+languages.f0  names  # language names (Orcish)
+lfgdungeons.f0  names  # dungeon names
+map.f1  names  # MapName_lang: continent and instance names
+mount.f0  names  # mount names
+questline.f0  names  # quest line names, quest titles
+talenttab.f0  names  # talent tree names (Fire, Frost)
+taxinodes.f0  names  # flight point names
+transmogoutfitentry.f1  names  # outfit names the player gives (Outfit 1)
+transmogset.f0  names  # set names
+transmogsetgroup.f0  names  # set names
+uimap.f0  names  # map names
+vignette.f0  names  # creature names
+wmoareatable.f0  names  # area names inside buildings
+battlemasterlist.f0  names  # battleground names
+
+# Internal: never printed
+animkitboneset.f0  internal  # animation bone set names
+areatable.f0  internal  # ZoneName: CamelCase tokens (DunMorogh)
+availablesuperdistrict.f2  internal  # atlas names (Mode-Selection-Card-Hardcore)
+availablesuperdistrict.f3  internal  # atlas names
+bannedaddons.f0  internal  # addon names the client refuses to load
+bannedaddons.f1  internal  # addon version strings
+battlepaycurrency.f0  internal  # currency codes (USD)
+battlepaycurrency.f1  internal  # price formats ($%s)
+battlepaycurrency.f2  internal  # price formats
+cfg_categories.f0  internal  # realm list categories (glue screen)
+cfg_datacenterlocality.f0  internal  # data center names
+cfg_regions.f0  internal  # region codes
+cfg_regions.f1  internal  # region names (DEV, Alpha)
+chatprofanity.f0  internal  # profanity filter list
+chrclasses.f1  internal  # class tokens (WARRIOR)
+chrclasses.f4  internal  # pet tokens (PET)
+chrraceracialability.f0  internal  # developer names (Human - Active - Will to Survive)
+chrraces.f0  internal  # two-letter race codes (Hu)
+chrraces.f4  internal  # lower-case race tokens for file names (human)
+chrraces.f5  internal  # lower-case race tokens
+chrraces.f8  internal  # lower-case race tokens (sin'dorei)
+chrraces.f13  internal  # lower-case race kind tokens
+chrspecialization.f2  internal  # a developer string (I'm a pet!)
+clientsettings.f0  internal  # setting names (CMAA2)
+collectablesourceinfo.f0  internal  # developer labels (Item Appearance: (63286) - ...)
+collectablesourcevendorsparse.*  internal  # a secondary-key sparse table the reader cannot open; its name and siblings (collectablesourceinfo) hold developer labels only
+covenant.f0  internal  # [DNT] rows (do not translate)
+covenant.f1  internal  # [DNT]
+datatagxrecord.f0  internal  # tag tokens (HouseDecor)
+emotes.f0  internal  # animation tokens (ONESHOT_TALK)
+emotestext.f0  internal  # slash tokens (AGREE)
+exhaustion.f1  internal  # GlobalStrings keys (COMBATLOG_XPGAIN_EXHAUSTION1)
+gamemode.f0  internal  # mode tokens (wfhc, standard)
+globalcolor.f0  internal  # colour constant names
+languagewords.f0  internal  # the made-up words other-faction speech is scrambled into
+lightskybox.f0  internal  # model file paths
+liquidtype.f0  internal  # liquid type names (Water, Ocean) used by tools
+locale.f0  internal  # locale names for the glue screen language list
+locktype.f3  internal  # tokens (PickLock, GatherHerbs)
+manifestinterfacedata.f0  internal  # interface file folders
+manifestinterfacedata.f1  internal  # interface file names
+map.f0  internal  # Directory: map folder tokens
+namegen.f0  internal  # random name generator syllables
+namesprofanity.f0  internal  # name filter list
+namesreserved.f0  internal  # reserved name list
+namesreservedlocale.f0  internal  # reserved name patterns
+pagetextmaterial.f0  internal  # page background material names
+paperdollitemframe.f0  internal  # frame names (HeadSlot)
+powerdisplay.f0  internal  # GlobalStrings keys (POWER_TYPE_MANA)
+powertype.f0  internal  # power tokens (MANA)
+powertype.f1  internal  # GlobalStrings keys (MANA_COST)
+questfeedbackeffect.f0  internal  # effect names (openhandglow)
+scenescriptglobaltext.f0  internal  # script names
+scenescriptglobaltext.f1  internal  # Lua source
+scenescriptpackage.f0  internal  # script package names
+scenescripttext.f0  internal  # script names
+scenescripttext.f1  internal  # Lua source
+screeneffect.f0  internal  # effect names (Ghost Screen Effect)
+screenlocation.f0  internal  # position names (Center)
+soundemitters.f0  internal  # sound emitter names
+soundmixgroup.f0  internal  # sound mix group names
+soundmixgroup.f1  internal  # sound mix group names
+soundproviderpreferences.f0  internal  # sound test names
+spammessages.f0  internal  # spam filter patterns
+talenttab.f1  internal  # background file tokens (MageFire)
+terraintype.f0  internal  # terrain names for footstep sounds
+terraintypesounds.f0  internal  # terrain names for footstep sounds
+traitdefinition.f0  internal  # one numeric override string (16972)
+transmogoutfitslotinfo.f0  internal  # slot tokens (HEADSLOT)
+uicamera.f0  internal  # camera names
+uicameratype.f0  internal  # camera type names
+uimodelsceneactor.f0  internal  # actor names
+uimodelscenecamera.f0  internal  # camera names
+uitextureatlaselement.f0  internal  # atlas names
+uitextureatlasmember.f0  internal  # atlas names
+uitexturekit.f0  internal  # texture kit names
+uiwidgetvistypedatareq.f0  internal  # developer labels
+uiwidgetvisualization.f0  internal  # developer labels
+virtualattachment.f0  internal  # a developer label
+voiceoverpriority.f0  internal  # developer labels
+wbaccesscontrollist.f0  internal  # URL patterns
+worldstateexpression.f0  internal  # encoded expressions
+zoneintromusictable.f0  internal  # music names
+zonelight.f0  internal  # light names
+zonemusic.f0  internal  # music names
+
+# Server caches (Cache/WDB/enUS): the text the server sends. The client keeps only what it has been sent, so a
+# cache's record count says what this install has seen, not what the server holds.
+wdb-questcache.*  surface:quest.*  # quest text, objectives and area text, plus each conditional description and completion log line keyed like NPC dialogue; the whole server set is harvested by the quest scan (docs/operations/beta-day-harvest.md)
+wdb-npccache.*  surface:gossip.text  # NPC dialogue; gossip English comes from VMaNGOS and the in-game collector (docs/systems/collector.md)
+wdb-pagetextcache.*  surface:book.text  # book and letter pages; English from VMaNGOS and the collector
+wdb-creaturecache.*  names  # creature names and their titles (<Innkeeper>); UI/TooltipUnit.lua leaves line 1 and title lines as the client wrote them
+wdb-gameobjectcache.*  names  # object names
+wdb-petitioncache.*  internal  # player-written guild charter names and text, never game text
+
+# Shown nowhere in the Forever client (searched in the client's own UI source, 1.60.1.70170)
+itemclass.f0  no-display  # the camelot auction data (blizzard_auctionhouseui/camelot/blizzard_auctiondata.lua) uses GlobalStrings categories; the class-only branch (shared/blizzard_auctiondata.lua:89-90) is never reached
+itembagfamily.f0  no-display  # Lua reads only the family number (C_Container.GetContainerNumFreeSlots); no reader prints the name
+traitcost.f0  no-display  # talent costs print CurrencyTypes text (blizzard_sharedtalentui/blizzard_sharedtalentframe.lua:1837-1849), not TraitCost
+traitcurrencysource.f0  no-display  # only C_ProfSpecs.GetSourceTextForPath reads it (blizzard_professions/blizzard_professionsspecializationstemplates.lua:121); camelot's profession frame has no specialization page
+spelldiminish.f0  no-display  # stored, never printed (blizzard_spelldiminishui/blizzard_spelldiminishuitemplates.lua:21-22; arena frames show icons)
+gmsurveyquestions.f0  no-display  # no GM survey frame; surveys open on the web (blizzard_wowsurveyui/blizzard_wowsurveyui.lua:12)
+gmsurveyanswers.f0  no-display  # no GM survey frame (blizzard_wowsurveyui/blizzard_wowsurveyui.lua:12)
+barbershopstyle.f0  no-display  # legacy table: the barber shop reads ChrCustomization only (C_BarberShop.GetAvailableCustomizations)
+chrcustomization.f0  no-display  # no reader; option labels come from ChrCustomizationOption
+gametips.f0  no-display  # loading screen tips are drawn by the client, not by a Lua frame an addon can reach (only the showLoadingScreenTips CVar, blizzard_settingsdefinitions_frame/camelot/interfaceoverrides.lua:63)
+battlemasterlist.f2  no-display  # PvP UI descriptions; blizzard_pvpui.toc excludes camelot
+battlemasterlist.f3  no-display  # PvP UI descriptions; blizzard_pvpui.toc excludes camelot
+map.f2  no-display  # battleground short descriptions read only by blizzard_pvpui, which camelot does not load
+map.f3  no-display  # battleground long descriptions read only by blizzard_pvpui, which camelot does not load
+map.f4  no-display  # battleground objective title read only by blizzard_pvpui (the queue status shows the long description, map.f5)
+# Glue screens (character create, realm list): addons do not run there
+availablesuperdistrict.f0  no-display  # ruleset names, realm list (blizzard_gluexml superdistrict.lua)
+availablesuperdistrict.f1  no-display  # ruleset descriptions, realm list (blizzard_gluexml superdistrict.lua)
+chrraceracialability.f1  no-display  # character create racial ability text (blizzard_charactercreate, AllowLoad: Glue)
+chrraceracialability.f2  no-display  # character create racial ability text (blizzard_charactercreate, AllowLoad: Glue)
+chrclasses.f5  no-display  # character create class descriptions (blizzard_charactercreate, AllowLoad: Glue)
+chrraces.f10  no-display  # character create race descriptions (blizzard_charactercreate, AllowLoad: Glue)
+characterserviceinfo.f0  no-display  # character services, glue screens (blizzard_glueparent characterservices*.lua); blizzard_classtrial is standard-only
+characterserviceinfo.f1  no-display  # character services, glue screens
+characterserviceinfo.f2  no-display  # character services, glue screens
+configurationwarning.f0  no-display  # login screen hardware warnings (glue)
+# The in-game shop runs in a secure Lua environment addons cannot touch
+battlepaycurrency.f3  no-display  # blizzard_catalogshop.toc and blizzard_storeui.toc declare UseSecureEnvironment: 1
+# Shown, and kept English: channel names are also what /join takes
+chatchannels.f0  names  # channel names (General - %s); UI/Channels.lua keeps channel names English
+chatchannels.f1  names  # channel names (Trade)
+
+# The same English as GlobalStrings rows, which the interface dictionary matches by their text
+resistances.f0  covered-by:globalstrings.f1  # all 7 school names are GlobalStrings text (Physical, Holy, ...)
+uieventtoast.f0  covered-by:globalstrings.f1  # Level %d, Rank %d are GlobalStrings text
+uieventtoast.f1  covered-by:globalstrings.f1  # You've Reached is GlobalStrings text
+
+# A spell tooltip prints its range from GlobalStrings, not from the SpellRange names
+spellrange.f0  no-display  # in game on 1.60.1.70170, Wrath (SpellRange 4 "Medium Range", 30 yards) shows SPELL_RANGE "30 yd range", already Japanese; melee spells use MELEE_RANGE
+spellrange.f1  no-display  # the short range names (Medium); not printed, as spellrange.f0
+
+# The Collections window on Forever has only the Appearances tab
+toy.f0  no-display  # in game on 1.60.1.70170, ToggleCollectionsJournal(COLLECTIONS_JOURNAL_TAB_INDEX_TOYS) opens Appearances with one tab (Items); there is no Toy Box
+
+# Required tools and spell focus objects ("Requires Anvil", "Requires Ambermill Leyline Focus") are names of things
+spellfocusobject.f0  names  # object names a recipe or spell needs (Anvil, Forge, Ambermill Leyline Focus); names stay English
+
+# Client-table text the inventory found shown on Forever (ADR-052), imported as UI key families
+criteriatree.f0  surface:ui:CriteriaText  # Description_lang: achievement and Legacy criteria (the achievements' own trees)
+renownrewards.f0  surface:ui:RenownRewardName  # Name_lang (reward item names stay English)
+renownrewards.f1  surface:ui:RenownRewardDescription  # Description_lang
+renownrewards.f2  surface:ui:RenownRewardToast  # ToastDescription_lang
+sharedstring.f0  surface:ui:SharedString  # String_lang: talent requirement lines (profession names stay English)
+tradeskillcategory.f0  surface:ui:TradeSkillCategory  # Name_lang: recipe list headers (profession names stay English)
+mailtemplate.f0  surface:ui:MailBody  # Body_lang: NPC mail bodies
+questinfo.f0  surface:ui:QuestTag  # InfoName_lang: quest type tags (Elite, Dungeon)
+areapoi.f1  surface:ui:AreaPoiDescription  # Description_lang: map point tooltip lines (zone and faction names stay English)
+areapoistate.f0  surface:ui:AreaPoiState  # Description_lang
+petloyalty.f0  surface:ui:PetLoyalty  # Name_lang
+map.f5  surface:ui:PvpLongDescription  # PvpLongDescription_lang: the battleground queue subtitle
+difficulty.f0  surface:ui:Difficulty  # Name_lang
+uieventtoast.f3  surface:ui:EventToastText  # SubIcon_lang
+broadcasttext.f0  surface:ui:BroadcastText  # Text_lang: the archive's rows (cinematic subtitles)
+itempetfood.f0  surface:ui:PetFood  # Name_lang: pet diet words
+exhaustion.f0  surface:ui:RestState  # Name_lang (the XXX developer rows never listed)
+itemsubclassmask.f0  surface:ui:ItemSubClassMask  # Name_lang (Requires Melee Weapon)
+rolodextype.f0  surface:ui:RecentAllyType  # Description_lang: the Recent Allies tab (shown on Forever, in game 1.60.1.70170)
+rolodextype.f1  surface:ui:RecentAllyInteraction  # the most recent interaction (Traded, Whispered)
+friendshipreputation.f0  names  # Rank Points: the PvP rank currency's name
+friendshipreputation.f1  surface:ui:FriendshipGain  # StandingModified_lang: You gain %d Rank Points.
+mapdifficulty.f0  surface:ui:InstanceEntryMessage  # Message_lang: the error when entering an instance under its level
+mapdifficultyxcondition.f0  surface:ui:InstanceEntryFailure  # FailureDescription_lang
+
+# The second set of client-table families (docs/research/2026-10-02-served-text-inventory.md):
+playercondition.f0  surface:ui:PlayerConditionFailure  # Failure_description_lang: a requirement line (Requires Frostwolf Clan - Exalted); faction names inside stay English
+locktype.f0  surface:ui:LockTypeName  # Name_lang: the lock action (Pick Lock, Disarm Trap); the gathering skills (Herbalism, Mining, Fishing) are names and left out
+locktype.f1  surface:ui:LockTypeResource  # ResourceName_lang: what the lock opens (Locked Items, Herbs)
+locktype.f2  surface:ui:LockTypeVerb  # Verb_lang: the action verb (Pick, Gather)
+spellflyout.f0  surface:ui:FlyoutName  # Name_lang: a spellbook flyout's name (Portal, Summon Demon)
+spellflyout.f1  surface:ui:FlyoutDescription  # Description_lang: the flyout's tooltip description
+servermessages.f0  surface:ui:ServerMessage  # Text_lang: server notices in chat ([SERVER] Shutdown in %s); the bare %s row and the DEBUG row are left out
+transmogsituation.f0  surface:ui:TransmogSituation  # Name_lang: the transmog outfit window's situation options
+transmogsituationtrigger.f0  surface:ui:TransmogTrigger  # Name_lang: the outfit window's situation groups
+transmogsituationtrigger.f1  surface:ui:TransmogTriggerDescription  # Description_lang: the situation group's help text
+transmogoutfitslotoption.f0  surface:ui:TransmogSlotOption  # Name_lang: the outfit window's slot options (One Handed Weapon, Cloth)

@@ -33,9 +33,19 @@
 --     and are called as self:Method(), so the frame's own method is hooked, not OpenAllMailMixin.
 -- Records are never released on hide: every client rewrite of these widgets runs through a hooked writer, and one
 -- that does not is dropped as stale on the next refresh (UI/Render).
+-- The letter's body (ADR-042, the MailBody family: MailTemplate.Body_lang, the letters NPCs and events send):
+--   OpenMailFrame:Update writes OpenMailBodyText:SetText(GetInboxText(id), true) (mailframe.lua:776–777), a
+--   SimpleHTML (mailframe.xml:1007–1013) with no GetText [verified: blizzard_apidocumentationgenerated/
+--   simplehtmlapidocumentation.lua: SetText(text, ignoreMarkup), per-text-type GetFont / SetFont]. A SetText
+--   post-hook on it sees every text the client writes; a small adapter (below) gives SurfaceState the FontString
+--   interface and writes back with the client's own call shape, SetText(text, true). The server sends the letter with
+--   its tokens filled in: the player's name for `$N`, line breaks for `$B`. The live text is turned back into the
+--   template's form the way the gossip surface keys a line (Core/Collector.text: the player's name becomes `$N`,
+--   breaks `$B`), and only an exact MailBody row of that form takes it; the Japanese carries `{name}`, which the
+--   translator fills like a quest line. A letter a player wrote is no row and is never touched.
 -- Never touched: OpenMailSender.Name and OpenMailSubject (OpenMail_Reply copies both into the send EditBoxes with
--- GetText), MailItemNSender / Subject, OpenMailBodyText, every mail EditBox (their text is sent with SendMail or
--- compared with GetText). UNKNOWN in the sender slot stays.
+-- GetText), MailItemNSender / Subject, every mail EditBox (their text is sent with SendMail or compared with GetText),
+-- and any letter body that is no MailBody row. UNKNOWN in the sender slot stays.
 -- Help tooltips (UI/HelpTooltip): the expiry hover (self.tooltip = TIME_UNTIL_DELETED / _RETURNED), the inbox-full
 -- hover, the inbox row's money / C.O.D. lines (an item row's tooltip is an item tooltip and is never walked), the
 -- empty send slot and the letter button.
@@ -59,7 +69,7 @@ local function set(list)
 end
 
 -- Widgets this module must never record (global names; "Frame.Key" for a parentKey child).
-Mail.NEVER_TOUCH = { "OpenMailSender.Name", "OpenMailSubject", "OpenMailBodyText", "SendMailNameEditBox",
+Mail.NEVER_TOUCH = { "OpenMailSender.Name", "OpenMailSubject", "SendMailNameEditBox",
   "SendMailSubjectEditBox", "SendMailMoneyGold", "SendMailMoneySilver", "SendMailMoneyCopper" }
 for i = 1, ROWS do
   Mail.NEVER_TOUCH[#Mail.NEVER_TOUCH + 1] = "MailItem" .. i .. "Sender"
@@ -93,6 +103,7 @@ local CAMELOT = {
   frameTitle = { "MailFrameTitleText", "MailFrame.TitleContainer.TitleText" },
   openFrameTitle = { "OpenMailFrameTitleText", "OpenMailFrame.TitleContainer.TitleText" },
   tabClick = { "MailFrameTab_OnClick" }, inboxFrame = { "InboxFrame" }, openMailFrame = { "OpenMailFrame" },
+  body = { "OpenMailBodyText" }, unitName = { "UnitName" }, unknownName = { "UNKNOWNOBJECT" },
 }
 local FRAME_TITLE = { only = set({ "INBOX", "SENDMAIL" }) }
 local OPEN_TITLE = { only = set({ "OPENMAIL" }) }
@@ -183,6 +194,63 @@ function Mail.showStatic()
   return WFJ.Labels.showAll(STATIC, items)
 end
 
+-- ── the letter's body ──────────────────────────────────────────────
+-- logical: what GetText reports, the client's text as written or the text SurfaceState asked us to show.
+local body = WFJ.HtmlText.new(true) -- the client writes the body with ignoreMarkup (mailframe.lua:776-777)
+Mail.body = body
+
+-- The player's name as the client spells it, or nil while it is not known.
+local function playerName()
+  local unitName = Compat.get(SURFACE, "unitName")
+  local name = type(unitName) == "function" and unitName("player") or nil
+  if type(name) ~= "string" or name == "" or name == Compat.get(SURFACE, "unknownName") then return nil end
+  return name
+end
+
+-- The template forms the live body may be the expansion of, most specific first: the player's name as `$N` (a name
+-- under 3 code points also as a whole word, as the gossip key does), then the text with nothing replaced.
+local function templateForms(text)
+  local name = playerName()
+  local players = { name and { name = name } or false }
+  if name and #name:gsub("[\128-\191]", "") < 3 then players[#players + 1] = { name = name, short = true } end
+  players[#players + 1] = false
+  local forms, seen = {}, {}
+  for _, p in ipairs(players) do
+    local form = WFJ.Collector.text(text, p or nil)
+    if form ~= "" and not seen[form] then
+      seen[form] = true
+      forms[#forms + 1] = form
+    end
+  end
+  return forms
+end
+
+-- The body the client last wrote, as a MailBody row's Japanese when it is one, else left as written. → 1 | 0
+function Mail.showBody()
+  if type(body.html) ~= "table" then return 0 end
+  local text, key = body.logical, nil
+  local rec = WFJ.SurfaceState.get(SURFACE, "body")
+  if rec and rec.applied ~= nil and text == rec.applied then return 1 end -- still ours
+  local index = WFJ.UIIndex
+  if index and WFJ.Collector and type(text) == "string" and text ~= "" then
+    local only = WFJ.Labels.families("MailBody").only
+    for _, form in ipairs(templateForms(text)) do
+      key = index:matchOnly(form, only)
+      if key then break end
+    end
+  end
+  local n = WFJ.Labels.showArgs(SURFACE, "body", body, key, nil)
+  WFJ.Render.updateBanner(SURFACE)
+  return n
+end
+
+-- SetText post-hook on OpenMailBodyText: every text the client writes (ours is skipped).
+function Mail.onBodyText(html, text)
+  if body.writing then return end
+  body.html, body.logical = html, type(text) == "string" and text or nil
+  Mail.showBody()
+end
+
 local hooked = false
 
 -- Called by Main after Compat.init, HelpTooltip.init and ButtonText.init.
@@ -202,6 +270,11 @@ function Mail.init()
   Mail.showStatic()
   for group in pairs(GROUPS) do showGroup(group) end
 
+  local html = Compat.get(SURFACE, "body")
+  if type(html) == "table" and type(html.SetText) == "function" then
+    body.html = html
+    hooksecurefunc(html, "SetText", Mail.onBodyText)
+  end
   hookUpdate("inboxFrame", Mail.onInboxUpdate)
   hookUpdate("openMailFrame", Mail.onOpenMailUpdate)
   if type(Compat.get(SURFACE, "SendMailRadioButton_OnClick")) == "function" then

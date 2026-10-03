@@ -235,6 +235,14 @@ end
 
 local function showField(pane, field, en, id)
   local fs = get(field)
+  local variant = field == "description" and type(WFJ.ShippedGossipKey) == "function"
+    and not (type(WFJ.IsQuestFieldEnglish) == "function" and WFJ.IsQuestFieldEnglish(id, field, en))
+      and WFJ.ShippedGossipKey(en)
+  if variant and isText(fs) and fs:GetText() == en then
+    -- a conditional description (another wording for this character), keyed by its English
+    WFJ.Render.show(pane.info, field, fs, en, "quests", "gossip", variant, { refit = pane.refit, compact = true })
+    return 1
+  end
   if isText(fs) and type(en) == "string" and en ~= "" and fs:GetText() == en then
     -- live: the API English, for the stale marker's live check (ADR-019); compact below the title, so a quest
     -- gets one missing marker, on its title
@@ -319,7 +327,9 @@ end
 
 -- The templates an objective line may be (Forever GlobalStrings): only these, so "3/10 …" is never read as another key.
 QuestMap.OBJECTIVE_KEYS = { "QUEST_MONSTERS_KILLED", "QUEST_PLAYERS_KILLED", "QUEST_PLAYERS_KILLED_NOPROGRESS",
-  "QUEST_FACTION_NEEDED", "QUEST_FACTION_NEEDED_NOPROGRESS" }
+  "QUEST_FACTION_NEEDED", "QUEST_FACTION_NEEDED_NOPROGRESS",
+  -- a finished quest's tracker line (blizzard_questobjectivetracker.lua:321-343)
+  "QUEST_WATCH_QUEST_READY", "QUEST_WATCH_QUEST_COMPLETE", "QUEST_WATCH_CLICK_TO_COMPLETE" }
 
 -- " (Complete)", which the details pane appends to a finished objective (mainline/questinfo.lua:238): its Japanese
 -- through PARENS_TEMPLATE / COMPLETE, and the objective before it. → text before the tag, the tag's Japanese (with its
@@ -334,6 +344,12 @@ local function completeTag(en)
   return en:sub(1, #en - #paren - 1), " " .. ja
 end
 
+-- A quest's completion log line ("Speak with Deathguard Billmuth at Tyr's Watch."), the line the tracker and the
+-- quest log show once the quest is ready: quest-cache text keyed like NPC dialogue. → key | nil
+local function completionLogKey(core)
+  return type(WFJ.ShippedGossipKey) == "function" and WFJ.ShippedGossipKey(core) or nil
+end
+
 -- One objective line's Japanese without a record (a tooltip the client rebuilds every frame), by the same lookups as
 -- showObjective. → Japanese | nil
 function QuestMap.objectiveJapanese(en, surface)
@@ -345,6 +361,11 @@ function QuestMap.objectiveJapanese(en, surface)
   if id then
     args.after = args.after .. tag
     return WFJ.Render.preview(surface, en, nil, "quests", kind, id, { args = args, compact = true })
+  end
+  local keyed = completionLogKey(core)
+  if keyed then
+    return WFJ.Render.preview(surface, en, nil, "quests", "gossip", keyed,
+      { args = { form = "affix", before = "", after = tag }, compact = true })
   end
   local key
   if ui then key, args = ui:matchOnly(core, QuestMap.OBJECTIVE_KEYS) end
@@ -378,6 +399,12 @@ function QuestMap.showObjective(surface, recKey, fs, refit)
   if id then
     args.after = args.after .. tag
     WFJ.Render.show(surface, recKey, fs, en, "quests", kind, id, { refit = refit, args = args, compact = true })
+    return 1
+  end
+  local keyed = completionLogKey(core)
+  if keyed then
+    WFJ.Render.show(surface, recKey, fs, en, "quests", "gossip", keyed,
+      { refit = refit, args = { form = "affix", before = "", after = tag }, compact = true })
     return 1
   end
   local key
@@ -756,9 +783,25 @@ function QuestMap.onAddObjective(block, objectiveKey)
   if type(line) ~= "table" or type(line.Text) ~= "table" then return 0 end
   local fs = line.Text
   if type(fs.GetHeight) == "function" then lineHeights[line] = fs:GetHeight() end
-  local n = QuestMap.showObjective(TRACKER_OBJECTIVES, trackerObjectiveKey(line), fs, lineRefit(block, line))
+  local recKey, refit = trackerObjectiveKey(line), lineRefit(block, line)
+  local n = QuestMap.showObjective(TRACKER_OBJECTIVES, recKey, fs, refit)
+  if n == 0 then n = QuestMap.showQuestText(TRACKER_OBJECTIVES, recKey, fs, block.id, refit) end
   WFJ.Render.updateBanner(TRACKER_OBJECTIVES)
   return n
+end
+
+-- A quest with no counted objectives shows its whole objective text as one tracker line
+-- (GetQuestLogCompletionText falls back to it; blizzard_questobjectivetracker.lua:326-336): the line is that quest's
+-- own text when its hash is the quest's objectives hash. → 1 | 0
+function QuestMap.showQuestText(surface, recKey, fs, questID, refit)
+  if type(questID) ~= "number" or not isText(fs) then return 0 end
+  local en = fs:GetText()
+  if type(en) ~= "string" or en == "" then return 0 end
+  -- the quest's objectives English, read as the live check reads it (player words, the female variant)
+  if type(WFJ.IsQuestFieldEnglish) ~= "function" or not WFJ.IsQuestFieldEnglish(questID, "objectives", en) then
+    return 0
+  end
+  return WFJ.Render.show(surface, recKey, fs, en, "quests", "quest.objectives", questID, { refit = refit }) and 1 or 0
 end
 
 -- ── content-tracking lines ──────────────────────────────────────────────────────────────────────────────────────

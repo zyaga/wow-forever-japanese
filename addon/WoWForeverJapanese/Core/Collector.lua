@@ -42,7 +42,7 @@ Collector.NPC_CAP = 32 -- creature ids kept per gossip entry (a generic "Goodbye
 -- Hearthstone / Astral Recall spell descriptions [likely, not yet confirmed in game].
 Collector.SKIP = { item = { [6948] = true }, spell = { [8690] = true, [556] = true } }
 
-local ENTRY_KEYS = { t = true, i = true, f = true, h = true, e = true, b = true, n = true }
+local ENTRY_KEYS = { t = true, i = true, f = true, h = true, e = true, b = true, n = true, p = true }
 
 local db, deps
 local readOnly, cappedPrinted, errors, lastError = false, false, 0, nil
@@ -145,10 +145,11 @@ end
 -- Estimated SavedVariables text for one entry: the key (twice: the entry key and `t:i:f`), the text with its
 -- escapes, and the field names, indentation and punctuation around them (measured on the fixture file); a gossip
 -- entry's NPC id list adds its brackets and ~10 bytes per id.
-function Collector.size(key, e, n)
+function Collector.size(key, e, n, who)
   local _, escapes = e:gsub('["\\]', "")
   local ids = type(n) == "table" and (16 + 20 * #n) or 0 -- "\t\t\t\t6740, -- [1]\n" per id
-  return 2 * #key + #e + escapes + 117 + ids
+  local p = type(who) == "string" and (#who + 12) or 0 -- "\t\t\t["p"] = "Class|Race",\n"
+  return 2 * #key + #e + escapes + 117 + ids + p
 end
 
 -- GUID → creature id for Creature / Vehicle units, the pattern Blizzard uses [verified: classic_era
@@ -201,6 +202,7 @@ local function validEntry(key, e, builds)
   if type(e.h) ~= "string" or not e.h:match("^[0-9a-f]+$") or #e.h ~= 16 then return false end
   if type(e.e) ~= "string" or e.e == "" then return false end
   if e.b ~= nil and (type(e.b) ~= "number" or type(builds[e.b]) ~= "string") then return false end
+  if e.p ~= nil and type(e.p) ~= "string" then return false end
   return true
 end
 
@@ -223,7 +225,7 @@ function Collector.load(saved, d)
   local bytes = 0
   for key, e in pairs(saved.entries) do
     if validEntry(key, e, saved.builds) then
-      bytes = bytes + Collector.size(key, e.e, e.n)
+      bytes = bytes + Collector.size(key, e.e, e.n, e.p)
     else
       saved.entries[key] = nil
     end
@@ -299,6 +301,9 @@ local function evaluate(kind, id, field, raw, key, npc)
 
   local e = Collector.text(raw, player)
   if e == "" then return "refused", "empty" end
+  -- a line holding $C / $R names the recording character's class and race: the pipeline puts a literal word back
+  -- only where it is that character's own (a different word there means the line follows the reader's class)
+  local who = player and e:find("%$[CR]") and (player.class .. "|" .. player.race) or nil
   local h1, h2 = Hash.h32x2(Normalize.v1(e))
   local h = Hash.hex8(h1) .. Hash.hex8(h2)
 
@@ -326,8 +331,8 @@ local function evaluate(kind, id, field, raw, key, npc)
     n = kind == "gossip" and npc and withNpc(old, npc)
     if not n then return "seen" end
   end
-  local size = Collector.size(key, e, n)
-  local oldSize = old and Collector.size(key, old.e, old.n) or 0
+  local size = Collector.size(key, e, n, who)
+  local oldSize = old and Collector.size(key, old.e, old.n, old.p) or 0
   if db.bytes - oldSize + size > Collector.CAP_BYTES then
     db.capped = true
     if not cappedPrinted then
@@ -343,7 +348,7 @@ local function evaluate(kind, id, field, raw, key, npc)
     old.n = n
     return "seen"
   end
-  db.entries[key] = { t = kind, i = id, f = field, h = h, e = e, b = buildIndex(build), n = n }
+  db.entries[key] = { t = kind, i = id, f = field, h = h, e = e, b = buildIndex(build), n = n, p = who }
   return old and "replaced" or "recorded"
 end
 
@@ -414,15 +419,21 @@ function Collector.key(raw, player)
   return Hash.key(Normalize.v1(e))
 end
 
--- The players a candidate is normalized for, most specific first: as given, name only, none (`false`). For a name
--- under 3 code points (which normalize_v1 never replaces) two more follow (as given, and name only, with that name
--- replaced as a whole word (`short`). They come last, so a line shipped under its literal English still wins.
+-- The players a candidate is normalized for, most specific first: as given, the race only and the class only
+-- (a line that says one of them literally and the other as a token: "young $R, a wise druid"), name only, none
+-- (`false`). For a name under 3 code points (which normalize_v1 never replaces) two more follow (as given, and
+-- name only, with that name replaced as a whole word (`short`). They come last, so a line shipped under its
+-- literal English still wins.
 local function candidates(player)
   local name = type(player) == "table" and player.name or nil
-  local list = { player, name and { name = name } or false, false }
+  local list = { player, false, false, name and { name = name } or false, false }
+  if name then
+    list[2] = { name = name, race = player.race }
+    list[3] = { name = name, class = player.class }
+  end
   if type(name) == "string" and name ~= "" and codePoints(name) < 3 then
-    list[4] = { name = name, class = player.class, race = player.race, short = true }
-    list[5] = { name = name, short = true }
+    list[6] = { name = name, class = player.class, race = player.race, short = true }
+    list[7] = { name = name, short = true }
   end
   return list
 end
@@ -506,7 +517,8 @@ function Collector.disclose()
   deps.print("WFJ: this addon records English game text it has no data for (quest text, NPC dialogue with the ids "
     .. "of the NPCs who said it, item and spell descriptions, NPC names) in SavedVariables\\WoWForeverJapanese.lua, "
     .. "so it can be translated later. "
-    .. "Your character's name is replaced; no account, realm or location is stored (wording that depends on your "
+    .. "Your character's name is replaced; next to a line that names your class or race, the class and race are "
+    .. "noted; no account, realm or location is stored (wording that depends on your "
     .. "character's gender is kept as the game shows it). Nothing leaves your disk unless you send it.")
   deps.print("WFJ: /wfj collector off to stop · /wfj collector path to share the file.")
   db.disclosed = true

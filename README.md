@@ -69,8 +69,8 @@ the minimap button on or off.
 
 **English it has no Japanese for.** When the game shows English the addon has no translation for (quest text, NPC
 dialogue with the id of the NPC who said it, item and spell descriptions, NPC names), the addon notes that English
-in its saved settings file, so it can be translated later. Your character's name is stored as a placeholder; no
-account, realm or location is stored. Nothing is sent anywhere: the file stays on your computer unless you choose
+in its saved settings file, so it can be translated later. Your character's name is stored as a placeholder, and
+next to a line that names your class or race, the class and race are noted; no account, realm or location is stored. Nothing is sent anywhere: the file stays on your computer unless you choose
 to attach it to an issue. It is on by default, the addon says so in chat the first time, and you can turn it off
 under **English Collector** in the settings.
 
@@ -97,17 +97,23 @@ Other problems or ideas: [open an issue](https://github.com/zyaga/wow-forever-ja
 
 ## FAQ
 
-**Why is a buff's tooltip in English during a fight?** While you are in combat, the game hides from addons which
-buff an icon under the minimap is. The addon cannot look up a translation for a buff it is not told about, so that
-tooltip stays in the game's English until the fight ends. Then it is Japanese again. Spell tooltips on your action
+**Why is a buff's tooltip sometimes in English?** There are two cases.
+
+- **In combat.** The game hides from addons which buff an icon under the minimap is, so its tooltip stays in the
+  game's English until the fight ends. Then it is Japanese again.
+- **On the target frame.** Buffs and debuffs there always stay English: the game draws their tooltip in a window no
+  addon is allowed to touch.
+
+Your own buffs under the minimap and those on party frames are Japanese out of combat. Spell tooltips on your action
 bar stay Japanese in combat, the cooldown countdown too.
 
 **Why are names still in English?** On purpose. Names of people, places, creatures, items and spells are never
 changed, so what you read matches what other players say and what guides call things.
 
 **What do the markers mean?** **[未翻訳 / Not Translated]** means the line has no translation yet and is shown in
-the game's English. **[要更新 / English Changed]** means the English changed after the line was translated. Both can
-be turned off in the settings.
+the game's English. **[要更新 / English Changed]** means the English changed after the line was translated.
+
+Both can be turned off in the settings.
 
 **Which game does it work with?** World of Warcraft: Forever only.
 
@@ -187,7 +193,7 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
 ![アドオンの設定画面](docs/images/settings.jpg)
 
-**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。キャラクター名はプレースホルダーに置き換えて保存し、アカウント・レルム・位置は保存しません。どこにも送信されません。自分で Issue に添付しない限り、ファイルはあなたのパソコンの中にあります。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
+**まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。キャラクター名はプレースホルダーに置き換えて保存し、クラスや種族が出てくる行にはそのクラスと種族を書き添えます。アカウント・レルム・位置は保存しません。どこにも送信されません。自分で Issue に添付しない限り、ファイルはあなたのパソコンの中にあります。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
 
 ![英語テキスト収集の設定画面。記録をオフにするスイッチがある](docs/images/collector.jpg)
 
@@ -209,11 +215,18 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
 ### よくある質問
 
-**戦闘中、バフのツールチップが英語なのはなぜ？** 戦闘中、ゲームはミニマップの下のアイコンがどのバフなのかをアドオンに隠します。どのバフかわからなければ翻訳を引けないため、そのツールチップは戦闘が終わるまでゲームの英語のままです。戦闘が終わると日本語に戻ります。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
+**バフのツールチップが英語になることがあるのはなぜ？** 理由は二つあります。
+
+- **戦闘中。** ゲームはミニマップの下のアイコンがどのバフなのかをアドオンに隠すため、そのツールチップは戦闘が終わるまでゲームの英語のままです。戦闘が終わると日本語に戻ります。
+- **ターゲットフレーム。** ここに表示されるバフとデバフは常に英語です。ゲームがそのツールチップを、アドオンが触れることのできないウィンドウに表示するためです。
+
+ミニマップの下の自分のバフとパーティーフレームのバフは、戦闘外なら日本語で表示されます。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 
 **名前が英語のままなのはなぜ？** 意図した仕様です。人物・地名・モンスター・アイテム・呪文の名前は変えません。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。
 
-**マーカーは何を表している？** **[未翻訳 / Not Translated]** はまだ翻訳がなく、ゲームの英語のまま表示されている行です。**[要更新 / English Changed]** は翻訳のあとで英語の原文が変わった行です。どちらも設定で非表示にできます。
+**マーカーは何を表している？** **[未翻訳 / Not Translated]** はまだ翻訳がなく、ゲームの英語のまま表示されている行です。**[要更新 / English Changed]** は翻訳のあとで英語の原文が変わった行です。
+
+どちらも設定で非表示にできます。
 
 **どのゲームで使える？** World of Warcraft: Forever 専用です。
 

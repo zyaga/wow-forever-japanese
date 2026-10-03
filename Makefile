@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: coverage-py coverage-lua lint-public report-intake report-apply coverage forever-table-counts ui-inventory tooltip-line-kinds visible-spells level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: coverage-py coverage-lua lint-public report-intake report-apply coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -129,7 +129,7 @@ UI_KEYS            ?= $(CURDIR)/pipeline/ui_keys.txt
 # are read from these clients' folders only (ADR-042). Forever is the only target (ADR-034) and the import-served step drops
 # ui English no Forever table stamps, so the other clients are not asked for the tables.
 FAMILY_CLIENTS     := forever
-FAMILY_TABLES      := Faction Achievement Achievement_Category SkillLine SkillLineCategory EmotesTextData HolidayDescriptions CurrencyTypes CurrencyCategory SpellDispelType CreatureType QuestSort ChrCustomizationCategory ChrCustomizationOption ChrCustomizationChoice ChrCustomizationReq PVPScoreboardColumnHeader GroupFinderCategory GroupFinderActivityGrp GroupFinderActivity UiWidgetStringSource ItemNameDescription
+FAMILY_TABLES      := Faction Achievement Achievement_Category SkillLine SkillLineCategory EmotesTextData HolidayDescriptions CurrencyTypes CurrencyCategory SpellDispelType CreatureType QuestSort ChrCustomizationCategory ChrCustomizationOption ChrCustomizationChoice ChrCustomizationReq PVPScoreboardColumnHeader GroupFinderCategory GroupFinderActivityGrp GroupFinderActivity UiWidgetStringSource ItemNameDescription CriteriaTree RenownRewards SharedString TradeSkillCategory MailTemplate QuestInfo AreaPOI AreaPOIState PetLoyalty Map Difficulty UiEventToast BroadcastText ItemPetFood Exhaustion ItemSubClassMask RolodexType FriendshipReputation MapDifficulty MapDifficultyXCondition PlayerCondition LockType SpellFlyout ServerMessages TransmogSituation TransmogSituationTrigger TransmogOutfitSlotOption
 FAMILY_ARGS         = $(if $(filter $(CLIENT),$(FAMILY_CLIENTS)),--families "$(CLIENT_DIR)/")
 FAMILY_CSVS         = $(if $(filter $(CLIENT),$(FAMILY_CLIENTS)),$(foreach t,$(FAMILY_TABLES),"$(CLIENT_DIR)/$(t).csv"))
 # Bump only when the inputs change: it is written into every line's provenance.imported, so a
@@ -289,13 +289,23 @@ level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh leve
 		mv level1_spells.txt.part level1_spells.txt
 	@head -1 pipeline/level1_spells.txt
 
-visible-spells: ## regenerate pipeline/visible_spells.txt from the installed client (the spells whose tooltips the addon translates): WOW_DIR=<client folder> [PRODUCT=wow_classic_beta]
-	@test -n "$(WOW_DIR)" || { echo "usage: make visible-spells WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_> [PRODUCT=wow_classic_beta]"; exit 2; }
-	@test -d "$(WOW_DIR)" || { echo "visible-spells: no folder $(WOW_DIR)"; exit 1; }
-	@W="$$(cd "$(WOW_DIR)/.." && pwd)" && cd pipeline && \
-		$(PY) -m wfj.dev.visible_spells --wow "$$W" --product "$(PRODUCT)" > visible_spells.txt.part && \
-		mv visible_spells.txt.part visible_spells.txt
-	@head -5 pipeline/visible_spells.txt
+# Every text column of every client table the Forever install ships, and the rows its hotfix cache adds
+# (pipeline/served_columns.txt; tests/python/test_served_inventory.py needs a disposition for each in
+# pipeline/served_dispositions.txt). The archive root names no files, so the community listfile names the
+# tables: refresh it per build like the UI extract's (docs/operations/beta-day-harvest.md). Prints what the
+# build added, dropped or changed against the committed file.
+LISTFILE ?= $(INPUTS)/community-listfile.csv
+
+served-columns: ## regenerate pipeline/served_columns.txt from the installed client (commit the result; read-only, no network): WOW_DIR=<client folder> [LISTFILE=<community listfile>] [HOTFIXES=]
+	@test -n "$(WOW_DIR)" || { echo "usage: make served-columns WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_> [LISTFILE=<csv>] [HOTFIXES=<DBCache.bin>]"; exit 2; }
+	@test -d "$(WOW_DIR)" || { echo "served-columns: no folder $(WOW_DIR)"; exit 1; }
+	@test -f "$(LISTFILE)" || { echo "served-columns: no listfile at $(LISTFILE) (LISTFILE=<community listfile>)"; exit 1; }
+	@W="$$(cd "$(WOW_DIR)/.." && pwd)" && H="$(HOTFIXES)" && case "$$H" in "") H="$$(cd "$(WOW_DIR)" && pwd)/Cache/ADB/enUS/DBCache.bin"; test -f "$$H" || H="";; /*) ;; *) H="$$PWD/$$H";; esac && \
+		L="$(LISTFILE)" && C="$$(cd "$(WOW_DIR)" && pwd)" && cd pipeline && \
+		$(PY) -m wfj.dev.served_columns --wow "$$W" --product "$(forever_PRODUCT)" --listfile "$$L" \
+			$${H:+--hotfixes "$$H"} --wdb "$$C/Cache/WDB/enUS" --previous served_columns.txt > served_columns.txt.part && \
+		mv served_columns.txt.part served_columns.txt
+	@sed -n 3,5p pipeline/served_columns.txt
 
 # The Forever (camelot) inventory, the only one (Forever is the only target). FOREVER_UI is a UI extract of the Forever client (`python -m wfj.dev.client_ui
 # --product wow_classic_beta --out <dir>`, lowercased paths are fine) and FOREVER_GLOBALSTRINGS its GlobalStrings table
@@ -307,6 +317,7 @@ ui-inventory: ## regenerate pipeline/ui_inventory.txt from a Forever UI extract 
 	@test -d "$(FOREVER_UI)" || { echo "ui-inventory: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }
 	@test -f "$(FOREVER_GLOBALSTRINGS)" || { echo "ui-inventory: no GlobalStrings at $(FOREVER_GLOBALSTRINGS) (FOREVER_GLOBALSTRINGS=<csv>)"; exit 1; }
 	cd pipeline && $(PY) -m wfj.dev.ui_inventory "$(FOREVER_UI)" "$(FOREVER_GLOBALSTRINGS)" > ui_inventory.txt.tmp && mv ui_inventory.txt.tmp ui_inventory.txt
+	cd pipeline && $(PY) -m wfj.dev.ui_loadset "$(FOREVER_UI)" "$(FOREVER_GLOBALSTRINGS)" > ui_loadset.txt.tmp && mv ui_loadset.txt.tmp ui_loadset.txt
 
 tooltip-line-kinds: ## regenerate pipeline/tooltip_line_kinds_inventory.txt and tooltip_data_types_inventory.txt from a Forever UI extract (commit the result): [FOREVER_UI=<Interface/AddOns>]
 	@test -d "$(FOREVER_UI)" || { echo "tooltip-line-kinds: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }
@@ -327,9 +338,10 @@ forever-titles: ## list every SetTitle( call site in the camelot load sets (the 
 # A player's SavedVariables file (WoWForeverJapanese.lua) handed off through the collector-dump issue template.
 DUMP ?=
 
-import-collector: ## add one collector dump to data/english/ (never overwrites pfQuest / wago lines): DUMP=<file>
+import-collector: ## add one collector dump to data/english/ (replaces stand-in lines, keeps the client's own files): DUMP=<file>
 	@test -n "$(DUMP)" || { echo "usage: make import-collector DUMP=<path to WoWForeverJapanese.lua>"; exit 2; }
-	cd pipeline && $(PY) -m wfj import english collector $(abspath $(DUMP))
+	@D="$(DUMP)"; case "$$D" in /*) ;; *) D="$$PWD/$$D";; esac; \
+		cd pipeline && $(PY) -m wfj import english collector "$$D"
 
 # A machine draft (ADR-014): DRAFT=<file.jsonl> TYPE=<type> NAME=<draft name> MODEL=<model id> [CRITIC=<id>] DATE=<YYYY-MM-DD>
 # [REVERIFY=1] (ui, quest, objective, item, spell): every named line records the current English, so a stale line is judged fresh.
@@ -344,7 +356,7 @@ stats: ## coverage report over data/ (no writes)
 	cd pipeline && $(PY) -m wfj stats
 
 coverage: ## how much of the game ships in Japanese → docs/operations/coverage.md (run before every data pull request)
-	cd pipeline && $(PY) -m wfj.dev.coverage --out ../docs/operations/coverage.md
+	cd pipeline && $(PY) -m wfj.dev.coverage --out ../docs/operations/coverage.md --build $(forever_BUILD)
 
 report-intake: ## a player's fix report (GitHub issue ISSUE=N, or a saved body REPORT=<file> ISSUE=N) → batches/reports/issue-N/triage.jsonl
 	@test -n "$(ISSUE)" || { echo "usage: make report-intake ISSUE=<n> [REPORT=<saved issue body>] [CREDIT=<name>] [FORCE=1]"; exit 2; }
@@ -364,12 +376,13 @@ data: import check generate ## import → check → generate. Rebuilds imported 
 # The rebuild proof. From an empty data/english, `make data` over every client's pinned inputs must give back
 # the committed data/ and the addon's generated files. Refuses a dirty data/ or addon (nothing is deleted then);
 # otherwise the tree is what HEAD has again after a pass, and any difference is printed and fails the target.
-rebuild-check: ## empty data/english, run `make data` from the pinned inputs of every client, fail on any difference from HEAD (needs a clean data/ + addon)
+rebuild-check: ## empty data/english (collector lines kept), run `make data` from the pinned inputs of every client, fail on any difference from HEAD (needs a clean data/ + addon)
 	@$(ONE_CLIENT_GUARD)
 	@test -z "$$(git status --porcelain -- data $(ADDON) pipeline Makefile)" || { echo "rebuild-check: data/, $(ADDON), pipeline/ or the Makefile has uncommitted changes; commit or restore them first"; git status --short -- data $(ADDON) pipeline Makefile | head; exit 1; }
 	@$(MAKE) -s wdb-preflight
 	@for f in "$(PRED_QUEST)" "$(PRED_TOOLTIP)" "$(QJP)" "$(CJQ)" "$(PFQUEST)" "$(VMANGOS_DB)" "$(UI_KEYS)"; do test -e "$$f" || { echo "rebuild-check: shared input missing: $$f; nothing deleted"; exit 1; }; done
-	find data/english -name '*.jsonl' -delete
+	@# the collector's lines (English a client recorded in game) are no pinned input's: kept, ADR-053
+	cd pipeline && $(PY) -m wfj.dev.reset_english ../data/english
 	@# one job, stop at the first error: `data` is import → check → generate over the files just deleted
 	@$(MAKE) -s -j1 -S data || { echo "rebuild-check: the rebuild failed part-way; restore the tree with: git checkout -- data $(ADDON) && git clean -fd -- data $(ADDON)"; exit 1; }
 	@if [ -n "$$(git status --porcelain -- data $(ADDON))" ]; then git status --short -- data $(ADDON) | head -40; git diff --stat -- data $(ADDON) | tail -1; echo "rebuild-check: the rebuild differs from HEAD"; exit 1; fi

@@ -19,6 +19,9 @@ HelpTooltip.SURFACE = SURFACE
 local Compat = WFJ.Compat
 
 local owners = setmetatable({}, { __mode = "k" }) -- frame → opts ({ only = … } or true)
+-- A tooltip the client built from tooltip data of a kind with no module of its own (UI/TooltipData): walked like a
+-- registered owner's until it hides or shows something else. { owner, opts } | nil
+local adopted = nil
 local busy = false
 local recorded = 0 -- the highest line number recorded on the last pass
 
@@ -69,6 +72,10 @@ function HelpTooltip.walk(tt)
   tt = tt or tooltip()
   if busy or type(tt) ~= "table" or not tt.GetOwner then return 0 end
   local opts = owners[tt:GetOwner()]
+  if not opts and adopted and adopted.owner == tt:GetOwner() then
+    -- the adopted kind's data is still what the tooltip shows; any other build ends the adoption
+    if HelpTooltip.dataKind(tt) == adopted.kind then opts = adopted.opts else adopted = nil end
+  end
   local foreign = not opts or (tt.GetItem and tt:GetItem()) or (tt.GetSpell and tt:GetSpell())
   if foreign then -- reused for another owner, an item or a spell: the client rewrote the lines; forget ours
     if recorded > 0 then -- forget, not release: a line the client rewrote must not get our old English back
@@ -86,7 +93,9 @@ function HelpTooltip.walk(tt)
       for _, side in ipairs({ "Left", "Right" }) do
         local fs = Compat.resolve(name .. "Text" .. side .. i)
         local recKey = side:sub(1, 1) .. i
-        if fs and fs.GetText and (fs:GetText() or "") ~= "" then
+        if i < (labelOpts and labelOpts.from or 1) then
+          WFJ.SurfaceState.drop(SURFACE, recKey) -- a line the opts leave out (a name on line 1)
+        elseif fs and fs.GetText and (fs:GetText() or "") ~= "" then
           -- The client appended to a line we already translated (GameTooltip:AppendText adds the key binding after
           -- SetText, whose hook has run): put its English back in front of the addition, so the whole line is
           -- matched again (the `binding` form) and the record carries its font instead of dropping it.
@@ -180,8 +189,26 @@ function HelpTooltip.appended(tt, opts)
   return n
 end
 
+-- The kind of tooltip data `tt` was built from (Enum.TooltipDataType), or nil for lines written in Lua.
+function HelpTooltip.dataKind(tt)
+  local ok, kind = pcall(function()
+    local info = tt:GetPrimaryTooltipInfo()
+    return info and info.tooltipData and info.tooltipData.type
+  end)
+  return ok and kind or nil
+end
+
+-- `tt` built from tooltip data of a kind no other module handles: walked now and on its later Show / SetText
+-- passes with `opts` (`from = 2` leaves line 1, a name, alone), until it hides. → the number of dictionary lines
+function HelpTooltip.adopt(tt, opts)
+  if type(tt) ~= "table" or type(tt.GetOwner) ~= "function" or tt:GetOwner() == nil then return 0 end
+  adopted = { owner = tt:GetOwner(), opts = type(opts) == "table" and opts or true, kind = HelpTooltip.dataKind(tt) }
+  return HelpTooltip.walk(tt)
+end
+
 function HelpTooltip.release()
   recorded = 0
+  adopted = nil
   return WFJ.Render.release(SURFACE)
 end
 

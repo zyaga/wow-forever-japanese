@@ -78,6 +78,16 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     end
   end)
 
+  it("a conditional description (this character's wording) is its keyed text, not the quest's own", function()
+    DATA.gossip = { k1 = { ja = "条件付きの説明文", status = "." } }
+    WFJ.ShippedGossipKey = function(text) if text == Stub.quest.description then return "k1" end end
+    Stub.showDetail()
+    assert.are.equal("条件付きの説明文", QuestInfoDescriptionText:GetText())
+    assert.are.equal("gossip", SS.get(DETAIL, "description").meta.kind)
+    assert.are.equal("Sharptalonの鉤爪", QuestInfoTitleHeader:GetText()) -- the other fields by the quest id
+    WFJ.ShippedGossipKey, DATA.gossip = nil, nil
+  end)
+
   it("detail window translates title / description / objectives by field with the API id; refit runs",
   function()
     Stub.showDetail()

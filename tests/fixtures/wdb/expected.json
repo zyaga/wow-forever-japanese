@@ -11,7 +11,12 @@
    "description": "If you want to be useful, then why don't you do something about the situation near Talondeep Path?$B$BThe transports between Ashenvale and Stonetalon are at a standstill because of the lake coming alive and attacking anything that gets close... which means anyone on the path.  What'd be even more useful than just putting the hammer down on the water elementals there is someone scouting the gazebo on Mystral Lake - the one that has a solid view of the Alliance outpost there.$B$BYou up for being useful?",
    "area": "Scout the gazebo on Mystral Lake that overlooks the nearby Alliance outpost.",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 170,
@@ -20,7 +25,12 @@
    "description": "I hope you're here to lend us a hand, $c. After the last trogg attack, we could use all the help we can get.$b$bI hear the buggers have been popping up all across the lands, and it seems Coldridge Valley is no exception. They've been spotted all over the hills to the southeast and near the frozen lake.$b$bAnd that's not all, just a few nights ago, they attacked and overran our camp to the west! $b$bWe're a bit shorthanded here, $g lad : lass;, and we need strong arms to help drive the troggs back.",
    "area": "",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 172,
@@ -29,7 +39,12 @@
    "description": "You're willing to help us here at the orphanage?  Bless you, friend; your aid during Children's Week will be invaluable.$B$BTake this whistle.  You will only be able to use it for a short amount of time - typically not longer than Children's Week itself.  When you use it, you will be able to talk with the child you've agreed to look after.  Using it again will dismiss the child.$B$BBy all means $N - use the whistle and meet your ward!  I'm sure the child will be most eager to meet you.",
    "area": "",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 247,
@@ -38,7 +53,12 @@
    "description": "",
    "area": "",
    "objective_texts": [],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   },
   {
    "id": 498,
@@ -56,7 +76,12 @@
      "Rescue Tog'thar"
     ]
    ],
-   "conditional": []
+   "conditional": [],
+   "portrait_giver_text": "",
+   "portrait_giver_name": "",
+   "portrait_turnin_text": "",
+   "portrait_turnin_name": "",
+   "completion_log": ""
   }
  ]
 }

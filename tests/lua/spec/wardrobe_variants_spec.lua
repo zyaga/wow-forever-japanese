@@ -98,3 +98,59 @@ describe("the wardrobe's variant dropdown on Forever", function()
     assert.are.equal(0, WFJ.Wardrobe.onVariant())
   end)
 end)
+
+-- The search box's placeholder: SearchBox.Instructions, SearchBoxTemplate's instructionText SEARCH written once at
+-- load (mainline/blizzard_wardrobe.lua:1698–1700; inputboxtemplates.lua:174–177). The EditBox itself is the player's.
+describe("the wardrobe's search box placeholder on Forever", function()
+  local WFJ
+
+  local function alt(down)
+    Stub.keys.alt = down
+    WFJ.Modifier.refresh()
+  end
+
+  local SEARCH_UI = {}
+  for k, v in pairs(UI) do SEARCH_UI[k] = v end
+  SEARCH_UI.SEARCH = { "Search", "検索" }
+
+  local box
+  before_each(function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    Stub.installTooltipAPI()
+    WFJ = H.loadChunks(FILES)
+    H.uiSetup(WFJ, SEARCH_UI)
+    C.load()
+    box = _G.WardrobeCollectionFrame.SearchBox
+    box.Instructions = Stub.fontString(_G.SEARCH)
+    box.text = ""
+    function box.GetText(self) return self.text end
+    function box.SetText(self, t) self.text = t end
+    assert.is_true(WFJ.Wardrobe.init())
+  end)
+
+  after_each(function()
+    H.uiTeardown()
+    Stub.keys.alt = false
+    C.unload()
+  end)
+
+  it("shows the Japanese placeholder; Alt shows the English; the typed text is never read or written", function()
+    assert.are.equal("検索", box.Instructions:GetText())
+    alt(true)
+    assert.are.equal("Search", box.Instructions:GetText())
+    alt(false)
+    assert.are.equal("検索", box.Instructions:GetText())
+    box:SetText("Search") -- the player types the dictionary word itself
+    WFJ.Wardrobe.showStatic()
+    assert.are.equal("Search", box:GetText())
+    assert.is_true(WFJ.Labels.forbidden(box))
+    assert.are.equal(0, WFJ.Labels.show("wardrobe", "probe", box))
+  end)
+
+  it("a placeholder that is no SEARCH text stays as written", function()
+    box.Instructions:SetText("Search appearances")
+    WFJ.Render.forget("wardrobe")
+    WFJ.Wardrobe.showStatic()
+    assert.are.equal("Search appearances", box.Instructions:GetText())
+  end)
+end)

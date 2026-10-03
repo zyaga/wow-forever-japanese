@@ -56,7 +56,7 @@ local ORDER = {
   "TextToSpeech" }, { "chattabs", "ChatTabs" }, { "combatlog", "CombatLog" }, { "addonlist", "AddonList" },
   { "scripterrors", "ScriptErrors" }, { "splash", "Splash" }, { "eventtrace", "EventTrace" }, { "chromietime",
   "ChromieTime" }, { "alerts", "Alerts" }, { "errors", "Errors" }, { "chatsystem", "ChatSystem" },
-  { "bossbanner", "BossBanner" }, { "cinematic", "Cinematic" },
+  { "bossbanner", "BossBanner" }, { "cinematic", "Cinematic" }, { "subtitles", "Subtitles" },
   { "coinpickup", "CoinPickup" }, { "combatfeedback", "CombatFeedback" }, { "equipmentflyout", "EquipmentFlyout" },
   { "ghostframe", "GhostFrame" }, { "guildinvite", "GuildInvite" }, { "instanceabandon", "InstanceAbandon" },
   { "instancedifficulty", "InstanceDifficulty" }, { "loothistory", "LootHistory" }, { "lossofcontrol",

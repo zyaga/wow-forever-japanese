@@ -51,7 +51,11 @@
 --     block:SetHeader(achievementName) → HeaderText (blizzard_achievementobjectivetracker.lua:121–123;
 --     blizzard_objectivetrackerblock.lua:155–159), called as self:AddAchievement from LayoutContents (:113):
 --     post-hooked on the instance, the block found with GetExistingBlock(id), the AchievementTitle family only.
---     Its criteria lines are not table text and are left as written.
+--     Its criteria lines are block:AddObjective(criteriaIndex, criteriaString) → line.Text (:130-152;
+--     blizzard_objectivetrackerblock.lua:79-98, 161-208), kept in block.usedLines: each line's Text restricted to
+--     the CriteriaText family. A progress-bar criterion is "<count> <description>", a meta criterion another
+--     achievement's title, the overflow line "...", and a criterion with no shipped row (a name) has no key: all of
+--     those stay as the client wrote them.
 -- Out of scope: objective / progress lines, the block right-click menus (the menu system's), the challenge-mode
 -- block (no keystone UI on camelot). Without ObjectiveTrackerFrame init returns false and touches nothing.
 local _, WFJ = ...
@@ -118,6 +122,7 @@ local function get(key) return Compat.get(SURFACE, key) end
 local popupKey = WFJ.Labels.keyer("popup.") -- a pooled popup FontString's record key
 local achievementKey = WFJ.Labels.keyer("achievement.") -- a pooled achievement block's record key
 local toastKey = WFJ.Labels.keyer("toast.") -- a pooled toast header's record key
+local criterionKey = WFJ.Labels.keyer("criterion.") -- a pooled objective line's record key
 
 -- One module's header as it is now. → 1 | 0
 function Tracker.showHeader(key)
@@ -128,13 +133,22 @@ function Tracker.showHeader(key)
   return n
 end
 
--- hooksecurefunc target on AchievementObjectiveTracker:AddAchievement: the block's title. → 1 | 0
+-- hooksecurefunc target on AchievementObjectiveTracker:AddAchievement: the block's title and its criteria lines.
+-- → words shown
 function Tracker.onAchievement(module, achievementID)
   if type(module) ~= "table" or type(module.GetExistingBlock) ~= "function" then return 0 end
   local ok, block = pcall(module.GetExistingBlock, module, achievementID)
   if not ok or type(block) ~= "table" then return 0 end
   local n = WFJ.Labels.show(SURFACE, achievementKey(block), block.HeaderText, nil,
     WFJ.Labels.families("AchievementTitle"))
+  if type(block.usedLines) == "table" then
+    -- an achievement with no criteria of its own shows its description as the line (lua:183): AchievementDescription
+    local only = WFJ.Labels.families("CriteriaText", "AchievementDescription")
+    for _, line in pairs(block.usedLines) do
+      local text = type(line) == "table" and line.Text or nil
+      if type(text) == "table" then n = n + WFJ.Labels.show(SURFACE, criterionKey(text), text, nil, only) end
+    end
+  end
   WFJ.Render.updateBanner(SURFACE)
   return n
 end

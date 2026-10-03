@@ -4,6 +4,7 @@
 {"id": "YES", "field": "text", "en": "Yes", "hash": "00178243615c2262", "src": "db2@1.60.1.70170"}
 {"id": "YOUR_CLASS_MAY_NOT_PERFORM_ROLE", "field": "text", "en": "Your class may not perform this role.", "hash": "22cc94612f782ce4", "src": "db2@1.60.1.70170"}
 {"id": "YOUR_ROLE", "field": "text", "en": "Your Role", "hash": "6c3c037f3a466b05", "src": "db2@1.60.1.70170"}
+{"id": "YOU_ARE_NOT_SPECIALIZED_IN_ROLE", "field": "text", "en": "You are not specialized for this role.", "hash": "bfd957972900b251", "src": "db2@1.60.1.70170"}
 {"id": "YOU_COLLECTED_LABEL", "field": "text", "en": "You Collected", "hash": "c050fff627d8bee6", "src": "db2@1.60.1.70170"}
 {"id": "YOU_EARNED_LABEL", "field": "text", "en": "You Earned", "hash": "e34c8f22dd69cf44", "src": "db2@1.60.1.70170"}
 {"id": "YOU_LOOT_MONEY", "field": "text", "en": "You loot %s", "hash": "64b51f408b50605f", "src": "db2@1.60.1.70170"}

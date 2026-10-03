@@ -303,3 +303,173 @@ describe("the Legacy window's client-table text", function()
     end)
   end)
 end)
+
+-- The challenge cards' criteria and the reward track. LegacyChallengeObjectives (blizzard_legacysystemtemplates.xml:
+-- 155) is the one frame every card borrows: its Display acquires a pooled criterion per row and calls Init, which
+-- writes Name (blizzard_legacychallengebutton.lua:102-111, 158-175), the CriteriaText family only; a counted criterion
+-- shows a progress bar instead (showingProgress). The reward track's Init acquires the cards into Elements
+-- (rewardtracktemplates.lua:38-63); TryInit calls each card's SetRewardName (:367-386, 493-495), the
+-- RenownRewardName family; each card's tooltip (:517-549) the RenownRewardName / RenownRewardDescription families.
+describe("the Legacy window's criteria and reward track", function()
+  local WFJ, SS, objectives, track
+
+  local ROWS = {}
+  for k, v in pairs(UI) do ROWS[k] = v end
+  ROWS["CriteriaText:121233"] = { "Explore Alterac Mountains", "アルターク山脈を探検する" }
+  ROWS["AchievementTitle:9001"] = { "Slay Ragnaros", "ラグナロスを倒す" }
+  ROWS["RenownRewardName:1832"] = { "Rank 1 Rewards", "ランク1の報酬" }
+  ROWS["RenownRewardDescription:1832"] = { "Faction Tabard", "陣営タバード" }
+  ROWS["RenownRewardToast:1832"] = { "Faction Tabard Unlocked", "陣営タバード解放" }
+  ROWS["RENOWN_REWARD_MILESTONE_TOOLTIP_TITLE"] = { "Renown %d Rewards", "名声 %d の報酬" }
+
+  local function alt(down) Stub.keys.alt = down; WFJ.Modifier.refresh() end
+  local function fs(text) return Stub.fontString(text or "") end
+  local function unrecorded(widget)
+    for _, bucket in pairs(SS.surfaces()) do
+      for _, rec in pairs(bucket) do if rec.fs == widget then return false end end
+    end
+    return true
+  end
+
+  -- LegacyChallengeObjectivesMixin:Display: rows are { text, showProgress }
+  local function installObjectives()
+    local o = CreateFrame("Frame", "LegacyChallengeObjectives")
+    o.criteriaPool = L.pool(function() return { Name = fs(""), ProgressBar = { Text = fs("") } } end)
+    function o.Display(self, rows)
+      self.criteriaPool:ReleaseAll()
+      for _, r in ipairs(rows) do
+        local c = self.criteriaPool:Acquire()
+        c.showingProgress = r[2] == true
+        c.Name.text = r[1]
+        if c.showingProgress then c.ProgressBar.Text.text = "3 / 10" end
+      end
+    end
+    return o
+  end
+
+  -- RewardTrackFrameMixin:Init + RenownLevelMixin (SetInfo, TryInit → SetRewardName, RefreshTooltip)
+  local function installTrack(f)
+    local t = CreateFrame("Frame")
+    t.pool = L.pool(function()
+      local card = CreateFrame("Frame")
+      card.RewardName, card.Level = fs(""), fs("")
+      function card.SetInfo(c, info) c.info, c.init = info, false end
+      function card.SetRewardName(c) c.RewardName.text = c.info.name end
+      function card.TryInit(c)
+        if c.init then return end
+        c.init = true
+        c.Level.text = tostring(c.info.level)
+        c:SetRewardName()
+      end
+      function card.OnEnter(c)
+        local tt = _G.GameTooltip
+        tt:SetOwner(c)
+        if c.info.count == 1 then
+          tt:SetText(c.info.name)
+          tt:AddLine(c.info.description)
+        else
+          tt:SetText(("Renown %d Rewards"):format(c.info.level))
+          tt:AddLine("- " .. c.info.name)
+        end
+        tt:Show()
+      end
+      return card
+    end)
+    function t.Init(self, list)
+      self.pool:ReleaseAll()
+      self.Elements = {}
+      for i, info in ipairs(list) do
+        local card = self.pool:Acquire()
+        card.index = i
+        self.Elements[i] = card
+        card:SetInfo(info)
+      end
+    end
+    f.RewardTrackPage.LegacyRewardProgressFrame = t
+    return t
+  end
+
+  before_each(function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    Stub.installTooltipAPI()
+    WFJ = H.loadChunks(FILES)
+    SS = WFJ.SurfaceState
+    H.uiSetup(WFJ, ROWS)
+    local f = L.load(STATE)
+    objectives = installObjectives()
+    track = installTrack(f)
+    assert.is_true(WFJ.Legacy.init())
+  end)
+
+  after_each(function()
+    H.uiTeardown()
+    Stub.keys.alt = false
+    _G.LegacyChallengeObjectives = nil
+    L.unload()
+  end)
+
+  local function names()
+    local out = {}
+    for c in objectives.criteriaPool:EnumerateActive() do out[#out + 1] = c.Name:GetText() end
+    return out
+  end
+
+  it("a criterion is a CriteriaText row's Japanese; Alt shows English; a name, a count and another family stay",
+    function()
+      objectives:Display({ { "Explore Alterac Mountains" }, { "Hogger" }, { "Explore Alterac Mountains", true },
+        { "Slay Ragnaros" }, { "Track" } })
+      assert.are.same({ "アルターク山脈を探検する", "Hogger", "Explore Alterac Mountains", "Slay Ragnaros", "Track" },
+        names())
+      local counted
+      for c in objectives.criteriaPool:EnumerateActive() do if c.showingProgress then counted = c end end
+      assert.is_true(unrecorded(counted.Name))
+      assert.are.equal("3 / 10", counted.ProgressBar.Text:GetText())
+      alt(true)
+      assert.are.equal("Explore Alterac Mountains", names()[1])
+      alt(false)
+      assert.are.equal("アルターク山脈を探検する", names()[1])
+      objectives:Display({ { "Hogger" } }) -- the pooled criterion reused for a name
+      assert.are.same({ "Hogger" }, names())
+    end)
+
+  it("a reward card's name is a RenownRewardName row's Japanese; Alt shows English; other names stay", function()
+    track:Init({ { level = 1, name = "Rank 1 Rewards", description = "Faction Tabard", count = 1 },
+      { level = 2, name = "Gryphon Rider's Lance", description = "Faction Tabard", count = 1 },
+      { level = 3, name = "Faction Tabard Unlocked", description = "x", count = 1 } })
+    for _, card in ipairs(track.Elements) do card:TryInit() end
+    local cards = track.Elements
+    assert.are.equal("ランク1の報酬", cards[1].RewardName:GetText())
+    assert.are.equal("Gryphon Rider's Lance", cards[2].RewardName:GetText()) -- an item's name: no row
+    assert.are.equal("Faction Tabard Unlocked", cards[3].RewardName:GetText()) -- a RenownRewardToast row
+    assert.are.equal("1", cards[1].Level:GetText())
+    alt(true)
+    assert.are.equal("Rank 1 Rewards", cards[1].RewardName:GetText())
+    alt(false)
+    assert.are.equal("ランク1の報酬", cards[1].RewardName:GetText())
+    -- the track built again: the reused card gets new info and SetRewardName again
+    track:Init({ { level = 1, name = "Gryphon Rider's Lance", description = "x", count = 1 } })
+    track.Elements[1]:TryInit()
+    assert.are.equal("Gryphon Rider's Lance", track.Elements[1].RewardName:GetText())
+  end)
+
+  it("a reward card's tooltip shows its name and description rows in Japanese; a name line stays", function()
+    track:Init({ { level = 1, name = "Rank 1 Rewards", description = "Faction Tabard", count = 1 },
+      { level = 4, name = "Gryphon Rider's Lance", count = 2 } })
+    track.Elements[1]:OnEnter()
+    assert.are.equal("ランク1の報酬", _G.GameTooltipTextLeft1:GetText())
+    assert.are.equal("陣営タバード", _G.GameTooltipTextLeft2:GetText())
+    track.Elements[2]:OnEnter()
+    assert.are.equal("名声 4 の報酬", _G.GameTooltipTextLeft1:GetText())
+    assert.are.equal("- Gryphon Rider's Lance", _G.GameTooltipTextLeft2:GetText())
+  end)
+
+  it("wrong shapes raise nothing", function()
+    assert.has_no.errors(function()
+      assert.are.equal(0, WFJ.Legacy.onObjectives({ criteriaPool = 1 }))
+      assert.are.equal(0, WFJ.Legacy.onTrack({ Elements = "x" }))
+      assert.are.equal(0, WFJ.Legacy.onRewardName("x"))
+      WFJ.Legacy.onTrack({ Elements = { 1, { RewardName = 2 } } })
+    end)
+  end)
+end)
+

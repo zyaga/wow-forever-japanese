@@ -15,6 +15,9 @@ local UI = {
   UNIT_SKINNABLE_LEATHER = { "Skinnable", "皮はぎ可能" },
   CORPSE_TOOLTIP = { "Corpse of %s", "%sの死体" },
   RAID = { "Raid", "レイド" }, -- a dictionary word that is no unit line
+  -- a game object's lock and requirement lines: client-table rows the C client writes
+  ["LockTypeName:1"] = { "Pick Lock", "鍵開け" },
+  ["PlayerConditionFailure:3882"] = { "Requires Frostwolf Clan - Exalted", "必要: Frostwolf Clan - 崇拝" },
 }
 
 describe("UI/TooltipUnit: unit mouseover lines", function()
@@ -55,6 +58,19 @@ describe("UI/TooltipUnit: unit mouseover lines", function()
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal("Level 11 Elite Humanoid", left(2))
     Stub.keys.alt = false; WFJ.Modifier.refresh()
+  end)
+
+  it("a game object's lock and requirement lines take their client-table rows; its name stays", function()
+    tt:SetOwner(_G.UIParent, "ANCHOR_CURSOR")
+    tt:SetText("Battered Chest")
+    tt:AddLine("Pick Lock")
+    tt:AddLine("Requires Frostwolf Clan - Exalted")
+    -- the Object post-call is the same handler as the Unit one (TooltipUnit.init registers onUnit for both)
+    for _, fn in ipairs(Stub.tooltipPostCalls[2] or {}) do fn(tt) end
+    tt:Show()
+    assert.are.equal("Battered Chest", left(1))
+    assert.are.equal("鍵開け", left(2))
+    assert.are.equal("必要: Frostwolf Clan - 崇拝", left(3))
   end)
 
   it("a corpse line keeps the name inside it", function()

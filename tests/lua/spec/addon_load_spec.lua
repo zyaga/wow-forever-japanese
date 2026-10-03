@@ -12,7 +12,8 @@ local TAIL = {
   "Core/Collector.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", -- the fix reports
   "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
-  "UI/ButtonText.lua", "UI/Labels.lua", "UI/LoadOnDemand.lua", "UI/HelpTooltip.lua",
+  "UI/ButtonText.lua", "UI/Labels.lua", "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
+  "UI/HelpTooltip.lua", "UI/TooltipData.lua",
   -- shared helpers (ADR-030)
   "UI/SettingsKeys.lua", "UI/LabelTree.lua", "UI/TooltipLines.lua",
   -- the always-visible windows
@@ -49,9 +50,11 @@ local TAIL = {
   "UI/SettingsTutorials.lua", "UI/EditMode.lua", "UI/QuickKeybind.lua", "UI/ColorPicker.lua", "UI/ChatConfig.lua",
   "UI/TextToSpeech.lua", "UI/ChatTabs.lua", "UI/CombatLog.lua", "UI/AddonList.lua", "UI/ScriptErrors.lua",
   "UI/Splash.lua", "UI/EventTrace.lua", "UI/ChromieTime.lua", "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua",
+  "UI/ChatInput.lua",
   "UI/Speech.lua",
   "UI/BossBanner.lua",
-  "UI/Cinematic.lua", "UI/CoinPickup.lua", "UI/CombatFeedback.lua", "UI/EquipmentFlyout.lua", "UI/GhostFrame.lua",
+  "UI/Cinematic.lua", "UI/Subtitles.lua",
+  "UI/CoinPickup.lua", "UI/CombatFeedback.lua", "UI/EquipmentFlyout.lua", "UI/GhostFrame.lua",
   "UI/GuildInvite.lua", "UI/InstanceAbandon.lua", "UI/InstanceDifficulty.lua", "UI/LootHistory.lua",
   "UI/LossOfControl.lua", "UI/MajorFactionToast.lua", "UI/PartyPose.lua", "UI/PetHappiness.lua",
   "UI/PlayerChoice.lua", "UI/ReadyCheck.lua", "UI/StackSplit.lua", "UI/StreamingIcon.lua", "UI/ZoneText.lua",
@@ -359,6 +362,24 @@ describe("addon loads in TOC order and answers /wfj version", function()
     WFJ.Settings.set("collector.enabled", true)
     assert.are.same({ "refused", "no_player" }, { WFJ.Collector.record("quest", 8, "description", "Kill ten wolves.") })
     _G.UNKNOWNOBJECT = unknown
+  end)
+
+  it("the shipped gossip key of quest text: asked again until the player is known, and per character", function()
+    local keyed = WFJ.Lookup.keyed
+    local text = "Well met, Reyn. Go now."
+    local want = WFJ.Collector.key(text, { name = "Reyn", class = "Hunter", race = "Night Elf" })
+    WFJ.Lookup.keyed = function(type_, k) return type_ == "gossip" and k == want and { ja = "x" } or nil end
+    local unknown = _G.UNKNOWNOBJECT
+    _G.UNKNOWNOBJECT = "Reyn" -- the player record has not loaded: the name is the client's placeholder
+    assert.is_nil(WFJ.ShippedGossipKey(text))
+    _G.UNKNOWNOBJECT = unknown
+    assert.are.equal(want, WFJ.ShippedGossipKey(text)) -- the early miss was not kept
+    local name = _G.UnitName
+    _G.UnitName = function() return "Ostara" end -- another character: its own keys
+    assert.is_nil(WFJ.ShippedGossipKey(text))
+    _G.UnitName = name
+    assert.are.equal(want, WFJ.ShippedGossipKey(text))
+    WFJ.Lookup.keyed = keyed
   end)
 
   it("fills an unaligned item's placeholders from the live tooltip, on the real shards", function()

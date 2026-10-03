@@ -724,7 +724,7 @@ WINDOW_SURFACES = frozenset({
     "playerspells", "popups", "professions", "professions.book", "pvpmatch", "pvprank", "questframe.greeting",
     "questframe.spellheaders", "questframe.timer", "questmap.list", "questmap.title", "quickjoin",
     "quickkeybind", "raid", "raid.static", "raidmanager", "readycheck", "recruitafriend", "reportframe",
-    "reputation", "reputation.static", "scrappingmachine.static", "settingspanel", "settingspanel.static",
+    "recentallies", "reputation", "reputation.static", "scrappingmachine.static", "settingspanel", "settingspanel.static",
     "settingstutorials", "skills", "spellbook", "spellbook.static", "spellsearch", "stable", "stacksplit",
     "subscriptioninterstitial", "tabard", "talents.static", "taxi", "texttospeech", "texttospeech.static",
     "timemanager", "trade", "trainer", "trainer.static", "transmog", "tutorial", "wardrobe", "worldmap",
@@ -809,6 +809,7 @@ def test_every_registered_surface_is_classified(root):
 # "tooltip.<frame>", Labels / LabelTree / Render / TooltipLines internals). A NEW one fails here: resolve it to a literal or constant, or review it and add it to this list.
 REVIEWED_VARIABLE_SURFACES = frozenset({
     "Calendar.lua:help.SURFACE",
+    "MapPins.lua:help.SURFACE",
     "Collections.lua:surface",
     "CommunitiesKit.lua:surface",
     "DamageMeter.lua:surface",

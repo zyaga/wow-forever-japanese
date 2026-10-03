@@ -21,6 +21,8 @@ local UI = {
   -- the sheathe tooltip (binding form) and the situations' dropdown default text (wrapped form)
   TRANSMOG_SHEATHE_WEAPON_TOOLTIP = { "Sheathe/Unsheathe Weapon", "武器をしまう/抜く" },
   TRANSMOG_SITUATIONS_NO_VALID_OPTIONS = { "No valid options selected", "有効なオプションが選択されていません" },
+  -- a situation group's title: a TransmogSituationTrigger row, matched in its own family
+  ["TransmogTrigger:4"] = { "Movement", "移動" },
 }
 
 local F = "TransmogFrame"
@@ -54,6 +56,7 @@ local function build()
     local row = CreateFrame("Frame")
     row.Dropdown = CreateFrame("Button")
     row.Dropdown.Text = Stub.fontString("")
+    row.Title = Stub.fontString("")
     function row.Dropdown.UpdateText(self) self.Text.text = self.defaultText end
     return row
   end)
@@ -61,6 +64,7 @@ local function build()
     self.SituationFramePool:ReleaseAll()
     for _ = 1, 2 do
       local row = self.SituationFramePool:Acquire()
+      row.Title.text = "Movement" -- TransmogSituationMixin:Init (blizzard_transmogtemplates.lua:1897-1898)
       row.Dropdown.defaultText = "|cffff2020" .. en("TRANSMOG_SITUATIONS_NO_VALID_OPTIONS") .. "|r"
       row.Dropdown:UpdateText()
     end
@@ -158,6 +162,7 @@ C.suite(getfenv(1), {
       situations:Refresh()
       for row in situations.SituationFramePool:EnumerateActive() do
         assert.are.equal("|cffff2020有効なオプションが選択されていません|r", row.Dropdown.Text:GetText())
+        assert.are.equal("移動", row.Title:GetText()) -- the group's title, in its family
       end
       local row = situations.SituationFramePool:EnumerateActive()()
       row.Dropdown.defaultText = "Mounted" -- a selected option's name stays

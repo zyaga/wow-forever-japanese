@@ -5,14 +5,14 @@
 A spell is in the set when a `SkillLineAbility` row learns it automatically (`AcquireMethod` 1 = on learning
 the skill line, 2 = on gaining a level that the line allows) at skill rank ≤ 1, on a skill line that is not a
 profession (`SkillLine.CategoryID` 11) or a secondary skill (9), every race and class together. The artifact
-is committed, like `visible_spells.txt`, so the gate (`tests/python/test_level1_spells.py`) needs no game
+is committed, like `ui_inventory.txt`, so the gate (`tests/python/test_level1_spells.py`) needs no game
 install.
 
 Read-only use of the local archive (ADR-021). Nothing is imported from these tables.
 
-Column maps, pinned with their evidence (the method of `visible_spells`):
+Column maps, pinned with their evidence (ADR-027):
 - `SkillLineAbility` layout `0x224F7EA0` (Forever, 18 fields): 3 SkillLine, 4 Spell (cross-build 6,035 /
-  6,047, `visible_spells.MAPS`), 5 MinSkillLineRank (1 on 7,807 of 7,824 rows), 8 AcquireMethod (values 0–3).
+  6,047), 5 MinSkillLineRank (1 on 7,807 of 7,824 rows), 8 AcquireMethod (values 0–3).
 - `SkillLine` layout `0x6763217C`: 6 CategoryID (values 6–12; checked on known lines: 98 / 109 languages → 10,
   414 / 415 armor → 8, 164 / 171 professions → 11, 129 / 185 / 356 secondary skills → 9, 6 / 26 class lines →
   7).

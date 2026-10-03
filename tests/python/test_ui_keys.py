@@ -19,6 +19,9 @@ ENGLISH_SOURCES = {f"wago@{BUILD}", f"db2@{FOREVER_BUILD}"}
 # They are allowed because the addon never walks the line that reads as the item / spell name and labels are matched
 # per widget; any other exact-line collision is reviewed here. A new collision means a deliberate review: add it here.
 KNOWN_NAME_COLLISIONS = {
+    # Words from the families the served-text inventory added (ADR-052): recipe headers, pet diet words, the recent
+    # allies' interaction words. Restricted family keys, matched only on their own widget (Core/UIStrings.lua).
+    "Arrows", "Fireworks", "Fish", "Leggings",
     "Cloth", "Complete Quest", "Fire", "Fishing Pole", "Frost", "Leather", "Libram", "Mace", "Mail", "Shadow",
     "Shield", "Shirt", "Speed", "Sword", "Thrown", "Totem",
     "Learning",  # the group finder playstyle, shown only through its own key list (UI/GroupFinder.lua)
@@ -81,6 +84,9 @@ KNOWN_NAME_COLLISIONS = {
     # (UIStrings.OWN): out of the by-English index, so no unrestricted match ever answers it; only the popup's title
     # (UI/Tutorial.lua, `only` TUTORIAL_TITLE<n>) shows it
     "Swimming",
+    # restricted client-table rows (LockType, SpellFlyout), matched only where a widget names their family: a lock
+    # action or a spellbook flyout, never a spell or item name line
+    "Beast Tracking", "Comprehend Scroll", "Disarm", "Disarm Trap", "Pick Lock", "Portal", "Stances", "Teleport", "Trap",
 }
 
 
@@ -89,7 +95,12 @@ def _keys(root: Path) -> list[str]:
 
 
 # The draft batches the dictionary is made of (each line's `provenance.source` names one).
-DRAFT_SOURCES = {"draft-ui", "draft-ui-level1", "draft-ui-hud", "draft-ui-enchant", "draft-ui-beta-forever-bags",
+DRAFT_SOURCES = {"draft-ui",
+                 # the served-text round: every string the loaded Forever files name, in seven parts
+                 *(f"draft-served-ui-{i}" for i in range(7)),
+                 "draft-ui-compare", "draft-ui-appearance",  # the comparison tooltip and its appearance lines
+                 "draft-ui-tracker", "draft-ui-wrap",  # the tracker's finished-quest lines; a popup's line break
+                 "draft-ui-level1", "draft-ui-hud", "draft-ui-enchant", "draft-ui-beta-forever-bags",
                  "draft-ui-beta-forever-collisions",
                  "draft-ui-beta-duration-float",  # Forever prints SPELL_DURATION_* as %.1f, not %.2f
                  "draft-ui-retarget",  # the camelot surfaces' keys
@@ -166,7 +177,9 @@ def test_no_listed_english_carries_links_key_markup_or_tokens(root):
             if token == "|H" and ln["id"] in static_links:
                 continue
             assert token not in ln["en"], (ln["id"], token)
-        assert not token_dollar.search(ln["en"]), (ln["id"], "$")
+        # an NPC mail body keeps the client's $N / $B: the mail surface fills them the way the quest surface does
+        if not ln["id"].startswith("MailBody:"):
+            assert not token_dollar.search(ln["en"]), (ln["id"], "$")
 
 
 def test_nit_terms_are_consistent(root):
@@ -227,7 +240,8 @@ def test_window_name_collision_keys_are_named_in_a_ui_module(root):
     for key, en in english.items():
         if key in reviewed:
             continue
-        if en not in WINDOW_COLLISIONS or not lines[key]["provenance"]["source"].startswith("draft-ui-windows@"):
+        source_ = lines.get(key, {}).get("provenance", {}).get("source", "")
+        if en not in WINDOW_COLLISIONS or not source_.startswith("draft-ui-windows@"):
             continue
         if f'"{key}"' in source or re.search(rf"\b{key}\s*=", source):
             continue

@@ -41,7 +41,7 @@ def _level1_keys(root: Path) -> set[str]:
     keys |= _quoted(_block((ui / "ChatTabs.lua").read_text(encoding="utf-8"), "local HEADER = {", "}"))
     keys |= _quoted(_block((ui / "HudLabels.lua").read_text(encoding="utf-8"), "local DURATION = {", "}"))
     alerts = (ui / "Alerts.lua").read_text(encoding="utf-8")
-    keys |= _quoted(_block(alerts, "local TOAST_TITLE = {", "}") + _block(alerts, "local TOAST_FIELDS = {", "\n\n"))
+    keys |= _quoted(_block(alerts, "local TOAST_TITLE_KEYS = {", "}") + _block(alerts, "local TOAST_DESCRIPTION = {", "\n"))
     keys |= {"GOSSIP_OPTION_PREPEND", "QUEST_PREPEND"}
     return keys
 

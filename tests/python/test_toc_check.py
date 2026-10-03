@@ -26,8 +26,9 @@ def test_real_toc_fields_and_load_order(root):
         "Core/SurfaceState.lua",
         "Core/Collector.lua",
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
-        "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/LoadOnDemand.lua",
-        "UI/HelpTooltip.lua",
+        "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
+        "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
+        "UI/HelpTooltip.lua", "UI/TooltipData.lua",
         # ADR-030: shared helpers
         "UI/SettingsKeys.lua", "UI/LabelTree.lua", "UI/TooltipLines.lua",
         "UI/Character.lua", "UI/Reputation.lua", "UI/Skills.lua",
@@ -67,7 +68,8 @@ def test_real_toc_fields_and_load_order(root):
         "UI/SettingsPanel.lua", "UI/SettingsTutorials.lua", "UI/EditMode.lua", "UI/QuickKeybind.lua",
         "UI/ColorPicker.lua", "UI/ChatConfig.lua", "UI/TextToSpeech.lua", "UI/ChatTabs.lua", "UI/CombatLog.lua",
         "UI/AddonList.lua", "UI/ScriptErrors.lua", "UI/Splash.lua", "UI/EventTrace.lua", "UI/ChromieTime.lua",
-        "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua", "UI/Speech.lua", "UI/BossBanner.lua", "UI/Cinematic.lua", "UI/CoinPickup.lua", "UI/CombatFeedback.lua",
+        "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua", "UI/ChatInput.lua", "UI/Speech.lua", "UI/BossBanner.lua", "UI/Cinematic.lua",
+        "UI/Subtitles.lua", "UI/CoinPickup.lua", "UI/CombatFeedback.lua",
         "UI/EquipmentFlyout.lua", "UI/GhostFrame.lua", "UI/GuildInvite.lua", "UI/InstanceAbandon.lua",
         "UI/InstanceDifficulty.lua", "UI/LootHistory.lua", "UI/LossOfControl.lua", "UI/MajorFactionToast.lua",
         "UI/PartyPose.lua", "UI/PetHappiness.lua", "UI/PlayerChoice.lua", "UI/ReadyCheck.lua", "UI/StackSplit.lua",

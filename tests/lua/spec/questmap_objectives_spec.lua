@@ -135,6 +135,39 @@ describe("UI/QuestMap: objective lines", function()
       assert.are.same({ objective = 2, area = 2 }, WFJ.ObjectiveIndex.counts.byType)
     end)
 
+    it("a quest with no counted objectives: its whole objective text on one line is the quest's Japanese", function()
+      local h1 = (WFJ.Hash.h32x2(WFJ.Normalize.v1(QUEST.objectives)))
+      DATA["quest.objectives"] = { [9] = { ja = "記録庫を焼き払え。", status = ".", h1 = h1 } }
+      WFJ.Lookup = { get = function(kind, id) return DATA[kind] and DATA[kind][id] end }
+      -- Main's reading of the quest's own English (fingerprints against h1 / h1f), as the live check reads it
+      WFJ.IsQuestFieldEnglish = function(id, field, text)
+        local e = DATA["quest." .. field] and DATA["quest." .. field][id]
+        return e ~= nil and WFJ.Hash.h32x2(WFJ.Normalize.v1(text)) == e.h1
+      end
+      Q.quests[9].leaderboard = { { text = QUEST.objectives }, { text = "Burn something else." } }
+      local _, lines = trackerLines()
+      assert.are.equal("記録庫を焼き払え。", lines[1].Text:GetText())
+      assert.are.equal("Burn something else.", lines[2].Text:GetText()) -- not the quest's text: as written
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal(QUEST.objectives, lines[1].Text:GetText())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+    end)
+
+    it("a quest's completion log line is its keyed text (quest-cache text keyed like NPC dialogue)", function()
+      local log = "Speak with Deathguard Billmuth at Tyr's Watch."
+      DATA.gossip = { k1 = { ja = "Tyr's WatchのDeathguard Billmuthと話す。", status = "." } }
+      local shipped = WFJ.ShippedGossipKey
+      WFJ.ShippedGossipKey = function(text) if text == log then return "k1" end end
+      WFJ.Lookup = { get = function(kind, id) return DATA[kind] and DATA[kind][id] end }
+      Q.quests[9].leaderboard = { { text = log } }
+      local _, lines = trackerLines()
+      assert.are.equal("Tyr's WatchのDeathguard Billmuthと話す。", lines[1].Text:GetText())
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal(log, lines[1].Text:GetText())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      WFJ.ShippedGossipKey = shipped
+    end)
+
     it("the block's height follows the line's height change, and the modifier restores the English", function()
       Q.quests[9].leaderboard = { { text = "0/1 Archive Burned" } }
       local block, lines = trackerLines()

@@ -24,6 +24,10 @@ local UI = {
   ERROR_CLUB_ACTION_INVITE_MEMBER = { "Couldn't invite member. %s", "メンバーを招待できませんでした。%s" },
   ERROR_CLUB_ACTION_REDEEM_TICKET = { "Couldn't redeem invite link. %s", "招待リンクを使用できませんでした。%s" },
   ERROR_COMMUNITIES_IGNORED = { "Player is ignored.", "プレイヤーは無視されています。" },
+  -- the client's own instance transfer text: client-table rows, no global (ADR-042)
+  ["InstanceEntryMessage:12"] = { "You must be level 45 to enter Molten Core.", "モルテン・コアに入るにはレベル45が必要です。" },
+  ["InstanceEntryFailure:3"] = { "You must complete the attunement first.", "先に入場資格を得る必要があります。" },
+  ["AchievementTitle:5"] = { "Out of Range", "射程外の達人" }, -- another family: never an error line
 }
 -- the message ids the stub client sends: LE_GAME_ERR_* numbers → GlobalStrings keys
 local IDS = { [1] = "ERR_OUT_OF_RANGE", [2] = "ERR_OUT_OF_MANA", [3] = "ERR_INV_FULL", [4] = "ERR_QUEST_ADD_KILL_SII",
@@ -163,6 +167,23 @@ describe("the UI errors frame", function()
       X.alt(WFJ, false)
       assert.are.equal("バッグがいっぱいです。", f.order[1]:GetText())
     end)
+
+  it("an instance entry message or failure (client-table text) shows its row's Japanese with no id, an unresolved id"
+    .. " or an id whose key did not match; Alt shows English; another family's English stays", function()
+    local f = _G.UIErrorsFrame
+    f:AddMessage("You must be level 45 to enter Molten Core.", 1, 0.1, 0.1, 1)
+    assert.are.equal("モルテン・コアに入るにはレベル45が必要です。", f.order[#f.order]:GetText())
+    f:TryDisplayMessage(99, "You must complete the attunement first.")
+    assert.are.equal("先に入場資格を得る必要があります。", f.lines[99]:GetText())
+    f:TryDisplayMessage(5, "You must complete the attunement first.") -- the pass-through wrapper's id
+    assert.are.equal("先に入場資格を得る必要があります。", f.lines[5]:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal("You must be level 45 to enter Molten Core.", f.order[1]:GetText())
+    X.alt(WFJ, false)
+    assert.are.equal("モルテン・コアに入るにはレベル45が必要です。", f.order[1]:GetText())
+    f:AddMessage("Out of Range", 1, 0.1, 0.1, 1)
+    assert.are.equal("Out of Range", f.order[#f.order]:GetText())
+  end)
 
   it("a line Lua formats fills its template; a community action's error is its own entry", function()
     local f = _G.UIErrorsFrame

@@ -19,7 +19,9 @@
 --                                   a creature's name: not listed
 --   SelectableGraveyardPinTemplate  selectablegraveyarddataprovider.lua:57–73
 --   WaypointLocationPinTemplate     waypointlocationdataprovider.lua:165–175 (template name :3–5)
---   QuestPinTemplate                the gamepad-mode lines only (questdataprovider.lua:273–276; template name :3–4)
+--   QuestPinTemplate                the gamepad-mode lines (questdataprovider.lua:273–276; template name :3–4) and
+--                                   the quest's tag line (below)
+--   QuestBlobPinTemplate            the quest's tag line only (questblobdataprovider.lua:19, 202–213)
 --   DungeonEntrancePinTemplate      the fallback name and the instruction line (dungeonentrancedataprovider.lua:
 --                                   68–74) through CheckShowTooltip
 --   MapLinkPinTemplate              maplinkdataprovider.lua:33–35 through CheckShowTooltip
@@ -27,6 +29,18 @@
 --   VignettePinTemplate / VignettePinPOIButtonTemplate   "Suggested Players [%d]" (vignettedataprovider.lua:322–331,
 --                                   493–511; template names :3–23). The objective line carries a creature's name and
 --                                   is an objective line: not listed
+--   AreaPOIPinTemplate / AreaPOIEventPinTemplate   AreaPoiUtil.TryShowTooltip: the POI's name as the title, then
+--                                   poiInfo.description (blizzard_framexmlutil/areapoiutil.lua:3–24; template names
+--                                   areapoidataprovider.lua:3–4, 159–191; areapoieventdataprovider.lua:3–4, 57: a sub
+--                                   pin of AreaPOIPinMixin), an AreaPoiDescription or AreaPoiState row's English. The
+--                                   name (line 1) stays English. The world map and the battlefield map add both
+--                                   providers (blizzard_worldmap.lua:231–232; blizzard_battlefieldmap/mainline/
+--                                   blizzard_battlefieldmap.lua:212–213)
+-- Client-table families (ADR-042) are matched only on the templates that name them (LINE_FAMILIES), after the walk
+-- and from line 2 on: line 1 is a quest's title or a POI's name, which may read like a row and stays English. A
+-- quest's tag line is QuestUtils_AddQuestTypeToTooltip's: C_QuestLog.GetQuestTagInfo(questID).tagName, a QuestTag
+-- row's English, after an atlas markup and a space unless the tag icons are hidden (blizzard_framexmlutil/mainline/
+-- questutils.lua:37–58, 670–678); the atlas is kept.
 -- Another module adds its own map's templates with MapPins.add (UI/FlightMap: the flight map's node pins).
 local _, WFJ = ...
 local MapPins = {}
@@ -63,6 +77,47 @@ local PIN_KEYS = {
   VignettePinPOIButtonTemplate = VIGNETTE_KEYS,
 }
 
+-- pin template → the client-table families its lines after the title may show (see the header)
+local LINE_FAMILIES = {
+  QuestPinTemplate = { "QuestTag" }, QuestBlobPinTemplate = { "QuestTag" },
+  AreaPOIPinTemplate = { "AreaPoiDescription", "AreaPoiState" },
+  AreaPOIEventPinTemplate = { "AreaPoiDescription", "AreaPoiState" },
+}
+local NO_KEYS = {}
+
+-- The `opts` a listed pin is registered with. A family pin is registered even with no keys of its own, so
+-- UI/HelpTooltip tracks its lines (forgotten when the tooltip passes to another owner). → opts | nil
+local function pinOpts(template)
+  local keys = PIN_KEYS[template]
+  if keys then return { only = keys } end
+  return LINE_FAMILIES[template] and { only = NO_KEYS } or nil
+end
+
+-- A family pin's lines after the title: a line that is one of its families' rows, or a QuestTag row after an atlas
+-- ("|A…|a Dungeon"), in Japanese, the atlas kept. Records sit on UI/HelpTooltip's surface under the walk's own line
+-- key, so its refit and release apply. → the number shown
+function MapPins.familyLines(tt, families)
+  local help, index = WFJ.HelpTooltip, WFJ.UIIndex
+  if not index or type(tt.GetName) ~= "function" or type(tt.NumLines) ~= "function" then return 0 end
+  local name = tt:GetName()
+  if type(name) ~= "string" then return 0 end
+  local only = WFJ.Labels.families(unpack(families)).only
+  local n = 0
+  for i = 2, tt:NumLines() or 0 do -- line 1 is the quest's or the POI's own name
+    local fs = Compat.resolve(name .. "TextLeft" .. i)
+    local text = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
+    local atlas, body
+    if type(text) == "string" then atlas, body = text:match("^(|A[^|]*|a ?)(.+)$") end
+    body = body or text
+    local key = type(body) == "string" and body ~= "" and index:matchOnly(body, only) or nil
+    if key then
+      local args = atlas and { form = "affix", before = atlas, after = "" } or nil
+      n = n + WFJ.Labels.showArgs(help.SURFACE, "L" .. i, fs, key, args, help.refit)
+    end
+  end
+  return n
+end
+
 -- Lists the keys a pin template's tooltip may show (a map module's own pins). A template already listed is kept.
 function MapPins.add(template, keys)
   if type(template) ~= "string" or type(keys) ~= "table" or PIN_KEYS[template] then return false end
@@ -76,16 +131,23 @@ function MapPins.keys(template)
 end
 
 -- hooksecurefunc target (GameTooltip:Show). → the number of dictionary lines (0 when the owner is not a listed pin,
--- or is registered already (HelpTooltip's own Show hook walked it just before this one).
+-- or is registered already (HelpTooltip's own Show hook walked it just before this one), plus a family pin's lines.
 function MapPins.onShow(tt)
   if type(tt) ~= "table" or type(tt.GetOwner) ~= "function" then return 0 end
   local owner = tt:GetOwner()
-  if type(owner) ~= "table" or WFJ.HelpTooltip.registered(owner) then return 0 end
+  if type(owner) ~= "table" then return 0 end
   local template = owner.pinTemplate
-  local keys = type(template) == "string" and PIN_KEYS[template] or nil
-  if not keys then return 0 end
-  WFJ.HelpTooltip.register(owner, { only = keys })
-  return WFJ.HelpTooltip.walk(tt)
+  if type(template) ~= "string" then return 0 end
+  local n = 0
+  if not WFJ.HelpTooltip.registered(owner) then
+    local opts = pinOpts(template)
+    if not opts then return 0 end
+    WFJ.HelpTooltip.register(owner, opts)
+    n = WFJ.HelpTooltip.walk(tt)
+  end
+  local families = LINE_FAMILIES[template]
+  if families then n = n + MapPins.familyLines(tt, families) end
+  return n
 end
 
 local hooked = false

@@ -55,6 +55,10 @@ local UI = {
   ENCHANT_TARGET_TOOLTIP_CLICK_TO_REPLACE = { "|cnDISABLED_FONT_COLOR:Left Click to replace this item|r",
     "|cnDISABLED_FONT_COLOR:左クリックでこのアイテムを置き換え|r" },
   ENCHANTED_TOOLTIP_LINE = { "Enchanted: %s", "エンチャント済み: %s" },
+  -- client-table rows (fingerprints: no global; ADR-042)
+  ["TradeSkillCategory:1"] = { "Leather Armor", "革鎧" },
+  ["TradeSkillCategory:2"] = { "Bags", "鞄" },
+  ["CurrencyCategory:9"] = { "Miscellaneous", "その他" }, -- another family: never a recipe-list header
 }
 
 local function en(key) return _G[key] end
@@ -360,6 +364,29 @@ describe("the crafting page on the Forever client: list rows, enchant slot, help
       assert.are.equal("Unlearned", divider.Label:GetText())
     end)
   end
+
+  it("a category header with a TradeSkillCategory row shows its Japanese; Alt shows the English; a profession's name,"
+    .. " another family's word and a reused row stay English", function()
+    setup(true)
+    page():Show()
+    local leather, bags = category("Leather Armor"), category("Bags")
+    local profession, misc = category("Leatherworking"), category("Miscellaneous")
+    assert.are.equal("革鎧", leather.ButtonText:GetText())
+    assert.are.equal("鞄", bags.ButtonText:GetText())
+    assert.are.equal("Leatherworking", profession.ButtonText:GetText()) -- a profession's name has no row
+    assert.are.equal("Miscellaneous", misc.ButtonText:GetText())
+    assert.is_nil(WFJ.UIIndex:match("Leather Armor")) -- the family only where the header names it
+    alt(true)
+    assert.are.equal("Leather Armor", leather.ButtonText:GetText())
+    alt(false)
+    assert.are.equal("革鎧", leather.ButtonText:GetText())
+    box():initFrame(leather, node({ categoryInfo = { name = "Shields" } }),
+      function(r) r.ButtonText:SetText("Shields") end)
+    assert.are.equal("Shields", leather.ButtonText:GetText())
+    alt(true)
+    alt(false)
+    assert.are.equal("Shields", leather.ButtonText:GetText())
+  end)
 
   it("the enchant slot's placeholder renders after Init and after ClearReagent; an allocated item's name stays"
     .. " English", function()

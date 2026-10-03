@@ -30,11 +30,10 @@
 -- stay English (a pair still in some history is never forgotten).
 -- Font: the chat fonts have no Japanese member, so the bundled face is put on every visible line showing one of our
 -- Japanese strings from the frame's AddOnDisplayRefreshedCallback (:164–175) with SetFont directly (a deferred font
--- retry would land on a pooled English line; in game), shrunk until it fits the line's laid-out height (fit). The
+-- retry would land on a pooled English line), shrunk until it fits the line's laid-out height (fit). The
 -- visible lines are fixed rows the messages move through, and the refresh's re-init (SetFontObject with the frame's
--- own object, scrollingmessageframe.lua:642, 716) does not undo our SetFont (in game: every row a Japanese line had
--- passed showed later English in the bundled face). So each row given the bundled face is remembered (Font.bundle)
--- and given the frame's font back directly (Font.restore) once it shows anything else.
+-- own object, scrollingmessageframe.lua:642, 716) does not undo a SetFont. Every visible row wears the bundled face
+-- at the frame's size (ChatSystem.show), English included, so a player's Japanese shows too.
 local _, WFJ = ...
 local ChatSystem = {}
 WFJ.ChatSystem = ChatSystem
@@ -104,6 +103,38 @@ local function chatKeys(index)
   return chatSet
 end
 
+-- The server's own notices ("[SERVER] Shutdown in 15 Minutes"): ServerMessages rows the client prints as system lines.
+local serverSet, serverIndex
+local function serverKeys(index)
+  if serverIndex ~= index then
+    serverSet, serverIndex = WFJ.UIStrings.familyKeys(index.rows, "ServerMessage"), index
+  end
+  return serverSet
+end
+
+-- A reputation line (COMBAT_FACTION_CHANGE) may also be a FriendshipGain row ("You gain 25 Rank Points.",
+-- FriendshipReputation's StandingModified text, the number filled in by the client: UIStrings index:matchCounted). The
+-- family is named for that chat type only, so no other line is ever taken for one.
+local factionSet, factionIndex
+local function factionKeys(index)
+  if factionIndex ~= index then
+    factionSet, factionIndex = {}, index
+    for key in pairs(chatKeys(index)) do factionSet[key] = true end
+    for key in pairs(WFJ.UIStrings.familyKeys(index.rows, "FriendshipGain")) do factionSet[key] = true end
+  end
+  return factionSet
+end
+
+local factionId
+local function factionTypeId()
+  if factionId == nil then
+    local info = Compat.get(SURFACE, "typeInfo")
+    local t = type(info) == "table" and info.COMBAT_FACTION_CHANGE or nil
+    factionId = type(t) == "table" and t.id or false
+  end
+  return factionId or nil
+end
+
 -- `area`: the settings area a line belongs to: "ui" (system lines), "gossip" (NPC speech, UI/Speech)
 local function on(area)
   return WFJ.State.enabled and WFJ.State.areaEnabled(area or "ui")
@@ -165,12 +196,21 @@ local function filled(index, key, args, en)
   return ja
 end
 
-function ChatSystem.translate(en, exactOnly)
+-- `faction` (optional): the line is a reputation line, which may also be a FriendshipGain row.
+function ChatSystem.translate(en, exactOnly, faction)
   local index = WFJ.UIIndex
   if not index or type(en) ~= "string" or en == "" then return nil end
   local key, args = index:exactKey(en), nil
-  if not key and not exactOnly then key, args = index:matchOnly(en, chatKeys(index)) end
-  return filled(index, key, args, en)
+  if not key and not exactOnly then
+    key, args = index:matchOnly(en, faction and factionKeys(index) or chatKeys(index))
+  end
+  local ja = filled(index, key, args, en)
+  -- a server notice: its time argument is text, so no digit fingerprint finds it (Index:matchTail)
+  if not ja and not exactOnly and type(index.matchTail) == "function" then
+    key, args = index:matchTail(en, serverKeys(index))
+    ja = filled(index, key, args, en)
+  end
+  return ja
 end
 
 -- communitiesChat: the Japanese for a line that may only be one of `keys` (a list): exact or template,
@@ -364,7 +404,7 @@ function ChatSystem.onAddMessage(frame, message, _, _, _, typeId, _, _, _, event
   if not untyped and typeId == emoteTypeId() then return onEmoteLine(frame, message, typeId, eventArgs) end
   if not untyped and not ids[typeId] then return onPlayerLine(frame, message, typeId, eventArgs) end
   if not on() then return 0 end
-  local ja = ChatSystem.translate(message, untyped)
+  local ja = ChatSystem.translate(message, untyped, not untyped and typeId == factionTypeId())
   if not ja or not remember(ja, message) then return 0 end
   -- no line id on a plain line: an identical English still in the history (it arrived while off) is rewritten too
   frame:TransformMessages(function(text, _, _, _, lineType)
@@ -398,9 +438,9 @@ function ChatSystem.fit(line, fontObject)
   return size
 end
 
--- Each visible line showing one of our Japanese strings: the Japanese in the bundled face, or, while the modifier
--- is held or the addon / UI area is off, the remembered English in the frame's own font. Also the display-refreshed
--- callback. → lines set
+-- Each visible line in the bundled face. A line showing one of our Japanese strings: the Japanese (shrunk to fit,
+-- ChatSystem.fit), or, while the modifier is held or the addon / UI area is off, the remembered English. Also the
+-- display-refreshed callback. → lines set to our Japanese or its English
 function ChatSystem.show(frame)
   local lines = type(frame) == "table" and type(frame.visibleLines) == "table" and frame.visibleLines or {}
   local fontObject = type(frame) == "table" and type(frame.GetFontObject) == "function" and frame:GetFontObject() or nil
@@ -414,9 +454,10 @@ function ChatSystem.show(frame)
       ChatSystem.fit(line, fontObject)
     else
       if ours then line:SetText(jaToEn[ja]) end
-      -- setting a font reads nothing from the line, so a secret line gets its font back like any other
-      -- a row given its font back earlier follows a later change of the frame's font size (Font.follow)
-      if not WFJ.Font.restore(line, fontObject) then WFJ.Font.follow(line, fontObject) end
+      -- every chat line wears the bundled face, English too, so a player's Japanese shows (the client's chat
+      -- font has no kana or kanji); at the frame's size, which follows a change of the chat font size. Setting
+      -- a font reads nothing from the line, so a secret line is dressed like any other
+      if type(line) == "table" and type(line.SetFont) == "function" then WFJ.Font.bundle(line, fontObject) end
     end
     if ours then n = n + 1 end
   end

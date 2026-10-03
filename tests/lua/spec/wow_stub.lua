@@ -617,6 +617,8 @@ function Stub.installQuestAPI()
   CreateFrame("Frame", "QuestInfoTimerFrame")
   Stub.namedFontString("QuestInfoTimerText", "")
   _G.QuestInfo_ShowTimer = function() end
+  -- the rewards redraw the client runs on QUEST_ITEM_UPDATE (questframe.lua:75–84); the spec writes its English
+  _G.QuestInfo_ShowRewards = function() end
   CreateFrame("Frame", "MapQuestInfoRewardsFrame")
   CreateFrame("Frame", "QuestFrameGreetingPanel")
   Stub.namedFontString("CurrentQuestsText", "Current Quests")
@@ -682,10 +684,12 @@ function Stub.installQuestAPI()
   -- (Panel OnShow → QuestInfo_Display / QuestFrameProgressPanel_OnShow; Classic/QuestFrame.lua:753, 127, 200.)
   function Stub.showDetail()
     QuestFrame:Show()
+    QuestRewardScrollChildFrame:Hide(); QuestDetailScrollChildFrame:Show()
     QuestInfo_Display(QUEST_TEMPLATE_DETAIL, QuestDetailScrollChildFrame)
   end
   function Stub.showReward()
     QuestFrame:Show()
+    QuestDetailScrollChildFrame:Hide(); QuestRewardScrollChildFrame:Show()
     QuestInfo_Display(QUEST_TEMPLATE_REWARD, QuestRewardScrollChildFrame)
   end
   function Stub.showProgress()

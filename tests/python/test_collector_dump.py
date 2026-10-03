@@ -12,11 +12,12 @@ def lua_str(s: str) -> str:
     return '"' + s.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n") + '"'
 
 
-def entry(t, i, f, e, *, h=None, b=1, k=None, n=None) -> str:
+def entry(t, i, f, e, *, h=None, b=1, k=None, n=None, p=None) -> str:
     h = key(normalize_v1(e)) if h is None else h
     k = k or f"{t}:{i}:{f}"
     i_lua = lua_str(i) if isinstance(i, str) else i
     n_lua = "" if n is None else ' ["n"] = { ' + ", ".join(str(x) for x in n) + " },"
+    n_lua += "" if p is None else f' ["p"] = {lua_str(p)},'
     return (
         f'[{lua_str(k)}] = {{ ["t"] = {lua_str(t)}, ["i"] = {i_lua}, ["f"] = {lua_str(f)}, '
         f'["h"] = {lua_str(h)}, ["e"] = {lua_str(e)}, ["b"] = {b},{n_lua} }},'

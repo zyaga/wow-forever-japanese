@@ -143,9 +143,9 @@ def test_rebuild_check_refuses_a_dirty_tree_before_deleting(makefile):
     recipe = _recipe(makefile, "rebuild-check")
     assert "$(ONE_CLIENT_GUARD)" in recipe[0]
     assert "git status --porcelain -- data $(ADDON) pipeline Makefile" in recipe[1] and "exit 1" in recipe[1]
-    delete = next(i for i, ln in enumerate(recipe) if "-delete" in ln)
+    delete = next(i for i, ln in enumerate(recipe) if "wfj.dev.reset_english" in ln)
     assert delete > next(i for i, ln in enumerate(recipe) if "wdb-preflight" in ln) > 0
-    assert "find data/english -name '*.jsonl' -delete" in recipe[delete]
+    assert "-m wfj.dev.reset_english ../data/english" in recipe[delete]  # the collector's lines are kept
     after = "\n".join(recipe[delete + 1:])
     assert "$(MAKE) -s -j1 -S data" in after and "git status --porcelain -- data $(ADDON)" in after and "exit 1" in after
 
@@ -290,7 +290,7 @@ def test_wdb_copy_refuses_a_cache_of_another_build(makefile):
 
 def test_rebuild_check_checks_the_shared_inputs_and_runs_one_job(makefile):
     recipe = _recipe(makefile, "rebuild-check")
-    delete = next(i for i, ln in enumerate(recipe) if "-delete" in ln)
+    delete = next(i for i, ln in enumerate(recipe) if "wfj.dev.reset_english" in ln)
     shared = next(i for i, ln in enumerate(recipe) if "shared input missing" in ln)
     assert shared < delete
     for var in ("PRED_QUEST", "PRED_TOOLTIP", "QJP", "CJQ", "PFQUEST", "VMANGOS_DB", "UI_KEYS"):

@@ -284,6 +284,10 @@ def test_every_text_capturing_template_declares_its_argument_kinds(root):
         # shown as the line wrote them
         if ln["id"].startswith("EmoteText:"):
             continue
+        # a templated family row (SharedString, EventToastText, FriendshipGain, ServerMessage) takes every `%s` as text, set by
+        # argKinds for the family, never per key: a tree name it captures is kept as written
+        if ln["id"].startswith(("SharedString:", "EventToastText:", "FriendshipGain:", "ServerMessage:")):
+            continue
         if "%s" in ln["en"] and ln["id"] not in declared and ln["id"] not in reviewed_numeric:
             assert numeric.search(ln["id"]), f"{ln['id']} ({ln['en']!r}) captures text: declare it in UIStrings.ARGS"
 

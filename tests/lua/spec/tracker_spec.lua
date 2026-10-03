@@ -478,3 +478,75 @@ describe("the tracker's achievement titles", function()
     assert.are.equal(0, WFJ.Tracker.onAchievement("x", 1))
   end)
 end)
+
+-- A tracked achievement's criteria lines: AddAchievement writes each with block:AddObjective(criteriaIndex,
+-- criteriaString) → line.Text, kept in block.usedLines (blizzard_achievementobjectivetracker.lua:130-152;
+-- blizzard_objectivetrackerblock.lua:79-98, 161-208). The CriteriaText family, and AchievementDescription for an
+-- achievement whose one line is its description.
+describe("the tracker's achievement criteria", function()
+  local WFJ
+
+  local ROWS = {}
+  for k, v in pairs(UI) do ROWS[k] = v end
+  ROWS["AchievementTitle:6"] = { "Level 10", "レベル10" }
+  ROWS["CriteriaText:121233"] = { "Explore Alterac Mountains", "アルターク山脈を探検する" }
+  ROWS["AchievementDescription:16"] = { "Reach level 20.", "レベル20に到達する。" }
+
+  local function alt(down)
+    Stub.keys.alt = down
+    WFJ.Modifier.refresh()
+  end
+
+  before_each(function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    Stub.installTooltipAPI()
+    WFJ = H.loadChunks(FILES)
+    H.uiSetup(WFJ, ROWS)
+    installTracker()
+    -- lua:121-152: the title, then one objective line per shown criterion
+    function _G.AchievementObjectiveTracker.AddAchievement(self, id, name, criteria)
+      local block = self:GetBlock(id)
+      block.HeaderText = block.HeaderText or Stub.fontString("")
+      block.HeaderText.text = name
+      block.usedLines = block.usedLines or {}
+      for i, text in ipairs(criteria or {}) do
+        local line = block.usedLines[i] or { Text = Stub.fontString("") }
+        line.Text.text = text
+        block.usedLines[i] = line
+      end
+      return true
+    end
+    assert.is_true(WFJ.Tracker.init())
+  end)
+
+  after_each(function()
+    H.uiTeardown()
+    Stub.keys.alt = false
+    for _, name in ipairs(GLOBALS) do _G[name] = nil end
+  end)
+
+  it("a CriteriaText row's line is Japanese; Alt shows English; a name, a count and another family stay", function()
+    local m = _G.AchievementObjectiveTracker
+    m:AddAchievement(6, "Level 10", { "Explore Alterac Mountains", "Hogger", "3/10 Explore Alterac Mountains",
+      "Level 10", "Achievements" })
+    local lines = m:GetExistingBlock(6).usedLines
+    assert.are.equal("アルターク山脈を探検する", lines[1].Text:GetText())
+    assert.are.equal("Hogger", lines[2].Text:GetText()) -- a name: no row
+    assert.are.equal("3/10 Explore Alterac Mountains", lines[3].Text:GetText()) -- a progress-bar criterion
+    assert.are.equal("Level 10", lines[4].Text:GetText()) -- an AchievementTitle row: not this widget's family
+    assert.are.equal("Achievements", lines[5].Text:GetText()) -- a dictionary word
+    assert.are.equal("レベル10", m:GetExistingBlock(6).HeaderText:GetText())
+    alt(true)
+    assert.are.equal("Explore Alterac Mountains", lines[1].Text:GetText())
+    alt(false)
+    assert.are.equal("アルターク山脈を探検する", lines[1].Text:GetText())
+    m:AddAchievement(6, "Level 10", { "Hogger" }) -- the line reused for a name: back to the client's text
+    assert.are.equal("Hogger", lines[1].Text:GetText())
+  end)
+
+  it("an achievement with no criteria of its own shows its description: the AchievementDescription row", function()
+    local m = _G.AchievementObjectiveTracker
+    m:AddAchievement(16, "Level 20", { "Reach level 20." })
+    assert.are.equal("レベル20に到達する。", m:GetExistingBlock(16).usedLines[1].Text:GetText())
+  end)
+end)

@@ -12900,6 +12900,1028 @@ STABLE_SLOT_COST_TEXT
 ACTION_LABEL_ROTATE
 # an error line (UIErrorsFrame and chat)
 SPELL_FAILED_CUSTOM_ERROR_667
+# ── Client-table text the served-text inventory found shown on Forever (ADR-052): achievement and Legacy
+# criteria, Legacy and PvP rank rewards, talent requirement lines, profession recipe headers, NPC mail, quest
+# tags and map point descriptions, pet loyalty and diet words, rest state, instance difficulty and entry
+# messages, event toasts, cinematic subtitles, recent allies. Same rules as the blocks above (one key per distinct
+# English, names and developer rows never listed; profession names stay English). CriteriaText lists the
+# criteria of the achievements' own trees; a criterion that is only a name ships as its English. ──
+# CriteriaText (CriteriaTree.Description_lang)
+CriteriaText:276  # Chief Ukorz Sandscalp kills (Zul'Farrak)
+CriteriaText:3820  # Onyxia kills (Onyxia's Lair)
+CriteriaText:6549  # Lord Godfrey
+CriteriaText:9942  # General Drakkisath kills (Blackrock Spire)
+CriteriaText:14324  # Emperor Dagran Thaurissan kills (Blackrock Depths)
+CriteriaText:22423  # Statistic - High Inquisitor Whitemane
+CriteriaText:91546  # Bazzalan kills (Ragefire Chasm) (+1)
+CriteriaText:91548  # Mutanus the Devourer kills (Wailing Caverns) (+1)
+CriteriaText:91550  # Bazil Thredd kills (Stormwind Stockade)
+CriteriaText:91552  # Darkmaster Gandling kills (Scholomance) (+1)
+CriteriaText:91554  # Baron Rivendare kills (Stratholme) (+1)
+CriteriaText:94296  # Has Died
+CriteriaText:94307  # Survivor
+CriteriaText:95385  # <Hidden> Adventure Awaits - Reach Max Level of Season of Mastery with the buff Adventur...
+CriteriaText:95610  # The Immortal
+CriteriaText:121217  # Most Alliance Factions at Exalted
+CriteriaText:121218  # Exalted with Silverwing Sentinels
+CriteriaText:121219  # Exalted with Wintersaber Trainers
+CriteriaText:121220  # Exalted with Valiance Expedition
+CriteriaText:121221  # Exalted with The Silver Covenant
+CriteriaText:121222  # Exalted with Ironforge
+CriteriaText:121223  # Exalted with Stormpike Guard
+CriteriaText:121224  # Exalted with Exodar
+CriteriaText:121225  # Exalted with Honor Hold
+CriteriaText:121226  # Exalted with Explorers' League
+CriteriaText:121227  # Exalted with Darnassus
+CriteriaText:121228  # Exalted with Gnomeregan
+CriteriaText:121229  # Exalted with The League of Arathor
+CriteriaText:121230  # Exalted with Kurenai
+CriteriaText:121231  # Exalted with Stormwind
+CriteriaText:121232  # Exalted with The Sunreavers (+1)
+CriteriaText:121233  # Explore Alterac Mountains
+CriteriaText:121289  # Alterac Valley Honorable Kills
+CriteriaText:121331  # Total cheers
+CriteriaText:121348  # Northrend (+3)
+CriteriaText:121473  # Duels lost
+CriteriaText:121743  # Arathi Basin Honorable Kills
+CriteriaText:121745  # Alterac Valley Runecloth Bandage (+1)
+CriteriaText:121748  # Netherweave Bandage (+1)
+CriteriaText:121756  # Dense Frostweave Bandage (+1)
+CriteriaText:121757  # Frostweave Bandage (+1)
+CriteriaText:121761  # Heavy Frostweave Bandage (+1)
+CriteriaText:121762  # Heavy Netherweave Bandage (+1)
+CriteriaText:121764  # Thick Frostweave Bandage (+1)
+CriteriaText:121781  # Total Killing Blows
+CriteriaText:121784  # Weapon skills at maximum skill
+CriteriaText:121801  # Total kills that grant experience or honor
+CriteriaText:121802  # Kill an NPC that yields XP
+CriteriaText:121803  # Honorable Kills (+2)
+CriteriaText:121888  # 10 man raids
+CriteriaText:121906  # Talent tree respecs
+CriteriaText:121933  # Warsong Gulch Victories
+CriteriaText:121937  # Blacksmithing plans known (+1)
+CriteriaText:121940  # Total healing done
+CriteriaText:121977  # Alterac Valley battles
+CriteriaText:121982  # Enchanting formulae known (+1)
+CriteriaText:122014  # Elixirs consumed
+CriteriaText:122020  # Elixir of Lion's Strength
+CriteriaText:122026  # Elixir of Detect Undead
+CriteriaText:122037  # Elixir of Demonslaying
+CriteriaText:122038  # Elixir of Detect Demon
+CriteriaText:122041  # Elixir of Greater Firepower
+CriteriaText:122048  # Elixir of Armor Piercing
+CriteriaText:122057  # Elixir of Giants
+CriteriaText:122060  # Elixir of Water Walking
+CriteriaText:122061  # Weak Troll's Blood Elixir
+CriteriaText:122077  # Strong Troll's Blood Elixir
+CriteriaText:122085  # Elixir of Ogre's Strength
+CriteriaText:122086  # Elixir of Greater Water Breathing
+CriteriaText:122092  # Elixir of Superior Defense
+CriteriaText:122095  # Elixir of Water Breathing
+CriteriaText:122103  # Elixir of Detect Lesser Invisibility
+CriteriaText:122109  # Catseye Elixir
+CriteriaText:122112  # Elixir of Dream Vision
+CriteriaText:122113  # Elixir of Firepower
+CriteriaText:122184  # Total quests (+1)
+CriteriaText:122185  # Daily quests (+1)
+CriteriaText:122187  # Demons (+2)
+CriteriaText:122188  # Beasts (+2)
+CriteriaText:122190  # Humanoid (+2)
+CriteriaText:122191  # Mechanical (+2)
+CriteriaText:122192  # Undead (+2)
+CriteriaText:122193  # Unspecified (+2)
+CriteriaText:122194  # Totems (+2)
+CriteriaText:122195  # Dragonkin (+2)
+CriteriaText:122212  # Warsong Gulch flags returned
+CriteriaText:122233  # Largest heal cast
+CriteriaText:122235  # Largest hit dealt
+CriteriaText:122251  # Number of mounts
+CriteriaText:122252  # Beverages
+CriteriaText:122290  # Sulfuron Slammer
+CriteriaText:122297  # Flagon of Mead
+CriteriaText:122298  # Flask of Port
+CriteriaText:122322  # Keg of Thunderbrew Lager
+CriteriaText:122337  # Jug of Bourbon
+CriteriaText:122348  # Half Full Bottle of Prison Moonshine
+CriteriaText:122361  # Winter Veil Eggnogg
+CriteriaText:122370  # Scourgebane Infusion
+CriteriaText:122400  # Bottle of Pinot Noir
+CriteriaText:122415  # Bad Egg Nog (+1)
+CriteriaText:122443  # Food eaten
+CriteriaText:122445  # Steaming Chicken Soup
+CriteriaText:122446  # Spiced Wolf Ribs
+CriteriaText:122448  # Spicy Crawdad
+CriteriaText:122449  # Runn Tub Tuber
+CriteriaText:122452  # Stewed Trout
+CriteriaText:122467  # Oronok's Tuber of Agility
+CriteriaText:122471  # Grilled Shadowmoon Tuber
+CriteriaText:122478  # Sand Pear Pie
+CriteriaText:122479  # Tigule and Foror's Strawberry Ice Cream
+CriteriaText:122482  # Edible Fern
+CriteriaText:122487  # Sewer Carp
+CriteriaText:122491  # Mingo's Fortune Giblets
+CriteriaText:122492  # Ravager Egg Omelet
+CriteriaText:122501  # Dalaran Clam Chowder
+CriteriaText:122504  # Hallow's End Pumpink Treat
+CriteriaText:122513  # Oronok's Tuber of Strength
+CriteriaText:122517  # Enriched Terocone Juice
+CriteriaText:122519  # Funnel Cake
+CriteriaText:122520  # Giant Sunfish
+CriteriaText:122524  # Imperial Manta Steak
+CriteriaText:122526  # Rhino Dogs
+CriteriaText:122529  # Critter Bites
+CriteriaText:122535  # Raw Raindbow Fin Albacore
+CriteriaText:122538  # Blackened Trout
+CriteriaText:122540  # Lovely Cake Slice
+CriteriaText:122541  # Lynx Steak
+CriteriaText:122543  # Mead Basted Caribou
+CriteriaText:122547  # Roasted Mystery Beast
+CriteriaText:122550  # Tracker Snacks
+CriteriaText:122557  # Shoveltusk Steak
+CriteriaText:122562  # Edible Stalks
+CriteriaText:122566  # Bag of Popcorn
+CriteriaText:122580  # Honeyed Holiday Ham
+CriteriaText:122582  # Skethyl Berries
+CriteriaText:122583  # Snapper Extreme
+CriteriaText:122585  # Spiced Wyrm Burger
+CriteriaText:122599  # Runn Tum Tuber Suprise
+CriteriaText:122602  # Grilled Bonescale
+CriteriaText:122604  # Hot Buttered Trout
+CriteriaText:122605  # Hearty Rhino
+CriteriaText:122612  # Tundra Berries
+CriteriaText:122618  # Clam Bar
+CriteriaText:122619  # Smoked Black Bear Meat
+CriteriaText:122621  # Tek'Abim Banana
+CriteriaText:122625  # Tricky Treat
+CriteriaText:122627  # G.N.E.R.D.S.
+CriteriaText:122640  # Pickled Egg
+CriteriaText:122641  # Poached Northern Sculpin
+CriteriaText:122645  # Crusader's Rations
+CriteriaText:122647  # Fillet of Icefin
+CriteriaText:122656  # Rhinolicious Wyrmsteak
+CriteriaText:122657  # Salted Venison
+CriteriaText:122665  # Fresh Eagle Meat
+CriteriaText:122666  # Garadar Sharp
+CriteriaText:122679  # Spice Bread
+CriteriaText:122682  # Sweet Potato Bread
+CriteriaText:122691  # Clefthoof Ribs
+CriteriaText:122692  # Conjured Mana Biscuit
+CriteriaText:122694  # Charred Bear Kabobs
+CriteriaText:122695  # Crusty Flatbread
+CriteriaText:122705  # Delicious Baked Ham
+CriteriaText:122706  # Dried Mushroom Rations
+CriteriaText:122708  # Kibler's Bits
+CriteriaText:122718  # Blackened Basilisk
+CriteriaText:122719  # Bonestripper Buzzard Hotwings
+CriteriaText:122733  # Dalaran Brownie
+CriteriaText:122736  # Blackened Dragonfin
+CriteriaText:122740  # Small Feast
+CriteriaText:122743  # Spicy Hot Talbuk
+CriteriaText:122745  # Sporeggar Mushroom
+CriteriaText:122746  # Springpaw Appetizer
+CriteriaText:122750  # Dalaran Doughnut
+CriteriaText:122756  # Diamond Berries
+CriteriaText:122759  # Feltail Delight
+CriteriaText:122767  # Hellfire Spineleaf
+CriteriaText:122771  # Juicy Bear Burger
+CriteriaText:122773  # Savory Snowplum
+CriteriaText:122779  # Marsh Lichen
+CriteriaText:122780  # Mega Mammoth Meal
+CriteriaText:122783  # Mon'Nathal Shortribs
+CriteriaText:122786  # Naaru Ration
+CriteriaText:122787  # Ogri'la Chicken Fingers
+CriteriaText:122789  # Poached Nettlefish
+CriteriaText:122792  # Conjured Mana Pie
+CriteriaText:122795  # Bristly Whisker Catfish
+CriteriaText:122798  # Delicious Chocolate Cake
+CriteriaText:122799  # Dried Fruit Rations
+CriteriaText:122802  # Berry Pie Slice
+CriteriaText:122803  # Bowels 'n' Brains
+CriteriaText:122805  # Briny Hardcheese
+CriteriaText:122806  # Broiled Bloodfin
+CriteriaText:122807  # Buzzard Bites
+CriteriaText:122813  # Ravager Dog
+CriteriaText:122815  # Red Velvet Cupcake
+CriteriaText:122821  # Rock-Salted Pretzel
+CriteriaText:122822  # Tender Shovelsteak Steak
+CriteriaText:122824  # Zangar Caps
+CriteriaText:122825  # Bladespire Bagel
+CriteriaText:122830  # Fisherman's Feast
+CriteriaText:122832  # Grilled Sculpin
+CriteriaText:122835  # Smoked Salmon
+CriteriaText:122836  # Smoked Talbuk Venison
+CriteriaText:122839  # Sparkling Frostcap
+CriteriaText:122841  # Talbuk Steak
+CriteriaText:122843  # Underspore Pod
+CriteriaText:122844  # Mammoth Meal
+CriteriaText:122845  # Winter Veil Loaf
+CriteriaText:122846  # Winter Veil Candy
+CriteriaText:122847  # Winter Squid
+CriteriaText:122860  # Sizzling Grizzly Flank
+CriteriaText:122861  # Skyguard Rations
+CriteriaText:122863  # Stolen Ribs
+CriteriaText:122864  # Crunchy Serpent
+CriteriaText:122865  # Mag'har Mild Cheese
+CriteriaText:122873  # Gold from vendors
+CriteriaText:122894  # Exalted with The Taunka
+CriteriaText:122895  # Exalted with Tranquillen
+CriteriaText:122896  # Exalted with The Hand of Vengeance
+CriteriaText:122897  # Exalted with Warsong Outriders
+CriteriaText:122898  # Exalted with Darkspear Trolls
+CriteriaText:122899  # Exalted with Orgrimmar
+CriteriaText:122900  # Exalted with Thunder Bluff
+CriteriaText:122901  # Exalted with Warsong Offensive
+CriteriaText:122902  # Exalted with The Defilers
+CriteriaText:122903  # Exalted with Undercity
+CriteriaText:122904  # Exalted with Thrallmar
+CriteriaText:122905  # Exalted with Silvermoon City
+CriteriaText:122906  # Exalted with The Mag'har
+CriteriaText:122908  # Exalted with Frostwolf Clan
+CriteriaText:122979  # Number of hugs
+CriteriaText:122981  # Need rolls for loot
+CriteriaText:122983  # Total facepalms
+CriteriaText:123019  # Arathi Basin victories
+CriteriaText:123036  # Total factions encountered
+CriteriaText:123038  # 10-man instances run
+CriteriaText:123076  # Deaths from falling
+CriteriaText:123080  # Gold spent on travel
+CriteriaText:123082  # Gold spent on postage
+CriteriaText:123086  # Total waves
+CriteriaText:123088  # laugh
+CriteriaText:123089  # rofl
+CriteriaText:123090  # giggle
+CriteriaText:123091  # chuckle
+CriteriaText:123092  # guffaw
+CriteriaText:123116  # Epic items obtained
+CriteriaText:123118  # Alterac Valley towers defended
+CriteriaText:123260  # Largest hit received
+CriteriaText:123276  # Deaths in Alterac Valley
+CriteriaText:123280  # Fishing skill
+CriteriaText:123282  # Leatherworking skill
+CriteriaText:123284  # Quests abandoned
+CriteriaText:123334  # First aid skill
+CriteriaText:123459  # Win Battlegrounds
+CriteriaText:123469  # Inscription skill
+CriteriaText:123502  # Critters killed
+CriteriaText:123504  # Deaths from fatigue
+CriteriaText:123506  # Deaths from fire and lava (+1)
+CriteriaText:123660  # Revive Spells
+CriteriaText:123661  # Rank 2 (+1)
+CriteriaText:123663  # Rank 4 (+1)
+CriteriaText:123665  # Rank 1 (+1)
+CriteriaText:123666  # Rank 3 (+3)
+CriteriaText:123667  # Rank 5 (+1)
+CriteriaText:123674  # Legendary items obtained
+CriteriaText:123676  # Flight paths taken
+CriteriaText:123709  # Total damage received
+CriteriaText:123763  # Flasks consumed
+CriteriaText:123804  # Ruby Slippers
+CriteriaText:123806  # Deaths from Hogger (+1)
+CriteriaText:123809  # Alchemy skill
+CriteriaText:123811  # Body is Epic!
+CriteriaText:123812  # Chest is Epic!
+CriteriaText:123813  # Ring is Epic! (+1)
+CriteriaText:123814  # Weapon is Epic!
+CriteriaText:123815  # Shoulders are Epic!
+CriteriaText:123816  # Trinket is Epic! (+1)
+CriteriaText:123817  # Bracers are Epic!
+CriteriaText:123818  # Ranged/Wand/Relic is Epic!
+CriteriaText:123820  # Tabard is Epic!
+CriteriaText:123821  # Belt is Epic!
+CriteriaText:123822  # Necklace is Epic!
+CriteriaText:123823  # Off-hand is Epic!
+CriteriaText:123825  # Cloak is Epic!
+CriteriaText:123826  # Feet are epic!
+CriteriaText:123827  # Helm is Epic!
+CriteriaText:123828  # Legs are Epic!
+CriteriaText:123829  # Gloves are Epic!
+CriteriaText:123830  # 20-player raids entered
+CriteriaText:123831  # 20-man raids run
+CriteriaText:123833  # Cooking skill
+CriteriaText:123836  # Crocolisks in the City
+CriteriaText:123837  # Bait Bandits
+CriteriaText:123838  # Felblood Fillet
+CriteriaText:123839  # Shrimpin' Ain't Easy
+CriteriaText:123840  # The Ghostfish
+CriteriaText:123841  # The Jewel of the Sewers
+CriteriaText:123842  # Dangerously Delicious
+CriteriaText:123843  # Monsterbelly Appetite
+CriteriaText:123844  # Blood is Thicker
+CriteriaText:123846  # Fish and other things caught
+CriteriaText:123923  # Scarlet Commander Mograine
+CriteriaText:123925  # Resurrection (Rank 5)
+CriteriaText:123926  # Resurrection (Rank 3)
+CriteriaText:123927  # Resurrection (Rank 2)
+CriteriaText:123928  # Resurrection (Rank 4)
+CriteriaText:123929  # Resurrection (Rank 1)
+CriteriaText:123934  # Rebirth (Rank 4)
+CriteriaText:123935  # Rebirth (Rank 3)
+CriteriaText:123936  # Rebirth (Rank 2)
+CriteriaText:123937  # Rebirth (Rank 1)
+CriteriaText:123939  # Rebirth (Rank 5)
+CriteriaText:123974  # Arathi Basin battles
+CriteriaText:124049  # Money from vendors (+1)
+CriteriaText:124050  # Money looted from creatures (+1)
+CriteriaText:124051  # Money from questing (+1)
+CriteriaText:124052  # Money from auctions (+1)
+CriteriaText:124096  # Skinning skill
+CriteriaText:124098  # Engineering skill
+CriteriaText:124134  # Bael'Dun Digsite
+CriteriaText:124193  # Total NPC kills
+CriteriaText:124200  # Jewelcrafting (+1)
+CriteriaText:124201  # Inscription (+1)
+CriteriaText:124225  # Highest sale value on an auction
+CriteriaText:124227  # Total gold looted
+CriteriaText:124229  # Most gold ever owned:
+CriteriaText:124249  # Deaths in Warsong Gulch
+CriteriaText:124251  # Killed by Drek'Thar
+CriteriaText:124253  # Disenchanted items
+CriteriaText:124270  # All
+CriteriaText:124366  # Factions at revered
+CriteriaText:124408  # Total deaths
+CriteriaText:124414  # Factions at honored
+CriteriaText:124434  # Alterac Valley towers captured
+CriteriaText:124436  # Total healing received
+CriteriaText:124571  # Deaths in instances
+CriteriaText:124572  # 5 man instances (+1)
+CriteriaText:124573  # 10 man instances
+CriteriaText:124575  # 20 man instances
+CriteriaText:124576  # 40 man instances
+CriteriaText:124578  # Participate in Battlegrounds
+CriteriaText:124751  # Largest heal received
+CriteriaText:124756  # Vanity pets owned
+CriteriaText:124852  # Arathi Basin Deaths
+CriteriaText:124913  # Gold spent on talent tree respecs
+CriteriaText:124999  # Fish caught
+CriteriaText:125009  # Strand of the Ancients (+3)
+CriteriaText:125010  # Isle of Conquest (+3)
+CriteriaText:125191  # Warsong Gulch flags captured
+CriteriaText:125577  # Alterac Valley Killing Blows
+CriteriaText:125584  # Exalted Reputations
+CriteriaText:125714  # Gold spent at barber shops
+CriteriaText:125731  # Burning Crusade Areas (+1)
+CriteriaText:125811  # Total times playing world's smallest violin
+CriteriaText:126281  # Herbalism skill
+CriteriaText:126283  # Blacksmithing skill
+CriteriaText:126345  # Revenge is Tasty
+CriteriaText:126346  # Manalicious
+CriteriaText:126347  # Soup for the Soul
+CriteriaText:126348  # Super Hot Stew
+CriteriaText:126349  # Feast for the Legerddemain - Alliance
+CriteriaText:126350  # Feast for the Legerdemain - Horde
+CriteriaText:126351  # Infused Mushroom Meatloaf - Alliance (+6)
+CriteriaText:126358  # Infused Mushroom Meatloaf - Horde
+CriteriaText:126360  # Alchemy recipes known (+1)
+CriteriaText:126787  # Warsong Gulch Honorable Kills
+CriteriaText:126861  # Killed by Vanndar Stormpike
+CriteriaText:126951  # Battlegrounds Played
+CriteriaText:127086  # Mana Potions consumed
+CriteriaText:127329  # 5-man instances run
+CriteriaText:127440  # Duels won
+CriteriaText:127442  # Total damage done
+CriteriaText:127452  # Mining skill
+CriteriaText:127613  # Epic Items Looted
+CriteriaText:127907  # Legash Encampment
+CriteriaText:128069  # Mage Portals
+CriteriaText:128078  # Portal to Thunder Bluff (+1)
+CriteriaText:128170  # Healthstone (1)
+CriteriaText:128171  # Master Healthstone (1)
+CriteriaText:128172  # Lesser Healthstone (2)
+CriteriaText:128173  # Greater Healthstone (0)
+CriteriaText:128174  # Greater Healthstone (1)
+CriteriaText:128175  # Healthstone (2)
+CriteriaText:128176  # Major Healthstone (1)
+CriteriaText:128177  # Minor Healthstone (1)
+CriteriaText:128178  # Minor Healthstone (2)
+CriteriaText:128179  # Master Healthstone (2)
+CriteriaText:128180  # Major Healthstone (2)
+CriteriaText:128181  # Minor Healthstone (0)
+CriteriaText:128182  # Greater Healthstone (2)
+CriteriaText:128183  # Healthstone (0)
+CriteriaText:128184  # Demonic Healthstone (+5)
+CriteriaText:128185  # Fel Healthstone (+5)
+CriteriaText:128194  # Major Healthstone (0)
+CriteriaText:128195  # Master Healthstone (0)
+CriteriaText:128196  # Lesser Healthstone (0)
+CriteriaText:128198  # Lesser Healthstone (1)
+CriteriaText:128217  # Total gold from quest rewards
+CriteriaText:128256  # Enchanting skill
+CriteriaText:128496  # Dalaran Cooking Awards gained
+CriteriaText:128506  # Inscriptions known (+1)
+CriteriaText:128509  # Cooking recipes known (+1)
+CriteriaText:128585  # Smelting Recipes Known (+1)
+CriteriaText:128750  # Alterac Valley victories
+CriteriaText:128754  # Auctions Posted
+CriteriaText:128755  # Health potions used
+CriteriaText:128788  # Major healing Draught
+CriteriaText:128931  # Total Auction Purchases
+CriteriaText:129052  # Gold Earned from Auctions
+CriteriaText:129062  # Warsong Gulch Killing Blows
+CriteriaText:129366  # Highest Auction Bid
+CriteriaText:129443  # Arathi Basin Killing Blows
+CriteriaText:129455  # Tailoring Patterns known (+1)
+CriteriaText:129855  # Use Portals
+CriteriaText:131456  # Leatherworking Patterns known (+1)
+CriteriaText:131938  # Tailoring skill
+CriteriaText:132088  # Total deaths from other players
+CriteriaText:132092  # First Aid Manuals learned (+1)
+CriteriaText:132275  # Deaths from drowning
+CriteriaText:132293  # Win Battleground
+CriteriaText:132821  # Summons accepted
+CriteriaText:132856  # Engineering Schematics known (+1)
+CriteriaText:133360  # Greed rolls on loot
+CriteriaText:169195  # Rune Learned - Shared Acquisition - Illari Duskfather (40)
+CriteriaText:169197  # Rune Learned - Shared Acquisition - Dark Riders (40)
+CriteriaText:169201  # Rune Learned - Shared Acquisition - Ley Lines (50)
+CriteriaText:210009  # S03 - Scarlet Enclave - Boss - Balnazzar - Achievement Credit
+CriteriaText:210320  # S03 - Scarlet Enclave - Boss - Balnazzar - Backup Achievement Credit
+CriteriaText:219255  # Level 25 Warrior (+1)
+CriteriaText:219278  # Level 45 Warrior (+1)
+CriteriaText:219280  # Level 60 Warrior (+1)
+CriteriaText:219282  # Level 25 Druid (+1)
+CriteriaText:219284  # Level 45 Druid (+1)
+CriteriaText:219286  # Level 60 Druid (+1)
+CriteriaText:219337  # 1.60.0 - Can Proceed To Lost Ones Quest Pt. 2
+CriteriaText:221439  # Level 25 Hunter (+1)
+CriteriaText:221463  # Level 45 Hunter (+1)
+CriteriaText:221465  # Level 60 Hunter (+1)
+CriteriaText:221467  # Level 25 Mage (+1)
+CriteriaText:221469  # Level 45 Mage (+1)
+CriteriaText:221471  # Level 60 Mage (+1)
+CriteriaText:221473  # Level 25 Paladin (+1)
+CriteriaText:221475  # Level 45 Paladin (+1)
+CriteriaText:221477  # Level 60 Paladin (+1)
+CriteriaText:221479  # Level 25 Priest (+1)
+CriteriaText:221481  # Level 45 Priest (+1)
+CriteriaText:221483  # Level 60 Priest (+1)
+CriteriaText:221485  # Level 25 Rogue (+1)
+CriteriaText:221487  # Level 45 Rogue (+1)
+CriteriaText:221489  # Level 60 Rogue (+1)
+CriteriaText:221491  # Level 25 Shaman (+1)
+CriteriaText:221493  # Level 45 Shaman (+1)
+CriteriaText:221495  # Level 60 Shaman (+1)
+CriteriaText:221497  # Level 25 Warlock (+1)
+CriteriaText:221499  # Level 45 Warlock (+1)
+CriteriaText:221501  # Level 60 Warlock (+1)
+CriteriaText:221503  # 150 Skill in Alchemy (+1)
+CriteriaText:221504  # 150 Alchemy Skill (+1)
+CriteriaText:221505  # 225 Skill in Alchemy (+1)
+CriteriaText:221506  # 225 Alchemy Skill (+1)
+CriteriaText:221507  # 300 Skill in Alchemy (+1)
+CriteriaText:221508  # 300 Alchemy Skill (+1)
+CriteriaText:221509  # 150 Skill in Blacksmithing (+1)
+CriteriaText:221510  # 150 Blacksmithing Skill (+1)
+CriteriaText:221511  # 225 Skill in Blacksmithing (+1)
+CriteriaText:221512  # 225 Blacksmithing Skill (+1)
+CriteriaText:221513  # 300 Skill in Blacksmithing (+1)
+CriteriaText:221514  # 300 Blacksmithing Skill (+1)
+CriteriaText:221515  # 150 Skill in Enchanting (+1)
+CriteriaText:221516  # 150 Enchanting Skill (+1)
+CriteriaText:221517  # 225 Skill in Enchanting (+1)
+CriteriaText:221518  # 225 Enchanting Skill (+1)
+CriteriaText:221519  # 300 Skill in Enchanting (+1)
+CriteriaText:221520  # 300 Enchanting Skill (+1)
+CriteriaText:221521  # 150 Skill in Engineering (+1)
+CriteriaText:221522  # 150 Engineering Skill (+1)
+CriteriaText:221523  # 225 Skill in Engineering (+1)
+CriteriaText:221524  # 225 Engineering Skill (+1)
+CriteriaText:221525  # 300 Skill in Engineering (+1)
+CriteriaText:221526  # 300 Engineering Skill (+1)
+CriteriaText:221527  # 150 Skill in Leatherworking (+1)
+CriteriaText:221528  # 150 Leatherworking Skill (+1)
+CriteriaText:221529  # 225 Skill in Leatherworking (+1)
+CriteriaText:221530  # 225 Leatherworking Skill (+1)
+CriteriaText:221531  # 300 Skill in Leatherworking (+1)
+CriteriaText:221532  # 300 Leatherworking Skill (+1)
+CriteriaText:221533  # 150 Skill in Tailoring (+1)
+CriteriaText:221534  # 150 Tailoring Skill (+1)
+CriteriaText:221535  # 225 Skill in Tailoring (+1)
+CriteriaText:221536  # 225 Tailoring Skill (+1)
+CriteriaText:221537  # 300 Skill in Tailoring (+1)
+CriteriaText:221538  # 300 Tailoring Skill (+1)
+CriteriaText:221563  # 1.60.0 - Complete Dungeon Upgrade Questline - Saving the Best for Last (+1)
+CriteriaText:221565  # Exalted with Alterac Valley (+1)
+CriteriaText:221566  # Reach exalted reputation with the Frostwolf Clan (+1)
+CriteriaText:221567  # Reach exalted reputation with the Stormpike Guard (+1)
+CriteriaText:221568  # Exalted with Arathi Basin (+1)
+CriteriaText:221569  # Reach exalted reputation with The Defilers (+1)
+CriteriaText:221570  # Reach exalted reputation with the League of Arathor (+1)
+CriteriaText:221571  # Exalted with Warsong Gulch (+1)
+CriteriaText:221572  # Reach exalted reputation with the Warsong Outriders (+1)
+CriteriaText:221573  # Reach exalted reputation with the Silverwing Sentinels (+1)
+CriteriaText:223429  # Explore Eastern Kingdoms
+CriteriaText:223453  # Explore Kalimdor
+CriteriaText:223475  # Explore Eastern Kingdoms and Kalimdor
+CriteriaText:223519  # Exploer Azeroth - Account Wide
+CriteriaText:223520  # Explorer (+1)
+CriteriaText:229457  # Complete Field of Honor: Week 4 (+3)
+CriteriaText:229460  # Complete Field of Honor: Week 7 (+3)
+CriteriaText:229462  # Complete Field of Honor: Week 10 (+3)
+CriteriaText:230736  # Exalted with Darkspear Islands (+1)
+CriteriaText:230737  # Reach exalted reputation with the Darkspear Raiders (+1)
+CriteriaText:230738  # Reach exalted reputation with the Theramore Expeditionary Force (+1)
+CriteriaText:230741  # Rank 7 (+2)
+CriteriaText:230743  # Rank 10 (+2)
+CriteriaText:230745  # Rank 13 (+2)
+CriteriaText:230747  # Rank 14 (+2)
+CriteriaText:230759  # Novice Spelunker (+1)
+CriteriaText:230766  # Ragefire Chasm or Hall of Thanes (+1)
+CriteriaText:230767  # Experienced Spelunker (+1)
+CriteriaText:230774  # Scarlet Monastery: Graveyard (+1)
+CriteriaText:230775  # Scarlet Monastery: Library (+1)
+CriteriaText:230776  # Scarlet Monastery: Armory (+1)
+CriteriaText:230777  # Scarlet Monastery: Cathedral (+1)
+CriteriaText:230779  # Master Spelunker (+1)
+CriteriaText:230790  # Stratholme: Live (+1)
+CriteriaText:230791  # Stratholme: Dead (+1)
+CriteriaText:230792  # Dire Maul: East (+1)
+CriteriaText:230793  # Dire Maul: North (+1)
+CriteriaText:230794  # Dire Maul: West (+1)
+CriteriaText:230797  # Kill Onyxia (+1)
+CriteriaText:230799  # Complete The Barrow Deeps (+1)
+CriteriaText:230800  # Sonya Darkhallow (+2)
+CriteriaText:230801  # Elder Tangleclaw (+1)
+CriteriaText:230802  # Khalith the Dreadspinner (+1)
+CriteriaText:230803  # Amethrax (+1)
+CriteriaText:230804  # Well of Sorrow (+1)
+CriteriaText:230805  # Del'lynar Songwood (+1)
+CriteriaText:230806  # Chillhowl (+1)
+CriteriaText:230807  # Ravus and Darlissa (+1)
+CriteriaText:230811  # Complete Hyjal Summit (+1)
+CriteriaText:230812  # Bandalar (+1)
+CriteriaText:230813  # Ancient of Decay (+1)
+CriteriaText:230814  # Time-Lost Battalion (+1)
+CriteriaText:230815  # Sylvestris Dusksong (+1)
+CriteriaText:230816  # Old Gloomlurker (+1)
+CriteriaText:230817  # Gharalis the Abyssal (+1)
+CriteriaText:230818  # Kathris the Haunted (+1)
+CriteriaText:230819  # Anara Chillwind (+1)
+CriteriaText:230820  # Elder Minderel (+1)
+CriteriaText:230821  # Tracker Stillwind (+1)
+CriteriaText:230822  # Council of Thorns (+1)
+CriteriaText:230823  # Nythus the Dreambound (+1)
+CriteriaText:230824  # The Wild King (+2)
+CriteriaText:230971  # Kill Edwin VanCleef
+CriteriaText:230973  # Kill Rath'mael
+CriteriaText:230975  # Kill Shade of the Archmage
+CriteriaText:230977  # Kill Durgen Dirgehammer
+CriteriaText:230979  # Kill Nanaya
+CriteriaText:230980  # Nanaya
+CriteriaText:230981  # Kill Blazeroar
+CriteriaText:230982  # Blazeroar
+CriteriaText:230991  # Kill The Wild King
+CriteriaText:230993  # Kill Sonya Darkhallow
+CriteriaText:231009  # Kill Lyn the Ignored
+CriteriaText:231011  # Kill Cinder
+CriteriaText:231015  # Kill Bolt
+CriteriaText:231017  # Kill Snowtalon
+CriteriaText:232142  # Explore Shen'dralas
+CriteriaText:234128  # Explore Azeroth - Account Wide
+CriteriaText:234409  # Rank 6
+CriteriaText:234411  # Rank 8
+CriteriaText:234413  # Rank 9
+CriteriaText:234415  # Rank 11
+CriteriaText:234417  # Rank 12
+CriteriaText:234567  # Tier 1 Achievement
+CriteriaText:235075  # Darkspear Islands victories
+CriteriaText:235076  # Darkspear Island victories
+CriteriaText:235079  # New Criteria Tree (+4)
+CriteriaText:235082  # Darkspear Islands Honorable Kills
+CriteriaText:235084  # Darkspear Island Killing Blows
+CriteriaText:235086  # Deaths in Darkspear Islands
+CriteriaText:235088  # 20 man raids
+CriteriaText:235097  # 40-man raids run (+1)
+CriteriaText:235099  # 40 man raids
+# RenownRewardName (RenownRewards.Name_lang)
+RenownRewardName:1832  # Rank 1 Rewards
+RenownRewardName:1833  # Rank 2 Rewards
+RenownRewardName:1834  # Rank 3 Rewards
+RenownRewardName:1835  # Rank 4 Rewards
+RenownRewardName:1836  # Rank 5 Rewards
+RenownRewardName:1837  # Rank 6 Rewards
+RenownRewardName:1838  # Rank 7 Rewards
+RenownRewardName:1839  # Rank 8 Rewards (+1)
+RenownRewardName:1840  # Rank 9 Rewards
+RenownRewardName:1841  # Rank 10 Rewards
+RenownRewardName:1842  # Rank 11 Rewards (+1)
+RenownRewardName:1843  # Rank 12 Rewards (+1)
+RenownRewardName:1844  # Rank 13 Rewards (+1)
+RenownRewardName:1845  # Rank 14 Rewards
+# RenownRewardDescription (RenownRewards.Description_lang)
+RenownRewardDescription:1832  # Faction Tabard
+RenownRewardDescription:1833  # Insignia Trinket
+RenownRewardDescription:1834  # Faction Cloak
+RenownRewardDescription:1835  # Faction Necklace
+RenownRewardDescription:1836  # Combat Potions
+RenownRewardDescription:1837  # Elite Faction Tabard
+RenownRewardDescription:1839  # Elite Wrist Upgrade
+RenownRewardDescription:1840  # Elite Boot Upgrade
+RenownRewardDescription:1841  # Elite Glove Upgrade
+RenownRewardDescription:1842  # Black War Mounts (+1)
+RenownRewardDescription:1843  # Elite Leg Upgrade
+RenownRewardDescription:1844  # Elite Chest Upgrade
+RenownRewardDescription:1845  # Weapon Arsenal
+RenownRewardDescription:1856  # Join a shootout with your air rifle. You and other players with this rifle can Stun eac...
+RenownRewardDescription:1857  # Summons a tiny spectral bear cub as your companion.|n|n|cFFFFFFFFVisit Innkeeper Wiley ...
+RenownRewardDescription:1858  # Show your dedication with this spectral bear-themed tabard.|n|n|cFFFFFFFFVisit Innkeepe...
+RenownRewardDescription:1859  # Summons and dismisses an Epic rideable spectral bear mount that moves at 100% increased...
+RenownRewardDescription:2008  # Elite Waist Upgrade
+RenownRewardDescription:2010  # Elite Shoulder Upgrade
+RenownRewardDescription:2011  # Elite Helmet Upgrade
+# RenownRewardToast (RenownRewards.ToastDescription_lang)
+RenownRewardToast:1832  # Faction Tabard Unlocked
+RenownRewardToast:1833  # Insignia Trinket Unlocked
+RenownRewardToast:1834  # Cloak Unlocked
+RenownRewardToast:1835  # Necklace Unlocked
+RenownRewardToast:1836  # Access to Combat Potions Unlocked
+RenownRewardToast:1837  # Elite Faction Tabard Unlocked
+RenownRewardToast:1838  # Battle Standard Unlocked
+RenownRewardToast:1839  # Elite Wrist Upgrades Unlocked
+RenownRewardToast:1840  # Elite Boot Upgrade Unlocked
+RenownRewardToast:1841  # Elite Glove Upgrade Unlocked
+RenownRewardToast:1842  # Faction Black War Mounts Unlocked (+1)
+RenownRewardToast:1843  # Elite Leg Upgrades Unlocked
+RenownRewardToast:1844  # Elite Chest Upgrades Unlocked
+RenownRewardToast:1845  # Weapon Arsenal Unlocked
+RenownRewardToast:2008  # Elite Waist Upgrades Unlocked
+RenownRewardToast:2010  # Elite Shoulder Upgrades Unlocked
+RenownRewardToast:2011  # Elite Helmet Upgrades Unlocked
+# SharedString (SharedString.String_lang)
+SharedString:911  # Spend %d more |4point:points; in %s |4Talent:Talents;
+SharedString:992  # Tab 1 (+1)
+SharedString:993  # Tab 2 (+1)
+SharedString:994  # Tab 3 (+1)
+SharedString:995  # Tab 4 (+1)
+SharedString:996  # Tab 5 (+1)
+SharedString:1137  # Are you sure you want to automatically sort your items?|nThis will affect all Account t...
+SharedString:1138  # Account Bank
+SharedString:1139  # The Account Bank offers storage that is shared with all members in your Account.|n|nDo ...
+SharedString:1140  # Enter Warband Bank Tab Name:
+SharedString:1141  # Do you want to purchase an Account Bank tab for:
+SharedString:1142  # Are you sure you want to automatically sort your items?|nThis will affect all tabs.
+SharedString:1143  # Bank
+SharedString:1144  # The Bank offers additional storage for your items.|n|nDo you wish to purchase this tab?
+SharedString:1145  # Enter Bank Tab Name:
+SharedString:1146  # Do you want to purchase a Bank tab for:
+SharedString:1152  # Tab 6
+SharedString:1159  # Classic
+SharedString:1318  # Spend %d more |4point:points; in the %s Legacy Tree
+# TradeSkillCategory (TradeSkillCategory.Name_lang)
+TradeSkillCategory:2436  # Alchemy - UNCATEGORIZED
+TradeSkillCategory:2437  # Blacksmithing - UNCATEGORIZED
+TradeSkillCategory:2438  # Cooking - UNCATEGORIZED
+TradeSkillCategory:2439  # Enchanting - UNCATEGORIZED
+TradeSkillCategory:2440  # Engineering - UNCATEGORIZED
+TradeSkillCategory:2441  # First Aid - UNCATEGORIZED
+TradeSkillCategory:2442  # Fishing - UNCATEGORIZED
+TradeSkillCategory:2443  # Herbalism - UNCATEGORIZED
+TradeSkillCategory:2444  # Leatherworking - UNCATEGORIZED
+TradeSkillCategory:2445  # Mining - UNCATEGORIZED
+TradeSkillCategory:2446  # Skinning - UNCATEGORIZED
+TradeSkillCategory:2447  # Tailoring - UNCATEGORIZED
+TradeSkillCategory:2448  # Reagents (+5)
+TradeSkillCategory:2449  # Potions
+TradeSkillCategory:2450  # Elixirs
+TradeSkillCategory:2451  # Flasks
+TradeSkillCategory:2452  # Lesser Transmutations
+TradeSkillCategory:2453  # Miscellaneous (+4)
+TradeSkillCategory:2454  # Camping (+12)
+TradeSkillCategory:2455  # Weapon Oils
+TradeSkillCategory:2460  # Weapon Stones
+TradeSkillCategory:2461  # Mail Helmets (+1)
+TradeSkillCategory:2462  # Mail Pauldrons (+1)
+TradeSkillCategory:2463  # Mail Chestguards (+1)
+TradeSkillCategory:2464  # Mail Bracers (+1)
+TradeSkillCategory:2465  # Mail Gauntlets (+1)
+TradeSkillCategory:2466  # Mail Belts (+1)
+TradeSkillCategory:2467  # Mail Legguards (+1)
+TradeSkillCategory:2468  # Mail Boots (+1)
+TradeSkillCategory:2469  # Plate Helmets
+TradeSkillCategory:2470  # Plate Pauldrons
+TradeSkillCategory:2471  # Plate Chestguards
+TradeSkillCategory:2472  # Plate Bracers
+TradeSkillCategory:2473  # Plate Gauntlets
+TradeSkillCategory:2474  # Plate Belts
+TradeSkillCategory:2475  # Plate Legguards
+TradeSkillCategory:2476  # Plate Boots
+TradeSkillCategory:2481  # One-Handed Axes
+TradeSkillCategory:2484  # One-Handed Maces
+TradeSkillCategory:2485  # One-Handed Swords
+TradeSkillCategory:2486  # Shields
+TradeSkillCategory:2488  # Inert Enchanting Rods
+TradeSkillCategory:2491  # Runed Enchanting Rods
+TradeSkillCategory:2492  # Wizard Oils
+TradeSkillCategory:2493  # Helmet Enchants
+TradeSkillCategory:2494  # Shoulder Enchants
+TradeSkillCategory:2495  # Chest Enchants
+TradeSkillCategory:2496  # Bracer Enchants
+TradeSkillCategory:2497  # Glove Enchants
+TradeSkillCategory:2498  # Belt Enchants
+TradeSkillCategory:2499  # Pants Enchants
+TradeSkillCategory:2500  # Boots Enchants
+TradeSkillCategory:2501  # Two-Handed Weapon Enchants
+TradeSkillCategory:2502  # Weapon Enchants
+TradeSkillCategory:2503  # Shield Enchants
+TradeSkillCategory:2504  # Off-Hand Enchants
+TradeSkillCategory:2505  # Amulet Enchants
+TradeSkillCategory:2506  # Cloak Enchants
+TradeSkillCategory:2507  # Ring Enchants
+TradeSkillCategory:2508  # Trinket Enchants
+TradeSkillCategory:2509  # Relics
+TradeSkillCategory:2510  # Curios
+TradeSkillCategory:2513  # Off-Hands
+TradeSkillCategory:2515  # Parts
+TradeSkillCategory:2516  # Explosives
+TradeSkillCategory:2517  # Fireworks
+TradeSkillCategory:2518  # Consumable Devices
+TradeSkillCategory:2519  # Devices
+TradeSkillCategory:2520  # Gadgets
+TradeSkillCategory:2521  # Pets and Guardians
+TradeSkillCategory:2522  # Cloth Headgear
+TradeSkillCategory:2523  # Leather Headgear
+TradeSkillCategory:2524  # Mail Headgear
+TradeSkillCategory:2525  # Plate Headgear
+TradeSkillCategory:2526  # Ranged Weapons
+TradeSkillCategory:2527  # Scopes
+TradeSkillCategory:2528  # Ammunition
+TradeSkillCategory:2530  # Bandages
+TradeSkillCategory:2531  # Healing Potions
+TradeSkillCategory:2532  # Poultices
+TradeSkillCategory:2533  # Curatives
+TradeSkillCategory:2537  # Necks
+TradeSkillCategory:2538  # Rings
+TradeSkillCategory:2539  # Crowns
+TradeSkillCategory:2540  # Cuffs
+TradeSkillCategory:2541  # Trinkets
+TradeSkillCategory:2542  # Red Gems
+TradeSkillCategory:2543  # Orange Gems
+TradeSkillCategory:2544  # Yellow Gems
+TradeSkillCategory:2545  # Green Gems
+TradeSkillCategory:2546  # Blue Gems
+TradeSkillCategory:2547  # Purple Gems
+TradeSkillCategory:2548  # Meta Gems
+TradeSkillCategory:2551  # Bags (+1)
+TradeSkillCategory:2552  # Cloaks (+1)
+TradeSkillCategory:2553  # Leather Helmets
+TradeSkillCategory:2554  # Leather Pauldrons
+TradeSkillCategory:2555  # Leather Chestguards
+TradeSkillCategory:2556  # Leather Bracers
+TradeSkillCategory:2557  # Leather Gauntlets
+TradeSkillCategory:2558  # Leather Belts
+TradeSkillCategory:2559  # Leather Legguards
+TradeSkillCategory:2560  # Leather Boots
+TradeSkillCategory:2569  # Armor Kits
+TradeSkillCategory:2570  # Quivers
+TradeSkillCategory:2571  # Ammo Pouches
+TradeSkillCategory:2573  # Arrows
+TradeSkillCategory:2575  # Smelted Bars
+TradeSkillCategory:2577  # Embroideries
+TradeSkillCategory:2579  # Specialty Bags
+TradeSkillCategory:2581  # Hoods
+TradeSkillCategory:2582  # Spaulders
+TradeSkillCategory:2583  # Robes and Vests
+TradeSkillCategory:2584  # Bracers
+TradeSkillCategory:2585  # Gloves
+TradeSkillCategory:2586  # Belts
+TradeSkillCategory:2587  # Leggings
+TradeSkillCategory:2588  # Shoes
+TradeSkillCategory:2589  # Shirts
+TradeSkillCategory:2590  # Dressed for the Occasion
+TradeSkillCategory:2592  # SEASON OF DISCOVERY (+6)
+TradeSkillCategory:2620  # Greater Transmutations
+TradeSkillCategory:2621  # Recovery Potions
+TradeSkillCategory:2632  # Everyday Meals
+TradeSkillCategory:2633  # Strength Food
+TradeSkillCategory:2634  # Agility Food
+TradeSkillCategory:2635  # Intellect Food
+TradeSkillCategory:2636  # Miscellaneous Cuisines
+TradeSkillCategory:2638  # Winter Veil Treats
+TradeSkillCategory:2639  # Meal Prep
+TradeSkillCategory:2640  # Stamina Food
+TradeSkillCategory:2641  # Spell Damage Food
+TradeSkillCategory:2642  # Combat Prowess Food
+TradeSkillCategory:2643  # Attack Power Food
+TradeSkillCategory:2644  # Fisherman's Delights
+TradeSkillCategory:2645  # Delightful Drinks
+TradeSkillCategory:2646  # Soothing Drinks
+TradeSkillCategory:2651  # Draughts
+TradeSkillCategory:2771  # Armor Food
+# MailBody (MailTemplate.Body_lang)
+MailBody:83  # this is a test
+MailBody:84  # Thank you for visiting me, $N. It makes me happy to know we are not forgotten. (+16)
+MailBody:86  # This small token will give no answers, but perhaps it will be of some amusement to you. (+15)
+MailBody:87  # Hello there again.  I'm Gubber Blump.  I hope you are doing real well.  I hope you are ...
+MailBody:93  # Esteemed $N,$B$BI went through the stack of texts you brought me and I decoded the atta...
+MailBody:94  # Greetings, $N!$B$BI'm getting pretty good at sneaking into Cenarion Hold to use their m...
+MailBody:98  # It took much time to translate the high chief's text. I was dismayed by what I found. H...
+MailBody:99  # Thank you for renewing your membership with the Mechanical Engineering Guild, Associate... (+1)
+MailBody:101  # My friend - though my arm is weary from the battle we continue to wage in the Plaguelan...
+MailBody:102  # Ho Ho Hello, $N!  I hope you have a fantastic Feast of Winter Veil!$B$BYou were so nice... (+1)
+MailBody:103  # Thank you for renewing your membership with the Goblin Experimental Engineering Korpora... (+1)
+MailBody:105  # This mail was sent to you because you signed up for Viagra! More text. (+1)
+MailBody:106  # Those rabbits came back!  NO!  Oh, don't bother coming back...
+MailBody:107  # Greetings my friend - though my arm is weary from the battle we continue to wage in the...
+MailBody:108  # Ho ho hello again, $N!$B$BThough I and the good folks of Smokywood Pastures have been q...
+MailBody:109  # Greetings, my friend!  I hope all is well with you.$B$BI thought I would take this time...
+MailBody:110  # Esteemed $N,$B$BThe information you brought to my attention earlier has turned out to b...
+MailBody:111  # I bid you well, my friend.  I hope your fight for the Horde is a glorious one.  I certa...
+MailBody:112  # Greetings, young druid!  I'm quite proud of the effort you put into the training given ...
+MailBody:113  # I bid you well, my friend.  I hope your fight on behalf of the Alliance goes to your sa...
+MailBody:114  # Greetings, young druid!  I've sent you this note as a reminder to check in with me from...
+MailBody:115  # Greetings, young druid!  I've sent you this note as a reminder to check in with me from...
+MailBody:116  # Greetings, young druid!  I'm quite proud of the effort you put into the training given ...
+MailBody:117  # Ho ho hello again, $N!$B$BThough I and the good folks of Smokywood Pastures have been q...
+MailBody:119  # Hello again - I just wanted to drop you a note that things here in Feathermoon Strongho...
+MailBody:120  # Greetings once again - I just wanted to send you word that things here in Camp Mojache ...
+MailBody:122  # $N -$B$BI just wanted to say once again thanks for rescuing Metzen from his kidnappers....
+MailBody:123  # Champion,$B$BThe Blue Dragonflight believes that you are fated for greater things than ...
+MailBody:131  # I was grateful for your visit today, take this as a gift for your Lunar Festival. (+16)
+MailBody:161  # $N -$B$BI just wanted to say once again thanks for rescuing Metzen from his kidnappers....
+MailBody:162  # Need to fix tab ordergin
+MailBody:165  # a
+MailBody:166  # ab
+MailBody:169  # This is a test of the emergency broadcast system.
+MailBody:170  # Hello. What are you talking about?  This isn't crashing?
+MailBody:171  # $N$B$BWith all haste, please open and heed the attached letter.  The Argent Dawn needs ...
+MailBody:172  # $n,$B$BI received this report regarding the document you retrieved from the Scourge. Wh... (+5)
+MailBody:178  # Thanks for playing World of Warcraft!
+MailBody:179  # Here's your reward, you lucky stiff!  Don't spend it all in one auction house....
+MailBody:612  # Greetings $n,  I've been observing your handiwork for some time now. I must say, I'm im...
+MailBody:613  # $n,  Your work has been most satisfactory. The Horn of Xelthos is every bit as marvelou...
+MailBody:614  # Hello again, $n,  I'm sure a rogue of your talents stays quite busy these days, so I'll...
+MailBody:615  # $n,  You have truly outdone yourself. Never would I have dreamed of possessing such an ...
+MailBody:616  # Greetings $n,  Raszel and I have a plan and we are ready for your assistance. Meet us i...
+MailBody:623  # $n,  Ravenholdt's agents have learned that you are delivering artifacts to an entity kn...
+MailBody:624  # Shaw's agents have been as yet unable to find our mutual friend, but they have reported...
+MailBody:642  # The Lich King's unholy reign has gone on long enough. If Azeroth is to be saved, it mus...
+MailBody:643  # Every day, the scourge bring destruction and pestilence to our homelands. Faced with su...
+MailBody:644  # The scourge are all around us. As the undead menace grows, it is imperative that we pre...
+MailBody:652  # Greetings $n,  I hope this letter finds you well. I wanted to thank you for speaking to...
+MailBody:660  # I am a mail that was generated via a quest that can never be in your quest log. Am I st...
+MailBody:661  # Greetings, $n. I just wanted to let you know that I've made my way to Dalaran and retri...
+MailBody:662  # Greetings, $n.  The Supreme Magister has need of your aid. Please take the attached mis...
+# QuestTag (QuestInfo.InfoName_lang)
+QuestTag:1  # Elite
+QuestTag:21  # Life
+QuestTag:41  # PvP
+QuestTag:62  # Raid
+QuestTag:81  # Dungeon
+QuestTag:82  # World Event
+QuestTag:83  # Legendary
+# AreaPoiDescription (AreaPOI.Description_lang)
+AreaPoiDescription:1099  # Alliance Controlled (+17)
+AreaPoiDescription:1102  # Horde Controlled (+17)
+AreaPoiDescription:1352  # Destroyed (+7)
+AreaPoiDescription:1353  # In Conflict (+39)
+AreaPoiDescription:1359  # Kobold Controlled
+AreaPoiDescription:1384  # Trogg Controlled
+AreaPoiDescription:1609  # Uncontrolled (+5)
+AreaPoiDescription:1700  # Tanaris Desert
+AreaPoiDescription:1724  # A Silithyst beast has surfaced (+3)
+AreaPoiDescription:1750  # Contested, Alliance
+AreaPoiDescription:1751  # Progressing, Alliance
+AreaPoiDescription:1752  # Contested, Horde
+AreaPoiDescription:1753  # Progressing, Horde
+AreaPoiDescription:1757  # Alliance, Contested (+2)
+AreaPoiDescription:1759  # Horde, Contested (+2)
+AreaPoiDescription:1760  # Horde, Progressing (+2)
+AreaPoiDescription:1766  # Alliance, Progressing (+2)
+AreaPoiDescription:7640  # Keeper of the Grove - Centrius - Alive
+AreaPoiDescription:7641  # Keeper of the Grove - Larodar - Alive
+AreaPoiDescription:7642  # Keeper of the Grove - Ceredwyn - Alive
+AreaPoiDescription:7643  # Priestess of the Moon - Felore Moonray - Alive
+AreaPoiDescription:7644  # Blademaster - Jubei - Alive
+AreaPoiDescription:7645  # Far Seer - Kazragore - Alive
+AreaPoiDescription:7646  # Blademaster - Tojara - Alive
+AreaPoiDescription:7647  # Blademaster - Moogul - Alive
+AreaPoiDescription:7648  # Blademaster - Jubei - Defeated
+AreaPoiDescription:7649  # Blademaster - Tojara - Defeated
+AreaPoiDescription:7650  # Blademaster - Moogul - Defeated
+AreaPoiDescription:7651  # Keeper of the Grove - Centrius - Dead
+AreaPoiDescription:7652  # Keeper of the Grove - Larodar Dead
+AreaPoiDescription:7653  # Keeper of the Grove - Ceredwyn - Dead
+AreaPoiDescription:7713  # Deliver blood to the Blood Loa's altar! (+4)
+AreaPoiDescription:8768  # Neutral (+4)
+# AreaPoiState (AreaPOIState.Description_lang)
+AreaPoiState:3611  # Contested (+7)
+AreaPoiState:3613  # Horde Controlled (+3)
+AreaPoiState:3614  # Alliance Controlled (+3)
+AreaPoiState:3816  # In Conflict
+# PetLoyalty (PetLoyalty.Name_lang)
+PetLoyalty:1  # Rebellious
+PetLoyalty:2  # Unruly
+PetLoyalty:3  # Submissive
+PetLoyalty:4  # Dependable
+PetLoyalty:5  # Faithful
+PetLoyalty:6  # Best Friend
+PetLoyalty:7  # (Loyalty Level 7) Loyalty Cap
+# PvpLongDescription (Map.PvpLongDescription_lang)
+PvpLongDescription:2997  # - Capture and hold objectives - Capture the Darkspear Islands Flag - Earn 2000 resources
+# Difficulty (Difficulty.Name_lang)
+Difficulty:1  # Normal (+6)
+Difficulty:9  # 40 Player (+1)
+Difficulty:148  # 20 Player (+4)
+Difficulty:197  # 10 Player (+2)
+Difficulty:213  # Infinite
+# EventToastText (UiEventToast.SubIcon_lang)
+EventToastText:479  # Your Lotus Claw enchant allows you to carefully extract a Death Lotus!
+EventToastText:513  # You have reached Rank %d.
+# BroadcastText (BroadcastText.Text_lang)
+BroadcastText:316345  # For thousands of years,
+BroadcastText:316346  # a band of high elven exiles has remained safe
+BroadcastText:316348  # and hidden upon their flying sanctuary of Zephras Isle.
+BroadcastText:316349  # These "Skyborne," as they call themselves,
+BroadcastText:316350  # shared a bond with air elementals
+BroadcastText:316351  # who kept their island aloft in the realm of Skywall.
+BroadcastText:316352  # But in recent years,
+BroadcastText:316353  # the elementals vanished without a trace--
+BroadcastText:316354  # disrupting the delicate magic that kept them safe in their haven amongst the clouds.
+BroadcastText:316355  # Now, a new generation of Skyborne elves face a time of unprecedented change,
+BroadcastText:316356  # and must seek new allies and sources of magic--
+BroadcastText:316358  # to protect their hidden home and secure their future...
+# PetFood (ItemPetFood.Name_lang)
+PetFood:1  # Meat
+PetFood:2  # Fish
+PetFood:3  # Cheese
+PetFood:4  # Bread
+PetFood:5  # Fungus
+PetFood:6  # Fruit
+PetFood:7  # Raw Meat
+PetFood:8  # Raw Fish
+# RestState (Exhaustion.Name_lang)
+RestState:1  # Rested
+RestState:2  # Normal
+# ItemSubClassMask (ItemSubClassMask.Name_lang)
+ItemSubClassMask:3  # Melee Weapon
+ItemSubClassMask:4  # Shield
+ItemSubClassMask:5  # Ranged Weapon
+# RecentAllyType (RolodexType.Description_lang)
+RecentAllyType:1  # Party Member
+RecentAllyType:2  # Raid Member
+RecentAllyType:3  # Trade
+RecentAllyType:4  # Whisper
+RecentAllyType:5  # Public Order Filled By Them
+RecentAllyType:6  # Public Order Filled By You
+RecentAllyType:7  # Personal Order Fill By Them
+RecentAllyType:8  # Personal Order Filled By You
+RecentAllyType:9  # Guild Order Filled By Them
+RecentAllyType:10  # Guild Order Filled By You
+RecentAllyType:11  # Creature Kill
+RecentAllyType:12  # Complete Dungeon
+RecentAllyType:13  # Kill Raid Boss
+RecentAllyType:14  # Kill LFR Boss
+RecentAllyType:15  # Complete Delve
+RecentAllyType:16  # Complete Arena
+RecentAllyType:17  # Complete Battleground
+RecentAllyType:18  # Duel
+RecentAllyType:19  # Pet Battle
+RecentAllyType:20  # PvP Kill
+RecentAllyType:23  # Legacy Friend
+# RecentAllyInteraction (RolodexType.Field_11_2_5_62687_001_lang)
+RecentAllyInteraction:3  # Traded
+RecentAllyInteraction:4  # Whispered
+RecentAllyInteraction:5  # Filled your Public Crafting Order
+RecentAllyInteraction:6  # Filled their Public Crafting Order
+RecentAllyInteraction:7  # Filled your Crafting Order (+1)
+RecentAllyInteraction:8  # Filled their Crafting Order (+1)
+RecentAllyInteraction:11  # Fought Together
+RecentAllyInteraction:12  # Completed Dungeon Together
+RecentAllyInteraction:13  # Raided Together (+1)
+RecentAllyInteraction:15  # Completed Delve Together
+RecentAllyInteraction:16  # Did Arena Together
+RecentAllyInteraction:17  # Fought in Battleground Together
+RecentAllyInteraction:18  # Dueled
+RecentAllyInteraction:19  # Pet Battled
+RecentAllyInteraction:20  # PvPed Together
+RecentAllyInteraction:23  # Legacy Friend
+# FriendshipGain (FriendshipReputation.StandingModified_lang)
+FriendshipGain:513  # You gain %d Rank Points.
+# InstanceEntryMessage (MapDifficulty.Message_lang)
+InstanceEntryMessage:7  # You must be at least level 11 to enter.
+InstanceEntryMessage:8  # You must be at least level 15 to enter. (+1)
+InstanceEntryMessage:10  # You must be at least level 10 to enter. (+2)
+InstanceEntryMessage:15  # You must be at least level 25 to enter. (+1)
+InstanceEntryMessage:17  # You must be at least level 30 to enter.
+InstanceEntryMessage:18  # You must be at least level 19 to enter.
+InstanceEntryMessage:19  # You must be at least level 45 to enter.
+InstanceEntryMessage:20  # You must be at least level 35 to enter.
+InstanceEntryMessage:22  # You must be at least level 20 to enter.
+InstanceEntryMessage:23  # You must be at least level 39 to enter.
+InstanceEntryMessage:24  # You must be at least level 48 to enter.
+InstanceEntryMessage:25  # You must be at least level 42 to enter.
+InstanceEntryMessage:27  # You must be at least level 65 to enter.
+InstanceEntryMessage:28  # You must be at least level 33 to enter.
+InstanceEntryMessage:30  # You must be at least level 37 to enter.
+InstanceEntryMessage:34  # You must be at least level 50 to enter.
+InstanceEntryMessage:35  # You must be at least level 31 to enter.
+# InstanceEntryFailure (MapDifficultyXCondition.FailureDescription_lang)
+InstanceEntryFailure:1553  # This raid is not yet available (+8)
+InstanceEntryFailure:1564  # This Dungeon is currently not available. (+53)
+InstanceEntryFailure:1565  # This dungeon is not yet available (+1)
+InstanceEntryFailure:1992  # This raid is not currently open for testing (+16)
+InstanceEntryFailure:3876  # You must be level 60 to enter
+InstanceEntryFailure:4166  # You are not high enough level to enter this Dungeon. (+5)
+InstanceEntryFailure:4175  # You are not high enough level for this Dungeon. (+49)
 
 # ── the owner line under a pet, minion or guardian (the UnitOwner tooltip line kind; UI/TooltipUnit) ──
 UNITNAME_SUMMON_TITLE1
@@ -13010,3 +14032,1025 @@ UNIT_ALREADY_SKINNED_HERB
 UNIT_ALREADY_SKINNED_ROCK
 UNIT_ALREADY_SKINNED_BOLTS
 UNIT_CAPTURABLE
+# the comparison tooltip's tab above the equipped item (blizzard_sharedxmlgame/tooltip/tooltipcomparisonmanager.lua:241-247)
+EQUIPPED
+IF_EQUIPPED_TOGETHER
+# the item tooltip's appearance-collection lines (Forever collects appearances: the Collections window's Appearances tab)
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_KNOWN
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNKNOWN
+TRANSMOGRIFY_TOOLTIP_ITEM_UNKNOWN_APPEARANCE_KNOWN
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNUSABLE
+TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNCOLLECTABLE
+TRANSMOGRIFY_TOOLTIP_REVERT
+# the quest tracker's lines for a finished quest (blizzard_objectivetracker/blizzard_questobjectivetracker.lua:321-343)
+QUEST_WATCH_CLICK_TO_COMPLETE
+QUEST_WATCH_QUEST_COMPLETE
+QUEST_WATCH_QUEST_READY
+# Strings the loaded Forever addon files name outside the hooked windows' own files (pipeline/ui_loadset.txt)
+ACHIEVEMENT_TOOLTIP_COMPLETE
+ACTION_LABEL_RANDOMIZE_APPEARANCE
+ACTION_LABEL_RANDOMIZE_NAME
+ADDON_LOAD_FAILED
+ADDON_PERFORMANCE_SPECIFIC_WARNING_TEXT
+AGE_RESTRICTED_CHAT_MINOR
+AGE_RESTRICTED_CHAT_UNVERIFIED
+ALL_ASSIST_LABEL_SHORT
+ALL_BOSSES_ALIVE
+ALL_CLASSES
+ALTERED_FORMS_COUNT_FORMAT
+ARENA
+ARENA_2V2
+ARENA_3V3
+ASSISTED_COMBAT_HIGHLIGHT_SPELL_INCLUDED
+ASSISTED_COMBAT_ROTATION_SPELL_INCLUDED
+ASSISTED_COMBAT_SPELL_INCLUDED
+AUTOCOMPLETE_LABEL_FRIEND
+AUTOCOMPLETE_LABEL_GROUP
+AUTOCOMPLETE_LABEL_GUILD
+AUTOCOMPLETE_LABEL_INTERACTED
+BATTLEFIELD_BORDER_WARNING
+BATTLEGROUNDS
+BATTLEGROUND_10V10
+BLIZZARD_STORE_ERROR_CLIENT_RESTRICTED
+BLIZZARD_STORE_ERROR_ITEM_UNAVAILABLE
+BLIZZARD_STORE_ERROR_MESSAGE_ALREADY_OWNED
+BLIZZARD_STORE_ERROR_MESSAGE_BATTLEPAY_DISABLED
+BLIZZARD_STORE_ERROR_MESSAGE_CONSUMABLE_TOKEN_OWNED
+BLIZZARD_STORE_ERROR_MESSAGE_INSUFFICIENT_BALANCE
+BLIZZARD_STORE_ERROR_MESSAGE_OTHER
+BLIZZARD_STORE_ERROR_MESSAGE_PARENTAL_CONTROLS
+BLIZZARD_STORE_ERROR_MESSAGE_PAYMENT
+BLIZZARD_STORE_ERROR_MESSAGE_PURCHASE_DENIED
+BLIZZARD_STORE_ERROR_TITLE_ALREADY_OWNED
+BLIZZARD_STORE_ERROR_TITLE_BATTLEPAY_DISABLED
+BLIZZARD_STORE_ERROR_TITLE_CLIENT_RESTRICTED
+BLIZZARD_STORE_ERROR_TITLE_CONSUMABLE_TOKEN_OWNED
+BLIZZARD_STORE_ERROR_TITLE_INSUFFICIENT_BALANCE
+BLIZZARD_STORE_ERROR_TITLE_OTHER
+BLIZZARD_STORE_ERROR_TITLE_PARENTAL_CONTROLS
+BLIZZARD_STORE_ERROR_TITLE_PAYMENT
+BLIZZARD_STORE_ERROR_TITLE_PURCHASE_DENIED
+BLIZZARD_STORE_ERROR_YOU_OWN_TOO_MANY_OF_THIS
+BLIZZARD_STORE_INTERNAL_ERROR
+BLIZZARD_STORE_VAS_ERROR_ALLIANCE_NOT_ELIGIBLE
+BLIZZARD_STORE_VAS_ERROR_ALREADY_RENAME_FLAGGED
+BLIZZARD_STORE_VAS_ERROR_ARENA_TEAM_CAPTAIN
+BLIZZARD_STORE_VAS_ERROR_BATTLEPAY_DELIVERY_PENDING
+BLIZZARD_STORE_VAS_ERROR_BOOSTED_TOO_RECENTLY
+BLIZZARD_STORE_VAS_ERROR_BOOST_THROTTLE
+BLIZZARD_STORE_VAS_ERROR_CANNOT_MOVE_GUILDMASTER
+BLIZZARD_STORE_VAS_ERROR_CHARACTER_HAS_VAS_PENDING
+BLIZZARD_STORE_VAS_ERROR_CHARACTER_LOCKED
+BLIZZARD_STORE_VAS_ERROR_CUSTOMIZE_ALREADY_REQUESTED
+BLIZZARD_STORE_VAS_ERROR_DISALLOWED_DESTINATION_ACCOUNT
+BLIZZARD_STORE_VAS_ERROR_DISALLOWED_SOURCE_ACCOUNT
+BLIZZARD_STORE_VAS_ERROR_DUPLICATE_CHARACTER_NAME
+BLIZZARD_STORE_VAS_ERROR_FACTION_CHANGE_TOO_SOON
+BLIZZARD_STORE_VAS_ERROR_HAS_AUCTIONS
+BLIZZARD_STORE_VAS_ERROR_HAS_CAGED_BATTLE_PET
+BLIZZARD_STORE_VAS_ERROR_HAS_CRAFTING_ORDERS
+BLIZZARD_STORE_VAS_ERROR_HAS_HEIRLOOM
+BLIZZARD_STORE_VAS_ERROR_HAS_MAIL
+BLIZZARD_STORE_VAS_ERROR_HAS_WOW_TOKEN
+BLIZZARD_STORE_VAS_ERROR_HOUSE_NEIGHBORHOOD_OWNER
+BLIZZARD_STORE_VAS_ERROR_INELIGIBLE_MAP_ID
+BLIZZARD_STORE_VAS_ERROR_INELIGIBLE_TARGET_REALM
+BLIZZARD_STORE_VAS_ERROR_INVALID_DESTINATION_ACCOUNT
+BLIZZARD_STORE_VAS_ERROR_INVALID_SOURCE_ACCOUNT
+BLIZZARD_STORE_VAS_ERROR_LAST_CUSTOMIZE_TOO_SOON
+BLIZZARD_STORE_VAS_ERROR_LAST_RENAME_TOO_RECENT
+BLIZZARD_STORE_VAS_ERROR_LAST_SAVE_TOO_DISTANT
+BLIZZARD_STORE_VAS_ERROR_LAST_SAVE_TOO_RECENT
+BLIZZARD_STORE_VAS_ERROR_LOWER_BOX_LEVEL
+BLIZZARD_STORE_VAS_ERROR_MAX_CHARACTERS_ON_SERVER
+BLIZZARD_STORE_VAS_ERROR_NAME_NOT_AVAILABLE
+BLIZZARD_STORE_VAS_ERROR_NEEDS_ERA_CHOICE
+BLIZZARD_STORE_VAS_ERROR_NEW_LEADER_INVALID
+BLIZZARD_STORE_VAS_ERROR_NEW_PLAYER_EXPERIENCE
+BLIZZARD_STORE_VAS_ERROR_NOT_GUILD_MASTER
+BLIZZARD_STORE_VAS_ERROR_NOT_IN_GUILD
+BLIZZARD_STORE_VAS_ERROR_OTHER
+BLIZZARD_STORE_VAS_ERROR_PENDING_ITEM_AUDIT
+BLIZZARD_STORE_VAS_ERROR_PVE_TO_PVP_TRANSFER_NOT_ALLOWED
+BLIZZARD_STORE_VAS_ERROR_RACE_CLASS_COMBO_INELIGIBLE
+BLIZZARD_STORE_VAS_ERROR_REALM_NOT_ELIGIBLE
+BLIZZARD_STORE_VAS_ERROR_TOO_MUCH_MONEY_FOR_LEVEL
+BLIZZARD_STORE_VAS_ERROR_UNDER_MIN_LEVEL_REQ
+BLIZZARD_STORE_VAS_INVALID_NAME
+BN_CHAT_CONNECTED
+BN_CHAT_DISCONNECTED
+BN_INLINE_TOAST_BROADCAST
+BN_INLINE_TOAST_BROADCAST_INFORM
+BN_INLINE_TOAST_FRIEND_PENDING
+BODY_1
+BODY_2
+BONUS_OBJECTIVE_REWARD_FORMAT
+BONUS_OBJECTIVE_REWARD_WITH_COUNT_FORMAT
+BOSSES
+BOSS_ALIVE
+BUFF_STACKS_OVERFLOW
+CAA_COMMAND_SYNTAX_ERROR
+CAA_HELP_OVERVIEW
+CAA_SAMPLE_RESOURCENAME
+CAA_SAY_PARTY_HEALTH_FREQUENCY
+CAA_SAY_PLAYER_HEALTH_FORMAT
+CAA_SAY_PLAYER_HEALTH_THROTTLE
+CAA_SAY_RESOURCE_1
+CAA_SAY_RESOURCE_1_FORMAT
+CAA_SAY_RESOURCE_1_THROTTLE
+CAA_SAY_RESOURCE_2
+CAA_SAY_RESOURCE_2_FORMAT
+CAA_SAY_RESOURCE_2_THROTTLE
+CAA_SAY_TARGET_CASTS_FORMAT
+CAA_SAY_TARGET_CASTS_MIN_CAST_TIME
+CAA_SAY_TARGET_CASTS_THROTTLE
+CAA_SAY_TARGET_HEALTH_FORMAT
+CAA_SAY_TARGET_HEALTH_THROTTLE
+CAA_SAY_YOUR_CASTS_FORMAT
+CAA_SAY_YOUR_CASTS_MIN_CAST_TIME
+CAA_SAY_YOUR_CASTS_THROTTLE
+CAA_SAY_YOUR_DEBUFFS_FORMAT
+CAA_SAY_YOUR_DEBUFFS_MIN_DURATION
+CALENDAR_FILTER_BATTLEGROUND
+CALENDAR_FILTER_DARKMOON
+CALENDAR_FILTER_HOLIDAYS
+CALENDAR_FILTER_RAID_LOCKOUTS
+CALENDAR_FILTER_RAID_RESETS
+CALENDAR_FILTER_WEEKLY_HOLIDAYS
+CALENDAR_STATUS_ACCEPTED
+CALENDAR_STATUS_CONFIRMED
+CALENDAR_STATUS_DECLINED
+CALENDAR_STATUS_INVITED
+CALENDAR_STATUS_NOT_SIGNEDUP
+CALENDAR_STATUS_OUT
+CALENDAR_STATUS_SIGNEDUP
+CALENDAR_STATUS_STANDBY
+CALENDAR_STATUS_TENTATIVE
+CALLING_QUEST_TOOLTIP_DESCRIPTION
+CAMPAIGN_PROGRESS_CHAPTERS
+CAMPAIGN_PROGRESS_CHAPTERS_PERCENT
+CAMPAIGN_PROGRESS_CHAPTERS_PERCENT_TOOLTIP
+CAMPAIGN_PROGRESS_CHAPTERS_TOOLTIP
+CAN_NOT_RELEASE_IN_COMBAT
+CAN_NOT_RELEASE_RIGHT_NOW
+CDMSND_ANIMALS_CAT
+CDMSND_ANIMALS_COW
+CDMSND_ANIMALS_GOAT
+CDMSND_ANIMALS_LION
+CDMSND_ANIMALS_RATTLESNAKE
+CDMSND_ANIMALS_SHEEP
+CDMSND_ANIMALS_WOLF
+CDMSND_DEVICES_AIR_HORN
+CDMSND_DEVICES_BIKE_HORN
+CDMSND_DEVICES_BOAT_HORN
+CDMSND_DEVICES_CASH_REGISTER
+CDMSND_DEVICES_JACKPOT_BELL
+CDMSND_DEVICES_JACKPOT_COINS
+CDMSND_DEVICES_JACKPOT_FAIL
+CDMSND_DEVICES_ROTARY_PHONE_DIAL
+CDMSND_DEVICES_ROTARY_PHONE_RING
+CDMSND_DEVICES_STOVE_PIPE
+CDMSND_DEVICES_TRASHCAN_LID
+CDMSND_IMPACTS_ANVIL_STRIKE
+CDMSND_IMPACTS_BUBBLE_SMASH
+CDMSND_IMPACTS_LOW_THUD
+CDMSND_IMPACTS_METAL_CLANKS
+CDMSND_IMPACTS_METAL_RATTLE
+CDMSND_IMPACTS_METAL_SCRAPE
+CDMSND_IMPACTS_METAL_WARBLE
+CDMSND_IMPACTS_POP_CLICK
+CDMSND_IMPACTS_STRANGE_CLANG
+CDMSND_IMPACTS_SWORD_SCRAPE
+CDMSND_INSTRUMENTS_BELL_RING
+CDMSND_INSTRUMENTS_BELL_TRILL
+CDMSND_INSTRUMENTS_BRASS
+CDMSND_INSTRUMENTS_CHIME_ASCENDING
+CDMSND_INSTRUMENTS_GUITAR_CHUG
+CDMSND_INSTRUMENTS_GUITAR_PINCH
+CDMSND_INSTRUMENTS_PITCH_PIPE_DISTRESSED
+CDMSND_INSTRUMENTS_PITCH_PIPE_NOTE
+CDMSND_INSTRUMENTS_SYNTH_BIG
+CDMSND_INSTRUMENTS_SYNTH_BUZZ
+CDMSND_INSTRUMENTS_SYNTH_HIGH
+CDMSND_INSTRUMENTS_WARHORN
+CDMSND_SHORT_BELL_STRIKE
+CDMSND_SHORT_BELL_TREE
+CDMSND_SHORT_BIG_POT
+CDMSND_SHORT_BLADES
+CDMSND_SHORT_COFFEE_MUG
+CDMSND_SHORT_COW_BELL
+CDMSND_SHORT_FINGER_SNAP
+CDMSND_SHORT_GUITAR
+CDMSND_SHORT_KALIMBA
+CDMSND_SHORT_METAL_BLADE_DROP
+CDMSND_SHORT_METAL_BLADE_ON_ROD
+CDMSND_SHORT_METAL_IMPACT
+CDMSND_SHORT_MINI_WOOD_XYLOPHONE
+CDMSND_SHORT_PAPER_CUP
+CDMSND_SHORT_SHEET_METAL
+CDMSND_SHORT_STOVE_PIPE
+CDMSND_SHORT_STOVE_PIPE_BLADE
+CDMSND_SHORT_SWORD_SHING
+CDMSND_SHORT_SYNTH_BLEEP
+CDMSND_SHORT_SYNTH_BLURP
+CDMSND_SHORT_SYNTH_ERROR
+CDMSND_SHORT_SYNTH_HIGH
+CDMSND_SHORT_TRIANGLE
+CDMSND_SHORT_WATER_DROP
+CDMSND_SHORT_WINE_BOTTLE
+CDMSND_SHORT_WOOD_XYLOPHONE
+CDMSND_WAR2_ABSTRACT_WHOOSH
+CDMSND_WAR2_CHOIR
+CDMSND_WAR2_CONSTRUCTION
+CDMSND_WAR2_MAGIC_CHIMES
+CDMSND_WAR2_PIG_SQUEAL
+CDMSND_WAR2_SAWS
+CDMSND_WAR2_SEAL
+CDMSND_WAR2_SMITH
+CDMSND_WAR2_SYNTH_STINGER
+CDMSND_WAR2_TRUMPET_RALLY
+CDMSND_WAR2_ZIPPY_MAGIC
+CDMSND_WAR3_BELL
+CDMSND_WAR3_CRUNCHY_BELL
+CDMSND_WAR3_DRUM_SPLASH
+CDMSND_WAR3_ERROR
+CDMSND_WAR3_FANFARE
+CDMSND_WAR3_GATE_OPEN
+CDMSND_WAR3_GOLD
+CDMSND_WAR3_MAGIC_SHIMMER
+CDMSND_WAR3_RINGOUT
+CDMSND_WAR3_ROOSTER
+CDMSND_WAR3_SHIMMER_BELL
+CDMSND_WAR3_WOLF_HOWL
+CENSORED_MESSAGE_SENT
+CHALLENGE_MODE_ITEM_POWER_LEVEL
+CHANNEL_CHANNEL_NAME
+CHANNEL_NEW_CHANNEL
+CHARACTER_FORM
+CHARACTER_LINK_CLASS_LEVEL_SPEC_TOOLTIP
+CHARACTER_LINK_ITEM_LEVEL_TOOLTIP
+CHAR_CUSTOMIZATION_TOOLTIP_MUTE_SOUND
+CHAR_CUSTOMIZATION_TOOLTIP_PLAY_VOICE_SAMPLE
+CHAR_CUSTOMIZATION_TOOLTIP_UNMUTE_SOUND
+CHAT_FILTERED
+CHAT_IGNORED
+CHAT_JOIN
+CHAT_JOIN_HELP
+CHAT_LEAVE
+CHAT_MSG_BLOCK_CHAT_CHANNEL_INVITE
+CHAT_PASSWORD
+CHAT_SERVER_DISCONNECTED_MESSAGE
+CHAT_SERVER_RECONNECTED_MESSAGE
+CLICK_FOR_MORE_INFO
+CLUB_FINDER_LINK_COMMUNITY
+CLUB_FINDER_LINK_GUILD
+CLUB_FINDER_LINK_POST_IN_CHAT
+CLUB_INVITE_HYPERLINK_TEXT
+COLDSWAP_TEXT_CONFIRM_GAMEPAD
+COLDSWAP_TEXT_CONFIRM_MKB
+COMMUNITIES_ADD_DIALOG_BATTLE_NET_LABEL
+COMMUNITIES_ADD_DIALOG_CREATE_BNET_DESCRIPTION
+COMMUNITIES_ADD_DIALOG_CREATE_BNET_LABEL
+COMMUNITIES_ADD_DIALOG_CREATE_WOW_DESCRIPTION
+COMMUNITIES_ADD_DIALOG_CREATE_WOW_DESCRIPTION_NO_FACTION
+COMMUNITIES_ADD_DIALOG_CREATE_WOW_LABEL
+COMMUNITIES_ADD_DIALOG_CREATE_WOW_LABEL_NO_FACTION
+COMMUNITIES_ADD_DIALOG_INVITE_LINK_DESCRIPTION
+COMMUNITIES_ADD_DIALOG_INVITE_LINK_JOIN
+COMMUNITIES_ADD_DIALOG_INVITE_LINK_LABEL
+COMMUNITIES_ADD_DIALOG_LABEL
+COMMUNITIES_CALENDAR_ONGOING_EVENT_PREFIX
+COMMUNITIES_CREATE_COMMUNITY
+COMMUNITIES_CREATE_DIALOG_BATTLE_NET_LABEL
+COMMUNITIES_CREATE_DIALOG_DESCRIPTION_LABEL
+COMMUNITIES_CREATE_DIALOG_DESCRIPTION_LABEL_BATTLE_NET
+COMMUNITIES_CREATE_DIALOG_NAME_INSTRUCTIONS
+COMMUNITIES_CREATE_DIALOG_NAME_INSTRUCTIONS_BATTLE_NET
+COMMUNITIES_CREATE_DIALOG_SHORT_NAME_INSTRUCTIONS
+COMMUNITIES_CREATE_DIALOG_SHORT_NAME_INSTRUCTIONS_CHARACTER
+COMMUNITIES_CREATE_DIALOG_SHORT_NAME_INSTRUCTIONS_TOOLTIP
+COMMUNITIES_CREATE_DIALOG_SHORT_NAME_LABEL
+COMMUNITIES_CREATE_DIALOG_WOW_LABEL
+COMMUNITIES_CREATE_GROUP
+CONFIRM_CONTINUE
+CONFIRM_DESTROY_CHARACTER_COMMUNITY
+CONFIRM_DESTROY_COMMUNITY
+CONFIRM_GLYPH_PLACEMENT_NO_COST
+CONFIRM_GLYPH_REMOVAL
+CONFIRM_LEAVE_AND_DESTROY_CHARACTER_COMMUNITY
+CONFIRM_LEAVE_AND_DESTROY_CHARACTER_COMMUNITY_SUBTEXT
+CONFIRM_LEAVE_ARENA
+CONFIRM_LEAVE_CHARACTER_COMMUNITY
+CONFIRM_LEAVE_CHARACTER_COMMUNITY_SUBTEXT
+CONFIRM_LEAVE_INSTANCE_PARTY
+CONFIRM_LEAVE_RATED_MATCH_WITH_PENALTY
+CONFIRM_REMOVE_CHARACTER_COMMUNITY_MEMBER_LABEL
+CONFIRM_UPGRADE_ITEM
+CONFIRM_UPGRADE_ITEM_BIND
+CONFIRM_XP_LOSS_AGAIN
+CONQUEST_BRACKET_NAME_2V2
+CONQUEST_BRACKET_NAME_3V3
+CONQUEST_BRACKET_NAME_BATTLEGROUND_BLITZ
+CONQUEST_BRACKET_NAME_RBG
+CONQUEST_BRACKET_NAME_SOLO_SHUFFLE
+CONQUEST_PVP_WEEK_CONQUEST_COMPLETE
+CONQUEST_PVP_WEEK_NO_CONQUEST
+CONQUEST_REQUIRES_PVP_SEASON
+CONTAINER_CAMPAIGN_PROGRESS
+CONTENT_TRACKING_CHECKMARK_TOOLTIP_TITLE
+CONTENT_TRACKING_DISABLED_TOOLTIP_PROMPT
+CONTENT_TRACKING_TRACKABLE_TOOLTIP_PROMPT
+CONTENT_TRACKING_UNTRACKABLE_TOOLTIP_PROMPT
+CONTENT_TRACKING_UNTRACK_TOOLTIP_PROMPT
+CONTEXT_ACTION_LABEL_CANCEL_BUFF
+COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_ANIMALS
+COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_DEVICES
+COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_IMPACTS
+COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_INSTRUMENTS
+COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_SHORT
+COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_WAR2
+COOLDOWN_VIEWER_SETTINGS_SOUND_ALERT_CATEGORY_WAR3
+COUNTDOWN_CANCEL_ENCOUNTER_START
+CRITERIA_COMPLETED
+CRITERIA_COMPLETED_DATE
+CRITERIA_NOT_COMPLETED
+DEATH_RELEASE_NOTIMER
+DEATH_RELEASE_SPECTATOR
+DEBUFF_SYMBOL_BLEED
+DEBUFF_SYMBOL_CURSE
+DEBUFF_SYMBOL_DISEASE
+DEBUFF_SYMBOL_MAGIC
+DEBUFF_SYMBOL_POISON
+DISCORD_USER_WITH_ID
+DONE
+DRAG_MODEL
+DRAG_MODEL_TOOLTIP
+DUNGEONS
+EJECT_PASSENGER
+ENABLE_VOICECHAT
+ERROR_SLASH_CHANGEACTIONBAR
+ERROR_SLASH_EQUIP_TO_SLOT
+ERROR_SLASH_SWAPACTIONBAR
+FINISH
+FLEX_RAID
+FRAMERATE_LABEL
+FRIEND
+FRIENDS_FRIENDS_HEADER
+FRIENDS_FRIENDS_MUTUAL_TEXT
+FRIENDS_FRIENDS_REQUESTED_TEXT
+FRIENDS_FRIENDS_WAITING
+FULLDATE_MONTH_APRIL
+FULLDATE_MONTH_AUGUST
+FULLDATE_MONTH_DECEMBER
+FULLDATE_MONTH_FEBRUARY
+FULLDATE_MONTH_JANUARY
+FULLDATE_MONTH_JULY
+FULLDATE_MONTH_JUNE
+FULLDATE_MONTH_MARCH
+FULLDATE_MONTH_MAY
+FULLDATE_MONTH_NOVEMBER
+FULLDATE_MONTH_OCTOBER
+FULLDATE_MONTH_SEPTEMBER
+FULLDATE_NO_YEAR
+GENERIC_TRAIT_FRAME_CONFIRM_PURCHASE
+GENERIC_TRAIT_FRAME_CONFIRM_PURCHASE_FORMAT
+GM_CHAT_LAST_SESSION
+GUILD_NEWS_DUNGEON_ENCOUNTER_HEROIC
+GUILD_NEWS_DUNGEON_ENCOUNTER_MYTHIC
+GUILD_NEWS_MOTD
+HD_TEXTURES_DLG_ACCEPT
+HD_TEXTURES_DLG_ACCEPT_MAC
+HD_TEXTURES_DLG_TEXT
+HD_TEXTURES_DLG_TEXT_MAC
+HELP_TIP_BUTTON_GOT_IT
+HELP_TIP_EXIT
+HOME
+HONOR_LEVEL_LABEL
+HONOR_REWARD_ARTIFACT_POWER
+HONOR_REWARD_MONEY
+HONOR_REWARD_TITLE_TOOLTIP
+HONOR_YOUVE_REACHED
+HORDE_CHEER
+HOUSING_DASHBOARD_NEIGHBORHOOD_FAVOR
+HOUSING_DASHBOARD_REWARD_ESTATE_XP
+HUD_EDIT_MODE_BUFF_FRAME_LABEL
+HUD_EDIT_MODE_DEBUFF_FRAME_LABEL
+HUD_EDIT_MODE_EXTERNAL_DEFENSIVES_FRAME_LABEL
+ICON_SELECTION_DRAG
+INSTANCE_LOCK_TIMER_PREVIOUSLY_SAVED
+INSTANCE_LOCK_WARNING
+INSTANCE_LOCK_WARNING_PREVIOUSLY_SAVED
+INSTANCE_UNAVAILABLE_OTHER_NO_VALID_ROLES
+INVITE_COMMUNITY_MEMBER_POPUP_INVITE_EDITBOX_INSTRUCTIONS
+INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND
+INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER
+INVITE_COMMUNITY_MEMBER_POPUP_OPEN_INVITE_MANAGER
+INVITE_CONFIRMATION_QUEUE_WARNING
+INVITE_CONFIRMATION_REQUEST
+INVITE_CONFIRMATION_REQUEST_COMMUNITY
+INVITE_CONFIRMATION_REQUEST_COMMUNITY_QUICKJOIN
+INVITE_CONFIRMATION_REQUEST_FRIEND
+INVITE_CONFIRMATION_REQUEST_FRIEND_QUICKJOIN
+INVITE_CONFIRMATION_REQUEST_FROM_COMMUNITY
+INVITE_CONFIRMATION_REQUEST_FROM_COMMUNITY_QUICKJOIN
+INVITE_CONFIRMATION_REQUEST_GUILD
+INVITE_CONFIRMATION_REQUEST_GUILD_QUICKJOIN
+INVITE_CONFIRMATION_REQUEST_QUICKJOIN
+INVITE_CONFIRMATION_SUGGEST
+JOIN_THE_ALLIANCE
+JOIN_THE_HORDE
+JOURNEYS_MAX_RENOWN_LABEL
+KEY_MOUSEWHEELDOWN
+KEY_MOUSEWHEELUP
+LAIR
+LEGACY_RAID_DIFFICULTY
+LFG_LIST_CONVERT_TO_RAID_WARNING
+LOADOUT_ERROR_BAD_STRING
+LOADOUT_ERROR_SERIALIZATION_VERSION_MISMATCH
+LOOT_NO_DROP_DISENCHANT
+MACRO_POPUP_CHOOSE_ICON
+MAJOR_FACTION_MAX_RENOWN_REACHED
+MOVE_PAD_LOCKED
+MOVE_PAD_PRESS_AND_HOLD_MODE
+MUSIC_DISABLED
+MUSIC_ENABLED
+NEWBIE_TOOLTIP_LFG_LIST_EDIT
+NEWBIE_TOOLTIP_LFG_LIST_TAB_1
+NEWBIE_TOOLTIP_LFG_LIST_TAB_2
+NOT_BEST_ARMOR_TYPE_WARNING
+NPEV2_CHAT_AVAILABLE
+NPEV2_CHAT_NEWCOMER_GRADUATION
+NPEV2_CHAT_NEWCOMER_GRADUATION_REMINDER
+NPEV2_CHAT_UNAVAILABLE
+NPEV2_REGIONAL_CHAT_AVAILABLE
+NPEV2_REGIONAL_CHAT_UNAVAILABLE
+NPE_ABANDON_A_RETURN
+NPE_ABANDON_A_WARNING
+NPE_ABANDON_H_RETURN
+NPE_ABANDON_H_WARNING
+ORIBOS_GREAT_VAULT_POI_TOOLTIP_INSTRUCTIONS
+PAGED_LIST_PAGING_FORMAT
+PARAGON_REPUTATION_TOOLTIP_TEXT
+PARAGON_REPUTATION_TOOLTIP_TEXT_LOW_LEVEL
+PARTY_PHASED_MESSAGE
+PARTY_PLAYER_CHROMIE_TIME_INELIGIBLE
+PARTY_PLAYER_CHROMIE_TIME_OTHER_ALLIANCE
+PARTY_PLAYER_CHROMIE_TIME_OTHER_HORDE
+PARTY_PLAYER_CHROMIE_TIME_OTHER_LOCATION
+PARTY_PLAYER_CHROMIE_TIME_SELF_ALLIANCE
+PARTY_PLAYER_CHROMIE_TIME_SELF_HORDE
+PARTY_PLAYER_CHROMIE_TIME_SELF_LOCATION
+PARTY_PLAYER_DIFFERENT_WORLD_TIER
+PARTY_PLAYER_SHARDED_INCOMPATIBLE_RULESET
+PARTY_PLAYER_SHARDED_NEITHER_IN_PARTY_SHARD
+PARTY_PLAYER_SHARDED_NOT_IN_PARTY_SHARD
+PARTY_PLAYER_SHARDED_TARGET_NOT_IN_PARTY_PHASE
+PARTY_PLAYER_WARMODE_DISABLED
+PARTY_PLAYER_WARMODE_ENABLED
+PASSWORD
+PING_TYPE_ASSIST
+PING_TYPE_ON_MY_WAY
+PING_TYPE_WARNING
+PLAYER_DIFFICULTY3
+PLAYER_DIFFICULTY_MYTHIC_FLEXIBLE
+PLAYER_DIFFICULTY_MYTHIC_PLUS
+PLAYER_DIFFICULTY_STORY_RAID
+PLAYER_DIFFICULTY_TIMEWALKER
+PLAYER_DIFFICULTY_WORLD_RAID
+PLAYER_IS_PVP_AFK
+PLAYTIME_TIRED
+PLAYTIME_UNHEALTHY
+PRESS_TAB
+PVP_LINK_LEVEL_CLASS_FORMAT_STRING
+PVP_LINK_SEASON_GAMES
+PVP_PRESTIGE_RANK_UP_NEXT_MAX_LEVEL_REWARD
+PVP_PRESTIGE_RANK_UP_TITLE
+PVP_RATING_LINK_FORMAT_STRING
+PVP_RATING_LINK_ITEM_LEVEL
+QUEST_CLASSIFICATION_CALLING
+QUEST_CLASSIFICATION_CAMPAIGN
+QUEST_CLASSIFICATION_IMPORTANT
+QUEST_CLASSIFICATION_LEGENDARY
+QUEST_CLASSIFICATION_META
+QUEST_CLASSIFICATION_QUESTLINE
+QUEST_CLASSIFICATION_QUESTLINE_WITH_NAME
+QUEST_CLASSIFICATION_RECURRING
+QUEST_CLASSIFICATION_RECURRING_WITH_TIME
+QUEST_REWARDS_CONTAINS_ONE_TIME_REP_BONUS
+QUEST_REWARDS_IS_ONE_TIME_REP_BONUS
+QUEUE_STATUS_WOWHACK_LEAVE
+QUEUE_STATUS_WOWHACK_TELEPORT_IN
+QUEUE_STATUS_WOWHACK_TELEPORT_OUT
+QUEUE_STATUS_WOWHACK_TITLE
+RECOVER_CORPSE_TIMER
+RECRUITING_FRIENDS_DISABLED
+REMIX_EARLY_CHARACTER_CONVERSION_NOTICE
+REMOTE_TEXT_TO_SPEECH
+REMOVE_GUILDMEMBER_LABEL
+RENOWN_LEVEL_UP_SKIP_BUTTON
+RENOWN_REWARD_ACCOUNT_UNLOCK_LABEL
+RENOWN_REWARD_FOLLOWER_DESCRIPTION
+RENOWN_REWARD_FOLLOWER_NAME_FORMAT
+RENOWN_REWARD_ILLUSION_DESCRIPTION
+RENOWN_REWARD_ILLUSION_NAME_FORMAT
+RENOWN_REWARD_ITEM_DESCRIPTION
+RENOWN_REWARD_MOUNT_DESCRIPTION
+RENOWN_REWARD_MOUNT_NAME_FORMAT
+RENOWN_REWARD_SPELL_DESCRIPTION
+RENOWN_REWARD_TITLE_DESCRIPTION
+RENOWN_REWARD_TITLE_NAME_FORMAT
+RENOWN_REWARD_TRANSMOGSET_DESCRIPTION
+RENOWN_REWARD_TRANSMOG_DESCRIPTION
+RESET_POSITION
+RESURRECT_REQUEST_NO_SICKNESS_TIMER
+RESURRECT_REQUEST_TIMER
+RIGHT_CLICK_FOR_LESS
+RIGHT_CLICK_FOR_MORE
+ROTATE_TOOLTIP
+SEARCH_RESULTS_SHOW_COUNT
+SECONDS_FLOAT
+SHARD_TRANSFER_ANYTIME
+SHARD_TRANSFER_COUNTDOWN_MESSAGE
+SHARD_TRANSFER_COUNTDOWN_STATIC_POPUP_MESSAGE
+SHARD_TRANSFER_REFRESH_MESSAGE
+SLASH_CAA_CONFIRMATION
+SLASH_CAA_CONFIRMATION_DISABLED
+SLASH_CAA_CONFIRMATION_ENABLED
+SLASH_CAA_CONFIRMATION_ENABLED_WITH_HELP
+SLASH_CAA_DISABLED_WARNING
+SLASH_CAA_HELP_DEBUFF_SELF_ALERT
+SLASH_CAA_HELP_DEBUFF_SELF_ALERT_SOUND
+SLASH_CAA_HELP_HELP
+SLASH_CAA_HELP_PLAY_SOUND
+SLASH_CAA_HELP_PULSE_YOUR_HEALTH
+SLASH_CAA_HELP_PULSE_YOUR_HEALTH_VOLUME
+SLASH_CAA_HELP_SAY_COMBAT_END
+SLASH_CAA_HELP_SAY_COMBAT_END_SOUND
+SLASH_CAA_HELP_SAY_COMBAT_START
+SLASH_CAA_HELP_SAY_COMBAT_START_SOUND
+SLASH_CAA_HELP_SAY_IF_TARGETED
+SLASH_CAA_HELP_SAY_IF_TARGETED_SOUND
+SLASH_CAA_HELP_SAY_PARTY_HEALTH
+SLASH_CAA_HELP_SAY_PARTY_HEALTH_FREQUENCY
+SLASH_CAA_HELP_SAY_PARTY_HEALTH_VOICE
+SLASH_CAA_HELP_SAY_PARTY_HEALTH_VOLUME
+SLASH_CAA_HELP_SAY_RESOURCE_1
+SLASH_CAA_HELP_SAY_RESOURCE_1_FORMAT
+SLASH_CAA_HELP_SAY_RESOURCE_1_THROTTLE
+SLASH_CAA_HELP_SAY_RESOURCE_1_VOICE
+SLASH_CAA_HELP_SAY_RESOURCE_1_VOLUME
+SLASH_CAA_HELP_SAY_RESOURCE_2
+SLASH_CAA_HELP_SAY_RESOURCE_2_FORMAT
+SLASH_CAA_HELP_SAY_RESOURCE_2_THROTTLE
+SLASH_CAA_HELP_SAY_RESOURCE_2_VOICE
+SLASH_CAA_HELP_SAY_RESOURCE_2_VOLUME
+SLASH_CAA_HELP_SAY_TARGET_CASTS
+SLASH_CAA_HELP_SAY_TARGET_CASTS_FORMAT
+SLASH_CAA_HELP_SAY_TARGET_CASTS_INTERRUPT
+SLASH_CAA_HELP_SAY_TARGET_CASTS_INTERRUPT_SOUND
+SLASH_CAA_HELP_SAY_TARGET_CASTS_INTERRUPT_SUCCESS
+SLASH_CAA_HELP_SAY_TARGET_CASTS_INTERRUPT_SUCCESS_SOUND
+SLASH_CAA_HELP_SAY_TARGET_CASTS_MIN_CAST_TIME
+SLASH_CAA_HELP_SAY_TARGET_CASTS_THROTTLE
+SLASH_CAA_HELP_SAY_TARGET_CASTS_VOICE
+SLASH_CAA_HELP_SAY_TARGET_CASTS_VOLUME
+SLASH_CAA_HELP_SAY_TARGET_HEALTH
+SLASH_CAA_HELP_SAY_TARGET_HEALTH_FORMAT
+SLASH_CAA_HELP_SAY_TARGET_HEALTH_THROTTLE
+SLASH_CAA_HELP_SAY_TARGET_HEALTH_VOICE
+SLASH_CAA_HELP_SAY_TARGET_HEALTH_VOLUME
+SLASH_CAA_HELP_SAY_TARGET_NAME
+SLASH_CAA_HELP_SAY_YOUR_CASTS
+SLASH_CAA_HELP_SAY_YOUR_CASTS_FORMAT
+SLASH_CAA_HELP_SAY_YOUR_CASTS_MIN_CAST_TIME
+SLASH_CAA_HELP_SAY_YOUR_CASTS_THROTTLE
+SLASH_CAA_HELP_SAY_YOUR_CASTS_VOICE
+SLASH_CAA_HELP_SAY_YOUR_CASTS_VOLUME
+SLASH_CAA_HELP_SAY_YOUR_DEBUFFS
+SLASH_CAA_HELP_SAY_YOUR_DEBUFFS_FORMAT
+SLASH_CAA_HELP_SAY_YOUR_DEBUFFS_MIN_DURATION
+SLASH_CAA_HELP_SAY_YOUR_DEBUFFS_VOICE
+SLASH_CAA_HELP_SAY_YOUR_DEBUFFS_VOLUME
+SLASH_CAA_HELP_SAY_YOUR_HEALTH
+SLASH_CAA_HELP_SAY_YOUR_HEALTH_FORMAT
+SLASH_CAA_HELP_SAY_YOUR_HEALTH_THROTTLE
+SLASH_CAA_HELP_SAY_YOUR_HEALTH_VOICE
+SLASH_CAA_HELP_SAY_YOUR_HEALTH_VOLUME
+SLASH_CAA_HELP_SOUND
+SLASH_CAA_HELP_SPEED
+SLASH_CAA_HELP_SUBOPTION_INVALID
+SLASH_CAA_HELP_VOICE
+SLASH_CAA_HELP_VOLUME
+SLASH_CAA_HELP_WHEN_TARGET_DIES
+SLASH_CAA_HELP_WHEN_TARGET_DIES_SOUND
+SLASH_CAA_PULSE_YOUR_HEALTH_VOLUME_NARRATED
+SLASH_CAA_SAY_PARTY_HEALTH_VOICE_CHANGED_CONFIRMATION
+SLASH_CAA_SAY_PARTY_HEALTH_VOLUME_NARRATED
+SLASH_CAA_SAY_RESOURCE_1_VOICE_CHANGED_CONFIRMATION
+SLASH_CAA_SAY_RESOURCE_1_VOLUME_NARRATED
+SLASH_CAA_SAY_RESOURCE_2_VOICE_CHANGED_CONFIRMATION
+SLASH_CAA_SAY_RESOURCE_2_VOLUME_NARRATED
+SLASH_CAA_SAY_TARGET_CASTS_VOICE_CHANGED_CONFIRMATION
+SLASH_CAA_SAY_TARGET_CASTS_VOLUME_NARRATED
+SLASH_CAA_SAY_TARGET_HEALTH_VOICE_CHANGED_CONFIRMATION
+SLASH_CAA_SAY_TARGET_HEALTH_VOLUME_NARRATED
+SLASH_CAA_SAY_YOUR_CASTS_VOICE_CHANGED_CONFIRMATION
+SLASH_CAA_SAY_YOUR_CASTS_VOLUME_NARRATED
+SLASH_CAA_SAY_YOUR_DEBUFFS_VOICE_CHANGED_CONFIRMATION
+SLASH_CAA_SAY_YOUR_DEBUFFS_VOLUME_NARRATED
+SLASH_CAA_SAY_YOUR_HEALTH_VOICE_CHANGED_CONFIRMATION
+SLASH_CAA_SAY_YOUR_HEALTH_VOLUME_NARRATED
+SLASH_CAA_VOICE_CHANGED_CONFIRMATION
+SLASH_TEXTTOSPEECH_ALTVOICE_CHANGED_CONFIRMATION
+SLASH_TEXTTOSPEECH_CONFIRMATION_DISABLED
+SLASH_TEXTTOSPEECH_CONFIRMATION_ENABLED
+SLASH_TEXTTOSPEECH_CONFIRMATION_RESET
+SLASH_TEXTTOSPEECH_HELP_ACHIEVEMENT
+SLASH_TEXTTOSPEECH_HELP_ALTSAMPLE
+SLASH_TEXTTOSPEECH_HELP_ALTSYSTEMVOICE
+SLASH_TEXTTOSPEECH_HELP_ALTVOICE
+SLASH_TEXTTOSPEECH_HELP_BLIZZARD
+SLASH_TEXTTOSPEECH_HELP_BOSS_EMOTE
+SLASH_TEXTTOSPEECH_HELP_BOSS_WHISPER
+SLASH_TEXTTOSPEECH_HELP_CHANNEL
+SLASH_TEXTTOSPEECH_HELP_CREATURE_EMOTE
+SLASH_TEXTTOSPEECH_HELP_CREATURE_SAY
+SLASH_TEXTTOSPEECH_HELP_CREATURE_WHISPER
+SLASH_TEXTTOSPEECH_HELP_CREATURE_YELL
+SLASH_TEXTTOSPEECH_HELP_CURRENCY
+SLASH_TEXTTOSPEECH_HELP_DEFAULT
+SLASH_TEXTTOSPEECH_HELP_EMOTE
+SLASH_TEXTTOSPEECH_HELP_GUILD
+SLASH_TEXTTOSPEECH_HELP_GUILDLEADER
+SLASH_TEXTTOSPEECH_HELP_HELP
+SLASH_TEXTTOSPEECH_HELP_INSTANCE
+SLASH_TEXTTOSPEECH_HELP_INSTANCELEADER
+SLASH_TEXTTOSPEECH_HELP_LOOT
+SLASH_TEXTTOSPEECH_HELP_MONEY
+SLASH_TEXTTOSPEECH_HELP_MYMESSAGES
+SLASH_TEXTTOSPEECH_HELP_PARTY
+SLASH_TEXTTOSPEECH_HELP_PARTYLEADER
+SLASH_TEXTTOSPEECH_HELP_PING
+SLASH_TEXTTOSPEECH_HELP_PLAYACTIVITY
+SLASH_TEXTTOSPEECH_HELP_PLAYLINE
+SLASH_TEXTTOSPEECH_HELP_RAID
+SLASH_TEXTTOSPEECH_HELP_RAIDLEADER
+SLASH_TEXTTOSPEECH_HELP_RAID_WARNING
+SLASH_TEXTTOSPEECH_HELP_SAMPLE
+SLASH_TEXTTOSPEECH_HELP_SAY
+SLASH_TEXTTOSPEECH_HELP_SAYNAME
+SLASH_TEXTTOSPEECH_HELP_SETTINGS
+SLASH_TEXTTOSPEECH_HELP_STOP
+SLASH_TEXTTOSPEECH_HELP_SYSTEM
+SLASH_TEXTTOSPEECH_HELP_VOICE
+SLASH_TEXTTOSPEECH_HELP_WHISPER
+SLASH_TEXTTOSPEECH_HELP_YELL
+SLASH_TEXTTOSPEECH_VOICE_CHANGED_CONFIRMATION
+SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DELVE
+SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DPS
+SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DUNGEONS
+SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_HEALER
+SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_PROFESSIONS
+SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_PVP
+SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_QUESTING
+SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_RAIDING
+SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_ROLEPLAYING
+SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_TANK
+SOUND_DISABLED
+SOUND_EFFECTS_DISABLED
+SOUND_EFFECTS_ENABLED
+SPEECH_TO_TEXT_JOINED
+STRING_SCHOOL_ARCANE
+STRING_SCHOOL_HOLY
+STRING_SCHOOL_NATURE
+STRING_SCHOOL_PHYSICAL
+TALENT_BUTTON_TOOLTIP_CAPSTONE_RANK_NEXT_STAGE_PREVIEW_TITLE
+TALENT_BUTTON_TOOLTIP_COST_FORMAT
+TALENT_BUTTON_TOOLTIP_NOT_ON_ACTION_BAR
+TALENT_BUTTON_TOOLTIP_ON_DISABLED_ACTIONBAR
+TALENT_BUTTON_TOOLTIP_ON_INACTIVE_BONUSBAR
+TALENT_FRAME_GATE_TOOLTIP_FORMAT
+TELEPORT_OUT_OF_DUNGEON
+TELEPORT_TO_DUNGEON
+TEXTTOSPEECH_COMMAND_SYNTAX_ERROR
+TEXTTOSPEECH_HELP_OVERVIEW
+TOOLTIP_BATTLE_PET
+TOY
+TRANSMOG_AND_MOUNT_DRESSUP_FRAME_SHOW_MOUNT
+TRANSMOG_APPEARANCE_USABLE_HOLIDAY
+TRANSMOG_COLLECTED
+TRANSMOG_CUSTOM_SET_COPY_TO_CLIPBOARD
+TRANSMOG_CUSTOM_SET_POST_IN_CHAT
+TRANSMOG_DRACTHYR_APPEARANCE_INVISIBLE
+TRANSMOG_SLOT_APPEARANCE_INVISIBLE
+USE
+VIDEO_QUALITY_LABEL6
+VOICE_CHAT_ERROR_CODE_FORMATTER
+VOICE_TRANSCRIPTION_MUTED
+WARDROBE_ALTERNATE_ITEMS
+WARDROBE_OTHER_ITEMS
+WARDROBE_TOOLTIP_BOSS_DROP_FORMAT
+WARDROBE_TOOLTIP_BOSS_DROP_FORMAT_WITH_DIFFICULTIES
+WARDROBE_TOOLTIP_CYCLE
+WARDROBE_TOOLTIP_DUNGEONS
+WARDROBE_TOOLTIP_ENCOUNTER_SOURCE
+WARDROBE_TOOLTIP_RAIDS
+WARDROBE_TOOLTIP_TRANSMOGRIFIER
+WARDROBE_TRANSMOGRIFY_AS
+WARGAME
+WAR_CAMPAIGN_CHAPTER_REWARD_TEXT
+WAR_CAMPAIGN_DONE_DESCRIPTION
+WAR_MODE_BONUS_PERCENTAGE_FORMAT
+WAR_MODE_BONUS_PERCENTAGE_XP_FORMAT
+WORLD_MAP_ACTIVITY_TRACKER_RING_TOOLTIP
+WORLD_MARKER
+WORLD_TIER_HEROIC
+WORLD_TIER_MYTHIC
+YOU_ARE_NOT_SPECIALIZED_IN_ROLE
+# Client-table text the served-text inventory found shown on Forever, second set: requirement lines, lock
+# actions, spellbook flyouts, server notices and the transmog outfit options (skill names and DND rows left out)
+LockTypeName:1
+LockTypeResource:1
+LockTypeVerb:1
+LockTypeResource:2
+LockTypeVerb:2
+LockTypeResource:3
+LockTypeVerb:3
+LockTypeName:4
+LockTypeResource:4
+LockTypeVerb:4
+LockTypeName:5
+LockTypeResource:5
+LockTypeVerb:5
+LockTypeName:8
+LockTypeResource:8
+LockTypeVerb:8
+LockTypeName:9
+LockTypeResource:9
+LockTypeVerb:9
+LockTypeName:10
+LockTypeResource:10
+LockTypeVerb:10
+LockTypeName:11
+LockTypeResource:11
+LockTypeVerb:11
+LockTypeName:12
+LockTypeResource:12
+LockTypeVerb:12
+LockTypeName:13
+LockTypeResource:13
+LockTypeVerb:13
+LockTypeName:14
+LockTypeResource:14
+LockTypeVerb:14
+LockTypeName:16
+LockTypeResource:16
+LockTypeVerb:16
+LockTypeName:17
+LockTypeResource:17
+LockTypeVerb:17
+LockTypeName:18
+LockTypeResource:18
+LockTypeVerb:18
+LockTypeResource:19
+LockTypeVerb:19
+LockTypeName:24
+LockTypeResource:24
+LockTypeVerb:24
+LockTypeName:209
+LockTypeResource:209
+LockTypeVerb:209
+LockTypeName:211
+LockTypeResource:211
+LockTypeName:245
+LockTypeResource:245
+LockTypeVerb:245
+FlyoutName:248
+FlyoutDescription:248
+FlyoutName:249
+FlyoutDescription:249
+FlyoutName:250
+FlyoutDescription:250
+FlyoutName:251
+FlyoutDescription:251
+FlyoutName:252
+FlyoutDescription:252
+FlyoutName:253
+FlyoutDescription:253
+FlyoutName:257
+FlyoutDescription:257
+FlyoutName:259
+FlyoutDescription:259
+FlyoutName:261
+FlyoutDescription:261
+FlyoutName:262
+FlyoutDescription:262
+FlyoutName:263
+FlyoutDescription:263
+FlyoutName:264
+FlyoutDescription:264
+FlyoutName:265
+FlyoutDescription:265
+FlyoutName:267
+FlyoutDescription:267
+FlyoutName:268
+FlyoutDescription:268
+FlyoutName:269
+FlyoutDescription:269
+FlyoutName:270
+FlyoutDescription:270
+FlyoutName:272
+FlyoutDescription:272
+FlyoutName:273
+FlyoutDescription:273
+ServerMessage:1
+ServerMessage:2
+ServerMessage:4
+ServerMessage:5
+ServerMessage:6
+ServerMessage:7
+ServerMessage:8
+ServerMessage:9
+ServerMessage:11
+ServerMessage:12
+ServerMessage:13
+ServerMessage:17
+ServerMessage:18
+TransmogSituation:1
+TransmogSituation:2
+TransmogSituation:3
+TransmogSituation:4
+TransmogSituation:5
+TransmogSituation:8
+TransmogSituation:9
+TransmogSituation:10
+TransmogSituation:11
+TransmogSituation:12
+TransmogSituation:13
+TransmogSituation:14
+TransmogSituation:15
+TransmogSituation:16
+TransmogSituation:17
+TransmogSituation:18
+TransmogSituation:19
+TransmogSituation:20
+TransmogSituation:21
+TransmogSituation:22
+TransmogSituation:32
+TransmogSituation:33
+TransmogSituation:34
+TransmogSituation:35
+TransmogSituation:36
+TransmogSituation:37
+TransmogSituation:38
+TransmogSituation:39
+TransmogSituation:40
+TransmogSituation:41
+TransmogTrigger:3
+TransmogTriggerDescription:3
+TransmogTrigger:4
+TransmogTriggerDescription:4
+TransmogTrigger:5
+TransmogTriggerDescription:5
+TransmogTrigger:6
+TransmogTriggerDescription:6
+TransmogTrigger:7
+TransmogTriggerDescription:7
+TransmogTrigger:11
+TransmogTrigger:12
+TransmogSlotOption:1
+TransmogSlotOption:2
+TransmogSlotOption:5
+TransmogSlotOption:7
+TransmogSlotOption:8
+TransmogSlotOption:9
+TransmogSlotOption:20
+TransmogSlotOption:21
+TransmogSlotOption:22
+TransmogSlotOption:23
+TransmogSlotOption:24
+TransmogSlotOption:25
+TransmogSlotOption:26
+TransmogSlotOption:27
+TransmogSlotOption:28
+TransmogSlotOption:29
+TransmogSlotOption:30
+TransmogSlotOption:31
+TransmogSlotOption:32
+TransmogSlotOption:33
+TransmogSlotOption:34
+TransmogSlotOption:35
+TransmogSlotOption:36
+TransmogSlotOption:37
+TransmogSlotOption:38
+TransmogSlotOption:39
+TransmogSlotOption:40
+TransmogSlotOption:41
+TransmogSlotOption:42
+TransmogSlotOption:43
+TransmogSlotOption:44
+TransmogSlotOption:45
+TransmogSlotOption:46
+TransmogSlotOption:47
+TransmogSlotOption:48
+TransmogSlotOption:49
+TransmogSlotOption:50
+TransmogSlotOption:51
+TransmogSlotOption:52
+TransmogSlotOption:53
+TransmogSlotOption:54
+TransmogSlotOption:55
+PlayerConditionFailure:3882
+PlayerConditionFailure:3883
+PlayerConditionFailure:3884
+PlayerConditionFailure:3885
+PlayerConditionFailure:3886
+PlayerConditionFailure:3887
+PlayerConditionFailure:3888
+PlayerConditionFailure:3889
+PlayerConditionFailure:4883
+PlayerConditionFailure:4884
+PlayerConditionFailure:4885
+PlayerConditionFailure:4886
+PlayerConditionFailure:5028
+PlayerConditionFailure:5029
+PlayerConditionFailure:5198
+PlayerConditionFailure:5199
+PlayerConditionFailure:5200
+PlayerConditionFailure:5201
+PlayerConditionFailure:5202
+PlayerConditionFailure:5203
+PlayerConditionFailure:5426
+PlayerConditionFailure:5427
+PlayerConditionFailure:27943
+PlayerConditionFailure:31504
+PlayerConditionFailure:80371
+PlayerConditionFailure:80372
+PlayerConditionFailure:146124
+PlayerConditionFailure:146125
+PlayerConditionFailure:146126
+PlayerConditionFailure:146127
+PlayerConditionFailure:146128
+PlayerConditionFailure:146129
+PlayerConditionFailure:146130
+PlayerConditionFailure:146131
+PlayerConditionFailure:146192
+PlayerConditionFailure:146193
+PlayerConditionFailure:148824
+PlayerConditionFailure:148825
+PlayerConditionFailure:148826
+PlayerConditionFailure:150766
+PlayerConditionFailure:150767
+PlayerConditionFailure:151486
+PlayerConditionFailure:151683
+PlayerConditionFailure:151684
+PlayerConditionFailure:153766
+PlayerConditionFailure:153767
+PlayerConditionFailure:155311
+PlayerConditionFailure:155312
+PlayerConditionFailure:155358
+PlayerConditionFailure:155359
+PlayerConditionFailure:155951
+PlayerConditionFailure:155957
+PlayerConditionFailure:155958
+PlayerConditionFailure:155959
+PlayerConditionFailure:155960
+PlayerConditionFailure:156039
+PlayerConditionFailure:156041
+PlayerConditionFailure:156046
+PlayerConditionFailure:156047
+PlayerConditionFailure:156048
+PlayerConditionFailure:156238
+PlayerConditionFailure:156239
+PlayerConditionFailure:156240
+PlayerConditionFailure:156241
+PlayerConditionFailure:156242
+PlayerConditionFailure:156243
+PlayerConditionFailure:156244
+PlayerConditionFailure:156246
+PlayerConditionFailure:156247
+PlayerConditionFailure:156248
+PlayerConditionFailure:156249
+PlayerConditionFailure:156250
+PlayerConditionFailure:156251
+PlayerConditionFailure:156252
+PlayerConditionFailure:156318
+PlayerConditionFailure:156319
+PlayerConditionFailure:156320
+PlayerConditionFailure:156321
+PlayerConditionFailure:157535
+PlayerConditionFailure:159140
+PlayerConditionFailure:159141
+PlayerConditionFailure:159370
+PlayerConditionFailure:163213
+PlayerConditionFailure:163214
+PlayerConditionFailure:163215
+PlayerConditionFailure:163216
+PlayerConditionFailure:163217
+PlayerConditionFailure:163218
+PlayerConditionFailure:163219
+PlayerConditionFailure:163220
+PlayerConditionFailure:163380
+PlayerConditionFailure:163433
+PlayerConditionFailure:163434
+PlayerConditionFailure:163435

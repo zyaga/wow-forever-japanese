@@ -339,6 +339,108 @@ _TEXT_TABLES = (
     ),
 )
 
+def _forever_text(
+    name: str,
+    file_data_id: int,
+    layout_hash: int,
+    field_count: int,
+    columns: tuple[Column, ...],
+    unwritten_strings: frozenset[int] = frozenset(),
+) -> Table:
+    """A text family table pinned to its Forever layout. Classic Era is read from wago.tools, never extracted,
+    so only the Forever layout is verified (ADR-027)."""
+    return Table(name, file_data_id, layout_hash, field_count, columns, unwritten_strings)
+
+
+# The text families the served-text inventory found shown on Forever (ADR-052). Each written column was
+# matched to wago.tools' export of 1.60.1.70170, row for row: every row of every written column is the same
+# (the inventory's research note in docs/research/ has the table). Every written column is the row id or a
+# leading string field, so a hotfix is read as its leading strings; an unwritten string before a written one
+# is declared so the string layout reads.
+_SERVED_TEXT_TABLES = (
+    _forever_text("CriteriaTree", 1263818, 0xFF97AE12, 7, (_c("ID", ID), _c("Description_lang", 0))),
+    _forever_text(
+        "RenownRewards",
+        3743117,
+        0x30AFBCF8,
+        19,
+        (_c("ID", ID), _c("Name_lang", 0), _c("Description_lang", 1), _c("ToastDescription_lang", 2)),
+    ),
+    _forever_text("SharedString", 4620073, 0x702947A3, 3, (_c("ID", ID), _c("String_lang", 0))),
+    _forever_text(
+        "TradeSkillCategory", 1301101, 0x7F2B6CD0, 6, (_c("ID", ID), _c("Name_lang", 0)), frozenset({1})
+    ),
+    _forever_text("MailTemplate", 1240344, 0xB436C1C8, 1, (_c("ID", ID), _c("Body_lang", 0))),
+    _forever_text("QuestInfo", 1120960, 0xE505C927, 4, (_c("ID", ID), _c("InfoName_lang", 0))),
+    # Name_lang (field 0) is a place name and stays English
+    _forever_text(
+        "AreaPOI", 1000630, 0xA8930CBB, 22, (_c("ID", ID), _c("Description_lang", 1)), frozenset({0})
+    ),
+    _forever_text("AreaPOIState", 1000631, 0x60943110, 4, (_c("ID", ID), _c("Description_lang", 0))),
+    _forever_text("PetLoyalty", 2179604, 0x209D3ED9, 3, (_c("ID", ID), _c("Name_lang", 0))),
+    # fields 0-4: Directory, MapName_lang (names), the two map descriptions and the short PvP description,
+    # which only the PvP UI camelot does not load reads
+    _forever_text(
+        "Map",
+        1349477,
+        0xD43AFAC3,
+        26,
+        (_c("ID", ID), _c("PvpLongDescription_lang", 5)),
+        frozenset({0, 1, 2, 3, 4}),
+    ),
+    _forever_text("Difficulty", 1352127, 0xB810C351, 14, (_c("ID", ID), _c("Name_lang", 0))),
+    # fields 0-2: Title_lang, Subtitle_lang (GlobalStrings text) and InstructionText_lang (empty)
+    _forever_text(
+        "UiEventToast", 3946498, 0x10C7B581, 22, (_c("ID", ID), _c("SubIcon_lang", 3)), frozenset({0, 1, 2})
+    ),
+    _forever_text("BroadcastText", 841604, 0x00EB45B3, 12, (_c("ID", ID), _c("Text_lang", 0))),
+    _forever_text("ItemPetFood", 1302240, 0x798F6B1A, 2, (_c("ID", ID), _c("Name_lang", 0))),
+    _forever_text("Exhaustion", 1343313, 0xB6456916, 7, (_c("ID", ID), _c("Name_lang", 0))),
+    _forever_text("ItemSubClassMask", 1302852, 0xD1A996F3, 3, (_c("ID", ID), _c("Name_lang", 0))),
+    _forever_text(
+        "RolodexType",
+        5936950,
+        0x22D8CB1A,
+        2,
+        (_c("ID", ID), _c("Description_lang", 0), _c("Field_11_2_5_62687_001_lang", 1)),
+    ),
+    _forever_text(
+        "FriendshipReputation",
+        1237639,
+        0x3D52E27A,
+        7,
+        (_c("ID", ID), _c("Description_lang", 0), _c("StandingModified_lang", 1)),
+    ),
+    _forever_text("MapDifficulty", 1367868, 0x24A16AD3, 11, (_c("ID", ID), _c("Message_lang", 0))),
+    _forever_text(
+        "MapDifficultyXCondition", 1375435, 0xD514B4CA, 3, (_c("ID", ID), _c("FailureDescription_lang", 0))
+    ),
+    _forever_text(
+        "PlayerCondition", 1045411, 0x1D743D99, 86, (_c("ID", ID), _c("Failure_description_lang", 0))
+    ),
+    # field 3 (CursorName) is a cursor file token
+    _forever_text(
+        "LockType",
+        1284823,
+        0xAF114F71,
+        6,
+        (_c("ID", ID), _c("Name_lang", 0), _c("ResourceName_lang", 1), _c("Verb_lang", 2)),
+    ),
+    _forever_text(
+        "SpellFlyout", 1146819, 0xBE7036C6, 6, (_c("ID", ID), _c("Name_lang", 0), _c("Description_lang", 1))
+    ),
+    _forever_text("ServerMessages", 1301141, 0x022C43AA, 1, (_c("ID", ID), _c("Text_lang", 0))),
+    _forever_text("TransmogSituation", 7211446, 0xFA6B434F, 6, (_c("ID", ID), _c("Name_lang", 0))),
+    _forever_text(
+        "TransmogSituationTrigger",
+        7210468,
+        0x7833CAB8,
+        5,
+        (_c("ID", ID), _c("Name_lang", 0), _c("Description_lang", 1)),
+    ),
+    _forever_text("TransmogOutfitSlotOption", 7299793, 0x8C80370F, 7, (_c("ID", ID), _c("Name_lang", 0))),
+)
+
 TABLES: dict[str, Table] = {
     t.name: t
     for t in (
@@ -474,6 +576,7 @@ TABLES: dict[str, Table] = {
         # Names stay English: a name column is declared unwritten so the string layout reads, and is
         # never imported. Evidence per build: the client-table text research in docs/research/.
         *_TEXT_TABLES,
+        *_SERVED_TEXT_TABLES,
     )
 }
 

@@ -23,10 +23,11 @@ TYPES = ("quest", "item", "spell", "ui", "gossip", "book", "objective", "area")
 # A gossip line is keyed by the hash of its English (ADR-005): the key is its English hash and the only
 # English `check` consults (ADR-017). Changed English is a different key: never stale.
 GOSSIP_SRC = "gossip-key@normalize_v1"
-# English from player collector dumps is stored but not yet consulted: until a re-check policy
-# decides how it may change hashes and scopes, `check` / `validate` behave exactly as if no dump were
-# imported (ADR-013).
+# What the Forever client shows is the English, so collector English for server-written text (quest,
+# gossip) is consulted like any source. Item and spell lines are recorded with their numbers filled in,
+# while the client's tables hold the templates, so for those types it stays unconsulted (ADR-013).
 UNCONSULTED_SOURCES = ("collector",)
+CONSULTED_COLLECTOR_TYPES = ("quest", "gossip")
 
 
 # pfQuest never provides (ADR-019) these fields, so a baseline recorded from a pfQuest line on one of
@@ -38,10 +39,11 @@ OWN_ENGLISH_LATER = ("progress", "completion")
 def build_scopes(english: Store, type_: str) -> dict[int | str, Scope]:
     """Scopes hold normalize_v1 English (markup and `$B` gone), so a count after a `$B` is still a
     number to the checks; the per-field hash comes from the store and is never recomputed. Lines from
-    UNCONSULTED_SOURCES are skipped."""
+    UNCONSULTED_SOURCES are skipped, except for CONSULTED_COLLECTOR_TYPES."""
     scopes: dict[int | str, Scope] = {}
+    skip = () if type_ in CONSULTED_COLLECTOR_TYPES else UNCONSULTED_SOURCES
     for ln in english.load(type_):
-        if str(ln["src"]).split("@", 1)[0] in UNCONSULTED_SOURCES:
+        if str(ln["src"]).split("@", 1)[0] in skip:
             continue
         sc = scopes.setdefault(ln["id"], Scope(kind=type_, src=ln["src"]))
         sc.fields[ln["field"]] = normalize_for(type_, ln["en"])

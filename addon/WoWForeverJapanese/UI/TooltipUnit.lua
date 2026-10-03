@@ -51,7 +51,13 @@ for _, i in ipairs({ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 
   TooltipUnit.KEYS[#TooltipUnit.KEYS + 1] = "UNITNAME_SUMMON_TITLE" .. i
 end
 -- a creature: the keys, and its type on a line of its own (built per call: the family's keys come from the index)
-local function creatureOnly() return WFJ.Labels.familiesWith(TooltipUnit.KEYS, "CreatureType") end
+-- a creature's or a game object's lines: the unit keys, the creature type, and an object's lock and requirement text
+-- (LockType's action / what it opens / verb, PlayerCondition's failure text, both client-table rows the C client
+-- writes) [unverified in game: which object lines carry them]
+local function creatureOnly()
+  return WFJ.Labels.familiesWith(TooltipUnit.KEYS, "CreatureType", "LockTypeName", "LockTypeResource", "LockTypeVerb",
+    "PlayerConditionFailure")
+end
 local CREATURE_TEMPLATES = { UNIT_TYPE_LEVEL_TEMPLATE = true, UNIT_TYPE_PLUS_LEVEL_TEMPLATE = true,
   UNIT_TYPE_LETHAL_LEVEL_TEMPLATE = true }
 local PLAYER_KEYS = {}
@@ -146,13 +152,26 @@ function TooltipUnit.questFor(title)
   return first
 end
 
+-- A quest title inside a system line, as its Japanese when exactly one translation answers it (UIStrings
+-- questTitle arguments). → Japanese | nil
+function TooltipUnit.titleJapanese(title)
+  local id = TooltipUnit.questFor(title)
+  local entry = id and WFJ.Lookup.get("quest.title", id)
+  return entry and type(entry.ja) == "string" and entry.ja ~= "" and entry.ja or nil
+end
+WFJ.UIStrings = WFJ.UIStrings or {}
+WFJ.UIStrings.questTitle = TooltipUnit.titleJapanese
+
 -- The minimap mouseover is one line holding a block the client builds: names (a quest giver), a quest title, a colour
 -- code, then the objectives as "- 2/7 Young Nightsaber slain" (seen in game). Each part is read on its own: a title
 -- by its hash, an objective through UI/QuestMap's objective lookups, anything else (a name) kept as written. The
--- client rebuilds it every frame, so it is written without a record. → the block in Japanese | nil, notes
-function TooltipUnit.minimapBlock(text)
+-- client rebuilds it every frame, so it is written without a record. A quest ready to turn in has no objectives, so
+-- its block is the title alone on one line: `single` (the tooltip is the minimap mouseover's, never a unit's, whose
+-- one line is a name) lets a one-line block through, still read only as a quest title by its hash.
+-- → the block in Japanese | nil, notes
+function TooltipUnit.minimapBlock(text, single)
   local isSecret = Compat.resolve("issecretvalue")
-  if type(text) ~= "string" or not text:find("\n", 1, true)
+  if type(text) ~= "string" or (not single and not text:find("\n", 1, true))
     or (type(isSecret) == "function" and isSecret(text)) then
     return nil
   end
@@ -188,6 +207,8 @@ end
 
 -- The widget the minimap block was written on, to give it the client's face back when the tooltip hides.
 local blockWidget
+-- Enum.TooltipDataType.MinimapMouseover on this client (set by init), to tell its one-line block from a unit's name
+local minimapType
 
 -- The Unit post-call (tooltip, tooltip data): GameTooltip only (its OnHide releases these records).
 -- → the number of lines shown
@@ -200,7 +221,8 @@ function TooltipUnit.onUnit(tt, data)
   local kinds, notes = TooltipUnit.lineKinds(data), {}
   if lines == 1 then
     local fs = Compat.resolve(name .. "TextLeft1")
-    local ja, why = TooltipUnit.minimapBlock(type(fs) == "table" and fs:GetText() or nil)
+    local single = minimapType ~= nil and type(data) == "table" and data.type == minimapType
+    local ja, why = TooltipUnit.minimapBlock(type(fs) == "table" and fs:GetText() or nil, single)
     if ja and WFJ.State.enabled ~= false and not WFJ.Modifier.isDown() and WFJ.State.areaEnabled("quests") then
       fs:SetText(ja)
       WFJ.Font.bundle(fs) -- written outside a record, so the face is set here and given back on the tooltip's OnHide
@@ -259,6 +281,7 @@ function TooltipUnit.init()
   processor.AddTooltipPostCall(types.Unit, TooltipUnit.onUnit)
   -- the other tooltips whose lines are a unit's or a quest's: the minimap mouseover (a quest's title and objectives,
   -- GameTooltip:SetMinimapMouseover, blizzard_minimap/mainline/minimap.lua:271), a game object, a corpse
+  minimapType = types.MinimapMouseover
   for _, name in ipairs({ "MinimapMouseover", "Object", "Corpse" }) do
     if types[name] ~= nil then processor.AddTooltipPostCall(types[name], TooltipUnit.onUnit) end
   end

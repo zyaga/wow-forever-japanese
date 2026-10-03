@@ -42,6 +42,7 @@ WFJ.Data.add("gossip", {
   ["a4de044414909735"] = { "Scepter of the Shifting Sandsは再びひとつになった、{name}。\n\n軍勢を率いて呪われた要塞都市Ahn'Qirajへ乗り込み、その住人たちに裁きを下すのはお前だ。\n\nSilithusへ赴き、Scepter of the Shifting SandsをJonathan the Revelatorに示すのだ。", "." },
   ["a4dec0e4cdf4d444"] = { "あちゃ……", "." },
   ["a4e506ad724413a7"] = { "跪け、Grark。", "." },
+  ["a4e7c77551632cd0"] = { "倒した獣から革を剥ぐ方法を学びたいかい？それとも新しい道具が要るのかな？", "." },
   ["a4eacd2166595458"] = { "%sは{name}から渡された品を高々と掲げた……", "." },
   ["a4f1afa5a691ea01"] = { "%sは息をのんだ。", "." },
   ["a4f555325ea003a9"] = { "Bodley、何が起きているのか教えてくれ。", "." },
