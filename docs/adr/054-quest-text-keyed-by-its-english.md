@@ -54,7 +54,8 @@ to a quest id, but that id is not readable where they show, or (for a variant) n
    the hash of its English, with its reading (the lowest quest id answers a key two copies hold; a key the gossip
    data already holds keeps its own row). The quest window shows a progress or turn-in text from its keyed row
    only when the live text is not the quest's own, as for a conditional description, and records it as the
-   quest's own English. Only an exact English match shows it.
+   quest's own English. Only an exact English match shows it. A text with a gender choice (`$G`) is keyed by both wordings, since a
+   female character's live text is the second one.
 
 ## Consequences
 

@@ -32,3 +32,11 @@ def test_nothing_keyed_when_every_copy_has_its_own_english_or_no_copy_is_transla
 def test_a_single_quest_title_is_never_keyed():
     english = [_en(1, "title", "Only One"), _en(1, "progress", "Hello.")]
     assert quest_text_aliases([_ja(1, "progress")], english) == {}
+
+
+def test_a_gendered_text_is_keyed_by_both_wordings():
+    text = "Welcome back, $Gbrother:sister;."
+    english = [_en(1, "title", "Camping 101: Tents"), _en(2, "title", "Camping 101: Tents"), _en(1, "progress", text)]
+    got = quest_text_aliases([_ja(1, "progress")], english)
+    assert got == {key(normalize_v1(text)): (1, "progress"),
+                   key(normalize_v1("Welcome back, sister.")): (1, "progress")}

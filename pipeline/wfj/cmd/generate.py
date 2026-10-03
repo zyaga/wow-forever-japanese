@@ -331,7 +331,9 @@ def quest_text_aliases(
     copy often has no progress or turn-in English of its own. For a title several quests share, where a copy
     lacks the field's English, every trusted translation of that field among the copies also ships keyed by
     the hash of its English, so the copy finds it by the live text (ADR-054). Only an exact English match
-    shows it. The lowest quest id answers a key two copies hold. → {key: (quest id, field)}"""
+    shows it. A text with a `$G` code ships under its female wording's key too: the key keeps the male
+    branch, and a female character's live text is the other. The lowest quest id answers a key two copies
+    hold. → {key: (quest id, field)}"""
     english: dict[int, dict[str, dict[str, Any]]] = {}
     for ln in english_lines:
         english.setdefault(ln["id"], {})[ln["field"]] = ln
@@ -352,6 +354,9 @@ def quest_text_aliases(
             for i in sorted(ids):
                 if (i, field) in trusted and field in english[i]:
                     out.setdefault(english[i][field]["hash"], (i, field))
+                    fkey = _female_key(english[i][field])
+                    if fkey:
+                        out.setdefault(fkey, (i, field))
     return out
 
 
