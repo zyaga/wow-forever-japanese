@@ -215,7 +215,7 @@ A radio choice at the top picks **Bug** or **Idea**. The window always opens on 
 | Bug, with unsent errors | "N new Lua errors from this addon go with the report." | **1** the link in a copy box, Ctrl+C, paste into the browser; **2** the form opens filled in (or, when the link would be too long, the error text in a box to copy into the form's Lua errors field); **3** write what happened and submit; **4** **I sent it**, on the same line |
 | Bug, no errors | "No new Lua errors from this addon. Build and version go with it." | steps 1 to 3; no I sent it |
 | Bug, another error addon | "Another addon (BugSack or similar) catches Lua errors: paste ours from it." (in place of either summary above) | steps 1 to 3; step 4 and **I sent it** still show while unsent errors are held (errors kept before the other addon was installed still go in the link) |
-| Idea | "Ideas and code changes go to GitHub (a GitHub account is needed)." | **1** the idea link in a copy box; **2** write the idea and submit |
+| Idea | "Ideas and code changes go to GitHub." | **1** the idea link in a copy box; **2** write the idea and submit |
 
 ### The link
 

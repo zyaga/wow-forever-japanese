@@ -144,8 +144,8 @@ Text.T = {
     ja = "別のアドオン（BugSack など）がエラーを取得中。そこから貼り付けてください。",
   },
   ["report.summary.idea"] = {
-    en = "Ideas and code changes go to GitHub (a GitHub account is needed).",
-    ja = "提案やコードの変更は GitHub に送ります（GitHub アカウントが必要）。",
+    en = "Ideas and code changes go to GitHub.",
+    ja = "提案やコードの変更は GitHub に送ります。",
   },
   ["report.step2.link"] = {
     en = "2. The form opens with build, version and errors filled in.",
