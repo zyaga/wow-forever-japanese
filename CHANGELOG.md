@@ -10,7 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
-- Report a bug or send an idea from the game: `/wfj bug` (or **Report a bug or idea** in the 字 minimap button's menu) opens a window with a link to the GitHub issue form. A bug report comes with the game build, the addon version and the addon's own Lua errors already filled in. Click **I sent it** afterwards, and the next report holds only new errors.
+- Report a bug or send an idea from the game: `/wfj bug` (or **Report a bug or idea** in the 字 minimap button's menu) opens a window: pick **Bug** or **Idea** and open its link to the GitHub issue form. A bug report comes with the game build, the addon version and the addon's own Lua errors already filled in. Click **I sent it** afterwards, and the next report holds only new errors.
 - The addon now keeps its own Lua errors (only errors raised in its own files, with your character's name left out), since the game hides Lua errors by default. The first one in a session prints one line in chat, and `/wfj log` ends with how many it holds. The game's Lua error window and addons such as BugSack still see every error.
 
 ### Changed
