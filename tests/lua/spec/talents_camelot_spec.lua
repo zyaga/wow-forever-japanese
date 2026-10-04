@@ -71,8 +71,9 @@ describe("talents on the Forever client", function()
       WFJ.Talents.init()
     end)
 
-    it("the window title (the shared UpdateFrameTitle hook) reads Talents in Japanese", function()
+    it("the window title (watched, set up by the spellbook) reads Talents in Japanese", function()
       PS.openTalents()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       assert.are.equal("タレント", _G.PlayerSpellsFrame.TitleContainer.TitleText:GetText())
     end)
 

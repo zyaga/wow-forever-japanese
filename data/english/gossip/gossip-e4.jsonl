@@ -7,7 +7,6 @@
 {"id": "e41d85b8004acb58", "field": "text", "en": "Don't worry, I'll find a good home for ya.", "hash": "e41d85b8004acb58", "src": "vmangos@13b49dc"}
 {"id": "e42075d78e5bd587", "field": "text", "en": "Something is wrong with the Highlord. Do something!", "hash": "e42075d78e5bd587", "src": "vmangos@13b49dc"}
 {"id": "e435ee5d43176b00", "field": "text", "en": "%s begins countdown.", "hash": "e435ee5d43176b00", "src": "vmangos@13b49dc"}
-{"id": "e43b04593d9fd768", "field": "text", "en": "$n! How have ye been $g lad : lass;? Show me what ye've learned since I saw ye last, we'll see if there's anything new I can teach ye.", "hash": "e43b04593d9fd768", "src": "vmangos@13b49dc"}
 {"id": "e447ceb36a00054e", "field": "text", "en": "My son could design a faster car than that clunky goblin junk heap!", "hash": "e447ceb36a00054e", "src": "vmangos@13b49dc"}
 {"id": "e44886f9f676177d", "field": "text", "en": "The gate is in sight! We're going to make it! But first, I need to take a breather.", "hash": "e44886f9f676177d", "src": "vmangos@13b49dc"}
 {"id": "e44ef0ae88fb7579", "field": "text", "en": "What happens when the Earthen destabilize?", "hash": "e44ef0ae88fb7579", "src": "vmangos@13b49dc"}
@@ -28,6 +27,7 @@
 {"id": "e4a1ce5d33c58100", "field": "text", "en": "I don't care to hear it, $n. Nope, no way are you going to be let into the Searing Gorge. Impossible. Not going to happen. How many times do I have to tell you - I can't let you in! Do you not speak common? Are you an orc in disguise? N-O. NO!$B$BIf I let you in, then I have to let everybody in. Pretty soon your close friends will want in, then their distant relatives, then their friends, and so on and so forth. The last time that happened... well, we won't talk about the last time it happened. ", "hash": "e4a1ce5d33c58100", "src": "vmangos@13b49dc"}
 {"id": "e4a1eb4fe6440f26", "field": "text", "en": "You are no match for the Blackrock Orcs!", "hash": "e4a1eb4fe6440f26", "src": "vmangos@13b49dc"}
 {"id": "e4aed2a87b05a5e0", "field": "text", "en": "As acting Taskmaster of this here compound, it is my duty to make sure that there is a certain level of tedium involved with all forms of business, work, rest, and relaxation that may take place here.$B$BIf you find anything that you are asked to do to be too easy and hassle free, report to me immediately.", "hash": "e4aed2a87b05a5e0", "src": "vmangos@13b49dc"}
+{"id": "e4b44a89fd5a37cb", "field": "text", "en": "$n! How have ye been $g lad : lass;? Show me what ye've learned since I saw ye last, we'll see if there's anything new I can teach ye.", "hash": "e4b44a89fd5a37cb", "src": "vmangos@13b49dc"}
 {"id": "e4c3dff503470c1f", "field": "text", "en": "What do you want, Komak?", "hash": "e4c3dff503470c1f", "src": "vmangos@13b49dc"}
 {"id": "e4cac66fe2607298", "field": "text", "en": "Death and Praise for the Lich King!", "hash": "e4cac66fe2607298", "src": "vmangos@13b49dc"}
 {"id": "e4cdf7a0d15a9d87", "field": "text", "en": "What the... what are those things crawling at us?  We... we have incoming!", "hash": "e4cdf7a0d15a9d87", "src": "vmangos@13b49dc"}

@@ -11,6 +11,7 @@
 {"id": "0c2a1666f178cd1c", "field": "text", "en": "Get away from here, $c, or they'll put you in chains as well.", "hash": "0c2a1666f178cd1c", "src": "vmangos@13b49dc"}
 {"id": "0c313ff638c79d75", "field": "text", "en": "Never had much use for a bow, but these rifles the goblins make are very handy when hunting. Still can't get used to the smell though.", "hash": "0c313ff638c79d75", "src": "vmangos@13b49dc"}
 {"id": "0c321e715893e731", "field": "text", "en": "Tailoring you say?  Hmmm.  Ah yes, of course.  You'll need to head to Thunder Bluff, up north.  Take the path out of the village to get there.  When you arrive at the base of the bluffs ride the elevator to the top of the rise and speak with one of the Bluffwatchers.", "hash": "0c321e715893e731", "src": "vmangos@13b49dc"}
+{"id": "0c3532a7ca37f118", "field": "text", "en": "Where is the Leatherworking trainer?", "hash": "0c3532a7ca37f118", "src": "collector@1.60.1.70205", "npcs": [247229]}
 {"id": "0c3b3ef3f4d57828", "field": "text", "en": "All those official types reside in Ironforge.  Ye'll be wanting to check out the Ironforge Visitor's Center for guild creation papers.", "hash": "0c3b3ef3f4d57828", "src": "vmangos@13b49dc"}
 {"id": "0c41cc2d0bdecf57", "field": "text", "en": "The Iceblood Tower protects the Iceblood Garrison from the southeast.$B$Bis controlled by neither side.", "hash": "0c41cc2d0bdecf57", "src": "vmangos@13b49dc"}
 {"id": "0c44c249eb2a1a61", "field": "text", "en": "Proudtusk!", "hash": "0c44c249eb2a1a61", "src": "vmangos@13b49dc"}

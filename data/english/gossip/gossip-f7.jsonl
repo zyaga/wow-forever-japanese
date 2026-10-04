@@ -33,6 +33,7 @@
 {"id": "f7a41f7eedd2a6e1", "field": "text", "en": "So sorry to leave a customer but we have places to go and people to swindle. We will be back sometime later today. Good-bye!", "hash": "f7a41f7eedd2a6e1", "src": "vmangos@13b49dc"}
 {"id": "f7abce0bb335533b", "field": "text", "en": "Battlemaster", "hash": "f7abce0bb335533b", "src": "vmangos@13b49dc"}
 {"id": "f7aece84c935c319", "field": "text", "en": "The Shaman Commander is not to be trifled with, $r.", "hash": "f7aece84c935c319", "src": "vmangos@13b49dc"}
+{"id": "f7b163b25e4fb230", "field": "text", "en": "Well now, $g lad : lass;, it looks like the Alliance has already gathered up all that we need for our part of the war. I know that the blacksmiths, engineers and everyone else is busy with the final preparations, and as soon as the Horde assembles all of their goods, it will all be sent to Silithus for the war.", "hash": "f7b163b25e4fb230", "src": "vmangos@13b49dc"}
 {"id": "f7b3d8f7fdfcb1af", "field": "text", "en": "What are ye daft? That's not a weapon, that's a dinner knife. I don't train amateurs.", "hash": "f7b3d8f7fdfcb1af", "src": "vmangos@13b49dc"}
 {"id": "f7b5425be514be0f", "field": "text", "en": "It is good to see you again, $n.", "hash": "f7b5425be514be0f", "src": "vmangos@13b49dc"}
 {"id": "f7b6e1718c0bbd6a", "field": "text", "en": "There, I've got it!", "hash": "f7b6e1718c0bbd6a", "src": "vmangos@13b49dc"}
@@ -50,3 +51,4 @@
 {"id": "f7f50691cb6facbf", "field": "text", "en": "You will abide by our rules around here, miscreant!", "hash": "f7f50691cb6facbf", "src": "vmangos@13b49dc"}
 {"id": "f7f82bf278ac8c1b", "field": "text", "en": "Grant me the wisdom of Winterax!", "hash": "f7f82bf278ac8c1b", "src": "vmangos@13b49dc"}
 {"id": "f7fc6db848444ef2", "field": "text", "en": "I execute him as per my liege's instructions, but doing so in as painless of a way as possible.  Justice must be served, but I can show some compassion.\n", "hash": "f7fc6db848444ef2", "src": "vmangos@13b49dc"}
+{"id": "f7fef512e8e1510e", "field": "text", "en": "Where is the Blacksmithing trainer?", "hash": "f7fef512e8e1510e", "src": "collector@1.60.1.70205", "npcs": [247229]}

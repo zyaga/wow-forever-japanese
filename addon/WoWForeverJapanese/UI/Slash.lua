@@ -19,6 +19,7 @@
 --   /wfj version              the addon, normalization and Lua versions
 --   /wfj bug                  the report window (a bug, with the addon's own Lua errors, or an idea)
 --   /wfj log [<n>]            the problem log's last n entries, then how many Lua errors it holds
+--   /wfj taint                the action-bar taint scan into the problem log (UI/TaintWatch)
 --   /wfj collector [on|off|status|path|clear|send [all]]   the English collector; other words fall through to
 --                             settings; clear asks for the same command again within 5 s (like the page's two
 --                             clicks); send opens the send window (all: every line again)
@@ -468,6 +469,11 @@ function Slash.handle(msg)
     for _, line in ipairs(WFJ.Diag.lines(words[2])) do say("%s", line) end
     local errors = WFJ.ErrorLog.status()
     return say("errors: %d recorded, %d not sent (/wfj bug)", errors.count, errors.unsent)
+  end
+  if lower == "taint" then -- the taint scan (UI/TaintWatch): fields and globals this addon's taint reached, to the log
+    local fields, globals = WFJ.TaintWatch.scan("slash")
+    return say("taint: %d tainted fields, %d globals of this addon; /reload saves them, /wfj log shows them", fields,
+      globals)
   end
   if lower == "collector" and Slash.collector(words[2] and words[2]:lower(), words[3] and words[3]:lower()) then
     return

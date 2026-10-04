@@ -26,6 +26,7 @@
 {"id": "6198903834732a24", "field": "text", "en": "All right then... I know the way to and from Gadgetzan.  What I need for you to do is to keep the beasts off of us.  I've trained Dadanga how to defend herself pretty well, but we can't handle the overgrown madness out there for long.  Let me know when you're ready to go, $n.", "hash": "6198903834732a24", "src": "vmangos@13b49dc"}
 {"id": "61a43cc6c437a5f8", "field": "text", "en": "Let's get to the others, and keep an eye open for those wolves outside...", "hash": "61a43cc6c437a5f8", "src": "vmangos@13b49dc"}
 {"id": "61b2a38a06a0f52a", "field": "text", "en": "This is Dalin Forgewright. He fled from Lordaeron when the plague struck, taking his love with him.", "hash": "61b2a38a06a0f52a", "src": "vmangos@13b49dc"}
+{"id": "61b376694c3080e5", "field": "text", "en": "What are professions?", "hash": "61b376694c3080e5", "src": "collector@1.60.1.70205", "npcs": [247229]}
 {"id": "61b7b41698bdfdc3", "field": "text", "en": "I will teach you the way of the hammersmith. Just ask nicely.", "hash": "61b7b41698bdfdc3", "src": "vmangos@13b49dc"}
 {"id": "61d1a8a81fd692f9", "field": "text", "en": "The dead walk among us!", "hash": "61d1a8a81fd692f9", "src": "vmangos@13b49dc"}
 {"id": "61d8c94fe553b01d", "field": "text", "en": "%s is lured out into the open!", "hash": "61d8c94fe553b01d", "src": "vmangos@13b49dc"}

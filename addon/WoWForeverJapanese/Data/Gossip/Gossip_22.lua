@@ -28,6 +28,7 @@ WFJ.Data.add("gossip", {
   ["22b18bf91b57c0ec"] = { "オレ、Grimlok、王！", "." },
   ["22b1e0eed87f2c39"] = { "Ish nu！もう十分だ！", "." },
   ["22b31c6e90f9f0b9"] = { "今度は俺の方が未熟に感じるよ。正直、もう君に教えられることは何も残っていないと思う。だが誰なら教えられるか分かるか? IronforgeのBengus Deepforgeだ、あれこそ鋼を知り尽くしたドワーフだ。IronforgeのThe Great Forgeで彼を訪ねて、新しい弟子を取る気があるか聞いてみるといい。", "." },
+  ["22b4b923d5cb85a1"] = { "やったぞ、若いの！AllianceとHordeが、Ahn'Qiraj Warに必要と思われるものをすべて集め終えた。今まさに最後の物資がSilithusのCenarion Holdへ運ばれていて、$2113w日以内にすべて到着する。その後、勇敢な英雄の誰かがScepter of the Shifting SandsでScarab Gongを鳴らし、Ahn'Qirajの門を開かねばならん。その門が開いたとき、戦が始まるのだ！", "." },
   ["22b5d6c11828c714"] = { "何があなたをEarthen Ringへ導いたのですか？", "." },
   ["22b67b17851ec7c7"] = { "我らは復讐に飢えている。", "." },
   ["22c0cffb3350b748"] = { "%sはがっかりして首を振った。", "." },

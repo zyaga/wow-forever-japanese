@@ -28,6 +28,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
         "Core/Diag.lua", "Core/BugReport.lua",  # the problem log, the bug report link
         "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
+        "UI/TextWatch.lua", "UI/TaintWatch.lua",  # ADR-058: text followed from our own frame, the taint watch
         "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
         "UI/HelpTooltip.lua", "UI/TooltipData.lua",
         # ADR-030: shared helpers

@@ -9,7 +9,7 @@ Steps, in order:
  2. Strip WoW markup: |H…|h<label>|h → label · |T…|t → '' · |cXXXXXXXX → '' · |r → '' · |n → newline
  3. $B / $b → newline
  4. Full-width digits → ASCII digits
- 5. Blizzard placeholders: $N/$n → {name} · $C/$c → {class} · $R/$r → {race} · $G<a>:<b>; / $g → <a>
+ 5. Blizzard placeholders: $N/$n → {name} · $C/$c → {class} · $R/$r → {race} · $G<a>:<b>; / $g → <a> (trimmed)
     Only for text the SERVER writes (quests, gossip, books), where those codes really
     are the player. In a CLIENT template (an item or spell tooltip) the same letters are value codes the
     client fills with numbers: `Fear all Demons within $r yards` is a radius, `surrounded by $n balls of
@@ -33,8 +33,10 @@ MIN_TOKEN_LEN = 3  # code points (the Lua twin counts UTF-8 lead bytes)
 _RE_LINK = re.compile(r"\|H[^|]*\|h(.*?)\|h", re.S)
 _RE_TEX = re.compile(r"\|T[^|]*\|t")
 _RE_COLOR = re.compile(r"\|c[0-9A-Fa-f]{8}")
-_RE_GENDER = re.compile(r"\$[Gg]([^:;]*):[^;]*;")
-_RE_GENDER_BOTH = re.compile(r"\$[Gg][^:;]*:([^;]*);")  # the second (female) branch, female_variant only
+# A branch is trimmed: the client shows `$g lad : lass;?` as "lad?" (traced in game, ADR-059), so the spaces a
+# source writes around a branch are not part of the text.
+_RE_GENDER = re.compile(r"\$[Gg]\s*([^:;]*?)\s*:[^;]*;")
+_RE_GENDER_BOTH = re.compile(r"\$[Gg][^:;]*:\s*([^;]*?)\s*;")  # the second (female) branch, female_variant only
 _RE_WS = re.compile(r"[ \t\r\n\f\v]+")
 _FW_DIGITS = {ord(c): str(i) for i, c in enumerate("０１２３４５６７８９")}
 _PLACEHOLDERS = (

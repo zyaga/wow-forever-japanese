@@ -1,6 +1,5 @@
 {"id": "05057a8760dc4bd9", "field": "text", "en": "What corruption?", "hash": "05057a8760dc4bd9", "src": "vmangos@13b49dc"}
 {"id": "050757fc2aaea724", "field": "text", "en": "The forest spirits are uneasy...", "hash": "050757fc2aaea724", "src": "vmangos@13b49dc"}
-{"id": "051290ed78ad6363", "field": "text", "en": "Welcome, my $g brother : sister;.  If you are here to train, then I would be delighted to train you.$B$BWe are the preservers of the balance, now and forever, as Cenarius has taught us.  Never forget this.", "hash": "051290ed78ad6363", "src": "vmangos@13b49dc"}
 {"id": "0512aebdd47e463f", "field": "text", "en": "Gaze upon the enemy, $r. See what the might of the Horde reduces even the most powerful of dragons to! All that oppose us shall meet a similar fate!", "hash": "0512aebdd47e463f", "src": "vmangos@13b49dc"}
 {"id": "0512d6a66edf753e", "field": "text", "en": "Be brave, friends. The reptile will thrash wildly. It is an act of desperation. When you are ready, give me the word.", "hash": "0512d6a66edf753e", "src": "vmangos@13b49dc"}
 {"id": "0519343ef6609bcc", "field": "text", "en": "Come speak with me if you are a purveyor of the unusual, or if you have any Darkmoon Faire Cards.", "hash": "0519343ef6609bcc", "src": "vmangos@13b49dc"}
@@ -32,7 +31,6 @@
 {"id": "059d1ee446e3bef0", "field": "text", "en": "Because the blade can never be too sharp nor the armor too tough a talented enchanter will always be needed.  Such an enchanter is Taladan, who can show you how to properly weave enchantments to improve your weapons and armor.  Seek him out in the Craftsmen's Terrace.", "hash": "059d1ee446e3bef0", "src": "vmangos@13b49dc"}
 {"id": "059da8ba7eca6811", "field": "text", "en": "Dogs of the Cenarion Circle.  Slay them all!", "hash": "059da8ba7eca6811", "src": "vmangos@13b49dc"}
 {"id": "05a582cde9aa5c98", "field": "text", "en": "Continue with your story.", "hash": "05a582cde9aa5c98", "src": "vmangos@13b49dc"}
-{"id": "05a857a0a97772e5", "field": "text", "en": "That's right, um, $g lad : lass;, all of the war materiel is being transported to Silithus and the last of it should get there within a day. After that, we'll all just have to wait and see who puts forth a $g hero : heroine; to reconstitute the Scepter of the Shifting Sands and ring the gong on the Scarab Dais. Only when that occurs will the war begin to open the gates of Ahn'Qiraj.", "hash": "05a857a0a97772e5", "src": "vmangos@13b49dc"}
 {"id": "05aad4834b4e4f4d", "field": "text", "en": "Brom Killian teach you how dig up shiny for me.  Him on inner ring of War Quarter.", "hash": "05aad4834b4e4f4d", "src": "vmangos@13b49dc"}
 {"id": "05ac908a43d2bdf3", "field": "text", "en": "Foolish $n, you serve me now! ", "hash": "05ac908a43d2bdf3", "src": "vmangos@13b49dc"}
 {"id": "05b18b4e7c5122a8", "field": "text", "en": "Better luck next time, $n.", "hash": "05b18b4e7c5122a8", "src": "vmangos@13b49dc"}

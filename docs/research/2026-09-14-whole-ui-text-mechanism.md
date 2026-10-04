@@ -32,7 +32,7 @@
 
 ### 2. Taint
 - `FontString:SetText` / `Button:SetText` are not protected (`AllowedWhenTainted`). The protected methods are layout ones: `SetPoint`, `SetSize`, `SetWidth` / `SetHeight`, `Button:Enable` / `Disable` [verified: 1.15.9 API docs].
-- Taint lives in "global variables, local variables, table keys, widget script handler slots, and function closures", and the taint log does not trace widget properties [verified: Townlong Yak]. Text written to a region is therefore not a taint carrier [likely; no source says so outright].
+- Taint lives in "global variables, local variables, table keys, widget script handler slots, and function closures", and the taint log does not trace widget properties [verified: Townlong Yak]. Text written to a region is therefore not a taint carrier [likely; no source says so outright]. **Corrected 2026-10-04:** wrong on Forever. Text and font written into a FontString come back tainted to the Blizzard code that measures it ([ADR-058](../adr/058-text-blizzard-measures-on-a-protected-path-stays-untouched.md)).
 - `hooksecurefunc` runs the original untainted, then the hook [verified: wiki]. The real risks are Lua-side, and prior art shows both:
   - **Writing fields on Blizzard tables:** WowUkrainizer PR #103 wrote `SearchBox.instructionText`, and casting from the spellbook and action bars broke.
   - **Calling a Lua override of `SetText`:** `UIPanelButtonNoTooltipResizeToFitMixin:SetText` calls `self:MarkDirty()` (`SecureUIPanelTemplates.lua:231–234`), which writes a Blizzard field from tainted code [verified].

@@ -30,6 +30,7 @@
 {"id": "70b207f08cb73e31", "field": "text", "en": "%s's soft voice trails away into the mists, \"Know that I love you always...\"", "hash": "70b207f08cb73e31", "src": "vmangos@13b49dc"}
 {"id": "70b4ddaedb1b7254", "field": "text", "en": "Ow.  Spicy.", "hash": "70b4ddaedb1b7254", "src": "vmangos@13b49dc"}
 {"id": "70b58576c90202be", "field": "text", "en": "I got some extras with me; if you pay me back what I paid for them, you can have one.  I got some bait too.", "hash": "70b58576c90202be", "src": "vmangos@13b49dc"}
+{"id": "70b58c7bf440bdd2", "field": "text", "en": "Where is the Skinning trainer?", "hash": "70b58c7bf440bdd2", "src": "collector@1.60.1.70205", "npcs": [247229]}
 {"id": "70bd2790ce58c87e", "field": "text", "en": "Klaven doesn't pay me enough to deal with zombies, drones, or whatever he calls 'em.", "hash": "70bd2790ce58c87e", "src": "vmangos@13b49dc"}
 {"id": "70c0efcaefe9c4fa", "field": "text", "en": "Finding Reethe.", "hash": "70c0efcaefe9c4fa", "src": "vmangos@13b49dc"}
 {"id": "70c352390813eef1", "field": "text", "en": "The Commander has been slain! Charge their lines! Die with honor!", "hash": "70c352390813eef1", "src": "vmangos@13b49dc"}
