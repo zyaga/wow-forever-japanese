@@ -32,10 +32,10 @@ sequenceDiagram
 |---|---|---|
 | Minimap button (`UI/MinimapButton`) | opens the fix window | the menu |
 | Blizzard's addon dropdown on the minimap (TOC `AddonCompartmentFunc` → `WFJ_OnAddonCompartmentClick` in `Main.lua`) | opens the fix window | the menu |
-| About page: **Report a line** button (`Options` row `aboutFix`, above the issue-URL row) | opens the fix window | none |
+| About page: **Report a line** button (`Options` row `aboutFix`, above the bug and idea row) | opens the fix window | none |
 | `/wfj fix` | opens the fix window | none |
 
-The menu (`MenuUtil.CreateContextMenu`) holds exactly: **Translation on** (a checkbox bound to the `enabled` setting, the same state as the settings checkbox), **Report a line**, **Settings** (the addon's settings), **Hide this button** (sets `minimapButton` off). The entries and the button's tooltip ("左クリック：翻訳を報告 ・ 右クリック：メニュー") are in one language: Japanese, or English ("Left-click: report a line · Right-click: menu") when translation is off or the reveal key is held as the menu or tooltip opens; menu entries are drawn in the bundled font through `Labels.menuText`, as `UI/Menus` does.
+The menu (`MenuUtil.CreateContextMenu`) holds exactly: **Translation on** (a checkbox bound to the `enabled` setting, the same state as the settings checkbox), **Report a line**, **Report a bug or idea** (opens the [report window](#bug-and-idea-reports)), **Settings** (the addon's settings), **Hide this button** (sets `minimapButton` off). The entries and the button's tooltip ("左クリック：翻訳を報告 ・ 右クリック：メニュー") are in one language: Japanese, or English ("Left-click: report a line · Right-click: menu") when translation is off or the reveal key is held as the menu or tooltip opens; menu entries are drawn in the bundled font through `Labels.menuText`, as `UI/Menus` does.
 
 The button is built on the client's `MiniMapButtonTemplate`, placed on the minimap rim at an angle (degrees, 0 = right, counter-clockwise; default 225, the lower left). Dragging moves it around the rim; the angle is saved to `WFJ_DB.minimap.angle` on drop and restored on load (absent → the default). The `minimapButton` setting (default on; main settings page, `/wfj minimapButton on|off`) shows or hides it. The rim position assumes a round minimap (camelot's minimap shape is unverified). The icon is the addon's 字 medallion (`Media/icon.tga`, the TOC's `IconTexture`), 20 px at `TOPLEFT` 5, -5 inside the tracking-border ring.
 
@@ -194,12 +194,58 @@ Every `use` / `rewrite` of a quest, gossip, ui or plain book line imports its `w
 
 Apply is idempotent: a row whose line already ships its `ja` with `report` = N counts as already applied, and a second run writes nothing new.
 
+## Bug and idea reports
+
+Everything that is not a wrong line goes through a second, smaller window: `UI/ReportWindow.lua` (`WFJReportWindow`, Esc closes it), built on `ButtonFrameTemplate` through `W.toolWindow`, the frame the fix window and the collector send window share. It sends a bug, with the addon's own Lua errors ([Diagnostics log](diagnostics.md#the-addons-own-lua-errors), [ADR-057](../adr/057-catching-the-addons-own-lua-errors.md)), or an idea. Like the fix window it shows one language at a time from `UI/OptionsText` (`report.*` keys), and it shows the addon's own errors, never game text.
+
+### Ways in
+
+| Way in | Action |
+|---|---|
+| `/wfj bug` | opens the window on Bug |
+| Minimap button menu (right-click) and the addon dropdown's menu: **Report a bug or idea** | opens the window on Bug |
+| About page: **Report a bug or idea** button (`Options` row `aboutBug`, under the Report a line row) | opens the window on Bug |
+
+### Modes
+
+A radio choice at the top picks **Bug** or **Idea**. The window always opens on Bug, with a fresh report built from the errors not sent yet.
+
+| Mode | Summary line | Steps |
+|---|---|---|
+| Bug, with unsent errors | "N new Lua errors from this addon go with the report." | **1** the link in a copy box, Ctrl+C, paste into the browser; **2** the form opens filled in (or, when the link would be too long, the error text in a box to copy into the form's Lua errors field); **3** write what happened and submit; **4** **I sent it**, on the same line |
+| Bug, no errors | "No new Lua errors from this addon. Build and version go with it." | steps 1 to 3; no I sent it |
+| Bug, another error addon | "Another addon (BugSack or similar) catches Lua errors: paste ours from it." (in place of either summary above) | steps 1 to 3; step 4 and **I sent it** still show while unsent errors are held (errors kept before the other addon was installed still go in the link) |
+| Idea | "Ideas and code changes go to GitHub (a GitHub account is needed)." | **1** the idea link in a copy box; **2** write the idea and submit |
+
+### The link
+
+`Core/BugReport.lua` (pure) builds it. A bug link opens the bug-report form with three fields filled through the URL (GitHub issue forms take a field's value from a query parameter named by the field's id):
+
+`https://github.com/zyaga/wow-forever-japanese/issues/new?template=bug-report.yml&client-build=…&addon-version=…&errors=…`
+
+- `client-build`: the build the login screen shows (`GetBuildInfo`, version and build number, as `1.60.1.70170`).
+- `addon-version`: the addon's version.
+- `errors`: the unsent errors as readable, percent-encoded text. Each error is a numbered block: `1) 3 times, first <time>, last <time>`, then the message, then the stack. With no errors the parameter is left out.
+
+Percent-encoding and the length limit come from `Core/CollectorSend` (`percentEncode`, `URL_BUDGET`): a link over 6,000 characters, the limit measured for the collector send ([ADR-056](../adr/056-collector-send-string.md)), keeps build and version only, and the window shows the error text in a scrolling box to paste into the form's Lua errors field.
+
+The idea link is `…/issues/new?template=idea.yml`, with nothing filled in.
+
+### I sent it
+
+The addon cannot tell that an issue was submitted, so the player clicks **I sent it** afterwards. It marks exactly the errors the report on screen held, matched by message, last time and count. An error that happened again after the report was built, even in the same second, stays unsent, since the report did not hold that occurrence. The window then says how many were marked, and the next report holds only new errors. A sent error that happens again later counts as a new error.
+
+### On GitHub
+
+Both forms need a GitHub account. No workflow checks bug or idea issues; the maintainer reads them.
+
 ## Key files
 
 - `addon/WoWForeverJapanese/Core/RecentLines.lua` · `Core/Reports.lua` · `Core/ReportText.lua`: the log, the pending fixes, the serializer (pure, no frames)
 - `addon/WoWForeverJapanese/UI/FixWindow.lua` · `UI/MinimapButton.lua`: the window; the button, menu and addon-dropdown handlers
 - `addon/WoWForeverJapanese/UI/OptionsWidgets.lua`: `W.scrollList`, `W.scrollText`, `W.copyBox`, `W.button`, and the one-language copy (`W.pick`, `W.relabel`)
 - `addon/WoWForeverJapanese/UI/Render.lua`: `noteRecent` in `sync`
+- `addon/WoWForeverJapanese/Core/ErrorLog.lua` · `Core/BugReport.lua` · `UI/ReportWindow.lua`: the addon's own Lua errors, the bug and idea links, the report window
 - `pipeline/wfj/core/fix_report.py` · `pipeline/wfj/cmd/fix_report.py` · `pipeline/wfj/dev/gen_report_vectors.py`
 - `vectors/report_vectors.{jsonl,lua}`: the shared cases
 
@@ -220,4 +266,4 @@ Apply is idempotent: a row whose line already ships its `ja` with `report` = N c
 - **A pending fix whose line changed in a newer release** → the edit panel shows the Japanese shipped now; the saved hash stays the one the player saw, so intake skips it.
 
 ## Related
-- [ADR-045](../adr/045-player-fix-reports.md) · [Fix reports runbook](../operations/fix-reports.md) · [Pipeline](pipeline.md) · [Readings](readings.md) · [Settings](settings.md) · [Addon modules](../architecture/addon-modules.md) · [Data model](../architecture/data-model.md) · [Testing → fix reports checklist](../testing/strategy.md#fix-reports-checklist) · [Glossary](../glossary.md)
+- [ADR-045](../adr/045-player-fix-reports.md) · [ADR-057](../adr/057-catching-the-addons-own-lua-errors.md) · [Diagnostics log](diagnostics.md) · [Fix reports runbook](../operations/fix-reports.md) · [Pipeline](pipeline.md) · [Readings](readings.md) · [Settings](settings.md) · [Addon modules](../architecture/addon-modules.md) · [Data model](../architecture/data-model.md) · [Testing → fix reports checklist](../testing/strategy.md#fix-reports-checklist) · [Testing → bug and idea reports checklist](../testing/strategy.md#bug-and-idea-reports-checklist) · [Glossary](../glossary.md)

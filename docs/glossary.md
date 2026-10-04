@@ -614,7 +614,7 @@ _Avoid_: occurrence count, frequency, top keys
 
 **Fix report**:
 The block of text a player copies out of the fix window and pastes into a GitHub issue (label `translation-report`) to report wrong or awkward Japanese: a `WFJ-REPORT 1` header, the addon and client versions, one `fix` line per [[Pending fix]] with its optional note and Japanese, and an `end <count>` trailer that shows whether the paste was cut. Every fix names a line by its store address and the hash of the stored Japanese behind what the player saw (the before); it carries the player's Japanese only when they changed the line (the after), and no English. Read by `wfj report check` (the issue workflow), `intake` and `apply`; a fix the pipeline applies is written with provenance `report` = the issue number.
-_Avoid_: bug report, feedback, translation issue (the issue is the container; the report is the pasted block), correction (a [[Correction]] is the data variant a report may produce)
+_Avoid_: bug report (that is the [[Report window]]'s Bug form), feedback, translation issue (the issue is the container; the report is the pasted block), correction (a [[Correction]] is the data variant a report may produce)
 → [Fix reports](systems/fix-reports.md) · [ADR-045](adr/045-player-fix-reports.md)
 
 **Recent lines**:
@@ -628,9 +628,19 @@ _Avoid_: draft, queued report, saved report (the report is the copied text of al
 → [Fix reports](systems/fix-reports.md)
 
 **Minimap button**:
-The addon's small button on the minimap edge (`UI/MinimapButton`): left-click opens the fix window, right-click opens a menu (Translation on / off, Report a line, Settings, Hide this button); drag moves it around the rim. On by default, hidden by the `minimapButton` setting; the same two clicks are also on the addon's entry in Blizzard's addon dropdown on the minimap. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
+The addon's small button on the minimap edge (`UI/MinimapButton`): left-click opens the fix window, right-click opens a menu (Translation on / off, Report a line, Report a bug or idea, Settings, Hide this button); drag moves it around the rim. On by default, hidden by the `minimapButton` setting; the same two clicks are also on the addon's entry in Blizzard's addon dropdown on the minimap. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
 _Avoid_: minimap icon, LDB button, launcher, addon compartment (that is Blizzard's dropdown)
 → [Fix reports](systems/fix-reports.md) · [ADR-045](adr/045-player-fix-reports.md)
+
+**Report window**:
+The addon's tool window for everything that is not a wrong line (`UI/ReportWindow`, opened by `/wfj bug`, the [[Minimap button]] menu's Report a bug or idea and the About page's button). A radio choice picks Bug or Idea. Bug gives a link to the bug-report issue form with the client build, the addon version and the unsent errors from the [[Problem log]] filled in (or, when the link would pass 6,000 characters, the error text to paste), and an I sent it button that marks those errors sent. Idea gives a link to the idea form. It shows the addon's own errors, never game text.
+_Avoid_: bug window, feedback window, fix window (that one reports a line as a [[Fix report]])
+→ [Fix reports](systems/fix-reports.md#bug-and-idea-reports) · [ADR-057](adr/057-catching-the-addons-own-lua-errors.md)
+
+**Problem log**:
+The addon's own record of problems seen in game, kept in the `WFJ_Log` SavedVariables table (`Core/Diag`): one entry per load, surfaces whose setup failed, protected actions the client blocked, hooks that stopped working and the Lua memory, plus, under `errors`, the addon's own Lua errors (`Core/ErrorLog`: only errors raised in a file under `WoWForeverJapanese/`, judged by the file the message names or else the top Lua frame of the stack, at most 30, the player's name written as `<name>`). `/wfj log` prints it. No game text, chat or location.
+_Avoid_: error log, debug log, diagnostics file, BugSack
+→ [Diagnostics log](systems/diagnostics.md) · [ADR-057](adr/057-catching-the-addons-own-lua-errors.md)
 
 ## Client
 

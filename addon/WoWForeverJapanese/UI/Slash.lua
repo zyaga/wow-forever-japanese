@@ -17,6 +17,8 @@
 --   /wfj debug ui scan        English still showing on visible frames: "hook?" = the dictionary knows it, "key?" = not
 --   /wfj debug fonts          the refused-font retry: timer state, one pending widget, then a retry now
 --   /wfj version              the addon, normalization and Lua versions
+--   /wfj bug                  the report window (a bug, with the addon's own Lua errors, or an idea)
+--   /wfj log [<n>]            the problem log's last n entries, then how many Lua errors it holds
 --   /wfj collector [on|off|status|path|clear|send [all]]   the English collector; other words fall through to
 --                             settings; clear asks for the same command again within 5 s (like the page's two
 --                             clicks); send opens the send window (all: every line again)
@@ -68,7 +70,7 @@ function Slash.status()
   end
   print(("  togglekey = %s"):format(toggleText())) -- a binding, not a setting, but set on the same page
   print("  /wfj on|off|toggle · /wfj <setting> <value> · /wfj readings|glosses [on|off] · /wfj togglekey [<key>|none]"
-    .. " · /wfj config [collector|about] · /wfj collector · /wfj debug · /wfj version")
+    .. " · /wfj config [collector|about] · /wfj collector · /wfj bug · /wfj debug · /wfj version")
 end
 
 -- First 60 bytes of the Japanese, cut back to a UTF-8 boundary (never mid-sequence), one line.
@@ -441,6 +443,11 @@ function Slash.handle(msg)
     if not ok then say("the fix window is not available on this client") end
     return
   end
+  if lower == "bug" then -- the report window (a bug or an idea)
+    local ok = WFJ.ReportWindow and pcall(WFJ.ReportWindow.open)
+    if not ok then say("the report window is not available on this client") end
+    return
+  end
   if lower == "debug" then return Slash.debug(words[2] and words[2]:lower(), words[3]) end
   if lower == "glosses" then -- the word popup's meanings (setting readings.glosses)
     if words[2] then
@@ -459,7 +466,8 @@ function Slash.handle(msg)
   if lower == "togglekey" then return Slash.togglekey(words[2], words[3]) end
   if lower == "log" then -- the diagnostics log (Core/Diag): the last N entries, 10 by default
     for _, line in ipairs(WFJ.Diag.lines(words[2])) do say("%s", line) end
-    return
+    local errors = WFJ.ErrorLog.status()
+    return say("errors: %d recorded, %d not sent (/wfj bug)", errors.count, errors.unsent)
   end
   if lower == "collector" and Slash.collector(words[2] and words[2]:lower(), words[3] and words[3]:lower()) then
     return

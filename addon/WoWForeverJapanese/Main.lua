@@ -162,6 +162,8 @@ local function step(name, fn)
   if ok then return value end
   WFJ.initErrors[#WFJ.initErrors + 1] = { surface = name, err = tostring(value) }
   if WFJ.Diag then WFJ.Diag.initFailed(name, value) end
+  -- the pcall kept it from the error handler: the bug report gets it this way
+  if WFJ.ErrorLog then pcall(WFJ.ErrorLog.recordCaught, value) end
   return nil
 end
 
@@ -177,6 +179,28 @@ function WFJ.OnLoad()
     return WFJ.Diag.load(WFJ_Log)
   end) or WFJ_Log
   step("compat", function() WFJ.Compat.init(function(name) return _G[name] end) end)
+  -- the addon's own Lua errors (Core/ErrorLog wrapped the error handler when its file loaded), kept in WFJ_Log;
+  -- after compat, which its clock reads `date` through
+  step("errorlog", function()
+    WFJ.ErrorLog.setDeps({
+      clock = function()
+        local clock = WFJ.Compat.resolve("date")
+        return type(clock) == "function" and clock("%Y-%m-%d %H:%M:%S") or ""
+      end,
+      name = function() return (UnitName("player")) end,
+      print = print,
+      -- a secret value may not be read by addon code [verified: forever-ui Blizzard_APIDocumentationGenerated/
+      -- FrameScriptDocumentation.lua:65 canaccessvalue]
+      accessible = function(value)
+        return type(canaccessvalue) ~= "function" or canaccessvalue(value) == true
+      end,
+      stack = function()
+        return WFJ.ErrorLog.stack({ debugstack = debugstack, height = GetCallstackHeight,
+          errorHeight = GetErrorCallstackHeight })
+      end,
+    })
+    return WFJ.ErrorLog.load(WFJ_Log)
+  end)
 
   -- `or WFJ_DB` / `or WFJ_Collector` is load-bearing, not defensive noise: these two ARE the SavedVariables
   -- globals (see the TOC). Assigning `step`'s nil would hand the client an empty global to write at logout,
@@ -408,6 +432,10 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
     if isLogin or isReload then WFJ.RevealBinding.apply() end -- again once bindings are loaded
     WFJ.Modifier.refresh()
     WFJ.Collector.disclose() -- once per dump, after the chat frame is up
+    -- every addon has loaded by now: another one (BugGrabber) may have replaced our error handler; and the player's
+    -- name is known, so an error caught earlier loses it
+    WFJ.ErrorLog.checkOurs(geterrorhandler)
+    WFJ.ErrorLog.rescrub()
     -- Fonts the client refused before the bundled font file finished loading (a fresh launch): retry once a second
     -- until none is pending (the file can take 30 s or more to load), with a 10-minute safety stop.
     local function retry() return WFJ.Render.retryFonts() + WFJ.Font.retryPending() end

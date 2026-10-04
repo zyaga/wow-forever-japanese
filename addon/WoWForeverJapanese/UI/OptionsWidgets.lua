@@ -216,6 +216,47 @@ function W.copyBox(parent, x, y, width, text)
   return box
 end
 
+-- A tool window the player opens (the fix window, the collector send window, the report window): the client's
+-- current window frame (title bar, inset panel), centred, above the client's own overlays (the beta's Issue Reporter
+-- button sits over DIALOG), dragged by its body, closed by Esc like the client's own panels; built hidden with an
+-- empty title (`f.title`). [verified: ButtonFrameTemplate Blizzard_SharedXML/Mainline/SharedUIPanelTemplates.xml:711
+-- (Inset TOPLEFT 4,-60 / BOTTOMRIGHT -6,26), ButtonFrameTemplate_HidePortrait SharedUIPanelTemplates.lua:111,
+-- SetTitle / GetTitleText PortraitFrame.lua:4–28; UISpecialFrames + CloseSpecialWindows,
+-- Blizzard_UIParentPanelManager/Shared/UIParentPanelManager.lua:1106]
+function W.toolWindow(name, width, height)
+  local f = CreateFrame("Frame", name, WFJ.Compat.resolve("UIParent"), "ButtonFrameTemplate")
+  ButtonFrameTemplate_HidePortrait(f)
+  f:SetSize(width, height)
+  f:SetPoint("CENTER")
+  f:SetFrameStrata("FULLSCREEN_DIALOG")
+  f:SetToplevel(true)
+  f:SetMovable(true)
+  f:SetClampedToScreen(true)
+  f:EnableMouse(true)
+  f:RegisterForDrag("LeftButton")
+  f:SetScript("OnDragStart", function(self) self:StartMoving() end)
+  f:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
+  local special = WFJ.Compat.resolve("UISpecialFrames")
+  if type(special) == "table" then special[#special + 1] = name end
+  f:SetTitle("")
+  f.title = f:GetTitleText()
+  f:Hide()
+  return f
+end
+
+-- A copy box's text, its cursor back at the start (W.copyBox snaps back to `value` after an edit).
+function W.setBox(box, value)
+  box.value = value
+  box:SetText(value)
+  box:SetCursorPosition(0)
+end
+
+-- Shows or hides a widget or a widget table with a `.frame` (W.scrollText).
+function W.setShown(widget, on)
+  local frame = widget.frame or widget
+  if on then frame:Show() else frame:Hide() end
+end
+
 -- A Blizzard_Menu dropdown; generator(dropdown, rootDescription) builds its radio items.
 function W.dropdown(parent, x, y, width, generator)
   local dd = CreateFrame("DropdownButton", nil, parent, "WowStyle1DropdownTemplate")

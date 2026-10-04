@@ -6,12 +6,15 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you. For a wrong or awkward translation, the translation report is faster: the 字 minimap button (or
-        `/wfj fix`) fills it in for you. Use this form for everything else that goes wrong. This issue is public.
-        English or Japanese, either is fine.
+        Thank you. The fastest way here is from the game: `/wfj bug` (or Report a bug or idea in the 字 minimap
+        button's menu) opens this form with the build, the version and the addon's own Lua errors filled in. For a
+        wrong or awkward translation, the translation report is faster: the 字 minimap button (or `/wfj fix`) fills
+        it in for you. This issue is public. English or Japanese, either is fine.
 
-        ありがとうございます。翻訳の誤りや不自然な訳は、ミニマップの「字」ボタン（または `/wfj fix`）から送る翻訳の報告の方が早く対応できます。
-        それ以外の不具合はこのフォームでお知らせください。この Issue は公開されます。英語でも日本語でも大丈夫です。
+        ありがとうございます。ゲーム内の `/wfj bug`（またはミニマップの「字」ボタンのメニューの「不具合・提案を報告」）から開くと、
+        ビルド・バージョン・アドオン自身の Lua エラーが入力された状態でこのフォームが開きます。
+        翻訳の誤りや不自然な訳は、ミニマップの「字」ボタン（または `/wfj fix`）から送る翻訳の報告の方が早く対応できます。
+        この Issue は公開されます。英語でも日本語でも大丈夫です。
   - type: textarea
     id: what
     attributes:
@@ -37,7 +40,7 @@ body:
     id: errors
     attributes:
       label: Lua errors / Lua エラー (if any)
-      description: If the game showed a Lua error, paste it here. / ゲームに Lua エラーが表示された場合は、ここに貼り付けてください。
+      description: "`/wfj bug` fills in the addon's own Lua errors, or shows them to paste here. Paste any other Lua error the game showed. / `/wfj bug` がアドオン自身の Lua エラーを入力するか、貼り付ける文字列を表示します。ゲームに表示されたその他の Lua エラーもここに貼り付けてください。"
       render: text
     validations:
       required: false

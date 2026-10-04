@@ -13,6 +13,7 @@
 ## X-Curse-Project-ID: 1717928
 ## X-Website: https://foreverjapanese.com
 
+Core\ErrorLog.lua
 Core\Const.lua
 Core\Compat.lua
 Core\Normalize.lua
@@ -1739,6 +1740,7 @@ Core\RecentLines.lua
 Core\Reports.lua
 Core\ReportText.lua
 Core\Diag.lua
+Core\BugReport.lua
 UI\Font.lua
 UI\ReadingPopup.lua
 UI\Readings.lua
@@ -1906,6 +1908,7 @@ UI\OptionsWidgets.lua
 UI\KeyCapture.lua
 UI\FixWindow.lua
 UI\CollectorSendWindow.lua
+UI\ReportWindow.lua
 UI\MinimapButton.lua
 UI\RevealBinding.lua
 UI\AddonListButton.lua

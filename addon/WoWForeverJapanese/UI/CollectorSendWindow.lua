@@ -20,27 +20,7 @@ local function pair(key, ...)
 end
 
 local function build()
-  local UIParent = WFJ.Compat.resolve("UIParent")
-  -- the same frame as the fix window [verified: ButtonFrameTemplate Blizzard_SharedXML/Mainline/
-  -- SharedUIPanelTemplates.xml:711, ButtonFrameTemplate_HidePortrait SharedUIPanelTemplates.lua:111]
-  local f = CreateFrame("Frame", "WFJCollectorSendWindow", UIParent, "ButtonFrameTemplate")
-  ButtonFrameTemplate_HidePortrait(f)
-  f:SetSize(WIDTH, HEIGHT)
-  f:SetPoint("CENTER")
-  f:SetFrameStrata("FULLSCREEN_DIALOG")
-  f:SetToplevel(true)
-  f:SetMovable(true)
-  f:SetClampedToScreen(true)
-  f:EnableMouse(true)
-  f:RegisterForDrag("LeftButton")
-  f:SetScript("OnDragStart", function(self) self:StartMoving() end)
-  f:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
-  -- Esc closes it [verified: UISpecialFrames, Blizzard_UIParentPanelManager/Shared/UIParentPanelManager.lua:1106]
-  local special = WFJ.Compat.resolve("UISpecialFrames")
-  if type(special) == "table" then special[#special + 1] = "WFJCollectorSendWindow" end
-  f:SetTitle("")
-  f.title = f:GetTitleText()
-  f:Hide()
+  local f = W.toolWindow("WFJCollectorSendWindow", WIDTH, HEIGHT)
 
   local p = CreateFrame("Frame", nil, f)
   p:SetPoint("TOPLEFT", 0, -32)
@@ -66,16 +46,7 @@ local function build()
   return f
 end
 
-local function setBox(box, value)
-  box.value = value
-  box:SetText(value)
-  box:SetCursorPosition(0)
-end
-
-local function show(widget, on)
-  local frame = widget.frame or widget
-  if on then frame:Show() else frame:Hide() end
-end
+local setBox, show = W.setBox, W.setShown
 
 local function showLabel(l, on, key, ...)
   if on then W.setPair(l, pair(key, ...)) else W.setPair(l, "", "") end
