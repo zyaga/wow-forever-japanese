@@ -279,6 +279,8 @@ Every batch that adds or changes shipped quest, gossip, UI or plain-text book Ja
 4. **Import the readings.** `wfj readings import batches/<name>.words.jsonl --model <model id> --batch <name> --dry-run` lists every rejected row with its reason (for example `written for Japanese that has since changed; export it again`, or `written for a variant that does not ship`, when a hand-written line still wins). Fix the rows, then run it without `--dry-run`. A `correction` reading is never replaced.
 5. **Generate and validate.** `make validate` checks every reading, prints stale ones, the lines still owed one (`validate: readings: N <type> lines with words to annotate have none: …`) and, per type, the words without a meaning.
 
+**The meaning numbers file.** `make generate` gives each new meaning the next free number and appends it to `data/reading/meaning-numbers.tsv` (`generate: N meanings numbered for the first time`). Commit that file with the batch, beside the generated Lua. A meaning keeps its number, so a batch changes only the Reading files that use its words and the last Gloss file ([ADR-060](../adr/060-stable-meaning-numbers.md)). `make validate` fails when the file is missing or is not what `generate` would write; run `make generate`, never edit it by hand.
+
 **Lines that got Japanese without words** (a line whose Japanese changed, a row lint warned about) take a separate flow after the lines are imported and generated:
 
 1. **Ids**: one per line (quest ids, 16-hex gossip keys, UI string keys, or book page ids).
@@ -296,11 +298,11 @@ Each row becomes a `correction` record (`translator` = `--by`, source `correctio
 
 ### Resolving a readings merge conflict
 
-Two branches that both import readings conflict only in generated or reading files: `data/reading/*.jsonl`, the addon's `Data/Reading/*.lua` and `Data/Gloss/*.lua` (meaning numbers shift whenever a branch adds a meaning), `Data/Meta.lua` and the TOC's generated block. Never hand-merge them:
+Two branches that both import readings conflict only in generated or reading files: `data/reading/*.jsonl`, `data/reading/meaning-numbers.tsv` (both branches added meanings at its end), the addon's `Data/Reading/*.lua` and `Data/Gloss/*.lua` (most often the last Gloss file), `Data/Meta.lua` and the TOC's generated block. Never hand-merge them:
 
 1. Take `origin/main`'s side of those files.
 2. Re-run `wfj readings import` on this branch's `.words.jsonl` files. A row written for Japanese that has since changed, or for a variant that does not ship, is rejected: export that line again and write its words anew.
-3. `make generate`, then `make validate`.
+3. `make generate`, then `make validate`. `generate` numbers this branch's new meanings after main's, so they take new numbers.
 
 ## Fix-report batches
 

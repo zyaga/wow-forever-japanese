@@ -15,8 +15,9 @@ PROV = provenance(
 )
 
 
-def test_committed_repo_validates(root, planned):
-    assert validate.validate(root / "data", root / ADDON, None, planned) == []
+def test_committed_repo_validates(root, plan_report):
+    planned, report = plan_report
+    assert validate.validate(root / "data", root / ADDON, None, planned, report["meaning_numbers"]) == []
 
 
 def test_hand_edit_of_a_shard_or_the_toc_block_fails(root, tmp_path, planned):

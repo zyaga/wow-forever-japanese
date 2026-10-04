@@ -282,9 +282,13 @@ _Avoid_: lemma (in docs prose; `lemma` is the code's field name), base form, roo
 → [Readings](systems/readings.md) · [ADR-039](adr/039-word-meanings-written-in-context.md)
 
 **Meaning**:
-A short English meaning (at most 60 characters) of a whole [[Word]] as its sentence uses it, the inflection translated too: 食べている → "is eating", 倒して in 「…を倒して」 → "defeat". Written by the model with the sentence in front of it, as part of the word's [[Reading]] entry, and shown on the [[Word card]]. Not a dictionary list: one sense, the one this sentence uses. A class or race word the addon fills in gets its English name ("Druid (a class)"). Generated into `Data/Gloss/`, each distinct (dictionary form, reading, meaning) stored once.
+A short English meaning (at most 60 characters) of a whole [[Word]] as its sentence uses it, the inflection translated too: 食べている → "is eating", 倒して in 「…を倒して」 → "defeat". Written by the model with the sentence in front of it, as part of the word's [[Reading]] entry, and shown on the [[Word card]]. Not a dictionary list: one sense, the one this sentence uses. A class or race word the addon fills in gets its English name ("Druid (a class)"). Generated into `Data/Gloss/`, each distinct (dictionary form, reading, meaning) stored once under its [[Meaning number]].
 _Avoid_: gloss, definition, translation (in player-facing text; `gloss` is the code's name: `Core/Glosses`, `readings.glosses`, `Data/Gloss`)
 → [Readings](systems/readings.md) · [ADR-039](adr/039-word-meanings-written-in-context.md)
+
+**Meaning number**:
+The number a [[Meaning]] ships under in `Data/Gloss/`; a reading row points at it (`word=reading=n`). Kept in `data/reading/meaning-numbers.tsv`, which `wfj generate` writes: a meaning keeps its number for good, a new one takes the next number after the highest, and a number is never given to another meaning.
+→ [Readings](systems/readings.md#pipeline) · [ADR-060](adr/060-stable-meaning-numbers.md)
 
 **Stale reading**:
 A [[Reading]] whose stored hash no longer matches the Japanese it annotates: the translation changed after the words were written. `wfj validate` reports it (not a failure) and `wfj generate` leaves it out, so it never ships, unlike a [[Stale]] entry, which ships with a marker. It is written again from a fresh export.

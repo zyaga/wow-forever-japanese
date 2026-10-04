@@ -106,6 +106,130 @@ def test_the_meaning_table_is_split_per_thousand():
     assert (glosses.shard_of(1), glosses.shard_of(1000), glosses.shard_of(1001)) == (0, 0, 1)
 
 
+# ── stable meaning numbers (ADR-060) ──────────────────────────────────────
+
+
+def _generate(data):
+    """generate's plan and numbers file, as `wfj generate` writes them."""
+    store, report = Store(data), {}
+    planned = generate.plan(store, [], report)
+    generate.write_numbers(store, report["meaning_numbers"])
+    return planned
+
+
+def _numbers(data):
+    return (data / "reading" / glosses.NUMBERS_FILE).read_text(encoding="utf-8")
+
+
+def _gloss_rows(planned):
+    return [ln for ln in planned[schema.gloss_relpath(0)].splitlines() if ln.startswith("  [")]
+
+
+def _add_forest(data):
+    """A meaning that sorts before 調査する (numbered 3): sorted numbering would have moved it to 4."""
+    recs = Store(data / "reading").load("quest")
+    for rec in recs:
+        if rec["id"] == 457:
+            rec["words"][0] = ["森", "もり", "森", "もり", "forest"]
+    Store(data / "reading").save("quest", recs)
+
+
+def test_with_no_numbers_file_the_numbers_are_the_sorted_ones_and_the_file_is_written(data):
+    planned = _generate(data)
+    assert _numbers(data) == (
+        "1\tいる\tいる\tto be (here)\n2\t倒す\tたおす\tdefeat\n3\t調査する\tちょうさする\tinvestigated\n"
+    )
+    assert generate.write_numbers(Store(data), _numbers(data)) == 0  # nothing new: not written again
+    assert _generate(data) == planned
+
+
+def test_a_new_meaning_takes_the_next_number_and_changes_only_what_uses_it(data):
+    before = _generate(data)
+    _add_forest(data)
+    after = _generate(data)
+    assert _numbers(data).splitlines()[-1] == "4\t森\tもり\tforest"  # sorts before 調査する, numbered last
+    assert _gloss_rows(after) == _gloss_rows(before) + ['  [4] = "森\\tもり\\tforest",']
+    changed = {rel for rel in after if after[rel] != before.get(rel)}
+    assert changed == {schema.gloss_relpath(0), "Data/Reading/Reading_quest_0000.lua", "Data/Meta.lua"}
+    rows = after["Data/Reading/Reading_quest_0000.lua"].splitlines()
+    old_rows = before["Data/Reading/Reading_quest_0000.lua"].splitlines()
+    assert [r for r in rows if "quest:457" not in r] == [r for r in old_rows if "quest:457" not in r]
+    assert '  ["quest:457"] = { description = "森=もり=4 倒して=たおして=2" },' in rows
+
+
+def test_a_meaning_no_line_uses_keeps_its_number_and_ships_nowhere(data):
+    _generate(data)
+    Store(data).save("quest", [_line(456, "description", "変わった。"), _line(457, "description", "森で倒して帰る。")])
+    planned = _generate(data)
+    assert _gloss_rows(planned) == ['  [2] = "倒す\\tたおす\\tdefeat",']
+    assert "gloss = 1 }" in planned["Data/Meta.lua"]  # the shipped meanings, not the file's lines
+    assert len(_numbers(data).splitlines()) == 3  # いる and 調査する keep their lines
+    _add_forest(data)
+    assert '[4] = "森' in _generate(data)[schema.gloss_relpath(0)]  # never 1 or 3
+    Store(data).save("quest", [_line(456, "description", JA), _line(457, "description", "森で倒して帰る。")])
+    planned = _generate(data)
+    assert '  [1] = "いる\\tいる\\tto be (here)",' in _gloss_rows(planned)  # back under its old number
+    assert len(_numbers(data).splitlines()) == 4
+
+
+def test_two_runs_give_the_same_files_and_the_same_numbers(data):
+    _add_forest(data)
+    first, text = _generate(data), _numbers(data)
+    assert (_generate(data), _numbers(data)) == (first, text)
+
+
+@pytest.mark.parametrize(
+    ("text", "problem"),
+    [
+        ("1\tいる\tいる\n", "not `n<TAB>"),
+        ("x\tいる\tいる\tto be\n", "not `n<TAB>"),
+        ("0\tいる\tいる\tto be\n", "not `n<TAB>"),
+        ("1\tいる\t\tto be\n", "not `n<TAB>"),
+        ("1\tいる\tいる\tto be\n1\t倒す\tたおす\tdefeat\n", "number 1 is given twice"),
+        ("1\tいる\tいる\tto be\n2\tいる\tいる\tto be\n", "meaning already numbered 1"),
+        ("\u00b2\tいる\tいる\tto be\n", "not `n<TAB>"),
+    ],
+)
+def test_a_bad_numbers_file_is_refused_never_resolved(data, text, problem):
+    _, problems = glosses.parse_numbers(text)
+    assert any(problem in p for p in problems), problems
+    (data / "reading" / glosses.NUMBERS_FILE).write_text(text, encoding="utf-8")
+    with pytest.raises(ValueError, match=glosses.NUMBERS_FILE):
+        generate.plan(Store(data), [], {})
+
+
+def test_only_a_newline_ends_a_numbers_line():
+    # a meaning may hold a character str.splitlines treats as a line end
+    every = {("森", "もり", "a\u2028b"): 1, ("いる", "いる", "c\u0085d"): 2}
+    assert glosses.parse_numbers(glosses.numbers_text(every)) == (every, [])
+
+
+def test_a_byte_order_mark_is_read_past(data):
+    _generate(data)
+    path = data / "reading" / glosses.NUMBERS_FILE
+    path.write_bytes(b"\xef\xbb\xbf" + path.read_bytes())
+    assert len(generate.load_numbers(Store(data))[0]) == 3
+
+
+def test_validate_reads_the_numbers_file_and_never_writes_it(data):
+    from wfj.cmd import validate
+
+    store, report = Store(data), {}
+    generate.plan(store, [], report)
+    path = data / "reading" / glosses.NUMBERS_FILE
+    assert any("missing" in p for p in validate.rule_numbers(store, report["meaning_numbers"]))
+    assert not path.exists()
+    generate.write_numbers(store, report["meaning_numbers"])
+    assert validate.rule_numbers(store, report["meaning_numbers"]) == []
+    _add_forest(data)
+    generate.plan(store, [], report)
+    before = path.read_bytes()
+    assert validate.rule_numbers(store, report["meaning_numbers"]) == [
+        f"regenerate: 1 meanings have no number in {glosses.NUMBERS_FILE}; run `make generate`"
+    ]
+    assert path.read_bytes() == before
+
+
 # ── the local JMdict cross-check ──────────────────────────────────────
 
 
