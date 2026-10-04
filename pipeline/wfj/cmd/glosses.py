@@ -27,7 +27,7 @@ def report(records: list[dict[str, Any]], dictionary: glosses.Dictionary, top: i
     unknown = glosses.unknown(dictionary, records)
     lines = [
         f"glosses: {with_meaning} of {words} words carry a meaning · "
-        f"{len(glosses.table(records))} distinct meanings",
+        f"{len(set(glosses.meanings_of(records)))} distinct meanings",
         f"  dictionary forms JMdict {dictionary.version} does not know: {len(unknown)} "
         "(most used first, usually game compounds):",
     ]

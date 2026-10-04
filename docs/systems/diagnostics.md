@@ -16,9 +16,30 @@ Some failures only show in a long play session: a hooked method that stops worki
 | `write` | the taint watch: a watched field's writer left the value tainted | the field and the first stack line in the message, `by`, `stack` (the writer's whole path), `combat`, `events` |
 | `taint` | after the first block of a session, once combat is over, and on `/wfj taint` | every field under the bar, Edit Mode, tracker, tooltip and spellbook frames that reads as tainted, with the addon that did it (`fields`), the globals this addon tainted (`globals`), `checked` |
 | `hook` | a method the addon post-hooked on one frame (`Diag.watch`) no longer reads as a function, or is another function than the hook the addon left there (`seen = replaced`) | frame, method, what it reads as, its type on the frame's own table and on what the frame inherits |
+| `speech` | an NPC's chat line (`CHAT_MSG_MONSTER*`, `CHAT_MSG_RAID_BOSS*`) that ships Japanese was left English, or its English could not be read | the reason (the message, below), `event`, the chat frame (`frame`), the line's gossip key (`key`, 16 hex characters; absent when the English could not be read) |
 | `memory` | every 5 minutes | the Lua memory |
 
 Every entry also carries the local time (`at`), seconds since the client started (`up`) and the Lua memory in KB (`memKB`). The same kind and message again in one session adds to that entry's count (`n`) and last time (`last`) instead of a new entry, so something repeating every few seconds never pushes the rest out. The log keeps 500 entries: over that, the oldest memory sample goes first, then the oldest problem, then the oldest session, and it never keeps more than 50 sessions.
+
+A `speech` entry's message is one reason per exit of the chat hook (`Speech.onAddMessage`):
+
+| Reason | What happened |
+|---|---|
+| `unknown chat type` | the line's chat type id is not one the addon knows |
+| `no line` | no chat frame or no line text was passed |
+| `no eventArgs` | the client passed no event arguments |
+| `no formatter` | the client passed no function to rebuild the line |
+| `no TransformMessages` | the chat frame has no `TransformMessages` |
+| `no English` | the event's English is missing or empty |
+| `secret text` | the English or the line is a secret value |
+| `NPC talk off` | the player turned NPC talk off |
+| `translation refused` | the line ships Japanese but `Speech.translate` refused it (for example its `%s` count differs from the English); the prefix ("says:") is still translated |
+| `formatter error` | the client's formatter failed on the Japanese; the prefix is still translated |
+| `line unchanged` | the line came out the same as the English |
+| `remember refused` | the chat history store refused the line |
+| `no line matched` | the history filter matched no line; the line still counts as handled |
+
+An entry is written only when the line's English has a shipped gossip row (status `.`, non-empty Japanese), or when the English cannot be read at all. A line with no translation is never logged. With the usual dedup, each reason is one entry per session, with its count in `n`. Boss emotes in the middle of the screen and chat bubbles are not logged. A chat frame whose `AddMessage` was never hooked logs nothing here; a hook that was lost is already a `hook` entry.
 
 A `hook` or `blocked` entry also prints one chat line, once per session, ending in "/wfj log shows it".
 
@@ -67,7 +88,7 @@ Watched now: chat frames' `AddMessage` (`UI/Speech`), chat edit boxes' `UpdateHe
 - After the session: `WTF/Account/<ACCOUNT>/SavedVariables/WoWForeverJapanese.lua`, the `WFJ_Log` table. The client writes it on logout, `/reload` and exit, not on a crash.
 
 ## Privacy
-No game text, no character, realm or account name, no chat, no location. Frame and function names, counts and times only. The taint watch's event ring keeps an event's first argument only when it is a number, a unit token (`player`, `party2`, `nameplate14`, `targettarget`) or the addon name of `ADDON_LOADED`, never other text (another event's first argument may be a player's name), never a secret value, and leaves every chat event out. A `write` entry names the first line of its stack outside this addon, the Blizzard writer. A stored Lua error holds the error's own message and stack, with the player's name written as `<name>`; stack paths start at `Interface/AddOns/`, never the account folder.
+No game text, no character, realm or account name, no chat, no location. Frame and function names, counts and times only. A `speech` entry names the line by its gossip key, a hash of its English ([ADR-005](../adr/005-gossip-key-fingerprint.md)), never by its text or the speaker's name. The taint watch's event ring keeps an event's first argument only when it is a number, a unit token (`player`, `party2`, `nameplate14`, `targettarget`) or the addon name of `ADDON_LOADED`, never other text (another event's first argument may be a player's name), never a secret value, and leaves every chat event out. A `write` entry names the first line of its stack outside this addon, the Blizzard writer. A stored Lua error holds the error's own message and stack, with the player's name written as `<name>`; stack paths start at `Interface/AddOns/`, never the account folder.
 
 ## Key files
-`addon/WoWForeverJapanese/Core/Diag.lua` · `Core/ErrorLog.lua` · `UI/TaintWatch.lua` · `Main.lua` (load, session, start, the error and stack deps) · `UI/Slash.lua` (`log`, `taint`) · `tests/lua/spec/diag_spec.lua` · `tests/lua/spec/errorlog_spec.lua` · `tests/lua/spec/taintwatch_spec.lua`
+`addon/WoWForeverJapanese/Core/Diag.lua` · `Core/ErrorLog.lua` · `UI/TaintWatch.lua` · `Main.lua` (load, session, start, the error and stack deps) · `UI/Speech.lua` (`speech` entries) · `UI/Slash.lua` (`log`, `taint`) · `tests/lua/spec/diag_spec.lua` · `tests/lua/spec/errorlog_spec.lua` · `tests/lua/spec/taintwatch_spec.lua`

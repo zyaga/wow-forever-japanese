@@ -68,10 +68,11 @@ local function count(s, pattern)
   return n
 end
 
--- The Japanese for the server's English (with its `%s`, before the speaker is filled in). → ja | nil
-function Speech.translate(en)
+-- The Japanese for the server's English (with its `%s`, before the speaker is filled in). key: its gossip key when
+-- the caller already has it. → ja | nil
+function Speech.translate(en, key)
   if type(en) ~= "string" or en == "" or not deps.key then return nil end
-  local entry = WFJ.Lookup.keyed("gossip", deps.key(en))
+  local entry = WFJ.Lookup.keyed("gossip", key or deps.key(en))
   if type(entry) ~= "table" or entry.status ~= "." or type(entry.ja) ~= "string" or entry.ja == "" then return nil end
   local ja = deps.expand and deps.expand(entry.ja) or entry.ja
   if type(ja) ~= "string" or ja == "" or count(ja, "%%s") ~= count(en, "%%s") then return nil end
@@ -166,15 +167,45 @@ function Speech.knownLanguage(language)
   return false
 end
 
-function Speech.onAddMessage(frame, line, _, _, _, typeId, _, _, _, eventArgs, formatter)
+-- A speech line that ships Japanese but is left English says why in the problem log (docs/systems/diagnostics.md),
+-- so a report names its cause from the log alone: the reason, the event, the chat frame and the line's gossip key,
+-- never the line's text or a name. A line whose English cannot be read is logged without a key. One entry per
+-- reason per session (Diag counts the repeats).
+local function speechEvent(event)
+  return type(event) == "string" and not secret(event)
+    and (event:find("^CHAT_MSG_MONSTER") or event:find("^CHAT_MSG_RAID_BOSS")) and true or false
+end
+
+-- a secret is never compared: comparing one raises
+local function readable(en) return type(en) == "string" and not secret(en) and en ~= "" end
+
+local function shipped(key)
+  local entry = WFJ.Lookup.keyed("gossip", key)
+  return type(entry) == "table" and entry.status == "." and type(entry.ja) == "string" and entry.ja ~= ""
+end
+
+local function why(reason, frame, event, en, key) -- → 0
+  if not speechEvent(event) or not WFJ.Diag then return 0 end
+  if readable(en) then
+    key = key or (deps.key and deps.key(en))
+    if key == nil or not shipped(key) then return 0 end
+  end
+  WFJ.Diag.log("speech", reason, { event = event, frame = WFJ.Diag.nameOf(frame), key = key })
+  return 0
+end
+
+function Speech.onAddMessage(frame, line, _, _, _, typeId, _, _, event, eventArgs, formatter)
+  local en = type(eventArgs) == "table" and eventArgs[1] or nil
   local byId = typeIds()
   local name = byId and byId[typeId]
-  if not name or type(frame) ~= "table" or type(line) ~= "string" or type(eventArgs) ~= "table"
-      or type(formatter) ~= "function" or type(frame.TransformMessages) ~= "function" then
-    return 0
-  end
-  local en, lineID = eventArgs[1], eventArgs[11]
-  if type(en) ~= "string" or secret(en) or secret(line) then return 0 end
+  if not name then return why("unknown chat type", frame, event, en) end
+  if type(frame) ~= "table" or type(line) ~= "string" then return why("no line", frame, event, en) end
+  if type(eventArgs) ~= "table" then return why("no eventArgs", frame, event, en) end
+  if type(formatter) ~= "function" then return why("no formatter", frame, event, en) end
+  if type(frame.TransformMessages) ~= "function" then return why("no TransformMessages", frame, event, en) end
+  local lineID = eventArgs[11]
+  if type(en) ~= "string" then return why("no English", frame, event, en) end
+  if secret(en) or secret(line) then return why("secret text", frame, event, en) end
   -- what the NPC said goes to the Collector like a gossip line, keyed the same way, with the speaker's creature
   -- id from the event's GUID (eventArgs[12]); NPC speech is in no client file, so playing is how it is found. A
   -- line the NPC says to another player (eventArgs[5], the target) may hold that player's name, which would end
@@ -189,23 +220,35 @@ function Speech.onAddMessage(frame, line, _, _, _, typeId, _, _, _, eventArgs, f
   if WFJ.Collector and not secret(guid) and not secret(target) and not toOther and Speech.knownLanguage(language) then
     WFJ.Collector.recordGossip(en, guid)
   end
-  if not WFJ.ChatSystem.on(AREA) then return 0 end
-  local ja = Speech.translate(en)
+  local key = en ~= "" and deps.key and deps.key(en) or nil -- once per line: translate and every later exit use it
+  if not WFJ.ChatSystem.on(AREA) then return why("NPC talk off", frame, event, en, key) end
+  local ja = Speech.translate(en, key)
   local jaLine = line
   if ja then
     local ok, formatted = pcall(formatter, escaped(ja))
-    if ok and type(formatted) == "string" then jaLine = formatted else ja = nil end
+    if ok and type(formatted) == "string" then
+      jaLine = formatted
+    else
+      ja = nil
+      why("formatter error", frame, event, en, key)
+    end
+  else
+    why("translation refused", frame, event, en, key) -- logged only when the line ships Japanese
   end
   -- the prefix's words ("%s says: ") too, also on a line with no Japanese of its own
   jaLine = WFJ.ChatSystem.prefixed(jaLine, name) or jaLine
-  if jaLine == line then return 0 end
-  if not WFJ.ChatSystem.remember(jaLine, line, AREA) then return 0 end
+  if jaLine == line then return why("line unchanged", frame, event, en, key) end
+  if not WFJ.ChatSystem.remember(jaLine, line, AREA) then return why("remember refused", frame, event, en, key) end
+  local matched = 0 -- the history is filtered synchronously [verified: scrollingmessageframe.lua:95–107]
   frame:TransformMessages(function(text, _, _, _, lineType, _, _, _, args)
-    return lineType == typeId and type(args) == "table" and not secret(args[11]) and args[11] == lineID
+    local hit = lineType == typeId and type(args) == "table" and not secret(args[11]) and args[11] == lineID
       and not secret(text) and text == line
+    if hit then matched = matched + 1 end
+    return hit
   end, function(_, ...)
     return jaLine, ...
   end)
+  if matched == 0 then why("no line matched", frame, event, en, key) end
   if ja and BUBBLE_TYPES[name] and count(en, "%%s") == 0 and not queued(lineID) then
     pending[#pending + 1] = { en = en, ja = ja, id = lineID, left = Speech.BUBBLE_SCANS }
     Speech.scheduleScan()

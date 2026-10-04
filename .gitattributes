@@ -1,2 +1,3 @@
-# Written by `make generate` from data/: collapsed in diffs and left out of the language statistics.
+# Written by `make generate`: collapsed in diffs and left out of the language statistics.
 addon/WoWForeverJapanese/Data/** linguist-generated
+data/reading/meaning-numbers.tsv linguist-generated eol=lf

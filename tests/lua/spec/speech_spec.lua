@@ -16,6 +16,16 @@ local GOSSIP = {
   ["The rest is stale."] = { "古い訳。", "s" },
   ["%s laughs."] = { "笑った。", "." }, -- a draft that lost the speaker's %s: never shown
 }
+-- The gossip key stands in for Main's hash: an opaque string, never the English itself.
+local KEY, keys = {}, 0
+for en in pairs(GOSSIP) do
+  keys = keys + 1
+  KEY[en] = ("%016x"):format(0x58db46af + keys)
+end
+local function keyOf(text)
+  local t = text:gsub("Testplayer", "{name}")
+  return KEY[t] or ("%016x"):format(#t)
+end
 local function format(...) return string.format(...) end
 local NAMES = { "CHAT_FRAMES", "ChatTypeInfo", "ChatFrame1", "FCF_OpenTemporaryWindow", "issecretvalue",
   "RaidWarningFrame", "C_ChatBubbles" }
@@ -102,7 +112,7 @@ local function load()
   H.uiSetup(WFJ, UI)
   WFJ.Data = WFJ.Data or {}
   WFJ.Data.gossip = {}
-  for en, row in pairs(GOSSIP) do WFJ.Data.gossip[en] = { row[1], row[2] } end
+  for en, row in pairs(GOSSIP) do WFJ.Data.gossip[KEY[en]] = { row[1], row[2] } end
   return WFJ
 end
 
@@ -119,8 +129,7 @@ describe("NPC speech", function()
     WFJ.State.setArea("gossip", true) -- the NPC talk setting (Settings' area.gossip, on by default)
     assert.is_true(WFJ.ChatSystem.init())
     local expand = function(ja) return (ja:gsub("{name}", "Testplayer")) end
-    assert.is_true(WFJ.Speech.init({ key = function(text) return text:gsub("Testplayer", "{name}") end,
-      expand = expand }))
+    assert.is_true(WFJ.Speech.init({ key = keyOf, expand = expand }))
   end)
   after_each(function()
     H.uiTeardown()
@@ -224,5 +233,158 @@ describe("NPC speech", function()
     assert.are.equal("Onyxiaは狂乱状態になった！", fs:GetText())
     local other = _G.RaidWarningFrame:Fire("CHAT_MSG_RAID_WARNING", "Pull in 5", "Bob")
     assert.are.equal("Pull in 5", other:GetText())
+  end)
+
+  -- The problem log: why a line that ships Japanese is left English.
+  describe("a line that ships Japanese but stays English logs why", function()
+    local SHIPPED = "Stay close, Testplayer!"
+    local f, db
+    local function speechLog()
+      local out = {}
+      for _, e in ipairs(db.entries) do
+        if e.kind == "speech" then out[#out + 1] = e end
+      end
+      return out
+    end
+    local function args(en)
+      lineID = lineID + 1
+      local a = { en, "Ralph", "", n = 12 }
+      a[11] = lineID
+      return a
+    end
+    local function say(msg) return "Ralph says: " .. msg end
+    -- the hook called as the client would, without the line in the frame's history
+    local function hook(frame, typeId, line, event, eventArgs, formatter)
+      return WFJ.Speech.onAddMessage(frame, line, 1, 1, 0.6, typeId, nil, nil, event, eventArgs, formatter)
+    end
+    local function only(reason, key)
+      local log = speechLog()
+      assert.are.equal(1, #log)
+      assert.are.equal(reason, log[1].msg)
+      assert.are.equal(key, log[1].key)
+      return log[1]
+    end
+    local function fresh() db = WFJ.Diag.load(nil) end
+
+    before_each(function()
+      fresh()
+      f = _G.ChatFrame1
+      f.GetName = function() return "ChatFrame1" end
+    end)
+
+    it("an unknown chat type", function()
+      assert.are.equal(0, hook(f, 77, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), say))
+      local e = only("unknown chat type", keyOf(SHIPPED))
+      assert.are.equal("CHAT_MSG_MONSTER_SAY", e.event)
+      assert.are.equal("ChatFrame1", e.frame)
+    end)
+
+    it("no formatter, no TransformMessages, no line", function()
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), nil)
+      only("no formatter", keyOf(SHIPPED))
+      fresh()
+      hook({ GetName = function() return "ChatFrame9" end }, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY",
+        args(SHIPPED), say)
+      assert.are.equal("ChatFrame9", only("no TransformMessages", keyOf(SHIPPED)).frame)
+      fresh()
+      hook(f, SAY, nil, "CHAT_MSG_MONSTER_SAY", args(SHIPPED), say)
+      only("no line", keyOf(SHIPPED))
+    end)
+
+    it("English that cannot be read is logged without a key", function()
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", nil, say)
+      only("no eventArgs", nil)
+      fresh()
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(nil), say)
+      only("no English", nil)
+      fresh()
+      secrets[SHIPPED] = true
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), say)
+      only("secret text", nil)
+    end)
+
+    it("a secret is checked before the English is compared with anything", function()
+      secrets[""] = true -- were "" compared first, this would read as "no English"
+      hook(f, SAY, say(""), "CHAT_MSG_MONSTER_SAY", args(""), say)
+      only("secret text", nil)
+    end)
+
+    it("a secret line with readable English keeps the key", function()
+      secrets[say(SHIPPED)] = true
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), say)
+      only("secret text", keyOf(SHIPPED))
+    end)
+
+    it("the NPC talk setting off", function()
+      WFJ.State.setArea("gossip", false)
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), say)
+      only("NPC talk off", keyOf(SHIPPED))
+    end)
+
+    it("a shipped row the line refuses (its %s count differs); the prefix is still translated", function()
+      npc(f, SAY, "%s says: ", "%s laughs.", "Ralph")
+      only("translation refused", keyOf("%s laughs."))
+      assert.are.equal("Ralphの発言: Ralph laughs.", f:Last())
+    end)
+
+    it("a formatter that raises; the prefix is still translated", function()
+      f:AddMessage(say(SHIPPED), 1, 1, 0.6, SAY, nil, nil, "CHAT_MSG_MONSTER_SAY", args(SHIPPED), function(m)
+        if m ~= SHIPPED then error("boom") end
+        return say(m)
+      end)
+      only("formatter error", keyOf(SHIPPED))
+      assert.are.equal("Ralphの発言: Stay close, Testplayer!", f:Last())
+    end)
+
+    it("a line left as it was, remember refusing, no line matching", function()
+      hook(f, SAY, "Stay close", "CHAT_MSG_MONSTER_SAY", args(SHIPPED), function() return "Stay close" end)
+      only("line unchanged", keyOf(SHIPPED))
+      fresh()
+      local remember = WFJ.ChatSystem.remember
+      WFJ.ChatSystem.remember = function() return false end
+      npc(f, SAY, "%s says: ", SHIPPED, "Ralph")
+      WFJ.ChatSystem.remember = remember
+      only("remember refused", keyOf(SHIPPED))
+      fresh()
+      assert.are.equal(1, hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), say))
+      only("no line matched", keyOf(SHIPPED))
+    end)
+
+    it("holds no text and no names: only the event, the frame and the key", function()
+      secrets[SHIPPED] = true
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), say)
+      secrets[SHIPPED] = nil
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), nil)
+      local allowed = { kind = true, msg = true, at = true, up = true, memKB = true, event = true, frame = true,
+        key = true }
+      assert.are.equal(2, #speechLog())
+      for _, e in ipairs(speechLog()) do
+        for k, v in pairs(e) do
+          assert.is_true(allowed[k], k)
+          for _, text in ipairs({ "Stay close", "離れるな", "Ralph", "Testplayer", "says" }) do
+            assert.is_nil(tostring(v):find(text, 1, true), k)
+          end
+        end
+      end
+    end)
+
+    it("the same reason again counts on one entry; another reason is its own entry", function()
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), nil)
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), nil)
+      assert.are.equal(2, only("no formatter", keyOf(SHIPPED)).n)
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", nil, say)
+      assert.are.equal(2, #speechLog())
+    end)
+
+    it("nothing for other chat, a line with no Japanese, a stale row, or a line rewritten", function()
+      hook(f, 77, say(SHIPPED), "CHAT_MSG_SAY", args(SHIPPED), say)
+      hook(f, PLAYER_SAY, say(SHIPPED), "CHAT_MSG_SYSTEM", nil, nil)
+      hook(f, SAY, say("Something no one translated!"), "CHAT_MSG_MONSTER_SAY",
+        args("Something no one translated!"), nil)
+      hook(f, SAY, "The rest is stale.", "CHAT_MSG_MONSTER_SAY", args("The rest is stale."), nil)
+      npc(f, SAY, "%s says: ", SHIPPED, "Ralph")
+      assert.are.equal("Ralphの発言: 離れるな、Testplayer！", f:Last())
+      assert.are.same({}, speechLog())
+    end)
   end)
 end)

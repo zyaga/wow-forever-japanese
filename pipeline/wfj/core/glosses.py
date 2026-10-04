@@ -6,6 +6,10 @@ uses (倒して in "Nightsaberを倒して" → 倒す, "defeat"). This module b
 (each distinct (dictionary form, its reading, meaning) stored once, numbered, and pointed at from the packed
 reading rows) and the local JMdict cross-check that flags a dictionary form the dictionary does not know.
 JMdict is only read on a local machine; nothing from it ships. Pure: no disk.
+
+The numbers are kept in `data/reading/meaning-numbers.tsv` (ADR-060) so a meaning keeps its number when others
+are added or dropped: a new meaning takes the next number after the highest ever given, a meaning no reading
+uses any more keeps its line (and ships nowhere), and a number is never given to another meaning.
 """
 
 from __future__ import annotations
@@ -26,9 +30,56 @@ def meanings_of(records: Iterable[dict[str, Any]]) -> Iterable[Meaning]:
                 yield (entry[2], entry[3], entry[4])
 
 
-def table(records: Iterable[dict[str, Any]]) -> dict[Meaning, int]:
-    """Every distinct meaning the records use → its number (1-based, in sorted order: deterministic)."""
-    return {m: n for n, m in enumerate(sorted(set(meanings_of(records))), 1)}
+NUMBERS_FILE = "meaning-numbers.tsv"  # beside the reading types in data/reading/
+
+
+def number(
+    records: Iterable[dict[str, Any]], known: dict[Meaning, int]
+) -> tuple[dict[Meaning, int], dict[Meaning, int]]:
+    """(every distinct meaning the records use → its number, every numbered meaning → its number).
+    `known` is the numbers file; a meaning it lacks gets the next number after the highest in it, the new
+    ones in sorted order, so the result is deterministic. With no file the numbers are 1… in sorted order."""
+    used = sorted(set(meanings_of(records)))
+    every = dict(known)
+    nxt = max(known.values(), default=0) + 1
+    for m in used:
+        if m not in every:
+            every[m] = nxt
+            nxt += 1
+    return {m: every[m] for m in used}, every
+
+
+def parse_numbers(text: str) -> tuple[dict[Meaning, int], list[str]]:
+    """The numbers file (`n<TAB>dictionary form<TAB>its reading<TAB>meaning` per line) → (meaning → number,
+    problems). A bad line, a number given twice or a meaning listed twice is a problem, never resolved
+    here."""
+    out: dict[Meaning, int] = {}
+    seen: set[int] = set()
+    problems: list[str] = []
+    # only "\n" ends a line: str.splitlines would also split a meaning holding U+2028 or U+0085
+    lines = text.split("\n")
+    if lines and lines[-1] == "":
+        lines.pop()
+    for i, line in enumerate(lines, 1):
+        fields = line.split(SEP)
+        n_ok = fields[0].isascii() and fields[0].isdigit()
+        if len(fields) != 4 or not n_ok or int(fields[0]) < 1 or not all(fields[1:]):
+            problems.append(f"{NUMBERS_FILE}:{i}: not `n<TAB>dictionary form<TAB>its reading<TAB>meaning`")
+            continue
+        n, m = int(fields[0]), (fields[1], fields[2], fields[3])
+        if n in seen:
+            problems.append(f"{NUMBERS_FILE}:{i}: number {n} is given twice")
+        elif m in out:
+            problems.append(f"{NUMBERS_FILE}:{i}: meaning already numbered {out[m]}")
+        else:
+            seen.add(n)
+            out[m] = n
+    return out, problems
+
+
+def numbers_text(every: dict[Meaning, int]) -> str:
+    """The numbers file, one line per meaning, by number."""
+    return "".join(f"{n}{SEP}{row_text(m)}\n" for m, n in sorted(every.items(), key=lambda kv: kv[1]))
 
 
 def row_text(m: Meaning) -> str:

@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Changed
+- When an NPC's chat line that has a Japanese translation stays English, the problem log (`/wfj log`) now says why, so a bug report can name the cause.
+
 ## 0.1.0-alpha.7 - 2026-10-04
 
 ### Added

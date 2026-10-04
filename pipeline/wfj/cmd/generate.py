@@ -228,8 +228,8 @@ def _branch_refusal(
 
 def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None) -> dict[str, str]:
     """{relpath under the addon dir: text} for every generated artifact (shards, Meta, Vectors).
-    `report`, when given, receives `aliases` {type: added}, `dropped` {type: [female keys]} and `ambiguous`
-    {type: [English hashes]}.
+    `report`, when given, receives `aliases` {type: added}, `dropped` {type: [female keys]}, `ambiguous`
+    {type: [English hashes]} and `meaning_numbers` (the numbers file's text, ADR-060).
 
     Raises ValueError on a store that must not become Lua: invalid lines, a shipped line without its English
     hash, a duplicate (id, field), or a single-client English source pinned at several versions.
@@ -246,7 +246,10 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
     quest_keyed = quest_text_aliases(store.load("quest"), english_store.load("quest"))
     _plan_keyed_types(store, english_store, out, counts, english, report, alias_of, quest_keyed)
     _plan_ui(store, english_store, out, counts, english)
-    _plan_readings(store, out, counts, alias_of, quest_keyed)
+    numbers: dict[str, str] | None = {} if report is not None else None
+    _plan_readings(store, out, counts, alias_of, quest_keyed, numbers)
+    if report is not None and numbers and numbers["text"]:  # nothing to number: the report is unchanged
+        report["meaning_numbers"] = numbers["text"]
     # One version per source is still the rule, and a mixed store is still a data error, except for the
     # sources two clients serve (`schema.MULTI_VERSION_SOURCES`), where a union import keeps both builds'
     # lines on purpose (ADR-020). Meta records every version of those, sorted; the per-line
@@ -453,8 +456,10 @@ def _plan_readings(
     counts: dict[str, int],
     alias_of: dict[str, dict[str, str]] | None = None,
     quest_keyed: dict[str, tuple[int, str]] | None = None,
+    numbers: dict[str, str] | None = None,
 ) -> None:
-    """The readings shards and the meanings table they point into. A gender alias key (the female variant of
+    """The readings shards and the meanings table they point into. `numbers`, when given, receives `text`:
+    the numbers file as it must be on disk. A gender alias key (the female variant of
     a line, repeated under its own English hash) gets its line's reading too: the addon finds a female
     character's line under the alias, and without the copy its words would have no reading."""
     # readings (ADR-036). Only current ones ship: a stale reading (its Japanese changed) is left
@@ -483,8 +488,14 @@ def _plan_readings(
             if line in by_line
         ]
     # the word popup's meanings (ADR-039), each distinct one stored once and numbered; a reading row
-    # points at its word's number.
-    meanings = glosses.table(r for recs in current.values() for r in recs)
+    # points at its word's number. The numbers come from the numbers file (ADR-060), so adding a meaning
+    # changes only the files that use it; generate's `run` writes the file back when a meaning was added.
+    known, problems = load_numbers(store)
+    if problems:
+        raise ValueError(f"{glosses.NUMBERS_FILE}: {'; '.join(problems[:5])}")
+    meanings, every = glosses.number((r for recs in current.values() for r in recs), known)
+    if numbers is not None:
+        numbers["text"] = glosses.numbers_text(every)
     for type_, recs_of_type in current.items():
         by_rs: dict[int | str, list[dict[str, Any]]] = {}
         for rec in recs_of_type:
@@ -507,6 +518,18 @@ def _plan_readings(
 def reading_store_of(store: Store) -> Store:
     """The readings store beside a translation store: `<data>/reading/`."""
     return Store(store.root / "reading")
+
+
+def numbers_path(store: Store) -> Path:
+    return reading_store_of(store).root / glosses.NUMBERS_FILE
+
+
+def load_numbers(store: Store) -> tuple[dict[glosses.Meaning, int], list[str]]:
+    """The numbers file (ADR-060) → (meaning → number, problems); no file → nothing numbered yet."""
+    path = numbers_path(store)
+    if not path.is_file():
+        return {}, []
+    return glosses.parse_numbers(path.read_bytes().decode("utf-8-sig"))
 
 
 def toc_files(planned: dict[str, str]) -> list[str]:
@@ -582,6 +605,16 @@ def apply(planned: dict[str, str], addon_dir: Path) -> dict[str, list[str]]:
     return {"written": written, "unchanged": unchanged, "deleted": deleted}
 
 
+def write_numbers(store: Store, text: str) -> int:
+    """Writes the numbers file when it changed (only ever lines added). → meanings newly numbered"""
+    path = numbers_path(store)
+    old = path.read_bytes().decode("utf-8") if path.is_file() else ""
+    if not text or text == old:
+        return 0
+    path.write_bytes(text.encode("utf-8"))
+    return len(glosses.parse_numbers(text)[0]) - len(glosses.parse_numbers(old)[0])
+
+
 def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj generate")
     p.add_argument(
@@ -592,7 +625,10 @@ def run(argv: Sequence[str]) -> int:
     addon_dir = a.addon or default_addon_dir(root)
     try:
         report: dict[str, Any] = {}
-        planned = plan(Store(root), vectors_rows(root), report)
+        store = Store(root)
+        planned = plan(store, vectors_rows(root), report)
+        # the numbers first: a run that stops after them gives the same numbers again next time
+        numbers_written = write_numbers(store, report.get("meaning_numbers", ""))
         result = apply(planned, addon_dir)
     except ValueError as exc:
         raise SystemExit(f"generate: {exc}") from exc
@@ -600,6 +636,8 @@ def run(argv: Sequence[str]) -> int:
     counts = meta[meta.index("counts = {") : meta.index("},", meta.index("counts = {")) + 1]
     w, u, d = (len(result[k]) for k in ("written", "unchanged", "deleted"))
     print(f"generate: {len(planned)} artifacts; {counts}; written {w}, unchanged {u}, deleted {d}")
+    if numbers_written:
+        print(f"generate: {numbers_written} meanings numbered for the first time ({glosses.NUMBERS_FILE})")
     for line in gender_report_lines(report):
         print(line)
     refused = [

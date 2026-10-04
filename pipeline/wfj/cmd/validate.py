@@ -8,7 +8,8 @@ Rules, each a function returning problems:
   3. collisions (ADR-005): one English hash never names two different normalized texts.
   4. referential: every shipped line has its English hash, and that hash agrees with the store
      (trusted/unaligned: equal; stale: different).
-  5. regenerate-and-diff: `generate.plan()` equals what is on disk under Data/ and in the TOC block.
+  5. regenerate-and-diff: `generate.plan()` equals what is on disk under Data/ and in the TOC block, and the
+     meaning numbers file (data/reading/meaning-numbers.tsv, ADR-060) is the one generate would write.
   6. placeholders: a shipped line carries no token the addon would render literally: a `{…}` outside
      the known set, or a `<x/y>` pair that is not two ASCII words.
   7. ui strings: a shipped UI string takes exactly its English template's arguments, and no two shipped
@@ -34,6 +35,7 @@ import re
 import subprocess
 from collections.abc import Sequence
 from pathlib import Path
+from typing import Any
 
 from wfj.cmd import check, generate
 from wfj.core import decisions, glosses, markup, numbered, placeholders, readings, specifiers
@@ -473,15 +475,48 @@ def rule_regenerate(
     return problems
 
 
+def rule_numbers(store: Store, text: str) -> list[str]:
+    """Rule 5, the meaning numbers (ADR-060): the numbers file on disk is the one generate would write, so
+    every shipped meaning has its number. Read only: `make generate` is what adds numbers."""
+    path = generate.numbers_path(store)
+    on_disk = path.read_bytes().decode("utf-8") if path.is_file() else None
+    if not text or on_disk == text:
+        return []
+    if on_disk is None:
+        return [f"regenerate: data/reading/{glosses.NUMBERS_FILE} missing; run `make generate`"]
+    added = len(glosses.parse_numbers(text)[0]) - len(glosses.parse_numbers(on_disk)[0])
+    if added > 0:
+        return [f"regenerate: {added} meanings have no number in {glosses.NUMBERS_FILE}; run `make generate`"]
+    hint = "run `make generate`, never hand-edit"
+    return [f"regenerate: {glosses.NUMBERS_FILE} differs from a regeneration; {hint}"]
+
+
 def validate(
-    root: Path, addon_dir: Path, base: str | None, planned: dict[str, str] | None = None
+    root: Path,
+    addon_dir: Path,
+    base: str | None,
+    planned: dict[str, str] | None = None,
+    numbers: str | None = None,
 ) -> list[str]:
+    """`planned` / `numbers`: the store's plan and its numbers file text (report `meaning_numbers`) when the
+    caller already holds them; computed here otherwise."""
+    if planned is not None and numbers is None:
+        raise ValueError("validate: a caller passing `planned` passes its `meaning_numbers` too")
     store, english = Store(root), Store(root, english=True)
+    if planned is None:
+        report: dict[str, Any] = {}
+        try:
+            planned = generate.plan(store, generate.vectors_rows(root), report)
+            numbers = report.get("meaning_numbers", "")
+        except ValueError:
+            planned = None  # rule_regenerate reports it
     problems = rule_schema(root, store, english)
     problems += rule_provenance(root, store, base)
     problems += rule_collisions(english)
     problems += rule_referential(store, english)
     problems += rule_regenerate(root, store, addon_dir, planned)
+    if numbers is not None:
+        problems += rule_numbers(store, numbers)
     problems += rule_placeholders(store)
     problems += rule_ui(
         store, english, ui_arg_kinds(addon_dir), ui_chat_families(addon_dir), ui_own(addon_dir)

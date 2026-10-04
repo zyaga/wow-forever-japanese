@@ -49,7 +49,8 @@ The model already writes every line's readings with the sentence in front of it 
 4. **Each meaning is stored once.** `generate` numbers every distinct `(dictionary form, its reading, meaning)` of the
    current readings from 1 in sorted order into `Data/Gloss/Gloss_<NNNN>.lua` (1,000 per file, loaded after the
    readings); a reading row packs a word that carries one as `word=reading=n`. A stale reading's meanings are not
-   emitted. `validate` prints how many words carry a meaning.
+   emitted. `validate` prints how many words carry a meaning. (How meanings are numbered is now
+   [ADR-060](060-stable-meaning-numbers.md): stable numbers, not sorted order.)
 5. **JMdict is a local cross-check only.** `wfj glosses check --jmdict FILE` lists the dictionary forms JMdict does
    not know, most used first. No JMdict data is committed or shipped (a test enforces it).
 6. **The word card.** `Core/Glosses.lua` is the pure read path; `UI/ReadingPopup.lua` draws the card: the word, its
