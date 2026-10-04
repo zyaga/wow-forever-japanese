@@ -178,7 +178,9 @@ function WFJ.OnLoad()
       end, print = print })
     return WFJ.Diag.load(WFJ_Log)
   end) or WFJ_Log
-  -- the addon's own Lua errors (Core/ErrorLog wrapped the error handler when its file loaded), kept in WFJ_Log
+  step("compat", function() WFJ.Compat.init(function(name) return _G[name] end) end)
+  -- the addon's own Lua errors (Core/ErrorLog wrapped the error handler when its file loaded), kept in WFJ_Log;
+  -- after compat, which its clock reads `date` through
   step("errorlog", function()
     WFJ.ErrorLog.setDeps({
       clock = function()
@@ -199,7 +201,6 @@ function WFJ.OnLoad()
     })
     return WFJ.ErrorLog.load(WFJ_Log)
   end)
-  step("compat", function() WFJ.Compat.init(function(name) return _G[name] end) end)
 
   -- `or WFJ_DB` / `or WFJ_Collector` is load-bearing, not defensive noise: these two ARE the SavedVariables
   -- globals (see the TOC). Assigning `step`'s nil would hand the client an empty global to write at logout,

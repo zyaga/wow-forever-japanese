@@ -274,6 +274,18 @@ describe("addon loads in TOC order and answers /wfj version", function()
     assert.is_truthy(Stub.prints[1]:find("MainActionBar:SetPointBase() ×2", 1, true))
   end)
 
+  it("gives an error caught before the log loaded the load time (the clock is wired after compat)", function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI(); Stub.installItemTextAPI()
+    _G.date = function() return "2026-10-04 07:00:00" end
+    local W = Loader.load("WoWForeverJapanese")
+    W.ErrorLog.recordCaught("Interface/AddOns/WoWForeverJapanese/Data/Quest/Quest_0001.lua:3: unexpected symbol")
+    Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
+    _G.date = nil
+    local e = WFJ_Log.errors[1]
+    assert.are.same({ "2026-10-04 07:00:00", "2026-10-04 07:00:00" }, { e.first, e.last })
+  end)
+
   it("creates WFJ_Collector on load and discloses once, on the first PLAYER_ENTERING_WORLD", function()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI(); Stub.installItemTextAPI()

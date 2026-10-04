@@ -65,6 +65,12 @@ describe("Core/BugReport", function()
     assert.is_true(#pk.url <= 6000)
   end)
 
+  it("writes ? for a time the clock could not read", function()
+    local B = load()
+    local text = B.text({ { msg = "m", stack = "s", n = 1, first = "", last = "" } })
+    assert.are.equal("1) 1 time, first ?, last ?\nm\ns", text)
+  end)
+
   it("reports whether the errors reached the log, and links the idea form", function()
     local B = load()
     assert.is_false(B.pack({ errors = {}, ours = false }).ours)

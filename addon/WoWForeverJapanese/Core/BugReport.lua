@@ -18,13 +18,19 @@ BugReport.IDEA_URL = REPO .. "idea.yml"
 -- the form's field ids (.github/ISSUE_TEMPLATE/bug-report.yml)
 BugReport.FIELDS = { build = "client-build", version = "addon-version", errors = "errors" }
 
+-- A time as recorded, or "?" for one caught before the clock could be read.
+local function when(t)
+  if t == nil or t == "" then return "?" end
+  return tostring(t)
+end
+
 -- Each error as a numbered block: how often and when, the message, the stack.
 function BugReport.text(errors)
   local out = {}
   for i, e in ipairs(errors or {}) do
     local times = (e.n or 1) == 1 and "1 time" or ("%d times"):format(e.n)
-    out[#out + 1] = ("%d) %s, first %s, last %s\n%s\n%s"):format(i, times, tostring(e.first or "?"),
-      tostring(e.last or "?"), tostring(e.msg or ""), tostring(e.stack or ""))
+    out[#out + 1] = ("%d) %s, first %s, last %s\n%s\n%s"):format(i, times, when(e.first), when(e.last),
+      tostring(e.msg or ""), tostring(e.stack or ""))
   end
   return table.concat(out, "\n\n")
 end
