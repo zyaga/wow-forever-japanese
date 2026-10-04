@@ -248,7 +248,7 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
     _plan_ui(store, english_store, out, counts, english)
     numbers: dict[str, str] | None = {} if report is not None else None
     _plan_readings(store, out, counts, alias_of, quest_keyed, numbers)
-    if report is not None and numbers:
+    if report is not None and numbers and numbers["text"]:  # nothing to number: the report is unchanged
         report["meaning_numbers"] = numbers["text"]
     # One version per source is still the rule, and a mixed store is still a data error, except for the
     # sources two clients serve (`schema.MULTI_VERSION_SOURCES`), where a union import keeps both builds'
