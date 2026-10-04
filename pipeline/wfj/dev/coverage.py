@@ -31,6 +31,7 @@ from pathlib import Path
 from typing import Any
 
 from wfj.core import readings
+from wfj.dev import counts as readme_counts
 from wfj.dev import served_dispositions
 from wfj.dev.served_columns import inventory_build, read_inventory
 from wfj.dev.translate_batch import AREA_NAMES, OBJECTIVE_NAMES, has_prose, objective_names, undraftable
@@ -339,6 +340,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     if a.out:
         a.out.write_text(text, encoding="utf-8")
         print(f"coverage: wrote {a.out}")
+        for rel in readme_counts.write(root.parent):
+            print(f"coverage: updated the counts in {rel}")
     else:
         print(text)
     return 0

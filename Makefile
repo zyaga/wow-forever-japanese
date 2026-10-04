@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -319,6 +319,9 @@ served-columns: ## regenerate pipeline/served_columns.txt from the installed cli
 FOREVER_UI            ?= $(INPUTS)/forever-ui-$(forever_BUILD)/interface/addons
 FOREVER_GLOBALSTRINGS ?= $(call client_dir,forever)/GlobalStrings.csv
 
+letter-pages: ## regenerate pipeline/letter_pages.txt (the book pages a letter shows) from the item table + VMaNGOS (commit the result; read-only)
+	cd pipeline && $(PY) -m wfj.dev.letter_pages "$(INPUTS)/ItemSparse.csv" "$(INPUTS)/vmangos/mangos.sqlite" > letter_pages.txt.tmp && mv letter_pages.txt.tmp letter_pages.txt
+
 ui-inventory: ## regenerate pipeline/ui_inventory.txt from a Forever UI extract + its GlobalStrings (commit the result): [FOREVER_UI=<Interface/AddOns>] [FOREVER_GLOBALSTRINGS=<csv>]
 	@test -d "$(FOREVER_UI)" || { echo "ui-inventory: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }
 	@test -f "$(FOREVER_GLOBALSTRINGS)" || { echo "ui-inventory: no GlobalStrings at $(FOREVER_GLOBALSTRINGS) (FOREVER_GLOBALSTRINGS=<csv>)"; exit 1; }
@@ -362,7 +365,7 @@ check: ## assign statuses to every data/ line (pure rules); --report prints the 
 stats: ## coverage report over data/ (no writes)
 	cd pipeline && $(PY) -m wfj stats
 
-coverage: ## how much of the game ships in Japanese → docs/operations/coverage.md (run before every data pull request)
+coverage: ## how much of the game ships in Japanese → docs/operations/coverage.md, plus the counts in README.md and docs/curseforge.md (run before every data pull request)
 	cd pipeline && $(PY) -m wfj.dev.coverage --out ../docs/operations/coverage.md --build $(forever_BUILD)
 
 collector-intake: ## a player's collector send (GitHub issue ISSUE=N, or a saved body BODY=<file> ISSUE=N) → data/english/

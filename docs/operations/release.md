@@ -99,7 +99,7 @@ A pull request that branched before a release can still merge its line into the 
 
 ## Forever patch day
 
-A new Forever client build: a pull request that updates `pipeline/clients.toml` and the TOC's `## Interface` → re-import the English from the new client ([Local setup](local-setup.md)) → `make data` → review `wfj check --report` (new stale or rejected lines) → the pull request, with its changelog line → a release run.
+A new Forever client build: a pull request that updates `pipeline/clients.toml` and the TOC's `## Interface` → re-import the English from the new client ([Local setup](local-setup.md)) → `make data` → review `wfj check --report` (new stale or rejected lines) → `make letter-pages` (which book pages are letters) → `make coverage` (also rewrites the counts in the README and the CurseForge description) → the pull request, with its changelog line → a release run.
 
 ## Verify
 
@@ -107,6 +107,7 @@ A new Forever client build: a pull request that updates `pipeline/clients.toml` 
 - The GitHub release `vX.Y.Z` has the zip and the notes (marked pre-release for alpha and beta).
 - The file is on the CurseForge project under the Forever game version, and the CurseForge app updates a test install.
 - `main` has the `Release X.Y.Z` commit and the tag `vX.Y.Z`; `CHANGELOG.md` has an empty `## Unreleased` on top.
+- If the counts in the README changed since the last release: the site's chips follow with `npm run counts` in the site repo (its test fails until they do), and the CurseForge description is pasted again from [CurseForge description](../curseforge.md).
 
 ## Rollback
 
