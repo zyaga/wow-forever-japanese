@@ -1,4 +1,6 @@
 {"id": "OBJECTIVES_HIDE_VIEW_IN_QUESTLOG", "field": "text", "en": "Close Quest Details", "hash": "4699d1c11243616d", "src": "db2@1.60.1.70170"}
+{"id": "OBJECTIVES_SHOW_QUEST_MAP", "field": "text", "en": "Open Quest Map", "hash": "bacaee3a8c6efdae", "src": "db2@1.60.1.70170"}
+{"id": "OBJECTIVES_STOP_TRACKING", "field": "text", "en": "Untrack", "hash": "15c4a4a6efd10910", "src": "db2@1.60.1.70170"}
 {"id": "OBJECTIVES_VIEW_ACHIEVEMENT", "field": "text", "en": "Open Achievement", "hash": "5fa06a7d899a4649", "src": "db2@1.60.1.70170"}
 {"id": "OBJECTIVES_VIEW_IN_QUESTLOG", "field": "text", "en": "Open Quest Details", "hash": "96a9dbe00e7b91d7", "src": "db2@1.60.1.70170"}
 {"id": "OBJECTIVES_WATCH_TOO_MANY", "field": "text", "en": "You can't track any more quests.", "hash": "3a0fe54d484be983", "src": "db2@1.60.1.70170"}

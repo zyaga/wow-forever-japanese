@@ -123,7 +123,8 @@ DRAFT_SOURCES = {"draft-ui",
                  # tooltip line kinds surfaced
                  "draft-repull70170-lastui-sg12", "draft-repull70170-kinds-sg12", "draft-repull70170-unitlines-sg12",
                  "draft-ui-stat-changes",  # the short stat names of the comparison's stat change lines
-                 "draft-death-recap-sg12"}  # the death recap chat link's label
+                 "draft-death-recap-sg12",  # the death recap chat link's label
+                 "draft-ui-tracker-menu"}  # the tracker menu's Open Quest Map and Untrack entries
 
 
 def test_every_key_has_one_machine_line_and_its_english(root):

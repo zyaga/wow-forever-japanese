@@ -104,9 +104,11 @@ Menus.TAGS = {
   -- the character sheet's equipment set menu (camelot paperdollframe.lua:2542–2545)
   MENU_PAPERDOLL_FRAME = { source = "camelot paperdollframe.lua:2542", keys = { "EQUIPMENT_SET_EDIT" } },
   -- quests: the tracker's block menu, the list's settings, a quest's and a header's context menus
-  -- (blizzard_questobjectivetracker.lua:72–89; mainline/questmapframe.lua:501–504, 2370–2399, 2465–2473)
+  -- (blizzard_questobjectivetracker.lua:72–131; mainline/questmapframe.lua:501–504, 2370–2399, 2465–2473)
   MENU_QUEST_OBJECTIVE_TRACKER = { source = "blizzard_questobjectivetracker.lua:72",
-    keys = { "OBJECTIVES_VIEW_IN_QUESTLOG", "OBJECTIVES_HIDE_VIEW_IN_QUESTLOG" } },
+    keys = { "SUPER_TRACK_QUEST", "STOP_SUPER_TRACK_QUEST", "OBJECTIVES_VIEW_IN_QUESTLOG",
+      "OBJECTIVES_HIDE_VIEW_IN_QUESTLOG", "OBJECTIVES_SHOW_QUEST_MAP", "OBJECTIVES_STOP_TRACKING", "SHARE_QUEST",
+      "SHARE_IN_CHAT", "ABANDON_QUEST_ABBREV" } },
   MENU_QUEST_MAP_FRAME_SETTINGS = { source = "questmapframe.lua:501", keys = { "QUEST_LOG_SHOW_OBJECTIVES" } },
   MENU_QUEST_MAP_LOG_TITLE = { source = "questmapframe.lua:2370", keys = { "SHARE_IN_CHAT", "SUPER_TRACK_QUEST",
     "STOP_SUPER_TRACK_QUEST", "UNTRACK_QUEST" } },
