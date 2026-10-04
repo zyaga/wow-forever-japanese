@@ -112,4 +112,26 @@ describe("Core/Diag", function()
     local e = D.log("x", "y", { kind = "other", n = 9, last = "never", extra = 1 })
     assert.are.same({ "x", nil, nil, 1 }, { e.kind, e.n, e.last, e.extra })
   end)
+
+  it("a block keeps the stack, the Blizzard site it came through and whether combat was on", function()
+    local D = fresh()
+    local db = D.load(nil)
+    D.setDeps({ stack = function() return table.concat({
+      "[Interface/AddOns/WoWForeverJapanese/Main.lua]:414: in function <Main.lua:391>",
+      "[C]: in function 'SetPointBase'",
+      "[Interface/AddOns/Blizzard_EditMode/Shared/EditModeSystemTemplates.lua]:148: in function 'SetPoint'",
+      "[Interface/AddOns/Blizzard_EditMode/Shared/EditModeManager.lua]:317: in function 'SetToLayoutAnchor'" }, "\n")
+    end, inCombat = function() return true end })
+    local e = D.onBlocked("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "MainActionBar:SetPointBase()",
+      "WoWForeverJapanese")
+    assert.are.equal("[Interface/AddOns/Blizzard_EditMode/Shared/EditModeSystemTemplates.lua]:148", e.site)
+    assert.are.equal("MainActionBar:SetPointBase() <" .. e.site .. ">", e.msg)
+    assert.are.equal("MainActionBar:SetPointBase()", e.fn)
+    assert.is_true(e.combat)
+    assert.is_truthy(e.stack:find("SetToLayoutAnchor", 1, true))
+    assert.are.equal(1, #db.entries)
+    assert.are.equal("?", (D.blockedSite("")))
+    D.setDeps({ inCombat = function() return false end })
+    assert.is_false(D.onBlocked("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "X()", "WoWForeverJapanese").combat)
+  end)
 end)

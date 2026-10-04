@@ -86,46 +86,75 @@ describe("the minimap button", function()
     assert.are.equal("recent", WFJ.FixWindow.current)
   end)
 
+  -- the menu is the addon's own frame, not Blizzard's Menu: its rows, in order
+  local function menuRows()
+    local m = _G.WFJMinimapMenu
+    local out = {}
+    for i, row in ipairs(m.rows) do
+      if row:IsShown() then out[i] = row end
+    end
+    return m, out
+  end
+  local function clickRow(i)
+    local _, rows = menuRows()
+    rows[i].scripts.OnClick(rows[i])
+  end
+
   it("right-click opens the menu: title, translation on / off, report, bug or idea, settings, hide", function()
     b:click("RightButton")
-    local menu = F.menus[1]
-    assert.are.equal(b, menu.owner)
+    local m, rows = menuRows()
+    assert.is_true(m:IsShown())
+    assert.are.equal("WoW Forever Japanese", m.title:GetText())
     local texts = {}
-    for i, el in ipairs(menu.elements) do texts[i] = el.kind .. ":" .. el.text end
-    -- a divider sets the switch apart from the actions
-    assert.are.same({ "title:WoW Forever Japanese", "checkbox:翻訳オン", "divider:",
-      "button:翻訳を報告", "button:不具合・提案を報告", "button:設定", "button:このボタンを隠す" }, texts)
-    for _, i in ipairs({ 2, 4, 5, 6, 7 }) do assert.are.equal(1, #menu.elements[i].initializers) end -- bundled font
+    for i, row in ipairs(rows) do texts[i] = row.item.kind .. ":" .. row.text:GetText() end
+    assert.are.same({ "checkbox:翻訳オン", "button:翻訳を報告", "button:不具合・提案を報告", "button:設定",
+      "button:このボタンを隠す" }, texts)
+    for _, row in ipairs(rows) do assert.are.equal(WFJ.Font.PATH, (row.text:GetFont())) end -- bundled font
+    assert.is_table(m.divider) -- a divider sets the switch apart from the actions
+    b:click("RightButton") -- a second right-click closes it
+    assert.is_false(m:IsShown())
+  end)
+
+  it("a left-click on the button closes an open menu", function()
+    b:click("RightButton")
+    assert.is_true(_G.WFJMinimapMenu:IsShown())
+    b:click("LeftButton")
+    assert.is_false(_G.WFJMinimapMenu:IsShown())
   end)
 
   it("the checkbox is the master switch, the same state as the settings checkbox", function()
     b:click("RightButton")
-    local cb = F.menus[1].elements[2]
-    assert.is_true(cb.a())
-    cb.b()
+    local _, rows = menuRows()
+    assert.is_true(rows[1].item.isSelected())
+    assert.is_true(rows[1].check:IsShown())
+    clickRow(1)
     assert.is_false(WFJ.Settings.get("enabled"))
     assert.is_false(WFJ.State.enabled)
-    assert.is_false(cb.a())
+    assert.is_false(_G.WFJMinimapMenu:IsShown()) -- a row closes the menu
+    b:click("RightButton")
+    _, rows = menuRows()
+    assert.is_false(rows[1].check:IsShown())
     WFJ.Settings.set("enabled", true)
-    assert.is_true(cb.a())
   end)
 
   it("report opens the fix window; bug or idea opens the report window; settings opens the settings", function()
-    b:click("RightButton")
     local opened
     WFJ.Compat.openOptions = function(page) opened = page or "main" end
-    F.menus[1].elements[4].a()
+    b:click("RightButton")
+    clickRow(2)
     assert.is_true(_G.WFJFixWindow:IsShown())
-    F.menus[1].elements[5].a()
+    b:click("RightButton")
+    clickRow(3)
     assert.is_true(_G.WFJReportWindow:IsShown())
     assert.are.equal("bug", WFJ.ReportWindow.mode)
-    F.menus[1].elements[6].a()
+    b:click("RightButton")
+    clickRow(4)
     assert.are.equal("main", opened)
   end)
 
   it("Hide this button turns the setting off; turning it on shows the button again", function()
     b:click("RightButton")
-    F.menus[1].elements[7].a()
+    clickRow(5)
     assert.is_false(WFJ.Settings.get("minimapButton"))
     assert.is_false(b:IsShown())
     assert.is_true(WFJ.Settings.set("minimapButton", "on")) -- as /wfj minimapButton on does

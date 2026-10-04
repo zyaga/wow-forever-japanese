@@ -97,13 +97,11 @@ def test_the_repo_lists_no_name_subtext(root):
     }
 
 
-def test_spellbook_subtext_ids_match_the_key_list(root):
-    """UI/SpellBook.lua's SpellSubtext ids and pipeline/ui_keys.txt name the same 12 spells."""
-    import re
-
+def test_the_spellbook_writes_no_spell_subtext(root):
+    """ADR-058: UI/SpellBook.lua writes nothing into the spell items (Blizzard measures them on the way to the action
+    bars), so it lists no SpellSubtext id and no subtext keys; the 12 listed subtexts stay in the data."""
     lua = (root / "addon/WoWForeverJapanese/UI/SpellBook.lua").read_text("utf-8")
-    ids = re.search(r"for _, id in ipairs\(\{([^}]*)\}\) do\s+SUBTEXT_KEYS", lua)
-    assert ids
-    in_lua = {f"SpellSubtext:{n.strip()}" for n in ids.group(1).split(",")}
+    assert "SpellSubtext:" not in lua
+    assert "SUBTEXT_KEYS" not in lua
     listed = {ln.split("#")[0].strip() for ln in (root / "pipeline/ui_keys.txt").read_text("utf-8").splitlines()}
-    assert in_lua == {k for k in listed if k.startswith("SpellSubtext:")}
+    assert len({k for k in listed if k.startswith("SpellSubtext:")}) == 12

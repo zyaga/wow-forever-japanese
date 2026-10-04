@@ -1043,6 +1043,23 @@ end
 
 local hooked = false
 
+-- The details pane's markers go right of its back button, one per line, the one free spot at the top: inline, the
+-- message pushed the description down and read as part of it. The popup pane has no back button and keeps them
+-- inline. → true when the banner was made
+QuestMap.BANNER_GAP, QuestMap.BANNER_WIDTH = 8, 200
+function QuestMap.makeBanner()
+  local back = get("backButton")
+  if QuestMap.banner or type(back) ~= "table" or type(back.GetParent) ~= "function"
+      or type(back:GetParent()) ~= "table" then
+    return false
+  end
+  QuestMap.banner, QuestMap.bannerFrame =
+    WFJ.Render.createBannerBeside(back, QuestMap.BANNER_GAP, QuestMap.BANNER_WIDTH)
+  WFJ.Render.setBanner(SURFACE, QuestMap.banner)
+  WFJ.Render.setBanner(INFO, QuestMap.banner)
+  return true
+end
+
 -- Called by Main after Compat.init. Declares the candidates and hooks the writers that resolve.
 function QuestMap.init()
   for key, names in pairs(CANDIDATES) do Compat.declare(SURFACE, key, names) end
@@ -1064,6 +1081,7 @@ function QuestMap.init()
       and type(registry.RegisterCallback) == "function" then
     registry:RegisterCallback("QuestMapLogTitleButton.OnEnter", QuestMap.onTitleTooltip, QuestMap)
   end
+  QuestMap.makeBanner()
   hookScript("details", "OnHide", QuestMap.releaseDetails)
   hookScript("popup", "OnHide", QuestMap.releasePopup)
   hookScript("mapFrame", "OnHide", QuestMap.releaseList)

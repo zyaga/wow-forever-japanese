@@ -86,7 +86,7 @@ function Diag.log(kind, message, fields)
   for k, v in pairs(fields or {}) do
     local t = type(v)
     if e[k] == nil and k ~= "n" and k ~= "last" then -- an entry's own fields are never overwritten
-      e[k] = (t == "string" or t == "number" or t == "boolean") and v or t
+      if t == "string" or t == "number" or t == "boolean" then e[k] = v else e[k] = t end
     end
   end
   local list = db.entries
@@ -152,10 +152,30 @@ function Diag.checkHooks()
   return found
 end
 
--- A blocked or forbidden action the client names this addon in. → the entry, or nil when it is another addon's
+-- The first Lua line of the stack that is not this addon's: the Blizzard site the block was reached from. It keys
+-- the entry, so one function blocked from two paths makes two entries. → site, the whole stack
+function Diag.blockedSite(stack)
+  local site = "?"
+  for line in tostring(stack or ""):gmatch("[^\n]+") do
+    local trimmed = line:gsub("^%s+", "")
+    if trimmed ~= "" and not trimmed:find("WoWForeverJapanese", 1, true) and not trimmed:find("^%[C%]")
+        and not trimmed:find("^%[tail call%]") and not trimmed:find("^%.%.%.$") then
+      site = trimmed:gsub(":%s*in function.*$", "")
+      break
+    end
+  end
+  return site, tostring(stack or "")
+end
+
+-- A blocked or forbidden action the client names this addon in: logged with the stack at the event (the client
+-- fires it inside the blocked call, so the stack is the path that was blocked) and whether combat was on.
+-- → the entry, or nil when it is another addon's
 function Diag.onBlocked(event, addon, fn, addonName)
   if addon ~= addonName then return nil end
-  local e = Diag.log("blocked", tostring(fn), { event = event, fn = tostring(fn) })
+  local site, stack = Diag.blockedSite(type(deps.stack) == "function" and deps.stack(2, 40, 40) or "")
+  local combat = type(deps.inCombat) == "function" and deps.inCombat() and true or false
+  local e = Diag.log("blocked", tostring(fn) .. " <" .. site .. ">", { event = event, fn = tostring(fn),
+    site = site, stack = stack, combat = combat })
   say(("WFJ: the game blocked %s (%s). Logged; /wfj log shows it."):format(tostring(fn), event))
   return e
 end

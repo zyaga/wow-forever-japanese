@@ -14,7 +14,8 @@ local TAIL = {
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
   "Core/BugReport.lua",
   "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
-  "UI/ButtonText.lua", "UI/Labels.lua", "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
+  "UI/ButtonText.lua", "UI/Labels.lua", "UI/TextWatch.lua", "UI/TaintWatch.lua", "UI/HtmlText.lua",
+  "UI/LoadOnDemand.lua",
   "UI/HelpTooltip.lua", "UI/TooltipData.lua",
   -- shared helpers (ADR-030)
   "UI/SettingsKeys.lua", "UI/LabelTree.lua", "UI/TooltipLines.lua",
@@ -264,14 +265,23 @@ describe("addon loads in TOC order and answers /wfj version", function()
     Stub.fireAll("ADDON_ACTION_BLOCKED", "SomeOtherAddon", "CastSpellByName()")
     Stub.fireAll("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "MainActionBar:SetPointBase()")
     Stub.fireAll("ADDON_ACTION_BLOCKED", "WoWForeverJapanese", "MainActionBar:SetPointBase()")
-    local last = WFJ_Log.entries[#WFJ_Log.entries]
-    assert.are.same({ "blocked", "MainActionBar:SetPointBase()", 2 }, { last.kind, last.fn, last.n })
+    local blocked, kinds = nil, {}
+    for _, e in ipairs(WFJ_Log.entries) do
+      if e.kind == "blocked" then blocked = e end
+      kinds[e.kind] = (kinds[e.kind] or 0) + 1
+    end
+    assert.are.same({ "MainActionBar:SetPointBase()", 2 }, { blocked.fn, blocked.n })
+    assert.are.equal(1, kinds.blocked) -- the other addon's block is not ours
+    assert.are.equal(1, kinds.taint) -- the taint watch scans once, at the first block of the session
     assert.are.equal(1, #Stub.prints) -- one chat line per session
     Stub.prints = {}
-    SlashCmdList.WFJ("log 1")
-    assert.are.equal(2, #Stub.prints) -- the entry, then the Lua error count
-    assert.are.equal("WFJ: errors: 0 recorded, 0 not sent (/wfj bug)", Stub.prints[2])
-    assert.is_truthy(Stub.prints[1]:find("MainActionBar:SetPointBase() ×2", 1, true))
+    SlashCmdList.WFJ("log 5")
+    assert.are.equal("WFJ: errors: 0 recorded, 0 not sent (/wfj bug)", Stub.prints[#Stub.prints])
+    local shown = false
+    for _, line in ipairs(Stub.prints) do
+      if line:find("MainActionBar:SetPointBase()", 1, true) and line:find("×2", 1, true) then shown = true end
+    end
+    assert.is_true(shown)
   end)
 
   it("gives an error caught before the log loaded the load time (the clock is wired after compat)", function()

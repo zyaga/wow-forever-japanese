@@ -9,12 +9,11 @@
 --   MiniMapButtonTemplate Blizzard_Minimap/Shared/MinimapButtonTemplate.xml (press offset on the `<name>Icon`
 --     texture, MinimapButtonTemplate.lua), listed for camelot in Blizzard_Minimap.toc;
 --   the Minimap frame Blizzard_Minimap/Mainline/Minimap.xml:195 ([Family] loads for camelot);
---   MenuUtil.CreateContextMenu Blizzard_Menu/MenuUtil.lua:151, the description's CreateTitle / CreateCheckbox /
---     CreateButton / CreateDivider inserters MenuUtil.lua:270–287;
+--   TooltipBackdropTemplate Blizzard_SharedXML/SharedTooltipTemplates.xml, for the menu's frame;
 --   AddonCompartmentFunc / …FuncOnEnter / …FuncOnLeave, called (addonName, buttonName | frame)
 --     Blizzard_Minimap/Mainline/AddonCompartment.lua:77–117].
 -- The rim is placed for a round minimap [unverified: camelot's minimap shape; no GetMinimapShape in its FrameXML].
--- Menu entries take the bundled font through Labels.menuText, as UI/Menus does (the compositor forbids SetFont).
+-- Menu rows take the bundled font through OptionsWidgets.setText, like the settings page.
 local _, WFJ = ...
 local MinimapButton = {}
 WFJ.MinimapButton = MinimapButton
@@ -99,16 +98,6 @@ end
 
 -- ── Menu ────────────────────────────────────────────────────────────────────
 
-local function bundled(frame)
-  local fs = type(frame) == "table" and frame.fontString or nil
-  if type(fs) ~= "table" or not WFJ.Labels then return end
-  local a = WFJ.Labels.menuText(fs)
-  if not a then return end
-  local _, size, flags = a:GetFont()
-  WFJ.Font.set(a, WFJ.Font.PATH, size or WFJ.Font.DEFAULT_SIZE, flags or "")
-end
-
-
 -- The menu, as data (the specs read it): { kind, text, isSelected?, action }.
 function MinimapButton.items()
   return {
@@ -122,33 +111,126 @@ function MinimapButton.items()
   }
 end
 
-function MinimapButton.generator(_, root)
-  root:CreateTitle("WoW Forever Japanese")
-  for _, item in ipairs(MinimapButton.items()) do
-    local el
-    if item.kind == "checkbox" then
-      el = root:CreateCheckbox(item.text, item.isSelected, item.action)
-    else
-      el = root:CreateButton(item.text, item.action)
+-- The menu is a small frame of the addon's own, not Blizzard's Menu: opening a Blizzard context menu from this
+-- button can fail a Lua engine check in Menu.lua's AcquireMenu (writing the owner onto the pooled menu frame) and
+-- close the game. Rows: the title, the switch with its check mark, a divider, the three actions. A click
+-- on a row runs it and closes the menu; a click anywhere else, or another right-click on the button, closes it.
+MinimapButton.ROW_HEIGHT = 20
+MinimapButton.MENU_WIDTH = 180
+local menuFrame
+
+local function closeMenu()
+  if menuFrame then menuFrame:Hide() end
+end
+MinimapButton.closeMenu = closeMenu
+
+local function menuRow(parent, y, onClick)
+  local row = CreateFrame("Button", nil, parent)
+  row:SetPoint("TOPLEFT", parent, "TOPLEFT", 8, y)
+  row:SetPoint("TOPRIGHT", parent, "TOPRIGHT", -8, y)
+  row:SetHeight(MinimapButton.ROW_HEIGHT)
+  row:SetHighlightTexture("Interface\\QuestFrame\\UI-QuestTitleHighlight", "ADD")
+  row.text = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+  row.text:SetPoint("LEFT", row, "LEFT", 22, 0)
+  row:SetScript("OnClick", onClick)
+  return row
+end
+
+local function buildMenu()
+  local f = CreateFrame("Frame", "WFJMinimapMenu", C.resolve("UIParent"), "TooltipBackdropTemplate")
+  f:SetFrameStrata("FULLSCREEN_DIALOG")
+  f:SetClampedToScreen(true)
+  f:EnableMouse(true)
+  f:Hide()
+  f.title = f:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  f.title:SetPoint("TOPLEFT", f, "TOPLEFT", 12, -10)
+  f.title:SetText("WoW Forever Japanese")
+  f.rows = {}
+  f:RegisterEvent("GLOBAL_MOUSE_DOWN")
+  f:SetScript("OnEvent", function(self)
+    if self:IsShown() and not self:IsMouseOver() and not (MinimapButton.button and MinimapButton.button:IsMouseOver())
+    then
+      self:Hide()
     end
-    if el and el.AddInitializer then el:AddInitializer(bundled) end
-    -- a divider between the on / off toggle and the actions, as the client's own menus separate them [verified:
-    -- MenuUtil.CreateDivider Blizzard_Menu/MenuUtil.lua:270, rootDescription:CreateDivider()
-    -- 11_0_0_MenuImplementationGuide.lua:411]
-    if item.kind == "checkbox" and root.CreateDivider then root:CreateDivider() end
+  end)
+  return f
+end
+
+-- Fills the menu from MinimapButton.items() and shows it under `owner`. → the menu frame
+function MinimapButton.showMenu(owner)
+  menuFrame = menuFrame or buildMenu()
+  local f = menuFrame
+  local items = MinimapButton.items()
+  local y = -10 - MinimapButton.ROW_HEIGHT
+  for i, item in ipairs(items) do
+    local row = f.rows[i]
+    if not row then
+      row = menuRow(f, y, function(self)
+        closeMenu()
+        if self.item and self.item.action then self.item.action() end
+      end)
+      f.rows[i] = row
+    end
+    row.item = item
+    W.setText(row.text, item.text, 12)
+    if item.kind == "checkbox" then
+      row.check = row.check or row:CreateTexture(nil, "ARTWORK")
+      row.check:SetTexture("Interface\\Buttons\\UI-CheckBox-Check")
+      row.check:SetSize(18, 18)
+      row.check:SetPoint("LEFT", row, "LEFT", 0, 0)
+      if item.isSelected() == true then row.check:Show() else row.check:Hide() end
+      y = y - MinimapButton.ROW_HEIGHT
+      f.divider = f.divider or f:CreateTexture(nil, "ARTWORK")
+      f.divider:SetColorTexture(1, 1, 1, 0.2)
+      f.divider:SetHeight(1)
+      f.divider:ClearAllPoints()
+      f.divider:SetPoint("TOPLEFT", f, "TOPLEFT", 12, y - 4)
+      f.divider:SetPoint("TOPRIGHT", f, "TOPRIGHT", -12, y - 4)
+      y = y - 8
+    else
+      y = y - MinimapButton.ROW_HEIGHT
+    end
+    local nextRow = f.rows[i + 1]
+    if nextRow then
+      nextRow:ClearAllPoints()
+      nextRow:SetPoint("TOPLEFT", f, "TOPLEFT", 8, y)
+      nextRow:SetPoint("TOPRIGHT", f, "TOPRIGHT", -8, y)
+    end
+    row:Show()
   end
+  for i = #items + 1, #f.rows do f.rows[i]:Hide() end
+  f:SetSize(MinimapButton.MENU_WIDTH, -y + 10)
+  f:ClearAllPoints()
+  if owner then
+    f:SetPoint("TOPRIGHT", owner, "BOTTOMLEFT", 0, 0)
+  else -- from the addon dropdown on the minimap: at the cursor, as a context menu opens
+    local ui, cursor = C.resolve("UIParent"), C.resolve("GetCursorPosition")
+    local cx, cy = 0, 0
+    if type(cursor) == "function" and ui then
+      local scale = ui:GetEffectiveScale()
+      cx, cy = cursor()
+      cx, cy = cx / scale, cy / scale
+    end
+    f:SetPoint("TOPLEFT", ui, "BOTTOMLEFT", cx, cy)
+  end
+  f:Show()
+  return f
 end
 
 function MinimapButton.openMenu(owner)
-  local MU = C.resolve("MenuUtil")
-  if not (MU and MU.CreateContextMenu) then return false end
-  MU.CreateContextMenu(owner, MinimapButton.generator)
+  if menuFrame and menuFrame:IsShown() then
+    closeMenu()
+    return true
+  end
+  MinimapButton.hideTooltip()
+  MinimapButton.showMenu(owner)
   return true
 end
 
 -- One click (the button's, or the addon dropdown's): right opens the menu, anything else the fix window.
 function MinimapButton.click(owner, mouseButton)
   if mouseButton == "RightButton" then return MinimapButton.openMenu(owner) end
+  closeMenu()
   WFJ.FixWindow.open()
   return true
 end

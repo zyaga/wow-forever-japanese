@@ -10,6 +10,7 @@
 {"id": "40331f17ae98f7ae", "field": "text", "en": "No, I'm not, but lots of others are looking for love.  You should buy my love tokens, put on some cologne or perfume, and then pass them around!", "hash": "40331f17ae98f7ae", "src": "vmangos@13b49dc"}
 {"id": "4039189e338975dc", "field": "text", "en": "I regret that I must fight this $n.", "hash": "4039189e338975dc", "src": "vmangos@13b49dc"}
 {"id": "4043beab63369b8a", "field": "text", "en": "The Shattered Hand will see the Horde to their former glory, unhindered by the timidness of the Warchief.", "hash": "4043beab63369b8a", "src": "vmangos@13b49dc"}
+{"id": "40468351fdde1838", "field": "text", "en": "What? No, I don't do armor repairs. Everlook is about a mile to the north, $g brother : sister;.$B$BNow buy something, or move along before I summon my warlock to deal with you!", "hash": "40468351fdde1838", "src": "vmangos@13b49dc"}
 {"id": "405040b0daee1aa7", "field": "text", "en": "Major Domo Enabled.", "hash": "405040b0daee1aa7", "src": "vmangos@13b49dc"}
 {"id": "405487abc40c2395", "field": "text", "en": "Welcome to our humble abode!  It's always nice to see a friendly face.  And what strong arms you have.  My husband and I are always looking for help around the farm.  Now that most the good folk have left, it's hard to find an able body to help out.", "hash": "405487abc40c2395", "src": "vmangos@13b49dc"}
 {"id": "40576de393172213", "field": "text", "en": "I not-so-quietly ignore the insult, hoping to instill a fear in the ruler that he may have gaffed.  I then inform my liege of the insult when I return.", "hash": "40576de393172213", "src": "vmangos@13b49dc"}
@@ -23,7 +24,6 @@
 {"id": "4070b40761ddb906", "field": "text", "en": "I am unable to teach a Tauren to ride a Skeletal Mount.  I am sorry but there is nothing I can do for you.", "hash": "4070b40761ddb906", "src": "vmangos@13b49dc"}
 {"id": "4074d40f0d756bf7", "field": "text", "en": "You show wisdom beyond your years, $c.  Thank you. You can find our battlemaster, Lylandris, standing at the war table in the Hall of Arms. She can assist you in traveling to Warsong Gulch.", "hash": "4074d40f0d756bf7", "src": "vmangos@13b49dc"}
 {"id": "40762a752ab7e0e6", "field": "text", "en": "When I clawed my way out of the grave, I thought my family would welcome me with open arms. Instead, they drove me from the village, screaming in a language I could no longer understand.", "hash": "40762a752ab7e0e6", "src": "vmangos@13b49dc"}
-{"id": "40790a21cb342780", "field": "text", "en": "Um... I think you're a little too big to ride a Mechano-strider there, $g mister : ma'am;.  You'd likely crush the finely tuned servo-balancers!", "hash": "40790a21cb342780", "src": "vmangos@13b49dc"}
 {"id": "407b0152063f52b2", "field": "text", "en": "You are truly a determined student. I will be happy to provide you with instruction!", "hash": "407b0152063f52b2", "src": "vmangos@13b49dc"}
 {"id": "407c15c6c4425ea4", "field": "text", "en": "Miranda, could you please tell me the insignia cost of items that you are offering for adventurers of honored reputation?", "hash": "407c15c6c4425ea4", "src": "vmangos@13b49dc"}
 {"id": "4081bb85fef0b13e", "field": "text", "en": "Finished!  And the results are amazing.  I must convey them to my associates Grimand, Mathiel and Klockmort!", "hash": "4081bb85fef0b13e", "src": "vmangos@13b49dc"}
@@ -38,7 +38,6 @@
 {"id": "40c3226ca81df904", "field": "text", "en": "Now is the time, Davil.  Now is the time of your death!", "hash": "40c3226ca81df904", "src": "vmangos@13b49dc"}
 {"id": "40cb0d9bfbb9dd40", "field": "text", "en": "Ye've come further than many, $N. Respect the elements around ye and ye shall fare far greater than most.", "hash": "40cb0d9bfbb9dd40", "src": "forever-vo@025070f", "npcs": [258043]}
 {"id": "40cba8f7c44ac6b3", "field": "text", "en": "They say an army travels on its stomach, and that's the truth.  For any offensive to succeed, your troops have to be well-fed and well supplied.", "hash": "40cba8f7c44ac6b3", "src": "vmangos@13b49dc"}
-{"id": "40d83c59a518a3ae", "field": "text", "en": "Hidey ho $g sir : miss;. I would watch your step around here, I lost a bomb disguised as a mouse and I can't seem to find it.", "hash": "40d83c59a518a3ae", "src": "vmangos@13b49dc"}
 {"id": "40d92ad5fda8aadd", "field": "text", "en": "Come, spirits - attend your master!", "hash": "40d92ad5fda8aadd", "src": "vmangos@13b49dc"}
 {"id": "40d9e90345ff0507", "field": "text", "en": "Astounding!  So then indurium is the key!", "hash": "40d9e90345ff0507", "src": "vmangos@13b49dc"}
 {"id": "40dabaa98ee8b9c5", "field": "text", "en": "Literacy should be celebrated and shared.", "hash": "40dabaa98ee8b9c5", "src": "forever-vo@025070f", "npcs": [268568]}

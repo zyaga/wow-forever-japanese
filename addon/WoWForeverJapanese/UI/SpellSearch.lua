@@ -5,7 +5,8 @@
 -- each a parentKey child of a load-on-demand window, so each host is set up through WFJ.LoadOnDemand.when for its
 -- addon:
 --   Blizzard_PlayerSpells: PlayerSpellsFrame.TalentsFrame (camelot/classtalents/blizzard_classtalentsframe.xml:401,
---     416) and PlayerSpellsFrame.SpellBookFrame (spellbook/blizzard_spellbookframe.xml:103, 119);
+--     416). The spellbook's own preview (PlayerSpellsFrame.SpellBookFrame, spellbook/blizzard_spellbookframe.xml:
+--     103, 119) is left English: nothing of this addon runs inside the spellbook's passes (ADR-058);
 --   Blizzard_LegacySystem: LegacySystemFrame.TreePage.LegacyTreeTraitPanel (blizzard_legacytree.xml:220, 241).
 -- What is shown, per host:
 --   SearchPreviewContainer:SetPreviewResults (blizzard_spellsearch/blizzard_spellsearchtemplates.lua:99–129) writes
@@ -43,10 +44,9 @@ SpellSearch.NEVER_TOUCH = { TALENTS .. ".SearchBox", SPELLBOOK .. ".SearchBox", 
 -- host key → { addon, frame candidate, is a talent tree (search icons), owns the box's placeholder here }
 local HOSTS = {
   talents = { "Blizzard_PlayerSpells", TALENTS, true, true },
-  spellbook = { "Blizzard_PlayerSpells", SPELLBOOK, false, false },
   legacy = { "Blizzard_LegacySystem", LEGACY, true, false },
 }
-local HOST_ORDER = { "legacy", "spellbook", "talents" }
+local HOST_ORDER = { "legacy", "talents" }
 
 local OVERFLOW = { only = { "TALENT_FRAME_SEARCH_PREVIEW_OVERFLOW_FORMAT" } }
 local SUGGESTED = { only = { "TALENT_FRAME_SEARCH_NOT_ON_ACTIONBAR" } }

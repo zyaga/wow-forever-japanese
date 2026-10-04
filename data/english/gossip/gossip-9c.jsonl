@@ -11,6 +11,7 @@
 {"id": "9c3a511c3d1021a9", "field": "text", "en": "Hello $r, it is a pleasure to make your acquaintance.\n", "hash": "9c3a511c3d1021a9", "src": "vmangos@13b49dc"}
 {"id": "9c3ceeb06aa1d955", "field": "text", "en": "Push them back to their base! Let not a single Alliance soldier remain living on this battlefield!", "hash": "9c3ceeb06aa1d955", "src": "vmangos@13b49dc"}
 {"id": "9c3e25df0c884bba", "field": "text", "en": "And I am determined to find out more... So if you need my help again, you know where I'll be.", "hash": "9c3e25df0c884bba", "src": "vmangos@13b49dc"}
+{"id": "9c4638900c1123f3", "field": "text", "en": "Where is the Cooking trainer?", "hash": "9c4638900c1123f3", "src": "collector@1.60.1.70205", "npcs": [247229]}
 {"id": "9c487c9af5ed4344", "field": "text", "en": "Kelstrum is a loudmouth and a braggart... and if that weren't enough he's also one of the most skilled warriors ye'll ever meet!  \n\nI tell ye, if ye're looking to be trained in the ways of a warrior, that's who ye should be talking to.  I'm sure he can be found over in the Hall of Arms east of the Gates of Ironforge.", "hash": "9c487c9af5ed4344", "src": "vmangos@13b49dc"}
 {"id": "9c600498a72eb54c", "field": "text", "en": "Please... please... Miss Proudmore. I didn't mean to...", "hash": "9c600498a72eb54c", "src": "vmangos@13b49dc"}
 {"id": "9c61ed23104e9e0d", "field": "text", "en": "Night, night.", "hash": "9c61ed23104e9e0d", "src": "vmangos@13b49dc"}

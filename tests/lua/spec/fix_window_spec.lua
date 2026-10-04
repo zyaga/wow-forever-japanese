@@ -443,7 +443,7 @@ describe("the ways into the fix window with the whole addon loaded", function()
     _G.WFJ_OnAddonCompartmentClick("WoWForeverJapanese", "LeftButton")
     assert.is_true(_G.WFJFixWindow:IsShown())
     _G.WFJ_OnAddonCompartmentClick("WoWForeverJapanese", "RightButton")
-    assert.are.equal(1, #F.menus)
+    assert.is_true(_G.WFJMinimapMenu:IsShown()) -- the addon's own menu frame
     _G.WFJ_OnAddonCompartmentEnter("WoWForeverJapanese", _G.Minimap)
     assert.is_true(_G.WFJMinimapTooltip:IsShown())
     _G.WFJ_OnAddonCompartmentLeave("WoWForeverJapanese", _G.Minimap)

@@ -4,7 +4,6 @@
 {"id": "3711289e31ed9e78", "field": "text", "en": "Too long have I sat idle, gripped in this haze... this malaise, lamenting what could have been... what should have been.", "hash": "3711289e31ed9e78", "src": "vmangos@13b49dc"}
 {"id": "3716bf22d03c0c43", "field": "text", "en": "I wish to make a purchase, Nipsy.", "hash": "3716bf22d03c0c43", "src": "vmangos@13b49dc"}
 {"id": "37180c0564d2a324", "field": "text", "en": "Obsidion rise and serve your master!", "hash": "37180c0564d2a324", "src": "vmangos@13b49dc"}
-{"id": "3718b5a0d115e08e", "field": "text", "en": "A wondrous Winter's Veil to you... uh... little $G boy : girl;.  Good children get special, um, discounts at any local Smokywood Pastures vendor.  Yum.", "hash": "3718b5a0d115e08e", "src": "vmangos@13b49dc"}
 {"id": "371abcc187f442f6", "field": "text", "en": "I see the exit! Hurry, hurry!", "hash": "371abcc187f442f6", "src": "vmangos@13b49dc"}
 {"id": "371d7988608d34ff", "field": "text", "en": "Uh oh!  I'm out of here!", "hash": "371d7988608d34ff", "src": "vmangos@13b49dc"}
 {"id": "3720408ad864ac2d", "field": "text", "en": "Tell me more about these hippogryphs.", "hash": "3720408ad864ac2d", "src": "vmangos@13b49dc"}
@@ -26,6 +25,7 @@
 {"id": "376e05195608074a", "field": "text", "en": "Greetings, $N. I am Duke Nicholas Zverenhoff of the Argent Dawn.", "hash": "376e05195608074a", "src": "vmangos@13b49dc"}
 {"id": "376fb935c2dbf56f", "field": "text", "en": "%s laughs at your foolish request.", "hash": "376fb935c2dbf56f", "src": "vmangos@13b49dc"}
 {"id": "37778718459e0403", "field": "text", "en": "I'm honored to meet you, $n, but your skill at potions is greater than my own. Go see Doctor Herbert Halsey, an undead in the Apothecarium of the Undercity. He can help you from now on.", "hash": "37778718459e0403", "src": "vmangos@13b49dc"}
+{"id": "378df593e699295d", "field": "text", "en": "Where is the Fishing trainer?", "hash": "378df593e699295d", "src": "collector@1.60.1.70205", "npcs": [247229]}
 {"id": "379568f81c5d65ac", "field": "text", "en": "Don't get me wrong, I'd rather not be in a tunnel filled with silithid day in and day out, but if hiding here and watching these creatures' movements is going to help us win the war then I'll do it for as long as it takes.", "hash": "379568f81c5d65ac", "src": "vmangos@13b49dc"}
 {"id": "37979c6abee80670", "field": "text", "en": "Enough prattling. Let them come. We shall grind their bones to dust.", "hash": "37979c6abee80670", "src": "vmangos@13b49dc"}
 {"id": "37aa2264b4a9c10d", "field": "text", "en": "Do not forget the sacrifices made on this day, night elf. We have all suffered immensely at the hands of these beasts.", "hash": "37aa2264b4a9c10d", "src": "vmangos@13b49dc"}

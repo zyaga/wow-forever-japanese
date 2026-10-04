@@ -34,6 +34,7 @@ WFJ.Data.add("gossip", {
   ["35c1c072d70f0412"] = { "もう少しいい匂いがしたら話してやるよ。コロンはどうだ? それとも香水か?", "." },
   ["35cfa0c312e54d2e"] = { "Elder Goldwellはどこにいますか?", "." },
   ["35d048b5232efe99"] = { "Ragnarosはすべてを見ている、定命の者よ。", "." },
+  ["35d5488df7421a57"] = { "で、若いの、Alterac ValleyでHordeからAllianceを守るだけの力が自分にあると思うのか？ よかろう、ならばここIronforgeにいる我らがGlordrum Steelbeardと話すといい。Hall of Armsの作戦台で戦略を練っているはずだ。", "." },
   ["35d64bfc06cf6953"] = { "Blade of Vaulted Secretsをなくしてしまった。代わりを用意してもらえるか?", "." },
   ["35d84acdb5f9ca48"] = { "街から新しい香水とコロンを何回か仕入れたの。荷解きが済んだらまた来てね、売り出しておくから。", "." },
   ["35d9c7df4f8011c5"] = { "英雄よ、Corporal Splithoofに急ぎの用があるのです。", "." },

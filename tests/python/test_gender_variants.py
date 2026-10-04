@@ -31,7 +31,7 @@ def test_female_variant_is_none_without_a_gender_code():
 def test_female_variant_resolves_every_code_to_its_second_branch():
     assert female_variant(QUEST_EN) == "I bid you welcome, sister. Take this, girl."
     assert female_variant("$Glad:lass; and $ghe:she;") == "lass and she"
-    assert female_variant("you, $g brother : sister;.") == "you,  sister."  # branch spaces kept (client trimming unverified: checklist 18)
+    assert female_variant("you, $g brother : sister;.") == "you, sister."  # the branch trimmed, as the client shows it (ADR-059)
 
 
 def test_female_variant_strips_markup_before_splitting_the_code():

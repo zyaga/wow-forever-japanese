@@ -27,6 +27,7 @@
 {"id": "32a56220c22d9fa4", "field": "text", "en": "Who dares disturb me?  Die $n!", "hash": "32a56220c22d9fa4", "src": "vmangos@13b49dc"}
 {"id": "32b2bd98fb20785a", "field": "text", "en": "Kill!", "hash": "32b2bd98fb20785a", "src": "vmangos@13b49dc"}
 {"id": "32b39f0cbb9de4d1", "field": "text", "en": "Scourge in sewers!  We need help!", "hash": "32b39f0cbb9de4d1", "src": "vmangos@13b49dc"}
+{"id": "32b85fb6126a4c94", "field": "text", "en": "Where is the Engineering trainer?", "hash": "32b85fb6126a4c94", "src": "collector@1.60.1.70205", "npcs": [247229]}
 {"id": "32cdf8ac2c8a34da", "field": "text", "en": "<Field Marshal Chambers growls.>$B$BSo you're the riff-raff that assisted Didier in getting the supplies here in one piece? Where are the rest of you? I know there's gotta be more. Chickens like you generally roam in huge packs.$B$BBah, just give me the damned writ so I can sign off on it.\n", "hash": "32cdf8ac2c8a34da", "src": "vmangos@13b49dc"}
 {"id": "32d9caabf53b3fc3", "field": "text", "en": "I slay the man on the spot as my liege would expect me to do, as he is nothing more than a thief and a liar.", "hash": "32d9caabf53b3fc3", "src": "vmangos@13b49dc"}
 {"id": "32e1cc574f00cc48", "field": "text", "en": "We will drive our foes from Silverpine, then bring the tides of war to their very capital!", "hash": "32e1cc574f00cc48", "src": "vmangos@13b49dc"}

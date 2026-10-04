@@ -60,6 +60,27 @@ function Render.createBanner(frame, x, y, width)
   return fs, holder
 end
 
+-- The same banner beside `anchor` (a button the window keeps in place): LEFT of ours to its RIGHT, `gap` px away,
+-- left-justified, `width` wide, one marker per line (centred on the button, so two still fit the strip). Ours is
+-- anchored to it; nothing is written to it.
+function Render.createBannerBeside(anchor, gap, width)
+  local frame = anchor:GetParent()
+  local holder = CreateFrame("Frame", nil, frame)
+  holder:SetSize(width, Render.BANNER_SIZE + 6)
+  holder:SetPoint("LEFT", anchor, "RIGHT", gap, 0)
+  holder:SetFrameLevel(frame:GetFrameLevel() + Render.BANNER_LIFT)
+  local fs = holder:CreateFontString(nil, "OVERLAY")
+  fs:SetPoint("LEFT", holder, "LEFT", 0, 0)
+  fs:SetWidth(width)
+  fs:SetJustifyH("LEFT")
+  fs.markerSep = "\n" -- one marker per line: both together are wider than the space beside the button
+  WFJ.Font.set(fs, WFJ.Font.PATH, Render.BANNER_SIZE - 2, "")
+  local c = WFJ.MARKER_COLOR
+  fs:SetTextColor(c.r, c.g, c.b)
+  fs:Hide()
+  return fs, holder
+end
+
 -- Registers the FontString a surface shows its markers on. Several surfaces may share one (the three quest
 -- panels share the quest window's band); the banner then reflects every record on all of them.
 function Render.setBanner(surface, fs)
@@ -206,7 +227,7 @@ local function updateBanner(surface)
   end
   table.sort(names)
   for i, name in ipairs(names) do names[i] = WFJ.MARKER[name] end
-  fs:SetText(table.concat(names, "  "))
+  fs:SetText(table.concat(names, fs.markerSep or "  "))
   fs:Show()
 end
 Render.updateBanner = updateBanner

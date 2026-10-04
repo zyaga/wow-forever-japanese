@@ -175,7 +175,7 @@ function WFJ.OnLoad()
       clock = function()
         local clock = WFJ.Compat.resolve("date")
         return type(clock) == "function" and clock("%Y-%m-%d %H:%M:%S") or ""
-      end, print = print })
+      end, print = print, stack = debugstack, inCombat = InCombatLockdown })
     return WFJ.Diag.load(WFJ_Log)
   end) or WFJ_Log
   step("compat", function() WFJ.Compat.init(function(name) return _G[name] end) end)
@@ -373,6 +373,7 @@ function WFJ.OnLoad()
   step("diag.timer", function()
     if type(C_Timer) == "table" then C_Timer.NewTicker(WFJ.Diag.CHECK_INTERVAL, WFJ.Diag.tick) end
   end)
+  step("taintwatch", WFJ.TaintWatch.init) -- the action-bar taint watch (UI/TaintWatch)
 
   -- The settings pages lean on client templates; a failure there must not take /wfj down with it (three
   -- pages, one AddOns category + two subcategories). The page error keeps its own field (the settings surface
@@ -419,7 +420,7 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
       end
     end
   elseif event == "ADDON_ACTION_BLOCKED" or event == "ADDON_ACTION_FORBIDDEN" then
-    WFJ.Diag.onBlocked(event, name, ..., ADDON)
+    if WFJ.Diag.onBlocked(event, name, ..., ADDON) then WFJ.TaintWatch.onBlocked() end
   elseif event == "PLAYER_REGEN_DISABLED" then
     WFJ.Options.setCombat(true)
   elseif event == "PLAYER_REGEN_ENABLED" then

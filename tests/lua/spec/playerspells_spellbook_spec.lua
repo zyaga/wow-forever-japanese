@@ -72,23 +72,24 @@ describe("spellbook on the Forever client", function()
     it("nothing is hooked before Blizzard_PlayerSpells loads; its ADDON_LOADED sets the book up once", function()
       assert.is_false(WFJ.SpellBook.init()) -- Blizzard_PlayerSpells is not loaded yet: nothing is set up
       PS.loadPlayerSpells(); book()
-      assert.is_nil(Stub.hooks["PlayerSpellsFrame:UpdateFrameTitle"])
+      assert.is_false(WFJ.TextWatch.watching(title()))
       assert.are.equal(1, WFJ.LoadOnDemand.loaded("Blizzard_PlayerSpells"))
       assert.are.equal(0, WFJ.LoadOnDemand.loaded("Blizzard_PlayerSpells"))
       PS.openSpellBook()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       assert.are.equal("呪文書", title():GetText())
-      assert.is_false(WFJ.SpellBook.setupCamelot()) -- again: no second set of hooks
-      assert.are.equal(1, #Stub.hooks["PlayerSpellsFrame:UpdateFrameTitle"])
+      assert.is_false(WFJ.SpellBook.setupCamelot()) -- again: no second setup
+      assert.is_true(WFJ.TextWatch.watching(title()))
     end)
 
     it("an addon already loaded when init runs is set up at once, including what the client already wrote", function()
       PS.loadPlayerSpells(); book()
       PS.openSpellBook() -- shown before the addon's init
+      WFJ.TextWatch.tick() -- the watcher's next frame
       assert.are.equal("Spellbook", title():GetText())
       WFJ.SpellBook.init()
       assert.are.equal("呪文書", title():GetText())
-      assert.are.equal("ページ 1/2", pageText():GetText())
-      assert.are.equal("ランク 3", items()[1].SubName:GetText())
+      assert.are.equal("Rank 3", items()[1].SubName:GetText()) -- the page's items are never written
     end)
   end)
 
@@ -101,16 +102,21 @@ describe("spellbook on the Forever client", function()
     it("the host title follows UpdateFrameTitle (spellbook, talents, inspect with the name verbatim); Alt, area and"
       .. " the host's OnHide put the English back", function()
       PS.openSpellBook()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       assert.are.equal("呪文書", title():GetText())
       assert.are.equal(WFJ.Font.PATH, (title():GetFont()))
       PS.openTalents()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       assert.are.equal("タレント", title():GetText())
       _G.PlayerSpellsFrame:SetTab("specialization") -- forever_titles.txt `key SPECIALIZATION spellbook`
+      WFJ.TextWatch.tick() -- the watcher's next frame
       assert.are.equal("専門化", title():GetText())
       _G.PlayerSpellsFrame:UpdateFrameTitle() -- a second SetTitle keeps it
+      WFJ.TextWatch.tick() -- the watcher's next frame
       assert.are.equal("専門化", title():GetText())
       _G.PlayerSpellsFrame.inspectUnit = "Reyn"
       _G.PlayerSpellsFrame:UpdateFrameTitle()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       assert.are.equal("タレント - Reyn", title():GetText())
       alt(true)
       assert.are.equal("Talents - Reyn", title():GetText())
@@ -126,122 +132,85 @@ describe("spellbook on the Forever client", function()
 
     it("a linked build's title: the spec and class names kept; Alt English", function()
       PS.openTalents()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       local host = _G.PlayerSpellsFrame
       host.linked = { "Protection", "Warrior" }
       host:UpdateFrameTitle()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       assert.are.equal("リンクされたタレント(Protection Warrior)", title():GetText())
       alt(true)
       assert.are.equal("Linked Talents (Protection Warrior)", title():GetText())
       alt(false)
       host.linked = { "Holy.", "Paladin" } -- a period: never a `text` argument
       host:UpdateFrameTitle()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       assert.are.equal("Linked Talents (Holy. Paladin)", title():GetText())
       host.linked = nil
     end)
 
-    it("the page text (PAGE_NUMBER_WITH_MAX) follows UpdateControls", function()
+    -- the controls' Layout measures it in the pass that refills the items on a page turn (ADR-058)
+    it("the page number stays English and is never watched", function()
       PS.openSpellBook()
-      assert.are.equal("ページ 1/2", pageText():GetText())
+      WFJ.TextWatch.tick() -- the watcher's next frame
+      assert.are.equal("Page 1/2", pageText():GetText())
       _G.PlayerSpellsFrame.SpellBookFrame:DisplayPage(2)
-      assert.are.equal("ページ 2/2", pageText():GetText())
-      alt(true)
+      WFJ.TextWatch.tick()
       assert.are.equal("Page 2/2", pageText():GetText())
-      alt(false)
-      assert.are.equal("ページ 2/2", pageText():GetText())
+      assert.is_false(WFJ.TextWatch.watching(pageText()))
+      assert.are_not.equal(WFJ.Font.PATH, (pageText():GetFont()))
     end)
 
-    it("a flyout item's name is its SpellFlyout row; a spell of the same name stays; a page turn drops it",
-      function()
-        PS.spells[10] = { name = "Portal", subtext = "", cached = true, flyout = true }
-        PS.spells[11] = { name = "Portal", subtext = "Rank 1", cached = true } -- a spell named like the flyout
+    -- Blizzard measures an item's three lines when it refills the item (TrimTextSpace) and the page measures its
+    -- headers; text or font written there by this addon comes back tainted and reaches the action bars (ADR-058)
+    it("the page's spell items are never written: subtexts, level lines, flyout and spell names stay as the client"
+      .. " wrote them, through a late subtext, a page turn and a data refresh", function()
+        PS.spells[14] = { name = "Portal", subtext = "", cached = true, flyout = true }
         PS.openSpellBook()
+        WFJ.TextWatch.tick() -- the watcher's next frame
         local it = items()
-        assert.are.equal("ポータル", it[1].Name:GetText())
-        assert.are.equal("Portal", it[2].Name:GetText())
-        alt(true)
-        assert.are.equal("Portal", it[1].Name:GetText())
-        alt(false)
-        assert.are.equal("ポータル", it[1].Name:GetText())
-        _G.PlayerSpellsFrame.SpellBookFrame:DisplayPage(2) -- the item now shows another spell: no record kept
-        for _, item in ipairs(_G.PlayerSpellsFrame.SpellBookFrame.pool) do
-          if item.Name:GetText() ~= "ポータル" then assert.is_false(recorded(item.Name)) end
-        end
-      end)
-
-    it("each displayed item's subtext and required-level line translate; spell names are never touched", function()
-      PS.openSpellBook()
-      local it = items()
-      assert.are.equal("ランク 3", it[1].SubName:GetText())
-      assert.are.equal("", it[2].SubName:GetText()) -- Frost Armor's data is not loaded yet
-      assert.are.equal("パッシブ", it[3].SubName:GetText())
-      assert.are.equal("Close", it[3].Name:GetText())
-      PS.loadSpell(11) -- the late subtext: UpdateSubName outside any event
-      assert.are.equal("ランク 1", it[2].SubName:GetText())
-      assert.are.equal(WFJ.Font.PATH, (it[2].SubName:GetFont()))
-      _G.PlayerSpellsFrame.SpellBookFrame:DisplayPage(2)
-      it = items()
-      assert.are.equal("レベル20", it[1].RequiredLevel:GetText())
-      assert.are.equal("ランク 1", it[1].SubName:GetText())
-      assert.are.equal("トレーナーで習得", it[2].RequiredLevel:GetText())
-      assert.are.equal("見習い", it[3].SubName:GetText())
-      for _, item in ipairs(_G.PlayerSpellsFrame.SpellBookFrame.pool) do
-        assert.are.equal(0, item.Name.calls.SetText)
-        assert.is_false(recorded(item.Name))
-      end
-      alt(true)
-      assert.are.equal("Level 20", it[1].RequiredLevel:GetText())
-      assert.are.equal("Apprentice", it[3].SubName:GetText())
-      alt(false)
-      assert.are.equal("見習い", it[3].SubName:GetText())
-    end)
-
-    it("a racial subtext is Japanese by fingerprint; a form or pet-family subtext stays English",
-      function()
-        PS.spells[10].subtext = "Racial Passive"
-        PS.spells[12].subtext, PS.spells[12].passive = "Racial", false
-        PS.spells[15].subtext = "Cat"
-        PS.spells[11].subtext, PS.spells[11].cached = "Summon", true -- Summon Imp
-        PS.openSpellBook()
-        local it = items()
-        assert.are.equal("種族パッシブ", it[1].SubName:GetText())
-        assert.are.equal("呼び出す", it[2].SubName:GetText())
-        assert.are.equal("種族", it[3].SubName:GetText())
-        assert.are.equal("Close", it[3].Name:GetText()) -- the spell name is never written
-        alt(true)
-        assert.are.equal("Racial Passive", it[1].SubName:GetText())
-        alt(false)
+        assert.are.equal("Rank 3", it[1].SubName:GetText())
+        assert.are.equal("Passive", it[3].SubName:GetText())
+        PS.loadSpell(11) -- the late subtext
+        WFJ.TextWatch.tick()
+        assert.are.equal("Rank 1", it[2].SubName:GetText())
         _G.PlayerSpellsFrame.SpellBookFrame:DisplayPage(2)
-        assert.are.equal("Cat", items()[3].SubName:GetText())
+        WFJ.TextWatch.tick()
+        it = items()
+        assert.are.equal("Level 20", it[1].RequiredLevel:GetText())
+        assert.are.equal("Portal", it[2].Name:GetText())
+        assert.are.equal("Apprentice", it[3].SubName:GetText())
+        PS.spells[15].subtext = "Rank 2"
+        _G.PlayerSpellsFrame.SpellBookFrame:RefreshSpellData()
+        WFJ.TextWatch.tick()
+        assert.are.equal("Rank 2", it[3].SubName:GetText())
+        for _, item in ipairs(_G.PlayerSpellsFrame.SpellBookFrame.pool) do
+          for _, fs in ipairs({ item.Name, item.SubName, item.RequiredLevel }) do
+            assert.is_false(recorded(fs))
+            assert.is_false(WFJ.TextWatch.watching(fs))
+            assert.are_not.equal(WFJ.Font.PATH, (fs:GetFont()))
+          end
+        end
+        assert.are.equal(0, SS.count("spellbook"))
       end)
 
-    it("an item the pool makes after setup is Japanese from its first subtext, before any event",
-      function()
-        PS.openSpellBook()
-        local item = PS.newItem() -- carries the hooked SpellBookItemMixin methods
-        item:Init({ slotIndex = 12, spellBank = 0 }) -- no DisplayedSpellsChanged: only the mixin hook sees it
-        assert.are.equal("パッシブ", item.SubName:GetText())
-      end)
-
-    it("records are keyed by spell slot: a page flip drops the slots no longer shown, a data refresh without the"
-      .. " event re-shows, and the book's OnHide releases", function()
+    it("nothing of the addon runs inside the fill: no item, mixin, page or title method is hooked", function()
       PS.openSpellBook()
-      assert.is_table(SS.get("spellbook", "sub.0.10"))
-      _G.PlayerSpellsFrame.SpellBookFrame:DisplayPage(2)
-      assert.is_nil(SS.get("spellbook", "sub.0.10"))
-      assert.is_table(SS.get("spellbook", "sub.0.13"))
-      local it = items()
-      PS.spells[15].subtext = "Rank 2" -- the client's data changed: UpdateAllSpellData re-runs UpdateVisuals
-      _G.PlayerSpellsFrame.SpellBookFrame:RefreshSpellData()
-      assert.are.equal("ランク 2", it[3].SubName:GetText())
-      _G.PlayerSpellsFrame.SpellBookFrame:Hide()
-      assert.are.equal("Rank 2", it[3].SubName:GetText())
-      assert.are.equal("Page 2/2", pageText():GetText())
-      assert.are.equal(0, SS.count("spellbook"))
+      WFJ.TextWatch.tick() -- the watcher's next frame
+      for label in pairs(Stub.hooks) do
+        assert.is_nil(label:find("UpdateVisuals", 1, true), label)
+        assert.is_nil(label:find("UpdateSubName", 1, true), label)
+        assert.is_nil(label:find("UpdateControls", 1, true), label)
+        assert.is_nil(label:find("UpdateFrameTitle", 1, true), label)
+      end
+      local item = PS.newItem()
+      item:Init({ slotIndex = 12, spellBank = 0 })
+      assert.are.equal("Passive", item.SubName:GetText())
     end)
 
     it("the settings menu's checkbox labels translate through Menu.ModifyMenu; other entries stay; the book's hide"
       .. " forgets them", function()
       PS.openSpellBook()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       local buttons = PS.openMenu("MENU_SPELL_BOOK_SETTINGS", { "Hide Passives", "Group Similar Spells on Flyouts",
         "Show all spell ranks" })
       assert.are.equal("パッシブを隠す", buttons[1].fontString:GetText())
@@ -266,6 +235,7 @@ describe("spellbook on the Forever client", function()
     PS.loadPlayerSpells(); book()
     WFJ.SpellBook.init()
     PS.openSpellBook()
+    WFJ.TextWatch.tick() -- the watcher's next frame
     local buttons = PS.openMenu("MENU_SPELL_BOOK_SETTINGS", { "Show all spell ranks" })
     local fs = buttons[1].fontString
     assert.are.equal("すべての呪文ランクを表示", fs:GetText())
@@ -293,6 +263,7 @@ describe("spellbook on the Forever client", function()
       assert.are.equal("検索", box.Instructions:GetText())
       assert.are.equal(WFJ.Font.PATH, (box.Instructions:GetFont()))
       PS.openSpellBook(); _G.PlayerSpellsFrame.SpellBookFrame:Hide()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       assert.are.equal("検索", box.Instructions:GetText())
       assert.is_nil(box.text)
       alt(true)
@@ -300,28 +271,24 @@ describe("spellbook on the Forever client", function()
       alt(false)
     end)
 
-    it("search-result section headers translate; a category header (a skill-line name) stays English; items still"
-      .. " translate beside them; a page without headers drops their records", function()
+    it("search-result and category headers stay as the client wrote them", function()
       PS.perPage = 4
       PS.book = { "Exact Match", 10, "General", 12, "Name Match", 15 }
       PS.openSpellBook()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       local f = items()
-      assert.are.equal("完全一致", f[1].Text:GetText())
-      assert.are.equal("ランク 3", f[2].SubName:GetText())
+      assert.are.equal("Exact Match", f[1].Text:GetText())
       assert.are.equal("General", f[3].Text:GetText())
-      assert.are.equal(0, f[3].Text.calls.SetText)
+      assert.is_false(recorded(f[1].Text))
       _G.PlayerSpellsFrame.SpellBookFrame:DisplayPage(2)
-      assert.are.equal("名前一致", items()[1].Text:GetText())
-      alt(true)
+      WFJ.TextWatch.tick()
       assert.are.equal("Name Match", items()[1].Text:GetText())
-      alt(false)
-      PS.book = { 10, 11 }
-      _G.PlayerSpellsFrame.SpellBookFrame:DisplayPage(1)
       for key in pairs(SS.records("spellbook")) do assert.is_nil(key:find("^header%."), key) end
     end)
 
     it("the Hide Passives entry's disabled tooltip translates on the menu button that owns it", function()
       PS.openSpellBook()
+      WFJ.TextWatch.tick() -- the watcher's next frame
       local buttons = PS.openMenu("MENU_SPELL_BOOK_SETTINGS", { "Hide Passives" })
       PS.hoverMenuButton(buttons[1], { "Unavailable while searching" })
       assert.are.equal("検索中は使えません", _G.GameTooltipTextLeft1:GetText())
@@ -338,7 +305,6 @@ describe("spellbook on the Forever client", function()
     _G.EventRegistry = { RegisterCallback = true }
     _G.Menu = { ModifyMenu = {} }
     assert.has_no.errors(function() WFJ.SpellBook.init() end)
-    assert.are.equal(0, WFJ.SpellBook.onDisplayedSpells())
     assert.are.equal(0, WFJ.SpellBook.onSettingsMenu(nil, { EnumerateElementDescriptions = "x" }))
     assert.are.equal(0, SS.count("spellbook"))
   end)

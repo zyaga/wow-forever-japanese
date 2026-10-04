@@ -48,7 +48,7 @@ function Normalize.v1(raw, player)
   s = s:gsub("|n", "\n")
   s = s:gsub("%$[Bb]", "\n")
   s = s:gsub("\239\188[\144-\153]", FW)
-  s = s:gsub("%$[Gg]([^:;]*):[^;]*;", "%1")
+  s = s:gsub("%$[Gg]%s*([^:;]-)%s*:[^;]*;", "%1") -- the branch trimmed, as the client shows it (ADR-059)
   s = s:gsub("%$[Nn]", "{name}"):gsub("%$[Cc]", "{class}"):gsub("%$[Rr]", "{race}")
   if player then
     if player.name and player.name ~= "" then s = Normalize.replaceWord(s, player.name, "{name}") end

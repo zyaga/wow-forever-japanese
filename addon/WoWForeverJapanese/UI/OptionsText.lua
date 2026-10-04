@@ -304,7 +304,7 @@ Text.SLASH = {
   "/wfj config [collector | about]  ·  /wfj fix  (report a line)",
   "/wfj bug  (report a bug or an idea)",
   "/wfj collector [on | off | status | path | clear | send [all]]",
-  "/wfj log [<n>]  (the problem log)",
+  "/wfj log [<n>]  (the problem log)  ·  /wfj taint  (action-bar taint scan)",
   "/wfj debug [hash | quest <id> | item <id> | spell <id>]",
   "/wfj debug [gossip | book | objective | fonts | ui [scan]]",
   "/wfj debug tooltip [on | off]  (record spell / item tooltip passes)",

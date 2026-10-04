@@ -119,4 +119,15 @@ describe("Labels.title", function()
     assert.is_nil(Stub.hooks["TitledFrame:SetTitle"])
     assert.are.equal(0, SS.count("t"))
   end)
+
+  it("a secret text (a unit tooltip line in combat) is left as the client wrote it, never compared", function()
+    local fs = Stub.fontString("Inbox")
+    _G.issecretvalue = function(v) return v == "Inbox" end
+    assert.are.equal(0, WFJ.Labels.show("t", "secret", fs))
+    assert.are.equal("Inbox", fs:GetText())
+    assert.is_nil(SS.get("t", "secret"))
+    _G.issecretvalue = nil
+    assert.are.equal(1, WFJ.Labels.show("t", "secret", fs))
+    assert.are.equal("受信箱", fs:GetText())
+  end)
 end)

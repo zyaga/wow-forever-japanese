@@ -3,6 +3,7 @@
 {"id": "590651c9a032f8d1", "field": "text", "en": "This is the very first thing I say to the player.  Huzzah!", "hash": "590651c9a032f8d1", "src": "vmangos@13b49dc"}
 {"id": "59084f8382710854", "field": "text", "en": "I am well versed in over 4 languages.", "hash": "59084f8382710854", "src": "vmangos@13b49dc"}
 {"id": "590e03ab77b2c0ae", "field": "text", "en": "Look fierce!  You are Kolkar, so act like one!", "hash": "590e03ab77b2c0ae", "src": "vmangos@13b49dc"}
+{"id": "591ac4e82386eeb1", "field": "text", "en": "The nearest bank ye'll find is The Vault in Ironforge, $glad : lass;. ", "hash": "591ac4e82386eeb1", "src": "vmangos@13b49dc"}
 {"id": "591eff86501b58bb", "field": "text", "en": "Thank you, you're a great audience!  I'll be here all week!", "hash": "591eff86501b58bb", "src": "vmangos@13b49dc"}
 {"id": "5925b9bcb235d9bb", "field": "text", "en": "We are quite safe from your pitiful band!", "hash": "5925b9bcb235d9bb", "src": "vmangos@13b49dc"}
 {"id": "592b4b5715d06b3c", "field": "text", "en": "And I was suited to see this?", "hash": "592b4b5715d06b3c", "src": "vmangos@13b49dc"}
@@ -23,7 +24,6 @@
 {"id": "597a1671045ed8ca", "field": "text", "en": "%s sniffs the air...", "hash": "597a1671045ed8ca", "src": "vmangos@13b49dc"}
 {"id": "59810b7792a2dc46", "field": "text", "en": "Are you a student of the medical sciences?", "hash": "59810b7792a2dc46", "src": "vmangos@13b49dc"}
 {"id": "598625864ffdcea7", "field": "text", "en": "Ras Frostwhat? Who is that?", "hash": "598625864ffdcea7", "src": "vmangos@13b49dc"}
-{"id": "59895f2b3bb0acbc", "field": "text", "en": "Och... a paladin?  Well $glad : lass;, ye're in luck!  Azar Stronghammer is back from training and is currently staying at the Thunderbrew Distillery in Kharanos.", "hash": "59895f2b3bb0acbc", "src": "vmangos@13b49dc"}
 {"id": "598ab44a6e827f9b", "field": "text", "en": "The Frostwolf Relief Hut was taken by the Horde!", "hash": "598ab44a6e827f9b", "src": "vmangos@13b49dc"}
 {"id": "599379901fa08888", "field": "text", "en": "I thank the Light for this blessing. May it be used for justice and to defend all good creatures.", "hash": "599379901fa08888", "src": "vmangos@13b49dc"}
 {"id": "59962272ec22cd17", "field": "text", "en": "I'm afraid that the blade which you hold in your hands is beyond saving. The hatred runs too deep. But do not lose hope, $c. Where one chapter has ended, a new one begins.$B$BFind his son - a more devout and pious man you may never meet. It is rumored that he is able to build the Ashbringer anew, without requiring the old, tainted blade.", "hash": "59962272ec22cd17", "src": "vmangos@13b49dc"}
@@ -46,6 +46,7 @@
 {"id": "59ef84e7b81bbfff", "field": "text", "en": "The creation of Teldrassil was a grand achievement, but now the world must shift to regain its balance.", "hash": "59ef84e7b81bbfff", "src": "vmangos@13b49dc"}
 {"id": "59f51cd271fe25c2", "field": "text", "en": "The Stormpike Graveyard is under attack!  If left unchecked, the Horde will capture it!", "hash": "59f51cd271fe25c2", "src": "vmangos@13b49dc"}
 {"id": "59f66e28ec6e1d31", "field": "text", "en": "Mourn the great loss.", "hash": "59f66e28ec6e1d31", "src": "vmangos@13b49dc"}
+{"id": "59f7f1d98bf4a26c", "field": "text", "en": "May Cenarius watch over you, $g brother : sister;.$B$BI am Tajarri, and I am a sworn protector of this shrine.  It is my honor to serve Keeper Remulos as a warden of this sacred land.", "hash": "59f7f1d98bf4a26c", "src": "vmangos@13b49dc"}
 {"id": "59f95b751933275e", "field": "text", "en": "It's all their fault, stupid Alliance army. Just had to build their towers right behind my farm.", "hash": "59f95b751933275e", "src": "vmangos@13b49dc"}
 {"id": "59fbe7453bd09613", "field": "text", "en": "You haven't lived until you've looked down on the world from the back of a wind rider.", "hash": "59fbe7453bd09613", "src": "vmangos@13b49dc"}
 {"id": "59ff1479fa492d2b", "field": "text", "en": "What is it, $c? The Horde is done with all collections, and final preparations are being made while the Alliance tries to catch up in their efforts. Is there anything else that you need?", "hash": "59ff1479fa492d2b", "src": "vmangos@13b49dc"}

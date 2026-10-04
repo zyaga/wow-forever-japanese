@@ -92,6 +92,22 @@ describe("UI/QuestMap: the camelot quest log", function()
         _G.QuestInfoFrame.rewardsFrame = nil
       end)
 
+    it("shows the details pane's markers right of its back button, not inline; hiding the pane hides them", function()
+      local back = _G.QuestMapFrame.QuestsFrame.DetailsFrame.BackFrame.BackButton
+      local parent = CreateFrame("Frame")
+      back.GetParent = function() return parent end
+      assert.is_true(QM.makeBanner())
+      assert.is_false(QM.makeBanner()) -- once
+      Q.showDetails(7)
+      assert.are.equal("Untranslated Errand", QuestInfoTitleHeader:GetText())
+      assert.are.equal(WFJ.MARKER.missing, QM.banner:GetText())
+      assert.are.equal("\n", QM.banner.markerSep) -- both markers do not fit on one line beside the button
+      assert.is_true(QM.banner:IsShown())
+      assert.are.same({ "LEFT", back, "RIGHT", QM.BANNER_GAP, 0 }, QM.bannerFrame.point)
+      QM.releaseDetails()
+      assert.is_false(QM.banner:IsShown())
+    end)
+
     it("renders the popup's quest on the same widgets, on its own surface", function()
       Q.showPopup(5)
       assert.are.equal("狼の毛皮", QuestInfoTitleHeader:GetText())

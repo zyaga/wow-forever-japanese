@@ -86,7 +86,7 @@ describe("the shared spell search on Forever", function()
     else
       assert.is_false(WFJ.SpellSearch.init()) -- waits for both addons
       loadPlayerSpells()
-      assert.are.equal(2, WFJ.LoadOnDemand.loaded(PLAYER_SPELLS)) -- the talent tree and the spellbook
+      assert.are.equal(1, WFJ.LoadOnDemand.loaded(PLAYER_SPELLS)) -- the talent tree (never the spellbook)
       L.load(STATE)
       assert.are.equal(1, WFJ.LoadOnDemand.loaded(L.ADDON))
     end
@@ -110,8 +110,7 @@ describe("the shared spell search on Forever", function()
       before_each(function() setup(order[1]) end)
 
       it("the overflow line is Japanese on every host; result names are never touched", function()
-        local hosts = { _G.PlayerSpellsFrame.TalentsFrame, _G.PlayerSpellsFrame.SpellBookFrame,
-          _G.LegacySystemFrame.TreePage.LegacyTreeTraitPanel }
+        local hosts = { _G.PlayerSpellsFrame.TalentsFrame, _G.LegacySystemFrame.TreePage.LegacyTreeTraitPanel }
         for _, host in ipairs(hosts) do
           local c = host.SearchPreviewContainer
           c:SetPreviewResults(RESULTS)
@@ -125,6 +124,14 @@ describe("the shared spell search on Forever", function()
         assert.are.equal("And 1 more", hosts[1].SearchPreviewContainer.OverflowCount.Text:GetText())
         alt(false)
         assert.are.equal("他1件", hosts[1].SearchPreviewContainer.OverflowCount.Text:GetText())
+      end)
+
+      -- the spellbook's preview runs inside the spellbook's passes (ADR-058)
+      it("the spellbook's preview is never written", function()
+        local c = _G.PlayerSpellsFrame.SpellBookFrame.SearchPreviewContainer
+        c:SetPreviewResults(RESULTS)
+        assert.is_true(unrecorded(c.OverflowCount.Text))
+        assert.are_not.equal("他2件", c.OverflowCount.Text:GetText())
       end)
 
       it("the suggested result is Japanese, on a reused pooled button too", function()
@@ -173,8 +180,8 @@ describe("the shared spell search on Forever", function()
   it("hooks install once per host", function()
     setup(true)
     assert.is_false(WFJ.SpellSearch.setupHost("talents"))
-    assert.are.equal(3, #Stub.hooks["SearchPreviewContainer:SetPreviewResults"])
-    assert.are.equal(3, #Stub.hooks["SearchPreviewContainer:UpdateResultsDisplay"])
+    assert.are.equal(2, #Stub.hooks["SearchPreviewContainer:SetPreviewResults"])
+    assert.are.equal(2, #Stub.hooks["SearchPreviewContainer:UpdateResultsDisplay"])
     assert.are.equal(1, #_G.PlayerSpellsFrame.TalentsFrame.callbacks)
   end)
 

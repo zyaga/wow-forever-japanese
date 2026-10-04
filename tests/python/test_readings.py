@@ -725,7 +725,7 @@ WINDOW_SURFACES = frozenset({
     "questframe.spellheaders", "questframe.timer", "questmap.list", "questmap.title", "quickjoin",
     "quickkeybind", "raid", "raid.static", "raidmanager", "readycheck", "recruitafriend", "reportframe",
     "recentallies", "reputation", "reputation.static", "scrappingmachine.static", "settingspanel", "settingspanel.static",
-    "settingstutorials", "skills", "spellbook", "spellbook.static", "spellsearch", "stable", "stacksplit",
+    "settingstutorials", "skills", "spellbook.static", "spellsearch", "stable", "stacksplit",
     "subscriptioninterstitial", "tabard", "talents.static", "taxi", "texttospeech", "texttospeech.static",
     "timemanager", "trade", "trainer", "trainer.static", "transmog", "tutorial", "wardrobe", "worldmap",
     "worldmap.static",

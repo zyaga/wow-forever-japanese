@@ -18,7 +18,9 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 # the tool windows and the minimap button script only their own frames
                 "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/ReportWindow.lua", "UI/MinimapButton.lua",
                 # the tooltip trace window (/wfj debug tooltip)
-                "UI/Slash.lua"}
+                "UI/Slash.lua",
+                # the text watch and the taint watch script only their own frame (an OnUpdate, an all-events ring)
+                "UI/TextWatch.lua", "UI/TaintWatch.lua"}
 
 PATTERNS = {
     "PanelTemplates_SetTab": re.compile(r"\bPanelTemplates_SetTab\s*\("),
