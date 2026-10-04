@@ -15,6 +15,18 @@ Website: [foreverjapanese.com](https://foreverjapanese.com)
 
 ![The quest window in Japanese: a quest from Shadowglen, with names such as Conservator Ilthalaine left in English](docs/images/hero.jpg)
 
+## What it translates
+
+| | In Japanese |
+|---|---|
+| Quests | 4,637 |
+| NPC dialogue lines | 10,933 |
+| Book pages | 923 |
+| Letter pages | 209 |
+| Item tooltips | 9,124 |
+| Spell tooltips | 19,977 |
+| UI | 15,843 |
+
 ## Install
 
 ### With the CurseForge app
@@ -173,6 +185,18 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 ウェブサイト: [foreverjapanese.com](https://foreverjapanese.com)
 
 ![日本語のクエストウィンドウ。Shadowglen のクエストで、Conservator Ilthalaine などの名前は英語のまま](docs/images/hero.jpg)
+
+### 翻訳の量
+
+| | 日本語化済み |
+|---|---|
+| クエスト | 4,637 |
+| NPC の会話 | 10,933 行 |
+| 本 | 923 ページ |
+| 手紙 | 209 ページ |
+| アイテムのツールチップ | 9,124 |
+| 呪文のツールチップ | 19,977 |
+| UI | 15,843 |
 
 ### インストール
 

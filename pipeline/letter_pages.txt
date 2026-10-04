@@ -1,0 +1,237 @@
+# Book pages a letter shows, written by `make letter-pages` (pipeline/wfj/dev/letter_pages.py).
+# Do not edit by hand. `<page id>  # <the item that opens it>` per line. Every other page is a book page.
+16  # A Dusty Unsent Letter
+17  # A Dusty Unsent Letter
+18  # An Undelivered Letter
+19  # An Undelivered Letter
+25  # Maybell's Love Letter
+26  # Gramma Stonefield's Note
+28  # Verner's Note
+36  # The General's Response
+38  # Wiley's Note
+39  # Wiley's Note
+41  # Shaw's Report
+42  # Shaw's Report
+43  # Shaw's Report
+48  # A Mysterious Message
+49  # Solomon's Plea to Westfall
+50  # Stoutmantle's Response to Solomon
+51  # Solomon's Plea to Darkshire
+52  # Ebonlocke's Response to Solomon
+53  # Letter to Ello
+54  # Translated Letter
+55  # Furlbrow's Deed
+56  # Furlbrow's Deed
+63  # Calor's Note
+80  # A Letter to Grelin Whitebeard
+86  # Grelin's Report
+87  # Grelin's Report
+88  # Senir's Report
+89  # Senir's Report
+90  # Senir's Report
+91  # Senir's Report
+92  # Merrin's Letter
+93  # Merrin's Letter
+94  # Merrin's Letter
+182  # Ironband's Progress Report
+183  # Ironband's Progress Report
+184  # Ironband's Progress Report
+209  # Marshal McBride's Documents
+210  # Marshal McBride's Documents
+211  # Marshal McBride's Documents
+212  # Marshal McBride's Documents
+214  # Thurman's Letter
+215  # Letter to the City Architect
+218  # Gramma Stonefield's Note
+219  # Report on the Defias Brotherhood
+220  # Report on the Defias Brotherhood
+221  # Report on the Defias Brotherhood
+222  # Report on the Defias Brotherhood
+223  # Scarlet Crusade Documents
+224  # Scarlet Crusade Documents
+235  # Translated Letter from The Embalmer
+244  # Sevren's Orders
+248  # Decrypted Letter
+249  # Syndicate Missive
+252  # Thurman's Letter
+253  # Thurman's Letter
+254  # Thurman's Letter
+255  # Thurman's Letter
+256  # Thurman's Letter
+257  # Decrypted Letter
+258  # Decrypted Letter
+259  # Decrypted Letter
+260  # Deprecated Remington's List
+303  # Bloodsail Orders
+306  # Bloodsail Orders
+307  # Bloodsail Orders
+308  # Crumpled Note
+309  # Ripped Note
+310  # Torn Note
+311  # Muddy Note
+312  # Muddy Note
+313  # Muddy Note
+314  # Muddy Note
+315  # Decrypted Letter
+316  # Deepfury's Orders
+317  # Sully Balloo's Letter
+318  # Sully Balloo's Letter
+319  # Sully Balloo's Letter
+320  # Sully Balloo's Letter
+321  # Sully Balloo's Letter
+322  # Sully Balloo's Letter
+323  # Sully Balloo's Letter
+332  # Sully Balloo's Letter
+333  # Sara Balloo's Plea
+334  # Sara Balloo's Plea
+335  # Sara Balloo's Plea
+336  # Cloth Request
+337  # Admiral Proudmoore's Orders
+338  # Admiral Proudmoore's Orders
+340  # Recruitment Letter
+341  # Signed Recruitment Letter
+351  # Note from Neeru
+352  # Venture Co. Documents
+353  # Venture Co. Documents
+354  # Venture Co. Documents
+360  # Message for Elissa Starbreeze
+361  # Letter to Delgren
+372  # Bonegrip's Note
+373  # Bonegrip's Note
+374  # Bonegrip's Note
+375  # Bonegrip's Note
+376  # Bel'dugur's Note
+377  # Bel'dugur's Note
+378  # Bel'dugur's Note
+379  # Bel'dugur's Note
+380  # Deathstalker Report
+381  # Deathstalker Report
+382  # Deathstalker Report
+383  # Deathstalker Report
+386  # Deathstalker Report
+415  # Letter to Jin'Zil
+436  # Kravel's Parts Order
+437  # Letter to Delgren
+440  # Fool's Stout Report
+441  # Fizzle Brassbolts' Letter
+448  # Zamah's Note
+449  # Zamah's Note
+507  # Spy's Report
+527  # Captain's Documents
+528  # Letter to Jorgen
+547  # Captain's Documents
+548  # Spy's Report
+579  # Spy's Report
+580  # Defias Docket
+581  # Defias Docket
+582  # Defias Docket
+607  # Stormpike's Request
+649  # Stormpike's Request
+650  # Stormpike's Request
+691  # Musty Note
+694  # Musty Letter
+695  # Musty Missive
+711  # Neeka's Report
+751  # Fizzle Brassbolts' Letter
+791  # Neeka's Report
+792  # Neeka's Report
+793  # Neeka's Report
+831  # Furen's Instructions
+832  # Furen's Instructions
+833  # Furen's Instructions
+834  # Furen's Instructions
+835  # Furen's Instructions
+871  # Jordan's Weapon Notes
+872  # Jordan's Weapon Notes
+873  # Jordan's Weapon Notes
+874  # Jordan's Weapon Notes
+875  # Jordan's Weapon Notes
+876  # Jordan's Weapon Notes
+911  # Tabetha's Instructions
+931  # Thun'grim's Instructions
+991  # Tabetha's Instructions
+992  # Certificate of Thievery
+1071  # Warchief's Orders
+1156  # A Short Note
+1231  # Proof of Deed
+1311  # Crystallized Note
+1312  # Crystallized Note
+1313  # Crystallized Note
+1314  # Crystallized Note
+1471  # Bolvar's Decree
+1691  # Tinkee's Letter
+1711  # Urgent Message
+1771  # Assassination Note
+1772  # Important Blackrock Documents
+2232  # Secret Note #1
+2233  # Secret Note #2
+2234  # Secret Note #3
+2271  # Cliffwatcher Longhorn Report
+2432  # Encrypted Letter
+2433  # Encrypted Memorandum
+2439  # Simple Letter
+2440  # Simple Memorandum
+2441  # Simple Note
+2445  # Glyphic Letter
+2446  # Glyphic Memorandum
+2449  # Tainted Letter
+2450  # Tainted Memorandum
+2453  # Etched Note
+2458  # Verdant Note
+2460  # Rune-Inscribed Note
+2463  # Consecrated Letter
+2465  # Hallowed Letter
+2491  # Maggran's Reserve Letter
+2511  # Gryshka's Letter
+2512  # Lewis' Note
+2513  # Laird's Response
+2514  # Brock's List
+2515  # Podrig's Order
+2551  # Rabine's Letter
+2591  # The Pariah's Instructions
+2592  # The Pariah's Instructions
+2593  # The Pariah's Instructions
+2595  # The Pariah's Instructions
+2596  # The Pariah's Instructions
+2691  # Mor'zul's Instructions
+2692  # Mor'zul's Instructions
+2693  # Mor'zul's Instructions
+2694  # Mor'zul's Instructions
+2695  # Mor'zul's Instructions
+2696  # Mor'zul's Instructions
+2711  # Mor'zul's Instructions
+2841  # Metzen's Letters and Notes
+2842  # Metzen's Letters and Notes
+2843  # Metzen's Letters and Notes
+2844  # Metzen's Letters and Notes
+2872  # Call to Arms Announcement
+2873  # Mildewed Letter
+2878  # A Bloodstained Envelope
+2880  # A Torn Letter
+2881  # A Crumpled Missive
+2882  # A Careworn Note
+2884  # A Smudged Document
+2885  # Sealed Research Report
+2886  # Sealed Research Report
+2887  # Sealed Research Report
+2888  # Sealed Research Report
+2889  # Sealed Research Report
+2890  # Sealed Research Report
+8721  # Cutty's Note
+8816  # Acolyte's Note
+8828  # Charred Note
+8871  # Note from Ba'so
+8887  # Blackrat's Note
+8888  # Acolyte's Note
+9036  # Message from Emily
+9122  # Confidential Message
+9182  # Singed Note
+9194  # Orders from the Grand Crusader
+9217  # Torn Letter
+9236  # Bloody Missive
+9257  # Wanted Notice
+9552  # Shadowsworn Note
+9585  # Strange Note
+9915  # List of Components
+9924  # Orders from the Commander
+9955  # Fizzlefuse's Shopping List
