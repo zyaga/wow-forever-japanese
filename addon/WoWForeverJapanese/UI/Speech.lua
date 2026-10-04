@@ -370,8 +370,11 @@ function Speech.init(d)
   if ready then return false end
   deps = d or {}
   -- the chat side's Alt / switch and fonts are UI/ChatSystem's: without it a rewritten line could not go back
-  if type(get("frames")) ~= "table" or not typeIds() or type(deps.key) ~= "function"
-      or not WFJ.ChatSystem.isReady() then
+  local missing = type(get("frames")) ~= "table" and "frames" or not typeIds() and "chat types"
+    or type(deps.key) ~= "function" and "key" or not WFJ.ChatSystem.isReady() and "ChatSystem" or nil
+  if missing then
+    -- left unhooked, no NPC line is translated or traced: the log says so
+    if WFJ.Diag then WFJ.Diag.log("speech", "not hooked", { missing = missing }) end
     return false
   end
   ready = true

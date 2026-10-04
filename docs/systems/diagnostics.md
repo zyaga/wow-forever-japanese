@@ -26,6 +26,7 @@ A `speech` entry's message is one reason per exit of the chat hook (`Speech.onAd
 
 | Reason | What happened |
 |---|---|
+| `not hooked` | logged once at load, not per line: the speech hook was not set up, so no NPC line is translated or traced; `missing` names what was not ready (`frames`, `chat types`, `key` or `ChatSystem`) |
 | `unknown chat type` | the line's chat type id is not one the addon knows |
 | `no line` | no chat frame or no line text was passed |
 | `no eventArgs` | the client passed no event arguments |
