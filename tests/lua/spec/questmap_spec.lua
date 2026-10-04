@@ -101,6 +101,7 @@ describe("UI/QuestMap: the camelot quest log", function()
       Q.showDetails(7)
       assert.are.equal("Untranslated Errand", QuestInfoTitleHeader:GetText())
       assert.are.equal(WFJ.MARKER.missing, QM.banner:GetText())
+      assert.are.equal("\n", QM.banner.markerSep) -- both markers do not fit on one line beside the button
       assert.is_true(QM.banner:IsShown())
       assert.are.same({ "LEFT", back, "RIGHT", QM.BANNER_GAP, 0 }, QM.bannerFrame.point)
       QM.releaseDetails()

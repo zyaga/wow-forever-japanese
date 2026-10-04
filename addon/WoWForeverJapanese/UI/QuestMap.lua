@@ -1043,7 +1043,7 @@ end
 
 local hooked = false
 
--- The details pane's markers go on one line right of its back button, the one free spot at the top: inline, the
+-- The details pane's markers go right of its back button, one per line, the one free spot at the top: inline, the
 -- message pushed the description down and read as part of it. The popup pane has no back button and keeps them
 -- inline. → true when the banner was made
 QuestMap.BANNER_GAP, QuestMap.BANNER_WIDTH = 8, 200

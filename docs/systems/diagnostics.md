@@ -11,7 +11,7 @@ Some failures only show in a long play session: a hooked method that stops worki
 | `session` | each load (login or `/reload`) | client build, addon version, the surfaces whose setup failed |
 | `init` | each surface whose setup failed, at load or later (a load-on-demand window) | the surface, the error (300 characters at most) |
 | `blocked` | the client's `ADDON_ACTION_BLOCKED` or `ADDON_ACTION_FORBIDDEN` naming this addon | the event, the protected function (`fn`), the call stack at the block (`stack`; the client fires the event inside the blocked call), the first Blizzard Lua line in it (`site`, also in the message, so one function blocked from two paths makes two entries), whether combat was on (`combat`) |
-| `context` | after each block | the last 60 game events before it (`events`) |
+| `context` | after the first block (later blocks only count in its `n`, so a long fight never pushes the first block's entries out of the log) | the last 60 game events before it (`events`) |
 | `turned` | the taint watch: a watched bar field (or any field on the action bars, `reason = bar sweep`) reads as tainted for the first time since it was last clean | the field, the addon that tainted it (`by`), `reason`, `combat`, `events` |
 | `write` | the taint watch: a watched field's writer left the value tainted | the field and the first stack line in the message, `by`, `stack` (the writer's whole path), `combat`, `events` |
 | `taint` | after the first block of a session, once combat is over, and on `/wfj taint` | every field under the bar, Edit Mode, tracker, tooltip and spellbook frames that reads as tainted, with the addon that did it (`fields`), the globals this addon tainted (`globals`), `checked` |

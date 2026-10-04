@@ -112,7 +112,7 @@ describe("UI/TaintWatch", function()
     assert.is_true(TW.onBlocked())
     assert.is_false(TW.onBlocked())
     assert.are.equal(2, entriesOf("taint")[1].n) -- the slash scan and the first block's (one clock second)
-    assert.are.equal(2, entriesOf("context")[1].n) -- both blocks keep their events
+    assert.are.equal(2, entriesOf("context")[1].n) -- every block counts on the first block's entry
     _G.WFJ_DB = nil
   end)
 

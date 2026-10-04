@@ -254,7 +254,8 @@ local scannedOnBlock = false
 -- tainted values it looks for stay tainted until rewritten). → true when this block queued the scan
 TaintWatch.scanPending = false
 function TaintWatch.onBlocked()
-  WFJ.Diag.log("context", "events before block " .. clock(), { events = TaintWatch.events() })
+  -- one entry for every block: repeats only count, so a long fight never pushes the first block's entries out
+  WFJ.Diag.log("context", "events before the first block", { events = TaintWatch.events() })
   if scannedOnBlock then return false end
   scannedOnBlock = true
   TaintWatch.scanPending = true
@@ -306,10 +307,17 @@ local function hookWriters()
   end) then
     n = n + 1
   end
-  if hook(C.resolve("ObjectiveTrackerFrame"), "UpdateTopPadding", function(self)
-    TaintWatch.wrote("ObjectiveTrackerFrame.topModulePadding", self, "topModulePadding")
-  end) then
-    n = n + 1
+  -- the tracker is load-on-demand: hooked when Blizzard_ObjectiveTracker has loaded (now, or later)
+  local function hookTracker()
+    hook(C.resolve("ObjectiveTrackerFrame"), "UpdateTopPadding", function(self)
+      TaintWatch.wrote("ObjectiveTrackerFrame.topModulePadding", self, "topModulePadding")
+    end)
+  end
+  local LOD = WFJ.LoadOnDemand
+  if type(LOD) == "table" and type(LOD.when) == "function" then
+    LOD.when("Blizzard_ObjectiveTracker", hookTracker)
+  else
+    hookTracker()
   end
   for _, fn in ipairs({ "ClearOnBarHighlightMarks", "UpdateOnBarHighlightMarksBySpell",
     "UpdateOnBarHighlightMarksByFlyout", "UpdateOnBarHighlightMarksByPetAction" }) do
