@@ -11,8 +11,7 @@
 --   events   the last RING game events, saved with each entry above and with each block;
 --   scan     at the first block of a session, and on /wfj taint: every field under the bar and Edit Mode frames
 --            that reads as tainted, and the globals this addon tainted.
--- Its own post-hooks run after the hooked function returns and read only; they were present through the sessions
--- that proved the bars clean.
+-- Its own post-hooks run after the hooked function returns and only read, so they add no taint of their own.
 local _, WFJ = ...
 local TaintWatch = {}
 WFJ.TaintWatch = TaintWatch
@@ -96,14 +95,33 @@ end
 -- One game event into the ring, with its first argument when that is a number, a boolean or one short token (an
 -- addon name, a unit, an id). Chat events, any text with a space and a player's GUID are left out: the log keeps no
 -- game text and nothing that names a character.
+-- A unit token ("player", "party2", "nameplate14"), never a name.
+local UNIT_TOKENS = { player = true, pet = true, target = true, focus = true, mouseover = true, vehicle = true,
+  npc = true, softenemy = true, softfriend = true, softinteract = true }
+local NUMBERED = { party = true, raid = true, arena = true, boss = true, nameplate = true }
+function TaintWatch.isUnitToken(s)
+  local rest, n = s, 1
+  while n > 0 and rest ~= "" do -- "raid12pettarget" → "raid12"
+    local a, b
+    rest, a = rest:gsub("target$", "")
+    rest, b = rest:gsub("pet$", "")
+    n = a + b
+  end
+  if rest == "" then return true end
+  local base, num = rest:match("^(%a+)(%d*)$")
+  if not base then return false end
+  if num ~= "" then return NUMBERED[base] == true end
+  return UNIT_TOKENS[base] == true
+end
+
 function TaintWatch.onEvent(event, a1)
   if TaintWatch.NOISY[event] or event:find("^CHAT_MSG_") then return end
   local arg = ""
   local t = type(a1)
   if (t == "number" or t == "boolean") and not isSecret(a1) then
     arg = " " .. tostring(a1)
-  elseif t == "string" and not isSecret(a1) and #a1 <= 60 and not a1:find("%s") and not a1:find("^Player%-") then
-    arg = " " .. a1
+  elseif t == "string" and not isSecret(a1) and (event == "ADDON_LOADED" or TaintWatch.isUnitToken(a1)) then
+    arg = " " .. a1 -- only an addon or unit token: another event's text may be a player's name
   end
   TaintWatch.push(event .. arg)
 end
@@ -134,8 +152,8 @@ function TaintWatch.wrote(label, t, key)
   local tainted, by = check(t, key)
   if not tainted then return nil end
   local s = stack()
-  local site = s:match("[^\n]*[^\n]") or "?"
-  return WFJ.Diag.log("write", label .. " <" .. site:gsub("^%s+", "") .. ">", { by = tostring(by), stack = s,
+  local site = WFJ.Diag.blockedSite(s) -- the first line outside this addon: the Blizzard writer
+  return WFJ.Diag.log("write", label .. " <" .. site .. ">", { by = tostring(by), stack = s,
     combat = inCombat(), events = TaintWatch.events() })
 end
 
@@ -145,7 +163,8 @@ TaintWatch.was = was
 -- One pass over FIELDS: each field that turned tainted since the last pass is logged. → the number that turned
 function TaintWatch.checkFields(reason)
   local n = 0
-  for _, f in ipairs(fieldList()) do
+  TaintWatch.fields = TaintWatch.fields or fieldList()
+  for _, f in ipairs(TaintWatch.fields) do
     local t = f[2] and C.resolve(f[2]) or nil
     if f[2] == nil or type(t) == "table" then
       local tainted, by = check(t, f[3])
@@ -231,10 +250,22 @@ end
 local scannedOnBlock = false
 
 -- Main, after Diag logged a block naming this addon: the recent events, and the scan once per session.
+-- A block: its events now, the scan once per session and out of combat (it walks _G, too heavy for a fight; the
+-- tainted values it looks for stay tainted until rewritten). → true when this block queued the scan
+TaintWatch.scanPending = false
 function TaintWatch.onBlocked()
   WFJ.Diag.log("context", "events before block " .. clock(), { events = TaintWatch.events() })
   if scannedOnBlock then return false end
   scannedOnBlock = true
+  TaintWatch.scanPending = true
+  TaintWatch.scanWhenSafe()
+  return true
+end
+
+-- Runs the queued block scan when combat is over. → true when it ran
+function TaintWatch.scanWhenSafe()
+  if not TaintWatch.scanPending or inCombat() then return false end
+  TaintWatch.scanPending = false
   TaintWatch.scan("first block")
   return true
 end
@@ -313,8 +344,7 @@ function TaintWatch.init()
   end
   for _, fn in ipairs({ "ShowUIPanel", "HideUIPanel" }) do
     hook(nil, fn, function(frame)
-      local name = type(frame) == "table" and type(frame.GetName) == "function" and frame:GetName() or frame
-      TaintWatch.push(fn .. " " .. tostring(name))
+      TaintWatch.push(fn .. " " .. tostring(WFJ.Diag.nameOf(frame)))
     end)
   end
   local n = hookWriters()
@@ -325,6 +355,7 @@ function TaintWatch.init()
     timer.NewTicker(TaintWatch.CHECK_EVERY, function()
       ticks = ticks + 1
       TaintWatch.checkFields("timer")
+      TaintWatch.scanWhenSafe()
       if ticks % TaintWatch.SWEEP_EVERY == 0 then TaintWatch.sweepBars() end
     end)
   end

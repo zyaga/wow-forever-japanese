@@ -1053,7 +1053,8 @@ function QuestMap.makeBanner()
       or type(back:GetParent()) ~= "table" then
     return false
   end
-  QuestMap.banner, QuestMap.bannerFrame = WFJ.Render.createBannerBeside(back, QuestMap.BANNER_GAP, QuestMap.BANNER_WIDTH)
+  QuestMap.banner, QuestMap.bannerFrame =
+    WFJ.Render.createBannerBeside(back, QuestMap.BANNER_GAP, QuestMap.BANNER_WIDTH)
   WFJ.Render.setBanner(SURFACE, QuestMap.banner)
   WFJ.Render.setBanner(INFO, QuestMap.banner)
   return true

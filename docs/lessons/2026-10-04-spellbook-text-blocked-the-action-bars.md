@@ -26,8 +26,8 @@ With `taintLog` at 0 the block still happened, rarely. The addon's own log trace
 It looked random because it needs, in one session: a translated spellbook page, a refill (tab switch, page flip, learning a spell), a hover, and then a bar change in combat.
 
 ## Fix
-- The spellbook's spell subtexts, level lines, flyout names and search-result headers are no longer written ([UI/SpellBook.lua](../architecture/addon-modules.md)). They stay English.
-- The title and page number are followed by `UI/TextWatch` from the addon's own frame instead of hooks that run inside the spellbook's passes.
+- The spellbook's spell subtexts, level lines, flyout names, search-result headers, page number and search preview are no longer written ([UI/SpellBook.lua](../architecture/addon-modules.md)). They stay English. The page number is measured by the paging controls' layout in the same pass that refills the items.
+- The title is followed by `UI/TextWatch` from the addon's own frame instead of a hook that runs inside the spellbook's passes.
 - A permanent taint watch (`UI/TaintWatch`) and a fuller block record in the problem log ([Diagnostics](../systems/diagnostics.md)).
 - Unrelated, found on the way: unit tooltips in combat hand over secret text, and `Labels.show` compared it. It now leaves a secret line alone.
 

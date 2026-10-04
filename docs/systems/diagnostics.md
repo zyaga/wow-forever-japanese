@@ -14,7 +14,7 @@ Some failures only show in a long play session: a hooked method that stops worki
 | `context` | after each block | the last 60 game events before it (`events`) |
 | `turned` | the taint watch: a watched bar field (or any field on the action bars, `reason = bar sweep`) reads as tainted for the first time since it was last clean | the field, the addon that tainted it (`by`), `reason`, `combat`, `events` |
 | `write` | the taint watch: a watched field's writer left the value tainted | the field and the first stack line in the message, `by`, `stack` (the writer's whole path), `combat`, `events` |
-| `taint` | the first block of a session, and `/wfj taint` | every field under the bar, Edit Mode, tracker, tooltip and spellbook frames that reads as tainted, with the addon that did it (`fields`), the globals this addon tainted (`globals`), `checked` |
+| `taint` | after the first block of a session, once combat is over, and on `/wfj taint` | every field under the bar, Edit Mode, tracker, tooltip and spellbook frames that reads as tainted, with the addon that did it (`fields`), the globals this addon tainted (`globals`), `checked` |
 | `hook` | a method the addon post-hooked on one frame (`Diag.watch`) no longer reads as a function, or is another function than the hook the addon left there (`seen = replaced`) | frame, method, what it reads as, its type on the frame's own table and on what the frame inherits |
 | `memory` | every 5 minutes | the Lua memory |
 
@@ -45,7 +45,7 @@ Forever hides Lua errors by default, so a player never sees an error in this add
 - **Their writers:** a post-hook on `SetShowGrid`, `SetSnappedToFrame` / `ClearFrameSnap`, `MainActionBarStateOverridden`, `UpdateTopPadding`, the highlight-mark functions and `PetActionBar`'s mark methods. The hook only reads; when the value comes out tainted it is a `write` entry with the stack.
 - **Bar sweep:** every 10 seconds out of combat, any field on the action bars that newly reads as tainted, for fields not on the list.
 - **Events:** the last 60 game events (with `ShowUIPanel` / `HideUIPanel`), frequent ones left out, saved with every entry above and every block.
-- **Scan:** at the first block of a session, and on `/wfj taint`.
+- **Scan:** after the first block of a session, once combat is over (it walks every global, too heavy for a fight; a tainted value stays tainted until it is rewritten), and on `/wfj taint`.
 
 Its cost is a few dozen `issecurevariable` calls every 2 seconds and one table write per game event. Nothing turns it off.
 
@@ -67,7 +67,7 @@ Watched now: chat frames' `AddMessage` (`UI/Speech`), chat edit boxes' `UpdateHe
 - After the session: `WTF/Account/<ACCOUNT>/SavedVariables/WoWForeverJapanese.lua`, the `WFJ_Log` table. The client writes it on logout, `/reload` and exit, not on a crash.
 
 ## Privacy
-No game text, no character, realm or account name, no chat, no location. Frame and function names, counts and times only. The taint watch's event ring keeps an event's first argument only when it is a number or one short token with no space (a unit, an id, an addon name), never a secret value or a player's GUID, and leaves every chat event out. A stored Lua error holds the error's own message and stack, with the player's name written as `<name>`; stack paths start at `Interface/AddOns/`, never the account folder.
+No game text, no character, realm or account name, no chat, no location. Frame and function names, counts and times only. The taint watch's event ring keeps an event's first argument only when it is a number, a unit token (`player`, `party2`, `nameplate14`, `targettarget`) or the addon name of `ADDON_LOADED`, never other text (another event's first argument may be a player's name), never a secret value, and leaves every chat event out. A `write` entry names the first line of its stack outside this addon, the Blizzard writer. A stored Lua error holds the error's own message and stack, with the player's name written as `<name>`; stack paths start at `Interface/AddOns/`, never the account folder.
 
 ## Key files
 `addon/WoWForeverJapanese/Core/Diag.lua` · `Core/ErrorLog.lua` · `UI/TaintWatch.lua` · `Main.lua` (load, session, start, the error and stack deps) · `UI/Slash.lua` (`log`, `taint`) · `tests/lua/spec/diag_spec.lua` · `tests/lua/spec/errorlog_spec.lua` · `tests/lua/spec/taintwatch_spec.lua`

@@ -35,8 +35,10 @@ _RE_TEX = re.compile(r"\|T[^|]*\|t")
 _RE_COLOR = re.compile(r"\|c[0-9A-Fa-f]{8}")
 # A branch is trimmed: the client shows `$g lad : lass;?` as "lad?" (traced in game, ADR-059), so the spaces a
 # source writes around a branch are not part of the text.
-_RE_GENDER = re.compile(r"\$[Gg]\s*([^:;]*?)\s*:[^;]*;")
-_RE_GENDER_BOTH = re.compile(r"\$[Gg][^:;]*:\s*([^;]*?)\s*;")  # the second (female) branch, female_variant only
+# ASCII whitespace only, as Lua's %s matches (the same set as _RE_WS)
+_RE_GENDER = re.compile(r"\$[Gg][ \t\r\n\f\v]*([^:;]*?)[ \t\r\n\f\v]*:[^;]*;")
+# the second (female) branch, female_variant only
+_RE_GENDER_BOTH = re.compile(r"\$[Gg][^:;]*:[ \t\r\n\f\v]*([^;]*?)[ \t\r\n\f\v]*;")
 _RE_WS = re.compile(r"[ \t\r\n\f\v]+")
 _FW_DIGITS = {ord(c): str(i) for i, c in enumerate("０１２３４５６７８９")}
 _PLACEHOLDERS = (

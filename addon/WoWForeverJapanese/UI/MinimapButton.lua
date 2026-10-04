@@ -112,8 +112,8 @@ function MinimapButton.items()
 end
 
 -- The menu is a small frame of the addon's own, not Blizzard's Menu: opening a Blizzard context menu from this
--- button closed the game twice on Forever (a Lua engine check failed in Menu.lua's AcquireMenu, writing the owner
--- onto the pooled menu frame). Rows: the title, the switch with its check mark, a divider, the three actions. A click
+-- button can fail a Lua engine check in Menu.lua's AcquireMenu (writing the owner onto the pooled menu frame) and
+-- close the game. Rows: the title, the switch with its check mark, a divider, the three actions. A click
 -- on a row runs it and closes the menu; a click anywhere else, or another right-click on the button, closes it.
 MinimapButton.ROW_HEIGHT = 20
 MinimapButton.MENU_WIDTH = 180
@@ -201,7 +201,18 @@ function MinimapButton.showMenu(owner)
   for i = #items + 1, #f.rows do f.rows[i]:Hide() end
   f:SetSize(MinimapButton.MENU_WIDTH, -y + 10)
   f:ClearAllPoints()
-  f:SetPoint("TOPRIGHT", owner, "BOTTOMLEFT", 0, 0)
+  if owner then
+    f:SetPoint("TOPRIGHT", owner, "BOTTOMLEFT", 0, 0)
+  else -- from the addon dropdown on the minimap: at the cursor, as a context menu opens
+    local ui, cursor = C.resolve("UIParent"), C.resolve("GetCursorPosition")
+    local cx, cy = 0, 0
+    if type(cursor) == "function" and ui then
+      local scale = ui:GetEffectiveScale()
+      cx, cy = cursor()
+      cx, cy = cx / scale, cy / scale
+    end
+    f:SetPoint("TOPLEFT", ui, "BOTTOMLEFT", cx, cy)
+  end
   f:Show()
   return f
 end
@@ -219,6 +230,7 @@ end
 -- One click (the button's, or the addon dropdown's): right opens the menu, anything else the fix window.
 function MinimapButton.click(owner, mouseButton)
   if mouseButton == "RightButton" then return MinimapButton.openMenu(owner) end
+  closeMenu()
   WFJ.FixWindow.open()
   return true
 end

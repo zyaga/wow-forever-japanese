@@ -12,6 +12,7 @@ WFJ.Data.add("gossip", {
   ["a737bdadcacfef5c"] = { "このGyromechanic GearsとRestabilization Cogsを取り付けたら、The Recombobulatorを起動しよう。", "." },
   ["a747f3db4f0edd9d"] = { "ありがとう、{name}。光があなたを祝福し、道を導きますように、同胞よ。", "." },
   ["a748415fa65fae51"] = { "Barnil、Chapter Iをどこかへやってしまったようだ。", "." },
+  ["a7533681c2c3ed25"] = { "武器の扱いを教わりたいってのか? ほれ、ぽかんと突っ立ってないで、はっきり言いな、若いの!", "." },
   ["a7538374408b1397"] = { "{name}、貴様の死を、Defias Brotherhoodに歯向かう全ての者への見せしめにしてくれる！", "." },
   ["a7541e6cfcf72454"] = { "ごきげんよう、若いの。Ironforge本体の外で一番の掘り出し物を探しているなら、来る場所は間違っていないよ。", "." },
   ["a76369b6780171b0"] = { "すまない、Pebblebitty。", "." },

@@ -3,7 +3,7 @@
 -- (camelot/classtalents/blizzard_classtalentsframe.xml:153), set up through WFJ.LoadOnDemand.when; every child is a
 -- parentKey (dotted Compat candidates).
 -- - The window title is written by PlayerSpellsFrame:UpdateFrameTitle, shared with the spellbook tab: UI/SpellBook
---   owns that one hook (TALENTS / TALENTS_INSPECT_FORMAT on surface "playerspells").
+--   follows it with UI/TextWatch (TALENTS / TALENTS_INSPECT_FORMAT on surface "playerspells").
 -- - Static XML text, never rewritten: ApplyButton TALENT_FRAME_APPLY_BUTTON_TEXT (xml:438), ActiveSpec.ActivateButton
 --   TALENT_SPEC_ACTIVATE (:111), ActiveSpec.ActiveLabel TALENT_SPEC_ACTIVE (:102), ClassCurrencyDisplay.UnspentLabel
 --   UNSPENT_POINTS (:13; the number is a separate FontString, classtalentsframe.lua:18–26). On "talents.static".

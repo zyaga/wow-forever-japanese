@@ -51,15 +51,17 @@ it. Flipped live, five times, with and without the addon: 1 errors, 0 does not. 
    carries the taint until a protected call refuses it, often much later and in combat.
 2. **The spellbook's page is left as the client writes it.** No spell subtext ("Rank 1", "Passive", profession
    ranks), no level line ("Level 20", "Learn from trainer"), no flyout group name and no search-result header is
-   written. The window title, page number, search placeholder and settings menu stay translated; none of them is
-   measured on that path, and the session that proved the fix had them translated.
-3. **Nothing of this addon runs inside the spellbook's own passes.** The title and the page number are followed by
-   `UI/TextWatch` (read once a frame from the addon's own frame), not by post-hooks on `UpdateFrameTitle` and
-   `UpdateControls`.
+   written, and neither is the page number: the paging controls' `Layout` measures it in the same pass that refills
+   the items on a page turn or a new spell (`blizzard_pagingcontrols.lua:110-127`, `blizzard_pagedcontentframe.lua:
+   88-96, 156-160`). The spellbook's search preview stays English too. The window title, search placeholder and
+   settings menu stay translated; none of them is measured on that path.
+3. **Nothing of this addon runs inside the spellbook's own passes.** The title is followed by `UI/TextWatch` (read
+   once a frame from the addon's own frame), not by a post-hook on `UpdateFrameTitle`. The search preview's hooks
+   are placed on the talent and Legacy trees only, never on the spellbook's.
 4. **A taint watch is always on** (`UI/TaintWatch`, [Diagnostics](../systems/diagnostics.md)): a check every 2
    seconds on the fields the bar layout reads, a stack from each of their writers when the value comes out tainted,
    a sweep of the bars' other fields, the last 60 game events with every finding, a stack on every block and a
-   tainted-field scan at the first block of a session (also `/wfj taint`). It only reads; its cost is a few dozen
+   tainted-field scan after the first block of a session, once combat is over (also `/wfj taint`). It only reads; its cost is a few dozen
    checks every 2 seconds.
 5. **`taintLog` is never used on Forever.** Not in the in-game checklists, not to debug. The taint watch replaces it.
 

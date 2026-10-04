@@ -61,7 +61,7 @@ describe("UI/TaintWatch", function()
     taint.showAllButtons = { t = _G.MultiBarLeft, by = "WoWForeverJapanese" }
     local e = TW.wrote("MultiBarLeft.showAllButtons", _G.MultiBarLeft, "showAllButtons")
     assert.are.equal("write", e.kind)
-    assert.is_truthy(e.msg:find("<[Interface/AddOns/Blizzard_X/X.lua]:12: in function 'Write'>", 1, true))
+    assert.is_truthy(e.msg:find("<[Interface/AddOns/Blizzard_X/X.lua]:12>", 1, true)) -- the Blizzard writer
     assert.is_truthy(e.stack:find("Blizzard_X", 1, true))
     taint.ON_BAR_HIGHLIGHT_MARKS = { by = "WoWForeverJapanese" }
     assert.is_table(TW.wrote("ON_BAR_HIGHLIGHT_MARKS", nil, "ON_BAR_HIGHLIGHT_MARKS"))
@@ -87,6 +87,16 @@ describe("UI/TaintWatch", function()
     assert.is_nil(TW.events():find("online", 1, true))
     TW.onEvent("UNIT_DIED", "Player-4621-0ABCDEF")
     assert.is_nil(TW.events():find("Player-", 1, true))
+    TW.onEvent("PARTY_INVITE_REQUEST", "Somebody") -- a player's name is never kept
+    assert.is_truthy(TW.events():find("PARTY_INVITE_REQUEST$"))
+    TW.onEvent("UNIT_PET", "party2")
+    assert.is_truthy(TW.events():find("UNIT_PET party2$"))
+    assert.is_true(TW.isUnitToken("nameplate14"))
+    assert.is_true(TW.isUnitToken("raid12pet"))
+    assert.is_false(TW.isUnitToken("Somebody"))
+    assert.is_false(TW.isUnitToken("partygoer"))
+    TW.onEvent("UNIT_TARGET", "targettarget")
+    assert.is_truthy(TW.events():find("UNIT_TARGET targettarget$"))
     _G.issecretvalue = nil
   end)
 
@@ -104,6 +114,19 @@ describe("UI/TaintWatch", function()
     assert.are.equal(2, entriesOf("taint")[1].n) -- the slash scan and the first block's (one clock second)
     assert.are.equal(2, entriesOf("context")[1].n) -- both blocks keep their events
     _G.WFJ_DB = nil
+  end)
+
+  it("a block in combat queues its scan until combat is over", function()
+    local fighting = true
+    _G.InCombatLockdown = function() return fighting end
+    assert.is_true(TW.onBlocked())
+    assert.are.equal(0, #entriesOf("taint"))
+    assert.is_false(TW.scanWhenSafe())
+    fighting = false
+    assert.is_true(TW.scanWhenSafe())
+    assert.are.equal(1, #entriesOf("taint"))
+    assert.is_false(TW.scanWhenSafe()) -- once
+    _G.InCombatLockdown = nil
   end)
 
   it("hooks the writers it finds and starts nothing on a client without issecurevariable", function()

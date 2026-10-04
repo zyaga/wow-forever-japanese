@@ -15,7 +15,7 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Changed
 - The About page's issue link is now a **Report a bug or idea** button, and the bug report form says how to fill it in from the game.
-- Inside the spellbook's spell list, the line under each spell ("Rank 1", "Passive", "Level 20"), flyout group names and search-result headers now stay English. Writing Japanese into them is what made the action bars stop working in combat. The spellbook's title, page number, search box and settings menu stay Japanese, and spell tooltips are unchanged.
+- Inside the spellbook, the line under each spell ("Rank 1", "Passive", "Level 20"), flyout group names, search-result headers, the page number and the search suggestions now stay English. Writing Japanese into them is what made the action bars stop working in combat. The spellbook's title, search box and settings menu stay Japanese, and spell tooltips are unchanged.
 - The 字 minimap button's right-click menu is now the addon's own small menu, with the same entries.
 - The problem log now records where a blocked action came from: the call path at the block, the first action-bar setting the addon's taint reached, the code that wrote it and the game events before it. `/wfj taint` checks for it at any time.
 - In the quest log, the `[要更新 / English Changed]` and `[未翻訳 / Not Translated]` markers now sit to the right of the 戻る button instead of above the description.

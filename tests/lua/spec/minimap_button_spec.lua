@@ -115,6 +115,13 @@ describe("the minimap button", function()
     assert.is_false(m:IsShown())
   end)
 
+  it("a left-click on the button closes an open menu", function()
+    b:click("RightButton")
+    assert.is_true(_G.WFJMinimapMenu:IsShown())
+    b:click("LeftButton")
+    assert.is_false(_G.WFJMinimapMenu:IsShown())
+  end)
+
   it("the checkbox is the master switch, the same state as the settings checkbox", function()
     b:click("RightButton")
     local _, rows = menuRows()

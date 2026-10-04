@@ -89,7 +89,6 @@ describe("spellbook on the Forever client", function()
       assert.are.equal("Spellbook", title():GetText())
       WFJ.SpellBook.init()
       assert.are.equal("呪文書", title():GetText())
-      assert.are.equal("ページ 1/2", pageText():GetText())
       assert.are.equal("Rank 3", items()[1].SubName:GetText()) -- the page's items are never written
     end)
   end)
@@ -149,17 +148,16 @@ describe("spellbook on the Forever client", function()
       host.linked = nil
     end)
 
-    it("the page text (PAGE_NUMBER_WITH_MAX) follows UpdateControls", function()
+    -- the controls' Layout measures it in the pass that refills the items on a page turn (ADR-058)
+    it("the page number stays English and is never watched", function()
       PS.openSpellBook()
       WFJ.TextWatch.tick() -- the watcher's next frame
-      assert.are.equal("ページ 1/2", pageText():GetText())
+      assert.are.equal("Page 1/2", pageText():GetText())
       _G.PlayerSpellsFrame.SpellBookFrame:DisplayPage(2)
-      WFJ.TextWatch.tick() -- the watcher's next frame
-      assert.are.equal("ページ 2/2", pageText():GetText())
-      alt(true)
+      WFJ.TextWatch.tick()
       assert.are.equal("Page 2/2", pageText():GetText())
-      alt(false)
-      assert.are.equal("ページ 2/2", pageText():GetText())
+      assert.is_false(WFJ.TextWatch.watching(pageText()))
+      assert.are_not.equal(WFJ.Font.PATH, (pageText():GetFont()))
     end)
 
     -- Blizzard measures an item's three lines when it refills the item (TrimTextSpace) and the page measures its
@@ -192,7 +190,7 @@ describe("spellbook on the Forever client", function()
             assert.are_not.equal(WFJ.Font.PATH, (fs:GetFont()))
           end
         end
-        assert.are.equal(0, SS.count("spellbook") - (SS.get("spellbook", "page") and 1 or 0))
+        assert.are.equal(0, SS.count("spellbook"))
       end)
 
     it("nothing of the addon runs inside the fill: no item, mixin, page or title method is hooked", function()
@@ -207,16 +205,6 @@ describe("spellbook on the Forever client", function()
       local item = PS.newItem()
       item:Init({ slotIndex = 12, spellBank = 0 })
       assert.are.equal("Passive", item.SubName:GetText())
-    end)
-
-    it("the book's OnHide releases the page text", function()
-      PS.openSpellBook()
-      _G.PlayerSpellsFrame.SpellBookFrame:DisplayPage(2)
-      WFJ.TextWatch.tick() -- the watcher's next frame
-      assert.are.equal("ページ 2/2", pageText():GetText())
-      _G.PlayerSpellsFrame.SpellBookFrame:Hide()
-      assert.are.equal("Page 2/2", pageText():GetText())
-      assert.are.equal(0, SS.count("spellbook"))
     end)
 
     it("the settings menu's checkbox labels translate through Menu.ModifyMenu; other entries stay; the book's hide"

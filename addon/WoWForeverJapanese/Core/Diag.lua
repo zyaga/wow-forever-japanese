@@ -159,7 +159,7 @@ function Diag.blockedSite(stack)
   for line in tostring(stack or ""):gmatch("[^\n]+") do
     local trimmed = line:gsub("^%s+", "")
     if trimmed ~= "" and not trimmed:find("WoWForeverJapanese", 1, true) and not trimmed:find("^%[C%]")
-        and not trimmed:find("^%[tail call%]") then
+        and not trimmed:find("^%[tail call%]") and not trimmed:find("^%.%.%.$") then
       site = trimmed:gsub(":%s*in function.*$", "")
       break
     end

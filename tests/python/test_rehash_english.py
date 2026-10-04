@@ -56,9 +56,7 @@ def test_a_quest_translation_is_restamped_not_moved(tmp_path):
 def test_a_taken_key_drops_the_moving_line_unless_it_is_hand_written(tmp_path):
     new = key(normalize_v1(SPACED))
     _gossip(tmp_path, OLD, SPACED, {"class": "machine"})
-    english = tmp_path / "english" / "gossip" / f"gossip-{new[:2]}.jsonl"
-    rows = [json.loads(r) for r in english.read_text().splitlines()] if english.exists() else []
-    _write(english, rows + [{"id": new, "field": "text", "en": "A favor for me, lad?", "hash": new, "src": "c@x"}])
+    _gossip(tmp_path, new, "A favor for me, $glad:lass;?", {"class": "machine"})  # gendered too: it stays
     changes, drop, problems = rehash_english.plan(tmp_path)
     assert (drop, problems) == ({"gossip": {OLD}}, [])
     counts = rehash_english.apply(tmp_path, changes, drop, dry_run=True)
@@ -66,8 +64,48 @@ def test_a_taken_key_drops_the_moving_line_unless_it_is_hand_written(tmp_path):
     assert len(Store(tmp_path, english=True).load("gossip")) == 2  # dry run writes nothing
     rehash_english.apply(tmp_path, changes, drop, dry_run=False)
     assert [line["id"] for line in Store(tmp_path, english=True).load("gossip")] == [new]
-    assert Store(tmp_path).load("gossip") == [] and Store(tmp_path / "reading").load("gossip") == []
+    assert [t["id"] for t in Store(tmp_path).load("gossip")] == [new]
+    assert [r["id"] for r in Store(tmp_path / "reading").load("gossip")] == [new]
 
     _gossip(tmp_path, OLD, SPACED, {"class": "human"})
     _, _, problems = rehash_english.plan(tmp_path)
     assert problems and "hand-written" in problems[0]
+
+
+def test_the_gendered_line_keeps_a_shared_key_and_two_movers_on_one_key_stop(tmp_path):
+    new = key(normalize_v1(SPACED))
+    _gossip(tmp_path, OLD, SPACED, {"class": "machine"})  # `$G`: speaks for both wordings
+    _gossip(tmp_path, new, "A favor for me, lad?", {"class": "machine"})  # a male-only capture at the new key
+    changes, drop, problems = rehash_english.plan(tmp_path)
+    assert (drop, problems) == ({"gossip": {new}}, [])
+    rehash_english.apply(tmp_path, changes, drop, dry_run=False)
+    [line] = Store(tmp_path, english=True).load("gossip")
+    assert (line["id"], line["en"]) == (new, SPACED)
+    assert [t["id"] for t in Store(tmp_path).load("gossip")] == [new]
+
+    other = "1100000000000002"
+    _gossip(tmp_path / "two", OLD, SPACED, {"class": "machine"})
+    _gossip(tmp_path / "two", other, "A favor for me, $g lad:lass;?", {"class": "machine"})
+    _, _, problems = rehash_english.plan(tmp_path / "two")
+    assert problems and "both move to" in problems[0]
+
+
+def test_a_hand_written_variant_in_conflicts_stops_a_drop(tmp_path):
+    new = key(normalize_v1(SPACED))
+    _gossip(tmp_path, OLD, "A favor for me, $g lad : lass;?", {"class": "machine"})
+    _gossip(tmp_path, new, "A favor for me, $glad:lass;?", {"class": "machine"})  # also gendered: the mover drops
+    shard = tmp_path / "gossip" / f"gossip-{OLD[:2]}.jsonl"
+    row = json.loads(shard.read_text())
+    row["conflicts"] = [{"ja": "若いの？", "provenance": {"class": "human"}}]
+    shard.write_text(json.dumps(row, ensure_ascii=False) + "\n")
+    _, _, problems = rehash_english.plan(tmp_path)
+    assert problems and "hand-written" in problems[0]
+
+
+def test_a_drop_that_would_lose_the_only_translation_stops(tmp_path):
+    new = key(normalize_v1(SPACED))
+    _gossip(tmp_path, OLD, "A favor for me, $g lad : lass;?", {"class": "machine"})
+    english = tmp_path / "english" / "gossip" / f"gossip-{new[:2]}.jsonl"
+    _write(english, [{"id": new, "field": "text", "en": "A favor for me, $glad:lass;?", "hash": new, "src": "c@x"}])
+    _, _, problems = rehash_english.plan(tmp_path)
+    assert problems and "only translation" in problems[0]

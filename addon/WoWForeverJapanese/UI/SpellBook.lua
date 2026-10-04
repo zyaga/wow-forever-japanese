@@ -7,10 +7,12 @@
 --   self.TitleContainer.TitleText [verified: blizzard_sharedxml/portraitframe.lua:4–14]. The host serves the talents
 --   tab too, so this module owns the title (surface "playerspells", released on the host's OnHide).
 --   TALENTS_LINK_FORMAT carries a spec and a class name; both are kept as written.
--- - Page: PagingControlsMixin:UpdateControls → PageText:SetFormattedText(PAGE_NUMBER_WITH_MAX | PAGE_NUMBER)
---   [verified: blizzard_pagedcontent/blizzard_pagingcontrols.lua:110–127, xml:40–42].
---   The title and the page line are followed by UI/TextWatch, not by hooks on UpdateFrameTitle / UpdateControls:
---   those run inside the spellbook's own passes, and nothing of this addon runs there.
+-- - The title is followed by UI/TextWatch, not by a hook on UpdateFrameTitle: that runs inside the spellbook's own
+--   passes, and nothing of this addon runs there.
+-- - The page number stays English: PagingControlsMixin:UpdateControls writes it and then runs the controls' Layout
+--   (blizzard_pagedcontent/blizzard_pagingcontrols.lua:110–127; a HorizontalLayoutFrame, PageText layoutIndex 1,
+--   xml:54–66), which measures it, in the same pass that refills the spell items on a page turn or a new spell
+--   (blizzard_pagedcontentframe.lua:88–96, 156–160). That is the measurement below.
 -- - The page's spell items and category / search-result headers are left exactly as the client writes them. When it
 --   refills an item, Blizzard measures the item's three lines (TrimTextSpace: GetText, GetStringHeight, GetLineHeight,
 --   spellbook/blizzard_spellbookitem.lua:163–180) and the page measures its headers (ApplyLayout). A FontString this
@@ -36,7 +38,7 @@
 --   spellbookframe.lua:192–197) is built by MenuUtil.ShowTooltipEx on GameTooltip with the menu button as owner, then
 --   Show() (blizzard_menu/menuutil.lua:98–106, 293–298): each settings-menu button is a help-tooltip owner restricted
 --   to that key.
--- Release the page and the menu on the book's OnHide.
+-- Release the menu on the book's OnHide.
 local _, WFJ = ...
 local SpellBook = {}
 WFJ.SpellBook = SpellBook
@@ -57,12 +59,11 @@ local MENU_TAG = "MENU_SPELL_BOOK_SETTINGS"
 -- names kept as written
 local HOST_TITLE_KEYS = { SPELLBOOK = true, TALENTS = true, SPECIALIZATION = true, TALENTS_INSPECT_FORMAT = true,
   TALENTS_LINK_FORMAT = true }
-local PAGE_WITH_MAX_KEYS = { PAGE_NUMBER = true, PAGE_NUMBER_WITH_MAX = true }
 local SEARCH_KEYS = { SPELLBOOK_SEARCH_INSTRUCTIONS = true }
 local MENU_TOOLTIP_KEYS = { SPELLBOOK_SEARCH_HIDE_PASSIVES_DISABLED = true }
 local MENU_KEYS = { SHOW_ALL_SPELL_RANKS = true, SPELLBOOK_FILTER_PASSIVES = true, SPELLBOOK_USE_FLYOUTS = true,
   SPELLBOOK_COMPACT_VIEW = true }
-SpellBook.CAMELOT_KEYS = { title = HOST_TITLE_KEYS, page = PAGE_WITH_MAX_KEYS, menu = MENU_KEYS, search = SEARCH_KEYS,
+SpellBook.CAMELOT_KEYS = { title = HOST_TITLE_KEYS, menu = MENU_KEYS, search = SEARCH_KEYS,
   menuTooltip = MENU_TOOLTIP_KEYS }
 
 -- Widgets this module must never record: none by name (no spell item is read or written).
@@ -71,13 +72,6 @@ SpellBook.NEVER_TOUCH = {}
 -- The host title, when the client wrote it. → 1 | 0
 function SpellBook.showTitle()
   return WFJ.Labels.showAll(HOST, { { "title", Compat.get(SURFACE, "title"), { only = HOST_TITLE_KEYS } } })
-end
-
--- The page text, when the client wrote it. → 1 | 0
-function SpellBook.showPageText()
-  local n = WFJ.Labels.show(SURFACE, "page", Compat.get(SURFACE, "pageText"), nil, { only = PAGE_WITH_MAX_KEYS })
-  WFJ.Render.updateBanner(SURFACE)
-  return n
 end
 
 -- The search box's placeholder (static). → 1 | 0
@@ -139,7 +133,6 @@ local function declareCamelot()
   Compat.declare(SURFACE, "modifyMenu", { "Menu.ModifyMenu" })
   Compat.declare(SURFACE, "searchInstructions", { "PlayerSpellsFrame.SpellBookFrame.SearchBox.Instructions" })
   Compat.declare(SURFACE, "title", { "PlayerSpellsFrame.TitleContainer.TitleText" })
-  Compat.declare(SURFACE, "pageText", { "PlayerSpellsFrame.SpellBookFrame.PagedSpellsFrame.PagingControls.PageText" })
 end
 
 local camelotSetUp, camelotWaiting = false, false
@@ -156,12 +149,10 @@ function SpellBook.setupCamelot()
   if type(host.HookScript) == "function" then host:HookScript("OnHide", SpellBook.releaseHost) end
   if type(book.HookScript) == "function" then book:HookScript("OnHide", SpellBook.releaseBook) end
   WFJ.TextWatch.add(Compat.get(SURFACE, "title"), SpellBook.showTitle)
-  WFJ.TextWatch.add(Compat.get(SURFACE, "pageText"), SpellBook.showPageText)
   local modifyMenu = Compat.get(SURFACE, "modifyMenu")
   if type(modifyMenu) == "function" then modifyMenu(MENU_TAG, SpellBook.onSettingsMenu) end
   -- what the client already wrote before this ran (the addon may load after the frame was shown)
   SpellBook.showTitle()
-  SpellBook.showPageText()
   return true
 end
 

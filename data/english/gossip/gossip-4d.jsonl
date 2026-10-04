@@ -23,7 +23,7 @@
 {"id": "4d5d72731075da34", "field": "text", "en": "Defend Nighthaven, hero...", "hash": "4d5d72731075da34", "src": "vmangos@13b49dc"}
 {"id": "4d6175fdcc41fd8c", "field": "text", "en": "How many more supplies are needed to rebuild our base?", "hash": "4d6175fdcc41fd8c", "src": "vmangos@13b49dc"}
 {"id": "4d61f3fb2c7ea95a", "field": "text", "en": "Um, I'm taking some prisoners we found outside before the king for punishment.", "hash": "4d61f3fb2c7ea95a", "src": "vmangos@13b49dc"}
-{"id": "4d6878b7e21685e1", "field": "text", "en": "Where is it ye would like to go lad? For just a few coin my Gryphons can get ye there faster than even the swiftest horse.", "hash": "4d6878b7e21685e1", "src": "forever-vo@025070f", "npcs": [352]}
+{"id": "4d6878b7e21685e1", "field": "text", "en": "Where is it ye would like to go $g lad : lass;? For just a few coin my Gryphons can get ye there faster than even the swiftest horse.", "hash": "4d6878b7e21685e1", "src": "vmangos@13b49dc"}
 {"id": "4d687b0e9dc160e5", "field": "text", "en": "Can you tell me what is happening on Zephras Isle?", "hash": "4d687b0e9dc160e5", "src": "collector@1.60.1.70205", "npcs": [251902]}
 {"id": "4d7881b4ca71190d", "field": "text", "en": "Best drinks in Stormwind!", "hash": "4d7881b4ca71190d", "src": "vmangos@13b49dc"}
 {"id": "4d7db1bef187fe8f", "field": "text", "en": "I think... I think it's working!", "hash": "4d7db1bef187fe8f", "src": "vmangos@13b49dc"}

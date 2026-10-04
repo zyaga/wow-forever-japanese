@@ -45,6 +45,7 @@ CASES: list[tuple[str, str, Player | None]] = [
     ("gender-02", "Well met, $gsir:madam;.", None),
     ("gender-03", "A favor for me, $g lad : lass;?", None),
     ("gender-04", "Ye want to go, $Gboyo :lass;!", None),
+    ("gender-05", "Hello, $g\u00a0lad : lass;.", None),
     ("fwdigit-01", "Kill １０ Kobold Vermin", None),
     ("fwdigit-02", "０１２３４５６７８９ and 0123456789", None),
     ("ws-01", "  leading and trailing  ", None),
