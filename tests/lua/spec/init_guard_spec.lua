@@ -14,7 +14,7 @@ local ORDER = {
   { "buttontext", "ButtonText" }, { "helptooltip", "HelpTooltip" }, { "loadondemand", "LoadOnDemand" },
   { "questframe", "QuestFrame" }, { "questmap", "QuestMap" },
   { "tooltip", "Tooltip" },
-  { "gamemenu", "GameMenu" }, { "gossip", "Gossip" }, { "speech", "Speech" },
+  { "gamemenu", "GameMenu" }, { "gossip", "Gossip" },
   { "itemtext", "ItemText" },
   { "character", "Character" }, { "reputation", "Reputation" }, { "skills", "Skills" },
   { "pvprank", "PvPRank" },
@@ -63,6 +63,7 @@ local ORDER = {
   "LossOfControl" }, { "majorfactiontoast", "MajorFactionToast" }, { "partypose", "PartyPose" }, { "pethappiness",
   "PetHappiness" }, { "playerchoice", "PlayerChoice" }, { "readycheck", "ReadyCheck" }, { "stacksplit",
   "StackSplit" }, { "streamingicon", "StreamingIcon" }, { "zonetext", "ZoneText" },
+  { "speech", "Speech" }, -- after ChatSystem, which it rewrites lines through
   -- <<<
   { "menus", "Menus" }, { "helptips", "HelpTips" },
   { "scan", "Scan" },

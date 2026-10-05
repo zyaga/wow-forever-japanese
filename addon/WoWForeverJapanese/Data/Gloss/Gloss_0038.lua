@@ -894,7 +894,6 @@ WFJ.Data.add("gloss", {
   [38891] = "久しぶり\tひさしぶり\ta long time",
   [38892] = "久しぶり\tひさしぶり\ta while (long time)",
   [38893] = "久しぶり\tひさしぶり\tbeen a long time",
-  [38894] = "久しぶり\tひさしぶり\tbeen a while",
   [38895] = "久しぶり\tひさしぶり\tbeen so long",
   [38896] = "久しぶり\tひさしぶり\tbeen some time",
   [38897] = "久しぶり\tひさしぶり\tfirst in ages",

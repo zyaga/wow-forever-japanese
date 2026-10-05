@@ -671,4 +671,11 @@ WFJ.Data.add("gloss", {
   [138668] = "１５体\tじゅうごたい\tfifteen",
   [138669] = "５分\tごふん\tfive minutes",
   [138670] = "Ｔ字路\tティーじろ\tT intersection",
+  [138671] = "おふくろ\tおふくろ\tmum",
+  [138672] = "そこら\tそこら\taround (here)",
+  [138673] = "だけ\tだけ\tonly (you)",
+  [138674] = "もの\tもの\tsomething (to read)",
+  [138675] = "不公平\tふこうへい\tnot fair",
+  [138676] = "久しぶり\tひさしぶり\ta while since",
+  [138677] = "届く\tとどく\treceived (arrives)",
 })

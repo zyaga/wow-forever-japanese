@@ -137,6 +137,18 @@ describe("NPC speech", function()
     for _, n in ipairs(NAMES) do _G[n] = nil end
   end)
 
+  it("without ChatSystem ready it does not hook, and the problem log says what was missing", function()
+    H.uiTeardown()
+    for _, n in ipairs(NAMES) do _G[n] = nil end
+    local W = load()
+    local db = W.Diag.load(nil)
+    assert.is_false(W.Speech.init({ key = keyOf }))
+    local e = db.entries[#db.entries]
+    assert.are.equal("speech", e.kind)
+    assert.are.equal("not hooked", e.msg)
+    assert.are.equal("ChatSystem", e.missing)
+  end)
+
   it("a say is rewritten in the chat history, the prefix's words too; the speaker's name as written", function()
     local f = _G.ChatFrame1
     npc(f, SAY, "%s says: ", "Stay close, Testplayer!", "Ralph")
@@ -313,6 +325,71 @@ describe("NPC speech", function()
       secrets[say(SHIPPED)] = true
       hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), say)
       only("secret text", keyOf(SHIPPED))
+    end)
+
+    local function lines()
+      local out = {}
+      for _, e in ipairs(db.entries) do
+        if e.kind == "speechline" then out[#out + 1] = e end
+      end
+      return out
+    end
+    -- no field of an entry holds the line's text or the speaker's name
+    local function noText(e, ...)
+      for _, v in pairs(e) do
+        for _, word in ipairs({ ... }) do
+          assert.is_falsy(type(v) == "string" and v:find(word, 1, true))
+        end
+      end
+    end
+
+    it("every NPC line is traced: a translated one", function()
+      npc(f, SAY, "%s says: ", SHIPPED, "Ralph")
+      local log = lines()
+      assert.are.equal(1, #log)
+      local e = log[1]
+      assert.are.equal("translated " .. keyOf(SHIPPED), e.msg)
+      assert.is_true(e.translated)
+      assert.is_true(e.shipped)
+      assert.is_false(e.hasToken)
+      assert.is_false(e.speakerInText)
+      noText(e, "Stay close", "Ralph", "Testplayer")
+    end)
+
+    it("a line with the speaker's name written in names the key it would have with %s", function()
+      npc(f, EMOTE, "", "Hogger goes into a frenzy!", "Hogger")
+      local e = lines()[1]
+      assert.are.equal("no Japanese " .. keyOf("Hogger goes into a frenzy!"), e.msg)
+      assert.is_false(e.translated)
+      assert.is_false(e.shipped)
+      assert.is_true(e.speakerInText)
+      assert.are.equal(keyOf("%s goes into a frenzy!"), e.speakerKey)
+      assert.is_true(e.speakerKeyShipped)
+      noText(e, "Hogger", "frenzy")
+      assert.are.equal(0, #speechLog()) -- no Japanese ships under its own key: not a speech problem
+    end)
+
+    it("a secret line is traced without a key", function()
+      secrets[SHIPPED] = true
+      hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), say)
+      local e = lines()[1]
+      assert.are.equal("secret text -", e.msg)
+      assert.are.equal("secret", e.english)
+    end)
+
+    it("a line printed while another is handled leaves the outer line's outcome", function()
+      local inner = true
+      local orig = WFJ.Collector and WFJ.Collector.recordGossip
+      WFJ.Collector = WFJ.Collector or {}
+      WFJ.Collector.recordGossip = function()
+        if inner then
+          inner = false
+          WFJ.Speech.onAddMessage(f, "WFJ: notice", 1, 1, 1, nil)
+        end
+      end
+      npc(f, SAY, "%s says: ", SHIPPED, "Ralph")
+      WFJ.Collector.recordGossip = orig
+      assert.are.equal("translated " .. keyOf(SHIPPED), lines()[1].msg)
     end)
 
     it("the NPC talk setting off", function()

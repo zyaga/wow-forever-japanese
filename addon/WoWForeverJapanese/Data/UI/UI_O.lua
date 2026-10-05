@@ -2,6 +2,8 @@
 local _, WFJ = ...
 WFJ.Data.add("ui", {
   ["OBJECTIVES_HIDE_VIEW_IN_QUESTLOG"] = { "クエストの詳細を閉じる", 0x4699d1c1, "." },
+  ["OBJECTIVES_SHOW_QUEST_MAP"] = { "クエストマップを開く", 0xbacaee3a, "." },
+  ["OBJECTIVES_STOP_TRACKING"] = { "追跡解除", 0x15c4a4a6, "." },
   ["OBJECTIVES_VIEW_ACHIEVEMENT"] = { "アチーブメントを開く", 0x5fa06a7d, "." },
   ["OBJECTIVES_VIEW_IN_QUESTLOG"] = { "クエストの詳細を開く", 0x96a9dbe0, "." },
   ["OBJECTIVES_WATCH_TOO_MANY"] = { "これ以上クエストを追跡できません。", 0x3a0fe54d, "." },

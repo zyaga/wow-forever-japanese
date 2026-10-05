@@ -10,7 +10,7 @@
 {"id": "9035a4e021e3fe7c", "field": "text", "en": "I'm never too busy to speak to a stranger! Almost never, anyway...", "hash": "9035a4e021e3fe7c", "src": "vmangos@13b49dc"}
 {"id": "903c7ab731d4d369", "field": "text", "en": "All kinds of bread here! Made fresh today. Get'em while they last!", "hash": "903c7ab731d4d369", "src": "vmangos@13b49dc"}
 {"id": "903ec9c771a5006d", "field": "text", "en": "Move along, citizen. There is nothing to see here.", "hash": "903ec9c771a5006d", "src": "vmangos@13b49dc"}
-{"id": "904e41e6ad51a614", "field": "text", "en": "Greetings, $g lad : girl;. I'm Grelin Whitebeard. I'm here to examine the threat posed by the growing numbers of trolls in Coldridge Valley. What have I found? It's a bit troubling...", "hash": "904e41e6ad51a614", "src": "vmangos@13b49dc"}
+{"id": "904e41e6ad51a614", "field": "text", "en": "Greetings, $g lad : girl;. I'm Grelin Whitebeard. I'm here to examine the threat posed by the growing numbers of trolls in Coldridge Valley. What have I found? It's a bit troubling...", "hash": "904e41e6ad51a614", "src": "vmangos@13b49dc", "npcs": [786]}
 {"id": "905661a9f7f78fe8", "field": "text", "en": "Place Termite Barrel on the crate.", "hash": "905661a9f7f78fe8", "src": "vmangos@13b49dc"}
 {"id": "9058364c9a8bcf6d", "field": "text", "en": "Incoming blast in 10 seconds!", "hash": "9058364c9a8bcf6d", "src": "vmangos@13b49dc"}
 {"id": "905aede8acc92152", "field": "text", "en": "If you want something done right, do it yourself!", "hash": "905aede8acc92152", "src": "vmangos@13b49dc"}

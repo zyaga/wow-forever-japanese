@@ -295,7 +295,6 @@ function WFJ.OnLoad()
   step("tooltip.unit", WFJ.TooltipUnit.init) -- the unit mouseover lines the client composes
   step("gamemenu", WFJ.GameMenu.init) -- the Esc menu's buttons (quest labels ride their surfaces' hooks)
   step("gossip", function() WFJ.Gossip.init({ key = gossipKey }) end) -- the NPC talk window
-  step("speech", function() WFJ.Speech.init({ key = gossipKey, expand = expand }) end) -- NPC speech
   step("itemtext", function()
     WFJ.ItemText.init({ key = keyOf("book"), -- the book / letter / plaque window
       keys = function(text) return WFJ.Collector.keys(text, collectorPlayer()) end })
@@ -363,6 +362,8 @@ function WFJ.OnLoad()
   step("raid", WFJ.Raid.init)
   step("micromenu", WFJ.MicroMenu.init)
   for _, name in ipairs(forever) do step(name:lower(), function() return WFJ[name].init() end) end
+  -- NPC speech, after ChatSystem (in the list above): it rewrites lines through the chat side's Alt / switch
+  step("speech", function() WFJ.Speech.init({ key = gossipKey, expand = expand }) end) -- NPC speech
   -- menu entries (Menu.ModifyMenu per tag) and HelpTip callouts, for every window above
   step("menus", WFJ.Menus.init)
   step("menus.untagged", WFJ.MenusUntagged.init) -- the Options and Edit Mode dropdowns (no tag)

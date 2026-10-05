@@ -101,6 +101,19 @@ describe("Core/Diag", function()
     end)()) -- the oldest problem went
   end)
 
+  it("over the cap a speechline goes before any other problem, after the memory samples", function()
+    local D = fresh()
+    local db = D.load(nil)
+    D.log("blocked", "old problem")
+    D.log("speechline", "translated a")
+    for i = 1, D.MAX_ENTRIES - 2 do D.log("speechline", "translated " .. i) end
+    assert.are.equal(D.MAX_ENTRIES, #db.entries)
+    D.log("hook", "new")
+    assert.are.equal(D.MAX_ENTRIES, #db.entries)
+    assert.are.equal("old problem", db.entries[1].msg) -- the problem stays; the oldest speechline went
+    assert.are.equal("translated 1", db.entries[2].msg)
+  end)
+
   it("a hook another function replaced is gone too; an entry's own fields are never overwritten", function()
     local D = fresh()
     local db = D.load(nil)
