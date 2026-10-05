@@ -170,7 +170,7 @@ end
 -- A speech line that ships Japanese but is left English says why in the problem log (docs/systems/diagnostics.md),
 -- so a report names its cause from the log alone: the reason, the event, the chat frame and the line's gossip key,
 -- never the line's text or a name. A line whose English cannot be read is logged without a key. One entry per
--- reason per session (Diag counts the repeats).
+-- reason per session (Diag counts the repeats). Speech.trace, below, also records every NPC line, translated or not.
 local function speechEvent(event)
   return type(event) == "string" and not secret(event)
     and (event:find("^CHAT_MSG_MONSTER") or event:find("^CHAT_MSG_RAID_BOSS")) and true or false
@@ -184,7 +184,8 @@ local function shipped(key)
   return type(entry) == "table" and entry.status == "." and type(entry.ja) == "string" and entry.ja ~= ""
 end
 
-local lastReason, lastJa -- the current line's exit reason and whether its own Japanese went in, for Speech.trace
+-- the current line, for Speech.trace: its first exit reason, whether its own Japanese went in, its gossip key
+local lastReason, lastJa, lastKey
 
 local function why(reason, frame, event, en, key) -- → 0
   lastReason = lastReason or reason
@@ -224,20 +225,22 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
     WFJ.Collector.recordGossip(en, guid)
   end
   local key = en ~= "" and deps.key and deps.key(en) or nil -- once per line: translate and every later exit use it
+  lastKey = key
   if not WFJ.ChatSystem.on(AREA) then return why("NPC talk off", frame, event, en, key) end
   local ja = Speech.translate(en, key)
   local jaLine = line
-  lastJa = ja ~= nil
   if ja then
     local ok, formatted = pcall(formatter, escaped(ja))
     if ok and type(formatted) == "string" then
       jaLine = formatted
     else
-      ja, lastJa = nil, false
+      ja = nil
       why("formatter error", frame, event, en, key)
     end
+  elseif key ~= nil and shipped(key) then
+    why("translation refused", frame, event, en, key)
   else
-    why("translation refused", frame, event, en, key) -- logged only when the line ships Japanese
+    lastReason = lastReason or "no Japanese"
   end
   -- the prefix's words ("%s says: ") too, also on a line with no Japanese of its own
   jaLine = WFJ.ChatSystem.prefixed(jaLine, name) or jaLine
@@ -253,6 +256,7 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
     return jaLine, ...
   end)
   if matched == 0 then why("no line matched", frame, event, en, key) end
+  lastJa = ja ~= nil and matched > 0
   if ja and BUBBLE_TYPES[name] and count(en, "%%s") == 0 and not queued(lineID) then
     pending[#pending + 1] = { en = en, ja = ja, id = lineID, left = Speech.BUBBLE_SCANS }
     Speech.scheduleScan()
@@ -272,7 +276,7 @@ function Speech.trace(frame, event, eventArgs, outcome)
   local fields = { event = event, frame = WFJ.Diag.nameOf(frame), translated = lastJa == true }
   local key
   if readable(en) then
-    key = deps.key and deps.key(en) or nil
+    key = lastKey or (deps.key and deps.key(en)) or nil
     fields.key, fields.shipped, fields.hasToken = key, keyShipped(key), en:find("%s", 1, true) ~= nil
     local speaker = eventArgs[2]
     if type(speaker) == "string" and not secret(speaker) and speaker ~= "" then
@@ -293,15 +297,19 @@ function Speech.trace(frame, event, eventArgs, outcome)
       fields.speakerInText = type(speaker) == "string" and secret(speaker) and "secret" or "none"
     end
   else
-    fields.english = en == nil and "none" or (secret(en) and "secret" or type(en))
+    fields.english = secret(en) and "secret" or (type(en) == "nil" and "none" or type(en))
   end
   WFJ.Diag.log("speechline", tostring(outcome) .. " " .. tostring(key or "-"), fields)
 end
 
+-- A line printed while another is handled (the Collector's chat notice) reaches this hook nested: the outer line's
+-- state is put back afterwards.
 function Speech.onAddMessage(frame, line, _, _, _, typeId, _, _, event, eventArgs, formatter)
-  lastReason, lastJa = nil, nil
+  local outerReason, outerJa, outerKey = lastReason, lastJa, lastKey
+  lastReason, lastJa, lastKey = nil, nil, nil
   local result = handle(frame, line, typeId, event, eventArgs, formatter)
-  pcall(Speech.trace, frame, event, eventArgs, lastReason or (lastJa and "translated" or "changed"))
+  pcall(Speech.trace, frame, event, eventArgs, lastReason or "translated")
+  lastReason, lastJa, lastKey = outerReason, outerJa, outerKey
   return result
 end
 
@@ -349,8 +357,8 @@ end
 local function hookFrame(frame)
   if hooked[frame] or type(frame.AddMessage) ~= "function" then return 0 end
   hooked[frame] = true
+  -- not Diag.watch'ed: another chat addon's later hooksecurefunc swaps the function and would read as our hook lost
   hooksecurefunc(frame, "AddMessage", Speech.onAddMessage)
-  WFJ.Diag.watch(frame, "AddMessage", WFJ.Diag.nameOf(frame))
   return 1
 end
 
