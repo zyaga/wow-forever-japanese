@@ -9,6 +9,7 @@ WFJ.Data.add("gossip", {
   ["960724e7369511cd"] = { "最後の部屋へテレポートしてください。", "." },
   ["961176df283e9fbe"] = { "急いでくれ、{name}。私の運命はあなたの手にかかっている。", "." },
   ["9615bf1b82dad619"] = { "Alterac Valleyは長年Frostwolf Clanの故郷だった。ドワーフとそのAllianceに侵入させはしない！だから我らは戦うのだ！\n\nAlteracを取り戻すには、Dun Baldarにいる奴らの将軍、Vanndar Stormpikeを倒せ。\n\nHordeのために！", "." },
+  ["9630f424a03a024b"] = { "貴様の邪魔立ては許さん！", "." },
   ["96377ddbb57ded2a"] = { "Graham Van Talen、UndercityのRogues' Quarterの外側の輪にいる。", "." },
   ["96393e8715e7dbfc"] = { "West Frostwolf TowerはFrostwolf VillageとFrostwolf Keepの間の門を守っている。\n\nどちらの陣営にも支配されていない。", "." },
   ["96460c6377210008"] = { "あんたの偉業ひとつにつき銅貨を一枚もらえたら、俺は金持ちのkoboldになれるぜ！", "." },
