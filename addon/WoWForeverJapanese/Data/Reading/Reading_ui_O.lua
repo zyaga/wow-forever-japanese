@@ -2,6 +2,8 @@
 local _, WFJ = ...
 WFJ.Data.add("reading", {
   ["ui:OBJECTIVES_HIDE_VIEW_IN_QUESTLOG"] = { text = "クエスト=クエスト=32656 詳細=しょうさい=123365 閉じる=とじる=133104" },
+  ["ui:OBJECTIVES_SHOW_QUEST_MAP"] = { text = "クエスト=クエスト=32656 マップ=マップ=35061 開く=ひらく=133236" },
+  ["ui:OBJECTIVES_STOP_TRACKING"] = { text = "追跡=ついせき=128499 解除=かいじょ=120476" },
   ["ui:OBJECTIVES_VIEW_ACHIEVEMENT"] = { text = "アチーブメント=アチーブメント=31809 開く=ひらく=133236" },
   ["ui:OBJECTIVES_VIEW_IN_QUESTLOG"] = { text = "クエスト=クエスト=32656 詳細=しょうさい=123365 開く=ひらく=133236" },
   ["ui:OBJECTIVES_WATCH_TOO_MANY"] = { text = "これ以上=これいじょう=9429 クエスト=クエスト=32659 追跡できません=ついせきできません=128506" },
