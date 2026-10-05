@@ -369,6 +369,29 @@ describe("NPC speech", function()
       assert.are.equal(0, #speechLog()) -- no Japanese ships under its own key: not a speech problem
     end)
 
+    it("the trace records the target's shape and the Collector's answer, never a name", function()
+      local orig = WFJ.Collector and WFJ.Collector.recordGossip
+      WFJ.Collector = WFJ.Collector or {}
+      WFJ.Collector.recordGossip = function() return "recorded" end
+      local unitName = _G.UnitName
+      _G.UnitName = function() return "Testplayer" end
+      npc(f, SAY, "%s says: ", SHIPPED, "Ralph", nil, "Testplayer-Liongard") -- a Forever full name
+      local e = lines()[1]
+      assert.are.equal("other", e.target)
+      assert.is_true(e.targetSep)
+      assert.is_false(e.targetSpace)
+      assert.is_true(e.targetStartsMe)
+      assert.is_false(e.meSep)
+      assert.is_false(e.meSurname)
+      assert.are.equal("not asked", e.collector)
+      noText(e, "Testplayer", "Liongard", "Ralph")
+      npc(f, SAY, "%s says: ", "Stay close to me, Testplayer.", "Ralph", nil, "Testplayer")
+      e = lines()[2]
+      assert.are.equal("me", e.target)
+      assert.are.equal("recorded", e.collector)
+      WFJ.Collector.recordGossip, _G.UnitName = orig, unitName
+    end)
+
     it("a secret line is traced without a key", function()
       secrets[SHIPPED] = true
       hook(f, SAY, say(SHIPPED), "CHAT_MSG_MONSTER_SAY", args(SHIPPED), say)

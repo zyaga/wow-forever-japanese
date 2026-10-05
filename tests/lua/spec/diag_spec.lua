@@ -114,6 +114,20 @@ describe("Core/Diag", function()
     assert.are.equal("translated 1", db.entries[2].msg)
   end)
 
+  it("a log full of problem entries still keeps the latest speechlines, up to their share", function()
+    local D = fresh()
+    local db = D.load(nil)
+    for i = 1, D.MAX_ENTRIES do D.log("blocked", "problem " .. i) end
+    D.log("speechline", "no Japanese a")
+    assert.are.equal(D.MAX_ENTRIES, #db.entries)
+    assert.are.equal("no Japanese a", db.entries[#db.entries].msg) -- kept; the oldest problem went
+    assert.are.equal("problem 2", db.entries[1].msg)
+    for i = 1, D.SPEECH_SHARE + 5 do D.log("speechline", "no Japanese " .. i) end
+    local speech = 0
+    for _, e in ipairs(db.entries) do if e.kind == "speechline" then speech = speech + 1 end end
+    assert.are.equal(D.SPEECH_SHARE, speech)
+  end)
+
   it("a hook another function replaced is gone too; an entry's own fields are never overwritten", function()
     local D = fresh()
     local db = D.load(nil)
