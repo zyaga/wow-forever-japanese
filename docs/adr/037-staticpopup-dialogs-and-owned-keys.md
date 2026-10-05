@@ -68,10 +68,18 @@ It also had to be confirmed that the secure-environment windows stay English.
      - The line is rewritten only while it still reads exactly the English the definition and those arguments give.
        A computed text (`dialogInfo.text == ""`, a dialog-specific `GetExpirationText`) or a changed one stays as
        written.
+     - A definition whose text is `"%s"` shows its caller's line as written (the party invite, the talent wipe, the
+       leave-instance question). That line is translated when it is exactly one key's English. The party invite's
+       caller formats `INVITATION` with the inviter's name and may append `ACCEPTING_INVITE_WILL_REMOVE_QUEUE` after
+       `"\n\n"` (`blizzard_game/classic/eventimplementation.lua:61–72`): the line is matched against those keys only
+       (`PASS_THROUGH`), the name taken as the template's `verbatim` argument, as a label surface does.
      - The `SubText`, the buttons and the extra button each take the one key whose English is the definition's
        string.
    - **`StaticPopup_OnUpdate`** (`staticpopup.lua:490–535`, every frame while a dialog is shown). The line is shown
-     again when it changed. Of the expiration texts, only the shared one is rebuilt:
+     again when it changed. So is any button whose label the client wrote back to its English after the dialog was
+     shown: an accept delay's end, or the party invite's Decline, which `SetupLockOnDeclineButtonAndEscape` locks for
+     half a second with a countdown label and then gives its saved English back (`gamedialogdefs.lua:19–52`). The
+     countdown label itself ("Decline (1s)") stays as the client wrote it. Of the expiration texts, only the shared one is rebuilt:
      `GameDialogDefsUtil.GetDefaultExpirationText` formats the template with `(seconds, SECONDS)` under a minute, else
      `(minutes, MINUTES)` (`gamedialogdefsutil.lua:53–61`): the death dialog's "%d %s until release", the logout and
      quit timers. The unit word is put in as its own Japanese, never left English inside a Japanese line.
@@ -119,8 +127,8 @@ It also had to be confirmed that the secure-environment windows stay English.
   `GetExpirationText` stays English. The shared countdown (`GetDefaultExpirationText`) is rebuilt with SECONDS /
   MINUTES as their Japanese. Whether the client's `GetText` returns the raw `|4Minute:Minutes;` (which the rebuild
   compares against) is an in-game check (the death dialog with more than a minute left).
-- `StaticPopup_OnUpdate` runs every frame while a dialog is shown. A frame where nothing changed costs two `GetText`
-  calls; a countdown that the client rewrites each frame is translated again each frame.
+- `StaticPopup_OnUpdate` runs every frame while a dialog is shown. A frame where nothing changed costs one `GetText`
+  call for the line and one per button; a countdown that the client rewrites each frame is translated again each frame.
 
 ## Consequences
 

@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- The group invite popup is now fully in Japanese: "<name> invites you to a group." (and the note that accepting takes you out of your queues) and its **Decline** button, which had stayed English after its half-second lock. The inviter's name stays English. Other popups whose whole line comes from the game as one known sentence (for example the question when you leave an instance group) are translated too.
+
 ## 0.1.0-alpha.8 - 2026-10-05
 
 ### Fixed
