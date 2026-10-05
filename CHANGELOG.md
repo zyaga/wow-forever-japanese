@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.1.0-alpha.8 - 2026-10-05
+
 ### Fixed
 - What NPCs say, yell and emote in chat (for example "Gnarlpine Warrior attempts to run away in fear!") now shows in Japanese. It had stayed English in every build so far.
 - The quest tracker's right-click menu is now fully in Japanese (Focus, Open Quest Map, Untrack, Share, Abandon). Only the quest's name stays English.
