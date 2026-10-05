@@ -901,7 +901,6 @@ WFJ.Data.add("gloss", {
   [55898] = "受け取る\tうけとる\treceive (take)",
   [55899] = "受け取る\tうけとる\treceived",
   [55900] = "受け取る\tうけとる\treceived (came from)",
-  [55901] = "受け取る\tうけとる\treceived (receive)",
   [55902] = "受け取る\tうけとる\treceives",
   [55903] = "受け取る\tうけとる\treceives (received)",
   [55904] = "受け取る\tうけとる\treceiving",

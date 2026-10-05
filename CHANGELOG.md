@@ -12,6 +12,7 @@ an old setting stops working). A release moves those lines under its version num
 ### Fixed
 - What NPCs say, yell and emote in chat (for example "Gnarlpine Warrior attempts to run away in fear!") now shows in Japanese. It had stayed English in every build so far.
 - The quest tracker's right-click menu is now fully in Japanese (Focus, Open Quest Map, Untrack, Share, Abandon). Only the quest's name stays English.
+- The turn-in text of "Coldridge Valley Mail Delivery" is now translated in full; Forever's text is longer than the one the old translation covered.
 
 ### Changed
 - The problem log (`/wfj log`) now records how every NPC chat line came out, translated or not, and says when NPC speech could not be set up, so a bug report can name why a line stayed English. It holds keys and yes/no flags only, never the line's text or the NPC's name.
