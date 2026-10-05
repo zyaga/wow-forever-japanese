@@ -290,6 +290,8 @@ _OTHER_WINDOWS: dict[str, list[str]] = {
     "bnettoast": [
         "Blizzard_BNet/Mainline/BNet.lua",
         "Blizzard_BNet/BNet.xml",
+        "Blizzard_SocialToast/SocialToast.lua",
+        "Blizzard_SocialToast/SocialToast.xml",
     ],
     "bossbanner": [
         "Blizzard_FrameXML/BossBannerToast.lua",

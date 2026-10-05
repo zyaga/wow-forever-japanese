@@ -244,7 +244,7 @@ Modules, in Main's `forever` order (load-on-demand addon in the last column; bla
 | `ReportFrame` | `reportframe` | report player | |
 | `HelpFrame` | `helpframe` | customer support | |
 | `StatusNotices` | `statusnotices` | GM chat, survey and behavior notices | `Blizzard_GMChatUI`, `Blizzard_WoWSurveyUI`, `Blizzard_BehavioralMessaging` |
-| `BNetToast` | `bnettoast` | Battle.net toasts, play-time alert | |
+| `BNetToast` | `bnettoast` | Battle.net toasts, play-time alert, the shard-transfer ("World refresh in …") toast (its OnUpdate post-hooked; the unit word an `entry`) | |
 | `SettingsPanel` · `SettingsTutorials` | `settingspanel`, `settingstutorials` | Options window; nameplate / ping tutorials | |
 | `EditMode` | `editmode` | HUD Edit Mode | |
 | `QuickKeybind` | `quickkeybind` | quick keybind mode | |

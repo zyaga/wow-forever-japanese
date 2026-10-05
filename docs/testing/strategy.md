@@ -274,7 +274,7 @@ Every other window the Forever client loads ([ADR-030](../adr/030-every-window-t
 59. **Report player** (right-click → Report): title, reason dropdown, minor-category checks, Report, the thank-you page; the name English.
 60. **Customer support** (game menu → Support): title, the browser options tooltip, an open ticket's notice.
 61. **Status notices** (only when the server sends one): GM chat request, survey notice, behavior warning / thank-you and its details window.
-62. **Battle.net toasts**: a friend request, "N friend requests" at login, a friend coming online or going offline (name English; the "…online" and "…offline" lines Japanese, their colours kept), the play-time alert.
+62. **Battle.net toasts**: a friend request, "N friend requests" at login, a friend coming online or going offline (name English; the "…online" and "…offline" lines Japanese, their colours kept), the play-time alert, the shard-transfer toast above the chat ("ワールド更新まで29秒" while it counts down).
 63. **Party pose** (if any Forever mode raises it): VICTORY / DEFEAT and the leave button.
 
 **Settings and system**

@@ -536,9 +536,9 @@ UIStrings.ARGS = {
   RENOWN_REWARD_TITLE_NAME_FORMAT = { [1] = "text" },
   RESURRECT_REQUEST_NO_SICKNESS_TIMER = { [1] = "text", [3] = "text" },
   RESURRECT_REQUEST_TIMER = { [1] = "text", [3] = "text" },
-  SHARD_TRANSFER_COUNTDOWN_MESSAGE = { [1] = "text", [2] = "text" },
+  SHARD_TRANSFER_COUNTDOWN_MESSAGE = { [1] = "text", [2] = "entry" }, -- [2] SECONDS / MINUTES (socialtoast.lua:73-81)
   SHARD_TRANSFER_COUNTDOWN_STATIC_POPUP_MESSAGE = { [1] = "text", [2] = "text" },
-  SHARD_TRANSFER_REFRESH_MESSAGE = { [1] = "text", [2] = "text" },
+  SHARD_TRANSFER_REFRESH_MESSAGE = { [1] = "text", [2] = "entry" },
   SLASH_CAA_CONFIRMATION = { [1] = "text", [2] = "text" },
   SLASH_CAA_CONFIRMATION_DISABLED = { [1] = "text" },
   SLASH_CAA_CONFIRMATION_ENABLED = { [1] = "text" },

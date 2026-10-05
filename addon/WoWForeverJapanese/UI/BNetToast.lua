@@ -14,6 +14,11 @@
 --   TIME_PLAYED_ALERT and SecondsToTime's session length (mainline/bnet.lua:361–363). The frame's OnUpdate script is
 --   post-hooked (HookScript), so the addon's line is the one on screen at the end of each frame; the duration inside it
 --   is kept as the client wrote it unless the dictionary's duration entries cover it.
+-- ShardTransferImminentFrame (blizzard_socialtoast/socialtoast.xml:72): ShardTransferImminentMixin:OnUpdate rewrites
+--   Text every frame while shown with SHARD_TRANSFER_COUNTDOWN_MESSAGE, then SHARD_TRANSFER_REFRESH_MESSAGE, with the
+--   seconds or minutes left and the SECONDS / MINUTES unit word, and SHARD_TRANSFER_ANYTIME once the time is up
+--   (socialtoast.lua:63-85). Its OnUpdate script is post-hooked like TimeAlertFrame's; the unit word is an entry, put
+--   in as its Japanese. Its minimize button shows only an atlas.
 -- The toast's click-through tooltip (TooltipFrame, :84–85) repeats the broadcast message: player text, not touched.
 local _, WFJ = ...
 local BNetToast = {}
@@ -28,11 +33,14 @@ BNetToast.NEVER_TOUCH = { "BNToastFrame.TopLine", "BNToastFrame.MiddleLine", "BN
 local CANDIDATES = {
   toast = { "BNToastFrame" }, double = { "BNToastFrame.DoubleLine" }, bottom = { "BNToastFrame.BottomLine" },
   alert = { "TimeAlertFrame" }, alertText = { "TimeAlertFrame.Text" },
+  shard = { "ShardTransferImminentFrame" }, shardText = { "ShardTransferImminentFrame.Text" },
 }
 
 local DOUBLE = { only = { "BN_TOAST_NEW_INVITE", "BN_TOAST_PENDING_INVITES", "BN_TOAST_NEW_CLUB_INVITATION" } }
 local BOTTOM = { only = { "BN_TOAST_OFFLINE", "BN_TOAST_ONLINE" } }
 local ALERT = { only = { "TIME_PLAYED_ALERT" } }
+local SHARD = { only = { "SHARD_TRANSFER_COUNTDOWN_MESSAGE", "SHARD_TRANSFER_REFRESH_MESSAGE",
+  "SHARD_TRANSFER_ANYTIME" } }
 
 local function get(key) return Compat.get(SURFACE, key) end
 
@@ -49,6 +57,11 @@ function BNetToast.onAlert()
   return WFJ.Labels.show(SURFACE, "alert", get("alertText"), nil, ALERT)
 end
 
+-- HookScript target (ShardTransferImminentFrame's OnUpdate). → 1 | 0
+function BNetToast.onShard()
+  return WFJ.Labels.show(SURFACE, "shard", get("shardText"), nil, SHARD)
+end
+
 local hooked = false
 
 -- Called by Main after Compat.init, HelpTooltip.init and ButtonText.init.
@@ -63,6 +76,11 @@ function BNetToast.init()
   end
   if type(alert) == "table" and type(alert.HookScript) == "function" and type(alert.Start) == "function" then
     alert:HookScript("OnUpdate", BNetToast.onAlert)
+    any = true
+  end
+  local shard = get("shard")
+  if type(shard) == "table" and type(shard.HookScript) == "function" and type(shard.Start) == "function" then
+    shard:HookScript("OnUpdate", BNetToast.onShard)
     any = true
   end
   hooked = any
