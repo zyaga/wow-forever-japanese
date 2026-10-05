@@ -1,5 +1,6 @@
 {"id": "7202e1a20f899faa", "field": "text", "en": "We must be close, Commander. I can feel the elements stirring.", "hash": "7202e1a20f899faa", "src": "vmangos@13b49dc"}
 {"id": "7204696ecddab796", "field": "text", "en": "If you manage to complete a deck of elementals cards you will be rewarded with a greater darkmoon card of the maelstrom.   This card will occasionally impact an enemy you are fighting with for heavy damage.", "hash": "7204696ecddab796", "src": "vmangos@13b49dc"}
+{"id": "720aeef3c6eac440", "field": "text", "en": "Once your campfire is down, you can place all sorts of camp fixtures around it.", "hash": "720aeef3c6eac440", "src": "collector@1.60.1.70205"}
 {"id": "7212a9cf7bd77de5", "field": "text", "en": "%s grabs for her poisoned dagger!", "hash": "7212a9cf7bd77de5", "src": "vmangos@13b49dc"}
 {"id": "7216fd92c01f0438", "field": "text", "en": "$n coming this way fast!  Prepare for attack!", "hash": "7216fd92c01f0438", "src": "vmangos@13b49dc"}
 {"id": "72195624212122c9", "field": "text", "en": "I heard ol' Marshal McBride was sendin' ye' my way.", "hash": "72195624212122c9", "src": "forever-vo@025070f", "npcs": [248415]}
