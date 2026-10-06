@@ -10,7 +10,7 @@
 | Option | Pros | Cons |
 |---|---|---|
 | Chatterbox multilingual, run locally, voice copied from a reference clip | MIT, any voice from a 10 second clip, what forever-vo uses for English | Japanese is one of 23 languages in one model: slow on this Mac, rushed pacing, drones and noise between sentences, needs a licensed Japanese reference clip |
-| AivisSpeech Engine, run locally, ready-made voices | Built for Japanese, clean output, 3× faster than playback on the processor alone, 40 freely licensed voices, male and female | Voices are fixed models, not copies of a given clip; the licence must be read per voice |
+| AivisSpeech Engine, run locally, ready-made voices | Built for Japanese, clean output, about 3 times faster than playback on the processor alone, 40 freely licensed voices, male and female | Voices are fixed models, not copies of a given clip; the licence must be read per voice |
 | The Mac's built-in Japanese voice (Kyoko) | No install, instant | A system voice; cannot ship |
 | Hosted services (Google, Azure, OpenAI, ElevenLabs) | Fast | Ruled out by the maintainer: generation stays local. Prices below are reference only |
 
@@ -30,7 +30,7 @@ Quest 176 (Wanted: Hogger) was then voiced whole, offer, objective, progress and
 | All quest and gossip text (3.88M characters) | about 15 days nonstop |
 | Everything, objectives included (4.65M) | about 18 days |
 
-The CPU run was not made: the maintainer stopped the runs after the disk filled (the model files plus swap from two model copies at once).
+Per-line seconds for every engine and line are kept with the samples, beside the listening page. The CPU run was not made: the maintainer stopped the runs after the disk filled (the model files plus swap from two model copies at once).
 
 What it took to get a listenable line, all learned on the samples:
 - Input over about 90 characters came out rushed (9 to 12 characters a second against 5 to 7 for short lines). One sentence per call fixed the pace.
@@ -38,7 +38,7 @@ What it took to get a listenable line, all learned on the samples:
 - A piece with no letters (a lone 「！」) crashes the model.
 - Without a reference clip the built-in default voice is not Japanese, and the lines carried muffles and odd sounds. With a clip from the つくよみちゃん corpus (one female voice, commercial use and voice copying allowed, credit required) the voice was right but a metallic echo stayed near English names and at sentence ends. forever-vo's own notes say a reference spliced from several short clips sounds "robotic"; our clip was two sentences joined.
 - The watermark Chatterbox adds to every file needs a package the environment lacked, so the samples are unmarked. The licence does not require it.
-- English names in Latin letters: the objective line (mostly names) came out as 1.5 s of audio for 56 characters. Speech-only katakana hints (Hogger → ホガー) fixed it.
+- English names in Latin letters: the objective line (mostly names) came out as 1.5 s of audio for 56 characters. Speech-only katakana hints fixed it (Hogger → ホガー, Elwynn → エルウィン, Goldshire → ゴールドシャイア, Marshal Dughan → マーシャル・ダガン, Stormwind Army → ストームウィンド軍, Huge Gnoll Claw → ヒュージ・ノール・クロー, Blackrock Spire → ブラックロック・スパイア, gnoll → ノール, the player name → ケイラン). Chatterbox takes no reading hint of its own; it turns kanji into kana with a dictionary, so the kana variant was the whole line in kana. AivisSpeech read every kanji in the samples correctly without hints, so none were fed to it.
 
 The maintainer's verdict after the fixes: much better, still not clean. Chatterbox is superseded by the next engine.
 
@@ -47,12 +47,12 @@ AivisSpeech Engine 1.2.0 (Apple Silicon build, 799 MB unpacked) runs as a local 
 
 | Measure | Value |
 |---|---|
-| Speed | about 23 characters a second of text; 3.4 times faster than playback |
+| Generation speed | about 23 characters a second of text; about 3 times faster than playback |
 | Speaking rate | about 7.5 characters a second of audio, the same as the Mac's own voice |
 | All quest and gossip text (3.88M characters) | about 2 days nonstop, resumable |
 | Everything (4.65M) | about 2.3 days |
-| Speed | The engine's `speedScale` sets the pace at generation; the maintainer found 1.0 a touch fast, and 0.9 and 0.8 samples were made. No playback rate exists in the client [unverified: no such argument in the files read; forever-vo also pre-renders], so any speed choice means one file set per speed |
-| English names as written | Read Japanese-style, at normal length. The maintainer judged this right: the names will be in katakana once Japanese names become an option, and the sound is the same |
+| Pace setting | The engine's `speedScale` sets the pace at generation; the maintainer found 1.0 a touch fast, and 0.9 and 0.8 samples were made. No playback rate exists in the client [unverified: no such argument in the files read; forever-vo also pre-renders], so any speed choice means one file set per speed |
+| English names as written | Read Japanese-style, at normal length. The maintainer judged this right: if Japanese names ever become an option, the katakana would sound the same |
 
 Voices tried on quest 176, all under the Aivis Common Model License 1.0 (ACML): 阿井田 茂 (middle-aged male, two styles), ろてじん (elderly male), fumifumi (calm adult male), にせ and Lux (young male), morioki (adult female), みちのくあいり (calm young female), まお and コハク (young female, the engine's defaults). Each 240 MB.
 
@@ -97,7 +97,7 @@ Measured on the AivisSpeech samples: 7.5 characters a second of speech, and 32 k
 | forever-vo's scope (the four above) | 3.88M | 144 h | 2.1 GB | 1.55 GB |
 | Objectives | 0.78M | 29 h | 420 MB | 310 MB |
 
-CurseForge caps a file at 1 GB on the site (forever-vo's 1,378 MB zip was refused) and lower through its API (`413` at 574 MB and 887 MB). GitHub release assets allow 2 GB per file. So the audio ships as separate pack addons that depend on the main addon, cut by quest level, each with a few hundred MB; the main addon never carries audio. The split, the bitrate and the host are decided after the first in-game pass, not before.
+CurseForge's limit is known only from forever-vo's experience, not from a CurseForge page [unverified]: a 1,378 MB zip was refused on the site, and the API answered `413` at 574 MB and at 887 MB while files of 350 MB and under went through. So a pack should stay under about 350 MB for CurseForge, or ship as a GitHub release asset, which allows 2 GB per file. So the audio ships as separate pack addons that depend on the main addon, cut by quest level, each a few hundred MB at most; the main addon never carries audio. The split, the bitrate and the host are decided after the first in-game pass, not before.
 
 ### (h) The character's spoken error lines
 "Out of range", "Not enough rage" and the rest are the publisher's recordings, played from plain Lua, not from protected code: `UIErrorsMixin:TryDisplayMessage` calls `C_Sound.PlayVocalErrorSound(voiceID)` when `GetGameMessageInfo` returns a voice (`blizzard_uierrorsframe/mainline/uierrorsframe.lua:146-157`). The Forever override shortens the blacklist to one message type, so these errors are shown and voiced on Forever (`camelot/uierrorsframeoverrides.lua:1-3`). The setting `Sound_EnableErrorSpeech` turns them off (`blizzard_settingsdefinitions_shared/audio.lua:504`).
@@ -117,6 +117,8 @@ Not used; the maintainer ruled generation stays local. Prices read 2026-10-04 fr
 | OpenAI tts-1 / tts-1-hd | $15 / $30 | $69.75 / $139.50 | none |
 | OpenAI gpt-4o-mini-tts | token priced | about $200 [estimate] | none |
 | ElevenLabs Multilingual v2 / Flash | $80 / $40 | $372 / $186 | free plan is non-commercial |
+
+Pages read: cloud.google.com/text-to-speech/pricing; azure.microsoft.com/pricing/details/cognitive-services/speech-services (figures from the retail prices API, since the page rendered no numbers); developers.openai.com/api/docs/pricing; elevenlabs.io/pricing/api. The OpenAI token-priced row is an estimate from about 350 characters a minute of speech.
 
 ## Recommendation
 **Go, with AivisSpeech, built in small steps.**
