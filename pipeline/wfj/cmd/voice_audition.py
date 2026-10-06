@@ -284,6 +284,15 @@ def review(root: Path, cfg: dict[str, Any], store: Path, db: Path, round_: str =
         picked = json.loads((folder / "picks.json").read_text(encoding="utf-8"))
     items = {e["id"]: e for e in json.loads((folder / "voices.json").read_text(encoding="utf-8"))}
     samples = kind_samples(root, cfg, db)
+    # a round may pin the line a kind is heard on (one that sounded wrong in game): {"_lines": {kind: key}}
+    pinned = cands.pop("_lines", {})
+    if pinned:
+        lines = voice_make.shipped_lines(root)
+        values = voice_make.line_values(root, lines)
+    for kind, key in pinned.items():
+        blank = {"creature": None, "name": "", "title": "", "profile": {}, "reason": ""}
+        sm = samples.setdefault(kind, blank)
+        sm.update(key=key, en="", text=voice.speech_text(lines[key], key, values.get(key, ())))
     counts = {k["name"]: k for k in kinds(root, cfg)}
     engine = Engine(cfg["engine"])
     speed = float(cfg.get("speed_scale", 0.9))
