@@ -18,6 +18,7 @@ import pytest
 
 from wfj.cmd import package_check
 from wfj.cmd import voice as cmd
+from wfj.cmd import voice_make
 from wfj.cmd.validate import rule_voice
 from wfj.core import voice
 from wfj.core.hashing import key as hash_key
@@ -91,7 +92,6 @@ def test_creature_lines_read_the_gossip_menu_and_creature_greetings(tmp_path):
 def test_gender_comes_from_the_latest_display_build(tmp_path):
     genders = vmangos.read_creature_genders(make_db(tmp_path / "m.sqlite"), {100, 101, 103, 999})
     assert genders == {100: 0, 101: 1, 103: 2}
-    assert [voice.voice_of(genders.get(c)) for c in (100, 101, 103, 999)] == ["male", "female", "narrator", "narrator"]
 
 
 # ---- who speaks ------------------------------------------------------------------------------------------
@@ -140,7 +140,7 @@ def test_validate_accepts_good_tables(tmp_path):
         [{"key": "456-description", "speaker": 2079, "provenance": SRC},
          {"key": "5842-description", "speaker": "narrator", "provenance": SRC},
          {"key": "g-0123456789abcdef", "speaker": 2079, "provenance": {"source": "collector@1.60.1.70205", "imported": "2026-10-06"}}],
-        [{"creature": 2079, "voice": "male", "provenance": SRC}],
+        [{"creature": 2079, "voice": "aidacalm", "row": "male", "provenance": SRC}],
     )
     assert rule_voice(data) == []
 
@@ -152,12 +152,13 @@ def test_validate_rejects_bad_tables(tmp_path):
          {"key": "456-description", "speaker": 3000, "provenance": SRC},
          {"key": "456-objectives", "speaker": True, "provenance": SRC},
          {"key": "g-xyz", "speaker": 2079}],
-        [{"creature": 2079, "voice": "robot", "provenance": SRC},
-         {"creature": 2079, "voice": "male", "provenance": {"source": "nope", "imported": "today"}}],
+        [{"creature": 2079, "voice": "Robot!", "provenance": SRC},
+         {"creature": 2079, "voice": "male", "row": "m", "provenance": {"source": "nope", "imported": "today"}}],
     )
     problems = rule_voice(data)
     for want in ("duplicate", "bad key '456-objectives'", "speaker must be", "bad key 'g-xyz'",
-                 "provenance must be an object", "voice must be one of", "creature 3000 has no voice row",
+                 "provenance must be an object", "voice must be a roster voice id", "row must name the cast row",
+                 "creature 3000 has no voice row",
                  "voice voices 2079: duplicate", "source must be name@version", "imported must be a date"):
         assert any(want in p for p in problems), want
 
@@ -179,16 +180,38 @@ def test_a_stage_direction_is_not_read():
     assert voice.speech_text("飲んで。\n\n<Iverronが解毒剤を飲む>\n\nありがとう。", "k") == "飲んで。\n\n\n\nありがとう。"
 
 
-@pytest.mark.parametrize("ja", ["{foo}です", "<he/she>が", "$N1体", "|cffffffff白|r", "<>"])
+def test_numbers_are_filled_from_the_english_as_the_addon_fills_them():
+    assert voice.live_values("Kill Kobold Vermin, 2 of em.") == ["2"]
+    assert voice.live_values("train under SI:7, 1,200 to 1,500 yards away") == ["7", "1200～1500"]
+    assert voice.live_values("include:$B$B1.  Murdering") == ["1"]  # $B is a line break, not a letter
+    assert voice.live_values("OOX-17/TN and level60") == ["17"]
+    assert voice.speech_text("Kobold Verminを$N1体倒せ。", "k", ["2"]) == "Kobold Verminを2体倒せ。"
+    assert voice.speech_text("Elixirを$N1個求める", "k") == "Elixirを何個か求める"  # only the game knows it
+    assert voice.speech_text("あと$2113w日以内だ", "k") == "あと数日以内だ"
+    assert voice.text_hash("あ", ["2"]) != voice.text_hash("あ", ["3"]) != voice.text_hash("あ")
+
+
+def test_a_line_that_is_all_stage_direction_is_read_without_its_brackets():
+    assert voice.speech_text("<色あせたインクで書かれたメモだ。>", "k") == "色あせたインクで書かれたメモだ。"
+
+
+@pytest.mark.parametrize("ja", ["{foo}です", "<he/she>が", "|cffffffff白|r", "<>"])
 def test_other_markup_fails_with_the_key(ja):
     with pytest.raises(voice.VoiceError, match="^3522-completion: "):
         voice.speech_text(ja, "3522-completion")
 
 
-def test_the_scoped_lines_all_read():
-    lines = cmd.shipped_lines(ROOT / "data", "shadowglen")
+def test_every_line_with_a_speaker_reads():
+    # the whole game: a line the engine would refuse stops the full run, so it fails here first
+    lines = voice_make.shipped_lines(ROOT / "data")
+    values = voice_make.line_values(ROOT / "data", lines)
+    bad = []
     for row in cmd.read_rows(ROOT / "data" / "voice" / "speakers.jsonl"):
-        voice.speech_text(lines[row["key"]], row["key"])
+        try:
+            voice.speech_text(lines[row["key"]], row["key"], values.get(row["key"], ()))
+        except (voice.VoiceError, KeyError) as e:
+            bad.append(str(e))
+    assert bad == []
 
 
 # ---- the hash matches what the addon ships ---------------------------------------------------------------
@@ -258,7 +281,9 @@ class StubEngine:
                     stub.calls.append(("query", q["text"], int(q["speaker"])))
                     self._send(json.dumps({"accent_phrases": [], "speedScale": 1.0}).encode())
                 else:
-                    stub.calls.append(("synthesis", int(q["speaker"]), json.loads(body)["speedScale"]))
+                    b = json.loads(body)
+                    stub.calls.append(("synthesis", int(q["speaker"]), b["speedScale"], b["pitchScale"],
+                                       b["intonationScale"]))
                     self._send(_wav(), "audio/wav")
 
         return H
@@ -274,9 +299,15 @@ def engine():
     e.close()
 
 
-CFG = {"speed_scale": 0.9, "voices": {"male": {"style": 11, "model": "M"}, "female": {"style": 22, "model": "F"},
-                                      "narrator": {"style": 11, "model": "M"}},
-       "credits": {"engine": "AivisSpeech Engine", "licence": "ACML 1.0"}}
+CFG = {
+    "speed_scale": 0.9, "narrator": "m", "book_narrator": "m", "cast": [],
+    "roster": {
+        "m": {"model": "M", "style": 11, "speed": 0.9, "pitch": 0.0, "intonation": 1.0, "licence": "ACML 1.0"},
+        "f": {"model": "F", "style": 22, "speed": 0.9, "pitch": 0.0, "intonation": 1.0, "licence": "ACML 1.0"},
+        "old": {"model": "F", "style": 22, "speed": 0.85, "pitch": -0.05, "intonation": 1.0, "licence": "CC0"},
+    },
+    "credits": {"engine": "AivisSpeech Engine"},
+}
 
 
 def _store(tmp_path, ja456="御機嫌よう、{name}。"):
@@ -299,8 +330,9 @@ def _store(tmp_path, ja456="御機嫌よう、{name}。"):
         {"key": "g-0123456789abcdef", "speaker": "narrator", "provenance": SRC},
     ])
     cmd.write_rows(data / "voice" / "voices.jsonl", [
-        {"creature": 1992, "voice": "female", "provenance": SRC},
-        {"creature": 2079, "voice": "male", "provenance": SRC},
+        {"creature": 1992, "voice": "f", "row": "female", "provenance": SRC},
+        {"creature": 2079, "voice": "m", "row": "male", "provenance": SRC},
+        {"creature": 3000, "voice": "old", "row": "elder, female", "provenance": SRC},
     ])
     return data
 
@@ -309,51 +341,83 @@ def _fake_encode(wav, out):
     out.write_bytes(b"MP3" + wav[:16])
 
 
+def _gen(data, store, engine, cfg=CFG):
+    return voice_make.generate(data, "all", cfg, store, Engine(engine.url), _fake_encode, log=lambda *_: None)
+
+
+def _audio(data):
+    return voice_make.audio_record(data)
+
+
 def test_generate_reads_each_line_in_its_voice_at_the_set_pace(tmp_path, engine):
     data = _store(tmp_path)
-    r = cmd.generate(data, "shadowglen", CFG, tmp_path / "voice", Engine(engine.url), _fake_encode)
+    r = _gen(data, tmp_path / "voice", engine)
     assert r["made"] == 3
     queries = [c for c in engine.calls if c[0] == "query"]
     assert ("query", "御機嫌よう、冒険者。", 11) in queries
     assert ("query", "よくやった。", 22) in queries
     assert ("query", "ようこそ。", 11) in queries
-    assert {c[2] for c in engine.calls if c[0] == "synthesis"} == {0.9}
-    m = json.loads((tmp_path / "voice" / "manifest.json").read_text())
-    e = m["456-description"]
+    assert {c[2:] for c in engine.calls if c[0] == "synthesis"} == {(0.9, 0.0, 1.0)}
+    e = _audio(data)["456-description"]
     assert e["ja_hash"] == hash_key("御機嫌よう、{name}。")
-    assert (e["voice"], e["style"], e["model"], e["speed"], e["engine"], e["seconds"]) == ("male", 11, "uuid-m", 0.9, "1.2.0", 0.5)
-    assert e["fingerprint"] == voice.fingerprint(e["ja_hash"], "male", 11, 0.9, "1.2.0")
+    assert (e["key"], e["voice"], e["seconds"], e["provenance"]["source"]) == ("456-description", "m", 0.5, "aivis@1.2.0")
+    assert e["fingerprint"] == voice.fingerprint(e["ja_hash"], "m", CFG["roster"]["m"])
     assert (tmp_path / "voice" / "456-description.mp3").is_file()
+    status = json.loads((tmp_path / "voice" / "status.json").read_text())
+    assert (status["done"], status["total"], status["finished"]) == (3, 3, True)
 
 
 def test_a_rerun_remakes_only_what_changed(tmp_path, engine):
     data = _store(tmp_path)
     out = tmp_path / "voice"
-    cmd.generate(data, "shadowglen", CFG, out, Engine(engine.url), _fake_encode)
+    _gen(data, out, engine)
     engine.calls.clear()
-    r = cmd.generate(data, "shadowglen", CFG, out, Engine(engine.url), _fake_encode)
-    assert (r["made"], r["skipped"]) == (0, 3)
+    assert _gen(data, out, engine)["made"] == 0
     assert not [c for c in engine.calls if c[0] in ("query", "synthesis")]
     _store(tmp_path, ja456="こんにちは、{name}。")
-    r = cmd.generate(data, "shadowglen", CFG, out, Engine(engine.url), _fake_encode)
-    assert (r["made"], r["skipped"]) == (1, 2)
-    slower = {**CFG, "speed_scale": 0.8}
-    r = cmd.generate(data, "shadowglen", slower, out, Engine(engine.url), _fake_encode)
-    assert r["made"] == 3
+    _audio_rows = cmd.read_rows(data / "voice" / "audio.jsonl")
+    assert _gen(data, out, engine)["made"] == 1
+    # recasting one voice remakes only the lines read in it: the female voice's settings change
+    slower = {**CFG, "roster": {**CFG["roster"], "f": {**CFG["roster"]["f"], "speed": 0.8}}}
+    assert _gen(data, out, engine, slower)["made"] == 1
+    assert _audio_rows  # the record was written before the second run
 
 
-def test_numbers_project_the_full_run(tmp_path, engine):
+def test_a_line_several_differently_cast_creatures_say_gets_a_file_per_voice(tmp_path, engine):
     data = _store(tmp_path)
-    r = cmd.generate(data, "shadowglen", CFG, tmp_path / "voice", Engine(engine.url), _fake_encode)
-    text = "\n".join(cmd.numbers(r))
-    assert "lines 3" in text
-    assert "projection, everything (4,650,000 characters)" in text
+    cmd.write_rows(data / "voice" / "speakers.jsonl", [
+        {"key": "456-description", "speaker": 2079, "others": [1992, 3000], "provenance": SRC},
+    ])
+    _gen(data, tmp_path / "voice", engine)
+    assert sorted(_audio(data)) == ["456-description", "456-description_f", "456-description_old"]
+    assert {c[2:] for c in engine.calls if c[0] == "synthesis"} == {(0.9, 0.0, 1.0), (0.85, -0.05, 1.0)}
+    lines, creatures, left_out = voice_make.pack_tables(data, CFG, "all")
+    assert lines["456-description"]["variants"] == {"f": ("456-description_f.mp3", 0.5),
+                                                    "old": ("456-description_old.mp3", 0.5)}
+    assert creatures == {1992: "f", 2079: "m", 3000: "old"} and left_out == []
+
+
+def test_plan_counts_what_generate_would_make(tmp_path, engine):
+    data = _store(tmp_path)
+    p = voice_make.plan(data, CFG, "all")
+    assert (p["files"], p["missing"], p["stale"]) == (3, 3, 0)
+    _gen(data, tmp_path / "voice", engine)
+    _store(tmp_path, ja456="変わった、{name}。")
+    p = voice_make.plan(data, CFG, "all")
+    assert (p["missing"], p["stale"], dict(p["by_voice"])) == (0, 1, {"m": 1})
+
+
+def test_in_step_reports_missing_and_stale_files():
+    lines = {"1-description": "あ", "1-progress": "い"}
+    jobs = [voice.Job("1-description", "1-description", "m"), voice.Job("1-progress", "1-progress", "m")]
+    audio = {"1-description": {"fingerprint": voice.fingerprint(hash_key("古い"), "m", CFG["roster"]["m"])}}
+    assert voice.in_step(jobs, lines, CFG["roster"], audio) == {"missing": ["1-progress"], "stale": ["1-description"]}
 
 
 @pytest.mark.skipif(shutil.which("lame") is None, reason="lame is not installed")
 def test_mp3_is_mono_22khz_32kbps_without_a_xing_frame(tmp_path):
     out = tmp_path / "x.mp3"
-    cmd.to_mp3(_wav(1.0), out)
+    voice_make.to_mp3(_wav(1.0), out)
     b = out.read_bytes()
     i = b.find(b"\xff")
     while not (b[i] == 0xFF and b[i + 1] & 0xE0 == 0xE0):
@@ -373,25 +437,34 @@ def test_mp3_is_mono_22khz_32kbps_without_a_xing_frame(tmp_path):
 
 def test_pack_holds_only_lines_whose_japanese_still_matches(tmp_path, engine):
     data = _store(tmp_path)
-    out = tmp_path / "voice"
-    cmd.generate(data, "shadowglen", CFG, out, Engine(engine.url), _fake_encode)
+    _gen(data, tmp_path / "voice", engine)
     _store(tmp_path, ja456="変わった、{name}。")
-    lines, stale = cmd.pack_lines(data, "shadowglen", json.loads((out / "manifest.json").read_text()))
-    assert stale == ["456-description"]
-    assert lines["456-completion"] == ("456-completion.mp3", hash_key("よくやった。"), 0.5)
+    lines, _, left_out = voice_make.pack_tables(data, CFG, "all")
+    assert left_out == ["456-description"] and "456-description" not in lines
+    assert lines["456-completion"] == {"file": "456-completion.mp3", "hash": hash_key("よくやった。"), "seconds": 0.5,
+                                       "variants": {}}
 
 
 def test_register_and_toc_text():
-    reg = voice_pack.register_text({"g-0a": ("g-0a.mp3", "fedcba9876543210", 3.25), "456-description":
-                                    ("456-description.mp3", "0123456789abcdef", 21.4)})
+    reg = voice_pack.register_text(
+        {"g-0a": {"file": "g-0a.mp3", "hash": "fedcba9876543210", "seconds": 3.25, "variants": {}},
+         "456-description": {"file": "456-description.mp3", "hash": "0123456789abcdef", "seconds": 21.4,
+                             "variants": {"old": ("456-description_old.mp3", 20.0)}}},
+        {3000: "old", 11: ("m", "f")},
+    )
     assert reg == (
         "-- Generated by wfj voice pack. Do not edit.\n"
         "WoWForeverJapanese_RegisterVoice({\n"
-        "  format = 1,\n"
+        "  format = 2,\n"
         '  folder = "WoWForeverJapanese_Voice",\n'
         "  lines = {\n"
-        '    ["456-description"] = { "456-description.mp3", "0123456789abcdef", 21.4 },\n'
+        '    ["456-description"] = { "456-description.mp3", "0123456789abcdef", 21.4,'
+        ' v = { ["old"] = { "456-description_old.mp3", 20.0 } } },\n'
         '    ["g-0a"] = { "g-0a.mp3", "fedcba9876543210", 3.2 },\n'
+        "  },\n"
+        "  creatures = {\n"
+        '    [11] = { "m", "f" },\n'
+        '    [3000] = "old",\n'
         "  },\n"
         "})\n"
     )
@@ -406,15 +479,17 @@ def test_the_pack_folder(tmp_path, engine, monkeypatch):
     toc.mkdir(parents=True)
     (toc / "WoWForeverJapanese.toc").write_text("## Interface: 11508\n## Title: x\n")
     out = tmp_path / "voice"
-    cmd.generate(data, "shadowglen", CFG, out, Engine(engine.url), _fake_encode)
+    _gen(data, out, engine)
     cfg = tmp_path / "voice.toml"
     cfg.write_text(
-        'engine = "x"\nspeed_scale = 0.9\n[voices.male]\nmodel = "M"\nstyle = 11\n[voices.female]\nmodel = "F"\n'
-        'style = 22\n[voices.narrator]\nmodel = "M"\nstyle = 11\n[credits]\nengine = "E"\nlicence = "L"\n'
+        'engine = "x"\nspeed_scale = 0.9\nnarrator = "m"\nbook_narrator = "m"\n'
+        '[roster.m]\nmodel = "M"\nstyle = 11\nlicence = "ACML 1.0"\n'
+        '[roster.f]\nmodel = "F"\nstyle = 22\nlicence = "ACML 1.0"\n'
+        '[roster.old]\nmodel = "F"\nstyle = 22\nspeed = 0.85\npitch = -0.05\nlicence = "CC0"\n'
+        '[credits]\nengine = "E"\n'
     )
     monkeypatch.chdir(tmp_path)
-    assert cmd.run(["pack", "--config", str(cfg), "--manifest", str(out / "manifest.json"),
-                    "--out", str(tmp_path / "pack")]) == 0
+    assert voice_make.run(["pack", "--config", str(cfg), "--store", str(out), "--out", str(tmp_path / "pack")]) == 0
     dest = tmp_path / "pack" / voice_pack.FOLDER
     assert sorted(p.name for p in (dest / "Sound").iterdir()) == [
         "456-completion.mp3", "456-description.mp3", "g-0123456789abcdef.mp3"]

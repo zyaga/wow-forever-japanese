@@ -1,9 +1,9 @@
--- UI/VoicePlayer.lua: plays the voice pack's line for a line the quest or gossip window just showed in Japanese
--- (ADR-061). Core/Voice decides which file; this file owns every sound and client-setting call.
+-- UI/VoicePlayer.lua: plays the voice pack's line for a line the quest, gossip or book window just showed in
+-- Japanese (ADR-061, ADR-062). Core/Voice decides which file; this file owns every sound and client-setting call.
 --   * Start: State "lineShown" (fired by Render.show after a client write, never on a refresh). One line at a time:
 --     a new line stops the one playing; the same line shown again while it plays is not restarted (the gossip window
 --     lays its first window out twice).
---   * Stop: the quest or gossip window hides, the reveal key goes down, translation or a voice setting is switched
+--   * Stop: the quest, gossip or book window hides (a book's next page is a new line), the reveal key goes down, translation or a voice setting is switched
 --     off, the player logs out.
 --   * Channel: "Master", so silencing the dialog channel never silences our own line. forever-vo ships the same MP3
 --     shape and plays it with PlaySoundFile(path, channel) → willPlay, handle [unverified in the Forever client's own
@@ -36,7 +36,9 @@ local BUTTON_LIFT = 10 -- above the window's own art, like the banner (Render.BA
 local ICON_PLAYING = "Interface\\TimeManager\\PauseButton"
 local ICON_STOPPED = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up"
 local ICON_HIGHLIGHT = "Interface\\Buttons\\UI-Common-MouseHilight"
-local WINDOWS = { "QuestFrame", "GossipFrame" }
+local WINDOWS = { "QuestFrame", "GossipFrame", "ItemTextFrame" }
+-- the NPC whose window shows the line: its creature id picks the voice of a line several creatures say
+local SPEAKER_UNIT = { QuestFrame = "questnpc", GossipFrame = "npc" }
 
 VoicePlayer.counts = { played = 0, refused = 0 }
 
@@ -62,7 +64,23 @@ local function setCVar(name, value)
 end
 
 local function windowOf(surface)
-  return surface == "gossip" and "GossipFrame" or "QuestFrame"
+  if surface == "gossip" then return "GossipFrame" end
+  if surface == "itemtext" then return "ItemTextFrame" end
+  return "QuestFrame"
+end
+
+-- The NPC on screen for a window → { creature, sex } or nil (a book has no speaker; a unit token the client does
+-- not answer leaves the line's main voice). UnitGUID("questnpc") is the token the quest window names its giver by
+-- [verified: classic_era Classic/QuestFrame.lua:118]; UnitSex on an NPC unit [unverified on Forever; in-game check
+-- in docs/testing/strategy.md].
+local function speaker(window)
+  local unit = SPEAKER_UNIT[window]
+  local guid = unit and Compat.resolve("UnitGUID")
+  if type(guid) ~= "function" then return nil end
+  local id = WFJ.Collector.creatureId(guid(unit))
+  if not id then return nil end
+  local sex = Compat.resolve("UnitSex")
+  return { creature = id, sex = type(sex) == "function" and sex(unit) or nil }
 end
 
 -- Puts the dialog channel back if this addon turned it off. → true when it did
@@ -151,8 +169,8 @@ end
 
 -- State "lineShown" listener. → true when a line started
 function VoicePlayer.onShown(surface, recKey, kind, id)
-  local path, detail = WFJ.Voice.decide(surface, recKey, kind, id) -- detail: the length, or why not
   local window = windowOf(surface)
+  local path, detail = WFJ.Voice.decide(surface, recKey, kind, id, speaker(window)) -- detail: length, or why not
   if not path then
     -- a voiced line of this window with no file to play: the button must not replay the previous line
     if detail == "missing" or detail == "stale" or detail == "notext" then

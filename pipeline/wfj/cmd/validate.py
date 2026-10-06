@@ -554,7 +554,8 @@ def rule_voice(root: Path, config: Path | None = None) -> list[str]:
     lines = voice_make.shipped_lines(root)
     cast = {r["creature"]: r for r in voices}
     jobs = voice.jobs(speakers, cast, cfg["narrator"], cfg["book_narrator"], lines)
-    state = voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(root))
+    values = voice_make.line_values(root, lines)
+    state = voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(root), values)
     stale, missing = len(state["stale"]), len(state["missing"])
     print(f"validate: voice: {len(jobs)} files; {len(jobs) - stale - missing} in step, {stale} stale,"
           f" {missing} not made")

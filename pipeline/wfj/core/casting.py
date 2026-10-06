@@ -4,7 +4,7 @@ Pure: the readers and writers live in `cmd/voice.py`.
 A profile row: `{"creature", "race", "gender", "age", "archetype", "role"?, "provenance": {field: {...}}}`.
 Each field's provenance names where it came from, in this order of trust:
 
-1. a ruling (source `MAINTAINER`, with its date), never replaced by anything else.
+1. a ruling, with its date: never replaced by anything else.
 2. `client@<build>`: the client's own display tables (race and gender).
 3. `vmangos@<commit>`: the open database (gender of a display the client tables lack, the creature type's
    kind of being, a racial leader's role).
@@ -321,9 +321,10 @@ def _matches(when: Mapping[str, Any], profile: Mapping[str, Any]) -> bool:
 
 
 def cast_one(profile: Mapping[str, Any], rows: Sequence[Mapping[str, Any]]) -> tuple[str, str] | None:
-    """(voice id, row name) from the first casting row whose `when` matches the profile, or None."""
+    """(voice id, row name) from the first casting row with voices whose `when` matches the profile, or None.
+    A row with no voices yet is skipped."""
     for row in rows:
-        if _matches(row.get("when", {}), profile):
+        if row.get("voices") and _matches(row.get("when", {}), profile):
             return stable_pick(int(profile["creature"]), row["voices"]), row["name"]
     return None
 
@@ -375,20 +376,28 @@ def roster_problems(
         if vid not in roster:
             out.append(f"narrator voice {vid!r} is not in the roster")
     names: set[str] = set()
-    allowed = {"gender": GENDERS, "age": AGES, "archetype": ARCHETYPES, "role": ROLES}
     for row in rows:
         name = row.get("name")
         if not isinstance(name, str) or not name or name in names or name in (NARRATOR_ROW, "override"):
             out.append(f"cast row {name!r}: needs a unique name")
         names.add(str(name))
-        for vid in row.get("voices") or [None]:
-            if vid not in roster:
-                out.append(f"cast row {name}: voice {vid!r} is not in the roster")
-        for field, want in row.get("when", {}).items():
-            if field not in FIELDS:
-                out.append(f"cast row {name}: unknown field {field!r}")
-                continue
-            for w in want if isinstance(want, list) else [want]:
-                if field in allowed and w not in allowed[field]:
-                    out.append(f"cast row {name}: {field} {w!r} is not one of {', '.join(allowed[field])}")
+        out += _row_problems(row, str(name), roster)
+    return out
+
+
+def _row_problems(row: Mapping[str, Any], name: str, roster: Mapping[str, Any]) -> list[str]:
+    out: list[str] = []
+    voices = row.get("voices")
+    if not isinstance(voices, list):
+        out.append(f"cast row {name}: voices must be a list (empty while not cast yet)")
+        voices = []
+    out += [f"cast row {name}: voice {vid!r} is not in the roster" for vid in voices if vid not in roster]
+    allowed = {"gender": GENDERS, "age": AGES, "archetype": ARCHETYPES, "role": ROLES}
+    for field, want in row.get("when", {}).items():
+        if field not in FIELDS:
+            out.append(f"cast row {name}: unknown field {field!r}")
+            continue
+        for w in want if isinstance(want, list) else [want]:
+            if field in allowed and w not in allowed[field]:
+                out.append(f"cast row {name}: {field} {w!r} is not one of {', '.join(allowed[field])}")
     return out

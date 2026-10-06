@@ -4,7 +4,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 local CORE = { "Core/Const.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua" }
 local IDS = { "enabled", "modifier", "area.quests", "area.gossip", "area.itemTooltips", "area.spellTooltips",
   "area.interface", "area.books", "marker.stale", "marker.missing", "readings.enabled", "readings.glosses",
-  "minimapButton", "voice.enabled", "voice.offer", "voice.progress", "voice.turnin", "voice.greeting",
+  "minimapButton", "voice.enabled", "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books",
   "voice.muteDialog", "voice.button" }
 local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["area.gossip"] = true,
   ["area.itemTooltips"] = true, ["area.spellTooltips"] = true, ["area.interface"] = true, ["area.books"] = true,
@@ -14,7 +14,7 @@ local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["a
   ["readings.glosses"] = true, -- on by default
   minimapButton = true, -- on by default
   ["voice.enabled"] = true, ["voice.offer"] = true, ["voice.progress"] = true, ["voice.turnin"] = true,
-  ["voice.greeting"] = true, ["voice.muteDialog"] = true,
+  ["voice.greeting"] = true, ["voice.books"] = true, ["voice.muteDialog"] = true,
   ["voice.button"] = true } -- on, but listed only while a voice pack is installed
 
 describe("Settings registry", function()

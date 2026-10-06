@@ -32,16 +32,209 @@ fits = "adult female"
 
 # Cast rows, first match wins. `when` names profile fields (race, gender, age, archetype, role) and the value
 # or list of values to match; a field left out matches anything. `voices` is a list: each creature gets one
-# of them, always the same one (a hash of its id), so neighbours vary.
+# of them, always the same one (a hash of its id), so neighbours vary. A row with no voices yet is skipped.
+# Kinds of being come first (a ghost sounds like a ghost before it sounds like its race), then age, then
+# race and gender. A creature shown as both genders is cast twice, as male and as female.
+
+[[cast]]
+name = "ghost, female"
+when = { archetype = "ghost", gender = "female" }
+voices = []
+
+[[cast]]
+name = "ghost"
+when = { archetype = "ghost" }
+voices = []
+
+[[cast]]
+name = "undead, female"
+when = { archetype = "undead", gender = "female" }
+voices = []
+
+[[cast]]
+name = "undead"
+when = { archetype = "undead" }
+voices = []
+
+[[cast]]
+name = "dragon, female"
+when = { archetype = "dragon", gender = "female" }
+voices = []
+
+[[cast]]
+name = "dragon"
+when = { archetype = "dragon" }
+voices = []
+
+[[cast]]
+name = "demon"
+when = { archetype = "demon" }
+voices = []
+
+[[cast]]
+name = "elemental"
+when = { archetype = "elemental" }
+voices = []
+
+[[cast]]
+name = "giant"
+when = { archetype = "giant" }
+voices = []
+
+[[cast]]
+name = "mechanical"
+when = { archetype = "mechanical" }
+voices = []
+
+[[cast]]
+name = "beast-kin"
+when = { archetype = "beast-kin" }
+voices = []
+
+[[cast]]
+name = "child, girl"
+when = { age = "child", gender = "female" }
+voices = []
+
+[[cast]]
+name = "child, boy"
+when = { age = "child" }
+voices = []
+
+[[cast]]
+name = "elder, female"
+when = { age = "elder", gender = "female" }
+voices = []
+
+[[cast]]
+name = "elder, tauren"
+when = { age = "elder", race = "tauren" }
+voices = []
+
+[[cast]]
+name = "elder, troll"
+when = { age = "elder", race = "troll" }
+voices = []
+
+[[cast]]
+name = "elder, dwarf"
+when = { age = "elder", race = "dwarf" }
+voices = []
+
+[[cast]]
+name = "elder, orc"
+when = { age = "elder", race = "orc" }
+voices = []
+
+[[cast]]
+name = "elder, male"
+when = { age = "elder" }
+voices = []
+
+[[cast]]
+name = "young, female"
+when = { age = "young", gender = "female" }
+voices = []
+
+[[cast]]
+name = "young, male"
+when = { age = "young" }
+voices = []
+
+[[cast]]
+name = "human, female"
+when = { race = "human", gender = "female" }
+voices = []
+
+[[cast]]
+name = "nightelf, female"
+when = { race = "nightelf", gender = "female" }
+voices = []
+
+[[cast]]
+name = "tauren, female"
+when = { race = "tauren", gender = "female" }
+voices = []
+
+[[cast]]
+name = "orc, female"
+when = { race = "orc", gender = "female" }
+voices = []
+
+[[cast]]
+name = "dwarf, female"
+when = { race = "dwarf", gender = "female" }
+voices = []
+
+[[cast]]
+name = "troll, female"
+when = { race = "troll", gender = "female" }
+voices = []
+
+[[cast]]
+name = "gnome or goblin, female"
+when = { race = ["gnome", "goblin"], gender = "female" }
+voices = []
+
 [[cast]]
 name = "female"
 when = { gender = "female" }
-voices = ["morioki"]
+voices = []
+
+[[cast]]
+name = "human, male"
+when = { race = "human" }
+voices = []
+
+[[cast]]
+name = "dwarf, male"
+when = { race = "dwarf" }
+voices = []
+
+[[cast]]
+name = "orc, male"
+when = { race = "orc" }
+voices = []
+
+[[cast]]
+name = "nightelf, male"
+when = { race = "nightelf" }
+voices = []
+
+[[cast]]
+name = "tauren, male"
+when = { race = "tauren" }
+voices = []
+
+[[cast]]
+name = "goblin, male"
+when = { race = "goblin" }
+voices = []
+
+[[cast]]
+name = "gnome, male"
+when = { race = "gnome" }
+voices = []
+
+[[cast]]
+name = "troll, male"
+when = { race = "troll" }
+voices = []
+
+[[cast]]
+name = "bloodelf, male"
+when = { race = "bloodelf" }
+voices = []
+
+[[cast]]
+name = "ogre, male"
+when = { race = "ogre" }
+voices = []
 
 [[cast]]
 name = "male"
 when = { gender = ["male", "none"] }
-voices = ["aidacalm"]
+voices = []
 
 [credits]
 engine = "AivisSpeech Engine (https://aivis-project.com)"

@@ -48,7 +48,7 @@ Options.PAGES = {
     sections = {
     { title = "section.voice", rows = { "voice.enabled", "voice.muteDialog", "voice.button" } },
     { title = "section.voiceKinds", columns = 2,
-      rows = { "voice.offer", "voice.progress", "voice.turnin", "voice.greeting" } },
+      rows = { "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books" } },
   } },
 }
 

@@ -74,6 +74,7 @@ describe("Settings pages from the registry and PAGES", function()
     assert.are.equal("Voice", last[4])
     assert.is_truthy(control("voice.enabled"))
     assert.is_truthy(control("voice.greeting"))
+    assert.is_truthy(control("voice.books"))
     assert.is_false(O.addPage("voice")) -- once
     local again = O.build() -- a pack present at build time: the page is built with the others, after About
     assert.are.same({ "main", "collector", "about", "voice" }, { again[1].id, again[2].id, again[3].id, again[4].id })

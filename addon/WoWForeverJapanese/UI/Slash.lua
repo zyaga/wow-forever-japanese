@@ -16,7 +16,8 @@
 --                             fingerprint / ambiguous
 --   /wfj debug ui scan        English still showing on visible frames: "hook?" = the dictionary knows it, "key?" = not
 --   /wfj debug fonts          the refused-font retry: timer state, one pending widget, then a retry now
---   (plain /wfj debug also prints the voice pack's counts: lines, matched, missing, stale, played, refused)
+--   (plain /wfj debug also prints the voice packs' counts: lines, matched, missing, stale, played, refused,
+--   and the lines of each pack)
 --   /wfj version              the addon, normalization and Lua versions
 --   /wfj bug                  the report window (a bug, with the addon's own Lua errors, or an idea)
 --   /wfj log [<n>]            the problem log's last n entries, then how many Lua errors it holds
@@ -301,6 +302,10 @@ function Slash.debug(sub, arg)
     local c = V.counts
     say("voice: %d lines (%d invalid) · matched %d · missing %d · stale %d · played %d · refused %d",
       c.registered, c.invalid, c.matched, c.missing, c.stale, P and P.counts.played or 0, P and P.counts.refused or 0)
+    local list = {}
+    for folder, n in pairs(V.packs()) do list[#list + 1] = ("%s=%d"):format(folder, n) end
+    table.sort(list)
+    say("voice packs: %s", table.concat(list, " · "))
   else
     say("voice: no pack%s", V and V.counts.invalid > 0 and " (a pack registered an invalid table)" or "")
   end

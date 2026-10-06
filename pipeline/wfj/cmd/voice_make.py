@@ -100,6 +100,23 @@ def shipped_lines(root: Path) -> dict[str, str]:
     return out
 
 
+def line_values(root: Path, lines: dict[str, str]) -> dict[str, list[str]]:
+    """{pack key: the numbers its `$N<k>` take} for the lines that have any, from their English (as the
+    addon fills them from the live text)."""
+    want = {k for k, ja in lines.items() if "$N" in ja}
+    if not want:
+        return {}
+    english = Store(root, english=True)
+    en: dict[str, str] = {}
+    for ln in english.load("quest"):
+        en[voice.quest_key(ln["id"], ln["field"])] = ln["en"]
+    for ln in english.load("gossip"):
+        en[voice.gossip_key(ln["id"])] = ln["en"]
+    for ln in english.load("book"):
+        en[voice.book_key(ln["hash"])] = ln["en"]
+    return {k: voice.live_values(en[k]) for k in want if k in en}
+
+
 def read_cast(root: Path) -> dict[int, dict[str, str]]:
     return {int(r["creature"]): r for r in _rows(root / "voice" / "voices.jsonl")}
 
@@ -172,7 +189,7 @@ def plan(root: Path, cfg: dict[str, Any], scope: str) -> dict[str, Any]:
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines)
     audio = audio_record(root)
-    state = voice.in_step(jobs, lines, cfg["roster"], audio)
+    state = voice.in_step(jobs, lines, cfg["roster"], audio, line_values(root, lines))
     todo = set(state["missing"]) | set(state["stale"])
     rows = {c: r for c, r in read_cast(root).items()}
     speaker = {r["key"]: r["speaker"] for r in scoped_rows(root, scope)}
@@ -240,7 +257,8 @@ def generate(
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines)
     audio = audio_record(root)
-    state = voice.in_step(jobs, lines, cfg["roster"], audio)
+    values = line_values(root, lines)
+    state = voice.in_step(jobs, lines, cfg["roster"], audio, values)
     todo = set(state["missing"]) | set(state["stale"])
     work = [j for j in jobs if j.stem in todo or not (store / f"{j.stem}.mp3").is_file()]
     version = engine.version()
@@ -275,7 +293,7 @@ def generate(
     for n, j in enumerate(work, 1):
         settings = cfg["roster"][j.voice]
         ja = lines[j.key]
-        text = voice.speech_text(ja, j.key)
+        text = voice.speech_text(ja, j.key, values.get(j.key, ()))
         wav = engine.synthesize(
             text,
             int(settings["style"]),
@@ -291,7 +309,7 @@ def generate(
             "key": j.key,
             "voice": j.voice,
             "ja_hash": voice.ja_hash(ja),
-            "fingerprint": voice.fingerprint(voice.ja_hash(ja), j.voice, settings),
+            "fingerprint": voice.fingerprint(voice.text_hash(ja, values.get(j.key, ())), j.voice, settings),
             "seconds": round(secs, 2),
             "bytes": file.stat().st_size,
             "chars": len(text),
@@ -367,7 +385,7 @@ def pack_tables(
     cast = read_cast(root)
     audio = audio_record(root)
     jobs = voice.jobs(rows, cast, cfg["narrator"], cfg["book_narrator"], lines)
-    state = voice.in_step(jobs, lines, cfg["roster"], audio)
+    state = voice.in_step(jobs, lines, cfg["roster"], audio, line_values(root, lines))
     bad = set(state["missing"]) | set(state["stale"])
     out: dict[str, Any] = {}
     for j in jobs:

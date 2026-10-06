@@ -56,7 +56,8 @@ describe("Core/Voice: the pack registry and the decision", function()
   end)
 
   it("refuses a table of another format or folder as a whole", function()
-    assert.are.same({ 0, 1 }, { V.register({ format = 2, folder = "WoWForeverJapanese_Voice", lines = {} }) })
+    assert.are.same({ 0, 1 }, { V.register({ format = 3, folder = "WoWForeverJapanese_Voice", lines = {} }) })
+    assert.are.same({ 0, 1 }, { V.register({ format = 2, folder = "WoWForeverJapanese_Voice/../X", lines = {} }) })
     assert.are.same({ 0, 1 }, { V.register(pack(nil)) })
     assert.are.same({ 0, 1 }, { V.register({ format = 1, folder = "SomeOtherAddon", lines = {} }) })
     assert.is_false(V.hasPack())
@@ -65,6 +66,7 @@ describe("Core/Voice: the pack registry and the decision", function()
   it("keys a quest field by quest id and gossip by its key, nothing else", function()
     assert.are.equal("456-description", V.packKey("quest.description", 456))
     assert.are.equal("g-0a044ece3562b58d", V.packKey("gossip", "0a044ece3562b58d"))
+    assert.are.equal("b-0a044ece3562b58d", V.packKey("book", "0a044ece3562b58d"))
     assert.is_nil(V.packKey("quest.description", "456"))
     assert.is_nil(V.packKey("item.description", 4))
     assert.is_nil(V.packKey("ui", "QUEST_LOG"))
@@ -108,6 +110,44 @@ describe("Core/Voice: the pack registry and the decision", function()
     -- the pipeline speaks {name} as 冒険者 but hashes the text as shipped, so the match never depends on the player
     V.register(pack({ ["2-description"] = entry("2-description.mp3", "御機嫌よう、{name}。Silverwind Refugeへ行け。") }))
     assert.is_string((V.decide("questframe.detail", "description", "quest.description", 2)))
+  end)
+
+  local desc = DATA["quest.description"][2].ja
+  local PATH = "Interface\\AddOns\\%s\\Sound\\%s"
+
+  it("packs merge, and a pack registering again replaces only its own lines", function()
+    V.register({ format = 2, folder = "WoWForeverJapanese_Voice_1", lines = { ["2-description"] = entry("a.mp3", desc, 1) } })
+    V.register({ format = 2, folder = "WoWForeverJapanese_Voice_2", lines = { ["3-description"] = entry("b.mp3", "x", 1),
+      ["2-progress"] = entry("c.mp3", "y", 1) } })
+    assert.are.same({ WoWForeverJapanese_Voice_1 = 1, WoWForeverJapanese_Voice_2 = 2 }, V.packs())
+    assert.are.equal(3, V.counts.registered)
+    V.register({ format = 2, folder = "WoWForeverJapanese_Voice_2", lines = { ["3-description"] = entry("b.mp3", "x", 1) } })
+    assert.are.equal(2, V.counts.registered)
+    assert.are.equal(PATH:format("WoWForeverJapanese_Voice_1", "a.mp3"),
+      (V.decide("questframe.detail", "description", "quest.description", 2)))
+  end)
+
+  it("a line several creatures say plays the voice of the one on screen, else its main voice", function()
+    V.register({ format = 2, folder = "WoWForeverJapanese_Voice", creatures = { [10] = "deep", [11] = { "deep", "soft" } },
+      lines = { ["2-description"] = { "2-description.mp3", WFJ.Hash.key(desc), 3,
+        v = { deep = { "2-description_deep.mp3", 2.5 }, soft = { "2-description_soft.mp3", 2 } } } } })
+    local function play(who) return { V.decide("questframe.detail", "description", "quest.description", 2, who) } end
+    local F = "WoWForeverJapanese_Voice"
+    assert.are.same({ PATH:format(F, "2-description_deep.mp3"), 2.5 }, play({ creature = 10 }))
+    assert.are.same({ PATH:format(F, "2-description_soft.mp3"), 2 }, play({ creature = 11, sex = 3 }))
+    assert.are.same({ PATH:format(F, "2-description_deep.mp3"), 2.5 }, play({ creature = 11, sex = 2 }))
+    assert.are.same({ PATH:format(F, "2-description.mp3"), 3 }, play({ creature = 99 }))
+    assert.are.same({ PATH:format(F, "2-description.mp3"), 3 }, play(nil))
+  end)
+
+  it("a book page is voiced on the book window and switched off by its own setting", function()
+    DATA.book = { ["0a044ece3562b58d"] = { ja = "ページ", status = "." } }
+    settings["voice.books"] = true
+    V.register(pack({ ["b-0a044ece3562b58d"] = entry("b-0a044ece3562b58d.mp3", "ページ", 2) }))
+    assert.is_string((V.decide("itemtext", "page", "book", "0a044ece3562b58d")))
+    settings["voice.books"] = false
+    assert.are.same({ nil, "off" }, { V.decide("itemtext", "page", "book", "0a044ece3562b58d") })
+    DATA.book = nil
   end)
 
   it("a sectioned or missing Japanese plays nothing", function()
@@ -369,6 +409,16 @@ describe("UI/VoicePlayer: playing the pack's line in the quest window", function
     assert.is_false(WFJ.VoicePlayer.button("QuestFrame"):IsShown())
   end)
 
+  it("passes the NPC on screen, so a line several creatures say plays that NPC's voice", function()
+    Stub.units.questnpc = { name = "Tarindrella", guid = "Creature-0-1-0-1-1992-0000ABCD" }
+    WFJ.Voice.register({ format = 2, folder = "WoWForeverJapanese_Voice", creatures = { [1992] = "soft" },
+      lines = { ["2-description"] = { "2-description.mp3", WFJ.Hash.key(DATA["quest.description"][2].ja), 3,
+        v = { soft = { "2-description_soft.mp3", 2 } } } } })
+    Stub.showDetail()
+    assert.are.equal("Interface\\AddOns\\WoWForeverJapanese_Voice\\Sound\\2-description_soft.mp3", sounds[1].path)
+    Stub.units.questnpc = nil
+  end)
+
   it("a stale file stays silent and is counted", function()
     WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice",
       lines = { ["2-description"] = { "2-description.mp3", WFJ.Hash.key("older"), 3 } } })
@@ -391,7 +441,7 @@ describe("voice settings: shown only with a pack", function()
       end
       return n
     end
-    assert.are.equal(7, hiddenVoice())
+    assert.are.equal(8, hiddenVoice())
     WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = {} })
     assert.are.equal(0, hiddenVoice())
     assert.is_true(WFJ.Settings.get("voice.enabled")) -- on by default

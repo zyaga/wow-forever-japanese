@@ -9,7 +9,7 @@ addon ships it (tokens unfilled), so the addon can refuse audio made from older 
 from __future__ import annotations
 
 import re
-from collections.abc import Iterable, Mapping
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from typing import Any
 
@@ -63,10 +63,57 @@ def ja_hash(ja: str) -> str:
     return hash_key(ja)
 
 
-def speech_text(ja: str, key: str) -> str:
-    """The text the engine reads: player tokens become 冒険者, stage directions are dropped, and any other
-    markup is refused with the line's key (it would be read aloud as symbols)."""
-    text = _TOKEN.sub(PLAYER_WORD, _STAGE.sub("", ja))
+_VALUE = re.compile(r"\$N(\d+)(個|体|頭|匹|羽|本|枚|つ|人|名|回|分|秒|時間|日|年|冊|粒|束|杯|箱|袋|着)?")
+_WORLD_STATE = re.compile(r"\$\d+w")  # a number the server fills in ("$2113w日以内"): read as 数
+_BREAK = re.compile(r"\$[bB]")
+_LIVE_NUMBER = re.compile(r"[\d.,]+")
+
+
+def live_values(en: str) -> list[str]:
+    """The numbers the addon fills a line's `$N<k>` with, from its English: every run of digits, dots and
+    commas not touching a Latin letter, commas dropped, and "A to B" joined as "A～B". A port of
+    Core/Align.lua `Align.values`, so the audio says the number the window shows."""
+    en = _BREAK.sub("\n", en)  # the client shows $B as a line break, which ends the letter before a number
+    out: list[str] = []
+    last_end = None
+    for m in _LIVE_NUMBER.finditer(en):
+        s, e = m.start(), m.end()
+        if (s > 0 and en[s - 1].isascii() and en[s - 1].isalpha()) or (e < len(en) and en[e].isascii()
+                                                                        and en[e].isalpha()):
+            continue
+        v = m.group(0).replace(",", "").strip(".")
+        if not v:
+            continue
+        if last_end is not None and en[last_end:s] == " to ":
+            out[-1] = f"{out[-1]}～{v}"
+        else:
+            out.append(v)
+        last_end = e
+    return out
+
+
+def text_hash(ja: str, values: Sequence[str] = ()) -> str:
+    """What a file's words were made from: the shipped Japanese, and the numbers filled into it."""
+    return ja_hash(ja) if not values else ja_hash(ja + "\x00" + ",".join(values))
+
+
+def speech_text(ja: str, key: str, values: Sequence[str] = ()) -> str:
+    """The text the engine reads: player tokens become 冒険者, `$N<k>` the k-th number of the line's English
+    (`values`); a number only the game knows (none in the English, or a server count such as `$2113w`) is
+    read as 何個か / 数, stage directions are dropped (a line that is nothing but one is read without its
+    brackets), and any other markup is refused with the line's key (it would be read aloud as symbols)."""
+
+    def number(m: re.Match[str]) -> str:
+        k, counter = int(m.group(1)), m.group(2) or ""
+        if 1 <= k <= len(values):
+            return values[k - 1] + counter
+        return f"何{counter}か" if counter else "いくつか"
+
+    filled = _WORLD_STATE.sub("数", _VALUE.sub(number, _BREAK.sub("\n", ja)))
+    spoken = _STAGE.sub("", filled)
+    if not _MARKUP.sub("", _TOKEN.sub("", spoken)).strip():
+        spoken = re.sub(r"[<>]", "", filled)
+    text = _TOKEN.sub(PLAYER_WORD, spoken)
     bad = _MARKUP.search(text)
     if bad:
         raise VoiceError(f"{key}: markup {bad.group(0)!r} the voice cannot read")
@@ -213,7 +260,7 @@ def jobs(rows: Iterable[Mapping[str, Any]], cast: Mapping[int, Mapping[str, str]
 
 def in_step(
     file_jobs: Iterable[Job], lines: Mapping[str, str], roster: Mapping[str, Mapping[str, Any]],
-    audio: Mapping[str, Mapping[str, Any]],
+    audio: Mapping[str, Mapping[str, Any]], values: Mapping[str, Sequence[str]] | None = None,
 ) -> dict[str, list[str]]:
     """The audio record against what the files must be now: `missing` (no record), `stale` (made from other
     Japanese, another voice or other settings). Empty lists: voice is in step with the translation."""
@@ -222,7 +269,9 @@ def in_step(
         rec = audio.get(j.stem)
         if rec is None:
             out["missing"].append(j.stem)
-        elif rec.get("fingerprint") != fingerprint(ja_hash(lines[j.key]), j.voice, roster[j.voice]):
+        elif rec.get("fingerprint") != fingerprint(
+            text_hash(lines[j.key], (values or {}).get(j.key, ())), j.voice, roster[j.voice]
+        ):
             out["stale"].append(j.stem)
     return out
 

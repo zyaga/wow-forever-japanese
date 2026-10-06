@@ -211,6 +211,10 @@ def run(argv: Sequence[str]) -> int:
         from wfj.cmd import voice_cast  # the casting verbs and the file verbs live in their own modules
 
         return voice_cast.run_profiles(argv[1:])
+    if verb == ["audition"]:
+        from wfj.cmd import voice_audition
+
+        return voice_audition.run(argv[1:])
     if verb and verb[0] in ("cast", "plan", "generate", "status", "pack"):
         from wfj.cmd import voice_make
 
