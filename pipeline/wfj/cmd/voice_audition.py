@@ -203,6 +203,129 @@ def page(items: list[dict[str, Any]], kind_rows: list[dict[str, Any]], texts: li
     )
 
 
+WOWHEAD = "https://www.wowhead.com/classic/npc="  # a page showing the character
+
+
+def kind_samples(root: Path, cfg: dict[str, Any], db: Path) -> dict[str, dict[str, Any]]:
+    """kind → one real line of it to judge voices on: the speaker who says most in that kind, one of its lines
+    of a fitting length (two sentences), and who that speaker is."""
+    from wfj.core import casting
+    from wfj.io import vmangos
+    from wfj.io.jsonl_store import Store
+
+    lines = voice_make.shipped_lines(root)
+    values = voice_make.line_values(root, lines)
+    profiles = {int(p["creature"]): p for p in voice_make._rows(root / "voice" / "profiles.jsonl")}
+    speakers = voice_make._rows(root / "voice" / "speakers.jsonl")
+    open_rows = [{**r, "voices": ["x"]} for r in cfg["cast"]]
+    kind_of = {}
+    for c, pr in profiles.items():
+        hit = casting.cast_one(pr, open_rows)
+        kind_of[c] = hit[1] if hit else "narrator"
+    by_kind: dict[str, dict[Any, list[str]]] = {}
+    for r in speakers:
+        if r["key"] not in lines:
+            continue
+        sp = r["speaker"]
+        kind = (
+            ("book narrator" if r["key"].startswith("b-") else "narrator")
+            if sp == voice.NARRATOR
+            else kind_of[sp]
+        )
+        by_kind.setdefault(kind, {}).setdefault(sp, []).append(r["key"])
+    english = Store(root, english=True)
+    en = {voice.quest_key(x["id"], x["field"]): x["en"] for x in english.load("quest")}
+    en |= {voice.gossip_key(x["id"]): x["en"] for x in english.load("gossip")}
+    en |= {voice.book_key(x["hash"]): x["en"] for x in english.load("book")}
+    names = vmangos.read_creatures(db, {c for c in kind_of})
+    unit = {x["id"]: x["en"] for x in english.load("unit") if x.get("field") == "name"}
+    out = {}
+    for kind, who in by_kind.items():
+        sp, keys = max(who.items(), key=lambda kv: len(kv[1]))
+        texts = []
+        for k in keys:
+            try:
+                texts.append((k, sample_text(voice.speech_text(lines[k], k, values.get(k, ())), k)))
+            except voice.VoiceError:
+                continue
+        if not texts:
+            continue
+        good = [t for t in texts if 30 <= len(t[1]) <= 110] or texts
+        key, text = sorted(good, key=lambda t: len(t[1]))[len(good) // 2]
+        pr = profiles.get(sp, {}) if isinstance(sp, int) else {}
+        cr = names.get(sp, {}) if isinstance(sp, int) else {}
+        out[kind] = {
+            "key": key,
+            "text": text,
+            "en": " ".join((en.get(key) or "").split())[:300],
+            "creature": sp if isinstance(sp, int) else None,
+            "name": cr.get("name") or unit.get(sp, "") if isinstance(sp, int) else "",
+            "title": cr.get("subname", ""),
+            "profile": {f: pr.get(f) for f in casting.FIELDS if pr.get(f)},
+            "reason": ((pr.get("provenance") or {}).get("age") or {}).get("reason", ""),
+        }
+    return out
+
+
+def review(root: Path, cfg: dict[str, Any], store: Path, db: Path) -> int:
+    """DIR/audition/review.html: one row per kind of speaker, biggest first, showing who speaks (name, title,
+    race, gender, age, a link to see the character) and one of their real lines read by each candidate voice
+    (DIR/audition/candidates.json). The choices are saved to picks.json, which `apply` reads."""
+    folder = store / "audition"
+    cands: dict[str, list[str]] = json.loads((folder / "candidates.json").read_text(encoding="utf-8"))
+    items = {e["id"]: e for e in json.loads((folder / "voices.json").read_text(encoding="utf-8"))}
+    samples = kind_samples(root, cfg, db)
+    counts = {k["name"]: k for k in kinds(root, cfg)}
+    engine = Engine(cfg["engine"])
+    speed = float(cfg.get("speed_scale", 0.9))
+    (folder / "review").mkdir(exist_ok=True)
+    rows = []
+    order = sorted(cands.items(), key=lambda kv: -counts.get(kv[0], {}).get("lines", 0))
+    for n, (kind, vids) in enumerate(order):
+        sm = samples.get(kind)
+        if not sm:
+            continue
+        players = []
+        for vid in vids:
+            e = items[vid]
+            f = folder / "review" / f"{n:02d}-{vid}.mp3"
+            if not f.is_file():
+                wav = engine.synthesize(
+                    sm["text"], e["style"], e["speed"] or speed, e["pitch"], e["intonation"]
+                )
+                voice_make.to_mp3(wav, f)
+            label = f"{e['name']} · {e['style_name']}" + (f" · {e['try']}" if e["try"] else "")
+            players.append(
+                f'<div class="v" data-id="{vid}">'
+                f'<audio controls preload="none" src="review/{f.name}"></audio>'
+                f'<span class="pick">{html.escape(label)}</span></div>'
+            )
+        c = counts.get(kind, {})
+        prof = ", ".join(str(v) for v in sm["profile"].values())
+        who = html.escape(sm["name"] or "the narrator") + (
+            f" &lt;{html.escape(sm['title'])}&gt;" if sm["title"] else ""
+        )
+        link = (
+            f' · <a href="{WOWHEAD}{sm["creature"]}" target="_blank">see the character</a>'
+            if sm["creature"]
+            else ""
+        )
+        rows.append(
+            f'<section class="row" data-kind="{html.escape(kind)}"><h3>{html.escape(kind)}'
+            f" <small>{c.get('creatures', 0)} creatures, {c.get('lines', 0)} lines</small></h3>"
+            f'<p class="who">Speaking: <b>{who}</b> ({html.escape(prof)}){link}'
+            f"<br><i>{html.escape(sm['reason'])}</i></p>"
+            f'<p class="line">{html.escape(sm["text"])}<br>'
+            f'<span class="en">{html.escape(sm["en"])}</span></p>'
+            f"{''.join(players)}</section>"
+        )
+        print(f"voice audition: review {n + 1}/{len(order)} {kind}", flush=True)
+    template = (Path(__file__).resolve().parents[1] / "emit" / "review_page.html").read_text("utf-8")
+    (folder / "review.html").write_text(template.replace("@@ROWS@@", "".join(rows)), encoding="utf-8")
+    print(f"voice audition: {folder / 'review.html'}")
+    return 0
+
+
 def build(root: Path, cfg: dict[str, Any], store: Path) -> int:
     engine = Engine(cfg["engine"])
     out = store / "audition"
@@ -318,7 +441,8 @@ def apply(cfg_path: Path, store: Path) -> int:
 
 def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj voice audition")
-    p.add_argument("cmd", choices=("build", "serve", "apply"))
+    p.add_argument("cmd", choices=("build", "review", "serve", "apply"))
+    p.add_argument("--vmangos", help="the VMaNGOS database, for the speakers' names (review)")
     p.add_argument("--config", default="voice.toml")
     p.add_argument("--store")
     p.add_argument("--port", type=int, default=8766)
@@ -329,6 +453,8 @@ def run(argv: Sequence[str]) -> int:
             return serve(store, a.port)
         if a.cmd == "apply":
             return apply(Path(a.config), store)
+        if a.cmd == "review":
+            return review(data_root(), voice_make.load_config(Path(a.config)), store, Path(a.vmangos))
         return build(data_root(), voice_make.load_config(Path(a.config)), store)
     except (EngineError, ValueError, FileNotFoundError, KeyError) as e:
         print(f"voice audition: {e}", file=sys.stderr)
