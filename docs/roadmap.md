@@ -35,4 +35,5 @@
 - **The combat log** stays English: Forever hands addons a sealed string with no readable English ([ADR-035](adr/035-ui-errors-frame-surface.md)).
 - **Inline icons in tooltips**: whether the client prints `$@spellicon` as a texture escape the addon can copy is an in-game check; until it passes, those lines may show English ([ADR-043](adr/043-included-text-icons-and-branch-variants.md)).
 - **The QuestJapanizer wiki**: some complete hand-written quest descriptions exist only there, and its terms leave reuse to its administrator ([ADR-011](adr/011-provenance-layers-and-completeness.md)).
+- **Japanese voice over.** Quest and gossip text read aloud from the shipped Japanese, generated locally with AivisSpeech and shipped as separate pack addons; first a dozen Shadowglen quests in game, then the rest ([research](research/2026-10-04-japanese-voice-over.md)).
 - **Memory**: the generated data with readings and meanings is large; its size is revisited once the translation work is done.
