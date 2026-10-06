@@ -128,8 +128,55 @@ def kinds(root: Path, cfg: dict[str, Any]) -> list[dict[str, Any]]:
     return out
 
 
+def base_name(name: str) -> str:
+    """A voice's name without its bracketed tail: the engine and the hub write that tail differently
+    ("猩々博士 (雑談ボイス)" and "猩々博士（雑談ボイス）")."""
+    return re.split(r"[\s(（]", name, maxsplit=1)[0]
+
+
+def lookup(table: dict[str, str], name: str) -> str | None:
+    if name in table:
+        return table[name]
+    found = {v for k, v in table.items() if base_name(k) == base_name(name)}
+    return found.pop() if len(found) == 1 else None
+
+
+# kinds a voice of either gender may read: a ghost, a dragon or a narrator is cast by sound, not by sex
+ANY_GENDER = (
+    "ghost",
+    "undead",
+    "dragon",
+    "demon",
+    "elemental",
+    "giant",
+    "mechanical",
+    "beast-kin",
+    "narrator",
+    "book narrator",
+)
+
+
+def kind_gender(name: str) -> str:
+    if name in ANY_GENDER:
+        return "any"
+    return "female" if "female" in name or "girl" in name else "male"
+
+
+def voice_genders(path: Path | None = None) -> dict[str, str]:
+    """voice name → male / female / other, from the catalogue's usable table."""
+    usable = (path or CATALOGUE).read_text(encoding="utf-8").split("## Out")[0]
+    out = {}
+    for line in usable.splitlines():
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if line.startswith("| ") and len(cells) >= 8 and cells[6] in ("ACML 1.0", "CC0"):
+            g = cells[3].split(",")[0].strip()
+            out[cells[0]] = g if g in ("male", "female") else "other"
+    return out
+
+
 def page(items: list[dict[str, Any]], kind_rows: list[dict[str, Any]], texts: list[str]) -> str:
-    kinds_json = json.dumps([k["name"] for k in kind_rows], ensure_ascii=False)
+    kinds_json = json.dumps([[k["name"], kind_gender(k["name"])] for k in kind_rows], ensure_ascii=False)
+    genders = voice_genders()
     counts = "".join(
         f"<tr><td>{html.escape(k['name'])}</td><td>{k['creatures']}</td><td>{k['lines']}</td></tr>"
         for k in kind_rows
@@ -140,8 +187,10 @@ def page(items: list[dict[str, Any]], kind_rows: list[dict[str, Any]], texts: li
         audio = "".join(
             f'<audio controls preload="none" src="clips/{e["id"]}-{n}.mp3"></audio>' for n in (1, 2)
         )
+        gender = lookup(genders, e["name"]) or "other"
         cards.append(
-            f'<section class="card" data-id="{e["id"]}"><h3>{html.escape(label)}</h3>{audio}'
+            f'<section class="card" data-id="{e["id"]}" data-gender="{gender}">'
+            f"<h3>{html.escape(label)}</h3>{audio}"
             f'<div class="chips"></div></section>'
         )
     samples = "".join(f"<li>{html.escape(t)}</li>" for t in texts)
@@ -233,7 +282,7 @@ def apply(cfg_path: Path, store: Path) -> int:
         if vid in cfg["roster"]:
             continue
         e = items[vid]
-        licence = allowed.get(e["name"])
+        licence = lookup(allowed, e["name"])
         if licence is None:
             raise ValueError(f"{e['name']} is not in the catalogue's usable voices")
         lines = [
