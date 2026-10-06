@@ -125,8 +125,16 @@ PLAYER_SEXES = {"m": "male", "f": "female"}
 
 
 def error_lines(root: Path) -> dict[str, str]:
-    """{pack key: Japanese} for the character's spoken error lines (data/voice/errors.jsonl)."""
-    return {f"e-{r['kind']}": r["ja"] for r in _rows(root / "voice" / "errors.jsonl")}
+    """{pack key: Japanese} for the character's spoken error lines: each on-screen error message in
+    data/voice/error-messages.jsonl, spoken as the Japanese the game shows for it (`e-<UI key>`, so a changed
+    translation remakes its audio), and each kind of error with a line of its own (`e-<kind>`,
+    data/voice/errors.jsonl); a kind that names a message speaks that message's file."""
+    ui = {ln["id"]: ln["ja"] for ln in Store(root).load("ui") if shipped(ln)}
+    out = {
+        f"e-{r['ui']}": ui[r["ui"]] for r in _rows(root / "voice" / "error-messages.jsonl") if r["ui"] in ui
+    }
+    out.update({f"e-{r['kind']}": r["ja"] for r in _rows(root / "voice" / "errors.jsonl") if "ja" in r})
+    return out
 
 
 def player_voice(cfg: dict[str, Any], race: str, sex: str) -> str:
@@ -454,6 +462,10 @@ def error_table(root: Path, cfg: dict[str, Any], players: Sequence[tuple[str, st
             continue
         who = j.stem[len(j.key) + 1 :]
         files.setdefault(who, {})[j.key[2:]] = (f"{j.stem}.mp3", float(audio[j.stem]["seconds"]))
+    for r in _rows(root / "voice" / "errors.jsonl"):  # a kind that names a message speaks that message's file
+        for per in files.values():
+            if r.get("ui") in per:
+                per.setdefault(r["kind"], per[r["ui"]])
     kinds = {int(r["voice_id"]): r["kind"] for r in _rows(root / "voice" / "error-kinds.jsonl")}
     return {"kinds": kinds, "voices": files} if files else {}
 

@@ -194,18 +194,24 @@ function Voice.hasErrors(race, sex)
   return who ~= nil and errorFiles[who] ~= nil and next(errorFiles[who]) ~= nil
 end
 
--- The character's spoken error line for the game's voice id, in the voice of their race and sex.
+-- The character's spoken error line for the game's voice id, in the voice of their race and sex: the recording of
+-- the message on screen (`message`, its global string name, "ERR_OUT_OF_RANGE") when the pack has it, so the voice
+-- says what the frame shows, else the line for the voice id's kind.
 -- → path and seconds, or nil and why ("off" · "english" · "nopack" · "kind" · "missing")
-function Voice.errorFile(voiceID, race, sex)
+function Voice.errorFile(voiceID, race, sex, message)
   if not setting("voice.enabled") or not setting("voice.errors") then return nil, "off" end
   if (type(deps.enabled) == "function" and not deps.enabled())
     or (type(deps.revealed) == "function" and deps.revealed()) then
     return nil, "english"
   end
   if not Voice.hasErrors(race, sex) then return nil, "nopack" end
-  local kind = errorKinds[voiceID]
-  if not kind then return nil, "kind" end
-  local f = errorFiles[race:lower() .. "-" .. (sex == 3 and "f" or "m")][kind]
+  local files = errorFiles[race:lower() .. "-" .. (sex == 3 and "f" or "m")]
+  local f = type(message) == "string" and files[message] or nil
+  if not f then
+    local kind = errorKinds[voiceID]
+    if not kind then return nil, "kind" end
+    f = files[kind]
+  end
   if not f then return nil, "missing" end
   return "Interface\\AddOns\\" .. f.folder .. "\\Sound\\" .. f.file, f.seconds
 end

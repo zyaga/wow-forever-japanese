@@ -1,9 +1,11 @@
 -- UI/VoiceErrors.lua: the character's own spoken error lines ("out of range", "not enough mana") in Japanese, from the
 -- voice pack (ADR-062). Core/Voice says which file; this file owns the sound and client-setting calls.
---   * When: the error frame plays the game's line through C_Sound.PlayVocalErrorSound(voiceID)
---     [verified: forever 1.60.1.70170 blizzard_uierrorsframe/mainline/uierrorsframe.lua:150-152]. A hook after it
---     plays the Japanese line for that voice id in the voice of the character's race and sex. The call is only
---     followed, never replaced, so the error frame's own code runs as it always does.
+--   * When: the error frame's TryDisplayMessage plays the game's line through C_Sound.PlayVocalErrorSound(voiceID)
+--     [verified: forever 1.60.1.70170 blizzard_uierrorsframe/mainline/uierrorsframe.lua:146-157]. A hook after that
+--     call notes the voice id; a hook after TryDisplayMessage then reads which message it showed
+--     (GetGameMessageInfo, its global string name) and plays that message's recording, so the voice says the words
+--     on screen; a call from anywhere else plays the voice id's line on the next frame. Both are only followed,
+--     never replaced, so the error frame's own code runs as it always does.
 --   * The English line: while this is on and a pack carries lines for the character, the client's error speech
 --     setting (Sound_EnableErrorSpeech) is turned off, so the English line does not play under the Japanese one
 --     [unverified: whether the setting silences the call on Forever; in-game check in docs/testing/strategy.md].
@@ -76,10 +78,12 @@ function VoiceErrors.refresh()
   end
 end
 
--- The hook after C_Sound.PlayVocalErrorSound. → true when a line started
-function VoiceErrors.onVocalError(voiceID)
+local pending -- the voice id the game just asked to speak, until its message is known
+
+-- Plays the character's line for a voice id, as the message on screen when known. → true when a line started
+function VoiceErrors.play(voiceID, message)
   local race, sex = character()
-  local path, seconds = WFJ.Voice.errorFile(voiceID, race, sex)
+  local path, seconds = WFJ.Voice.errorFile(voiceID, race, sex, message)
   if not path then return false end
   local now = (Compat.resolve("GetTime") or function() return 0 end)()
   if path == lastKey and now - lastAt < REPEAT then
@@ -93,6 +97,30 @@ function VoiceErrors.onVocalError(voiceID)
   return true, seconds
 end
 
+-- The hook after C_Sound.PlayVocalErrorSound: the line waits for its message, or plays on the next frame.
+function VoiceErrors.onVocalError(voiceID)
+  pending = voiceID
+  local timer = Compat.resolve("C_Timer")
+  if type(timer) == "table" and type(timer.After) == "function" then
+    timer.After(0, function()
+      if pending == voiceID then
+        pending = nil
+        VoiceErrors.play(voiceID)
+      end
+    end)
+  end
+end
+
+-- The hook after the error frame's TryDisplayMessage: the message it showed names the recording.
+function VoiceErrors.onDisplay(_, messageType)
+  if pending == nil then return end
+  local voiceID = pending
+  pending = nil
+  local info = Compat.resolve("GetGameMessageInfo")
+  local message = type(info) == "function" and info(messageType) or nil
+  VoiceErrors.play(voiceID, type(message) == "string" and message or nil)
+end
+
 -- Called by Main after Voice and Settings. `savedDb` is WFJ_DB. Safe without a pack: nothing changes.
 function VoiceErrors.init(savedDb)
   db = savedDb
@@ -101,6 +129,10 @@ function VoiceErrors.init(savedDb)
   if not hooked and type(C) == "table" and type(C.PlayVocalErrorSound) == "function" then
     hooksecurefunc(C, "PlayVocalErrorSound", VoiceErrors.onVocalError)
     hooked = true
+  end
+  local frame = Compat.resolve("UIErrorsFrame")
+  if type(frame) == "table" and type(frame.TryDisplayMessage) == "function" then
+    hooksecurefunc(frame, "TryDisplayMessage", VoiceErrors.onDisplay)
   end
   WFJ.State.on("voice", VoiceErrors.refresh)
   WFJ.State.on("enabled", VoiceErrors.refresh)

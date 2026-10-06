@@ -450,11 +450,23 @@ describe("voice settings: shown only with a pack", function()
 end)
 
 describe("UI/VoiceErrors: the character's own error lines in Japanese", function()
-  local WFJ, db, sounds, cvars
+  local WFJ, db, sounds, cvars, timers
+
+  local function frames() -- the next frame: run what C_Timer.After(0) queued
+    local due = timers
+    timers = {}
+    for _, f in ipairs(due) do f() end
+  end
 
   before_each(function()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
-    sounds, cvars = {}, { Sound_EnableErrorSpeech = "1" }
+    sounds, cvars, timers = {}, { Sound_EnableErrorSpeech = "1" }, {}
+    _G.C_Timer = { After = function(_, f) timers[#timers + 1] = f end }
+    _G.GetGameMessageInfo = function(t) if t == 51 then return "ERR_USE_TOO_FAR", nil, 10 end end
+    _G.UIErrorsFrame = { TryDisplayMessage = function(_, t)
+      local _, _, voiceID = GetGameMessageInfo(t)
+      if voiceID then C_Sound.PlayVocalErrorSound(voiceID) end
+    end }
     _G.PlaySoundFile = function(path, channel) sounds[#sounds + 1] = { path = path, channel = channel }; return true, 7 end
     _G.C_CVar = {
       GetCVar = function(n) return cvars[n] end,
@@ -473,26 +485,40 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
       enabled = function() return WFJ.State.enabled end })
     WFJ.Voice.register({ format = 2, folder = "WoWForeverJapanese_Voice", lines = {},
       errors = { kinds = { [10] = "outofrange", [15] = "nomana" },
-        voices = { ["tauren-f"] = { outofrange = { "e-outofrange-tauren-f.mp3", 1.2 } } } } })
+        voices = { ["tauren-f"] = { outofrange = { "e-ERR_OUT_OF_RANGE-tauren-f.mp3", 1.2 },
+          ERR_USE_TOO_FAR = { "e-ERR_USE_TOO_FAR-tauren-f.mp3", 0.8 } } } } })
   end)
 
   after_each(function()
-    _G.PlaySoundFile, _G.C_CVar, _G.C_Sound, _G.GetTime = nil, nil, nil, nil
+    _G.PlaySoundFile, _G.C_CVar, _G.C_Sound, _G.GetTime, _G.C_Timer = nil, nil, nil, nil, nil
+    _G.GetGameMessageInfo, _G.UIErrorsFrame = nil, nil
   end)
 
   it("turns the English error speech off, plays the Japanese line after the game's call, and puts it back", function()
     assert.is_true(WFJ.VoiceErrors.init(db))
     assert.are.equal("0", cvars.Sound_EnableErrorSpeech)
     assert.is_true(db.voiceErrorSpeechMuted)
-    C_Sound.PlayVocalErrorSound(10)
-    assert.are.same({ path = "Interface\\AddOns\\WoWForeverJapanese_Voice\\Sound\\e-outofrange-tauren-f.mp3",
+    C_Sound.PlayVocalErrorSound(10) -- from outside the error frame: the kind's line, on the next frame
+    assert.are.equal(0, #sounds)
+    frames()
+    assert.are.same({ path = "Interface\\AddOns\\WoWForeverJapanese_Voice\\Sound\\e-ERR_OUT_OF_RANGE-tauren-f.mp3",
       channel = "Master" }, sounds[1])
     C_Sound.PlayVocalErrorSound(10) -- spammed: not started again within two seconds
+    frames()
     assert.are.equal(1, #sounds)
     C_Sound.PlayVocalErrorSound(15) -- a kind the pack has no line for stays silent
+    frames()
     assert.are.equal(1, #sounds)
     WFJ.VoiceErrors.restore()
     assert.are.equal("1", cvars.Sound_EnableErrorSpeech)
+  end)
+
+  it("speaks the message the error frame shows, once, not the kind's line", function()
+    WFJ.VoiceErrors.init(db)
+    UIErrorsFrame:TryDisplayMessage(51, "You are too far away.")
+    frames()
+    assert.are.equal(1, #sounds)
+    assert.are.equal("Interface\\AddOns\\WoWForeverJapanese_Voice\\Sound\\e-ERR_USE_TOO_FAR-tauren-f.mp3", sounds[1].path)
   end)
 
   it("leaves the setting alone for a character the pack has no lines for, or when switched off", function()
@@ -500,6 +526,7 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     WFJ.VoiceErrors.init(db)
     assert.are.equal("1", cvars.Sound_EnableErrorSpeech)
     C_Sound.PlayVocalErrorSound(10)
+    frames()
     assert.are.equal(0, #sounds)
     _G.UnitSex = function() return 3 end
     WFJ.VoiceErrors.refresh()
