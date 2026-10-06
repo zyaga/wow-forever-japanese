@@ -22,7 +22,7 @@ from typing import Any
 
 from wfj.core import voice
 from wfj.emit.lua_writer import shipped
-from wfj.io import vmangos, wdb
+from wfj.io import forever_vo, vmangos, wdb
 from wfj.io.jsonl_store import Store, dumps
 from wfj.paths import data_root
 
@@ -70,7 +70,8 @@ def _keep_date(rows: list[dict[str, Any]], old: list[dict[str, Any]], id_field: 
 
 
 def build_tables(
-    root: Path, db: Path, commit: str, scope: str, today: str, wdb_path: Path | None = None
+    root: Path, db: Path, commit: str, scope: str, today: str, wdb_path: Path | None = None,
+    captures: tuple[Path, str] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, list[str]]]:
     """(speakers rows, report) for the scope. A speakers row names the line's main speaker and,
     when several creatures say it, the `others` (each may be cast to a voice of its own). With `wdb_path`
@@ -91,7 +92,19 @@ def build_tables(
         quest_keys = voice.shipped_quest(quest_lines, quests)
     others: dict[str, list[int]] = {}
     q_speakers, q_problems = voice.quest_speakers(quest_keys, starters, objects, enders, others)
+    # a quest the open database lacks (one Forever added): who the players' captures saw in the window
+    captured_src: dict[str, str] = {}
+    if captures is not None:
+        seen = forever_vo.read_quest_speakers(captures[0])
+        for key, sp in q_speakers.items():
+            q, f = key.split("-", 1)
+            who = voice.captured_speaker(seen.get((int(q), f), []))
+            if sp == voice.NARRATOR and who is not None:
+                q_speakers[key] = who
+                captured_src[key] = f"forever-vo@{captures[1]}"
+        q_problems = [p for p in q_problems if p.split(":", 1)[0] not in captured_src]
     creatures = {c for q in quests for c in (*starters.get(q, ()), *enders.get(q, ()))}
+    creatures |= {s for s in q_speakers.values() if isinstance(s, int)}
     creatures |= vmangos.read_gossip_creatures(db) if whole else set(cfg["creatures"])
     gossip_shipped = {ln["id"] for ln in store.load("gossip") if shipped(ln)}
     english_gossip = english_store.load("gossip")
@@ -119,7 +132,7 @@ def build_tables(
         r["provenance"] = prov(source)
         return r
 
-    speakers = [row(k, s, src) for k, s in sorted(q_speakers.items())]
+    speakers = [row(k, s, captured_src.get(k, src)) for k, s in sorted(q_speakers.items())]
     speakers += [
         row(k, s, collector_src[k[2:]] if s in collector.get(k[2:], []) else src)
         for k, s in sorted(g_speakers.items())
@@ -172,7 +185,8 @@ def run_speakers(a: argparse.Namespace) -> int:
     root = data_root()
     today = datetime.date.today().isoformat()
     speakers, report = build_tables(
-        root, Path(a.vmangos), a.commit, a.scope, today, Path(a.wdb) if a.wdb else None
+        root, Path(a.vmangos), a.commit, a.scope, today, Path(a.wdb) if a.wdb else None,
+        (Path(a.forever_vo), a.forever_vo_commit) if a.forever_vo else None,
     )
     d = voice_dir(root)
     speakers = _keep_date(speakers, read_rows(d / "speakers.jsonl"), "key")
@@ -229,6 +243,8 @@ def run(argv: Sequence[str]) -> int:
     sp.add_argument("--commit", required=True)
     sp.add_argument("--scope", default="all", choices=sorted(voice.SCOPES))
     sp.add_argument("--wdb", help="the pinned quest cache, for conditional descriptions")
+    sp.add_argument("--forever-vo", help="forever-vo, pinned: who speaks quests the database lacks")
+    sp.add_argument("--forever-vo-commit", default="")
     a = p.parse_args(list(argv))
     try:
         return run_speakers(a)

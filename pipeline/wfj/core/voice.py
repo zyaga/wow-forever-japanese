@@ -24,7 +24,8 @@ _SHADOWGLEN = {
     "creatures": (3597,),  # the druid trainer, who gives no quest there
 }
 _NARACHE = {
-    "quests": (747, 750, 752, 753, 755, 757, 763, 780, 781, 1656, 3376, 3091, 3092, 3093, 3094),
+    # 95805: a quest Forever added (Grace of An'she and Mu'sha, Seer Graytongue)
+    "quests": (747, 750, 752, 753, 755, 757, 763, 780, 781, 1656, 3376, 3091, 3092, 3093, 3094, 95805),
     "creatures": (3059, 3060, 3061, 3062),  # the warrior, druid, hunter and shaman trainers
 }
 SCOPES: dict[str, dict[str, Any]] = {
@@ -167,6 +168,18 @@ def quest_speakers(
                 others[key] = sorted(set(who) - {min(who)})
         out[key] = min(who)
     return out, problems
+
+
+def captured_speaker(names: list[int | None]) -> int | str | None:
+    """The speaker most submissions name for a window: a creature id, the narrator for an object (a shrine, a
+    sign), or None when there are none. A tie goes to a creature, then the lowest id."""
+    if not names:
+        return None
+    counts: dict[int | None, int] = {}
+    for n in names:
+        counts[n] = counts.get(n, 0) + 1
+    best = max(counts.items(), key=lambda kv: (kv[1], kv[0] is not None, -(kv[0] or 0)))[0]
+    return NARRATOR if best is None else best
 
 
 def gossip_speakers(
