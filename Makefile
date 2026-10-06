@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: voice voice-speakers voice-generate voice-pack letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -393,6 +393,19 @@ voice-pack: ## build/voice-pack/WoWForeverJapanese_Voice/ (TOC, Register.lua, So
 	cd pipeline && $(PY) -m wfj voice pack
 
 voice: voice-speakers voice-generate voice-pack ## speakers → generate → pack
+
+VOICE_STORE ?= $(REPO_ROOT)/build/voice
+voice-run: ## the whole game's voice, in the background, the Mac kept awake; resumes where it stopped (make voice-status, make voice-stop)
+	@mkdir -p "$(VOICE_STORE)"
+	@if pgrep -f "wfj voice generate" >/dev/null; then echo "voice-run: a run is already going (make voice-status)"; exit 1; fi
+	cd pipeline && nohup caffeinate -i $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" > "$(VOICE_STORE)/run.log" 2>&1 &
+	@echo "voice-run: started; make voice-status shows progress, make voice-stop stops it"
+
+voice-status: ## how far the background voice run is, and the time left
+	@cd pipeline && $(PY) -m wfj voice status --store "$(VOICE_STORE)"
+
+voice-stop: ## stop the background voice run (make voice-run resumes it)
+	@pkill -f "wfj voice generate" && echo "voice-stop: stopped; make voice-run resumes" || echo "voice-stop: no run going"
 
 generate: ## data/ → addon Data/*.lua + the TOC's generated block (deterministic; validate diffs it)
 	cd pipeline && $(PY) -m wfj generate
