@@ -21,7 +21,10 @@ local SPEECH = "Sound_EnableErrorSpeech"
 local CHANNEL = "Master"
 local REPEAT = 2
 
-VoiceErrors.counts = { played = 0, skipped = 0 }
+-- every step, for /wfj debug: the game asked (calls), the message was known (shown), played, a repeat skipped,
+-- the client refused; and why the last line that did not play stayed silent, with its voice id and message
+VoiceErrors.counts = { calls = 0, shown = 0, played = 0, skipped = 0, refused = 0 }
+VoiceErrors.last = {}
 
 local db
 local lastKey, lastAt = nil, 0
@@ -84,14 +87,21 @@ local pending -- the voice id the game just asked to speak, until its message is
 function VoiceErrors.play(voiceID, message)
   local race, sex = character()
   local path, seconds = WFJ.Voice.errorFile(voiceID, race, sex, message)
+  VoiceErrors.last = { voiceID = voiceID, message = message, race = race, sex = sex, why = seconds }
   if not path then return false end
   local now = (Compat.resolve("GetTime") or function() return 0 end)()
   if path == lastKey and now - lastAt < REPEAT then
     VoiceErrors.counts.skipped = VoiceErrors.counts.skipped + 1
+    VoiceErrors.last.why = "repeat"
     return false
   end
   local playSoundFile = Compat.resolve("PlaySoundFile")
-  if type(playSoundFile) ~= "function" or not playSoundFile(path, CHANNEL) then return false end
+  if type(playSoundFile) ~= "function" or not playSoundFile(path, CHANNEL) then
+    VoiceErrors.counts.refused = VoiceErrors.counts.refused + 1
+    VoiceErrors.last.why = "refused"
+    return false
+  end
+  VoiceErrors.last.why = "played"
   lastKey, lastAt = path, now
   VoiceErrors.counts.played = VoiceErrors.counts.played + 1
   return true, seconds
@@ -99,6 +109,7 @@ end
 
 -- The hook after C_Sound.PlayVocalErrorSound: the line waits for its message, or plays on the next frame.
 function VoiceErrors.onVocalError(voiceID)
+  VoiceErrors.counts.calls = VoiceErrors.counts.calls + 1
   pending = voiceID
   local timer = Compat.resolve("C_Timer")
   if type(timer) == "table" and type(timer.After) == "function" then
@@ -116,6 +127,7 @@ function VoiceErrors.onDisplay(_, messageType)
   if pending == nil then return end
   local voiceID = pending
   pending = nil
+  VoiceErrors.counts.shown = VoiceErrors.counts.shown + 1
   local info = Compat.resolve("GetGameMessageInfo")
   local message = type(info) == "function" and info(messageType) or nil
   VoiceErrors.play(voiceID, type(message) == "string" and message or nil)

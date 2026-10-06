@@ -307,7 +307,13 @@ function Slash.debug(sub, arg)
     table.sort(list)
     say("voice packs: %s", table.concat(list, " · "))
     local E = WFJ.VoiceErrors
-    if E then say("voice errors: played %d · repeats skipped %d", E.counts.played, E.counts.skipped) end
+    if E then
+      local ec, l = E.counts, E.last
+      say("voice errors: game asked %d · message known %d · played %d · repeats skipped %d · refused %d",
+        ec.calls, ec.shown, ec.played, ec.skipped, ec.refused)
+      say("voice errors, last: voice id %s · message %s · %s %s · %s", tostring(l.voiceID), tostring(l.message),
+        tostring(l.race), tostring(l.sex), tostring(l.why))
+    end
   else
     say("voice: no pack%s", V and V.counts.invalid > 0 and " (a pack registered an invalid table)" or "")
   end
