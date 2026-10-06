@@ -28,6 +28,8 @@ Voice.KINDS = {
 local lines
 local creatures = {} -- creature id → voice id, or { male voice, female voice } (the speakers of lines with variants)
 local packs = {} -- pack folder → the number of its lines registered
+-- the character's own spoken error lines: the game's voice id → kind, and per "<race>-<f|m>" the kind's file
+local errorKinds, errorFiles = {}, {}
 local deps = {}
 
 local function zero()
@@ -100,6 +102,24 @@ function Voice.register(tbl)
   for c, v in pairs(type(tbl.creatures) == "table" and tbl.creatures or {}) do
     if type(c) == "number" and validVoice(v) then creatures[c] = v else bad = bad + 1 end
   end
+  local errors = type(tbl.errors) == "table" and tbl.errors or {}
+  for id, kind in pairs(type(errors.kinds) == "table" and errors.kinds or {}) do
+    if type(id) == "number" and type(kind) == "string" then errorKinds[id] = kind else bad = bad + 1 end
+  end
+  for who, files in pairs(type(errors.voices) == "table" and errors.voices or {}) do
+    if type(who) == "string" and type(files) == "table" then
+      errorFiles[who] = errorFiles[who] or {}
+      for kind, f in pairs(files) do
+        if type(kind) == "string" and type(f) == "table" and validFile(f[1]) then
+          errorFiles[who][kind] = { file = f[1], seconds = f[2], folder = tbl.folder }
+        else
+          bad = bad + 1
+        end
+      end
+    else
+      bad = bad + 1
+    end
+  end
   packs[tbl.folder] = n
   Voice.counts.invalid = Voice.counts.invalid + bad
   recount()
@@ -166,4 +186,26 @@ function Voice.decide(surface, recKey, kind, id, who)
   Voice.counts.matched = Voice.counts.matched + 1
   local file, seconds = fileFor(entry, who)
   return "Interface\\AddOns\\" .. entry.folder .. "\\Sound\\" .. file, seconds
+end
+
+-- → whether a pack carries the character's error lines for this race and sex ("tauren", 3 = female)
+function Voice.hasErrors(race, sex)
+  local who = type(race) == "string" and (race:lower() .. "-" .. (sex == 3 and "f" or "m")) or nil
+  return who ~= nil and errorFiles[who] ~= nil and next(errorFiles[who]) ~= nil
+end
+
+-- The character's spoken error line for the game's voice id, in the voice of their race and sex.
+-- → path and seconds, or nil and why ("off" · "english" · "nopack" · "kind" · "missing")
+function Voice.errorFile(voiceID, race, sex)
+  if not setting("voice.enabled") or not setting("voice.errors") then return nil, "off" end
+  if (type(deps.enabled) == "function" and not deps.enabled())
+    or (type(deps.revealed) == "function" and deps.revealed()) then
+    return nil, "english"
+  end
+  if not Voice.hasErrors(race, sex) then return nil, "nopack" end
+  local kind = errorKinds[voiceID]
+  if not kind then return nil, "kind" end
+  local f = errorFiles[race:lower() .. "-" .. (sex == 3 and "f" or "m")][kind]
+  if not f then return nil, "missing" end
+  return "Interface\\AddOns\\" .. f.folder .. "\\Sound\\" .. f.file, f.seconds
 end

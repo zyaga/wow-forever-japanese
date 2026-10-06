@@ -37,6 +37,8 @@ end
 -- built: its page is added then.
 function WoWForeverJapanese_RegisterVoice(tbl)
   local n, invalid = WFJ.Voice.register(tbl)
+  -- a pack loads after this addon: the character's error lines can only take over once it has registered
+  if WFJ.loaded and WFJ.VoiceErrors then pcall(WFJ.VoiceErrors.refresh) end
   if WFJ.loaded and WFJ.Options and WFJ.Voice.hasPack() then
     local ok, err = pcall(WFJ.Options.addPage, "voice")
     if not ok then WFJ.initErrors[#WFJ.initErrors + 1] = { surface = "options.voice", err = tostring(err) } end
@@ -269,6 +271,7 @@ function WFJ.OnLoad()
     enabled = function() return WFJ.State.enabled end,
   }) end)
   step("voiceplayer", function() WFJ.VoicePlayer.init(WFJ_DB) end)
+  step("voiceerrors", function() WFJ.VoiceErrors.init(WFJ_DB) end)
   step("render", function() WFJ.Render.init(WFJ.Translator.new({
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
@@ -451,6 +454,7 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
     WFJ.Options.setCombat(false)
   elseif event == "PLAYER_LOGOUT" then
     WFJ.VoicePlayer.stop() -- the dialog channel is saved with the logout: put it back first
+    WFJ.VoiceErrors.restore() -- and the error speech
   elseif event == "MODIFIER_STATE_CHANGED" then
     WFJ.Modifier.refresh()
   elseif event == "PLAYER_ENTERING_WORLD" then

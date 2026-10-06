@@ -226,6 +226,9 @@ Settings.define{ id = "voice.greeting", kind = "boolean", default = true, hidden
   label = "NPC greetings", ja = "NPCのあいさつ", apply = voiceChanged }
 Settings.define{ id = "voice.books", kind = "boolean", default = true, hidden = voiceHidden,
   label = "Books and letters", ja = "本と手紙", apply = voiceChanged }
+Settings.define{ id = "voice.errors", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "Your character's error lines (\"out of range\")", ja = "自分のキャラクターのエラー音声（「遠すぎる」など）",
+  apply = voiceChanged }
 -- While a line plays the game's own English voice is turned off, and put back afterwards (UI/VoicePlayer).
 Settings.define{ id = "voice.muteDialog", kind = "boolean", default = true, hidden = voiceHidden,
   label = "Silence the game's English voices while a line plays",

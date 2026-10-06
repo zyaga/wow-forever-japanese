@@ -57,9 +57,29 @@ def _creature(c: int, v: str | tuple[str, str]) -> str:
     return f"    [{c}] = {lua_string(v)},"
 
 
-def register_text(lines: Mapping[str, Mapping[str, Any]], creatures: Mapping[int, Any] | None = None) -> str:
+def _errors(errors: Mapping[str, Any]) -> list[str]:
+    if not errors:
+        return []
+    kinds = [f"      [{e}] = {lua_string(k)}," for e, k in sorted(errors["kinds"].items())]
+    voices = []
+    for who, files in sorted(errors["voices"].items()):
+        voices.append(f"      [{lua_string(who)}] = {{")
+        voices += [
+            f"        [{lua_string(k)}] = {{ {lua_string(f)}, {s:.1f} }},"
+            for k, (f, s) in sorted(files.items())
+        ]
+        voices.append("      },")
+    return ["  errors = {", "    kinds = {", *kinds, "    },", "    voices = {", *voices, "    },", "  },"]
+
+
+def register_text(
+    lines: Mapping[str, Mapping[str, Any]],
+    creatures: Mapping[int, Any] | None = None,
+    errors: Mapping[str, Any] | None = None,
+) -> str:
     """`lines`: {pack key: {file, hash, seconds, variants: {voice id: (file, seconds)}}}; `creatures`:
-    {creature id: voice id or (male, female)}. Written sorted."""
+    {creature id: voice id or (male, female)}; `errors`: {kinds: {game voice id: kind}, voices:
+    {"<race>-<f|m>": {kind: (file, seconds)}}}, the character's own spoken error lines. Written sorted."""
     body = [_line(key, e) for key, e in sorted(lines.items())]
     who = [_creature(c, v) for c, v in sorted((creatures or {}).items())]
     return "\n".join(
@@ -74,6 +94,7 @@ def register_text(lines: Mapping[str, Mapping[str, Any]], creatures: Mapping[int
             "  creatures = {",
             *who,
             "  },",
+            *_errors(errors or {}),
             "})",
             "",
         ]

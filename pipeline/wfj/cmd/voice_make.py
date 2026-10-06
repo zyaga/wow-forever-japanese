@@ -97,6 +97,7 @@ def shipped_lines(root: Path) -> dict[str, str]:
         h = (ln.get("english") or {}).get("hash")
         if h and not readings.html_page("book", ln["ja"]):
             out.setdefault(voice.book_key(str(h)), ln["ja"])
+    out.update(error_lines(root))
     return out
 
 
@@ -117,6 +118,54 @@ def line_values(root: Path, lines: dict[str, str]) -> dict[str, list[str]]:
     return {k: voice.live_values(en[k]) for k in want if k in en}
 
 
+# The playable races as the client names them (UnitRace's second value, lowercased) and the sexes: the
+# character's own spoken error lines are made per race and sex.
+PLAYER_RACES = ("human", "orc", "dwarf", "nightelf", "scourge", "tauren", "gnome", "troll")
+PLAYER_SEXES = {"m": "male", "f": "female"}
+
+
+def error_lines(root: Path) -> dict[str, str]:
+    """{pack key: Japanese} for the character's spoken error lines (data/voice/errors.jsonl)."""
+    return {f"e-{r['kind']}": r["ja"] for r in _rows(root / "voice" / "errors.jsonl")}
+
+
+def player_voice(cfg: dict[str, Any], race: str, sex: str) -> str:
+    """The voice a player character of a race and sex speaks in: cast like an adult NPC of that race."""
+    from wfj.core import casting
+
+    profile = {
+        "creature": 0,
+        "race": race,
+        "gender": PLAYER_SEXES[sex],
+        "age": "adult",
+        "archetype": "undead" if race == "scourge" else "none",
+    }
+    hit = casting.cast_one(profile, cfg["cast"])
+    return hit[0] if hit else cfg["narrator"]
+
+
+def players_of(arg: str | None) -> list[tuple[str, str]]:
+    """`--players tauren-f,human-m` or `all` → [(race, sex)]."""
+    if not arg:
+        return []
+    if arg == "all":
+        return [(r, x) for r in PLAYER_RACES for x in PLAYER_SEXES]
+    out = []
+    for item in arg.split(","):
+        race, _, sex = item.partition("-")
+        if race not in PLAYER_RACES or sex not in PLAYER_SEXES:
+            raise ValueError(f"--players {item!r}: a race of {PLAYER_RACES} and m or f")
+        out.append((race, sex))
+    return out
+
+
+def error_jobs(root: Path, cfg: dict[str, Any], players: list[tuple[str, str]]) -> list[voice.Job]:
+    keys = sorted(error_lines(root))
+    return [
+        voice.Job(f"{k}-{race}-{sex}", k, player_voice(cfg, race, sex)) for race, sex in players for k in keys
+    ]
+
+
 def read_cast(root: Path) -> dict[int, dict[str, str]]:
     return {int(r["creature"]): r for r in _rows(root / "voice" / "voices.jsonl")}
 
@@ -131,8 +180,17 @@ def audio_record(root: Path) -> dict[str, dict[str, Any]]:
     return {r["file"]: r for r in _rows(root / "voice" / AUDIO)}
 
 
-def file_jobs(root: Path, cfg: dict[str, Any], scope: str, lines: dict[str, str]) -> list[voice.Job]:
-    return voice.jobs(scoped_rows(root, scope), read_cast(root), cfg["narrator"], cfg["book_narrator"], lines)
+def file_jobs(
+    root: Path,
+    cfg: dict[str, Any],
+    scope: str,
+    lines: dict[str, str],
+    players: Sequence[tuple[str, str]] = (),
+) -> list[voice.Job]:
+    """Every file a scope needs, and the character's error lines for `players` [(race, sex)]."""
+    rows = scoped_rows(root, scope)
+    jobs = voice.jobs(rows, read_cast(root), cfg["narrator"], cfg["book_narrator"], lines)
+    return jobs + error_jobs(root, cfg, list(players))
 
 
 def store_dir(arg: str | None) -> Path:
@@ -184,10 +242,12 @@ def run_cast(cfg: dict[str, Any], root: Path) -> int:
 # ---- plan ------------------------------------------------------------------------------------------------
 
 
-def plan(root: Path, cfg: dict[str, Any], scope: str) -> dict[str, Any]:
+def plan(
+    root: Path, cfg: dict[str, Any], scope: str, players: Sequence[tuple[str, str]] = ()
+) -> dict[str, Any]:
     """The files generate would make now, and why."""
     lines = shipped_lines(root)
-    jobs = file_jobs(root, cfg, scope, lines)
+    jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
     state = voice.in_step(jobs, lines, cfg["roster"], audio, line_values(root, lines))
     todo = set(state["missing"]) | set(state["stale"])
@@ -213,8 +273,8 @@ def plan(root: Path, cfg: dict[str, Any], scope: str) -> dict[str, Any]:
     }
 
 
-def run_plan(cfg: dict[str, Any], root: Path, scope: str) -> int:
-    p = plan(root, cfg, scope)
+def run_plan(cfg: dict[str, Any], root: Path, scope: str, players: Sequence[tuple[str, str]] = ()) -> int:
+    p = plan(root, cfg, scope, players)
     hours = p["chars"] / 19.8 / 3600  # the measured rate of the first pack, characters a second of work
     print(
         f"voice plan ({scope}): {p['files']} files; to make {p['missing']} new + {p['stale']} changed, "
@@ -251,11 +311,18 @@ def _status(path: Path, **fields: Any) -> None:
 
 
 def generate(
-    root: Path, scope: str, cfg: dict[str, Any], store: Path, engine: Engine, encode=to_mp3, log=print
+    root: Path,
+    scope: str,
+    cfg: dict[str, Any],
+    store: Path,
+    engine: Engine,
+    encode=to_mp3,
+    log=print,
+    players: Sequence[tuple[str, str]] = (),
 ) -> dict[str, Any]:
     """Makes every missing or changed file; resumable. → the run's numbers."""
     lines = shipped_lines(root)
-    jobs = file_jobs(root, cfg, scope, lines)
+    jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
     values = line_values(root, lines)
     state = voice.in_step(jobs, lines, cfg["roster"], audio, values)
@@ -332,9 +399,11 @@ def generate(
     }
 
 
-def run_generate(cfg: dict[str, Any], root: Path, scope: str, store: Path) -> int:
+def run_generate(
+    cfg: dict[str, Any], root: Path, scope: str, store: Path, players: Sequence[tuple[str, str]] = ()
+) -> int:
     try:
-        r = generate(root, scope, cfg, store, Engine(cfg["engine"]))
+        r = generate(root, scope, cfg, store, Engine(cfg["engine"]), players=players)
     except (EngineError, voice.VoiceError, subprocess.CalledProcessError) as e:
         print(f"voice generate: {e}", file=sys.stderr)
         return 1
@@ -370,6 +439,23 @@ def status_lines(store: Path) -> list[str]:
 
 
 # ---- pack ------------------------------------------------------------------------------------------------
+
+
+def error_table(root: Path, cfg: dict[str, Any], players: Sequence[tuple[str, str]]) -> dict[str, Any]:
+    """Register.lua's `errors`: the game's voice id → kind, and per race-sex the files in step."""
+    lines = shipped_lines(root)
+    audio = audio_record(root)
+    jobs = error_jobs(root, cfg, list(players))
+    state = voice.in_step(jobs, lines, cfg["roster"], audio)
+    bad = set(state["missing"]) | set(state["stale"])
+    files: dict[str, dict[str, tuple[str, float]]] = {}
+    for j in jobs:
+        if j.stem in bad:
+            continue
+        who = j.stem[len(j.key) + 1 :]
+        files.setdefault(who, {})[j.key[2:]] = (f"{j.stem}.mp3", float(audio[j.stem]["seconds"]))
+    kinds = {int(r["voice_id"]): r["kind"] for r in _rows(root / "voice" / "error-kinds.jsonl")}
+    return {"kinds": kinds, "voices": files} if files else {}
 
 
 def pack_tables(
@@ -421,14 +507,24 @@ def pack_tables(
     return out, creatures, sorted(bad)
 
 
-def run_pack(cfg: dict[str, Any], root: Path, scope: str, store: Path, out_dir: Path) -> int:
+def run_pack(
+    cfg: dict[str, Any],
+    root: Path,
+    scope: str,
+    store: Path,
+    out_dir: Path,
+    players: Sequence[tuple[str, str]] = (),
+) -> int:
     lines, creatures, left_out = pack_tables(root, cfg, scope)
+    errors = error_table(root, cfg, players)
     dest = out_dir / voice_pack.FOLDER
     if dest.exists():
         shutil.rmtree(dest)
     (dest / "Sound").mkdir(parents=True)
     files = sorted(
-        {e["file"] for e in lines.values()} | {f for e in lines.values() for f, _ in e["variants"].values()}
+        {e["file"] for e in lines.values()}
+        | {f for e in lines.values() for f, _ in e["variants"].values()}
+        | {f for v in errors.get("voices", {}).values() for f, _ in v.values()}
     )
     used = sorted({audio_record(root)[f[:-4]]["voice"] for f in files})
     models = sorted({cfg["roster"][v]["model"] for v in used})
@@ -442,7 +538,7 @@ def run_pack(cfg: dict[str, Any], root: Path, scope: str, store: Path, out_dir: 
     (dest / f"{voice_pack.FOLDER}.toc").write_text(
         voice_pack.toc_text(_interface(toc), credits), encoding="utf-8"
     )
-    (dest / "Register.lua").write_text(voice_pack.register_text(lines, creatures), encoding="utf-8")
+    (dest / "Register.lua").write_text(voice_pack.register_text(lines, creatures, errors), encoding="utf-8")
     (dest / "README.txt").write_text(voice_pack.readme_text(credits, len(lines)), encoding="utf-8")
     for f in files:
         shutil.copyfile(store / f, dest / "Sound" / f)
@@ -475,6 +571,9 @@ def run(argv: Sequence[str]) -> int:
         sp.add_argument("--scope", default="all", choices=sorted(voice.SCOPES))
         sp.add_argument("--store")
         sp.add_argument("--out", default="../build/voice-pack")
+        sp.add_argument(
+            "--players", help="the character's error lines too: race-sex (tauren-f,human-m) or all"
+        )
     a = p.parse_args(list(argv))
     root = data_root()
     store = store_dir(a.store)
@@ -485,11 +584,12 @@ def run(argv: Sequence[str]) -> int:
         cfg = load_config(Path(a.config))
         if a.cmd == "cast":
             return run_cast(cfg, root)
+        players = players_of(a.players)
         if a.cmd == "plan":
-            return run_plan(cfg, root, a.scope)
+            return run_plan(cfg, root, a.scope, players)
         if a.cmd == "generate":
-            return run_generate(cfg, root, a.scope, store)
-        return run_pack(cfg, root, a.scope, store, Path(a.out))
+            return run_generate(cfg, root, a.scope, store, players)
+        return run_pack(cfg, root, a.scope, store, Path(a.out), players)
     except (ValueError, KeyError, FileNotFoundError) as e:
         print(f"voice {a.cmd}: {e}", file=sys.stderr)
         return 1
