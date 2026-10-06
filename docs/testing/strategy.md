@@ -767,7 +767,7 @@ Japanese voice over from the separate voice pack ([Voice over](../systems/voice.
 **Unverified facts this list settles** (record what you see):
 - `PlaySoundFile(path, "Master")` plays an MP3 from an addon folder and returns a handle `StopSound` stops (steps 3 to 6; `refused` stays 0).
 - An addon may set `Sound_EnableDialog` (step 3 prints `0` then `1`; step 7).
-- A new addon folder needs a full client restart, not a `/reload`: try `/reload` alone once after copying the pack into a running client, and note whether it loads.
+- A new addon folder needs a full client restart, not a `/reload`: try `/reload` alone once after copying the pack into a running client, and note whether it loads. (New sound files in an installed pack already play after a `/reload`: checked in game.)
 - The Settings panel lists a page added after `RegisterAddOnCategory` (step 2: *Voice* is listed).
 - The pack loads after the main addon's `ADDON_LOADED` (step 1: no `voice: no pack`, and the *Voice* page exists).
 

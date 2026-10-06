@@ -45,7 +45,7 @@ rsync -a --delete --exclude '.DS_Store' <worktree>/build/voice-pack/WoWForeverJa
   "<the Forever client's AddOns folder>/WoWForeverJapanese_Voice/"
 ```
 
-A new addon folder is most likely only seen after a full client restart, not a `/reload` (unverified; it is on the checklist). After that, `/reload` picks up a new copy of either folder. The in-game steps: [Testing strategy → Voice over checklist](../testing/strategy.md#voice-over-checklist).
+A new addon folder is most likely only seen after a full client restart, not a `/reload` (unverified; it is on the checklist). After that, `/reload` picks up a new copy of either folder, new sound files included: a file added to the installed pack's `Sound` folder while the client ran played after a `/reload` (checked in game). The in-game steps: [Testing strategy → Voice over checklist](../testing/strategy.md#voice-over-checklist).
 
 ## Recovery
 
