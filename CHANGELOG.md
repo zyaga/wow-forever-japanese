@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- The addon can now play Japanese voice over from a separate voice pack addon: quest offers, progress and turn-ins, and NPC greetings, read aloud while the window shows the Japanese. Holding Alt or closing the window stops the line, and a small button on the window stops it or plays it again. While a line plays, the game's English NPC voice is turned off and then put back. Without the pack nothing changes and no voice settings show. The pack is not published yet.
+
 ### Fixed
 - The group invite popup is now fully in Japanese: "<name> invites you to a group." (and the note that accepting takes you out of your queues) and its **Decline** button, which had stayed English after its half-second lock. A cross-realm invite's line is translated as well. The inviter's name stays English. Other popups whose whole line comes from the game as one known sentence (the question when you leave an instance group, and the trainer's "unlearn all of your talents?" and the pet-skills one) are translated too.
 - The "World refresh in 29 Seconds" notice above the chat (and its longer first wording) is now in Japanese, with the time unit in Japanese too (ワールド更新まで29秒). It had stayed English.

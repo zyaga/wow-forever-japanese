@@ -24,6 +24,13 @@
   - **Quest turn-in and progress text Forever reworded.** Only the server sends it, at the NPC, so those quests show the stale marker until the text is seen in game and the collector dump is imported ([Collector](systems/collector.md)).
   - **Player reports** as they arrive.
 
+## Voice over (in progress)
+- **Goal:** quest and NPC talk read aloud in Japanese from the shipped Japanese, generated locally with AivisSpeech and shipped as a separate pack addon ([ADR-061](adr/061-voice-over-from-a-separate-pack.md), [research](research/2026-10-04-japanese-voice-over.md)).
+- **Done:** the addon plays a pack's line when the quest or gossip window shows its Japanese, and stays silent for a line whose Japanese changed since the audio was made. The pipeline builds the speaker tables, the audio and the pack. The first pack covers the 16 night elf starting quests in Shadowglen and their NPCs' greetings: 48 lines ([Voice over](systems/voice.md), [runbook](operations/voice.md)). It passed its in-game check on a new night elf druid, play / stop button included ([Testing strategy → Voice over checklist](testing/strategy.md#voice-over-checklist)).
+- **Open:**
+  - **The packing ticket:** generating every line, splitting the pack, where it is hosted, and its sample rate and bitrate. The first pack's 22.05 kHz, 32 kbps audio sounds a little different from the 44.1 kHz, 64 kbps research samples; doubling it would bring the whole game to about 4.5 GB ([Voice over → Numbers](operations/voice.md#numbers)).
+  - **Not voiced yet:** quest objectives, audio per class or race (the player's name, class and race are spoken as 冒険者 today), the trainer window's text, and the character's own spoken error lines.
+
 ## Release
 - **Done:** one-action releases to CurseForge and GitHub ([Release](operations/release.md), [ADR-046](adr/046-one-action-release.md)); the CurseForge project exists and its id (1717928) is in the TOC.
 - **Open:** the rest of the one-time setup (the `CF_API_KEY` secret on the public repository, the `main` ruleset bypass), then the first alpha.
@@ -35,5 +42,4 @@
 - **The combat log** stays English: Forever hands addons a sealed string with no readable English ([ADR-035](adr/035-ui-errors-frame-surface.md)).
 - **Inline icons in tooltips**: whether the client prints `$@spellicon` as a texture escape the addon can copy is an in-game check; until it passes, those lines may show English ([ADR-043](adr/043-included-text-icons-and-branch-variants.md)).
 - **The QuestJapanizer wiki**: some complete hand-written quest descriptions exist only there, and its terms leave reuse to its administrator ([ADR-011](adr/011-provenance-layers-and-completeness.md)).
-- **Japanese voice over.** Quest and gossip text read aloud from the shipped Japanese, generated locally with AivisSpeech and shipped as separate pack addons; first a dozen Shadowglen quests in game, then the rest ([research](research/2026-10-04-japanese-voice-over.md)).
 - **Memory**: the generated data with readings and meanings is large; its size is revisited once the translation work is done.

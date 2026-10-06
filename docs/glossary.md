@@ -646,6 +646,33 @@ The addon's own record of problems seen in game, kept in the `WFJ_Log` SavedVari
 _Avoid_: error log, debug log, diagnostics file, BugSack
 → [Diagnostics log](systems/diagnostics.md) · [ADR-057](adr/057-catching-the-addons-own-lua-errors.md)
 
+## Voice over
+
+**Voice pack**:
+The separate addon `WoWForeverJapanese_Voice` that holds the Japanese voice over audio: one MP3 per voiced line, and a `Register.lua` that hands the main addon a table of [[Pack key]] → file, [[Japanese hash]] and length. It depends on the main addon; the main addon plays nothing and shows no voice setting without it. Build output of `wfj voice pack`, never committed.
+_Avoid_: voice addon, sound pack, audio data (the main addon ships no audio)
+→ [Voice over](systems/voice.md) · [ADR-061](adr/061-voice-over-from-a-separate-pack.md)
+
+**Pack key**:
+The name a voiced line goes by in the [[Voice pack]] and in `data/voice/`: `<quest id>-<field>` for a quest's offer (`description`), `progress` or turn-in (`completion`), `g-<gossip key>` for a greeting. It is the audio file's name without `.mp3`, and keys the audio the same way the Japanese is keyed, never by position.
+_Avoid_: file index, line number
+→ [Voice over](systems/voice.md)
+
+**Japanese hash**:
+The hash of a line's shipped Japanese exactly as stored, tokens unfilled (`Hash.key`; `ja_hash` in the pipeline). A [[Voice pack]] entry carries the Japanese hash its audio was made from, and the addon plays the file only when it equals the hash of the Japanese it ships; otherwise the line stays silent. A [[Reading]] record pins itself to its Japanese the same way.
+_Avoid_: [[Source hash]] (that's the English side), audio hash
+→ [Voice over](systems/voice.md) · [Readings](systems/readings.md)
+
+**Speaker**:
+The creature that says a voiced line, by creature id: the quest's starter for its offer, its ender for progress and turn-in, the creature whose greeting it is for a gossip line. Recorded in `data/voice/speakers.jsonl`; a creature id the [[Collector]] recorded wins over VMaNGOS. A speaker's voice (male, female or [[Narrator]]) comes from its display gender, in `data/voice/voices.jsonl`.
+_Avoid_: NPC (too broad), voice actor, quest giver (only one of the cases)
+→ [Voice over](systems/voice.md) · [Data model](architecture/data-model.md#voice-over-tables)
+
+**Narrator**:
+The voice that reads a line no creature says: the offer of a quest an item or object starts, or a creature whose display has no gender. In the first [[Voice pack]] the male voice doubles as the narrator.
+_Avoid_: system voice, default voice
+→ [Voice over](systems/voice.md)
+
 ## Client
 
 **Game type**:
