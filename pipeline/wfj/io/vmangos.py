@@ -216,3 +216,65 @@ def read_creature_genders(path: Path, creatures: set[int]) -> dict[int, int]:
     finally:
         db.close()
     return {int(c): int(g) for c, g in rows}
+
+
+_CREATURE_NEEDS = {
+    "creature_template": (
+        "entry", "patch", "name", "subname", "type", "rank", "racial_leader",
+        "display_id1", "display_id2", "display_id3", "display_id4",
+    ),
+}
+
+
+def read_creatures(path: Path, creatures: set[int] | None = None) -> dict[int, dict[str, object]]:
+    """creature id → its highest-patch row: name, subname (title), type (1 beast · 2 dragonkin · 3 demon ·
+    4 elemental · 5 giant · 6 undead · 7 humanoid · 8 critter · 9 mechanical · 10 not specified), rank,
+    racial_leader and its non-zero display ids in slot order. For voice casting only: the name and title are
+    read to judge a speaker, never written to data/. `creatures` None reads every creature."""
+    db = _connect(path, _CREATURE_NEEDS)
+    where = ""
+    if creatures is not None:
+        where = " WHERE t.entry IN (" + (",".join(str(int(c)) for c in sorted(creatures)) or "NULL") + ")"
+    try:
+        rows = _query(db, path,
+            "SELECT t.entry, t.name, t.subname, t.type, t.rank, t.racial_leader,"
+            " t.display_id1, t.display_id2, t.display_id3, t.display_id4 FROM creature_template t"
+            " JOIN (SELECT entry, MAX(patch) AS patch FROM creature_template GROUP BY entry) m"
+            " ON t.entry = m.entry AND t.patch = m.patch" + where,
+        )
+    finally:
+        db.close()
+    return {
+        int(e): {
+            "name": name or "", "subname": sub or "", "type": int(typ or 0), "rank": int(rank or 0),
+            "leader": bool(leader), "displays": [int(d) for d in ds if d],
+        }
+        for e, name, sub, typ, rank, leader, *ds in rows
+    }
+
+
+def read_gossip_creatures(path: Path) -> set[int]:
+    """Every creature with a gossip menu or a quest window greeting: the speakers of NPC talk."""
+    db = _connect(path, _SPEAKER_NEEDS)
+    try:
+        rows = _query(db, path,
+            "SELECT entry FROM creature_template WHERE gossip_menu_id <> 0"
+            " UNION SELECT entry FROM quest_greeting WHERE type = 0",
+        )
+    finally:
+        db.close()
+    return {int(r[0]) for r in rows}
+
+
+def read_all_quest_speakers(path: Path) -> tuple[dict[int, list[int]], set[int], dict[int, list[int]]]:
+    """read_quest_speakers over every quest the database relates to anyone."""
+    db = _connect(path, _SPEAKER_NEEDS)
+    try:
+        quests = {
+            int(r[0])
+            for t in ("creature_questrelation", "gameobject_questrelation", "creature_involvedrelation")
+            for r in _query(db, path, f"SELECT DISTINCT quest FROM {t}")
+        }
+    finally:
+        db.close()
+    return read_quest_speakers(path, quests)

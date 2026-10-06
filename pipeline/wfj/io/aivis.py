@@ -54,9 +54,15 @@ class Engine:
                 return str(sp.get("speaker_uuid"))
         raise EngineError(f"style {style} is not installed in the engine")
 
-    def synthesize(self, text: str, style: int, speed: float) -> bytes:
+    def synthesize(
+        self, text: str, style: int, speed: float, pitch: float = 0.0, intonation: float = 1.0
+    ) -> bytes:
+        """One line's WAV in a voice style, at a pace, pitch shift and intonation strength (the engine's
+        `speedScale`, `pitchScale` and `intonationScale` on the query)."""
         query = json.loads(self._call("POST", "/audio_query", {"text": text, "speaker": style}))
         query["speedScale"] = speed
+        query["pitchScale"] = pitch
+        query["intonationScale"] = intonation
         wav = self._call("POST", "/synthesis", {"speaker": style}, query)
         if wav[:4] != b"RIFF":
             raise EngineError(f"/synthesis: not a WAV file ({len(wav)} bytes)")

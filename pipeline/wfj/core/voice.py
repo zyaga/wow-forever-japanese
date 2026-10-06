@@ -9,23 +9,33 @@ addon ships it (tokens unfilled), so the addon can refuse audio made from older 
 from __future__ import annotations
 
 import re
-from collections.abc import Iterable
+from collections.abc import Iterable, Mapping
+from dataclasses import dataclass
 from typing import Any
 
 from wfj.core.hashing import key as hash_key
 from wfj.core.normalize import normalize_v1
 from wfj.emit.lua_writer import shipped
 
-# The quests a new night elf does in Shadowglen, and its druid trainer, who gives no quest there.
+# A scope is the quests whose offer, progress and turn-in are voiced, and the creatures whose NPC talk is
+# voiced besides their givers and enders. `all` is every quest and every creature that talks (None).
+_SHADOWGLEN = {
+    "quests": (456, 457, 458, 459, 916, 917, 920, 921, 928, 2159, 3120, 3519, 3521, 3522, 4495, 5842),
+    "creatures": (3597,),  # the druid trainer, who gives no quest there
+}
+_NARACHE = {
+    "quests": (747, 750, 752, 753, 755, 757, 763, 780, 781, 1656, 3376, 3091, 3092, 3093, 3094),
+    "creatures": (3059, 3060, 3061, 3062),  # the warrior, druid, hunter and shaman trainers
+}
 SCOPES: dict[str, dict[str, Any]] = {
-    "shadowglen": {
-        "quests": (456, 457, 458, 459, 916, 917, 920, 921, 928, 2159, 3120, 3519, 3521, 3522, 4495, 5842),
-        "creatures": (3597,),
-    },
+    "shadowglen": _SHADOWGLEN,
+    "narache": _NARACHE,
+    # the second in-game test: the night elf and the tauren starts
+    "test2": {k: _SHADOWGLEN[k] + _NARACHE[k] for k in ("quests", "creatures")},
+    "all": {"quests": None, "creatures": None},
 }
 # description is the offer the quest giver reads, progress and completion the turn-in NPC's lines
 FIELDS = ("description", "progress", "completion")
-VOICES = ("male", "female", "narrator")
 NARRATOR = "narrator"
 PLAYER_WORD = "冒険者"  # the pack is made before anyone plays: it cannot know the name, class or race
 
@@ -33,7 +43,8 @@ _TOKEN = re.compile(r"\{(name|class|race)\}")
 # angle brackets around Japanese are a stage direction ("<Iverronが解毒剤を飲む>"), read by nobody
 _STAGE = re.compile(r"<[^<>]*[^\x00-\x7f][^<>]*>")
 _MARKUP = re.compile(r"[{}<>$|]")
-_KEY = re.compile(r"\d+-(description|progress|completion)|g-[0-9a-f]{16}")
+_KEY = re.compile(r"\d+-(description|progress|completion)|[gb]-[0-9a-f]{16}")
+_VOICE = re.compile(r"[a-z0-9]+")
 
 
 class VoiceError(ValueError):
@@ -65,14 +76,14 @@ def speech_text(ja: str, key: str) -> str:
     return text
 
 
-def shipped_quest(quest_lines: Iterable[dict[str, Any]], quests: Iterable[int]) -> dict[str, str]:
+def shipped_quest(quest_lines: Iterable[dict[str, Any]], quests: Iterable[int] | None) -> dict[str, str]:
     """{pack key: Japanese} for the scoped quests' voiced fields that ship (the Japanese generate writes
-    verbatim for a quest field)."""
-    want = set(quests)
+    verbatim for a quest field). `quests` None: every quest."""
+    want = None if quests is None else set(quests)
     return {
         quest_key(ln["id"], ln["field"]): ln["ja"]
         for ln in quest_lines
-        if ln["id"] in want and ln["field"] in FIELDS and shipped(ln)
+        if (want is None or ln["id"] in want) and ln["field"] in FIELDS and shipped(ln)
     }
 
 
@@ -86,10 +97,12 @@ def quest_speakers(
     starters: dict[int, list[int]],
     objects: set[int],
     enders: dict[int, list[int]],
+    others: dict[str, list[int]] | None = None,
 ) -> tuple[dict[str, int | str], list[str]]:
     """{pack key: creature id or "narrator"} for quest keys, and the conflicts reported. The offer is read by
     the creature that starts the quest; an object or item start (no creature) is the narrator. Progress and
-    turn-in are read by the creature that ends it. Two creatures for one line: the lowest id, reported."""
+    turn-in are read by the creature that ends it. Two creatures for one line: the lowest id is its main
+    speaker, reported; the rest go into `others` when it is given (each may have a voice of its own)."""
     out: dict[str, int | str] = {}
     problems: list[str] = []
     for key in sorted(keys):
@@ -103,12 +116,17 @@ def quest_speakers(
             continue
         if len(who) > 1:
             problems.append(f"{key}: creatures {who}, took {min(who)}")
+            if others is not None:
+                others[key] = sorted(set(who) - {min(who)})
         out[key] = min(who)
     return out, problems
 
 
 def gossip_speakers(
-    lines: Iterable[tuple[int, str]], collector: dict[str, list[int]], shipped_keys: set[str]
+    lines: Iterable[tuple[int, str]],
+    collector: dict[str, list[int]],
+    shipped_keys: set[str],
+    others: dict[str, list[int]] | None = None,
 ) -> tuple[dict[str, int], dict[str, list[str]]]:
     """{pack key: creature id} for gossip lines of the scoped creatures that ship in Japanese. A creature id
     the collector recorded in game for that line wins over the database (what the client served). Report:
@@ -127,18 +145,86 @@ def gossip_speakers(
         seen = sorted(set(recorded) & creatures) or sorted(recorded) or sorted(creatures)
         if len(seen) > 1:
             report["conflict"].append(f"g-{k}: creatures {seen}, took {seen[0]}")
+        rest = sorted((set(recorded) | creatures) - {seen[0]})
+        if rest and others is not None:
+            others[gossip_key(k)] = rest
         out[gossip_key(k)] = seen[0]
     report["missing"] = sorted(set(report["missing"]))
     return out, report
 
 
-def voice_of(gender: int | None) -> str:
-    """0 male, 1 female; a display with no gender, or none known, is the narrator."""
-    return {0: "male", 1: "female"}.get(gender if gender is not None else -1, NARRATOR)
+def fingerprint(ja_h: str, voice: str, settings: Mapping[str, Any]) -> str:
+    """What a file was made from: the Japanese hash, the roster voice and that voice's engine settings. A
+    file is made again when any of them changes, so recasting one kind of speaker remakes only its lines.
+    The engine version is recorded beside it, not in it: an engine upgrade does not remake the game."""
+    return (
+        f"{ja_h}|{voice}|{int(settings['style'])}|{float(settings['speed']):g}"
+        f"|{float(settings.get('pitch', 0.0)):g}|{float(settings.get('intonation', 1.0)):g}"
+    )
 
 
-def fingerprint(ja_h: str, voice: str, style: int, speed: float, engine: str) -> str:
-    return f"{ja_h}|{voice}|{style}|{speed:g}|{engine}"
+@dataclass(frozen=True)
+class Job:
+    """One audio file: `stem` is the file name without `.mp3`: the pack key for a line's main voice,
+    `<key>_<voice>` for a variant (`_` appears in no key and no voice id)."""
+
+    stem: str
+    key: str
+    voice: str
+
+
+def book_key(key: str) -> str:
+    return f"b-{key}"
+
+
+def voices_of(row: Mapping[str, Any], cast: Mapping[int, Mapping[str, str]], narrator: str,
+              book_narrator: str) -> tuple[str, list[str]]:
+    """(the line's main voice, its other voices). The main voice is its main speaker's (a mixed-gender
+    creature's male casting), the narrator's for a line no creature says; the others are every other voice
+    a speaker of the line is cast to, sorted."""
+    sp = row["speaker"]
+    if sp == NARRATOR:
+        main = book_narrator if row["key"].startswith("b-") else narrator
+    else:
+        main = cast[sp]["voice"]
+    other: set[str] = set()
+    for c in (sp, *row.get("others", ())):
+        if isinstance(c, int):
+            other.add(cast[c]["voice"])
+            if cast[c].get("female"):
+                other.add(cast[c]["female"])
+    other.discard(main)
+    return main, sorted(other)
+
+
+def jobs(rows: Iterable[Mapping[str, Any]], cast: Mapping[int, Mapping[str, str]], narrator: str,
+         book_narrator: str, lines: Mapping[str, str]) -> list[Job]:
+    """Every file the rows need, for the keys that ship Japanese."""
+    out: list[Job] = []
+    for row in rows:
+        key = row["key"]
+        if key not in lines:
+            continue
+        main, other = voices_of(row, cast, narrator, book_narrator)
+        out.append(Job(key, key, main))
+        out += [Job(f"{key}_{v}", key, v) for v in other]
+    return out
+
+
+def in_step(
+    file_jobs: Iterable[Job], lines: Mapping[str, str], roster: Mapping[str, Mapping[str, Any]],
+    audio: Mapping[str, Mapping[str, Any]],
+) -> dict[str, list[str]]:
+    """The audio record against what the files must be now: `missing` (no record), `stale` (made from other
+    Japanese, another voice or other settings). Empty lists: voice is in step with the translation."""
+    out: dict[str, list[str]] = {"missing": [], "stale": []}
+    for j in file_jobs:
+        rec = audio.get(j.stem)
+        if rec is None:
+            out["missing"].append(j.stem)
+        elif rec.get("fingerprint") != fingerprint(ja_hash(lines[j.key]), j.voice, roster[j.voice]):
+            out["stale"].append(j.stem)
+    return out
 
 
 def speaker_problems(speakers: list[dict[str, Any]], voices: list[dict[str, Any]]) -> list[str]:
@@ -153,8 +239,11 @@ def speaker_problems(speakers: list[dict[str, Any]], voices: list[dict[str, Any]
             problems.append(f"voice speakers {key}: duplicate")
         seen.add(str(key))
         sp = row.get("speaker")
-        if not (sp == NARRATOR or (isinstance(sp, int) and not isinstance(sp, bool) and sp > 0)):
+        if not (sp == NARRATOR or _creature_id(sp)):
             problems.append(f"voice speakers {key}: speaker must be a creature id or {NARRATOR!r}")
+        others = row.get("others", [])
+        if not isinstance(others, list) or not all(_creature_id(o) for o in others) or sp in others:
+            problems.append(f"voice speakers {key}: others must be creature ids other than the speaker")
         problems += _provenance(row, f"voice speakers {key}")
     has_voice: set[int] = set()
     for row in voices:
@@ -165,14 +254,22 @@ def speaker_problems(speakers: list[dict[str, Any]], voices: list[dict[str, Any]
         if c in has_voice:
             problems.append(f"voice voices {c}: duplicate")
         has_voice.add(c)
-        if row.get("voice") not in VOICES:
-            problems.append(f"voice voices {c}: voice must be one of {', '.join(VOICES)}")
+        for f in ("voice", "female"):
+            v = row.get(f)
+            if (f == "voice" or v is not None) and not (isinstance(v, str) and _VOICE.fullmatch(v)):
+                problems.append(f"voice voices {c}: {f} must be a roster voice id")
+        if not isinstance(row.get("row"), str) or not row["row"]:
+            problems.append(f"voice voices {c}: row must name the cast row that chose the voice")
         problems += _provenance(row, f"voice voices {c}")
     for row in speakers:
-        sp = row.get("speaker")
-        if isinstance(sp, int) and sp not in has_voice:
-            problems.append(f"voice speakers {row.get('key')}: creature {sp} has no voice row")
+        for sp in (row.get("speaker"), *row.get("others", [])):
+            if isinstance(sp, int) and sp not in has_voice:
+                problems.append(f"voice speakers {row.get('key')}: creature {sp} has no voice row")
     return problems
+
+
+def _creature_id(v: Any) -> bool:
+    return isinstance(v, int) and not isinstance(v, bool) and v > 0
 
 
 def _provenance(row: dict[str, Any], label: str) -> list[str]:

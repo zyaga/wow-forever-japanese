@@ -1,19 +1,13 @@
-"""wfj voice speakers|generate|pack: Japanese voice over, made locally (ADR-061; docs/systems/voice.md,
-runbook docs/operations/voice.md).
+"""wfj voice: Japanese voice over, made locally (ADR-061, ADR-062; docs/systems/voice.md, runbook
+docs/operations/voice.md). This module builds who speaks each line; the casting verbs are in `voice_cast`,
+the file verbs (cast, plan, generate, status, pack) in `voice_make`.
 
-  speakers --vmangos FILE --commit SHA [--scope shadowglen]
-      Writes data/voice/speakers.jsonl (pack key → creature id or narrator) and data/voice/voices.jsonl
-      (creature id → male / female / narrator) for the scope, from the VMaNGOS world database and the creature
-      ids the collector recorded with gossip English (data/english/gossip `npcs`, which win). Prints the lines
-      read by the narrator, the conflicts and the scoped lines with no Japanese.
-  generate [--config voice.toml] [--out DIR] [--scope shadowglen]
-      For every speakers row, reads the shipped Japanese through the local AivisSpeech Engine in its speaker's
-      voice and writes DIR/<pack key>.mp3 (mono, 22.05 kHz, 32 kbps, no Xing / Info frame) and
-      DIR/manifest.json. A file whose fingerprint (Japanese hash, voice, style, speed, engine version) is
-      unchanged is not made again. Prints the numbers the packing decision needs.
-  pack [--manifest DIR/manifest.json] [--out DIR]
-      Writes the pack addon WoWForeverJapanese_Voice from the manifest entries whose Japanese hash still
-      equals the shipped Japanese.
+  speakers --vmangos FILE --commit SHA [--scope all] [--wdb questcache.wdb]
+      Writes data/voice/speakers.jsonl (pack key → its main speaker, a creature id or narrator, and the
+      `others` who say it too) for the scope, from the VMaNGOS world database, the creature ids the collector
+      recorded with gossip English (data/english/gossip `npcs`, which win) and, with --wdb, the quest cache's
+      conditional descriptions. Prints the lines read by the narrator, the conflicts and the scoped lines with
+      no Japanese.
 """
 
 from __future__ import annotations
@@ -21,23 +15,14 @@ from __future__ import annotations
 import argparse
 import datetime
 import json
-import shutil
-import subprocess
 import sys
-import time
-import tomllib
-import wave
 from collections.abc import Sequence
-from io import BytesIO
 from pathlib import Path
 from typing import Any
 
-from wfj.cmd.generate import female_index
 from wfj.core import voice
-from wfj.emit import voice_pack
 from wfj.emit.lua_writer import shipped
-from wfj.io import vmangos
-from wfj.io.aivis import Engine, EngineError
+from wfj.io import vmangos, wdb
 from wfj.io.jsonl_store import Store, dumps
 from wfj.paths import data_root
 
@@ -85,26 +70,41 @@ def _keep_date(rows: list[dict[str, Any]], old: list[dict[str, Any]], id_field: 
 
 
 def build_tables(
-    root: Path, db: Path, commit: str, scope: str, today: str
-) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, list[str]]]:
-    """(speakers rows, voices rows, report) for the scope."""
+    root: Path, db: Path, commit: str, scope: str, today: str, wdb_path: Path | None = None
+) -> tuple[list[dict[str, Any]], dict[str, list[str]]]:
+    """(speakers rows, report) for the scope. A speakers row names the line's main speaker and,
+    when several creatures say it, the `others` (each may be cast to a voice of its own). With `wdb_path`
+    (the pinned quest cache) a quest's conditional descriptions, keyed by their English (ADR-054), are read
+    by the giver the cache names, else by the quest's starter."""
     cfg = voice.SCOPES[scope]
-    quests = set(cfg["quests"])
+    whole = cfg["quests"] is None
     src = f"vmangos@{commit}"
-    starters, objects, enders = vmangos.read_quest_speakers(db, quests)
-    quest_keys = voice.shipped_quest(Store(root).load("quest"), quests)
-    q_speakers, q_problems = voice.quest_speakers(quest_keys, starters, objects, enders)
-    creatures = {c for ids in (*starters.values(), *enders.values()) for c in ids} | set(cfg["creatures"])
-    gossip_shipped = {ln["id"] for ln in Store(root).load("gossip") if shipped(ln)}
-    english_gossip = Store(root, english=True).load("gossip")
+    store, english_store = Store(root), Store(root, english=True)
+    quest_lines = store.load("quest")
+    if whole:
+        starters, objects, enders = vmangos.read_all_quest_speakers(db)
+        quest_keys = voice.shipped_quest(quest_lines, None)
+        quests = {int(k.split("-", 1)[0]) for k in quest_keys}
+    else:
+        quests = set(cfg["quests"])
+        starters, objects, enders = vmangos.read_quest_speakers(db, quests)
+        quest_keys = voice.shipped_quest(quest_lines, quests)
+    others: dict[str, list[int]] = {}
+    q_speakers, q_problems = voice.quest_speakers(quest_keys, starters, objects, enders, others)
+    creatures = {c for q in quests for c in (*starters.get(q, ()), *enders.get(q, ()))}
+    creatures |= vmangos.read_gossip_creatures(db) if whole else set(cfg["creatures"])
+    gossip_shipped = {ln["id"] for ln in store.load("gossip") if shipped(ln)}
+    english_gossip = english_store.load("gossip")
     collector = {ln["id"]: ln["npcs"] for ln in english_gossip if ln.get("npcs")}
     collector_src = {ln["id"]: ln["src"] for ln in english_gossip if ln.get("npcs")}
     said = vmangos.read_creature_lines(db, creatures)
-    g_speakers, report = voice.gossip_speakers(said, collector, gossip_shipped)
+    if whole:  # a line the client served with the creatures who said it, the database's or not
+        said += [(n, ln["en"]) for ln in english_gossip for n in ln.get("npcs") or ()]
+    g_speakers, report = voice.gossip_speakers(said, collector, gossip_shipped, others)
     report["quest"] = q_problems
     report["missing"] += sorted(
         f"{voice.quest_key(q, f)}"
-        for q in quests
+        for q in (quests if not whole else ())
         for f in voice.FIELDS
         if voice.quest_key(q, f) not in quest_keys and _has_english(root, q, f)
     )
@@ -112,24 +112,54 @@ def build_tables(
     def prov(source: str) -> dict[str, str]:
         return {"source": source, "imported": today}
 
-    speakers = [
-        {"key": k, "speaker": s, "provenance": prov(src)} for k, s in sorted(q_speakers.items())
-    ] + [
-        {
-            "key": k,
-            "speaker": s,
-            "provenance": prov(collector_src[k[2:]] if s in collector.get(k[2:], []) else src),
-        }
+    def row(key: str, speaker: int | str, source: str) -> dict[str, Any]:
+        r: dict[str, Any] = {"key": key, "speaker": speaker}
+        if others.get(key):
+            r["others"] = others[key]
+        r["provenance"] = prov(source)
+        return r
+
+    speakers = [row(k, s, src) for k, s in sorted(q_speakers.items())]
+    speakers += [
+        row(k, s, collector_src[k[2:]] if s in collector.get(k[2:], []) else src)
         for k, s in sorted(g_speakers.items())
     ]
-    speaking = {r["speaker"] for r in speakers if isinstance(r["speaker"], int)}
-    genders = vmangos.read_creature_genders(db, speaking)
-    voices = [
-        {"creature": c, "voice": voice.voice_of(genders.get(c)), "provenance": prov(src)}
-        for c in sorted(speaking)
-    ]
-    report["no gender"] = [str(c) for c in sorted(speaking) if c not in genders]
-    return speakers, voices, report
+    if wdb_path is not None:
+        have = {r["key"] for r in speakers}
+        conditional = _conditional_speakers(wdb_path, quests, starters, gossip_shipped, have)
+        speakers += [row(k, s, f"wdb@{b}") for k, (s, b) in sorted(conditional.items())]
+        report["conditional"] = [f"{k}: {s}" for k, (s, _) in sorted(conditional.items())]
+    if whole:  # every plain-text book page, read by the narrator (a page's named author: the casting pass)
+        from wfj.cmd.voice_make import shipped_lines as all_lines
+
+        have = {r["key"] for r in speakers}
+        speakers += [
+            row(k, voice.NARRATOR, "book@narrator")
+            for k in sorted(all_lines(root))
+            if k.startswith("b-") and k not in have
+        ]
+    speakers.sort(key=lambda r: r["key"])
+    return speakers, report
+
+
+def _conditional_speakers(
+    path: Path, quests: set[int], starters: dict[int, list[int]], shipped_keys: set[str], have: set[str]
+) -> dict[str, tuple[int | str, int]]:
+    """{pack key: (speaker, cache build)} for the scoped quests' conditional descriptions that ship: the giver
+    the cache names, else the quest's lowest starter, else the narrator."""
+    cache = wdb.read_quests(path)
+    out: dict[str, tuple[int | str, int]] = {}
+    for q in cache.quests:
+        if q.id not in quests:
+            continue
+        for _, giver, en in q.conditional:
+            k = voice.gossip_id(en or "")
+            key = voice.gossip_key(k)
+            if not en or k not in shipped_keys or key in have or key in out:
+                continue
+            who = giver or min(starters.get(q.id, []), default=None)
+            out[key] = (who if who else voice.NARRATOR, cache.build)
+    return out
 
 
 def _has_english(root: Path, quest: int, field: str) -> bool:
@@ -141,214 +171,60 @@ def _has_english(root: Path, quest: int, field: str) -> bool:
 def run_speakers(a: argparse.Namespace) -> int:
     root = data_root()
     today = datetime.date.today().isoformat()
-    speakers, voices, report = build_tables(root, Path(a.vmangos), a.commit, a.scope, today)
+    speakers, report = build_tables(
+        root, Path(a.vmangos), a.commit, a.scope, today, Path(a.wdb) if a.wdb else None
+    )
     d = voice_dir(root)
     speakers = _keep_date(speakers, read_rows(d / "speakers.jsonl"), "key")
-    voices = _keep_date(voices, read_rows(d / "voices.jsonl"), "creature")
     write_rows(d / "speakers.jsonl", speakers)
-    write_rows(d / "voices.jsonl", voices)
     narrator = [r["key"] for r in speakers if r["speaker"] == voice.NARRATOR]
-    by_voice: dict[str, int] = {}
-    kind = {r["creature"]: r["voice"] for r in voices}
-    for r in speakers:
-        v = voice.NARRATOR if r["speaker"] == voice.NARRATOR else kind[r["speaker"]]
-        by_voice[v] = by_voice.get(v, 0) + 1
-    print(f"voice speakers: {len(speakers)} lines, {len(voices)} creatures; by voice {by_voice}")
-    print(f"voice speakers: narrator lines {narrator}")
-    for name in ("quest", "conflict", "missing", "no gender"):
+    creatures = {c for r in speakers for c in (r["speaker"], *r.get("others", ())) if isinstance(c, int)}
+    several = sum("others" in r for r in speakers)
+    print(f"voice speakers: {len(speakers)} lines, {len(creatures)} creatures,")
+    print(f"voice speakers: {len(narrator)} narrator lines")
+    print(f"voice speakers: {several} lines with several speakers")
+    for name in ("quest", "conflict", "missing", "conditional"):
         for item in report.get(name, []):
             print(f"voice speakers: {name}: {item}")
     return 0
 
 
-def _config(path: Path) -> dict[str, Any]:
-    with path.open("rb") as f:
-        cfg = tomllib.load(f)
-    for v in voice.VOICES:
-        if not isinstance(cfg.get("voices", {}).get(v, {}).get("style"), int):
-            raise ValueError(f"{path.name}: voices.{v}.style must be an engine style id")
-    return cfg
-
-
-def wav_seconds(wav: bytes) -> float:
-    with wave.open(BytesIO(wav)) as w:
-        return w.getnframes() / w.getframerate()
-
-
-def to_mp3(wav: bytes, out: Path) -> None:
-    tmp = out.with_suffix(".wav")
-    tmp.write_bytes(wav)
-    try:
-        subprocess.run([*LAME, str(tmp), str(out)], check=True)
-    finally:
-        tmp.unlink(missing_ok=True)
-
-
-def generate(
-    root: Path, scope: str, cfg: dict[str, Any], out: Path, engine: Engine, encode=to_mp3
-) -> dict[str, Any]:
-    """Makes every missing or changed file. → the run's numbers."""
-    speakers = read_rows(voice_dir(root) / "speakers.jsonl")
-    kinds = {r["creature"]: r["voice"] for r in read_rows(voice_dir(root) / "voices.jsonl")}
-    lines = shipped_lines(root, scope)
-    version = engine.version()
-    speed = float(cfg["speed_scale"])
-    models: dict[int, str] = {}
-    out.mkdir(parents=True, exist_ok=True)
-    mpath = out / "manifest.json"
-    manifest: dict[str, Any] = json.loads(mpath.read_text(encoding="utf-8")) if mpath.is_file() else {}
-    made = skipped = chars_made = 0
-    seconds_made = 0.0
-    started = time.perf_counter()
-    for row in speakers:
-        key = row["key"]
-        if key not in lines:
-            print(f"voice generate: {key}: no shipped Japanese, skipped")
-            continue
-        who = voice.NARRATOR if row["speaker"] == voice.NARRATOR else kinds[row["speaker"]]
-        style = int(cfg["voices"][who]["style"])
-        ja = lines[key]
-        h = voice.ja_hash(ja)
-        fp = voice.fingerprint(h, who, style, speed, version)
-        file = out / f"{key}.mp3"
-        if manifest.get(key, {}).get("fingerprint") == fp and file.is_file():
-            skipped += 1
-            continue
-        text = voice.speech_text(ja, key)
-        if style not in models:
-            models[style] = engine.model_of(style)
-        wav = engine.synthesize(text, style, speed)
-        encode(wav, file)
-        secs = wav_seconds(wav)
-        manifest[key] = {
-            "fingerprint": fp, "ja_hash": h, "voice": who, "model": models[style], "style": style,
-            "speed": speed, "engine": version, "bytes": file.stat().st_size, "seconds": round(secs, 2),
-            "chars": len(text),
-        }
-        made += 1
-        chars_made += len(text)
-        seconds_made += secs
-    elapsed = time.perf_counter() - started
-    text = json.dumps(manifest, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
-    mpath.write_text(text, encoding="utf-8")
-    return {"made": made, "skipped": skipped, "chars_made": chars_made, "seconds_made": seconds_made,
-            "elapsed": elapsed, "manifest": manifest}
-
-
-def numbers(result: dict[str, Any]) -> list[str]:
-    m = result["manifest"]
-    chars = sum(e["chars"] for e in m.values())
-    secs = sum(e["seconds"] for e in m.values())
-    size = sum(e["bytes"] for e in m.values())
-    out = [
-        f"made {result['made']}, unchanged {result['skipped']}, in {result['elapsed']:.1f} s",
-        f"lines {len(m)}, characters {chars}, audio {secs:.1f} s, pack audio {size} bytes",
+def in_scope(rows: list[dict[str, Any]], scope: str) -> list[dict[str, Any]]:
+    """The speakers rows a scope voices: its quests' fields, and the NPC talk of its quests' givers and enders
+    and of its own creatures. `all` keeps every row."""
+    cfg = voice.SCOPES[scope]
+    if cfg["quests"] is None:
+        return rows
+    quests = set(cfg["quests"])
+    quest_rows = [r for r in rows if r["key"][0].isdigit() and int(r["key"].split("-", 1)[0]) in quests]
+    who = set(cfg["creatures"]) | {c for r in quest_rows for c in (r["speaker"], *r.get("others", ()))}
+    talk = [
+        r for r in rows
+        if not r["key"][0].isdigit() and any(c in who for c in (r["speaker"], *r.get("others", ())))
     ]
-    if result["made"] and result["elapsed"] > 0:
-        rate = result["chars_made"] / result["elapsed"]
-        work = result["seconds_made"] / result["elapsed"]
-        out.append(f"generation {rate:.1f} characters a second ({work:.2f} s of audio per second of work)")
-        if secs and chars:
-            per_char_s, per_s_bytes = secs / chars, size / secs
-            speech = chars / secs
-            out.append(f"speech {speech:.2f} characters a second of audio, {per_s_bytes:.0f} bytes a second")
-            for name, n in FULL_SCOPES.items():
-                out.append(
-                    f"projection, {name} ({n:,} characters): {n / rate / 3600:.1f} h to make, "
-                    f"{n * per_char_s / 3600:.0f} h of audio, {n * per_char_s * per_s_bytes / 1e6:.0f} MB"
-                )
-    return out
-
-
-def run_generate(a: argparse.Namespace) -> int:
-    root = data_root()
-    cfg = _config(Path(a.config))
-    try:
-        result = generate(root, a.scope, cfg, Path(a.out), Engine(cfg["engine"]))
-    except (EngineError, voice.VoiceError, subprocess.CalledProcessError) as e:
-        print(f"voice generate: {e}", file=sys.stderr)
-        return 1
-    for line in numbers(result):
-        print(f"voice generate: {line}")
-    return 0
-
-
-def interface_of(toc: Path) -> str:
-    for line in toc.read_text(encoding="utf-8").splitlines():
-        if line.startswith("## Interface:"):
-            return line.split(":", 1)[1].strip()
-    raise ValueError(f"{toc}: no ## Interface line")
-
-
-def pack_lines(
-    root: Path, scope: str, manifest: dict[str, Any]
-) -> tuple[dict[str, tuple[str, str, float]], list[str]]:
-    """{pack key: (file, hash, seconds)} for manifest entries still matching the shipped Japanese, plus the
-    female-wording key of a gendered gossip line (the addon looks a female character's line up by it; same
-    file). → (lines, keys left out as stale)"""
-    lines = shipped_lines(root, scope)
-    out: dict[str, tuple[str, str, float]] = {}
-    stale = []
-    for key, e in sorted(manifest.items()):
-        if key not in lines or voice.ja_hash(lines[key]) != e["ja_hash"]:
-            stale.append(key)
-            continue
-        out[key] = (f"{key}.mp3", e["ja_hash"], float(e["seconds"]))
-    female, _ = female_index(Store(root, english=True).load("gossip"))
-    for key, entry in list(out.items()):
-        fkey = female.get(key[2:]) if key.startswith("g-") else None
-        if fkey and voice.gossip_key(fkey) not in out:
-            out[voice.gossip_key(fkey)] = entry
-    return out, stale
-
-
-def run_pack(a: argparse.Namespace) -> int:
-    root = data_root()
-    cfg = _config(Path(a.config))
-    src = Path(a.manifest)
-    manifest = json.loads(src.read_text(encoding="utf-8"))
-    lines, stale = pack_lines(root, a.scope, manifest)
-    dest = Path(a.out) / voice_pack.FOLDER
-    if dest.exists():
-        shutil.rmtree(dest)
-    (dest / "Sound").mkdir(parents=True)
-    models = sorted({cfg["voices"][v]["model"] for v in voice.VOICES})
-    credits = {**cfg["credits"], "models": ", ".join(models)}
-    toc = root.parent / "addon" / "WoWForeverJapanese" / "WoWForeverJapanese.toc"
-    toc_out = voice_pack.toc_text(interface_of(toc), credits)
-    (dest / f"{voice_pack.FOLDER}.toc").write_text(toc_out, encoding="utf-8")
-    (dest / "Register.lua").write_text(voice_pack.register_text(lines), encoding="utf-8")
-    readme = voice_pack.readme_text(credits, len(manifest) - len(stale))
-    (dest / "README.txt").write_text(readme, encoding="utf-8")
-    files = sorted({f for f, _, _ in lines.values()})
-    for f in files:
-        shutil.copyfile(src.parent / f, dest / "Sound" / f)
-    size = sum((dest / "Sound" / f).stat().st_size for f in files)
-    print(f"voice pack: {dest} ({len(files)} files, {len(lines)} keys, {size} bytes)")
-    for key in stale:
-        print(f"voice pack: left out (Japanese changed or no longer shipped): {key}")
-    return 0
+    return sorted(quest_rows + talk, key=lambda r: r["key"])
 
 
 def run(argv: Sequence[str]) -> int:
+    verb = list(argv[:1])
+    if verb == ["profiles"]:
+        from wfj.cmd import voice_cast  # the casting verbs and the file verbs live in their own modules
+
+        return voice_cast.run_profiles(argv[1:])
+    if verb and verb[0] in ("cast", "plan", "generate", "status", "pack"):
+        from wfj.cmd import voice_make
+
+        return voice_make.run(argv)
     p = argparse.ArgumentParser(prog="wfj voice")
     sub = p.add_subparsers(dest="cmd", required=True)
     sp = sub.add_parser("speakers")
     sp.add_argument("--vmangos", required=True)
     sp.add_argument("--commit", required=True)
-    sp.add_argument("--scope", default="shadowglen", choices=sorted(voice.SCOPES))
-    gp = sub.add_parser("generate")
-    gp.add_argument("--config", default="voice.toml")
-    gp.add_argument("--out", default="../build/voice")
-    gp.add_argument("--scope", default="shadowglen", choices=sorted(voice.SCOPES))
-    pp = sub.add_parser("pack")
-    pp.add_argument("--config", default="voice.toml")
-    pp.add_argument("--manifest", default="../build/voice/manifest.json")
-    pp.add_argument("--out", default="../build/voice-pack")
-    pp.add_argument("--scope", default="shadowglen", choices=sorted(voice.SCOPES))
+    sp.add_argument("--scope", default="all", choices=sorted(voice.SCOPES))
+    sp.add_argument("--wdb", help="the pinned quest cache, for conditional descriptions")
     a = p.parse_args(list(argv))
     try:
-        return {"speakers": run_speakers, "generate": run_generate, "pack": run_pack}[a.cmd](a)
-    except (ValueError, vmangos.VmangosError) as e:
+        return run_speakers(a)
+    except (ValueError, vmangos.VmangosError, wdb.WdbError) as e:
         print(f"voice {a.cmd}: {e}", file=sys.stderr)
         return 1

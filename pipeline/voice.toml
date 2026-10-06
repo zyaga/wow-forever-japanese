@@ -1,23 +1,47 @@
-# Voice over: which AivisSpeech voice reads each kind of speaker, and at what pace (docs/systems/voice.md).
-# Style ids are the engine's (GET /speakers). The pace is fixed when a file is made: the client has no
-# playback rate, so changing it means remaking every file.
+# Voice over: the voices we may use (the roster) and which kind of speaker each one reads (the cast rows).
+# How it works: docs/systems/voice.md. Style ids are the engine's (GET /speakers). The pace is fixed when a
+# file is made: the client has no playback rate.
+#
+# To recast a kind of speaker, change the voices of its cast row: `make voice-plan` lists the lines that
+# change, and `make voice-generate` remakes exactly those (a file's fingerprint holds its voice and settings).
+#
+# PROVISIONAL: the two MVP voices, cast by gender only, until the audition picks the real cast.
 
 engine = "http://127.0.0.1:10101"
 speed_scale = 0.9
 
-[voices.male]
+# the voice of a line no creature says (a quest an item or object starts), and of a book page whose author
+# is not a known speaker
+narrator = "aidacalm"
+book_narrator = "aidacalm"
+
+# One table per voice: model (its name on AivisHub), style (the engine's style id), licence (ACML 1.0 or
+# CC0 only), fits (what it reads), and optionally pitch (default 0.0), intonation (default 1.0) and speed
+# (default speed_scale).
+[roster.aidacalm]
 model = "阿井田 茂"
 style = 1310138977 # Calm
+licence = "ACML 1.0"
+fits = "middle-aged calm male"
 
-[voices.female]
+[roster.morioki]
 model = "morioki"
 style = 497929760 # ノーマル
+licence = "ACML 1.0"
+fits = "adult female"
 
-# The narrator reads quests an item or object starts; the male voice doubles as it.
-[voices.narrator]
-model = "阿井田 茂"
-style = 1310138977 # Calm
+# Cast rows, first match wins. `when` names profile fields (race, gender, age, archetype, role) and the value
+# or list of values to match; a field left out matches anything. `voices` is a list: each creature gets one
+# of them, always the same one (a hash of its id), so neighbours vary.
+[[cast]]
+name = "female"
+when = { gender = "female" }
+voices = ["morioki"]
+
+[[cast]]
+name = "male"
+when = { gender = ["male", "none"] }
+voices = ["aidacalm"]
 
 [credits]
 engine = "AivisSpeech Engine (https://aivis-project.com)"
-licence = "Aivis Common Model License 1.0 (ACML 1.0)"
