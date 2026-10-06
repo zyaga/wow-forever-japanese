@@ -9,7 +9,8 @@ local _, WFJ = ...
 local Voice = {}
 WFJ.Voice = Voice
 
-Voice.FOLDER = "WoWForeverJapanese_Voice" -- every pack's addon folder starts with this; files are read from its Sound folder
+-- every pack's addon folder starts with this; its files are read from its Sound folder
+Voice.FOLDER = "WoWForeverJapanese_Voice"
 Voice.FORMATS = { [1] = true, [2] = true } -- the Register.lua table shapes this file reads (ADR-061, ADR-062)
 
 -- The lines a pack may voice: surface → record key → the setting that turns that kind off. Objectives, titles and
@@ -23,7 +24,8 @@ Voice.KINDS = {
   itemtext = { page = "voice.books" },
 }
 
-local lines -- pack key → { file, jaHash, seconds, folder, v = { [voice] = { file, seconds } } }; nil until a pack registers
+-- pack key → { file, jaHash, seconds, folder, v = { [voice] = { file, seconds } } }; nil until a pack registers
+local lines
 local creatures = {} -- creature id → voice id, or { male voice, female voice } (the speakers of lines with variants)
 local packs = {} -- pack folder → the number of its lines registered
 local deps = {}
