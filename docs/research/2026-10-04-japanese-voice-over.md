@@ -51,7 +51,7 @@ AivisSpeech Engine 1.2.0 (Apple Silicon build, 799 MB unpacked) runs as a local 
 | Speaking rate | about 7.5 characters a second of audio, the same as the Mac's own voice |
 | All quest and gossip text (3.88M characters) | about 2 days nonstop, resumable |
 | Everything (4.65M) | about 2.3 days |
-| Pace setting | The engine's `speedScale` sets the pace at generation; the maintainer found 1.0 a touch fast, and 0.9 and 0.8 samples were made. No playback rate exists in the client [unverified: no such argument in the files read; forever-vo also pre-renders], so any speed choice means one file set per speed |
+| Pace setting | The engine's `speedScale` sets the pace at generation; the maintainer found 1.0 a touch fast and 0.8 too slow; 0.9 is the choice. No playback rate exists in the client [unverified: no such argument in the files read; forever-vo also pre-renders], so any speed choice means one file set per speed |
 | English names as written | Read Japanese-style, at normal length. The maintainer judged this right: if Japanese names ever become an option, the katakana would sound the same |
 
 Voices tried on quest 176, all under the Aivis Common Model License 1.0 (ACML): 阿井田 茂 (middle-aged male, two styles), ろてじん (elderly male), fumifumi (calm adult male), にせ and Lux (young male), morioki (adult female), みちのくあいり (calm young female), まお and コハク (young female, the engine's defaults). Each 240 MB.
@@ -126,7 +126,7 @@ Pages read: cloud.google.com/text-to-speech/pricing; azure.microsoft.com/pricing
 1. Engine: AivisSpeech Engine, local, on the processor. Chatterbox is out.
 2. Voices: two ACML 1.0 voices, one male and one female, chosen by the speaker's gender; the male voice doubles as the narrator for item and object quests. Credit both and the engine on the pack's page even though ACML makes it optional.
 3. Names: read as written. When Japanese names become an option, the audio is made from the katakana text; each file carries the hash of the text it was made from, so only changed lines are remade.
-4. Speed: generated a touch slower than the engine's default, chosen by ear from the 0.8 and 0.9 samples; a slow and a normal set at most, since speed cannot be changed at playback.
+4. Speed: `speedScale` 0.9, the maintainer's choice by ear (1.0 a touch fast, 0.8 too slow). One set at that speed; a second set only if a setting is ever wanted, since speed cannot be changed at playback.
 5. The player's name, class and race: a neutral word for the name (冒険者); class and race either a neutral word or files per class and race, decided by size.
 6. First build, before any full run: the night elf starting quests in Shadowglen (about a dozen quests, their gossip greetings and the druid trainer's lines, roughly 60 files), one small pack copied straight into the test client, and an in-game pass on a new night elf druid. It covers male, female and narrator speakers and the whole path from data to playback.
 7. Only after that pass: the full generation (about 2 days), the pack split, the bitrate and the host.
