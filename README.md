@@ -20,12 +20,12 @@ Website: [foreverjapanese.com](https://foreverjapanese.com)
 | | In Japanese |
 |---|---|
 | Quests | 4,637 |
-| NPC dialogue lines | 10,933 |
+| NPC dialogue lines | 10,948 |
 | Book pages | 923 |
 | Letter pages | 209 |
 | Item tooltips | 9,124 |
 | Spell tooltips | 19,977 |
-| UI | 15,845 |
+| UI | 15,852 |
 
 ## Install
 
@@ -191,12 +191,12 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 | | 日本語化済み |
 |---|---|
 | クエスト | 4,637 |
-| NPC の会話 | 10,933 行 |
+| NPC の会話 | 10,948 行 |
 | 本 | 923 ページ |
 | 手紙 | 209 ページ |
 | アイテムのツールチップ | 9,124 |
 | 呪文のツールチップ | 19,977 |
-| UI | 15,845 |
+| UI | 15,852 |
 
 ### インストール
 

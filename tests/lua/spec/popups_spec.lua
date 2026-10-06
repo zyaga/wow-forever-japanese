@@ -20,6 +20,17 @@ local UI = {
     .. "communicate and interact with one another.|n|nThis account belongs to a minor.",
     "World of Warcraftには、プレイヤー同士が交流し、やり取りできるソーシャル機能があります。|n|nこのアカウントは未成年者のものです。" },
   OKAY = { "Okay", "OK" },
+  -- the party invite (gamedialogdefs.lua:1303-1328, eventimplementation.lua:61-72)
+  INVITATION = { "%s invites you to a group.", "%sがあなたをグループに招待しています。" },
+  ACCEPTING_INVITE_WILL_REMOVE_QUEUE = { "Accepting this invite will remove you from all queues.",
+    "このグループに参加すると、現在のキューからすべて外れます。" },
+  INVITATION_XREALM = { "%s invites you to a group.\n\nAccepting this invitation may transfer you to another realm.",
+    "%sがあなたをグループに招待しています。\n\nこの招待を承諾すると、別のレルムに移動することがあります。" },
+  CONFIRM_TALENT_WIPE_1 = { "Do you want to unlearn all of your talents?", "すべてのタレントを忘れますか？" },
+  CANCEL = { "Cancel", "キャンセル" },
+  ACCEPT = { "Accept", "承諾" }, DECLINE = { "Decline", "辞退" },
+  CONFIRM_LEAVE_INSTANCE_PARTY = { "Are you sure you want to leave the instance group?",
+    "インスタンスグループから離れますか？" },
 }
 local NAMES = { "StaticPopup_Show", "StaticPopup_OnUpdate", "StaticPopupDialogs", "GameDialogDefsUtil",
   "StaticPopup1", "StaticPopup2", "StaticPopup3", "StaticPopup4" }
@@ -54,6 +65,7 @@ local function install()
     d.Text.text_arg1, d.Text.text_arg2 = a1, a2
     for n, b in ipairs(d.ButtonContainer.Buttons) do b:SetText(info["button" .. n] or "") end
     d.SubText:SetText(info.subText or "") -- gamedialog.lua's SubText from dialogInfo.subText
+    if info.OnShow then info.OnShow(d, data) end -- staticpopup.lua: OnShow runs before StaticPopup_Show returns
     d.shown = true
     if info.timeout then d.timeleft = info.timeout end
     return d
@@ -84,6 +96,12 @@ describe("the StaticPopup dialogs on Forever", function()
       GetExpirationText = _G.GameDialogDefsUtil.GetDefaultExpirationText }
     D.SERVER = { text = "", button1 = _G.YES }
     D.GENERIC_CONFIRMATION = { text = "" } -- its OnShow writes the caller's text and buttons
+    D.PARTY_INVITE = { text = "%s", button1 = _G.ACCEPT, button2 = _G.DECLINE }
+    -- the decline lock writes its countdown label in OnShow (gamedialogdefs.lua:19-34, 1308-1311)
+    D.PARTY_INVITE_LOCKED = { text = "%s", button1 = _G.ACCEPT, button2 = _G.DECLINE,
+      OnShow = function(d) d.ButtonContainer.Buttons[2]:SetText(_G.DECLINE .. " (1s)") end }
+    D.CONFIRM_TALENT_WIPE = { text = "%s", button1 = _G.ACCEPT, button2 = _G.CANCEL }
+    D.CONFIRM_LEAVE_INSTANCE_PARTY = { text = "%s", button1 = _G.YES, button2 = _G.NO }
     D.AGE_VERIFICATION_RESTRICTED_MINOR = { text = _G.SOCIAL_FEATURES_UNAVAILABLE,
       subText = _G.SOCIAL_FEATURES_UNAVAILABLE_DESCRIPTION, button1 = _G.OKAY }
     assert.is_true(WFJ.Popups.init())
@@ -175,6 +193,81 @@ describe("the StaticPopup dialogs on Forever", function()
     d.ButtonContainer.Buttons[1]:SetText("Yes") -- an accept delay ended: the English label back
     _G.StaticPopup_OnUpdate(d, 0.1)
     assert.are.equal("はい", d.ButtonContainer.Buttons[1]:GetText())
+  end)
+
+  it("the party invite: the caller's line with the inviter's name, and the queue paragraph", function()
+    local d = _G.StaticPopup_Show("PARTY_INVITE", string.format(_G.INVITATION, "Wind Mami"))
+    assert.are.equal("Wind Mamiがあなたをグループに招待しています。", d.Text:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal("Wind Mami invites you to a group.", d.Text:GetText())
+    X.alt(WFJ, false)
+    _G.StaticPopup1.shown = false
+    local e = _G.StaticPopup_Show("PARTY_INVITE",
+      string.format(_G.INVITATION, "Yes") .. "\n\n" .. _G.ACCEPTING_INVITE_WILL_REMOVE_QUEUE)
+    assert.are.equal("Yesがあなたをグループに招待しています。\n\nこのグループに参加すると、現在のキューからすべて外れます。",
+      e.Text:GetText())
+    _G.StaticPopup_OnUpdate(e, 0.1)
+    assert.are.equal("Yesがあなたをグループに招待しています。\n\nこのグループに参加すると、現在のキューからすべて外れます。",
+      e.Text:GetText())
+  end)
+
+  it("the cross-realm invite, alone and with the queue paragraph", function()
+    local d = _G.StaticPopup_Show("PARTY_INVITE", string.format(_G.INVITATION_XREALM, "Wind Mami"))
+    assert.are.equal(UI.INVITATION_XREALM[2]:format("Wind Mami"), d.Text:GetText())
+    _G.StaticPopup1.shown = false
+    local e = _G.StaticPopup_Show("PARTY_INVITE",
+      string.format(_G.INVITATION_XREALM, "Wind Mami") .. "\n\n" .. _G.ACCEPTING_INVITE_WILL_REMOVE_QUEUE)
+    assert.are.equal(UI.INVITATION_XREALM[2]:format("Wind Mami") .. "\n\n" .. UI.ACCEPTING_INVITE_WILL_REMOVE_QUEUE[2],
+      e.Text:GetText())
+    X.alt(WFJ, true)
+    local en = string.format(_G.INVITATION_XREALM, "Wind Mami") .. "\n\n" .. _G.ACCEPTING_INVITE_WILL_REMOVE_QUEUE
+    assert.are.equal(en, e.Text:GetText())
+    X.alt(WFJ, false)
+  end)
+
+  it("the talent wipe's caller line translates by its exact English", function()
+    local d = _G.StaticPopup_Show("CONFIRM_TALENT_WIPE", _G.CONFIRM_TALENT_WIPE_1)
+    assert.are.equal("すべてのタレントを忘れますか？", d.Text:GetText())
+    assert.are.equal("キャンセル", d.ButtonContainer.Buttons[2]:GetText())
+  end)
+
+  it("in the client's order the locked Decline stays as written, then turns Japanese once unlocked", function()
+    local d = _G.StaticPopup_Show("PARTY_INVITE_LOCKED", string.format(_G.INVITATION, "Wind Mami"))
+    local b2 = d.ButtonContainer.Buttons[2]
+    assert.are.equal("Decline (1s)", b2:GetText()) -- seen by the show hook as the countdown: left alone
+    assert.are.equal("承諾", d.ButtonContainer.Buttons[1]:GetText())
+    X.alt(WFJ, true)
+    _G.StaticPopup_OnUpdate(d, 0.1)
+    assert.are.equal("Decline (1s)", b2:GetText())
+    X.alt(WFJ, false)
+    b2:SetText("Decline") -- the ticker unlocks it (gamedialogdefs.lua:38-41)
+    _G.StaticPopup_OnUpdate(d, 0.1)
+    assert.are.equal("辞退", b2:GetText())
+  end)
+
+  it("a %s dialog whose line is exactly one key's English translates; any other line stays", function()
+    local d = _G.StaticPopup_Show("CONFIRM_LEAVE_INSTANCE_PARTY", _G.CONFIRM_LEAVE_INSTANCE_PARTY)
+    assert.are.equal("インスタンスグループから離れますか？", d.Text:GetText())
+    _G.StaticPopup1.shown = false
+    local e = _G.StaticPopup_Show("CONFIRM_LEAVE_INSTANCE_PARTY", "Leave the battlefield?")
+    assert.are.equal("Leave the battlefield?", e.Text:GetText())
+    assert.is_true(X.unrecorded(WFJ, e.Text))
+  end)
+
+  it("the invite's Decline, locked with a countdown, is Japanese once its English is back", function()
+    local d = _G.StaticPopup_Show("PARTY_INVITE", string.format(_G.INVITATION, "Wind Mami"))
+    local b2 = d.ButtonContainer.Buttons[2]
+    b2:SetText("Decline (1s)") -- gamedialogdefs.lua:13-16, 33: the lock's countdown, written in OnShow
+    _G.StaticPopup_OnUpdate(d, 0.1)
+    assert.are.equal("Decline (1s)", b2:GetText())
+    b2:SetText("Decline") -- :38-41: the ticker unlocks it with the English it saved
+    _G.StaticPopup_OnUpdate(d, 0.1)
+    assert.are.equal("辞退", b2:GetText())
+    assert.are.equal("承諾", d.ButtonContainer.Buttons[1]:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal("Decline", b2:GetText())
+    X.alt(WFJ, false)
+    assert.are.equal("辞退", b2:GetText())
   end)
 
   it("two shown dialogs of one type: the call's own (by data) gets its buttons", function()

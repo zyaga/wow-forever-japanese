@@ -12,8 +12,14 @@
 -- it (names stay in English), never matched out of the text. The line is only rewritten while it still reads
 -- exactly the English the definition and those arguments give; a dialog whose text is computed (dialogInfo.text ==
 -- "", a GetExpirationText) or whose text no longer matches stays as written.
+-- A dialog whose definition text is "%s" shows its caller's line as written (the party invite, the talent wipe, the
+-- leave-instance question …). That line is translated when it is exactly one key's English, or, for the dialogs in
+-- PASS_THROUGH, when it is one of the templates the caller formats (the inviter's name is the template's argument,
+-- as in Labels), with the queue warning the invite may append as a second paragraph.
 -- Buttons, the SubText and the extra button: their English is the definition's string; each takes the one key whose
--- English that is.
+-- English that is. A button the client writes again after the dialog is shown (the party invite's Decline, locked
+-- for half a second with a countdown and then given its English back, gamedialogdefs.lua:19-52) is shown again from
+-- StaticPopup_OnUpdate once it reads its English.
 -- The timed dialogs re-write their text from StaticPopup_OnUpdate, every frame (staticpopup.lua:490–535): the start
 -- delay's re-format from text_arg1 / text_arg2, and GetExpirationText. A post-hook on that GLOBAL shows the line
 -- again when it changed. Of the expiration texts only the shared one is rebuilt: GameDialogDefsUtil.
@@ -74,6 +80,14 @@ local SPECIAL_ONLY = { only = {
   -- the custom-set rename dialog (blizzard_framexml/wardrobecustomsets.xml:45–140, shown at lua:291)
   "TRANSMOG_CUSTOM_SET_NAME", "TRANSMOG_CUSTOM_SET_EDIT_DELETE", "SAVE",
 } }
+
+-- The "%s" dialogs whose caller formats a template: the keys the line may be, and the paragraphs it may gain.
+-- PARTY_INVITE: INVITATION with the inviter's name, plus ACCEPTING_INVITE_WILL_REMOVE_QUEUE after "\n\n" while the
+-- player is queued; INVITATION_XREALM for a cross-realm invite, whose own English holds a "\n\n"
+-- [verified: blizzard_game/mainline/eventimplementation.lua:757-779, the camelot family's file].
+local PASS_THROUGH = {
+  PARTY_INVITE = { line = { "INVITATION", "INVITATION_XREALM" }, after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },
+}
 
 local CANDIDATES = { show = { "StaticPopup_Show" }, update = { "StaticPopup_OnUpdate" },
   dialogs = { "StaticPopupDialogs" }, special = { "StaticPopupSpecial_Show" } }
@@ -143,10 +157,47 @@ local function unitWords(args)
   return args
 end
 
+-- A "%s" dialog's line, the caller's as written (see the header). → 1 | 0
+local function showPassThrough(dialog, fs)
+  local shown = fs:GetText()
+  -- a secret value can be neither compared nor matched: the client's line stays
+  local isSecret = Compat.resolve("issecretvalue")
+  if type(isSecret) == "function" and isSecret(shown) then
+    WFJ.SurfaceState.drop(SURFACE, widgetKey(fs))
+    return 0
+  end
+  if type(shown) ~= "string" or shown == "" then return 0 end
+  local recKey = widgetKey(fs)
+  local rec = WFJ.SurfaceState.get(SURFACE, recKey)
+  if rec and rec.fs == fs and rec.applied ~= nil and shown == rec.applied then return 1 end -- still our Japanese
+  local key = not shown:find("%", 1, true) and keyFor(shown) or nil
+  if key then
+    WFJ.Render.show(SURFACE, recKey, fs, shown, "ui", "ui", key)
+    return 1
+  end
+  local spec = PASS_THROUGH[dialog.which]
+  if not spec then
+    WFJ.SurfaceState.drop(SURFACE, recKey)
+    return 0
+  end
+  local whole = WFJ.Labels.part(shown, spec.line)
+  if whole then return WFJ.Labels.showArgs(SURFACE, recKey, fs, whole.key, whole.args) end
+  local line, after = shown:match("^(.*)\n\n(.-)$") -- the last paragraph is the one appended
+  if not line then
+    WFJ.SurfaceState.drop(SURFACE, recKey)
+    return 0
+  end
+  local first = WFJ.Labels.part(line, spec.line)
+  local second = first and WFJ.Labels.part(after, spec.after)
+  local args = second and { form = "seq", parts = { first, "\n\n", second } } or nil
+  return WFJ.Labels.showArgs(SURFACE, recKey, fs, args and first.key, args)
+end
+
 -- The dialog's main line, filled from its own arguments. → 1 | 0
 local function showText(dialog, info)
   local fs = type(dialog) == "table" and dialog.Text or nil
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" then return 0 end
+  if info.text == "%s" then return showPassThrough(dialog, fs) end
   local key, english = keyFor(info.text)
   if not key then return 0 end
   local shown = fs:GetText()
@@ -210,26 +261,47 @@ function Popups.onShowCall(which, _, _, data)
   return Popups.onShow(findDialog(which, data))
 end
 
--- What StaticPopup_OnUpdate left on screen last frame, per dialog: a frame where nothing changed costs two GetText
--- calls (a held Alt, or a line that is not ours, would otherwise be looked at again every frame).
+-- What StaticPopup_OnUpdate left on screen last frame, per dialog: a frame where nothing changed costs one GetText
+-- call for the line and one per button, and allocates nothing (a held Alt, or a line that is not ours, would
+-- otherwise be looked at again every frame).
 local seen = setmetatable({}, { __mode = "k" })
 
--- hooksecurefunc target (StaticPopup_OnUpdate): a timed dialog re-wrote its line (the countdown, the start delay), or
--- its accept delay ended and button1 got its English back (staticpopup.lua:535–547).
+local function labelOf(button)
+  return type(button) == "table" and type(button.GetText) == "function" and button:GetText() or nil
+end
+
+-- Whether any button label differs from the one recorded last frame. → bool
+local function labelsChanged(last, buttons)
+  for i, button in ipairs(buttons) do
+    if labelOf(button) ~= last.labels[i] then return true end
+  end
+  return #buttons ~= last.count
+end
+
+-- hooksecurefunc target (StaticPopup_OnUpdate): a timed dialog re-wrote its line (the countdown, the start delay), its
+-- accept delay ended and button1 got its English back (staticpopup.lua:535–547), or a locked Decline was unlocked.
 function Popups.onUpdate(dialog)
   if type(dialog) ~= "table" or type(dialog.Text) ~= "table" or type(dialog.dialogInfo) ~= "table"
       or type(dialog.Text.GetText) ~= "function" then
     return
   end
   local container = dialog.ButtonContainer
-  local first = type(container) == "table" and type(container.Buttons) == "table" and container.Buttons[1] or nil
-  if type(first) ~= "table" or type(first.GetText) ~= "function" then first = nil end
+  local buttons = type(container) == "table" and type(container.Buttons) == "table" and container.Buttons or {}
   local last = seen[dialog]
-  if last and last.text == dialog.Text:GetText() and last.label == (first and first:GetText()) then return end
+  if last and last.text == dialog.Text:GetText() and not labelsChanged(last, buttons) then return end
   local info = shownInfo(dialog, dialog.dialogInfo) -- GENERIC_CONFIRMATION: the caller's text and buttons
   showText(dialog, info)
-  if first and dialog.acceptDelay == nil then showWord(first, info.button1) end
-  seen[dialog] = { text = dialog.Text:GetText(), label = first and first:GetText() or nil }
+  for i, button in ipairs(buttons) do
+    local english = info["button" .. i]
+    -- only a label that reads its English again: a countdown ("Decline (1s)") stays as the client wrote it
+    if type(button) == "table" and type(button.GetText) == "function" and english ~= nil
+        and button:GetText() == english and not (i == 1 and dialog.acceptDelay ~= nil) then
+      showWord(button, english)
+    end
+  end
+  local labels = {}
+  for i, button in ipairs(buttons) do labels[i] = labelOf(button) end
+  seen[dialog] = { text = dialog.Text:GetText(), labels = labels, count = #buttons }
 end
 
 -- Every FontString and button label under `frame` (depth-first), restricted to SPECIAL_ONLY. An EditBox (a name the

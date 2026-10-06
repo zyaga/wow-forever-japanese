@@ -15,6 +15,7 @@ WFJ.Diag = Diag
 Diag.VERSION = 1
 Diag.MAX_ENTRIES = 500
 Diag.MAX_SESSIONS = 50 -- session entries kept; the oldest go past this
+Diag.SPEECH_SHARE = 100 -- speechline entries a full log keeps
 Diag.MAX_LINES = 50 -- the most /wfj log prints
 Diag.CHECK_INTERVAL = 5 -- seconds between hook checks
 Diag.MEMORY_EVERY = 60 -- hook checks between memory samples (5 minutes)
@@ -44,9 +45,11 @@ function Diag.load(saved)
   return db
 end
 
--- Over the cap, the oldest memory sample goes first, then the oldest speechline (one per NPC line, so the most
--- numerous), then the oldest problem entry, then the oldest session; and never more than MAX_SESSIONS session
--- entries. A problem entry is never dropped to make room for a session.
+-- Over the cap, the oldest memory sample goes first; then the oldest speechline while they hold more than
+-- SPEECH_SHARE entries (one per NPC line, so the most numerous); then the oldest problem entry; then the oldest
+-- speechline; then the oldest session. A full log of problem entries still keeps the latest NPC lines, so a line
+-- that stayed English can be traced. Never more than MAX_SESSIONS session entries, and a problem entry is never
+-- dropped to make room for a session.
 local function oldest(list, keep)
   for i, e in ipairs(list) do
     if keep(e) then return i end
@@ -60,10 +63,14 @@ local function trim(list)
     table.remove(list, oldest(list, function(e) return e.kind == "session" end))
     sessions = sessions - 1
   end
+  local speech = 0
+  for _, e in ipairs(list) do if e.kind == "speechline" then speech = speech + 1 end end
   while #list > Diag.MAX_ENTRIES do
     local drop = oldest(list, function(e) return e.kind == "memory" end)
-      or oldest(list, function(e) return e.kind == "speechline" end)
+      or (speech > Diag.SPEECH_SHARE and oldest(list, function(e) return e.kind == "speechline" end))
+      or oldest(list, function(e) return e.kind ~= "session" and e.kind ~= "speechline" end)
       or oldest(list, function(e) return e.kind ~= "session" end) or 1
+    if list[drop].kind == "speechline" then speech = speech - 1 end
     local gone = table.remove(list, drop)
     local key = tostring(gone.kind) .. "\0" .. tostring(gone.msg)
     if repeats[key] == gone then repeats[key] = nil end -- its next repeat starts a new entry

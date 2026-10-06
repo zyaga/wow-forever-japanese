@@ -16,10 +16,19 @@ local UI = {
   TIME_PLAYED_ALERT = { "You have been playing for %s. Excessive gameplay can interfere with your daily life.",
     "プレイ時間が%sになりました。長時間のプレイは日常生活に支障をきたすおそれがあります。" },
   CLOSE = { "Close", "閉じる" },
+  -- the shard-transfer toast (blizzard_socialtoast/socialtoast.lua:63-85)
+  SHARD_TRANSFER_COUNTDOWN_MESSAGE = { "The world around you will refresh in %s %s. Make sure you are out of combat "
+    .. "and in a safe area, or click here to refresh now.", "%s%s後に周囲のワールドが更新されます。" },
+  SHARD_TRANSFER_REFRESH_MESSAGE = { "World refresh in %s %s", "ワールド更新まで%s%s" },
+  SHARD_TRANSFER_ANYTIME = { "Refreshing your world at any time. Characters and creatures around you may change.",
+    "いつでもワールドを更新できます。周囲のキャラクターやクリーチャーが変わることがあります。" },
+  SECONDS = { "|4Second:Seconds;", "秒" }, MINUTES = { "|4Minute:Minutes;", "分" },
 }
 
 -- Core/UIStrings: the community's name is a `text` argument; the session length is SecondsToTime output
-local NEEDS = { ARGS = { BN_TOAST_NEW_CLUB_INVITATION = { [1] = "text" }, TIME_PLAYED_ALERT = { [1] = "time" } } }
+local NEEDS = { ARGS = { BN_TOAST_NEW_CLUB_INVITATION = { [1] = "text" }, TIME_PLAYED_ALERT = { [1] = "time" },
+  SHARD_TRANSFER_COUNTDOWN_MESSAGE = { [1] = "text", [2] = "entry" },
+  SHARD_TRANSFER_REFRESH_MESSAGE = { [1] = "text", [2] = "entry" } } }
 
 local C = {}
 
@@ -55,6 +64,19 @@ local function install()
   function alert.Start() end
   -- BNetTimeAlertMixin:OnUpdate (bnet.lua:350–364): the line is rewritten on every frame while shown
   alert:SetScript("OnUpdate", function(self) self.Text.text = S.en("TIME_PLAYED_ALERT"):format(C.played) end)
+  local shard = S.frame("ShardTransferImminentFrame")
+  shard.Text = S.fs("")
+  function shard.Text.GetStringHeight(fs) return #fs:GetText() end -- a height that follows the line shown
+  function shard.SetHeight(self, h) self.height = h end
+  function shard.Start() end
+  -- ShardTransferImminentMixin:OnUpdate (socialtoast.lua:63-85): the plural group resolved by the client
+  shard:SetScript("OnUpdate", function(self)
+    local n = C.left < 60 and C.left or math.ceil(C.left / 60)
+    local unit = C.left < 60 and (n == 1 and "Second" or "Seconds") or (n == 1 and "Minute" or "Minutes")
+    if C.left <= 0 then self.Text.text = S.en("SHARD_TRANSFER_ANYTIME")
+    elseif C.minimized then self.Text.text = S.en("SHARD_TRANSFER_REFRESH_MESSAGE"):format(n, unit)
+    else self.Text.text = S.en("SHARD_TRANSFER_COUNTDOWN_MESSAGE"):format(n, unit) end
+  end)
 end
 
 local function toast(t)
@@ -69,7 +91,13 @@ local function tick()
   return alert.Text:GetText()
 end
 
-local GLOBALS = { "BNToastFrame", "TimeAlertFrame" }
+local function shardTick()
+  local shard = _G.ShardTransferImminentFrame
+  shard:GetScript("OnUpdate")(shard, 0.1)
+  return shard.Text:GetText()
+end
+
+local GLOBALS = { "BNToastFrame", "TimeAlertFrame", "ShardTransferImminentFrame" }
 
 describe("the Battle.net toast and the play-time alert on Forever", function()
   local WFJ
@@ -129,6 +157,25 @@ describe("the Battle.net toast and the play-time alert on Forever", function()
     assert.are.equal("プレイ時間が2 hoursになりました。長時間のプレイは日常生活に支障をきたすおそれがあります。", tick())
     C.played = "3 hours"
     assert.are.equal("プレイ時間が3 hoursになりました。長時間のプレイは日常生活に支障をきたすおそれがあります。", tick())
+  end)
+
+  it("the shard-transfer toast stays Japanese across its per-frame rewrites, its unit word in Japanese", function()
+    install()
+    WFJ.BNetToast.init()
+    C.left, C.minimized = 120, false
+    assert.are.equal("2分後に周囲のワールドが更新されます。", shardTick())
+    C.left = 60
+    assert.are.equal("1分後に周囲のワールドが更新されます。", shardTick())
+    C.left, C.minimized = 29, true
+    assert.are.equal("ワールド更新まで29秒", shardTick())
+    assert.are.equal(#"ワールド更新まで29秒" + 20, _G.ShardTransferImminentFrame.height) -- refit to the Japanese
+    C.left = 1
+    assert.are.equal("ワールド更新まで1秒", shardTick())
+    S.alt(WFJ, true)
+    assert.are.equal("World refresh in 1 Second", shardTick())
+    S.alt(WFJ, false)
+    C.left = 0
+    assert.are.equal("いつでもワールドを更新できます。周囲のキャラクターやクリーチャーが変わることがあります。", shardTick())
   end)
 
   it("a client name bound to the wrong type degrades to English with no error", function()

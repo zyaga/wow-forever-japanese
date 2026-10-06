@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-04 at commit `8b013467`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-06 at commit `79b93475`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -10,14 +10,14 @@
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
 | Quest text | 20,084 | 19,973 | 111 | 100.0% | 0 |
-| NPC dialogue (gossip, speech) | 10,933 | 10,933 | 0 | 100.0% | 0 |
+| NPC dialogue (gossip, speech) | 10,948 | 10,948 | 0 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 409 | 372 | 37 | 100.0% | 0 |
 | Exploration / event objectives | 218 | 216 | 2 | 100.0% | 0 |
 | Item descriptions | 10,124 | 8,611 | 0 | 85.1% | 1,513 |
 | Spell tooltips + auras | 25,458 | 25,271 | 0 | 99.3% | 187 |
-| Interface strings | 15,845 | 15,845 | 0 | 100.0% | 0 |
-| **All** | **84,328** | | | **98.0%** | **1,700** |
+| Interface strings | 15,852 | 15,852 | 0 | 100.0% | 0 |
+| **All** | **84,350** | | | **98.0%** | **1,700** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 888, spell 300, ui 313.
@@ -359,8 +359,8 @@ Lines are non-empty values; a server cache counts the records this install holds
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
 | quest | 18,669 | 18,669 | 100.0% | 177 | 297,737 | 100.0% |
-| gossip | 10,805 | 10,805 | 100.0% | 0 | 103,405 | 100.0% |
-| ui | 15,140 | 15,140 | 100.0% | 0 | 46,158 | 100.0% |
+| gossip | 10,820 | 10,820 | 100.0% | 0 | 103,502 | 100.0% |
+| ui | 15,147 | 15,147 | 100.0% | 0 | 46,189 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,571 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages

@@ -44,3 +44,4 @@
 {"id": "eadd51340effa30c", "field": "text", "en": "I am not worthy, sir.", "hash": "eadd51340effa30c", "src": "vmangos@13b49dc"}
 {"id": "eadde088653f7dc7", "field": "text", "en": "Hear ye, denizens of Tanaris! Let it be known that $n is an exalted member of the Mithril Order. A blacksmith of honor, dedication, and infinite patience. Three cheers for $n!", "hash": "eadde088653f7dc7", "src": "vmangos@13b49dc"}
 {"id": "eaf5d7b612a775cb", "field": "text", "en": "Brash. Master Ravenholdt does not like brash.", "hash": "eaf5d7b612a775cb", "src": "vmangos@13b49dc"}
+{"id": "eaff9284e1e3663c", "field": "text", "en": "Blast these kobolds. I can't get any work done with them running back and forth, getting in my way. Well, I've got nothing better to do. Would you like to learn about mining techniques? Or perhaps you just need some new tools?", "hash": "eaff9284e1e3663c", "src": "collector@1.60.1.70205", "npcs": [247226]}

@@ -68,7 +68,7 @@
 {"id": 91743, "field": "objectives", "en": "Retrieve $1oa Stolen Books from kobolds in Northshire Valley and return them to Brother Paxton.", "hash": "e0b83cd648075d5d", "src": "wdb@1.60.1.70170"}
 {"id": 91743, "field": "description", "en": "Those awful kobolds are eating my books! You have to get them back before they devour my whole library.", "hash": "36c2ff3a45d2c801", "src": "wdb@1.60.1.70170"}
 {"id": 91743, "field": "progress", "en": "Have you rescued my books yet, $N?!", "hash": "9e3c12c91e01a3d9", "src": "forever-vo@025070f"}
-{"id": 91743, "field": "completion", "en": "Thank you so much! Here! Take one of these how-to books. I don't need them.\r\n\r\nBut there's still so many books missing. The kobolds don't seem to be eating them. So, why do they want them?", "hash": "6391b52122af3893", "src": "forever-vo@025070f"}
+{"id": 91743, "field": "completion", "en": "Thank you so much! Here! Take one of these how-to books. I don't need them.$B$BBut there are still so many books missing. The kobolds don't seem to be eating them. So, why do they want them?", "hash": "cb49664612f3438c", "src": "collector@1.60.1.70205"}
 {"id": 91745, "field": "title", "en": "Mining Consultant", "hash": "70de9b61f7388b82", "src": "wdb@1.60.1.70170"}
 {"id": 91745, "field": "objectives", "en": "Talk to Kelsey Fargo outside the Echo Ridge Mine in Northshire Valley.", "hash": "928069a0c54f1b81", "src": "wdb@1.60.1.70170"}
 {"id": 91745, "field": "description", "en": "Go talk to the new mining apprentice, Kelsey Fargo. She works right outside the mine and has probably seen what the kobolds are up to. Maybe she can teach you a thing or two about mining while you're at it.", "hash": "595703ece319ecab", "src": "wdb@1.60.1.70170"}

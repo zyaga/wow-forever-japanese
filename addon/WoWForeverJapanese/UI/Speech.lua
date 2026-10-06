@@ -186,6 +186,8 @@ end
 
 -- the current line, for Speech.trace: its first exit reason, whether its own Japanese went in, its gossip key
 local lastReason, lastJa, lastKey
+-- What handle() saw of the line's target and what the Collector answered, for the trace (flags only, no names)
+local lastTarget, lastCollect
 
 local function why(reason, frame, event, en, key) -- → 0
   lastReason = lastReason or reason
@@ -196,6 +198,28 @@ local function why(reason, frame, event, en, key) -- → 0
   end
   WFJ.Diag.log("speech", reason, { event = event, frame = WFJ.Diag.nameOf(frame), key = key })
   return 0
+end
+
+-- The shape of a line's target (eventArgs[5]) against this character's name, for the trace: never the names
+-- themselves. Forever characters carry a surname, which UnitName returns as a second value and full names join
+-- with a separator [verified: blizzard_framexmlutil/camelot/nameutil.lua:4-12, 35-43]. → table of flags
+function Speech.targetShape(target, me)
+  local shape = { target = "none" }
+  if secret(target) then
+    shape.target = "secret"
+  elseif type(target) == "string" and target ~= "" then
+    shape.target = target == me and "me" or "other"
+    shape.targetSep = target:find("-", 1, true) ~= nil
+    shape.targetSpace = target:find(" ", 1, true) ~= nil
+    shape.targetStartsMe = type(me) == "string" and me ~= "" and target:sub(1, #me) == me or false
+  end
+  local unitName = Compat.resolve("UnitName")
+  if type(unitName) == "function" then
+    local first, second = unitName("player")
+    shape.meSep = type(first) == "string" and first:find("-", 1, true) ~= nil or false
+    shape.meSurname = type(second) == "string" and second ~= "" or false
+  end
+  return shape
 end
 
 local function handle(frame, line, typeId, event, eventArgs, formatter)
@@ -221,8 +245,12 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
   local me = Compat.resolve("UnitName")
   me = type(me) == "function" and me("player") or nil
   local toOther = type(target) == "string" and target ~= "" and not secret(target) and target ~= me
+  lastTarget = Speech.targetShape(target, me)
+  lastCollect = "not asked"
   if WFJ.Collector and not secret(guid) and not secret(target) and not toOther and Speech.knownLanguage(language) then
-    WFJ.Collector.recordGossip(en, guid)
+    local result, reason = WFJ.Collector.recordGossip(en, guid)
+    -- an error's message may quote the line, so only the result is kept for it
+    lastCollect = tostring(result) .. ((reason and result ~= "error") and (" " .. tostring(reason)) or "")
   end
   local key = en ~= "" and deps.key and deps.key(en) or nil -- once per line: translate and every later exit use it
   lastKey = key
@@ -273,7 +301,9 @@ local function keyShipped(key) return key ~= nil and shipped(key) or false end
 function Speech.trace(frame, event, eventArgs, outcome)
   if not speechEvent(event) or not WFJ.Diag then return end
   local en = type(eventArgs) == "table" and eventArgs[1] or nil
-  local fields = { event = event, frame = WFJ.Diag.nameOf(frame), translated = lastJa == true }
+  local fields = { event = event, frame = WFJ.Diag.nameOf(frame), translated = lastJa == true,
+    collector = lastCollect }
+  for k, v in pairs(lastTarget or {}) do fields[k] = v end
   local key
   if readable(en) then
     key = lastKey or (deps.key and deps.key(en)) or nil
@@ -307,9 +337,12 @@ end
 function Speech.onAddMessage(frame, line, _, _, _, typeId, _, _, event, eventArgs, formatter)
   local outerReason, outerJa, outerKey = lastReason, lastJa, lastKey
   lastReason, lastJa, lastKey = nil, nil, nil
+  local outerTarget, outerCollect = lastTarget, lastCollect
+  lastTarget, lastCollect = nil, nil
   local result = handle(frame, line, typeId, event, eventArgs, formatter)
   pcall(Speech.trace, frame, event, eventArgs, lastReason or "translated")
   lastReason, lastJa, lastKey = outerReason, outerJa, outerKey
+  lastTarget, lastCollect = outerTarget, outerCollect
   return result
 end
 
