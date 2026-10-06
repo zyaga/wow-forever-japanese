@@ -12,8 +12,8 @@ speed_scale = 0.9
 
 # the voice of a line no creature says (a quest an item or object starts), and of a book page whose author
 # is not a known speaker
-narrator = "aidacalm"
-book_narrator = "aidacalm"
+narrator = "v1628969216"
+book_narrator = "v1628969216"
 
 # One table per voice: model (its name on AivisHub), style (the engine's style id), licence (ACML 1.0 or
 # CC0 only), fits (what it reads), and optionally pitch (default 0.0), intonation (default 1.0) and speed
@@ -30,6 +30,180 @@ style = 497929760 # ノーマル
 licence = "ACML 1.0"
 fits = "adult female"
 
+[roster.v1038680256]
+model = "すみれ(現実20代女子AIボイチェン@リアボVC公式モデル)"
+style = 1038680256 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1069147200]
+model = "kokuren_3rd"
+style = 1069147200 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v113804960]
+model = "もえ(現実20代女子AIボイチェン@リアボVC公式モデル)"
+style = 113804960 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1310138977]
+model = "阿井田 茂"
+style = 1310138977 # Calm
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1310138979]
+model = "阿井田 茂"
+style = 1310138979 # Heavy
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1310138979elderly]
+model = "阿井田 茂"
+style = 1310138979 # Heavy
+licence = "ACML 1.0"
+fits = "picked at the audition (elderly)"
+pitch = -0.05
+speed = 0.85
+
+[roster.v1388823424]
+model = "凛音エル"
+style = 1388823424 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1431611904]
+model = "まい"
+style = 1431611904 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1717361472older]
+model = "みちのくあいり"
+style = 1717361472 # 標準
+licence = "ACML 1.0"
+fits = "picked at the audition (older)"
+pitch = -0.05
+speed = 0.85
+
+[roster.v1805828384]
+model = "ろてじん（匿名インタビュー風）"
+style = 1805828384 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1878365376]
+model = "コハク"
+style = 1878365376 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1929056672]
+model = "れな(現実20代女子AIボイチェン@リアボVC公式モデル)"
+style = 1929056672 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1935723904]
+model = "さつき(現実20代女子AIボイチェン@リアボVC公式モデル)"
+style = 1935723904 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1937616896]
+model = "にせ"
+style = 1937616896 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v2110072448]
+model = "かりん(現実20代女子AIボイチェン@リアボVC公式モデル)"
+style = 2110072448 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v258599616]
+model = "MarkN"
+style = 258599616 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v345585728]
+model = "るな"
+style = 345585728 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v391794336]
+model = "ろてじん（長老ボイス）"
+style = 391794336 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v497929760older]
+model = "morioki"
+style = 497929760 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition (older)"
+pitch = -0.05
+speed = 0.85
+
+[roster.v5306848]
+model = "猩々博士 (雑談ボイス)"
+style = 5306848 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v604166016]
+model = "中2"
+style = 604166016 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v808373280]
+model = "ほのか(~現実20代女子AIボイチェン~リアボVC公式モデル)"
+style = 808373280 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v87094656]
+model = "立神ケイ"
+style = 87094656 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v888753763]
+model = "まお"
+style = 888753763 # おちつき
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v893625024]
+model = "らせつん"
+style = 893625024 # 標準
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1310138976]
+model = "阿井田 茂"
+style = 1310138976 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v1628969216]
+model = "TANAKA"
+style = 1628969216 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v2029042368]
+model = "澤原 玄二郎"
+style = 2029042368 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
 # Cast rows, first match wins. `when` names profile fields (race, gender, age, archetype, role) and the value
 # or list of values to match; a field left out matches anything. `voices` is a list: each creature gets one
 # of them, always the same one (a hash of its id), so neighbours vary. A row with no voices yet is skipped.
@@ -39,202 +213,202 @@ fits = "adult female"
 [[cast]]
 name = "ghost, female"
 when = { archetype = "ghost", gender = "female" }
-voices = []
+voices = ["v888753763"]
 
 [[cast]]
 name = "ghost"
 when = { archetype = "ghost" }
-voices = []
+voices = ["v1805828384"]
 
 [[cast]]
 name = "undead, female"
 when = { archetype = "undead", gender = "female" }
-voices = []
+voices = ["v1431611904"]
 
 [[cast]]
 name = "undead"
 when = { archetype = "undead" }
-voices = []
+voices = ["v1805828384"]
 
 [[cast]]
 name = "dragon, female"
 when = { archetype = "dragon", gender = "female" }
-voices = []
+voices = ["v1431611904"]
 
 [[cast]]
 name = "dragon"
 when = { archetype = "dragon" }
-voices = []
+voices = ["v391794336"]
 
 [[cast]]
 name = "demon"
 when = { archetype = "demon" }
-voices = []
+voices = ["v2029042368"]
 
 [[cast]]
 name = "elemental"
 when = { archetype = "elemental" }
-voices = []
+voices = ["v893625024"]
 
 [[cast]]
 name = "giant"
 when = { archetype = "giant" }
-voices = []
+voices = ["v1310138979"]
 
 [[cast]]
 name = "mechanical"
 when = { archetype = "mechanical" }
-voices = []
+voices = ["v893625024"]
 
 [[cast]]
 name = "beast-kin"
 when = { archetype = "beast-kin" }
-voices = []
+voices = ["v893625024"]
 
 [[cast]]
 name = "child, girl"
 when = { age = "child", gender = "female" }
-voices = []
+voices = ["v1878365376"]
 
 [[cast]]
 name = "child, boy"
 when = { age = "child" }
-voices = []
+voices = ["v1937616896"]
 
 [[cast]]
 name = "elder, female"
 when = { age = "elder", gender = "female" }
-voices = []
+voices = ["v1717361472older"]
 
 [[cast]]
 name = "elder, tauren"
 when = { age = "elder", race = "tauren" }
-voices = []
+voices = ["v391794336"]
 
 [[cast]]
 name = "elder, troll"
 when = { age = "elder", race = "troll" }
-voices = []
+voices = ["v391794336"]
 
 [[cast]]
 name = "elder, dwarf"
 when = { age = "elder", race = "dwarf" }
-voices = []
+voices = ["v391794336"]
 
 [[cast]]
 name = "elder, orc"
 when = { age = "elder", race = "orc" }
-voices = []
+voices = ["v1310138979elderly"]
 
 [[cast]]
 name = "elder, male"
 when = { age = "elder" }
-voices = []
+voices = ["v391794336"]
 
 [[cast]]
 name = "young, female"
 when = { age = "young", gender = "female" }
-voices = []
+voices = ["v345585728"]
 
 [[cast]]
 name = "young, male"
 when = { age = "young" }
-voices = []
+voices = ["v258599616"]
 
 [[cast]]
 name = "human, female"
 when = { race = "human", gender = "female" }
-voices = []
+voices = ["v808373280"]
 
 [[cast]]
 name = "nightelf, female"
 when = { race = "nightelf", gender = "female" }
-voices = []
+voices = ["v2110072448"]
 
 [[cast]]
 name = "tauren, female"
 when = { race = "tauren", gender = "female" }
-voices = []
+voices = ["v497929760older"]
 
 [[cast]]
 name = "orc, female"
 when = { race = "orc", gender = "female" }
-voices = []
+voices = ["v1929056672"]
 
 [[cast]]
 name = "dwarf, female"
 when = { race = "dwarf", gender = "female" }
-voices = []
+voices = ["v1935723904"]
 
 [[cast]]
 name = "troll, female"
 when = { race = "troll", gender = "female" }
-voices = []
+voices = ["v113804960"]
 
 [[cast]]
 name = "gnome or goblin, female"
 when = { race = ["gnome", "goblin"], gender = "female" }
-voices = []
+voices = ["v604166016", "v1388823424"]
 
 [[cast]]
 name = "female"
 when = { gender = "female" }
-voices = []
+voices = ["v1038680256"]
 
 [[cast]]
 name = "human, male"
 when = { race = "human" }
-voices = []
+voices = ["v5306848", "v1310138976"]
 
 [[cast]]
 name = "dwarf, male"
 when = { race = "dwarf" }
-voices = []
+voices = ["v1310138979", "v5306848"]
 
 [[cast]]
 name = "orc, male"
 when = { race = "orc" }
-voices = []
+voices = ["v5306848", "v1310138979"]
 
 [[cast]]
 name = "nightelf, male"
 when = { race = "nightelf" }
-voices = []
+voices = ["v1310138977"]
 
 [[cast]]
 name = "tauren, male"
 when = { race = "tauren" }
-voices = []
+voices = ["v1310138979"]
 
 [[cast]]
 name = "goblin, male"
 when = { race = "goblin" }
-voices = []
+voices = ["v1069147200"]
 
 [[cast]]
 name = "gnome, male"
 when = { race = "gnome" }
-voices = []
+voices = ["v1937616896"]
 
 [[cast]]
 name = "troll, male"
 when = { race = "troll" }
-voices = []
+voices = ["v87094656"]
 
 [[cast]]
 name = "bloodelf, male"
 when = { race = "bloodelf" }
-voices = []
+voices = ["v258599616"]
 
 [[cast]]
 name = "ogre, male"
 when = { race = "ogre" }
-voices = []
+voices = ["v87094656"]
 
 [[cast]]
 name = "male"
 when = { gender = ["male", "none"] }
-voices = []
+voices = ["v1310138977"]
 
 [credits]
 engine = "AivisSpeech Engine (https://aivis-project.com)"

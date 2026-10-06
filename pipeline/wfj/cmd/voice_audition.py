@@ -267,12 +267,21 @@ def kind_samples(root: Path, cfg: dict[str, Any], db: Path) -> dict[str, dict[st
     return out
 
 
-def review(root: Path, cfg: dict[str, Any], store: Path, db: Path) -> int:
+def _slug(kind: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", kind.lower()).strip("-")
+
+
+def review(root: Path, cfg: dict[str, Any], store: Path, db: Path, round_: str = "") -> int:
     """DIR/audition/review.html: one row per kind of speaker, biggest first, showing who speaks (name, title,
     race, gender, age, a link to see the character) and one of their real lines read by each candidate voice
     (DIR/audition/candidates.json). The choices are saved to picks.json, which `apply` reads."""
     folder = store / "audition"
-    cands: dict[str, list[str]] = json.loads((folder / "candidates.json").read_text(encoding="utf-8"))
+    cands: dict[str, list[str]] = json.loads(
+        (folder / f"candidates{round_}.json").read_text(encoding="utf-8")
+    )
+    picked: dict[str, list[str]] = {}
+    if round_ and (folder / "picks.json").is_file():  # a later round shows the earlier picks
+        picked = json.loads((folder / "picks.json").read_text(encoding="utf-8"))
     items = {e["id"]: e for e in json.loads((folder / "voices.json").read_text(encoding="utf-8"))}
     samples = kind_samples(root, cfg, db)
     counts = {k["name"]: k for k in kinds(root, cfg)}
@@ -288,13 +297,15 @@ def review(root: Path, cfg: dict[str, Any], store: Path, db: Path) -> int:
         players = []
         for vid in vids:
             e = items[vid]
-            f = folder / "review" / f"{n:02d}-{vid}.mp3"
+            f = folder / "review" / f"{_slug(kind)}-{vid}.mp3"
             if not f.is_file():
                 wav = engine.synthesize(
                     sm["text"], e["style"], e["speed"] or speed, e["pitch"], e["intonation"]
                 )
                 voice_make.to_mp3(wav, f)
             label = f"{e['name']} · {e['style_name']}" + (f" · {e['try']}" if e["try"] else "")
+            if round_:
+                label += " · your pick" if vid in picked.get(kind, []) else " · suggested"
             players.append(
                 f'<div class="v" data-id="{vid}">'
                 f'<audio controls preload="none" src="review/{f.name}"></audio>'
@@ -321,8 +332,9 @@ def review(root: Path, cfg: dict[str, Any], store: Path, db: Path) -> int:
         )
         print(f"voice audition: review {n + 1}/{len(order)} {kind}", flush=True)
     template = (Path(__file__).resolve().parents[1] / "emit" / "review_page.html").read_text("utf-8")
-    (folder / "review.html").write_text(template.replace("@@ROWS@@", "".join(rows)), encoding="utf-8")
-    print(f"voice audition: {folder / 'review.html'}")
+    page_name = f"review{round_}.html"
+    (folder / page_name).write_text(template.replace("@@ROWS@@", "".join(rows)), encoding="utf-8")
+    print(f"voice audition: {folder / page_name}")
     return 0
 
 
@@ -443,6 +455,7 @@ def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj voice audition")
     p.add_argument("cmd", choices=("build", "review", "serve", "apply"))
     p.add_argument("--vmangos", help="the VMaNGOS database, for the speakers' names (review)")
+    p.add_argument("--round", default="", help="a later review round: candidates<N>.json → review<N>.html")
     p.add_argument("--config", default="voice.toml")
     p.add_argument("--store")
     p.add_argument("--port", type=int, default=8766)
@@ -454,7 +467,9 @@ def run(argv: Sequence[str]) -> int:
         if a.cmd == "apply":
             return apply(Path(a.config), store)
         if a.cmd == "review":
-            return review(data_root(), voice_make.load_config(Path(a.config)), store, Path(a.vmangos))
+            return review(
+                data_root(), voice_make.load_config(Path(a.config)), store, Path(a.vmangos), a.round
+            )
         return build(data_root(), voice_make.load_config(Path(a.config)), store)
     except (EngineError, ValueError, FileNotFoundError, KeyError) as e:
         print(f"voice audition: {e}", file=sys.stderr)

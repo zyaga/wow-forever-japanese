@@ -512,3 +512,18 @@ def test_the_release_zip_refuses_the_voice_pack(tmp_path):
 def test_store_ignores_the_voice_folder(tmp_path):
     data = _store(tmp_path)
     assert [ln["id"] for ln in Store(data).load("gossip")] == ["0123456789abcdef"]
+
+
+def test_a_scope_holds_its_quests_and_its_npcs_talk_only():
+    rows = [
+        {"key": "456-description", "speaker": "narrator"},
+        {"key": "456-completion", "speaker": 2079},
+        {"key": "999-description", "speaker": 1},
+        {"key": "g-0123456789abcdef", "speaker": 2079},
+        {"key": "g-fedcba9876543210", "speaker": "narrator"},
+        {"key": "b-0123456789abcdef", "speaker": "narrator"},
+        {"key": "g-1111111111111111", "speaker": 5, "others": [3597]},
+    ]
+    keys = [r["key"] for r in cmd.in_scope(rows, "shadowglen")]
+    assert keys == ["456-completion", "456-description", "g-0123456789abcdef", "g-1111111111111111"]
+

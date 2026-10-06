@@ -197,7 +197,10 @@ def in_scope(rows: list[dict[str, Any]], scope: str) -> list[dict[str, Any]]:
         return rows
     quests = set(cfg["quests"])
     quest_rows = [r for r in rows if r["key"][0].isdigit() and int(r["key"].split("-", 1)[0]) in quests]
-    who = set(cfg["creatures"]) | {c for r in quest_rows for c in (r["speaker"], *r.get("others", ()))}
+    # creatures only: the narrator reads lines all over the game, none of them this scope's NPC talk
+    who = set(cfg["creatures"]) | {
+        c for r in quest_rows for c in (r["speaker"], *r.get("others", ())) if isinstance(c, int)
+    }
     talk = [
         r for r in rows
         if not r["key"][0].isdigit() and any(c in who for c in (r["speaker"], *r.get("others", ())))
