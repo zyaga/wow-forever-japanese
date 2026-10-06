@@ -1,0 +1,23 @@
+# Voice over: which AivisSpeech voice reads each kind of speaker, and at what pace (docs/systems/voice.md).
+# Style ids are the engine's (GET /speakers). The pace is fixed when a file is made: the client has no
+# playback rate, so changing it means remaking every file.
+
+engine = "http://127.0.0.1:10101"
+speed_scale = 0.9
+
+[voices.male]
+model = "阿井田 茂"
+style = 1310138977 # Calm
+
+[voices.female]
+model = "morioki"
+style = 497929760 # ノーマル
+
+# The narrator reads quests an item or object starts; the male voice doubles as it.
+[voices.narrator]
+model = "阿井田 茂"
+style = 1310138977 # Calm
+
+[credits]
+engine = "AivisSpeech Engine (https://aivis-project.com)"
+licence = "Aivis Common Model License 1.0 (ACML 1.0)"

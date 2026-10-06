@@ -61,6 +61,24 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_nil(WFJ.OptionsText.T["nav.main"]) -- and no copy left for them
   end)
 
+  it("the voice page exists only with a voice pack: built with the others, or added when the pack registers", function()
+    H.loadChunk("Core/Voice.lua", nil, WFJ)
+    assert.is_nil(O.pages.voice) -- no pack when the pages were built
+    WFJ.Compat.registerOptions(list)
+    assert.is_false(O.addPage("voice")) -- still no pack
+    WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = {} })
+    assert.is_true(O.addPage("voice"))
+    local last = Stub.settingsCalls[#Stub.settingsCalls]
+    assert.are.equal("RegisterCanvasLayoutSubcategory", last[1])
+    assert.are.equal(O.pages.voice, last[3])
+    assert.are.equal("Voice", last[4])
+    assert.is_truthy(control("voice.enabled"))
+    assert.is_truthy(control("voice.greeting"))
+    assert.is_false(O.addPage("voice")) -- once
+    local again = O.build() -- a pack present at build time: the page is built with the others, after About
+    assert.are.same({ "main", "collector", "about", "voice" }, { again[1].id, again[2].id, again[3].id, again[4].id })
+  end)
+
   it("our category starts expanded, so its sub-pages show in the list without a click", function()
     local expanded
     local real = _G.Settings.RegisterCanvasLayoutCategory

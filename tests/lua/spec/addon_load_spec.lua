@@ -7,14 +7,15 @@ local HEAD = { "Core/ErrorLog.lua", "Core/Const.lua", "Core/Compat.lua", "Core/N
   "Core/Data.lua" }
 local TAIL = {
   "Core/Lookup.lua", "Core/Readings.lua", "Core/Glosses.lua", "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
-  "Core/Modifier.lua",
+  "Core/Voice.lua", "Core/Modifier.lua",
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
   "Core/Collector.lua", "Core/CollectorSend.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
   "Core/BugReport.lua",
   "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
-  "UI/ButtonText.lua", "UI/Labels.lua", "UI/TextWatch.lua", "UI/TaintWatch.lua", "UI/HtmlText.lua",
+  "UI/VoicePlayer.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/TextWatch.lua", "UI/TaintWatch.lua",
+  "UI/HtmlText.lua",
   "UI/LoadOnDemand.lua",
   "UI/HelpTooltip.lua", "UI/TooltipData.lua",
   -- shared helpers (ADR-030)
@@ -136,7 +137,8 @@ describe("addon loads in TOC order and answers /wfj version", function()
     assert.is_function(WFJ.Hash.key)
     for _, m in ipairs({ "Compat", "Data", "Lookup", "Align", "Tooltip", "State", "Settings", "Modifier", "Translator",
       "SurfaceState", "Collector", "UIStrings", "ButtonText", "Labels", "GameMenu", "Gossip", "Scan",
-      "Font", "Render", "QuestFrame", "Options", "Slash", "LoadOnDemand", "HelpTooltip", "Character",
+      "Font", "Render", "Voice", "VoicePlayer",
+      "QuestFrame", "Options", "Slash", "LoadOnDemand", "HelpTooltip", "Character",
       "Reputation", "Skills", "SpellBook", "Talents", "Trainer", "GossipChrome", "Merchant", "Bank", "Bags",
       "Mail", "Friends", "Raid", "MicroMenu", "ItemText",
       "OptionsText", "OptionsWidgets", "KeyCapture", "RevealBinding", "AddonListButton" }) do

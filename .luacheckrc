@@ -42,6 +42,7 @@ globals = {
   "WFJ_ToggleTranslation", "WFJ_RevealKey", "BINDING_NAME_WFJ_REVEAL",
   -- The TOC's AddonCompartmentFunc handlers (Blizzard's addon dropdown calls them by name)
   "WFJ_OnAddonCompartmentClick", "WFJ_OnAddonCompartmentEnter", "WFJ_OnAddonCompartmentLeave",
+  "WoWForeverJapanese_RegisterVoice", -- the voice pack calls it from its own chunk (ADR-061)
 }
 
 files["addon/WoWForeverJapanese/Data/"] = { ignore = { ".*" } }

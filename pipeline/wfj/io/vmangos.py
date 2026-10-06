@@ -129,3 +129,90 @@ def read_books(path: Path) -> list[tuple[int, str]]:
     finally:
         db.close()
     return [(int(e), t) for e, t in rows if isinstance(t, str) and t.strip()]
+
+
+# Who says a line, for voice over: the quest start / end relations, each creature's gossip menu greeting and
+# its display's gender. Several `patch` rows of one entry are collapsed to the highest patch.
+_SPEAKER_NEEDS = {
+    "creature_questrelation": ("id", "quest"),
+    "creature_involvedrelation": ("id", "quest"),
+    "gameobject_questrelation": ("id", "quest"),
+    "creature_template": ("entry", "patch", "gossip_menu_id", "display_id1"),
+    "gossip_menu": ("entry", "text_id"),
+    "npc_text": ("ID", *_NPC_TEXT_SLOTS),
+    "broadcast_text": ("entry", "male_text", "female_text"),
+    "quest_greeting": ("entry", "type", "content_default"),
+    "creature_display_info_addon": ("display_id", "build", "gender"),
+}
+
+
+def _relations(db: sqlite3.Connection, path: Path, table: str, quests: set[int]) -> dict[int, list[int]]:
+    ids = ",".join(str(int(q)) for q in sorted(quests)) or "NULL"
+    sql = f"SELECT DISTINCT quest, id FROM {table} WHERE quest IN ({ids}) ORDER BY quest, id"
+    rows = _query(db, path, sql)
+    out: dict[int, list[int]] = {}
+    for quest, id_ in rows:
+        out.setdefault(int(quest), []).append(int(id_))
+    return out
+
+
+def read_quest_speakers(
+    path: Path, quests: set[int]
+) -> tuple[dict[int, list[int]], set[int], dict[int, list[int]]]:
+    """For `quests`: (creature starters by quest, quests an object starts, creature enders by quest). Creature
+    ids sorted and distinct (a relation repeated per patch range counts once)."""
+    db = _connect(path, _SPEAKER_NEEDS)
+    try:
+        starters = _relations(db, path, "creature_questrelation", quests)
+        objects = set(_relations(db, path, "gameobject_questrelation", quests))
+        enders = _relations(db, path, "creature_involvedrelation", quests)
+    finally:
+        db.close()
+    return starters, objects, enders
+
+
+def read_creature_lines(path: Path, creatures: set[int]) -> list[tuple[int, str]]:
+    """(creature id, English) for the gossip window greeting of each creature's gossip menu (every text of the
+    menu, male and female wording) and its quest window greeting; sorted, distinct, empty text skipped."""
+    db = _connect(path, _SPEAKER_NEEDS)
+    ids = ",".join(str(int(c)) for c in sorted(creatures)) or "NULL"
+    slots = " UNION ".join(f"SELECT ID, {c} AS b FROM npc_text WHERE {c} <> 0" for c in _NPC_TEXT_SLOTS)
+    try:
+        menus = _query(db, path,
+            "SELECT DISTINCT t.entry, b.male_text, b.female_text FROM creature_template t"
+            " JOIN (SELECT entry, MAX(patch) AS patch FROM creature_template GROUP BY entry) m"
+            " ON t.entry = m.entry AND t.patch = m.patch"
+            " JOIN gossip_menu g ON g.entry = t.gossip_menu_id AND t.gossip_menu_id <> 0"
+            f" JOIN ({slots}) n ON n.ID = g.text_id"
+            " JOIN broadcast_text b ON b.entry = n.b"
+            f" WHERE t.entry IN ({ids})",
+        )
+        greetings = _query(db, path,
+            f"SELECT entry, content_default FROM quest_greeting WHERE type = 0 AND entry IN ({ids})",
+        )
+    finally:
+        db.close()
+    out = {(int(c), t) for c, *texts in menus for t in texts if isinstance(t, str) and t.strip()}
+    out |= {(int(c), t) for c, t in greetings if isinstance(t, str) and t.strip()}
+    return sorted(out)
+
+
+def read_creature_genders(path: Path, creatures: set[int]) -> dict[int, int]:
+    """creature id → the gender of its first display at the highest patch (0 male, 1 female, 2 none), from the
+    display's latest build row. A creature or display the database lacks is absent."""
+    db = _connect(path, _SPEAKER_NEEDS)
+    ids = ",".join(str(int(c)) for c in sorted(creatures)) or "NULL"
+    try:
+        rows = _query(db, path,
+            "SELECT t.entry, a.gender FROM creature_template t"
+            " JOIN (SELECT entry, MAX(patch) AS patch FROM creature_template GROUP BY entry) m"
+            " ON t.entry = m.entry AND t.patch = m.patch"
+            " JOIN creature_display_info_addon a ON a.display_id = t.display_id1"
+            " JOIN (SELECT display_id, MAX(build) AS build FROM creature_display_info_addon"
+            " GROUP BY display_id) d"
+            " ON a.display_id = d.display_id AND a.build = d.build"
+            f" WHERE t.entry IN ({ids})",
+        )
+    finally:
+        db.close()
+    return {int(c): int(g) for c, g in rows}

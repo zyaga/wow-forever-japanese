@@ -258,7 +258,7 @@ local function noteRecent(rec, text, fromShow)
   if not ok then Render.recentErrors = Render.recentErrors + 1 end
 end
 
--- Brings one record in line with the policy. Returns whether a write happened.
+-- Brings one record in line with the policy. → whether a write happened, and the record's action when it did
 local function sync(rec, fromShow)
   local text, font, action = desired(rec)
   if text == nil then
@@ -288,7 +288,7 @@ local function sync(rec, fromShow)
     end
     by.n = by.n + 1
   end
-  return true
+  return true, action
 end
 
 -- A record whose widget no longer shows what we last left there (our text when applied, the captured English when
@@ -317,9 +317,17 @@ function Render.show(surface, key, fs, en, area, kind, id, ctx)
   if not translator then return false end
   local rec = SS.capture(surface, key, fs, en, { area = area, kind = kind, id = id, ctx = ctx })
   if not rec then return false end
-  local changed = sync(rec, true)
+  local changed, action = sync(rec, true)
   if changed then refit(rec) end
   updateBanner(surface)
+  -- Only a line the client just wrote and we now show in Japanese: a refresh (the reveal key released, a setting
+  -- switched) goes through Render.refresh and never reaches here, so a listener such as UI/VoicePlayer never
+  -- restarts a line the player already heard. Fired after the write and the banner, so a failing listener cannot
+  -- leave the window half translated.
+  if changed and action == "apply" then
+    local m = rec.meta or {}
+    pcall(WFJ.State.fire, "lineShown", surface, key, m.kind, m.id)
+  end
   return changed
 end
 

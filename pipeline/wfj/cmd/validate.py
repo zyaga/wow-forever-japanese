@@ -24,6 +24,8 @@ Rules, each a function returning problems:
      changed since it was written, or whose line no longer ships, is stale: reported with its ids, not a
      failure; it does not ship. Prints how many shipped quest / gossip / ui lines have a reading, the lines
      still owed one (a kanji or kana, no `|`) and the words without a meaning.
+  9. voice (ADR-061): data/voice/speakers.jsonl and voices.jsonl are well formed, carry provenance, hold no
+     duplicate key or creature, and every creature that speaks has a voice.
 `luac -p` over the generated files is `make luac` (part of `make validate`); the pipeline runs no Lua.
 """
 
@@ -38,7 +40,8 @@ from pathlib import Path
 from typing import Any
 
 from wfj.cmd import check, generate
-from wfj.core import decisions, glosses, markup, numbered, placeholders, readings, specifiers
+from wfj.cmd.voice import read_rows, voice_dir
+from wfj.core import decisions, glosses, markup, numbered, placeholders, readings, specifiers, voice
 from wfj.core.model import ENGLISH_FIELDS, FIELDS, SCHEMA, ui_family, validate_line
 from wfj.core.normalize import normalize_for, normalize_v1
 from wfj.core.report import SHIPPED
@@ -522,8 +525,14 @@ def validate(
         store, english, ui_arg_kinds(addon_dir), ui_chat_families(addon_dir), ui_own(addon_dir)
     )
     problems += rule_objective(store)
+    problems += rule_voice(root)
     problems += rule_readings(store)
     return problems
+
+
+def rule_voice(root: Path) -> list[str]:
+    d = voice_dir(root)
+    return voice.speaker_problems(read_rows(d / "speakers.jsonl"), read_rows(d / "voices.jsonl"))
 
 
 def run(argv: Sequence[str]) -> int:

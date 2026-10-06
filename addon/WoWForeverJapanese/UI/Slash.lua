@@ -16,6 +16,7 @@
 --                             fingerprint / ambiguous
 --   /wfj debug ui scan        English still showing on visible frames: "hook?" = the dictionary knows it, "key?" = not
 --   /wfj debug fonts          the refused-font retry: timer state, one pending widget, then a retry now
+--   (plain /wfj debug also prints the voice pack's counts: lines, matched, missing, stale, played, refused)
 --   /wfj version              the addon, normalization and Lua versions
 --   /wfj bug                  the report window (a bug, with the addon's own Lua errors, or an idea)
 --   /wfj log [<n>]            the problem log's last n entries, then how many Lua errors it holds
@@ -67,7 +68,7 @@ function Slash.status()
   say("translation %s · hold %s for English · modifier %s", fmt(WFJ.State.enabled),
     WFJ.Modifier.display(S.get("modifier")), WFJ.State.modifierHeld and "held" or "up")
   for _, d in ipairs(S.list()) do
-    if not d.hidden then print(("  %s = %s"):format(d.id, fmt(S.get(d.id)))) end
+    if not S.isHidden(d) then print(("  %s = %s"):format(d.id, fmt(S.get(d.id)))) end
   end
   print(("  togglekey = %s"):format(toggleText())) -- a binding, not a setting, but set on the same page
   print("  /wfj on|off|toggle · /wfj <setting> <value> · /wfj readings|glosses [on|off] · /wfj togglekey [<key>|none]"
@@ -293,6 +294,16 @@ function Slash.debug(sub, arg)
   local areas = {}
   for _, a in ipairs(WFJ.AREAS) do areas[#areas + 1] = a .. "=" .. fmt(WFJ.State.areaEnabled(a)) end
   say("enabled=%s held=%s %s", fmt(WFJ.State.enabled), fmt(WFJ.State.modifierHeld), table.concat(areas, " "))
+  -- the voice pack (ADR-061): lines registered, then since registration: voiced, no file, Japanese changed since the
+  -- file was made, and what the player could not play
+  local V, P = WFJ.Voice, WFJ.VoicePlayer
+  if V and V.hasPack() then
+    local c = V.counts
+    say("voice: %d lines (%d invalid) · matched %d · missing %d · stale %d · played %d · refused %d",
+      c.registered, c.invalid, c.matched, c.missing, c.stale, P and P.counts.played or 0, P and P.counts.refused or 0)
+  else
+    say("voice: no pack%s", V and V.counts.invalid > 0 and " (a pack registered an invalid table)" or "")
+  end
   local fails = {}
   for surface, f in pairs(WFJ.Render.fontFailureSurfaces) do fails[#fails + 1] = { surface = surface, f = f } end
   table.sort(fails, function(a, b)

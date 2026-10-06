@@ -10,6 +10,7 @@ Text.T = {
   ["page.main"] = { en = "WoW Forever Japanese (日本語化)", ja = "WoW Forever Japanese (日本語化)" },
   ["page.collector"] = { en = "English Collector", ja = "英語テキスト収集" },
   ["page.about"] = { en = "About & Help", ja = "情報とヘルプ" },
+  ["page.voice"] = { en = "Voice", ja = "音声" },
   ["tagline"] = {
     en = "Japanese quest, NPC and tooltip text. Hold a key for the game's English.",
     ja = "クエスト・NPC・ツールチップを日本語で。キーを押している間は英語で表示します。",
@@ -18,6 +19,8 @@ Text.T = {
   ["section.translation"] = { en = "Translation", ja = "翻訳" },
   ["section.areas"] = { en = "What to translate", ja = "翻訳する範囲" },
   ["section.markers"] = { en = "Markers", ja = "マーカー" },
+  ["section.voice"] = { en = "Japanese voice", ja = "日本語の音声" },
+  ["section.voiceKinds"] = { en = "What to read aloud", ja = "読み上げる内容" },
   ["section.collector"] = { en = "Collector", ja = "収集" },
   ["section.files"] = { en = "Sending it in", ja = "送り方" },
   ["section.help"] = { en = "How it works", ja = "使い方" },

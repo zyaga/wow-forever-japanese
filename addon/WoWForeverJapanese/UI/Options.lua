@@ -42,6 +42,14 @@ Options.PAGES = {
     { title = "section.slash", rows = { "slashHelp" } },
     { rows = { "aboutFix", "aboutBug" } }, -- the fix window, then the bug and idea window
   } },
+  -- Only when the voice pack has registered (Core/Voice): built with the others when the pack is already there, else
+  -- added by Options.addPage when it registers.
+  { id = "voice", title = "page.voice", requires = function() return WFJ.Voice ~= nil and WFJ.Voice.hasPack() end,
+    sections = {
+    { title = "section.voice", rows = { "voice.enabled", "voice.muteDialog", "voice.button" } },
+    { title = "section.voiceKinds", columns = 2,
+      rows = { "voice.offer", "voice.progress", "voice.turnin", "voice.greeting" } },
+  } },
 }
 
 -- A marker row shows the marker itself beside its checkbox.
@@ -396,19 +404,40 @@ local function buildPage(spec)
   return page
 end
 
+local function pageName(spec)
+  return spec.id == "main" and Options.TITLE or Text.T[spec.title].en -- the category list has no Japanese font
+end
+
 -- Builds every page. → the ordered page list for Compat.registerOptions
 function Options.build()
   Options.controls, Options.captures, Options.refreshers, Options.pages = {}, {}, {}, {}
   local list = {}
   for _, spec in ipairs(Options.PAGES) do
-    local page = buildPage(spec)
-    Options.pages[spec.id] = page
-    local name = spec.id == "main" and Options.TITLE or Text.T[spec.title].en -- the category list has no Japanese font
-    list[#list + 1] = { id = spec.id, frame = page, name = name }
+    if not spec.requires or spec.requires() then
+      local page = buildPage(spec)
+      Options.pages[spec.id] = page
+      list[#list + 1] = { id = spec.id, frame = page, name = pageName(spec) }
+    end
   end
   Options.frame = Options.pages.main
   Options.refresh()
   return list
+end
+
+-- Builds one page that `requires` something which arrived after the others were registered (the voice pack), and adds
+-- it under the addon's category. A page already built, or still not required, is left alone. → true when added
+function Options.addPage(id)
+  if Options.pages[id] or not Options.frame then return false end
+  for _, spec in ipairs(Options.PAGES) do
+    if spec.id == id and (not spec.requires or spec.requires()) then
+      local page = buildPage(spec)
+      Options.pages[id] = page
+      WFJ.Compat.registerOptionsPage({ id = id, frame = page, name = pageName(spec) })
+      Options.refresh()
+      return true
+    end
+  end
+  return false
 end
 
 -- ── Refresh ─────────────────────────────────────────────────────────────────

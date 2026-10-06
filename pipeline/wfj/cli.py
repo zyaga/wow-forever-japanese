@@ -22,6 +22,7 @@ from wfj.cmd import (
     stats,
     toc_check,
     validate,
+    voice,
 )
 
 VERBS: dict[str, tuple[str, Callable[[Sequence[str]], int]]] = {
@@ -38,6 +39,7 @@ VERBS: dict[str, tuple[str, Callable[[Sequence[str]], int]]] = {
     "release": ("changelog + version for a release; the pull-request changelog gate", release.run),
     "package-check": ("the release zip holds exactly the shipped files", package_check.run),
     "public-check": ("keep private material out of the public repository", public_check.run),
+    "voice": ("voice over: speakers / generate / pack, from the local engine", voice.run),
 }
 
 

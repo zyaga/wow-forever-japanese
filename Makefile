@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: voice voice-speakers voice-generate voice-pack letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -380,6 +380,19 @@ report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + 
 	@test -n "$(ISSUE)" -a -n "$(MODEL)" || { echo "usage: make report-apply ISSUE=<n> MODEL=<id> [DATE=YYYY-MM-DD]"; exit 2; }
 	cd pipeline && $(PY) -m wfj report apply --issue $(ISSUE) --model $(MODEL) $(if $(DATE),--date $(DATE))
 	$(MAKE) -s check generate validate coverage
+
+# Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine running and
+# `lame`; the audio and the pack are build output under build/, never committed.
+voice-speakers: ## data/voice/ speakers + voices for the voice scope, from the pinned VMaNGOS database and the collector's NPC ids
+	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA)
+
+voice-generate: ## build/voice/*.mp3 + manifest from the shipped Japanese, through the local engine (remakes only changed lines)
+	cd pipeline && $(PY) -m wfj voice generate
+
+voice-pack: ## build/voice-pack/WoWForeverJapanese_Voice/ (TOC, Register.lua, Sound/, README.txt) from the manifest
+	cd pipeline && $(PY) -m wfj voice pack
+
+voice: voice-speakers voice-generate voice-pack ## speakers → generate → pack
 
 generate: ## data/ → addon Data/*.lua + the TOC's generated block (deterministic; validate diffs it)
 	cd pipeline && $(PY) -m wfj generate
