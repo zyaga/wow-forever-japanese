@@ -14,6 +14,9 @@ an old setting stops working). A release moves those lines under its version num
 - The "World refresh in 29 Seconds" notice above the chat (and its longer first wording) is now in Japanese, with the time unit in Japanese too (ワールド更新まで29秒). It had stayed English.
 - Nine lines Forever's NPCs say or yell that the addon had no Japanese for (heard by the English collector, for example "Go with the blessings of Al'Akir…" and "For the High Order!") are now translated, with word readings. So are six lines from the Goldshire campfire and mining scenes (for example "Go on and have a seat near the fire and we can get started.").
 
+### Changed
+- The problem log (`/wfj log`) now notes, for each NPC chat line, whether it was said to you and what the English collector did with it (yes/no flags only, never a name or the line's text), and it keeps the latest NPC lines even when the log is full.
+
 ## 0.1.0-alpha.8 - 2026-10-05
 
 ### Fixed
