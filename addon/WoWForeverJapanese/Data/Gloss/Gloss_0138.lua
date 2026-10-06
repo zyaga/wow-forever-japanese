@@ -715,4 +715,12 @@ WFJ.Data.add("gloss", {
   [138712] = "設置する\tせっちする\tcan place (can set up)",
   [138713] = "進む\tすすむ\tcan't get done (doesn't progress)",
   [138714] = "邪魔をする\tじゃまをする\tget in my way",
+  [138715] = "グリフ\tグリフ\tGlyphs",
+  [138716] = "レガシーパーク\tレガシーパーク\tlegacy perks",
+  [138717] = "変更する\tへんこうする\tdo you want to change",
+  [138718] = "忘れさせる\tわすれさせる\tdo you want (it) to unlearn",
+  [138719] = "忘れる\tわすれる\tdo you want to unlearn (forget)",
+  [138720] = "承諾する\tしょうだくする\taccepting (accept)",
+  [138721] = "移動する\tいどうする\tmay transfer (may move)",
+  [138722] = "行う\tおこなう\tdo (it)",
 })

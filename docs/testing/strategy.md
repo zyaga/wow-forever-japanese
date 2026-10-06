@@ -371,7 +371,7 @@ Every other window the Forever client loads ([ADR-030](../adr/030-every-window-t
 - Record which major factions the PvP rank and reputation windows read, and whether their renown toasts fire.
 - Record whether the Battle.net toast is shown on Forever, whether `SESSION_TIME_ALERT` is ever sent, and whether voice chat is on (ChannelFrame voice rows).
 - Record whether Recruit A Friend and Recent Allies are enabled (`C_RecruitAFriend.IsSystemEnabled()`, `C_RecentAllies.IsSystemEnabled()`).
-- The role-check and group-invite popups (`PVPRoleCheckPopup`, `LFGInvitePopup`) are StaticPopupSpecial dialogs the `popups` surface walks ([ADR-037](../adr/037-staticpopup-dialogs-and-owned-keys.md)): record whether each ever shows, and whether its words are Japanese. Record whether the shard-transfer toast ever shows.
+- The role-check and group-invite popups (`PVPRoleCheckPopup`, `LFGInvitePopup`) are StaticPopupSpecial dialogs the `popups` surface walks ([ADR-037](../adr/037-staticpopup-dialogs-and-owned-keys.md)): record whether each ever shows, and whether its words are Japanese. The shard-transfer toast is the `bnettoast` surface now (step 62).
 - Record whether Forever loads `bindings_camelot.xml` for the key-bindings list, whether the Assisted Combat rows are present, whether the Mac-only rows appear on macOS, and, with screen narration on, whether translated labels are read in Japanese or English.
 - Record whether the What's New splash is reachable (`OPEN_SPLASH_SCREEN`).
 - The equipment flyout opens while Alt is held over a slot: the same key as the English toggle. Record whether it is usable in Japanese with the default modifier.
@@ -477,6 +477,9 @@ The pop-up dialogs, the tooltip frames of their own, the dressing room's custom-
 11. **Combat Audio Alerts.** Esc → Options → Accessibility → Combat Audio Alerts: the "Say Your \<power>" option and its tooltips are Japanese with the power word in Japanese (マナ, 怒り …). Record if the page is missing.
 12. **Key bindings page.** Esc → Options → Keybindings: the binding names and section headers are Japanese.
 13. **Combat log filters.** Right-click a chat tab → Settings → Combat tab: in the "Done By" and "Done To" columns and the Unit Colors swatches the rows read 味方 for "Friends" (the unit sense), while the social window's Friends tab and header still read フレンド. Alt → "Friends" in both.
+14. **Party invite.** Paste `/run StaticPopup_Show("PARTY_INVITE", format(INVITATION, "Test"))`: the line reads
+    Testがあなたをグループに招待しています。 and the left button 承諾. The right button shows "Decline (…)" for half a
+    second, then 辞退. Hold Alt → English; release → Japanese. Close it with 辞退 (no invite is pending).
 
 **Not level-1:** the Battle.net friend-online toast (needs a Battle.net friend logging in), a battleground ready dialog, the auction house's Back / Available / Deposit words, the recipe form's "Reagents:" header (素材, needs a profession; the spell tooltip's reagents line keeps 触媒), the PvP scoreboard's two-line headers, the calendar's community dropdown (needs a community), the vehicle leave button, the barber shop camera tooltips, the Release Spirit countdown (needs dying); check each when the character gets there. Party Sync never shows on Forever (ADR-037).
 

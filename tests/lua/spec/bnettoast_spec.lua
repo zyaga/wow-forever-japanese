@@ -66,11 +66,13 @@ local function install()
   alert:SetScript("OnUpdate", function(self) self.Text.text = S.en("TIME_PLAYED_ALERT"):format(C.played) end)
   local shard = S.frame("ShardTransferImminentFrame")
   shard.Text = S.fs("")
+  function shard.Text.GetStringHeight(fs) return #fs:GetText() end -- a height that follows the line shown
+  function shard.SetHeight(self, h) self.height = h end
   function shard.Start() end
   -- ShardTransferImminentMixin:OnUpdate (socialtoast.lua:63-85): the plural group resolved by the client
   shard:SetScript("OnUpdate", function(self)
-    local unit = C.left < 60 and (C.left == 1 and "Second" or "Seconds") or "Minutes"
     local n = C.left < 60 and C.left or math.ceil(C.left / 60)
+    local unit = C.left < 60 and (n == 1 and "Second" or "Seconds") or (n == 1 and "Minute" or "Minutes")
     if C.left <= 0 then self.Text.text = S.en("SHARD_TRANSFER_ANYTIME")
     elseif C.minimized then self.Text.text = S.en("SHARD_TRANSFER_REFRESH_MESSAGE"):format(n, unit)
     else self.Text.text = S.en("SHARD_TRANSFER_COUNTDOWN_MESSAGE"):format(n, unit) end
@@ -162,8 +164,11 @@ describe("the Battle.net toast and the play-time alert on Forever", function()
     WFJ.BNetToast.init()
     C.left, C.minimized = 120, false
     assert.are.equal("2分後に周囲のワールドが更新されます。", shardTick())
+    C.left = 60
+    assert.are.equal("1分後に周囲のワールドが更新されます。", shardTick())
     C.left, C.minimized = 29, true
     assert.are.equal("ワールド更新まで29秒", shardTick())
+    assert.are.equal(#"ワールド更新まで29秒" + 20, _G.ShardTransferImminentFrame.height) -- refit to the Japanese
     C.left = 1
     assert.are.equal("ワールド更新まで1秒", shardTick())
     S.alt(WFJ, true)

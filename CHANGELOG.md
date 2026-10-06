@@ -10,7 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Fixed
-- The group invite popup is now fully in Japanese: "<name> invites you to a group." (and the note that accepting takes you out of your queues) and its **Decline** button, which had stayed English after its half-second lock. The inviter's name stays English. Other popups whose whole line comes from the game as one known sentence (for example the question when you leave an instance group) are translated too.
+- The group invite popup is now fully in Japanese: "<name> invites you to a group." (and the note that accepting takes you out of your queues) and its **Decline** button, which had stayed English after its half-second lock. A cross-realm invite's line is translated as well. The inviter's name stays English. Other popups whose whole line comes from the game as one known sentence (the question when you leave an instance group, and the trainer's "unlearn all of your talents?" and the pet-skills one) are translated too.
 - The "World refresh in 29 Seconds" notice above the chat (and its longer first wording) is now in Japanese, with the time unit in Japanese too (ワールド更新まで29秒). It had stayed English.
 - Nine lines Forever's NPCs say or yell that the addon had no Japanese for (heard by the English collector, for example "Go with the blessings of Al'Akir…" and "For the High Order!") are now translated, with word readings. So are six lines from the Goldshire campfire and mining scenes (for example "Go on and have a seat near the fire and we can get started.").
 

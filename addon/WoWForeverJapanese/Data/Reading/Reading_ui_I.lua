@@ -63,6 +63,7 @@ WFJ.Data.add("reading", {
   ["ui:INVERT_GAMEPAD_YAW"] = { text = "横軸=よこじく=91660 反転=はんてん=54431" },
   ["ui:INVERT_MOUSE"] = { text = "マウス=マウス=35021 反転=はんてん=54431" },
   ["ui:INVITATION"] = { text = "あなた=あなた=506 グループ=グループ=32812 招待しています=しょうたいしています=80930" },
+  ["ui:INVITATION_XREALM"] = { text = "あなた=あなた=506 グループ=グループ=32812 招待しています=しょうたいしています=80930 招待=しょうたい=80913 承諾する=しょうだくする=138720 別=べつ=50597 レルム=レルム=35522 移動することがあります=いどうすることがあります=138721" },
   ["ui:INVITE"] = { text = "招待=しょうたい=80915" },
   ["ui:INVITE_COMMUNITY_MEMBER_POPUP_INVITE_EDITBOX_INSTRUCTIONS"] = { text = "または=または=26678" },
   ["ui:INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND"] = { text = "フレンド=フレンド=34649 入力=にゅうりょく=47706" },

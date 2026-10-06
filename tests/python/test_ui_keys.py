@@ -109,6 +109,7 @@ DRAFT_SOURCES = {"draft-ui",
                  "draft-ui-followups",  # the reworded Forever lines, menus, textures, Communities
                  "draft-ui-errors",  # the UI errors frame's ERR_* / SPELL_FAILED_* keys
                  "draft-ui-unit-spacing",  # a count and its unit word with no space between ("29秒")
+                 "draft-ui-popup-leftovers",  # the cross-realm invite and the talent wipe lines of the "%s" dialogs
                  "draft-ui-dialogs",  # the dialogs, owned words and window follow-ups
                  "draft-ui-menus",  # menus, HelpTip callouts and composite lines
                  "draft-ui-build70009",  # the keys new on 1.60.1.70009 and the lines it reworded

@@ -71,15 +71,18 @@ It also had to be confirmed that the secure-environment windows stay English.
      - A definition whose text is `"%s"` shows its caller's line as written (the party invite, the talent wipe, the
        leave-instance question). That line is translated when it is exactly one key's English. The party invite's
        caller formats `INVITATION` with the inviter's name and may append `ACCEPTING_INVITE_WILL_REMOVE_QUEUE` after
-       `"\n\n"` (`blizzard_game/classic/eventimplementation.lua:61–72`): the line is matched against those keys only
-       (`PASS_THROUGH`), the name taken as the template's `verbatim` argument, as a label surface does.
+       `"\n\n"` (`blizzard_game/mainline/eventimplementation.lua:757–779`, the camelot family's file): the line is matched against those keys only
+       (`PASS_THROUGH`), the name taken as the template's `verbatim` argument, as a label surface does. A cross-realm invite
+       is `INVITATION_XREALM`, whose own English holds a `"\n\n"`: the whole line is matched before the last paragraph is
+       split off. The talent wipe's caller line (`CONFIRM_TALENT_WIPE_<n>`) is an exact key's English.
      - The `SubText`, the buttons and the extra button each take the one key whose English is the definition's
        string.
    - **`StaticPopup_OnUpdate`** (`staticpopup.lua:490–535`, every frame while a dialog is shown). The line is shown
      again when it changed. So is any button whose label the client wrote back to its English after the dialog was
      shown: an accept delay's end, or the party invite's Decline, which `SetupLockOnDeclineButtonAndEscape` locks for
      half a second with a countdown label and then gives its saved English back (`gamedialogdefs.lua:19–52`). The
-     countdown label itself ("Decline (1s)") stays as the client wrote it. Of the expiration texts, only the shared one is rebuilt:
+     countdown label itself ("Decline (1s)") stays as the client wrote it. Of the expiration texts, only the shared one
+     is rebuilt:
      `GameDialogDefsUtil.GetDefaultExpirationText` formats the template with `(seconds, SECONDS)` under a minute, else
      `(minutes, MINUTES)` (`gamedialogdefsutil.lua:53–61`): the death dialog's "%d %s until release", the logout and
      quit timers. The unit word is put in as its own Japanese, never left English inside a Japanese line.

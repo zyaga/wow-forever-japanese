@@ -370,10 +370,9 @@ describe("NPC speech", function()
     end)
 
     it("the trace records the target's shape and the Collector's answer, never a name", function()
-      local orig = WFJ.Collector and WFJ.Collector.recordGossip
-      WFJ.Collector = WFJ.Collector or {}
-      WFJ.Collector.recordGossip = function() return "recorded" end
-      local unitName = _G.UnitName
+      local collector, unitName = WFJ.Collector, _G.UnitName
+      finally(function() WFJ.Collector, _G.UnitName = collector, unitName end)
+      WFJ.Collector = { recordGossip = function() return "recorded" end }
       _G.UnitName = function() return "Testplayer" end
       npc(f, SAY, "%s says: ", SHIPPED, "Ralph", nil, "Testplayer-Liongard") -- a Forever full name
       local e = lines()[1]
@@ -389,7 +388,10 @@ describe("NPC speech", function()
       e = lines()[2]
       assert.are.equal("me", e.target)
       assert.are.equal("recorded", e.collector)
-      WFJ.Collector.recordGossip, _G.UnitName = orig, unitName
+      WFJ.Collector.recordGossip = function() return "error", "boom on Stay close to me" end
+      npc(f, SAY, "%s says: ", "Keep your blade sharp and your wits sharper.", "Ralph", nil, "Testplayer")
+      local last = lines()[#lines()]
+      assert.are.equal("error", last.collector) -- the error's message never reaches the log
     end)
 
     it("a secret line is traced without a key", function()

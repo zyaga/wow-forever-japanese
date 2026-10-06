@@ -249,7 +249,8 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
   lastCollect = "not asked"
   if WFJ.Collector and not secret(guid) and not secret(target) and not toOther and Speech.knownLanguage(language) then
     local result, reason = WFJ.Collector.recordGossip(en, guid)
-    lastCollect = tostring(result) .. (reason and (" " .. tostring(reason)) or "")
+    -- an error's message may quote the line, so only the result is kept for it
+    lastCollect = tostring(result) .. ((reason and result ~= "error") and (" " .. tostring(reason)) or "")
   end
   local key = en ~= "" and deps.key and deps.key(en) or nil -- once per line: translate and every later exit use it
   lastKey = key

@@ -1009,6 +1009,12 @@
 {"id": "CONFIRM_SUMMON_SCENARIO", "field": "text", "en": "%s has started a scenario in %s. Do you want to join them?\n\nThis offer will expire in %d %s.", "hash": "59b554c18567728d", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_SUMMON_STARTING_AREA", "field": "text", "en": "%s wants to summon you to %s.\n\nYou will be unable to return to this starting zone.\n\nThe spell will be canceled in %d %s.", "hash": "30ffbe00c49e5419", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_SURRENDER_ARENA", "field": "text", "en": "Surrender?", "hash": "fa4cbac557469b1a", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_TALENT_WIPE_1", "field": "text", "en": "Do you want to unlearn all of your talents?", "hash": "c6d12188462d0fe1", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_TALENT_WIPE_2", "field": "text", "en": "Do you want to unlearn all of your Glyphs?", "hash": "794b52b134a8a1ea", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_TALENT_WIPE_3", "field": "text", "en": "Do you want to change your primary specialization?", "hash": "b7c9890270cc364e", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_TALENT_WIPE_4", "field": "text", "en": "Do you want to unlearn all of your pet's skills? The cost will increase each time you do it.", "hash": "6e40621a6d9473cd", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_TALENT_WIPE_5", "field": "text", "en": "Do you want to unlearn all of your legacy perks?", "hash": "d890f2ada669a285", "src": "db2@1.60.1.70170"}
+{"id": "CONFIRM_TALENT_WIPE_6", "field": "text", "en": "Do you want to change your primary specialization?", "hash": "b7c9890270cc364e", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_TEXT_TO_SPEECH_RESET", "field": "text", "en": "Do you want to reset all text to speech settings to default?", "hash": "e81fc45a48bf7e4a", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_UPGRADE_ITEM", "field": "text", "en": "Are you sure you wish to spend %s to upgrade the following item?", "hash": "6ebad073074032b7", "src": "db2@1.60.1.70170"}
 {"id": "CONFIRM_UPGRADE_ITEM_BIND", "field": "text", "en": "Are you sure you wish to spend %s to upgrade the following item? Upgrading will cause this item to become soulbound.", "hash": "0252d3a10cdd0237", "src": "db2@1.60.1.70170"}

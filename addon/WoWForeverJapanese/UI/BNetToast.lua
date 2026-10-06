@@ -57,9 +57,19 @@ function BNetToast.onAlert()
   return WFJ.Labels.show(SURFACE, "alert", get("alertText"), nil, ALERT)
 end
 
+-- The client sizes the toast to its English each frame, before this hook writes the Japanese (socialtoast.lua:84):
+-- the same height rule, applied to the line now shown.
+local function refitShard()
+  local shard, fs = get("shard"), get("shardText")
+  if type(shard) == "table" and type(shard.SetHeight) == "function" and type(fs) == "table"
+      and type(fs.GetStringHeight) == "function" then
+    shard:SetHeight(fs:GetStringHeight() + 20)
+  end
+end
+
 -- HookScript target (ShardTransferImminentFrame's OnUpdate). → 1 | 0
 function BNetToast.onShard()
-  return WFJ.Labels.show(SURFACE, "shard", get("shardText"), nil, SHARD)
+  return WFJ.Labels.show(SURFACE, "shard", get("shardText"), refitShard, SHARD)
 end
 
 local hooked = false

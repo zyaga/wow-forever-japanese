@@ -66,6 +66,7 @@
 {"id": "INVERT_GAMEPAD_YAW", "field": "text", "en": "Invert Horizontal Axis", "hash": "44b7cba78e7d0062", "src": "db2@1.60.1.70170"}
 {"id": "INVERT_MOUSE", "field": "text", "en": "Invert Mouse", "hash": "823191c7bef70db4", "src": "db2@1.60.1.70170"}
 {"id": "INVITATION", "field": "text", "en": "%s invites you to a group.", "hash": "e38d7130910f3b63", "src": "db2@1.60.1.70170"}
+{"id": "INVITATION_XREALM", "field": "text", "en": "%s invites you to a group.\n\nAccepting this invitation may transfer you to another realm.", "hash": "8b81470e8a27b160", "src": "db2@1.60.1.70170"}
 {"id": "INVITE", "field": "text", "en": "Invite", "hash": "53896770d7d0fd4d", "src": "db2@1.60.1.70170"}
 {"id": "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_EDITBOX_INSTRUCTIONS", "field": "text", "en": "Real ID or BattleTag", "hash": "07be35b1fea6a11b", "src": "db2@1.60.1.70170"}
 {"id": "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND", "field": "text", "en": "Enter a Battle.net friend", "hash": "31952602444d682f", "src": "db2@1.60.1.70170"}

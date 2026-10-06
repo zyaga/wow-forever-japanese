@@ -1252,7 +1252,9 @@ DYNAMIC: dict[str, list[str]] = {
     "tutorial": [r"TUTORIAL(_TITLE)?(17|18|22|27|28|37|46|52)(_[A-Z]+)*"],
     # the dialog countdown's unit words (GameDialogDefsUtil.GetDefaultExpirationText passes SECONDS / MINUTES
     # as a dialog argument; UI/Popups puts their Japanese in)
-    "popups": [r"SECONDS|MINUTES"],
+    # the "%s" dialogs' caller lines: the cross-realm party invite (mainline eventimplementation.lua:768)
+    # and the talent wipe's _G["CONFIRM_TALENT_WIPE_"..talentType] (gamedialogdefs.lua:96-99)
+    "popups": [r"SECONDS|MINUTES", r"INVITATION_XREALM", r"CONFIRM_TALENT_WIPE_\d"],
     # the talent button tooltip's action-bar status and edge-requirements lines (UI/Talents TOOLTIP_KEYS)
     "talents": [r"TALENT_FRAME_SEARCH_TOOLTIP_(NOT_ON_ACTIONBAR|ON_DISABLED_ACTIONBAR|ON_INACTIVE_BONUSBAR)",
                 r"GENERIC_TRAIT_FRAME_EDGE_REQUIREMENTS_BUTTON_TOOLTIP"],

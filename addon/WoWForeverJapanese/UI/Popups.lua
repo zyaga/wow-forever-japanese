@@ -83,9 +83,10 @@ local SPECIAL_ONLY = { only = {
 
 -- The "%s" dialogs whose caller formats a template: the keys the line may be, and the paragraphs it may gain.
 -- PARTY_INVITE: INVITATION with the inviter's name, plus ACCEPTING_INVITE_WILL_REMOVE_QUEUE after "\n\n" while the
--- player is queued [verified: blizzard_game/classic/eventimplementation.lua:61-72].
+-- player is queued; INVITATION_XREALM for a cross-realm invite, whose own English holds a "\n\n"
+-- [verified: blizzard_game/mainline/eventimplementation.lua:757-779, the camelot family's file].
 local PASS_THROUGH = {
-  PARTY_INVITE = { line = { "INVITATION" }, after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },
+  PARTY_INVITE = { line = { "INVITATION", "INVITATION_XREALM" }, after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },
 }
 
 local CANDIDATES = { show = { "StaticPopup_Show" }, update = { "StaticPopup_OnUpdate" },
@@ -159,6 +160,12 @@ end
 -- A "%s" dialog's line, the caller's as written (see the header). → 1 | 0
 local function showPassThrough(dialog, fs)
   local shown = fs:GetText()
+  -- a secret value can be neither compared nor matched: the client's line stays
+  local isSecret = Compat.resolve("issecretvalue")
+  if type(isSecret) == "function" and isSecret(shown) then
+    WFJ.SurfaceState.drop(SURFACE, widgetKey(fs))
+    return 0
+  end
   if type(shown) ~= "string" or shown == "" then return 0 end
   local recKey = widgetKey(fs)
   local rec = WFJ.SurfaceState.get(SURFACE, recKey)
@@ -173,8 +180,13 @@ local function showPassThrough(dialog, fs)
     WFJ.SurfaceState.drop(SURFACE, recKey)
     return 0
   end
-  local line, after = shown:match("^(.-)\n\n(.+)$")
-  if not line then return WFJ.Labels.show(SURFACE, recKey, fs, nil, { only = spec.line }) end
+  local whole = WFJ.Labels.part(shown, spec.line)
+  if whole then return WFJ.Labels.showArgs(SURFACE, recKey, fs, whole.key, whole.args) end
+  local line, after = shown:match("^(.*)\n\n(.-)$") -- the last paragraph is the one appended
+  if not line then
+    WFJ.SurfaceState.drop(SURFACE, recKey)
+    return 0
+  end
   local first = WFJ.Labels.part(line, spec.line)
   local second = first and WFJ.Labels.part(after, spec.after)
   local args = second and { form = "seq", parts = { first, "\n\n", second } } or nil
@@ -249,18 +261,21 @@ function Popups.onShowCall(which, _, _, data)
   return Popups.onShow(findDialog(which, data))
 end
 
--- What StaticPopup_OnUpdate left on screen last frame, per dialog: a frame where nothing changed costs two GetText
--- calls (a held Alt, or a line that is not ours, would otherwise be looked at again every frame).
+-- What StaticPopup_OnUpdate left on screen last frame, per dialog: a frame where nothing changed costs one GetText
+-- call for the line and one per button, and allocates nothing (a held Alt, or a line that is not ours, would
+-- otherwise be looked at again every frame).
 local seen = setmetatable({}, { __mode = "k" })
 
--- The dialog's button labels, joined (what StaticPopup_OnUpdate compares frame to frame). → string
-local function labelsOf(buttons)
-  local out = {}
-  for _, button in ipairs(buttons) do
-    local label = type(button) == "table" and type(button.GetText) == "function" and button:GetText() or ""
-    table.insert(out, tostring(label))
+local function labelOf(button)
+  return type(button) == "table" and type(button.GetText) == "function" and button:GetText() or nil
+end
+
+-- Whether any button label differs from the one recorded last frame. → bool
+local function labelsChanged(last, buttons)
+  for i, button in ipairs(buttons) do
+    if labelOf(button) ~= last.labels[i] then return true end
   end
-  return table.concat(out, "\n")
+  return #buttons ~= last.count
 end
 
 -- hooksecurefunc target (StaticPopup_OnUpdate): a timed dialog re-wrote its line (the countdown, the start delay), its
@@ -273,7 +288,7 @@ function Popups.onUpdate(dialog)
   local container = dialog.ButtonContainer
   local buttons = type(container) == "table" and type(container.Buttons) == "table" and container.Buttons or {}
   local last = seen[dialog]
-  if last and last.text == dialog.Text:GetText() and last.labels == labelsOf(buttons) then return end
+  if last and last.text == dialog.Text:GetText() and not labelsChanged(last, buttons) then return end
   local info = shownInfo(dialog, dialog.dialogInfo) -- GENERIC_CONFIRMATION: the caller's text and buttons
   showText(dialog, info)
   for i, button in ipairs(buttons) do
@@ -284,7 +299,9 @@ function Popups.onUpdate(dialog)
       showWord(button, english)
     end
   end
-  seen[dialog] = { text = dialog.Text:GetText(), labels = labelsOf(buttons) }
+  local labels = {}
+  for i, button in ipairs(buttons) do labels[i] = labelOf(button) end
+  seen[dialog] = { text = dialog.Text:GetText(), labels = labels, count = #buttons }
 end
 
 -- Every FontString and button label under `frame` (depth-first), restricted to SPECIAL_ONLY. An EditBox (a name the
