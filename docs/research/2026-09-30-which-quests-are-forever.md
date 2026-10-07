@@ -90,7 +90,7 @@ So a scan driven by `QuestV2` alone cannot find every quest the server has. The 
 ask the server about **every id**. Known quest ids on this build fall in 1 to 9,999 and 50,000 to 99,326;
 the sweep asks 1 to 9,999 and 50,000 to 105,000 (62,663 ids after dropping what the cache already holds,
 about 52 minutes at the scan's 0.05 s per query). A quest the server does not have costs one unanswered
-query. The beta-day harvest runbook (step 3) has the command.
+query.
 
 Run on 2026-10-01 (the whole range, after a first run cut by a disconnect): 13 more quests answered, all in
 Forever zones or sorts (999, 1005, 1006, 1500, 78270, 91901, 91905, 91906, 93862, 94616, 95042, 97583,
@@ -130,4 +130,3 @@ quest, so these cost nothing on screen; a rule for 21 quests is not worth its up
 - [ADR-020](../adr/020-quest-cache-harvest.md), the quest cache as the English source
 - [ADR-034](../adr/034-forever-is-the-only-target.md), the served step
 - [The Forever client's quest cache layout](2026-09-18-forever-questcache-layout.md), the text parts of the record
-- The beta-day harvest runbook, step 3 (the sweep) and step 6 (what an answer means)

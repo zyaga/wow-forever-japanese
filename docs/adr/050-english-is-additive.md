@@ -34,7 +34,7 @@ answered 2 more. A quest, item or key can also come back in a later build.
    source stamps, and the record was seeded from every Forever build's inputs and from every Forever-sourced line
    in history.
 4. **A slow recheck before calling a quest unanswered.** The quest scan asks again, slowly, for every quest an
-   earlier build answered and the new cache has not (`scan_line`, three passes two seconds apart), so the record's
+   earlier build answered and the new cache has not (three passes two seconds apart), so the record's
    "last build" reflects more than one fast attempt.
 
 ## Consequences

@@ -190,8 +190,7 @@ _Avoid_: book (a book is several pages), letter (a letter is one kind of item te
 → [Data model](architecture/data-model.md) · [ADR-022](adr/022-book-and-trainer-greeting-surfaces.md)
 
 **Quest scan**:
-The maintainer's step that fills the [[Quest cache]] before an import. Its tooling is kept outside this repository; the import reads the cache file. Not part of the addon.
-_Avoid_: scan lines, scan macro, scan script, harvester
+The maintainer's step that fills the [[Quest cache]] before an import; the import reads the cache file. Not part of the addon.
 → [Pipeline](systems/pipeline.md) · [ADR-020](adr/020-quest-cache-harvest.md)
 
 **English delta**:
