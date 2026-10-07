@@ -384,7 +384,8 @@ report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + 
 # Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine running and
 # `lame`; the audio and the pack are build output under build/, never committed.
 voice-speakers: ## data/voice/ speakers + voices for the voice scope, from the pinned VMaNGOS database and the collector's NPC ids
-	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA)
+	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA) \
+		--wdb "$(call client_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA)
 
 voice-generate: ## build/voice/*.mp3 + manifest from the shipped Japanese, through the local engine (remakes only changed lines)
 	cd pipeline && $(PY) -m wfj voice generate
