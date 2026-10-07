@@ -13,8 +13,8 @@ docs/operations/voice.md, "Releasing the voice"; the split is pipeline/voice-pac
       before anything leaves the machine and prints what would go up. --curseforge-only skips the GitHub
       release (a rehearsal: with no voice release on GitHub, the next run counts every pack as changed).
       --only uploads just the named folders' projects. --entry-without-packs makes the entry's file require
-      the main addon alone: a project can only be named once CurseForge has approved it, and it is reviewed
-      only after its first file, so a new entry's first file cannot name packs still in review. The upload
+      the main addon alone: CurseForge accepts a project as a dependency only after its review, which starts
+      with its first file, so a new entry's first file cannot name packs still in review. The upload
       token is CF_API_KEY in the environment.
 """
 
@@ -431,6 +431,7 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     if zipped is None:
         return 1
     zips, bundle = zipped
+    _only(plan, table, a.only)
     tag = new_tag(day, rows)
     print(f"voice release: last voice release {tag_before or 'none'}; this one {tag} ({rtype})")
     for pr in plan.upload:
@@ -441,7 +442,6 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
               " not uploaded")
     for f in plan.unchanged:
         print(f"voice release: {f} unchanged ({versions[f]})")
-    _only(plan, table, a.only)
     if not plan.upload and not plan.no_project:
         print("voice release: nothing changed since the last voice release; nothing to do")
         return 0
