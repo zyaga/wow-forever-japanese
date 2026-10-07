@@ -34,7 +34,7 @@ Options.PAGES = {
   } },
   { id = "collector", title = "page.collector", sections = {
     { title = "section.collector",
-      rows = { "collectorExplain", "collector.enabled", "collectorStatus", "collectorClear" } },
+      rows = { "collectorExplain", "collector.enabled", "collector.remind", "collectorStatus", "collectorClear" } },
     { title = "section.files", rows = { "collectorSteps", "collectorSend", "collectorPath" } },
   } },
   { id = "about", title = "page.about", header = true, sections = {

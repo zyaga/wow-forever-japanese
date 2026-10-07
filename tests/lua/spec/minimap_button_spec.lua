@@ -184,6 +184,82 @@ describe("the minimap button", function()
   end)
 end)
 
+describe("the minimap menu's send entry", function()
+  local WFJ, C
+
+  local function texts()
+    local out = {}
+    for i, it in ipairs(WFJ.MinimapButton.items()) do out[i] = it.text end
+    return out
+  end
+  local function record(n, from)
+    for i = 1, n do C.record("quest", (from or 2000) + i, "title", "Some Quest " .. ((from or 2000) + i)) end
+  end
+
+  before_each(function()
+    WFJ = load(nil)
+    C = WFJ.Collector
+    WFJ.CollectorSendWindow = { open = function() end } -- its own spec covers the window
+  end)
+  after_each(function() F.clear() end)
+
+  it("is absent with nothing unsent", function()
+    C.load(nil, H.collectorDeps())
+    assert.are.same({ "翻訳オン", "翻訳を報告", "不具合・提案を報告", "設定", "このボタンを隠す" }, texts())
+  end)
+
+  it("shows the unsent count before the settings entry from one line up, and opens the send window", function()
+    C.load(nil, H.collectorDeps())
+    record(1)
+    assert.are.same({ "翻訳オン", "翻訳を報告", "不具合・提案を報告", "集めた英語を送る（1）", "設定",
+      "このボタンを隠す" }, texts())
+    record(11, 3000)
+    local items = WFJ.MinimapButton.items()
+    assert.are.equal("集めた英語を送る（12）", items[4].text)
+    local opened
+    WFJ.CollectorSendWindow = { open = function(all) opened = all end }
+    items[4].action()
+    assert.is_false(opened)
+  end)
+
+  it("is English with the reveal key held or translation off", function()
+    C.load(nil, H.collectorDeps())
+    record(3)
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    assert.are.equal("Send collected English (3)", WFJ.MinimapButton.items()[4].text)
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
+    WFJ.Settings.set("enabled", false)
+    assert.are.equal("Send collected English (3)", WFJ.MinimapButton.items()[4].text)
+    WFJ.Settings.set("enabled", true)
+  end)
+
+  it("a collector that cannot answer leaves the menu as it was", function()
+    WFJ.Collector.status = function() error("broken") end
+    assert.are.equal(5, #WFJ.MinimapButton.items())
+  end)
+
+  it("the menu widens for a label longer than its least width", function()
+    WFJ.Collector.status = function() return { unsent = 1234567, readOnly = false } end
+    local b = _G.WFJMinimapButton
+    b:click("RightButton")
+    local m = _G.WFJMinimapMenu
+    local widest = 0
+    for _, row in ipairs(m.rows) do
+      if row:IsShown() then widest = math.max(widest, row.text:GetStringWidth()) end
+    end
+    assert.is_true(widest + 48 > WFJ.MinimapButton.MENU_WIDTH)
+    assert.are.equal(math.ceil(widest + 48), m:GetWidth())
+  end)
+
+  it("is absent for a collector file from a newer version", function()
+    C.load({ version = 2, entries = { ["quest:1:title"] = { t = "quest", i = 1, f = "title",
+      h = "0123456789abcdef", e = "Old", b = 1 } }, builds = { "1.15.9.69722" } }, H.collectorDeps())
+    assert.are.equal(5, #WFJ.MinimapButton.items())
+  end)
+end)
+
 describe("the addon dropdown entry", function()
   it("the TOC declares AddonCompartmentFunc and its hover handlers, all defined in Main.lua", function()
     local toc = H.readFile("addon/WoWForeverJapanese/WoWForeverJapanese.toc")

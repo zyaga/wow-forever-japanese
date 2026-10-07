@@ -433,7 +433,14 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
     local isLogin, isReload = name, ... -- PLAYER_ENTERING_WORLD(isInitialLogin, isReloadingUi)
     if isLogin or isReload then WFJ.RevealBinding.apply() end -- again once bindings are loaded
     WFJ.Modifier.refresh()
-    WFJ.Collector.disclose() -- once per dump, after the chat frame is up
+    local disclosed = WFJ.Collector.disclose() -- once per dump, after the chat frame is up
+    -- never on a zone change; time() is the client's clock [verified: forever-ui-1.60.1.70170
+    -- blizzard_friendsframe/camelot/friendsframe.lua:1456]
+    if isLogin or isReload then
+      step("collectorremind", function()
+        WFJ.CollectorRemind.run(WFJ_DB, time(), WFJ.CollectorReminder.open, disclosed)
+      end)
+    end
     -- every addon has loaded by now: another one (BugGrabber) may have replaced our error handler; and the player's
     -- name is known, so an error caught earlier loses it
     WFJ.ErrorLog.checkOurs(geterrorhandler)

@@ -10,7 +10,7 @@ local TAIL = {
   "Core/Modifier.lua",
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
-  "Core/Collector.lua", "Core/CollectorSend.lua",
+  "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
   "Core/BugReport.lua",
   "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
@@ -65,7 +65,7 @@ local TAIL = {
   "UI/Popups.lua",
   "UI/Scan.lua",
   "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/FixWindow.lua",
-  "UI/CollectorSendWindow.lua", "UI/ReportWindow.lua", "UI/MinimapButton.lua",
+  "UI/CollectorSendWindow.lua", "UI/CollectorReminder.lua", "UI/ReportWindow.lua", "UI/MinimapButton.lua",
   "UI/RevealBinding.lua",
   "UI/AddonListButton.lua",
   "UI/Options.lua", "UI/Slash.lua", "Main.lua", -- the settings pages' modules

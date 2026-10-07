@@ -13,6 +13,7 @@
 --   Collector.fingerprints(raw, player, masked) → each candidate's h1, inconclusive: the quest live check
 --     (ADR-019); `masked`: digit runs `#` first, for a quest line filled from live values
 --   Collector.recordNpc(guid, name) · Collector.disclose() · Collector.status() · Collector.clear()
+--   Collector.unsentCount() → #Collector.pending() without building or sorting the list
 --   Collector.pending(all) → the entries a send carries, sorted by key: { { key, entry }, … } (unsent ones, or every
 --     one with `all`), leaving out lines that ship in Japanese now; and how many were left out for that
 --   Collector.markSent(list) · list = { { key = …, h = … }, … }: the player sent these (the `sent` map)
@@ -69,6 +70,10 @@ end
 
 WFJ.Settings.define{ id = "collector.enabled", kind = "boolean", default = true,
   label = "Record English for future translations", ja = "今後の翻訳のために英語テキストを記録する" }
+-- the once-a-day chat line that unsent English is waiting (Core/CollectorRemind)
+WFJ.Settings.define{ id = "collector.remind", kind = "boolean", default = true,
+  label = "Remind me when collected English is waiting to be sent",
+  ja = "集めた英語が送信待ちのときに知らせる" }
 
 -- ── Text ───────────────────────────────────────────────────────────────────
 
@@ -598,7 +603,7 @@ function Collector.status()
   local n, unsent = 0, 0
   if db and type(db.entries) == "table" then
     for _ in pairs(db.entries) do n = n + 1 end
-    unsent = #Collector.pending()
+    unsent = Collector.unsentCount()
   end
   return {
     enabled = deps ~= nil and deps.enabled() or false,
@@ -656,6 +661,21 @@ function Collector.pending(all)
   end
   table.sort(out, function(x, y) return x.key < y.key end)
   return out, left, leftList
+end
+
+-- How many entries a send would carry now: Collector.pending()'s length without building or sorting the list
+-- (the minimap menu asks on every open). → number
+function Collector.unsentCount()
+  if not db or not deps or readOnly or type(db.entries) ~= "table" then return 0 end
+  local sent = type(db.sent) == "table" and db.sent or {}
+  local n = 0
+  for key, e in pairs(db.entries) do
+    if sent[key] ~= e.h then
+      local ok, yes = pcall(shipped, e.t, e.i, e.f, e.e, tonumber(e.h:sub(1, 8), 16), { e.h })
+      if not (ok and yes) then n = n + 1 end
+    end
+  end
+  return n
 end
 
 -- Whether the saved file on disk holds this entry with this hash: it was in the file when the addon loaded it.

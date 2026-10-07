@@ -291,6 +291,15 @@ Text.T = {
   },
   ["minimap.enabled"] = { en = "Translation on", ja = "翻訳オン" },
   ["minimap.hide"] = { en = "Hide this button", ja = "このボタンを隠す" },
+  ["reminder.title"] = { en = "Untranslated English", ja = "未翻訳の英語" },
+  ["reminder.saved"] = { en = "While you played, the addon collected %s English lines it has no translation for.",
+    ja = "プレイ中に、まだ翻訳のない英語を%s行集めました。" },
+  ["reminder.ask"] = { en = "Send them in and they will be translated in a future update.",
+    ja = "送っていただければ、今後のアップデートで翻訳されます。" },
+  ["reminder.send"] = { en = "Send English", ja = "英語を送る" },
+  ["reminder.later"] = { en = "Later", ja = "あとで" },
+  ["reminder.stop"] = { en = "Don't remind me again", ja = "今後は知らせない" },
+  ["minimap.sendEnglish"] = { en = "Send collected English (%s)", ja = "集めた英語を送る（%s）" },
 }
 
 -- Slash reference on the About page (English: it is the literal grammar, like the chat output).
