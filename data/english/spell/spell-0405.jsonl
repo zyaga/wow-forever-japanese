@@ -1,25 +1,25 @@
-{"id": 405092, "field": "name", "en": "Underwater Pressure", "hash": "eaebf484ffdcb0da", "src": "db2@1.60.1.70170"}
-{"id": 405092, "field": "description", "en": "Underwater breath is reduced by  $s1%.", "hash": "bc9ab497bee1b380", "src": "db2@1.60.1.70170"}
-{"id": 405092, "field": "aura", "en": "You're struggling for air. Underwater breath is reduced by ${$abs($s1)}%.", "hash": "71bf4264de53521f", "src": "db2@1.60.1.70170"}
-{"id": 405168, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70170"}
-{"id": 405194, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70170"}
-{"id": 405303, "field": "name", "en": "Duel The Swordsman", "hash": "f1ac07b5d77d17b9", "src": "db2@1.60.1.70170"}
-{"id": 405321, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70170"}
-{"id": 405322, "field": "name", "en": "Elwynn - Defeated Wandering Swordsman", "hash": "02187d7b8f5f89d4", "src": "db2@1.60.1.70170"}
-{"id": 405324, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70170"}
-{"id": 405325, "field": "name", "en": "Elwynn - Wandering Swordsman Reward", "hash": "3d19926c5f21c3bd", "src": "db2@1.60.1.70170"}
-{"id": 405325, "field": "description", "en": "Dig up the buried cache at the marked location", "hash": "9cbb92576feabe92", "src": "db2@1.60.1.70170"}
-{"id": 405360, "field": "name", "en": "Torrential Downpour", "hash": "79e3b9234db1aa37", "src": "db2@1.60.1.70170"}
-{"id": 405663, "field": "name", "en": "Greater Ice Barrier", "hash": "667941e8d895f21f", "src": "db2@1.60.1.70170"}
-{"id": 405663, "field": "aura", "en": "Protected by nearby elemental energies.", "hash": "be4f2e9b67352b1f", "src": "db2@1.60.1.70170"}
+{"id": 405092, "field": "name", "en": "Underwater Pressure", "hash": "eaebf484ffdcb0da", "src": "db2@1.60.1.70245"}
+{"id": 405092, "field": "description", "en": "Underwater breath is reduced by  $s1%.", "hash": "bc9ab497bee1b380", "src": "db2@1.60.1.70245"}
+{"id": 405092, "field": "aura", "en": "You're struggling for air. Underwater breath is reduced by ${$abs($s1)}%.", "hash": "71bf4264de53521f", "src": "db2@1.60.1.70245"}
+{"id": 405168, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70245"}
+{"id": 405194, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70245"}
+{"id": 405303, "field": "name", "en": "Duel The Swordsman", "hash": "f1ac07b5d77d17b9", "src": "db2@1.60.1.70245"}
+{"id": 405321, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70245"}
+{"id": 405322, "field": "name", "en": "Elwynn - Defeated Wandering Swordsman", "hash": "02187d7b8f5f89d4", "src": "db2@1.60.1.70245"}
+{"id": 405324, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70245"}
+{"id": 405325, "field": "name", "en": "Elwynn - Wandering Swordsman Reward", "hash": "3d19926c5f21c3bd", "src": "db2@1.60.1.70245"}
+{"id": 405325, "field": "description", "en": "Dig up the buried cache at the marked location", "hash": "9cbb92576feabe92", "src": "db2@1.60.1.70245"}
+{"id": 405360, "field": "name", "en": "Torrential Downpour", "hash": "79e3b9234db1aa37", "src": "db2@1.60.1.70245"}
+{"id": 405663, "field": "name", "en": "Greater Ice Barrier", "hash": "667941e8d895f21f", "src": "db2@1.60.1.70245"}
+{"id": 405663, "field": "aura", "en": "Protected by nearby elemental energies.", "hash": "be4f2e9b67352b1f", "src": "db2@1.60.1.70245"}
 {"id": 405667, "field": "name", "en": "Create Test Ring Test", "hash": "f59cde2016bcff0f", "src": "db2@1.60.1.70124"}
 {"id": 405667, "field": "description", "en": "Create An Item", "hash": "78c2a138c3fbc452", "src": "db2@1.60.1.70124"}
-{"id": 405688, "field": "name", "en": "Riptide Bubbles", "hash": "21ccc52edc3e188f", "src": "db2@1.60.1.70170"}
-{"id": 405688, "field": "aura", "en": "Movement speed increased by rapid underwater currents.", "hash": "8cfc822e999e413b", "src": "db2@1.60.1.70170"}
-{"id": 405695, "field": "name", "en": "Riptide Bubbles", "hash": "21ccc52edc3e188f", "src": "db2@1.60.1.70170"}
-{"id": 405717, "field": "name", "en": "Riptide Bubbles", "hash": "21ccc52edc3e188f", "src": "db2@1.60.1.70170"}
-{"id": 405951, "field": "name", "en": "Whirlpool", "hash": "abac7641ef17d1bf", "src": "db2@1.60.1.70170"}
-{"id": 405953, "field": "name", "en": "Torrential Downpour", "hash": "79e3b9234db1aa37", "src": "db2@1.60.1.70170"}
-{"id": 405953, "field": "aura", "en": "$s1 damage every $t1 seconds.", "hash": "ef5a123fe7014561", "src": "db2@1.60.1.70170"}
-{"id": 405998, "field": "name", "en": "Bubble Beam", "hash": "083ae1ef1d147118", "src": "db2@1.60.1.70170"}
-{"id": 405999, "field": "name", "en": "Bubble Beam", "hash": "083ae1ef1d147118", "src": "db2@1.60.1.70170"}
+{"id": 405688, "field": "name", "en": "Riptide Bubbles", "hash": "21ccc52edc3e188f", "src": "db2@1.60.1.70245"}
+{"id": 405688, "field": "aura", "en": "Movement speed increased by rapid underwater currents.", "hash": "8cfc822e999e413b", "src": "db2@1.60.1.70245"}
+{"id": 405695, "field": "name", "en": "Riptide Bubbles", "hash": "21ccc52edc3e188f", "src": "db2@1.60.1.70245"}
+{"id": 405717, "field": "name", "en": "Riptide Bubbles", "hash": "21ccc52edc3e188f", "src": "db2@1.60.1.70245"}
+{"id": 405951, "field": "name", "en": "Whirlpool", "hash": "abac7641ef17d1bf", "src": "db2@1.60.1.70245"}
+{"id": 405953, "field": "name", "en": "Torrential Downpour", "hash": "79e3b9234db1aa37", "src": "db2@1.60.1.70245"}
+{"id": 405953, "field": "aura", "en": "$s1 damage every $t1 seconds.", "hash": "ef5a123fe7014561", "src": "db2@1.60.1.70245"}
+{"id": 405998, "field": "name", "en": "Bubble Beam", "hash": "083ae1ef1d147118", "src": "db2@1.60.1.70245"}
+{"id": 405999, "field": "name", "en": "Bubble Beam", "hash": "083ae1ef1d147118", "src": "db2@1.60.1.70245"}

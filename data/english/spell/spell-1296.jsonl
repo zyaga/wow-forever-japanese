@@ -1,64 +1,64 @@
-{"id": 1296017, "field": "name", "en": "Comprehend Scroll", "hash": "63c3d078da437095", "src": "db2@1.60.1.70170"}
-{"id": 1296017, "field": "description", "en": "Decipher an untranslated scroll.", "hash": "2551fb8b19248831", "src": "db2@1.60.1.70170"}
-{"id": 1296059, "field": "name", "en": "Rope", "hash": "0b1a264203ff7e51", "src": "db2@1.60.1.70170"}
-{"id": 1296059, "field": "description", "en": "The Kodo casts a spell on the Player to give quest credit.", "hash": "9e19613e84dc4bf9", "src": "db2@1.60.1.70170"}
-{"id": 1296059, "field": "aura", "en": "Kombobulator is attracting a Kodo.", "hash": "2806490328fa7896", "src": "db2@1.60.1.70170"}
-{"id": 1296072, "field": "name", "en": "Caught Sheep", "hash": "bf74127d566564a9", "src": "db2@1.60.1.70170"}
-{"id": 1296072, "field": "description", "en": "The sheep casts a spell on the player to grant quest credit.", "hash": "8abb825a7b91a1a0", "src": "db2@1.60.1.70170"}
-{"id": 1296072, "field": "aura", "en": "The Escaped Sheep is following you.", "hash": "6a41c6550d728fc6", "src": "db2@1.60.1.70170"}
-{"id": 1296076, "field": "name", "en": "Caught Sheep", "hash": "bf74127d566564a9", "src": "db2@1.60.1.70170"}
-{"id": 1296076, "field": "description", "en": "Cast upon interacting with the sheep, this causes the sheep to set off an action trigger to make itself uninteractable.", "hash": "9e4ead2f4b313a96", "src": "db2@1.60.1.70170"}
-{"id": 1296140, "field": "name", "en": "Sheep Caught!", "hash": "515418391fc28502", "src": "db2@1.60.1.70170"}
-{"id": 1296141, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
-{"id": 1296174, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
-{"id": 1296175, "field": "name", "en": "Kill Credit (DNT)_Bunny", "hash": "1aeb26ef2cca540f", "src": "db2@1.60.1.70170"}
-{"id": 1296202, "field": "name", "en": "Rat Familiar", "hash": "5298f7e9aaf23d50", "src": "db2@1.60.1.70170"}
-{"id": 1296202, "field": "description", "en": "Summon a faithful rat familiar for $d. Its presence increases your Intellect by $s2.", "hash": "8ee19c09be61662f", "src": "db2@1.60.1.70170"}
-{"id": 1296202, "field": "aura", "en": "Your familiar increases your Intellect by $s2.", "hash": "bba5b326b769ede5", "src": "db2@1.60.1.70170"}
-{"id": 1296223, "field": "name", "en": "Chilled", "hash": "ba3887334928867c", "src": "db2@1.60.1.70170"}
-{"id": 1296223, "field": "description", "en": "Target's movement slowed by $s2% and time between attacks increased by $s1% for $d.", "hash": "ca73b1e6b68a27a9", "src": "db2@1.60.1.70170"}
-{"id": 1296223, "field": "aura", "en": "Movement slowed by $s2% and time between attacks increased by $s1%.", "hash": "7449b15be399ade4", "src": "db2@1.60.1.70170"}
-{"id": 1296225, "field": "name", "en": "Imbue Chillknife", "hash": "37d0f4b5cf9089f8", "src": "db2@1.60.1.70170"}
-{"id": 1296225, "field": "description", "en": "Imbue a dagger with magic for 1 hour, causing it to occasionally chill foes when hit.", "hash": "208d06bd8bf0d192", "src": "db2@1.60.1.70170"}
-{"id": 1296317, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70170"}
-{"id": 1296330, "field": "name", "en": "Transplanar Dislocation", "hash": "860b625cc7a87b6a", "src": "db2@1.60.1.70170"}
-{"id": 1296330, "field": "aura", "en": "You are now inside the emerald nightmare", "hash": "0f783593b2dda866", "src": "db2@1.60.1.70170"}
-{"id": 1296339, "field": "name", "en": "Portal to Valanaar", "hash": "f5a6aaf8e265a8e0", "src": "db2@1.60.1.70170"}
-{"id": 1296340, "field": "name", "en": "Test Dissolve Teleport", "hash": "353a4114868740f6", "src": "db2@1.60.1.70170"}
-{"id": 1296344, "field": "name", "en": "Zephras Cosmetic Vortex", "hash": "0a90b642fb5fa346", "src": "db2@1.60.1.70170"}
-{"id": 1296344, "field": "aura", "en": "Gathering data...", "hash": "6e783355e506eb0b", "src": "db2@1.60.1.70170"}
-{"id": 1296347, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70170"}
-{"id": 1296348, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70170"}
-{"id": 1296349, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70170"}
-{"id": 1296350, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70170"}
-{"id": 1296351, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70170"}
-{"id": 1296353, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70170"}
-{"id": 1296354, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70170"}
-{"id": 1296416, "field": "name", "en": "Emerald Lightning", "hash": "e8202b6b7e00bf66", "src": "db2@1.60.1.70170"}
-{"id": 1296416, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, causing Nature damage to each.", "hash": "91b98b1ace781456", "src": "db2@1.60.1.70170"}
-{"id": 1296451, "field": "name", "en": "[DNT] Shen'dorei Windwell", "hash": "2b8ad1a030dc8417", "src": "db2@1.60.1.70170"}
-{"id": 1296534, "field": "name", "en": "Summon Forsaken Charger", "hash": "30cd42e30db5f320", "src": "db2@1.60.1.70170"}
-{"id": 1296534, "field": "description", "en": "Summons a Forsaken Charger, which serves as a mount.", "hash": "cdd5e565c30c75b0", "src": "db2@1.60.1.70170"}
-{"id": 1296534, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1296537, "field": "name", "en": "Summon Forsaken Charger", "hash": "30cd42e30db5f320", "src": "db2@1.60.1.70170"}
-{"id": 1296564, "field": "name", "en": "Lichbane", "hash": "05f4cee2b05c4a0c", "src": "db2@1.60.1.70170"}
-{"id": 1296564, "field": "description", "en": "Stuns target Undead for $d.", "hash": "b0010e46494d452f", "src": "db2@1.60.1.70170"}
-{"id": 1296564, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
-{"id": 1296596, "field": "name", "en": "Arcane Resistance", "hash": "3ce7bd3182cba324", "src": "db2@1.60.1.70170"}
-{"id": 1296596, "field": "description", "en": "You have $RA resistance to Arcane, reducing average Arcane damage taken and chance to be hit by Arcane spells by ${$RA*75/($PL*5)}.2%.", "hash": "9b16228c1d0a4e1f", "src": "db2@1.60.1.70170"}
-{"id": 1296597, "field": "name", "en": "Fire Resistance", "hash": "b61e89e5e9c15047", "src": "db2@1.60.1.70170"}
-{"id": 1296597, "field": "description", "en": "You have $RF resistance to Fire, reducing average Fire damage taken and chance to be hit by Fire spells by ${$RF*75/($PL*5)}.2%.", "hash": "8092f0e866a71df5", "src": "db2@1.60.1.70170"}
-{"id": 1296598, "field": "name", "en": "Frost Resistance", "hash": "fa580288c5627849", "src": "db2@1.60.1.70170"}
-{"id": 1296598, "field": "description", "en": "You have $RFR resistance to Frost, reducing average Frost damage taken and chance to be hit by Frost spells by ${$RFR*75/($PL*5)}.2%.", "hash": "348935c32a997a5f", "src": "db2@1.60.1.70170"}
-{"id": 1296599, "field": "name", "en": "Nature Resistance", "hash": "1cfc8a7066590e09", "src": "db2@1.60.1.70170"}
-{"id": 1296599, "field": "description", "en": "You have $RN resistance to Nature, reducing average Nature damage taken and chance to be hit by Nature spells by ${$RN*75/($PL*5)}.2%.", "hash": "0e859b6ebc37e5e6", "src": "db2@1.60.1.70170"}
-{"id": 1296601, "field": "name", "en": "Shadow Resistance", "hash": "5a9cbecf3c70058d", "src": "db2@1.60.1.70170"}
-{"id": 1296601, "field": "description", "en": "You have $RS resistance to Shadow, reducing average Shadow damage taken and chance to be hit by Shadow spells by ${$RS*75/($PL*5)}.2%.", "hash": "c2282981f2c38d50", "src": "db2@1.60.1.70170"}
-{"id": 1296663, "field": "name", "en": "One-Handed Swords", "hash": "d3a073af08003389", "src": "db2@1.60.1.70170"}
-{"id": 1296663, "field": "description", "en": "You have $sk43/$<sc> skill in $@spellname1296663.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "315c85dfc113990d", "src": "db2@1.60.1.70170"}
-{"id": 1296664, "field": "name", "en": "Irresistible Scent", "hash": "2a175d77a4875a07", "src": "db2@1.60.1.70170"}
-{"id": 1296664, "field": "description", "en": "Charm target Furbolg for $d. Only works on targets not in combat.", "hash": "ea87f6cd92872ca8", "src": "db2@1.60.1.70170"}
-{"id": 1296664, "field": "aura", "en": "Charmed.", "hash": "d83f67a36f817254", "src": "db2@1.60.1.70170"}
-{"id": 1296730, "field": "name", "en": "Blunderflame", "hash": "c3476b195b5310f5", "src": "db2@1.60.1.70170"}
-{"id": 1296730, "field": "description", "en": "Blunderflame the target for $s1 Fire damage.", "hash": "a0efa886d752acba", "src": "db2@1.60.1.70170"}
-{"id": 1296959, "field": "name", "en": "Lava Eruption", "hash": "7d93fcce09608f01", "src": "db2@1.60.1.70170"}
+{"id": 1296017, "field": "name", "en": "Comprehend Scroll", "hash": "63c3d078da437095", "src": "db2@1.60.1.70245"}
+{"id": 1296017, "field": "description", "en": "Decipher an untranslated scroll.", "hash": "2551fb8b19248831", "src": "db2@1.60.1.70245"}
+{"id": 1296059, "field": "name", "en": "Rope", "hash": "0b1a264203ff7e51", "src": "db2@1.60.1.70245"}
+{"id": 1296059, "field": "description", "en": "The Kodo casts a spell on the Player to give quest credit.", "hash": "9e19613e84dc4bf9", "src": "db2@1.60.1.70245"}
+{"id": 1296059, "field": "aura", "en": "Kombobulator is attracting a Kodo.", "hash": "2806490328fa7896", "src": "db2@1.60.1.70245"}
+{"id": 1296072, "field": "name", "en": "Caught Sheep", "hash": "bf74127d566564a9", "src": "db2@1.60.1.70245"}
+{"id": 1296072, "field": "description", "en": "The sheep casts a spell on the player to grant quest credit.", "hash": "8abb825a7b91a1a0", "src": "db2@1.60.1.70245"}
+{"id": 1296072, "field": "aura", "en": "The Escaped Sheep is following you.", "hash": "6a41c6550d728fc6", "src": "db2@1.60.1.70245"}
+{"id": 1296076, "field": "name", "en": "Caught Sheep", "hash": "bf74127d566564a9", "src": "db2@1.60.1.70245"}
+{"id": 1296076, "field": "description", "en": "Cast upon interacting with the sheep, this causes the sheep to set off an action trigger to make itself uninteractable.", "hash": "9e4ead2f4b313a96", "src": "db2@1.60.1.70245"}
+{"id": 1296140, "field": "name", "en": "Sheep Caught!", "hash": "515418391fc28502", "src": "db2@1.60.1.70245"}
+{"id": 1296141, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1296174, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1296175, "field": "name", "en": "Kill Credit (DNT)_Bunny", "hash": "1aeb26ef2cca540f", "src": "db2@1.60.1.70245"}
+{"id": 1296202, "field": "name", "en": "Rat Familiar", "hash": "5298f7e9aaf23d50", "src": "db2@1.60.1.70245"}
+{"id": 1296202, "field": "description", "en": "Summon a faithful rat familiar for $d. Its presence increases your Intellect by $s2.", "hash": "8ee19c09be61662f", "src": "db2@1.60.1.70245"}
+{"id": 1296202, "field": "aura", "en": "Your familiar increases your Intellect by $s2.", "hash": "bba5b326b769ede5", "src": "db2@1.60.1.70245"}
+{"id": 1296223, "field": "name", "en": "Chilled", "hash": "ba3887334928867c", "src": "db2@1.60.1.70245"}
+{"id": 1296223, "field": "description", "en": "Target's movement slowed by $s2% and time between attacks increased by $s1% for $d.", "hash": "ca73b1e6b68a27a9", "src": "db2@1.60.1.70245"}
+{"id": 1296223, "field": "aura", "en": "Movement slowed by $s2% and time between attacks increased by $s1%.", "hash": "7449b15be399ade4", "src": "db2@1.60.1.70245"}
+{"id": 1296225, "field": "name", "en": "Imbue Chillknife", "hash": "37d0f4b5cf9089f8", "src": "db2@1.60.1.70245"}
+{"id": 1296225, "field": "description", "en": "Imbue a dagger with magic for 1 hour, causing it to occasionally chill foes when hit.", "hash": "208d06bd8bf0d192", "src": "db2@1.60.1.70245"}
+{"id": 1296317, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70245"}
+{"id": 1296330, "field": "name", "en": "Transplanar Dislocation", "hash": "860b625cc7a87b6a", "src": "db2@1.60.1.70245"}
+{"id": 1296330, "field": "aura", "en": "You are now inside the emerald nightmare", "hash": "0f783593b2dda866", "src": "db2@1.60.1.70245"}
+{"id": 1296339, "field": "name", "en": "Portal to Valanaar", "hash": "f5a6aaf8e265a8e0", "src": "db2@1.60.1.70245"}
+{"id": 1296340, "field": "name", "en": "Test Dissolve Teleport", "hash": "353a4114868740f6", "src": "db2@1.60.1.70245"}
+{"id": 1296344, "field": "name", "en": "Zephras Cosmetic Vortex", "hash": "0a90b642fb5fa346", "src": "db2@1.60.1.70245"}
+{"id": 1296344, "field": "aura", "en": "Gathering data...", "hash": "6e783355e506eb0b", "src": "db2@1.60.1.70245"}
+{"id": 1296347, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70245"}
+{"id": 1296348, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70245"}
+{"id": 1296349, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70245"}
+{"id": 1296350, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70245"}
+{"id": 1296351, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70245"}
+{"id": 1296353, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70245"}
+{"id": 1296354, "field": "name", "en": "Emboldened Training", "hash": "46215220c10988df", "src": "db2@1.60.1.70245"}
+{"id": 1296416, "field": "name", "en": "Emerald Lightning", "hash": "e8202b6b7e00bf66", "src": "db2@1.60.1.70245"}
+{"id": 1296416, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, causing Nature damage to each.", "hash": "91b98b1ace781456", "src": "db2@1.60.1.70245"}
+{"id": 1296451, "field": "name", "en": "[DNT] Shen'dorei Windwell", "hash": "2b8ad1a030dc8417", "src": "db2@1.60.1.70245"}
+{"id": 1296534, "field": "name", "en": "Summon Forsaken Charger", "hash": "30cd42e30db5f320", "src": "db2@1.60.1.70245"}
+{"id": 1296534, "field": "description", "en": "Summons a Forsaken Charger, which serves as a mount.", "hash": "cdd5e565c30c75b0", "src": "db2@1.60.1.70245"}
+{"id": 1296534, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1296537, "field": "name", "en": "Summon Forsaken Charger", "hash": "30cd42e30db5f320", "src": "db2@1.60.1.70245"}
+{"id": 1296564, "field": "name", "en": "Lichbane", "hash": "05f4cee2b05c4a0c", "src": "db2@1.60.1.70245"}
+{"id": 1296564, "field": "description", "en": "Stuns target Undead for $d.", "hash": "b0010e46494d452f", "src": "db2@1.60.1.70245"}
+{"id": 1296564, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
+{"id": 1296596, "field": "name", "en": "Arcane Resistance", "hash": "3ce7bd3182cba324", "src": "db2@1.60.1.70245"}
+{"id": 1296596, "field": "description", "en": "You have $RA resistance to Arcane, reducing average Arcane damage taken and chance to be hit by Arcane spells by ${$RA*75/($PL*5)}.2%.", "hash": "9b16228c1d0a4e1f", "src": "db2@1.60.1.70245"}
+{"id": 1296597, "field": "name", "en": "Fire Resistance", "hash": "b61e89e5e9c15047", "src": "db2@1.60.1.70245"}
+{"id": 1296597, "field": "description", "en": "You have $RF resistance to Fire, reducing average Fire damage taken and chance to be hit by Fire spells by ${$RF*75/($PL*5)}.2%.", "hash": "8092f0e866a71df5", "src": "db2@1.60.1.70245"}
+{"id": 1296598, "field": "name", "en": "Frost Resistance", "hash": "fa580288c5627849", "src": "db2@1.60.1.70245"}
+{"id": 1296598, "field": "description", "en": "You have $RFR resistance to Frost, reducing average Frost damage taken and chance to be hit by Frost spells by ${$RFR*75/($PL*5)}.2%.", "hash": "348935c32a997a5f", "src": "db2@1.60.1.70245"}
+{"id": 1296599, "field": "name", "en": "Nature Resistance", "hash": "1cfc8a7066590e09", "src": "db2@1.60.1.70245"}
+{"id": 1296599, "field": "description", "en": "You have $RN resistance to Nature, reducing average Nature damage taken and chance to be hit by Nature spells by ${$RN*75/($PL*5)}.2%.", "hash": "0e859b6ebc37e5e6", "src": "db2@1.60.1.70245"}
+{"id": 1296601, "field": "name", "en": "Shadow Resistance", "hash": "5a9cbecf3c70058d", "src": "db2@1.60.1.70245"}
+{"id": 1296601, "field": "description", "en": "You have $RS resistance to Shadow, reducing average Shadow damage taken and chance to be hit by Shadow spells by ${$RS*75/($PL*5)}.2%.", "hash": "c2282981f2c38d50", "src": "db2@1.60.1.70245"}
+{"id": 1296663, "field": "name", "en": "One-Handed Swords", "hash": "d3a073af08003389", "src": "db2@1.60.1.70245"}
+{"id": 1296663, "field": "description", "en": "You have $sk43/$<sc> skill in $@spellname1296663.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "315c85dfc113990d", "src": "db2@1.60.1.70245"}
+{"id": 1296664, "field": "name", "en": "Irresistible Scent", "hash": "2a175d77a4875a07", "src": "db2@1.60.1.70245"}
+{"id": 1296664, "field": "description", "en": "Charm target Furbolg for $d. Only works on targets not in combat.", "hash": "ea87f6cd92872ca8", "src": "db2@1.60.1.70245"}
+{"id": 1296664, "field": "aura", "en": "Charmed.", "hash": "d83f67a36f817254", "src": "db2@1.60.1.70245"}
+{"id": 1296730, "field": "name", "en": "Blunderflame", "hash": "c3476b195b5310f5", "src": "db2@1.60.1.70245"}
+{"id": 1296730, "field": "description", "en": "Blunderflame the target for $s1 Fire damage.", "hash": "a0efa886d752acba", "src": "db2@1.60.1.70245"}
+{"id": 1296959, "field": "name", "en": "Lava Eruption", "hash": "7d93fcce09608f01", "src": "db2@1.60.1.70245"}

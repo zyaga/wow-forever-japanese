@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("area", {
   [92401] = { "Ruins of LordaeronでのEdward Heartweaverの失踪を調べる。", 0x5b830c47, "." },
+  [92434] = { "Lordamere Lake沿いにDalaranへ入る道を見つける", 0x74dbabf8, "." },
   [92464] = { "荒れ狂う風についてさらに調べる。", 0x55c782d9, "." },
   [92529] = { "Falaath Villageの入り口にいるMissionary Jasaanと話す", 0xa342318a, "." },
 })

@@ -1,131 +1,131 @@
-{"id": 402000, "field": "name", "en": "Soul Warding", "hash": "6b78bfaeaaab8d26", "src": "db2@1.60.1.70170"}
-{"id": 402000, "field": "description", "en": "Reduces the cooldown on your Power Word: Shield spell by ${$m1/-1000} sec and reduces its mana cost by $s2%.", "hash": "91cc52b26caac282", "src": "db2@1.60.1.70170"}
-{"id": 402004, "field": "name", "en": "Pain Suppression", "hash": "539a074323a528e1", "src": "db2@1.60.1.70170"}
-{"id": 402004, "field": "description", "en": "Instantly reduces all damage taken by a friendly target by $s1% and increases resistance to Dispel mechanics by $s2% for $d.", "hash": "f134f0eb2ec8defe", "src": "db2@1.60.1.70170"}
-{"id": 402004, "field": "aura", "en": "All damage taken reduced by $s1% and resistance to Dispel mechanics increased by $s2%.", "hash": "2ab9e2e530007b91", "src": "db2@1.60.1.70170"}
-{"id": 402010, "field": "name", "en": "Polymorph Cured", "hash": "1e22cc041b1a488a", "src": "db2@1.60.1.70170"}
-{"id": 402010, "field": "description", "en": "Transformed back into its normal form.", "hash": "55be6c210fe7b6bd", "src": "db2@1.60.1.70170"}
-{"id": 402010, "field": "aura", "en": "Transformed back into its normal form.", "hash": "55be6c210fe7b6bd", "src": "db2@1.60.1.70170"}
-{"id": 402069, "field": "name", "en": "Cut-throat Ambush", "hash": "dcfb187597ab5a56", "src": "db2@1.60.1.70170"}
-{"id": 402174, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70170"}
-{"id": 402174, "field": "description", "en": "Launches a volley of holy light at the target, causing $402284s1 Holy damage to an enemy, or $402289s1 healing to an ally, instantly and every $402261t2 sec for $402261d.", "hash": "e48f2bb6444cd89c", "src": "db2@1.60.1.70170"}
-{"id": 402261, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70170"}
-{"id": 402261, "field": "description", "en": "Deals Holy damage every $t2 sec.", "hash": "703b6482d69e198b", "src": "db2@1.60.1.70170"}
-{"id": 402265, "field": "name", "en": "Learning", "hash": "ed4847072cb92a78", "src": "db2@1.60.1.70170"}
-{"id": 402277, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70170"}
-{"id": 402277, "field": "description", "en": "Healing every $t2 sec for $d.", "hash": "032d56b0f6b6fb7e", "src": "db2@1.60.1.70170"}
-{"id": 402284, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70170"}
-{"id": 402284, "field": "description", "en": "Dealing $s1 Holy damage every $402261t2 sec.", "hash": "10e97523d4ad52f7", "src": "db2@1.60.1.70170"}
-{"id": 402289, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70170"}
-{"id": 402289, "field": "description", "en": "Healing for $s1 every $402277t2 sec. for $402277d.", "hash": "dcdbf572a496c621", "src": "db2@1.60.1.70170"}
-{"id": 402308, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70170"}
-{"id": 402308, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70170"}
-{"id": 402311, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70170"}
-{"id": 402311, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70170"}
-{"id": 402319, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70170"}
-{"id": 402319, "field": "description", "en": "Combine 6 Azora Apprentice Notes to create a new engraving recipe.", "hash": "d52540109976f7a1", "src": "db2@1.60.1.70170"}
-{"id": 402362, "field": "name", "en": "White", "hash": "0534370fd4ceb206", "src": "db2@1.60.1.70170"}
-{"id": 402362, "field": "aura", "en": "Healing done increased by $s1%.", "hash": "d76b0fc9601b4af4", "src": "db2@1.60.1.70170"}
-{"id": 402368, "field": "name", "en": "Black", "hash": "951b57d7a16dd14d", "src": "db2@1.60.1.70170"}
-{"id": 402368, "field": "aura", "en": "Spell damage done increased by $s1%.", "hash": "b9096e71d7de80bc", "src": "db2@1.60.1.70170"}
-{"id": 402392, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70170"}
-{"id": 402668, "field": "name", "en": "Vampiric Touch", "hash": "7362d4c14d98cfae", "src": "db2@1.60.1.70170"}
-{"id": 402668, "field": "description", "en": "Applies your Vampiric Embrace talent to your target, causes ${$<damagepower>*$m2/100*5} Shadow damage over $d to your target, and causes all party members to gain mana equal to $s1% of any Shadow spell damage you deal to the target.", "hash": "0fe3e73d1b9052cf", "src": "db2@1.60.1.70170"}
-{"id": 402668, "field": "aura", "en": "$w1 Shadow damage every $t1 seconds. Priest's party gains mana equal to $s1% of Shadow spell damage caused by the priest to this target.", "hash": "3bf176665af1f037", "src": "db2@1.60.1.70170"}
-{"id": 402686, "field": "name", "en": "Wild Polymorph", "hash": "d91b701809c08456", "src": "db2@1.60.1.70170"}
-{"id": 402686, "field": "aura", "en": "This creature has been transformed.", "hash": "f5cbc9b285c330ca", "src": "db2@1.60.1.70170"}
-{"id": 402779, "field": "name", "en": "Vampiric Touch", "hash": "7362d4c14d98cfae", "src": "db2@1.60.1.70170"}
-{"id": 402779, "field": "description", "en": "$s1% of Shadow spell damage taken restores mana to the Priest's party.", "hash": "f0e2b1af5ded8861", "src": "db2@1.60.1.70170"}
-{"id": 402789, "field": "name", "en": "Eye of the Void", "hash": "39fdf5877250144b", "src": "db2@1.60.1.70170"}
-{"id": 402789, "field": "description", "en": "Call an eye of the void to fight for you for $d. The eye can cast a variety of curses on your target.", "hash": "305d9a6078dfc26d", "src": "db2@1.60.1.70170"}
-{"id": 402790, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70170"}
-{"id": 402790, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70170"}
-{"id": 402791, "field": "name", "en": "Curse of Shadow", "hash": "225b294578924023", "src": "db2@1.60.1.70170"}
-{"id": 402791, "field": "description", "en": "Curses the target for $d, reducing Shadow and Arcane resistances by $s1 and increasing Shadow and Arcane damage taken by $s2%.  Only one Curse per Warlock can be active on any one target.", "hash": "d622ece7f2bee412", "src": "db2@1.60.1.70170"}
-{"id": 402791, "field": "aura", "en": "Shadow and Arcane resistances reduced by $s1.  Shadow and Arcane damage taken increased by $s2%.", "hash": "a6c9f31f91a8e7b1", "src": "db2@1.60.1.70170"}
-{"id": 402792, "field": "name", "en": "Curse of the Elements", "hash": "5cd3a06ce7385e27", "src": "db2@1.60.1.70170"}
-{"id": 402792, "field": "description", "en": "Curses the target for $d, reducing Fire and Frost resistances by $s1 and increasing Fire and Frost damage taken by $s2%.  Only one Curse per Warlock can be active on any one target.", "hash": "fe48135a67fe1456", "src": "db2@1.60.1.70170"}
-{"id": 402792, "field": "aura", "en": "Reduces Fire and Frost resistances by $s1.  Increases Fire and Frost damage taken by $s2%.", "hash": "4abb00384ea4d08b", "src": "db2@1.60.1.70170"}
-{"id": 402794, "field": "name", "en": "Curse of Tongues", "hash": "0e91974050998503", "src": "db2@1.60.1.70170"}
-{"id": 402794, "field": "description", "en": "Forces the target to speak in Demonic, slowing the casting time of all spells by $s1%.  Only one Curse per Warlock can be active on any one target.  Lasts $d.", "hash": "26665dfe5e1b1118", "src": "db2@1.60.1.70170"}
-{"id": 402794, "field": "aura", "en": "Speaking Demonic increasing casting time by $s1%.", "hash": "a89ef244668e2f2c", "src": "db2@1.60.1.70170"}
-{"id": 402799, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70170"}
-{"id": 402799, "field": "description", "en": "Break off splinters of your soul to animate $s1 miniature copies of yourself that attempt to attack your current target with a mace, sword, and axe, reducing the attack speed, attack power, and armor respectively of any target they hit.", "hash": "15c256c14624596f", "src": "db2@1.60.1.70170"}
-{"id": 402801, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70170"}
-{"id": 402801, "field": "description", "en": "Animate $s1 skeletons that attack your current target with a mace, sword, and axe, reducing the target's attack speed, attack power, and armor respectively.", "hash": "f7b13019f084bdfa", "src": "db2@1.60.1.70170"}
-{"id": 402802, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70170"}
-{"id": 402802, "field": "description", "en": "Animate $s1 skeletons that attack your current target with a mace, sword, and axe, reducing the target's attack speed, attack power, and armor respectively.", "hash": "f7b13019f084bdfa", "src": "db2@1.60.1.70170"}
-{"id": 402808, "field": "name", "en": "Cripple", "hash": "8dedc199be0ae971", "src": "db2@1.60.1.70170"}
-{"id": 402808, "field": "description", "en": "Increases the time between an enemy's attacks by $s1%. Lasts $d.", "hash": "2c4ab1cdd460c4ba", "src": "db2@1.60.1.70170"}
-{"id": 402808, "field": "aura", "en": "Time between attacks increased by $s1%.", "hash": "4f44ab25fd31a67e", "src": "db2@1.60.1.70170"}
-{"id": 402811, "field": "name", "en": "Demoralize", "hash": "dd0aa8509f3f3e4d", "src": "db2@1.60.1.70170"}
-{"id": 402811, "field": "description", "en": "Reduces the target's Attack Power by $s1. Lasts $d.", "hash": "915e951a1a952e53", "src": "db2@1.60.1.70170"}
-{"id": 402811, "field": "aura", "en": "Attack Power decreased by $s1.", "hash": "e8e285942d556c36", "src": "db2@1.60.1.70170"}
-{"id": 402818, "field": "name", "en": "Degrade", "hash": "5a0dda441111cd87", "src": "db2@1.60.1.70170"}
-{"id": 402818, "field": "description", "en": "Reduces an enemy's armor by $s1. Lasts $d.", "hash": "332347c0b8d918e7", "src": "db2@1.60.1.70170"}
-{"id": 402818, "field": "aura", "en": "Armor decreased by $s1.", "hash": "57b604c7daf54be2", "src": "db2@1.60.1.70170"}
-{"id": 402832, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70170"}
-{"id": 402832, "field": "description", "en": "Gain the Prayer of Mending ability:\r\n\r\n$@spellicon401859\r\n$@spelldesc401859", "hash": "90fb0effaaecfd88", "src": "db2@1.60.1.70170"}
-{"id": 402833, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70170"}
-{"id": 402833, "field": "description", "en": "Gain the Shadow Word: Death ability:\r\n\r\n$@spellicon401955\r\n$@spelldesc401955", "hash": "45a66e95d07e93db", "src": "db2@1.60.1.70170"}
-{"id": 402834, "field": "name", "en": "Soul Warding", "hash": "6b78bfaeaaab8d26", "src": "db2@1.60.1.70170"}
-{"id": 402834, "field": "description", "en": "Gain the Soul Warding ability:\r\n\r\n$@spellicon402000\r\n$@spelldesc402000", "hash": "51131f6ac964ef2e", "src": "db2@1.60.1.70170"}
-{"id": 402836, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70170"}
-{"id": 402836, "field": "description", "en": "Gain the Homunculi ability:\r\n\r\n$@spellicon402799\r\n$@spelldesc402799", "hash": "b55934a55c25187c", "src": "db2@1.60.1.70170"}
-{"id": 402837, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70170"}
-{"id": 402837, "field": "description", "en": "Gain the Binding Heal ability:\r\n\r\n$@spellicon401937\r\n$@spelldesc401937", "hash": "cfddc68b2924fe55", "src": "db2@1.60.1.70170"}
-{"id": 402838, "field": "name", "en": "Shared Pain", "hash": "ba6a74e995658830", "src": "db2@1.60.1.70170"}
-{"id": 402838, "field": "description", "en": "Gain the Shared Pain ability:\r\n\r\n$@spellicon401969\r\n$@spelldesc401969", "hash": "0264c853ecc17782", "src": "db2@1.60.1.70170"}
-{"id": 402839, "field": "name", "en": "Pain Suppression", "hash": "539a074323a528e1", "src": "db2@1.60.1.70170"}
-{"id": 402839, "field": "description", "en": "Gain the Pain Suppression ability:\r\n\r\n$@spellicon402004\r\n$@spelldesc402004", "hash": "b5d5e294359d8aea", "src": "db2@1.60.1.70170"}
-{"id": 402841, "field": "name", "en": "Vampiric Touch", "hash": "7362d4c14d98cfae", "src": "db2@1.60.1.70170"}
-{"id": 402841, "field": "description", "en": "Gain the Vampiric Touch ability:\r\n\r\n$@spellicon402668\r\n$@spelldesc402668", "hash": "4079090c57eab63e", "src": "db2@1.60.1.70170"}
-{"id": 402842, "field": "name", "en": "Circle of Healing", "hash": "48ca9c14befe2db4", "src": "db2@1.60.1.70170"}
-{"id": 402842, "field": "description", "en": "Gain the Circle of Healing ability:\r\n\r\n$@spellicon401946\r\n$@spelldesc401946", "hash": "0e8241db54fcb6cc", "src": "db2@1.60.1.70170"}
-{"id": 402843, "field": "name", "en": "Shadowfiend", "hash": "bc1c648c61e80608", "src": "db2@1.60.1.70170"}
-{"id": 402843, "field": "description", "en": "Gain the Shadowfiend ability:\r\n\r\n$@spellicon401977\r\n$@spelldesc401977", "hash": "893e0778f94306f5", "src": "db2@1.60.1.70170"}
-{"id": 402844, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70170"}
-{"id": 402844, "field": "description", "en": "Gain the Penance ability:\r\n\r\n$@spellicon402174\r\n$@spelldesc402174", "hash": "25dfc3dac8050cc0", "src": "db2@1.60.1.70170"}
-{"id": 402846, "field": "name", "en": "Eye of the Void", "hash": "39fdf5877250144b", "src": "db2@1.60.1.70170"}
-{"id": 402846, "field": "description", "en": "Gain the Eye of the Void ability:\r\n\r\n$@spellicon402789\r\n$@spelldesc402789", "hash": "f311e4dfdc17794f", "src": "db2@1.60.1.70170"}
-{"id": 402848, "field": "name", "en": "Engrave Pants - Prayer of Mending", "hash": "554a55ccc443c25b", "src": "db2@1.60.1.70170"}
-{"id": 402848, "field": "description", "en": "Engrave your pants with the Prayer of Mending rune:\r\n\r\n$@spellicon401859\r\n$@spelldesc401859", "hash": "2bda4bfd98dab26f", "src": "db2@1.60.1.70170"}
-{"id": 402849, "field": "name", "en": "Engrave Gloves - Shadow Word: Death", "hash": "3395b74d8a39b747", "src": "db2@1.60.1.70170"}
-{"id": 402849, "field": "description", "en": "Engrave your gloves with the Shadow Word: Death rune:\r\n\r\n$@spellicon401955\r\n$@spelldesc401955", "hash": "139a087904cb6c81", "src": "db2@1.60.1.70170"}
-{"id": 402850, "field": "name", "en": "Engrave Cloak - Soul Warding", "hash": "6b465f970bcc10ba", "src": "db2@1.60.1.70170"}
-{"id": 402850, "field": "description", "en": "Engrave your cloak with the Soul Warding rune:\r\n\r\n$@spellicon402000\r\n$@spelldesc402000", "hash": "154e399366c21482", "src": "db2@1.60.1.70170"}
-{"id": 402852, "field": "name", "en": "Engrave Pants - Homunculi", "hash": "362ff3cccccc8b00", "src": "db2@1.60.1.70170"}
-{"id": 402852, "field": "description", "en": "Engrave your pants with the Homunculi rune:\r\n\r\n$@spellicon402799\r\n$@spelldesc402799", "hash": "d57590041f26abf5", "src": "db2@1.60.1.70170"}
-{"id": 402853, "field": "name", "en": "Engrave Cloak - Binding Heal", "hash": "c6ca8327178a673e", "src": "db2@1.60.1.70170"}
-{"id": 402853, "field": "description", "en": "Engrave your cloak with the Binding Heal rune:\r\n\r\n$@spellicon401937\r\n$@spelldesc401937", "hash": "992a730c2927810f", "src": "db2@1.60.1.70170"}
-{"id": 402854, "field": "name", "en": "Engrave Pants - Shared Pain", "hash": "222386c65236da05", "src": "db2@1.60.1.70170"}
-{"id": 402854, "field": "description", "en": "Engrave your pants with the Shared Pain rune:\r\n\r\n$@spellicon401969\r\n$@spelldesc401969", "hash": "d899d8ceccdfcda7", "src": "db2@1.60.1.70170"}
-{"id": 402855, "field": "name", "en": "Engrave Boots - Pain Suppression", "hash": "9f21c63442e322f2", "src": "db2@1.60.1.70170"}
-{"id": 402855, "field": "description", "en": "Engrave your boots with the Pain Suppression rune:\r\n\r\n$@spellicon402004\r\n$@spelldesc402004", "hash": "b2fd4d861ef5f8e9", "src": "db2@1.60.1.70170"}
-{"id": 402857, "field": "name", "en": "Engrave Cloak - Vampiric Touch", "hash": "42776eb11309fd20", "src": "db2@1.60.1.70170"}
-{"id": 402857, "field": "description", "en": "Engrave your cloak with the Vampiric Touch rune:\r\n\r\n$@spellicon402668\r\n$@spelldesc402668", "hash": "8340998c59f07a0a", "src": "db2@1.60.1.70170"}
-{"id": 402859, "field": "name", "en": "Engrave Gloves - Circle of Healing", "hash": "63d51316ab74e275", "src": "db2@1.60.1.70170"}
-{"id": 402859, "field": "description", "en": "Engrave your gloves with the Circle of Healing rune:\r\n\r\n$@spellicon401946\r\n$@spelldesc401946", "hash": "6fa8939acdb4a9b6", "src": "db2@1.60.1.70170"}
-{"id": 402861, "field": "name", "en": "Engrave Pants - Shadowfiend", "hash": "23d576691eb957dd", "src": "db2@1.60.1.70170"}
-{"id": 402861, "field": "description", "en": "Engrave your pants with the Shadowfiend rune:\r\n\r\n$@spellicon401977\r\n$@spelldesc401977", "hash": "4c1dccffca70fc84", "src": "db2@1.60.1.70170"}
-{"id": 402862, "field": "name", "en": "Engrave Gloves - Penance", "hash": "27be344b5c9a44cf", "src": "db2@1.60.1.70170"}
-{"id": 402862, "field": "description", "en": "Engrave your gloves with the Penance rune:\r\n\r\n$@spellicon402174\r\n$@spelldesc402174", "hash": "522111700c818de8", "src": "db2@1.60.1.70170"}
-{"id": 402864, "field": "name", "en": "Engrave Helm - Eye of the Void", "hash": "39723309147b59a6", "src": "db2@1.60.1.70170"}
-{"id": 402864, "field": "description", "en": "Engrave your helm with the Eye of the Void rune:\r\n\r\n$@spellicon402789\r\n$@spelldesc402789", "hash": "08eaafc7177edfd9", "src": "db2@1.60.1.70170"}
-{"id": 402877, "field": "name", "en": "Flagellation", "hash": "560e8113aa32c4d8", "src": "db2@1.60.1.70170"}
-{"id": 402877, "field": "description", "en": "You gain Rage from Physical damage taken as if you were wearing no armor.", "hash": "3eaec0fb89fb8760", "src": "db2@1.60.1.70170"}
-{"id": 402906, "field": "name", "en": "Flagellation", "hash": "560e8113aa32c4d8", "src": "db2@1.60.1.70170"}
-{"id": 402906, "field": "aura", "en": "Physical damage done increased by $s1%.", "hash": "07715b9cfc0ba3a6", "src": "db2@1.60.1.70170"}
-{"id": 402911, "field": "name", "en": "Raging Blow", "hash": "5fb1224f481ef704", "src": "db2@1.60.1.70170"}
-{"id": 402911, "field": "description", "en": "A ferocious strike that deals $s1% weapon damage, but can only be used while Enrage, Berserker Rage, or Bloodrage is active. Each other melee ability used while Enrage, Berserker Rage, or Bloodrage is active reduces Raging Blow's remaining cooldown by $s3 sec.", "hash": "c369b8a35da9d571", "src": "db2@1.60.1.70170"}
-{"id": 402913, "field": "name", "en": "Enraged Regeneration", "hash": "320cbf0ba48c70ea", "src": "db2@1.60.1.70170"}
-{"id": 402913, "field": "description", "en": "Heals you for $o1% of your maximum health over $d, but can only be used while Enrage, Berserker Rage, or Bloodrage is active. Useable while Stunned.\r\n", "hash": "8c9eb59e874caaa0", "src": "db2@1.60.1.70170"}
-{"id": 402913, "field": "aura", "en": "Healing $s1% of maximum health every $t sec.", "hash": "1fa7c1e10c1e569b", "src": "db2@1.60.1.70170"}
-{"id": 402922, "field": "name", "en": "Precise Timing", "hash": "088d683a93870100", "src": "db2@1.60.1.70170"}
-{"id": 402922, "field": "description", "en": "Slam is now instant but has a ${$m2/1000} sec cooldown.", "hash": "d1d418c35ef0f802", "src": "db2@1.60.1.70170"}
-{"id": 402927, "field": "name", "en": "Victory Rush", "hash": "027c9d5a3c47ef2f", "src": "db2@1.60.1.70170"}
-{"id": 402927, "field": "description", "en": "Instantly attack the target causing ${1+$AP*$m3/100} damage and healing you for $s2% of your maximum health.  Only useable within $402975d after you kill a non-trivial enemy.", "hash": "a6a325bb131d1095", "src": "db2@1.60.1.70170"}
-{"id": 402974, "field": "name", "en": "Victorious State (DND)", "hash": "844b0d33e2f7a960", "src": "db2@1.60.1.70170"}
-{"id": 402975, "field": "name", "en": "Victorious", "hash": "c1b713db9fc2f2cc", "src": "db2@1.60.1.70170"}
-{"id": 402975, "field": "description", "en": "Follows killing an enemy.", "hash": "348cd4713ed81a7b", "src": "db2@1.60.1.70170"}
-{"id": 402975, "field": "aura", "en": "Victory Rush recently activated.", "hash": "8aba4c0cafc07d51", "src": "db2@1.60.1.70170"}
+{"id": 402000, "field": "name", "en": "Soul Warding", "hash": "6b78bfaeaaab8d26", "src": "db2@1.60.1.70245"}
+{"id": 402000, "field": "description", "en": "Reduces the cooldown on your Power Word: Shield spell by ${$m1/-1000} sec and reduces its mana cost by $s2%.", "hash": "91cc52b26caac282", "src": "db2@1.60.1.70245"}
+{"id": 402004, "field": "name", "en": "Pain Suppression", "hash": "539a074323a528e1", "src": "db2@1.60.1.70245"}
+{"id": 402004, "field": "description", "en": "Instantly reduces all damage taken by a friendly target by $s1% and increases resistance to Dispel mechanics by $s2% for $d.", "hash": "f134f0eb2ec8defe", "src": "db2@1.60.1.70245"}
+{"id": 402004, "field": "aura", "en": "All damage taken reduced by $s1% and resistance to Dispel mechanics increased by $s2%.", "hash": "2ab9e2e530007b91", "src": "db2@1.60.1.70245"}
+{"id": 402010, "field": "name", "en": "Polymorph Cured", "hash": "1e22cc041b1a488a", "src": "db2@1.60.1.70245"}
+{"id": 402010, "field": "description", "en": "Transformed back into its normal form.", "hash": "55be6c210fe7b6bd", "src": "db2@1.60.1.70245"}
+{"id": 402010, "field": "aura", "en": "Transformed back into its normal form.", "hash": "55be6c210fe7b6bd", "src": "db2@1.60.1.70245"}
+{"id": 402069, "field": "name", "en": "Cut-throat Ambush", "hash": "dcfb187597ab5a56", "src": "db2@1.60.1.70245"}
+{"id": 402174, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70245"}
+{"id": 402174, "field": "description", "en": "Launches a volley of holy light at the target, causing $402284s1 Holy damage to an enemy, or $402289s1 healing to an ally, instantly and every $402261t2 sec for $402261d.", "hash": "e48f2bb6444cd89c", "src": "db2@1.60.1.70245"}
+{"id": 402261, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70245"}
+{"id": 402261, "field": "description", "en": "Deals Holy damage every $t2 sec.", "hash": "703b6482d69e198b", "src": "db2@1.60.1.70245"}
+{"id": 402265, "field": "name", "en": "Learning", "hash": "ed4847072cb92a78", "src": "db2@1.60.1.70245"}
+{"id": 402277, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70245"}
+{"id": 402277, "field": "description", "en": "Healing every $t2 sec for $d.", "hash": "032d56b0f6b6fb7e", "src": "db2@1.60.1.70245"}
+{"id": 402284, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70245"}
+{"id": 402284, "field": "description", "en": "Dealing $s1 Holy damage every $402261t2 sec.", "hash": "10e97523d4ad52f7", "src": "db2@1.60.1.70245"}
+{"id": 402289, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70245"}
+{"id": 402289, "field": "description", "en": "Healing for $s1 every $402277t2 sec. for $402277d.", "hash": "dcdbf572a496c621", "src": "db2@1.60.1.70245"}
+{"id": 402308, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70245"}
+{"id": 402308, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70245"}
+{"id": 402311, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70245"}
+{"id": 402311, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70245"}
+{"id": 402319, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70245"}
+{"id": 402319, "field": "description", "en": "Combine 6 Azora Apprentice Notes to create a new engraving recipe.", "hash": "d52540109976f7a1", "src": "db2@1.60.1.70245"}
+{"id": 402362, "field": "name", "en": "White", "hash": "0534370fd4ceb206", "src": "db2@1.60.1.70245"}
+{"id": 402362, "field": "aura", "en": "Healing done increased by $s1%.", "hash": "d76b0fc9601b4af4", "src": "db2@1.60.1.70245"}
+{"id": 402368, "field": "name", "en": "Black", "hash": "951b57d7a16dd14d", "src": "db2@1.60.1.70245"}
+{"id": 402368, "field": "aura", "en": "Spell damage done increased by $s1%.", "hash": "b9096e71d7de80bc", "src": "db2@1.60.1.70245"}
+{"id": 402392, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70245"}
+{"id": 402668, "field": "name", "en": "Vampiric Touch", "hash": "7362d4c14d98cfae", "src": "db2@1.60.1.70245"}
+{"id": 402668, "field": "description", "en": "Applies your Vampiric Embrace talent to your target, causes ${$<damagepower>*$m2/100*5} Shadow damage over $d to your target, and causes all party members to gain mana equal to $s1% of any Shadow spell damage you deal to the target.", "hash": "0fe3e73d1b9052cf", "src": "db2@1.60.1.70245"}
+{"id": 402668, "field": "aura", "en": "$w1 Shadow damage every $t1 seconds. Priest's party gains mana equal to $s1% of Shadow spell damage caused by the priest to this target.", "hash": "3bf176665af1f037", "src": "db2@1.60.1.70245"}
+{"id": 402686, "field": "name", "en": "Wild Polymorph", "hash": "d91b701809c08456", "src": "db2@1.60.1.70245"}
+{"id": 402686, "field": "aura", "en": "This creature has been transformed.", "hash": "f5cbc9b285c330ca", "src": "db2@1.60.1.70245"}
+{"id": 402779, "field": "name", "en": "Vampiric Touch", "hash": "7362d4c14d98cfae", "src": "db2@1.60.1.70245"}
+{"id": 402779, "field": "description", "en": "$s1% of Shadow spell damage taken restores mana to the Priest's party.", "hash": "f0e2b1af5ded8861", "src": "db2@1.60.1.70245"}
+{"id": 402789, "field": "name", "en": "Eye of the Void", "hash": "39fdf5877250144b", "src": "db2@1.60.1.70245"}
+{"id": 402789, "field": "description", "en": "Call an eye of the void to fight for you for $d. The eye can cast a variety of curses on your target.", "hash": "305d9a6078dfc26d", "src": "db2@1.60.1.70245"}
+{"id": 402790, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70245"}
+{"id": 402790, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70245"}
+{"id": 402791, "field": "name", "en": "Curse of Shadow", "hash": "225b294578924023", "src": "db2@1.60.1.70245"}
+{"id": 402791, "field": "description", "en": "Curses the target for $d, reducing Shadow and Arcane resistances by $s1 and increasing Shadow and Arcane damage taken by $s2%.  Only one Curse per Warlock can be active on any one target.", "hash": "d622ece7f2bee412", "src": "db2@1.60.1.70245"}
+{"id": 402791, "field": "aura", "en": "Shadow and Arcane resistances reduced by $s1.  Shadow and Arcane damage taken increased by $s2%.", "hash": "a6c9f31f91a8e7b1", "src": "db2@1.60.1.70245"}
+{"id": 402792, "field": "name", "en": "Curse of the Elements", "hash": "5cd3a06ce7385e27", "src": "db2@1.60.1.70245"}
+{"id": 402792, "field": "description", "en": "Curses the target for $d, reducing Fire and Frost resistances by $s1 and increasing Fire and Frost damage taken by $s2%.  Only one Curse per Warlock can be active on any one target.", "hash": "fe48135a67fe1456", "src": "db2@1.60.1.70245"}
+{"id": 402792, "field": "aura", "en": "Reduces Fire and Frost resistances by $s1.  Increases Fire and Frost damage taken by $s2%.", "hash": "4abb00384ea4d08b", "src": "db2@1.60.1.70245"}
+{"id": 402794, "field": "name", "en": "Curse of Tongues", "hash": "0e91974050998503", "src": "db2@1.60.1.70245"}
+{"id": 402794, "field": "description", "en": "Forces the target to speak in Demonic, slowing the casting time of all spells by $s1%.  Only one Curse per Warlock can be active on any one target.  Lasts $d.", "hash": "26665dfe5e1b1118", "src": "db2@1.60.1.70245"}
+{"id": 402794, "field": "aura", "en": "Speaking Demonic increasing casting time by $s1%.", "hash": "a89ef244668e2f2c", "src": "db2@1.60.1.70245"}
+{"id": 402799, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70245"}
+{"id": 402799, "field": "description", "en": "Break off splinters of your soul to animate $s1 miniature copies of yourself that attempt to attack your current target with a mace, sword, and axe, reducing the attack speed, attack power, and armor respectively of any target they hit.", "hash": "15c256c14624596f", "src": "db2@1.60.1.70245"}
+{"id": 402801, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70245"}
+{"id": 402801, "field": "description", "en": "Animate $s1 skeletons that attack your current target with a mace, sword, and axe, reducing the target's attack speed, attack power, and armor respectively.", "hash": "f7b13019f084bdfa", "src": "db2@1.60.1.70245"}
+{"id": 402802, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70245"}
+{"id": 402802, "field": "description", "en": "Animate $s1 skeletons that attack your current target with a mace, sword, and axe, reducing the target's attack speed, attack power, and armor respectively.", "hash": "f7b13019f084bdfa", "src": "db2@1.60.1.70245"}
+{"id": 402808, "field": "name", "en": "Cripple", "hash": "8dedc199be0ae971", "src": "db2@1.60.1.70245"}
+{"id": 402808, "field": "description", "en": "Increases the time between an enemy's attacks by $s1%. Lasts $d.", "hash": "2c4ab1cdd460c4ba", "src": "db2@1.60.1.70245"}
+{"id": 402808, "field": "aura", "en": "Time between attacks increased by $s1%.", "hash": "4f44ab25fd31a67e", "src": "db2@1.60.1.70245"}
+{"id": 402811, "field": "name", "en": "Demoralize", "hash": "dd0aa8509f3f3e4d", "src": "db2@1.60.1.70245"}
+{"id": 402811, "field": "description", "en": "Reduces the target's Attack Power by $s1. Lasts $d.", "hash": "915e951a1a952e53", "src": "db2@1.60.1.70245"}
+{"id": 402811, "field": "aura", "en": "Attack Power decreased by $s1.", "hash": "e8e285942d556c36", "src": "db2@1.60.1.70245"}
+{"id": 402818, "field": "name", "en": "Degrade", "hash": "5a0dda441111cd87", "src": "db2@1.60.1.70245"}
+{"id": 402818, "field": "description", "en": "Reduces an enemy's armor by $s1. Lasts $d.", "hash": "332347c0b8d918e7", "src": "db2@1.60.1.70245"}
+{"id": 402818, "field": "aura", "en": "Armor decreased by $s1.", "hash": "57b604c7daf54be2", "src": "db2@1.60.1.70245"}
+{"id": 402832, "field": "name", "en": "Prayer of Mending", "hash": "4289ee09f10ce2bf", "src": "db2@1.60.1.70245"}
+{"id": 402832, "field": "description", "en": "Gain the Prayer of Mending ability:\r\n\r\n$@spellicon401859\r\n$@spelldesc401859", "hash": "90fb0effaaecfd88", "src": "db2@1.60.1.70245"}
+{"id": 402833, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70245"}
+{"id": 402833, "field": "description", "en": "Gain the Shadow Word: Death ability:\r\n\r\n$@spellicon401955\r\n$@spelldesc401955", "hash": "45a66e95d07e93db", "src": "db2@1.60.1.70245"}
+{"id": 402834, "field": "name", "en": "Soul Warding", "hash": "6b78bfaeaaab8d26", "src": "db2@1.60.1.70245"}
+{"id": 402834, "field": "description", "en": "Gain the Soul Warding ability:\r\n\r\n$@spellicon402000\r\n$@spelldesc402000", "hash": "51131f6ac964ef2e", "src": "db2@1.60.1.70245"}
+{"id": 402836, "field": "name", "en": "Homunculi", "hash": "04351e326fe9af39", "src": "db2@1.60.1.70245"}
+{"id": 402836, "field": "description", "en": "Gain the Homunculi ability:\r\n\r\n$@spellicon402799\r\n$@spelldesc402799", "hash": "b55934a55c25187c", "src": "db2@1.60.1.70245"}
+{"id": 402837, "field": "name", "en": "Binding Heal", "hash": "c6fce33eb669e3aa", "src": "db2@1.60.1.70245"}
+{"id": 402837, "field": "description", "en": "Gain the Binding Heal ability:\r\n\r\n$@spellicon401937\r\n$@spelldesc401937", "hash": "cfddc68b2924fe55", "src": "db2@1.60.1.70245"}
+{"id": 402838, "field": "name", "en": "Shared Pain", "hash": "ba6a74e995658830", "src": "db2@1.60.1.70245"}
+{"id": 402838, "field": "description", "en": "Gain the Shared Pain ability:\r\n\r\n$@spellicon401969\r\n$@spelldesc401969", "hash": "0264c853ecc17782", "src": "db2@1.60.1.70245"}
+{"id": 402839, "field": "name", "en": "Pain Suppression", "hash": "539a074323a528e1", "src": "db2@1.60.1.70245"}
+{"id": 402839, "field": "description", "en": "Gain the Pain Suppression ability:\r\n\r\n$@spellicon402004\r\n$@spelldesc402004", "hash": "b5d5e294359d8aea", "src": "db2@1.60.1.70245"}
+{"id": 402841, "field": "name", "en": "Vampiric Touch", "hash": "7362d4c14d98cfae", "src": "db2@1.60.1.70245"}
+{"id": 402841, "field": "description", "en": "Gain the Vampiric Touch ability:\r\n\r\n$@spellicon402668\r\n$@spelldesc402668", "hash": "4079090c57eab63e", "src": "db2@1.60.1.70245"}
+{"id": 402842, "field": "name", "en": "Circle of Healing", "hash": "48ca9c14befe2db4", "src": "db2@1.60.1.70245"}
+{"id": 402842, "field": "description", "en": "Gain the Circle of Healing ability:\r\n\r\n$@spellicon401946\r\n$@spelldesc401946", "hash": "0e8241db54fcb6cc", "src": "db2@1.60.1.70245"}
+{"id": 402843, "field": "name", "en": "Shadowfiend", "hash": "bc1c648c61e80608", "src": "db2@1.60.1.70245"}
+{"id": 402843, "field": "description", "en": "Gain the Shadowfiend ability:\r\n\r\n$@spellicon401977\r\n$@spelldesc401977", "hash": "893e0778f94306f5", "src": "db2@1.60.1.70245"}
+{"id": 402844, "field": "name", "en": "Penance", "hash": "4b0a781bfc3e640e", "src": "db2@1.60.1.70245"}
+{"id": 402844, "field": "description", "en": "Gain the Penance ability:\r\n\r\n$@spellicon402174\r\n$@spelldesc402174", "hash": "25dfc3dac8050cc0", "src": "db2@1.60.1.70245"}
+{"id": 402846, "field": "name", "en": "Eye of the Void", "hash": "39fdf5877250144b", "src": "db2@1.60.1.70245"}
+{"id": 402846, "field": "description", "en": "Gain the Eye of the Void ability:\r\n\r\n$@spellicon402789\r\n$@spelldesc402789", "hash": "f311e4dfdc17794f", "src": "db2@1.60.1.70245"}
+{"id": 402848, "field": "name", "en": "Engrave Pants - Prayer of Mending", "hash": "554a55ccc443c25b", "src": "db2@1.60.1.70245"}
+{"id": 402848, "field": "description", "en": "Engrave your pants with the Prayer of Mending rune:\r\n\r\n$@spellicon401859\r\n$@spelldesc401859", "hash": "2bda4bfd98dab26f", "src": "db2@1.60.1.70245"}
+{"id": 402849, "field": "name", "en": "Engrave Gloves - Shadow Word: Death", "hash": "3395b74d8a39b747", "src": "db2@1.60.1.70245"}
+{"id": 402849, "field": "description", "en": "Engrave your gloves with the Shadow Word: Death rune:\r\n\r\n$@spellicon401955\r\n$@spelldesc401955", "hash": "139a087904cb6c81", "src": "db2@1.60.1.70245"}
+{"id": 402850, "field": "name", "en": "Engrave Cloak - Soul Warding", "hash": "6b465f970bcc10ba", "src": "db2@1.60.1.70245"}
+{"id": 402850, "field": "description", "en": "Engrave your cloak with the Soul Warding rune:\r\n\r\n$@spellicon402000\r\n$@spelldesc402000", "hash": "154e399366c21482", "src": "db2@1.60.1.70245"}
+{"id": 402852, "field": "name", "en": "Engrave Pants - Homunculi", "hash": "362ff3cccccc8b00", "src": "db2@1.60.1.70245"}
+{"id": 402852, "field": "description", "en": "Engrave your pants with the Homunculi rune:\r\n\r\n$@spellicon402799\r\n$@spelldesc402799", "hash": "d57590041f26abf5", "src": "db2@1.60.1.70245"}
+{"id": 402853, "field": "name", "en": "Engrave Cloak - Binding Heal", "hash": "c6ca8327178a673e", "src": "db2@1.60.1.70245"}
+{"id": 402853, "field": "description", "en": "Engrave your cloak with the Binding Heal rune:\r\n\r\n$@spellicon401937\r\n$@spelldesc401937", "hash": "992a730c2927810f", "src": "db2@1.60.1.70245"}
+{"id": 402854, "field": "name", "en": "Engrave Pants - Shared Pain", "hash": "222386c65236da05", "src": "db2@1.60.1.70245"}
+{"id": 402854, "field": "description", "en": "Engrave your pants with the Shared Pain rune:\r\n\r\n$@spellicon401969\r\n$@spelldesc401969", "hash": "d899d8ceccdfcda7", "src": "db2@1.60.1.70245"}
+{"id": 402855, "field": "name", "en": "Engrave Boots - Pain Suppression", "hash": "9f21c63442e322f2", "src": "db2@1.60.1.70245"}
+{"id": 402855, "field": "description", "en": "Engrave your boots with the Pain Suppression rune:\r\n\r\n$@spellicon402004\r\n$@spelldesc402004", "hash": "b2fd4d861ef5f8e9", "src": "db2@1.60.1.70245"}
+{"id": 402857, "field": "name", "en": "Engrave Cloak - Vampiric Touch", "hash": "42776eb11309fd20", "src": "db2@1.60.1.70245"}
+{"id": 402857, "field": "description", "en": "Engrave your cloak with the Vampiric Touch rune:\r\n\r\n$@spellicon402668\r\n$@spelldesc402668", "hash": "8340998c59f07a0a", "src": "db2@1.60.1.70245"}
+{"id": 402859, "field": "name", "en": "Engrave Gloves - Circle of Healing", "hash": "63d51316ab74e275", "src": "db2@1.60.1.70245"}
+{"id": 402859, "field": "description", "en": "Engrave your gloves with the Circle of Healing rune:\r\n\r\n$@spellicon401946\r\n$@spelldesc401946", "hash": "6fa8939acdb4a9b6", "src": "db2@1.60.1.70245"}
+{"id": 402861, "field": "name", "en": "Engrave Pants - Shadowfiend", "hash": "23d576691eb957dd", "src": "db2@1.60.1.70245"}
+{"id": 402861, "field": "description", "en": "Engrave your pants with the Shadowfiend rune:\r\n\r\n$@spellicon401977\r\n$@spelldesc401977", "hash": "4c1dccffca70fc84", "src": "db2@1.60.1.70245"}
+{"id": 402862, "field": "name", "en": "Engrave Gloves - Penance", "hash": "27be344b5c9a44cf", "src": "db2@1.60.1.70245"}
+{"id": 402862, "field": "description", "en": "Engrave your gloves with the Penance rune:\r\n\r\n$@spellicon402174\r\n$@spelldesc402174", "hash": "522111700c818de8", "src": "db2@1.60.1.70245"}
+{"id": 402864, "field": "name", "en": "Engrave Helm - Eye of the Void", "hash": "39723309147b59a6", "src": "db2@1.60.1.70245"}
+{"id": 402864, "field": "description", "en": "Engrave your helm with the Eye of the Void rune:\r\n\r\n$@spellicon402789\r\n$@spelldesc402789", "hash": "08eaafc7177edfd9", "src": "db2@1.60.1.70245"}
+{"id": 402877, "field": "name", "en": "Flagellation", "hash": "560e8113aa32c4d8", "src": "db2@1.60.1.70245"}
+{"id": 402877, "field": "description", "en": "You gain Rage from Physical damage taken as if you were wearing no armor.", "hash": "3eaec0fb89fb8760", "src": "db2@1.60.1.70245"}
+{"id": 402906, "field": "name", "en": "Flagellation", "hash": "560e8113aa32c4d8", "src": "db2@1.60.1.70245"}
+{"id": 402906, "field": "aura", "en": "Physical damage done increased by $s1%.", "hash": "07715b9cfc0ba3a6", "src": "db2@1.60.1.70245"}
+{"id": 402911, "field": "name", "en": "Raging Blow", "hash": "5fb1224f481ef704", "src": "db2@1.60.1.70245"}
+{"id": 402911, "field": "description", "en": "A ferocious strike that deals $s1% weapon damage, but can only be used while Enrage, Berserker Rage, or Bloodrage is active. Each other melee ability used while Enrage, Berserker Rage, or Bloodrage is active reduces Raging Blow's remaining cooldown by $s3 sec.", "hash": "c369b8a35da9d571", "src": "db2@1.60.1.70245"}
+{"id": 402913, "field": "name", "en": "Enraged Regeneration", "hash": "320cbf0ba48c70ea", "src": "db2@1.60.1.70245"}
+{"id": 402913, "field": "description", "en": "Heals you for $o1% of your maximum health over $d, but can only be used while Enrage, Berserker Rage, or Bloodrage is active. Useable while Stunned.\r\n", "hash": "8c9eb59e874caaa0", "src": "db2@1.60.1.70245"}
+{"id": 402913, "field": "aura", "en": "Healing $s1% of maximum health every $t sec.", "hash": "1fa7c1e10c1e569b", "src": "db2@1.60.1.70245"}
+{"id": 402922, "field": "name", "en": "Precise Timing", "hash": "088d683a93870100", "src": "db2@1.60.1.70245"}
+{"id": 402922, "field": "description", "en": "Slam is now instant but has a ${$m2/1000} sec cooldown.", "hash": "d1d418c35ef0f802", "src": "db2@1.60.1.70245"}
+{"id": 402927, "field": "name", "en": "Victory Rush", "hash": "027c9d5a3c47ef2f", "src": "db2@1.60.1.70245"}
+{"id": 402927, "field": "description", "en": "Instantly attack the target causing ${1+$AP*$m3/100} damage and healing you for $s2% of your maximum health.  Only useable within $402975d after you kill a non-trivial enemy.", "hash": "a6a325bb131d1095", "src": "db2@1.60.1.70245"}
+{"id": 402974, "field": "name", "en": "Victorious State (DND)", "hash": "844b0d33e2f7a960", "src": "db2@1.60.1.70245"}
+{"id": 402975, "field": "name", "en": "Victorious", "hash": "c1b713db9fc2f2cc", "src": "db2@1.60.1.70245"}
+{"id": 402975, "field": "description", "en": "Follows killing an enemy.", "hash": "348cd4713ed81a7b", "src": "db2@1.60.1.70245"}
+{"id": 402975, "field": "aura", "en": "Victory Rush recently activated.", "hash": "8aba4c0cafc07d51", "src": "db2@1.60.1.70245"}

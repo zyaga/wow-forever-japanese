@@ -146,9 +146,9 @@ Drift tests regenerate each pair in memory and fail if the result differs from t
 predecessors/
 ├── clients/
 │   ├── classic-era-1.15.9.69722/   wago tables (stamped wago@1.15.9.69722), questcache.wdb, missing.txt
-│   └── forever-1.60.1.70170/       db2 tables (stamped db2@1.60.1.70170), questcache.wdb, missing.txt
+│   └── forever-1.60.1.70245/       db2 tables (stamped db2@1.60.1.70245), questcache.wdb, missing.txt
 ├── classic-wow-quest-japanese-translator/  classic-wow-tooltips-japanese-translator/  lineage/
-└── pfquest-quests.lua  vmangos/  forever-ui-1.60.1.70170/
+└── pfquest-quests.lua  vmangos/  forever-ui-1.60.1.70245/
 ```
 
 Staging a client folder (the preflight refuses the import until every client's folder is complete):

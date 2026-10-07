@@ -1,207 +1,207 @@
-{"id": 253017, "field": "name", "en": "Corrupted Felbloom", "hash": "f832f4a5caa7895e", "src": "db2@1.60.1.70170"}
-{"id": 253017, "field": "description", "en": "Sickly energy emanates from the blossom.", "hash": "fa86019eaf26b468", "src": "db2@1.60.1.70170"}
-{"id": 253152, "field": "name", "en": "Aonda's Written Report", "hash": "c01553ed8c3a1cff", "src": "db2@1.60.1.70170"}
-{"id": 253239, "field": "name", "en": "Azgalor's Ashes", "hash": "d030f843ef24e3b0", "src": "db2@1.60.1.70170"}
-{"id": 253247, "field": "name", "en": "Banner of Ironforge", "hash": "661ac711ad8db013", "src": "db2@1.60.1.70170"}
-{"id": 253247, "field": "description", "en": "Raises the banner of Ironforge.", "hash": "dbe77c862fa4bd76", "src": "db2@1.60.1.70170"}
-{"id": 253249, "field": "name", "en": "Horde Flag", "hash": "067e7e3b195be7a6", "src": "db2@1.60.1.70170"}
-{"id": 253258, "field": "name", "en": "The Hum Gun", "hash": "44d71df63b118f8e", "src": "db2@1.60.1.70170"}
-{"id": 253258, "field": "description", "en": "Emits a short blast of sound that can only be heard by animals, beasts, and non-speaking beings.\nYou can almost make out the sigil of the alliance, barely visible under heavy corrosion.", "hash": "1d1f78ce8fab5fc2", "src": "db2@1.60.1.70170"}
-{"id": 253259, "field": "name", "en": "Cool Heat", "hash": "9db65c489b2f8b0b", "src": "db2@1.60.1.70170"}
-{"id": 253259, "field": "description", "en": "Makes the air around the target uncomfortable, regardless of ambient temperature or weather.\nSlowly boils the frog, but in a gentle breeze of directed air!", "hash": "72d0316aee6c547f", "src": "db2@1.60.1.70170"}
-{"id": 253260, "field": "name", "en": "Miniature Morphologic Mimic Encabulator", "hash": "e789e2d13bd8c9c2", "src": "db2@1.60.1.70170"}
-{"id": 253260, "field": "description", "en": "Temporarily gives the user an enchantment disguising them as their target.\nExperimental device which wraps the user in a veiling enchantment of limited size.", "hash": "abf25e059f58b693", "src": "db2@1.60.1.70170"}
-{"id": 253341, "field": "name", "en": "Hyjal Owl Feather", "hash": "0451226d83921823", "src": "db2@1.60.1.70170"}
-{"id": 253378, "field": "name", "en": "Tenn's Road-Worn Flute", "hash": "b68e1dbfabe97d00", "src": "db2@1.60.1.70170"}
-{"id": 253378, "field": "description", "en": "Right Click to summon and dismiss Wimdy.", "hash": "96d3031f3e7b7d2a", "src": "db2@1.60.1.70170"}
-{"id": 253391, "field": "name", "en": "Test Reagent Bag", "hash": "7a1dbdc93818a6b6", "src": "db2@1.60.1.70170"}
-{"id": 253399, "field": "name", "en": "Sealed Letter", "hash": "47a6502074283fde", "src": "db2@1.60.1.70170"}
-{"id": 253400, "field": "name", "en": "Seal of True Sight", "hash": "fac4485d30f07f74", "src": "db2@1.60.1.70170"}
-{"id": 253400, "field": "description", "en": "Focus the Modified Shadow Scalpel on Arkonos the Cursed to dispel his barrier of protection.", "hash": "36062b280b242f67", "src": "db2@1.60.1.70170"}
-{"id": 253591, "field": "name", "en": "Ripe Stormapple", "hash": "c272096189d1f0fe", "src": "db2@1.60.1.70170"}
-{"id": 253595, "field": "name", "en": "Flutterfly Dust", "hash": "ebc0dbf47bfb66c6", "src": "db2@1.60.1.70170"}
-{"id": 253596, "field": "name", "en": "Blood-Stained Bandit Mask", "hash": "96b7c481864cd3ad", "src": "db2@1.60.1.70170"}
-{"id": 253597, "field": "name", "en": "Lowlands Galestrider Tenderloin", "hash": "10c2a797cc02c8a1", "src": "db2@1.60.1.70170"}
-{"id": 253664, "field": "name", "en": "Linen Reagent Bag", "hash": "cc58b7c8914baeb7", "src": "db2@1.60.1.70170"}
-{"id": 253665, "field": "name", "en": "Pattern: Linen Reagent Bag", "hash": "865dfeada140f4ff", "src": "db2@1.60.1.70170"}
-{"id": 253665, "field": "description", "en": "Teaches you how to craft Linen Reagent Bag.", "hash": "7ff2899a3b2869a0", "src": "db2@1.60.1.70170"}
-{"id": 253666, "field": "name", "en": "Flutterfly Swatter", "hash": "489c5854dcd082fe", "src": "db2@1.60.1.70170"}
-{"id": 253666, "field": "description", "en": "Recently smacked!", "hash": "a94a10a87bbbf694", "src": "db2@1.60.1.70170"}
-{"id": 253667, "field": "name", "en": "Woolen Reagent Bag", "hash": "6b46054bb4fec9e0", "src": "db2@1.60.1.70170"}
-{"id": 253668, "field": "name", "en": "Pattern: Woolen Reagent Bag", "hash": "9bf94bc66f1468f5", "src": "db2@1.60.1.70170"}
-{"id": 253668, "field": "description", "en": "Teaches you how to craft Woolen Reagent Bag.", "hash": "f6b83094ec4ef0ae", "src": "db2@1.60.1.70170"}
-{"id": 253710, "field": "name", "en": "Bruuz's Dorsal Fin", "hash": "cdf7b69c268631dd", "src": "db2@1.60.1.70170"}
-{"id": 253711, "field": "name", "en": "Goliath's Wristguards", "hash": "c1cd91f3965b592e", "src": "db2@1.60.1.70170"}
-{"id": 253884, "field": "name", "en": "Template Item", "hash": "ef6eae9f827c70f4", "src": "db2@1.60.1.70170"}
-{"id": 253885, "field": "name", "en": "Novice Arcanist's Sash", "hash": "60a9c320035d6b70", "src": "db2@1.60.1.70170"}
-{"id": 253886, "field": "name", "en": "Pattern: Novice Arcanist's Sash", "hash": "4aefd3925e78b879", "src": "db2@1.60.1.70170"}
-{"id": 253886, "field": "description", "en": "Teaches you how to craft Novice Arcanist's Sash.", "hash": "72bb164f5b4b59c3", "src": "db2@1.60.1.70170"}
-{"id": 253887, "field": "name", "en": "Novice Ardent's Sash", "hash": "1ba33f0c9b2c9f8b", "src": "db2@1.60.1.70170"}
-{"id": 253888, "field": "name", "en": "Pattern: Novice Ardent's Sash", "hash": "bd632a1fd705b58e", "src": "db2@1.60.1.70170"}
-{"id": 253888, "field": "description", "en": "Teaches you how to craft Novice Ardent's Sash.", "hash": "4e7449b2f429ee54", "src": "db2@1.60.1.70170"}
-{"id": 253889, "field": "name", "en": "Pristine Boots", "hash": "8fca47e215db2582", "src": "db2@1.60.1.70170"}
-{"id": 253890, "field": "name", "en": "Pattern: Pristine Boots", "hash": "1074e2509e135340", "src": "db2@1.60.1.70170"}
-{"id": 253890, "field": "description", "en": "Teaches you how to craft Pristine Boots.", "hash": "55b52aacc559a438", "src": "db2@1.60.1.70170"}
-{"id": 253891, "field": "name", "en": "Silky Boots", "hash": "5c4644d3f8a7e0a9", "src": "db2@1.60.1.70170"}
-{"id": 253892, "field": "name", "en": "Pattern: Silky Boots", "hash": "f3801443ae59972c", "src": "db2@1.60.1.70170"}
-{"id": 253892, "field": "description", "en": "Teaches you how to craft Silky Boots.", "hash": "67c35d424bd3ee34", "src": "db2@1.60.1.70170"}
-{"id": 253893, "field": "name", "en": "Flame Boots", "hash": "cf5d9de61aa1507c", "src": "db2@1.60.1.70170"}
-{"id": 253894, "field": "name", "en": "Pattern: Flame Boots", "hash": "66976d5bd05306ee", "src": "db2@1.60.1.70170"}
-{"id": 253894, "field": "description", "en": "Teaches you how to craft Flame Boots.", "hash": "4cb5f3225c97eda1", "src": "db2@1.60.1.70170"}
-{"id": 253895, "field": "name", "en": "Shadow Boots", "hash": "d11b551d6e54f2b2", "src": "db2@1.60.1.70170"}
-{"id": 253896, "field": "name", "en": "Pattern: Shadow Boots", "hash": "33b07cf3a49f9b84", "src": "db2@1.60.1.70170"}
-{"id": 253896, "field": "description", "en": "Teaches you how to craft Shadow Boots.", "hash": "777915244a83dc48", "src": "db2@1.60.1.70170"}
-{"id": 253897, "field": "name", "en": "Pearly Boots", "hash": "011eb11111017ee2", "src": "db2@1.60.1.70170"}
-{"id": 253898, "field": "name", "en": "Pattern: Pearly Boots", "hash": "63b3d8e2474c27b4", "src": "db2@1.60.1.70170"}
-{"id": 253898, "field": "description", "en": "Teaches you how to craft Pearly Boots.", "hash": "093120ee29241ce9", "src": "db2@1.60.1.70170"}
-{"id": 253899, "field": "name", "en": "Shining Boots", "hash": "6389c242864c0f5a", "src": "db2@1.60.1.70170"}
-{"id": 253900, "field": "name", "en": "Pattern: Shining Boots", "hash": "d5dd232f485c50df", "src": "db2@1.60.1.70170"}
-{"id": 253900, "field": "description", "en": "Teaches you how to craft Shining Boots.", "hash": "91367d37fb2d4529", "src": "db2@1.60.1.70170"}
-{"id": 253901, "field": "name", "en": "Filigreed Pristine Gown", "hash": "db1294ebe8b11c97", "src": "db2@1.60.1.70170"}
-{"id": 253902, "field": "name", "en": "Pattern: Filigreed Pristine Gown", "hash": "bcecff0a4a04a969", "src": "db2@1.60.1.70170"}
-{"id": 253902, "field": "description", "en": "Teaches you how to craft Filigreed Pristine Gown.", "hash": "fc34cff4f146792b", "src": "db2@1.60.1.70170"}
-{"id": 253903, "field": "name", "en": "Filigreed Silky Gown", "hash": "59504cd7cb41c51b", "src": "db2@1.60.1.70170"}
-{"id": 253904, "field": "name", "en": "Pattern: Filigreed Silky Gown", "hash": "fb1037ea071adb2f", "src": "db2@1.60.1.70170"}
-{"id": 253904, "field": "description", "en": "Teaches you how to craft Filigreed Silky Gown.", "hash": "de02592ec64cc7b1", "src": "db2@1.60.1.70170"}
-{"id": 253905, "field": "name", "en": "Filigreed Flame Gown", "hash": "8d005b32d6e61c1a", "src": "db2@1.60.1.70170"}
-{"id": 253906, "field": "name", "en": "Pattern: Filigreed Flame Gown", "hash": "2ec0464a12bf322e", "src": "db2@1.60.1.70170"}
-{"id": 253906, "field": "description", "en": "Teaches you how to craft Filigreed Flame Gown.", "hash": "5119b246e8463773", "src": "db2@1.60.1.70170"}
-{"id": 253907, "field": "name", "en": "Filigreed Shadow Gown", "hash": "eadb4871f65ef9f6", "src": "db2@1.60.1.70170"}
-{"id": 253908, "field": "name", "en": "Pattern: Filigreed Shadow Gown", "hash": "b01094c9d9d62e4d", "src": "db2@1.60.1.70170"}
-{"id": 253908, "field": "description", "en": "Teaches you how to craft Filigreed Shadow Gown.", "hash": "a17a3410b37da589", "src": "db2@1.60.1.70170"}
-{"id": 253909, "field": "name", "en": "Filigreed Pearly Gown", "hash": "182b6e4ae58bc2be", "src": "db2@1.60.1.70170"}
-{"id": 253910, "field": "name", "en": "Pattern: Filigreed Pearly Gown", "hash": "dd60ba9dc902f715", "src": "db2@1.60.1.70170"}
-{"id": 253910, "field": "description", "en": "Teaches you how to craft Filigreed Pearly Gown.", "hash": "d17d8fff562a31b9", "src": "db2@1.60.1.70170"}
-{"id": 253911, "field": "name", "en": "Filigreed Shining Gown", "hash": "8f8d63c5b36376b4", "src": "db2@1.60.1.70170"}
-{"id": 253912, "field": "name", "en": "Pattern: Filigreed Shining Gown", "hash": "79d374370e7ec3ce", "src": "db2@1.60.1.70170"}
-{"id": 253912, "field": "description", "en": "Teaches you how to craft Filigreed Shining Gown.", "hash": "71364b36cbf9f122", "src": "db2@1.60.1.70170"}
-{"id": 253913, "field": "name", "en": "Pristine Gloves", "hash": "496fa09bc206810e", "src": "db2@1.60.1.70170"}
-{"id": 253914, "field": "name", "en": "Pattern: Pristine Gloves", "hash": "20bca5a048f1d773", "src": "db2@1.60.1.70170"}
-{"id": 253914, "field": "description", "en": "Teaches you how to craft Pristine Gloves.", "hash": "70e68659e94675da", "src": "db2@1.60.1.70170"}
-{"id": 253915, "field": "name", "en": "Silky Gloves", "hash": "ece20f67e2a29773", "src": "db2@1.60.1.70170"}
-{"id": 253916, "field": "name", "en": "Pattern: Silky Gloves", "hash": "4f77373d18ed4056", "src": "db2@1.60.1.70170"}
-{"id": 253916, "field": "description", "en": "Teaches you how to craft Silky Gloves.", "hash": "ae2a6948e9b5ff14", "src": "db2@1.60.1.70170"}
-{"id": 253917, "field": "name", "en": "Flame Gloves", "hash": "d1d4a547f36696e0", "src": "db2@1.60.1.70170"}
-{"id": 253918, "field": "name", "en": "Pattern: Flame Gloves", "hash": "3469cd1d29b13fc3", "src": "db2@1.60.1.70170"}
-{"id": 253918, "field": "description", "en": "Teaches you how to craft Flame Gloves.", "hash": "d64d1aa261e7d468", "src": "db2@1.60.1.70170"}
-{"id": 253919, "field": "name", "en": "Shadow Gloves", "hash": "b5e9667144ed6393", "src": "db2@1.60.1.70170"}
-{"id": 253920, "field": "name", "en": "Pattern: Shadow Gloves", "hash": "283cc76306fda518", "src": "db2@1.60.1.70170"}
-{"id": 253920, "field": "description", "en": "Teaches you how to craft Shadow Gloves.", "hash": "b8278216102aa7ef", "src": "db2@1.60.1.70170"}
-{"id": 253921, "field": "name", "en": "Pearly Gloves", "hash": "47a1723b238da434", "src": "db2@1.60.1.70170"}
-{"id": 253922, "field": "name", "en": "Pattern: Pearly Gloves", "hash": "b9f4d328e59de5a8", "src": "db2@1.60.1.70170"}
-{"id": 253922, "field": "description", "en": "Teaches you how to craft Pearly Gloves.", "hash": "4955895c22d6adc8", "src": "db2@1.60.1.70170"}
-{"id": 253923, "field": "name", "en": "Shining Gloves", "hash": "a46b3f4841961df7", "src": "db2@1.60.1.70170"}
-{"id": 253924, "field": "name", "en": "Pattern: Shining Gloves", "hash": "2515d9b6c9ce4bb5", "src": "db2@1.60.1.70170"}
-{"id": 253924, "field": "description", "en": "Teaches you how to craft Shining Gloves.", "hash": "e413c410d8c48a9f", "src": "db2@1.60.1.70170"}
-{"id": 253925, "field": "name", "en": "Pristine Sash", "hash": "22a0e3029cd1a7ff", "src": "db2@1.60.1.70170"}
-{"id": 253926, "field": "name", "en": "Pattern: Pristine Sash", "hash": "94f443ef5ee1e984", "src": "db2@1.60.1.70170"}
-{"id": 253926, "field": "description", "en": "Teaches you how to craft Pristine Sash.", "hash": "5a0c3ed2f41498dc", "src": "db2@1.60.1.70170"}
-{"id": 253927, "field": "name", "en": "Silky Sash", "hash": "129a043552e9252b", "src": "db2@1.60.1.70170"}
-{"id": 253928, "field": "name", "en": "Pattern: Silky Sash", "hash": "4a793c812a77a4c7", "src": "db2@1.60.1.70170"}
-{"id": 253928, "field": "description", "en": "Teaches you how to craft Silky Sash.", "hash": "eeb46a3093f3acd0", "src": "db2@1.60.1.70170"}
-{"id": 253929, "field": "name", "en": "Flame Sash", "hash": "464a12905e8d7c2a", "src": "db2@1.60.1.70170"}
-{"id": 253930, "field": "name", "en": "Pattern: Flame Sash", "hash": "7e294adc361bfbc6", "src": "db2@1.60.1.70170"}
-{"id": 253930, "field": "description", "en": "Teaches you how to craft Flame Sash.", "hash": "61cbc348b5ed1c92", "src": "db2@1.60.1.70170"}
-{"id": 253931, "field": "name", "en": "Shadow Sash", "hash": "ec68d56a36f9c2ae", "src": "db2@1.60.1.70170"}
-{"id": 253932, "field": "name", "en": "Pattern: Shadow Sash", "hash": "83a2a4dfecab7920", "src": "db2@1.60.1.70170"}
-{"id": 253932, "field": "description", "en": "Teaches you how to craft Shadow Sash.", "hash": "29735bf9fc28958a", "src": "db2@1.60.1.70170"}
-{"id": 253933, "field": "name", "en": "Pearly Sash", "hash": "19b8fb4326268b76", "src": "db2@1.60.1.70170"}
-{"id": 253934, "field": "name", "en": "Pattern: Pearly Sash", "hash": "b0f2cab3dbd841e8", "src": "db2@1.60.1.70170"}
-{"id": 253934, "field": "description", "en": "Teaches you how to craft Pearly Sash.", "hash": "5976b7e89ed521ba", "src": "db2@1.60.1.70170"}
-{"id": 253935, "field": "name", "en": "Shining Sash", "hash": "8bd13fc8fb98fc9a", "src": "db2@1.60.1.70170"}
-{"id": 253936, "field": "name", "en": "Pattern: Shining Sash", "hash": "ee66679931e3a57d", "src": "db2@1.60.1.70170"}
-{"id": 253936, "field": "description", "en": "Teaches you how to craft Shining Sash.", "hash": "029029f6b084d437", "src": "db2@1.60.1.70170"}
-{"id": 253937, "field": "name", "en": "Filigreed Pristine Leggings", "hash": "939168e935997a14", "src": "db2@1.60.1.70170"}
-{"id": 253938, "field": "name", "en": "Pattern: Filigreed Pristine Leggings", "hash": "c8dc1b189c28ca22", "src": "db2@1.60.1.70170"}
-{"id": 253938, "field": "description", "en": "Teaches you how to craft Filigreed Pristine Leggings.", "hash": "4c1fa037fab45cec", "src": "db2@1.60.1.70170"}
-{"id": 253939, "field": "name", "en": "Filigreed Silky Leggings", "hash": "3259ba919606f3b0", "src": "db2@1.60.1.70170"}
-{"id": 253940, "field": "name", "en": "Pattern: Filigreed Silky Leggings", "hash": "c51e081e3e81d660", "src": "db2@1.60.1.70170"}
-{"id": 253940, "field": "description", "en": "Teaches you how to craft Filigreed Silky Leggings.", "hash": "424ef1a1ce971c3e", "src": "db2@1.60.1.70170"}
-{"id": 253941, "field": "name", "en": "Filigreed Flame Leggings", "hash": "bc1a7c0342a77f0b", "src": "db2@1.60.1.70170"}
-{"id": 253942, "field": "name", "en": "Pattern: Filigreed Flame Leggings", "hash": "4edec995eb2261aa", "src": "db2@1.60.1.70170"}
-{"id": 253942, "field": "description", "en": "Teaches you how to craft Filigreed Flame Leggings.", "hash": "bff1f055f890ebb7", "src": "db2@1.60.1.70170"}
-{"id": 253943, "field": "name", "en": "Filigreed Shadow Leggings", "hash": "0deacdd8a5bd6d5e", "src": "db2@1.60.1.70170"}
-{"id": 253944, "field": "name", "en": "Pattern: Filigreed Shadow Leggings", "hash": "285e7e769b3140c8", "src": "db2@1.60.1.70170"}
-{"id": 253944, "field": "description", "en": "Teaches you how to craft Filigreed Shadow Leggings.", "hash": "cc91205343e2a04d", "src": "db2@1.60.1.70170"}
-{"id": 253945, "field": "name", "en": "Filigreed Pearly Leggings", "hash": "5878858de3a3ff9a", "src": "db2@1.60.1.70170"}
-{"id": 253946, "field": "name", "en": "Pattern: Filigreed Pearly Leggings", "hash": "72ec362bd917d304", "src": "db2@1.60.1.70170"}
-{"id": 253946, "field": "description", "en": "Teaches you how to craft Filigreed Pearly Leggings.", "hash": "f31622b0973eee0e", "src": "db2@1.60.1.70170"}
-{"id": 253947, "field": "name", "en": "Filigreed Shining Leggings", "hash": "4ba997db0d9c6dc7", "src": "db2@1.60.1.70170"}
-{"id": 253948, "field": "name", "en": "Pattern: Filigreed Shining Leggings", "hash": "d4dcf8f6cf02fd90", "src": "db2@1.60.1.70170"}
-{"id": 253948, "field": "description", "en": "Teaches you how to craft Filigreed Shining Leggings.", "hash": "74eb5428432a81d4", "src": "db2@1.60.1.70170"}
-{"id": 253949, "field": "name", "en": "Pristine Circlet", "hash": "00e6b0d74032e56b", "src": "db2@1.60.1.70170"}
-{"id": 253950, "field": "name", "en": "Pattern: Pristine Circlet", "hash": "2d5041fd547f0edc", "src": "db2@1.60.1.70170"}
-{"id": 253950, "field": "description", "en": "Teaches you how to craft Pristine Circlet.", "hash": "700d90bcc84f48b7", "src": "db2@1.60.1.70170"}
-{"id": 253951, "field": "name", "en": "Silky Circlet", "hash": "a47564dad019142f", "src": "db2@1.60.1.70170"}
-{"id": 253952, "field": "name", "en": "Pattern: Silky Circlet", "hash": "16c8c5cc922955b4", "src": "db2@1.60.1.70170"}
-{"id": 253952, "field": "description", "en": "Teaches you how to craft Silky Circlet.", "hash": "c9cab1a4abf4eb9f", "src": "db2@1.60.1.70170"}
-{"id": 253953, "field": "name", "en": "Flame Circlet", "hash": "cc981634484ae983", "src": "db2@1.60.1.70170"}
-{"id": 253954, "field": "name", "en": "Pattern: Flame Circlet", "hash": "3eeb77260a5b2b08", "src": "db2@1.60.1.70170"}
-{"id": 253954, "field": "description", "en": "Teaches you how to craft Flame Circlet.", "hash": "538b731b589576fa", "src": "db2@1.60.1.70170"}
-{"id": 253955, "field": "name", "en": "Shadow Circlet", "hash": "8336ee6c428d0e7c", "src": "db2@1.60.1.70170"}
-{"id": 253956, "field": "name", "en": "Pattern: Shadow Circlet", "hash": "03e188dacac53c3a", "src": "db2@1.60.1.70170"}
-{"id": 253956, "field": "description", "en": "Teaches you how to craft Shadow Circlet.", "hash": "e64e632798ee0c93", "src": "db2@1.60.1.70170"}
-{"id": 253957, "field": "name", "en": "Pearly Circlet", "hash": "1464f5b255391455", "src": "db2@1.60.1.70170"}
-{"id": 253958, "field": "name", "en": "Pattern: Pearly Circlet", "hash": "950f901bdd714213", "src": "db2@1.60.1.70170"}
-{"id": 253958, "field": "description", "en": "Teaches you how to craft Pearly Circlet.", "hash": "30dc1ae1d6d49ecf", "src": "db2@1.60.1.70170"}
-{"id": 253959, "field": "name", "en": "Shining Circlet", "hash": "8fa8e444c16af545", "src": "db2@1.60.1.70170"}
-{"id": 253960, "field": "name", "en": "Pattern: Shining Circlet", "hash": "66f5e94948564baa", "src": "db2@1.60.1.70170"}
-{"id": 253960, "field": "description", "en": "Teaches you how to craft Shining Circlet.", "hash": "603426888aa341ee", "src": "db2@1.60.1.70170"}
-{"id": 253961, "field": "name", "en": "Pristine Gown", "hash": "2108ec4e33866bbd", "src": "db2@1.60.1.70170"}
-{"id": 253962, "field": "name", "en": "Pattern: Pristine Gown", "hash": "935c4d3bf596ad31", "src": "db2@1.60.1.70170"}
-{"id": 253962, "field": "description", "en": "Teaches you how to craft Pristine Gown.", "hash": "894900b14ca7c5fe", "src": "db2@1.60.1.70170"}
-{"id": 253963, "field": "name", "en": "Silky Gown", "hash": "11020d81e99de8d8", "src": "db2@1.60.1.70170"}
-{"id": 253964, "field": "name", "en": "Pattern: Silky Gown", "hash": "48e145cdc12c6874", "src": "db2@1.60.1.70170"}
-{"id": 253964, "field": "description", "en": "Teaches you how to craft Silky Gown.", "hash": "1df12c14ec86d9e1", "src": "db2@1.60.1.70170"}
-{"id": 253965, "field": "name", "en": "Flame Gown", "hash": "44b21bdcf5423fd7", "src": "db2@1.60.1.70170"}
-{"id": 253966, "field": "name", "en": "Pattern: Flame Gown", "hash": "7c915428ccd0bf73", "src": "db2@1.60.1.70170"}
-{"id": 253966, "field": "description", "en": "Teaches you how to craft Flame Gown.", "hash": "910885270e8049b4", "src": "db2@1.60.1.70170"}
-{"id": 253967, "field": "name", "en": "Shadow Gown", "hash": "ead0deb6cdae865b", "src": "db2@1.60.1.70170"}
-{"id": 253968, "field": "name", "en": "Pattern: Shadow Gown", "hash": "820aae2b83603cde", "src": "db2@1.60.1.70170"}
-{"id": 253968, "field": "description", "en": "Teaches you how to craft Shadow Gown.", "hash": "58b01dd854bbc2ac", "src": "db2@1.60.1.70170"}
-{"id": 253969, "field": "name", "en": "Pearly Gown", "hash": "1821048fbcdb4f23", "src": "db2@1.60.1.70170"}
-{"id": 253970, "field": "name", "en": "Pattern: Pearly Gown", "hash": "af5ad3ff728d05a6", "src": "db2@1.60.1.70170"}
-{"id": 253970, "field": "description", "en": "Teaches you how to craft Pearly Gown.", "hash": "88b379c7f7684ecb", "src": "db2@1.60.1.70170"}
-{"id": 253971, "field": "name", "en": "Shining Gown", "hash": "8a394914924dc058", "src": "db2@1.60.1.70170"}
-{"id": 253972, "field": "name", "en": "Pattern: Shining Gown", "hash": "ecce70e5c898692a", "src": "db2@1.60.1.70170"}
-{"id": 253972, "field": "description", "en": "Teaches you how to craft Shining Gown.", "hash": "31ccebd509180159", "src": "db2@1.60.1.70170"}
-{"id": 253973, "field": "name", "en": "Silk Reagent Bag", "hash": "c9148df6a2dcfb7b", "src": "db2@1.60.1.70170"}
-{"id": 253974, "field": "name", "en": "Pattern: Silk Reagent Bag", "hash": "f57e1f1cb72924ec", "src": "db2@1.60.1.70170"}
-{"id": 253974, "field": "description", "en": "Teaches you how to craft Silk Reagent Bag.", "hash": "df85b99718796db1", "src": "db2@1.60.1.70170"}
-{"id": 253975, "field": "name", "en": "Filigreed Pristine Circlet", "hash": "f1cda5471a815559", "src": "db2@1.60.1.70170"}
-{"id": 253976, "field": "name", "en": "Pattern: Filigreed Pristine Circlet", "hash": "7b010667dbe7e522", "src": "db2@1.60.1.70170"}
-{"id": 253976, "field": "description", "en": "Teaches you how to craft Filigreed Pristine Circlet.", "hash": "795e34155064d271", "src": "db2@1.60.1.70170"}
-{"id": 253977, "field": "name", "en": "Filigreed Silky Circlet", "hash": "5e7f0d7c8543c51a", "src": "db2@1.60.1.70170"}
-{"id": 253978, "field": "name", "en": "Pattern: Filigreed Silky Circlet", "hash": "4059779be69751db", "src": "db2@1.60.1.70170"}
-{"id": 253978, "field": "description", "en": "Teaches you how to craft Filigreed Silky Circlet.", "hash": "3cb680ec50939edd", "src": "db2@1.60.1.70170"}
-{"id": 253979, "field": "name", "en": "Filigreed Flame Circlet", "hash": "86a1bed6fd759a5d", "src": "db2@1.60.1.70170"}
-{"id": 253980, "field": "name", "en": "Pattern: Filigreed Flame Circlet", "hash": "687c28f55ec9272f", "src": "db2@1.60.1.70170"}
-{"id": 253980, "field": "description", "en": "Teaches you how to craft Filigreed Flame Circlet.", "hash": "c677425efd342a27", "src": "db2@1.60.1.70170"}
-{"id": 253981, "field": "name", "en": "Filigreed Shadow Circlet", "hash": "b628389ea87e6395", "src": "db2@1.60.1.70170"}
-{"id": 253982, "field": "name", "en": "Pattern: Filigreed Shadow Circlet", "hash": "48ec863050f94645", "src": "db2@1.60.1.70170"}
-{"id": 253982, "field": "description", "en": "Teaches you how to craft Filigreed Shadow Circlet.", "hash": "b4f97397801d56a0", "src": "db2@1.60.1.70170"}
-{"id": 253983, "field": "name", "en": "Filigreed Pearly Circlet", "hash": "47563fe4bb2a696e", "src": "db2@1.60.1.70170"}
-{"id": 253984, "field": "name", "en": "Pattern: Filigreed Pearly Circlet", "hash": "da1a8d7163a54c1e", "src": "db2@1.60.1.70170"}
-{"id": 253984, "field": "description", "en": "Teaches you how to craft Filigreed Pearly Circlet.", "hash": "ff872b4cbe03e8dc", "src": "db2@1.60.1.70170"}
-{"id": 253985, "field": "name", "en": "Filigreed Shining Circlet", "hash": "a121dc5c93d59f10", "src": "db2@1.60.1.70170"}
-{"id": 253986, "field": "name", "en": "Pattern: Filigreed Shining Circlet", "hash": "bb958cfa8949727a", "src": "db2@1.60.1.70170"}
-{"id": 253986, "field": "description", "en": "Teaches you how to craft Filigreed Shining Circlet.", "hash": "21bd8f5b752ab5d4", "src": "db2@1.60.1.70170"}
-{"id": 253987, "field": "name", "en": "Pristine Leggings", "hash": "4d625132d71b97a7", "src": "db2@1.60.1.70170"}
-{"id": 253988, "field": "name", "en": "Pattern: Pristine Leggings", "hash": "07679817e710ddef", "src": "db2@1.60.1.70170"}
-{"id": 253988, "field": "description", "en": "Teaches you how to craft Pristine Leggings.", "hash": "87dc0993c419c851", "src": "db2@1.60.1.70170"}
-{"id": 253989, "field": "name", "en": "Silky Leggings", "hash": "ff68705a30159e97", "src": "db2@1.60.1.70170"}
-{"id": 253990, "field": "name", "en": "Pattern: Silky Leggings", "hash": "80130ac8b84dcc55", "src": "db2@1.60.1.70170"}
-{"id": 253990, "field": "description", "en": "Teaches you how to craft Silky Leggings.", "hash": "73a3e131e767d231", "src": "db2@1.60.1.70170"}
-{"id": 253991, "field": "name", "en": "Flame Leggings", "hash": "892931d1dcb629e1", "src": "db2@1.60.1.70170"}
-{"id": 253992, "field": "name", "en": "Pattern: Flame Leggings", "hash": "09d3cc3f64ee57b0", "src": "db2@1.60.1.70170"}
-{"id": 253992, "field": "description", "en": "Teaches you how to craft Flame Leggings.", "hash": "f146dfe51161a1bb", "src": "db2@1.60.1.70170"}
-{"id": 253993, "field": "name", "en": "Shadow Leggings", "hash": "fc71d5bbd352c393", "src": "db2@1.60.1.70170"}
-{"id": 253994, "field": "name", "en": "Pattern: Shadow Leggings", "hash": "d3bedac05a3e19f8", "src": "db2@1.60.1.70170"}
-{"id": 253994, "field": "description", "en": "Teaches you how to craft Shadow Leggings.", "hash": "0b07b785595b2c67", "src": "db2@1.60.1.70170"}
-{"id": 253995, "field": "name", "en": "Pearly Leggings", "hash": "46ff8d75113955e0", "src": "db2@1.60.1.70170"}
-{"id": 253996, "field": "name", "en": "Pattern: Pearly Leggings", "hash": "1e4c927a9824ac34", "src": "db2@1.60.1.70170"}
-{"id": 253996, "field": "description", "en": "Teaches you how to craft Pearly Leggings.", "hash": "318cb9e2acb77a28", "src": "db2@1.60.1.70170"}
-{"id": 253997, "field": "name", "en": "Shining Leggings", "hash": "5ac2a366334dfdd9", "src": "db2@1.60.1.70170"}
-{"id": 253998, "field": "name", "en": "Pattern: Shining Leggings", "hash": "872c348c479a274a", "src": "db2@1.60.1.70170"}
-{"id": 253998, "field": "description", "en": "Teaches you how to craft Shining Leggings.", "hash": "6b9ab0cfbb14f81a", "src": "db2@1.60.1.70170"}
-{"id": 253999, "field": "name", "en": "Earthen Leggings", "hash": "ba82861a17000069", "src": "db2@1.60.1.70170"}
+{"id": 253017, "field": "name", "en": "Corrupted Felbloom", "hash": "f832f4a5caa7895e", "src": "db2@1.60.1.70245"}
+{"id": 253017, "field": "description", "en": "Sickly energy emanates from the blossom.", "hash": "fa86019eaf26b468", "src": "db2@1.60.1.70245"}
+{"id": 253152, "field": "name", "en": "Aonda's Written Report", "hash": "c01553ed8c3a1cff", "src": "db2@1.60.1.70245"}
+{"id": 253239, "field": "name", "en": "Azgalor's Ashes", "hash": "d030f843ef24e3b0", "src": "db2@1.60.1.70245"}
+{"id": 253247, "field": "name", "en": "Banner of Ironforge", "hash": "661ac711ad8db013", "src": "db2@1.60.1.70245"}
+{"id": 253247, "field": "description", "en": "Raises the banner of Ironforge.", "hash": "dbe77c862fa4bd76", "src": "db2@1.60.1.70245"}
+{"id": 253249, "field": "name", "en": "Horde Flag", "hash": "067e7e3b195be7a6", "src": "db2@1.60.1.70245"}
+{"id": 253258, "field": "name", "en": "The Hum Gun", "hash": "44d71df63b118f8e", "src": "db2@1.60.1.70245"}
+{"id": 253258, "field": "description", "en": "Emits a short blast of sound that can only be heard by animals, beasts, and non-speaking beings.\nYou can almost make out the sigil of the alliance, barely visible under heavy corrosion.", "hash": "1d1f78ce8fab5fc2", "src": "db2@1.60.1.70245"}
+{"id": 253259, "field": "name", "en": "Cool Heat", "hash": "9db65c489b2f8b0b", "src": "db2@1.60.1.70245"}
+{"id": 253259, "field": "description", "en": "Makes the air around the target uncomfortable, regardless of ambient temperature or weather.\nSlowly boils the frog, but in a gentle breeze of directed air!", "hash": "72d0316aee6c547f", "src": "db2@1.60.1.70245"}
+{"id": 253260, "field": "name", "en": "Miniature Morphologic Mimic Encabulator", "hash": "e789e2d13bd8c9c2", "src": "db2@1.60.1.70245"}
+{"id": 253260, "field": "description", "en": "Temporarily gives the user an enchantment disguising them as their target.\nExperimental device which wraps the user in a veiling enchantment of limited size.", "hash": "abf25e059f58b693", "src": "db2@1.60.1.70245"}
+{"id": 253341, "field": "name", "en": "Hyjal Owl Feather", "hash": "0451226d83921823", "src": "db2@1.60.1.70245"}
+{"id": 253378, "field": "name", "en": "Tenn's Road-Worn Flute", "hash": "b68e1dbfabe97d00", "src": "db2@1.60.1.70245"}
+{"id": 253378, "field": "description", "en": "Right Click to summon and dismiss Wimdy.", "hash": "96d3031f3e7b7d2a", "src": "db2@1.60.1.70245"}
+{"id": 253391, "field": "name", "en": "Test Reagent Bag", "hash": "7a1dbdc93818a6b6", "src": "db2@1.60.1.70245"}
+{"id": 253399, "field": "name", "en": "Sealed Letter", "hash": "47a6502074283fde", "src": "db2@1.60.1.70245"}
+{"id": 253400, "field": "name", "en": "Seal of True Sight", "hash": "fac4485d30f07f74", "src": "db2@1.60.1.70245"}
+{"id": 253400, "field": "description", "en": "Focus the Modified Shadow Scalpel on Arkonos the Cursed to dispel his barrier of protection.", "hash": "36062b280b242f67", "src": "db2@1.60.1.70245"}
+{"id": 253591, "field": "name", "en": "Ripe Stormapple", "hash": "c272096189d1f0fe", "src": "db2@1.60.1.70245"}
+{"id": 253595, "field": "name", "en": "Flutterfly Dust", "hash": "ebc0dbf47bfb66c6", "src": "db2@1.60.1.70245"}
+{"id": 253596, "field": "name", "en": "Blood-Stained Bandit Mask", "hash": "96b7c481864cd3ad", "src": "db2@1.60.1.70245"}
+{"id": 253597, "field": "name", "en": "Lowlands Galestrider Tenderloin", "hash": "10c2a797cc02c8a1", "src": "db2@1.60.1.70245"}
+{"id": 253664, "field": "name", "en": "Linen Reagent Bag", "hash": "cc58b7c8914baeb7", "src": "db2@1.60.1.70245"}
+{"id": 253665, "field": "name", "en": "Pattern: Linen Reagent Bag", "hash": "865dfeada140f4ff", "src": "db2@1.60.1.70245"}
+{"id": 253665, "field": "description", "en": "Teaches you how to craft Linen Reagent Bag.", "hash": "7ff2899a3b2869a0", "src": "db2@1.60.1.70245"}
+{"id": 253666, "field": "name", "en": "Flutterfly Swatter", "hash": "489c5854dcd082fe", "src": "db2@1.60.1.70245"}
+{"id": 253666, "field": "description", "en": "Recently smacked!", "hash": "a94a10a87bbbf694", "src": "db2@1.60.1.70245"}
+{"id": 253667, "field": "name", "en": "Woolen Reagent Bag", "hash": "6b46054bb4fec9e0", "src": "db2@1.60.1.70245"}
+{"id": 253668, "field": "name", "en": "Pattern: Woolen Reagent Bag", "hash": "9bf94bc66f1468f5", "src": "db2@1.60.1.70245"}
+{"id": 253668, "field": "description", "en": "Teaches you how to craft Woolen Reagent Bag.", "hash": "f6b83094ec4ef0ae", "src": "db2@1.60.1.70245"}
+{"id": 253710, "field": "name", "en": "Bruuz's Dorsal Fin", "hash": "cdf7b69c268631dd", "src": "db2@1.60.1.70245"}
+{"id": 253711, "field": "name", "en": "Goliath's Wristguards", "hash": "c1cd91f3965b592e", "src": "db2@1.60.1.70245"}
+{"id": 253884, "field": "name", "en": "Template Item", "hash": "ef6eae9f827c70f4", "src": "db2@1.60.1.70245"}
+{"id": 253885, "field": "name", "en": "Novice Arcanist's Sash", "hash": "60a9c320035d6b70", "src": "db2@1.60.1.70245"}
+{"id": 253886, "field": "name", "en": "Pattern: Novice Arcanist's Sash", "hash": "4aefd3925e78b879", "src": "db2@1.60.1.70245"}
+{"id": 253886, "field": "description", "en": "Teaches you how to craft Novice Arcanist's Sash.", "hash": "72bb164f5b4b59c3", "src": "db2@1.60.1.70245"}
+{"id": 253887, "field": "name", "en": "Novice Ardent's Sash", "hash": "1ba33f0c9b2c9f8b", "src": "db2@1.60.1.70245"}
+{"id": 253888, "field": "name", "en": "Pattern: Novice Ardent's Sash", "hash": "bd632a1fd705b58e", "src": "db2@1.60.1.70245"}
+{"id": 253888, "field": "description", "en": "Teaches you how to craft Novice Ardent's Sash.", "hash": "4e7449b2f429ee54", "src": "db2@1.60.1.70245"}
+{"id": 253889, "field": "name", "en": "Pristine Boots", "hash": "8fca47e215db2582", "src": "db2@1.60.1.70245"}
+{"id": 253890, "field": "name", "en": "Pattern: Pristine Boots", "hash": "1074e2509e135340", "src": "db2@1.60.1.70245"}
+{"id": 253890, "field": "description", "en": "Teaches you how to craft Pristine Boots.", "hash": "55b52aacc559a438", "src": "db2@1.60.1.70245"}
+{"id": 253891, "field": "name", "en": "Silky Boots", "hash": "5c4644d3f8a7e0a9", "src": "db2@1.60.1.70245"}
+{"id": 253892, "field": "name", "en": "Pattern: Silky Boots", "hash": "f3801443ae59972c", "src": "db2@1.60.1.70245"}
+{"id": 253892, "field": "description", "en": "Teaches you how to craft Silky Boots.", "hash": "67c35d424bd3ee34", "src": "db2@1.60.1.70245"}
+{"id": 253893, "field": "name", "en": "Flame Boots", "hash": "cf5d9de61aa1507c", "src": "db2@1.60.1.70245"}
+{"id": 253894, "field": "name", "en": "Pattern: Flame Boots", "hash": "66976d5bd05306ee", "src": "db2@1.60.1.70245"}
+{"id": 253894, "field": "description", "en": "Teaches you how to craft Flame Boots.", "hash": "4cb5f3225c97eda1", "src": "db2@1.60.1.70245"}
+{"id": 253895, "field": "name", "en": "Shadow Boots", "hash": "d11b551d6e54f2b2", "src": "db2@1.60.1.70245"}
+{"id": 253896, "field": "name", "en": "Pattern: Shadow Boots", "hash": "33b07cf3a49f9b84", "src": "db2@1.60.1.70245"}
+{"id": 253896, "field": "description", "en": "Teaches you how to craft Shadow Boots.", "hash": "777915244a83dc48", "src": "db2@1.60.1.70245"}
+{"id": 253897, "field": "name", "en": "Pearly Boots", "hash": "011eb11111017ee2", "src": "db2@1.60.1.70245"}
+{"id": 253898, "field": "name", "en": "Pattern: Pearly Boots", "hash": "63b3d8e2474c27b4", "src": "db2@1.60.1.70245"}
+{"id": 253898, "field": "description", "en": "Teaches you how to craft Pearly Boots.", "hash": "093120ee29241ce9", "src": "db2@1.60.1.70245"}
+{"id": 253899, "field": "name", "en": "Shining Boots", "hash": "6389c242864c0f5a", "src": "db2@1.60.1.70245"}
+{"id": 253900, "field": "name", "en": "Pattern: Shining Boots", "hash": "d5dd232f485c50df", "src": "db2@1.60.1.70245"}
+{"id": 253900, "field": "description", "en": "Teaches you how to craft Shining Boots.", "hash": "91367d37fb2d4529", "src": "db2@1.60.1.70245"}
+{"id": 253901, "field": "name", "en": "Filigreed Pristine Gown", "hash": "db1294ebe8b11c97", "src": "db2@1.60.1.70245"}
+{"id": 253902, "field": "name", "en": "Pattern: Filigreed Pristine Gown", "hash": "bcecff0a4a04a969", "src": "db2@1.60.1.70245"}
+{"id": 253902, "field": "description", "en": "Teaches you how to craft Filigreed Pristine Gown.", "hash": "fc34cff4f146792b", "src": "db2@1.60.1.70245"}
+{"id": 253903, "field": "name", "en": "Filigreed Silky Gown", "hash": "59504cd7cb41c51b", "src": "db2@1.60.1.70245"}
+{"id": 253904, "field": "name", "en": "Pattern: Filigreed Silky Gown", "hash": "fb1037ea071adb2f", "src": "db2@1.60.1.70245"}
+{"id": 253904, "field": "description", "en": "Teaches you how to craft Filigreed Silky Gown.", "hash": "de02592ec64cc7b1", "src": "db2@1.60.1.70245"}
+{"id": 253905, "field": "name", "en": "Filigreed Flame Gown", "hash": "8d005b32d6e61c1a", "src": "db2@1.60.1.70245"}
+{"id": 253906, "field": "name", "en": "Pattern: Filigreed Flame Gown", "hash": "2ec0464a12bf322e", "src": "db2@1.60.1.70245"}
+{"id": 253906, "field": "description", "en": "Teaches you how to craft Filigreed Flame Gown.", "hash": "5119b246e8463773", "src": "db2@1.60.1.70245"}
+{"id": 253907, "field": "name", "en": "Filigreed Shadow Gown", "hash": "eadb4871f65ef9f6", "src": "db2@1.60.1.70245"}
+{"id": 253908, "field": "name", "en": "Pattern: Filigreed Shadow Gown", "hash": "b01094c9d9d62e4d", "src": "db2@1.60.1.70245"}
+{"id": 253908, "field": "description", "en": "Teaches you how to craft Filigreed Shadow Gown.", "hash": "a17a3410b37da589", "src": "db2@1.60.1.70245"}
+{"id": 253909, "field": "name", "en": "Filigreed Pearly Gown", "hash": "182b6e4ae58bc2be", "src": "db2@1.60.1.70245"}
+{"id": 253910, "field": "name", "en": "Pattern: Filigreed Pearly Gown", "hash": "dd60ba9dc902f715", "src": "db2@1.60.1.70245"}
+{"id": 253910, "field": "description", "en": "Teaches you how to craft Filigreed Pearly Gown.", "hash": "d17d8fff562a31b9", "src": "db2@1.60.1.70245"}
+{"id": 253911, "field": "name", "en": "Filigreed Shining Gown", "hash": "8f8d63c5b36376b4", "src": "db2@1.60.1.70245"}
+{"id": 253912, "field": "name", "en": "Pattern: Filigreed Shining Gown", "hash": "79d374370e7ec3ce", "src": "db2@1.60.1.70245"}
+{"id": 253912, "field": "description", "en": "Teaches you how to craft Filigreed Shining Gown.", "hash": "71364b36cbf9f122", "src": "db2@1.60.1.70245"}
+{"id": 253913, "field": "name", "en": "Pristine Gloves", "hash": "496fa09bc206810e", "src": "db2@1.60.1.70245"}
+{"id": 253914, "field": "name", "en": "Pattern: Pristine Gloves", "hash": "20bca5a048f1d773", "src": "db2@1.60.1.70245"}
+{"id": 253914, "field": "description", "en": "Teaches you how to craft Pristine Gloves.", "hash": "70e68659e94675da", "src": "db2@1.60.1.70245"}
+{"id": 253915, "field": "name", "en": "Silky Gloves", "hash": "ece20f67e2a29773", "src": "db2@1.60.1.70245"}
+{"id": 253916, "field": "name", "en": "Pattern: Silky Gloves", "hash": "4f77373d18ed4056", "src": "db2@1.60.1.70245"}
+{"id": 253916, "field": "description", "en": "Teaches you how to craft Silky Gloves.", "hash": "ae2a6948e9b5ff14", "src": "db2@1.60.1.70245"}
+{"id": 253917, "field": "name", "en": "Flame Gloves", "hash": "d1d4a547f36696e0", "src": "db2@1.60.1.70245"}
+{"id": 253918, "field": "name", "en": "Pattern: Flame Gloves", "hash": "3469cd1d29b13fc3", "src": "db2@1.60.1.70245"}
+{"id": 253918, "field": "description", "en": "Teaches you how to craft Flame Gloves.", "hash": "d64d1aa261e7d468", "src": "db2@1.60.1.70245"}
+{"id": 253919, "field": "name", "en": "Shadow Gloves", "hash": "b5e9667144ed6393", "src": "db2@1.60.1.70245"}
+{"id": 253920, "field": "name", "en": "Pattern: Shadow Gloves", "hash": "283cc76306fda518", "src": "db2@1.60.1.70245"}
+{"id": 253920, "field": "description", "en": "Teaches you how to craft Shadow Gloves.", "hash": "b8278216102aa7ef", "src": "db2@1.60.1.70245"}
+{"id": 253921, "field": "name", "en": "Pearly Gloves", "hash": "47a1723b238da434", "src": "db2@1.60.1.70245"}
+{"id": 253922, "field": "name", "en": "Pattern: Pearly Gloves", "hash": "b9f4d328e59de5a8", "src": "db2@1.60.1.70245"}
+{"id": 253922, "field": "description", "en": "Teaches you how to craft Pearly Gloves.", "hash": "4955895c22d6adc8", "src": "db2@1.60.1.70245"}
+{"id": 253923, "field": "name", "en": "Shining Gloves", "hash": "a46b3f4841961df7", "src": "db2@1.60.1.70245"}
+{"id": 253924, "field": "name", "en": "Pattern: Shining Gloves", "hash": "2515d9b6c9ce4bb5", "src": "db2@1.60.1.70245"}
+{"id": 253924, "field": "description", "en": "Teaches you how to craft Shining Gloves.", "hash": "e413c410d8c48a9f", "src": "db2@1.60.1.70245"}
+{"id": 253925, "field": "name", "en": "Pristine Sash", "hash": "22a0e3029cd1a7ff", "src": "db2@1.60.1.70245"}
+{"id": 253926, "field": "name", "en": "Pattern: Pristine Sash", "hash": "94f443ef5ee1e984", "src": "db2@1.60.1.70245"}
+{"id": 253926, "field": "description", "en": "Teaches you how to craft Pristine Sash.", "hash": "5a0c3ed2f41498dc", "src": "db2@1.60.1.70245"}
+{"id": 253927, "field": "name", "en": "Silky Sash", "hash": "129a043552e9252b", "src": "db2@1.60.1.70245"}
+{"id": 253928, "field": "name", "en": "Pattern: Silky Sash", "hash": "4a793c812a77a4c7", "src": "db2@1.60.1.70245"}
+{"id": 253928, "field": "description", "en": "Teaches you how to craft Silky Sash.", "hash": "eeb46a3093f3acd0", "src": "db2@1.60.1.70245"}
+{"id": 253929, "field": "name", "en": "Flame Sash", "hash": "464a12905e8d7c2a", "src": "db2@1.60.1.70245"}
+{"id": 253930, "field": "name", "en": "Pattern: Flame Sash", "hash": "7e294adc361bfbc6", "src": "db2@1.60.1.70245"}
+{"id": 253930, "field": "description", "en": "Teaches you how to craft Flame Sash.", "hash": "61cbc348b5ed1c92", "src": "db2@1.60.1.70245"}
+{"id": 253931, "field": "name", "en": "Shadow Sash", "hash": "ec68d56a36f9c2ae", "src": "db2@1.60.1.70245"}
+{"id": 253932, "field": "name", "en": "Pattern: Shadow Sash", "hash": "83a2a4dfecab7920", "src": "db2@1.60.1.70245"}
+{"id": 253932, "field": "description", "en": "Teaches you how to craft Shadow Sash.", "hash": "29735bf9fc28958a", "src": "db2@1.60.1.70245"}
+{"id": 253933, "field": "name", "en": "Pearly Sash", "hash": "19b8fb4326268b76", "src": "db2@1.60.1.70245"}
+{"id": 253934, "field": "name", "en": "Pattern: Pearly Sash", "hash": "b0f2cab3dbd841e8", "src": "db2@1.60.1.70245"}
+{"id": 253934, "field": "description", "en": "Teaches you how to craft Pearly Sash.", "hash": "5976b7e89ed521ba", "src": "db2@1.60.1.70245"}
+{"id": 253935, "field": "name", "en": "Shining Sash", "hash": "8bd13fc8fb98fc9a", "src": "db2@1.60.1.70245"}
+{"id": 253936, "field": "name", "en": "Pattern: Shining Sash", "hash": "ee66679931e3a57d", "src": "db2@1.60.1.70245"}
+{"id": 253936, "field": "description", "en": "Teaches you how to craft Shining Sash.", "hash": "029029f6b084d437", "src": "db2@1.60.1.70245"}
+{"id": 253937, "field": "name", "en": "Filigreed Pristine Leggings", "hash": "939168e935997a14", "src": "db2@1.60.1.70245"}
+{"id": 253938, "field": "name", "en": "Pattern: Filigreed Pristine Leggings", "hash": "c8dc1b189c28ca22", "src": "db2@1.60.1.70245"}
+{"id": 253938, "field": "description", "en": "Teaches you how to craft Filigreed Pristine Leggings.", "hash": "4c1fa037fab45cec", "src": "db2@1.60.1.70245"}
+{"id": 253939, "field": "name", "en": "Filigreed Silky Leggings", "hash": "3259ba919606f3b0", "src": "db2@1.60.1.70245"}
+{"id": 253940, "field": "name", "en": "Pattern: Filigreed Silky Leggings", "hash": "c51e081e3e81d660", "src": "db2@1.60.1.70245"}
+{"id": 253940, "field": "description", "en": "Teaches you how to craft Filigreed Silky Leggings.", "hash": "424ef1a1ce971c3e", "src": "db2@1.60.1.70245"}
+{"id": 253941, "field": "name", "en": "Filigreed Flame Leggings", "hash": "bc1a7c0342a77f0b", "src": "db2@1.60.1.70245"}
+{"id": 253942, "field": "name", "en": "Pattern: Filigreed Flame Leggings", "hash": "4edec995eb2261aa", "src": "db2@1.60.1.70245"}
+{"id": 253942, "field": "description", "en": "Teaches you how to craft Filigreed Flame Leggings.", "hash": "bff1f055f890ebb7", "src": "db2@1.60.1.70245"}
+{"id": 253943, "field": "name", "en": "Filigreed Shadow Leggings", "hash": "0deacdd8a5bd6d5e", "src": "db2@1.60.1.70245"}
+{"id": 253944, "field": "name", "en": "Pattern: Filigreed Shadow Leggings", "hash": "285e7e769b3140c8", "src": "db2@1.60.1.70245"}
+{"id": 253944, "field": "description", "en": "Teaches you how to craft Filigreed Shadow Leggings.", "hash": "cc91205343e2a04d", "src": "db2@1.60.1.70245"}
+{"id": 253945, "field": "name", "en": "Filigreed Pearly Leggings", "hash": "5878858de3a3ff9a", "src": "db2@1.60.1.70245"}
+{"id": 253946, "field": "name", "en": "Pattern: Filigreed Pearly Leggings", "hash": "72ec362bd917d304", "src": "db2@1.60.1.70245"}
+{"id": 253946, "field": "description", "en": "Teaches you how to craft Filigreed Pearly Leggings.", "hash": "f31622b0973eee0e", "src": "db2@1.60.1.70245"}
+{"id": 253947, "field": "name", "en": "Filigreed Shining Leggings", "hash": "4ba997db0d9c6dc7", "src": "db2@1.60.1.70245"}
+{"id": 253948, "field": "name", "en": "Pattern: Filigreed Shining Leggings", "hash": "d4dcf8f6cf02fd90", "src": "db2@1.60.1.70245"}
+{"id": 253948, "field": "description", "en": "Teaches you how to craft Filigreed Shining Leggings.", "hash": "74eb5428432a81d4", "src": "db2@1.60.1.70245"}
+{"id": 253949, "field": "name", "en": "Pristine Circlet", "hash": "00e6b0d74032e56b", "src": "db2@1.60.1.70245"}
+{"id": 253950, "field": "name", "en": "Pattern: Pristine Circlet", "hash": "2d5041fd547f0edc", "src": "db2@1.60.1.70245"}
+{"id": 253950, "field": "description", "en": "Teaches you how to craft Pristine Circlet.", "hash": "700d90bcc84f48b7", "src": "db2@1.60.1.70245"}
+{"id": 253951, "field": "name", "en": "Silky Circlet", "hash": "a47564dad019142f", "src": "db2@1.60.1.70245"}
+{"id": 253952, "field": "name", "en": "Pattern: Silky Circlet", "hash": "16c8c5cc922955b4", "src": "db2@1.60.1.70245"}
+{"id": 253952, "field": "description", "en": "Teaches you how to craft Silky Circlet.", "hash": "c9cab1a4abf4eb9f", "src": "db2@1.60.1.70245"}
+{"id": 253953, "field": "name", "en": "Flame Circlet", "hash": "cc981634484ae983", "src": "db2@1.60.1.70245"}
+{"id": 253954, "field": "name", "en": "Pattern: Flame Circlet", "hash": "3eeb77260a5b2b08", "src": "db2@1.60.1.70245"}
+{"id": 253954, "field": "description", "en": "Teaches you how to craft Flame Circlet.", "hash": "538b731b589576fa", "src": "db2@1.60.1.70245"}
+{"id": 253955, "field": "name", "en": "Shadow Circlet", "hash": "8336ee6c428d0e7c", "src": "db2@1.60.1.70245"}
+{"id": 253956, "field": "name", "en": "Pattern: Shadow Circlet", "hash": "03e188dacac53c3a", "src": "db2@1.60.1.70245"}
+{"id": 253956, "field": "description", "en": "Teaches you how to craft Shadow Circlet.", "hash": "e64e632798ee0c93", "src": "db2@1.60.1.70245"}
+{"id": 253957, "field": "name", "en": "Pearly Circlet", "hash": "1464f5b255391455", "src": "db2@1.60.1.70245"}
+{"id": 253958, "field": "name", "en": "Pattern: Pearly Circlet", "hash": "950f901bdd714213", "src": "db2@1.60.1.70245"}
+{"id": 253958, "field": "description", "en": "Teaches you how to craft Pearly Circlet.", "hash": "30dc1ae1d6d49ecf", "src": "db2@1.60.1.70245"}
+{"id": 253959, "field": "name", "en": "Shining Circlet", "hash": "8fa8e444c16af545", "src": "db2@1.60.1.70245"}
+{"id": 253960, "field": "name", "en": "Pattern: Shining Circlet", "hash": "66f5e94948564baa", "src": "db2@1.60.1.70245"}
+{"id": 253960, "field": "description", "en": "Teaches you how to craft Shining Circlet.", "hash": "603426888aa341ee", "src": "db2@1.60.1.70245"}
+{"id": 253961, "field": "name", "en": "Pristine Gown", "hash": "2108ec4e33866bbd", "src": "db2@1.60.1.70245"}
+{"id": 253962, "field": "name", "en": "Pattern: Pristine Gown", "hash": "935c4d3bf596ad31", "src": "db2@1.60.1.70245"}
+{"id": 253962, "field": "description", "en": "Teaches you how to craft Pristine Gown.", "hash": "894900b14ca7c5fe", "src": "db2@1.60.1.70245"}
+{"id": 253963, "field": "name", "en": "Silky Gown", "hash": "11020d81e99de8d8", "src": "db2@1.60.1.70245"}
+{"id": 253964, "field": "name", "en": "Pattern: Silky Gown", "hash": "48e145cdc12c6874", "src": "db2@1.60.1.70245"}
+{"id": 253964, "field": "description", "en": "Teaches you how to craft Silky Gown.", "hash": "1df12c14ec86d9e1", "src": "db2@1.60.1.70245"}
+{"id": 253965, "field": "name", "en": "Flame Gown", "hash": "44b21bdcf5423fd7", "src": "db2@1.60.1.70245"}
+{"id": 253966, "field": "name", "en": "Pattern: Flame Gown", "hash": "7c915428ccd0bf73", "src": "db2@1.60.1.70245"}
+{"id": 253966, "field": "description", "en": "Teaches you how to craft Flame Gown.", "hash": "910885270e8049b4", "src": "db2@1.60.1.70245"}
+{"id": 253967, "field": "name", "en": "Shadow Gown", "hash": "ead0deb6cdae865b", "src": "db2@1.60.1.70245"}
+{"id": 253968, "field": "name", "en": "Pattern: Shadow Gown", "hash": "820aae2b83603cde", "src": "db2@1.60.1.70245"}
+{"id": 253968, "field": "description", "en": "Teaches you how to craft Shadow Gown.", "hash": "58b01dd854bbc2ac", "src": "db2@1.60.1.70245"}
+{"id": 253969, "field": "name", "en": "Pearly Gown", "hash": "1821048fbcdb4f23", "src": "db2@1.60.1.70245"}
+{"id": 253970, "field": "name", "en": "Pattern: Pearly Gown", "hash": "af5ad3ff728d05a6", "src": "db2@1.60.1.70245"}
+{"id": 253970, "field": "description", "en": "Teaches you how to craft Pearly Gown.", "hash": "88b379c7f7684ecb", "src": "db2@1.60.1.70245"}
+{"id": 253971, "field": "name", "en": "Shining Gown", "hash": "8a394914924dc058", "src": "db2@1.60.1.70245"}
+{"id": 253972, "field": "name", "en": "Pattern: Shining Gown", "hash": "ecce70e5c898692a", "src": "db2@1.60.1.70245"}
+{"id": 253972, "field": "description", "en": "Teaches you how to craft Shining Gown.", "hash": "31ccebd509180159", "src": "db2@1.60.1.70245"}
+{"id": 253973, "field": "name", "en": "Silk Reagent Bag", "hash": "c9148df6a2dcfb7b", "src": "db2@1.60.1.70245"}
+{"id": 253974, "field": "name", "en": "Pattern: Silk Reagent Bag", "hash": "f57e1f1cb72924ec", "src": "db2@1.60.1.70245"}
+{"id": 253974, "field": "description", "en": "Teaches you how to craft Silk Reagent Bag.", "hash": "df85b99718796db1", "src": "db2@1.60.1.70245"}
+{"id": 253975, "field": "name", "en": "Filigreed Pristine Circlet", "hash": "f1cda5471a815559", "src": "db2@1.60.1.70245"}
+{"id": 253976, "field": "name", "en": "Pattern: Filigreed Pristine Circlet", "hash": "7b010667dbe7e522", "src": "db2@1.60.1.70245"}
+{"id": 253976, "field": "description", "en": "Teaches you how to craft Filigreed Pristine Circlet.", "hash": "795e34155064d271", "src": "db2@1.60.1.70245"}
+{"id": 253977, "field": "name", "en": "Filigreed Silky Circlet", "hash": "5e7f0d7c8543c51a", "src": "db2@1.60.1.70245"}
+{"id": 253978, "field": "name", "en": "Pattern: Filigreed Silky Circlet", "hash": "4059779be69751db", "src": "db2@1.60.1.70245"}
+{"id": 253978, "field": "description", "en": "Teaches you how to craft Filigreed Silky Circlet.", "hash": "3cb680ec50939edd", "src": "db2@1.60.1.70245"}
+{"id": 253979, "field": "name", "en": "Filigreed Flame Circlet", "hash": "86a1bed6fd759a5d", "src": "db2@1.60.1.70245"}
+{"id": 253980, "field": "name", "en": "Pattern: Filigreed Flame Circlet", "hash": "687c28f55ec9272f", "src": "db2@1.60.1.70245"}
+{"id": 253980, "field": "description", "en": "Teaches you how to craft Filigreed Flame Circlet.", "hash": "c677425efd342a27", "src": "db2@1.60.1.70245"}
+{"id": 253981, "field": "name", "en": "Filigreed Shadow Circlet", "hash": "b628389ea87e6395", "src": "db2@1.60.1.70245"}
+{"id": 253982, "field": "name", "en": "Pattern: Filigreed Shadow Circlet", "hash": "48ec863050f94645", "src": "db2@1.60.1.70245"}
+{"id": 253982, "field": "description", "en": "Teaches you how to craft Filigreed Shadow Circlet.", "hash": "b4f97397801d56a0", "src": "db2@1.60.1.70245"}
+{"id": 253983, "field": "name", "en": "Filigreed Pearly Circlet", "hash": "47563fe4bb2a696e", "src": "db2@1.60.1.70245"}
+{"id": 253984, "field": "name", "en": "Pattern: Filigreed Pearly Circlet", "hash": "da1a8d7163a54c1e", "src": "db2@1.60.1.70245"}
+{"id": 253984, "field": "description", "en": "Teaches you how to craft Filigreed Pearly Circlet.", "hash": "ff872b4cbe03e8dc", "src": "db2@1.60.1.70245"}
+{"id": 253985, "field": "name", "en": "Filigreed Shining Circlet", "hash": "a121dc5c93d59f10", "src": "db2@1.60.1.70245"}
+{"id": 253986, "field": "name", "en": "Pattern: Filigreed Shining Circlet", "hash": "bb958cfa8949727a", "src": "db2@1.60.1.70245"}
+{"id": 253986, "field": "description", "en": "Teaches you how to craft Filigreed Shining Circlet.", "hash": "21bd8f5b752ab5d4", "src": "db2@1.60.1.70245"}
+{"id": 253987, "field": "name", "en": "Pristine Leggings", "hash": "4d625132d71b97a7", "src": "db2@1.60.1.70245"}
+{"id": 253988, "field": "name", "en": "Pattern: Pristine Leggings", "hash": "07679817e710ddef", "src": "db2@1.60.1.70245"}
+{"id": 253988, "field": "description", "en": "Teaches you how to craft Pristine Leggings.", "hash": "87dc0993c419c851", "src": "db2@1.60.1.70245"}
+{"id": 253989, "field": "name", "en": "Silky Leggings", "hash": "ff68705a30159e97", "src": "db2@1.60.1.70245"}
+{"id": 253990, "field": "name", "en": "Pattern: Silky Leggings", "hash": "80130ac8b84dcc55", "src": "db2@1.60.1.70245"}
+{"id": 253990, "field": "description", "en": "Teaches you how to craft Silky Leggings.", "hash": "73a3e131e767d231", "src": "db2@1.60.1.70245"}
+{"id": 253991, "field": "name", "en": "Flame Leggings", "hash": "892931d1dcb629e1", "src": "db2@1.60.1.70245"}
+{"id": 253992, "field": "name", "en": "Pattern: Flame Leggings", "hash": "09d3cc3f64ee57b0", "src": "db2@1.60.1.70245"}
+{"id": 253992, "field": "description", "en": "Teaches you how to craft Flame Leggings.", "hash": "f146dfe51161a1bb", "src": "db2@1.60.1.70245"}
+{"id": 253993, "field": "name", "en": "Shadow Leggings", "hash": "fc71d5bbd352c393", "src": "db2@1.60.1.70245"}
+{"id": 253994, "field": "name", "en": "Pattern: Shadow Leggings", "hash": "d3bedac05a3e19f8", "src": "db2@1.60.1.70245"}
+{"id": 253994, "field": "description", "en": "Teaches you how to craft Shadow Leggings.", "hash": "0b07b785595b2c67", "src": "db2@1.60.1.70245"}
+{"id": 253995, "field": "name", "en": "Pearly Leggings", "hash": "46ff8d75113955e0", "src": "db2@1.60.1.70245"}
+{"id": 253996, "field": "name", "en": "Pattern: Pearly Leggings", "hash": "1e4c927a9824ac34", "src": "db2@1.60.1.70245"}
+{"id": 253996, "field": "description", "en": "Teaches you how to craft Pearly Leggings.", "hash": "318cb9e2acb77a28", "src": "db2@1.60.1.70245"}
+{"id": 253997, "field": "name", "en": "Shining Leggings", "hash": "5ac2a366334dfdd9", "src": "db2@1.60.1.70245"}
+{"id": 253998, "field": "name", "en": "Pattern: Shining Leggings", "hash": "872c348c479a274a", "src": "db2@1.60.1.70245"}
+{"id": 253998, "field": "description", "en": "Teaches you how to craft Shining Leggings.", "hash": "6b9ab0cfbb14f81a", "src": "db2@1.60.1.70245"}
+{"id": 253999, "field": "name", "en": "Earthen Leggings", "hash": "ba82861a17000069", "src": "db2@1.60.1.70245"}

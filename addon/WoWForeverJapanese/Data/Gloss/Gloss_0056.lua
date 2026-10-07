@@ -212,7 +212,6 @@ WFJ.Data.add("gloss", {
   [56209] = "叩き潰す\tたたきつぶす\twill crush",
   [56210] = "叩き潰す\tたたきつぶす\twill smash",
   [56211] = "叩き潰す\tたたきつぶす\twill smash (to pieces)",
-  [56212] = "叩き潰す\tたたきつぶす\tyou need to take out",
   [56213] = "叩き落とす\tたたきおとす\tis knocked off",
   [56214] = "叩き込む\tたたきこむ\tI'll beat (it) into (you)",
   [56215] = "叩き込む\tたたきこむ\tcan drill into",

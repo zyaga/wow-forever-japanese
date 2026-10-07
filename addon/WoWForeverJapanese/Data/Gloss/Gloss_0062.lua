@@ -327,7 +327,6 @@ WFJ.Data.add("gloss", {
   [62324] = "大きめ\tおおきめ\tlarge (on the large side)",
   [62325] = "大げさ\tおおげさ\tdramatically (exaggeratedly)",
   [62326] = "大げさ\tおおげさ\texaggerated (overreacting)",
-  [62327] = "大ごと\tおおごと\tbig deal",
   [62328] = "大しけ\tおおしけ\tstorm (heavy seas)",
   [62329] = "大した\tたいした\ta huge (great)",
   [62330] = "大した\tたいした\ta lot (considerable)",

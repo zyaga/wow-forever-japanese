@@ -1,24 +1,24 @@
-{"id": 242018, "field": "name", "en": "Plaguelands Bleeding Heart", "hash": "665fe229e03e572e", "src": "db2@1.60.1.70170"}
-{"id": 242018, "field": "description", "en": "An unusually gorgeous flower given the region it is native to. It is capable of thriving despite the plague.", "hash": "d68cbce54a30e4ba", "src": "db2@1.60.1.70170"}
-{"id": 242224, "field": "name", "en": "Basket of Hearts", "hash": "eeb79434b333352b", "src": "db2@1.60.1.70170"}
-{"id": 242224, "field": "description", "en": "Perhaps not the best container one could pick for the situation.", "hash": "7e18a9c61971fa3e", "src": "db2@1.60.1.70170"}
-{"id": 242266, "field": "name", "en": "World of Wardcraft", "hash": "dffc3721be9563be", "src": "db2@1.60.1.70170"}
-{"id": 242266, "field": "description", "en": "Filled cover to cover with thorough documentation of all things related to magical wards. Curiously, the book carries a subtle glow.", "hash": "e7532bd66699a75a", "src": "db2@1.60.1.70170"}
-{"id": 242267, "field": "name", "en": "From Arcanist to Archmage", "hash": "9ecaa6f75f1d2372", "src": "db2@1.60.1.70170"}
-{"id": 242267, "field": "description", "en": "A self-promoting autobiography written by an author too irrelevant to be named. Interestingly, the book also thrums with an attention seeking spell.", "hash": "ff655f603af3e018", "src": "db2@1.60.1.70170"}
-{"id": 242268, "field": "name", "en": "If You Give a Crusader an Enchant", "hash": "ad1756e130173eeb", "src": "db2@1.60.1.70170"}
-{"id": 242268, "field": "description", "en": "An entertaining short story that quickly descends into madness before culminating in giving the antagonist everything he wants. Amusingly, the book shimmers with power.", "hash": "a51920fcb12f07be", "src": "db2@1.60.1.70170"}
-{"id": 242269, "field": "name", "en": "Brilliance of the Grand Sorcerer", "hash": "826ae80427d60e0f", "src": "db2@1.60.1.70170"}
-{"id": 242269, "field": "description", "en": "Combine $s4 Illusion Dust and $s5 Righteous $LOrb:Orbs; at a Mote of Possibility in pursuit of a new discovery.", "hash": "a1186a226e9c1f6c", "src": "db2@1.60.1.70170"}
-{"id": 242270, "field": "name", "en": "Brilliance of the Grand Arcanist", "hash": "5bde5a3737405d4f", "src": "db2@1.60.1.70170"}
-{"id": 242270, "field": "description", "en": "Combine $s4 Illusion Dust and $s5 Righteous $LOrb:Orbs; at a Mote of Possibility in pursuit of a new discovery.", "hash": "a1186a226e9c1f6c", "src": "db2@1.60.1.70170"}
-{"id": 242271, "field": "name", "en": "Brilliance of the Grand Crusader", "hash": "34463b79481adf68", "src": "db2@1.60.1.70170"}
-{"id": 242271, "field": "description", "en": "Combine $s4 Illusion Dust and $s5 Righteous $LOrb:Orbs; at a Mote of Possibility in pursuit of a new discovery.", "hash": "a1186a226e9c1f6c", "src": "db2@1.60.1.70170"}
-{"id": 242361, "field": "name", "en": "Formula: Enchant 2H Weapon - Grand Inquisitor", "hash": "671fb257f784d586", "src": "db2@1.60.1.70170"}
-{"id": 242361, "field": "description", "en": "Teaches you how to permanently enchant a two-handed melee weapon to occasionally bless the wielder with immense strength.", "hash": "97a51be9df291e09", "src": "db2@1.60.1.70170"}
-{"id": 242362, "field": "name", "en": "Brilliance of the Grand Inquisitor", "hash": "9c8febb2d1958f8d", "src": "db2@1.60.1.70170"}
-{"id": 242362, "field": "description", "en": "Combine $s4 Illusion Dust and $s5 Righteous $LOrb:Orbs; at a Mote of Possibility in pursuit of a new discovery.", "hash": "a1186a226e9c1f6c", "src": "db2@1.60.1.70170"}
-{"id": 242363, "field": "name", "en": "Who, What, Where, When, and Die! Five Keys to a Good Inquisition", "hash": "794096021cb7e48c", "src": "db2@1.60.1.70170"}
-{"id": 242363, "field": "description", "en": "Reading this left you with more questions than answers. What was this book even about? And why is it rumbling with great anticipation?", "hash": "bc21c0ce67657700", "src": "db2@1.60.1.70170"}
-{"id": 242709, "field": "name", "en": "Character Bank Tab Bag (DNT)", "hash": "3190335f2853679c", "src": "db2@1.60.1.70170"}
-{"id": 242710, "field": "name", "en": "Monster Weapon [DNT]", "hash": "1f9cc1e1526a126b", "src": "db2@1.60.1.70170"}
+{"id": 242018, "field": "name", "en": "Plaguelands Bleeding Heart", "hash": "665fe229e03e572e", "src": "db2@1.60.1.70245"}
+{"id": 242018, "field": "description", "en": "An unusually gorgeous flower given the region it is native to. It is capable of thriving despite the plague.", "hash": "d68cbce54a30e4ba", "src": "db2@1.60.1.70245"}
+{"id": 242224, "field": "name", "en": "Basket of Hearts", "hash": "eeb79434b333352b", "src": "db2@1.60.1.70245"}
+{"id": 242224, "field": "description", "en": "Perhaps not the best container one could pick for the situation.", "hash": "7e18a9c61971fa3e", "src": "db2@1.60.1.70245"}
+{"id": 242266, "field": "name", "en": "World of Wardcraft", "hash": "dffc3721be9563be", "src": "db2@1.60.1.70245"}
+{"id": 242266, "field": "description", "en": "Filled cover to cover with thorough documentation of all things related to magical wards. Curiously, the book carries a subtle glow.", "hash": "e7532bd66699a75a", "src": "db2@1.60.1.70245"}
+{"id": 242267, "field": "name", "en": "From Arcanist to Archmage", "hash": "9ecaa6f75f1d2372", "src": "db2@1.60.1.70245"}
+{"id": 242267, "field": "description", "en": "A self-promoting autobiography written by an author too irrelevant to be named. Interestingly, the book also thrums with an attention seeking spell.", "hash": "ff655f603af3e018", "src": "db2@1.60.1.70245"}
+{"id": 242268, "field": "name", "en": "If You Give a Crusader an Enchant", "hash": "ad1756e130173eeb", "src": "db2@1.60.1.70245"}
+{"id": 242268, "field": "description", "en": "An entertaining short story that quickly descends into madness before culminating in giving the antagonist everything he wants. Amusingly, the book shimmers with power.", "hash": "a51920fcb12f07be", "src": "db2@1.60.1.70245"}
+{"id": 242269, "field": "name", "en": "Brilliance of the Grand Sorcerer", "hash": "826ae80427d60e0f", "src": "db2@1.60.1.70245"}
+{"id": 242269, "field": "description", "en": "Combine $s4 Illusion Dust and $s5 Righteous $LOrb:Orbs; at a Mote of Possibility in pursuit of a new discovery.", "hash": "a1186a226e9c1f6c", "src": "db2@1.60.1.70245"}
+{"id": 242270, "field": "name", "en": "Brilliance of the Grand Arcanist", "hash": "5bde5a3737405d4f", "src": "db2@1.60.1.70245"}
+{"id": 242270, "field": "description", "en": "Combine $s4 Illusion Dust and $s5 Righteous $LOrb:Orbs; at a Mote of Possibility in pursuit of a new discovery.", "hash": "a1186a226e9c1f6c", "src": "db2@1.60.1.70245"}
+{"id": 242271, "field": "name", "en": "Brilliance of the Grand Crusader", "hash": "34463b79481adf68", "src": "db2@1.60.1.70245"}
+{"id": 242271, "field": "description", "en": "Combine $s4 Illusion Dust and $s5 Righteous $LOrb:Orbs; at a Mote of Possibility in pursuit of a new discovery.", "hash": "a1186a226e9c1f6c", "src": "db2@1.60.1.70245"}
+{"id": 242361, "field": "name", "en": "Formula: Enchant 2H Weapon - Grand Inquisitor", "hash": "671fb257f784d586", "src": "db2@1.60.1.70245"}
+{"id": 242361, "field": "description", "en": "Teaches you how to permanently enchant a two-handed melee weapon to occasionally bless the wielder with immense strength.", "hash": "97a51be9df291e09", "src": "db2@1.60.1.70245"}
+{"id": 242362, "field": "name", "en": "Brilliance of the Grand Inquisitor", "hash": "9c8febb2d1958f8d", "src": "db2@1.60.1.70245"}
+{"id": 242362, "field": "description", "en": "Combine $s4 Illusion Dust and $s5 Righteous $LOrb:Orbs; at a Mote of Possibility in pursuit of a new discovery.", "hash": "a1186a226e9c1f6c", "src": "db2@1.60.1.70245"}
+{"id": 242363, "field": "name", "en": "Who, What, Where, When, and Die! Five Keys to a Good Inquisition", "hash": "794096021cb7e48c", "src": "db2@1.60.1.70245"}
+{"id": 242363, "field": "description", "en": "Reading this left you with more questions than answers. What was this book even about? And why is it rumbling with great anticipation?", "hash": "bc21c0ce67657700", "src": "db2@1.60.1.70245"}
+{"id": 242709, "field": "name", "en": "Character Bank Tab Bag (DNT)", "hash": "3190335f2853679c", "src": "db2@1.60.1.70245"}
+{"id": 242710, "field": "name", "en": "Monster Weapon [DNT]", "hash": "1f9cc1e1526a126b", "src": "db2@1.60.1.70245"}

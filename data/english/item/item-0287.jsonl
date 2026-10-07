@@ -1,5 +1,9 @@
-{"id": 287090, "field": "name", "en": "Sharpened Letter Opener", "hash": "abdcf4b4c904ff34", "src": "db2@1.60.1.70170"}
-{"id": 287416, "field": "name", "en": "Truskis' Cheesecake Slice", "hash": "f30c50f4a16d79c7", "src": "db2@1.60.1.70170"}
-{"id": 287416, "field": "description", "en": "Cheesecake makes you happy.", "hash": "81d403b473235fb8", "src": "db2@1.60.1.70170"}
-{"id": 287505, "field": "name", "en": "Tender Strider Meat", "hash": "7e48989fc150c7a4", "src": "db2@1.60.1.70170"}
-{"id": 287505, "field": "description", "en": "Serves Kyle his lunch!\nKyle would delight in taking a bite out of this succulent treat!", "hash": "5e17d5fa76ceb2f4", "src": "db2@1.60.1.70170"}
+{"id": 287090, "field": "name", "en": "Sharpened Letter Opener", "hash": "abdcf4b4c904ff34", "src": "db2@1.60.1.70245"}
+{"id": 287416, "field": "name", "en": "Truskis' Cheesecake Slice", "hash": "f30c50f4a16d79c7", "src": "db2@1.60.1.70245"}
+{"id": 287416, "field": "description", "en": "Cheesecake makes you happy.", "hash": "81d403b473235fb8", "src": "db2@1.60.1.70245"}
+{"id": 287505, "field": "name", "en": "Tender Strider Meat", "hash": "7e48989fc150c7a4", "src": "db2@1.60.1.70245"}
+{"id": 287505, "field": "description", "en": "Serves Kyle his lunch!\nKyle would delight in taking a bite out of this succulent treat!", "hash": "5e17d5fa76ceb2f4", "src": "db2@1.60.1.70245"}
+{"id": 287958, "field": "name", "en": "Titan Relic", "hash": "d217f2e31d435cfb", "src": "db2@1.60.1.70245"}
+{"id": 287958, "field": "description", "en": "Fragmented remnants of the construct, refracting light like a kaleidoscope.", "hash": "7b1cbbffd1478610", "src": "db2@1.60.1.70245"}
+{"id": 287959, "field": "name", "en": "Titan Relic", "hash": "d217f2e31d435cfb", "src": "db2@1.60.1.70245"}
+{"id": 287959, "field": "description", "en": "Fragmented remnants of the construct, refracting light like a kaleidoscope.", "hash": "7b1cbbffd1478610", "src": "db2@1.60.1.70245"}

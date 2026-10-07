@@ -1,18 +1,18 @@
-{"id": 1268650, "field": "name", "en": "Lightning Strike", "hash": "b103bbff647338c2", "src": "db2@1.60.1.70170"}
-{"id": 1268650, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70170"}
-{"id": 1268651, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
-{"id": 1268651, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
-{"id": 1268652, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
-{"id": 1268652, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
-{"id": 1268659, "field": "name", "en": "Skysight KC", "hash": "8e812e6795eadd78", "src": "db2@1.60.1.70170"}
-{"id": 1268774, "field": "name", "en": "Dread Raven Form", "hash": "dae60476569f8f4b", "src": "db2@1.60.1.70170"}
-{"id": 1268774, "field": "description", "en": "Transforms into a Dread Raven, granting access to new abilities.", "hash": "f7079fad3e409e86", "src": "db2@1.60.1.70170"}
-{"id": 1268774, "field": "aura", "en": "Assumed the form of a cunning dread raven.", "hash": "2b551a56db1a5bb5", "src": "db2@1.60.1.70170"}
-{"id": 1268813, "field": "name", "en": "Arcane Animation", "hash": "02b6248028c5b0a3", "src": "db2@1.60.1.70170"}
-{"id": 1268815, "field": "name", "en": "Spider Form", "hash": "2c7ef0637b953f83", "src": "db2@1.60.1.70170"}
-{"id": 1268815, "field": "description", "en": "Assumes the form of a vicious spider Wild God, gaining its abilities for $d.", "hash": "7640f38c7b931832", "src": "db2@1.60.1.70170"}
-{"id": 1268815, "field": "aura", "en": "Assumed the form of a vicious spider.", "hash": "2af56ca307dfe6fb", "src": "db2@1.60.1.70170"}
-{"id": 1268826, "field": "name", "en": "Thunder Lizard Form", "hash": "1e0d3ed0c5c80092", "src": "db2@1.60.1.70170"}
-{"id": 1268826, "field": "description", "en": "Assumes the form of a mighty thunder lizard for $d.", "hash": "88b719ce956ced0a", "src": "db2@1.60.1.70170"}
-{"id": 1268826, "field": "aura", "en": "Assumed the form of a mighty thunder lizard.", "hash": "ed224c9e54da5436", "src": "db2@1.60.1.70170"}
-{"id": 1268954, "field": "name", "en": "Zephras Shadowgale Forest", "hash": "2b1fdab392f0543d", "src": "db2@1.60.1.70170"}
+{"id": 1268650, "field": "name", "en": "Lightning Strike", "hash": "b103bbff647338c2", "src": "db2@1.60.1.70245"}
+{"id": 1268650, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70245"}
+{"id": 1268651, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70245"}
+{"id": 1268651, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70245"}
+{"id": 1268652, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70245"}
+{"id": 1268652, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70245"}
+{"id": 1268659, "field": "name", "en": "Skysight KC", "hash": "8e812e6795eadd78", "src": "db2@1.60.1.70245"}
+{"id": 1268774, "field": "name", "en": "Dread Raven Form", "hash": "dae60476569f8f4b", "src": "db2@1.60.1.70245"}
+{"id": 1268774, "field": "description", "en": "Transforms into a Dread Raven, granting access to new abilities.", "hash": "f7079fad3e409e86", "src": "db2@1.60.1.70245"}
+{"id": 1268774, "field": "aura", "en": "Assumed the form of a cunning dread raven.", "hash": "2b551a56db1a5bb5", "src": "db2@1.60.1.70245"}
+{"id": 1268813, "field": "name", "en": "Arcane Animation", "hash": "02b6248028c5b0a3", "src": "db2@1.60.1.70245"}
+{"id": 1268815, "field": "name", "en": "Spider Form", "hash": "2c7ef0637b953f83", "src": "db2@1.60.1.70245"}
+{"id": 1268815, "field": "description", "en": "Assumes the form of a vicious spider Wild God, gaining its abilities for $d.", "hash": "7640f38c7b931832", "src": "db2@1.60.1.70245"}
+{"id": 1268815, "field": "aura", "en": "Assumed the form of a vicious spider.", "hash": "2af56ca307dfe6fb", "src": "db2@1.60.1.70245"}
+{"id": 1268826, "field": "name", "en": "Thunder Lizard Form", "hash": "1e0d3ed0c5c80092", "src": "db2@1.60.1.70245"}
+{"id": 1268826, "field": "description", "en": "Assumes the form of a mighty thunder lizard for $d.", "hash": "88b719ce956ced0a", "src": "db2@1.60.1.70245"}
+{"id": 1268826, "field": "aura", "en": "Assumed the form of a mighty thunder lizard.", "hash": "ed224c9e54da5436", "src": "db2@1.60.1.70245"}
+{"id": 1268954, "field": "name", "en": "Zephras Shadowgale Forest", "hash": "2b1fdab392f0543d", "src": "db2@1.60.1.70245"}

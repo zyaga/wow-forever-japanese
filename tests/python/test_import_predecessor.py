@@ -160,7 +160,7 @@ def test_committed_data_validates(root):
     # (`schema.MULTI_VERSION_SOURCES`). Every source is still a PINNED build; that is what this asserts.
     pinned = {
         "pfquest@7786596", "wago@1.15.9.69722", "vmangos@13b49dc", "wdb@1.15.9.69722",
-        "wdb@1.60.1.70170", "db2@1.60.1.70170",  # Forever's pinned build
+        "wdb@1.60.1.70245", "db2@1.60.1.70245",  # Forever's pinned build
         "forever-vo@025070f",  # forever-vo's captures at a pinned commit (ADR-055)
     }
     # Additive (ADR-050): a line an earlier Forever build served keeps that build's stamp

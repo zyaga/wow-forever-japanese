@@ -1,104 +1,104 @@
-{"id": 1286011, "field": "name", "en": "Swift Empyrean Galestrider", "hash": "1eb42c9727c44f53", "src": "db2@1.60.1.70170"}
-{"id": 1286011, "field": "description", "en": "Summons and dismisses a rideable crane. This is a very fast mount.", "hash": "12792ccfb3dc9ccb", "src": "db2@1.60.1.70170"}
-{"id": 1286011, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1286021, "field": "name", "en": "Swift Regal Galestrider", "hash": "a47c6782c36724d2", "src": "db2@1.60.1.70170"}
-{"id": 1286021, "field": "description", "en": "Summons and dismisses a rideable crane. This is a very fast mount.", "hash": "12792ccfb3dc9ccb", "src": "db2@1.60.1.70170"}
-{"id": 1286021, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1286022, "field": "name", "en": "Swift Stormy Galestrider", "hash": "8cfe3986516a3ff4", "src": "db2@1.60.1.70170"}
-{"id": 1286022, "field": "description", "en": "Summons and dismisses a rideable crane. This is a very fast mount.", "hash": "12792ccfb3dc9ccb", "src": "db2@1.60.1.70170"}
-{"id": 1286022, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1286024, "field": "name", "en": "Empyrean Galestrider", "hash": "5ff1ed00cc160f8b", "src": "db2@1.60.1.70170"}
-{"id": 1286024, "field": "description", "en": "Summons and dismisses a rideable Empyrean Galestrider.", "hash": "593a2706f59252ec", "src": "db2@1.60.1.70170"}
-{"id": 1286024, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1286025, "field": "name", "en": "Regal Galestrider", "hash": "ceda62808803ce07", "src": "db2@1.60.1.70170"}
-{"id": 1286025, "field": "description", "en": "Summons and dismisses a rideable Regal Galestrider.", "hash": "3c688ef6163e75ab", "src": "db2@1.60.1.70170"}
-{"id": 1286025, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1286026, "field": "name", "en": "Stormy Galestrider", "hash": "3b15a9ee1797e4d4", "src": "db2@1.60.1.70170"}
-{"id": 1286026, "field": "description", "en": "Summons and dismisses a rideable Stormy Galestrider.", "hash": "b821012ae4e84463", "src": "db2@1.60.1.70170"}
-{"id": 1286026, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1286040, "field": "name", "en": "Debilitate", "hash": "275e1753ebcb4036", "src": "db2@1.60.1.70170"}
-{"id": 1286041, "field": "name", "en": "Faerie Fire", "hash": "e9b99dcf49f432d1", "src": "db2@1.60.1.70170"}
-{"id": 1286042, "field": "name", "en": "Cyclone", "hash": "04b014a485b7bef9", "src": "db2@1.60.1.70170"}
-{"id": 1286043, "field": "name", "en": "Prismatic Affliction", "hash": "a80725756a04f1d9", "src": "db2@1.60.1.70170"}
-{"id": 1286044, "field": "name", "en": "Revitalization", "hash": "b189eee65eaa85bd", "src": "db2@1.60.1.70170"}
-{"id": 1286050, "field": "name", "en": "Crystallize", "hash": "d00de7969e0e8870", "src": "db2@1.60.1.70170"}
-{"id": 1286050, "field": "description", "en": "Attempts to freeze the Blackthorne Pact in place, locking them in a block of ice and making them weak to Fire effects.", "hash": "1c1770dc18a32706", "src": "db2@1.60.1.70170"}
-{"id": 1286050, "field": "aura", "en": "Stunned. Increases Fire damage taken by $s2%.", "hash": "ec527bc08926f22d", "src": "db2@1.60.1.70170"}
-{"id": 1286052, "field": "name", "en": "Empowered Roar", "hash": "45dc6729adfcdecd", "src": "db2@1.60.1.70170"}
-{"id": 1286090, "field": "name", "en": "Resting", "hash": "0ebee6536cdf344b", "src": "db2@1.60.1.70170"}
-{"id": 1286090, "field": "aura", "en": "Resting...", "hash": "eff86fb15f1caaa3", "src": "db2@1.60.1.70170"}
-{"id": 1286114, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70170"}
-{"id": 1286114, "field": "description", "en": "Anara calls down stars at random players' locations every $t1 sec for $d. Each star inflicts $1294728s1 Arcane damage to all players within $1294728A1 yds of the impact.", "hash": "ba87e45deeecc9ce", "src": "db2@1.60.1.70170"}
-{"id": 1286115, "field": "name", "en": "Eclipse", "hash": "6e4bc030610fce1a", "src": "db2@1.60.1.70170"}
-{"id": 1286118, "field": "name", "en": "Ghost Visual", "hash": "d1aba3d3da714c83", "src": "db2@1.60.1.70170"}
-{"id": 1286121, "field": "name", "en": "Blue Light", "hash": "9161167301a957b8", "src": "db2@1.60.1.70170"}
-{"id": 1286177, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
-{"id": 1286177, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
-{"id": 1286183, "field": "name", "en": "Multi-Shot", "hash": "9c9367a3ec99d445", "src": "db2@1.60.1.70170"}
-{"id": 1286183, "field": "description", "en": "Fires a volley of missiles at an enemy and its nearby allies, striking up to $x1 targets for normal damage plus $s1.", "hash": "2f4b573040a433d8", "src": "db2@1.60.1.70170"}
-{"id": 1286238, "field": "name", "en": "Improved Skinning", "hash": "379b440adfdd7f30", "src": "db2@1.60.1.70170"}
-{"id": 1286238, "field": "description", "en": "Skinning +$s1.", "hash": "cb590ff6f6e5f54e", "src": "db2@1.60.1.70170"}
-{"id": 1286240, "field": "name", "en": "Trigger Aura", "hash": "d3b069d8e37a7661", "src": "db2@1.60.1.70170"}
-{"id": 1286242, "field": "name", "en": "Portal Effect: Emerald Dream", "hash": "a2e62ac80d139996", "src": "db2@1.60.1.70170"}
-{"id": 1286251, "field": "name", "en": "(DNT) Blessing of Salvation - TEST RAID SPELL", "hash": "c4b91386a739471d", "src": "db2@1.60.1.70170"}
-{"id": 1286251, "field": "description", "en": "Places a Blessing on the party member, reducing the amount of all threat generated by $s1% for $d.  Players may only have one Blessing on them per Paladin at any one time.", "hash": "3d92bb5df5538a2e", "src": "db2@1.60.1.70170"}
-{"id": 1286251, "field": "aura", "en": "Reduces threat generated by $s1%.", "hash": "69005136fc8a4157", "src": "db2@1.60.1.70170"}
-{"id": 1286252, "field": "name", "en": "(DNT) Blessing of Wisdom - TEST RAID SPELL", "hash": "ec92d81f4a2d2604", "src": "db2@1.60.1.70170"}
-{"id": 1286252, "field": "description", "en": "Places a Blessing on the friendly target, restoring $s1 mana every $t1 seconds for $d.  Players may only have one Blessing on them per Paladin at any one time.", "hash": "08436b3c5a0c00e9", "src": "db2@1.60.1.70170"}
-{"id": 1286252, "field": "aura", "en": "Restores $s1 mana every $t1 seconds.", "hash": "b1bbeedea8bfbbcf", "src": "db2@1.60.1.70170"}
-{"id": 1286253, "field": "name", "en": "(DNT) Blessing of Might - TEST RAID SPELL", "hash": "857986a8e2a8659e", "src": "db2@1.60.1.70170"}
-{"id": 1286253, "field": "description", "en": "Places a Blessing on the friendly target, increasing melee attack power by $s1 for $d.  Players may only have one Blessing on them per Paladin at any one time.", "hash": "4fee37ec06dc9c22", "src": "db2@1.60.1.70170"}
-{"id": 1286253, "field": "aura", "en": "Increases melee attack power by $s1.", "hash": "92e5f3086948a255", "src": "db2@1.60.1.70170"}
-{"id": 1286254, "field": "name", "en": "(DNT) Blessing of Kings - TEST RAID SPELL", "hash": "96a8caad4592c6c3", "src": "db2@1.60.1.70170"}
-{"id": 1286254, "field": "description", "en": "Places a Blessing on the friendly target, increasing total stats by $s1% for $d.  Players may only have one Blessing on them per Paladin at any one time.", "hash": "f4a4668dccfaab2b", "src": "db2@1.60.1.70170"}
-{"id": 1286254, "field": "aura", "en": "Increases stats by $s1%.", "hash": "b6c88837e6309de4", "src": "db2@1.60.1.70170"}
-{"id": 1286257, "field": "name", "en": "(DNT) Prayer of Spirit - TEST RAID SPELL", "hash": "414d92adbad63321", "src": "db2@1.60.1.70170"}
-{"id": 1286257, "field": "description", "en": "Power infuses all party and raid members, increasing their Spirit by $s1 for $d.", "hash": "19cec3fc4b4a823a", "src": "db2@1.60.1.70170"}
-{"id": 1286257, "field": "aura", "en": "Increases Spirit by $s1.", "hash": "7e8fc3e9abaa7179", "src": "db2@1.60.1.70170"}
-{"id": 1286298, "field": "name", "en": "Soul Rip", "hash": "72e7cba76ec163ee", "src": "db2@1.60.1.70170"}
-{"id": 1286298, "field": "description", "en": "Attempts to sunder the soul of a nearby enemy. When the Phantasm is dispelled it will cause damage to the dispeller and summon a Phantasm at the targets location that travels toward the caster.", "hash": "2e16c97045a07d27", "src": "db2@1.60.1.70170"}
-{"id": 1286298, "field": "aura", "en": "Your soul is beginning to fracture.", "hash": "d2e8ed7a38a94704", "src": "db2@1.60.1.70170"}
-{"id": 1286299, "field": "name", "en": "Soul Rip", "hash": "72e7cba76ec163ee", "src": "db2@1.60.1.70170"}
-{"id": 1286299, "field": "description", "en": "Attempts to sunder the soul of a nearby enemy. When the Phantasm is dispelled it will cause damage to the dispeller and summon a Phantasm at the targets location that travels toward the caster.", "hash": "2e16c97045a07d27", "src": "db2@1.60.1.70170"}
-{"id": 1286299, "field": "aura", "en": "Your soul is beginning to fracture.", "hash": "d2e8ed7a38a94704", "src": "db2@1.60.1.70170"}
-{"id": 1286301, "field": "name", "en": "Soul Siphon", "hash": "52b445b62db7cbe2", "src": "db2@1.60.1.70170"}
-{"id": 1286301, "field": "aura", "en": "Periodically taking $s1 damage.", "hash": "3f409d2b7532fa87", "src": "db2@1.60.1.70170"}
-{"id": 1286303, "field": "name", "en": "PvP Rune Berserking Visual", "hash": "7d365144d45b76e2", "src": "db2@1.60.1.70170"}
-{"id": 1286304, "field": "name", "en": "Berserking", "hash": "992f8dc22426f7d8", "src": "db2@1.60.1.70170"}
-{"id": 1286304, "field": "aura", "en": "Increases all damage caused by $s1% and all damage taken by $s2%.", "hash": "3f3f91b0b5a24ad6", "src": "db2@1.60.1.70170"}
-{"id": 1286338, "field": "name", "en": "Howling Wind", "hash": "f8180973a3df9495", "src": "db2@1.60.1.70170"}
-{"id": 1286342, "field": "name", "en": "PvP Rune Speed Visual", "hash": "a8eb055e2ee36f24", "src": "db2@1.60.1.70170"}
-{"id": 1286343, "field": "name", "en": "PvP Rune Restoration Visual", "hash": "97d5693a0e062564", "src": "db2@1.60.1.70170"}
-{"id": 1286344, "field": "name", "en": "Restoration", "hash": "968110afb3b81a5a", "src": "db2@1.60.1.70170"}
-{"id": 1286344, "field": "aura", "en": "Restores Health, Mana and Pet Happiness.", "hash": "0d160b5c308fc66b", "src": "db2@1.60.1.70170"}
-{"id": 1286345, "field": "name", "en": "Speed", "hash": "c00eb6ccb4816733", "src": "db2@1.60.1.70170"}
-{"id": 1286345, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70170"}
-{"id": 1286358, "field": "name", "en": "Howling Wind", "hash": "f8180973a3df9495", "src": "db2@1.60.1.70170"}
-{"id": 1286462, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70170"}
-{"id": 1286462, "field": "description", "en": "Puts the caster in stealth mode for $d.", "hash": "4b1b0f76138058e8", "src": "db2@1.60.1.70170"}
-{"id": 1286462, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70170"}
-{"id": 1286504, "field": "name", "en": "[DNT] Dummy Gossip Spell", "hash": "8082de8d20a981c3", "src": "db2@1.60.1.70170"}
-{"id": 1286513, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70170"}
-{"id": 1286513, "field": "description", "en": "Teleports the target mortal to a secluded area.", "hash": "ab428993e3d9b2d6", "src": "db2@1.60.1.70170"}
-{"id": 1286514, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70170"}
-{"id": 1286514, "field": "description", "en": "Teleports the target mortal to a secluded area.", "hash": "ab428993e3d9b2d6", "src": "db2@1.60.1.70170"}
-{"id": 1286580, "field": "name", "en": "Lots of Love", "hash": "2578f77d8c852c2f", "src": "db2@1.60.1.70170"}
-{"id": 1286582, "field": "name", "en": "Emote State - Dance", "hash": "6e2fe4882dfa4e0f", "src": "db2@1.60.1.70170"}
-{"id": 1286599, "field": "name", "en": "Greeting Bark", "hash": "1e0513baff076dfe", "src": "db2@1.60.1.70170"}
-{"id": 1286629, "field": "name", "en": "Summon Snowy Wolf Pup", "hash": "70be96fc0bb09b97", "src": "db2@1.60.1.70170"}
-{"id": 1286629, "field": "description", "en": "Right Click to summon and dismiss your snowy wolf pup.", "hash": "f535b1a7c11cae21", "src": "db2@1.60.1.70170"}
-{"id": 1286699, "field": "name", "en": "Twilight Empowerment", "hash": "be942d151b144e76", "src": "db2@1.60.1.70170"}
-{"id": 1286699, "field": "description", "en": "$@spelldesc1322318", "hash": "7f3df932013dad36", "src": "db2@1.60.1.70170"}
-{"id": 1286699, "field": "aura", "en": "Melee attacks have a chance to inflict additional Shadow damage.", "hash": "98405c2ee33f20a8", "src": "db2@1.60.1.70170"}
-{"id": 1286792, "field": "name", "en": "Centaur Banner Deployment Device", "hash": "273a2c0dc1eea404", "src": "db2@1.60.1.70170"}
-{"id": 1286796, "field": "name", "en": "Hoof-Shaped Foot Pedal", "hash": "e81023e1175c6bf8", "src": "db2@1.60.1.70170"}
-{"id": 1286800, "field": "name", "en": "Deploy Centaur Banner", "hash": "287189021601991e", "src": "db2@1.60.1.70170"}
-{"id": 1286800, "field": "description", "en": "Deploy a banner representing your chosen faction in the Desolace centaur war for $d.", "hash": "d98e181b401358d8", "src": "db2@1.60.1.70170"}
-{"id": 1286814, "field": "name", "en": "Hoof-Shaped Foot Pedal", "hash": "e81023e1175c6bf8", "src": "db2@1.60.1.70170"}
-{"id": 1286814, "field": "description", "en": "Transform into a centaur for $d or until you enter combat.\r\n\r\nWhile in Desolace, your movement speed is also increased by $s2% and this transformation persists through combat.", "hash": "41bf7428bb0a43ef", "src": "db2@1.60.1.70170"}
-{"id": 1286814, "field": "aura", "en": "Transformed into a centaur.\r\n\r\nWhile in Desolace, you also gain $s2% movement speed and the transformation persists through combat.", "hash": "880a251d30b309e5", "src": "db2@1.60.1.70170"}
-{"id": 1286850, "field": "name", "en": "Shark Attack", "hash": "18306d3cd8debcd9", "src": "db2@1.60.1.70170"}
-{"id": 1286850, "field": "description", "en": "Bitten by Darkspear Shark! Taking damage equal to $s1% of your health every $t1 sec.\r\n", "hash": "b8e79c9edbed7643", "src": "db2@1.60.1.70170"}
-{"id": 1286850, "field": "aura", "en": "Bitten by Darkspear Shark! Taking damage equal to $s1% of your health every $t1 sec.", "hash": "b8e79c9edbed7643", "src": "db2@1.60.1.70170"}
-{"id": 1286951, "field": "name", "en": "Weak Healing Touch", "hash": "398c34f66bf7ef9b", "src": "db2@1.60.1.70170"}
-{"id": 1286953, "field": "name", "en": "Collect Hot Springs Water", "hash": "f31ab513f077f9d7", "src": "db2@1.60.1.70170"}
+{"id": 1286011, "field": "name", "en": "Swift Empyrean Galestrider", "hash": "1eb42c9727c44f53", "src": "db2@1.60.1.70245"}
+{"id": 1286011, "field": "description", "en": "Summons and dismisses a rideable crane. This is a very fast mount.", "hash": "12792ccfb3dc9ccb", "src": "db2@1.60.1.70245"}
+{"id": 1286011, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1286021, "field": "name", "en": "Swift Regal Galestrider", "hash": "a47c6782c36724d2", "src": "db2@1.60.1.70245"}
+{"id": 1286021, "field": "description", "en": "Summons and dismisses a rideable crane. This is a very fast mount.", "hash": "12792ccfb3dc9ccb", "src": "db2@1.60.1.70245"}
+{"id": 1286021, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1286022, "field": "name", "en": "Swift Stormy Galestrider", "hash": "8cfe3986516a3ff4", "src": "db2@1.60.1.70245"}
+{"id": 1286022, "field": "description", "en": "Summons and dismisses a rideable crane. This is a very fast mount.", "hash": "12792ccfb3dc9ccb", "src": "db2@1.60.1.70245"}
+{"id": 1286022, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1286024, "field": "name", "en": "Empyrean Galestrider", "hash": "5ff1ed00cc160f8b", "src": "db2@1.60.1.70245"}
+{"id": 1286024, "field": "description", "en": "Summons and dismisses a rideable Empyrean Galestrider.", "hash": "593a2706f59252ec", "src": "db2@1.60.1.70245"}
+{"id": 1286024, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1286025, "field": "name", "en": "Regal Galestrider", "hash": "ceda62808803ce07", "src": "db2@1.60.1.70245"}
+{"id": 1286025, "field": "description", "en": "Summons and dismisses a rideable Regal Galestrider.", "hash": "3c688ef6163e75ab", "src": "db2@1.60.1.70245"}
+{"id": 1286025, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1286026, "field": "name", "en": "Stormy Galestrider", "hash": "3b15a9ee1797e4d4", "src": "db2@1.60.1.70245"}
+{"id": 1286026, "field": "description", "en": "Summons and dismisses a rideable Stormy Galestrider.", "hash": "b821012ae4e84463", "src": "db2@1.60.1.70245"}
+{"id": 1286026, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1286040, "field": "name", "en": "Debilitate", "hash": "275e1753ebcb4036", "src": "db2@1.60.1.70245"}
+{"id": 1286041, "field": "name", "en": "Faerie Fire", "hash": "e9b99dcf49f432d1", "src": "db2@1.60.1.70245"}
+{"id": 1286042, "field": "name", "en": "Cyclone", "hash": "04b014a485b7bef9", "src": "db2@1.60.1.70245"}
+{"id": 1286043, "field": "name", "en": "Prismatic Affliction", "hash": "a80725756a04f1d9", "src": "db2@1.60.1.70245"}
+{"id": 1286044, "field": "name", "en": "Revitalization", "hash": "b189eee65eaa85bd", "src": "db2@1.60.1.70245"}
+{"id": 1286050, "field": "name", "en": "Crystallize", "hash": "d00de7969e0e8870", "src": "db2@1.60.1.70245"}
+{"id": 1286050, "field": "description", "en": "Attempts to freeze the Blackthorne Pact in place, locking them in a block of ice and making them weak to Fire effects.", "hash": "1c1770dc18a32706", "src": "db2@1.60.1.70245"}
+{"id": 1286050, "field": "aura", "en": "Stunned. Increases Fire damage taken by $s2%.", "hash": "ec527bc08926f22d", "src": "db2@1.60.1.70245"}
+{"id": 1286052, "field": "name", "en": "Empowered Roar", "hash": "45dc6729adfcdecd", "src": "db2@1.60.1.70245"}
+{"id": 1286090, "field": "name", "en": "Resting", "hash": "0ebee6536cdf344b", "src": "db2@1.60.1.70245"}
+{"id": 1286090, "field": "aura", "en": "Resting...", "hash": "eff86fb15f1caaa3", "src": "db2@1.60.1.70245"}
+{"id": 1286114, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70245"}
+{"id": 1286114, "field": "description", "en": "Anara calls down stars at random players' locations every $t1 sec for $d. Each star inflicts $1294728s1 Arcane damage to all players within $1294728A1 yds of the impact.", "hash": "ba87e45deeecc9ce", "src": "db2@1.60.1.70245"}
+{"id": 1286115, "field": "name", "en": "Eclipse", "hash": "6e4bc030610fce1a", "src": "db2@1.60.1.70245"}
+{"id": 1286118, "field": "name", "en": "Ghost Visual", "hash": "d1aba3d3da714c83", "src": "db2@1.60.1.70245"}
+{"id": 1286121, "field": "name", "en": "Blue Light", "hash": "9161167301a957b8", "src": "db2@1.60.1.70245"}
+{"id": 1286177, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70245"}
+{"id": 1286177, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70245"}
+{"id": 1286183, "field": "name", "en": "Multi-Shot", "hash": "9c9367a3ec99d445", "src": "db2@1.60.1.70245"}
+{"id": 1286183, "field": "description", "en": "Fires a volley of missiles at an enemy and its nearby allies, striking up to $x1 targets for normal damage plus $s1.", "hash": "2f4b573040a433d8", "src": "db2@1.60.1.70245"}
+{"id": 1286238, "field": "name", "en": "Improved Skinning", "hash": "379b440adfdd7f30", "src": "db2@1.60.1.70245"}
+{"id": 1286238, "field": "description", "en": "Skinning +$s1.", "hash": "cb590ff6f6e5f54e", "src": "db2@1.60.1.70245"}
+{"id": 1286240, "field": "name", "en": "Trigger Aura", "hash": "d3b069d8e37a7661", "src": "db2@1.60.1.70245"}
+{"id": 1286242, "field": "name", "en": "Portal Effect: Emerald Dream", "hash": "a2e62ac80d139996", "src": "db2@1.60.1.70245"}
+{"id": 1286251, "field": "name", "en": "(DNT) Blessing of Salvation - TEST RAID SPELL", "hash": "c4b91386a739471d", "src": "db2@1.60.1.70245"}
+{"id": 1286251, "field": "description", "en": "Places a Blessing on the party member, reducing the amount of all threat generated by $s1% for $d.  Players may only have one Blessing on them per Paladin at any one time.", "hash": "3d92bb5df5538a2e", "src": "db2@1.60.1.70245"}
+{"id": 1286251, "field": "aura", "en": "Reduces threat generated by $s1%.", "hash": "69005136fc8a4157", "src": "db2@1.60.1.70245"}
+{"id": 1286252, "field": "name", "en": "(DNT) Blessing of Wisdom - TEST RAID SPELL", "hash": "ec92d81f4a2d2604", "src": "db2@1.60.1.70245"}
+{"id": 1286252, "field": "description", "en": "Places a Blessing on the friendly target, restoring $s1 mana every $t1 seconds for $d.  Players may only have one Blessing on them per Paladin at any one time.", "hash": "08436b3c5a0c00e9", "src": "db2@1.60.1.70245"}
+{"id": 1286252, "field": "aura", "en": "Restores $s1 mana every $t1 seconds.", "hash": "b1bbeedea8bfbbcf", "src": "db2@1.60.1.70245"}
+{"id": 1286253, "field": "name", "en": "(DNT) Blessing of Might - TEST RAID SPELL", "hash": "857986a8e2a8659e", "src": "db2@1.60.1.70245"}
+{"id": 1286253, "field": "description", "en": "Places a Blessing on the friendly target, increasing melee attack power by $s1 for $d.  Players may only have one Blessing on them per Paladin at any one time.", "hash": "4fee37ec06dc9c22", "src": "db2@1.60.1.70245"}
+{"id": 1286253, "field": "aura", "en": "Increases melee attack power by $s1.", "hash": "92e5f3086948a255", "src": "db2@1.60.1.70245"}
+{"id": 1286254, "field": "name", "en": "(DNT) Blessing of Kings - TEST RAID SPELL", "hash": "96a8caad4592c6c3", "src": "db2@1.60.1.70245"}
+{"id": 1286254, "field": "description", "en": "Places a Blessing on the friendly target, increasing total stats by $s1% for $d.  Players may only have one Blessing on them per Paladin at any one time.", "hash": "f4a4668dccfaab2b", "src": "db2@1.60.1.70245"}
+{"id": 1286254, "field": "aura", "en": "Increases stats by $s1%.", "hash": "b6c88837e6309de4", "src": "db2@1.60.1.70245"}
+{"id": 1286257, "field": "name", "en": "(DNT) Prayer of Spirit - TEST RAID SPELL", "hash": "414d92adbad63321", "src": "db2@1.60.1.70245"}
+{"id": 1286257, "field": "description", "en": "Power infuses all party and raid members, increasing their Spirit by $s1 for $d.", "hash": "19cec3fc4b4a823a", "src": "db2@1.60.1.70245"}
+{"id": 1286257, "field": "aura", "en": "Increases Spirit by $s1.", "hash": "7e8fc3e9abaa7179", "src": "db2@1.60.1.70245"}
+{"id": 1286298, "field": "name", "en": "Soul Rip", "hash": "72e7cba76ec163ee", "src": "db2@1.60.1.70245"}
+{"id": 1286298, "field": "description", "en": "Attempts to sunder the soul of a nearby enemy. When the Phantasm is dispelled it will cause damage to the dispeller and summon a Phantasm at the targets location that travels toward the caster.", "hash": "2e16c97045a07d27", "src": "db2@1.60.1.70245"}
+{"id": 1286298, "field": "aura", "en": "Your soul is beginning to fracture.", "hash": "d2e8ed7a38a94704", "src": "db2@1.60.1.70245"}
+{"id": 1286299, "field": "name", "en": "Soul Rip", "hash": "72e7cba76ec163ee", "src": "db2@1.60.1.70245"}
+{"id": 1286299, "field": "description", "en": "Attempts to sunder the soul of a nearby enemy. When the Phantasm is dispelled it will cause damage to the dispeller and summon a Phantasm at the targets location that travels toward the caster.", "hash": "2e16c97045a07d27", "src": "db2@1.60.1.70245"}
+{"id": 1286299, "field": "aura", "en": "Your soul is beginning to fracture.", "hash": "d2e8ed7a38a94704", "src": "db2@1.60.1.70245"}
+{"id": 1286301, "field": "name", "en": "Soul Siphon", "hash": "52b445b62db7cbe2", "src": "db2@1.60.1.70245"}
+{"id": 1286301, "field": "aura", "en": "Periodically taking $s1 damage.", "hash": "3f409d2b7532fa87", "src": "db2@1.60.1.70245"}
+{"id": 1286303, "field": "name", "en": "PvP Rune Berserking Visual", "hash": "7d365144d45b76e2", "src": "db2@1.60.1.70245"}
+{"id": 1286304, "field": "name", "en": "Berserking", "hash": "992f8dc22426f7d8", "src": "db2@1.60.1.70245"}
+{"id": 1286304, "field": "aura", "en": "Increases all damage caused by $s1% and all damage taken by $s2%.", "hash": "3f3f91b0b5a24ad6", "src": "db2@1.60.1.70245"}
+{"id": 1286338, "field": "name", "en": "Howling Wind", "hash": "f8180973a3df9495", "src": "db2@1.60.1.70245"}
+{"id": 1286342, "field": "name", "en": "PvP Rune Speed Visual", "hash": "a8eb055e2ee36f24", "src": "db2@1.60.1.70245"}
+{"id": 1286343, "field": "name", "en": "PvP Rune Restoration Visual", "hash": "97d5693a0e062564", "src": "db2@1.60.1.70245"}
+{"id": 1286344, "field": "name", "en": "Restoration", "hash": "968110afb3b81a5a", "src": "db2@1.60.1.70245"}
+{"id": 1286344, "field": "aura", "en": "Restores Health, Mana and Pet Happiness.", "hash": "0d160b5c308fc66b", "src": "db2@1.60.1.70245"}
+{"id": 1286345, "field": "name", "en": "Speed", "hash": "c00eb6ccb4816733", "src": "db2@1.60.1.70245"}
+{"id": 1286345, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70245"}
+{"id": 1286358, "field": "name", "en": "Howling Wind", "hash": "f8180973a3df9495", "src": "db2@1.60.1.70245"}
+{"id": 1286462, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70245"}
+{"id": 1286462, "field": "description", "en": "Puts the caster in stealth mode for $d.", "hash": "4b1b0f76138058e8", "src": "db2@1.60.1.70245"}
+{"id": 1286462, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70245"}
+{"id": 1286504, "field": "name", "en": "[DNT] Dummy Gossip Spell", "hash": "8082de8d20a981c3", "src": "db2@1.60.1.70245"}
+{"id": 1286513, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70245"}
+{"id": 1286513, "field": "description", "en": "Teleports the target mortal to a secluded area.", "hash": "ab428993e3d9b2d6", "src": "db2@1.60.1.70245"}
+{"id": 1286514, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70245"}
+{"id": 1286514, "field": "description", "en": "Teleports the target mortal to a secluded area.", "hash": "ab428993e3d9b2d6", "src": "db2@1.60.1.70245"}
+{"id": 1286580, "field": "name", "en": "Lots of Love", "hash": "2578f77d8c852c2f", "src": "db2@1.60.1.70245"}
+{"id": 1286582, "field": "name", "en": "Emote State - Dance", "hash": "6e2fe4882dfa4e0f", "src": "db2@1.60.1.70245"}
+{"id": 1286599, "field": "name", "en": "Greeting Bark", "hash": "1e0513baff076dfe", "src": "db2@1.60.1.70245"}
+{"id": 1286629, "field": "name", "en": "Summon Snowy Wolf Pup", "hash": "70be96fc0bb09b97", "src": "db2@1.60.1.70245"}
+{"id": 1286629, "field": "description", "en": "Right Click to summon and dismiss your snowy wolf pup.", "hash": "f535b1a7c11cae21", "src": "db2@1.60.1.70245"}
+{"id": 1286699, "field": "name", "en": "Twilight Empowerment", "hash": "be942d151b144e76", "src": "db2@1.60.1.70245"}
+{"id": 1286699, "field": "description", "en": "$@spelldesc1322318", "hash": "7f3df932013dad36", "src": "db2@1.60.1.70245"}
+{"id": 1286699, "field": "aura", "en": "Melee attacks have a chance to inflict additional Shadow damage.", "hash": "98405c2ee33f20a8", "src": "db2@1.60.1.70245"}
+{"id": 1286792, "field": "name", "en": "Centaur Banner Deployment Device", "hash": "273a2c0dc1eea404", "src": "db2@1.60.1.70245"}
+{"id": 1286796, "field": "name", "en": "Hoof-Shaped Foot Pedal", "hash": "e81023e1175c6bf8", "src": "db2@1.60.1.70245"}
+{"id": 1286800, "field": "name", "en": "Deploy Centaur Banner", "hash": "287189021601991e", "src": "db2@1.60.1.70245"}
+{"id": 1286800, "field": "description", "en": "Deploy a banner representing your chosen faction in the Desolace centaur war for $d.", "hash": "d98e181b401358d8", "src": "db2@1.60.1.70245"}
+{"id": 1286814, "field": "name", "en": "Hoof-Shaped Foot Pedal", "hash": "e81023e1175c6bf8", "src": "db2@1.60.1.70245"}
+{"id": 1286814, "field": "description", "en": "Transform into a centaur for $d or until you enter combat.\r\n\r\nWhile in Desolace, your movement speed is also increased by $s2% and this transformation persists through combat.", "hash": "41bf7428bb0a43ef", "src": "db2@1.60.1.70245"}
+{"id": 1286814, "field": "aura", "en": "Transformed into a centaur.\r\n\r\nWhile in Desolace, you also gain $s2% movement speed and the transformation persists through combat.", "hash": "880a251d30b309e5", "src": "db2@1.60.1.70245"}
+{"id": 1286850, "field": "name", "en": "Shark Attack", "hash": "18306d3cd8debcd9", "src": "db2@1.60.1.70245"}
+{"id": 1286850, "field": "description", "en": "Bitten by Darkspear Shark! Taking damage equal to $s1% of your health every $t1 sec.\r\n", "hash": "b8e79c9edbed7643", "src": "db2@1.60.1.70245"}
+{"id": 1286850, "field": "aura", "en": "Bitten by Darkspear Shark! Taking damage equal to $s1% of your health every $t1 sec.", "hash": "b8e79c9edbed7643", "src": "db2@1.60.1.70245"}
+{"id": 1286951, "field": "name", "en": "Weak Healing Touch", "hash": "398c34f66bf7ef9b", "src": "db2@1.60.1.70245"}
+{"id": 1286953, "field": "name", "en": "Collect Hot Springs Water", "hash": "f31ab513f077f9d7", "src": "db2@1.60.1.70245"}

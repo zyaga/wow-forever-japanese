@@ -34,7 +34,6 @@ WFJ.Data.add("gloss", {
   [39031] = "乗り込む\tのりこむ\tclimb aboard",
   [39032] = "乗り込む\tのりこむ\tcome bargin' in",
   [39033] = "乗り込む\tのりこむ\tget on",
-  [39034] = "乗り込む\tのりこむ\tget on board",
   [39035] = "乗り込む\tのりこむ\tgo forth into",
   [39036] = "乗り込む\tのりこむ\tgo in (storm in)",
   [39037] = "乗り込む\tのりこむ\tgo into",

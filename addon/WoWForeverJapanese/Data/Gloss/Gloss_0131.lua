@@ -304,7 +304,6 @@ WFJ.Data.add("gloss", {
   [131301] = "遮る\tさえぎる\tis obscured (blocked)",
   [131302] = "遮断\tしゃだん\tcut",
   [131303] = "遮断\tしゃだん\tcut (blocking)",
-  [131304] = "遮断する\tしゃだんする\tare blocked",
   [131305] = "選ぶ\tえらぶ\tChosen",
   [131306] = "選ぶ\tえらぶ\taccept (choose)",
   [131307] = "選ぶ\tえらぶ\tare chosen",

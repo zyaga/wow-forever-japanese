@@ -1,94 +1,106 @@
-{"id": 285043, "field": "name", "en": "Snarling Fang", "hash": "dce9d4ab02c305b4", "src": "db2@1.60.1.70170"}
-{"id": 285104, "field": "name", "en": "Windle's Lighter", "hash": "437d8be9e0ef8afe", "src": "db2@1.60.1.70170"}
-{"id": 285104, "field": "description", "en": "Turn on the lights of Dalaran.\nShine on!", "hash": "10e406f3ffc647ba", "src": "db2@1.60.1.70170"}
-{"id": 285168, "field": "name", "en": "Theramore Basic Care Package", "hash": "c3a4cb1bf3ac59cf", "src": "db2@1.60.1.70170"}
-{"id": 285169, "field": "name", "en": "Theramore Standard Care Package", "hash": "2d442b6dc14769e2", "src": "db2@1.60.1.70170"}
-{"id": 285170, "field": "name", "en": "Theramore Advanced Care Package", "hash": "9089cd519c4f76f6", "src": "db2@1.60.1.70170"}
-{"id": 285171, "field": "name", "en": "Darkspear Basic Care Package", "hash": "350d5efd4911adea", "src": "db2@1.60.1.70170"}
-{"id": 285172, "field": "name", "en": "Darkspear Standard Care Package", "hash": "efb5269073e4e1ae", "src": "db2@1.60.1.70170"}
-{"id": 285173, "field": "name", "en": "Darkspear Advanced Care Package", "hash": "52fac8794eeceec2", "src": "db2@1.60.1.70170"}
-{"id": 285190, "field": "name", "en": "Wyvern Heart Band", "hash": "63ffd4f520ac2d9c", "src": "db2@1.60.1.70170"}
-{"id": 285191, "field": "name", "en": "Banished Centaur's Pauldrons", "hash": "d5b9d8fb8844ce72", "src": "db2@1.60.1.70170"}
-{"id": 285192, "field": "name", "en": "Kobold Firestarter", "hash": "3fc3b7d4bd2ff501", "src": "db2@1.60.1.70170"}
-{"id": 285212, "field": "name", "en": "Foulmountain Family Hammer", "hash": "1c4e7ee1fc64176c", "src": "db2@1.60.1.70170"}
-{"id": 285228, "field": "name", "en": "Mystmane's Pelt", "hash": "11281039cbc9abe4", "src": "db2@1.60.1.70170"}
-{"id": 285236, "field": "name", "en": "Worn Ranger's Dagger", "hash": "7f1e9b3b176ea5c4", "src": "db2@1.60.1.70170"}
-{"id": 285238, "field": "name", "en": "Chipped Spellstaff", "hash": "3815b573a9e40745", "src": "db2@1.60.1.70170"}
-{"id": 285239, "field": "name", "en": "Explorer's Shortsword", "hash": "4479d6bfeef5ee0a", "src": "db2@1.60.1.70170"}
-{"id": 285242, "field": "name", "en": "Monster - 2H Mace, Barrow Deeps - Red", "hash": "1f740438b030a8eb", "src": "db2@1.60.1.70170"}
-{"id": 285253, "field": "name", "en": "Skyseer's Gloves", "hash": "3896d3ae7a30b905", "src": "db2@1.60.1.70170"}
-{"id": 285254, "field": "name", "en": "Scout Ranger's Gloves", "hash": "0f92f7e36efcc694", "src": "db2@1.60.1.70170"}
-{"id": 285255, "field": "name", "en": "Thendal Watcher's Gloves", "hash": "e15c9254bd072101", "src": "db2@1.60.1.70170"}
-{"id": 285264, "field": "name", "en": "Skyseer's Slippers", "hash": "c310408e855b415a", "src": "db2@1.60.1.70170"}
-{"id": 285268, "field": "name", "en": "Scout Ranger's Boots", "hash": "eb321f81af8d71e4", "src": "db2@1.60.1.70170"}
-{"id": 285269, "field": "name", "en": "Thendal Watcher's Boots", "hash": "f2a8e9f74f72c869", "src": "db2@1.60.1.70170"}
-{"id": 285272, "field": "name", "en": "Skyseer's Belt", "hash": "57f3865a8e796134", "src": "db2@1.60.1.70170"}
-{"id": 285273, "field": "name", "en": "Scout Ranger's Belt", "hash": "51e84308f47dc671", "src": "db2@1.60.1.70170"}
-{"id": 285274, "field": "name", "en": "Thendal Watcher's Belt", "hash": "30be2d210906aa48", "src": "db2@1.60.1.70170"}
-{"id": 285275, "field": "name", "en": "Satchel of Copper Bombs", "hash": "76aee1a6a847aa1b", "src": "db2@1.60.1.70170"}
-{"id": 285275, "field": "description", "en": "Thrown attacks explode on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "975e2d49d391a71b", "src": "db2@1.60.1.70170"}
-{"id": 285276, "field": "name", "en": "Satchel of Bronze Bombs", "hash": "11b7fa31187c9ab8", "src": "db2@1.60.1.70170"}
-{"id": 285276, "field": "description", "en": "Thrown attacks explode on impact, causing $1318061s1 Fire damage to nearby enemies.", "hash": "002674fb8b99347e", "src": "db2@1.60.1.70170"}
-{"id": 285277, "field": "name", "en": "Satchel of Iron Bombs", "hash": "b4899ec52cd7a6df", "src": "db2@1.60.1.70170"}
-{"id": 285277, "field": "description", "en": "Thrown attacks explode on impact, causing $1318068s1 Fire damage to nearby enemies.", "hash": "d46b2a07e6a6d4e3", "src": "db2@1.60.1.70170"}
-{"id": 285278, "field": "name", "en": "Satchel of Dark Iron Bombs", "hash": "2ea981f0c8dc234d", "src": "db2@1.60.1.70170"}
-{"id": 285278, "field": "description", "en": "Thrown attacks explode on impact, causing $1318121s1 Fire damage to nearby enemies.", "hash": "fe9a4f9323cfb03f", "src": "db2@1.60.1.70170"}
-{"id": 285279, "field": "name", "en": "Cracked Blacksmith Hammer", "hash": "ff33eaa3731c17ca", "src": "db2@1.60.1.70170"}
-{"id": 285279, "field": "description", "en": "Can't use it for smithing? Just throw it at your enemies.", "hash": "f5c6c49fd6bbbdc5", "src": "db2@1.60.1.70170"}
-{"id": 285280, "field": "name", "en": "Mithril Blacksmith Hammer", "hash": "a8d9367570e33414", "src": "db2@1.60.1.70170"}
-{"id": 285280, "field": "description", "en": "Concuss the target, slowing movement speed by $s1% for $d.\nServes as a Blacksmith Hammer.", "hash": "26f908aed7b7b7d1", "src": "db2@1.60.1.70170"}
-{"id": 285281, "field": "name", "en": "Arcanite Blacksmith Hammer", "hash": "fea3cda2d655e89a", "src": "db2@1.60.1.70170"}
-{"id": 285281, "field": "description", "en": "Stun the target for $1318178d.\nServes as a Blacksmith Hammer.", "hash": "41b8bafa130b02e8", "src": "db2@1.60.1.70170"}
-{"id": 285282, "field": "name", "en": "Jagged Knives", "hash": "fa71b9845f4b8cfc", "src": "db2@1.60.1.70170"}
-{"id": 285283, "field": "name", "en": "Serrated Axes", "hash": "49ac95d54e0c9fec", "src": "db2@1.60.1.70170"}
-{"id": 285285, "field": "name", "en": "Schematic: Satchel of Copper Bombs", "hash": "197dab5c0fa68d0e", "src": "db2@1.60.1.70170"}
-{"id": 285285, "field": "description", "en": "Teaches you how to craft Satchel of Copper Bombs.", "hash": "9d3012a68fbb4dda", "src": "db2@1.60.1.70170"}
-{"id": 285286, "field": "name", "en": "Schematic: Satchel of Bronze Bombs", "hash": "b486c3e27fdb7d9a", "src": "db2@1.60.1.70170"}
-{"id": 285286, "field": "description", "en": "Teaches you how to craft Satchel of Bronze Bombs.", "hash": "f2d7a0c397649a6f", "src": "db2@1.60.1.70170"}
-{"id": 285287, "field": "name", "en": "Schematic: Satchel of Iron Bombs", "hash": "f96bdf29e36325a2", "src": "db2@1.60.1.70170"}
-{"id": 285287, "field": "description", "en": "Teaches you how to craft Satchel of Iron Bombs.", "hash": "d5b06080307c2aba", "src": "db2@1.60.1.70170"}
-{"id": 285288, "field": "name", "en": "Schematic: Satchel of Dark Iron Bombs", "hash": "be76f1305f57aff9", "src": "db2@1.60.1.70170"}
-{"id": 285288, "field": "description", "en": "Teaches you how to craft Satchel of Dark Iron Bombs.", "hash": "9de01c9c8d25d2fb", "src": "db2@1.60.1.70170"}
-{"id": 285289, "field": "name", "en": "Plans: Cracked Blacksmith Hammer", "hash": "c1f04b72f284930b", "src": "db2@1.60.1.70170"}
-{"id": 285289, "field": "description", "en": "Teaches you how to craft Cracked Blacksmith Hammer.", "hash": "44fadea03ab9120b", "src": "db2@1.60.1.70170"}
-{"id": 285290, "field": "name", "en": "Plans: Mithril Blacksmith Hammer", "hash": "6b959744f04baf55", "src": "db2@1.60.1.70170"}
-{"id": 285290, "field": "description", "en": "Teaches you how to craft Mithril Blacksmith Hammer.", "hash": "1490aa3a6325e05e", "src": "db2@1.60.1.70170"}
-{"id": 285291, "field": "name", "en": "Plans: Arcanite Blacksmith Hammer", "hash": "a50956f478182979", "src": "db2@1.60.1.70170"}
-{"id": 285291, "field": "description", "en": "Teaches you how to craft Arcanite Blacksmith Hammer.", "hash": "0af4dac92410ab36", "src": "db2@1.60.1.70170"}
-{"id": 285292, "field": "name", "en": "Dull Sawblade", "hash": "454645aed6650a9e", "src": "db2@1.60.1.70170"}
+{"id": 285043, "field": "name", "en": "Snarling Fang", "hash": "dce9d4ab02c305b4", "src": "db2@1.60.1.70245"}
+{"id": 285089, "field": "name", "en": "Swamp Roamer's Band", "hash": "82a8f45eb132e2ec", "src": "db2@1.60.1.70245"}
+{"id": 285089, "field": "description", "en": "Increases movement speed by $s1% in Dustwallow Marsh and Swamp of Sorrows.", "hash": "47c33f0fa4fbf7ec", "src": "db2@1.60.1.70245"}
+{"id": 285093, "field": "name", "en": "Ripscaled Cuffs", "hash": "8421486c7783709c", "src": "db2@1.60.1.70245"}
+{"id": 285094, "field": "name", "en": "Ravaged Fishing Pole", "hash": "e9d7de4468a23110", "src": "db2@1.60.1.70245"}
+{"id": 285094, "field": "description", "en": "Still surprisingly durable.", "hash": "0a0d1f21cfe5cb8b", "src": "db2@1.60.1.70245"}
+{"id": 285095, "field": "name", "en": "Twitching Eye", "hash": "9cba25443b061882", "src": "db2@1.60.1.70245"}
+{"id": 285100, "field": "name", "en": "Serrated Raptor Teeth", "hash": "a7c238deb659c91a", "src": "db2@1.60.1.70245"}
+{"id": 285102, "field": "name", "en": "Darkmist Dirk", "hash": "3295fd5885d324aa", "src": "db2@1.60.1.70245"}
+{"id": 285102, "field": "description", "en": "Your attacks have a high chance to poison the target for $s1 Nature damage every $t1 sec for $d.", "hash": "73c8a5f63323bf80", "src": "db2@1.60.1.70245"}
+{"id": 285103, "field": "name", "en": "Marsh Serpent's Scales", "hash": "c901d612f514c2bc", "src": "db2@1.60.1.70245"}
+{"id": 285104, "field": "name", "en": "Windle's Lighter", "hash": "437d8be9e0ef8afe", "src": "db2@1.60.1.70245"}
+{"id": 285104, "field": "description", "en": "Turn on the lights of Dalaran.\nShine on!", "hash": "10e406f3ffc647ba", "src": "db2@1.60.1.70245"}
+{"id": 285168, "field": "name", "en": "Theramore Basic Care Package", "hash": "c3a4cb1bf3ac59cf", "src": "db2@1.60.1.70245"}
+{"id": 285169, "field": "name", "en": "Theramore Standard Care Package", "hash": "2d442b6dc14769e2", "src": "db2@1.60.1.70245"}
+{"id": 285170, "field": "name", "en": "Theramore Advanced Care Package", "hash": "9089cd519c4f76f6", "src": "db2@1.60.1.70245"}
+{"id": 285171, "field": "name", "en": "Darkspear Basic Care Package", "hash": "350d5efd4911adea", "src": "db2@1.60.1.70245"}
+{"id": 285172, "field": "name", "en": "Darkspear Standard Care Package", "hash": "efb5269073e4e1ae", "src": "db2@1.60.1.70245"}
+{"id": 285173, "field": "name", "en": "Darkspear Advanced Care Package", "hash": "52fac8794eeceec2", "src": "db2@1.60.1.70245"}
+{"id": 285177, "field": "name", "en": "Nature's Sting Legguards", "hash": "2460b243ff9a025c", "src": "db2@1.60.1.70245"}
+{"id": 285190, "field": "name", "en": "Wyvern Heart Band", "hash": "63ffd4f520ac2d9c", "src": "db2@1.60.1.70245"}
+{"id": 285191, "field": "name", "en": "Banished Centaur's Pauldrons", "hash": "d5b9d8fb8844ce72", "src": "db2@1.60.1.70245"}
+{"id": 285192, "field": "name", "en": "Kobold Firestarter", "hash": "3fc3b7d4bd2ff501", "src": "db2@1.60.1.70245"}
+{"id": 285212, "field": "name", "en": "Foulmountain Family Hammer", "hash": "1c4e7ee1fc64176c", "src": "db2@1.60.1.70245"}
+{"id": 285228, "field": "name", "en": "Mystmane's Pelt", "hash": "11281039cbc9abe4", "src": "db2@1.60.1.70245"}
+{"id": 285236, "field": "name", "en": "Worn Ranger's Dagger", "hash": "7f1e9b3b176ea5c4", "src": "db2@1.60.1.70245"}
+{"id": 285238, "field": "name", "en": "Chipped Spellstaff", "hash": "3815b573a9e40745", "src": "db2@1.60.1.70245"}
+{"id": 285239, "field": "name", "en": "Explorer's Shortsword", "hash": "4479d6bfeef5ee0a", "src": "db2@1.60.1.70245"}
+{"id": 285242, "field": "name", "en": "Monster - 2H Mace, Barrow Deeps - Red", "hash": "1f740438b030a8eb", "src": "db2@1.60.1.70245"}
+{"id": 285253, "field": "name", "en": "Skyseer's Gloves", "hash": "3896d3ae7a30b905", "src": "db2@1.60.1.70245"}
+{"id": 285254, "field": "name", "en": "Scout Ranger's Gloves", "hash": "0f92f7e36efcc694", "src": "db2@1.60.1.70245"}
+{"id": 285255, "field": "name", "en": "Thendal Watcher's Gloves", "hash": "e15c9254bd072101", "src": "db2@1.60.1.70245"}
+{"id": 285264, "field": "name", "en": "Skyseer's Slippers", "hash": "c310408e855b415a", "src": "db2@1.60.1.70245"}
+{"id": 285268, "field": "name", "en": "Scout Ranger's Boots", "hash": "eb321f81af8d71e4", "src": "db2@1.60.1.70245"}
+{"id": 285269, "field": "name", "en": "Thendal Watcher's Boots", "hash": "f2a8e9f74f72c869", "src": "db2@1.60.1.70245"}
+{"id": 285272, "field": "name", "en": "Skyseer's Belt", "hash": "57f3865a8e796134", "src": "db2@1.60.1.70245"}
+{"id": 285273, "field": "name", "en": "Scout Ranger's Belt", "hash": "51e84308f47dc671", "src": "db2@1.60.1.70245"}
+{"id": 285274, "field": "name", "en": "Thendal Watcher's Belt", "hash": "30be2d210906aa48", "src": "db2@1.60.1.70245"}
+{"id": 285275, "field": "name", "en": "Satchel of Copper Bombs", "hash": "76aee1a6a847aa1b", "src": "db2@1.60.1.70245"}
+{"id": 285275, "field": "description", "en": "Thrown attacks explode on impact, causing $1318031s1 Fire damage to nearby enemies.", "hash": "975e2d49d391a71b", "src": "db2@1.60.1.70245"}
+{"id": 285276, "field": "name", "en": "Satchel of Bronze Bombs", "hash": "11b7fa31187c9ab8", "src": "db2@1.60.1.70245"}
+{"id": 285276, "field": "description", "en": "Thrown attacks explode on impact, causing $1318061s1 Fire damage to nearby enemies.", "hash": "002674fb8b99347e", "src": "db2@1.60.1.70245"}
+{"id": 285277, "field": "name", "en": "Satchel of Iron Bombs", "hash": "b4899ec52cd7a6df", "src": "db2@1.60.1.70245"}
+{"id": 285277, "field": "description", "en": "Thrown attacks explode on impact, causing $1318068s1 Fire damage to nearby enemies.", "hash": "d46b2a07e6a6d4e3", "src": "db2@1.60.1.70245"}
+{"id": 285278, "field": "name", "en": "Satchel of Dark Iron Bombs", "hash": "2ea981f0c8dc234d", "src": "db2@1.60.1.70245"}
+{"id": 285278, "field": "description", "en": "Thrown attacks explode on impact, causing $1318121s1 Fire damage to nearby enemies.", "hash": "fe9a4f9323cfb03f", "src": "db2@1.60.1.70245"}
+{"id": 285279, "field": "name", "en": "Cracked Blacksmith Hammer", "hash": "ff33eaa3731c17ca", "src": "db2@1.60.1.70245"}
+{"id": 285279, "field": "description", "en": "Can't use it for smithing? Just throw it at your enemies.", "hash": "f5c6c49fd6bbbdc5", "src": "db2@1.60.1.70245"}
+{"id": 285280, "field": "name", "en": "Mithril Blacksmith Hammer", "hash": "a8d9367570e33414", "src": "db2@1.60.1.70245"}
+{"id": 285280, "field": "description", "en": "Concuss the target, slowing movement speed by $s1% for $d.\nServes as a Blacksmith Hammer.", "hash": "26f908aed7b7b7d1", "src": "db2@1.60.1.70245"}
+{"id": 285281, "field": "name", "en": "Arcanite Blacksmith Hammer", "hash": "fea3cda2d655e89a", "src": "db2@1.60.1.70245"}
+{"id": 285281, "field": "description", "en": "Stun the target for $1318178d.\nServes as a Blacksmith Hammer.", "hash": "41b8bafa130b02e8", "src": "db2@1.60.1.70245"}
+{"id": 285282, "field": "name", "en": "Jagged Knives", "hash": "fa71b9845f4b8cfc", "src": "db2@1.60.1.70245"}
+{"id": 285283, "field": "name", "en": "Serrated Axes", "hash": "49ac95d54e0c9fec", "src": "db2@1.60.1.70245"}
+{"id": 285284, "field": "name", "en": "Balanced Knives", "hash": "fe0aa40d943f6348", "src": "db2@1.60.1.70245"}
+{"id": 285285, "field": "name", "en": "Schematic: Satchel of Copper Bombs", "hash": "197dab5c0fa68d0e", "src": "db2@1.60.1.70245"}
+{"id": 285285, "field": "description", "en": "Teaches you how to craft Satchel of Copper Bombs.", "hash": "9d3012a68fbb4dda", "src": "db2@1.60.1.70245"}
+{"id": 285286, "field": "name", "en": "Schematic: Satchel of Bronze Bombs", "hash": "b486c3e27fdb7d9a", "src": "db2@1.60.1.70245"}
+{"id": 285286, "field": "description", "en": "Teaches you how to craft Satchel of Bronze Bombs.", "hash": "f2d7a0c397649a6f", "src": "db2@1.60.1.70245"}
+{"id": 285287, "field": "name", "en": "Schematic: Satchel of Iron Bombs", "hash": "f96bdf29e36325a2", "src": "db2@1.60.1.70245"}
+{"id": 285287, "field": "description", "en": "Teaches you how to craft Satchel of Iron Bombs.", "hash": "d5b06080307c2aba", "src": "db2@1.60.1.70245"}
+{"id": 285288, "field": "name", "en": "Schematic: Satchel of Dark Iron Bombs", "hash": "be76f1305f57aff9", "src": "db2@1.60.1.70245"}
+{"id": 285288, "field": "description", "en": "Teaches you how to craft Satchel of Dark Iron Bombs.", "hash": "9de01c9c8d25d2fb", "src": "db2@1.60.1.70245"}
+{"id": 285289, "field": "name", "en": "Plans: Cracked Blacksmith Hammer", "hash": "c1f04b72f284930b", "src": "db2@1.60.1.70245"}
+{"id": 285289, "field": "description", "en": "Teaches you how to craft Cracked Blacksmith Hammer.", "hash": "44fadea03ab9120b", "src": "db2@1.60.1.70245"}
+{"id": 285290, "field": "name", "en": "Plans: Mithril Blacksmith Hammer", "hash": "6b959744f04baf55", "src": "db2@1.60.1.70245"}
+{"id": 285290, "field": "description", "en": "Teaches you how to craft Mithril Blacksmith Hammer.", "hash": "1490aa3a6325e05e", "src": "db2@1.60.1.70245"}
+{"id": 285291, "field": "name", "en": "Plans: Arcanite Blacksmith Hammer", "hash": "a50956f478182979", "src": "db2@1.60.1.70245"}
+{"id": 285291, "field": "description", "en": "Teaches you how to craft Arcanite Blacksmith Hammer.", "hash": "0af4dac92410ab36", "src": "db2@1.60.1.70245"}
+{"id": 285292, "field": "name", "en": "Dull Sawblade", "hash": "454645aed6650a9e", "src": "db2@1.60.1.70245"}
 {"id": 285326, "field": "name", "en": "Leafre's Ring of Armor Piercing", "hash": "313d8847a9b89909", "src": "db2@1.60.1.70124"}
-{"id": 285327, "field": "name", "en": "Kirin Tor Tabard", "hash": "b06bc0efa5072e43", "src": "db2@1.60.1.70170"}
-{"id": 285328, "field": "name", "en": "Taurenbane's Family Cleaver", "hash": "a0248747b5937efd", "src": "db2@1.60.1.70170"}
-{"id": 285329, "field": "name", "en": "Raptor Hide Cloak", "hash": "07f91f69883adcbf", "src": "db2@1.60.1.70170"}
-{"id": 285330, "field": "name", "en": "Signet of the Zhevra", "hash": "16332979fb1b7504", "src": "db2@1.60.1.70170"}
-{"id": 285331, "field": "name", "en": "Mark of the Pack Leader", "hash": "1da03cbf267c51dc", "src": "db2@1.60.1.70170"}
-{"id": 285332, "field": "name", "en": "Puncturing Spear", "hash": "abd6afba36aae8f2", "src": "db2@1.60.1.70170"}
-{"id": 285332, "field": "description", "en": "Puncture the target, inflicting $s1 Physical damage.", "hash": "970d45f0a0a3e668", "src": "db2@1.60.1.70170"}
-{"id": 285338, "field": "name", "en": "Kodohide Legguards", "hash": "83b64400ac7f0b0d", "src": "db2@1.60.1.70170"}
-{"id": 285339, "field": "name", "en": "Centaur War Chain", "hash": "a2559dfcf32a8d7f", "src": "db2@1.60.1.70170"}
-{"id": 285344, "field": "name", "en": "Guard Captain's Barrier", "hash": "aea28813499569ac", "src": "db2@1.60.1.70170"}
-{"id": 285345, "field": "name", "en": "Feather Padded Treads", "hash": "eb26bd5cc225d8cf", "src": "db2@1.60.1.70170"}
-{"id": 285346, "field": "name", "en": "Alliance Outrunner's Sword", "hash": "0982a02412ba2822", "src": "db2@1.60.1.70170"}
-{"id": 285347, "field": "name", "en": "Alliance Outrunner Bow", "hash": "52c700e1b642a271", "src": "db2@1.60.1.70170"}
-{"id": 285348, "field": "name", "en": "Alliance Outrunner Healing Rod", "hash": "b2563d6fbd7fae83", "src": "db2@1.60.1.70170"}
-{"id": 285350, "field": "name", "en": "Alliance Outrunner Staff", "hash": "29496889f2953a8e", "src": "db2@1.60.1.70170"}
-{"id": 285351, "field": "name", "en": "Foreman's Enforcers", "hash": "c801f40131f291b4", "src": "db2@1.60.1.70170"}
-{"id": 285351, "field": "description", "en": "Torn at the seams from brutal enforcement of productivity.", "hash": "bb402501a4d49055", "src": "db2@1.60.1.70170"}
-{"id": 285356, "field": "name", "en": "Advisor Emerson's Instructions", "hash": "0580313ea849c5f3", "src": "db2@1.60.1.70170"}
-{"id": 285357, "field": "name", "en": "Advisor Nazgrel's Instructions", "hash": "1a4d7e3d2f1efe40", "src": "db2@1.60.1.70170"}
-{"id": 285359, "field": "name", "en": "Warm Apple Juice", "hash": "b3f60f74f8ec4c71", "src": "db2@1.60.1.70170"}
-{"id": 285359, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.\nBest not to ask.", "hash": "9fbff5ffd7a0c56e", "src": "db2@1.60.1.70170"}
-{"id": 285362, "field": "name", "en": "Red Wine Glass", "hash": "9f60a6654f8cebbe", "src": "db2@1.60.1.70170"}
-{"id": 285362, "field": "description", "en": "Enchanted wine glasses never spill.", "hash": "814e39b4a1b5929f", "src": "db2@1.60.1.70170"}
-{"id": 285366, "field": "name", "en": "Whirleygig's Supply Stash", "hash": "386fe69e29a7d749", "src": "db2@1.60.1.70170"}
-{"id": 285808, "field": "name", "en": "Eye of Blackhand", "hash": "e8f5f341c981959e", "src": "db2@1.60.1.70170"}
-{"id": 285868, "field": "name", "en": "Eye of Drakkisath", "hash": "7a54b95ec42c0c64", "src": "db2@1.60.1.70170"}
-{"id": 285872, "field": "name", "en": "Mantle of the Grand Crusader", "hash": "3df96d1c46125796", "src": "db2@1.60.1.70170"}
-{"id": 285873, "field": "name", "en": "Shattered Pauldron of Rivendare", "hash": "cb253761c1e835ab", "src": "db2@1.60.1.70170"}
-{"id": 285949, "field": "name", "en": "Blood of Immol'thar", "hash": "978381f9122d0ebb", "src": "db2@1.60.1.70170"}
-{"id": 285951, "field": "name", "en": "Direhorn Matriarch's Heart", "hash": "42668fcb9c6f4212", "src": "db2@1.60.1.70170"}
-{"id": 285952, "field": "name", "en": "Stone Heart of the Watcher", "hash": "f2bc221a179517dd", "src": "db2@1.60.1.70170"}
-{"id": 285953, "field": "name", "en": "Crown Jewels of Eldre'Thalas", "hash": "65c2fb88576c4fa2", "src": "db2@1.60.1.70170"}
-{"id": 285960, "field": "name", "en": "Everfrost Sample", "hash": "fbf23aa37ba6593b", "src": "db2@1.60.1.70170"}
-{"id": 285962, "field": "name", "en": "Gandling's Signet Ring", "hash": "bc682e9f830027ad", "src": "db2@1.60.1.70170"}
-{"id": 285963, "field": "name", "en": "Mote of Corruption", "hash": "6a6fe28c8fff68a1", "src": "db2@1.60.1.70170"}
+{"id": 285327, "field": "name", "en": "Kirin Tor Tabard", "hash": "b06bc0efa5072e43", "src": "db2@1.60.1.70245"}
+{"id": 285328, "field": "name", "en": "Taurenbane's Family Cleaver", "hash": "a0248747b5937efd", "src": "db2@1.60.1.70245"}
+{"id": 285329, "field": "name", "en": "Raptor Hide Cloak", "hash": "07f91f69883adcbf", "src": "db2@1.60.1.70245"}
+{"id": 285330, "field": "name", "en": "Signet of the Zhevra", "hash": "16332979fb1b7504", "src": "db2@1.60.1.70245"}
+{"id": 285331, "field": "name", "en": "Mark of the Pack Leader", "hash": "1da03cbf267c51dc", "src": "db2@1.60.1.70245"}
+{"id": 285332, "field": "name", "en": "Puncturing Spear", "hash": "abd6afba36aae8f2", "src": "db2@1.60.1.70245"}
+{"id": 285332, "field": "description", "en": "Puncture the target, inflicting $s1 Physical damage.", "hash": "970d45f0a0a3e668", "src": "db2@1.60.1.70245"}
+{"id": 285338, "field": "name", "en": "Kodohide Legguards", "hash": "83b64400ac7f0b0d", "src": "db2@1.60.1.70245"}
+{"id": 285339, "field": "name", "en": "Centaur War Chain", "hash": "a2559dfcf32a8d7f", "src": "db2@1.60.1.70245"}
+{"id": 285344, "field": "name", "en": "Guard Captain's Barrier", "hash": "aea28813499569ac", "src": "db2@1.60.1.70245"}
+{"id": 285345, "field": "name", "en": "Feather Padded Treads", "hash": "eb26bd5cc225d8cf", "src": "db2@1.60.1.70245"}
+{"id": 285346, "field": "name", "en": "Alliance Outrunner's Sword", "hash": "0982a02412ba2822", "src": "db2@1.60.1.70245"}
+{"id": 285347, "field": "name", "en": "Alliance Outrunner Bow", "hash": "52c700e1b642a271", "src": "db2@1.60.1.70245"}
+{"id": 285348, "field": "name", "en": "Alliance Outrunner Healing Rod", "hash": "b2563d6fbd7fae83", "src": "db2@1.60.1.70245"}
+{"id": 285350, "field": "name", "en": "Alliance Outrunner Staff", "hash": "29496889f2953a8e", "src": "db2@1.60.1.70245"}
+{"id": 285351, "field": "name", "en": "Foreman's Enforcers", "hash": "c801f40131f291b4", "src": "db2@1.60.1.70245"}
+{"id": 285351, "field": "description", "en": "Torn at the seams from brutal enforcement of productivity.", "hash": "bb402501a4d49055", "src": "db2@1.60.1.70245"}
+{"id": 285356, "field": "name", "en": "Advisor Emerson's Instructions", "hash": "0580313ea849c5f3", "src": "db2@1.60.1.70245"}
+{"id": 285357, "field": "name", "en": "Advisor Nazgrel's Instructions", "hash": "1a4d7e3d2f1efe40", "src": "db2@1.60.1.70245"}
+{"id": 285359, "field": "name", "en": "Warm Apple Juice", "hash": "b3f60f74f8ec4c71", "src": "db2@1.60.1.70245"}
+{"id": 285359, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.\nBest not to ask.", "hash": "9fbff5ffd7a0c56e", "src": "db2@1.60.1.70245"}
+{"id": 285362, "field": "name", "en": "Red Wine Glass", "hash": "9f60a6654f8cebbe", "src": "db2@1.60.1.70245"}
+{"id": 285362, "field": "description", "en": "Enchanted wine glasses never spill.", "hash": "814e39b4a1b5929f", "src": "db2@1.60.1.70245"}
+{"id": 285366, "field": "name", "en": "Whirleygig's Supply Stash", "hash": "386fe69e29a7d749", "src": "db2@1.60.1.70245"}
+{"id": 285808, "field": "name", "en": "Eye of Blackhand", "hash": "e8f5f341c981959e", "src": "db2@1.60.1.70245"}
+{"id": 285868, "field": "name", "en": "Eye of Drakkisath", "hash": "7a54b95ec42c0c64", "src": "db2@1.60.1.70245"}
+{"id": 285872, "field": "name", "en": "Mantle of the Grand Crusader", "hash": "3df96d1c46125796", "src": "db2@1.60.1.70245"}
+{"id": 285873, "field": "name", "en": "Shattered Pauldron of Rivendare", "hash": "cb253761c1e835ab", "src": "db2@1.60.1.70245"}
+{"id": 285949, "field": "name", "en": "Blood of Immol'thar", "hash": "978381f9122d0ebb", "src": "db2@1.60.1.70245"}
+{"id": 285951, "field": "name", "en": "Direhorn Matriarch's Heart", "hash": "42668fcb9c6f4212", "src": "db2@1.60.1.70245"}
+{"id": 285952, "field": "name", "en": "Stone Heart of the Watcher", "hash": "f2bc221a179517dd", "src": "db2@1.60.1.70245"}
+{"id": 285953, "field": "name", "en": "Crown Jewels of Eldre'Thalas", "hash": "65c2fb88576c4fa2", "src": "db2@1.60.1.70245"}
+{"id": 285960, "field": "name", "en": "Everfrost Sample", "hash": "fbf23aa37ba6593b", "src": "db2@1.60.1.70245"}
+{"id": 285962, "field": "name", "en": "Gandling's Signet Ring", "hash": "bc682e9f830027ad", "src": "db2@1.60.1.70245"}
+{"id": 285963, "field": "name", "en": "Mote of Corruption", "hash": "6a6fe28c8fff68a1", "src": "db2@1.60.1.70245"}

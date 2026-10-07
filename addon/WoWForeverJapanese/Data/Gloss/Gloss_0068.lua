@@ -720,7 +720,6 @@ WFJ.Data.add("gloss", {
   [68717] = "巡回\tじゅんかい\tpatrols",
   [68718] = "巡回\tじゅんかい\trangings (patrol)",
   [68719] = "巡回する\tじゅんかいする\tis not patrolling",
-  [68720] = "巡回する\tじゅんかいする\tis patrolled",
   [68721] = "巡回する\tじゅんかいする\tis patrolling",
   [68722] = "巡回する\tじゅんかいする\tpatrol",
   [68723] = "巡回する\tじゅんかいする\tpatrolled",

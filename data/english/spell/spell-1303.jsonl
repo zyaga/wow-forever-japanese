@@ -1,117 +1,117 @@
-{"id": 1303001, "field": "name", "en": "Two-Handed Maces", "hash": "3ebe11d9b024a8c9", "src": "db2@1.60.1.70170"}
-{"id": 1303001, "field": "description", "en": "You have $sk160/$<sc> skill in $@spellname1303001.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "a08110bdd4362f3d", "src": "db2@1.60.1.70170"}
-{"id": 1303002, "field": "name", "en": "Unarmed", "hash": "c8434204940cffe9", "src": "db2@1.60.1.70170"}
-{"id": 1303002, "field": "description", "en": "You have $sk162/$<sc> skill in $@spellname1303002.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "9b47b991dad05ff3", "src": "db2@1.60.1.70170"}
-{"id": 1303007, "field": "name", "en": "Two-Handed Axes", "hash": "f137139d29b02e29", "src": "db2@1.60.1.70170"}
-{"id": 1303007, "field": "description", "en": "You have $sk172/$<sc> skill in $@spellname1303007.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "680e5f521d5e50d8", "src": "db2@1.60.1.70170"}
-{"id": 1303008, "field": "name", "en": "Daggers", "hash": "6a846977c756763a", "src": "db2@1.60.1.70170"}
-{"id": 1303008, "field": "description", "en": "You have $sk173/$<sc> skill in $@spellname1303008.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "03d5408a5c0f526e", "src": "db2@1.60.1.70170"}
-{"id": 1303009, "field": "name", "en": "Thrown", "hash": "b85ebec1016e7558", "src": "db2@1.60.1.70170"}
-{"id": 1303009, "field": "description", "en": "You have $sk176/$<sc> skill in $@spellname1303009.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\n]", "hash": "69961f8eae3be62b", "src": "db2@1.60.1.70170"}
-{"id": 1303010, "field": "name", "en": "Crossbows", "hash": "99199da40079c34e", "src": "db2@1.60.1.70170"}
-{"id": 1303010, "field": "description", "en": "You have $sk226/$<sc> skill in $@spellname1303010.\r\n\r\nLevel $PL target:\r\nHit: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\n\r\nLevel ${$PL+2} target:\r\nHit: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\n\r\nLevel ${$PL+3} target:\r\nHit: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\n]", "hash": "0fca7f8e5f6cd7fb", "src": "db2@1.60.1.70170"}
-{"id": 1303011, "field": "name", "en": "Wands", "hash": "04455edd0ace5a9d", "src": "db2@1.60.1.70170"}
-{"id": 1303011, "field": "description", "en": "You have $sk228/$<sc> skill in $@spellname1303011.\r\n\r\nLevel $PL target:\r\nHit: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\n\r\nLevel ${$PL+2} target:\r\nHit: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\n\r\nLevel ${$PL+3} target:\r\nHit: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\n\r\n]", "hash": "da555286880cbaf6", "src": "db2@1.60.1.70170"}
-{"id": 1303013, "field": "name", "en": "Polearms", "hash": "c2cab6137eb3c8fb", "src": "db2@1.60.1.70170"}
-{"id": 1303013, "field": "description", "en": "You have $sk229/$<sc> skill in $@spellname1303013.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "5f9f1f1d54d31144", "src": "db2@1.60.1.70170"}
-{"id": 1303015, "field": "name", "en": "Fist Weapons", "hash": "dd615228307192c9", "src": "db2@1.60.1.70170"}
-{"id": 1303015, "field": "description", "en": "You have $sk473/$<sc> skill in $@spellname1303015.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "40170b39b2df104b", "src": "db2@1.60.1.70170"}
-{"id": 1303075, "field": "name", "en": "Lavender Kodo", "hash": "6c72c0fe2e134d38", "src": "db2@1.60.1.70170"}
-{"id": 1303075, "field": "description", "en": "Summons and dismisses a rideable lavender kodo.", "hash": "402178c5d9d1ec3d", "src": "db2@1.60.1.70170"}
-{"id": 1303075, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1303136, "field": "name", "en": "Net", "hash": "0014a0e135b13918", "src": "db2@1.60.1.70170"}
-{"id": 1303136, "field": "description", "en": "Immobilizes an enemy for $d.", "hash": "2ea85c1949963683", "src": "db2@1.60.1.70170"}
-{"id": 1303136, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70170"}
-{"id": 1303140, "field": "name", "en": "Print Threat Per Target Periodic", "hash": "b970f8ec9a6a13f2", "src": "db2@1.60.1.70170"}
-{"id": 1303140, "field": "description", "en": "Broadcast threat of all nearby NPCs within $1303135A1 yds every $t1 sec.\r\n", "hash": "7ff51452be5fbed2", "src": "db2@1.60.1.70170"}
-{"id": 1303140, "field": "aura", "en": "Broadcast threat of all nearby NPCs within $1303135A1 yds every $t1 sec.", "hash": "7ff51452be5fbed2", "src": "db2@1.60.1.70170"}
-{"id": 1303209, "field": "name", "en": "Plague Mind", "hash": "047a60b5d3d5e200", "src": "db2@1.60.1.70170"}
-{"id": 1303209, "field": "description", "en": "Diseases an enemy for $d, draining $s1 mana every $t1 sec. and transferring it to you.", "hash": "8aafd777ad88cac0", "src": "db2@1.60.1.70170"}
-{"id": 1303209, "field": "aura", "en": "$s1 mana leeched every $t1 sec.", "hash": "7f81e2e093a219d3", "src": "db2@1.60.1.70170"}
-{"id": 1303215, "field": "name", "en": "Caravan Kodo", "hash": "8a737332aef484a1", "src": "db2@1.60.1.70170"}
-{"id": 1303215, "field": "description", "en": "Summons and dismisses a rideable caravan kodo.", "hash": "4c609ee31b70e9ea", "src": "db2@1.60.1.70170"}
-{"id": 1303215, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1303218, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70170"}
-{"id": 1303226, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70170"}
-{"id": 1303226, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70170"}
-{"id": 1303226, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70170"}
-{"id": 1303227, "field": "name", "en": "Heal", "hash": "09c07834563b7243", "src": "db2@1.60.1.70170"}
-{"id": 1303227, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70170"}
-{"id": 1303228, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70170"}
-{"id": 1303228, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70170"}
-{"id": 1303264, "field": "name", "en": "Unholy Frenzy", "hash": "a91c4c667fbf99d0", "src": "db2@1.60.1.70170"}
-{"id": 1303264, "field": "description", "en": "Increases an ally's attack speed by $s1% for $d, but also inflicts $s2 Nature damage to that ally every $t2 sec.", "hash": "dde48cdbcc7192dd", "src": "db2@1.60.1.70170"}
-{"id": 1303264, "field": "aura", "en": "Attack speed increased by $s1%.\r\n$s2 Nature damage inflicted every $t2 sec.", "hash": "475d59de907cf66e", "src": "db2@1.60.1.70170"}
-{"id": 1303266, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70170"}
-{"id": 1303278, "field": "name", "en": "(DNT) Sabella Cosmetic Equipment", "hash": "b9ab6ec97215945e", "src": "db2@1.60.1.70170"}
-{"id": 1303286, "field": "name", "en": "Blind", "hash": "951d75b9c1314df9", "src": "db2@1.60.1.70170"}
-{"id": 1303286, "field": "description", "en": "Completely unable to see, due to a blindfold covering her eyes, reducing her chance to hit with attacks by $S1%.", "hash": "27d93d2dc968a279", "src": "db2@1.60.1.70170"}
-{"id": 1303286, "field": "aura", "en": "Chance to hit with attacks reduced by $S1%.", "hash": "05f73d77d763276e", "src": "db2@1.60.1.70170"}
-{"id": 1303304, "field": "name", "en": "Ritual burn", "hash": "8fa01dce90d1d812", "src": "db2@1.60.1.70170"}
-{"id": 1303308, "field": "name", "en": "Entangling Roots", "hash": "2c0883989bcc14e2", "src": "db2@1.60.1.70170"}
-{"id": 1303308, "field": "description", "en": "Entangles an enemy in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "ed46cb1a9bc2abfc", "src": "db2@1.60.1.70170"}
-{"id": 1303308, "field": "aura", "en": "Immobilized.\r\nNature damage inflicted every $t2 sec.", "hash": "e6768e6a91f2334b", "src": "db2@1.60.1.70170"}
-{"id": 1303309, "field": "name", "en": "Venom Spit", "hash": "466324912e1269be", "src": "db2@1.60.1.70170"}
-{"id": 1303309, "field": "description", "en": "Spits poison at an enemy, inflicting Nature damage, then additional damage every $t2 sec. for $d.", "hash": "f250210df49709f8", "src": "db2@1.60.1.70170"}
-{"id": 1303309, "field": "aura", "en": "Nature damage inflicted every $t2 sec.", "hash": "aae6fcde14863898", "src": "db2@1.60.1.70170"}
-{"id": 1303315, "field": "name", "en": "Ritual Circle", "hash": "acc2545f4916ed4d", "src": "db2@1.60.1.70170"}
-{"id": 1303317, "field": "name", "en": "Plant Banner of Ironforge", "hash": "eb3f7a531709dad6", "src": "db2@1.60.1.70170"}
-{"id": 1303317, "field": "description", "en": "Raises the banner of Ironforge.", "hash": "dbe77c862fa4bd76", "src": "db2@1.60.1.70170"}
-{"id": 1303350, "field": "name", "en": "Slow", "hash": "0b3baa51857e873e", "src": "db2@1.60.1.70170"}
-{"id": 1303350, "field": "description", "en": "Increases the time between nearby enemies' attacks by $s1% and slows their movement and casting speed by $s2% for $d.", "hash": "95a001cd723800c6", "src": "db2@1.60.1.70170"}
-{"id": 1303350, "field": "aura", "en": "Time between attacks increased by $s1%.\r\nCasting Speed reduced by $s1%.\r\nMovement speed reduced by $s2%.", "hash": "74fe21b8a8b29ef5", "src": "db2@1.60.1.70170"}
-{"id": 1303351, "field": "name", "en": "[DNT] Dark Purple Berry", "hash": "e1dbd8f1f13f5678", "src": "db2@1.60.1.70170"}
-{"id": 1303457, "field": "name", "en": "Skilled", "hash": "f7f0975a972ed736", "src": "db2@1.60.1.70170"}
-{"id": 1303457, "field": "description", "en": "Provides a mountain of tradeskill materials to test tradeskills, as well as money and tokens needed to purchase recipes and materials.", "hash": "925578ddecd0466d", "src": "db2@1.60.1.70170"}
-{"id": 1303458, "field": "name", "en": "Reflection Field", "hash": "1ecb411899f1820f", "src": "db2@1.60.1.70170"}
-{"id": 1303458, "field": "description", "en": "Reflects $s1% of harmful spells against nearby allies for $d.", "hash": "6e29658a4574fb90", "src": "db2@1.60.1.70170"}
-{"id": 1303458, "field": "aura", "en": "$s1% chance to reflect spells.", "hash": "374c4ab799647a94", "src": "db2@1.60.1.70170"}
-{"id": 1303459, "field": "name", "en": "Reflection Field", "hash": "1ecb411899f1820f", "src": "db2@1.60.1.70170"}
-{"id": 1303459, "field": "description", "en": "$@spelldesc1303458", "hash": "5c451f40d4c96584", "src": "db2@1.60.1.70170"}
-{"id": 1303459, "field": "aura", "en": "$@spellaura1303458", "hash": "567c69347c69147f", "src": "db2@1.60.1.70170"}
-{"id": 1303495, "field": "name", "en": "Throw Incense", "hash": "5087186d3b776fdf", "src": "db2@1.60.1.70170"}
-{"id": 1303498, "field": "name", "en": "Arcane Missiles", "hash": "881374420f5b1aff", "src": "db2@1.60.1.70170"}
-{"id": 1303498, "field": "description", "en": "Launches magical missiles at an enemy, inflicting Arcane damage.", "hash": "445ef3a106e72f1e", "src": "db2@1.60.1.70170"}
-{"id": 1303499, "field": "name", "en": "Arcane Missiles", "hash": "881374420f5b1aff", "src": "db2@1.60.1.70170"}
-{"id": 1303499, "field": "description", "en": "Launches magical missiles at an enemy, inflicting Arcane damage each sec for $d.", "hash": "847a53b63a08de46", "src": "db2@1.60.1.70170"}
-{"id": 1303503, "field": "name", "en": "Mana Leak", "hash": "c98392b6a8d26ee8", "src": "db2@1.60.1.70170"}
-{"id": 1303503, "field": "description", "en": "Expels the remaining mana in an elemental to an area that restores $1303505s1 mana every $1303505t1 sec to nearby creatures.", "hash": "0a6e2be7f36188b0", "src": "db2@1.60.1.70170"}
-{"id": 1303505, "field": "name", "en": "Mana Leak", "hash": "c98392b6a8d26ee8", "src": "db2@1.60.1.70170"}
-{"id": 1303505, "field": "description", "en": "$@spelldesc1303503", "hash": "5c455fb5d8c109db", "src": "db2@1.60.1.70170"}
-{"id": 1303505, "field": "aura", "en": "Gain $s1 mana every $t1 sec.", "hash": "a30aa82482cf3160", "src": "db2@1.60.1.70170"}
-{"id": 1303509, "field": "name", "en": "Spread Incense", "hash": "c795fa91d4f813ef", "src": "db2@1.60.1.70170"}
-{"id": 1303509, "field": "description", "en": "Spread the incense over the southern cliff of Hunter Rise.", "hash": "55017d5c0ab6fb20", "src": "db2@1.60.1.70170"}
-{"id": 1303520, "field": "name", "en": "Craft Incense", "hash": "d26a85ccce0e0fd3", "src": "db2@1.60.1.70170"}
-{"id": 1303520, "field": "description", "en": "Combine a Bundle of Herbs, a Bundle of Dried Cedar Twigs, Sinew Thread, and Ceremonial Flint and Tinder to create Prepared Incense.", "hash": "8e38e0e9a4158938", "src": "db2@1.60.1.70170"}
-{"id": 1303543, "field": "name", "en": "Scarlet Banner", "hash": "6fa77b402c2de3ff", "src": "db2@1.60.1.70170"}
-{"id": 1303543, "field": "description", "en": "Raise a Scarlet Banner at a campsite. Requires a Campfire nearby.", "hash": "c1dc1b97f061c612", "src": "db2@1.60.1.70170"}
-{"id": 1303551, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70170"}
-{"id": 1303551, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, causing Nature damage to each.", "hash": "91b98b1ace781456", "src": "db2@1.60.1.70170"}
-{"id": 1303588, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
-{"id": 1303589, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
-{"id": 1303590, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
-{"id": 1303591, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
-{"id": 1303592, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
-{"id": 1303598, "field": "name", "en": "Mass Polymorph", "hash": "58b6770c98081cf4", "src": "db2@1.60.1.70170"}
-{"id": 1303598, "field": "description", "en": "Transforms nearby enemies into an animal, forcing it to wander around for up to $d. While wandering, they cannot attack or cast spells.", "hash": "b8524f6634f8b7f0", "src": "db2@1.60.1.70170"}
-{"id": 1303598, "field": "aura", "en": "Cannot attack or cast spells.", "hash": "03c3096f3d5d7df5", "src": "db2@1.60.1.70170"}
-{"id": 1303599, "field": "name", "en": "Evocation", "hash": "c337cd62bc9018ab", "src": "db2@1.60.1.70170"}
-{"id": 1303599, "field": "description", "en": "While channeling this spell, your mana regenerates at an accelerated rate.", "hash": "e99d7c7cc7e57947", "src": "db2@1.60.1.70170"}
-{"id": 1303599, "field": "aura", "en": "Mana regeneration increased.", "hash": "3a24120acb038434", "src": "db2@1.60.1.70170"}
-{"id": 1303603, "field": "name", "en": "Mana Surge", "hash": "9b5d5cfe0ec7b4d5", "src": "db2@1.60.1.70170"}
-{"id": 1303634, "field": "name", "en": "Barkskin Blessing", "hash": "e32e1474b13a9582", "src": "db2@1.60.1.70170"}
-{"id": 1303634, "field": "description", "en": "Cures the target of ailments.", "hash": "b7bf7abb72392e62", "src": "db2@1.60.1.70170"}
-{"id": 1303634, "field": "aura", "en": "Curing ailments.", "hash": "8be991aa634213da", "src": "db2@1.60.1.70170"}
-{"id": 1303755, "field": "name", "en": "Toss Hearthstone", "hash": "e4e7c1a812176a2e", "src": "db2@1.60.1.70170"}
-{"id": 1303755, "field": "description", "en": "Toss a Hearthstone to a wounded Slave Worker.", "hash": "234cc09d32a28a52", "src": "db2@1.60.1.70170"}
-{"id": 1303755, "field": "aura", "en": "Attempting a daring escape!", "hash": "105909c3446fb8bf", "src": "db2@1.60.1.70170"}
-{"id": 1303762, "field": "name", "en": "Hearthstone", "hash": "230a3906066133f7", "src": "db2@1.60.1.70170"}
-{"id": 1303853, "field": "name", "en": "Gnomish Garbage", "hash": "c60ec55d71cd2893", "src": "db2@1.60.1.70170"}
-{"id": 1303853, "field": "description", "en": "Discard hazardous materials a safe distance away from Gadgetzan and other garbage.", "hash": "c144223edb527891", "src": "db2@1.60.1.70170"}
-{"id": 1303869, "field": "name", "en": "Toss Hearthstone", "hash": "e4e7c1a812176a2e", "src": "db2@1.60.1.70170"}
-{"id": 1303869, "field": "description", "en": "Toss a Hearthstone to a wounded Slave Worker, after knocking some sense into them.", "hash": "2d946e0d25c7b9ff", "src": "db2@1.60.1.70170"}
-{"id": 1303869, "field": "aura", "en": "Attempting a daring escape!", "hash": "105909c3446fb8bf", "src": "db2@1.60.1.70170"}
-{"id": 1303872, "field": "name", "en": "Gadgetzan", "hash": "a5b2aa7644d2dcea", "src": "db2@1.60.1.70170"}
-{"id": 1303979, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70170"}
-{"id": 1303979, "field": "description", "en": "Increases your attack speed by $s2% and the Physical damage you deal by $s1 for $d.", "hash": "0aff43f6bbfba8a6", "src": "db2@1.60.1.70170"}
-{"id": 1303979, "field": "aura", "en": "Physical damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "bc6c8e1d090dadea", "src": "db2@1.60.1.70170"}
+{"id": 1303001, "field": "name", "en": "Two-Handed Maces", "hash": "3ebe11d9b024a8c9", "src": "db2@1.60.1.70245"}
+{"id": 1303001, "field": "description", "en": "You have $sk160/$<sc> skill in $@spellname1303001.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "a08110bdd4362f3d", "src": "db2@1.60.1.70245"}
+{"id": 1303002, "field": "name", "en": "Unarmed", "hash": "c8434204940cffe9", "src": "db2@1.60.1.70245"}
+{"id": 1303002, "field": "description", "en": "You have $sk162/$<sc> skill in $@spellname1303002.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "9b47b991dad05ff3", "src": "db2@1.60.1.70245"}
+{"id": 1303007, "field": "name", "en": "Two-Handed Axes", "hash": "f137139d29b02e29", "src": "db2@1.60.1.70245"}
+{"id": 1303007, "field": "description", "en": "You have $sk172/$<sc> skill in $@spellname1303007.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "680e5f521d5e50d8", "src": "db2@1.60.1.70245"}
+{"id": 1303008, "field": "name", "en": "Daggers", "hash": "6a846977c756763a", "src": "db2@1.60.1.70245"}
+{"id": 1303008, "field": "description", "en": "You have $sk173/$<sc> skill in $@spellname1303008.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "03d5408a5c0f526e", "src": "db2@1.60.1.70245"}
+{"id": 1303009, "field": "name", "en": "Thrown", "hash": "b85ebec1016e7558", "src": "db2@1.60.1.70245"}
+{"id": 1303009, "field": "description", "en": "You have $sk176/$<sc> skill in $@spellname1303009.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\n]", "hash": "69961f8eae3be62b", "src": "db2@1.60.1.70245"}
+{"id": 1303010, "field": "name", "en": "Crossbows", "hash": "99199da40079c34e", "src": "db2@1.60.1.70245"}
+{"id": 1303010, "field": "description", "en": "You have $sk226/$<sc> skill in $@spellname1303010.\r\n\r\nLevel $PL target:\r\nHit: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\n\r\nLevel ${$PL+2} target:\r\nHit: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\n\r\nLevel ${$PL+3} target:\r\nHit: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\n]", "hash": "0fca7f8e5f6cd7fb", "src": "db2@1.60.1.70245"}
+{"id": 1303011, "field": "name", "en": "Wands", "hash": "04455edd0ace5a9d", "src": "db2@1.60.1.70245"}
+{"id": 1303011, "field": "description", "en": "You have $sk228/$<sc> skill in $@spellname1303011.\r\n\r\nLevel $PL target:\r\nHit: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\n\r\nLevel ${$PL+2} target:\r\nHit: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\n\r\nLevel ${$PL+3} target:\r\nHit: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\n\r\n]", "hash": "da555286880cbaf6", "src": "db2@1.60.1.70245"}
+{"id": 1303013, "field": "name", "en": "Polearms", "hash": "c2cab6137eb3c8fb", "src": "db2@1.60.1.70245"}
+{"id": 1303013, "field": "description", "en": "You have $sk229/$<sc> skill in $@spellname1303013.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "5f9f1f1d54d31144", "src": "db2@1.60.1.70245"}
+{"id": 1303015, "field": "name", "en": "Fist Weapons", "hash": "dd615228307192c9", "src": "db2@1.60.1.70245"}
+{"id": 1303015, "field": "description", "en": "You have $sk473/$<sc> skill in $@spellname1303015.\r\n\r\nLevel $PL target:\r\nHit, Dodge, and Parry: ${$<hdp>}.1%\r\nCritical Hit: ${$<cr>}.1%\r\nGlancing Blow Penalty: ${$<gp>}%\r\nGlancing Blow Chance: ${$<gc>}%\r\n$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit, Dodge, and Parry: ${$<hdp1>}.1%\r\nCritical Hit: ${$<cr1>}.1%\r\nGlancing Blow Penalty: ${$<gp1>}%\r\nGlancing Blow Chance: ${$<gc1>}%\r\n\r\nLevel ${$PL+2} target:\r\nHit, Dodge, and Parry: ${$<hdp2>}.1%\r\nCritical Hit: ${$<cr2>}.1%\r\nGlancing Blow Penalty: ${$<gp2>}%\r\nGlancing Blow Chance: ${$<gc2>}%\r\n\r\nLevel ${$PL+3} target:\r\nHit, Dodge, and Parry: ${$<hdp3>}.1%\r\nCritical Hit: ${$<cr3>}.1%\r\nGlancing Blow Penalty: ${$<gp3>}%\r\nGlancing Blow Chance: ${$<gc3>}%\r\n\r\n$@spelldesc1302929\r\n]", "hash": "40170b39b2df104b", "src": "db2@1.60.1.70245"}
+{"id": 1303075, "field": "name", "en": "Lavender Kodo", "hash": "6c72c0fe2e134d38", "src": "db2@1.60.1.70245"}
+{"id": 1303075, "field": "description", "en": "Summons and dismisses a rideable lavender kodo.", "hash": "402178c5d9d1ec3d", "src": "db2@1.60.1.70245"}
+{"id": 1303075, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1303136, "field": "name", "en": "Net", "hash": "0014a0e135b13918", "src": "db2@1.60.1.70245"}
+{"id": 1303136, "field": "description", "en": "Immobilizes an enemy for $d.", "hash": "2ea85c1949963683", "src": "db2@1.60.1.70245"}
+{"id": 1303136, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70245"}
+{"id": 1303140, "field": "name", "en": "Print Threat Per Target Periodic", "hash": "b970f8ec9a6a13f2", "src": "db2@1.60.1.70245"}
+{"id": 1303140, "field": "description", "en": "Broadcast threat of all nearby NPCs within $1303135A1 yds every $t1 sec.\r\n", "hash": "7ff51452be5fbed2", "src": "db2@1.60.1.70245"}
+{"id": 1303140, "field": "aura", "en": "Broadcast threat of all nearby NPCs within $1303135A1 yds every $t1 sec.", "hash": "7ff51452be5fbed2", "src": "db2@1.60.1.70245"}
+{"id": 1303209, "field": "name", "en": "Plague Mind", "hash": "047a60b5d3d5e200", "src": "db2@1.60.1.70245"}
+{"id": 1303209, "field": "description", "en": "Diseases an enemy for $d, draining $s1 mana every $t1 sec. and transferring it to you.", "hash": "8aafd777ad88cac0", "src": "db2@1.60.1.70245"}
+{"id": 1303209, "field": "aura", "en": "$s1 mana leeched every $t1 sec.", "hash": "7f81e2e093a219d3", "src": "db2@1.60.1.70245"}
+{"id": 1303215, "field": "name", "en": "Caravan Kodo", "hash": "8a737332aef484a1", "src": "db2@1.60.1.70245"}
+{"id": 1303215, "field": "description", "en": "Summons and dismisses a rideable caravan kodo.", "hash": "4c609ee31b70e9ea", "src": "db2@1.60.1.70245"}
+{"id": 1303215, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1303218, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70245"}
+{"id": 1303226, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70245"}
+{"id": 1303226, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70245"}
+{"id": 1303226, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70245"}
+{"id": 1303227, "field": "name", "en": "Heal", "hash": "09c07834563b7243", "src": "db2@1.60.1.70245"}
+{"id": 1303227, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70245"}
+{"id": 1303228, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70245"}
+{"id": 1303228, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70245"}
+{"id": 1303264, "field": "name", "en": "Unholy Frenzy", "hash": "a91c4c667fbf99d0", "src": "db2@1.60.1.70245"}
+{"id": 1303264, "field": "description", "en": "Increases an ally's attack speed by $s1% for $d, but also inflicts $s2 Nature damage to that ally every $t2 sec.", "hash": "dde48cdbcc7192dd", "src": "db2@1.60.1.70245"}
+{"id": 1303264, "field": "aura", "en": "Attack speed increased by $s1%.\r\n$s2 Nature damage inflicted every $t2 sec.", "hash": "475d59de907cf66e", "src": "db2@1.60.1.70245"}
+{"id": 1303266, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70245"}
+{"id": 1303278, "field": "name", "en": "(DNT) Sabella Cosmetic Equipment", "hash": "b9ab6ec97215945e", "src": "db2@1.60.1.70245"}
+{"id": 1303286, "field": "name", "en": "Blind", "hash": "951d75b9c1314df9", "src": "db2@1.60.1.70245"}
+{"id": 1303286, "field": "description", "en": "Completely unable to see, due to a blindfold covering her eyes, reducing her chance to hit with attacks by $S1%.", "hash": "27d93d2dc968a279", "src": "db2@1.60.1.70245"}
+{"id": 1303286, "field": "aura", "en": "Chance to hit with attacks reduced by $S1%.", "hash": "05f73d77d763276e", "src": "db2@1.60.1.70245"}
+{"id": 1303304, "field": "name", "en": "Ritual burn", "hash": "8fa01dce90d1d812", "src": "db2@1.60.1.70245"}
+{"id": 1303308, "field": "name", "en": "Entangling Roots", "hash": "2c0883989bcc14e2", "src": "db2@1.60.1.70245"}
+{"id": 1303308, "field": "description", "en": "Entangles an enemy in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "ed46cb1a9bc2abfc", "src": "db2@1.60.1.70245"}
+{"id": 1303308, "field": "aura", "en": "Immobilized.\r\nNature damage inflicted every $t2 sec.", "hash": "e6768e6a91f2334b", "src": "db2@1.60.1.70245"}
+{"id": 1303309, "field": "name", "en": "Venom Spit", "hash": "466324912e1269be", "src": "db2@1.60.1.70245"}
+{"id": 1303309, "field": "description", "en": "Spits poison at an enemy, inflicting Nature damage, then additional damage every $t2 sec. for $d.", "hash": "f250210df49709f8", "src": "db2@1.60.1.70245"}
+{"id": 1303309, "field": "aura", "en": "Nature damage inflicted every $t2 sec.", "hash": "aae6fcde14863898", "src": "db2@1.60.1.70245"}
+{"id": 1303315, "field": "name", "en": "Ritual Circle", "hash": "acc2545f4916ed4d", "src": "db2@1.60.1.70245"}
+{"id": 1303317, "field": "name", "en": "Plant Banner of Ironforge", "hash": "eb3f7a531709dad6", "src": "db2@1.60.1.70245"}
+{"id": 1303317, "field": "description", "en": "Raises the banner of Ironforge.", "hash": "dbe77c862fa4bd76", "src": "db2@1.60.1.70245"}
+{"id": 1303350, "field": "name", "en": "Slow", "hash": "0b3baa51857e873e", "src": "db2@1.60.1.70245"}
+{"id": 1303350, "field": "description", "en": "Increases the time between nearby enemies' attacks by $s1% and slows their movement and casting speed by $s2% for $d.", "hash": "95a001cd723800c6", "src": "db2@1.60.1.70245"}
+{"id": 1303350, "field": "aura", "en": "Time between attacks increased by $s1%.\r\nCasting Speed reduced by $s1%.\r\nMovement speed reduced by $s2%.", "hash": "74fe21b8a8b29ef5", "src": "db2@1.60.1.70245"}
+{"id": 1303351, "field": "name", "en": "[DNT] Dark Purple Berry", "hash": "e1dbd8f1f13f5678", "src": "db2@1.60.1.70245"}
+{"id": 1303457, "field": "name", "en": "Skilled", "hash": "f7f0975a972ed736", "src": "db2@1.60.1.70245"}
+{"id": 1303457, "field": "description", "en": "Provides a mountain of tradeskill materials to test tradeskills, as well as money and tokens needed to purchase recipes and materials.", "hash": "925578ddecd0466d", "src": "db2@1.60.1.70245"}
+{"id": 1303458, "field": "name", "en": "Reflection Field", "hash": "1ecb411899f1820f", "src": "db2@1.60.1.70245"}
+{"id": 1303458, "field": "description", "en": "Reflects $s1% of harmful spells against nearby allies for $d.", "hash": "6e29658a4574fb90", "src": "db2@1.60.1.70245"}
+{"id": 1303458, "field": "aura", "en": "$s1% chance to reflect spells.", "hash": "374c4ab799647a94", "src": "db2@1.60.1.70245"}
+{"id": 1303459, "field": "name", "en": "Reflection Field", "hash": "1ecb411899f1820f", "src": "db2@1.60.1.70245"}
+{"id": 1303459, "field": "description", "en": "$@spelldesc1303458", "hash": "5c451f40d4c96584", "src": "db2@1.60.1.70245"}
+{"id": 1303459, "field": "aura", "en": "$@spellaura1303458", "hash": "567c69347c69147f", "src": "db2@1.60.1.70245"}
+{"id": 1303495, "field": "name", "en": "Throw Incense", "hash": "5087186d3b776fdf", "src": "db2@1.60.1.70245"}
+{"id": 1303498, "field": "name", "en": "Arcane Missiles", "hash": "881374420f5b1aff", "src": "db2@1.60.1.70245"}
+{"id": 1303498, "field": "description", "en": "Launches magical missiles at an enemy, inflicting Arcane damage.", "hash": "445ef3a106e72f1e", "src": "db2@1.60.1.70245"}
+{"id": 1303499, "field": "name", "en": "Arcane Missiles", "hash": "881374420f5b1aff", "src": "db2@1.60.1.70245"}
+{"id": 1303499, "field": "description", "en": "Launches magical missiles at an enemy, inflicting Arcane damage each sec for $d.", "hash": "847a53b63a08de46", "src": "db2@1.60.1.70245"}
+{"id": 1303503, "field": "name", "en": "Mana Leak", "hash": "c98392b6a8d26ee8", "src": "db2@1.60.1.70245"}
+{"id": 1303503, "field": "description", "en": "Expels the remaining mana in an elemental to an area that restores $1303505s1 mana every $1303505t1 sec to nearby creatures.", "hash": "0a6e2be7f36188b0", "src": "db2@1.60.1.70245"}
+{"id": 1303505, "field": "name", "en": "Mana Leak", "hash": "c98392b6a8d26ee8", "src": "db2@1.60.1.70245"}
+{"id": 1303505, "field": "description", "en": "$@spelldesc1303503", "hash": "5c455fb5d8c109db", "src": "db2@1.60.1.70245"}
+{"id": 1303505, "field": "aura", "en": "Gain $s1 mana every $t1 sec.", "hash": "a30aa82482cf3160", "src": "db2@1.60.1.70245"}
+{"id": 1303509, "field": "name", "en": "Spread Incense", "hash": "c795fa91d4f813ef", "src": "db2@1.60.1.70245"}
+{"id": 1303509, "field": "description", "en": "Spread the incense over the southern cliff of Hunter Rise.", "hash": "55017d5c0ab6fb20", "src": "db2@1.60.1.70245"}
+{"id": 1303520, "field": "name", "en": "Craft Incense", "hash": "d26a85ccce0e0fd3", "src": "db2@1.60.1.70245"}
+{"id": 1303520, "field": "description", "en": "Combine a Bundle of Herbs, a Bundle of Dried Cedar Twigs, Sinew Thread, and Ceremonial Flint and Tinder to create Prepared Incense.", "hash": "8e38e0e9a4158938", "src": "db2@1.60.1.70245"}
+{"id": 1303543, "field": "name", "en": "Scarlet Banner", "hash": "6fa77b402c2de3ff", "src": "db2@1.60.1.70245"}
+{"id": 1303543, "field": "description", "en": "Raise a Scarlet Banner at a campsite. Requires a Campfire nearby.", "hash": "c1dc1b97f061c612", "src": "db2@1.60.1.70245"}
+{"id": 1303551, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70245"}
+{"id": 1303551, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, causing Nature damage to each.", "hash": "91b98b1ace781456", "src": "db2@1.60.1.70245"}
+{"id": 1303588, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1303589, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1303590, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1303591, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1303592, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1303598, "field": "name", "en": "Mass Polymorph", "hash": "58b6770c98081cf4", "src": "db2@1.60.1.70245"}
+{"id": 1303598, "field": "description", "en": "Transforms nearby enemies into an animal, forcing it to wander around for up to $d. While wandering, they cannot attack or cast spells.", "hash": "b8524f6634f8b7f0", "src": "db2@1.60.1.70245"}
+{"id": 1303598, "field": "aura", "en": "Cannot attack or cast spells.", "hash": "03c3096f3d5d7df5", "src": "db2@1.60.1.70245"}
+{"id": 1303599, "field": "name", "en": "Evocation", "hash": "c337cd62bc9018ab", "src": "db2@1.60.1.70245"}
+{"id": 1303599, "field": "description", "en": "While channeling this spell, your mana regenerates at an accelerated rate.", "hash": "e99d7c7cc7e57947", "src": "db2@1.60.1.70245"}
+{"id": 1303599, "field": "aura", "en": "Mana regeneration increased.", "hash": "3a24120acb038434", "src": "db2@1.60.1.70245"}
+{"id": 1303603, "field": "name", "en": "Mana Surge", "hash": "9b5d5cfe0ec7b4d5", "src": "db2@1.60.1.70245"}
+{"id": 1303634, "field": "name", "en": "Barkskin Blessing", "hash": "e32e1474b13a9582", "src": "db2@1.60.1.70245"}
+{"id": 1303634, "field": "description", "en": "Cures the target of ailments.", "hash": "b7bf7abb72392e62", "src": "db2@1.60.1.70245"}
+{"id": 1303634, "field": "aura", "en": "Curing ailments.", "hash": "8be991aa634213da", "src": "db2@1.60.1.70245"}
+{"id": 1303755, "field": "name", "en": "Toss Hearthstone", "hash": "e4e7c1a812176a2e", "src": "db2@1.60.1.70245"}
+{"id": 1303755, "field": "description", "en": "Toss a Hearthstone to a wounded Slave Worker.", "hash": "234cc09d32a28a52", "src": "db2@1.60.1.70245"}
+{"id": 1303755, "field": "aura", "en": "Attempting a daring escape!", "hash": "105909c3446fb8bf", "src": "db2@1.60.1.70245"}
+{"id": 1303762, "field": "name", "en": "Hearthstone", "hash": "230a3906066133f7", "src": "db2@1.60.1.70245"}
+{"id": 1303853, "field": "name", "en": "Gnomish Garbage", "hash": "c60ec55d71cd2893", "src": "db2@1.60.1.70245"}
+{"id": 1303853, "field": "description", "en": "Discard hazardous materials a safe distance away from Gadgetzan and other garbage.", "hash": "c144223edb527891", "src": "db2@1.60.1.70245"}
+{"id": 1303869, "field": "name", "en": "Toss Hearthstone", "hash": "e4e7c1a812176a2e", "src": "db2@1.60.1.70245"}
+{"id": 1303869, "field": "description", "en": "Toss a Hearthstone to a wounded Slave Worker, after knocking some sense into them.", "hash": "2d946e0d25c7b9ff", "src": "db2@1.60.1.70245"}
+{"id": 1303869, "field": "aura", "en": "Attempting a daring escape!", "hash": "105909c3446fb8bf", "src": "db2@1.60.1.70245"}
+{"id": 1303872, "field": "name", "en": "Gadgetzan", "hash": "a5b2aa7644d2dcea", "src": "db2@1.60.1.70245"}
+{"id": 1303979, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70245"}
+{"id": 1303979, "field": "description", "en": "Increases your attack speed by $s2% and the Physical damage you deal by $s1 for $d.", "hash": "0aff43f6bbfba8a6", "src": "db2@1.60.1.70245"}
+{"id": 1303979, "field": "aura", "en": "Physical damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "bc6c8e1d090dadea", "src": "db2@1.60.1.70245"}

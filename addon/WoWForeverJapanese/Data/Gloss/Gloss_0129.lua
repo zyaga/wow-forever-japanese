@@ -197,7 +197,6 @@ WFJ.Data.add("gloss", {
   [129194] = "途中\tとちゅう\ton (midway)",
   [129195] = "途中\tとちゅう\ton (my) way",
   [129196] = "途中\tとちゅう\ton (the way)",
-  [129197] = "途中\tとちゅう\ton his way",
   [129198] = "途中\tとちゅう\ton my way",
   [129199] = "途中\tとちゅう\ton the way",
   [129200] = "途中\tとちゅう\ton the way (during)",

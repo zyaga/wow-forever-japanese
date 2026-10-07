@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("objective", {
   [471121] = { "Kul Tiransがここにいる理由を探る", 0x399b6957, "." },
+  [471235] = { "Drowned Cityの入口を見つける", 0xbb71eeb1, "." },
   [471636] = { "自ら進んで血を捧げる", 0x9fb50498, "." },
   [471637] = { "Tortured Soulを解放する", 0x9cef74cc, "." },
   [471712] = { "Ardin Grassmanに何が起きたのかを調べる", 0x83a0a47e, "." },

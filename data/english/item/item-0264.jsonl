@@ -1,389 +1,389 @@
-{"id": 264011, "field": "name", "en": "Craftsman's Writ: Elixir of Ogre's Strength", "hash": "96235fbe0a5cfb34", "src": "db2@1.60.1.70170"}
-{"id": 264011, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264012, "field": "name", "en": "Craftsman's Writ: Elixir of Wisdom", "hash": "be3bb0e2d398bb0b", "src": "db2@1.60.1.70170"}
-{"id": 264012, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264013, "field": "name", "en": "Craftsman's Writ: Lesser Mana Potion", "hash": "5db5cddb47ff8ca2", "src": "db2@1.60.1.70170"}
-{"id": 264013, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264014, "field": "name", "en": "Craftsman's Writ: Shadow Protection Potion", "hash": "7fbc448acc47ec32", "src": "db2@1.60.1.70170"}
-{"id": 264014, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264015, "field": "name", "en": "Craftsman's Writ: Free Action Potion", "hash": "3a23b3c01157c5c8", "src": "db2@1.60.1.70170"}
-{"id": 264015, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264016, "field": "name", "en": "Craftsman's Writ: Elixir of Lesser Agility", "hash": "0f491e6a6720fc37", "src": "db2@1.60.1.70170"}
-{"id": 264016, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264017, "field": "name", "en": "Craftsman's Writ: Lesser Troll's Blood Elixir", "hash": "2efbe19df911adcb", "src": "db2@1.60.1.70170"}
-{"id": 264017, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264018, "field": "name", "en": "Craftsman's Writ: Elixir of Defense", "hash": "1d26dd2e0f18b620", "src": "db2@1.60.1.70170"}
-{"id": 264018, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264019, "field": "name", "en": "Craftsman's Writ: Draught of Water Breathing", "hash": "8bcc7c8b729449f9", "src": "db2@1.60.1.70170"}
-{"id": 264019, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264020, "field": "name", "en": "Craftsman's Writ: Pearl-Handled Dagger", "hash": "1bd8477be2b6a4e2", "src": "db2@1.60.1.70170"}
-{"id": 264020, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264021, "field": "name", "en": "Craftsman's Writ: Golden Rod", "hash": "d1330f2b75feb0db", "src": "db2@1.60.1.70170"}
-{"id": 264021, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264022, "field": "name", "en": "Craftsman's Writ: Iridescent Hammer", "hash": "01368ea22fd26326", "src": "db2@1.60.1.70170"}
-{"id": 264022, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264023, "field": "name", "en": "Craftsman's Writ: Silver Skeleton Key", "hash": "b2652890e7bf29ac", "src": "db2@1.60.1.70170"}
-{"id": 264023, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264024, "field": "name", "en": "Craftsman's Writ: Heavy Bronze Mace", "hash": "a2b3fe2469a8b580", "src": "db2@1.60.1.70170"}
-{"id": 264024, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264025, "field": "name", "en": "Craftsman's Writ: Rough Bronze Leggings", "hash": "87d5989d5823d808", "src": "db2@1.60.1.70170"}
-{"id": 264025, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264026, "field": "name", "en": "Craftsman's Writ: Green Iron Gauntlets", "hash": "8efb712eda703a89", "src": "db2@1.60.1.70170"}
-{"id": 264026, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264027, "field": "name", "en": "Craftsman's Writ: Big Bronze Knife", "hash": "52cc64c6544b48ad", "src": "db2@1.60.1.70170"}
-{"id": 264027, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264028, "field": "name", "en": "Craftsman's Writ: Green Iron Boots", "hash": "44c416185db4fcc0", "src": "db2@1.60.1.70170"}
-{"id": 264028, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264029, "field": "name", "en": "Craftsman's Writ: Ornate Spyglass", "hash": "797d84777d7de785", "src": "db2@1.60.1.70170"}
-{"id": 264029, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264030, "field": "name", "en": "Craftsman's Writ: Explosive Sheep", "hash": "e636813db692a049", "src": "db2@1.60.1.70170"}
-{"id": 264030, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264031, "field": "name", "en": "Craftsman's Writ: Moonsight Rifle", "hash": "24651b2ea5688655", "src": "db2@1.60.1.70170"}
-{"id": 264031, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264032, "field": "name", "en": "Craftsman's Writ: Minor Recombobulator", "hash": "65852699fc5b90f5", "src": "db2@1.60.1.70170"}
-{"id": 264032, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264033, "field": "name", "en": "Craftsman's Writ: Practice Lock", "hash": "0fcd9a9e418e4e15", "src": "db2@1.60.1.70170"}
-{"id": 264033, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264034, "field": "name", "en": "Craftsman's Writ: Shadow Goggles", "hash": "77321f5b440b0c69", "src": "db2@1.60.1.70170"}
-{"id": 264034, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264035, "field": "name", "en": "Craftsman's Writ: Gnomish Universal Remote", "hash": "9b54eda7863b9eb5", "src": "db2@1.60.1.70170"}
-{"id": 264035, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264036, "field": "name", "en": "Craftsman's Writ: Big Bronze Bomb", "hash": "0d1b4508a18553c9", "src": "db2@1.60.1.70170"}
-{"id": 264036, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264037, "field": "name", "en": "Craftsman's Writ: Crafted Solid Shot", "hash": "f1179010ae8876e5", "src": "db2@1.60.1.70170"}
-{"id": 264037, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264038, "field": "name", "en": "Craftsman's Writ: Heavy Leather Ball", "hash": "13a1038dda6e0139", "src": "db2@1.60.1.70170"}
-{"id": 264038, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264039, "field": "name", "en": "Craftsman's Writ: Fine Leather Pants", "hash": "70dac494aa295342", "src": "db2@1.60.1.70170"}
-{"id": 264039, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264040, "field": "name", "en": "Craftsman's Writ: Herbalist's Gloves", "hash": "f49e101adc997c8d", "src": "db2@1.60.1.70170"}
-{"id": 264040, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264041, "field": "name", "en": "Craftsman's Writ: Dark Leather Tunic", "hash": "88faa00779c56591", "src": "db2@1.60.1.70170"}
-{"id": 264041, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264042, "field": "name", "en": "Craftsman's Writ: Pilferer's Gloves", "hash": "3de4151dd28ba907", "src": "db2@1.60.1.70170"}
-{"id": 264042, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264043, "field": "name", "en": "Craftsman's Writ: Heavy Quiver", "hash": "d1006262847bfa5b", "src": "db2@1.60.1.70170"}
-{"id": 264043, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264044, "field": "name", "en": "Craftsman's Writ: Dark Leather Shoulders", "hash": "496c0da1e4c6a467", "src": "db2@1.60.1.70170"}
-{"id": 264044, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264045, "field": "name", "en": "Craftsman's Writ: Barbaric Gloves", "hash": "bded984343806102", "src": "db2@1.60.1.70170"}
-{"id": 264045, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264046, "field": "name", "en": "Craftsman's Writ: Red Whelp Gloves", "hash": "d2d7a314d466c1da", "src": "db2@1.60.1.70170"}
-{"id": 264046, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264047, "field": "name", "en": "Craftsman's Writ: Lesser Wizard's Robe", "hash": "90c3520a872ef2d6", "src": "db2@1.60.1.70170"}
-{"id": 264047, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264048, "field": "name", "en": "Craftsman's Writ: Blue Overalls", "hash": "51b0953de9c7be8c", "src": "db2@1.60.1.70170"}
-{"id": 264048, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264049, "field": "name", "en": "Craftsman's Writ: Azure Silk Hood", "hash": "c5faf17dcefd91be", "src": "db2@1.60.1.70170"}
-{"id": 264049, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264050, "field": "name", "en": "Craftsman's Writ: Small Silk Pack", "hash": "d42ed7d4b1b2b9ea", "src": "db2@1.60.1.70170"}
-{"id": 264050, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264051, "field": "name", "en": "Craftsman's Writ: Phoenix Pants", "hash": "952f9e76146b026b", "src": "db2@1.60.1.70170"}
-{"id": 264051, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264052, "field": "name", "en": "Craftsman's Writ: Red Woolen Boots", "hash": "693fafb934ee69f9", "src": "db2@1.60.1.70170"}
-{"id": 264052, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264053, "field": "name", "en": "Craftsman's Writ: Colorful Kilt", "hash": "c4543b78005feff6", "src": "db2@1.60.1.70170"}
-{"id": 264053, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264054, "field": "name", "en": "Craftsman's Writ: Greater Adept's Robe", "hash": "90cccc5778907767", "src": "db2@1.60.1.70170"}
-{"id": 264054, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264055, "field": "name", "en": "Craftsman's Writ: Spider Silk Slippers", "hash": "57915228e62383b7", "src": "db2@1.60.1.70170"}
-{"id": 264055, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264056, "field": "name", "en": "Craftsman's Writ: Frost Protection Potion", "hash": "92efd14b1c333f68", "src": "db2@1.60.1.70170"}
-{"id": 264056, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264057, "field": "name", "en": "Craftsman's Writ: Lesser Invisibility Potion", "hash": "2a93d59df9c4f740", "src": "db2@1.60.1.70170"}
-{"id": 264057, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264058, "field": "name", "en": "Craftsman's Writ: Lesser Stoneshield Potion", "hash": "0e4f6a7ae7bc3db4", "src": "db2@1.60.1.70170"}
-{"id": 264058, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264059, "field": "name", "en": "Craftsman's Writ: Nature Protection Potion", "hash": "53e9f9fc3ffcfb65", "src": "db2@1.60.1.70170"}
-{"id": 264059, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264060, "field": "name", "en": "Craftsman's Writ: Catseye Draught", "hash": "eb39ba2729d95cfc", "src": "db2@1.60.1.70170"}
-{"id": 264060, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264061, "field": "name", "en": "Craftsman's Writ: Great Rage Potion", "hash": "f079f2cec97446a3", "src": "db2@1.60.1.70170"}
-{"id": 264061, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264062, "field": "name", "en": "Craftsman's Writ: Mana Potion", "hash": "6a041934dfcdbb82", "src": "db2@1.60.1.70170"}
-{"id": 264062, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264063, "field": "name", "en": "Craftsman's Writ: Fire Protection Potion", "hash": "7bc9388fe0aa3433", "src": "db2@1.60.1.70170"}
-{"id": 264063, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264064, "field": "name", "en": "Craftsman's Writ: Shadow Oil", "hash": "2968fc8259053bc7", "src": "db2@1.60.1.70170"}
-{"id": 264064, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264065, "field": "name", "en": "Craftsman's Writ: Goblin Rocket Fuel", "hash": "68c5620a284a6e91", "src": "db2@1.60.1.70170"}
-{"id": 264065, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264066, "field": "name", "en": "Craftsman's Writ: Elixir of Agility", "hash": "2baf4f8b1826429c", "src": "db2@1.60.1.70170"}
-{"id": 264066, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264067, "field": "name", "en": "Craftsman's Writ: Wildvine Potion", "hash": "7c5fd0bd637810e7", "src": "db2@1.60.1.70170"}
-{"id": 264067, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264068, "field": "name", "en": "Craftsman's Writ: Steel Plate Helm", "hash": "a4d20c7a1985db88", "src": "db2@1.60.1.70170"}
-{"id": 264068, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264069, "field": "name", "en": "Craftsman's Writ: Inlaid Mithril Cylinder", "hash": "f1dae62d61e0b9db", "src": "db2@1.60.1.70170"}
-{"id": 264069, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264070, "field": "name", "en": "Craftsman's Writ: Steel Weapon Chain", "hash": "0424a51a6f95f2ec", "src": "db2@1.60.1.70170"}
-{"id": 264070, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264071, "field": "name", "en": "Craftsman's Writ: Ornate Mithril Shoulders", "hash": "76f4a4a28654e4ff", "src": "db2@1.60.1.70170"}
-{"id": 264071, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264072, "field": "name", "en": "Craftsman's Writ: Blue Glittering Axe", "hash": "b84f5d682cf1e12a", "src": "db2@1.60.1.70170"}
-{"id": 264072, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264073, "field": "name", "en": "Craftsman's Writ: Moonsteel Broadsword", "hash": "363246f93c1df51c", "src": "db2@1.60.1.70170"}
-{"id": 264073, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264074, "field": "name", "en": "Craftsman's Writ: Golden Scale Coif", "hash": "580f0671b1e79597", "src": "db2@1.60.1.70170"}
-{"id": 264074, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264075, "field": "name", "en": "Craftsman's Writ: Solid Sharpening Stone", "hash": "ccb8e623d15dbd07", "src": "db2@1.60.1.70170"}
-{"id": 264075, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264076, "field": "name", "en": "Craftsman's Writ: Wicked Mithril Blade", "hash": "eb1157a7be648ebe", "src": "db2@1.60.1.70170"}
-{"id": 264076, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264077, "field": "name", "en": "Craftsman's Writ: Truesilver Rod", "hash": "837c931df21cc95e", "src": "db2@1.60.1.70170"}
-{"id": 264077, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264078, "field": "name", "en": "Craftsman's Writ: Golden Scale Gauntlets", "hash": "d1447782bb1fb533", "src": "db2@1.60.1.70170"}
-{"id": 264078, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264079, "field": "name", "en": "Craftsman's Writ: Heavy Mithril Axe", "hash": "d91e767c884ce290", "src": "db2@1.60.1.70170"}
-{"id": 264079, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264080, "field": "name", "en": "Craftsman's Writ: Mechanical Dragonling", "hash": "475efd40fcd71415", "src": "db2@1.60.1.70170"}
-{"id": 264080, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264081, "field": "name", "en": "Craftsman's Writ: Advanced Target Dummy", "hash": "92f8280033722e83", "src": "db2@1.60.1.70170"}
-{"id": 264081, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264082, "field": "name", "en": "Craftsman's Writ: Craftsman's Monocle", "hash": "161e164010296726", "src": "db2@1.60.1.70170"}
-{"id": 264082, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264083, "field": "name", "en": "Craftsman's Writ: Goblin Land Mine", "hash": "1e7951d3b09ac80b", "src": "db2@1.60.1.70170"}
-{"id": 264083, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264084, "field": "name", "en": "Craftsman's Writ: Catseye Ultra Goggles", "hash": "a724c16b1cc083e1", "src": "db2@1.60.1.70170"}
-{"id": 264084, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264085, "field": "name", "en": "Craftsman's Writ: Unstable Trigger", "hash": "3fc98f28aa329039", "src": "db2@1.60.1.70170"}
-{"id": 264085, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264086, "field": "name", "en": "Craftsman's Writ: Flash Bomb", "hash": "9e483a165afcb9f3", "src": "db2@1.60.1.70170"}
-{"id": 264086, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264087, "field": "name", "en": "Craftsman's Writ: Fire Goggles", "hash": "4d475adf649dbf49", "src": "db2@1.60.1.70170"}
-{"id": 264087, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264088, "field": "name", "en": "Craftsman's Writ: Mithril Frag Bomb", "hash": "24b038fbc3e54cf2", "src": "db2@1.60.1.70170"}
-{"id": 264088, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264089, "field": "name", "en": "Craftsman's Writ: Gyromatic Micro-Adjuster", "hash": "875aca0cef2cb1e9", "src": "db2@1.60.1.70170"}
-{"id": 264089, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264090, "field": "name", "en": "Craftsman's Writ: Mechanical Repair Kit", "hash": "80958ad1b4497828", "src": "db2@1.60.1.70170"}
-{"id": 264090, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264091, "field": "name", "en": "Craftsman's Writ: Dark Iron Bomb", "hash": "4a928008f0b1e10e", "src": "db2@1.60.1.70170"}
-{"id": 264091, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264092, "field": "name", "en": "Craftsman's Writ: Comfortable Leather Hat", "hash": "c9e0e9ee18c1d0ff", "src": "db2@1.60.1.70170"}
-{"id": 264092, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264093, "field": "name", "en": "Craftsman's Writ: Guardian Cloak", "hash": "cd47dbcc88f4ae79", "src": "db2@1.60.1.70170"}
-{"id": 264093, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264094, "field": "name", "en": "Craftsman's Writ: Dusky Bracers", "hash": "1f3f16044c0bd476", "src": "db2@1.60.1.70170"}
-{"id": 264094, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264095, "field": "name", "en": "Craftsman's Writ: Wild Leather Helmet", "hash": "6de1698030827bab", "src": "db2@1.60.1.70170"}
-{"id": 264095, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264096, "field": "name", "en": "Craftsman's Writ: Wild Leather Shoulders", "hash": "86d5ce9ba92e566a", "src": "db2@1.60.1.70170"}
-{"id": 264096, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264097, "field": "name", "en": "Craftsman's Writ: Quickdraw Quiver", "hash": "84fbe9a36b29cf9b", "src": "db2@1.60.1.70170"}
-{"id": 264097, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264098, "field": "name", "en": "Craftsman's Writ: Swift Boots", "hash": "1a1dbf2391ffdd34", "src": "db2@1.60.1.70170"}
-{"id": 264098, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264099, "field": "name", "en": "Craftsman's Writ: Nightscape Shoulders", "hash": "8a8a32f657ccc219", "src": "db2@1.60.1.70170"}
-{"id": 264099, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264100, "field": "name", "en": "Craftsman's Writ: Big Voodoo Mask", "hash": "45a543e7d60fa5bf", "src": "db2@1.60.1.70170"}
-{"id": 264100, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264101, "field": "name", "en": "Craftsman's Writ: Big Voodoo Robe", "hash": "465469b3d0a90084", "src": "db2@1.60.1.70170"}
-{"id": 264101, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264102, "field": "name", "en": "Craftsman's Writ: Turtle Scale Breastplate", "hash": "a9aed5d57af0c485", "src": "db2@1.60.1.70170"}
-{"id": 264102, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264103, "field": "name", "en": "Craftsman's Writ: Thick Leather Ammo Pouch", "hash": "243bb3383bda0cc7", "src": "db2@1.60.1.70170"}
-{"id": 264103, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264104, "field": "name", "en": "Craftsman's Writ: Mageweave Bag", "hash": "c4a1ef830dbf10ef", "src": "db2@1.60.1.70170"}
-{"id": 264104, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264105, "field": "name", "en": "Craftsman's Writ: Shadoweave Gloves", "hash": "fdbef349bfcd29cd", "src": "db2@1.60.1.70170"}
-{"id": 264105, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264106, "field": "name", "en": "Craftsman's Writ: Crimson Silk Robe", "hash": "17062d3aa4f383e8", "src": "db2@1.60.1.70170"}
-{"id": 264106, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264107, "field": "name", "en": "Craftsman's Writ: Shadoweave Robe", "hash": "99288d008bce5a2c", "src": "db2@1.60.1.70170"}
-{"id": 264107, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264108, "field": "name", "en": "Craftsman's Writ: Enchanted Mageweave Pouch", "hash": "a4bf24d914cac34c", "src": "db2@1.60.1.70170"}
-{"id": 264108, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264109, "field": "name", "en": "Craftsman's Writ: Star Belt", "hash": "8571f86ff1334714", "src": "db2@1.60.1.70170"}
-{"id": 264109, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264110, "field": "name", "en": "Craftsman's Writ: Black Mageweave Vest", "hash": "875549487bab9c33", "src": "db2@1.60.1.70170"}
-{"id": 264110, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264111, "field": "name", "en": "Craftsman's Writ: Red Mageweave Pants", "hash": "8f6127cbb173efe0", "src": "db2@1.60.1.70170"}
-{"id": 264111, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264112, "field": "name", "en": "Craftsman's Writ: Orange Martial Shirt", "hash": "91e8bc9fc22e8452", "src": "db2@1.60.1.70170"}
-{"id": 264112, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264113, "field": "name", "en": "Craftsman's Writ: White Bandit Mask", "hash": "ceeeda58041aef6b", "src": "db2@1.60.1.70170"}
-{"id": 264113, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264114, "field": "name", "en": "Craftsman's Writ: Cindercloth Robe", "hash": "395310b14420ffd7", "src": "db2@1.60.1.70170"}
-{"id": 264114, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264115, "field": "name", "en": "Craftsman's Writ: Earthen Silk Belt", "hash": "50ca3338a8426f5a", "src": "db2@1.60.1.70170"}
-{"id": 264115, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264116, "field": "name", "en": "Craftsman's Writ: Potion of Demonslaying", "hash": "660d8597d853a8ad", "src": "db2@1.60.1.70170"}
-{"id": 264116, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264117, "field": "name", "en": "Craftsman's Writ: Dreamless Sleep Potion", "hash": "bc29a03700eb6e68", "src": "db2@1.60.1.70170"}
-{"id": 264117, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264118, "field": "name", "en": "Craftsman's Writ: Greater Fire Protection Potion", "hash": "44b5f833f653ced4", "src": "db2@1.60.1.70170"}
-{"id": 264118, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264119, "field": "name", "en": "Craftsman's Writ: Draught of Detect Demon", "hash": "976d0a2532f5dbe4", "src": "db2@1.60.1.70170"}
-{"id": 264119, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264120, "field": "name", "en": "Craftsman's Writ: Gift of Arthas", "hash": "8b90c6b076828f7e", "src": "db2@1.60.1.70170"}
-{"id": 264120, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264121, "field": "name", "en": "Craftsman's Writ: Flask of Chromatic Resistance", "hash": "d0c1c8e96fcbe4df", "src": "db2@1.60.1.70170"}
-{"id": 264121, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264122, "field": "name", "en": "Craftsman's Writ: Limited Invulnerability Potion", "hash": "997205982e59bcf2", "src": "db2@1.60.1.70170"}
-{"id": 264122, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264123, "field": "name", "en": "Craftsman's Writ: Major Rejuvenation Potion", "hash": "d0d789389a7ab04a", "src": "db2@1.60.1.70170"}
-{"id": 264123, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264124, "field": "name", "en": "Craftsman's Writ: Distilled Firewater", "hash": "db4761fff67fb62a", "src": "db2@1.60.1.70170"}
-{"id": 264124, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264125, "field": "name", "en": "Craftsman's Writ: Radiant Circlet", "hash": "e9efec2441fc3ee4", "src": "db2@1.60.1.70170"}
-{"id": 264125, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264126, "field": "name", "en": "Craftsman's Writ: Radiant Belt", "hash": "865ccfdae72e7a76", "src": "db2@1.60.1.70170"}
-{"id": 264126, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264127, "field": "name", "en": "Craftsman's Writ: Orcish War Leggings", "hash": "aa7e3794aaee21df", "src": "db2@1.60.1.70170"}
-{"id": 264127, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264128, "field": "name", "en": "Craftsman's Writ: Mithril Spurs", "hash": "5c52f3de4fc496fa", "src": "db2@1.60.1.70170"}
-{"id": 264128, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264129, "field": "name", "en": "Craftsman's Writ: Imperial Plate Chest", "hash": "5a5735daba055f54", "src": "db2@1.60.1.70170"}
-{"id": 264129, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264130, "field": "name", "en": "Craftsman's Writ: Darkrune Gauntlets", "hash": "79399d2c99ecdb4c", "src": "db2@1.60.1.70170"}
-{"id": 264130, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264131, "field": "name", "en": "Craftsman's Writ: Huge Thorium Battleaxe", "hash": "31e21fa8f571ed25", "src": "db2@1.60.1.70170"}
-{"id": 264131, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264132, "field": "name", "en": "Craftsman's Writ: Arcanite Skeleton Key", "hash": "33734ad06e32a51a", "src": "db2@1.60.1.70170"}
-{"id": 264132, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264133, "field": "name", "en": "Craftsman's Writ: Ebon Shiv", "hash": "624091cac9592cd3", "src": "db2@1.60.1.70170"}
-{"id": 264133, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264134, "field": "name", "en": "Craftsman's Writ: Masterwork Target Dummy", "hash": "e1e39a965e9dcbf1", "src": "db2@1.60.1.70170"}
-{"id": 264134, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264135, "field": "name", "en": "Craftsman's Writ: Green Lens", "hash": "23705537dc78fc68", "src": "db2@1.60.1.70170"}
-{"id": 264135, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264136, "field": "name", "en": "Craftsman's Writ: Lifelike Mechanical Toad", "hash": "caf6349f499d4448", "src": "db2@1.60.1.70170"}
-{"id": 264136, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264137, "field": "name", "en": "Craftsman's Writ: Gnomish Alarm-O-Bot", "hash": "7fa8a559f4ee3a9c", "src": "db2@1.60.1.70170"}
-{"id": 264137, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264138, "field": "name", "en": "Craftsman's Writ: Goblin Jumper Cables XL", "hash": "7c05cc7dd3f8d971", "src": "db2@1.60.1.70170"}
-{"id": 264138, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264139, "field": "name", "en": "Craftsman's Writ: Field Repair Bot 74A", "hash": "6c8a21a11cccc881", "src": "db2@1.60.1.70170"}
-{"id": 264139, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264140, "field": "name", "en": "Craftsman's Writ: Truesilver Transformer", "hash": "6bc8e177da4049fe", "src": "db2@1.60.1.70170"}
-{"id": 264140, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264141, "field": "name", "en": "Craftsman's Writ: Sniper Scope", "hash": "af62dbe828b9940f", "src": "db2@1.60.1.70170"}
-{"id": 264141, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264142, "field": "name", "en": "Craftsman's Writ: Tranquil Mechanical Yeti", "hash": "6a3be68112e87528", "src": "db2@1.60.1.70170"}
-{"id": 264142, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264143, "field": "name", "en": "Craftsman's Writ: Wicked Leather Pants", "hash": "412fb6f8e5187b54", "src": "db2@1.60.1.70170"}
-{"id": 264143, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264144, "field": "name", "en": "Craftsman's Writ: Gordok Ogre Suit", "hash": "f722021dbdf0fbf9", "src": "db2@1.60.1.70170"}
-{"id": 264144, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264145, "field": "name", "en": "Craftsman's Writ: Volcanic Breastplate", "hash": "2c1fa6615bdcd2d3", "src": "db2@1.60.1.70170"}
-{"id": 264145, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264146, "field": "name", "en": "Craftsman's Writ: Runic Leather Headband", "hash": "38028fdeaf9fe5e2", "src": "db2@1.60.1.70170"}
-{"id": 264146, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264147, "field": "name", "en": "Craftsman's Writ: Wicked Leather Bracers", "hash": "b31710eba013bc23", "src": "db2@1.60.1.70170"}
-{"id": 264147, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264148, "field": "name", "en": "Craftsman's Writ: Chimeric Vest", "hash": "c03c61275e576174", "src": "db2@1.60.1.70170"}
-{"id": 264148, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264149, "field": "name", "en": "Craftsman's Writ: Heavy Scorpid Helm", "hash": "1dfd61b9e8a93b31", "src": "db2@1.60.1.70170"}
-{"id": 264149, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264150, "field": "name", "en": "Craftsman's Writ: Runic Leather Bracers", "hash": "9f52a49a0fe207c5", "src": "db2@1.60.1.70170"}
-{"id": 264150, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264151, "field": "name", "en": "Craftsman's Writ: Frostsaber Boots", "hash": "96b9e74dc6833d3e", "src": "db2@1.60.1.70170"}
-{"id": 264151, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264152, "field": "name", "en": "Craftsman's Writ: Wizardweave Turban", "hash": "231577b30ed84eb7", "src": "db2@1.60.1.70170"}
-{"id": 264152, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264153, "field": "name", "en": "Craftsman's Writ: Runecloth Bag", "hash": "3b4612b564d539b7", "src": "db2@1.60.1.70170"}
-{"id": 264153, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264154, "field": "name", "en": "Craftsman's Writ: Runecloth Boots", "hash": "6e3ee787d738288c", "src": "db2@1.60.1.70170"}
-{"id": 264154, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264155, "field": "name", "en": "Craftsman's Writ: Tuxedo Jacket", "hash": "a7dccbfa92351b45", "src": "db2@1.60.1.70170"}
-{"id": 264155, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264156, "field": "name", "en": "Craftsman's Writ: Felcloth Boots", "hash": "a572ff0f60686c7f", "src": "db2@1.60.1.70170"}
-{"id": 264156, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264157, "field": "name", "en": "Craftsman's Writ: Cenarion Herb Bag", "hash": "69c4d25ef6a4eade", "src": "db2@1.60.1.70170"}
-{"id": 264157, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264158, "field": "name", "en": "Craftsman's Writ: Shadoweave Mask", "hash": "987967349134ff67", "src": "db2@1.60.1.70170"}
-{"id": 264158, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264159, "field": "name", "en": "Craftsman's Writ: Ghostweave Vest", "hash": "8cf903cfaadb2b9c", "src": "db2@1.60.1.70170"}
-{"id": 264159, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264160, "field": "name", "en": "Craftsman's Writ: Soul Pouch", "hash": "bdabef1cabd57ae0", "src": "db2@1.60.1.70170"}
-{"id": 264160, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70170"}
-{"id": 264163, "field": "name", "en": "Taming Rod", "hash": "18f1f72a5c227b7a", "src": "db2@1.60.1.70170"}
-{"id": 264163, "field": "description", "en": "Begins taming a Vuldren Alpha to be your companion for 10 min. If you lose the beast's attention for any reason, the taming process will fail.", "hash": "266224f5a4f1bca1", "src": "db2@1.60.1.70170"}
-{"id": 264201, "field": "name", "en": "Schematic: SAF-T Tabs", "hash": "81a79e80761c3a77", "src": "db2@1.60.1.70170"}
-{"id": 264201, "field": "description", "en": "Teaches you how to make SAF-T Tabs.", "hash": "a4dde8220555662f", "src": "db2@1.60.1.70170"}
-{"id": 264202, "field": "name", "en": "Schematic: SAF-T Dynamite", "hash": "4047c17a0b8461c2", "src": "db2@1.60.1.70170"}
-{"id": 264202, "field": "description", "en": "Teaches you how to make SAF-T Dynamite.", "hash": "ace7a9786baaea9f", "src": "db2@1.60.1.70170"}
-{"id": 264203, "field": "name", "en": "Schematic: SAF-T Copper Bomb", "hash": "f5f9b738011be7f9", "src": "db2@1.60.1.70170"}
-{"id": 264203, "field": "description", "en": "Teaches you how to make a SAF-T Copper Bomb.", "hash": "11b149fab8b667c7", "src": "db2@1.60.1.70170"}
-{"id": 264204, "field": "name", "en": "Schematic: EZ-Thro Wrap", "hash": "921bcfc98774acfc", "src": "db2@1.60.1.70170"}
-{"id": 264204, "field": "description", "en": "Teaches you how to make EZ-Thro Wrap.", "hash": "ab3ddb968b5ff1d0", "src": "db2@1.60.1.70170"}
-{"id": 264205, "field": "name", "en": "Schematic: EZ-Thro Copper Bomb XL", "hash": "32d371e530e43206", "src": "db2@1.60.1.70170"}
-{"id": 264205, "field": "description", "en": "Teaches you how to make EZ-Thro Copper Bomb XL.", "hash": "28181a87a5b7772b", "src": "db2@1.60.1.70170"}
-{"id": 264206, "field": "name", "en": "Schematic: No Slip SAF-T Padding", "hash": "a74ce10073e4c7ea", "src": "db2@1.60.1.70170"}
-{"id": 264206, "field": "description", "en": "Teaches you how to make No Slip SAF-T Padding.", "hash": "5e1866ef99ab6f4c", "src": "db2@1.60.1.70170"}
-{"id": 264207, "field": "name", "en": "Schematic: SAF-T Bronze Bomb", "hash": "d9d890532055a992", "src": "db2@1.60.1.70170"}
-{"id": 264207, "field": "description", "en": "Teaches you how to make a SAF-T Bronze Bomb.", "hash": "acba628028eb5864", "src": "db2@1.60.1.70170"}
-{"id": 264208, "field": "name", "en": "Schematic: SAF-T Jumbo Dynamite", "hash": "0c1d6f4917a57c43", "src": "db2@1.60.1.70170"}
-{"id": 264208, "field": "description", "en": "Teaches you how to make SAF-T Jumbo Dynamite.", "hash": "76fbed4a07aa539a", "src": "db2@1.60.1.70170"}
-{"id": 264209, "field": "name", "en": "Schematic: SAF-T Bell", "hash": "7f3f3ad594af5fa6", "src": "db2@1.60.1.70170"}
-{"id": 264209, "field": "description", "en": "Teaches you how to make SAF-T Bell.", "hash": "6972e79cb62a062c", "src": "db2@1.60.1.70170"}
-{"id": 264210, "field": "name", "en": "Schematic: Shafety Sheep", "hash": "0b4cab70cddd7278", "src": "db2@1.60.1.70170"}
-{"id": 264210, "field": "description", "en": "Teaches you how to make Shafety Sheep.", "hash": "fe865a278a053471", "src": "db2@1.60.1.70170"}
-{"id": 264211, "field": "name", "en": "Schematic: EZ-Thro Fireproof Fuse", "hash": "d3c6c1d378cb42e8", "src": "db2@1.60.1.70170"}
-{"id": 264211, "field": "description", "en": "Teaches you how to make EZ-Thro Fireproof Fuse.", "hash": "849a02ebd2d94401", "src": "db2@1.60.1.70170"}
-{"id": 264212, "field": "name", "en": "Schematic: EZ-Thro Bronze Mortar", "hash": "0431d0fdc43152b4", "src": "db2@1.60.1.70170"}
-{"id": 264212, "field": "description", "en": "Teaches you how to make EZ-Thro Bronze Mortar.", "hash": "e73f33c271c08ad6", "src": "db2@1.60.1.70170"}
-{"id": 264213, "field": "name", "en": "Schematic: EZ-Thro Grenade", "hash": "684ad2609354f09e", "src": "db2@1.60.1.70170"}
-{"id": 264213, "field": "description", "en": "Teaches you how to make EZ-Thro Grenade.", "hash": "ceac3b7ac90bbc6b", "src": "db2@1.60.1.70170"}
-{"id": 264214, "field": "name", "en": "Schematic: SAF-T Casing", "hash": "bbdc7841681e0393", "src": "db2@1.60.1.70170"}
-{"id": 264214, "field": "description", "en": "Teaches you how to make SAF-T Casing.", "hash": "08d4116c81b11330", "src": "db2@1.60.1.70170"}
-{"id": 264215, "field": "name", "en": "Schematic: SAF-T Bomb", "hash": "7f41d9a8bc622507", "src": "db2@1.60.1.70170"}
-{"id": 264215, "field": "description", "en": "Teaches you how to make SAF-T Bomb.", "hash": "6aca2d954030937f", "src": "db2@1.60.1.70170"}
-{"id": 264216, "field": "name", "en": "Schematic: Emergency Field Cloak", "hash": "e1c3df6ec3ad12b2", "src": "db2@1.60.1.70170"}
-{"id": 264216, "field": "description", "en": "Teaches you how to make Emergency Field Cloak.", "hash": "48fc99cff9c409f3", "src": "db2@1.60.1.70170"}
-{"id": 264217, "field": "name", "en": "Schematic: Compact Critter Carrier", "hash": "b67f56594fd8c67f", "src": "db2@1.60.1.70170"}
-{"id": 264217, "field": "description", "en": "Teaches you how to make Compact Critter Carrier.", "hash": "c7407ae121654d71", "src": "db2@1.60.1.70170"}
-{"id": 264218, "field": "name", "en": "Schematic: EZ-Thro Tru-Trigger", "hash": "da3a42ab5fc57937", "src": "db2@1.60.1.70170"}
-{"id": 264218, "field": "description", "en": "Teaches you how to make EZ-Thro Tru-Trigger.", "hash": "d36a5a6f8d42f367", "src": "db2@1.60.1.70170"}
-{"id": 264219, "field": "name", "en": "Schematic: Tru-Trigger Frag Bomb", "hash": "5e746dbb72f996ee", "src": "db2@1.60.1.70170"}
-{"id": 264219, "field": "description", "en": "Teaches you how to make Tru-Trigger Frag Bomb.", "hash": "175569e75006dbe3", "src": "db2@1.60.1.70170"}
-{"id": 264220, "field": "name", "en": "Schematic: SAF-T Disposable Parachute", "hash": "cb60fbc9c9bbf717", "src": "db2@1.60.1.70170"}
-{"id": 264220, "field": "description", "en": "Teaches you how to make SAF-T Disposable Parachute.", "hash": "6b9a7be9e9a2e966", "src": "db2@1.60.1.70170"}
-{"id": 264221, "field": "name", "en": "Schematic: Gnomish Army Knife", "hash": "092ee0cd012c1a00", "src": "db2@1.60.1.70170"}
-{"id": 264221, "field": "description", "en": "Teaches you how to make Gnomish Army Knife.", "hash": "efdef227dcc6837c", "src": "db2@1.60.1.70170"}
-{"id": 264222, "field": "name", "en": "Schematic: Loot-A-Rang", "hash": "999a234f126d6fb5", "src": "db2@1.60.1.70170"}
-{"id": 264222, "field": "description", "en": "Teaches you how to make Loot-A-Rang.", "hash": "8a0d0a62e41f04b7", "src": "db2@1.60.1.70170"}
-{"id": 264223, "field": "name", "en": "Schematic: SAF-T Tube", "hash": "81acdb26c581857d", "src": "db2@1.60.1.70170"}
-{"id": 264223, "field": "description", "en": "Teaches you how to make SAF-T Tube.", "hash": "a78bf1141172b888", "src": "db2@1.60.1.70170"}
-{"id": 264224, "field": "name", "en": "Schematic: SAF-T Clever Dynamite", "hash": "6c47adab7f667b53", "src": "db2@1.60.1.70170"}
-{"id": 264224, "field": "description", "en": "Teaches you how to make SAF-T Clever Dynamite.", "hash": "2a6f21da6b63edf4", "src": "db2@1.60.1.70170"}
-{"id": 264225, "field": "name", "en": "Schematic: EZ-Thro Shell", "hash": "7cae7e7f3ca6b5ef", "src": "db2@1.60.1.70170"}
-{"id": 264225, "field": "description", "en": "Teaches you how to make EZ-Thro Shell.", "hash": "03955bfb4813b5a3", "src": "db2@1.60.1.70170"}
-{"id": 264226, "field": "name", "en": "Schematic: EZ-Thro Thorium Grenade", "hash": "63faff843d47d435", "src": "db2@1.60.1.70170"}
-{"id": 264226, "field": "description", "en": "Teaches you how to make EZ-Thro Thorium Grenade.", "hash": "8d880b1042a93d17", "src": "db2@1.60.1.70170"}
-{"id": 264227, "field": "name", "en": "Schematic: EZ-Thro Dark Bomb", "hash": "b4e513770b4c6133", "src": "db2@1.60.1.70170"}
-{"id": 264227, "field": "description", "en": "Teaches you how to make EZ-Thro Dark Bomb.", "hash": "5132e0407a0c6657", "src": "db2@1.60.1.70170"}
-{"id": 264228, "field": "name", "en": "Schematic: EZ-Thro Mana Bomb", "hash": "26b4844cb6cd11b3", "src": "db2@1.60.1.70170"}
-{"id": 264228, "field": "description", "en": "Teaches you how to make EZ-Thro Mana Bomb.", "hash": "8e599bd2cb8871e2", "src": "db2@1.60.1.70170"}
-{"id": 264229, "field": "name", "en": "Schematic: EZ-Thro Field Transporter: Gadgetzan", "hash": "88137f5b9d57ab97", "src": "db2@1.60.1.70170"}
-{"id": 264229, "field": "description", "en": "Teaches you how to make EZ-Thro Field Transporter: Gadgetzan.", "hash": "c96ec227bece59ee", "src": "db2@1.60.1.70170"}
-{"id": 264230, "field": "name", "en": "Schematic: SAF-T Emergency Ripper: Everlook", "hash": "6b5f0d0727a17259", "src": "db2@1.60.1.70170"}
-{"id": 264230, "field": "description", "en": "Teaches you how to make SAF-T Emergency Ripper: Everlook.", "hash": "ca2d24c7b7c85010", "src": "db2@1.60.1.70170"}
-{"id": 264231, "field": "name", "en": "Schematic: EZ and SAF Field Transporter: Mt. Hyjal", "hash": "687733fe616dd100", "src": "db2@1.60.1.70170"}
-{"id": 264231, "field": "description", "en": "Teaches you how to make EZ and SAF Field Transporter: Mt. Hyjal.", "hash": "3583ce8030f0dc29", "src": "db2@1.60.1.70170"}
-{"id": 264232, "field": "name", "en": "Schematic: Ultrasafe Rechargeable Battery", "hash": "2c1d96589b1fccae", "src": "db2@1.60.1.70170"}
-{"id": 264232, "field": "description", "en": "Teaches you how to make Ultrasafe Rechargeable Battery.", "hash": "cda8dc03f2165d7c", "src": "db2@1.60.1.70170"}
-{"id": 264233, "field": "name", "en": "Schematic: Dimensional Transporter: Mt. Hyjal", "hash": "719c2eb9b61df434", "src": "db2@1.60.1.70170"}
-{"id": 264233, "field": "description", "en": "Teaches you how to make Dimensional Transporter: Mt. Hyjal.", "hash": "ba6958f3b0e7fba4", "src": "db2@1.60.1.70170"}
-{"id": 264234, "field": "name", "en": "Schematic: Gnomish Poultryizer", "hash": "a72aea11b204e584", "src": "db2@1.60.1.70170"}
-{"id": 264234, "field": "description", "en": "Teaches you how to make Gnomish Poultryizer.", "hash": "b290031f851f2432", "src": "db2@1.60.1.70170"}
-{"id": 264235, "field": "name", "en": "Schematic: Ultralight Goblin Glider", "hash": "2cb08b121961a74c", "src": "db2@1.60.1.70170"}
-{"id": 264235, "field": "description", "en": "Teaches you how to make an Ultralight Goblin Glider.", "hash": "ec579d24717e12e9", "src": "db2@1.60.1.70170"}
-{"id": 264236, "field": "name", "en": "Schematic: Gnomish Weather Machine", "hash": "9b05b1b8e4d9d733", "src": "db2@1.60.1.70170"}
-{"id": 264236, "field": "description", "en": "Teaches you how to make Gnomish Weather Machine.", "hash": "b8013c38385c0313", "src": "db2@1.60.1.70170"}
-{"id": 264237, "field": "name", "en": "Schematic: Stealthman 52", "hash": "74636fc8e64da56e", "src": "db2@1.60.1.70170"}
-{"id": 264237, "field": "description", "en": "Teaches you how to make Stealthman 52.", "hash": "c52cd43d9acdfc62", "src": "db2@1.60.1.70170"}
-{"id": 264238, "field": "name", "en": "Schematic: SAF-T Nitro Boosts", "hash": "e146f64c103aca31", "src": "db2@1.60.1.70170"}
-{"id": 264238, "field": "description", "en": "Teaches you how to make SAF-T Nitro Boosts.", "hash": "8431f44fe0056d6d", "src": "db2@1.60.1.70170"}
-{"id": 264239, "field": "name", "en": "Schematic: EZ-Thro Magnetic Displacer", "hash": "7d4e8beb82b34175", "src": "db2@1.60.1.70170"}
-{"id": 264239, "field": "description", "en": "Teaches you how to make EZ-Throw Magnetic Displacer.", "hash": "70d96d1aa444baca", "src": "db2@1.60.1.70170"}
-{"id": 264240, "field": "name", "en": "Schematic: SAF-T Teleport", "hash": "e900b1074af0f66b", "src": "db2@1.60.1.70170"}
-{"id": 264240, "field": "description", "en": "Teaches you how to make SAF-T Teleport.", "hash": "038a4052501a906e", "src": "db2@1.60.1.70170"}
-{"id": 264356, "field": "name", "en": "Iceclaw Bear Pendant", "hash": "00bc8013f623684d", "src": "db2@1.60.1.70170"}
-{"id": 264360, "field": "name", "en": "Diemetradon Meat", "hash": "e51e8e915bec9362", "src": "db2@1.60.1.70170"}
-{"id": 264361, "field": "name", "en": "Pterrordax Meat", "hash": "eaf04f910bcbcada", "src": "db2@1.60.1.70170"}
-{"id": 264671, "field": "name", "en": "(DNT) Sylvestris' Bow", "hash": "73e7f3967557bfb9", "src": "db2@1.60.1.70170"}
-{"id": 264693, "field": "name", "en": "Scarlet Crusade Attack Plans", "hash": "c8a9e2c36201ceac", "src": "db2@1.60.1.70170"}
-{"id": 264908, "field": "name", "en": "Ancient Heirloom", "hash": "3ac835ac73d6cbf7", "src": "db2@1.60.1.70170"}
-{"id": 264908, "field": "description", "en": "Deep dents and scratches mar the dull surface of the intricate Kaldorei patterns. Faded but legible script on the inside of the band reads 'With love always, KG'.", "hash": "6bc854e6fd2eee6d", "src": "db2@1.60.1.70170"}
+{"id": 264011, "field": "name", "en": "Craftsman's Writ: Elixir of Ogre's Strength", "hash": "96235fbe0a5cfb34", "src": "db2@1.60.1.70245"}
+{"id": 264011, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264012, "field": "name", "en": "Craftsman's Writ: Elixir of Wisdom", "hash": "be3bb0e2d398bb0b", "src": "db2@1.60.1.70245"}
+{"id": 264012, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264013, "field": "name", "en": "Craftsman's Writ: Lesser Mana Potion", "hash": "5db5cddb47ff8ca2", "src": "db2@1.60.1.70245"}
+{"id": 264013, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264014, "field": "name", "en": "Craftsman's Writ: Shadow Protection Potion", "hash": "7fbc448acc47ec32", "src": "db2@1.60.1.70245"}
+{"id": 264014, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264015, "field": "name", "en": "Craftsman's Writ: Free Action Potion", "hash": "3a23b3c01157c5c8", "src": "db2@1.60.1.70245"}
+{"id": 264015, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264016, "field": "name", "en": "Craftsman's Writ: Elixir of Lesser Agility", "hash": "0f491e6a6720fc37", "src": "db2@1.60.1.70245"}
+{"id": 264016, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264017, "field": "name", "en": "Craftsman's Writ: Lesser Troll's Blood Elixir", "hash": "2efbe19df911adcb", "src": "db2@1.60.1.70245"}
+{"id": 264017, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264018, "field": "name", "en": "Craftsman's Writ: Elixir of Defense", "hash": "1d26dd2e0f18b620", "src": "db2@1.60.1.70245"}
+{"id": 264018, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264019, "field": "name", "en": "Craftsman's Writ: Draught of Water Breathing", "hash": "8bcc7c8b729449f9", "src": "db2@1.60.1.70245"}
+{"id": 264019, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264020, "field": "name", "en": "Craftsman's Writ: Pearl-Handled Dagger", "hash": "1bd8477be2b6a4e2", "src": "db2@1.60.1.70245"}
+{"id": 264020, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264021, "field": "name", "en": "Craftsman's Writ: Golden Rod", "hash": "d1330f2b75feb0db", "src": "db2@1.60.1.70245"}
+{"id": 264021, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264022, "field": "name", "en": "Craftsman's Writ: Iridescent Hammer", "hash": "01368ea22fd26326", "src": "db2@1.60.1.70245"}
+{"id": 264022, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264023, "field": "name", "en": "Craftsman's Writ: Silver Skeleton Key", "hash": "b2652890e7bf29ac", "src": "db2@1.60.1.70245"}
+{"id": 264023, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264024, "field": "name", "en": "Craftsman's Writ: Heavy Bronze Mace", "hash": "a2b3fe2469a8b580", "src": "db2@1.60.1.70245"}
+{"id": 264024, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264025, "field": "name", "en": "Craftsman's Writ: Rough Bronze Leggings", "hash": "87d5989d5823d808", "src": "db2@1.60.1.70245"}
+{"id": 264025, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264026, "field": "name", "en": "Craftsman's Writ: Green Iron Gauntlets", "hash": "8efb712eda703a89", "src": "db2@1.60.1.70245"}
+{"id": 264026, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264027, "field": "name", "en": "Craftsman's Writ: Big Bronze Knife", "hash": "52cc64c6544b48ad", "src": "db2@1.60.1.70245"}
+{"id": 264027, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264028, "field": "name", "en": "Craftsman's Writ: Green Iron Boots", "hash": "44c416185db4fcc0", "src": "db2@1.60.1.70245"}
+{"id": 264028, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264029, "field": "name", "en": "Craftsman's Writ: Ornate Spyglass", "hash": "797d84777d7de785", "src": "db2@1.60.1.70245"}
+{"id": 264029, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264030, "field": "name", "en": "Craftsman's Writ: Explosive Sheep", "hash": "e636813db692a049", "src": "db2@1.60.1.70245"}
+{"id": 264030, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264031, "field": "name", "en": "Craftsman's Writ: Moonsight Rifle", "hash": "24651b2ea5688655", "src": "db2@1.60.1.70245"}
+{"id": 264031, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264032, "field": "name", "en": "Craftsman's Writ: Minor Recombobulator", "hash": "65852699fc5b90f5", "src": "db2@1.60.1.70245"}
+{"id": 264032, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264033, "field": "name", "en": "Craftsman's Writ: Practice Lock", "hash": "0fcd9a9e418e4e15", "src": "db2@1.60.1.70245"}
+{"id": 264033, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264034, "field": "name", "en": "Craftsman's Writ: Shadow Goggles", "hash": "77321f5b440b0c69", "src": "db2@1.60.1.70245"}
+{"id": 264034, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264035, "field": "name", "en": "Craftsman's Writ: Gnomish Universal Remote", "hash": "9b54eda7863b9eb5", "src": "db2@1.60.1.70245"}
+{"id": 264035, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264036, "field": "name", "en": "Craftsman's Writ: Big Bronze Bomb", "hash": "0d1b4508a18553c9", "src": "db2@1.60.1.70245"}
+{"id": 264036, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264037, "field": "name", "en": "Craftsman's Writ: Crafted Solid Shot", "hash": "f1179010ae8876e5", "src": "db2@1.60.1.70245"}
+{"id": 264037, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264038, "field": "name", "en": "Craftsman's Writ: Heavy Leather Ball", "hash": "13a1038dda6e0139", "src": "db2@1.60.1.70245"}
+{"id": 264038, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264039, "field": "name", "en": "Craftsman's Writ: Fine Leather Pants", "hash": "70dac494aa295342", "src": "db2@1.60.1.70245"}
+{"id": 264039, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264040, "field": "name", "en": "Craftsman's Writ: Herbalist's Gloves", "hash": "f49e101adc997c8d", "src": "db2@1.60.1.70245"}
+{"id": 264040, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264041, "field": "name", "en": "Craftsman's Writ: Dark Leather Tunic", "hash": "88faa00779c56591", "src": "db2@1.60.1.70245"}
+{"id": 264041, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264042, "field": "name", "en": "Craftsman's Writ: Pilferer's Gloves", "hash": "3de4151dd28ba907", "src": "db2@1.60.1.70245"}
+{"id": 264042, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264043, "field": "name", "en": "Craftsman's Writ: Heavy Quiver", "hash": "d1006262847bfa5b", "src": "db2@1.60.1.70245"}
+{"id": 264043, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264044, "field": "name", "en": "Craftsman's Writ: Dark Leather Shoulders", "hash": "496c0da1e4c6a467", "src": "db2@1.60.1.70245"}
+{"id": 264044, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264045, "field": "name", "en": "Craftsman's Writ: Barbaric Gloves", "hash": "bded984343806102", "src": "db2@1.60.1.70245"}
+{"id": 264045, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264046, "field": "name", "en": "Craftsman's Writ: Red Whelp Gloves", "hash": "d2d7a314d466c1da", "src": "db2@1.60.1.70245"}
+{"id": 264046, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264047, "field": "name", "en": "Craftsman's Writ: Lesser Wizard's Robe", "hash": "90c3520a872ef2d6", "src": "db2@1.60.1.70245"}
+{"id": 264047, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264048, "field": "name", "en": "Craftsman's Writ: Blue Overalls", "hash": "51b0953de9c7be8c", "src": "db2@1.60.1.70245"}
+{"id": 264048, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264049, "field": "name", "en": "Craftsman's Writ: Azure Silk Hood", "hash": "c5faf17dcefd91be", "src": "db2@1.60.1.70245"}
+{"id": 264049, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264050, "field": "name", "en": "Craftsman's Writ: Small Silk Pack", "hash": "d42ed7d4b1b2b9ea", "src": "db2@1.60.1.70245"}
+{"id": 264050, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264051, "field": "name", "en": "Craftsman's Writ: Phoenix Pants", "hash": "952f9e76146b026b", "src": "db2@1.60.1.70245"}
+{"id": 264051, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264052, "field": "name", "en": "Craftsman's Writ: Red Woolen Boots", "hash": "693fafb934ee69f9", "src": "db2@1.60.1.70245"}
+{"id": 264052, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264053, "field": "name", "en": "Craftsman's Writ: Colorful Kilt", "hash": "c4543b78005feff6", "src": "db2@1.60.1.70245"}
+{"id": 264053, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264054, "field": "name", "en": "Craftsman's Writ: Greater Adept's Robe", "hash": "90cccc5778907767", "src": "db2@1.60.1.70245"}
+{"id": 264054, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264055, "field": "name", "en": "Craftsman's Writ: Spider Silk Slippers", "hash": "57915228e62383b7", "src": "db2@1.60.1.70245"}
+{"id": 264055, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264056, "field": "name", "en": "Craftsman's Writ: Frost Protection Potion", "hash": "92efd14b1c333f68", "src": "db2@1.60.1.70245"}
+{"id": 264056, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264057, "field": "name", "en": "Craftsman's Writ: Lesser Invisibility Potion", "hash": "2a93d59df9c4f740", "src": "db2@1.60.1.70245"}
+{"id": 264057, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264058, "field": "name", "en": "Craftsman's Writ: Lesser Stoneshield Potion", "hash": "0e4f6a7ae7bc3db4", "src": "db2@1.60.1.70245"}
+{"id": 264058, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264059, "field": "name", "en": "Craftsman's Writ: Nature Protection Potion", "hash": "53e9f9fc3ffcfb65", "src": "db2@1.60.1.70245"}
+{"id": 264059, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264060, "field": "name", "en": "Craftsman's Writ: Catseye Draught", "hash": "eb39ba2729d95cfc", "src": "db2@1.60.1.70245"}
+{"id": 264060, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264061, "field": "name", "en": "Craftsman's Writ: Great Rage Potion", "hash": "f079f2cec97446a3", "src": "db2@1.60.1.70245"}
+{"id": 264061, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264062, "field": "name", "en": "Craftsman's Writ: Mana Potion", "hash": "6a041934dfcdbb82", "src": "db2@1.60.1.70245"}
+{"id": 264062, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264063, "field": "name", "en": "Craftsman's Writ: Fire Protection Potion", "hash": "7bc9388fe0aa3433", "src": "db2@1.60.1.70245"}
+{"id": 264063, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264064, "field": "name", "en": "Craftsman's Writ: Shadow Oil", "hash": "2968fc8259053bc7", "src": "db2@1.60.1.70245"}
+{"id": 264064, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264065, "field": "name", "en": "Craftsman's Writ: Goblin Rocket Fuel", "hash": "68c5620a284a6e91", "src": "db2@1.60.1.70245"}
+{"id": 264065, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264066, "field": "name", "en": "Craftsman's Writ: Elixir of Agility", "hash": "2baf4f8b1826429c", "src": "db2@1.60.1.70245"}
+{"id": 264066, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264067, "field": "name", "en": "Craftsman's Writ: Wildvine Potion", "hash": "7c5fd0bd637810e7", "src": "db2@1.60.1.70245"}
+{"id": 264067, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264068, "field": "name", "en": "Craftsman's Writ: Steel Plate Helm", "hash": "a4d20c7a1985db88", "src": "db2@1.60.1.70245"}
+{"id": 264068, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264069, "field": "name", "en": "Craftsman's Writ: Inlaid Mithril Cylinder", "hash": "f1dae62d61e0b9db", "src": "db2@1.60.1.70245"}
+{"id": 264069, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264070, "field": "name", "en": "Craftsman's Writ: Steel Weapon Chain", "hash": "0424a51a6f95f2ec", "src": "db2@1.60.1.70245"}
+{"id": 264070, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264071, "field": "name", "en": "Craftsman's Writ: Ornate Mithril Shoulders", "hash": "76f4a4a28654e4ff", "src": "db2@1.60.1.70245"}
+{"id": 264071, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264072, "field": "name", "en": "Craftsman's Writ: Blue Glittering Axe", "hash": "b84f5d682cf1e12a", "src": "db2@1.60.1.70245"}
+{"id": 264072, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264073, "field": "name", "en": "Craftsman's Writ: Moonsteel Broadsword", "hash": "363246f93c1df51c", "src": "db2@1.60.1.70245"}
+{"id": 264073, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264074, "field": "name", "en": "Craftsman's Writ: Golden Scale Coif", "hash": "580f0671b1e79597", "src": "db2@1.60.1.70245"}
+{"id": 264074, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264075, "field": "name", "en": "Craftsman's Writ: Solid Sharpening Stone", "hash": "ccb8e623d15dbd07", "src": "db2@1.60.1.70245"}
+{"id": 264075, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264076, "field": "name", "en": "Craftsman's Writ: Wicked Mithril Blade", "hash": "eb1157a7be648ebe", "src": "db2@1.60.1.70245"}
+{"id": 264076, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264077, "field": "name", "en": "Craftsman's Writ: Truesilver Rod", "hash": "837c931df21cc95e", "src": "db2@1.60.1.70245"}
+{"id": 264077, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264078, "field": "name", "en": "Craftsman's Writ: Golden Scale Gauntlets", "hash": "d1447782bb1fb533", "src": "db2@1.60.1.70245"}
+{"id": 264078, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264079, "field": "name", "en": "Craftsman's Writ: Heavy Mithril Axe", "hash": "d91e767c884ce290", "src": "db2@1.60.1.70245"}
+{"id": 264079, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264080, "field": "name", "en": "Craftsman's Writ: Mechanical Dragonling", "hash": "475efd40fcd71415", "src": "db2@1.60.1.70245"}
+{"id": 264080, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264081, "field": "name", "en": "Craftsman's Writ: Advanced Target Dummy", "hash": "92f8280033722e83", "src": "db2@1.60.1.70245"}
+{"id": 264081, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264082, "field": "name", "en": "Craftsman's Writ: Craftsman's Monocle", "hash": "161e164010296726", "src": "db2@1.60.1.70245"}
+{"id": 264082, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264083, "field": "name", "en": "Craftsman's Writ: Goblin Land Mine", "hash": "1e7951d3b09ac80b", "src": "db2@1.60.1.70245"}
+{"id": 264083, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264084, "field": "name", "en": "Craftsman's Writ: Catseye Ultra Goggles", "hash": "a724c16b1cc083e1", "src": "db2@1.60.1.70245"}
+{"id": 264084, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264085, "field": "name", "en": "Craftsman's Writ: Unstable Trigger", "hash": "3fc98f28aa329039", "src": "db2@1.60.1.70245"}
+{"id": 264085, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264086, "field": "name", "en": "Craftsman's Writ: Flash Bomb", "hash": "9e483a165afcb9f3", "src": "db2@1.60.1.70245"}
+{"id": 264086, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264087, "field": "name", "en": "Craftsman's Writ: Fire Goggles", "hash": "4d475adf649dbf49", "src": "db2@1.60.1.70245"}
+{"id": 264087, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264088, "field": "name", "en": "Craftsman's Writ: Mithril Frag Bomb", "hash": "24b038fbc3e54cf2", "src": "db2@1.60.1.70245"}
+{"id": 264088, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264089, "field": "name", "en": "Craftsman's Writ: Gyromatic Micro-Adjuster", "hash": "875aca0cef2cb1e9", "src": "db2@1.60.1.70245"}
+{"id": 264089, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264090, "field": "name", "en": "Craftsman's Writ: Mechanical Repair Kit", "hash": "80958ad1b4497828", "src": "db2@1.60.1.70245"}
+{"id": 264090, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264091, "field": "name", "en": "Craftsman's Writ: Dark Iron Bomb", "hash": "4a928008f0b1e10e", "src": "db2@1.60.1.70245"}
+{"id": 264091, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264092, "field": "name", "en": "Craftsman's Writ: Comfortable Leather Hat", "hash": "c9e0e9ee18c1d0ff", "src": "db2@1.60.1.70245"}
+{"id": 264092, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264093, "field": "name", "en": "Craftsman's Writ: Guardian Cloak", "hash": "cd47dbcc88f4ae79", "src": "db2@1.60.1.70245"}
+{"id": 264093, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264094, "field": "name", "en": "Craftsman's Writ: Dusky Bracers", "hash": "1f3f16044c0bd476", "src": "db2@1.60.1.70245"}
+{"id": 264094, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264095, "field": "name", "en": "Craftsman's Writ: Wild Leather Helmet", "hash": "6de1698030827bab", "src": "db2@1.60.1.70245"}
+{"id": 264095, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264096, "field": "name", "en": "Craftsman's Writ: Wild Leather Shoulders", "hash": "86d5ce9ba92e566a", "src": "db2@1.60.1.70245"}
+{"id": 264096, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264097, "field": "name", "en": "Craftsman's Writ: Quickdraw Quiver", "hash": "84fbe9a36b29cf9b", "src": "db2@1.60.1.70245"}
+{"id": 264097, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264098, "field": "name", "en": "Craftsman's Writ: Swift Boots", "hash": "1a1dbf2391ffdd34", "src": "db2@1.60.1.70245"}
+{"id": 264098, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264099, "field": "name", "en": "Craftsman's Writ: Nightscape Shoulders", "hash": "8a8a32f657ccc219", "src": "db2@1.60.1.70245"}
+{"id": 264099, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264100, "field": "name", "en": "Craftsman's Writ: Big Voodoo Mask", "hash": "45a543e7d60fa5bf", "src": "db2@1.60.1.70245"}
+{"id": 264100, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264101, "field": "name", "en": "Craftsman's Writ: Big Voodoo Robe", "hash": "465469b3d0a90084", "src": "db2@1.60.1.70245"}
+{"id": 264101, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264102, "field": "name", "en": "Craftsman's Writ: Turtle Scale Breastplate", "hash": "a9aed5d57af0c485", "src": "db2@1.60.1.70245"}
+{"id": 264102, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264103, "field": "name", "en": "Craftsman's Writ: Thick Leather Ammo Pouch", "hash": "243bb3383bda0cc7", "src": "db2@1.60.1.70245"}
+{"id": 264103, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264104, "field": "name", "en": "Craftsman's Writ: Mageweave Bag", "hash": "c4a1ef830dbf10ef", "src": "db2@1.60.1.70245"}
+{"id": 264104, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264105, "field": "name", "en": "Craftsman's Writ: Shadoweave Gloves", "hash": "fdbef349bfcd29cd", "src": "db2@1.60.1.70245"}
+{"id": 264105, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264106, "field": "name", "en": "Craftsman's Writ: Crimson Silk Robe", "hash": "17062d3aa4f383e8", "src": "db2@1.60.1.70245"}
+{"id": 264106, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264107, "field": "name", "en": "Craftsman's Writ: Shadoweave Robe", "hash": "99288d008bce5a2c", "src": "db2@1.60.1.70245"}
+{"id": 264107, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264108, "field": "name", "en": "Craftsman's Writ: Enchanted Mageweave Pouch", "hash": "a4bf24d914cac34c", "src": "db2@1.60.1.70245"}
+{"id": 264108, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264109, "field": "name", "en": "Craftsman's Writ: Star Belt", "hash": "8571f86ff1334714", "src": "db2@1.60.1.70245"}
+{"id": 264109, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264110, "field": "name", "en": "Craftsman's Writ: Black Mageweave Vest", "hash": "875549487bab9c33", "src": "db2@1.60.1.70245"}
+{"id": 264110, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264111, "field": "name", "en": "Craftsman's Writ: Red Mageweave Pants", "hash": "8f6127cbb173efe0", "src": "db2@1.60.1.70245"}
+{"id": 264111, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264112, "field": "name", "en": "Craftsman's Writ: Orange Martial Shirt", "hash": "91e8bc9fc22e8452", "src": "db2@1.60.1.70245"}
+{"id": 264112, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264113, "field": "name", "en": "Craftsman's Writ: White Bandit Mask", "hash": "ceeeda58041aef6b", "src": "db2@1.60.1.70245"}
+{"id": 264113, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264114, "field": "name", "en": "Craftsman's Writ: Cindercloth Robe", "hash": "395310b14420ffd7", "src": "db2@1.60.1.70245"}
+{"id": 264114, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264115, "field": "name", "en": "Craftsman's Writ: Earthen Silk Belt", "hash": "50ca3338a8426f5a", "src": "db2@1.60.1.70245"}
+{"id": 264115, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264116, "field": "name", "en": "Craftsman's Writ: Potion of Demonslaying", "hash": "660d8597d853a8ad", "src": "db2@1.60.1.70245"}
+{"id": 264116, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264117, "field": "name", "en": "Craftsman's Writ: Dreamless Sleep Potion", "hash": "bc29a03700eb6e68", "src": "db2@1.60.1.70245"}
+{"id": 264117, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264118, "field": "name", "en": "Craftsman's Writ: Greater Fire Protection Potion", "hash": "44b5f833f653ced4", "src": "db2@1.60.1.70245"}
+{"id": 264118, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264119, "field": "name", "en": "Craftsman's Writ: Draught of Detect Demon", "hash": "976d0a2532f5dbe4", "src": "db2@1.60.1.70245"}
+{"id": 264119, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264120, "field": "name", "en": "Craftsman's Writ: Gift of Arthas", "hash": "8b90c6b076828f7e", "src": "db2@1.60.1.70245"}
+{"id": 264120, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264121, "field": "name", "en": "Craftsman's Writ: Flask of Chromatic Resistance", "hash": "d0c1c8e96fcbe4df", "src": "db2@1.60.1.70245"}
+{"id": 264121, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264122, "field": "name", "en": "Craftsman's Writ: Limited Invulnerability Potion", "hash": "997205982e59bcf2", "src": "db2@1.60.1.70245"}
+{"id": 264122, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264123, "field": "name", "en": "Craftsman's Writ: Major Rejuvenation Potion", "hash": "d0d789389a7ab04a", "src": "db2@1.60.1.70245"}
+{"id": 264123, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264124, "field": "name", "en": "Craftsman's Writ: Distilled Firewater", "hash": "db4761fff67fb62a", "src": "db2@1.60.1.70245"}
+{"id": 264124, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264125, "field": "name", "en": "Craftsman's Writ: Radiant Circlet", "hash": "e9efec2441fc3ee4", "src": "db2@1.60.1.70245"}
+{"id": 264125, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264126, "field": "name", "en": "Craftsman's Writ: Radiant Belt", "hash": "865ccfdae72e7a76", "src": "db2@1.60.1.70245"}
+{"id": 264126, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264127, "field": "name", "en": "Craftsman's Writ: Orcish War Leggings", "hash": "aa7e3794aaee21df", "src": "db2@1.60.1.70245"}
+{"id": 264127, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264128, "field": "name", "en": "Craftsman's Writ: Mithril Spurs", "hash": "5c52f3de4fc496fa", "src": "db2@1.60.1.70245"}
+{"id": 264128, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264129, "field": "name", "en": "Craftsman's Writ: Imperial Plate Chest", "hash": "5a5735daba055f54", "src": "db2@1.60.1.70245"}
+{"id": 264129, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264130, "field": "name", "en": "Craftsman's Writ: Darkrune Gauntlets", "hash": "79399d2c99ecdb4c", "src": "db2@1.60.1.70245"}
+{"id": 264130, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264131, "field": "name", "en": "Craftsman's Writ: Huge Thorium Battleaxe", "hash": "31e21fa8f571ed25", "src": "db2@1.60.1.70245"}
+{"id": 264131, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264132, "field": "name", "en": "Craftsman's Writ: Arcanite Skeleton Key", "hash": "33734ad06e32a51a", "src": "db2@1.60.1.70245"}
+{"id": 264132, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264133, "field": "name", "en": "Craftsman's Writ: Ebon Shiv", "hash": "624091cac9592cd3", "src": "db2@1.60.1.70245"}
+{"id": 264133, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264134, "field": "name", "en": "Craftsman's Writ: Masterwork Target Dummy", "hash": "e1e39a965e9dcbf1", "src": "db2@1.60.1.70245"}
+{"id": 264134, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264135, "field": "name", "en": "Craftsman's Writ: Green Lens", "hash": "23705537dc78fc68", "src": "db2@1.60.1.70245"}
+{"id": 264135, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264136, "field": "name", "en": "Craftsman's Writ: Lifelike Mechanical Toad", "hash": "caf6349f499d4448", "src": "db2@1.60.1.70245"}
+{"id": 264136, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264137, "field": "name", "en": "Craftsman's Writ: Gnomish Alarm-O-Bot", "hash": "7fa8a559f4ee3a9c", "src": "db2@1.60.1.70245"}
+{"id": 264137, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264138, "field": "name", "en": "Craftsman's Writ: Goblin Jumper Cables XL", "hash": "7c05cc7dd3f8d971", "src": "db2@1.60.1.70245"}
+{"id": 264138, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264139, "field": "name", "en": "Craftsman's Writ: Field Repair Bot 74A", "hash": "6c8a21a11cccc881", "src": "db2@1.60.1.70245"}
+{"id": 264139, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264140, "field": "name", "en": "Craftsman's Writ: Truesilver Transformer", "hash": "6bc8e177da4049fe", "src": "db2@1.60.1.70245"}
+{"id": 264140, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264141, "field": "name", "en": "Craftsman's Writ: Sniper Scope", "hash": "af62dbe828b9940f", "src": "db2@1.60.1.70245"}
+{"id": 264141, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264142, "field": "name", "en": "Craftsman's Writ: Tranquil Mechanical Yeti", "hash": "6a3be68112e87528", "src": "db2@1.60.1.70245"}
+{"id": 264142, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264143, "field": "name", "en": "Craftsman's Writ: Wicked Leather Pants", "hash": "412fb6f8e5187b54", "src": "db2@1.60.1.70245"}
+{"id": 264143, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264144, "field": "name", "en": "Craftsman's Writ: Gordok Ogre Suit", "hash": "f722021dbdf0fbf9", "src": "db2@1.60.1.70245"}
+{"id": 264144, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264145, "field": "name", "en": "Craftsman's Writ: Volcanic Breastplate", "hash": "2c1fa6615bdcd2d3", "src": "db2@1.60.1.70245"}
+{"id": 264145, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264146, "field": "name", "en": "Craftsman's Writ: Runic Leather Headband", "hash": "38028fdeaf9fe5e2", "src": "db2@1.60.1.70245"}
+{"id": 264146, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264147, "field": "name", "en": "Craftsman's Writ: Wicked Leather Bracers", "hash": "b31710eba013bc23", "src": "db2@1.60.1.70245"}
+{"id": 264147, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264148, "field": "name", "en": "Craftsman's Writ: Chimeric Vest", "hash": "c03c61275e576174", "src": "db2@1.60.1.70245"}
+{"id": 264148, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264149, "field": "name", "en": "Craftsman's Writ: Heavy Scorpid Helm", "hash": "1dfd61b9e8a93b31", "src": "db2@1.60.1.70245"}
+{"id": 264149, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264150, "field": "name", "en": "Craftsman's Writ: Runic Leather Bracers", "hash": "9f52a49a0fe207c5", "src": "db2@1.60.1.70245"}
+{"id": 264150, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264151, "field": "name", "en": "Craftsman's Writ: Frostsaber Boots", "hash": "96b9e74dc6833d3e", "src": "db2@1.60.1.70245"}
+{"id": 264151, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264152, "field": "name", "en": "Craftsman's Writ: Wizardweave Turban", "hash": "231577b30ed84eb7", "src": "db2@1.60.1.70245"}
+{"id": 264152, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264153, "field": "name", "en": "Craftsman's Writ: Runecloth Bag", "hash": "3b4612b564d539b7", "src": "db2@1.60.1.70245"}
+{"id": 264153, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264154, "field": "name", "en": "Craftsman's Writ: Runecloth Boots", "hash": "6e3ee787d738288c", "src": "db2@1.60.1.70245"}
+{"id": 264154, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264155, "field": "name", "en": "Craftsman's Writ: Tuxedo Jacket", "hash": "a7dccbfa92351b45", "src": "db2@1.60.1.70245"}
+{"id": 264155, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264156, "field": "name", "en": "Craftsman's Writ: Felcloth Boots", "hash": "a572ff0f60686c7f", "src": "db2@1.60.1.70245"}
+{"id": 264156, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264157, "field": "name", "en": "Craftsman's Writ: Cenarion Herb Bag", "hash": "69c4d25ef6a4eade", "src": "db2@1.60.1.70245"}
+{"id": 264157, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264158, "field": "name", "en": "Craftsman's Writ: Shadoweave Mask", "hash": "987967349134ff67", "src": "db2@1.60.1.70245"}
+{"id": 264158, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264159, "field": "name", "en": "Craftsman's Writ: Ghostweave Vest", "hash": "8cf903cfaadb2b9c", "src": "db2@1.60.1.70245"}
+{"id": 264159, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264160, "field": "name", "en": "Craftsman's Writ: Soul Pouch", "hash": "bdabef1cabd57ae0", "src": "db2@1.60.1.70245"}
+{"id": 264160, "field": "description", "en": "A pending crafting order. Acquire the requested items and deliver them to the customer for a reward.", "hash": "842445d7187ba25e", "src": "db2@1.60.1.70245"}
+{"id": 264163, "field": "name", "en": "Taming Rod", "hash": "18f1f72a5c227b7a", "src": "db2@1.60.1.70245"}
+{"id": 264163, "field": "description", "en": "Begins taming a Vuldren Alpha to be your companion for 10 min. If you lose the beast's attention for any reason, the taming process will fail.", "hash": "266224f5a4f1bca1", "src": "db2@1.60.1.70245"}
+{"id": 264201, "field": "name", "en": "Schematic: SAF-T Tabs", "hash": "81a79e80761c3a77", "src": "db2@1.60.1.70245"}
+{"id": 264201, "field": "description", "en": "Teaches you how to make SAF-T Tabs.", "hash": "a4dde8220555662f", "src": "db2@1.60.1.70245"}
+{"id": 264202, "field": "name", "en": "Schematic: SAF-T Dynamite", "hash": "4047c17a0b8461c2", "src": "db2@1.60.1.70245"}
+{"id": 264202, "field": "description", "en": "Teaches you how to make SAF-T Dynamite.", "hash": "ace7a9786baaea9f", "src": "db2@1.60.1.70245"}
+{"id": 264203, "field": "name", "en": "Schematic: SAF-T Copper Bomb", "hash": "f5f9b738011be7f9", "src": "db2@1.60.1.70245"}
+{"id": 264203, "field": "description", "en": "Teaches you how to make a SAF-T Copper Bomb.", "hash": "11b149fab8b667c7", "src": "db2@1.60.1.70245"}
+{"id": 264204, "field": "name", "en": "Schematic: EZ-Thro Wrap", "hash": "921bcfc98774acfc", "src": "db2@1.60.1.70245"}
+{"id": 264204, "field": "description", "en": "Teaches you how to make EZ-Thro Wrap.", "hash": "ab3ddb968b5ff1d0", "src": "db2@1.60.1.70245"}
+{"id": 264205, "field": "name", "en": "Schematic: EZ-Thro Copper Bomb XL", "hash": "32d371e530e43206", "src": "db2@1.60.1.70245"}
+{"id": 264205, "field": "description", "en": "Teaches you how to make EZ-Thro Copper Bomb XL.", "hash": "28181a87a5b7772b", "src": "db2@1.60.1.70245"}
+{"id": 264206, "field": "name", "en": "Schematic: No Slip SAF-T Padding", "hash": "a74ce10073e4c7ea", "src": "db2@1.60.1.70245"}
+{"id": 264206, "field": "description", "en": "Teaches you how to make No Slip SAF-T Padding.", "hash": "5e1866ef99ab6f4c", "src": "db2@1.60.1.70245"}
+{"id": 264207, "field": "name", "en": "Schematic: SAF-T Bronze Bomb", "hash": "d9d890532055a992", "src": "db2@1.60.1.70245"}
+{"id": 264207, "field": "description", "en": "Teaches you how to make a SAF-T Bronze Bomb.", "hash": "acba628028eb5864", "src": "db2@1.60.1.70245"}
+{"id": 264208, "field": "name", "en": "Schematic: SAF-T Jumbo Dynamite", "hash": "0c1d6f4917a57c43", "src": "db2@1.60.1.70245"}
+{"id": 264208, "field": "description", "en": "Teaches you how to make SAF-T Jumbo Dynamite.", "hash": "76fbed4a07aa539a", "src": "db2@1.60.1.70245"}
+{"id": 264209, "field": "name", "en": "Schematic: SAF-T Bell", "hash": "7f3f3ad594af5fa6", "src": "db2@1.60.1.70245"}
+{"id": 264209, "field": "description", "en": "Teaches you how to make SAF-T Bell.", "hash": "6972e79cb62a062c", "src": "db2@1.60.1.70245"}
+{"id": 264210, "field": "name", "en": "Schematic: Shafety Sheep", "hash": "0b4cab70cddd7278", "src": "db2@1.60.1.70245"}
+{"id": 264210, "field": "description", "en": "Teaches you how to make Shafety Sheep.", "hash": "fe865a278a053471", "src": "db2@1.60.1.70245"}
+{"id": 264211, "field": "name", "en": "Schematic: EZ-Thro Fireproof Fuse", "hash": "d3c6c1d378cb42e8", "src": "db2@1.60.1.70245"}
+{"id": 264211, "field": "description", "en": "Teaches you how to make EZ-Thro Fireproof Fuse.", "hash": "849a02ebd2d94401", "src": "db2@1.60.1.70245"}
+{"id": 264212, "field": "name", "en": "Schematic: EZ-Thro Bronze Mortar", "hash": "0431d0fdc43152b4", "src": "db2@1.60.1.70245"}
+{"id": 264212, "field": "description", "en": "Teaches you how to make EZ-Thro Bronze Mortar.", "hash": "e73f33c271c08ad6", "src": "db2@1.60.1.70245"}
+{"id": 264213, "field": "name", "en": "Schematic: EZ-Thro Grenade", "hash": "684ad2609354f09e", "src": "db2@1.60.1.70245"}
+{"id": 264213, "field": "description", "en": "Teaches you how to make EZ-Thro Grenade.", "hash": "ceac3b7ac90bbc6b", "src": "db2@1.60.1.70245"}
+{"id": 264214, "field": "name", "en": "Schematic: SAF-T Casing", "hash": "bbdc7841681e0393", "src": "db2@1.60.1.70245"}
+{"id": 264214, "field": "description", "en": "Teaches you how to make SAF-T Casing.", "hash": "08d4116c81b11330", "src": "db2@1.60.1.70245"}
+{"id": 264215, "field": "name", "en": "Schematic: SAF-T Bomb", "hash": "7f41d9a8bc622507", "src": "db2@1.60.1.70245"}
+{"id": 264215, "field": "description", "en": "Teaches you how to make SAF-T Bomb.", "hash": "6aca2d954030937f", "src": "db2@1.60.1.70245"}
+{"id": 264216, "field": "name", "en": "Schematic: Emergency Field Cloak", "hash": "e1c3df6ec3ad12b2", "src": "db2@1.60.1.70245"}
+{"id": 264216, "field": "description", "en": "Teaches you how to make Emergency Field Cloak.", "hash": "48fc99cff9c409f3", "src": "db2@1.60.1.70245"}
+{"id": 264217, "field": "name", "en": "Schematic: Compact Critter Carrier", "hash": "b67f56594fd8c67f", "src": "db2@1.60.1.70245"}
+{"id": 264217, "field": "description", "en": "Teaches you how to make Compact Critter Carrier.", "hash": "c7407ae121654d71", "src": "db2@1.60.1.70245"}
+{"id": 264218, "field": "name", "en": "Schematic: EZ-Thro Tru-Trigger", "hash": "da3a42ab5fc57937", "src": "db2@1.60.1.70245"}
+{"id": 264218, "field": "description", "en": "Teaches you how to make EZ-Thro Tru-Trigger.", "hash": "d36a5a6f8d42f367", "src": "db2@1.60.1.70245"}
+{"id": 264219, "field": "name", "en": "Schematic: Tru-Trigger Frag Bomb", "hash": "5e746dbb72f996ee", "src": "db2@1.60.1.70245"}
+{"id": 264219, "field": "description", "en": "Teaches you how to make Tru-Trigger Frag Bomb.", "hash": "175569e75006dbe3", "src": "db2@1.60.1.70245"}
+{"id": 264220, "field": "name", "en": "Schematic: SAF-T Disposable Parachute", "hash": "cb60fbc9c9bbf717", "src": "db2@1.60.1.70245"}
+{"id": 264220, "field": "description", "en": "Teaches you how to make SAF-T Disposable Parachute.", "hash": "6b9a7be9e9a2e966", "src": "db2@1.60.1.70245"}
+{"id": 264221, "field": "name", "en": "Schematic: Gnomish Army Knife", "hash": "092ee0cd012c1a00", "src": "db2@1.60.1.70245"}
+{"id": 264221, "field": "description", "en": "Teaches you how to make Gnomish Army Knife.", "hash": "efdef227dcc6837c", "src": "db2@1.60.1.70245"}
+{"id": 264222, "field": "name", "en": "Schematic: Loot-A-Rang", "hash": "999a234f126d6fb5", "src": "db2@1.60.1.70245"}
+{"id": 264222, "field": "description", "en": "Teaches you how to make Loot-A-Rang.", "hash": "8a0d0a62e41f04b7", "src": "db2@1.60.1.70245"}
+{"id": 264223, "field": "name", "en": "Schematic: SAF-T Tube", "hash": "81acdb26c581857d", "src": "db2@1.60.1.70245"}
+{"id": 264223, "field": "description", "en": "Teaches you how to make SAF-T Tube.", "hash": "a78bf1141172b888", "src": "db2@1.60.1.70245"}
+{"id": 264224, "field": "name", "en": "Schematic: SAF-T Clever Dynamite", "hash": "6c47adab7f667b53", "src": "db2@1.60.1.70245"}
+{"id": 264224, "field": "description", "en": "Teaches you how to make SAF-T Clever Dynamite.", "hash": "2a6f21da6b63edf4", "src": "db2@1.60.1.70245"}
+{"id": 264225, "field": "name", "en": "Schematic: EZ-Thro Shell", "hash": "7cae7e7f3ca6b5ef", "src": "db2@1.60.1.70245"}
+{"id": 264225, "field": "description", "en": "Teaches you how to make EZ-Thro Shell.", "hash": "03955bfb4813b5a3", "src": "db2@1.60.1.70245"}
+{"id": 264226, "field": "name", "en": "Schematic: EZ-Thro Thorium Grenade", "hash": "63faff843d47d435", "src": "db2@1.60.1.70245"}
+{"id": 264226, "field": "description", "en": "Teaches you how to make EZ-Thro Thorium Grenade.", "hash": "8d880b1042a93d17", "src": "db2@1.60.1.70245"}
+{"id": 264227, "field": "name", "en": "Schematic: EZ-Thro Dark Bomb", "hash": "b4e513770b4c6133", "src": "db2@1.60.1.70245"}
+{"id": 264227, "field": "description", "en": "Teaches you how to make EZ-Thro Dark Bomb.", "hash": "5132e0407a0c6657", "src": "db2@1.60.1.70245"}
+{"id": 264228, "field": "name", "en": "Schematic: EZ-Thro Mana Bomb", "hash": "26b4844cb6cd11b3", "src": "db2@1.60.1.70245"}
+{"id": 264228, "field": "description", "en": "Teaches you how to make EZ-Thro Mana Bomb.", "hash": "8e599bd2cb8871e2", "src": "db2@1.60.1.70245"}
+{"id": 264229, "field": "name", "en": "Schematic: EZ-Thro Field Transporter: Gadgetzan", "hash": "88137f5b9d57ab97", "src": "db2@1.60.1.70245"}
+{"id": 264229, "field": "description", "en": "Teaches you how to make EZ-Thro Field Transporter: Gadgetzan.", "hash": "c96ec227bece59ee", "src": "db2@1.60.1.70245"}
+{"id": 264230, "field": "name", "en": "Schematic: SAF-T Emergency Ripper: Everlook", "hash": "6b5f0d0727a17259", "src": "db2@1.60.1.70245"}
+{"id": 264230, "field": "description", "en": "Teaches you how to make SAF-T Emergency Ripper: Everlook.", "hash": "ca2d24c7b7c85010", "src": "db2@1.60.1.70245"}
+{"id": 264231, "field": "name", "en": "Schematic: EZ and SAF Field Transporter: Mt. Hyjal", "hash": "687733fe616dd100", "src": "db2@1.60.1.70245"}
+{"id": 264231, "field": "description", "en": "Teaches you how to make EZ and SAF Field Transporter: Mt. Hyjal.", "hash": "3583ce8030f0dc29", "src": "db2@1.60.1.70245"}
+{"id": 264232, "field": "name", "en": "Schematic: Ultrasafe Rechargeable Battery", "hash": "2c1d96589b1fccae", "src": "db2@1.60.1.70245"}
+{"id": 264232, "field": "description", "en": "Teaches you how to make Ultrasafe Rechargeable Battery.", "hash": "cda8dc03f2165d7c", "src": "db2@1.60.1.70245"}
+{"id": 264233, "field": "name", "en": "Schematic: Dimensional Transporter: Mt. Hyjal", "hash": "719c2eb9b61df434", "src": "db2@1.60.1.70245"}
+{"id": 264233, "field": "description", "en": "Teaches you how to make Dimensional Transporter: Mt. Hyjal.", "hash": "ba6958f3b0e7fba4", "src": "db2@1.60.1.70245"}
+{"id": 264234, "field": "name", "en": "Schematic: Gnomish Poultryizer", "hash": "a72aea11b204e584", "src": "db2@1.60.1.70245"}
+{"id": 264234, "field": "description", "en": "Teaches you how to make Gnomish Poultryizer.", "hash": "b290031f851f2432", "src": "db2@1.60.1.70245"}
+{"id": 264235, "field": "name", "en": "Schematic: Ultralight Goblin Glider", "hash": "2cb08b121961a74c", "src": "db2@1.60.1.70245"}
+{"id": 264235, "field": "description", "en": "Teaches you how to make an Ultralight Goblin Glider.", "hash": "ec579d24717e12e9", "src": "db2@1.60.1.70245"}
+{"id": 264236, "field": "name", "en": "Schematic: Gnomish Weather Machine", "hash": "9b05b1b8e4d9d733", "src": "db2@1.60.1.70245"}
+{"id": 264236, "field": "description", "en": "Teaches you how to make Gnomish Weather Machine.", "hash": "b8013c38385c0313", "src": "db2@1.60.1.70245"}
+{"id": 264237, "field": "name", "en": "Schematic: Stealthman 52", "hash": "74636fc8e64da56e", "src": "db2@1.60.1.70245"}
+{"id": 264237, "field": "description", "en": "Teaches you how to make Stealthman 52.", "hash": "c52cd43d9acdfc62", "src": "db2@1.60.1.70245"}
+{"id": 264238, "field": "name", "en": "Schematic: SAF-T Nitro Boosts", "hash": "e146f64c103aca31", "src": "db2@1.60.1.70245"}
+{"id": 264238, "field": "description", "en": "Teaches you how to make SAF-T Nitro Boosts.", "hash": "8431f44fe0056d6d", "src": "db2@1.60.1.70245"}
+{"id": 264239, "field": "name", "en": "Schematic: EZ-Thro Magnetic Displacer", "hash": "7d4e8beb82b34175", "src": "db2@1.60.1.70245"}
+{"id": 264239, "field": "description", "en": "Teaches you how to make EZ-Throw Magnetic Displacer.", "hash": "70d96d1aa444baca", "src": "db2@1.60.1.70245"}
+{"id": 264240, "field": "name", "en": "Schematic: SAF-T Teleport", "hash": "e900b1074af0f66b", "src": "db2@1.60.1.70245"}
+{"id": 264240, "field": "description", "en": "Teaches you how to make SAF-T Teleport.", "hash": "038a4052501a906e", "src": "db2@1.60.1.70245"}
+{"id": 264356, "field": "name", "en": "Iceclaw Bear Pendant", "hash": "00bc8013f623684d", "src": "db2@1.60.1.70245"}
+{"id": 264360, "field": "name", "en": "Diemetradon Meat", "hash": "e51e8e915bec9362", "src": "db2@1.60.1.70245"}
+{"id": 264361, "field": "name", "en": "Pterrordax Meat", "hash": "eaf04f910bcbcada", "src": "db2@1.60.1.70245"}
+{"id": 264671, "field": "name", "en": "(DNT) Sylvestris' Bow", "hash": "73e7f3967557bfb9", "src": "db2@1.60.1.70245"}
+{"id": 264693, "field": "name", "en": "Scarlet Crusade Attack Plans", "hash": "c8a9e2c36201ceac", "src": "db2@1.60.1.70245"}
+{"id": 264908, "field": "name", "en": "Ancient Heirloom", "hash": "3ac835ac73d6cbf7", "src": "db2@1.60.1.70245"}
+{"id": 264908, "field": "description", "en": "Deep dents and scratches mar the dull surface of the intricate Kaldorei patterns. Faded but legible script on the inside of the band reads 'With love always, KG'.", "hash": "6bc854e6fd2eee6d", "src": "db2@1.60.1.70245"}

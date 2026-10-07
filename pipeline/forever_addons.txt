@@ -2,7 +2,7 @@
 blizzard_accessibilitytemplates login 8
 blizzard_accountsaveui glue 0
 blizzard_accountstore gated 0
-blizzard_achievementui lod 4
+blizzard_achievementui lod 5
 blizzard_actionbar login 33
 blizzard_actionbarcontroller login 2
 blizzard_actionstatus login 2
@@ -246,7 +246,7 @@ blizzard_professions lod 27
 blizzard_professionsbook lod 5
 blizzard_professionscustomerorders lod 14
 blizzard_professionstemplates lod 33
-blizzard_projectconstants login 1
+blizzard_projectconstants login 2
 blizzard_ptrfeedback login 7
 blizzard_ptrfeedbackglue glue 0
 blizzard_pvpmatch login 7

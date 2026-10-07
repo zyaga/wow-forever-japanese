@@ -1,44 +1,44 @@
-{"id": 265065, "field": "name", "en": "Stolen Feed", "hash": "555370e1a0807e3f", "src": "db2@1.60.1.70170"}
-{"id": 265066, "field": "name", "en": "Hearty Stew", "hash": "21766bee03efe9cf", "src": "db2@1.60.1.70170"}
-{"id": 265066, "field": "description", "en": "Provide sustenance to a Rog'mar Trainee.", "hash": "2442a69967074344", "src": "db2@1.60.1.70170"}
-{"id": 265105, "field": "name", "en": "Lady's Tear Moss", "hash": "0e44b3717d23cd4d", "src": "db2@1.60.1.70170"}
-{"id": 265105, "field": "description", "en": "This cool and stringy moss feels slightly damp and seems to stick to your fingers.", "hash": "95b873158916395c", "src": "db2@1.60.1.70170"}
-{"id": 265140, "field": "name", "en": "Pristine Shriekling Feather", "hash": "7266879e831064bd", "src": "db2@1.60.1.70170"}
-{"id": 265140, "field": "description", "en": "These feathers are soft and just slightly oily. Perfect for insulation against the cool, damp climates of Shadowgale Forest.", "hash": "a68e1333acf54186", "src": "db2@1.60.1.70170"}
-{"id": 265141, "field": "name", "en": "Bloody Heirloom", "hash": "6ea3c35116b5235d", "src": "db2@1.60.1.70170"}
-{"id": 265141, "field": "description", "en": "Drenched in the blood of those who were once promised a brighter future.", "hash": "0e59c2f0eb55108c", "src": "db2@1.60.1.70170"}
-{"id": 265357, "field": "name", "en": "Snargl's Snout", "hash": "1db03201af992dda", "src": "db2@1.60.1.70170"}
-{"id": 265358, "field": "name", "en": "Stolen Ore", "hash": "2f8fb8cf258ac488", "src": "db2@1.60.1.70170"}
-{"id": 265359, "field": "name", "en": "Novice's Robe", "hash": "60c3cc55e2ac8e79", "src": "db2@1.60.1.70170"}
-{"id": 265360, "field": "name", "en": "Novice's Pants", "hash": "5f3911e4d50c7371", "src": "db2@1.60.1.70170"}
-{"id": 265475, "field": "name", "en": "Commander Haalien's Severed Head", "hash": "25457a828fe40235", "src": "db2@1.60.1.70170"}
-{"id": 265475, "field": "description", "en": "At least now his traitorous tongue is silenced.", "hash": "af900222c2616b21", "src": "db2@1.60.1.70170"}
-{"id": 265476, "field": "name", "en": "Ripped Missive", "hash": "ab8b85288cf0ef17", "src": "db2@1.60.1.70170"}
-{"id": 265476, "field": "description", "en": "This crumpled missive is written in elegant handwriting.", "hash": "1abde2a6465f7e14", "src": "db2@1.60.1.70170"}
-{"id": 265732, "field": "name", "en": "Unfilled Brown Waterskin", "hash": "330080d07853d77e", "src": "db2@1.60.1.70170"}
-{"id": 265732, "field": "description", "en": "This container needs to be filled with water from the brackish lake near the southern Wetlands waterfall.", "hash": "8adbc028759f723e", "src": "db2@1.60.1.70170"}
-{"id": 265734, "field": "name", "en": "Full Brown Waterskin", "hash": "c7b69ef20670f865", "src": "db2@1.60.1.70170"}
-{"id": 265738, "field": "name", "en": "Sootfur's Pelt", "hash": "c21095ea310f2e53", "src": "db2@1.60.1.70170"}
-{"id": 265745, "field": "name", "en": "Twilight Missive", "hash": "1a08153e97f03728", "src": "db2@1.60.1.70170"}
-{"id": 265747, "field": "name", "en": "Unfilled Red Waterskin", "hash": "4df0c7e6bf1871c4", "src": "db2@1.60.1.70170"}
-{"id": 265747, "field": "description", "en": "This container needs to be filled with water from Stonewatch Falls in Redridge Mountains.", "hash": "c4b9e7d2490ec17f", "src": "db2@1.60.1.70170"}
-{"id": 265748, "field": "name", "en": "Full Red Waterskin", "hash": "abd71a7ad61d40dd", "src": "db2@1.60.1.70170"}
-{"id": 265750, "field": "name", "en": "Chogg's Head", "hash": "4f7e8bdc29a7b1af", "src": "db2@1.60.1.70170"}
-{"id": 265751, "field": "name", "en": "Zac's Head", "hash": "5a5ee9b387877cfa", "src": "db2@1.60.1.70170"}
-{"id": 265772, "field": "name", "en": "Unfilled Blue Waterskin", "hash": "d371c90bd7d9a70c", "src": "db2@1.60.1.70170"}
-{"id": 265772, "field": "description", "en": "This container should be filled from the body of water around Astranaar.", "hash": "2983b8ce46f6ef39", "src": "db2@1.60.1.70170"}
-{"id": 265773, "field": "name", "en": "Full Blue Waterskin", "hash": "e04e0bb7a827e3c3", "src": "db2@1.60.1.70170"}
-{"id": 265782, "field": "name", "en": "Mysterious Orders", "hash": "e579f9666bae219c", "src": "db2@1.60.1.70170"}
-{"id": 265782, "field": "description", "en": "This missive contains orders from someone located in Valanaar. From the elegant script it seems like a person of status.", "hash": "dfc59e4c1209ec64", "src": "db2@1.60.1.70170"}
-{"id": 265806, "field": "name", "en": "Riverweed", "hash": "594b6bacfbaa6716", "src": "db2@1.60.1.70170"}
-{"id": 265808, "field": "name", "en": "Sweetberry", "hash": "e4e36bdfef6f5f4a", "src": "db2@1.60.1.70170"}
-{"id": 265810, "field": "name", "en": "Treat for Snufflesnout", "hash": "d853e627d5ffb7e6", "src": "db2@1.60.1.70170"}
-{"id": 265821, "field": "name", "en": "Twilight Key", "hash": "d4ee6870eb7eec6d", "src": "db2@1.60.1.70170"}
-{"id": 265837, "field": "name", "en": "Kilgar's Head", "hash": "5e53e2dc850d7340", "src": "db2@1.60.1.70170"}
-{"id": 265838, "field": "name", "en": "Green Skeletal Horse", "hash": "e91788b7069542ca", "src": "db2@1.60.1.70170"}
-{"id": 265838, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70170"}
-{"id": 265839, "field": "name", "en": "Dark Skeletal Horse", "hash": "197dd610d8811373", "src": "db2@1.60.1.70170"}
-{"id": 265839, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70170"}
-{"id": 265840, "field": "name", "en": "Purple Skeletal Horse", "hash": "5389216bf4073671", "src": "db2@1.60.1.70170"}
-{"id": 265840, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70170"}
-{"id": 265932, "field": "name", "en": "A Bloodsoaked Note", "hash": "a50e997f17a0d43e", "src": "db2@1.60.1.70170"}
+{"id": 265065, "field": "name", "en": "Stolen Feed", "hash": "555370e1a0807e3f", "src": "db2@1.60.1.70245"}
+{"id": 265066, "field": "name", "en": "Hearty Stew", "hash": "21766bee03efe9cf", "src": "db2@1.60.1.70245"}
+{"id": 265066, "field": "description", "en": "Provide sustenance to a Rog'mar Trainee.", "hash": "2442a69967074344", "src": "db2@1.60.1.70245"}
+{"id": 265105, "field": "name", "en": "Lady's Tear Moss", "hash": "0e44b3717d23cd4d", "src": "db2@1.60.1.70245"}
+{"id": 265105, "field": "description", "en": "This cool and stringy moss feels slightly damp and seems to stick to your fingers.", "hash": "95b873158916395c", "src": "db2@1.60.1.70245"}
+{"id": 265140, "field": "name", "en": "Pristine Shriekling Feather", "hash": "7266879e831064bd", "src": "db2@1.60.1.70245"}
+{"id": 265140, "field": "description", "en": "These feathers are soft and just slightly oily. Perfect for insulation against the cool, damp climates of Shadowgale Forest.", "hash": "a68e1333acf54186", "src": "db2@1.60.1.70245"}
+{"id": 265141, "field": "name", "en": "Bloody Heirloom", "hash": "6ea3c35116b5235d", "src": "db2@1.60.1.70245"}
+{"id": 265141, "field": "description", "en": "Drenched in the blood of those who were once promised a brighter future.", "hash": "0e59c2f0eb55108c", "src": "db2@1.60.1.70245"}
+{"id": 265357, "field": "name", "en": "Snargl's Snout", "hash": "1db03201af992dda", "src": "db2@1.60.1.70245"}
+{"id": 265358, "field": "name", "en": "Stolen Ore", "hash": "2f8fb8cf258ac488", "src": "db2@1.60.1.70245"}
+{"id": 265359, "field": "name", "en": "Novice's Robe", "hash": "60c3cc55e2ac8e79", "src": "db2@1.60.1.70245"}
+{"id": 265360, "field": "name", "en": "Novice's Pants", "hash": "5f3911e4d50c7371", "src": "db2@1.60.1.70245"}
+{"id": 265475, "field": "name", "en": "Commander Haalien's Severed Head", "hash": "25457a828fe40235", "src": "db2@1.60.1.70245"}
+{"id": 265475, "field": "description", "en": "At least now his traitorous tongue is silenced.", "hash": "af900222c2616b21", "src": "db2@1.60.1.70245"}
+{"id": 265476, "field": "name", "en": "Ripped Missive", "hash": "ab8b85288cf0ef17", "src": "db2@1.60.1.70245"}
+{"id": 265476, "field": "description", "en": "This crumpled missive is written in elegant handwriting.", "hash": "1abde2a6465f7e14", "src": "db2@1.60.1.70245"}
+{"id": 265732, "field": "name", "en": "Unfilled Brown Waterskin", "hash": "330080d07853d77e", "src": "db2@1.60.1.70245"}
+{"id": 265732, "field": "description", "en": "This container needs to be filled with water from the brackish lake near the southern Wetlands waterfall.", "hash": "8adbc028759f723e", "src": "db2@1.60.1.70245"}
+{"id": 265734, "field": "name", "en": "Full Brown Waterskin", "hash": "c7b69ef20670f865", "src": "db2@1.60.1.70245"}
+{"id": 265738, "field": "name", "en": "Sootfur's Pelt", "hash": "c21095ea310f2e53", "src": "db2@1.60.1.70245"}
+{"id": 265745, "field": "name", "en": "Twilight Missive", "hash": "1a08153e97f03728", "src": "db2@1.60.1.70245"}
+{"id": 265747, "field": "name", "en": "Unfilled Red Waterskin", "hash": "4df0c7e6bf1871c4", "src": "db2@1.60.1.70245"}
+{"id": 265747, "field": "description", "en": "This container needs to be filled with water from Stonewatch Falls in Redridge Mountains.", "hash": "c4b9e7d2490ec17f", "src": "db2@1.60.1.70245"}
+{"id": 265748, "field": "name", "en": "Full Red Waterskin", "hash": "abd71a7ad61d40dd", "src": "db2@1.60.1.70245"}
+{"id": 265750, "field": "name", "en": "Chogg's Head", "hash": "4f7e8bdc29a7b1af", "src": "db2@1.60.1.70245"}
+{"id": 265751, "field": "name", "en": "Zac's Head", "hash": "5a5ee9b387877cfa", "src": "db2@1.60.1.70245"}
+{"id": 265772, "field": "name", "en": "Unfilled Blue Waterskin", "hash": "d371c90bd7d9a70c", "src": "db2@1.60.1.70245"}
+{"id": 265772, "field": "description", "en": "This container should be filled from the body of water around Astranaar.", "hash": "2983b8ce46f6ef39", "src": "db2@1.60.1.70245"}
+{"id": 265773, "field": "name", "en": "Full Blue Waterskin", "hash": "e04e0bb7a827e3c3", "src": "db2@1.60.1.70245"}
+{"id": 265782, "field": "name", "en": "Mysterious Orders", "hash": "e579f9666bae219c", "src": "db2@1.60.1.70245"}
+{"id": 265782, "field": "description", "en": "This missive contains orders from someone located in Valanaar. From the elegant script it seems like a person of status.", "hash": "dfc59e4c1209ec64", "src": "db2@1.60.1.70245"}
+{"id": 265806, "field": "name", "en": "Riverweed", "hash": "594b6bacfbaa6716", "src": "db2@1.60.1.70245"}
+{"id": 265808, "field": "name", "en": "Sweetberry", "hash": "e4e36bdfef6f5f4a", "src": "db2@1.60.1.70245"}
+{"id": 265810, "field": "name", "en": "Treat for Snufflesnout", "hash": "d853e627d5ffb7e6", "src": "db2@1.60.1.70245"}
+{"id": 265821, "field": "name", "en": "Twilight Key", "hash": "d4ee6870eb7eec6d", "src": "db2@1.60.1.70245"}
+{"id": 265837, "field": "name", "en": "Kilgar's Head", "hash": "5e53e2dc850d7340", "src": "db2@1.60.1.70245"}
+{"id": 265838, "field": "name", "en": "Green Skeletal Horse", "hash": "e91788b7069542ca", "src": "db2@1.60.1.70245"}
+{"id": 265838, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70245"}
+{"id": 265839, "field": "name", "en": "Dark Skeletal Horse", "hash": "197dd610d8811373", "src": "db2@1.60.1.70245"}
+{"id": 265839, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70245"}
+{"id": 265840, "field": "name", "en": "Purple Skeletal Horse", "hash": "5389216bf4073671", "src": "db2@1.60.1.70245"}
+{"id": 265840, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70245"}
+{"id": 265932, "field": "name", "en": "A Bloodsoaked Note", "hash": "a50e997f17a0d43e", "src": "db2@1.60.1.70245"}

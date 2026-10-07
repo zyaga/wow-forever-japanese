@@ -675,7 +675,6 @@ WFJ.Data.add("gloss", {
   [113672] = "自分\tじぶん\ttheir own (themselves)",
   [113673] = "自分\tじぶん\tthem (selves)",
   [113674] = "自分\tじぶん\tthem (themselves)",
-  [113675] = "自分\tじぶん\tthem(selves)",
   [113676] = "自分\tじぶん\tthemselves",
   [113677] = "自分\tじぶん\tthemselves (own)",
   [113678] = "自分\tじぶん\tthemselves (their)",
