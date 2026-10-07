@@ -561,7 +561,6 @@ WFJ.Data.add("gloss", {
   [86558] = "断ち切る\tたちきる\tcould break (can't cut)",
   [86559] = "断ち切る\tたちきる\thave been severed",
   [86560] = "断ち切る\tたちきる\tmust sever",
-  [86561] = "断ち切る\tたちきる\tneed to cut down",
   [86562] = "断つ\tたつ\tbe cut",
   [86563] = "断つ\tたつ\tcut (sever)",
   [86564] = "断つ\tたつ\tcut off",

@@ -235,7 +235,6 @@ WFJ.Data.add("gloss", {
   [77232] = "戦う\tたたかう\twant to fight",
   [77233] = "戦う\tたたかう\twar (fight)",
   [77234] = "戦う\tたたかう\twe fought",
-  [77235] = "戦う\tたたかう\twere fighting",
   [77236] = "戦う\tたたかう\twhen you fight",
   [77237] = "戦う\tたたかう\twho can fight",
   [77238] = "戦う\tたたかう\twho fight",

@@ -731,7 +731,6 @@ WFJ.Data.add("gloss", {
   [111728] = "者\tもの\tleaders (those who)",
   [111729] = "者\tもの\tlocals (people)",
   [111730] = "者\tもの\tman (person)",
-  [111731] = "者\tもの\tman (手の者: underling)",
   [111732] = "者\tもの\tmember",
   [111733] = "者\tもの\tmember (one)",
   [111734] = "者\tもの\tmember (person)",

@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("gossip", {
   ["1501010a03ee67d6"] = { "これでうまくいくはずだ。", "." },
+  ["1502ec7f6133dd71"] = { "Khan Hrathaは死んだか？key fragmentは持っているか？", "." },
   ["15053dbbfe990ab2"] = { "警戒せよ！{race}の{name}がWinterax Holdで我々を攻撃している！", "." },
   ["150faeb72bfe5169"] = { "Scourgeが襲ってきた！逃げろ！命がけで逃げろ！", "." },
   ["1512c9ba11f0aa85"] = { "Old Godsに栄光と血を！", "." },

@@ -1,96 +1,96 @@
-{"id": 1295039, "field": "name", "en": "Serpentbane", "hash": "bb6d8f4e94a5c789", "src": "db2@1.60.1.70170"}
-{"id": 1295039, "field": "description", "en": "Inflict $s1 Fire damage to your current target and an additional $o2 damage over $d. Inflicts $s3 times as much damage to Beast and Serpentine targets.", "hash": "de758ed8f228e432", "src": "db2@1.60.1.70170"}
-{"id": 1295039, "field": "aura", "en": "$w2 Fire damage every $t2 sec.", "hash": "35633d2e98f5ffec", "src": "db2@1.60.1.70170"}
-{"id": 1295064, "field": "name", "en": "Maw of Min'loth", "hash": "bac49ab5af85e925", "src": "db2@1.60.1.70170"}
-{"id": 1295064, "field": "description", "en": "When struck in melee combat, has a $h% chance of stealing $1295065s1 life from the target enemy.", "hash": "c0510843976b447b", "src": "db2@1.60.1.70170"}
-{"id": 1295065, "field": "name", "en": "Fatal Bite", "hash": "33be658f059fb313", "src": "db2@1.60.1.70170"}
-{"id": 1295065, "field": "description", "en": "Steals $s1 life from the target enemy.", "hash": "d67a244e719c40eb", "src": "db2@1.60.1.70170"}
-{"id": 1295197, "field": "name", "en": "Tyler Test Imbue", "hash": "e5d317845018925f", "src": "db2@1.60.1.70170"}
-{"id": 1295197, "field": "description", "en": "Coats a weapon with poison that lasts for 30 min.\r\nEach strike has a $h% chance of poisoning the enemy, increasing their casting time by $11398s1% for $11398d. 100 charges.", "hash": "5baaf717ddc2ee48", "src": "db2@1.60.1.70170"}
-{"id": 1295233, "field": "name", "en": "Heart of the Primeval", "hash": "3835c6fde5db872c", "src": "db2@1.60.1.70170"}
-{"id": 1295233, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1 for $d.", "hash": "c0d351812af879f2", "src": "db2@1.60.1.70170"}
-{"id": 1295233, "field": "aura", "en": "Spell Power increased by up to $w1.", "hash": "1ccb1167e8b94ab2", "src": "db2@1.60.1.70170"}
-{"id": 1295267, "field": "name", "en": "Soggy Boots", "hash": "5457d9be3fe3f2bc", "src": "db2@1.60.1.70170"}
-{"id": 1295270, "field": "name", "en": "Prototype Pathcarver", "hash": "f43e06afb4a1996e", "src": "db2@1.60.1.70170"}
-{"id": 1295270, "field": "description", "en": "Deal $s1 Physical damage split between up to $s3 nearby enemies. Deals $s2 times as much damage to Plants.", "hash": "26c57258bca4da02", "src": "db2@1.60.1.70170"}
-{"id": 1295271, "field": "name", "en": "Everlook Delivery Bot", "hash": "ee3c517b4953daa6", "src": "db2@1.60.1.70170"}
-{"id": 1295271, "field": "description", "en": "Marks a target for delivery. After landing $s1 to $s2 spells or attacks, deal $1295633s1 Fire damage. Number of spells or attacks is halved in Snowy areas.", "hash": "4503caffc93582bf", "src": "db2@1.60.1.70170"}
-{"id": 1295271, "field": "aura", "en": "Marked for delivery.", "hash": "c53ded1c1ccc4290", "src": "db2@1.60.1.70170"}
-{"id": 1295272, "field": "name", "en": "Parachute-Priest Pager", "hash": "879b81ce6326d804", "src": "db2@1.60.1.70170"}
-{"id": 1295272, "field": "description", "en": "Page Everlook Emergency Services for a Parachute-Priest that will assist in healing allies for $1295661d.", "hash": "d33f204b5b75e45c", "src": "db2@1.60.1.70170"}
-{"id": 1295279, "field": "name", "en": "Feathered Fury", "hash": "7539b42581a555c7", "src": "db2@1.60.1.70170"}
-{"id": 1295279, "field": "description", "en": "Increases attack speed by $s1%.", "hash": "b21e340dcb9dbf93", "src": "db2@1.60.1.70170"}
-{"id": 1295279, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70170"}
-{"id": 1295286, "field": "name", "en": "Test Spell", "hash": "2efc4a14a7d0afe5", "src": "db2@1.60.1.70170"}
-{"id": 1295298, "field": "name", "en": "Battle Memories", "hash": "3ee6b148d881ee0f", "src": "db2@1.60.1.70170"}
-{"id": 1295298, "field": "description", "en": "Hold the scabbard and beckon the Veteran of the Third War to your side at a place from his memory.", "hash": "73a96bf109bbd7d5", "src": "db2@1.60.1.70170"}
-{"id": 1295308, "field": "name", "en": "Summon Feast", "hash": "768603529a1b4e60", "src": "db2@1.60.1.70170"}
-{"id": 1295313, "field": "name", "en": "Booty Bay Bruiser Buckshot", "hash": "0f6f1a9404abb46f", "src": "db2@1.60.1.70170"}
-{"id": 1295313, "field": "description", "en": "Take steady aim and fire a round to knock your target away.", "hash": "0759cb8d1698fa93", "src": "db2@1.60.1.70170"}
-{"id": 1295318, "field": "name", "en": "Reset Check", "hash": "7dbf9932902c4339", "src": "db2@1.60.1.70170"}
-{"id": 1295387, "field": "name", "en": "Ochre Skeletal Warhorse", "hash": "ade4ecc3a56d6b4c", "src": "db2@1.60.1.70170"}
-{"id": 1295387, "field": "description", "en": "Summons and dismisses a rideable skeletal warhorse. This is a very fast mount.", "hash": "d0dfd432473b1e05", "src": "db2@1.60.1.70170"}
-{"id": 1295387, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1295392, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70170"}
-{"id": 1295570, "field": "name", "en": "Learn All Taxi Nodes", "hash": "5c0d67b26447bf02", "src": "db2@1.60.1.70170"}
-{"id": 1295571, "field": "name", "en": "Learn All Taxi Nodes", "hash": "5c0d67b26447bf02", "src": "db2@1.60.1.70170"}
-{"id": 1295572, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70170"}
-{"id": 1295577, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70170"}
-{"id": 1295579, "field": "name", "en": "Poison Trap", "hash": "eb874b194fd7c522", "src": "db2@1.60.1.70170"}
-{"id": 1295579, "field": "aura", "en": "$s1 Nature damage every $t1 sec.", "hash": "c85cbfd4b28e1f68", "src": "db2@1.60.1.70170"}
-{"id": 1295580, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70170"}
-{"id": 1295581, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70170"}
-{"id": 1295608, "field": "name", "en": "Warding Candle", "hash": "1fbe4bbaa4ab56bf", "src": "db2@1.60.1.70170"}
-{"id": 1295608, "field": "description", "en": "Attempts to remove $s1 Curse or Bane, and $s2 Disease from the igniter.", "hash": "ab343404fb9957f6", "src": "db2@1.60.1.70170"}
-{"id": 1295609, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70170"}
-{"id": 1295611, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70170"}
-{"id": 1295612, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70170"}
-{"id": 1295613, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70170"}
-{"id": 1295622, "field": "name", "en": "BG Honor Gain Increase", "hash": "2985e0847fee8ee2", "src": "db2@1.60.1.70170"}
-{"id": 1295622, "field": "description", "en": "Honor gains increased by $s1%.\r\n", "hash": "9b9bce7b18d154aa", "src": "db2@1.60.1.70170"}
-{"id": 1295622, "field": "aura", "en": "|cFF00AA99Bonus Event: Honor|r\r\n\r\nHonor gains increased by $s1%.", "hash": "6c62c9e99c848a6b", "src": "db2@1.60.1.70170"}
-{"id": 1295626, "field": "name", "en": "Anchor Here", "hash": "ab60a3883222bf53", "src": "db2@1.60.1.70170"}
-{"id": 1295629, "field": "name", "en": "Darkspear Islands Reputation - Darkspear Raiders", "hash": "a82a548e26c953c6", "src": "db2@1.60.1.70170"}
-{"id": 1295630, "field": "name", "en": "Darkspear Islands Reputation - Theramore Expeditionary Force", "hash": "bd032536c5112573", "src": "db2@1.60.1.70170"}
-{"id": 1295633, "field": "name", "en": "Everlook Delivery Bot", "hash": "ee3c517b4953daa6", "src": "db2@1.60.1.70170"}
-{"id": 1295633, "field": "description", "en": "$@spelldesc1295271", "hash": "ff00529c6c5dd702", "src": "db2@1.60.1.70170"}
-{"id": 1295639, "field": "name", "en": "Riverglades Marsh Gas", "hash": "85433bde3827c313", "src": "db2@1.60.1.70170"}
-{"id": 1295639, "field": "description", "en": "Reduces movement speed by $s1% and increases Fire damage taken by all targets in a $a1 yard radius by $s2 for $d.", "hash": "2091a05c946add25", "src": "db2@1.60.1.70170"}
-{"id": 1295639, "field": "aura", "en": "Movement slowed by $s1%.\r\nFire damage taken is increased by $s2.", "hash": "ef39647a0166be97", "src": "db2@1.60.1.70170"}
-{"id": 1295661, "field": "name", "en": "Parachute-Priest Pager", "hash": "879b81ce6326d804", "src": "db2@1.60.1.70170"}
-{"id": 1295661, "field": "description", "en": "$@spelldesc1295272", "hash": "ff00529d6c5dd703", "src": "db2@1.60.1.70170"}
-{"id": 1295661, "field": "aura", "en": "You are being assisted by Everlook Emergency Services.", "hash": "2cc3e5c6377a7308", "src": "db2@1.60.1.70170"}
-{"id": 1295678, "field": "name", "en": "Umber Galestrider", "hash": "413e1c1d9ecdae5e", "src": "db2@1.60.1.70170"}
-{"id": 1295678, "field": "description", "en": "Summons and dismisses a rideable galestrider crane.", "hash": "e6774841c76c8d3d", "src": "db2@1.60.1.70170"}
-{"id": 1295678, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1295682, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
-{"id": 1295683, "field": "name", "en": "Swift Umber Galestrider", "hash": "16e0211fda310529", "src": "db2@1.60.1.70170"}
-{"id": 1295683, "field": "description", "en": "Summons and dismisses a rideable crane. This is a very fast mount.", "hash": "12792ccfb3dc9ccb", "src": "db2@1.60.1.70170"}
-{"id": 1295683, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1295688, "field": "name", "en": "Tessa's Tonic", "hash": "4f525dad2bb75d77", "src": "db2@1.60.1.70170"}
-{"id": 1295688, "field": "description", "en": "Restores $s1 mana and health.", "hash": "d20116d1fbae313e", "src": "db2@1.60.1.70170"}
-{"id": 1295720, "field": "name", "en": "Imbue Lesser Flame", "hash": "dcf70302add0ba72", "src": "db2@1.60.1.70170"}
-{"id": 1295720, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done by Fire spells and effects by up to $1306515s1.", "hash": "046a7061fde3d4e1", "src": "db2@1.60.1.70170"}
-{"id": 1295736, "field": "name", "en": "Bolder'ok Boulder", "hash": "14c4208ccd25d63b", "src": "db2@1.60.1.70170"}
-{"id": 1295736, "field": "description", "en": "Launch a boulder, dealing $s1 Physical damage.", "hash": "3f9be70500de65f0", "src": "db2@1.60.1.70170"}
-{"id": 1295738, "field": "name", "en": "Summon Wild Chicken", "hash": "0d689a2292541c85", "src": "db2@1.60.1.70170"}
-{"id": 1295738, "field": "description", "en": "Right Click to summon and dismiss your chicken.", "hash": "58cd270402b302d6", "src": "db2@1.60.1.70170"}
-{"id": 1295739, "field": "name", "en": "Summon Wild Chicken Egg", "hash": "cb5bc2a4ed9c0431", "src": "db2@1.60.1.70170"}
-{"id": 1295744, "field": "name", "en": "Rot", "hash": "0015b223459386e6", "src": "db2@1.60.1.70170"}
-{"id": 1295744, "field": "description", "en": "Diseases target for $s1 Nature damage every $t1 sec for $d. Deals $s2 times as much damage to Aquatic enemies.", "hash": "173c3a1e9cebe417", "src": "db2@1.60.1.70170"}
-{"id": 1295744, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70170"}
-{"id": 1295778, "field": "name", "en": "Refinance", "hash": "d544379093e4d07b", "src": "db2@1.60.1.70170"}
-{"id": 1295778, "field": "description", "en": "Consolidate an ally's financial obligations to heal them for $s1 over $d.", "hash": "aa74c8859795f814", "src": "db2@1.60.1.70170"}
-{"id": 1295778, "field": "aura", "en": "Healing for $w1 every $t1 sec.", "hash": "d49646a0cdceb866", "src": "db2@1.60.1.70170"}
-{"id": 1295779, "field": "name", "en": "Flash Sale", "hash": "750722d254b11a29", "src": "db2@1.60.1.70170"}
-{"id": 1295779, "field": "description", "en": "Maximize an ally's savings, healing them for $s1.", "hash": "eaa9fb059f74c5ab", "src": "db2@1.60.1.70170"}
-{"id": 1295780, "field": "name", "en": "Power Word: Deal", "hash": "5bfb9ca1f2b9118c", "src": "db2@1.60.1.70170"}
-{"id": 1295780, "field": "description", "en": "Strike a bargain with an ally to shield them against $s1 damage for up to $d.", "hash": "41da1645c6ac3625", "src": "db2@1.60.1.70170"}
-{"id": 1295780, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70170"}
-{"id": 1295805, "field": "name", "en": "Briny Seafood Stew", "hash": "5100cdba6efb9e01", "src": "db2@1.60.1.70170"}
-{"id": 1295834, "field": "name", "en": "Plain Ol' Paletusk", "hash": "c9817e53e06bc1bd", "src": "db2@1.60.1.70170"}
-{"id": 1295852, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70170"}
-{"id": 1295887, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
-{"id": 1295888, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
-{"id": 1295904, "field": "name", "en": "[DNT] Test Item Internal Only", "hash": "96a4d91b64b4c00e", "src": "db2@1.60.1.70170"}
-{"id": 1295904, "field": "description", "en": "Equip: Increases attack power by X.", "hash": "7af74a17f414f229", "src": "db2@1.60.1.70170"}
+{"id": 1295039, "field": "name", "en": "Serpentbane", "hash": "bb6d8f4e94a5c789", "src": "db2@1.60.1.70245"}
+{"id": 1295039, "field": "description", "en": "Inflict $s1 Fire damage to your current target and an additional $o2 damage over $d. Inflicts $s3 times as much damage to Beast and Serpentine targets.", "hash": "de758ed8f228e432", "src": "db2@1.60.1.70245"}
+{"id": 1295039, "field": "aura", "en": "$w2 Fire damage every $t2 sec.", "hash": "35633d2e98f5ffec", "src": "db2@1.60.1.70245"}
+{"id": 1295064, "field": "name", "en": "Maw of Min'loth", "hash": "bac49ab5af85e925", "src": "db2@1.60.1.70245"}
+{"id": 1295064, "field": "description", "en": "When struck in melee combat, has a $h% chance of stealing $1295065s1 life from the target enemy.", "hash": "c0510843976b447b", "src": "db2@1.60.1.70245"}
+{"id": 1295065, "field": "name", "en": "Fatal Bite", "hash": "33be658f059fb313", "src": "db2@1.60.1.70245"}
+{"id": 1295065, "field": "description", "en": "Steals $s1 life from the target enemy.", "hash": "d67a244e719c40eb", "src": "db2@1.60.1.70245"}
+{"id": 1295197, "field": "name", "en": "Tyler Test Imbue", "hash": "e5d317845018925f", "src": "db2@1.60.1.70245"}
+{"id": 1295197, "field": "description", "en": "Coats a weapon with poison that lasts for 30 min.\r\nEach strike has a $h% chance of poisoning the enemy, increasing their casting time by $11398s1% for $11398d. 100 charges.", "hash": "5baaf717ddc2ee48", "src": "db2@1.60.1.70245"}
+{"id": 1295233, "field": "name", "en": "Heart of the Primeval", "hash": "3835c6fde5db872c", "src": "db2@1.60.1.70245"}
+{"id": 1295233, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1 for $d.", "hash": "c0d351812af879f2", "src": "db2@1.60.1.70245"}
+{"id": 1295233, "field": "aura", "en": "Spell Power increased by up to $w1.", "hash": "1ccb1167e8b94ab2", "src": "db2@1.60.1.70245"}
+{"id": 1295267, "field": "name", "en": "Soggy Boots", "hash": "5457d9be3fe3f2bc", "src": "db2@1.60.1.70245"}
+{"id": 1295270, "field": "name", "en": "Prototype Pathcarver", "hash": "f43e06afb4a1996e", "src": "db2@1.60.1.70245"}
+{"id": 1295270, "field": "description", "en": "Deal $s1 Physical damage split between up to $s3 nearby enemies. Deals $s2 times as much damage to Plants.", "hash": "26c57258bca4da02", "src": "db2@1.60.1.70245"}
+{"id": 1295271, "field": "name", "en": "Everlook Delivery Bot", "hash": "ee3c517b4953daa6", "src": "db2@1.60.1.70245"}
+{"id": 1295271, "field": "description", "en": "Marks a target for delivery. After landing $s1 to $s2 spells or attacks, deal $1295633s1 Fire damage. Number of spells or attacks is halved in Snowy areas.", "hash": "4503caffc93582bf", "src": "db2@1.60.1.70245"}
+{"id": 1295271, "field": "aura", "en": "Marked for delivery.", "hash": "c53ded1c1ccc4290", "src": "db2@1.60.1.70245"}
+{"id": 1295272, "field": "name", "en": "Parachute-Priest Pager", "hash": "879b81ce6326d804", "src": "db2@1.60.1.70245"}
+{"id": 1295272, "field": "description", "en": "Page Everlook Emergency Services for a Parachute-Priest that will assist in healing allies for $1295661d.", "hash": "d33f204b5b75e45c", "src": "db2@1.60.1.70245"}
+{"id": 1295279, "field": "name", "en": "Feathered Fury", "hash": "7539b42581a555c7", "src": "db2@1.60.1.70245"}
+{"id": 1295279, "field": "description", "en": "Increases attack speed by $s1%.", "hash": "b21e340dcb9dbf93", "src": "db2@1.60.1.70245"}
+{"id": 1295279, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70245"}
+{"id": 1295286, "field": "name", "en": "Test Spell", "hash": "2efc4a14a7d0afe5", "src": "db2@1.60.1.70245"}
+{"id": 1295298, "field": "name", "en": "Battle Memories", "hash": "3ee6b148d881ee0f", "src": "db2@1.60.1.70245"}
+{"id": 1295298, "field": "description", "en": "Hold the scabbard and beckon the Veteran of the Third War to your side at a place from his memory.", "hash": "73a96bf109bbd7d5", "src": "db2@1.60.1.70245"}
+{"id": 1295308, "field": "name", "en": "Summon Feast", "hash": "768603529a1b4e60", "src": "db2@1.60.1.70245"}
+{"id": 1295313, "field": "name", "en": "Booty Bay Bruiser Buckshot", "hash": "0f6f1a9404abb46f", "src": "db2@1.60.1.70245"}
+{"id": 1295313, "field": "description", "en": "Take steady aim and fire a round to knock your target away.", "hash": "0759cb8d1698fa93", "src": "db2@1.60.1.70245"}
+{"id": 1295318, "field": "name", "en": "Reset Check", "hash": "7dbf9932902c4339", "src": "db2@1.60.1.70245"}
+{"id": 1295387, "field": "name", "en": "Ochre Skeletal Warhorse", "hash": "ade4ecc3a56d6b4c", "src": "db2@1.60.1.70245"}
+{"id": 1295387, "field": "description", "en": "Summons and dismisses a rideable skeletal warhorse. This is a very fast mount.", "hash": "d0dfd432473b1e05", "src": "db2@1.60.1.70245"}
+{"id": 1295387, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1295392, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70245"}
+{"id": 1295570, "field": "name", "en": "Learn All Taxi Nodes", "hash": "5c0d67b26447bf02", "src": "db2@1.60.1.70245"}
+{"id": 1295571, "field": "name", "en": "Learn All Taxi Nodes", "hash": "5c0d67b26447bf02", "src": "db2@1.60.1.70245"}
+{"id": 1295572, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70245"}
+{"id": 1295577, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70245"}
+{"id": 1295579, "field": "name", "en": "Poison Trap", "hash": "eb874b194fd7c522", "src": "db2@1.60.1.70245"}
+{"id": 1295579, "field": "aura", "en": "$s1 Nature damage every $t1 sec.", "hash": "c85cbfd4b28e1f68", "src": "db2@1.60.1.70245"}
+{"id": 1295580, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70245"}
+{"id": 1295581, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70245"}
+{"id": 1295608, "field": "name", "en": "Warding Candle", "hash": "1fbe4bbaa4ab56bf", "src": "db2@1.60.1.70245"}
+{"id": 1295608, "field": "description", "en": "Attempts to remove $s1 Curse or Bane, and $s2 Disease from the igniter.", "hash": "ab343404fb9957f6", "src": "db2@1.60.1.70245"}
+{"id": 1295609, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70245"}
+{"id": 1295611, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70245"}
+{"id": 1295612, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70245"}
+{"id": 1295613, "field": "name", "en": "Learn Taxi Nodes", "hash": "98df500107aa6f65", "src": "db2@1.60.1.70245"}
+{"id": 1295622, "field": "name", "en": "BG Honor Gain Increase", "hash": "2985e0847fee8ee2", "src": "db2@1.60.1.70245"}
+{"id": 1295622, "field": "description", "en": "Honor gains increased by $s1%.\r\n", "hash": "9b9bce7b18d154aa", "src": "db2@1.60.1.70245"}
+{"id": 1295622, "field": "aura", "en": "|cFF00AA99Bonus Event: Honor|r\r\n\r\nHonor gains increased by $s1%.", "hash": "6c62c9e99c848a6b", "src": "db2@1.60.1.70245"}
+{"id": 1295626, "field": "name", "en": "Anchor Here", "hash": "ab60a3883222bf53", "src": "db2@1.60.1.70245"}
+{"id": 1295629, "field": "name", "en": "Darkspear Islands Reputation - Darkspear Raiders", "hash": "a82a548e26c953c6", "src": "db2@1.60.1.70245"}
+{"id": 1295630, "field": "name", "en": "Darkspear Islands Reputation - Theramore Expeditionary Force", "hash": "bd032536c5112573", "src": "db2@1.60.1.70245"}
+{"id": 1295633, "field": "name", "en": "Everlook Delivery Bot", "hash": "ee3c517b4953daa6", "src": "db2@1.60.1.70245"}
+{"id": 1295633, "field": "description", "en": "$@spelldesc1295271", "hash": "ff00529c6c5dd702", "src": "db2@1.60.1.70245"}
+{"id": 1295639, "field": "name", "en": "Riverglades Marsh Gas", "hash": "85433bde3827c313", "src": "db2@1.60.1.70245"}
+{"id": 1295639, "field": "description", "en": "Reduces movement speed by $s1% and increases Fire damage taken by all targets in a $a1 yard radius by $s2 for $d.", "hash": "2091a05c946add25", "src": "db2@1.60.1.70245"}
+{"id": 1295639, "field": "aura", "en": "Movement slowed by $s1%.\r\nFire damage taken is increased by $s2.", "hash": "ef39647a0166be97", "src": "db2@1.60.1.70245"}
+{"id": 1295661, "field": "name", "en": "Parachute-Priest Pager", "hash": "879b81ce6326d804", "src": "db2@1.60.1.70245"}
+{"id": 1295661, "field": "description", "en": "$@spelldesc1295272", "hash": "ff00529d6c5dd703", "src": "db2@1.60.1.70245"}
+{"id": 1295661, "field": "aura", "en": "You are being assisted by Everlook Emergency Services.", "hash": "2cc3e5c6377a7308", "src": "db2@1.60.1.70245"}
+{"id": 1295678, "field": "name", "en": "Umber Galestrider", "hash": "413e1c1d9ecdae5e", "src": "db2@1.60.1.70245"}
+{"id": 1295678, "field": "description", "en": "Summons and dismisses a rideable galestrider crane.", "hash": "e6774841c76c8d3d", "src": "db2@1.60.1.70245"}
+{"id": 1295678, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1295682, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70245"}
+{"id": 1295683, "field": "name", "en": "Swift Umber Galestrider", "hash": "16e0211fda310529", "src": "db2@1.60.1.70245"}
+{"id": 1295683, "field": "description", "en": "Summons and dismisses a rideable crane. This is a very fast mount.", "hash": "12792ccfb3dc9ccb", "src": "db2@1.60.1.70245"}
+{"id": 1295683, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1295688, "field": "name", "en": "Tessa's Tonic", "hash": "4f525dad2bb75d77", "src": "db2@1.60.1.70245"}
+{"id": 1295688, "field": "description", "en": "Restores $s1 mana and health.", "hash": "d20116d1fbae313e", "src": "db2@1.60.1.70245"}
+{"id": 1295720, "field": "name", "en": "Imbue Lesser Flame", "hash": "dcf70302add0ba72", "src": "db2@1.60.1.70245"}
+{"id": 1295720, "field": "description", "en": "Imbue a staff with magic for 1 hour, increasing damage done by Fire spells and effects by up to $1306515s1.", "hash": "046a7061fde3d4e1", "src": "db2@1.60.1.70245"}
+{"id": 1295736, "field": "name", "en": "Bolder'ok Boulder", "hash": "14c4208ccd25d63b", "src": "db2@1.60.1.70245"}
+{"id": 1295736, "field": "description", "en": "Launch a boulder, dealing $s1 Physical damage.", "hash": "3f9be70500de65f0", "src": "db2@1.60.1.70245"}
+{"id": 1295738, "field": "name", "en": "Summon Wild Chicken", "hash": "0d689a2292541c85", "src": "db2@1.60.1.70245"}
+{"id": 1295738, "field": "description", "en": "Right Click to summon and dismiss your chicken.", "hash": "58cd270402b302d6", "src": "db2@1.60.1.70245"}
+{"id": 1295739, "field": "name", "en": "Summon Wild Chicken Egg", "hash": "cb5bc2a4ed9c0431", "src": "db2@1.60.1.70245"}
+{"id": 1295744, "field": "name", "en": "Rot", "hash": "0015b223459386e6", "src": "db2@1.60.1.70245"}
+{"id": 1295744, "field": "description", "en": "Diseases target for $s1 Nature damage every $t1 sec for $d. Deals $s2 times as much damage to Aquatic enemies.", "hash": "173c3a1e9cebe417", "src": "db2@1.60.1.70245"}
+{"id": 1295744, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70245"}
+{"id": 1295778, "field": "name", "en": "Refinance", "hash": "d544379093e4d07b", "src": "db2@1.60.1.70245"}
+{"id": 1295778, "field": "description", "en": "Consolidate an ally's financial obligations to heal them for $s1 over $d.", "hash": "aa74c8859795f814", "src": "db2@1.60.1.70245"}
+{"id": 1295778, "field": "aura", "en": "Healing for $w1 every $t1 sec.", "hash": "d49646a0cdceb866", "src": "db2@1.60.1.70245"}
+{"id": 1295779, "field": "name", "en": "Flash Sale", "hash": "750722d254b11a29", "src": "db2@1.60.1.70245"}
+{"id": 1295779, "field": "description", "en": "Maximize an ally's savings, healing them for $s1.", "hash": "eaa9fb059f74c5ab", "src": "db2@1.60.1.70245"}
+{"id": 1295780, "field": "name", "en": "Power Word: Deal", "hash": "5bfb9ca1f2b9118c", "src": "db2@1.60.1.70245"}
+{"id": 1295780, "field": "description", "en": "Strike a bargain with an ally to shield them against $s1 damage for up to $d.", "hash": "41da1645c6ac3625", "src": "db2@1.60.1.70245"}
+{"id": 1295780, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70245"}
+{"id": 1295805, "field": "name", "en": "Briny Seafood Stew", "hash": "5100cdba6efb9e01", "src": "db2@1.60.1.70245"}
+{"id": 1295834, "field": "name", "en": "Plain Ol' Paletusk", "hash": "c9817e53e06bc1bd", "src": "db2@1.60.1.70245"}
+{"id": 1295852, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70245"}
+{"id": 1295887, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1295888, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1295904, "field": "name", "en": "[DNT] Test Item Internal Only", "hash": "96a4d91b64b4c00e", "src": "db2@1.60.1.70245"}
+{"id": 1295904, "field": "description", "en": "Equip: Increases attack power by X.", "hash": "7af74a17f414f229", "src": "db2@1.60.1.70245"}

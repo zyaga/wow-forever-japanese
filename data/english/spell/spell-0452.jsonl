@@ -1,39 +1,39 @@
-{"id": 452154, "field": "name", "en": "Rolling Thunder", "hash": "7467de74c235daba", "src": "db2@1.60.1.70170"}
-{"id": 452185, "field": "name", "en": "Teleport Players", "hash": "e1c607c71bdfc00f", "src": "db2@1.60.1.70170"}
-{"id": 452285, "field": "name", "en": "Summon Emerald Warden", "hash": "020517c4a5a32d0b", "src": "db2@1.60.1.70170"}
-{"id": 452424, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70170"}
-{"id": 452428, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70170"}
-{"id": 452428, "field": "aura", "en": "Critical spell damage effects have a chance to cause $452424s1 nature damage to 3 nearby enemies.", "hash": "cde08b3058fa732a", "src": "db2@1.60.1.70170"}
-{"id": 452430, "field": "name", "en": "Rae'lar", "hash": "209d2a40798859c5", "src": "db2@1.60.1.70170"}
-{"id": 452432, "field": "name", "en": "Rae'lar", "hash": "209d2a40798859c5", "src": "db2@1.60.1.70170"}
-{"id": 452432, "field": "description", "en": "Chance on melee auto attack to steal $452430s1 life from target enemy.", "hash": "b79b58ed74edb585", "src": "db2@1.60.1.70170"}
-{"id": 452432, "field": "aura", "en": "Melee auto attacks have a chance to steal $452430s1 life from target enemy on hit.", "hash": "ff4b9560ac59798d", "src": "db2@1.60.1.70170"}
-{"id": 452433, "field": "name", "en": "Summon Gla'sir", "hash": "c8b6dc601b4be72e", "src": "db2@1.60.1.70170"}
-{"id": 452433, "field": "description", "en": "Transform Rae'lar into Gla'sir.", "hash": "7a65c73037aea377", "src": "db2@1.60.1.70170"}
-{"id": 452434, "field": "name", "en": "Summon Rae'lar", "hash": "03ea4b95a7b925b7", "src": "db2@1.60.1.70170"}
-{"id": 452434, "field": "description", "en": "Transform Gla'sir into Rae'lar.", "hash": "64263662f31f0f28", "src": "db2@1.60.1.70170"}
-{"id": 452454, "field": "name", "en": "Boon of Water", "hash": "bba560231042a0e8", "src": "db2@1.60.1.70170"}
-{"id": 452454, "field": "description", "en": "Healed by successful blocks.", "hash": "7a08726421a6020e", "src": "db2@1.60.1.70170"}
-{"id": 452454, "field": "aura", "en": "Healed by successful blocks.", "hash": "7a08726421a6020e", "src": "db2@1.60.1.70170"}
-{"id": 452456, "field": "name", "en": "Boon of Air", "hash": "baaaaa282d69ddcf", "src": "db2@1.60.1.70170"}
-{"id": 452456, "field": "description", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70170"}
-{"id": 452456, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70170"}
-{"id": 452460, "field": "name", "en": "Boon of Fire", "hash": "860098bf7ef02899", "src": "db2@1.60.1.70170"}
-{"id": 452460, "field": "description", "en": "Successful blocks cause an explosion of fire damage.", "hash": "1c32ba96fc150156", "src": "db2@1.60.1.70170"}
-{"id": 452460, "field": "aura", "en": "Successful blocks cause an explosion of fire damage.", "hash": "1c32ba96fc150156", "src": "db2@1.60.1.70170"}
-{"id": 452464, "field": "name", "en": "Boon of Earth", "hash": "7fae0ffd5bd70107", "src": "db2@1.60.1.70170"}
-{"id": 452464, "field": "description", "en": "Block chance increased by $s1%.", "hash": "9d8f91b765eae58e", "src": "db2@1.60.1.70170"}
-{"id": 452464, "field": "aura", "en": "Block chance increased by $s1%.", "hash": "9d8f91b765eae58e", "src": "db2@1.60.1.70170"}
-{"id": 452466, "field": "name", "en": "Terrestris", "hash": "4b112a4dc7e026c0", "src": "db2@1.60.1.70170"}
-{"id": 452466, "field": "description", "en": "Summoned totems grant a boon of their element.", "hash": "5d8a8187e2a16d02", "src": "db2@1.60.1.70170"}
-{"id": 452466, "field": "aura", "en": "Summoned totems grant a boon of their element.", "hash": "5d8a8187e2a16d02", "src": "db2@1.60.1.70170"}
-{"id": 452474, "field": "name", "en": "Defense of the Dragonflights", "hash": "4ebbf0b60ee23324", "src": "db2@1.60.1.70170"}
-{"id": 452474, "field": "description", "en": "Raise Suzerain for $d1, reducing spell damage taken by $s1%.  If struck by a Dragon's Breath, gain Rage of the Suzerain, granting $469025s1% bonus damage against Dragons for $469025d1.", "hash": "976c68399e7525fe", "src": "db2@1.60.1.70170"}
-{"id": 452474, "field": "aura", "en": "Spell damage reduced by $s1%.", "hash": "871a2cb465afd46c", "src": "db2@1.60.1.70170"}
-{"id": 452574, "field": "name", "en": "Fragile Armor", "hash": "505d27a21702644e", "src": "db2@1.60.1.70170"}
-{"id": 452745, "field": "name", "en": "Dream Eater", "hash": "5490c9a702d77b99", "src": "db2@1.60.1.70170"}
-{"id": 452745, "field": "aura", "en": "Chance to hit is decreased.", "hash": "ec0588e352cec299", "src": "db2@1.60.1.70170"}
-{"id": 452857, "field": "name", "en": "Knockdown", "hash": "6f9508bc7debff6d", "src": "db2@1.60.1.70170"}
-{"id": 452857, "field": "description", "en": "Knocks an enemy down, stunning it for $d", "hash": "50b90755fab771ea", "src": "db2@1.60.1.70170"}
-{"id": 452857, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
-{"id": 452862, "field": "name", "en": "Suzerain", "hash": "28ce43b57667dbec", "src": "db2@1.60.1.70170"}
+{"id": 452154, "field": "name", "en": "Rolling Thunder", "hash": "7467de74c235daba", "src": "db2@1.60.1.70245"}
+{"id": 452185, "field": "name", "en": "Teleport Players", "hash": "e1c607c71bdfc00f", "src": "db2@1.60.1.70245"}
+{"id": 452285, "field": "name", "en": "Summon Emerald Warden", "hash": "020517c4a5a32d0b", "src": "db2@1.60.1.70245"}
+{"id": 452424, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70245"}
+{"id": 452428, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70245"}
+{"id": 452428, "field": "aura", "en": "Critical spell damage effects have a chance to cause $452424s1 nature damage to 3 nearby enemies.", "hash": "cde08b3058fa732a", "src": "db2@1.60.1.70245"}
+{"id": 452430, "field": "name", "en": "Rae'lar", "hash": "209d2a40798859c5", "src": "db2@1.60.1.70245"}
+{"id": 452432, "field": "name", "en": "Rae'lar", "hash": "209d2a40798859c5", "src": "db2@1.60.1.70245"}
+{"id": 452432, "field": "description", "en": "Chance on melee auto attack to steal $452430s1 life from target enemy.", "hash": "b79b58ed74edb585", "src": "db2@1.60.1.70245"}
+{"id": 452432, "field": "aura", "en": "Melee auto attacks have a chance to steal $452430s1 life from target enemy on hit.", "hash": "ff4b9560ac59798d", "src": "db2@1.60.1.70245"}
+{"id": 452433, "field": "name", "en": "Summon Gla'sir", "hash": "c8b6dc601b4be72e", "src": "db2@1.60.1.70245"}
+{"id": 452433, "field": "description", "en": "Transform Rae'lar into Gla'sir.", "hash": "7a65c73037aea377", "src": "db2@1.60.1.70245"}
+{"id": 452434, "field": "name", "en": "Summon Rae'lar", "hash": "03ea4b95a7b925b7", "src": "db2@1.60.1.70245"}
+{"id": 452434, "field": "description", "en": "Transform Gla'sir into Rae'lar.", "hash": "64263662f31f0f28", "src": "db2@1.60.1.70245"}
+{"id": 452454, "field": "name", "en": "Boon of Water", "hash": "bba560231042a0e8", "src": "db2@1.60.1.70245"}
+{"id": 452454, "field": "description", "en": "Healed by successful blocks.", "hash": "7a08726421a6020e", "src": "db2@1.60.1.70245"}
+{"id": 452454, "field": "aura", "en": "Healed by successful blocks.", "hash": "7a08726421a6020e", "src": "db2@1.60.1.70245"}
+{"id": 452456, "field": "name", "en": "Boon of Air", "hash": "baaaaa282d69ddcf", "src": "db2@1.60.1.70245"}
+{"id": 452456, "field": "description", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70245"}
+{"id": 452456, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70245"}
+{"id": 452460, "field": "name", "en": "Boon of Fire", "hash": "860098bf7ef02899", "src": "db2@1.60.1.70245"}
+{"id": 452460, "field": "description", "en": "Successful blocks cause an explosion of fire damage.", "hash": "1c32ba96fc150156", "src": "db2@1.60.1.70245"}
+{"id": 452460, "field": "aura", "en": "Successful blocks cause an explosion of fire damage.", "hash": "1c32ba96fc150156", "src": "db2@1.60.1.70245"}
+{"id": 452464, "field": "name", "en": "Boon of Earth", "hash": "7fae0ffd5bd70107", "src": "db2@1.60.1.70245"}
+{"id": 452464, "field": "description", "en": "Block chance increased by $s1%.", "hash": "9d8f91b765eae58e", "src": "db2@1.60.1.70245"}
+{"id": 452464, "field": "aura", "en": "Block chance increased by $s1%.", "hash": "9d8f91b765eae58e", "src": "db2@1.60.1.70245"}
+{"id": 452466, "field": "name", "en": "Terrestris", "hash": "4b112a4dc7e026c0", "src": "db2@1.60.1.70245"}
+{"id": 452466, "field": "description", "en": "Summoned totems grant a boon of their element.", "hash": "5d8a8187e2a16d02", "src": "db2@1.60.1.70245"}
+{"id": 452466, "field": "aura", "en": "Summoned totems grant a boon of their element.", "hash": "5d8a8187e2a16d02", "src": "db2@1.60.1.70245"}
+{"id": 452474, "field": "name", "en": "Defense of the Dragonflights", "hash": "4ebbf0b60ee23324", "src": "db2@1.60.1.70245"}
+{"id": 452474, "field": "description", "en": "Raise Suzerain for $d1, reducing spell damage taken by $s1%.  If struck by a Dragon's Breath, gain Rage of the Suzerain, granting $469025s1% bonus damage against Dragons for $469025d1.", "hash": "976c68399e7525fe", "src": "db2@1.60.1.70245"}
+{"id": 452474, "field": "aura", "en": "Spell damage reduced by $s1%.", "hash": "871a2cb465afd46c", "src": "db2@1.60.1.70245"}
+{"id": 452574, "field": "name", "en": "Fragile Armor", "hash": "505d27a21702644e", "src": "db2@1.60.1.70245"}
+{"id": 452745, "field": "name", "en": "Dream Eater", "hash": "5490c9a702d77b99", "src": "db2@1.60.1.70245"}
+{"id": 452745, "field": "aura", "en": "Chance to hit is decreased.", "hash": "ec0588e352cec299", "src": "db2@1.60.1.70245"}
+{"id": 452857, "field": "name", "en": "Knockdown", "hash": "6f9508bc7debff6d", "src": "db2@1.60.1.70245"}
+{"id": 452857, "field": "description", "en": "Knocks an enemy down, stunning it for $d", "hash": "50b90755fab771ea", "src": "db2@1.60.1.70245"}
+{"id": 452857, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
+{"id": 452862, "field": "name", "en": "Suzerain", "hash": "28ce43b57667dbec", "src": "db2@1.60.1.70245"}

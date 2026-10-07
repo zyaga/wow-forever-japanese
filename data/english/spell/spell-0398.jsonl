@@ -1,25 +1,25 @@
-{"id": 398061, "field": "name", "en": "Bracers of Redirection", "hash": "007e898cf36756da", "src": "db2@1.60.1.70170"}
-{"id": 398061, "field": "description", "en": "Gain 1 combo point whenever you avoid any attack or spell from an enemy target that is not your current target.", "hash": "0e70b42a1259bbe6", "src": "db2@1.60.1.70170"}
-{"id": 398115, "field": "name", "en": "Inoculation Belt", "hash": "7119ca929f2ffc33", "src": "db2@1.60.1.70170"}
-{"id": 398115, "field": "description", "en": "Take $s3% damage to remove a disease or poison effect from yourself.", "hash": "931aa434ac01addc", "src": "db2@1.60.1.70170"}
-{"id": 398117, "field": "name", "en": "Pockets of Treats", "hash": "f10ece60d1118357", "src": "db2@1.60.1.70170"}
-{"id": 398117, "field": "description", "en": "Open the bag of treats and palm it into your target's pocket, increasing the damage of Beasts against this target by $s2.", "hash": "e2383ce6920d73e4", "src": "db2@1.60.1.70170"}
-{"id": 398117, "field": "aura", "en": "Smells delicious!  Beasts deal $s2 extra damage.", "hash": "8c9d9baeea741fcc", "src": "db2@1.60.1.70170"}
-{"id": 398196, "field": "name", "en": "Quick Draw", "hash": "e81027e37e798562", "src": "db2@1.60.1.70170"}
-{"id": 398196, "field": "description", "en": "Draw your ranged weapon and fire a quick shot at an enemy, causing normal ranged weapon damage and reducing the target's movement speed by $s2% for $d. Awards $s3 combo $lpoint:points;.\r\n\r\nQuick Draw benefits from all talents and effects that trigger from or modify Sinister Strike.\r\n", "hash": "2fa6d8d6dfbab0ed", "src": "db2@1.60.1.70170"}
-{"id": 398196, "field": "aura", "en": "Movement speed reduced by $s2%.", "hash": "08fe79f089dfc8da", "src": "db2@1.60.1.70170"}
-{"id": 398197, "field": "name", "en": "Quick Draw", "hash": "e81027e37e798562", "src": "db2@1.60.1.70170"}
-{"id": 398197, "field": "description", "en": "Gain the Quick Draw ability:\r\n\r\n$@spellicon398196\r\n$@spelldesc398196", "hash": "b42953200f6cf033", "src": "db2@1.60.1.70170"}
-{"id": 398198, "field": "name", "en": "Storm of Swords", "hash": "fe46fcca9e1baea3", "src": "db2@1.60.1.70170"}
-{"id": 398198, "field": "description", "en": "Finishing move that increases parry chance. Lasts longer and increases parry chance per combo point:\r\n   1 point  : 10 seconds, 12% Parry\r\n   2 points: 15 seconds, 14% Parry\r\n   3 points: 20 seconds, 16% Parry\r\n   4 points: 25 seconds, 18% Parry\r\n   5 points: 30 seconds, 20% Parry", "hash": "9185785695e4b5e2", "src": "db2@1.60.1.70170"}
-{"id": 398198, "field": "aura", "en": "Melee attack speed increased by $w2%.", "hash": "d4fac08137b423bc", "src": "db2@1.60.1.70170"}
-{"id": 398199, "field": "name", "en": "Hubris Tunic", "hash": "f72b2773d72fa47c", "src": "db2@1.60.1.70170"}
-{"id": 398538, "field": "name", "en": "Runecarve Bracer - Minor Deflect", "hash": "1b8dd23f72c3c696", "src": "db2@1.60.1.70170"}
-{"id": 398538, "field": "description", "en": "Permanently enchant bracers so that the defense skill of the wearer is increased by 1.", "hash": "aa0447f640952ab4", "src": "db2@1.60.1.70170"}
-{"id": 398603, "field": "name", "en": "Runecarving", "hash": "7d544ac985f7653d", "src": "db2@1.60.1.70170"}
-{"id": 398603, "field": "description", "en": "Affix powerful runes to your armor.", "hash": "2d87a4884ba12795", "src": "db2@1.60.1.70170"}
-{"id": 398604, "field": "name", "en": "Runecarving", "hash": "7d544ac985f7653d", "src": "db2@1.60.1.70170"}
-{"id": 398608, "field": "name", "en": "Runecarving Test - Crippling Poison", "hash": "d984f3c5b3b30151", "src": "db2@1.60.1.70170"}
-{"id": 398608, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, slowing their movement speed by $3409s1% for $3409d.", "hash": "6bb4a1f1d75340a4", "src": "db2@1.60.1.70170"}
-{"id": 398609, "field": "name", "en": "Runecarving Test - Crippling Poison", "hash": "d984f3c5b3b30151", "src": "db2@1.60.1.70170"}
-{"id": 398609, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a 30% chance of poisoning the enemy, slowing their movement speed by $3409s1% for $3409d.", "hash": "69eb8e51126e095f", "src": "db2@1.60.1.70170"}
+{"id": 398061, "field": "name", "en": "Bracers of Redirection", "hash": "007e898cf36756da", "src": "db2@1.60.1.70245"}
+{"id": 398061, "field": "description", "en": "Gain 1 combo point whenever you avoid any attack or spell from an enemy target that is not your current target.", "hash": "0e70b42a1259bbe6", "src": "db2@1.60.1.70245"}
+{"id": 398115, "field": "name", "en": "Inoculation Belt", "hash": "7119ca929f2ffc33", "src": "db2@1.60.1.70245"}
+{"id": 398115, "field": "description", "en": "Take $s3% damage to remove a disease or poison effect from yourself.", "hash": "931aa434ac01addc", "src": "db2@1.60.1.70245"}
+{"id": 398117, "field": "name", "en": "Pockets of Treats", "hash": "f10ece60d1118357", "src": "db2@1.60.1.70245"}
+{"id": 398117, "field": "description", "en": "Open the bag of treats and palm it into your target's pocket, increasing the damage of Beasts against this target by $s2.", "hash": "e2383ce6920d73e4", "src": "db2@1.60.1.70245"}
+{"id": 398117, "field": "aura", "en": "Smells delicious!  Beasts deal $s2 extra damage.", "hash": "8c9d9baeea741fcc", "src": "db2@1.60.1.70245"}
+{"id": 398196, "field": "name", "en": "Quick Draw", "hash": "e81027e37e798562", "src": "db2@1.60.1.70245"}
+{"id": 398196, "field": "description", "en": "Draw your ranged weapon and fire a quick shot at an enemy, causing normal ranged weapon damage and reducing the target's movement speed by $s2% for $d. Awards $s3 combo $lpoint:points;.\r\n\r\nQuick Draw benefits from all talents and effects that trigger from or modify Sinister Strike.\r\n", "hash": "2fa6d8d6dfbab0ed", "src": "db2@1.60.1.70245"}
+{"id": 398196, "field": "aura", "en": "Movement speed reduced by $s2%.", "hash": "08fe79f089dfc8da", "src": "db2@1.60.1.70245"}
+{"id": 398197, "field": "name", "en": "Quick Draw", "hash": "e81027e37e798562", "src": "db2@1.60.1.70245"}
+{"id": 398197, "field": "description", "en": "Gain the Quick Draw ability:\r\n\r\n$@spellicon398196\r\n$@spelldesc398196", "hash": "b42953200f6cf033", "src": "db2@1.60.1.70245"}
+{"id": 398198, "field": "name", "en": "Storm of Swords", "hash": "fe46fcca9e1baea3", "src": "db2@1.60.1.70245"}
+{"id": 398198, "field": "description", "en": "Finishing move that increases parry chance. Lasts longer and increases parry chance per combo point:\r\n   1 point  : 10 seconds, 12% Parry\r\n   2 points: 15 seconds, 14% Parry\r\n   3 points: 20 seconds, 16% Parry\r\n   4 points: 25 seconds, 18% Parry\r\n   5 points: 30 seconds, 20% Parry", "hash": "9185785695e4b5e2", "src": "db2@1.60.1.70245"}
+{"id": 398198, "field": "aura", "en": "Melee attack speed increased by $w2%.", "hash": "d4fac08137b423bc", "src": "db2@1.60.1.70245"}
+{"id": 398199, "field": "name", "en": "Hubris Tunic", "hash": "f72b2773d72fa47c", "src": "db2@1.60.1.70245"}
+{"id": 398538, "field": "name", "en": "Runecarve Bracer - Minor Deflect", "hash": "1b8dd23f72c3c696", "src": "db2@1.60.1.70245"}
+{"id": 398538, "field": "description", "en": "Permanently enchant bracers so that the defense skill of the wearer is increased by 1.", "hash": "aa0447f640952ab4", "src": "db2@1.60.1.70245"}
+{"id": 398603, "field": "name", "en": "Runecarving", "hash": "7d544ac985f7653d", "src": "db2@1.60.1.70245"}
+{"id": 398603, "field": "description", "en": "Affix powerful runes to your armor.", "hash": "2d87a4884ba12795", "src": "db2@1.60.1.70245"}
+{"id": 398604, "field": "name", "en": "Runecarving", "hash": "7d544ac985f7653d", "src": "db2@1.60.1.70245"}
+{"id": 398608, "field": "name", "en": "Runecarving Test - Crippling Poison", "hash": "d984f3c5b3b30151", "src": "db2@1.60.1.70245"}
+{"id": 398608, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, slowing their movement speed by $3409s1% for $3409d.", "hash": "6bb4a1f1d75340a4", "src": "db2@1.60.1.70245"}
+{"id": 398609, "field": "name", "en": "Runecarving Test - Crippling Poison", "hash": "d984f3c5b3b30151", "src": "db2@1.60.1.70245"}
+{"id": 398609, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a 30% chance of poisoning the enemy, slowing their movement speed by $3409s1% for $3409d.", "hash": "69eb8e51126e095f", "src": "db2@1.60.1.70245"}

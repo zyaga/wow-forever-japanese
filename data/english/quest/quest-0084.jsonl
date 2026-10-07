@@ -1,14 +1,14 @@
 {"id": 84338, "field": "title", "en": "A Binding Contract", "hash": "b3e013a8fd4a0e58", "src": "wdb@1.15.9.69722"}
 {"id": 84338, "field": "objectives", "en": "Turn the Thorium Brotherhood Contract in to Lokhtos Darkbargainer if you would like to receive the plans for Sulfuron.", "hash": "b4f357b1e8473f02", "src": "wdb@1.15.9.69722"}
 {"id": 84338, "field": "description", "en": "The undersigned hereby declares that the Sulfuron ingot they are delivering to the Thorium Brotherhood (TB Ltd.) is genuine and not a facsimile thereof. The undersigned also acknowledges that any harm that should come to $g him:her; as a result of attempting to build, forge, find, create, sell, or eat Sulfuras, is not the responsibility or fault of TB Ltd.$B$BBy signing this contract, you are agreeing to all terms listed herein.$B$B_________________$B$BSignature", "hash": "9f3945b5b8b1a8ca", "src": "wdb@1.15.9.69722"}
-{"id": 84395, "field": "title", "en": "Undead Potatoes", "hash": "e94bc43757269bf6", "src": "wdb@1.60.1.70170"}
-{"id": 84396, "field": "title", "en": "Magma or Lava?", "hash": "ddd086e3d25b0c63", "src": "wdb@1.60.1.70170"}
-{"id": 84397, "field": "title", "en": "Northern Kalimdor - A Comprehensive Guide", "hash": "1b1a6b97146fe621", "src": "wdb@1.60.1.70170"}
-{"id": 84398, "field": "title", "en": "A Study of the Light", "hash": "ddb1ac8377b3c3f5", "src": "wdb@1.60.1.70170"}
-{"id": 84399, "field": "title", "en": "Ka-Boom!", "hash": "41be4c43aa40c813", "src": "wdb@1.60.1.70170"}
-{"id": 84400, "field": "title", "en": "The Knight and the Lady", "hash": "ec2c7ac866b88b9c", "src": "wdb@1.60.1.70170"}
-{"id": 84401, "field": "title", "en": "Scourge: Undead Menace or Misunderstood?", "hash": "d1d7a21a1478ee64", "src": "wdb@1.60.1.70170"}
-{"id": 84402, "field": "title", "en": "Necromancy 101", "hash": "aebf1ec4897e8522", "src": "wdb@1.60.1.70170"}
+{"id": 84395, "field": "title", "en": "Undead Potatoes", "hash": "e94bc43757269bf6", "src": "wdb@1.60.1.70245"}
+{"id": 84396, "field": "title", "en": "Magma or Lava?", "hash": "ddd086e3d25b0c63", "src": "wdb@1.60.1.70245"}
+{"id": 84397, "field": "title", "en": "Northern Kalimdor - A Comprehensive Guide", "hash": "1b1a6b97146fe621", "src": "wdb@1.60.1.70245"}
+{"id": 84398, "field": "title", "en": "A Study of the Light", "hash": "ddb1ac8377b3c3f5", "src": "wdb@1.60.1.70245"}
+{"id": 84399, "field": "title", "en": "Ka-Boom!", "hash": "41be4c43aa40c813", "src": "wdb@1.60.1.70245"}
+{"id": 84400, "field": "title", "en": "The Knight and the Lady", "hash": "ec2c7ac866b88b9c", "src": "wdb@1.60.1.70245"}
+{"id": 84401, "field": "title", "en": "Scourge: Undead Menace or Misunderstood?", "hash": "d1d7a21a1478ee64", "src": "wdb@1.60.1.70245"}
+{"id": 84402, "field": "title", "en": "Necromancy 101", "hash": "aebf1ec4897e8522", "src": "wdb@1.60.1.70245"}
 {"id": 84495, "field": "title", "en": "Fiery Plate Gauntlets", "hash": "4cbb6a5ef8fc141c", "src": "wdb@1.15.9.69722"}
 {"id": 84495, "field": "objectives", "en": "Bring Malyfous Darkhammer 6 Enchanted Thorium Bars, 2 Essence of Fire, and 4 Star Rubies. You will also need to turn in your Unfired Plate Gauntlets.", "hash": "87725cc616f713d5", "src": "wdb@1.15.9.69722"}
 {"id": 84495, "field": "description", "en": "By Thaurissan's beard!$B$BWhere did you find them?$B$BMore importantly, are you willing to part with them? Naturally, I would pay you for such a noble gesture.$B$BI'll tell you what, $N. If you give me those unfired gauntlets, I will teach you how to make a set all your own. All you need to do is collect the parts for me so that I may narrow down the exact recipe.$B$BDo we have a deal??$B$BHere's the list of what I need, I'll front the non-enchanted thorium myself since you're supplying the gauntlets.\r\n", "hash": "ccc5a0a00b68b900", "src": "wdb@1.15.9.69722"}

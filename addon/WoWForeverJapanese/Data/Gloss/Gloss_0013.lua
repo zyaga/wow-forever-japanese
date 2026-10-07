@@ -868,7 +868,6 @@ WFJ.Data.add("gloss", {
   [13865] = "そこら\tそこら\taround (thereabouts)",
   [13866] = "そこら\tそこら\taround here somewhere",
   [13867] = "そこら\tそこら\tcommon (around there)",
-  [13868] = "そこら\tそこら\tlowly (ordinary)",
   [13869] = "そこら\tそこら\tor so",
   [13870] = "そこら\tそこら\tordinary (around here)",
   [13871] = "そこら\tそこら\tout there (around there)",

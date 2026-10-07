@@ -516,7 +516,6 @@ WFJ.Data.add("gloss", {
   [23513] = "なんか\tなんか\tany (dismissive)",
   [23514] = "なんか\tなんか\tkinda",
   [23515] = "なんか\tなんか\tor the like",
-  [23516] = "なんか\tなんか\tsome (like)",
   [23517] = "なんか\tなんか\tsome (the likes of)",
   [23518] = "なんか\tなんか\tsomething like",
   [23519] = "なんか\tなんか\tstuff like",

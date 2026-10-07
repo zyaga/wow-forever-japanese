@@ -1,71 +1,71 @@
-{"id": 1237045, "field": "name", "en": "Light's Hope", "hash": "328cd0d4679c3903", "src": "db2@1.60.1.70170"}
-{"id": 1237045, "field": "description", "en": "$@spelldesc1232177", "hash": "9546e0e286aeba57", "src": "db2@1.60.1.70170"}
-{"id": 1237045, "field": "aura", "en": "Immune to silence.", "hash": "8470fca90fbaca1e", "src": "db2@1.60.1.70170"}
-{"id": 1237064, "field": "name", "en": "Poultry Precision Scope", "hash": "aa4a56df55d5d1b3", "src": "db2@1.60.1.70170"}
-{"id": 1237064, "field": "description", "en": "Attaches a permanent scope to a bow or gun that increases its chance to hit by 3%.", "hash": "b1a50f38fdcd0537", "src": "db2@1.60.1.70170"}
-{"id": 1237114, "field": "name", "en": "(DNT) Energize Self", "hash": "9cf92fbd2ff693ce", "src": "db2@1.60.1.70170"}
-{"id": 1237147, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70170"}
-{"id": 1237147, "field": "description", "en": "Throw the Incendiary Bomb at a nearby Ballista.", "hash": "eab64aa30c69c7fd", "src": "db2@1.60.1.70170"}
-{"id": 1237152, "field": "name", "en": "Spellstone", "hash": "4c75706d65d233e1", "src": "db2@1.60.1.70170"}
-{"id": 1237152, "field": "description", "en": "Imbues your weapon with Shadow, increasing your spell haste by $1237162s2% and the damage done by your Shadow spells by up to $1237162s1.", "hash": "241d178a44ca5acb", "src": "db2@1.60.1.70170"}
-{"id": 1237155, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70170"}
-{"id": 1237155, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70170"}
-{"id": 1237155, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
-{"id": 1237156, "field": "name", "en": "Spellstone", "hash": "4c75706d65d233e1", "src": "db2@1.60.1.70170"}
-{"id": 1237156, "field": "description", "en": "Imbues your weapon with Shadow, increasing your spell haste by $1237164s2% and the damage done by your Shadow spells by up to $1237164s1.", "hash": "3e70da972ccc789d", "src": "db2@1.60.1.70170"}
-{"id": 1237159, "field": "name", "en": "Spellstone", "hash": "4c75706d65d233e1", "src": "db2@1.60.1.70170"}
-{"id": 1237159, "field": "description", "en": "Imbues your weapon with Shadow, increasing your spell haste by $1237165s2% and the damage done by your Shadow spells by up to $1237165s1.", "hash": "cb9abc1b20cd8786", "src": "db2@1.60.1.70170"}
-{"id": 1237162, "field": "name", "en": "Increase Shadow Dam", "hash": "2e79e84f83acebc1", "src": "db2@1.60.1.70170"}
-{"id": 1237162, "field": "description", "en": "Increases your spell haste by $m2% and increases damage done by your Shadow spells by up to $s1.", "hash": "6aa1ff26f50ddd78", "src": "db2@1.60.1.70170"}
-{"id": 1237164, "field": "name", "en": "Increase Shadow Dam", "hash": "2e79e84f83acebc1", "src": "db2@1.60.1.70170"}
-{"id": 1237164, "field": "description", "en": "Increases your spell haste by $m2% and increases damage done by your Shadow spells by up to $s1.", "hash": "6aa1ff26f50ddd78", "src": "db2@1.60.1.70170"}
-{"id": 1237165, "field": "name", "en": "Increase Shadow Dam", "hash": "2e79e84f83acebc1", "src": "db2@1.60.1.70170"}
-{"id": 1237165, "field": "description", "en": "Increases your spell haste by $m2% and increases damage done by your Shadow spells by up to $s1.", "hash": "6aa1ff26f50ddd78", "src": "db2@1.60.1.70170"}
-{"id": 1237171, "field": "name", "en": "Crimson Flare", "hash": "06184bd3719b1da6", "src": "db2@1.60.1.70170"}
-{"id": 1237171, "field": "description", "en": "The molten earth deals $s1 Radiant damage every $t1 second.", "hash": "ba89ee02ba1c7749", "src": "db2@1.60.1.70170"}
-{"id": 1237171, "field": "aura", "en": "The molten earth deals $s1 Radiant damage every $t1 second.", "hash": "ba89ee02ba1c7749", "src": "db2@1.60.1.70170"}
-{"id": 1237268, "field": "name", "en": "Holy Conduit", "hash": "5f8f603bbbf50ae0", "src": "db2@1.60.1.70170"}
-{"id": 1237268, "field": "description", "en": "Reduces the mana cost of your Consecration, Holy Wrath, Exorcism, and Hammer of Wrath spells by $m1%.", "hash": "78bd0c76c13d42e2", "src": "db2@1.60.1.70170"}
-{"id": 1237312, "field": "name", "en": "Frostfire Bolt", "hash": "a2fc5ba25777ffbf", "src": "db2@1.60.1.70170"}
-{"id": 1237312, "field": "description", "en": "Launches a bolt of frostfire at the enemy, causing $s2 Frostfire damage, slowing movement speed by $s1% and causing an additional $o3 Frostfire damage over $d. This spell will be checked against the lower of the target's Frost and Fire resists and counts as both Frost and Fire damage.", "hash": "ff9796854e68f4ff", "src": "db2@1.60.1.70170"}
-{"id": 1237312, "field": "aura", "en": "Movement slowed by $w1%. $w3 Frostfire damage every $t3 sec.", "hash": "3991e2af273d70a8", "src": "db2@1.60.1.70170"}
-{"id": 1237313, "field": "name", "en": "Frostfire Bolt", "hash": "a2fc5ba25777ffbf", "src": "db2@1.60.1.70170"}
-{"id": 1237313, "field": "description", "en": "Launches a bolt of frostfire at the enemy, causing $s2 Frostfire damage, slowing movement speed by $s1% and causing an additional $o3 Frostfire damage over $d. This spell will be checked against the lower of the target's Frost and Fire resists and counts as both Frost and Fire damage.", "hash": "ff9796854e68f4ff", "src": "db2@1.60.1.70170"}
-{"id": 1237313, "field": "aura", "en": "Movement slowed by $w1%. $w3 Frostfire damage every $t3 sec.", "hash": "3991e2af273d70a8", "src": "db2@1.60.1.70170"}
-{"id": 1237317, "field": "name", "en": "Twisting Nether", "hash": "7589b797b3076a4e", "src": "db2@1.60.1.70170"}
-{"id": 1237323, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70170"}
-{"id": 1237324, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70170"}
-{"id": 1237364, "field": "name", "en": "(DNT) Caldoran Berserk Timer", "hash": "130beb2f8576bef5", "src": "db2@1.60.1.70170"}
-{"id": 1237375, "field": "name", "en": "(DNT) Transform Caladboulder", "hash": "3ee19143dc75d4c2", "src": "db2@1.60.1.70170"}
-{"id": 1237618, "field": "name", "en": "Vampiric Embrace", "hash": "1323e502c8a01660", "src": "db2@1.60.1.70170"}
-{"id": 1237618, "field": "aura", "en": "20% of Shadow spell damage taken heals caster.", "hash": "adb33dda0991389f", "src": "db2@1.60.1.70170"}
-{"id": 1237632, "field": "name", "en": "Divine Steed", "hash": "1483da11f0e24017", "src": "db2@1.60.1.70170"}
-{"id": 1237632, "field": "description", "en": "Leap atop your charger for $d, increasing movement speed by $s2%. Usable while indoors or in combat.", "hash": "a161a9f6e2a4d8f1", "src": "db2@1.60.1.70170"}
-{"id": 1237632, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 1237635, "field": "name", "en": "DO NOT TRANSLATE", "hash": "c36d4c98bec2b30d", "src": "db2@1.60.1.70170"}
-{"id": 1237636, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70170"}
-{"id": 1237638, "field": "name", "en": "Despawn Self", "hash": "a900c044b0fabbf6", "src": "db2@1.60.1.70170"}
-{"id": 1237701, "field": "name", "en": "[DNT] Chest Copy", "hash": "f807824518aba2b7", "src": "db2@1.60.1.70170"}
-{"id": 1237702, "field": "name", "en": "Transformation", "hash": "f760ecd969461a04", "src": "db2@1.60.1.70170"}
-{"id": 1237720, "field": "name", "en": "Pacify Self", "hash": "47df437f74851423", "src": "db2@1.60.1.70170"}
-{"id": 1237720, "field": "aura", "en": "Cannot attack or use spells.", "hash": "3f9877515e8ec922", "src": "db2@1.60.1.70170"}
-{"id": 1237726, "field": "name", "en": "(DNT) Ride Vehicle Camera Test", "hash": "3624df5b457346b2", "src": "db2@1.60.1.70170"}
-{"id": 1237762, "field": "name", "en": "[DNT] Periodic Carrion Swarm", "hash": "e3e9a3e14bf8b33d", "src": "db2@1.60.1.70170"}
-{"id": 1237763, "field": "name", "en": "[DNT] Periodic Screeching Terror", "hash": "fb970f16ca3eebee", "src": "db2@1.60.1.70170"}
-{"id": 1237764, "field": "name", "en": "[DNT] Periodic Circle of Domination", "hash": "7127888968b94eb6", "src": "db2@1.60.1.70170"}
-{"id": 1237862, "field": "name", "en": "Scarlet Phalanx", "hash": "00a000cdcf578107", "src": "db2@1.60.1.70170"}
-{"id": 1237922, "field": "name", "en": "Mortar Combat", "hash": "a61ffa2e50e857df", "src": "db2@1.60.1.70170"}
-{"id": 1237938, "field": "name", "en": "Poison Bolt", "hash": "e91d12bd52a12ff6", "src": "db2@1.60.1.70170"}
-{"id": 1237938, "field": "description", "en": "Shoots poison at an enemy, inflicting Nature damage, then additional damage every $t2 sec. for $d.", "hash": "2c66ca3a5e6ed22c", "src": "db2@1.60.1.70170"}
-{"id": 1237938, "field": "aura", "en": "Deals $s2 nature damage every $t2 sec.", "hash": "47e40c07891c7912", "src": "db2@1.60.1.70170"}
-{"id": 1237939, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70170"}
-{"id": 1237939, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70170"}
-{"id": 1237948, "field": "name", "en": "Revive", "hash": "8d34a838df69bc6c", "src": "db2@1.60.1.70170"}
-{"id": 1237948, "field": "description", "en": "Brings a dead player back to life with $s1 health and $q1 mana. Cannot be cast when in combat.", "hash": "f062170165b19823", "src": "db2@1.60.1.70170"}
-{"id": 1237949, "field": "name", "en": "Revive", "hash": "8d34a838df69bc6c", "src": "db2@1.60.1.70170"}
-{"id": 1237949, "field": "description", "en": "Brings a dead player back to life with $s1 health and $q1 mana. Cannot be cast when in combat.", "hash": "f062170165b19823", "src": "db2@1.60.1.70170"}
-{"id": 1237950, "field": "name", "en": "Revive", "hash": "8d34a838df69bc6c", "src": "db2@1.60.1.70170"}
-{"id": 1237950, "field": "description", "en": "Brings a dead player back to life with $s1 health and $q1 mana. Cannot be cast when in combat.", "hash": "f062170165b19823", "src": "db2@1.60.1.70170"}
-{"id": 1237951, "field": "name", "en": "Revive", "hash": "8d34a838df69bc6c", "src": "db2@1.60.1.70170"}
-{"id": 1237951, "field": "description", "en": "Brings a dead player back to life with $s1 health and $q1 mana. Cannot be cast when in combat.", "hash": "f062170165b19823", "src": "db2@1.60.1.70170"}
-{"id": 1237976, "field": "name", "en": "Dedication", "hash": "b22ed76b2133d474", "src": "db2@1.60.1.70170"}
+{"id": 1237045, "field": "name", "en": "Light's Hope", "hash": "328cd0d4679c3903", "src": "db2@1.60.1.70245"}
+{"id": 1237045, "field": "description", "en": "$@spelldesc1232177", "hash": "9546e0e286aeba57", "src": "db2@1.60.1.70245"}
+{"id": 1237045, "field": "aura", "en": "Immune to silence.", "hash": "8470fca90fbaca1e", "src": "db2@1.60.1.70245"}
+{"id": 1237064, "field": "name", "en": "Poultry Precision Scope", "hash": "aa4a56df55d5d1b3", "src": "db2@1.60.1.70245"}
+{"id": 1237064, "field": "description", "en": "Attaches a permanent scope to a bow or gun that increases its chance to hit by 3%.", "hash": "b1a50f38fdcd0537", "src": "db2@1.60.1.70245"}
+{"id": 1237114, "field": "name", "en": "(DNT) Energize Self", "hash": "9cf92fbd2ff693ce", "src": "db2@1.60.1.70245"}
+{"id": 1237147, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70245"}
+{"id": 1237147, "field": "description", "en": "Throw the Incendiary Bomb at a nearby Ballista.", "hash": "eab64aa30c69c7fd", "src": "db2@1.60.1.70245"}
+{"id": 1237152, "field": "name", "en": "Spellstone", "hash": "4c75706d65d233e1", "src": "db2@1.60.1.70245"}
+{"id": 1237152, "field": "description", "en": "Imbues your weapon with Shadow, increasing your spell haste by $1237162s2% and the damage done by your Shadow spells by up to $1237162s1.", "hash": "241d178a44ca5acb", "src": "db2@1.60.1.70245"}
+{"id": 1237155, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70245"}
+{"id": 1237155, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70245"}
+{"id": 1237155, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
+{"id": 1237156, "field": "name", "en": "Spellstone", "hash": "4c75706d65d233e1", "src": "db2@1.60.1.70245"}
+{"id": 1237156, "field": "description", "en": "Imbues your weapon with Shadow, increasing your spell haste by $1237164s2% and the damage done by your Shadow spells by up to $1237164s1.", "hash": "3e70da972ccc789d", "src": "db2@1.60.1.70245"}
+{"id": 1237159, "field": "name", "en": "Spellstone", "hash": "4c75706d65d233e1", "src": "db2@1.60.1.70245"}
+{"id": 1237159, "field": "description", "en": "Imbues your weapon with Shadow, increasing your spell haste by $1237165s2% and the damage done by your Shadow spells by up to $1237165s1.", "hash": "cb9abc1b20cd8786", "src": "db2@1.60.1.70245"}
+{"id": 1237162, "field": "name", "en": "Increase Shadow Dam", "hash": "2e79e84f83acebc1", "src": "db2@1.60.1.70245"}
+{"id": 1237162, "field": "description", "en": "Increases your spell haste by $m2% and increases damage done by your Shadow spells by up to $s1.", "hash": "6aa1ff26f50ddd78", "src": "db2@1.60.1.70245"}
+{"id": 1237164, "field": "name", "en": "Increase Shadow Dam", "hash": "2e79e84f83acebc1", "src": "db2@1.60.1.70245"}
+{"id": 1237164, "field": "description", "en": "Increases your spell haste by $m2% and increases damage done by your Shadow spells by up to $s1.", "hash": "6aa1ff26f50ddd78", "src": "db2@1.60.1.70245"}
+{"id": 1237165, "field": "name", "en": "Increase Shadow Dam", "hash": "2e79e84f83acebc1", "src": "db2@1.60.1.70245"}
+{"id": 1237165, "field": "description", "en": "Increases your spell haste by $m2% and increases damage done by your Shadow spells by up to $s1.", "hash": "6aa1ff26f50ddd78", "src": "db2@1.60.1.70245"}
+{"id": 1237171, "field": "name", "en": "Crimson Flare", "hash": "06184bd3719b1da6", "src": "db2@1.60.1.70245"}
+{"id": 1237171, "field": "description", "en": "The molten earth deals $s1 Radiant damage every $t1 second.", "hash": "ba89ee02ba1c7749", "src": "db2@1.60.1.70245"}
+{"id": 1237171, "field": "aura", "en": "The molten earth deals $s1 Radiant damage every $t1 second.", "hash": "ba89ee02ba1c7749", "src": "db2@1.60.1.70245"}
+{"id": 1237268, "field": "name", "en": "Holy Conduit", "hash": "5f8f603bbbf50ae0", "src": "db2@1.60.1.70245"}
+{"id": 1237268, "field": "description", "en": "Reduces the mana cost of your Consecration, Holy Wrath, Exorcism, and Hammer of Wrath spells by $m1%.", "hash": "78bd0c76c13d42e2", "src": "db2@1.60.1.70245"}
+{"id": 1237312, "field": "name", "en": "Frostfire Bolt", "hash": "a2fc5ba25777ffbf", "src": "db2@1.60.1.70245"}
+{"id": 1237312, "field": "description", "en": "Launches a bolt of frostfire at the enemy, causing $s2 Frostfire damage, slowing movement speed by $s1% and causing an additional $o3 Frostfire damage over $d. This spell will be checked against the lower of the target's Frost and Fire resists and counts as both Frost and Fire damage.", "hash": "ff9796854e68f4ff", "src": "db2@1.60.1.70245"}
+{"id": 1237312, "field": "aura", "en": "Movement slowed by $w1%. $w3 Frostfire damage every $t3 sec.", "hash": "3991e2af273d70a8", "src": "db2@1.60.1.70245"}
+{"id": 1237313, "field": "name", "en": "Frostfire Bolt", "hash": "a2fc5ba25777ffbf", "src": "db2@1.60.1.70245"}
+{"id": 1237313, "field": "description", "en": "Launches a bolt of frostfire at the enemy, causing $s2 Frostfire damage, slowing movement speed by $s1% and causing an additional $o3 Frostfire damage over $d. This spell will be checked against the lower of the target's Frost and Fire resists and counts as both Frost and Fire damage.", "hash": "ff9796854e68f4ff", "src": "db2@1.60.1.70245"}
+{"id": 1237313, "field": "aura", "en": "Movement slowed by $w1%. $w3 Frostfire damage every $t3 sec.", "hash": "3991e2af273d70a8", "src": "db2@1.60.1.70245"}
+{"id": 1237317, "field": "name", "en": "Twisting Nether", "hash": "7589b797b3076a4e", "src": "db2@1.60.1.70245"}
+{"id": 1237323, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70245"}
+{"id": 1237324, "field": "name", "en": "Explosive Shell", "hash": "9e2a4f85f702c1f4", "src": "db2@1.60.1.70245"}
+{"id": 1237364, "field": "name", "en": "(DNT) Caldoran Berserk Timer", "hash": "130beb2f8576bef5", "src": "db2@1.60.1.70245"}
+{"id": 1237375, "field": "name", "en": "(DNT) Transform Caladboulder", "hash": "3ee19143dc75d4c2", "src": "db2@1.60.1.70245"}
+{"id": 1237618, "field": "name", "en": "Vampiric Embrace", "hash": "1323e502c8a01660", "src": "db2@1.60.1.70245"}
+{"id": 1237618, "field": "aura", "en": "20% of Shadow spell damage taken heals caster.", "hash": "adb33dda0991389f", "src": "db2@1.60.1.70245"}
+{"id": 1237632, "field": "name", "en": "Divine Steed", "hash": "1483da11f0e24017", "src": "db2@1.60.1.70245"}
+{"id": 1237632, "field": "description", "en": "Leap atop your charger for $d, increasing movement speed by $s2%. Usable while indoors or in combat.", "hash": "a161a9f6e2a4d8f1", "src": "db2@1.60.1.70245"}
+{"id": 1237632, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 1237635, "field": "name", "en": "DO NOT TRANSLATE", "hash": "c36d4c98bec2b30d", "src": "db2@1.60.1.70245"}
+{"id": 1237636, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70245"}
+{"id": 1237638, "field": "name", "en": "Despawn Self", "hash": "a900c044b0fabbf6", "src": "db2@1.60.1.70245"}
+{"id": 1237701, "field": "name", "en": "[DNT] Chest Copy", "hash": "f807824518aba2b7", "src": "db2@1.60.1.70245"}
+{"id": 1237702, "field": "name", "en": "Transformation", "hash": "f760ecd969461a04", "src": "db2@1.60.1.70245"}
+{"id": 1237720, "field": "name", "en": "Pacify Self", "hash": "47df437f74851423", "src": "db2@1.60.1.70245"}
+{"id": 1237720, "field": "aura", "en": "Cannot attack or use spells.", "hash": "3f9877515e8ec922", "src": "db2@1.60.1.70245"}
+{"id": 1237726, "field": "name", "en": "(DNT) Ride Vehicle Camera Test", "hash": "3624df5b457346b2", "src": "db2@1.60.1.70245"}
+{"id": 1237762, "field": "name", "en": "[DNT] Periodic Carrion Swarm", "hash": "e3e9a3e14bf8b33d", "src": "db2@1.60.1.70245"}
+{"id": 1237763, "field": "name", "en": "[DNT] Periodic Screeching Terror", "hash": "fb970f16ca3eebee", "src": "db2@1.60.1.70245"}
+{"id": 1237764, "field": "name", "en": "[DNT] Periodic Circle of Domination", "hash": "7127888968b94eb6", "src": "db2@1.60.1.70245"}
+{"id": 1237862, "field": "name", "en": "Scarlet Phalanx", "hash": "00a000cdcf578107", "src": "db2@1.60.1.70245"}
+{"id": 1237922, "field": "name", "en": "Mortar Combat", "hash": "a61ffa2e50e857df", "src": "db2@1.60.1.70245"}
+{"id": 1237938, "field": "name", "en": "Poison Bolt", "hash": "e91d12bd52a12ff6", "src": "db2@1.60.1.70245"}
+{"id": 1237938, "field": "description", "en": "Shoots poison at an enemy, inflicting Nature damage, then additional damage every $t2 sec. for $d.", "hash": "2c66ca3a5e6ed22c", "src": "db2@1.60.1.70245"}
+{"id": 1237938, "field": "aura", "en": "Deals $s2 nature damage every $t2 sec.", "hash": "47e40c07891c7912", "src": "db2@1.60.1.70245"}
+{"id": 1237939, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70245"}
+{"id": 1237939, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70245"}
+{"id": 1237948, "field": "name", "en": "Revive", "hash": "8d34a838df69bc6c", "src": "db2@1.60.1.70245"}
+{"id": 1237948, "field": "description", "en": "Brings a dead player back to life with $s1 health and $q1 mana. Cannot be cast when in combat.", "hash": "f062170165b19823", "src": "db2@1.60.1.70245"}
+{"id": 1237949, "field": "name", "en": "Revive", "hash": "8d34a838df69bc6c", "src": "db2@1.60.1.70245"}
+{"id": 1237949, "field": "description", "en": "Brings a dead player back to life with $s1 health and $q1 mana. Cannot be cast when in combat.", "hash": "f062170165b19823", "src": "db2@1.60.1.70245"}
+{"id": 1237950, "field": "name", "en": "Revive", "hash": "8d34a838df69bc6c", "src": "db2@1.60.1.70245"}
+{"id": 1237950, "field": "description", "en": "Brings a dead player back to life with $s1 health and $q1 mana. Cannot be cast when in combat.", "hash": "f062170165b19823", "src": "db2@1.60.1.70245"}
+{"id": 1237951, "field": "name", "en": "Revive", "hash": "8d34a838df69bc6c", "src": "db2@1.60.1.70245"}
+{"id": 1237951, "field": "description", "en": "Brings a dead player back to life with $s1 health and $q1 mana. Cannot be cast when in combat.", "hash": "f062170165b19823", "src": "db2@1.60.1.70245"}
+{"id": 1237976, "field": "name", "en": "Dedication", "hash": "b22ed76b2133d474", "src": "db2@1.60.1.70245"}

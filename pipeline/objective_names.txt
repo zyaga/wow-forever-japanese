@@ -31,6 +31,7 @@
 383313  # Flame of Darkshore
 383314  # Flame of Stonetalon
 383420  # Rite of Cunning
+466001  # Uthek's Draenethyst Staff
 467962  # Raani's Favorite Feather
 467963  # Shadowsong Family Signet
 468817  # Pristine Shriekling Feathers

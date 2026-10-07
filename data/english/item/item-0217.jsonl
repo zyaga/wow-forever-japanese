@@ -1,85 +1,87 @@
-{"id": 217014, "field": "name", "en": "Supply Bag", "hash": "3a936689758e521c", "src": "db2@1.60.1.70170"}
-{"id": 217017, "field": "name", "en": "Fishing Tournament!", "hash": "e241e831a8291d75", "src": "db2@1.60.1.70170"}
-{"id": 217161, "field": "name", "en": "Torn Mystical Scroll", "hash": "9d05aeb52e15b18a", "src": "db2@1.60.1.70170"}
-{"id": 217161, "field": "description", "en": "It appears to be a list of instructions of some kind, featuring the word \"soap.\"", "hash": "d90c0e356f5bbfe6", "src": "db2@1.60.1.70170"}
-{"id": 217244, "field": "name", "en": "Pattern: Crimson Silk Robe", "hash": "16ab1b3883efff36", "src": "db2@1.60.1.70170"}
-{"id": 217244, "field": "description", "en": "Teaches you how to sew a Crimson Silk Robe.", "hash": "cc0fc05fb3d36aa5", "src": "db2@1.60.1.70170"}
-{"id": 217249, "field": "name", "en": "Pattern: Earthen Silk Belt", "hash": "506f2136873eeaa8", "src": "db2@1.60.1.70170"}
-{"id": 217249, "field": "description", "en": "Teaches you how to sew an Earthen Silk Belt.", "hash": "3960c204b8d60c65", "src": "db2@1.60.1.70170"}
-{"id": 217251, "field": "name", "en": "Pattern: Crimson Silk Shoulders", "hash": "706b5495fff5966c", "src": "db2@1.60.1.70170"}
-{"id": 217251, "field": "description", "en": "Teaches you how to sew Crimson Silk Shoulders.", "hash": "ac23fc8bc56c760d", "src": "db2@1.60.1.70170"}
-{"id": 217254, "field": "name", "en": "Pattern: Boots of the Enchanter", "hash": "b218e58e05075ff7", "src": "db2@1.60.1.70170"}
-{"id": 217254, "field": "description", "en": "Teaches you how to sew Boots of the Enchanter.", "hash": "47f52ca061745b09", "src": "db2@1.60.1.70170"}
-{"id": 217258, "field": "name", "en": "Pattern: Enchanter's Cowl", "hash": "0f33cbdd24098dab", "src": "db2@1.60.1.70170"}
-{"id": 217258, "field": "description", "en": "Teaches you how to sew an Enchanter's Cowl.", "hash": "a2805daa2e5e680f", "src": "db2@1.60.1.70170"}
-{"id": 217260, "field": "name", "en": "Pattern: Big Voodoo Mask", "hash": "d4e6139e9d6a3eac", "src": "db2@1.60.1.70170"}
-{"id": 217260, "field": "description", "en": "Teaches you how to craft a Big Voodoo Mask.", "hash": "70de05483c28d11a", "src": "db2@1.60.1.70170"}
-{"id": 217262, "field": "name", "en": "Pattern: Big Voodoo Robe", "hash": "d595396a98039971", "src": "db2@1.60.1.70170"}
-{"id": 217262, "field": "description", "en": "Teaches you how to craft a Big Voodoo Robe.", "hash": "ca7e5cac0eef67d3", "src": "db2@1.60.1.70170"}
-{"id": 217264, "field": "name", "en": "Pattern: Guardian Leather Bracers", "hash": "ec3b955e194533d4", "src": "db2@1.60.1.70170"}
-{"id": 217264, "field": "description", "en": "Teaches you how to craft Guardian Leather Bracers.", "hash": "466e39c5bc9cfc5f", "src": "db2@1.60.1.70170"}
-{"id": 217266, "field": "name", "en": "Pattern: Guardian Belt", "hash": "d9653fc1229ac726", "src": "db2@1.60.1.70170"}
-{"id": 217266, "field": "description", "en": "Teaches you how to craft a Guardian Belt.", "hash": "9d151b30d95cf56c", "src": "db2@1.60.1.70170"}
-{"id": 217270, "field": "name", "en": "Turtle Scale Gloves", "hash": "cbbcef03c17544f0", "src": "db2@1.60.1.70170"}
+{"id": 217014, "field": "name", "en": "Supply Bag", "hash": "3a936689758e521c", "src": "db2@1.60.1.70245"}
+{"id": 217017, "field": "name", "en": "Fishing Tournament!", "hash": "e241e831a8291d75", "src": "db2@1.60.1.70245"}
+{"id": 217161, "field": "name", "en": "Torn Mystical Scroll", "hash": "9d05aeb52e15b18a", "src": "db2@1.60.1.70245"}
+{"id": 217161, "field": "description", "en": "It appears to be a list of instructions of some kind, featuring the word \"soap.\"", "hash": "d90c0e356f5bbfe6", "src": "db2@1.60.1.70245"}
+{"id": 217244, "field": "name", "en": "Pattern: Crimson Silk Robe", "hash": "16ab1b3883efff36", "src": "db2@1.60.1.70245"}
+{"id": 217244, "field": "description", "en": "Teaches you how to sew a Crimson Silk Robe.", "hash": "cc0fc05fb3d36aa5", "src": "db2@1.60.1.70245"}
+{"id": 217249, "field": "name", "en": "Pattern: Earthen Silk Belt", "hash": "506f2136873eeaa8", "src": "db2@1.60.1.70245"}
+{"id": 217249, "field": "description", "en": "Teaches you how to sew an Earthen Silk Belt.", "hash": "3960c204b8d60c65", "src": "db2@1.60.1.70245"}
+{"id": 217251, "field": "name", "en": "Pattern: Crimson Silk Shoulders", "hash": "706b5495fff5966c", "src": "db2@1.60.1.70245"}
+{"id": 217251, "field": "description", "en": "Teaches you how to sew Crimson Silk Shoulders.", "hash": "ac23fc8bc56c760d", "src": "db2@1.60.1.70245"}
+{"id": 217254, "field": "name", "en": "Pattern: Boots of the Enchanter", "hash": "b218e58e05075ff7", "src": "db2@1.60.1.70245"}
+{"id": 217254, "field": "description", "en": "Teaches you how to sew Boots of the Enchanter.", "hash": "47f52ca061745b09", "src": "db2@1.60.1.70245"}
+{"id": 217258, "field": "name", "en": "Pattern: Enchanter's Cowl", "hash": "0f33cbdd24098dab", "src": "db2@1.60.1.70245"}
+{"id": 217258, "field": "description", "en": "Teaches you how to sew an Enchanter's Cowl.", "hash": "a2805daa2e5e680f", "src": "db2@1.60.1.70245"}
+{"id": 217260, "field": "name", "en": "Pattern: Big Voodoo Mask", "hash": "d4e6139e9d6a3eac", "src": "db2@1.60.1.70245"}
+{"id": 217260, "field": "description", "en": "Teaches you how to craft a Big Voodoo Mask.", "hash": "70de05483c28d11a", "src": "db2@1.60.1.70245"}
+{"id": 217262, "field": "name", "en": "Pattern: Big Voodoo Robe", "hash": "d595396a98039971", "src": "db2@1.60.1.70245"}
+{"id": 217262, "field": "description", "en": "Teaches you how to craft a Big Voodoo Robe.", "hash": "ca7e5cac0eef67d3", "src": "db2@1.60.1.70245"}
+{"id": 217264, "field": "name", "en": "Pattern: Guardian Leather Bracers", "hash": "ec3b955e194533d4", "src": "db2@1.60.1.70245"}
+{"id": 217264, "field": "description", "en": "Teaches you how to craft Guardian Leather Bracers.", "hash": "466e39c5bc9cfc5f", "src": "db2@1.60.1.70245"}
+{"id": 217266, "field": "name", "en": "Pattern: Guardian Belt", "hash": "d9653fc1229ac726", "src": "db2@1.60.1.70245"}
+{"id": 217266, "field": "description", "en": "Teaches you how to craft a Guardian Belt.", "hash": "9d151b30d95cf56c", "src": "db2@1.60.1.70245"}
+{"id": 217270, "field": "name", "en": "Turtle Scale Gloves", "hash": "cbbcef03c17544f0", "src": "db2@1.60.1.70245"}
 {"id": 217270, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 217271, "field": "name", "en": "Pattern: Turtle Scale Gloves", "hash": "b77a0071ecb90d60", "src": "db2@1.60.1.70170"}
-{"id": 217271, "field": "description", "en": "Teaches you how to craft Turtle Scale Gloves.", "hash": "6915ba51f84c8ed9", "src": "db2@1.60.1.70170"}
-{"id": 217273, "field": "name", "en": "Golden Scale Gauntlets", "hash": "c0cc894275b84135", "src": "db2@1.60.1.70170"}
+{"id": 217271, "field": "name", "en": "Pattern: Turtle Scale Gloves", "hash": "b77a0071ecb90d60", "src": "db2@1.60.1.70245"}
+{"id": 217271, "field": "description", "en": "Teaches you how to craft Turtle Scale Gloves.", "hash": "6915ba51f84c8ed9", "src": "db2@1.60.1.70245"}
+{"id": 217273, "field": "name", "en": "Golden Scale Gauntlets", "hash": "c0cc894275b84135", "src": "db2@1.60.1.70245"}
 {"id": 217273, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 217274, "field": "name", "en": "Plans: Golden Scale Gauntlets", "hash": "1cf2d7eafbf9e34f", "src": "db2@1.60.1.70170"}
-{"id": 217274, "field": "description", "en": "Teaches you how to make Golden Scale Gauntlets.", "hash": "715dda3c394ef51f", "src": "db2@1.60.1.70170"}
-{"id": 217276, "field": "name", "en": "Plans: Golden Scale Boots", "hash": "2905262b1dff993f", "src": "db2@1.60.1.70170"}
-{"id": 217276, "field": "description", "en": "Teaches you how to make Golden Scale Boots.", "hash": "0a568eab6a9aca32", "src": "db2@1.60.1.70170"}
-{"id": 217278, "field": "name", "en": "Plans: Golden Scale Cuirass", "hash": "fa5cea535fd9bcf8", "src": "db2@1.60.1.70170"}
-{"id": 217278, "field": "description", "en": "Teaches you how to make a Golden Scale Cuirass.", "hash": "edc792b8b5f5380d", "src": "db2@1.60.1.70170"}
-{"id": 217280, "field": "name", "en": "Plans: Golden Scale Coif", "hash": "2f590c3be8684db2", "src": "db2@1.60.1.70170"}
-{"id": 217280, "field": "description", "en": "Teaches you how to make a Golden Scale Coif.", "hash": "9a0df3bb5333808f", "src": "db2@1.60.1.70170"}
-{"id": 217282, "field": "name", "en": "Plans: Moonsteel Broadsword", "hash": "987a43b8a6bf7276", "src": "db2@1.60.1.70170"}
-{"id": 217282, "field": "description", "en": "Teaches you how to make a Moonsteel Broadsword.", "hash": "d6cc506dd6d493df", "src": "db2@1.60.1.70170"}
-{"id": 217284, "field": "name", "en": "Plans: Golden Scale Shoulders", "hash": "ed02165af4d0e5d3", "src": "db2@1.60.1.70170"}
-{"id": 217284, "field": "description", "en": "Teaches you how to make Golden Scale Shoulders.", "hash": "e92acf9ef79617ee", "src": "db2@1.60.1.70170"}
-{"id": 217286, "field": "name", "en": "Plans: Golden Scale Leggings", "hash": "4e5001b783c7cce7", "src": "db2@1.60.1.70170"}
-{"id": 217286, "field": "description", "en": "Teaches you how to make Golden Scale Leggings.", "hash": "b852c8e6dc817cf7", "src": "db2@1.60.1.70170"}
-{"id": 217287, "field": "name", "en": "Greater Mystic Wand", "hash": "69beed59d61d9e79", "src": "db2@1.60.1.70170"}
+{"id": 217274, "field": "name", "en": "Plans: Golden Scale Gauntlets", "hash": "1cf2d7eafbf9e34f", "src": "db2@1.60.1.70245"}
+{"id": 217274, "field": "description", "en": "Teaches you how to make Golden Scale Gauntlets.", "hash": "715dda3c394ef51f", "src": "db2@1.60.1.70245"}
+{"id": 217276, "field": "name", "en": "Plans: Golden Scale Boots", "hash": "2905262b1dff993f", "src": "db2@1.60.1.70245"}
+{"id": 217276, "field": "description", "en": "Teaches you how to make Golden Scale Boots.", "hash": "0a568eab6a9aca32", "src": "db2@1.60.1.70245"}
+{"id": 217278, "field": "name", "en": "Plans: Golden Scale Cuirass", "hash": "fa5cea535fd9bcf8", "src": "db2@1.60.1.70245"}
+{"id": 217278, "field": "description", "en": "Teaches you how to make a Golden Scale Cuirass.", "hash": "edc792b8b5f5380d", "src": "db2@1.60.1.70245"}
+{"id": 217280, "field": "name", "en": "Plans: Golden Scale Coif", "hash": "2f590c3be8684db2", "src": "db2@1.60.1.70245"}
+{"id": 217280, "field": "description", "en": "Teaches you how to make a Golden Scale Coif.", "hash": "9a0df3bb5333808f", "src": "db2@1.60.1.70245"}
+{"id": 217282, "field": "name", "en": "Plans: Moonsteel Broadsword", "hash": "987a43b8a6bf7276", "src": "db2@1.60.1.70245"}
+{"id": 217282, "field": "description", "en": "Teaches you how to make a Moonsteel Broadsword.", "hash": "d6cc506dd6d493df", "src": "db2@1.60.1.70245"}
+{"id": 217284, "field": "name", "en": "Plans: Golden Scale Shoulders", "hash": "ed02165af4d0e5d3", "src": "db2@1.60.1.70245"}
+{"id": 217284, "field": "description", "en": "Teaches you how to make Golden Scale Shoulders.", "hash": "e92acf9ef79617ee", "src": "db2@1.60.1.70245"}
+{"id": 217286, "field": "name", "en": "Plans: Golden Scale Leggings", "hash": "4e5001b783c7cce7", "src": "db2@1.60.1.70245"}
+{"id": 217286, "field": "description", "en": "Teaches you how to make Golden Scale Leggings.", "hash": "b852c8e6dc817cf7", "src": "db2@1.60.1.70245"}
+{"id": 217287, "field": "name", "en": "Greater Mystic Wand", "hash": "69beed59d61d9e79", "src": "db2@1.60.1.70245"}
 {"id": 217287, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 217308, "field": "name", "en": "Enchanted Sigil: Innovation", "hash": "347591c36cf1140e", "src": "db2@1.60.1.70170"}
-{"id": 217308, "field": "description", "en": "Gain an enchanted sigil of innovation, empowering you to deal up to $s1 increased damage and healing with spells, and increasing attack power by $s2 for $d. This can only be applied outside of combat. ", "hash": "5b27e1aab5fc1b93", "src": "db2@1.60.1.70170"}
-{"id": 217314, "field": "name", "en": "Moonsight Rifle", "hash": "dc58e5e0e5d7c8dd", "src": "db2@1.60.1.70170"}
-{"id": 217315, "field": "name", "en": "Precision Bow", "hash": "42cabb5d253b1a25", "src": "db2@1.60.1.70170"}
-{"id": 217336, "field": "name", "en": "Monster - Incubus Whip Mace1H", "hash": "67de07886039cd4f", "src": "db2@1.60.1.70170"}
-{"id": 217337, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70170"}
-{"id": 217337, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70170"}
-{"id": 217338, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70170"}
-{"id": 217338, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70170"}
-{"id": 217339, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70170"}
-{"id": 217339, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70170"}
-{"id": 217345, "field": "name", "en": "Sebacious Poison", "hash": "e66ddea004437fab", "src": "db2@1.60.1.70170"}
-{"id": 217345, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, reducing the enemy's armor by $439471s1 for $439471d.\r\n\r\nSebacious Poison benefits from the Improved Expose Armor talent.", "hash": "2d0ef69d1cec968e", "src": "db2@1.60.1.70170"}
-{"id": 217346, "field": "name", "en": "Numbing Poison", "hash": "dd1af83ce6c83f73", "src": "db2@1.60.1.70170"}
-{"id": 217346, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, increasing the time between the enemy's melee attacks by $439472s1% for $439472d.", "hash": "706228c1ec280488", "src": "db2@1.60.1.70170"}
-{"id": 217347, "field": "name", "en": "Atrophic Poison", "hash": "94261ba4379297a0", "src": "db2@1.60.1.70170"}
-{"id": 217347, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, reducing the enemy's melee attack power by $439473s1 for $439473d.", "hash": "97dc5decf1f1db6f", "src": "db2@1.60.1.70170"}
-{"id": 217398, "field": "name", "en": "Lesser Arcane Elixir", "hash": "f80f15c18a53ca45", "src": "db2@1.60.1.70170"}
-{"id": 217398, "field": "description", "en": "Increases spell damage by up to $s1 for $d.", "hash": "bfd948e79e2ad268", "src": "db2@1.60.1.70170"}
-{"id": 217399, "field": "name", "en": "Recipe: Lesser Arcane Elixir", "hash": "a9141829be98c900", "src": "db2@1.60.1.70170"}
-{"id": 217399, "field": "description", "en": "Teaches you how to make a Lesser Arcane Elixir.", "hash": "b8d6c6baf61df3da", "src": "db2@1.60.1.70170"}
-{"id": 217495, "field": "name", "en": "Scroll of Cryoblast", "hash": "66cad74974c0452d", "src": "db2@1.60.1.70170"}
-{"id": 217495, "field": "description", "en": "Inflicts $?$pl>=25[$s1][${42+($pl-16)*8} to ${57+($pl-16)*8}] Frost damage in a $a1 yard radius.", "hash": "477a97294cf50aeb", "src": "db2@1.60.1.70170"}
-{"id": 217496, "field": "name", "en": "Scroll of the Blade", "hash": "c20d308bc259ef76", "src": "db2@1.60.1.70170"}
-{"id": 217496, "field": "description", "en": "Use on Hypnotic Blade to create a powerful weapon.", "hash": "0c3b5db459557ae3", "src": "db2@1.60.1.70170"}
-{"id": 217609, "field": "name", "en": "Talisman of Kazdor", "hash": "a1f8a4e4b4b64a2d", "src": "db2@1.60.1.70170"}
-{"id": 217609, "field": "description", "en": "The talisman bears a countenance of sheer malice. You avoid staring at it directly.", "hash": "25f8d1b66c7223e3", "src": "db2@1.60.1.70170"}
-{"id": 217693, "field": "name", "en": "Invisibility Potion", "hash": "c7c4fc197c0e2201", "src": "db2@1.60.1.70170"}
-{"id": 217693, "field": "description", "en": "Gives the imbiber invisibility for $d.", "hash": "3fdd20e36b8296e2", "src": "db2@1.60.1.70170"}
-{"id": 217717, "field": "name", "en": "Hollow Emblem", "hash": "868a40c29ba40494", "src": "db2@1.60.1.70170"}
-{"id": 217717, "field": "description", "en": "Imbue a hollow emblem with blood magic essence.", "hash": "9ddd6f517a1333c7", "src": "db2@1.60.1.70170"}
-{"id": 217718, "field": "name", "en": "Emblem of Blood Magic", "hash": "2f423d49cb3dc872", "src": "db2@1.60.1.70170"}
-{"id": 217719, "field": "name", "en": "Blood Magic Essence", "hash": "2248d56c7726b8ee", "src": "db2@1.60.1.70170"}
-{"id": 217719, "field": "description", "en": "Imbue a hollow emblem with blood magic essence.", "hash": "9ddd6f517a1333c7", "src": "db2@1.60.1.70170"}
-{"id": 217720, "field": "name", "en": "Offering of Flesh", "hash": "866dec8f77dce0a3", "src": "db2@1.60.1.70170"}
-{"id": 217720, "field": "description", "en": "Combine offerings of flesh and bone.", "hash": "4929551822322e27", "src": "db2@1.60.1.70170"}
-{"id": 217721, "field": "name", "en": "Offering of Bone", "hash": "3d12cfc05863e1d8", "src": "db2@1.60.1.70170"}
-{"id": 217721, "field": "description", "en": "Combine offerings of flesh and bone.", "hash": "4929551822322e27", "src": "db2@1.60.1.70170"}
-{"id": 217736, "field": "name", "en": "Rune of the Coterie", "hash": "e81f1fa2c2619456", "src": "db2@1.60.1.70170"}
-{"id": 217736, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 217737, "field": "name", "en": "Modified Talisman", "hash": "1dd0a780e5cf08c8", "src": "db2@1.60.1.70170"}
+{"id": 217308, "field": "name", "en": "Enchanted Sigil: Innovation", "hash": "347591c36cf1140e", "src": "db2@1.60.1.70245"}
+{"id": 217308, "field": "description", "en": "Gain an enchanted sigil of innovation, empowering you to deal up to $s1 increased damage and healing with spells, and increasing attack power by $s2 for $d. This can only be applied outside of combat. ", "hash": "5b27e1aab5fc1b93", "src": "db2@1.60.1.70245"}
+{"id": 217314, "field": "name", "en": "Moonsight Rifle", "hash": "dc58e5e0e5d7c8dd", "src": "db2@1.60.1.70245"}
+{"id": 217315, "field": "name", "en": "Precision Bow", "hash": "42cabb5d253b1a25", "src": "db2@1.60.1.70245"}
+{"id": 217336, "field": "name", "en": "Monster - Incubus Whip Mace1H", "hash": "67de07886039cd4f", "src": "db2@1.60.1.70245"}
+{"id": 217337, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70245"}
+{"id": 217337, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70245"}
+{"id": 217338, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70245"}
+{"id": 217338, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70245"}
+{"id": 217339, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70245"}
+{"id": 217339, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70245"}
+{"id": 217345, "field": "name", "en": "Sebacious Poison", "hash": "e66ddea004437fab", "src": "db2@1.60.1.70245"}
+{"id": 217345, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, reducing the enemy's armor by $439471s1 for $439471d.\r\n\r\nSebacious Poison benefits from the Improved Expose Armor talent.", "hash": "2d0ef69d1cec968e", "src": "db2@1.60.1.70245"}
+{"id": 217346, "field": "name", "en": "Numbing Poison", "hash": "dd1af83ce6c83f73", "src": "db2@1.60.1.70245"}
+{"id": 217346, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, increasing the time between the enemy's melee attacks by $439472s1% for $439472d.", "hash": "706228c1ec280488", "src": "db2@1.60.1.70245"}
+{"id": 217347, "field": "name", "en": "Atrophic Poison", "hash": "94261ba4379297a0", "src": "db2@1.60.1.70245"}
+{"id": 217347, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a $h% chance of poisoning the enemy, reducing the enemy's melee attack power by $439473s1 for $439473d.", "hash": "97dc5decf1f1db6f", "src": "db2@1.60.1.70245"}
+{"id": 217398, "field": "name", "en": "Lesser Arcane Elixir", "hash": "f80f15c18a53ca45", "src": "db2@1.60.1.70245"}
+{"id": 217398, "field": "description", "en": "Increases spell damage by up to $s1 for $d.", "hash": "bfd948e79e2ad268", "src": "db2@1.60.1.70245"}
+{"id": 217399, "field": "name", "en": "Recipe: Lesser Arcane Elixir", "hash": "a9141829be98c900", "src": "db2@1.60.1.70245"}
+{"id": 217399, "field": "description", "en": "Teaches you how to make a Lesser Arcane Elixir.", "hash": "b8d6c6baf61df3da", "src": "db2@1.60.1.70245"}
+{"id": 217495, "field": "name", "en": "Scroll of Cryoblast", "hash": "66cad74974c0452d", "src": "db2@1.60.1.70245"}
+{"id": 217495, "field": "description", "en": "Inflicts $?$pl>=25[$s1][${42+($pl-16)*8} to ${57+($pl-16)*8}] Frost damage in a $a1 yard radius.", "hash": "477a97294cf50aeb", "src": "db2@1.60.1.70245"}
+{"id": 217496, "field": "name", "en": "Scroll of the Blade", "hash": "c20d308bc259ef76", "src": "db2@1.60.1.70245"}
+{"id": 217496, "field": "description", "en": "Use on Hypnotic Blade to create a powerful weapon.", "hash": "0c3b5db459557ae3", "src": "db2@1.60.1.70245"}
+{"id": 217497, "field": "name", "en": "Narpas Sword", "hash": "faff7af356bd27a9", "src": "db2@1.60.1.70245"}
+{"id": 217497, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
+{"id": 217609, "field": "name", "en": "Talisman of Kazdor", "hash": "a1f8a4e4b4b64a2d", "src": "db2@1.60.1.70245"}
+{"id": 217609, "field": "description", "en": "The talisman bears a countenance of sheer malice. You avoid staring at it directly.", "hash": "25f8d1b66c7223e3", "src": "db2@1.60.1.70245"}
+{"id": 217693, "field": "name", "en": "Invisibility Potion", "hash": "c7c4fc197c0e2201", "src": "db2@1.60.1.70245"}
+{"id": 217693, "field": "description", "en": "Gives the imbiber invisibility for $d.", "hash": "3fdd20e36b8296e2", "src": "db2@1.60.1.70245"}
+{"id": 217717, "field": "name", "en": "Hollow Emblem", "hash": "868a40c29ba40494", "src": "db2@1.60.1.70245"}
+{"id": 217717, "field": "description", "en": "Imbue a hollow emblem with blood magic essence.", "hash": "9ddd6f517a1333c7", "src": "db2@1.60.1.70245"}
+{"id": 217718, "field": "name", "en": "Emblem of Blood Magic", "hash": "2f423d49cb3dc872", "src": "db2@1.60.1.70245"}
+{"id": 217719, "field": "name", "en": "Blood Magic Essence", "hash": "2248d56c7726b8ee", "src": "db2@1.60.1.70245"}
+{"id": 217719, "field": "description", "en": "Imbue a hollow emblem with blood magic essence.", "hash": "9ddd6f517a1333c7", "src": "db2@1.60.1.70245"}
+{"id": 217720, "field": "name", "en": "Offering of Flesh", "hash": "866dec8f77dce0a3", "src": "db2@1.60.1.70245"}
+{"id": 217720, "field": "description", "en": "Combine offerings of flesh and bone.", "hash": "4929551822322e27", "src": "db2@1.60.1.70245"}
+{"id": 217721, "field": "name", "en": "Offering of Bone", "hash": "3d12cfc05863e1d8", "src": "db2@1.60.1.70245"}
+{"id": 217721, "field": "description", "en": "Combine offerings of flesh and bone.", "hash": "4929551822322e27", "src": "db2@1.60.1.70245"}
+{"id": 217736, "field": "name", "en": "Rune of the Coterie", "hash": "e81f1fa2c2619456", "src": "db2@1.60.1.70245"}
+{"id": 217736, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 217737, "field": "name", "en": "Modified Talisman", "hash": "1dd0a780e5cf08c8", "src": "db2@1.60.1.70245"}

@@ -1,11 +1,11 @@
-{"id": 224806, "field": "name", "en": "Legion Portal Tuner", "hash": "b1eaa0b12650aab1", "src": "db2@1.60.1.70170"}
-{"id": 224806, "field": "description", "en": "Connect a Fel Scar or Rift to a world deep in Legion space. May have unpredictable and dangerous effects.", "hash": "2c3e94e38f467951", "src": "db2@1.60.1.70170"}
-{"id": 224836, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70170"}
-{"id": 224848, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70170"}
-{"id": 224849, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70170"}
-{"id": 224850, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70170"}
-{"id": 224851, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70170"}
-{"id": 224893, "field": "name", "en": "Overcharged Portal Tuner", "hash": "b300c5cc134d75ab", "src": "db2@1.60.1.70170"}
-{"id": 224893, "field": "description", "en": "Connect a Fel Scar or Rift to a world deep in Legion space. May have unpredictable and dangerous effects.", "hash": "2c3e94e38f467951", "src": "db2@1.60.1.70170"}
-{"id": 224912, "field": "name", "en": "Portal Tuner Tuner", "hash": "d923cab53de5a4bc", "src": "db2@1.60.1.70170"}
-{"id": 224912, "field": "description", "en": "Overcharge a Legion Portal Tuner.", "hash": "8db069f9041e0c08", "src": "db2@1.60.1.70170"}
+{"id": 224806, "field": "name", "en": "Legion Portal Tuner", "hash": "b1eaa0b12650aab1", "src": "db2@1.60.1.70245"}
+{"id": 224806, "field": "description", "en": "Connect a Fel Scar or Rift to a world deep in Legion space. May have unpredictable and dangerous effects.", "hash": "2c3e94e38f467951", "src": "db2@1.60.1.70245"}
+{"id": 224836, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70245"}
+{"id": 224848, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70245"}
+{"id": 224849, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70245"}
+{"id": 224850, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70245"}
+{"id": 224851, "field": "name", "en": "Otherworldly Treasure", "hash": "d0e714d0f625e0f6", "src": "db2@1.60.1.70245"}
+{"id": 224893, "field": "name", "en": "Overcharged Portal Tuner", "hash": "b300c5cc134d75ab", "src": "db2@1.60.1.70245"}
+{"id": 224893, "field": "description", "en": "Connect a Fel Scar or Rift to a world deep in Legion space. May have unpredictable and dangerous effects.", "hash": "2c3e94e38f467951", "src": "db2@1.60.1.70245"}
+{"id": 224912, "field": "name", "en": "Portal Tuner Tuner", "hash": "d923cab53de5a4bc", "src": "db2@1.60.1.70245"}
+{"id": 224912, "field": "description", "en": "Overcharge a Legion Portal Tuner.", "hash": "8db069f9041e0c08", "src": "db2@1.60.1.70245"}

@@ -42,6 +42,7 @@ Data\Quest\Quest_0082.lua
 Data\Quest\Quest_0084.lua
 Data\Quest\Quest_0086.lua
 Data\Quest\Quest_0087.lua
+Data\Quest\Quest_0088.lua
 Data\Quest\Quest_0089.lua
 Data\Quest\Quest_0090.lua
 Data\Quest\Quest_0091.lua
@@ -440,6 +441,8 @@ Data\Objective\Objective_0381.lua
 Data\Objective\Objective_0382.lua
 Data\Objective\Objective_0383.lua
 Data\Objective\Objective_0384.lua
+Data\Objective\Objective_0445.lua
+Data\Objective\Objective_0447.lua
 Data\Objective\Objective_0448.lua
 Data\Objective\Objective_0461.lua
 Data\Objective\Objective_0462.lua
@@ -471,7 +474,9 @@ Data\Area\Area_0006.lua
 Data\Area\Area_0007.lua
 Data\Area\Area_0008.lua
 Data\Area\Area_0009.lua
+Data\Area\Area_0087.lua
 Data\Area\Area_0092.lua
+Data\Area\Area_0093.lua
 Data\Area\Area_0094.lua
 Data\Area\Area_0095.lua
 Data\Area\Area_0096.lua
@@ -1544,6 +1549,7 @@ Data\Reading\Reading_quest_0082.lua
 Data\Reading\Reading_quest_0084.lua
 Data\Reading\Reading_quest_0086.lua
 Data\Reading\Reading_quest_0087.lua
+Data\Reading\Reading_quest_0088.lua
 Data\Reading\Reading_quest_0089.lua
 Data\Reading\Reading_quest_0090.lua
 Data\Reading\Reading_quest_0091.lua
@@ -1720,6 +1726,7 @@ Data\Gloss\Gloss_0135.lua
 Data\Gloss\Gloss_0136.lua
 Data\Gloss\Gloss_0137.lua
 Data\Gloss\Gloss_0138.lua
+Data\Gloss\Gloss_0139.lua
 # >>>
 Core\Lookup.lua
 Core\Readings.lua

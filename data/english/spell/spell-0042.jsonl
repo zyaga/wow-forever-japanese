@@ -1,6 +1,6 @@
-{"id": 42596, "field": "name", "en": "Squashling", "hash": "3d6913241b8fc0ec", "src": "db2@1.60.1.70170"}
-{"id": 42598, "field": "name", "en": "Pet Submerge", "hash": "94d2158e36585d09", "src": "db2@1.60.1.70170"}
-{"id": 42609, "field": "name", "en": "Sinister Squashling", "hash": "e41d5ac60a613ad2", "src": "db2@1.60.1.70170"}
-{"id": 42609, "field": "description", "en": "Right Click to summon and dismiss your sinister squashling.", "hash": "53b9546c00fefa8b", "src": "db2@1.60.1.70170"}
-{"id": 42896, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70170"}
-{"id": 42896, "field": "description", "en": "Blasts the target with energy, dealing $s1 Arcane damage.  Each time you cast Arcane Blast, the damage of all Arcane spells is increased by $36032s1% and mana cost of Arcane Blast is increased by $36032s2%.  Effect stacks up to $36032u times and lasts $36032d or until any Arcane damage spell except Arcane Blast is cast.", "hash": "b0e80e08c18f1b14", "src": "db2@1.60.1.70170"}
+{"id": 42596, "field": "name", "en": "Squashling", "hash": "3d6913241b8fc0ec", "src": "db2@1.60.1.70245"}
+{"id": 42598, "field": "name", "en": "Pet Submerge", "hash": "94d2158e36585d09", "src": "db2@1.60.1.70245"}
+{"id": 42609, "field": "name", "en": "Sinister Squashling", "hash": "e41d5ac60a613ad2", "src": "db2@1.60.1.70245"}
+{"id": 42609, "field": "description", "en": "Right Click to summon and dismiss your sinister squashling.", "hash": "53b9546c00fefa8b", "src": "db2@1.60.1.70245"}
+{"id": 42896, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70245"}
+{"id": 42896, "field": "description", "en": "Blasts the target with energy, dealing $s1 Arcane damage.  Each time you cast Arcane Blast, the damage of all Arcane spells is increased by $36032s1% and mana cost of Arcane Blast is increased by $36032s2%.  Effect stacks up to $36032u times and lasts $36032d or until any Arcane damage spell except Arcane Blast is cast.", "hash": "b0e80e08c18f1b14", "src": "db2@1.60.1.70245"}

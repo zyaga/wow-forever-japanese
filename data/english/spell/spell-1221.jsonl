@@ -1,124 +1,124 @@
-{"id": 1221012, "field": "name", "en": "Creepy Censor Sensors", "hash": "0d18b2bcdf65fd0e", "src": "db2@1.60.1.70170"}
-{"id": 1221026, "field": "name", "en": "(DNT) Player Detection Periodic Trigger", "hash": "264aa662f6a60a1f", "src": "db2@1.60.1.70170"}
-{"id": 1221027, "field": "name", "en": "(DNT) Player Detection Despawn", "hash": "cef1cca5e1687ffd", "src": "db2@1.60.1.70170"}
-{"id": 1221051, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70170"}
-{"id": 1221052, "field": "name", "en": "Finkelbat Death", "hash": "68b446581d2c692d", "src": "db2@1.60.1.70170"}
-{"id": 1221052, "field": "description", "en": "Instantly Kills the target.  I hope you feel good about yourself now.....", "hash": "a4f7595fc7f219d8", "src": "db2@1.60.1.70170"}
-{"id": 1221058, "field": "name", "en": "(DNT) Chandelier Aura", "hash": "2831f7611120314c", "src": "db2@1.60.1.70170"}
-{"id": 1221065, "field": "name", "en": "[DNT] Ritual", "hash": "a3dc4e57d4f55acc", "src": "db2@1.60.1.70170"}
-{"id": 1221069, "field": "name", "en": "[DNT] Shadow Channeling", "hash": "37674ec7c36c2a71", "src": "db2@1.60.1.70170"}
-{"id": 1221073, "field": "name", "en": "Torch", "hash": "d17d85f5399f23be", "src": "db2@1.60.1.70170"}
-{"id": 1221073, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70170"}
-{"id": 1221075, "field": "name", "en": "Brandish", "hash": "285e6185ed8b9b2f", "src": "db2@1.60.1.70170"}
-{"id": 1221075, "field": "description", "en": "Hold up the Enchanted Torch and attempt to dispel the darkness near Karazhan Crypts.", "hash": "c521877515c15cf6", "src": "db2@1.60.1.70170"}
-{"id": 1221076, "field": "name", "en": "Respite", "hash": "0e35b2f737402371", "src": "db2@1.60.1.70170"}
-{"id": 1221076, "field": "description", "en": "The darkness has been dispelled, for now...", "hash": "4d01d0e0df84d4ad", "src": "db2@1.60.1.70170"}
-{"id": 1221076, "field": "aura", "en": "The darkness has been dispelled, for now...", "hash": "4d01d0e0df84d4ad", "src": "db2@1.60.1.70170"}
-{"id": 1221095, "field": "name", "en": "Water Walk", "hash": "5a0a8baf20a64c6e", "src": "db2@1.60.1.70170"}
-{"id": 1221134, "field": "name", "en": "Torment's Illusion", "hash": "db18f44dc9646c6d", "src": "db2@1.60.1.70170"}
-{"id": 1221135, "field": "name", "en": "Torment's Illusion", "hash": "db18f44dc9646c6d", "src": "db2@1.60.1.70170"}
-{"id": 1221136, "field": "name", "en": "Torment's Illusion", "hash": "db18f44dc9646c6d", "src": "db2@1.60.1.70170"}
-{"id": 1221137, "field": "name", "en": "[DNT] Spider Webs", "hash": "7642067584a4c4cd", "src": "db2@1.60.1.70170"}
-{"id": 1221195, "field": "name", "en": "Spawn Spiderling", "hash": "253c6f7b371f5340", "src": "db2@1.60.1.70170"}
-{"id": 1221212, "field": "name", "en": "[DNT] Ignore Fog of War Aura - Small", "hash": "7d08fee19a419880", "src": "db2@1.60.1.70170"}
-{"id": 1221213, "field": "name", "en": "[DNT] Ignore Fog of War Aura - Medium", "hash": "8a791ad440e20706", "src": "db2@1.60.1.70170"}
-{"id": 1221214, "field": "name", "en": "[DNT] Ignore Fog of War Aura - Large", "hash": "0091d06924748c3f", "src": "db2@1.60.1.70170"}
-{"id": 1221215, "field": "name", "en": "Within Light", "hash": "490df003c34a8e01", "src": "db2@1.60.1.70170"}
-{"id": 1221216, "field": "name", "en": "Within Light", "hash": "490df003c34a8e01", "src": "db2@1.60.1.70170"}
-{"id": 1221217, "field": "name", "en": "Within Light", "hash": "490df003c34a8e01", "src": "db2@1.60.1.70170"}
-{"id": 1221278, "field": "name", "en": "Oppressive Darkness", "hash": "608496d20f15b791", "src": "db2@1.60.1.70170"}
-{"id": 1221278, "field": "description", "en": "This all feels wrong. You're out of space. Out of time.", "hash": "0f95f18f4c55c21c", "src": "db2@1.60.1.70170"}
-{"id": 1221278, "field": "aura", "en": "This all feels wrong. You're out of space. Out of time.", "hash": "0f95f18f4c55c21c", "src": "db2@1.60.1.70170"}
-{"id": 1221287, "field": "name", "en": "Creeping Malison Spell", "hash": "58793b04e7c05e14", "src": "db2@1.60.1.70170"}
-{"id": 1221309, "field": "name", "en": "Scarlet Insignia", "hash": "c567ff370f8e9d99", "src": "db2@1.60.1.70170"}
-{"id": 1221309, "field": "description", "en": "Don the insignia of the Scarlet Crusade.  While wearing $M1 pieces of the crafted Scarlet Military set or the Tabard of the Scarlet Enclave, your disguise will fool many crusaders in New Avalon.", "hash": "f7e8edf2a2311ea1", "src": "db2@1.60.1.70170"}
-{"id": 1221309, "field": "aura", "en": "Wearing an insignia of the Scarlet Crusade.", "hash": "41ef629aa8ae9243", "src": "db2@1.60.1.70170"}
-{"id": 1221312, "field": "name", "en": "Leave - DNT", "hash": "24046cd4f1b3b7fe", "src": "db2@1.60.1.70170"}
-{"id": 1221322, "field": "name", "en": "(DNT) Bubble Visual", "hash": "e57aaa5fa45353dd", "src": "db2@1.60.1.70170"}
-{"id": 1221325, "field": "name", "en": "Burning", "hash": "697ceb14fcb64b22", "src": "db2@1.60.1.70170"}
-{"id": 1221325, "field": "aura", "en": "Weakened by flames.\r\n\r\nDamage taken increased by $s1%.", "hash": "8b19059d5f8ef0d9", "src": "db2@1.60.1.70170"}
-{"id": 1221327, "field": "name", "en": "Summon Spiderlings", "hash": "1f558b4442c7fa32", "src": "db2@1.60.1.70170"}
-{"id": 1221328, "field": "name", "en": "Summon Spiderlings", "hash": "1f558b4442c7fa32", "src": "db2@1.60.1.70170"}
-{"id": 1221329, "field": "name", "en": "Burning Ichor", "hash": "71f51387a1136108", "src": "db2@1.60.1.70170"}
-{"id": 1221329, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70170"}
-{"id": 1221330, "field": "name", "en": "Burning Ichor", "hash": "71f51387a1136108", "src": "db2@1.60.1.70170"}
-{"id": 1221330, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70170"}
-{"id": 1221331, "field": "name", "en": "[DNT] Aprentice Death", "hash": "ac55bb001adf4839", "src": "db2@1.60.1.70170"}
-{"id": 1221332, "field": "name", "en": "Burning Ichor", "hash": "71f51387a1136108", "src": "db2@1.60.1.70170"}
-{"id": 1221332, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70170"}
-{"id": 1221336, "field": "name", "en": "(DNT) Force Drowned Emote", "hash": "95034d18a92126cf", "src": "db2@1.60.1.70170"}
-{"id": 1221337, "field": "name", "en": "Pop-Up Shrub", "hash": "94b6f3c87910812b", "src": "db2@1.60.1.70170"}
-{"id": 1221337, "field": "description", "en": "Deploy an emergency hiding spot. Most enemies will be less likely to notice you while you stand near it. Observant foes may not be so easily fooled.\r\n\r\nCannot be cast in combat.", "hash": "0cd5325acd88e60b", "src": "db2@1.60.1.70170"}
-{"id": 1221341, "field": "name", "en": "Poorly Camouflaged", "hash": "44c7a0e4c23c4d92", "src": "db2@1.60.1.70170"}
-{"id": 1221341, "field": "description", "en": "$@spelldesc1221337", "hash": "839760fc224c4edb", "src": "db2@1.60.1.70170"}
-{"id": 1221341, "field": "aura", "en": "Stealthed while you remain close to your hiding spot.", "hash": "4b9bb363c4e28f7b", "src": "db2@1.60.1.70170"}
-{"id": 1221342, "field": "name", "en": "(DNT) Within Light Impact Visual", "hash": "f3363ccf8fc9a8b0", "src": "db2@1.60.1.70170"}
-{"id": 1221363, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70170"}
-{"id": 1221379, "field": "name", "en": "Subjugated", "hash": "1aa0b409e7853559", "src": "db2@1.60.1.70170"}
-{"id": 1221379, "field": "description", "en": "Subjugates the target demon, up to level $m1, forcing it to do your bidding.  While subjugated, the time between the demon's attacks is increased by $s2% and its casting speed is slowed by $s3%.  Lasts up to $d.  If you repeatedly subjugate the same demon, it will become more difficult to control with each attempt.", "hash": "93ce24f8693c7fe0", "src": "db2@1.60.1.70170"}
-{"id": 1221379, "field": "aura", "en": "Enslaved.", "hash": "b260b47a5066b27c", "src": "db2@1.60.1.70170"}
-{"id": 1221404, "field": "name", "en": "Enchanted Flare", "hash": "d1ef74f80d32e455", "src": "db2@1.60.1.70170"}
-{"id": 1221404, "field": "description", "en": "Exposes all hidden and invisible enemies within $a1 yards of the targeted area, and staves off magical darkness for $d.", "hash": "dfef21a94b45affb", "src": "db2@1.60.1.70170"}
-{"id": 1221404, "field": "aura", "en": "Hidden and invisible units are revealed.", "hash": "e485f4e97af5601f", "src": "db2@1.60.1.70170"}
-{"id": 1221416, "field": "name", "en": "Enchanted Flare", "hash": "d1ef74f80d32e455", "src": "db2@1.60.1.70170"}
-{"id": 1221416, "field": "description", "en": "Exposes all hidden and invisible enemies within $a1 yards of the targeted area, and staves off magical darkness for $d.", "hash": "dfef21a94b45affb", "src": "db2@1.60.1.70170"}
-{"id": 1221416, "field": "aura", "en": "Hidden and invisible units are revealed.", "hash": "e485f4e97af5601f", "src": "db2@1.60.1.70170"}
-{"id": 1221420, "field": "name", "en": "[DNT] Skeleton Sleep Rise", "hash": "7aff21ea295fbbda", "src": "db2@1.60.1.70170"}
-{"id": 1221421, "field": "name", "en": "Mind Vision", "hash": "48d7e0df864c1457", "src": "db2@1.60.1.70170"}
-{"id": 1221421, "field": "description", "en": "Allows the caster to see through the target's eyes for $d.  Will not work if the target is in another instance or on another continent.", "hash": "ba19a81996966cf8", "src": "db2@1.60.1.70170"}
-{"id": 1221421, "field": "aura", "en": "Sight granted through target's eyes.", "hash": "87c06723d74f2d51", "src": "db2@1.60.1.70170"}
-{"id": 1221422, "field": "name", "en": "Mind Vision", "hash": "48d7e0df864c1457", "src": "db2@1.60.1.70170"}
-{"id": 1221422, "field": "description", "en": "Allows the caster to see through the target's eyes for $d.  Will not work if the target is in another instance or on another continent.", "hash": "ba19a81996966cf8", "src": "db2@1.60.1.70170"}
-{"id": 1221422, "field": "aura", "en": "Sight granted through target's eyes.", "hash": "87c06723d74f2d51", "src": "db2@1.60.1.70170"}
-{"id": 1221427, "field": "name", "en": "Torment's Illusion", "hash": "db18f44dc9646c6d", "src": "db2@1.60.1.70170"}
-{"id": 1221433, "field": "name", "en": "[DNT] Shadow Channeling 2", "hash": "fc40331647a7e794", "src": "db2@1.60.1.70170"}
-{"id": 1221448, "field": "name", "en": "Empower Military Quarter", "hash": "89e37297adfbbd21", "src": "db2@1.60.1.70170"}
-{"id": 1221451, "field": "name", "en": "Empower Military Quarter", "hash": "89e37297adfbbd21", "src": "db2@1.60.1.70170"}
-{"id": 1221453, "field": "name", "en": "[DNT] Spawn", "hash": "7186451f665967b2", "src": "db2@1.60.1.70170"}
-{"id": 1221455, "field": "name", "en": "Empower Construct Quarter", "hash": "c2453f54d1af3b85", "src": "db2@1.60.1.70170"}
-{"id": 1221456, "field": "name", "en": "Empower Construct Quarter", "hash": "c2453f54d1af3b85", "src": "db2@1.60.1.70170"}
-{"id": 1221458, "field": "name", "en": "[DNT] Warden Light", "hash": "166d2aa0c65300b2", "src": "db2@1.60.1.70170"}
-{"id": 1221464, "field": "name", "en": "Empower Arachnid Quarter", "hash": "5982887776edc08d", "src": "db2@1.60.1.70170"}
-{"id": 1221465, "field": "name", "en": "Empower Arachnid Quarter", "hash": "5982887776edc08d", "src": "db2@1.60.1.70170"}
-{"id": 1221466, "field": "name", "en": "Transformation", "hash": "f760ecd969461a04", "src": "db2@1.60.1.70170"}
-{"id": 1221467, "field": "name", "en": "Transformation", "hash": "f760ecd969461a04", "src": "db2@1.60.1.70170"}
-{"id": 1221468, "field": "name", "en": "Transformation", "hash": "f760ecd969461a04", "src": "db2@1.60.1.70170"}
-{"id": 1221469, "field": "name", "en": "Empower Plague Quarter", "hash": "9172a845cb903f0e", "src": "db2@1.60.1.70170"}
-{"id": 1221470, "field": "name", "en": "Empower Plague Quarter", "hash": "9172a845cb903f0e", "src": "db2@1.60.1.70170"}
-{"id": 1221507, "field": "name", "en": "(DNT) Naxx Orbs Chain Passive", "hash": "973648a4613c7271", "src": "db2@1.60.1.70170"}
-{"id": 1221571, "field": "name", "en": "Frightening Lore", "hash": "88287c1c085d74ef", "src": "db2@1.60.1.70170"}
-{"id": 1221571, "field": "description", "en": "Strikes fear in an enemy, causing it to flee in terror for $d. Only 1 target can be feared at a time.", "hash": "790d3c3066703ee4", "src": "db2@1.60.1.70170"}
-{"id": 1221571, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70170"}
-{"id": 1221575, "field": "name", "en": "Summoning", "hash": "5db0bc8c6a1a7cf2", "src": "db2@1.60.1.70170"}
-{"id": 1221576, "field": "name", "en": "Demonic Frenzy", "hash": "4cbcf0e0ccbec173", "src": "db2@1.60.1.70170"}
-{"id": 1221577, "field": "name", "en": "Doom", "hash": "0939e74d485005fe", "src": "db2@1.60.1.70170"}
-{"id": 1221577, "field": "aura", "en": "$s1 shadow damage every $t1 seconds.", "hash": "16bacf675e2f6541", "src": "db2@1.60.1.70170"}
-{"id": 1221578, "field": "name", "en": "Mark of the Master", "hash": "18eafe5896f8b461", "src": "db2@1.60.1.70170"}
-{"id": 1221578, "field": "aura", "en": "Attack and casting speed increased by 25%", "hash": "99c39caded355f6c", "src": "db2@1.60.1.70170"}
-{"id": 1221579, "field": "name", "en": "Super Invis", "hash": "785bcba47ffacfc1", "src": "db2@1.60.1.70170"}
-{"id": 1221580, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70170"}
-{"id": 1221581, "field": "name", "en": "[DNT] Animate Book Open", "hash": "c32e791264b3a97c", "src": "db2@1.60.1.70170"}
-{"id": 1221582, "field": "name", "en": "[DNT] Animate Book Open", "hash": "c32e791264b3a97c", "src": "db2@1.60.1.70170"}
-{"id": 1221583, "field": "name", "en": "[DNT] Kharon Light", "hash": "a661cfc49d1fdbd5", "src": "db2@1.60.1.70170"}
-{"id": 1221584, "field": "name", "en": "Mysterious Sword", "hash": "5847e9604a92da12", "src": "db2@1.60.1.70170"}
-{"id": 1221585, "field": "name", "en": "[DNT] Relic 1 Activated", "hash": "ab5ff79c7eba8c6d", "src": "db2@1.60.1.70170"}
-{"id": 1221586, "field": "name", "en": "Mysterious Scythe", "hash": "cf11bf3477290ff8", "src": "db2@1.60.1.70170"}
-{"id": 1221587, "field": "name", "en": "[DNT] Relic 2 Activated", "hash": "7f1b9aae42055ef2", "src": "db2@1.60.1.70170"}
-{"id": 1221588, "field": "name", "en": "Mysterious Staff", "hash": "57dd4fef6ac5cadb", "src": "db2@1.60.1.70170"}
-{"id": 1221589, "field": "name", "en": "[DNT] Relic 3 Activated", "hash": "52d73dc005503177", "src": "db2@1.60.1.70170"}
-{"id": 1221731, "field": "name", "en": "Burning Webs", "hash": "8d7ef664b29badee", "src": "db2@1.60.1.70170"}
-{"id": 1221731, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70170"}
-{"id": 1221732, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70170"}
-{"id": 1221750, "field": "name", "en": "Mimic Chomp", "hash": "1f558b12093ca97b", "src": "db2@1.60.1.70170"}
-{"id": 1221762, "field": "name", "en": "Mimic Chomp", "hash": "1f558b12093ca97b", "src": "db2@1.60.1.70170"}
-{"id": 1221766, "field": "name", "en": "Mimic Chomp", "hash": "1f558b12093ca97b", "src": "db2@1.60.1.70170"}
-{"id": 1221782, "field": "name", "en": "Mimic Chomp", "hash": "1f558b12093ca97b", "src": "db2@1.60.1.70170"}
-{"id": 1221793, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70170"}
-{"id": 1221794, "field": "name", "en": "Time Step", "hash": "98fb91c8bd3d3d5c", "src": "db2@1.60.1.70170"}
-{"id": 1221795, "field": "name", "en": "[DNT] Blossoming", "hash": "ab6e2f0f4a9ab495", "src": "db2@1.60.1.70170"}
-{"id": 1221796, "field": "name", "en": "Blossoming Starlight", "hash": "36ba8417b107361e", "src": "db2@1.60.1.70170"}
-{"id": 1221797, "field": "name", "en": "Within Starlight", "hash": "97f1f79308eb9f9c", "src": "db2@1.60.1.70170"}
-{"id": 1221797, "field": "aura", "en": "Underneath blossoming starlight a gleam of the lunar illuminates amongst the shadows.", "hash": "6d1e78e55297a853", "src": "db2@1.60.1.70170"}
-{"id": 1221798, "field": "name", "en": "Mending", "hash": "2d57fee58fda8c9b", "src": "db2@1.60.1.70170"}
-{"id": 1221799, "field": "name", "en": "Boulder Destroy", "hash": "949a28ea6fffbfef", "src": "db2@1.60.1.70170"}
-{"id": 1221995, "field": "name", "en": "Spawn Spiderling", "hash": "253c6f7b371f5340", "src": "db2@1.60.1.70170"}
+{"id": 1221012, "field": "name", "en": "Creepy Censor Sensors", "hash": "0d18b2bcdf65fd0e", "src": "db2@1.60.1.70245"}
+{"id": 1221026, "field": "name", "en": "(DNT) Player Detection Periodic Trigger", "hash": "264aa662f6a60a1f", "src": "db2@1.60.1.70245"}
+{"id": 1221027, "field": "name", "en": "(DNT) Player Detection Despawn", "hash": "cef1cca5e1687ffd", "src": "db2@1.60.1.70245"}
+{"id": 1221051, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70245"}
+{"id": 1221052, "field": "name", "en": "Finkelbat Death", "hash": "68b446581d2c692d", "src": "db2@1.60.1.70245"}
+{"id": 1221052, "field": "description", "en": "Instantly Kills the target.  I hope you feel good about yourself now.....", "hash": "a4f7595fc7f219d8", "src": "db2@1.60.1.70245"}
+{"id": 1221058, "field": "name", "en": "(DNT) Chandelier Aura", "hash": "2831f7611120314c", "src": "db2@1.60.1.70245"}
+{"id": 1221065, "field": "name", "en": "[DNT] Ritual", "hash": "a3dc4e57d4f55acc", "src": "db2@1.60.1.70245"}
+{"id": 1221069, "field": "name", "en": "[DNT] Shadow Channeling", "hash": "37674ec7c36c2a71", "src": "db2@1.60.1.70245"}
+{"id": 1221073, "field": "name", "en": "Torch", "hash": "d17d85f5399f23be", "src": "db2@1.60.1.70245"}
+{"id": 1221073, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70245"}
+{"id": 1221075, "field": "name", "en": "Brandish", "hash": "285e6185ed8b9b2f", "src": "db2@1.60.1.70245"}
+{"id": 1221075, "field": "description", "en": "Hold up the Enchanted Torch and attempt to dispel the darkness near Karazhan Crypts.", "hash": "c521877515c15cf6", "src": "db2@1.60.1.70245"}
+{"id": 1221076, "field": "name", "en": "Respite", "hash": "0e35b2f737402371", "src": "db2@1.60.1.70245"}
+{"id": 1221076, "field": "description", "en": "The darkness has been dispelled, for now...", "hash": "4d01d0e0df84d4ad", "src": "db2@1.60.1.70245"}
+{"id": 1221076, "field": "aura", "en": "The darkness has been dispelled, for now...", "hash": "4d01d0e0df84d4ad", "src": "db2@1.60.1.70245"}
+{"id": 1221095, "field": "name", "en": "Water Walk", "hash": "5a0a8baf20a64c6e", "src": "db2@1.60.1.70245"}
+{"id": 1221134, "field": "name", "en": "Torment's Illusion", "hash": "db18f44dc9646c6d", "src": "db2@1.60.1.70245"}
+{"id": 1221135, "field": "name", "en": "Torment's Illusion", "hash": "db18f44dc9646c6d", "src": "db2@1.60.1.70245"}
+{"id": 1221136, "field": "name", "en": "Torment's Illusion", "hash": "db18f44dc9646c6d", "src": "db2@1.60.1.70245"}
+{"id": 1221137, "field": "name", "en": "[DNT] Spider Webs", "hash": "7642067584a4c4cd", "src": "db2@1.60.1.70245"}
+{"id": 1221195, "field": "name", "en": "Spawn Spiderling", "hash": "253c6f7b371f5340", "src": "db2@1.60.1.70245"}
+{"id": 1221212, "field": "name", "en": "[DNT] Ignore Fog of War Aura - Small", "hash": "7d08fee19a419880", "src": "db2@1.60.1.70245"}
+{"id": 1221213, "field": "name", "en": "[DNT] Ignore Fog of War Aura - Medium", "hash": "8a791ad440e20706", "src": "db2@1.60.1.70245"}
+{"id": 1221214, "field": "name", "en": "[DNT] Ignore Fog of War Aura - Large", "hash": "0091d06924748c3f", "src": "db2@1.60.1.70245"}
+{"id": 1221215, "field": "name", "en": "Within Light", "hash": "490df003c34a8e01", "src": "db2@1.60.1.70245"}
+{"id": 1221216, "field": "name", "en": "Within Light", "hash": "490df003c34a8e01", "src": "db2@1.60.1.70245"}
+{"id": 1221217, "field": "name", "en": "Within Light", "hash": "490df003c34a8e01", "src": "db2@1.60.1.70245"}
+{"id": 1221278, "field": "name", "en": "Oppressive Darkness", "hash": "608496d20f15b791", "src": "db2@1.60.1.70245"}
+{"id": 1221278, "field": "description", "en": "This all feels wrong. You're out of space. Out of time.", "hash": "0f95f18f4c55c21c", "src": "db2@1.60.1.70245"}
+{"id": 1221278, "field": "aura", "en": "This all feels wrong. You're out of space. Out of time.", "hash": "0f95f18f4c55c21c", "src": "db2@1.60.1.70245"}
+{"id": 1221287, "field": "name", "en": "Creeping Malison Spell", "hash": "58793b04e7c05e14", "src": "db2@1.60.1.70245"}
+{"id": 1221309, "field": "name", "en": "Scarlet Insignia", "hash": "c567ff370f8e9d99", "src": "db2@1.60.1.70245"}
+{"id": 1221309, "field": "description", "en": "Don the insignia of the Scarlet Crusade.  While wearing $M1 pieces of the crafted Scarlet Military set or the Tabard of the Scarlet Enclave, your disguise will fool many crusaders in New Avalon.", "hash": "f7e8edf2a2311ea1", "src": "db2@1.60.1.70245"}
+{"id": 1221309, "field": "aura", "en": "Wearing an insignia of the Scarlet Crusade.", "hash": "41ef629aa8ae9243", "src": "db2@1.60.1.70245"}
+{"id": 1221312, "field": "name", "en": "Leave - DNT", "hash": "24046cd4f1b3b7fe", "src": "db2@1.60.1.70245"}
+{"id": 1221322, "field": "name", "en": "(DNT) Bubble Visual", "hash": "e57aaa5fa45353dd", "src": "db2@1.60.1.70245"}
+{"id": 1221325, "field": "name", "en": "Burning", "hash": "697ceb14fcb64b22", "src": "db2@1.60.1.70245"}
+{"id": 1221325, "field": "aura", "en": "Weakened by flames.\r\n\r\nDamage taken increased by $s1%.", "hash": "8b19059d5f8ef0d9", "src": "db2@1.60.1.70245"}
+{"id": 1221327, "field": "name", "en": "Summon Spiderlings", "hash": "1f558b4442c7fa32", "src": "db2@1.60.1.70245"}
+{"id": 1221328, "field": "name", "en": "Summon Spiderlings", "hash": "1f558b4442c7fa32", "src": "db2@1.60.1.70245"}
+{"id": 1221329, "field": "name", "en": "Burning Ichor", "hash": "71f51387a1136108", "src": "db2@1.60.1.70245"}
+{"id": 1221329, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70245"}
+{"id": 1221330, "field": "name", "en": "Burning Ichor", "hash": "71f51387a1136108", "src": "db2@1.60.1.70245"}
+{"id": 1221330, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70245"}
+{"id": 1221331, "field": "name", "en": "[DNT] Aprentice Death", "hash": "ac55bb001adf4839", "src": "db2@1.60.1.70245"}
+{"id": 1221332, "field": "name", "en": "Burning Ichor", "hash": "71f51387a1136108", "src": "db2@1.60.1.70245"}
+{"id": 1221332, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70245"}
+{"id": 1221336, "field": "name", "en": "(DNT) Force Drowned Emote", "hash": "95034d18a92126cf", "src": "db2@1.60.1.70245"}
+{"id": 1221337, "field": "name", "en": "Pop-Up Shrub", "hash": "94b6f3c87910812b", "src": "db2@1.60.1.70245"}
+{"id": 1221337, "field": "description", "en": "Deploy an emergency hiding spot. Most enemies will be less likely to notice you while you stand near it. Observant foes may not be so easily fooled.\r\n\r\nCannot be cast in combat.", "hash": "0cd5325acd88e60b", "src": "db2@1.60.1.70245"}
+{"id": 1221341, "field": "name", "en": "Poorly Camouflaged", "hash": "44c7a0e4c23c4d92", "src": "db2@1.60.1.70245"}
+{"id": 1221341, "field": "description", "en": "$@spelldesc1221337", "hash": "839760fc224c4edb", "src": "db2@1.60.1.70245"}
+{"id": 1221341, "field": "aura", "en": "Stealthed while you remain close to your hiding spot.", "hash": "4b9bb363c4e28f7b", "src": "db2@1.60.1.70245"}
+{"id": 1221342, "field": "name", "en": "(DNT) Within Light Impact Visual", "hash": "f3363ccf8fc9a8b0", "src": "db2@1.60.1.70245"}
+{"id": 1221363, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70245"}
+{"id": 1221379, "field": "name", "en": "Subjugated", "hash": "1aa0b409e7853559", "src": "db2@1.60.1.70245"}
+{"id": 1221379, "field": "description", "en": "Subjugates the target demon, up to level $m1, forcing it to do your bidding.  While subjugated, the time between the demon's attacks is increased by $s2% and its casting speed is slowed by $s3%.  Lasts up to $d.  If you repeatedly subjugate the same demon, it will become more difficult to control with each attempt.", "hash": "93ce24f8693c7fe0", "src": "db2@1.60.1.70245"}
+{"id": 1221379, "field": "aura", "en": "Enslaved.", "hash": "b260b47a5066b27c", "src": "db2@1.60.1.70245"}
+{"id": 1221404, "field": "name", "en": "Enchanted Flare", "hash": "d1ef74f80d32e455", "src": "db2@1.60.1.70245"}
+{"id": 1221404, "field": "description", "en": "Exposes all hidden and invisible enemies within $a1 yards of the targeted area, and staves off magical darkness for $d.", "hash": "dfef21a94b45affb", "src": "db2@1.60.1.70245"}
+{"id": 1221404, "field": "aura", "en": "Hidden and invisible units are revealed.", "hash": "e485f4e97af5601f", "src": "db2@1.60.1.70245"}
+{"id": 1221416, "field": "name", "en": "Enchanted Flare", "hash": "d1ef74f80d32e455", "src": "db2@1.60.1.70245"}
+{"id": 1221416, "field": "description", "en": "Exposes all hidden and invisible enemies within $a1 yards of the targeted area, and staves off magical darkness for $d.", "hash": "dfef21a94b45affb", "src": "db2@1.60.1.70245"}
+{"id": 1221416, "field": "aura", "en": "Hidden and invisible units are revealed.", "hash": "e485f4e97af5601f", "src": "db2@1.60.1.70245"}
+{"id": 1221420, "field": "name", "en": "[DNT] Skeleton Sleep Rise", "hash": "7aff21ea295fbbda", "src": "db2@1.60.1.70245"}
+{"id": 1221421, "field": "name", "en": "Mind Vision", "hash": "48d7e0df864c1457", "src": "db2@1.60.1.70245"}
+{"id": 1221421, "field": "description", "en": "Allows the caster to see through the target's eyes for $d.  Will not work if the target is in another instance or on another continent.", "hash": "ba19a81996966cf8", "src": "db2@1.60.1.70245"}
+{"id": 1221421, "field": "aura", "en": "Sight granted through target's eyes.", "hash": "87c06723d74f2d51", "src": "db2@1.60.1.70245"}
+{"id": 1221422, "field": "name", "en": "Mind Vision", "hash": "48d7e0df864c1457", "src": "db2@1.60.1.70245"}
+{"id": 1221422, "field": "description", "en": "Allows the caster to see through the target's eyes for $d.  Will not work if the target is in another instance or on another continent.", "hash": "ba19a81996966cf8", "src": "db2@1.60.1.70245"}
+{"id": 1221422, "field": "aura", "en": "Sight granted through target's eyes.", "hash": "87c06723d74f2d51", "src": "db2@1.60.1.70245"}
+{"id": 1221427, "field": "name", "en": "Torment's Illusion", "hash": "db18f44dc9646c6d", "src": "db2@1.60.1.70245"}
+{"id": 1221433, "field": "name", "en": "[DNT] Shadow Channeling 2", "hash": "fc40331647a7e794", "src": "db2@1.60.1.70245"}
+{"id": 1221448, "field": "name", "en": "Empower Military Quarter", "hash": "89e37297adfbbd21", "src": "db2@1.60.1.70245"}
+{"id": 1221451, "field": "name", "en": "Empower Military Quarter", "hash": "89e37297adfbbd21", "src": "db2@1.60.1.70245"}
+{"id": 1221453, "field": "name", "en": "[DNT] Spawn", "hash": "7186451f665967b2", "src": "db2@1.60.1.70245"}
+{"id": 1221455, "field": "name", "en": "Empower Construct Quarter", "hash": "c2453f54d1af3b85", "src": "db2@1.60.1.70245"}
+{"id": 1221456, "field": "name", "en": "Empower Construct Quarter", "hash": "c2453f54d1af3b85", "src": "db2@1.60.1.70245"}
+{"id": 1221458, "field": "name", "en": "[DNT] Warden Light", "hash": "166d2aa0c65300b2", "src": "db2@1.60.1.70245"}
+{"id": 1221464, "field": "name", "en": "Empower Arachnid Quarter", "hash": "5982887776edc08d", "src": "db2@1.60.1.70245"}
+{"id": 1221465, "field": "name", "en": "Empower Arachnid Quarter", "hash": "5982887776edc08d", "src": "db2@1.60.1.70245"}
+{"id": 1221466, "field": "name", "en": "Transformation", "hash": "f760ecd969461a04", "src": "db2@1.60.1.70245"}
+{"id": 1221467, "field": "name", "en": "Transformation", "hash": "f760ecd969461a04", "src": "db2@1.60.1.70245"}
+{"id": 1221468, "field": "name", "en": "Transformation", "hash": "f760ecd969461a04", "src": "db2@1.60.1.70245"}
+{"id": 1221469, "field": "name", "en": "Empower Plague Quarter", "hash": "9172a845cb903f0e", "src": "db2@1.60.1.70245"}
+{"id": 1221470, "field": "name", "en": "Empower Plague Quarter", "hash": "9172a845cb903f0e", "src": "db2@1.60.1.70245"}
+{"id": 1221507, "field": "name", "en": "(DNT) Naxx Orbs Chain Passive", "hash": "973648a4613c7271", "src": "db2@1.60.1.70245"}
+{"id": 1221571, "field": "name", "en": "Frightening Lore", "hash": "88287c1c085d74ef", "src": "db2@1.60.1.70245"}
+{"id": 1221571, "field": "description", "en": "Strikes fear in an enemy, causing it to flee in terror for $d. Only 1 target can be feared at a time.", "hash": "790d3c3066703ee4", "src": "db2@1.60.1.70245"}
+{"id": 1221571, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70245"}
+{"id": 1221575, "field": "name", "en": "Summoning", "hash": "5db0bc8c6a1a7cf2", "src": "db2@1.60.1.70245"}
+{"id": 1221576, "field": "name", "en": "Demonic Frenzy", "hash": "4cbcf0e0ccbec173", "src": "db2@1.60.1.70245"}
+{"id": 1221577, "field": "name", "en": "Doom", "hash": "0939e74d485005fe", "src": "db2@1.60.1.70245"}
+{"id": 1221577, "field": "aura", "en": "$s1 shadow damage every $t1 seconds.", "hash": "16bacf675e2f6541", "src": "db2@1.60.1.70245"}
+{"id": 1221578, "field": "name", "en": "Mark of the Master", "hash": "18eafe5896f8b461", "src": "db2@1.60.1.70245"}
+{"id": 1221578, "field": "aura", "en": "Attack and casting speed increased by 25%", "hash": "99c39caded355f6c", "src": "db2@1.60.1.70245"}
+{"id": 1221579, "field": "name", "en": "Super Invis", "hash": "785bcba47ffacfc1", "src": "db2@1.60.1.70245"}
+{"id": 1221580, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70245"}
+{"id": 1221581, "field": "name", "en": "[DNT] Animate Book Open", "hash": "c32e791264b3a97c", "src": "db2@1.60.1.70245"}
+{"id": 1221582, "field": "name", "en": "[DNT] Animate Book Open", "hash": "c32e791264b3a97c", "src": "db2@1.60.1.70245"}
+{"id": 1221583, "field": "name", "en": "[DNT] Kharon Light", "hash": "a661cfc49d1fdbd5", "src": "db2@1.60.1.70245"}
+{"id": 1221584, "field": "name", "en": "Mysterious Sword", "hash": "5847e9604a92da12", "src": "db2@1.60.1.70245"}
+{"id": 1221585, "field": "name", "en": "[DNT] Relic 1 Activated", "hash": "ab5ff79c7eba8c6d", "src": "db2@1.60.1.70245"}
+{"id": 1221586, "field": "name", "en": "Mysterious Scythe", "hash": "cf11bf3477290ff8", "src": "db2@1.60.1.70245"}
+{"id": 1221587, "field": "name", "en": "[DNT] Relic 2 Activated", "hash": "7f1b9aae42055ef2", "src": "db2@1.60.1.70245"}
+{"id": 1221588, "field": "name", "en": "Mysterious Staff", "hash": "57dd4fef6ac5cadb", "src": "db2@1.60.1.70245"}
+{"id": 1221589, "field": "name", "en": "[DNT] Relic 3 Activated", "hash": "52d73dc005503177", "src": "db2@1.60.1.70245"}
+{"id": 1221731, "field": "name", "en": "Burning Webs", "hash": "8d7ef664b29badee", "src": "db2@1.60.1.70245"}
+{"id": 1221731, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70245"}
+{"id": 1221732, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70245"}
+{"id": 1221750, "field": "name", "en": "Mimic Chomp", "hash": "1f558b12093ca97b", "src": "db2@1.60.1.70245"}
+{"id": 1221762, "field": "name", "en": "Mimic Chomp", "hash": "1f558b12093ca97b", "src": "db2@1.60.1.70245"}
+{"id": 1221766, "field": "name", "en": "Mimic Chomp", "hash": "1f558b12093ca97b", "src": "db2@1.60.1.70245"}
+{"id": 1221782, "field": "name", "en": "Mimic Chomp", "hash": "1f558b12093ca97b", "src": "db2@1.60.1.70245"}
+{"id": 1221793, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70245"}
+{"id": 1221794, "field": "name", "en": "Time Step", "hash": "98fb91c8bd3d3d5c", "src": "db2@1.60.1.70245"}
+{"id": 1221795, "field": "name", "en": "[DNT] Blossoming", "hash": "ab6e2f0f4a9ab495", "src": "db2@1.60.1.70245"}
+{"id": 1221796, "field": "name", "en": "Blossoming Starlight", "hash": "36ba8417b107361e", "src": "db2@1.60.1.70245"}
+{"id": 1221797, "field": "name", "en": "Within Starlight", "hash": "97f1f79308eb9f9c", "src": "db2@1.60.1.70245"}
+{"id": 1221797, "field": "aura", "en": "Underneath blossoming starlight a gleam of the lunar illuminates amongst the shadows.", "hash": "6d1e78e55297a853", "src": "db2@1.60.1.70245"}
+{"id": 1221798, "field": "name", "en": "Mending", "hash": "2d57fee58fda8c9b", "src": "db2@1.60.1.70245"}
+{"id": 1221799, "field": "name", "en": "Boulder Destroy", "hash": "949a28ea6fffbfef", "src": "db2@1.60.1.70245"}
+{"id": 1221995, "field": "name", "en": "Spawn Spiderling", "hash": "253c6f7b371f5340", "src": "db2@1.60.1.70245"}

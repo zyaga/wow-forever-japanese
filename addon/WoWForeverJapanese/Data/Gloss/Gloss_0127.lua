@@ -38,7 +38,6 @@ WFJ.Data.add("gloss", {
   [127035] = "身を守る\tみをまもる\tdefending ourselves",
   [127036] = "身を守る\tみをまもる\tprotect (himself)",
   [127037] = "身を守る\tみをまもる\tprotect ourselves",
-  [127038] = "身を守る\tみをまもる\tprotection (protect oneself)",
   [127039] = "身を守る\tみをまもる\tprotective (can protect oneself)",
   [127040] = "身を寄せる\tみをよせる\tsanctuary (take refuge)",
   [127041] = "身を寄せる\tみをよせる\ttook shelter",

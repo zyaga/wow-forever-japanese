@@ -1,25 +1,25 @@
-{"id": 1246026, "field": "name", "en": "Herbal Soil Poultice", "hash": "57e0294a6b8ce2b9", "src": "db2@1.60.1.70170"}
-{"id": 1246026, "field": "description", "en": "Aids in healing and growth of verdant vegetation.", "hash": "3948b6152b656a84", "src": "db2@1.60.1.70170"}
-{"id": 1246026, "field": "aura", "en": "Aided.", "hash": "1d37f16aefbcf981", "src": "db2@1.60.1.70170"}
-{"id": 1246031, "field": "name", "en": "Hunting Kobolds", "hash": "e13eba2b92b334a5", "src": "db2@1.60.1.70170"}
-{"id": 1246031, "field": "description", "en": "Causes nearby kobold tracks to appear on your map.", "hash": "877e0a8a5207ad77", "src": "db2@1.60.1.70170"}
-{"id": 1246031, "field": "aura", "en": "Nearby kobold tracks appear on your map.", "hash": "4200f668b55b9c18", "src": "db2@1.60.1.70170"}
-{"id": 1246059, "field": "name", "en": "Summon Rumbler", "hash": "3e95cb6294c4284e", "src": "db2@1.60.1.70170"}
-{"id": 1246092, "field": "name", "en": "Summon Rumblers", "hash": "06a71439814a19e7", "src": "db2@1.60.1.70170"}
-{"id": 1246362, "field": "name", "en": "Nightmare Detonation", "hash": "90afed6920262af8", "src": "db2@1.60.1.70170"}
-{"id": 1246362, "field": "description", "en": "Applies an aura that causes players to explode when it expires, dealing $1246364s1 Shadow damage to all nearby players and leaves a damaging pool.", "hash": "8cf99df10fd39e95", "src": "db2@1.60.1.70170"}
-{"id": 1246362, "field": "aura", "en": "After $d, deals $1246364s1 Shadow damage to all nearby players and leaves a damaging pool.", "hash": "6de555b9a55e52c1", "src": "db2@1.60.1.70170"}
-{"id": 1246364, "field": "name", "en": "Nightmare Detonation", "hash": "90afed6920262af8", "src": "db2@1.60.1.70170"}
-{"id": 1246364, "field": "description", "en": "Inflict $S1 Shadow damage to all nearby players and leaves a damaging pool of shadow.", "hash": "d034bb04b5327c9c", "src": "db2@1.60.1.70170"}
-{"id": 1246365, "field": "name", "en": "Nightmare Detonation", "hash": "90afed6920262af8", "src": "db2@1.60.1.70170"}
-{"id": 1246367, "field": "name", "en": "Nightmare Detonation", "hash": "90afed6920262af8", "src": "db2@1.60.1.70170"}
-{"id": 1246367, "field": "description", "en": "Deals $S1 Shadow damage every $t1 sec.", "hash": "47977fc2fbb41c79", "src": "db2@1.60.1.70170"}
-{"id": 1246367, "field": "aura", "en": "Dealing $S1 Shadow damage every $t1 sec.", "hash": "82e7da2587377190", "src": "db2@1.60.1.70170"}
-{"id": 1246453, "field": "name", "en": "Crimson Wrest", "hash": "315045919f7e7bd0", "src": "db2@1.60.1.70170"}
-{"id": 1246453, "field": "description", "en": "Forces players to walk towards the caster's location.", "hash": "68870de8acce04fd", "src": "db2@1.60.1.70170"}
-{"id": 1246455, "field": "name", "en": "Dig", "hash": "001204860dff1305", "src": "db2@1.60.1.70170"}
-{"id": 1246456, "field": "name", "en": "Crimson Wrest", "hash": "315045919f7e7bd0", "src": "db2@1.60.1.70170"}
-{"id": 1246456, "field": "description", "en": "$@spelldesc<1246453>", "hash": "448c70587717941d", "src": "db2@1.60.1.70170"}
-{"id": 1246456, "field": "aura", "en": "Forced to walk towards Varrox and unable to act.", "hash": "298c8fdc7dc4984b", "src": "db2@1.60.1.70170"}
-{"id": 1246475, "field": "name", "en": "Urge to Kill", "hash": "a2e0da1e6283700c", "src": "db2@1.60.1.70170"}
-{"id": 1246989, "field": "name", "en": "DNT Quest visual", "hash": "fedd7aa547224eed", "src": "db2@1.60.1.70170"}
+{"id": 1246026, "field": "name", "en": "Herbal Soil Poultice", "hash": "57e0294a6b8ce2b9", "src": "db2@1.60.1.70245"}
+{"id": 1246026, "field": "description", "en": "Aids in healing and growth of verdant vegetation.", "hash": "3948b6152b656a84", "src": "db2@1.60.1.70245"}
+{"id": 1246026, "field": "aura", "en": "Aided.", "hash": "1d37f16aefbcf981", "src": "db2@1.60.1.70245"}
+{"id": 1246031, "field": "name", "en": "Hunting Kobolds", "hash": "e13eba2b92b334a5", "src": "db2@1.60.1.70245"}
+{"id": 1246031, "field": "description", "en": "Causes nearby kobold tracks to appear on your map.", "hash": "877e0a8a5207ad77", "src": "db2@1.60.1.70245"}
+{"id": 1246031, "field": "aura", "en": "Nearby kobold tracks appear on your map.", "hash": "4200f668b55b9c18", "src": "db2@1.60.1.70245"}
+{"id": 1246059, "field": "name", "en": "Summon Rumbler", "hash": "3e95cb6294c4284e", "src": "db2@1.60.1.70245"}
+{"id": 1246092, "field": "name", "en": "Summon Rumblers", "hash": "06a71439814a19e7", "src": "db2@1.60.1.70245"}
+{"id": 1246362, "field": "name", "en": "Nightmare Detonation", "hash": "90afed6920262af8", "src": "db2@1.60.1.70245"}
+{"id": 1246362, "field": "description", "en": "Applies an aura that causes players to explode when it expires, dealing $1246364s1 Shadow damage to all nearby players and leaves a damaging pool.", "hash": "8cf99df10fd39e95", "src": "db2@1.60.1.70245"}
+{"id": 1246362, "field": "aura", "en": "After $d, deals $1246364s1 Shadow damage to all nearby players and leaves a damaging pool.", "hash": "6de555b9a55e52c1", "src": "db2@1.60.1.70245"}
+{"id": 1246364, "field": "name", "en": "Nightmare Detonation", "hash": "90afed6920262af8", "src": "db2@1.60.1.70245"}
+{"id": 1246364, "field": "description", "en": "Inflict $S1 Shadow damage to all nearby players and leaves a damaging pool of shadow.", "hash": "d034bb04b5327c9c", "src": "db2@1.60.1.70245"}
+{"id": 1246365, "field": "name", "en": "Nightmare Detonation", "hash": "90afed6920262af8", "src": "db2@1.60.1.70245"}
+{"id": 1246367, "field": "name", "en": "Nightmare Detonation", "hash": "90afed6920262af8", "src": "db2@1.60.1.70245"}
+{"id": 1246367, "field": "description", "en": "Deals $S1 Shadow damage every $t1 sec.", "hash": "47977fc2fbb41c79", "src": "db2@1.60.1.70245"}
+{"id": 1246367, "field": "aura", "en": "Dealing $S1 Shadow damage every $t1 sec.", "hash": "82e7da2587377190", "src": "db2@1.60.1.70245"}
+{"id": 1246453, "field": "name", "en": "Crimson Wrest", "hash": "315045919f7e7bd0", "src": "db2@1.60.1.70245"}
+{"id": 1246453, "field": "description", "en": "Forces players to walk towards the caster's location.", "hash": "68870de8acce04fd", "src": "db2@1.60.1.70245"}
+{"id": 1246455, "field": "name", "en": "Dig", "hash": "001204860dff1305", "src": "db2@1.60.1.70245"}
+{"id": 1246456, "field": "name", "en": "Crimson Wrest", "hash": "315045919f7e7bd0", "src": "db2@1.60.1.70245"}
+{"id": 1246456, "field": "description", "en": "$@spelldesc<1246453>", "hash": "448c70587717941d", "src": "db2@1.60.1.70245"}
+{"id": 1246456, "field": "aura", "en": "Forced to walk towards Varrox and unable to act.", "hash": "298c8fdc7dc4984b", "src": "db2@1.60.1.70245"}
+{"id": 1246475, "field": "name", "en": "Urge to Kill", "hash": "a2e0da1e6283700c", "src": "db2@1.60.1.70245"}
+{"id": 1246989, "field": "name", "en": "DNT Quest visual", "hash": "fedd7aa547224eed", "src": "db2@1.60.1.70245"}

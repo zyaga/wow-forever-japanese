@@ -35,7 +35,6 @@ WFJ.Data.add("gloss", {
   [2032] = "ある\tある\tthere's no (at all)",
   [2033] = "ある\tある\tthere's surely no",
   [2034] = "ある\tある\tthey are",
-  [2035] = "ある\tある\tthey're (in)",
   [2036] = "ある\tある\tthough (being)",
   [2037] = "ある\tある\tthough having",
   [2038] = "ある\tある\tto (located)",

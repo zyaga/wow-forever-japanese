@@ -196,7 +196,7 @@ Pipeline tooling, not part of the addon, that reads the client's English from th
 - **Scope:** coverage counts every line the client serves. `make served-columns` lists every text column of every client table the install ships, plus its server caches, and `pipeline/served_dispositions.txt` gives each column a surface or a stated reason, so world buffs and creature debuffs count too. A served line with neither Japanese nor a reason fails the tests ([ADR-052](adr/052-coverage-by-served-data.md)).
 - **Delta:** `wfj stats --delta REF [--capture PATH]` reports which lines changed status and what `data/english/` gained, lost or changed since a git ref.
 - **feature-id:** `harvest`
-- **status:** in use on the Forever beta client (build 1.60.1.70170)
+- **status:** in use on the Forever beta client (build 1.60.1.70245)
 - **regen-triggers:** `pipeline/wfj/io/{wdb,casc,blte,db2,client_tables,dbcache,vmangos,tables_stamp}.py`, `pipeline/wfj/dev/{wdb_layout,client_tables,tables_stamp,served_columns,served_dispositions}.py`, `pipeline/wfj/cmd/{import_,import_english,import_predecessor,served,stats}.py`, `Makefile`
 
 ## Not in v1 (by decision)

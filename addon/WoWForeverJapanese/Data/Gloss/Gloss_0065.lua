@@ -985,7 +985,6 @@ WFJ.Data.add("gloss", {
   [65982] = "実\tみ\tfruits",
   [65983] = "実に\tじつに\tI must say (truly)",
   [65984] = "実に\tじつに\ta great (truly)",
-  [65985] = "実に\tじつに\tabsolutely (truly)",
   [65986] = "実に\tじつに\tactually (truly)",
   [65987] = "実に\tじつに\tcertainly (truly)",
   [65988] = "実に\tじつに\tdamn (truly)",

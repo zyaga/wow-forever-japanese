@@ -1,0 +1,1 @@
+{"id": 87491, "field": "text", "ja": "炎のエレメンタルを護衛してDun Modrから脱出させる", "status": "trusted", "checks": ["names"], "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-b70245-area-sg12@2026-10-07", "imported": "2026-10-07"}, "english": {"hash": "3a2075d87aebadd9", "src": "wdb@1.60.1.70245"}, "reasons": [], "conflicts": []}

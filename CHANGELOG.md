@@ -10,6 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
+- Japanese for the quests Forever build 1.60.1.70245 opens (their titles, objectives and descriptions, with word readings), the quest text it reworded, and its new item tooltips. Six item tooltips whose old Japanese had the wrong stat or a fixed number (for example a shield block chance written as parry) are newly translated.
 - When the English Collector holds 10 or more lines you have not sent yet, a small window opens at login or reload with how many are waiting, a **Send English** button that opens the send window, and **Later**. It shows at most once a day and gives only the count. Its **Don't remind me again** box, the new setting on the English Collector page, or `/wfj collector remind off` turns it off; the collector keeps recording. The minimap button's menu also gets **Send collected English** with the count while any line is waiting.
 
 ### Fixed
@@ -19,6 +20,7 @@ an old setting stops working). A release moves those lines under its version num
 - Nine lines Forever's NPCs say or yell that the addon had no Japanese for (heard by the English collector, for example "Go with the blessings of Al'Akir…" and "For the High Order!") are now translated, with word readings. So are six lines from the Goldshire campfire and mining scenes (for example "Go on and have a seat near the fire and we can get started.").
 
 ### Changed
+- The game text is read from Forever build 1.60.1.70245.
 - The problem log (`/wfj log`) now notes, for each NPC chat line, whether it was said to you and what the English collector did with it (yes/no flags only, never a name or the line's text), and it keeps the latest NPC lines even when the log is full.
 
 ## 0.1.0-alpha.8 - 2026-10-05

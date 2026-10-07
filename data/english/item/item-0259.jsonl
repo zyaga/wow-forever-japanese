@@ -1,18 +1,18 @@
-{"id": 259226, "field": "name", "en": "Spectral Iron Ore", "hash": "378900778d76c97c", "src": "db2@1.60.1.70170"}
-{"id": 259226, "field": "description", "en": "Simply iron ore, though bound to the spirit realm.", "hash": "3d923c2165e19154", "src": "db2@1.60.1.70170"}
-{"id": 259229, "field": "name", "en": "Vindael's Spectral Pickaxe", "hash": "762c78c0d9ac076f", "src": "db2@1.60.1.70170"}
-{"id": 259229, "field": "description", "en": "Reveals Ghostly Iron Deposits while in your inventory. Also serves as a regular mining pick!", "hash": "25086c8055f34bf9", "src": "db2@1.60.1.70170"}
-{"id": 259268, "field": "name", "en": "Bag of Thorn Seeds", "hash": "41ceb2a650ee7a55", "src": "db2@1.60.1.70170"}
-{"id": 259357, "field": "name", "en": "Burning Keystone", "hash": "a126f60f817b1b7e", "src": "db2@1.60.1.70170"}
-{"id": 259460, "field": "name", "en": "Shield, Lordaeron Guard", "hash": "6f9f4a9e6e013533", "src": "db2@1.60.1.70170"}
-{"id": 259461, "field": "name", "en": "Partially Digested Collar", "hash": "f3699d03f891d379", "src": "db2@1.60.1.70170"}
-{"id": 259461, "field": "description", "en": "Oh no...", "hash": "4ef9947b01422d83", "src": "db2@1.60.1.70170"}
-{"id": 259846, "field": "name", "en": "Wide-Brimmed Fishing Hat", "hash": "d05c151ea0f18589", "src": "db2@1.60.1.70170"}
-{"id": 259846, "field": "description", "en": "Attach a lure to your equipped fishing pole, increasing Fishing by 25 for 10 min.", "hash": "7748ea7e16d4e485", "src": "db2@1.60.1.70170"}
-{"id": 259890, "field": "name", "en": "Deep-Sea Waders", "hash": "6d255d8db7f9cb2d", "src": "db2@1.60.1.70170"}
-{"id": 259890, "field": "description", "en": "Lets you walk on water for $d.", "hash": "42a8b6d373519183", "src": "db2@1.60.1.70170"}
-{"id": 259891, "field": "name", "en": "Berdun's Trusty Rifle", "hash": "2ff14325ed64693d", "src": "db2@1.60.1.70170"}
-{"id": 259892, "field": "name", "en": "Feardred's Cleansed Amulet", "hash": "cd2739b3382d330a", "src": "db2@1.60.1.70170"}
-{"id": 259893, "field": "name", "en": "Corpsefeeder's Carapace", "hash": "b71e239b35a8fd3d", "src": "db2@1.60.1.70170"}
-{"id": 259990, "field": "name", "en": "Tusk Ring", "hash": "53727f286fd941a9", "src": "db2@1.60.1.70170"}
-{"id": 259990, "field": "description", "en": "This was a troll's tusk ring. It was clearly well-loved once, but that was long ago.", "hash": "f3966152da4b0f92", "src": "db2@1.60.1.70170"}
+{"id": 259226, "field": "name", "en": "Spectral Iron Ore", "hash": "378900778d76c97c", "src": "db2@1.60.1.70245"}
+{"id": 259226, "field": "description", "en": "Simply iron ore, though bound to the spirit realm.", "hash": "3d923c2165e19154", "src": "db2@1.60.1.70245"}
+{"id": 259229, "field": "name", "en": "Vindael's Spectral Pickaxe", "hash": "762c78c0d9ac076f", "src": "db2@1.60.1.70245"}
+{"id": 259229, "field": "description", "en": "Reveals Ghostly Iron Deposits while in your inventory. Also serves as a regular mining pick!", "hash": "25086c8055f34bf9", "src": "db2@1.60.1.70245"}
+{"id": 259268, "field": "name", "en": "Bag of Thorn Seeds", "hash": "41ceb2a650ee7a55", "src": "db2@1.60.1.70245"}
+{"id": 259357, "field": "name", "en": "Burning Keystone", "hash": "a126f60f817b1b7e", "src": "db2@1.60.1.70245"}
+{"id": 259460, "field": "name", "en": "Shield, Lordaeron Guard", "hash": "6f9f4a9e6e013533", "src": "db2@1.60.1.70245"}
+{"id": 259461, "field": "name", "en": "Partially Digested Collar", "hash": "f3699d03f891d379", "src": "db2@1.60.1.70245"}
+{"id": 259461, "field": "description", "en": "Oh no...", "hash": "4ef9947b01422d83", "src": "db2@1.60.1.70245"}
+{"id": 259846, "field": "name", "en": "Wide-Brimmed Fishing Hat", "hash": "d05c151ea0f18589", "src": "db2@1.60.1.70245"}
+{"id": 259846, "field": "description", "en": "Attach a lure to your equipped fishing pole, increasing Fishing by 25 for 10 min.", "hash": "7748ea7e16d4e485", "src": "db2@1.60.1.70245"}
+{"id": 259890, "field": "name", "en": "Deep-Sea Waders", "hash": "6d255d8db7f9cb2d", "src": "db2@1.60.1.70245"}
+{"id": 259890, "field": "description", "en": "Lets you walk on water for $d.", "hash": "42a8b6d373519183", "src": "db2@1.60.1.70245"}
+{"id": 259891, "field": "name", "en": "Berdun's Trusty Rifle", "hash": "2ff14325ed64693d", "src": "db2@1.60.1.70245"}
+{"id": 259892, "field": "name", "en": "Feardred's Cleansed Amulet", "hash": "cd2739b3382d330a", "src": "db2@1.60.1.70245"}
+{"id": 259893, "field": "name", "en": "Corpsefeeder's Carapace", "hash": "b71e239b35a8fd3d", "src": "db2@1.60.1.70245"}
+{"id": 259990, "field": "name", "en": "Tusk Ring", "hash": "53727f286fd941a9", "src": "db2@1.60.1.70245"}
+{"id": 259990, "field": "description", "en": "This was a troll's tusk ring. It was clearly well-loved once, but that was long ago.", "hash": "f3966152da4b0f92", "src": "db2@1.60.1.70245"}

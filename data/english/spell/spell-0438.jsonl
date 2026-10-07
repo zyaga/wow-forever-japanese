@@ -1,142 +1,142 @@
-{"id": 438019, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70170"}
-{"id": 438019, "field": "description", "en": "Calls upon Nature magic to heal an ally.", "hash": "a861c49b618fd296", "src": "db2@1.60.1.70170"}
-{"id": 438032, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70170"}
-{"id": 438040, "field": "name", "en": "Redirect", "hash": "0f0af64b314b339c", "src": "db2@1.60.1.70170"}
-{"id": 438040, "field": "description", "en": "Removes all your existing combo points from your target and stores them for up to $d. These stored combat points will be transferred to the next non-player enemy you hit with a melee or ranged ability.\r\n", "hash": "f772f571fa1c8198", "src": "db2@1.60.1.70170"}
-{"id": 438040, "field": "aura", "en": "Combo points will be transferred to the next target hit by this Rogue's abilities.", "hash": "bc40dcd473225065", "src": "db2@1.60.1.70170"}
-{"id": 438045, "field": "name", "en": "Redirect", "hash": "0f0af64b314b339c", "src": "db2@1.60.1.70170"}
-{"id": 438045, "field": "description", "en": "Transfers any existing combo points to the current non-player enemy target. Requires active combo points.\r\n", "hash": "c18a149c63b32c45", "src": "db2@1.60.1.70170"}
-{"id": 438062, "field": "name", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70170"}
-{"id": 438062, "field": "description", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70170"}
-{"id": 438062, "field": "aura", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70170"}
-{"id": 438078, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70170"}
-{"id": 438079, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70170"}
-{"id": 438088, "field": "name", "en": "[DNT] Trigger Swamp Chest Trap", "hash": "6d8cb2354f407801", "src": "db2@1.60.1.70170"}
-{"id": 438089, "field": "name", "en": "Poison Dart", "hash": "e95e068735de22bd", "src": "db2@1.60.1.70170"}
-{"id": 438089, "field": "aura", "en": "Nature damage inflicted every $t1 sec.", "hash": "af62b13ec2fc8e7b", "src": "db2@1.60.1.70170"}
-{"id": 438101, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.70170"}
-{"id": 438101, "field": "description", "en": "Devours nearby players, inflicting $s1 Nature damage. This also reduces damage done by $s3% and movement speed by $s5% for $d.", "hash": "fb31e0e1f9365267", "src": "db2@1.60.1.70170"}
-{"id": 438101, "field": "aura", "en": "Damage done decreased by $s3%.\r\nMovement speed reduced by $s5%.", "hash": "0958e06d41ad76f1", "src": "db2@1.60.1.70170"}
-{"id": 438105, "field": "name", "en": "Bloody Commendation", "hash": "8c672f5bc12e0d1b", "src": "db2@1.60.1.70170"}
-{"id": 438105, "field": "description", "en": "Gain 250 honor.", "hash": "17231a3cf328c8d5", "src": "db2@1.60.1.70170"}
-{"id": 438130, "field": "name", "en": "Nauseous Gas", "hash": "c4d0104aa90039af", "src": "db2@1.60.1.70170"}
-{"id": 438130, "field": "description", "en": "Creates a pool of nauseating gas, which inflicts $438136s1 Nature damage to players within and reducing their attack and cast speed by $438136s2%.", "hash": "cffb87aa9b0a2299", "src": "db2@1.60.1.70170"}
-{"id": 438136, "field": "name", "en": "Nauseous Gas", "hash": "c4d0104aa90039af", "src": "db2@1.60.1.70170"}
-{"id": 438136, "field": "description", "en": "$@spelldesc438130", "hash": "a23f8eb7e5e425b8", "src": "db2@1.60.1.70170"}
-{"id": 438136, "field": "aura", "en": "Attack and cast speed reduced by $s2%.", "hash": "c3c45138ed20e0a2", "src": "db2@1.60.1.70170"}
-{"id": 438142, "field": "name", "en": "Gunk", "hash": "09a261cf085958c0", "src": "db2@1.60.1.70170"}
-{"id": 438142, "field": "description", "en": "The caster gets gunk all over targets, inflicting $s1 Nature damage every $t1 sec and reducing their movement speed by $s2% for $d.", "hash": "1061176fe201f192", "src": "db2@1.60.1.70170"}
-{"id": 438142, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.\r\nMovement speed reduced by $s2%.", "hash": "8b89bab965dc20c8", "src": "db2@1.60.1.70170"}
-{"id": 438170, "field": "name", "en": "Suppressing Darkness", "hash": "d5f10b8e24f400ae", "src": "db2@1.60.1.70170"}
-{"id": 438170, "field": "description", "en": "Balnazzar plunges the cathedral into darkness, silencing all players.", "hash": "3ff27a60f23b5074", "src": "db2@1.60.1.70170"}
-{"id": 438170, "field": "aura", "en": "Plunges the cathedral into darkness, silencing all players.", "hash": "094bb37f11d417dd", "src": "db2@1.60.1.70170"}
-{"id": 438185, "field": "name", "en": "Suppressing Darkness", "hash": "d5f10b8e24f400ae", "src": "db2@1.60.1.70170"}
-{"id": 438219, "field": "name", "en": "Wyvern", "hash": "d5db528ad18a75b4", "src": "db2@1.60.1.70170"}
-{"id": 438220, "field": "name", "en": "Wyvern", "hash": "d5db528ad18a75b4", "src": "db2@1.60.1.70170"}
-{"id": 438262, "field": "name", "en": "Channel", "hash": "2e0ff5fb7494fa4e", "src": "db2@1.60.1.70170"}
-{"id": 438273, "field": "name", "en": "PvP Trinket", "hash": "662ce3a9d464ad08", "src": "db2@1.60.1.70170"}
-{"id": 438273, "field": "description", "en": "Removes all movement impairing effects and all effects which cause loss of control of your character.", "hash": "5922de690eb48ff3", "src": "db2@1.60.1.70170"}
-{"id": 438279, "field": "name", "en": "Dance", "hash": "b6c0d63f7f66c4af", "src": "db2@1.60.1.70170"}
-{"id": 438286, "field": "name", "en": "[DNT] Kha'damu Zone Tracking Aura", "hash": "f914b0ded35586c6", "src": "db2@1.60.1.70170"}
-{"id": 438288, "field": "name", "en": "Dark Presence", "hash": "72d56c526f30cd3c", "src": "db2@1.60.1.70170"}
-{"id": 438288, "field": "aura", "en": "A Dark Rider lurks nearby...", "hash": "a400032330fc99ed", "src": "db2@1.60.1.70170"}
-{"id": 438294, "field": "name", "en": "Thorns", "hash": "b7f89a75651e4598", "src": "db2@1.60.1.70170"}
-{"id": 438294, "field": "description", "en": "Causes $s1 Nature damage to any creature that strikes a nearby party member. Players may only have one aura on them per paladin at any one time. The aura lasts $d.", "hash": "0d02c23e0ee2ca4d", "src": "db2@1.60.1.70170"}
-{"id": 438294, "field": "aura", "en": "$s1 Nature damage inflicted to melee attackers.", "hash": "d89ce2643def01b9", "src": "db2@1.60.1.70170"}
-{"id": 438295, "field": "name", "en": "Ariden's Sigil", "hash": "aef6add04ee9acd8", "src": "db2@1.60.1.70170"}
-{"id": 438295, "field": "aura", "en": "Allows you to sense the presence of Dark Riders.", "hash": "cf6ec8c935242a54", "src": "db2@1.60.1.70170"}
-{"id": 438305, "field": "name", "en": "Reveal Dark Rider", "hash": "4ade390e2160bded", "src": "db2@1.60.1.70170"}
-{"id": 438305, "field": "description", "en": "Compel a nearby Dark Rider to reveal itself.", "hash": "4b0eba5c00298313", "src": "db2@1.60.1.70170"}
-{"id": 438316, "field": "name", "en": "[DNT] Bigfoot Stomps", "hash": "1064a28f022b3b30", "src": "db2@1.60.1.70170"}
-{"id": 438318, "field": "name", "en": "[DNT] Bigfoot Stomps", "hash": "1064a28f022b3b30", "src": "db2@1.60.1.70170"}
-{"id": 438326, "field": "name", "en": "Thorns", "hash": "b7f89a75651e4598", "src": "db2@1.60.1.70170"}
-{"id": 438326, "field": "description", "en": "Causes $s1 Nature damage to any creature that strikes a nearby party member. Players may only have one aura on them per paladin at any one time. The aura lasts $d.", "hash": "0d02c23e0ee2ca4d", "src": "db2@1.60.1.70170"}
-{"id": 438326, "field": "aura", "en": "$s1 Nature damage inflicted to melee attackers.", "hash": "d89ce2643def01b9", "src": "db2@1.60.1.70170"}
-{"id": 438335, "field": "name", "en": "Healing Ward", "hash": "be19465b73d79a46", "src": "db2@1.60.1.70170"}
-{"id": 438335, "field": "description", "en": "Summons a ward that lasts $d. and periodically heals allies in an area around it.", "hash": "5f5c01edcc6fe523", "src": "db2@1.60.1.70170"}
-{"id": 438338, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70170"}
-{"id": 438338, "field": "description", "en": "Calls upon Nature magic to heal an ally.", "hash": "a861c49b618fd296", "src": "db2@1.60.1.70170"}
-{"id": 438339, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70170"}
-{"id": 438339, "field": "description", "en": "Calls upon Nature magic to heal an ally.", "hash": "a861c49b618fd296", "src": "db2@1.60.1.70170"}
-{"id": 438341, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70170"}
-{"id": 438341, "field": "description", "en": "Heals an ally for $s1 damage every $t1 sec. for $d.", "hash": "47182c1288d04c1b", "src": "db2@1.60.1.70170"}
-{"id": 438341, "field": "aura", "en": "$s1 damage healed every $t1 sec.", "hash": "8d136749b2731244", "src": "db2@1.60.1.70170"}
-{"id": 438350, "field": "name", "en": "Shadow Bolt Volley", "hash": "62ed89ea2de9d24d", "src": "db2@1.60.1.70170"}
-{"id": 438350, "field": "description", "en": "Hurls missiles of dark magic, inflicting Shadow damage to nearby enemies.", "hash": "ff49863129e1fd03", "src": "db2@1.60.1.70170"}
-{"id": 438358, "field": "name", "en": "Bloodthirst", "hash": "8f76f8e0f481f954", "src": "db2@1.60.1.70170"}
-{"id": 438382, "field": "name", "en": "BFD XP Grant [DNT]", "hash": "a6c685b7b1c7ca78", "src": "db2@1.60.1.70170"}
-{"id": 438487, "field": "name", "en": "Ride Vehicle", "hash": "615b1691886a3aac", "src": "db2@1.60.1.70170"}
-{"id": 438501, "field": "name", "en": "Inevitable Doom", "hash": "54ecb17622b4e60e", "src": "db2@1.60.1.70170"}
-{"id": 438505, "field": "name", "en": "Mech Pilot Transform (Red)", "hash": "10451b77155344a2", "src": "db2@1.60.1.70170"}
-{"id": 438536, "field": "name", "en": "Spark of Inspiration", "hash": "1e6dc19c85672e44", "src": "db2@1.60.1.70170"}
-{"id": 438536, "field": "description", "en": "Increases critical strike chance of spells by $s1%, grants $s2 spell damage and healing, and increases melee and ranged attack speed by $s4%. 120 minute duration.", "hash": "2ed162d8957ad2cb", "src": "db2@1.60.1.70170"}
-{"id": 438536, "field": "aura", "en": "Increases critical strike chance of spells by $s1%, grants $s2 spell damage and healing, and increases melee and ranged attack speed by $s4%. 120 minute duration.", "hash": "2ed162d8957ad2cb", "src": "db2@1.60.1.70170"}
-{"id": 438537, "field": "name", "en": "Spark of Inspiration", "hash": "1e6dc19c85672e44", "src": "db2@1.60.1.70170"}
-{"id": 438537, "field": "description", "en": "Increases critical strike chance of spells by $s1%, grants $s2 spell damage and healing, and increases melee and ranged attack speed by $s4%. 120 minute duration.\r\n", "hash": "2ed162d8957ad2cb", "src": "db2@1.60.1.70170"}
-{"id": 438537, "field": "aura", "en": "Increases critical strike chance of spells by $s1%, grants $s2 spell damage and healing, and increases melee and ranged attack speed by $s4%. 120 minute duration.", "hash": "2ed162d8957ad2cb", "src": "db2@1.60.1.70170"}
-{"id": 438538, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70170"}
-{"id": 438538, "field": "description", "en": "Charges an enemy, inflicting normal damage plus $s3 and stuns the opponent for $d.", "hash": "af4293e676932a45", "src": "db2@1.60.1.70170"}
-{"id": 438539, "field": "name", "en": "Uppercut", "hash": "bd09630b8dda5f6b", "src": "db2@1.60.1.70170"}
-{"id": 438539, "field": "description", "en": "Inflicts normal damage plus $s1 to an enemy, knocking it back.", "hash": "5b233dd615ef6af3", "src": "db2@1.60.1.70170"}
-{"id": 438540, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70170"}
-{"id": 438540, "field": "description", "en": "Charges an enemy, inflicting normal damage.", "hash": "c3fe3da53cbebfd2", "src": "db2@1.60.1.70170"}
-{"id": 438541, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70170"}
-{"id": 438541, "field": "description", "en": "Charges an enemy.", "hash": "721f6d2cd42945c2", "src": "db2@1.60.1.70170"}
-{"id": 438542, "field": "name", "en": "[DNT] Dark Rider Spawn", "hash": "a801e8c6d8ddf67f", "src": "db2@1.60.1.70170"}
-{"id": 438545, "field": "name", "en": "Relentless Strikes", "hash": "36f27fd079150b00", "src": "db2@1.60.1.70170"}
-{"id": 438547, "field": "name", "en": "[DNT] Hyperconductive Shock Visual", "hash": "d247e40cf95b75d4", "src": "db2@1.60.1.70170"}
-{"id": 438548, "field": "name", "en": "[DNT] Charged Inspiration Visual", "hash": "8a66469bf97afb97", "src": "db2@1.60.1.70170"}
-{"id": 438550, "field": "name", "en": "Uppercut", "hash": "bd09630b8dda5f6b", "src": "db2@1.60.1.70170"}
-{"id": 438550, "field": "description", "en": "Inflicts normal damage plus $s1 to an enemy, knocking it back.", "hash": "5b233dd615ef6af3", "src": "db2@1.60.1.70170"}
-{"id": 438551, "field": "name", "en": "Feast of Blood", "hash": "fc42de06111f3e08", "src": "db2@1.60.1.70170"}
-{"id": 438551, "field": "aura", "en": "More danger, more rewards!", "hash": "5a36d8d1a0cd0319", "src": "db2@1.60.1.70170"}
-{"id": 438561, "field": "name", "en": "Scrap Toss", "hash": "3e43f25c2c7a5cbd", "src": "db2@1.60.1.70170"}
-{"id": 438567, "field": "name", "en": "Bruised", "hash": "aaf040dc09828ddf", "src": "db2@1.60.1.70170"}
-{"id": 438567, "field": "description", "en": "Bruised.", "hash": "78f132752aecc64c", "src": "db2@1.60.1.70170"}
-{"id": 438567, "field": "aura", "en": "Bruised.", "hash": "78f132752aecc64c", "src": "db2@1.60.1.70170"}
-{"id": 438572, "field": "name", "en": "Vehicle Damaged", "hash": "e82752b17af1a90f", "src": "db2@1.60.1.70170"}
-{"id": 438602, "field": "name", "en": "Mech Pilot Transform (Blue)", "hash": "3b765aab0632caef", "src": "db2@1.60.1.70170"}
-{"id": 438603, "field": "name", "en": "Mech Pilot Transform (Green)", "hash": "be536fe593f00098", "src": "db2@1.60.1.70170"}
-{"id": 438604, "field": "name", "en": "Mech Pilot Transform (Gray)", "hash": "9403896a61d432f2", "src": "db2@1.60.1.70170"}
-{"id": 438669, "field": "name", "en": "[DNT] Give Trinket", "hash": "e64ddf8ed1f3f1dc", "src": "db2@1.60.1.70170"}
-{"id": 438683, "field": "name", "en": "Sprocketfire Punch", "hash": "625a19133fe279c4", "src": "db2@1.60.1.70170"}
-{"id": 438704, "field": "name", "en": "Sprocketfire Punch", "hash": "625a19133fe279c4", "src": "db2@1.60.1.70170"}
-{"id": 438710, "field": "name", "en": "Sprocketfire", "hash": "55eff0d5dd15dfca", "src": "db2@1.60.1.70170"}
-{"id": 438710, "field": "aura", "en": "Deals $w1 Fire damage every $t1 sec.", "hash": "e06497998c1ce50b", "src": "db2@1.60.1.70170"}
-{"id": 438713, "field": "name", "en": "Furnace Surge", "hash": "d50dd51471ba077b", "src": "db2@1.60.1.70170"}
-{"id": 438714, "field": "name", "en": "Furnace Surge", "hash": "d50dd51471ba077b", "src": "db2@1.60.1.70170"}
-{"id": 438715, "field": "name", "en": "Furnace Surge", "hash": "d50dd51471ba077b", "src": "db2@1.60.1.70170"}
-{"id": 438715, "field": "aura", "en": "Flames spill forth from the mechanical furnace.", "hash": "3e6563a2e193f1dd", "src": "db2@1.60.1.70170"}
-{"id": 438716, "field": "name", "en": "Furnace Surge", "hash": "d50dd51471ba077b", "src": "db2@1.60.1.70170"}
-{"id": 438716, "field": "aura", "en": "$w1 Fire damage every $t1 sec.", "hash": "7464758190e92486", "src": "db2@1.60.1.70170"}
-{"id": 438717, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70170"}
-{"id": 438718, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70170"}
-{"id": 438718, "field": "aura", "en": "$w1 Fire damage every $t1 sec.", "hash": "7464758190e92486", "src": "db2@1.60.1.70170"}
-{"id": 438719, "field": "name", "en": "Supercooled Smash", "hash": "cea8dfae21ef9840", "src": "db2@1.60.1.70170"}
-{"id": 438719, "field": "aura", "en": "Movement speed slowed by $s2%.", "hash": "79a226e8bb65bd7e", "src": "db2@1.60.1.70170"}
-{"id": 438720, "field": "name", "en": "Freezing", "hash": "592cdaef5a06395d", "src": "db2@1.60.1.70170"}
-{"id": 438720, "field": "aura", "en": "Movement speed slowed by $s2%.", "hash": "79a226e8bb65bd7e", "src": "db2@1.60.1.70170"}
-{"id": 438721, "field": "name", "en": "Frozen Solid", "hash": "15bf964ba47b5e0b", "src": "db2@1.60.1.70170"}
-{"id": 438721, "field": "aura", "en": "Stunned and very cold.", "hash": "9cb407ec9dd2c6d4", "src": "db2@1.60.1.70170"}
-{"id": 438723, "field": "name", "en": "Coolant Discharge", "hash": "dd1ede71337f1611", "src": "db2@1.60.1.70170"}
-{"id": 438724, "field": "name", "en": "Frozen Shrapnel", "hash": "2abaf53bcf7bbce5", "src": "db2@1.60.1.70170"}
-{"id": 438725, "field": "name", "en": "Frost Bomb", "hash": "7fafce2edcb7ccac", "src": "db2@1.60.1.70170"}
-{"id": 438726, "field": "name", "en": "Hazardous Hammer", "hash": "3e9d59cda1e4932c", "src": "db2@1.60.1.70170"}
-{"id": 438727, "field": "name", "en": "Radiation Sickness", "hash": "1a029c6588f7bf3d", "src": "db2@1.60.1.70170"}
-{"id": 438727, "field": "aura", "en": "Nature damage taken increased by $w1%.", "hash": "2093012dd06e12b3", "src": "db2@1.60.1.70170"}
-{"id": 438728, "field": "name", "en": "Radiation Leak", "hash": "de0b41356f0e7d6b", "src": "db2@1.60.1.70170"}
-{"id": 438728, "field": "aura", "en": "$w1 Nature damage every $t1 sec.", "hash": "508bfddcf13ce028", "src": "db2@1.60.1.70170"}
-{"id": 438730, "field": "name", "en": "Radioactive Bomb", "hash": "41546df8e9e7b912", "src": "db2@1.60.1.70170"}
-{"id": 438732, "field": "name", "en": "Toxic Ventilation", "hash": "41e5c6e46387dd28", "src": "db2@1.60.1.70170"}
-{"id": 438732, "field": "aura", "en": "$w1 Nature damage every $t1 sec.", "hash": "508bfddcf13ce028", "src": "db2@1.60.1.70170"}
-{"id": 438735, "field": "name", "en": "High Voltage!", "hash": "3e90f5f56157957e", "src": "db2@1.60.1.70170"}
-{"id": 438735, "field": "aura", "en": "Buttons don't seem to respond to your touch while electrified.", "hash": "69ae81838c611c96", "src": "db2@1.60.1.70170"}
-{"id": 438857, "field": "name", "en": "Walking Bomb Passive Proc (100%)", "hash": "d1503b4b8cb8fe8f", "src": "db2@1.60.1.70170"}
-{"id": 438859, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70170"}
-{"id": 438859, "field": "description", "en": "Detonates causing damage in an area.", "hash": "f8a03f70c37e5a7a", "src": "db2@1.60.1.70170"}
-{"id": 438861, "field": "name", "en": "Summon Bomb", "hash": "8543bc2f2a277748", "src": "db2@1.60.1.70170"}
-{"id": 438862, "field": "name", "en": "Summon Bomb", "hash": "8543bc2f2a277748", "src": "db2@1.60.1.70170"}
-{"id": 438863, "field": "name", "en": "Summon Bomb", "hash": "8543bc2f2a277748", "src": "db2@1.60.1.70170"}
-{"id": 438865, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70170"}
-{"id": 438938, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70170"}
-{"id": 438938, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70170"}
+{"id": 438019, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70245"}
+{"id": 438019, "field": "description", "en": "Calls upon Nature magic to heal an ally.", "hash": "a861c49b618fd296", "src": "db2@1.60.1.70245"}
+{"id": 438032, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70245"}
+{"id": 438040, "field": "name", "en": "Redirect", "hash": "0f0af64b314b339c", "src": "db2@1.60.1.70245"}
+{"id": 438040, "field": "description", "en": "Removes all your existing combo points from your target and stores them for up to $d. These stored combat points will be transferred to the next non-player enemy you hit with a melee or ranged ability.\r\n", "hash": "f772f571fa1c8198", "src": "db2@1.60.1.70245"}
+{"id": 438040, "field": "aura", "en": "Combo points will be transferred to the next target hit by this Rogue's abilities.", "hash": "bc40dcd473225065", "src": "db2@1.60.1.70245"}
+{"id": 438045, "field": "name", "en": "Redirect", "hash": "0f0af64b314b339c", "src": "db2@1.60.1.70245"}
+{"id": 438045, "field": "description", "en": "Transfers any existing combo points to the current non-player enemy target. Requires active combo points.\r\n", "hash": "c18a149c63b32c45", "src": "db2@1.60.1.70245"}
+{"id": 438062, "field": "name", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70245"}
+{"id": 438062, "field": "description", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70245"}
+{"id": 438062, "field": "aura", "en": "Warlord", "hash": "958ca70da0516c1a", "src": "db2@1.60.1.70245"}
+{"id": 438078, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70245"}
+{"id": 438079, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70245"}
+{"id": 438088, "field": "name", "en": "[DNT] Trigger Swamp Chest Trap", "hash": "6d8cb2354f407801", "src": "db2@1.60.1.70245"}
+{"id": 438089, "field": "name", "en": "Poison Dart", "hash": "e95e068735de22bd", "src": "db2@1.60.1.70245"}
+{"id": 438089, "field": "aura", "en": "Nature damage inflicted every $t1 sec.", "hash": "af62b13ec2fc8e7b", "src": "db2@1.60.1.70245"}
+{"id": 438101, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.70245"}
+{"id": 438101, "field": "description", "en": "Devours nearby players, inflicting $s1 Nature damage. This also reduces damage done by $s3% and movement speed by $s5% for $d.", "hash": "fb31e0e1f9365267", "src": "db2@1.60.1.70245"}
+{"id": 438101, "field": "aura", "en": "Damage done decreased by $s3%.\r\nMovement speed reduced by $s5%.", "hash": "0958e06d41ad76f1", "src": "db2@1.60.1.70245"}
+{"id": 438105, "field": "name", "en": "Bloody Commendation", "hash": "8c672f5bc12e0d1b", "src": "db2@1.60.1.70245"}
+{"id": 438105, "field": "description", "en": "Gain 250 honor.", "hash": "17231a3cf328c8d5", "src": "db2@1.60.1.70245"}
+{"id": 438130, "field": "name", "en": "Nauseous Gas", "hash": "c4d0104aa90039af", "src": "db2@1.60.1.70245"}
+{"id": 438130, "field": "description", "en": "Creates a pool of nauseating gas, which inflicts $438136s1 Nature damage to players within and reducing their attack and cast speed by $438136s2%.", "hash": "cffb87aa9b0a2299", "src": "db2@1.60.1.70245"}
+{"id": 438136, "field": "name", "en": "Nauseous Gas", "hash": "c4d0104aa90039af", "src": "db2@1.60.1.70245"}
+{"id": 438136, "field": "description", "en": "$@spelldesc438130", "hash": "a23f8eb7e5e425b8", "src": "db2@1.60.1.70245"}
+{"id": 438136, "field": "aura", "en": "Attack and cast speed reduced by $s2%.", "hash": "c3c45138ed20e0a2", "src": "db2@1.60.1.70245"}
+{"id": 438142, "field": "name", "en": "Gunk", "hash": "09a261cf085958c0", "src": "db2@1.60.1.70245"}
+{"id": 438142, "field": "description", "en": "The caster gets gunk all over targets, inflicting $s1 Nature damage every $t1 sec and reducing their movement speed by $s2% for $d.", "hash": "1061176fe201f192", "src": "db2@1.60.1.70245"}
+{"id": 438142, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.\r\nMovement speed reduced by $s2%.", "hash": "8b89bab965dc20c8", "src": "db2@1.60.1.70245"}
+{"id": 438170, "field": "name", "en": "Suppressing Darkness", "hash": "d5f10b8e24f400ae", "src": "db2@1.60.1.70245"}
+{"id": 438170, "field": "description", "en": "Balnazzar plunges the cathedral into darkness, silencing all players.", "hash": "3ff27a60f23b5074", "src": "db2@1.60.1.70245"}
+{"id": 438170, "field": "aura", "en": "Plunges the cathedral into darkness, silencing all players.", "hash": "094bb37f11d417dd", "src": "db2@1.60.1.70245"}
+{"id": 438185, "field": "name", "en": "Suppressing Darkness", "hash": "d5f10b8e24f400ae", "src": "db2@1.60.1.70245"}
+{"id": 438219, "field": "name", "en": "Wyvern", "hash": "d5db528ad18a75b4", "src": "db2@1.60.1.70245"}
+{"id": 438220, "field": "name", "en": "Wyvern", "hash": "d5db528ad18a75b4", "src": "db2@1.60.1.70245"}
+{"id": 438262, "field": "name", "en": "Channel", "hash": "2e0ff5fb7494fa4e", "src": "db2@1.60.1.70245"}
+{"id": 438273, "field": "name", "en": "PvP Trinket", "hash": "662ce3a9d464ad08", "src": "db2@1.60.1.70245"}
+{"id": 438273, "field": "description", "en": "Removes all movement impairing effects and all effects which cause loss of control of your character.", "hash": "5922de690eb48ff3", "src": "db2@1.60.1.70245"}
+{"id": 438279, "field": "name", "en": "Dance", "hash": "b6c0d63f7f66c4af", "src": "db2@1.60.1.70245"}
+{"id": 438286, "field": "name", "en": "[DNT] Kha'damu Zone Tracking Aura", "hash": "f914b0ded35586c6", "src": "db2@1.60.1.70245"}
+{"id": 438288, "field": "name", "en": "Dark Presence", "hash": "72d56c526f30cd3c", "src": "db2@1.60.1.70245"}
+{"id": 438288, "field": "aura", "en": "A Dark Rider lurks nearby...", "hash": "a400032330fc99ed", "src": "db2@1.60.1.70245"}
+{"id": 438294, "field": "name", "en": "Thorns", "hash": "b7f89a75651e4598", "src": "db2@1.60.1.70245"}
+{"id": 438294, "field": "description", "en": "Causes $s1 Nature damage to any creature that strikes a nearby party member. Players may only have one aura on them per paladin at any one time. The aura lasts $d.", "hash": "0d02c23e0ee2ca4d", "src": "db2@1.60.1.70245"}
+{"id": 438294, "field": "aura", "en": "$s1 Nature damage inflicted to melee attackers.", "hash": "d89ce2643def01b9", "src": "db2@1.60.1.70245"}
+{"id": 438295, "field": "name", "en": "Ariden's Sigil", "hash": "aef6add04ee9acd8", "src": "db2@1.60.1.70245"}
+{"id": 438295, "field": "aura", "en": "Allows you to sense the presence of Dark Riders.", "hash": "cf6ec8c935242a54", "src": "db2@1.60.1.70245"}
+{"id": 438305, "field": "name", "en": "Reveal Dark Rider", "hash": "4ade390e2160bded", "src": "db2@1.60.1.70245"}
+{"id": 438305, "field": "description", "en": "Compel a nearby Dark Rider to reveal itself.", "hash": "4b0eba5c00298313", "src": "db2@1.60.1.70245"}
+{"id": 438316, "field": "name", "en": "[DNT] Bigfoot Stomps", "hash": "1064a28f022b3b30", "src": "db2@1.60.1.70245"}
+{"id": 438318, "field": "name", "en": "[DNT] Bigfoot Stomps", "hash": "1064a28f022b3b30", "src": "db2@1.60.1.70245"}
+{"id": 438326, "field": "name", "en": "Thorns", "hash": "b7f89a75651e4598", "src": "db2@1.60.1.70245"}
+{"id": 438326, "field": "description", "en": "Causes $s1 Nature damage to any creature that strikes a nearby party member. Players may only have one aura on them per paladin at any one time. The aura lasts $d.", "hash": "0d02c23e0ee2ca4d", "src": "db2@1.60.1.70245"}
+{"id": 438326, "field": "aura", "en": "$s1 Nature damage inflicted to melee attackers.", "hash": "d89ce2643def01b9", "src": "db2@1.60.1.70245"}
+{"id": 438335, "field": "name", "en": "Healing Ward", "hash": "be19465b73d79a46", "src": "db2@1.60.1.70245"}
+{"id": 438335, "field": "description", "en": "Summons a ward that lasts $d. and periodically heals allies in an area around it.", "hash": "5f5c01edcc6fe523", "src": "db2@1.60.1.70245"}
+{"id": 438338, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70245"}
+{"id": 438338, "field": "description", "en": "Calls upon Nature magic to heal an ally.", "hash": "a861c49b618fd296", "src": "db2@1.60.1.70245"}
+{"id": 438339, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70245"}
+{"id": 438339, "field": "description", "en": "Calls upon Nature magic to heal an ally.", "hash": "a861c49b618fd296", "src": "db2@1.60.1.70245"}
+{"id": 438341, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70245"}
+{"id": 438341, "field": "description", "en": "Heals an ally for $s1 damage every $t1 sec. for $d.", "hash": "47182c1288d04c1b", "src": "db2@1.60.1.70245"}
+{"id": 438341, "field": "aura", "en": "$s1 damage healed every $t1 sec.", "hash": "8d136749b2731244", "src": "db2@1.60.1.70245"}
+{"id": 438350, "field": "name", "en": "Shadow Bolt Volley", "hash": "62ed89ea2de9d24d", "src": "db2@1.60.1.70245"}
+{"id": 438350, "field": "description", "en": "Hurls missiles of dark magic, inflicting Shadow damage to nearby enemies.", "hash": "ff49863129e1fd03", "src": "db2@1.60.1.70245"}
+{"id": 438358, "field": "name", "en": "Bloodthirst", "hash": "8f76f8e0f481f954", "src": "db2@1.60.1.70245"}
+{"id": 438382, "field": "name", "en": "BFD XP Grant [DNT]", "hash": "a6c685b7b1c7ca78", "src": "db2@1.60.1.70245"}
+{"id": 438487, "field": "name", "en": "Ride Vehicle", "hash": "615b1691886a3aac", "src": "db2@1.60.1.70245"}
+{"id": 438501, "field": "name", "en": "Inevitable Doom", "hash": "54ecb17622b4e60e", "src": "db2@1.60.1.70245"}
+{"id": 438505, "field": "name", "en": "Mech Pilot Transform (Red)", "hash": "10451b77155344a2", "src": "db2@1.60.1.70245"}
+{"id": 438536, "field": "name", "en": "Spark of Inspiration", "hash": "1e6dc19c85672e44", "src": "db2@1.60.1.70245"}
+{"id": 438536, "field": "description", "en": "Increases critical strike chance of spells by $s1%, grants $s2 spell damage and healing, and increases melee and ranged attack speed by $s4%. 120 minute duration.", "hash": "2ed162d8957ad2cb", "src": "db2@1.60.1.70245"}
+{"id": 438536, "field": "aura", "en": "Increases critical strike chance of spells by $s1%, grants $s2 spell damage and healing, and increases melee and ranged attack speed by $s4%. 120 minute duration.", "hash": "2ed162d8957ad2cb", "src": "db2@1.60.1.70245"}
+{"id": 438537, "field": "name", "en": "Spark of Inspiration", "hash": "1e6dc19c85672e44", "src": "db2@1.60.1.70245"}
+{"id": 438537, "field": "description", "en": "Increases critical strike chance of spells by $s1%, grants $s2 spell damage and healing, and increases melee and ranged attack speed by $s4%. 120 minute duration.\r\n", "hash": "2ed162d8957ad2cb", "src": "db2@1.60.1.70245"}
+{"id": 438537, "field": "aura", "en": "Increases critical strike chance of spells by $s1%, grants $s2 spell damage and healing, and increases melee and ranged attack speed by $s4%. 120 minute duration.", "hash": "2ed162d8957ad2cb", "src": "db2@1.60.1.70245"}
+{"id": 438538, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70245"}
+{"id": 438538, "field": "description", "en": "Charges an enemy, inflicting normal damage plus $s3 and stuns the opponent for $d.", "hash": "af4293e676932a45", "src": "db2@1.60.1.70245"}
+{"id": 438539, "field": "name", "en": "Uppercut", "hash": "bd09630b8dda5f6b", "src": "db2@1.60.1.70245"}
+{"id": 438539, "field": "description", "en": "Inflicts normal damage plus $s1 to an enemy, knocking it back.", "hash": "5b233dd615ef6af3", "src": "db2@1.60.1.70245"}
+{"id": 438540, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70245"}
+{"id": 438540, "field": "description", "en": "Charges an enemy, inflicting normal damage.", "hash": "c3fe3da53cbebfd2", "src": "db2@1.60.1.70245"}
+{"id": 438541, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70245"}
+{"id": 438541, "field": "description", "en": "Charges an enemy.", "hash": "721f6d2cd42945c2", "src": "db2@1.60.1.70245"}
+{"id": 438542, "field": "name", "en": "[DNT] Dark Rider Spawn", "hash": "a801e8c6d8ddf67f", "src": "db2@1.60.1.70245"}
+{"id": 438545, "field": "name", "en": "Relentless Strikes", "hash": "36f27fd079150b00", "src": "db2@1.60.1.70245"}
+{"id": 438547, "field": "name", "en": "[DNT] Hyperconductive Shock Visual", "hash": "d247e40cf95b75d4", "src": "db2@1.60.1.70245"}
+{"id": 438548, "field": "name", "en": "[DNT] Charged Inspiration Visual", "hash": "8a66469bf97afb97", "src": "db2@1.60.1.70245"}
+{"id": 438550, "field": "name", "en": "Uppercut", "hash": "bd09630b8dda5f6b", "src": "db2@1.60.1.70245"}
+{"id": 438550, "field": "description", "en": "Inflicts normal damage plus $s1 to an enemy, knocking it back.", "hash": "5b233dd615ef6af3", "src": "db2@1.60.1.70245"}
+{"id": 438551, "field": "name", "en": "Feast of Blood", "hash": "fc42de06111f3e08", "src": "db2@1.60.1.70245"}
+{"id": 438551, "field": "aura", "en": "More danger, more rewards!", "hash": "5a36d8d1a0cd0319", "src": "db2@1.60.1.70245"}
+{"id": 438561, "field": "name", "en": "Scrap Toss", "hash": "3e43f25c2c7a5cbd", "src": "db2@1.60.1.70245"}
+{"id": 438567, "field": "name", "en": "Bruised", "hash": "aaf040dc09828ddf", "src": "db2@1.60.1.70245"}
+{"id": 438567, "field": "description", "en": "Bruised.", "hash": "78f132752aecc64c", "src": "db2@1.60.1.70245"}
+{"id": 438567, "field": "aura", "en": "Bruised.", "hash": "78f132752aecc64c", "src": "db2@1.60.1.70245"}
+{"id": 438572, "field": "name", "en": "Vehicle Damaged", "hash": "e82752b17af1a90f", "src": "db2@1.60.1.70245"}
+{"id": 438602, "field": "name", "en": "Mech Pilot Transform (Blue)", "hash": "3b765aab0632caef", "src": "db2@1.60.1.70245"}
+{"id": 438603, "field": "name", "en": "Mech Pilot Transform (Green)", "hash": "be536fe593f00098", "src": "db2@1.60.1.70245"}
+{"id": 438604, "field": "name", "en": "Mech Pilot Transform (Gray)", "hash": "9403896a61d432f2", "src": "db2@1.60.1.70245"}
+{"id": 438669, "field": "name", "en": "[DNT] Give Trinket", "hash": "e64ddf8ed1f3f1dc", "src": "db2@1.60.1.70245"}
+{"id": 438683, "field": "name", "en": "Sprocketfire Punch", "hash": "625a19133fe279c4", "src": "db2@1.60.1.70245"}
+{"id": 438704, "field": "name", "en": "Sprocketfire Punch", "hash": "625a19133fe279c4", "src": "db2@1.60.1.70245"}
+{"id": 438710, "field": "name", "en": "Sprocketfire", "hash": "55eff0d5dd15dfca", "src": "db2@1.60.1.70245"}
+{"id": 438710, "field": "aura", "en": "Deals $w1 Fire damage every $t1 sec.", "hash": "e06497998c1ce50b", "src": "db2@1.60.1.70245"}
+{"id": 438713, "field": "name", "en": "Furnace Surge", "hash": "d50dd51471ba077b", "src": "db2@1.60.1.70245"}
+{"id": 438714, "field": "name", "en": "Furnace Surge", "hash": "d50dd51471ba077b", "src": "db2@1.60.1.70245"}
+{"id": 438715, "field": "name", "en": "Furnace Surge", "hash": "d50dd51471ba077b", "src": "db2@1.60.1.70245"}
+{"id": 438715, "field": "aura", "en": "Flames spill forth from the mechanical furnace.", "hash": "3e6563a2e193f1dd", "src": "db2@1.60.1.70245"}
+{"id": 438716, "field": "name", "en": "Furnace Surge", "hash": "d50dd51471ba077b", "src": "db2@1.60.1.70245"}
+{"id": 438716, "field": "aura", "en": "$w1 Fire damage every $t1 sec.", "hash": "7464758190e92486", "src": "db2@1.60.1.70245"}
+{"id": 438717, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70245"}
+{"id": 438718, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70245"}
+{"id": 438718, "field": "aura", "en": "$w1 Fire damage every $t1 sec.", "hash": "7464758190e92486", "src": "db2@1.60.1.70245"}
+{"id": 438719, "field": "name", "en": "Supercooled Smash", "hash": "cea8dfae21ef9840", "src": "db2@1.60.1.70245"}
+{"id": 438719, "field": "aura", "en": "Movement speed slowed by $s2%.", "hash": "79a226e8bb65bd7e", "src": "db2@1.60.1.70245"}
+{"id": 438720, "field": "name", "en": "Freezing", "hash": "592cdaef5a06395d", "src": "db2@1.60.1.70245"}
+{"id": 438720, "field": "aura", "en": "Movement speed slowed by $s2%.", "hash": "79a226e8bb65bd7e", "src": "db2@1.60.1.70245"}
+{"id": 438721, "field": "name", "en": "Frozen Solid", "hash": "15bf964ba47b5e0b", "src": "db2@1.60.1.70245"}
+{"id": 438721, "field": "aura", "en": "Stunned and very cold.", "hash": "9cb407ec9dd2c6d4", "src": "db2@1.60.1.70245"}
+{"id": 438723, "field": "name", "en": "Coolant Discharge", "hash": "dd1ede71337f1611", "src": "db2@1.60.1.70245"}
+{"id": 438724, "field": "name", "en": "Frozen Shrapnel", "hash": "2abaf53bcf7bbce5", "src": "db2@1.60.1.70245"}
+{"id": 438725, "field": "name", "en": "Frost Bomb", "hash": "7fafce2edcb7ccac", "src": "db2@1.60.1.70245"}
+{"id": 438726, "field": "name", "en": "Hazardous Hammer", "hash": "3e9d59cda1e4932c", "src": "db2@1.60.1.70245"}
+{"id": 438727, "field": "name", "en": "Radiation Sickness", "hash": "1a029c6588f7bf3d", "src": "db2@1.60.1.70245"}
+{"id": 438727, "field": "aura", "en": "Nature damage taken increased by $w1%.", "hash": "2093012dd06e12b3", "src": "db2@1.60.1.70245"}
+{"id": 438728, "field": "name", "en": "Radiation Leak", "hash": "de0b41356f0e7d6b", "src": "db2@1.60.1.70245"}
+{"id": 438728, "field": "aura", "en": "$w1 Nature damage every $t1 sec.", "hash": "508bfddcf13ce028", "src": "db2@1.60.1.70245"}
+{"id": 438730, "field": "name", "en": "Radioactive Bomb", "hash": "41546df8e9e7b912", "src": "db2@1.60.1.70245"}
+{"id": 438732, "field": "name", "en": "Toxic Ventilation", "hash": "41e5c6e46387dd28", "src": "db2@1.60.1.70245"}
+{"id": 438732, "field": "aura", "en": "$w1 Nature damage every $t1 sec.", "hash": "508bfddcf13ce028", "src": "db2@1.60.1.70245"}
+{"id": 438735, "field": "name", "en": "High Voltage!", "hash": "3e90f5f56157957e", "src": "db2@1.60.1.70245"}
+{"id": 438735, "field": "aura", "en": "Buttons don't seem to respond to your touch while electrified.", "hash": "69ae81838c611c96", "src": "db2@1.60.1.70245"}
+{"id": 438857, "field": "name", "en": "Walking Bomb Passive Proc (100%)", "hash": "d1503b4b8cb8fe8f", "src": "db2@1.60.1.70245"}
+{"id": 438859, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70245"}
+{"id": 438859, "field": "description", "en": "Detonates causing damage in an area.", "hash": "f8a03f70c37e5a7a", "src": "db2@1.60.1.70245"}
+{"id": 438861, "field": "name", "en": "Summon Bomb", "hash": "8543bc2f2a277748", "src": "db2@1.60.1.70245"}
+{"id": 438862, "field": "name", "en": "Summon Bomb", "hash": "8543bc2f2a277748", "src": "db2@1.60.1.70245"}
+{"id": 438863, "field": "name", "en": "Summon Bomb", "hash": "8543bc2f2a277748", "src": "db2@1.60.1.70245"}
+{"id": 438865, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70245"}
+{"id": 438938, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70245"}
+{"id": 438938, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70245"}

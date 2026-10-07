@@ -1,15 +1,15 @@
-{"id": 419126, "field": "name", "en": "String of Ears", "hash": "cda007997f052370", "src": "db2@1.60.1.70170"}
-{"id": 419126, "field": "description", "en": "Display how many trophies you've gathered from victories while Dueling to the Death.", "hash": "820f9bf0c55c94b4", "src": "db2@1.60.1.70170"}
-{"id": 419126, "field": "aura", "en": "$w $?$w=1[trophy][trophies] gathered as victories while Dueling to the Death.", "hash": "0d2e7a0fc024c941", "src": "db2@1.60.1.70170"}
-{"id": 419288, "field": "name", "en": "Lunar Idol", "hash": "2c19478cd6e72b09", "src": "db2@1.60.1.70170"}
-{"id": 419288, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70170"}
-{"id": 419307, "field": "name", "en": "Meditation on Elune", "hash": "cfcb6e1aa8666314", "src": "db2@1.60.1.70170"}
-{"id": 419307, "field": "aura", "en": "Your mind is expanded by your meditation, granting you the clarity to learn new spells from Memories found throughout the world.", "hash": "0f1e11e98a8d9c57", "src": "db2@1.60.1.70170"}
-{"id": 419308, "field": "name", "en": "Moonwell's Blessing", "hash": "c4bf6d62514d1bef", "src": "db2@1.60.1.70170"}
-{"id": 419308, "field": "aura", "en": "The waters of the moonwell calm your thoughts. Kneel here to meditate on Elune's mysteries.", "hash": "760c07a52b26d9d2", "src": "db2@1.60.1.70170"}
-{"id": 419417, "field": "name", "en": "A Place Very Homelike", "hash": "955a1e73de785c60", "src": "db2@1.60.1.70170"}
-{"id": 419417, "field": "description", "en": "Returns you to $z.  Speak to an Innkeeper in a different place to change your home location.", "hash": "f92eb2a9d4b8341b", "src": "db2@1.60.1.70170"}
-{"id": 419427, "field": "name", "en": "Duel to the Death Win Checker", "hash": "b74e48b0d465b572", "src": "db2@1.60.1.70170"}
-{"id": 419636, "field": "name", "en": "Corrupted Molten Fury Totem", "hash": "113b0ad515fecc0f", "src": "db2@1.60.1.70170"}
-{"id": 419649, "field": "name", "en": "Spawn Murloc", "hash": "934f28c9a2cc8042", "src": "db2@1.60.1.70170"}
-{"id": 419652, "field": "name", "en": "Teleport Players", "hash": "e1c607c71bdfc00f", "src": "db2@1.60.1.70170"}
+{"id": 419126, "field": "name", "en": "String of Ears", "hash": "cda007997f052370", "src": "db2@1.60.1.70245"}
+{"id": 419126, "field": "description", "en": "Display how many trophies you've gathered from victories while Dueling to the Death.", "hash": "820f9bf0c55c94b4", "src": "db2@1.60.1.70245"}
+{"id": 419126, "field": "aura", "en": "$w $?$w=1[trophy][trophies] gathered as victories while Dueling to the Death.", "hash": "0d2e7a0fc024c941", "src": "db2@1.60.1.70245"}
+{"id": 419288, "field": "name", "en": "Lunar Idol", "hash": "2c19478cd6e72b09", "src": "db2@1.60.1.70245"}
+{"id": 419288, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70245"}
+{"id": 419307, "field": "name", "en": "Meditation on Elune", "hash": "cfcb6e1aa8666314", "src": "db2@1.60.1.70245"}
+{"id": 419307, "field": "aura", "en": "Your mind is expanded by your meditation, granting you the clarity to learn new spells from Memories found throughout the world.", "hash": "0f1e11e98a8d9c57", "src": "db2@1.60.1.70245"}
+{"id": 419308, "field": "name", "en": "Moonwell's Blessing", "hash": "c4bf6d62514d1bef", "src": "db2@1.60.1.70245"}
+{"id": 419308, "field": "aura", "en": "The waters of the moonwell calm your thoughts. Kneel here to meditate on Elune's mysteries.", "hash": "760c07a52b26d9d2", "src": "db2@1.60.1.70245"}
+{"id": 419417, "field": "name", "en": "A Place Very Homelike", "hash": "955a1e73de785c60", "src": "db2@1.60.1.70245"}
+{"id": 419417, "field": "description", "en": "Returns you to $z.  Speak to an Innkeeper in a different place to change your home location.", "hash": "f92eb2a9d4b8341b", "src": "db2@1.60.1.70245"}
+{"id": 419427, "field": "name", "en": "Duel to the Death Win Checker", "hash": "b74e48b0d465b572", "src": "db2@1.60.1.70245"}
+{"id": 419636, "field": "name", "en": "Corrupted Molten Fury Totem", "hash": "113b0ad515fecc0f", "src": "db2@1.60.1.70245"}
+{"id": 419649, "field": "name", "en": "Spawn Murloc", "hash": "934f28c9a2cc8042", "src": "db2@1.60.1.70245"}
+{"id": 419652, "field": "name", "en": "Teleport Players", "hash": "e1c607c71bdfc00f", "src": "db2@1.60.1.70245"}

@@ -1,131 +1,131 @@
-{"id": 280042, "field": "name", "en": "Tattered Spellbook", "hash": "be42159c62b71ad7", "src": "db2@1.60.1.70170"}
-{"id": 280087, "field": "name", "en": "Soft Nightsaber Pelt", "hash": "2954183bf7b7a428", "src": "db2@1.60.1.70170"}
-{"id": 280088, "field": "name", "en": "Soft Saber Sack", "hash": "72d41404a4b08c1d", "src": "db2@1.60.1.70170"}
-{"id": 280092, "field": "name", "en": "Wyrmtail", "hash": "89ef0aca283cdba9", "src": "db2@1.60.1.70170"}
-{"id": 280095, "field": "name", "en": "Cryptwalker Bracers", "hash": "4da880b831b0fe24", "src": "db2@1.60.1.70170"}
-{"id": 280096, "field": "name", "en": "Tomb Robber's Gloves", "hash": "04ff57c190ddd270", "src": "db2@1.60.1.70170"}
-{"id": 280099, "field": "name", "en": "Crimson Crate", "hash": "d23cfb83254b9735", "src": "db2@1.60.1.70170"}
-{"id": 280103, "field": "name", "en": "Razormaw Incisor", "hash": "28575ae1a7fe967e", "src": "db2@1.60.1.70170"}
-{"id": 280132, "field": "name", "en": "Perfect Razormaw Egg", "hash": "91b39fd731fd6932", "src": "db2@1.60.1.70170"}
-{"id": 280179, "field": "name", "en": "Shipping Label", "hash": "e6d6b8f11fa6869a", "src": "db2@1.60.1.70170"}
-{"id": 280180, "field": "name", "en": "Shipping Label", "hash": "e6d6b8f11fa6869a", "src": "db2@1.60.1.70170"}
-{"id": 280181, "field": "name", "en": "Redstone Basilisk Scale", "hash": "01373ae6287a0678", "src": "db2@1.60.1.70170"}
-{"id": 280203, "field": "name", "en": "Jameson's Training Sword", "hash": "4afdf669afc9a373", "src": "db2@1.60.1.70170"}
-{"id": 280304, "field": "name", "en": "Invisible Dagger", "hash": "24e1060e2b7cae8c", "src": "db2@1.60.1.70170"}
-{"id": 280306, "field": "name", "en": "Whimsical Waistwrap", "hash": "d4e6cc45e2656be1", "src": "db2@1.60.1.70170"}
-{"id": 280307, "field": "name", "en": "Gizmo Girdle", "hash": "d31940a6fc403fd3", "src": "db2@1.60.1.70170"}
-{"id": 280308, "field": "name", "en": "Clanking Cord", "hash": "962b88b8c9b80034", "src": "db2@1.60.1.70170"}
-{"id": 280310, "field": "name", "en": "Floppy Goggles", "hash": "d2f64261f0f4a84a", "src": "db2@1.60.1.70170"}
-{"id": 280310, "field": "description", "en": "Allows you to look far into the distance.", "hash": "4c99356daeaf0bf4", "src": "db2@1.60.1.70170"}
-{"id": 280311, "field": "name", "en": "Bent Goggles", "hash": "916e89084f7cd1aa", "src": "db2@1.60.1.70170"}
-{"id": 280311, "field": "description", "en": "Allows you to look far into the distance.", "hash": "4c99356daeaf0bf4", "src": "db2@1.60.1.70170"}
-{"id": 280312, "field": "name", "en": "Stuckbutton Goggles", "hash": "189ed442b5d323f4", "src": "db2@1.60.1.70170"}
-{"id": 280312, "field": "description", "en": "Allows you to look far into the distance.", "hash": "4c99356daeaf0bf4", "src": "db2@1.60.1.70170"}
-{"id": 280313, "field": "name", "en": "Dented Goggles", "hash": "cef799ad229c134b", "src": "db2@1.60.1.70170"}
-{"id": 280313, "field": "description", "en": "Allows you to look far into the distance.", "hash": "4c99356daeaf0bf4", "src": "db2@1.60.1.70170"}
-{"id": 280317, "field": "name", "en": "Frying Pan", "hash": "0fc1457bc1df76a7", "src": "db2@1.60.1.70170"}
-{"id": 280319, "field": "name", "en": "Unruptured Stalker Gland", "hash": "7d08a95d6ac67798", "src": "db2@1.60.1.70170"}
-{"id": 280321, "field": "name", "en": "Schematic: Whimsical Waistwrap", "hash": "5a7e001fa4776fd9", "src": "db2@1.60.1.70170"}
-{"id": 280321, "field": "description", "en": "Teaches you how to craft Whimsical Waistwrap.", "hash": "1981f33000163d75", "src": "db2@1.60.1.70170"}
-{"id": 280322, "field": "name", "en": "Schematic: Gizmo Girdle", "hash": "a8c9142b7a1d0aa0", "src": "db2@1.60.1.70170"}
-{"id": 280322, "field": "description", "en": "Teaches you how to craft Gizmo Girdle.", "hash": "7c689c4484aad1b5", "src": "db2@1.60.1.70170"}
-{"id": 280323, "field": "name", "en": "Schematic: Clanking Cord", "hash": "ef24c5592553fded", "src": "db2@1.60.1.70170"}
-{"id": 280323, "field": "description", "en": "Teaches you how to craft Clanking Cord.", "hash": "79ff0c1b4f36e989", "src": "db2@1.60.1.70170"}
-{"id": 280324, "field": "name", "en": "Schematic: Serrated Strap", "hash": "764badfb32bf2c05", "src": "db2@1.60.1.70170"}
-{"id": 280324, "field": "description", "en": "Teaches you how to craft Serrated Strap.", "hash": "ee4ab00c17a9e337", "src": "db2@1.60.1.70170"}
-{"id": 280325, "field": "name", "en": "Schematic: Floppy Goggles", "hash": "5a8049aa58c6b2eb", "src": "db2@1.60.1.70170"}
-{"id": 280325, "field": "description", "en": "Teaches you how to craft Floppy Goggles.", "hash": "b5365a536d9d9dd9", "src": "db2@1.60.1.70170"}
-{"id": 280326, "field": "name", "en": "Schematic: Bent Goggles", "hash": "671e5c8dcd599c66", "src": "db2@1.60.1.70170"}
-{"id": 280326, "field": "description", "en": "Teaches you how to craft Bent Goggles.", "hash": "e20ca5c0028e9af9", "src": "db2@1.60.1.70170"}
-{"id": 280327, "field": "name", "en": "Schematic: Stuckbutton Goggles", "hash": "9e36081777e527ec", "src": "db2@1.60.1.70170"}
-{"id": 280327, "field": "description", "en": "Teaches you how to craft Stuckbutton Goggles.", "hash": "c0ae07c21ccef4cb", "src": "db2@1.60.1.70170"}
-{"id": 280328, "field": "name", "en": "Schematic: Dented Goggles", "hash": "5681a0f68a6e1ddb", "src": "db2@1.60.1.70170"}
-{"id": 280328, "field": "description", "en": "Teaches you how to craft Dented Goggles.", "hash": "a9e6062d57b613e8", "src": "db2@1.60.1.70170"}
-{"id": 280330, "field": "name", "en": "Carnage's Head", "hash": "1fe169048aa1efa2", "src": "db2@1.60.1.70170"}
-{"id": 280331, "field": "name", "en": "Malignant Rotclaw Flesh", "hash": "d5daf5c6a2b3bcb0", "src": "db2@1.60.1.70170"}
-{"id": 280331, "field": "description", "en": "Offer the flesh to Carnage, the Razormaw alpha.", "hash": "08e356eff9c138bc", "src": "db2@1.60.1.70170"}
-{"id": 280347, "field": "name", "en": "Shadowgale Squirrel", "hash": "1969d0478c4b19e8", "src": "db2@1.60.1.70170"}
-{"id": 280347, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280363, "field": "name", "en": "Nightclaw Mantle", "hash": "1ad5ff9d716c25df", "src": "db2@1.60.1.70170"}
-{"id": 280369, "field": "name", "en": "Dragonmaw Armaments", "hash": "920dbe7a12cb6e69", "src": "db2@1.60.1.70170"}
-{"id": 280375, "field": "name", "en": "Worgen Bits", "hash": "22b50d20ea49e8d6", "src": "db2@1.60.1.70170"}
-{"id": 280390, "field": "name", "en": "Carved Stone Trinket", "hash": "248fc16828012787", "src": "db2@1.60.1.70170"}
-{"id": 280391, "field": "name", "en": "Carved Stone Trinket", "hash": "248fc16828012787", "src": "db2@1.60.1.70170"}
-{"id": 280392, "field": "name", "en": "Howin's Missive", "hash": "23d5429a82772d47", "src": "db2@1.60.1.70170"}
-{"id": 280394, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70170"}
-{"id": 280394, "field": "description", "en": "Activate a Goaz Warder.", "hash": "3e261b236c4833f1", "src": "db2@1.60.1.70170"}
-{"id": 280395, "field": "name", "en": "Heart of Ados", "hash": "4b921b8202df62b5", "src": "db2@1.60.1.70170"}
-{"id": 280396, "field": "name", "en": "Heart of Modr", "hash": "4d309a87cf685dae", "src": "db2@1.60.1.70170"}
-{"id": 280397, "field": "name", "en": "Heart of Golm", "hash": "4c62ccf87ef9a484", "src": "db2@1.60.1.70170"}
-{"id": 280398, "field": "name", "en": "Heart of Neru", "hash": "4d5050f5351f6a85", "src": "db2@1.60.1.70170"}
-{"id": 280399, "field": "name", "en": "Damaged Scimitar", "hash": "8a5ea7b94c171202", "src": "db2@1.60.1.70170"}
-{"id": 280400, "field": "name", "en": "Worn Bludgeon", "hash": "72c056f278fba567", "src": "db2@1.60.1.70170"}
-{"id": 280402, "field": "name", "en": "Rusty Dagger", "hash": "3d2fbecb9dfa4986", "src": "db2@1.60.1.70170"}
-{"id": 280403, "field": "name", "en": "Whelgar Relic Package", "hash": "b74074053390f589", "src": "db2@1.60.1.70170"}
-{"id": 280404, "field": "name", "en": "Lordaeron Forever Tabard", "hash": "3d950566387eb11c", "src": "db2@1.60.1.70170"}
-{"id": 280413, "field": "name", "en": "Flintfire's Shipment", "hash": "c0b8d3850ceb382b", "src": "db2@1.60.1.70170"}
-{"id": 280417, "field": "name", "en": "Damaged Blue Crystal", "hash": "f74c2cad74d7a63e", "src": "db2@1.60.1.70170"}
-{"id": 280426, "field": "name", "en": "Sack of Fish", "hash": "9b3d2867ba0cfafa", "src": "db2@1.60.1.70170"}
-{"id": 280430, "field": "name", "en": "Mountaineer Gretchen's Report", "hash": "1ce959f24ce1fd23", "src": "db2@1.60.1.70170"}
-{"id": 280438, "field": "name", "en": "Abominable Head", "hash": "0445022b736ef319", "src": "db2@1.60.1.70170"}
-{"id": 280449, "field": "name", "en": "Skyborne Tabard", "hash": "3a3bce844a6a1c55", "src": "db2@1.60.1.70170"}
-{"id": 280456, "field": "name", "en": "Weevil K. Neevil", "hash": "89175ca438b147b9", "src": "db2@1.60.1.70170"}
-{"id": 280456, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280459, "field": "name", "en": "Crystal Infused Scale", "hash": "501d547aca2837d9", "src": "db2@1.60.1.70170"}
-{"id": 280502, "field": "name", "en": "Relic of the Fang", "hash": "260b47c5b8d25c5f", "src": "db2@1.60.1.70170"}
-{"id": 280504, "field": "name", "en": "Mudsoaked Scrap", "hash": "93fc7f5c0ee44842", "src": "db2@1.60.1.70170"}
-{"id": 280544, "field": "name", "en": "Cerulean Prideclaw", "hash": "66edc0264cad6ccb", "src": "db2@1.60.1.70170"}
-{"id": 280544, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70170"}
-{"id": 280567, "field": "name", "en": "Small Sack of Gems", "hash": "41556cae629ed688", "src": "db2@1.60.1.70170"}
-{"id": 280604, "field": "name", "en": "Rage of the Storm", "hash": "d26761d267ee0bf7", "src": "db2@1.60.1.70170"}
-{"id": 280604, "field": "description", "en": "Increases the damage dealt by your Stormstrike ability by $m1%.", "hash": "631b983b0a3ba79b", "src": "db2@1.60.1.70170"}
-{"id": 280605, "field": "name", "en": "Tidebringer's Claw", "hash": "026c91b1c547f392", "src": "db2@1.60.1.70170"}
-{"id": 280605, "field": "description", "en": "Increases the critical strike chance of your Healing Wave and Lesser Healing Wave spells by $m1%.", "hash": "710ee120b4ad9a2c", "src": "db2@1.60.1.70170"}
-{"id": 280607, "field": "name", "en": "Lightning's Grasp", "hash": "f655d6a8c43e7a50", "src": "db2@1.60.1.70170"}
-{"id": 280607, "field": "description", "en": "Increases the critical strike chance of your Lightning Bolt spell by $m1%.", "hash": "9a0e8a224e8b13a0", "src": "db2@1.60.1.70170"}
-{"id": 280608, "field": "name", "en": "Eldarath Relic", "hash": "a0c6f1f0da5fc51b", "src": "db2@1.60.1.70170"}
-{"id": 280610, "field": "name", "en": "Lord Sarthiss' Head", "hash": "c1869e47ad4fbb3d", "src": "db2@1.60.1.70170"}
-{"id": 280611, "field": "name", "en": "Veteran Adventurer's Loyal Companion", "hash": "96faf7d3e097194a", "src": "db2@1.60.1.70170"}
-{"id": 280611, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70170"}
-{"id": 280612, "field": "name", "en": "Night Watchman's Torch", "hash": "3644c6cf78affe53", "src": "db2@1.60.1.70170"}
-{"id": 280612, "field": "description", "en": "Light the Night Watchman's Torch.", "hash": "49e8f9faaf833460", "src": "db2@1.60.1.70170"}
-{"id": 280614, "field": "name", "en": "Pachimari", "hash": "4989aa7cac976d5d", "src": "db2@1.60.1.70170"}
-{"id": 280614, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280615, "field": "name", "en": "Galestrider Chick", "hash": "a029eb16e9f6fef7", "src": "db2@1.60.1.70170"}
-{"id": 280615, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280623, "field": "name", "en": "Veteran Adventurer's Rucksack", "hash": "165c7a2978f98b37", "src": "db2@1.60.1.70170"}
-{"id": 280679, "field": "name", "en": "Relic of the Claw", "hash": "25a739c03c43cb3f", "src": "db2@1.60.1.70170"}
-{"id": 280680, "field": "name", "en": "Relic of the Silent Shadow", "hash": "f39b8e29b6fad697", "src": "db2@1.60.1.70170"}
-{"id": 280686, "field": "name", "en": "Rod of Deep Dominion", "hash": "f5cd627bf4b474d1", "src": "db2@1.60.1.70170"}
-{"id": 280696, "field": "name", "en": "Elementalist's Guard", "hash": "fe00d2fc6477ee38", "src": "db2@1.60.1.70170"}
-{"id": 280697, "field": "name", "en": "Plagued Cockroach", "hash": "e2fd7526aa98b961", "src": "db2@1.60.1.70170"}
-{"id": 280697, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280699, "field": "name", "en": "Undercity Cockroach", "hash": "970b5f3829f30617", "src": "db2@1.60.1.70170"}
-{"id": 280699, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280703, "field": "name", "en": "Jungle Boa", "hash": "686e1d709f1ed9ab", "src": "db2@1.60.1.70170"}
-{"id": 280703, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280729, "field": "name", "en": "Shen'dorei Tabard", "hash": "bae0f32c41a167d4", "src": "db2@1.60.1.70170"}
-{"id": 280740, "field": "name", "en": "Shen'dorei Windwell", "hash": "7d00d1521eb9998f", "src": "db2@1.60.1.70170"}
-{"id": 280740, "field": "description", "en": "Summons your own portable Windwell for $d.", "hash": "f17e3f1326c81e32", "src": "db2@1.60.1.70170"}
-{"id": 280766, "field": "name", "en": "Satchel of Potions", "hash": "e8bfc0399b633a8c", "src": "db2@1.60.1.70170"}
-{"id": 280766, "field": "description", "en": "Reach into the bag and hope for the best.\nNot every potion is meant for consumption.", "hash": "8ac045390c535cd0", "src": "db2@1.60.1.70170"}
-{"id": 280794, "field": "name", "en": "Brown Ground Squirrel Whistle", "hash": "6259eb0094c42d8e", "src": "db2@1.60.1.70170"}
-{"id": 280794, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280795, "field": "name", "en": "Red Ground Squirrel Whistle", "hash": "095fb9c485c96481", "src": "db2@1.60.1.70170"}
-{"id": 280795, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280797, "field": "name", "en": "Rabbit Crate (Arctic)", "hash": "46e318cc77c5451c", "src": "db2@1.60.1.70170"}
-{"id": 280797, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280801, "field": "name", "en": "Rabbit Crate (Brown)", "hash": "5d6cb88e1ad1de6c", "src": "db2@1.60.1.70170"}
-{"id": 280801, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280803, "field": "name", "en": "Eagle Owl", "hash": "63e7bd18fa6cf59b", "src": "db2@1.60.1.70170"}
-{"id": 280803, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 280805, "field": "name", "en": "Serrated Raptor Claw", "hash": "02eb0e0f15eaf18b", "src": "db2@1.60.1.70170"}
-{"id": 280805, "field": "description", "en": "Some claws are better for killing than cooking.", "hash": "cd1f6d297330053f", "src": "db2@1.60.1.70170"}
-{"id": 280806, "field": "name", "en": "Stolen Explosives", "hash": "b847acece8b765b7", "src": "db2@1.60.1.70170"}
-{"id": 280831, "field": "name", "en": "Hatescreech's Amulet", "hash": "be23910a66f181b1", "src": "db2@1.60.1.70170"}
-{"id": 280832, "field": "name", "en": "Windmistress Gaedress' Amulet", "hash": "d89601379d63c2b4", "src": "db2@1.60.1.70170"}
-{"id": 280834, "field": "name", "en": "Witchmother Arysa's Amulet", "hash": "847523248de35855", "src": "db2@1.60.1.70170"}
-{"id": 280839, "field": "name", "en": "Blackrock Supplies", "hash": "d7f7b0db838f4c90", "src": "db2@1.60.1.70170"}
-{"id": 280841, "field": "name", "en": "Stolen Weapon", "hash": "89bd77773a76d4fb", "src": "db2@1.60.1.70170"}
-{"id": 280911, "field": "name", "en": "Spiked Collar", "hash": "a74c0964fd3ff81a", "src": "db2@1.60.1.70170"}
-{"id": 280943, "field": "name", "en": "Tome of Tremayne Family Blacksmithing Techniques", "hash": "d175937690cb7a8f", "src": "db2@1.60.1.70170"}
+{"id": 280042, "field": "name", "en": "Tattered Spellbook", "hash": "be42159c62b71ad7", "src": "db2@1.60.1.70245"}
+{"id": 280087, "field": "name", "en": "Soft Nightsaber Pelt", "hash": "2954183bf7b7a428", "src": "db2@1.60.1.70245"}
+{"id": 280088, "field": "name", "en": "Soft Saber Sack", "hash": "72d41404a4b08c1d", "src": "db2@1.60.1.70245"}
+{"id": 280092, "field": "name", "en": "Wyrmtail", "hash": "89ef0aca283cdba9", "src": "db2@1.60.1.70245"}
+{"id": 280095, "field": "name", "en": "Cryptwalker Bracers", "hash": "4da880b831b0fe24", "src": "db2@1.60.1.70245"}
+{"id": 280096, "field": "name", "en": "Tomb Robber's Gloves", "hash": "04ff57c190ddd270", "src": "db2@1.60.1.70245"}
+{"id": 280099, "field": "name", "en": "Crimson Crate", "hash": "d23cfb83254b9735", "src": "db2@1.60.1.70245"}
+{"id": 280103, "field": "name", "en": "Razormaw Incisor", "hash": "28575ae1a7fe967e", "src": "db2@1.60.1.70245"}
+{"id": 280132, "field": "name", "en": "Perfect Razormaw Egg", "hash": "91b39fd731fd6932", "src": "db2@1.60.1.70245"}
+{"id": 280179, "field": "name", "en": "Shipping Label", "hash": "e6d6b8f11fa6869a", "src": "db2@1.60.1.70245"}
+{"id": 280180, "field": "name", "en": "Shipping Label", "hash": "e6d6b8f11fa6869a", "src": "db2@1.60.1.70245"}
+{"id": 280181, "field": "name", "en": "Redstone Basilisk Scale", "hash": "01373ae6287a0678", "src": "db2@1.60.1.70245"}
+{"id": 280203, "field": "name", "en": "Jameson's Training Sword", "hash": "4afdf669afc9a373", "src": "db2@1.60.1.70245"}
+{"id": 280304, "field": "name", "en": "Invisible Dagger", "hash": "24e1060e2b7cae8c", "src": "db2@1.60.1.70245"}
+{"id": 280306, "field": "name", "en": "Whimsical Waistwrap", "hash": "d4e6cc45e2656be1", "src": "db2@1.60.1.70245"}
+{"id": 280307, "field": "name", "en": "Gizmo Girdle", "hash": "d31940a6fc403fd3", "src": "db2@1.60.1.70245"}
+{"id": 280308, "field": "name", "en": "Clanking Cord", "hash": "962b88b8c9b80034", "src": "db2@1.60.1.70245"}
+{"id": 280310, "field": "name", "en": "Floppy Goggles", "hash": "d2f64261f0f4a84a", "src": "db2@1.60.1.70245"}
+{"id": 280310, "field": "description", "en": "Allows you to look far into the distance.", "hash": "4c99356daeaf0bf4", "src": "db2@1.60.1.70245"}
+{"id": 280311, "field": "name", "en": "Bent Goggles", "hash": "916e89084f7cd1aa", "src": "db2@1.60.1.70245"}
+{"id": 280311, "field": "description", "en": "Allows you to look far into the distance.", "hash": "4c99356daeaf0bf4", "src": "db2@1.60.1.70245"}
+{"id": 280312, "field": "name", "en": "Stuckbutton Goggles", "hash": "189ed442b5d323f4", "src": "db2@1.60.1.70245"}
+{"id": 280312, "field": "description", "en": "Allows you to look far into the distance.", "hash": "4c99356daeaf0bf4", "src": "db2@1.60.1.70245"}
+{"id": 280313, "field": "name", "en": "Dented Goggles", "hash": "cef799ad229c134b", "src": "db2@1.60.1.70245"}
+{"id": 280313, "field": "description", "en": "Allows you to look far into the distance.", "hash": "4c99356daeaf0bf4", "src": "db2@1.60.1.70245"}
+{"id": 280317, "field": "name", "en": "Frying Pan", "hash": "0fc1457bc1df76a7", "src": "db2@1.60.1.70245"}
+{"id": 280319, "field": "name", "en": "Unruptured Stalker Gland", "hash": "7d08a95d6ac67798", "src": "db2@1.60.1.70245"}
+{"id": 280321, "field": "name", "en": "Schematic: Whimsical Waistwrap", "hash": "5a7e001fa4776fd9", "src": "db2@1.60.1.70245"}
+{"id": 280321, "field": "description", "en": "Teaches you how to craft Whimsical Waistwrap.", "hash": "1981f33000163d75", "src": "db2@1.60.1.70245"}
+{"id": 280322, "field": "name", "en": "Schematic: Gizmo Girdle", "hash": "a8c9142b7a1d0aa0", "src": "db2@1.60.1.70245"}
+{"id": 280322, "field": "description", "en": "Teaches you how to craft Gizmo Girdle.", "hash": "7c689c4484aad1b5", "src": "db2@1.60.1.70245"}
+{"id": 280323, "field": "name", "en": "Schematic: Clanking Cord", "hash": "ef24c5592553fded", "src": "db2@1.60.1.70245"}
+{"id": 280323, "field": "description", "en": "Teaches you how to craft Clanking Cord.", "hash": "79ff0c1b4f36e989", "src": "db2@1.60.1.70245"}
+{"id": 280324, "field": "name", "en": "Schematic: Serrated Strap", "hash": "764badfb32bf2c05", "src": "db2@1.60.1.70245"}
+{"id": 280324, "field": "description", "en": "Teaches you how to craft Serrated Strap.", "hash": "ee4ab00c17a9e337", "src": "db2@1.60.1.70245"}
+{"id": 280325, "field": "name", "en": "Schematic: Floppy Goggles", "hash": "5a8049aa58c6b2eb", "src": "db2@1.60.1.70245"}
+{"id": 280325, "field": "description", "en": "Teaches you how to craft Floppy Goggles.", "hash": "b5365a536d9d9dd9", "src": "db2@1.60.1.70245"}
+{"id": 280326, "field": "name", "en": "Schematic: Bent Goggles", "hash": "671e5c8dcd599c66", "src": "db2@1.60.1.70245"}
+{"id": 280326, "field": "description", "en": "Teaches you how to craft Bent Goggles.", "hash": "e20ca5c0028e9af9", "src": "db2@1.60.1.70245"}
+{"id": 280327, "field": "name", "en": "Schematic: Stuckbutton Goggles", "hash": "9e36081777e527ec", "src": "db2@1.60.1.70245"}
+{"id": 280327, "field": "description", "en": "Teaches you how to craft Stuckbutton Goggles.", "hash": "c0ae07c21ccef4cb", "src": "db2@1.60.1.70245"}
+{"id": 280328, "field": "name", "en": "Schematic: Dented Goggles", "hash": "5681a0f68a6e1ddb", "src": "db2@1.60.1.70245"}
+{"id": 280328, "field": "description", "en": "Teaches you how to craft Dented Goggles.", "hash": "a9e6062d57b613e8", "src": "db2@1.60.1.70245"}
+{"id": 280330, "field": "name", "en": "Carnage's Head", "hash": "1fe169048aa1efa2", "src": "db2@1.60.1.70245"}
+{"id": 280331, "field": "name", "en": "Malignant Rotclaw Flesh", "hash": "d5daf5c6a2b3bcb0", "src": "db2@1.60.1.70245"}
+{"id": 280331, "field": "description", "en": "Offer the flesh to Carnage, the Razormaw alpha.", "hash": "08e356eff9c138bc", "src": "db2@1.60.1.70245"}
+{"id": 280347, "field": "name", "en": "Shadowgale Squirrel", "hash": "1969d0478c4b19e8", "src": "db2@1.60.1.70245"}
+{"id": 280347, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280363, "field": "name", "en": "Nightclaw Mantle", "hash": "1ad5ff9d716c25df", "src": "db2@1.60.1.70245"}
+{"id": 280369, "field": "name", "en": "Dragonmaw Armaments", "hash": "920dbe7a12cb6e69", "src": "db2@1.60.1.70245"}
+{"id": 280375, "field": "name", "en": "Worgen Bits", "hash": "22b50d20ea49e8d6", "src": "db2@1.60.1.70245"}
+{"id": 280390, "field": "name", "en": "Carved Stone Trinket", "hash": "248fc16828012787", "src": "db2@1.60.1.70245"}
+{"id": 280391, "field": "name", "en": "Carved Stone Trinket", "hash": "248fc16828012787", "src": "db2@1.60.1.70245"}
+{"id": 280392, "field": "name", "en": "Howin's Missive", "hash": "23d5429a82772d47", "src": "db2@1.60.1.70245"}
+{"id": 280394, "field": "name", "en": "Goaz Stone", "hash": "71d7ad41ef329850", "src": "db2@1.60.1.70245"}
+{"id": 280394, "field": "description", "en": "Activate a Goaz Warder.", "hash": "3e261b236c4833f1", "src": "db2@1.60.1.70245"}
+{"id": 280395, "field": "name", "en": "Heart of Ados", "hash": "4b921b8202df62b5", "src": "db2@1.60.1.70245"}
+{"id": 280396, "field": "name", "en": "Heart of Modr", "hash": "4d309a87cf685dae", "src": "db2@1.60.1.70245"}
+{"id": 280397, "field": "name", "en": "Heart of Golm", "hash": "4c62ccf87ef9a484", "src": "db2@1.60.1.70245"}
+{"id": 280398, "field": "name", "en": "Heart of Neru", "hash": "4d5050f5351f6a85", "src": "db2@1.60.1.70245"}
+{"id": 280399, "field": "name", "en": "Damaged Scimitar", "hash": "8a5ea7b94c171202", "src": "db2@1.60.1.70245"}
+{"id": 280400, "field": "name", "en": "Worn Bludgeon", "hash": "72c056f278fba567", "src": "db2@1.60.1.70245"}
+{"id": 280402, "field": "name", "en": "Rusty Dagger", "hash": "3d2fbecb9dfa4986", "src": "db2@1.60.1.70245"}
+{"id": 280403, "field": "name", "en": "Whelgar Relic Package", "hash": "b74074053390f589", "src": "db2@1.60.1.70245"}
+{"id": 280404, "field": "name", "en": "Lordaeron Forever Tabard", "hash": "3d950566387eb11c", "src": "db2@1.60.1.70245"}
+{"id": 280413, "field": "name", "en": "Flintfire's Shipment", "hash": "c0b8d3850ceb382b", "src": "db2@1.60.1.70245"}
+{"id": 280417, "field": "name", "en": "Damaged Blue Crystal", "hash": "f74c2cad74d7a63e", "src": "db2@1.60.1.70245"}
+{"id": 280426, "field": "name", "en": "Sack of Fish", "hash": "9b3d2867ba0cfafa", "src": "db2@1.60.1.70245"}
+{"id": 280430, "field": "name", "en": "Mountaineer Gretchen's Report", "hash": "1ce959f24ce1fd23", "src": "db2@1.60.1.70245"}
+{"id": 280438, "field": "name", "en": "Abominable Head", "hash": "0445022b736ef319", "src": "db2@1.60.1.70245"}
+{"id": 280449, "field": "name", "en": "Skyborne Tabard", "hash": "3a3bce844a6a1c55", "src": "db2@1.60.1.70245"}
+{"id": 280456, "field": "name", "en": "Weevil K. Neevil", "hash": "89175ca438b147b9", "src": "db2@1.60.1.70245"}
+{"id": 280456, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280459, "field": "name", "en": "Crystal Infused Scale", "hash": "501d547aca2837d9", "src": "db2@1.60.1.70245"}
+{"id": 280502, "field": "name", "en": "Relic of the Fang", "hash": "260b47c5b8d25c5f", "src": "db2@1.60.1.70245"}
+{"id": 280504, "field": "name", "en": "Mudsoaked Scrap", "hash": "93fc7f5c0ee44842", "src": "db2@1.60.1.70245"}
+{"id": 280544, "field": "name", "en": "Cerulean Prideclaw", "hash": "66edc0264cad6ccb", "src": "db2@1.60.1.70245"}
+{"id": 280544, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70245"}
+{"id": 280567, "field": "name", "en": "Small Sack of Gems", "hash": "41556cae629ed688", "src": "db2@1.60.1.70245"}
+{"id": 280604, "field": "name", "en": "Rage of the Storm", "hash": "d26761d267ee0bf7", "src": "db2@1.60.1.70245"}
+{"id": 280604, "field": "description", "en": "Increases the damage dealt by your Stormstrike ability by $m1%.", "hash": "631b983b0a3ba79b", "src": "db2@1.60.1.70245"}
+{"id": 280605, "field": "name", "en": "Tidebringer's Claw", "hash": "026c91b1c547f392", "src": "db2@1.60.1.70245"}
+{"id": 280605, "field": "description", "en": "Increases the critical strike chance of your Healing Wave and Lesser Healing Wave spells by $m1%.", "hash": "710ee120b4ad9a2c", "src": "db2@1.60.1.70245"}
+{"id": 280607, "field": "name", "en": "Lightning's Grasp", "hash": "f655d6a8c43e7a50", "src": "db2@1.60.1.70245"}
+{"id": 280607, "field": "description", "en": "Increases the critical strike chance of your Lightning Bolt spell by $m1%.", "hash": "9a0e8a224e8b13a0", "src": "db2@1.60.1.70245"}
+{"id": 280608, "field": "name", "en": "Eldarath Relic", "hash": "a0c6f1f0da5fc51b", "src": "db2@1.60.1.70245"}
+{"id": 280610, "field": "name", "en": "Lord Sarthiss' Head", "hash": "c1869e47ad4fbb3d", "src": "db2@1.60.1.70245"}
+{"id": 280611, "field": "name", "en": "Veteran Adventurer's Loyal Companion", "hash": "96faf7d3e097194a", "src": "db2@1.60.1.70245"}
+{"id": 280611, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70245"}
+{"id": 280612, "field": "name", "en": "Night Watchman's Torch", "hash": "3644c6cf78affe53", "src": "db2@1.60.1.70245"}
+{"id": 280612, "field": "description", "en": "Light the Night Watchman's Torch.", "hash": "49e8f9faaf833460", "src": "db2@1.60.1.70245"}
+{"id": 280614, "field": "name", "en": "Pachimari", "hash": "4989aa7cac976d5d", "src": "db2@1.60.1.70245"}
+{"id": 280614, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280615, "field": "name", "en": "Galestrider Chick", "hash": "a029eb16e9f6fef7", "src": "db2@1.60.1.70245"}
+{"id": 280615, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280623, "field": "name", "en": "Veteran Adventurer's Rucksack", "hash": "165c7a2978f98b37", "src": "db2@1.60.1.70245"}
+{"id": 280679, "field": "name", "en": "Relic of the Claw", "hash": "25a739c03c43cb3f", "src": "db2@1.60.1.70245"}
+{"id": 280680, "field": "name", "en": "Relic of the Silent Shadow", "hash": "f39b8e29b6fad697", "src": "db2@1.60.1.70245"}
+{"id": 280686, "field": "name", "en": "Rod of Deep Dominion", "hash": "f5cd627bf4b474d1", "src": "db2@1.60.1.70245"}
+{"id": 280696, "field": "name", "en": "Elementalist's Guard", "hash": "fe00d2fc6477ee38", "src": "db2@1.60.1.70245"}
+{"id": 280697, "field": "name", "en": "Plagued Cockroach", "hash": "e2fd7526aa98b961", "src": "db2@1.60.1.70245"}
+{"id": 280697, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280699, "field": "name", "en": "Undercity Cockroach", "hash": "970b5f3829f30617", "src": "db2@1.60.1.70245"}
+{"id": 280699, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280703, "field": "name", "en": "Jungle Boa", "hash": "686e1d709f1ed9ab", "src": "db2@1.60.1.70245"}
+{"id": 280703, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280729, "field": "name", "en": "Shen'dorei Tabard", "hash": "bae0f32c41a167d4", "src": "db2@1.60.1.70245"}
+{"id": 280740, "field": "name", "en": "Shen'dorei Windwell", "hash": "7d00d1521eb9998f", "src": "db2@1.60.1.70245"}
+{"id": 280740, "field": "description", "en": "Summons your own portable Windwell for $d.", "hash": "f17e3f1326c81e32", "src": "db2@1.60.1.70245"}
+{"id": 280766, "field": "name", "en": "Satchel of Potions", "hash": "e8bfc0399b633a8c", "src": "db2@1.60.1.70245"}
+{"id": 280766, "field": "description", "en": "Reach into the bag and hope for the best.\nNot every potion is meant for consumption.", "hash": "8ac045390c535cd0", "src": "db2@1.60.1.70245"}
+{"id": 280794, "field": "name", "en": "Brown Ground Squirrel Whistle", "hash": "6259eb0094c42d8e", "src": "db2@1.60.1.70245"}
+{"id": 280794, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280795, "field": "name", "en": "Red Ground Squirrel Whistle", "hash": "095fb9c485c96481", "src": "db2@1.60.1.70245"}
+{"id": 280795, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280797, "field": "name", "en": "Rabbit Crate (Arctic)", "hash": "46e318cc77c5451c", "src": "db2@1.60.1.70245"}
+{"id": 280797, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280801, "field": "name", "en": "Rabbit Crate (Brown)", "hash": "5d6cb88e1ad1de6c", "src": "db2@1.60.1.70245"}
+{"id": 280801, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280803, "field": "name", "en": "Eagle Owl", "hash": "63e7bd18fa6cf59b", "src": "db2@1.60.1.70245"}
+{"id": 280803, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 280805, "field": "name", "en": "Serrated Raptor Claw", "hash": "02eb0e0f15eaf18b", "src": "db2@1.60.1.70245"}
+{"id": 280805, "field": "description", "en": "Some claws are better for killing than cooking.", "hash": "cd1f6d297330053f", "src": "db2@1.60.1.70245"}
+{"id": 280806, "field": "name", "en": "Stolen Explosives", "hash": "b847acece8b765b7", "src": "db2@1.60.1.70245"}
+{"id": 280831, "field": "name", "en": "Hatescreech's Amulet", "hash": "be23910a66f181b1", "src": "db2@1.60.1.70245"}
+{"id": 280832, "field": "name", "en": "Windmistress Gaedress' Amulet", "hash": "d89601379d63c2b4", "src": "db2@1.60.1.70245"}
+{"id": 280834, "field": "name", "en": "Witchmother Arysa's Amulet", "hash": "847523248de35855", "src": "db2@1.60.1.70245"}
+{"id": 280839, "field": "name", "en": "Blackrock Supplies", "hash": "d7f7b0db838f4c90", "src": "db2@1.60.1.70245"}
+{"id": 280841, "field": "name", "en": "Stolen Weapon", "hash": "89bd77773a76d4fb", "src": "db2@1.60.1.70245"}
+{"id": 280911, "field": "name", "en": "Spiked Collar", "hash": "a74c0964fd3ff81a", "src": "db2@1.60.1.70245"}
+{"id": 280943, "field": "name", "en": "Tome of Tremayne Family Blacksmithing Techniques", "hash": "d175937690cb7a8f", "src": "db2@1.60.1.70245"}

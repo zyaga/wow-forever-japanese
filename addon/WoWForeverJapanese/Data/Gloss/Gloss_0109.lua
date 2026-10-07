@@ -572,7 +572,6 @@ WFJ.Data.add("gloss", {
   [109569] = "組む\tくむ\tunion (手を組む: join forces)",
   [109570] = "組む\tくむ\twas scheduled with (was paired)",
   [109571] = "組む\tくむ\twork with",
-  [109572] = "組む\tくむ\tworking with (手を組む)",
   [109573] = "組合\tくみあい\tunion (guild)",
   [109574] = "組成\tそせい\tcomposition",
   [109575] = "組立部品\tくみたてぶひん\tassembly (assembled part)",

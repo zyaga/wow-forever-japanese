@@ -15,7 +15,6 @@ WFJ.Data.add("gloss", {
   [78012] = "扉\tとびら\tdoorway (door)",
   [78013] = "扉\tとびら\tdoorways",
   [78014] = "手\tて\t(a) hand",
-  [78015] = "手\tて\t(hand)",
   [78016] = "手\tて\t(measures)",
   [78017] = "手\tて\t(my) hand (myself)",
   [78018] = "手\tて\t(our) hands",

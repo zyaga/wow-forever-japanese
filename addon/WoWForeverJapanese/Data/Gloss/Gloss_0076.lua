@@ -686,7 +686,6 @@ WFJ.Data.add("gloss", {
   [76683] = "成人する\tせいじんする\tcome of age",
   [76684] = "成仏する\tじょうぶつする\tis doomed (cannot rest in peace)",
   [76685] = "成体\tせいたい\tadult",
-  [76686] = "成分\tせいぶん\tagents (components)",
   [76687] = "成分\tせいぶん\tcomponent",
   [76688] = "成分\tせいぶん\tcomponents",
   [76689] = "成分\tせいぶん\tcomposition (ingredients)",

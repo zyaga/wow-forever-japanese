@@ -1,109 +1,109 @@
-{"id": 268035, "field": "name", "en": "Satchel of Cursed Mementos", "hash": "e958e3753b6f76eb", "src": "db2@1.60.1.70170"}
-{"id": 268036, "field": "name", "en": "Satchel of Mementos", "hash": "7dda3348b22d4b95", "src": "db2@1.60.1.70170"}
-{"id": 268052, "field": "name", "en": "Barnacle Encrusted Blade", "hash": "ad96d53b577182b9", "src": "db2@1.60.1.70170"}
-{"id": 268054, "field": "name", "en": "A Curious Blade", "hash": "2be2742892c26453", "src": "db2@1.60.1.70170"}
-{"id": 268109, "field": "name", "en": "Musical Gustjumper", "hash": "059386264e1a2e75", "src": "db2@1.60.1.70170"}
-{"id": 268109, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 268192, "field": "name", "en": "Bundle of Blacksmithing Materials", "hash": "a6af02b7c5bc232b", "src": "db2@1.60.1.70170"}
-{"id": 268298, "field": "name", "en": "Concoction of Cleansing", "hash": "1a86f017d7ea5ddf", "src": "db2@1.60.1.70170"}
-{"id": 268298, "field": "description", "en": "Cure a sickly animal afflicted by fel taint.\nThis concoction purges fel corruption from afflicted animals.", "hash": "950b7684fd9fd6f2", "src": "db2@1.60.1.70170"}
-{"id": 268312, "field": "name", "en": "Monster - Mace1H, Basic Stone Hammer (Large)", "hash": "3509dcfcf7c828ec", "src": "db2@1.60.1.70170"}
-{"id": 268336, "field": "name", "en": "Improved Concoction of Cleansing", "hash": "db7ccb1a732b147e", "src": "db2@1.60.1.70170"}
-{"id": 268336, "field": "description", "en": "Cure a sickly animal afflicted by fel taint.\nThis upgraded concoction purges fel corruption from afflicted animals.", "hash": "6210c6c3d1f99357", "src": "db2@1.60.1.70170"}
-{"id": 268341, "field": "name", "en": "Rot-Covered Harpoon", "hash": "5c52e9f96efd5a88", "src": "db2@1.60.1.70170"}
-{"id": 268344, "field": "name", "en": "Saltwater Murloc Eye", "hash": "b140dfaae809beb0", "src": "db2@1.60.1.70170"}
-{"id": 268345, "field": "name", "en": "Sand Crawler Meat", "hash": "8e56e968a1c417ac", "src": "db2@1.60.1.70170"}
-{"id": 268346, "field": "name", "en": "Eastsea Powder Keg", "hash": "f736670379a1311a", "src": "db2@1.60.1.70170"}
-{"id": 268359, "field": "name", "en": "Ott's Masterwork", "hash": "2af2ae367cbec6ca", "src": "db2@1.60.1.70170"}
-{"id": 268415, "field": "name", "en": "Commonplace Herb Seeds", "hash": "a3965abdf15b0205", "src": "db2@1.60.1.70170"}
-{"id": 268415, "field": "description", "en": "Plant the seed in a Greenhouse to grow it over time.\nGrow in a Greenhouse or combine at a Seed Hybridizer at a camp to unlock its full potential.", "hash": "0f07cfc647eb2ec4", "src": "db2@1.60.1.70170"}
-{"id": 268416, "field": "name", "en": "Uncommon Herb Seeds", "hash": "756ace4cd6ff6f10", "src": "db2@1.60.1.70170"}
-{"id": 268416, "field": "description", "en": "Plant the seed in a Greenhouse to grow it over time.\nGrow in a Greenhouse or combine at a Seed Hybridizer at a camp to unlock its full potential.", "hash": "0f07cfc647eb2ec4", "src": "db2@1.60.1.70170"}
-{"id": 268417, "field": "name", "en": "Unusual Herb Seeds", "hash": "e4aac11b5a3e5e94", "src": "db2@1.60.1.70170"}
-{"id": 268417, "field": "description", "en": "Plant the seed in a Greenhouse to grow it over time.\nGrow in a Greenhouse or combine at a Seed Hybridizer at a camp to unlock its full potential.", "hash": "0f07cfc647eb2ec4", "src": "db2@1.60.1.70170"}
-{"id": 268418, "field": "name", "en": "Scarce Herb Seeds", "hash": "06f209dbf7640a2b", "src": "db2@1.60.1.70170"}
-{"id": 268418, "field": "description", "en": "Plant the seed in a Greenhouse to grow it over time.\nGrow in a Greenhouse or combine at a Seed Hybridizer at a camp to unlock its full potential.", "hash": "0f07cfc647eb2ec4", "src": "db2@1.60.1.70170"}
-{"id": 268421, "field": "name", "en": "Southern Watch Gnoll Report", "hash": "850d7dbd5d3b8a7c", "src": "db2@1.60.1.70170"}
-{"id": 268422, "field": "name", "en": "Velvet of Kala'th's Horn", "hash": "9f501f2f8f2e5733", "src": "db2@1.60.1.70170"}
-{"id": 268423, "field": "name", "en": "Whisker of Shalla'kal", "hash": "9a0c8cc6c57d5d05", "src": "db2@1.60.1.70170"}
-{"id": 268423, "field": "description", "en": "Surprisingly long.", "hash": "d1cf375ec9637a2d", "src": "db2@1.60.1.70170"}
-{"id": 268484, "field": "name", "en": "Moonsilver Blade", "hash": "13b35ea0bb413f96", "src": "db2@1.60.1.70170"}
-{"id": 268484, "field": "description", "en": "Sear certain enchanted targets with blazing light causing it to take additional damage from holy attacks and spells", "hash": "23218b58485f80dc", "src": "db2@1.60.1.70170"}
-{"id": 268502, "field": "name", "en": "Tiny Bronze Whelpling", "hash": "232e15e5c8405045", "src": "db2@1.60.1.70170"}
-{"id": 268502, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 268503, "field": "name", "en": "Tiny Azure Whelpling", "hash": "a54899fcd202681d", "src": "db2@1.60.1.70170"}
-{"id": 268503, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70170"}
-{"id": 268505, "field": "name", "en": "Remote Explosive Charge", "hash": "8fcf57200acdb19b", "src": "db2@1.60.1.70170"}
-{"id": 268505, "field": "description", "en": "Plant an explosive charge.", "hash": "9cd1a292e2fdced4", "src": "db2@1.60.1.70170"}
-{"id": 268506, "field": "name", "en": "Lamora's Loot", "hash": "5b5a6542d423ba47", "src": "db2@1.60.1.70170"}
-{"id": 268507, "field": "name", "en": "Broken Staff", "hash": "e00dca56c371e351", "src": "db2@1.60.1.70170"}
-{"id": 268516, "field": "name", "en": "Twilight Scouting Report", "hash": "39bd1852aa71bdb1", "src": "db2@1.60.1.70170"}
-{"id": 268518, "field": "name", "en": "Head of the Baron", "hash": "ec83a6208856525d", "src": "db2@1.60.1.70170"}
-{"id": 268520, "field": "name", "en": "Lamora's Key", "hash": "e16dd7e839c0eb33", "src": "db2@1.60.1.70170"}
-{"id": 268521, "field": "name", "en": "Swineherd's Staff", "hash": "d83c4b8b3a5076ec", "src": "db2@1.60.1.70170"}
-{"id": 268521, "field": "description", "en": "Swat a Young Pale to send back to Bolder'ok.", "hash": "76a6e4afea4b4dcc", "src": "db2@1.60.1.70170"}
-{"id": 268535, "field": "name", "en": "Bloodied Insignia", "hash": "fb70dfc526276e6a", "src": "db2@1.60.1.70170"}
-{"id": 268536, "field": "name", "en": "Bundle of Hay", "hash": "af7b610c3efcb9c6", "src": "db2@1.60.1.70170"}
-{"id": 268540, "field": "name", "en": "Bloodied Insignia", "hash": "fb70dfc526276e6a", "src": "db2@1.60.1.70170"}
-{"id": 268548, "field": "name", "en": "Empty Powder Keg", "hash": "99dc6d1abdf7d961", "src": "db2@1.60.1.70170"}
-{"id": 268549, "field": "name", "en": "Bundle of Boar Meat", "hash": "7cdc2c85e809741e", "src": "db2@1.60.1.70170"}
-{"id": 268558, "field": "name", "en": "Trogg's Lucky Rock", "hash": "7928a8ac849515ca", "src": "db2@1.60.1.70170"}
-{"id": 268559, "field": "name", "en": "Leopard's Head", "hash": "724620ac0a02f866", "src": "db2@1.60.1.70170"}
-{"id": 268560, "field": "name", "en": "Troll's Pendant", "hash": "f4bccde8b87579b2", "src": "db2@1.60.1.70170"}
-{"id": 268573, "field": "name", "en": "Reanimator's Amulet", "hash": "0a4365d897d4aa9a", "src": "db2@1.60.1.70170"}
-{"id": 268579, "field": "name", "en": "Crest of Lordaeron", "hash": "98ec1516a82aecf3", "src": "db2@1.60.1.70170"}
-{"id": 268580, "field": "name", "en": "Intact Limbs", "hash": "236937a7b1eba212", "src": "db2@1.60.1.70170"}
-{"id": 268581, "field": "name", "en": "Scoutmaster's Eye", "hash": "bb95c54f623bb38c", "src": "db2@1.60.1.70170"}
-{"id": 268582, "field": "name", "en": "Corrupted Totems", "hash": "281f642a17cddd19", "src": "db2@1.60.1.70170"}
-{"id": 268586, "field": "name", "en": "Trapclaw's Pincer", "hash": "d2fbee94e0231649", "src": "db2@1.60.1.70170"}
-{"id": 268632, "field": "name", "en": "Beast Entrails", "hash": "adff21b6bd3560d7", "src": "db2@1.60.1.70170"}
-{"id": 268633, "field": "name", "en": "Sea Monster's Head", "hash": "c2eef3c839ba0ac1", "src": "db2@1.60.1.70170"}
-{"id": 268646, "field": "name", "en": "Amberhall's Soulstone", "hash": "34f9f68bb800692f", "src": "db2@1.60.1.70170"}
-{"id": 268646, "field": "description", "en": "Captures a subdued Twilight's Thrall. Only works on weakened enemies.", "hash": "a33005e4429f6a1b", "src": "db2@1.60.1.70170"}
-{"id": 268647, "field": "name", "en": "Big Ball o' Bait", "hash": "6744ec1c3cd427d8", "src": "db2@1.60.1.70170"}
-{"id": 268647, "field": "description", "en": "Place bait to attract the sea monster.\nA knotted mess of various entrails.", "hash": "cf50092dc27b84b8", "src": "db2@1.60.1.70170"}
-{"id": 268664, "field": "name", "en": "Rotflesh Mushroom", "hash": "506c323b04b535ac", "src": "db2@1.60.1.70170"}
-{"id": 268664, "field": "description", "en": "Smells like death. Tastes like it too.", "hash": "53fb17ebee2dde7b", "src": "db2@1.60.1.70170"}
-{"id": 268675, "field": "name", "en": "Refined Concoction of Cleansing", "hash": "4c9cc4b3940db641", "src": "db2@1.60.1.70170"}
-{"id": 268675, "field": "description", "en": "Cure a sickly animal afflicted by fel taint.", "hash": "c145bd63a373ffc9", "src": "db2@1.60.1.70170"}
-{"id": 268677, "field": "name", "en": "Barkskin Purification Tonic", "hash": "0728bd748bb063e3", "src": "db2@1.60.1.70170"}
-{"id": 268677, "field": "description", "en": "Fill with water from the snowmelt pond in front of Deadwood Den.\nThe leather smells of rainfall and beeswax.", "hash": "874224b774fa755e", "src": "db2@1.60.1.70170"}
-{"id": 268705, "field": "name", "en": "Blood and Battle", "hash": "acf5dcbc63d22917", "src": "db2@1.60.1.70170"}
-{"id": 268796, "field": "name", "en": "Smuggled Goods", "hash": "f035c568a61ab970", "src": "db2@1.60.1.70170"}
-{"id": 268801, "field": "name", "en": "Bottle of Whispering Elixir", "hash": "8739b0c99aa98c3d", "src": "db2@1.60.1.70170"}
-{"id": 268805, "field": "name", "en": "Tazzik's Sweaty Shirt", "hash": "d43f4945c0c24a88", "src": "db2@1.60.1.70170"}
-{"id": 268810, "field": "name", "en": "Ruzzgot's Shipment", "hash": "9119925311f11072", "src": "db2@1.60.1.70170"}
-{"id": 268811, "field": "name", "en": "Friz's Secret Stash", "hash": "b639a605ad096f61", "src": "db2@1.60.1.70170"}
-{"id": 268812, "field": "name", "en": "Whispering Horror Residue", "hash": "b283ff1d70390cdc", "src": "db2@1.60.1.70170"}
-{"id": 268813, "field": "name", "en": "Fel Ash Sample", "hash": "899ba79f17e53cc6", "src": "db2@1.60.1.70170"}
-{"id": 268813, "field": "description", "en": "The acrid smell of brimstone wafts off the pile, causing a burning sensation in the nose and throat if accidentally inhaled. It is warm to the touch and glows softly with latent Fel energy.", "hash": "8fd80f0f6fc48f6f", "src": "db2@1.60.1.70170"}
-{"id": 268814, "field": "name", "en": "Sludgy Bits", "hash": "4a25c29e8f0e41b4", "src": "db2@1.60.1.70170"}
-{"id": 268814, "field": "description", "en": "Pieces of something that didn't quite liquefy...", "hash": "8c8b2578d9b22257", "src": "db2@1.60.1.70170"}
-{"id": 268815, "field": "name", "en": "Bone Fragments", "hash": "441b57bc1a7de876", "src": "db2@1.60.1.70170"}
-{"id": 268815, "field": "description", "en": "Too small to identify, yet sharp enough to leave a nasty cut.", "hash": "a2dc30c3f67149fd", "src": "db2@1.60.1.70170"}
-{"id": 268816, "field": "name", "en": "Surplus Crops", "hash": "5679f62f3f04a926", "src": "db2@1.60.1.70170"}
-{"id": 268824, "field": "name", "en": "The Friz Special", "hash": "89f48632dc4252b0", "src": "db2@1.60.1.70170"}
-{"id": 268825, "field": "name", "en": "Bottle of Whispers", "hash": "001eba2af6bfdf89", "src": "db2@1.60.1.70170"}
-{"id": 268829, "field": "name", "en": "Chef's Hat", "hash": "be3ec0755bb1fe72", "src": "db2@1.60.1.70170"}
-{"id": 268873, "field": "name", "en": "Defender of the Barkskin", "hash": "2bf8b62e5faa22f8", "src": "db2@1.60.1.70170"}
-{"id": 268873, "field": "description", "en": "Calls forth a Barkskin Ancestor to fight at your side and heal you for $d.", "hash": "21118d4442f51011", "src": "db2@1.60.1.70170"}
-{"id": 268879, "field": "name", "en": "Uber Diablo Stone", "hash": "7da47b1c9e52a2bb", "src": "db2@1.60.1.70170"}
-{"id": 268880, "field": "name", "en": "\"Secret\" Bait", "hash": "707eca2705758967", "src": "db2@1.60.1.70170"}
-{"id": 268880, "field": "description", "en": "When applied to your fishing pole, increases Fishing by 25 for 10 min.", "hash": "14f245d7d1ed23b1", "src": "db2@1.60.1.70170"}
-{"id": 268881, "field": "name", "en": "Perishable Minor Healing Potion", "hash": "c9e91843041e526c", "src": "db2@1.60.1.70170"}
-{"id": 268881, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70170"}
-{"id": 268882, "field": "name", "en": "Perishable Lesser Healing Potion", "hash": "6126072a4aef86da", "src": "db2@1.60.1.70170"}
-{"id": 268882, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70170"}
-{"id": 268883, "field": "name", "en": "Perishable Healing Potion", "hash": "815b0b653dde77e6", "src": "db2@1.60.1.70170"}
-{"id": 268883, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70170"}
-{"id": 268912, "field": "name", "en": "Expiring Crab Cake", "hash": "b7df06de2c0f4ded", "src": "db2@1.60.1.70170"}
-{"id": 268912, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "e5a4e500add7a0f0", "src": "db2@1.60.1.70170"}
-{"id": 268913, "field": "name", "en": "Expiring Crocolisk Steak", "hash": "53228e3ed9f99299", "src": "db2@1.60.1.70170"}
-{"id": 268913, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "e5a4e500add7a0f0", "src": "db2@1.60.1.70170"}
-{"id": 268967, "field": "name", "en": "Token of the Wild King", "hash": "a4d801d85ec48827", "src": "db2@1.60.1.70170"}
-{"id": 268967, "field": "description", "en": "This crude necklace bears a passing resemblance to a... bear? Stag? Eagle? Steaglebear?", "hash": "f638d03788f99ecd", "src": "db2@1.60.1.70170"}
-{"id": 268990, "field": "name", "en": "Pristine Fel-Slime Crystal", "hash": "c89a31f736bbc87d", "src": "db2@1.60.1.70170"}
-{"id": 268990, "field": "description", "en": "This flawless crystal hums softly in your hands and emits a faint light. An ashen hue seems to cover its dull surface and fel ash veins create an intricate pattern within.", "hash": "7a499b0dc6d9d72a", "src": "db2@1.60.1.70170"}
-{"id": 268997, "field": "name", "en": "Wormwing Pinfeather", "hash": "57c4f4f08111e2cf", "src": "db2@1.60.1.70170"}
-{"id": 268998, "field": "name", "en": "Omnuron's Spear", "hash": "5984b6c055babdbf", "src": "db2@1.60.1.70170"}
-{"id": 268998, "field": "description", "en": "This spear is decorated with trinkets of the air and hums slightly with the power of the sky.", "hash": "49f801306e887596", "src": "db2@1.60.1.70170"}
+{"id": 268035, "field": "name", "en": "Satchel of Cursed Mementos", "hash": "e958e3753b6f76eb", "src": "db2@1.60.1.70245"}
+{"id": 268036, "field": "name", "en": "Satchel of Mementos", "hash": "7dda3348b22d4b95", "src": "db2@1.60.1.70245"}
+{"id": 268052, "field": "name", "en": "Barnacle Encrusted Blade", "hash": "ad96d53b577182b9", "src": "db2@1.60.1.70245"}
+{"id": 268054, "field": "name", "en": "A Curious Blade", "hash": "2be2742892c26453", "src": "db2@1.60.1.70245"}
+{"id": 268109, "field": "name", "en": "Musical Gustjumper", "hash": "059386264e1a2e75", "src": "db2@1.60.1.70245"}
+{"id": 268109, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 268192, "field": "name", "en": "Bundle of Blacksmithing Materials", "hash": "a6af02b7c5bc232b", "src": "db2@1.60.1.70245"}
+{"id": 268298, "field": "name", "en": "Concoction of Cleansing", "hash": "1a86f017d7ea5ddf", "src": "db2@1.60.1.70245"}
+{"id": 268298, "field": "description", "en": "Cure a sickly animal afflicted by fel taint.\nThis concoction purges fel corruption from afflicted animals.", "hash": "950b7684fd9fd6f2", "src": "db2@1.60.1.70245"}
+{"id": 268312, "field": "name", "en": "Monster - Mace1H, Basic Stone Hammer (Large)", "hash": "3509dcfcf7c828ec", "src": "db2@1.60.1.70245"}
+{"id": 268336, "field": "name", "en": "Improved Concoction of Cleansing", "hash": "db7ccb1a732b147e", "src": "db2@1.60.1.70245"}
+{"id": 268336, "field": "description", "en": "Cure a sickly animal afflicted by fel taint.\nThis upgraded concoction purges fel corruption from afflicted animals.", "hash": "6210c6c3d1f99357", "src": "db2@1.60.1.70245"}
+{"id": 268341, "field": "name", "en": "Rot-Covered Harpoon", "hash": "5c52e9f96efd5a88", "src": "db2@1.60.1.70245"}
+{"id": 268344, "field": "name", "en": "Saltwater Murloc Eye", "hash": "b140dfaae809beb0", "src": "db2@1.60.1.70245"}
+{"id": 268345, "field": "name", "en": "Sand Crawler Meat", "hash": "8e56e968a1c417ac", "src": "db2@1.60.1.70245"}
+{"id": 268346, "field": "name", "en": "Eastsea Powder Keg", "hash": "f736670379a1311a", "src": "db2@1.60.1.70245"}
+{"id": 268359, "field": "name", "en": "Ott's Masterwork", "hash": "2af2ae367cbec6ca", "src": "db2@1.60.1.70245"}
+{"id": 268415, "field": "name", "en": "Commonplace Herb Seeds", "hash": "a3965abdf15b0205", "src": "db2@1.60.1.70245"}
+{"id": 268415, "field": "description", "en": "Plant the seed in a Greenhouse to grow it over time.\nGrow in a Greenhouse or combine at a Seed Hybridizer at a camp to unlock its full potential.", "hash": "0f07cfc647eb2ec4", "src": "db2@1.60.1.70245"}
+{"id": 268416, "field": "name", "en": "Uncommon Herb Seeds", "hash": "756ace4cd6ff6f10", "src": "db2@1.60.1.70245"}
+{"id": 268416, "field": "description", "en": "Plant the seed in a Greenhouse to grow it over time.\nGrow in a Greenhouse or combine at a Seed Hybridizer at a camp to unlock its full potential.", "hash": "0f07cfc647eb2ec4", "src": "db2@1.60.1.70245"}
+{"id": 268417, "field": "name", "en": "Unusual Herb Seeds", "hash": "e4aac11b5a3e5e94", "src": "db2@1.60.1.70245"}
+{"id": 268417, "field": "description", "en": "Plant the seed in a Greenhouse to grow it over time.\nGrow in a Greenhouse or combine at a Seed Hybridizer at a camp to unlock its full potential.", "hash": "0f07cfc647eb2ec4", "src": "db2@1.60.1.70245"}
+{"id": 268418, "field": "name", "en": "Scarce Herb Seeds", "hash": "06f209dbf7640a2b", "src": "db2@1.60.1.70245"}
+{"id": 268418, "field": "description", "en": "Plant the seed in a Greenhouse to grow it over time.\nGrow in a Greenhouse or combine at a Seed Hybridizer at a camp to unlock its full potential.", "hash": "0f07cfc647eb2ec4", "src": "db2@1.60.1.70245"}
+{"id": 268421, "field": "name", "en": "Southern Watch Gnoll Report", "hash": "850d7dbd5d3b8a7c", "src": "db2@1.60.1.70245"}
+{"id": 268422, "field": "name", "en": "Velvet of Kala'th's Horn", "hash": "9f501f2f8f2e5733", "src": "db2@1.60.1.70245"}
+{"id": 268423, "field": "name", "en": "Whisker of Shalla'kal", "hash": "9a0c8cc6c57d5d05", "src": "db2@1.60.1.70245"}
+{"id": 268423, "field": "description", "en": "Surprisingly long.", "hash": "d1cf375ec9637a2d", "src": "db2@1.60.1.70245"}
+{"id": 268484, "field": "name", "en": "Moonsilver Blade", "hash": "13b35ea0bb413f96", "src": "db2@1.60.1.70245"}
+{"id": 268484, "field": "description", "en": "Sear certain enchanted targets with blazing light causing it to take additional damage from holy attacks and spells", "hash": "23218b58485f80dc", "src": "db2@1.60.1.70245"}
+{"id": 268502, "field": "name", "en": "Tiny Bronze Whelpling", "hash": "232e15e5c8405045", "src": "db2@1.60.1.70245"}
+{"id": 268502, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 268503, "field": "name", "en": "Tiny Azure Whelpling", "hash": "a54899fcd202681d", "src": "db2@1.60.1.70245"}
+{"id": 268503, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
+{"id": 268505, "field": "name", "en": "Remote Explosive Charge", "hash": "8fcf57200acdb19b", "src": "db2@1.60.1.70245"}
+{"id": 268505, "field": "description", "en": "Plant an explosive charge.", "hash": "9cd1a292e2fdced4", "src": "db2@1.60.1.70245"}
+{"id": 268506, "field": "name", "en": "Lamora's Loot", "hash": "5b5a6542d423ba47", "src": "db2@1.60.1.70245"}
+{"id": 268507, "field": "name", "en": "Broken Staff", "hash": "e00dca56c371e351", "src": "db2@1.60.1.70245"}
+{"id": 268516, "field": "name", "en": "Twilight Scouting Report", "hash": "39bd1852aa71bdb1", "src": "db2@1.60.1.70245"}
+{"id": 268518, "field": "name", "en": "Head of the Baron", "hash": "ec83a6208856525d", "src": "db2@1.60.1.70245"}
+{"id": 268520, "field": "name", "en": "Lamora's Key", "hash": "e16dd7e839c0eb33", "src": "db2@1.60.1.70245"}
+{"id": 268521, "field": "name", "en": "Swineherd's Staff", "hash": "d83c4b8b3a5076ec", "src": "db2@1.60.1.70245"}
+{"id": 268521, "field": "description", "en": "Swat a Young Pale to send back to Bolder'ok.", "hash": "76a6e4afea4b4dcc", "src": "db2@1.60.1.70245"}
+{"id": 268535, "field": "name", "en": "Bloodied Insignia", "hash": "fb70dfc526276e6a", "src": "db2@1.60.1.70245"}
+{"id": 268536, "field": "name", "en": "Bundle of Hay", "hash": "af7b610c3efcb9c6", "src": "db2@1.60.1.70245"}
+{"id": 268540, "field": "name", "en": "Bloodied Insignia", "hash": "fb70dfc526276e6a", "src": "db2@1.60.1.70245"}
+{"id": 268548, "field": "name", "en": "Empty Powder Keg", "hash": "99dc6d1abdf7d961", "src": "db2@1.60.1.70245"}
+{"id": 268549, "field": "name", "en": "Bundle of Boar Meat", "hash": "7cdc2c85e809741e", "src": "db2@1.60.1.70245"}
+{"id": 268558, "field": "name", "en": "Trogg's Lucky Rock", "hash": "7928a8ac849515ca", "src": "db2@1.60.1.70245"}
+{"id": 268559, "field": "name", "en": "Leopard's Head", "hash": "724620ac0a02f866", "src": "db2@1.60.1.70245"}
+{"id": 268560, "field": "name", "en": "Troll's Pendant", "hash": "f4bccde8b87579b2", "src": "db2@1.60.1.70245"}
+{"id": 268573, "field": "name", "en": "Reanimator's Amulet", "hash": "0a4365d897d4aa9a", "src": "db2@1.60.1.70245"}
+{"id": 268579, "field": "name", "en": "Crest of Lordaeron", "hash": "98ec1516a82aecf3", "src": "db2@1.60.1.70245"}
+{"id": 268580, "field": "name", "en": "Intact Limbs", "hash": "236937a7b1eba212", "src": "db2@1.60.1.70245"}
+{"id": 268581, "field": "name", "en": "Scoutmaster's Eye", "hash": "bb95c54f623bb38c", "src": "db2@1.60.1.70245"}
+{"id": 268582, "field": "name", "en": "Corrupted Totems", "hash": "281f642a17cddd19", "src": "db2@1.60.1.70245"}
+{"id": 268586, "field": "name", "en": "Trapclaw's Pincer", "hash": "d2fbee94e0231649", "src": "db2@1.60.1.70245"}
+{"id": 268632, "field": "name", "en": "Beast Entrails", "hash": "adff21b6bd3560d7", "src": "db2@1.60.1.70245"}
+{"id": 268633, "field": "name", "en": "Sea Monster's Head", "hash": "c2eef3c839ba0ac1", "src": "db2@1.60.1.70245"}
+{"id": 268646, "field": "name", "en": "Amberhall's Soulstone", "hash": "34f9f68bb800692f", "src": "db2@1.60.1.70245"}
+{"id": 268646, "field": "description", "en": "Captures a subdued Twilight's Thrall. Only works on weakened enemies.", "hash": "a33005e4429f6a1b", "src": "db2@1.60.1.70245"}
+{"id": 268647, "field": "name", "en": "Big Ball o' Bait", "hash": "6744ec1c3cd427d8", "src": "db2@1.60.1.70245"}
+{"id": 268647, "field": "description", "en": "Place bait to attract the sea monster.\nA knotted mess of various entrails.", "hash": "cf50092dc27b84b8", "src": "db2@1.60.1.70245"}
+{"id": 268664, "field": "name", "en": "Rotflesh Mushroom", "hash": "506c323b04b535ac", "src": "db2@1.60.1.70245"}
+{"id": 268664, "field": "description", "en": "Smells like death. Tastes like it too.", "hash": "53fb17ebee2dde7b", "src": "db2@1.60.1.70245"}
+{"id": 268675, "field": "name", "en": "Refined Concoction of Cleansing", "hash": "4c9cc4b3940db641", "src": "db2@1.60.1.70245"}
+{"id": 268675, "field": "description", "en": "Cure a sickly animal afflicted by fel taint.", "hash": "c145bd63a373ffc9", "src": "db2@1.60.1.70245"}
+{"id": 268677, "field": "name", "en": "Barkskin Purification Tonic", "hash": "0728bd748bb063e3", "src": "db2@1.60.1.70245"}
+{"id": 268677, "field": "description", "en": "Fill with water from the snowmelt pond in front of Deadwood Den.\nThe leather smells of rainfall and beeswax.", "hash": "874224b774fa755e", "src": "db2@1.60.1.70245"}
+{"id": 268705, "field": "name", "en": "Blood and Battle", "hash": "acf5dcbc63d22917", "src": "db2@1.60.1.70245"}
+{"id": 268796, "field": "name", "en": "Smuggled Goods", "hash": "f035c568a61ab970", "src": "db2@1.60.1.70245"}
+{"id": 268801, "field": "name", "en": "Bottle of Whispering Elixir", "hash": "8739b0c99aa98c3d", "src": "db2@1.60.1.70245"}
+{"id": 268805, "field": "name", "en": "Tazzik's Sweaty Shirt", "hash": "d43f4945c0c24a88", "src": "db2@1.60.1.70245"}
+{"id": 268810, "field": "name", "en": "Ruzzgot's Shipment", "hash": "9119925311f11072", "src": "db2@1.60.1.70245"}
+{"id": 268811, "field": "name", "en": "Friz's Secret Stash", "hash": "b639a605ad096f61", "src": "db2@1.60.1.70245"}
+{"id": 268812, "field": "name", "en": "Whispering Horror Residue", "hash": "b283ff1d70390cdc", "src": "db2@1.60.1.70245"}
+{"id": 268813, "field": "name", "en": "Fel Ash Sample", "hash": "899ba79f17e53cc6", "src": "db2@1.60.1.70245"}
+{"id": 268813, "field": "description", "en": "The acrid smell of brimstone wafts off the pile, causing a burning sensation in the nose and throat if accidentally inhaled. It is warm to the touch and glows softly with latent Fel energy.", "hash": "8fd80f0f6fc48f6f", "src": "db2@1.60.1.70245"}
+{"id": 268814, "field": "name", "en": "Sludgy Bits", "hash": "4a25c29e8f0e41b4", "src": "db2@1.60.1.70245"}
+{"id": 268814, "field": "description", "en": "Pieces of something that didn't quite liquefy...", "hash": "8c8b2578d9b22257", "src": "db2@1.60.1.70245"}
+{"id": 268815, "field": "name", "en": "Bone Fragments", "hash": "441b57bc1a7de876", "src": "db2@1.60.1.70245"}
+{"id": 268815, "field": "description", "en": "Too small to identify, yet sharp enough to leave a nasty cut.", "hash": "a2dc30c3f67149fd", "src": "db2@1.60.1.70245"}
+{"id": 268816, "field": "name", "en": "Surplus Crops", "hash": "5679f62f3f04a926", "src": "db2@1.60.1.70245"}
+{"id": 268824, "field": "name", "en": "The Friz Special", "hash": "89f48632dc4252b0", "src": "db2@1.60.1.70245"}
+{"id": 268825, "field": "name", "en": "Bottle of Whispers", "hash": "001eba2af6bfdf89", "src": "db2@1.60.1.70245"}
+{"id": 268829, "field": "name", "en": "Chef's Hat", "hash": "be3ec0755bb1fe72", "src": "db2@1.60.1.70245"}
+{"id": 268873, "field": "name", "en": "Defender of the Barkskin", "hash": "2bf8b62e5faa22f8", "src": "db2@1.60.1.70245"}
+{"id": 268873, "field": "description", "en": "Calls forth a Barkskin Ancestor to fight at your side and heal you for $d.", "hash": "21118d4442f51011", "src": "db2@1.60.1.70245"}
+{"id": 268879, "field": "name", "en": "Uber Diablo Stone", "hash": "7da47b1c9e52a2bb", "src": "db2@1.60.1.70245"}
+{"id": 268880, "field": "name", "en": "\"Secret\" Bait", "hash": "707eca2705758967", "src": "db2@1.60.1.70245"}
+{"id": 268880, "field": "description", "en": "When applied to your fishing pole, increases Fishing by 25 for 10 min.", "hash": "14f245d7d1ed23b1", "src": "db2@1.60.1.70245"}
+{"id": 268881, "field": "name", "en": "Perishable Minor Healing Potion", "hash": "c9e91843041e526c", "src": "db2@1.60.1.70245"}
+{"id": 268881, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70245"}
+{"id": 268882, "field": "name", "en": "Perishable Lesser Healing Potion", "hash": "6126072a4aef86da", "src": "db2@1.60.1.70245"}
+{"id": 268882, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70245"}
+{"id": 268883, "field": "name", "en": "Perishable Healing Potion", "hash": "815b0b653dde77e6", "src": "db2@1.60.1.70245"}
+{"id": 268883, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70245"}
+{"id": 268912, "field": "name", "en": "Expiring Crab Cake", "hash": "b7df06de2c0f4ded", "src": "db2@1.60.1.70245"}
+{"id": 268912, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "e5a4e500add7a0f0", "src": "db2@1.60.1.70245"}
+{"id": 268913, "field": "name", "en": "Expiring Crocolisk Steak", "hash": "53228e3ed9f99299", "src": "db2@1.60.1.70245"}
+{"id": 268913, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "e5a4e500add7a0f0", "src": "db2@1.60.1.70245"}
+{"id": 268967, "field": "name", "en": "Token of the Wild King", "hash": "a4d801d85ec48827", "src": "db2@1.60.1.70245"}
+{"id": 268967, "field": "description", "en": "This crude necklace bears a passing resemblance to a... bear? Stag? Eagle? Steaglebear?", "hash": "f638d03788f99ecd", "src": "db2@1.60.1.70245"}
+{"id": 268990, "field": "name", "en": "Pristine Fel-Slime Crystal", "hash": "c89a31f736bbc87d", "src": "db2@1.60.1.70245"}
+{"id": 268990, "field": "description", "en": "This flawless crystal hums softly in your hands and emits a faint light. An ashen hue seems to cover its dull surface and fel ash veins create an intricate pattern within.", "hash": "7a499b0dc6d9d72a", "src": "db2@1.60.1.70245"}
+{"id": 268997, "field": "name", "en": "Wormwing Pinfeather", "hash": "57c4f4f08111e2cf", "src": "db2@1.60.1.70245"}
+{"id": 268998, "field": "name", "en": "Omnuron's Spear", "hash": "5984b6c055babdbf", "src": "db2@1.60.1.70245"}
+{"id": 268998, "field": "description", "en": "This spear is decorated with trinkets of the air and hums slightly with the power of the sky.", "hash": "49f801306e887596", "src": "db2@1.60.1.70245"}

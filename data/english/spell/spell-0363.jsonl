@@ -1,11 +1,11 @@
-{"id": 363731, "field": "name", "en": "Volcanic Unrest", "hash": "bcf8149a80d936dd", "src": "db2@1.60.1.70170"}
-{"id": 363731, "field": "description", "en": "Health increased by $s1%.\r\n", "hash": "334d75a3ba5669e2", "src": "db2@1.60.1.70170"}
-{"id": 363731, "field": "aura", "en": "|cFFffd200Bonus Event: Season of Mastery|r\r\n\r\nHealth increased by $s1%.", "hash": "58597bcead294007", "src": "db2@1.60.1.70170"}
-{"id": 363757, "field": "name", "en": "Broodmother's Wrath", "hash": "8b455da8ceeaf255", "src": "db2@1.60.1.70170"}
-{"id": 363757, "field": "description", "en": "Health increased by $s1%.", "hash": "334d75a3ba5669e2", "src": "db2@1.60.1.70170"}
-{"id": 363757, "field": "aura", "en": "|cFFffd200Bonus Event: Season of Mastery|r\r\n\r\nHealth increased by $s1%.", "hash": "58597bcead294007", "src": "db2@1.60.1.70170"}
-{"id": 363880, "field": "name", "en": "Diamond Flask", "hash": "d19548c8cff23376", "src": "db2@1.60.1.70170"}
-{"id": 363880, "field": "description", "en": "$@spelldesc24427", "hash": "e80845d12462c04a", "src": "db2@1.60.1.70170"}
-{"id": 363881, "field": "name", "en": "CHUG! CHUG! CHUG! CHUG!", "hash": "757d029152088a3a", "src": "db2@1.60.1.70170"}
-{"id": 363881, "field": "description", "en": "Restores $o1 Health over $d. This healing is strongest at first. If finished, gain $1318070s1 Strength for $1318070d.", "hash": "c6345c7dfc59254e", "src": "db2@1.60.1.70170"}
-{"id": 363881, "field": "aura", "en": "Restoring $o1 health over $d.", "hash": "f8430e700c86a474", "src": "db2@1.60.1.70170"}
+{"id": 363731, "field": "name", "en": "Volcanic Unrest", "hash": "bcf8149a80d936dd", "src": "db2@1.60.1.70245"}
+{"id": 363731, "field": "description", "en": "Health increased by $s1%.\r\n", "hash": "334d75a3ba5669e2", "src": "db2@1.60.1.70245"}
+{"id": 363731, "field": "aura", "en": "|cFFffd200Bonus Event: Season of Mastery|r\r\n\r\nHealth increased by $s1%.", "hash": "58597bcead294007", "src": "db2@1.60.1.70245"}
+{"id": 363757, "field": "name", "en": "Broodmother's Wrath", "hash": "8b455da8ceeaf255", "src": "db2@1.60.1.70245"}
+{"id": 363757, "field": "description", "en": "Health increased by $s1%.", "hash": "334d75a3ba5669e2", "src": "db2@1.60.1.70245"}
+{"id": 363757, "field": "aura", "en": "|cFFffd200Bonus Event: Season of Mastery|r\r\n\r\nHealth increased by $s1%.", "hash": "58597bcead294007", "src": "db2@1.60.1.70245"}
+{"id": 363880, "field": "name", "en": "Diamond Flask", "hash": "d19548c8cff23376", "src": "db2@1.60.1.70245"}
+{"id": 363880, "field": "description", "en": "$@spelldesc24427", "hash": "e80845d12462c04a", "src": "db2@1.60.1.70245"}
+{"id": 363881, "field": "name", "en": "CHUG! CHUG! CHUG! CHUG!", "hash": "757d029152088a3a", "src": "db2@1.60.1.70245"}
+{"id": 363881, "field": "description", "en": "Restores $o1 Health over $d. This healing is strongest at first. If finished, gain $1318070s1 Strength for $1318070d.", "hash": "c6345c7dfc59254e", "src": "db2@1.60.1.70245"}
+{"id": 363881, "field": "aura", "en": "Restoring $o1 health over $d.", "hash": "f8430e700c86a474", "src": "db2@1.60.1.70245"}

@@ -65,6 +65,7 @@ WFJ.Data.add("item", {
   [6328] = { "Longjaw Mud Snapperの調理法を習得する。", 0x615e732f, "u" },
   [6329] = { "Loch Frenzy Delightの調理法を習得する。", 0x1154f165, "u" },
   [6330] = { "Bristle Whisker Catfishの調理法を習得する。", 0x275130ec, "u" },
+  [6331] = { "$D1の間、対象の攻撃力を$N1減少させます。", 0xb8f65f4b, "u" },
   [6338] = { "Enchantの使い手に必要です。", 0x35d5b894, "u" },
   [6339] = { "下位のRuned Enchanting Rodとしても\n利用できます。", 0x6c517e49, "u" },
   [6342] = { "胸部の防具に永続的なエンチャントを施し、知力 +$N1を付与する方法を習得します。", 0xb0d6174a, "u" },
