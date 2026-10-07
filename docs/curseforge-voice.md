@@ -12,7 +12,7 @@ with the editor set to Markdown. When the README's voice section changes, change
 
 ## Description
 
-<span style="color:#E0605A;">**Install the addon first: [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese).**</span>
+**Install the addon first: [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese).**
 
 This is only its Japanese voice and needs the addon to work. The CurseForge app installs the addon with it if you do not have it yet, and the voice never loads in the game without the addon.
 
@@ -20,9 +20,7 @@ Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its 
 
 **Website:** https://foreverjapanese.com (screenshots and a short guide to how the addon works).
 
-The Japanese description follows the English one. <span style="color:#E8C77E;">**日本語の説明は下にあります。**</span>
-
-### <span style="color:#E8C77E;">Install</span>
+### Install
 
 **Step 1:** install [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese) with the CurseForge app (make sure your **Forever** install is selected).
 
@@ -32,16 +30,16 @@ The Voice entry holds no audio itself; the app installs every voice pack with it
 
 One setting on the addon's **Voice** page turns the voice off. Removing the voice addons removes it, and the addon keeps working. A line plays only when its audio was made from the Japanese the addon shows; a line whose Japanese changed stays silent until its audio is remade.
 
-### <span style="color:#E8C77E;">Credits</span>
+### Credits
 
 The voices were made on the maintainer's own computer with the **AivisSpeech Engine** (https://aivis-project.com) and these voice models, under their licences:
 
 - Aivis Common Model License 1.0: Lux, MarkN, TANAKA, fumifumi, hinakoyuhara, kokuren_3rd, kokuren_voice, morioki, かりん(現実20代女子AIボイチェン@リアボVC公式モデル), さつき(現実20代女子AIボイチェン@リアボVC公式モデル), すみれ(現実20代女子AIボイチェン@リアボVC公式モデル), にせ, はきみて れく(瞭魅推 れく), ほのか(~現実20代女子AIボイチェン~リアボVC公式モデル), まい, まお, みちのくあいり, もえ(現実20代女子AIボイチェン@リアボVC公式モデル), らせつん, るな, れな(現実20代女子AIボイチェン@リアボVC公式モデル), ろてじん（匿名インタビュー風）, ろてじん（長老ボイス）, わかな(現実20代女子AIボイチェン@リアボVC公式モデル), コハク, 中2, 凛音エル, 桜音, 澤原 玄二郎, 猩々博士 (雑談ボイス), 立神ケイ, 花音, 観測症, 阿井田 茂
 - CC0 1.0: すきやき馬太郎
 
-## <span style="color:#E8C77E;">日本語</span>
+## 日本語
 
-<span style="color:#E0605A;">**先にアドオン本体をインストールしてください：[WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese)**</span>
+**先にアドオン本体をインストールしてください：[WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese)**
 
 これは本体用の日本語音声だけで、本体がないと動きません。本体がまだなければ、CurseForge アプリが一緒にインストールします。ゲーム内でも、本体なしで音声が読み込まれることはありません。
 
@@ -49,7 +47,7 @@ The voices were made on the maintainer's own computer with the **AivisSpeech Eng
 
 **ウェブサイト:** https://foreverjapanese.com （スクリーンショットと、アドオンのしくみの簡単な説明）
 
-### <span style="color:#E8C77E;">インストール</span>
+### インストール
 
 **手順 1:** CurseForge アプリで [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese) をインストールします（**Forever** のインストール先が選ばれていることを確認）。
 
@@ -59,7 +57,7 @@ Voice 自体は音声を持たず、すべての音声パック（合計約 1.1 
 
 アドオンの **音声** ページの設定ひとつで音声をオフにできます。音声アドオンを削除すれば音声はなくなり、アドオンはそのまま動きます。音声は、アドオンが表示する日本語から作られたものだけが再生されます。日本語が変わった行は、音声が作り直されるまで再生されません。
 
-### <span style="color:#E8C77E;">クレジット</span>
+### クレジット
 
 音声は、メンテナーのコンピューター上で **AivisSpeech Engine**（https://aivis-project.com）と次の音声モデルを使い、各ライセンスに従って作りました。
 
