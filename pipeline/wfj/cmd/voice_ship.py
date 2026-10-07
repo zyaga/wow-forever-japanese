@@ -6,13 +6,16 @@ docs/operations/voice.md, "Releasing the voice"; the split is pipeline/voice-pac
       Writes the entry (WoWForeverJapanese_Voice/: TOC and README) and every pack folder from the recorded
       files that are in step with the shipped Japanese, prints each pack's size and the room left under the
       cap, warns past warn_mb and writes nothing when a pack is past cap_mb.
-  release [same options] [--dry-run] [--curseforge-only]
+  release [same options] [--dry-run] [--curseforge-only] [--only FOLDER,…] [--entry-without-packs]
       Builds as `pack` does, zips and checks every folder, then uploads the packs whose content changed since
       the latest `voice-v*` GitHub release (and the entry when the set of packs did) to their CurseForge
       projects, and makes one GitHub release with every zip plus one zip of everything. --dry-run stops
       before anything leaves the machine and prints what would go up. --curseforge-only skips the GitHub
-      release (a rehearsal: with no voice release on GitHub, the next run counts every pack as changed). The
-      upload token is CF_API_KEY in the environment.
+      release (a rehearsal: with no voice release on GitHub, the next run counts every pack as changed).
+      --only uploads just the named folders' projects. --entry-without-packs makes the entry's file require
+      the main addon alone: a project can only be named once CurseForge has approved it, and it is reviewed
+      only after its first file, so a new entry's first file cannot name packs still in review. The upload
+      token is CF_API_KEY in the environment.
 """
 
 from __future__ import annotations
@@ -370,17 +373,15 @@ def run_pack(a: argparse.Namespace) -> int:
     return 0 if build(a, datetime.date.today(), None) else 1
 
 
-def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
-    day = datetime.date.today()
-    rows = releases(run)
-    tag_before, previous = last_voice(rows, run)
-    rtype = release_type(rows)
-    built = build(a, day, previous)
-    if not built:
-        return 1
-    table, packs, plan, versions = built
-    assert plan is not None
-    out, dist = Path(a.out), Path(a.out).parent / "voice-release"
+def zip_release(
+    out: Path,
+    dist: Path,
+    table: Table,
+    packs: Sequence[Pack],
+    versions: Mapping[str, str],
+    day: datetime.date,
+) -> tuple[dict[str, Path], Path] | None:
+    """Every folder's zip, checked, and the zip of everything. None (problems printed) when a zip fails."""
     if dist.exists():
         shutil.rmtree(dist)
     dist.mkdir(parents=True)
@@ -397,9 +398,39 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     problems += check_zip(zips[e.folder], e.folder, None)
     if problems:
         print("\n".join(f"voice release: {x}" for x in problems), file=sys.stderr)
-        return 1
+        return None
     bundle = dist / f"{e.folder}-all-{day:%Y.%m.%d}.zip"
     zip_folders(out, [e.folder, *(p.project.folder for p in packs)], bundle)
+    return zips, bundle
+
+
+def _only(plan: Plan, table: Table, only: str | None) -> None:
+    """--only: keep just the named folders' uploads."""
+    if not only:
+        return
+    keep = set(only.split(","))
+    unknown = keep - {p.folder for p in (table.entry, *table.packs)}
+    if unknown:
+        raise ValueError(f"--only names no such folder: {', '.join(sorted(unknown))}")
+    plan.upload = [p for p in plan.upload if p.folder in keep]
+    print(f"voice release: only {', '.join(sorted(keep))}")
+
+
+def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
+    day = datetime.date.today()
+    rows = releases(run)
+    tag_before, previous = last_voice(rows, run)
+    rtype = release_type(rows)
+    built = build(a, day, previous)
+    if not built:
+        return 1
+    table, packs, plan, versions = built
+    assert plan is not None
+    out, dist = Path(a.out), Path(a.out).parent / "voice-release"
+    zipped = zip_release(out, dist, table, packs, versions, day)
+    if zipped is None:
+        return 1
+    zips, bundle = zipped
     tag = new_tag(day, rows)
     print(f"voice release: last voice release {tag_before or 'none'}; this one {tag} ({rtype})")
     for pr in plan.upload:
@@ -410,6 +441,7 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
               " not uploaded")
     for f in plan.unchanged:
         print(f"voice release: {f} unchanged ({versions[f]})")
+    _only(plan, table, a.only)
     if not plan.upload and not plan.no_project:
         print("voice release: nothing changed since the last voice release; nothing to do")
         return 0
@@ -425,7 +457,9 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
         print("voice release: no upload token (CF_API_KEY); see docs/operations/voice.md", file=sys.stderr)
         return 1
     gv = curseforge.game_version_id(curseforge.game_versions(token), interface_of(data_root()))
-    slugs = entry_requires(table)
+    slugs = [table.addon_slug] if a.entry_without_packs else entry_requires(table)
+    if a.entry_without_packs:
+        print("voice release: the entry requires the main addon only (no packs)")
     for pr in plan.upload:
         meta = curseforge.metadata(
             versions[pr.folder], gv, rtype,
@@ -478,6 +512,9 @@ def run(argv: Sequence[str]) -> int:
         if name == "release":
             sp.add_argument("--dry-run", action="store_true")
             sp.add_argument("--curseforge-only", action="store_true", help="no GitHub release (a rehearsal)")
+            sp.add_argument("--only", help="upload only these folders, comma-separated")
+            sp.add_argument("--entry-without-packs", action="store_true",
+                            help="the entry's file requires the main addon alone (packs not approved yet)")
     a = p.parse_args(list(argv))
     try:
         return run_pack(a) if a.cmd == "pack" else run_release(a)

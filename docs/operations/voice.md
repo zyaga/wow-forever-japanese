@@ -105,7 +105,7 @@ The voice is released from the maintainer's Mac, by one command, because the aud
 | CurseForge | Each changed pack with a project id is uploaded to its project, then the entry if it changed, naming the main addon (`addon_slug`) and every pack as required dependencies, so the app never installs voice without the addon. The game version is chosen as the main addon's packager chooses it; the release type (alpha, beta or release) follows the main addon's latest release tag. |
 | GitHub | One release, `voice-vYYYY.MM.DD`, never marked latest (the main addon's release stays the latest): every zip, plus `WoWForeverJapanese_Voice-all-<date>.zip` holding the entry and every pack, for players who install by hand. |
 
-When nothing changed since the last voice release, it says so and stops. `CF_ONLY=1` uploads to CurseForge and makes no GitHub release (a rehearsal); with no voice release on GitHub, the next run counts every pack as changed again.
+When nothing changed since the last voice release, it says so and stops. `CF_ONLY=1` uploads to CurseForge and makes no GitHub release (a rehearsal); with no voice release on GitHub, the next run counts every pack as changed again. `ONLY=<folder>,…` uploads just those projects. `ENTRY_WITHOUT_PACKS=1` makes the entry's file require the main addon alone: CurseForge accepts a project as a dependency only once it is approved, and reviews a project only after its first file, so a new entry's first file goes up this way and a later one names the packs.
 
 ### Adding a pack
 

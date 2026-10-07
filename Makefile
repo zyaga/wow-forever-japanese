@@ -400,14 +400,16 @@ voice: voice-speakers voice-generate voice-pack ## speakers → generate → pac
 
 # The upload token is CF_API_KEY, else what $(VOICE_TOKEN_CMD) prints (a local, untracked setting). It is read for the
 # one run and never written anywhere. DRY=1 builds, checks the zips and prints what would go up. CF_ONLY=1 skips the
-# GitHub release (a rehearsal).
+# GitHub release (a rehearsal). ONLY=<folder>,… uploads just those; ENTRY_WITHOUT_PACKS=1 makes the entry require the
+# main addon alone (a new entry's first file, while its packs wait for approval).
+VOICE_RELEASE_FLAGS = $(if $(CF_ONLY),--curseforge-only) $(if $(ONLY),--only "$(ONLY)") $(if $(ENTRY_WITHOUT_PACKS),--entry-without-packs)
 voice-release: ## the voice packs whose audio changed to CurseForge and every zip to one GitHub release (DRY=1: nothing leaves the machine)
 	@if [ -n "$(DRY)" ]; then \
-		cd pipeline && $(PY) -m wfj voice release --dry-run $(if $(CF_ONLY),--curseforge-only) --store "$(VOICE_STORE)" $(VOICE_LEVELS); \
+		cd pipeline && $(PY) -m wfj voice release --dry-run $(VOICE_RELEASE_FLAGS) --store "$(VOICE_STORE)" $(VOICE_LEVELS); \
 	else \
 		key="$${CF_API_KEY:-$$($(or $(VOICE_TOKEN_CMD),true))}"; \
 		if [ -z "$$key" ]; then echo "voice-release: no upload token (CF_API_KEY or VOICE_TOKEN_CMD; docs/operations/voice.md)"; exit 1; fi; \
-		cd pipeline && CF_API_KEY="$$key" $(PY) -m wfj voice release $(if $(CF_ONLY),--curseforge-only) --store "$(VOICE_STORE)" $(VOICE_LEVELS); \
+		cd pipeline && CF_API_KEY="$$key" $(PY) -m wfj voice release $(VOICE_RELEASE_FLAGS) --store "$(VOICE_STORE)" $(VOICE_LEVELS); \
 	fi
 
 voice-run: ## the whole game's voice, in the background, the Mac kept awake; resumes where it stopped (make voice-status, make voice-stop)
