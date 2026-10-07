@@ -23,7 +23,7 @@ addon_slug = "wow-forever-japanese"
 folder = "WoWForeverJapanese_Voice"
 title = "WoW Forever Japanese Voice (日本語音声)"
 slug = "wow-forever-japanese-voice"
-project_id = 0
+project_id = 1732046
 holds = "No audio. Installs every voice pack below."
 
 [[pack]]
