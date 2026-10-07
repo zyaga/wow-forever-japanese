@@ -101,6 +101,24 @@ window says the text is too long even to paste, it asks you to zip the saved fil
 
 ![The English Collector settings page, with the steps and the Send English button](docs/images/collector.jpg)
 
+## Japanese voice
+
+The addon can read its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter
+pages, and your character's own spoken error lines. The voice is a separate download of about 1.1 GB, so
+installing the addon never pulls it in.
+
+- **With the CurseForge app:** install the addon first, then search for **WoW Forever Japanese Voice** and click
+  **Install**. The app installs every voice pack with it and keeps them up to date. In the game, the packs show as
+  extra rows under the addon in the AddOns list; leave them ticked.
+- **By hand:** on the [releases page](https://github.com/zyaga/wow-forever-japanese/releases), open the latest
+  release whose name starts with **Voice**, download the zip whose name ends in `-all-` and a date, and unzip it into
+  the same `AddOns` folder. It holds `WoWForeverJapanese_Voice` and one folder per voice pack.
+
+The addon's **About & Help** page says whether the voice is installed and which packs loaded. One setting on its
+**Voice** page turns the voice off; removing the voice folders removes it, and the addon keeps working. The voices
+were made on the maintainer's own computer with the AivisSpeech Engine and the voice models listed in
+[`ATTRIBUTION.md`](ATTRIBUTION.md).
+
 ## Reporting a bad translation
 
 1. Click the **字** button on the minimap (or type `/wfj fix`).
@@ -246,6 +264,15 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 **記録した英語の送り方。** 設定の **英語テキスト収集** ページで **英語を送る** をクリックします（`/wfj collector send` と入力しても同じです）。まだ送っていない行が 1 つのリンクにまとめられたウィンドウが開きます。リンクをコピーして（クリックして Ctrl+C）ブラウザで開くと、入力済みの GitHub の Issue フォームが開きます。ウィンドウに 2 つ目の欄があるときは、リンクに入りきらない長さです。その文字列もフォームの欄に貼り付けてください。Issue を送信したら、ゲーム内で **送信しました** をクリックします。次回は新しい行だけを送ります。その時点で翻訳がある行は除かれます。貼り付けられないほど長いとウィンドウに表示されたときは、保存ファイルを zip にして同じフォームにドラッグするよう案内されます（ログイン後に遊んだ場合は先に `/reload` してください）。
 
 ![英語テキスト収集の設定画面。手順と「英語を送る」ボタンがある](docs/images/collector-ja.jpg)
+
+### 日本語音声
+
+日本語を読み上げることもできます。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言が対象です。音声は約 1.1 GB の別ダウンロードで、アドオンをインストールしても音声は入りません。
+
+- **CurseForge アプリで:** 先にアドオンを入れてから、**WoW Forever Japanese Voice** を検索して **Install** を押します。すべての音声パックが一緒に入り、更新もアプリが行います。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。
+- **手動で:** [リリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で名前が **Voice** で始まる最新のリリースを開き、名前が `-all-` と日付で終わる zip をダウンロードして、同じ `AddOns` フォルダに展開します。中身は `WoWForeverJapanese_Voice` と音声パックごとのフォルダです。
+
+アドオンの **情報とヘルプ** ページに、音声が入っているか、どのパックが読み込まれたかが表示されます。**音声** ページの設定ひとつで音声をオフにできます。音声のフォルダを削除すれば音声はなくなり、アドオンはそのまま動きます。音声は、メンテナーのコンピューター上で AivisSpeech Engine と [`ATTRIBUTION.md`](ATTRIBUTION.md) に記載した音声モデルを使って作りました。
 
 ### 翻訳の問題を報告する
 

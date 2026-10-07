@@ -16,7 +16,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": 10,
+   "min_level": 10
   },
   {
    "id": 5679,
@@ -30,7 +32,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": 20,
+   "min_level": 20
   },
   {
    "id": 6843,
@@ -44,7 +48,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": 0,
+   "min_level": 0
   },
   {
    "id": 76160,
@@ -58,7 +64,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": 11,
+   "min_level": 4
   },
   {
    "id": 84399,
@@ -72,7 +80,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": 60,
+   "min_level": 1
   },
   {
    "id": 91900,
@@ -86,7 +96,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": 60,
+   "min_level": 1
   },
   {
    "id": 92596,
@@ -111,7 +123,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": 6,
+   "min_level": 4
   },
   {
    "id": 92709,
@@ -130,7 +144,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": 12,
+   "min_level": 7
   },
   {
    "id": 93165,
@@ -144,7 +160,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": 13,
+   "min_level": 8
   },
   {
    "id": 94978,
@@ -164,7 +182,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": 10,
+   "min_level": 10
   },
   {
    "id": 95771,
@@ -178,7 +198,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": 10,
+   "min_level": 6
   }
  ]
 }

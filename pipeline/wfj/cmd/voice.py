@@ -1,6 +1,7 @@
 """wfj voice: Japanese voice over, made locally (ADR-061, ADR-062; docs/systems/voice.md, runbook
 docs/operations/voice.md). This module builds who speaks each line; the casting verbs are in `voice_cast`,
-the file verbs (cast, plan, generate, status, pack) in `voice_make`.
+the file verbs (cast, plan, generate, status) in `voice_make`, the shipping verbs (pack, release) in
+`voice_ship`.
 
   speakers --vmangos FILE --commit SHA [--scope all] [--wdb questcache.wdb]
       Writes data/voice/speakers.jsonl (pack key → its main speaker, a creature id or narrator, and the
@@ -232,10 +233,14 @@ def run(argv: Sequence[str]) -> int:
         from wfj.cmd import voice_audition
 
         return voice_audition.run(argv[1:])
-    if verb and verb[0] in ("cast", "plan", "generate", "status", "pack"):
+    if verb and verb[0] in ("cast", "plan", "generate", "status"):
         from wfj.cmd import voice_make
 
         return voice_make.run(argv)
+    if verb and verb[0] in ("pack", "release"):
+        from wfj.cmd import voice_ship
+
+        return voice_ship.run(argv)
     p = argparse.ArgumentParser(prog="wfj voice")
     sub = p.add_subparsers(dest="cmd", required=True)
     sp = sub.add_parser("speakers")

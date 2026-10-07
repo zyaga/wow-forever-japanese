@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -389,12 +389,26 @@ voice-speakers: ## data/voice/ speakers + voices for the voice scope, from the p
 voice-generate: ## build/voice/*.mp3 + manifest from the shipped Japanese, through the local engine (remakes only changed lines)
 	cd pipeline && $(PY) -m wfj voice generate
 
-voice-pack: ## build/voice-pack/WoWForeverJapanese_Voice/ (TOC, Register.lua, Sound/, README.txt) from the manifest
-	cd pipeline && $(PY) -m wfj voice pack
+VOICE_STORE ?= $(REPO_ROOT)/build/voice
+# Each quest's level, for the packs' level bands (pipeline/voice-packs.toml): Forever's pinned quest cache, then VMaNGOS.
+VOICE_LEVELS = --wdb "$(call client_dir,forever)/questcache.wdb" --vmangos "$(VMANGOS_DB)"
+
+voice-pack: ## build/voice-pack/: the Voice entry and every voice pack from the audio record, with each pack's size and room under the cap
+	cd pipeline && $(PY) -m wfj voice pack --store "$(VOICE_STORE)" $(VOICE_LEVELS)
 
 voice: voice-speakers voice-generate voice-pack ## speakers → generate → pack
 
-VOICE_STORE ?= $(REPO_ROOT)/build/voice
+# The upload token is CF_API_KEY, else what $(VOICE_TOKEN_CMD) prints (a local, untracked setting). It is read for the
+# one run and never written anywhere. DRY=1 builds, checks the zips and prints what would go up.
+voice-release: ## the voice packs whose audio changed to CurseForge and every zip to one GitHub release (DRY=1: nothing leaves the machine)
+	@if [ -n "$(DRY)" ]; then \
+		cd pipeline && $(PY) -m wfj voice release --dry-run --store "$(VOICE_STORE)" $(VOICE_LEVELS); \
+	else \
+		key="$${CF_API_KEY:-$$($(or $(VOICE_TOKEN_CMD),true))}"; \
+		if [ -z "$$key" ]; then echo "voice-release: no upload token (CF_API_KEY or VOICE_TOKEN_CMD; docs/operations/voice.md)"; exit 1; fi; \
+		cd pipeline && CF_API_KEY="$$key" $(PY) -m wfj voice release --store "$(VOICE_STORE)" $(VOICE_LEVELS); \
+	fi
+
 voice-run: ## the whole game's voice, in the background, the Mac kept awake; resumes where it stopped (make voice-status, make voice-stop)
 	@mkdir -p "$(VOICE_STORE)"
 	@if pgrep -f "wfj voice generate" >/dev/null; then echo "voice-run: a run is already going (make voice-status)"; exit 1; fi

@@ -152,3 +152,4 @@ Create a new token on the CurseForge author site, replace the value of the `CF_A
 - [Testing strategy](../testing/strategy.md) (what CI and the release gates check)
 - [Pipeline](../systems/pipeline.md) (`wfj release`, `wfj package-check`)
 - [`CHANGELOG.md`](../../CHANGELOG.md)
+- [Voice over → Releasing the voice](voice.md#releasing-the-voice) (the voice packs, released from the maintainer's computer)

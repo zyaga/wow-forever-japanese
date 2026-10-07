@@ -406,6 +406,34 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_true(opened)
   end)
 
+  it("the about page's voice line: not installed with the Voice entry's address, else the packs that loaded", function()
+    local about = O.pages.about
+    about:Show()
+    -- no pack (Core/Voice not even loaded): the line and the copyable address
+    assert.are.equal(WFJ.OptionsText.T["about.voice.none"].ja, O.aboutVoice.en:GetText())
+    local box = O.copyBoxes["about.voice"]
+    assert.are.equal("https://www.curseforge.com/wow/addons/wow-forever-japanese-voice", box:GetText())
+    assert.is_true(box:IsShown())
+    box:SetText("edited")
+    box.scripts.OnTextChanged(box, true)
+    assert.are.equal(O.VOICE_URL, box:GetText()) -- snaps back
+    H.loadChunk("Core/Voice.lua", nil, WFJ)
+    O.refresh()
+    assert.is_true(box:IsShown()) -- Voice loaded, still no pack
+    for _, folder in ipairs({ "WoWForeverJapanese_VoiceOther", "WoWForeverJapanese_VoiceLevels11to20",
+      "WoWForeverJapanese_VoiceLevels1to10" }) do
+      WFJ.Voice.register({ format = 2, folder = folder, lines = {} })
+    end
+    O.refresh()
+    assert.are.equal("日本語音声：レベル1-10、レベル11-20、その他", O.aboutVoice.en:GetText())
+    assert.are.equal("Japanese voice: Levels 1-10, Levels 11-20, Other", O.aboutVoice.pair[1])
+    assert.is_false(box:IsShown())
+    -- no voice setting on the About page: those stay on the voice page
+    for _, c in ipairs(O.controls) do assert.is_nil(c.id:match("^voice%."), c.id) end
+    assert.are.same({ "Levels 51-60", "レベル51-60", 51 }, { O.voicePackName("WoWForeverJapanese_VoiceLevels51to60") })
+    assert.are.same({ "Voice", "音声" }, { O.voicePackName("WoWForeverJapanese_Voice") })
+  end)
+
   it("never takes keyboard input outside a capture: pages built hidden, no OnKeyDown until a capture starts", function()
     -- Capture buttons with a standing OnKeyDown on visible parentless pages swallowed
     -- Escape, so the game menu would not open.

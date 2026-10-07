@@ -48,6 +48,8 @@ To send what it noted, click **Send English** on that page (or type **/wfj colle
 
 Install it with the CurseForge app (make sure your **Forever** install is selected), or unzip the download into your Forever client's `Interface/AddOns` folder. World of Warcraft: Forever only; no other addons or libraries needed.
 
+**Japanese voice:** a separate download of about 1.1 GB. After the addon, install **WoW Forever Japanese Voice** with the CurseForge app; it brings every voice pack. The addon's About & Help page says whether the voice is installed.
+
 ### <span style="color:#E8C77E;">Report a translation problem</span>
 
 Click the <span style="color:#E0605A;">**字**</span> minimap button (or type **/wfj fix**), pick the line you just read, choose what is wrong, and paste the report into the form on GitHub: https://github.com/zyaga/wow-forever-japanese/issues
@@ -71,7 +73,7 @@ Both can be turned off in the settings.
 
 ### <span style="color:#E8C77E;">Credits</span>
 
-The hand-written translations are the work of the Japanese translators of WoWJapanizer, QuestJapanizer and CraftJapanizer_Quest, listed by name in `ATTRIBUTION.md`, which ships inside the addon. Lines those projects did not cover are machine-drafted and marked as such in the project's data.
+The hand-written translations are the work of the Japanese translators of WoWJapanizer, QuestJapanizer and CraftJapanizer_Quest, listed by name in `ATTRIBUTION.md`, which ships inside the addon. Lines those projects did not cover are machine-drafted and marked as such in the project's data. The Japanese voice was made with the AivisSpeech Engine and the voice models listed in `ATTRIBUTION.md`.
 
 ### <span style="color:#E8C77E;">License</span>
 
@@ -117,6 +119,8 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 CurseForge アプリでインストールしてください（**Forever** のインストール先が選ばれていることを確認）。手動の場合は、ダウンロードした zip を Forever クライアントの `Interface/AddOns` フォルダに展開します。World of Warcraft: Forever 専用です。ほかのアドオンやライブラリは不要です。
 
+**日本語音声:** 約 1.1 GB の別ダウンロードです。アドオンのあとに、CurseForge アプリで **WoW Forever Japanese Voice** をインストールしてください。すべての音声パックが一緒に入ります。音声が入っているかどうかは、アドオンの「情報とヘルプ」ページに表示されます。
+
 ### <span style="color:#E8C77E;">翻訳の問題を報告する</span>
 
 ミニマップの <span style="color:#E0605A;">**字**</span> ボタン（または **/wfj fix**）を押し、直前に読んだ行を選んで何が問題かを選び、表示された報告文を GitHub のフォームに貼り付けてください: https://github.com/zyaga/wow-forever-japanese/issues
@@ -140,7 +144,7 @@ CurseForge アプリでインストールしてください（**Forever** のイ
 
 ### <span style="color:#E8C77E;">クレジット</span>
 
-手書きの翻訳は、WoWJapanizer、QuestJapanizer、CraftJapanizer_Quest の翻訳者の皆さんによるものです。翻訳者の名前はアドオンに同梱の `ATTRIBUTION.md` に記載しています。これらのプロジェクトが扱っていない行は機械で下訳したもので、データ上でその旨を記録しています。
+手書きの翻訳は、WoWJapanizer、QuestJapanizer、CraftJapanizer_Quest の翻訳者の皆さんによるものです。翻訳者の名前はアドオンに同梱の `ATTRIBUTION.md` に記載しています。これらのプロジェクトが扱っていない行は機械で下訳したもので、データ上でその旨を記録しています。日本語音声は AivisSpeech Engine と `ATTRIBUTION.md` に記載した音声モデルで作りました。
 
 ### <span style="color:#E8C77E;">ライセンス</span>
 

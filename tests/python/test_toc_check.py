@@ -20,14 +20,18 @@ def test_real_toc_fields_and_load_order(root):
     head = ["Core/ErrorLog.lua", "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua"]
     tail = [
         "Core/Lookup.lua", "Core/Readings.lua", "Core/Glosses.lua",
-        "Core/Align.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
+        "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
+        "Core/Voice.lua",  # the voice packs' registry, before the settings that read it
+        "Core/Modifier.lua",
         "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua",
         "Core/Objectives.lua",  # objective lines
         "Core/SurfaceState.lua",
         "Core/Collector.lua", "Core/CollectorSend.lua",  # the collector and its send
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
         "Core/Diag.lua", "Core/BugReport.lua",  # the problem log, the bug report link
-        "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
+        "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
+        "UI/VoicePlayer.lua", "UI/VoiceErrors.lua",  # voice playback, after Render that starts a line
+        "UI/ButtonText.lua", "UI/Labels.lua",
         "UI/TextWatch.lua", "UI/TaintWatch.lua",  # ADR-058: text followed from our own frame, the taint watch
         "UI/HtmlText.lua", "UI/LoadOnDemand.lua",
         "UI/HelpTooltip.lua", "UI/TooltipData.lua",

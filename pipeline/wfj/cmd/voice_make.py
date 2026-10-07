@@ -1,4 +1,4 @@
-"""wfj voice cast|plan|generate|status|pack: the audio files and the pack (ADR-061, ADR-062;
+"""wfj voice cast|plan|generate|status: the audio files (ADR-061, ADR-062;
 docs/systems/voice.md, runbook docs/operations/voice.md).
 
   cast [--config voice.toml]
@@ -14,8 +14,7 @@ docs/systems/voice.md, runbook docs/operations/voice.md).
       so a stopped run resumes where it stopped. Writes DIR/status.json as it goes.
   status [--store DIR]
       The running or last generation: done / total, rate, time left, and whether its process is alive.
-  pack [--config voice.toml] [--store DIR] [--out DIR] [--scope S]
-      Writes the pack addon from the recorded files that are in step with the shipped Japanese.
+The pack tables (`pack_tables`, `error_table`) are read by `voice_ship`, which writes the voice addons.
 """
 
 from __future__ import annotations
@@ -24,7 +23,6 @@ import argparse
 import datetime
 import json
 import os
-import shutil
 import subprocess
 import sys
 import time
@@ -38,7 +36,6 @@ from typing import Any
 
 from wfj.cmd.generate import female_index, quest_text_aliases
 from wfj.core import casting, readings, voice
-from wfj.emit import voice_pack
 from wfj.emit.lua_writer import shipped
 from wfj.io.aivis import Engine, EngineError
 from wfj.io.jsonl_store import Store, dumps
@@ -519,70 +516,17 @@ def pack_tables(
     return out, creatures, sorted(bad)
 
 
-def run_pack(
-    cfg: dict[str, Any],
-    root: Path,
-    scope: str,
-    store: Path,
-    out_dir: Path,
-    players: Sequence[tuple[str, str]] = (),
-) -> int:
-    lines, creatures, left_out = pack_tables(root, cfg, scope)
-    errors = error_table(root, cfg, players)
-    dest = out_dir / voice_pack.FOLDER
-    if dest.exists():
-        shutil.rmtree(dest)
-    (dest / "Sound").mkdir(parents=True)
-    files = sorted(
-        {e["file"] for e in lines.values()}
-        | {f for e in lines.values() for f, _ in e["variants"].values()}
-        | {f for v in errors.get("voices", {}).values() for f, _ in v.values()}
-    )
-    used = sorted({audio_record(root)[f[:-4]]["voice"] for f in files})
-    models = sorted({cfg["roster"][v]["model"] for v in used})
-    licences = sorted({cfg["roster"][v]["licence"] for v in used})
-    credits = {
-        "engine": cfg["credits"]["engine"],
-        "models": ", ".join(models),
-        "licence": " / ".join(licences),
-    }
-    toc = root.parent / "addon" / "WoWForeverJapanese" / "WoWForeverJapanese.toc"
-    (dest / f"{voice_pack.FOLDER}.toc").write_text(
-        voice_pack.toc_text(_interface(toc), credits), encoding="utf-8"
-    )
-    (dest / "Register.lua").write_text(voice_pack.register_text(lines, creatures, errors), encoding="utf-8")
-    (dest / "README.txt").write_text(voice_pack.readme_text(credits, len(lines)), encoding="utf-8")
-    for f in files:
-        shutil.copyfile(store / f, dest / "Sound" / f)
-    size = sum((dest / "Sound" / f).stat().st_size for f in files)
-    print(f"voice pack: {dest} ({len(files)} files, {len(lines)} keys, {size} bytes)")
-    if left_out:
-        print(
-            f"voice pack: left out {len(left_out)} file(s) not in step with the shipped Japanese"
-            " (make voice-plan)"
-        )
-    return 0
-
-
-def _interface(toc: Path) -> str:
-    for line in toc.read_text(encoding="utf-8").splitlines():
-        if line.startswith("## Interface:"):
-            return line.split(":", 1)[1].strip()
-    raise ValueError(f"{toc}: no ## Interface line")
-
-
 # ---- entry -----------------------------------------------------------------------------------------------
 
 
 def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj voice")
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name in ("cast", "plan", "generate", "status", "pack"):
+    for name in ("cast", "plan", "generate", "status"):
         sp = sub.add_parser(name)
         sp.add_argument("--config", default="voice.toml")
         sp.add_argument("--scope", default="all", choices=sorted(voice.SCOPES))
         sp.add_argument("--store")
-        sp.add_argument("--out", default="../build/voice-pack")
         sp.add_argument(
             "--players", help="the character's error lines too: race-sex (tauren-f,human-m) or all"
         )
@@ -599,9 +543,7 @@ def run(argv: Sequence[str]) -> int:
         players = players_of(a.players)
         if a.cmd == "plan":
             return run_plan(cfg, root, a.scope, players)
-        if a.cmd == "generate":
-            return run_generate(cfg, root, a.scope, store, players)
-        return run_pack(cfg, root, a.scope, store, Path(a.out), players)
+        return run_generate(cfg, root, a.scope, store, players)
     except (ValueError, KeyError, FileNotFoundError) as e:
         print(f"voice {a.cmd}: {e}", file=sys.stderr)
         return 1

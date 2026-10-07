@@ -192,6 +192,12 @@ Text.T = {
     en = "Point at a Japanese word in a quest or NPC window to see its reading.",
     ja = "クエストやNPCの画面で日本語の単語にカーソルを合わせると、読み方が表示されます。",
   },
+  -- the About page's voice line (UI/Options aboutVoice); %s: the packs that loaded, in the line's language
+  ["about.voice.none"] = {
+    en = "Japanese voice: not installed. Add \"WoW Forever Japanese Voice\" in the CurseForge app, or copy its page:",
+    ja = "日本語音声：未インストール。CurseForge アプリで「WoW Forever Japanese Voice」を追加するか、ページをコピー：",
+  },
+  ["about.voice.loaded"] = { en = "Japanese voice: %s", ja = "日本語音声：%s" },
   -- %s, %s: the two markers as they show (WFJ.MARKER.stale, .missing)
   ["about.markers"] = {
     en = "%s  the English changed after translation.\n%s  this line has no translation yet.",

@@ -16,7 +16,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": null,
+   "min_level": null
   },
   {
    "id": 170,
@@ -30,7 +32,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": null,
+   "min_level": null
   },
   {
    "id": 172,
@@ -44,7 +48,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": null,
+   "min_level": null
   },
   {
    "id": 247,
@@ -58,7 +64,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": null,
+   "min_level": null
   },
   {
    "id": 498,
@@ -81,7 +89,9 @@
    "portrait_giver_name": "",
    "portrait_turnin_text": "",
    "portrait_turnin_name": "",
-   "completion_log": ""
+   "completion_log": "",
+   "level": null,
+   "min_level": null
   }
  ]
 }

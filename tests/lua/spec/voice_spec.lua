@@ -116,19 +116,22 @@ describe("Core/Voice: the pack registry and the decision", function()
   local PATH = "Interface\\AddOns\\%s\\Sound\\%s"
 
   it("packs merge, and a pack registering again replaces only its own lines", function()
-    V.register({ format = 2, folder = "WoWForeverJapanese_Voice_1", lines = { ["2-description"] = entry("a.mp3", desc, 1) } })
-    V.register({ format = 2, folder = "WoWForeverJapanese_Voice_2", lines = { ["3-description"] = entry("b.mp3", "x", 1),
-      ["2-progress"] = entry("c.mp3", "y", 1) } })
+    V.register({ format = 2, folder = "WoWForeverJapanese_Voice_1",
+      lines = { ["2-description"] = entry("a.mp3", desc, 1) } })
+    V.register({ format = 2, folder = "WoWForeverJapanese_Voice_2",
+      lines = { ["3-description"] = entry("b.mp3", "x", 1), ["2-progress"] = entry("c.mp3", "y", 1) } })
     assert.are.same({ WoWForeverJapanese_Voice_1 = 1, WoWForeverJapanese_Voice_2 = 2 }, V.packs())
     assert.are.equal(3, V.counts.registered)
-    V.register({ format = 2, folder = "WoWForeverJapanese_Voice_2", lines = { ["3-description"] = entry("b.mp3", "x", 1) } })
+    V.register({ format = 2, folder = "WoWForeverJapanese_Voice_2",
+      lines = { ["3-description"] = entry("b.mp3", "x", 1) } })
     assert.are.equal(2, V.counts.registered)
     assert.are.equal(PATH:format("WoWForeverJapanese_Voice_1", "a.mp3"),
       (V.decide("questframe.detail", "description", "quest.description", 2)))
   end)
 
   it("a line several creatures say plays the voice of the one on screen, else its main voice", function()
-    V.register({ format = 2, folder = "WoWForeverJapanese_Voice", creatures = { [10] = "deep", [11] = { "deep", "soft" } },
+    V.register({ format = 2, folder = "WoWForeverJapanese_Voice",
+      creatures = { [10] = "deep", [11] = { "deep", "soft" } },
       lines = { ["2-description"] = { "2-description.mp3", WFJ.Hash.key(desc), 3,
         v = { deep = { "2-description_deep.mp3", 2.5 }, soft = { "2-description_soft.mp3", 2 } } } } })
     local function play(who) return { V.decide("questframe.detail", "description", "quest.description", 2, who) } end
@@ -464,10 +467,13 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     _G.C_Timer = { After = function(_, f) timers[#timers + 1] = f end }
     _G.GetGameMessageInfo = function(t) if t == 51 then return "ERR_USE_TOO_FAR", nil, 10 end end
     _G.UIErrorsFrame = { TryDisplayMessage = function(_, t)
-      local _, _, voiceID = GetGameMessageInfo(t)
-      if voiceID then C_Sound.PlayVocalErrorSound(voiceID) end
+      local _, _, voiceID = _G.GetGameMessageInfo(t)
+      if voiceID then _G.C_Sound.PlayVocalErrorSound(voiceID) end
     end }
-    _G.PlaySoundFile = function(path, channel) sounds[#sounds + 1] = { path = path, channel = channel }; return true, 7 end
+    _G.PlaySoundFile = function(path, channel)
+      sounds[#sounds + 1] = { path = path, channel = channel }
+      return true, 7
+    end
     _G.C_CVar = {
       GetCVar = function(n) return cvars[n] end,
       SetCVar = function(n, v) cvars[n] = v end,
@@ -498,15 +504,15 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     assert.is_true(WFJ.VoiceErrors.init(db))
     assert.are.equal("0", cvars.Sound_EnableErrorSpeech)
     assert.is_true(db.voiceErrorSpeechMuted)
-    C_Sound.PlayVocalErrorSound(10) -- from outside the error frame: the kind's line, on the next frame
+    _G.C_Sound.PlayVocalErrorSound(10) -- from outside the error frame: the kind's line, on the next frame
     assert.are.equal(0, #sounds)
     frames()
     assert.are.same({ path = "Interface\\AddOns\\WoWForeverJapanese_Voice\\Sound\\e-ERR_OUT_OF_RANGE-tauren-f.mp3",
       channel = "Master" }, sounds[1])
-    C_Sound.PlayVocalErrorSound(10) -- spammed: not started again within two seconds
+    _G.C_Sound.PlayVocalErrorSound(10) -- spammed: not started again within two seconds
     frames()
     assert.are.equal(1, #sounds)
-    C_Sound.PlayVocalErrorSound(15) -- a kind the pack has no line for stays silent
+    _G.C_Sound.PlayVocalErrorSound(15) -- a kind the pack has no line for stays silent
     frames()
     assert.are.equal(1, #sounds)
     WFJ.VoiceErrors.restore()
@@ -515,17 +521,18 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
 
   it("speaks the message the error frame shows, once, not the kind's line", function()
     WFJ.VoiceErrors.init(db)
-    UIErrorsFrame:TryDisplayMessage(51, "You are too far away.")
+    _G.UIErrorsFrame:TryDisplayMessage(51, "You are too far away.")
     frames()
     assert.are.equal(1, #sounds)
-    assert.are.equal("Interface\\AddOns\\WoWForeverJapanese_Voice\\Sound\\e-ERR_USE_TOO_FAR-tauren-f.mp3", sounds[1].path)
+    assert.are.equal("Interface\\AddOns\\WoWForeverJapanese_Voice\\Sound\\e-ERR_USE_TOO_FAR-tauren-f.mp3",
+      sounds[1].path)
   end)
 
   it("leaves the setting alone for a character the pack has no lines for, or when switched off", function()
     _G.UnitSex = function() return 2 end -- a tauren man: no lines in this pack
     WFJ.VoiceErrors.init(db)
     assert.are.equal("1", cvars.Sound_EnableErrorSpeech)
-    C_Sound.PlayVocalErrorSound(10)
+    _G.C_Sound.PlayVocalErrorSound(10)
     frames()
     assert.are.equal(0, #sounds)
     _G.UnitSex = function() return 3 end

@@ -14,7 +14,8 @@ local TAIL = {
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
   "Core/BugReport.lua",
   "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
-  "UI/VoicePlayer.lua", "UI/VoiceErrors.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/TextWatch.lua", "UI/TaintWatch.lua",
+  "UI/VoicePlayer.lua", "UI/VoiceErrors.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/TextWatch.lua",
+  "UI/TaintWatch.lua",
   "UI/HtmlText.lua",
   "UI/LoadOnDemand.lua",
   "UI/HelpTooltip.lua", "UI/TooltipData.lua",

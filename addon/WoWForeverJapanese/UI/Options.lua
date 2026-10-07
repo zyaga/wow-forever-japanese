@@ -38,9 +38,9 @@ Options.PAGES = {
     { title = "section.files", rows = { "collectorSteps", "collectorSend", "collectorPath" } },
   } },
   { id = "about", title = "page.about", header = true, sections = {
-    { title = "section.help", rows = { "aboutHold", "aboutReadings", "aboutMarkers", "aboutOpen" } },
+    { title = "section.help", rows = { "aboutHold", "aboutReadings", "aboutMarkers", "aboutOpen", "aboutVoice" } },
     { title = "section.slash", rows = { "slashHelp" } },
-    { rows = { "aboutFix", "aboutBug" } }, -- the fix window, then the bug and idea window
+    { columns = 2, rows = { "aboutFix", "aboutBug" } }, -- the fix window beside the bug and idea window
   } },
   -- Only when the voice pack has registered (Core/Voice): built with the others when the pack is already there, else
   -- added by Options.addPage when it registers.
@@ -304,6 +304,64 @@ function A.aboutBug(page, x, y, width)
   b:SetPoint("TOPLEFT", x, y - h) -- under its sentence
   Options.reportBug = b
   return h + 36
+end
+
+-- The Voice entry players install from CurseForge (pipeline/voice-packs.toml's entry slug).
+Options.VOICE_URL = "https://www.curseforge.com/wow/addons/wow-forever-japanese-voice"
+
+-- A pack folder as the About page names it: WoWForeverJapanese_VoiceLevels1to10 → "Levels 1-10" / "レベル1-10",
+-- …VoiceOther → "Other" / "その他". → en, ja, and the band's first level to sort by (nil for a pack with no band)
+function Options.voicePackName(folder)
+  local rest = folder:sub(#"WoWForeverJapanese_Voice" + 1)
+  local lo, hi = rest:match("^Levels(%d+)to(%d+)$")
+  if lo then return ("Levels %s-%s"):format(lo, hi), ("レベル%s-%s"):format(lo, hi), tonumber(lo) end
+  if rest == "Other" then return "Other", "その他" end
+  if rest == "" then return "Voice", "音声" end
+  return rest, rest
+end
+
+-- → the English and Japanese list of the voice packs that registered, bands in level order, the rest after; nil when
+-- none did
+local function voiceLoaded()
+  local packs = WFJ.Voice and WFJ.Voice.hasPack() and WFJ.Voice.packs()
+  if not packs then return nil end
+  local rows = {}
+  for folder in pairs(packs) do
+    local en, ja, lo = Options.voicePackName(folder)
+    rows[#rows + 1] = { en = en, ja = ja, lo = lo or math.huge, folder = folder }
+  end
+  if #rows == 0 then return nil end
+  table.sort(rows, function(a, b)
+    if a.lo ~= b.lo then return a.lo < b.lo end
+    return a.folder < b.folder
+  end)
+  local en, ja = {}, {}
+  for i, r in ipairs(rows) do en[i], ja[i] = r.en, r.ja end
+  return table.concat(en, ", "), table.concat(ja, "、")
+end
+
+-- The way to the voice: with no pack, "not installed" and the Voice entry's address to copy; with packs, which
+-- loaded. Filled on every refresh (a pack registers after the pages are built). No voice setting is shown here.
+function A.aboutVoice(page, x, y, width)
+  local l = W.label(page, "", "", x, y, width)
+  local box = W.copyBox(page, x, y - 32, width - 12, Options.VOICE_URL)
+  Options.copyBoxes = Options.copyBoxes or {}
+  Options.copyBoxes["about.voice"] = box
+  local function fill()
+    local en, ja = voiceLoaded()
+    if en then
+      local t = Text.T["about.voice.loaded"]
+      W.setPair(l, t.en:format(en), t.ja:format(ja))
+      box:Hide()
+    else
+      W.setPair(l, Text.get("about.voice.none"))
+      box:Show()
+    end
+  end
+  fill()
+  Options.refreshers[#Options.refreshers + 1] = fill
+  Options.aboutVoice = l
+  return 58
 end
 
 local function helpRow(key)

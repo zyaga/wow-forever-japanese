@@ -1,6 +1,6 @@
 -- UI/VoicePlayer.lua: plays the voice pack's line for a line the quest, gossip or book window just showed in
 -- Japanese (ADR-061, ADR-062). Core/Voice decides which file; this file owns every sound and client-setting call.
---   * Start: State "lineShown" (fired by Render.show after a client write, never on a refresh). One line at a time:
+--   * Start: State "lineShown" (fired by UI/Render after a client write, never on a refresh). One line at a time:
 --     a new line stops the one playing; the same line shown again while it plays is not restarted (the gossip window
 --     lays its first window out twice).
 --   * Stop: the quest, gossip or book window hides (a book's next page is a new line), the reveal key goes down,

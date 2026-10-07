@@ -57,6 +57,8 @@ def test_reads_the_real_records():
     assert by_id[247].objectives == ""  # an empty field decodes as empty
     assert by_id[498].title and "Rescue Drull" not in by_id[498].objectives  # objective descriptions are skipped
     assert by_id[172].title == "Children's Week"
+    # Classic Era's layout pins no level: the pack split reads Forever's cache only
+    assert all(q.level is None and q.min_level is None for q in cache.quests)
 
 
 def _as_json(quests) -> list[dict]:
@@ -148,6 +150,14 @@ def test_reads_the_forever_records():
     assert "even though you are not initiated as a mage" in by_id[92596].description
     assert by_id[94978].conditional == ((0, 0, ""),)  # an entry may be empty
     assert all(not q.conditional for q in cache.quests if q.id not in (92596, 94978))
+    # level and minimum level, signed 32-bit at payload offsets 8 and 16; the two quests VMaNGOS also has agree with it
+    # (1665: 10 / 10, 5679: 20 / 20); Forever's own quests carry theirs; a quest with no level reads 0
+    assert (by_id[1665].level, by_id[1665].min_level) == (10, 10)
+    assert (by_id[5679].level, by_id[5679].min_level) == (20, 20)
+    assert (by_id[92709].level, by_id[92709].min_level) == (12, 7)
+    assert (by_id[84399].level, by_id[84399].min_level) == (60, 1)
+    assert (by_id[6843].level, by_id[6843].min_level) == (0, 0)
+    assert cache.layout.level_at == 8 and cache.layout.min_level_at == 16
 
 
 @pytest.mark.parametrize("build", [70009, 70124, 70170])

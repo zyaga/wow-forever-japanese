@@ -11,6 +11,7 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Added
 - The addon can now play Japanese voice over from a separate voice pack addon: quest offers, progress and turn-ins, and NPC greetings, read aloud while the window shows the Japanese. Holding Alt or closing the window stops the line, and a small button on the window stops it or plays it again. While a line plays, the game's English NPC voice is turned off and then put back. Without the pack nothing changes and no voice settings show. The pack is not published yet.
+- The About & Help page says whether the Japanese voice is installed. Without it, it shows the address of "WoW Forever Japanese Voice" on CurseForge, ready to copy; with it, it names the voice packs that loaded. Its two report buttons now sit side by side.
 
 ### Fixed
 - An item tooltip's red note "Cannot change equip status while in combat" was shown as a jumbled half-Japanese line (combatのCannot change equip status while). A wardrobe tooltip pattern ("<boss> in <zone>") had taken it; that pattern and the death recap's "<spell> by <caster>" now apply only on their own windows. Lines the addon has no Japanese for stay in English.

@@ -183,6 +183,15 @@ cache, the Classic Era quest cache, wago.tools DB2 exports (`ItemSparse`, `Spell
 > AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 > OR OTHER DEALINGS IN THE SOFTWARE.
 
+## Voice
+
+The Japanese voice (the separate `WoWForeverJapanese_Voice` addons) was made on the maintainer's own computer with
+the AivisSpeech Engine (https://aivis-project.com) and these voice models, used under their licences. The audio
+files are not part of this repository.
+
+- Aivis Common Model License 1.0: Lux, MarkN, TANAKA, fumifumi, hinakoyuhara, kokuren_3rd, kokuren_voice, morioki, かりん(現実20代女子AIボイチェン@リアボVC公式モデル), さつき(現実20代女子AIボイチェン@リアボVC公式モデル), すみれ(現実20代女子AIボイチェン@リアボVC公式モデル), にせ, はきみて れく(瞭魅推 れく), ほのか(~現実20代女子AIボイチェン~リアボVC公式モデル), まい, まお, みちのくあいり, もえ(現実20代女子AIボイチェン@リアボVC公式モデル), らせつん, るな, れな(現実20代女子AIボイチェン@リアボVC公式モデル), ろてじん（匿名インタビュー風）, ろてじん（長老ボイス）, わかな(現実20代女子AIボイチェン@リアボVC公式モデル), コハク, 中2, 凛音エル, 桜音, 澤原 玄二郎, 猩々博士 (雑談ボイス), 立神ケイ, 花音, 観測症, 阿井田 茂
+- CC0 1.0: すきやき馬太郎
+
 ## This project
 
 WoW Forever Japanese ships its own code and translations under GPL-2.0-or-later (see `LICENSE`); every

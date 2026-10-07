@@ -20,7 +20,9 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 # the tooltip trace window (/wfj debug tooltip)
                 "UI/Slash.lua",
                 # the text watch and the taint watch script only their own frame (an OnUpdate, an all-events ring)
-                "UI/TextWatch.lua", "UI/TaintWatch.lua"}
+                "UI/TextWatch.lua", "UI/TaintWatch.lua",
+                # the voice player scripts only its own play / stop button
+                "UI/VoicePlayer.lua"}
 
 PATTERNS = {
     "PanelTemplates_SetTab": re.compile(r"\bPanelTemplates_SetTab\s*\("),

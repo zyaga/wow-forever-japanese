@@ -5,7 +5,6 @@ from __future__ import annotations
 import json
 import shutil
 import sqlite3
-import subprocess
 import threading
 import wave
 import zipfile
@@ -16,9 +15,8 @@ from urllib.parse import parse_qs, urlparse
 
 import pytest
 
-from wfj.cmd import package_check
+from wfj.cmd import package_check, voice_make
 from wfj.cmd import voice as cmd
-from wfj.cmd import voice_make
 from wfj.cmd.validate import rule_voice
 from wfj.core import voice
 from wfj.core.hashing import key as hash_key
@@ -471,33 +469,6 @@ def test_register_and_toc_text():
     toc = voice_pack.toc_text("11508", {"engine": "E", "models": "A, B", "licence": "L"})
     assert "## Interface: 11508\n" in toc and "## Dependencies: WoWForeverJapanese\n" in toc
     assert toc.endswith("\nRegister.lua\n")
-
-
-def test_the_pack_folder(tmp_path, engine, monkeypatch):
-    data = _store(tmp_path)
-    toc = tmp_path / "addon" / "WoWForeverJapanese"
-    toc.mkdir(parents=True)
-    (toc / "WoWForeverJapanese.toc").write_text("## Interface: 11508\n## Title: x\n")
-    out = tmp_path / "voice"
-    _gen(data, out, engine)
-    cfg = tmp_path / "voice.toml"
-    cfg.write_text(
-        'engine = "x"\nspeed_scale = 0.9\nnarrator = "m"\nbook_narrator = "m"\n'
-        '[roster.m]\nmodel = "M"\nstyle = 11\nlicence = "ACML 1.0"\n'
-        '[roster.f]\nmodel = "F"\nstyle = 22\nlicence = "ACML 1.0"\n'
-        '[roster.old]\nmodel = "F"\nstyle = 22\nspeed = 0.85\npitch = -0.05\nlicence = "CC0"\n'
-        '[credits]\nengine = "E"\n'
-    )
-    monkeypatch.chdir(tmp_path)
-    assert voice_make.run(["pack", "--config", str(cfg), "--store", str(out), "--out", str(tmp_path / "pack")]) == 0
-    dest = tmp_path / "pack" / voice_pack.FOLDER
-    assert sorted(p.name for p in (dest / "Sound").iterdir()) == [
-        "456-completion.mp3", "456-description.mp3", "g-0123456789abcdef.mp3"]
-    assert (dest / f"{voice_pack.FOLDER}.toc").read_text().startswith("## Interface: 11508\n")
-    assert "F, M" in (dest / "README.txt").read_text()
-    luac = shutil.which("luac") or shutil.which("luac5.1")
-    if luac:
-        subprocess.run([luac, "-p", str(dest / "Register.lua")], check=True)
 
 
 def test_the_release_zip_refuses_the_voice_pack(tmp_path):

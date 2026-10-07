@@ -88,6 +88,21 @@ def read_quests(path: Path) -> list[tuple[int, str, str]]:
     return out
 
 
+def read_quest_levels(path: Path) -> dict[int, int]:
+    """quest id → `QuestLevel` of its highest-patch row (the voice packs' level bands; the client's own quest
+    cache wins where it has the quest). A level under 1 means none."""
+    db = _connect(path, {"quest_template": ("entry", "patch", "QuestLevel")})
+    try:
+        rows = _query(db, path,
+            "SELECT q.entry, q.QuestLevel FROM quest_template q"
+            " JOIN (SELECT entry, MAX(patch) AS patch FROM quest_template GROUP BY entry) m"
+            " ON q.entry = m.entry AND q.patch = m.patch",
+        )
+    finally:
+        db.close()
+    return {int(e): int(lv) for e, lv in rows if lv is not None and int(lv) >= 1}
+
+
 def read_gossip(path: Path) -> list[str]:
     """The distinct non-empty gossip strings, sorted (the importer keys them)."""
     db = _connect(path)

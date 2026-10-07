@@ -4,7 +4,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 local CORE = { "Core/Const.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua" }
 local IDS = { "enabled", "modifier", "area.quests", "area.gossip", "area.itemTooltips", "area.spellTooltips",
   "area.interface", "area.books", "marker.stale", "marker.missing", "readings.enabled", "readings.glosses",
-  "minimapButton", "voice.enabled", "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books", "voice.errors",
+  "minimapButton", "voice.enabled", "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books",
+  "voice.errors",
   "voice.muteDialog", "voice.button" }
 local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["area.gossip"] = true,
   ["area.itemTooltips"] = true, ["area.spellTooltips"] = true, ["area.interface"] = true, ["area.books"] = true,
