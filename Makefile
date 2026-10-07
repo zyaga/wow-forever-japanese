@@ -298,7 +298,7 @@ level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh leve
 # Every text column of every client table the Forever install ships, and the rows its hotfix cache adds
 # (pipeline/served_columns.txt; tests/python/test_served_inventory.py needs a disposition for each in
 # pipeline/served_dispositions.txt). The archive root names no files, so the community listfile names the
-# tables: refresh it per build like the UI extract's (docs/operations/beta-day-harvest.md). Prints what the
+# tables: refresh it per build like the UI extract's. Prints what the
 # build added, dropped or changed against the committed file.
 LISTFILE ?= $(INPUTS)/community-listfile.csv
 
@@ -447,5 +447,5 @@ release: ## start the Release workflow on GitHub and follow it to the end: [VERS
 	[ -n "$$id" ] || { echo "release: the run did not appear; see the Actions tab"; exit 1; }; \
 	echo "release: run $$id"; gh run watch "$$id" --exit-status
 
-# Targets kept outside the repository (the quest scan); absent in a public checkout.
--include Makefile.private
+# Local targets, when present.
+-include local.mk

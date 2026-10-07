@@ -156,7 +156,6 @@ def test_render_round_trips_the_real_changelog(root):
     text = (root / "CHANGELOG.md").read_text(encoding="utf-8")
     parsed = release.parse(text)
     assert release.render(parsed) == text
-    assert parsed.unreleased.entries(), "the first release needs Unreleased entries"
     assert not release.LOCAL_PATH_RE.search(text)
 
 

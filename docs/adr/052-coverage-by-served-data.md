@@ -60,8 +60,8 @@ or column it does not read is invisible to coverage, and a new build can add one
      translations the curation rules forbid.
 5. **The inventory moves with the build.** `make coverage` refuses when `served_columns.txt` is from another build
    than the Makefile's `forever_BUILD`, or when a served column has no disposition. Regenerating the inventory
-   prints its delta against the committed file: the columns a patch added, dropped or changed. That delta is the
-   per-build check of the harvest runbook.
+   prints its delta against the committed file: the columns a patch added, dropped or changed. That delta is
+   checked on every new build.
 6. **Every interface string a loaded file names is decided.** The window inventory scans the files each hooked
    window names. `make ui-inventory` also writes `pipeline/ui_loadset.txt` (`dev/ui_loadset.py`): every
    GlobalStrings name that any loaded file of a Blizzard addon with disposition `surface`, `planned` or `library`
