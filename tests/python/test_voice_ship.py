@@ -211,6 +211,9 @@ def test_pack_writes_the_entry_and_every_pack(tmp_path, engine, monkeypatch):  #
     toc = (entry / "WoWForeverJapanese_Voice.toc").read_text()
     assert "## Dependencies: WoWForeverJapanese\n" in toc and "## X-Curse-Project-ID: 1\n" in toc
     assert "Register.lua" not in toc
+    main_icon = next(ln for ln in (ROOT / "addon" / "WoWForeverJapanese" / "WoWForeverJapanese.toc").read_text(
+        encoding="utf-8").splitlines() if ln.startswith("## IconTexture:"))
+    assert main_icon + "\n" in toc  # the same 字 icon as the main addon in the AddOn List
     # quest 456 is level 5, and the narrator's gossip goes to the first band
     a = out / "WoWForeverJapanese_VoiceA"
     assert sorted(p.name for p in (a / "Sound").iterdir()) == [
@@ -219,6 +222,7 @@ def test_pack_writes_the_entry_and_every_pack(tmp_path, engine, monkeypatch):  #
     assert 'folder = "WoWForeverJapanese_VoiceA"' in reg
     atoc = (a / "WoWForeverJapanese_VoiceA.toc").read_text()
     assert "## Title: A\n" in atoc and "## X-Curse-Project-ID: 2\n" in atoc
+    assert main_icon + "\n" in atoc
     assert "## Version: 2026." in atoc or "## Version: 20" in atoc
     assert "X-Curse-Project-ID" not in (out / "WoWForeverJapanese_VoiceB" / "WoWForeverJapanese_VoiceB.toc").read_text()
     assert not list((out / "WoWForeverJapanese_VoiceB" / "Sound").iterdir())

@@ -22,6 +22,8 @@ FOLDER = "WoWForeverJapanese_Voice"
 FORMAT = 2
 VERSION = "0.0.1-mvp"
 TITLE = "WoW Forever Japanese Voice (日本語音声)"
+# the main addon's 字 medallion, so the voice rows nested under it in the AddOn List carry the same icon
+ICON = "Interface\\AddOns\\WoWForeverJapanese\\Media\\icon"
 
 
 def toc_text(
@@ -44,6 +46,7 @@ def toc_text(
         f"## Interface: {interface}",
         f"## Title: {title}",
         f"## Notes: {notes}",
+        f"## IconTexture: {ICON}",
         "## Dependencies: WoWForeverJapanese",
         "## Author: Zyaga",
         f"## Version: {version}",
