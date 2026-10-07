@@ -93,6 +93,13 @@ describe("Settings pages from the registry and PAGES", function()
     _G.Settings.RegisterCanvasLayoutCategory = real
   end)
 
+  it("the collector page: the reminder switch sits right under the collector switch", function()
+    local rows
+    for _, page in ipairs(O.PAGES) do if page.id == "collector" then rows = page.sections[1].rows end end
+    assert.are.same({ "collectorExplain", "collector.enabled", "collector.remind", "collectorStatus",
+      "collectorClear" }, rows)
+  end)
+
   it("every non-hidden setting appears exactly once; every row is a setting or a named action", function()
     local seen = {}
     for _, page in ipairs(O.PAGES) do

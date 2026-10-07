@@ -244,6 +244,7 @@ function Stub.install(tocPath)
   }
   _G.SlashCmdList = {}
   _G.GetTime = function() return 0 end
+  _G.time = function() return 1790000000 end -- the client's wall clock (the collector reminder's day)
   -- Units: the player is always "Reyn"; any other token reads Stub.units[token] = { name, guid } or nil.
   Stub.units = {}
   _G.UnitName = function(unit)

@@ -40,12 +40,15 @@ describe("Core/Collector", function()
     prints, shipped, on, player, lookups = {}, {}, true, PLAYER, {}
   end)
 
-  it("loads under a std-lib-only environment and defines collector.enabled", function()
-    local d = WFJ.Settings.list()
-    assert.are.equal("collector.enabled", d[#d].id)
-    assert.are.equal("boolean", d[#d].kind)
-    assert.is_true(d[#d].default)
-    assert.is_nil(d[#d].hidden)
+  it("loads under a std-lib-only environment and defines collector.enabled and collector.remind", function()
+    local list, defs = WFJ.Settings.list(), {}
+    for _, d in ipairs(list) do defs[d.id] = d end
+    for _, id in ipairs({ "collector.enabled", "collector.remind" }) do
+      assert.are.equal("boolean", defs[id].kind, id)
+      assert.is_true(defs[id].default, id)
+      assert.is_nil(defs[id].hidden, id)
+    end
+    assert.are.equal("collector.remind", list[#list].id) -- the collector's two come last, in page order
     assert.are.equal(4 * 1024 * 1024, C.CAP_BYTES)
   end)
 

@@ -1,6 +1,7 @@
 -- UI/MinimapButton.lua: the fix-report minimap button, a small button on the minimap's edge. Left-click opens the
 -- fix window; right-click opens a menu with translation on / off (the master switch, the same state as the settings
--- checkbox), report a line, settings, hide this button. Drag moves it around the rim; the angle is kept in
+-- checkbox), report a line, report a bug or idea, send collected English (only while some waits), settings, hide
+-- this button. Drag moves it around the rim; the angle is kept in
 -- WFJ_DB.minimap (absent → DEFAULT_ANGLE). The `minimapButton` setting (default on) shows or hides it; "Hide this
 -- button" turns that setting off, and the settings page or `/wfj minimapButton on` brings it back. Blizzard's addon
 -- dropdown on the minimap gets the same two actions through the TOC's AddonCompartmentFunc (Main.lua's globals), so
@@ -99,24 +100,34 @@ end
 -- ── Menu ────────────────────────────────────────────────────────────────────
 
 -- The menu, as data (the specs read it): { kind, text, isSelected?, action }.
+-- The send entry shows the collector's unsent count and only while there is one to send.
 function MinimapButton.items()
-  return {
+  local items = {
     { kind = "checkbox", text = tx("minimap.enabled"),
       isSelected = function() return S.get("enabled") == true end,
       action = function() S.set("enabled", not S.get("enabled")) end },
     { kind = "button", text = tx("button.reportLine"), action = function() WFJ.FixWindow.open() end },
     { kind = "button", text = tx("button.reportBug"), action = function() WFJ.ReportWindow.open() end },
-    { kind = "button", text = tx("button.settings"), action = function() C.openOptions() end },
-    { kind = "button", text = tx("minimap.hide"), action = function() S.set("minimapButton", false) end },
   }
+  -- guarded: the menu is the main way to report a line and must open even if the collector cannot answer
+  local ok, status = pcall(function() return WFJ.Collector.status() end)
+  if ok and type(status) == "table" and not status.readOnly and (status.unsent or 0) > 0
+      and WFJ.CollectorSendWindow then
+    items[#items + 1] = { kind = "button", text = tx("minimap.sendEnglish"):format(status.unsent),
+      action = function() WFJ.CollectorSendWindow.open(false) end }
+  end
+  items[#items + 1] = { kind = "button", text = tx("button.settings"), action = function() C.openOptions() end }
+  items[#items + 1] = { kind = "button", text = tx("minimap.hide"),
+    action = function() S.set("minimapButton", false) end }
+  return items
 end
 
 -- The menu is a small frame of the addon's own, not Blizzard's Menu: opening a Blizzard context menu from this
 -- button can fail a Lua engine check in Menu.lua's AcquireMenu (writing the owner onto the pooled menu frame) and
--- close the game. Rows: the title, the switch with its check mark, a divider, the three actions. A click
+-- close the game. Rows: the title, the switch with its check mark, a divider, the actions. A click
 -- on a row runs it and closes the menu; a click anywhere else, or another right-click on the button, closes it.
 MinimapButton.ROW_HEIGHT = 20
-MinimapButton.MENU_WIDTH = 180
+MinimapButton.MENU_WIDTH = 210 -- the least width; showMenu widens it for a longer label
 local menuFrame
 
 local function closeMenu()
@@ -199,7 +210,15 @@ function MinimapButton.showMenu(owner)
     row:Show()
   end
   for i = #items + 1, #f.rows do f.rows[i]:Hide() end
-  f:SetSize(MinimapButton.MENU_WIDTH, -y + 10)
+  -- at least MENU_WIDTH, wider when a label (a long unsent count, the English labels) needs it: the rows' text has
+  -- no right anchor and would run past the border; 8 + 22 on the left of the text, 8 + 10 on its right
+  local width = MinimapButton.MENU_WIDTH
+  for i = 1, #items do
+    local text = f.rows[i].text
+    local w = type(text.GetStringWidth) == "function" and text:GetStringWidth() or nil
+    if type(w) == "number" and w + 48 > width then width = math.ceil(w + 48) end
+  end
+  f:SetSize(width, -y + 10)
   f:ClearAllPoints()
   if owner then
     f:SetPoint("TOPRIGHT", owner, "BOTTOMLEFT", 0, 0)

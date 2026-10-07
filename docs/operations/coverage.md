@@ -347,7 +347,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `wdb-npccache.*` | surface:gossip.text | 0 | NPC dialogue; gossip English comes from VMaNGOS and the in-game collector (docs/systems/collector.md) |
 | `wdb-pagetextcache.*` | surface:book.text | 0 | book and letter pages; English from VMaNGOS and the collector |
 | `wdb-petitioncache.*` | internal | 0 | player-written guild charter names and text, never game text |
-| `wdb-questcache.*` | surface:quest.* | 2,406 | quest text, objectives and area text, plus each conditional description and completion log line keyed like NPC dialogue; the whole server set is harvested by the quest scan (docs/operations/beta-day-harvest.md) |
+| `wdb-questcache.*` | surface:quest.* | 2,406 | quest text, objectives and area text, plus each conditional description and completion log line keyed like NPC dialogue; the whole server set is harvested by the quest scan |
 | `wmoareatable.f0` | names | 7,660 | area names inside buildings |
 | `worldstateexpression.f0` | internal | 3,968 | encoded expressions |
 | `zoneintromusictable.f0` | internal | 54 | music names |

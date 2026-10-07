@@ -208,7 +208,7 @@ zonemusic.f0  internal  # music names
 
 # Server caches (Cache/WDB/enUS): the text the server sends. The client keeps only what it has been sent, so a
 # cache's record count says what this install has seen, not what the server holds.
-wdb-questcache.*  surface:quest.*  # quest text, objectives and area text, plus each conditional description and completion log line keyed like NPC dialogue; the whole server set is harvested by the quest scan (docs/operations/beta-day-harvest.md)
+wdb-questcache.*  surface:quest.*  # quest text, objectives and area text, plus each conditional description and completion log line keyed like NPC dialogue; the whole server set is harvested by the quest scan
 wdb-npccache.*  surface:gossip.text  # NPC dialogue; gossip English comes from VMaNGOS and the in-game collector (docs/systems/collector.md)
 wdb-pagetextcache.*  surface:book.text  # book and letter pages; English from VMaNGOS and the collector
 wdb-creaturecache.*  names  # creature names and their titles (<Innkeeper>); UI/TooltipUnit.lua leaves line 1 and title lines as the client wrote them

@@ -1737,6 +1737,7 @@ Core\Objectives.lua
 Core\SurfaceState.lua
 Core\Collector.lua
 Core\CollectorSend.lua
+Core\CollectorRemind.lua
 Core\RecentLines.lua
 Core\Reports.lua
 Core\ReportText.lua
@@ -1913,6 +1914,7 @@ UI\OptionsWidgets.lua
 UI\KeyCapture.lua
 UI\FixWindow.lua
 UI\CollectorSendWindow.lua
+UI\CollectorReminder.lua
 UI\ReportWindow.lua
 UI\MinimapButton.lua
 UI\RevealBinding.lua

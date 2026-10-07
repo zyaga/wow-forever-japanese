@@ -11,7 +11,7 @@ One batch goes from untranslated English to imported, checked, generated `machin
 - A checkout where `make check` passes on the current `data/` ([Local setup](local-setup.md)).
 - The [Translation style guide](../content/translation-style-guide.md) (its `version: sg<N>` line is the current style version) and `pipeline/translation_glossary.tsv`.
 - A drafting model, given one batch at a time. Its model id goes into every line's provenance, so read it from the model you actually used; never type it from memory.
-- **Where batch files live.** All tool commands below run from `pipeline/` and write to `pipeline/batches/`, a scratch folder ignored by git. `make` targets run from the repository root. A batch's files (the cut, the draft, the lint-passed rows, the expanded import files) are working files: what ships is the result in `data/`, with provenance on every line. The maintainer keeps the batch files of past rounds outside the repository.
+- **Where batch files live.** All tool commands below run from `pipeline/` and write to `pipeline/batches/`, a scratch folder ignored by git. `make` targets run from the repository root. A batch's files (the cut, the draft, the lint-passed rows, the expanded import files) are working files: what ships is the result in `data/`, with provenance on every line.
 
 ## What `cut` selects
 
