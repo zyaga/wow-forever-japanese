@@ -189,7 +189,7 @@ def _project(tmp_path, engine):  # noqa: F811
 
 def _args(tmp_path, store, cfg, table, **over):
     a = argparse.Namespace(config=str(cfg), packs=str(table), store=str(store), out=str(tmp_path / "out"),
-                           wdb=None, vmangos=None, players=None, dry_run=True)
+                           wdb=None, vmangos=None, players=None, dry_run=True, curseforge_only=False)
     vars(a).update(over)
     return a
 
@@ -405,3 +405,23 @@ def test_the_about_page_links_the_voice_entry_of_the_table():
     slug = vp.load(TABLE).entry.slug
     options = (ROOT / "addon" / "WoWForeverJapanese" / "UI" / "Options.lua").read_text(encoding="utf-8")
     assert f'Options.VOICE_URL = "https://www.curseforge.com/wow/addons/{slug}"' in options
+
+
+def test_curseforge_only_makes_no_github_release(tmp_path, engine, monkeypatch, capsys):  # noqa: F811
+    data, store, cfg = _project(tmp_path, engine)
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(vs, "quest_levels", lambda *_: {456: 5})
+    monkeypatch.setenv("CF_API_KEY", "t")
+    monkeypatch.setattr(vs.curseforge, "game_versions", lambda token: [
+        {"id": 2, "gameVersionTypeID": 88568, "name": "1.60.1"}])
+    uploads = []
+    monkeypatch.setattr(vs.curseforge, "upload", lambda pid, path, meta, token: uploads.append((pid, meta)) or 9)
+    calls = []
+    gh = _gh(calls, [{"tagName": "v0.1.0-alpha.8", "createdAt": "2026-10-05T00:00:00Z"}], [])
+    args = _args(tmp_path, store, cfg, _table_file(tmp_path), dry_run=False, curseforge_only=True)
+    assert vs.run_release(args, run=gh) == 0
+    assert [pid for pid, _ in uploads] == [2, 3, 1]  # packs first, the entry last
+    assert uploads[-1][1]["relations"]["projects"][0] == {"slug": "main", "type": "requiredDependency"}
+    assert uploads[0][1]["releaseType"] == "alpha" and "relations" not in uploads[0][1]
+    assert not any(c[:2] == ["release", "create"] for c in calls)
+    assert "CurseForge only" in capsys.readouterr().out

@@ -6,12 +6,13 @@ docs/operations/voice.md, "Releasing the voice"; the split is pipeline/voice-pac
       Writes the entry (WoWForeverJapanese_Voice/: TOC and README) and every pack folder from the recorded
       files that are in step with the shipped Japanese, prints each pack's size and the room left under the
       cap, warns past warn_mb and writes nothing when a pack is past cap_mb.
-  release [same options] [--dry-run]
+  release [same options] [--dry-run] [--curseforge-only]
       Builds as `pack` does, zips and checks every folder, then uploads the packs whose content changed since
       the latest `voice-v*` GitHub release (and the entry when the set of packs did) to their CurseForge
       projects, and makes one GitHub release with every zip plus one zip of everything. --dry-run stops
-      before anything leaves the machine and prints what would go up. The upload token is CF_API_KEY in the
-      environment.
+      before anything leaves the machine and prints what would go up. --curseforge-only skips the GitHub
+      release (a rehearsal: with no voice release on GitHub, the next run counts every pack as changed). The
+      upload token is CF_API_KEY in the environment.
 """
 
 from __future__ import annotations
@@ -412,7 +413,10 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     if not plan.upload and not plan.no_project:
         print("voice release: nothing changed since the last voice release; nothing to do")
         return 0
-    print(f"voice release: GitHub release {tag}: {len(zips)} zips and {bundle.name}")
+    if a.curseforge_only:
+        print("voice release: CurseForge only; no GitHub release")
+    else:
+        print(f"voice release: GitHub release {tag}: {len(zips)} zips and {bundle.name}")
     if a.dry_run:
         print("voice release: dry run; nothing uploaded")
         return 0
@@ -430,6 +434,9 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
         )
         fid = curseforge.upload(pr.project_id, zips[pr.folder], meta, token)
         print(f"voice release: uploaded {zips[pr.folder].name} (CurseForge file {fid})")
+    if a.curseforge_only:
+        print("voice release: done (CurseForge only)")
+        return 0
     notes = dist / "notes.md"
     notes.write_text(_notes(table, versions, plan), encoding="utf-8")
     run([
@@ -470,6 +477,7 @@ def run(argv: Sequence[str]) -> int:
         sp.add_argument("--players", default="all", help="the character's error lines: race-sex list or all")
         if name == "release":
             sp.add_argument("--dry-run", action="store_true")
+            sp.add_argument("--curseforge-only", action="store_true", help="no GitHub release (a rehearsal)")
     a = p.parse_args(list(argv))
     try:
         return run_pack(a) if a.cmd == "pack" else run_release(a)
