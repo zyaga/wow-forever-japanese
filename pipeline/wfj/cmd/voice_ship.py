@@ -190,7 +190,9 @@ def write(
         (dest / "Sound").mkdir(parents=True)
         credits = _credits(cfg, audio, p.files)
         (dest / f"{pr.folder}.toc").write_text(
-            voice_pack.toc_text(interface, credits, pr.title, versions[pr.folder], pr.project_id),
+            voice_pack.toc_text(
+                interface, credits, pr.title, versions[pr.folder], pr.project_id, depends=table.entry.folder
+            ),
             encoding="utf-8",
         )
         (dest / "Register.lua").write_text(p.register, encoding="utf-8")

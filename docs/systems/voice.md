@@ -40,10 +40,10 @@ The voice ships as several addon folders, split by `pipeline/voice-packs.toml` (
 
 ```
 WoWForeverJapanese_Voice/                 the entry
-  WoWForeverJapanese_Voice.toc            ## Dependencies: WoWForeverJapanese (load order only); no files to load
+  WoWForeverJapanese_Voice.toc            ## Dependencies: WoWForeverJapanese; no files to load; the main addon's icon
   README.txt                              the packs it installs
 WoWForeverJapanese_VoiceLevels1to10/      a pack (and so on for the others)
-  WoWForeverJapanese_VoiceLevels1to10.toc ## Dependencies: WoWForeverJapanese; Notes carry the engine, models, licences
+  WoWForeverJapanese_VoiceLevels1to10.toc ## Dependencies: WoWForeverJapanese_Voice (nested under the entry); the main addon's icon
   Register.lua                            one call: WoWForeverJapanese_RegisterVoice({ format = 2, folder = "<its folder>", lines = { … }, creatures = { … } })
   Sound/<file>.mp3                        one file per line, and per voice for a line several voices say
   README.txt                              what it holds, the line count, the credits

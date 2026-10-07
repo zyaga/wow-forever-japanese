@@ -32,9 +32,11 @@ def toc_text(
     title: str = TITLE,
     version: str = VERSION,
     project_id: int = 0,
+    depends: str = "WoWForeverJapanese",
 ) -> str:
     """A pack's TOC (with `credits`, it loads Register.lua) or the entry's (`credits` None: no files). The
-    dependency on the main addon only orders loading: installing voice never installs the main addon."""
+    entry depends on the main addon and each pack on the entry, so the game loads none of them without the
+    main addon and the AddOn List nests each under the one it depends on."""
     if credits:
         # English only: the AddOn List tooltip font has no Japanese glyphs; several model names are Japanese
         notes = (
@@ -48,7 +50,7 @@ def toc_text(
         f"## Title: {title}",
         f"## Notes: {notes}",
         f"## IconTexture: {ICON}",
-        "## Dependencies: WoWForeverJapanese",
+        f"## Dependencies: {depends}",
         "## Author: Zyaga",
         f"## Version: {version}",
     ]
