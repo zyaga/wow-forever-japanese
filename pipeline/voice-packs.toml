@@ -15,6 +15,9 @@
 
 cap_mb = 420
 warn_mb = 315
+# The main addon's CurseForge slug. The entry requires it, so installing the voice installs the addon too (in the
+# game every voice TOC already depends on it). The main addon never requires the voice.
+addon_slug = "wow-forever-japanese"
 
 [entry]
 folder = "WoWForeverJapanese_Voice"

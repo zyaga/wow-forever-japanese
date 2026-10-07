@@ -105,7 +105,8 @@ window says the text is too long even to paste, it asks you to zip the saved fil
 
 The addon can read its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter
 pages, and your character's own spoken error lines. The voice is a separate download of about 1.1 GB, so
-installing the addon never pulls it in.
+installing the addon never pulls it in. The voice needs the addon: installing it from the CurseForge app brings
+the addon too, and the game never loads the voice without it.
 
 - **With the CurseForge app:** install the addon first, then search for **WoW Forever Japanese Voice** and click
   **Install**. The app installs every voice pack with it and keeps them up to date. In the game, the packs show as
@@ -267,7 +268,7 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
 ### 日本語音声
 
-日本語を読み上げることもできます。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言が対象です。音声は約 1.1 GB の別ダウンロードで、アドオンをインストールしても音声は入りません。
+日本語を読み上げることもできます。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言が対象です。音声は約 1.1 GB の別ダウンロードで、アドオンをインストールしても音声は入りません。音声にはアドオンが必要です。CurseForge アプリで音声を入れるとアドオンも一緒に入り、ゲームもアドオンなしで音声を読み込むことはありません。
 
 - **CurseForge アプリで:** 先にアドオンを入れてから、**WoW Forever Japanese Voice** を検索して **Install** を押します。すべての音声パックが一緒に入り、更新もアプリが行います。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。
 - **手動で:** [リリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で名前が **Voice** で始まる最新のリリースを開き、名前が `-all-` と日付で終わる zip をダウンロードして、同じ `AddOns` フォルダに展開します。中身は `WoWForeverJapanese_Voice` と音声パックごとのフォルダです。

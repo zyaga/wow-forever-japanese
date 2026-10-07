@@ -58,7 +58,7 @@ def metadata(
     required: Sequence[str] = (),
 ) -> dict[str, Any]:
     """The upload's `metadata` field. `required`: the slugs of the projects this file requires (the entry
-    names every pack; a pack names nothing)."""
+    names the main addon and every pack; a pack names nothing)."""
     if release_type not in ("alpha", "beta", "release"):
         raise ValueError(f"release type {release_type!r}")
     out: dict[str, Any] = {

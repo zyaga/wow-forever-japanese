@@ -28,6 +28,7 @@ def _raw(**over):
     raw = {
         "cap_mb": 420,
         "warn_mb": 315,
+        "addon_slug": "main",
         "entry": {"folder": "WoWForeverJapanese_Voice", "title": "E", "slug": "e", "project_id": 1, "holds": "x"},
         "pack": [
             {"folder": "WoWForeverJapanese_VoiceA", "title": "A", "slug": "a", "project_id": 2, "holds": "x",
@@ -52,6 +53,7 @@ def test_the_committed_table_is_the_entry_and_seven_packs():
         "Levels1to10", "Levels11to20", "Levels21to30", "Levels31to40", "Levels41to50", "Levels51to60", "Other"]
     assert all("part" not in p.title.lower() for p in (t.entry, *t.packs))  # named for what they hold
     assert (t.cap_mb, t.warn_mb) == (420, 315)
+    assert t.addon_slug == "wow-forever-japanese"  # the entry requires the main addon
 
 
 @pytest.mark.parametrize(
@@ -65,6 +67,8 @@ def test_the_committed_table_is_the_entry_and_seven_packs():
         (lambda r: r.update(warn_mb=420), "warn_mb under cap_mb"),
         (lambda r: r["entry"].update(levels=[1, 2]), "takes no levels"),
         (lambda r: r["pack"][0].update(project_id=-1), "project_id"),
+        (lambda r: r.pop("addon_slug"), "addon_slug"),
+        (lambda r: r.update(addon_slug="a"), "addon_slug"),
     ],
 )
 def test_a_broken_table_is_refused(change, message):
@@ -155,7 +159,8 @@ def test_versions_and_the_names_of_released_assets():
 
 def _table_file(tmp_path, **over):
     raw = _raw(**over)
-    lines = [f"cap_mb = {raw['cap_mb']}", f"warn_mb = {raw['warn_mb']}", "", "[entry]"]
+    lines = [f"cap_mb = {raw['cap_mb']}", f"warn_mb = {raw['warn_mb']}", f"addon_slug = {json.dumps(raw['addon_slug'])}",
+             "", "[entry]"]
     lines += [f"{k} = {json.dumps(v)}" for k, v in raw["entry"].items()]
     for p in raw["pack"]:
         lines += ["", "[[pack]]", *(f"{k} = {json.dumps(v)}" for k, v in p.items())]
@@ -277,6 +282,9 @@ def test_the_release_plan_keeps_unchanged_versions_and_names_only_packs_with_a_p
     assert "WoWForeverJapanese_Voice" in [p.folder for p in fourth.upload]
     assert [p.slug for p in vs.required(t2).packs] == ["a", "b", "o"]
     assert [p.slug for p in vs.required(t).packs] == ["a", "o"]
+    # the entry requires the main addon first, so the CurseForge app never installs voice without it
+    assert vs.entry_requires(t) == ["main", "a", "o"]
+    assert vs.entry_requires(vp.load(TABLE))[0] == "wow-forever-japanese"
 
 
 def _gh(calls, releases, assets):

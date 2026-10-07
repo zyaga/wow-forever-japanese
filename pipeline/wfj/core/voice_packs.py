@@ -41,6 +41,7 @@ class Table:
     packs: tuple[Project, ...]  # bands in level order, the pack with no band last
     cap_mb: int
     warn_mb: int
+    addon_slug: str  # the main addon's project, which the entry requires
 
     @property
     def other(self) -> Project:
@@ -101,7 +102,10 @@ def parse(raw: Mapping[str, Any]) -> Table:
     cap, warn = raw.get("cap_mb"), raw.get("warn_mb")
     if not (isinstance(cap, int) and isinstance(warn, int) and 0 < warn < cap):
         raise ValueError("cap_mb and warn_mb must be whole numbers with warn_mb under cap_mb")
-    return Table(entry, packs, cap, warn)
+    addon = raw.get("addon_slug")
+    if not (isinstance(addon, str) and _SLUG.match(addon)) or addon in {p.slug for p in (entry, *packs)}:
+        raise ValueError("addon_slug must be the main addon's CurseForge slug")
+    return Table(entry, packs, cap, warn, addon)
 
 
 def load(path: Path) -> Table:
@@ -170,8 +174,8 @@ def content_hash(rows: Iterable[Mapping[str, Any]], register: str, interface: st
 
 
 def entry_hash(table: Table, interface: str) -> str:
-    """The entry changes only when the set of packs (or the interface) does."""
-    names = "\n".join(f"{p.folder} {p.slug}" for p in table.packs)
+    """The entry changes only when what it requires (the main addon and the packs) or the interface does."""
+    names = "\n".join([table.addon_slug, *(f"{p.folder} {p.slug}" for p in table.packs)])
     return hashlib.sha256(f"{names}\n{interface}".encode()).hexdigest()
 
 

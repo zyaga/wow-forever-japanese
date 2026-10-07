@@ -102,7 +102,7 @@ The voice is released from the maintainer's Mac, by one command, because the aud
 | Build | As `make voice-pack`: the split, the size table, the cap. |
 | Versions | Each pack's version is the date and the first eight characters of its content hash (the audio records of its files, its `Register.lua` and the client interface). A pack whose hash equals the one in the latest `voice-v*` GitHub release's asset names is unchanged and keeps its released version. The entry changes only when the set of packs with a project changes. No release state is committed. |
 | Check | Every zip holds only its folder's TOC, README, `Register.lua` and the recorded Sound files, and every recorded file is there. |
-| CurseForge | Each changed pack with a project id is uploaded to its project, then the entry if it changed, naming every pack as a required dependency. The game version is chosen as the main addon's packager chooses it; the release type (alpha, beta or release) follows the main addon's latest release tag. |
+| CurseForge | Each changed pack with a project id is uploaded to its project, then the entry if it changed, naming the main addon (`addon_slug`) and every pack as required dependencies, so the app never installs voice without the addon. The game version is chosen as the main addon's packager chooses it; the release type (alpha, beta or release) follows the main addon's latest release tag. |
 | GitHub | One release, `voice-vYYYY.MM.DD`, never marked latest (the main addon's release stays the latest): every zip, plus `WoWForeverJapanese_Voice-all-<date>.zip` holding the entry and every pack, for players who install by hand. |
 
 When nothing changed since the last voice release, it says so and stops.

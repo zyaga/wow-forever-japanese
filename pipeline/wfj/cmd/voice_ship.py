@@ -306,10 +306,16 @@ def plan_release(
     return Plan(versions, upload, no_project, unchanged)
 
 
+def entry_requires(table: Table) -> list[str]:
+    """The projects the entry's file requires: the main addon (so voice never installs without it), then every
+    pack that has a project."""
+    return [table.addon_slug, *(p.slug for p in required(table).packs)]
+
+
 def required(table: Table) -> Table:
     """The table as the entry sees it: only the packs that have a CurseForge project."""
     have = tuple(p for p in table.packs if p.project_id)
-    return Table(table.entry, have or table.packs, table.cap_mb, table.warn_mb)
+    return Table(table.entry, have or table.packs, table.cap_mb, table.warn_mb, table.addon_slug)
 
 
 # ---- the verbs ---------------------------------------------------------------------------------------------
@@ -415,7 +421,7 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
         print("voice release: no upload token (CF_API_KEY); see docs/operations/voice.md", file=sys.stderr)
         return 1
     gv = curseforge.game_version_id(curseforge.game_versions(token), interface_of(data_root()))
-    slugs = [p.slug for p in required(table).packs]
+    slugs = entry_requires(table)
     for pr in plan.upload:
         meta = curseforge.metadata(
             versions[pr.folder], gv, rtype,
