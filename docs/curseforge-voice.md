@@ -22,10 +22,9 @@ Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its 
 
 ### <span style="color:#E8C77E;">Install</span>
 
-1. Install [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese) with the CurseForge app (make sure your **Forever** install is selected).
-2. Then install **WoW Forever Japanese Voice** the same way.
+**Step 1:** install [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese) with the CurseForge app (make sure your **Forever** install is selected).
 
-&nbsp;
+**Step 2:** install **WoW Forever Japanese Voice** the same way.
 
 The Voice entry holds no audio itself; the app installs every voice pack with it (about 1.1 GB in all) and keeps them up to date. In the game, the packs show as extra rows under the addon in the AddOns list; leave them ticked. By hand: download the zip whose name ends in `-all-` and a date from the latest **Voice** release on the [GitHub releases page](https://github.com/zyaga/wow-forever-japanese/releases), and unzip it into your Forever client's `Interface/AddOns` folder.
 
@@ -48,10 +47,9 @@ The voices were made on the maintainer's own computer with the **AivisSpeech Eng
 
 ### <span style="color:#E8C77E;">インストール</span>
 
-1. CurseForge アプリで [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese) をインストールします（**Forever** のインストール先が選ばれていることを確認）。
-2. 続けて **WoW Forever Japanese Voice** を同じようにインストールします。
+**手順 1:** CurseForge アプリで [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese) をインストールします（**Forever** のインストール先が選ばれていることを確認）。
 
-&nbsp;
+**手順 2:** 続けて **WoW Forever Japanese Voice** を同じようにインストールします。
 
 Voice 自体は音声を持たず、すべての音声パック（合計約 1.1 GB）をアプリが一緒にインストールし、更新します。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。手動の場合は、[GitHub のリリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で最新の **Voice** リリースから、名前が `-all-` と日付で終わる zip をダウンロードし、Forever クライアントの `Interface/AddOns` フォルダに展開します。
 
