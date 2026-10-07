@@ -1,4 +1,5 @@
--- Core/CollectorRemind: the once-a-day chat line that collected English is waiting, and when it stays quiet.
+-- Core/CollectorRemind + UI/CollectorReminder: the once-a-day popup that collected English is waiting, and when it
+-- stays quiet.
 local H = require("tests.lua.spec.helpers")
 
 local PLAYER = { name = "Reyn", class = "Hunter", race = "Night Elf" }
@@ -40,12 +41,6 @@ describe("Core/CollectorRemind.due", function()
     assert.is_nil(R.due(state({ disclosedNow = true }))) -- the first-time notice's login
   end)
 
-  it("the line names the count and both commands", function()
-    local line = R.line(12)
-    assert.is_truthy(line:find("^WFJ: 12 lines of English"))
-    assert.is_truthy(line:find("/wfj collector send", 1, true))
-    assert.is_truthy(line:find("/wfj collector remind off", 1, true))
-  end)
 end)
 
 describe("Core/CollectorRemind.run", function()
@@ -54,7 +49,7 @@ describe("Core/CollectorRemind.run", function()
   local function record(n)
     for i = 1, n do C.record("quest", 1000 + i, "title", "A Quest Title " .. i) end
   end
-  local function say(msg) printed[#printed + 1] = msg end
+  local function say(count) printed[#printed + 1] = count end
 
   before_each(function()
     WFJ = load()
@@ -70,7 +65,7 @@ describe("Core/CollectorRemind.run", function()
       record(10)
       local now = 100 * DAY + 3600
       assert.are.equal(10, R.run(db, now, say, false))
-      assert.are.same({ R.line(10) }, printed)
+      assert.are.same({ 10 }, printed)
       assert.are.equal(100, db.collectorReminded)
       assert.is_nil(saved.collectorReminded) -- the collector's own file gets no time
       for k in pairs(saved) do assert.is_not_equal("reminded", k) end
@@ -137,22 +132,24 @@ describe("the reminder at PLAYER_ENTERING_WORLD", function()
   local Stub = require("tests.lua.spec.wow_stub")
   local Loader = require("tests.lua.spec.loader")
 
+  local opened
+  local F = require("tests.lua.spec.stub_fixwindow")
+  after_each(function() F.clear() end)
+
   local function boot(saved)
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    F.install() -- the tool window templates
     Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI()
     _G.WFJ_Collector = saved
     _G.WFJ_DB = { schema = 1, settings = {} }
     local WFJ = Loader.load("WoWForeverJapanese")
     Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
+    opened = 0
+    local open = WFJ.CollectorReminder.open
+    WFJ.CollectorReminder.open = function(count) opened = opened + 1; return open(count) end
     return WFJ
   end
-  local function reminders()
-    local n = 0
-    for _, line in ipairs(Stub.prints) do
-      if line:find("lines of English the addon has no Japanese for", 1, true) then n = n + 1 end
-    end
-    return n
-  end
+  local function reminders() return opened end
 
   it("prints on login, not on a zone change, and once a day across a reload", function()
     local entries = {}
@@ -182,5 +179,58 @@ describe("the reminder at PLAYER_ENTERING_WORLD", function()
     Stub.prints = {}
     Stub.fireAll("PLAYER_ENTERING_WORLD", true, false)
     assert.are.equal(0, reminders())
+  end)
+end)
+
+describe("UI/CollectorReminder, the popup", function()
+  local Stub = require("tests.lua.spec.wow_stub")
+  local Loader = require("tests.lua.spec.loader")
+  local WFJ, R
+  local F = require("tests.lua.spec.stub_fixwindow")
+  after_each(function() F.clear() end)
+
+  before_each(function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    F.install() -- the tool window templates
+    Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI()
+    _G.WFJ_DB = { schema = 1, settings = {} }
+    WFJ = Loader.load("WoWForeverJapanese")
+    Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
+    R = WFJ.CollectorReminder
+  end)
+
+  it("shows the count in Japanese, and English with the reveal key held", function()
+    local f = R.open(23)
+    assert.is_true(f:IsShown())
+    assert.are.equal("未翻訳の英語", f.title:GetText())
+    assert.is_truthy(f.saved.en:GetText():find("23", 1, true))
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    assert.is_truthy(f.saved.en:GetText():find("collected |cffffd20023|r English lines", 1, true))
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
+  end)
+
+  it("Send closes it and opens the send window; Later closes it", function()
+    local opened
+    WFJ.CollectorSendWindow.open = function(all) opened = all end
+    local f = R.open(12)
+    f.send.scripts.OnClick(f.send, "LeftButton")
+    assert.is_false(f:IsShown())
+    assert.is_false(opened)
+    R.open(12)
+    f.later.scripts.OnClick(f.later, "LeftButton")
+    assert.is_false(f:IsShown())
+  end)
+
+  it("the box turns the reminder off and leaves the collector on; unticking turns it back on", function()
+    local f = R.open(12)
+    f.stop:SetChecked(true)
+    f.stop.scripts.OnClick(f.stop)
+    assert.is_false(WFJ.Settings.get("collector.remind"))
+    assert.is_true(WFJ.Settings.get("collector.enabled"))
+    f.stop:SetChecked(false)
+    f.stop.scripts.OnClick(f.stop)
+    assert.is_true(WFJ.Settings.get("collector.remind"))
   end)
 end)

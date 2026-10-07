@@ -10,7 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
-- When the English Collector holds 10 or more lines you have not sent yet, a line in chat at login or reload says how many are waiting and how to send them (`/wfj collector send`). It shows at most once a day, gives only the count, and a new setting on the English Collector page turns it off (`/wfj collector remind off`). The minimap button's menu also gets **Send collected English** with the count while any line is waiting.
+- When the English Collector holds 10 or more lines you have not sent yet, a small window opens at login or reload with how many are waiting, a **Send English** button that opens the send window, and **Later**. It shows at most once a day and gives only the count. Its **Don't remind me again** box, the new setting on the English Collector page, or `/wfj collector remind off` turns it off; the collector keeps recording. The minimap button's menu also gets **Send collected English** with the count while any line is waiting.
 
 ### Fixed
 - An item tooltip's red note "Cannot change equip status while in combat" was shown as a jumbled half-Japanese line (combatのCannot change equip status while). A wardrobe pattern ("<boss> in <instance>") had taken it. That pattern and the death recap's "<spell> by <caster>" now apply only where a window asks for them: the death recap keeps its line, and the wardrobe's source line, two names around "in", stays English. Lines the addon has no Japanese for stay in English.

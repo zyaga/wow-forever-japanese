@@ -1,14 +1,14 @@
--- Core/CollectorRemind.lua: the chat reminder that collected English is waiting to be sent (docs/systems/collector.md).
--- At login or reload, one line with the count of unsent lines and the send command, never their text; only at
+-- Core/CollectorRemind.lua: when to remind that collected English is waiting to be sent (docs/systems/collector.md).
+-- At login or reload, the popup (UI/CollectorReminder) with the count of unsent lines, never their text; only at
 -- REMIND_MIN or more, at most once a day, and never on the login that prints the collector's first-time notice.
 -- The day of the last reminder is kept in WFJ_DB, never in the collector's own file: that file may be attached to a
 -- public issue and holds no time on purpose.
--- Pure: no frame access (lint-core-gate); the caller passes the settings table, the time and the printer. Its
+-- Pure: no frame access (lint-core-gate); the caller passes the settings table, the time and the popup. Its
 -- setting, collector.remind, is defined with the collector's own in Core/Collector.lua (the English Collector page).
 --   CollectorRemind.due(state) → count | nil
 --     state = { enabled, remind, readOnly, unsent, today, last, disclosedNow }
---   CollectorRemind.line(count) → the chat line
---   CollectorRemind.run(db, now, print, disclosedNow) → count | nil   reads the collector, prints, stores the day
+--   CollectorRemind.run(db, now, show, disclosedNow) → count | nil   reads the collector, calls show(count), stores
+--     the day
 local _, WFJ = ...
 local CollectorRemind = {}
 WFJ.CollectorRemind = CollectorRemind
@@ -23,12 +23,7 @@ function CollectorRemind.due(s)
   return s.unsent
 end
 
-function CollectorRemind.line(count)
-  return ("WFJ: %d lines of English the addon has no Japanese for are waiting. /wfj collector send to send them"
-    .. " · /wfj collector remind off to stop this reminder"):format(count)
-end
-
-function CollectorRemind.run(db, now, print, disclosedNow)
+function CollectorRemind.run(db, now, show, disclosedNow)
   if type(db) ~= "table" or type(now) ~= "number" then return nil end
   local status = WFJ.Collector.status()
   local today = math.floor(now / DAY)
@@ -38,7 +33,7 @@ function CollectorRemind.run(db, now, print, disclosedNow)
   })
   if disclosedNow == true then db.collectorReminded = today end -- the notice already named the command today
   if not count then return nil end
-  print(CollectorRemind.line(count))
+  show(count)
   db.collectorReminded = today
   return count
 end

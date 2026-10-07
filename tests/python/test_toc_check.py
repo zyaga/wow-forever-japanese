@@ -81,7 +81,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/Scan.lua",
         # the settings pages' copy, widgets, key capture, the modifier's override binding, the AddOn List button
         "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua",
-            "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/ReportWindow.lua",  # the tool windows
+            "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/CollectorReminder.lua", "UI/ReportWindow.lua",
             "UI/MinimapButton.lua",  # the minimap button
             "UI/RevealBinding.lua",
         "UI/AddonListButton.lua", "UI/Options.lua", "UI/Slash.lua", "Main.lua",

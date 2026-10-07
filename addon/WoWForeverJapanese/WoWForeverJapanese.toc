@@ -1911,6 +1911,7 @@ UI\OptionsWidgets.lua
 UI\KeyCapture.lua
 UI\FixWindow.lua
 UI\CollectorSendWindow.lua
+UI\CollectorReminder.lua
 UI\ReportWindow.lua
 UI\MinimapButton.lua
 UI\RevealBinding.lua

@@ -65,7 +65,7 @@ local TAIL = {
   "UI/Popups.lua",
   "UI/Scan.lua",
   "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/FixWindow.lua",
-  "UI/CollectorSendWindow.lua", "UI/ReportWindow.lua", "UI/MinimapButton.lua",
+  "UI/CollectorSendWindow.lua", "UI/CollectorReminder.lua", "UI/ReportWindow.lua", "UI/MinimapButton.lua",
   "UI/RevealBinding.lua",
   "UI/AddonListButton.lua",
   "UI/Options.lua", "UI/Slash.lua", "Main.lua", -- the settings pages' modules

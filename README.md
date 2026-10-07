@@ -99,9 +99,10 @@ in the game, so the next send holds only new lines. Lines that have a translatio
 window says the text is too long even to paste, it asks you to zip the saved file and drag it into the same form
 (type `/reload` first if you played since logging in).
 
-**A reminder to send it.** When 10 or more lines are waiting to be sent, one line in chat at login or reload says how many,
-at most once a day. To stop it, type `/wfj collector remind off` or turn off **Remind me when collected English is
-waiting to be sent** on the **English Collector** page. While any line is waiting, the minimap button's right-click
+**A reminder to send it.** When 10 or more lines are waiting to be sent, a small window opens at login or reload with
+how many, a **Send English** button and **Later**, at most once a day. To stop it, tick **Don't remind me again** in that
+window, type `/wfj collector remind off`, or turn off **Remind me when collected English is waiting to be sent** on the
+**English Collector** page. While any line is waiting, the minimap button's right-click
 menu also has **Send collected English**, with the count.
 
 ![The English Collector settings page, with the steps and the Send English button](docs/images/collector.jpg)
@@ -250,7 +251,7 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
 **記録した英語の送り方。** 設定の **英語テキスト収集** ページで **英語を送る** をクリックします（`/wfj collector send` と入力しても同じです）。まだ送っていない行が 1 つのリンクにまとめられたウィンドウが開きます。リンクをコピーして（クリックして Ctrl+C）ブラウザで開くと、入力済みの GitHub の Issue フォームが開きます。ウィンドウに 2 つ目の欄があるときは、リンクに入りきらない長さです。その文字列もフォームの欄に貼り付けてください。Issue を送信したら、ゲーム内で **送信しました** をクリックします。次回は新しい行だけを送ります。その時点で翻訳がある行は除かれます。貼り付けられないほど長いとウィンドウに表示されたときは、保存ファイルを zip にして同じフォームにドラッグするよう案内されます（ログイン後に遊んだ場合は先に `/reload` してください）。
 
-**送信待ちのお知らせ。** まだ送っていない行が 10 以上あると、ログイン時と /reload 時にその数をチャットでお知らせします（1 日 1 回まで）。止めるには `/wfj collector remind off` と入力するか、**英語テキスト収集** ページの **集めた英語が送信待ちのときに知らせる** をオフにします。送っていない行があるあいだは、ミニマップボタンの右クリックメニューにも件数付きの **集めた英語を送る** が表示されます。
+**送信待ちのお知らせ。** まだ送っていない行が 10 以上あると、ログイン時と /reload 時に小さなウィンドウが開き、その数と **英語を送る**・**あとで** ボタンが表示されます（1 日 1 回まで）。止めるには、そのウィンドウの **今後は知らせない** にチェックを入れるか、`/wfj collector remind off` と入力するか、**英語テキスト収集** ページの **集めた英語が送信待ちのときに知らせる** をオフにします。送っていない行があるあいだは、ミニマップボタンの右クリックメニューにも件数付きの **集めた英語を送る** が表示されます。
 
 ![英語テキスト収集の設定画面。手順と「英語を送る」ボタンがある](docs/images/collector-ja.jpg)
 
