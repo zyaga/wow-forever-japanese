@@ -8,7 +8,7 @@ local CollectorReminder = {}
 WFJ.CollectorReminder = CollectorReminder
 
 local W, Text, S = WFJ.OptionsWidgets, WFJ.OptionsText, WFJ.Settings
-local LEFT, MIN_WIDTH = 24, 360
+local LEFT, MIN_WIDTH = 24, 380 -- the two 170 px buttons and their gap fit inside the inset
 -- ButtonFrameTemplate's inset panel leaves room for tabs above it and buttons below it (TOPLEFT 4,-60 /
 -- BOTTOMRIGHT -6,26 [verified: Blizzard_SharedXML/Mainline/SharedUIPanelTemplates.xml:711]); this window has
 -- neither, so the panel is moved up under the title bar and down to the bottom edge

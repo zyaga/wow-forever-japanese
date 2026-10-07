@@ -151,7 +151,7 @@ describe("the reminder at PLAYER_ENTERING_WORLD", function()
   end
   local function reminders() return opened end
 
-  it("prints on login, not on a zone change, and once a day across a reload", function()
+  it("opens on login, not on a zone change, and once a day across a reload", function()
     local entries = {}
     for i = 1, 10 do
       entries["quest:" .. (3000 + i) .. ":title"] = { t = "quest", i = 3000 + i, f = "title",
