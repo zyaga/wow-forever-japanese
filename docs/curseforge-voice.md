@@ -12,8 +12,6 @@ with the editor set to Markdown. When the README's voice section changes, change
 
 ## Description
 
-<span style="color:#E8C77E;">**日本語の説明は下にあります。**</span>
-
 <span style="color:#E0605A;">**Install the addon first: [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese).**</span>
 
 This is only its Japanese voice and needs the addon to work. The CurseForge app installs the addon with it if you do not have it yet, and the voice never loads in the game without the addon.
@@ -21,6 +19,8 @@ This is only its Japanese voice and needs the addon to work. The CurseForge app 
 Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter pages, and your character's own spoken error lines.
 
 **Website:** https://foreverjapanese.com (screenshots and a short guide to how the addon works).
+
+The Japanese description follows the English one. <span style="color:#E8C77E;">**日本語の説明は下にあります。**</span>
 
 ### <span style="color:#E8C77E;">Install</span>
 
