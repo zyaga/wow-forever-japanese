@@ -10,6 +10,17 @@ with the editor set to Markdown. When the README's voice section changes, change
 - **Summary (a pack):** One part of the Japanese voice for WoW Forever Japanese. Install "WoW Forever Japanese
   Voice" instead; it brings this pack and the others.
 
+## Pack description
+
+The seven packs are unlisted, so players never see their pages; the text only has to pass CurseForge's review. Paste
+everything below this paragraph, down to "Description", into each pack's description; change the level range.
+
+Part of the Japanese voice for the **WoW Forever Japanese** addon: the spoken Japanese for quests of levels 1 to 10 and the talk of their NPCs, as audio files the addon plays. It adds nothing on its own and needs the addon to work.
+
+Do not install this pack by itself. Install [WoW Forever Japanese Voice](https://www.curseforge.com/wow/addons/wow-forever-japanese-voice), which brings every voice pack, after the addon [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese).
+
+The voices were made with the AivisSpeech Engine (https://aivis-project.com) and voice models under the Aivis Common Model License 1.0 and CC0; the full list is on the WoW Forever Japanese Voice page.
+
 ## Description
 
 **Install the addon first: [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese).**
