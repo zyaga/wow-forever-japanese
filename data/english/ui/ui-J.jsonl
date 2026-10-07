@@ -1,6 +1,6 @@
-{"id": "JOIN_QUEUE", "field": "text", "en": "Request to Join", "hash": "d6f22d9894b99ecd", "src": "db2@1.60.1.70170"}
-{"id": "JOIN_THE_ALLIANCE", "field": "text", "en": "Join\nThe Alliance", "hash": "5fc8e0f3cb97a631", "src": "db2@1.60.1.70170"}
-{"id": "JOIN_THE_HORDE", "field": "text", "en": "Join\nThe Horde", "hash": "e1cbeb61f0d0af70", "src": "db2@1.60.1.70170"}
-{"id": "JOURNEYMAN", "field": "text", "en": "Journeyman", "hash": "b8b3b7cb833773c0", "src": "db2@1.60.1.70170"}
-{"id": "JOURNEYS_MAX_RENOWN_LABEL", "field": "text", "en": "Maximum Renown", "hash": "b547a5c4dfecb476", "src": "db2@1.60.1.70170"}
-{"id": "JOURNEY_UNLOCKED_TOAST", "field": "text", "en": "Journey Unlocked", "hash": "a63faa7881163fce", "src": "db2@1.60.1.70170"}
+{"id": "JOIN_QUEUE", "field": "text", "en": "Request to Join", "hash": "d6f22d9894b99ecd", "src": "db2@1.60.1.70245"}
+{"id": "JOIN_THE_ALLIANCE", "field": "text", "en": "Join\nThe Alliance", "hash": "5fc8e0f3cb97a631", "src": "db2@1.60.1.70245"}
+{"id": "JOIN_THE_HORDE", "field": "text", "en": "Join\nThe Horde", "hash": "e1cbeb61f0d0af70", "src": "db2@1.60.1.70245"}
+{"id": "JOURNEYMAN", "field": "text", "en": "Journeyman", "hash": "b8b3b7cb833773c0", "src": "db2@1.60.1.70245"}
+{"id": "JOURNEYS_MAX_RENOWN_LABEL", "field": "text", "en": "Maximum Renown", "hash": "b547a5c4dfecb476", "src": "db2@1.60.1.70245"}
+{"id": "JOURNEY_UNLOCKED_TOAST", "field": "text", "en": "Journey Unlocked", "hash": "a63faa7881163fce", "src": "db2@1.60.1.70245"}

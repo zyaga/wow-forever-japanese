@@ -1,179 +1,179 @@
-{"id": 1249005, "field": "name", "en": "Seal Cost Reduction", "hash": "1aeb4913824c71dc", "src": "db2@1.60.1.70170"}
-{"id": 1249005, "field": "description", "en": "Reduces the mana cost of your Seal spells by $s1%.", "hash": "42f7644fbf8e760b", "src": "db2@1.60.1.70170"}
-{"id": 1249006, "field": "name", "en": "Libram of Invocation", "hash": "b01c3ad0ce2cda9b", "src": "db2@1.60.1.70170"}
-{"id": 1249006, "field": "description", "en": "Creates a libram of invocation.", "hash": "0f32fbc9db673571", "src": "db2@1.60.1.70170"}
-{"id": 1249011, "field": "name", "en": "Totem of Ancestral Protection", "hash": "db39cbd8f390cf43", "src": "db2@1.60.1.70170"}
-{"id": 1249011, "field": "description", "en": "Reduces the cooldown of Grounding Totem by ${$s1/-1000} sec.", "hash": "830f5b068e6436ea", "src": "db2@1.60.1.70170"}
-{"id": 1249012, "field": "name", "en": "Fury of the Ancestors", "hash": "837fd61eec0d0ef7", "src": "db2@1.60.1.70170"}
-{"id": 1249012, "field": "description", "en": "Increases all damage and healing by $s1%.", "hash": "f060241e413dca59", "src": "db2@1.60.1.70170"}
-{"id": 1249012, "field": "aura", "en": "All damage and healing increased by $s1%.", "hash": "bc998914391db127", "src": "db2@1.60.1.70170"}
-{"id": 1249015, "field": "name", "en": "Totem of Ancestral Protection", "hash": "db39cbd8f390cf43", "src": "db2@1.60.1.70170"}
-{"id": 1249015, "field": "description", "en": "Creates an ancestral totem of torment.", "hash": "1d2e5c227e1ff032", "src": "db2@1.60.1.70170"}
-{"id": 1249019, "field": "name", "en": "Enchant Necklace - Strength", "hash": "7d208436df72246a", "src": "db2@1.60.1.70170"}
-{"id": 1249019, "field": "description", "en": "Permanently enchant a necklace to increase Strength by 5.", "hash": "3c67652e42d10137", "src": "db2@1.60.1.70170"}
-{"id": 1249033, "field": "name", "en": "Lingering Fel Disease", "hash": "dd317d65680283c6", "src": "db2@1.60.1.70170"}
-{"id": 1249033, "field": "description", "en": "Lowers Strength and Stamina for the duration of the disease.", "hash": "ab840ae692e8a688", "src": "db2@1.60.1.70170"}
-{"id": 1249033, "field": "aura", "en": "Diseased and weakened.", "hash": "55987b0cfc377a9c", "src": "db2@1.60.1.70170"}
-{"id": 1249057, "field": "name", "en": "Enchant Necklace - Spell Power", "hash": "872490cf2a4860ee", "src": "db2@1.60.1.70170"}
-{"id": 1249057, "field": "description", "en": "Permanently enchant a necklace to increase spell damage and healing by up to 6.", "hash": "bad53e9f9ea8d7ff", "src": "db2@1.60.1.70170"}
-{"id": 1249058, "field": "name", "en": "Enchant Necklace - Healing Power", "hash": "185cbce53418226d", "src": "db2@1.60.1.70170"}
-{"id": 1249058, "field": "description", "en": "Permanently enchant a necklace to increase healing by up to 11 and spell damage by up to 4.", "hash": "0aec6fcfc3252f39", "src": "db2@1.60.1.70170"}
-{"id": 1249059, "field": "name", "en": "Enchant Necklace - Agility", "hash": "d22c3d79f65627ee", "src": "db2@1.60.1.70170"}
-{"id": 1249059, "field": "description", "en": "Permanently enchant a necklace to increase Agility by 5.", "hash": "db9e45bf555bfe52", "src": "db2@1.60.1.70170"}
-{"id": 1249060, "field": "name", "en": "Enchant Necklace - Deflection", "hash": "b4fd935bc47cf08e", "src": "db2@1.60.1.70170"}
-{"id": 1249060, "field": "description", "en": "Permanently enchant a necklace to increase defense skill by 5.", "hash": "66c90637d64591b3", "src": "db2@1.60.1.70170"}
-{"id": 1249061, "field": "name", "en": "Radiant Staff", "hash": "1adfff6fe3828558", "src": "db2@1.60.1.70170"}
-{"id": 1249061, "field": "description", "en": "Creates a radiant staff.", "hash": "dd2469544a34b4bb", "src": "db2@1.60.1.70170"}
-{"id": 1249064, "field": "name", "en": "Dreamstaff", "hash": "274740b57b58bd8b", "src": "db2@1.60.1.70170"}
-{"id": 1249064, "field": "description", "en": "Creates a dreamstaff.", "hash": "c962ca1cf0c21fa0", "src": "db2@1.60.1.70170"}
-{"id": 1249069, "field": "name", "en": "Truesilver Conduit", "hash": "1356c65baef22088", "src": "db2@1.60.1.70170"}
-{"id": 1249069, "field": "description", "en": "Creates a truesilver conduit.", "hash": "ed6c28b2280eb64b", "src": "db2@1.60.1.70170"}
-{"id": 1249070, "field": "name", "en": "Twisting Essence Jar", "hash": "c62edcf11265ac08", "src": "db2@1.60.1.70170"}
-{"id": 1249070, "field": "description", "en": "Creates a twisting essence jar.", "hash": "081f7cb87e6a48cc", "src": "db2@1.60.1.70170"}
-{"id": 1249071, "field": "name", "en": "Enchant Chest - Absorption", "hash": "37612c109e823663", "src": "db2@1.60.1.70170"}
-{"id": 1249071, "field": "description", "en": "Enchant a piece of chest armor so it has a 25% chance per hit of giving you 50 points of damage absorption. Cannot occur more often than once every 5 sec.", "hash": "c4c33c6e3177ae72", "src": "db2@1.60.1.70170"}
-{"id": 1249072, "field": "name", "en": "Absorption", "hash": "9c2f7dc54a9c90c9", "src": "db2@1.60.1.70170"}
-{"id": 1249073, "field": "name", "en": "Absorption", "hash": "9c2f7dc54a9c90c9", "src": "db2@1.60.1.70170"}
-{"id": 1249107, "field": "name", "en": "Frozen Heart of the Mountain", "hash": "4d08da6703860b3c", "src": "db2@1.60.1.70170"}
-{"id": 1249110, "field": "name", "en": "Chthonic Power", "hash": "40944661213ab2ec", "src": "db2@1.60.1.70170"}
-{"id": 1249110, "field": "description", "en": "Increases Frost and Shadow spell damage done by up to $s1 for $d. This effect is doubled in Snowy areas.", "hash": "32cef3b4504eebe8", "src": "db2@1.60.1.70170"}
-{"id": 1249110, "field": "aura", "en": "Frost and Shadow spell damage done increased by up to $w1.", "hash": "92818da4df70e6c3", "src": "db2@1.60.1.70170"}
-{"id": 1249112, "field": "name", "en": "Molten Heart of the Mountain", "hash": "d1f5ee004ebada16", "src": "db2@1.60.1.70170"}
-{"id": 1249113, "field": "name", "en": "Molten Fury", "hash": "342d36862ecdf40f", "src": "db2@1.60.1.70170"}
-{"id": 1249113, "field": "description", "en": "Increases Attack Power by $s1 for $d. This effect is doubled in Volcanic areas.", "hash": "1d721895bfd20f26", "src": "db2@1.60.1.70170"}
-{"id": 1249113, "field": "aura", "en": "Attack Power Increased by $w1.", "hash": "ed8d26e2cb9abe40", "src": "db2@1.60.1.70170"}
-{"id": 1249114, "field": "name", "en": "Dormant Heart of the Mountain", "hash": "942f66ff78725ade", "src": "db2@1.60.1.70170"}
-{"id": 1249118, "field": "name", "en": "Eternal Power", "hash": "2fbbb8366bf6690a", "src": "db2@1.60.1.70170"}
-{"id": 1249118, "field": "description", "en": "Your casts of $?s2060[Greater Heal]?s5185[Healing Touch]?s331[Healing Wave]?s635[Holy Light][Greater Heal, Healing Touch, Healing Wave, or Holy Light] in combat grant up to $1249119s1 increased healing and up to $1249119s2 increased damage for $1249119d.", "hash": "6530993a50527355", "src": "db2@1.60.1.70170"}
-{"id": 1249118, "field": "aura", "en": "Your casts of $?s2060[Greater Heal]?s5185[Healing Touch]?s331[Healing Wave]?s635[Holy Light][Greater Heal, Healing Touch, Healing Wave, or Holy Light] in combat grant up to $1249119s1 increased healing and up to $1249119s2 increased damage for $1249119d.", "hash": "6530993a50527355", "src": "db2@1.60.1.70170"}
-{"id": 1249119, "field": "name", "en": "Eternal Power", "hash": "2fbbb8366bf6690a", "src": "db2@1.60.1.70170"}
-{"id": 1249119, "field": "description", "en": "Increases healing done by up to $s1 and spell damage done by up to $s2 for $d.", "hash": "84acbb535b562360", "src": "db2@1.60.1.70170"}
-{"id": 1249119, "field": "aura", "en": "Healing done increased by up to $s1 and spell damage done increased by up to $s2.", "hash": "354d0071ea777ec6", "src": "db2@1.60.1.70170"}
-{"id": 1249128, "field": "name", "en": "Idol of the Dream", "hash": "ee8c6fe51e7595ae", "src": "db2@1.60.1.70170"}
-{"id": 1249128, "field": "description", "en": "Creates an idol of the dream.", "hash": "8eae8e7df0409666", "src": "db2@1.60.1.70170"}
-{"id": 1249152, "field": "name", "en": "Libram of Holy Alacrity", "hash": "22c21ceb448da7f8", "src": "db2@1.60.1.70170"}
-{"id": 1249152, "field": "description", "en": "Creates a libram of holy alacrity.", "hash": "648ec326a686b601", "src": "db2@1.60.1.70170"}
-{"id": 1249154, "field": "name", "en": "Totem of Thunder", "hash": "1e27eb5a2489c310", "src": "db2@1.60.1.70170"}
-{"id": 1249154, "field": "description", "en": "Creates a totem of thunder.", "hash": "715a6cbf01f5e0a9", "src": "db2@1.60.1.70170"}
-{"id": 1249183, "field": "name", "en": "Fraxinus the Younger", "hash": "f8aeedf25e73279f", "src": "db2@1.60.1.70170"}
-{"id": 1249500, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249500, "field": "description", "en": "$@spelldesc433 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "7c3fc49b6358e00c", "src": "db2@1.60.1.70170"}
-{"id": 1249501, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249501, "field": "description", "en": "$@spelldesc433 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "ee3f7c5f9eacebdb", "src": "db2@1.60.1.70170"}
-{"id": 1249502, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249502, "field": "description", "en": "$@spelldesc433 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "2e65b74777fc0c84", "src": "db2@1.60.1.70170"}
-{"id": 1249503, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249503, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "5272b34282101ab8", "src": "db2@1.60.1.70170"}
-{"id": 1249504, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249504, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "c4726b06bd642687", "src": "db2@1.60.1.70170"}
-{"id": 1249505, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249505, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "ca75d64ea721b2b3", "src": "db2@1.60.1.70170"}
-{"id": 1249506, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249506, "field": "description", "en": "$@spelldesc435 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "28a5a1e9a0c75564", "src": "db2@1.60.1.70170"}
-{"id": 1249507, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249507, "field": "description", "en": "$@spelldesc435 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "9aa559addc1b6133", "src": "db2@1.60.1.70170"}
-{"id": 1249508, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249508, "field": "description", "en": "$@spelldesc435 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "6685f55ad64758e2", "src": "db2@1.60.1.70170"}
-{"id": 1249509, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249509, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "ad977081d8df2279", "src": "db2@1.60.1.70170"}
-{"id": 1249510, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249510, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "1f97284a14332e59", "src": "db2@1.60.1.70170"}
-{"id": 1249511, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249511, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "6e42ae7605089a24", "src": "db2@1.60.1.70170"}
-{"id": 1249512, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249512, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "59fd4dcf164d97e2", "src": "db2@1.60.1.70170"}
-{"id": 1249513, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249513, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "cbfd059351a1a3b1", "src": "db2@1.60.1.70170"}
-{"id": 1249514, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249514, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "a662ec896353e682", "src": "db2@1.60.1.70170"}
-{"id": 1249515, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249515, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "4475f7a84fb968a0", "src": "db2@1.60.1.70170"}
-{"id": 1249516, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249516, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "b675af6c8b0d746f", "src": "db2@1.60.1.70170"}
-{"id": 1249517, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249517, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "a221d65de95dd906", "src": "db2@1.60.1.70170"}
-{"id": 1249519, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
-{"id": 1249519, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Attack Power.", "hash": "a5470fb31b2d7eb3", "src": "db2@1.60.1.70170"}
-{"id": 1249519, "field": "aura", "en": "Your Attack Power is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "531a56aec15769e5", "src": "db2@1.60.1.70170"}
-{"id": 1249520, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
-{"id": 1249520, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Spell Damage.", "hash": "d2db409478a3444d", "src": "db2@1.60.1.70170"}
-{"id": 1249520, "field": "aura", "en": "Your Spell Damage is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "01268c3effdb9f56", "src": "db2@1.60.1.70170"}
-{"id": 1249521, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
-{"id": 1249521, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Fishing Skill.", "hash": "2209b286542184da", "src": "db2@1.60.1.70170"}
-{"id": 1249521, "field": "aura", "en": "Your Fishing Skill is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "17fc58e08227df15", "src": "db2@1.60.1.70170"}
-{"id": 1249522, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70170"}
-{"id": 1249522, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2% Critical Strike chance for $1249523d. $@spelldesc1243969", "hash": "1c7e23db01557d49", "src": "db2@1.60.1.70170"}
-{"id": 1249523, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
-{"id": 1249523, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your chance to deal a critical strike.", "hash": "664dac5eb9d381da", "src": "db2@1.60.1.70170"}
-{"id": 1249523, "field": "aura", "en": "Your Critical Strike chance is increased by $w1%. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "f2330c6cc0c86608", "src": "db2@1.60.1.70170"}
-{"id": 1249630, "field": "name", "en": "Cerulean Dye", "hash": "fd1b56b00d32f038", "src": "db2@1.60.1.70170"}
-{"id": 1249631, "field": "name", "en": "Magenta Dye", "hash": "955b46c7f8f5029f", "src": "db2@1.60.1.70170"}
-{"id": 1249632, "field": "name", "en": "Viridian Dye", "hash": "89961ea939eccc52", "src": "db2@1.60.1.70170"}
-{"id": 1249633, "field": "name", "en": "Sulfuric Acid", "hash": "5717b59ba5794d87", "src": "db2@1.60.1.70170"}
-{"id": 1249634, "field": "name", "en": "Sandpaper", "hash": "f5b025c5821176fb", "src": "db2@1.60.1.70170"}
-{"id": 1249637, "field": "name", "en": "Smelt Azerothium", "hash": "29b6a5a5c38121c8", "src": "db2@1.60.1.70170"}
-{"id": 1249725, "field": "name", "en": "Fatality", "hash": "cdf854933abeb1b0", "src": "db2@1.60.1.70170"}
-{"id": 1249725, "field": "description", "en": "Attempts to finish off a wounded enemy with a fatal strike.", "hash": "f3728b92d67d2a57", "src": "db2@1.60.1.70170"}
-{"id": 1249731, "field": "name", "en": "Throw Axe", "hash": "6c78b014eeae5869", "src": "db2@1.60.1.70170"}
-{"id": 1249731, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
-{"id": 1249755, "field": "name", "en": "Summoning Disorientation", "hash": "23e20dfa15cc4d82", "src": "db2@1.60.1.70170"}
-{"id": 1249755, "field": "description", "en": "The forces of the nether bind the target, stunning it.", "hash": "f27299b4e8e42abc", "src": "db2@1.60.1.70170"}
-{"id": 1249755, "field": "aura", "en": "The forces of the nether bind the target, stunning it.", "hash": "f27299b4e8e42abc", "src": "db2@1.60.1.70170"}
+{"id": 1249005, "field": "name", "en": "Seal Cost Reduction", "hash": "1aeb4913824c71dc", "src": "db2@1.60.1.70245"}
+{"id": 1249005, "field": "description", "en": "Reduces the mana cost of your Seal spells by $s1%.", "hash": "42f7644fbf8e760b", "src": "db2@1.60.1.70245"}
+{"id": 1249006, "field": "name", "en": "Libram of Invocation", "hash": "b01c3ad0ce2cda9b", "src": "db2@1.60.1.70245"}
+{"id": 1249006, "field": "description", "en": "Creates a libram of invocation.", "hash": "0f32fbc9db673571", "src": "db2@1.60.1.70245"}
+{"id": 1249011, "field": "name", "en": "Totem of Ancestral Protection", "hash": "db39cbd8f390cf43", "src": "db2@1.60.1.70245"}
+{"id": 1249011, "field": "description", "en": "Reduces the cooldown of Grounding Totem by ${$s1/-1000} sec.", "hash": "830f5b068e6436ea", "src": "db2@1.60.1.70245"}
+{"id": 1249012, "field": "name", "en": "Fury of the Ancestors", "hash": "837fd61eec0d0ef7", "src": "db2@1.60.1.70245"}
+{"id": 1249012, "field": "description", "en": "Increases all damage and healing by $s1%.", "hash": "f060241e413dca59", "src": "db2@1.60.1.70245"}
+{"id": 1249012, "field": "aura", "en": "All damage and healing increased by $s1%.", "hash": "bc998914391db127", "src": "db2@1.60.1.70245"}
+{"id": 1249015, "field": "name", "en": "Totem of Ancestral Protection", "hash": "db39cbd8f390cf43", "src": "db2@1.60.1.70245"}
+{"id": 1249015, "field": "description", "en": "Creates an ancestral totem of torment.", "hash": "1d2e5c227e1ff032", "src": "db2@1.60.1.70245"}
+{"id": 1249019, "field": "name", "en": "Enchant Necklace - Strength", "hash": "7d208436df72246a", "src": "db2@1.60.1.70245"}
+{"id": 1249019, "field": "description", "en": "Permanently enchant a necklace to increase Strength by 5.", "hash": "3c67652e42d10137", "src": "db2@1.60.1.70245"}
+{"id": 1249033, "field": "name", "en": "Lingering Fel Disease", "hash": "dd317d65680283c6", "src": "db2@1.60.1.70245"}
+{"id": 1249033, "field": "description", "en": "Lowers Strength and Stamina for the duration of the disease.", "hash": "ab840ae692e8a688", "src": "db2@1.60.1.70245"}
+{"id": 1249033, "field": "aura", "en": "Diseased and weakened.", "hash": "55987b0cfc377a9c", "src": "db2@1.60.1.70245"}
+{"id": 1249057, "field": "name", "en": "Enchant Necklace - Spell Power", "hash": "872490cf2a4860ee", "src": "db2@1.60.1.70245"}
+{"id": 1249057, "field": "description", "en": "Permanently enchant a necklace to increase spell damage and healing by up to 6.", "hash": "bad53e9f9ea8d7ff", "src": "db2@1.60.1.70245"}
+{"id": 1249058, "field": "name", "en": "Enchant Necklace - Healing Power", "hash": "185cbce53418226d", "src": "db2@1.60.1.70245"}
+{"id": 1249058, "field": "description", "en": "Permanently enchant a necklace to increase healing by up to 11 and spell damage by up to 4.", "hash": "0aec6fcfc3252f39", "src": "db2@1.60.1.70245"}
+{"id": 1249059, "field": "name", "en": "Enchant Necklace - Agility", "hash": "d22c3d79f65627ee", "src": "db2@1.60.1.70245"}
+{"id": 1249059, "field": "description", "en": "Permanently enchant a necklace to increase Agility by 5.", "hash": "db9e45bf555bfe52", "src": "db2@1.60.1.70245"}
+{"id": 1249060, "field": "name", "en": "Enchant Necklace - Deflection", "hash": "b4fd935bc47cf08e", "src": "db2@1.60.1.70245"}
+{"id": 1249060, "field": "description", "en": "Permanently enchant a necklace to increase defense skill by 5.", "hash": "66c90637d64591b3", "src": "db2@1.60.1.70245"}
+{"id": 1249061, "field": "name", "en": "Radiant Staff", "hash": "1adfff6fe3828558", "src": "db2@1.60.1.70245"}
+{"id": 1249061, "field": "description", "en": "Creates a radiant staff.", "hash": "dd2469544a34b4bb", "src": "db2@1.60.1.70245"}
+{"id": 1249064, "field": "name", "en": "Dreamstaff", "hash": "274740b57b58bd8b", "src": "db2@1.60.1.70245"}
+{"id": 1249064, "field": "description", "en": "Creates a dreamstaff.", "hash": "c962ca1cf0c21fa0", "src": "db2@1.60.1.70245"}
+{"id": 1249069, "field": "name", "en": "Truesilver Conduit", "hash": "1356c65baef22088", "src": "db2@1.60.1.70245"}
+{"id": 1249069, "field": "description", "en": "Creates a truesilver conduit.", "hash": "ed6c28b2280eb64b", "src": "db2@1.60.1.70245"}
+{"id": 1249070, "field": "name", "en": "Twisting Essence Jar", "hash": "c62edcf11265ac08", "src": "db2@1.60.1.70245"}
+{"id": 1249070, "field": "description", "en": "Creates a twisting essence jar.", "hash": "081f7cb87e6a48cc", "src": "db2@1.60.1.70245"}
+{"id": 1249071, "field": "name", "en": "Enchant Chest - Absorption", "hash": "37612c109e823663", "src": "db2@1.60.1.70245"}
+{"id": 1249071, "field": "description", "en": "Enchant a piece of chest armor so it has a 25% chance per hit of giving you 50 points of damage absorption. Cannot occur more often than once every 5 sec.", "hash": "c4c33c6e3177ae72", "src": "db2@1.60.1.70245"}
+{"id": 1249072, "field": "name", "en": "Absorption", "hash": "9c2f7dc54a9c90c9", "src": "db2@1.60.1.70245"}
+{"id": 1249073, "field": "name", "en": "Absorption", "hash": "9c2f7dc54a9c90c9", "src": "db2@1.60.1.70245"}
+{"id": 1249107, "field": "name", "en": "Frozen Heart of the Mountain", "hash": "4d08da6703860b3c", "src": "db2@1.60.1.70245"}
+{"id": 1249110, "field": "name", "en": "Chthonic Power", "hash": "40944661213ab2ec", "src": "db2@1.60.1.70245"}
+{"id": 1249110, "field": "description", "en": "Increases Frost and Shadow spell damage done by up to $s1 for $d. This effect is doubled in Snowy areas.", "hash": "32cef3b4504eebe8", "src": "db2@1.60.1.70245"}
+{"id": 1249110, "field": "aura", "en": "Frost and Shadow spell damage done increased by up to $w1.", "hash": "92818da4df70e6c3", "src": "db2@1.60.1.70245"}
+{"id": 1249112, "field": "name", "en": "Molten Heart of the Mountain", "hash": "d1f5ee004ebada16", "src": "db2@1.60.1.70245"}
+{"id": 1249113, "field": "name", "en": "Molten Fury", "hash": "342d36862ecdf40f", "src": "db2@1.60.1.70245"}
+{"id": 1249113, "field": "description", "en": "Increases Attack Power by $s1 for $d. This effect is doubled in Volcanic areas.", "hash": "1d721895bfd20f26", "src": "db2@1.60.1.70245"}
+{"id": 1249113, "field": "aura", "en": "Attack Power Increased by $w1.", "hash": "ed8d26e2cb9abe40", "src": "db2@1.60.1.70245"}
+{"id": 1249114, "field": "name", "en": "Dormant Heart of the Mountain", "hash": "942f66ff78725ade", "src": "db2@1.60.1.70245"}
+{"id": 1249118, "field": "name", "en": "Eternal Power", "hash": "2fbbb8366bf6690a", "src": "db2@1.60.1.70245"}
+{"id": 1249118, "field": "description", "en": "Your casts of $?s2060[Greater Heal]?s5185[Healing Touch]?s331[Healing Wave]?s635[Holy Light][Greater Heal, Healing Touch, Healing Wave, or Holy Light] in combat grant up to $1249119s1 increased healing and up to $1249119s2 increased damage for $1249119d.", "hash": "6530993a50527355", "src": "db2@1.60.1.70245"}
+{"id": 1249118, "field": "aura", "en": "Your casts of $?s2060[Greater Heal]?s5185[Healing Touch]?s331[Healing Wave]?s635[Holy Light][Greater Heal, Healing Touch, Healing Wave, or Holy Light] in combat grant up to $1249119s1 increased healing and up to $1249119s2 increased damage for $1249119d.", "hash": "6530993a50527355", "src": "db2@1.60.1.70245"}
+{"id": 1249119, "field": "name", "en": "Eternal Power", "hash": "2fbbb8366bf6690a", "src": "db2@1.60.1.70245"}
+{"id": 1249119, "field": "description", "en": "Increases healing done by up to $s1 and spell damage done by up to $s2 for $d.", "hash": "84acbb535b562360", "src": "db2@1.60.1.70245"}
+{"id": 1249119, "field": "aura", "en": "Healing done increased by up to $s1 and spell damage done increased by up to $s2.", "hash": "354d0071ea777ec6", "src": "db2@1.60.1.70245"}
+{"id": 1249128, "field": "name", "en": "Idol of the Dream", "hash": "ee8c6fe51e7595ae", "src": "db2@1.60.1.70245"}
+{"id": 1249128, "field": "description", "en": "Creates an idol of the dream.", "hash": "8eae8e7df0409666", "src": "db2@1.60.1.70245"}
+{"id": 1249152, "field": "name", "en": "Libram of Holy Alacrity", "hash": "22c21ceb448da7f8", "src": "db2@1.60.1.70245"}
+{"id": 1249152, "field": "description", "en": "Creates a libram of holy alacrity.", "hash": "648ec326a686b601", "src": "db2@1.60.1.70245"}
+{"id": 1249154, "field": "name", "en": "Totem of Thunder", "hash": "1e27eb5a2489c310", "src": "db2@1.60.1.70245"}
+{"id": 1249154, "field": "description", "en": "Creates a totem of thunder.", "hash": "715a6cbf01f5e0a9", "src": "db2@1.60.1.70245"}
+{"id": 1249183, "field": "name", "en": "Fraxinus the Younger", "hash": "f8aeedf25e73279f", "src": "db2@1.60.1.70245"}
+{"id": 1249500, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249500, "field": "description", "en": "$@spelldesc433 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "7c3fc49b6358e00c", "src": "db2@1.60.1.70245"}
+{"id": 1249501, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249501, "field": "description", "en": "$@spelldesc433 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "ee3f7c5f9eacebdb", "src": "db2@1.60.1.70245"}
+{"id": 1249502, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249502, "field": "description", "en": "$@spelldesc433 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "2e65b74777fc0c84", "src": "db2@1.60.1.70245"}
+{"id": 1249503, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249503, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "5272b34282101ab8", "src": "db2@1.60.1.70245"}
+{"id": 1249504, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249504, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "c4726b06bd642687", "src": "db2@1.60.1.70245"}
+{"id": 1249505, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249505, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "ca75d64ea721b2b3", "src": "db2@1.60.1.70245"}
+{"id": 1249506, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249506, "field": "description", "en": "$@spelldesc435 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "28a5a1e9a0c75564", "src": "db2@1.60.1.70245"}
+{"id": 1249507, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249507, "field": "description", "en": "$@spelldesc435 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "9aa559addc1b6133", "src": "db2@1.60.1.70245"}
+{"id": 1249508, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249508, "field": "description", "en": "$@spelldesc435 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "6685f55ad64758e2", "src": "db2@1.60.1.70245"}
+{"id": 1249509, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249509, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "ad977081d8df2279", "src": "db2@1.60.1.70245"}
+{"id": 1249510, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249510, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "1f97284a14332e59", "src": "db2@1.60.1.70245"}
+{"id": 1249511, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249511, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "6e42ae7605089a24", "src": "db2@1.60.1.70245"}
+{"id": 1249512, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249512, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "59fd4dcf164d97e2", "src": "db2@1.60.1.70245"}
+{"id": 1249513, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249513, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "cbfd059351a1a3b1", "src": "db2@1.60.1.70245"}
+{"id": 1249514, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249514, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "a662ec896353e682", "src": "db2@1.60.1.70245"}
+{"id": 1249515, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249515, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "4475f7a84fb968a0", "src": "db2@1.60.1.70245"}
+{"id": 1249516, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249516, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spell Damage for $1249520d. $@spelldesc1243969", "hash": "b675af6c8b0d746f", "src": "db2@1.60.1.70245"}
+{"id": 1249517, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249517, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Fishing Skill for $1249521d. $@spelldesc1243969", "hash": "a221d65de95dd906", "src": "db2@1.60.1.70245"}
+{"id": 1249519, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
+{"id": 1249519, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Attack Power.", "hash": "a5470fb31b2d7eb3", "src": "db2@1.60.1.70245"}
+{"id": 1249519, "field": "aura", "en": "Your Attack Power is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "531a56aec15769e5", "src": "db2@1.60.1.70245"}
+{"id": 1249520, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
+{"id": 1249520, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Spell Damage.", "hash": "d2db409478a3444d", "src": "db2@1.60.1.70245"}
+{"id": 1249520, "field": "aura", "en": "Your Spell Damage is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "01268c3effdb9f56", "src": "db2@1.60.1.70245"}
+{"id": 1249521, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
+{"id": 1249521, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your Fishing Skill.", "hash": "2209b286542184da", "src": "db2@1.60.1.70245"}
+{"id": 1249521, "field": "aura", "en": "Your Fishing Skill is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "17fc58e08227df15", "src": "db2@1.60.1.70245"}
+{"id": 1249522, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70245"}
+{"id": 1249522, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2% Critical Strike chance for $1249523d. $@spelldesc1243969", "hash": "1c7e23db01557d49", "src": "db2@1.60.1.70245"}
+{"id": 1249523, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
+{"id": 1249523, "field": "description", "en": "A nutritious meal has made you Well Fed, increasing your chance to deal a critical strike.", "hash": "664dac5eb9d381da", "src": "db2@1.60.1.70245"}
+{"id": 1249523, "field": "aura", "en": "Your Critical Strike chance is increased by $w1%. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "f2330c6cc0c86608", "src": "db2@1.60.1.70245"}
+{"id": 1249630, "field": "name", "en": "Cerulean Dye", "hash": "fd1b56b00d32f038", "src": "db2@1.60.1.70245"}
+{"id": 1249631, "field": "name", "en": "Magenta Dye", "hash": "955b46c7f8f5029f", "src": "db2@1.60.1.70245"}
+{"id": 1249632, "field": "name", "en": "Viridian Dye", "hash": "89961ea939eccc52", "src": "db2@1.60.1.70245"}
+{"id": 1249633, "field": "name", "en": "Sulfuric Acid", "hash": "5717b59ba5794d87", "src": "db2@1.60.1.70245"}
+{"id": 1249634, "field": "name", "en": "Sandpaper", "hash": "f5b025c5821176fb", "src": "db2@1.60.1.70245"}
+{"id": 1249637, "field": "name", "en": "Smelt Azerothium", "hash": "29b6a5a5c38121c8", "src": "db2@1.60.1.70245"}
+{"id": 1249725, "field": "name", "en": "Fatality", "hash": "cdf854933abeb1b0", "src": "db2@1.60.1.70245"}
+{"id": 1249725, "field": "description", "en": "Attempts to finish off a wounded enemy with a fatal strike.", "hash": "f3728b92d67d2a57", "src": "db2@1.60.1.70245"}
+{"id": 1249731, "field": "name", "en": "Throw Axe", "hash": "6c78b014eeae5869", "src": "db2@1.60.1.70245"}
+{"id": 1249731, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
+{"id": 1249755, "field": "name", "en": "Summoning Disorientation", "hash": "23e20dfa15cc4d82", "src": "db2@1.60.1.70245"}
+{"id": 1249755, "field": "description", "en": "The forces of the nether bind the target, stunning it.", "hash": "f27299b4e8e42abc", "src": "db2@1.60.1.70245"}
+{"id": 1249755, "field": "aura", "en": "The forces of the nether bind the target, stunning it.", "hash": "f27299b4e8e42abc", "src": "db2@1.60.1.70245"}
 {"id": 1249805, "field": "name", "en": "Roast Beast", "hash": "d692b0ee1dc95a7b", "src": "db2@1.60.1.70124"}
 {"id": 1249805, "field": "description", "en": "Roast a hunk of meat of your choosing near a cooking fire, forgoing all other preparation steps. The resulting meal will be suitably edible for your level, but not very appealing beyond that.", "hash": "6c097721a359ce84", "src": "db2@1.60.1.70124"}
-{"id": 1249828, "field": "name", "en": "Credit Granter", "hash": "701beadc4ed1650c", "src": "db2@1.60.1.70170"}
-{"id": 1249834, "field": "name", "en": "Scared", "hash": "62cf7c1cfd4fa6b3", "src": "db2@1.60.1.70170"}
-{"id": 1249834, "field": "aura", "en": "Frightened!", "hash": "7864e30cd343e78d", "src": "db2@1.60.1.70170"}
-{"id": 1249845, "field": "name", "en": "Rift Portal", "hash": "6e04019953a3beaa", "src": "db2@1.60.1.70170"}
-{"id": 1249845, "field": "aura", "en": "The deafening roar tears open new rifts.", "hash": "290ddce46a0e385a", "src": "db2@1.60.1.70170"}
-{"id": 1249906, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249906, "field": "description", "en": "$@spelldesc1133 If you spend at least 10 sec drinking, you will become well fed and gain $1249907s2 Herbalism skill for $1249907d. $@spelldesc1243969", "hash": "af8fc68e84da6be6", "src": "db2@1.60.1.70170"}
-{"id": 1249907, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
-{"id": 1249907, "field": "description", "en": "A tasty drink has made you Well Fed, increasing your herbalism skill.", "hash": "c09ba8b9934f35ad", "src": "db2@1.60.1.70170"}
-{"id": 1249907, "field": "aura", "en": "Your Herbalism skill is increased by $w2. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "bc93be3aa423a00b", "src": "db2@1.60.1.70170"}
-{"id": 1249914, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249914, "field": "description", "en": "$@spelldesc430 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "0abbfb9a30d77fb6", "src": "db2@1.60.1.70170"}
-{"id": 1249915, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249915, "field": "description", "en": "$@spelldesc431 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "049c7bc0ad8e0e69", "src": "db2@1.60.1.70170"}
-{"id": 1249916, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249916, "field": "description", "en": "$@spelldesc432 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "fe7cfbe12a449d2d", "src": "db2@1.60.1.70170"}
-{"id": 1249917, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249917, "field": "description", "en": "$@spelldesc1133 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "1519389daeab02b2", "src": "db2@1.60.1.70170"}
-{"id": 1249918, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249918, "field": "description", "en": "$@spelldesc1135 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "08da38e9a8182029", "src": "db2@1.60.1.70170"}
-{"id": 1249919, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249919, "field": "description", "en": "$@spelldesc1137 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "fc9b3930a1853da0", "src": "db2@1.60.1.70170"}
-{"id": 1249920, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249920, "field": "description", "en": "$@spelldesc430 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "83f655af096291c3", "src": "db2@1.60.1.70170"}
-{"id": 1249921, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249921, "field": "description", "en": "$@spelldesc431 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "200674bb388837f2", "src": "db2@1.60.1.70170"}
-{"id": 1249922, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249922, "field": "description", "en": "$@spelldesc432 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "bc1693c267adde21", "src": "db2@1.60.1.70170"}
-{"id": 1249923, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249923, "field": "description", "en": "$@spelldesc1133 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "04030ffc66809d41", "src": "db2@1.60.1.70170"}
-{"id": 1249924, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249924, "field": "description", "en": "$@spelldesc1135 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "3c234e0fc4cbe99f", "src": "db2@1.60.1.70170"}
-{"id": 1249925, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70170"}
-{"id": 1249925, "field": "description", "en": "$@spelldesc1137 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "74438c222317360e", "src": "db2@1.60.1.70170"}
-{"id": 1249926, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
-{"id": 1249926, "field": "description", "en": "A tasty drink has made you Well Fed, increasing your Spirit.", "hash": "7b8550c74173e2a9", "src": "db2@1.60.1.70170"}
-{"id": 1249926, "field": "aura", "en": "Your Spirit is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "35002895ad196590", "src": "db2@1.60.1.70170"}
-{"id": 1249927, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
-{"id": 1249927, "field": "description", "en": "A tasty drink has made you Well Fed, increasing your Healing Power.", "hash": "d59e4ed84c05e1da", "src": "db2@1.60.1.70170"}
-{"id": 1249927, "field": "aura", "en": "Your Healing Power is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "63221200cf29b5d7", "src": "db2@1.60.1.70170"}
-{"id": 1249950, "field": "name", "en": "Nether Grip", "hash": "435ab95865aeb5dd", "src": "db2@1.60.1.70170"}
-{"id": 1249957, "field": "name", "en": "Peace Tea", "hash": "83c936af07d294dc", "src": "db2@1.60.1.70170"}
-{"id": 1249958, "field": "name", "en": "Royal Tea", "hash": "e0fc4cfeeb6e3675", "src": "db2@1.60.1.70170"}
-{"id": 1249959, "field": "name", "en": "Root Tea", "hash": "a2cab9a70f62654f", "src": "db2@1.60.1.70170"}
-{"id": 1249960, "field": "name", "en": "Triage Tea", "hash": "a251d04562911053", "src": "db2@1.60.1.70170"}
-{"id": 1249961, "field": "name", "en": "Sunny Tea", "hash": "b2f7b0945d58ae8d", "src": "db2@1.60.1.70170"}
-{"id": 1249962, "field": "name", "en": "Sage's Tea", "hash": "a23bfc9b86bb8d77", "src": "db2@1.60.1.70170"}
-{"id": 1249963, "field": "name", "en": "Venomous Smoothie", "hash": "c357102a360f903a", "src": "db2@1.60.1.70170"}
-{"id": 1249964, "field": "name", "en": "Slimy Smoothie", "hash": "975d0619bcce6112", "src": "db2@1.60.1.70170"}
-{"id": 1249965, "field": "name", "en": "Mrrggl Smrrthle", "hash": "28f98184bb486e4d", "src": "db2@1.60.1.70170"}
-{"id": 1249966, "field": "name", "en": "Calcified Smoothie", "hash": "99662a5b47007a5b", "src": "db2@1.60.1.70170"}
-{"id": 1249967, "field": "name", "en": "Spicy Smoothie", "hash": "872186211d447940", "src": "db2@1.60.1.70170"}
-{"id": 1249968, "field": "name", "en": "Wicked Smoothie", "hash": "039275fba180bb8c", "src": "db2@1.60.1.70170"}
-{"id": 1249991, "field": "name", "en": "Quest", "hash": "9d9ed56bb9b5eac9", "src": "db2@1.60.1.70170"}
-{"id": 1249991, "field": "description", "en": "Are you ready to begin your quest?", "hash": "beaadd0480ee78c1", "src": "db2@1.60.1.70170"}
-{"id": 1249991, "field": "aura", "en": "Are you ready to begin your quest?", "hash": "beaadd0480ee78c1", "src": "db2@1.60.1.70170"}
+{"id": 1249828, "field": "name", "en": "Credit Granter", "hash": "701beadc4ed1650c", "src": "db2@1.60.1.70245"}
+{"id": 1249834, "field": "name", "en": "Scared", "hash": "62cf7c1cfd4fa6b3", "src": "db2@1.60.1.70245"}
+{"id": 1249834, "field": "aura", "en": "Frightened!", "hash": "7864e30cd343e78d", "src": "db2@1.60.1.70245"}
+{"id": 1249845, "field": "name", "en": "Rift Portal", "hash": "6e04019953a3beaa", "src": "db2@1.60.1.70245"}
+{"id": 1249845, "field": "aura", "en": "The deafening roar tears open new rifts.", "hash": "290ddce46a0e385a", "src": "db2@1.60.1.70245"}
+{"id": 1249906, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249906, "field": "description", "en": "$@spelldesc1133 If you spend at least 10 sec drinking, you will become well fed and gain $1249907s2 Herbalism skill for $1249907d. $@spelldesc1243969", "hash": "af8fc68e84da6be6", "src": "db2@1.60.1.70245"}
+{"id": 1249907, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
+{"id": 1249907, "field": "description", "en": "A tasty drink has made you Well Fed, increasing your herbalism skill.", "hash": "c09ba8b9934f35ad", "src": "db2@1.60.1.70245"}
+{"id": 1249907, "field": "aura", "en": "Your Herbalism skill is increased by $w2. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "bc93be3aa423a00b", "src": "db2@1.60.1.70245"}
+{"id": 1249914, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249914, "field": "description", "en": "$@spelldesc430 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "0abbfb9a30d77fb6", "src": "db2@1.60.1.70245"}
+{"id": 1249915, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249915, "field": "description", "en": "$@spelldesc431 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "049c7bc0ad8e0e69", "src": "db2@1.60.1.70245"}
+{"id": 1249916, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249916, "field": "description", "en": "$@spelldesc432 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "fe7cfbe12a449d2d", "src": "db2@1.60.1.70245"}
+{"id": 1249917, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249917, "field": "description", "en": "$@spelldesc1133 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "1519389daeab02b2", "src": "db2@1.60.1.70245"}
+{"id": 1249918, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249918, "field": "description", "en": "$@spelldesc1135 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "08da38e9a8182029", "src": "db2@1.60.1.70245"}
+{"id": 1249919, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249919, "field": "description", "en": "$@spelldesc1137 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "fc9b3930a1853da0", "src": "db2@1.60.1.70245"}
+{"id": 1249920, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249920, "field": "description", "en": "$@spelldesc430 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "83f655af096291c3", "src": "db2@1.60.1.70245"}
+{"id": 1249921, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249921, "field": "description", "en": "$@spelldesc431 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "200674bb388837f2", "src": "db2@1.60.1.70245"}
+{"id": 1249922, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249922, "field": "description", "en": "$@spelldesc432 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "bc1693c267adde21", "src": "db2@1.60.1.70245"}
+{"id": 1249923, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249923, "field": "description", "en": "$@spelldesc1133 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "04030ffc66809d41", "src": "db2@1.60.1.70245"}
+{"id": 1249924, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249924, "field": "description", "en": "$@spelldesc1135 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "3c234e0fc4cbe99f", "src": "db2@1.60.1.70245"}
+{"id": 1249925, "field": "name", "en": "Nutritious Drink", "hash": "39440a88da24488b", "src": "db2@1.60.1.70245"}
+{"id": 1249925, "field": "description", "en": "$@spelldesc1137 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "74438c222317360e", "src": "db2@1.60.1.70245"}
+{"id": 1249926, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
+{"id": 1249926, "field": "description", "en": "A tasty drink has made you Well Fed, increasing your Spirit.", "hash": "7b8550c74173e2a9", "src": "db2@1.60.1.70245"}
+{"id": 1249926, "field": "aura", "en": "Your Spirit is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "35002895ad196590", "src": "db2@1.60.1.70245"}
+{"id": 1249927, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
+{"id": 1249927, "field": "description", "en": "A tasty drink has made you Well Fed, increasing your Healing Power.", "hash": "d59e4ed84c05e1da", "src": "db2@1.60.1.70245"}
+{"id": 1249927, "field": "aura", "en": "Your Healing Power is increased by $w1. $?a1243969[Experience gained from kills increased by $1243969w1%.][]", "hash": "63221200cf29b5d7", "src": "db2@1.60.1.70245"}
+{"id": 1249950, "field": "name", "en": "Nether Grip", "hash": "435ab95865aeb5dd", "src": "db2@1.60.1.70245"}
+{"id": 1249957, "field": "name", "en": "Peace Tea", "hash": "83c936af07d294dc", "src": "db2@1.60.1.70245"}
+{"id": 1249958, "field": "name", "en": "Royal Tea", "hash": "e0fc4cfeeb6e3675", "src": "db2@1.60.1.70245"}
+{"id": 1249959, "field": "name", "en": "Root Tea", "hash": "a2cab9a70f62654f", "src": "db2@1.60.1.70245"}
+{"id": 1249960, "field": "name", "en": "Triage Tea", "hash": "a251d04562911053", "src": "db2@1.60.1.70245"}
+{"id": 1249961, "field": "name", "en": "Sunny Tea", "hash": "b2f7b0945d58ae8d", "src": "db2@1.60.1.70245"}
+{"id": 1249962, "field": "name", "en": "Sage's Tea", "hash": "a23bfc9b86bb8d77", "src": "db2@1.60.1.70245"}
+{"id": 1249963, "field": "name", "en": "Venomous Smoothie", "hash": "c357102a360f903a", "src": "db2@1.60.1.70245"}
+{"id": 1249964, "field": "name", "en": "Slimy Smoothie", "hash": "975d0619bcce6112", "src": "db2@1.60.1.70245"}
+{"id": 1249965, "field": "name", "en": "Mrrggl Smrrthle", "hash": "28f98184bb486e4d", "src": "db2@1.60.1.70245"}
+{"id": 1249966, "field": "name", "en": "Calcified Smoothie", "hash": "99662a5b47007a5b", "src": "db2@1.60.1.70245"}
+{"id": 1249967, "field": "name", "en": "Spicy Smoothie", "hash": "872186211d447940", "src": "db2@1.60.1.70245"}
+{"id": 1249968, "field": "name", "en": "Wicked Smoothie", "hash": "039275fba180bb8c", "src": "db2@1.60.1.70245"}
+{"id": 1249991, "field": "name", "en": "Quest", "hash": "9d9ed56bb9b5eac9", "src": "db2@1.60.1.70245"}
+{"id": 1249991, "field": "description", "en": "Are you ready to begin your quest?", "hash": "beaadd0480ee78c1", "src": "db2@1.60.1.70245"}
+{"id": 1249991, "field": "aura", "en": "Are you ready to begin your quest?", "hash": "beaadd0480ee78c1", "src": "db2@1.60.1.70245"}

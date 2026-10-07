@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-06 at commit `79b93475`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-07 at commit `afe7c94a`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -9,27 +9,27 @@
 
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
-| Quest text | 20,084 | 19,973 | 111 | 100.0% | 0 |
-| NPC dialogue (gossip, speech) | 10,948 | 10,948 | 0 | 100.0% | 0 |
+| Quest text | 20,424 | 20,319 | 105 | 100.0% | 0 |
+| NPC dialogue (gossip, speech) | 10,953 | 10,953 | 0 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
-| Quest objective lines | 409 | 372 | 37 | 100.0% | 0 |
-| Exploration / event objectives | 218 | 216 | 2 | 100.0% | 0 |
-| Item descriptions | 10,124 | 8,611 | 0 | 85.1% | 1,513 |
+| Quest objective lines | 427 | 389 | 38 | 100.0% | 0 |
+| Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
+| Item descriptions | 10,172 | 8,646 | 0 | 85.0% | 1,526 |
 | Spell tooltips + auras | 25,458 | 25,271 | 0 | 99.3% | 187 |
 | Interface strings | 15,852 | 15,852 | 0 | 100.0% | 0 |
-| **All** | **84,350** | | | **98.0%** | **1,700** |
+| **All** | **84,766** | | | **98.0%** | **1,713** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
-professions, internal strings): quest 331, gossip 81, item 888, spell 300, ui 313.
+professions, internal strings): quest 331, gossip 81, item 892, spell 300, ui 313.
 
 ### Nothing to translate (counted as done)
 
 | Surface | Why | Lines |
 |---|---|---|
-| Quest objective lines | name only (`pipeline/objective_names.txt`) | 37 |
+| Quest objective lines | name only (`pipeline/objective_names.txt`) | 38 |
 | Exploration / event objectives | name only (`pipeline/area_names.txt`) | 2 |
-| Quest text | placeholder quest (never shown) | 108 |
-| Quest text | a bare label: a name or a one-word placeholder (ships as the English) | 3 |
+| Quest text | placeholder quest (never shown) | 100 |
+| Quest text | a bare label: a name or a one-word placeholder (ships as the English) | 5 |
 | Book / letter pages | Missing Text / picture-only page | 49 |
 | Book / letter pages | picture-only or cipher page | 2 |
 | Book / letter pages | a bare label: names and numbers only (ships as the English) | 1 |
@@ -38,7 +38,7 @@ professions, internal strings): quest 331, gossip 81, item 888, spell 300, ui 31
 
 | Surface | Why | Lines |
 |---|---|---|
-| Item descriptions | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 1,511 |
+| Item descriptions | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 1,524 |
 | Item descriptions | no Japanese yet: the template uses a code drafting cannot place yet (too_many_variants) | 1 |
 | Item descriptions | no Japanese yet: the template uses a code drafting cannot place yet (branches_indistinguishable) | 1 |
 | Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (unsupported_code:$@spellaura) | 47 |
@@ -75,18 +75,18 @@ professions, internal strings): quest 331, gossip 81, item 888, spell 300, ui 31
 
 ## Served text inventory
 
-Every text column the client serves on 1.60.1.70170 (`pipeline/served_columns.txt`: its
+Every text column the client serves on 1.60.1.70245 (`pipeline/served_columns.txt`: its
 tables, hotfixes and server caches), with the disposition
 `pipeline/served_dispositions.txt` gives it.
 Lines are non-empty values; a server cache counts the records this install holds.
 
 | Disposition | Columns | Lines |
 |---|---|---|
-| Shipped through a surface above | 70 | 83,224 |
-| Names (stay English) | 55 | 69,037 |
-| Internal (never printed) | 96 | 370,638 |
+| Shipped through a surface above | 70 | 83,836 |
+| Names (stay English) | 55 | 69,296 |
+| Internal (never printed) | 96 | 370,639 |
 | No place in the Forever client | 29 | 1,899 |
-| Same text as another column | 7 | 10,965 |
+| Same text as another column | 7 | 11,116 |
 | Empty on this build | 3 | 0 |
 
 ### Every column
@@ -119,7 +119,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `battlepaycurrency.f1` | internal | 42 | price formats ($%s) |
 | `battlepaycurrency.f2` | internal | 42 | price formats |
 | `battlepaycurrency.f3` | no-display | 41 | blizzard_catalogshop.toc and blizzard_storeui.toc declare UseSecureEnvironment: 1 |
-| `broadcasttext.f0` | surface:ui:BroadcastText | 12 | Text_lang: the archive's rows (cinematic subtitles) |
+| `broadcasttext.f0` | surface:ui:BroadcastText | 22 | Text_lang: the archive's rows (cinematic subtitles) |
 | `cfg_categories.f0` | internal | 100 | realm list categories (glue screen) |
 | `cfg_datacenterlocality.f0` | internal | 9 | data center names |
 | `cfg_regions.f0` | internal | 244 | region codes |
@@ -208,13 +208,13 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `itemlimitcategory.f0` | names | 30 | item names (Signet Ring of the Bronze Dragonflight) |
 | `itemnamedescription.f0` | surface:ui:ItemNameDescription | 92 | Description_lang |
 | `itempetfood.f0` | surface:ui:PetFood | 8 | Name_lang: pet diet words |
-| `itemsearchname.f0` | covered-by:itemsparse.f0 | 10,839 | item names again, for the search index; the names in itemsparse.f4 stay English and this table carries nothing else |
+| `itemsearchname.f0` | covered-by:itemsparse.f0 | 10,990 | item names again, for the search index; the names in itemsparse.f4 stay English and this table carries nothing else |
 | `itemset.f0` | names | 536 | item set names (The Gladiator) |
-| `itemsparse.f0` | surface:item.description | 4,842 | Description_lang |
+| `itemsparse.f0` | surface:item.description | 4,847 | Description_lang |
 | `itemsparse.f1` | empty | 0 | Display3_lang |
 | `itemsparse.f2` | empty | 0 | Display2_lang |
 | `itemsparse.f3` | empty | 0 | Display1_lang |
-| `itemsparse.f4` | names | 23,720 | Display_lang: item names |
+| `itemsparse.f4` | names | 23,890 | Display_lang: item names |
 | `itemsubclass.f0` | surface:ui:ItemSubClass | 100 | DisplayName_lang |
 | `itemsubclass.f1` | surface:ui:ItemSubClassName | 36 | VerboseName_lang |
 | `itemsubclassmask.f0` | surface:ui:ItemSubClassMask | 3 | Name_lang (Requires Melee Weapon) |
@@ -342,14 +342,14 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `virtualattachment.f0` | internal | 1 | a developer label |
 | `voiceoverpriority.f0` | internal | 19 | developer labels |
 | `wbaccesscontrollist.f0` | internal | 172 | URL patterns |
-| `wdb-creaturecache.*` | names | 13 | creature names and their titles (<Innkeeper>); UI/TooltipUnit.lua leaves line 1 and title lines as the client wrote them |
-| `wdb-gameobjectcache.*` | names | 10 | object names |
+| `wdb-creaturecache.*` | names | 89 | creature names and their titles (<Innkeeper>); UI/TooltipUnit.lua leaves line 1 and title lines as the client wrote them |
+| `wdb-gameobjectcache.*` | names | 23 | object names |
 | `wdb-npccache.*` | surface:gossip.text | 0 | NPC dialogue; gossip English comes from VMaNGOS and the in-game collector (docs/systems/collector.md) |
 | `wdb-pagetextcache.*` | surface:book.text | 0 | book and letter pages; English from VMaNGOS and the collector |
 | `wdb-petitioncache.*` | internal | 0 | player-written guild charter names and text, never game text |
-| `wdb-questcache.*` | surface:quest.* | 2,406 | quest text, objectives and area text, plus each conditional description and completion log line keyed like NPC dialogue; the whole server set is harvested by the quest scan |
+| `wdb-questcache.*` | surface:quest.* | 3,003 | quest text, objectives and area text, plus each conditional description and completion log line keyed like NPC dialogue; the whole server set is harvested by the quest scan |
 | `wmoareatable.f0` | names | 7,660 | area names inside buildings |
-| `worldstateexpression.f0` | internal | 3,968 | encoded expressions |
+| `worldstateexpression.f0` | internal | 3,969 | encoded expressions |
 | `zoneintromusictable.f0` | internal | 54 | music names |
 | `zonelight.f0` | internal | 19 | light names |
 | `zonemusic.f0` | internal | 164 | music names |
@@ -358,8 +358,8 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 18,669 | 18,669 | 100.0% | 177 | 297,737 | 100.0% |
-| gossip | 10,820 | 10,820 | 100.0% | 0 | 103,502 | 100.0% |
+| quest | 18,997 | 18,997 | 100.0% | 180 | 302,684 | 100.0% |
+| gossip | 10,825 | 10,825 | 100.0% | 0 | 103,557 | 100.0% |
 | ui | 15,147 | 15,147 | 100.0% | 0 | 46,189 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,571 | 100.0% |
 

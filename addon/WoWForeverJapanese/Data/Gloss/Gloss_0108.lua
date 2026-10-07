@@ -315,7 +315,6 @@ WFJ.Data.add("gloss", {
   [108312] = "策略\tさくりゃく\ttrickery",
   [108313] = "策略\tさくりゃく\ttrickery (schemes)",
   [108314] = "策略家\tさくりゃくか\tscheming one (schemer)",
-  [108315] = "策謀\tさくぼう\tplot (scheming)",
   [108316] = "箇所\tかしょ\tplaces (spots)",
   [108317] = "箒\tほうき\tbroom",
   [108318] = "算出する\tさんしゅつする\tfigure out (calculate)",

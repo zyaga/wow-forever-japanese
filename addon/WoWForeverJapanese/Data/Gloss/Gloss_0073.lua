@@ -46,7 +46,6 @@ WFJ.Data.add("gloss", {
   [73043] = "必要\tひつよう\tin need",
   [73044] = "必要\tひつよう\tin need of",
   [73045] = "必要\tひつよう\tin need of (necessary)",
-  [73046] = "必要\tひつよう\tis going to need",
   [73047] = "必要\tひつよう\tis necessary",
   [73048] = "必要\tひつよう\tis needed",
   [73049] = "必要\tひつよう\tis needed (bears)",

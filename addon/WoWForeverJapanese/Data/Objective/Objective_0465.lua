@@ -13,8 +13,10 @@ WFJ.Data.add("objective", {
   [465686] = { "Fillion Flamebreezeを見つける", 0xfae43c43, "." },
   [465687] = { "敵を避けながらFillion Flamebreezeを安全な場所まで運ぶ", 0x082264eb, "." },
   [465741] = { "爆薬を仕掛ける", 0xb2080a68, "." },
+  [465787] = { "Haggard Bonesを召喚するか倒す", 0x44ff5f83, "." },
   [465809] = { "Windshapersを仲間に引き入れる", 0x6e1607b1, "." },
   [465810] = { "High Orderを仲間に引き入れる", 0x9692fa9e, "." },
   [465840] = { "Valennia Stormfistと話す", 0xacafaca0, "." },
   [465935] = { "Hyusaa Quickbreezeに報告する", 0x32498a3f, "." },
+  [465999] = { "Accursed Skullを浄化する", 0xdd5f2c13, "." },
 })

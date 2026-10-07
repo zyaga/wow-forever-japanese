@@ -1,17 +1,17 @@
-{"id": 24071, "field": "name", "en": "Bland Dagger", "hash": "60ad31a566859b8f", "src": "db2@1.60.1.70170"}
-{"id": 24071, "field": "description", "en": "Looks like this is for internal use only.", "hash": "e7cdb736d463282e", "src": "db2@1.60.1.70170"}
-{"id": 24101, "field": "name", "en": "Book of Ferocious Bite V", "hash": "c9d621e5b38593fa", "src": "db2@1.60.1.70170"}
-{"id": 24101, "field": "description", "en": "Teaches Ferocious Bite (Rank 5).", "hash": "35438e0903f8f514", "src": "db2@1.60.1.70170"}
-{"id": 24102, "field": "name", "en": "Manual of Eviscerate IX", "hash": "8e59b93f62106681", "src": "db2@1.60.1.70170"}
-{"id": 24102, "field": "description", "en": "Teaches Eviscerate (Rank 9).", "hash": "e102a9e7328dbd58", "src": "db2@1.60.1.70170"}
-{"id": 24222, "field": "name", "en": "The Shadowfoot Stabber", "hash": "c76ddfd2046a6cb6", "src": "db2@1.60.1.70170"}
+{"id": 24071, "field": "name", "en": "Bland Dagger", "hash": "60ad31a566859b8f", "src": "db2@1.60.1.70245"}
+{"id": 24071, "field": "description", "en": "Looks like this is for internal use only.", "hash": "e7cdb736d463282e", "src": "db2@1.60.1.70245"}
+{"id": 24101, "field": "name", "en": "Book of Ferocious Bite V", "hash": "c9d621e5b38593fa", "src": "db2@1.60.1.70245"}
+{"id": 24101, "field": "description", "en": "Teaches Ferocious Bite (Rank 5).", "hash": "35438e0903f8f514", "src": "db2@1.60.1.70245"}
+{"id": 24102, "field": "name", "en": "Manual of Eviscerate IX", "hash": "8e59b93f62106681", "src": "db2@1.60.1.70245"}
+{"id": 24102, "field": "description", "en": "Teaches Eviscerate (Rank 9).", "hash": "e102a9e7328dbd58", "src": "db2@1.60.1.70245"}
+{"id": 24222, "field": "name", "en": "The Shadowfoot Stabber", "hash": "c76ddfd2046a6cb6", "src": "db2@1.60.1.70245"}
 {"id": 24222, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
-{"id": 24231, "field": "name", "en": "Coarse Snuff", "hash": "11a63c3868bb6399", "src": "db2@1.60.1.70170"}
-{"id": 24232, "field": "name", "en": "Shabby Knot", "hash": "c66c4afa5ef0c8ed", "src": "db2@1.60.1.70170"}
-{"id": 24281, "field": "name", "en": "Carved Ivory Bone", "hash": "5f5151fd82589036", "src": "db2@1.60.1.70170"}
-{"id": 24281, "field": "description", "en": "Looks like the carving was never finished...", "hash": "522d0fb6775bb415", "src": "db2@1.60.1.70170"}
-{"id": 24282, "field": "name", "en": "Rogue's Diary", "hash": "f53e29a4f81e41d1", "src": "db2@1.60.1.70170"}
-{"id": 24283, "field": "name", "en": "An Antique Gun", "hash": "204f0cfeb0758970", "src": "db2@1.60.1.70170"}
-{"id": 24283, "field": "description", "en": "The name 'Lasitor' is etched into the barrel.", "hash": "66d0de767d6c34e4", "src": "db2@1.60.1.70170"}
-{"id": 24358, "field": "name", "en": "QATest +1000 Spell Dmg Ring", "hash": "58236c24c7438989", "src": "db2@1.60.1.70170"}
+{"id": 24231, "field": "name", "en": "Coarse Snuff", "hash": "11a63c3868bb6399", "src": "db2@1.60.1.70245"}
+{"id": 24232, "field": "name", "en": "Shabby Knot", "hash": "c66c4afa5ef0c8ed", "src": "db2@1.60.1.70245"}
+{"id": 24281, "field": "name", "en": "Carved Ivory Bone", "hash": "5f5151fd82589036", "src": "db2@1.60.1.70245"}
+{"id": 24281, "field": "description", "en": "Looks like the carving was never finished...", "hash": "522d0fb6775bb415", "src": "db2@1.60.1.70245"}
+{"id": 24282, "field": "name", "en": "Rogue's Diary", "hash": "f53e29a4f81e41d1", "src": "db2@1.60.1.70245"}
+{"id": 24283, "field": "name", "en": "An Antique Gun", "hash": "204f0cfeb0758970", "src": "db2@1.60.1.70245"}
+{"id": 24283, "field": "description", "en": "The name 'Lasitor' is etched into the barrel.", "hash": "66d0de767d6c34e4", "src": "db2@1.60.1.70245"}
+{"id": 24358, "field": "name", "en": "QATest +1000 Spell Dmg Ring", "hash": "58236c24c7438989", "src": "db2@1.60.1.70245"}
 {"id": 24358, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}

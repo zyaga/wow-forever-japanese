@@ -1,297 +1,297 @@
-{"id": 1293003, "field": "name", "en": "Petrolspill", "hash": "759081fbb8f9d4da", "src": "db2@1.60.1.70170"}
-{"id": 1293003, "field": "description", "en": "Fire damage taken increased by $s1%.", "hash": "729d44b26b18006b", "src": "db2@1.60.1.70170"}
-{"id": 1293003, "field": "aura", "en": "Increases Fire damage taken by $s1%.", "hash": "5e40573e20891684", "src": "db2@1.60.1.70170"}
-{"id": 1293005, "field": "name", "en": "Puncture Armor", "hash": "fa9e96beaacabbd8", "src": "db2@1.60.1.70170"}
-{"id": 1293005, "field": "description", "en": "Punctures target's armor, lowering it by $s1.", "hash": "eda47b629e8ac4e1", "src": "db2@1.60.1.70170"}
-{"id": 1293005, "field": "aura", "en": "Armor decreased by $s1.", "hash": "57b604c7daf54be2", "src": "db2@1.60.1.70170"}
-{"id": 1293020, "field": "name", "en": "Hydra Shot", "hash": "aa95f6094e5d7307", "src": "db2@1.60.1.70170"}
-{"id": 1293020, "field": "description", "en": "Fires an instant Shot that divides multiple times to strike up to $x1 targets. Your initial target takes weapon damage plus $s1 and each subsequent target takes 35% less damage. Hydra Shot shares its cooldown with Arcane Shot.", "hash": "0f4002d4f964d3bf", "src": "db2@1.60.1.70170"}
-{"id": 1293068, "field": "name", "en": "Stealth 05", "hash": "14fca86360dabd46", "src": "db2@1.60.1.70170"}
-{"id": 1293068, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70170"}
-{"id": 1293069, "field": "name", "en": "Stealth 10", "hash": "14fca8e160dadd22", "src": "db2@1.60.1.70170"}
-{"id": 1293069, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70170"}
-{"id": 1293070, "field": "name", "en": "Stealth 15", "hash": "14fca8e660dadd27", "src": "db2@1.60.1.70170"}
-{"id": 1293070, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70170"}
-{"id": 1293071, "field": "name", "en": "Increase Nature Dam 14", "hash": "91a3cd0af2a1d8fa", "src": "db2@1.60.1.70170"}
-{"id": 1293071, "field": "description", "en": "Increases damage done by Nature spells and effects by up to $s1.", "hash": "679f95b352a617b7", "src": "db2@1.60.1.70170"}
-{"id": 1293085, "field": "name", "en": "9-60 Battery Pack", "hash": "f4f5a8e0aeeff50f", "src": "db2@1.60.1.70170"}
-{"id": 1293085, "field": "description", "en": "Restore $s1 charges to a Manual Crowd Pummeler device in your possession.", "hash": "aac732e36c7464f8", "src": "db2@1.60.1.70170"}
-{"id": 1293088, "field": "name", "en": "9-60 Battery Pack", "hash": "f4f5a8e0aeeff50f", "src": "db2@1.60.1.70170"}
-{"id": 1293107, "field": "name", "en": "Legacy Reputation Reward", "hash": "f0fd52b43c3d3b2d", "src": "db2@1.60.1.70170"}
-{"id": 1293107, "field": "description", "en": "Increases your Legacy reputation by $s1.\r\n", "hash": "d1cc2c2bea4b7d21", "src": "db2@1.60.1.70170"}
-{"id": 1293168, "field": "name", "en": "Leggings", "hash": "10a0fee9d2b05c26", "src": "db2@1.60.1.70170"}
-{"id": 1293168, "field": "description", "en": "Gain the ability to purchase and craft Class Tier 1 Legging recipes from Aisarra Nightmeadow.", "hash": "c03b3728c801d459", "src": "db2@1.60.1.70170"}
-{"id": 1293183, "field": "name", "en": "Thornspike", "hash": "191974b0a7360097", "src": "db2@1.60.1.70170"}
-{"id": 1293183, "field": "description", "en": "Hurl spikes at the target, dealing $s1 Physical damage and jumping to ${$x1-1} additional nearby enemy. Each jump reduces the damage by ${$f*100}%.", "hash": "85d6e1ab0140caca", "src": "db2@1.60.1.70170"}
-{"id": 1293184, "field": "name", "en": "Gloves, Shoulders, or Boots", "hash": "bd511ba547880be4", "src": "db2@1.60.1.70170"}
-{"id": 1293184, "field": "description", "en": "Gain the ability to purchase and craft your choice of Class Tier 1 Glove, Shoulder, or Boot recipes from Aisarra Nightmeadow.", "hash": "fba5eb3531815f42", "src": "db2@1.60.1.70170"}
-{"id": 1293185, "field": "name", "en": "Increase Shadow Dam 28", "hash": "a9550926c833cf8a", "src": "db2@1.60.1.70170"}
-{"id": 1293185, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "db2@1.60.1.70170"}
-{"id": 1293189, "field": "name", "en": "[DNT] Ping Quest Credit", "hash": "767724980d8ce59b", "src": "db2@1.60.1.70170"}
-{"id": 1293190, "field": "name", "en": "Increase Spell Dam Undead 16", "hash": "ca9da785e6521ea8", "src": "db2@1.60.1.70170"}
-{"id": 1293190, "field": "description", "en": "Increases damage done to Undead by magical spells and effects by up to $s1.", "hash": "0674bbf7651ef656", "src": "db2@1.60.1.70170"}
-{"id": 1293199, "field": "name", "en": "Agamaggan's Clutch", "hash": "e27ddc52d9dba410", "src": "db2@1.60.1.70170"}
-{"id": 1293199, "field": "description", "en": "Increases movement speed by $s1% in The Barrens, Thousand Needles, Razorfen Kraul, and Razorfen Downs.", "hash": "f23add71850d4104", "src": "db2@1.60.1.70170"}
-{"id": 1293199, "field": "aura", "en": "In The Barrens, Thousand Needles, Razorfen Kraul, or Razorfen Downs, movement speed increased by $s1%.", "hash": "d7a844fdaf986792", "src": "db2@1.60.1.70170"}
-{"id": 1293228, "field": "name", "en": "Combust", "hash": "dfb8cc549d42c2a9", "src": "db2@1.60.1.70170"}
-{"id": 1293228, "field": "description", "en": "Magmatus ignites the target, inflicting $s1 Fire damage and additional Fire damage every $t2 sec for $d.", "hash": "42ae76432f28fd4c", "src": "db2@1.60.1.70170"}
-{"id": 1293228, "field": "aura", "en": "$s2 Fire damage inflicted every $t2 sec.", "hash": "bc8b83576a7fa5c2", "src": "db2@1.60.1.70170"}
-{"id": 1293241, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70170"}
-{"id": 1293241, "field": "description", "en": "Command a hawk to dive-bomb your targeted enemy, dealing ${$s1+($rap*($s4/100))} Physical damage and continuing its assault for $1293248d. Only $s3 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.", "hash": "c4ab21429848c550", "src": "db2@1.60.1.70170"}
-{"id": 1293242, "field": "name", "en": "Scrap Item", "hash": "3ccbe4b02cda74d3", "src": "db2@1.60.1.70170"}
-{"id": 1293242, "field": "description", "en": "Smash the target item into scrap to recover a small quantity of usable crafting materials. All camping features share a cooldown of $1308027d.", "hash": "6a1b03271e3b8e27", "src": "db2@1.60.1.70170"}
-{"id": 1293248, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70170"}
-{"id": 1293248, "field": "description", "en": "Summons a hawk.", "hash": "69b2fb24573cc1a6", "src": "db2@1.60.1.70170"}
-{"id": 1293306, "field": "name", "en": "Grim Fetish", "hash": "159099dffe4100d7", "src": "db2@1.60.1.70170"}
-{"id": 1293306, "field": "description", "en": "Raise the severed head of Roogug, Horrifying and Silencing all Swine within $r yds for $d.", "hash": "e5a7fae27d5b0bcd", "src": "db2@1.60.1.70170"}
-{"id": 1293306, "field": "aura", "en": "Horrified.\r\nDamage may break this effect.", "hash": "2f4c15ea60fa722c", "src": "db2@1.60.1.70170"}
-{"id": 1293308, "field": "name", "en": "Grim Fetish", "hash": "159099dffe4100d7", "src": "db2@1.60.1.70170"}
-{"id": 1293308, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.70170"}
-{"id": 1293327, "field": "name", "en": "Plague Nova", "hash": "049e449b79106b9b", "src": "db2@1.60.1.70170"}
-{"id": 1293327, "field": "description", "en": "Inflicts Nature damage to nearby enemies, slowing them for up to $d.", "hash": "42284e2d8e70aaed", "src": "db2@1.60.1.70170"}
-{"id": 1293327, "field": "aura", "en": "Slowed.", "hash": "5e3ea89619e50021", "src": "db2@1.60.1.70170"}
-{"id": 1293329, "field": "name", "en": "Ghansurok Bait", "hash": "4c52521c4c73fa16", "src": "db2@1.60.1.70170"}
-{"id": 1293329, "field": "description", "en": "Place on the hills along the north-western ridge of the summit.", "hash": "2077dc4bcbfd1988", "src": "db2@1.60.1.70170"}
-{"id": 1293331, "field": "name", "en": "Thorncurse - Add Nature Dam - Weap 02", "hash": "406bfaa8f76785d5", "src": "db2@1.60.1.70170"}
-{"id": 1293331, "field": "description", "en": "Your melee weapon attacks deal $1293333s1 Nature damage to both you and your target.\r\n", "hash": "ccaa519be3780358", "src": "db2@1.60.1.70170"}
-{"id": 1293333, "field": "name", "en": "Thorncurse", "hash": "00ebf30b9f512e08", "src": "db2@1.60.1.70170"}
-{"id": 1293333, "field": "description", "en": "Melee weapon attacks deal $1293333s1 Nature damage to both you and your target.", "hash": "a16896c764b06684", "src": "db2@1.60.1.70170"}
-{"id": 1293342, "field": "name", "en": "Guardian's Durability", "hash": "14f0d312c3534474", "src": "db2@1.60.1.70170"}
-{"id": 1293342, "field": "description", "en": "When damaged, has a chance to grant you $1293345s1 armor for $1293345d.", "hash": "03f10e73ddd2ad86", "src": "db2@1.60.1.70170"}
-{"id": 1293342, "field": "aura", "en": "When damaged, has a chance to grant you $1293345s1 armor for $1293345d.", "hash": "03f10e73ddd2ad86", "src": "db2@1.60.1.70170"}
-{"id": 1293345, "field": "name", "en": "Guardian's Durability", "hash": "14f0d312c3534474", "src": "db2@1.60.1.70170"}
-{"id": 1293345, "field": "description", "en": "Increases armor by $s1 for $d.", "hash": "92291afa4ecdce72", "src": "db2@1.60.1.70170"}
-{"id": 1293345, "field": "aura", "en": "Armor increased by $s1.", "hash": "97d970899e28bd76", "src": "db2@1.60.1.70170"}
-{"id": 1293354, "field": "name", "en": "Tailoring Skill +8", "hash": "fc1a97416f723d61", "src": "db2@1.60.1.70170"}
-{"id": 1293354, "field": "description", "en": "Tailoring +$s1.", "hash": "2ccfa85e80c70a1c", "src": "db2@1.60.1.70170"}
-{"id": 1293358, "field": "name", "en": "Runecloth Soak", "hash": "5a822366ec828b90", "src": "db2@1.60.1.70170"}
-{"id": 1293359, "field": "name", "en": "Cleanse Heart", "hash": "c8c03e14fd1e7363", "src": "db2@1.60.1.70170"}
-{"id": 1293359, "field": "description", "en": "Dunk the venomous heart in the Well of Eternity. Wait a second...", "hash": "537c9fc5515f9d28", "src": "db2@1.60.1.70170"}
-{"id": 1293361, "field": "name", "en": "Set Sentinel", "hash": "9a4fee950a4ce524", "src": "db2@1.60.1.70170"}
-{"id": 1293361, "field": "description", "en": "Victory!", "hash": "84cae0122b39c1e4", "src": "db2@1.60.1.70170"}
-{"id": 1293393, "field": "name", "en": "Specialize in Bracers", "hash": "a4da92db09a50ef9", "src": "db2@1.60.1.70170"}
-{"id": 1293394, "field": "name", "en": "Specialize in Gloves", "hash": "1fc090a804b06a18", "src": "db2@1.60.1.70170"}
-{"id": 1293395, "field": "name", "en": "Specialize in Belts", "hash": "41ea49a9ca10e3cf", "src": "db2@1.60.1.70170"}
-{"id": 1293396, "field": "name", "en": "Specialize in Boots", "hash": "43421ad25c09376e", "src": "db2@1.60.1.70170"}
-{"id": 1293407, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70170"}
-{"id": 1293407, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70170"}
-{"id": 1293421, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70170"}
-{"id": 1293421, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70170"}
-{"id": 1293424, "field": "name", "en": "Humanoid Slaying 24", "hash": "1a2475cad1f9d49e", "src": "db2@1.60.1.70170"}
-{"id": 1293424, "field": "description", "en": "+$s1 Attack Power against Humanoids.", "hash": "f6a10ee80ea10520", "src": "db2@1.60.1.70170"}
-{"id": 1293429, "field": "name", "en": "Torture", "hash": "39c4b05f98263060", "src": "db2@1.60.1.70170"}
-{"id": 1293429, "field": "description", "en": "Deal $s1 Fire damage and increase the target's damage taken from this effect by $s1. Stacks up to $1293451s2 times.", "hash": "1b73a9d0b420d722", "src": "db2@1.60.1.70170"}
-{"id": 1293433, "field": "name", "en": "Torture", "hash": "39c4b05f98263060", "src": "db2@1.60.1.70170"}
-{"id": 1293433, "field": "description", "en": "Melee attacks with this weapon torture the target, dealing $1293429s1 Fire damage and increasing your damage dealt to that target with this effect by $1293429s1, stacking up to $1293451u times.", "hash": "612a2c0fae4ecb06", "src": "db2@1.60.1.70170"}
-{"id": 1293451, "field": "name", "en": "Tortured", "hash": "8fa64192596d66d6", "src": "db2@1.60.1.70170"}
-{"id": 1293451, "field": "aura", "en": "Damage taken from Torture increased by $s1.", "hash": "22dcc1bba182843b", "src": "db2@1.60.1.70170"}
-{"id": 1293455, "field": "name", "en": "Undead Slayer 27", "hash": "7cdd75cb71ee4fbf", "src": "db2@1.60.1.70170"}
-{"id": 1293455, "field": "description", "en": "+$s1 Attack Power against Undead.", "hash": "a22336497b3a00d5", "src": "db2@1.60.1.70170"}
-{"id": 1293482, "field": "name", "en": "Tough Love", "hash": "60d100871f5576ae", "src": "db2@1.60.1.70170"}
-{"id": 1293482, "field": "description", "en": "Discipline the target, dealing $s1 Physical damage. Canines and Hyenas are Stunned and sit for $1293483d.", "hash": "7077e3060874317b", "src": "db2@1.60.1.70170"}
-{"id": 1293483, "field": "name", "en": "Tough Love", "hash": "60d100871f5576ae", "src": "db2@1.60.1.70170"}
-{"id": 1293483, "field": "aura", "en": "Stunned and being a good dog.", "hash": "68bbc6daaf85596b", "src": "db2@1.60.1.70170"}
-{"id": 1293501, "field": "name", "en": "Summon Tracking Hound", "hash": "1882a2dedf0dfe71", "src": "db2@1.60.1.70170"}
-{"id": 1293515, "field": "name", "en": "Cleanse Heart", "hash": "c8c03e14fd1e7363", "src": "db2@1.60.1.70170"}
-{"id": 1293515, "field": "description", "en": "Wring out the Well of Eternity water from the Runecloth onto the venomous chimaera heart.", "hash": "a24c9dfdfb703c17", "src": "db2@1.60.1.70170"}
-{"id": 1293518, "field": "name", "en": "Grass Killer", "hash": "1cf60a00f6cae955", "src": "db2@1.60.1.70170"}
-{"id": 1293518, "field": "description", "en": "Assault the target with a dangerous toxin, dealing $s1 Nature damage. Deals $s2 times as much damage to Plants.", "hash": "bd297536c2d25535", "src": "db2@1.60.1.70170"}
-{"id": 1293525, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70170"}
-{"id": 1293525, "field": "description", "en": "Command a hawk to dive-bomb your targeted enemy, dealing ${$s1+($rap*($s4/100))} Physical damage and continuing its assault for $1293248d. Only $s3 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.", "hash": "c4ab21429848c550", "src": "db2@1.60.1.70170"}
-{"id": 1293526, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70170"}
-{"id": 1293526, "field": "description", "en": "Command a hawk to dive-bomb your targeted enemy, dealing ${$s1+($rap*($s4/100))} Physical damage and continuing its assault for $1293248d. Only $s3 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.", "hash": "c4ab21429848c550", "src": "db2@1.60.1.70170"}
-{"id": 1293527, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70170"}
-{"id": 1293527, "field": "description", "en": "Command a hawk to dive-bomb your targeted enemy, dealing ${$s1+($rap*($s4/100))} Physical damage and continuing its assault for $1293248d. Only $s3 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.", "hash": "c4ab21429848c550", "src": "db2@1.60.1.70170"}
-{"id": 1293539, "field": "name", "en": "Scarlet Retribution", "hash": "c1cfae66f1f31fcf", "src": "db2@1.60.1.70170"}
-{"id": 1293539, "field": "description", "en": "Deals $s1 Holy damage every time you block.", "hash": "5bd4521a485308d5", "src": "db2@1.60.1.70170"}
-{"id": 1293540, "field": "name", "en": "Improved Revival", "hash": "156598c15e6f6a84", "src": "db2@1.60.1.70170"}
-{"id": 1293540, "field": "description", "en": "Reduces the cast time of spells and effects that revive targets by $s1%.", "hash": "d3e0dbbb57489f65", "src": "db2@1.60.1.70170"}
-{"id": 1293542, "field": "name", "en": "Flash Heal Cast Pushback Reduction", "hash": "8bae2fa7c0307c00", "src": "db2@1.60.1.70170"}
-{"id": 1293542, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Flash Heal.", "hash": "000f033d05b937da", "src": "db2@1.60.1.70170"}
-{"id": 1293544, "field": "name", "en": "Increased Flash of Light Crit Chance", "hash": "f83683e7c3b8163a", "src": "db2@1.60.1.70170"}
-{"id": 1293544, "field": "description", "en": "Increases the critical strike chance of your Flash of Light by $s1%.\r\n", "hash": "04fb7529ce96c7d6", "src": "db2@1.60.1.70170"}
-{"id": 1293559, "field": "name", "en": "Flask of Natural Accuracy", "hash": "a3763d1cd24c7c3b", "src": "db2@1.60.1.70170"}
-{"id": 1293560, "field": "name", "en": "Flask of Natural Aggression", "hash": "658cc3356a486bc5", "src": "db2@1.60.1.70170"}
-{"id": 1293561, "field": "name", "en": "Flask of Natural Precision", "hash": "95f8443dc3311644", "src": "db2@1.60.1.70170"}
-{"id": 1293562, "field": "name", "en": "Flask of Natural Swiftness", "hash": "ce338265d57490ac", "src": "db2@1.60.1.70170"}
-{"id": 1293568, "field": "name", "en": "Grass Killer", "hash": "1cf60a00f6cae955", "src": "db2@1.60.1.70170"}
-{"id": 1293568, "field": "description", "en": "Assault the target with a dangerous toxin, dealing $s1 Nature damage. Deals $s2 times as much damage to Plants.", "hash": "bd297536c2d25535", "src": "db2@1.60.1.70170"}
-{"id": 1293571, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
-{"id": 1293576, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
-{"id": 1293577, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
-{"id": 1293578, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
-{"id": 1293586, "field": "name", "en": "Hunter Guardian Hawk Pet Scaling 01", "hash": "94b7d4b67bb33376", "src": "db2@1.60.1.70170"}
-{"id": 1293630, "field": "name", "en": "Improved Redemption", "hash": "c5350dbc7f427f7c", "src": "db2@1.60.1.70170"}
-{"id": 1293631, "field": "name", "en": "Improved Resurrection", "hash": "f736dd71cc7fcbea", "src": "db2@1.60.1.70170"}
-{"id": 1293635, "field": "name", "en": "Improved Ancestral Spirit", "hash": "b4bf37ba9673dad2", "src": "db2@1.60.1.70170"}
-{"id": 1293639, "field": "name", "en": "Improved Revive Pet", "hash": "0942d5f59766d037", "src": "db2@1.60.1.70170"}
-{"id": 1293641, "field": "name", "en": "Improved Soulstone", "hash": "2ccfd3aa3bba51ac", "src": "db2@1.60.1.70170"}
-{"id": 1293644, "field": "name", "en": "Improved Rebirth", "hash": "b65257f4e43ec3b5", "src": "db2@1.60.1.70170"}
-{"id": 1293653, "field": "name", "en": "Frost Blast", "hash": "568c7eb9677c9fa2", "src": "db2@1.60.1.70170"}
-{"id": 1293653, "field": "description", "en": "Blasts a target for $s1 Frost damage.", "hash": "963d3bbc469e2831", "src": "db2@1.60.1.70170"}
-{"id": 1293654, "field": "name", "en": "Silence", "hash": "34a188e2baf39d02", "src": "db2@1.60.1.70170"}
-{"id": 1293654, "field": "description", "en": "Silences an enemy, preventing it from casting spells for $d.", "hash": "92e27777d740df7c", "src": "db2@1.60.1.70170"}
-{"id": 1293654, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70170"}
-{"id": 1293657, "field": "name", "en": "Languages", "hash": "6665de684e5a2919", "src": "db2@1.60.1.70170"}
-{"id": 1293657, "field": "description", "en": "You are fluent in the following languages:$?s668[\r\n$@spellname668][]$?s669[\r\n$@spellname669][]$?s670[\r\n$@spellname670][]$?s671[\r\n$@spellname671][]$?s672[\r\n$@spellname672][]$?s813[\r\n$@spellname813][]$?s814[\r\n$@spellname814][]$?s815[\r\n$@spellname815][]$?s816[\r\n$@spellname816][]$?s817[\r\n$@spellname817][]$?s7340[\r\n$@spellname7340][]$?s7341[\r\n$@spellname7341][]$?s17737[\r\n$@spellname17737][]$?s25674[\r\n$@spellname25674][]$?s462134[\r\n$@spellname462134][]", "hash": "0282335020bb7135", "src": "db2@1.60.1.70170"}
-{"id": 1293670, "field": "name", "en": "Scarlet Guardian", "hash": "b5adb919da58fdee", "src": "db2@1.60.1.70170"}
-{"id": 1293670, "field": "description", "en": "Taking damage while at or below $s1% health grants you a shield, absorbing $1293733s2 damage for $1293733d. This effect can only trigger once every ${$proccooldown/60} min.", "hash": "02abf792d0b83e88", "src": "db2@1.60.1.70170"}
-{"id": 1293671, "field": "name", "en": "Scarlet Guardian", "hash": "b5adb919da58fdee", "src": "db2@1.60.1.70170"}
-{"id": 1293672, "field": "name", "en": "Scarlet Guardian", "hash": "b5adb919da58fdee", "src": "db2@1.60.1.70170"}
-{"id": 1293673, "field": "name", "en": "Enraging Light", "hash": "adc697f0995c6043", "src": "db2@1.60.1.70170"}
-{"id": 1293673, "field": "aura", "en": "Melee attacks deal $1293675s1 Holy damage to enemies. Deals $1293674s1 times as much damage to Undead.", "hash": "49e2543d310abba8", "src": "db2@1.60.1.70170"}
-{"id": 1293674, "field": "name", "en": "Enraging Light", "hash": "adc697f0995c6043", "src": "db2@1.60.1.70170"}
-{"id": 1293674, "field": "description", "en": "Taking damage has a $h% chance to grant Enraging Light for $1293673d, causing your melee attacks to deal $1293675s1 Holy damage. Deals $s1 times as much damage to Undead.", "hash": "c84342be78f1718b", "src": "db2@1.60.1.70170"}
-{"id": 1293675, "field": "name", "en": "Enraged Light", "hash": "861d3db379b464f8", "src": "db2@1.60.1.70170"}
-{"id": 1293675, "field": "description", "en": "Deal $s1 Holy damage.", "hash": "20c24def8cc412a2", "src": "db2@1.60.1.70170"}
-{"id": 1293681, "field": "name", "en": "Farsen's Farsight", "hash": "646f1653a0c3e002", "src": "db2@1.60.1.70170"}
-{"id": 1293681, "field": "description", "en": "Changes your viewpoint to the targeted location.  Lasts $d. Only usable outdoors.", "hash": "c9c660e0797d83b3", "src": "db2@1.60.1.70170"}
-{"id": 1293681, "field": "aura", "en": "Cannot move while using Farsen's Gift.", "hash": "3336765800e7ab6d", "src": "db2@1.60.1.70170"}
-{"id": 1293682, "field": "name", "en": "Shark Attack!", "hash": "60c7e61194a40ceb", "src": "db2@1.60.1.70170"}
-{"id": 1293682, "field": "description", "en": "Gilnean Sharks are attacking! You take damage equal to $s1% of your health every $t1 sec for $d.\r\n", "hash": "889dba294eb4c162", "src": "db2@1.60.1.70170"}
-{"id": 1293682, "field": "aura", "en": "Ravenous sharks are attacking! You probably shouldn't be here.", "hash": "7a53a8ce477830cb", "src": "db2@1.60.1.70170"}
-{"id": 1293689, "field": "name", "en": "Memory of the Mist", "hash": "3e692993ec99b9b7", "src": "db2@1.60.1.70170"}
-{"id": 1293693, "field": "name", "en": "Haunt", "hash": "fcf98a7216dbfb9c", "src": "db2@1.60.1.70170"}
-{"id": 1293693, "field": "description", "en": "Send a ghostly soul to assault your current target, dealing $s1 damage, and increasing all Shadow damage over time you deal to that target by $s2% for $d. When Haunt expires for any reason you will be healed for $s3% of the damage it dealt to your target.", "hash": "203fa01ada0dca89", "src": "db2@1.60.1.70170"}
-{"id": 1293693, "field": "aura", "en": "Damage taken from Shadow damage over time effects from the caster increased by $s2%.", "hash": "e0d6f2ae7da23097", "src": "db2@1.60.1.70170"}
-{"id": 1293694, "field": "name", "en": "Haunt", "hash": "fcf98a7216dbfb9c", "src": "db2@1.60.1.70170"}
-{"id": 1293694, "field": "description", "en": "Send a ghostly soul to assault your current target, dealing $s1 damage, and increasing all Shadow damage over time you deal to that target by $s2% for $d. When Haunt expires for any reason you will be healed for $s3% of the damage it dealt to your target.", "hash": "203fa01ada0dca89", "src": "db2@1.60.1.70170"}
-{"id": 1293694, "field": "aura", "en": "Damage taken from Shadow damage over time effects from the caster increased by $s2%.", "hash": "e0d6f2ae7da23097", "src": "db2@1.60.1.70170"}
-{"id": 1293695, "field": "name", "en": "Demonic Brand", "hash": "bc5256f3aa376d53", "src": "db2@1.60.1.70170"}
-{"id": 1293695, "field": "description", "en": "Your Searing Pain generates $s1% less threat and brands the target for $1293696d. Your pet's next $m2 attacks against the target generate high threat and deal $<minDam> to $<maxDam> Fire or Shadow damage based on the pet.", "hash": "36543d11c89f0f57", "src": "db2@1.60.1.70170"}
-{"id": 1293696, "field": "name", "en": "Demonic Brand", "hash": "bc5256f3aa376d53", "src": "db2@1.60.1.70170"}
-{"id": 1293696, "field": "aura", "en": "The caster's pet deals an additional ${$<minDam>*$<mult>} to ${$<maxDam>*$<mult>} damage with its next $m2 $Lattack:attacks;.", "hash": "33772796ee6be365", "src": "db2@1.60.1.70170"}
-{"id": 1293697, "field": "name", "en": "Demonic Brand", "hash": "bc5256f3aa376d53", "src": "db2@1.60.1.70170"}
-{"id": 1293697, "field": "description", "en": "Consuming a brand deals $<minDam> to $<maxDam> Shadow damage.", "hash": "1297a6dc8dca65a5", "src": "db2@1.60.1.70170"}
-{"id": 1293698, "field": "name", "en": "Demonic Brand", "hash": "bc5256f3aa376d53", "src": "db2@1.60.1.70170"}
-{"id": 1293698, "field": "description", "en": "Consuming a brand deals $<minDam> to $<maxDam> Fire damage.", "hash": "e44055b017c32dec", "src": "db2@1.60.1.70170"}
-{"id": 1293699, "field": "name", "en": "Demonic Brand", "hash": "bc5256f3aa376d53", "src": "db2@1.60.1.70170"}
-{"id": 1293699, "field": "description", "en": "Consuming a brand deals $s1 Physical damage.", "hash": "d8ccf40260d22ced", "src": "db2@1.60.1.70170"}
-{"id": 1293700, "field": "name", "en": "Painwalker Buckler", "hash": "f86edb3f92733d81", "src": "db2@1.60.1.70170"}
-{"id": 1293700, "field": "aura", "en": "Restoring $s1 mana per 5 sec.", "hash": "ca58e542171f0a74", "src": "db2@1.60.1.70170"}
-{"id": 1293701, "field": "name", "en": "Painwalker Buckler", "hash": "f86edb3f92733d81", "src": "db2@1.60.1.70170"}
-{"id": 1293701, "field": "description", "en": "$h% chance when struck in combat to gain $1293700s1 mana per 5 sec for $1293700d.", "hash": "ba3f58abfb533097", "src": "db2@1.60.1.70170"}
-{"id": 1293711, "field": "name", "en": "Beast Slaying 09", "hash": "9f32959e5a146a2b", "src": "db2@1.60.1.70170"}
-{"id": 1293711, "field": "description", "en": "+$s1 Attack Power against Beasts.", "hash": "2e7564c4ad94b3c2", "src": "db2@1.60.1.70170"}
-{"id": 1293712, "field": "name", "en": "Armor Proficiency", "hash": "647877e10d030d44", "src": "db2@1.60.1.70170"}
-{"id": 1293712, "field": "description", "en": "You are proficient in the use of the following armor types:$?s9078[\r\n$@spellname9078][]$?s9077[\r\n$@spellname9077][]$?s8737[\r\n$@spellname8737][]$?s750[\r\n$@spellname750][]", "hash": "5b3470224b088608", "src": "db2@1.60.1.70170"}
-{"id": 1293714, "field": "name", "en": "Spellsever", "hash": "4a74b5093883a2d3", "src": "db2@1.60.1.70170"}
-{"id": 1293714, "field": "description", "en": "Launch a magic severing bolt at the target, dealing $s1 Physical damage and interrupting the spell being cast for $d.", "hash": "bf069f1e262f09dd", "src": "db2@1.60.1.70170"}
-{"id": 1293719, "field": "name", "en": "(DNT) Mist Cosmetic Visual Aura", "hash": "ac60939717c822c6", "src": "db2@1.60.1.70170"}
-{"id": 1293727, "field": "name", "en": "(DNT) Mist Cosmetic Visual Aura", "hash": "ac60939717c822c6", "src": "db2@1.60.1.70170"}
-{"id": 1293733, "field": "name", "en": "Scarlet Guardian", "hash": "b5adb919da58fdee", "src": "db2@1.60.1.70170"}
-{"id": 1293733, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70170"}
-{"id": 1293734, "field": "name", "en": "Recently Guarded", "hash": "3c3247cb40d833b9", "src": "db2@1.60.1.70170"}
-{"id": 1293734, "field": "aura", "en": "Cannot benefit from Scarlet Guardian.", "hash": "0d5fe00b3c9defcf", "src": "db2@1.60.1.70170"}
-{"id": 1293735, "field": "name", "en": "(DNT) Mist Cosmetic Visual Aura", "hash": "ac60939717c822c6", "src": "db2@1.60.1.70170"}
-{"id": 1293736, "field": "name", "en": "Archmagister's Perception", "hash": "4d49b4189c4e5680", "src": "db2@1.60.1.70170"}
-{"id": 1293736, "field": "description", "en": "Increase experience gained from slaying Undead by $s1% for $d.", "hash": "138703acfb2f336a", "src": "db2@1.60.1.70170"}
-{"id": 1293736, "field": "aura", "en": "Increase experience gained from slaying Undead by $w1%.", "hash": "af1ef029ef4992d4", "src": "db2@1.60.1.70170"}
-{"id": 1293740, "field": "name", "en": "Flask of Natural Accuracy", "hash": "a3763d1cd24c7c3b", "src": "db2@1.60.1.70170"}
-{"id": 1293740, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% Hit Chance.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "3336d46843019e4c", "src": "db2@1.60.1.70170"}
-{"id": 1293740, "field": "aura", "en": "Stamina increased by $w1.\r\n\r\nWhile in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $w2% Hit Chance.", "hash": "e8fe76c510ffb498", "src": "db2@1.60.1.70170"}
-{"id": 1293741, "field": "name", "en": "Flask of Natural Aggression", "hash": "658cc3356a486bc5", "src": "db2@1.60.1.70170"}
-{"id": 1293741, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% Critical Strike Chance.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "70f583bf71e06f35", "src": "db2@1.60.1.70170"}
-{"id": 1293741, "field": "aura", "en": "Stamina increased by $w1.\r\n\r\nWhile in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $w2% Critical Strike Chance.", "hash": "e6e29e00cfca1950", "src": "db2@1.60.1.70170"}
-{"id": 1293742, "field": "name", "en": "Flask of Natural Precision", "hash": "95f8443dc3311644", "src": "db2@1.60.1.70170"}
-{"id": 1293742, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% reduced chance to be dodged or parried.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "99f5b5d7da5d76c4", "src": "db2@1.60.1.70170"}
-{"id": 1293742, "field": "aura", "en": "Stamina increased by $w1.\r\n\r\nWhile in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $w2% reduced chance to be dodged or parried.", "hash": "a5931025e573dbfa", "src": "db2@1.60.1.70170"}
-{"id": 1293743, "field": "name", "en": "Flask of Natural Accuracy", "hash": "a3763d1cd24c7c3b", "src": "db2@1.60.1.70170"}
-{"id": 1293743, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% Haste.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "8dfaab825412b800", "src": "db2@1.60.1.70170"}
-{"id": 1293743, "field": "aura", "en": "Stamina increased by $w1.\r\n\r\nWhile in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $w2% Haste.", "hash": "465ad8a6cadf0f45", "src": "db2@1.60.1.70170"}
-{"id": 1293760, "field": "name", "en": "Shader", "hash": "ba90614120506f9a", "src": "db2@1.60.1.70170"}
-{"id": 1293782, "field": "name", "en": "Swine Fists", "hash": "3fc3eadeb5d475cc", "src": "db2@1.60.1.70170"}
-{"id": 1293782, "field": "description", "en": "Spells and attacks against Swine deal $1292675s1 Nature damage.", "hash": "d2de825db87b386f", "src": "db2@1.60.1.70170"}
-{"id": 1293782, "field": "aura", "en": "Deal $s1 Nature damage to Swine.", "hash": "193a56404d640f12", "src": "db2@1.60.1.70170"}
-{"id": 1293783, "field": "name", "en": "Swine Fists", "hash": "3fc3eadeb5d475cc", "src": "db2@1.60.1.70170"}
-{"id": 1293783, "field": "description", "en": "Spells and attacks against Swine deal $1292675s1 Nature damage.", "hash": "d2de825db87b386f", "src": "db2@1.60.1.70170"}
-{"id": 1293787, "field": "name", "en": "Holy Cleaver", "hash": "cea06ca74cd97996", "src": "db2@1.60.1.70170"}
-{"id": 1293787, "field": "description", "en": "Unleash a mighty swing, dealing $s1 Holy damage. Deals $s2 times as much damage to Undead and Swine.", "hash": "c501c6693ae3e4b1", "src": "db2@1.60.1.70170"}
-{"id": 1293790, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70170"}
-{"id": 1293790, "field": "description", "en": "Launches a bolt of frost at the enemy causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "013c5fa460146bb6", "src": "db2@1.60.1.70170"}
-{"id": 1293790, "field": "aura", "en": "Movement slowed by $s1%.", "hash": "bd9406b84a62a739", "src": "db2@1.60.1.70170"}
-{"id": 1293800, "field": "name", "en": "Prickly Potion", "hash": "3481a3433b6ad0f7", "src": "db2@1.60.1.70170"}
-{"id": 1293800, "field": "description", "en": "Empty the contents of the leather-bound flask into the shallows of the pool of water inside Deadwood Den.", "hash": "72c9b0b9efbea55d", "src": "db2@1.60.1.70170"}
-{"id": 1293801, "field": "name", "en": "Emanating Mist", "hash": "31a8f7e28e51cf88", "src": "db2@1.60.1.70170"}
-{"id": 1293801, "field": "description", "en": "A strange mist emanates from this creature, hiding all nearby players and creatures from view.", "hash": "35bc7ec38608e298", "src": "db2@1.60.1.70170"}
-{"id": 1293801, "field": "aura", "en": "Creating mist that hides nearby players and creatures.", "hash": "cc2995a4f8d0e0ff", "src": "db2@1.60.1.70170"}
-{"id": 1293802, "field": "name", "en": "Humanoid Slaying 27", "hash": "1a2475cdd1f9d4a1", "src": "db2@1.60.1.70170"}
-{"id": 1293802, "field": "description", "en": "+$s1 Attack Power against Humanoids.", "hash": "f6a10ee80ea10520", "src": "db2@1.60.1.70170"}
-{"id": 1293803, "field": "name", "en": "Pyroclasm", "hash": "89cfe572261f8f0d", "src": "db2@1.60.1.70170"}
-{"id": 1293803, "field": "aura", "en": "Increases Shadow damage done by $w1%.", "hash": "458bc03ae7414fc7", "src": "db2@1.60.1.70170"}
-{"id": 1293804, "field": "name", "en": "(DNT) Mist Stealth", "hash": "9688f9ae2214fce8", "src": "db2@1.60.1.70170"}
-{"id": 1293805, "field": "name", "en": "Rousing Seed Pod", "hash": "09fb3269589f5bab", "src": "db2@1.60.1.70170"}
-{"id": 1293805, "field": "description", "en": "Call upon newly awakened power to increase the limit of Artisan's Tier items you can equip to $s2.", "hash": "8aade849195caff9", "src": "db2@1.60.1.70170"}
-{"id": 1293806, "field": "name", "en": "Warden's Signet of Ferocity", "hash": "f69fad5a9a555996", "src": "db2@1.60.1.70170"}
-{"id": 1293806, "field": "description", "en": "Permanently enchant a head slot item to give $ec1 Attack Power.", "hash": "f107acd5aafe411d", "src": "db2@1.60.1.70170"}
-{"id": 1293807, "field": "name", "en": "Warden's Signet of Brilliance", "hash": "ed437b43dad67e57", "src": "db2@1.60.1.70170"}
-{"id": 1293807, "field": "description", "en": "Permanently enchant a head slot item to give $ec1 Spell Power.", "hash": "8cc402e6f5c2d063", "src": "db2@1.60.1.70170"}
-{"id": 1293808, "field": "name", "en": "Warden's Signet of Caution", "hash": "5fd2545d1e01eb6a", "src": "db2@1.60.1.70170"}
-{"id": 1293808, "field": "description", "en": "Permanently enchant a head slot item to give $ec1 Stamina.", "hash": "2aa66d9656157597", "src": "db2@1.60.1.70170"}
-{"id": 1293809, "field": "name", "en": "Warden's Signet of Recovery", "hash": "d5bc1563c30677c8", "src": "db2@1.60.1.70170"}
-{"id": 1293809, "field": "description", "en": "Permanently enchant a head slot item to give $ec1 Healing Power and $ec2 Spell Damage.", "hash": "e2b7e97969a6533f", "src": "db2@1.60.1.70170"}
-{"id": 1293812, "field": "name", "en": "Incinerate", "hash": "f030e7b8acb5204d", "src": "db2@1.60.1.70170"}
-{"id": 1293812, "field": "description", "en": "Deals $s1 Fire damage to your target and an additional $m2% damage if the target is afflicted by Immolate.", "hash": "2c6958c3d2951807", "src": "db2@1.60.1.70170"}
-{"id": 1293813, "field": "name", "en": "Incinerate", "hash": "f030e7b8acb5204d", "src": "db2@1.60.1.70170"}
-{"id": 1293813, "field": "description", "en": "Deals $s1 Fire damage to your target and an additional $m2% damage if the target is afflicted by Immolate.", "hash": "2c6958c3d2951807", "src": "db2@1.60.1.70170"}
-{"id": 1293814, "field": "name", "en": "Echoes of the Enraged", "hash": "ac3fac25e451fc28", "src": "db2@1.60.1.70170"}
-{"id": 1293814, "field": "aura", "en": "Deal $s1 Physical damage to Swine.", "hash": "29d2a604ef15a011", "src": "db2@1.60.1.70170"}
-{"id": 1293815, "field": "name", "en": "Echoes of the Enraged", "hash": "ac3fac25e451fc28", "src": "db2@1.60.1.70170"}
-{"id": 1293815, "field": "description", "en": "Spells and attacks against Swine deal $1293814s1 Physical damage.", "hash": "d73bce76824c8106", "src": "db2@1.60.1.70170"}
-{"id": 1293816, "field": "name", "en": "Shadow", "hash": "ba9066642051ae69", "src": "db2@1.60.1.70170"}
-{"id": 1293816, "field": "description", "en": "Increases all Shadow damage done by $s1%.", "hash": "401be2500f766971", "src": "db2@1.60.1.70170"}
-{"id": 1293816, "field": "aura", "en": "Increases all Shadow damage done by $w1%.", "hash": "40a518bc4516398f", "src": "db2@1.60.1.70170"}
-{"id": 1293817, "field": "name", "en": "Conflagrate", "hash": "b4283b45f8d35ba3", "src": "db2@1.60.1.70170"}
-{"id": 1293817, "field": "description", "en": "Ignites a target that is already afflicted by your Immolate spell, dealing $s1 Fire damage and consuming your Immolate effect.", "hash": "d77f3b347081b9d9", "src": "db2@1.60.1.70170"}
-{"id": 1293818, "field": "name", "en": "Conflagrate", "hash": "b4283b45f8d35ba3", "src": "db2@1.60.1.70170"}
-{"id": 1293818, "field": "description", "en": "Ignites a target that is already afflicted by your Immolate spell, dealing $s1 Fire damage and consuming your Immolate effect.", "hash": "d77f3b347081b9d9", "src": "db2@1.60.1.70170"}
-{"id": 1293819, "field": "name", "en": "Reduce Mechanic Duration - Snare/Root 07", "hash": "858bf9a3aabdfd9c", "src": "db2@1.60.1.70170"}
-{"id": 1293819, "field": "description", "en": "Reduces the duration of all movement impairing effects on you by $m2%.", "hash": "3922f0dae78c43b1", "src": "db2@1.60.1.70170"}
-{"id": 1293820, "field": "name", "en": "Toy Soldier", "hash": "e2345e8db1d4c2ab", "src": "db2@1.60.1.70170"}
-{"id": 1293820, "field": "description", "en": "Increases your chance to Dodge by $s1% for $d. This effect is doubled in Strongholds and Cities.", "hash": "7d85baf7dd6c6506", "src": "db2@1.60.1.70170"}
-{"id": 1293820, "field": "aura", "en": "Chance to dodge increased by $w1%.", "hash": "cd753bd554a945e1", "src": "db2@1.60.1.70170"}
-{"id": 1293849, "field": "name", "en": "Swiftfeather Arrow", "hash": "492fb5b6b3e3dde4", "src": "db2@1.60.1.70170"}
-{"id": 1293850, "field": "name", "en": "Swiftstrike Shot", "hash": "ba8b534f76c7c6fc", "src": "db2@1.60.1.70170"}
-{"id": 1293857, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
-{"id": 1293858, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
-{"id": 1293866, "field": "name", "en": "(DNT) Hide Mist", "hash": "a2798aaa64c593f9", "src": "db2@1.60.1.70170"}
-{"id": 1293870, "field": "name", "en": "(DNT) Hide Mist", "hash": "a2798aaa64c593f9", "src": "db2@1.60.1.70170"}
-{"id": 1293871, "field": "name", "en": "(DNT) Hide Mist", "hash": "a2798aaa64c593f9", "src": "db2@1.60.1.70170"}
-{"id": 1293874, "field": "name", "en": "Debilitate", "hash": "275e1753ebcb4036", "src": "db2@1.60.1.70170"}
-{"id": 1293875, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
-{"id": 1293876, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
-{"id": 1293877, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
-{"id": 1293878, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70170"}
-{"id": 1293881, "field": "name", "en": "Pendulum of Doom", "hash": "56ee829ba4e8c588", "src": "db2@1.60.1.70170"}
-{"id": 1293881, "field": "description", "en": "Each swing alternates your attack speed between $1293885s1% faster and $1293886s1% slower.", "hash": "dd44297825c2c375", "src": "db2@1.60.1.70170"}
-{"id": 1293885, "field": "name", "en": "Pendulum of Doom", "hash": "56ee829ba4e8c588", "src": "db2@1.60.1.70170"}
-{"id": 1293885, "field": "description", "en": "Melee attack speed increased by $s1%.", "hash": "d471470cfe1c0fcc", "src": "db2@1.60.1.70170"}
-{"id": 1293885, "field": "aura", "en": "Melee attack speed increased by $s1%.", "hash": "d471470cfe1c0fcc", "src": "db2@1.60.1.70170"}
-{"id": 1293886, "field": "name", "en": "Pendulum of Doom", "hash": "56ee829ba4e8c588", "src": "db2@1.60.1.70170"}
-{"id": 1293886, "field": "description", "en": "Melee attack speed slowed by $s1%.", "hash": "2ade855c9b713f90", "src": "db2@1.60.1.70170"}
-{"id": 1293886, "field": "aura", "en": "Melee attack speed slowed by $s1%.", "hash": "2ade855c9b713f90", "src": "db2@1.60.1.70170"}
-{"id": 1293889, "field": "name", "en": "Crystallize", "hash": "d00de7969e0e8870", "src": "db2@1.60.1.70170"}
-{"id": 1293889, "field": "description", "en": "Attempts to freeze Elder Minderel in place, locking him in a block of ice and making him weak to Fire effects.", "hash": "df7e7d471d6427fe", "src": "db2@1.60.1.70170"}
-{"id": 1293889, "field": "aura", "en": "Stunned. Increases Fire damage taken by $s2%.", "hash": "ec527bc08926f22d", "src": "db2@1.60.1.70170"}
-{"id": 1293928, "field": "name", "en": "Mistrot", "hash": "7554f28b2acf7483", "src": "db2@1.60.1.70170"}
-{"id": 1293928, "field": "description", "en": "Inflicts $S1 Shadow damage immediately, then $S2 shadow damage every $T2 sec for $d.", "hash": "a16bee18b83556d1", "src": "db2@1.60.1.70170"}
-{"id": 1293928, "field": "aura", "en": "Inflicting $S2 Shadow damage every $T2 sec.", "hash": "e30fa957dd1cc6ff", "src": "db2@1.60.1.70170"}
-{"id": 1293940, "field": "name", "en": "Ferocious Rush", "hash": "d2567332a1077aea", "src": "db2@1.60.1.70170"}
-{"id": 1293940, "field": "description", "en": "Inflicts normal damage plus $s1 to an enemy and knocks it back.", "hash": "cfea664613593cf0", "src": "db2@1.60.1.70170"}
-{"id": 1293958, "field": "name", "en": "Multi-Shot", "hash": "9c9367a3ec99d445", "src": "db2@1.60.1.70170"}
-{"id": 1293958, "field": "description", "en": "$@spelldesc1288961", "hash": "eddb59d85174ee0c", "src": "db2@1.60.1.70170"}
-{"id": 1293966, "field": "name", "en": "Torch Toss", "hash": "28c4184fd3ff50d5", "src": "db2@1.60.1.70170"}
-{"id": 1293966, "field": "description", "en": "Tosses a torch at the target location, starting a fire.", "hash": "069f4ed7615dce8c", "src": "db2@1.60.1.70170"}
-{"id": 1293973, "field": "name", "en": "TEST Heal Self - Daves 1", "hash": "a9146aa72407e637", "src": "db2@1.60.1.70170"}
-{"id": 1293973, "field": "description", "en": "Heal yourself for $s1.", "hash": "017adfca28a535ae", "src": "db2@1.60.1.70170"}
-{"id": 1293978, "field": "name", "en": "(DNT) Water Ripples", "hash": "1cd2e1b848c00287", "src": "db2@1.60.1.70170"}
-{"id": 1293980, "field": "name", "en": "Firebolt", "hash": "c166b34851cb13db", "src": "db2@1.60.1.70170"}
-{"id": 1293980, "field": "description", "en": "Chance on harmful spell cast to blast a target for $18083s1 Fire damage.", "hash": "4b9b68173547874a", "src": "db2@1.60.1.70170"}
-{"id": 1293986, "field": "name", "en": "Consuming Fel Energies", "hash": "27f5366ec88eb846", "src": "db2@1.60.1.70170"}
-{"id": 1293986, "field": "description", "en": "Use the crystal to temporarily stun the Master of Vessels.", "hash": "ee7bc8b09553e1f5", "src": "db2@1.60.1.70170"}
-{"id": 1293987, "field": "name", "en": "Eternal Night", "hash": "0bce4aed1e2dd57c", "src": "db2@1.60.1.70170"}
-{"id": 1293988, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70170"}
-{"id": 1293989, "field": "name", "en": "Singularity", "hash": "b5b61e4b6260e8da", "src": "db2@1.60.1.70170"}
-{"id": 1293990, "field": "name", "en": "Black Hole", "hash": "7a1a64d8a2aac925", "src": "db2@1.60.1.70170"}
-{"id": 1293991, "field": "name", "en": "Singularity", "hash": "b5b61e4b6260e8da", "src": "db2@1.60.1.70170"}
-{"id": 1293991, "field": "aura", "en": "$s1 Shadow damage every $t1 sec. The intense gravity well is pulling you toward its center.", "hash": "14174e1ede29ef0e", "src": "db2@1.60.1.70170"}
+{"id": 1293003, "field": "name", "en": "Petrolspill", "hash": "759081fbb8f9d4da", "src": "db2@1.60.1.70245"}
+{"id": 1293003, "field": "description", "en": "Fire damage taken increased by $s1%.", "hash": "729d44b26b18006b", "src": "db2@1.60.1.70245"}
+{"id": 1293003, "field": "aura", "en": "Increases Fire damage taken by $s1%.", "hash": "5e40573e20891684", "src": "db2@1.60.1.70245"}
+{"id": 1293005, "field": "name", "en": "Puncture Armor", "hash": "fa9e96beaacabbd8", "src": "db2@1.60.1.70245"}
+{"id": 1293005, "field": "description", "en": "Punctures target's armor, lowering it by $s1.", "hash": "eda47b629e8ac4e1", "src": "db2@1.60.1.70245"}
+{"id": 1293005, "field": "aura", "en": "Armor decreased by $s1.", "hash": "57b604c7daf54be2", "src": "db2@1.60.1.70245"}
+{"id": 1293020, "field": "name", "en": "Hydra Shot", "hash": "aa95f6094e5d7307", "src": "db2@1.60.1.70245"}
+{"id": 1293020, "field": "description", "en": "Fires an instant Shot that divides multiple times to strike up to $x1 targets. Your initial target takes weapon damage plus $s1 and each subsequent target takes 35% less damage. Hydra Shot shares its cooldown with Arcane Shot.", "hash": "0f4002d4f964d3bf", "src": "db2@1.60.1.70245"}
+{"id": 1293068, "field": "name", "en": "Stealth 05", "hash": "14fca86360dabd46", "src": "db2@1.60.1.70245"}
+{"id": 1293068, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70245"}
+{"id": 1293069, "field": "name", "en": "Stealth 10", "hash": "14fca8e160dadd22", "src": "db2@1.60.1.70245"}
+{"id": 1293069, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70245"}
+{"id": 1293070, "field": "name", "en": "Stealth 15", "hash": "14fca8e660dadd27", "src": "db2@1.60.1.70245"}
+{"id": 1293070, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70245"}
+{"id": 1293071, "field": "name", "en": "Increase Nature Dam 14", "hash": "91a3cd0af2a1d8fa", "src": "db2@1.60.1.70245"}
+{"id": 1293071, "field": "description", "en": "Increases damage done by Nature spells and effects by up to $s1.", "hash": "679f95b352a617b7", "src": "db2@1.60.1.70245"}
+{"id": 1293085, "field": "name", "en": "9-60 Battery Pack", "hash": "f4f5a8e0aeeff50f", "src": "db2@1.60.1.70245"}
+{"id": 1293085, "field": "description", "en": "Restore $s1 charges to a Manual Crowd Pummeler device in your possession.", "hash": "aac732e36c7464f8", "src": "db2@1.60.1.70245"}
+{"id": 1293088, "field": "name", "en": "9-60 Battery Pack", "hash": "f4f5a8e0aeeff50f", "src": "db2@1.60.1.70245"}
+{"id": 1293107, "field": "name", "en": "Legacy Reputation Reward", "hash": "f0fd52b43c3d3b2d", "src": "db2@1.60.1.70245"}
+{"id": 1293107, "field": "description", "en": "Increases your Legacy reputation by $s1.\r\n", "hash": "d1cc2c2bea4b7d21", "src": "db2@1.60.1.70245"}
+{"id": 1293168, "field": "name", "en": "Leggings", "hash": "10a0fee9d2b05c26", "src": "db2@1.60.1.70245"}
+{"id": 1293168, "field": "description", "en": "Gain the ability to purchase and craft Class Tier 1 Legging recipes from Aisarra Nightmeadow.", "hash": "c03b3728c801d459", "src": "db2@1.60.1.70245"}
+{"id": 1293183, "field": "name", "en": "Thornspike", "hash": "191974b0a7360097", "src": "db2@1.60.1.70245"}
+{"id": 1293183, "field": "description", "en": "Hurl spikes at the target, dealing $s1 Physical damage and jumping to ${$x1-1} additional nearby enemy. Each jump reduces the damage by ${$f*100}%.", "hash": "85d6e1ab0140caca", "src": "db2@1.60.1.70245"}
+{"id": 1293184, "field": "name", "en": "Gloves, Shoulders, or Boots", "hash": "bd511ba547880be4", "src": "db2@1.60.1.70245"}
+{"id": 1293184, "field": "description", "en": "Gain the ability to purchase and craft your choice of Class Tier 1 Glove, Shoulder, or Boot recipes from Aisarra Nightmeadow.", "hash": "fba5eb3531815f42", "src": "db2@1.60.1.70245"}
+{"id": 1293185, "field": "name", "en": "Increase Shadow Dam 28", "hash": "a9550926c833cf8a", "src": "db2@1.60.1.70245"}
+{"id": 1293185, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "db2@1.60.1.70245"}
+{"id": 1293189, "field": "name", "en": "[DNT] Ping Quest Credit", "hash": "767724980d8ce59b", "src": "db2@1.60.1.70245"}
+{"id": 1293190, "field": "name", "en": "Increase Spell Dam Undead 16", "hash": "ca9da785e6521ea8", "src": "db2@1.60.1.70245"}
+{"id": 1293190, "field": "description", "en": "Increases damage done to Undead by magical spells and effects by up to $s1.", "hash": "0674bbf7651ef656", "src": "db2@1.60.1.70245"}
+{"id": 1293199, "field": "name", "en": "Agamaggan's Clutch", "hash": "e27ddc52d9dba410", "src": "db2@1.60.1.70245"}
+{"id": 1293199, "field": "description", "en": "Increases movement speed by $s1% in The Barrens, Thousand Needles, Razorfen Kraul, and Razorfen Downs.", "hash": "f23add71850d4104", "src": "db2@1.60.1.70245"}
+{"id": 1293199, "field": "aura", "en": "In The Barrens, Thousand Needles, Razorfen Kraul, or Razorfen Downs, movement speed increased by $s1%.", "hash": "d7a844fdaf986792", "src": "db2@1.60.1.70245"}
+{"id": 1293228, "field": "name", "en": "Combust", "hash": "dfb8cc549d42c2a9", "src": "db2@1.60.1.70245"}
+{"id": 1293228, "field": "description", "en": "Magmatus ignites the target, inflicting $s1 Fire damage and additional Fire damage every $t2 sec for $d.", "hash": "42ae76432f28fd4c", "src": "db2@1.60.1.70245"}
+{"id": 1293228, "field": "aura", "en": "$s2 Fire damage inflicted every $t2 sec.", "hash": "bc8b83576a7fa5c2", "src": "db2@1.60.1.70245"}
+{"id": 1293241, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70245"}
+{"id": 1293241, "field": "description", "en": "Command a hawk to dive-bomb your targeted enemy, dealing ${$s1+($rap*($s4/100))} Physical damage and continuing its assault for $1293248d. Only $s3 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.", "hash": "c4ab21429848c550", "src": "db2@1.60.1.70245"}
+{"id": 1293242, "field": "name", "en": "Scrap Item", "hash": "3ccbe4b02cda74d3", "src": "db2@1.60.1.70245"}
+{"id": 1293242, "field": "description", "en": "Smash the target item into scrap to recover a small quantity of usable crafting materials. All camping features share a cooldown of $1308027d.", "hash": "6a1b03271e3b8e27", "src": "db2@1.60.1.70245"}
+{"id": 1293248, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70245"}
+{"id": 1293248, "field": "description", "en": "Summons a hawk.", "hash": "69b2fb24573cc1a6", "src": "db2@1.60.1.70245"}
+{"id": 1293306, "field": "name", "en": "Grim Fetish", "hash": "159099dffe4100d7", "src": "db2@1.60.1.70245"}
+{"id": 1293306, "field": "description", "en": "Raise the severed head of Roogug, Horrifying and Silencing all Swine within $r yds for $d.", "hash": "e5a7fae27d5b0bcd", "src": "db2@1.60.1.70245"}
+{"id": 1293306, "field": "aura", "en": "Horrified.\r\nDamage may break this effect.", "hash": "2f4c15ea60fa722c", "src": "db2@1.60.1.70245"}
+{"id": 1293308, "field": "name", "en": "Grim Fetish", "hash": "159099dffe4100d7", "src": "db2@1.60.1.70245"}
+{"id": 1293308, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.70245"}
+{"id": 1293327, "field": "name", "en": "Plague Nova", "hash": "049e449b79106b9b", "src": "db2@1.60.1.70245"}
+{"id": 1293327, "field": "description", "en": "Inflicts Nature damage to nearby enemies, slowing them for up to $d.", "hash": "42284e2d8e70aaed", "src": "db2@1.60.1.70245"}
+{"id": 1293327, "field": "aura", "en": "Slowed.", "hash": "5e3ea89619e50021", "src": "db2@1.60.1.70245"}
+{"id": 1293329, "field": "name", "en": "Ghansurok Bait", "hash": "4c52521c4c73fa16", "src": "db2@1.60.1.70245"}
+{"id": 1293329, "field": "description", "en": "Place on the hills along the north-western ridge of the summit.", "hash": "2077dc4bcbfd1988", "src": "db2@1.60.1.70245"}
+{"id": 1293331, "field": "name", "en": "Thorncurse - Add Nature Dam - Weap 02", "hash": "406bfaa8f76785d5", "src": "db2@1.60.1.70245"}
+{"id": 1293331, "field": "description", "en": "Your melee weapon attacks deal $1293333s1 Nature damage to both you and your target.\r\n", "hash": "ccaa519be3780358", "src": "db2@1.60.1.70245"}
+{"id": 1293333, "field": "name", "en": "Thorncurse", "hash": "00ebf30b9f512e08", "src": "db2@1.60.1.70245"}
+{"id": 1293333, "field": "description", "en": "Melee weapon attacks deal $1293333s1 Nature damage to both you and your target.", "hash": "a16896c764b06684", "src": "db2@1.60.1.70245"}
+{"id": 1293342, "field": "name", "en": "Guardian's Durability", "hash": "14f0d312c3534474", "src": "db2@1.60.1.70245"}
+{"id": 1293342, "field": "description", "en": "When damaged, has a chance to grant you $1293345s1 armor for $1293345d.", "hash": "03f10e73ddd2ad86", "src": "db2@1.60.1.70245"}
+{"id": 1293342, "field": "aura", "en": "When damaged, has a chance to grant you $1293345s1 armor for $1293345d.", "hash": "03f10e73ddd2ad86", "src": "db2@1.60.1.70245"}
+{"id": 1293345, "field": "name", "en": "Guardian's Durability", "hash": "14f0d312c3534474", "src": "db2@1.60.1.70245"}
+{"id": 1293345, "field": "description", "en": "Increases armor by $s1 for $d.", "hash": "92291afa4ecdce72", "src": "db2@1.60.1.70245"}
+{"id": 1293345, "field": "aura", "en": "Armor increased by $s1.", "hash": "97d970899e28bd76", "src": "db2@1.60.1.70245"}
+{"id": 1293354, "field": "name", "en": "Tailoring Skill +8", "hash": "fc1a97416f723d61", "src": "db2@1.60.1.70245"}
+{"id": 1293354, "field": "description", "en": "Tailoring +$s1.", "hash": "2ccfa85e80c70a1c", "src": "db2@1.60.1.70245"}
+{"id": 1293358, "field": "name", "en": "Runecloth Soak", "hash": "5a822366ec828b90", "src": "db2@1.60.1.70245"}
+{"id": 1293359, "field": "name", "en": "Cleanse Heart", "hash": "c8c03e14fd1e7363", "src": "db2@1.60.1.70245"}
+{"id": 1293359, "field": "description", "en": "Dunk the venomous heart in the Well of Eternity. Wait a second...", "hash": "537c9fc5515f9d28", "src": "db2@1.60.1.70245"}
+{"id": 1293361, "field": "name", "en": "Set Sentinel", "hash": "9a4fee950a4ce524", "src": "db2@1.60.1.70245"}
+{"id": 1293361, "field": "description", "en": "Victory!", "hash": "84cae0122b39c1e4", "src": "db2@1.60.1.70245"}
+{"id": 1293393, "field": "name", "en": "Specialize in Bracers", "hash": "a4da92db09a50ef9", "src": "db2@1.60.1.70245"}
+{"id": 1293394, "field": "name", "en": "Specialize in Gloves", "hash": "1fc090a804b06a18", "src": "db2@1.60.1.70245"}
+{"id": 1293395, "field": "name", "en": "Specialize in Belts", "hash": "41ea49a9ca10e3cf", "src": "db2@1.60.1.70245"}
+{"id": 1293396, "field": "name", "en": "Specialize in Boots", "hash": "43421ad25c09376e", "src": "db2@1.60.1.70245"}
+{"id": 1293407, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70245"}
+{"id": 1293407, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70245"}
+{"id": 1293421, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70245"}
+{"id": 1293421, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70245"}
+{"id": 1293424, "field": "name", "en": "Humanoid Slaying 24", "hash": "1a2475cad1f9d49e", "src": "db2@1.60.1.70245"}
+{"id": 1293424, "field": "description", "en": "+$s1 Attack Power against Humanoids.", "hash": "f6a10ee80ea10520", "src": "db2@1.60.1.70245"}
+{"id": 1293429, "field": "name", "en": "Torture", "hash": "39c4b05f98263060", "src": "db2@1.60.1.70245"}
+{"id": 1293429, "field": "description", "en": "Deal $s1 Fire damage and increase the target's damage taken from this effect by $s1. Stacks up to $1293451s2 times.", "hash": "1b73a9d0b420d722", "src": "db2@1.60.1.70245"}
+{"id": 1293433, "field": "name", "en": "Torture", "hash": "39c4b05f98263060", "src": "db2@1.60.1.70245"}
+{"id": 1293433, "field": "description", "en": "Melee attacks with this weapon torture the target, dealing $1293429s1 Fire damage and increasing your damage dealt to that target with this effect by $1293429s1, stacking up to $1293451u times.", "hash": "612a2c0fae4ecb06", "src": "db2@1.60.1.70245"}
+{"id": 1293451, "field": "name", "en": "Tortured", "hash": "8fa64192596d66d6", "src": "db2@1.60.1.70245"}
+{"id": 1293451, "field": "aura", "en": "Damage taken from Torture increased by $s1.", "hash": "22dcc1bba182843b", "src": "db2@1.60.1.70245"}
+{"id": 1293455, "field": "name", "en": "Undead Slayer 27", "hash": "7cdd75cb71ee4fbf", "src": "db2@1.60.1.70245"}
+{"id": 1293455, "field": "description", "en": "+$s1 Attack Power against Undead.", "hash": "a22336497b3a00d5", "src": "db2@1.60.1.70245"}
+{"id": 1293482, "field": "name", "en": "Tough Love", "hash": "60d100871f5576ae", "src": "db2@1.60.1.70245"}
+{"id": 1293482, "field": "description", "en": "Discipline the target, dealing $s1 Physical damage. Canines and Hyenas are Stunned and sit for $1293483d.", "hash": "7077e3060874317b", "src": "db2@1.60.1.70245"}
+{"id": 1293483, "field": "name", "en": "Tough Love", "hash": "60d100871f5576ae", "src": "db2@1.60.1.70245"}
+{"id": 1293483, "field": "aura", "en": "Stunned and being a good dog.", "hash": "68bbc6daaf85596b", "src": "db2@1.60.1.70245"}
+{"id": 1293501, "field": "name", "en": "Summon Tracking Hound", "hash": "1882a2dedf0dfe71", "src": "db2@1.60.1.70245"}
+{"id": 1293515, "field": "name", "en": "Cleanse Heart", "hash": "c8c03e14fd1e7363", "src": "db2@1.60.1.70245"}
+{"id": 1293515, "field": "description", "en": "Wring out the Well of Eternity water from the Runecloth onto the venomous chimaera heart.", "hash": "a24c9dfdfb703c17", "src": "db2@1.60.1.70245"}
+{"id": 1293518, "field": "name", "en": "Grass Killer", "hash": "1cf60a00f6cae955", "src": "db2@1.60.1.70245"}
+{"id": 1293518, "field": "description", "en": "Assault the target with a dangerous toxin, dealing $s1 Nature damage. Deals $s2 times as much damage to Plants.", "hash": "bd297536c2d25535", "src": "db2@1.60.1.70245"}
+{"id": 1293525, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70245"}
+{"id": 1293525, "field": "description", "en": "Command a hawk to dive-bomb your targeted enemy, dealing ${$s1+($rap*($s4/100))} Physical damage and continuing its assault for $1293248d. Only $s3 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.", "hash": "c4ab21429848c550", "src": "db2@1.60.1.70245"}
+{"id": 1293526, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70245"}
+{"id": 1293526, "field": "description", "en": "Command a hawk to dive-bomb your targeted enemy, dealing ${$s1+($rap*($s4/100))} Physical damage and continuing its assault for $1293248d. Only $s3 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.", "hash": "c4ab21429848c550", "src": "db2@1.60.1.70245"}
+{"id": 1293527, "field": "name", "en": "Summon Hawk", "hash": "860de87a4304b9ba", "src": "db2@1.60.1.70245"}
+{"id": 1293527, "field": "description", "en": "Command a hawk to dive-bomb your targeted enemy, dealing ${$s1+($rap*($s4/100))} Physical damage and continuing its assault for $1293248d. Only $s3 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.", "hash": "c4ab21429848c550", "src": "db2@1.60.1.70245"}
+{"id": 1293539, "field": "name", "en": "Scarlet Retribution", "hash": "c1cfae66f1f31fcf", "src": "db2@1.60.1.70245"}
+{"id": 1293539, "field": "description", "en": "Deals $s1 Holy damage every time you block.", "hash": "5bd4521a485308d5", "src": "db2@1.60.1.70245"}
+{"id": 1293540, "field": "name", "en": "Improved Revival", "hash": "156598c15e6f6a84", "src": "db2@1.60.1.70245"}
+{"id": 1293540, "field": "description", "en": "Reduces the cast time of spells and effects that revive targets by $s1%.", "hash": "d3e0dbbb57489f65", "src": "db2@1.60.1.70245"}
+{"id": 1293542, "field": "name", "en": "Flash Heal Cast Pushback Reduction", "hash": "8bae2fa7c0307c00", "src": "db2@1.60.1.70245"}
+{"id": 1293542, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Flash Heal.", "hash": "000f033d05b937da", "src": "db2@1.60.1.70245"}
+{"id": 1293544, "field": "name", "en": "Increased Flash of Light Crit Chance", "hash": "f83683e7c3b8163a", "src": "db2@1.60.1.70245"}
+{"id": 1293544, "field": "description", "en": "Increases the critical strike chance of your Flash of Light by $s1%.\r\n", "hash": "04fb7529ce96c7d6", "src": "db2@1.60.1.70245"}
+{"id": 1293559, "field": "name", "en": "Flask of Natural Accuracy", "hash": "a3763d1cd24c7c3b", "src": "db2@1.60.1.70245"}
+{"id": 1293560, "field": "name", "en": "Flask of Natural Aggression", "hash": "658cc3356a486bc5", "src": "db2@1.60.1.70245"}
+{"id": 1293561, "field": "name", "en": "Flask of Natural Precision", "hash": "95f8443dc3311644", "src": "db2@1.60.1.70245"}
+{"id": 1293562, "field": "name", "en": "Flask of Natural Swiftness", "hash": "ce338265d57490ac", "src": "db2@1.60.1.70245"}
+{"id": 1293568, "field": "name", "en": "Grass Killer", "hash": "1cf60a00f6cae955", "src": "db2@1.60.1.70245"}
+{"id": 1293568, "field": "description", "en": "Assault the target with a dangerous toxin, dealing $s1 Nature damage. Deals $s2 times as much damage to Plants.", "hash": "bd297536c2d25535", "src": "db2@1.60.1.70245"}
+{"id": 1293571, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
+{"id": 1293576, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
+{"id": 1293577, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
+{"id": 1293578, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
+{"id": 1293586, "field": "name", "en": "Hunter Guardian Hawk Pet Scaling 01", "hash": "94b7d4b67bb33376", "src": "db2@1.60.1.70245"}
+{"id": 1293630, "field": "name", "en": "Improved Redemption", "hash": "c5350dbc7f427f7c", "src": "db2@1.60.1.70245"}
+{"id": 1293631, "field": "name", "en": "Improved Resurrection", "hash": "f736dd71cc7fcbea", "src": "db2@1.60.1.70245"}
+{"id": 1293635, "field": "name", "en": "Improved Ancestral Spirit", "hash": "b4bf37ba9673dad2", "src": "db2@1.60.1.70245"}
+{"id": 1293639, "field": "name", "en": "Improved Revive Pet", "hash": "0942d5f59766d037", "src": "db2@1.60.1.70245"}
+{"id": 1293641, "field": "name", "en": "Improved Soulstone", "hash": "2ccfd3aa3bba51ac", "src": "db2@1.60.1.70245"}
+{"id": 1293644, "field": "name", "en": "Improved Rebirth", "hash": "b65257f4e43ec3b5", "src": "db2@1.60.1.70245"}
+{"id": 1293653, "field": "name", "en": "Frost Blast", "hash": "568c7eb9677c9fa2", "src": "db2@1.60.1.70245"}
+{"id": 1293653, "field": "description", "en": "Blasts a target for $s1 Frost damage.", "hash": "963d3bbc469e2831", "src": "db2@1.60.1.70245"}
+{"id": 1293654, "field": "name", "en": "Silence", "hash": "34a188e2baf39d02", "src": "db2@1.60.1.70245"}
+{"id": 1293654, "field": "description", "en": "Silences an enemy, preventing it from casting spells for $d.", "hash": "92e27777d740df7c", "src": "db2@1.60.1.70245"}
+{"id": 1293654, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70245"}
+{"id": 1293657, "field": "name", "en": "Languages", "hash": "6665de684e5a2919", "src": "db2@1.60.1.70245"}
+{"id": 1293657, "field": "description", "en": "You are fluent in the following languages:$?s668[\r\n$@spellname668][]$?s669[\r\n$@spellname669][]$?s670[\r\n$@spellname670][]$?s671[\r\n$@spellname671][]$?s672[\r\n$@spellname672][]$?s813[\r\n$@spellname813][]$?s814[\r\n$@spellname814][]$?s815[\r\n$@spellname815][]$?s816[\r\n$@spellname816][]$?s817[\r\n$@spellname817][]$?s7340[\r\n$@spellname7340][]$?s7341[\r\n$@spellname7341][]$?s17737[\r\n$@spellname17737][]$?s25674[\r\n$@spellname25674][]$?s462134[\r\n$@spellname462134][]", "hash": "0282335020bb7135", "src": "db2@1.60.1.70245"}
+{"id": 1293670, "field": "name", "en": "Scarlet Guardian", "hash": "b5adb919da58fdee", "src": "db2@1.60.1.70245"}
+{"id": 1293670, "field": "description", "en": "Taking damage while at or below $s1% health grants you a shield, absorbing $1293733s2 damage for $1293733d. This effect can only trigger once every ${$proccooldown/60} min.", "hash": "02abf792d0b83e88", "src": "db2@1.60.1.70245"}
+{"id": 1293671, "field": "name", "en": "Scarlet Guardian", "hash": "b5adb919da58fdee", "src": "db2@1.60.1.70245"}
+{"id": 1293672, "field": "name", "en": "Scarlet Guardian", "hash": "b5adb919da58fdee", "src": "db2@1.60.1.70245"}
+{"id": 1293673, "field": "name", "en": "Enraging Light", "hash": "adc697f0995c6043", "src": "db2@1.60.1.70245"}
+{"id": 1293673, "field": "aura", "en": "Melee attacks deal $1293675s1 Holy damage to enemies. Deals $1293674s1 times as much damage to Undead.", "hash": "49e2543d310abba8", "src": "db2@1.60.1.70245"}
+{"id": 1293674, "field": "name", "en": "Enraging Light", "hash": "adc697f0995c6043", "src": "db2@1.60.1.70245"}
+{"id": 1293674, "field": "description", "en": "Taking damage has a $h% chance to grant Enraging Light for $1293673d, causing your melee attacks to deal $1293675s1 Holy damage. Deals $s1 times as much damage to Undead.", "hash": "c84342be78f1718b", "src": "db2@1.60.1.70245"}
+{"id": 1293675, "field": "name", "en": "Enraged Light", "hash": "861d3db379b464f8", "src": "db2@1.60.1.70245"}
+{"id": 1293675, "field": "description", "en": "Deal $s1 Holy damage.", "hash": "20c24def8cc412a2", "src": "db2@1.60.1.70245"}
+{"id": 1293681, "field": "name", "en": "Farsen's Farsight", "hash": "646f1653a0c3e002", "src": "db2@1.60.1.70245"}
+{"id": 1293681, "field": "description", "en": "Changes your viewpoint to the targeted location.  Lasts $d. Only usable outdoors.", "hash": "c9c660e0797d83b3", "src": "db2@1.60.1.70245"}
+{"id": 1293681, "field": "aura", "en": "Cannot move while using Farsen's Gift.", "hash": "3336765800e7ab6d", "src": "db2@1.60.1.70245"}
+{"id": 1293682, "field": "name", "en": "Shark Attack!", "hash": "60c7e61194a40ceb", "src": "db2@1.60.1.70245"}
+{"id": 1293682, "field": "description", "en": "Gilnean Sharks are attacking! You take damage equal to $s1% of your health every $t1 sec for $d.\r\n", "hash": "889dba294eb4c162", "src": "db2@1.60.1.70245"}
+{"id": 1293682, "field": "aura", "en": "Ravenous sharks are attacking! You probably shouldn't be here.", "hash": "7a53a8ce477830cb", "src": "db2@1.60.1.70245"}
+{"id": 1293689, "field": "name", "en": "Memory of the Mist", "hash": "3e692993ec99b9b7", "src": "db2@1.60.1.70245"}
+{"id": 1293693, "field": "name", "en": "Haunt", "hash": "fcf98a7216dbfb9c", "src": "db2@1.60.1.70245"}
+{"id": 1293693, "field": "description", "en": "Send a ghostly soul to assault your current target, dealing $s1 damage, and increasing all Shadow damage over time you deal to that target by $s2% for $d. When Haunt expires for any reason you will be healed for $s3% of the damage it dealt to your target.", "hash": "203fa01ada0dca89", "src": "db2@1.60.1.70245"}
+{"id": 1293693, "field": "aura", "en": "Damage taken from Shadow damage over time effects from the caster increased by $s2%.", "hash": "e0d6f2ae7da23097", "src": "db2@1.60.1.70245"}
+{"id": 1293694, "field": "name", "en": "Haunt", "hash": "fcf98a7216dbfb9c", "src": "db2@1.60.1.70245"}
+{"id": 1293694, "field": "description", "en": "Send a ghostly soul to assault your current target, dealing $s1 damage, and increasing all Shadow damage over time you deal to that target by $s2% for $d. When Haunt expires for any reason you will be healed for $s3% of the damage it dealt to your target.", "hash": "203fa01ada0dca89", "src": "db2@1.60.1.70245"}
+{"id": 1293694, "field": "aura", "en": "Damage taken from Shadow damage over time effects from the caster increased by $s2%.", "hash": "e0d6f2ae7da23097", "src": "db2@1.60.1.70245"}
+{"id": 1293695, "field": "name", "en": "Demonic Brand", "hash": "bc5256f3aa376d53", "src": "db2@1.60.1.70245"}
+{"id": 1293695, "field": "description", "en": "Your Searing Pain generates $s1% less threat and brands the target for $1293696d. Your pet's next $m2 attacks against the target generate high threat and deal $<minDam> to $<maxDam> Fire or Shadow damage based on the pet.", "hash": "36543d11c89f0f57", "src": "db2@1.60.1.70245"}
+{"id": 1293696, "field": "name", "en": "Demonic Brand", "hash": "bc5256f3aa376d53", "src": "db2@1.60.1.70245"}
+{"id": 1293696, "field": "aura", "en": "The caster's pet deals an additional ${$<minDam>*$<mult>} to ${$<maxDam>*$<mult>} damage with its next $m2 $Lattack:attacks;.", "hash": "33772796ee6be365", "src": "db2@1.60.1.70245"}
+{"id": 1293697, "field": "name", "en": "Demonic Brand", "hash": "bc5256f3aa376d53", "src": "db2@1.60.1.70245"}
+{"id": 1293697, "field": "description", "en": "Consuming a brand deals $<minDam> to $<maxDam> Shadow damage.", "hash": "1297a6dc8dca65a5", "src": "db2@1.60.1.70245"}
+{"id": 1293698, "field": "name", "en": "Demonic Brand", "hash": "bc5256f3aa376d53", "src": "db2@1.60.1.70245"}
+{"id": 1293698, "field": "description", "en": "Consuming a brand deals $<minDam> to $<maxDam> Fire damage.", "hash": "e44055b017c32dec", "src": "db2@1.60.1.70245"}
+{"id": 1293699, "field": "name", "en": "Demonic Brand", "hash": "bc5256f3aa376d53", "src": "db2@1.60.1.70245"}
+{"id": 1293699, "field": "description", "en": "Consuming a brand deals $s1 Physical damage.", "hash": "d8ccf40260d22ced", "src": "db2@1.60.1.70245"}
+{"id": 1293700, "field": "name", "en": "Painwalker Buckler", "hash": "f86edb3f92733d81", "src": "db2@1.60.1.70245"}
+{"id": 1293700, "field": "aura", "en": "Restoring $s1 mana per 5 sec.", "hash": "ca58e542171f0a74", "src": "db2@1.60.1.70245"}
+{"id": 1293701, "field": "name", "en": "Painwalker Buckler", "hash": "f86edb3f92733d81", "src": "db2@1.60.1.70245"}
+{"id": 1293701, "field": "description", "en": "$h% chance when struck in combat to gain $1293700s1 mana per 5 sec for $1293700d.", "hash": "ba3f58abfb533097", "src": "db2@1.60.1.70245"}
+{"id": 1293711, "field": "name", "en": "Beast Slaying 09", "hash": "9f32959e5a146a2b", "src": "db2@1.60.1.70245"}
+{"id": 1293711, "field": "description", "en": "+$s1 Attack Power against Beasts.", "hash": "2e7564c4ad94b3c2", "src": "db2@1.60.1.70245"}
+{"id": 1293712, "field": "name", "en": "Armor Proficiency", "hash": "647877e10d030d44", "src": "db2@1.60.1.70245"}
+{"id": 1293712, "field": "description", "en": "You are proficient in the use of the following armor types:$?s9078[\r\n$@spellname9078][]$?s9077[\r\n$@spellname9077][]$?s8737[\r\n$@spellname8737][]$?s750[\r\n$@spellname750][]", "hash": "5b3470224b088608", "src": "db2@1.60.1.70245"}
+{"id": 1293714, "field": "name", "en": "Spellsever", "hash": "4a74b5093883a2d3", "src": "db2@1.60.1.70245"}
+{"id": 1293714, "field": "description", "en": "Launch a magic severing bolt at the target, dealing $s1 Physical damage and interrupting the spell being cast for $d.", "hash": "bf069f1e262f09dd", "src": "db2@1.60.1.70245"}
+{"id": 1293719, "field": "name", "en": "(DNT) Mist Cosmetic Visual Aura", "hash": "ac60939717c822c6", "src": "db2@1.60.1.70245"}
+{"id": 1293727, "field": "name", "en": "(DNT) Mist Cosmetic Visual Aura", "hash": "ac60939717c822c6", "src": "db2@1.60.1.70245"}
+{"id": 1293733, "field": "name", "en": "Scarlet Guardian", "hash": "b5adb919da58fdee", "src": "db2@1.60.1.70245"}
+{"id": 1293733, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70245"}
+{"id": 1293734, "field": "name", "en": "Recently Guarded", "hash": "3c3247cb40d833b9", "src": "db2@1.60.1.70245"}
+{"id": 1293734, "field": "aura", "en": "Cannot benefit from Scarlet Guardian.", "hash": "0d5fe00b3c9defcf", "src": "db2@1.60.1.70245"}
+{"id": 1293735, "field": "name", "en": "(DNT) Mist Cosmetic Visual Aura", "hash": "ac60939717c822c6", "src": "db2@1.60.1.70245"}
+{"id": 1293736, "field": "name", "en": "Archmagister's Perception", "hash": "4d49b4189c4e5680", "src": "db2@1.60.1.70245"}
+{"id": 1293736, "field": "description", "en": "Increase experience gained from slaying Undead by $s1% for $d.", "hash": "138703acfb2f336a", "src": "db2@1.60.1.70245"}
+{"id": 1293736, "field": "aura", "en": "Increase experience gained from slaying Undead by $w1%.", "hash": "af1ef029ef4992d4", "src": "db2@1.60.1.70245"}
+{"id": 1293740, "field": "name", "en": "Flask of Natural Accuracy", "hash": "a3763d1cd24c7c3b", "src": "db2@1.60.1.70245"}
+{"id": 1293740, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% Hit Chance.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "3336d46843019e4c", "src": "db2@1.60.1.70245"}
+{"id": 1293740, "field": "aura", "en": "Stamina increased by $w1.\r\n\r\nWhile in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $w2% Hit Chance.", "hash": "e8fe76c510ffb498", "src": "db2@1.60.1.70245"}
+{"id": 1293741, "field": "name", "en": "Flask of Natural Aggression", "hash": "658cc3356a486bc5", "src": "db2@1.60.1.70245"}
+{"id": 1293741, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% Critical Strike Chance.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "70f583bf71e06f35", "src": "db2@1.60.1.70245"}
+{"id": 1293741, "field": "aura", "en": "Stamina increased by $w1.\r\n\r\nWhile in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $w2% Critical Strike Chance.", "hash": "e6e29e00cfca1950", "src": "db2@1.60.1.70245"}
+{"id": 1293742, "field": "name", "en": "Flask of Natural Precision", "hash": "95f8443dc3311644", "src": "db2@1.60.1.70245"}
+{"id": 1293742, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% reduced chance to be dodged or parried.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "99f5b5d7da5d76c4", "src": "db2@1.60.1.70245"}
+{"id": 1293742, "field": "aura", "en": "Stamina increased by $w1.\r\n\r\nWhile in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $w2% reduced chance to be dodged or parried.", "hash": "a5931025e573dbfa", "src": "db2@1.60.1.70245"}
+{"id": 1293743, "field": "name", "en": "Flask of Natural Accuracy", "hash": "a3763d1cd24c7c3b", "src": "db2@1.60.1.70245"}
+{"id": 1293743, "field": "description", "en": "Increases your Stamina by $s1. While in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $s2% Haste.\r\n\r\nLasts for $d. You can only have the effect of one flask at a time. This effect persists through death.", "hash": "8dfaab825412b800", "src": "db2@1.60.1.70245"}
+{"id": 1293743, "field": "aura", "en": "Stamina increased by $w1.\r\n\r\nWhile in Mount Hyjal, Hyjal Summit, and the Barrow Deeps, you also gain $w2% Haste.", "hash": "465ad8a6cadf0f45", "src": "db2@1.60.1.70245"}
+{"id": 1293760, "field": "name", "en": "Shader", "hash": "ba90614120506f9a", "src": "db2@1.60.1.70245"}
+{"id": 1293782, "field": "name", "en": "Swine Fists", "hash": "3fc3eadeb5d475cc", "src": "db2@1.60.1.70245"}
+{"id": 1293782, "field": "description", "en": "Spells and attacks against Swine deal $1292675s1 Nature damage.", "hash": "d2de825db87b386f", "src": "db2@1.60.1.70245"}
+{"id": 1293782, "field": "aura", "en": "Deal $s1 Nature damage to Swine.", "hash": "193a56404d640f12", "src": "db2@1.60.1.70245"}
+{"id": 1293783, "field": "name", "en": "Swine Fists", "hash": "3fc3eadeb5d475cc", "src": "db2@1.60.1.70245"}
+{"id": 1293783, "field": "description", "en": "Spells and attacks against Swine deal $1292675s1 Nature damage.", "hash": "d2de825db87b386f", "src": "db2@1.60.1.70245"}
+{"id": 1293787, "field": "name", "en": "Holy Cleaver", "hash": "cea06ca74cd97996", "src": "db2@1.60.1.70245"}
+{"id": 1293787, "field": "description", "en": "Unleash a mighty swing, dealing $s1 Holy damage. Deals $s2 times as much damage to Undead and Swine.", "hash": "c501c6693ae3e4b1", "src": "db2@1.60.1.70245"}
+{"id": 1293790, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70245"}
+{"id": 1293790, "field": "description", "en": "Launches a bolt of frost at the enemy causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "013c5fa460146bb6", "src": "db2@1.60.1.70245"}
+{"id": 1293790, "field": "aura", "en": "Movement slowed by $s1%.", "hash": "bd9406b84a62a739", "src": "db2@1.60.1.70245"}
+{"id": 1293800, "field": "name", "en": "Prickly Potion", "hash": "3481a3433b6ad0f7", "src": "db2@1.60.1.70245"}
+{"id": 1293800, "field": "description", "en": "Empty the contents of the leather-bound flask into the shallows of the pool of water inside Deadwood Den.", "hash": "72c9b0b9efbea55d", "src": "db2@1.60.1.70245"}
+{"id": 1293801, "field": "name", "en": "Emanating Mist", "hash": "31a8f7e28e51cf88", "src": "db2@1.60.1.70245"}
+{"id": 1293801, "field": "description", "en": "A strange mist emanates from this creature, hiding all nearby players and creatures from view.", "hash": "35bc7ec38608e298", "src": "db2@1.60.1.70245"}
+{"id": 1293801, "field": "aura", "en": "Creating mist that hides nearby players and creatures.", "hash": "cc2995a4f8d0e0ff", "src": "db2@1.60.1.70245"}
+{"id": 1293802, "field": "name", "en": "Humanoid Slaying 27", "hash": "1a2475cdd1f9d4a1", "src": "db2@1.60.1.70245"}
+{"id": 1293802, "field": "description", "en": "+$s1 Attack Power against Humanoids.", "hash": "f6a10ee80ea10520", "src": "db2@1.60.1.70245"}
+{"id": 1293803, "field": "name", "en": "Pyroclasm", "hash": "89cfe572261f8f0d", "src": "db2@1.60.1.70245"}
+{"id": 1293803, "field": "aura", "en": "Increases Shadow damage done by $w1%.", "hash": "458bc03ae7414fc7", "src": "db2@1.60.1.70245"}
+{"id": 1293804, "field": "name", "en": "(DNT) Mist Stealth", "hash": "9688f9ae2214fce8", "src": "db2@1.60.1.70245"}
+{"id": 1293805, "field": "name", "en": "Rousing Seed Pod", "hash": "09fb3269589f5bab", "src": "db2@1.60.1.70245"}
+{"id": 1293805, "field": "description", "en": "Call upon newly awakened power to increase the limit of Artisan's Tier items you can equip to $s2.", "hash": "8aade849195caff9", "src": "db2@1.60.1.70245"}
+{"id": 1293806, "field": "name", "en": "Warden's Signet of Ferocity", "hash": "f69fad5a9a555996", "src": "db2@1.60.1.70245"}
+{"id": 1293806, "field": "description", "en": "Permanently enchant a head slot item to give $ec1 Attack Power.", "hash": "f107acd5aafe411d", "src": "db2@1.60.1.70245"}
+{"id": 1293807, "field": "name", "en": "Warden's Signet of Brilliance", "hash": "ed437b43dad67e57", "src": "db2@1.60.1.70245"}
+{"id": 1293807, "field": "description", "en": "Permanently enchant a head slot item to give $ec1 Spell Power.", "hash": "8cc402e6f5c2d063", "src": "db2@1.60.1.70245"}
+{"id": 1293808, "field": "name", "en": "Warden's Signet of Caution", "hash": "5fd2545d1e01eb6a", "src": "db2@1.60.1.70245"}
+{"id": 1293808, "field": "description", "en": "Permanently enchant a head slot item to give $ec1 Stamina.", "hash": "2aa66d9656157597", "src": "db2@1.60.1.70245"}
+{"id": 1293809, "field": "name", "en": "Warden's Signet of Recovery", "hash": "d5bc1563c30677c8", "src": "db2@1.60.1.70245"}
+{"id": 1293809, "field": "description", "en": "Permanently enchant a head slot item to give $ec1 Healing Power and $ec2 Spell Damage.", "hash": "e2b7e97969a6533f", "src": "db2@1.60.1.70245"}
+{"id": 1293812, "field": "name", "en": "Incinerate", "hash": "f030e7b8acb5204d", "src": "db2@1.60.1.70245"}
+{"id": 1293812, "field": "description", "en": "Deals $s1 Fire damage to your target and an additional $m2% damage if the target is afflicted by Immolate.", "hash": "2c6958c3d2951807", "src": "db2@1.60.1.70245"}
+{"id": 1293813, "field": "name", "en": "Incinerate", "hash": "f030e7b8acb5204d", "src": "db2@1.60.1.70245"}
+{"id": 1293813, "field": "description", "en": "Deals $s1 Fire damage to your target and an additional $m2% damage if the target is afflicted by Immolate.", "hash": "2c6958c3d2951807", "src": "db2@1.60.1.70245"}
+{"id": 1293814, "field": "name", "en": "Echoes of the Enraged", "hash": "ac3fac25e451fc28", "src": "db2@1.60.1.70245"}
+{"id": 1293814, "field": "aura", "en": "Deal $s1 Physical damage to Swine.", "hash": "29d2a604ef15a011", "src": "db2@1.60.1.70245"}
+{"id": 1293815, "field": "name", "en": "Echoes of the Enraged", "hash": "ac3fac25e451fc28", "src": "db2@1.60.1.70245"}
+{"id": 1293815, "field": "description", "en": "Spells and attacks against Swine deal $1293814s1 Physical damage.", "hash": "d73bce76824c8106", "src": "db2@1.60.1.70245"}
+{"id": 1293816, "field": "name", "en": "Shadow", "hash": "ba9066642051ae69", "src": "db2@1.60.1.70245"}
+{"id": 1293816, "field": "description", "en": "Increases all Shadow damage done by $s1%.", "hash": "401be2500f766971", "src": "db2@1.60.1.70245"}
+{"id": 1293816, "field": "aura", "en": "Increases all Shadow damage done by $w1%.", "hash": "40a518bc4516398f", "src": "db2@1.60.1.70245"}
+{"id": 1293817, "field": "name", "en": "Conflagrate", "hash": "b4283b45f8d35ba3", "src": "db2@1.60.1.70245"}
+{"id": 1293817, "field": "description", "en": "Ignites a target that is already afflicted by your Immolate spell, dealing $s1 Fire damage and consuming your Immolate effect.", "hash": "d77f3b347081b9d9", "src": "db2@1.60.1.70245"}
+{"id": 1293818, "field": "name", "en": "Conflagrate", "hash": "b4283b45f8d35ba3", "src": "db2@1.60.1.70245"}
+{"id": 1293818, "field": "description", "en": "Ignites a target that is already afflicted by your Immolate spell, dealing $s1 Fire damage and consuming your Immolate effect.", "hash": "d77f3b347081b9d9", "src": "db2@1.60.1.70245"}
+{"id": 1293819, "field": "name", "en": "Reduce Mechanic Duration - Snare/Root 07", "hash": "858bf9a3aabdfd9c", "src": "db2@1.60.1.70245"}
+{"id": 1293819, "field": "description", "en": "Reduces the duration of all movement impairing effects on you by $m2%.", "hash": "3922f0dae78c43b1", "src": "db2@1.60.1.70245"}
+{"id": 1293820, "field": "name", "en": "Toy Soldier", "hash": "e2345e8db1d4c2ab", "src": "db2@1.60.1.70245"}
+{"id": 1293820, "field": "description", "en": "Increases your chance to Dodge by $s1% for $d. This effect is doubled in Strongholds and Cities.", "hash": "7d85baf7dd6c6506", "src": "db2@1.60.1.70245"}
+{"id": 1293820, "field": "aura", "en": "Chance to dodge increased by $w1%.", "hash": "cd753bd554a945e1", "src": "db2@1.60.1.70245"}
+{"id": 1293849, "field": "name", "en": "Swiftfeather Arrow", "hash": "492fb5b6b3e3dde4", "src": "db2@1.60.1.70245"}
+{"id": 1293850, "field": "name", "en": "Swiftstrike Shot", "hash": "ba8b534f76c7c6fc", "src": "db2@1.60.1.70245"}
+{"id": 1293857, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
+{"id": 1293858, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
+{"id": 1293866, "field": "name", "en": "(DNT) Hide Mist", "hash": "a2798aaa64c593f9", "src": "db2@1.60.1.70245"}
+{"id": 1293870, "field": "name", "en": "(DNT) Hide Mist", "hash": "a2798aaa64c593f9", "src": "db2@1.60.1.70245"}
+{"id": 1293871, "field": "name", "en": "(DNT) Hide Mist", "hash": "a2798aaa64c593f9", "src": "db2@1.60.1.70245"}
+{"id": 1293874, "field": "name", "en": "Debilitate", "hash": "275e1753ebcb4036", "src": "db2@1.60.1.70245"}
+{"id": 1293875, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
+{"id": 1293876, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
+{"id": 1293877, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
+{"id": 1293878, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
+{"id": 1293881, "field": "name", "en": "Pendulum of Doom", "hash": "56ee829ba4e8c588", "src": "db2@1.60.1.70245"}
+{"id": 1293881, "field": "description", "en": "Each swing alternates your attack speed between $1293885s1% faster and $1293886s1% slower.", "hash": "dd44297825c2c375", "src": "db2@1.60.1.70245"}
+{"id": 1293885, "field": "name", "en": "Pendulum of Doom", "hash": "56ee829ba4e8c588", "src": "db2@1.60.1.70245"}
+{"id": 1293885, "field": "description", "en": "Melee attack speed increased by $s1%.", "hash": "d471470cfe1c0fcc", "src": "db2@1.60.1.70245"}
+{"id": 1293885, "field": "aura", "en": "Melee attack speed increased by $s1%.", "hash": "d471470cfe1c0fcc", "src": "db2@1.60.1.70245"}
+{"id": 1293886, "field": "name", "en": "Pendulum of Doom", "hash": "56ee829ba4e8c588", "src": "db2@1.60.1.70245"}
+{"id": 1293886, "field": "description", "en": "Melee attack speed slowed by $s1%.", "hash": "2ade855c9b713f90", "src": "db2@1.60.1.70245"}
+{"id": 1293886, "field": "aura", "en": "Melee attack speed slowed by $s1%.", "hash": "2ade855c9b713f90", "src": "db2@1.60.1.70245"}
+{"id": 1293889, "field": "name", "en": "Crystallize", "hash": "d00de7969e0e8870", "src": "db2@1.60.1.70245"}
+{"id": 1293889, "field": "description", "en": "Attempts to freeze Elder Minderel in place, locking him in a block of ice and making him weak to Fire effects.", "hash": "df7e7d471d6427fe", "src": "db2@1.60.1.70245"}
+{"id": 1293889, "field": "aura", "en": "Stunned. Increases Fire damage taken by $s2%.", "hash": "ec527bc08926f22d", "src": "db2@1.60.1.70245"}
+{"id": 1293928, "field": "name", "en": "Mistrot", "hash": "7554f28b2acf7483", "src": "db2@1.60.1.70245"}
+{"id": 1293928, "field": "description", "en": "Inflicts $S1 Shadow damage immediately, then $S2 shadow damage every $T2 sec for $d.", "hash": "a16bee18b83556d1", "src": "db2@1.60.1.70245"}
+{"id": 1293928, "field": "aura", "en": "Inflicting $S2 Shadow damage every $T2 sec.", "hash": "e30fa957dd1cc6ff", "src": "db2@1.60.1.70245"}
+{"id": 1293940, "field": "name", "en": "Ferocious Rush", "hash": "d2567332a1077aea", "src": "db2@1.60.1.70245"}
+{"id": 1293940, "field": "description", "en": "Inflicts normal damage plus $s1 to an enemy and knocks it back.", "hash": "cfea664613593cf0", "src": "db2@1.60.1.70245"}
+{"id": 1293958, "field": "name", "en": "Multi-Shot", "hash": "9c9367a3ec99d445", "src": "db2@1.60.1.70245"}
+{"id": 1293958, "field": "description", "en": "$@spelldesc1288961", "hash": "eddb59d85174ee0c", "src": "db2@1.60.1.70245"}
+{"id": 1293966, "field": "name", "en": "Torch Toss", "hash": "28c4184fd3ff50d5", "src": "db2@1.60.1.70245"}
+{"id": 1293966, "field": "description", "en": "Tosses a torch at the target location, starting a fire.", "hash": "069f4ed7615dce8c", "src": "db2@1.60.1.70245"}
+{"id": 1293973, "field": "name", "en": "TEST Heal Self - Daves 1", "hash": "a9146aa72407e637", "src": "db2@1.60.1.70245"}
+{"id": 1293973, "field": "description", "en": "Heal yourself for $s1.", "hash": "017adfca28a535ae", "src": "db2@1.60.1.70245"}
+{"id": 1293978, "field": "name", "en": "(DNT) Water Ripples", "hash": "1cd2e1b848c00287", "src": "db2@1.60.1.70245"}
+{"id": 1293980, "field": "name", "en": "Firebolt", "hash": "c166b34851cb13db", "src": "db2@1.60.1.70245"}
+{"id": 1293980, "field": "description", "en": "Chance on harmful spell cast to blast a target for $18083s1 Fire damage.", "hash": "4b9b68173547874a", "src": "db2@1.60.1.70245"}
+{"id": 1293986, "field": "name", "en": "Consuming Fel Energies", "hash": "27f5366ec88eb846", "src": "db2@1.60.1.70245"}
+{"id": 1293986, "field": "description", "en": "Use the crystal to temporarily stun the Master of Vessels.", "hash": "ee7bc8b09553e1f5", "src": "db2@1.60.1.70245"}
+{"id": 1293987, "field": "name", "en": "Eternal Night", "hash": "0bce4aed1e2dd57c", "src": "db2@1.60.1.70245"}
+{"id": 1293988, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70245"}
+{"id": 1293989, "field": "name", "en": "Singularity", "hash": "b5b61e4b6260e8da", "src": "db2@1.60.1.70245"}
+{"id": 1293990, "field": "name", "en": "Black Hole", "hash": "7a1a64d8a2aac925", "src": "db2@1.60.1.70245"}
+{"id": 1293991, "field": "name", "en": "Singularity", "hash": "b5b61e4b6260e8da", "src": "db2@1.60.1.70245"}
+{"id": 1293991, "field": "aura", "en": "$s1 Shadow damage every $t1 sec. The intense gravity well is pulling you toward its center.", "hash": "14174e1ede29ef0e", "src": "db2@1.60.1.70245"}

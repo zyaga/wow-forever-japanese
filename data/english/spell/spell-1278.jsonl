@@ -1,39 +1,39 @@
-{"id": 1278028, "field": "name", "en": "Tame Beast", "hash": "239fa1c74e83273e", "src": "db2@1.60.1.70170"}
-{"id": 1278028, "field": "description", "en": "Begins taming a Gray Forest Wolf to be your companion for 10 minutes.  If you lose the beast's attention for any reason, the taming process will fail.", "hash": "3e06b47da72a651c", "src": "db2@1.60.1.70170"}
-{"id": 1278028, "field": "aura", "en": "Taming Wolf", "hash": "c47d033fea4bd2ce", "src": "db2@1.60.1.70170"}
-{"id": 1278029, "field": "name", "en": "Tame Beast", "hash": "239fa1c74e83273e", "src": "db2@1.60.1.70170"}
-{"id": 1278029, "field": "description", "en": "Begins taming a Young Forest Bear to be your companion for 10 minutes.  If you lose the beast's attention for any reason, the taming process will fail.", "hash": "5a218b315d21b57e", "src": "db2@1.60.1.70170"}
-{"id": 1278029, "field": "aura", "en": "Taming Bear", "hash": "c1aa01992910c9ff", "src": "db2@1.60.1.70170"}
-{"id": 1278060, "field": "name", "en": "Tame Wolf", "hash": "ddf7668633bc6a47", "src": "db2@1.60.1.70170"}
-{"id": 1278060, "field": "aura", "en": "Tamed.", "hash": "3cd09630fe483150", "src": "db2@1.60.1.70170"}
-{"id": 1278061, "field": "name", "en": "Tame Bear", "hash": "db2464e072816167", "src": "db2@1.60.1.70170"}
-{"id": 1278061, "field": "aura", "en": "Tamed.", "hash": "3cd09630fe483150", "src": "db2@1.60.1.70170"}
-{"id": 1278062, "field": "name", "en": "Gardening", "hash": "9419509b6a876d4b", "src": "db2@1.60.1.70170"}
-{"id": 1278062, "field": "description", "en": "Allows the herbalist to add features to a wilderness camp.", "hash": "e8b19224943786ef", "src": "db2@1.60.1.70170"}
-{"id": 1278067, "field": "name", "en": "Bait and Tackle", "hash": "a85d429abb9acbcb", "src": "db2@1.60.1.70170"}
-{"id": 1278067, "field": "description", "en": "Allows the fisher to add features to a wilderness camp.", "hash": "def21ef0197d6447", "src": "db2@1.60.1.70170"}
-{"id": 1278068, "field": "name", "en": "Tanning", "hash": "3180bc4326e180cd", "src": "db2@1.60.1.70170"}
-{"id": 1278068, "field": "description", "en": "Allows the skinner to add features to a wilderness camp.", "hash": "e4b310578a3288f4", "src": "db2@1.60.1.70170"}
-{"id": 1278115, "field": "name", "en": "Mining Lode", "hash": "59a9adc24b7aa0c0", "src": "db2@1.60.1.70170"}
-{"id": 1278115, "field": "description", "en": "Mining.\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70170"}
-{"id": 1278162, "field": "name", "en": "Ghost", "hash": "ec5a63b7fdf8312c", "src": "db2@1.60.1.70170"}
-{"id": 1278162, "field": "aura", "en": "Move to the location of your corpse or speak with a spirit healer to be revived.", "hash": "b70cc4d31398a05d", "src": "db2@1.60.1.70170"}
-{"id": 1278201, "field": "name", "en": "Sing", "hash": "0b3ae0a379959c0a", "src": "db2@1.60.1.70170"}
-{"id": 1278759, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70170"}
-{"id": 1278759, "field": "aura", "en": "$s1 damage every $17402t3 sec, and increasing the time between attacks by $s2%.", "hash": "8d2ab8f427cb5aa2", "src": "db2@1.60.1.70170"}
-{"id": 1278902, "field": "name", "en": "Skyborne Portal to Dalaran", "hash": "47770a6ec347e479", "src": "db2@1.60.1.70170"}
-{"id": 1278903, "field": "name", "en": "Skyborne Portal to Dalaran", "hash": "47770a6ec347e479", "src": "db2@1.60.1.70170"}
-{"id": 1278910, "field": "name", "en": "Always Injured", "hash": "d0432a6d8d4839a8", "src": "db2@1.60.1.70170"}
-{"id": 1278910, "field": "description", "en": "Deal $s1% of your maximum health every $t1 sec.\r\n\r\nFor testing purposes only, of course.", "hash": "c3eaac6730e2a555", "src": "db2@1.60.1.70170"}
-{"id": 1278910, "field": "aura", "en": "Deals $w1% of your maximum health every $t1 sec.\r\n\r\nFor testing purposes only, of course.", "hash": "220314e470de60b9", "src": "db2@1.60.1.70170"}
-{"id": 1278934, "field": "name", "en": "Summoning", "hash": "5db0bc8c6a1a7cf2", "src": "db2@1.60.1.70170"}
-{"id": 1278940, "field": "name", "en": "Summoning", "hash": "5db0bc8c6a1a7cf2", "src": "db2@1.60.1.70170"}
-{"id": 1278951, "field": "name", "en": "Flight Path", "hash": "47e776b07200930e", "src": "db2@1.60.1.70170"}
-{"id": 1278965, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70170"}
-{"id": 1278965, "field": "aura", "en": "$s1 damage every $16914t3 sec, and increasing the time between attacks by $s2%.", "hash": "5410bb5304b661d4", "src": "db2@1.60.1.70170"}
-{"id": 1278968, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70170"}
-{"id": 1278968, "field": "aura", "en": "$s1 damage every $17401t3 sec, and increasing the time between attacks by $s2%.", "hash": "9a55200fd72a6549", "src": "db2@1.60.1.70170"}
-{"id": 1278974, "field": "name", "en": "Filling", "hash": "087d49cb2c4dc21c", "src": "db2@1.60.1.70170"}
-{"id": 1278974, "field": "description", "en": "Right-click to fill Tharian's Vial at a source of Untainted Water on Mount Hyjal.", "hash": "31dc389a8526dcfa", "src": "db2@1.60.1.70170"}
-{"id": 1278991, "field": "name", "en": "1.60.0 ALPHA RIDING TEMP (DO NOT TRANSLATE)", "hash": "eb472ff493efec47", "src": "db2@1.60.1.70170"}
-{"id": 1278991, "field": "description", "en": "Allows the player to ride basic ground mounts that require a riding skill of 75.", "hash": "0703beb2f233dccc", "src": "db2@1.60.1.70170"}
+{"id": 1278028, "field": "name", "en": "Tame Beast", "hash": "239fa1c74e83273e", "src": "db2@1.60.1.70245"}
+{"id": 1278028, "field": "description", "en": "Begins taming a Gray Forest Wolf to be your companion for 10 minutes.  If you lose the beast's attention for any reason, the taming process will fail.", "hash": "3e06b47da72a651c", "src": "db2@1.60.1.70245"}
+{"id": 1278028, "field": "aura", "en": "Taming Wolf", "hash": "c47d033fea4bd2ce", "src": "db2@1.60.1.70245"}
+{"id": 1278029, "field": "name", "en": "Tame Beast", "hash": "239fa1c74e83273e", "src": "db2@1.60.1.70245"}
+{"id": 1278029, "field": "description", "en": "Begins taming a Young Forest Bear to be your companion for 10 minutes.  If you lose the beast's attention for any reason, the taming process will fail.", "hash": "5a218b315d21b57e", "src": "db2@1.60.1.70245"}
+{"id": 1278029, "field": "aura", "en": "Taming Bear", "hash": "c1aa01992910c9ff", "src": "db2@1.60.1.70245"}
+{"id": 1278060, "field": "name", "en": "Tame Wolf", "hash": "ddf7668633bc6a47", "src": "db2@1.60.1.70245"}
+{"id": 1278060, "field": "aura", "en": "Tamed.", "hash": "3cd09630fe483150", "src": "db2@1.60.1.70245"}
+{"id": 1278061, "field": "name", "en": "Tame Bear", "hash": "db2464e072816167", "src": "db2@1.60.1.70245"}
+{"id": 1278061, "field": "aura", "en": "Tamed.", "hash": "3cd09630fe483150", "src": "db2@1.60.1.70245"}
+{"id": 1278062, "field": "name", "en": "Gardening", "hash": "9419509b6a876d4b", "src": "db2@1.60.1.70245"}
+{"id": 1278062, "field": "description", "en": "Allows the herbalist to add features to a wilderness camp.", "hash": "e8b19224943786ef", "src": "db2@1.60.1.70245"}
+{"id": 1278067, "field": "name", "en": "Bait and Tackle", "hash": "a85d429abb9acbcb", "src": "db2@1.60.1.70245"}
+{"id": 1278067, "field": "description", "en": "Allows the fisher to add features to a wilderness camp.", "hash": "def21ef0197d6447", "src": "db2@1.60.1.70245"}
+{"id": 1278068, "field": "name", "en": "Tanning", "hash": "3180bc4326e180cd", "src": "db2@1.60.1.70245"}
+{"id": 1278068, "field": "description", "en": "Allows the skinner to add features to a wilderness camp.", "hash": "e4b310578a3288f4", "src": "db2@1.60.1.70245"}
+{"id": 1278115, "field": "name", "en": "Mining Lode", "hash": "59a9adc24b7aa0c0", "src": "db2@1.60.1.70245"}
+{"id": 1278115, "field": "description", "en": "Mining.\r\n", "hash": "1c15fccbace16c6f", "src": "db2@1.60.1.70245"}
+{"id": 1278162, "field": "name", "en": "Ghost", "hash": "ec5a63b7fdf8312c", "src": "db2@1.60.1.70245"}
+{"id": 1278162, "field": "aura", "en": "Move to the location of your corpse or speak with a spirit healer to be revived.", "hash": "b70cc4d31398a05d", "src": "db2@1.60.1.70245"}
+{"id": 1278201, "field": "name", "en": "Sing", "hash": "0b3ae0a379959c0a", "src": "db2@1.60.1.70245"}
+{"id": 1278759, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70245"}
+{"id": 1278759, "field": "aura", "en": "$s1 damage every $17402t3 sec, and increasing the time between attacks by $s2%.", "hash": "8d2ab8f427cb5aa2", "src": "db2@1.60.1.70245"}
+{"id": 1278902, "field": "name", "en": "Skyborne Portal to Dalaran", "hash": "47770a6ec347e479", "src": "db2@1.60.1.70245"}
+{"id": 1278903, "field": "name", "en": "Skyborne Portal to Dalaran", "hash": "47770a6ec347e479", "src": "db2@1.60.1.70245"}
+{"id": 1278910, "field": "name", "en": "Always Injured", "hash": "d0432a6d8d4839a8", "src": "db2@1.60.1.70245"}
+{"id": 1278910, "field": "description", "en": "Deal $s1% of your maximum health every $t1 sec.\r\n\r\nFor testing purposes only, of course.", "hash": "c3eaac6730e2a555", "src": "db2@1.60.1.70245"}
+{"id": 1278910, "field": "aura", "en": "Deals $w1% of your maximum health every $t1 sec.\r\n\r\nFor testing purposes only, of course.", "hash": "220314e470de60b9", "src": "db2@1.60.1.70245"}
+{"id": 1278934, "field": "name", "en": "Summoning", "hash": "5db0bc8c6a1a7cf2", "src": "db2@1.60.1.70245"}
+{"id": 1278940, "field": "name", "en": "Summoning", "hash": "5db0bc8c6a1a7cf2", "src": "db2@1.60.1.70245"}
+{"id": 1278951, "field": "name", "en": "Flight Path", "hash": "47e776b07200930e", "src": "db2@1.60.1.70245"}
+{"id": 1278965, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70245"}
+{"id": 1278965, "field": "aura", "en": "$s1 damage every $16914t3 sec, and increasing the time between attacks by $s2%.", "hash": "5410bb5304b661d4", "src": "db2@1.60.1.70245"}
+{"id": 1278968, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70245"}
+{"id": 1278968, "field": "aura", "en": "$s1 damage every $17401t3 sec, and increasing the time between attacks by $s2%.", "hash": "9a55200fd72a6549", "src": "db2@1.60.1.70245"}
+{"id": 1278974, "field": "name", "en": "Filling", "hash": "087d49cb2c4dc21c", "src": "db2@1.60.1.70245"}
+{"id": 1278974, "field": "description", "en": "Right-click to fill Tharian's Vial at a source of Untainted Water on Mount Hyjal.", "hash": "31dc389a8526dcfa", "src": "db2@1.60.1.70245"}
+{"id": 1278991, "field": "name", "en": "1.60.0 ALPHA RIDING TEMP (DO NOT TRANSLATE)", "hash": "eb472ff493efec47", "src": "db2@1.60.1.70245"}
+{"id": 1278991, "field": "description", "en": "Allows the player to ride basic ground mounts that require a riding skill of 75.", "hash": "0703beb2f233dccc", "src": "db2@1.60.1.70245"}

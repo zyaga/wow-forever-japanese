@@ -442,7 +442,6 @@ WFJ.Data.add("gloss", {
   [43439] = "余り\tあまり\textra (leftover)",
   [43440] = "余りにも\tあまりにも\ttoo (much)",
   [43441] = "余る\tあまる\tbeyond (手に余る: too much for)",
-  [43442] = "余る\tあまる\tbigger than (手に余る)",
   [43443] = "余る\tあまる\tbigger than (手に余る: beyond one)",
   [43444] = "余る\tあまる\texcess",
   [43445] = "余る\tあまる\texcess (left over)",

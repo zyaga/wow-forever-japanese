@@ -838,7 +838,6 @@ WFJ.Data.add("gloss", {
   [96835] = "済む\tすむ\tafter (it's) done",
   [96836] = "済む\tすむ\tafter (you're) done",
   [96837] = "済む\tすむ\tafter (you) do",
-  [96838] = "済む\tすむ\tafter you've done",
   [96839] = "済む\tすむ\tam finished",
   [96840] = "済む\tすむ\tas soon as (you're) done",
   [96841] = "済む\tすむ\tbe done",

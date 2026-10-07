@@ -1,392 +1,398 @@
-{"id": 25, "field": "name", "en": "Worn Shortsword", "hash": "206e1bfb121eed2a", "src": "db2@1.60.1.70170"}
-{"id": 35, "field": "name", "en": "Bent Staff", "hash": "867d5db0847da615", "src": "db2@1.60.1.70170"}
-{"id": 36, "field": "name", "en": "Worn Mace", "hash": "2137b78626b22971", "src": "db2@1.60.1.70170"}
-{"id": 37, "field": "name", "en": "Worn Axe", "hash": "8137f478ca22dabf", "src": "db2@1.60.1.70170"}
-{"id": 38, "field": "name", "en": "Recruit's Shirt", "hash": "b07d6fd0a657e200", "src": "db2@1.60.1.70170"}
-{"id": 39, "field": "name", "en": "Recruit's Pants", "hash": "7ae57dd23f9a49e9", "src": "db2@1.60.1.70170"}
-{"id": 40, "field": "name", "en": "Recruit's Boots", "hash": "870606e2ce6eed7b", "src": "db2@1.60.1.70170"}
-{"id": 41, "field": "name", "en": "OLDRecruit's Belt", "hash": "52fd9661439b5ff3", "src": "db2@1.60.1.70170"}
-{"id": 42, "field": "name", "en": "OLDSquire's Belt", "hash": "ef222c3a201beb1a", "src": "db2@1.60.1.70170"}
-{"id": 43, "field": "name", "en": "Squire's Boots", "hash": "3eb6fb0ec062269c", "src": "db2@1.60.1.70170"}
-{"id": 44, "field": "name", "en": "Squire's Pants", "hash": "329671fe318d830a", "src": "db2@1.60.1.70170"}
-{"id": 45, "field": "name", "en": "Squire's Shirt", "hash": "682e63fc984b1b21", "src": "db2@1.60.1.70170"}
-{"id": 46, "field": "name", "en": "OLDFootpad's Belt", "hash": "2f640f99b683caf3", "src": "db2@1.60.1.70170"}
-{"id": 47, "field": "name", "en": "Footpad's Shoes", "hash": "78ef02ace163d857", "src": "db2@1.60.1.70170"}
-{"id": 48, "field": "name", "en": "Footpad's Pants", "hash": "4355852062d64828", "src": "db2@1.60.1.70170"}
-{"id": 49, "field": "name", "en": "Footpad's Shirt", "hash": "78ed771ec993e03f", "src": "db2@1.60.1.70170"}
-{"id": 50, "field": "name", "en": "OLDInitiate's Belt", "hash": "4fcc3a47ee1b62f0", "src": "db2@1.60.1.70170"}
-{"id": 51, "field": "name", "en": "Neophyte's Boots", "hash": "2c749d5ad27e444c", "src": "db2@1.60.1.70170"}
-{"id": 52, "field": "name", "en": "Neophyte's Pants", "hash": "2054144a43a9a0ba", "src": "db2@1.60.1.70170"}
-{"id": 53, "field": "name", "en": "Neophyte's Shirt", "hash": "55ec0648aa6738d1", "src": "db2@1.60.1.70170"}
-{"id": 54, "field": "name", "en": "OLDNovice's Belt", "hash": "7c2d2f6991c724ea", "src": "db2@1.60.1.70170"}
-{"id": 55, "field": "name", "en": "Apprentice's Boots", "hash": "c54cb994e13c5774", "src": "db2@1.60.1.70170"}
-{"id": 56, "field": "name", "en": "Apprentice's Robe", "hash": "f4043038390c25f9", "src": "db2@1.60.1.70170"}
-{"id": 57, "field": "name", "en": "Acolyte's Robe", "hash": "4c976f8c037a6111", "src": "db2@1.60.1.70170"}
-{"id": 58, "field": "name", "en": "OLDAcolyte's Belt", "hash": "6b8d774d70e1f305", "src": "db2@1.60.1.70170"}
-{"id": 59, "field": "name", "en": "Acolyte's Shoes", "hash": "421f146314feaace", "src": "db2@1.60.1.70170"}
-{"id": 60, "field": "name", "en": "Layered Tunic", "hash": "2cc5680f948089ce", "src": "db2@1.60.1.70170"}
-{"id": 61, "field": "name", "en": "Dwarven Leather Pants", "hash": "48eb51bdcb7a1691", "src": "db2@1.60.1.70170"}
-{"id": 77, "field": "name", "en": "Deprecated Outfitter Cloth Armor", "hash": "10fc116a11a3125d", "src": "db2@1.60.1.70170"}
-{"id": 79, "field": "name", "en": "Dwarven Cloth Britches", "hash": "60328fa78d32cc3d", "src": "db2@1.60.1.70170"}
-{"id": 80, "field": "name", "en": "Soft Fur-lined Shoes", "hash": "02075be90a0f9ffb", "src": "db2@1.60.1.70170"}
-{"id": 85, "field": "name", "en": "Dirty Leather Vest", "hash": "20eeb69002296bdf", "src": "db2@1.60.1.70170"}
-{"id": 86, "field": "name", "en": "Deprecated Old Belt", "hash": "9bbc2b0414f6b31e", "src": "db2@1.60.1.70170"}
-{"id": 87, "field": "name", "en": "Deprecated Old Boots", "hash": "b2a1d633de7c8fbb", "src": "db2@1.60.1.70170"}
-{"id": 88, "field": "name", "en": "Deprecated Old Pants", "hash": "a6814d234fa7ec29", "src": "db2@1.60.1.70170"}
-{"id": 89, "field": "name", "en": "OLDThick Trapper's Shirt", "hash": "69d6e5213f290822", "src": "db2@1.60.1.70170"}
-{"id": 90, "field": "name", "en": "OLDDwarven Initiate's Belt", "hash": "49745465254069c3", "src": "db2@1.60.1.70170"}
-{"id": 91, "field": "name", "en": "OLDDwarven Initiate's Pants", "hash": "8bbe78f48d8f90a5", "src": "db2@1.60.1.70170"}
-{"id": 92, "field": "name", "en": "OLDDwarven Initiate's Boots", "hash": "97df02041c643448", "src": "db2@1.60.1.70170"}
-{"id": 93, "field": "name", "en": "OLDDwarven Initiate's Shirt", "hash": "c1566af2f44d28bc", "src": "db2@1.60.1.70170"}
-{"id": 94, "field": "name", "en": "Deprecated Dwarven Novice's Belt", "hash": "8da227948eb0ae58", "src": "db2@1.60.1.70170"}
-{"id": 95, "field": "name", "en": "Deprecated Dwarven Novice's Boots", "hash": "7b5213c0605f656e", "src": "db2@1.60.1.70170"}
-{"id": 97, "field": "name", "en": "Deprecated Dwarven Novice's Robe", "hash": "8fc99a718ce15592", "src": "db2@1.60.1.70170"}
-{"id": 98, "field": "name", "en": "Deprecated Dwarven Squire's Belt", "hash": "0097246a1d057488", "src": "db2@1.60.1.70170"}
-{"id": 99, "field": "name", "en": "Deprecated Dwarven Squire's Boots", "hash": "4eaf73dabce074f6", "src": "db2@1.60.1.70170"}
-{"id": 100, "field": "name", "en": "Deprecated Dwarven Squire's Pants", "hash": "428eeaca2e0bd164", "src": "db2@1.60.1.70170"}
-{"id": 101, "field": "name", "en": "Deprecated Dwarven Squire's Shirt", "hash": "7826dcc894c9697b", "src": "db2@1.60.1.70170"}
-{"id": 102, "field": "name", "en": "Deprecated Dwarven Recruit's Belt", "hash": "41d8948fd481750e", "src": "db2@1.60.1.70170"}
-{"id": 103, "field": "name", "en": "Deprecated Dwarven Recruit's Boots", "hash": "b32bd76e04eea936", "src": "db2@1.60.1.70170"}
-{"id": 104, "field": "name", "en": "Deprecated Sturdy Brown Pants", "hash": "20bc05f167a1e148", "src": "db2@1.60.1.70170"}
-{"id": 105, "field": "name", "en": "Deprecated Dwarven Recruit's Shirt", "hash": "dca3405cdcd79daa", "src": "db2@1.60.1.70170"}
-{"id": 113, "field": "name", "en": "Deprecated Dwarven Apprentice Pants", "hash": "aefd71e015468f1b", "src": "db2@1.60.1.70170"}
-{"id": 114, "field": "name", "en": "Deprecated Dwarven Apprentice Boots", "hash": "bb1dfaf0a41b32ad", "src": "db2@1.60.1.70170"}
-{"id": 115, "field": "name", "en": "Deprecated Dwarven Apprentice Belt", "hash": "7c885a337e5af930", "src": "db2@1.60.1.70170"}
-{"id": 117, "field": "name", "en": "Tough Jerky", "hash": "667fc8c18fb7ccae", "src": "db2@1.60.1.70170"}
-{"id": 117, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70170"}
-{"id": 118, "field": "name", "en": "Minor Healing Potion", "hash": "0908d26848b51315", "src": "db2@1.60.1.70170"}
-{"id": 118, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70170"}
-{"id": 119, "field": "name", "en": "Deprecated Rogue's Vest", "hash": "83dcb5e31a3a7021", "src": "db2@1.60.1.70170"}
-{"id": 120, "field": "name", "en": "Thug Pants", "hash": "1764a5ff32f5a1fd", "src": "db2@1.60.1.70170"}
-{"id": 121, "field": "name", "en": "Thug Boots", "hash": "23852f0fc1ca458f", "src": "db2@1.60.1.70170"}
-{"id": 122, "field": "name", "en": "OLDThug Belt", "hash": "be55ff46190bb512", "src": "db2@1.60.1.70170"}
-{"id": 123, "field": "name", "en": "Deprecated Orc Apprentice Shirt", "hash": "e1bdf93b562773f7", "src": "db2@1.60.1.70170"}
-{"id": 124, "field": "name", "en": "Deprecated Orc Apprentice Pants", "hash": "ac26073def69dbcf", "src": "db2@1.60.1.70170"}
-{"id": 125, "field": "name", "en": "Deprecated Orc Apprentice Boots", "hash": "b846904d7e3e7f72", "src": "db2@1.60.1.70170"}
-{"id": 126, "field": "name", "en": "Deprecated Orc Apprentice Belt", "hash": "5f32ad6b37f59819", "src": "db2@1.60.1.70170"}
-{"id": 127, "field": "name", "en": "Trapper's Shirt", "hash": "606a097ac77e72e0", "src": "db2@1.60.1.70170"}
-{"id": 128, "field": "name", "en": "Deprecated Tauren Trapper's Pants", "hash": "0853fab29e201ede", "src": "db2@1.60.1.70170"}
-{"id": 129, "field": "name", "en": "Rugged Trapper's Boots", "hash": "7c38ab1d05f0254f", "src": "db2@1.60.1.70170"}
-{"id": 130, "field": "name", "en": "Deprecated Tauren Trapper's Belt", "hash": "c390d466a3d38cc9", "src": "db2@1.60.1.70170"}
-{"id": 131, "field": "name", "en": "Deprecated Orc Acolyte's Belt", "hash": "2f31165d52139e3a", "src": "db2@1.60.1.70170"}
-{"id": 132, "field": "name", "en": "Deprecated Orc Acolyte's Boots", "hash": "277643ab156018c4", "src": "db2@1.60.1.70170"}
-{"id": 133, "field": "name", "en": "Deprecated Orc Acolyte's Shirt", "hash": "50edac99ed490d38", "src": "db2@1.60.1.70170"}
-{"id": 134, "field": "name", "en": "Deprecated Stiff Leather Shirt", "hash": "587cb68519352159", "src": "db2@1.60.1.70170"}
-{"id": 135, "field": "name", "en": "Deprecated Stiff Leather Pants", "hash": "22e4c487b2778931", "src": "db2@1.60.1.70170"}
-{"id": 136, "field": "name", "en": "Deprecated Old Leather Boots", "hash": "a60037d2167c7b50", "src": "db2@1.60.1.70170"}
-{"id": 137, "field": "name", "en": "OLDNeophyte's Belt", "hash": "428943aa2b43eb33", "src": "db2@1.60.1.70170"}
-{"id": 138, "field": "name", "en": "Deprecated War Harness", "hash": "a8486982c0260225", "src": "db2@1.60.1.70170"}
-{"id": 139, "field": "name", "en": "Brawler's Pants", "hash": "1a4b909a0362c3c4", "src": "db2@1.60.1.70170"}
-{"id": 140, "field": "name", "en": "Brawler's Boots", "hash": "266c19aa92376756", "src": "db2@1.60.1.70170"}
-{"id": 141, "field": "name", "en": "OLDBrawler's Belt", "hash": "ac257357652a0060", "src": "db2@1.60.1.70170"}
-{"id": 143, "field": "name", "en": "Monster - Shield, Stormwind Guard", "hash": "5bbe2af1f952c474", "src": "db2@1.60.1.70170"}
-{"id": 146, "field": "name", "en": "OLDRugged Trapper's Belt", "hash": "19e590b608bdea86", "src": "db2@1.60.1.70170"}
-{"id": 147, "field": "name", "en": "Rugged Trapper's Pants", "hash": "7018220d771b81ac", "src": "db2@1.60.1.70170"}
-{"id": 148, "field": "name", "en": "Rugged Trapper's Shirt", "hash": "a5b0140bddd919c3", "src": "db2@1.60.1.70170"}
-{"id": 149, "field": "name", "en": "Deprecated Tauren Apprentice Belt", "hash": "2de46cdd853a819b", "src": "db2@1.60.1.70170"}
-{"id": 150, "field": "name", "en": "Deprecated Tauren Apprentice Pants", "hash": "711afe16314278b1", "src": "db2@1.60.1.70170"}
-{"id": 151, "field": "name", "en": "Deprecated Tauren Apprentice Shirt", "hash": "a6b2f014980010c8", "src": "db2@1.60.1.70170"}
-{"id": 152, "field": "name", "en": "OLDPrimitive Leather Belt", "hash": "f2c4ad8a4bc0c985", "src": "db2@1.60.1.70170"}
-{"id": 153, "field": "name", "en": "Primitive Kilt", "hash": "10a94e2f962ddcff", "src": "db2@1.60.1.70170"}
-{"id": 154, "field": "name", "en": "Primitive Mantle", "hash": "5049da0a3ba61705", "src": "db2@1.60.1.70170"}
-{"id": 155, "field": "name", "en": "Deprecated Tauren Recruit's Belt", "hash": "4eecd33c5b6457de", "src": "db2@1.60.1.70170"}
-{"id": 156, "field": "name", "en": "Deprecated Tauren Recruit's Pants", "hash": "586761087cf98dfe", "src": "db2@1.60.1.70170"}
-{"id": 157, "field": "name", "en": "Deprecated Tauren Recruit's Shirt", "hash": "8dff5306e3b72615", "src": "db2@1.60.1.70170"}
-{"id": 159, "field": "name", "en": "Refreshing Spring Water", "hash": "5090a5c936736dd8", "src": "db2@1.60.1.70170"}
-{"id": 159, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70170"}
-{"id": 182, "field": "name", "en": "Garrick's Head", "hash": "2c8ce880b6131128", "src": "db2@1.60.1.70170"}
-{"id": 184, "field": "name", "en": "Deprecated Small Brown Pouch", "hash": "8a4d153bd0393947", "src": "db2@1.60.1.70170"}
-{"id": 193, "field": "name", "en": "Tattered Cloth Vest", "hash": "3424a02f1316fd8c", "src": "db2@1.60.1.70170"}
-{"id": 194, "field": "name", "en": "Tattered Cloth Pants", "hash": "44e12d830cf0d52b", "src": "db2@1.60.1.70170"}
-{"id": 195, "field": "name", "en": "Tattered Cloth Boots", "hash": "5101b6939bc578bd", "src": "db2@1.60.1.70170"}
-{"id": 200, "field": "name", "en": "Thick Cloth Vest", "hash": "1d580982c3293f7e", "src": "db2@1.60.1.70170"}
-{"id": 201, "field": "name", "en": "Thick Cloth Pants", "hash": "9a3012c002fa8d9a", "src": "db2@1.60.1.70170"}
-{"id": 202, "field": "name", "en": "Thick Cloth Shoes", "hash": "cfc9904c81881dc9", "src": "db2@1.60.1.70170"}
-{"id": 203, "field": "name", "en": "Thick Cloth Gloves", "hash": "d02c939c40ef5de8", "src": "db2@1.60.1.70170"}
-{"id": 209, "field": "name", "en": "Dirty Leather Pants", "hash": "704aa0f4677fb542", "src": "db2@1.60.1.70170"}
-{"id": 210, "field": "name", "en": "Dirty Leather Boots", "hash": "7c6b2a04f65458d4", "src": "db2@1.60.1.70170"}
-{"id": 236, "field": "name", "en": "Cured Leather Armor", "hash": "7e48a3c538b03475", "src": "db2@1.60.1.70170"}
-{"id": 237, "field": "name", "en": "Cured Leather Pants", "hash": "834f70d7e87f5b16", "src": "db2@1.60.1.70170"}
-{"id": 238, "field": "name", "en": "Cured Leather Boots", "hash": "8f6ff9e77753feb9", "src": "db2@1.60.1.70170"}
-{"id": 239, "field": "name", "en": "Cured Leather Gloves", "hash": "1b39b92a0f8be1c9", "src": "db2@1.60.1.70170"}
-{"id": 285, "field": "name", "en": "Scalemail Vest", "hash": "8d7d5ec4ad043db0", "src": "db2@1.60.1.70170"}
-{"id": 286, "field": "name", "en": "Scalemail Pants", "hash": "fd4ab4a3113bd6aa", "src": "db2@1.60.1.70170"}
-{"id": 287, "field": "name", "en": "Scalemail Boots", "hash": "096b3db8a0107a3c", "src": "db2@1.60.1.70170"}
-{"id": 414, "field": "name", "en": "Dalaran Sharp", "hash": "7f1981ad770a8817", "src": "db2@1.60.1.70170"}
-{"id": 414, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70170"}
-{"id": 422, "field": "name", "en": "Dwarven Mild", "hash": "8d80e4f59cbf3434", "src": "db2@1.60.1.70170"}
-{"id": 422, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70170"}
-{"id": 527, "field": "name", "en": "Deprecated Gnoll War Beads", "hash": "906e41d7f9682561", "src": "db2@1.60.1.70170"}
-{"id": 537, "field": "name", "en": "Dull Frenzy Scale", "hash": "0e07e83e10530185", "src": "db2@1.60.1.70170"}
-{"id": 555, "field": "name", "en": "Rough Vulture Feathers", "hash": "2e3a46c5d36168de", "src": "db2@1.60.1.70170"}
-{"id": 556, "field": "name", "en": "Buzzard Beak", "hash": "6618e6869e85a70f", "src": "db2@1.60.1.70170"}
-{"id": 710, "field": "name", "en": "Bracers of the People's Militia", "hash": "6f50c3e453ef531a", "src": "db2@1.60.1.70170"}
-{"id": 711, "field": "name", "en": "Tattered Cloth Gloves", "hash": "28cd448ed50ee866", "src": "db2@1.60.1.70170"}
-{"id": 714, "field": "name", "en": "Dirty Leather Gloves", "hash": "5fc357cfb9c56554", "src": "db2@1.60.1.70170"}
-{"id": 718, "field": "name", "en": "Scalemail Gloves", "hash": "86cd6bc4b029a31e", "src": "db2@1.60.1.70170"}
-{"id": 719, "field": "name", "en": "Rabbit Handler Gloves", "hash": "f9a5ee7e1d51552b", "src": "db2@1.60.1.70170"}
-{"id": 720, "field": "name", "en": "Brawler Gloves", "hash": "9b8649d5eb29d60b", "src": "db2@1.60.1.70170"}
-{"id": 723, "field": "name", "en": "Goretusk Liver", "hash": "87a612413019e9db", "src": "db2@1.60.1.70170"}
-{"id": 724, "field": "name", "en": "Goretusk Liver Pie", "hash": "8e33704e24984a2e", "src": "db2@1.60.1.70170"}
-{"id": 724, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "eac155cd449862c1", "src": "db2@1.60.1.70170"}
-{"id": 725, "field": "name", "en": "Gnoll Paw", "hash": "d34cfd748be33131", "src": "db2@1.60.1.70170"}
-{"id": 727, "field": "name", "en": "Notched Shortsword", "hash": "472514a572ebfad4", "src": "db2@1.60.1.70170"}
-{"id": 728, "field": "name", "en": "Recipe: Westfall Stew", "hash": "3b4d463cf6844480", "src": "db2@1.60.1.70170"}
-{"id": 728, "field": "description", "en": "Teaches you how to cook Westfall Stew.", "hash": "b604a91613c0674d", "src": "db2@1.60.1.70170"}
-{"id": 729, "field": "name", "en": "Stringy Vulture Meat", "hash": "e021adc41987a1c8", "src": "db2@1.60.1.70170"}
-{"id": 730, "field": "name", "en": "Murloc Eye", "hash": "55c6816338668c43", "src": "db2@1.60.1.70170"}
-{"id": 731, "field": "name", "en": "Goretusk Snout", "hash": "032fc577efc34e0f", "src": "db2@1.60.1.70170"}
-{"id": 732, "field": "name", "en": "Okra", "hash": "0ab2324f4be6d2ec", "src": "db2@1.60.1.70170"}
-{"id": 733, "field": "name", "en": "Westfall Stew", "hash": "b05bfdafe69410b2", "src": "db2@1.60.1.70170"}
-{"id": 733, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $1248688s2% movement speed while in Westfall for $1248688d. $@spelldesc1243969", "hash": "7438018ee5544e2e", "src": "db2@1.60.1.70170"}
-{"id": 734, "field": "name", "en": "Deprecated Malakai's Medallion", "hash": "c7e3d19404eda36a", "src": "db2@1.60.1.70170"}
-{"id": 734, "field": "description", "en": "Upon this iron disk are stamped the words: \"Footman Malakai Stone\"", "hash": "0eeb93c943b2270e", "src": "db2@1.60.1.70170"}
-{"id": 735, "field": "name", "en": "Rolf and Malakai's Medallions", "hash": "21b0c033d4062bb9", "src": "db2@1.60.1.70170"}
-{"id": 737, "field": "name", "en": "Holy Spring Water", "hash": "998294d7ba80c73a", "src": "db2@1.60.1.70170"}
-{"id": 737, "field": "description", "en": "Blessing from the Holy Spring of Stranglethorn Vale.", "hash": "8e06d3c542d0d95a", "src": "db2@1.60.1.70170"}
-{"id": 738, "field": "name", "en": "Sack of Barley", "hash": "fc1a3d812fbf9086", "src": "db2@1.60.1.70170"}
-{"id": 739, "field": "name", "en": "Sack of Corn", "hash": "9ad7d14f29a69597", "src": "db2@1.60.1.70170"}
-{"id": 740, "field": "name", "en": "Sack of Rye", "hash": "3bd2c9318fa7fe2c", "src": "db2@1.60.1.70170"}
-{"id": 741, "field": "name", "en": "Deprecated Copper Ingot", "hash": "12741e9b1d0aaf51", "src": "db2@1.60.1.70170"}
-{"id": 742, "field": "name", "en": "A Sycamore Branch", "hash": "4cd325436879d424", "src": "db2@1.60.1.70170"}
-{"id": 743, "field": "name", "en": "Bundle of Charred Oak", "hash": "d8fcbda7afb23933", "src": "db2@1.60.1.70170"}
-{"id": 744, "field": "name", "en": "Thunderbrew's Boot Flask", "hash": "32b48be235e78af9", "src": "db2@1.60.1.70170"}
-{"id": 744, "field": "description", "en": "Deals $12278s1 Fire damage every $m1 sec for $d1 to all enemies in front of you. Deals $s2 times as much damage to Plants. Gets you quite drunk too!", "hash": "a4002cecebcedf0a", "src": "db2@1.60.1.70170"}
-{"id": 745, "field": "name", "en": "Marshal McBride's Documents", "hash": "27f2e0216660ab79", "src": "db2@1.60.1.70170"}
-{"id": 746, "field": "name", "en": "Lord Brandon's Tabard (Test)", "hash": "f386de969977aeac", "src": "db2@1.60.1.70170"}
-{"id": 748, "field": "name", "en": "Stormwind Armor Marker", "hash": "a1c1384af319a42a", "src": "db2@1.60.1.70170"}
-{"id": 750, "field": "name", "en": "Tough Wolf Meat", "hash": "d686ba26671c29ff", "src": "db2@1.60.1.70170"}
-{"id": 751, "field": "name", "en": "Deprecated Wolf Femur", "hash": "f38fcb842768f200", "src": "db2@1.60.1.70170"}
-{"id": 752, "field": "name", "en": "Red Burlap Bandana", "hash": "fc6fd7646d96f1ab", "src": "db2@1.60.1.70170"}
-{"id": 753, "field": "name", "en": "Dragonmaw Shortsword", "hash": "a04f40f3f52340a9", "src": "db2@1.60.1.70170"}
-{"id": 754, "field": "name", "en": "Shortsword of Vengeance", "hash": "cd06b36cbf824fb2", "src": "db2@1.60.1.70170"}
-{"id": 754, "field": "description", "en": "Smites an enemy for $s1 Holy damage.", "hash": "d4148e08a25e6bdc", "src": "db2@1.60.1.70170"}
-{"id": 755, "field": "name", "en": "Melted Candle", "hash": "3413140e4f842db6", "src": "db2@1.60.1.70170"}
-{"id": 756, "field": "name", "en": "Tunnel Pick", "hash": "eb61de90f4c94c3a", "src": "db2@1.60.1.70170"}
-{"id": 761, "field": "name", "en": "Deprecated Elwynn Trout", "hash": "dc5f9cc2670b0974", "src": "db2@1.60.1.70170"}
-{"id": 761, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70170"}
-{"id": 763, "field": "name", "en": "Ice-covered Bracers", "hash": "ccf4ebacbb0f39d3", "src": "db2@1.60.1.70170"}
-{"id": 765, "field": "name", "en": "Silverleaf", "hash": "d2b0c7f2e7c2bf39", "src": "db2@1.60.1.70170"}
-{"id": 766, "field": "name", "en": "Flanged Mace", "hash": "d74e6891cca3ac2c", "src": "db2@1.60.1.70170"}
-{"id": 767, "field": "name", "en": "Long Bo Staff", "hash": "2ad0c8a6a08c26c4", "src": "db2@1.60.1.70170"}
-{"id": 768, "field": "name", "en": "Lumberjack Axe", "hash": "c53658321dd18718", "src": "db2@1.60.1.70170"}
-{"id": 769, "field": "name", "en": "Chunk of Boar Meat", "hash": "9155b2463d705bf1", "src": "db2@1.60.1.70170"}
-{"id": 770, "field": "name", "en": "Pointy Crocolisk Tooth", "hash": "87a7255804abeebb", "src": "db2@1.60.1.70170"}
-{"id": 771, "field": "name", "en": "Chipped Boar Tusk", "hash": "2b7c274fe6285c69", "src": "db2@1.60.1.70170"}
-{"id": 772, "field": "name", "en": "Large Candle", "hash": "d0a6278d0523f2c9", "src": "db2@1.60.1.70170"}
-{"id": 773, "field": "name", "en": "Gold Dust", "hash": "1f4e8de2bc1fa92a", "src": "db2@1.60.1.70170"}
-{"id": 774, "field": "name", "en": "Malachite", "hash": "fbf67721dc46bece", "src": "db2@1.60.1.70170"}
-{"id": 776, "field": "name", "en": "Vendetta", "hash": "667d6b3fe9022471", "src": "db2@1.60.1.70170"}
-{"id": 777, "field": "name", "en": "Prowler Teeth", "hash": "7ec01e9e29216553", "src": "db2@1.60.1.70170"}
-{"id": 778, "field": "name", "en": "Kobold Excavation Pick", "hash": "326716ecbaf50d0e", "src": "db2@1.60.1.70170"}
-{"id": 779, "field": "name", "en": "Shiny Seashell", "hash": "13c87f8d2b5d0e1b", "src": "db2@1.60.1.70170"}
-{"id": 780, "field": "name", "en": "Torn Murloc Fin", "hash": "5727970eafb8a448", "src": "db2@1.60.1.70170"}
-{"id": 781, "field": "name", "en": "Stone Gnoll Hammer", "hash": "33d9ad124a150602", "src": "db2@1.60.1.70170"}
-{"id": 782, "field": "name", "en": "Painted Gnoll Armband", "hash": "0a5349199c79f936", "src": "db2@1.60.1.70170"}
-{"id": 783, "field": "name", "en": "Light Hide", "hash": "5ac2400c3559dc96", "src": "db2@1.60.1.70170"}
-{"id": 784, "field": "name", "en": "Deprecated Tiny Flame Sac", "hash": "c2ae88aeb5950306", "src": "db2@1.60.1.70170"}
-{"id": 785, "field": "name", "en": "Mageroyal", "hash": "6acc1c5ca3938003", "src": "db2@1.60.1.70170"}
-{"id": 786, "field": "name", "en": "Deprecated Pure Copper Ingot", "hash": "2db6ecd4cb0a3bfb", "src": "db2@1.60.1.70170"}
-{"id": 787, "field": "name", "en": "Slitherskin Mackerel", "hash": "ed7f2245b83e52f5", "src": "db2@1.60.1.70170"}
-{"id": 787, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "5272b34282101ab8", "src": "db2@1.60.1.70170"}
-{"id": 788, "field": "name", "en": "Test Fire Sword", "hash": "a2d6cada6aaa73a4", "src": "db2@1.60.1.70170"}
-{"id": 789, "field": "name", "en": "Stout Battlehammer", "hash": "28eea2424e2b2074", "src": "db2@1.60.1.70170"}
-{"id": 790, "field": "name", "en": "Forester's Axe", "hash": "2178167059c2dadf", "src": "db2@1.60.1.70170"}
-{"id": 791, "field": "name", "en": "Gnarled Ash Staff", "hash": "c54b99b7f0ec2f51", "src": "db2@1.60.1.70170"}
-{"id": 792, "field": "name", "en": "Knitted Sandals", "hash": "61e10a9ba475cf99", "src": "db2@1.60.1.70170"}
-{"id": 793, "field": "name", "en": "Knitted Gloves", "hash": "0f3ce2f43f253f77", "src": "db2@1.60.1.70170"}
-{"id": 794, "field": "name", "en": "Knitted Pants", "hash": "7972a3f8ba0bd7fd", "src": "db2@1.60.1.70170"}
-{"id": 795, "field": "name", "en": "Knitted Tunic", "hash": "c25787a741d387d5", "src": "db2@1.60.1.70170"}
-{"id": 796, "field": "name", "en": "Rough Leather Boots", "hash": "401a23b0b5f8b16b", "src": "db2@1.60.1.70170"}
-{"id": 797, "field": "name", "en": "Rough Leather Gloves", "hash": "824d1a380ff102d8", "src": "db2@1.60.1.70170"}
-{"id": 798, "field": "name", "en": "Rough Leather Pants", "hash": "33f99aa027240dd9", "src": "db2@1.60.1.70170"}
-{"id": 799, "field": "name", "en": "Rough Leather Vest", "hash": "320f50e5c59cc0af", "src": "db2@1.60.1.70170"}
-{"id": 804, "field": "name", "en": "Large Blue Sack", "hash": "46950f36ffbd1452", "src": "db2@1.60.1.70170"}
-{"id": 805, "field": "name", "en": "Small Red Pouch", "hash": "88adc1d0de6185f1", "src": "db2@1.60.1.70170"}
-{"id": 806, "field": "name", "en": "Deprecated Brown Leather Satchel", "hash": "677d4347da8a49bf", "src": "db2@1.60.1.70170"}
-{"id": 807, "field": "name", "en": "Deprecated Iron Ingot", "hash": "dfa12ff4e053943e", "src": "db2@1.60.1.70170"}
-{"id": 808, "field": "name", "en": "Deprecated Malachite", "hash": "1714ff4428260f9b", "src": "db2@1.60.1.70170"}
-{"id": 810, "field": "name", "en": "Hammer of the Northern Wind", "hash": "66d98aaed7a5b722", "src": "db2@1.60.1.70170"}
-{"id": 810, "field": "description", "en": "Launches a bolt of frost at the enemy causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "013c5fa460146bb6", "src": "db2@1.60.1.70170"}
-{"id": 813, "field": "name", "en": "Broken Cog", "hash": "d114ba756c94ffcc", "src": "db2@1.60.1.70170"}
-{"id": 814, "field": "name", "en": "Flask of Oil", "hash": "31ba8f4f7021f585", "src": "db2@1.60.1.70170"}
-{"id": 816, "field": "name", "en": "Small Hand Blade", "hash": "cc6eb59d5bf7a9e2", "src": "db2@1.60.1.70170"}
-{"id": 818, "field": "name", "en": "Tigerseye", "hash": "007596e89447995f", "src": "db2@1.60.1.70170"}
-{"id": 820, "field": "name", "en": "Slicer Blade", "hash": "104e5402534d514a", "src": "db2@1.60.1.70170"}
-{"id": 821, "field": "name", "en": "Riverpaw Leather Vest", "hash": "bcd7145a75d9eff6", "src": "db2@1.60.1.70170"}
-{"id": 823, "field": "name", "en": "Deprecated Horse Summoning (Mount)", "hash": "9d5f4b505e8184ff", "src": "db2@1.60.1.70170"}
-{"id": 823, "field": "description", "en": "Summons and dismisses a rideable brown horse.", "hash": "53702babe7730ebc", "src": "db2@1.60.1.70170"}
-{"id": 826, "field": "name", "en": "Brutish Riverpaw Axe", "hash": "20a5380ce0a9a77d", "src": "db2@1.60.1.70170"}
-{"id": 827, "field": "name", "en": "Wicked Blackjack", "hash": "025a2b393e2155c0", "src": "db2@1.60.1.70170"}
-{"id": 828, "field": "name", "en": "Small Blue Pouch", "hash": "a013eedb6925055e", "src": "db2@1.60.1.70170"}
-{"id": 829, "field": "name", "en": "Red Leather Bandana", "hash": "4582ad2d278441d6", "src": "db2@1.60.1.70170"}
-{"id": 832, "field": "name", "en": "Silver Defias Belt", "hash": "df0534e8da6365bf", "src": "db2@1.60.1.70170"}
-{"id": 835, "field": "name", "en": "Large Rope Net", "hash": "b2003ef492faed72", "src": "db2@1.60.1.70170"}
-{"id": 835, "field": "description", "en": "Renders a target unable to move for $d.", "hash": "73de166ed1b6b8c8", "src": "db2@1.60.1.70170"}
-{"id": 836, "field": "name", "en": "Deprecated Heavy Net", "hash": "b01ac06e6b34db19", "src": "db2@1.60.1.70170"}
-{"id": 837, "field": "name", "en": "Heavy Weave Armor", "hash": "2f3ca85296d6afed", "src": "db2@1.60.1.70170"}
-{"id": 838, "field": "name", "en": "Heavy Weave Pants", "hash": "3443756446a5d69f", "src": "db2@1.60.1.70170"}
-{"id": 839, "field": "name", "en": "Heavy Weave Gloves", "hash": "a8180c847852b58a", "src": "db2@1.60.1.70170"}
-{"id": 840, "field": "name", "en": "Heavy Weave Shoes", "hash": "69dcf2f0c53366ce", "src": "db2@1.60.1.70170"}
-{"id": 841, "field": "name", "en": "Furlbrow's Pocket Watch", "hash": "4a7704459277ca79", "src": "db2@1.60.1.70170"}
-{"id": 842, "field": "name", "en": "Deprecated Wolf Summoning (Mount)", "hash": "26a2db12a8914d97", "src": "db2@1.60.1.70170"}
-{"id": 842, "field": "description", "en": "Summons and dismisses a rideable gray wolf.", "hash": "a7f601eb4d791a24", "src": "db2@1.60.1.70170"}
-{"id": 843, "field": "name", "en": "Tanned Leather Boots", "hash": "952b163ecc489be3", "src": "db2@1.60.1.70170"}
-{"id": 844, "field": "name", "en": "Tanned Leather Gloves", "hash": "09f939be5992cd87", "src": "db2@1.60.1.70170"}
-{"id": 845, "field": "name", "en": "Tanned Leather Pants", "hash": "890a8d2e3d73f851", "src": "db2@1.60.1.70170"}
-{"id": 846, "field": "name", "en": "Tanned Leather Jerkin", "hash": "820a29d7b253c1b2", "src": "db2@1.60.1.70170"}
-{"id": 847, "field": "name", "en": "Chainmail Armor", "hash": "54d501cac40bee81", "src": "db2@1.60.1.70170"}
-{"id": 848, "field": "name", "en": "Chainmail Pants", "hash": "59dbcedc73db1533", "src": "db2@1.60.1.70170"}
-{"id": 849, "field": "name", "en": "Chainmail Boots", "hash": "65fc57ec02afb8d6", "src": "db2@1.60.1.70170"}
-{"id": 850, "field": "name", "en": "Chainmail Gloves", "hash": "e50dd54ba6b3014f", "src": "db2@1.60.1.70170"}
-{"id": 851, "field": "name", "en": "Cutlass", "hash": "410459a9d5907895", "src": "db2@1.60.1.70170"}
-{"id": 852, "field": "name", "en": "Mace", "hash": "0a6af11609626728", "src": "db2@1.60.1.70170"}
-{"id": 853, "field": "name", "en": "Hatchet", "hash": "20f902f545e0a0be", "src": "db2@1.60.1.70170"}
-{"id": 854, "field": "name", "en": "Quarter Staff", "hash": "e2e4d0106cf7a10e", "src": "db2@1.60.1.70170"}
-{"id": 855, "field": "name", "en": "Deprecated White Leather Satchel", "hash": "37fdf32282ab64be", "src": "db2@1.60.1.70170"}
-{"id": 856, "field": "name", "en": "Blue Leather Bag", "hash": "8127b9440a9ec7c9", "src": "db2@1.60.1.70170"}
-{"id": 857, "field": "name", "en": "Large Red Sack", "hash": "247a01bbca932ab0", "src": "db2@1.60.1.70170"}
-{"id": 858, "field": "name", "en": "Lesser Healing Potion", "hash": "ae62462ad4c3e38d", "src": "db2@1.60.1.70170"}
-{"id": 858, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70170"}
-{"id": 859, "field": "name", "en": "Fine Cloth Shirt", "hash": "5b49b74920add9ea", "src": "db2@1.60.1.70170"}
-{"id": 860, "field": "name", "en": "Cavalier's Boots", "hash": "21ba374a0ed0358d", "src": "db2@1.60.1.70170"}
-{"id": 863, "field": "name", "en": "Gloom Reaper", "hash": "29752f5146aa468f", "src": "db2@1.60.1.70170"}
-{"id": 864, "field": "name", "en": "Knightly Longsword", "hash": "2388b12bd22546d0", "src": "db2@1.60.1.70170"}
-{"id": 865, "field": "name", "en": "Leaden Mace", "hash": "82354ae684c2d503", "src": "db2@1.60.1.70170"}
-{"id": 866, "field": "name", "en": "Monk's Staff", "hash": "e9d565d1d88446be", "src": "db2@1.60.1.70170"}
-{"id": 867, "field": "name", "en": "Gloves of Holy Might", "hash": "52369f130ff1d320", "src": "db2@1.60.1.70170"}
+{"id": 25, "field": "name", "en": "Worn Shortsword", "hash": "206e1bfb121eed2a", "src": "db2@1.60.1.70245"}
+{"id": 35, "field": "name", "en": "Bent Staff", "hash": "867d5db0847da615", "src": "db2@1.60.1.70245"}
+{"id": 36, "field": "name", "en": "Worn Mace", "hash": "2137b78626b22971", "src": "db2@1.60.1.70245"}
+{"id": 37, "field": "name", "en": "Worn Axe", "hash": "8137f478ca22dabf", "src": "db2@1.60.1.70245"}
+{"id": 38, "field": "name", "en": "Recruit's Shirt", "hash": "b07d6fd0a657e200", "src": "db2@1.60.1.70245"}
+{"id": 39, "field": "name", "en": "Recruit's Pants", "hash": "7ae57dd23f9a49e9", "src": "db2@1.60.1.70245"}
+{"id": 40, "field": "name", "en": "Recruit's Boots", "hash": "870606e2ce6eed7b", "src": "db2@1.60.1.70245"}
+{"id": 41, "field": "name", "en": "OLDRecruit's Belt", "hash": "52fd9661439b5ff3", "src": "db2@1.60.1.70245"}
+{"id": 42, "field": "name", "en": "OLDSquire's Belt", "hash": "ef222c3a201beb1a", "src": "db2@1.60.1.70245"}
+{"id": 43, "field": "name", "en": "Squire's Boots", "hash": "3eb6fb0ec062269c", "src": "db2@1.60.1.70245"}
+{"id": 44, "field": "name", "en": "Squire's Pants", "hash": "329671fe318d830a", "src": "db2@1.60.1.70245"}
+{"id": 45, "field": "name", "en": "Squire's Shirt", "hash": "682e63fc984b1b21", "src": "db2@1.60.1.70245"}
+{"id": 46, "field": "name", "en": "OLDFootpad's Belt", "hash": "2f640f99b683caf3", "src": "db2@1.60.1.70245"}
+{"id": 47, "field": "name", "en": "Footpad's Shoes", "hash": "78ef02ace163d857", "src": "db2@1.60.1.70245"}
+{"id": 48, "field": "name", "en": "Footpad's Pants", "hash": "4355852062d64828", "src": "db2@1.60.1.70245"}
+{"id": 49, "field": "name", "en": "Footpad's Shirt", "hash": "78ed771ec993e03f", "src": "db2@1.60.1.70245"}
+{"id": 50, "field": "name", "en": "OLDInitiate's Belt", "hash": "4fcc3a47ee1b62f0", "src": "db2@1.60.1.70245"}
+{"id": 51, "field": "name", "en": "Neophyte's Boots", "hash": "2c749d5ad27e444c", "src": "db2@1.60.1.70245"}
+{"id": 52, "field": "name", "en": "Neophyte's Pants", "hash": "2054144a43a9a0ba", "src": "db2@1.60.1.70245"}
+{"id": 53, "field": "name", "en": "Neophyte's Shirt", "hash": "55ec0648aa6738d1", "src": "db2@1.60.1.70245"}
+{"id": 54, "field": "name", "en": "OLDNovice's Belt", "hash": "7c2d2f6991c724ea", "src": "db2@1.60.1.70245"}
+{"id": 55, "field": "name", "en": "Apprentice's Boots", "hash": "c54cb994e13c5774", "src": "db2@1.60.1.70245"}
+{"id": 56, "field": "name", "en": "Apprentice's Robe", "hash": "f4043038390c25f9", "src": "db2@1.60.1.70245"}
+{"id": 57, "field": "name", "en": "Acolyte's Robe", "hash": "4c976f8c037a6111", "src": "db2@1.60.1.70245"}
+{"id": 58, "field": "name", "en": "OLDAcolyte's Belt", "hash": "6b8d774d70e1f305", "src": "db2@1.60.1.70245"}
+{"id": 59, "field": "name", "en": "Acolyte's Shoes", "hash": "421f146314feaace", "src": "db2@1.60.1.70245"}
+{"id": 60, "field": "name", "en": "Layered Tunic", "hash": "2cc5680f948089ce", "src": "db2@1.60.1.70245"}
+{"id": 61, "field": "name", "en": "Dwarven Leather Pants", "hash": "48eb51bdcb7a1691", "src": "db2@1.60.1.70245"}
+{"id": 77, "field": "name", "en": "Deprecated Outfitter Cloth Armor", "hash": "10fc116a11a3125d", "src": "db2@1.60.1.70245"}
+{"id": 79, "field": "name", "en": "Dwarven Cloth Britches", "hash": "60328fa78d32cc3d", "src": "db2@1.60.1.70245"}
+{"id": 80, "field": "name", "en": "Soft Fur-lined Shoes", "hash": "02075be90a0f9ffb", "src": "db2@1.60.1.70245"}
+{"id": 85, "field": "name", "en": "Dirty Leather Vest", "hash": "20eeb69002296bdf", "src": "db2@1.60.1.70245"}
+{"id": 86, "field": "name", "en": "Deprecated Old Belt", "hash": "9bbc2b0414f6b31e", "src": "db2@1.60.1.70245"}
+{"id": 87, "field": "name", "en": "Deprecated Old Boots", "hash": "b2a1d633de7c8fbb", "src": "db2@1.60.1.70245"}
+{"id": 88, "field": "name", "en": "Deprecated Old Pants", "hash": "a6814d234fa7ec29", "src": "db2@1.60.1.70245"}
+{"id": 89, "field": "name", "en": "OLDThick Trapper's Shirt", "hash": "69d6e5213f290822", "src": "db2@1.60.1.70245"}
+{"id": 90, "field": "name", "en": "OLDDwarven Initiate's Belt", "hash": "49745465254069c3", "src": "db2@1.60.1.70245"}
+{"id": 91, "field": "name", "en": "OLDDwarven Initiate's Pants", "hash": "8bbe78f48d8f90a5", "src": "db2@1.60.1.70245"}
+{"id": 92, "field": "name", "en": "OLDDwarven Initiate's Boots", "hash": "97df02041c643448", "src": "db2@1.60.1.70245"}
+{"id": 93, "field": "name", "en": "OLDDwarven Initiate's Shirt", "hash": "c1566af2f44d28bc", "src": "db2@1.60.1.70245"}
+{"id": 94, "field": "name", "en": "Deprecated Dwarven Novice's Belt", "hash": "8da227948eb0ae58", "src": "db2@1.60.1.70245"}
+{"id": 95, "field": "name", "en": "Deprecated Dwarven Novice's Boots", "hash": "7b5213c0605f656e", "src": "db2@1.60.1.70245"}
+{"id": 97, "field": "name", "en": "Deprecated Dwarven Novice's Robe", "hash": "8fc99a718ce15592", "src": "db2@1.60.1.70245"}
+{"id": 98, "field": "name", "en": "Deprecated Dwarven Squire's Belt", "hash": "0097246a1d057488", "src": "db2@1.60.1.70245"}
+{"id": 99, "field": "name", "en": "Deprecated Dwarven Squire's Boots", "hash": "4eaf73dabce074f6", "src": "db2@1.60.1.70245"}
+{"id": 100, "field": "name", "en": "Deprecated Dwarven Squire's Pants", "hash": "428eeaca2e0bd164", "src": "db2@1.60.1.70245"}
+{"id": 101, "field": "name", "en": "Deprecated Dwarven Squire's Shirt", "hash": "7826dcc894c9697b", "src": "db2@1.60.1.70245"}
+{"id": 102, "field": "name", "en": "Deprecated Dwarven Recruit's Belt", "hash": "41d8948fd481750e", "src": "db2@1.60.1.70245"}
+{"id": 103, "field": "name", "en": "Deprecated Dwarven Recruit's Boots", "hash": "b32bd76e04eea936", "src": "db2@1.60.1.70245"}
+{"id": 104, "field": "name", "en": "Deprecated Sturdy Brown Pants", "hash": "20bc05f167a1e148", "src": "db2@1.60.1.70245"}
+{"id": 105, "field": "name", "en": "Deprecated Dwarven Recruit's Shirt", "hash": "dca3405cdcd79daa", "src": "db2@1.60.1.70245"}
+{"id": 113, "field": "name", "en": "Deprecated Dwarven Apprentice Pants", "hash": "aefd71e015468f1b", "src": "db2@1.60.1.70245"}
+{"id": 114, "field": "name", "en": "Deprecated Dwarven Apprentice Boots", "hash": "bb1dfaf0a41b32ad", "src": "db2@1.60.1.70245"}
+{"id": 115, "field": "name", "en": "Deprecated Dwarven Apprentice Belt", "hash": "7c885a337e5af930", "src": "db2@1.60.1.70245"}
+{"id": 117, "field": "name", "en": "Tough Jerky", "hash": "667fc8c18fb7ccae", "src": "db2@1.60.1.70245"}
+{"id": 117, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
+{"id": 118, "field": "name", "en": "Minor Healing Potion", "hash": "0908d26848b51315", "src": "db2@1.60.1.70245"}
+{"id": 118, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70245"}
+{"id": 119, "field": "name", "en": "Deprecated Rogue's Vest", "hash": "83dcb5e31a3a7021", "src": "db2@1.60.1.70245"}
+{"id": 120, "field": "name", "en": "Thug Pants", "hash": "1764a5ff32f5a1fd", "src": "db2@1.60.1.70245"}
+{"id": 121, "field": "name", "en": "Thug Boots", "hash": "23852f0fc1ca458f", "src": "db2@1.60.1.70245"}
+{"id": 122, "field": "name", "en": "OLDThug Belt", "hash": "be55ff46190bb512", "src": "db2@1.60.1.70245"}
+{"id": 123, "field": "name", "en": "Deprecated Orc Apprentice Shirt", "hash": "e1bdf93b562773f7", "src": "db2@1.60.1.70245"}
+{"id": 124, "field": "name", "en": "Deprecated Orc Apprentice Pants", "hash": "ac26073def69dbcf", "src": "db2@1.60.1.70245"}
+{"id": 125, "field": "name", "en": "Deprecated Orc Apprentice Boots", "hash": "b846904d7e3e7f72", "src": "db2@1.60.1.70245"}
+{"id": 126, "field": "name", "en": "Deprecated Orc Apprentice Belt", "hash": "5f32ad6b37f59819", "src": "db2@1.60.1.70245"}
+{"id": 127, "field": "name", "en": "Trapper's Shirt", "hash": "606a097ac77e72e0", "src": "db2@1.60.1.70245"}
+{"id": 128, "field": "name", "en": "Deprecated Tauren Trapper's Pants", "hash": "0853fab29e201ede", "src": "db2@1.60.1.70245"}
+{"id": 129, "field": "name", "en": "Rugged Trapper's Boots", "hash": "7c38ab1d05f0254f", "src": "db2@1.60.1.70245"}
+{"id": 130, "field": "name", "en": "Deprecated Tauren Trapper's Belt", "hash": "c390d466a3d38cc9", "src": "db2@1.60.1.70245"}
+{"id": 131, "field": "name", "en": "Deprecated Orc Acolyte's Belt", "hash": "2f31165d52139e3a", "src": "db2@1.60.1.70245"}
+{"id": 132, "field": "name", "en": "Deprecated Orc Acolyte's Boots", "hash": "277643ab156018c4", "src": "db2@1.60.1.70245"}
+{"id": 133, "field": "name", "en": "Deprecated Orc Acolyte's Shirt", "hash": "50edac99ed490d38", "src": "db2@1.60.1.70245"}
+{"id": 134, "field": "name", "en": "Deprecated Stiff Leather Shirt", "hash": "587cb68519352159", "src": "db2@1.60.1.70245"}
+{"id": 135, "field": "name", "en": "Deprecated Stiff Leather Pants", "hash": "22e4c487b2778931", "src": "db2@1.60.1.70245"}
+{"id": 136, "field": "name", "en": "Deprecated Old Leather Boots", "hash": "a60037d2167c7b50", "src": "db2@1.60.1.70245"}
+{"id": 137, "field": "name", "en": "OLDNeophyte's Belt", "hash": "428943aa2b43eb33", "src": "db2@1.60.1.70245"}
+{"id": 138, "field": "name", "en": "Deprecated War Harness", "hash": "a8486982c0260225", "src": "db2@1.60.1.70245"}
+{"id": 139, "field": "name", "en": "Brawler's Pants", "hash": "1a4b909a0362c3c4", "src": "db2@1.60.1.70245"}
+{"id": 140, "field": "name", "en": "Brawler's Boots", "hash": "266c19aa92376756", "src": "db2@1.60.1.70245"}
+{"id": 141, "field": "name", "en": "OLDBrawler's Belt", "hash": "ac257357652a0060", "src": "db2@1.60.1.70245"}
+{"id": 143, "field": "name", "en": "Monster - Shield, Stormwind Guard", "hash": "5bbe2af1f952c474", "src": "db2@1.60.1.70245"}
+{"id": 146, "field": "name", "en": "OLDRugged Trapper's Belt", "hash": "19e590b608bdea86", "src": "db2@1.60.1.70245"}
+{"id": 147, "field": "name", "en": "Rugged Trapper's Pants", "hash": "7018220d771b81ac", "src": "db2@1.60.1.70245"}
+{"id": 148, "field": "name", "en": "Rugged Trapper's Shirt", "hash": "a5b0140bddd919c3", "src": "db2@1.60.1.70245"}
+{"id": 149, "field": "name", "en": "Deprecated Tauren Apprentice Belt", "hash": "2de46cdd853a819b", "src": "db2@1.60.1.70245"}
+{"id": 150, "field": "name", "en": "Deprecated Tauren Apprentice Pants", "hash": "711afe16314278b1", "src": "db2@1.60.1.70245"}
+{"id": 151, "field": "name", "en": "Deprecated Tauren Apprentice Shirt", "hash": "a6b2f014980010c8", "src": "db2@1.60.1.70245"}
+{"id": 152, "field": "name", "en": "OLDPrimitive Leather Belt", "hash": "f2c4ad8a4bc0c985", "src": "db2@1.60.1.70245"}
+{"id": 153, "field": "name", "en": "Primitive Kilt", "hash": "10a94e2f962ddcff", "src": "db2@1.60.1.70245"}
+{"id": 154, "field": "name", "en": "Primitive Mantle", "hash": "5049da0a3ba61705", "src": "db2@1.60.1.70245"}
+{"id": 155, "field": "name", "en": "Deprecated Tauren Recruit's Belt", "hash": "4eecd33c5b6457de", "src": "db2@1.60.1.70245"}
+{"id": 156, "field": "name", "en": "Deprecated Tauren Recruit's Pants", "hash": "586761087cf98dfe", "src": "db2@1.60.1.70245"}
+{"id": 157, "field": "name", "en": "Deprecated Tauren Recruit's Shirt", "hash": "8dff5306e3b72615", "src": "db2@1.60.1.70245"}
+{"id": 159, "field": "name", "en": "Refreshing Spring Water", "hash": "5090a5c936736dd8", "src": "db2@1.60.1.70245"}
+{"id": 159, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70245"}
+{"id": 182, "field": "name", "en": "Garrick's Head", "hash": "2c8ce880b6131128", "src": "db2@1.60.1.70245"}
+{"id": 184, "field": "name", "en": "Deprecated Small Brown Pouch", "hash": "8a4d153bd0393947", "src": "db2@1.60.1.70245"}
+{"id": 193, "field": "name", "en": "Tattered Cloth Vest", "hash": "3424a02f1316fd8c", "src": "db2@1.60.1.70245"}
+{"id": 194, "field": "name", "en": "Tattered Cloth Pants", "hash": "44e12d830cf0d52b", "src": "db2@1.60.1.70245"}
+{"id": 195, "field": "name", "en": "Tattered Cloth Boots", "hash": "5101b6939bc578bd", "src": "db2@1.60.1.70245"}
+{"id": 200, "field": "name", "en": "Thick Cloth Vest", "hash": "1d580982c3293f7e", "src": "db2@1.60.1.70245"}
+{"id": 201, "field": "name", "en": "Thick Cloth Pants", "hash": "9a3012c002fa8d9a", "src": "db2@1.60.1.70245"}
+{"id": 202, "field": "name", "en": "Thick Cloth Shoes", "hash": "cfc9904c81881dc9", "src": "db2@1.60.1.70245"}
+{"id": 203, "field": "name", "en": "Thick Cloth Gloves", "hash": "d02c939c40ef5de8", "src": "db2@1.60.1.70245"}
+{"id": 209, "field": "name", "en": "Dirty Leather Pants", "hash": "704aa0f4677fb542", "src": "db2@1.60.1.70245"}
+{"id": 210, "field": "name", "en": "Dirty Leather Boots", "hash": "7c6b2a04f65458d4", "src": "db2@1.60.1.70245"}
+{"id": 236, "field": "name", "en": "Cured Leather Armor", "hash": "7e48a3c538b03475", "src": "db2@1.60.1.70245"}
+{"id": 237, "field": "name", "en": "Cured Leather Pants", "hash": "834f70d7e87f5b16", "src": "db2@1.60.1.70245"}
+{"id": 238, "field": "name", "en": "Cured Leather Boots", "hash": "8f6ff9e77753feb9", "src": "db2@1.60.1.70245"}
+{"id": 239, "field": "name", "en": "Cured Leather Gloves", "hash": "1b39b92a0f8be1c9", "src": "db2@1.60.1.70245"}
+{"id": 285, "field": "name", "en": "Scalemail Vest", "hash": "8d7d5ec4ad043db0", "src": "db2@1.60.1.70245"}
+{"id": 286, "field": "name", "en": "Scalemail Pants", "hash": "fd4ab4a3113bd6aa", "src": "db2@1.60.1.70245"}
+{"id": 287, "field": "name", "en": "Scalemail Boots", "hash": "096b3db8a0107a3c", "src": "db2@1.60.1.70245"}
+{"id": 414, "field": "name", "en": "Dalaran Sharp", "hash": "7f1981ad770a8817", "src": "db2@1.60.1.70245"}
+{"id": 414, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
+{"id": 422, "field": "name", "en": "Dwarven Mild", "hash": "8d80e4f59cbf3434", "src": "db2@1.60.1.70245"}
+{"id": 422, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
+{"id": 527, "field": "name", "en": "Deprecated Gnoll War Beads", "hash": "906e41d7f9682561", "src": "db2@1.60.1.70245"}
+{"id": 537, "field": "name", "en": "Dull Frenzy Scale", "hash": "0e07e83e10530185", "src": "db2@1.60.1.70245"}
+{"id": 555, "field": "name", "en": "Rough Vulture Feathers", "hash": "2e3a46c5d36168de", "src": "db2@1.60.1.70245"}
+{"id": 556, "field": "name", "en": "Buzzard Beak", "hash": "6618e6869e85a70f", "src": "db2@1.60.1.70245"}
+{"id": 710, "field": "name", "en": "Bracers of the People's Militia", "hash": "6f50c3e453ef531a", "src": "db2@1.60.1.70245"}
+{"id": 711, "field": "name", "en": "Tattered Cloth Gloves", "hash": "28cd448ed50ee866", "src": "db2@1.60.1.70245"}
+{"id": 714, "field": "name", "en": "Dirty Leather Gloves", "hash": "5fc357cfb9c56554", "src": "db2@1.60.1.70245"}
+{"id": 718, "field": "name", "en": "Scalemail Gloves", "hash": "86cd6bc4b029a31e", "src": "db2@1.60.1.70245"}
+{"id": 719, "field": "name", "en": "Rabbit Handler Gloves", "hash": "f9a5ee7e1d51552b", "src": "db2@1.60.1.70245"}
+{"id": 720, "field": "name", "en": "Brawler Gloves", "hash": "9b8649d5eb29d60b", "src": "db2@1.60.1.70245"}
+{"id": 723, "field": "name", "en": "Goretusk Liver", "hash": "87a612413019e9db", "src": "db2@1.60.1.70245"}
+{"id": 724, "field": "name", "en": "Goretusk Liver Pie", "hash": "8e33704e24984a2e", "src": "db2@1.60.1.70245"}
+{"id": 724, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "eac155cd449862c1", "src": "db2@1.60.1.70245"}
+{"id": 725, "field": "name", "en": "Gnoll Paw", "hash": "d34cfd748be33131", "src": "db2@1.60.1.70245"}
+{"id": 727, "field": "name", "en": "Notched Shortsword", "hash": "472514a572ebfad4", "src": "db2@1.60.1.70245"}
+{"id": 728, "field": "name", "en": "Recipe: Westfall Stew", "hash": "3b4d463cf6844480", "src": "db2@1.60.1.70245"}
+{"id": 728, "field": "description", "en": "Teaches you how to cook Westfall Stew.", "hash": "b604a91613c0674d", "src": "db2@1.60.1.70245"}
+{"id": 729, "field": "name", "en": "Stringy Vulture Meat", "hash": "e021adc41987a1c8", "src": "db2@1.60.1.70245"}
+{"id": 730, "field": "name", "en": "Murloc Eye", "hash": "55c6816338668c43", "src": "db2@1.60.1.70245"}
+{"id": 731, "field": "name", "en": "Goretusk Snout", "hash": "032fc577efc34e0f", "src": "db2@1.60.1.70245"}
+{"id": 732, "field": "name", "en": "Okra", "hash": "0ab2324f4be6d2ec", "src": "db2@1.60.1.70245"}
+{"id": 733, "field": "name", "en": "Westfall Stew", "hash": "b05bfdafe69410b2", "src": "db2@1.60.1.70245"}
+{"id": 733, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $1248688s2% movement speed while in Westfall for $1248688d. $@spelldesc1243969", "hash": "7438018ee5544e2e", "src": "db2@1.60.1.70245"}
+{"id": 734, "field": "name", "en": "Deprecated Malakai's Medallion", "hash": "c7e3d19404eda36a", "src": "db2@1.60.1.70245"}
+{"id": 734, "field": "description", "en": "Upon this iron disk are stamped the words: \"Footman Malakai Stone\"", "hash": "0eeb93c943b2270e", "src": "db2@1.60.1.70245"}
+{"id": 735, "field": "name", "en": "Rolf and Malakai's Medallions", "hash": "21b0c033d4062bb9", "src": "db2@1.60.1.70245"}
+{"id": 737, "field": "name", "en": "Holy Spring Water", "hash": "998294d7ba80c73a", "src": "db2@1.60.1.70245"}
+{"id": 737, "field": "description", "en": "Blessing from the Holy Spring of Stranglethorn Vale.", "hash": "8e06d3c542d0d95a", "src": "db2@1.60.1.70245"}
+{"id": 738, "field": "name", "en": "Sack of Barley", "hash": "fc1a3d812fbf9086", "src": "db2@1.60.1.70245"}
+{"id": 739, "field": "name", "en": "Sack of Corn", "hash": "9ad7d14f29a69597", "src": "db2@1.60.1.70245"}
+{"id": 740, "field": "name", "en": "Sack of Rye", "hash": "3bd2c9318fa7fe2c", "src": "db2@1.60.1.70245"}
+{"id": 741, "field": "name", "en": "Deprecated Copper Ingot", "hash": "12741e9b1d0aaf51", "src": "db2@1.60.1.70245"}
+{"id": 742, "field": "name", "en": "A Sycamore Branch", "hash": "4cd325436879d424", "src": "db2@1.60.1.70245"}
+{"id": 743, "field": "name", "en": "Bundle of Charred Oak", "hash": "d8fcbda7afb23933", "src": "db2@1.60.1.70245"}
+{"id": 744, "field": "name", "en": "Thunderbrew's Boot Flask", "hash": "32b48be235e78af9", "src": "db2@1.60.1.70245"}
+{"id": 744, "field": "description", "en": "Deals $12278s1 Fire damage every $m1 sec for $d1 to all enemies in front of you. Deals $s2 times as much damage to Plants. Gets you quite drunk too!", "hash": "a4002cecebcedf0a", "src": "db2@1.60.1.70245"}
+{"id": 745, "field": "name", "en": "Marshal McBride's Documents", "hash": "27f2e0216660ab79", "src": "db2@1.60.1.70245"}
+{"id": 746, "field": "name", "en": "Lord Brandon's Tabard (Test)", "hash": "f386de969977aeac", "src": "db2@1.60.1.70245"}
+{"id": 748, "field": "name", "en": "Stormwind Armor Marker", "hash": "a1c1384af319a42a", "src": "db2@1.60.1.70245"}
+{"id": 750, "field": "name", "en": "Tough Wolf Meat", "hash": "d686ba26671c29ff", "src": "db2@1.60.1.70245"}
+{"id": 751, "field": "name", "en": "Deprecated Wolf Femur", "hash": "f38fcb842768f200", "src": "db2@1.60.1.70245"}
+{"id": 752, "field": "name", "en": "Red Burlap Bandana", "hash": "fc6fd7646d96f1ab", "src": "db2@1.60.1.70245"}
+{"id": 753, "field": "name", "en": "Dragonmaw Shortsword", "hash": "a04f40f3f52340a9", "src": "db2@1.60.1.70245"}
+{"id": 754, "field": "name", "en": "Shortsword of Vengeance", "hash": "cd06b36cbf824fb2", "src": "db2@1.60.1.70245"}
+{"id": 754, "field": "description", "en": "Smites an enemy for $s1 Holy damage.", "hash": "d4148e08a25e6bdc", "src": "db2@1.60.1.70245"}
+{"id": 755, "field": "name", "en": "Melted Candle", "hash": "3413140e4f842db6", "src": "db2@1.60.1.70245"}
+{"id": 756, "field": "name", "en": "Tunnel Pick", "hash": "eb61de90f4c94c3a", "src": "db2@1.60.1.70245"}
+{"id": 761, "field": "name", "en": "Deprecated Elwynn Trout", "hash": "dc5f9cc2670b0974", "src": "db2@1.60.1.70245"}
+{"id": 761, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
+{"id": 763, "field": "name", "en": "Ice-covered Bracers", "hash": "ccf4ebacbb0f39d3", "src": "db2@1.60.1.70245"}
+{"id": 765, "field": "name", "en": "Silverleaf", "hash": "d2b0c7f2e7c2bf39", "src": "db2@1.60.1.70245"}
+{"id": 766, "field": "name", "en": "Flanged Mace", "hash": "d74e6891cca3ac2c", "src": "db2@1.60.1.70245"}
+{"id": 767, "field": "name", "en": "Long Bo Staff", "hash": "2ad0c8a6a08c26c4", "src": "db2@1.60.1.70245"}
+{"id": 768, "field": "name", "en": "Lumberjack Axe", "hash": "c53658321dd18718", "src": "db2@1.60.1.70245"}
+{"id": 769, "field": "name", "en": "Chunk of Boar Meat", "hash": "9155b2463d705bf1", "src": "db2@1.60.1.70245"}
+{"id": 770, "field": "name", "en": "Pointy Crocolisk Tooth", "hash": "87a7255804abeebb", "src": "db2@1.60.1.70245"}
+{"id": 771, "field": "name", "en": "Chipped Boar Tusk", "hash": "2b7c274fe6285c69", "src": "db2@1.60.1.70245"}
+{"id": 772, "field": "name", "en": "Large Candle", "hash": "d0a6278d0523f2c9", "src": "db2@1.60.1.70245"}
+{"id": 773, "field": "name", "en": "Gold Dust", "hash": "1f4e8de2bc1fa92a", "src": "db2@1.60.1.70245"}
+{"id": 774, "field": "name", "en": "Malachite", "hash": "fbf67721dc46bece", "src": "db2@1.60.1.70245"}
+{"id": 776, "field": "name", "en": "Vendetta", "hash": "667d6b3fe9022471", "src": "db2@1.60.1.70245"}
+{"id": 777, "field": "name", "en": "Prowler Teeth", "hash": "7ec01e9e29216553", "src": "db2@1.60.1.70245"}
+{"id": 778, "field": "name", "en": "Kobold Excavation Pick", "hash": "326716ecbaf50d0e", "src": "db2@1.60.1.70245"}
+{"id": 779, "field": "name", "en": "Shiny Seashell", "hash": "13c87f8d2b5d0e1b", "src": "db2@1.60.1.70245"}
+{"id": 780, "field": "name", "en": "Torn Murloc Fin", "hash": "5727970eafb8a448", "src": "db2@1.60.1.70245"}
+{"id": 781, "field": "name", "en": "Stone Gnoll Hammer", "hash": "33d9ad124a150602", "src": "db2@1.60.1.70245"}
+{"id": 782, "field": "name", "en": "Painted Gnoll Armband", "hash": "0a5349199c79f936", "src": "db2@1.60.1.70245"}
+{"id": 783, "field": "name", "en": "Light Hide", "hash": "5ac2400c3559dc96", "src": "db2@1.60.1.70245"}
+{"id": 784, "field": "name", "en": "Deprecated Tiny Flame Sac", "hash": "c2ae88aeb5950306", "src": "db2@1.60.1.70245"}
+{"id": 785, "field": "name", "en": "Mageroyal", "hash": "6acc1c5ca3938003", "src": "db2@1.60.1.70245"}
+{"id": 786, "field": "name", "en": "Deprecated Pure Copper Ingot", "hash": "2db6ecd4cb0a3bfb", "src": "db2@1.60.1.70245"}
+{"id": 787, "field": "name", "en": "Slitherskin Mackerel", "hash": "ed7f2245b83e52f5", "src": "db2@1.60.1.70245"}
+{"id": 787, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "5272b34282101ab8", "src": "db2@1.60.1.70245"}
+{"id": 788, "field": "name", "en": "Test Fire Sword", "hash": "a2d6cada6aaa73a4", "src": "db2@1.60.1.70245"}
+{"id": 789, "field": "name", "en": "Stout Battlehammer", "hash": "28eea2424e2b2074", "src": "db2@1.60.1.70245"}
+{"id": 790, "field": "name", "en": "Forester's Axe", "hash": "2178167059c2dadf", "src": "db2@1.60.1.70245"}
+{"id": 791, "field": "name", "en": "Gnarled Ash Staff", "hash": "c54b99b7f0ec2f51", "src": "db2@1.60.1.70245"}
+{"id": 792, "field": "name", "en": "Knitted Sandals", "hash": "61e10a9ba475cf99", "src": "db2@1.60.1.70245"}
+{"id": 793, "field": "name", "en": "Knitted Gloves", "hash": "0f3ce2f43f253f77", "src": "db2@1.60.1.70245"}
+{"id": 794, "field": "name", "en": "Knitted Pants", "hash": "7972a3f8ba0bd7fd", "src": "db2@1.60.1.70245"}
+{"id": 795, "field": "name", "en": "Knitted Tunic", "hash": "c25787a741d387d5", "src": "db2@1.60.1.70245"}
+{"id": 796, "field": "name", "en": "Rough Leather Boots", "hash": "401a23b0b5f8b16b", "src": "db2@1.60.1.70245"}
+{"id": 797, "field": "name", "en": "Rough Leather Gloves", "hash": "824d1a380ff102d8", "src": "db2@1.60.1.70245"}
+{"id": 798, "field": "name", "en": "Rough Leather Pants", "hash": "33f99aa027240dd9", "src": "db2@1.60.1.70245"}
+{"id": 799, "field": "name", "en": "Rough Leather Vest", "hash": "320f50e5c59cc0af", "src": "db2@1.60.1.70245"}
+{"id": 804, "field": "name", "en": "Large Blue Sack", "hash": "46950f36ffbd1452", "src": "db2@1.60.1.70245"}
+{"id": 805, "field": "name", "en": "Small Red Pouch", "hash": "88adc1d0de6185f1", "src": "db2@1.60.1.70245"}
+{"id": 806, "field": "name", "en": "Deprecated Brown Leather Satchel", "hash": "677d4347da8a49bf", "src": "db2@1.60.1.70245"}
+{"id": 807, "field": "name", "en": "Deprecated Iron Ingot", "hash": "dfa12ff4e053943e", "src": "db2@1.60.1.70245"}
+{"id": 808, "field": "name", "en": "Deprecated Malachite", "hash": "1714ff4428260f9b", "src": "db2@1.60.1.70245"}
+{"id": 810, "field": "name", "en": "Hammer of the Northern Wind", "hash": "66d98aaed7a5b722", "src": "db2@1.60.1.70245"}
+{"id": 810, "field": "description", "en": "Launches a bolt of frost at the enemy causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "013c5fa460146bb6", "src": "db2@1.60.1.70245"}
+{"id": 812, "field": "name", "en": "Glowing Brightwood Staff", "hash": "a664a9b87b5e410a", "src": "db2@1.60.1.70245"}
+{"id": 813, "field": "name", "en": "Broken Cog", "hash": "d114ba756c94ffcc", "src": "db2@1.60.1.70245"}
+{"id": 814, "field": "name", "en": "Flask of Oil", "hash": "31ba8f4f7021f585", "src": "db2@1.60.1.70245"}
+{"id": 816, "field": "name", "en": "Small Hand Blade", "hash": "cc6eb59d5bf7a9e2", "src": "db2@1.60.1.70245"}
+{"id": 818, "field": "name", "en": "Tigerseye", "hash": "007596e89447995f", "src": "db2@1.60.1.70245"}
+{"id": 820, "field": "name", "en": "Slicer Blade", "hash": "104e5402534d514a", "src": "db2@1.60.1.70245"}
+{"id": 821, "field": "name", "en": "Riverpaw Leather Vest", "hash": "bcd7145a75d9eff6", "src": "db2@1.60.1.70245"}
+{"id": 823, "field": "name", "en": "Deprecated Horse Summoning (Mount)", "hash": "9d5f4b505e8184ff", "src": "db2@1.60.1.70245"}
+{"id": 823, "field": "description", "en": "Summons and dismisses a rideable brown horse.", "hash": "53702babe7730ebc", "src": "db2@1.60.1.70245"}
+{"id": 826, "field": "name", "en": "Brutish Riverpaw Axe", "hash": "20a5380ce0a9a77d", "src": "db2@1.60.1.70245"}
+{"id": 827, "field": "name", "en": "Wicked Blackjack", "hash": "025a2b393e2155c0", "src": "db2@1.60.1.70245"}
+{"id": 828, "field": "name", "en": "Small Blue Pouch", "hash": "a013eedb6925055e", "src": "db2@1.60.1.70245"}
+{"id": 829, "field": "name", "en": "Red Leather Bandana", "hash": "4582ad2d278441d6", "src": "db2@1.60.1.70245"}
+{"id": 832, "field": "name", "en": "Silver Defias Belt", "hash": "df0534e8da6365bf", "src": "db2@1.60.1.70245"}
+{"id": 835, "field": "name", "en": "Large Rope Net", "hash": "b2003ef492faed72", "src": "db2@1.60.1.70245"}
+{"id": 835, "field": "description", "en": "Renders a target unable to move for $d.", "hash": "73de166ed1b6b8c8", "src": "db2@1.60.1.70245"}
+{"id": 836, "field": "name", "en": "Deprecated Heavy Net", "hash": "b01ac06e6b34db19", "src": "db2@1.60.1.70245"}
+{"id": 837, "field": "name", "en": "Heavy Weave Armor", "hash": "2f3ca85296d6afed", "src": "db2@1.60.1.70245"}
+{"id": 838, "field": "name", "en": "Heavy Weave Pants", "hash": "3443756446a5d69f", "src": "db2@1.60.1.70245"}
+{"id": 839, "field": "name", "en": "Heavy Weave Gloves", "hash": "a8180c847852b58a", "src": "db2@1.60.1.70245"}
+{"id": 840, "field": "name", "en": "Heavy Weave Shoes", "hash": "69dcf2f0c53366ce", "src": "db2@1.60.1.70245"}
+{"id": 841, "field": "name", "en": "Furlbrow's Pocket Watch", "hash": "4a7704459277ca79", "src": "db2@1.60.1.70245"}
+{"id": 842, "field": "name", "en": "Deprecated Wolf Summoning (Mount)", "hash": "26a2db12a8914d97", "src": "db2@1.60.1.70245"}
+{"id": 842, "field": "description", "en": "Summons and dismisses a rideable gray wolf.", "hash": "a7f601eb4d791a24", "src": "db2@1.60.1.70245"}
+{"id": 843, "field": "name", "en": "Tanned Leather Boots", "hash": "952b163ecc489be3", "src": "db2@1.60.1.70245"}
+{"id": 844, "field": "name", "en": "Tanned Leather Gloves", "hash": "09f939be5992cd87", "src": "db2@1.60.1.70245"}
+{"id": 845, "field": "name", "en": "Tanned Leather Pants", "hash": "890a8d2e3d73f851", "src": "db2@1.60.1.70245"}
+{"id": 846, "field": "name", "en": "Tanned Leather Jerkin", "hash": "820a29d7b253c1b2", "src": "db2@1.60.1.70245"}
+{"id": 847, "field": "name", "en": "Chainmail Armor", "hash": "54d501cac40bee81", "src": "db2@1.60.1.70245"}
+{"id": 848, "field": "name", "en": "Chainmail Pants", "hash": "59dbcedc73db1533", "src": "db2@1.60.1.70245"}
+{"id": 849, "field": "name", "en": "Chainmail Boots", "hash": "65fc57ec02afb8d6", "src": "db2@1.60.1.70245"}
+{"id": 850, "field": "name", "en": "Chainmail Gloves", "hash": "e50dd54ba6b3014f", "src": "db2@1.60.1.70245"}
+{"id": 851, "field": "name", "en": "Cutlass", "hash": "410459a9d5907895", "src": "db2@1.60.1.70245"}
+{"id": 852, "field": "name", "en": "Mace", "hash": "0a6af11609626728", "src": "db2@1.60.1.70245"}
+{"id": 853, "field": "name", "en": "Hatchet", "hash": "20f902f545e0a0be", "src": "db2@1.60.1.70245"}
+{"id": 854, "field": "name", "en": "Quarter Staff", "hash": "e2e4d0106cf7a10e", "src": "db2@1.60.1.70245"}
+{"id": 855, "field": "name", "en": "Deprecated White Leather Satchel", "hash": "37fdf32282ab64be", "src": "db2@1.60.1.70245"}
+{"id": 856, "field": "name", "en": "Blue Leather Bag", "hash": "8127b9440a9ec7c9", "src": "db2@1.60.1.70245"}
+{"id": 857, "field": "name", "en": "Large Red Sack", "hash": "247a01bbca932ab0", "src": "db2@1.60.1.70245"}
+{"id": 858, "field": "name", "en": "Lesser Healing Potion", "hash": "ae62462ad4c3e38d", "src": "db2@1.60.1.70245"}
+{"id": 858, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70245"}
+{"id": 859, "field": "name", "en": "Fine Cloth Shirt", "hash": "5b49b74920add9ea", "src": "db2@1.60.1.70245"}
+{"id": 860, "field": "name", "en": "Cavalier's Boots", "hash": "21ba374a0ed0358d", "src": "db2@1.60.1.70245"}
+{"id": 863, "field": "name", "en": "Gloom Reaper", "hash": "29752f5146aa468f", "src": "db2@1.60.1.70245"}
+{"id": 864, "field": "name", "en": "Knightly Longsword", "hash": "2388b12bd22546d0", "src": "db2@1.60.1.70245"}
+{"id": 865, "field": "name", "en": "Leaden Mace", "hash": "82354ae684c2d503", "src": "db2@1.60.1.70245"}
+{"id": 866, "field": "name", "en": "Monk's Staff", "hash": "e9d565d1d88446be", "src": "db2@1.60.1.70245"}
+{"id": 867, "field": "name", "en": "Gloves of Holy Might", "hash": "52369f130ff1d320", "src": "db2@1.60.1.70245"}
 {"id": 867, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\n+$s1 Attack Power.\n+$s1 Attack Power when fighting Undead.", "hash": "ba831a34c59bcbb3", "src": "wago@1.15.9.69722"}
-{"id": 868, "field": "name", "en": "Ardent Custodian", "hash": "50369906d83daa9e", "src": "db2@1.60.1.70170"}
+{"id": 868, "field": "name", "en": "Ardent Custodian", "hash": "50369906d83daa9e", "src": "db2@1.60.1.70245"}
 {"id": 868, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
-{"id": 870, "field": "name", "en": "Fiery War Axe", "hash": "400c8d82f1751bf5", "src": "db2@1.60.1.70170"}
-{"id": 870, "field": "description", "en": "Hurls a fiery ball that causes $s1 Fire damage and an additional $o2 damage over $d.", "hash": "a6bc16f5251f44d2", "src": "db2@1.60.1.70170"}
-{"id": 871, "field": "name", "en": "Flurry Axe", "hash": "fbc42cbf2f795a60", "src": "db2@1.60.1.70170"}
-{"id": 871, "field": "description", "en": "Grants $s1 extra attack on your next swing.", "hash": "6d2e683c4954a709", "src": "db2@1.60.1.70170"}
-{"id": 872, "field": "name", "en": "Rockslicer", "hash": "05d533927f4bc666", "src": "db2@1.60.1.70170"}
-{"id": 872, "field": "description", "en": "Slice open and gather from a target Copper, Tin, Silver, or Iron Vein (does not require Mining).", "hash": "70f45b4f0ab28b8a", "src": "db2@1.60.1.70170"}
-{"id": 873, "field": "name", "en": "Staff of Jordan", "hash": "ea680842eaa911ea", "src": "db2@1.60.1.70170"}
+{"id": 869, "field": "name", "en": "Dazzling Longsword", "hash": "34ce4ca4f4a2f796", "src": "db2@1.60.1.70245"}
+{"id": 869, "field": "description", "en": "Decrease the armor of the target by $s1 for $d.  While affected, the target cannot stealth or turn invisible.", "hash": "f183631b15142198", "src": "db2@1.60.1.70245"}
+{"id": 870, "field": "name", "en": "Fiery War Axe", "hash": "400c8d82f1751bf5", "src": "db2@1.60.1.70245"}
+{"id": 870, "field": "description", "en": "Hurls a fiery ball that causes $s1 Fire damage and an additional $o2 damage over $d.", "hash": "a6bc16f5251f44d2", "src": "db2@1.60.1.70245"}
+{"id": 871, "field": "name", "en": "Flurry Axe", "hash": "fbc42cbf2f795a60", "src": "db2@1.60.1.70245"}
+{"id": 871, "field": "description", "en": "Grants $s1 extra attack on your next swing.", "hash": "6d2e683c4954a709", "src": "db2@1.60.1.70245"}
+{"id": 872, "field": "name", "en": "Rockslicer", "hash": "05d533927f4bc666", "src": "db2@1.60.1.70245"}
+{"id": 872, "field": "description", "en": "Slice open and gather from a target Copper, Tin, Silver, or Iron Vein (does not require Mining).", "hash": "70f45b4f0ab28b8a", "src": "db2@1.60.1.70245"}
+{"id": 873, "field": "name", "en": "Staff of Jordan", "hash": "ea680842eaa911ea", "src": "db2@1.60.1.70245"}
 {"id": 873, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 875, "field": "name", "en": "Brown Horse Summoning", "hash": "04072c3cb6409d7a", "src": "db2@1.60.1.70170"}
+{"id": 875, "field": "name", "en": "Brown Horse Summoning", "hash": "04072c3cb6409d7a", "src": "db2@1.60.1.70245"}
 {"id": 875, "field": "description", "en": "Summons and dismisses a rideable brown horse.", "hash": "53702babe7730ebc", "src": "wago@1.15.9.69722"}
-{"id": 876, "field": "name", "en": "Worn Wooden Buckler", "hash": "7c55ebdd814b7bb8", "src": "db2@1.60.1.70170"}
-{"id": 877, "field": "name", "en": "Deprecated Old Skull", "hash": "dc8349448e3fce1d", "src": "db2@1.60.1.70170"}
-{"id": 878, "field": "name", "en": "Fist-sized Spinneret", "hash": "ddd29bd64b376b44", "src": "db2@1.60.1.70170"}
-{"id": 880, "field": "name", "en": "Staff of Horrors", "hash": "8bbac1e9ffdc680a", "src": "db2@1.60.1.70170"}
-{"id": 880, "field": "description", "en": "Damage caused by the target is reduced by $s1 for $d.", "hash": "ca23969fa0ad789f", "src": "db2@1.60.1.70170"}
-{"id": 883, "field": "name", "en": "Deprecated Fire Eyed Skull", "hash": "f6b563024f24170a", "src": "db2@1.60.1.70170"}
-{"id": 884, "field": "name", "en": "Ghoul Rib", "hash": "de4b1fa0b1358e90", "src": "db2@1.60.1.70170"}
-{"id": 885, "field": "name", "en": "Black Metal Axe", "hash": "dd5ff590ebc20d65", "src": "db2@1.60.1.70170"}
-{"id": 886, "field": "name", "en": "Black Metal Shortsword", "hash": "ad6a670fb57a0a55", "src": "db2@1.60.1.70170"}
-{"id": 887, "field": "name", "en": "Pound of Flesh", "hash": "02d1c04135e510a1", "src": "db2@1.60.1.70170"}
-{"id": 888, "field": "name", "en": "Naga Battle Gloves", "hash": "89ae3454542c3430", "src": "db2@1.60.1.70170"}
-{"id": 889, "field": "name", "en": "A Dusty Unsent Letter", "hash": "beefab38e2ac00d2", "src": "db2@1.60.1.70170"}
-{"id": 889, "field": "description", "en": "This dusty letter from long ago was never sent.", "hash": "8bdee477e7b25f17", "src": "db2@1.60.1.70170"}
-{"id": 890, "field": "name", "en": "Twisted Chanter's Staff", "hash": "80ffe30ea045100a", "src": "db2@1.60.1.70170"}
-{"id": 892, "field": "name", "en": "Gnoll Casting Gloves", "hash": "deab6b65a319eb7f", "src": "db2@1.60.1.70170"}
+{"id": 876, "field": "name", "en": "Worn Wooden Buckler", "hash": "7c55ebdd814b7bb8", "src": "db2@1.60.1.70245"}
+{"id": 877, "field": "name", "en": "Deprecated Old Skull", "hash": "dc8349448e3fce1d", "src": "db2@1.60.1.70245"}
+{"id": 878, "field": "name", "en": "Fist-sized Spinneret", "hash": "ddd29bd64b376b44", "src": "db2@1.60.1.70245"}
+{"id": 880, "field": "name", "en": "Staff of Horrors", "hash": "8bbac1e9ffdc680a", "src": "db2@1.60.1.70245"}
+{"id": 880, "field": "description", "en": "Damage caused by the target is reduced by $s1 for $d.", "hash": "ca23969fa0ad789f", "src": "db2@1.60.1.70245"}
+{"id": 883, "field": "name", "en": "Deprecated Fire Eyed Skull", "hash": "f6b563024f24170a", "src": "db2@1.60.1.70245"}
+{"id": 884, "field": "name", "en": "Ghoul Rib", "hash": "de4b1fa0b1358e90", "src": "db2@1.60.1.70245"}
+{"id": 885, "field": "name", "en": "Black Metal Axe", "hash": "dd5ff590ebc20d65", "src": "db2@1.60.1.70245"}
+{"id": 886, "field": "name", "en": "Black Metal Shortsword", "hash": "ad6a670fb57a0a55", "src": "db2@1.60.1.70245"}
+{"id": 887, "field": "name", "en": "Pound of Flesh", "hash": "02d1c04135e510a1", "src": "db2@1.60.1.70245"}
+{"id": 888, "field": "name", "en": "Naga Battle Gloves", "hash": "89ae3454542c3430", "src": "db2@1.60.1.70245"}
+{"id": 889, "field": "name", "en": "A Dusty Unsent Letter", "hash": "beefab38e2ac00d2", "src": "db2@1.60.1.70245"}
+{"id": 889, "field": "description", "en": "This dusty letter from long ago was never sent.", "hash": "8bdee477e7b25f17", "src": "db2@1.60.1.70245"}
+{"id": 890, "field": "name", "en": "Twisted Chanter's Staff", "hash": "80ffe30ea045100a", "src": "db2@1.60.1.70245"}
+{"id": 892, "field": "name", "en": "Gnoll Casting Gloves", "hash": "deab6b65a319eb7f", "src": "db2@1.60.1.70245"}
 {"id": 892, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 893, "field": "name", "en": "Dire Wolf Fang", "hash": "14e377d90e75266e", "src": "db2@1.60.1.70170"}
-{"id": 894, "field": "name", "en": "Deprecated Ravager Claw", "hash": "d12c9ab351729eee", "src": "db2@1.60.1.70170"}
-{"id": 895, "field": "name", "en": "Worgen Skull", "hash": "ed53ae31ca834220", "src": "db2@1.60.1.70170"}
-{"id": 896, "field": "name", "en": "Worgen Fang", "hash": "233c28260026dbab", "src": "db2@1.60.1.70170"}
-{"id": 897, "field": "name", "en": "Madwolf Bracers", "hash": "d11be95f864166b8", "src": "db2@1.60.1.70170"}
-{"id": 898, "field": "name", "en": "Deprecated Broken Venomweb Fang", "hash": "bfeef0e97c62347c", "src": "db2@1.60.1.70170"}
-{"id": 899, "field": "name", "en": "Venom Web Fang", "hash": "1ed1b4003fc43c2e", "src": "db2@1.60.1.70170"}
-{"id": 899, "field": "description", "en": "Poisons target for $s1 Nature damage every $t1 sec for $d.", "hash": "c6bab04662dda29a", "src": "db2@1.60.1.70170"}
-{"id": 900, "field": "name", "en": "Deprecated Nightmare Summoning (Mount)", "hash": "4a529907aa312297", "src": "db2@1.60.1.70170"}
-{"id": 901, "field": "name", "en": "Deptecated White Stallion Summoning (Mount)", "hash": "398afc491f397014", "src": "db2@1.60.1.70170"}
-{"id": 901, "field": "description", "en": "Summons and dismisses a rideable white stallion.", "hash": "dbc5e32b2ea2ed91", "src": "db2@1.60.1.70170"}
-{"id": 902, "field": "name", "en": "Deprecated Palomino Summoning (Mount)", "hash": "5be6958ae3c00715", "src": "db2@1.60.1.70170"}
-{"id": 902, "field": "description", "en": "Summons and dismisses a rideable palomino.", "hash": "9f4e989217f60c31", "src": "db2@1.60.1.70170"}
-{"id": 903, "field": "name", "en": "Deprecated Pinto Summoning (Mount)", "hash": "0519cf3de2177e8f", "src": "db2@1.60.1.70170"}
-{"id": 903, "field": "description", "en": "Summons and dismisses a rideable pinto.", "hash": "9f0be1391e868fcc", "src": "db2@1.60.1.70170"}
-{"id": 906, "field": "name", "en": "Tan Leather Shoulderpads (Test)", "hash": "1f2757ecbe995ac8", "src": "db2@1.60.1.70170"}
-{"id": 907, "field": "name", "en": "Black Mail Shoulderpads of might (Test)", "hash": "607cc2b497fcdd22", "src": "db2@1.60.1.70170"}
-{"id": 908, "field": "name", "en": "Plate Shoulderpad (Test)", "hash": "23153f0972b2d244", "src": "db2@1.60.1.70170"}
-{"id": 909, "field": "name", "en": "Silver Mail Shoulderpads (Test)", "hash": "27e07f8f89a95ef8", "src": "db2@1.60.1.70170"}
-{"id": 910, "field": "name", "en": "An Undelivered Letter", "hash": "b39fbe03cf10e2ae", "src": "db2@1.60.1.70170"}
-{"id": 910, "field": "description", "en": "Weathered and old, this letter was never delivered.", "hash": "e06086ce249c0ed6", "src": "db2@1.60.1.70170"}
-{"id": 911, "field": "name", "en": "Ironwood Treebranch", "hash": "3653b9a5bb88677a", "src": "db2@1.60.1.70170"}
-{"id": 915, "field": "name", "en": "Red Silk Bandana", "hash": "f7f6dd958b021015", "src": "db2@1.60.1.70170"}
-{"id": 916, "field": "name", "en": "A Torn Journal Page", "hash": "c6bbac1b7ae4cf04", "src": "db2@1.60.1.70170"}
-{"id": 916, "field": "description", "en": "Only the bottom half of this journal page remains.", "hash": "92871145f1db6235", "src": "db2@1.60.1.70170"}
-{"id": 917, "field": "name", "en": "Deprecated Shadow Leather Armor", "hash": "b678e3a8e41033f4", "src": "db2@1.60.1.70170"}
-{"id": 918, "field": "name", "en": "Deviate Hide Pack", "hash": "3b4682f91e74e042", "src": "db2@1.60.1.70170"}
-{"id": 920, "field": "name", "en": "Wicked Spiked Mace", "hash": "79cb151c7cde1b37", "src": "db2@1.60.1.70170"}
-{"id": 921, "field": "name", "en": "A Faded Journal Page", "hash": "3c5831b5f995dcb4", "src": "db2@1.60.1.70170"}
-{"id": 921, "field": "description", "en": "Although most of the text is long faded, some words can still be read.", "hash": "45e1c71132614cd1", "src": "db2@1.60.1.70170"}
-{"id": 922, "field": "name", "en": "Dacian Falx", "hash": "0327e3bce1ff8a25", "src": "db2@1.60.1.70170"}
-{"id": 923, "field": "name", "en": "Longsword", "hash": "ce74628842f63290", "src": "db2@1.60.1.70170"}
-{"id": 924, "field": "name", "en": "Maul", "hash": "0a6afa530964a501", "src": "db2@1.60.1.70170"}
-{"id": 925, "field": "name", "en": "Flail", "hash": "db52342e1d188e80", "src": "db2@1.60.1.70170"}
-{"id": 926, "field": "name", "en": "Battle Axe", "hash": "b2c240e79d126bf4", "src": "db2@1.60.1.70170"}
-{"id": 927, "field": "name", "en": "Double Axe", "hash": "f94251f504ecdeda", "src": "db2@1.60.1.70170"}
-{"id": 928, "field": "name", "en": "Long Staff", "hash": "a26357366171e225", "src": "db2@1.60.1.70170"}
-{"id": 929, "field": "name", "en": "Healing Potion", "hash": "61b64dc74c0bc45e", "src": "db2@1.60.1.70170"}
-{"id": 929, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70170"}
-{"id": 930, "field": "name", "en": "Deprecated Deep Pocket Pouch", "hash": "07539c4742dc6ba5", "src": "db2@1.60.1.70170"}
-{"id": 931, "field": "name", "en": "Deprecated Heavy Brown Sack", "hash": "524421a73f79dee4", "src": "db2@1.60.1.70170"}
-{"id": 932, "field": "name", "en": "Fel Steed Saddlebags", "hash": "ae45295a8a11b6e2", "src": "db2@1.60.1.70170"}
-{"id": 933, "field": "name", "en": "Large Rucksack", "hash": "9cef0096ce24ac9a", "src": "db2@1.60.1.70170"}
-{"id": 934, "field": "name", "en": "Stalvan's Reaper", "hash": "b91cc4192a168b73", "src": "db2@1.60.1.70170"}
-{"id": 934, "field": "description", "en": "Lowers the Attack Power of the target by $s1 for $d.", "hash": "5dbdf7940a4333ac", "src": "db2@1.60.1.70170"}
-{"id": 935, "field": "name", "en": "Night Watch Shortsword", "hash": "a5382aec87363590", "src": "db2@1.60.1.70170"}
-{"id": 936, "field": "name", "en": "Midnight Mace", "hash": "e8db6e032e5d29fb", "src": "db2@1.60.1.70170"}
-{"id": 937, "field": "name", "en": "Black Duskwood Staff", "hash": "328e5ad45c782b72", "src": "db2@1.60.1.70170"}
-{"id": 937, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70170"}
-{"id": 938, "field": "name", "en": "Muddy Journal Pages", "hash": "3d96cb9e3d15f38f", "src": "db2@1.60.1.70170"}
-{"id": 938, "field": "description", "en": "Although the pages are covered in mud, some words can be read.", "hash": "3cb1a1a83931e013", "src": "db2@1.60.1.70170"}
-{"id": 939, "field": "name", "en": "A Bloodstained Journal Page", "hash": "ce43267f438c8fe5", "src": "db2@1.60.1.70170"}
-{"id": 939, "field": "description", "en": "Through thick blood a few words still remain legible.", "hash": "236359020611aaa9", "src": "db2@1.60.1.70170"}
-{"id": 941, "field": "name", "en": "Deprecated Speedstone", "hash": "600fd73d3c742916", "src": "db2@1.60.1.70170"}
-{"id": 945, "field": "name", "en": "Shadow Sword", "hash": "fc96dc46a726ca26", "src": "db2@1.60.1.70170"}
-{"id": 948, "field": "name", "en": "Nature Sword", "hash": "739d53093a46a47a", "src": "db2@1.60.1.70170"}
-{"id": 951, "field": "name", "en": "Tome of Whirlwind (TEST)", "hash": "c9506af230dd9dbc", "src": "db2@1.60.1.70170"}
-{"id": 954, "field": "name", "en": "Scroll of Strength", "hash": "db84dbf20a1cf307", "src": "db2@1.60.1.70170"}
-{"id": 954, "field": "description", "en": "Increases the target's Strength by $s1 for $d.", "hash": "62a781c2ecd71042", "src": "db2@1.60.1.70170"}
-{"id": 955, "field": "name", "en": "Scroll of Intellect", "hash": "9869f296fefa711f", "src": "db2@1.60.1.70170"}
-{"id": 955, "field": "description", "en": "Increases the target's Intellect by $s1 for $d.", "hash": "9663f4befa1ae208", "src": "db2@1.60.1.70170"}
-{"id": 956, "field": "name", "en": "Deprecated Area Trigger Flag - Jasperlode mine", "hash": "b0091c1df41e11ce", "src": "db2@1.60.1.70170"}
-{"id": 956, "field": "description", "en": "Your official \"I went to the Jasperlode Mine and all I got was this lousy shirt\" T-shirt", "hash": "f42652b6aaa0d98e", "src": "db2@1.60.1.70170"}
-{"id": 957, "field": "name", "en": "William's Shipment", "hash": "5fab5c7bcfcf72bb", "src": "db2@1.60.1.70170"}
-{"id": 957, "field": "description", "en": "There is a note attached.", "hash": "6b38f1ec10daa62f", "src": "db2@1.60.1.70170"}
-{"id": 958, "field": "name", "en": "Deprecated Area Trigger Flag - Darkhollow Mine", "hash": "205cbb949551df5b", "src": "db2@1.60.1.70170"}
-{"id": 958, "field": "description", "en": "Your official \"I went to the Darkhollow Mine and all I got was this lousy shirt\" T-shirt", "hash": "e1bbdb0634715a27", "src": "db2@1.60.1.70170"}
-{"id": 960, "field": "name", "en": "Deprecated Area Trigger Flag - Fargodeep", "hash": "4a17ff84ed8c958c", "src": "db2@1.60.1.70170"}
-{"id": 960, "field": "description", "en": "Your official \"I went to the Fargodeep Mine and all I got was this lousy shirt\" T-shirt", "hash": "8f49c5a0d60a4d6c", "src": "db2@1.60.1.70170"}
-{"id": 961, "field": "name", "en": "Healing Herb", "hash": "bc17c6683aa15ccf", "src": "db2@1.60.1.70170"}
-{"id": 961, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70170"}
-{"id": 962, "field": "name", "en": "Pork Belly Pie", "hash": "a1236edef6327d08", "src": "db2@1.60.1.70170"}
-{"id": 964, "field": "name", "en": "Deprecated Red Linen Shirt", "hash": "f7eac9b2f33f795b", "src": "db2@1.60.1.70170"}
-{"id": 965, "field": "name", "en": "Deprecated Red Linen Sack", "hash": "13791b83d071dae9", "src": "db2@1.60.1.70170"}
-{"id": 966, "field": "name", "en": "Tome of Frost Shield", "hash": "b5c2553a4b465317", "src": "db2@1.60.1.70170"}
-{"id": 966, "field": "description", "en": "Teaches Frost Shield (Rank 1).", "hash": "7d708ee37022e111", "src": "db2@1.60.1.70170"}
-{"id": 967, "field": "name", "en": "Tome of Frost Ward", "hash": "5eec3c8ef8d66af3", "src": "db2@1.60.1.70170"}
-{"id": 967, "field": "description", "en": "Teaches Frost Ward (Rank 5).", "hash": "60abe3c4657db838", "src": "db2@1.60.1.70170"}
-{"id": 968, "field": "name", "en": "Tome of Fire Blast", "hash": "9bef916ded19efac", "src": "db2@1.60.1.70170"}
-{"id": 968, "field": "description", "en": "Teaches Fire Blast (Rank 1).", "hash": "61157833175a8e6f", "src": "db2@1.60.1.70170"}
-{"id": 973, "field": "name", "en": "Tome of Fireball II", "hash": "d81233804245a6e1", "src": "db2@1.60.1.70170"}
-{"id": 973, "field": "description", "en": "Teaches Fireball (Rank 2).", "hash": "362171a4da7ca4cb", "src": "db2@1.60.1.70170"}
-{"id": 974, "field": "name", "en": "Tome of Frost Armor II", "hash": "877a5c4553398888", "src": "db2@1.60.1.70170"}
-{"id": 974, "field": "description", "en": "Teaches Frost Armor (Rank 2).", "hash": "5017e5c9834164df", "src": "db2@1.60.1.70170"}
-{"id": 975, "field": "name", "en": "Tome of Chains of Ice", "hash": "dc6ecde19bd3cc93", "src": "db2@1.60.1.70170"}
-{"id": 975, "field": "description", "en": "Teaches Chains of Ice (Rank 1).", "hash": "750388c0b0eccc5b", "src": "db2@1.60.1.70170"}
-{"id": 976, "field": "name", "en": "Tome of Remove Curse", "hash": "d4823723514e4691", "src": "db2@1.60.1.70170"}
-{"id": 976, "field": "description", "en": "Teaches Remove Curse.", "hash": "475687369ab9ff5c", "src": "db2@1.60.1.70170"}
-{"id": 980, "field": "name", "en": "Tome of Frost Shield II", "hash": "d282596a1717425c", "src": "db2@1.60.1.70170"}
-{"id": 980, "field": "description", "en": "Teaches Frost Shield (Rank 2).", "hash": "7d70d1ec741b24d2", "src": "db2@1.60.1.70170"}
-{"id": 981, "field": "name", "en": "Bernice's Necklace", "hash": "c090a31ccbc9fe08", "src": "db2@1.60.1.70170"}
-{"id": 983, "field": "name", "en": "Red Linen Sash", "hash": "976b2f73aaf16b61", "src": "db2@1.60.1.70170"}
-{"id": 985, "field": "name", "en": "Tome of Khadgar's Unlocking", "hash": "9bbb9fb6d88935b2", "src": "db2@1.60.1.70170"}
-{"id": 985, "field": "description", "en": "Teaches Khadgar's Unlocking (Rank 1).", "hash": "702e6a52cadca5d3", "src": "db2@1.60.1.70170"}
-{"id": 986, "field": "name", "en": "Tome of Frostbolt II", "hash": "15eac103c45a3cbe", "src": "db2@1.60.1.70170"}
-{"id": 986, "field": "description", "en": "Teaches Frostbolt (Rank 2).", "hash": "1f69ef5eb31c0c81", "src": "db2@1.60.1.70170"}
-{"id": 989, "field": "name", "en": "Tome of Frost Nova", "hash": "5dbb2ea237c30ac7", "src": "db2@1.60.1.70170"}
-{"id": 989, "field": "description", "en": "Teaches Frost Nova (Rank 1).", "hash": "60fe584fdb4bc2b5", "src": "db2@1.60.1.70170"}
-{"id": 992, "field": "name", "en": "Tome of Fireball III", "hash": "91505cefae6d774a", "src": "db2@1.60.1.70170"}
-{"id": 992, "field": "description", "en": "Teaches Fireball (Rank 3).", "hash": "3621b4adde74e88c", "src": "db2@1.60.1.70170"}
-{"id": 994, "field": "name", "en": "Tome of Ice Armor", "hash": "5519363b999f9057", "src": "db2@1.60.1.70170"}
-{"id": 994, "field": "description", "en": "Teaches Ice Armor (Rank 1).", "hash": "b602fe5cb1f165dc", "src": "db2@1.60.1.70170"}
-{"id": 996, "field": "name", "en": "Ring of Righteous Flame (TEST)", "hash": "4e875fa70915c40f", "src": "db2@1.60.1.70170"}
-{"id": 996, "field": "description", "en": "Hurls a fiery ball that causes $s1 Fire damage and an additional $o2 Fire damage over $d.", "hash": "dbc51345ec8b892d", "src": "db2@1.60.1.70170"}
-{"id": 997, "field": "name", "en": "Fire Sword of Crippling", "hash": "ddc267153b93991d", "src": "db2@1.60.1.70170"}
-{"id": 997, "field": "description", "en": "Cripples the target, reducing movement speed by $s3%, increasing time between melee attacks by $s1% and increasing time between ranged attacks by $s2%.  Lasts $d.", "hash": "8eaafae90b6a6d99", "src": "db2@1.60.1.70170"}
+{"id": 893, "field": "name", "en": "Dire Wolf Fang", "hash": "14e377d90e75266e", "src": "db2@1.60.1.70245"}
+{"id": 894, "field": "name", "en": "Deprecated Ravager Claw", "hash": "d12c9ab351729eee", "src": "db2@1.60.1.70245"}
+{"id": 895, "field": "name", "en": "Worgen Skull", "hash": "ed53ae31ca834220", "src": "db2@1.60.1.70245"}
+{"id": 896, "field": "name", "en": "Worgen Fang", "hash": "233c28260026dbab", "src": "db2@1.60.1.70245"}
+{"id": 897, "field": "name", "en": "Madwolf Bracers", "hash": "d11be95f864166b8", "src": "db2@1.60.1.70245"}
+{"id": 898, "field": "name", "en": "Deprecated Broken Venomweb Fang", "hash": "bfeef0e97c62347c", "src": "db2@1.60.1.70245"}
+{"id": 899, "field": "name", "en": "Venom Web Fang", "hash": "1ed1b4003fc43c2e", "src": "db2@1.60.1.70245"}
+{"id": 899, "field": "description", "en": "Poisons target for $s1 Nature damage every $t1 sec for $d.", "hash": "c6bab04662dda29a", "src": "db2@1.60.1.70245"}
+{"id": 900, "field": "name", "en": "Deprecated Nightmare Summoning (Mount)", "hash": "4a529907aa312297", "src": "db2@1.60.1.70245"}
+{"id": 901, "field": "name", "en": "Deptecated White Stallion Summoning (Mount)", "hash": "398afc491f397014", "src": "db2@1.60.1.70245"}
+{"id": 901, "field": "description", "en": "Summons and dismisses a rideable white stallion.", "hash": "dbc5e32b2ea2ed91", "src": "db2@1.60.1.70245"}
+{"id": 902, "field": "name", "en": "Deprecated Palomino Summoning (Mount)", "hash": "5be6958ae3c00715", "src": "db2@1.60.1.70245"}
+{"id": 902, "field": "description", "en": "Summons and dismisses a rideable palomino.", "hash": "9f4e989217f60c31", "src": "db2@1.60.1.70245"}
+{"id": 903, "field": "name", "en": "Deprecated Pinto Summoning (Mount)", "hash": "0519cf3de2177e8f", "src": "db2@1.60.1.70245"}
+{"id": 903, "field": "description", "en": "Summons and dismisses a rideable pinto.", "hash": "9f0be1391e868fcc", "src": "db2@1.60.1.70245"}
+{"id": 906, "field": "name", "en": "Tan Leather Shoulderpads (Test)", "hash": "1f2757ecbe995ac8", "src": "db2@1.60.1.70245"}
+{"id": 907, "field": "name", "en": "Black Mail Shoulderpads of might (Test)", "hash": "607cc2b497fcdd22", "src": "db2@1.60.1.70245"}
+{"id": 908, "field": "name", "en": "Plate Shoulderpad (Test)", "hash": "23153f0972b2d244", "src": "db2@1.60.1.70245"}
+{"id": 909, "field": "name", "en": "Silver Mail Shoulderpads (Test)", "hash": "27e07f8f89a95ef8", "src": "db2@1.60.1.70245"}
+{"id": 910, "field": "name", "en": "An Undelivered Letter", "hash": "b39fbe03cf10e2ae", "src": "db2@1.60.1.70245"}
+{"id": 910, "field": "description", "en": "Weathered and old, this letter was never delivered.", "hash": "e06086ce249c0ed6", "src": "db2@1.60.1.70245"}
+{"id": 911, "field": "name", "en": "Ironwood Treebranch", "hash": "3653b9a5bb88677a", "src": "db2@1.60.1.70245"}
+{"id": 914, "field": "name", "en": "Large Ogre Chain Armor", "hash": "6d7df3417dc788a1", "src": "db2@1.60.1.70245"}
+{"id": 915, "field": "name", "en": "Red Silk Bandana", "hash": "f7f6dd958b021015", "src": "db2@1.60.1.70245"}
+{"id": 916, "field": "name", "en": "A Torn Journal Page", "hash": "c6bbac1b7ae4cf04", "src": "db2@1.60.1.70245"}
+{"id": 916, "field": "description", "en": "Only the bottom half of this journal page remains.", "hash": "92871145f1db6235", "src": "db2@1.60.1.70245"}
+{"id": 917, "field": "name", "en": "Deprecated Shadow Leather Armor", "hash": "b678e3a8e41033f4", "src": "db2@1.60.1.70245"}
+{"id": 918, "field": "name", "en": "Deviate Hide Pack", "hash": "3b4682f91e74e042", "src": "db2@1.60.1.70245"}
+{"id": 920, "field": "name", "en": "Wicked Spiked Mace", "hash": "79cb151c7cde1b37", "src": "db2@1.60.1.70245"}
+{"id": 921, "field": "name", "en": "A Faded Journal Page", "hash": "3c5831b5f995dcb4", "src": "db2@1.60.1.70245"}
+{"id": 921, "field": "description", "en": "Although most of the text is long faded, some words can still be read.", "hash": "45e1c71132614cd1", "src": "db2@1.60.1.70245"}
+{"id": 922, "field": "name", "en": "Dacian Falx", "hash": "0327e3bce1ff8a25", "src": "db2@1.60.1.70245"}
+{"id": 923, "field": "name", "en": "Longsword", "hash": "ce74628842f63290", "src": "db2@1.60.1.70245"}
+{"id": 924, "field": "name", "en": "Maul", "hash": "0a6afa530964a501", "src": "db2@1.60.1.70245"}
+{"id": 925, "field": "name", "en": "Flail", "hash": "db52342e1d188e80", "src": "db2@1.60.1.70245"}
+{"id": 926, "field": "name", "en": "Battle Axe", "hash": "b2c240e79d126bf4", "src": "db2@1.60.1.70245"}
+{"id": 927, "field": "name", "en": "Double Axe", "hash": "f94251f504ecdeda", "src": "db2@1.60.1.70245"}
+{"id": 928, "field": "name", "en": "Long Staff", "hash": "a26357366171e225", "src": "db2@1.60.1.70245"}
+{"id": 929, "field": "name", "en": "Healing Potion", "hash": "61b64dc74c0bc45e", "src": "db2@1.60.1.70245"}
+{"id": 929, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70245"}
+{"id": 930, "field": "name", "en": "Deprecated Deep Pocket Pouch", "hash": "07539c4742dc6ba5", "src": "db2@1.60.1.70245"}
+{"id": 931, "field": "name", "en": "Deprecated Heavy Brown Sack", "hash": "524421a73f79dee4", "src": "db2@1.60.1.70245"}
+{"id": 932, "field": "name", "en": "Fel Steed Saddlebags", "hash": "ae45295a8a11b6e2", "src": "db2@1.60.1.70245"}
+{"id": 933, "field": "name", "en": "Large Rucksack", "hash": "9cef0096ce24ac9a", "src": "db2@1.60.1.70245"}
+{"id": 934, "field": "name", "en": "Stalvan's Reaper", "hash": "b91cc4192a168b73", "src": "db2@1.60.1.70245"}
+{"id": 934, "field": "description", "en": "Lowers the Attack Power of the target by $s1 for $d.", "hash": "5dbdf7940a4333ac", "src": "db2@1.60.1.70245"}
+{"id": 935, "field": "name", "en": "Night Watch Shortsword", "hash": "a5382aec87363590", "src": "db2@1.60.1.70245"}
+{"id": 936, "field": "name", "en": "Midnight Mace", "hash": "e8db6e032e5d29fb", "src": "db2@1.60.1.70245"}
+{"id": 937, "field": "name", "en": "Black Duskwood Staff", "hash": "328e5ad45c782b72", "src": "db2@1.60.1.70245"}
+{"id": 937, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70245"}
+{"id": 938, "field": "name", "en": "Muddy Journal Pages", "hash": "3d96cb9e3d15f38f", "src": "db2@1.60.1.70245"}
+{"id": 938, "field": "description", "en": "Although the pages are covered in mud, some words can be read.", "hash": "3cb1a1a83931e013", "src": "db2@1.60.1.70245"}
+{"id": 939, "field": "name", "en": "A Bloodstained Journal Page", "hash": "ce43267f438c8fe5", "src": "db2@1.60.1.70245"}
+{"id": 939, "field": "description", "en": "Through thick blood a few words still remain legible.", "hash": "236359020611aaa9", "src": "db2@1.60.1.70245"}
+{"id": 941, "field": "name", "en": "Deprecated Speedstone", "hash": "600fd73d3c742916", "src": "db2@1.60.1.70245"}
+{"id": 944, "field": "name", "en": "Elemental Mage Staff", "hash": "a3f0ba64c58ad7f2", "src": "db2@1.60.1.70245"}
+{"id": 944, "field": "description", "en": "Increases damage done by Fire spells and effects by up to $s1.\nIncreases damage done by Frost spells and effects by up to $s1.", "hash": "852afa96f81b936b", "src": "wago@1.15.9.69722"}
+{"id": 945, "field": "name", "en": "Shadow Sword", "hash": "fc96dc46a726ca26", "src": "db2@1.60.1.70245"}
+{"id": 948, "field": "name", "en": "Nature Sword", "hash": "739d53093a46a47a", "src": "db2@1.60.1.70245"}
+{"id": 951, "field": "name", "en": "Tome of Whirlwind (TEST)", "hash": "c9506af230dd9dbc", "src": "db2@1.60.1.70245"}
+{"id": 954, "field": "name", "en": "Scroll of Strength", "hash": "db84dbf20a1cf307", "src": "db2@1.60.1.70245"}
+{"id": 954, "field": "description", "en": "Increases the target's Strength by $s1 for $d.", "hash": "62a781c2ecd71042", "src": "db2@1.60.1.70245"}
+{"id": 955, "field": "name", "en": "Scroll of Intellect", "hash": "9869f296fefa711f", "src": "db2@1.60.1.70245"}
+{"id": 955, "field": "description", "en": "Increases the target's Intellect by $s1 for $d.", "hash": "9663f4befa1ae208", "src": "db2@1.60.1.70245"}
+{"id": 956, "field": "name", "en": "Deprecated Area Trigger Flag - Jasperlode mine", "hash": "b0091c1df41e11ce", "src": "db2@1.60.1.70245"}
+{"id": 956, "field": "description", "en": "Your official \"I went to the Jasperlode Mine and all I got was this lousy shirt\" T-shirt", "hash": "f42652b6aaa0d98e", "src": "db2@1.60.1.70245"}
+{"id": 957, "field": "name", "en": "William's Shipment", "hash": "5fab5c7bcfcf72bb", "src": "db2@1.60.1.70245"}
+{"id": 957, "field": "description", "en": "There is a note attached.", "hash": "6b38f1ec10daa62f", "src": "db2@1.60.1.70245"}
+{"id": 958, "field": "name", "en": "Deprecated Area Trigger Flag - Darkhollow Mine", "hash": "205cbb949551df5b", "src": "db2@1.60.1.70245"}
+{"id": 958, "field": "description", "en": "Your official \"I went to the Darkhollow Mine and all I got was this lousy shirt\" T-shirt", "hash": "e1bbdb0634715a27", "src": "db2@1.60.1.70245"}
+{"id": 960, "field": "name", "en": "Deprecated Area Trigger Flag - Fargodeep", "hash": "4a17ff84ed8c958c", "src": "db2@1.60.1.70245"}
+{"id": 960, "field": "description", "en": "Your official \"I went to the Fargodeep Mine and all I got was this lousy shirt\" T-shirt", "hash": "8f49c5a0d60a4d6c", "src": "db2@1.60.1.70245"}
+{"id": 961, "field": "name", "en": "Healing Herb", "hash": "bc17c6683aa15ccf", "src": "db2@1.60.1.70245"}
+{"id": 961, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
+{"id": 962, "field": "name", "en": "Pork Belly Pie", "hash": "a1236edef6327d08", "src": "db2@1.60.1.70245"}
+{"id": 964, "field": "name", "en": "Deprecated Red Linen Shirt", "hash": "f7eac9b2f33f795b", "src": "db2@1.60.1.70245"}
+{"id": 965, "field": "name", "en": "Deprecated Red Linen Sack", "hash": "13791b83d071dae9", "src": "db2@1.60.1.70245"}
+{"id": 966, "field": "name", "en": "Tome of Frost Shield", "hash": "b5c2553a4b465317", "src": "db2@1.60.1.70245"}
+{"id": 966, "field": "description", "en": "Teaches Frost Shield (Rank 1).", "hash": "7d708ee37022e111", "src": "db2@1.60.1.70245"}
+{"id": 967, "field": "name", "en": "Tome of Frost Ward", "hash": "5eec3c8ef8d66af3", "src": "db2@1.60.1.70245"}
+{"id": 967, "field": "description", "en": "Teaches Frost Ward (Rank 5).", "hash": "60abe3c4657db838", "src": "db2@1.60.1.70245"}
+{"id": 968, "field": "name", "en": "Tome of Fire Blast", "hash": "9bef916ded19efac", "src": "db2@1.60.1.70245"}
+{"id": 968, "field": "description", "en": "Teaches Fire Blast (Rank 1).", "hash": "61157833175a8e6f", "src": "db2@1.60.1.70245"}
+{"id": 973, "field": "name", "en": "Tome of Fireball II", "hash": "d81233804245a6e1", "src": "db2@1.60.1.70245"}
+{"id": 973, "field": "description", "en": "Teaches Fireball (Rank 2).", "hash": "362171a4da7ca4cb", "src": "db2@1.60.1.70245"}
+{"id": 974, "field": "name", "en": "Tome of Frost Armor II", "hash": "877a5c4553398888", "src": "db2@1.60.1.70245"}
+{"id": 974, "field": "description", "en": "Teaches Frost Armor (Rank 2).", "hash": "5017e5c9834164df", "src": "db2@1.60.1.70245"}
+{"id": 975, "field": "name", "en": "Tome of Chains of Ice", "hash": "dc6ecde19bd3cc93", "src": "db2@1.60.1.70245"}
+{"id": 975, "field": "description", "en": "Teaches Chains of Ice (Rank 1).", "hash": "750388c0b0eccc5b", "src": "db2@1.60.1.70245"}
+{"id": 976, "field": "name", "en": "Tome of Remove Curse", "hash": "d4823723514e4691", "src": "db2@1.60.1.70245"}
+{"id": 976, "field": "description", "en": "Teaches Remove Curse.", "hash": "475687369ab9ff5c", "src": "db2@1.60.1.70245"}
+{"id": 980, "field": "name", "en": "Tome of Frost Shield II", "hash": "d282596a1717425c", "src": "db2@1.60.1.70245"}
+{"id": 980, "field": "description", "en": "Teaches Frost Shield (Rank 2).", "hash": "7d70d1ec741b24d2", "src": "db2@1.60.1.70245"}
+{"id": 981, "field": "name", "en": "Bernice's Necklace", "hash": "c090a31ccbc9fe08", "src": "db2@1.60.1.70245"}
+{"id": 983, "field": "name", "en": "Red Linen Sash", "hash": "976b2f73aaf16b61", "src": "db2@1.60.1.70245"}
+{"id": 985, "field": "name", "en": "Tome of Khadgar's Unlocking", "hash": "9bbb9fb6d88935b2", "src": "db2@1.60.1.70245"}
+{"id": 985, "field": "description", "en": "Teaches Khadgar's Unlocking (Rank 1).", "hash": "702e6a52cadca5d3", "src": "db2@1.60.1.70245"}
+{"id": 986, "field": "name", "en": "Tome of Frostbolt II", "hash": "15eac103c45a3cbe", "src": "db2@1.60.1.70245"}
+{"id": 986, "field": "description", "en": "Teaches Frostbolt (Rank 2).", "hash": "1f69ef5eb31c0c81", "src": "db2@1.60.1.70245"}
+{"id": 989, "field": "name", "en": "Tome of Frost Nova", "hash": "5dbb2ea237c30ac7", "src": "db2@1.60.1.70245"}
+{"id": 989, "field": "description", "en": "Teaches Frost Nova (Rank 1).", "hash": "60fe584fdb4bc2b5", "src": "db2@1.60.1.70245"}
+{"id": 992, "field": "name", "en": "Tome of Fireball III", "hash": "91505cefae6d774a", "src": "db2@1.60.1.70245"}
+{"id": 992, "field": "description", "en": "Teaches Fireball (Rank 3).", "hash": "3621b4adde74e88c", "src": "db2@1.60.1.70245"}
+{"id": 994, "field": "name", "en": "Tome of Ice Armor", "hash": "5519363b999f9057", "src": "db2@1.60.1.70245"}
+{"id": 994, "field": "description", "en": "Teaches Ice Armor (Rank 1).", "hash": "b602fe5cb1f165dc", "src": "db2@1.60.1.70245"}
+{"id": 996, "field": "name", "en": "Ring of Righteous Flame (TEST)", "hash": "4e875fa70915c40f", "src": "db2@1.60.1.70245"}
+{"id": 996, "field": "description", "en": "Hurls a fiery ball that causes $s1 Fire damage and an additional $o2 Fire damage over $d.", "hash": "dbc51345ec8b892d", "src": "db2@1.60.1.70245"}
+{"id": 997, "field": "name", "en": "Fire Sword of Crippling", "hash": "ddc267153b93991d", "src": "db2@1.60.1.70245"}
+{"id": 997, "field": "description", "en": "Cripples the target, reducing movement speed by $s3%, increasing time between melee attacks by $s1% and increasing time between ranged attacks by $s2%.  Lasts $d.", "hash": "8eaafae90b6a6d99", "src": "db2@1.60.1.70245"}

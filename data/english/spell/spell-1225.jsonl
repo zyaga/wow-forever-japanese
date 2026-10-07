@@ -1,193 +1,193 @@
-{"id": 1225051, "field": "name", "en": "Dismounting Blast", "hash": "4cfd97a08cadba56", "src": "db2@1.60.1.70170"}
-{"id": 1225051, "field": "description", "en": "Knocks an enemy back, forcing it to dismount.", "hash": "e4401f4a63c83ede", "src": "db2@1.60.1.70170"}
-{"id": 1225051, "field": "aura", "en": "Forced to dismount.", "hash": "ac529b3a3713d005", "src": "db2@1.60.1.70170"}
-{"id": 1225096, "field": "name", "en": "Dismounting Blast", "hash": "4cfd97a08cadba56", "src": "db2@1.60.1.70170"}
-{"id": 1225096, "field": "description", "en": "Knocks an enemy back, forcing it to dismount.", "hash": "e4401f4a63c83ede", "src": "db2@1.60.1.70170"}
-{"id": 1225096, "field": "aura", "en": "Forced to dismount.", "hash": "ac529b3a3713d005", "src": "db2@1.60.1.70170"}
-{"id": 1225098, "field": "name", "en": "Dismounting Blast", "hash": "4cfd97a08cadba56", "src": "db2@1.60.1.70170"}
-{"id": 1225098, "field": "description", "en": "Knocks an enemy back, forcing it to dismount.", "hash": "e4401f4a63c83ede", "src": "db2@1.60.1.70170"}
-{"id": 1225098, "field": "aura", "en": "Forced to dismount.", "hash": "ac529b3a3713d005", "src": "db2@1.60.1.70170"}
-{"id": 1225132, "field": "name", "en": "Twin Disciplines", "hash": "13722cc9795e3551", "src": "db2@1.60.1.70170"}
-{"id": 1225132, "field": "description", "en": "Increases the damage and healing of your instant cast spells by $s1%.", "hash": "253a719f424a63ea", "src": "db2@1.60.1.70170"}
-{"id": 1225139, "field": "name", "en": "Improved Mind Flay", "hash": "21812ed467116b74", "src": "db2@1.60.1.70170"}
-{"id": 1225139, "field": "description", "en": "Your Mind Flay now deals $s1% more damage, gains $s2 yards increased range, but slows the target's movement speed by ${$s4-($m3)}%.", "hash": "13adcdfd7b4bb8d6", "src": "db2@1.60.1.70170"}
-{"id": 1225143, "field": "name", "en": "[DNT] Power Stone I", "hash": "6c1dc470c72f4d90", "src": "db2@1.60.1.70170"}
-{"id": 1225170, "field": "name", "en": "[DNT] Power Stone II", "hash": "533b86accaf94176", "src": "db2@1.60.1.70170"}
-{"id": 1225171, "field": "name", "en": "[DNT] Power Stone III", "hash": "9775eb1f940180a5", "src": "db2@1.60.1.70170"}
-{"id": 1225177, "field": "name", "en": "Malediction", "hash": "818525fb641ba3ad", "src": "db2@1.60.1.70170"}
-{"id": 1225177, "field": "description", "en": "Increases all periodic damage done by your Warlock spells by $s1%.", "hash": "5fbe442b0e1cf8c7", "src": "db2@1.60.1.70170"}
-{"id": 1225214, "field": "name", "en": "Demonic Energies", "hash": "1f1a489b308a4ec6", "src": "db2@1.60.1.70170"}
-{"id": 1225214, "field": "description", "en": "You heal your pet for $s1% of all spell damage you deal. When you gain Mana from Life Tap, your summoned demon gains $m2% of the Mana you gain.", "hash": "1fcd7a5a84ef19eb", "src": "db2@1.60.1.70170"}
-{"id": 1225217, "field": "name", "en": "Improved Felhunter", "hash": "c83951a309157beb", "src": "db2@1.60.1.70170"}
-{"id": 1225217, "field": "description", "en": "Increases the Attack Power reduction of your Felhunter's Tainted Blood, the healing of its Devour Magic, and the detection level of its Paranoia by $s1%, and reduces the cooldown of its Spell Lock by ${$m2/-1000} sec.", "hash": "5e82328766f45afe", "src": "db2@1.60.1.70170"}
-{"id": 1225220, "field": "name", "en": "Molten Skin", "hash": "35e88465356193fb", "src": "db2@1.60.1.70170"}
-{"id": 1225220, "field": "description", "en": "Reduces all damage taken by $s1%.", "hash": "11733ab18a4ddb1f", "src": "db2@1.60.1.70170"}
-{"id": 1225228, "field": "name", "en": "Bane of Havoc", "hash": "d8769dc6eaa15242", "src": "db2@1.60.1.70170"}
-{"id": 1225228, "field": "description", "en": "Afflicts the target for $d, causing $s1% of all damage done by the Warlock to other targets to also be dealt to the cursed target. Bane of Havoc is limited to 1 target, and only one Bane per Warlock can be active on any one target.", "hash": "43f49859c9c2712a", "src": "db2@1.60.1.70170"}
-{"id": 1225228, "field": "aura", "en": "Taking $s1% of all damage done by the Warlock to other targets.", "hash": "1a330b3c2f4abd67", "src": "db2@1.60.1.70170"}
-{"id": 1225285, "field": "name", "en": "[DNT] Nullify Power Stone", "hash": "46c0ab3c81e29d45", "src": "db2@1.60.1.70170"}
-{"id": 1225286, "field": "name", "en": "[DNT] Nullify Power Stone", "hash": "46c0ab3c81e29d45", "src": "db2@1.60.1.70170"}
-{"id": 1225287, "field": "name", "en": "[DNT] Nullify Power Stone", "hash": "46c0ab3c81e29d45", "src": "db2@1.60.1.70170"}
-{"id": 1225291, "field": "name", "en": "Nullify", "hash": "784667e6ab756534", "src": "db2@1.60.1.70170"}
-{"id": 1225291, "field": "description", "en": "Nullify a nearby Naga power stone.", "hash": "ec174b03c2372ca6", "src": "db2@1.60.1.70170"}
-{"id": 1225295, "field": "name", "en": "Precision", "hash": "b8b32d40fc3f2110", "src": "db2@1.60.1.70170"}
-{"id": 1225295, "field": "description", "en": "Improves your chance to hit by $s1%.", "hash": "8e26e0349a4f376b", "src": "db2@1.60.1.70170"}
-{"id": 1225313, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
-{"id": 1225314, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70170"}
-{"id": 1225419, "field": "name", "en": "Necrotic Aura", "hash": "a9c76bab5235b1e4", "src": "db2@1.60.1.70170"}
-{"id": 1225419, "field": "description", "en": "A wave of necrotic energy fills the room, completely preventing all healing effects for $d.\r\n", "hash": "5822bcb912a5cdc5", "src": "db2@1.60.1.70170"}
-{"id": 1225419, "field": "aura", "en": "A wave of necrotic energy fills the room, completely preventing all healing effects for $d.", "hash": "5822bcb912a5cdc5", "src": "db2@1.60.1.70170"}
-{"id": 1225420, "field": "name", "en": "Summon Enraged Tempest", "hash": "ad898cd1c3fd1c74", "src": "db2@1.60.1.70170"}
-{"id": 1225423, "field": "name", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70170"}
-{"id": 1225423, "field": "description", "en": "Disarms an enemy, forcing it to stop wielding its weapon for $d.", "hash": "c9fbbd5fc582f9d5", "src": "db2@1.60.1.70170"}
-{"id": 1225423, "field": "aura", "en": "Not wielding a weapon.", "hash": "619e24db77a41050", "src": "db2@1.60.1.70170"}
-{"id": 1225425, "field": "name", "en": "(DNT) Necrotic Aura Warning", "hash": "737df5598697543b", "src": "db2@1.60.1.70170"}
-{"id": 1225428, "field": "name", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70170"}
-{"id": 1225428, "field": "description", "en": "Disarms an enemy, forcing it to stop wielding its weapon for $d.", "hash": "c9fbbd5fc582f9d5", "src": "db2@1.60.1.70170"}
-{"id": 1225428, "field": "aura", "en": "Not wielding a weapon.", "hash": "619e24db77a41050", "src": "db2@1.60.1.70170"}
-{"id": 1225429, "field": "name", "en": "Heart of Doom", "hash": "4bfbe5b0d6c22808", "src": "db2@1.60.1.70170"}
-{"id": 1225430, "field": "name", "en": "(DNT) Necrotic Aura Warning", "hash": "737df5598697543b", "src": "db2@1.60.1.70170"}
-{"id": 1225435, "field": "name", "en": "Bountiful Harvest", "hash": "3390499544e2f5ec", "src": "db2@1.60.1.70170"}
-{"id": 1225435, "field": "description", "en": "You discover $s1% more Scarce materials from Mining, Herbalism, and Skinning.", "hash": "93862f218c5fa36d", "src": "db2@1.60.1.70170"}
-{"id": 1225438, "field": "name", "en": "Air Elemental Core", "hash": "7014f8ce4891b885", "src": "db2@1.60.1.70170"}
-{"id": 1225442, "field": "name", "en": "[DNT] Improved Resolve", "hash": "23cb5b0b222f2f22", "src": "db2@1.60.1.70170"}
-{"id": 1225451, "field": "name", "en": "Working Overtime", "hash": "24243b85d1d1f74f", "src": "db2@1.60.1.70170"}
-{"id": 1225451, "field": "description", "en": "Increases your chance to gain a skill increase from using any primary, secondary, or class-based tradeskill by $s1%.", "hash": "b111856821568ae9", "src": "db2@1.60.1.70170"}
-{"id": 1225455, "field": "name", "en": "Luremaster", "hash": "6db4d5507750a983", "src": "db2@1.60.1.70170"}
-{"id": 1225455, "field": "description", "en": "While fishing with a Lure active, you have a $s1% chance to catch an extra fish.", "hash": "7b22876ed9c79102", "src": "db2@1.60.1.70170"}
-{"id": 1225456, "field": "name", "en": "Performance Bonus", "hash": "bface5445241cbec", "src": "db2@1.60.1.70170"}
-{"id": 1225456, "field": "description", "en": "You have a $s1% chance to receive 100% increased Merchant's Favor when you turn in a crate to the Azeroth Commerce Authority or Durotar Supply and Logistics.", "hash": "7c446bb6f7e22a0e", "src": "db2@1.60.1.70170"}
-{"id": 1225457, "field": "name", "en": "Master Chef", "hash": "4876af266ba05f8b", "src": "db2@1.60.1.70170"}
-{"id": 1225457, "field": "description", "en": "Your cooking recipes have a $s1% chance to create an extra result.", "hash": "d117d4b2c3213f03", "src": "db2@1.60.1.70170"}
-{"id": 1225458, "field": "name", "en": "Holy Bolt", "hash": "dff879ea22cedffb", "src": "db2@1.60.1.70170"}
-{"id": 1225458, "field": "description", "en": "Hurls a bolt of light magic at an enemy, inflicting Holy damage.\r\n", "hash": "737d97150b3c29e6", "src": "db2@1.60.1.70170"}
-{"id": 1225459, "field": "name", "en": "Bartering", "hash": "b179b45c2ba0b90d", "src": "db2@1.60.1.70170"}
-{"id": 1225459, "field": "description", "en": "Reduces the gold price of items from all vendors by $s1%.", "hash": "149ab06278c32f60", "src": "db2@1.60.1.70170"}
-{"id": 1225460, "field": "name", "en": "Optimization - NYI", "hash": "3cee08f639a34659", "src": "db2@1.60.1.70170"}
-{"id": 1225460, "field": "description", "en": "Materials used by your Engineering, Blacksmithing, Leatherworking, and Tailoring recipes have a $s1% chance per item to be refunded on completing the recipe.", "hash": "73529925d558c31a", "src": "db2@1.60.1.70170"}
-{"id": 1225461, "field": "name", "en": "Salvaging - NYI", "hash": "8ab61d949f96071c", "src": "db2@1.60.1.70170"}
-{"id": 1225461, "field": "description", "en": "Extracts crafting materials from good quality or better armor.", "hash": "5db319154ef1e6b9", "src": "db2@1.60.1.70170"}
-{"id": 1225464, "field": "name", "en": "Condemnation", "hash": "df6e2f8a053f8a15", "src": "db2@1.60.1.70170"}
-{"id": 1225464, "field": "description", "en": "Light magic lashes out at every enemy, inflicting $s1 Holy damage.", "hash": "d3037f540b76c1e3", "src": "db2@1.60.1.70170"}
-{"id": 1225465, "field": "name", "en": "Meticulous", "hash": "b1302d360daad594", "src": "db2@1.60.1.70170"}
-{"id": 1225465, "field": "description", "en": "Grants a $s1% chance to gain extra results from First Aid recipes and from Alchemy Elixir, Potion, Draught, and Flask recipes.", "hash": "74e83bdb2cef4b67", "src": "db2@1.60.1.70170"}
-{"id": 1225468, "field": "name", "en": "Master Forager", "hash": "b81f1b5cc558a2f2", "src": "db2@1.60.1.70170"}
-{"id": 1225468, "field": "description", "en": "Gain $s1 increased skill in Skinning, Mining, and Herbalism, and $s2 increased skill in Fishing.", "hash": "57143cc63fe00d2f", "src": "db2@1.60.1.70170"}
-{"id": 1225469, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70170"}
-{"id": 1225469, "field": "description", "en": "Increases your skill by 1 in your lowest tradeskill among your Primary and Secondary tradeskills. If you have already reached 300 skill in your two current Primary Tradeskills and all three Secondary Tradeskills, you will gain $s1 of a random Elemental Essence.", "hash": "6f7bf932baca944d", "src": "db2@1.60.1.70170"}
-{"id": 1225470, "field": "name", "en": "Essence of Innovation", "hash": "a8f69c228e05f064", "src": "db2@1.60.1.70170"}
-{"id": 1225470, "field": "description", "en": "Craft an Essence of Innovation and research a new recipe for a non-gathering Primary tradeskill in which you have reached 300 skill.", "hash": "c3a9a7d2f8d6978d", "src": "db2@1.60.1.70170"}
-{"id": 1225472, "field": "name", "en": "Thrill of Adventure", "hash": "8ce19057b8a9030f", "src": "db2@1.60.1.70170"}
-{"id": 1225472, "field": "description", "en": "You gain $s1% of your maximum Health and Mana over $1261483d each time you deliver the killing blow to a non-trivial enemy. Ineffective in dungeons, raids, and battlegrounds.", "hash": "a23e12eb939df606", "src": "db2@1.60.1.70170"}
-{"id": 1225474, "field": "name", "en": "Talented", "hash": "c0896c43dc52a55f", "src": "db2@1.60.1.70170"}
-{"id": 1225474, "field": "description", "en": "You gain talent points every level starting at level $s1 instead of starting at level 10, but you still may not have more than 51 total talent points.", "hash": "9e16e452df2454a5", "src": "db2@1.60.1.70170"}
-{"id": 1225475, "field": "name", "en": "Field Medicine", "hash": "30a76bf167676da3", "src": "db2@1.60.1.70170"}
-{"id": 1225475, "field": "description", "en": "Reduces the duration of the Recently Bandaged effect by ${$m1/-1000} sec when you use a bandage. Ineffective in dungeons, raids, and battlegrounds.", "hash": "e07ee09749fbd41b", "src": "db2@1.60.1.70170"}
-{"id": 1225477, "field": "name", "en": "High Alert", "hash": "7a970c8a91d14914", "src": "db2@1.60.1.70170"}
-{"id": 1225477, "field": "description", "en": "Increases your ability to detect nearby targets with Stealth as if your level were increased by ${$m1/5}. Ineffective in Battlegrounds.", "hash": "8e83bc7940d3cdd0", "src": "db2@1.60.1.70170"}
-{"id": 1225478, "field": "name", "en": "Well Rested", "hash": "366e8fc8f8f60a32", "src": "db2@1.60.1.70170"}
-{"id": 1225478, "field": "description", "en": "Your rested experience accumulates $s1% faster and your rested experience cap is increased by $s2%.", "hash": "88ca677ae900ee85", "src": "db2@1.60.1.70170"}
-{"id": 1225479, "field": "name", "en": "Field Guide", "hash": "bf7f3c83b1ec32fb", "src": "db2@1.60.1.70170"}
-{"id": 1225479, "field": "description", "en": "Reduces your cooldown on adding Camp features by ${$m1/-36000}%", "hash": "cf2592a42d913e98", "src": "db2@1.60.1.70170"}
-{"id": 1225481, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70170"}
-{"id": 1225481, "field": "description", "en": "Shoot down a Wasp Nest.", "hash": "9d5dab5597cba13f", "src": "db2@1.60.1.70170"}
-{"id": 1225482, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70170"}
-{"id": 1225482, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70170"}
-{"id": 1225484, "field": "name", "en": "Unyielding Pain", "hash": "6c6b76ee8ef942a0", "src": "db2@1.60.1.70170"}
-{"id": 1225484, "field": "description", "en": "Dark magic lashes out at every enemy, inflicting $s1 Shadow damage", "hash": "60cc5aa7843713a7", "src": "db2@1.60.1.70170"}
-{"id": 1225485, "field": "name", "en": "Diplomat", "hash": "581877ed02a4ae65", "src": "db2@1.60.1.70170"}
-{"id": 1225485, "field": "description", "en": "Increases your reputation gains by $s1%.", "hash": "1738a7b01854fb1e", "src": "db2@1.60.1.70170"}
-{"id": 1225486, "field": "name", "en": "Wasp Nest", "hash": "44e13d0550e8c09f", "src": "db2@1.60.1.70170"}
-{"id": 1225487, "field": "name", "en": "Iron Stomach", "hash": "ddf6279705138da4", "src": "db2@1.60.1.70170"}
-{"id": 1225487, "field": "description", "en": "Reduces your cooldown for using potions by ${$m1/-1000} sec. Ineffective in dungeons, raids, and battlegrounds.", "hash": "ae9cf6ba638f3fa5", "src": "db2@1.60.1.70170"}
-{"id": 1225490, "field": "name", "en": "Frequent Flier", "hash": "df15b404a7d4ea09", "src": "db2@1.60.1.70170"}
-{"id": 1225490, "field": "description", "en": "You receive a $s1% discount on all flight paths, and your flight path mount flies $s2% faster.", "hash": "7a29be59683734e2", "src": "db2@1.60.1.70170"}
-{"id": 1225491, "field": "name", "en": "Master Swimmer", "hash": "24f659c78cbe123f", "src": "db2@1.60.1.70170"}
-{"id": 1225491, "field": "description", "en": "Your underwater breath lasts $s1% longer than normal and you swim $s2% faster.", "hash": "59cdcec11e018ed2", "src": "db2@1.60.1.70170"}
-{"id": 1225492, "field": "name", "en": "Play Dead", "hash": "aee78125506c51ed", "src": "db2@1.60.1.70170"}
-{"id": 1225492, "field": "description", "en": "Gives you a $s1% chance of being able to resurrect with $1261698s1% Health and Mana. Ineffective in dungeons, raids, and battlegrounds. This effect cannot trigger more often than once every $1261707d.", "hash": "5064a7e0df1c396a", "src": "db2@1.60.1.70170"}
-{"id": 1225493, "field": "name", "en": "Personal Banking", "hash": "c937671a72023ae9", "src": "db2@1.60.1.70170"}
-{"id": 1225493, "field": "description", "en": "All innkeepers can now also grant you access to your bank. This access has a $1261854d cooldown.", "hash": "273cc5b5569da693", "src": "db2@1.60.1.70170"}
-{"id": 1225494, "field": "name", "en": "Second Home", "hash": "32d8b15a00d6e324", "src": "db2@1.60.1.70170"}
-{"id": 1225494, "field": "description", "en": "Returns you to the rest area where you most recently set your Second Home. When used in a rest area, makes that location your Second Home. This ability shares a cooldown with Hearthstones.", "hash": "3f21f804ec126281", "src": "db2@1.60.1.70170"}
-{"id": 1225497, "field": "name", "en": "Reinforce", "hash": "5265624300954e0a", "src": "db2@1.60.1.70170"}
-{"id": 1225497, "field": "description", "en": "You take $s1% less durability loss when you die.", "hash": "db71d5c080a7fd59", "src": "db2@1.60.1.70170"}
-{"id": 1225498, "field": "name", "en": "Mount Up", "hash": "d48e7c9e0bbc98a3", "src": "db2@1.60.1.70170"}
-{"id": 1225498, "field": "description", "en": "Increases speed while mounted by $s1%. Not active in battlegrounds. Does not stack with other effects that increase mounted movement speed.", "hash": "b0c822f6bb35c4a0", "src": "db2@1.60.1.70170"}
-{"id": 1225499, "field": "name", "en": "Gourmand", "hash": "4d3d3829eb25178b", "src": "db2@1.60.1.70170"}
-{"id": 1225499, "field": "description", "en": "Increases the duration of beneficial effects from eating food by $s1%.", "hash": "9217a58b498b9b21", "src": "db2@1.60.1.70170"}
-{"id": 1225500, "field": "name", "en": "The Quick and the Dead", "hash": "2b75c1a5b4da0105", "src": "db2@1.60.1.70170"}
-{"id": 1225500, "field": "description", "en": "Increases movement speed while dead by $s1% and your helpful spells and abilities cost no resources for ${$m2/60000} min after being resurrected or until you enter combat.", "hash": "79c8cdcb16914eb6", "src": "db2@1.60.1.70170"}
-{"id": 1225501, "field": "name", "en": "For Great Honor", "hash": "9131d27ab62107c5", "src": "db2@1.60.1.70170"}
-{"id": 1225501, "field": "description", "en": "Increases Honor Points gained by $s1%.", "hash": "e06b5d7991b55027", "src": "db2@1.60.1.70170"}
-{"id": 1225502, "field": "name", "en": "Permanence", "hash": "dae18a4eb0e4c7a0", "src": "db2@1.60.1.70170"}
-{"id": 1225502, "field": "description", "en": "Your class abilities which grant long-duration stat or attribute benefits to all party or raid members last $s1% longer, and the benefits you gain from resting at a camp last $s2% longer.", "hash": "41f1c872e835133c", "src": "db2@1.60.1.70170"}
-{"id": 1225503, "field": "name", "en": "Reagent Economy", "hash": "13cd4e07c9de906e", "src": "db2@1.60.1.70170"}
-{"id": 1225503, "field": "description", "en": "Your class abilities no longer require reagents purchaseable from vendors.", "hash": "d333a83cec407828", "src": "db2@1.60.1.70170"}
-{"id": 1225504, "field": "name", "en": "Better Living Through Chemistry", "hash": "e0fa4cffdfdb1205", "src": "db2@1.60.1.70170"}
-{"id": 1225504, "field": "description", "en": "Increases the duration of beneficial effects from elixirs and flasks by $s1%.", "hash": "a56544efa126c81d", "src": "db2@1.60.1.70170"}
-{"id": 1225505, "field": "name", "en": "Fast Recovery", "hash": "11da9592e5cc9713", "src": "db2@1.60.1.70170"}
-{"id": 1225505, "field": "description", "en": "You recover an additional ${$m1/10}.1% of your Health and Mana every 5 sec while not in combat.", "hash": "c90d026f34cbb542", "src": "db2@1.60.1.70170"}
-{"id": 1225506, "field": "name", "en": "Conquering Hero", "hash": "d1223a62c85dd3e7", "src": "db2@1.60.1.70170"}
-{"id": 1225506, "field": "description", "en": "Beneficial effects you gain from celebrating the defeat of bosses gain $s1% increased duration.", "hash": "87898cd6ac5b0051", "src": "db2@1.60.1.70170"}
-{"id": 1225508, "field": "name", "en": "Second Chance", "hash": "19fa817e2959c73f", "src": "db2@1.60.1.70170"}
-{"id": 1225508, "field": "description", "en": "Effects gained from celebrating the defeat of bosses will not cancel the first time you die while they are active.", "hash": "48137f73018f204e", "src": "db2@1.60.1.70170"}
-{"id": 1225509, "field": "name", "en": "Adaptability", "hash": "0709ae57cc37fa85", "src": "db2@1.60.1.70170"}
-{"id": 1225509, "field": "description", "en": "Reset your spent class talent points.", "hash": "7f63c1b0be716107", "src": "db2@1.60.1.70170"}
-{"id": 1225700, "field": "name", "en": "Find Boomfizz Goblin", "hash": "2f830c8a338ed810", "src": "db2@1.60.1.70170"}
-{"id": 1225719, "field": "name", "en": "1.50 Sound - Sound Squisher - Interior Zone Tone Obliterator", "hash": "ae1909ff2c703712", "src": "db2@1.60.1.70170"}
-{"id": 1225758, "field": "name", "en": "Prowler Steak", "hash": "6f34eaac934bd4a1", "src": "db2@1.60.1.70170"}
-{"id": 1225759, "field": "name", "en": "Filet o' Flank", "hash": "3e82e13f57386fc2", "src": "db2@1.60.1.70170"}
-{"id": 1225760, "field": "name", "en": "Sunrise Omelette", "hash": "3d64752aea7bd919", "src": "db2@1.60.1.70170"}
-{"id": 1225762, "field": "name", "en": "Specklefin Feast", "hash": "741a9b292087b241", "src": "db2@1.60.1.70170"}
-{"id": 1225763, "field": "name", "en": "Grand Lobster Banquet", "hash": "94c1ad1e696598b8", "src": "db2@1.60.1.70170"}
-{"id": 1225769, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70170"}
-{"id": 1225769, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225778", "hash": "f67859b2de8b1c06", "src": "db2@1.60.1.70170"}
-{"id": 1225769, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70170"}
-{"id": 1225771, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70170"}
-{"id": 1225771, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225779", "hash": "f67859b3de8b1c07", "src": "db2@1.60.1.70170"}
-{"id": 1225771, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70170"}
-{"id": 1225772, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70170"}
-{"id": 1225772, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225780", "hash": "f6785a2dde8b3bdf", "src": "db2@1.60.1.70170"}
-{"id": 1225772, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70170"}
-{"id": 1225774, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70170"}
-{"id": 1225774, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225782", "hash": "f6785a2fde8b3be1", "src": "db2@1.60.1.70170"}
-{"id": 1225774, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70170"}
-{"id": 1225778, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
-{"id": 1225778, "field": "description", "en": "If you spend at least $1225769t2 sec eating you will become Well Fed and gain $s1 Strength and $s2 Stamina for $d.", "hash": "db9e55314426f376", "src": "db2@1.60.1.70170"}
-{"id": 1225778, "field": "aura", "en": "Your Strength is increased by $w1 and Stamina by $w2.", "hash": "19988f94d6cec68e", "src": "db2@1.60.1.70170"}
-{"id": 1225779, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
-{"id": 1225779, "field": "description", "en": "If you spend at least $1225771t2 sec eating you will become Well Fed and gain $s1 Agility and $s2 Stamina for $d.", "hash": "08264130f6c827a8", "src": "db2@1.60.1.70170"}
-{"id": 1225779, "field": "aura", "en": "Your Agility is increased by $w1 and Stamina by $w2.", "hash": "070569a44d04cb6a", "src": "db2@1.60.1.70170"}
-{"id": 1225780, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
-{"id": 1225780, "field": "description", "en": "If you spend at least $1225772t2 sec eating you will become Well Fed and gain $s1 Spell Damage, $s3 Healing Power, and $s2 Stamina for $d.", "hash": "7447fb5bde4a09a7", "src": "db2@1.60.1.70170"}
-{"id": 1225780, "field": "aura", "en": "Your Spell Damage is increased by $w1, Healing Power by $w3, and Stamina by $w2.", "hash": "3e52160dedecd842", "src": "db2@1.60.1.70170"}
-{"id": 1225782, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70170"}
-{"id": 1225782, "field": "description", "en": "If you spend at least $1225774t2 sec eating you will become Well Fed and gain $s1 Attack Power, $s3 Spell Damage, $s4 Healing Power, and $s2 Stamina for $d.", "hash": "6a544e460741426b", "src": "db2@1.60.1.70170"}
-{"id": 1225782, "field": "aura", "en": "Your Attack Power is increased by $w1, Spell Damage by $w3, Healing Power by $w4, and Stamina by $w2.", "hash": "fcc6f20dfe30eadb", "src": "db2@1.60.1.70170"}
-{"id": 1225841, "field": "name", "en": "Curse of Recklessness", "hash": "c73143b4c8ddbfca", "src": "db2@1.60.1.70170"}
-{"id": 1225841, "field": "description", "en": "Curses the target with recklessness, increasing melee attack power by $s1 but reducing armor by $s2 for $d.  Cursed enemies will not flee and will ignore Fear and Horror effects.  Only one Curse per Warlock can be active on any one target.", "hash": "98405a76886a2090", "src": "db2@1.60.1.70170"}
-{"id": 1225841, "field": "aura", "en": "Increases melee attack power by $s1 and decreases armor by $s2.   Target will not flee and will ignore Fear and Horror effects.", "hash": "83fba19790e5fa9c", "src": "db2@1.60.1.70170"}
-{"id": 1225906, "field": "name", "en": "Specklefin Feast", "hash": "741a9b292087b241", "src": "db2@1.60.1.70170"}
-{"id": 1225906, "field": "description", "en": "Serve a delicious feast that lasts for $d and serves up to $M2 players.\r\n\r\n$@spellicon1225774 $@spellname1225774\r\n$@spelldesc1225774", "hash": "ee1e8d514364967e", "src": "db2@1.60.1.70170"}
-{"id": 1225907, "field": "name", "en": "Grand Lobster Banquet", "hash": "94c1ad1e696598b8", "src": "db2@1.60.1.70170"}
-{"id": 1225907, "field": "description", "en": "Serve a delicious feast that lasts for $d and serves up to $M2 players.\r\n\r\n$@spellicon1225774 $@spellname1225774\r\n$@spelldesc1225774", "hash": "ee1e8d514364967e", "src": "db2@1.60.1.70170"}
-{"id": 1225924, "field": "name", "en": "Balnazzar Encounter - Success", "hash": "62b6abd040b967ed", "src": "db2@1.60.1.70170"}
-{"id": 1225951, "field": "name", "en": "Tinker: Teleport", "hash": "2b239a2d8a7fcb85", "src": "db2@1.60.1.70170"}
-{"id": 1225951, "field": "description", "en": "$@spelldesc1225960", "hash": "84222b206fbe151b", "src": "db2@1.60.1.70170"}
-{"id": 1225960, "field": "name", "en": "Tinker: Teleport", "hash": "2b239a2d8a7fcb85", "src": "db2@1.60.1.70170"}
-{"id": 1225960, "field": "description", "en": "Teleport forward $M2 yds.", "hash": "a3b42c7f54c582ef", "src": "db2@1.60.1.70170"}
-{"id": 1225970, "field": "name", "en": "[DNT] Heart of Doom Treasure Tracker", "hash": "e2f21bdcf6b39795", "src": "db2@1.60.1.70170"}
-{"id": 1225972, "field": "name", "en": "Catastrophe", "hash": "c2e5ba6f22fc16c5", "src": "db2@1.60.1.70170"}
-{"id": 1225972, "field": "description", "en": "Your tinker malfunction and caused an explosion.", "hash": "b6bc10e44f215e18", "src": "db2@1.60.1.70170"}
-{"id": 1225972, "field": "aura", "en": "Your tinker malfunctioned.", "hash": "d84dd2920c654dfe", "src": "db2@1.60.1.70170"}
-{"id": 1225982, "field": "name", "en": "Tinker: Nitro Boosts", "hash": "4ee9d4cd3fb45206", "src": "db2@1.60.1.70170"}
-{"id": 1225982, "field": "description", "en": "$@spelldesc1225987", "hash": "84222c2d6fbe54e4", "src": "db2@1.60.1.70170"}
-{"id": 1225987, "field": "name", "en": "Tinker: Nitro Boosts", "hash": "4ee9d4cd3fb45206", "src": "db2@1.60.1.70170"}
-{"id": 1225987, "field": "description", "en": "Activate a set of jets to increase your movement speed by up to $M1%, for up to $d.", "hash": "36607b95cd6453af", "src": "db2@1.60.1.70170"}
-{"id": 1225987, "field": "aura", "en": "Movement speed increased by $w1%.", "hash": "d64ce2e8b7176631", "src": "db2@1.60.1.70170"}
-{"id": 1225988, "field": "name", "en": "Seal of the Dawn", "hash": "576a8d0cbf1a3693", "src": "db2@1.60.1.70170"}
-{"id": 1225988, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your healing and shielding by ${$m1/100}.2% and your health by ${$m2/100}.2% for each piece of Sanctified armor equipped.", "hash": "d5cc286fe3eeee6b", "src": "db2@1.60.1.70170"}
-{"id": 1225994, "field": "name", "en": "Tinker: Nitro Boosts", "hash": "4ee9d4cd3fb45206", "src": "db2@1.60.1.70170"}
-{"id": 1225994, "field": "description", "en": "$@spelldesc1225987", "hash": "84222c2d6fbe54e4", "src": "db2@1.60.1.70170"}
-{"id": 1225994, "field": "aura", "en": "Movement speed increased by $w1% and your zoomies are unstoppable.", "hash": "47e2ea33ff910081", "src": "db2@1.60.1.70170"}
+{"id": 1225051, "field": "name", "en": "Dismounting Blast", "hash": "4cfd97a08cadba56", "src": "db2@1.60.1.70245"}
+{"id": 1225051, "field": "description", "en": "Knocks an enemy back, forcing it to dismount.", "hash": "e4401f4a63c83ede", "src": "db2@1.60.1.70245"}
+{"id": 1225051, "field": "aura", "en": "Forced to dismount.", "hash": "ac529b3a3713d005", "src": "db2@1.60.1.70245"}
+{"id": 1225096, "field": "name", "en": "Dismounting Blast", "hash": "4cfd97a08cadba56", "src": "db2@1.60.1.70245"}
+{"id": 1225096, "field": "description", "en": "Knocks an enemy back, forcing it to dismount.", "hash": "e4401f4a63c83ede", "src": "db2@1.60.1.70245"}
+{"id": 1225096, "field": "aura", "en": "Forced to dismount.", "hash": "ac529b3a3713d005", "src": "db2@1.60.1.70245"}
+{"id": 1225098, "field": "name", "en": "Dismounting Blast", "hash": "4cfd97a08cadba56", "src": "db2@1.60.1.70245"}
+{"id": 1225098, "field": "description", "en": "Knocks an enemy back, forcing it to dismount.", "hash": "e4401f4a63c83ede", "src": "db2@1.60.1.70245"}
+{"id": 1225098, "field": "aura", "en": "Forced to dismount.", "hash": "ac529b3a3713d005", "src": "db2@1.60.1.70245"}
+{"id": 1225132, "field": "name", "en": "Twin Disciplines", "hash": "13722cc9795e3551", "src": "db2@1.60.1.70245"}
+{"id": 1225132, "field": "description", "en": "Increases the damage and healing of your instant cast spells by $s1%.", "hash": "253a719f424a63ea", "src": "db2@1.60.1.70245"}
+{"id": 1225139, "field": "name", "en": "Improved Mind Flay", "hash": "21812ed467116b74", "src": "db2@1.60.1.70245"}
+{"id": 1225139, "field": "description", "en": "Your Mind Flay now deals $s1% more damage, gains $s2 yards increased range, but slows the target's movement speed by ${$s4-($m3)}%.", "hash": "13adcdfd7b4bb8d6", "src": "db2@1.60.1.70245"}
+{"id": 1225143, "field": "name", "en": "[DNT] Power Stone I", "hash": "6c1dc470c72f4d90", "src": "db2@1.60.1.70245"}
+{"id": 1225170, "field": "name", "en": "[DNT] Power Stone II", "hash": "533b86accaf94176", "src": "db2@1.60.1.70245"}
+{"id": 1225171, "field": "name", "en": "[DNT] Power Stone III", "hash": "9775eb1f940180a5", "src": "db2@1.60.1.70245"}
+{"id": 1225177, "field": "name", "en": "Malediction", "hash": "818525fb641ba3ad", "src": "db2@1.60.1.70245"}
+{"id": 1225177, "field": "description", "en": "Increases all periodic damage done by your Warlock spells by $s1%.", "hash": "5fbe442b0e1cf8c7", "src": "db2@1.60.1.70245"}
+{"id": 1225214, "field": "name", "en": "Demonic Energies", "hash": "1f1a489b308a4ec6", "src": "db2@1.60.1.70245"}
+{"id": 1225214, "field": "description", "en": "You heal your pet for $s1% of all spell damage you deal. When you gain Mana from Life Tap, your summoned demon gains $m2% of the Mana you gain.", "hash": "1fcd7a5a84ef19eb", "src": "db2@1.60.1.70245"}
+{"id": 1225217, "field": "name", "en": "Improved Felhunter", "hash": "c83951a309157beb", "src": "db2@1.60.1.70245"}
+{"id": 1225217, "field": "description", "en": "Increases the Attack Power reduction of your Felhunter's Tainted Blood, the healing of its Devour Magic, and the detection level of its Paranoia by $s1%, and reduces the cooldown of its Spell Lock by ${$m2/-1000} sec.", "hash": "5e82328766f45afe", "src": "db2@1.60.1.70245"}
+{"id": 1225220, "field": "name", "en": "Molten Skin", "hash": "35e88465356193fb", "src": "db2@1.60.1.70245"}
+{"id": 1225220, "field": "description", "en": "Reduces all damage taken by $s1%.", "hash": "11733ab18a4ddb1f", "src": "db2@1.60.1.70245"}
+{"id": 1225228, "field": "name", "en": "Bane of Havoc", "hash": "d8769dc6eaa15242", "src": "db2@1.60.1.70245"}
+{"id": 1225228, "field": "description", "en": "Afflicts the target for $d, causing $s1% of all damage done by the Warlock to other targets to also be dealt to the cursed target. Bane of Havoc is limited to 1 target, and only one Bane per Warlock can be active on any one target.", "hash": "43f49859c9c2712a", "src": "db2@1.60.1.70245"}
+{"id": 1225228, "field": "aura", "en": "Taking $s1% of all damage done by the Warlock to other targets.", "hash": "1a330b3c2f4abd67", "src": "db2@1.60.1.70245"}
+{"id": 1225285, "field": "name", "en": "[DNT] Nullify Power Stone", "hash": "46c0ab3c81e29d45", "src": "db2@1.60.1.70245"}
+{"id": 1225286, "field": "name", "en": "[DNT] Nullify Power Stone", "hash": "46c0ab3c81e29d45", "src": "db2@1.60.1.70245"}
+{"id": 1225287, "field": "name", "en": "[DNT] Nullify Power Stone", "hash": "46c0ab3c81e29d45", "src": "db2@1.60.1.70245"}
+{"id": 1225291, "field": "name", "en": "Nullify", "hash": "784667e6ab756534", "src": "db2@1.60.1.70245"}
+{"id": 1225291, "field": "description", "en": "Nullify a nearby Naga power stone.", "hash": "ec174b03c2372ca6", "src": "db2@1.60.1.70245"}
+{"id": 1225295, "field": "name", "en": "Precision", "hash": "b8b32d40fc3f2110", "src": "db2@1.60.1.70245"}
+{"id": 1225295, "field": "description", "en": "Improves your chance to hit by $s1%.", "hash": "8e26e0349a4f376b", "src": "db2@1.60.1.70245"}
+{"id": 1225313, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1225314, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1225419, "field": "name", "en": "Necrotic Aura", "hash": "a9c76bab5235b1e4", "src": "db2@1.60.1.70245"}
+{"id": 1225419, "field": "description", "en": "A wave of necrotic energy fills the room, completely preventing all healing effects for $d.\r\n", "hash": "5822bcb912a5cdc5", "src": "db2@1.60.1.70245"}
+{"id": 1225419, "field": "aura", "en": "A wave of necrotic energy fills the room, completely preventing all healing effects for $d.", "hash": "5822bcb912a5cdc5", "src": "db2@1.60.1.70245"}
+{"id": 1225420, "field": "name", "en": "Summon Enraged Tempest", "hash": "ad898cd1c3fd1c74", "src": "db2@1.60.1.70245"}
+{"id": 1225423, "field": "name", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70245"}
+{"id": 1225423, "field": "description", "en": "Disarms an enemy, forcing it to stop wielding its weapon for $d.", "hash": "c9fbbd5fc582f9d5", "src": "db2@1.60.1.70245"}
+{"id": 1225423, "field": "aura", "en": "Not wielding a weapon.", "hash": "619e24db77a41050", "src": "db2@1.60.1.70245"}
+{"id": 1225425, "field": "name", "en": "(DNT) Necrotic Aura Warning", "hash": "737df5598697543b", "src": "db2@1.60.1.70245"}
+{"id": 1225428, "field": "name", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70245"}
+{"id": 1225428, "field": "description", "en": "Disarms an enemy, forcing it to stop wielding its weapon for $d.", "hash": "c9fbbd5fc582f9d5", "src": "db2@1.60.1.70245"}
+{"id": 1225428, "field": "aura", "en": "Not wielding a weapon.", "hash": "619e24db77a41050", "src": "db2@1.60.1.70245"}
+{"id": 1225429, "field": "name", "en": "Heart of Doom", "hash": "4bfbe5b0d6c22808", "src": "db2@1.60.1.70245"}
+{"id": 1225430, "field": "name", "en": "(DNT) Necrotic Aura Warning", "hash": "737df5598697543b", "src": "db2@1.60.1.70245"}
+{"id": 1225435, "field": "name", "en": "Bountiful Harvest", "hash": "3390499544e2f5ec", "src": "db2@1.60.1.70245"}
+{"id": 1225435, "field": "description", "en": "You discover $s1% more Scarce materials from Mining, Herbalism, and Skinning.", "hash": "93862f218c5fa36d", "src": "db2@1.60.1.70245"}
+{"id": 1225438, "field": "name", "en": "Air Elemental Core", "hash": "7014f8ce4891b885", "src": "db2@1.60.1.70245"}
+{"id": 1225442, "field": "name", "en": "[DNT] Improved Resolve", "hash": "23cb5b0b222f2f22", "src": "db2@1.60.1.70245"}
+{"id": 1225451, "field": "name", "en": "Working Overtime", "hash": "24243b85d1d1f74f", "src": "db2@1.60.1.70245"}
+{"id": 1225451, "field": "description", "en": "Increases your chance to gain a skill increase from using any primary, secondary, or class-based tradeskill by $s1%.", "hash": "b111856821568ae9", "src": "db2@1.60.1.70245"}
+{"id": 1225455, "field": "name", "en": "Luremaster", "hash": "6db4d5507750a983", "src": "db2@1.60.1.70245"}
+{"id": 1225455, "field": "description", "en": "While fishing with a Lure active, you have a $s1% chance to catch an extra fish.", "hash": "7b22876ed9c79102", "src": "db2@1.60.1.70245"}
+{"id": 1225456, "field": "name", "en": "Performance Bonus", "hash": "bface5445241cbec", "src": "db2@1.60.1.70245"}
+{"id": 1225456, "field": "description", "en": "You have a $s1% chance to receive 100% increased Merchant's Favor when you turn in a crate to the Azeroth Commerce Authority or Durotar Supply and Logistics.", "hash": "7c446bb6f7e22a0e", "src": "db2@1.60.1.70245"}
+{"id": 1225457, "field": "name", "en": "Master Chef", "hash": "4876af266ba05f8b", "src": "db2@1.60.1.70245"}
+{"id": 1225457, "field": "description", "en": "Your cooking recipes have a $s1% chance to create an extra result.", "hash": "d117d4b2c3213f03", "src": "db2@1.60.1.70245"}
+{"id": 1225458, "field": "name", "en": "Holy Bolt", "hash": "dff879ea22cedffb", "src": "db2@1.60.1.70245"}
+{"id": 1225458, "field": "description", "en": "Hurls a bolt of light magic at an enemy, inflicting Holy damage.\r\n", "hash": "737d97150b3c29e6", "src": "db2@1.60.1.70245"}
+{"id": 1225459, "field": "name", "en": "Bartering", "hash": "b179b45c2ba0b90d", "src": "db2@1.60.1.70245"}
+{"id": 1225459, "field": "description", "en": "Reduces the gold price of items from all vendors by $s1%.", "hash": "149ab06278c32f60", "src": "db2@1.60.1.70245"}
+{"id": 1225460, "field": "name", "en": "Optimization - NYI", "hash": "3cee08f639a34659", "src": "db2@1.60.1.70245"}
+{"id": 1225460, "field": "description", "en": "Materials used by your Engineering, Blacksmithing, Leatherworking, and Tailoring recipes have a $s1% chance per item to be refunded on completing the recipe.", "hash": "73529925d558c31a", "src": "db2@1.60.1.70245"}
+{"id": 1225461, "field": "name", "en": "Salvaging - NYI", "hash": "8ab61d949f96071c", "src": "db2@1.60.1.70245"}
+{"id": 1225461, "field": "description", "en": "Extracts crafting materials from good quality or better armor.", "hash": "5db319154ef1e6b9", "src": "db2@1.60.1.70245"}
+{"id": 1225464, "field": "name", "en": "Condemnation", "hash": "df6e2f8a053f8a15", "src": "db2@1.60.1.70245"}
+{"id": 1225464, "field": "description", "en": "Light magic lashes out at every enemy, inflicting $s1 Holy damage.", "hash": "d3037f540b76c1e3", "src": "db2@1.60.1.70245"}
+{"id": 1225465, "field": "name", "en": "Meticulous", "hash": "b1302d360daad594", "src": "db2@1.60.1.70245"}
+{"id": 1225465, "field": "description", "en": "Grants a $s1% chance to gain extra results from First Aid recipes and from Alchemy Elixir, Potion, Draught, and Flask recipes.", "hash": "74e83bdb2cef4b67", "src": "db2@1.60.1.70245"}
+{"id": 1225468, "field": "name", "en": "Master Forager", "hash": "b81f1b5cc558a2f2", "src": "db2@1.60.1.70245"}
+{"id": 1225468, "field": "description", "en": "Gain $s1 increased skill in Skinning, Mining, and Herbalism, and $s2 increased skill in Fishing.", "hash": "57143cc63fe00d2f", "src": "db2@1.60.1.70245"}
+{"id": 1225469, "field": "name", "en": "Dedicated Study", "hash": "7fce2944e1f55076", "src": "db2@1.60.1.70245"}
+{"id": 1225469, "field": "description", "en": "Increases your skill by 1 in your lowest tradeskill among your Primary and Secondary tradeskills. If you have already reached 300 skill in your two current Primary Tradeskills and all three Secondary Tradeskills, you will gain $s1 of a random Elemental Essence.", "hash": "6f7bf932baca944d", "src": "db2@1.60.1.70245"}
+{"id": 1225470, "field": "name", "en": "Essence of Innovation", "hash": "a8f69c228e05f064", "src": "db2@1.60.1.70245"}
+{"id": 1225470, "field": "description", "en": "Craft an Essence of Innovation and research a new recipe for a non-gathering Primary tradeskill in which you have reached 300 skill.", "hash": "c3a9a7d2f8d6978d", "src": "db2@1.60.1.70245"}
+{"id": 1225472, "field": "name", "en": "Thrill of Adventure", "hash": "8ce19057b8a9030f", "src": "db2@1.60.1.70245"}
+{"id": 1225472, "field": "description", "en": "You gain $s1% of your maximum Health and Mana over $1261483d each time you deliver the killing blow to a non-trivial enemy. Ineffective in dungeons, raids, and battlegrounds.", "hash": "a23e12eb939df606", "src": "db2@1.60.1.70245"}
+{"id": 1225474, "field": "name", "en": "Talented", "hash": "c0896c43dc52a55f", "src": "db2@1.60.1.70245"}
+{"id": 1225474, "field": "description", "en": "You gain talent points every level starting at level $s1 instead of starting at level 10, but you still may not have more than 51 total talent points.", "hash": "9e16e452df2454a5", "src": "db2@1.60.1.70245"}
+{"id": 1225475, "field": "name", "en": "Field Medicine", "hash": "30a76bf167676da3", "src": "db2@1.60.1.70245"}
+{"id": 1225475, "field": "description", "en": "Reduces the duration of the Recently Bandaged effect by ${$m1/-1000} sec when you use a bandage. Ineffective in dungeons, raids, and battlegrounds.", "hash": "e07ee09749fbd41b", "src": "db2@1.60.1.70245"}
+{"id": 1225477, "field": "name", "en": "High Alert", "hash": "7a970c8a91d14914", "src": "db2@1.60.1.70245"}
+{"id": 1225477, "field": "description", "en": "Increases your ability to detect nearby targets with Stealth as if your level were increased by ${$m1/5}. Ineffective in Battlegrounds.", "hash": "8e83bc7940d3cdd0", "src": "db2@1.60.1.70245"}
+{"id": 1225478, "field": "name", "en": "Well Rested", "hash": "366e8fc8f8f60a32", "src": "db2@1.60.1.70245"}
+{"id": 1225478, "field": "description", "en": "Your rested experience accumulates $s1% faster and your rested experience cap is increased by $s2%.", "hash": "88ca677ae900ee85", "src": "db2@1.60.1.70245"}
+{"id": 1225479, "field": "name", "en": "Field Guide", "hash": "bf7f3c83b1ec32fb", "src": "db2@1.60.1.70245"}
+{"id": 1225479, "field": "description", "en": "Reduces your cooldown on adding Camp features by ${$m1/-36000}%", "hash": "cf2592a42d913e98", "src": "db2@1.60.1.70245"}
+{"id": 1225481, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70245"}
+{"id": 1225481, "field": "description", "en": "Shoot down a Wasp Nest.", "hash": "9d5dab5597cba13f", "src": "db2@1.60.1.70245"}
+{"id": 1225482, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70245"}
+{"id": 1225482, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70245"}
+{"id": 1225484, "field": "name", "en": "Unyielding Pain", "hash": "6c6b76ee8ef942a0", "src": "db2@1.60.1.70245"}
+{"id": 1225484, "field": "description", "en": "Dark magic lashes out at every enemy, inflicting $s1 Shadow damage", "hash": "60cc5aa7843713a7", "src": "db2@1.60.1.70245"}
+{"id": 1225485, "field": "name", "en": "Diplomat", "hash": "581877ed02a4ae65", "src": "db2@1.60.1.70245"}
+{"id": 1225485, "field": "description", "en": "Increases your reputation gains by $s1%.", "hash": "1738a7b01854fb1e", "src": "db2@1.60.1.70245"}
+{"id": 1225486, "field": "name", "en": "Wasp Nest", "hash": "44e13d0550e8c09f", "src": "db2@1.60.1.70245"}
+{"id": 1225487, "field": "name", "en": "Iron Stomach", "hash": "ddf6279705138da4", "src": "db2@1.60.1.70245"}
+{"id": 1225487, "field": "description", "en": "Reduces your cooldown for using potions by ${$m1/-1000} sec. Ineffective in dungeons, raids, and battlegrounds.", "hash": "ae9cf6ba638f3fa5", "src": "db2@1.60.1.70245"}
+{"id": 1225490, "field": "name", "en": "Frequent Flier", "hash": "df15b404a7d4ea09", "src": "db2@1.60.1.70245"}
+{"id": 1225490, "field": "description", "en": "You receive a $s1% discount on all flight paths, and your flight path mount flies $s2% faster.", "hash": "7a29be59683734e2", "src": "db2@1.60.1.70245"}
+{"id": 1225491, "field": "name", "en": "Master Swimmer", "hash": "24f659c78cbe123f", "src": "db2@1.60.1.70245"}
+{"id": 1225491, "field": "description", "en": "Your underwater breath lasts $s1% longer than normal and you swim $s2% faster.", "hash": "59cdcec11e018ed2", "src": "db2@1.60.1.70245"}
+{"id": 1225492, "field": "name", "en": "Play Dead", "hash": "aee78125506c51ed", "src": "db2@1.60.1.70245"}
+{"id": 1225492, "field": "description", "en": "Gives you a $s1% chance of being able to resurrect with $1261698s1% Health and Mana. Ineffective in dungeons, raids, and battlegrounds. This effect cannot trigger more often than once every $1261707d.", "hash": "5064a7e0df1c396a", "src": "db2@1.60.1.70245"}
+{"id": 1225493, "field": "name", "en": "Personal Banking", "hash": "c937671a72023ae9", "src": "db2@1.60.1.70245"}
+{"id": 1225493, "field": "description", "en": "All innkeepers can now also grant you access to your bank. This access has a $1261854d cooldown.", "hash": "273cc5b5569da693", "src": "db2@1.60.1.70245"}
+{"id": 1225494, "field": "name", "en": "Second Home", "hash": "32d8b15a00d6e324", "src": "db2@1.60.1.70245"}
+{"id": 1225494, "field": "description", "en": "Returns you to the rest area where you most recently set your Second Home. When used in a rest area, makes that location your Second Home. This ability shares a cooldown with Hearthstones.", "hash": "3f21f804ec126281", "src": "db2@1.60.1.70245"}
+{"id": 1225497, "field": "name", "en": "Reinforce", "hash": "5265624300954e0a", "src": "db2@1.60.1.70245"}
+{"id": 1225497, "field": "description", "en": "You take $s1% less durability loss when you die.", "hash": "db71d5c080a7fd59", "src": "db2@1.60.1.70245"}
+{"id": 1225498, "field": "name", "en": "Mount Up", "hash": "d48e7c9e0bbc98a3", "src": "db2@1.60.1.70245"}
+{"id": 1225498, "field": "description", "en": "Increases speed while mounted by $s1%. Not active in battlegrounds. Does not stack with other effects that increase mounted movement speed.", "hash": "b0c822f6bb35c4a0", "src": "db2@1.60.1.70245"}
+{"id": 1225499, "field": "name", "en": "Gourmand", "hash": "4d3d3829eb25178b", "src": "db2@1.60.1.70245"}
+{"id": 1225499, "field": "description", "en": "Increases the duration of beneficial effects from eating food by $s1%.", "hash": "9217a58b498b9b21", "src": "db2@1.60.1.70245"}
+{"id": 1225500, "field": "name", "en": "The Quick and the Dead", "hash": "2b75c1a5b4da0105", "src": "db2@1.60.1.70245"}
+{"id": 1225500, "field": "description", "en": "Increases movement speed while dead by $s1% and your helpful spells and abilities cost no resources for ${$m2/60000} min after being resurrected or until you enter combat.", "hash": "79c8cdcb16914eb6", "src": "db2@1.60.1.70245"}
+{"id": 1225501, "field": "name", "en": "For Great Honor", "hash": "9131d27ab62107c5", "src": "db2@1.60.1.70245"}
+{"id": 1225501, "field": "description", "en": "Increases Honor Points gained by $s1%.", "hash": "e06b5d7991b55027", "src": "db2@1.60.1.70245"}
+{"id": 1225502, "field": "name", "en": "Permanence", "hash": "dae18a4eb0e4c7a0", "src": "db2@1.60.1.70245"}
+{"id": 1225502, "field": "description", "en": "Your class abilities which grant long-duration stat or attribute benefits to all party or raid members last $s1% longer, and the benefits you gain from resting at a camp last $s2% longer.", "hash": "41f1c872e835133c", "src": "db2@1.60.1.70245"}
+{"id": 1225503, "field": "name", "en": "Reagent Economy", "hash": "13cd4e07c9de906e", "src": "db2@1.60.1.70245"}
+{"id": 1225503, "field": "description", "en": "Your class abilities no longer require reagents purchaseable from vendors.", "hash": "d333a83cec407828", "src": "db2@1.60.1.70245"}
+{"id": 1225504, "field": "name", "en": "Better Living Through Chemistry", "hash": "e0fa4cffdfdb1205", "src": "db2@1.60.1.70245"}
+{"id": 1225504, "field": "description", "en": "Increases the duration of beneficial effects from elixirs and flasks by $s1%.", "hash": "a56544efa126c81d", "src": "db2@1.60.1.70245"}
+{"id": 1225505, "field": "name", "en": "Fast Recovery", "hash": "11da9592e5cc9713", "src": "db2@1.60.1.70245"}
+{"id": 1225505, "field": "description", "en": "You recover an additional ${$m1/10}.1% of your Health and Mana every 5 sec while not in combat.", "hash": "c90d026f34cbb542", "src": "db2@1.60.1.70245"}
+{"id": 1225506, "field": "name", "en": "Conquering Hero", "hash": "d1223a62c85dd3e7", "src": "db2@1.60.1.70245"}
+{"id": 1225506, "field": "description", "en": "Beneficial effects you gain from celebrating the defeat of bosses gain $s1% increased duration.", "hash": "87898cd6ac5b0051", "src": "db2@1.60.1.70245"}
+{"id": 1225508, "field": "name", "en": "Second Chance", "hash": "19fa817e2959c73f", "src": "db2@1.60.1.70245"}
+{"id": 1225508, "field": "description", "en": "Effects gained from celebrating the defeat of bosses will not cancel the first time you die while they are active.", "hash": "48137f73018f204e", "src": "db2@1.60.1.70245"}
+{"id": 1225509, "field": "name", "en": "Adaptability", "hash": "0709ae57cc37fa85", "src": "db2@1.60.1.70245"}
+{"id": 1225509, "field": "description", "en": "Reset your spent class talent points.", "hash": "7f63c1b0be716107", "src": "db2@1.60.1.70245"}
+{"id": 1225700, "field": "name", "en": "Find Boomfizz Goblin", "hash": "2f830c8a338ed810", "src": "db2@1.60.1.70245"}
+{"id": 1225719, "field": "name", "en": "1.50 Sound - Sound Squisher - Interior Zone Tone Obliterator", "hash": "ae1909ff2c703712", "src": "db2@1.60.1.70245"}
+{"id": 1225758, "field": "name", "en": "Prowler Steak", "hash": "6f34eaac934bd4a1", "src": "db2@1.60.1.70245"}
+{"id": 1225759, "field": "name", "en": "Filet o' Flank", "hash": "3e82e13f57386fc2", "src": "db2@1.60.1.70245"}
+{"id": 1225760, "field": "name", "en": "Sunrise Omelette", "hash": "3d64752aea7bd919", "src": "db2@1.60.1.70245"}
+{"id": 1225762, "field": "name", "en": "Specklefin Feast", "hash": "741a9b292087b241", "src": "db2@1.60.1.70245"}
+{"id": 1225763, "field": "name", "en": "Grand Lobster Banquet", "hash": "94c1ad1e696598b8", "src": "db2@1.60.1.70245"}
+{"id": 1225769, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70245"}
+{"id": 1225769, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225778", "hash": "f67859b2de8b1c06", "src": "db2@1.60.1.70245"}
+{"id": 1225769, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70245"}
+{"id": 1225771, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70245"}
+{"id": 1225771, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225779", "hash": "f67859b3de8b1c07", "src": "db2@1.60.1.70245"}
+{"id": 1225771, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70245"}
+{"id": 1225772, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70245"}
+{"id": 1225772, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225780", "hash": "f6785a2dde8b3bdf", "src": "db2@1.60.1.70245"}
+{"id": 1225772, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70245"}
+{"id": 1225774, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70245"}
+{"id": 1225774, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating. $@spelldesc1225782", "hash": "f6785a2fde8b3be1", "src": "db2@1.60.1.70245"}
+{"id": 1225774, "field": "aura", "en": "Restores $/5;s1 health per second.", "hash": "fde4540fc6c380a6", "src": "db2@1.60.1.70245"}
+{"id": 1225778, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
+{"id": 1225778, "field": "description", "en": "If you spend at least $1225769t2 sec eating you will become Well Fed and gain $s1 Strength and $s2 Stamina for $d.", "hash": "db9e55314426f376", "src": "db2@1.60.1.70245"}
+{"id": 1225778, "field": "aura", "en": "Your Strength is increased by $w1 and Stamina by $w2.", "hash": "19988f94d6cec68e", "src": "db2@1.60.1.70245"}
+{"id": 1225779, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
+{"id": 1225779, "field": "description", "en": "If you spend at least $1225771t2 sec eating you will become Well Fed and gain $s1 Agility and $s2 Stamina for $d.", "hash": "08264130f6c827a8", "src": "db2@1.60.1.70245"}
+{"id": 1225779, "field": "aura", "en": "Your Agility is increased by $w1 and Stamina by $w2.", "hash": "070569a44d04cb6a", "src": "db2@1.60.1.70245"}
+{"id": 1225780, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
+{"id": 1225780, "field": "description", "en": "If you spend at least $1225772t2 sec eating you will become Well Fed and gain $s1 Spell Damage, $s3 Healing Power, and $s2 Stamina for $d.", "hash": "7447fb5bde4a09a7", "src": "db2@1.60.1.70245"}
+{"id": 1225780, "field": "aura", "en": "Your Spell Damage is increased by $w1, Healing Power by $w3, and Stamina by $w2.", "hash": "3e52160dedecd842", "src": "db2@1.60.1.70245"}
+{"id": 1225782, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
+{"id": 1225782, "field": "description", "en": "If you spend at least $1225774t2 sec eating you will become Well Fed and gain $s1 Attack Power, $s3 Spell Damage, $s4 Healing Power, and $s2 Stamina for $d.", "hash": "6a544e460741426b", "src": "db2@1.60.1.70245"}
+{"id": 1225782, "field": "aura", "en": "Your Attack Power is increased by $w1, Spell Damage by $w3, Healing Power by $w4, and Stamina by $w2.", "hash": "fcc6f20dfe30eadb", "src": "db2@1.60.1.70245"}
+{"id": 1225841, "field": "name", "en": "Curse of Recklessness", "hash": "c73143b4c8ddbfca", "src": "db2@1.60.1.70245"}
+{"id": 1225841, "field": "description", "en": "Curses the target with recklessness, increasing melee attack power by $s1 but reducing armor by $s2 for $d.  Cursed enemies will not flee and will ignore Fear and Horror effects.  Only one Curse per Warlock can be active on any one target.", "hash": "98405a76886a2090", "src": "db2@1.60.1.70245"}
+{"id": 1225841, "field": "aura", "en": "Increases melee attack power by $s1 and decreases armor by $s2.   Target will not flee and will ignore Fear and Horror effects.", "hash": "83fba19790e5fa9c", "src": "db2@1.60.1.70245"}
+{"id": 1225906, "field": "name", "en": "Specklefin Feast", "hash": "741a9b292087b241", "src": "db2@1.60.1.70245"}
+{"id": 1225906, "field": "description", "en": "Serve a delicious feast that lasts for $d and serves up to $M2 players.\r\n\r\n$@spellicon1225774 $@spellname1225774\r\n$@spelldesc1225774", "hash": "ee1e8d514364967e", "src": "db2@1.60.1.70245"}
+{"id": 1225907, "field": "name", "en": "Grand Lobster Banquet", "hash": "94c1ad1e696598b8", "src": "db2@1.60.1.70245"}
+{"id": 1225907, "field": "description", "en": "Serve a delicious feast that lasts for $d and serves up to $M2 players.\r\n\r\n$@spellicon1225774 $@spellname1225774\r\n$@spelldesc1225774", "hash": "ee1e8d514364967e", "src": "db2@1.60.1.70245"}
+{"id": 1225924, "field": "name", "en": "Balnazzar Encounter - Success", "hash": "62b6abd040b967ed", "src": "db2@1.60.1.70245"}
+{"id": 1225951, "field": "name", "en": "Tinker: Teleport", "hash": "2b239a2d8a7fcb85", "src": "db2@1.60.1.70245"}
+{"id": 1225951, "field": "description", "en": "$@spelldesc1225960", "hash": "84222b206fbe151b", "src": "db2@1.60.1.70245"}
+{"id": 1225960, "field": "name", "en": "Tinker: Teleport", "hash": "2b239a2d8a7fcb85", "src": "db2@1.60.1.70245"}
+{"id": 1225960, "field": "description", "en": "Teleport forward $M2 yds.", "hash": "a3b42c7f54c582ef", "src": "db2@1.60.1.70245"}
+{"id": 1225970, "field": "name", "en": "[DNT] Heart of Doom Treasure Tracker", "hash": "e2f21bdcf6b39795", "src": "db2@1.60.1.70245"}
+{"id": 1225972, "field": "name", "en": "Catastrophe", "hash": "c2e5ba6f22fc16c5", "src": "db2@1.60.1.70245"}
+{"id": 1225972, "field": "description", "en": "Your tinker malfunction and caused an explosion.", "hash": "b6bc10e44f215e18", "src": "db2@1.60.1.70245"}
+{"id": 1225972, "field": "aura", "en": "Your tinker malfunctioned.", "hash": "d84dd2920c654dfe", "src": "db2@1.60.1.70245"}
+{"id": 1225982, "field": "name", "en": "Tinker: Nitro Boosts", "hash": "4ee9d4cd3fb45206", "src": "db2@1.60.1.70245"}
+{"id": 1225982, "field": "description", "en": "$@spelldesc1225987", "hash": "84222c2d6fbe54e4", "src": "db2@1.60.1.70245"}
+{"id": 1225987, "field": "name", "en": "Tinker: Nitro Boosts", "hash": "4ee9d4cd3fb45206", "src": "db2@1.60.1.70245"}
+{"id": 1225987, "field": "description", "en": "Activate a set of jets to increase your movement speed by up to $M1%, for up to $d.", "hash": "36607b95cd6453af", "src": "db2@1.60.1.70245"}
+{"id": 1225987, "field": "aura", "en": "Movement speed increased by $w1%.", "hash": "d64ce2e8b7176631", "src": "db2@1.60.1.70245"}
+{"id": 1225988, "field": "name", "en": "Seal of the Dawn", "hash": "576a8d0cbf1a3693", "src": "db2@1.60.1.70245"}
+{"id": 1225988, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your healing and shielding by ${$m1/100}.2% and your health by ${$m2/100}.2% for each piece of Sanctified armor equipped.", "hash": "d5cc286fe3eeee6b", "src": "db2@1.60.1.70245"}
+{"id": 1225994, "field": "name", "en": "Tinker: Nitro Boosts", "hash": "4ee9d4cd3fb45206", "src": "db2@1.60.1.70245"}
+{"id": 1225994, "field": "description", "en": "$@spelldesc1225987", "hash": "84222c2d6fbe54e4", "src": "db2@1.60.1.70245"}
+{"id": 1225994, "field": "aura", "en": "Movement speed increased by $w1% and your zoomies are unstoppable.", "hash": "47e2ea33ff910081", "src": "db2@1.60.1.70245"}

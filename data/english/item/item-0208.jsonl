@@ -1,152 +1,152 @@
-{"id": 208005, "field": "name", "en": "Agamand Relic Coffer Key", "hash": "7181c382bdff39b7", "src": "db2@1.60.1.70170"}
-{"id": 208005, "field": "description", "en": "Opens Relic Coffer", "hash": "176c1cbc50e46df6", "src": "db2@1.60.1.70170"}
-{"id": 208007, "field": "name", "en": "Shipwreck Cache Key", "hash": "0d04d0380376ca1e", "src": "db2@1.60.1.70170"}
-{"id": 208034, "field": "name", "en": "Tirisfal Treasure Map", "hash": "19c58a98ca1b233d", "src": "db2@1.60.1.70170"}
-{"id": 208034, "field": "description", "en": "Dig up treasure at the marked location\nWest of Brill, under the bridge, west side.", "hash": "af862aef99f18c2b", "src": "db2@1.60.1.70170"}
-{"id": 208035, "field": "name", "en": "Top-Right Map Piece", "hash": "d2c25c13c201ab06", "src": "db2@1.60.1.70170"}
-{"id": 208035, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208036, "field": "name", "en": "Top-Left Map Piece", "hash": "43317739522763d4", "src": "db2@1.60.1.70170"}
-{"id": 208036, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208037, "field": "name", "en": "Bottom-Right Map Piece", "hash": "7d2c08e1941d33fc", "src": "db2@1.60.1.70170"}
-{"id": 208037, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208038, "field": "name", "en": "Bottom-Left Map Piece", "hash": "7d2a74a126dc03ae", "src": "db2@1.60.1.70170"}
-{"id": 208038, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208085, "field": "name", "en": "Scarlet Lieutenant Signet Ring", "hash": "cad55b8db67f5d2f", "src": "db2@1.60.1.70170"}
-{"id": 208085, "field": "description", "en": "Create forged documents implicating the Scarlet Crusade against the Alliance.  Requires writing supplies found in Brill's town hall.", "hash": "d6127412dafd482c", "src": "db2@1.60.1.70170"}
-{"id": 208086, "field": "name", "en": "Forged Scarlet Memorandum", "hash": "4b2d2d7af337ba3d", "src": "db2@1.60.1.70170"}
-{"id": 208086, "field": "description", "en": "An outrageous collection of human-supremacist musings that are sure to alarm Alliance leadership.", "hash": "ced49138465a442e", "src": "db2@1.60.1.70170"}
-{"id": 208139, "field": "name", "en": "Ominous Tome", "hash": "d24f1ce4aa0fad90", "src": "db2@1.60.1.70170"}
-{"id": 208139, "field": "description", "en": "Summon Soboz\nBring the jaw of a wolf and the blood of a wendigo to Shimmer Ridge. Stand atop the ritual stone, and call forth the demon", "hash": "a22d71f22ea3b2d9", "src": "db2@1.60.1.70170"}
-{"id": 208140, "field": "name", "en": "Wendigo Blood", "hash": "ff359de6eea818cd", "src": "db2@1.60.1.70170"}
-{"id": 208140, "field": "description", "en": "A reagent for use in a summoning ritual", "hash": "df07f3b6c5c1fca1", "src": "db2@1.60.1.70170"}
-{"id": 208158, "field": "name", "en": "Pristine Trogg Heart", "hash": "6973d5a0ef5abea3", "src": "db2@1.60.1.70170"}
-{"id": 208158, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70170"}
-{"id": 208159, "field": "name", "en": "Severed Troll Head", "hash": "bd40d4020bc8e76f", "src": "db2@1.60.1.70170"}
-{"id": 208159, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70170"}
-{"id": 208160, "field": "name", "en": "Severed Wendigo Paw", "hash": "f4e925a2a6759ef8", "src": "db2@1.60.1.70170"}
-{"id": 208160, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70170"}
-{"id": 208180, "field": "name", "en": "Rabbit Musk", "hash": "bfdf0e4d345dbe9e", "src": "db2@1.60.1.70170"}
-{"id": 208180, "field": "description", "en": "Your Tame Beast ability also works on rabbits (as companion pet)", "hash": "8940a015c6669405", "src": "db2@1.60.1.70170"}
-{"id": 208183, "field": "name", "en": "Apothecary Notes", "hash": "18d0a89c2bfc70b5", "src": "db2@1.60.1.70170"}
-{"id": 208183, "field": "description", "en": "Combine 6 Apothecary Notes to create a new engraving recipe.", "hash": "e30a4cd83ac66036", "src": "db2@1.60.1.70170"}
-{"id": 208185, "field": "name", "en": "The Apothecary's Metaphysical Primer", "hash": "cbb1ebc85383600c", "src": "db2@1.60.1.70170"}
-{"id": 208185, "field": "description", "en": "Elementary notes on arcane theory and spell research, compiled by Archmage Rotwick of the Royal Apothecary Society. A fine addition to any library's collection.", "hash": "c37ad017a357c4e8", "src": "db2@1.60.1.70170"}
-{"id": 208192, "field": "name", "en": "Dun Morogh Pig Meat", "hash": "915dec89d5bd3701", "src": "db2@1.60.1.70170"}
-{"id": 208192, "field": "description", "en": "Place as bait inside a great bear's den", "hash": "638bcf4293e96435", "src": "db2@1.60.1.70170"}
-{"id": 208205, "field": "name", "en": "Blackrat's Note", "hash": "d1ca404e03e3ff2d", "src": "db2@1.60.1.70170"}
-{"id": 208205, "field": "description", "en": "A message written in thieves' cant", "hash": "a0e450931b72e270", "src": "db2@1.60.1.70170"}
-{"id": 208213, "field": "name", "en": "Top-Right Map Piece", "hash": "d2c25c13c201ab06", "src": "db2@1.60.1.70170"}
-{"id": 208213, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208215, "field": "name", "en": "Top-Left Map Piece", "hash": "43317739522763d4", "src": "db2@1.60.1.70170"}
-{"id": 208215, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208218, "field": "name", "en": "Bottom-Right Map Piece", "hash": "7d2c08e1941d33fc", "src": "db2@1.60.1.70170"}
-{"id": 208218, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208219, "field": "name", "en": "Bottom-Left Map Piece", "hash": "7d2a74a126dc03ae", "src": "db2@1.60.1.70170"}
-{"id": 208219, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208220, "field": "name", "en": "Dun Morogh Treasure Map", "hash": "f7d90536804dcd21", "src": "db2@1.60.1.70170"}
-{"id": 208220, "field": "description", "en": "Dig up treasure at the marked location\nBeneath the bridge from Kharanos to Ironforge.", "hash": "1b2512d86ad3fa36", "src": "db2@1.60.1.70170"}
-{"id": 208222, "field": "name", "en": "Old Guard Retaliator", "hash": "e24dacb3a8c5f67e", "src": "db2@1.60.1.70170"}
-{"id": 208222, "field": "description", "en": "On landing a killing blow that grants experience or honor, your next attack will critically strike.\nThe previous owner immaculately cared for this weapon.", "hash": "dbc6cf237b34cda9", "src": "db2@1.60.1.70170"}
-{"id": 208223, "field": "name", "en": "Acolyte's Knapsack", "hash": "97ddd2f88fbe9dd3", "src": "db2@1.60.1.70170"}
-{"id": 208224, "field": "name", "en": "Acolyte's Note", "hash": "4c0e4256cddcceb4", "src": "db2@1.60.1.70170"}
-{"id": 208414, "field": "name", "en": "Lunar Idol", "hash": "2c19478cd6e72b09", "src": "db2@1.60.1.70170"}
-{"id": 208414, "field": "description", "en": "Defeat 6 creatures affected by your Moonfire, then use to learn a new ability.", "hash": "34ddd9ab2dbdb13b", "src": "db2@1.60.1.70170"}
-{"id": 208424, "field": "name", "en": "Sun Shades", "hash": "22429e3d76080c23", "src": "db2@1.60.1.70170"}
-{"id": 208424, "field": "description", "en": "Do not stare directly at bright objects.", "hash": "aad9e8b4e42a6d74", "src": "db2@1.60.1.70170"}
-{"id": 208601, "field": "name", "en": "Top-Right Map Piece", "hash": "d2c25c13c201ab06", "src": "db2@1.60.1.70170"}
-{"id": 208601, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208602, "field": "name", "en": "Top-Left Map Piece", "hash": "43317739522763d4", "src": "db2@1.60.1.70170"}
-{"id": 208602, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208603, "field": "name", "en": "Bottom-Right Map Piece", "hash": "7d2c08e1941d33fc", "src": "db2@1.60.1.70170"}
-{"id": 208603, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208604, "field": "name", "en": "Bottom-Left Map Piece", "hash": "7d2a74a126dc03ae", "src": "db2@1.60.1.70170"}
-{"id": 208604, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70170"}
-{"id": 208605, "field": "name", "en": "Teldrassil Treasure Map", "hash": "27c0706302cd7ecc", "src": "db2@1.60.1.70170"}
-{"id": 208605, "field": "description", "en": "Dig up treasure at the marked location\nThe hollow stump of Rut'theran.", "hash": "2f35d8c5fc0ffc71", "src": "db2@1.60.1.70170"}
-{"id": 208607, "field": "name", "en": "Deer Musk", "hash": "e92bb0de82025782", "src": "db2@1.60.1.70170"}
-{"id": 208607, "field": "description", "en": "Your Tame Beast ability also works on deer (as companion pet)", "hash": "26fbe948bc5675cc", "src": "db2@1.60.1.70170"}
-{"id": 208608, "field": "name", "en": "Teldrassil Bird Meat", "hash": "711e7865232ce711", "src": "db2@1.60.1.70170"}
-{"id": 208608, "field": "description", "en": "Place as bait inside a great bear's den", "hash": "638bcf4293e96435", "src": "db2@1.60.1.70170"}
-{"id": 208609, "field": "name", "en": "Glade Flower", "hash": "178fde1428da2821", "src": "db2@1.60.1.70170"}
-{"id": 208609, "field": "description", "en": "Combine 3 Glade Flowers to make a crown.", "hash": "ebce6cc74cb0ae00", "src": "db2@1.60.1.70170"}
-{"id": 208610, "field": "name", "en": "Severed Owl Head", "hash": "41f3dc1c4fb5abb4", "src": "db2@1.60.1.70170"}
-{"id": 208610, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70170"}
-{"id": 208611, "field": "name", "en": "Severed Tiger Head", "hash": "de266f83c160f63c", "src": "db2@1.60.1.70170"}
-{"id": 208611, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70170"}
-{"id": 208612, "field": "name", "en": "Severed Spider Head", "hash": "9b6c05248fa494c9", "src": "db2@1.60.1.70170"}
-{"id": 208612, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70170"}
-{"id": 208682, "field": "name", "en": "Abandoned Snapjaw Egg", "hash": "bfd610d7858fddd9", "src": "db2@1.60.1.70170"}
-{"id": 208682, "field": "description", "en": "Needs a new home.", "hash": "3b2e7f364cb80e90", "src": "db2@1.60.1.70170"}
-{"id": 208687, "field": "name", "en": "Rune of Lacerate", "hash": "ebbdd2eb4606600f", "src": "db2@1.60.1.70170"}
-{"id": 208687, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208689, "field": "name", "en": "Ferocious Idol", "hash": "d11d431e64e2e74d", "src": "db2@1.60.1.70170"}
-{"id": 208689, "field": "description", "en": "Deal 20 instances of bleeding damage to humanoids, then use this idol to learn a new ability.", "hash": "f87ff52cf9a92205", "src": "db2@1.60.1.70170"}
-{"id": 208701, "field": "name", "en": "Rune of Beast Mastery", "hash": "5b27457cf3a8d9d1", "src": "db2@1.60.1.70170"}
-{"id": 208701, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208739, "field": "name", "en": "Horde Warbanner", "hash": "c74d4a30b2c42474", "src": "db2@1.60.1.70170"}
-{"id": 208739, "field": "description", "en": "Plant this in the soil of your enemies", "hash": "764453fb5aece169", "src": "db2@1.60.1.70170"}
-{"id": 208741, "field": "name", "en": "Rune of Endless Rage", "hash": "ada9056f710fb3a4", "src": "db2@1.60.1.70170"}
-{"id": 208741, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208743, "field": "name", "en": "Soul of Greed", "hash": "2cb05573eaed9311", "src": "db2@1.60.1.70170"}
-{"id": 208744, "field": "name", "en": "Rune of Shadowbolts", "hash": "8af5f5642578cf6d", "src": "db2@1.60.1.70170"}
-{"id": 208744, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208749, "field": "name", "en": "Gnarlpine Stash Key", "hash": "4bda508c4e031fd7", "src": "db2@1.60.1.70170"}
-{"id": 208749, "field": "description", "en": "A tree branch is crudely carved upon the handle.", "hash": "a2415d9aeb22c2f0", "src": "db2@1.60.1.70170"}
-{"id": 208750, "field": "name", "en": "Rune of Channeling", "hash": "6a0c824195c82c2d", "src": "db2@1.60.1.70170"}
-{"id": 208750, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208753, "field": "name", "en": "Spell Notes: Regeneration", "hash": "bc9ebc756c75a63b", "src": "db2@1.60.1.70170"}
-{"id": 208753, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208754, "field": "name", "en": "Spell Notes: TENGI RONEERA", "hash": "063e4105c4e0b154", "src": "db2@1.60.1.70170"}
-{"id": 208754, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70170"}
-{"id": 208758, "field": "name", "en": "Earthen Rune", "hash": "d6a3fbb6433a3f19", "src": "db2@1.60.1.70170"}
-{"id": 208758, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208760, "field": "name", "en": "Glade Crown", "hash": "821048d3445da8a1", "src": "db2@1.60.1.70170"}
-{"id": 208760, "field": "description", "en": "Awaken a spirit of the plains ", "hash": "6a4a51d5e2b7f5da", "src": "db2@1.60.1.70170"}
-{"id": 208764, "field": "name", "en": "Rune of the Mind", "hash": "bd4076123327743d", "src": "db2@1.60.1.70170"}
-{"id": 208765, "field": "name", "en": "Helping Hand", "hash": "32c2831086876406", "src": "db2@1.60.1.70170"}
-{"id": 208765, "field": "description", "en": "The hand will open for a savior", "hash": "22a2e27442ecfb2a", "src": "db2@1.60.1.70170"}
-{"id": 208766, "field": "name", "en": "Helping Hand", "hash": "32c2831086876406", "src": "db2@1.60.1.70170"}
-{"id": 208766, "field": "description", "en": "The hand has opened for you", "hash": "667ff165bac6d0b4", "src": "db2@1.60.1.70170"}
-{"id": 208767, "field": "name", "en": "Rune of Mending", "hash": "ea6573e5309e8f76", "src": "db2@1.60.1.70170"}
-{"id": 208767, "field": "description", "en": "Teaches you a new Runecarving ability.", "hash": "01f5084297290498", "src": "db2@1.60.1.70170"}
-{"id": 208768, "field": "name", "en": "Buccaneer's Matchbox", "hash": "a76150eeb1217a03", "src": "db2@1.60.1.70170"}
-{"id": 208768, "field": "description", "en": "Used to ignite flammable materials", "hash": "1e1dd9c6245145b8", "src": "db2@1.60.1.70170"}
-{"id": 208771, "field": "name", "en": "Rune of Blade Dance", "hash": "82ed1b50bdf08b14", "src": "db2@1.60.1.70170"}
-{"id": 208771, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208772, "field": "name", "en": "Rune of Saber Slash", "hash": "646cee01a4ec3014", "src": "db2@1.60.1.70170"}
-{"id": 208772, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208773, "field": "name", "en": "Fishing Harpoon", "hash": "7dd088c29cb27673", "src": "db2@1.60.1.70170"}
-{"id": 208773, "field": "description", "en": "Throw harpoon at target (40 yd. range)\nA must-have for the aspiring shark hunter!", "hash": "7d9b37f8eb4fc1f5", "src": "db2@1.60.1.70170"}
-{"id": 208777, "field": "name", "en": "Rune of the Sniper", "hash": "c261fe43f43543e1", "src": "db2@1.60.1.70170"}
-{"id": 208777, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208778, "field": "name", "en": "Rune of Quick Strike", "hash": "a244dc44d8b49579", "src": "db2@1.60.1.70170"}
-{"id": 208778, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208799, "field": "name", "en": "Spell Notes: Living Bomb", "hash": "41fe5b701311bf3f", "src": "db2@1.60.1.70170"}
-{"id": 208799, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 208800, "field": "name", "en": "Baxtan: On Destructive Magics", "hash": "3e745b06d2352a80", "src": "db2@1.60.1.70170"}
-{"id": 208800, "field": "description", "en": "The writings of a notable Goblin mage. A fine addition to any library's collection.", "hash": "1a0e2da61ff06fd7", "src": "db2@1.60.1.70170"}
-{"id": 208823, "field": "name", "en": "Offering Coin", "hash": "f1b7409844fc99dd", "src": "db2@1.60.1.70170"}
-{"id": 208823, "field": "description", "en": "Toss into a nearby well to make a wish", "hash": "d9e84748df3f4e91", "src": "db2@1.60.1.70170"}
-{"id": 208828, "field": "name", "en": "Memory of a Broken Vow", "hash": "6efd9305e9982cb0", "src": "db2@1.60.1.70170"}
-{"id": 208828, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70170"}
-{"id": 208833, "field": "name", "en": "Malevolent Pie", "hash": "658aebdb6ecefd01", "src": "db2@1.60.1.70170"}
-{"id": 208833, "field": "description", "en": "A pastry with a sinister energy.", "hash": "e21eafe55226991f", "src": "db2@1.60.1.70170"}
-{"id": 208838, "field": "name", "en": "Dark Iron Lockbox", "hash": "ded80489a01ff18a", "src": "db2@1.60.1.70170"}
-{"id": 208843, "field": "name", "en": "Battle Totem", "hash": "6c259662a544e2b6", "src": "db2@1.60.1.70170"}
-{"id": 208843, "field": "description", "en": "Challenge a Tauren to a duel\nA symbol of hostility among members of the Horde", "hash": "9f7b85af04caf8a2", "src": "db2@1.60.1.70170"}
-{"id": 208847, "field": "name", "en": "Skull-Shaped Geode", "hash": "dfc7584eda8ff1e2", "src": "db2@1.60.1.70170"}
-{"id": 208847, "field": "description", "en": "Could likely be cracked open with a solid thump.", "hash": "bd11349621efbacb", "src": "db2@1.60.1.70170"}
-{"id": 208848, "field": "name", "en": "Cracked Skull-Shaped Geode", "hash": "65fb1463cac8cb17", "src": "db2@1.60.1.70170"}
-{"id": 208848, "field": "description", "en": "The geode has been cracked open.", "hash": "ef55b9d0736f4be1", "src": "db2@1.60.1.70170"}
-{"id": 208849, "field": "name", "en": "Libram of Blessings", "hash": "cfa3603525b44464", "src": "db2@1.60.1.70170"}
-{"id": 208849, "field": "description", "en": "Learn a new ability after giving blessings to 5 different players", "hash": "bacb09f4730e206a", "src": "db2@1.60.1.70170"}
-{"id": 208851, "field": "name", "en": "Libram of Justice", "hash": "11adfcb39f6c6270", "src": "db2@1.60.1.70170"}
-{"id": 208851, "field": "description", "en": "Learn a new ability after slaying 10 enemies stunned by Hammer of Justice", "hash": "f0b2846c8ecd020a", "src": "db2@1.60.1.70170"}
-{"id": 208853, "field": "name", "en": "Spell Notes: Brain Freeze", "hash": "316fb52d6cad80fd", "src": "db2@1.60.1.70170"}
-{"id": 208853, "field": "description", "en": "Teaches you a new Runecarving ability.", "hash": "01f5084297290498", "src": "db2@1.60.1.70170"}
-{"id": 208854, "field": "name", "en": "Chewed Spell Notes", "hash": "361d8533d1833b76", "src": "db2@1.60.1.70170"}
-{"id": 208854, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.\nTrogg shamans are truly voracious readers.", "hash": "4481d1a3c767ad35", "src": "db2@1.60.1.70170"}
-{"id": 208855, "field": "name", "en": "Rainbow Fin Albacore Chum", "hash": "edc3917152b399bd", "src": "db2@1.60.1.70170"}
-{"id": 208855, "field": "description", "en": "Feed chum to target.\nA tasty treat for lake monsters", "hash": "19d98837b88f1dfb", "src": "db2@1.60.1.70170"}
-{"id": 208860, "field": "name", "en": "Rumi of Gnomeregan: The Collected Works", "hash": "24c4502579224e04", "src": "db2@1.60.1.70170"}
-{"id": 208860, "field": "description", "en": "The writings of a notable Gnome mage. A fine addition to any library's collection.", "hash": "5c4db87495369bf4", "src": "db2@1.60.1.70170"}
+{"id": 208005, "field": "name", "en": "Agamand Relic Coffer Key", "hash": "7181c382bdff39b7", "src": "db2@1.60.1.70245"}
+{"id": 208005, "field": "description", "en": "Opens Relic Coffer", "hash": "176c1cbc50e46df6", "src": "db2@1.60.1.70245"}
+{"id": 208007, "field": "name", "en": "Shipwreck Cache Key", "hash": "0d04d0380376ca1e", "src": "db2@1.60.1.70245"}
+{"id": 208034, "field": "name", "en": "Tirisfal Treasure Map", "hash": "19c58a98ca1b233d", "src": "db2@1.60.1.70245"}
+{"id": 208034, "field": "description", "en": "Dig up treasure at the marked location\nWest of Brill, under the bridge, west side.", "hash": "af862aef99f18c2b", "src": "db2@1.60.1.70245"}
+{"id": 208035, "field": "name", "en": "Top-Right Map Piece", "hash": "d2c25c13c201ab06", "src": "db2@1.60.1.70245"}
+{"id": 208035, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208036, "field": "name", "en": "Top-Left Map Piece", "hash": "43317739522763d4", "src": "db2@1.60.1.70245"}
+{"id": 208036, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208037, "field": "name", "en": "Bottom-Right Map Piece", "hash": "7d2c08e1941d33fc", "src": "db2@1.60.1.70245"}
+{"id": 208037, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208038, "field": "name", "en": "Bottom-Left Map Piece", "hash": "7d2a74a126dc03ae", "src": "db2@1.60.1.70245"}
+{"id": 208038, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208085, "field": "name", "en": "Scarlet Lieutenant Signet Ring", "hash": "cad55b8db67f5d2f", "src": "db2@1.60.1.70245"}
+{"id": 208085, "field": "description", "en": "Create forged documents implicating the Scarlet Crusade against the Alliance.  Requires writing supplies found in Brill's town hall.", "hash": "d6127412dafd482c", "src": "db2@1.60.1.70245"}
+{"id": 208086, "field": "name", "en": "Forged Scarlet Memorandum", "hash": "4b2d2d7af337ba3d", "src": "db2@1.60.1.70245"}
+{"id": 208086, "field": "description", "en": "An outrageous collection of human-supremacist musings that are sure to alarm Alliance leadership.", "hash": "ced49138465a442e", "src": "db2@1.60.1.70245"}
+{"id": 208139, "field": "name", "en": "Ominous Tome", "hash": "d24f1ce4aa0fad90", "src": "db2@1.60.1.70245"}
+{"id": 208139, "field": "description", "en": "Summon Soboz\nBring the jaw of a wolf and the blood of a wendigo to Shimmer Ridge. Stand atop the ritual stone, and call forth the demon", "hash": "a22d71f22ea3b2d9", "src": "db2@1.60.1.70245"}
+{"id": 208140, "field": "name", "en": "Wendigo Blood", "hash": "ff359de6eea818cd", "src": "db2@1.60.1.70245"}
+{"id": 208140, "field": "description", "en": "A reagent for use in a summoning ritual", "hash": "df07f3b6c5c1fca1", "src": "db2@1.60.1.70245"}
+{"id": 208158, "field": "name", "en": "Pristine Trogg Heart", "hash": "6973d5a0ef5abea3", "src": "db2@1.60.1.70245"}
+{"id": 208158, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70245"}
+{"id": 208159, "field": "name", "en": "Severed Troll Head", "hash": "bd40d4020bc8e76f", "src": "db2@1.60.1.70245"}
+{"id": 208159, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70245"}
+{"id": 208160, "field": "name", "en": "Severed Wendigo Paw", "hash": "f4e925a2a6759ef8", "src": "db2@1.60.1.70245"}
+{"id": 208160, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70245"}
+{"id": 208180, "field": "name", "en": "Rabbit Musk", "hash": "bfdf0e4d345dbe9e", "src": "db2@1.60.1.70245"}
+{"id": 208180, "field": "description", "en": "Your Tame Beast ability also works on rabbits (as companion pet)", "hash": "8940a015c6669405", "src": "db2@1.60.1.70245"}
+{"id": 208183, "field": "name", "en": "Apothecary Notes", "hash": "18d0a89c2bfc70b5", "src": "db2@1.60.1.70245"}
+{"id": 208183, "field": "description", "en": "Combine 6 Apothecary Notes to create a new engraving recipe.", "hash": "e30a4cd83ac66036", "src": "db2@1.60.1.70245"}
+{"id": 208185, "field": "name", "en": "The Apothecary's Metaphysical Primer", "hash": "cbb1ebc85383600c", "src": "db2@1.60.1.70245"}
+{"id": 208185, "field": "description", "en": "Elementary notes on arcane theory and spell research, compiled by Archmage Rotwick of the Royal Apothecary Society. A fine addition to any library's collection.", "hash": "c37ad017a357c4e8", "src": "db2@1.60.1.70245"}
+{"id": 208192, "field": "name", "en": "Dun Morogh Pig Meat", "hash": "915dec89d5bd3701", "src": "db2@1.60.1.70245"}
+{"id": 208192, "field": "description", "en": "Place as bait inside a great bear's den", "hash": "638bcf4293e96435", "src": "db2@1.60.1.70245"}
+{"id": 208205, "field": "name", "en": "Blackrat's Note", "hash": "d1ca404e03e3ff2d", "src": "db2@1.60.1.70245"}
+{"id": 208205, "field": "description", "en": "A message written in thieves' cant", "hash": "a0e450931b72e270", "src": "db2@1.60.1.70245"}
+{"id": 208213, "field": "name", "en": "Top-Right Map Piece", "hash": "d2c25c13c201ab06", "src": "db2@1.60.1.70245"}
+{"id": 208213, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208215, "field": "name", "en": "Top-Left Map Piece", "hash": "43317739522763d4", "src": "db2@1.60.1.70245"}
+{"id": 208215, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208218, "field": "name", "en": "Bottom-Right Map Piece", "hash": "7d2c08e1941d33fc", "src": "db2@1.60.1.70245"}
+{"id": 208218, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208219, "field": "name", "en": "Bottom-Left Map Piece", "hash": "7d2a74a126dc03ae", "src": "db2@1.60.1.70245"}
+{"id": 208219, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208220, "field": "name", "en": "Dun Morogh Treasure Map", "hash": "f7d90536804dcd21", "src": "db2@1.60.1.70245"}
+{"id": 208220, "field": "description", "en": "Dig up treasure at the marked location\nBeneath the bridge from Kharanos to Ironforge.", "hash": "1b2512d86ad3fa36", "src": "db2@1.60.1.70245"}
+{"id": 208222, "field": "name", "en": "Old Guard Retaliator", "hash": "e24dacb3a8c5f67e", "src": "db2@1.60.1.70245"}
+{"id": 208222, "field": "description", "en": "On landing a killing blow that grants experience or honor, your next attack will critically strike.\nThe previous owner immaculately cared for this weapon.", "hash": "dbc6cf237b34cda9", "src": "db2@1.60.1.70245"}
+{"id": 208223, "field": "name", "en": "Acolyte's Knapsack", "hash": "97ddd2f88fbe9dd3", "src": "db2@1.60.1.70245"}
+{"id": 208224, "field": "name", "en": "Acolyte's Note", "hash": "4c0e4256cddcceb4", "src": "db2@1.60.1.70245"}
+{"id": 208414, "field": "name", "en": "Lunar Idol", "hash": "2c19478cd6e72b09", "src": "db2@1.60.1.70245"}
+{"id": 208414, "field": "description", "en": "Defeat 6 creatures affected by your Moonfire, then use to learn a new ability.", "hash": "34ddd9ab2dbdb13b", "src": "db2@1.60.1.70245"}
+{"id": 208424, "field": "name", "en": "Sun Shades", "hash": "22429e3d76080c23", "src": "db2@1.60.1.70245"}
+{"id": 208424, "field": "description", "en": "Do not stare directly at bright objects.", "hash": "aad9e8b4e42a6d74", "src": "db2@1.60.1.70245"}
+{"id": 208601, "field": "name", "en": "Top-Right Map Piece", "hash": "d2c25c13c201ab06", "src": "db2@1.60.1.70245"}
+{"id": 208601, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208602, "field": "name", "en": "Top-Left Map Piece", "hash": "43317739522763d4", "src": "db2@1.60.1.70245"}
+{"id": 208602, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208603, "field": "name", "en": "Bottom-Right Map Piece", "hash": "7d2c08e1941d33fc", "src": "db2@1.60.1.70245"}
+{"id": 208603, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208604, "field": "name", "en": "Bottom-Left Map Piece", "hash": "7d2a74a126dc03ae", "src": "db2@1.60.1.70245"}
+{"id": 208604, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
+{"id": 208605, "field": "name", "en": "Teldrassil Treasure Map", "hash": "27c0706302cd7ecc", "src": "db2@1.60.1.70245"}
+{"id": 208605, "field": "description", "en": "Dig up treasure at the marked location\nThe hollow stump of Rut'theran.", "hash": "2f35d8c5fc0ffc71", "src": "db2@1.60.1.70245"}
+{"id": 208607, "field": "name", "en": "Deer Musk", "hash": "e92bb0de82025782", "src": "db2@1.60.1.70245"}
+{"id": 208607, "field": "description", "en": "Your Tame Beast ability also works on deer (as companion pet)", "hash": "26fbe948bc5675cc", "src": "db2@1.60.1.70245"}
+{"id": 208608, "field": "name", "en": "Teldrassil Bird Meat", "hash": "711e7865232ce711", "src": "db2@1.60.1.70245"}
+{"id": 208608, "field": "description", "en": "Place as bait inside a great bear's den", "hash": "638bcf4293e96435", "src": "db2@1.60.1.70245"}
+{"id": 208609, "field": "name", "en": "Glade Flower", "hash": "178fde1428da2821", "src": "db2@1.60.1.70245"}
+{"id": 208609, "field": "description", "en": "Combine 3 Glade Flowers to make a crown.", "hash": "ebce6cc74cb0ae00", "src": "db2@1.60.1.70245"}
+{"id": 208610, "field": "name", "en": "Severed Owl Head", "hash": "41f3dc1c4fb5abb4", "src": "db2@1.60.1.70245"}
+{"id": 208610, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70245"}
+{"id": 208611, "field": "name", "en": "Severed Tiger Head", "hash": "de266f83c160f63c", "src": "db2@1.60.1.70245"}
+{"id": 208611, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70245"}
+{"id": 208612, "field": "name", "en": "Severed Spider Head", "hash": "9b6c05248fa494c9", "src": "db2@1.60.1.70245"}
+{"id": 208612, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70245"}
+{"id": 208682, "field": "name", "en": "Abandoned Snapjaw Egg", "hash": "bfd610d7858fddd9", "src": "db2@1.60.1.70245"}
+{"id": 208682, "field": "description", "en": "Needs a new home.", "hash": "3b2e7f364cb80e90", "src": "db2@1.60.1.70245"}
+{"id": 208687, "field": "name", "en": "Rune of Lacerate", "hash": "ebbdd2eb4606600f", "src": "db2@1.60.1.70245"}
+{"id": 208687, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208689, "field": "name", "en": "Ferocious Idol", "hash": "d11d431e64e2e74d", "src": "db2@1.60.1.70245"}
+{"id": 208689, "field": "description", "en": "Deal 20 instances of bleeding damage to humanoids, then use this idol to learn a new ability.", "hash": "f87ff52cf9a92205", "src": "db2@1.60.1.70245"}
+{"id": 208701, "field": "name", "en": "Rune of Beast Mastery", "hash": "5b27457cf3a8d9d1", "src": "db2@1.60.1.70245"}
+{"id": 208701, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208739, "field": "name", "en": "Horde Warbanner", "hash": "c74d4a30b2c42474", "src": "db2@1.60.1.70245"}
+{"id": 208739, "field": "description", "en": "Plant this in the soil of your enemies", "hash": "764453fb5aece169", "src": "db2@1.60.1.70245"}
+{"id": 208741, "field": "name", "en": "Rune of Endless Rage", "hash": "ada9056f710fb3a4", "src": "db2@1.60.1.70245"}
+{"id": 208741, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208743, "field": "name", "en": "Soul of Greed", "hash": "2cb05573eaed9311", "src": "db2@1.60.1.70245"}
+{"id": 208744, "field": "name", "en": "Rune of Shadowbolts", "hash": "8af5f5642578cf6d", "src": "db2@1.60.1.70245"}
+{"id": 208744, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208749, "field": "name", "en": "Gnarlpine Stash Key", "hash": "4bda508c4e031fd7", "src": "db2@1.60.1.70245"}
+{"id": 208749, "field": "description", "en": "A tree branch is crudely carved upon the handle.", "hash": "a2415d9aeb22c2f0", "src": "db2@1.60.1.70245"}
+{"id": 208750, "field": "name", "en": "Rune of Channeling", "hash": "6a0c824195c82c2d", "src": "db2@1.60.1.70245"}
+{"id": 208750, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208753, "field": "name", "en": "Spell Notes: Regeneration", "hash": "bc9ebc756c75a63b", "src": "db2@1.60.1.70245"}
+{"id": 208753, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208754, "field": "name", "en": "Spell Notes: TENGI RONEERA", "hash": "063e4105c4e0b154", "src": "db2@1.60.1.70245"}
+{"id": 208754, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70245"}
+{"id": 208758, "field": "name", "en": "Earthen Rune", "hash": "d6a3fbb6433a3f19", "src": "db2@1.60.1.70245"}
+{"id": 208758, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208760, "field": "name", "en": "Glade Crown", "hash": "821048d3445da8a1", "src": "db2@1.60.1.70245"}
+{"id": 208760, "field": "description", "en": "Awaken a spirit of the plains ", "hash": "6a4a51d5e2b7f5da", "src": "db2@1.60.1.70245"}
+{"id": 208764, "field": "name", "en": "Rune of the Mind", "hash": "bd4076123327743d", "src": "db2@1.60.1.70245"}
+{"id": 208765, "field": "name", "en": "Helping Hand", "hash": "32c2831086876406", "src": "db2@1.60.1.70245"}
+{"id": 208765, "field": "description", "en": "The hand will open for a savior", "hash": "22a2e27442ecfb2a", "src": "db2@1.60.1.70245"}
+{"id": 208766, "field": "name", "en": "Helping Hand", "hash": "32c2831086876406", "src": "db2@1.60.1.70245"}
+{"id": 208766, "field": "description", "en": "The hand has opened for you", "hash": "667ff165bac6d0b4", "src": "db2@1.60.1.70245"}
+{"id": 208767, "field": "name", "en": "Rune of Mending", "hash": "ea6573e5309e8f76", "src": "db2@1.60.1.70245"}
+{"id": 208767, "field": "description", "en": "Teaches you a new Runecarving ability.", "hash": "01f5084297290498", "src": "db2@1.60.1.70245"}
+{"id": 208768, "field": "name", "en": "Buccaneer's Matchbox", "hash": "a76150eeb1217a03", "src": "db2@1.60.1.70245"}
+{"id": 208768, "field": "description", "en": "Used to ignite flammable materials", "hash": "1e1dd9c6245145b8", "src": "db2@1.60.1.70245"}
+{"id": 208771, "field": "name", "en": "Rune of Blade Dance", "hash": "82ed1b50bdf08b14", "src": "db2@1.60.1.70245"}
+{"id": 208771, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208772, "field": "name", "en": "Rune of Saber Slash", "hash": "646cee01a4ec3014", "src": "db2@1.60.1.70245"}
+{"id": 208772, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208773, "field": "name", "en": "Fishing Harpoon", "hash": "7dd088c29cb27673", "src": "db2@1.60.1.70245"}
+{"id": 208773, "field": "description", "en": "Throw harpoon at target (40 yd. range)\nA must-have for the aspiring shark hunter!", "hash": "7d9b37f8eb4fc1f5", "src": "db2@1.60.1.70245"}
+{"id": 208777, "field": "name", "en": "Rune of the Sniper", "hash": "c261fe43f43543e1", "src": "db2@1.60.1.70245"}
+{"id": 208777, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208778, "field": "name", "en": "Rune of Quick Strike", "hash": "a244dc44d8b49579", "src": "db2@1.60.1.70245"}
+{"id": 208778, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208799, "field": "name", "en": "Spell Notes: Living Bomb", "hash": "41fe5b701311bf3f", "src": "db2@1.60.1.70245"}
+{"id": 208799, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 208800, "field": "name", "en": "Baxtan: On Destructive Magics", "hash": "3e745b06d2352a80", "src": "db2@1.60.1.70245"}
+{"id": 208800, "field": "description", "en": "The writings of a notable Goblin mage. A fine addition to any library's collection.", "hash": "1a0e2da61ff06fd7", "src": "db2@1.60.1.70245"}
+{"id": 208823, "field": "name", "en": "Offering Coin", "hash": "f1b7409844fc99dd", "src": "db2@1.60.1.70245"}
+{"id": 208823, "field": "description", "en": "Toss into a nearby well to make a wish", "hash": "d9e84748df3f4e91", "src": "db2@1.60.1.70245"}
+{"id": 208828, "field": "name", "en": "Memory of a Broken Vow", "hash": "6efd9305e9982cb0", "src": "db2@1.60.1.70245"}
+{"id": 208828, "field": "description", "en": "Focus on the Memory to learn a new spell.  Requires a mind cleared by meditating on the spiritual mysteries of Azeroth.", "hash": "71e0620abf64e543", "src": "db2@1.60.1.70245"}
+{"id": 208833, "field": "name", "en": "Malevolent Pie", "hash": "658aebdb6ecefd01", "src": "db2@1.60.1.70245"}
+{"id": 208833, "field": "description", "en": "A pastry with a sinister energy.", "hash": "e21eafe55226991f", "src": "db2@1.60.1.70245"}
+{"id": 208838, "field": "name", "en": "Dark Iron Lockbox", "hash": "ded80489a01ff18a", "src": "db2@1.60.1.70245"}
+{"id": 208843, "field": "name", "en": "Battle Totem", "hash": "6c259662a544e2b6", "src": "db2@1.60.1.70245"}
+{"id": 208843, "field": "description", "en": "Challenge a Tauren to a duel\nA symbol of hostility among members of the Horde", "hash": "9f7b85af04caf8a2", "src": "db2@1.60.1.70245"}
+{"id": 208847, "field": "name", "en": "Skull-Shaped Geode", "hash": "dfc7584eda8ff1e2", "src": "db2@1.60.1.70245"}
+{"id": 208847, "field": "description", "en": "Could likely be cracked open with a solid thump.", "hash": "bd11349621efbacb", "src": "db2@1.60.1.70245"}
+{"id": 208848, "field": "name", "en": "Cracked Skull-Shaped Geode", "hash": "65fb1463cac8cb17", "src": "db2@1.60.1.70245"}
+{"id": 208848, "field": "description", "en": "The geode has been cracked open.", "hash": "ef55b9d0736f4be1", "src": "db2@1.60.1.70245"}
+{"id": 208849, "field": "name", "en": "Libram of Blessings", "hash": "cfa3603525b44464", "src": "db2@1.60.1.70245"}
+{"id": 208849, "field": "description", "en": "Learn a new ability after giving blessings to 5 different players", "hash": "bacb09f4730e206a", "src": "db2@1.60.1.70245"}
+{"id": 208851, "field": "name", "en": "Libram of Justice", "hash": "11adfcb39f6c6270", "src": "db2@1.60.1.70245"}
+{"id": 208851, "field": "description", "en": "Learn a new ability after slaying 10 enemies stunned by Hammer of Justice", "hash": "f0b2846c8ecd020a", "src": "db2@1.60.1.70245"}
+{"id": 208853, "field": "name", "en": "Spell Notes: Brain Freeze", "hash": "316fb52d6cad80fd", "src": "db2@1.60.1.70245"}
+{"id": 208853, "field": "description", "en": "Teaches you a new Runecarving ability.", "hash": "01f5084297290498", "src": "db2@1.60.1.70245"}
+{"id": 208854, "field": "name", "en": "Chewed Spell Notes", "hash": "361d8533d1833b76", "src": "db2@1.60.1.70245"}
+{"id": 208854, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.\nTrogg shamans are truly voracious readers.", "hash": "4481d1a3c767ad35", "src": "db2@1.60.1.70245"}
+{"id": 208855, "field": "name", "en": "Rainbow Fin Albacore Chum", "hash": "edc3917152b399bd", "src": "db2@1.60.1.70245"}
+{"id": 208855, "field": "description", "en": "Feed chum to target.\nA tasty treat for lake monsters", "hash": "19d98837b88f1dfb", "src": "db2@1.60.1.70245"}
+{"id": 208860, "field": "name", "en": "Rumi of Gnomeregan: The Collected Works", "hash": "24c4502579224e04", "src": "db2@1.60.1.70245"}
+{"id": 208860, "field": "description", "en": "The writings of a notable Gnome mage. A fine addition to any library's collection.", "hash": "5c4db87495369bf4", "src": "db2@1.60.1.70245"}

@@ -1,140 +1,140 @@
-{"id": 434001, "field": "name", "en": "Haunt", "hash": "fcf98a7216dbfb9c", "src": "db2@1.60.1.70170"}
-{"id": 434111, "field": "name", "en": "Searing Infernal", "hash": "06d1d356cc8e817a", "src": "db2@1.60.1.70170"}
-{"id": 434163, "field": "name", "en": "Carendin - Acolyte's Note Cleanup", "hash": "8309c19c86c3a17d", "src": "db2@1.60.1.70170"}
-{"id": 434165, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70170"}
-{"id": 434166, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70170"}
-{"id": 434167, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70170"}
-{"id": 434168, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70170"}
-{"id": 434223, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70170"}
-{"id": 434223, "field": "description", "en": "Creates a cloud of lightning that lasts $d., blasting all enemies in a selected area for $s1 Nature damage and inflicting $s2 additional damage every $t2 sec.", "hash": "9a2f7afedb692864", "src": "db2@1.60.1.70170"}
-{"id": 434236, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70170"}
-{"id": 434312, "field": "name", "en": "Deadly Poison", "hash": "00e14eadb0f82bf2", "src": "db2@1.60.1.70170"}
-{"id": 434312, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70170"}
-{"id": 434313, "field": "name", "en": "Deadly Poison II", "hash": "c017c973ce236460", "src": "db2@1.60.1.70170"}
-{"id": 434313, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70170"}
-{"id": 434314, "field": "name", "en": "Deadly Poison III", "hash": "4c2c180c76448d04", "src": "db2@1.60.1.70170"}
-{"id": 434314, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70170"}
-{"id": 434315, "field": "name", "en": "Deadly Poison IV", "hash": "c017c980ce23646d", "src": "db2@1.60.1.70170"}
-{"id": 434315, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70170"}
-{"id": 434316, "field": "name", "en": "Deadly Poison V", "hash": "ff831cedf5b477ec", "src": "db2@1.60.1.70170"}
-{"id": 434316, "field": "description", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70170"}
-{"id": 434316, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70170"}
-{"id": 434350, "field": "name", "en": "Plant Lightning Rod", "hash": "349649eef1e9a1a5", "src": "db2@1.60.1.70170"}
-{"id": 434350, "field": "description", "en": "Plant into Soft Soil.", "hash": "80726cbb40c0063a", "src": "db2@1.60.1.70170"}
-{"id": 434356, "field": "name", "en": "Charged", "hash": "2e9757208e6af01d", "src": "db2@1.60.1.70170"}
-{"id": 434356, "field": "aura", "en": "Electrically charged!", "hash": "e6d88bd03b1835fc", "src": "db2@1.60.1.70170"}
-{"id": 434357, "field": "name", "en": "Harness Lightning", "hash": "e83e8df8734a5218", "src": "db2@1.60.1.70170"}
-{"id": 434358, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70170"}
-{"id": 434358, "field": "description", "en": "Viscous Fallout oozes forth $s1 Toxic Slime.", "hash": "189cbf67cd026da9", "src": "db2@1.60.1.70170"}
-{"id": 434361, "field": "name", "en": "Overloaded", "hash": "598accd4461e21d2", "src": "db2@1.60.1.70170"}
-{"id": 434367, "field": "name", "en": "Suicide", "hash": "c9e6078ac1fefc72", "src": "db2@1.60.1.70170"}
-{"id": 434369, "field": "name", "en": "Summon Boulderfist Ogre", "hash": "27fb85958ba92b7e", "src": "db2@1.60.1.70170"}
-{"id": 434370, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70170"}
-{"id": 434371, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70170"}
-{"id": 434372, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70170"}
-{"id": 434373, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70170"}
-{"id": 434374, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70170"}
-{"id": 434382, "field": "name", "en": "Animate Elemental", "hash": "78e545751d3e283f", "src": "db2@1.60.1.70170"}
-{"id": 434398, "field": "name", "en": "Toxic Emission", "hash": "568fe015762e56bb", "src": "db2@1.60.1.70170"}
-{"id": 434398, "field": "description", "en": "$@spelldesc434399", "hash": "a1b6e178b8359c6b", "src": "db2@1.60.1.70170"}
-{"id": 434399, "field": "name", "en": "Toxic Emission", "hash": "568fe015762e56bb", "src": "db2@1.60.1.70170"}
-{"id": 434399, "field": "description", "en": "The Irradiated Goo unleashes a pulse of ionizing radiation that inflicts $434398s1 Nature damage every $t1 sec.", "hash": "4eebf4a1af4ac7f9", "src": "db2@1.60.1.70170"}
-{"id": 434399, "field": "aura", "en": "$434398s1 Nature damage inflicted to all players every $t1 sec.", "hash": "cb92b8e69a6527ed", "src": "db2@1.60.1.70170"}
-{"id": 434409, "field": "name", "en": "Green Holiday Hat Visual", "hash": "b7bc6166c15cdce7", "src": "db2@1.60.1.70170"}
-{"id": 434416, "field": "name", "en": "Red Holiday Hat Visual", "hash": "1ab1e5fadc9a1385", "src": "db2@1.60.1.70170"}
-{"id": 434418, "field": "name", "en": "Harness Lightning", "hash": "e83e8df8734a5218", "src": "db2@1.60.1.70170"}
-{"id": 434433, "field": "name", "en": "Sludge", "hash": "03754b9fa819bdd1", "src": "db2@1.60.1.70170"}
-{"id": 434433, "field": "description", "en": "Viscous Fallout creates a pool of toxic slime that inflicts $s1 Nature damage every $t sec to players standing within it.  \r\n\r\nIn addition, players in the effect also have their movement speed reduced by $s2%.", "hash": "7d312c694cb825ca", "src": "db2@1.60.1.70170"}
-{"id": 434433, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.\r\nMovement speed reduced by $s2%.", "hash": "8b89bab965dc20c8", "src": "db2@1.60.1.70170"}
-{"id": 434434, "field": "name", "en": "Sludge", "hash": "03754b9fa819bdd1", "src": "db2@1.60.1.70170"}
-{"id": 434434, "field": "description", "en": "$@spelldesc434433", "hash": "a1b72169bc2d20e0", "src": "db2@1.60.1.70170"}
-{"id": 434435, "field": "name", "en": "S03 - Ashenvale PvP Event - Horde Leader Death", "hash": "ec9006d304cd06ab", "src": "db2@1.60.1.70170"}
-{"id": 434435, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427116s1% increased health and $427116s2% increased damage per living Keeper of the Grove in her army.", "hash": "270bb4b9586f7133", "src": "db2@1.60.1.70170"}
-{"id": 434436, "field": "name", "en": "S03 - Ashenvale PvP Event - Alliance Leader Death", "hash": "491aedf999d64c37", "src": "db2@1.60.1.70170"}
-{"id": 434436, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427116s1% increased health and $427116s2% increased damage per living Keeper of the Grove in her army.", "hash": "270bb4b9586f7133", "src": "db2@1.60.1.70170"}
-{"id": 434443, "field": "name", "en": "Pyroblast", "hash": "78422f2847350f99", "src": "db2@1.60.1.70170"}
-{"id": 434443, "field": "description", "en": "Inflicts Fire damage to an enemy, then additional damage every $t2 sec. for $d.", "hash": "af899fc7125be32a", "src": "db2@1.60.1.70170"}
-{"id": 434443, "field": "aura", "en": "Fire damage inflicted every $t2 sec.", "hash": "fd7a76cfe4cff65d", "src": "db2@1.60.1.70170"}
-{"id": 434446, "field": "name", "en": "Battlefield Inspiration", "hash": "505e11bb2e48b78c", "src": "db2@1.60.1.70170"}
-{"id": 434446, "field": "aura", "en": "Allies within $a1 yards of a battlefield leader gain $s1% increased health and $s2% increased damage.", "hash": "5a25079a5ad687cf", "src": "db2@1.60.1.70170"}
-{"id": 434475, "field": "name", "en": "Increase Reputation", "hash": "5b39825024f3b628", "src": "db2@1.60.1.70170"}
-{"id": 434486, "field": "name", "en": "Increase Reputation", "hash": "5b39825024f3b628", "src": "db2@1.60.1.70170"}
-{"id": 434488, "field": "name", "en": "Spicy!", "hash": "481047887eee451f", "src": "db2@1.60.1.70170"}
-{"id": 434488, "field": "description", "en": "Melee attacks deal an additional 7 Fire damage for $d.", "hash": "26bc0e67b76da3ed", "src": "db2@1.60.1.70170"}
-{"id": 434488, "field": "aura", "en": "Melee attacks deal an additional 7 Fire damage.", "hash": "b466b071446688d9", "src": "db2@1.60.1.70170"}
-{"id": 434495, "field": "name", "en": "Reindeer Transformation", "hash": "2af3f7f2cb62186c", "src": "db2@1.60.1.70170"}
-{"id": 434495, "field": "description", "en": "Transforms your mount into something more festive.", "hash": "3ce08c151673810a", "src": "db2@1.60.1.70170"}
-{"id": 434503, "field": "name", "en": "Create Rosary", "hash": "2b4cce8fcdc17649", "src": "db2@1.60.1.70170"}
-{"id": 434503, "field": "description", "en": "Combine three Divine Prayer Beads to make a rosary.", "hash": "16a8fa04ff22c4a2", "src": "db2@1.60.1.70170"}
-{"id": 434508, "field": "name", "en": "Reindeer", "hash": "4e84c28a67e0ea96", "src": "db2@1.60.1.70170"}
-{"id": 434508, "field": "description", "en": "Summons and dismisses a rideable reindeer.", "hash": "031d184a3dc1af16", "src": "db2@1.60.1.70170"}
-{"id": 434508, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70170"}
-{"id": 434523, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70170"}
-{"id": 434523, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst will deal a critical strike.", "hash": "0de277c5ccdeea9d", "src": "db2@1.60.1.70170"}
-{"id": 434570, "field": "name", "en": "Fanning the Flames", "hash": "8ba9986536fed0b7", "src": "db2@1.60.1.70170"}
-{"id": 434582, "field": "name", "en": "Fiery Intuition", "hash": "90fa479a88686321", "src": "db2@1.60.1.70170"}
-{"id": 434584, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70170"}
-{"id": 434689, "field": "name", "en": "[DNT] Start Taste Test", "hash": "844f799183b4b036", "src": "db2@1.60.1.70170"}
-{"id": 434690, "field": "name", "en": "[DNT] Complete Taste Test", "hash": "976d64e8dd52ac09", "src": "db2@1.60.1.70170"}
-{"id": 434698, "field": "name", "en": "S03 - Ashenvale PvP Event - Alliance Leader Death", "hash": "491aedf999d64c37", "src": "db2@1.60.1.70170"}
-{"id": 434698, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427116s1% increased health and $427116s2% increased damage per living Keeper of the Grove in her army.", "hash": "270bb4b9586f7133", "src": "db2@1.60.1.70170"}
-{"id": 434724, "field": "name", "en": "Radiation Sickness", "hash": "1a029c6588f7bf3d", "src": "db2@1.60.1.70170"}
-{"id": 434724, "field": "aura", "en": "Nature damage taken increased by $w1%.", "hash": "2093012dd06e12b3", "src": "db2@1.60.1.70170"}
-{"id": 434725, "field": "name", "en": "Ambient Radiation", "hash": "e8b8d4401b5bdfa0", "src": "db2@1.60.1.70170"}
-{"id": 434738, "field": "name", "en": "[DNT] S03 - Wisp Failsafe", "hash": "cad67e9fd70acfe9", "src": "db2@1.60.1.70170"}
-{"id": 434744, "field": "name", "en": "Decipher Scroll", "hash": "7f7e621b6026e0c2", "src": "db2@1.60.1.70170"}
-{"id": 434744, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70170"}
-{"id": 434752, "field": "name", "en": "Liminal Passage", "hash": "424a6c00a25e17ae", "src": "db2@1.60.1.70170"}
-{"id": 434752, "field": "description", "en": "Teleport to a party member. Both you and the target must be resting at an inn or city.", "hash": "ce3c6cf9f498aee2", "src": "db2@1.60.1.70170"}
-{"id": 434753, "field": "name", "en": "Arcane Angling", "hash": "a292e6381e70384d", "src": "db2@1.60.1.70170"}
-{"id": 434753, "field": "description", "en": "Summon a prized catch from a nearby school of fish.", "hash": "54f22f262e1f3cbf", "src": "db2@1.60.1.70170"}
-{"id": 434754, "field": "name", "en": "Polymorph", "hash": "265007345ebb7046", "src": "db2@1.60.1.70170"}
-{"id": 434754, "field": "description", "en": "Polymorph the target into an Odd Melon.", "hash": "a08bd2d0847bd4ba", "src": "db2@1.60.1.70170"}
-{"id": 434755, "field": "name", "en": "Controlled Displacement", "hash": "19b8668753869d2f", "src": "db2@1.60.1.70170"}
-{"id": 434755, "field": "description", "en": "Teleport to the targeted location.", "hash": "5e3baa08c1fd1ef9", "src": "db2@1.60.1.70170"}
-{"id": 434762, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70170"}
-{"id": 434814, "field": "name", "en": "Mixture", "hash": "cd1a4cb5914d1cb0", "src": "db2@1.60.1.70170"}
-{"id": 434814, "field": "description", "en": "Mix with the Tears of Theradras to create an Elemental Salve capable of purifying corruption.", "hash": "647be6a7755cffd3", "src": "db2@1.60.1.70170"}
-{"id": 434827, "field": "name", "en": "Cleanse Corruption", "hash": "ac935999e84073dc", "src": "db2@1.60.1.70170"}
-{"id": 434827, "field": "description", "en": "Pour over corrupted objects to cleanse them.", "hash": "b5f96daada9e6cdf", "src": "db2@1.60.1.70170"}
-{"id": 434833, "field": "name", "en": "Step Complete", "hash": "975a1e076aa0b713", "src": "db2@1.60.1.70170"}
-{"id": 434834, "field": "name", "en": "Step Complete", "hash": "975a1e076aa0b713", "src": "db2@1.60.1.70170"}
-{"id": 434835, "field": "name", "en": "Step Complete", "hash": "975a1e076aa0b713", "src": "db2@1.60.1.70170"}
-{"id": 434837, "field": "name", "en": "Puncture Armor", "hash": "fa9e96beaacabbd8", "src": "db2@1.60.1.70170"}
-{"id": 434837, "field": "description", "en": "Punctures target's armor lowering it by $s1.", "hash": "12ac7561312b0979", "src": "db2@1.60.1.70170"}
-{"id": 434837, "field": "aura", "en": "Armor decreased by $s1.", "hash": "57b604c7daf54be2", "src": "db2@1.60.1.70170"}
-{"id": 434838, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70170"}
-{"id": 434838, "field": "description", "en": "Blasts a target for $s1 Nature damage.", "hash": "37bddcc4fb608d30", "src": "db2@1.60.1.70170"}
-{"id": 434839, "field": "name", "en": "Electrocutioner's Shock", "hash": "9e00ed2187b379b4", "src": "db2@1.60.1.70170"}
-{"id": 434839, "field": "description", "en": "Discharge a mote of thunder dealing $s1 Nature damage.", "hash": "461c0247fd38f39b", "src": "db2@1.60.1.70170"}
-{"id": 434841, "field": "name", "en": "Mekkatorque's Arcano-Shredder", "hash": "48e05baa91fccd6a", "src": "db2@1.60.1.70170"}
-{"id": 434841, "field": "description", "en": "Discharge a blast of arcane energy dealing $s7 Arcane damage, reducing all resistances by $s1 and increasing all spell damage taken by $s2% for $d. Only affects enemies level 45 and below.", "hash": "2a22da8c19173c1a", "src": "db2@1.60.1.70170"}
-{"id": 434841, "field": "aura", "en": "Reduces all resistances by $s1.  Increases spell damage taken by $s2%.", "hash": "7c55cc904375e6c3", "src": "db2@1.60.1.70170"}
-{"id": 434842, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70170"}
-{"id": 434842, "field": "description", "en": "Blasts a target for $s1 Nature damage.", "hash": "37bddcc4fb608d30", "src": "db2@1.60.1.70170"}
-{"id": 434851, "field": "name", "en": "Minor Evocation", "hash": "978695e3a644af1d", "src": "db2@1.60.1.70170"}
-{"id": 434851, "field": "description", "en": "Restores $o Mana over $d.", "hash": "8bf8309d432d4ea0", "src": "db2@1.60.1.70170"}
-{"id": 434856, "field": "name", "en": "Moonglade Flight Path", "hash": "c882b02574eae25d", "src": "db2@1.60.1.70170"}
-{"id": 434869, "field": "name", "en": "Shadow Ritual of Sacrifice", "hash": "fca2007c7e184e34", "src": "db2@1.60.1.70170"}
-{"id": 434869, "field": "aura", "en": "Offer yourself as a willing sacrifice to the Shadows.", "hash": "b1e42a42737a25e2", "src": "db2@1.60.1.70170"}
-{"id": 434876, "field": "name", "en": "[DNT] Amaryllis Give Rune A", "hash": "92dfabaad754b0fa", "src": "db2@1.60.1.70170"}
-{"id": 434877, "field": "name", "en": "[DNT] Amaryllis Give Rune B", "hash": "92dfababd754b0fb", "src": "db2@1.60.1.70170"}
-{"id": 434907, "field": "name", "en": "Amplified Circuitry", "hash": "4e1c4eb6e6da352f", "src": "db2@1.60.1.70170"}
-{"id": 434907, "field": "description", "en": "Increases the Physical damage dealt by the caster by $s1 and speeds its attacks by $s2% for $d.", "hash": "b297743332441429", "src": "db2@1.60.1.70170"}
-{"id": 434907, "field": "aura", "en": "Physical damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "bc6c8e1d090dadea", "src": "db2@1.60.1.70170"}
-{"id": 434922, "field": "name", "en": "Summon Seductress Ceeyna", "hash": "2df6a185cbdb9a60", "src": "db2@1.60.1.70170"}
-{"id": 434924, "field": "name", "en": "Despawn Tracker", "hash": "cfcb1c59cc20eca7", "src": "db2@1.60.1.70170"}
-{"id": 434927, "field": "name", "en": "Ambient Radiation", "hash": "e8b8d4401b5bdfa0", "src": "db2@1.60.1.70170"}
-{"id": 434941, "field": "name", "en": "Toxic Vigor", "hash": "fe51edc406a03215", "src": "db2@1.60.1.70170"}
-{"id": 434941, "field": "aura", "en": "Radiation surges, fortifying Grubbis with relentless strength.\r\n\r\nAll damage increased by $w2%.", "hash": "fd8126f471f114bc", "src": "db2@1.60.1.70170"}
-{"id": 434942, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70170"}
-{"id": 434943, "field": "name", "en": "Shadow Ritual of Sacrifice", "hash": "fca2007c7e184e34", "src": "db2@1.60.1.70170"}
-{"id": 434947, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70170"}
-{"id": 434948, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70170"}
-{"id": 434949, "field": "name", "en": "Spawn Super Trogg", "hash": "e0a5a9e871118e3a", "src": "db2@1.60.1.70170"}
-{"id": 434957, "field": "name", "en": "Collect Specimen", "hash": "ce286517dfc2a711", "src": "db2@1.60.1.70170"}
-{"id": 434957, "field": "description", "en": "Catch an exotic bug, and keep it as a specimen. ", "hash": "7c522522809fc241", "src": "db2@1.60.1.70170"}
-{"id": 434994, "field": "name", "en": "Soul of the Void", "hash": "a4df28c1df80d17f", "src": "db2@1.60.1.70170"}
-{"id": 434994, "field": "description", "en": "Combine 10 Conjuror's Pendants and a Soul of the Void near a Void Prism.", "hash": "29d652dc44d6bde5", "src": "db2@1.60.1.70170"}
-{"id": 434995, "field": "name", "en": "[DNT] Hydrate Seed Pod", "hash": "0f5106ae9fe82b07", "src": "db2@1.60.1.70170"}
-{"id": 434996, "field": "name", "en": "[DNT] Desiccated Seed Pod", "hash": "f664f0e5239e386a", "src": "db2@1.60.1.70170"}
+{"id": 434001, "field": "name", "en": "Haunt", "hash": "fcf98a7216dbfb9c", "src": "db2@1.60.1.70245"}
+{"id": 434111, "field": "name", "en": "Searing Infernal", "hash": "06d1d356cc8e817a", "src": "db2@1.60.1.70245"}
+{"id": 434163, "field": "name", "en": "Carendin - Acolyte's Note Cleanup", "hash": "8309c19c86c3a17d", "src": "db2@1.60.1.70245"}
+{"id": 434165, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70245"}
+{"id": 434166, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70245"}
+{"id": 434167, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70245"}
+{"id": 434168, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70245"}
+{"id": 434223, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70245"}
+{"id": 434223, "field": "description", "en": "Creates a cloud of lightning that lasts $d., blasting all enemies in a selected area for $s1 Nature damage and inflicting $s2 additional damage every $t2 sec.", "hash": "9a2f7afedb692864", "src": "db2@1.60.1.70245"}
+{"id": 434236, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70245"}
+{"id": 434312, "field": "name", "en": "Deadly Poison", "hash": "00e14eadb0f82bf2", "src": "db2@1.60.1.70245"}
+{"id": 434312, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70245"}
+{"id": 434313, "field": "name", "en": "Deadly Poison II", "hash": "c017c973ce236460", "src": "db2@1.60.1.70245"}
+{"id": 434313, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70245"}
+{"id": 434314, "field": "name", "en": "Deadly Poison III", "hash": "4c2c180c76448d04", "src": "db2@1.60.1.70245"}
+{"id": 434314, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70245"}
+{"id": 434315, "field": "name", "en": "Deadly Poison IV", "hash": "c017c980ce23646d", "src": "db2@1.60.1.70245"}
+{"id": 434315, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70245"}
+{"id": 434316, "field": "name", "en": "Deadly Poison V", "hash": "ff831cedf5b477ec", "src": "db2@1.60.1.70245"}
+{"id": 434316, "field": "description", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70245"}
+{"id": 434316, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds.", "hash": "91a87ea7c870e000", "src": "db2@1.60.1.70245"}
+{"id": 434350, "field": "name", "en": "Plant Lightning Rod", "hash": "349649eef1e9a1a5", "src": "db2@1.60.1.70245"}
+{"id": 434350, "field": "description", "en": "Plant into Soft Soil.", "hash": "80726cbb40c0063a", "src": "db2@1.60.1.70245"}
+{"id": 434356, "field": "name", "en": "Charged", "hash": "2e9757208e6af01d", "src": "db2@1.60.1.70245"}
+{"id": 434356, "field": "aura", "en": "Electrically charged!", "hash": "e6d88bd03b1835fc", "src": "db2@1.60.1.70245"}
+{"id": 434357, "field": "name", "en": "Harness Lightning", "hash": "e83e8df8734a5218", "src": "db2@1.60.1.70245"}
+{"id": 434358, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70245"}
+{"id": 434358, "field": "description", "en": "Viscous Fallout oozes forth $s1 Toxic Slime.", "hash": "189cbf67cd026da9", "src": "db2@1.60.1.70245"}
+{"id": 434361, "field": "name", "en": "Overloaded", "hash": "598accd4461e21d2", "src": "db2@1.60.1.70245"}
+{"id": 434367, "field": "name", "en": "Suicide", "hash": "c9e6078ac1fefc72", "src": "db2@1.60.1.70245"}
+{"id": 434369, "field": "name", "en": "Summon Boulderfist Ogre", "hash": "27fb85958ba92b7e", "src": "db2@1.60.1.70245"}
+{"id": 434370, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70245"}
+{"id": 434371, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70245"}
+{"id": 434372, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70245"}
+{"id": 434373, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70245"}
+{"id": 434374, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70245"}
+{"id": 434382, "field": "name", "en": "Animate Elemental", "hash": "78e545751d3e283f", "src": "db2@1.60.1.70245"}
+{"id": 434398, "field": "name", "en": "Toxic Emission", "hash": "568fe015762e56bb", "src": "db2@1.60.1.70245"}
+{"id": 434398, "field": "description", "en": "$@spelldesc434399", "hash": "a1b6e178b8359c6b", "src": "db2@1.60.1.70245"}
+{"id": 434399, "field": "name", "en": "Toxic Emission", "hash": "568fe015762e56bb", "src": "db2@1.60.1.70245"}
+{"id": 434399, "field": "description", "en": "The Irradiated Goo unleashes a pulse of ionizing radiation that inflicts $434398s1 Nature damage every $t1 sec.", "hash": "4eebf4a1af4ac7f9", "src": "db2@1.60.1.70245"}
+{"id": 434399, "field": "aura", "en": "$434398s1 Nature damage inflicted to all players every $t1 sec.", "hash": "cb92b8e69a6527ed", "src": "db2@1.60.1.70245"}
+{"id": 434409, "field": "name", "en": "Green Holiday Hat Visual", "hash": "b7bc6166c15cdce7", "src": "db2@1.60.1.70245"}
+{"id": 434416, "field": "name", "en": "Red Holiday Hat Visual", "hash": "1ab1e5fadc9a1385", "src": "db2@1.60.1.70245"}
+{"id": 434418, "field": "name", "en": "Harness Lightning", "hash": "e83e8df8734a5218", "src": "db2@1.60.1.70245"}
+{"id": 434433, "field": "name", "en": "Sludge", "hash": "03754b9fa819bdd1", "src": "db2@1.60.1.70245"}
+{"id": 434433, "field": "description", "en": "Viscous Fallout creates a pool of toxic slime that inflicts $s1 Nature damage every $t sec to players standing within it.  \r\n\r\nIn addition, players in the effect also have their movement speed reduced by $s2%.", "hash": "7d312c694cb825ca", "src": "db2@1.60.1.70245"}
+{"id": 434433, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.\r\nMovement speed reduced by $s2%.", "hash": "8b89bab965dc20c8", "src": "db2@1.60.1.70245"}
+{"id": 434434, "field": "name", "en": "Sludge", "hash": "03754b9fa819bdd1", "src": "db2@1.60.1.70245"}
+{"id": 434434, "field": "description", "en": "$@spelldesc434433", "hash": "a1b72169bc2d20e0", "src": "db2@1.60.1.70245"}
+{"id": 434435, "field": "name", "en": "S03 - Ashenvale PvP Event - Horde Leader Death", "hash": "ec9006d304cd06ab", "src": "db2@1.60.1.70245"}
+{"id": 434435, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427116s1% increased health and $427116s2% increased damage per living Keeper of the Grove in her army.", "hash": "270bb4b9586f7133", "src": "db2@1.60.1.70245"}
+{"id": 434436, "field": "name", "en": "S03 - Ashenvale PvP Event - Alliance Leader Death", "hash": "491aedf999d64c37", "src": "db2@1.60.1.70245"}
+{"id": 434436, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427116s1% increased health and $427116s2% increased damage per living Keeper of the Grove in her army.", "hash": "270bb4b9586f7133", "src": "db2@1.60.1.70245"}
+{"id": 434443, "field": "name", "en": "Pyroblast", "hash": "78422f2847350f99", "src": "db2@1.60.1.70245"}
+{"id": 434443, "field": "description", "en": "Inflicts Fire damage to an enemy, then additional damage every $t2 sec. for $d.", "hash": "af899fc7125be32a", "src": "db2@1.60.1.70245"}
+{"id": 434443, "field": "aura", "en": "Fire damage inflicted every $t2 sec.", "hash": "fd7a76cfe4cff65d", "src": "db2@1.60.1.70245"}
+{"id": 434446, "field": "name", "en": "Battlefield Inspiration", "hash": "505e11bb2e48b78c", "src": "db2@1.60.1.70245"}
+{"id": 434446, "field": "aura", "en": "Allies within $a1 yards of a battlefield leader gain $s1% increased health and $s2% increased damage.", "hash": "5a25079a5ad687cf", "src": "db2@1.60.1.70245"}
+{"id": 434475, "field": "name", "en": "Increase Reputation", "hash": "5b39825024f3b628", "src": "db2@1.60.1.70245"}
+{"id": 434486, "field": "name", "en": "Increase Reputation", "hash": "5b39825024f3b628", "src": "db2@1.60.1.70245"}
+{"id": 434488, "field": "name", "en": "Spicy!", "hash": "481047887eee451f", "src": "db2@1.60.1.70245"}
+{"id": 434488, "field": "description", "en": "Melee attacks deal an additional 7 Fire damage for $d.", "hash": "26bc0e67b76da3ed", "src": "db2@1.60.1.70245"}
+{"id": 434488, "field": "aura", "en": "Melee attacks deal an additional 7 Fire damage.", "hash": "b466b071446688d9", "src": "db2@1.60.1.70245"}
+{"id": 434495, "field": "name", "en": "Reindeer Transformation", "hash": "2af3f7f2cb62186c", "src": "db2@1.60.1.70245"}
+{"id": 434495, "field": "description", "en": "Transforms your mount into something more festive.", "hash": "3ce08c151673810a", "src": "db2@1.60.1.70245"}
+{"id": 434503, "field": "name", "en": "Create Rosary", "hash": "2b4cce8fcdc17649", "src": "db2@1.60.1.70245"}
+{"id": 434503, "field": "description", "en": "Combine three Divine Prayer Beads to make a rosary.", "hash": "16a8fa04ff22c4a2", "src": "db2@1.60.1.70245"}
+{"id": 434508, "field": "name", "en": "Reindeer", "hash": "4e84c28a67e0ea96", "src": "db2@1.60.1.70245"}
+{"id": 434508, "field": "description", "en": "Summons and dismisses a rideable reindeer.", "hash": "031d184a3dc1af16", "src": "db2@1.60.1.70245"}
+{"id": 434508, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
+{"id": 434523, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70245"}
+{"id": 434523, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst will deal a critical strike.", "hash": "0de277c5ccdeea9d", "src": "db2@1.60.1.70245"}
+{"id": 434570, "field": "name", "en": "Fanning the Flames", "hash": "8ba9986536fed0b7", "src": "db2@1.60.1.70245"}
+{"id": 434582, "field": "name", "en": "Fiery Intuition", "hash": "90fa479a88686321", "src": "db2@1.60.1.70245"}
+{"id": 434584, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70245"}
+{"id": 434689, "field": "name", "en": "[DNT] Start Taste Test", "hash": "844f799183b4b036", "src": "db2@1.60.1.70245"}
+{"id": 434690, "field": "name", "en": "[DNT] Complete Taste Test", "hash": "976d64e8dd52ac09", "src": "db2@1.60.1.70245"}
+{"id": 434698, "field": "name", "en": "S03 - Ashenvale PvP Event - Alliance Leader Death", "hash": "491aedf999d64c37", "src": "db2@1.60.1.70245"}
+{"id": 434698, "field": "aura", "en": "Allies within $a1 yards of the Priestess of the Moon gain $427116s1% increased health and $427116s2% increased damage per living Keeper of the Grove in her army.", "hash": "270bb4b9586f7133", "src": "db2@1.60.1.70245"}
+{"id": 434724, "field": "name", "en": "Radiation Sickness", "hash": "1a029c6588f7bf3d", "src": "db2@1.60.1.70245"}
+{"id": 434724, "field": "aura", "en": "Nature damage taken increased by $w1%.", "hash": "2093012dd06e12b3", "src": "db2@1.60.1.70245"}
+{"id": 434725, "field": "name", "en": "Ambient Radiation", "hash": "e8b8d4401b5bdfa0", "src": "db2@1.60.1.70245"}
+{"id": 434738, "field": "name", "en": "[DNT] S03 - Wisp Failsafe", "hash": "cad67e9fd70acfe9", "src": "db2@1.60.1.70245"}
+{"id": 434744, "field": "name", "en": "Decipher Scroll", "hash": "7f7e621b6026e0c2", "src": "db2@1.60.1.70245"}
+{"id": 434744, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70245"}
+{"id": 434752, "field": "name", "en": "Liminal Passage", "hash": "424a6c00a25e17ae", "src": "db2@1.60.1.70245"}
+{"id": 434752, "field": "description", "en": "Teleport to a party member. Both you and the target must be resting at an inn or city.", "hash": "ce3c6cf9f498aee2", "src": "db2@1.60.1.70245"}
+{"id": 434753, "field": "name", "en": "Arcane Angling", "hash": "a292e6381e70384d", "src": "db2@1.60.1.70245"}
+{"id": 434753, "field": "description", "en": "Summon a prized catch from a nearby school of fish.", "hash": "54f22f262e1f3cbf", "src": "db2@1.60.1.70245"}
+{"id": 434754, "field": "name", "en": "Polymorph", "hash": "265007345ebb7046", "src": "db2@1.60.1.70245"}
+{"id": 434754, "field": "description", "en": "Polymorph the target into an Odd Melon.", "hash": "a08bd2d0847bd4ba", "src": "db2@1.60.1.70245"}
+{"id": 434755, "field": "name", "en": "Controlled Displacement", "hash": "19b8668753869d2f", "src": "db2@1.60.1.70245"}
+{"id": 434755, "field": "description", "en": "Teleport to the targeted location.", "hash": "5e3baa08c1fd1ef9", "src": "db2@1.60.1.70245"}
+{"id": 434762, "field": "name", "en": "Summon Irradiated Goo", "hash": "9071eeb958e2eed2", "src": "db2@1.60.1.70245"}
+{"id": 434814, "field": "name", "en": "Mixture", "hash": "cd1a4cb5914d1cb0", "src": "db2@1.60.1.70245"}
+{"id": 434814, "field": "description", "en": "Mix with the Tears of Theradras to create an Elemental Salve capable of purifying corruption.", "hash": "647be6a7755cffd3", "src": "db2@1.60.1.70245"}
+{"id": 434827, "field": "name", "en": "Cleanse Corruption", "hash": "ac935999e84073dc", "src": "db2@1.60.1.70245"}
+{"id": 434827, "field": "description", "en": "Pour over corrupted objects to cleanse them.", "hash": "b5f96daada9e6cdf", "src": "db2@1.60.1.70245"}
+{"id": 434833, "field": "name", "en": "Step Complete", "hash": "975a1e076aa0b713", "src": "db2@1.60.1.70245"}
+{"id": 434834, "field": "name", "en": "Step Complete", "hash": "975a1e076aa0b713", "src": "db2@1.60.1.70245"}
+{"id": 434835, "field": "name", "en": "Step Complete", "hash": "975a1e076aa0b713", "src": "db2@1.60.1.70245"}
+{"id": 434837, "field": "name", "en": "Puncture Armor", "hash": "fa9e96beaacabbd8", "src": "db2@1.60.1.70245"}
+{"id": 434837, "field": "description", "en": "Punctures target's armor lowering it by $s1.", "hash": "12ac7561312b0979", "src": "db2@1.60.1.70245"}
+{"id": 434837, "field": "aura", "en": "Armor decreased by $s1.", "hash": "57b604c7daf54be2", "src": "db2@1.60.1.70245"}
+{"id": 434838, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
+{"id": 434838, "field": "description", "en": "Blasts a target for $s1 Nature damage.", "hash": "37bddcc4fb608d30", "src": "db2@1.60.1.70245"}
+{"id": 434839, "field": "name", "en": "Electrocutioner's Shock", "hash": "9e00ed2187b379b4", "src": "db2@1.60.1.70245"}
+{"id": 434839, "field": "description", "en": "Discharge a mote of thunder dealing $s1 Nature damage.", "hash": "461c0247fd38f39b", "src": "db2@1.60.1.70245"}
+{"id": 434841, "field": "name", "en": "Mekkatorque's Arcano-Shredder", "hash": "48e05baa91fccd6a", "src": "db2@1.60.1.70245"}
+{"id": 434841, "field": "description", "en": "Discharge a blast of arcane energy dealing $s7 Arcane damage, reducing all resistances by $s1 and increasing all spell damage taken by $s2% for $d. Only affects enemies level 45 and below.", "hash": "2a22da8c19173c1a", "src": "db2@1.60.1.70245"}
+{"id": 434841, "field": "aura", "en": "Reduces all resistances by $s1.  Increases spell damage taken by $s2%.", "hash": "7c55cc904375e6c3", "src": "db2@1.60.1.70245"}
+{"id": 434842, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
+{"id": 434842, "field": "description", "en": "Blasts a target for $s1 Nature damage.", "hash": "37bddcc4fb608d30", "src": "db2@1.60.1.70245"}
+{"id": 434851, "field": "name", "en": "Minor Evocation", "hash": "978695e3a644af1d", "src": "db2@1.60.1.70245"}
+{"id": 434851, "field": "description", "en": "Restores $o Mana over $d.", "hash": "8bf8309d432d4ea0", "src": "db2@1.60.1.70245"}
+{"id": 434856, "field": "name", "en": "Moonglade Flight Path", "hash": "c882b02574eae25d", "src": "db2@1.60.1.70245"}
+{"id": 434869, "field": "name", "en": "Shadow Ritual of Sacrifice", "hash": "fca2007c7e184e34", "src": "db2@1.60.1.70245"}
+{"id": 434869, "field": "aura", "en": "Offer yourself as a willing sacrifice to the Shadows.", "hash": "b1e42a42737a25e2", "src": "db2@1.60.1.70245"}
+{"id": 434876, "field": "name", "en": "[DNT] Amaryllis Give Rune A", "hash": "92dfabaad754b0fa", "src": "db2@1.60.1.70245"}
+{"id": 434877, "field": "name", "en": "[DNT] Amaryllis Give Rune B", "hash": "92dfababd754b0fb", "src": "db2@1.60.1.70245"}
+{"id": 434907, "field": "name", "en": "Amplified Circuitry", "hash": "4e1c4eb6e6da352f", "src": "db2@1.60.1.70245"}
+{"id": 434907, "field": "description", "en": "Increases the Physical damage dealt by the caster by $s1 and speeds its attacks by $s2% for $d.", "hash": "b297743332441429", "src": "db2@1.60.1.70245"}
+{"id": 434907, "field": "aura", "en": "Physical damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "bc6c8e1d090dadea", "src": "db2@1.60.1.70245"}
+{"id": 434922, "field": "name", "en": "Summon Seductress Ceeyna", "hash": "2df6a185cbdb9a60", "src": "db2@1.60.1.70245"}
+{"id": 434924, "field": "name", "en": "Despawn Tracker", "hash": "cfcb1c59cc20eca7", "src": "db2@1.60.1.70245"}
+{"id": 434927, "field": "name", "en": "Ambient Radiation", "hash": "e8b8d4401b5bdfa0", "src": "db2@1.60.1.70245"}
+{"id": 434941, "field": "name", "en": "Toxic Vigor", "hash": "fe51edc406a03215", "src": "db2@1.60.1.70245"}
+{"id": 434941, "field": "aura", "en": "Radiation surges, fortifying Grubbis with relentless strength.\r\n\r\nAll damage increased by $w2%.", "hash": "fd8126f471f114bc", "src": "db2@1.60.1.70245"}
+{"id": 434942, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70245"}
+{"id": 434943, "field": "name", "en": "Shadow Ritual of Sacrifice", "hash": "fca2007c7e184e34", "src": "db2@1.60.1.70245"}
+{"id": 434947, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70245"}
+{"id": 434948, "field": "name", "en": "Irradiated Cloud", "hash": "5b4392841ed84a7b", "src": "db2@1.60.1.70245"}
+{"id": 434949, "field": "name", "en": "Spawn Super Trogg", "hash": "e0a5a9e871118e3a", "src": "db2@1.60.1.70245"}
+{"id": 434957, "field": "name", "en": "Collect Specimen", "hash": "ce286517dfc2a711", "src": "db2@1.60.1.70245"}
+{"id": 434957, "field": "description", "en": "Catch an exotic bug, and keep it as a specimen. ", "hash": "7c522522809fc241", "src": "db2@1.60.1.70245"}
+{"id": 434994, "field": "name", "en": "Soul of the Void", "hash": "a4df28c1df80d17f", "src": "db2@1.60.1.70245"}
+{"id": 434994, "field": "description", "en": "Combine 10 Conjuror's Pendants and a Soul of the Void near a Void Prism.", "hash": "29d652dc44d6bde5", "src": "db2@1.60.1.70245"}
+{"id": 434995, "field": "name", "en": "[DNT] Hydrate Seed Pod", "hash": "0f5106ae9fe82b07", "src": "db2@1.60.1.70245"}
+{"id": 434996, "field": "name", "en": "[DNT] Desiccated Seed Pod", "hash": "f664f0e5239e386a", "src": "db2@1.60.1.70245"}

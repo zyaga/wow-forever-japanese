@@ -861,7 +861,6 @@ WFJ.Data.add("gloss", {
   [92858] = "死ぬ\tしぬ\tshould (one) die",
   [92859] = "死ぬ\tしぬ\tto be dead (will die)",
   [92860] = "死ぬ\tしぬ\tto die",
-  [92861] = "死ぬ\tしぬ\tto die (can die)",
   [92862] = "死ぬ\tしぬ\tto die (go ahead and die)",
   [92863] = "死ぬ\tしぬ\tto the death (even dying)",
   [92864] = "死ぬ\tしぬ\twant to die",

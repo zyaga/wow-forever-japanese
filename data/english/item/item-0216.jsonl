@@ -1,40 +1,40 @@
-{"id": 216483, "field": "name", "en": "Witherbark Mallet", "hash": "c36111916abc056a", "src": "db2@1.60.1.70170"}
-{"id": 216483, "field": "description", "en": "Strike the gong inside the Witherbark's den.", "hash": "7ebcfac13e6ec99e", "src": "db2@1.60.1.70170"}
-{"id": 216491, "field": "name", "en": "Shipment of Stranglethorn Lumber", "hash": "d261a8ae6eed43df", "src": "db2@1.60.1.70170"}
-{"id": 216491, "field": "description", "en": "A shipment of lumber from Stranglethorn Vale that can be of use to your faction in Arathi Highlands.", "hash": "2b313da58c3b640d", "src": "db2@1.60.1.70170"}
-{"id": 216492, "field": "name", "en": "Whistle of the Mottled Raptor", "hash": "b10fa5f02ff44ed0", "src": "db2@1.60.1.70170"}
+{"id": 216483, "field": "name", "en": "Witherbark Mallet", "hash": "c36111916abc056a", "src": "db2@1.60.1.70245"}
+{"id": 216483, "field": "description", "en": "Strike the gong inside the Witherbark's den.", "hash": "7ebcfac13e6ec99e", "src": "db2@1.60.1.70245"}
+{"id": 216491, "field": "name", "en": "Shipment of Stranglethorn Lumber", "hash": "d261a8ae6eed43df", "src": "db2@1.60.1.70245"}
+{"id": 216491, "field": "description", "en": "A shipment of lumber from Stranglethorn Vale that can be of use to your faction in Arathi Highlands.", "hash": "2b313da58c3b640d", "src": "db2@1.60.1.70245"}
+{"id": 216492, "field": "name", "en": "Whistle of the Mottled Raptor", "hash": "b10fa5f02ff44ed0", "src": "db2@1.60.1.70245"}
 {"id": 216492, "field": "description", "en": "Summons and dismisses a rideable Raptor.", "hash": "7d1c7f754999027a", "src": "wago@1.15.9.69722"}
-{"id": 216523, "field": "name", "en": "Rusted Cage Key", "hash": "3dabdac0b90ef6d0", "src": "db2@1.60.1.70170"}
-{"id": 216523, "field": "description", "en": "Opens Rusted Cage", "hash": "ed809cdb2acb7bb8", "src": "db2@1.60.1.70170"}
-{"id": 216606, "field": "name", "en": "Rune of Two-Handed Mastery", "hash": "1ccb2bc555dfc2da", "src": "db2@1.60.1.70170"}
-{"id": 216606, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70170"}
-{"id": 216610, "field": "name", "en": "Orders from the Grand Crusader", "hash": "d45bad7f23c222d6", "src": "db2@1.60.1.70170"}
-{"id": 216616, "field": "name", "en": "Compound Cage Key", "hash": "1be383122fbbe886", "src": "db2@1.60.1.70170"}
-{"id": 216617, "field": "name", "en": "Kurzen Fighter's Uniform", "hash": "402cd82769863412", "src": "db2@1.60.1.70170"}
-{"id": 216618, "field": "name", "en": "Captain Aransas' Reward", "hash": "c433a340a583196c", "src": "db2@1.60.1.70170"}
-{"id": 216619, "field": "name", "en": "Student Fodder", "hash": "d22878618d2115d7", "src": "db2@1.60.1.70170"}
-{"id": 216619, "field": "description", "en": "Eat a handful and make up for lost time on the trail!\nGood ol' raisins and peanuts...and more!", "hash": "e24843b2cab1e670", "src": "db2@1.60.1.70170"}
-{"id": 216633, "field": "name", "en": "Hydraulic Truesilver Strut", "hash": "099edbedd1ea1fd3", "src": "db2@1.60.1.70170"}
-{"id": 216634, "field": "name", "en": "GG12-082 Cartridge Fuse", "hash": "dc4f45a94b4ae3e8", "src": "db2@1.60.1.70170"}
-{"id": 216635, "field": "name", "en": "Spent Voidcore", "hash": "da54cb87e8cbc758", "src": "db2@1.60.1.70170"}
-{"id": 216635, "field": "description", "en": "Combine with an appropriate power source to create a Charged Voidcore.\nThis seems to match the description of the voidcore that Wirdal needs, but it appears to be completely inert. There must be a way to recharge this...", "hash": "1c5b2e49082cbfae", "src": "db2@1.60.1.70170"}
-{"id": 216636, "field": "name", "en": "Charged Voidcore", "hash": "03d7997bb69064dc", "src": "db2@1.60.1.70170"}
-{"id": 216636, "field": "description", "en": "This object seems to draw in all surrounding light and warmth. It is very cold to the touch.", "hash": "4e92cc556856b400", "src": "db2@1.60.1.70170"}
-{"id": 216637, "field": "name", "en": "A Pile of Random Parts", "hash": "cc241e2e12d2d100", "src": "db2@1.60.1.70170"}
-{"id": 216637, "field": "description", "en": "Someone somewhere may find this stuff useful, but it just looks like junk to you.", "hash": "114625158210dc83", "src": "db2@1.60.1.70170"}
-{"id": 216645, "field": "name", "en": "Mote of Darkness", "hash": "c50fbfb73a928763", "src": "db2@1.60.1.70170"}
-{"id": 216645, "field": "description", "en": "Dark energy permeates this tiny floating speck of energy. Who knows what sort of amazing magics this could power?", "hash": "ce943a0de1060621", "src": "db2@1.60.1.70170"}
-{"id": 216696, "field": "name", "en": "Hidden Pants", "hash": "7970bcf2209f602e", "src": "db2@1.60.1.70170"}
-{"id": 216748, "field": "name", "en": "Grimoire of Portal of Summoning", "hash": "d4405b35bcbf7b94", "src": "db2@1.60.1.70170"}
-{"id": 216748, "field": "description", "en": "Teaches you Portal of Summoning.", "hash": "cfb1575069493d7b", "src": "db2@1.60.1.70170"}
-{"id": 216879, "field": "name", "en": "Mysterious Troll Scroll", "hash": "064bd59264ee1a68", "src": "db2@1.60.1.70170"}
-{"id": 216879, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70170"}
-{"id": 216880, "field": "name", "en": "Deciphered Troll Scroll", "hash": "8ed9e7a73b5c4482", "src": "db2@1.60.1.70170"}
-{"id": 216945, "field": "name", "en": "Curious Dalaran Relic", "hash": "ecd80c0d953a773d", "src": "db2@1.60.1.70170"}
-{"id": 216946, "field": "name", "en": "Glittering Dalaran Relic", "hash": "fc046d7f540b4172", "src": "db2@1.60.1.70170"}
-{"id": 216947, "field": "name", "en": "Whirring Dalaran Relic", "hash": "9ad46e685d49b29e", "src": "db2@1.60.1.70170"}
-{"id": 216948, "field": "name", "en": "Odd Dalaran Relic", "hash": "2a4615aa3e3be099", "src": "db2@1.60.1.70170"}
-{"id": 216949, "field": "name", "en": "Heavy Dalaran Relic", "hash": "f5333a12afaf156b", "src": "db2@1.60.1.70170"}
-{"id": 216950, "field": "name", "en": "Creepy Dalaran Relic", "hash": "3b3ec67113c512d8", "src": "db2@1.60.1.70170"}
-{"id": 216951, "field": "name", "en": "Slippery Dalaran Relic", "hash": "4b32b976a5e9a672", "src": "db2@1.60.1.70170"}
-{"id": 216956, "field": "name", "en": "Torn Letter", "hash": "91c89e96cf94e102", "src": "db2@1.60.1.70170"}
+{"id": 216523, "field": "name", "en": "Rusted Cage Key", "hash": "3dabdac0b90ef6d0", "src": "db2@1.60.1.70245"}
+{"id": 216523, "field": "description", "en": "Opens Rusted Cage", "hash": "ed809cdb2acb7bb8", "src": "db2@1.60.1.70245"}
+{"id": 216606, "field": "name", "en": "Rune of Two-Handed Mastery", "hash": "1ccb2bc555dfc2da", "src": "db2@1.60.1.70245"}
+{"id": 216606, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
+{"id": 216610, "field": "name", "en": "Orders from the Grand Crusader", "hash": "d45bad7f23c222d6", "src": "db2@1.60.1.70245"}
+{"id": 216616, "field": "name", "en": "Compound Cage Key", "hash": "1be383122fbbe886", "src": "db2@1.60.1.70245"}
+{"id": 216617, "field": "name", "en": "Kurzen Fighter's Uniform", "hash": "402cd82769863412", "src": "db2@1.60.1.70245"}
+{"id": 216618, "field": "name", "en": "Captain Aransas' Reward", "hash": "c433a340a583196c", "src": "db2@1.60.1.70245"}
+{"id": 216619, "field": "name", "en": "Student Fodder", "hash": "d22878618d2115d7", "src": "db2@1.60.1.70245"}
+{"id": 216619, "field": "description", "en": "Eat a handful and make up for lost time on the trail!\nGood ol' raisins and peanuts...and more!", "hash": "e24843b2cab1e670", "src": "db2@1.60.1.70245"}
+{"id": 216633, "field": "name", "en": "Hydraulic Truesilver Strut", "hash": "099edbedd1ea1fd3", "src": "db2@1.60.1.70245"}
+{"id": 216634, "field": "name", "en": "GG12-082 Cartridge Fuse", "hash": "dc4f45a94b4ae3e8", "src": "db2@1.60.1.70245"}
+{"id": 216635, "field": "name", "en": "Spent Voidcore", "hash": "da54cb87e8cbc758", "src": "db2@1.60.1.70245"}
+{"id": 216635, "field": "description", "en": "Combine with an appropriate power source to create a Charged Voidcore.\nThis seems to match the description of the voidcore that Wirdal needs, but it appears to be completely inert. There must be a way to recharge this...", "hash": "1c5b2e49082cbfae", "src": "db2@1.60.1.70245"}
+{"id": 216636, "field": "name", "en": "Charged Voidcore", "hash": "03d7997bb69064dc", "src": "db2@1.60.1.70245"}
+{"id": 216636, "field": "description", "en": "This object seems to draw in all surrounding light and warmth. It is very cold to the touch.", "hash": "4e92cc556856b400", "src": "db2@1.60.1.70245"}
+{"id": 216637, "field": "name", "en": "A Pile of Random Parts", "hash": "cc241e2e12d2d100", "src": "db2@1.60.1.70245"}
+{"id": 216637, "field": "description", "en": "Someone somewhere may find this stuff useful, but it just looks like junk to you.", "hash": "114625158210dc83", "src": "db2@1.60.1.70245"}
+{"id": 216645, "field": "name", "en": "Mote of Darkness", "hash": "c50fbfb73a928763", "src": "db2@1.60.1.70245"}
+{"id": 216645, "field": "description", "en": "Dark energy permeates this tiny floating speck of energy. Who knows what sort of amazing magics this could power?", "hash": "ce943a0de1060621", "src": "db2@1.60.1.70245"}
+{"id": 216696, "field": "name", "en": "Hidden Pants", "hash": "7970bcf2209f602e", "src": "db2@1.60.1.70245"}
+{"id": 216748, "field": "name", "en": "Grimoire of Portal of Summoning", "hash": "d4405b35bcbf7b94", "src": "db2@1.60.1.70245"}
+{"id": 216748, "field": "description", "en": "Teaches you Portal of Summoning.", "hash": "cfb1575069493d7b", "src": "db2@1.60.1.70245"}
+{"id": 216879, "field": "name", "en": "Mysterious Troll Scroll", "hash": "064bd59264ee1a68", "src": "db2@1.60.1.70245"}
+{"id": 216879, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70245"}
+{"id": 216880, "field": "name", "en": "Deciphered Troll Scroll", "hash": "8ed9e7a73b5c4482", "src": "db2@1.60.1.70245"}
+{"id": 216945, "field": "name", "en": "Curious Dalaran Relic", "hash": "ecd80c0d953a773d", "src": "db2@1.60.1.70245"}
+{"id": 216946, "field": "name", "en": "Glittering Dalaran Relic", "hash": "fc046d7f540b4172", "src": "db2@1.60.1.70245"}
+{"id": 216947, "field": "name", "en": "Whirring Dalaran Relic", "hash": "9ad46e685d49b29e", "src": "db2@1.60.1.70245"}
+{"id": 216948, "field": "name", "en": "Odd Dalaran Relic", "hash": "2a4615aa3e3be099", "src": "db2@1.60.1.70245"}
+{"id": 216949, "field": "name", "en": "Heavy Dalaran Relic", "hash": "f5333a12afaf156b", "src": "db2@1.60.1.70245"}
+{"id": 216950, "field": "name", "en": "Creepy Dalaran Relic", "hash": "3b3ec67113c512d8", "src": "db2@1.60.1.70245"}
+{"id": 216951, "field": "name", "en": "Slippery Dalaran Relic", "hash": "4b32b976a5e9a672", "src": "db2@1.60.1.70245"}
+{"id": 216956, "field": "name", "en": "Torn Letter", "hash": "91c89e96cf94e102", "src": "db2@1.60.1.70245"}

@@ -1,218 +1,218 @@
-{"id": 440014, "field": "name", "en": "Sprocketfire", "hash": "55eff0d5dd15dfca", "src": "db2@1.60.1.70170"}
-{"id": 440014, "field": "aura", "en": "Deals $w1 Fire damage every $t1 sec.", "hash": "e06497998c1ce50b", "src": "db2@1.60.1.70170"}
-{"id": 440028, "field": "name", "en": "Nutty Shield", "hash": "f938ad115ba80438", "src": "db2@1.60.1.70170"}
-{"id": 440050, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70170"}
-{"id": 440052, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70170"}
-{"id": 440053, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70170"}
-{"id": 440054, "field": "name", "en": "Shadowfiend", "hash": "bc1c648c61e80608", "src": "db2@1.60.1.70170"}
-{"id": 440054, "field": "description", "en": "Creates a shadowy fiend to attack the target.  Caster receives $401988s1% mana when the Shadowfiend attacks. Lasts $d.", "hash": "609469be8d366203", "src": "db2@1.60.1.70170"}
-{"id": 440072, "field": "name", "en": "Ghostly", "hash": "f747d39bd69c816b", "src": "db2@1.60.1.70170"}
-{"id": 440072, "field": "aura", "en": "You feel ghostly.", "hash": "fcf0fb0bb3e32fa9", "src": "db2@1.60.1.70170"}
-{"id": 440073, "field": "name", "en": "Self Repair", "hash": "1a6b129a37b038ab", "src": "db2@1.60.1.70170"}
-{"id": 440077, "field": "name", "en": "BFD XP Grant [DNT]", "hash": "a6c685b7b1c7ca78", "src": "db2@1.60.1.70170"}
-{"id": 440080, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70170"}
-{"id": 440092, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70170"}
-{"id": 440093, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70170"}
-{"id": 440106, "field": "name", "en": "Resurrection", "hash": "4e95d3bcfd7d75d3", "src": "db2@1.60.1.70170"}
-{"id": 440108, "field": "name", "en": "Pacify Self", "hash": "47df437f74851423", "src": "db2@1.60.1.70170"}
-{"id": 440108, "field": "aura", "en": "Cannot attack or use spells.", "hash": "3f9877515e8ec922", "src": "db2@1.60.1.70170"}
-{"id": 440113, "field": "name", "en": "Sudden Death", "hash": "674e885095ee92f9", "src": "db2@1.60.1.70170"}
-{"id": 440113, "field": "description", "en": "Your melee hits have a $h% chance to grant Sudden Death. Sudden Death allows one use of Execute regardless of the target's health state. When Execute is enabled by Sudden Death, you will retain $s2 rage after using Execute.", "hash": "067400701fa7620d", "src": "db2@1.60.1.70170"}
-{"id": 440114, "field": "name", "en": "Sudden Death", "hash": "674e885095ee92f9", "src": "db2@1.60.1.70170"}
-{"id": 440114, "field": "aura", "en": "You may use Execute once regardless of target's health and you will have $440113s2 Rage remaining afterward.", "hash": "0287cac87ca19378", "src": "db2@1.60.1.70170"}
-{"id": 440123, "field": "name", "en": "[DNT] Despawn", "hash": "f7abedbb4b518f11", "src": "db2@1.60.1.70170"}
-{"id": 440212, "field": "name", "en": "Cryoblast", "hash": "90edab90931dcbcf", "src": "db2@1.60.1.70170"}
-{"id": 440212, "field": "description", "en": "Inflicts $?$pl>=25[$s1][${42+($pl-16)*8} to ${57+($pl-16)*8}] Frost damage in a $a1 yard radius.", "hash": "477a97294cf50aeb", "src": "db2@1.60.1.70170"}
-{"id": 440213, "field": "name", "en": "Fury of the Blood Loa", "hash": "eca5be471be618d8", "src": "db2@1.60.1.70170"}
-{"id": 440213, "field": "aura", "en": "The Blood Loa demands sport, not slaughter of the helpless! Leave your raid group or face his wrath! All stats and movement speed reduced by $s1%.", "hash": "a7fb784d9d5aacc9", "src": "db2@1.60.1.70170"}
-{"id": 440236, "field": "name", "en": "Imbue Blade", "hash": "0cfe1ca3b5589712", "src": "db2@1.60.1.70170"}
-{"id": 440236, "field": "description", "en": "Use on Hypnotic Blade to create a powerful weapon.", "hash": "0c3b5db459557ae3", "src": "db2@1.60.1.70170"}
-{"id": 440247, "field": "name", "en": "S03 - Tuning and Overrides Passive - Priest", "hash": "cb0d73c1af0425d2", "src": "db2@1.60.1.70170"}
-{"id": 440285, "field": "name", "en": "Power Surge", "hash": "15f545926e66c8bc", "src": "db2@1.60.1.70170"}
-{"id": 440285, "field": "aura", "en": "Your next Chain Lightning, Chain Heal,  or Lava Burst spell will be an instant cast spell.", "hash": "72a3c3381c526dc6", "src": "db2@1.60.1.70170"}
-{"id": 440329, "field": "name", "en": "[DNT] Mechanical Unit Damage Reduction", "hash": "bbf1d082c43eb787", "src": "db2@1.60.1.70170"}
-{"id": 440414, "field": "name", "en": "Widget Volley", "hash": "cbac9f0032da0c4e", "src": "db2@1.60.1.70170"}
-{"id": 440471, "field": "name", "en": "Toxic Ventilation", "hash": "41e5c6e46387dd28", "src": "db2@1.60.1.70170"}
-{"id": 440471, "field": "aura", "en": "$w1 Nature damage every $t1 sec.", "hash": "508bfddcf13ce028", "src": "db2@1.60.1.70170"}
-{"id": 440483, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70170"}
-{"id": 440483, "field": "aura", "en": "Physical damage done increased by $s1%.", "hash": "07715b9cfc0ba3a6", "src": "db2@1.60.1.70170"}
-{"id": 440484, "field": "name", "en": "Fresh Meat", "hash": "0c83d8615fecf0bd", "src": "db2@1.60.1.70170"}
-{"id": 440484, "field": "description", "en": "Damaging a target with Bloodthirst, Mortal Strike, or Shield Slam has a 100% chance the first time and a $s2% chance each subsequent time to Enrage you (activating abilities which requiring being Enraged), and cause you to deal $440483s1% increased Physical damage for $440483d.", "hash": "50d6447a81796a93", "src": "db2@1.60.1.70170"}
-{"id": 440486, "field": "name", "en": "High Voltage!", "hash": "3e90f5f56157957e", "src": "db2@1.60.1.70170"}
-{"id": 440488, "field": "name", "en": "Shockwave", "hash": "9e23571f4cce2ca7", "src": "db2@1.60.1.70170"}
-{"id": 440488, "field": "description", "en": "Sends a wave of force in front of the warrior, causing ${$m3/100*$AP} damage and stunning all enemy targets within $a1 yards in a frontal cone for $d.", "hash": "6860b6dd1335afe3", "src": "db2@1.60.1.70170"}
-{"id": 440488, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
-{"id": 440492, "field": "name", "en": "Engrave Cloak - Fresh Meat", "hash": "8414424f65c7dbfe", "src": "db2@1.60.1.70170"}
-{"id": 440492, "field": "description", "en": "Engrave your cloak with the Fresh Meat\r\n rune:\r\n\r\n$@spellicon440484\r\n$@spelldesc440484", "hash": "5a6bf051fdc58164", "src": "db2@1.60.1.70170"}
-{"id": 440493, "field": "name", "en": "Fresh Meat", "hash": "0c83d8615fecf0bd", "src": "db2@1.60.1.70170"}
-{"id": 440493, "field": "description", "en": "Gain the Fresh Meat ability:\r\n\r\n$@spellicon440484\r\n$@spelldesc440484", "hash": "1c9eb8f11d43577d", "src": "db2@1.60.1.70170"}
-{"id": 440494, "field": "name", "en": "Engrave Cloak - Sudden Death", "hash": "671c2839f70f167c", "src": "db2@1.60.1.70170"}
-{"id": 440494, "field": "description", "en": "Engrave your cloak with the Sudden Death rune:\r\n\r\n$@spellicon440113\r\n$@spelldesc440113", "hash": "6d8006996c685d2f", "src": "db2@1.60.1.70170"}
-{"id": 440495, "field": "name", "en": "Sudden Death", "hash": "674e885095ee92f9", "src": "db2@1.60.1.70170"}
-{"id": 440495, "field": "description", "en": "Gain the Fresh Meat ability:\r\n\r\n$@spellicon440113\r\n$@spelldesc440113", "hash": "c8902296cc3c0a9a", "src": "db2@1.60.1.70170"}
-{"id": 440496, "field": "name", "en": "Engrave Cloak - Shockwave", "hash": "e75b29067de5ea7b", "src": "db2@1.60.1.70170"}
-{"id": 440496, "field": "description", "en": "Engrave your cloak with the Shockwave\r\n rune:\r\n\r\n$@spellicon440488\r\n$@spelldesc440488", "hash": "56e19117f7df8eb4", "src": "db2@1.60.1.70170"}
-{"id": 440497, "field": "name", "en": "Shockwave", "hash": "9e23571f4cce2ca7", "src": "db2@1.60.1.70170"}
-{"id": 440497, "field": "description", "en": "Gain the Shockwave ability:\r\n\r\n$@spellicon440488\r\n$@spelldesc440488", "hash": "077d74038025cb12", "src": "db2@1.60.1.70170"}
-{"id": 440505, "field": "name", "en": "Invisibility", "hash": "757e6c9bba4b0fca", "src": "db2@1.60.1.70170"}
-{"id": 440505, "field": "description", "en": "Gives the imbiber invisibility for $d.", "hash": "3fdd20e36b8296e2", "src": "db2@1.60.1.70170"}
-{"id": 440505, "field": "aura", "en": "Invisibility", "hash": "757e6c9bba4b0fca", "src": "db2@1.60.1.70170"}
-{"id": 440520, "field": "name", "en": "Improved Volley", "hash": "f846c0eacff61454", "src": "db2@1.60.1.70170"}
-{"id": 440520, "field": "description", "en": "Reduces the mana cost of your Volley by $s1%, reduces its cooldown by $s2%, increases its damage by $s5%, and it no longer suffers pushback from damaging attacks. Volley also deals $s4% of your ranged Attack Power as additional damage each time it deals damage.", "hash": "e55f42f9f6f39e6b", "src": "db2@1.60.1.70170"}
-{"id": 440529, "field": "name", "en": "Resourcefulness", "hash": "8e42266ec3a51840", "src": "db2@1.60.1.70170"}
-{"id": 440529, "field": "description", "en": "Reduces the mana cost of your Trap abilities and melee abilities by $s1%. In addition, your critical strikes have a $m3% chance to allow $1242688s1% of your Mana regeneration to continue while casting for $1242688d.", "hash": "bc56e52fe91e22cc", "src": "db2@1.60.1.70170"}
-{"id": 440531, "field": "name", "en": "Hit and Run", "hash": "39672f26cda607ad", "src": "db2@1.60.1.70170"}
-{"id": 440531, "field": "aura", "en": "Movement speed increased by $s1%", "hash": "da8c3de1cb79290f", "src": "db2@1.60.1.70170"}
-{"id": 440533, "field": "name", "en": "Hit and Run", "hash": "39672f26cda607ad", "src": "db2@1.60.1.70170"}
-{"id": 440533, "field": "description", "en": "You gain $440531s1% movement speed for $440531d after using Raptor Strike.\r\n\r\nYour pet's damaging abilities send the target into a Rabid Frenzy, increasing their melee attack power by $s2 but reducing armor by $s3 for $1218358d.  Rabid enemies will not flee and will ignore Fear and Horror effects.", "hash": "d8584ed2be9a9da6", "src": "db2@1.60.1.70170"}
-{"id": 440557, "field": "name", "en": "Engrave Cloak - Resourcefulness", "hash": "85ccebc1009e5b88", "src": "db2@1.60.1.70170"}
-{"id": 440557, "field": "description", "en": "Engrave your cloak with the Resourcefulness rune:\r\n\r\n$@spellicon440529\r\n$@spelldesc440529", "hash": "5c9e589ae4ccba29", "src": "db2@1.60.1.70170"}
-{"id": 440558, "field": "name", "en": "Resourcefulness", "hash": "8e42266ec3a51840", "src": "db2@1.60.1.70170"}
-{"id": 440558, "field": "description", "en": "Gain the Resourcefulness ability:\r\n\r\n$@spellicon440529\r\n$@spelldesc440529", "hash": "05ed64c8a1e62047", "src": "db2@1.60.1.70170"}
-{"id": 440560, "field": "name", "en": "Engrave Cloak - Improved Volley", "hash": "efd1863d0cef579c", "src": "db2@1.60.1.70170"}
-{"id": 440560, "field": "description", "en": "Engrave your cloak with the Improved Volley rune:\r\n\r\n$@spellicon440520\r\n$@spelldesc440520", "hash": "20ba908144ee1ff4", "src": "db2@1.60.1.70170"}
-{"id": 440561, "field": "name", "en": "Improved Volley", "hash": "f846c0eacff61454", "src": "db2@1.60.1.70170"}
-{"id": 440561, "field": "description", "en": "Gain the Improved Volley ability:\r\n\r\n$@spellicon440520\r\n$@spelldesc440520", "hash": "15236ce6aec2e8eb", "src": "db2@1.60.1.70170"}
-{"id": 440563, "field": "name", "en": "Engrave Cloak - Hit and Run", "hash": "684d6521758bb739", "src": "db2@1.60.1.70170"}
-{"id": 440563, "field": "description", "en": "Engrave your cloak with the Hit and Run rune:\r\n\r\n$@spellicon440533\r\n$@spelldesc440533", "hash": "15040a9f0f2c9067", "src": "db2@1.60.1.70170"}
-{"id": 440564, "field": "name", "en": "Hit and Run", "hash": "39672f26cda607ad", "src": "db2@1.60.1.70170"}
-{"id": 440564, "field": "description", "en": "Gain the Hit and Run ability:\r\n\r\n$@spellicon440533\r\n$@spelldesc440533", "hash": "a00297a689c7dc68", "src": "db2@1.60.1.70170"}
-{"id": 440569, "field": "name", "en": "Storm, Earth, and Fire", "hash": "7f68981f8f6ec66b", "src": "db2@1.60.1.70170"}
-{"id": 440569, "field": "description", "en": "Reduces the cooldown of your Chain Lightning by $s1%, causes your Earthbind Totem to root targets for $440574d when cast, and increases the periodic damage done by your Flame Shock by $s3%.", "hash": "92749d84e38edf21", "src": "db2@1.60.1.70170"}
-{"id": 440574, "field": "name", "en": "Earthgrab", "hash": "41ed911a93b561b7", "src": "db2@1.60.1.70170"}
-{"id": 440574, "field": "aura", "en": "Rooted.", "hash": "9bb1efcf10b38d14", "src": "db2@1.60.1.70170"}
-{"id": 440580, "field": "name", "en": "Feral Spirit", "hash": "51fbb4a935668193", "src": "db2@1.60.1.70170"}
-{"id": 440580, "field": "description", "en": "Summons two Spirit Wolves under the command of the Shaman, lasting $d.", "hash": "1cc2d3c8b0dff38d", "src": "db2@1.60.1.70170"}
-{"id": 440586, "field": "name", "en": "Bash", "hash": "08f1a3a0f5ece8cf", "src": "db2@1.60.1.70170"}
-{"id": 440586, "field": "description", "en": "Stuns the target for $d.", "hash": "b330d1817f9951be", "src": "db2@1.60.1.70170"}
-{"id": 440586, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
-{"id": 440589, "field": "name", "en": "Twin Howl", "hash": "2491fa068929a54c", "src": "db2@1.60.1.70170"}
-{"id": 440589, "field": "description", "en": "Your Spirit Wolves howl, forcing all enemies to attack them for $d.", "hash": "140cc51b04cf3942", "src": "db2@1.60.1.70170"}
-{"id": 440591, "field": "name", "en": "Spirit Walk", "hash": "80caf33f0d13fc4c", "src": "db2@1.60.1.70170"}
-{"id": 440591, "field": "description", "en": "Removes all movement impairing effects and increases the movement speed of you and your Spirit Wolves by $s1% for $d.", "hash": "8027f551bc8b6ac7", "src": "db2@1.60.1.70170"}
-{"id": 440591, "field": "aura", "en": "Movement speed increased by $s1%", "hash": "da8c3de1cb79290f", "src": "db2@1.60.1.70170"}
-{"id": 440593, "field": "name", "en": "Spirit Hunt", "hash": "7ecda4ed13623ab2", "src": "db2@1.60.1.70170"}
-{"id": 440593, "field": "description", "en": "Spirit Wolves' attacks heal them and their master for $s1% of damage done", "hash": "39af52d17a7195e6", "src": "db2@1.60.1.70170"}
-{"id": 440593, "field": "aura", "en": "Converts $s1% damage to health.", "hash": "6261a4536f390cc5", "src": "db2@1.60.1.70170"}
-{"id": 440594, "field": "name", "en": "Avoidance", "hash": "5e1898dc338fc6b7", "src": "db2@1.60.1.70170"}
-{"id": 440595, "field": "name", "en": "Shaman Pet Scaling", "hash": "83ec55146531ad3e", "src": "db2@1.60.1.70170"}
-{"id": 440605, "field": "name", "en": "Spirit Leap", "hash": "7f52a41e097c304f", "src": "db2@1.60.1.70170"}
-{"id": 440605, "field": "description", "en": "Leaps behind the target.", "hash": "17230464e5301bce", "src": "db2@1.60.1.70170"}
-{"id": 440609, "field": "name", "en": "Spirit Hunt", "hash": "7ecda4ed13623ab2", "src": "db2@1.60.1.70170"}
-{"id": 440609, "field": "description", "en": "Spirit Wolves' attacks heal them and their master for a percentage of damage done.", "hash": "705e00bc86cc0f32", "src": "db2@1.60.1.70170"}
-{"id": 440610, "field": "name", "en": "Spirit Walk", "hash": "80caf33f0d13fc4c", "src": "db2@1.60.1.70170"}
-{"id": 440610, "field": "description", "en": "Removes all movement impairing effects.", "hash": "d1a00509689921f5", "src": "db2@1.60.1.70170"}
-{"id": 440610, "field": "aura", "en": "Immune to all movement impairing effects.", "hash": "73d23ab880bbe101", "src": "db2@1.60.1.70170"}
-{"id": 440630, "field": "name", "en": "Engrave Cloak - Feral Spirit", "hash": "51c9549296870516", "src": "db2@1.60.1.70170"}
-{"id": 440630, "field": "description", "en": "Engrave your cloak with the Feral Spirit rune:\r\n\r\n$@spellicon440580\r\n$@spelldesc440580", "hash": "3a18cf253685fd10", "src": "db2@1.60.1.70170"}
-{"id": 440631, "field": "name", "en": "Feral Spirit", "hash": "51fbb4a935668193", "src": "db2@1.60.1.70170"}
-{"id": 440631, "field": "description", "en": "Gain the Feral Spirit ability:\r\n\r\n$@spellicon440580\r\n$@spelldesc440580", "hash": "634dd6c319677339", "src": "db2@1.60.1.70170"}
-{"id": 440632, "field": "name", "en": "Attack Power - Feral (+36)", "hash": "566d6b3a1d9bddf5", "src": "db2@1.60.1.70170"}
-{"id": 440632, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70170"}
-{"id": 440633, "field": "name", "en": "Storm, Earth, and Fire", "hash": "7f68981f8f6ec66b", "src": "db2@1.60.1.70170"}
-{"id": 440633, "field": "description", "en": "Gain the Storm, Earth, and Fire ability:\r\n\r\n$@spellicon440569\r\n$@spelldesc440569", "hash": "b7cb4fb1ea6fd62b", "src": "db2@1.60.1.70170"}
-{"id": 440634, "field": "name", "en": "Engrave Cloak - Storm, Earth, and Fire", "hash": "430dbf59f6847237", "src": "db2@1.60.1.70170"}
-{"id": 440634, "field": "description", "en": "Engrave your cloak with the Storm, Earth, and Fire rune:\r\n\r\n$@spellicon440569\r\n$@spelldesc440569", "hash": "b99a438250222f22", "src": "db2@1.60.1.70170"}
-{"id": 440636, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70170"}
-{"id": 440637, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70170"}
-{"id": 440638, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70170"}
-{"id": 440639, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70170"}
-{"id": 440640, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70170"}
-{"id": 440641, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70170"}
-{"id": 440642, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70170"}
-{"id": 440643, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70170"}
-{"id": 440651, "field": "name", "en": "Sacred Shield", "hash": "101af0745c3d3df8", "src": "db2@1.60.1.70170"}
-{"id": 440651, "field": "description", "en": "Each time the target takes damage they gain a Sacred Shield, absorbing $s1 damage and increasing the paladin's chance to critically hit with Flash of Light by $s2% for up to $d.  They cannot gain this effect more than once every 6 sec.  Lasts $d.\r\n", "hash": "83a78794cf725df9", "src": "db2@1.60.1.70170"}
-{"id": 440651, "field": "aura", "en": "Absorbs damage and increases the casting paladin's chance to critically hit with Flash of Light by $s2%.", "hash": "c8eb5579ca7a3849", "src": "db2@1.60.1.70170"}
-{"id": 440656, "field": "name", "en": "High Voltage!", "hash": "3e90f5f56157957e", "src": "db2@1.60.1.70170"}
-{"id": 440658, "field": "name", "en": "Shield of Righteousness", "hash": "d0144d192c55cdff", "src": "db2@1.60.1.70170"}
-{"id": 440658, "field": "description", "en": "Slam the target with your shield, causing Holy damage based on your block value plus an additional ${$m1*$<damagepower>/100}.", "hash": "675f9fa9eddd0775", "src": "db2@1.60.1.70170"}
-{"id": 440664, "field": "name", "en": "Sludge", "hash": "03754b9fa819bdd1", "src": "db2@1.60.1.70170"}
-{"id": 440666, "field": "name", "en": "Vindicator", "hash": "aaf3efa0017e607a", "src": "db2@1.60.1.70170"}
-{"id": 440666, "field": "description", "en": "When your Vindication talent is triggered, it also decreases the target's Attack Power by ${$440667m1/-3} per talent point and increases your Strength, Agility, and Attack Power by ${$440668m1/3}% per talent point. Vindication duration increased to $s1 sec.", "hash": "9d03ab96773080c6", "src": "db2@1.60.1.70170"}
-{"id": 440667, "field": "name", "en": "Vindication", "hash": "7ad20d4285ef9e9e", "src": "db2@1.60.1.70170"}
-{"id": 440667, "field": "aura", "en": "Attack Power reduced by $w1.", "hash": "3b8db6a522b62bff", "src": "db2@1.60.1.70170"}
-{"id": 440668, "field": "name", "en": "Vindication", "hash": "7ad20d4285ef9e9e", "src": "db2@1.60.1.70170"}
-{"id": 440668, "field": "aura", "en": "Attack Power increased by $w1%.", "hash": "fe93b3f430c4f530", "src": "db2@1.60.1.70170"}
-{"id": 440672, "field": "name", "en": "Righteous Judgement", "hash": "7bff09b80003b81c", "src": "db2@1.60.1.70170"}
-{"id": 440672, "field": "description", "en": "When your Judgement or Crusader Strike deals a critical strike, your target will take $s1% additional damage over $61840d.", "hash": "49f9e1c19b39c292", "src": "db2@1.60.1.70170"}
-{"id": 440675, "field": "name", "en": "Righteous Judgement", "hash": "7bff09b80003b81c", "src": "db2@1.60.1.70170"}
-{"id": 440675, "field": "aura", "en": "Deals Holy damage every $t1 sec.", "hash": "74b718e285146f7f", "src": "db2@1.60.1.70170"}
-{"id": 440677, "field": "name", "en": "Righteous Judgement", "hash": "7bff09b80003b81c", "src": "db2@1.60.1.70170"}
-{"id": 440720, "field": "name", "en": "Scooty's Not-Quite-Divine Shield", "hash": "b8d3bb8b72c138b3", "src": "db2@1.60.1.70170"}
-{"id": 440720, "field": "aura", "en": "Is this what it feels like to be a paladin?", "hash": "cab03f059c2f810b", "src": "db2@1.60.1.70170"}
-{"id": 440788, "field": "name", "en": "Engrave Cloak - Shield of Righteousness", "hash": "ed975f2c66305a81", "src": "db2@1.60.1.70170"}
-{"id": 440788, "field": "description", "en": "Engrave your cloak with the Shield of Righteousness rune:\r\n\r\n$@spellicon440658\r\n$@spelldesc440658", "hash": "b62d614fb156744f", "src": "db2@1.60.1.70170"}
-{"id": 440789, "field": "name", "en": "Shield of Righteousness", "hash": "d0144d192c55cdff", "src": "db2@1.60.1.70170"}
-{"id": 440789, "field": "description", "en": "Gain the Shield of Righteousness ability:\r\n\r\n$@spellicon440658\r\n$@spelldesc440658", "hash": "60be816586aaf859", "src": "db2@1.60.1.70170"}
-{"id": 440790, "field": "name", "en": "Engrave Cloak - Shock and Awe", "hash": "cfb95051d3cdc49a", "src": "db2@1.60.1.70170"}
-{"id": 440790, "field": "description", "en": "Engrave your cloak with the Shock and Awe rune:\r\n\r\n$@spellicon462834\r\n$@spelldesc462834", "hash": "21f37d6a9fd46e98", "src": "db2@1.60.1.70170"}
-{"id": 440791, "field": "name", "en": "Shock and Awe", "hash": "e9807c16864c83df", "src": "db2@1.60.1.70170"}
-{"id": 440791, "field": "description", "en": "Gain the Shock and Awe ability:\r\n\r\n$@spellicon462834\r\n$@spelldesc462834", "hash": "eaaff97e96ff3f69", "src": "db2@1.60.1.70170"}
-{"id": 440792, "field": "name", "en": "Engrave Cloak - Righteous Vengeance", "hash": "b151934e00ea9475", "src": "db2@1.60.1.70170"}
-{"id": 440792, "field": "description", "en": "Engrave your cloak with the Righteous Vengeance rune:\r\n\r\n$@spellicon440672\r\n$@spelldesc440672", "hash": "dd37e14ed5d256b1", "src": "db2@1.60.1.70170"}
-{"id": 440794, "field": "name", "en": "Righteous Vengeance", "hash": "874f777c707e4c51", "src": "db2@1.60.1.70170"}
-{"id": 440794, "field": "description", "en": "Gain the Righteous Vengeance ability:\r\n\r\n$@spellicon440672\r\n$@spelldesc440672", "hash": "582e047938957180", "src": "db2@1.60.1.70170"}
-{"id": 440802, "field": "name", "en": "Frozen Orb", "hash": "0869234311617ebf", "src": "db2@1.60.1.70170"}
-{"id": 440802, "field": "description", "en": "Launches an orb of swirling ice which rapidly moves forward over $d. While it is moving, every $440804t sec the orb deals ${$440809m2*$<power>/100*$<frostdamage>} Frost Damage and applies a Chill for $440809s1% movement speed reduction to all enemies it passes through. The first time it damages an enemy, its movement will slow and it will have a 100% chance to trigger the Fingers of Frost rune.", "hash": "cb2a6d8ec44dd47f", "src": "db2@1.60.1.70170"}
-{"id": 440804, "field": "name", "en": "Frozen Orb", "hash": "0869234311617ebf", "src": "db2@1.60.1.70170"}
-{"id": 440809, "field": "name", "en": "Frozen Orb", "hash": "0869234311617ebf", "src": "db2@1.60.1.70170"}
-{"id": 440809, "field": "aura", "en": "Movement speed reduced by $w1%.", "hash": "09876d53bb875537", "src": "db2@1.60.1.70170"}
-{"id": 440813, "field": "name", "en": "Frozen Orb", "hash": "0869234311617ebf", "src": "db2@1.60.1.70170"}
-{"id": 440817, "field": "name", "en": "[DNT] Holdout Teleport - Teleport To Crowd Pummeler Room", "hash": "40faabd413ee0e86", "src": "db2@1.60.1.70170"}
-{"id": 440818, "field": "name", "en": "[DNT] Holdout Teleport - Crowd Pummeler - Floating Visual", "hash": "7e9c894d6defd13e", "src": "db2@1.60.1.70170"}
-{"id": 440820, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70170"}
-{"id": 440820, "field": "description", "en": "..", "hash": "000017b80005ba9c", "src": "db2@1.60.1.70170"}
-{"id": 440822, "field": "name", "en": "[DNT] Holdout Teleport - Boss Floating Visual Dummy Periodic", "hash": "e1a0a10c0bb65a21", "src": "db2@1.60.1.70170"}
-{"id": 440823, "field": "name", "en": "[DNT] Holdout Teleport - Electrocutioner - Floating Visual", "hash": "22689f783157b44f", "src": "db2@1.60.1.70170"}
-{"id": 440824, "field": "name", "en": "[DNT] Holdout Teleport - Thermaplugg - Floating Visual", "hash": "bee6cfb08a24ed37", "src": "db2@1.60.1.70170"}
-{"id": 440825, "field": "name", "en": "[DNT] Holdout Teleport - Viscous Fallout - Floating Visual", "hash": "14f5ab40931f4b4b", "src": "db2@1.60.1.70170"}
-{"id": 440826, "field": "name", "en": "[DNT] Holdout Teleport - Grubbis - Floating Visual", "hash": "2da8ad2b1defa290", "src": "db2@1.60.1.70170"}
-{"id": 440827, "field": "name", "en": "Throw Concoction", "hash": "ede7a6468b7ff55b", "src": "db2@1.60.1.70170"}
-{"id": 440827, "field": "description", "en": "Throw into a bubbling cauldron to cause an explosion of noxious gas. Does not break stealth.", "hash": "5d2eeb164daf402d", "src": "db2@1.60.1.70170"}
-{"id": 440828, "field": "name", "en": "Zul'Farrak Cauldron", "hash": "864a00b306511c3f", "src": "db2@1.60.1.70170"}
-{"id": 440829, "field": "name", "en": "Combine Offerings", "hash": "ac194c4a7c205531", "src": "db2@1.60.1.70170"}
-{"id": 440829, "field": "description", "en": "Combine offerings of flesh and bone.", "hash": "4929551822322e27", "src": "db2@1.60.1.70170"}
-{"id": 440830, "field": "name", "en": "Imbue Emblem", "hash": "aa47a7089ddb04db", "src": "db2@1.60.1.70170"}
-{"id": 440830, "field": "description", "en": "Imbue a hollow emblem with blood magic essence.", "hash": "9ddd6f517a1333c7", "src": "db2@1.60.1.70170"}
-{"id": 440840, "field": "name", "en": "[DNT] Holdout Teleport - Crowd Pummeler - Unavailable Floating Visual", "hash": "997e675f2a727247", "src": "db2@1.60.1.70170"}
-{"id": 440841, "field": "name", "en": "Ward of the Dead", "hash": "bbb96759d2bde4b8", "src": "db2@1.60.1.70170"}
-{"id": 440841, "field": "description", "en": "Reveals the grave which hides an offering.", "hash": "4a6817a6634e6e24", "src": "db2@1.60.1.70170"}
-{"id": 440841, "field": "aura", "en": "Reveals the grave which hides an offering.", "hash": "4a6817a6634e6e24", "src": "db2@1.60.1.70170"}
-{"id": 440842, "field": "name", "en": "[DNT] Holdout Teleport - Electrocutioner - Unavailable Floating Visual", "hash": "f820f2bbb675575e", "src": "db2@1.60.1.70170"}
-{"id": 440843, "field": "name", "en": "[DNT] Holdout Teleport - Thermaplugg - Unavailable Floating Visual", "hash": "b76721680778cb5d", "src": "db2@1.60.1.70170"}
-{"id": 440844, "field": "name", "en": "[DNT] Holdout Teleport - Holdout - Floating Visual", "hash": "3f1b4645e80dde39", "src": "db2@1.60.1.70170"}
-{"id": 440845, "field": "name", "en": "[DNT] Holdout Teleport - Teleport To Holdout", "hash": "3c1c7761eecb48be", "src": "db2@1.60.1.70170"}
-{"id": 440847, "field": "name", "en": "[DNT] Holdout Teleport - Teleport To Electrocutioner Room", "hash": "cb78138556e2f1b5", "src": "db2@1.60.1.70170"}
-{"id": 440848, "field": "name", "en": "[DNT] Holdout Teleport - Teleport To Thermaplugg Room", "hash": "81c38b960b7398d7", "src": "db2@1.60.1.70170"}
-{"id": 440856, "field": "name", "en": "S03 - 50 - Rogue 45 Quest Start", "hash": "dbb151ed447c8930", "src": "db2@1.60.1.70170"}
-{"id": 440858, "field": "name", "en": "Engrave Cloak - Frozen Orb", "hash": "7ff98d31173c6a00", "src": "db2@1.60.1.70170"}
-{"id": 440858, "field": "description", "en": "Engrave your cloak with the Frozen Orb\r\nrune:\r\n\r\n$@spellicon440802\r\n$@spelldesc440802", "hash": "f8b56c745b6b11c3", "src": "db2@1.60.1.70170"}
-{"id": 440859, "field": "name", "en": "Frozen Orb", "hash": "0869234311617ebf", "src": "db2@1.60.1.70170"}
-{"id": 440859, "field": "description", "en": "Gain the Frozen Orb ability:\r\n\r\n$@spellicon440802\r\n$@spelldesc440802", "hash": "6788d4275472eaa0", "src": "db2@1.60.1.70170"}
-{"id": 440870, "field": "name", "en": "Decimation", "hash": "0de848ecdb2b7323", "src": "db2@1.60.1.70170"}
-{"id": 440870, "field": "description", "en": "Reduces the cooldown of your Soul Fire spell by $m2%. When you cast Shadow Bolt or Searing Pain on an enemy below $m3% health, they deal $m4% increased damage, and for the next $440873d your Soul Fire spell has its cast time reduced by $m1% and costs no Soul Shards.", "hash": "7455458a7caa476e", "src": "db2@1.60.1.70170"}
-{"id": 440873, "field": "name", "en": "Decimation", "hash": "0de848ecdb2b7323", "src": "db2@1.60.1.70170"}
-{"id": 440873, "field": "aura", "en": "Your Soul Fire cast time is reduced by $w1% and costs no shard.", "hash": "f95dd6992ecb1087", "src": "db2@1.60.1.70170"}
-{"id": 440882, "field": "name", "en": "Infernal Armor", "hash": "48d4cd70c98e4b4d", "src": "db2@1.60.1.70170"}
-{"id": 440882, "field": "description", "en": "Your spirit becomes infused with demonic energy, reducing all Magic damage you take by a percentage equal to $s2% of your Physical damage reduction from armor. Lasts $d.", "hash": "8a9f20c047bcba6e", "src": "db2@1.60.1.70170"}
-{"id": 440882, "field": "aura", "en": "Magical damage taken is reduced by $w1%.", "hash": "a6e1df008fd76f8d", "src": "db2@1.60.1.70170"}
-{"id": 440892, "field": "name", "en": "Curse of the Elements", "hash": "5cd3a06ce7385e27", "src": "db2@1.60.1.70170"}
-{"id": 440892, "field": "description", "en": "Curses the target for $d, reducing Magic resistances by $s1 and increases Magic damage taken by $s2%. Only one Curse per Warlock can be active on any one target.", "hash": "68afc919e9a7ca1e", "src": "db2@1.60.1.70170"}
-{"id": 440892, "field": "aura", "en": "Reduces Magic resistances by $s1. Increases Magic damage taken by $s2%.", "hash": "96faf3fecaa5172a", "src": "db2@1.60.1.70170"}
-{"id": 440895, "field": "name", "en": "Mark of Chaos", "hash": "53d4cb0c9581eae8", "src": "db2@1.60.1.70170"}
-{"id": 440895, "field": "aura", "en": "Your next single-target non-periodic spell gains $s1% increased critical strike chance.", "hash": "b7c01d561eac9cfe", "src": "db2@1.60.1.70170"}
-{"id": 440922, "field": "name", "en": "Engrave Boots - Decimation", "hash": "77c686a2d2bbab4f", "src": "db2@1.60.1.70170"}
-{"id": 440922, "field": "description", "en": "Engrave your boots with the Decimation rune:\r\n\r\n$@spellicon440870\r\n$@spelldesc440870", "hash": "19ab4ac777137d81", "src": "db2@1.60.1.70170"}
-{"id": 440923, "field": "name", "en": "Decimation", "hash": "0de848ecdb2b7323", "src": "db2@1.60.1.70170"}
-{"id": 440923, "field": "description", "en": "Gain the Decimation ability:\r\n\r\n$@spellicon440870\r\n$@spelldesc440870", "hash": "69f5dfca3061077a", "src": "db2@1.60.1.70170"}
-{"id": 440924, "field": "name", "en": "Engrave Cloak - Mark of Chaos", "hash": "3a0d9f47e3032ba3", "src": "db2@1.60.1.70170"}
-{"id": 440924, "field": "description", "en": "Engrave your cloak with the Mark of Chaos rune:\r\n\r\n$@spellicon440892\r\n$@spelldesc440892", "hash": "050e05a1f6881575", "src": "db2@1.60.1.70170"}
-{"id": 440925, "field": "name", "en": "Mark of Chaos", "hash": "53d4cb0c9581eae8", "src": "db2@1.60.1.70170"}
-{"id": 440925, "field": "description", "en": "Gain the Mark of Chaos ability:\r\n\r\n$@spellicon440892\r\n$@spelldesc440892", "hash": "d026046fe623e392", "src": "db2@1.60.1.70170"}
-{"id": 440926, "field": "name", "en": "Engrave Cloak - Infernal Armor", "hash": "17e967608eff78bf", "src": "db2@1.60.1.70170"}
-{"id": 440926, "field": "description", "en": "Engrave your cloak with the Infernal Armor rune:\r\n\r\n$@spellicon440882\r\n$@spelldesc440882", "hash": "32bd63f1e3c995bb", "src": "db2@1.60.1.70170"}
-{"id": 440927, "field": "name", "en": "Infernal Armor", "hash": "48d4cd70c98e4b4d", "src": "db2@1.60.1.70170"}
-{"id": 440927, "field": "description", "en": "Gain the Infernal Armor ability:\r\n\r\n$@spellicon440882\r\n$@spelldesc440882", "hash": "1acd9e696b6612e1", "src": "db2@1.60.1.70170"}
-{"id": 440981, "field": "name", "en": "Weapon Damage 03", "hash": "e4e3e8b89020d3aa", "src": "db2@1.60.1.70170"}
-{"id": 440981, "field": "description", "en": "+$s1 Weapon Damage.", "hash": "f887b76a4d870c20", "src": "db2@1.60.1.70170"}
+{"id": 440014, "field": "name", "en": "Sprocketfire", "hash": "55eff0d5dd15dfca", "src": "db2@1.60.1.70245"}
+{"id": 440014, "field": "aura", "en": "Deals $w1 Fire damage every $t1 sec.", "hash": "e06497998c1ce50b", "src": "db2@1.60.1.70245"}
+{"id": 440028, "field": "name", "en": "Nutty Shield", "hash": "f938ad115ba80438", "src": "db2@1.60.1.70245"}
+{"id": 440050, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70245"}
+{"id": 440052, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70245"}
+{"id": 440053, "field": "name", "en": "The Claw!", "hash": "1b00a6c99ed02ff5", "src": "db2@1.60.1.70245"}
+{"id": 440054, "field": "name", "en": "Shadowfiend", "hash": "bc1c648c61e80608", "src": "db2@1.60.1.70245"}
+{"id": 440054, "field": "description", "en": "Creates a shadowy fiend to attack the target.  Caster receives $401988s1% mana when the Shadowfiend attacks. Lasts $d.", "hash": "609469be8d366203", "src": "db2@1.60.1.70245"}
+{"id": 440072, "field": "name", "en": "Ghostly", "hash": "f747d39bd69c816b", "src": "db2@1.60.1.70245"}
+{"id": 440072, "field": "aura", "en": "You feel ghostly.", "hash": "fcf0fb0bb3e32fa9", "src": "db2@1.60.1.70245"}
+{"id": 440073, "field": "name", "en": "Self Repair", "hash": "1a6b129a37b038ab", "src": "db2@1.60.1.70245"}
+{"id": 440077, "field": "name", "en": "BFD XP Grant [DNT]", "hash": "a6c685b7b1c7ca78", "src": "db2@1.60.1.70245"}
+{"id": 440080, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70245"}
+{"id": 440092, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70245"}
+{"id": 440093, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70245"}
+{"id": 440106, "field": "name", "en": "Resurrection", "hash": "4e95d3bcfd7d75d3", "src": "db2@1.60.1.70245"}
+{"id": 440108, "field": "name", "en": "Pacify Self", "hash": "47df437f74851423", "src": "db2@1.60.1.70245"}
+{"id": 440108, "field": "aura", "en": "Cannot attack or use spells.", "hash": "3f9877515e8ec922", "src": "db2@1.60.1.70245"}
+{"id": 440113, "field": "name", "en": "Sudden Death", "hash": "674e885095ee92f9", "src": "db2@1.60.1.70245"}
+{"id": 440113, "field": "description", "en": "Your melee hits have a $h% chance to grant Sudden Death. Sudden Death allows one use of Execute regardless of the target's health state. When Execute is enabled by Sudden Death, you will retain $s2 rage after using Execute.", "hash": "067400701fa7620d", "src": "db2@1.60.1.70245"}
+{"id": 440114, "field": "name", "en": "Sudden Death", "hash": "674e885095ee92f9", "src": "db2@1.60.1.70245"}
+{"id": 440114, "field": "aura", "en": "You may use Execute once regardless of target's health and you will have $440113s2 Rage remaining afterward.", "hash": "0287cac87ca19378", "src": "db2@1.60.1.70245"}
+{"id": 440123, "field": "name", "en": "[DNT] Despawn", "hash": "f7abedbb4b518f11", "src": "db2@1.60.1.70245"}
+{"id": 440212, "field": "name", "en": "Cryoblast", "hash": "90edab90931dcbcf", "src": "db2@1.60.1.70245"}
+{"id": 440212, "field": "description", "en": "Inflicts $?$pl>=25[$s1][${42+($pl-16)*8} to ${57+($pl-16)*8}] Frost damage in a $a1 yard radius.", "hash": "477a97294cf50aeb", "src": "db2@1.60.1.70245"}
+{"id": 440213, "field": "name", "en": "Fury of the Blood Loa", "hash": "eca5be471be618d8", "src": "db2@1.60.1.70245"}
+{"id": 440213, "field": "aura", "en": "The Blood Loa demands sport, not slaughter of the helpless! Leave your raid group or face his wrath! All stats and movement speed reduced by $s1%.", "hash": "a7fb784d9d5aacc9", "src": "db2@1.60.1.70245"}
+{"id": 440236, "field": "name", "en": "Imbue Blade", "hash": "0cfe1ca3b5589712", "src": "db2@1.60.1.70245"}
+{"id": 440236, "field": "description", "en": "Use on Hypnotic Blade to create a powerful weapon.", "hash": "0c3b5db459557ae3", "src": "db2@1.60.1.70245"}
+{"id": 440247, "field": "name", "en": "S03 - Tuning and Overrides Passive - Priest", "hash": "cb0d73c1af0425d2", "src": "db2@1.60.1.70245"}
+{"id": 440285, "field": "name", "en": "Power Surge", "hash": "15f545926e66c8bc", "src": "db2@1.60.1.70245"}
+{"id": 440285, "field": "aura", "en": "Your next Chain Lightning, Chain Heal,  or Lava Burst spell will be an instant cast spell.", "hash": "72a3c3381c526dc6", "src": "db2@1.60.1.70245"}
+{"id": 440329, "field": "name", "en": "[DNT] Mechanical Unit Damage Reduction", "hash": "bbf1d082c43eb787", "src": "db2@1.60.1.70245"}
+{"id": 440414, "field": "name", "en": "Widget Volley", "hash": "cbac9f0032da0c4e", "src": "db2@1.60.1.70245"}
+{"id": 440471, "field": "name", "en": "Toxic Ventilation", "hash": "41e5c6e46387dd28", "src": "db2@1.60.1.70245"}
+{"id": 440471, "field": "aura", "en": "$w1 Nature damage every $t1 sec.", "hash": "508bfddcf13ce028", "src": "db2@1.60.1.70245"}
+{"id": 440483, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70245"}
+{"id": 440483, "field": "aura", "en": "Physical damage done increased by $s1%.", "hash": "07715b9cfc0ba3a6", "src": "db2@1.60.1.70245"}
+{"id": 440484, "field": "name", "en": "Fresh Meat", "hash": "0c83d8615fecf0bd", "src": "db2@1.60.1.70245"}
+{"id": 440484, "field": "description", "en": "Damaging a target with Bloodthirst, Mortal Strike, or Shield Slam has a 100% chance the first time and a $s2% chance each subsequent time to Enrage you (activating abilities which requiring being Enraged), and cause you to deal $440483s1% increased Physical damage for $440483d.", "hash": "50d6447a81796a93", "src": "db2@1.60.1.70245"}
+{"id": 440486, "field": "name", "en": "High Voltage!", "hash": "3e90f5f56157957e", "src": "db2@1.60.1.70245"}
+{"id": 440488, "field": "name", "en": "Shockwave", "hash": "9e23571f4cce2ca7", "src": "db2@1.60.1.70245"}
+{"id": 440488, "field": "description", "en": "Sends a wave of force in front of the warrior, causing ${$m3/100*$AP} damage and stunning all enemy targets within $a1 yards in a frontal cone for $d.", "hash": "6860b6dd1335afe3", "src": "db2@1.60.1.70245"}
+{"id": 440488, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
+{"id": 440492, "field": "name", "en": "Engrave Cloak - Fresh Meat", "hash": "8414424f65c7dbfe", "src": "db2@1.60.1.70245"}
+{"id": 440492, "field": "description", "en": "Engrave your cloak with the Fresh Meat\r\n rune:\r\n\r\n$@spellicon440484\r\n$@spelldesc440484", "hash": "5a6bf051fdc58164", "src": "db2@1.60.1.70245"}
+{"id": 440493, "field": "name", "en": "Fresh Meat", "hash": "0c83d8615fecf0bd", "src": "db2@1.60.1.70245"}
+{"id": 440493, "field": "description", "en": "Gain the Fresh Meat ability:\r\n\r\n$@spellicon440484\r\n$@spelldesc440484", "hash": "1c9eb8f11d43577d", "src": "db2@1.60.1.70245"}
+{"id": 440494, "field": "name", "en": "Engrave Cloak - Sudden Death", "hash": "671c2839f70f167c", "src": "db2@1.60.1.70245"}
+{"id": 440494, "field": "description", "en": "Engrave your cloak with the Sudden Death rune:\r\n\r\n$@spellicon440113\r\n$@spelldesc440113", "hash": "6d8006996c685d2f", "src": "db2@1.60.1.70245"}
+{"id": 440495, "field": "name", "en": "Sudden Death", "hash": "674e885095ee92f9", "src": "db2@1.60.1.70245"}
+{"id": 440495, "field": "description", "en": "Gain the Fresh Meat ability:\r\n\r\n$@spellicon440113\r\n$@spelldesc440113", "hash": "c8902296cc3c0a9a", "src": "db2@1.60.1.70245"}
+{"id": 440496, "field": "name", "en": "Engrave Cloak - Shockwave", "hash": "e75b29067de5ea7b", "src": "db2@1.60.1.70245"}
+{"id": 440496, "field": "description", "en": "Engrave your cloak with the Shockwave\r\n rune:\r\n\r\n$@spellicon440488\r\n$@spelldesc440488", "hash": "56e19117f7df8eb4", "src": "db2@1.60.1.70245"}
+{"id": 440497, "field": "name", "en": "Shockwave", "hash": "9e23571f4cce2ca7", "src": "db2@1.60.1.70245"}
+{"id": 440497, "field": "description", "en": "Gain the Shockwave ability:\r\n\r\n$@spellicon440488\r\n$@spelldesc440488", "hash": "077d74038025cb12", "src": "db2@1.60.1.70245"}
+{"id": 440505, "field": "name", "en": "Invisibility", "hash": "757e6c9bba4b0fca", "src": "db2@1.60.1.70245"}
+{"id": 440505, "field": "description", "en": "Gives the imbiber invisibility for $d.", "hash": "3fdd20e36b8296e2", "src": "db2@1.60.1.70245"}
+{"id": 440505, "field": "aura", "en": "Invisibility", "hash": "757e6c9bba4b0fca", "src": "db2@1.60.1.70245"}
+{"id": 440520, "field": "name", "en": "Improved Volley", "hash": "f846c0eacff61454", "src": "db2@1.60.1.70245"}
+{"id": 440520, "field": "description", "en": "Reduces the mana cost of your Volley by $s1%, reduces its cooldown by $s2%, increases its damage by $s5%, and it no longer suffers pushback from damaging attacks. Volley also deals $s4% of your ranged Attack Power as additional damage each time it deals damage.", "hash": "e55f42f9f6f39e6b", "src": "db2@1.60.1.70245"}
+{"id": 440529, "field": "name", "en": "Resourcefulness", "hash": "8e42266ec3a51840", "src": "db2@1.60.1.70245"}
+{"id": 440529, "field": "description", "en": "Reduces the mana cost of your Trap abilities and melee abilities by $s1%. In addition, your critical strikes have a $m3% chance to allow $1242688s1% of your Mana regeneration to continue while casting for $1242688d.", "hash": "bc56e52fe91e22cc", "src": "db2@1.60.1.70245"}
+{"id": 440531, "field": "name", "en": "Hit and Run", "hash": "39672f26cda607ad", "src": "db2@1.60.1.70245"}
+{"id": 440531, "field": "aura", "en": "Movement speed increased by $s1%", "hash": "da8c3de1cb79290f", "src": "db2@1.60.1.70245"}
+{"id": 440533, "field": "name", "en": "Hit and Run", "hash": "39672f26cda607ad", "src": "db2@1.60.1.70245"}
+{"id": 440533, "field": "description", "en": "You gain $440531s1% movement speed for $440531d after using Raptor Strike.\r\n\r\nYour pet's damaging abilities send the target into a Rabid Frenzy, increasing their melee attack power by $s2 but reducing armor by $s3 for $1218358d.  Rabid enemies will not flee and will ignore Fear and Horror effects.", "hash": "d8584ed2be9a9da6", "src": "db2@1.60.1.70245"}
+{"id": 440557, "field": "name", "en": "Engrave Cloak - Resourcefulness", "hash": "85ccebc1009e5b88", "src": "db2@1.60.1.70245"}
+{"id": 440557, "field": "description", "en": "Engrave your cloak with the Resourcefulness rune:\r\n\r\n$@spellicon440529\r\n$@spelldesc440529", "hash": "5c9e589ae4ccba29", "src": "db2@1.60.1.70245"}
+{"id": 440558, "field": "name", "en": "Resourcefulness", "hash": "8e42266ec3a51840", "src": "db2@1.60.1.70245"}
+{"id": 440558, "field": "description", "en": "Gain the Resourcefulness ability:\r\n\r\n$@spellicon440529\r\n$@spelldesc440529", "hash": "05ed64c8a1e62047", "src": "db2@1.60.1.70245"}
+{"id": 440560, "field": "name", "en": "Engrave Cloak - Improved Volley", "hash": "efd1863d0cef579c", "src": "db2@1.60.1.70245"}
+{"id": 440560, "field": "description", "en": "Engrave your cloak with the Improved Volley rune:\r\n\r\n$@spellicon440520\r\n$@spelldesc440520", "hash": "20ba908144ee1ff4", "src": "db2@1.60.1.70245"}
+{"id": 440561, "field": "name", "en": "Improved Volley", "hash": "f846c0eacff61454", "src": "db2@1.60.1.70245"}
+{"id": 440561, "field": "description", "en": "Gain the Improved Volley ability:\r\n\r\n$@spellicon440520\r\n$@spelldesc440520", "hash": "15236ce6aec2e8eb", "src": "db2@1.60.1.70245"}
+{"id": 440563, "field": "name", "en": "Engrave Cloak - Hit and Run", "hash": "684d6521758bb739", "src": "db2@1.60.1.70245"}
+{"id": 440563, "field": "description", "en": "Engrave your cloak with the Hit and Run rune:\r\n\r\n$@spellicon440533\r\n$@spelldesc440533", "hash": "15040a9f0f2c9067", "src": "db2@1.60.1.70245"}
+{"id": 440564, "field": "name", "en": "Hit and Run", "hash": "39672f26cda607ad", "src": "db2@1.60.1.70245"}
+{"id": 440564, "field": "description", "en": "Gain the Hit and Run ability:\r\n\r\n$@spellicon440533\r\n$@spelldesc440533", "hash": "a00297a689c7dc68", "src": "db2@1.60.1.70245"}
+{"id": 440569, "field": "name", "en": "Storm, Earth, and Fire", "hash": "7f68981f8f6ec66b", "src": "db2@1.60.1.70245"}
+{"id": 440569, "field": "description", "en": "Reduces the cooldown of your Chain Lightning by $s1%, causes your Earthbind Totem to root targets for $440574d when cast, and increases the periodic damage done by your Flame Shock by $s3%.", "hash": "92749d84e38edf21", "src": "db2@1.60.1.70245"}
+{"id": 440574, "field": "name", "en": "Earthgrab", "hash": "41ed911a93b561b7", "src": "db2@1.60.1.70245"}
+{"id": 440574, "field": "aura", "en": "Rooted.", "hash": "9bb1efcf10b38d14", "src": "db2@1.60.1.70245"}
+{"id": 440580, "field": "name", "en": "Feral Spirit", "hash": "51fbb4a935668193", "src": "db2@1.60.1.70245"}
+{"id": 440580, "field": "description", "en": "Summons two Spirit Wolves under the command of the Shaman, lasting $d.", "hash": "1cc2d3c8b0dff38d", "src": "db2@1.60.1.70245"}
+{"id": 440586, "field": "name", "en": "Bash", "hash": "08f1a3a0f5ece8cf", "src": "db2@1.60.1.70245"}
+{"id": 440586, "field": "description", "en": "Stuns the target for $d.", "hash": "b330d1817f9951be", "src": "db2@1.60.1.70245"}
+{"id": 440586, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
+{"id": 440589, "field": "name", "en": "Twin Howl", "hash": "2491fa068929a54c", "src": "db2@1.60.1.70245"}
+{"id": 440589, "field": "description", "en": "Your Spirit Wolves howl, forcing all enemies to attack them for $d.", "hash": "140cc51b04cf3942", "src": "db2@1.60.1.70245"}
+{"id": 440591, "field": "name", "en": "Spirit Walk", "hash": "80caf33f0d13fc4c", "src": "db2@1.60.1.70245"}
+{"id": 440591, "field": "description", "en": "Removes all movement impairing effects and increases the movement speed of you and your Spirit Wolves by $s1% for $d.", "hash": "8027f551bc8b6ac7", "src": "db2@1.60.1.70245"}
+{"id": 440591, "field": "aura", "en": "Movement speed increased by $s1%", "hash": "da8c3de1cb79290f", "src": "db2@1.60.1.70245"}
+{"id": 440593, "field": "name", "en": "Spirit Hunt", "hash": "7ecda4ed13623ab2", "src": "db2@1.60.1.70245"}
+{"id": 440593, "field": "description", "en": "Spirit Wolves' attacks heal them and their master for $s1% of damage done", "hash": "39af52d17a7195e6", "src": "db2@1.60.1.70245"}
+{"id": 440593, "field": "aura", "en": "Converts $s1% damage to health.", "hash": "6261a4536f390cc5", "src": "db2@1.60.1.70245"}
+{"id": 440594, "field": "name", "en": "Avoidance", "hash": "5e1898dc338fc6b7", "src": "db2@1.60.1.70245"}
+{"id": 440595, "field": "name", "en": "Shaman Pet Scaling", "hash": "83ec55146531ad3e", "src": "db2@1.60.1.70245"}
+{"id": 440605, "field": "name", "en": "Spirit Leap", "hash": "7f52a41e097c304f", "src": "db2@1.60.1.70245"}
+{"id": 440605, "field": "description", "en": "Leaps behind the target.", "hash": "17230464e5301bce", "src": "db2@1.60.1.70245"}
+{"id": 440609, "field": "name", "en": "Spirit Hunt", "hash": "7ecda4ed13623ab2", "src": "db2@1.60.1.70245"}
+{"id": 440609, "field": "description", "en": "Spirit Wolves' attacks heal them and their master for a percentage of damage done.", "hash": "705e00bc86cc0f32", "src": "db2@1.60.1.70245"}
+{"id": 440610, "field": "name", "en": "Spirit Walk", "hash": "80caf33f0d13fc4c", "src": "db2@1.60.1.70245"}
+{"id": 440610, "field": "description", "en": "Removes all movement impairing effects.", "hash": "d1a00509689921f5", "src": "db2@1.60.1.70245"}
+{"id": 440610, "field": "aura", "en": "Immune to all movement impairing effects.", "hash": "73d23ab880bbe101", "src": "db2@1.60.1.70245"}
+{"id": 440630, "field": "name", "en": "Engrave Cloak - Feral Spirit", "hash": "51c9549296870516", "src": "db2@1.60.1.70245"}
+{"id": 440630, "field": "description", "en": "Engrave your cloak with the Feral Spirit rune:\r\n\r\n$@spellicon440580\r\n$@spelldesc440580", "hash": "3a18cf253685fd10", "src": "db2@1.60.1.70245"}
+{"id": 440631, "field": "name", "en": "Feral Spirit", "hash": "51fbb4a935668193", "src": "db2@1.60.1.70245"}
+{"id": 440631, "field": "description", "en": "Gain the Feral Spirit ability:\r\n\r\n$@spellicon440580\r\n$@spelldesc440580", "hash": "634dd6c319677339", "src": "db2@1.60.1.70245"}
+{"id": 440632, "field": "name", "en": "Attack Power - Feral (+36)", "hash": "566d6b3a1d9bddf5", "src": "db2@1.60.1.70245"}
+{"id": 440632, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70245"}
+{"id": 440633, "field": "name", "en": "Storm, Earth, and Fire", "hash": "7f68981f8f6ec66b", "src": "db2@1.60.1.70245"}
+{"id": 440633, "field": "description", "en": "Gain the Storm, Earth, and Fire ability:\r\n\r\n$@spellicon440569\r\n$@spelldesc440569", "hash": "b7cb4fb1ea6fd62b", "src": "db2@1.60.1.70245"}
+{"id": 440634, "field": "name", "en": "Engrave Cloak - Storm, Earth, and Fire", "hash": "430dbf59f6847237", "src": "db2@1.60.1.70245"}
+{"id": 440634, "field": "description", "en": "Engrave your cloak with the Storm, Earth, and Fire rune:\r\n\r\n$@spellicon440569\r\n$@spelldesc440569", "hash": "b99a438250222f22", "src": "db2@1.60.1.70245"}
+{"id": 440636, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70245"}
+{"id": 440637, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70245"}
+{"id": 440638, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70245"}
+{"id": 440639, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70245"}
+{"id": 440640, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70245"}
+{"id": 440641, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70245"}
+{"id": 440642, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70245"}
+{"id": 440643, "field": "name", "en": "Electrical Grid", "hash": "99af0e136b8bc8b8", "src": "db2@1.60.1.70245"}
+{"id": 440651, "field": "name", "en": "Sacred Shield", "hash": "101af0745c3d3df8", "src": "db2@1.60.1.70245"}
+{"id": 440651, "field": "description", "en": "Each time the target takes damage they gain a Sacred Shield, absorbing $s1 damage and increasing the paladin's chance to critically hit with Flash of Light by $s2% for up to $d.  They cannot gain this effect more than once every 6 sec.  Lasts $d.\r\n", "hash": "83a78794cf725df9", "src": "db2@1.60.1.70245"}
+{"id": 440651, "field": "aura", "en": "Absorbs damage and increases the casting paladin's chance to critically hit with Flash of Light by $s2%.", "hash": "c8eb5579ca7a3849", "src": "db2@1.60.1.70245"}
+{"id": 440656, "field": "name", "en": "High Voltage!", "hash": "3e90f5f56157957e", "src": "db2@1.60.1.70245"}
+{"id": 440658, "field": "name", "en": "Shield of Righteousness", "hash": "d0144d192c55cdff", "src": "db2@1.60.1.70245"}
+{"id": 440658, "field": "description", "en": "Slam the target with your shield, causing Holy damage based on your block value plus an additional ${$m1*$<damagepower>/100}.", "hash": "675f9fa9eddd0775", "src": "db2@1.60.1.70245"}
+{"id": 440664, "field": "name", "en": "Sludge", "hash": "03754b9fa819bdd1", "src": "db2@1.60.1.70245"}
+{"id": 440666, "field": "name", "en": "Vindicator", "hash": "aaf3efa0017e607a", "src": "db2@1.60.1.70245"}
+{"id": 440666, "field": "description", "en": "When your Vindication talent is triggered, it also decreases the target's Attack Power by ${$440667m1/-3} per talent point and increases your Strength, Agility, and Attack Power by ${$440668m1/3}% per talent point. Vindication duration increased to $s1 sec.", "hash": "9d03ab96773080c6", "src": "db2@1.60.1.70245"}
+{"id": 440667, "field": "name", "en": "Vindication", "hash": "7ad20d4285ef9e9e", "src": "db2@1.60.1.70245"}
+{"id": 440667, "field": "aura", "en": "Attack Power reduced by $w1.", "hash": "3b8db6a522b62bff", "src": "db2@1.60.1.70245"}
+{"id": 440668, "field": "name", "en": "Vindication", "hash": "7ad20d4285ef9e9e", "src": "db2@1.60.1.70245"}
+{"id": 440668, "field": "aura", "en": "Attack Power increased by $w1%.", "hash": "fe93b3f430c4f530", "src": "db2@1.60.1.70245"}
+{"id": 440672, "field": "name", "en": "Righteous Judgement", "hash": "7bff09b80003b81c", "src": "db2@1.60.1.70245"}
+{"id": 440672, "field": "description", "en": "When your Judgement or Crusader Strike deals a critical strike, your target will take $s1% additional damage over $61840d.", "hash": "49f9e1c19b39c292", "src": "db2@1.60.1.70245"}
+{"id": 440675, "field": "name", "en": "Righteous Judgement", "hash": "7bff09b80003b81c", "src": "db2@1.60.1.70245"}
+{"id": 440675, "field": "aura", "en": "Deals Holy damage every $t1 sec.", "hash": "74b718e285146f7f", "src": "db2@1.60.1.70245"}
+{"id": 440677, "field": "name", "en": "Righteous Judgement", "hash": "7bff09b80003b81c", "src": "db2@1.60.1.70245"}
+{"id": 440720, "field": "name", "en": "Scooty's Not-Quite-Divine Shield", "hash": "b8d3bb8b72c138b3", "src": "db2@1.60.1.70245"}
+{"id": 440720, "field": "aura", "en": "Is this what it feels like to be a paladin?", "hash": "cab03f059c2f810b", "src": "db2@1.60.1.70245"}
+{"id": 440788, "field": "name", "en": "Engrave Cloak - Shield of Righteousness", "hash": "ed975f2c66305a81", "src": "db2@1.60.1.70245"}
+{"id": 440788, "field": "description", "en": "Engrave your cloak with the Shield of Righteousness rune:\r\n\r\n$@spellicon440658\r\n$@spelldesc440658", "hash": "b62d614fb156744f", "src": "db2@1.60.1.70245"}
+{"id": 440789, "field": "name", "en": "Shield of Righteousness", "hash": "d0144d192c55cdff", "src": "db2@1.60.1.70245"}
+{"id": 440789, "field": "description", "en": "Gain the Shield of Righteousness ability:\r\n\r\n$@spellicon440658\r\n$@spelldesc440658", "hash": "60be816586aaf859", "src": "db2@1.60.1.70245"}
+{"id": 440790, "field": "name", "en": "Engrave Cloak - Shock and Awe", "hash": "cfb95051d3cdc49a", "src": "db2@1.60.1.70245"}
+{"id": 440790, "field": "description", "en": "Engrave your cloak with the Shock and Awe rune:\r\n\r\n$@spellicon462834\r\n$@spelldesc462834", "hash": "21f37d6a9fd46e98", "src": "db2@1.60.1.70245"}
+{"id": 440791, "field": "name", "en": "Shock and Awe", "hash": "e9807c16864c83df", "src": "db2@1.60.1.70245"}
+{"id": 440791, "field": "description", "en": "Gain the Shock and Awe ability:\r\n\r\n$@spellicon462834\r\n$@spelldesc462834", "hash": "eaaff97e96ff3f69", "src": "db2@1.60.1.70245"}
+{"id": 440792, "field": "name", "en": "Engrave Cloak - Righteous Vengeance", "hash": "b151934e00ea9475", "src": "db2@1.60.1.70245"}
+{"id": 440792, "field": "description", "en": "Engrave your cloak with the Righteous Vengeance rune:\r\n\r\n$@spellicon440672\r\n$@spelldesc440672", "hash": "dd37e14ed5d256b1", "src": "db2@1.60.1.70245"}
+{"id": 440794, "field": "name", "en": "Righteous Vengeance", "hash": "874f777c707e4c51", "src": "db2@1.60.1.70245"}
+{"id": 440794, "field": "description", "en": "Gain the Righteous Vengeance ability:\r\n\r\n$@spellicon440672\r\n$@spelldesc440672", "hash": "582e047938957180", "src": "db2@1.60.1.70245"}
+{"id": 440802, "field": "name", "en": "Frozen Orb", "hash": "0869234311617ebf", "src": "db2@1.60.1.70245"}
+{"id": 440802, "field": "description", "en": "Launches an orb of swirling ice which rapidly moves forward over $d. While it is moving, every $440804t sec the orb deals ${$440809m2*$<power>/100*$<frostdamage>} Frost Damage and applies a Chill for $440809s1% movement speed reduction to all enemies it passes through. The first time it damages an enemy, its movement will slow and it will have a 100% chance to trigger the Fingers of Frost rune.", "hash": "cb2a6d8ec44dd47f", "src": "db2@1.60.1.70245"}
+{"id": 440804, "field": "name", "en": "Frozen Orb", "hash": "0869234311617ebf", "src": "db2@1.60.1.70245"}
+{"id": 440809, "field": "name", "en": "Frozen Orb", "hash": "0869234311617ebf", "src": "db2@1.60.1.70245"}
+{"id": 440809, "field": "aura", "en": "Movement speed reduced by $w1%.", "hash": "09876d53bb875537", "src": "db2@1.60.1.70245"}
+{"id": 440813, "field": "name", "en": "Frozen Orb", "hash": "0869234311617ebf", "src": "db2@1.60.1.70245"}
+{"id": 440817, "field": "name", "en": "[DNT] Holdout Teleport - Teleport To Crowd Pummeler Room", "hash": "40faabd413ee0e86", "src": "db2@1.60.1.70245"}
+{"id": 440818, "field": "name", "en": "[DNT] Holdout Teleport - Crowd Pummeler - Floating Visual", "hash": "7e9c894d6defd13e", "src": "db2@1.60.1.70245"}
+{"id": 440820, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70245"}
+{"id": 440820, "field": "description", "en": "..", "hash": "000017b80005ba9c", "src": "db2@1.60.1.70245"}
+{"id": 440822, "field": "name", "en": "[DNT] Holdout Teleport - Boss Floating Visual Dummy Periodic", "hash": "e1a0a10c0bb65a21", "src": "db2@1.60.1.70245"}
+{"id": 440823, "field": "name", "en": "[DNT] Holdout Teleport - Electrocutioner - Floating Visual", "hash": "22689f783157b44f", "src": "db2@1.60.1.70245"}
+{"id": 440824, "field": "name", "en": "[DNT] Holdout Teleport - Thermaplugg - Floating Visual", "hash": "bee6cfb08a24ed37", "src": "db2@1.60.1.70245"}
+{"id": 440825, "field": "name", "en": "[DNT] Holdout Teleport - Viscous Fallout - Floating Visual", "hash": "14f5ab40931f4b4b", "src": "db2@1.60.1.70245"}
+{"id": 440826, "field": "name", "en": "[DNT] Holdout Teleport - Grubbis - Floating Visual", "hash": "2da8ad2b1defa290", "src": "db2@1.60.1.70245"}
+{"id": 440827, "field": "name", "en": "Throw Concoction", "hash": "ede7a6468b7ff55b", "src": "db2@1.60.1.70245"}
+{"id": 440827, "field": "description", "en": "Throw into a bubbling cauldron to cause an explosion of noxious gas. Does not break stealth.", "hash": "5d2eeb164daf402d", "src": "db2@1.60.1.70245"}
+{"id": 440828, "field": "name", "en": "Zul'Farrak Cauldron", "hash": "864a00b306511c3f", "src": "db2@1.60.1.70245"}
+{"id": 440829, "field": "name", "en": "Combine Offerings", "hash": "ac194c4a7c205531", "src": "db2@1.60.1.70245"}
+{"id": 440829, "field": "description", "en": "Combine offerings of flesh and bone.", "hash": "4929551822322e27", "src": "db2@1.60.1.70245"}
+{"id": 440830, "field": "name", "en": "Imbue Emblem", "hash": "aa47a7089ddb04db", "src": "db2@1.60.1.70245"}
+{"id": 440830, "field": "description", "en": "Imbue a hollow emblem with blood magic essence.", "hash": "9ddd6f517a1333c7", "src": "db2@1.60.1.70245"}
+{"id": 440840, "field": "name", "en": "[DNT] Holdout Teleport - Crowd Pummeler - Unavailable Floating Visual", "hash": "997e675f2a727247", "src": "db2@1.60.1.70245"}
+{"id": 440841, "field": "name", "en": "Ward of the Dead", "hash": "bbb96759d2bde4b8", "src": "db2@1.60.1.70245"}
+{"id": 440841, "field": "description", "en": "Reveals the grave which hides an offering.", "hash": "4a6817a6634e6e24", "src": "db2@1.60.1.70245"}
+{"id": 440841, "field": "aura", "en": "Reveals the grave which hides an offering.", "hash": "4a6817a6634e6e24", "src": "db2@1.60.1.70245"}
+{"id": 440842, "field": "name", "en": "[DNT] Holdout Teleport - Electrocutioner - Unavailable Floating Visual", "hash": "f820f2bbb675575e", "src": "db2@1.60.1.70245"}
+{"id": 440843, "field": "name", "en": "[DNT] Holdout Teleport - Thermaplugg - Unavailable Floating Visual", "hash": "b76721680778cb5d", "src": "db2@1.60.1.70245"}
+{"id": 440844, "field": "name", "en": "[DNT] Holdout Teleport - Holdout - Floating Visual", "hash": "3f1b4645e80dde39", "src": "db2@1.60.1.70245"}
+{"id": 440845, "field": "name", "en": "[DNT] Holdout Teleport - Teleport To Holdout", "hash": "3c1c7761eecb48be", "src": "db2@1.60.1.70245"}
+{"id": 440847, "field": "name", "en": "[DNT] Holdout Teleport - Teleport To Electrocutioner Room", "hash": "cb78138556e2f1b5", "src": "db2@1.60.1.70245"}
+{"id": 440848, "field": "name", "en": "[DNT] Holdout Teleport - Teleport To Thermaplugg Room", "hash": "81c38b960b7398d7", "src": "db2@1.60.1.70245"}
+{"id": 440856, "field": "name", "en": "S03 - 50 - Rogue 45 Quest Start", "hash": "dbb151ed447c8930", "src": "db2@1.60.1.70245"}
+{"id": 440858, "field": "name", "en": "Engrave Cloak - Frozen Orb", "hash": "7ff98d31173c6a00", "src": "db2@1.60.1.70245"}
+{"id": 440858, "field": "description", "en": "Engrave your cloak with the Frozen Orb\r\nrune:\r\n\r\n$@spellicon440802\r\n$@spelldesc440802", "hash": "f8b56c745b6b11c3", "src": "db2@1.60.1.70245"}
+{"id": 440859, "field": "name", "en": "Frozen Orb", "hash": "0869234311617ebf", "src": "db2@1.60.1.70245"}
+{"id": 440859, "field": "description", "en": "Gain the Frozen Orb ability:\r\n\r\n$@spellicon440802\r\n$@spelldesc440802", "hash": "6788d4275472eaa0", "src": "db2@1.60.1.70245"}
+{"id": 440870, "field": "name", "en": "Decimation", "hash": "0de848ecdb2b7323", "src": "db2@1.60.1.70245"}
+{"id": 440870, "field": "description", "en": "Reduces the cooldown of your Soul Fire spell by $m2%. When you cast Shadow Bolt or Searing Pain on an enemy below $m3% health, they deal $m4% increased damage, and for the next $440873d your Soul Fire spell has its cast time reduced by $m1% and costs no Soul Shards.", "hash": "7455458a7caa476e", "src": "db2@1.60.1.70245"}
+{"id": 440873, "field": "name", "en": "Decimation", "hash": "0de848ecdb2b7323", "src": "db2@1.60.1.70245"}
+{"id": 440873, "field": "aura", "en": "Your Soul Fire cast time is reduced by $w1% and costs no shard.", "hash": "f95dd6992ecb1087", "src": "db2@1.60.1.70245"}
+{"id": 440882, "field": "name", "en": "Infernal Armor", "hash": "48d4cd70c98e4b4d", "src": "db2@1.60.1.70245"}
+{"id": 440882, "field": "description", "en": "Your spirit becomes infused with demonic energy, reducing all Magic damage you take by a percentage equal to $s2% of your Physical damage reduction from armor. Lasts $d.", "hash": "8a9f20c047bcba6e", "src": "db2@1.60.1.70245"}
+{"id": 440882, "field": "aura", "en": "Magical damage taken is reduced by $w1%.", "hash": "a6e1df008fd76f8d", "src": "db2@1.60.1.70245"}
+{"id": 440892, "field": "name", "en": "Curse of the Elements", "hash": "5cd3a06ce7385e27", "src": "db2@1.60.1.70245"}
+{"id": 440892, "field": "description", "en": "Curses the target for $d, reducing Magic resistances by $s1 and increases Magic damage taken by $s2%. Only one Curse per Warlock can be active on any one target.", "hash": "68afc919e9a7ca1e", "src": "db2@1.60.1.70245"}
+{"id": 440892, "field": "aura", "en": "Reduces Magic resistances by $s1. Increases Magic damage taken by $s2%.", "hash": "96faf3fecaa5172a", "src": "db2@1.60.1.70245"}
+{"id": 440895, "field": "name", "en": "Mark of Chaos", "hash": "53d4cb0c9581eae8", "src": "db2@1.60.1.70245"}
+{"id": 440895, "field": "aura", "en": "Your next single-target non-periodic spell gains $s1% increased critical strike chance.", "hash": "b7c01d561eac9cfe", "src": "db2@1.60.1.70245"}
+{"id": 440922, "field": "name", "en": "Engrave Boots - Decimation", "hash": "77c686a2d2bbab4f", "src": "db2@1.60.1.70245"}
+{"id": 440922, "field": "description", "en": "Engrave your boots with the Decimation rune:\r\n\r\n$@spellicon440870\r\n$@spelldesc440870", "hash": "19ab4ac777137d81", "src": "db2@1.60.1.70245"}
+{"id": 440923, "field": "name", "en": "Decimation", "hash": "0de848ecdb2b7323", "src": "db2@1.60.1.70245"}
+{"id": 440923, "field": "description", "en": "Gain the Decimation ability:\r\n\r\n$@spellicon440870\r\n$@spelldesc440870", "hash": "69f5dfca3061077a", "src": "db2@1.60.1.70245"}
+{"id": 440924, "field": "name", "en": "Engrave Cloak - Mark of Chaos", "hash": "3a0d9f47e3032ba3", "src": "db2@1.60.1.70245"}
+{"id": 440924, "field": "description", "en": "Engrave your cloak with the Mark of Chaos rune:\r\n\r\n$@spellicon440892\r\n$@spelldesc440892", "hash": "050e05a1f6881575", "src": "db2@1.60.1.70245"}
+{"id": 440925, "field": "name", "en": "Mark of Chaos", "hash": "53d4cb0c9581eae8", "src": "db2@1.60.1.70245"}
+{"id": 440925, "field": "description", "en": "Gain the Mark of Chaos ability:\r\n\r\n$@spellicon440892\r\n$@spelldesc440892", "hash": "d026046fe623e392", "src": "db2@1.60.1.70245"}
+{"id": 440926, "field": "name", "en": "Engrave Cloak - Infernal Armor", "hash": "17e967608eff78bf", "src": "db2@1.60.1.70245"}
+{"id": 440926, "field": "description", "en": "Engrave your cloak with the Infernal Armor rune:\r\n\r\n$@spellicon440882\r\n$@spelldesc440882", "hash": "32bd63f1e3c995bb", "src": "db2@1.60.1.70245"}
+{"id": 440927, "field": "name", "en": "Infernal Armor", "hash": "48d4cd70c98e4b4d", "src": "db2@1.60.1.70245"}
+{"id": 440927, "field": "description", "en": "Gain the Infernal Armor ability:\r\n\r\n$@spellicon440882\r\n$@spelldesc440882", "hash": "1acd9e696b6612e1", "src": "db2@1.60.1.70245"}
+{"id": 440981, "field": "name", "en": "Weapon Damage 03", "hash": "e4e3e8b89020d3aa", "src": "db2@1.60.1.70245"}
+{"id": 440981, "field": "description", "en": "+$s1 Weapon Damage.", "hash": "f887b76a4d870c20", "src": "db2@1.60.1.70245"}

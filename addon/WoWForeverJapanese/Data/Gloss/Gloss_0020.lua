@@ -956,7 +956,6 @@ WFJ.Data.add("gloss", {
   [20953] = "どうとか\tどうとか\tsomething about",
   [20954] = "どうなっても知らない\tどうなってもしらない\there goes nothing",
   [20955] = "どうなのだ\tどうなのだ\twhat of (how about)",
-  [20956] = "どうなる\tどうなる\thow (it) goes",
   [20957] = "どうなる\tどうなる\thow (it) will do",
   [20958] = "どうなる\tどうなる\thow (it) works out",
   [20959] = "どうなる\tどうなる\thow goes",

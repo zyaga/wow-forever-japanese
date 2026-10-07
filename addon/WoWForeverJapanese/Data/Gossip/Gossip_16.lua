@@ -32,6 +32,7 @@ WFJ.Data.add("gossip", {
   ["16a76899bd250321"] = { "神聖な遺物、Blackrockのもの！取り返す！", "." },
   ["16aea2fb3ed7ef98"] = { "ありえん！起き上がれ、我が下僕どもよ！今一度主に仕えよ！", "." },
   ["16affbbe69660ae6"] = { "あなたの傭兵団、Veiled Bladeに何があったのですか?", "." },
+  ["16b10c287cfbdf39"] = { "{name}、Gelkisの友であることを示せ。", "." },
   ["16bfe8eacdcd03cc"] = { "Elder MoonstrikeはWestern PlaguelandsのScholomanceにいる。", "." },
   ["16c097c773db762c"] = { "うえっ！ひどいな！", "." },
   ["16c30e0dbe20c642"] = { "奴らが私の息子に何をしたか見てくれ。", "." },

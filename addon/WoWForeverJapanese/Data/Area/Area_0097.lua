@@ -2,5 +2,6 @@
 local _, WFJ = ...
 WFJ.Data.add("area", {
   [97288] = { "Abominable HeadをUndercityの誰かに届ける。", 0x45912d90, "." },
+  [97331] = { "Zimmix Sputtersparkを安全な場所まで護衛する", 0x35766eff, "." },
   [97894] = { "船でAuberdineへ行き、Gorbold Steelhandを見つける。", 0x5d3337ff, "." },
 })

@@ -1,293 +1,293 @@
 {"id": "LABEL_NOTE", "field": "text", "en": "Note", "hash": "0a90f1e2ce602da6", "src": "db2@1.60.1.69913"}
-{"id": "LAIR", "field": "text", "en": "Lair", "hash": "0a48a69a7bfb326b", "src": "db2@1.60.1.70170"}
-{"id": "LANGUAGE", "field": "text", "en": "Language", "hash": "200c80b7245dad8f", "src": "db2@1.60.1.70170"}
-{"id": "LANGUAGES_LABEL", "field": "text", "en": "Languages", "hash": "6665de684e5a2919", "src": "db2@1.60.1.70170"}
-{"id": "LANGUAGES_SETTINGS_LABEL", "field": "text", "en": "Languages and Social", "hash": "8e37708bf9c00218", "src": "db2@1.60.1.70170"}
-{"id": "LANGUAGES_SOCIAL_LABEL", "field": "text", "en": "Social", "hash": "35b645ce6762a730", "src": "db2@1.60.1.70170"}
-{"id": "LARGE", "field": "text", "en": "Large", "hash": "432f96fc869c4efe", "src": "db2@1.60.1.70170"}
+{"id": "LAIR", "field": "text", "en": "Lair", "hash": "0a48a69a7bfb326b", "src": "db2@1.60.1.70245"}
+{"id": "LANGUAGE", "field": "text", "en": "Language", "hash": "200c80b7245dad8f", "src": "db2@1.60.1.70245"}
+{"id": "LANGUAGES_LABEL", "field": "text", "en": "Languages", "hash": "6665de684e5a2919", "src": "db2@1.60.1.70245"}
+{"id": "LANGUAGES_SETTINGS_LABEL", "field": "text", "en": "Languages and Social", "hash": "8e37708bf9c00218", "src": "db2@1.60.1.70245"}
+{"id": "LANGUAGES_SOCIAL_LABEL", "field": "text", "en": "Social", "hash": "35b645ce6762a730", "src": "db2@1.60.1.70245"}
+{"id": "LARGE", "field": "text", "en": "Large", "hash": "432f96fc869c4efe", "src": "db2@1.60.1.70245"}
 {"id": "LASTONLINE", "field": "text", "en": "Last Online", "hash": "bc26c42c05ff6788", "src": "db2@1.60.1.69913"}
-{"id": "LASTONLINE_DAYS", "field": "text", "en": "%d |4day:days;", "hash": "91d4fc7d5e6b46eb", "src": "db2@1.60.1.70170"}
-{"id": "LASTONLINE_HOURS", "field": "text", "en": "%d |4hour:hours;", "hash": "110b6f1be4cebe87", "src": "db2@1.60.1.70170"}
-{"id": "LASTONLINE_MINS", "field": "text", "en": "< an hour", "hash": "01a4cfb0ca231d84", "src": "db2@1.60.1.70170"}
-{"id": "LASTONLINE_MINUTES", "field": "text", "en": "%d |4minute:minutes;", "hash": "87be7c53a73e8b2e", "src": "db2@1.60.1.70170"}
-{"id": "LASTONLINE_MONTHS", "field": "text", "en": "%d |4month:months;", "hash": "eb27bd13198984e0", "src": "db2@1.60.1.70170"}
-{"id": "LASTONLINE_SECS", "field": "text", "en": "< a minute", "hash": "8119f38bad7b1952", "src": "db2@1.60.1.70170"}
-{"id": "LASTONLINE_YEARS", "field": "text", "en": "%d |4year:years;", "hash": "a23ef1ed35c6ded8", "src": "db2@1.60.1.70170"}
-{"id": "LAST_ONLINE_COLON", "field": "text", "en": "Last Online:", "hash": "47d6649e33038371", "src": "db2@1.60.1.70170"}
-{"id": "LATER", "field": "text", "en": "Later", "hash": "43301c158e8c96cb", "src": "db2@1.60.1.70170"}
-{"id": "LATEST_UNLOCKED_ACHIEVEMENTS", "field": "text", "en": "Recent Achievements", "hash": "ce29d4956ba81f18", "src": "db2@1.60.1.70170"}
+{"id": "LASTONLINE_DAYS", "field": "text", "en": "%d |4day:days;", "hash": "91d4fc7d5e6b46eb", "src": "db2@1.60.1.70245"}
+{"id": "LASTONLINE_HOURS", "field": "text", "en": "%d |4hour:hours;", "hash": "110b6f1be4cebe87", "src": "db2@1.60.1.70245"}
+{"id": "LASTONLINE_MINS", "field": "text", "en": "< an hour", "hash": "01a4cfb0ca231d84", "src": "db2@1.60.1.70245"}
+{"id": "LASTONLINE_MINUTES", "field": "text", "en": "%d |4minute:minutes;", "hash": "87be7c53a73e8b2e", "src": "db2@1.60.1.70245"}
+{"id": "LASTONLINE_MONTHS", "field": "text", "en": "%d |4month:months;", "hash": "eb27bd13198984e0", "src": "db2@1.60.1.70245"}
+{"id": "LASTONLINE_SECS", "field": "text", "en": "< a minute", "hash": "8119f38bad7b1952", "src": "db2@1.60.1.70245"}
+{"id": "LASTONLINE_YEARS", "field": "text", "en": "%d |4year:years;", "hash": "a23ef1ed35c6ded8", "src": "db2@1.60.1.70245"}
+{"id": "LAST_ONLINE_COLON", "field": "text", "en": "Last Online:", "hash": "47d6649e33038371", "src": "db2@1.60.1.70245"}
+{"id": "LATER", "field": "text", "en": "Later", "hash": "43301c158e8c96cb", "src": "db2@1.60.1.70245"}
+{"id": "LATEST_UNLOCKED_ACHIEVEMENTS", "field": "text", "en": "Recent Achievements", "hash": "ce29d4956ba81f18", "src": "db2@1.60.1.70245"}
 {"id": "LEARN", "field": "text", "en": "Learn", "hash": "43b45f7978c0fdff", "src": "db2@1.60.1.69913"}
-{"id": "LEARN_SKILL_TEMPLATE", "field": "text", "en": "Learn %s", "hash": "ed3504270ae4c141", "src": "db2@1.60.1.70170"}
-{"id": "LEARN_SPELL_OBJECTIVE", "field": "text", "en": "Learn Spell:", "hash": "fb49c198240da072", "src": "db2@1.60.1.70170"}
-{"id": "LEAVE", "field": "text", "en": "Leave", "hash": "43b4617c78c17d7a", "src": "db2@1.60.1.70170"}
-{"id": "LEAVE_ALL_QUEUES", "field": "text", "en": "Leave All Queues", "hash": "760b05068159a555", "src": "db2@1.60.1.70170"}
-{"id": "LEAVE_ARENA", "field": "text", "en": "Leave Arena", "hash": "8e1c3b692a569042", "src": "db2@1.60.1.70170"}
-{"id": "LEAVE_BATTLEGROUND", "field": "text", "en": "Leave Battleground", "hash": "cf0fa1148c3b049f", "src": "db2@1.60.1.70170"}
-{"id": "LEAVE_LFD_BATTLEFIELD", "field": "text", "en": "Leave Brawl", "hash": "9fa8ea3cf9611f9c", "src": "db2@1.60.1.70170"}
-{"id": "LEAVE_QUEUE", "field": "text", "en": "Leave Queue", "hash": "a75e8ce8c1374309", "src": "db2@1.60.1.70170"}
-{"id": "LEAVE_VEHICLE", "field": "text", "en": "Exit", "hash": "095e8d2ef9719c87", "src": "db2@1.60.1.70170"}
-{"id": "LEAVE_ZONE", "field": "text", "en": "Leave %s", "hash": "323722fd8de72ad0", "src": "db2@1.60.1.70170"}
-{"id": "LEAVING_COMBAT", "field": "text", "en": "Leaving Combat", "hash": "0c1acf53ee94e42a", "src": "db2@1.60.1.70170"}
-{"id": "LEFTSHOULDERSLOT", "field": "text", "en": "Left Shoulder", "hash": "ccc27db0462c3662", "src": "db2@1.60.1.70170"}
-{"id": "LEFT_BUTTON_STRING", "field": "text", "en": "Left Button", "hash": "7f202c572d55f10b", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_BUTTON", "field": "text", "en": "Legacy", "hash": "a61634768d53f7e2", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_CHALLENGE_FRAME_TITLE", "field": "text", "en": "Legacy Challenges", "hash": "bc2e876f82e950b4", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_CHALLENGE_TAB_TOOLTIP", "field": "text", "en": "Legacy Challenges", "hash": "bc2e876f82e950b4", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_LIQUID_DETAIL", "field": "text", "en": "Legacy Liquid Detail", "hash": "5c42ab24971b9a31", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_MICRO_BUTTON_LOCKED_TOOLTIP", "field": "text", "en": "This feature becomes available when your first character reaches level 25.", "hash": "842454a81431e802", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_NO_CHALLENGES", "field": "text", "en": "There are no results with your current filters.", "hash": "a50c64d4a48873cb", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_POINTS_AVAILABLE", "field": "text", "en": "Available points: %s", "hash": "26e090e9c6a82c30", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_POINTS_CURR_MAX", "field": "text", "en": "Legacy Points %d / %d", "hash": "456671a29a675106", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_POINTS_SEASONAL_CAP", "field": "text", "en": "You can spend up to your current seasonal cap of %d Legacy Points in total.", "hash": "1eb1757069c73bc2", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_RAID_DIFFICULTY", "field": "text", "en": "Legacy Raid Difficulty", "hash": "74347f5a73281844", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_REWARD_TRACK_POINTS", "field": "text", "en": "Legacy Points", "hash": "910fcb2e2d68b87c", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_REWARD_TRACK_TAB_TOOLTIP", "field": "text", "en": "Legacy Rewards", "hash": "c550e5ab0dc73daf", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_TRACK_FRAME_TITLE", "field": "text", "en": "Progress Track", "hash": "dfaca278617fb6eb", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_TREE_ADVENTURE", "field": "text", "en": "Adventure", "hash": "ad05db2d52d09749", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_TREE_FRAME_TITLE", "field": "text", "en": "Legacy Tree", "hash": "3ca2a64d91c119fd", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_TREE_PROFESSIONS", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_TREE_PROGRESSION", "field": "text", "en": "Resourcefulness", "hash": "8e42266ec3a51840", "src": "db2@1.60.1.70170"}
-{"id": "LEGACY_TREE_TAB_TOOLTIP", "field": "text", "en": "Legacy Trees", "hash": "073b1a757cdeaf56", "src": "db2@1.60.1.70170"}
-{"id": "LEGSSLOT", "field": "text", "en": "Legs", "hash": "0a49b1b98bdc01ae", "src": "db2@1.60.1.70170"}
-{"id": "LESS_THAN_ONE_MINUTE", "field": "text", "en": "< 1 minute", "hash": "1bd16f4da9c9fbcc", "src": "db2@1.60.1.70170"}
-{"id": "LEVEL", "field": "text", "en": "Level", "hash": "43b9d88dcc1cee65", "src": "db2@1.60.1.70170"}
-{"id": "LEVEL_GAINED", "field": "text", "en": "Level %d", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70170"}
-{"id": "LEVEL_UP_FEATURE2", "field": "text", "en": "New feature unlocked:", "hash": "bb8f216404647000", "src": "db2@1.60.1.70170"}
-{"id": "LEVEL_UP_HEALTH", "field": "text", "en": "You have gained %d hit points.", "hash": "b4910fd1b46e0a74", "src": "db2@1.60.1.70170"}
-{"id": "LEVEL_UP_HEALTH_MANA", "field": "text", "en": "You have gained %d hit points and %d mana.", "hash": "d8ae9544f29e1162", "src": "db2@1.60.1.70170"}
-{"id": "LEVEL_UP_NO_LINK", "field": "text", "en": "Congratulations, you have reached |cffFF4E00Level %d!|r", "hash": "68e21560ee4c220c", "src": "db2@1.60.1.70170"}
-{"id": "LEVEL_UP_SKILL_POINTS", "field": "text", "en": "You now have %d free |4profession:professions;.", "hash": "d6f87da3f0142f61", "src": "db2@1.60.1.70170"}
-{"id": "LEVEL_UP_STAT", "field": "text", "en": "Your %s increases by %d.", "hash": "ad2daa4d0913e7f3", "src": "db2@1.60.1.70170"}
-{"id": "LEVEL_UP_YOU_REACHED", "field": "text", "en": "You've Reached", "hash": "4a4a8f2204265ced", "src": "db2@1.60.1.70170"}
-{"id": "LFGBROWSE_ACTIVITY_COUNT", "field": "text", "en": "%d |4activity:activities;", "hash": "ad854a40459c80cd", "src": "db2@1.60.1.70170"}
-{"id": "LFGBROWSE_ACTIVITY_HEADER", "field": "text", "en": "%d |4activity:activities; selected", "hash": "ec42113969f2a5a5", "src": "db2@1.60.1.70170"}
-{"id": "LFGBROWSE_ACTIVITY_HEADER_DEFAULT", "field": "text", "en": "Filter by activity", "hash": "b7af894e3a5ea4dc", "src": "db2@1.60.1.70170"}
-{"id": "LFGBROWSE_ACTIVITY_MATCHING_COUNT", "field": "text", "en": "%d matching |4activity:activities;", "hash": "7fb7b972e31d0703", "src": "db2@1.60.1.70170"}
-{"id": "LFG_AUTHENTICATOR_DESCRIPTION_BOX", "field": "text", "en": "Attach an Authenticator and SMS Protect to your account to unlock this field", "hash": "0bf58505e70091d9", "src": "db2@1.60.1.70170"}
-{"id": "LFG_BUTTON", "field": "text", "en": "Looking For Group/Looking For More", "hash": "178a8814aaf5242d", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_BOSSES_DEFEATED", "field": "text", "en": "Bosses Defeated:", "hash": "48c7638718ff81ed", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_CATEGORY_GROUPS", "field": "text", "en": "Groups", "hash": "a1caaca50232a87a", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_CATEGORY_SOLO_PLAYERS", "field": "text", "en": "Players", "hash": "4aab3a4b031feeb1", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_CONVERT_TO_RAID_WARNING", "field": "text", "en": "Inviting this player or group will convert your party to a raid.", "hash": "05d50f9414783ba4", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_EDIT", "field": "text", "en": "Edit Listing", "hash": "b676b14ff35cc03f", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_ENTRY_DELISTED", "field": "text", "en": "This group has been delisted.", "hash": "9a754798f662324b", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_ENTRY_EXPIRED_TIMEOUT", "field": "text", "en": "Your group has been delisted for inactivity. You may relist the group if you are still looking for applicants.", "hash": "e02d1b6e8bb890c0", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_ENTRY_EXPIRED_TOO_MANY_PLAYERS", "field": "text", "en": "Your group has the maximum number of members for this activity and will now be delisted.", "hash": "f8d7cd1109fc497f", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_IGNORE_SUGGESTED_LEVEL", "field": "text", "en": "Show All Level Ranges", "hash": "f070ca0837ade38c", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_ITEM_LEVEL_CURRENT", "field": "text", "en": "Item Level: |cffffffff%d|r", "hash": "fdaf85ec24004814", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_ITEM_LEVEL_REQ", "field": "text", "en": "Min. Item Level", "hash": "72d14392f8e7d824", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_MY_ACTIVITY_LIST_HEADER", "field": "text", "en": "Your group is currently listed for:", "hash": "2a652b2762047b96", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_NEW_PLAYER_FRIENDLY_HEADER", "field": "text", "en": "New Players Welcome", "hash": "7f6c5b9a408bbd81", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_NEW_PLAYER_FRIENDLY_TOOLTIP", "field": "text", "en": "Indicates that you welcome new players into your group and are willing to act as a guide for them.", "hash": "7c2ff5523e0dc589", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_NO_RESULTS_FOUND", "field": "text", "en": "No groups found. If you can't find what you're looking for, consider starting a group.", "hash": "04bfb6e457d3c32a", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_ONLY_LEADER_CREATE", "field": "text", "en": "Only the group leader can create a listing for your group.", "hash": "af43dff4377cf4d6", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_ONLY_LEADER_UPDATE", "field": "text", "en": "Only the group leader can modify your group's listing.", "hash": "dbb5e60f8a3378ea", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_PENDING_APPLICANTS", "field": "text", "en": "%d |4Pending Applicant:Pending Applicants;", "hash": "8f5d23f09c976bb9", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_REPORT_GROUP_FOR", "field": "text", "en": "Report Group", "hash": "8e69d494fec3d7c2", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_SEARCH_AGAIN", "field": "text", "en": "Search Again", "hash": "c6acba25dc5312bd", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_SEARCH_FAILED", "field": "text", "en": "Search Failed. Please wait a moment and try again.", "hash": "9c21a384209ca908", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_TAB_1", "field": "text", "en": "Create Listing", "hash": "098d1ed7b49761e4", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_TAB_2", "field": "text", "en": "Group Browser", "hash": "8cd92eab699df0e0", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_TAB_3", "field": "text", "en": "Who List", "hash": "4a8a6e8d7f9cd9f2", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_TOOLTIP_MEMBERS", "field": "text", "en": "Members: |cffffffff%d (%d/%d/%d)|r", "hash": "739eb7893b0a122d", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_TOOLTIP_MEMBERS_SIMPLE", "field": "text", "en": "Members: |cffffffff%d|r", "hash": "787b36fe54f11c07", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_TOO_MANY_ACTIVITIES_SELECTED", "field": "text", "en": "You've selected too many activities.", "hash": "f2f0375bd997f967", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_TOO_MANY_FOR_ACTIVITY", "field": "text", "en": "Your group already has the maximum number of members (%d) for this activity.", "hash": "7a5fd819b75ce8a2", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_UNLIST", "field": "text", "en": "Delist", "hash": "caa17bf0e3d28790", "src": "db2@1.60.1.70170"}
-{"id": "LFG_LIST_VIEW_GROUP", "field": "text", "en": "View Group", "hash": "3f45f64be9216dc5", "src": "db2@1.60.1.70170"}
-{"id": "LFG_OFFER_CONTINUE", "field": "text", "en": "A player has left your group. Would you like to find another player to finish %s?", "hash": "743cf002322eecda", "src": "db2@1.60.1.70170"}
-{"id": "LFG_POST_GROUP_PARTY", "field": "text", "en": "List Group", "hash": "97450f5f38c47d74", "src": "db2@1.60.1.70170"}
-{"id": "LFG_POST_GROUP_SOLO", "field": "text", "en": "List Self", "hash": "9938ffb102159168", "src": "db2@1.60.1.70170"}
-{"id": "LFG_POST_GROUP_UPDATE", "field": "text", "en": "Update", "hash": "3e6cd2645708ae77", "src": "db2@1.60.1.70170"}
-{"id": "LFG_ROLE_UNAVAILABLE", "field": "text", "en": "The group does not need players for this role.", "hash": "ba763385680e0b58", "src": "db2@1.60.1.70170"}
-{"id": "LFG_SELF_LISTING", "field": "text", "en": "Your Listing", "hash": "683e1dc1ee95c3c5", "src": "db2@1.60.1.70170"}
-{"id": "LFG_STATISTIC_AVERAGE_WAIT", "field": "text", "en": "Average Wait Time: %s", "hash": "c595089c6e2ca8f1", "src": "db2@1.60.1.70170"}
-{"id": "LFG_TITLE", "field": "text", "en": "Looking For Group", "hash": "4e19648e3c2ce08f", "src": "db2@1.60.1.70170"}
-{"id": "LFG_TOOLTIP_ROLES", "field": "text", "en": "Roles:", "hash": "3b65b181fea1bffb", "src": "db2@1.60.1.70170"}
-{"id": "LFG_TYPE_DUNGEON", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70170"}
-{"id": "LFG_TYPE_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70170"}
-{"id": "LFG_TYPE_RAID", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70170"}
-{"id": "LFG_WHO_LEVEL", "field": "text", "en": "Level %d", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70170"}
-{"id": "LIGHTING_MODE", "field": "text", "en": "Secondary Lighting", "hash": "752de1bb242f1646", "src": "db2@1.60.1.70170"}
-{"id": "LIMITED_CURRENCY_PURCHASE", "field": "text", "en": "This item costs %s. After this, you'll only be able to spend %d more %s.|n|n Are you sure you want to exchange %s for this item?", "hash": "3dc242d1ef6e137c", "src": "db2@1.60.1.70170"}
-{"id": "LIMITED_CURRENCY_PURCHASE_FINAL", "field": "text", "en": "This is your final %s to spend. After this, the %s merchants will leave.|n|n Are you sure you want to exchange %s for this item?", "hash": "a342bcc6e5f259d0", "src": "db2@1.60.1.70170"}
-{"id": "LINK_TRADESKILL_TOOLTIP", "field": "text", "en": "Click here to create a link to your profession.", "hash": "cf079c92ad871022", "src": "db2@1.60.1.70170"}
-{"id": "LINK_TRANSMOG_CUSTOM_SET", "field": "text", "en": "Link Custom Set", "hash": "4f8ebc15ef9b0d5c", "src": "db2@1.60.1.70170"}
-{"id": "LINK_TRANSMOG_CUSTOM_SET_HELPTIP", "field": "text", "en": "Share this custom set by linking it in chat or online", "hash": "e41985b35cf6e216", "src": "db2@1.60.1.70170"}
-{"id": "LIQUID_DETAIL", "field": "text", "en": "Liquid Detail", "hash": "d49ed48502ce8259", "src": "db2@1.60.1.70170"}
-{"id": "LIST_MY_GROUP", "field": "text", "en": "List My Group", "hash": "6016fe7535036cf0", "src": "db2@1.60.1.70170"}
-{"id": "LOADOUT_ERROR_BAD_STRING", "field": "text", "en": "Error: Invalid loadout code", "hash": "9172c9b4d758becb", "src": "db2@1.60.1.70170"}
-{"id": "LOADOUT_ERROR_SERIALIZATION_VERSION_MISMATCH", "field": "text", "en": "Error: The loadout you are trying to import was saved from an old version", "hash": "67a09002cbd7c6a9", "src": "db2@1.60.1.70170"}
-{"id": "LOAD_ADDON", "field": "text", "en": "Load AddOn", "hash": "356cacdff3428c5d", "src": "db2@1.60.1.70170"}
-{"id": "LOCALE_AUDIO_LABEL", "field": "text", "en": "Audio", "hash": "84c3282ac71470ab", "src": "db2@1.60.1.70170"}
-{"id": "LOCALE_TEXT_LABEL", "field": "text", "en": "Text", "hash": "0b5c2745f71dbfdc", "src": "db2@1.60.1.70170"}
-{"id": "LOCK_ACTIONBAR_TEXT", "field": "text", "en": "Lock Action Bars", "hash": "89327a10e8a4eb62", "src": "db2@1.60.1.70170"}
-{"id": "LOCK_BATTLEFIELDMINIMAP", "field": "text", "en": "Lock Zone Map", "hash": "b83cf7c97e70a974", "src": "db2@1.60.1.70170"}
-{"id": "LOCK_CURSOR", "field": "text", "en": "Lock Cursor to Window", "hash": "1f39fbce814f9004", "src": "db2@1.60.1.70170"}
-{"id": "LOCK_EXPIRE", "field": "text", "en": "Lock Expire", "hash": "27a8bd459cfa7f24", "src": "db2@1.60.1.70170"}
-{"id": "LOCK_WINDOW", "field": "text", "en": "Lock Window", "hash": "cf6273e21a4161ea", "src": "db2@1.60.1.70170"}
-{"id": "LOC_OPTION_OFF", "field": "text", "en": "Off", "hash": "0014e45f39a99cac", "src": "db2@1.60.1.70170"}
+{"id": "LEARN_SKILL_TEMPLATE", "field": "text", "en": "Learn %s", "hash": "ed3504270ae4c141", "src": "db2@1.60.1.70245"}
+{"id": "LEARN_SPELL_OBJECTIVE", "field": "text", "en": "Learn Spell:", "hash": "fb49c198240da072", "src": "db2@1.60.1.70245"}
+{"id": "LEAVE", "field": "text", "en": "Leave", "hash": "43b4617c78c17d7a", "src": "db2@1.60.1.70245"}
+{"id": "LEAVE_ALL_QUEUES", "field": "text", "en": "Leave All Queues", "hash": "760b05068159a555", "src": "db2@1.60.1.70245"}
+{"id": "LEAVE_ARENA", "field": "text", "en": "Leave Arena", "hash": "8e1c3b692a569042", "src": "db2@1.60.1.70245"}
+{"id": "LEAVE_BATTLEGROUND", "field": "text", "en": "Leave Battleground", "hash": "cf0fa1148c3b049f", "src": "db2@1.60.1.70245"}
+{"id": "LEAVE_LFD_BATTLEFIELD", "field": "text", "en": "Leave Brawl", "hash": "9fa8ea3cf9611f9c", "src": "db2@1.60.1.70245"}
+{"id": "LEAVE_QUEUE", "field": "text", "en": "Leave Queue", "hash": "a75e8ce8c1374309", "src": "db2@1.60.1.70245"}
+{"id": "LEAVE_VEHICLE", "field": "text", "en": "Exit", "hash": "095e8d2ef9719c87", "src": "db2@1.60.1.70245"}
+{"id": "LEAVE_ZONE", "field": "text", "en": "Leave %s", "hash": "323722fd8de72ad0", "src": "db2@1.60.1.70245"}
+{"id": "LEAVING_COMBAT", "field": "text", "en": "Leaving Combat", "hash": "0c1acf53ee94e42a", "src": "db2@1.60.1.70245"}
+{"id": "LEFTSHOULDERSLOT", "field": "text", "en": "Left Shoulder", "hash": "ccc27db0462c3662", "src": "db2@1.60.1.70245"}
+{"id": "LEFT_BUTTON_STRING", "field": "text", "en": "Left Button", "hash": "7f202c572d55f10b", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_BUTTON", "field": "text", "en": "Legacy", "hash": "a61634768d53f7e2", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_CHALLENGE_FRAME_TITLE", "field": "text", "en": "Legacy Challenges", "hash": "bc2e876f82e950b4", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_CHALLENGE_TAB_TOOLTIP", "field": "text", "en": "Legacy Challenges", "hash": "bc2e876f82e950b4", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_LIQUID_DETAIL", "field": "text", "en": "Legacy Liquid Detail", "hash": "5c42ab24971b9a31", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_MICRO_BUTTON_LOCKED_TOOLTIP", "field": "text", "en": "This feature becomes available when your first character reaches level 25.", "hash": "842454a81431e802", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_NO_CHALLENGES", "field": "text", "en": "There are no results with your current filters.", "hash": "a50c64d4a48873cb", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_POINTS_AVAILABLE", "field": "text", "en": "Available points: %s", "hash": "26e090e9c6a82c30", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_POINTS_CURR_MAX", "field": "text", "en": "Legacy Points %d / %d", "hash": "456671a29a675106", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_POINTS_SEASONAL_CAP", "field": "text", "en": "You can spend up to your current seasonal cap of %d Legacy Points in total.", "hash": "1eb1757069c73bc2", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_RAID_DIFFICULTY", "field": "text", "en": "Legacy Raid Difficulty", "hash": "74347f5a73281844", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_REWARD_TRACK_POINTS", "field": "text", "en": "Legacy Points", "hash": "910fcb2e2d68b87c", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_REWARD_TRACK_TAB_TOOLTIP", "field": "text", "en": "Legacy Rewards", "hash": "c550e5ab0dc73daf", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_TRACK_FRAME_TITLE", "field": "text", "en": "Progress Track", "hash": "dfaca278617fb6eb", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_TREE_ADVENTURE", "field": "text", "en": "Adventure", "hash": "ad05db2d52d09749", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_TREE_FRAME_TITLE", "field": "text", "en": "Legacy Tree", "hash": "3ca2a64d91c119fd", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_TREE_PROFESSIONS", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_TREE_PROGRESSION", "field": "text", "en": "Resourcefulness", "hash": "8e42266ec3a51840", "src": "db2@1.60.1.70245"}
+{"id": "LEGACY_TREE_TAB_TOOLTIP", "field": "text", "en": "Legacy Trees", "hash": "073b1a757cdeaf56", "src": "db2@1.60.1.70245"}
+{"id": "LEGSSLOT", "field": "text", "en": "Legs", "hash": "0a49b1b98bdc01ae", "src": "db2@1.60.1.70245"}
+{"id": "LESS_THAN_ONE_MINUTE", "field": "text", "en": "< 1 minute", "hash": "1bd16f4da9c9fbcc", "src": "db2@1.60.1.70245"}
+{"id": "LEVEL", "field": "text", "en": "Level", "hash": "43b9d88dcc1cee65", "src": "db2@1.60.1.70245"}
+{"id": "LEVEL_GAINED", "field": "text", "en": "Level %d", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70245"}
+{"id": "LEVEL_UP_FEATURE2", "field": "text", "en": "New feature unlocked:", "hash": "bb8f216404647000", "src": "db2@1.60.1.70245"}
+{"id": "LEVEL_UP_HEALTH", "field": "text", "en": "You have gained %d hit points.", "hash": "b4910fd1b46e0a74", "src": "db2@1.60.1.70245"}
+{"id": "LEVEL_UP_HEALTH_MANA", "field": "text", "en": "You have gained %d hit points and %d mana.", "hash": "d8ae9544f29e1162", "src": "db2@1.60.1.70245"}
+{"id": "LEVEL_UP_NO_LINK", "field": "text", "en": "Congratulations, you have reached |cffFF4E00Level %d!|r", "hash": "68e21560ee4c220c", "src": "db2@1.60.1.70245"}
+{"id": "LEVEL_UP_SKILL_POINTS", "field": "text", "en": "You now have %d free |4profession:professions;.", "hash": "d6f87da3f0142f61", "src": "db2@1.60.1.70245"}
+{"id": "LEVEL_UP_STAT", "field": "text", "en": "Your %s increases by %d.", "hash": "ad2daa4d0913e7f3", "src": "db2@1.60.1.70245"}
+{"id": "LEVEL_UP_YOU_REACHED", "field": "text", "en": "You've Reached", "hash": "4a4a8f2204265ced", "src": "db2@1.60.1.70245"}
+{"id": "LFGBROWSE_ACTIVITY_COUNT", "field": "text", "en": "%d |4activity:activities;", "hash": "ad854a40459c80cd", "src": "db2@1.60.1.70245"}
+{"id": "LFGBROWSE_ACTIVITY_HEADER", "field": "text", "en": "%d |4activity:activities; selected", "hash": "ec42113969f2a5a5", "src": "db2@1.60.1.70245"}
+{"id": "LFGBROWSE_ACTIVITY_HEADER_DEFAULT", "field": "text", "en": "Filter by activity", "hash": "b7af894e3a5ea4dc", "src": "db2@1.60.1.70245"}
+{"id": "LFGBROWSE_ACTIVITY_MATCHING_COUNT", "field": "text", "en": "%d matching |4activity:activities;", "hash": "7fb7b972e31d0703", "src": "db2@1.60.1.70245"}
+{"id": "LFG_AUTHENTICATOR_DESCRIPTION_BOX", "field": "text", "en": "Attach an Authenticator and SMS Protect to your account to unlock this field", "hash": "0bf58505e70091d9", "src": "db2@1.60.1.70245"}
+{"id": "LFG_BUTTON", "field": "text", "en": "Looking For Group/Looking For More", "hash": "178a8814aaf5242d", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_BOSSES_DEFEATED", "field": "text", "en": "Bosses Defeated:", "hash": "48c7638718ff81ed", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_CATEGORY_GROUPS", "field": "text", "en": "Groups", "hash": "a1caaca50232a87a", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_CATEGORY_SOLO_PLAYERS", "field": "text", "en": "Players", "hash": "4aab3a4b031feeb1", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_CONVERT_TO_RAID_WARNING", "field": "text", "en": "Inviting this player or group will convert your party to a raid.", "hash": "05d50f9414783ba4", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_EDIT", "field": "text", "en": "Edit Listing", "hash": "b676b14ff35cc03f", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_ENTRY_DELISTED", "field": "text", "en": "This group has been delisted.", "hash": "9a754798f662324b", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_ENTRY_EXPIRED_TIMEOUT", "field": "text", "en": "Your group has been delisted for inactivity. You may relist the group if you are still looking for applicants.", "hash": "e02d1b6e8bb890c0", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_ENTRY_EXPIRED_TOO_MANY_PLAYERS", "field": "text", "en": "Your group has the maximum number of members for this activity and will now be delisted.", "hash": "f8d7cd1109fc497f", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_IGNORE_SUGGESTED_LEVEL", "field": "text", "en": "Show All Level Ranges", "hash": "f070ca0837ade38c", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_ITEM_LEVEL_CURRENT", "field": "text", "en": "Item Level: |cffffffff%d|r", "hash": "fdaf85ec24004814", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_ITEM_LEVEL_REQ", "field": "text", "en": "Min. Item Level", "hash": "72d14392f8e7d824", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_MY_ACTIVITY_LIST_HEADER", "field": "text", "en": "Your group is currently listed for:", "hash": "2a652b2762047b96", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_NEW_PLAYER_FRIENDLY_HEADER", "field": "text", "en": "New Players Welcome", "hash": "7f6c5b9a408bbd81", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_NEW_PLAYER_FRIENDLY_TOOLTIP", "field": "text", "en": "Indicates that you welcome new players into your group and are willing to act as a guide for them.", "hash": "7c2ff5523e0dc589", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_NO_RESULTS_FOUND", "field": "text", "en": "No groups found. If you can't find what you're looking for, consider starting a group.", "hash": "04bfb6e457d3c32a", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_ONLY_LEADER_CREATE", "field": "text", "en": "Only the group leader can create a listing for your group.", "hash": "af43dff4377cf4d6", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_ONLY_LEADER_UPDATE", "field": "text", "en": "Only the group leader can modify your group's listing.", "hash": "dbb5e60f8a3378ea", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_PENDING_APPLICANTS", "field": "text", "en": "%d |4Pending Applicant:Pending Applicants;", "hash": "8f5d23f09c976bb9", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_REPORT_GROUP_FOR", "field": "text", "en": "Report Group", "hash": "8e69d494fec3d7c2", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_SEARCH_AGAIN", "field": "text", "en": "Search Again", "hash": "c6acba25dc5312bd", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_SEARCH_FAILED", "field": "text", "en": "Search Failed. Please wait a moment and try again.", "hash": "9c21a384209ca908", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_TAB_1", "field": "text", "en": "Create Listing", "hash": "098d1ed7b49761e4", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_TAB_2", "field": "text", "en": "Group Browser", "hash": "8cd92eab699df0e0", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_TAB_3", "field": "text", "en": "Who List", "hash": "4a8a6e8d7f9cd9f2", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_TOOLTIP_MEMBERS", "field": "text", "en": "Members: |cffffffff%d (%d/%d/%d)|r", "hash": "739eb7893b0a122d", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_TOOLTIP_MEMBERS_SIMPLE", "field": "text", "en": "Members: |cffffffff%d|r", "hash": "787b36fe54f11c07", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_TOO_MANY_ACTIVITIES_SELECTED", "field": "text", "en": "You've selected too many activities.", "hash": "f2f0375bd997f967", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_TOO_MANY_FOR_ACTIVITY", "field": "text", "en": "Your group already has the maximum number of members (%d) for this activity.", "hash": "7a5fd819b75ce8a2", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_UNLIST", "field": "text", "en": "Delist", "hash": "caa17bf0e3d28790", "src": "db2@1.60.1.70245"}
+{"id": "LFG_LIST_VIEW_GROUP", "field": "text", "en": "View Group", "hash": "3f45f64be9216dc5", "src": "db2@1.60.1.70245"}
+{"id": "LFG_OFFER_CONTINUE", "field": "text", "en": "A player has left your group. Would you like to find another player to finish %s?", "hash": "743cf002322eecda", "src": "db2@1.60.1.70245"}
+{"id": "LFG_POST_GROUP_PARTY", "field": "text", "en": "List Group", "hash": "97450f5f38c47d74", "src": "db2@1.60.1.70245"}
+{"id": "LFG_POST_GROUP_SOLO", "field": "text", "en": "List Self", "hash": "9938ffb102159168", "src": "db2@1.60.1.70245"}
+{"id": "LFG_POST_GROUP_UPDATE", "field": "text", "en": "Update", "hash": "3e6cd2645708ae77", "src": "db2@1.60.1.70245"}
+{"id": "LFG_ROLE_UNAVAILABLE", "field": "text", "en": "The group does not need players for this role.", "hash": "ba763385680e0b58", "src": "db2@1.60.1.70245"}
+{"id": "LFG_SELF_LISTING", "field": "text", "en": "Your Listing", "hash": "683e1dc1ee95c3c5", "src": "db2@1.60.1.70245"}
+{"id": "LFG_STATISTIC_AVERAGE_WAIT", "field": "text", "en": "Average Wait Time: %s", "hash": "c595089c6e2ca8f1", "src": "db2@1.60.1.70245"}
+{"id": "LFG_TITLE", "field": "text", "en": "Looking For Group", "hash": "4e19648e3c2ce08f", "src": "db2@1.60.1.70245"}
+{"id": "LFG_TOOLTIP_ROLES", "field": "text", "en": "Roles:", "hash": "3b65b181fea1bffb", "src": "db2@1.60.1.70245"}
+{"id": "LFG_TYPE_DUNGEON", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70245"}
+{"id": "LFG_TYPE_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70245"}
+{"id": "LFG_TYPE_RAID", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70245"}
+{"id": "LFG_WHO_LEVEL", "field": "text", "en": "Level %d", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70245"}
+{"id": "LIGHTING_MODE", "field": "text", "en": "Secondary Lighting", "hash": "752de1bb242f1646", "src": "db2@1.60.1.70245"}
+{"id": "LIMITED_CURRENCY_PURCHASE", "field": "text", "en": "This item costs %s. After this, you'll only be able to spend %d more %s.|n|n Are you sure you want to exchange %s for this item?", "hash": "3dc242d1ef6e137c", "src": "db2@1.60.1.70245"}
+{"id": "LIMITED_CURRENCY_PURCHASE_FINAL", "field": "text", "en": "This is your final %s to spend. After this, the %s merchants will leave.|n|n Are you sure you want to exchange %s for this item?", "hash": "a342bcc6e5f259d0", "src": "db2@1.60.1.70245"}
+{"id": "LINK_TRADESKILL_TOOLTIP", "field": "text", "en": "Click here to create a link to your profession.", "hash": "cf079c92ad871022", "src": "db2@1.60.1.70245"}
+{"id": "LINK_TRANSMOG_CUSTOM_SET", "field": "text", "en": "Link Custom Set", "hash": "4f8ebc15ef9b0d5c", "src": "db2@1.60.1.70245"}
+{"id": "LINK_TRANSMOG_CUSTOM_SET_HELPTIP", "field": "text", "en": "Share this custom set by linking it in chat or online", "hash": "e41985b35cf6e216", "src": "db2@1.60.1.70245"}
+{"id": "LIQUID_DETAIL", "field": "text", "en": "Liquid Detail", "hash": "d49ed48502ce8259", "src": "db2@1.60.1.70245"}
+{"id": "LIST_MY_GROUP", "field": "text", "en": "List My Group", "hash": "6016fe7535036cf0", "src": "db2@1.60.1.70245"}
+{"id": "LOADOUT_ERROR_BAD_STRING", "field": "text", "en": "Error: Invalid loadout code", "hash": "9172c9b4d758becb", "src": "db2@1.60.1.70245"}
+{"id": "LOADOUT_ERROR_SERIALIZATION_VERSION_MISMATCH", "field": "text", "en": "Error: The loadout you are trying to import was saved from an old version", "hash": "67a09002cbd7c6a9", "src": "db2@1.60.1.70245"}
+{"id": "LOAD_ADDON", "field": "text", "en": "Load AddOn", "hash": "356cacdff3428c5d", "src": "db2@1.60.1.70245"}
+{"id": "LOCALE_AUDIO_LABEL", "field": "text", "en": "Audio", "hash": "84c3282ac71470ab", "src": "db2@1.60.1.70245"}
+{"id": "LOCALE_TEXT_LABEL", "field": "text", "en": "Text", "hash": "0b5c2745f71dbfdc", "src": "db2@1.60.1.70245"}
+{"id": "LOCK_ACTIONBAR_TEXT", "field": "text", "en": "Lock Action Bars", "hash": "89327a10e8a4eb62", "src": "db2@1.60.1.70245"}
+{"id": "LOCK_BATTLEFIELDMINIMAP", "field": "text", "en": "Lock Zone Map", "hash": "b83cf7c97e70a974", "src": "db2@1.60.1.70245"}
+{"id": "LOCK_CURSOR", "field": "text", "en": "Lock Cursor to Window", "hash": "1f39fbce814f9004", "src": "db2@1.60.1.70245"}
+{"id": "LOCK_EXPIRE", "field": "text", "en": "Lock Expire", "hash": "27a8bd459cfa7f24", "src": "db2@1.60.1.70245"}
+{"id": "LOCK_WINDOW", "field": "text", "en": "Lock Window", "hash": "cf6273e21a4161ea", "src": "db2@1.60.1.70245"}
+{"id": "LOC_OPTION_OFF", "field": "text", "en": "Off", "hash": "0014e45f39a99cac", "src": "db2@1.60.1.70245"}
 {"id": "LOGOUT", "field": "text", "en": "Logout", "hash": "55a307547a12e4fa", "src": "db2@1.60.1.69913"}
-{"id": "LOG_OUT", "field": "text", "en": "Log Out", "hash": "c7ccdb9f5a684b2f", "src": "db2@1.60.1.70170"}
-{"id": "LOOKINGFORGUILD", "field": "text", "en": "Guild Finder", "hash": "174784f4465f8169", "src": "db2@1.60.1.70170"}
-{"id": "LOOKING_FOR_RAID", "field": "text", "en": "Other Raids", "hash": "e4c1d3c8029ff667", "src": "db2@1.60.1.70170"}
-{"id": "LOOTUPGRADEFRAME_TITLE", "field": "text", "en": "%s Upgrade!", "hash": "9482408f370dee5a", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_CURRENCY_REFUND", "field": "text", "en": "You are refunded: %sx%d.", "hash": "66543cff5e3cc724", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_FREE_FOR_ALL", "field": "text", "en": "Loot: Free for All", "hash": "eaf1d014e4d0b1f7", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_GROUP_LOOT", "field": "text", "en": "Loot: Group Loot", "hash": "203f15e3e2b1ee7e", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_HISTORY_ALL_PASSED", "field": "text", "en": "All Passed", "hash": "5ccb65cf7bcb0ed5", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_HISTORY_CURRENT_WINNER", "field": "text", "en": "%s (%d)", "hash": "515e9f9188174410", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_HISTORY_INFO_TEXT", "field": "text", "en": "Loot rolls from group content are displayed here", "hash": "dd8c09319f8658d0", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_HISTORY_PASSED", "field": "text", "en": "Passed", "hash": "4f90e489402515f2", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_HISTORY_ROLL_TIE", "field": "text", "en": "Tie", "hash": "001635144d834f13", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_HISTORY_ROLL_TUTORIAL", "field": "text", "en": "Your loot rolls appear here.|n|nItems you win will go to your bags automatically. ", "hash": "5960ad03c9d3c4a7", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_HISTORY_WAITING_ON", "field": "text", "en": "Waiting on: ", "hash": "15485f5f9c1bf05b", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM", "field": "text", "en": "%s receives loot: %s.", "hash": "0f09d059295fd030", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_BONUS_ROLL", "field": "text", "en": "%s receives bonus loot: %s.", "hash": "da03f1f011ac6fcb", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_BONUS_ROLL_MULTIPLE", "field": "text", "en": "%s receives bonus loot: %sx%d.", "hash": "5c8f0fd62b7e6938", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_BONUS_ROLL_SELF", "field": "text", "en": "You receive bonus loot: %s", "hash": "e0ccfe0e945613f2", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_BONUS_ROLL_SELF_MULTIPLE", "field": "text", "en": "You receive bonus loot: %sx%d", "hash": "831a24e01458e7e6", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_CREATED_SELF", "field": "text", "en": "You create: %s.", "hash": "b48aed59520e9679", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_CREATED_SELF_MULTIPLE", "field": "text", "en": "You create: %sx%d.", "hash": "a9c0c23e3a8f9165", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_MULTIPLE", "field": "text", "en": "%s receives loot: %sx%d.", "hash": "c46c50a453dc765e", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_PUSHED", "field": "text", "en": "%s receives item: %s.", "hash": "176695a726b39094", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_PUSHED_MULTIPLE", "field": "text", "en": "%s receives item: %sx%d.", "hash": "f051d7258d0ac2e7", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_PUSHED_SELF", "field": "text", "en": "You receive item: %s", "hash": "4307040fedc6ab95", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_PUSHED_SELF_MULTIPLE", "field": "text", "en": "You receive item: %sx%d", "hash": "3bc25fe01ce15297", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_REFUND", "field": "text", "en": "You are refunded: %s.", "hash": "df0a9f0459600c9b", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_REFUND_MULTIPLE", "field": "text", "en": "You are refunded: %sx%d.", "hash": "66543cff5e3cc724", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_SELF", "field": "text", "en": "You receive loot: %s", "hash": "6fe8fea4e9daf49e", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_SELF_MULTIPLE", "field": "text", "en": "You receive loot: %sx%d", "hash": "a8dbfb2da9377c94", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ITEM_WHILE_PLAYER_INELIGIBLE", "field": "text", "en": "%s receives loot: |TInterface\\Common\\Icon-NoLoot:13:13:0:0|t%s", "hash": "65bbad8d135c0c29", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_KEY_TEXT", "field": "text", "en": "Loot Key", "hash": "d61f4de52b31dfe9", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_METHOD", "field": "text", "en": "Loot Method", "hash": "5ed4080edc88491f", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_MONEY", "field": "text", "en": "%s loots %s.", "hash": "21953fabfbecb271", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_MONEY_REFUND", "field": "text", "en": "You are refunded %s.", "hash": "11c432a049446bdb", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_MONEY_SPLIT", "field": "text", "en": "Your share of the loot is %s.", "hash": "846cd475bb3a9aed", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_MONEY_SPLIT_GUILD", "field": "text", "en": "Your share of the loot is %s. (%s deposited to guild bank)", "hash": "e838c9043ed9a6f6", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_MONEY_SPLIT_MOD", "field": "text", "en": "Your share of the loot is %s (+%s)", "hash": "e0b3e9d83fbe3394", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_NEED_BEFORE_GREED", "field": "text", "en": "Loot: Need Before Greed", "hash": "b29ea0e38ee9599c", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_NO_DROP", "field": "text", "en": "Looting %s will bind it to you.", "hash": "2eb6aac15c1552f4", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_NO_DROP_DISENCHANT", "field": "text", "en": "Disenchanting %s will destroy it.", "hash": "1125e5aa0f4e4ab9", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLLS", "field": "text", "en": "Loot Rolls", "hash": "34b198eeb939e021", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_DISENCHANT", "field": "text", "en": "%s has selected Disenchant for: %s", "hash": "14834e972f3b6e78", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_INELIGIBLE_REASON1", "field": "text", "en": "Your class may not roll need on this item.", "hash": "b20d0b3015a30aad", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_INELIGIBLE_REASON2", "field": "text", "en": "You already have the maximum amount of this item.", "hash": "46389bbcc9c15811", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_INELIGIBLE_REASON3", "field": "text", "en": "This item may not be disenchanted.", "hash": "d8f2d36adcfddd30", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_INELIGIBLE_REASON4", "field": "text", "en": "You do not have an Enchanter of skill %d in your group.", "hash": "1e29129859f2906d", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_INELIGIBLE_REASON5", "field": "text", "en": "Need rolls are disabled for this item.", "hash": "dd8d6f15ada1279d", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_INELIGIBLE_REASON6", "field": "text", "en": "You already have a powerful version of this item.", "hash": "611c913ea6966a6c", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_INELIGIBLE_REASON7", "field": "text", "en": "You do not have the profession required to use this item.", "hash": "1ed671aa4bf54e9e", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_PASSED_AUTO", "field": "text", "en": "%s automatically passed on: %s because he cannot loot that item.", "hash": "96f9cdeef476d43a", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_PASSED_AUTO_FEMALE", "field": "text", "en": "%s automatically passed on: %s because she cannot loot that item.", "hash": "1c4bc721800a18b1", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_ROLLED_DE", "field": "text", "en": "Disenchant Roll - %d for %s by %s", "hash": "acca0a88853b9412", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROLL_ROLLED_NEED_ROLE_BONUS", "field": "text", "en": "Need Roll - %d for %s by %s + Role Bonus", "hash": "a76e2a9f054690a0", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_ROUND_ROBIN", "field": "text", "en": "Loot: Round Robin", "hash": "480cf8829c97ef4e", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_TTS_LABEL", "field": "text", "en": "Item Loot", "hash": "9a868ae9b36079d1", "src": "db2@1.60.1.70170"}
-{"id": "LOOT_UNDER_MOUSE_TEXT", "field": "text", "en": "Open Loot Window at Mouse", "hash": "56930045592dfbac", "src": "db2@1.60.1.70170"}
-{"id": "LOSING_LOYALTY", "field": "text", "en": "Losing Loyalty", "hash": "98ffec6647af7712", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL", "field": "text", "en": "Loss of Control Alerts", "hash": "9214f8830f2fbec7", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_BANISH", "field": "text", "en": "Banished", "hash": "98760acc4d122377", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_CHARM", "field": "text", "en": "Charmed", "hash": "2e98e956a63c86a3", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_CONFUSE", "field": "text", "en": "Confused", "hash": "bd4baed11a72a49b", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_CYCLONE", "field": "text", "en": "Cycloned", "hash": "661a905ac6a01b43", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_DAZE", "field": "text", "en": "Dazed", "hash": "b6c3fbb0af0a317c", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_DISARM", "field": "text", "en": "Disarmed", "hash": "89f5701a0b668df5", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_DISORIENT", "field": "text", "en": "Disoriented", "hash": "d9bcb41aa5ba6375", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_DISTRACT", "field": "text", "en": "Distracted", "hash": "ac56f6eae2c187b3", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_FEAR", "field": "text", "en": "Feared", "hash": "c033119e972702c9", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_FEAR_MECHANIC", "field": "text", "en": "Feared", "hash": "c033119e972702c9", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_FREEZE", "field": "text", "en": "Frozen", "hash": "a647aa8cc480f272", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_HORROR", "field": "text", "en": "Horrified", "hash": "41c4eaac453ced55", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_INCAPACITATE", "field": "text", "en": "Incapacitated", "hash": "4e530743ecf63829", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_INTERRUPT", "field": "text", "en": "Interrupted", "hash": "eae3543bbe1781e4", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_INTERRUPT_SCHOOL", "field": "text", "en": "%s Locked", "hash": "11977e6c5385a167", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_INVULNERABILITY", "field": "text", "en": "Invulnerable", "hash": "bcf55f4eb84580ca", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_MAGICAL_IMMUNITY", "field": "text", "en": "Pacified", "hash": "503e43ab0d970757", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_PACIFY", "field": "text", "en": "Pacified", "hash": "503e43ab0d970757", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_PACIFYSILENCE", "field": "text", "en": "Disabled", "hash": "87d0536130ef09ab", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_POLYMORPH", "field": "text", "en": "Polymorphed", "hash": "4ab3430f2887ab67", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_POSSESS", "field": "text", "en": "Possessed", "hash": "a634e6870ee2416d", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_ROOT", "field": "text", "en": "Rooted", "hash": "3bd080d9e263d645", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_SAP", "field": "text", "en": "Sapped", "hash": "41b6157d80a16cc5", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_SCHOOL_INTERRUPT", "field": "text", "en": "Interrupted", "hash": "eae3543bbe1781e4", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_SHACKLE_UNDEAD", "field": "text", "en": "Shackled", "hash": "47c71fb9b74e6bb7", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_SILENCE", "field": "text", "en": "Silenced", "hash": "eea90c8cd021c8dd", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_SLEEP", "field": "text", "en": "Asleep", "hash": "cdd37e311025b4ae", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_SNARE", "field": "text", "en": "Snared", "hash": "23e6519c916320eb", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_STUN", "field": "text", "en": "Stunned", "hash": "a280ed130ac43b19", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_STUN_MECHANIC", "field": "text", "en": "Stunned", "hash": "a280ed130ac43b19", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_TAUNT", "field": "text", "en": "Taunted", "hash": "ac63953f6af4c778", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_DISPLAY_TURN_UNDEAD", "field": "text", "en": "Feared", "hash": "c033119e972702c9", "src": "db2@1.60.1.70170"}
-{"id": "LOSS_OF_CONTROL_SECONDS", "field": "text", "en": "seconds", "hash": "404254b6d770c6d4", "src": "db2@1.60.1.70170"}
-{"id": "LOW", "field": "text", "en": "Low", "hash": "00141ff02dc1f063", "src": "db2@1.60.1.70170"}
-{"id": "LOW_LATENCY_MODE", "field": "text", "en": "Low Latency Mode", "hash": "0acdf8d5dd995fec", "src": "db2@1.60.1.70170"}
-{"id": "LOYALTY_LEVEL", "field": "text", "en": "Loyalty Level %d", "hash": "d82b7a5322fd99ee", "src": "db2@1.60.1.70170"}
-{"id": "LUA_ERROR", "field": "text", "en": "Lua Error", "hash": "8437e5e84856582b", "src": "db2@1.60.1.70170"}
-{"id": "LUA_WARNING", "field": "text", "en": "Lua Warning", "hash": "47c6975b09430f65", "src": "db2@1.60.1.70170"}
-{"id": "LfgActivity:1064", "field": "text", "en": "Custom", "hash": "e8eb93f28a72eb0f", "src": "db2@1.60.1.70170"}
-{"id": "LfgActivityGroup:285", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70170"}
-{"id": "LfgActivityGroup:290", "field": "text", "en": "Raids", "hash": "ac7f80169c608a71", "src": "db2@1.60.1.70170"}
-{"id": "LfgActivityGroup:300", "field": "text", "en": "Battlegrounds", "hash": "ee710fa995072d7b", "src": "db2@1.60.1.70170"}
-{"id": "LfgActivityGroup:301", "field": "text", "en": "World PvP", "hash": "cdc77faa9b28a9ac", "src": "db2@1.60.1.70170"}
-{"id": "LfgCategory:114", "field": "text", "en": "Raids", "hash": "ac7f80169c608a71", "src": "db2@1.60.1.70170"}
-{"id": "LfgCategory:116", "field": "text", "en": "Quests & Zones", "hash": "1e0db24673e767d3", "src": "db2@1.60.1.70170"}
-{"id": "LfgCategory:118", "field": "text", "en": "Battlegrounds", "hash": "ee710fa995072d7b", "src": "db2@1.60.1.70170"}
-{"id": "LfgCategory:120", "field": "text", "en": "Custom", "hash": "e8eb93f28a72eb0f", "src": "db2@1.60.1.70170"}
-{"id": "LfgCategory:2", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:1", "field": "text", "en": "Pick Lock", "hash": "f1d14809b8c9a304", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:10", "field": "text", "en": "Quick Open", "hash": "e988f97d8a00f9b6", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:11", "field": "text", "en": "Quick Close", "hash": "adec8c5be82f2298", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:12", "field": "text", "en": "Open Tinkering", "hash": "0096fcefe74c4196", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:13", "field": "text", "en": "Open Kneeling", "hash": "97644ddaa4c1e562", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:14", "field": "text", "en": "Open Attacking", "hash": "18d10264ddcbbd4e", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:16", "field": "text", "en": "Blasting", "hash": "461797401d173ac5", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:17", "field": "text", "en": "Slow Open", "hash": "f862a57155cbee85", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:18", "field": "text", "en": "Slow Close", "hash": "474f8a5f9934ef07", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:209", "field": "text", "en": "Open Tinkering", "hash": "0096fcefe74c4196", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:211", "field": "text", "en": "Kobold Tracks", "hash": "7b5d08668f66b99e", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:24", "field": "text", "en": "Beast Tracking", "hash": "cfa853c15dd1bf65", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:245", "field": "text", "en": "Comprehend Scroll", "hash": "63c3d078da437095", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:4", "field": "text", "en": "Disarm Trap", "hash": "80ea2e4c066e8d1a", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:5", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:8", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeName:9", "field": "text", "en": "Arm Trap", "hash": "1fd055edac5c9abe", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:1", "field": "text", "en": "Locked Items", "hash": "3df9edee32ec3af3", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:10", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:11", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:12", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:13", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:14", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:16", "field": "text", "en": "Locked Items", "hash": "3df9edee32ec3af3", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:17", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:18", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:19", "field": "text", "en": "Fish", "hash": "097cf2544b4ed706", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:2", "field": "text", "en": "Herbs", "hash": "fd81f19e409181ea", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:209", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:211", "field": "text", "en": "Kobold Tracks", "hash": "7b5d08668f66b99e", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:24", "field": "text", "en": "Beast Tracks", "hash": "8af06f9d79086eda", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:245", "field": "text", "en": "Scroll", "hash": "6515dde9554eef38", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:3", "field": "text", "en": "Ore Deposits", "hash": "fc8b9ecad4a35b31", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:4", "field": "text", "en": "Trap", "hash": "0b5f82f12ab6537f", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:5", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:8", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeResource:9", "field": "text", "en": "Trap", "hash": "0b5f82f12ab6537f", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:1", "field": "text", "en": "Pick", "hash": "0ad3f235d15c6144", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:10", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:11", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:12", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:13", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:14", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:16", "field": "text", "en": "Blast", "hash": "951b6010a16fcf66", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:17", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:18", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:19", "field": "text", "en": "Fish", "hash": "097cf2544b4ed706", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:2", "field": "text", "en": "Gather", "hash": "7809a82fc40b2615", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:209", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:24", "field": "text", "en": "Track", "hash": "d1dffb309e5a7ffe", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:245", "field": "text", "en": "Comprehend", "hash": "260ed2f1a8ea3162", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:3", "field": "text", "en": "Mine", "hash": "0a6d0eff2925e3db", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:4", "field": "text", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:5", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:8", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70170"}
-{"id": "LockTypeVerb:9", "field": "text", "en": "Arm", "hash": "0011400c021766b1", "src": "db2@1.60.1.70170"}
+{"id": "LOG_OUT", "field": "text", "en": "Log Out", "hash": "c7ccdb9f5a684b2f", "src": "db2@1.60.1.70245"}
+{"id": "LOOKINGFORGUILD", "field": "text", "en": "Guild Finder", "hash": "174784f4465f8169", "src": "db2@1.60.1.70245"}
+{"id": "LOOKING_FOR_RAID", "field": "text", "en": "Other Raids", "hash": "e4c1d3c8029ff667", "src": "db2@1.60.1.70245"}
+{"id": "LOOTUPGRADEFRAME_TITLE", "field": "text", "en": "%s Upgrade!", "hash": "9482408f370dee5a", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_CURRENCY_REFUND", "field": "text", "en": "You are refunded: %sx%d.", "hash": "66543cff5e3cc724", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_FREE_FOR_ALL", "field": "text", "en": "Loot: Free for All", "hash": "eaf1d014e4d0b1f7", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_GROUP_LOOT", "field": "text", "en": "Loot: Group Loot", "hash": "203f15e3e2b1ee7e", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_HISTORY_ALL_PASSED", "field": "text", "en": "All Passed", "hash": "5ccb65cf7bcb0ed5", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_HISTORY_CURRENT_WINNER", "field": "text", "en": "%s (%d)", "hash": "515e9f9188174410", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_HISTORY_INFO_TEXT", "field": "text", "en": "Loot rolls from group content are displayed here", "hash": "dd8c09319f8658d0", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_HISTORY_PASSED", "field": "text", "en": "Passed", "hash": "4f90e489402515f2", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_HISTORY_ROLL_TIE", "field": "text", "en": "Tie", "hash": "001635144d834f13", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_HISTORY_ROLL_TUTORIAL", "field": "text", "en": "Your loot rolls appear here.|n|nItems you win will go to your bags automatically. ", "hash": "5960ad03c9d3c4a7", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_HISTORY_WAITING_ON", "field": "text", "en": "Waiting on: ", "hash": "15485f5f9c1bf05b", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM", "field": "text", "en": "%s receives loot: %s.", "hash": "0f09d059295fd030", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_BONUS_ROLL", "field": "text", "en": "%s receives bonus loot: %s.", "hash": "da03f1f011ac6fcb", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_BONUS_ROLL_MULTIPLE", "field": "text", "en": "%s receives bonus loot: %sx%d.", "hash": "5c8f0fd62b7e6938", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_BONUS_ROLL_SELF", "field": "text", "en": "You receive bonus loot: %s", "hash": "e0ccfe0e945613f2", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_BONUS_ROLL_SELF_MULTIPLE", "field": "text", "en": "You receive bonus loot: %sx%d", "hash": "831a24e01458e7e6", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_CREATED_SELF", "field": "text", "en": "You create: %s.", "hash": "b48aed59520e9679", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_CREATED_SELF_MULTIPLE", "field": "text", "en": "You create: %sx%d.", "hash": "a9c0c23e3a8f9165", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_MULTIPLE", "field": "text", "en": "%s receives loot: %sx%d.", "hash": "c46c50a453dc765e", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_PUSHED", "field": "text", "en": "%s receives item: %s.", "hash": "176695a726b39094", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_PUSHED_MULTIPLE", "field": "text", "en": "%s receives item: %sx%d.", "hash": "f051d7258d0ac2e7", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_PUSHED_SELF", "field": "text", "en": "You receive item: %s", "hash": "4307040fedc6ab95", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_PUSHED_SELF_MULTIPLE", "field": "text", "en": "You receive item: %sx%d", "hash": "3bc25fe01ce15297", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_REFUND", "field": "text", "en": "You are refunded: %s.", "hash": "df0a9f0459600c9b", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_REFUND_MULTIPLE", "field": "text", "en": "You are refunded: %sx%d.", "hash": "66543cff5e3cc724", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_SELF", "field": "text", "en": "You receive loot: %s", "hash": "6fe8fea4e9daf49e", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_SELF_MULTIPLE", "field": "text", "en": "You receive loot: %sx%d", "hash": "a8dbfb2da9377c94", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ITEM_WHILE_PLAYER_INELIGIBLE", "field": "text", "en": "%s receives loot: |TInterface\\Common\\Icon-NoLoot:13:13:0:0|t%s", "hash": "65bbad8d135c0c29", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_KEY_TEXT", "field": "text", "en": "Loot Key", "hash": "d61f4de52b31dfe9", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_METHOD", "field": "text", "en": "Loot Method", "hash": "5ed4080edc88491f", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_MONEY", "field": "text", "en": "%s loots %s.", "hash": "21953fabfbecb271", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_MONEY_REFUND", "field": "text", "en": "You are refunded %s.", "hash": "11c432a049446bdb", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_MONEY_SPLIT", "field": "text", "en": "Your share of the loot is %s.", "hash": "846cd475bb3a9aed", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_MONEY_SPLIT_GUILD", "field": "text", "en": "Your share of the loot is %s. (%s deposited to guild bank)", "hash": "e838c9043ed9a6f6", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_MONEY_SPLIT_MOD", "field": "text", "en": "Your share of the loot is %s (+%s)", "hash": "e0b3e9d83fbe3394", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_NEED_BEFORE_GREED", "field": "text", "en": "Loot: Need Before Greed", "hash": "b29ea0e38ee9599c", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_NO_DROP", "field": "text", "en": "Looting %s will bind it to you.", "hash": "2eb6aac15c1552f4", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_NO_DROP_DISENCHANT", "field": "text", "en": "Disenchanting %s will destroy it.", "hash": "1125e5aa0f4e4ab9", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLLS", "field": "text", "en": "Loot Rolls", "hash": "34b198eeb939e021", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_DISENCHANT", "field": "text", "en": "%s has selected Disenchant for: %s", "hash": "14834e972f3b6e78", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_INELIGIBLE_REASON1", "field": "text", "en": "Your class may not roll need on this item.", "hash": "b20d0b3015a30aad", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_INELIGIBLE_REASON2", "field": "text", "en": "You already have the maximum amount of this item.", "hash": "46389bbcc9c15811", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_INELIGIBLE_REASON3", "field": "text", "en": "This item may not be disenchanted.", "hash": "d8f2d36adcfddd30", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_INELIGIBLE_REASON4", "field": "text", "en": "You do not have an Enchanter of skill %d in your group.", "hash": "1e29129859f2906d", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_INELIGIBLE_REASON5", "field": "text", "en": "Need rolls are disabled for this item.", "hash": "dd8d6f15ada1279d", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_INELIGIBLE_REASON6", "field": "text", "en": "You already have a powerful version of this item.", "hash": "611c913ea6966a6c", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_INELIGIBLE_REASON7", "field": "text", "en": "You do not have the profession required to use this item.", "hash": "1ed671aa4bf54e9e", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_PASSED_AUTO", "field": "text", "en": "%s automatically passed on: %s because he cannot loot that item.", "hash": "96f9cdeef476d43a", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_PASSED_AUTO_FEMALE", "field": "text", "en": "%s automatically passed on: %s because she cannot loot that item.", "hash": "1c4bc721800a18b1", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_ROLLED_DE", "field": "text", "en": "Disenchant Roll - %d for %s by %s", "hash": "acca0a88853b9412", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROLL_ROLLED_NEED_ROLE_BONUS", "field": "text", "en": "Need Roll - %d for %s by %s + Role Bonus", "hash": "a76e2a9f054690a0", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_ROUND_ROBIN", "field": "text", "en": "Loot: Round Robin", "hash": "480cf8829c97ef4e", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_TTS_LABEL", "field": "text", "en": "Item Loot", "hash": "9a868ae9b36079d1", "src": "db2@1.60.1.70245"}
+{"id": "LOOT_UNDER_MOUSE_TEXT", "field": "text", "en": "Open Loot Window at Mouse", "hash": "56930045592dfbac", "src": "db2@1.60.1.70245"}
+{"id": "LOSING_LOYALTY", "field": "text", "en": "Losing Loyalty", "hash": "98ffec6647af7712", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL", "field": "text", "en": "Loss of Control Alerts", "hash": "9214f8830f2fbec7", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_BANISH", "field": "text", "en": "Banished", "hash": "98760acc4d122377", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_CHARM", "field": "text", "en": "Charmed", "hash": "2e98e956a63c86a3", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_CONFUSE", "field": "text", "en": "Confused", "hash": "bd4baed11a72a49b", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_CYCLONE", "field": "text", "en": "Cycloned", "hash": "661a905ac6a01b43", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_DAZE", "field": "text", "en": "Dazed", "hash": "b6c3fbb0af0a317c", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_DISARM", "field": "text", "en": "Disarmed", "hash": "89f5701a0b668df5", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_DISORIENT", "field": "text", "en": "Disoriented", "hash": "d9bcb41aa5ba6375", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_DISTRACT", "field": "text", "en": "Distracted", "hash": "ac56f6eae2c187b3", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_FEAR", "field": "text", "en": "Feared", "hash": "c033119e972702c9", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_FEAR_MECHANIC", "field": "text", "en": "Feared", "hash": "c033119e972702c9", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_FREEZE", "field": "text", "en": "Frozen", "hash": "a647aa8cc480f272", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_HORROR", "field": "text", "en": "Horrified", "hash": "41c4eaac453ced55", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_INCAPACITATE", "field": "text", "en": "Incapacitated", "hash": "4e530743ecf63829", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_INTERRUPT", "field": "text", "en": "Interrupted", "hash": "eae3543bbe1781e4", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_INTERRUPT_SCHOOL", "field": "text", "en": "%s Locked", "hash": "11977e6c5385a167", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_INVULNERABILITY", "field": "text", "en": "Invulnerable", "hash": "bcf55f4eb84580ca", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_MAGICAL_IMMUNITY", "field": "text", "en": "Pacified", "hash": "503e43ab0d970757", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_PACIFY", "field": "text", "en": "Pacified", "hash": "503e43ab0d970757", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_PACIFYSILENCE", "field": "text", "en": "Disabled", "hash": "87d0536130ef09ab", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_POLYMORPH", "field": "text", "en": "Polymorphed", "hash": "4ab3430f2887ab67", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_POSSESS", "field": "text", "en": "Possessed", "hash": "a634e6870ee2416d", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_ROOT", "field": "text", "en": "Rooted", "hash": "3bd080d9e263d645", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_SAP", "field": "text", "en": "Sapped", "hash": "41b6157d80a16cc5", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_SCHOOL_INTERRUPT", "field": "text", "en": "Interrupted", "hash": "eae3543bbe1781e4", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_SHACKLE_UNDEAD", "field": "text", "en": "Shackled", "hash": "47c71fb9b74e6bb7", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_SILENCE", "field": "text", "en": "Silenced", "hash": "eea90c8cd021c8dd", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_SLEEP", "field": "text", "en": "Asleep", "hash": "cdd37e311025b4ae", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_SNARE", "field": "text", "en": "Snared", "hash": "23e6519c916320eb", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_STUN", "field": "text", "en": "Stunned", "hash": "a280ed130ac43b19", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_STUN_MECHANIC", "field": "text", "en": "Stunned", "hash": "a280ed130ac43b19", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_TAUNT", "field": "text", "en": "Taunted", "hash": "ac63953f6af4c778", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_DISPLAY_TURN_UNDEAD", "field": "text", "en": "Feared", "hash": "c033119e972702c9", "src": "db2@1.60.1.70245"}
+{"id": "LOSS_OF_CONTROL_SECONDS", "field": "text", "en": "seconds", "hash": "404254b6d770c6d4", "src": "db2@1.60.1.70245"}
+{"id": "LOW", "field": "text", "en": "Low", "hash": "00141ff02dc1f063", "src": "db2@1.60.1.70245"}
+{"id": "LOW_LATENCY_MODE", "field": "text", "en": "Low Latency Mode", "hash": "0acdf8d5dd995fec", "src": "db2@1.60.1.70245"}
+{"id": "LOYALTY_LEVEL", "field": "text", "en": "Loyalty Level %d", "hash": "d82b7a5322fd99ee", "src": "db2@1.60.1.70245"}
+{"id": "LUA_ERROR", "field": "text", "en": "Lua Error", "hash": "8437e5e84856582b", "src": "db2@1.60.1.70245"}
+{"id": "LUA_WARNING", "field": "text", "en": "Lua Warning", "hash": "47c6975b09430f65", "src": "db2@1.60.1.70245"}
+{"id": "LfgActivity:1064", "field": "text", "en": "Custom", "hash": "e8eb93f28a72eb0f", "src": "db2@1.60.1.70245"}
+{"id": "LfgActivityGroup:285", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70245"}
+{"id": "LfgActivityGroup:290", "field": "text", "en": "Raids", "hash": "ac7f80169c608a71", "src": "db2@1.60.1.70245"}
+{"id": "LfgActivityGroup:300", "field": "text", "en": "Battlegrounds", "hash": "ee710fa995072d7b", "src": "db2@1.60.1.70245"}
+{"id": "LfgActivityGroup:301", "field": "text", "en": "World PvP", "hash": "cdc77faa9b28a9ac", "src": "db2@1.60.1.70245"}
+{"id": "LfgCategory:114", "field": "text", "en": "Raids", "hash": "ac7f80169c608a71", "src": "db2@1.60.1.70245"}
+{"id": "LfgCategory:116", "field": "text", "en": "Quests & Zones", "hash": "1e0db24673e767d3", "src": "db2@1.60.1.70245"}
+{"id": "LfgCategory:118", "field": "text", "en": "Battlegrounds", "hash": "ee710fa995072d7b", "src": "db2@1.60.1.70245"}
+{"id": "LfgCategory:120", "field": "text", "en": "Custom", "hash": "e8eb93f28a72eb0f", "src": "db2@1.60.1.70245"}
+{"id": "LfgCategory:2", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:1", "field": "text", "en": "Pick Lock", "hash": "f1d14809b8c9a304", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:10", "field": "text", "en": "Quick Open", "hash": "e988f97d8a00f9b6", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:11", "field": "text", "en": "Quick Close", "hash": "adec8c5be82f2298", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:12", "field": "text", "en": "Open Tinkering", "hash": "0096fcefe74c4196", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:13", "field": "text", "en": "Open Kneeling", "hash": "97644ddaa4c1e562", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:14", "field": "text", "en": "Open Attacking", "hash": "18d10264ddcbbd4e", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:16", "field": "text", "en": "Blasting", "hash": "461797401d173ac5", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:17", "field": "text", "en": "Slow Open", "hash": "f862a57155cbee85", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:18", "field": "text", "en": "Slow Close", "hash": "474f8a5f9934ef07", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:209", "field": "text", "en": "Open Tinkering", "hash": "0096fcefe74c4196", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:211", "field": "text", "en": "Kobold Tracks", "hash": "7b5d08668f66b99e", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:24", "field": "text", "en": "Beast Tracking", "hash": "cfa853c15dd1bf65", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:245", "field": "text", "en": "Comprehend Scroll", "hash": "63c3d078da437095", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:4", "field": "text", "en": "Disarm Trap", "hash": "80ea2e4c066e8d1a", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:5", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:8", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeName:9", "field": "text", "en": "Arm Trap", "hash": "1fd055edac5c9abe", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:1", "field": "text", "en": "Locked Items", "hash": "3df9edee32ec3af3", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:10", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:11", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:12", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:13", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:14", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:16", "field": "text", "en": "Locked Items", "hash": "3df9edee32ec3af3", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:17", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:18", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:19", "field": "text", "en": "Fish", "hash": "097cf2544b4ed706", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:2", "field": "text", "en": "Herbs", "hash": "fd81f19e409181ea", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:209", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:211", "field": "text", "en": "Kobold Tracks", "hash": "7b5d08668f66b99e", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:24", "field": "text", "en": "Beast Tracks", "hash": "8af06f9d79086eda", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:245", "field": "text", "en": "Scroll", "hash": "6515dde9554eef38", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:3", "field": "text", "en": "Ore Deposits", "hash": "fc8b9ecad4a35b31", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:4", "field": "text", "en": "Trap", "hash": "0b5f82f12ab6537f", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:5", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:8", "field": "text", "en": "Unlocked Items", "hash": "f3e3b61838f18321", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeResource:9", "field": "text", "en": "Trap", "hash": "0b5f82f12ab6537f", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:1", "field": "text", "en": "Pick", "hash": "0ad3f235d15c6144", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:10", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:11", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:12", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:13", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:14", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:16", "field": "text", "en": "Blast", "hash": "951b6010a16fcf66", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:17", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:18", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:19", "field": "text", "en": "Fish", "hash": "097cf2544b4ed706", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:2", "field": "text", "en": "Gather", "hash": "7809a82fc40b2615", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:209", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:24", "field": "text", "en": "Track", "hash": "d1dffb309e5a7ffe", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:245", "field": "text", "en": "Comprehend", "hash": "260ed2f1a8ea3162", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:3", "field": "text", "en": "Mine", "hash": "0a6d0eff2925e3db", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:4", "field": "text", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:5", "field": "text", "en": "Open", "hash": "0ab37ae25fbe8751", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:8", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70245"}
+{"id": "LockTypeVerb:9", "field": "text", "en": "Arm", "hash": "0011400c021766b1", "src": "db2@1.60.1.70245"}

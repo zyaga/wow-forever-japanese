@@ -1,128 +1,128 @@
-{"id": 1264000, "field": "name", "en": "(DNT) Water Dunk Aura", "hash": "8cbd7844abd56b27", "src": "db2@1.60.1.70170"}
-{"id": 1264001, "field": "name", "en": "Quadcopter", "hash": "75b58987bca6e91f", "src": "db2@1.60.1.70170"}
-{"id": 1264003, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70170"}
-{"id": 1264118, "field": "name", "en": "Speak With Animals", "hash": "232893a62ed1b3f7", "src": "db2@1.60.1.70170"}
-{"id": 1264118, "field": "aura", "en": "Able to speak with critters.", "hash": "a77e4988d6bae7ca", "src": "db2@1.60.1.70170"}
-{"id": 1264340, "field": "name", "en": "Forgotten Memories", "hash": "7470a372bedeef06", "src": "db2@1.60.1.70170"}
-{"id": 1264366, "field": "name", "en": "Creeping Darkness", "hash": "1e9132b76c852b35", "src": "db2@1.60.1.70170"}
-{"id": 1264377, "field": "name", "en": "Blue Eyes", "hash": "737c60a0bfdf9f15", "src": "db2@1.60.1.70170"}
-{"id": 1264400, "field": "name", "en": "Green Eyes", "hash": "f700da7d1b667c81", "src": "db2@1.60.1.70170"}
-{"id": 1264401, "field": "name", "en": "Red Eyes", "hash": "079f9293148c7f8c", "src": "db2@1.60.1.70170"}
-{"id": 1264413, "field": "name", "en": "Statue Shake", "hash": "f0d3536d9a468059", "src": "db2@1.60.1.70170"}
-{"id": 1264419, "field": "name", "en": "Eyes Test [DNT]", "hash": "0c1d2691ef36eeb9", "src": "db2@1.60.1.70170"}
-{"id": 1264437, "field": "name", "en": "Extremely Loud Bark", "hash": "a3e0fd4bd9ffced9", "src": "db2@1.60.1.70170"}
-{"id": 1264437, "field": "aura", "en": "Cowering in fear.", "hash": "c957ad86147a3928", "src": "db2@1.60.1.70170"}
-{"id": 1264455, "field": "name", "en": "Thunderstomp", "hash": "9bf1382def6eedbb", "src": "db2@1.60.1.70170"}
-{"id": 1264455, "field": "description", "en": "Shakes the ground with thundering force, doing $s1 Nature damage to all enemies within $a1 yds.", "hash": "589fcc907548448a", "src": "db2@1.60.1.70170"}
-{"id": 1264456, "field": "name", "en": "Thunderstomp", "hash": "9bf1382def6eedbb", "src": "db2@1.60.1.70170"}
-{"id": 1264478, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70170"}
-{"id": 1264478, "field": "description", "en": "Emits a piercing shriek, inflicting $s1 Nature damage and increasing the casting time of all spells by $s2% for $d.", "hash": "70c61274a563679e", "src": "db2@1.60.1.70170"}
-{"id": 1264478, "field": "aura", "en": "Increases casting time by $s2%.", "hash": "22a8e915b2ecccf4", "src": "db2@1.60.1.70170"}
-{"id": 1264479, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70170"}
-{"id": 1264479, "field": "description", "en": "Emits a piercing shriek, inflicting $s1 Nature damage and increasing the casting time of all spells by $s2% for $d.", "hash": "70c61274a563679e", "src": "db2@1.60.1.70170"}
-{"id": 1264479, "field": "aura", "en": "Increases casting time by $s2%.", "hash": "22a8e915b2ecccf4", "src": "db2@1.60.1.70170"}
-{"id": 1264480, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70170"}
-{"id": 1264480, "field": "description", "en": "Emits a piercing shriek, inflicting $s1 Nature damage and increasing the casting time of all spells by $s2% for $d.", "hash": "70c61274a563679e", "src": "db2@1.60.1.70170"}
-{"id": 1264480, "field": "aura", "en": "Increases casting time by $s2%.", "hash": "22a8e915b2ecccf4", "src": "db2@1.60.1.70170"}
-{"id": 1264481, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70170"}
-{"id": 1264481, "field": "description", "en": "Emits a piercing shriek, inflicting $s1 Nature damage and increasing the casting time of all spells by $s2% for $d.", "hash": "70c61274a563679e", "src": "db2@1.60.1.70170"}
-{"id": 1264481, "field": "aura", "en": "Increases casting time by $s2%.", "hash": "22a8e915b2ecccf4", "src": "db2@1.60.1.70170"}
-{"id": 1264482, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70170"}
-{"id": 1264482, "field": "description", "en": "Emits a piercing shriek, inflicting $s1 Nature damage and increasing the casting time of all spells by $s2% for $d.", "hash": "70c61274a563679e", "src": "db2@1.60.1.70170"}
-{"id": 1264482, "field": "aura", "en": "Increases casting time by $s2%.", "hash": "22a8e915b2ecccf4", "src": "db2@1.60.1.70170"}
-{"id": 1264483, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70170"}
-{"id": 1264483, "field": "description", "en": "Emits a piercing shriek, inflicting $1264478s1 Nature damage and stunning the target for $1264478d.\r\n", "hash": "8df6df96cdb01064", "src": "db2@1.60.1.70170"}
-{"id": 1264484, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70170"}
-{"id": 1264484, "field": "description", "en": "Emits a piercing shriek, inflicting $1264479s1 Nature damage and stunning the target for $1264479d.\r\n", "hash": "785e62534946baa9", "src": "db2@1.60.1.70170"}
-{"id": 1264486, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70170"}
-{"id": 1264486, "field": "description", "en": "Emits a piercing shriek, inflicting $1264480s1 Nature damage and stunning the target for $1264480d.\r\n", "hash": "2db2b033cf03a7d8", "src": "db2@1.60.1.70170"}
-{"id": 1264487, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70170"}
-{"id": 1264487, "field": "description", "en": "Emits a piercing shriek, inflicting $1264481s1 Nature damage and stunning the target for $1264481d.\r\n", "hash": "181a32f04a9a521d", "src": "db2@1.60.1.70170"}
-{"id": 1264488, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70170"}
-{"id": 1264488, "field": "description", "en": "Emits a piercing shriek, inflicting $1264482s1 Nature damage and stunning the target for $1264482d.\r\n", "hash": "0281b5adc630fc51", "src": "db2@1.60.1.70170"}
-{"id": 1264489, "field": "name", "en": "Prowl", "hash": "8bacd6a75a46b446", "src": "db2@1.60.1.70170"}
-{"id": 1264494, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70170"}
-{"id": 1264494, "field": "description", "en": "Swipe $x1 nearby enemies, inflicting $s1 damage.", "hash": "b0c704b473eebbd0", "src": "db2@1.60.1.70170"}
-{"id": 1264497, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70170"}
-{"id": 1264497, "field": "description", "en": "Swipe $x1 nearby enemies, inflicting $s1 damage.", "hash": "b0c704b473eebbd0", "src": "db2@1.60.1.70170"}
-{"id": 1264498, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70170"}
-{"id": 1264498, "field": "description", "en": "Swipe $x1 nearby enemies, inflicting $s1 damage.", "hash": "b0c704b473eebbd0", "src": "db2@1.60.1.70170"}
-{"id": 1264501, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70170"}
-{"id": 1264501, "field": "description", "en": "Swipe $x1 nearby enemies, inflicting $s1 damage.", "hash": "b0c704b473eebbd0", "src": "db2@1.60.1.70170"}
-{"id": 1264502, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70170"}
-{"id": 1264502, "field": "description", "en": "Swipe $x1 nearby enemies, inflicting $s1 damage.", "hash": "b0c704b473eebbd0", "src": "db2@1.60.1.70170"}
-{"id": 1264530, "field": "name", "en": "Apparition", "hash": "8c67eeb5e218a9b6", "src": "db2@1.60.1.70170"}
-{"id": 1264530, "field": "aura", "en": "Invisible.", "hash": "fb47ef45cc04abec", "src": "db2@1.60.1.70170"}
-{"id": 1264548, "field": "name", "en": "Pounce", "hash": "4594280077ee6413", "src": "db2@1.60.1.70170"}
-{"id": 1264548, "field": "description", "en": "Pounce on the target, dealing $s1 Physical damage and stunning them for $d.", "hash": "9bcf92eb23f45f90", "src": "db2@1.60.1.70170"}
-{"id": 1264548, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70170"}
-{"id": 1264600, "field": "name", "en": "Soulburst", "hash": "57d93211b4798cc6", "src": "db2@1.60.1.70170"}
-{"id": 1264600, "field": "description", "en": "Unleashes fel magic on death, dealing $S1 Shadow damage to all enemies within $r yds.", "hash": "330e6bcca0e59f72", "src": "db2@1.60.1.70170"}
-{"id": 1264628, "field": "name", "en": "Mod Scale 90-110%", "hash": "e90e1ef018c1ac22", "src": "db2@1.60.1.70170"}
-{"id": 1264639, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70170"}
-{"id": 1264639, "field": "description", "en": "Mine a Ghostly Iron Deposit.", "hash": "28ef94576965b712", "src": "db2@1.60.1.70170"}
-{"id": 1264694, "field": "name", "en": "Wake Splash", "hash": "ee0b5a8b251439a8", "src": "db2@1.60.1.70170"}
-{"id": 1264727, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70170"}
-{"id": 1264727, "field": "description", "en": "Swipe $1264494x1 nearby enemies, inflicting $1264494s1 damage.\r\n", "hash": "c9db95f73312aaf4", "src": "db2@1.60.1.70170"}
-{"id": 1264729, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70170"}
-{"id": 1264729, "field": "description", "en": "Swipe $1264497x1 nearby enemies, inflicting $1264497s1 damage.\r\n", "hash": "1dcacc9cbf1283fc", "src": "db2@1.60.1.70170"}
-{"id": 1264730, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70170"}
-{"id": 1264730, "field": "description", "en": "Swipe $1264498x1 nearby enemies, inflicting $1264498s1 damage.\r\n", "hash": "e46fdece4312770a", "src": "db2@1.60.1.70170"}
-{"id": 1264731, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70170"}
-{"id": 1264731, "field": "description", "en": "Swipe $1264501x1 nearby enemies, inflicting $1264501s1 damage.\r\n", "hash": "cb433f089110c6df", "src": "db2@1.60.1.70170"}
-{"id": 1264732, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70170"}
-{"id": 1264732, "field": "description", "en": "Swipe $1264502x1 nearby enemies, inflicting $1264502s1 damage.\r\n", "hash": "91e8513f1510b9ed", "src": "db2@1.60.1.70170"}
-{"id": 1264735, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70170"}
-{"id": 1264735, "field": "description", "en": "Pinches an enemy's legs for $s1 damage and reduces movement speed by $s2% for $d.", "hash": "ccb0407f03e01c5c", "src": "db2@1.60.1.70170"}
-{"id": 1264735, "field": "aura", "en": "Movement slowed by $w2%.", "hash": "be1d802d83fabb18", "src": "db2@1.60.1.70170"}
-{"id": 1264736, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70170"}
-{"id": 1264736, "field": "description", "en": "Pinches an enemy's legs for $s1 damage and reduces movement speed by $s2% for $d.", "hash": "ccb0407f03e01c5c", "src": "db2@1.60.1.70170"}
-{"id": 1264736, "field": "aura", "en": "Movement slowed by $w2%.", "hash": "be1d802d83fabb18", "src": "db2@1.60.1.70170"}
-{"id": 1264739, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70170"}
-{"id": 1264739, "field": "description", "en": "Pinches an enemy's legs for $s1 damage and reduces movement speed by $s2% for $d.", "hash": "ccb0407f03e01c5c", "src": "db2@1.60.1.70170"}
-{"id": 1264739, "field": "aura", "en": "Movement slowed by $w2%.", "hash": "be1d802d83fabb18", "src": "db2@1.60.1.70170"}
-{"id": 1264741, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70170"}
-{"id": 1264741, "field": "description", "en": "Pinches an enemy's legs for $s1 damage and reduces movement speed by $s2% for $d.", "hash": "ccb0407f03e01c5c", "src": "db2@1.60.1.70170"}
-{"id": 1264741, "field": "aura", "en": "Movement slowed by $w2%.", "hash": "be1d802d83fabb18", "src": "db2@1.60.1.70170"}
-{"id": 1264742, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70170"}
-{"id": 1264742, "field": "description", "en": "Pinches an enemy's legs for $s1 damage and reduces movement speed by $s2% for $d.", "hash": "ccb0407f03e01c5c", "src": "db2@1.60.1.70170"}
-{"id": 1264742, "field": "aura", "en": "Movement slowed by $w2%.", "hash": "be1d802d83fabb18", "src": "db2@1.60.1.70170"}
-{"id": 1264745, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70170"}
-{"id": 1264745, "field": "description", "en": "Pinches an enemy's legs for $1264735s1 damage and reduces movement speed by $1264735s2% for $1264735d.", "hash": "13f622564ab21090", "src": "db2@1.60.1.70170"}
-{"id": 1264747, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70170"}
-{"id": 1264747, "field": "description", "en": "Stings the target, inflicting $s1 Nature damage every $t1 sec for $d.", "hash": "f3d56b84b127f08a", "src": "db2@1.60.1.70170"}
-{"id": 1264747, "field": "aura", "en": "Inflicts $s1 Nature damage every $t1 sec.", "hash": "87bc695c17bef07e", "src": "db2@1.60.1.70170"}
-{"id": 1264749, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70170"}
-{"id": 1264749, "field": "description", "en": "Pinches an enemy's legs for $1264736s1 damage and reduces movement speed by $1264736s2% for $1264736d.", "hash": "f8d18e50f1fe747f", "src": "db2@1.60.1.70170"}
-{"id": 1264750, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70170"}
-{"id": 1264750, "field": "description", "en": "Pinches an enemy's legs for $1264739s1 damage and reduces movement speed by $1264739s2% for $1264739d.", "hash": "a763d24de7e3a06e", "src": "db2@1.60.1.70170"}
-{"id": 1264751, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70170"}
-{"id": 1264751, "field": "description", "en": "Pinches an enemy's legs for $1264741s1 damage and reduces movement speed by $1264741s2% for $1264741d.", "hash": "9cd0b591f7bfa8d5", "src": "db2@1.60.1.70170"}
-{"id": 1264752, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70170"}
-{"id": 1264752, "field": "description", "en": "Pinches an enemy's legs for $1264742s1 damage and reduces movement speed by $1264742s2% for $1264742d.", "hash": "81ac21909f0c0cd5", "src": "db2@1.60.1.70170"}
-{"id": 1264758, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70170"}
-{"id": 1264758, "field": "description", "en": "Viciously bites enemy appendages for $s1 damage and reduces the effectiveness of any healing by $s2% for $d.", "hash": "b7f726f919717183", "src": "db2@1.60.1.70170"}
-{"id": 1264758, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70170"}
-{"id": 1264887, "field": "name", "en": "Dispel Barrier", "hash": "e4bd2d8e5e753ea2", "src": "db2@1.60.1.70170"}
-{"id": 1264927, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70170"}
-{"id": 1264927, "field": "description", "en": "Viciously bites enemy appendages for $s1 damage and reduces the effectiveness of any healing by $s2% for $d.", "hash": "b7f726f919717183", "src": "db2@1.60.1.70170"}
-{"id": 1264927, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70170"}
-{"id": 1264929, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70170"}
-{"id": 1264929, "field": "description", "en": "Viciously bites enemy appendages for $s1 damage and reduces the effectiveness of any healing by $s2% for $d.", "hash": "b7f726f919717183", "src": "db2@1.60.1.70170"}
-{"id": 1264929, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70170"}
-{"id": 1264930, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70170"}
-{"id": 1264930, "field": "description", "en": "Viciously bites enemy appendages for $s1 damage and reduces the effectiveness of any healing by $s2% for $d.", "hash": "b7f726f919717183", "src": "db2@1.60.1.70170"}
-{"id": 1264930, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70170"}
-{"id": 1264933, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70170"}
-{"id": 1264933, "field": "description", "en": "Viciously bites enemy appendages for $s1 damage and reduces the effectiveness of any healing by $s2% for $d.", "hash": "b7f726f919717183", "src": "db2@1.60.1.70170"}
-{"id": 1264933, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70170"}
-{"id": 1264937, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70170"}
-{"id": 1264937, "field": "description", "en": "Viciously bites enemy appendages for $1264758s1 damage and reduces the effectiveness of any healing by $1264758s2% for $1264758d.", "hash": "447b7503b6119073", "src": "db2@1.60.1.70170"}
-{"id": 1264939, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70170"}
-{"id": 1264939, "field": "description", "en": "Viciously bites enemy appendages for $1264927s1 damage and reduces the effectiveness of any healing by $1264927s2% for $1264927d.", "hash": "3f7ff8499c19b4b5", "src": "db2@1.60.1.70170"}
-{"id": 1264970, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70170"}
-{"id": 1264970, "field": "description", "en": "Viciously bites enemy appendages for $1264929s1 damage and reduces the effectiveness of any healing by $1264929s2% for $1264929d.", "hash": "a5b97b2766c70a58", "src": "db2@1.60.1.70170"}
-{"id": 1264971, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70170"}
-{"id": 1264971, "field": "description", "en": "Viciously bites enemy appendages for $1264930s1 damage and reduces the effectiveness of any healing by $1264930s2% for $1264930d.", "hash": "016daa8a6696513b", "src": "db2@1.60.1.70170"}
-{"id": 1264972, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70170"}
-{"id": 1264972, "field": "description", "en": "Viciously bites enemy appendages for $1264933s1 damage and reduces the effectiveness of any healing by $1264933s2% for $1264933d.", "hash": "9ac3eed7969a51a7", "src": "db2@1.60.1.70170"}
+{"id": 1264000, "field": "name", "en": "(DNT) Water Dunk Aura", "hash": "8cbd7844abd56b27", "src": "db2@1.60.1.70245"}
+{"id": 1264001, "field": "name", "en": "Quadcopter", "hash": "75b58987bca6e91f", "src": "db2@1.60.1.70245"}
+{"id": 1264003, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70245"}
+{"id": 1264118, "field": "name", "en": "Speak With Animals", "hash": "232893a62ed1b3f7", "src": "db2@1.60.1.70245"}
+{"id": 1264118, "field": "aura", "en": "Able to speak with critters.", "hash": "a77e4988d6bae7ca", "src": "db2@1.60.1.70245"}
+{"id": 1264340, "field": "name", "en": "Forgotten Memories", "hash": "7470a372bedeef06", "src": "db2@1.60.1.70245"}
+{"id": 1264366, "field": "name", "en": "Creeping Darkness", "hash": "1e9132b76c852b35", "src": "db2@1.60.1.70245"}
+{"id": 1264377, "field": "name", "en": "Blue Eyes", "hash": "737c60a0bfdf9f15", "src": "db2@1.60.1.70245"}
+{"id": 1264400, "field": "name", "en": "Green Eyes", "hash": "f700da7d1b667c81", "src": "db2@1.60.1.70245"}
+{"id": 1264401, "field": "name", "en": "Red Eyes", "hash": "079f9293148c7f8c", "src": "db2@1.60.1.70245"}
+{"id": 1264413, "field": "name", "en": "Statue Shake", "hash": "f0d3536d9a468059", "src": "db2@1.60.1.70245"}
+{"id": 1264419, "field": "name", "en": "Eyes Test [DNT]", "hash": "0c1d2691ef36eeb9", "src": "db2@1.60.1.70245"}
+{"id": 1264437, "field": "name", "en": "Extremely Loud Bark", "hash": "a3e0fd4bd9ffced9", "src": "db2@1.60.1.70245"}
+{"id": 1264437, "field": "aura", "en": "Cowering in fear.", "hash": "c957ad86147a3928", "src": "db2@1.60.1.70245"}
+{"id": 1264455, "field": "name", "en": "Thunderstomp", "hash": "9bf1382def6eedbb", "src": "db2@1.60.1.70245"}
+{"id": 1264455, "field": "description", "en": "Shakes the ground with thundering force, doing $s1 Nature damage to all enemies within $a1 yds.", "hash": "589fcc907548448a", "src": "db2@1.60.1.70245"}
+{"id": 1264456, "field": "name", "en": "Thunderstomp", "hash": "9bf1382def6eedbb", "src": "db2@1.60.1.70245"}
+{"id": 1264478, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70245"}
+{"id": 1264478, "field": "description", "en": "Emits a piercing shriek, inflicting $s1 Nature damage and increasing the casting time of all spells by $s2% for $d.", "hash": "70c61274a563679e", "src": "db2@1.60.1.70245"}
+{"id": 1264478, "field": "aura", "en": "Increases casting time by $s2%.", "hash": "22a8e915b2ecccf4", "src": "db2@1.60.1.70245"}
+{"id": 1264479, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70245"}
+{"id": 1264479, "field": "description", "en": "Emits a piercing shriek, inflicting $s1 Nature damage and increasing the casting time of all spells by $s2% for $d.", "hash": "70c61274a563679e", "src": "db2@1.60.1.70245"}
+{"id": 1264479, "field": "aura", "en": "Increases casting time by $s2%.", "hash": "22a8e915b2ecccf4", "src": "db2@1.60.1.70245"}
+{"id": 1264480, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70245"}
+{"id": 1264480, "field": "description", "en": "Emits a piercing shriek, inflicting $s1 Nature damage and increasing the casting time of all spells by $s2% for $d.", "hash": "70c61274a563679e", "src": "db2@1.60.1.70245"}
+{"id": 1264480, "field": "aura", "en": "Increases casting time by $s2%.", "hash": "22a8e915b2ecccf4", "src": "db2@1.60.1.70245"}
+{"id": 1264481, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70245"}
+{"id": 1264481, "field": "description", "en": "Emits a piercing shriek, inflicting $s1 Nature damage and increasing the casting time of all spells by $s2% for $d.", "hash": "70c61274a563679e", "src": "db2@1.60.1.70245"}
+{"id": 1264481, "field": "aura", "en": "Increases casting time by $s2%.", "hash": "22a8e915b2ecccf4", "src": "db2@1.60.1.70245"}
+{"id": 1264482, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70245"}
+{"id": 1264482, "field": "description", "en": "Emits a piercing shriek, inflicting $s1 Nature damage and increasing the casting time of all spells by $s2% for $d.", "hash": "70c61274a563679e", "src": "db2@1.60.1.70245"}
+{"id": 1264482, "field": "aura", "en": "Increases casting time by $s2%.", "hash": "22a8e915b2ecccf4", "src": "db2@1.60.1.70245"}
+{"id": 1264483, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70245"}
+{"id": 1264483, "field": "description", "en": "Emits a piercing shriek, inflicting $1264478s1 Nature damage and stunning the target for $1264478d.\r\n", "hash": "8df6df96cdb01064", "src": "db2@1.60.1.70245"}
+{"id": 1264484, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70245"}
+{"id": 1264484, "field": "description", "en": "Emits a piercing shriek, inflicting $1264479s1 Nature damage and stunning the target for $1264479d.\r\n", "hash": "785e62534946baa9", "src": "db2@1.60.1.70245"}
+{"id": 1264486, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70245"}
+{"id": 1264486, "field": "description", "en": "Emits a piercing shriek, inflicting $1264480s1 Nature damage and stunning the target for $1264480d.\r\n", "hash": "2db2b033cf03a7d8", "src": "db2@1.60.1.70245"}
+{"id": 1264487, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70245"}
+{"id": 1264487, "field": "description", "en": "Emits a piercing shriek, inflicting $1264481s1 Nature damage and stunning the target for $1264481d.\r\n", "hash": "181a32f04a9a521d", "src": "db2@1.60.1.70245"}
+{"id": 1264488, "field": "name", "en": "Sonic Blast", "hash": "950e4bb14f27e442", "src": "db2@1.60.1.70245"}
+{"id": 1264488, "field": "description", "en": "Emits a piercing shriek, inflicting $1264482s1 Nature damage and stunning the target for $1264482d.\r\n", "hash": "0281b5adc630fc51", "src": "db2@1.60.1.70245"}
+{"id": 1264489, "field": "name", "en": "Prowl", "hash": "8bacd6a75a46b446", "src": "db2@1.60.1.70245"}
+{"id": 1264494, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70245"}
+{"id": 1264494, "field": "description", "en": "Swipe $x1 nearby enemies, inflicting $s1 damage.", "hash": "b0c704b473eebbd0", "src": "db2@1.60.1.70245"}
+{"id": 1264497, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70245"}
+{"id": 1264497, "field": "description", "en": "Swipe $x1 nearby enemies, inflicting $s1 damage.", "hash": "b0c704b473eebbd0", "src": "db2@1.60.1.70245"}
+{"id": 1264498, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70245"}
+{"id": 1264498, "field": "description", "en": "Swipe $x1 nearby enemies, inflicting $s1 damage.", "hash": "b0c704b473eebbd0", "src": "db2@1.60.1.70245"}
+{"id": 1264501, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70245"}
+{"id": 1264501, "field": "description", "en": "Swipe $x1 nearby enemies, inflicting $s1 damage.", "hash": "b0c704b473eebbd0", "src": "db2@1.60.1.70245"}
+{"id": 1264502, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70245"}
+{"id": 1264502, "field": "description", "en": "Swipe $x1 nearby enemies, inflicting $s1 damage.", "hash": "b0c704b473eebbd0", "src": "db2@1.60.1.70245"}
+{"id": 1264530, "field": "name", "en": "Apparition", "hash": "8c67eeb5e218a9b6", "src": "db2@1.60.1.70245"}
+{"id": 1264530, "field": "aura", "en": "Invisible.", "hash": "fb47ef45cc04abec", "src": "db2@1.60.1.70245"}
+{"id": 1264548, "field": "name", "en": "Pounce", "hash": "4594280077ee6413", "src": "db2@1.60.1.70245"}
+{"id": 1264548, "field": "description", "en": "Pounce on the target, dealing $s1 Physical damage and stunning them for $d.", "hash": "9bcf92eb23f45f90", "src": "db2@1.60.1.70245"}
+{"id": 1264548, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
+{"id": 1264600, "field": "name", "en": "Soulburst", "hash": "57d93211b4798cc6", "src": "db2@1.60.1.70245"}
+{"id": 1264600, "field": "description", "en": "Unleashes fel magic on death, dealing $S1 Shadow damage to all enemies within $r yds.", "hash": "330e6bcca0e59f72", "src": "db2@1.60.1.70245"}
+{"id": 1264628, "field": "name", "en": "Mod Scale 90-110%", "hash": "e90e1ef018c1ac22", "src": "db2@1.60.1.70245"}
+{"id": 1264639, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70245"}
+{"id": 1264639, "field": "description", "en": "Mine a Ghostly Iron Deposit.", "hash": "28ef94576965b712", "src": "db2@1.60.1.70245"}
+{"id": 1264694, "field": "name", "en": "Wake Splash", "hash": "ee0b5a8b251439a8", "src": "db2@1.60.1.70245"}
+{"id": 1264727, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70245"}
+{"id": 1264727, "field": "description", "en": "Swipe $1264494x1 nearby enemies, inflicting $1264494s1 damage.\r\n", "hash": "c9db95f73312aaf4", "src": "db2@1.60.1.70245"}
+{"id": 1264729, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70245"}
+{"id": 1264729, "field": "description", "en": "Swipe $1264497x1 nearby enemies, inflicting $1264497s1 damage.\r\n", "hash": "1dcacc9cbf1283fc", "src": "db2@1.60.1.70245"}
+{"id": 1264730, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70245"}
+{"id": 1264730, "field": "description", "en": "Swipe $1264498x1 nearby enemies, inflicting $1264498s1 damage.\r\n", "hash": "e46fdece4312770a", "src": "db2@1.60.1.70245"}
+{"id": 1264731, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70245"}
+{"id": 1264731, "field": "description", "en": "Swipe $1264501x1 nearby enemies, inflicting $1264501s1 damage.\r\n", "hash": "cb433f089110c6df", "src": "db2@1.60.1.70245"}
+{"id": 1264732, "field": "name", "en": "Swipe", "hash": "c0ffe7cfa23b8120", "src": "db2@1.60.1.70245"}
+{"id": 1264732, "field": "description", "en": "Swipe $1264502x1 nearby enemies, inflicting $1264502s1 damage.\r\n", "hash": "91e8513f1510b9ed", "src": "db2@1.60.1.70245"}
+{"id": 1264735, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70245"}
+{"id": 1264735, "field": "description", "en": "Pinches an enemy's legs for $s1 damage and reduces movement speed by $s2% for $d.", "hash": "ccb0407f03e01c5c", "src": "db2@1.60.1.70245"}
+{"id": 1264735, "field": "aura", "en": "Movement slowed by $w2%.", "hash": "be1d802d83fabb18", "src": "db2@1.60.1.70245"}
+{"id": 1264736, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70245"}
+{"id": 1264736, "field": "description", "en": "Pinches an enemy's legs for $s1 damage and reduces movement speed by $s2% for $d.", "hash": "ccb0407f03e01c5c", "src": "db2@1.60.1.70245"}
+{"id": 1264736, "field": "aura", "en": "Movement slowed by $w2%.", "hash": "be1d802d83fabb18", "src": "db2@1.60.1.70245"}
+{"id": 1264739, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70245"}
+{"id": 1264739, "field": "description", "en": "Pinches an enemy's legs for $s1 damage and reduces movement speed by $s2% for $d.", "hash": "ccb0407f03e01c5c", "src": "db2@1.60.1.70245"}
+{"id": 1264739, "field": "aura", "en": "Movement slowed by $w2%.", "hash": "be1d802d83fabb18", "src": "db2@1.60.1.70245"}
+{"id": 1264741, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70245"}
+{"id": 1264741, "field": "description", "en": "Pinches an enemy's legs for $s1 damage and reduces movement speed by $s2% for $d.", "hash": "ccb0407f03e01c5c", "src": "db2@1.60.1.70245"}
+{"id": 1264741, "field": "aura", "en": "Movement slowed by $w2%.", "hash": "be1d802d83fabb18", "src": "db2@1.60.1.70245"}
+{"id": 1264742, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70245"}
+{"id": 1264742, "field": "description", "en": "Pinches an enemy's legs for $s1 damage and reduces movement speed by $s2% for $d.", "hash": "ccb0407f03e01c5c", "src": "db2@1.60.1.70245"}
+{"id": 1264742, "field": "aura", "en": "Movement slowed by $w2%.", "hash": "be1d802d83fabb18", "src": "db2@1.60.1.70245"}
+{"id": 1264745, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70245"}
+{"id": 1264745, "field": "description", "en": "Pinches an enemy's legs for $1264735s1 damage and reduces movement speed by $1264735s2% for $1264735d.", "hash": "13f622564ab21090", "src": "db2@1.60.1.70245"}
+{"id": 1264747, "field": "name", "en": "Serpent Sting", "hash": "765007ebad29a031", "src": "db2@1.60.1.70245"}
+{"id": 1264747, "field": "description", "en": "Stings the target, inflicting $s1 Nature damage every $t1 sec for $d.", "hash": "f3d56b84b127f08a", "src": "db2@1.60.1.70245"}
+{"id": 1264747, "field": "aura", "en": "Inflicts $s1 Nature damage every $t1 sec.", "hash": "87bc695c17bef07e", "src": "db2@1.60.1.70245"}
+{"id": 1264749, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70245"}
+{"id": 1264749, "field": "description", "en": "Pinches an enemy's legs for $1264736s1 damage and reduces movement speed by $1264736s2% for $1264736d.", "hash": "f8d18e50f1fe747f", "src": "db2@1.60.1.70245"}
+{"id": 1264750, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70245"}
+{"id": 1264750, "field": "description", "en": "Pinches an enemy's legs for $1264739s1 damage and reduces movement speed by $1264739s2% for $1264739d.", "hash": "a763d24de7e3a06e", "src": "db2@1.60.1.70245"}
+{"id": 1264751, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70245"}
+{"id": 1264751, "field": "description", "en": "Pinches an enemy's legs for $1264741s1 damage and reduces movement speed by $1264741s2% for $1264741d.", "hash": "9cd0b591f7bfa8d5", "src": "db2@1.60.1.70245"}
+{"id": 1264752, "field": "name", "en": "Pinch", "hash": "8a77ceeb5da45ea1", "src": "db2@1.60.1.70245"}
+{"id": 1264752, "field": "description", "en": "Pinches an enemy's legs for $1264742s1 damage and reduces movement speed by $1264742s2% for $1264742d.", "hash": "81ac21909f0c0cd5", "src": "db2@1.60.1.70245"}
+{"id": 1264758, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70245"}
+{"id": 1264758, "field": "description", "en": "Viciously bites enemy appendages for $s1 damage and reduces the effectiveness of any healing by $s2% for $d.", "hash": "b7f726f919717183", "src": "db2@1.60.1.70245"}
+{"id": 1264758, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70245"}
+{"id": 1264887, "field": "name", "en": "Dispel Barrier", "hash": "e4bd2d8e5e753ea2", "src": "db2@1.60.1.70245"}
+{"id": 1264927, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70245"}
+{"id": 1264927, "field": "description", "en": "Viciously bites enemy appendages for $s1 damage and reduces the effectiveness of any healing by $s2% for $d.", "hash": "b7f726f919717183", "src": "db2@1.60.1.70245"}
+{"id": 1264927, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70245"}
+{"id": 1264929, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70245"}
+{"id": 1264929, "field": "description", "en": "Viciously bites enemy appendages for $s1 damage and reduces the effectiveness of any healing by $s2% for $d.", "hash": "b7f726f919717183", "src": "db2@1.60.1.70245"}
+{"id": 1264929, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70245"}
+{"id": 1264930, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70245"}
+{"id": 1264930, "field": "description", "en": "Viciously bites enemy appendages for $s1 damage and reduces the effectiveness of any healing by $s2% for $d.", "hash": "b7f726f919717183", "src": "db2@1.60.1.70245"}
+{"id": 1264930, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70245"}
+{"id": 1264933, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70245"}
+{"id": 1264933, "field": "description", "en": "Viciously bites enemy appendages for $s1 damage and reduces the effectiveness of any healing by $s2% for $d.", "hash": "b7f726f919717183", "src": "db2@1.60.1.70245"}
+{"id": 1264933, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70245"}
+{"id": 1264937, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70245"}
+{"id": 1264937, "field": "description", "en": "Viciously bites enemy appendages for $1264758s1 damage and reduces the effectiveness of any healing by $1264758s2% for $1264758d.", "hash": "447b7503b6119073", "src": "db2@1.60.1.70245"}
+{"id": 1264939, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70245"}
+{"id": 1264939, "field": "description", "en": "Viciously bites enemy appendages for $1264927s1 damage and reduces the effectiveness of any healing by $1264927s2% for $1264927d.", "hash": "3f7ff8499c19b4b5", "src": "db2@1.60.1.70245"}
+{"id": 1264970, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70245"}
+{"id": 1264970, "field": "description", "en": "Viciously bites enemy appendages for $1264929s1 damage and reduces the effectiveness of any healing by $1264929s2% for $1264929d.", "hash": "a5b97b2766c70a58", "src": "db2@1.60.1.70245"}
+{"id": 1264971, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70245"}
+{"id": 1264971, "field": "description", "en": "Viciously bites enemy appendages for $1264930s1 damage and reduces the effectiveness of any healing by $1264930s2% for $1264930d.", "hash": "016daa8a6696513b", "src": "db2@1.60.1.70245"}
+{"id": 1264972, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70245"}
+{"id": 1264972, "field": "description", "en": "Viciously bites enemy appendages for $1264933s1 damage and reduces the effectiveness of any healing by $1264933s2% for $1264933d.", "hash": "9ac3eed7969a51a7", "src": "db2@1.60.1.70245"}

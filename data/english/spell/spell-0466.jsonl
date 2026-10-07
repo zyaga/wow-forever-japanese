@@ -1,137 +1,137 @@
-{"id": 466061, "field": "name", "en": "Infiltration", "hash": "9e97d88cf911218f", "src": "db2@1.60.1.70170"}
-{"id": 466061, "field": "aura", "en": "Find Caius. Stay out of sight.", "hash": "fd401ffcee2d07c6", "src": "db2@1.60.1.70170"}
-{"id": 466062, "field": "name", "en": "Spotted!", "hash": "da34d8ee83fa72d8", "src": "db2@1.60.1.70170"}
-{"id": 466062, "field": "aura", "en": "Caius has fled. Come back later.", "hash": "4624e6073683db1d", "src": "db2@1.60.1.70170"}
-{"id": 466071, "field": "name", "en": "Bronze Trial", "hash": "c0a2266001b41b37", "src": "db2@1.60.1.70170"}
-{"id": 466071, "field": "description", "en": "Challenging the Trial of the Bronze Dragonflight. Time will randomly slow down and speed up.", "hash": "e327009ea9cfe57d", "src": "db2@1.60.1.70170"}
-{"id": 466071, "field": "aura", "en": "Challenging the Trial of the Bronze Dragonflight. Time will randomly slow down and speed up.", "hash": "e327009ea9cfe57d", "src": "db2@1.60.1.70170"}
-{"id": 466072, "field": "name", "en": "Summon Estelenn", "hash": "a1c53cfeb74a4799", "src": "db2@1.60.1.70170"}
-{"id": 466072, "field": "description", "en": "Calls for Estelenn the night elf huntress.", "hash": "e0a6905258285da9", "src": "db2@1.60.1.70170"}
-{"id": 466072, "field": "aura", "en": "Accompanied by Estelenn the night elf huntress.", "hash": "29fe0fd1384b2722", "src": "db2@1.60.1.70170"}
-{"id": 466084, "field": "name", "en": "(DNT) Bronze Affix Manager", "hash": "a981ffc690d2e30a", "src": "db2@1.60.1.70170"}
-{"id": 466108, "field": "name", "en": "[DNT] Mana Beam Visual I", "hash": "3314ea291b26b35d", "src": "db2@1.60.1.70170"}
-{"id": 466116, "field": "name", "en": "Attune Staff of Inferno", "hash": "be9432846007b406", "src": "db2@1.60.1.70170"}
-{"id": 466116, "field": "description", "en": "Attunes your staff to fire.", "hash": "c2d7bd13212fd415", "src": "db2@1.60.1.70170"}
-{"id": 466117, "field": "name", "en": "Attune Staff of Rime", "hash": "c3525799a8088293", "src": "db2@1.60.1.70170"}
-{"id": 466117, "field": "description", "en": "Attunes your staff to frost.", "hash": "51fe11335b5b431c", "src": "db2@1.60.1.70170"}
-{"id": 466118, "field": "name", "en": "Attune Staff of Order", "hash": "bfac11dbef79a863", "src": "db2@1.60.1.70170"}
-{"id": 466118, "field": "description", "en": "Attunes your staff to arcane.", "hash": "9875d928304e57f0", "src": "db2@1.60.1.70170"}
-{"id": 466123, "field": "name", "en": "[DNT] Explosion Visual", "hash": "914bc1ec1b1d48d9", "src": "db2@1.60.1.70170"}
-{"id": 466126, "field": "name", "en": "[DNT] Mana Beam Visual II", "hash": "23b3d3c68cbc2177", "src": "db2@1.60.1.70170"}
-{"id": 466169, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70170"}
-{"id": 466169, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70170"}
-{"id": 466195, "field": "name", "en": "Blazing Wounds", "hash": "f20f768ce9b62e5a", "src": "db2@1.60.1.70170"}
-{"id": 466195, "field": "description", "en": "Burn for $s1 Fire damage every $t1 seconds. This effect stacks.\r\n", "hash": "ca3a7fdc9226d454", "src": "db2@1.60.1.70170"}
-{"id": 466195, "field": "aura", "en": "Burning for $s1 Fire damage every $t1 sec until healed above 90% of your maximum health.\r\nDirect heals remove 1 stack.", "hash": "855f3378334aa622", "src": "db2@1.60.1.70170"}
-{"id": 466211, "field": "name", "en": "Tendrils of Air", "hash": "e1e025f7e167a023", "src": "db2@1.60.1.70170"}
-{"id": 466211, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70170"}
-{"id": 466211, "field": "aura", "en": "Healing effects reduced by $s2%. $s3 Nature damage every $t3  seconds.", "hash": "07892c89e2ac8e5d", "src": "db2@1.60.1.70170"}
-{"id": 466219, "field": "name", "en": "Shadowguard", "hash": "cf44b409d1d1665d", "src": "db2@1.60.1.70170"}
-{"id": 466219, "field": "description", "en": "The caster is surrounded by shadows.  When a spell, melee or ranged attack hits the caster, the attacker will be struck for $28377s1 Shadow damage.  Attackers can only be damaged once every few seconds.  This damage causes no threat.  $n charges.  Lasts $d.", "hash": "3a134e5f4059d1d0", "src": "db2@1.60.1.70170"}
-{"id": 466219, "field": "aura", "en": "Causes $s1 Shadow damage to attacker on hit.  This damage causes no threat.  $n charges.", "hash": "49d9a2325f572e6c", "src": "db2@1.60.1.70170"}
-{"id": 466255, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70170"}
-{"id": 466255, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70170"}
-{"id": 466256, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70170"}
-{"id": 466256, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70170"}
-{"id": 466261, "field": "name", "en": "Red Trial", "hash": "ed06942954b2d6ff", "src": "db2@1.60.1.70170"}
-{"id": 466261, "field": "description", "en": "Challenging the Trial of the Red Dragonflight. When injured, burn for $s1 fire damage every $t1 seconds until healed above 90% of your maximum health. Direct heals remove 1 stack.", "hash": "7dcbf164782aa493", "src": "db2@1.60.1.70170"}
-{"id": 466261, "field": "aura", "en": "Challenging the Trial of the Red Dragonflight. When injured, burn for $s1 fire damage every $t1 seconds until healed above 90% of your maximum health. Direct heals remove 1 stack.", "hash": "7dcbf164782aa493", "src": "db2@1.60.1.70170"}
-{"id": 466266, "field": "name", "en": "Shadowguard", "hash": "cf44b409d1d1665d", "src": "db2@1.60.1.70170"}
-{"id": 466266, "field": "description", "en": "The caster is surrounded by shadows.  When a spell, melee or ranged attack hits the caster, the attacker will be struck for $28377s1 Shadow damage.  Attackers can only be damaged once every few seconds.  This damage causes no threat.  $n charges.  Lasts $d.", "hash": "3a134e5f4059d1d0", "src": "db2@1.60.1.70170"}
-{"id": 466266, "field": "aura", "en": "Causes $s1 Shadow damage to attacker on hit.  This damage causes no threat.  $n charges.", "hash": "49d9a2325f572e6c", "src": "db2@1.60.1.70170"}
-{"id": 466269, "field": "name", "en": "Shadowguard", "hash": "cf44b409d1d1665d", "src": "db2@1.60.1.70170"}
-{"id": 466269, "field": "description", "en": "The caster is surrounded by shadows.  When a spell, melee or ranged attack hits the caster, the attacker will be struck for $28377s1 Shadow damage.  Attackers can only be damaged once every few seconds.  This damage causes no threat.  $n charges.  Lasts $d.", "hash": "3a134e5f4059d1d0", "src": "db2@1.60.1.70170"}
-{"id": 466269, "field": "aura", "en": "Causes $s1 Shadow damage to attacker on hit.  This damage causes no threat.  $n charges.", "hash": "49d9a2325f572e6c", "src": "db2@1.60.1.70170"}
-{"id": 466270, "field": "name", "en": "Tendrils of Air", "hash": "e1e025f7e167a023", "src": "db2@1.60.1.70170"}
-{"id": 466272, "field": "name", "en": "Tendrils of Air", "hash": "e1e025f7e167a023", "src": "db2@1.60.1.70170"}
-{"id": 466272, "field": "aura", "en": "Weakens the targets defenses, reducing Nature resistance by $s1 for $d.", "hash": "d35006295d771e3b", "src": "db2@1.60.1.70170"}
-{"id": 466277, "field": "name", "en": "Blue Trial", "hash": "1f0405e8f994900d", "src": "db2@1.60.1.70170"}
-{"id": 466277, "field": "description", "en": "Challenging the Trial of the Blue Dragonflight. Randomly afflicted with an Arcane Bomb, which will deal heavy damage split among all those affected.", "hash": "90994920ee5aab4f", "src": "db2@1.60.1.70170"}
-{"id": 466277, "field": "aura", "en": "Challenging the Trial of the Blue Dragonflight. Randomly afflicted with an Arcane Bomb, which will deal heavy damage split among all those affected.", "hash": "90994920ee5aab4f", "src": "db2@1.60.1.70170"}
-{"id": 466283, "field": "name", "en": "Arcane Bomb", "hash": "8ce918d8cb47e06a", "src": "db2@1.60.1.70170"}
-{"id": 466286, "field": "name", "en": "Controller Timer", "hash": "3676a58beef2f0cb", "src": "db2@1.60.1.70170"}
-{"id": 466307, "field": "name", "en": "(DNT) Experimental AoE - Spell School Check", "hash": "16092c78aac8ecd9", "src": "db2@1.60.1.70170"}
-{"id": 466312, "field": "name", "en": "(DNT) Experimental Boss Buff - Strength", "hash": "c0afbfd8e7372ae5", "src": "db2@1.60.1.70170"}
-{"id": 466328, "field": "name", "en": "Magic Stone Helmet", "hash": "46b5e463c85b58e8", "src": "db2@1.60.1.70170"}
-{"id": 466329, "field": "name", "en": "Uppercut", "hash": "bd09630b8dda5f6b", "src": "db2@1.60.1.70170"}
-{"id": 466329, "field": "description", "en": "Knock the enemy into the air with a quick uppercut.", "hash": "b41711ba83c1bcba", "src": "db2@1.60.1.70170"}
-{"id": 466357, "field": "name", "en": "Arcane Bomb", "hash": "8ce918d8cb47e06a", "src": "db2@1.60.1.70170"}
-{"id": 466357, "field": "description", "en": "Detonates after $d, dealing heavy damage split among everyone affected.", "hash": "06a0cfc98ebb85c1", "src": "db2@1.60.1.70170"}
-{"id": 466357, "field": "aura", "en": "Detonates after $d, dealing heavy damage split among everyone affected.", "hash": "06a0cfc98ebb85c1", "src": "db2@1.60.1.70170"}
-{"id": 466416, "field": "name", "en": "Green Trial", "hash": "6bce634ebfebe3ce", "src": "db2@1.60.1.70170"}
-{"id": 466416, "field": "description", "en": "Challenging the Trial of the Green Dragonflight. Randomly affected by powerful nature magic, dealing damage to nearby players and leaving a pool of poison.", "hash": "c8f72e66c96e6066", "src": "db2@1.60.1.70170"}
-{"id": 466416, "field": "aura", "en": "Challenging the Trial of the Green Dragonflight. Randomly affected by powerful nature magic, dealing damage to nearby players and leaving a pool of poison.", "hash": "c8f72e66c96e6066", "src": "db2@1.60.1.70170"}
-{"id": 466435, "field": "name", "en": "Nature's Fury", "hash": "8e4743d3f2e84977", "src": "db2@1.60.1.70170"}
-{"id": 466435, "field": "description", "en": "When this expires, deal heavy damage to all nearby players and create a pool of poison.", "hash": "cfb9ea7b90a2e667", "src": "db2@1.60.1.70170"}
-{"id": 466435, "field": "aura", "en": "When this expires, deal heavy damage to all nearby players and create a pool of poison.", "hash": "cfb9ea7b90a2e667", "src": "db2@1.60.1.70170"}
-{"id": 466436, "field": "name", "en": "Nature's Fury", "hash": "8e4743d3f2e84977", "src": "db2@1.60.1.70170"}
-{"id": 466448, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70170"}
-{"id": 466448, "field": "description", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70170"}
-{"id": 466448, "field": "aura", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70170"}
-{"id": 466457, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70170"}
-{"id": 466494, "field": "name", "en": "(DNT) Green Affix Pool Visuals", "hash": "411a9bd908a90b33", "src": "db2@1.60.1.70170"}
-{"id": 466503, "field": "name", "en": "S03 - Tuning and Overrides Passive - Paladin", "hash": "683531f814a92aa2", "src": "db2@1.60.1.70170"}
-{"id": 466513, "field": "name", "en": "Ninja Mask", "hash": "2e8673c6e5212ff8", "src": "db2@1.60.1.70170"}
-{"id": 466552, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70170"}
-{"id": 466552, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70170"}
-{"id": 466565, "field": "name", "en": "Ninja Mask", "hash": "2e8673c6e5212ff8", "src": "db2@1.60.1.70170"}
-{"id": 466583, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70170"}
-{"id": 466583, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70170"}
-{"id": 466596, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70170"}
-{"id": 466596, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70170"}
-{"id": 466596, "field": "aura", "en": "Disguised.", "hash": "005f62fd110016c7", "src": "db2@1.60.1.70170"}
-{"id": 466600, "field": "name", "en": "(DNT) Bronze Essence Warning Visual", "hash": "c319c21ed4f0938c", "src": "db2@1.60.1.70170"}
-{"id": 466603, "field": "name", "en": "(DNT) Bronze Essence Warning Visual Reversed", "hash": "fb183ba8a9674528", "src": "db2@1.60.1.70170"}
-{"id": 466647, "field": "name", "en": "Smoke", "hash": "bfaa6f6833fceff6", "src": "db2@1.60.1.70170"}
-{"id": 466653, "field": "name", "en": "Ninja Mask", "hash": "2e8673c6e5212ff8", "src": "db2@1.60.1.70170"}
-{"id": 466655, "field": "name", "en": "Convalescence", "hash": "df7b22d3e54823af", "src": "db2@1.60.1.70170"}
-{"id": 466662, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70170"}
-{"id": 466662, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70170"}
-{"id": 466668, "field": "name", "en": "Learn Rune", "hash": "3cfcf3f0f524ffd2", "src": "db2@1.60.1.70170"}
-{"id": 466668, "field": "description", "en": "Teaches you a new... wait. Didn't you already learn this?", "hash": "830d5ba5a962c454", "src": "db2@1.60.1.70170"}
-{"id": 466669, "field": "name", "en": "(DNT) Experimental Boss Buff - Attack Speed", "hash": "07c9b31fdc0f4d7d", "src": "db2@1.60.1.70170"}
-{"id": 466670, "field": "name", "en": "(DNT) Experimental Boss Buff - Bonus Armor", "hash": "ac8ef0fc15a96fa7", "src": "db2@1.60.1.70170"}
-{"id": 466672, "field": "name", "en": "(DNT) Experimental Boss Buff - Health Regeneration", "hash": "5b409866ec8e9617", "src": "db2@1.60.1.70170"}
-{"id": 466674, "field": "name", "en": "(DNT) Experimental Boss Buff - Spell Power", "hash": "6f7ea96a902306a2", "src": "db2@1.60.1.70170"}
-{"id": 466675, "field": "name", "en": "(DNT) Experimental Boss Buff - Spell Resistance", "hash": "951e053e1b37567e", "src": "db2@1.60.1.70170"}
-{"id": 466677, "field": "name", "en": "Blood Moon", "hash": "9abd619a99bc97b1", "src": "db2@1.60.1.70170"}
-{"id": 466738, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70170"}
-{"id": 466738, "field": "description", "en": "Creates a cloud of lightning that lasts $d., blasting all enemies in a selected area for $s1 Nature damage and inflicting $s2 additional damage every $t2 sec.", "hash": "9a2f7afedb692864", "src": "db2@1.60.1.70170"}
-{"id": 466739, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70170"}
-{"id": 466739, "field": "description", "en": "Surrounds the caster with $n balls of lightning that have $h% chance of striking melee or ranged attackers for $s1 damage. Each time the lightning shield strikes, a ball of lightning dissipates. Thus, the shield expires after $d. or after it has struck $n times.", "hash": "994de1bbca306a2d", "src": "db2@1.60.1.70170"}
-{"id": 466739, "field": "aura", "en": "$h% chance of inflicting $s1 Nature damage on hit.", "hash": "87c6dd5acd347256", "src": "db2@1.60.1.70170"}
-{"id": 466740, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70170"}
-{"id": 466740, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70170"}
-{"id": 466745, "field": "name", "en": "Ninja Mask", "hash": "2e8673c6e5212ff8", "src": "db2@1.60.1.70170"}
-{"id": 466746, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70170"}
-{"id": 466746, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70170"}
-{"id": 466747, "field": "name", "en": "Ninja Mask", "hash": "2e8673c6e5212ff8", "src": "db2@1.60.1.70170"}
-{"id": 466749, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70170"}
-{"id": 466749, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70170"}
-{"id": 466764, "field": "name", "en": "(DNT) Varmot moustache visual", "hash": "42ceef57664f1b50", "src": "db2@1.60.1.70170"}
-{"id": 466774, "field": "name", "en": "Cyclonic Winds", "hash": "81f0c5d1203c60ef", "src": "db2@1.60.1.70170"}
-{"id": 466774, "field": "description", "en": "Affects nearby enemies with residual energy from the storm. Lasts for $d and inflicts nature damage per second", "hash": "cb2276be01ad67f1", "src": "db2@1.60.1.70170"}
-{"id": 466774, "field": "aura", "en": "Taking Nature damage every second.", "hash": "f7840666475c66a3", "src": "db2@1.60.1.70170"}
-{"id": 466799, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70170"}
-{"id": 466841, "field": "name", "en": "Meathook", "hash": "8708f78827592d97", "src": "db2@1.60.1.70170"}
-{"id": 466841, "field": "description", "en": "Throw out a hooked chain to restrain the target and pull them toward you.", "hash": "752fe057c7f2fb5f", "src": "db2@1.60.1.70170"}
-{"id": 466842, "field": "name", "en": "Combo", "hash": "a7131ae658333a16", "src": "db2@1.60.1.70170"}
-{"id": 466843, "field": "name", "en": "Combo", "hash": "a7131ae658333a16", "src": "db2@1.60.1.70170"}
-{"id": 466850, "field": "name", "en": "Combo", "hash": "a7131ae658333a16", "src": "db2@1.60.1.70170"}
-{"id": 466853, "field": "name", "en": "Combo", "hash": "a7131ae658333a16", "src": "db2@1.60.1.70170"}
-{"id": 466853, "field": "aura", "en": "Overwhelmed by the incoming onslaught.", "hash": "eb268fafacef4382", "src": "db2@1.60.1.70170"}
-{"id": 466870, "field": "name", "en": "Zephyr", "hash": "6888f223174f70c1", "src": "db2@1.60.1.70170"}
-{"id": 466870, "field": "description", "en": "Restore $s1 Energy.", "hash": "a6064380ee95f7e3", "src": "db2@1.60.1.70170"}
-{"id": 466870, "field": "aura", "en": "Restores Energy per second.", "hash": "80de104aaff42c4b", "src": "db2@1.60.1.70170"}
-{"id": 466903, "field": "name", "en": "Blessing of Hethiss", "hash": "1b92de444ba88347", "src": "db2@1.60.1.70170"}
-{"id": 466903, "field": "description", "en": "Blessed by the Loa of Snakes.  Chance on attack or spell cast to deal nature damage to all nearby enemies.", "hash": "0c796b68fbe69761", "src": "db2@1.60.1.70170"}
-{"id": 466903, "field": "aura", "en": "Blessed by the Loa of Snakes.  Chance on attack or spell cast to deal nature damage to all nearby enemies.", "hash": "0c796b68fbe69761", "src": "db2@1.60.1.70170"}
-{"id": 466909, "field": "name", "en": "Blessing of Hethiss", "hash": "1b92de444ba88347", "src": "db2@1.60.1.70170"}
-{"id": 466909, "field": "description", "en": "$@spelldesc466903", "hash": "d6a62d3687957a82", "src": "db2@1.60.1.70170"}
-{"id": 466909, "field": "aura", "en": "$@spellaura466903", "hash": "2e8b3d6c2268b426", "src": "db2@1.60.1.70170"}
-{"id": 466913, "field": "name", "en": "[DNT] Power Bar Color (TCV Raid)", "hash": "cf6131da60b6a91a", "src": "db2@1.60.1.70170"}
-{"id": 466924, "field": "name", "en": "[DNT] Evocation Dummy", "hash": "a974ede63010c38b", "src": "db2@1.60.1.70170"}
-{"id": 466938, "field": "name", "en": "Increase Spell Dam 77", "hash": "4f9bce24d45fdd9a", "src": "db2@1.60.1.70170"}
-{"id": 466938, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70170"}
-{"id": 466987, "field": "name", "en": "Squall", "hash": "5b3914aff6c60f50", "src": "db2@1.60.1.70170"}
-{"id": 466987, "field": "description", "en": "Inflicts $s1  Nature damage to all enemies when no target is within melee range.", "hash": "a322b9374d34408c", "src": "db2@1.60.1.70170"}
+{"id": 466061, "field": "name", "en": "Infiltration", "hash": "9e97d88cf911218f", "src": "db2@1.60.1.70245"}
+{"id": 466061, "field": "aura", "en": "Find Caius. Stay out of sight.", "hash": "fd401ffcee2d07c6", "src": "db2@1.60.1.70245"}
+{"id": 466062, "field": "name", "en": "Spotted!", "hash": "da34d8ee83fa72d8", "src": "db2@1.60.1.70245"}
+{"id": 466062, "field": "aura", "en": "Caius has fled. Come back later.", "hash": "4624e6073683db1d", "src": "db2@1.60.1.70245"}
+{"id": 466071, "field": "name", "en": "Bronze Trial", "hash": "c0a2266001b41b37", "src": "db2@1.60.1.70245"}
+{"id": 466071, "field": "description", "en": "Challenging the Trial of the Bronze Dragonflight. Time will randomly slow down and speed up.", "hash": "e327009ea9cfe57d", "src": "db2@1.60.1.70245"}
+{"id": 466071, "field": "aura", "en": "Challenging the Trial of the Bronze Dragonflight. Time will randomly slow down and speed up.", "hash": "e327009ea9cfe57d", "src": "db2@1.60.1.70245"}
+{"id": 466072, "field": "name", "en": "Summon Estelenn", "hash": "a1c53cfeb74a4799", "src": "db2@1.60.1.70245"}
+{"id": 466072, "field": "description", "en": "Calls for Estelenn the night elf huntress.", "hash": "e0a6905258285da9", "src": "db2@1.60.1.70245"}
+{"id": 466072, "field": "aura", "en": "Accompanied by Estelenn the night elf huntress.", "hash": "29fe0fd1384b2722", "src": "db2@1.60.1.70245"}
+{"id": 466084, "field": "name", "en": "(DNT) Bronze Affix Manager", "hash": "a981ffc690d2e30a", "src": "db2@1.60.1.70245"}
+{"id": 466108, "field": "name", "en": "[DNT] Mana Beam Visual I", "hash": "3314ea291b26b35d", "src": "db2@1.60.1.70245"}
+{"id": 466116, "field": "name", "en": "Attune Staff of Inferno", "hash": "be9432846007b406", "src": "db2@1.60.1.70245"}
+{"id": 466116, "field": "description", "en": "Attunes your staff to fire.", "hash": "c2d7bd13212fd415", "src": "db2@1.60.1.70245"}
+{"id": 466117, "field": "name", "en": "Attune Staff of Rime", "hash": "c3525799a8088293", "src": "db2@1.60.1.70245"}
+{"id": 466117, "field": "description", "en": "Attunes your staff to frost.", "hash": "51fe11335b5b431c", "src": "db2@1.60.1.70245"}
+{"id": 466118, "field": "name", "en": "Attune Staff of Order", "hash": "bfac11dbef79a863", "src": "db2@1.60.1.70245"}
+{"id": 466118, "field": "description", "en": "Attunes your staff to arcane.", "hash": "9875d928304e57f0", "src": "db2@1.60.1.70245"}
+{"id": 466123, "field": "name", "en": "[DNT] Explosion Visual", "hash": "914bc1ec1b1d48d9", "src": "db2@1.60.1.70245"}
+{"id": 466126, "field": "name", "en": "[DNT] Mana Beam Visual II", "hash": "23b3d3c68cbc2177", "src": "db2@1.60.1.70245"}
+{"id": 466169, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70245"}
+{"id": 466169, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70245"}
+{"id": 466195, "field": "name", "en": "Blazing Wounds", "hash": "f20f768ce9b62e5a", "src": "db2@1.60.1.70245"}
+{"id": 466195, "field": "description", "en": "Burn for $s1 Fire damage every $t1 seconds. This effect stacks.\r\n", "hash": "ca3a7fdc9226d454", "src": "db2@1.60.1.70245"}
+{"id": 466195, "field": "aura", "en": "Burning for $s1 Fire damage every $t1 sec until healed above 90% of your maximum health.\r\nDirect heals remove 1 stack.", "hash": "855f3378334aa622", "src": "db2@1.60.1.70245"}
+{"id": 466211, "field": "name", "en": "Tendrils of Air", "hash": "e1e025f7e167a023", "src": "db2@1.60.1.70245"}
+{"id": 466211, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70245"}
+{"id": 466211, "field": "aura", "en": "Healing effects reduced by $s2%. $s3 Nature damage every $t3  seconds.", "hash": "07892c89e2ac8e5d", "src": "db2@1.60.1.70245"}
+{"id": 466219, "field": "name", "en": "Shadowguard", "hash": "cf44b409d1d1665d", "src": "db2@1.60.1.70245"}
+{"id": 466219, "field": "description", "en": "The caster is surrounded by shadows.  When a spell, melee or ranged attack hits the caster, the attacker will be struck for $28377s1 Shadow damage.  Attackers can only be damaged once every few seconds.  This damage causes no threat.  $n charges.  Lasts $d.", "hash": "3a134e5f4059d1d0", "src": "db2@1.60.1.70245"}
+{"id": 466219, "field": "aura", "en": "Causes $s1 Shadow damage to attacker on hit.  This damage causes no threat.  $n charges.", "hash": "49d9a2325f572e6c", "src": "db2@1.60.1.70245"}
+{"id": 466255, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70245"}
+{"id": 466255, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70245"}
+{"id": 466256, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70245"}
+{"id": 466256, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70245"}
+{"id": 466261, "field": "name", "en": "Red Trial", "hash": "ed06942954b2d6ff", "src": "db2@1.60.1.70245"}
+{"id": 466261, "field": "description", "en": "Challenging the Trial of the Red Dragonflight. When injured, burn for $s1 fire damage every $t1 seconds until healed above 90% of your maximum health. Direct heals remove 1 stack.", "hash": "7dcbf164782aa493", "src": "db2@1.60.1.70245"}
+{"id": 466261, "field": "aura", "en": "Challenging the Trial of the Red Dragonflight. When injured, burn for $s1 fire damage every $t1 seconds until healed above 90% of your maximum health. Direct heals remove 1 stack.", "hash": "7dcbf164782aa493", "src": "db2@1.60.1.70245"}
+{"id": 466266, "field": "name", "en": "Shadowguard", "hash": "cf44b409d1d1665d", "src": "db2@1.60.1.70245"}
+{"id": 466266, "field": "description", "en": "The caster is surrounded by shadows.  When a spell, melee or ranged attack hits the caster, the attacker will be struck for $28377s1 Shadow damage.  Attackers can only be damaged once every few seconds.  This damage causes no threat.  $n charges.  Lasts $d.", "hash": "3a134e5f4059d1d0", "src": "db2@1.60.1.70245"}
+{"id": 466266, "field": "aura", "en": "Causes $s1 Shadow damage to attacker on hit.  This damage causes no threat.  $n charges.", "hash": "49d9a2325f572e6c", "src": "db2@1.60.1.70245"}
+{"id": 466269, "field": "name", "en": "Shadowguard", "hash": "cf44b409d1d1665d", "src": "db2@1.60.1.70245"}
+{"id": 466269, "field": "description", "en": "The caster is surrounded by shadows.  When a spell, melee or ranged attack hits the caster, the attacker will be struck for $28377s1 Shadow damage.  Attackers can only be damaged once every few seconds.  This damage causes no threat.  $n charges.  Lasts $d.", "hash": "3a134e5f4059d1d0", "src": "db2@1.60.1.70245"}
+{"id": 466269, "field": "aura", "en": "Causes $s1 Shadow damage to attacker on hit.  This damage causes no threat.  $n charges.", "hash": "49d9a2325f572e6c", "src": "db2@1.60.1.70245"}
+{"id": 466270, "field": "name", "en": "Tendrils of Air", "hash": "e1e025f7e167a023", "src": "db2@1.60.1.70245"}
+{"id": 466272, "field": "name", "en": "Tendrils of Air", "hash": "e1e025f7e167a023", "src": "db2@1.60.1.70245"}
+{"id": 466272, "field": "aura", "en": "Weakens the targets defenses, reducing Nature resistance by $s1 for $d.", "hash": "d35006295d771e3b", "src": "db2@1.60.1.70245"}
+{"id": 466277, "field": "name", "en": "Blue Trial", "hash": "1f0405e8f994900d", "src": "db2@1.60.1.70245"}
+{"id": 466277, "field": "description", "en": "Challenging the Trial of the Blue Dragonflight. Randomly afflicted with an Arcane Bomb, which will deal heavy damage split among all those affected.", "hash": "90994920ee5aab4f", "src": "db2@1.60.1.70245"}
+{"id": 466277, "field": "aura", "en": "Challenging the Trial of the Blue Dragonflight. Randomly afflicted with an Arcane Bomb, which will deal heavy damage split among all those affected.", "hash": "90994920ee5aab4f", "src": "db2@1.60.1.70245"}
+{"id": 466283, "field": "name", "en": "Arcane Bomb", "hash": "8ce918d8cb47e06a", "src": "db2@1.60.1.70245"}
+{"id": 466286, "field": "name", "en": "Controller Timer", "hash": "3676a58beef2f0cb", "src": "db2@1.60.1.70245"}
+{"id": 466307, "field": "name", "en": "(DNT) Experimental AoE - Spell School Check", "hash": "16092c78aac8ecd9", "src": "db2@1.60.1.70245"}
+{"id": 466312, "field": "name", "en": "(DNT) Experimental Boss Buff - Strength", "hash": "c0afbfd8e7372ae5", "src": "db2@1.60.1.70245"}
+{"id": 466328, "field": "name", "en": "Magic Stone Helmet", "hash": "46b5e463c85b58e8", "src": "db2@1.60.1.70245"}
+{"id": 466329, "field": "name", "en": "Uppercut", "hash": "bd09630b8dda5f6b", "src": "db2@1.60.1.70245"}
+{"id": 466329, "field": "description", "en": "Knock the enemy into the air with a quick uppercut.", "hash": "b41711ba83c1bcba", "src": "db2@1.60.1.70245"}
+{"id": 466357, "field": "name", "en": "Arcane Bomb", "hash": "8ce918d8cb47e06a", "src": "db2@1.60.1.70245"}
+{"id": 466357, "field": "description", "en": "Detonates after $d, dealing heavy damage split among everyone affected.", "hash": "06a0cfc98ebb85c1", "src": "db2@1.60.1.70245"}
+{"id": 466357, "field": "aura", "en": "Detonates after $d, dealing heavy damage split among everyone affected.", "hash": "06a0cfc98ebb85c1", "src": "db2@1.60.1.70245"}
+{"id": 466416, "field": "name", "en": "Green Trial", "hash": "6bce634ebfebe3ce", "src": "db2@1.60.1.70245"}
+{"id": 466416, "field": "description", "en": "Challenging the Trial of the Green Dragonflight. Randomly affected by powerful nature magic, dealing damage to nearby players and leaving a pool of poison.", "hash": "c8f72e66c96e6066", "src": "db2@1.60.1.70245"}
+{"id": 466416, "field": "aura", "en": "Challenging the Trial of the Green Dragonflight. Randomly affected by powerful nature magic, dealing damage to nearby players and leaving a pool of poison.", "hash": "c8f72e66c96e6066", "src": "db2@1.60.1.70245"}
+{"id": 466435, "field": "name", "en": "Nature's Fury", "hash": "8e4743d3f2e84977", "src": "db2@1.60.1.70245"}
+{"id": 466435, "field": "description", "en": "When this expires, deal heavy damage to all nearby players and create a pool of poison.", "hash": "cfb9ea7b90a2e667", "src": "db2@1.60.1.70245"}
+{"id": 466435, "field": "aura", "en": "When this expires, deal heavy damage to all nearby players and create a pool of poison.", "hash": "cfb9ea7b90a2e667", "src": "db2@1.60.1.70245"}
+{"id": 466436, "field": "name", "en": "Nature's Fury", "hash": "8e4743d3f2e84977", "src": "db2@1.60.1.70245"}
+{"id": 466448, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70245"}
+{"id": 466448, "field": "description", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70245"}
+{"id": 466448, "field": "aura", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70245"}
+{"id": 466457, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70245"}
+{"id": 466494, "field": "name", "en": "(DNT) Green Affix Pool Visuals", "hash": "411a9bd908a90b33", "src": "db2@1.60.1.70245"}
+{"id": 466503, "field": "name", "en": "S03 - Tuning and Overrides Passive - Paladin", "hash": "683531f814a92aa2", "src": "db2@1.60.1.70245"}
+{"id": 466513, "field": "name", "en": "Ninja Mask", "hash": "2e8673c6e5212ff8", "src": "db2@1.60.1.70245"}
+{"id": 466552, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70245"}
+{"id": 466552, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70245"}
+{"id": 466565, "field": "name", "en": "Ninja Mask", "hash": "2e8673c6e5212ff8", "src": "db2@1.60.1.70245"}
+{"id": 466583, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70245"}
+{"id": 466583, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70245"}
+{"id": 466596, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70245"}
+{"id": 466596, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70245"}
+{"id": 466596, "field": "aura", "en": "Disguised.", "hash": "005f62fd110016c7", "src": "db2@1.60.1.70245"}
+{"id": 466600, "field": "name", "en": "(DNT) Bronze Essence Warning Visual", "hash": "c319c21ed4f0938c", "src": "db2@1.60.1.70245"}
+{"id": 466603, "field": "name", "en": "(DNT) Bronze Essence Warning Visual Reversed", "hash": "fb183ba8a9674528", "src": "db2@1.60.1.70245"}
+{"id": 466647, "field": "name", "en": "Smoke", "hash": "bfaa6f6833fceff6", "src": "db2@1.60.1.70245"}
+{"id": 466653, "field": "name", "en": "Ninja Mask", "hash": "2e8673c6e5212ff8", "src": "db2@1.60.1.70245"}
+{"id": 466655, "field": "name", "en": "Convalescence", "hash": "df7b22d3e54823af", "src": "db2@1.60.1.70245"}
+{"id": 466662, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70245"}
+{"id": 466662, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70245"}
+{"id": 466668, "field": "name", "en": "Learn Rune", "hash": "3cfcf3f0f524ffd2", "src": "db2@1.60.1.70245"}
+{"id": 466668, "field": "description", "en": "Teaches you a new... wait. Didn't you already learn this?", "hash": "830d5ba5a962c454", "src": "db2@1.60.1.70245"}
+{"id": 466669, "field": "name", "en": "(DNT) Experimental Boss Buff - Attack Speed", "hash": "07c9b31fdc0f4d7d", "src": "db2@1.60.1.70245"}
+{"id": 466670, "field": "name", "en": "(DNT) Experimental Boss Buff - Bonus Armor", "hash": "ac8ef0fc15a96fa7", "src": "db2@1.60.1.70245"}
+{"id": 466672, "field": "name", "en": "(DNT) Experimental Boss Buff - Health Regeneration", "hash": "5b409866ec8e9617", "src": "db2@1.60.1.70245"}
+{"id": 466674, "field": "name", "en": "(DNT) Experimental Boss Buff - Spell Power", "hash": "6f7ea96a902306a2", "src": "db2@1.60.1.70245"}
+{"id": 466675, "field": "name", "en": "(DNT) Experimental Boss Buff - Spell Resistance", "hash": "951e053e1b37567e", "src": "db2@1.60.1.70245"}
+{"id": 466677, "field": "name", "en": "Blood Moon", "hash": "9abd619a99bc97b1", "src": "db2@1.60.1.70245"}
+{"id": 466738, "field": "name", "en": "Lightning Cloud", "hash": "761366a485681c4b", "src": "db2@1.60.1.70245"}
+{"id": 466738, "field": "description", "en": "Creates a cloud of lightning that lasts $d., blasting all enemies in a selected area for $s1 Nature damage and inflicting $s2 additional damage every $t2 sec.", "hash": "9a2f7afedb692864", "src": "db2@1.60.1.70245"}
+{"id": 466739, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70245"}
+{"id": 466739, "field": "description", "en": "Surrounds the caster with $n balls of lightning that have $h% chance of striking melee or ranged attackers for $s1 damage. Each time the lightning shield strikes, a ball of lightning dissipates. Thus, the shield expires after $d. or after it has struck $n times.", "hash": "994de1bbca306a2d", "src": "db2@1.60.1.70245"}
+{"id": 466739, "field": "aura", "en": "$h% chance of inflicting $s1 Nature damage on hit.", "hash": "87c6dd5acd347256", "src": "db2@1.60.1.70245"}
+{"id": 466740, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
+{"id": 466740, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70245"}
+{"id": 466745, "field": "name", "en": "Ninja Mask", "hash": "2e8673c6e5212ff8", "src": "db2@1.60.1.70245"}
+{"id": 466746, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70245"}
+{"id": 466746, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70245"}
+{"id": 466747, "field": "name", "en": "Ninja Mask", "hash": "2e8673c6e5212ff8", "src": "db2@1.60.1.70245"}
+{"id": 466749, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70245"}
+{"id": 466749, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70245"}
+{"id": 466764, "field": "name", "en": "(DNT) Varmot moustache visual", "hash": "42ceef57664f1b50", "src": "db2@1.60.1.70245"}
+{"id": 466774, "field": "name", "en": "Cyclonic Winds", "hash": "81f0c5d1203c60ef", "src": "db2@1.60.1.70245"}
+{"id": 466774, "field": "description", "en": "Affects nearby enemies with residual energy from the storm. Lasts for $d and inflicts nature damage per second", "hash": "cb2276be01ad67f1", "src": "db2@1.60.1.70245"}
+{"id": 466774, "field": "aura", "en": "Taking Nature damage every second.", "hash": "f7840666475c66a3", "src": "db2@1.60.1.70245"}
+{"id": 466799, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70245"}
+{"id": 466841, "field": "name", "en": "Meathook", "hash": "8708f78827592d97", "src": "db2@1.60.1.70245"}
+{"id": 466841, "field": "description", "en": "Throw out a hooked chain to restrain the target and pull them toward you.", "hash": "752fe057c7f2fb5f", "src": "db2@1.60.1.70245"}
+{"id": 466842, "field": "name", "en": "Combo", "hash": "a7131ae658333a16", "src": "db2@1.60.1.70245"}
+{"id": 466843, "field": "name", "en": "Combo", "hash": "a7131ae658333a16", "src": "db2@1.60.1.70245"}
+{"id": 466850, "field": "name", "en": "Combo", "hash": "a7131ae658333a16", "src": "db2@1.60.1.70245"}
+{"id": 466853, "field": "name", "en": "Combo", "hash": "a7131ae658333a16", "src": "db2@1.60.1.70245"}
+{"id": 466853, "field": "aura", "en": "Overwhelmed by the incoming onslaught.", "hash": "eb268fafacef4382", "src": "db2@1.60.1.70245"}
+{"id": 466870, "field": "name", "en": "Zephyr", "hash": "6888f223174f70c1", "src": "db2@1.60.1.70245"}
+{"id": 466870, "field": "description", "en": "Restore $s1 Energy.", "hash": "a6064380ee95f7e3", "src": "db2@1.60.1.70245"}
+{"id": 466870, "field": "aura", "en": "Restores Energy per second.", "hash": "80de104aaff42c4b", "src": "db2@1.60.1.70245"}
+{"id": 466903, "field": "name", "en": "Blessing of Hethiss", "hash": "1b92de444ba88347", "src": "db2@1.60.1.70245"}
+{"id": 466903, "field": "description", "en": "Blessed by the Loa of Snakes.  Chance on attack or spell cast to deal nature damage to all nearby enemies.", "hash": "0c796b68fbe69761", "src": "db2@1.60.1.70245"}
+{"id": 466903, "field": "aura", "en": "Blessed by the Loa of Snakes.  Chance on attack or spell cast to deal nature damage to all nearby enemies.", "hash": "0c796b68fbe69761", "src": "db2@1.60.1.70245"}
+{"id": 466909, "field": "name", "en": "Blessing of Hethiss", "hash": "1b92de444ba88347", "src": "db2@1.60.1.70245"}
+{"id": 466909, "field": "description", "en": "$@spelldesc466903", "hash": "d6a62d3687957a82", "src": "db2@1.60.1.70245"}
+{"id": 466909, "field": "aura", "en": "$@spellaura466903", "hash": "2e8b3d6c2268b426", "src": "db2@1.60.1.70245"}
+{"id": 466913, "field": "name", "en": "[DNT] Power Bar Color (TCV Raid)", "hash": "cf6131da60b6a91a", "src": "db2@1.60.1.70245"}
+{"id": 466924, "field": "name", "en": "[DNT] Evocation Dummy", "hash": "a974ede63010c38b", "src": "db2@1.60.1.70245"}
+{"id": 466938, "field": "name", "en": "Increase Spell Dam 77", "hash": "4f9bce24d45fdd9a", "src": "db2@1.60.1.70245"}
+{"id": 466938, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
+{"id": 466987, "field": "name", "en": "Squall", "hash": "5b3914aff6c60f50", "src": "db2@1.60.1.70245"}
+{"id": 466987, "field": "description", "en": "Inflicts $s1  Nature damage to all enemies when no target is within melee range.", "hash": "a322b9374d34408c", "src": "db2@1.60.1.70245"}

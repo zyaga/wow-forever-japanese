@@ -1,93 +1,93 @@
-{"id": 416002, "field": "name", "en": "Engrave Boots - Gladiator Stance", "hash": "714066ffbb28c8e8", "src": "db2@1.60.1.70170"}
-{"id": 416002, "field": "description", "en": "Engrave your boots with the Gladiator Stance rune:\r\n\r\n$@spellicon412513\r\n$@spelldesc412513", "hash": "a64ff401b6550dcb", "src": "db2@1.60.1.70170"}
-{"id": 416003, "field": "name", "en": "Engrave Gloves - Single-Minded Fury", "hash": "d8dfe72d4930a7df", "src": "db2@1.60.1.70170"}
-{"id": 416003, "field": "description", "en": "Engrave your gloves with the Single-Minded Fury rune:\r\n\r\n$@spellicon413404\r\n$@spelldesc413404", "hash": "63801b3dc21fa487", "src": "db2@1.60.1.70170"}
-{"id": 416004, "field": "name", "en": "Engrave Belt - Blood Surge", "hash": "2d44877be750a556", "src": "db2@1.60.1.70170"}
-{"id": 416004, "field": "description", "en": "Engrave your belt with the Blood Surge rune:\r\n\r\n$@spellicon413380\r\n$@spelldesc413380", "hash": "f732cd1e9242182a", "src": "db2@1.60.1.70170"}
-{"id": 416005, "field": "name", "en": "Engrave Belt - Precise Timing", "hash": "b40272cf4066ec94", "src": "db2@1.60.1.70170"}
-{"id": 416005, "field": "description", "en": "Engrave your belt with the Precision Timing rune:\r\n\r\n$@spellicon402922\r\n$@spelldesc402922", "hash": "ef96d5a917d5752e", "src": "db2@1.60.1.70170"}
-{"id": 416008, "field": "name", "en": "Engrave Pants - Everlasting Affliction", "hash": "ac5e689242870100", "src": "db2@1.60.1.70170"}
-{"id": 416008, "field": "description", "en": "Engrave your pants with the Everlasting Affliction rune:\r\n\r\n$@spellicon412689\r\n$@spelldesc412689", "hash": "83f42112a422b0e4", "src": "db2@1.60.1.70170"}
-{"id": 416009, "field": "name", "en": "Engrave Chest - Demonic Tactics", "hash": "43dbf58d097836a9", "src": "db2@1.60.1.70170"}
-{"id": 416009, "field": "description", "en": "Engrave your chest or robe with the Demonic Tactics rune:\r\n\r\n$@spellicon412727\r\n$@spelldesc412727", "hash": "19bb25ebadbc623c", "src": "db2@1.60.1.70170"}
-{"id": 416014, "field": "name", "en": "Engrave Boots - Demonic Knowledge", "hash": "9b38da19e68f8ea0", "src": "db2@1.60.1.70170"}
-{"id": 416014, "field": "description", "en": "Engrave your boots with the Demonic Knowledge rune:\r\n\r\n$@spellicon412732\r\n$@spelldesc412732", "hash": "4f2489e24a5ccf59", "src": "db2@1.60.1.70170"}
-{"id": 416015, "field": "name", "en": "Engrave Bracers - Incinerate", "hash": "3f29576f5129a8fc", "src": "db2@1.60.1.70170"}
-{"id": 416015, "field": "description", "en": "Engrave your bracers with the Incinerate rune:\r\n\r\n$@spellicon412758\r\n$@spelldesc412758", "hash": "296e95c6c39f1f0c", "src": "db2@1.60.1.70170"}
-{"id": 416017, "field": "name", "en": "Engrave Boots - Dance of the Wicked", "hash": "bdd4658dbbc73102", "src": "db2@1.60.1.70170"}
-{"id": 416017, "field": "description", "en": "Engrave your boots with the Dance of the Wicked rune:\r\n\r\n$@spellicon412798\r\n$@spelldesc412798", "hash": "ae65ca312da28c2c", "src": "db2@1.60.1.70170"}
-{"id": 416028, "field": "name", "en": "Engrave Boots - Sacred Shield", "hash": "34acf9b260b21678", "src": "db2@1.60.1.70170"}
-{"id": 416028, "field": "description", "en": "Engrave your boots with the Sacred Shield rune:\r\n\r\n$@spellicon412019\r\n$@spelldesc412019", "hash": "84afb4898fe97f9d", "src": "db2@1.60.1.70170"}
-{"id": 416031, "field": "name", "en": "Engrave Boots - The Art of War", "hash": "dc35ed24db710f1b", "src": "db2@1.60.1.70170"}
-{"id": 416031, "field": "description", "en": "Engrave your boots with the The Art of War rune:\r\n\r\n$@spellicon426157\r\n$@spelldesc426157", "hash": "36ce36571cc38354", "src": "db2@1.60.1.70170"}
-{"id": 416035, "field": "name", "en": "Engrave Boots - Guarded by the Light", "hash": "2c96ccbd902315d6", "src": "db2@1.60.1.70170"}
-{"id": 416035, "field": "description", "en": "Engrave your boots with the Guarded by the Light rune:\r\n\r\n$@spellicon415059\r\n$@spelldesc415059", "hash": "2f71e716a2f30dac", "src": "db2@1.60.1.70170"}
-{"id": 416037, "field": "name", "en": "Engrave Pants - Aura Mastery", "hash": "2965a5f3542015a2", "src": "db2@1.60.1.70170"}
-{"id": 416037, "field": "description", "en": "Engrave your pants with the Aura Mastery rune:\r\n\r\n$@spellicon407624\r\n$@spelldesc407624", "hash": "345f39fc0defa48b", "src": "db2@1.60.1.70170"}
-{"id": 416042, "field": "name", "en": "Engrave Chest - Survival of the Fittest", "hash": "0a20488c546b3418", "src": "db2@1.60.1.70170"}
-{"id": 416042, "field": "description", "en": "Engrave your chest or robe with the Survival of the Fittest rune:\r\n\r\n$@spellicon411115\r\n$@spelldesc411115", "hash": "4d8ef5c640749657", "src": "db2@1.60.1.70170"}
-{"id": 416044, "field": "name", "en": "Engrave Gloves - Sunfire", "hash": "fec5434a2528f4f6", "src": "db2@1.60.1.70170"}
-{"id": 416044, "field": "description", "en": "Engrave your gloves with the Sunfire rune:\r\n\r\n$@spellicon414684\r\n$@spelldesc414684\r\n\r\nIn addition, while in Bear Form, Cat Form, or Dire Bear Form, your Moonfire is replaced with Sunfire (Bear) or Sunfire (Cat). This spell benefits from and triggers all effects associated with Moonfire.\r\n\r\nSunfire (Bear)\r\n$@spelldesc414687\r\n\r\nSunfire (Cat)\r\n$@spelldesc414689", "hash": "bed3fd8c131a3ae6", "src": "db2@1.60.1.70170"}
-{"id": 416046, "field": "name", "en": "Engrave Gloves - Skull Bash", "hash": "1f2cde3324caaeb4", "src": "db2@1.60.1.70170"}
-{"id": 416046, "field": "description", "en": "Engrave your gloves with the Skull Bash rune:\r\n\r\n$@spellicon410176\r\n$@spelldesc410176", "hash": "d5ab304e09c4a183", "src": "db2@1.60.1.70170"}
-{"id": 416049, "field": "name", "en": "Engrave Pants - Lacerate", "hash": "d457f986e8b8ff92", "src": "db2@1.60.1.70170"}
-{"id": 416049, "field": "description", "en": "Engrave your pants with the Lacerate\r\n rune:\r\n\r\n$@spellicon414644\r\n$@spelldesc414644", "hash": "38fe500a349dbfff", "src": "db2@1.60.1.70170"}
-{"id": 416050, "field": "name", "en": "Engrave Chest - Living Seed", "hash": "53fc2c6182b980a5", "src": "db2@1.60.1.70170"}
-{"id": 416050, "field": "description", "en": "Engrave your chest or robe with the Living Seed rune:\r\n\r\n$@spellicon414677\r\n$@spelldesc414677", "hash": "13ee1dbb4892755c", "src": "db2@1.60.1.70170"}
-{"id": 416051, "field": "name", "en": "Engrave Bracers - Elune's Fires", "hash": "7b6479d17387d172", "src": "db2@1.60.1.70170"}
-{"id": 416051, "field": "description", "en": "Engrave your bracers with the Elune's Fires rune:\r\n\r\n$@spellicon414719\r\n$@spelldesc414719", "hash": "8484bc0a64309343", "src": "db2@1.60.1.70170"}
-{"id": 416054, "field": "name", "en": "Engrave Belt - Power Surge", "hash": "aa2ffc3ccabfc58d", "src": "db2@1.60.1.70170"}
-{"id": 416054, "field": "description", "en": "Engrave your belt with the Power Surge rune:\r\n\r\n$@spellicon415100\r\n$@spelldesc415100", "hash": "ce292ee135082810", "src": "db2@1.60.1.70170"}
-{"id": 416055, "field": "name", "en": "Engrave Helm - Mental Dexterity", "hash": "c1cd5d45bd3c4f65", "src": "db2@1.60.1.70170"}
-{"id": 416055, "field": "description", "en": "Engrave your helm with the Mental Dexterity rune:\r\n\r\n$@spellicon415140\r\n$@spelldesc415140", "hash": "e5cd1b79d952ac2f", "src": "db2@1.60.1.70170"}
-{"id": 416057, "field": "name", "en": "Engrave Chest - Healing Rain", "hash": "736e335a1770cf48", "src": "db2@1.60.1.70170"}
-{"id": 416057, "field": "description", "en": "Engrave your chest or robe with the Healing Rain rune:\r\n\r\n$@spellicon415236\r\n$@spelldesc415236", "hash": "0154268c2a6ba3ca", "src": "db2@1.60.1.70170"}
-{"id": 416062, "field": "name", "en": "Engrave Cloak - Coherence", "hash": "b8b6c5e6ca03a96c", "src": "db2@1.60.1.70170"}
-{"id": 416062, "field": "description", "en": "Engrave your cloak with the Coherence rune:\r\n\r\n$@spellicon415096\r\n$@spelldesc415096", "hash": "b0021a71230298e4", "src": "db2@1.60.1.70170"}
-{"id": 416066, "field": "name", "en": "Engrave Helm - Burn", "hash": "98a2af29bdaa8ef5", "src": "db2@1.60.1.70170"}
-{"id": 416066, "field": "description", "en": "Engrave your helm with the Burn rune:\r\n\r\n$@spellicon415231\r\n$@spelldesc415231", "hash": "ac8ad9629c25ac73", "src": "db2@1.60.1.70170"}
-{"id": 416081, "field": "name", "en": "Coherence", "hash": "6f7ef3ff98ebeb98", "src": "db2@1.60.1.70170"}
-{"id": 416081, "field": "description", "en": "Gain the Coherence ability:\r\n\r\n$@spellicon415096\r\n$@spelldesc415096", "hash": "09dca7efbbef330c", "src": "db2@1.60.1.70170"}
-{"id": 416083, "field": "name", "en": "Engrave Helm - Catlike Reflexes", "hash": "d2258051544f4553", "src": "db2@1.60.1.70170"}
-{"id": 416083, "field": "description", "en": "Engrave your helm with the Catlike Reflexes rune:\r\n\r\n$@spellicon415428\r\n$@spelldesc415428", "hash": "62167ba0981ce946", "src": "db2@1.60.1.70170"}
-{"id": 416084, "field": "name", "en": "Engrave Belt - Aspect of the Viper", "hash": "52ed222cf8bca349", "src": "db2@1.60.1.70170"}
-{"id": 416084, "field": "description", "en": "Engrave your belt with the Aspect of the Viper rune:\r\n\r\n$@spellicon415423\r\n$@spelldesc415423", "hash": "bc7e4fbf57a7f862", "src": "db2@1.60.1.70170"}
-{"id": 416085, "field": "name", "en": "Engrave Helm - Lock and Load", "hash": "adb29acc8ea04028", "src": "db2@1.60.1.70170"}
-{"id": 416085, "field": "description", "en": "Engrave your helm with the Lock and Load rune:\r\n\r\n$@spellicon415413\r\n$@spelldesc415413", "hash": "8bef56d4eb010d3e", "src": "db2@1.60.1.70170"}
-{"id": 416086, "field": "name", "en": "Engrave Belt - Melee Specialist", "hash": "0fcbafe7268a8106", "src": "db2@1.60.1.70170"}
-{"id": 416086, "field": "description", "en": "Engrave your belt with the Melee Specialist rune:\r\n\r\n$@spellicon415352\r\n$@spelldesc415352", "hash": "d798d5411e7f995a", "src": "db2@1.60.1.70170"}
-{"id": 416087, "field": "name", "en": "Engrave Belt - Kill Shot", "hash": "9ba14760846eabb1", "src": "db2@1.60.1.70170"}
-{"id": 416087, "field": "description", "en": "Engrave your belt with the Kill Shot rune:\r\n\r\n$@spellicon409593\r\n$@spelldesc409593", "hash": "dce2128a57c81d32", "src": "db2@1.60.1.70170"}
-{"id": 416089, "field": "name", "en": "Engrave Boots - Wyvern Strike", "hash": "c0c3535ebd4fe34d", "src": "db2@1.60.1.70170"}
-{"id": 416089, "field": "description", "en": "Engrave your boots with the Wyvern Strike rune:\r\n\r\n$@spellicon458479\r\n$@spelldesc458479", "hash": "0a678dd2c036c41d", "src": "db2@1.60.1.70170"}
-{"id": 416090, "field": "name", "en": "Engrave Helm - Rapid Killing", "hash": "6cb58f19a44b132e", "src": "db2@1.60.1.70170"}
-{"id": 416090, "field": "description", "en": "Engrave your helm with the Rapid Killing rune:\r\n\r\n$@spellicon415405\r\n$@spelldesc415405", "hash": "becee8c6316daef4", "src": "db2@1.60.1.70170"}
-{"id": 416091, "field": "name", "en": "Engrave Pants - Sniper Training", "hash": "611d48027791fc4c", "src": "db2@1.60.1.70170"}
-{"id": 416091, "field": "description", "en": "Engrave your pants with the Sniper Training rune:\r\n\r\n$@spellicon415399\r\n$@spelldesc415399", "hash": "5849af1cebdbc68d", "src": "db2@1.60.1.70170"}
-{"id": 416093, "field": "name", "en": "Engrave Bracers - Raptor Fury", "hash": "86659fdc5bb1e8cb", "src": "db2@1.60.1.70170"}
-{"id": 416093, "field": "description", "en": "Engrave your bracers with the Raptor Fury rune:\r\n\r\n$@spellicon415358\r\n$@spelldesc415358", "hash": "34e5d6c291bf506a", "src": "db2@1.60.1.70170"}
-{"id": 416116, "field": "name", "en": "Water Elemental Scaling", "hash": "9f3d75929fb66e5a", "src": "db2@1.60.1.70170"}
-{"id": 416153, "field": "name", "en": "Shadowfiend Scaling", "hash": "c0c625fa68f3fa56", "src": "db2@1.60.1.70170"}
-{"id": 416186, "field": "name", "en": "Ba'so - Trade Letter for Rune", "hash": "b93f00827e227716", "src": "db2@1.60.1.70170"}
-{"id": 416189, "field": "name", "en": "Warlock Pet Scaling", "hash": "ef80f0e3f54fa434", "src": "db2@1.60.1.70170"}
-{"id": 416221, "field": "name", "en": "Tim's Test Flight Aura 2", "hash": "4f507ddf9ee9ad04", "src": "db2@1.60.1.70170"}
-{"id": 416262, "field": "name", "en": "Tim's Test Flight Aura 1", "hash": "4f507dde9ee9ad03", "src": "db2@1.60.1.70170"}
-{"id": 416278, "field": "name", "en": "Orgrimmar Chest Ambush", "hash": "cb31698e4b3f502e", "src": "db2@1.60.1.70170"}
-{"id": 416288, "field": "name", "en": "Combine Map Pieces", "hash": "32952a73e4a1a5e7", "src": "db2@1.60.1.70170"}
-{"id": 416288, "field": "description", "en": "Combine with 3 other pieces to make the full map.", "hash": "dcc7f5cfbaee489f", "src": "db2@1.60.1.70170"}
-{"id": 416297, "field": "name", "en": "Near Buried Cache", "hash": "54d97c75af45c5e9", "src": "db2@1.60.1.70170"}
-{"id": 416304, "field": "name", "en": "Dig Up Treasure", "hash": "785217e3e0581aee", "src": "db2@1.60.1.70170"}
-{"id": 416304, "field": "description", "en": "Dig up treasure at the marked location", "hash": "cb9fbb49acaf7910", "src": "db2@1.60.1.70170"}
-{"id": 416441, "field": "name", "en": "[DNT] Player is in Raluk Trigger", "hash": "4cbcd597bab51316", "src": "db2@1.60.1.70170"}
-{"id": 416505, "field": "name", "en": "Track Raluk (Third)", "hash": "c648edd8e87ebc01", "src": "db2@1.60.1.70170"}
-{"id": 416553, "field": "name", "en": "Track Raluk (Second)", "hash": "665bafc8abf8da4a", "src": "db2@1.60.1.70170"}
-{"id": 416768, "field": "name", "en": "Track Raluk (First)", "hash": "17cf871a4e83c4ad", "src": "db2@1.60.1.70170"}
-{"id": 416772, "field": "name", "en": "Place Bait", "hash": "4725dee5be1ab96a", "src": "db2@1.60.1.70170"}
-{"id": 416772, "field": "description", "en": "Place as bait near an island cat's dwelling", "hash": "af609f27213a5b79", "src": "db2@1.60.1.70170"}
-{"id": 416825, "field": "name", "en": "Reveal Poacher", "hash": "9069b58a9ac151c3", "src": "db2@1.60.1.70170"}
-{"id": 416837, "field": "name", "en": "Tame Adder", "hash": "11f05fcaee17c0a6", "src": "db2@1.60.1.70170"}
-{"id": 416837, "field": "aura", "en": "You've made a friend!", "hash": "135ae248dc96d3c5", "src": "db2@1.60.1.70170"}
-{"id": 416861, "field": "name", "en": "Adder Pheromone", "hash": "71cc2dba4ec7af0d", "src": "db2@1.60.1.70170"}
-{"id": 416861, "field": "description", "en": "Your Tame Beast ability also works on adders (as companion pet)", "hash": "e11da250cc668433", "src": "db2@1.60.1.70170"}
-{"id": 416861, "field": "aura", "en": "Your Tame Beast ability also works on adders (as companion pet)", "hash": "e11da250cc668433", "src": "db2@1.60.1.70170"}
-{"id": 416863, "field": "name", "en": "Aura Mastery", "hash": "15b18362073eecab", "src": "db2@1.60.1.70170"}
+{"id": 416002, "field": "name", "en": "Engrave Boots - Gladiator Stance", "hash": "714066ffbb28c8e8", "src": "db2@1.60.1.70245"}
+{"id": 416002, "field": "description", "en": "Engrave your boots with the Gladiator Stance rune:\r\n\r\n$@spellicon412513\r\n$@spelldesc412513", "hash": "a64ff401b6550dcb", "src": "db2@1.60.1.70245"}
+{"id": 416003, "field": "name", "en": "Engrave Gloves - Single-Minded Fury", "hash": "d8dfe72d4930a7df", "src": "db2@1.60.1.70245"}
+{"id": 416003, "field": "description", "en": "Engrave your gloves with the Single-Minded Fury rune:\r\n\r\n$@spellicon413404\r\n$@spelldesc413404", "hash": "63801b3dc21fa487", "src": "db2@1.60.1.70245"}
+{"id": 416004, "field": "name", "en": "Engrave Belt - Blood Surge", "hash": "2d44877be750a556", "src": "db2@1.60.1.70245"}
+{"id": 416004, "field": "description", "en": "Engrave your belt with the Blood Surge rune:\r\n\r\n$@spellicon413380\r\n$@spelldesc413380", "hash": "f732cd1e9242182a", "src": "db2@1.60.1.70245"}
+{"id": 416005, "field": "name", "en": "Engrave Belt - Precise Timing", "hash": "b40272cf4066ec94", "src": "db2@1.60.1.70245"}
+{"id": 416005, "field": "description", "en": "Engrave your belt with the Precision Timing rune:\r\n\r\n$@spellicon402922\r\n$@spelldesc402922", "hash": "ef96d5a917d5752e", "src": "db2@1.60.1.70245"}
+{"id": 416008, "field": "name", "en": "Engrave Pants - Everlasting Affliction", "hash": "ac5e689242870100", "src": "db2@1.60.1.70245"}
+{"id": 416008, "field": "description", "en": "Engrave your pants with the Everlasting Affliction rune:\r\n\r\n$@spellicon412689\r\n$@spelldesc412689", "hash": "83f42112a422b0e4", "src": "db2@1.60.1.70245"}
+{"id": 416009, "field": "name", "en": "Engrave Chest - Demonic Tactics", "hash": "43dbf58d097836a9", "src": "db2@1.60.1.70245"}
+{"id": 416009, "field": "description", "en": "Engrave your chest or robe with the Demonic Tactics rune:\r\n\r\n$@spellicon412727\r\n$@spelldesc412727", "hash": "19bb25ebadbc623c", "src": "db2@1.60.1.70245"}
+{"id": 416014, "field": "name", "en": "Engrave Boots - Demonic Knowledge", "hash": "9b38da19e68f8ea0", "src": "db2@1.60.1.70245"}
+{"id": 416014, "field": "description", "en": "Engrave your boots with the Demonic Knowledge rune:\r\n\r\n$@spellicon412732\r\n$@spelldesc412732", "hash": "4f2489e24a5ccf59", "src": "db2@1.60.1.70245"}
+{"id": 416015, "field": "name", "en": "Engrave Bracers - Incinerate", "hash": "3f29576f5129a8fc", "src": "db2@1.60.1.70245"}
+{"id": 416015, "field": "description", "en": "Engrave your bracers with the Incinerate rune:\r\n\r\n$@spellicon412758\r\n$@spelldesc412758", "hash": "296e95c6c39f1f0c", "src": "db2@1.60.1.70245"}
+{"id": 416017, "field": "name", "en": "Engrave Boots - Dance of the Wicked", "hash": "bdd4658dbbc73102", "src": "db2@1.60.1.70245"}
+{"id": 416017, "field": "description", "en": "Engrave your boots with the Dance of the Wicked rune:\r\n\r\n$@spellicon412798\r\n$@spelldesc412798", "hash": "ae65ca312da28c2c", "src": "db2@1.60.1.70245"}
+{"id": 416028, "field": "name", "en": "Engrave Boots - Sacred Shield", "hash": "34acf9b260b21678", "src": "db2@1.60.1.70245"}
+{"id": 416028, "field": "description", "en": "Engrave your boots with the Sacred Shield rune:\r\n\r\n$@spellicon412019\r\n$@spelldesc412019", "hash": "84afb4898fe97f9d", "src": "db2@1.60.1.70245"}
+{"id": 416031, "field": "name", "en": "Engrave Boots - The Art of War", "hash": "dc35ed24db710f1b", "src": "db2@1.60.1.70245"}
+{"id": 416031, "field": "description", "en": "Engrave your boots with the The Art of War rune:\r\n\r\n$@spellicon426157\r\n$@spelldesc426157", "hash": "36ce36571cc38354", "src": "db2@1.60.1.70245"}
+{"id": 416035, "field": "name", "en": "Engrave Boots - Guarded by the Light", "hash": "2c96ccbd902315d6", "src": "db2@1.60.1.70245"}
+{"id": 416035, "field": "description", "en": "Engrave your boots with the Guarded by the Light rune:\r\n\r\n$@spellicon415059\r\n$@spelldesc415059", "hash": "2f71e716a2f30dac", "src": "db2@1.60.1.70245"}
+{"id": 416037, "field": "name", "en": "Engrave Pants - Aura Mastery", "hash": "2965a5f3542015a2", "src": "db2@1.60.1.70245"}
+{"id": 416037, "field": "description", "en": "Engrave your pants with the Aura Mastery rune:\r\n\r\n$@spellicon407624\r\n$@spelldesc407624", "hash": "345f39fc0defa48b", "src": "db2@1.60.1.70245"}
+{"id": 416042, "field": "name", "en": "Engrave Chest - Survival of the Fittest", "hash": "0a20488c546b3418", "src": "db2@1.60.1.70245"}
+{"id": 416042, "field": "description", "en": "Engrave your chest or robe with the Survival of the Fittest rune:\r\n\r\n$@spellicon411115\r\n$@spelldesc411115", "hash": "4d8ef5c640749657", "src": "db2@1.60.1.70245"}
+{"id": 416044, "field": "name", "en": "Engrave Gloves - Sunfire", "hash": "fec5434a2528f4f6", "src": "db2@1.60.1.70245"}
+{"id": 416044, "field": "description", "en": "Engrave your gloves with the Sunfire rune:\r\n\r\n$@spellicon414684\r\n$@spelldesc414684\r\n\r\nIn addition, while in Bear Form, Cat Form, or Dire Bear Form, your Moonfire is replaced with Sunfire (Bear) or Sunfire (Cat). This spell benefits from and triggers all effects associated with Moonfire.\r\n\r\nSunfire (Bear)\r\n$@spelldesc414687\r\n\r\nSunfire (Cat)\r\n$@spelldesc414689", "hash": "bed3fd8c131a3ae6", "src": "db2@1.60.1.70245"}
+{"id": 416046, "field": "name", "en": "Engrave Gloves - Skull Bash", "hash": "1f2cde3324caaeb4", "src": "db2@1.60.1.70245"}
+{"id": 416046, "field": "description", "en": "Engrave your gloves with the Skull Bash rune:\r\n\r\n$@spellicon410176\r\n$@spelldesc410176", "hash": "d5ab304e09c4a183", "src": "db2@1.60.1.70245"}
+{"id": 416049, "field": "name", "en": "Engrave Pants - Lacerate", "hash": "d457f986e8b8ff92", "src": "db2@1.60.1.70245"}
+{"id": 416049, "field": "description", "en": "Engrave your pants with the Lacerate\r\n rune:\r\n\r\n$@spellicon414644\r\n$@spelldesc414644", "hash": "38fe500a349dbfff", "src": "db2@1.60.1.70245"}
+{"id": 416050, "field": "name", "en": "Engrave Chest - Living Seed", "hash": "53fc2c6182b980a5", "src": "db2@1.60.1.70245"}
+{"id": 416050, "field": "description", "en": "Engrave your chest or robe with the Living Seed rune:\r\n\r\n$@spellicon414677\r\n$@spelldesc414677", "hash": "13ee1dbb4892755c", "src": "db2@1.60.1.70245"}
+{"id": 416051, "field": "name", "en": "Engrave Bracers - Elune's Fires", "hash": "7b6479d17387d172", "src": "db2@1.60.1.70245"}
+{"id": 416051, "field": "description", "en": "Engrave your bracers with the Elune's Fires rune:\r\n\r\n$@spellicon414719\r\n$@spelldesc414719", "hash": "8484bc0a64309343", "src": "db2@1.60.1.70245"}
+{"id": 416054, "field": "name", "en": "Engrave Belt - Power Surge", "hash": "aa2ffc3ccabfc58d", "src": "db2@1.60.1.70245"}
+{"id": 416054, "field": "description", "en": "Engrave your belt with the Power Surge rune:\r\n\r\n$@spellicon415100\r\n$@spelldesc415100", "hash": "ce292ee135082810", "src": "db2@1.60.1.70245"}
+{"id": 416055, "field": "name", "en": "Engrave Helm - Mental Dexterity", "hash": "c1cd5d45bd3c4f65", "src": "db2@1.60.1.70245"}
+{"id": 416055, "field": "description", "en": "Engrave your helm with the Mental Dexterity rune:\r\n\r\n$@spellicon415140\r\n$@spelldesc415140", "hash": "e5cd1b79d952ac2f", "src": "db2@1.60.1.70245"}
+{"id": 416057, "field": "name", "en": "Engrave Chest - Healing Rain", "hash": "736e335a1770cf48", "src": "db2@1.60.1.70245"}
+{"id": 416057, "field": "description", "en": "Engrave your chest or robe with the Healing Rain rune:\r\n\r\n$@spellicon415236\r\n$@spelldesc415236", "hash": "0154268c2a6ba3ca", "src": "db2@1.60.1.70245"}
+{"id": 416062, "field": "name", "en": "Engrave Cloak - Coherence", "hash": "b8b6c5e6ca03a96c", "src": "db2@1.60.1.70245"}
+{"id": 416062, "field": "description", "en": "Engrave your cloak with the Coherence rune:\r\n\r\n$@spellicon415096\r\n$@spelldesc415096", "hash": "b0021a71230298e4", "src": "db2@1.60.1.70245"}
+{"id": 416066, "field": "name", "en": "Engrave Helm - Burn", "hash": "98a2af29bdaa8ef5", "src": "db2@1.60.1.70245"}
+{"id": 416066, "field": "description", "en": "Engrave your helm with the Burn rune:\r\n\r\n$@spellicon415231\r\n$@spelldesc415231", "hash": "ac8ad9629c25ac73", "src": "db2@1.60.1.70245"}
+{"id": 416081, "field": "name", "en": "Coherence", "hash": "6f7ef3ff98ebeb98", "src": "db2@1.60.1.70245"}
+{"id": 416081, "field": "description", "en": "Gain the Coherence ability:\r\n\r\n$@spellicon415096\r\n$@spelldesc415096", "hash": "09dca7efbbef330c", "src": "db2@1.60.1.70245"}
+{"id": 416083, "field": "name", "en": "Engrave Helm - Catlike Reflexes", "hash": "d2258051544f4553", "src": "db2@1.60.1.70245"}
+{"id": 416083, "field": "description", "en": "Engrave your helm with the Catlike Reflexes rune:\r\n\r\n$@spellicon415428\r\n$@spelldesc415428", "hash": "62167ba0981ce946", "src": "db2@1.60.1.70245"}
+{"id": 416084, "field": "name", "en": "Engrave Belt - Aspect of the Viper", "hash": "52ed222cf8bca349", "src": "db2@1.60.1.70245"}
+{"id": 416084, "field": "description", "en": "Engrave your belt with the Aspect of the Viper rune:\r\n\r\n$@spellicon415423\r\n$@spelldesc415423", "hash": "bc7e4fbf57a7f862", "src": "db2@1.60.1.70245"}
+{"id": 416085, "field": "name", "en": "Engrave Helm - Lock and Load", "hash": "adb29acc8ea04028", "src": "db2@1.60.1.70245"}
+{"id": 416085, "field": "description", "en": "Engrave your helm with the Lock and Load rune:\r\n\r\n$@spellicon415413\r\n$@spelldesc415413", "hash": "8bef56d4eb010d3e", "src": "db2@1.60.1.70245"}
+{"id": 416086, "field": "name", "en": "Engrave Belt - Melee Specialist", "hash": "0fcbafe7268a8106", "src": "db2@1.60.1.70245"}
+{"id": 416086, "field": "description", "en": "Engrave your belt with the Melee Specialist rune:\r\n\r\n$@spellicon415352\r\n$@spelldesc415352", "hash": "d798d5411e7f995a", "src": "db2@1.60.1.70245"}
+{"id": 416087, "field": "name", "en": "Engrave Belt - Kill Shot", "hash": "9ba14760846eabb1", "src": "db2@1.60.1.70245"}
+{"id": 416087, "field": "description", "en": "Engrave your belt with the Kill Shot rune:\r\n\r\n$@spellicon409593\r\n$@spelldesc409593", "hash": "dce2128a57c81d32", "src": "db2@1.60.1.70245"}
+{"id": 416089, "field": "name", "en": "Engrave Boots - Wyvern Strike", "hash": "c0c3535ebd4fe34d", "src": "db2@1.60.1.70245"}
+{"id": 416089, "field": "description", "en": "Engrave your boots with the Wyvern Strike rune:\r\n\r\n$@spellicon458479\r\n$@spelldesc458479", "hash": "0a678dd2c036c41d", "src": "db2@1.60.1.70245"}
+{"id": 416090, "field": "name", "en": "Engrave Helm - Rapid Killing", "hash": "6cb58f19a44b132e", "src": "db2@1.60.1.70245"}
+{"id": 416090, "field": "description", "en": "Engrave your helm with the Rapid Killing rune:\r\n\r\n$@spellicon415405\r\n$@spelldesc415405", "hash": "becee8c6316daef4", "src": "db2@1.60.1.70245"}
+{"id": 416091, "field": "name", "en": "Engrave Pants - Sniper Training", "hash": "611d48027791fc4c", "src": "db2@1.60.1.70245"}
+{"id": 416091, "field": "description", "en": "Engrave your pants with the Sniper Training rune:\r\n\r\n$@spellicon415399\r\n$@spelldesc415399", "hash": "5849af1cebdbc68d", "src": "db2@1.60.1.70245"}
+{"id": 416093, "field": "name", "en": "Engrave Bracers - Raptor Fury", "hash": "86659fdc5bb1e8cb", "src": "db2@1.60.1.70245"}
+{"id": 416093, "field": "description", "en": "Engrave your bracers with the Raptor Fury rune:\r\n\r\n$@spellicon415358\r\n$@spelldesc415358", "hash": "34e5d6c291bf506a", "src": "db2@1.60.1.70245"}
+{"id": 416116, "field": "name", "en": "Water Elemental Scaling", "hash": "9f3d75929fb66e5a", "src": "db2@1.60.1.70245"}
+{"id": 416153, "field": "name", "en": "Shadowfiend Scaling", "hash": "c0c625fa68f3fa56", "src": "db2@1.60.1.70245"}
+{"id": 416186, "field": "name", "en": "Ba'so - Trade Letter for Rune", "hash": "b93f00827e227716", "src": "db2@1.60.1.70245"}
+{"id": 416189, "field": "name", "en": "Warlock Pet Scaling", "hash": "ef80f0e3f54fa434", "src": "db2@1.60.1.70245"}
+{"id": 416221, "field": "name", "en": "Tim's Test Flight Aura 2", "hash": "4f507ddf9ee9ad04", "src": "db2@1.60.1.70245"}
+{"id": 416262, "field": "name", "en": "Tim's Test Flight Aura 1", "hash": "4f507dde9ee9ad03", "src": "db2@1.60.1.70245"}
+{"id": 416278, "field": "name", "en": "Orgrimmar Chest Ambush", "hash": "cb31698e4b3f502e", "src": "db2@1.60.1.70245"}
+{"id": 416288, "field": "name", "en": "Combine Map Pieces", "hash": "32952a73e4a1a5e7", "src": "db2@1.60.1.70245"}
+{"id": 416288, "field": "description", "en": "Combine with 3 other pieces to make the full map.", "hash": "dcc7f5cfbaee489f", "src": "db2@1.60.1.70245"}
+{"id": 416297, "field": "name", "en": "Near Buried Cache", "hash": "54d97c75af45c5e9", "src": "db2@1.60.1.70245"}
+{"id": 416304, "field": "name", "en": "Dig Up Treasure", "hash": "785217e3e0581aee", "src": "db2@1.60.1.70245"}
+{"id": 416304, "field": "description", "en": "Dig up treasure at the marked location", "hash": "cb9fbb49acaf7910", "src": "db2@1.60.1.70245"}
+{"id": 416441, "field": "name", "en": "[DNT] Player is in Raluk Trigger", "hash": "4cbcd597bab51316", "src": "db2@1.60.1.70245"}
+{"id": 416505, "field": "name", "en": "Track Raluk (Third)", "hash": "c648edd8e87ebc01", "src": "db2@1.60.1.70245"}
+{"id": 416553, "field": "name", "en": "Track Raluk (Second)", "hash": "665bafc8abf8da4a", "src": "db2@1.60.1.70245"}
+{"id": 416768, "field": "name", "en": "Track Raluk (First)", "hash": "17cf871a4e83c4ad", "src": "db2@1.60.1.70245"}
+{"id": 416772, "field": "name", "en": "Place Bait", "hash": "4725dee5be1ab96a", "src": "db2@1.60.1.70245"}
+{"id": 416772, "field": "description", "en": "Place as bait near an island cat's dwelling", "hash": "af609f27213a5b79", "src": "db2@1.60.1.70245"}
+{"id": 416825, "field": "name", "en": "Reveal Poacher", "hash": "9069b58a9ac151c3", "src": "db2@1.60.1.70245"}
+{"id": 416837, "field": "name", "en": "Tame Adder", "hash": "11f05fcaee17c0a6", "src": "db2@1.60.1.70245"}
+{"id": 416837, "field": "aura", "en": "You've made a friend!", "hash": "135ae248dc96d3c5", "src": "db2@1.60.1.70245"}
+{"id": 416861, "field": "name", "en": "Adder Pheromone", "hash": "71cc2dba4ec7af0d", "src": "db2@1.60.1.70245"}
+{"id": 416861, "field": "description", "en": "Your Tame Beast ability also works on adders (as companion pet)", "hash": "e11da250cc668433", "src": "db2@1.60.1.70245"}
+{"id": 416861, "field": "aura", "en": "Your Tame Beast ability also works on adders (as companion pet)", "hash": "e11da250cc668433", "src": "db2@1.60.1.70245"}
+{"id": 416863, "field": "name", "en": "Aura Mastery", "hash": "15b18362073eecab", "src": "db2@1.60.1.70245"}

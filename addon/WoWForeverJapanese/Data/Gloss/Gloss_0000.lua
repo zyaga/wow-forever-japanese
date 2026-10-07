@@ -23,7 +23,6 @@ WFJ.Data.add("gloss", {
   [20] = "ああ\tああ\tahhh",
   [21] = "ああ\tああ\talas",
   [22] = "ああ\tああ\talas; ah",
-  [23] = "ああ\tああ\tand my",
   [24] = "ああ\tああ\targh",
   [25] = "ああ\tああ\targh (ah)",
   [26] = "ああ\tああ\taw",

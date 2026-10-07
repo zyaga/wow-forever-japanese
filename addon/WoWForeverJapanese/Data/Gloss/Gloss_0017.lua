@@ -807,7 +807,6 @@ WFJ.Data.add("gloss", {
   [17804] = "つもり\tつもり\tI will not (intend), but",
   [17805] = "つもり\tつもり\tI'll (intend to)",
   [17806] = "つもり\tつもり\taim",
-  [17807] = "つもり\tつもり\taims to (intends)",
   [17808] = "つもり\tつもり\tam determined (intend)",
   [17809] = "つもり\tつもり\tam going to (intend)",
   [17810] = "つもり\tつもり\tanticipation (intending)",

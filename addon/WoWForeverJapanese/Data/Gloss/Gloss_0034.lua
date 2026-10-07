@@ -22,7 +22,6 @@ WFJ.Data.add("gloss", {
   [34019] = "ドン\tドン\tbang",
   [34020] = "ドングリ\tドングリ\tacorns",
   [34021] = "ドーナツ\tドーナツ\tdonut",
-  [34022] = "ドーム\tドーム\tdome",
   [34023] = "ナイトエルフ\tナイトエルフ\tNight Elf (a race)",
   [34024] = "ナイトエルフ\tナイトエルフ\tNight Elven (Night Elf: a race)",
   [34025] = "ナイトエルフ\tナイトエルフ\tNight Elves",

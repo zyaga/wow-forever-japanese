@@ -334,6 +334,33 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70170 → 1.60.1.70245 (2026-10-07)
+
+Quest cache: 3,003 records, 2,927 quests (the WFJScan known-list scan of 15,850 ids and its slow recheck); 605
+quests are answered for the first time, most of them vanilla quests already carried from Classic Era, and 12 quests
+70170 answered are not answered on 70245 (they keep their English and Japanese,
+[ADR-050](../adr/050-english-is-additive.md)). Client tables: 58, with the build's own hotfixes (ItemSparse 4,666
+rows added; SpellName and Spell 14 replaced, 7 added, 1 removed; QuestV2 477 replaced; BroadcastText 12 added). The
+wago.tools cross-check: 0 rows differ on all eight tables; ours has only the hotfix rows, and the one ItemEffect row
+wago has and ours lacks (234068) is a row the hotfix cache removes. QuestV2's highest id is 99,411. The UI extract:
+4,419 files; two changed from 70170 (the whisper target pattern in the chat edit box, a closure in the talent
+tooltip), both in paths the addon uses (the edit box header, the talent tooltip event), neither needing a change. The served-text inventory: no column added or dropped.
+
+| Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| quest | 12 machine (4 titles, 5 objectives, 3 descriptions); 5 more machine lines rejected because a name in the English changed (Proudmore, Dragonmaws, Potion, Magus Voidglare); 4 hand-written | 120 titles, 113 objectives, 113 descriptions | 6 (the served record: it compares with every earlier build and counts a quest the build's QuestV2 still lists as served, so it differs from the 12 the cache comparison gives) | 120 titles, 113 objectives, 113 descriptions, the 17 machine lines redrafted, all with word lists; the 4 hand-written lines reviewed: 2 kept (a full stop, `WANTED:`), 2 corrected (`Incendia Powder` now capitalised) |
+| item | 0 | 29 tooltips; 8 hand-written lines that start shipping because the item is served now | 12 | 29 new; of the 8 hand-written lines, 6 ruled out and redrafted (3 with numbers the template fills in, one fixed value, and 2 that named the wrong stat: parry for a shield block chance, critical strike for bonus healing), 2 (10769, 10770) held back: no tooltip English names their stat yet, so they ship nothing until a build gives it; one redraft from the 1.60.1.70170 round (7747) also got its `accept` ruling |
+| spell | 0 | 0 | 108 | none |
+| objective, area | 0 | 18 objectives, 5 areas | 0 | 17 objectives (one is only an item name, listed in `objective_names.txt`), 5 areas |
+| gossip | 0 | 5 (a quest's other wordings and completion log lines) | 0 | 5, with word lists |
+| ui | 0 | 0 | 160 keys no longer used | none |
+| book | 0 | 24 pages (11 unique), left over from earlier builds | 0 | none: picture-only pages and one name-and-dates page |
+
+Left out with a reason: two item tooltips whose template the pipeline cannot render yet (279976 `too_many_variants`,
+286405 `branches_indistinguishable`), the spell templates already listed for a follow-up, and the two riding skills.
+Not-names entries were added for ordinary capitalised words the name check flagged (`Attack Power`, `Neutral` as a
+reputation standing, the title words `On the Lam`, `Highway Robbery`, `Sentiments`, and `rogue` for stray elementals).
+
 ### 1.60.1.70124 → 1.60.1.70170 (2026-10-02)
 
 Quest cache: 2,406 records (the all-ids sweep, cut by a logout near the top of the range, a catch-up scan of

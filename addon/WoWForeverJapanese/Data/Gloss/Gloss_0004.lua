@@ -123,7 +123,6 @@ WFJ.Data.add("gloss", {
   [4120] = "いる\tいる\twhether (any) are",
   [4121] = "いる\tいる\twhether (you) are there or not",
   [4122] = "いる\tいる\twhile (there are)",
-  [4123] = "いる\tいる\twhile there are",
   [4124] = "いる\tいる\twho are",
   [4125] = "いる\tいる\twho are (at)",
   [4126] = "いる\tいる\twho are (here)",

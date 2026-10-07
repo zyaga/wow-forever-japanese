@@ -557,7 +557,6 @@ WFJ.Data.add("gloss", {
   [134554] = "隠す\tかくす\thidden away",
   [134555] = "隠す\tかくす\thide",
   [134556] = "隠す\tかくす\thide (are hiding)",
-  [134557] = "隠す\tかくす\thide (be hidden)",
   [134558] = "隠す\tかくす\thides (is hidden)",
   [134559] = "隠す\tかくす\thiding",
   [134560] = "隠す\tかくす\thiding (hidden)",
@@ -999,6 +998,5 @@ WFJ.Data.add("gloss", {
   [134996] = "集める\tあつめる\tonce you have collected",
   [134997] = "集める\tあつめる\tonce you have gathered",
   [134998] = "集める\tあつめる\tonce you have harvested (gathered)",
-  [134999] = "集める\tあつめる\tonce you've gathered (him)",
   [135000] = "集める\tあつめる\tpicking up (collecting)",
 })

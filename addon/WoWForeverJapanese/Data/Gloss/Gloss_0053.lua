@@ -156,7 +156,6 @@ WFJ.Data.add("gloss", {
   [53153] = "包囲する\tほういする\tlaid siege to",
   [53154] = "包囲する\tほういする\tlay siege",
   [53155] = "包囲する\tほういする\tlay siege (try to besiege)",
-  [53156] = "包囲する\tほういする\tlay siege to",
   [53157] = "包囲する\tほういする\tlaying siege to",
   [53158] = "包囲する\tほういする\tunder siege",
   [53159] = "包囲する\tほういする\tunder siege (surrounded)",
