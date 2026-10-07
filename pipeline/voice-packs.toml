@@ -30,7 +30,7 @@ holds = "No audio. Installs every voice pack below."
 folder = "WoWForeverJapanese_VoiceLevels1to10"
 title = "WoW Forever Japanese Voice: Levels 1-10"
 slug = "wow-forever-japanese-voice-levels-1-10"
-project_id = 0
+project_id = 1732050
 levels = [1, 10]
 holds = "Quests of levels 1 to 10, and the talk of their NPCs."
 
