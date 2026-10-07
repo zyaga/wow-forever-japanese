@@ -36,9 +36,10 @@ def toc_text(
     """A pack's TOC (with `credits`, it loads Register.lua) or the entry's (`credits` None: no files). The
     dependency on the main addon only orders loading: installing voice never installs the main addon."""
     if credits:
+        # English only: the AddOn List tooltip font has no Japanese glyphs, and several model names are Japanese
         notes = (
-            f"Japanese voice for WoW Forever Japanese. Voices made locally with {credits['engine']}, "
-            f"models {credits['models']} ({credits['licence']})."
+            "Japanese voice for WoW Forever Japanese. Voices made locally with the AivisSpeech Engine; "
+            "the voice models and their licences are listed in this addon's README.txt."
         )
     else:
         notes = "Japanese voice for WoW Forever Japanese: installs every voice pack. No audio of its own."

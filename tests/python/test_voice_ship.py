@@ -223,6 +223,8 @@ def test_pack_writes_the_entry_and_every_pack(tmp_path, engine, monkeypatch):  #
     atoc = (a / "WoWForeverJapanese_VoiceA.toc").read_text()
     assert "## Title: A\n" in atoc and "## X-Curse-Project-ID: 2\n" in atoc
     assert main_icon + "\n" in atoc
+    notes = next(ln for ln in atoc.splitlines() if ln.startswith("## Notes:"))
+    assert notes.isascii() and "README.txt" in notes  # the AddOn List tooltip shows no Japanese glyphs
     assert "## Version: 2026." in atoc or "## Version: 20" in atoc
     assert "X-Curse-Project-ID" not in (out / "WoWForeverJapanese_VoiceB" / "WoWForeverJapanese_VoiceB.toc").read_text()
     assert not list((out / "WoWForeverJapanese_VoiceB" / "Sound").iterdir())
