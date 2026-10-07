@@ -44,6 +44,8 @@ When the game shows English the addon has no translation for, the addon notes th
 
 To send what it noted, click **Send English** on that page (or type **/wfj collector send**). Copy the link the window shows, open it in your web browser and submit the GitHub issue form it opens, already filled in; then click **I sent it** in the game. If the window shows a second box, paste that text into the form too. When the window says the text is too long even to paste, it asks you to zip the saved file and drag it into the same form (type **/reload** first if you played since logging in).
 
+When 10 or more lines are waiting, a line in chat at login or reload says how many, at most once a day (**/wfj collector remind off** stops it). While any line is waiting, the minimap button's menu has **Send collected English** too.
+
 ### <span style="color:#E8C77E;">Install</span>
 
 Install it with the CurseForge app (make sure your **Forever** install is selected), or unzip the download into your Forever client's `Interface/AddOns` folder. World of Warcraft: Forever only; no other addons or libraries needed.
@@ -112,6 +114,8 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 ゲームに表示された英語のうち、アドオンに日本語訳がないものは、あとで翻訳できるようにアドオンの設定ファイルに記録されます。クラスと種族は保存されます。ゲームの文章の一部がそれによって変わるためです。キャラクター名、アカウント、レルム、位置は保存されません。自分で送らない限り、どこにも送信されません。設定の **英語テキスト収集** でオフにできます。
 
 記録した英語を送るには、そのページの **英語を送る** をクリックします（**/wfj collector send** でも同じです）。ウィンドウに表示されたリンクをコピーしてブラウザで開き、入力済みで開く GitHub の Issue フォームを送信してから、ゲーム内で **送信しました** をクリックします。ウィンドウに 2 つ目の欄があるときは、その文字列もフォームに貼り付けてください。貼り付けられないほど長いとウィンドウに表示されたときは、保存ファイルを zip にして同じフォームにドラッグするよう案内されます（ログイン後に遊んだ場合は先に **/reload** してください）。
+
+送っていない行が 10 以上あると、ログイン時と /reload 時にその数をチャットでお知らせします（1 日 1 回まで、**/wfj collector remind off** で止められます）。送っていない行があるあいだは、ミニマップボタンのメニューにも **集めた英語を送る** が表示されます。
 
 ### <span style="color:#E8C77E;">インストール</span>
 

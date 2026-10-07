@@ -1736,6 +1736,7 @@ Core\Objectives.lua
 Core\SurfaceState.lua
 Core\Collector.lua
 Core\CollectorSend.lua
+Core\CollectorRemind.lua
 Core\RecentLines.lua
 Core\Reports.lua
 Core\ReportText.lua

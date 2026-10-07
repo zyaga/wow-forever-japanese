@@ -10,7 +10,7 @@ local TAIL = {
   "Core/Modifier.lua",
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
-  "Core/Collector.lua", "Core/CollectorSend.lua",
+  "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
   "Core/BugReport.lua",
   "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",

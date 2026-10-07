@@ -99,6 +99,11 @@ in the game, so the next send holds only new lines. Lines that have a translatio
 window says the text is too long even to paste, it asks you to zip the saved file and drag it into the same form
 (type `/reload` first if you played since logging in).
 
+**A reminder to send it.** When 10 or more lines are waiting to be sent, one line in chat at login or reload says how many,
+at most once a day. To stop it, type `/wfj collector remind off` or turn off **Remind me when collected English is
+waiting to be sent** on the **English Collector** page. While any line is waiting, the minimap button's right-click
+menu also has **Send collected English**, with the count.
+
 ![The English Collector settings page, with the steps and the Send English button](docs/images/collector.jpg)
 
 ## Reporting a bad translation
@@ -244,6 +249,8 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 **まだ翻訳のない英語の記録。** ゲームに表示された英語のうち、アドオンに日本語訳がないもの（クエスト本文、NPC のセリフとその NPC の ID、アイテムと呪文の説明、NPC の名前）は、あとで翻訳できるようにアドオンの設定ファイルに記録されます。クラスと種族は保存されます。ゲームの文章の一部がそれによって変わるためです。キャラクター名、アカウント、レルム、位置は保存されません。自分で送らない限り、どこにも送信されません。初期設定ではオンで、最初にチャットでお知らせします。設定の **英語テキスト収集** でオフにできます。
 
 **記録した英語の送り方。** 設定の **英語テキスト収集** ページで **英語を送る** をクリックします（`/wfj collector send` と入力しても同じです）。まだ送っていない行が 1 つのリンクにまとめられたウィンドウが開きます。リンクをコピーして（クリックして Ctrl+C）ブラウザで開くと、入力済みの GitHub の Issue フォームが開きます。ウィンドウに 2 つ目の欄があるときは、リンクに入りきらない長さです。その文字列もフォームの欄に貼り付けてください。Issue を送信したら、ゲーム内で **送信しました** をクリックします。次回は新しい行だけを送ります。その時点で翻訳がある行は除かれます。貼り付けられないほど長いとウィンドウに表示されたときは、保存ファイルを zip にして同じフォームにドラッグするよう案内されます（ログイン後に遊んだ場合は先に `/reload` してください）。
+
+**送信待ちのお知らせ。** まだ送っていない行が 10 以上あると、ログイン時と /reload 時にその数をチャットでお知らせします（1 日 1 回まで）。止めるには `/wfj collector remind off` と入力するか、**英語テキスト収集** ページの **集めた英語が送信待ちのときに知らせる** をオフにします。送っていない行があるあいだは、ミニマップボタンの右クリックメニューにも件数付きの **集めた英語を送る** が表示されます。
 
 ![英語テキスト収集の設定画面。手順と「英語を送る」ボタンがある](docs/images/collector-ja.jpg)
 

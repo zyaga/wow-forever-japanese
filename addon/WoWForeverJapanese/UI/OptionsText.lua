@@ -291,6 +291,7 @@ Text.T = {
   },
   ["minimap.enabled"] = { en = "Translation on", ja = "翻訳オン" },
   ["minimap.hide"] = { en = "Hide this button", ja = "このボタンを隠す" },
+  ["minimap.sendEnglish"] = { en = "Send collected English (%s)", ja = "集めた英語を送る（%s）" },
 }
 
 -- Slash reference on the About page (English: it is the literal grammar, like the chat output).

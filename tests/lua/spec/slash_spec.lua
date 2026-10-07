@@ -61,8 +61,8 @@ describe("/wfj covers every setting", function()
       end
     end
     -- the original eight + collector.enabled + area.interface + area.books + readings.enabled + readings.glosses
-    -- + minimapButton
-    assert.are.equal(14, n)
+    -- + minimapButton + collector.remind
+    assert.are.equal(15, n)
   end)
 
   it("/wfj bug opens the report window on Bug; /wfj log ends with the Lua error count", function()
@@ -342,6 +342,14 @@ describe("/wfj collector", function()
 
   local function wfj(line) SlashCmdList.WFJ(line) end
   local function last() return Stub.prints[#Stub.prints] end
+
+  it("remind off / remind on set collector.remind, the command the reminder line names", function()
+    wfj("collector remind off")
+    assert.is_false(S.get("collector.remind"))
+    assert.is_true(S.get("collector.enabled")) -- collecting goes on
+    wfj("collector remind on")
+    assert.is_true(S.get("collector.remind"))
+  end)
 
   it("prints the status line bare and with status", function()
     WFJ.Collector.record("quest", 9999, "title", "A Forever Quest")

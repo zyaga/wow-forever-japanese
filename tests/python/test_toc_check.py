@@ -24,7 +24,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua",
         "Core/Objectives.lua",  # objective lines
         "Core/SurfaceState.lua",
-        "Core/Collector.lua", "Core/CollectorSend.lua",  # the collector and its send
+        "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua",  # the collector, its send, its reminder
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
         "Core/Diag.lua", "Core/BugReport.lua",  # the problem log, the bug report link
         "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
