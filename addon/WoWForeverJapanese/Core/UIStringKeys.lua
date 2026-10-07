@@ -622,6 +622,10 @@ UIStrings.SPELL_DURATIONS = { "INT_SPELL_DURATION_DAYS", "INT_SPELL_DURATION_HOU
 -- line that starts with a dictionary word ("Return to Verner", "Frost Resistance increased by 30"). They are matched
 -- only where a widget asks for them by key (matchOnly), never by an unrestricted match.
 UIStrings.ONLY = { COOLDOWN_VIEWER_SETTINGS_ACTION_ADD_ALERT = true,
+  -- "%s in %s" and "%s by %s": two free-text halves around one short word would split any sentence without a
+  -- period at that word and show the halves in the Japanese order ("Cannot change equip status while in combat"
+  -- in an item tooltip became "combatのCannot change equip status while"); the wardrobe and the death recap ask by key
+  WARDROBE_TOOLTIP_ENCOUNTER_SOURCE = true, DEATH_RECAP_CAST_BY_TT = true,
   -- a renown reward's "Mount: %s" / "Illusion: %s": the name of an item or spell, so only where the renown window asks
   RENOWN_REWARD_FOLLOWER_NAME_FORMAT = true, RENOWN_REWARD_ILLUSION_NAME_FORMAT = true,
   RENOWN_REWARD_MOUNT_NAME_FORMAT = true, RENOWN_REWARD_TITLE_NAME_FORMAT = true,

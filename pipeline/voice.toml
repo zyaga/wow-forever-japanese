@@ -258,6 +258,18 @@ style = 606865152 # ノーマル
 licence = "ACML 1.0"
 fits = "picked at the audition"
 
+[roster.v1325133120]
+model = "花音"
+style = 1325133120 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
+[roster.v376644064]
+model = "桜音"
+style = 376644064 # ノーマル
+licence = "ACML 1.0"
+fits = "picked at the audition"
+
 # Cast rows, first match wins. `when` names profile fields (race, gender, age, archetype, role) and the value
 # or list of values to match; a field left out matches anything. `voices` is a list: each creature gets one
 # of them, always the same one (a hash of its id), so neighbours vary. A row with no voices yet is skipped.
@@ -405,6 +417,11 @@ when = { race = ["gnome", "goblin"], gender = "female" }
 voices = ["v604166016", "v1388823424"]
 
 [[cast]]
+name = "skyborne, female"
+when = { race = "skyborne", gender = "female" }
+voices = ["v1717361472", "v808373280", "v1138003200", "v1325133120", "v376644064", "v113804960"]
+
+[[cast]]
 name = "female"
 when = { gender = "female" }
 voices = ["v1038680256"]
@@ -458,6 +475,11 @@ voices = ["v258599616"]
 name = "ogre, male"
 when = { race = "ogre" }
 voices = ["v87094656"]
+
+[[cast]]
+name = "skyborne, male"
+when = { race = "skyborne" }
+voices = ["v1141110496", "v606865152", "v258599616", "v2031733024"]
 
 [[cast]]
 name = "male"

@@ -120,7 +120,7 @@ def line_values(root: Path, lines: dict[str, str]) -> dict[str, list[str]]:
 
 # The playable races as the client names them (UnitRace's second value, lowercased) and the sexes: the
 # character's own spoken error lines are made per race and sex.
-PLAYER_RACES = ("human", "orc", "dwarf", "nightelf", "scourge", "tauren", "gnome", "troll")
+PLAYER_RACES = ("human", "orc", "dwarf", "nightelf", "scourge", "tauren", "gnome", "troll", "skyborne")
 PLAYER_SEXES = {"m": "male", "f": "female"}
 
 

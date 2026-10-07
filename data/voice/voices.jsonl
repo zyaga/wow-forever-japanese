@@ -2319,94 +2319,94 @@
 {"creature": 248266, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 248277, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 248415, "voice": "v1310138979", "row": "dwarf, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 248755, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 248755, "voice": "v113804960", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 248840, "voice": "v1275216064", "row": "undead", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 249363, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 249363, "voice": "v1717361472", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 249713, "voice": "v1937616896", "row": "child, boy", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 250686, "voice": "v1275216064", "row": "undead", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 250929, "voice": "v893625024", "row": "mechanical", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 251001, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 251166, "voice": "v893625024", "row": "elemental", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 251361, "voice": "v391794336", "row": "elder, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251362, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251363, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 251362, "voice": "v808373280", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251363, "voice": "v1325133120", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 251366, "voice": "v1717361472older", "row": "elder, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251368, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251371, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251373, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251374, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251376, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251379, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251487, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 251368, "voice": "v1325133120", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251371, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251373, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251374, "voice": "v1325133120", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251376, "voice": "v1325133120", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251379, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251487, "voice": "v113804960", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 251507, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251523, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 251523, "voice": "v808373280", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 251662, "voice": "v893625024", "row": "elemental", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 251684, "voice": "v345585728", "row": "young, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251902, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 251902, "voice": "v808373280", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 251903, "voice": "v391794336", "row": "elder, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251904, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251905, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251906, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 251904, "voice": "v1717361472", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251905, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251906, "voice": "v376644064", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 251913, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251964, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251968, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251991, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251992, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 251993, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252068, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252095, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252155, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252172, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252359, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252373, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252377, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252378, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 251964, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251968, "voice": "v808373280", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251991, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251992, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 251993, "voice": "v376644064", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252068, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252095, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252155, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252172, "voice": "v1717361472", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252359, "voice": "v1717361472", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252373, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252377, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252378, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 252380, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252382, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 252382, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 252383, "voice": "v1717361472older", "row": "elder, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252388, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252389, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252448, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252475, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252476, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252477, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252479, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 252800, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 253002, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 253004, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 252388, "voice": "v808373280", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252389, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252448, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252475, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252476, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252477, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252479, "voice": "v1325133120", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252800, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 253002, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 253004, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 253092, "voice": "v1038680256", "row": "nightelf, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 253204, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 253204, "voice": "v1717361472", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 253279, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 253284, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 253285, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 253284, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 253285, "voice": "v376644064", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 253372, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 253395, "voice": "v1440494656", "row": "gnome, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 253474, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 253576, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 253590, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 253844, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 253847, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 253849, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 253474, "voice": "v606865152", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 253576, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 253590, "voice": "v808373280", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 253844, "voice": "v1717361472", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 253847, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 253849, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 254081, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 254082, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 254086, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 254082, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 254086, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 254088, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 254089, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 254089, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 254100, "voice": "v345585728", "row": "young, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 254128, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 254149, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 254149, "voice": "v606865152", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 254151, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 254344, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 254345, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 254344, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 254345, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 254411, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 255940, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 256083, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 255940, "voice": "v376644064", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 256083, "voice": "v1325133120", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 256386, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 256390, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 256391, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 256507, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 256514, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 256635, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 256507, "voice": "v113804960", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 256514, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 256635, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 256729, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 256730, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 256732, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
@@ -2414,53 +2414,53 @@
 {"creature": 256734, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 256735, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 256742, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 256930, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257004, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257005, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257006, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257008, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257018, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257019, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 256930, "voice": "v606865152", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 257004, "voice": "v808373280", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 257005, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 257006, "voice": "v113804960", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 257008, "voice": "v376644064", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 257018, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 257019, "voice": "v808373280", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 257020, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257021, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257022, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 257021, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 257022, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 257024, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257065, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 257065, "voice": "v606865152", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 257446, "voice": "v391794336", "row": "elder, dwarf", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257551, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257554, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 257551, "voice": "v1717361472", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 257554, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 257597, "voice": "v391794336", "row": "elder, dwarf", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 257648, "voice": "v1805828384", "row": "undead", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 257655, "voice": "v1805828384", "row": "undead", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 257663, "voice": "v1275216064", "row": "undead", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 257808, "voice": "v391794336", "row": "elder, dwarf", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 257944, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 257944, "voice": "v1717361472", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 258043, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 258098, "voice": "v5306848", "row": "dwarf, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 258113, "voice": "v391794336", "row": "elder, dwarf", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 258930, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 259012, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 259084, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 259012, "voice": "v376644064", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 259084, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 259118, "voice": "v1310138976", "row": "tauren, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 259119, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 259119, "voice": "v606865152", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 259190, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 259611, "voice": "v1275216064", "row": "undead", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 259620, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 259620, "voice": "v113804960", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 259649, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 260628, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 260628, "voice": "v113804960", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 261366, "voice": "v5306848", "row": "human, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 262558, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 263113, "voice": "v345585728", "row": "young, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 263349, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 263399, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 263644, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 263664, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 263664, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 264078, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 264936, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 264936, "voice": "v5306848", "row": "dwarf, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 264943, "voice": "v5306848", "row": "dwarf, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 265003, "voice": "v258599616", "row": "young, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 265701, "voice": "v258599616", "row": "young, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 265756, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 265756, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 265809, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 265810, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 265811, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
@@ -2488,7 +2488,7 @@
 {"creature": 267354, "voice": "v893625024", "row": "beast-kin", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 268511, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 268568, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 268592, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 268592, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 268679, "voice": "v893625024", "row": "elemental", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 268682, "voice": "v1937616896", "row": "child, boy", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 268684, "voice": "v1878365376", "row": "child, girl", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
@@ -2503,16 +2503,16 @@
 {"creature": 270581, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 270582, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 270844, "voice": "v808373280", "row": "nightelf, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 271465, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 271546, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 271465, "voice": "v606865152", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 271546, "voice": "v1310138979", "row": "dwarf, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 271613, "voice": "v2058221184", "row": "undead", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 271866, "voice": "v1310138976", "row": "human, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 272045, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 272045, "voice": "v606865152", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 272203, "voice": "v1310138979", "row": "tauren, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 272450, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 272526, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 272633, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 273017, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 273017, "voice": "v606865152", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 275269, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 275270, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 275491, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
@@ -2523,7 +2523,7 @@
 {"creature": 275811, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 275954, "voice": "v1805828384", "row": "undead", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 276067, "voice": "v1805828384", "row": "undead", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 276170, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
-{"creature": 276171, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 276170, "voice": "v113804960", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 276171, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 276318, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 277182, "voice": "v1937616896", "row": "child, boy", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}

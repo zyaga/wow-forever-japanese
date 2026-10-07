@@ -38,7 +38,7 @@ ROLES = (
     "villain",
 )
 PLAYABLE = ("human", "orc", "dwarf", "nightelf", "scourge", "tauren", "gnome", "troll", "goblin", "bloodelf",
-            "draenei")
+            "draenei", "skyborne")
 # A speaker that is not a playable-race character model: its kind, from the creature type or the casting pass.
 FAMILIES = (
     "beast",

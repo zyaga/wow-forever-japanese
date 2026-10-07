@@ -322,9 +322,9 @@ def review(root: Path, cfg: dict[str, Any], store: Path, db: Path, round_: str =
             )
         c = counts.get(kind, {})
         prof = ", ".join(str(v) for v in sm["profile"].values())
-        who = html.escape(sm["name"] or "the narrator") + (
-            f" &lt;{html.escape(sm['title'])}&gt;" if sm["title"] else ""
-        )
+        who = html.escape(
+            sm["name"] or ("an NPC whose name we lack" if sm["creature"] else "the narrator")
+        ) + (f" &lt;{html.escape(sm['title'])}&gt;" if sm["title"] else "")
         link = (
             f' · <a href="{WOWHEAD}{sm["creature"]}" target="_blank">see the character</a>'
             if sm["creature"]
