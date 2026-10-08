@@ -204,26 +204,28 @@ def test_saved_variables_answers_feed_the_same_report(addon: Path):
     assert result["build"] == "11509"
 
 
-def test_probe_addon_is_valid_lua_and_covers_every_name(addon: Path, tmp_path: Path):
+def test_the_probe_is_one_lua_file_for_the_scan_addon(addon: Path, tmp_path: Path):
     import shutil
     import subprocess
 
     manifest = cs.build(addon)
-    out = cs.probe_addon(manifest, tmp_path / "WFJProbe", interface=11509)
-    lua = (out / "WFJProbe.lua").read_text(encoding="utf-8")
-    toc = (out / "WFJProbe.toc").read_text(encoding="utf-8")
+    out = tmp_path / "WFJScan" / "WFJScanProbe.lua"
+    m = tmp_path / "m.json"
+    m.write_text(__import__("json").dumps(manifest), encoding="utf-8")
+    assert cs.main(["probe", "--manifest", str(m), "--out", str(out)]) == 0
+    assert [p.name for p in out.parent.iterdir()] == ["WFJScanProbe.lua"]  # no TOC: WFJScan's own TOC loads it
+    lua = out.read_text(encoding="utf-8")
     for kind, name in cs.probe_names(manifest):
         assert f'{{"{kind}","{name}",' in lua
-    assert "SavedVariables: WFJProbeDB" in toc and "## Interface: 11509" in toc
-    assert "WFJProbe.lua" in toc
+    assert "WFJProbeDB" not in lua and "WFJScanDB.probe" in lua
     luac = shutil.which("luac") or shutil.which("luac5.1")
     if luac:  # the client parses this file; a syntax error would waste an in-game run
-        assert subprocess.run([luac, "-p", str(out / "WFJProbe.lua")], capture_output=True, check=False).returncode == 0
+        assert subprocess.run([luac, "-p", str(out)], capture_output=True, check=False).returncode == 0
 
 
 def test_the_probe_addon_resolves_a_namespaced_api(addon: Path, tmp_path: Path):
     # a dotted name must be split on a plain "."; an escaped pattern makes every C_* API read as missing
-    lua = (cs.probe_addon(cs.build(addon), tmp_path / "P", 16001) / "WFJProbe.lua").read_text(encoding="utf-8")
+    lua = cs.probe_lua(cs.build(addon))
     assert 'name:find(".", 1, true)' in lua
     assert "strsplit(" in lua and "root[field]" in lua
     # And it must be shared by every kind. Resolving dotted names only inside the function / api branch
@@ -253,14 +255,6 @@ def test_a_load_on_demand_surface_is_unknown_not_rework_until_its_addon_loads(tm
     assert cs.verdict(entry, loaded, {})[0] == "rework"        # loaded and still absent: really gone
 
 
-def test_the_probe_interface_comes_from_the_client_target(root: Path, tmp_path: Path):
-    assert cs.target_interface(root) == 16001  # pipeline/clients.toml [forever].interface
-    (tmp_path / "pipeline").mkdir()
-    (tmp_path / "pipeline" / "clients.toml").write_text("[forever]\nname = 'x'\n", encoding="utf-8")
-    with pytest.raises(SystemExit, match="clients.toml"):
-        cs.target_interface(tmp_path)
-
-
 def test_read_saved_variables_records_which_addons_loaded():
     sv = ('WFJProbeDB = {\n["loaded"] = {\n["Blizzard_TrainerUI"] = true,\n},\n'
           '["answers"] = {\n["global|ClassTrainerGreetingText|trainer"] = "no",\n},\n}\n')
@@ -271,19 +265,18 @@ def test_read_saved_variables_records_which_addons_loaded():
 
 def test_the_probe_addon_sweeps_again_when_an_addon_loads(tmp_path: Path):
     manifest = {"entries": [{"kind": "global", "name": "ClassTrainerFrame", "surface": "trainer"}]}
-    lua = (cs.probe_addon(manifest, tmp_path / "P", 16001) / "WFJProbe.lua").read_text(encoding="utf-8")
+    lua = cs.probe_lua(manifest)
     assert 'RegisterEvent("ADDON_LOADED")' in lua
-    assert "WFJProbeDB.loaded[addon] = true" in lua
-    assert 'if answer ~= "no" or WFJProbeDB.answers[key] == nil then' in lua  # a later sweep only upgrades
+    assert "db.loaded[addon] = true" in lua
+    assert 'if answer ~= "no" or db.answers[key] == nil then' in lua  # a later sweep only upgrades
 
 
 def test_the_probe_addon_stamps_its_manifest_and_drops_other_answers(addon: Path, tmp_path: Path):
     # a client that still holds answers from an older manifest must not merge them
-    lua = (cs.probe_addon(cs.build(addon), tmp_path / "P", 16001) / "WFJProbe.lua").read_text(encoding="utf-8")
+    lua = cs.probe_lua(cs.build(addon))
     assert re.search(r'local MANIFEST = "[0-9a-f]{12}"', lua)
-    assert "WFJProbeDB.manifest ~= MANIFEST" in lua
-    other = (cs.probe_addon({"entries": [{"kind": "global", "name": "Other", "surface": "x"}]},
-                            tmp_path / "Q", 16001) / "WFJProbe.lua").read_text(encoding="utf-8")
+    assert "db.manifest ~= MANIFEST" in lua
+    other = cs.probe_lua({"entries": [{"kind": "global", "name": "Other", "surface": "x"}]})
     assert re.search(r'local MANIFEST = "([0-9a-f]{12})"', lua).group(1) != \
         re.search(r'local MANIFEST = "([0-9a-f]{12})"', other).group(1)
 
@@ -309,8 +302,8 @@ def test_a_declare_the_parser_cannot_read_is_still_reported(tmp_path: Path):
 
 def test_the_probe_resets_its_answers_when_the_client_build_changes(tmp_path: Path):
     manifest = {"entries": [{"kind": "global", "name": "QuestFrame", "surface": "questframe"}]}
-    lua = (cs.probe_addon(manifest, tmp_path / "P", 16001) / "WFJProbe.lua").read_text(encoding="utf-8")
-    assert "WFJProbeDB.client ~= build" in lua   # a patch that removes a frame must be able to say so
+    lua = cs.probe_lua(manifest)
+    assert "db.client ~= build" in lua   # a patch that removes a frame must be able to say so
     assert "local build = select(2, GetBuildInfo())" in lua
 
 
@@ -394,11 +387,11 @@ def test_report_without_an_asked_table_reports_no_unopened_surfaces():
 
 
 def test_the_probe_addon_offers_the_slash_command_and_tracks_what_is_left(addon: Path, tmp_path: Path):
-    lua = (cs.probe_addon(cs.build(addon), tmp_path / "P", 16001) / "WFJProbe.lua").read_text(encoding="utf-8")
+    lua = cs.probe_lua(cs.build(addon))
     assert 'SLASH_WFJPROBE1 = "/wfjprobe"' in lua
-    assert "WFJProbeDB.asked[arg]" in lua                  # a manual sweep marks the surface it was told about
+    assert "db.asked[arg]" in lua                  # a manual sweep marks the surface it was told about
     assert "surfaces still unasked" in lua                 # in-game progress: what is left to do
-    assert "WFJProbeDB.asked = {}" in lua or "asked = {}" in lua   # reset with the rest of the DB
+    assert "asked = {}" in lua   # reset with the rest of the DB
 
 
 # --- window-less surfaces and dotted names of any depth ---------------------------------------------
@@ -462,7 +455,7 @@ def test_the_probe_addon_skips_windowless_surfaces_in_what_is_left(tmp_path: Pat
         {"kind": "global", "name": "SlashCmdList", "surface": "slash", "windowless": True},
         {"kind": "global", "name": "MailFrame", "surface": "mail"},
     ]}
-    lua = (cs.probe_addon(manifest, tmp_path / "P", 16001) / "WFJProbe.lua").read_text(encoding="utf-8")
+    lua = cs.probe_lua(manifest)
     assert 'local WINDOWLESS = { ["slash"] = true, }' in lua
     assert "if not WINDOWLESS[surface] and" in lua
     assert "has no window" in lua
@@ -489,7 +482,7 @@ def test_the_probe_resolves_a_three_segment_name(tmp_path: Path):
     import subprocess
 
     manifest = {"entries": [{"kind": "global", "name": "Enum.TooltipDataType.Item", "surface": "tooltip"}]}
-    lua = (cs.probe_addon(manifest, tmp_path / "P", 16001) / "WFJProbe.lua").read_text(encoding="utf-8")
+    lua = cs.probe_lua(manifest)
     fn = lua[lua.index("local function valueOf(name)"): lua.index("local function sweep()")]
     assert 'for _, segment in ipairs(segments) do' in fn
     interpreter = _lua()
@@ -512,3 +505,167 @@ def test_the_probe_resolves_a_three_segment_name(tmp_path: Path):
     run = subprocess.run([interpreter, str(script)], capture_output=True, text=True, check=False)
     assert run.returncode == 0, run.stderr
     assert run.stdout.split() == ["0", "1", "table", "function", "nil", "nil", "nil"]
+
+
+# --- the probe lives in the scan dev addon -----------------------------------------------------------------
+# It shares the scan's saved table, WFJScanDB, and may only ever replace WFJScanDB.probe: the rest is the quest
+# scan's progress for the current build, which a probe reset must never cost.
+
+_HARNESS = '''
+unpack = unpack or table.unpack
+function strsplit(sep, s) local t = {} for p in s:gmatch("[^.]+") do t[#t + 1] = p end return unpack(t) end
+local handlers = {}
+function CreateFrame()
+  return { RegisterEvent = function() end, HasScript = function() return true end,
+           SetScript = function(_, _, fn) handlers[#handlers + 1] = fn end }
+end
+BUILD = BUILD or "70245"
+function GetBuildInfo() return "1.60.1", BUILD, "Oct 1 2026", 16001 end
+SlashCmdList = {}
+QuestFrame = {}
+function print() end
+local function fire(event, addon) for _, fn in ipairs(handlers) do fn(nil, event, addon) end end
+'''
+
+_SCAN_STATE = '''
+WFJScanDB = { version = 1, builds = { ["1.60.1.70245"] = { phase = "recheck", pos = 42,
+  answered = { [1] = true, [50001] = true } } } }
+local builds, entry = WFJScanDB.builds, WFJScanDB.builds["1.60.1.70245"]
+local function scanIntact()
+  local e = WFJScanDB.builds["1.60.1.70245"]
+  return WFJScanDB.version == 1 and WFJScanDB.builds == builds and e == entry and e.phase == "recheck"
+    and e.pos == 42 and e.answered[1] == true and e.answered[50001] == true
+end
+'''
+
+_MANIFEST = {"entries": [{"kind": "global", "name": "QuestFrame", "surface": "questframe"},
+                         {"kind": "global", "name": "GoneFrame", "surface": "questframe"}]}
+
+
+def _run_lua(tmp_path: Path, body: str) -> list[str]:
+    import subprocess
+
+    interpreter = _lua()
+    if interpreter is None:
+        pytest.skip("no Lua interpreter")
+    script = tmp_path / "run.lua"
+    script.write_text(body, encoding="utf-8")
+    run = subprocess.run([interpreter, str(script)], capture_output=True, text=True, check=False)
+    assert run.returncode == 0, run.stderr
+    return run.stdout.split()
+
+
+def _probe_chunk(manifest) -> str:
+    # each load of the probe is its own chunk, as each /reload is in the client
+    lua = cs.probe_lua(manifest)
+    return "do\n" + _HARNESS + lua + "\nfire('PLAYER_LOGIN')\nend\n"
+
+
+def test_the_probe_sweeps_into_its_own_table_and_leaves_the_scan_state_alone(tmp_path: Path):
+    out = _run_lua(tmp_path, _SCAN_STATE + _probe_chunk(_MANIFEST) + '''
+local p = WFJScanDB.probe
+io.write(tostring(scanIntact()), " ", p.answers["global|QuestFrame|questframe"], " ",
+  p.answers["global|GoneFrame|questframe"], " ", p.client, "\\n")
+''')
+    assert out == ["true", "frame", "no", "70245"]
+
+
+def test_the_probe_creates_the_scan_table_when_there_is_none(tmp_path: Path):
+    out = _run_lua(tmp_path, _probe_chunk(_MANIFEST) + '''
+local keys = {}
+for k in pairs(WFJScanDB) do keys[#keys + 1] = k end
+io.write(table.concat(keys, ","), " ", WFJScanDB.probe.answers["global|QuestFrame|questframe"], "\\n")
+''')
+    assert out == ["probe", "frame"]
+
+
+def test_a_new_manifest_or_build_resets_only_the_probe(tmp_path: Path):
+    other = {"entries": [{"kind": "global", "name": "QuestFrame", "surface": "questframe"}]}
+    out = _run_lua(tmp_path, _SCAN_STATE + _probe_chunk(_MANIFEST) + '''
+WFJScanDB.probe.asked.questframe = 3
+''' + _probe_chunk(other) + '''
+io.write(tostring(scanIntact()), " ", tostring(WFJScanDB.probe.answers["global|GoneFrame|questframe"]), " ",
+  tostring(WFJScanDB.probe.asked.questframe), "\\n")
+WFJScanDB.probe.asked.questframe = 2
+BUILD = "70300"
+''' + _probe_chunk(other) + '''
+io.write(tostring(scanIntact()), " ", WFJScanDB.probe.client, " ", tostring(WFJScanDB.probe.asked.questframe),
+  "\\n")
+''')
+    # another manifest drops the old answers and the asked counts; so does another client build
+    assert out == ["true", "nil", "nil", "true", "70300", "nil"]
+
+
+def test_a_later_sweep_never_downgrades_a_found_answer(tmp_path: Path):
+    out = _run_lua(tmp_path, _SCAN_STATE + _probe_chunk(_MANIFEST) + '''
+WFJScanDB.probe.answers["global|GoneFrame|questframe"] = "frame"   -- found while its window was open
+''' + _probe_chunk(_MANIFEST) + '''
+io.write(tostring(scanIntact()), " ", WFJScanDB.probe.answers["global|GoneFrame|questframe"], "\\n")
+''')
+    assert out == ["true", "frame"]
+
+
+SAVED_SCAN = '''
+WFJScanDB = {
+\t["builds"] = {
+\t\t["1.60.1.70245"] = {
+\t\t\t["phase"] = "done",
+\t\t\t["build"] = {
+\t\t\t\t"9.9.9", -- [1]
+\t\t\t},
+\t\t},
+\t},
+\t["probe"] = {
+\t\t["client"] = "69893",
+\t\t["build"] = {
+\t\t\t"1.60.1", -- [1]
+\t\t\t"69893", -- [2]
+\t\t\t"Sep 17 2026", -- [3]
+\t\t\t16001, -- [4]
+\t\t},
+\t\t["loaded"] = {
+\t\t\t["Blizzard_TrainerUI"] = true,
+\t\t},
+\t\t["asked"] = {
+\t\t\t["questlog"] = 2,
+\t\t},
+\t\t["answers"] = {
+\t\t\t["global|QuestFrame|questframe"] = "frame",
+\t\t\t["function|QuestInfo_Display|questframe"] = "function",
+\t\t\t["script|OnTooltipSetItem|tooltip"] = "no",
+\t\t\t["api|C_AddOns.IsAddOnLoaded|loadondemand"] = "function",
+\t\t\t["api|GetTrainerGreetingText|trainer"] = "no",
+\t\t},
+\t},
+\t["version"] = 1,
+}
+'''
+
+
+def test_the_scan_addons_saved_file_reads_like_the_old_probe_file():
+    out = cs.read_saved_variables(SAVED_SCAN)
+    old = cs.read_saved_variables(SAVED)
+    assert {k: v for k, v in out.items() if k not in ("build", "loaded|Blizzard_TrainerUI")} == \
+        {k: v for k, v in old.items() if k != "build"}
+    assert out["build"] == "16001" and out["version"] == "1.60.1"   # the probe's build, never the scan's
+    assert out["loaded|Blizzard_TrainerUI"] == "yes"
+    assert cs.asked_surfaces(SAVED_SCAN) == {"questlog": 2}
+    assert cs.asked_surfaces(SAVED_SCAN.replace('\t\t["asked"] = {\n\t\t\t["questlog"] = 2,\n\t\t},\n', "")) is None
+
+
+def test_report_reads_the_scan_addons_saved_file(addon: Path, tmp_path: Path, capsys):
+    import json
+
+    manifest = tmp_path / "m.json"
+    manifest.write_text(json.dumps(cs.build(addon)), encoding="utf-8")
+    saved = tmp_path / "WFJScan.lua"
+    names = cs.probe_names(cs.build(addon))
+    rows = "".join(f'\t\t\t["{k}|{n}|questframe"] = "frame",\n' for k, n in names)
+    saved.write_text(SAVED_SCAN.replace('\t\t\t["global|QuestFrame|questframe"] = "frame",\n', rows),
+                     encoding="utf-8")
+    out = tmp_path / "v.json"
+    assert cs.main(["report", "--manifest", str(manifest), "--probe", str(saved), "--out", str(out)]) == 0
+    result = json.loads(out.read_text(encoding="utf-8"))
+    assert result["build"] == "16001"
+    assert {r["name"]: r["verdict"] for r in result["rows"] if r.get("name")}["QuestFrame"] == "works"
+    assert "questframe:" in capsys.readouterr().out
