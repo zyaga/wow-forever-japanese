@@ -383,7 +383,10 @@ local function updateQueue(st)
       row.text = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
       row.text:SetPoint("LEFT", row, "LEFT", 4, 0)
       row.text:SetJustifyH("LEFT")
-      row:SetHighlightTexture(ICON.hilight, "ADD")
+      -- a faint gold band under the mouse, like the word cards' tint (the buttons' round glow smears across a row)
+      local band = row:CreateTexture(nil, "HIGHLIGHT")
+      band:SetAllPoints(row)
+      band:SetColorTexture(1, 0.82, 0, 0.15)
       row:SetScript("OnClick", function(self) if self.key then WFJ.VoicePlayer.playWaiting(self.key) end end)
       box.rows[i] = row
     end
