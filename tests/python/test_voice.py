@@ -498,3 +498,21 @@ def test_a_scope_holds_its_quests_and_its_npcs_talk_only():
     keys = [r["key"] for r in cmd.in_scope(rows, "shadowglen")]
     assert keys == ["456-completion", "456-description", "g-0123456789abcdef", "g-1111111111111111"]
 
+
+
+def test_audio_in_step():
+    """The gate: every voiced line of the committed data has a recorded audio file made from the Japanese it
+    ships, in the voice its speaker is cast in, with the roster's current settings (data/voice/audio.jsonl).
+    A pull request that adds or changes a voiced line, or recasts a voice, without remaking its audio fails
+    here. Remake with `make voice-generate` (docs/operations/voice.md)."""
+    data = ROOT / "data"
+    cfg = voice_make.load_config(ROOT / "pipeline" / "voice.toml")
+    lines = voice_make.shipped_lines(data)
+    jobs = voice_make.file_jobs(data, cfg, "all", lines, voice_make.players_of("all"))
+    assert len(jobs) > 10_000  # the whole game, not an empty scope
+    state = voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(data),
+                          voice_make.line_values(data, lines))
+    missing, stale = state["missing"], state["stale"]
+    assert not missing, f"{len(missing)} voiced line(s) have no audio, e.g. {missing[:5]}: run make voice-generate"
+    assert not stale, (f"{len(stale)} audio file(s) were made from other Japanese or another voice, "
+                       f"e.g. {stale[:5]}: run make voice-generate")
