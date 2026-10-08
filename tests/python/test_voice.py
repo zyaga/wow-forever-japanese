@@ -617,3 +617,27 @@ def test_store_sync_if_changed_leaves_the_pin_and_the_remote_alone_when_nothing_
     pin.write_text(voice_store.PIN_HEAD + "b" * 40 + "\n")  # this branch pins other audio than the store's HEAD
     assert voice_store.run(["store-sync", "--if-changed", "--store", str(store), "--pin", str(pin)]) == 0
     assert voice_store.read_pin(pin) == "b" * 40  # nothing new: the pin stays
+
+
+def _recipe(makefile: str, target: str) -> str:
+    """A Makefile target's recipe: the tab-indented lines under `target:`."""
+    lines = makefile.splitlines()
+    start = next(i for i, ln in enumerate(lines) if ln.startswith(f"{target}:"))
+    out = []
+    for ln in lines[start + 1:]:
+        if not ln.startswith("\t"):
+            break
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_every_translation_round_ends_by_remaking_its_voice():
+    """A batch import and a fix report remake the voice of the lines they changed, after `check` decided what
+    ships; the voice step pushes and pins only when it made audio."""
+    makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
+    assert "$(MAKE) -s check voice-generate" in _recipe(makefile, "import-draft")
+    assert "$(MAKE) -s check generate voice-generate validate coverage" in _recipe(makefile, "report-apply")
+    generate = _recipe(makefile, "voice-generate")
+    assert "wfj voice generate --scope all --players all" in generate
+    assert "store-sync --if-changed" in generate
+    assert "store-sync --if-changed" in _recipe(makefile, "voice-run")

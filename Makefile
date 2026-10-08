@@ -409,7 +409,8 @@ voice: voice-speakers voice-generate voice-pack ## speakers → generate → pac
 
 # The upload token is CF_API_KEY, else what $(VOICE_TOKEN_CMD) prints (a local, untracked setting). It is read for the
 # one run and never written anywhere. DRY=1 builds, checks the zips and prints what would go up. CF_ONLY=1 skips the
-# GitHub release (a rehearsal). ONLY=<folder>,… uploads just those; ENTRY_WITHOUT_PACKS=1 makes the entry require the
+# GitHub release (a rehearsal). ONLY=<folder>,… uploads just those (with CF_ONLY=1 only, so the GitHub release never
+# records a pack that was not uploaded); ENTRY_WITHOUT_PACKS=1 makes the entry require the
 # main addon alone (a new entry's first file, while its packs wait for approval).
 VOICE_RELEASE_FLAGS = $(if $(CF_ONLY),--curseforge-only) $(if $(ONLY),--only "$(ONLY)") $(if $(ENTRY_WITHOUT_PACKS),--entry-without-packs)
 voice-release: ## the voice packs whose audio changed to CurseForge and every zip to one GitHub release (DRY=1: nothing leaves the machine)
