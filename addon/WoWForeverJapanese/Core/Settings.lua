@@ -258,7 +258,6 @@ panelSetting("voice.panel.hoverButtons", true, "Show the controls only while the
 panelSetting("voice.panel.queueBox", false, "List the waiting lines above the panel", "待っている文をパネルの上に一覧表示")
 panelSetting("voice.panel.fade", true, "Fade out after the last line", "最後の文のあと消える")
 panelSetting("voice.panel.combatDim", true, "Dim the panel in combat", "戦闘中はパネルを薄くする")
-panelSetting("voice.panel.ruby", false, "Readings above the words", "単語の上に読みを表示")
 panelSetting("voice.panel.questLog", true, "The book button opens the quest in the quest log",
   "本のボタンでクエストログを開く")
 panelSetting("voice.panel.lock", false, "Lock the panel where it is", "パネルの位置を固定")

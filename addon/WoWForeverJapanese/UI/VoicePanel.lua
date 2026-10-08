@@ -19,7 +19,6 @@ local MODEL_SETTLE = 0.6 -- seconds a model load gets before a speaker with no m
 local FADE_TIME = 0.6
 local TICK = 0.1
 local BUTTON = 28 -- the icons have wide transparent margins: smaller reads as a dot (the window button's size)
-local RUBY_SIZE = 9
 local SHORT_PAGE = 12 -- characters: a shorter sentence joins the next page
 local KIND_LABEL = {
   ["questframe.detail"] = "Quest", ["questframe.progress"] = "Progress", ["questframe.reward"] = "Turn-in",
@@ -42,7 +41,6 @@ local pageShown -- index of the page on screen
 local rec = { surface = "voicepanel", key = "text" } -- the record UI/Readings attaches word cards to
 local fullRec = { surface = "voicepanel", key = "full" } -- the full-text window's record
 local full -- the full-text window: the whole line being heard, for a sentence the player missed
-local rubies = {} -- pooled reading FontStrings for ruby "above"
 local fadeAt, fadeFrom -- idle fade: when it starts, and the GetTime it started at
 local redraw = false -- a look or text choice changed: lay the displayed line out again
 local fadedPaused -- a paused line the panel faded out on: it stays away until something plays or the queue changes
@@ -137,69 +135,15 @@ local function pageSpans(i, text)
   return out
 end
 
--- The page with each word's reading in brackets after it (少し(すこし)); kana words are left as they are.
--- → the new text and its words, shifted past the inserted readings
-local function withInlineRuby(text, spans)
-  if not spans or not spans[1] then return text, spans end
-  local out, from, shift, moved = {}, 1, 0, {}
-  for _, sp in ipairs(spans) do
-    out[#out + 1] = text:sub(from, sp.last)
-    moved[#moved + 1] = { first = sp.first + shift, last = sp.last + shift, word = sp.word, reading = sp.reading,
-      gloss = sp.gloss }
-    if sp.reading ~= sp.word then
-      local r = "(" .. sp.reading .. ")"
-      out[#out + 1] = r
-      shift = shift + #r
-    end
-    from = sp.last + 1
-  end
-  out[#out + 1] = text:sub(from)
-  return table.concat(out), moved
-end
-
-local function clearRuby()
-  for _, r in ipairs(rubies) do r:Hide() end
-end
-
--- A small reading over each word, placed from the word's rectangle once the text is laid out.
-local function layoutRuby(text, spans)
-  clearRuby()
-  if Q.opt.ruby ~= "above" or not f or f.text:GetText() ~= text then return end
-  if not spans then return end
-  local n = 0
-  for _, sp in ipairs(spans) do
-    if sp.reading ~= sp.word then
-      local areas = WFJ.ReadingView.spanAreas(f.text, text, sp.first, sp.last, "voicepanel")
-      local a = areas and areas[1]
-      if a then
-        n = n + 1
-        local r = rubies[n]
-        if not r then
-          r = f.rubyLayer:CreateFontString(nil, "OVERLAY")
-          WFJ.Font.set(r, WFJ.Font.PATH, RUBY_SIZE, "")
-          rubies[n] = r
-        end
-        local c = look().textColor
-        r:SetTextColor(c[1], c[2], c[3], 0.9)
-        r:SetText(sp.reading)
-        r:ClearAllPoints()
-        r:SetPoint("BOTTOM", f.text, "BOTTOMLEFT", a.left + a.width / 2, a.bottom + a.height - 1)
-        r:Show()
-      end
-    end
-  end
-end
-
 local function detachCards()
   if WFJ.ReadingView and rec.fs then pcall(WFJ.ReadingView.detach, rec) end
 end
 
 -- The line's English as the client wrote it into the window, whole (its sentences do not line up with the Japanese
--- pages). No word cards and no readings on it.
+-- pages). No word cards on it.
 local function showEnglish()
   if not displayed then return end
   detachCards()
-  clearRuby()
   pageShown = nil
   f.english = true
   f.text:SetText(displayed.en or displayed.ja or "")
@@ -212,16 +156,10 @@ local function showPage(i)
   pageShown = i
   local text = pages[i] or ""
   local spans = pageSpans(i, text)
-  if Q.opt.ruby == "inline" then text, spans = withInlineRuby(text, spans) end
   f.text:SetText(text)
   rec.fs, rec.applied, rec.meta, rec.spans = f.text, text, { kind = displayed.kind, id = displayed.id }, spans
   rec.attachOk, rec.attachErr = nil, nil
   if WFJ.ReadingView then rec.attachOk, rec.attachErr = pcall(WFJ.ReadingView.attach, rec) end
-  clearRuby()
-  if Q.opt.ruby == "above" then
-    local timer = Compat.resolve("C_Timer")
-    if type(timer) == "table" then timer.After(0, function() layoutRuby(text, spans) end) end
-  end
 end
 
 -- ── The head ───────────────────────────────────────────────────────────────
@@ -366,7 +304,7 @@ local function applyLook()
     if L.shadow then fs:SetShadowColor(0, 0, 0, 1); fs:SetShadowOffset(1, -1) else fs:SetShadowOffset(0, 0) end
   end
   f.text:SetMaxLines(L.maxLines or 4)
-  f.text:SetSpacing(Q.opt.ruby == "above" and (RUBY_SIZE + 1) or 2)
+  f.text:SetSpacing(2)
   f.count:SetTextColor(L.titleColor[1], L.titleColor[2], L.titleColor[3])
   placeText(f.headShown ~= false and Q.opt.head)
   f:SetScale(Q.opt.scale or 1)
@@ -584,7 +522,6 @@ local function hidePanel()
   if not f then return end
   if full then full:Hide() end
   detachCards()
-  clearRuby()
   setTalking(false)
   local was = f:IsShown()
   f:Hide()
@@ -718,9 +655,6 @@ local function build()
   f.text:SetJustifyV("TOP")
   f.text:SetWordWrap(true)
   if f.text.SetNonSpaceWrap then f.text:SetNonSpaceWrap(true) end -- Japanese has no spaces to wrap at
-  f.rubyLayer = CreateFrame("Frame", nil, f)
-  f.rubyLayer:SetAllPoints(f)
-  f.rubyLayer:SetFrameLevel(f:GetFrameLevel() + 2)
 
   f.count = f:CreateFontString(nil, "ARTWORK", "GameFontNormal")
   f.count:SetPoint("LEFT", f.name, "RIGHT", 8, 0)
@@ -799,9 +733,9 @@ function Panel.status()
   local o = Q.opt
   local p = o.point and ("%s %.0f,%.0f"):format(o.point[1], o.point[3] or 0, o.point[4] or 0) or "default"
   return ("panel %s · look %d · buttons %s · queue %s · idle %s %ss · combat %s %.2f · head %s zoom %.2f cam %.2f"
-    .. " · ruby %s · page %s · text %s · size %s · keep %s · scale %.2f · %s · at %s"):format(
+    .. " · page %s · text %s · size %s · keep %s · scale %.2f · %s · at %s"):format(
     o.on and "on" or "off", o.look, o.buttons, o.queue, o.idle, tostring(o.idleDelay), o.combat and "on" or "off",
-    o.combatAlpha or 0.4, o.head and "on" or "off", o.zoom or 1, o.cam or 1, o.ruby, o.page, o.textOpens or "quest",
+    o.combatAlpha or 0.4, o.head and "on" or "off", o.zoom or 1, o.cam or 1, o.page, o.textOpens or "quest",
     tostring(o.textSize or look().textSize), o.keepPlaying and "on" or "off", o.scale or 1,
     o.locked and "locked" or "unlocked", p)
 end
@@ -848,9 +782,6 @@ function Panel.command(words, say)
       pcall(f.model.SetPortraitZoom, f.model, o.zoom)
       pcall(f.model.SetCamDistanceScale, f.model, o.cam)
     end
-  elseif sub == "ruby" and (v == "off" or v == "inline" or v == "above") then
-    o.ruby = v
-    relayout()
   elseif sub == "page" and (v == "sentence" or v == "all") then
     o.page = v
     relayout()
@@ -928,7 +859,7 @@ function Panel.command(words, say)
     WFJ.VoicePlayer.skip()
   else
     return say("panel: on|off · look 1|3|4|5 · buttons always|hover · queue box|count · idle fade|stay [s] · "
-      .. "combat on|off [alpha] · head on|off · zoom <n> · cam <n> · ruby off|inline|above · page sentence|all · "
+      .. "combat on|off [alpha] · head on|off · zoom <n> · cam <n> · page sentence|all · "
       .. "size <px> · keep on|off · scale <0.5-1.5> · lock|unlock|reset · demo · text [quest|window] · why · pause · skip · status")
   end
   if f then Panel.update() end

@@ -24,7 +24,6 @@ Q.DEFAULTS = {
   head = true, -- the speaker's 3D head
   zoom = 1, -- PlayerModel:SetPortraitZoom
   cam = 1, -- PlayerModel:SetCamDistanceScale
-  ruby = "off", -- "off" | "inline" (reading in brackets after the word) | "above" (a small row over the word)
   page = "sentence", -- "sentence" (paged in step with the audio) | "all" (the whole line at once)
   textOpens = "quest", -- the text button: "quest" (the quest in the quest log when it is there, else the window)
                        -- | "window" (always the panel's own full-text window)
@@ -69,11 +68,6 @@ Q.MAPPED = {
   queue = word("voice.panel.queueBox", "box", "count"),
   idle = word("voice.panel.fade", "fade", "stay"),
   textOpens = word("voice.panel.questLog", "quest", "window"),
-  -- readings above the words is on the page; readings in brackets after them stays a /wfj panel choice
-  ruby = {
-    get = function() return S().get("voice.panel.ruby") and "above" or (saved.rubyInline and "inline" or "off") end,
-    set = function(v) saved.rubyInline = v == "inline" or nil; S().set("voice.panel.ruby", v == "above") end,
-  },
   -- full / strip × dark / parchment
   look = {
     get = function()
