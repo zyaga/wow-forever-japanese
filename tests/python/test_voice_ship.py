@@ -835,7 +835,7 @@ def test_a_store_file_that_is_not_the_recorded_audio_stops_the_pack(tmp_path, en
     data, store, cfg = _project(tmp_path, engine)
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
-    (store / "456-completion.mp3").write_bytes(b"another branch made this one, from other Japanese")
+    vs.voice_make.audio_file(store, "456-completion").write_bytes(b"another branch made this one, from other Japanese")
     assert vs.run_pack(_args(tmp_path, store, cfg, _table_file(tmp_path))) == 1
     err = capsys.readouterr().err
     assert "456-completion.mp3" in err and "nothing written" in err
@@ -910,7 +910,7 @@ def test_a_store_file_of_the_same_size_but_another_take_stops_the_pack(tmp_path,
     data, store, cfg = _project(tmp_path, engine)
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
-    path = store / "456-completion.mp3"
+    path = vs.voice_make.audio_file(store, "456-completion")
     path.write_bytes(bytes(b ^ 0xFF for b in path.read_bytes()))  # same length, other bytes: another take
     assert vs.run_pack(_args(tmp_path, store, cfg, _table_file(tmp_path))) == 1
     assert "456-completion.mp3" in capsys.readouterr().err

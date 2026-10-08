@@ -200,6 +200,14 @@ def file_jobs(
     return jobs + error_jobs(root, cfg, list(players))
 
 
+AUDIO_DIR = "audio"  # the store keeps its MP3s here, so its README and license open the repository page
+
+
+def audio_file(store: Path, stem: str) -> Path:
+    """Where the store keeps one audio file (`stem`: its name without `.mp3`)."""
+    return store / AUDIO_DIR / f"{stem}.mp3"
+
+
 def store_dir(arg: str | None) -> Path:
     """The audio store: --store, else $VOICE_ROOT, else the main checkout's build/voice (never a worktree's:
     a worktree is removed with its branch, and the full run takes days)."""
@@ -339,7 +347,7 @@ def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for th
     # what to make comes from the record; a recorded file gone from a store is made again only where the store
     # is, so a machine without the store and a round without voiced lines needs neither store nor engine
     have_store = store.is_dir()
-    work = [j for j in jobs if j.stem in todo or (have_store and not (store / f"{j.stem}.mp3").is_file())]
+    work = [j for j in jobs if j.stem in todo or (have_store and not audio_file(store, j.stem).is_file())]
     if not work:
         return {"made": 0, "files": len(jobs), "chars_made": 0, "seconds_made": 0.0, "elapsed": 0.0,
                 "audio": audio}
@@ -392,7 +400,8 @@ def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for th
             float(settings["pitch"]),
             float(settings["intonation"]),
         )
-        file = store / f"{j.stem}.mp3"
+        file = audio_file(store, j.stem)
+        file.parent.mkdir(parents=True, exist_ok=True)
         encode(wav, file)
         secs = wav_seconds(wav)
         audio[j.stem] = {
@@ -557,7 +566,7 @@ def record_hashes(root: Path, store: Path) -> tuple[int, list[str]]:
     for r in rows:
         if r.get("sha256"):
             continue
-        path = store / f"{r['file']}.mp3"
+        path = audio_file(store, r["file"])
         if not path.is_file() or path.stat().st_size != int(r["bytes"]):
             odd.append(r["file"])
             continue

@@ -361,7 +361,7 @@ def test_generate_reads_each_line_in_its_voice_at_the_set_pace(tmp_path, engine)
     assert e["ja_hash"] == hash_key("御機嫌よう、{name}。")
     assert (e["key"], e["voice"], e["seconds"], e["provenance"]["source"]) == ("456-description", "m", 0.5, "aivis@1.2.0")
     assert e["fingerprint"] == voice.fingerprint(e["ja_hash"], "m", CFG["roster"]["m"])
-    assert (tmp_path / "voice" / "456-description.mp3").is_file()
+    assert (tmp_path / "voice" / "audio" / "456-description.mp3").is_file()  # the store keeps its MP3s in audio/
     status = json.loads((tmp_path / "voice" / "status.json").read_text())
     assert (status["done"], status["total"], status["finished"]) == (3, 3, True)
 
@@ -668,15 +668,15 @@ def test_every_made_file_records_its_sha256_and_old_rows_are_filled_from_the_sto
     _gen(data, store, engine)
     rows = voice_make.audio_record(data)
     for stem, row in rows.items():
-        assert row["sha256"] == hashlib.sha256((store / f"{stem}.mp3").read_bytes()).hexdigest()
+        assert row["sha256"] == hashlib.sha256(voice_make.audio_file(store, stem).read_bytes()).hexdigest()
     # rows made before the field existed get it from the store; the store is only read
     cmd.write_rows(data / "voice" / "audio.jsonl", [{k: v for k, v in r.items() if k != "sha256"}
                                                     for r in rows.values()])
-    before = {p.name: p.read_bytes() for p in store.glob("*.mp3")}
+    before = {p.name: p.read_bytes() for p in (store / "audio").glob("*.mp3")}
     assert voice_make.record_hashes(data, store) == (len(rows), [])
     assert voice_make.audio_record(data) == rows
-    assert {p.name: p.read_bytes() for p in store.glob("*.mp3")} == before
-    (store / "456-completion.mp3").unlink()
+    assert {p.name: p.read_bytes() for p in (store / "audio").glob("*.mp3")} == before
+    voice_make.audio_file(store, "456-completion").unlink()
     cmd.write_rows(data / "voice" / "audio.jsonl", [{k: v for k, v in r.items() if k != "sha256"}
                                                     for r in rows.values()])
     filled, odd = voice_make.record_hashes(data, store)

@@ -206,7 +206,7 @@ def write(
             voice_pack.readme_text(credits, len(p.lines), pr.title, pr.holds), encoding="utf-8"
         )
         for f in p.files:
-            _place(store / f, dest / "Sound" / f)
+            _place(voice_make.audio_file(store, f.removesuffix(".mp3")), dest / "Sound" / f)
     e, dest = table.entry, out / table.entry.folder
     dest.mkdir()
     (dest / f"{e.folder}.toc").write_text(
@@ -423,7 +423,7 @@ def store_mismatches(store: Path, audio: Mapping[str, Any], files: Sequence[str]
     round would otherwise ship under this text's Japanese hash."""
     wrong = []
     for f in sorted(set(files)):
-        path, row = store / f, audio[f.removesuffix(".mp3")]
+        path, row = voice_make.audio_file(store, f.removesuffix(".mp3")), audio[f.removesuffix(".mp3")]
         if (not path.is_file() or path.stat().st_size != int(row["bytes"])
                 or (row.get("sha256") and voice_make.file_sha(path) != row["sha256"])):
             wrong.append(f)
