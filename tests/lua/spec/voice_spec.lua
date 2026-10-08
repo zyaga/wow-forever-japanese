@@ -475,7 +475,7 @@ describe("UI/VoicePlayer: playing the pack's line in the quest window", function
     S.set("voice.progress", true)
     assert.are.equal(before, WFJ.Voice.counts.matched)
     b.scripts.OnClick(b) -- stop
-    b.scripts.OnClick(b) -- replay: one real play, counted by its decision
+    b.scripts.OnClick(b) -- replay: one more play; the check before it does not count
     assert.are.equal(2, #sounds)
     assert.are.equal(before, WFJ.Voice.counts.matched)
   end)
