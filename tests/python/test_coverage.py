@@ -92,3 +92,15 @@ def test_the_voice_section_counts_every_voiced_line(root: Path, tmp_path: Path):
     data, _ = _store(tmp_path)  # a store without the voice tables gets no voice section
     assert coverage.measure(data)["voice"] == {}
     assert coverage._render_voice({}) == []
+
+
+def test_silent_voice_lines_are_counted_by_reason_and_an_unknown_kind_does_not_crash():
+    assert coverage._voice_kind("123-description") == "description"
+    assert coverage._voice_kind("g-0123456789abcdef") == "g"
+    assert coverage._voice_kind("z-something-new") == "other"  # a key kind this page does not know yet
+    out = "\n".join(coverage._render_voice({
+        "kinds": {"other": {"lines": 1, "files": 1, "in_step": 1}}, "narrator": {}, "shared": 2,
+        "silent": {coverage.GOSSIP_SILENT["vmangos"]: 5, coverage.GOSSIP_SILENT["wdb"]: 3}}))
+    assert "| Other | 1 | 1 | 1 | 0 | 0 | 0 |" in out
+    assert f"| {coverage.GOSSIP_SILENT['vmangos']} | 5 |" in out and f"| {coverage.GOSSIP_SILENT['wdb']} | 3 |" in out
+    assert "another line's file" in out and ": 2." in out

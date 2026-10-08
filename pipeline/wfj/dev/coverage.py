@@ -195,11 +195,20 @@ VOICE_KINDS = {
     "g": "NPC talk (greetings, gossip, quest text keyed by its English)",
     "b": "Book and letter pages",
     "e": "The character's error lines (one file per race and sex)",
+    "other": "Other",
+}
+# why a shipped NPC line has no voice, by where its English came from (data/english/gossip `src`)
+GOSSIP_SILENT = {
+    "vmangos": "NPC speech in chat, or other NPC text no voiced window shows (from VMaNGOS)",
+    "wdb": "A quest log line (the completion text the tracker shows)",
+    "collector": "Collected in game with no known speaker",
+    "forever-vo": "Captured by players with no known speaker",
 }
 
 
 def _voice_kind(key: str) -> str:
-    return key.split("-")[1] if key[0].isdigit() else key.split("-")[0]
+    kind = key.split("-")[1] if key[:1].isdigit() else key.split("-")[0]
+    return kind if kind in VOICE_KINDS else "other"
 
 
 def voice_coverage(root: Path) -> dict[str, Any]:
@@ -218,6 +227,10 @@ def voice_coverage(root: Path) -> dict[str, Any]:
                                      voice_make.line_values(root, lines))
     stale, missing = set(state["stale"]), set(state["missing"])
     kinds: dict[str, Counter[str]] = {k: Counter() for k in VOICE_KINDS}
+    # keys that play another line's file (a female wording, a repeated quest's text): voiced, not silent
+    played, _, _ = voice_make.pack_tables(root, cfg, "all")
+    english = Store(root, english=True).load("gossip")
+    src = {str(r["id"]): str(r.get("src", "")).split("@")[0] for r in english}
     for j in jobs:
         c = kinds[_voice_kind(j.key)]
         c["files"] += 1
@@ -228,15 +241,21 @@ def voice_coverage(root: Path) -> dict[str, Any]:
     narrator = Counter(_voice_kind(r["key"]) for r in voice_make.scoped_rows(root, "all")
                        if r["speaker"] == voice_make.voice.NARRATOR)
     silent: Counter[str] = Counter()
+    shared = 0
     for k in lines.keys() - voiced:
         kind = _voice_kind(k)
-        silent[("no speaker found for the quest" if kind in ("description", "progress", "completion")
-                else "not shown in a voiced window, or no speaker known (NPC speech in chat, quest log lines)"
-                if kind == "g" else f"{VOICE_KINDS[kind]}: no speaker")] += 1
+        if k in played:
+            shared += 1
+        elif kind in ("description", "progress", "completion"):
+            silent["No speaker found for the quest"] += 1
+        elif kind == "g":
+            silent[GOSSIP_SILENT.get(src.get(k[2:], ""), "NPC text with no known speaker")] += 1
+        else:
+            silent[f"{VOICE_KINDS[kind]}: no speaker"] += 1
     html = sum(1 for ln in Store(root).load("book") if shipped(ln) and readings.html_page("book", ln["ja"]))
     if html:
         silent["HTML book page (keeps the client's layout)"] = html
-    return {"kinds": {k: dict(c) for k, c in kinds.items() if c},
+    return {"kinds": {k: dict(c) for k, c in kinds.items() if c}, "shared": shared,
             "narrator": dict(narrator), "silent": dict(silent.most_common())}
 
 
@@ -256,6 +275,9 @@ def _render_voice(v: dict[str, Any]) -> list[str]:
             cells = [c.get(n, 0) for n in ("lines", "files", "in_step", "stale", "missing")]
             cells.append(v["narrator"].get(kind, 0))
             out.append(f"| {label} | " + " | ".join(f"{n:,}" for n in cells) + " |")
+    if v.get("shared"):
+        out += ["", "Lines that play another line's file (a female wording of a gossip line, or a quest's"
+                f" text Forever repeats under another id): {v['shared']:,}."]
     out += ["", "### Silent lines", "", "Shipped Japanese the voice does not read, by reason.", ""]
     if v["silent"]:
         out += ["| Why | Lines |", "|---|---|"]
