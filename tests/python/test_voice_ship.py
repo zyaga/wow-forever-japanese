@@ -531,7 +531,7 @@ def test_the_addon_names_the_voice_entry_as_optional_only():
 def test_curseforge_names_the_relation_it_refuses():
     body = ('{"errorCode":1018,"errorMessage":"Invalid slug in project relations: '
             '\\u0027wow-forever-japanese-voice-levels-1-10\\u0027 does not exist, is not accessible, or belongs to'
-            ' an unrelated root category."}')  # the answer CurseForge gave on 2026-10-07
+            ' an unrelated root category."}')  # a real answer from the upload API
     assert curseforge.refused_relation(body) == "wow-forever-japanese-voice-levels-1-10"
     assert curseforge.refused_relation('{"errorCode":1000,"errorMessage":"x"}') is None
     assert curseforge.refused_relation("<html>413</html>") is None
