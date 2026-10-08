@@ -24,9 +24,18 @@ local TICK = 0.1
 local BUTTON = 28 -- the icons have wide transparent margins: smaller reads as a dot (the window button's size)
 local CLOSE = 26 -- the client's close button at this size matches the row
 local QUEUE_ROW = 15 -- a waiting-list row's height
-local KIND_LABEL = {
-  ["questframe.detail"] = "Quest", ["questframe.progress"] = "Progress", ["questframe.reward"] = "Turn-in",
-  ["questframe.greeting"] = "Greeting", gossip = "Greeting", itemtext = "Book",
+local QUEUE_MAX = 6 -- rows the waiting list shows; the rest are counted in its header
+local LABEL_SIZE = 11
+-- the panel's own words, Japanese like the other tool windows, English while the reveal key is held or translation
+-- is off (addon interface text, not game text)
+local WORDS = {
+  upNext = { "Up next (click to play)", "次に読む（クリックで再生）" },
+  more = { "Up next (click to play), %d more", "次に読む（クリックで再生）ほか%d件" },
+  pause = { "Pause", "一時停止" }, resume = { "Resume", "再開" },
+  replay = { "Play again from the start", "最初から再生" }, whole = { "Show the whole text", "全文を表示" },
+  ["questframe.detail"] = { "Quest", "クエスト" }, ["questframe.progress"] = { "Progress", "途中経過" },
+  ["questframe.reward"] = { "Turn-in", "完了" }, ["questframe.greeting"] = { "Greeting", "あいさつ" },
+  gossip = { "Greeting", "あいさつ" }, itemtext = { "Book", "本" },
 }
 local ICON = {
   pause = "Interface\\TimeManager\\PauseButton",
@@ -38,7 +47,7 @@ local ICON = {
 
 local f -- the panel frame
 local displayed -- the queue item on screen
-local pages, starts, offsets = {}, {}, {} -- the displayed line's pages (UI/VoicePanelText.paginate)
+local pages, starts, segs = {}, {}, {} -- the displayed line's pages (UI/VoicePanelText.paginate)
 local pageShown -- the page on screen
 local english = false -- the panel shows the line's English (the reveal key is down)
 local fadeAt, fadeFrom -- the idle fade: when it starts, and when it started
@@ -61,6 +70,13 @@ local function revealed()
   return WFJ.State.modifierHeld and true or false
 end
 
+local function word(key, ...)
+  local w = WORDS[key]
+  if not w then return "" end
+  local text = (WFJ.State.enabled and not revealed()) and w[2] or w[1]
+  return select("#", ...) > 0 and text:format(...) or text
+end
+
 -- ── Text ─────────────────────────────────────────────────────────────────
 
 local function showPage(i)
@@ -72,7 +88,7 @@ local function showPage(i)
   end
   english = false
   local page = pages[i] or ""
-  Text.showPage(f.text, displayed, page, Text.pageSpans(displayed, offsets[i], page))
+  Text.showPage(f.text, displayed, page, Text.pageSpans(displayed, segs[i], page))
 end
 
 -- the page the audio is on now
@@ -189,17 +205,19 @@ end
 
 -- ── Controls and the waiting list ────────────────────────────────────────
 
+local tipFrame -- the panel's own tooltip, so its line can take the bundled face (the game's has no Japanese glyphs)
 local function tip(owner, text)
-  local GT = Compat.resolve("GameTooltip")
-  if type(GT) ~= "table" then return end
-  GT:SetOwner(owner, "ANCHOR_TOP")
-  GT:SetText(text)
-  GT:Show()
+  tipFrame = tipFrame or CreateFrame("GameTooltip", "WFJVoicePanelTip", Compat.resolve("UIParent"),
+    "GameTooltipTemplate")
+  tipFrame:SetOwner(owner, "ANCHOR_TOP")
+  tipFrame:SetText(text, 1, 1, 1)
+  local line = Compat.resolve("WFJVoicePanelTipTextLeft1")
+  if type(line) == "table" then WFJ.Font.set(line, WFJ.Font.PATH, 13, "") end
+  tipFrame:Show()
 end
 
 local function hideTip()
-  local GT = Compat.resolve("GameTooltip")
-  if type(GT) == "table" then GT:Hide() end
+  if tipFrame then tipFrame:Hide() end
 end
 
 local function control(texture, tooltip, onClick)
@@ -220,7 +238,7 @@ local function applyControls()
 end
 
 local function lineLabel(item)
-  return ("%s  ·  %s"):format(item.name or "?", KIND_LABEL[item.surface] or "")
+  return ("%s  ·  %s"):format(item.name or "?", word(item.surface))
 end
 
 -- The lines waiting their turn, above the panel, while there are any: each row plays its line now.
@@ -230,15 +248,18 @@ local function updateQueue(st)
     box:Hide()
     return
   end
+  box.header:SetText(n > QUEUE_MAX and word("more", n - QUEUE_MAX) or word("upNext"))
+  local shown = math.min(n, QUEUE_MAX)
   local widest = box.header:GetStringWidth()
-  for i = 1, math.max(#box.rows, n) do
+  for i = 1, math.max(#box.rows, shown) do
     local row = box.rows[i]
-    if not row and i <= n then
+    if not row and i <= shown then
       row = CreateFrame("Button", nil, box)
       row:SetHeight(QUEUE_ROW)
       row:SetPoint("TOPLEFT", box, "TOPLEFT", 6, -20 - (i - 1) * QUEUE_ROW)
       row:SetPoint("RIGHT", box, "RIGHT", -6, 0)
       row.text = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+      WFJ.Font.set(row.text, WFJ.Font.PATH, LABEL_SIZE, "")
       row.text:SetPoint("LEFT", row, "LEFT", 4, 0)
       row.text:SetJustifyH("LEFT")
       -- a faint gold band under the mouse, like the word cards' tint (the buttons' round glow smears across a row)
@@ -249,14 +270,14 @@ local function updateQueue(st)
       box.rows[i] = row
     end
     if row then
-      local it = st.waiting[i]
+      local it = i <= shown and st.waiting[i] or nil
       row.key = it and it.key or nil
       row.text:SetText(it and lineLabel(it) or "")
-      row:SetShown(i <= n)
+      row:SetShown(it ~= nil)
       if it then widest = math.max(widest, row.text:GetStringWidth()) end
     end
   end
-  box:SetSize(math.ceil(widest) + 22, 26 + n * QUEUE_ROW)
+  box:SetSize(math.ceil(widest) + 22, 26 + shown * QUEUE_ROW)
   box:Show()
 end
 
@@ -290,7 +311,10 @@ local function onTick(self, elapsed)
   self.since = 0
   applyControls()
   local st = WFJ.VoicePlayer.state()
-  if revealed() ~= english then showPage(audioPage(st) or pageShown or 1) end -- the reveal key went down or up
+  if revealed() ~= english then -- the reveal key went down or up: the panel and the whole text follow
+    showPage(audioPage(st) or pageShown or 1)
+    Text.refreshWhole(displayed, look(), english)
+  end
   local want = not english and #pages > 1 and audioPage(st)
   if want and want ~= pageShown then showPage(want) end
   local alpha = baseAlpha()
@@ -327,10 +351,10 @@ function Panel.update()
     displayed = item
     f.name:SetText(item.name or "")
     f.title:SetText(item.title and ("<" .. item.title:gsub("^<", ""):gsub(">$", "") .. ">") or "")
-    pages, starts, offsets = Text.paginate(item.ja)
+    pages, starts, segs = Text.paginate(item.ja, look().pageChars)
     Head.load(f.head, item, Q.opt.head, placeText)
     showPage(1)
-    Text.refreshWhole(item, look())
+    Text.refreshWhole(item, look(), revealed())
   end
   if st.playing then
     fadeAt, fadeFrom, fadedPaused = nil, nil, nil
@@ -351,9 +375,17 @@ function Panel.update()
   if not was then buttonsFollow() end
 end
 
+-- Locked, the panel lets clicks through to the world under it (it still senses the mouse for its controls and the
+-- fade); unlocked, a left-drag moves it. [verified: forever 1.60.1.70245 simplescriptregionapidocumentation.lua:631
+-- (SetMouseClickEnabled)]
+local function applyLock()
+  if f.SetMouseClickEnabled then f:SetMouseClickEnabled(not Q.opt.locked) end
+end
+
 local function relayout()
   if not f then return end
   applyLook()
+  applyLock()
   if displayed then
     Head.reset(f.head)
     redraw = true
@@ -403,8 +435,8 @@ local function build()
   f.box:SetPoint("BOTTOMLEFT", f, "TOPLEFT", 0, 2)
   f.box.rows = {}
   f.box.header = f.box:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  WFJ.Font.set(f.box.header, WFJ.Font.PATH, LABEL_SIZE, "")
   f.box.header:SetPoint("TOPLEFT", f.box, "TOPLEFT", 10, -7)
-  f.box.header:SetText("Up next (click to play)")
   f.box:Hide()
 
   local P = WFJ.VoicePlayer
@@ -414,8 +446,8 @@ local function build()
   f.close:SetScript("OnClick", function() P.clear() end)
   -- the book sits inside the replay button's gold frame (the frame's dark inside hides the icon's own black square
   -- and its centre dot), so it matches the other controls
-  f.textButton = control(ICON.replay, "Show the whole text", function()
-    Text.openWhole(f, displayed, look(), Q.opt.textOpens == "quest")
+  f.textButton = control(ICON.replay, function() return word("whole") end, function()
+    Text.openWhole(f, displayed, look(), Q.opt.textOpens == "quest", revealed())
   end)
   local book = f.textButton:CreateTexture(nil, "OVERLAY")
   book:SetTexture(ICON.book)
@@ -423,15 +455,17 @@ local function build()
   book:SetSize(BUTTON * 0.5, BUTTON * 0.5)
   book:SetPoint("CENTER", f.textButton, "CENTER", 0, 0)
   f.textButton:SetPoint("RIGHT", f.close, "LEFT", -2, 0)
-  f.replay = control(ICON.replay, "Play again from the start", function() P.replay() end)
+  f.replay = control(ICON.replay, function() return word("replay") end, function() P.replay() end)
   f.replay:SetPoint("RIGHT", f.textButton, "LEFT", -2, 0)
   f.pause = control(ICON.pause, function()
     local st = P.state()
-    return (st.paused or not st.playing) and "Resume" or "Pause"
+    return word((st.paused or not st.playing) and "resume" or "pause")
   end, function() P.togglePause() end)
   f.pause:SetPoint("RIGHT", f.replay, "LEFT", -2, 0)
   f.controls = { f.pause, f.replay, f.textButton, f.close }
 
+  local lockdown = Compat.resolve("InCombatLockdown") -- built mid-combat: dimmed from the start
+  inCombat = type(lockdown) == "function" and lockdown() and true or false
   local ev = CreateFrame("Frame", nil, f)
   ev:RegisterEvent("PLAYER_REGEN_DISABLED")
   ev:RegisterEvent("PLAYER_REGEN_ENABLED")
@@ -441,6 +475,7 @@ local function build()
   end)
 
   applyLook()
+  applyLock()
   place()
 end
 
@@ -458,23 +493,31 @@ end
 function WFJ_VoicePause() WFJ.VoicePlayer.togglePause() end
 function WFJ_VoiceReplay() WFJ.VoicePlayer.replay() end
 
--- Called by Main after VoicePlayer.
+local function update() pcall(Panel.update) end -- a panel error never stops the other listeners of an event
+
+-- Called by Main after VoicePlayer. Every listener is guarded: they share events ("enabled", "modifier", "voice")
+-- with UI/Render, which must run whatever happens here.
 function Panel.init()
+  local wasOn = Q.opt.on
   WFJ.State.on("voiceQueue", function()
     if not Q.opt.on then return end
-    if not f and WFJ.VoicePlayer.state().item then build() end
-    Panel.update()
+    if not f and WFJ.VoicePlayer.state().item then pcall(build) end
+    update()
   end)
-  WFJ.State.on("enabled", function() Panel.update() end)
-  WFJ.State.on("modifier", function() Panel.update() end)
-  WFJ.State.on("voice", function() Panel.update() end)
-  -- a choice on the settings page (voice.panel.*): redraw; Panel size Off ends the line and hides the panel
+  WFJ.State.on("enabled", update)
+  WFJ.State.on("modifier", update)
+  WFJ.State.on("voice", update)
+  -- a choice on the settings page (voice.panel.*): redraw; switching Panel size to Off ends the line and hides the
+  -- panel (only that change: other settings changed while it is Off leave a line playing alone)
   WFJ.State.on("voicePanel", function()
-    if not Q.opt.on then
-      WFJ.VoicePlayer.stop()
-      return hidePanel()
+    local on = Q.opt.on
+    if not on then
+      if wasOn then pcall(WFJ.VoicePlayer.stop) end
+      wasOn = false
+      return pcall(hidePanel)
     end
-    relayout()
+    wasOn = true
+    pcall(relayout)
   end)
   return true
 end

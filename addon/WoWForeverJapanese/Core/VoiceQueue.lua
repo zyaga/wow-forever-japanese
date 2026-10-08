@@ -2,8 +2,9 @@
 -- Pure tables: no frames, no sound calls. UI/VoicePlayer plays the head; UI/VoicePanel draws it.
 --   * The head (items[1]) is the line playing, or paused; the rest wait their turn.
 --   * A line already queued (same pack key) is not added again.
---   * `opt` reads the player's choices from Core/Settings (voice.panel.*) and keeps the panel's position, and the
---     size it had before Off, in WFJ_DB.voicePanel.
+--   * `opt` reads the player's choices from Core/Settings (voice.panel.*), read-only: the settings page and
+--     `/wfj voice.panel.*` change them. It keeps one thing of its own: where the panel was dragged to,
+--     WFJ_DB.voicePanel.point, created the first time it is set.
 local _, WFJ = ...
 local Q = {}
 WFJ.VoiceQueue = Q
@@ -12,34 +13,14 @@ Q.items = {}
 Q.paused = false
 
 local S = function() return WFJ.Settings end
-local saved = {} -- WFJ_DB.voicePanel: { point = { point, relativePoint, x, y } once dragged, lastSize }
-local savedDb -- WFJ_DB: voicePanel is created only when the panel first keeps something (a player without voice
-              -- never gets the key)
+local saved = {} -- WFJ_DB.voicePanel, once it exists
+local savedDb -- WFJ_DB
 
-local function flag(id)
-  return { get = function() return S().get(id) end, set = function(v) S().set(id, v and true or false) end }
-end
-local function word(id, yes, no)
-  return { get = function() return S().get(id) and yes or no end, set = function(v) S().set(id, v == yes) end }
-end
--- look number → { strip, parchment }: 1 Full Dark, 3 Strip Dark, 4 Full Parchment, 5 Strip Parchment
-local LOOK_OF = { [1] = { false, false }, [3] = { true, false }, [4] = { false, true }, [5] = { true, true } }
-
--- `opt` key → its setting
+-- `opt` key → how it reads its setting
+local function flag(id) return function() return S().get(id) end end
+local function word(id, yes, no) return function() return S().get(id) and yes or no end end
 Q.MAPPED = {
-  -- Panel size Off switches the panel off; switching it on again brings back the size it had
-  on = {
-    get = function() return S().get("voice.panel.size") ~= "off" end,
-    set = function(v)
-      local size = S().get("voice.panel.size")
-      if not v then
-        if size ~= "off" then Q.opt.lastSize = size end
-        S().set("voice.panel.size", "off")
-      elseif size == "off" then
-        S().set("voice.panel.size", Q.opt.lastSize or "full")
-      end
-    end,
-  },
+  on = function() return S().get("voice.panel.size") ~= "off" end, -- Panel size Off switches the panel off
   keepPlaying = flag("voice.panel.keep"),
   head = flag("voice.panel.head"),
   combat = flag("voice.panel.combatDim"),
@@ -47,29 +28,22 @@ Q.MAPPED = {
   buttons = word("voice.panel.hoverButtons", "hover", "always"),
   idle = word("voice.panel.fade", "fade", "stay"),
   textOpens = word("voice.panel.questLog", "quest", "window"),
-  look = {
-    get = function()
-      local strip, parchment = S().get("voice.panel.size") == "strip", S().get("voice.panel.style") == "parchment"
-      return strip and (parchment and 5 or 3) or (parchment and 4 or 1)
-    end,
-    set = function(n)
-      local pair = LOOK_OF[n]
-      if not pair then return end
-      if S().get("voice.panel.size") ~= "off" then S().set("voice.panel.size", pair[1] and "strip" or "full") end
-      S().set("voice.panel.style", pair[2] and "parchment" or "dark")
-    end,
-  },
+  -- 1 Full Dark, 3 Strip Dark, 4 Full Parchment, 5 Strip Parchment (UI/VoicePanelLooks)
+  look = function()
+    local strip, parchment = S().get("voice.panel.size") == "strip", S().get("voice.panel.style") == "parchment"
+    return strip and (parchment and 5 or 3) or (parchment and 4 or 1)
+  end,
 }
 
 Q.opt = setmetatable({}, {
   __index = function(_, k)
     local m = Q.MAPPED[k]
-    if m then return m.get() end
+    if m then return m() end
     return saved[k]
   end,
   __newindex = function(_, k, v)
-    local m = Q.MAPPED[k]
-    if m then return m.set(v) end
+    assert(not Q.MAPPED[k], "VoiceQueue.opt." .. tostring(k) .. " is a setting: set voice.panel.* instead")
+    if v == nil and saved[k] == nil then return end -- nothing to clear: no saved table for nothing
     saved[k] = v
     if savedDb and savedDb.voicePanel ~= saved then savedDb.voicePanel = saved end
   end,
@@ -80,13 +54,12 @@ Q.opt = setmetatable({}, {
 local RETIRED_SETTINGS = { "voice.panel", "voice.panel.strip", "voice.panel.parchment", "voice.panel.queueBox",
   "voice.panel.ruby" }
 local RETIRED_SAVED = { "on", "keepPlaying", "look", "buttons", "queue", "idle", "idleDelay", "combat", "combatAlpha",
-  "head", "zoom", "cam", "page", "textOpens", "scale", "locked", "textSize", "rubyInline" }
+  "head", "zoom", "cam", "page", "textOpens", "scale", "locked", "textSize", "rubyInline", "lastSize" }
 
 local function carryOver(db)
   local st = type(db.settings) == "table" and db.settings or {}
   if st["voice.panel.strip"] ~= nil or st["voice.panel.parchment"] ~= nil or st["voice.panel"] ~= nil then
-    local size = st["voice.panel.strip"] and "strip" or "full"
-    if st["voice.panel"] == false then Q.opt.lastSize, size = size, "off" end
+    local size = st["voice.panel"] == false and "off" or (st["voice.panel.strip"] and "strip" or "full")
     pcall(S().set, "voice.panel.size", size)
     if st["voice.panel.parchment"] ~= nil then
       pcall(S().set, "voice.panel.style", st["voice.panel.parchment"] and "parchment" or "dark")

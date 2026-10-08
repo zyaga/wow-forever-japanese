@@ -1760,6 +1760,7 @@ UI\VoicePanelLooks.lua
 UI\VoicePanelHead.lua
 UI\VoicePanelText.lua
 UI\VoicePanel.lua
+UI\VoiceQuestLog.lua
 UI\VoiceErrors.lua
 UI\ButtonText.lua
 UI\Labels.lua

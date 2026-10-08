@@ -7,8 +7,8 @@ local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Core/Stat
   "Core/Voice.lua", "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua",
   "Core/Hash.lua", "Core/Collector.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua", "Core/Readings.lua",
   "Core/VoiceQueue.lua", "UI/Font.lua", "UI/Render.lua", "UI/VoicePlayer.lua", "UI/VoicePanelLooks.lua",
-  "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua", "UI/VoicePanel.lua", "UI/ButtonText.lua", "UI/Labels.lua",
-  "UI/QuestFrame.lua" }
+  "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua", "UI/VoicePanel.lua", "UI/VoiceQuestLog.lua", "UI/ButtonText.lua",
+  "UI/Labels.lua", "UI/QuestFrame.lua" }
 
 local DATA = {
   ["quest.title"] = { [2] = { ja = "Sharptalonの鉤爪", status = "." }, [3] = { ja = "別のクエスト", status = "." } },
@@ -38,6 +38,7 @@ local function extendFrames()
     function f:IsMouseOver() return Stub.mouseOn == self end
     function f:ClearAllPoints() self.point = nil end
     function f.GetPoint() return "BOTTOM", nil, "BOTTOM", 10, 20 end
+    function f:SetMouseClickEnabled(v) self.clicks = v end
     if kind == "PlayerModel" then
       function f:SetUnit(u) self.unit, self.creature = u, nil end
       function f:SetCreature(id) self.creature, self.unit = id, nil end
@@ -48,6 +49,7 @@ local function extendFrames()
     function f:CreateTexture(...)
       local t = createTexture(self, ...)
       function t.SetShown(tx, v) tx.shown = v and true or false end
+      function t.SetTexCoord(tx, ...) tx.coords = { ... } end
       return relax(t)
     end
     local createFontString = f.CreateFontString
@@ -168,6 +170,7 @@ local function setup(withPack)
   assert.is_true(WFJ.QuestFrame.init())
   assert.is_true(WFJ.VoicePlayer.init(db))
   assert.is_true(WFJ.VoicePanel.init())
+  assert.is_true(WFJ.VoiceQuestLog.init(db))
   if withPack then pack(packLines()) end
   setQuest(2)
 end
@@ -175,6 +178,7 @@ end
 local function teardown()
   _G.PlaySoundFile, _G.StopSound, _G.C_CVar, _G.C_Timer, _G.C_Texture, _G.C_TooltipInfo = nil, nil, nil, nil, nil, nil
   _G.UnitFactionGroup, _G.QuestMapFrame, _G.QuestMapFrame_ShowQuestDetails, _G.WFJVoicePanel = nil, nil, nil, nil
+  _G.InCombatLockdown, _G.WFJVoicePanelTip = nil, nil
   _G.WFJVoicePanelText, _G.C_QuestLog, _G.QuestMapFrame_OpenToQuestDetails = nil, nil, nil
   Stub.units.questnpc = nil
 end
@@ -385,12 +389,11 @@ describe("the voice player with the voice panel on", function()
     WFJ.Render.show("questmap.info", "title", title, "Sharptalon's Claw", "quests", "quest.title", 2)
     db.voiceSpeakers = { ["2-description"] = { c = 1992, s = 2, n = "Senani Thunderheart", t = "Trainer" } }
     _G.QuestMapFrame_ShowQuestDetails(2)
-    local b
-    for _, fr in ipairs(Stub.frames) do
-      if fr.parent == _G.QuestMapFrame.DetailsFrame.BackFrame and fr.kind == "Button" then b = fr end
-    end
+    local b = WFJ.VoiceQuestLog.button()
+    assert.are.equal(_G.QuestMapFrame.DetailsFrame.BackFrame, b.parent)
     assert.is_true(b:IsShown())
     b.scripts.OnClick(b)
+    assert.is_false(b:IsShown()) -- the panel is up: its own controls stand in
     assert.are.equal(SOUND:format("2-description"), sounds[1].path)
     assert.are.equal(1992, panel().head.model.creature) -- no NPC on screen: by creature id
     assert.are.equal("Senani Thunderheart", panel().name:GetText())
@@ -423,6 +426,122 @@ describe("the voice player with the voice panel on", function()
     f.textButton.scripts.OnClick(f.textButton) -- a second press closes it
     assert.is_false(_G.WFJVoicePanelText:IsShown())
     assert.are.same({}, Stub.prints)
+  end)
+
+  it("a waiting line does not start while the reveal key is held; letting go starts it", function()
+    Stub.showDetail()
+    setQuest(3)
+    Stub.showDetail()
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    runTimers() -- the first line ends with English showing
+    assert.are.equal(1, #sounds)
+    assert.is_nil(P.current())
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
+    assert.are.equal(SOUND:format("3-description"), sounds[2].path)
+  end)
+
+  it("the whole-text window shows the line's English while the reveal key is held, with no word cards", function()
+    Stub.showDetail()
+    local f = panel()
+    S.set("voice.panel.questLog", false)
+    f.textButton.scripts.OnClick(f.textButton)
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    tick(f, 0.5)
+    assert.are.equal(EN, _G.WFJVoicePanelText.text:GetText())
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
+    tick(f, 0.7)
+    assert.are.equal("御機嫌よう、Reyn。Silverwind Refugeへ行け。", _G.WFJVoicePanelText.text:GetText())
+  end)
+
+  it("a new line takes over from a paused one and plays at once; the lines waiting stay waiting", function()
+    Stub.showDetail()
+    setQuest(3)
+    Stub.showDetail() -- 3 waits
+    panel().pause.scripts.OnClick(panel().pause) -- 2 paused
+    setQuest(2)
+    Stub.showProgress() -- a new line
+    assert.are.equal(SOUND:format("2-progress"), sounds[#sounds].path)
+    assert.is_false(P.state().paused)
+    assert.are.equal("3-description", P.state().waiting[1].key)
+  end)
+
+  it("play again never plays a line whose kind was switched off since", function()
+    Stub.showDetail()
+    runTimers()
+    S.set("voice.offer", false)
+    assert.is_false(P.replay())
+    assert.are.equal(1, #sounds)
+  end)
+
+  it("an error in the panel never stops the other listeners of an event", function()
+    Stub.showDetail()
+    WFJ.VoicePanel.update = function() error("broken") end
+    assert.has_no.errors(function() WFJ.State.fire("modifier", true) end)
+    assert.has_no.errors(function() WFJ.State.fire("enabled", true) end)
+  end)
+
+  it("the waiting list shows six rows and counts the rest; its words follow the language", function()
+    Stub.showDetail()
+    for i = 1, 8 do
+      WFJ.VoiceQueue.push({ key = "x" .. i, name = "NPC " .. i, surface = "gossip", window = "GossipFrame" })
+    end
+    WFJ.State.fire("voiceQueue")
+    local box = panel().box
+    local shown = 0
+    for _, row in ipairs(box.rows) do if row:IsShown() then shown = shown + 1 end end
+    assert.are.equal(6, shown)
+    assert.are.equal("次に読む（クリックで再生）ほか2件", box.header:GetText())
+    assert.are.equal("NPC 1  ·  あいさつ", box.rows[1].text:GetText())
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    assert.are.equal("Up next (click to play), 2 more", box.header:GetText())
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
+  end)
+
+  it("built in combat it starts dimmed; locked, it lets clicks through", function()
+    _G.InCombatLockdown = function() return true end
+    Stub.showDetail()
+    assert.are.equal(0.4, panel().alpha)
+    assert.is_true(panel().clicks)
+    S.set("voice.panel.lock", true)
+    assert.is_false(panel().clicks)
+  end)
+
+  it("look 5 draws the parchment's plain middle and frames the head", function()
+    S.set("voice.panel.size", "strip")
+    Stub.units.questnpc = { name = "Senani Thunderheart", guid = "Creature-0-1-0-1-1992-0000ABCD" }
+    Stub.showDetail()
+    assert.are.same({ 0.06, 0.78, 0.3, 0.7 }, panel().bg.coords)
+    assert.is_true(panel().head.frame:IsShown())
+  end)
+
+  it("the reward panel's NPC is remembered too, and the quest window says which panel showed", function()
+    local seen = {}
+    WFJ.State.on("questShown", function(id, panelName) seen[#seen + 1] = id .. ":" .. panelName end)
+    Stub.units.questnpc = { name = "Senani Thunderheart", guid = "Creature-0-1-0-1-1992-0000ABCD" }
+    Stub.showReward()
+    assert.are.equal(1992, db.voiceSpeakers["2-completion"].c)
+    assert.are.same({ "2:reward" }, seen)
+  end)
+
+  it("with Panel size Off: a panel setting or a loading screen leaves the line playing; switched on mid-line, the "
+    .. "window button still stops it", function()
+    S.set("voice.panel.size", "off")
+    Stub.showDetail()
+    assert.are.equal("2-description", P.current())
+    S.set("voice.panel.lock", true)
+    assert.are.equal("2-description", P.current())
+    frameWith("PLAYER_ENTERING_WORLD"):fire("PLAYER_ENTERING_WORLD")
+    assert.are.equal("2-description", P.current())
+    S.set("voice.panel.size", "full")
+    local b = P.button("QuestFrame")
+    b.scripts.OnClick(b)
+    assert.is_nil(P.current())
   end)
 
   it("/wfj panel reset puts it back at the bottom centre; nothing else is a panel command", function()
@@ -460,7 +579,8 @@ describe("Core/VoiceQueue", function()
     assert.are.equal(0, Q.size())
   end)
 
-  it("maps Panel size and style to the four looks, and Off to the panel off with its size remembered", function()
+  it("maps Panel size and style to the four looks and Off to the panel off; keeps only the position itself",
+    function()
     local saved = S.load(nil, 1, {})
     Q.init(saved)
     assert.are.equal(4, Q.opt.look) -- Full, Parchment by default
@@ -470,11 +590,13 @@ describe("Core/VoiceQueue", function()
     assert.are.equal(3, Q.opt.look)
     S.set("voice.panel.size", "full")
     assert.are.equal(1, Q.opt.look)
-    S.set("voice.panel.size", "strip")
-    Q.opt.on = false
-    assert.are.equal("off", S.get("voice.panel.size"))
-    Q.opt.on = true
-    assert.are.equal("strip", S.get("voice.panel.size"))
+    S.set("voice.panel.size", "off")
+    assert.is_false(Q.opt.on)
+    assert.has_error(function() Q.opt.on = true end) -- a setting, never written through `opt`
+    Q.opt.point = nil -- nothing to clear: no saved table appears
+    assert.is_nil(saved.voicePanel)
+    Q.opt.point = { "TOP", "TOP", 0, -20 }
+    assert.are.same({ "TOP", "TOP", 0, -20 }, saved.voicePanel.point)
   end)
 
   it("an earlier build's switches carry into the dropdowns once and are dropped with the retired values", function()
@@ -504,13 +626,24 @@ describe("UI/VoicePanelText: pages and their words", function()
 
   it("splits after 。！？ and line breaks, joins a short sentence to the next, and gives each page its share", function()
     local ja = "これは最初のとても長い文です。短い。これは三つ目の文で、少し長いです！"
-    local pages, starts, offsets = T.paginate(ja)
+    local pages, starts, segs = T.paginate(ja)
     assert.are.same({ "これは最初のとても長い文です。", "短い。これは三つ目の文で、少し長いです！" }, pages)
     assert.are.equal(0, starts[1])
     assert.is_true(starts[2] > 0.3 and starts[2] < 0.6)
-    assert.are.equal(1, offsets[1])
-    assert.are.equal(#pages[1] + 1, offsets[2])
+    assert.are.equal(1, segs[1][1].from)
+    assert.are.equal(#pages[1] + 1, segs[2][1].from)
     assert.are.same({ "" }, (T.paginate("")))
+    -- a run of marks stays together: the next page never starts with one
+    local runs = T.paginate("これは本当のことなのか！？そうだ、間違いなく本当のことだ。")
+    assert.are.equal("これは本当のことなのか！？", runs[1])
+    assert.are.equal("そうだ、間違いなく本当のことだ。", runs[2])
+  end)
+
+  it("a sentence longer than the look's lines is split after 、, and each piece keeps its bytes", function()
+    local ja = "長い長い文章の始まりで、それから真ん中があって、最後にここで終わる。"
+    local pages, _, segs = T.paginate(ja, 12)
+    assert.are.same({ "長い長い文章の始まりで、", "それから真ん中があって、", "最後にここで終わる。" }, pages)
+    for i, page in ipairs(pages) do assert.are.equal(page, ja:sub(segs[i][1].from, segs[i][1].from + #page - 1)) end
   end)
 
   it("a page's words are found in the whole line: an earlier sentence's word never steals the cursor", function()
@@ -519,10 +652,24 @@ describe("UI/VoicePanelText: pages and their words", function()
       .. "あります=あります=11" } })
     local item = { kind = "gossip", id = "k",
       ja = "光があなたと共にありますように、Padinnann。今日は何かお手伝いできることはありますか？" }
-    local pages, _, offsets = T.paginate(item.ja)
+    local pages, _, segs = T.paginate(item.ja)
     local words = {}
-    for _, sp in ipairs(T.pageSpans(item, offsets[2], pages[2])) do words[#words + 1] = sp.word end
+    for _, sp in ipairs(T.pageSpans(item, segs[2], pages[2])) do words[#words + 1] = sp.word end
     assert.are.same({ "今日", "何か", "お手伝い", "できる", "こと", "あります" }, words)
     assert.are.equal(1, #WFJ.Readings.lookup("gossip", "k", pages[2])) -- on its own: one word
+  end)
+
+  it("a short sentence joined across a paragraph break keeps its words in the right place", function()
+    WFJ.Data.add("reading", { ["gossip:p"] = { text = "来た=きた=1 今日=きょう=2 天気=てんき=3" } })
+    local item = { kind = "gossip", id = "p", ja = "よく来た。\n\n今日は良い天気だ。" }
+    local pages, _, segs = T.paginate(item.ja)
+    assert.are.same({ "よく来た。今日は良い天気だ。" }, pages)
+    local spans = T.pageSpans(item, segs[1], pages[1])
+    local words = {}
+    for _, sp in ipairs(spans) do
+      words[#words + 1] = sp.word
+      assert.are.equal(sp.word, pages[1]:sub(sp.first, sp.last)) -- each word where the page has it
+    end
+    assert.are.same({ "来た", "今日", "天気" }, words)
   end)
 end)

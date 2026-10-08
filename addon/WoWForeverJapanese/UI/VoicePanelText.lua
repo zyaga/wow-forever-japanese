@@ -1,9 +1,10 @@
 -- UI/VoicePanelText.lua: the voice panel's text (ADR-063): the line paged a sentence at a time, each page's words for
 -- the word cards, the English shown while the reveal key is held, and the whole-text window.
---   Text.paginate(ja) → pages, starts, offsets      (pure: starts are shares of the line, offsets bytes in `ja`)
---   Text.pageSpans(item, offset, page) → the page's words, located in the whole line
+--   Text.paginate(ja, budget) → pages, starts, segs (pure: starts are shares of the line; segs map each page's pieces
+--                                 back to their bytes in `ja`)
+--   Text.pageSpans(item, segs, page) → the page's words, located in the whole line
 --   Text.showPage(fs, item, page, spans) · Text.showEnglish(fs, item) · Text.detach()
---   Text.openWhole(anchor, item, look, toQuestLog) → true when shown · Text.refreshWhole(item, look)
+--   Text.openWhole(anchor, item, look, toQuestLog, english) → true when shown · Text.refreshWhole(item, look, english)
 --   Text.hideWhole() · Text.wholeShown()
 -- Word cards come from UI/Readings like every other surface (surface "voicepanel"); a page passes its words in
 -- `rec.spans`, because a line's word list is in the order of the whole line and a sentence alone can match an
@@ -26,56 +27,121 @@ local function chars(s)
   return (s:gsub("[\128-\191]", "")):len()
 end
 
--- The line split after 。！？ and line breaks (a closing bracket stays with its sentence); a sentence under
--- SHORT_PAGE characters joins the next. → pages, the share of the line each starts at, the byte each starts at in
--- `ja` (nil for a page that is not a plain slice of it: trimmed pieces joined)
-function Text.paginate(ja)
-  local pages, starts, offsets = {}, {}, {}
-  if type(ja) ~= "string" or ja == "" then return { "" }, { 0 }, {} end
-  local s = ja
-  for _, p in ipairs({ "。", "！", "？", "\n" }) do s = s:gsub(p, p .. "\1") end
-  for _, close in ipairs({ "」", "』", "）" }) do s = s:gsub("\1" .. close, close .. "\1") end
-  local parts, carry = {}, ""
-  for raw in (s .. "\1"):gmatch("(.-)\1") do
-    local piece = raw:gsub("^%s+", ""):gsub("%s+$", "")
-    if piece ~= "" then
-      carry = carry == "" and piece or (carry .. piece)
-      if chars(carry) >= SHORT_PAGE then
-        parts[#parts + 1] = carry
-        carry = ""
+local ENDS = { "。", "！", "？" } -- a sentence ends at a run of these (and its closing brackets)
+local CLOSES = { "」", "』", "）" }
+
+-- the byte length of the mark from ENDS / CLOSES / "\n" starting at `i`, or nil
+local function markAt(ja, i, set)
+  for _, m in ipairs(set) do
+    if ja:sub(i, i + #m - 1) == m then return #m end
+  end
+  return nil
+end
+
+-- The line's sentences as { text, from }: `from` is the byte the trimmed text starts at in `ja`. A sentence ends after
+-- a run of 。！？ and the closing brackets after it, or at a line break; spaces and breaks around it are trimmed.
+local function sentences(ja)
+  local out, start, i = {}, 1, 1
+  local function cut(stop)
+    local raw = ja:sub(start, stop)
+    local lead = #(raw:match("^%s*"))
+    local text = raw:gsub("^%s+", ""):gsub("%s+$", "")
+    if text ~= "" then out[#out + 1] = { text = text, from = start + lead } end
+    start = stop + 1
+  end
+  while i <= #ja do
+    if ja:sub(i, i) == "\n" then
+      cut(i)
+      i = i + 1
+    else
+      local n = markAt(ja, i, ENDS)
+      if n then
+        local j = i + n
+        while true do -- the rest of the run, then its closing brackets
+          local m = markAt(ja, j, ENDS) or markAt(ja, j, CLOSES)
+          if not m then break end
+          j = j + m
+        end
+        cut(j - 1)
+        i = j
+      else
+        i = i + 1
       end
     end
   end
-  if carry ~= "" then
-    if #parts > 0 then parts[#parts] = parts[#parts] .. carry else parts[1] = carry end
-  end
-  local total = 0
-  for _, p in ipairs(parts) do total = total + chars(p) end
-  local at, from = 0, 1
-  for i, p in ipairs(parts) do
-    pages[i], starts[i] = p, total > 0 and at / total or 0
-    at = at + chars(p)
-    local found = ja:find(p, from, true)
-    offsets[i] = found
-    if found then from = found + #p end
-  end
-  return pages, starts, offsets
+  if start <= #ja then cut(#ja) end
+  return out
 end
 
--- The words of a page starting at byte `offset` of `item.ja`, shifted to the page; a page with no offset is looked
--- up on its own.
-function Text.pageSpans(item, offset, page)
+-- A sentence longer than `budget` characters split after 、 into pieces that fit (a piece with no 、 to split at is
+-- cut at the budget, on a character boundary), each with its byte offset.
+local function fit(piece, budget)
+  if not budget or chars(piece.text) <= budget then return { piece } end
+  local out, text, base = {}, piece.text, piece.from
+  local from, at = 1, 1 -- the current piece's first byte, and the scan position, in `text`
+  local lastComma -- the byte after the last 、 seen in the current piece
+  while at <= #text do
+    local c = text:byte(at)
+    local len = c >= 0xF0 and 4 or c >= 0xE0 and 3 or c >= 0xC0 and 2 or 1
+    if text:sub(at, at + len - 1) == "、" then lastComma = at + len end
+    if chars(text:sub(from, at + len - 1)) > budget then
+      local stop = (lastComma and lastComma > from) and lastComma - 1 or at - 1
+      out[#out + 1] = { text = text:sub(from, stop), from = base + from - 1 }
+      from, lastComma = stop + 1, nil
+    end
+    at = at + len
+  end
+  if from <= #text then out[#out + 1] = { text = text:sub(from), from = base + from - 1 } end
+  return out
+end
+
+-- The line in pages a sentence at a time; a sentence under SHORT_PAGE characters joins the next, and a sentence over
+-- `budget` characters (what the look's lines hold) is split after 、.
+-- → pages, the share of the line each starts at, and per page its pieces { from (byte in `ja`), at (byte in the
+-- page), len } so the line's words can be mapped onto it
+function Text.paginate(ja, budget)
+  if type(ja) ~= "string" or ja == "" then return { "" }, { 0 }, { {} } end
+  local pieces = {}
+  for _, sentence in ipairs(sentences(ja)) do
+    for _, piece in ipairs(fit(sentence, budget)) do pieces[#pieces + 1] = piece end
+  end
+  local pages, segs = {}, {}
+  local text, seg = "", {}
+  local function flush()
+    if text ~= "" then pages[#pages + 1], segs[#segs + 1] = text, seg end
+    text, seg = "", {}
+  end
+  for _, piece in ipairs(pieces) do
+    if text ~= "" and chars(text) >= SHORT_PAGE then flush() end
+    seg[#seg + 1] = { from = piece.from, at = #text + 1, len = #piece.text }
+    text = text .. piece.text
+  end
+  flush()
+  if #pages == 0 then return { "" }, { 0 }, { {} } end
+  local total, at, starts = 0, 0, {}
+  for _, p in ipairs(pages) do total = total + chars(p) end
+  for i, p in ipairs(pages) do
+    starts[i] = total > 0 and at / total or 0
+    at = at + chars(p)
+  end
+  return pages, starts, segs
+end
+
+-- The words of a page made of `segs` (from Text.paginate), located in the whole line and moved to the page.
+function Text.pageSpans(item, segs, page)
   if lineSpansFor ~= item then
     lineSpansFor = item
     lineSpans = item and type(item.ja) == "string" and WFJ.Readings.lookup(item.kind, item.id, item.ja) or nil
   end
-  if not offset or not lineSpans then return WFJ.Readings.lookup(item.kind, item.id, page) end
-  local last = offset + #page - 1
+  if not segs or not segs[1] or not lineSpans then return WFJ.Readings.lookup(item.kind, item.id, page) end
   local out = {}
   for _, sp in ipairs(lineSpans) do
-    if sp.first >= offset and sp.last <= last then
-      out[#out + 1] = { first = sp.first - offset + 1, last = sp.last - offset + 1, word = sp.word,
-        reading = sp.reading, gloss = sp.gloss }
+    for _, sg in ipairs(segs) do
+      if sp.first >= sg.from and sp.last <= sg.from + sg.len - 1 then
+        local shift = sg.at - sg.from
+        out[#out + 1] = { first = sp.first + shift, last = sp.last + shift, word = sp.word, reading = sp.reading,
+          gloss = sp.gloss }
+      end
     end
   end
   return out
@@ -142,7 +208,8 @@ local function buildWhole()
 end
 
 -- The window's text and colours for `item` in the panel's look (parchment behind dark text on a parchment look).
-function Text.refreshWhole(item, L)
+-- `english`: the reveal key is held: the line's English, with no word cards (they never show while English does).
+function Text.refreshWhole(item, L, english)
   if not whole or not whole:IsShown() or not item then return end
   local parchment = L.textColor[1] < 0.5
   whole.bg:SetShown(parchment)
@@ -157,6 +224,12 @@ function Text.refreshWhole(item, L)
     whole.text:SetShadowOffset(1, -1)
   end
   whole.title:SetText(item.name or "")
+  if english then
+    if WFJ.ReadingView and wholeRec.fs then pcall(WFJ.ReadingView.detach, wholeRec) end
+    whole.text:SetText(item.en or item.ja or "")
+    whole.child:SetHeight(math.max(whole.text:GetStringHeight() + 8, 10))
+    return
+  end
   local ja = item.ja or ""
   whole.text:SetText(ja)
   whole.child:SetHeight(math.max(whole.text:GetStringHeight() + 8, 10))
@@ -182,7 +255,7 @@ end
 
 -- The whole text of `item`: the quest in the quest log when `toQuestLog` and it is there, else the window above
 -- `anchor` (a second call closes the window). → true when something opened
-function Text.openWhole(anchor, item, L, toQuestLog)
+function Text.openWhole(anchor, item, L, toQuestLog, english)
   if not item then return false end
   if whole and whole:IsShown() then
     whole:Hide()
@@ -193,7 +266,7 @@ function Text.openWhole(anchor, item, L, toQuestLog)
   whole:ClearAllPoints()
   whole:SetPoint("BOTTOM", anchor, "TOP", 0, 6)
   whole:Show()
-  Text.refreshWhole(item, L)
+  Text.refreshWhole(item, L, english)
   return true
 end
 

@@ -25,7 +25,7 @@ WFJ.VoicePanelLooks = {
     textLeft = 152, textLeftNoHead = 28, nameTop = -25, textRight = -42,
     nameFont = "Fancy22Font", titleFont = "GameFontNormal",
     nameColor = { 1, 0.82, 0.02 }, titleColor = { 0.85, 0.85, 0.85 }, textColor = { 1, 1, 1 }, shadow = true,
-    textSize = 15, title = true,
+    textSize = 15, title = true, pageChars = 96, -- what four lines hold
   },
   [3] = {
     width = 520, height = 62,
@@ -34,7 +34,7 @@ WFJ.VoicePanelLooks = {
     textLeft = 66, textLeftNoHead = 12, nameTop = -6, textRight = -12,
     nameFont = "GameFontNormal", titleFont = "GameFontNormalSmall",
     nameColor = { 1, 0.82, 0.02 }, titleColor = { 0.85, 0.85, 0.85 }, textColor = { 1, 1, 1 }, shadow = true,
-    textSize = 13, title = false, maxLines = 2,
+    textSize = 13, title = false, maxLines = 2, pageChars = 64, -- what two lines hold
   },
   [4] = {
     width = 570, height = 155,
@@ -51,7 +51,7 @@ WFJ.VoicePanelLooks = {
       ["TalkingHeads-Neutral"] = { 0.33, 0.16, 0.02 },
     },
     nameColor = { 0.33, 0.16, 0.02 }, titleColor = { 0.25, 0.15, 0.05 }, textColor = { 0, 0, 0 }, shadow = false,
-    textSize = 15, title = true,
+    textSize = 15, title = true, pageChars = 96, -- what four lines hold
   },
   [5] = {
     width = 520, height = 62,
@@ -67,6 +67,6 @@ WFJ.VoicePanelLooks = {
       ["TalkingHeads-Neutral"] = { 0.33, 0.16, 0.02 },
     },
     nameColor = { 0.33, 0.16, 0.02 }, titleColor = { 0.25, 0.15, 0.05 }, textColor = { 0, 0, 0 }, shadow = false,
-    textSize = 13, title = false, maxLines = 2,
+    textSize = 13, title = false, maxLines = 2, pageChars = 64, -- what two lines hold
   },
 }

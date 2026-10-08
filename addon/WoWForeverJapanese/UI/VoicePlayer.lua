@@ -14,8 +14,8 @@
 --     → willPlay, handle [unverified in the Forever client's own files; the in-game check is in
 --     docs/testing/strategy.md].
 --   * The window buttons: a small play / pause icon at the right end of the stone band under the window's title (the
---     band our marker banner uses: y -36 on the quest window, -38 on the gossip window, UI/QuestFrame and UI/Gossip),
---     and one at the right end of the quest log details' top bar. Shown while the voice panel is not on screen and
+--     band our marker banner uses: y -36 on the quest window, -38 on the gossip window, UI/QuestFrame and UI/Gossip);
+--     the quest log details' one is UI/VoiceQuestLog's. Shown while the voice panel is not on screen and
 --     the line has a file; the pause icon while it plays (a click pauses with the panel on, stops with it Off), the
 --     play arrow otherwise (a click plays it from the start: the client can only start and stop a sound file). No
 --     text; the voice.button setting hides them.
@@ -56,6 +56,11 @@ local tokens = 0 -- a stale end timer (a line stopped early) finds a newer token
 local lastItem -- the panel's last line once nothing is queued (its replay)
 
 local function queueOn() return Q.opt.on and true or false end
+
+-- a line may start: translation and voice on, and the reveal key up (no voice starts while English shows)
+local function voiceAllowed()
+  return WFJ.State.enabled and not WFJ.State.modifierHeld and WFJ.Settings.get("voice.enabled") and true or false
+end
 
 local function notify()
   pcall(WFJ.State.fire, "voiceQueue")
@@ -106,7 +111,8 @@ local function titleOf(unit)
   local ok, data = pcall(T.GetUnit, unit)
   local line = ok and type(data) == "table" and type(data.lines) == "table" and data.lines[2]
   local text = type(line) == "table" and line.leftText or nil
-  if type(text) ~= "string" or text == "" or text:find("%d") then return nil end -- "Level 12 Humanoid"
+  -- the level line ("Level 12 Humanoid", "Level ?? Elite") is no title
+  if type(text) ~= "string" or text == "" or text:find("%d") or text:find("%?%?") then return nil end
   return text
 end
 
@@ -150,8 +156,8 @@ end
 local function showButton(window, isPlaying)
   local b = buttons[window]
   if not b then return end
-  -- the voice panel carries pause, next and play again: the window's own button shows only while the panel is not
-  -- on screen (switched off, or faded after the line)
+  -- the voice panel carries pause, play again and the whole text: the window's own button shows only while the panel
+  -- is not on screen (switched off, or faded after the line)
   local panelUp = queueOn() and WFJ.VoicePanel ~= nil and WFJ.VoicePanel.visible()
   if not WFJ.Settings.get("voice.button") or not last[window] or panelUp then
     b:Hide()
@@ -189,7 +195,8 @@ local function closed(window)
       local wasHead = Q.dropWindow(window)
       if wasHead then
         silence()
-        if Q.current() and not Q.paused then startHead() else VoicePlayer.restoreDialog() end
+        Q.paused = false -- a paused head that was dropped takes its pause with it
+        if Q.current() and voiceAllowed() then startHead() else VoicePlayer.restoreDialog() end
       end
       notify()
     end
@@ -209,7 +216,8 @@ local function finished(window)
   playing = nil
   if queueOn() and Q.current() then
     lastItem = Q.pop()
-    if Q.current() and not Q.paused then
+    -- the next line waits unstarted while English shows; letting go of the reveal key starts it (init)
+    if Q.current() and not Q.paused and voiceAllowed() then
       startHead()
       notify()
       return
@@ -299,9 +307,14 @@ function VoicePlayer.onShown(surface, recKey, kind, id)
     local ja, name, title, en = describe(window, surface, recKey, who)
     local item = { key = key, path = path, seconds = detail, window = window, surface = surface, kind = kind, id = id,
       shown = { surface, recKey, kind, id }, ja = ja, en = en, name = name, title = title, speaker = who }
-    if Q.paused then Q.pop() end -- a paused line gives way to the new one: the player has moved on
+    -- a paused line gives way to the new one: the player has moved on; lines waiting stay waiting
+    if Q.paused then return takeOver(item) end
     Q.push(item)
-    if Q.size() == 1 then return startHead() end
+    if Q.size() == 1 then
+      if voiceAllowed() then return startHead() end
+      notify()
+      return false
+    end
     notify()
     return false
   end
@@ -325,7 +338,8 @@ end
 -- The button's click: stop the line playing, or play the window's line again. Never while English is showing.
 function VoicePlayer.toggle(window)
   if playing and playing.window == window then
-    if queueOn() then VoicePlayer.pause() else VoicePlayer.stop() end -- the icon is a pause: it pauses
+    -- the icon is a pause: it pauses (a line started while the panel was off is not queued: it stops)
+    if queueOn() and Q.current() then VoicePlayer.pause() else VoicePlayer.stop() end
     return false
   end
   local head = Q.current()
@@ -341,6 +355,12 @@ function VoicePlayer.toggle(window)
     local item
     for _, it in ipairs(Q.items) do if it.key == line.key then item = it end end
     if not item and lastItem and lastItem.key == line.key then item = lastItem end
+    if not item and shown then -- a line played while the panel was off: describe it as the window shows it now
+      local who = speaker(window)
+      local ja, name, title, en = describe(window, shown[1], shown[2], who)
+      item = { key = line.key, window = window, shown = shown, surface = shown[1], kind = shown[3], id = shown[4],
+        ja = ja, en = en, name = name, title = title, speaker = who }
+    end
     item = item or { key = line.key, window = window, shown = shown }
     item.path, item.seconds = path, seconds
     return takeOver(item)
@@ -351,10 +371,6 @@ function VoicePlayer.toggle(window)
 end
 
 -- ── The panel's controls (UI/VoicePanel, the key bindings) ────────────────
-
-local function voiceAllowed()
-  return WFJ.State.enabled and not WFJ.State.modifierHeld and WFJ.Settings.get("voice.enabled")
-end
 
 -- Stops the line and keeps it at the head; resume plays it again from the start (the client cannot resume a file).
 function VoicePlayer.pause()
@@ -367,11 +383,12 @@ function VoicePlayer.pause()
 end
 
 function VoicePlayer.resume()
-  if not Q.current() or not voiceAllowed() then return false end
+  if not queueOn() or not Q.current() or not voiceAllowed() then return false end
   return startHead()
 end
 
 function VoicePlayer.togglePause()
+  if not queueOn() then return false end
   if Q.paused or (Q.current() and not playing) then return VoicePlayer.resume() end
   return VoicePlayer.pause()
 end
@@ -385,11 +402,18 @@ function VoicePlayer.playWaiting(key)
   return false
 end
 
+-- Whether `item` would still play as Voice.decide answers now (its kind may have been switched off since).
+local function stillVoiced(item)
+  local s = item and item.shown
+  if not s then return item ~= nil end
+  return WFJ.Voice.decide(s[1], s[2], s[3], s[4], item.speaker, true) ~= nil
+end
+
 -- The panel's line from the start: the head, or the last line once nothing is queued.
 function VoicePlayer.replay()
-  if not voiceAllowed() then return false end
+  if not queueOn() or not voiceAllowed() then return false end
   local item = Q.current() or lastItem
-  if not item or not item.path then return false end
+  if not item or not item.path or not stillVoiced(item) then return false end
   silence()
   Q.front(item)
   return startHead()
@@ -429,107 +453,23 @@ end
 -- The window buttons again, as the panel's visibility now says.
 function VoicePlayer.refreshButtons()
   for _, window in ipairs(WINDOWS) do showButton(window, playing ~= nil and playing.window == window) end
+  pcall(WFJ.State.fire, "voiceButtons") -- UI/VoiceQuestLog's button follows too
 end
 
--- ── The quest log's details pane (QuestMapFrame) ─────────────────────────
--- The pane shows a quest's text but plays nothing by itself (opening the log is browsing). A play / stop button at
--- the right end of the pane's top bar plays that quest's description as the pane shows it, voiced like its offer,
--- through the queue and the panel like any other line. [verified: forever 1.60.1.70245 mainline/questmapframe.xml
--- 701–720 (DetailsFrame.BackFrame, 307 × 52, BackButton at its left); questmapframe.lua:1044–1056
--- (QuestMapFrame_ShowQuestDetails)]
--- Who showed each quest line, remembered when the quest window shows it (State "questShown", fired by UI/QuestFrame
--- whether or not the line is translated): WFJ_DB.voiceSpeakers["<quest id>-<field>"] = { c = creature id,
--- s = UnitSex, n = name, t = title }, account-wide, as the client showed them; seeing the NPC again refreshes it.
--- The quest log's replays take their head (by creature id), name, title and voice variant from it. A quest taken
--- before this existed, or from a player, an item or an object, has none: the quest's title stands in, with no head.
-local FIELD_OF = { detail = "description", progress = "progress", reward = "completion" }
-
-local function rememberSpeaker(questID, panelName)
-  local field = FIELD_OF[panelName]
-  -- only with a voice pack: without one nothing is ever replayed, so nothing is kept
-  if not field or type(questID) ~= "number" or type(db) ~= "table" or not WFJ.Voice.hasPack() then return end
-  local who = speaker("QuestFrame")
-  if not who then return end
-  local unitName = Compat.resolve("UnitName")
-  if type(db.voiceSpeakers) ~= "table" then db.voiceSpeakers = {} end
-  db.voiceSpeakers[questID .. "-" .. field] = { c = who.creature, s = who.sex,
-    n = type(unitName) == "function" and unitName("questnpc") or nil, t = titleOf("questnpc") }
+-- For UI/VoiceQuestLog: whether the window buttons may show now (the panel is not on screen).
+function VoicePlayer.buttonsAllowed()
+  return WFJ.Settings.get("voice.button") and not (queueOn() and WFJ.VoicePanel ~= nil and WFJ.VoicePanel.visible())
 end
 
--- → the remembered speaker of a quest line, or nil
-function VoicePlayer.rememberedSpeaker(questID, field)
-  local all = type(db) == "table" and db.voiceSpeakers
-  return type(all) == "table" and type(questID) == "number" and all[questID .. "-" .. field] or nil
-end
-
-local LOG = "QuestMapFrame"
-local LOG_SURFACE = "questmap.info" -- UI/QuestMap's records for the details pane's QuestInfo text
-local logButton
-
--- → path, seconds, item for the pane's description, or nil
-local function logLine()
-  local rec = WFJ.SurfaceState and WFJ.SurfaceState.get(LOG_SURFACE, "description")
-  local m = rec and rec.meta
-  if not m or type(rec.applied) ~= "string" then return nil end
-  -- the pane's quest: its own id, also for a description keyed by its English (m.id is then that key)
-  local frame = Compat.resolve(LOG)
-  local qid = type(frame) == "table" and frame.DetailsFrame and frame.DetailsFrame.questID
-  if type(qid) ~= "number" then qid = type(m.id) == "number" and m.id or nil end
-  local saw = VoicePlayer.rememberedSpeaker(qid, "description")
-  local who = saw and { creature = saw.c, sex = saw.s } or nil
-  local path, detail = WFJ.Voice.decide("questframe.detail", "description", m.kind, m.id, who, true)
-  if not path then return nil end
-  local key = WFJ.Voice.packKey(m.kind, m.id)
-  local questTitle = WFJ.SurfaceState.get(LOG_SURFACE, "title")
-  local name = saw and saw.n or (questTitle and type(questTitle.applied) == "string" and questTitle.applied or nil)
-  return path, detail, { key = key, path = path, seconds = detail, window = LOG, surface = "questframe.detail",
-    kind = m.kind, id = m.id, shown = { "questframe.detail", "description", m.kind, m.id },
-    ja = rec.applied:gsub("^|c%x%x%x%x%x%x%x%x.-|r[\n ]", ""), en = rec.en, name = name,
-    title = saw and saw.t or nil, speaker = who }
-end
-
-local function updateLogButton()
-  if not logButton then return end
-  local path, _, item = logLine()
-  if not path or not WFJ.Settings.get("voice.button") then
-    logButton:Hide()
-    return
-  end
-  local on = playing ~= nil and playing.key == item.key
-  logButton:SetNormalTexture(on and ICON_PLAYING or ICON_STOPPED)
-  logButton:Show()
-end
-
-local function logClick()
-  local path, seconds, item = logLine()
-  if not path or not voiceAllowed() then return end
-  local head = Q.current()
-  if playing and playing.key == item.key then
-    if queueOn() then VoicePlayer.pause() else VoicePlayer.stop() end -- the icon is a pause: it pauses
-  elseif queueOn() and Q.paused and head and head.key == item.key then
-    VoicePlayer.resume()
-  elseif queueOn() then
-    takeOver(item)
-  else
-    play(path, seconds, item.key, LOG, true)
-  end
-  updateLogButton()
-end
-
-local function setupLog()
-  local frame = Compat.resolve(LOG)
-  local bar = type(frame) == "table" and frame.DetailsFrame and frame.DetailsFrame.BackFrame
-  if type(bar) ~= "table" or logButton then return end
-  local createFrame = Compat.resolve("CreateFrame")
-  if type(createFrame) ~= "function" then return end
-  logButton = createFrame("Button", nil, bar)
-  logButton:SetSize(BUTTON_SIZE, BUTTON_SIZE)
-  logButton:SetPoint("RIGHT", bar, "RIGHT", -8, 4)
-  logButton:SetFrameLevel(bar:GetFrameLevel() + BUTTON_LIFT)
-  logButton:SetNormalTexture(ICON_STOPPED)
-  logButton:SetHighlightTexture(ICON_HIGHLIGHT, "ADD")
-  logButton:SetScript("OnClick", logClick)
-  logButton:Hide()
+-- For UI/VoiceQuestLog: the key playing, whether the queue is on, and a line asked for. → true when it started
+function VoicePlayer.playing() return playing and playing.key or nil end
+function VoicePlayer.queueOn() return queueOn() end
+function VoicePlayer.allowed() return voiceAllowed() end
+function VoicePlayer.speaker(window) return speaker(window) end
+function VoicePlayer.titleOf(unit) return titleOf(unit) end
+function VoicePlayer.playNow(item, window)
+  if queueOn() then return takeOver(item) end
+  return play(item.path, item.seconds, item.key, window, true)
 end
 
 -- → the window's button, or nil (for /wfj debug and the specs)
@@ -549,32 +489,36 @@ function VoicePlayer.init(savedDb)
   -- With the voice panel the reveal key only switches the panel's text to English: the Japanese voice goes on, so a
   -- player can glance at the English without losing the line. Without the panel it stops the line, as before.
   WFJ.State.on("modifier", function(held)
-    if queueOn() then notify() return end
-    if held then VoicePlayer.stop() end
+    if not queueOn() then
+      if held then VoicePlayer.stop() end
+      return
+    end
+    -- the reveal key let go: a line that came up while English showed starts now
+    if not held and Q.current() and not playing and not Q.paused and voiceAllowed() then return startHead() end
+    notify()
   end)
   WFJ.State.on("enabled", stopUnless)
   WFJ.State.on("voicePanel", function() -- the panel switched on or off: the window buttons follow
-    for _, window in ipairs(WINDOWS) do showButton(window, playing ~= nil and playing.window == window) end
+    if not queueOn() then lastItem = nil end -- no panel replay of an old line with the panel off
+    VoicePlayer.refreshButtons()
   end)
   WFJ.State.on("voice", function() -- any voice setting changed: the line playing may be one now off
     VoicePlayer.stop()
+    if lastItem and not stillVoiced(lastItem) then lastItem = nil; notify() end -- no replay of a line now off
     for _, window in ipairs(WINDOWS) do
       if last[window] and not replayable(window) then last[window] = nil end -- its kind is off: no replay
       showButton(window, false)
     end
   end)
-  local hook = Compat.resolve("hooksecurefunc")
-  if type(hook) == "function" and type(Compat.resolve("QuestMapFrame_ShowQuestDetails")) == "function" then
-    hook("QuestMapFrame_ShowQuestDetails", function() setupLog(); updateLogButton() end)
-  end
-  WFJ.State.on("voiceQueue", updateLogButton)
-  WFJ.State.on("questShown", function(questID, panelName) pcall(rememberSpeaker, questID, panelName) end)
   local createFrame = Compat.resolve("CreateFrame")
   if type(createFrame) == "function" then -- a loading screen ends every line and the queue
     local ev = createFrame("Frame")
     ev:RegisterEvent("PLAYER_ENTERING_WORLD")
     -- like the panel's close: the line, the queue and the panel's last line all go
-    ev:SetScript("OnEvent", function() if Q.size() > 0 or playing or lastItem then VoicePlayer.clear() end end)
+    -- with the panel only: with it off a line goes on through a loading screen, as it always did
+    ev:SetScript("OnEvent", function()
+      if queueOn() and (Q.size() > 0 or playing or lastItem) then VoicePlayer.clear() end
+    end)
   end
   for _, window in ipairs(WINDOWS) do
     local f = Compat.resolve(window)
