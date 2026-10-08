@@ -64,6 +64,10 @@ class Table:
     # it: the hotfix decode reads every field at this size, and the sign of a number column comes from it.
     # Text-only tables leave it empty (their hotfixes are read as leading strings).
     record: tuple[str, ...] = ()
+    # the record entries an array field adds past one per field, when `record` flattens it
+    # (CreatureDisplayInfo's four TextureVariationFileDataIDs: 3). A flattened array is the last field read,
+    # so no written column after it shifts.
+    record_extra: int = 0
     # builds other than this table's own that the map has been verified on: `for_layout` picks one
     layouts: tuple[Layout, ...] = ()
     # a table only some builds ship. Its ABSENCE FROM THE ROOT is reported, not a failure: Classic
@@ -588,6 +592,7 @@ TABLES: dict[str, Table] = {
                 "i32", "i32", "u32", "u32", "i8", "i32", "i32", "i8", "i32", "i8", "u16", "u32", "u16",
                 "i32", "i32", "i32", "i32",
             ),
+            record_extra=3,
         ),
         Table(
             "CreatureDisplayInfoExtra",
