@@ -2,10 +2,8 @@
 # How it works: docs/systems/voice.md. Style ids are the engine's (GET /speakers). The pace is fixed when a
 # file is made: the client has no playback rate.
 #
-# To recast a kind of speaker, change the voices of its cast row: `make voice-plan` lists the lines that
+# To recast a kind of speaker, change the voices of its cast row: `wfj voice plan` lists the lines that
 # change, and `make voice-generate` remakes exactly those (a file's fingerprint holds its voice and settings).
-#
-# PROVISIONAL: the two MVP voices, cast by gender only, until the audition picks the real cast.
 
 engine = "http://127.0.0.1:10101"
 speed_scale = 0.9

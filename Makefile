@@ -389,7 +389,7 @@ voice-speakers: voice-levels ## data/voice/ speakers + voices for the voice scop
 		--wdb "$(call client_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA)
 
 voice-generate: ## the missing and changed voice files from the shipped Japanese, through the local engine, then voice-sync
-	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --store "$(VOICE_STORE)"
+	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"
 
 # The audio store: a checkout of the voice audio repository (zyaga/wow-forever-japanese-voice), inside the main checkout.
 VOICE_STORE ?= $(REPO_ROOT)/build/voice
@@ -409,7 +409,8 @@ voice: voice-speakers voice-generate voice-pack ## speakers → generate → pac
 
 # The upload token is CF_API_KEY, else what $(VOICE_TOKEN_CMD) prints (a local, untracked setting). It is read for the
 # one run and never written anywhere. DRY=1 builds, checks the zips and prints what would go up. CF_ONLY=1 skips the
-# GitHub release (a rehearsal). ONLY=<folder>,… uploads just those; ENTRY_WITHOUT_PACKS=1 makes the entry require the
+# GitHub release (a rehearsal). ONLY=<folder>,… uploads just those (with CF_ONLY=1 only, so the GitHub release never
+# records a pack that was not uploaded); ENTRY_WITHOUT_PACKS=1 makes the entry require the
 # main addon alone (a new entry's first file, while its packs wait for approval).
 VOICE_RELEASE_FLAGS = $(if $(CF_ONLY),--curseforge-only) $(if $(ONLY),--only "$(ONLY)") $(if $(ENTRY_WITHOUT_PACKS),--entry-without-packs)
 voice-release: ## the voice packs whose audio changed to CurseForge and every zip to one GitHub release (DRY=1: nothing leaves the machine)
@@ -424,7 +425,7 @@ voice-release: ## the voice packs whose audio changed to CurseForge and every zi
 voice-run: ## the whole game's voice, in the background, the Mac kept awake; resumes where it stopped (make voice-status, make voice-stop)
 	@mkdir -p "$(VOICE_STORE)"
 	@if pgrep -f "wfj voice generate" >/dev/null; then echo "voice-run: a run is already going (make voice-status)"; exit 1; fi
-	cd pipeline && nohup caffeinate -i sh -c '$(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --store "$(VOICE_STORE)"' > "$(VOICE_STORE)/run.log" 2>&1 &
+	cd pipeline && nohup caffeinate -i sh -c '$(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"' > "$(VOICE_STORE)/run.log" 2>&1 &
 	@echo "voice-run: started; make voice-status shows progress, make voice-stop stops it"
 
 voice-status: ## how far the background voice run is, and the time left

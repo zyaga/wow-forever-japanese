@@ -277,16 +277,19 @@ class VoiceState:
     draft: str | None
     previous: dict[str, str]  # folder → version: the published release, overlaid with what the draft recorded
     draft_assets: list[str]
+    published_assets: list[str]
 
 
 def voice_state(rows: Sequence[Mapping[str, Any]], run: Run = _gh) -> VoiceState:
     """A voice release starts as a draft and records each pack the moment CurseForge has it, so a run that
     fails partway is resumed from its draft and uploads nothing twice."""
-    published, previous = last_voice(rows, run)
     voice = [r for r in rows if r["tagName"].startswith(TAG_PREFIX)]
+    published = next((r["tagName"] for r in voice if not r.get("isDraft")), None)
     draft = next((r["tagName"] for r in voice if r.get("isDraft")), None)
+    published_assets = _assets(published, run) if published else []
     draft_assets = _assets(draft, run) if draft else []
-    return VoiceState(published, draft, {**previous, **vp.released(draft_assets)}, draft_assets)
+    previous = {**vp.released(published_assets), **vp.released(draft_assets)}
+    return VoiceState(published, draft, previous, draft_assets, published_assets)
 
 
 def release_type(rows: Sequence[Mapping[str, Any]]) -> str:
@@ -389,6 +392,19 @@ def build(a: argparse.Namespace, day: datetime.date, previous: Mapping[str, str]
             file=sys.stderr,
         )
         return None
+    store = voice_make.store_dir(a.store)
+    if not store.is_dir():
+        print(f"voice pack: no audio store at {store} (docs/operations/voice.md); nothing written",
+              file=sys.stderr)
+        return None
+    wrong = store_mismatches(store, voice_make.audio_record(root), [f for p in packs for f in p.files])
+    if wrong:
+        print(
+            f"voice pack: {len(wrong)} file(s) in {store} are not the recorded audio (another branch remade"
+            f" them, or the store is not at this text's pin), e.g. {', '.join(wrong[:5])}; nothing written",
+            file=sys.stderr,
+        )
+        return None
     plan = None
     if previous is not None:
         plan = plan_release(table, packs, interface, previous, day)
@@ -396,10 +412,22 @@ def build(a: argparse.Namespace, day: datetime.date, previous: Mapping[str, str]
     else:
         versions = {p.project.folder: vp.version(day, p.digest) for p in packs}
         versions[table.entry.folder] = vp.version(day, vp.entry_hash(required(table), interface))
-    write(Path(a.out), table, packs, cfg, voice_make.audio_record(root), voice_make.store_dir(a.store),
-          interface, versions)
+    write(Path(a.out), table, packs, cfg, voice_make.audio_record(root), store, interface, versions)
     print(f"voice pack: wrote {len(packs)} packs and the entry under {a.out}")
     return table, packs, plan, versions
+
+
+def store_mismatches(store: Path, audio: Mapping[str, Any], files: Sequence[str]) -> list[str]:
+    """The pack files whose store copy is missing or not the take the audio record holds (its SHA-256; the
+    size for a row made before the hash was recorded): a file the shared store holds from another branch's
+    round would otherwise ship under this text's Japanese hash."""
+    wrong = []
+    for f in sorted(set(files)):
+        path, row = store / f, audio[f.removesuffix(".mp3")]
+        if (not path.is_file() or path.stat().st_size != int(row["bytes"])
+                or (row.get("sha256") and voice_make.file_sha(path) != row["sha256"])):
+            wrong.append(f)
+    return wrong
 
 
 def run_pack(a: argparse.Namespace) -> int:
@@ -467,10 +495,11 @@ class Uploads:
     record: Callable[[Path], None]  # after a CurseForge upload: keep the zip on the voice release's draft
 
 
-def upload_all(u: Uploads) -> None:
+def upload_all(u: Uploads) -> bool:
     """Every changed pack, then the entry. An entry that went up without some packs (still in review) gets an
-    asset name of its own, so the next release counts it as changed and tries the full list again."""
-    entry = u.table.entry.folder
+    asset name of its own, so the next release counts it as changed and tries the full list again.
+    → whether the entry went up without some packs."""
+    entry, partial = u.table.entry.folder, False
     for pr in u.plan.upload:
         readme = (u.out / pr.folder / "README.txt").read_text(encoding="utf-8")
 
@@ -482,10 +511,12 @@ def upload_all(u: Uploads) -> None:
         else:
             fid, named = upload_entry(pr, u.zips[pr.folder], meta_for, u.slugs, u.token, u.table.addon_slug)
             if named != entry_requires(u.table):
+                partial = True
                 u.versions[entry] = vp.version(u.day, vp.entry_hash_of(named, interface_of(data_root())))
                 u.zips[entry] = u.zips[entry].rename(u.dist / vp.asset_name(entry, u.versions[entry]))
         print(f"voice release: uploaded {u.zips[pr.folder].name} (CurseForge file {fid})")
         u.record(u.zips[pr.folder])
+    return partial
 
 
 def upload_entry(
@@ -527,6 +558,30 @@ def check_pin(store: Path, pin: Path) -> None:
 GH_ASSET_LIMIT = 2 * 1024**3  # bytes: GitHub refuses a release asset of 2 GiB or more
 
 
+@dataclass
+class Release:
+    """One voice release run, once its packs are built and zipped."""
+
+    a: argparse.Namespace
+    run: Run
+    table: Table
+    plan: Plan
+    versions: dict[str, str]
+    zips: dict[str, Path]
+    bundle: Path
+    out: Path
+    dist: Path
+    day: datetime.date
+    rtype: str
+    state: VoiceState
+    tag: str
+    fingerprint: str
+
+    @property
+    def flags(self) -> list[str]:
+        return ["--latest=false", *(["--prerelease"] if self.rtype != "release" else [])]
+
+
 def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     day = datetime.date.today()
     if a.only and not a.curseforge_only:
@@ -534,6 +589,12 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
                          "release never records packs that were not uploaded")
     if a.pin:
         check_pin(voice_make.store_dir(a.store), Path(a.pin))
+    dirty = dirty_inputs(data_root().parent)
+    if dirty:
+        what = f"uncommitted voice inputs ({', '.join(dirty[:5])})"
+        if not a.dry_run:
+            raise ValueError(f"{what}: commit them first; the release records the inputs as of the commit")
+        print(f"voice release: {what}; a real release refuses them")
     rows = releases(run)
     state = voice_state(rows, run)
     rtype = release_type(rows)
@@ -548,13 +609,22 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
         return 1
     zips, bundle = zipped
     _only(plan, table, a.only)
+    entry_partial = _entry_on_draft(plan, table, state, versions, zips, dist)
+    if state.draft and not plan.upload and not plan.no_project and _draft_holds_nothing_new(state):
+        print(f"voice release: the draft {state.draft} holds nothing the published release lacks;"
+              " removing it")
+        if not a.dry_run and not a.curseforge_only:
+            run(["release", "delete", state.draft, "--yes", "--cleanup-tag"])
+        state = VoiceState(state.published, None, vp.released(state.published_assets), [],
+                           state.published_assets)
     tag = state.draft or new_tag(day, rows)
     print(f"voice release: last voice release {state.published or 'none'}; this one {tag} ({rtype})"
           + (" (resuming its draft)" if state.draft else ""))
     _print_plan(plan, zips, versions)
-    if not plan.upload and not plan.no_project:
-        print("voice release: nothing changed since the last voice release; nothing to do")
-        return 0
+    r = Release(a, run, table, plan, versions, zips, bundle, out, dist, day, rtype, state, tag,
+                inputs_fingerprint(data_root().parent))
+    if not plan.upload and not plan.no_project and not state.draft:
+        return _nothing_changed(r)
     if a.curseforge_only:
         print("voice release: CurseForge only; no GitHub release")
     else:
@@ -565,32 +635,114 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     if a.dry_run:
         print("voice release: dry run; nothing uploaded")
         return 0
-    token = os.environ.get("CF_API_KEY", "")
-    if not token:
-        print("voice release: no upload token (CF_API_KEY); see docs/operations/voice.md", file=sys.stderr)
-        return 1
-    gv = curseforge.game_version_id(curseforge.game_versions(token), interface_of(data_root()))
-    slugs = [table.addon_slug] if a.entry_without_packs else entry_requires(table)
-    if a.entry_without_packs:
-        print("voice release: the entry requires the main addon only (no packs)")
     notes = dist / "notes.md"
     notes.write_text(_notes(table, versions, plan), encoding="utf-8")
-    flags = ["--latest=false", *(["--prerelease"] if rtype != "release" else [])]
-    record = _recorder(None if a.curseforge_only else tag, state, notes, flags, day, run)
-    upload_all(Uploads(table, plan, zips, versions, out, dist, day, gv, rtype, slugs, token, record))
+    partial = _upload_changed(r, notes)
+    if partial is None:
+        return 1
+    partial = partial or entry_partial
     if a.curseforge_only:
         print("voice release: done (CurseForge only)")
         return 0
-    inputs = dist / vp.inputs_asset(inputs_fingerprint(data_root().parent))
-    inputs.write_text(f"{inputs_fingerprint(data_root().parent)}\n", encoding="utf-8")
-    final = [*zips.values(), bundle, inputs]
-    run(["release", "upload", tag, *map(str, final), "--clobber"])
-    for stale in sorted(set(state.draft_assets) - {p.name for p in final}):
-        run(["release", "delete-asset", tag, stale, "--yes"])
-    notes.write_text(_notes(table, versions, plan), encoding="utf-8")
-    run(["release", "edit", tag, "--draft=false", "--notes-file", str(notes), *flags])
-    print(f"voice release: done: {tag}")
+    _publish(r, notes, partial)
     return 0
+
+
+def _entry_on_draft(
+    plan: Plan, table: Table, state: VoiceState, versions: dict[str, str], zips: dict[str, Path], dist: Path
+) -> bool:
+    """A resumed draft that already holds an entry file: CurseForge has that entry from the failed run, so
+    it is not sent again; the draft's version of it is kept. → whether that entry was partial (its version is
+    not the full list's), so this release records no inputs and the next one tries the full list."""
+    entry = table.entry.folder
+    held = vp.released(state.draft_assets).get(entry) if state.draft else None
+    if held is None or entry not in {p.folder for p in plan.upload}:
+        return False
+    plan.upload = [p for p in plan.upload if p.folder != entry]
+    versions[entry] = held
+    zips[entry] = zips[entry].rename(dist / vp.asset_name(entry, held))
+    print(f"voice release: the draft already holds the entry {zips[entry].name}; not uploaded again")
+    return True
+
+
+def _draft_holds_nothing_new(state: VoiceState) -> bool:
+    """A draft whose recorded packs the published release already has (a failed first upload, then a revert):
+    publishing it would only make a release with nothing new."""
+    published = vp.released(state.published_assets)
+    return all(published.get(f) == v for f, v in vp.released(state.draft_assets).items())
+
+
+def dirty_inputs(repo: Path) -> list[str]:
+    """The voice inputs with uncommitted changes: the fingerprint is of the commit, the packs of the files."""
+    out = subprocess.run(["git", "-C", str(repo), "status", "--porcelain", "--", *INPUTS],
+                         capture_output=True, text=True, check=False).stdout
+    return [line[3:] for line in out.splitlines() if line.strip()]
+
+
+def _nothing_changed(r: Release) -> int:
+    """No pack changed and no draft is waiting. When what builds the packs changed (code, say), the new inputs
+    are recorded on the published release, so the next release of the addon alone skips the voice again."""
+    state = r.state
+    if r.a.curseforge_only or not state.published or (
+        vp.released_inputs(state.published_assets) == r.fingerprint[:16]
+    ):
+        print("voice release: nothing changed since the last voice release; nothing to do")
+        return 0
+    print(f"voice release: no pack changed; recording the voice inputs on {state.published}")
+    if r.a.dry_run:
+        print("voice release: dry run; nothing uploaded")
+        return 0
+    inputs = _inputs_file(r.dist, r.fingerprint)
+    r.run(["release", "upload", state.published, str(inputs), "--clobber"])
+    for old in vp.inputs_assets(state.published_assets):
+        if old != inputs.name:
+            r.run(["release", "delete-asset", state.published, old, "--yes"])
+    return 0
+
+
+def _upload_changed(r: Release, notes: Path) -> bool | None:
+    """The changed packs and the entry to CurseForge, each recorded on the draft as it goes up. → whether the
+    entry went up without some packs; None when there is no upload token."""
+    if not r.plan.upload:
+        if not r.a.curseforge_only and not r.state.draft:  # only packs with no project changed
+            _recorder(r.tag, r.state, notes, r.flags, r.day, r.run)
+        elif r.state.draft and not r.a.curseforge_only:
+            print(f"voice release: every pack is on CurseForge already; publishing the draft {r.tag}")
+        return False
+    token = os.environ.get("CF_API_KEY", "")
+    if not token:
+        print("voice release: no upload token (CF_API_KEY); see docs/operations/voice.md", file=sys.stderr)
+        return None
+    gv = curseforge.game_version_id(curseforge.game_versions(token), interface_of(data_root()))
+    slugs = [r.table.addon_slug] if r.a.entry_without_packs else entry_requires(r.table)
+    if r.a.entry_without_packs:
+        print("voice release: the entry requires the main addon only (no packs)")
+    record = _recorder(None if r.a.curseforge_only else r.tag, r.state, notes, r.flags, r.day, r.run)
+    return upload_all(Uploads(r.table, r.plan, r.zips, r.versions, r.out, r.dist, r.day, gv, r.rtype, slugs,
+                              token, record))
+
+
+def _publish(r: Release, notes: Path, partial: bool) -> None:
+    """Every zip and the bundle onto the draft, stale draft assets removed, the draft published. The inputs
+    are recorded only when the entry went up whole, so a partial one is tried again by the next release (a
+    pack with no project yet needs no such help: giving it one edits voice-packs.toml, a voice input)."""
+    final = [*r.zips.values(), r.bundle]
+    if partial:
+        print("voice release: the entry went up without some packs; the next release tries them again")
+    else:
+        final.append(_inputs_file(r.dist, r.fingerprint))
+    r.run(["release", "upload", r.tag, *map(str, final), "--clobber"])
+    for stale in sorted(set(r.state.draft_assets) - {p.name for p in final}):
+        r.run(["release", "delete-asset", r.tag, stale, "--yes"])
+    notes.write_text(_notes(r.table, r.versions, r.plan), encoding="utf-8")
+    r.run(["release", "edit", r.tag, "--draft=false", "--notes-file", str(notes), *r.flags])
+    print(f"voice release: done: {r.tag}")
+
+
+def _inputs_file(dist: Path, fingerprint: str) -> Path:
+    path = dist / vp.inputs_asset(fingerprint)
+    path.write_text(f"{fingerprint}\n", encoding="utf-8")
+    return path
 
 
 def _recorder(
@@ -617,14 +769,14 @@ def _print_plan(plan: Plan, zips: Mapping[str, Path], versions: Mapping[str, str
         print(f"voice release: {f} unchanged ({versions[f]})")
 
 
-# What the voice packs are built from. A release of the addon alone leaves all of it unchanged, and the
-# Release workflow then skips the voice job instead of checking out the audio.
+# What the voice packs are built from: the whole pipeline package (any code change counts, a false "changed"
+# only costs a checkout) and every data folder the build reads. A release of the addon alone leaves all of it
+# unchanged, and the Release workflow then skips the voice job instead of checking out the audio.
 INPUTS = (
     "pipeline/voice-audio-commit.txt", "pipeline/voice-packs.toml", "pipeline/voice.toml",
-    "pipeline/voice_quest_levels.txt", "pipeline/wfj/cmd/voice_ship.py", "pipeline/wfj/cmd/voice_make.py",
-    "pipeline/wfj/core/voice.py", "pipeline/wfj/core/voice_packs.py", "pipeline/wfj/emit/voice_pack.py",
-    "addon/WoWForeverJapanese/WoWForeverJapanese.toc", "data/voice", "data/quest", "data/gossip", "data/book",
-    "data/english/gossip", "data/english/quest",
+    "pipeline/voice_quest_levels.txt", "pipeline/wfj", "addon/WoWForeverJapanese/WoWForeverJapanese.toc",
+    "data/SCHEMA", "data/voice", "data/quest", "data/gossip", "data/book", "data/ui",
+    "data/english/gossip", "data/english/quest", "data/english/book", "data/english/ui",
 )
 
 
@@ -640,7 +792,11 @@ def inputs_fingerprint(repo: Path) -> str:
 
 def run_inputs(run: Run = _gh) -> int:
     """`changed=true|false` for $GITHUB_OUTPUT: whether the voice inputs differ from the last release's."""
-    published, _ = last_voice(releases(run), run)
+    rows = releases(run)
+    if any(r["tagName"].startswith(TAG_PREFIX) and r.get("isDraft") for r in rows):
+        print("changed=true")  # a failed run left a draft: the voice job finishes or clears it
+        return 0
+    published, _ = last_voice(rows, run)
     recorded = vp.released_inputs(_assets(published, run)) if published else None
     now = inputs_fingerprint(data_root().parent)[:16]
     print(f"changed={'false' if recorded == now else 'true'}")

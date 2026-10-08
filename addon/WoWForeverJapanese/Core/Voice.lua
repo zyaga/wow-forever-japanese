@@ -27,7 +27,7 @@ Voice.KINDS = {
 -- pack key → { file, jaHash, seconds, folder, v = { [voice] = { file, seconds } } }; nil until a pack registers
 local lines
 local creatures = {} -- creature id → voice id, or { male voice, female voice } (the speakers of lines with variants)
-local creatureFolder = {} -- creature id → the pack that registered it, so that pack's reload replaces it
+local creatureBy = {} -- creature id → { [pack folder] = its voice }: several packs may carry one creature
 local packs = {} -- pack folder → the number of its lines registered
 -- the character's own spoken error lines: the game's voice id → kind, and per "<race>-<f|m>" the kind's file
 local errorKinds, errorFiles = {}, {}
@@ -86,8 +86,13 @@ function Voice.register(tbl)
   for key, e in pairs(lines) do
     if e.folder == tbl.folder then lines[key] = nil end
   end
-  for c, folder in pairs(creatureFolder) do -- a pack registering again replaces all it brought, not only lines
-    if folder == tbl.folder then creatures[c], creatureFolder[c] = nil, nil end
+  for c, by in pairs(creatureBy) do -- a pack registering again replaces all it brought, not only lines
+    if by[tbl.folder] ~= nil then
+      by[tbl.folder] = nil
+      local _, other = next(by) -- kept while another pack still carries the creature
+      creatures[c] = other
+      if other == nil then creatureBy[c] = nil end
+    end
   end
   for _, files in pairs(errorFiles) do
     for kind, f in pairs(files) do
@@ -110,7 +115,8 @@ function Voice.register(tbl)
   end
   for c, v in pairs(type(tbl.creatures) == "table" and tbl.creatures or {}) do
     if type(c) == "number" and validVoice(v) then
-      creatures[c], creatureFolder[c] = v, tbl.folder
+      creatureBy[c] = creatureBy[c] or {}
+      creatureBy[c][tbl.folder], creatures[c] = v, v
     else
       bad = bad + 1
     end
@@ -173,8 +179,8 @@ end
 
 -- A line just shown in Japanese on `surface` under record key `recKey`, rendered as (kind, id), said by `who`.
 -- → the file's path and its length in seconds, or nil and why ("kind" · "off" · "english" · "nopack" · "missing" ·
--- "stale" · "notext")
-function Voice.decide(surface, recKey, kind, id, who)
+-- "stale" · "notext"). `peek`: only asking (the replay button), so /wfj debug's counts are left as they are.
+function Voice.decide(surface, recKey, kind, id, who, peek)
   local byKey = Voice.KINDS[surface]
   local kindSetting = byKey and byKey[recKey]
   if not kindSetting then return nil, "kind" end
@@ -187,16 +193,16 @@ function Voice.decide(surface, recKey, kind, id, who)
   local key = Voice.packKey(kind, id)
   local entry = key and lines[key]
   if not entry then
-    Voice.counts.missing = Voice.counts.missing + 1
+    if not peek then Voice.counts.missing = Voice.counts.missing + 1 end
     return nil, "missing"
   end
   local shipped = type(deps.lookup) == "function" and deps.lookup(kind, id) or nil
   if type(shipped) ~= "table" or type(shipped.ja) ~= "string" then return nil, "notext" end
   if type(deps.hash) ~= "function" or deps.hash(shipped.ja) ~= entry.jaHash then
-    Voice.counts.stale = Voice.counts.stale + 1
+    if not peek then Voice.counts.stale = Voice.counts.stale + 1 end
     return nil, "stale"
   end
-  Voice.counts.matched = Voice.counts.matched + 1
+  if not peek then Voice.counts.matched = Voice.counts.matched + 1 end
   local file, seconds = fileFor(entry, who)
   return "Interface\\AddOns\\" .. entry.folder .. "\\Sound\\" .. file, seconds
 end

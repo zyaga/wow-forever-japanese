@@ -4,9 +4,11 @@ runbook docs/operations/voice.md).
   levels --wdb CACHE --vmangos DB [--out voice_quest_levels.txt]
       Writes each quest's level (the client's quest cache first, VMaNGOS for quests it has not answered) to a
       committed table, so the packs can be split where the client files are not, such as the Release workflow.
-  store-sync [--store DIR] [--pin voice-audio-commit.txt]
+  store-sync [--store DIR] [--pin voice-audio-commit.txt] [--if-changed]
       Commits whatever the audio store (a checkout of the voice audio repository) holds new or changed,
       pushes it, and writes that commit to the pin file: the audio commit that goes with this checkout's text.
+      --if-changed does nothing when the store holds nothing new (or is absent), so a round that made no audio
+      neither pushes nor moves the pin to whatever another branch last synced.
 """
 
 from __future__ import annotations
@@ -63,6 +65,18 @@ def _git(store: Path, *args: str) -> str:
     return subprocess.run(["git", "-C", str(store), *args], capture_output=True, text=True, check=True).stdout
 
 
+def has_changes(store: Path) -> bool:
+    """Whether the store is a checkout holding files not committed yet, or commits not pushed yet (a sync
+    whose push failed is tried again)."""
+    if not (store / ".git").exists():
+        return False
+    if _git(store, "status", "--porcelain"):
+        return True
+    ahead = subprocess.run(["git", "-C", str(store), "rev-list", "--count", "@{u}..HEAD"],
+                           capture_output=True, text=True, check=False)
+    return ahead.returncode == 0 and ahead.stdout.strip() not in ("", "0")
+
+
 def sync(store: Path, pin: Path, message: str) -> str:
     """Commits what changed in the store, pushes, writes the pin. → the commit."""
     if not (store / ".git").exists():
@@ -91,6 +105,7 @@ def run(argv: Sequence[str]) -> int:
     st = sub.add_parser("store-sync")
     st.add_argument("--store")
     st.add_argument("--pin", default=PIN)
+    st.add_argument("--if-changed", action="store_true")
     a = p.parse_args(list(argv))
     try:
         if a.cmd == "levels":
@@ -100,12 +115,16 @@ def run(argv: Sequence[str]) -> int:
             Path(a.out).write_text(levels_text(levels), encoding="utf-8")
             print(f"voice levels: {len(levels)} quests → {a.out}")
             return 0
+        store = voice_make.store_dir(a.store)
+        if a.if_changed and not has_changes(store):
+            print("voice store-sync: nothing new in the audio store; the pin stays")
+            return 0
         head = subprocess.run(
             ["git", "-C", str(data_root().parent), "rev-parse", "--short", "HEAD"],
             capture_output=True, text=True, check=False,
         ).stdout.strip()
         message = f"Voice audio for the text at {head or 'HEAD'}"
-        sha = sync(voice_make.store_dir(a.store), Path(a.pin), message)
+        sha = sync(store, Path(a.pin), message)
         print(f"voice store-sync: audio commit {sha[:12]} pushed and pinned in {a.pin}")
         return 0
     except (ValueError, wdb.WdbError, vmangos.VmangosError, subprocess.CalledProcessError) as e:

@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import hashlib
 import json
 import os
 import subprocess
@@ -316,7 +317,7 @@ def _status(path: Path, **fields: Any) -> None:
     tmp.replace(path)
 
 
-def generate(
+def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for the tests
     root: Path,
     scope: str,
     cfg: dict[str, Any],
@@ -325,18 +326,28 @@ def generate(
     encode=to_mp3,
     log=print,
     players: Sequence[tuple[str, str]] = (),
+    checkout: bool = False,
 ) -> dict[str, Any]:
-    """Makes every missing or changed file; resumable. → the run's numbers."""
+    """Makes every missing or changed file; resumable. `checkout`: the store must be a checkout of the voice
+    audio repository before anything is made (the command; tests use a plain folder). → the run's numbers."""
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
     values = line_values(root, lines)
     state = voice.in_step(jobs, lines, cfg["roster"], audio, values)
     todo = set(state["missing"]) | set(state["stale"])
-    work = [j for j in jobs if j.stem in todo or not (store / f"{j.stem}.mp3").is_file()]
-    if not work:  # nothing to make, so no engine is needed: a round without voiced lines runs anywhere
+    # what to make comes from the record; a recorded file gone from a store is made again only where the store
+    # is, so a machine without the store and a round without voiced lines needs neither store nor engine
+    have_store = store.is_dir()
+    work = [j for j in jobs if j.stem in todo or (have_store and not (store / f"{j.stem}.mp3").is_file())]
+    if not work:
         return {"made": 0, "files": len(jobs), "chars_made": 0, "seconds_made": 0.0, "elapsed": 0.0,
                 "audio": audio}
+    if checkout and not (store / ".git").exists():
+        raise ValueError(
+            f"{len(work)} file(s) to make, but {store} is not a checkout of the voice audio repository: "
+            f"git clone https://github.com/zyaga/wow-forever-japanese-voice.git {store}"
+        )
     try:
         version = engine.version()
     except EngineError as e:
@@ -392,6 +403,7 @@ def generate(
             "fingerprint": voice.fingerprint(voice.text_hash(ja, values.get(j.key, ())), j.voice, settings),
             "seconds": round(secs, 2),
             "bytes": file.stat().st_size,
+            "sha256": file_sha(file),
             "chars": len(text),
             "provenance": {"source": f"aivis@{version}", "imported": today},
         }
@@ -416,8 +428,8 @@ def run_generate(
     cfg: dict[str, Any], root: Path, scope: str, store: Path, players: Sequence[tuple[str, str]] = ()
 ) -> int:
     try:
-        r = generate(root, scope, cfg, store, Engine(cfg["engine"]), players=players)
-    except (EngineError, voice.VoiceError, subprocess.CalledProcessError) as e:
+        r = generate(root, scope, cfg, store, Engine(cfg["engine"]), players=players, checkout=True)
+    except (EngineError, voice.VoiceError, subprocess.CalledProcessError, ValueError) as e:
         print(f"voice generate: {e}", file=sys.stderr)
         return 1
     rate = r["chars_made"] / r["elapsed"] if r["elapsed"] > 0 else 0
@@ -511,26 +523,55 @@ def pack_tables(
                 if isinstance(c, int):
                     v = cast[c]
                     creatures[c] = (v["voice"], v["female"]) if v.get("female") else v["voice"]
+    for alias, src in aliases(root).items():
+        if src in out and alias not in out:
+            out[alias] = out[src]
+    return out, creatures, sorted(bad)
+
+
+def aliases(root: Path) -> dict[str, str]:
+    """{key: the key whose file it plays}: a gendered gossip line's female wording plays the male wording's
+    file, and a quest's text Forever repeats under another id (keyed by its English) plays the quest's."""
     english = Store(root, english=True)
     female, _ = female_index(english.load("gossip"))
-    for key, entry in list(out.items()):
-        fkey = female.get(key[2:]) if key.startswith("g-") else None
-        if fkey and voice.gossip_key(fkey) not in out:
-            out[voice.gossip_key(fkey)] = entry
+    out = {voice.gossip_key(fkey): voice.gossip_key(mkey) for mkey, fkey in female.items()}
     for akey, (qid, field) in quest_text_aliases(Store(root).load("quest"), english.load("quest")).items():
-        src = voice.quest_key(qid, field)
-        if src in out and voice.gossip_key(akey) not in out:
-            out[voice.gossip_key(akey)] = out[src]
-    return out, creatures, sorted(bad)
+        out.setdefault(voice.gossip_key(akey), voice.quest_key(qid, field))
+    return out
 
 
 # ---- entry -----------------------------------------------------------------------------------------------
 
 
+def file_sha(path: Path) -> str:
+    """The SHA-256 of a made file: what proves the store holds the recorded take, not another of the same
+    length (the encoder's constant bitrate makes equal lengths equal sizes)."""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def record_hashes(root: Path, store: Path) -> tuple[int, list[str]]:
+    """Adds `sha256` to every audio record row whose file the store holds at the recorded size (a row made
+    before the field existed). Reads the store only. → (rows filled, files missing or of another size)."""
+    rows = _rows(root / "voice" / AUDIO)
+    filled, odd = 0, []
+    for r in rows:
+        if r.get("sha256"):
+            continue
+        path = store / f"{r['file']}.mp3"
+        if not path.is_file() or path.stat().st_size != int(r["bytes"]):
+            odd.append(r["file"])
+            continue
+        r["sha256"] = file_sha(path)
+        filled += 1
+    if filled:
+        _write(root / "voice" / AUDIO, rows)
+    return filled, odd
+
+
 def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj voice")
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name in ("cast", "plan", "generate", "status"):
+    for name in ("cast", "plan", "generate", "status", "record-hashes"):
         sp = sub.add_parser(name)
         sp.add_argument("--config", default="voice.toml")
         sp.add_argument("--scope", default="all", choices=sorted(voice.SCOPES))
@@ -544,6 +585,13 @@ def run(argv: Sequence[str]) -> int:
     if a.cmd == "status":
         print("\n".join(status_lines(store)))
         return 0
+    if a.cmd == "record-hashes":
+        filled, odd = record_hashes(root, store)
+        print(f"voice record-hashes: {filled} row(s) given their file's sha256")
+        if odd:
+            print(f"voice record-hashes: {len(odd)} file(s) missing or not the recorded size, left as"
+                  f" they are, e.g. {', '.join(odd[:5])}", file=sys.stderr)
+        return 1 if odd else 0
     try:
         cfg = load_config(Path(a.config))
         if a.cmd == "cast":

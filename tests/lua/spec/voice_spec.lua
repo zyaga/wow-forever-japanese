@@ -144,6 +144,20 @@ describe("Core/Voice: the pack registry and the decision", function()
     assert.is_false(V.hasErrors("Tauren", 3))
   end)
 
+  it("a creature two packs carry keeps its voice when one of them registers again without it", function()
+    local line = { "2-description.mp3", WFJ.Hash.key(desc), 3, v = { deep = { "2-description_deep.mp3", 2 } } }
+    V.register({ format = 2, folder = "WoWForeverJapanese_VoiceA", creatures = { [10] = "deep" },
+      lines = { ["2-description"] = line } })
+    V.register({ format = 2, folder = "WoWForeverJapanese_VoiceB", creatures = { [10] = "deep" },
+      lines = { ["3-description"] = entry("b.mp3", "x", 1) } })
+    V.register({ format = 2, folder = "WoWForeverJapanese_VoiceB", lines = {} }) -- B rebuilt without creature 10
+    assert.are.same({ PATH:format("WoWForeverJapanese_VoiceA", "2-description_deep.mp3"), 2 },
+      { V.decide("questframe.detail", "description", "quest.description", 2, { creature = 10 }) })
+    V.register({ format = 2, folder = "WoWForeverJapanese_VoiceA", lines = { ["2-description"] = line } })
+    assert.are.same({ PATH:format("WoWForeverJapanese_VoiceA", "2-description.mp3"), 3 },
+      { V.decide("questframe.detail", "description", "quest.description", 2, { creature = 10 }) })
+  end)
+
   it("a line several creatures say plays the voice of the one on screen, else its main voice", function()
     V.register({ format = 2, folder = "WoWForeverJapanese_Voice",
       creatures = { [10] = "deep", [11] = { "deep", "soft" } },
@@ -440,6 +454,30 @@ describe("UI/VoicePlayer: playing the pack's line in the quest window", function
     S.set("voice.progress", false) -- another kind: the offer can still be replayed
     b.scripts.OnClick(b)
     assert.are.equal(3, #sounds)
+  end)
+
+  it("a new line whose kind is off hides the button: progress never replays over the reward page", function()
+    S.set("voice.turnin", false)
+    Stub.showProgress()
+    local b = WFJ.VoicePlayer.button("QuestFrame")
+    assert.is_true(b:IsShown())
+    Stub.showReward() -- the turn-in is off: the reward page's line will not play
+    assert.is_false(b:IsShown())
+    b.scripts.OnClick(b)
+    assert.are.equal(1, #sounds) -- the progress line was not played again over the reward page
+  end)
+
+  it("asking whether the button can replay leaves /wfj debug's counts alone", function()
+    Stub.showDetail()
+    local b = WFJ.VoicePlayer.button("QuestFrame")
+    local before = WFJ.Voice.counts.matched
+    S.set("voice.progress", false) -- a setting change re-checks the window's line
+    S.set("voice.progress", true)
+    assert.are.equal(before, WFJ.Voice.counts.matched)
+    b.scripts.OnClick(b) -- stop
+    b.scripts.OnClick(b) -- replay: one more play; the check before it does not count
+    assert.are.equal(2, #sounds)
+    assert.are.equal(before, WFJ.Voice.counts.matched)
   end)
 
   it("passes the NPC on screen, so a line several creatures say plays that NPC's voice", function()

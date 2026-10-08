@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import shutil
 import sqlite3
+import subprocess
 import threading
 import wave
 import zipfile
@@ -548,6 +549,22 @@ def test_a_page_is_signed_by_its_last_line_when_that_is_only_a_name():
     assert voice.book_signature("The war began long ago and it has not ended.") is None  # prose, not a name
     assert voice.book_signature("Stalvan Mistmantle") is None  # a page that is only a name: a title
     assert voice.book_signature("The end.\nand so it goes on") is None
+    # a lowercase line break, and a dot after the name
+    assert voice.book_signature("Leagrem,$b$bThe road is clear.$b$b-Vargus") == "Vargus"
+    assert voice.book_signature("Hello Morgan,$B$BBusiness is brisk.$B$B-Baelog.") == "Baelog"
+    # an undashed last line that reads as a title is no signature; a single undashed word needs a closing line
+    for last in ("The End", "The Keeper", "GO ALONE", "Remember", "Quartermaster"):
+        assert voice.book_signature(f"Many words came before.$B{last}") is None, last
+    assert voice.book_signature("I will return soon.$BYour friend,$BTorgal") == "Torgal"
+    # two hyphens or a tilde before the name, and a title after a comma or " - "
+    assert voice.book_signature("Keep the gold.$B--VanCleef") == "VanCleef"
+    assert voice.book_signature("Stay vigilant.$B--Lord Ello Ebonlocke") == "Lord Ello Ebonlocke"
+    assert voice.book_signature("Boom.$B-- Yazz Nitrospork, goblin bombardier") == "Yazz Nitrospork"
+    assert voice.book_signature("Come to me.$B-Rwag, Rogue Trainer") == "Rwag"
+    assert voice.book_signature("For the Horde.$B-Thrall, Warchief of the Horde") == "Thrall"
+    assert voice.book_signature("Study well.$B- Antonidas - Archmage of Dalaran") == "Antonidas"
+    assert voice.book_signature("Safe travels.$B~ Windan Shay") == "Windan Shay"
+    assert voice.book_signature("Text.$B-the end of it all") is None  # a dash, then no name
 
 
 def test_a_signed_page_is_read_by_its_writer_and_any_other_by_the_narrator():
@@ -576,3 +593,91 @@ def test_book_pages_are_keyed_by_their_english_hash_and_html_pages_stay_silent(t
     lines = voice_make.shipped_lines(data)
     assert lines["b-aaaaaaaaaaaaaaaa"] == "モーガンへ。"  # b-<the page's English hash>, the key UI/ItemText uses
     assert "b-bbbbbbbbbbbbbbbb" not in lines  # an HTML page keeps the client's layout and is not voiced
+
+
+def test_a_machine_without_the_audio_store_runs_a_round_with_nothing_voiced(tmp_path, engine):
+    """A contributor's clone has no audio store: a round that leaves every voiced line in step needs neither
+    store nor engine; work to do refuses with how to get the store."""
+    data = _store(tmp_path)
+    _gen(data, tmp_path / "voice", engine)  # the full store, every file made and recorded
+    elsewhere = tmp_path / "no-store"
+    dead = Engine("http://127.0.0.1:9")
+    r = voice_make.generate(data, "all", CFG, elsewhere, dead, _fake_encode, log=lambda *_: None, checkout=True)
+    assert r["made"] == 0 and not elsewhere.exists()
+    _store(tmp_path, ja456="変わった、{name}。")
+    with pytest.raises(ValueError, match=r"1 file\(s\) to make, but .* is not a checkout.*git clone"):
+        voice_make.generate(data, "all", CFG, elsewhere, engine, _fake_encode, log=lambda *_: None,
+                            checkout=True)
+
+
+def test_store_sync_if_changed_leaves_the_pin_and_the_remote_alone_when_nothing_is_new(tmp_path):
+    from wfj.cmd import voice_store
+
+    remote, store, pin = tmp_path / "remote.git", tmp_path / "store", tmp_path / "pin.txt"
+    subprocess.run(["git", "init", "-q", "--bare", str(remote)], check=True)
+    subprocess.run(["git", "init", "-q", "-b", "main", str(store)], check=True)
+    for k, v in (("user.name", "Zyaga"), ("user.email", "zyaga@users.noreply.github.com")):
+        subprocess.run(["git", "-C", str(store), "config", k, v], check=True)
+    subprocess.run(["git", "-C", str(store), "remote", "add", "origin", str(remote)], check=True)
+    (store / "a.mp3").write_bytes(b"a")
+    assert voice_store.has_changes(store)
+    voice_store.sync(store, pin, "a")
+    assert not voice_store.has_changes(store) and not voice_store.has_changes(tmp_path / "absent")
+    pin.write_text(voice_store.PIN_HEAD + "b" * 40 + "\n")  # this branch pins other audio than the store's HEAD
+    assert voice_store.run(["store-sync", "--if-changed", "--store", str(store), "--pin", str(pin)]) == 0
+    assert voice_store.read_pin(pin) == "b" * 40  # nothing new: the pin stays
+    # a sync whose push failed left a commit the remote lacks: that counts as new, so the next run pushes it
+    subprocess.run(["git", "-C", str(store), "branch", "-q", "--set-upstream-to=origin/main"], check=True)
+    (store / "c.mp3").write_bytes(b"c")
+    subprocess.run(["git", "-C", str(store), "add", "-A"], check=True)
+    subprocess.run(["git", "-C", str(store), "commit", "-q", "-m", "c"], check=True)
+    assert voice_store.has_changes(store)
+    assert voice_store.run(["store-sync", "--if-changed", "--store", str(store), "--pin", str(pin)]) == 0
+    assert not voice_store.has_changes(store) and voice_store.read_pin(pin) != "b" * 40
+
+
+def _recipe(makefile: str, target: str) -> str:
+    """A Makefile target's recipe: the tab-indented lines under `target:`."""
+    lines = makefile.splitlines()
+    start = next(i for i, ln in enumerate(lines) if ln.startswith(f"{target}:"))
+    out = []
+    for ln in lines[start + 1:]:
+        if not ln.startswith("\t"):
+            break
+        out.append(ln)
+    return "\n".join(out)
+
+
+def test_every_translation_round_ends_by_remaking_its_voice():
+    """A batch import and a fix report remake the voice of the lines they changed, after `check` decided what
+    ships; the voice step pushes and pins only when it made audio."""
+    makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
+    assert "$(MAKE) -s check voice-generate" in _recipe(makefile, "import-draft")
+    assert "$(MAKE) -s check generate voice-generate validate coverage" in _recipe(makefile, "report-apply")
+    generate = _recipe(makefile, "voice-generate")
+    assert "wfj voice generate --scope all --players all" in generate
+    assert "store-sync --if-changed" in generate
+    assert "store-sync --if-changed" in _recipe(makefile, "voice-run")
+
+
+def test_every_made_file_records_its_sha256_and_old_rows_are_filled_from_the_store(tmp_path, engine):
+    import hashlib
+
+    data = _store(tmp_path)
+    store = tmp_path / "voice"
+    _gen(data, store, engine)
+    rows = voice_make.audio_record(data)
+    for stem, row in rows.items():
+        assert row["sha256"] == hashlib.sha256((store / f"{stem}.mp3").read_bytes()).hexdigest()
+    # rows made before the field existed get it from the store; the store is only read
+    cmd.write_rows(data / "voice" / "audio.jsonl", [{k: v for k, v in r.items() if k != "sha256"}
+                                                    for r in rows.values()])
+    before = {p.name: p.read_bytes() for p in store.glob("*.mp3")}
+    assert voice_make.record_hashes(data, store) == (len(rows), [])
+    assert voice_make.audio_record(data) == rows
+    assert {p.name: p.read_bytes() for p in store.glob("*.mp3")} == before
+    (store / "456-completion.mp3").unlink()
+    cmd.write_rows(data / "voice" / "audio.jsonl", [{k: v for k, v in r.items() if k != "sha256"}
+                                                    for r in rows.values()])
+    filled, odd = voice_make.record_hashes(data, store)
+    assert filled == len(rows) - 1 and odd == ["456-completion"]

@@ -29,7 +29,7 @@
 - **Done:** every voiced line in the game, cast per kind of speaker by ear (16,199 files, 1.2 GB), in the Voice entry and seven packs named for what they hold; the audio in its own repository with every older take; a CI test that fails a pull request whose voiced lines lack their audio; one Release button for the addon and the packs that changed ([Voice over](systems/voice.md), [runbook](operations/voice.md)). Passed in game in two starting zones.
 - **Open:**
   - **The voice panel:** a talking-head panel with the NPC's face, the line's Japanese and a queue, so a line can keep playing after its window closes. The voice is published together with it.
-  - **Not voiced:** quest objectives, audio per class or race (the player's name, class and race are spoken as 冒険者), a book page's author as its reader.
+  - **Not voiced:** quest objectives, audio per class or race (the player's name, class and race are spoken as 冒険者).
 
 ## Release
 - **Done:** one-action releases to CurseForge and GitHub ([Release](operations/release.md), [ADR-046](adr/046-one-action-release.md)); the CurseForge project exists and its id (1717928) is in the TOC.

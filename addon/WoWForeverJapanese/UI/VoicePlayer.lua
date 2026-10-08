@@ -271,8 +271,9 @@ function VoicePlayer.onShown(surface, recKey, kind, id)
   local window = windowOf(surface)
   local path, detail = WFJ.Voice.decide(surface, recKey, kind, id, speaker(window)) -- detail: length, or why not
   if not path then
-    -- a voiced line of this window with no file to play: the button must not replay the previous line
-    if detail == "missing" or detail == "stale" or detail == "notext" then
+    -- a new voiced line of this window that will not play (no file, its kind switched off, English showing): the
+    -- button must not replay the previous line over it. An unvoiced line of the window ("kind": a title) leaves it.
+    if detail == "missing" or detail == "stale" or detail == "notext" or detail == "off" or detail == "english" then
       -- with the queue the line playing goes on: it may be another NPC's, kept playing after its window closed
       if not queueOn() and playing and playing.window == window then VoicePlayer.stop() end
       last[window] = nil
@@ -305,7 +306,7 @@ local function replayable(window)
   if not line then return nil end
   if not line.shown then return line.path, line.seconds end
   local s = line.shown
-  local path, detail = WFJ.Voice.decide(s[1], s[2], s[3], s[4], speaker(window))
+  local path, detail = WFJ.Voice.decide(s[1], s[2], s[3], s[4], speaker(window), true)
   if not path then return nil end
   return path, detail
 end
@@ -439,7 +440,7 @@ local function logLine()
   local rec = WFJ.SurfaceState and WFJ.SurfaceState.get(LOG_SURFACE, "description")
   local m = rec and rec.meta
   if not m or type(rec.applied) ~= "string" then return nil end
-  local path, detail = WFJ.Voice.decide("questframe.detail", "description", m.kind, m.id, nil)
+  local path, detail = WFJ.Voice.decide("questframe.detail", "description", m.kind, m.id, nil, true)
   if not path then return nil end
   local key = WFJ.Voice.packKey(m.kind, m.id)
   local title = WFJ.SurfaceState.get(LOG_SURFACE, "title")
