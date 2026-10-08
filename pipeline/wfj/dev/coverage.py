@@ -5,7 +5,9 @@ Measured from the English the Forever client serves (`data/english/`), not from 
 list of what a player is likely to see: every served line of a surface counts. A line with nothing to
 translate counts as done: a name-only objective / area text (`pipeline/objective_names.txt` /
 `area_names.txt`), a placeholder quest, a picture-only book page. Word lists (readings with meanings) are
-counted against the lines that can carry one (`readings.annotatable`, not an HTML book page).
+counted against the lines that can carry one (`readings.annotatable`, not an HTML book page). The voice
+section counts every line the voice can read: in step with its audio, stale, not made, and each silent line
+by reason.
 
 The report also counts the served-text inventory (`pipeline/served_columns.txt` with
 `pipeline/served_dispositions.txt`): every text column the client ships, by disposition, so a column left out
@@ -183,7 +185,84 @@ def measure(root: Path) -> dict[str, Any]:
         meant = sum(1 for r in result["current"] for w in r["words"] if len(w) == 5)
         words[type_] = {"lines": len(can), "with_words": len(can & covered), "stale": len(result["stale"]),
                         "words": n_words, "with_meaning": meant}
-    return {"types": types, "readings": words, "served": served(repo)}
+    return {"types": types, "readings": words, "served": served(repo), "voice": voice_coverage(root)}
+
+
+VOICE_KINDS = {
+    "description": "Quest offer",
+    "progress": "Quest progress",
+    "completion": "Quest turn-in",
+    "g": "NPC talk (greetings, gossip, quest text keyed by its English)",
+    "b": "Book and letter pages",
+    "e": "The character's error lines (one file per race and sex)",
+}
+
+
+def _voice_kind(key: str) -> str:
+    return key.split("-")[1] if key[0].isdigit() else key.split("-")[0]
+
+
+def voice_coverage(root: Path) -> dict[str, Any]:
+    """The voice over: per kind, the files the voice reads (in step with the shipped Japanese, stale, not
+    made) and the shipped lines it leaves silent, by reason. Committed data only; empty without the voice
+    tables."""
+    from wfj.cmd import voice_make  # the voice pipeline is only needed for this section
+
+    cfg_path = root.parent / "pipeline" / "voice.toml"
+    if not (root / "voice" / "speakers.jsonl").is_file() or not cfg_path.is_file():
+        return {}
+    cfg = voice_make.load_config(cfg_path)
+    lines = voice_make.shipped_lines(root)
+    jobs = voice_make.file_jobs(root, cfg, "all", lines, voice_make.players_of("all"))
+    state = voice_make.voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(root),
+                                     voice_make.line_values(root, lines))
+    stale, missing = set(state["stale"]), set(state["missing"])
+    kinds: dict[str, Counter[str]] = {k: Counter() for k in VOICE_KINDS}
+    for j in jobs:
+        c = kinds[_voice_kind(j.key)]
+        c["files"] += 1
+        c["stale" if j.stem in stale else "missing" if j.stem in missing else "in_step"] += 1
+    voiced = {j.key for j in jobs}
+    for k in voiced:
+        kinds[_voice_kind(k)]["lines"] += 1
+    narrator = Counter(_voice_kind(r["key"]) for r in voice_make.scoped_rows(root, "all")
+                       if r["speaker"] == voice_make.voice.NARRATOR)
+    silent: Counter[str] = Counter()
+    for k in lines.keys() - voiced:
+        kind = _voice_kind(k)
+        silent[("no speaker found for the quest" if kind in ("description", "progress", "completion")
+                else "not shown in a voiced window, or no speaker known (NPC speech in chat, quest log lines)"
+                if kind == "g" else f"{VOICE_KINDS[kind]}: no speaker")] += 1
+    html = sum(1 for ln in Store(root).load("book") if shipped(ln) and readings.html_page("book", ln["ja"]))
+    if html:
+        silent["HTML book page (keeps the client's layout)"] = html
+    return {"kinds": {k: dict(c) for k, c in kinds.items() if c},
+            "narrator": dict(narrator), "silent": dict(silent.most_common())}
+
+
+def _render_voice(v: dict[str, Any]) -> list[str]:
+    if not v:
+        return []
+    out = ["", "## Voice", "",
+           "Lines the voice reads, from `data/voice/` and the audio record `data/voice/audio.jsonl`.",
+           "In step: the recorded file was made from the Japanese that ships now, in the speaker's cast",
+           "voice. A line several differently cast speakers say has a file per voice, so files can",
+           "outnumber lines.", "",
+           "| Kind | Lines | Files | In step | Stale | Not made | Read by the narrator |",
+           "|---|---|---|---|---|---|---|"]
+    for kind, label in VOICE_KINDS.items():
+        c = v["kinds"].get(kind)
+        if c:
+            cells = [c.get(n, 0) for n in ("lines", "files", "in_step", "stale", "missing")]
+            cells.append(v["narrator"].get(kind, 0))
+            out.append(f"| {label} | " + " | ".join(f"{n:,}" for n in cells) + " |")
+    out += ["", "### Silent lines", "", "Shipped Japanese the voice does not read, by reason.", ""]
+    if v["silent"]:
+        out += ["| Why | Lines |", "|---|---|"]
+        out += [f"| {why} | {n:,} |" for why, n in v["silent"].items()]
+    else:
+        out.append("None.")
+    return out
 
 
 def gaps(m: dict[str, Any]) -> dict[str, int]:
@@ -275,7 +354,9 @@ def render(m: dict[str, Any], stamp: str) -> str:
         out.append(f"| {type_} | {r['lines']:,} | {r['with_words']:,} | {done} | "
                    f"{r['stale']:,} | {r['words']:,} | {_pct(r['with_meaning'], r['words'])} |")
     out += ["", "Item, spell, objective and area text take no word cards; HTML book pages",
-            "and lines holding a `|` escape are not counted.", ""]
+            "and lines holding a `|` escape are not counted."]
+    out += _render_voice(m.get("voice") or {})
+    out.append("")
     return "\n".join(out)
 
 

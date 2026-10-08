@@ -83,3 +83,12 @@ def test_a_spell_once_off_the_visible_list_ships_its_japanese(root: Path):
     shard = (root / "addon/WoWForeverJapanese/Data/Spell/Spell_1283.lua").read_text(encoding="utf-8")
     line = next(ln for ln in shard.splitlines() if "[1283391]" in ln)
     assert "キャンプファイア" in line
+
+
+def test_the_voice_section_counts_every_voiced_line(root: Path, tmp_path: Path):
+    committed = (root / "docs" / "operations" / "coverage.md").read_text(encoding="utf-8")
+    assert "## Voice" in committed and "### Silent lines" in committed
+    assert "| Quest offer |" in committed and "| Book and letter pages |" in committed
+    data, _ = _store(tmp_path)  # a store without the voice tables gets no voice section
+    assert coverage.measure(data)["voice"] == {}
+    assert coverage._render_voice({}) == []
