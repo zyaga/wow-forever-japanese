@@ -375,20 +375,6 @@ function VoicePlayer.togglePause()
   return VoicePlayer.pause()
 end
 
--- Ends the line playing and plays the next one.
-function VoicePlayer.skip()
-  if not Q.current() then return false end
-  silence()
-  lastItem = Q.pop()
-  if Q.current() and not Q.paused and voiceAllowed() then
-    startHead()
-  else
-    VoicePlayer.restoreDialog()
-  end
-  notify()
-  return true
-end
-
 -- The panel's line from the start: the head, or the last line once nothing is queued.
 function VoicePlayer.replay()
   if not voiceAllowed() then return false end

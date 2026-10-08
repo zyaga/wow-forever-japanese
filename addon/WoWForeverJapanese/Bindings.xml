@@ -2,6 +2,5 @@
   <Binding name="WFJ_TOGGLE" header="WFJ">WFJ_ToggleTranslation()</Binding>
   <Binding name="WFJ_REVEAL" runOnUp="true" hidden="true">WFJ_RevealKey(keystate)</Binding>
   <Binding name="WFJ_VOICE_PAUSE">WFJ_VoicePause()</Binding>
-  <Binding name="WFJ_VOICE_SKIP">WFJ_VoiceSkip()</Binding>
   <Binding name="WFJ_VOICE_REPLAY">WFJ_VoiceReplay()</Binding>
 </Bindings>

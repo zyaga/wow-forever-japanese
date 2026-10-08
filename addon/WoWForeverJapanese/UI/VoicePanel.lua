@@ -390,7 +390,6 @@ end
 local function updateButtons(st)
   local paused = st.paused or (st.item ~= nil and not st.playing)
   f.pause:SetNormalTexture(paused and ICON.play or ICON.pause)
-  f.skip:SetEnabled(st.item ~= nil) -- dimmed by the tick, never here: an alpha set here flashed a hidden button
 end
 
 local function controlsAlpha()
@@ -401,7 +400,7 @@ end
 -- every control's alpha in one place (on show and on each tick), so no other call flashes a hidden button
 local function applyControls()
   local a = controlsAlpha()
-  for _, b in ipairs(f.controls) do b:SetAlpha(b == f.skip and not b:IsEnabled() and a * 0.4 or a) end
+  for _, b in ipairs(f.controls) do b:SetAlpha(a) end
 end
 
 -- ── Show / hide / tick ─────────────────────────────────────────────────────
@@ -616,8 +615,6 @@ local function build()
   f:SetMovable(true)
   f:EnableMouse(true)
   f:RegisterForDrag("LeftButton")
-  f:RegisterForClicks("RightButtonUp")
-  f:SetScript("OnClick", function(_, button) if button == "RightButton" then WFJ.VoicePlayer.skip() end end)
   f:SetScript("OnDragStart", function(self) if not Q.opt.locked then self:StartMoving() end end)
   f:SetScript("OnDragStop", function(self)
     self:StopMovingOrSizing()
@@ -689,20 +686,12 @@ local function build()
   book:SetPoint("CENTER", f.textButton, "CENTER", 0, 0)
   f.textButton:SetPoint("RIGHT", f.close, "LEFT", -2, 0)
   f.replay:SetPoint("RIGHT", f.textButton, "LEFT", -2, 0)
-  f.skip = control(ICON.play, "Next line", function() P.skip() end)
-  -- the skip arrow is the play arrow doubled
-  local second = f.skip:CreateTexture(nil, "ARTWORK")
-  second:SetTexture(ICON.play)
-  second:SetAllPoints(f.skip)
-  second:SetPoint("TOPLEFT", f.skip, "TOPLEFT", 8, 0)
-  second:SetPoint("BOTTOMRIGHT", f.skip, "BOTTOMRIGHT", 8, 0)
-  f.skip:SetPoint("RIGHT", f.replay, "LEFT", -8, 0)
   f.pause = control(ICON.pause, function()
     local st = P.state()
     return (st.paused or not st.playing) and "Resume" or "Pause"
   end, function() P.togglePause() end)
-  f.pause:SetPoint("RIGHT", f.skip, "LEFT", -2, 0)
-  f.controls = { f.pause, f.skip, f.replay, f.textButton, f.close }
+  f.pause:SetPoint("RIGHT", f.replay, "LEFT", -2, 0)
+  f.controls = { f.pause, f.replay, f.textButton, f.close }
 
   local ev = CreateFrame("Frame", nil, f)
   ev:RegisterEvent("PLAYER_REGEN_DISABLED")
@@ -855,12 +844,10 @@ function Panel.command(words, say)
       tostring(type(source) == "table" and source:IsShown()), tostring(englishShowing()))
   elseif sub == "pause" then
     WFJ.VoicePlayer.togglePause()
-  elseif sub == "skip" then
-    WFJ.VoicePlayer.skip()
   else
     return say("panel: on|off · look 1|3|4|5 · buttons always|hover · queue box|count · idle fade|stay [s] · "
       .. "combat on|off [alpha] · head on|off · zoom <n> · cam <n> · page sentence|all · "
-      .. "size <px> · keep on|off · scale <0.5-1.5> · lock|unlock|reset · demo · text [quest|window] · why · pause · skip · status")
+      .. "size <px> · keep on|off · scale <0.5-1.5> · lock|unlock|reset · demo · text [quest|window] · why · pause · status")
   end
   if f then Panel.update() end
   say("%s", Panel.status())
@@ -869,7 +856,6 @@ end
 -- ── Key bindings (Bindings.xml) ────────────────────────────────────────────
 
 function WFJ_VoicePause() WFJ.VoicePlayer.togglePause() end
-function WFJ_VoiceSkip() WFJ.VoicePlayer.skip() end
 function WFJ_VoiceReplay() WFJ.VoicePlayer.replay() end
 
 -- Called by Main after VoicePlayer. The frame is built on the first line, so without a pack nothing is made.
