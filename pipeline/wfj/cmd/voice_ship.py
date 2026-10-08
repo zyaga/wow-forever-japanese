@@ -331,7 +331,7 @@ def _inputs(a: argparse.Namespace) -> tuple[Path, dict[str, Any], Table, dict[in
     table = vp.load(Path(a.packs))
     if a.wdb or a.vmangos:
         levels = quest_levels(Path(a.wdb) if a.wdb else None, Path(a.vmangos) if a.vmangos else None)
-    else:  # the committed table: the client files are only on the maintainer's computer
+    else:  # the committed table: the client files are not in the repository
         levels = voice_store.read_levels(Path(a.levels))
     return root, cfg, table, levels, interface_of(root)
 
