@@ -904,3 +904,13 @@ def test_a_missing_audio_store_is_named(tmp_path, engine, monkeypatch, capsys): 
     store, cfg = _release_env(tmp_path, engine, monkeypatch)
     assert vs.run_pack(_args(tmp_path, tmp_path / "nowhere", cfg, _table_file(tmp_path))) == 1
     assert "no audio store at" in capsys.readouterr().err
+
+
+def test_a_store_file_of_the_same_size_but_another_take_stops_the_pack(tmp_path, engine, monkeypatch, capsys):  # noqa: F811
+    data, store, cfg = _project(tmp_path, engine)
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
+    path = store / "456-completion.mp3"
+    path.write_bytes(bytes(b ^ 0xFF for b in path.read_bytes()))  # same length, other bytes: another take
+    assert vs.run_pack(_args(tmp_path, store, cfg, _table_file(tmp_path))) == 1
+    assert "456-completion.mp3" in capsys.readouterr().err

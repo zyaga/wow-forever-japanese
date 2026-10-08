@@ -418,12 +418,14 @@ def build(a: argparse.Namespace, day: datetime.date, previous: Mapping[str, str]
 
 
 def store_mismatches(store: Path, audio: Mapping[str, Any], files: Sequence[str]) -> list[str]:
-    """The pack files whose store copy is missing or not the size the audio record holds for it: a file the
-    shared store holds from another branch's round would otherwise ship under this text's Japanese hash."""
+    """The pack files whose store copy is missing or not the take the audio record holds (its SHA-256; the
+    size for a row made before the hash was recorded): a file the shared store holds from another branch's
+    round would otherwise ship under this text's Japanese hash."""
     wrong = []
     for f in sorted(set(files)):
-        path = store / f
-        if not path.is_file() or path.stat().st_size != int(audio[f.removesuffix(".mp3")]["bytes"]):
+        path, row = store / f, audio[f.removesuffix(".mp3")]
+        if (not path.is_file() or path.stat().st_size != int(row["bytes"])
+                or (row.get("sha256") and voice_make.file_sha(path) != row["sha256"])):
             wrong.append(f)
     return wrong
 

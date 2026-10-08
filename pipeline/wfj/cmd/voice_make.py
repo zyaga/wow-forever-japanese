@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import hashlib
 import json
 import os
 import subprocess
@@ -402,6 +403,7 @@ def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for th
             "fingerprint": voice.fingerprint(voice.text_hash(ja, values.get(j.key, ())), j.voice, settings),
             "seconds": round(secs, 2),
             "bytes": file.stat().st_size,
+            "sha256": file_sha(file),
             "chars": len(text),
             "provenance": {"source": f"aivis@{version}", "imported": today},
         }
@@ -537,10 +539,35 @@ def pack_tables(
 # ---- entry -----------------------------------------------------------------------------------------------
 
 
+def file_sha(path: Path) -> str:
+    """The SHA-256 of a made file: what proves the store holds the recorded take, not another of the same
+    length (the encoder's constant bitrate makes equal lengths equal sizes)."""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def record_hashes(root: Path, store: Path) -> tuple[int, list[str]]:
+    """Adds `sha256` to every audio record row whose file the store holds at the recorded size (a row made
+    before the field existed). Reads the store only. → (rows filled, files missing or of another size)."""
+    rows = _rows(root / "voice" / AUDIO)
+    filled, odd = 0, []
+    for r in rows:
+        if r.get("sha256"):
+            continue
+        path = store / f"{r['file']}.mp3"
+        if not path.is_file() or path.stat().st_size != int(r["bytes"]):
+            odd.append(r["file"])
+            continue
+        r["sha256"] = file_sha(path)
+        filled += 1
+    if filled:
+        _write(root / "voice" / AUDIO, rows)
+    return filled, odd
+
+
 def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj voice")
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name in ("cast", "plan", "generate", "status"):
+    for name in ("cast", "plan", "generate", "status", "record-hashes"):
         sp = sub.add_parser(name)
         sp.add_argument("--config", default="voice.toml")
         sp.add_argument("--scope", default="all", choices=sorted(voice.SCOPES))
@@ -554,6 +581,13 @@ def run(argv: Sequence[str]) -> int:
     if a.cmd == "status":
         print("\n".join(status_lines(store)))
         return 0
+    if a.cmd == "record-hashes":
+        filled, odd = record_hashes(root, store)
+        print(f"voice record-hashes: {filled} row(s) given their file's sha256")
+        if odd:
+            print(f"voice record-hashes: {len(odd)} file(s) missing or not the recorded size, left as"
+                  f" they are, e.g. {', '.join(odd[:5])}", file=sys.stderr)
+        return 1 if odd else 0
     try:
         cfg = load_config(Path(a.config))
         if a.cmd == "cast":

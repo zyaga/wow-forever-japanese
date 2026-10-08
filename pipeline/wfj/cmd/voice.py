@@ -244,7 +244,7 @@ def run(argv: Sequence[str]) -> int:
         from wfj.cmd import voice_audition
 
         return voice_audition.run(argv[1:])
-    if verb and verb[0] in ("cast", "plan", "generate", "status"):
+    if verb and verb[0] in ("cast", "plan", "generate", "status", "record-hashes"):
         from wfj.cmd import voice_make
 
         return voice_make.run(argv)

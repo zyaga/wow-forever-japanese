@@ -658,3 +658,26 @@ def test_every_translation_round_ends_by_remaking_its_voice():
     assert "wfj voice generate --scope all --players all" in generate
     assert "store-sync --if-changed" in generate
     assert "store-sync --if-changed" in _recipe(makefile, "voice-run")
+
+
+def test_every_made_file_records_its_sha256_and_old_rows_are_filled_from_the_store(tmp_path, engine):
+    import hashlib
+
+    data = _store(tmp_path)
+    store = tmp_path / "voice"
+    _gen(data, store, engine)
+    rows = voice_make.audio_record(data)
+    for stem, row in rows.items():
+        assert row["sha256"] == hashlib.sha256((store / f"{stem}.mp3").read_bytes()).hexdigest()
+    # rows made before the field existed get it from the store; the store is only read
+    cmd.write_rows(data / "voice" / "audio.jsonl", [{k: v for k, v in r.items() if k != "sha256"}
+                                                    for r in rows.values()])
+    before = {p.name: p.read_bytes() for p in store.glob("*.mp3")}
+    assert voice_make.record_hashes(data, store) == (len(rows), [])
+    assert voice_make.audio_record(data) == rows
+    assert {p.name: p.read_bytes() for p in store.glob("*.mp3")} == before
+    (store / "456-completion.mp3").unlink()
+    cmd.write_rows(data / "voice" / "audio.jsonl", [{k: v for k, v in r.items() if k != "sha256"}
+                                                    for r in rows.values()])
+    filled, odd = voice_make.record_hashes(data, store)
+    assert filled == len(rows) - 1 and odd == ["456-completion"]
