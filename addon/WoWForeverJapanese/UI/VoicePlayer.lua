@@ -24,6 +24,7 @@
 --     between would otherwise leave the player's NPC voices off for good. It is put back when the line ends (the
 --     pack's length plus a margin; PlaySoundFile reports no end), on stop, on logout and on the next load. A player
 --     who had the dialog channel off keeps it off.
+--   The dialog-sound handling is adapted from forever-vo's ForeverVO/Core/Audio.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 local VoicePlayer = {}
 WFJ.VoicePlayer = VoicePlayer

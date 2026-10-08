@@ -140,8 +140,23 @@ cache, the Classic Era quest cache, wago.tools DB2 exports (`ItemSparse`, `Spell
   GPL-2.0: quest progress and completion text, gossip and book pages.
 - forever-vo (https://github.com/quinn-dougherty/forever-vo), under the MIT License (below): quest progress
   and turn-in text and NPC greetings that players of the Forever client recorded with its addon and sent in.
-  The voice panel's design (what it holds: the speaker's head, the line's text, the lines waiting their turn)
-  follows forever-vo's talking-head panel. No code was taken from it.
+  The same captures name the NPC who says each line: the voice over's speaker table
+  (`data/voice/speakers.jsonl`, rows with the source `forever-vo`) takes those speakers for lines the
+  VMaNGOS database has none for, and they decide the voice those lines are read in.
+  The voice over follows forever-vo in these parts, adapted from its addon (no file was copied whole):
+  - the voice panel's design, after forever-vo's talking-head panel and its "up next" list (the speaker's
+    head, name and title, the line's text, the lines waiting their turn, its place and size at the bottom of
+    the screen), and from `ForeverVO/UI/TalkingHead.lua`: loading the head from the unit on screen or else
+    the creature id and checking the model after a short wait, the talk animation and the model's framing
+    (`UI/VoicePanelHead.lua`), choosing the faction parchment art (`UI/VoicePanel.lua`), and the parchment
+    look's layout and title colour (`UI/VoicePanelLooks.lua`; its name and text colours are the client's own);
+  - keeping a line playing after its window closes, after forever-vo's option for it;
+  - from `ForeverVO/Core/Audio.lua`: turning the game's dialog sound off while a line plays and keeping that
+    fact in the saved variables, so a reload mid-line never leaves the player's NPC voices off
+    (`UI/VoicePlayer.lua`);
+  - from `ForeverVO/UI/QuestLog.lua`: the quest log's play button on the quest details' top bar, set up from
+    the hook on `QuestMapFrame_ShowQuestDetails` (`UI/VoiceQuestLog.lua`);
+  - the audio format of the voice packs (mono MP3, 22.05 kHz, 32 kbps), the one forever-vo ships.
 
 ## pfQuest license
 

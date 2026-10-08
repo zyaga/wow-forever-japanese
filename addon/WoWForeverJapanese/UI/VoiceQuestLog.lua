@@ -12,6 +12,7 @@
 --     by the game's quests. The quest log's replays take their head (by creature id), name, title and voice variant
 --     from it. A quest taken before this existed, or from a player, an item or an object, has none: the quest's title
 --     stands in, with no head.
+-- The button follows forever-vo's ForeverVO/UI/QuestLog.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 local QuestLog = {}
 WFJ.VoiceQuestLog = QuestLog

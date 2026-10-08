@@ -6,7 +6,7 @@
 
 ## Context
 
-The voice over played a line only while its quest, NPC talk or book window was open, with a small play / stop button on the window. Players walk and fight while an NPC talks; closing the window cut the line, and once the window was gone nothing showed who was speaking or what was said. forever-vo's talking-head panel showed what such a panel holds. The look, the controls and what the panel keeps were chosen in game, copy by copy, from switchable variants built for that trial.
+The voice over played a line only while its quest, NPC talk or book window was open, with a small play / stop button on the window. Players walk and fight while an NPC talks; closing the window cut the line, and once the window was gone nothing showed who was speaking or what was said. forever-vo's talking-head panel (MIT) showed what such a panel holds; the panel follows its design, and parts of its code (loading the head, the talk animation, the faction parchment, the quest log's play button) are adapted from forever-vo's addon, credited in `ATTRIBUTION.md`. This supersedes ADR-061's note that forever-vo's player and talking-head frame were not used. The look, the controls and what the panel keeps were chosen in game, copy by copy, from switchable variants built for that trial.
 
 ## Decision
 

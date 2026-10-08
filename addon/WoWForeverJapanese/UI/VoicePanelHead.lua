@@ -7,6 +7,7 @@
 -- a new client build empties the cache, so an NPC not seen since has no head). A speaker with no model (a book, the
 -- narrator, an uncached creature) gets no head and onShown(false) lets the panel move the text left. The model frame
 -- is never hidden before its load had its chance: a hidden PlayerModel does not keep the model it loads.
+-- Adapted from forever-vo's ForeverVO/UI/TalkingHead.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 local Head = {}
 WFJ.VoicePanelHead = Head

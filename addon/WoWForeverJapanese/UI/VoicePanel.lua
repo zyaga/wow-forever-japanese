@@ -7,6 +7,8 @@
 --   * Its look is one of four (UI/VoicePanelLooks) from the Panel size and Panel style settings; Off hides it.
 --   * Never while translation or voice is off. The reveal key does not hide it: it shows the line's English.
 --   * Built on the first voiced line, so without a voice pack no frame exists.
+--   * The panel follows forever-vo's talking-head panel in its design, and its faction parchment choice is adapted
+--     from forever-vo's ForeverVO/UI/TalkingHead.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 local Panel = {}
 WFJ.VoicePanel = Panel

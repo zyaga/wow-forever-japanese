@@ -13,6 +13,7 @@
 --      and a thin dark frame round the head (`headFrame`)
 -- Offsets are from the panel's TOPLEFT. `textLeft` is where name and text start with the head shown, `textLeftNoHead`
 -- without it.
+-- Look 4's layout and title colour follow forever-vo's ForeverVO/UI/TalkingHead.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 
 WFJ.VoicePanelLooks = {
