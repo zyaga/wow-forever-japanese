@@ -227,8 +227,9 @@ def voice_coverage(root: Path) -> dict[str, Any]:
                                      voice_make.line_values(root, lines))
     stale, missing = set(state["stale"]), set(state["missing"])
     kinds: dict[str, Counter[str]] = {k: Counter() for k in VOICE_KINDS}
-    # keys that play another line's file (a female wording, a repeated quest's text): voiced, not silent
-    played, _, _ = voice_make.pack_tables(root, cfg, "all")
+    # keys that play another line's file (a female wording, a repeated quest's text): voiced, not silent,
+    # whether that file is in step or not
+    shares = voice_make.aliases(root)
     english = Store(root, english=True).load("gossip")
     src = {str(r["id"]): str(r.get("src", "")).split("@")[0] for r in english}
     for j in jobs:
@@ -236,6 +237,7 @@ def voice_coverage(root: Path) -> dict[str, Any]:
         c["files"] += 1
         c["stale" if j.stem in stale else "missing" if j.stem in missing else "in_step"] += 1
     voiced = {j.key for j in jobs}
+    played = {k for k, src in shares.items() if src in voiced}
     for k in voiced:
         kinds[_voice_kind(k)]["lines"] += 1
     narrator = Counter(_voice_kind(r["key"]) for r in voice_make.scoped_rows(root, "all")

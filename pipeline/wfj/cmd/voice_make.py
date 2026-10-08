@@ -523,17 +523,21 @@ def pack_tables(
                 if isinstance(c, int):
                     v = cast[c]
                     creatures[c] = (v["voice"], v["female"]) if v.get("female") else v["voice"]
+    for alias, src in aliases(root).items():
+        if src in out and alias not in out:
+            out[alias] = out[src]
+    return out, creatures, sorted(bad)
+
+
+def aliases(root: Path) -> dict[str, str]:
+    """{key: the key whose file it plays}: a gendered gossip line's female wording plays the male wording's
+    file, and a quest's text Forever repeats under another id (keyed by its English) plays the quest's."""
     english = Store(root, english=True)
     female, _ = female_index(english.load("gossip"))
-    for key, entry in list(out.items()):
-        fkey = female.get(key[2:]) if key.startswith("g-") else None
-        if fkey and voice.gossip_key(fkey) not in out:
-            out[voice.gossip_key(fkey)] = entry
+    out = {voice.gossip_key(fkey): voice.gossip_key(mkey) for mkey, fkey in female.items()}
     for akey, (qid, field) in quest_text_aliases(Store(root).load("quest"), english.load("quest")).items():
-        src = voice.quest_key(qid, field)
-        if src in out and voice.gossip_key(akey) not in out:
-            out[voice.gossip_key(akey)] = out[src]
-    return out, creatures, sorted(bad)
+        out.setdefault(voice.gossip_key(akey), voice.quest_key(qid, field))
+    return out
 
 
 # ---- entry -----------------------------------------------------------------------------------------------

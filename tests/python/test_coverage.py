@@ -2,6 +2,8 @@
 
 from pathlib import Path
 
+import pytest
+
 from wfj.dev import coverage
 
 
@@ -104,3 +106,22 @@ def test_silent_voice_lines_are_counted_by_reason_and_an_unknown_kind_does_not_c
     assert "| Other | 1 | 1 | 1 | 0 | 0 | 0 |" in out
     assert f"| {coverage.GOSSIP_SILENT['vmangos']} | 5 |" in out and f"| {coverage.GOSSIP_SILENT['wdb']} | 3 |" in out
     assert "another line's file" in out and ": 2." in out
+
+
+def test_a_line_sharing_a_stale_file_counts_as_shared_not_silent(monkeypatch):
+    """A female wording plays its male line's file: it is a shared line whether that file is in step or
+    stale, never a silent line with no speaker."""
+    from wfj.cmd import voice_make
+
+    root = Path(__file__).resolve().parents[2] / "data"
+    real = voice_make.aliases(root)
+    if not real:
+        pytest.skip("no aliased lines in the data")
+    before = coverage.voice_coverage(root)
+    rec = voice_make.audio_record(root)
+    sources = set(real.values())
+    stale = {k: ({**v, "fingerprint": "x"} if v["key"] in sources else v) for k, v in rec.items()}
+    monkeypatch.setattr(voice_make, "audio_record", lambda r: stale)
+    after = coverage.voice_coverage(root)
+    assert after["shared"] == before["shared"] and after["silent"] == before["silent"]
+    assert sum(c.get("stale", 0) for c in after["kinds"].values()) > 0
