@@ -188,7 +188,7 @@ describe("Core/Voice: the pack registry and the decision", function()
   end)
 end)
 
--- With the voice panel Off: the player as WFJ-87 ships it (one line at a time, stopped by the reveal key and the
+-- With the voice panel Off: the player as it was before the panel (one line at a time, stopped by the reveal key and the
 -- window closing). voice_panel_spec.lua covers it with the panel on.
 describe("UI/VoicePlayer: playing the pack's line in the quest window (voice panel Off)", function()
   local WFJ, S, db, sounds, stopped, timers, cvars, willPlay
