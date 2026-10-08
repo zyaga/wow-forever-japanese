@@ -66,8 +66,15 @@ def _git(store: Path, *args: str) -> str:
 
 
 def has_changes(store: Path) -> bool:
-    """Whether the store is a checkout holding files not committed yet."""
-    return (store / ".git").exists() and bool(_git(store, "status", "--porcelain"))
+    """Whether the store is a checkout holding files not committed yet, or commits not pushed yet (a sync
+    whose push failed is tried again)."""
+    if not (store / ".git").exists():
+        return False
+    if _git(store, "status", "--porcelain"):
+        return True
+    ahead = subprocess.run(["git", "-C", str(store), "rev-list", "--count", "@{u}..HEAD"],
+                           capture_output=True, text=True, check=False)
+    return ahead.returncode == 0 and ahead.stdout.strip() not in ("", "0")
 
 
 def sync(store: Path, pin: Path, message: str) -> str:

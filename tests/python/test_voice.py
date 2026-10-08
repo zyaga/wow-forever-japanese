@@ -626,6 +626,14 @@ def test_store_sync_if_changed_leaves_the_pin_and_the_remote_alone_when_nothing_
     pin.write_text(voice_store.PIN_HEAD + "b" * 40 + "\n")  # this branch pins other audio than the store's HEAD
     assert voice_store.run(["store-sync", "--if-changed", "--store", str(store), "--pin", str(pin)]) == 0
     assert voice_store.read_pin(pin) == "b" * 40  # nothing new: the pin stays
+    # a sync whose push failed left a commit the remote lacks: that counts as new, so the next run pushes it
+    subprocess.run(["git", "-C", str(store), "branch", "-q", "--set-upstream-to=origin/main"], check=True)
+    (store / "c.mp3").write_bytes(b"c")
+    subprocess.run(["git", "-C", str(store), "add", "-A"], check=True)
+    subprocess.run(["git", "-C", str(store), "commit", "-q", "-m", "c"], check=True)
+    assert voice_store.has_changes(store)
+    assert voice_store.run(["store-sync", "--if-changed", "--store", str(store), "--pin", str(pin)]) == 0
+    assert not voice_store.has_changes(store) and voice_store.read_pin(pin) != "b" * 40
 
 
 def _recipe(makefile: str, target: str) -> str:
