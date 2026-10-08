@@ -29,6 +29,7 @@ VoiceErrors.last = {}
 local db
 local lastKey, lastAt = nil, 0
 local hooked = false
+local displayHooked, subscribed = false, false -- each hook and listener once, however often init runs
 
 local function getCVar(name)
   local C = Compat.resolve("C_CVar")
@@ -143,11 +144,15 @@ function VoiceErrors.init(savedDb)
     hooked = true
   end
   local frame = Compat.resolve("UIErrorsFrame")
-  if type(frame) == "table" and type(frame.TryDisplayMessage) == "function" then
+  if not displayHooked and type(frame) == "table" and type(frame.TryDisplayMessage) == "function" then
     hooksecurefunc(frame, "TryDisplayMessage", VoiceErrors.onDisplay)
+    displayHooked = true
   end
-  WFJ.State.on("voice", VoiceErrors.refresh)
-  WFJ.State.on("enabled", VoiceErrors.refresh)
+  if not subscribed then
+    WFJ.State.on("voice", VoiceErrors.refresh)
+    WFJ.State.on("enabled", VoiceErrors.refresh)
+    subscribed = true
+  end
   VoiceErrors.refresh()
   return hooked
 end

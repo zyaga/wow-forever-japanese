@@ -129,6 +129,21 @@ describe("Core/Voice: the pack registry and the decision", function()
       (V.decide("questframe.detail", "description", "quest.description", 2)))
   end)
 
+  it("a pack registering again also drops the creatures and error lines it brought before", function()
+    local F = "WoWForeverJapanese_Voice_1"
+    local line = { "2-description.mp3", WFJ.Hash.key(desc), 3, v = { deep = { "2-description_deep.mp3", 2 } } }
+    V.register({ format = 2, folder = F, creatures = { [10] = "deep" }, lines = { ["2-description"] = line },
+      errors = { kinds = { [10] = "outofrange" }, voices = { ["tauren-f"] = { outofrange = { "e-o.mp3", 1 } } } } })
+    settings["voice.errors"] = true
+    assert.are.same({ PATH:format(F, "2-description_deep.mp3"), 2 },
+      { V.decide("questframe.detail", "description", "quest.description", 2, { creature = 10 }) })
+    assert.is_true(V.hasErrors("Tauren", 3))
+    V.register({ format = 2, folder = F, lines = { ["2-description"] = line } }) -- the same pack, rebuilt
+    assert.are.same({ PATH:format(F, "2-description.mp3"), 3 },
+      { V.decide("questframe.detail", "description", "quest.description", 2, { creature = 10 }) })
+    assert.is_false(V.hasErrors("Tauren", 3))
+  end)
+
   it("a line several creatures say plays the voice of the one on screen, else its main voice", function()
     V.register({ format = 2, folder = "WoWForeverJapanese_Voice",
       creatures = { [10] = "deep", [11] = { "deep", "soft" } },
@@ -412,6 +427,21 @@ describe("UI/VoicePlayer: playing the pack's line in the quest window", function
     assert.is_false(WFJ.VoicePlayer.button("QuestFrame"):IsShown())
   end)
 
+  it("the button never replays a line whose kind was switched off since", function()
+    Stub.showDetail()
+    local b = WFJ.VoicePlayer.button("QuestFrame")
+    S.set("voice.offer", false) -- stops the line; the offer is now off
+    assert.is_false(b:IsShown())
+    b.scripts.OnClick(b)
+    assert.are.equal(1, #sounds)
+    S.set("voice.offer", true)
+    Stub.showDetail()
+    b.scripts.OnClick(b) -- stop
+    S.set("voice.progress", false) -- another kind: the offer can still be replayed
+    b.scripts.OnClick(b)
+    assert.are.equal(3, #sounds)
+  end)
+
   it("passes the NPC on screen, so a line several creatures say plays that NPC's voice", function()
     Stub.units.questnpc = { name = "Tarindrella", guid = "Creature-0-1-0-1-1992-0000ABCD" }
     WFJ.Voice.register({ format = 2, folder = "WoWForeverJapanese_Voice", creatures = { [1992] = "soft" },
@@ -517,6 +547,22 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     assert.are.equal(1, #sounds)
     WFJ.VoiceErrors.restore()
     assert.are.equal("1", cvars.Sound_EnableErrorSpeech)
+  end)
+
+  it("hooks the error frame once, however often it starts", function()
+    local hooks = 0
+    local real = _G.hooksecurefunc
+    _G.hooksecurefunc = function(t, name, fn)
+      if name == "TryDisplayMessage" then hooks = hooks + 1 end
+      return real(t, name, fn)
+    end
+    WFJ.VoiceErrors.init(db)
+    WFJ.VoiceErrors.init(db)
+    _G.hooksecurefunc = real
+    assert.are.equal(1, hooks)
+    _G.UIErrorsFrame:TryDisplayMessage(51, "You are too far away.")
+    frames()
+    assert.are.equal(1, #sounds)
   end)
 
   it("speaks the message the error frame shows, once, not the kind's line", function()

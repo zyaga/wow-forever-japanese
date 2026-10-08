@@ -180,7 +180,21 @@ function VoicePlayer.onShown(surface, recKey, kind, id)
     end
     return false
   end
-  return play(path, detail, WFJ.Voice.packKey(kind, id), window)
+  local started = play(path, detail, WFJ.Voice.packKey(kind, id), window)
+  if started then last[window].shown = { surface, recKey, kind, id } end -- re-asked before a replay
+  return started
+end
+
+-- The window's last line again, as Voice.decide answers now (a setting may have switched its kind off since).
+-- → path, seconds, or nil
+local function replayable(window)
+  local line = last[window]
+  if not line then return nil end
+  if not line.shown then return line.path, line.seconds end
+  local s = line.shown
+  local path, detail = WFJ.Voice.decide(s[1], s[2], s[3], s[4], speaker(window))
+  if not path then return nil end
+  return path, detail
 end
 
 -- The button's click: stop the line playing, or play the window's line again. Never while English is showing.
@@ -193,7 +207,12 @@ function VoicePlayer.toggle(window)
   if not line or not WFJ.State.enabled or WFJ.State.modifierHeld or not WFJ.Settings.get("voice.enabled") then
     return false
   end
-  return play(line.path, line.seconds, line.key, window, true)
+  local path, seconds = replayable(window)
+  if not path then return false end
+  local shown = line.shown
+  local started = play(path, seconds, line.key, window, true)
+  if started then last[window].shown = shown end
+  return started
 end
 
 local function createButton(window)
@@ -229,7 +248,10 @@ function VoicePlayer.init(savedDb)
   WFJ.State.on("enabled", stopUnless)
   WFJ.State.on("voice", function() -- any voice setting changed: the line playing may be one now off
     VoicePlayer.stop()
-    for _, window in ipairs(WINDOWS) do showButton(window, false) end
+    for _, window in ipairs(WINDOWS) do
+      if last[window] and not replayable(window) then last[window] = nil end -- its kind is off: no replay
+      showButton(window, false)
+    end
   end)
   for _, window in ipairs(WINDOWS) do
     local f = Compat.resolve(window)

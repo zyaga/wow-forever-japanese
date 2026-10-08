@@ -27,6 +27,7 @@ Voice.KINDS = {
 -- pack key → { file, jaHash, seconds, folder, v = { [voice] = { file, seconds } } }; nil until a pack registers
 local lines
 local creatures = {} -- creature id → voice id, or { male voice, female voice } (the speakers of lines with variants)
+local creatureFolder = {} -- creature id → the pack that registered it, so that pack's reload replaces it
 local packs = {} -- pack folder → the number of its lines registered
 -- the character's own spoken error lines: the game's voice id → kind, and per "<race>-<f|m>" the kind's file
 local errorKinds, errorFiles = {}, {}
@@ -85,6 +86,14 @@ function Voice.register(tbl)
   for key, e in pairs(lines) do
     if e.folder == tbl.folder then lines[key] = nil end
   end
+  for c, folder in pairs(creatureFolder) do -- a pack registering again replaces all it brought, not only lines
+    if folder == tbl.folder then creatures[c], creatureFolder[c] = nil, nil end
+  end
+  for _, files in pairs(errorFiles) do
+    for kind, f in pairs(files) do
+      if f.folder == tbl.folder then files[kind] = nil end
+    end
+  end
   local n, bad = 0, 0
   for key, e in pairs(tbl.lines) do
     if type(key) == "string" and validEntry(e) then
@@ -100,7 +109,11 @@ function Voice.register(tbl)
     end
   end
   for c, v in pairs(type(tbl.creatures) == "table" and tbl.creatures or {}) do
-    if type(c) == "number" and validVoice(v) then creatures[c] = v else bad = bad + 1 end
+    if type(c) == "number" and validVoice(v) then
+      creatures[c], creatureFolder[c] = v, tbl.folder
+    else
+      bad = bad + 1
+    end
   end
   local errors = type(tbl.errors) == "table" and tbl.errors or {}
   for id, kind in pairs(type(errors.kinds) == "table" and errors.kinds or {}) do
