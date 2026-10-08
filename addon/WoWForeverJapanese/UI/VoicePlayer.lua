@@ -172,8 +172,9 @@ function VoicePlayer.onShown(surface, recKey, kind, id)
   local window = windowOf(surface)
   local path, detail = WFJ.Voice.decide(surface, recKey, kind, id, speaker(window)) -- detail: length, or why not
   if not path then
-    -- a voiced line of this window with no file to play: the button must not replay the previous line
-    if detail == "missing" or detail == "stale" or detail == "notext" then
+    -- a new voiced line of this window that will not play (no file, its kind switched off, English showing): the
+    -- button must not replay the previous line over it. An unvoiced line of the window ("kind": a title) leaves it.
+    if detail == "missing" or detail == "stale" or detail == "notext" or detail == "off" or detail == "english" then
       if playing and playing.window == window then VoicePlayer.stop() end
       last[window] = nil
       showButton(window, false)
@@ -192,7 +193,7 @@ local function replayable(window)
   if not line then return nil end
   if not line.shown then return line.path, line.seconds end
   local s = line.shown
-  local path, detail = WFJ.Voice.decide(s[1], s[2], s[3], s[4], speaker(window))
+  local path, detail = WFJ.Voice.decide(s[1], s[2], s[3], s[4], speaker(window), true)
   if not path then return nil end
   return path, detail
 end
