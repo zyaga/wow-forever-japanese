@@ -556,6 +556,15 @@ def test_a_page_is_signed_by_its_last_line_when_that_is_only_a_name():
     for last in ("The End", "The Keeper", "GO ALONE", "Remember", "Quartermaster"):
         assert voice.book_signature(f"Many words came before.$B{last}") is None, last
     assert voice.book_signature("I will return soon.$BYour friend,$BTorgal") == "Torgal"
+    # two hyphens or a tilde before the name, and a title after a comma or " - "
+    assert voice.book_signature("Keep the gold.$B--VanCleef") == "VanCleef"
+    assert voice.book_signature("Stay vigilant.$B--Lord Ello Ebonlocke") == "Lord Ello Ebonlocke"
+    assert voice.book_signature("Boom.$B-- Yazz Nitrospork, goblin bombardier") == "Yazz Nitrospork"
+    assert voice.book_signature("Come to me.$B-Rwag, Rogue Trainer") == "Rwag"
+    assert voice.book_signature("For the Horde.$B-Thrall, Warchief of the Horde") == "Thrall"
+    assert voice.book_signature("Study well.$B- Antonidas - Archmage of Dalaran") == "Antonidas"
+    assert voice.book_signature("Safe travels.$B~ Windan Shay") == "Windan Shay"
+    assert voice.book_signature("Text.$B-the end of it all") is None  # a dash, then no name
 
 
 def test_a_signed_page_is_read_by_its_writer_and_any_other_by_the_narrator():

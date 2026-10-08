@@ -239,27 +239,35 @@ def book_key(key: str) -> str:
 
 # A page signed by its writer ends with a line that is only a name, often after a dash: "-Baelog",
 # "- Windan Shay", "Stalvan Mistmantle". One to four capitalised words.
-_SIGNATURE = re.compile(r"^([-~\u2014\u2013])?\s*([A-Z][\w'.]*(?: [A-Z][\w'.]*){0,3})\s*$")
+_NAME = r"[A-Z][\w'.]*(?: [A-Z][\w'.]*){0,3}"
+_SIGNATURE = re.compile(rf"^({_NAME})\s*$")
+# a dash (one or two hyphens, an en or em dash) or a tilde, then the name, then maybe ", title" or " - title"
+_DASHED = re.compile(rf"^(?:--?|~|\u2014|\u2013)\s*({_NAME})\s*(?:(?:,| - ).*)?$")
 _LINE_BREAK = re.compile(r"\$[Bb]")
 _CLOSING = re.compile(r"^[^.!?]{1,40},$")  # "Your friend," "Sincerely," "With respect,"
 
 
 def book_signature(en: str) -> str | None:
     """The name a page is signed with: its last non-empty line, when that line is only a name. A dashed
-    name ("- Windan Shay", "-Baelog.") counts; an undashed one must not read as a title ("The End",
-    "REMEMBER"), and a single undashed word counts only under a closing line ("Your friend,")."""
+    name counts, with one or two hyphens, an en or em dash or a tilde before it and a title after a comma
+    or " - " ("- Windan Shay", "-Baelog.", "--VanCleef", "-Thrall, Warchief of the Horde", "- Antonidas -
+    Archmage of Dalaran"); an undashed one must not read as a title ("The End", "REMEMBER"), and a single
+    undashed word counts only under a closing line ("Your friend,")."""
     lines = [ln.strip() for ln in _LINE_BREAK.sub("\n", en).splitlines() if ln.strip()]
     if len(lines) < 2:  # a page that is only a name is a title or a label, not a signed text
         return None
-    m = _SIGNATURE.match(lines[-1])
+    last = lines[-1]
+    dashed = _DASHED.match(last)
+    if dashed:
+        return dashed.group(1).rstrip(".") or None
+    m = _SIGNATURE.match(last)
     if not m:
         return None
-    dash, name = m.group(1), m.group(2).rstrip(".")
-    if not dash:
-        if name.split()[0] in ("The", "A", "An") or name.isupper():
-            return None
-        if " " not in name and not _CLOSING.match(lines[-2]):
-            return None
+    name = m.group(1).rstrip(".")
+    if name.split()[0] in ("The", "A", "An") or name.isupper():
+        return None
+    if " " not in name and not _CLOSING.match(lines[-2]):
+        return None
     return name or None
 
 
