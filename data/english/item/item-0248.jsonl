@@ -10,6 +10,7 @@
 {"id": 248006, "field": "name", "en": "Militia Sword", "hash": "4f119f57e4341332", "src": "db2@1.60.1.70245"}
 {"id": 248007, "field": "name", "en": "Militia Shortblade", "hash": "b06fdf8b22897588", "src": "db2@1.60.1.70245"}
 {"id": 248008, "field": "name", "en": "Apprentice's Spellstaff", "hash": "d1b5cc6e6a3e6f62", "src": "db2@1.60.1.70245"}
+{"id": 248008, "field": "description", "en": "Equip: Increases damage and healing done by magical spells and effects by up to 4.", "hash": "48243bb37fa8887f", "src": "collector@1.60.1.70205"}
 {"id": 248206, "field": "name", "en": "Sealed Craftsman's Writ", "hash": "158e6e929a7ddbe0", "src": "db2@1.60.1.70245"}
 {"id": 248206, "field": "description", "en": "Tear open the envelope to reveal the writ.\nA pending crafting order intercepted in transit. Perhaps you can be the means to its end.", "hash": "752c35f2721c96c4", "src": "db2@1.60.1.70245"}
 {"id": 248549, "field": "name", "en": "Waylaid Crate", "hash": "3ac358515174c57b", "src": "db2@1.60.1.70245"}

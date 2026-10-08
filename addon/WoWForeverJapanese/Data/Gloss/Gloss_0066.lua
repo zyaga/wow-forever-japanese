@@ -41,7 +41,6 @@ WFJ.Data.add("gloss", {
   [66038] = "実の父\tじつのちち\ther own father",
   [66039] = "実は\tじつは\tAs it turns out (actually)",
   [66040] = "実は\tじつは\tactually",
-  [66041] = "実は\tじつは\tactually (I was gonna say)",
   [66042] = "実は\tじつは\tbut (actually)",
   [66043] = "実は\tじつは\tin fact",
   [66044] = "実は\tじつは\tindeed (actually)",

@@ -755,7 +755,6 @@ WFJ.Data.add("gloss", {
   [17752] = "つまみ\tつまみ\tknobs",
   [17753] = "つまむ\tつまむ\ttry a bite",
   [17754] = "つまらせる\tつまらせる\tchokes (clogs)",
-  [17755] = "つまらない\tつまらない\tbad (boring)",
   [17756] = "つまらない\tつまらない\tboring",
   [17757] = "つまらない\tつまらない\tno fun (boring)",
   [17758] = "つまらない\tつまらない\tpaltry (dull)",

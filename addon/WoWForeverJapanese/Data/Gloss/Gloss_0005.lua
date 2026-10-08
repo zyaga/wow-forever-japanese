@@ -262,7 +262,6 @@ WFJ.Data.add("gloss", {
   [5259] = "おのれ\tおのれ\tdamn you",
   [5260] = "おはよう\tおはよう\tmorning (good morning)",
   [5261] = "おばあちゃん\tおばあちゃん\tNana (grandma)",
-  [5262] = "おばあちゃん\tおばあちゃん\told woman",
   [5263] = "おばさん\tおばさん\tauntie",
   [5264] = "おばさん\tおばさん\tlady (auntie)",
   [5265] = "おばさん\tおばさん\tshe (auntie)",

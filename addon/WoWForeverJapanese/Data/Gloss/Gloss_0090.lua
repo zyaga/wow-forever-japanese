@@ -284,7 +284,6 @@ WFJ.Data.add("gloss", {
   [90281] = "来る\tくる\twould come",
   [90282] = "来る\tくる\twould not come",
   [90283] = "来る\tくる\twould show (come)",
-  [90284] = "来る\tくる\twouldn't arrive",
   [90285] = "来る\tくる\tya made it (came)",
   [90286] = "来る\tくる\tyou are (came)",
   [90287] = "来る\tくる\tyou are here (you came)",
