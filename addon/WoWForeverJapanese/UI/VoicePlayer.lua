@@ -375,6 +375,15 @@ function VoicePlayer.togglePause()
   return VoicePlayer.pause()
 end
 
+-- A waiting line, played now (a row of the panel's waiting list): it replaces the line playing. → true when it started
+function VoicePlayer.playWaiting(key)
+  if not voiceAllowed() then return false end
+  for i = 2, #Q.items do
+    if Q.items[i].key == key then return takeOver(Q.items[i]) end
+  end
+  return false
+end
+
 -- The panel's line from the start: the head, or the last line once nothing is queued.
 function VoicePlayer.replay()
   if not voiceAllowed() then return false end

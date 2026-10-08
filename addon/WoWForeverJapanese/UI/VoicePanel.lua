@@ -19,6 +19,7 @@ local MODEL_SETTLE = 0.6 -- seconds a model load gets before a speaker with no m
 local FADE_TIME = 0.6
 local TICK = 0.1
 local BUTTON = 28 -- the icons have wide transparent margins: smaller reads as a dot (the window button's size)
+local QUEUE_ROW = 15 -- a waiting-list row's height
 local SHORT_PAGE = 12 -- characters: a shorter sentence joins the next page
 local KIND_LABEL = {
   ["questframe.detail"] = "Quest", ["questframe.progress"] = "Progress", ["questframe.reward"] = "Turn-in",
@@ -370,20 +371,31 @@ local function updateQueue(st)
     box:Hide()
     return
   end
+  -- each row is a button: a click plays that line now. The box is as wide as its longest row.
+  local widest = box.header:GetStringWidth()
   for i = 1, math.max(#box.rows, n) do
     local row = box.rows[i]
     if not row and i <= n then
-      row = box:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-      row:SetPoint("TOPLEFT", box, "TOPLEFT", 12, -26 - (i - 1) * 16)
-      row:SetJustifyH("LEFT")
+      row = CreateFrame("Button", nil, box)
+      row:SetHeight(QUEUE_ROW)
+      row:SetPoint("TOPLEFT", box, "TOPLEFT", 6, -20 - (i - 1) * QUEUE_ROW)
+      row:SetPoint("RIGHT", box, "RIGHT", -6, 0)
+      row.text = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+      row.text:SetPoint("LEFT", row, "LEFT", 4, 0)
+      row.text:SetJustifyH("LEFT")
+      row:SetHighlightTexture(ICON.hilight, "ADD")
+      row:SetScript("OnClick", function(self) if self.key then WFJ.VoicePlayer.playWaiting(self.key) end end)
       box.rows[i] = row
     end
     if row then
-      row:SetText(i <= n and lineLabel(st.waiting[i]) or "")
+      local it = st.waiting[i]
+      row.key = it and it.key or nil
+      row.text:SetText(it and lineLabel(it) or "")
       row:SetShown(i <= n)
+      if it then widest = math.max(widest, row.text:GetStringWidth()) end
     end
   end
-  box:SetHeight(34 + n * 16)
+  box:SetSize(math.ceil(widest) + 22, 26 + n * QUEUE_ROW)
   box:Show()
 end
 
@@ -662,12 +674,11 @@ local function build()
   f.countHit:SetScript("OnLeave", hideTip)
 
   f.box = CreateFrame("Frame", nil, f, "TooltipBackdropTemplate")
-  f.box:SetWidth(300)
-  f.box:SetPoint("BOTTOMLEFT", f, "TOPLEFT", 0, 4)
+  f.box:SetPoint("BOTTOMLEFT", f, "TOPLEFT", 0, 2)
   f.box.rows = {}
-  local header = f.box:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-  header:SetPoint("TOPLEFT", f.box, "TOPLEFT", 12, -9)
-  header:SetText("Up next")
+  f.box.header = f.box:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+  f.box.header:SetPoint("TOPLEFT", f.box, "TOPLEFT", 10, -7)
+  f.box.header:SetText("Up next (click to play)")
   f.box:Hide()
 
   local P = WFJ.VoicePlayer
