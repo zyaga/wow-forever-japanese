@@ -421,8 +421,8 @@ describe("Readings", function()
       local fs = spanFontString(page)
       fs.parentFrame = CreateFrame("Frame")
       local s, e = page:find("元気", 1, true)
-      local rec = { surface = "voicepanel", key = "text", fs = fs, applied = page, meta = { kind = "gossip", id = "g1" },
-        spans = { { first = s, last = e, word = "元気", reading = "げんき" } } }
+      local rec = { surface = "voicepanel", key = "text", fs = fs, applied = page,
+        meta = { kind = "gossip", id = "g1" }, spans = { { first = s, last = e, word = "元気", reading = "げんき" } } }
       assert.is_true(V.attach(rec))
       local cover = coverOf(fs)
       assert.is_true(cover:IsShown())

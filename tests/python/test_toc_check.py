@@ -22,6 +22,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/Lookup.lua", "Core/Readings.lua", "Core/Glosses.lua",
         "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
         "Core/Voice.lua",  # the voice packs' registry, before the settings that read it
+        "Core/VoiceQueue.lua",  # the voice panel's order and choices
         "Core/Modifier.lua",
         "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua",
         "Core/Objectives.lua",  # objective lines
@@ -30,7 +31,10 @@ def test_real_toc_fields_and_load_order(root):
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
         "Core/Diag.lua", "Core/BugReport.lua",  # the problem log, the bug report link
         "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
-        "UI/VoicePlayer.lua", "UI/VoiceErrors.lua",  # voice playback, after Render that starts a line
+        "UI/VoicePlayer.lua",  # voice playback, after Render that starts a line
+        # the voice panel: its looks, head and text before the panel that uses them
+        "UI/VoicePanelLooks.lua", "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua", "UI/VoicePanel.lua",
+        "UI/VoiceErrors.lua",
         "UI/ButtonText.lua", "UI/Labels.lua",
         "UI/TextWatch.lua", "UI/TaintWatch.lua",  # ADR-058: text followed from our own frame, the taint watch
         "UI/HtmlText.lua", "UI/LoadOnDemand.lua",

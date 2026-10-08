@@ -24,7 +24,12 @@ local SOUND = "Interface\\AddOns\\WoWForeverJapanese_Voice\\Sound\\%s.mp3"
 -- Frame, texture and FontString methods the panel uses that the shared stub does not carry: the ones a spec reads
 -- are recorded, every other one is accepted and does nothing (what the client draws is the in-game checklist's).
 local NOOP = function() end
-local function relax(t) return setmetatable(t, { __index = function() return NOOP end }) end
+-- only a method (the client's are capitalised) is accepted; a missing field stays nil
+local function relax(t)
+  return setmetatable(t, { __index = function(_, k)
+    if type(k) == "string" and k:match("^%u") then return NOOP end
+  end })
+end
 local function extendFrames()
   local create = _G.CreateFrame
   _G.CreateFrame = function(kind, name, parent, template)
@@ -32,7 +37,7 @@ local function extendFrames()
     function f:SetShown(v) if v then self:Show() else self:Hide() end end
     function f:IsMouseOver() return Stub.mouseOn == self end
     function f:ClearAllPoints() self.point = nil end
-    function f:GetPoint() return "BOTTOM", nil, "BOTTOM", 10, 20 end
+    function f.GetPoint() return "BOTTOM", nil, "BOTTOM", 10, 20 end
     if kind == "PlayerModel" then
       function f:SetUnit(u) self.unit, self.creature = u, nil end
       function f:SetCreature(id) self.creature, self.unit = id, nil end
@@ -120,7 +125,7 @@ local function setup(withPack)
     After = function(delay, fn) timers[#timers + 1] = { delay = delay, fn = fn } end,
     NewTimer = function(delay, fn)
       local t = { delay = delay, fn = fn }
-      function t.Cancel(self) self.cancelled = true end
+      function t.Cancel(timer) timer.cancelled = true end
       newTimers[#newTimers + 1] = t
       return t
     end,
@@ -132,12 +137,14 @@ local function setup(withPack)
     GetAtlasInfo = function() return { file = "kit", leftTexCoord = 0, rightTexCoord = 1, topTexCoord = 0,
       bottomTexCoord = 1 } end,
   }
-  _G.C_TooltipInfo = { GetUnit = function() return { lines = { { leftText = "Senani" }, { leftText = "Trainer" } } } end }
+  _G.C_TooltipInfo = {
+    GetUnit = function() return { lines = { { leftText = "Senani" }, { leftText = "Trainer" } } } end,
+  }
   -- the quest log's details pane, for its button (VoicePlayer hooks QuestMapFrame_ShowQuestDetails at init)
-  _G.QuestMapFrame = CreateFrame("Frame", "QuestMapFrame")
-  QuestMapFrame.DetailsFrame = CreateFrame("Frame", nil, QuestMapFrame)
-  QuestMapFrame.DetailsFrame.BackFrame = CreateFrame("Frame", nil, QuestMapFrame.DetailsFrame)
-  _G.QuestMapFrame_ShowQuestDetails = function(id) QuestMapFrame.DetailsFrame.questID = id end
+  local map = CreateFrame("Frame", "QuestMapFrame")
+  map.DetailsFrame = CreateFrame("Frame", nil, map)
+  map.DetailsFrame.BackFrame = CreateFrame("Frame", nil, map.DetailsFrame)
+  _G.QuestMapFrame_ShowQuestDetails = function(id) map.DetailsFrame.questID = id end
   WFJ = H.loadChunks(FILES)
   S = WFJ.Settings
   WFJ.Compat.init(function(name) return _G[name] end)
@@ -149,6 +156,7 @@ local function setup(withPack)
     modifierHeld = WFJ.Modifier.isDown,
     lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
     marker = function(n) return S.get("marker." .. n) end,
+    expand = function(ja) return (ja:gsub("{name}", "Reyn")) end, -- Main's player tokens (Placeholders.expand)
   }))
   WFJ.Voice.init({
     lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
@@ -376,10 +384,10 @@ describe("the voice player with the voice panel on", function()
     local title = Stub.fontString("Sharptalon's Claw")
     WFJ.Render.show("questmap.info", "title", title, "Sharptalon's Claw", "quests", "quest.title", 2)
     db.voiceSpeakers = { ["2-description"] = { c = 1992, s = 2, n = "Senani Thunderheart", t = "Trainer" } }
-    QuestMapFrame_ShowQuestDetails(2)
+    _G.QuestMapFrame_ShowQuestDetails(2)
     local b
     for _, fr in ipairs(Stub.frames) do
-      if fr.parent == QuestMapFrame.DetailsFrame.BackFrame and fr.kind == "Button" then b = fr end
+      if fr.parent == _G.QuestMapFrame.DetailsFrame.BackFrame and fr.kind == "Button" then b = fr end
     end
     assert.is_true(b:IsShown())
     b.scripts.OnClick(b)
@@ -395,7 +403,7 @@ describe("the voice player with the voice panel on", function()
     P.clear()
     b.scripts.OnClick(b)
     assert.are.equal("Sharptalonの鉤爪", panel().name:GetText())
-    assert.is_nil(panel().head.model.creature)
+    assert.is_false(panel().head.shown)
   end)
 
   it("the whole-text button opens the quest in the log when it is there, else a window, and prints nothing",
@@ -432,7 +440,8 @@ describe("Core/VoiceQueue", function()
   local Q
   before_each(function()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
-    WFJ = H.loadChunks({ "Core/Const.lua", "Core/State.lua", "Core/Settings.lua", "Core/VoiceQueue.lua" })
+    WFJ = H.loadChunks({ "Core/Const.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
+      "Core/VoiceQueue.lua" })
     S, Q = WFJ.Settings, WFJ.VoiceQueue
   end)
 

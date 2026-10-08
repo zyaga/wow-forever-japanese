@@ -446,7 +446,8 @@ local FIELD_OF = { detail = "description", progress = "progress", reward = "comp
 
 local function rememberSpeaker(questID, panelName)
   local field = FIELD_OF[panelName]
-  if not field or type(questID) ~= "number" or type(db) ~= "table" then return end
+  -- only with a voice pack: without one nothing is ever replayed, so nothing is kept
+  if not field or type(questID) ~= "number" or type(db) ~= "table" or not WFJ.Voice.hasPack() then return end
   local who = speaker("QuestFrame")
   if not who then return end
   local unitName = Compat.resolve("UnitName")
@@ -572,7 +573,8 @@ function VoicePlayer.init(savedDb)
   if type(createFrame) == "function" then -- a loading screen ends every line and the queue
     local ev = createFrame("Frame")
     ev:RegisterEvent("PLAYER_ENTERING_WORLD")
-    ev:SetScript("OnEvent", function() if Q.size() > 0 or playing then VoicePlayer.stop() end end)
+    -- like the panel's close: the line, the queue and the panel's last line all go
+    ev:SetScript("OnEvent", function() if Q.size() > 0 or playing or lastItem then VoicePlayer.clear() end end)
   end
   for _, window in ipairs(WINDOWS) do
     local f = Compat.resolve(window)

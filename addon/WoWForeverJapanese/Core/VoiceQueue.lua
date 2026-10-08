@@ -13,6 +13,8 @@ Q.paused = false
 
 local S = function() return WFJ.Settings end
 local saved = {} -- WFJ_DB.voicePanel: { point = { point, relativePoint, x, y } once dragged, lastSize }
+local savedDb -- WFJ_DB: voicePanel is created only when the panel first keeps something (a player without voice
+              -- never gets the key)
 
 local function flag(id)
   return { get = function() return S().get(id) end, set = function(v) S().set(id, v and true or false) end }
@@ -31,10 +33,10 @@ Q.MAPPED = {
     set = function(v)
       local size = S().get("voice.panel.size")
       if not v then
-        if size ~= "off" then saved.lastSize = size end
+        if size ~= "off" then Q.opt.lastSize = size end
         S().set("voice.panel.size", "off")
       elseif size == "off" then
-        S().set("voice.panel.size", saved.lastSize or "full")
+        S().set("voice.panel.size", Q.opt.lastSize or "full")
       end
     end,
   },
@@ -67,7 +69,9 @@ Q.opt = setmetatable({}, {
   end,
   __newindex = function(_, k, v)
     local m = Q.MAPPED[k]
-    if m then m.set(v) else saved[k] = v end
+    if m then return m.set(v) end
+    saved[k] = v
+    if savedDb and savedDb.voicePanel ~= saved then savedDb.voicePanel = saved end
   end,
 })
 
@@ -82,7 +86,7 @@ local function carryOver(db)
   local st = type(db.settings) == "table" and db.settings or {}
   if st["voice.panel.strip"] ~= nil or st["voice.panel.parchment"] ~= nil or st["voice.panel"] ~= nil then
     local size = st["voice.panel.strip"] and "strip" or "full"
-    if st["voice.panel"] == false then saved.lastSize, size = size, "off" end
+    if st["voice.panel"] == false then Q.opt.lastSize, size = size, "off" end
     pcall(S().set, "voice.panel.size", size)
     if st["voice.panel.parchment"] ~= nil then
       pcall(S().set, "voice.panel.style", st["voice.panel.parchment"] and "parchment" or "dark")
@@ -95,8 +99,8 @@ end
 -- `db` is WFJ_DB (after Settings.load).
 function Q.init(db)
   if type(db) ~= "table" then return end
-  if type(db.voicePanel) ~= "table" then db.voicePanel = {} end
-  saved = db.voicePanel
+  savedDb = db
+  saved = type(db.voicePanel) == "table" and db.voicePanel or {}
   carryOver(db)
 end
 
