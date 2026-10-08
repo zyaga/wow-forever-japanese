@@ -516,3 +516,13 @@ def test_the_pin_is_one_full_commit(tmp_path):
         p.write_text(bad)
         with pytest.raises(ValueError, match="full commit"):
             voice_store.read_pin(p)
+
+
+def test_the_addon_names_the_voice_entry_as_optional_only():
+    """The main addon's page shows the Voice entry; installing the addon never installs the voice."""
+    pkgmeta = (ROOT / ".pkgmeta").read_text(encoding="utf-8")
+    slug = vp.load(TABLE).entry.slug
+    assert f"optional-dependencies:\n  - {slug}\n" in pkgmeta
+    assert "required-dependencies" not in pkgmeta
+    toc = (ROOT / "addon" / "WoWForeverJapanese" / "WoWForeverJapanese.toc").read_text(encoding="utf-8")
+    assert "## Dependencies" not in toc and "## RequiredDeps" not in toc and "## OptionalDeps" not in toc
