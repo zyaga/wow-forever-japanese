@@ -70,7 +70,7 @@ holds = "Quests of levels 41 to 50, and the talk of their NPCs."
 folder = "WoWForeverJapanese_VoiceLevels51to60"
 title = "WoW Forever Japanese Voice: Levels 51-60"
 slug = "wow-forever-japanese-voice-levels-51-60"
-project_id = 0
+project_id = 1733406
 levels = [51, 60]
 holds = "Quests of levels 51 to 60, and the talk of their NPCs."
 
