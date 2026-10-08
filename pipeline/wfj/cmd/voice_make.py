@@ -325,18 +325,28 @@ def generate(
     encode=to_mp3,
     log=print,
     players: Sequence[tuple[str, str]] = (),
+    checkout: bool = False,
 ) -> dict[str, Any]:
-    """Makes every missing or changed file; resumable. → the run's numbers."""
+    """Makes every missing or changed file; resumable. `checkout`: the store must be a checkout of the voice
+    audio repository before anything is made (the command; tests use a plain folder). → the run's numbers."""
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
     values = line_values(root, lines)
     state = voice.in_step(jobs, lines, cfg["roster"], audio, values)
     todo = set(state["missing"]) | set(state["stale"])
-    work = [j for j in jobs if j.stem in todo or not (store / f"{j.stem}.mp3").is_file()]
-    if not work:  # nothing to make, so no engine is needed: a round without voiced lines runs anywhere
+    # what to make comes from the record; a recorded file gone from a store is made again only where the store
+    # is, so a machine without the store and a round without voiced lines needs neither store nor engine
+    have_store = store.is_dir()
+    work = [j for j in jobs if j.stem in todo or (have_store and not (store / f"{j.stem}.mp3").is_file())]
+    if not work:
         return {"made": 0, "files": len(jobs), "chars_made": 0, "seconds_made": 0.0, "elapsed": 0.0,
                 "audio": audio}
+    if checkout and not (store / ".git").exists():
+        raise ValueError(
+            f"{len(work)} file(s) to make, but {store} is not a checkout of the voice audio repository: "
+            f"git clone https://github.com/zyaga/wow-forever-japanese-voice.git {store}"
+        )
     try:
         version = engine.version()
     except EngineError as e:
@@ -416,8 +426,8 @@ def run_generate(
     cfg: dict[str, Any], root: Path, scope: str, store: Path, players: Sequence[tuple[str, str]] = ()
 ) -> int:
     try:
-        r = generate(root, scope, cfg, store, Engine(cfg["engine"]), players=players)
-    except (EngineError, voice.VoiceError, subprocess.CalledProcessError) as e:
+        r = generate(root, scope, cfg, store, Engine(cfg["engine"]), players=players, checkout=True)
+    except (EngineError, voice.VoiceError, subprocess.CalledProcessError, ValueError) as e:
         print(f"voice generate: {e}", file=sys.stderr)
         return 1
     rate = r["chars_made"] / r["elapsed"] if r["elapsed"] > 0 else 0

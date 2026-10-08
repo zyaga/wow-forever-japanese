@@ -212,6 +212,11 @@ def released_inputs(asset_names: Iterable[str]) -> str | None:
     return next((m.group(1) for n in asset_names if (m := _INPUTS.match(n))), None)
 
 
+def inputs_assets(asset_names: Iterable[str]) -> list[str]:
+    """The inputs fingerprint assets among a release's asset names."""
+    return [n for n in asset_names if _INPUTS.match(n)]
+
+
 def released(asset_names: Iterable[str]) -> dict[str, str]:
     """folder → version, from a GitHub release's asset names (the bundle of everything is not one of them)."""
     out = {}

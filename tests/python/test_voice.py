@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import shutil
 import sqlite3
+import subprocess
 import threading
 import wave
 import zipfile
@@ -576,3 +577,36 @@ def test_book_pages_are_keyed_by_their_english_hash_and_html_pages_stay_silent(t
     lines = voice_make.shipped_lines(data)
     assert lines["b-aaaaaaaaaaaaaaaa"] == "モーガンへ。"  # b-<the page's English hash>, the key UI/ItemText uses
     assert "b-bbbbbbbbbbbbbbbb" not in lines  # an HTML page keeps the client's layout and is not voiced
+
+
+def test_a_machine_without_the_audio_store_runs_a_round_with_nothing_voiced(tmp_path, engine):
+    """A contributor's clone has no audio store: a round that leaves every voiced line in step needs neither
+    store nor engine; work to do refuses with how to get the store."""
+    data = _store(tmp_path)
+    _gen(data, tmp_path / "voice", engine)  # the maintainer's store, every file made and recorded
+    elsewhere = tmp_path / "no-store"
+    dead = Engine("http://127.0.0.1:9")
+    r = voice_make.generate(data, "all", CFG, elsewhere, dead, _fake_encode, log=lambda *_: None, checkout=True)
+    assert r["made"] == 0 and not elsewhere.exists()
+    _store(tmp_path, ja456="変わった、{name}。")
+    with pytest.raises(ValueError, match=r"1 file\(s\) to make, but .* is not a checkout.*git clone"):
+        voice_make.generate(data, "all", CFG, elsewhere, engine, _fake_encode, log=lambda *_: None,
+                            checkout=True)
+
+
+def test_store_sync_if_changed_leaves_the_pin_and_the_remote_alone_when_nothing_is_new(tmp_path):
+    from wfj.cmd import voice_store
+
+    remote, store, pin = tmp_path / "remote.git", tmp_path / "store", tmp_path / "pin.txt"
+    subprocess.run(["git", "init", "-q", "--bare", str(remote)], check=True)
+    subprocess.run(["git", "init", "-q", "-b", "main", str(store)], check=True)
+    for k, v in (("user.name", "Zyaga"), ("user.email", "zyaga@users.noreply.github.com")):
+        subprocess.run(["git", "-C", str(store), "config", k, v], check=True)
+    subprocess.run(["git", "-C", str(store), "remote", "add", "origin", str(remote)], check=True)
+    (store / "a.mp3").write_bytes(b"a")
+    assert voice_store.has_changes(store)
+    voice_store.sync(store, pin, "a")
+    assert not voice_store.has_changes(store) and not voice_store.has_changes(tmp_path / "absent")
+    pin.write_text(voice_store.PIN_HEAD + "b" * 40 + "\n")  # this branch pins other audio than the store's HEAD
+    assert voice_store.run(["store-sync", "--if-changed", "--store", str(store), "--pin", str(pin)]) == 0
+    assert voice_store.read_pin(pin) == "b" * 40  # nothing new: the pin stays
