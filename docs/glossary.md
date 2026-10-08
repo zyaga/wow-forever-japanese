@@ -707,6 +707,21 @@ The voice that reads a line no creature says: the offer of a quest an item or ob
 _Avoid_: system voice, default voice
 → [Voice over](systems/voice.md)
 
+**Voice panel**:
+The panel that shows a voiced line while it plays: the speaking NPC's head, their name and title as the client showed them, and the line's Japanese a sentence at a time in step with the audio, with word cards, plus pause, play again, whole text and close. With it on, a line outlives its window and the reveal key shows the line's English without stopping the voice. Panel size Off turns it off.
+_Avoid_: talking head (that is the client's own frame), subtitle box, player window
+→ [Voice over](systems/voice.md#the-voice-panel-uivoicepanellua) · [ADR-063](adr/063-the-voice-panel.md)
+
+**Waiting list**:
+The voiced lines that started while another plays and wait their turn (`Core/VoiceQueue`), shown above the [[Voice panel]] as "Up next (click to play)"; a click on a row plays that line now and drops the line it interrupts. There is no skip control and no count.
+_Avoid_: queue box, playlist, backlog
+→ [Voice over](systems/voice.md#the-voice-panel-uivoicepanellua)
+
+**Remembered speaker**:
+The quest NPC the addon saw show a quest line (creature id, sex, name, title), saved in `WFJ_DB.voiceSpeakers` each time the quest window shows it, and used when that line is played from the quest log. Kept on the player's machine, never shipped; not the [[Speaker]] table in `data/voice/`.
+_Avoid_: speaker table, cached NPC, quest giver record
+→ [Voice over](systems/voice.md) · [Data model](architecture/data-model.md)
+
 ## Client
 
 **Game type**:

@@ -119,6 +119,19 @@ One record per shipped Japanese line of a reading type: `quest` (every quest fie
 - **The character's error lines:** `error-messages.jsonl` (the on-screen messages spoken, by UI key), `error-kinds.jsonl` (the game's vocal error ids and their kinds, read from the client by `wfj.dev.vocal_errors`) and `errors.jsonl` (each kind's message, or a line of its own).
 - `validate` (`rule_voice`) checks shape, provenance, duplicates, that every speaker has a voice and a profile, that the casting matches `voice.toml`, and prints how many files are in step, stale or not made.
 
+### Voice over saved variables (`WFJ_DB`, the player's machine, never shipped)
+The voice over keeps a few things in the addon's account-wide saved variables ([Voice over](../systems/voice.md), [ADR-063](../adr/063-the-voice-panel.md)). None of it is in `data/` or the addon's files.
+
+| Key | Holds | Written by |
+|---|---|---|
+| `WFJ_DB.voiceDialogMuted` | the addon turned `Sound_EnableDialog` off and must put it back | `UI/VoicePlayer` |
+| `WFJ_DB.voiceErrorSpeechMuted` | the same for `Sound_EnableErrorSpeech` | `UI/VoiceErrors` |
+| `WFJ_DB.voiceSpeakers["<quest id>-<field>"]` | the remembered speaker of a quest line (`field`: `description`, `progress` or `completion`): `{ c = creature id, s = UnitSex, n = name, t = title }` as the client showed them when the quest window last showed that panel; read by the quest log's replays | `UI/VoicePlayer` on State `questShown` |
+| `WFJ_DB.voicePanel` | `point = { point, relativePoint, x, y }` once the panel was dragged (cleared by `/wfj panel reset`), `lastSize` (the panel size before Off) | `Core/VoiceQueue` |
+| `WFJ_DB.settings["voice.panel.*"]` | the panel's settings: `size` (`off` / `full` / `strip`, default `full`), `style` (`dark` / `parchment`, default `parchment`), `keep`, `head`, `hoverButtons`, `fade`, `combatDim`, `questLog` (on by default), `lock` (off) | `Core/Settings` |
+
+Settings and `voicePanel` keys from earlier panel builds (`voice.panel`, `voice.panel.strip`, `voice.panel.parchment`, `voice.panel.queueBox`, `voice.panel.ruby`, and tuning values such as `zoom` or `idleDelay`) are carried into Panel size and Panel style once by `VoiceQueue.init` and dropped. `WFJ_DB` stays schema 1. The English a queued line shows while the reveal key is held is kept in memory with that line only, never saved.
+
 ### Generated `addon/WoWForeverJapanese/Data/<Type>/<Type>_NNNN.lua`: id-range shards, 1,000 ids per file (ADR-008)
 Written by `wfj generate`, never by hand; `wfj validate` regenerates and diffs on every PR. `NNNN = id // 1000`, zero-padded to 4: the **same boundaries as the JSONL shards** (`Quest_0007.lua` ↔ `quest-0007.jsonl`, ids 7000–7999), so a data PR touches the same shard in both trees. Ranges with no shipped id get no file; a shard whose range empties on regeneration is deleted. Keyed types shard differently: `Data/UI/UI_<C>.lua` by the key's first character, `Data/Gossip/Gossip_NN.lua` and `Data/Book/Book_NN.lua` by the key's first two hex chars.
 ```lua

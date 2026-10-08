@@ -140,6 +140,8 @@ cache, the Classic Era quest cache, wago.tools DB2 exports (`ItemSparse`, `Spell
   GPL-2.0: quest progress and completion text, gossip and book pages.
 - forever-vo (https://github.com/quinn-dougherty/forever-vo), under the MIT License (below): quest progress
   and turn-in text and NPC greetings that players of the Forever client recorded with its addon and sent in.
+  The voice panel's design (what it holds: the speaker's head, the line's text, the lines waiting their turn)
+  follows forever-vo's talking-head panel. No code was taken from it.
 
 ## pfQuest license
 
