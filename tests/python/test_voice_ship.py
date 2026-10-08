@@ -627,6 +627,8 @@ class FakeGitHub:
             self.rel[rest[0]]["assets"].remove(rest[1])
         elif verb == "edit" and "--draft=false" in rest:
             self.rel[rest[0]]["draft"] = False
+        elif verb == "delete":
+            del self.rel[rest[0]]
         return ""
 
 
@@ -838,3 +840,67 @@ def test_a_store_file_that_is_not_the_recorded_audio_stops_the_pack(tmp_path, en
     err = capsys.readouterr().err
     assert "456-completion.mp3" in err and "nothing written" in err
     assert not (tmp_path / "out").exists()
+
+
+def test_a_pending_draft_always_runs_the_voice_job(monkeypatch, capsys):
+    gh = FakeGitHub()
+    monkeypatch.setattr(vs, "inputs_fingerprint", lambda repo: "a" * 64)
+    gh.rel["voice-v2026.10.08"] = {"draft": False, "at": "2026-10-08T00:00:00Z",
+                                   "assets": [vp.inputs_asset("a" * 64)]}
+    gh.rel["voice-v2026.10.09"] = {"draft": True, "at": "2026-10-09T00:00:00Z", "assets": []}
+    assert vs.run_inputs(gh) == 0 and capsys.readouterr().out == "changed=true\n"  # inputs equal, draft waiting
+
+
+def test_a_resumed_draft_does_not_send_its_partial_entry_again(tmp_path, engine, monkeypatch):  # noqa: F811
+    store, cfg = _release_env(tmp_path, engine, monkeypatch)
+    gh = FailingGitHub(lambda a: a[:2] == ["release", "edit"] and "--draft=false" in a)
+    uploads = []
+    monkeypatch.setattr(vs.curseforge, "upload", lambda pid, path, meta, token: uploads.append(
+        (pid, [r["slug"] for r in meta.get("relations", {}).get("projects", [])])) or 9)
+    partial = _args(tmp_path, store, cfg, _table_file(tmp_path), dry_run=False, entry_without_packs=True)
+    with pytest.raises(subprocess.CalledProcessError):
+        vs.run_release(partial, run=gh)  # the partial entry went up and is on the draft; publishing failed
+    assert uploads[-1] == (1, ["main"])
+    draft = next(t for t, r in gh.rel.items() if r["draft"])
+    uploads.clear()
+    full = _args(tmp_path, store, cfg, _table_file(tmp_path), dry_run=False)
+    assert vs.run_release(full, run=gh) == 0
+    assert uploads == []  # the entry is on CurseForge already: not sent twice
+    assert not gh.rel[draft]["draft"] and vp.released_inputs(gh.rel[draft]["assets"]) is None  # still partial
+    assert vs.run_release(full, run=gh) == 0  # the next release (a new tag) sends the full entry
+    assert uploads == [(1, ["main", "a", "o"])]
+
+
+def test_a_draft_holding_nothing_new_is_removed_not_published(tmp_path, engine, monkeypatch):  # noqa: F811
+    store, cfg = _release_env(tmp_path, engine, monkeypatch)
+    gh, uploads = FakeGitHub(), []
+    monkeypatch.setattr(vs.curseforge, "upload", lambda pid, path, meta, token: uploads.append(pid) or 9)
+    args = _args(tmp_path, store, cfg, _table_file(tmp_path), dry_run=False)
+    assert vs.run_release(args, run=gh) == 0
+    gh.rel["voice-v2099.01.01"] = {"draft": True, "at": "2099-01-01T00:00:00Z", "assets": []}  # a failed start
+    uploads.clear()
+    assert vs.run_release(args, run=gh) == 0
+    assert "voice-v2099.01.01" not in gh.rel and uploads == []
+    assert sum(1 for t in gh.rel if t.startswith("voice-v")) == 1  # no redundant release
+
+
+def test_a_release_refuses_uncommitted_voice_inputs(tmp_path, engine, monkeypatch, capsys):  # noqa: F811
+    store, cfg = _release_env(tmp_path, engine, monkeypatch)
+    _git(tmp_path, "init", "-q", "-b", "main")
+    _git(tmp_path, "config", "user.name", "Zyaga")
+    _git(tmp_path, "config", "user.email", "zyaga@users.noreply.github.com")
+    _git(tmp_path, "add", "data")
+    _git(tmp_path, "commit", "-q", "-m", "a")
+    (tmp_path / "data" / "voice" / "speakers.jsonl").write_text("", encoding="utf-8")  # changed, not committed
+    gh = FakeGitHub()
+    monkeypatch.setattr(vs.curseforge, "upload", lambda pid, path, meta, token: 9)
+    with pytest.raises(ValueError, match="uncommitted voice inputs"):
+        vs.run_release(_args(tmp_path, store, cfg, _table_file(tmp_path), dry_run=False), run=gh)
+    assert vs.run_release(_args(tmp_path, store, cfg, _table_file(tmp_path)), run=gh) == 0  # dry run warns
+    assert "a real release refuses them" in capsys.readouterr().out
+
+
+def test_a_missing_audio_store_is_named(tmp_path, engine, monkeypatch, capsys):  # noqa: F811
+    store, cfg = _release_env(tmp_path, engine, monkeypatch)
+    assert vs.run_pack(_args(tmp_path, tmp_path / "nowhere", cfg, _table_file(tmp_path))) == 1
+    assert "no audio store at" in capsys.readouterr().err
