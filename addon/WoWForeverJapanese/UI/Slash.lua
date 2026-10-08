@@ -306,6 +306,11 @@ function Slash.debug(sub, arg)
     for folder, n in pairs(V.packs()) do list[#list + 1] = ("%s=%d"):format(folder, n) end
     table.sort(list)
     say("voice packs: %s", table.concat(list, " · "))
+    if WFJ.VoicePanel and WFJ.VoiceQueue then
+      local st = WFJ.VoicePlayer.state()
+      say("voice panel: look %d · %d waiting · playing %s · paused %s", WFJ.VoiceQueue.opt.look, #st.waiting,
+        st.item and st.playing and tostring(st.item.key) or "none", st.paused and "yes" or "no")
+    end
     local E = WFJ.VoiceErrors
     if E then
       local ec, l = E.counts, E.last
@@ -489,6 +494,11 @@ function Slash.handle(msg)
     return say("readings %s", fmt(S.get("readings.enabled")))
   end
   if lower == "togglekey" then return Slash.togglekey(words[2], words[3]) end
+  if lower == "panel" and WFJ.VoicePanel then -- the voice panel trial: every choice it offers
+    local rest = {}
+    for i = 2, #words do rest[#rest + 1] = words[i] end
+    return WFJ.VoicePanel.command(rest, say)
+  end
   if lower == "log" then -- the diagnostics log (Core/Diag): the last N entries, 10 by default
     for _, line in ipairs(WFJ.Diag.lines(words[2])) do say("%s", line) end
     local errors = WFJ.ErrorLog.status()

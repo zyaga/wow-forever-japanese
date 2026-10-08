@@ -236,3 +236,29 @@ Settings.define{ id = "voice.muteDialog", kind = "boolean", default = true, hidd
 -- The speaker button on the quest and gossip windows: stop the line, or play it again.
 Settings.define{ id = "voice.button", kind = "boolean", default = true, hidden = voiceHidden,
   label = "Show the play / stop button on the window", ja = "ウィンドウに再生／停止ボタンを表示", apply = voiceChanged }
+-- The voice panel (UI/VoicePanel). Core/VoiceQueue.opt reads these; a change redraws the panel (State "voicePanel")
+-- and never stops the line playing, except switching the panel off.
+local function panelChanged() WFJ.State.fire("voicePanel") end
+local function panelSetting(id, default, label, ja)
+  Settings.define{ id = id, kind = "boolean", default = default, hidden = voiceHidden, label = label, ja = ja,
+    apply = panelChanged }
+end
+-- Two dropdowns: the panel's size (off switches it off) and its style. `choiceText` is what each choice reads as.
+Settings.define{ id = "voice.panel.size", kind = "choice", choices = { "off", "full", "strip" }, default = "full",
+  hidden = voiceHidden, apply = panelChanged,
+  label = "Panel size", ja = "パネルの大きさ",
+  choiceText = { off = "Off", full = "Full", strip = "Compact strip" } }
+Settings.define{ id = "voice.panel.style", kind = "choice", choices = { "dark", "parchment" }, default = "parchment",
+  hidden = voiceHidden, apply = panelChanged, label = "Panel style", ja = "パネルのスタイル",
+  choiceText = { dark = "Dark", parchment = "Parchment" } }
+panelSetting("voice.panel.keep", true, "Keep reading after the window closes", "ウィンドウを閉じても読み上げを続ける")
+panelSetting("voice.panel.head", true, "Show the speaker's head", "話し手の顔を表示")
+panelSetting("voice.panel.hoverButtons", true, "Show the controls only while the mouse is on the panel",
+  "マウスを乗せたときだけ操作ボタンを表示")
+panelSetting("voice.panel.queueBox", false, "List the waiting lines above the panel", "待っている文をパネルの上に一覧表示")
+panelSetting("voice.panel.fade", true, "Fade out after the last line", "最後の文のあと消える")
+panelSetting("voice.panel.combatDim", true, "Dim the panel in combat", "戦闘中はパネルを薄くする")
+panelSetting("voice.panel.ruby", false, "Readings above the words", "単語の上に読みを表示")
+panelSetting("voice.panel.questLog", true, "The book button opens the quest in the quest log",
+  "本のボタンでクエストログを開く")
+panelSetting("voice.panel.lock", false, "Lock the panel where it is", "パネルの位置を固定")

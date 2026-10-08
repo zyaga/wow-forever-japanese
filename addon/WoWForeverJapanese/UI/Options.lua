@@ -50,6 +50,15 @@ Options.PAGES = {
     { title = "section.voiceKinds", columns = 2,
       rows = { "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books", "voice.errors" } },
   } },
+  -- The voice panel's choices: a page of their own (a page does not scroll, and the Voice page is full).
+  { id = "voicepanel", title = "page.voicePanel",
+    requires = function() return WFJ.Voice ~= nil and WFJ.Voice.hasPack() end, sections = {
+    { title = "section.voicePanel",
+      rows = { "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head" } },
+    { title = "section.voicePanelMore", -- one column: the labels are long, and two columns wrapped into each other
+      rows = { "voice.panel.hoverButtons", "voice.panel.queueBox", "voice.panel.fade", "voice.panel.combatDim",
+        "voice.panel.ruby", "voice.panel.questLog", "voice.panel.lock" } },
+  } },
 }
 
 -- A marker row shows the marker itself beside its checkbox.
@@ -133,9 +142,27 @@ local function keyRow(page, d, x, y, width)
   return 48
 end
 
+-- A choice setting: its label, and a dropdown of its choices (English: the dropdown's font has no Japanese glyphs).
+local function choiceRow(page, d, x, y)
+  W.label(page, d.label, d.ja, x, y, 300)
+  local ctl = { id = d.id, kind = "choice" }
+  ctl.dropdown = W.dropdown(page, x + 310, y, 170, function(_, root)
+    for _, c in ipairs(d.choices) do
+      local text = d.choiceText and d.choiceText[c] or c
+      root:CreateRadio(text, function() return S.get(d.id) == c end, function()
+        S.set(d.id, c)
+        Options.refresh()
+      end, c)
+    end
+  end)
+  Options.controls[#Options.controls + 1] = ctl
+  return 40
+end
+
 local function settingRow(page, id, x, y, width)
   local d = assert(definition(id), "Options: no setting " .. id)
   if d.kind == "key" then return keyRow(page, d, x, y, width) end
+  if d.kind == "choice" then return choiceRow(page, d, x, y) end
   assert(d.kind == "boolean", "Options: no row for kind " .. d.kind)
   -- a marker row's label stops before the sample shown at x + 400
   local labelWidth = Options.SAMPLES[id] and math.min(width, 390) or width
@@ -539,7 +566,13 @@ end
 function Options.refresh()
   local combat = inCombat()
   for _, c in ipairs(Options.controls) do
-    if c.kind == "boolean" then c.widget:SetChecked(S.get(c.id) == true) else refreshKeyRow(c, combat) end
+    if c.kind == "boolean" then
+      c.widget:SetChecked(S.get(c.id) == true)
+    elseif c.kind == "choice" then
+      if c.dropdown.GenerateMenu then c.dropdown:GenerateMenu() end
+    else
+      refreshKeyRow(c, combat)
+    end
   end
   if Options.toggle then refreshToggle(Options.toggle, combat) end
   for _, fn in ipairs(Options.refreshers) do fn() end

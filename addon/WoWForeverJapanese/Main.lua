@@ -42,6 +42,8 @@ function WoWForeverJapanese_RegisterVoice(tbl)
   if WFJ.loaded and WFJ.Options and WFJ.Voice.hasPack() then
     local ok, err = pcall(WFJ.Options.addPage, "voice")
     if not ok then WFJ.initErrors[#WFJ.initErrors + 1] = { surface = "options.voice", err = tostring(err) } end
+    ok, err = pcall(WFJ.Options.addPage, "voicepanel")
+    if not ok then WFJ.initErrors[#WFJ.initErrors + 1] = { surface = "options.voicepanel", err = tostring(err) } end
   end
   return n, invalid
 end
@@ -270,7 +272,9 @@ function WFJ.OnLoad()
     revealed = WFJ.Modifier.isDown,
     enabled = function() return WFJ.State.enabled end,
   }) end)
+  step("voicequeue", function() WFJ.VoiceQueue.init(WFJ_DB) end)
   step("voiceplayer", function() WFJ.VoicePlayer.init(WFJ_DB) end)
+  step("voicepanel", function() WFJ.VoicePanel.init() end)
   step("voiceerrors", function() WFJ.VoiceErrors.init(WFJ_DB) end)
   step("render", function() WFJ.Render.init(WFJ.Translator.new({
     enabled = function() return WFJ.State.enabled end,
