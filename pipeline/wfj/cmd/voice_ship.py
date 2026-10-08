@@ -654,7 +654,7 @@ def _upload_changed(r: Release, notes: Path) -> bool | None:
     if not r.plan.upload:
         if not r.a.curseforge_only and not r.state.draft:  # only packs with no project changed
             _recorder(r.tag, r.state, notes, r.flags, r.day, r.run)
-        elif r.state.draft:
+        elif r.state.draft and not r.a.curseforge_only:
             print(f"voice release: every pack is on CurseForge already; publishing the draft {r.tag}")
         return False
     token = os.environ.get("CF_API_KEY", "")
