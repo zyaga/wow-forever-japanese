@@ -56,7 +56,7 @@ Options.PAGES = {
     { title = "section.voicePanel",
       rows = { "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head" } },
     { title = "section.voicePanelMore", -- one column: the labels are long, and two columns wrapped into each other
-      rows = { "voice.panel.hoverButtons", "voice.panel.queueBox", "voice.panel.fade", "voice.panel.combatDim",
+      rows = { "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.combatDim",
         "voice.panel.questLog", "voice.panel.lock" } },
   } },
 }

@@ -27,6 +27,7 @@
 --                             clicks); send opens the send window (all: every line again)
 --   /wfj glosses [on|off]     readings.glosses · /wfj readings [on|off]  readings.enabled
 --   /wfj togglekey [<key>|none]   the toggle binding the settings page's Set key / Unbind row writes
+--   /wfj panel reset          the voice panel back at the bottom centre
 local _, WFJ = ...
 local Slash = {}
 WFJ.Slash = Slash
@@ -494,7 +495,7 @@ function Slash.handle(msg)
     return say("readings %s", fmt(S.get("readings.enabled")))
   end
   if lower == "togglekey" then return Slash.togglekey(words[2], words[3]) end
-  if lower == "panel" and WFJ.VoicePanel then -- the voice panel trial: every choice it offers
+  if lower == "panel" and WFJ.VoicePanel then -- /wfj panel reset: the voice panel back at the bottom centre
     local rest = {}
     for i = 2, #words do rest[#rest + 1] = words[i] end
     return WFJ.VoicePanel.command(rest, say)

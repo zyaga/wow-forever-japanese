@@ -1757,6 +1757,8 @@ UI\Readings.lua
 UI\Render.lua
 UI\VoicePlayer.lua
 UI\VoicePanelLooks.lua
+UI\VoicePanelHead.lua
+UI\VoicePanelText.lua
 UI\VoicePanel.lua
 UI\VoiceErrors.lua
 UI\ButtonText.lua

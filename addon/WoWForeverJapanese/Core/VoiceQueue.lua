@@ -1,8 +1,9 @@
--- Core/VoiceQueue.lua: the order voice lines play in while the voice panel is on, and the panel's choices.
+-- Core/VoiceQueue.lua: the order voice lines play in while the voice panel is on, and the panel's choices (ADR-063).
 -- Pure tables: no frames, no sound calls. UI/VoicePlayer plays the head; UI/VoicePanel draws it.
 --   * The head (items[1]) is the line playing, or paused; the rest wait their turn.
 --   * A line already queued (same pack key) is not added again.
---   * `opt` is the panel's saved choices, WFJ_DB.voicePanel. Every choice is switched with /wfj panel.
+--   * `opt` reads the player's choices from Core/Settings (voice.panel.*) and keeps the panel's position, and the
+--     size it had before Off, in WFJ_DB.voicePanel.
 local _, WFJ = ...
 local Q = {}
 WFJ.VoiceQueue = Q
@@ -10,52 +11,29 @@ WFJ.VoiceQueue = Q
 Q.items = {}
 Q.paused = false
 
--- The panel's choices and where it sits. Defaults are the starting recommendation; missing keys are filled at load.
-Q.DEFAULTS = {
-  on = true, -- the panel and the queue; off = one line at a time, stopped with its window
-  keepPlaying = true, -- a line keeps playing after its window closes
-  look = 1, -- 1 the client's talking-head art · 2 parchment · 3 a strip
-  buttons = "hover", -- "hover" | "always"
-  queue = "count", -- "count" (+N beside the name, the list on hover) | "box" (an up-next box above the panel)
-  idle = "fade", -- "fade" (out after the last line) | "stay"
-  idleDelay = 3, -- seconds before the fade starts
-  combat = true, -- lower the panel's alpha in combat
-  combatAlpha = 0.4,
-  head = true, -- the speaker's 3D head
-  zoom = 1, -- PlayerModel:SetPortraitZoom
-  cam = 1, -- PlayerModel:SetCamDistanceScale
-  page = "sentence", -- "sentence" (paged in step with the audio) | "all" (the whole line at once)
-  textOpens = "quest", -- the text button: "quest" (the quest in the quest log when it is there, else the window)
-                       -- | "window" (always the panel's own full-text window)
-  scale = 1,
-  locked = false,
-  point = nil, -- { point, relativePoint, x, y } once dragged; nil = bottom centre
-}
-
-Q.opt = {}
-for k, v in pairs(Q.DEFAULTS) do Q.opt[k] = v end
-
--- The choices players set on the Voice settings page live in Core/Settings (voice.panel.*): each maps a key of
--- `opt` to its setting. get/set translate between the two; the rest stay in db.voicePanel (tuning, position).
 local S = function() return WFJ.Settings end
+local saved = {} -- WFJ_DB.voicePanel: { point = { point, relativePoint, x, y } once dragged, lastSize }
+
 local function flag(id)
   return { get = function() return S().get(id) end, set = function(v) S().set(id, v and true or false) end }
 end
 local function word(id, yes, no)
   return { get = function() return S().get(id) and yes or no end, set = function(v) S().set(id, v == yes) end }
 end
+-- look number → { strip, parchment }: 1 Full Dark, 3 Strip Dark, 4 Full Parchment, 5 Strip Parchment
 local LOOK_OF = { [1] = { false, false }, [3] = { true, false }, [4] = { false, true }, [5] = { true, true } }
-local saved = {}
+
+-- `opt` key → its setting
 Q.MAPPED = {
-  -- the size dropdown: off switches the panel off; switching it on again brings back the last size
+  -- Panel size Off switches the panel off; switching it on again brings back the size it had
   on = {
     get = function() return S().get("voice.panel.size") ~= "off" end,
     set = function(v)
+      local size = S().get("voice.panel.size")
       if not v then
-        local size = S().get("voice.panel.size")
         if size ~= "off" then saved.lastSize = size end
         S().set("voice.panel.size", "off")
-      elseif S().get("voice.panel.size") == "off" then
+      elseif size == "off" then
         S().set("voice.panel.size", saved.lastSize or "full")
       end
     end,
@@ -65,10 +43,8 @@ Q.MAPPED = {
   combat = flag("voice.panel.combatDim"),
   locked = flag("voice.panel.lock"),
   buttons = word("voice.panel.hoverButtons", "hover", "always"),
-  queue = word("voice.panel.queueBox", "box", "count"),
   idle = word("voice.panel.fade", "fade", "stay"),
   textOpens = word("voice.panel.questLog", "quest", "window"),
-  -- full / strip × dark / parchment
   look = {
     get = function()
       local strip, parchment = S().get("voice.panel.size") == "strip", S().get("voice.panel.style") == "parchment"
@@ -83,32 +59,26 @@ Q.MAPPED = {
   },
 }
 
--- `db` is WFJ_DB: the unmapped choices live in db.voicePanel and survive /reload. A choice the trial kept there
--- before it moved to the settings page is carried over once.
-function Q.init(db)
-  if type(db) ~= "table" then return end
-  if type(db.voicePanel) ~= "table" then db.voicePanel = {} end
-  saved = db.voicePanel
-  for k, v in pairs(Q.DEFAULTS) do
-    if saved[k] == nil and not Q.MAPPED[k] then saved[k] = v end
-  end
-  local carry = {}
-  for k in pairs(Q.MAPPED) do
-    if saved[k] ~= nil then carry[k], saved[k] = saved[k], nil end
-  end
-  Q.opt = setmetatable({}, {
-    __index = function(_, k)
-      local m = Q.MAPPED[k]
-      if m then return m.get() end
-      return saved[k]
-    end,
-    __newindex = function(_, k, v)
-      local m = Q.MAPPED[k]
-      if m then m.set(v) else saved[k] = v end
-    end,
-  })
-  for k, v in pairs(carry) do pcall(Q.MAPPED[k].set, v) end
-  -- the on / off, strip and parchment switches of an earlier trial build became the two dropdowns: carried over once
+Q.opt = setmetatable({}, {
+  __index = function(_, k)
+    local m = Q.MAPPED[k]
+    if m then return m.get() end
+    return saved[k]
+  end,
+  __newindex = function(_, k, v)
+    local m = Q.MAPPED[k]
+    if m then m.set(v) else saved[k] = v end
+  end,
+})
+
+-- The earlier panel builds' choices, carried into the settings once and then dropped: their switches for on / off,
+-- strip and parchment became the two dropdowns; the waiting-list and readings switches and the tuning values are gone.
+local RETIRED_SETTINGS = { "voice.panel", "voice.panel.strip", "voice.panel.parchment", "voice.panel.queueBox",
+  "voice.panel.ruby" }
+local RETIRED_SAVED = { "on", "keepPlaying", "look", "buttons", "queue", "idle", "idleDelay", "combat", "combatAlpha",
+  "head", "zoom", "cam", "page", "textOpens", "scale", "locked", "textSize", "rubyInline" }
+
+local function carryOver(db)
   local st = type(db.settings) == "table" and db.settings or {}
   if st["voice.panel.strip"] ~= nil or st["voice.panel.parchment"] ~= nil or st["voice.panel"] ~= nil then
     local size = st["voice.panel.strip"] and "strip" or "full"
@@ -117,8 +87,17 @@ function Q.init(db)
     if st["voice.panel.parchment"] ~= nil then
       pcall(S().set, "voice.panel.style", st["voice.panel.parchment"] and "parchment" or "dark")
     end
-    st["voice.panel.strip"], st["voice.panel.parchment"], st["voice.panel"] = nil, nil, nil
   end
+  for _, id in ipairs(RETIRED_SETTINGS) do st[id] = nil end
+  for _, k in ipairs(RETIRED_SAVED) do saved[k] = nil end
+end
+
+-- `db` is WFJ_DB (after Settings.load).
+function Q.init(db)
+  if type(db) ~= "table" then return end
+  if type(db.voicePanel) ~= "table" then db.voicePanel = {} end
+  saved = db.voicePanel
+  carryOver(db)
 end
 
 function Q.size() return #Q.items end

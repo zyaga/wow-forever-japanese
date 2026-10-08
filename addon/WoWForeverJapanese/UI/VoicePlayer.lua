@@ -1,28 +1,29 @@
 -- UI/VoicePlayer.lua: plays the voice pack's line for a line the quest, gossip or book window just showed in
--- Japanese (ADR-061, ADR-062). Core/Voice decides which file; this file owns every sound and client-setting call.
---   * Start: State "lineShown" (fired by UI/Render after a client write, never on a refresh). One line at a time:
---     a new line stops the one playing; the same line shown again while it plays is not restarted (the gossip window
---     lays its first window out twice).
---   * Stop: the quest, gossip or book window hides (a book's next page is a new line), the reveal key goes down,
---     translation or a voice setting is switched off, the player logs out.
---   * Channel: "Master", so silencing the dialog channel never silences our own line. forever-vo ships the same MP3
---     shape and plays it with PlaySoundFile(path, channel) → willPlay, handle [unverified in the Forever client's own
---     files; the in-game check is in docs/testing/strategy.md].
---   * The button: a small play / pause icon at the right end of the stone band under the window's title (the band our
---     marker banner uses: y -36 on the quest window, -38 on the gossip window, UI/QuestFrame and UI/Gossip). Shown once
---     a line of that window has started, hidden when the window closes or its new line has no file. A pause icon
---     while the line plays (a click stops it), the play arrow once it stopped or ended (a click plays it from the
---     start). The client can only start and stop a sound file, so a stopped line cannot resume where it stopped. No
---     text on it; the voice.button setting hides it.
+-- Japanese (ADR-061, ADR-062, ADR-063). Core/Voice decides which file; this file owns every sound and client-setting
+-- call; Core/VoiceQueue holds the order; UI/VoicePanel draws what `state()` reports (State "voiceQueue" on change).
+--   * Start: State "lineShown" (fired by UI/Render after a client write, never on a refresh). With the voice panel on,
+--     a line that starts while one plays waits its turn (never twice for one key) and plays when that one ends; with
+--     the panel Off, a new line stops the one playing. The same line shown again while it plays is not restarted (the
+--     gossip window lays its first window out twice).
+--   * Stop: translation or a voice setting switched off, a loading screen, logout. A window closing stops its line
+--     only with the panel Off or "keep reading" off; the reveal key going down stops it only with the panel Off (with
+--     the panel on the voice goes on and the panel shows the line's English).
+--   * A line the player asks for (a window's or the quest log's play button, a row of the panel's waiting list)
+--     replaces the line playing; the one it interrupts is dropped, never resumed after it.
+--   * Channel: "Master", so silencing the dialog channel never silences our own line. PlaySoundFile(path, channel)
+--     → willPlay, handle [unverified in the Forever client's own files; the in-game check is in
+--     docs/testing/strategy.md].
+--   * The window buttons: a small play / pause icon at the right end of the stone band under the window's title (the
+--     band our marker banner uses: y -36 on the quest window, -38 on the gossip window, UI/QuestFrame and UI/Gossip),
+--     and one at the right end of the quest log details' top bar. Shown while the voice panel is not on screen and
+--     the line has a file; the pause icon while it plays (a click pauses with the panel on, stops with it Off), the
+--     play arrow otherwise (a click plays it from the start: the client can only start and stop a sound file). No
+--     text; the voice.button setting hides them.
 --   * The game's English voice: while a line plays, Sound_EnableDialog is turned off when it was on, and the fact is
 --     kept in WFJ_DB.voiceDialogMuted, because the client saves the setting to Config.wtf: a reload or a crash in
 --     between would otherwise leave the player's NPC voices off for good. It is put back when the line ends (the
 --     pack's length plus a margin; PlaySoundFile reports no end), on stop, on logout and on the next load. A player
 --     who had the dialog channel off keeps it off.
---   * The voice panel (UI/VoicePanel, trial): with Core/VoiceQueue's `opt.on`, a line that starts while one plays
---     waits its turn instead of stopping it, and with `opt.keepPlaying` a window closing no longer stops its line.
---     Every change of what plays fires State "voiceQueue"; the panel draws from VoicePlayer.state(). With the panel
---     off every path below behaves as before it existed.
 local _, WFJ = ...
 local VoicePlayer = {}
 WFJ.VoicePlayer = VoicePlayer

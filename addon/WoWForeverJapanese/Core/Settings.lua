@@ -233,9 +233,11 @@ Settings.define{ id = "voice.errors", kind = "boolean", default = true, hidden =
 Settings.define{ id = "voice.muteDialog", kind = "boolean", default = true, hidden = voiceHidden,
   label = "Silence the game's English voices while a line plays",
   ja = "読み上げ中はゲームの英語音声を消す", apply = voiceChanged }
--- The speaker button on the quest and gossip windows: stop the line, or play it again.
+-- The play / pause button on the quest, gossip and book windows and the quest log's details: shown while the voice
+-- panel is not on screen (the panel has its own controls).
 Settings.define{ id = "voice.button", kind = "boolean", default = true, hidden = voiceHidden,
-  label = "Show the play / stop button on the window", ja = "ウィンドウに再生／停止ボタンを表示", apply = voiceChanged }
+  label = "Show the play / pause button on the window when the voice panel is not showing",
+  ja = "音声パネルが出ていないとき、ウィンドウに再生／一時停止ボタンを表示", apply = voiceChanged }
 -- The voice panel (UI/VoicePanel). Core/VoiceQueue.opt reads these; a change redraws the panel (State "voicePanel")
 -- and never stops the line playing, except switching the panel off.
 local function panelChanged() WFJ.State.fire("voicePanel") end
@@ -255,7 +257,6 @@ panelSetting("voice.panel.keep", true, "Keep reading after the window closes", "
 panelSetting("voice.panel.head", true, "Show the speaker's head", "話し手の顔を表示")
 panelSetting("voice.panel.hoverButtons", true, "Show the controls only while the mouse is on the panel",
   "マウスを乗せたときだけ操作ボタンを表示")
-panelSetting("voice.panel.queueBox", false, "List the waiting lines above the panel", "待っている文をパネルの上に一覧表示")
 panelSetting("voice.panel.fade", true, "Fade out after the last line", "最後の文のあと消える")
 panelSetting("voice.panel.combatDim", true, "Dim the panel in combat", "戦闘中はパネルを薄くする")
 panelSetting("voice.panel.questLog", true, "The book button opens the quest in the quest log",

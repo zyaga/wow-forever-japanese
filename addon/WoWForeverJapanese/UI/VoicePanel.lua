@@ -1,11 +1,12 @@
--- UI/VoicePanel.lua: the voice panel (trial build for choosing its form; not the final panel). While a voiced line
--- plays it shows the speaker's 3D head, the NPC's name and title as the client showed them, and the line's Japanese,
--- paged by sentence in step with the audio, with word cards on it. Every look and behaviour is switched with
--- /wfj panel (VoicePanel.command) and kept in WFJ_DB.voicePanel (Core/VoiceQueue.opt).
---   * It draws only: UI/VoicePlayer decides what plays and fires State "voiceQueue" on every change.
---   * Never while English is showing (the reveal key, translation off, voice off); never without a voice pack (no
---     line ever plays then, so it is never built).
---   * Name and title are the client's live text, kept with the queued line in memory for the session.
+-- UI/VoicePanel.lua: the voice panel (ADR-063). While a voiced line plays it shows the speaker's head
+-- (UI/VoicePanelHead), the NPC's name and title as the client showed them, and the line's Japanese a sentence at a
+-- time in step with the audio, with word cards (UI/VoicePanelText); the lines waiting their turn, each one clickable;
+-- and pause / resume, play again, whole text and close.
+--   * It draws only: UI/VoicePlayer decides what plays and fires State "voiceQueue" on every change; the panel reads
+--     VoicePlayer.state().
+--   * Its look is one of four (UI/VoicePanelLooks) from the Panel size and Panel style settings; Off hides it.
+--   * Never while translation or voice is off. The reveal key does not hide it: it shows the line's English.
+--   * Built on the first voiced line, so without a voice pack no frame exists.
 local _, WFJ = ...
 local Panel = {}
 WFJ.VoicePanel = Panel
@@ -13,14 +14,16 @@ WFJ.VoicePanel = Panel
 local Compat = WFJ.Compat
 local Q = WFJ.VoiceQueue
 local LOOKS = WFJ.VoicePanelLooks
+local Head = WFJ.VoicePanelHead
+local Text = WFJ.VoicePanelText
 
-local TALK_ANIMATION = 60 -- [likely: the talk loop forever-vo uses on Forever; in-game check: the head's mouth moves]
-local MODEL_SETTLE = 0.6 -- seconds a model load gets before a speaker with no model is shown without a head
+local FADE_DELAY = 3 -- seconds after the last line (or a pause) before the panel fades
 local FADE_TIME = 0.6
+local COMBAT_ALPHA = 0.4
 local TICK = 0.1
 local BUTTON = 28 -- the icons have wide transparent margins: smaller reads as a dot (the window button's size)
+local CLOSE = 26 -- the client's close button at this size matches the row
 local QUEUE_ROW = 15 -- a waiting-list row's height
-local SHORT_PAGE = 12 -- characters: a shorter sentence joins the next page
 local KIND_LABEL = {
   ["questframe.detail"] = "Quest", ["questframe.progress"] = "Progress", ["questframe.reward"] = "Turn-in",
   ["questframe.greeting"] = "Greeting", gossip = "Greeting", itemtext = "Book",
@@ -29,152 +32,65 @@ local ICON = {
   pause = "Interface\\TimeManager\\PauseButton",
   play = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up",
   replay = "Interface\\TimeManager\\ResetButton",
-  text = "Interface\\Spellbook\\Spellbook-Icon", -- the book icon of the client's book window (itemtextframe.xml)
+  book = "Interface\\Spellbook\\Spellbook-Icon", -- the book icon of the client's book window (itemtextframe.xml)
   hilight = "Interface\\Buttons\\UI-Common-MouseHilight",
 }
 
-local f -- the panel frame, built on the first line
+local f -- the panel frame
 local displayed -- the queue item on screen
-local pages, starts = {}, {} -- the displayed line's pages and where each starts, as a share of the line
-local offsets = {} -- the byte where each page starts in the line's Japanese (nil when the page is not a plain slice)
-local lineSpans, lineSpansFor -- the displayed line's words, located in the whole line (and the item they are for)
-local pageShown -- index of the page on screen
-local rec = { surface = "voicepanel", key = "text" } -- the record UI/Readings attaches word cards to
-local fullRec = { surface = "voicepanel", key = "full" } -- the full-text window's record
-local full -- the full-text window: the whole line being heard, for a sentence the player missed
-local fadeAt, fadeFrom -- idle fade: when it starts, and the GetTime it started at
-local redraw = false -- a look or text choice changed: lay the displayed line out again
-local fadedPaused -- a paused line the panel faded out on: it stays away until something plays or the queue changes
+local pages, starts, offsets = {}, {}, {} -- the displayed line's pages (UI/VoicePanelText.paginate)
+local pageShown -- the page on screen
+local english = false -- the panel shows the line's English (the reveal key is down)
+local fadeAt, fadeFrom -- the idle fade: when it starts, and when it started
+local fadedPaused -- a paused line the panel faded on: it stays away until something plays or the queue changes
+local redraw = false -- a look changed: lay the displayed line out again
 local inCombat = false
 
-local function call(name, ...)
-  local fn = Compat.resolve(name)
-  if type(fn) == "function" then return fn(...) end
-  return nil
+local function now()
+  local t = Compat.resolve("GetTime")
+  return type(t) == "function" and t() or 0
 end
 
-local function now() return call("GetTime") or 0 end
+local function look() return f and f.lookNow or LOOKS[Q.opt.look] or LOOKS[1] end
 
--- the look in use: the chosen one with its faction kit filled in once applied
-local function look() return (f and f.lookNow) or LOOKS[Q.opt.look] or LOOKS[1] end
-
--- translation or voice off: the panel goes. The reveal key does not hide it: it shows the line's English instead.
-local function englishShowing()
-  return not WFJ.State.enabled or not WFJ.Settings.get("voice.enabled")
+local function hidden()
+  return not Q.opt.on or not WFJ.State.enabled or not WFJ.Settings.get("voice.enabled")
 end
 
 local function revealed()
   return WFJ.State.modifierHeld and true or false
 end
 
--- ── Text: pages and readings ───────────────────────────────────────────────
-
-local function chars(s)
-  return (s:gsub("[\128-\191]", "")):len()
-end
-
--- The line split after 。！？ and line breaks (a closing bracket stays with its sentence); a short sentence joins
--- the next. "all" keeps the line whole.
-local function paginate(ja)
-  pages, starts, offsets = {}, {}, {}
-  if type(ja) ~= "string" or ja == "" then
-    pages[1], starts[1] = "", 0
-    return
-  end
-  if Q.opt.page == "all" then
-    pages[1], starts[1], offsets[1] = ja, 0, 1
-    return
-  end
-  local s = ja
-  for _, p in ipairs({ "。", "！", "？", "\n" }) do s = s:gsub(p, p .. "\1") end
-  for _, close in ipairs({ "」", "』", "）" }) do s = s:gsub("\1" .. close, close .. "\1") end
-  local parts, carry = {}, ""
-  for raw in (s .. "\1"):gmatch("(.-)\1") do
-    local piece = raw:gsub("^%s+", ""):gsub("%s+$", "")
-    if piece ~= "" then
-      carry = carry == "" and piece or (carry .. piece)
-      if chars(carry) >= SHORT_PAGE then
-        parts[#parts + 1] = carry
-        carry = ""
-      end
-    end
-  end
-  if carry ~= "" then
-    if #parts > 0 then parts[#parts] = parts[#parts] .. carry else parts[1] = carry end
-  end
-  local total = 0
-  for _, p in ipairs(parts) do total = total + chars(p) end
-  local at, from = 0, 1
-  for i, p in ipairs(parts) do
-    pages[i], starts[i] = p, total > 0 and at / total or 0
-    at = at + chars(p)
-    local s = ja:find(p, from, true)
-    offsets[i] = s
-    if s then from = s + #p end
-  end
-end
-
--- The words of page `i` (its text `text`): located in the whole line, because a line's word list is in the order of
--- the whole line and a sentence alone can match an earlier sentence's word late and miss its own; then shifted to the
--- page. A page that is not a plain slice of the line (trimmed pieces joined) is looked up on its own.
-local function pageSpans(i, text)
-  local item = displayed
-  if lineSpansFor ~= item then
-    lineSpansFor = item
-    lineSpans = item and type(item.ja) == "string" and WFJ.Readings.lookup(item.kind, item.id, item.ja) or nil
-  end
-  local off = offsets[i]
-  if not off or not lineSpans then return WFJ.Readings.lookup(item.kind, item.id, text) end
-  local last = off + #text - 1
-  local out = {}
-  for _, sp in ipairs(lineSpans) do
-    if sp.first >= off and sp.last <= last then
-      out[#out + 1] = { first = sp.first - off + 1, last = sp.last - off + 1, word = sp.word, reading = sp.reading,
-        gloss = sp.gloss }
-    end
-  end
-  return out
-end
-
-local function detachCards()
-  if WFJ.ReadingView and rec.fs then pcall(WFJ.ReadingView.detach, rec) end
-end
-
--- The line's English as the client wrote it into the window, whole (its sentences do not line up with the Japanese
--- pages). No word cards on it.
-local function showEnglish()
-  if not displayed then return end
-  detachCards()
-  pageShown = nil
-  f.english = true
-  f.text:SetText(displayed.en or displayed.ja or "")
-end
+-- ── Text ─────────────────────────────────────────────────────────────────
 
 local function showPage(i)
   if not displayed then return end
-  if revealed() then return showEnglish() end
-  f.english = false
   pageShown = i
-  local text = pages[i] or ""
-  local spans = pageSpans(i, text)
-  f.text:SetText(text)
-  rec.fs, rec.applied, rec.meta, rec.spans = f.text, text, { kind = displayed.kind, id = displayed.id }, spans
-  rec.attachOk, rec.attachErr = nil, nil
-  if WFJ.ReadingView then rec.attachOk, rec.attachErr = pcall(WFJ.ReadingView.attach, rec) end
+  if revealed() then
+    english = true
+    return Text.showEnglish(f.text, displayed)
+  end
+  english = false
+  local page = pages[i] or ""
+  Text.showPage(f.text, displayed, page, Text.pageSpans(displayed, offsets[i], page))
 end
 
--- ── The head ───────────────────────────────────────────────────────────────
-
-local function hasModel(m)
-  local ok, id = pcall(m.GetModelFileID, m)
-  return ok and id ~= nil and id ~= 0
+-- the page the audio is on now
+local function audioPage(st)
+  if not (st.playing and st.startedAt and st.seconds and st.seconds > 0) then return nil end
+  local share = (now() - st.startedAt) / st.seconds
+  local want = 1
+  for i = 1, #starts do if share >= starts[i] then want = i end end
+  return want
 end
 
+-- ── Layout ───────────────────────────────────────────────────────────────
+
+-- name, title and text start right of the head, or at the edge without one
 local function placeText(withHead)
   local L = look()
-  local left = withHead and L.textLeft or L.textLeftNoHead
   f.name:ClearAllPoints()
-  f.name:SetPoint("TOPLEFT", f, "TOPLEFT", left, L.nameTop)
+  f.name:SetPoint("TOPLEFT", f, "TOPLEFT", withHead and L.textLeft or L.textLeftNoHead, L.nameTop)
   f.title:ClearAllPoints()
   f.title:SetPoint("TOPLEFT", f.name, "BOTTOMLEFT", 1, -2)
   f.text:ClearAllPoints()
@@ -184,144 +100,94 @@ local function placeText(withHead)
   -- and highlight under its word. The look's line limit keeps a long sentence inside the panel.
   f.text:SetPoint("TOPLEFT", under, "BOTTOMLEFT", L.title and -1 or 0, -5)
   f.text:SetPoint("RIGHT", f, "RIGHT", L.textRight, 0)
-  if f.ring then f.ring:SetShown(withHead and L.ring and true or false) end
-  f.portraitBg:SetShown(withHead and L.portraitBg and true or false)
 end
 
-local function setHeadShown(shown)
-  f.headShown = shown
-  if not shown then f.model:SetAlpha(0) else f.model:SetAlpha(1) end
-  placeText(shown)
-end
-
-local function settle()
-  f.settleTimer = nil
-  setHeadShown(hasModel(f.model))
-end
-
--- Loads the speaker's model: the unit on screen while it is still the speaker (the client is drawing it), else the
--- creature id. A speaker with no model (a book, the narrator) gets no head and the text moves left. The model frame
--- is never hidden before its load had its chance: a hidden PlayerModel does not keep the model it loads.
-local function loadHead(item)
-  local who = item.speaker
-  if f.settleTimer then f.settleTimer:Cancel(); f.settleTimer = nil end
-  if not Q.opt.head or not who or not who.creature then
-    f.loaded = nil
-    setHeadShown(false)
-    return
-  end
-  local unit = who.unit
-  if unit and call("UnitGUID", unit) ~= who.guid then unit = nil end
-  local want = unit and who.guid or who.creature
-  if f.loaded == want and hasModel(f.model) then
-    setHeadShown(true)
-    return
-  end
-  f.loaded = want
-  f.model:SetAlpha(1)
-  placeText(true)
-  if unit then
-    f.model:SetUnit(unit)
-  else
-    f.model:ClearModel()
-    f.model:SetCreature(who.creature)
-  end
-  local timer = Compat.resolve("C_Timer")
-  if type(timer) == "table" and type(timer.NewTimer) == "function" then
-    f.settleTimer = timer.NewTimer(MODEL_SETTLE, settle)
-  end
-end
-
-local function setTalking(talking)
-  if f.talking == talking then return end
-  f.talking = talking
-  pcall(f.model.SetAnimation, f.model, talking and TALK_ANIMATION or 0)
-end
-
--- ── Layout (a look) ────────────────────────────────────────────────────────
-
--- The player's faction kit for a look with `kit` (TalkingHeads-Alliance / -Horde), else Neutral. → kit, or nil when
--- the client has none of them (the look then falls back to look 1's atlases)
+-- The player's faction kit (TalkingHeads-Alliance / -Horde), else Neutral. → kit, or nil when the client has none
 local function factionKit()
   local T = Compat.resolve("C_Texture")
   local exists = type(T) == "table" and T.GetAtlasExists
   if type(exists) ~= "function" then return nil end
-  local faction = call("UnitFactionGroup", "player")
+  local factionOf = Compat.resolve("UnitFactionGroup")
+  local faction = type(factionOf) == "function" and factionOf("player") or nil
   for _, kit in ipairs({ faction and ("TalkingHeads-" .. faction), "TalkingHeads-Neutral" }) do
     if kit and exists(kit .. "-TextBackground") then return kit end
   end
   return nil
 end
 
+-- The chosen look with its faction kit filled in; look 1 when the client has no kit.
+local function resolveLook()
+  local L = LOOKS[Q.opt.look] or LOOKS[1]
+  if not L.kit then return L end
+  local kit = factionKit()
+  if not kit then return LOOKS[1] end
+  return setmetatable({
+    bg = { atlas = L.bg.atlas:format(kit), atlasSize = L.bg.atlasSize, crop = L.bg.crop },
+    ring = L.ring and { atlas = L.ring.atlas:format(kit), x = L.ring.x, y = L.ring.y } or nil,
+    portraitBg = L.portraitBg and { atlas = L.portraitBg.atlas:format(kit) } or nil,
+    nameColor = L.kitNameColor[kit] or L.nameColor,
+  }, { __index = L })
+end
+
+-- An atlas's part only (`crop`: left, right, top, bottom as shares of the atlas), stretched to the panel: the strip
+-- takes the parchment's plain middle so its decorated edges are not squashed. → true when cropped
+local function cropAtlas(tex, atlas, crop)
+  local T = Compat.resolve("C_Texture")
+  local info = type(T) == "table" and type(T.GetAtlasInfo) == "function" and T.GetAtlasInfo(atlas) or nil
+  local file = info and (info.file or info.filename)
+  if not file then return false end
+  local du, dv = info.rightTexCoord - info.leftTexCoord, info.bottomTexCoord - info.topTexCoord
+  tex:SetTexture(file)
+  tex:SetTexCoord(info.leftTexCoord + du * crop[1], info.leftTexCoord + du * crop[2],
+    info.topTexCoord + dv * crop[3], info.topTexCoord + dv * crop[4])
+  return true
+end
+
 local function applyLook()
-  local L = LOOKS[Q.opt.look] or LOOKS[1] -- the chosen look, never the one on screen (that is what changes)
-  if L.kit then
-    local kit = factionKit()
-    if not kit then
-      L = LOOKS[1]
-    else
-      L = setmetatable({
-        bg = { atlas = L.bg.atlas:format(kit), atlasSize = L.bg.atlasSize },
-        ring = L.ring and { atlas = L.ring.atlas:format(kit), x = L.ring.x, y = L.ring.y } or false,
-        portraitBg = L.portraitBg and { atlas = L.portraitBg.atlas:format(kit) } or false,
-        nameColor = L.kitNameColor[kit] or L.nameColor,
-      }, { __index = L })
-    end
-  end
+  local L = resolveLook()
   f.lookNow = L
   f:SetSize(L.width, L.height)
   local bg = f.bg
   bg:ClearAllPoints()
   bg:SetTexCoord(0, 1, 0, 1)
-  if L.bg.atlas then
+  if L.bg.atlas and L.bg.crop and cropAtlas(bg, L.bg.atlas, L.bg.crop) then
+    bg:SetAllPoints(f)
+  elseif L.bg.atlas then
     bg:SetAtlas(L.bg.atlas, L.bg.atlasSize and true or false)
     if L.bg.atlasSize then bg:SetPoint("CENTER") else bg:SetAllPoints(f) end
-    bg:SetVertexColor(1, 1, 1, 1)
   else
     bg:SetColorTexture(L.bg.color[1], L.bg.color[2], L.bg.color[3], L.bg.color[4])
     bg:SetAllPoints(f)
   end
   f.border:SetShown(L.bg.border and true or false)
-  if L.ring then
-    f.ring:SetAtlas(L.ring.atlas, true)
-    f.ring:ClearAllPoints()
-    f.ring:SetPoint("TOPLEFT", f, "TOPLEFT", L.ring.x, L.ring.y)
-  end
-  f.ring:SetShown(L.ring and true or false)
-  f.model:ClearAllPoints()
-  f.model:SetPoint("TOPLEFT", f, "TOPLEFT", L.model.x, L.model.y)
-  f.model:SetSize(L.model.size, L.model.size)
-  if L.portraitBg then f.portraitBg:SetAtlas(L.portraitBg.atlas) end
-  f.portraitBg:ClearAllPoints()
-  f.portraitBg:SetAllPoints(f.model)
+  Head.applyLook(f.head, L, f)
   f.name:SetFontObject(L.nameFont)
   f.name:SetTextColor(L.nameColor[1], L.nameColor[2], L.nameColor[3])
   f.title:SetFontObject(L.titleFont)
   f.title:SetTextColor(L.titleColor[1], L.titleColor[2], L.titleColor[3])
   f.title:SetShown(L.title)
-  WFJ.Font.set(f.text, WFJ.Font.PATH, Q.opt.textSize or L.textSize, "")
+  WFJ.Font.set(f.text, WFJ.Font.PATH, L.textSize, "")
   f.text:SetTextColor(L.textColor[1], L.textColor[2], L.textColor[3])
-  for _, fs in ipairs({ f.name, f.title, f.text, f.count }) do
+  for _, fs in ipairs({ f.name, f.title, f.text }) do
     if L.shadow then fs:SetShadowColor(0, 0, 0, 1); fs:SetShadowOffset(1, -1) else fs:SetShadowOffset(0, 0) end
   end
   f.text:SetMaxLines(L.maxLines or 4)
   f.text:SetSpacing(2)
-  f.count:SetTextColor(L.titleColor[1], L.titleColor[2], L.titleColor[3])
-  placeText(f.headShown ~= false and Q.opt.head)
-  f:SetScale(Q.opt.scale or 1)
+  placeText(f.head.shown ~= false and Q.opt.head)
 end
 
+-- bottom centre, where the client puts its own talking head, until the player drags it
 local function place()
   f:ClearAllPoints()
   local p = Q.opt.point
   if type(p) == "table" and p[1] then
     f:SetPoint(p[1], Compat.resolve("UIParent"), p[2], p[3], p[4])
   else
-    f:SetPoint("BOTTOM", Compat.resolve("UIParent"), "BOTTOM", 0, 96) -- where the client puts its talking head
+    f:SetPoint("BOTTOM", Compat.resolve("UIParent"), "BOTTOM", 0, 96)
   end
 end
 
--- ── Controls and the queue display ─────────────────────────────────────────
+-- ── Controls and the waiting list ────────────────────────────────────────
 
 local function tip(owner, text)
   local GT = Compat.resolve("GameTooltip")
@@ -347,31 +213,23 @@ local function control(texture, tooltip, onClick)
   return b
 end
 
+-- every control's alpha in one place (on show and on each tick), so no other call flashes a hidden button
+local function applyControls()
+  local a = (Q.opt.buttons == "always" or f:IsMouseOver()) and 1 or 0
+  for _, b in ipairs(f.controls) do b:SetAlpha(a) end
+end
+
 local function lineLabel(item)
   return ("%s  ·  %s"):format(item.name or "?", KIND_LABEL[item.surface] or "")
 end
 
-local function showWaitingTip(owner)
-  local st = WFJ.VoicePlayer.state()
-  local GT = Compat.resolve("GameTooltip")
-  if type(GT) ~= "table" or #st.waiting == 0 then return end
-  GT:SetOwner(owner, "ANCHOR_TOP")
-  GT:SetText("Up next")
-  for _, it in ipairs(st.waiting) do GT:AddLine(lineLabel(it), 1, 1, 1) end
-  GT:Show()
-end
-
+-- The lines waiting their turn, above the panel, while there are any: each row plays its line now.
 local function updateQueue(st)
-  local n = #st.waiting
-  local count = Q.opt.queue == "count" and n > 0
-  f.count:SetText(count and ("+" .. n) or "")
-  f.countHit:SetShown(count)
-  local box = f.box
-  if Q.opt.queue ~= "box" or n == 0 then
+  local box, n = f.box, #st.waiting
+  if n == 0 then
     box:Hide()
     return
   end
-  -- each row is a button: a click plays that line now. The box is as wide as its longest row.
   local widest = box.header:GetStringWidth()
   for i = 1, math.max(#box.rows, n) do
     local row = box.rows[i]
@@ -402,128 +260,10 @@ local function updateQueue(st)
   box:Show()
 end
 
-local function updateButtons(st)
-  local paused = st.paused or (st.item ~= nil and not st.playing)
-  f.pause:SetNormalTexture(paused and ICON.play or ICON.pause)
-end
-
-local function controlsAlpha()
-  if Q.opt.buttons == "always" then return 1 end
-  return f:IsMouseOver() and 1 or 0
-end
-
--- every control's alpha in one place (on show and on each tick), so no other call flashes a hidden button
-local function applyControls()
-  local a = controlsAlpha()
-  for _, b in ipairs(f.controls) do b:SetAlpha(a) end
-end
-
--- ── Show / hide / tick ─────────────────────────────────────────────────────
+-- ── Show, hide, fade ─────────────────────────────────────────────────────
 
 local function baseAlpha()
-  return (Q.opt.combat and inCombat) and (Q.opt.combatAlpha or 0.4) or 1
-end
-
--- ── The full text ──────────────────────────────────────────────────────────
-
-local FULL_WIDTH, FULL_HEIGHT = 480, 300
-
-local function fillFull()
-  if not full or not displayed then return end
-  local L = look()
-  local parchment = L.textColor[1] < 0.5
-  full.bg:SetShown(parchment)
-  if parchment then
-    full.bg:SetAtlas("QuestBG-Parchment")
-    full.title:SetTextColor(L.nameColor[1], L.nameColor[2], L.nameColor[3])
-    full.text:SetTextColor(0.12, 0.08, 0.03)
-    full.text:SetShadowOffset(0, 0)
-  else
-    full.title:SetTextColor(1, 0.82, 0.02)
-    full.text:SetTextColor(1, 1, 1)
-    full.text:SetShadowOffset(1, -1)
-  end
-  full.title:SetText(displayed.name or "")
-  local ja = displayed.ja or ""
-  full.text:SetText(ja)
-  full.child:SetHeight(math.max(full.text:GetStringHeight() + 8, 10))
-  fullRec.fs, fullRec.applied, fullRec.meta = full.text, ja, { kind = displayed.kind, id = displayed.id }
-  if WFJ.ReadingView then fullRec.attachOk, fullRec.attachErr = pcall(WFJ.ReadingView.attach, fullRec) end
-end
-
-local function buildFull()
-  full = CreateFrame("Frame", "WFJVoicePanelText", Compat.resolve("UIParent"), "TooltipBackdropTemplate")
-  full:SetSize(FULL_WIDTH, FULL_HEIGHT)
-  full:SetFrameStrata("HIGH")
-  full:SetClampedToScreen(true)
-  full:EnableMouse(true)
-  full:SetPoint("BOTTOM", f, "TOP", 0, 6)
-  full.bg = full:CreateTexture(nil, "BACKGROUND", nil, 1)
-  full.bg:SetPoint("TOPLEFT", 4, -4)
-  full.bg:SetPoint("BOTTOMRIGHT", -4, 4)
-  full.title = full:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-  full.title:SetPoint("TOPLEFT", full, "TOPLEFT", 14, -12)
-  local close = CreateFrame("Button", nil, full, "UIPanelCloseButton")
-  close:SetSize(26, 26)
-  close:SetPoint("TOPRIGHT", full, "TOPRIGHT", -4, -4)
-  close:SetScript("OnClick", function() full:Hide() end)
-  local sf = CreateFrame("ScrollFrame", nil, full, "UIPanelScrollFrameTemplate")
-  sf:SetPoint("TOPLEFT", full, "TOPLEFT", 14, -36)
-  sf:SetPoint("BOTTOMRIGHT", full, "BOTTOMRIGHT", -32, 12)
-  full.child = CreateFrame("Frame", nil, sf)
-  full.child:SetSize(FULL_WIDTH - 50, 10)
-  sf:SetScrollChild(full.child)
-  full.text = full.child:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-  full.text:SetPoint("TOPLEFT", full.child, "TOPLEFT", 0, 0)
-  full.text:SetWidth(FULL_WIDTH - 50)
-  full.text:SetJustifyH("LEFT")
-  full.text:SetJustifyV("TOP")
-  full.text:SetWordWrap(true)
-  if full.text.SetNonSpaceWrap then full.text:SetNonSpaceWrap(true) end
-  full.text:SetSpacing(3)
-  WFJ.Font.set(full.text, WFJ.Font.PATH, 15, "")
-  full:SetScript("OnHide", function()
-    if WFJ.ReadingView and fullRec.fs then pcall(WFJ.ReadingView.detach, fullRec) end
-  end)
-  full:Hide()
-end
-
--- A quest line whose quest is in the player's log: the quest log opened at it (the world map's quest pane, which
--- shows it in Japanese). [verified: forever 1.60.1.70245 mainline/questmapframe.lua:1175–1179
--- (QuestMapFrame_OpenToQuestDetails); questlogdocumentation.lua:206 (GetLogIndexForQuestID)] → true when opened
--- → true when opened, else false and why (said in chat in the trial, so a fallback is never a mystery)
-local function openQuest(item)
-  if type(item.kind) ~= "string" or not item.kind:match("^quest%.") or type(item.id) ~= "number" then
-    return false, "this line is not a quest's (an NPC greeting or a book)"
-  end
-  local QL = Compat.resolve("C_QuestLog")
-  local open = Compat.resolve("QuestMapFrame_OpenToQuestDetails")
-  if type(QL) ~= "table" or type(QL.GetLogIndexForQuestID) ~= "function" or type(open) ~= "function" then
-    return false, "the quest log cannot be opened from here on this client"
-  end
-  if not QL.GetLogIndexForQuestID(item.id) then return false, "the quest is not in your quest log yet" end
-  local ok, err = pcall(open, item.id)
-  if not ok then return false, "opening the quest log failed: " .. tostring(err) end
-  return true
-end
-
--- Opens the whole text of the line being heard: the quest in the quest log when that is the choice and it is there,
--- else the panel's own window (a second press closes it).
-function Panel.toggleText()
-  if not f or not displayed then return false end
-  if Q.opt.textOpens == "quest" and not (full and full:IsShown()) then
-    local opened, why = openQuest(displayed)
-    if opened then return true end
-    print(("WFJ: whole text in the window: %s"):format(why))
-  end
-  if not full then buildFull() end
-  if full:IsShown() then
-    full:Hide()
-    return false
-  end
-  full:Show()
-  fillFull()
-  return true
+  return (Q.opt.combat and inCombat) and COMBAT_ALPHA or 1
 end
 
 -- the window buttons follow the panel's visibility (UI/VoicePlayer shows them only while it is away)
@@ -534,9 +274,9 @@ end
 
 local function hidePanel()
   if not f then return end
-  if full then full:Hide() end
-  detachCards()
-  setTalking(false)
+  Text.hideWhole()
+  Text.detach()
+  Head.setTalking(f.head, false)
   local was = f:IsShown()
   f:Hide()
   f.box:Hide()
@@ -550,28 +290,20 @@ local function onTick(self, elapsed)
   self.since = 0
   applyControls()
   local st = WFJ.VoicePlayer.state()
-  if revealed() ~= (f.english == true) then -- the reveal key went down or up: English, or back to the page playing
-    if revealed() then showEnglish() else showPage(pageShown or 1) end
-  end
-  if not revealed() and st.playing and st.startedAt and st.seconds and st.seconds > 0 and #pages > 1 then
-    local share = (now() - st.startedAt) / st.seconds
-    local want = 1
-    for i = 1, #starts do if share >= starts[i] then want = i end end
-    if want ~= pageShown then showPage(want) end
-  end
+  if revealed() ~= english then showPage(audioPage(st) or pageShown or 1) end -- the reveal key went down or up
+  local want = not english and #pages > 1 and audioPage(st)
+  if want and want ~= pageShown then showPage(want) end
   local alpha = baseAlpha()
-  -- the mouse on the panel or its full-text window open holds it: the fade waits until the player has left both for
-  -- the idle delay, and coming back mid-fade brings it back whole. The line's own window does not hold it: while the
-  -- panel is away, that window's play button is back (UI/VoicePlayer).
-  if fadeAt and (self:IsMouseOver() or (full and full:IsShown())) then
-    fadeAt, fadeFrom = now() + (Q.opt.idleDelay or 3), nil
+  -- the mouse on the panel or its whole-text window open holds it: the fade waits until the player has left both
+  -- for the delay, and coming back mid-fade brings it back whole
+  if fadeAt and (self:IsMouseOver() or Text.wholeShown()) then
+    fadeAt, fadeFrom = now() + FADE_DELAY, nil
   end
   if fadeAt and now() >= fadeAt then
     fadeFrom = fadeFrom or now()
     local left = 1 - (now() - fadeFrom) / FADE_TIME
     if left <= 0 then
-      local st2 = WFJ.VoicePlayer.state()
-      fadedPaused = (st2.item and not st2.playing) and st2.item or nil
+      fadedPaused = (st.item and not st.playing) and st.item or nil
       return hidePanel()
     end
     alpha = alpha * left
@@ -586,33 +318,32 @@ end
 
 function Panel.update()
   if not f then return end
-  if not Q.opt.on then return hidePanel() end
   local st = WFJ.VoicePlayer.state()
   local item = st.item or (displayed and st.last == displayed and displayed) or nil
-  if englishShowing() or not item then return hidePanel() end
+  if hidden() or not item then return hidePanel() end
   if not displayed and st.item and st.item == fadedPaused and not st.playing then return end -- faded while paused
   if item ~= displayed or redraw then
     redraw = false
     displayed = item
     f.name:SetText(item.name or "")
     f.title:SetText(item.title and ("<" .. item.title:gsub("^<", ""):gsub(">$", "") .. ">") or "")
-    paginate(item.ja)
-    loadHead(item)
+    pages, starts, offsets = Text.paginate(item.ja)
+    Head.load(f.head, item, Q.opt.head, placeText)
     showPage(1)
-    if full and full:IsShown() then fillFull() end
+    Text.refreshWhole(item, look())
   end
   if st.playing then
     fadeAt, fadeFrom, fadedPaused = nil, nil, nil
   elseif not fadeAt and Q.opt.idle == "fade" then
-    -- nothing playing (the line ended, or is paused: the reveal key pauses it) fades like the end of a line
-    fadeAt = now() + (Q.opt.idleDelay or 3)
-    if st.item then showPage(1) elseif #pages > 1 then showPage(#pages) end -- paused: a resume starts it again
+    -- nothing playing (the line ended, or is paused) fades like the end of a line
+    fadeAt = now() + FADE_DELAY
+    showPage(st.item and 1 or #pages) -- paused: a resume starts the line again; ended: its last sentence
   elseif st.item then
     showPage(1)
   end
-  setTalking(st.playing)
+  Head.setTalking(f.head, st.playing)
   updateQueue(st)
-  updateButtons(st)
+  f.pause:SetNormalTexture((st.paused or (st.item ~= nil and not st.playing)) and ICON.play or ICON.pause)
   if not fadeFrom then f:SetAlpha(baseAlpha()) end -- mid-fade, the tick owns the alpha
   applyControls()
   local was = f:IsShown()
@@ -620,11 +351,20 @@ function Panel.update()
   if not was then buttonsFollow() end
 end
 
--- ── Build ──────────────────────────────────────────────────────────────────
+local function relayout()
+  if not f then return end
+  applyLook()
+  if displayed then
+    Head.reset(f.head)
+    redraw = true
+    Panel.update()
+  end
+end
+
+-- ── Build ────────────────────────────────────────────────────────────────
 
 local function build()
-  local UIParent = Compat.resolve("UIParent")
-  f = CreateFrame("Button", "WFJVoicePanel", UIParent)
+  f = CreateFrame("Button", "WFJVoicePanel", Compat.resolve("UIParent"))
   f:SetFrameStrata("HIGH")
   f:SetClampedToScreen(true)
   f:SetMovable(true)
@@ -646,16 +386,7 @@ local function build()
     f.border:SetBackdrop({ edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", edgeSize = 14 })
     f.border:SetBackdropBorderColor(0.45, 0.32, 0.18, 1)
   end
-  f.portraitBg = f:CreateTexture(nil, "BACKGROUND", nil, 1)
-  f.model = CreateFrame("PlayerModel", nil, f)
-  f.model:SetScript("OnModelLoaded", function(m)
-    pcall(m.SetPortraitZoom, m, Q.opt.zoom or 1)
-    pcall(m.SetCamDistanceScale, m, Q.opt.cam or 1)
-    pcall(m.SetFacing, m, 0)
-    pcall(m.SetAnimation, m, f.talking and TALK_ANIMATION or 0)
-  end)
-  f.model:SetScript("OnAnimFinished", function(m) pcall(m.SetAnimation, m, f.talking and TALK_ANIMATION or 0) end)
-  f.ring = f:CreateTexture(nil, "OVERLAY")
+  f.head = Head.build(f)
 
   f.name = f:CreateFontString(nil, "ARTWORK")
   f.name:SetJustifyH("LEFT")
@@ -668,14 +399,6 @@ local function build()
   f.text:SetWordWrap(true)
   if f.text.SetNonSpaceWrap then f.text:SetNonSpaceWrap(true) end -- Japanese has no spaces to wrap at
 
-  f.count = f:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-  f.count:SetPoint("LEFT", f.name, "RIGHT", 8, 0)
-  f.countHit = CreateFrame("Frame", nil, f)
-  f.countHit:SetAllPoints(f.count)
-  f.countHit:EnableMouse(true)
-  f.countHit:SetScript("OnEnter", showWaitingTip)
-  f.countHit:SetScript("OnLeave", hideTip)
-
   f.box = CreateFrame("Frame", nil, f, "TooltipBackdropTemplate")
   f.box:SetPoint("BOTTOMLEFT", f, "TOPLEFT", 0, 2)
   f.box.rows = {}
@@ -686,19 +409,21 @@ local function build()
 
   local P = WFJ.VoicePlayer
   f.close = CreateFrame("Button", nil, f, "UIPanelCloseButton")
-  f.close:SetSize(26, 26) -- the client's close button at this size matched the row (in game)
+  f.close:SetSize(CLOSE, CLOSE)
   f.close:SetPoint("TOPRIGHT", f, "TOPRIGHT", -6, -6)
   f.close:SetScript("OnClick", function() P.clear() end)
-  f.replay = control(ICON.replay, "Play again from the start", function() P.replay() end)
   -- the book sits inside the replay button's gold frame (the frame's dark inside hides the icon's own black square
   -- and its centre dot), so it matches the other controls
-  f.textButton = control(ICON.replay, "Show the whole text", function() Panel.toggleText() end)
+  f.textButton = control(ICON.replay, "Show the whole text", function()
+    Text.openWhole(f, displayed, look(), Q.opt.textOpens == "quest")
+  end)
   local book = f.textButton:CreateTexture(nil, "OVERLAY")
-  book:SetTexture(ICON.text)
+  book:SetTexture(ICON.book)
   book:SetTexCoord(0.08, 0.92, 0.08, 0.92)
   book:SetSize(BUTTON * 0.5, BUTTON * 0.5)
   book:SetPoint("CENTER", f.textButton, "CENTER", 0, 0)
   f.textButton:SetPoint("RIGHT", f.close, "LEFT", -2, 0)
+  f.replay = control(ICON.replay, "Play again from the start", function() P.replay() end)
   f.replay:SetPoint("RIGHT", f.textButton, "LEFT", -2, 0)
   f.pause = control(ICON.pause, function()
     local st = P.state()
@@ -712,184 +437,44 @@ local function build()
   ev:RegisterEvent("PLAYER_REGEN_ENABLED")
   ev:SetScript("OnEvent", function(_, event)
     inCombat = event == "PLAYER_REGEN_DISABLED"
-    if f:IsShown() and not fadeAt then f:SetAlpha(baseAlpha()) end
+    if f:IsShown() and not fadeFrom then f:SetAlpha(baseAlpha()) end
   end)
 
   applyLook()
   place()
 end
 
-local function ensure()
-  if not f then build() end
-  return f
-end
+-- ── /wfj panel, key bindings, init ───────────────────────────────────────
 
--- ── /wfj panel ─────────────────────────────────────────────────────────────
-
-local function onOff(v)
-  if v == "on" or v == "true" or v == "1" then return true end
-  if v == "off" or v == "false" or v == "0" then return false end
-  return nil
-end
-
-function Panel.status()
-  local o = Q.opt
-  local p = o.point and ("%s %.0f,%.0f"):format(o.point[1], o.point[3] or 0, o.point[4] or 0) or "default"
-  return ("panel %s · look %d · buttons %s · queue %s · idle %s %ss · combat %s %.2f · head %s zoom %.2f cam %.2f"
-    .. " · page %s · text %s · size %s · keep %s · scale %.2f · %s · at %s"):format(
-    o.on and "on" or "off", o.look, o.buttons, o.queue, o.idle, tostring(o.idleDelay), o.combat and "on" or "off",
-    o.combatAlpha or 0.4, o.head and "on" or "off", o.zoom or 1, o.cam or 1, o.page, o.textOpens or "quest",
-    tostring(o.textSize or look().textSize), o.keepPlaying and "on" or "off", o.scale or 1,
-    o.locked and "locked" or "unlocked", p)
-end
-
-local function relayout()
-  if not f then return end
-  applyLook()
-  if displayed then
-    f.loaded = nil
-    redraw = true
-    Panel.update()
-  end
-end
-
--- `words`: the command's words after "panel". `say(fmt, ...)` prints. → nothing
+-- `/wfj panel reset`: back to the bottom centre. `words`: the command's words after "panel"; `say(fmt, ...)` prints.
 function Panel.command(words, say)
-  local o = Q.opt
   local sub = words[1] and words[1]:lower()
-  local v = words[2] and words[2]:lower()
-  local n = tonumber(words[2])
-  if sub == nil or sub == "status" then return say("%s", Panel.status()) end
-  if sub == "on" or sub == "off" then
-    o.on = sub == "on"
-    if not o.on then WFJ.VoicePlayer.stop(); hidePanel() end
-  elseif sub == "look" and LOOKS[n] and n ~= 2 then -- look 2 is not offered: the settings choose among 1, 3, 4, 5
-    o.look = n
-    relayout()
-  elseif sub == "buttons" and (v == "always" or v == "hover") then
-    o.buttons = v
-  elseif sub == "queue" and (v == "box" or v == "count") then
-    o.queue = v
-  elseif sub == "idle" and (v == "fade" or v == "stay") then
-    o.idle = v
-    if tonumber(words[3]) then o.idleDelay = tonumber(words[3]) end
-  elseif sub == "combat" and onOff(v) ~= nil then
-    o.combat = onOff(v)
-    if tonumber(words[3]) then o.combatAlpha = tonumber(words[3]) end
-  elseif sub == "head" and onOff(v) ~= nil then
-    o.head = onOff(v)
-    relayout()
-  elseif (sub == "zoom" or sub == "cam") and n then
-    o[sub] = n
-    if f then
-      pcall(f.model.SetPortraitZoom, f.model, o.zoom)
-      pcall(f.model.SetCamDistanceScale, f.model, o.cam)
-    end
-  elseif sub == "page" and (v == "sentence" or v == "all") then
-    o.page = v
-    relayout()
-  elseif sub == "size" and n then
-    o.textSize = n
-    relayout()
-  elseif sub == "keep" and onOff(v) ~= nil then
-    o.keepPlaying = onOff(v)
-  elseif sub == "scale" and n and n >= 0.5 and n <= 1.5 then
-    o.scale = n
-    if f then f:SetScale(n) end
-  elseif sub == "lock" or sub == "unlock" then
-    o.locked = sub == "lock"
-  elseif sub == "reset" then
-    o.point, o.scale = nil, 1
-    if f then f:SetScale(1); place() end
-  elseif sub == "demo" or sub == "replay" then
-    if not WFJ.VoicePlayer.replay() then return say("panel: no line to play again yet (talk to an NPC first)") end
-  elseif sub == "text" and (v == "quest" or v == "window") then
-    o.textOpens = v
-  elseif sub == "text" then
-    if not Panel.toggleText() and not (full and full:IsShown()) then
-      return say("panel: no line on the panel")
-    end
-  elseif sub == "cards" then -- why word cards do or do not show on the panel and the whole-text window
-    local V = WFJ.ReadingView
-    say("cards: readings setting %s · glosses %s · view on %s · attached this session %d · refused %d%s",
-      tostring(WFJ.Settings.get("readings.enabled")), tostring(V and V.glossesOn), tostring(V and V.enabled),
-      V and V.attached or -1, V and V.refused or -1, V and V.refusedAt and (" (" .. V.refusedAt .. ")") or "")
-    for _, r in ipairs({ { "panel", rec }, { "whole text", fullRec } }) do
-      local name, x = r[1], r[2]
-      local text = x.applied
-      if not x.fs or type(text) ~= "string" then
-        say("cards %s: nothing attached yet", name)
-      else
-        local m = x.meta or {}
-        local listed = x.spans or WFJ.Readings.lookup(m.kind, m.id, text)
-        local ci = V and V.coverInfo and V.coverInfo(x.fs)
-        say("cards %s: kind %s · id %s · %d bytes · has | %s · shows it %s · words found %d · attach %s %s",
-          name, tostring(m.kind), tostring(m.id), #text, tostring(text:find("|", 1, true) ~= nil),
-          tostring(x.fs:GetText() == text), listed and #listed or -1, tostring(x.attachOk), tostring(x.attachErr))
-        if ci then
-          say("cards %s cover: shown %s · visible %s · %dx%d · %s level %d (text's frame level %d) · motion %s · "
-            .. "mouse over it %s · spans %d · same text %s · measuring %s · words measured %d", name,
-            tostring(ci.shown), tostring(ci.visible), ci.w or 0, ci.h or 0, tostring(ci.strata), ci.level or -1,
-            x.fs:GetParent():GetFrameLevel(), tostring(ci.motion), tostring(ci.over), ci.spans, tostring(ci.sameText),
-            tostring(ci.hasUpdate), ci.words)
-        else
-          say("cards %s cover: none", name)
-        end
-      end
-    end
-    local foci = Compat.resolve("GetMouseFoci")
-    local list = type(foci) == "function" and foci() or {}
-    local names = {}
-    for i, fr in ipairs(list) do
-      if i > 4 then break end
-      local ok, n = pcall(fr.GetDebugName, fr)
-      names[#names + 1] = ok and n or tostring(fr)
-    end
-    return say("cards mouse is over: %s", #names > 0 and table.concat(names, " > ") or "nothing")
-  elseif sub == "why" then -- why the panel is up (or not): every input the fade reads
-    local st = WFJ.VoicePlayer.state()
-    local source = displayed and Compat.resolve(displayed.window)
-    return say("panel why: shown %s · line %s · playing %s · paused %s · waiting %d · fade setting %s · fade at %s"
-      .. " (now %.1f) · mouse on it %s · whole text open %s · its window %s open %s · English showing %s",
-      tostring(f and f:IsShown()), tostring(st.item and st.item.key or (displayed and displayed.key)),
-      tostring(st.playing), tostring(st.paused), #st.waiting, tostring(Q.opt.idle),
-      fadeAt and ("%.1f"):format(fadeAt) or "none", now(), tostring(f and f:IsMouseOver()),
-      tostring(full and full:IsShown()), tostring(displayed and displayed.window),
-      tostring(type(source) == "table" and source:IsShown()), tostring(englishShowing()))
-  elseif sub == "pause" then
-    WFJ.VoicePlayer.togglePause()
-  else
-    return say("panel: on|off · look 1|3|4|5 · buttons always|hover · queue box|count · idle fade|stay [s] · "
-      .. "combat on|off [alpha] · head on|off · zoom <n> · cam <n> · page sentence|all · "
-      .. "size <px> · keep on|off · scale <0.5-1.5> · lock|unlock|reset · demo · text [quest|window] · why · pause · status")
-  end
-  if f then Panel.update() end
-  say("%s", Panel.status())
+  if sub ~= "reset" then return say("panel: /wfj panel reset puts the voice panel back at the bottom centre") end
+  Q.opt.point = nil
+  if f then place() end
+  say("voice panel: back at the bottom centre")
 end
-
--- ── Key bindings (Bindings.xml) ────────────────────────────────────────────
 
 function WFJ_VoicePause() WFJ.VoicePlayer.togglePause() end
 function WFJ_VoiceReplay() WFJ.VoicePlayer.replay() end
 
--- Called by Main after VoicePlayer. The frame is built on the first line, so without a pack nothing is made.
+-- Called by Main after VoicePlayer.
 function Panel.init()
   WFJ.State.on("voiceQueue", function()
     if not Q.opt.on then return end
-    if WFJ.VoicePlayer.state().item then ensure() end
+    if not f and WFJ.VoicePlayer.state().item then build() end
     Panel.update()
   end)
   WFJ.State.on("enabled", function() Panel.update() end)
   WFJ.State.on("modifier", function() Panel.update() end)
-  -- a choice on the settings page (Core/Settings voice.panel.*): redraw; switching the panel off ends it
+  WFJ.State.on("voice", function() Panel.update() end)
+  -- a choice on the settings page (voice.panel.*): redraw; Panel size Off ends the line and hides the panel
   WFJ.State.on("voicePanel", function()
     if not Q.opt.on then
       WFJ.VoicePlayer.stop()
-      hidePanel()
-      return
+      return hidePanel()
     end
-    if f then relayout(); Panel.update() end
+    relayout()
   end)
-  WFJ.State.on("voice", function() Panel.update() end)
   return true
 end

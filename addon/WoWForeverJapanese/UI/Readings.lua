@@ -31,7 +31,7 @@ View.SURFACES = {
   ["questframe.detail"] = true, ["questframe.reward"] = true, ["questframe.progress"] = true,
   ["questframe.greeting"] = true, ["questmap.info"] = true, ["questmap.popup.info"] = true, gossip = true,
   itemtext = true,
-  voicepanel = true, -- the voice panel's text (UI/VoicePanel, trial)
+  voicepanel = true, -- the voice panel's text and its whole-text window (UI/VoicePanelText)
 }
 
 -- A label (a `ui` record, UI/Labels) takes readings on every surface EXCEPT these: HUD text, toasts, banners, the
@@ -356,17 +356,6 @@ function View.attach(rec)
   -- a re-attach under a resting mouse (the pane redisplayed on QUEST_LOG_UPDATE) gets no new OnEnter: start again
   if View.enabled and cover.IsMouseOver and cover:IsMouseOver() then onEnter(cover) end
   return true
-end
-
--- Read-only, for the voice panel's trace (/wfj panel cards): the cover of `fs` as it is now, or nil.
-function View.coverInfo(fs)
-  local c = covers[fs]
-  if not c then return nil end
-  local w, h = c:GetSize()
-  return { shown = c:IsShown(), visible = c:IsVisible(), w = w, h = h, level = c:GetFrameLevel(),
-    strata = c:GetFrameStrata(), motion = c:IsMouseMotionEnabled(), over = c:IsMouseOver(),
-    spans = c.spans and #c.spans or 0, sameText = c.text ~= nil and fs:GetText() == c.text,
-    hasUpdate = c:GetScript("OnUpdate") ~= nil, words = c.words and #c.words or -1 }
 end
 
 -- The setting (State event "readings"): off hides every cover at once; on shows the attached ones again.
