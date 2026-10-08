@@ -552,7 +552,7 @@ def test_a_page_is_signed_by_its_last_line_when_that_is_only_a_name():
     # a lowercase line break, and a dot after the name
     assert voice.book_signature("Leagrem,$b$bThe road is clear.$b$b-Vargus") == "Vargus"
     assert voice.book_signature("Hello Morgan,$B$BBusiness is brisk.$B$B-Baelog.") == "Baelog"
-    # an undashed last line that reads as a title is no signature; a single undashed word needs a sign-off
+    # an undashed last line that reads as a title is no signature; a single undashed word needs a closing line
     for last in ("The End", "The Keeper", "GO ALONE", "Remember", "Quartermaster"):
         assert voice.book_signature(f"Many words came before.$B{last}") is None, last
     assert voice.book_signature("I will return soon.$BYour friend,$BTorgal") == "Torgal"
@@ -590,7 +590,7 @@ def test_a_machine_without_the_audio_store_runs_a_round_with_nothing_voiced(tmp_
     """A contributor's clone has no audio store: a round that leaves every voiced line in step needs neither
     store nor engine; work to do refuses with how to get the store."""
     data = _store(tmp_path)
-    _gen(data, tmp_path / "voice", engine)  # the maintainer's store, every file made and recorded
+    _gen(data, tmp_path / "voice", engine)  # the full store, every file made and recorded
     elsewhere = tmp_path / "no-store"
     dead = Engine("http://127.0.0.1:9")
     r = voice_make.generate(data, "all", CFG, elsewhere, dead, _fake_encode, log=lambda *_: None, checkout=True)

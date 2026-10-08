@@ -241,13 +241,13 @@ def book_key(key: str) -> str:
 # "- Windan Shay", "Stalvan Mistmantle". One to four capitalised words.
 _SIGNATURE = re.compile(r"^([-~\u2014\u2013])?\s*([A-Z][\w'.]*(?: [A-Z][\w'.]*){0,3})\s*$")
 _LINE_BREAK = re.compile(r"\$[Bb]")
-_SIGN_OFF = re.compile(r"^[^.!?]{1,40},$")  # "Your friend," "Sincerely," "With respect,"
+_CLOSING = re.compile(r"^[^.!?]{1,40},$")  # "Your friend," "Sincerely," "With respect,"
 
 
 def book_signature(en: str) -> str | None:
     """The name a page is signed with: its last non-empty line, when that line is only a name. A dashed
     name ("- Windan Shay", "-Baelog.") counts; an undashed one must not read as a title ("The End",
-    "REMEMBER"), and a single undashed word counts only under a sign-off line ("Your friend,")."""
+    "REMEMBER"), and a single undashed word counts only under a closing line ("Your friend,")."""
     lines = [ln.strip() for ln in _LINE_BREAK.sub("\n", en).splitlines() if ln.strip()]
     if len(lines) < 2:  # a page that is only a name is a title or a label, not a signed text
         return None
@@ -258,7 +258,7 @@ def book_signature(en: str) -> str | None:
     if not dash:
         if name.split()[0] in ("The", "A", "An") or name.isupper():
             return None
-        if " " not in name and not _SIGN_OFF.match(lines[-2]):
+        if " " not in name and not _CLOSING.match(lines[-2]):
             return None
     return name or None
 
