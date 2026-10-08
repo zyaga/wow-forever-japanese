@@ -4,8 +4,7 @@
 --     a new line stops the one playing; the same line shown again while it plays is not restarted (the gossip window
 --     lays its first window out twice).
 --   * Stop: the quest, gossip or book window hides (a book's next page is a new line), the reveal key goes down,
---     translation or a voice setting is switched
---     off, the player logs out.
+--     translation or a voice setting is switched off, the player logs out.
 --   * Channel: "Master", so silencing the dialog channel never silences our own line. forever-vo ships the same MP3
 --     shape and plays it with PlaySoundFile(path, channel) → willPlay, handle [unverified in the Forever client's own
 --     files; the in-game check is in docs/testing/strategy.md].

@@ -25,11 +25,11 @@
   - **Player reports** as they arrive.
 
 ## Voice over (in progress)
-- **Goal:** quest and NPC talk read aloud in Japanese from the shipped Japanese, generated locally with AivisSpeech and shipped as a separate pack addon ([ADR-061](adr/061-voice-over-from-a-separate-pack.md), [research](research/2026-10-04-japanese-voice-over.md)).
-- **Done:** the addon plays a pack's line when the quest or gossip window shows its Japanese, and stays silent for a line whose Japanese changed since the audio was made. The pipeline builds the speaker tables, the audio and the pack. The first pack covers the 16 night elf starting quests in Shadowglen and their NPCs' greetings: 48 lines ([Voice over](systems/voice.md), [runbook](operations/voice.md)). It passed its in-game check on a new night elf druid, play / stop button included ([Testing strategy → Voice over checklist](testing/strategy.md#voice-over-checklist)).
+- **Goal:** quest and NPC talk, book and letter pages and the character's error lines read aloud in Japanese from the shipped Japanese, generated locally with AivisSpeech and shipped as separate voice addons ([ADR-061](adr/061-voice-over-from-a-separate-pack.md), [ADR-062](adr/062-voice-cast-per-speaker-in-step-with-the-text.md), [research](research/2026-10-04-japanese-voice-over.md)).
+- **Done:** every voiced line in the game, cast per kind of speaker by ear (16,199 files, 1.2 GB), in the Voice entry and seven packs named for what they hold; the audio in its own repository with every older take; a CI test that fails a pull request whose voiced lines lack their audio; one Release button for the addon and the packs that changed ([Voice over](systems/voice.md), [runbook](operations/voice.md)). Passed in game in two starting zones.
 - **Open:**
-  - **The packing ticket:** generating every line, splitting the pack, where it is hosted, and its sample rate and bitrate. The first pack's 22.05 kHz, 32 kbps audio sounds a little different from the 44.1 kHz, 64 kbps research samples; doubling it would bring the whole game to about 4.5 GB ([Voice over → Numbers](operations/voice.md#numbers)).
-  - **Not voiced yet:** quest objectives, audio per class or race (the player's name, class and race are spoken as 冒険者 today), the trainer window's text, and the character's own spoken error lines.
+  - **The voice panel:** a talking-head panel with the NPC's face, the line's Japanese and a queue, so a line can keep playing after its window closes. The voice is published together with it.
+  - **Not voiced:** quest objectives, audio per class or race (the player's name, class and race are spoken as 冒険者), a book page's author as its reader.
 
 ## Release
 - **Done:** one-action releases to CurseForge and GitHub ([Release](operations/release.md), [ADR-046](adr/046-one-action-release.md)); the CurseForge project exists and its id (1717928) is in the TOC.
