@@ -18,6 +18,10 @@
       The rows fix readings already in the store. Each is written as a `correction` record
       (translator NAME, source correction@DATE, `corrects` = the source of the record it replaces); a row
       for a line that has no reading yet is rejected: there is nothing to correct.
+  fill-repeats [--dry-run]
+      Gives every word a line uses again its card at each place (core/readings.fill_repeats): the copy has
+      the same reading and meaning. Only current readings change; their provenance stays. `import` does this
+      for every row it writes, and `validate` fails on a reading that still misses one.
 Follows `cmd/import_draft.py`'s batch pattern: a batch is a file, the store is the only thing written.
 """
 
@@ -159,6 +163,8 @@ def import_rows(
             if bad:
                 rejected += [f"{where}: {x}" for x in bad]
                 continue
+            # a word the line uses twice gets its card both times, whatever the batch listed
+            rec["words"] = readings.fill_repeats(ja, rec["words"])
             old = existing.get(k)
             if correcting:
                 if old is None:
@@ -199,6 +205,38 @@ def read_batch(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
+def fill_store(root: Path, *, dry_run: bool = False) -> dict[str, Any]:
+    """Every current reading with a repeated word lacking a card, filled. → {"lines": n, "places": n,
+    "by_type": {type: n}, "left": [str]} (left: a line the fill could not complete; reported, not written)."""
+    store = reading_store(root)
+    lines = places = 0
+    by_type: dict[str, int] = {}
+    left: list[str] = []
+    for type_ in sorted(readings.TYPES):
+        japanese = readings.shipped_japanese(Store(root).load(type_))
+        recs = store.load(type_)
+        changed = False
+        for rec in recs:
+            ja = japanese.get((rec["id"], rec["field"]))
+            if ja is None or rec["ja_hash"] != readings.ja_hash(ja):
+                continue
+            missing = readings.uncovered_repeats(ja, rec["words"])
+            if not missing:
+                continue
+            filled = readings.fill_repeats(ja, rec["words"])
+            if readings.uncovered_repeats(ja, filled) or readings.word_problems(ja, filled):
+                left.append(f"{type_} {rec['id']}/{rec['field']}")
+                continue
+            rec["words"] = filled
+            changed = True
+            lines += 1
+            places += len(missing)
+            by_type[type_] = by_type.get(type_, 0) + 1
+        if changed and not dry_run:
+            store.save(type_, recs)
+    return {"lines": lines, "places": places, "by_type": by_type, "left": left}
+
+
 def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj readings")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -222,8 +260,18 @@ def run(argv: Sequence[str]) -> int:
     i.add_argument("--note", help="with --correction: what was fixed")
     i.add_argument("--date", default=dt.date.today().isoformat())
     i.add_argument("--dry-run", action="store_true")
+    f = sub.add_parser("fill-repeats", help="give every repeated word its card at each place")
+    f.add_argument("--dry-run", action="store_true")
     a = p.parse_args(list(argv))
     root = data_root()
+    if a.cmd == "fill-repeats":
+        res = fill_store(root, dry_run=a.dry_run)
+        for line in res["left"]:
+            print(f"  left {line}: the fill could not complete it")
+        verb = "would fill" if a.dry_run else "filled"
+        print(f"readings fill-repeats: {verb} {res['places']} place(s) in {res['lines']} line(s) · by type "
+              f"{res['by_type']} · left {len(res['left'])}")
+        return 1 if res["left"] else 0
     if a.cmd == "export":
         ids = read_ids(a.ids, a.type)
         rows = export_rows(root, a.type, ids, every=a.all, klass=a.klass)
