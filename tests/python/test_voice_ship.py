@@ -526,3 +526,59 @@ def test_the_addon_names_the_voice_entry_as_optional_only():
     assert "required-dependencies" not in pkgmeta
     toc = (ROOT / "addon" / "WoWForeverJapanese" / "WoWForeverJapanese.toc").read_text(encoding="utf-8")
     assert "## Dependencies" not in toc and "## RequiredDeps" not in toc and "## OptionalDeps" not in toc
+
+
+def test_curseforge_names_the_relation_it_refuses():
+    body = ('{"errorCode":1018,"errorMessage":"Invalid slug in project relations: '
+            '\\u0027wow-forever-japanese-voice-levels-1-10\\u0027 does not exist, is not accessible, or belongs to'
+            ' an unrelated root category."}')  # the answer CurseForge gave on 2026-10-07
+    assert curseforge.refused_relation(body) == "wow-forever-japanese-voice-levels-1-10"
+    assert curseforge.refused_relation('{"errorCode":1000,"errorMessage":"x"}') is None
+    assert curseforge.refused_relation("<html>413</html>") is None
+
+
+def test_the_entry_goes_up_without_packs_still_in_review(tmp_path, engine, monkeypatch, capsys):  # noqa: F811
+    data, store, cfg = _project(tmp_path, engine)
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
+    monkeypatch.setenv("CF_API_KEY", "t")
+    monkeypatch.setattr(vs.curseforge, "game_versions", lambda token: [
+        {"id": 2, "gameVersionTypeID": 88568, "name": "1.60.1"}])
+    uploads = []
+
+    def upload(pid, path, meta, token):
+        uploads.append((pid, [r["slug"] for r in meta.get("relations", {}).get("projects", [])]))
+        if pid == 1 and "o" in uploads[-1][1]:  # the entry naming pack o, which is still in review
+            raise curseforge.CurseForgeError("HTTP 400", refused="o")
+        return 9
+
+    monkeypatch.setattr(vs.curseforge, "upload", upload)
+    calls = []
+    gh = _gh(calls, [{"tagName": "v0.1.0-alpha.8", "createdAt": "2026-10-05T00:00:00Z"}], [])
+    args = _args(tmp_path, store, cfg, _table_file(tmp_path), dry_run=False)
+    assert vs.run_release(args, run=gh) == 0
+    assert uploads == [(2, []), (3, []), (1, ["main", "a", "o"]), (1, ["main", "a"])]
+    assert "does not accept o as a dependency yet" in capsys.readouterr().out
+    # the GitHub release names the entry by what it really requires, so the next release tries the full list
+    create = next(c for c in calls if c[:2] == ["release", "create"])
+    entry = next(Path(x).name for x in create if Path(x).name.startswith("WoWForeverJapanese_Voice-2"))
+    full = vp.version(datetime.date.today(), vp.entry_hash(vs.required(vp.parse(_raw())), "16001"))
+    assert entry != vp.asset_name("WoWForeverJapanese_Voice", full)
+
+
+def test_a_refused_main_addon_or_another_error_still_stops_the_release(tmp_path):
+    def refuse(slug):
+        def upload(pid, path, meta, token):
+            raise curseforge.CurseForgeError("HTTP 400", refused=slug)
+        return upload
+
+    pr = vp.parse(_raw()).entry
+    for slug in ("main", None):
+        import wfj.io.curseforge as cf
+        old = cf.upload
+        cf.upload = refuse(slug)
+        try:
+            with pytest.raises(curseforge.CurseForgeError):
+                vs.upload_entry(pr, tmp_path / "e.zip", lambda req: {"r": req}, ["main", "a"], "t", "main")
+        finally:
+            cf.upload = old

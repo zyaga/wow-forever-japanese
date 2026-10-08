@@ -417,6 +417,66 @@ def _only(plan: Plan, table: Table, only: str | None) -> None:
     print(f"voice release: only {', '.join(sorted(keep))}")
 
 
+@dataclass
+class Uploads:
+    """What one release uploads to CurseForge, and with what."""
+
+    table: Table
+    plan: Plan
+    zips: dict[str, Path]
+    versions: dict[str, str]
+    out: Path
+    dist: Path
+    day: datetime.date
+    game_version: int
+    rtype: str
+    slugs: list[str]
+    token: str
+
+
+def upload_all(u: Uploads) -> None:
+    """Every changed pack, then the entry. An entry that went up without some packs (still in review) gets an
+    asset name of its own, so the next release counts it as changed and tries the full list again."""
+    entry = u.table.entry.folder
+    for pr in u.plan.upload:
+        readme = (u.out / pr.folder / "README.txt").read_text(encoding="utf-8")
+
+        def meta_for(required: list[str], pr: Project = pr, readme: str = readme) -> dict[str, Any]:
+            return curseforge.metadata(u.versions[pr.folder], u.game_version, u.rtype, readme, required)
+
+        if pr.folder != entry:
+            fid = curseforge.upload(pr.project_id, u.zips[pr.folder], meta_for([]), u.token)
+        else:
+            fid, named = upload_entry(pr, u.zips[pr.folder], meta_for, u.slugs, u.token, u.table.addon_slug)
+            if named != u.slugs:
+                u.versions[entry] = vp.version(u.day, vp.entry_hash_of(named, interface_of(data_root())))
+                u.zips[entry] = u.zips[entry].rename(u.dist / vp.asset_name(entry, u.versions[entry]))
+        print(f"voice release: uploaded {u.zips[pr.folder].name} (CurseForge file {fid})")
+
+
+def upload_entry(
+    pr: Project,
+    zip_path: Path,
+    meta_for: Callable[[list[str]], dict[str, Any]],
+    slugs: Sequence[str],
+    token: str,
+    addon_slug: str,
+) -> tuple[int, list[str]]:
+    """Uploads the entry requiring `slugs`. CurseForge refuses a relation to a project still in review (error
+    1018), and reviews a project only after its first file, so a pack that is new this release is left out of
+    the entry's list, named, and tried again on the next release. → (file id, the slugs the file requires)."""
+    named = list(slugs)
+    while True:
+        try:
+            return curseforge.upload(pr.project_id, zip_path, meta_for(named), token), named
+        except curseforge.CurseForgeError as e:
+            if not e.refused or e.refused == addon_slug or e.refused not in named:
+                raise
+            print(f"voice release: CurseForge does not accept {e.refused} as a dependency yet (in review);"
+                  " the entry goes up without it and names it next release")
+            named.remove(e.refused)
+
+
 def check_pin(store: Path, pin: Path) -> None:
     """A release ships exactly the audio commit the text pins: the store sits at it, nothing uncommitted."""
     want = voice_store.read_pin(pin)
@@ -476,14 +536,7 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     slugs = [table.addon_slug] if a.entry_without_packs else entry_requires(table)
     if a.entry_without_packs:
         print("voice release: the entry requires the main addon only (no packs)")
-    for pr in plan.upload:
-        meta = curseforge.metadata(
-            versions[pr.folder], gv, rtype,
-            (out / pr.folder / "README.txt").read_text(encoding="utf-8"),
-            slugs if pr.folder == table.entry.folder else (),
-        )
-        fid = curseforge.upload(pr.project_id, zips[pr.folder], meta, token)
-        print(f"voice release: uploaded {zips[pr.folder].name} (CurseForge file {fid})")
+    upload_all(Uploads(table, plan, zips, versions, out, dist, day, gv, rtype, slugs, token))
     if a.curseforge_only:
         print("voice release: done (CurseForge only)")
         return 0

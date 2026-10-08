@@ -120,7 +120,7 @@ When nothing changed since the last voice release, it says so and stops. `CF_ONL
 
 ### Adding a pack
 
-When a pack nears the cap (the build marks it past 315 MB), split its band: a new row in `pipeline/voice-packs.toml`, a new CurseForge project with its id, then a release. A new project is accepted as a dependency only once CurseForge has approved it, and it is reviewed only after its first file: upload that file with `make voice-release CF_ONLY=1 ONLY=<its folder>`, wait for approval, then release. The entry's set of packs changed, so the next release uploads a new entry file naming the new pack, and players who have the entry get it on their next update.
+When a pack nears the cap (the build marks it past 315 MB), split its band: a new row in `pipeline/voice-packs.toml`, a new CurseForge project with its id, then a release. CurseForge accepts a project as a dependency only once it has approved it, and it reviews a project only after its first file. The release handles that by itself: it uploads the new pack's first file, and when CurseForge refuses that pack in the entry's list (error 1018), it uploads the entry without it, says so, and records the entry as incomplete. The next release after the approval uploads the entry naming every pack, and players who have the entry get the new pack on their next update.
 
 ## Numbers
 

@@ -8,6 +8,7 @@ from the environment at run time) and is never printed, logged or written anywhe
 from __future__ import annotations
 
 import json
+import re
 import secrets
 import urllib.error
 import urllib.request
@@ -22,7 +23,25 @@ CHUNK = 1 << 20
 
 
 class CurseForgeError(RuntimeError):
-    pass
+    def __init__(self, message: str, refused: str | None = None) -> None:
+        super().__init__(message)
+        self.refused = refused  # the relation slug CurseForge refused (error 1018), if that was the reason
+
+
+_REFUSED = re.compile(r"Invalid slug in project relations: '([a-z0-9-]+)'")
+
+
+def refused_relation(body: str) -> str | None:
+    """The slug an upload's answer refuses as a relation: a project that does not exist yet for CurseForge,
+    such as one still in review (error 1018)."""
+    try:
+        data = json.loads(body)
+    except ValueError:
+        return None
+    if not isinstance(data, dict) or data.get("errorCode") != 1018:
+        return None
+    m = _REFUSED.search(str(data.get("errorMessage", "")))
+    return m.group(1) if m else None
 
 
 def interface_version(interface: str) -> str:
@@ -129,8 +148,11 @@ def upload(project_id: int, path: Path, meta: Mapping[str, Any], token: str) -> 
         with urllib.request.urlopen(req, timeout=1800) as r:
             raw = r.read()
     except urllib.error.HTTPError as e:
-        detail = e.read().decode("utf-8", "replace")[:300]
-        raise CurseForgeError(f"upload of {path.name} to project {project_id}: HTTP {e.code} {detail}") from e
+        body = e.read().decode("utf-8", "replace")
+        raise CurseForgeError(
+            f"upload of {path.name} to project {project_id}: HTTP {e.code} {body[:300]}",
+            refused_relation(body),
+        ) from e
     except urllib.error.URLError as e:
         raise CurseForgeError(f"upload of {path.name} to project {project_id}: {e.reason}") from e
     try:

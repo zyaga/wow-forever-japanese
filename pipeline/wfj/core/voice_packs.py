@@ -179,6 +179,12 @@ def entry_hash(table: Table, interface: str) -> str:
     return hashlib.sha256(f"{names}\n{interface}".encode()).hexdigest()
 
 
+def entry_hash_of(slugs: Iterable[str], interface: str) -> str:
+    """The hash of an entry file that requires exactly `slugs`: differs from `entry_hash` when packs were left
+    out, so the next release uploads the full entry."""
+    return hashlib.sha256(("partial\n" + "\n".join(slugs) + f"\n{interface}").encode()).hexdigest()
+
+
 def version(day: datetime.date, digest: str) -> str:
     return f"{day:%Y.%m.%d}-{digest[:8]}"
 
