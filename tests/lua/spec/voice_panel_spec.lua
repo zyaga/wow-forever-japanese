@@ -639,6 +639,15 @@ describe("UI/VoicePanelText: pages and their words", function()
     assert.are.equal("そうだ、間違いなく本当のことだ。", runs[2])
   end)
 
+  it("an emote in angle brackets keeps its closing bracket: no page is only a mark", function()
+    local ja = "<Constable Aondaは険しい表情を浮かべ、明らかに深く考え込んでいる。>"
+    local pages, _, segs = T.paginate(ja)
+    assert.are.same({ ja }, pages)
+    assert.are.equal(1, segs[1][1].from)
+    local wide = T.paginate("＜彼は静かに頷き、遠くの山をじっと見つめている。＞それから話し始めた。")
+    assert.are.equal("＜彼は静かに頷き、遠くの山をじっと見つめている。＞", wide[1])
+  end)
+
   it("a sentence longer than the look's lines is split after 、, and each piece keeps its bytes", function()
     local ja = "長い長い文章の始まりで、それから真ん中があって、最後にここで終わる。"
     local pages, _, segs = T.paginate(ja, 12)

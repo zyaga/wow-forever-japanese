@@ -53,6 +53,7 @@ local pages, starts, segs = {}, {}, {} -- the displayed line's pages (UI/VoicePa
 local pageShown -- the page on screen
 local english = false -- the panel shows the line's English (the reveal key is down)
 local fadeAt, fadeFrom -- the idle fade: when it starts, and when it started
+local fadeCount = 0 -- the timing trace numbers each fade it logs
 local fadedPaused -- a paused line the panel faded on: it stays away until something plays or the queue changes
 local redraw = false -- a look changed: lay the displayed line out again
 local inCombat = false
@@ -363,6 +364,11 @@ function Panel.update()
   elseif not fadeAt and Q.opt.idle == "fade" then
     -- nothing playing (the line ended, or is paused) fades like the end of a line
     fadeAt = now() + FADE_DELAY
+    if WFJ.Diag then
+      fadeCount = fadeCount + 1
+      pcall(WFJ.Diag.log, "voicetime", ("fade armed %s #%d"):format(tostring(item.key), fadeCount),
+        { paused = st.paused == true, queued = st.item ~= nil, at = now() })
+    end
     showPage(st.item and 1 or #pages) -- paused: a resume starts the line again; ended: its last sentence
   elseif st.item then
     showPage(1)

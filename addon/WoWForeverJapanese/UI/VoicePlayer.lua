@@ -67,6 +67,19 @@ local function notify()
   pcall(WFJ.State.fire, "voiceQueue")
 end
 
+-- The voice timing trace in the problem log: each line's start, its recorded length, and what ended it, with the
+-- time since it started. Read it with /wfj log after a line ends early.
+local function trace(what, p, fields)
+  if not (WFJ.Diag and p) then return end
+  local getTime = Compat.resolve("GetTime")
+  local t = type(getTime) == "function" and getTime() or 0
+  fields = fields or {}
+  fields.seconds, fields.elapsed = p.seconds, p.startedAt and (t - p.startedAt) or nil
+  local stack = Compat.resolve("debugstack")
+  if what ~= "start" and type(stack) == "function" then fields.from = stack(3, 2, 0) end
+  pcall(WFJ.Diag.log, "voicetime", ("%s %s #%d"):format(what, tostring(p.key), p.token or 0), fields)
+end
+
 local function getCVar(name)
   local C = Compat.resolve("C_CVar")
   if type(C) == "table" and type(C.GetCVar) == "function" then return C.GetCVar(name) end
@@ -173,6 +186,7 @@ local function silence()
   if not playing then return end
   local stopSound = Compat.resolve("StopSound")
   if type(stopSound) == "function" and playing.handle then stopSound(playing.handle) end
+  trace("silence", playing)
   local window = playing.window
   playing = nil
   showButton(window, false)
@@ -214,6 +228,7 @@ function VoicePlayer.current()
 end
 
 local function finished(window)
+  trace("end", playing)
   playing = nil
   if queueOn() and Q.current() then
     lastItem = Q.pop()
@@ -250,6 +265,7 @@ local function play(path, seconds, key, window, again)
   playing = { handle = handle, key = key, token = token, window = window,
     startedAt = type(getTime) == "function" and getTime() or 0, seconds = seconds or UNKNOWN_LENGTH }
   last[window] = { path = path, seconds = seconds, key = key }
+  trace("start", playing, { path = path })
   showButton(window, true)
   VoicePlayer.counts.played = VoicePlayer.counts.played + 1
   local timer = Compat.resolve("C_Timer")

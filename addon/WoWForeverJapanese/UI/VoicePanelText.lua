@@ -28,7 +28,10 @@ local function chars(s)
 end
 
 local ENDS = { "。", "！", "？" } -- a sentence ends at a run of these (and its closing brackets)
-local CLOSES = { "」", "』", "）" }
+local CLOSES = { "」", "』", "）", "＞", "〉", "》", "】", ">", ")", "]" }
+-- a piece of only these (and spaces) is no sentence of its own: it belongs to the one before
+local MARKS_ONLY = "^[%s%p]*$"
+local WIDE_MARKS = { "。", "！", "？", "」", "』", "）", "＞", "〉", "》", "】", "、", "…" }
 
 -- the byte length of the mark from ENDS / CLOSES / "\n" starting at `i`, or nil
 local function markAt(ja, i, set)
@@ -46,7 +49,15 @@ local function sentences(ja)
     local raw = ja:sub(start, stop)
     local lead = #(raw:match("^%s*"))
     local text = raw:gsub("^%s+", ""):gsub("%s+$", "")
-    if text ~= "" then out[#out + 1] = { text = text, from = start + lead } end
+    local bare = text
+    for _, m in ipairs(WIDE_MARKS) do bare = bare:gsub(m, "") end
+    if text ~= "" and bare:match(MARKS_ONLY) and #out > 0 then
+      -- a stray closing mark after a sentence's end (the 。 of an emote in <…>): the sentence keeps it
+      local prev = out[#out]
+      prev.text = (ja:sub(prev.from, stop):gsub("%s+$", ""))
+    elseif text ~= "" then
+      out[#out + 1] = { text = text, from = start + lead }
+    end
     start = stop + 1
   end
   while i <= #ja do
