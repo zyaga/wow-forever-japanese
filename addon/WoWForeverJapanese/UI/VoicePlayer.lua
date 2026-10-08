@@ -266,6 +266,16 @@ startHead = function()
   return started
 end
 
+-- A line the player asked for (a window's or the quest log's play button) replaces the line playing: the one it
+-- interrupts is dropped, never resumed after it (it becomes the panel's last line). Lines waiting stay waiting.
+local function takeOver(item)
+  silence()
+  local head = Q.current()
+  if head and head.key ~= item.key then lastItem = Q.pop() end
+  Q.front(item)
+  return startHead()
+end
+
 -- State "lineShown" listener. → true when a line started
 function VoicePlayer.onShown(surface, recKey, kind, id)
   local window = windowOf(surface)
@@ -314,9 +324,11 @@ end
 -- The button's click: stop the line playing, or play the window's line again. Never while English is showing.
 function VoicePlayer.toggle(window)
   if playing and playing.window == window then
-    if queueOn() then VoicePlayer.skip() else VoicePlayer.stop() end
+    if queueOn() then VoicePlayer.pause() else VoicePlayer.stop() end -- the icon is a pause: it pauses
     return false
   end
+  local head = Q.current()
+  if queueOn() and Q.paused and head and head.window == window then return VoicePlayer.resume() end
   local line = last[window]
   if not line or not WFJ.State.enabled or WFJ.State.modifierHeld or not WFJ.Settings.get("voice.enabled") then
     return false
@@ -330,9 +342,7 @@ function VoicePlayer.toggle(window)
     if not item and lastItem and lastItem.key == line.key then item = lastItem end
     item = item or { key = line.key, window = window, shown = shown }
     item.path, item.seconds = path, seconds
-    silence()
-    Q.front(item)
-    return startHead()
+    return takeOver(item)
   end
   local started = play(path, seconds, line.key, window, true)
   if started then last[window].shown = shown end
@@ -496,12 +506,13 @@ end
 local function logClick()
   local path, seconds, item = logLine()
   if not path or not voiceAllowed() then return end
+  local head = Q.current()
   if playing and playing.key == item.key then
-    if queueOn() then VoicePlayer.skip() else VoicePlayer.stop() end
+    if queueOn() then VoicePlayer.pause() else VoicePlayer.stop() end -- the icon is a pause: it pauses
+  elseif queueOn() and Q.paused and head and head.key == item.key then
+    VoicePlayer.resume()
   elseif queueOn() then
-    silence()
-    Q.front(item)
-    startHead()
+    takeOver(item)
   else
     play(path, seconds, item.key, LOG, true)
   end
