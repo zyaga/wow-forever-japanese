@@ -256,6 +256,9 @@ function QuestFrame.showPanel(panelName)
   -- The quest giver, as the window names it: UnitName("questnpc") [verified: classic_era Classic/QuestFrame.lua:118];
   -- UnitGUID accepts the same token [likely].
   WFJ.Collector.recordNpc(call("unitGUID", "questnpc"), call("unitName", "questnpc"))
+  -- every time, translation on or off: UI/VoicePlayer remembers who showed this quest line, for replays from the
+  -- quest log, where no NPC is on screen
+  pcall(WFJ.State.fire, "questShown", id, panelName)
   return n
 end
 

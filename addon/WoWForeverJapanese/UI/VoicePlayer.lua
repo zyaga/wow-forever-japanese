@@ -431,6 +431,30 @@ end
 -- through the queue and the panel like any other line. [verified: forever 1.60.1.70245 mainline/questmapframe.xml
 -- 701–720 (DetailsFrame.BackFrame, 307 × 52, BackButton at its left); questmapframe.lua:1044–1056
 -- (QuestMapFrame_ShowQuestDetails)]
+-- Who showed each quest line, remembered when the quest window shows it (State "questShown", fired by UI/QuestFrame
+-- whether or not the line is translated): WFJ_DB.voiceSpeakers["<quest id>-<field>"] = { c = creature id,
+-- s = UnitSex, n = name, t = title }, account-wide, as the client showed them; seeing the NPC again refreshes it.
+-- The quest log's replays take their head (by creature id), name, title and voice variant from it. A quest taken
+-- before this existed, or from a player, an item or an object, has none: the quest's title stands in, with no head.
+local FIELD_OF = { detail = "description", progress = "progress", reward = "completion" }
+
+local function rememberSpeaker(questID, panelName)
+  local field = FIELD_OF[panelName]
+  if not field or type(questID) ~= "number" or type(db) ~= "table" then return end
+  local who = speaker("QuestFrame")
+  if not who then return end
+  local unitName = Compat.resolve("UnitName")
+  if type(db.voiceSpeakers) ~= "table" then db.voiceSpeakers = {} end
+  db.voiceSpeakers[questID .. "-" .. field] = { c = who.creature, s = who.sex,
+    n = type(unitName) == "function" and unitName("questnpc") or nil, t = titleOf("questnpc") }
+end
+
+-- → the remembered speaker of a quest line, or nil
+function VoicePlayer.rememberedSpeaker(questID, field)
+  local all = type(db) == "table" and db.voiceSpeakers
+  return type(all) == "table" and type(questID) == "number" and all[questID .. "-" .. field] or nil
+end
+
 local LOG = "QuestMapFrame"
 local LOG_SURFACE = "questmap.info" -- UI/QuestMap's records for the details pane's QuestInfo text
 local logButton
@@ -440,14 +464,21 @@ local function logLine()
   local rec = WFJ.SurfaceState and WFJ.SurfaceState.get(LOG_SURFACE, "description")
   local m = rec and rec.meta
   if not m or type(rec.applied) ~= "string" then return nil end
-  local path, detail = WFJ.Voice.decide("questframe.detail", "description", m.kind, m.id, nil, true)
+  -- the pane's quest: its own id, also for a description keyed by its English (m.id is then that key)
+  local frame = Compat.resolve(LOG)
+  local qid = type(frame) == "table" and frame.DetailsFrame and frame.DetailsFrame.questID
+  if type(qid) ~= "number" then qid = type(m.id) == "number" and m.id or nil end
+  local saw = VoicePlayer.rememberedSpeaker(qid, "description")
+  local who = saw and { creature = saw.c, sex = saw.s } or nil
+  local path, detail = WFJ.Voice.decide("questframe.detail", "description", m.kind, m.id, who, true)
   if not path then return nil end
   local key = WFJ.Voice.packKey(m.kind, m.id)
-  local title = WFJ.SurfaceState.get(LOG_SURFACE, "title")
-  local name = title and type(title.applied) == "string" and title.applied or nil
+  local questTitle = WFJ.SurfaceState.get(LOG_SURFACE, "title")
+  local name = saw and saw.n or (questTitle and type(questTitle.applied) == "string" and questTitle.applied or nil)
   return path, detail, { key = key, path = path, seconds = detail, window = LOG, surface = "questframe.detail",
     kind = m.kind, id = m.id, shown = { "questframe.detail", "description", m.kind, m.id },
-    ja = rec.applied:gsub("^|c%x%x%x%x%x%x%x%x.-|r[\n ]", ""), en = rec.en, name = name }
+    ja = rec.applied:gsub("^|c%x%x%x%x%x%x%x%x.-|r[\n ]", ""), en = rec.en, name = name,
+    title = saw and saw.t or nil, speaker = who }
 end
 
 local function updateLogButton()
@@ -529,6 +560,7 @@ function VoicePlayer.init(savedDb)
     hook("QuestMapFrame_ShowQuestDetails", function() setupLog(); updateLogButton() end)
   end
   WFJ.State.on("voiceQueue", updateLogButton)
+  WFJ.State.on("questShown", function(questID, panelName) pcall(rememberSpeaker, questID, panelName) end)
   local createFrame = Compat.resolve("CreateFrame")
   if type(createFrame) == "function" then -- a loading screen ends every line and the queue
     local ev = createFrame("Frame")
