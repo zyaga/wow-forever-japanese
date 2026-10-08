@@ -535,3 +535,44 @@ def test_a_round_with_nothing_to_voice_needs_no_engine_and_work_without_one_refu
     _store(tmp_path, ja456="変わった、{name}。")  # a translation changed one voiced line
     with pytest.raises(EngineError, match=r"1 file\(s\) to make"):
         voice_make.generate(data, "all", CFG, tmp_path / "voice", dead, _fake_encode, log=lambda *_: None)
+
+
+# ---- book and letter pages ------------------------------------------------------------------------------
+
+
+def test_a_page_is_signed_by_its_last_line_when_that_is_only_a_name():
+    assert voice.book_signature("Hello Morgan,$B$BBusiness is brisk.$B$B-Baelog") == "Baelog"
+    assert voice.book_signature("Dear friend,\n\nCome quickly.\n\n- Windan Shay") == "Windan Shay"
+    assert voice.book_signature("Report.\nMagistrate Solomon") == "Magistrate Solomon"
+    assert voice.book_signature("Mor'zul,$B$BIt is done.$B-Mor'zul Bloodbringer") == "Mor'zul Bloodbringer"
+    assert voice.book_signature("The war began long ago and it has not ended.") is None  # prose, not a name
+    assert voice.book_signature("Stalvan Mistmantle") is None  # a page that is only a name: a title
+    assert voice.book_signature("The end.\nand so it goes on") is None
+
+
+def test_a_signed_page_is_read_by_its_writer_and_any_other_by_the_narrator():
+    pages = {"b-1": "Text.$B-Baelog", "b-2": "Text.$B-Gryan Stoutmantle", "b-3": "Text.$B-Twins",
+             "b-4": "No signature here at all.", "b-5": "Text.$B-Nobody Cast"}
+    names = {"Baelog": [6906], "Gryan Stoutmantle": [234, 9999], "Twins": [1, 2], "Nobody Cast": [77]}
+    cast = {6906, 234, 1, 2}  # 9999 is not cast; Twins: two cast creatures share the name
+    assert voice.book_speakers(pages, names, cast) == {
+        "b-1": 6906, "b-2": 234, "b-3": voice.NARRATOR, "b-4": voice.NARRATOR, "b-5": voice.NARRATOR}
+
+
+def test_book_pages_are_keyed_by_their_english_hash_and_html_pages_stay_silent(tmp_path):
+    data = _store(tmp_path)
+    english = [
+        {"id": 15, "field": "text", "en": "Hello Morgan,$B$B-Baelog", "hash": "aaaaaaaaaaaaaaaa", "src": "x@1"},
+        {"id": 16, "field": "text", "en": "<HTML><BODY><P>A map.</P></BODY></HTML>", "hash": "bbbbbbbbbbbbbbbb",
+         "src": "x@1"},
+    ]
+    Store(data, english=True).save("book", english)
+    Store(data).save("book", [
+        {"id": "aaaaaaaaaaaaaaaa", "field": "text", "ja": "モーガンへ。", "status": "trusted",
+         "english": {"hash": "aaaaaaaaaaaaaaaa"}},
+        {"id": "bbbbbbbbbbbbbbbb", "field": "text", "ja": "<HTML><BODY><P>地図。</P></BODY></HTML>",
+         "status": "trusted", "english": {"hash": "bbbbbbbbbbbbbbbb"}},
+    ])
+    lines = voice_make.shipped_lines(data)
+    assert lines["b-aaaaaaaaaaaaaaaa"] == "モーガンへ。"  # b-<the page's English hash>, the key UI/ItemText uses
+    assert "b-bbbbbbbbbbbbbbbb" not in lines  # an HTML page keeps the client's layout and is not voiced

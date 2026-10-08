@@ -143,17 +143,28 @@ def build_tables(
         conditional = _conditional_speakers(wdb_path, quests, starters, gossip_shipped, have)
         speakers += [row(k, s, f"wdb@{b}") for k, (s, b) in sorted(conditional.items())]
         report["conditional"] = [f"{k}: {s}" for k, (s, _) in sorted(conditional.items())]
-    if whole:  # every plain-text book page, read by the narrator (a page's named author: the casting pass)
-        from wfj.cmd.voice_make import shipped_lines as all_lines
-
+    if whole:  # each plain-text book page: its signer if one cast creature has that name, else the narrator
         have = {r["key"] for r in speakers}
-        speakers += [
-            row(k, voice.NARRATOR, "book@narrator")
-            for k in sorted(all_lines(root))
-            if k.startswith("b-") and k not in have
-        ]
+        for k, who in book_readers(root, db, have).items():
+            source = "book@narrator" if who == voice.NARRATOR else f"book-signature@{commit}"
+            speakers.append(row(k, who, source))
     speakers.sort(key=lambda r: r["key"])
     return speakers, report
+
+
+def book_readers(root: Path, db: Path, have: set[str]) -> dict[str, int | str]:
+    """{book key: reader} for every shipped plain-text page not already given a speaker: the creature its
+    signature names (VMaNGOS creature names, read here only, never written), else the narrator."""
+    from wfj.cmd.voice_make import shipped_lines as all_lines
+
+    english = {voice.book_key(str(ln["hash"])): ln["en"]
+               for ln in Store(root, english=True).load("book") if ln.get("hash")}
+    pages = {k: english.get(k, "") for k in sorted(all_lines(root)) if k.startswith("b-") and k not in have}
+    names: dict[str, list[int]] = {}
+    for c, info in vmangos.read_creatures(db).items():
+        names.setdefault(str(info["name"]), []).append(c)
+    cast = {int(r["creature"]) for r in read_rows(voice_dir(root) / "voices.jsonl")}
+    return voice.book_speakers(pages, names, cast)
 
 
 def _conditional_speakers(

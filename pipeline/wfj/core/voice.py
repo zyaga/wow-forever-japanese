@@ -237,6 +237,33 @@ def book_key(key: str) -> str:
     return f"b-{key}"
 
 
+# A page signed by its writer ends with a line that is only a name, often after a dash: "-Baelog",
+# "- Windan Shay", "Stalvan Mistmantle". One to four capitalised words.
+_SIGNATURE = re.compile(r"^[-~\u2014\u2013]?\s*([A-Z][\w'.]*(?: [A-Z][\w'.]*){0,3})\s*$")
+
+
+def book_signature(en: str) -> str | None:
+    """The name a page is signed with: its last non-empty line, when that line is only a name."""
+    lines = [ln.strip() for ln in en.replace("$B", "\n").splitlines() if ln.strip()]
+    if len(lines) < 2:  # a page that is only a name is a title or a label, not a signed text
+        return None
+    m = _SIGNATURE.match(lines[-1])
+    return m.group(1) if m else None
+
+
+def book_speakers(
+    pages: Mapping[str, str], names: Mapping[str, Sequence[int]], cast: Iterable[int]
+) -> dict[str, int | str]:
+    """{book key: reader} for the plain-text pages: the page's signer when exactly one cast creature has
+    that name, else the book narrator (an unsigned page, a name no cast creature has, or several)."""
+    cast_ids = set(cast)
+    out: dict[str, int | str] = {}
+    for key, en in pages.items():
+        who = [c for c in names.get(book_signature(en) or "", ()) if c in cast_ids]
+        out[key] = who[0] if len(who) == 1 else NARRATOR
+    return out
+
+
 def voices_of(row: Mapping[str, Any], cast: Mapping[int, Mapping[str, str]], narrator: str,
               book_narrator: str) -> tuple[str, list[str]]:
     """(the line's main voice, its other voices). The main voice is its main speaker's (a mixed-gender
