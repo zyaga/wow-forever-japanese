@@ -1,8 +1,8 @@
 """What the addon depends on in the client, and what a client answers for it.
 
     python -m wfj.dev.client_surface build --addon <addon dir> --out surface-manifest.json
-    python -m wfj.dev.client_surface probe --manifest surface-manifest.json --addon-out <dir>
-    python -m wfj.dev.client_surface report --manifest surface-manifest.json --probe <pasted output> \
+    python -m wfj.dev.client_surface probe --manifest surface-manifest.json --out <dir>/WFJScanProbe.lua
+    python -m wfj.dev.client_surface report --manifest surface-manifest.json --probe <saved WFJScan.lua> \
         [--source <dir of extracted client UI>] --out verdicts.json
 
 `build` reads the addon's Lua and lists every client name it needs, so the list cannot go stale by hand:
@@ -19,12 +19,13 @@
 A name the parser cannot resolve statically (built by concatenation, or read from a table it cannot see) is
 kept as `dynamic` with the expression text, never dropped, because a missing entry is a missed difference.
 
-`probe --addon-out` writes a small probe addon (`WFJProbe.toc` + `WFJProbe.lua`) to install in the client. It
+`probe --out` writes the probe as one Lua file that the scan dev addon (WFJScan) loads in the client. It
 answers every name at login, and sweeps again whenever a load-on-demand addon loads and on `/wfjprobe
 <surface>` (the player marking a surface as asked with its window open, which is the only evidence
 separating "the client removed it" from "nobody ever opened it"), so a surface whose window was opened is
-answered too, and the addons that loaded are recorded. It saves to SavedVariables (`WFJProbeDB`), stamped
-with the manifest it was built from so answers from another manifest are dropped rather than merged.
+answered too, and the addons that loaded are recorded. It saves to the scan addon's SavedVariables, under
+`WFJScanDB.probe` only, stamped with the manifest it was built from so answers from another manifest are
+dropped rather than merged.
 `report` reads that file (refusing one that does not cover the manifest) and merges it with the extracted
 client source (`--source`) into one verdict per entry: `works`, `names only` (gone from the client, still in
 its source), `rework` (gone from both) or `unknown` (a dynamic name, a `method` hook, or a load-on-demand
@@ -325,8 +326,9 @@ def probe_names(manifest: dict[str, Any]) -> list[tuple[str, str]]:
     return out
 
 
-PROBE_ADDON = """-- Asks this client for every name the addon depends on, saves the answers to
--- SavedVariables (`WFJProbeDB`), which `wfj.dev.client_surface report` reads. Generated; do not hand-edit.
+PROBE_LUA = """-- Asks this client for every name the addon depends on and saves the answers in the scan dev
+-- addon's SavedVariables, under `WFJScanDB.probe`, which `wfj.dev.client_surface report` reads. Generated; do
+-- not hand-edit. It only ever replaces `WFJScanDB.probe`: the rest of `WFJScanDB` is the quest scan's state.
 local MANIFEST = "%s"   -- answers saved under another manifest are dropped, never merged
 local NAMES = {
 %s
@@ -363,15 +365,16 @@ local function sweep()
   local build = select(2, GetBuildInfo())
   -- answers are kept across a session's sweeps, but never across another manifest or another client build:
   -- a patch that removes a frame must be able to turn a "found" back into "no"
-  if type(WFJProbeDB) ~= "table" or WFJProbeDB.manifest ~= MANIFEST or WFJProbeDB.client ~= build then
-    WFJProbeDB = { manifest = MANIFEST, client = build, answers = {}, loaded = {}, asked = {} }
+  WFJScanDB = type(WFJScanDB) == "table" and WFJScanDB or {}
+  local db = WFJScanDB.probe
+  if type(db) ~= "table" or db.manifest ~= MANIFEST or db.client ~= build then
+    db = { manifest = MANIFEST, client = build, answers = {}, loaded = {}, asked = {} }
+    WFJScanDB.probe = db
   end
-  WFJProbeDB.manifest = MANIFEST
-  WFJProbeDB.client = build
-  WFJProbeDB.build = { GetBuildInfo() }
-  WFJProbeDB.answers = WFJProbeDB.answers or {}
-  WFJProbeDB.loaded = WFJProbeDB.loaded or {}
-  WFJProbeDB.asked = WFJProbeDB.asked or {}   -- surface → sweeps run while the player had its window open
+  db.build = { GetBuildInfo() }
+  db.answers = db.answers or {}
+  db.loaded = db.loaded or {}
+  db.asked = db.asked or {}   -- surface → sweeps run while the player had its window open
   for _, row in ipairs(NAMES) do
     local kind, name, surface = row[1], row[2], row[3]
     local answer
@@ -388,20 +391,21 @@ local function sweep()
     end
     local key = kind .. "|" .. name .. "|" .. surface
     -- a later sweep only ever upgrades an answer: a frame that appears when its window opens stays found
-    if answer ~= "no" or WFJProbeDB.answers[key] == nil then
-      WFJProbeDB.answers[key] = answer
+    if answer ~= "no" or db.answers[key] == nil then
+      db.answers[key] = answer
     end
   end
+  return db
 end
 
 f:SetScript("OnEvent", function(_, event, addon)
-  sweep()
+  local db = sweep()
   if event == "ADDON_LOADED" and addon then
-    WFJProbeDB.loaded[addon] = true
+    db.loaded[addon] = true
   end
   if event == "PLAYER_LOGIN" then
-    print("WFJ probe: " .. #NAMES .. " names checked · build " .. tostring(WFJProbeDB.build[1]) ..
-      " · interface " .. tostring(WFJProbeDB.build[4]) ..
+    print("WFJ probe: " .. #NAMES .. " names checked · build " .. tostring(db.build[1]) ..
+      " · interface " .. tostring(db.build[4]) ..
       ". Open a window, then /wfjprobe <surface>; /wfjprobe lists what is left")
   end
 end)
@@ -411,10 +415,10 @@ end)
 -- guild frame is the open case) has no such tag, so its absences read as proven when nobody ever
 -- opened it. `/wfjprobe <surface>` is the player saying "it is open now, ask again": the only evidence that
 -- separates "the client removed it" from "it was never built".
-local function remaining()
+local function remaining(db)
   local out = {}
   for surface in pairs(SURFACES) do
-    if not WINDOWLESS[surface] and (WFJProbeDB.asked[surface] or 0) == 0 then out[#out + 1] = surface end
+    if not WINDOWLESS[surface] and (db.asked[surface] or 0) == 0 then out[#out + 1] = surface end
   end
   table.sort(out)
   return out
@@ -423,13 +427,14 @@ end
 SLASH_WFJPROBE1 = "/wfjprobe"
 SlashCmdList["WFJPROBE"] = function(arg)
   arg = (arg or ""):lower():gsub("^%%s+", ""):gsub("%%s+$", "")
-  if type(WFJProbeDB) ~= "table" or WFJProbeDB.answers == nil then
+  local db = type(WFJScanDB) == "table" and WFJScanDB.probe
+  if type(db) ~= "table" or db.answers == nil then
     print("WFJ probe: not loaded yet")
     return
   end
-  WFJProbeDB.asked = WFJProbeDB.asked or {}
+  db.asked = db.asked or {}
   if arg == "" then
-    local left = remaining()
+    local left = remaining(db)
     print("WFJ probe: " .. #left .. " surfaces not yet asked with their window open")
     print("WFJ probe: " .. (#left == 0 and "none left; /reload to save" or table.concat(left, " ")))
     return
@@ -445,45 +450,24 @@ SlashCmdList["WFJPROBE"] = function(arg)
   -- One surface per invocation, deliberately. An `all` verb would mark every surface as "asked with
   -- its window open" from one keystroke with nothing open: the false evidence this mechanism exists
   -- to prevent.
-  sweep()
-  WFJProbeDB.asked[arg] = (WFJProbeDB.asked[arg] or 0) + 1
-  print("WFJ probe: " .. arg .. " asked · " .. #remaining() ..
+  db = sweep()
+  db.asked[arg] = (db.asked[arg] or 0) + 1
+  print("WFJ probe: " .. arg .. " asked · " .. #remaining(db) ..
     " surfaces still unasked; /reload to save")
 end
 """
 
-PROBE_TOC = """## Interface: {interface}
-## Title: WFJ Probe
-## Notes: client surface probe; reports what this client has, translates nothing
-## SavedVariables: WFJProbeDB
-WFJProbe.lua
-"""
-
-
-def target_interface(repo: Path) -> int:
-    """The interface number `pipeline/clients.toml` targets, so the probe is never out of date by default."""
-    text = (repo / "pipeline" / "clients.toml").read_text(encoding="utf-8")
-    section = re.search(r"^\[forever\](.*?)(?=^\[|\Z)", text, re.M | re.S)
-    m = re.search(r"^interface\s*=\s*(\d+)", section.group(1), re.M) if section else None
-    if not m:
-        raise SystemExit("client_surface: no [forever].interface in pipeline/clients.toml")
-    return int(m.group(1))
-
-
-def probe_addon(manifest: dict[str, Any], out: Path, interface: int) -> Path:
-    """A probe addon in `out`: every manifest name with its surface, checked at login, saved for `report`."""
+def probe_lua(manifest: dict[str, Any]) -> str:
+    """The probe as one Lua file for the scan dev addon: every manifest name with its surface, checked at
+    login, saved under `WFJScanDB.probe` for `report`."""
     surfaces = {(e["kind"], e["name"]): e["surface"] for e in manifest["entries"] if e.get("name")}
     rows = [f'  {{"{kind}","{name}","{surfaces[(kind, name)]}"}},' for kind, name in probe_names(manifest)]
     probed = set(surfaces.values())
     bare = sorted({e["surface"] for e in manifest["entries"]
                    if e.get("windowless") and e["surface"] in probed})
-    out.mkdir(parents=True, exist_ok=True)
     stamp = hashlib.sha256("\n".join(rows).encode("utf-8")).hexdigest()[:12]
     windowless_lua = " ".join(f'["{s}"] = true,' for s in bare)
-    lua = PROBE_ADDON % (stamp, "\n".join(rows), windowless_lua)
-    (out / "WFJProbe.lua").write_text(lua, encoding="utf-8")
-    (out / "WFJProbe.toc").write_text(PROBE_TOC.format(interface=interface), encoding="utf-8")
-    return out
+    return PROBE_LUA % (stamp, "\n".join(rows), windowless_lua)
 
 
 # a dotted name of any depth (Enum.TooltipDataType.Item), as `_RESOLVE` and Core/Compat.lua accept
@@ -497,20 +481,35 @@ _SV_ASKED = re.compile(r'\["asked"\]\s*=\s*\{(.*?)\n\t?\}', re.S)
 _SV_ASKED_ENTRY = re.compile(r'\["([a-z_0-9.]+)"\]\s*=\s*(\d+)')
 
 
+_SV_PROBE = re.compile(r'^\t\["probe"\]\s*=\s*\{\n(.*?)^\t\}', re.M | re.S)
+
+
+def probe_section(text: str) -> str:
+    """The probe's answers out of a saved-variables file. The scan dev addon's file (`WFJScan.lua`) holds them
+    under `WFJScanDB.probe`, next to the quest scan's own state, which must not be read as answers: that table
+    is returned one level dedented, so it reads like a file of its own. A file without it (the older
+    standalone `WFJProbeDB`) is returned as is."""
+    m = _SV_PROBE.search(text)
+    if not m:
+        return text
+    return re.sub(r"^\t", "", m.group(1), flags=re.M)
+
+
 def asked_surfaces(text: str) -> dict[str, int] | None:
     """The probe's `asked` table: surface → how many sweeps the player ran with its window open
     (`/wfjprobe <surface>`). `None` when the file carries no such table, i.e. a probe from an older
     generator: the caller then keeps the `lod`-only rule rather than calling every absence unknown."""
-    m = _SV_ASKED.search(text)
+    m = _SV_ASKED.search(probe_section(text))
     if not m:
         return None
     return {s: int(n) for s, n in _SV_ASKED_ENTRY.findall(m.group(1))}
 
 
 def read_saved_variables(text: str) -> dict[str, str]:
-    """`WFJProbeDB` as the client saves it → the same shape `read_probe` returns. The probe records what each
-    name *is* (`frame`, `function`, `no`), so anything but `no` counts as present. `build` is the interface
-    number from `GetBuildInfo()` (its fourth value), which the TOC needs."""
+    """The probe's saved answers (`WFJScanDB.probe`, or an older `WFJProbeDB`) → name → yes / no. The probe
+    records what each name *is* (`frame`, `function`, `no`), so anything but `no` counts as present. `build`
+    is the interface number from `GetBuildInfo()` (its fourth value)."""
+    text = probe_section(text)
     out: dict[str, str] = {}
     for kind, name, _surface, value in _SV_ENTRY.findall(text):
         out[f"{kind}|{name}"] = "no" if value == "no" else "yes"
@@ -625,12 +624,11 @@ def main(argv: list[str] | None = None) -> int:
     b.add_argument("--out", required=True, type=Path)
     p = sub.add_parser("probe")
     p.add_argument("--manifest", required=True, type=Path)
-    p.add_argument("--addon-out", required=True, type=Path, help="where to write the probe addon")
-    p.add_argument("--interface", type=int, help="TOC interface number (default: clients.toml's)")
+    p.add_argument("--out", required=True, type=Path, help="the probe's Lua file, inside the scan dev addon")
     r = sub.add_parser("report")
     r.add_argument("--manifest", required=True, type=Path)
     r.add_argument("--probe", required=True, type=Path,
-                   help="the pasted /run output, or the client's WFJProbeDB SavedVariables file")
+                   help="the client's WFJScan.lua SavedVariables file (or an older WFJProbe.lua)")
     r.add_argument("--source", type=Path)
     r.add_argument("--out", required=True, type=Path)
     args = ap.parse_args(argv)
@@ -641,9 +639,9 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
     if args.cmd == "probe":
-        repo = Path(__file__).resolve().parents[3]
-        out = probe_addon(manifest, args.addon_out, args.interface or target_interface(repo))
-        print(f"probe addon: {len(probe_names(manifest))} names → {out}")
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(probe_lua(manifest), encoding="utf-8")
+        print(f"probe: {len(probe_names(manifest))} names → {args.out}")
         return 0
     raw = args.probe.read_text(encoding="utf-8", errors="replace")
     answers = read_saved_variables(raw)
