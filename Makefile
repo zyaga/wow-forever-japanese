@@ -355,9 +355,10 @@ import-collector: ## add one collector dump to data/english/ (replaces stand-in 
 
 # A machine draft (ADR-014): DRAFT=<file.jsonl> TYPE=<type> NAME=<draft name> MODEL=<model id> [CRITIC=<id>] DATE=<YYYY-MM-DD>
 # [REVERIFY=1] (ui, quest, objective, item, spell): every named line records the current English, so a stale line is judged fresh.
-import-draft: ## merge machine-drafted text into data/ as `machine` variants (never edits hand-written text)
+import-draft: ## merge machine-drafted text into data/ as `machine` variants (never edits hand-written text), then check and remake the voice of changed lines
 	@test -n "$(DRAFT)" -a -n "$(TYPE)" -a -n "$(NAME)" -a -n "$(MODEL)" -a -n "$(DATE)" || { echo "usage: make import-draft DRAFT=<file> TYPE=<type> NAME=<name> MODEL=<id> [CRITIC=<id>] DATE=<YYYY-MM-DD> [REVERIFY=1]"; exit 2; }
 	cd pipeline && $(PY) -m wfj import draft $(TYPE) $(abspath $(DRAFT)) --model $(MODEL) $(if $(CRITIC),--critic $(CRITIC)) --date $(DATE) --name $(NAME) $(if $(REVERIFY),--reverify)
+	$(MAKE) -s check voice-generate
 
 check: ## assign statuses to every data/ line (pure rules); --report prints the yield
 	cd pipeline && $(PY) -m wfj check --report
@@ -376,10 +377,10 @@ report-intake: ## a player's fix report (GitHub issue ISSUE=N, or a saved body R
 	@test -n "$(ISSUE)" || { echo "usage: make report-intake ISSUE=<n> [REPORT=<saved issue body>] [CREDIT=<name>] [FORCE=1]"; exit 2; }
 	cd pipeline && $(PY) -m wfj report intake $(if $(REPORT),--file $(abspath $(REPORT)) --number $(ISSUE),--issue $(ISSUE)) $(if $(CREDIT),--credit "$(CREDIT)") $(if $(FORCE),--force)
 
-report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + ATTRIBUTION.md + reply.md, then check / generate / validate / coverage
+report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + ATTRIBUTION.md + reply.md, then check / generate / voice / validate / coverage
 	@test -n "$(ISSUE)" -a -n "$(MODEL)" || { echo "usage: make report-apply ISSUE=<n> MODEL=<id> [DATE=YYYY-MM-DD]"; exit 2; }
 	cd pipeline && $(PY) -m wfj report apply --issue $(ISSUE) --model $(MODEL) $(if $(DATE),--date $(DATE))
-	$(MAKE) -s check generate validate coverage
+	$(MAKE) -s check generate voice-generate validate coverage
 
 # Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine running and
 # `lame`; the audio and the pack are build output under build/, never committed.
@@ -388,7 +389,7 @@ voice-speakers: voice-levels ## data/voice/ speakers + voices for the voice scop
 		--wdb "$(call client_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA)
 
 voice-generate: ## the missing and changed voice files from the shipped Japanese, through the local engine, then voice-sync
-	cd pipeline && $(PY) -m wfj voice generate --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --store "$(VOICE_STORE)"
+	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --store "$(VOICE_STORE)"
 
 # The audio store: a checkout of the voice audio repository (zyaga/wow-forever-japanese-voice), inside the main checkout.
 VOICE_STORE ?= $(REPO_ROOT)/build/voice

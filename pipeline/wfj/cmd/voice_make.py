@@ -41,6 +41,7 @@ from wfj.io.aivis import Engine, EngineError
 from wfj.io.jsonl_store import Store, dumps
 from wfj.paths import data_root
 
+ENGINE_HINT = "start the AivisSpeech Engine (build/aivis/macOS-arm64/run) and run again"
 LAME = ("lame", "-m", "m", "--resample", "22.05", "-b", "32", "--cbr", "-t", "--quiet")
 RECORD_EVERY = 20  # files between two writes of the audio record and the status file
 AUDIO = "audio.jsonl"
@@ -333,7 +334,14 @@ def generate(
     state = voice.in_step(jobs, lines, cfg["roster"], audio, values)
     todo = set(state["missing"]) | set(state["stale"])
     work = [j for j in jobs if j.stem in todo or not (store / f"{j.stem}.mp3").is_file()]
-    version = engine.version()
+    if not work:  # nothing to make, so no engine is needed: a round without voiced lines runs anywhere
+        return {"made": 0, "files": len(jobs), "chars_made": 0, "seconds_made": 0.0, "elapsed": 0.0,
+                "audio": audio}
+    try:
+        version = engine.version()
+    except EngineError as e:
+        msg = f"{len(work)} file(s) to make, but the engine does not answer ({e}): {ENGINE_HINT}"
+        raise EngineError(msg) from e
     store.mkdir(parents=True, exist_ok=True)
     status = store / "status.json"
     today = datetime.date.today().isoformat()
