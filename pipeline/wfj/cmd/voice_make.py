@@ -316,7 +316,7 @@ def _status(path: Path, **fields: Any) -> None:
     tmp.replace(path)
 
 
-def generate(
+def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for the tests
     root: Path,
     scope: str,
     cfg: dict[str, Any],

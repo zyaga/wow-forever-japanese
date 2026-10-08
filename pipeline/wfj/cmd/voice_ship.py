@@ -396,8 +396,8 @@ def build(a: argparse.Namespace, day: datetime.date, previous: Mapping[str, str]
     wrong = store_mismatches(store, voice_make.audio_record(root), [f for p in packs for f in p.files])
     if wrong:
         print(
-            f"voice pack: {len(wrong)} file(s) in {store} are not the recorded audio (another branch remade them,"
-            f" or the store is not at this text's pin), e.g. {', '.join(wrong[:5])}; nothing written",
+            f"voice pack: {len(wrong)} file(s) in {store} are not the recorded audio (another branch remade"
+            f" them, or the store is not at this text's pin), e.g. {', '.join(wrong[:5])}; nothing written",
             file=sys.stderr,
         )
         return None
@@ -552,6 +552,30 @@ def check_pin(store: Path, pin: Path) -> None:
 GH_ASSET_LIMIT = 2 * 1024**3  # bytes: GitHub refuses a release asset of 2 GiB or more
 
 
+@dataclass
+class Release:
+    """One voice release run, once its packs are built and zipped."""
+
+    a: argparse.Namespace
+    run: Run
+    table: Table
+    plan: Plan
+    versions: dict[str, str]
+    zips: dict[str, Path]
+    bundle: Path
+    out: Path
+    dist: Path
+    day: datetime.date
+    rtype: str
+    state: VoiceState
+    tag: str
+    fingerprint: str
+
+    @property
+    def flags(self) -> list[str]:
+        return ["--latest=false", *(["--prerelease"] if self.rtype != "release" else [])]
+
+
 def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     day = datetime.date.today()
     if a.only and not a.curseforge_only:
@@ -577,25 +601,10 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     print(f"voice release: last voice release {state.published or 'none'}; this one {tag} ({rtype})"
           + (" (resuming its draft)" if state.draft else ""))
     _print_plan(plan, zips, versions)
-    fingerprint = inputs_fingerprint(data_root().parent)
-    inputs_new = vp.released_inputs(state.published_assets) != fingerprint[:16]
-    nothing = not plan.upload and not plan.no_project
-    if nothing and not state.draft:
-        if a.curseforge_only or not inputs_new or not state.published:
-            print("voice release: nothing changed since the last voice release; nothing to do")
-            return 0
-        # the packs are what players have, but what builds them changed: record that, so the next release
-        # of the addon alone skips the voice again
-        print(f"voice release: no pack changed; recording the voice inputs on {state.published}")
-        if a.dry_run:
-            print("voice release: dry run; nothing uploaded")
-            return 0
-        inputs = _inputs_file(dist, fingerprint)
-        run(["release", "upload", state.published, str(inputs), "--clobber"])
-        for old in vp.inputs_assets(state.published_assets):
-            if old != inputs.name:
-                run(["release", "delete-asset", state.published, old, "--yes"])
-        return 0
+    r = Release(a, run, table, plan, versions, zips, bundle, out, dist, day, rtype, state, tag,
+                inputs_fingerprint(data_root().parent))
+    if not plan.upload and not plan.no_project and not state.draft:
+        return _nothing_changed(r)
     if a.curseforge_only:
         print("voice release: CurseForge only; no GitHub release")
     else:
@@ -603,45 +612,79 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
         if big:
             raise ValueError(f"{', '.join(big)} reach GitHub's 2 GiB asset limit; nothing uploaded")
         print(f"voice release: GitHub release {tag}: {len(zips)} zips and {bundle.name}")
-        if nothing:
-            print(f"voice release: every pack is on CurseForge already; publishing the draft {tag}")
     if a.dry_run:
         print("voice release: dry run; nothing uploaded")
         return 0
     notes = dist / "notes.md"
     notes.write_text(_notes(table, versions, plan), encoding="utf-8")
-    flags = ["--latest=false", *(["--prerelease"] if rtype != "release" else [])]
-    partial = False
-    if plan.upload:
-        token = os.environ.get("CF_API_KEY", "")
-        if not token:
-            print("voice release: no upload token (CF_API_KEY); see docs/operations/voice.md", file=sys.stderr)
-            return 1
-        gv = curseforge.game_version_id(curseforge.game_versions(token), interface_of(data_root()))
-        slugs = [table.addon_slug] if a.entry_without_packs else entry_requires(table)
-        if a.entry_without_packs:
-            print("voice release: the entry requires the main addon only (no packs)")
-        record = _recorder(None if a.curseforge_only else tag, state, notes, flags, day, run)
-        partial = upload_all(Uploads(table, plan, zips, versions, out, dist, day, gv, rtype, slugs, token, record))
+    partial = _upload_changed(r, notes)
+    if partial is None:
+        return 1
     if a.curseforge_only:
         print("voice release: done (CurseForge only)")
         return 0
-    if not state.draft and not plan.upload:  # only packs with no project changed: still a release on GitHub
-        _recorder(tag, state, notes, flags, day, run)
-    final = [*zips.values(), bundle]
+    _publish(r, notes, partial)
+    return 0
+
+
+def _nothing_changed(r: Release) -> int:
+    """No pack changed and no draft is waiting. When what builds the packs changed (code, say), the new inputs
+    are recorded on the published release, so the next release of the addon alone skips the voice again."""
+    state = r.state
+    if r.a.curseforge_only or not state.published or (
+        vp.released_inputs(state.published_assets) == r.fingerprint[:16]
+    ):
+        print("voice release: nothing changed since the last voice release; nothing to do")
+        return 0
+    print(f"voice release: no pack changed; recording the voice inputs on {state.published}")
+    if r.a.dry_run:
+        print("voice release: dry run; nothing uploaded")
+        return 0
+    inputs = _inputs_file(r.dist, r.fingerprint)
+    r.run(["release", "upload", state.published, str(inputs), "--clobber"])
+    for old in vp.inputs_assets(state.published_assets):
+        if old != inputs.name:
+            r.run(["release", "delete-asset", state.published, old, "--yes"])
+    return 0
+
+
+def _upload_changed(r: Release, notes: Path) -> bool | None:
+    """The changed packs and the entry to CurseForge, each recorded on the draft as it goes up. → whether the
+    entry went up without some packs; None when there is no upload token."""
+    if not r.plan.upload:
+        if not r.a.curseforge_only and not r.state.draft:  # only packs with no project changed
+            _recorder(r.tag, r.state, notes, r.flags, r.day, r.run)
+        elif r.state.draft:
+            print(f"voice release: every pack is on CurseForge already; publishing the draft {r.tag}")
+        return False
+    token = os.environ.get("CF_API_KEY", "")
+    if not token:
+        print("voice release: no upload token (CF_API_KEY); see docs/operations/voice.md", file=sys.stderr)
+        return None
+    gv = curseforge.game_version_id(curseforge.game_versions(token), interface_of(data_root()))
+    slugs = [r.table.addon_slug] if r.a.entry_without_packs else entry_requires(r.table)
+    if r.a.entry_without_packs:
+        print("voice release: the entry requires the main addon only (no packs)")
+    record = _recorder(None if r.a.curseforge_only else r.tag, r.state, notes, r.flags, r.day, r.run)
+    return upload_all(Uploads(r.table, r.plan, r.zips, r.versions, r.out, r.dist, r.day, gv, r.rtype, slugs,
+                              token, record))
+
+
+def _publish(r: Release, notes: Path, partial: bool) -> None:
+    """Every zip and the bundle onto the draft, stale draft assets removed, the draft published. The inputs
+    are recorded only when the entry went up whole, so a partial one is tried again by the next release (a
+    pack with no project yet needs no such help: giving it one edits voice-packs.toml, a voice input)."""
+    final = [*r.zips.values(), r.bundle]
     if partial:
-        # left unrecorded, so the next release runs the voice job and tries the full entry again (a pack with no
-        # project yet needs no such help: giving it one edits voice-packs.toml, a voice input)
         print("voice release: the entry went up without some packs; the next release tries them again")
     else:
-        final.append(_inputs_file(dist, fingerprint))
-    run(["release", "upload", tag, *map(str, final), "--clobber"])
-    for stale in sorted(set(state.draft_assets) - {p.name for p in final}):
-        run(["release", "delete-asset", tag, stale, "--yes"])
-    notes.write_text(_notes(table, versions, plan), encoding="utf-8")
-    run(["release", "edit", tag, "--draft=false", "--notes-file", str(notes), *flags])
-    print(f"voice release: done: {tag}")
-    return 0
+        final.append(_inputs_file(r.dist, r.fingerprint))
+    r.run(["release", "upload", r.tag, *map(str, final), "--clobber"])
+    for stale in sorted(set(r.state.draft_assets) - {p.name for p in final}):
+        r.run(["release", "delete-asset", r.tag, stale, "--yes"])
+    notes.write_text(_notes(r.table, r.versions, r.plan), encoding="utf-8")
+    r.run(["release", "edit", r.tag, "--draft=false", "--notes-file", str(notes), *r.flags])
+    print(f"voice release: done: {r.tag}")
 
 
 def _inputs_file(dist: Path, fingerprint: str) -> Path:
