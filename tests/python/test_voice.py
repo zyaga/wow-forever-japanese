@@ -549,6 +549,13 @@ def test_a_page_is_signed_by_its_last_line_when_that_is_only_a_name():
     assert voice.book_signature("The war began long ago and it has not ended.") is None  # prose, not a name
     assert voice.book_signature("Stalvan Mistmantle") is None  # a page that is only a name: a title
     assert voice.book_signature("The end.\nand so it goes on") is None
+    # a lowercase line break, and a dot after the name
+    assert voice.book_signature("Leagrem,$b$bThe road is clear.$b$b-Vargus") == "Vargus"
+    assert voice.book_signature("Hello Morgan,$B$BBusiness is brisk.$B$B-Baelog.") == "Baelog"
+    # an undashed last line that reads as a title is no signature; a single undashed word needs a sign-off
+    for last in ("The End", "The Keeper", "GO ALONE", "Remember", "Quartermaster"):
+        assert voice.book_signature(f"Many words came before.$B{last}") is None, last
+    assert voice.book_signature("I will return soon.$BYour friend,$BTorgal") == "Torgal"
 
 
 def test_a_signed_page_is_read_by_its_writer_and_any_other_by_the_narrator():

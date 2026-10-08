@@ -239,16 +239,28 @@ def book_key(key: str) -> str:
 
 # A page signed by its writer ends with a line that is only a name, often after a dash: "-Baelog",
 # "- Windan Shay", "Stalvan Mistmantle". One to four capitalised words.
-_SIGNATURE = re.compile(r"^[-~\u2014\u2013]?\s*([A-Z][\w'.]*(?: [A-Z][\w'.]*){0,3})\s*$")
+_SIGNATURE = re.compile(r"^([-~\u2014\u2013])?\s*([A-Z][\w'.]*(?: [A-Z][\w'.]*){0,3})\s*$")
+_LINE_BREAK = re.compile(r"\$[Bb]")
+_SIGN_OFF = re.compile(r"^[^.!?]{1,40},$")  # "Your friend," "Sincerely," "With respect,"
 
 
 def book_signature(en: str) -> str | None:
-    """The name a page is signed with: its last non-empty line, when that line is only a name."""
-    lines = [ln.strip() for ln in en.replace("$B", "\n").splitlines() if ln.strip()]
+    """The name a page is signed with: its last non-empty line, when that line is only a name. A dashed
+    name ("- Windan Shay", "-Baelog.") counts; an undashed one must not read as a title ("The End",
+    "REMEMBER"), and a single undashed word counts only under a sign-off line ("Your friend,")."""
+    lines = [ln.strip() for ln in _LINE_BREAK.sub("\n", en).splitlines() if ln.strip()]
     if len(lines) < 2:  # a page that is only a name is a title or a label, not a signed text
         return None
     m = _SIGNATURE.match(lines[-1])
-    return m.group(1) if m else None
+    if not m:
+        return None
+    dash, name = m.group(1), m.group(2).rstrip(".")
+    if not dash:
+        if name.split()[0] in ("The", "A", "An") or name.isupper():
+            return None
+        if " " not in name and not _SIGN_OFF.match(lines[-2]):
+            return None
+    return name or None
 
 
 def book_speakers(
