@@ -4,7 +4,7 @@
 
 ## Goal
 
-A release is one action: start the **Release** workflow on `main`. The run checks everything, writes the changelog, tags, builds and checks the zip, and publishes it to CurseForge and to a GitHub release. No local tools, no hand-made tags, no second pull request.
+A release is one action: start the **Release** workflow on `main`. The run checks everything, then releases what changed. The addon, when `## Unreleased` has lines: it writes the changelog, tags, builds and checks the zip, and publishes it to CurseForge and to a GitHub release. Then the voice packs whose audio changed, to their CurseForge projects and one voice GitHub release ([Voice over → Releasing the voice](voice.md#releasing-the-voice)). No local tools, no hand-made tags, no second pull request.
 
 ## One-time setup
 
@@ -17,11 +17,12 @@ Done once by the maintainer, in this order.
 | 3 | Create a CurseForge API token and add it as the repository secret **`CF_API_KEY`**. | The token is made on the CurseForge author site, under your account's API tokens (the packager's README links the current page). Add it in GitHub under **Settings → Secrets and variables → Actions → New repository secret**. It is never written into the repo. Without it the run stops in its first job. |
 | 4 | Once the repo is public: protect `main`, and allow the release's push. | In **Settings → Rules → Rulesets**, the ruleset that protects `main` needs a bypass that lets the Release workflow (GitHub Actions, pushing with the workflow's own token) push its changelog commit and tag to `main`. The exact bypass entry has to be confirmed when the repo goes public. Without it, the release fails at the push step, and nothing is published. |
 | 4b | Once the repo is public: the settings that keep the checks meaningful. | In **Settings → Rules**, the `main` ruleset requires the `validate`, `lua` and `text` checks of `pr.yml` before a merge, so a red check blocks it. In **Settings → Actions**, require approval before workflows run on pull requests from forks. In **Settings → Code security**, turn on private vulnerability reporting, which `SECURITY.md` and the issue form's contact link point at; on a private repository that setting does not exist, so the links only work once the repo is public. |
+| 4c | Give the release read access to the voice audio repository: a read-only deploy key on `zyaga/wow-forever-japanese-voice`, its private half as the repository secret **`VOICE_REPO_KEY`**. | Only the voice job's audio checkout sees it. Without it the voice job fails at that checkout; the addon part of the run is already done by then. |
 | 5 | Optional: decide who can release. | Anyone with write access to the repo can run a workflow, so write access is the release permission. Keep it to the people who should publish. |
 
 ## Cutting a release
 
-1. Check `CHANGELOG.md` on `main`: the lines under `## Unreleased` are what players will read.
+1. Check `CHANGELOG.md` on `main`: the lines under `## Unreleased` are what players will read. With none, the run releases no addon, only the voice packs that changed.
 2. Start the run, either way:
    - GitHub: **Actions → Release → Run workflow**, branch `main`. Leave **Version** empty to use the [version rule](#versioning), or type one.
    - Terminal: `make release` (or `make release VERSION=x.y.z`). This needs the GitHub CLI (`gh`), signed in, with write access. It starts the same workflow on `main` and follows it until it ends.
@@ -33,13 +34,14 @@ To run a release again, always start a **new** run (Run workflow, or `make relea
 
 ## What the run does
 
-Three jobs, in order. Nothing leaves the runner until the zip has passed the package check.
+Four jobs, in order. Nothing leaves the runner until the zip has passed the package check.
 
 | Job | Steps |
 |---|---|
-| **plan** | Fails unless it runs on `main`. Fails if the `CF_API_KEY` secret is not set (this job only learns whether it is set, never its value). Picks the version with `wfj release next-version`: fails if `CHANGELOG.md` is out of shape (below), if `## Unreleased` is empty, if a released section differs from the one at the latest release tag, if a typed version is malformed, or if it is not higher than the latest release. When re-running a release whose publish failed, refuses if its GitHub release already holds the zip (CurseForge never replaces a file, so publishing again would upload a duplicate). |
+| **plan** | Fails unless it runs on `main`. Fails if the `CF_API_KEY` secret is not set (this job only learns whether it is set, never its value). Picks the version with `wfj release next-version --allow-empty`: with `## Unreleased` empty it reports no addon release (`addon=false`) and the release job is skipped; otherwise it fails if `CHANGELOG.md` is out of shape (below), if a released section differs from the one at the latest release tag, if a typed version is malformed, or if it is not higher than the latest release. When re-running a release whose publish failed, refuses if its GitHub release already holds the zip (CurseForge never replaces a file, so publishing again would upload a duplicate). |
 | **validate** | Every pull-request check (`pr.yml`, reused), on `main`. |
 | **release** | 1. On the runner only: `wfj release changelog` moves the `## Unreleased` lines under `## X.Y.Z - YYYY-MM-DD`, leaves an empty `## Unreleased`, and writes this version's notes to `.release-notes.md`; commits `CHANGELOG.md` as `github-actions[bot]`; makes the annotated tag `vX.Y.Z`. 2. Builds the zip with the BigWigsMods packager (build only), from `.pkgmeta` and the TOC; `## Version: @project-version@` becomes `vX.Y.Z`. 3. `wfj package-check` checks the zip (below). 4. Pushes the commit and the tag together (`git push --atomic`): if `main` moved since the run started, the push fails and nothing is published. 5. Runs the packager again on the folder it just checked (no fresh copy: the same files, byte for byte, zipped again), which zips it and uploads it to CurseForge (an alpha, beta or release file, from the tag name) and creates the GitHub release with the same zip and the version's notes (a pre-release for alpha and beta). This is the only step that sees the CurseForge token; the write token is only given to the push and this step. 6. Checks the zip once more (a failure here is a warning: the file is already live) and writes the job summary. |
+| **voice** | Runs after the release job, or when it was skipped; never when the checks or the addon release failed. Reads the audio commit the text pins (`pipeline/voice-audio-commit.txt`), checks out that commit of `zyaga/wow-forever-japanese-voice` into `build/voice` with the read-only deploy key, and runs `wfj voice release`: it builds every pack, uploads to CurseForge only the packs whose content changed since the latest voice GitHub release (and the Voice entry when the set of packs changed), and makes one voice GitHub release. Nothing is uploaded when no pack changed. It may write only that GitHub release; the CurseForge token reaches its release step alone. |
 
 The zip is `WoWForeverJapanese-vX.Y.Z-forever.zip`. Inside is one folder, `WoWForeverJapanese/`: the files of `addon/WoWForeverJapanese/` plus `LICENSE` and `ATTRIBUTION.md`. The packager uploads it under the Forever game version, which it reads from the TOC's `## Interface`. The addon targets Forever only and is never published under another game version.
 

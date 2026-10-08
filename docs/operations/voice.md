@@ -2,7 +2,7 @@
 
 ## Goal
 
-Make the Japanese voice from the Japanese the addon ships, copy it into the Forever client for a test, and release it. The voice ships as the **Voice entry**, `WoWForeverJapanese_Voice` (no audio; on CurseForge it requires every pack, so the app installs them all from one click), and seven **packs** named for what they hold: `WoWForeverJapanese_VoiceLevels1to10` through `…Levels51to60`, and `…Other`. How it works: [Voice over](../systems/voice.md); decisions: [ADR-061](../adr/061-voice-over-from-a-separate-pack.md), ADR-062. The audio and the packs are build output under `build/` and are never committed; only the audio record, `data/voice/audio.jsonl`, is.
+Make the Japanese voice from the Japanese the addon ships, copy it into the Forever client for a test, and release it. The voice ships as the **Voice entry**, `WoWForeverJapanese_Voice` (no audio; on CurseForge it requires every pack, so the app installs them all from one click), and seven **packs** named for what they hold: `WoWForeverJapanese_VoiceLevels1to10` through `…Levels51to60`, and `…Other`. How it works: [Voice over](../systems/voice.md); decisions: [ADR-061](../adr/061-voice-over-from-a-separate-pack.md), ADR-062. The audio lives in its own repository, `zyaga/wow-forever-japanese-voice` (private for now), whose checkout is the audio store, `build/voice/` in the main checkout: every recording, with every older one in its history. This repository commits the audio record, `data/voice/audio.jsonl`, and the audio commit that goes with its text, `pipeline/voice-audio-commit.txt`. The packs are build output under `build/voice-pack/`.
 
 ## Prerequisites
 
@@ -71,9 +71,19 @@ If the game's English NPC voices stay silent after a test (the dialog channel le
 
 `/run print(GetCVar("Sound_EnableDialog"))` prints `1` when it is on. Removing the `WoWForeverJapanese_Voice` folders from AddOns removes all voice.
 
+## The audio store and the pin
+
+| What | Where |
+|---|---|
+| The MP3s | `build/voice/` in the main checkout, a checkout of `zyaga/wow-forever-japanese-voice`. Set it up once on a new machine: `git clone git@github.com:zyaga/wow-forever-japanese-voice.git build/voice` from the main checkout. |
+| Which audio goes with this text | `pipeline/voice-audio-commit.txt`: one commit of the audio repository |
+| Each quest's level, for the packs | `pipeline/voice_quest_levels.txt`, written by `make voice-levels` (the quest cache and VMaNGOS, which only the maintainer's computer has). `make voice-speakers` runs it first; rerun both after a re-pull. |
+
+`make voice-run` and `make voice-generate` end with `make voice-sync`: it commits the files the run made to the audio repository, pushes them, and writes that commit to the pin. Commit the pin with the audio record in the same pull request. A release builds the packs from exactly the pinned commit, so a line never plays audio made from other words. `make voice-sync` alone does the same after a run that was stopped.
+
 ## Releasing the voice
 
-The voice is released from the maintainer's Mac, by one command, because the audio is not in git. It is a separate step from the main addon's [release](release.md), and a separate explicit ask.
+The voice is released by the main [Release](release.md) workflow, one run for everything: the addon when `## Unreleased` has lines, then the voice packs whose audio changed, built from the pinned audio commit. A voice-only change (a recast) releases only its packs; nothing is released for voice when no pack changed. `make voice-release` stays for dry runs and rehearsals from the maintainer's computer.
 
 ### One-time setup
 
@@ -81,19 +91,20 @@ The voice is released from the maintainer's Mac, by one command, because the aud
 |---|---|---|
 | 1 | Create the eight CurseForge projects, as World of Warcraft addons: "WoW Forever Japanese Voice (日本語音声)" (the entry) and the seven packs, "WoW Forever Japanese Voice: Levels 1-10" … "… : Levels 51-60", "… : Other". | Do it early: a new project waits for CurseForge's approval. Description text: [CurseForge voice description](../curseforge-voice.md), pasted on each. |
 | 2 | Put each project's id and slug in `pipeline/voice-packs.toml`. | A normal pull request. A pack with `project_id = 0` is built and put on GitHub, but not uploaded to CurseForge, and the entry does not name it. |
-| 3 | Make a CurseForge API token for the upload and keep it where `make voice-release` can read it. | `CF_API_KEY` in the environment for the one run, or a local, untracked `VOICE_TOKEN_CMD` setting that prints it. It is never written into the repository or to disk by the release. |
+| 3 | Give the Release workflow read access to the audio repository: a read-only deploy key on `zyaga/wow-forever-japanese-voice`, its private half as the repository secret **`VOICE_REPO_KEY`** of the addon repository. | The workflow's CurseForge token is the addon's `CF_API_KEY`, which already reaches the voice projects. |
+| 4 | For local dry runs and rehearsals: a CurseForge API token where `make voice-release` can read it. | `CF_API_KEY` in the environment for the one run, or a local, untracked `VOICE_TOKEN_CMD` setting that prints it. It is never written into the repository or to disk by the release. |
 
 ### Cutting a voice release
 
-1. The main addon that reads the pack format must already be released (on the first voice release, and whenever the format changes).
-2. Dry run first, which builds, checks every zip and prints what would go up, and sends nothing:
-   ```bash
-   make voice-release DRY=1
-   ```
-3. Then the release:
-   ```bash
-   make voice-release
-   ```
+Merge the pull request that carries the audio record and the pin, then start the Release workflow (**Actions → Release → Run workflow**, or `make release`). The addon goes first when it has changelog lines; a pack never reaches players before the text it was made from.
+
+To see what would go up without sending anything, from the maintainer's computer:
+
+```bash
+make voice-release DRY=1
+```
+
+It refuses unless the audio store sits at the pinned commit with nothing uncommitted (`make voice-sync` first).
 
 ### What it does
 
@@ -109,7 +120,7 @@ When nothing changed since the last voice release, it says so and stops. `CF_ONL
 
 ### Adding a pack
 
-When a pack nears the cap (the build marks it past 315 MB), split its band: a new row in `pipeline/voice-packs.toml`, a new CurseForge project with its id, then `make voice-release`. The entry's set of packs changed, so a new entry file goes up naming the new pack, and players who have the entry get it on their next update.
+When a pack nears the cap (the build marks it past 315 MB), split its band: a new row in `pipeline/voice-packs.toml`, a new CurseForge project with its id, then a release. A new project is accepted as a dependency only once CurseForge has approved it, and it is reviewed only after its first file: upload that file with `make voice-release CF_ONLY=1 ONLY=<its folder>`, wait for approval, then release. The entry's set of packs changed, so the next release uploads a new entry file naming the new pack, and players who have the entry get it on their next update.
 
 ## Numbers
 

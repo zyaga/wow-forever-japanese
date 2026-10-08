@@ -68,9 +68,10 @@ def test_only_the_release_job_can_write(root):
     for name, text in _workflows(root).items():
         writes = re.findall(r"(?m)^ +[\w-]+: write\b.*$", text)
         if name == "release.yml":
-            release_job = _block(text, "release", 2)
-            assert writes == [w for w in re.findall(r"(?m)^ +[\w-]+: write\b.*$", release_job)], name
-            assert [w.split("#")[0].strip() for w in writes] == ["contents: write"]
+            # the addon release (commit, tag, GitHub release) and the voice release (its GitHub release)
+            jobs = [_block(text, "release", 2), _block(text, "voice", 2)]
+            assert writes == [w for job in jobs for w in re.findall(r"(?m)^ +[\w-]+: write\b.*$", job)], name
+            assert [w.split("#")[0].strip() for w in writes] == ["contents: write", "contents: write"]
         elif name in ("report-check.yml", "collector-check.yml"):
             # the fix-report check (ADR-045) and the collector-send check (ADR-056) comment on and label the
             # issue they read; their one job may write issues, and nothing else
@@ -162,9 +163,11 @@ def test_the_curseforge_token_reaches_the_publish_step_only(root):
             assert "CF_API_KEY" not in text, name
     text = _workflows(root)["release.yml"]
     uses = re.findall(r"secrets\.CF_API_KEY[^}]*}}", text)
-    assert uses == ["secrets.CF_API_KEY != '' }}", "secrets.CF_API_KEY }}"]
+    assert uses == ["secrets.CF_API_KEY != '' }}", "secrets.CF_API_KEY }}", "secrets.CF_API_KEY }}"]
     _, publish = _step_named(_block(text, "release", 2), "Publish to CurseForge and GitHub")
     assert "CF_API_KEY: ${{ secrets.CF_API_KEY }}" in publish
+    _, voice = _step_named(_block(text, "voice", 2), "Release the changed voice packs")
+    assert "CF_API_KEY: ${{ secrets.CF_API_KEY }}" in voice
     assert "CF_TOKEN_SET: ${{ secrets.CF_API_KEY != '' }}" in _block(text, "plan", 2)
 
 
@@ -194,12 +197,39 @@ def test_release_runs_one_at_a_time(release):
     assert "concurrency:\n  group: release\n  cancel-in-progress: false\n" in release
 
 
-def test_release_jobs_plan_then_validate_then_release(release):
+def test_release_jobs_plan_then_validate_then_release_then_voice(release):
     jobs = _block(release, "jobs")
-    assert _keys(jobs, 2) == ["plan", "validate", "release"]
+    assert _keys(jobs, 2) == ["plan", "validate", "release", "voice"]
     validate = _block(release, "validate", 2)
     assert "uses: ./.github/workflows/pr.yml\n" in validate and "needs: plan\n" in validate
-    assert "needs: [plan, validate]\n" in _block(release, "release", 2)
+    addon = _block(release, "release", 2)
+    assert "needs: [plan, validate]\n" in addon
+    assert "if: needs.plan.outputs.addon == 'true'\n" in addon  # nothing under Unreleased: no addon release
+    assert "wfj release next-version --allow-empty" in _block(release, "plan", 2)
+    voice = _block(release, "voice", 2)
+    assert "needs: [plan, validate, release]\n" in voice
+    # after the checks pass, and after the addon or when there was none; never when the addon release failed
+    assert ("if: always() && needs.plan.result == 'success' && needs.validate.result == 'success' && "
+            "(needs.release.result == 'success' || needs.release.result == 'skipped')\n") in voice
+
+
+def test_the_voice_job_builds_from_the_pinned_audio_with_a_read_only_key(root, release):
+    voice = _block(release, "voice", 2)
+    _, pin = _step_named(voice, "The audio commit the text pins")
+    assert "pipeline/voice-audio-commit.txt" in pin
+    i, audio = _step_named(voice, "Check out the pinned audio")
+    assert "repository: zyaga/wow-forever-japanese-voice" in audio and "ref: ${{ steps.pin.outputs.sha }}" in audio
+    assert "path: build/voice" in audio and "persist-credentials: false" in audio
+    assert "persist-credentials: false" in _steps(voice)[0]
+    # the deploy key reaches the audio checkout alone
+    assert re.findall(r"secrets\.VOICE_REPO_KEY[^}]*}}", release) == ["secrets.VOICE_REPO_KEY }}"]
+    assert "ssh-key: ${{ secrets.VOICE_REPO_KEY }}" in audio
+    for name, text in _workflows(root).items():
+        if name != "release.yml":
+            assert "VOICE_REPO_KEY" not in text, name
+    j, run = _step_named(voice, "Release the changed voice packs")
+    assert j > i and "run: wfj voice release --store ../build/voice" in run
+    assert "GH_TOKEN: ${{ github.token }}" in run
 
 
 def test_release_refuses_before_anything_else(release):

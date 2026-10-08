@@ -499,6 +499,11 @@ def test_store_sync_commits_pushes_and_pins(tmp_path):
         vs.check_pin(store, pin)
     with pytest.raises(ValueError, match="not a checkout"):
         voice_store.sync(tmp_path / "plain", pin, "x")
+    # the Release workflow checks the pinned commit out detached, as a fresh clone: that passes the check
+    ci = tmp_path / "ci"
+    _git(tmp_path, "clone", "-q", str(remote), str(ci))
+    _git(ci, "checkout", "-q", "--detach", sha)
+    vs.check_pin(ci, pin)
 
 
 def test_the_pin_is_one_full_commit(tmp_path):

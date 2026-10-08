@@ -244,7 +244,7 @@ def repo(tmp_path, monkeypatch):
 
 def test_cli_next_version_changelog_and_resume(repo, capsys):
     assert release.run(["next-version"]) == 0
-    assert capsys.readouterr().out == "version=0.1.0-alpha.1\nresume=false\n"
+    assert capsys.readouterr().out == "version=0.1.0-alpha.1\nresume=false\naddon=true\n"
     assert release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "notes.md"]) == 0
     assert (repo / "notes.md").read_text(encoding="utf-8").startswith("## 0.1.0-alpha.1 - 2026-10-01\n")
     _git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
@@ -252,12 +252,29 @@ def test_cli_next_version_changelog_and_resume(repo, capsys):
     capsys.readouterr()
     # a re-run of that release (its publish failed): HEAD carries the tag → resume, even with Unreleased empty
     assert release.run(["next-version", "--version", "0.1.0-alpha.1"]) == 0
-    assert capsys.readouterr().out == "version=0.1.0-alpha.1\nresume=true\n"
+    assert capsys.readouterr().out == "version=0.1.0-alpha.1\nresume=true\naddon=true\n"
     assert release.run(["notes", "--version", "0.1.0-alpha.1", "--notes", "again.md"]) == 0
     assert (repo / "again.md").read_text(encoding="utf-8") == (repo / "notes.md").read_text(encoding="utf-8")
     # without the version, a released HEAD points at resuming
     assert release.run(["next-version"]) == 1
     assert "HEAD is already released as v0.1.0-alpha.1" in capsys.readouterr().err
+
+
+def test_cli_allow_empty_means_no_addon_release(repo, capsys):
+    """The Release workflow passes --allow-empty: with nothing under Unreleased it releases only the voice packs
+    that changed, even on a HEAD that is already released."""
+    release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "n.md"])
+    _git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
+    _git(repo, "tag", "-a", "v0.1.0-alpha.1", "-m", "r")
+    capsys.readouterr()
+    assert release.run(["next-version", "--allow-empty"]) == 0
+    assert capsys.readouterr().out == "version=\nresume=false\naddon=false\n"
+    # a line under Unreleased: an addon release as before
+    text = (repo / "CHANGELOG.md").read_text(encoding="utf-8")
+    (repo / "CHANGELOG.md").write_text(text.replace("## Unreleased\n", "## Unreleased\n\n### Fixed\n- A fix.\n", 1))
+    _git(repo, "commit", "-qam", "fix")
+    assert release.run(["next-version", "--allow-empty"]) == 0
+    assert capsys.readouterr().out == "version=0.1.0-alpha.2\nresume=false\naddon=true\n"
 
 
 def test_cli_empty_version_on_a_released_head_points_at_resume(repo, capsys):

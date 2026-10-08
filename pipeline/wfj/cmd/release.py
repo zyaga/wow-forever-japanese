@@ -1,7 +1,9 @@
 """wfj release: the changelog and version side of a release (docs/operations/release.md).
 
-  wfj release next-version [--version X.Y.Z]
-      Print `version=<X.Y.Z>` and `resume=<true|false>` (lines a workflow can append to $GITHUB_OUTPUT).
+  wfj release next-version [--version X.Y.Z] [--allow-empty]
+      Print `version=<X.Y.Z>`, `resume=<true|false>` and `addon=true` (lines a workflow can append to
+      $GITHUB_OUTPUT). With --allow-empty, an empty `## Unreleased` prints `version=`, `resume=false` and
+      `addon=false` instead of failing: the release then publishes only the voice packs that changed.
       Without --version the version follows the rule in docs/operations/release.md; with it, that
       version is checked and used.
       resume=true when HEAD is already tagged v<version>: a release whose publish step failed is re-run.
@@ -312,6 +314,7 @@ def run(argv: Sequence[str]) -> int:
     sub = p.add_subparsers(dest="action", required=True)
     nv = sub.add_parser("next-version", help="print the next version (and whether this is a resumed release)")
     nv.add_argument("--version", help="use this version instead of the rule's")
+    nv.add_argument("--allow-empty", action="store_true", help="an empty Unreleased means no addon release")
     cl = sub.add_parser("changelog", help="move Unreleased under a version and write its notes")
     cl.add_argument("--version", required=True)
     cl.add_argument("--date", required=True)
@@ -330,7 +333,10 @@ def run(argv: Sequence[str]) -> int:
             if a.version and f"v{a.version}" in on_head:
                 if log.find(a.version) is None:
                     raise ReleaseError(f"v{a.version} is on HEAD but {CHANGELOG} has no section for it")
-                print(f"version={a.version}\nresume=true")
+                print(f"version={a.version}\nresume=true\naddon=true")
+                return 0
+            if a.allow_empty and not a.version and not lint(log) and not log.unreleased.entries():
+                print("version=\nresume=false\naddon=false")
                 return 0
             if on_head and not a.version:
                 raise ReleaseError(
@@ -345,7 +351,7 @@ def run(argv: Sequence[str]) -> int:
                 if problems:
                     raise ReleaseError("; ".join(problems))
             version = next_version(log, tags, a.version)
-            print(f"version={version}\nresume=false")
+            print(f"version={version}\nresume=false\naddon=true")
         elif a.action == "changelog":
             version_key(a.version)
             if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", a.date):
