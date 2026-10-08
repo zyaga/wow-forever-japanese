@@ -4,7 +4,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Voice.lua",
   "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
   "Core/Collector.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua", "UI/Font.lua", "UI/Render.lua",
-  "UI/VoicePlayer.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/QuestFrame.lua" }
+  "Core/VoiceQueue.lua", "UI/VoicePlayer.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/QuestFrame.lua" }
 
 local DATA = {
   ["quest.title"] = { [2] = { ja = "Sharptalonの鉤爪", status = "." }, [3] = { ja = "別のクエスト", status = "." } },
@@ -188,7 +188,9 @@ describe("Core/Voice: the pack registry and the decision", function()
   end)
 end)
 
-describe("UI/VoicePlayer: playing the pack's line in the quest window", function()
+-- With the voice panel Off: the player as WFJ-87 ships it (one line at a time, stopped by the reveal key and the
+-- window closing). voice_panel_spec.lua covers it with the panel on.
+describe("UI/VoicePlayer: playing the pack's line in the quest window (voice panel Off)", function()
   local WFJ, S, db, sounds, stopped, timers, cvars, willPlay
 
   local function setQuest(id)
@@ -231,6 +233,8 @@ describe("UI/VoicePlayer: playing the pack's line in the quest window", function
     S = WFJ.Settings
     WFJ.Compat.init(function(name) return _G[name] end)
     db = S.load(nil, 1, {})
+    WFJ.VoiceQueue.init(db)
+    S.set("voice.panel.size", "off")
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
@@ -512,7 +516,7 @@ describe("voice settings: shown only with a pack", function()
       end
       return n
     end
-    assert.are.equal(9, hiddenVoice())
+    assert.are.equal(18, hiddenVoice()) -- the nine voice settings and the voice panel's nine
     WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = {} })
     assert.are.equal(0, hiddenVoice())
     assert.is_true(WFJ.Settings.get("voice.enabled")) -- on by default
