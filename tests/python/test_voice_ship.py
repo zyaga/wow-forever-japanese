@@ -190,7 +190,8 @@ def _project(tmp_path, engine):  # noqa: F811
 def _args(tmp_path, store, cfg, table, **over):
     a = argparse.Namespace(config=str(cfg), packs=str(table), store=str(store), out=str(tmp_path / "out"),
                            wdb=None, vmangos=None, players=None, dry_run=True, curseforge_only=False,
-                           only=None, entry_without_packs=False)
+                           only=None, entry_without_packs=False,
+                           levels="", pin="")
     vars(a).update(over)
     return a
 
@@ -198,7 +199,7 @@ def _args(tmp_path, store, cfg, table, **over):
 def test_pack_writes_the_entry_and_every_pack(tmp_path, engine, monkeypatch):  # noqa: F811
     data, store, cfg = _project(tmp_path, engine)
     monkeypatch.chdir(tmp_path)
-    monkeypatch.setattr(vs, "quest_levels", lambda *_: {456: 5})
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
     table = _table_file(tmp_path)
     assert vs.run_pack(_args(tmp_path, store, cfg, table)) == 0
     out = tmp_path / "out"
@@ -236,7 +237,7 @@ def test_pack_writes_the_entry_and_every_pack(tmp_path, engine, monkeypatch):  #
 def test_a_pack_over_the_cap_is_refused_and_nothing_is_written(tmp_path, engine, monkeypatch, capsys):  # noqa: F811
     data, store, cfg = _project(tmp_path, engine)
     monkeypatch.chdir(tmp_path)
-    monkeypatch.setattr(vs, "quest_levels", lambda *_: {456: 5})
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
     monkeypatch.setattr(vp, "MB", 1)  # count bytes as MB: the test's files are a few bytes
     table = _table_file(tmp_path, cap_mb=20, warn_mb=10)
     assert vs.run_pack(_args(tmp_path, store, cfg, table)) == 1
@@ -327,7 +328,7 @@ def test_release_type_tags_and_the_last_voice_release():
 def test_a_dry_run_builds_checks_and_uploads_nothing(tmp_path, engine, monkeypatch, capsys):  # noqa: F811
     data, store, cfg = _project(tmp_path, engine)
     monkeypatch.chdir(tmp_path)
-    monkeypatch.setattr(vs, "quest_levels", lambda *_: {456: 5})
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
     monkeypatch.delenv("CF_API_KEY", raising=False)
     calls = []
     gh = _gh(calls, [{"tagName": "v0.1.0-alpha.8", "createdAt": "2026-10-05T00:00:00Z"}], [])
@@ -348,7 +349,7 @@ def test_a_dry_run_builds_checks_and_uploads_nothing(tmp_path, engine, monkeypat
 def test_a_real_release_without_a_token_stops_before_uploading(tmp_path, engine, monkeypatch, capsys):  # noqa: F811
     data, store, cfg = _project(tmp_path, engine)
     monkeypatch.chdir(tmp_path)
-    monkeypatch.setattr(vs, "quest_levels", lambda *_: {456: 5})
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
     monkeypatch.delenv("CF_API_KEY", raising=False)
     calls = []
     gh = _gh(calls, [{"tagName": "v0.1.0-alpha.8", "createdAt": "2026-10-05T00:00:00Z"}], [])
@@ -417,7 +418,7 @@ def test_the_about_page_links_the_voice_entry_of_the_table():
 def test_curseforge_only_makes_no_github_release(tmp_path, engine, monkeypatch, capsys):  # noqa: F811
     data, store, cfg = _project(tmp_path, engine)
     monkeypatch.chdir(tmp_path)
-    monkeypatch.setattr(vs, "quest_levels", lambda *_: {456: 5})
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
     monkeypatch.setenv("CF_API_KEY", "t")
     monkeypatch.setattr(vs.curseforge, "game_versions", lambda token: [
         {"id": 2, "gameVersionTypeID": 88568, "name": "1.60.1"}])
@@ -437,7 +438,7 @@ def test_curseforge_only_makes_no_github_release(tmp_path, engine, monkeypatch, 
 def test_the_entry_alone_requiring_only_the_main_addon(tmp_path, engine, monkeypatch, capsys):  # noqa: F811
     data, store, cfg = _project(tmp_path, engine)
     monkeypatch.chdir(tmp_path)
-    monkeypatch.setattr(vs, "quest_levels", lambda *_: {456: 5})
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
     monkeypatch.setenv("CF_API_KEY", "t")
     monkeypatch.setattr(vs.curseforge, "game_versions", lambda token: [
         {"id": 2, "gameVersionTypeID": 88568, "name": "1.60.1"}])
@@ -452,3 +453,61 @@ def test_the_entry_alone_requiring_only_the_main_addon(tmp_path, engine, monkeyp
     bad = _args(tmp_path, store, cfg, _table_file(tmp_path), only="WoWForeverJapanese_VoiceZ")
     with pytest.raises(ValueError, match="no such folder"):
         vs.run_release(bad, run=gh)
+
+
+# ---- the audio store and the pin --------------------------------------------------------------------------
+
+
+def test_the_level_table_round_trips_and_refuses_junk(tmp_path):
+    from wfj.cmd import voice_store
+
+    p = tmp_path / "levels.txt"
+    p.write_text(voice_store.levels_text({20: 12, 3: 5}), encoding="utf-8")
+    assert p.read_text().splitlines()[-2:] == ["3 5", "20 12"]  # sorted by quest id
+    assert voice_store.read_levels(p) == {3: 5, 20: 12}
+    p.write_text("3 five\n", encoding="utf-8")
+    with pytest.raises(ValueError, match="quest id"):
+        voice_store.read_levels(p)
+
+
+def _git(cwd, *args):
+    return subprocess.run(["git", "-C", str(cwd), *args], capture_output=True, text=True, check=True).stdout
+
+
+def test_store_sync_commits_pushes_and_pins(tmp_path):
+    from wfj.cmd import voice_store
+
+    remote, store, pin = tmp_path / "remote.git", tmp_path / "store", tmp_path / "pin.txt"
+    _git(tmp_path, "init", "-q", "--bare", str(remote))
+    _git(tmp_path, "init", "-q", "-b", "main", str(store))
+    _git(store, "config", "user.name", "Zyaga")
+    _git(store, "config", "user.email", "zyaga@users.noreply.github.com")
+    _git(store, "remote", "add", "origin", str(remote))
+    (store / "1-description.mp3").write_bytes(b"a")
+    sha = voice_store.sync(store, pin, "Voice audio for the text at abc1234")
+    assert voice_store.read_pin(pin) == sha == _git(remote, "rev-parse", "main").strip()  # pushed
+    assert _git(store, "log", "-1", "--format=%s").strip() == "Voice audio for the text at abc1234"
+    assert voice_store.sync(store, pin, "again") == sha  # nothing new: no empty commit
+    vs.check_pin(store, pin)  # in step
+    (store / "1-description.mp3").write_bytes(b"b")  # a remade file, not synced yet
+    with pytest.raises(ValueError, match="uncommitted"):
+        vs.check_pin(store, pin)
+    newer = voice_store.sync(store, pin, "remade")
+    assert newer != sha
+    pin.write_text(voice_store.PIN_HEAD + sha + "\n")  # the text still pins the older audio
+    with pytest.raises(ValueError, match="the text pins"):
+        vs.check_pin(store, pin)
+    with pytest.raises(ValueError, match="not a checkout"):
+        voice_store.sync(tmp_path / "plain", pin, "x")
+
+
+def test_the_pin_is_one_full_commit(tmp_path):
+    from wfj.cmd import voice_store
+
+    p = tmp_path / "pin.txt"
+    p.write_text("# note\n" + "a" * 40 + "\n")
+    assert voice_store.read_pin(p) == "a" * 40
+    for bad in ("abc\n", "a" * 40 + "\n" + "b" * 40 + "\n", "Z" * 40 + "\n"):
+        p.write_text(bad)
+        with pytest.raises(ValueError, match="full commit"):
+            voice_store.read_pin(p)

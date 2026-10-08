@@ -33,7 +33,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from wfj.cmd import voice_make
+from wfj.cmd import voice_make, voice_store
 from wfj.core import voice_packs as vp
 from wfj.core.voice_packs import Project, Table
 from wfj.emit import voice_pack
@@ -329,9 +329,10 @@ def _inputs(a: argparse.Namespace) -> tuple[Path, dict[str, Any], Table, dict[in
     root = data_root()
     cfg = voice_make.load_config(Path(a.config))
     table = vp.load(Path(a.packs))
-    levels = quest_levels(Path(a.wdb) if a.wdb else None, Path(a.vmangos) if a.vmangos else None)
-    if not levels:
-        print("voice pack: no quest levels (--wdb, --vmangos): every quest line goes to the last pack")
+    if a.wdb or a.vmangos:
+        levels = quest_levels(Path(a.wdb) if a.wdb else None, Path(a.vmangos) if a.vmangos else None)
+    else:  # the committed table: the client files are only on the maintainer's computer
+        levels = voice_store.read_levels(Path(a.levels))
     return root, cfg, table, levels, interface_of(root)
 
 
@@ -416,8 +417,23 @@ def _only(plan: Plan, table: Table, only: str | None) -> None:
     print(f"voice release: only {', '.join(sorted(keep))}")
 
 
+def check_pin(store: Path, pin: Path) -> None:
+    """A release ships exactly the audio commit the text pins: the store sits at it, nothing uncommitted."""
+    want = voice_store.read_pin(pin)
+    git = ["git", "-C", str(store)]
+    head = subprocess.run([*git, "rev-parse", "HEAD"], capture_output=True, text=True, check=False)
+    head = head.stdout.strip()
+    if head != want:
+        raise ValueError(f"the audio store is at {head[:12] or 'no commit'}, the text pins {want[:12]}: "
+                         "run `make voice-sync`, or check out the pinned commit in the store")
+    if subprocess.run([*git, "status", "--porcelain"], capture_output=True, text=True, check=True).stdout:
+        raise ValueError("the audio store has uncommitted files: run `make voice-sync` first")
+
+
 def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     day = datetime.date.today()
+    if a.pin:
+        check_pin(voice_make.store_dir(a.store), Path(a.pin))
     rows = releases(run)
     tag_before, previous = last_voice(rows, run)
     rtype = release_type(rows)
@@ -506,6 +522,8 @@ def run(argv: Sequence[str]) -> int:
         sp.add_argument("--packs", default="voice-packs.toml")
         sp.add_argument("--store")
         sp.add_argument("--out", default="../build/voice-pack")
+        sp.add_argument("--levels", default=voice_store.LEVELS, help="the committed quest level table")
+        sp.add_argument("--pin", default=voice_store.PIN, help="the audio commit the text pins (release)")
         sp.add_argument("--wdb", help="the pinned Forever quest cache: each quest's level")
         sp.add_argument("--vmangos", help="the VMaNGOS database: levels of quests the cache has not answered")
         sp.add_argument("--players", default="all", help="the character's error lines: race-sex list or all")

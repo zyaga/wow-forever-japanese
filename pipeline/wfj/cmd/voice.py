@@ -237,6 +237,10 @@ def run(argv: Sequence[str]) -> int:
         from wfj.cmd import voice_make
 
         return voice_make.run(argv)
+    if verb and verb[0] in ("levels", "store-sync"):
+        from wfj.cmd import voice_store
+
+        return voice_store.run(argv)
     if verb and verb[0] in ("pack", "release"):
         from wfj.cmd import voice_ship
 
