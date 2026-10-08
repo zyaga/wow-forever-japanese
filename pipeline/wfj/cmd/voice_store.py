@@ -67,6 +67,11 @@ def sync(store: Path, pin: Path, message: str) -> str:
     """Commits what changed in the store, pushes, writes the pin. → the commit."""
     if not (store / ".git").exists():
         raise ValueError(f"{store} is not a checkout of the voice audio repository (see the voice runbook)")
+    on_branch = subprocess.run(["git", "-C", str(store), "symbolic-ref", "-q", "HEAD"], capture_output=True,
+                               check=False)
+    if on_branch.returncode:
+        raise ValueError(f"the audio store is not on a branch (it sits at one commit): run `git -C {store} "
+                         "switch main`, then sync again")
     if _git(store, "status", "--porcelain"):
         _git(store, "add", "-A")
         _git(store, "commit", "-q", "-m", message)

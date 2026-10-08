@@ -232,6 +232,17 @@ def test_the_voice_job_builds_from_the_pinned_audio_with_a_read_only_key(root, r
     assert "GH_TOKEN: ${{ github.token }}" in run
 
 
+def test_the_voice_job_skips_when_no_voice_input_changed(release):
+    """An addon-only release neither checks out the audio nor needs the deploy key."""
+    voice = _block(release, "voice", 2)
+    k, inputs = _step_named(voice, "Did the voice inputs change")
+    assert "run: wfj voice inputs" in inputs and "$GITHUB_OUTPUT" in inputs
+    assert "secrets." not in inputs
+    for name in ("The audio commit the text pins", "Check out the pinned audio", "Release the changed voice packs"):
+        i, step = _step_named(voice, name)
+        assert i > k and "if: steps.inputs.outputs.changed == 'true'" in step, name
+
+
 def test_release_refuses_before_anything_else(release):
     plan = _steps(_block(release, "plan", 2))
     assert "if: github.ref != 'refs/heads/main'" in plan[0] and "exit 1" in plan[0]

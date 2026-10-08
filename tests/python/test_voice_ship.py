@@ -450,9 +450,13 @@ def test_the_entry_alone_requiring_only_the_main_addon(tmp_path, engine, monkeyp
     assert vs.run_release(args, run=gh) == 0
     assert [pid for pid, _ in uploads] == [1]  # the entry's project only
     assert uploads[0][1]["relations"]["projects"] == [{"slug": "main", "type": "requiredDependency"}]
-    bad = _args(tmp_path, store, cfg, _table_file(tmp_path), only="WoWForeverJapanese_VoiceZ")
+    bad = _args(tmp_path, store, cfg, _table_file(tmp_path), only="WoWForeverJapanese_VoiceZ", curseforge_only=True)
     with pytest.raises(ValueError, match="no such folder"):
         vs.run_release(bad, run=gh)
+    # without --curseforge-only the GitHub release would record packs that were never uploaded
+    partial = _args(tmp_path, store, cfg, _table_file(tmp_path), only="WoWForeverJapanese_Voice")
+    with pytest.raises(ValueError, match="use it with --curseforge-only"):
+        vs.run_release(partial, run=gh)
 
 
 # ---- the audio store and the pin --------------------------------------------------------------------------
@@ -560,8 +564,8 @@ def test_the_entry_goes_up_without_packs_still_in_review(tmp_path, engine, monke
     assert uploads == [(2, []), (3, []), (1, ["main", "a", "o"]), (1, ["main", "a"])]
     assert "does not accept o as a dependency yet" in capsys.readouterr().out
     # the GitHub release names the entry by what it really requires, so the next release tries the full list
-    create = next(c for c in calls if c[:2] == ["release", "create"])
-    entry = next(Path(x).name for x in create if Path(x).name.startswith("WoWForeverJapanese_Voice-2"))
+    recorded = [Path(x).name for c in calls if c[:2] == ["release", "upload"] for x in c[3:]]
+    entry = next(n for n in recorded if n.startswith("WoWForeverJapanese_Voice-2"))
     full = vp.version(datetime.date.today(), vp.entry_hash(vs.required(vp.parse(_raw())), "16001"))
     assert entry != vp.asset_name("WoWForeverJapanese_Voice", full)
 
@@ -582,3 +586,162 @@ def test_a_refused_main_addon_or_another_error_still_stops_the_release(tmp_path)
                 vs.upload_entry(pr, tmp_path / "e.zip", lambda req: {"r": req}, ["main", "a"], "t", "main")
         finally:
             cf.upload = old
+
+
+# ---- a release that fails partway, and the voice job's skip ----------------------------------------------
+
+
+def _release_env(tmp_path, engine, monkeypatch):  # noqa: F811
+    data, store, cfg = _project(tmp_path, engine)
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
+    monkeypatch.setattr(vs, "inputs_fingerprint", lambda repo: "f" * 64)
+    monkeypatch.setenv("CF_API_KEY", "t")
+    monkeypatch.setattr(vs.curseforge, "game_versions", lambda token: [
+        {"id": 2, "gameVersionTypeID": 88568, "name": "1.60.1"}])
+    return store, cfg
+
+
+class FakeGitHub:
+    """`gh` with releases (drafts too) and their assets, enough for a voice release."""
+
+    def __init__(self):
+        self.rel = {"v0.1.0-alpha.8": {"draft": False, "assets": [], "at": "2026-10-05T00:00:00Z"}}
+        self.calls = []
+
+    def __call__(self, args):
+        self.calls.append(list(args))
+        verb, rest = args[1], list(args[2:])
+        if verb == "list":
+            return json.dumps([{"tagName": t, "createdAt": r["at"], "isDraft": r["draft"]}
+                               for t, r in self.rel.items()])
+        if verb == "view":
+            return json.dumps({"assets": [{"name": n} for n in self.rel[rest[0]]["assets"]]})
+        if verb == "create":
+            self.rel[rest[0]] = {"draft": "--draft" in rest, "assets": [], "at": "2026-10-08T00:00:00Z"}
+        elif verb == "upload":
+            names = [Path(x).name for x in rest[1:] if not x.startswith("--")]
+            a = self.rel[rest[0]]["assets"]
+            a[:] = [n for n in a if n not in names] + names
+        elif verb == "delete-asset":
+            self.rel[rest[0]]["assets"].remove(rest[1])
+        elif verb == "edit" and "--draft=false" in rest:
+            self.rel[rest[0]]["draft"] = False
+        return ""
+
+
+def test_a_release_that_fails_partway_resumes_and_uploads_nothing_twice(tmp_path, engine, monkeypatch):  # noqa: F811
+    store, cfg = _release_env(tmp_path, engine, monkeypatch)
+    gh, uploads, fail = FakeGitHub(), [], {"at": 3}
+
+    def upload(pid, path, meta, token):
+        if pid == fail["at"]:
+            raise curseforge.CurseForgeError("HTTP 503")
+        uploads.append(pid)
+        return 9
+
+    monkeypatch.setattr(vs.curseforge, "upload", upload)
+    args = _args(tmp_path, store, cfg, _table_file(tmp_path), dry_run=False)
+    with pytest.raises(curseforge.CurseForgeError):
+        vs.run_release(args, run=gh)  # pack A went up, Other failed: a draft records A
+    draft = next(t for t, r in gh.rel.items() if r["draft"])
+    assert uploads == [2] and any(n.startswith("WoWForeverJapanese_VoiceA-") for n in gh.rel[draft]["assets"])
+    fail["at"] = None
+    assert vs.run_release(args, run=gh) == 0  # the re-run resumes the draft and skips A
+    assert uploads == [2, 3, 1]
+    assert not gh.rel[draft]["draft"] and sum(1 for t in gh.rel if t.startswith("voice-v")) == 1
+    names = gh.rel[draft]["assets"]
+    assert len([n for n in names if n.startswith("WoWForeverJapanese_VoiceA-")]) == 1
+    assert vp.released_inputs(names) == "f" * 16 and any("-all-" in n for n in names)
+    uploads.clear()
+    assert vs.run_release(args, run=gh) == 0  # nothing changed since: nothing goes up
+    assert uploads == []
+
+
+def test_a_partial_entry_is_tried_in_full_on_the_next_release(tmp_path, engine, monkeypatch):  # noqa: F811
+    store, cfg = _release_env(tmp_path, engine, monkeypatch)
+    gh, uploads = FakeGitHub(), []
+    monkeypatch.setattr(vs.curseforge, "upload", lambda pid, path, meta, token: uploads.append(
+        (pid, [r["slug"] for r in meta.get("relations", {}).get("projects", [])])) or 9)
+    args = _args(tmp_path, store, cfg, _table_file(tmp_path), dry_run=False, entry_without_packs=True)
+    assert vs.run_release(args, run=gh) == 0
+    assert uploads[-1] == (1, ["main"])
+    uploads.clear()
+    assert vs.run_release(_args(tmp_path, store, cfg, _table_file(tmp_path), dry_run=False), run=gh) == 0
+    assert uploads == [(1, ["main", "a", "o"])]  # only the entry, now naming every pack
+
+
+def test_a_pack_released_before_its_project_existed_goes_up_once_it_has_one(tmp_path, engine, monkeypatch):  # noqa: F811
+    store, cfg = _release_env(tmp_path, engine, monkeypatch)
+    gh, uploads = FakeGitHub(), []
+    monkeypatch.setattr(vs.curseforge, "upload", lambda pid, path, meta, token: uploads.append(pid) or 9)
+    assert vs.run_release(_args(tmp_path, store, cfg, _table_file(tmp_path), dry_run=False), run=gh) == 0
+    assert 0 not in uploads  # B has no project yet
+    raw = _raw()
+    raw["pack"][1]["project_id"] = 9
+    uploads.clear()
+    table = _table_file(tmp_path, pack=raw["pack"])
+    assert vs.run_release(_args(tmp_path, store, cfg, table, dry_run=False), run=gh) == 0
+    assert 9 in uploads
+
+
+def test_the_voice_job_runs_only_when_the_voice_inputs_changed(monkeypatch, capsys):
+    gh = FakeGitHub()
+    monkeypatch.setattr(vs, "inputs_fingerprint", lambda repo: "a" * 64)
+    assert vs.run_inputs(gh) == 0 and capsys.readouterr().out == "changed=true\n"  # no voice release yet
+    gh.rel["voice-v2026.10.08"] = {"draft": False, "at": "2026-10-08T00:00:00Z",
+                                   "assets": [vp.inputs_asset("a" * 64)]}
+    assert vs.run_inputs(gh) == 0 and capsys.readouterr().out == "changed=false\n"
+    monkeypatch.setattr(vs, "inputs_fingerprint", lambda repo: "b" * 64)
+    assert vs.run_inputs(gh) == 0 and capsys.readouterr().out == "changed=true\n"
+
+
+def test_the_inputs_fingerprint_follows_the_committed_tree(tmp_path):
+    repo = tmp_path / "r"
+    _git(tmp_path, "init", "-q", "-b", "main", str(repo))
+    _git(repo, "config", "user.name", "Zyaga")
+    _git(repo, "config", "user.email", "zyaga@users.noreply.github.com")
+    (repo / "pipeline").mkdir()
+    (repo / "pipeline" / "voice-packs.toml").write_text("a")
+    _git(repo, "add", "-A")
+    _git(repo, "commit", "-q", "-m", "a")
+    first = vs.inputs_fingerprint(repo)
+    (repo / "README.md").write_text("not an input")
+    _git(repo, "add", "-A")
+    _git(repo, "commit", "-q", "-m", "b")
+    assert vs.inputs_fingerprint(repo) == first
+    (repo / "pipeline" / "voice-packs.toml").write_text("b")
+    _git(repo, "commit", "-q", "-am", "c")
+    assert vs.inputs_fingerprint(repo) != first
+
+
+def test_store_sync_refuses_a_store_off_its_branch(tmp_path):
+    from wfj.cmd import voice_store
+
+    remote, store, pin = tmp_path / "remote.git", tmp_path / "store", tmp_path / "pin.txt"
+    _git(tmp_path, "init", "-q", "--bare", str(remote))
+    _git(tmp_path, "init", "-q", "-b", "main", str(store))
+    _git(store, "config", "user.name", "Zyaga")
+    _git(store, "config", "user.email", "zyaga@users.noreply.github.com")
+    _git(store, "remote", "add", "origin", str(remote))
+    (store / "a.mp3").write_bytes(b"a")
+    sha = voice_store.sync(store, pin, "a")
+    _git(store, "checkout", "-q", sha)  # detached, as check_pin's pinned checkout leaves it
+    (store / "b.mp3").write_bytes(b"b")
+    with pytest.raises(ValueError, match="not on a branch"):
+        voice_store.sync(store, pin, "b")
+    assert _git(store, "rev-parse", "HEAD").strip() == sha  # nothing committed
+
+
+def test_a_variant_missing_from_the_audio_record_is_named(tmp_path, engine, monkeypatch):  # noqa: F811
+    store, cfg = _release_env(tmp_path, engine, monkeypatch)
+    real, reads = vs.voice_make.audio_record, []
+
+    def audio_record(root):  # the record changes between the pack tables and the split (a run writing it)
+        rec = real(root)
+        reads.append(1)
+        return rec if len(reads) == 1 else {k: v for k, v in rec.items() if k != "456-completion"}
+
+    monkeypatch.setattr(vs.voice_make, "audio_record", audio_record)
+    with pytest.raises(ValueError, match="not in the audio record"):
+        vs.run_pack(_args(tmp_path, store, cfg, _table_file(tmp_path)))

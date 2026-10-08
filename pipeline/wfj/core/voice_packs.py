@@ -162,14 +162,18 @@ def assign(
     return table.other  # books and letters, error lines
 
 
-def content_hash(rows: Iterable[Mapping[str, Any]], register: str, interface: str) -> str:
-    """A pack's content: its files' audio records, its Register.lua and the client interface it is built for.
+def content_hash(
+    rows: Iterable[Mapping[str, Any]], register: str, interface: str, project_id: int = 0
+) -> str:
+    """A pack's content: its files' audio records, its Register.lua, the client interface it is built for and
+    its CurseForge project (a pack released before its project existed counts as changed once it has one).
     The same lines in any order hash the same."""
     h = hashlib.sha256()
     for line in sorted(json.dumps(r, sort_keys=True, ensure_ascii=False) for r in rows):
         h.update(line.encode("utf-8") + b"\n")
     h.update(register.encode("utf-8"))
     h.update(interface.encode("utf-8"))
+    h.update(f"\n{project_id}".encode())
     return h.hexdigest()
 
 
@@ -194,6 +198,18 @@ _ASSET = re.compile(r"^(WoWForeverJapanese_Voice[A-Za-z0-9_]*)-(\d{4}\.\d{2}\.\d
 
 def asset_name(folder: str, ver: str) -> str:
     return f"{folder}-{ver}.zip"
+
+
+_INPUTS = re.compile(r"^voice-inputs-([0-9a-f]{16})\.txt$")
+
+
+def inputs_asset(fingerprint: str) -> str:
+    return f"voice-inputs-{fingerprint[:16]}.txt"
+
+
+def released_inputs(asset_names: Iterable[str]) -> str | None:
+    """The 16-character inputs fingerprint a voice release recorded, if any."""
+    return next((m.group(1) for n in asset_names if (m := _INPUTS.match(n))), None)
 
 
 def released(asset_names: Iterable[str]) -> dict[str, str]:

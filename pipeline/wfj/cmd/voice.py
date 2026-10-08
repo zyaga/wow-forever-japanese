@@ -241,7 +241,7 @@ def run(argv: Sequence[str]) -> int:
         from wfj.cmd import voice_store
 
         return voice_store.run(argv)
-    if verb and verb[0] in ("pack", "release"):
+    if verb and verb[0] in ("pack", "release", "inputs"):
         from wfj.cmd import voice_ship
 
         return voice_ship.run(argv)
