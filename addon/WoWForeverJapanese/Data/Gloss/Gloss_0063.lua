@@ -865,7 +865,6 @@ WFJ.Data.add("gloss", {
   [63862] = "奴\tやつ\tthey",
   [63863] = "奴\tやつ\tthey (critters)",
   [63864] = "奴\tやつ\tthey (more of them)",
-  [63865] = "奴\tやつ\tthey (that one)",
   [63866] = "奴\tやつ\tthey (them)",
   [63867] = "奴\tやつ\tthey (those guys)",
   [63868] = "奴\tやつ\tthey (those ones)",

@@ -608,7 +608,6 @@ WFJ.Data.add("gloss", {
   [81605] = "持ってくる\tもってくる\tplease bring (me)",
   [81606] = "持ってくる\tもってくる\tplease bring (return)",
   [81607] = "持ってくる\tもってくる\tplease bring back",
-  [81608] = "持ってくる\tもってくる\tplease bring me",
   [81609] = "持ってくる\tもってくる\tplease return (bring)",
   [81610] = "持ってくる\tもってくる\tprovide (bring)",
   [81611] = "持ってくる\tもってくる\tprovided for us (brought)",

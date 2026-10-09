@@ -26,6 +26,7 @@ WFJ.Data.add("reading", {
   ["ui:INSPECT_GUILD_FACTION"] = { text = "ギルド=ギルド=32627" },
   ["ui:INSPECT_GUILD_NUM_MEMBERS"] = { text = "ギルド=ギルド=32627 メンバー=メンバー=35207 人=にん=39835" },
   ["ui:INSPECT_REQUIREMENTS"] = { text = "クリック=クリック=32710 条件=じょうけん=89893 表示=ひょうじ=116527" },
+  ["ui:INSPECT_TALENTS"] = { text = "タレント=タレント=33502 見る=みる=119029" },
   ["ui:INSPECT_TALENTS_BUTTON"] = { text = "タレント=タレント=33502" },
   ["ui:INSTANCE"] = { text = "インスタンス=インスタンス=31967" },
   ["ui:INSTANCE_BOOT_TIMER"] = { text = "あなた=あなた=506 この=この=8884 インスタンス=インスタンス=31967 グループ=グループ=32812 入っていません=はいっていません=47305 後=ご=71993 最寄り=もより=88560 墓地=ぼち=61040 テレポートされます=テレポートされます=33725" },

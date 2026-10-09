@@ -430,7 +430,6 @@ WFJ.Data.add("gloss", {
   [47427] = "入る\tはいる\tin (go in)",
   [47428] = "入る\tはいる\tin (port) (had come in)",
   [47429] = "入る\tはいる\tin (put inside)",
-  [47430] = "入る\tはいる\tinside (having entered)",
   [47431] = "入る\tはいる\tinto (after entering)",
   [47432] = "入る\tはいる\tinto (enter)",
   [47433] = "入る\tはいる\tinto (entered)",

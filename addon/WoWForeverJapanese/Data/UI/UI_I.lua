@@ -28,6 +28,7 @@ WFJ.Data.add("ui", {
   ["INSPECT_GUILD_FACTION"] = { "%sのギルド", 0xce4e6e23, "." },
   ["INSPECT_GUILD_NUM_MEMBERS"] = { "ギルドメンバー%d人", 0x84f74a4a, "." },
   ["INSPECT_REQUIREMENTS"] = { "<Ctrl+クリックで条件を表示>", 0xc24ea601, "." },
+  ["INSPECT_TALENTS"] = { "タレントを見る", 0xcb6764bc, "." },
   ["INSPECT_TALENTS_BUTTON"] = { "タレント", 0x0d31e779, "." },
   ["INSTANCE"] = { "インスタンス", 0xb1e81ec9, "." },
   ["INSTANCE_BOOT_TIMER"] = { "あなたはこのインスタンスのグループに入っていません。%d%s後に最寄りの墓地へテレポートされます。", 0x41aaa34a, "." },

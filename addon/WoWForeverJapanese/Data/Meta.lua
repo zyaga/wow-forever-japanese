@@ -2,7 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.meta = {
   schema = 1,
-  english = { collector = "1.60.1.70170+1.60.1.70205+1.60.1.70235+1.60.1.70245", db2 = "1.60.1.69913+1.60.1.70009+1.60.1.70124+1.60.1.70170+1.60.1.70245", ["forever-vo"] = "025070f", pfquest = "7786596", vmangos = "13b49dc", wago = "1.15.9.69722", wdb = "1.15.9.69722+1.60.1.69913+1.60.1.70124+1.60.1.70170+1.60.1.70245" },
-  counts = { quest = 4757, item = 9159, spell = 19977, objective = 389, area = 221, gossip = 10958, book = 1132, ui = 15852, reading = 46654, gloss = 139855 },
+  english = { collector = "1.60.1.70170+1.60.1.70205+1.60.1.70235+1.60.1.70245", db2 = "1.60.1.69913+1.60.1.70009+1.60.1.70124+1.60.1.70170+1.60.1.70245+1.60.1.70291", ["forever-vo"] = "025070f", pfquest = "7786596", vmangos = "13b49dc", wago = "1.15.9.69722", wdb = "1.15.9.69722+1.60.1.69913+1.60.1.70124+1.60.1.70170+1.60.1.70245+1.60.1.70291" },
+  counts = { quest = 4758, item = 9181, spell = 20061, objective = 390, area = 221, gossip = 10959, book = 1132, ui = 15905, reading = 46710, gloss = 139934 },
   fields = { quest = { "title", "objectives", "description", "progress", "completion" }, item = { "description" }, spell = { "description", "aura" }, objective = { "text" }, area = { "text" } },
 }

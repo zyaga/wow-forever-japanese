@@ -128,6 +128,7 @@ WFJ.Data.add("ui", {
   ["DISCORD_SETUP_OAUTH"] = { "OAuthを設定", 0xe24d7866, "." },
   ["DISCORD_USER_WITH_ID"] = { "%sからのDiscordメッセージ", 0x1c240e8a, "." },
   ["DISCORD_VALID_SERVER_CHANNEL_LIST"] = { "サーバー%sのチャンネル:", 0x4f635475, "." },
+  ["DISCORD_VOICE_TTS_STT_UNSUPPORTED"] = { "このチャンネルはDiscordサービスを使用しているため、テキスト読み上げと音声文字起こしには対応していません。これらの機能が必要な場合は、パーティーリーダーにボイスチャットをレガシーサービスに切り替えるよう依頼してください。", 0xfa62395f, "." },
   ["DISHONORABLE_KILLS"] = { "不名誉キル", 0x2b16af23, "." },
   ["DISPELS"] = { "解除", 0x1a8009a9, "." },
   ["DISPEL_AURA_COMBATLOG_TOOLTIP"] = { "オーラが解除されたとき、壊されたとき、奪われたときに表示します。", 0x34385c2c, "." },

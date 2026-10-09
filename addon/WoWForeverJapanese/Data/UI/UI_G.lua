@@ -10,7 +10,7 @@ WFJ.Data.add("ui", {
   ["GAMEPAD_ACTION_BAR_HIGHLIGHT_TOGGLE"] = { "アクションバーのハイライトを表示", 0x66df7c8c, "." },
   ["GAMEPAD_ACTION_BAR_INPUT_PROMPT_TOGGLE"] = { "入力ボタンの表示", 0xea3b9cf2, "." },
   ["GAMEPAD_ACTION_BAR_SCALING_TOGGLE"] = { "アクションバーの拡大を有効にする", 0xe470ac55, "." },
-  ["GAMEPAD_BACK_PEDAL_THRESHOLD"] = { "後退のスティックしきい値", 0xa428f275, "." },
+  ["GAMEPAD_BACK_PEDAL_THRESHOLD"] = { "後退のスティックしきい値", 0xfa713436, "." },
   ["GAMEPAD_BAR_PAGE1_BOTTOM"] = { "ページ1 下バー", 0xa0c7e8d0, "." },
   ["GAMEPAD_BAR_PAGE1_LEFT"] = { "ページ1 左バー", 0x9998eb4f, "." },
   ["GAMEPAD_BAR_PAGE1_RIGHT"] = { "ページ1 右バー", 0xd9f270a7, "." },

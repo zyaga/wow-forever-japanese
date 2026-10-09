@@ -161,7 +161,7 @@ WFJ.Data.add("ui", {
   ["FactionDescription:2740"] = { "世界で最も強大な魔術師たちからなる精鋭集団であり、魔法の国Dalaranを率いる魔導師の統治評議会。", 0x7a314310, "." },
   ["FactionDescription:2747"] = { "Barkskinは堕落に染まっていない数少ないfurbolgの部族の一つで、Hyjalに調和を取り戻すため、霊的な遺産を守ることに身を捧げている。", 0xcc6cd07b, "." },
   ["FactionDescription:2758"] = { "Shadowgale Forestの秘密主義のドルイドたち。Zephras Isleの他のどの勢力とも離れて、独自に活動している。", 0xb676b03d, "." },
-  ["FactionDescription:2765"] = { "Mount Hyjalの守護と保全を託されたCenarion Circleのこの分派は、悪の勢力を押し返そうとする者なら誰でも歓迎する。", 0x34140e4c, "." },
+  ["FactionDescription:2765"] = { "Mount Hyjalの守護と保全を託されたCenarion Circleのこの分派は、悪の勢力を押し返そうとする者なら誰でも歓迎する。", 0x98a4e7bf, "." },
   ["FactionDescription:2778"] = { "Windshapersは、Zephras IsleのSkyborneの民を導くシャーマン的な霊的指導者である。彼らはエレメントを敬い、Skywallにおけるshen'doreiの生き方を守るため、エレメントの次元の本質をより深く理解しようとしている。", 0x79baf3bf, "." },
   ["FactionDescription:2779"] = { "High Orderは、Eldre'ThalasのHighborneの魔導師たちの末裔であるSkyborneである。Skywallの領域で過去10,000年を過ごしたHigh Orderの者たちは、祖先の古き秘術の知識を取り戻そうとしている。", 0xdb7a7bd9, "." },
   ["FactionDescription:2782"] = { "偽りの預言者を裏切ったために追放された、かつてのTwilight's Hammerの一員たち。彼らは自らの道を切り開こうとしている。", 0xb0d166e2, "." },

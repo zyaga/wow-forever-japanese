@@ -206,7 +206,6 @@ WFJ.Data.add("gloss", {
   [48203] = "内\tない\tin (within)",
   [48204] = "内\tない\tin; within",
   [48205] = "内\tない\tinside",
-  [48206] = "内\tない\tinside (inventory)",
   [48207] = "内\tない\twithin",
   [48208] = "内\tない\twithin (inside)",
   [48209] = "内\tない\twithin; on",

@@ -473,7 +473,6 @@ WFJ.Data.add("gloss", {
   [115470] = "虚しい\tむなしい\tfutile (in vain)",
   [115471] = "虚ろ\tうつろ\thollow",
   [115472] = "虚偽\tきょぎ\tfalsehoods",
-  [115473] = "虚勢\tきょせい\tbluster",
   [115474] = "虚勢\tきょせい\tbravado",
   [115475] = "虚勢\tきょせい\tpompous behavior (bluster)",
   [115476] = "虚栄\tきょえい\tvain (vanity)",

@@ -274,7 +274,6 @@ WFJ.Data.add("gloss", {
   [88271] = "書く\tかく\tlabeled (written)",
   [88272] = "書く\tかく\tmade (wrote)",
   [88273] = "書く\tかく\tmade no mention (isn't written)",
-  [88274] = "書く\tかく\tmake (write)",
   [88275] = "書く\tかく\tmakes mention (is written)",
   [88276] = "書く\tかく\tmarked (written)",
   [88277] = "書く\tかく\tmentioned (was written)",

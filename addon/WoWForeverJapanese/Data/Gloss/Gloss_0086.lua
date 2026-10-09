@@ -152,7 +152,6 @@ WFJ.Data.add("gloss", {
   [86149] = "数歩\tすうほ\ta few steps",
   [86150] = "数歳\tすうさい\ta few years",
   [86151] = "数滴\tすうてき\ta few drops",
-  [86152] = "数滴\tすうてき\tdrops (a few drops)",
   [86153] = "数滴\tすうてき\tsome drops",
   [86154] = "数珠つなぎ\tじゅずつなぎ\tstring (strung together)",
   [86155] = "数発\tすうはつ\ta couple (a few shots)",

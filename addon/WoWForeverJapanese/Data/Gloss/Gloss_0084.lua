@@ -902,7 +902,6 @@ WFJ.Data.add("gloss", {
   [84899] = "攻め落とす\tせめおとす\tconquered",
   [84900] = "攻め込む\tせめこむ\tare under siege (were attacked)",
   [84901] = "攻め込む\tせめこむ\tassault (attack into)",
-  [84902] = "攻め込む\tせめこむ\tattack (in)",
   [84903] = "攻め込む\tせめこむ\tattack (invade)",
   [84904] = "攻め込む\tせめこむ\thave fought their way into (invaded)",
   [84905] = "攻め込む\tせめこむ\tinvade",

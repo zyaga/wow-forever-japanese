@@ -814,7 +814,6 @@ WFJ.Data.add("gloss", {
   [130811] = "道具\tどうぐ\tdevices (tools)",
   [130812] = "道具\tどうぐ\tequipment (tools)",
   [130813] = "道具\tどうぐ\tgadget",
-  [130814] = "道具\tどうぐ\tgadget (tool)",
   [130815] = "道具\tどうぐ\tgadgets",
   [130816] = "道具\tどうぐ\tgadgets (tools)",
   [130817] = "道具\tどうぐ\tgear",

@@ -537,7 +537,6 @@ WFJ.Data.add("gloss", {
   [69534] = "幸運\tこううん\tfortune (good luck)",
   [69535] = "幸運\tこううん\tfortune (luck)",
   [69536] = "幸運\tこううん\tgood fortune",
-  [69537] = "幸運\tこううん\tgood fortune (luck)",
   [69538] = "幸運\tこううん\tgood luck",
   [69539] = "幸運\tこううん\tgood luck (fortune)",
   [69540] = "幸運\tこううん\tgood luck (luck)",

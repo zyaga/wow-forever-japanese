@@ -773,7 +773,6 @@ WFJ.Data.add("gloss", {
   [41770] = "企む\tたくらむ\tare up to (plotting)",
   [41771] = "企む\tたくらむ\tare up to (scheming)",
   [41772] = "企む\tたくらむ\tattempting (plotting)",
-  [41773] = "企む\tたくらむ\tintends (is scheming)",
   [41774] = "企む\tたくらむ\tis up to (plotting)",
   [41775] = "企む\tたくらむ\tis up to (scheming)",
   [41776] = "企む\tたくらむ\tplanning",

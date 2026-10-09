@@ -567,7 +567,6 @@ WFJ.Data.add("gloss", {
   [122564] = "話\tはなし\t(about) story",
   [122565] = "話\tはなし\t(assuming) case",
   [122566] = "話\tはなし\t(heard) about (talk)",
-  [122567] = "話\tはなし\t(his) story",
   [122568] = "話\tはなし\t(his) talk",
   [122569] = "話\tはなし\t(it is only) if",
   [122570] = "話\tはなし\t(it's a story of)",

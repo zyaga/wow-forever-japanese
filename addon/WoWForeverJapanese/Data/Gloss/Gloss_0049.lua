@@ -390,7 +390,6 @@ WFJ.Data.add("gloss", {
   [49387] = "出来栄え\tできばえ\taccomplished (result)",
   [49388] = "出来栄え\tできばえ\tresult (workmanship)",
   [49389] = "出欠\tしゅっけつ\tattendance",
-  [49390] = "出歩く\tであるく\tbe out and about",
   [49391] = "出歩く\tであるく\tmustn't wander off",
   [49392] = "出歩く\tであるく\tnot wander (out)",
   [49393] = "出没する\tしゅつぼつする\tare haunting (appearing)",

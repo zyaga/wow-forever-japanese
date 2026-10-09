@@ -825,7 +825,6 @@ WFJ.Data.add("gloss", {
   [61822] = "外れ\tはずれ\toff (edge)",
   [61823] = "外れ\tはずれ\touter edge (outskirts)",
   [61824] = "外れ\tはずれ\toutskirts",
-  [61825] = "外れ\tはずれ\toutskirts (outside)",
   [61826] = "外れる\tはずれる\t(it's) off (missed)",
   [61827] = "外れる\tはずれる\tare no longer in (dropped out)",
   [61828] = "外れる\tはずれる\tcome off (throw)",

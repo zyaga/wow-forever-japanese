@@ -445,7 +445,6 @@ WFJ.Data.add("gloss", {
   [6442] = "かち割る\tかちわる\tI'll crack",
   [6443] = "かち割る\tかちわる\tam liable to bash open",
   [6444] = "かち割る\tかちわる\tcrack (and come back)",
-  [6445] = "かち割る\tかちわる\tstart cracking",
   [6446] = "かっこいい\tかっこいい\tawesome (cool)",
   [6447] = "かっこいい\tかっこいい\tcool",
   [6448] = "かっこいい\tかっこいい\thandsome",

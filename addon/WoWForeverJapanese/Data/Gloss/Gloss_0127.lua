@@ -207,7 +207,6 @@ WFJ.Data.add("gloss", {
   [127205] = "転がす\tころがす\troll",
   [127206] = "転がす\tころがす\tscoot (roll)",
   [127207] = "転がり落ちる\tころがりおちる\tcomes toppling off",
-  [127208] = "転がり落ちる\tころがりおちる\ttumbles down",
   [127209] = "転がり落ちる\tころがりおちる\ttumbling on and on",
   [127210] = "転がり込む\tころがりこむ\thas fallen into",
   [127211] = "転がる\tころがる\tare littered (lying about)",

@@ -1206,6 +1206,7 @@ WFJ.Data.add("ui", {
   ["ERR_REAGENTBAG_WRONG_SLOT"] = { "素材バッグは素材バッグのスロットにしか入れられません。", 0x363c2aec, "." },
   ["ERR_REAGENT_BANK_FULL"] = { "素材バンクがいっぱいです", 0x802c92d2, "." },
   ["ERR_REALM_NOT_FOUND"] = { "そのレルムが見つかりません。", 0x35a9c818, "." },
+  ["ERR_REAL_ID_FRIEND_REQUESTS_DISABLED"] = { "申請はBattleTagまたはキャラクター名でのみ有効です。", 0x6c2368ff, "." },
   ["ERR_RECEIVE_ITEM_S"] = { "%sを受け取りました。", 0x589676d7, "." },
   ["ERR_RECENT_ALLY_PIN_SERVER_ERROR"] = { "エラーが発生しました。もう一度お試しください。", 0x2e1f917c, "." },
   ["ERR_RECRUIT_A_FRIEND_ACCOUNT_LIMIT"] = { "この期間に送信できる勧誘の上限に達しました。後でもう一度お試しください。", 0xadd18e33, "." },

@@ -308,7 +308,6 @@ WFJ.Data.add("gloss", {
   [124305] = "調べる\tしらべる\tlearn (find out)",
   [124306] = "調べる\tしらべる\tlearn (investigate)",
   [124307] = "調べる\tしらべる\tlearn (look up)",
-  [124308] = "調べる\tしらべる\tlearn about (investigate)",
   [124309] = "調べる\tしらべる\tlet (me) check",
   [124310] = "調べる\tしらべる\tlet me check",
   [124311] = "調べる\tしらべる\tlet me examine",

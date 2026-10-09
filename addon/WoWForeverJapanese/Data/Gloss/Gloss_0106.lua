@@ -317,7 +317,6 @@ WFJ.Data.add("gloss", {
   [106314] = "祈り\tいのり\tprayer",
   [106315] = "祈り\tいのり\tprayers",
   [106316] = "祈り\tいのり\tpraying",
-  [106317] = "祈り\tいのり\twell-wishes (prayer)",
   [106318] = "祈り\tいのり\twishes (prayer)",
   [106319] = "祈り\tいのり\twishes (prayers)",
   [106320] = "祈る\tいのる\t(I) hope (pray)",

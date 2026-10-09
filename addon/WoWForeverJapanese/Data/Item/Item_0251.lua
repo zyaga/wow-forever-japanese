@@ -135,7 +135,7 @@ WFJ.Data.add("item", {
   [251526] = { "Savory Whimsyfin Delightの作り方を習得します。", 0x3b8a1372, "u" },
   [251533] = { "Silverpine ForestとHillsbrad Foothillsでの移動速度が$N1%上昇します。", 0xcc314d8c, "u" },
   [251534] = { "Silverpine ForestとHillsbrad Foothillsでの移動速度が$N1%上昇します。", 0xcc314d8c, "u" },
-  [251723] = { "$D1の間、Galeforce Windの効果を高めます。\n見た目よりずっと重い石。", 0x73854693, "u" },
+  [251723] = { "$D1の間、Galeforce Windの効果を高めます。\n見た目よりずっと重い石。", 0x7f8b3b82, "u" },
   [251735] = { "Slimeslayer's Adaptive Robesの作り方を習得します。", 0x54f2c20f, "u" },
   [251736] = { "Slimeslayer's Adaptive Cuffsの作り方を習得します。", 0x020e130f, "u" },
   [251737] = { "Slimeslayer's Adaptive Cordの作り方を習得します。", 0x8bed1ed2, "u" },

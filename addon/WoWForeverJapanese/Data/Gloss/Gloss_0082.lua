@@ -951,7 +951,6 @@ WFJ.Data.add("gloss", {
   [82948] = "授ける\tさずける\tlet me teach (bestow)",
   [82949] = "授ける\tさずける\tmay grant",
   [82950] = "授ける\tさずける\toffer (bestow)",
-  [82951] = "授ける\tさずける\toffer (grant)",
   [82952] = "授ける\tさずける\toffer (impart to you)",
   [82953] = "授ける\tさずける\toffers (bestow)",
   [82954] = "授ける\tさずける\toffers (will grant you)",

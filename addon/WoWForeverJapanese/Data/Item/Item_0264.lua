@@ -190,7 +190,7 @@ WFJ.Data.add("item", {
   [264236] = { "Gnomish Weather Machineの作り方を習得します。", 0xb8013c38, "u" },
   [264237] = { "Stealthman $N1の作り方を習得します。", 0xc52cd43d, "u" },
   [264238] = { "SAF-T Nitro Boostsの作り方を習得します。", 0x8431f44f, "u" },
-  [264239] = { "EZ-Throw Magnetic Displacerの作り方を習得します。", 0x70d96d1a, "u" },
+  [264239] = { "EZ-Thro Magnetic Displacerの作り方を習得します。", 0x782b3c87, "u" },
   [264240] = { "SAF-T Teleportの作り方を習得します。", 0x038a4052, "u" },
   [264908] = { "精緻なKaldoreiの文様のくすんだ表面には、深いへこみと傷がついています。指輪の内側には、色あせてはいるものの読める文字で「With love always, KG」と刻まれています。", 0x6bc854e6, "u" },
 })

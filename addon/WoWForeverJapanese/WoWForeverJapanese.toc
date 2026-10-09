@@ -207,6 +207,7 @@ Data\Spell\Spell_0032.lua
 Data\Spell\Spell_0033.lua
 Data\Spell\Spell_0034.lua
 Data\Spell\Spell_0036.lua
+Data\Spell\Spell_0039.lua
 Data\Spell\Spell_0042.lua
 Data\Spell\Spell_0043.lua
 Data\Spell\Spell_0045.lua
@@ -436,6 +437,7 @@ Data\Spell\Spell_1320.lua
 Data\Spell\Spell_1321.lua
 Data\Spell\Spell_1322.lua
 Data\Spell\Spell_1323.lua
+Data\Spell\Spell_1324.lua
 Data\Objective\Objective_0380.lua
 Data\Objective\Objective_0381.lua
 Data\Objective\Objective_0382.lua
@@ -1727,6 +1729,7 @@ Data\Gloss\Gloss_0136.lua
 Data\Gloss\Gloss_0137.lua
 Data\Gloss\Gloss_0138.lua
 Data\Gloss\Gloss_0139.lua
+Data\Gloss\Gloss_0140.lua
 # >>>
 Core\Lookup.lua
 Core\Readings.lua
