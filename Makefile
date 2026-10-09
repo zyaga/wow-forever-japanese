@@ -387,8 +387,8 @@ report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + 
 	cd pipeline && $(PY) -m wfj report apply --issue $(ISSUE) --model $(MODEL) $(if $(DATE),--date $(DATE))
 	$(MAKE) -s check generate voice-generate validate coverage
 
-# Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine running and
-# `lame`; the audio and the pack are build output under build/, never committed.
+# Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine unpacked in
+# build/aivis/ (started and stopped by voice generate) and `lame`; the audio and the pack are build output under build/, never committed.
 voice-speakers: voice-levels ## data/voice/ speakers + voices for the voice scope, from the pinned VMaNGOS database and the collector's NPC ids
 	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA) \
 		--wdb "$(call client_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA)

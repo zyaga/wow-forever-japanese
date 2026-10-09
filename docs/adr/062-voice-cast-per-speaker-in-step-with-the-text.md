@@ -32,7 +32,7 @@ The first voice pack read 48 lines with two voices chosen by gender. The whole g
 - A recast or a fix releases only the packs it touches, from the same button as the addon.
 
 ### Negative
-- A translation round needs the voice engine running on the maintainer's computer; a round that touches many lines waits for generation.
+- A translation round needs the voice engine installed on the maintainer's computer (the voice step starts it for the run); a round that touches many lines waits for generation.
 - A pull request from outside that changes a voiced line cannot pass CI until the maintainer remakes its audio on that branch.
 - Two repositories must stay in step; the pin and the CI test hold them together.
 - CurseForge reviews every file and accepts a relation only to an approved project. A new pack reaches the entry one release after its approval, and new lines can be silent until their pack's file passes review.

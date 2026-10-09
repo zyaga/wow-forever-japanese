@@ -38,11 +38,13 @@ from typing import Any
 from wfj.cmd.generate import female_index, quest_text_aliases
 from wfj.core import casting, readings, voice
 from wfj.emit.lua_writer import shipped
-from wfj.io.aivis import Engine, EngineError
+from wfj.io.aivis import Engine, EngineDown, EngineError, running
 from wfj.io.jsonl_store import Store, dumps
 from wfj.paths import data_root
 
-ENGINE_HINT = "start the AivisSpeech Engine (build/aivis/macOS-arm64/run) and run again"
+ENGINE_HINT = (
+    "start the AivisSpeech Engine, or unpack it into build/aivis/ (docs/operations/voice.md), and run again"
+)
 LAME = ("lame", "-m", "m", "--resample", "22.05", "-b", "32", "--cbr", "-t", "--quiet")
 RECORD_EVERY = 20  # files between two writes of the audio record and the status file
 AUDIO = "audio.jsonl"
@@ -215,14 +217,25 @@ def store_dir(arg: str | None) -> Path:
         return Path(arg)
     if os.environ.get("VOICE_ROOT"):
         return Path(os.environ["VOICE_ROOT"])
+    return _main_checkout() / "build" / "voice"
+
+
+def engine_run_path(arg: str | None) -> Path:
+    """The engine `voice generate` starts when none answers: --engine-run, else the main checkout's
+    build/aivis/macOS-arm64/run (unpacked once, beside the audio store)."""
+    if arg:
+        return Path(arg)
+    return _main_checkout() / "build" / "aivis" / "macOS-arm64" / "run"
+
+
+def _main_checkout() -> Path:
     common = subprocess.run(
         ["git", "rev-parse", "--path-format=absolute", "--git-common-dir"],
         capture_output=True,
         text=True,
         check=False,
     ).stdout.strip()
-    base = Path(common).parent if common else data_root().parent
-    return base / "build" / "voice"
+    return Path(common).parent if common else data_root().parent
 
 
 # ---- cast ------------------------------------------------------------------------------------------------
@@ -335,9 +348,11 @@ def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for th
     log=print,
     players: Sequence[tuple[str, str]] = (),
     checkout: bool = False,
+    engine_run: Path | None = None,
 ) -> dict[str, Any]:
     """Makes every missing or changed file; resumable. `checkout`: the store must be a checkout of the voice
-    audio repository before anything is made (the command; tests use a plain folder). → the run's numbers."""
+    audio repository before anything is made (the command; tests use a plain folder). `engine_run`: the
+    engine to start when none answers, stopped again when the run ends. → the run's numbers."""
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
@@ -357,87 +372,95 @@ def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for th
             f"git clone https://github.com/zyaga/wow-forever-japanese-voice.git {store}"
         )
     try:
-        version = engine.version()
-    except EngineError as e:
-        msg = f"{len(work)} file(s) to make, but the engine does not answer ({e}): {ENGINE_HINT}"
-        raise EngineError(msg) from e
-    store.mkdir(parents=True, exist_ok=True)
-    status = store / "status.json"
-    today = datetime.date.today().isoformat()
-    made = chars_made = 0
-    seconds_made = 0.0
-    started = time.time()
+        with running(engine, engine_run, log=lambda m: log(f"voice generate: {m}")) as version:
+            store.mkdir(parents=True, exist_ok=True)
+            status = store / "status.json"
+            today = datetime.date.today().isoformat()
+            made = chars_made = 0
+            seconds_made = 0.0
+            started = time.time()
 
-    def save(done: bool = False) -> None:
-        _write(root / "voice" / AUDIO, [audio[k] for k in sorted(audio)])
-        elapsed = time.time() - started
-        rate = chars_made / elapsed if elapsed > 0 else 0.0
-        left = sum(len(lines[j.key]) for j in work[made:])
-        _status(
-            status,
-            scope=scope,
-            pid=os.getpid(),
-            started=started,
-            updated=time.time(),
-            done=made,
-            total=len(work),
-            chars_made=chars_made,
-            chars_left=left,
-            rate=round(rate, 2),
-            seconds_left=round(left / rate) if rate else None,
-            finished=done,
-        )
+            def save(done: bool = False) -> None:
+                _write(root / "voice" / AUDIO, [audio[k] for k in sorted(audio)])
+                elapsed = time.time() - started
+                rate = chars_made / elapsed if elapsed > 0 else 0.0
+                left = sum(len(lines[j.key]) for j in work[made:])
+                _status(
+                    status,
+                    scope=scope,
+                    pid=os.getpid(),
+                    started=started,
+                    updated=time.time(),
+                    done=made,
+                    total=len(work),
+                    chars_made=chars_made,
+                    chars_left=left,
+                    rate=round(rate, 2),
+                    seconds_left=round(left / rate) if rate else None,
+                    finished=done,
+                )
 
-    save()
-    for n, j in enumerate(work, 1):
-        settings = cfg["roster"][j.voice]
-        ja = lines[j.key]
-        text = voice.speech_text(ja, j.key, values.get(j.key, ()))
-        wav = engine.synthesize(
-            text,
-            int(settings["style"]),
-            float(settings["speed"]),
-            float(settings["pitch"]),
-            float(settings["intonation"]),
-        )
-        file = audio_file(store, j.stem)
-        file.parent.mkdir(parents=True, exist_ok=True)
-        encode(wav, file)
-        secs = wav_seconds(wav)
-        audio[j.stem] = {
-            "file": j.stem,
-            "key": j.key,
-            "voice": j.voice,
-            "ja_hash": voice.ja_hash(ja),
-            "fingerprint": voice.fingerprint(voice.text_hash(ja, values.get(j.key, ())), j.voice, settings),
-            "seconds": round(secs, 2),
-            "bytes": file.stat().st_size,
-            "sha256": file_sha(file),
-            "chars": len(text),
-            "provenance": {"source": f"aivis@{version}", "imported": today},
-        }
-        made += 1
-        chars_made += len(text)
-        seconds_made += secs
-        if n % RECORD_EVERY == 0:
             save()
-            log(f"voice generate: {n}/{len(work)}")
-    save(done=True)
-    return {
-        "made": made,
-        "files": len(jobs),
-        "chars_made": chars_made,
-        "seconds_made": seconds_made,
-        "elapsed": time.time() - started,
-        "audio": audio,
-    }
+            for n, j in enumerate(work, 1):
+                settings = cfg["roster"][j.voice]
+                ja = lines[j.key]
+                text = voice.speech_text(ja, j.key, values.get(j.key, ()))
+                wav = engine.synthesize(
+                    text,
+                    int(settings["style"]),
+                    float(settings["speed"]),
+                    float(settings["pitch"]),
+                    float(settings["intonation"]),
+                )
+                file = audio_file(store, j.stem)
+                file.parent.mkdir(parents=True, exist_ok=True)
+                encode(wav, file)
+                secs = wav_seconds(wav)
+                audio[j.stem] = {
+                    "file": j.stem,
+                    "key": j.key,
+                    "voice": j.voice,
+                    "ja_hash": voice.ja_hash(ja),
+                    "fingerprint": voice.fingerprint(
+                        voice.text_hash(ja, values.get(j.key, ())), j.voice, settings
+                    ),
+                    "seconds": round(secs, 2),
+                    "bytes": file.stat().st_size,
+                    "sha256": file_sha(file),
+                    "chars": len(text),
+                    "provenance": {"source": f"aivis@{version}", "imported": today},
+                }
+                made += 1
+                chars_made += len(text)
+                seconds_made += secs
+                if n % RECORD_EVERY == 0:
+                    save()
+                    log(f"voice generate: {n}/{len(work)}")
+            save(done=True)
+            return {
+                "made": made,
+                "files": len(jobs),
+                "chars_made": chars_made,
+                "seconds_made": seconds_made,
+                "elapsed": time.time() - started,
+                "audio": audio,
+            }
+    except EngineDown as e:
+        msg = f"{len(work)} file(s) to make, but the engine does not answer ({e}): {ENGINE_HINT}"
+        raise EngineDown(msg) from e
 
 
 def run_generate(
-    cfg: dict[str, Any], root: Path, scope: str, store: Path, players: Sequence[tuple[str, str]] = ()
+    cfg: dict[str, Any],
+    root: Path,
+    scope: str,
+    store: Path,
+    players: Sequence[tuple[str, str]] = (),
+    engine_run: Path | None = None,
 ) -> int:
     try:
-        r = generate(root, scope, cfg, store, Engine(cfg["engine"]), players=players, checkout=True)
+        engine = Engine(cfg["engine"])
+        r = generate(root, scope, cfg, store, engine, players=players, checkout=True, engine_run=engine_run)
     except (EngineError, voice.VoiceError, subprocess.CalledProcessError, ValueError) as e:
         print(f"voice generate: {e}", file=sys.stderr)
         return 1
@@ -588,6 +611,8 @@ def run(argv: Sequence[str]) -> int:
         sp.add_argument(
             "--players", help="the character's error lines too: race-sex (tauren-f,human-m) or all"
         )
+        if name == "generate":
+            sp.add_argument("--engine-run", help="the engine to start when none answers")
     a = p.parse_args(list(argv))
     root = data_root()
     store = store_dir(a.store)
@@ -608,7 +633,7 @@ def run(argv: Sequence[str]) -> int:
         players = players_of(a.players)
         if a.cmd == "plan":
             return run_plan(cfg, root, a.scope, players)
-        return run_generate(cfg, root, a.scope, store, players)
+        return run_generate(cfg, root, a.scope, store, players, engine_run_path(a.engine_run))
     except (ValueError, KeyError, FileNotFoundError) as e:
         print(f"voice {a.cmd}: {e}", file=sys.stderr)
         return 1

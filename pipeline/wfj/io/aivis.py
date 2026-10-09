@@ -7,15 +7,25 @@ query (readings, accents, pauses), and `POST /synthesis` renders that query, aft
 
 from __future__ import annotations
 
+import contextlib
 import json
+import signal
+import subprocess
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from collections.abc import Callable, Iterator
+from pathlib import Path
 from typing import Any
 
 
 class EngineError(RuntimeError):
     """The engine is not answering, or answered with an error."""
+
+
+class EngineDown(EngineError):
+    """No engine answers and there is none to start."""
 
 
 class Engine:
@@ -67,3 +77,64 @@ class Engine:
         if wav[:4] != b"RIFF":
             raise EngineError(f"/synthesis: not a WAV file ({len(wav)} bytes)")
         return wav
+
+
+def _stop(_signum: int, _frame: Any) -> None:
+    raise SystemExit(1)
+
+
+def _answers(engine: Engine) -> str | None:
+    """The engine's version, or None when nothing answers yet."""
+    try:
+        return engine.version()
+    except EngineError:
+        return None
+
+
+@contextlib.contextmanager
+def running(
+    engine: Engine, command: Path | None, wait: float = 120.0, log: Callable[[str], None] = print
+) -> Iterator[str]:
+    """The engine answering for the length of the block, which gets its version. One already answering is
+    used and left running; otherwise `command` (the engine's `run`) is started on the engine's host and port
+    and stopped when the block ends, however it ends."""
+    version = _answers(engine)
+    if version:
+        yield version
+        return
+    if command is None or not command.is_file():
+        raise EngineDown(f"nothing answers at {engine.url} and there is no engine at {command}")
+    where = urllib.parse.urlsplit(engine.url)
+    # its own session, so closing the terminal reaches only this process, which then stops the engine itself
+    proc = subprocess.Popen(
+        [str(command), "--host", where.hostname or "127.0.0.1", "--port", str(where.port or 10101)],
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        start_new_session=True,
+    )
+    # SIGTERM and SIGHUP would end Python without running `finally`, leaving the engine up; a signal already
+    # ignored (a run under nohup ignores SIGHUP) stays ignored
+    stops = [s for s in (signal.SIGTERM, signal.SIGHUP) if signal.getsignal(s) != signal.SIG_IGN]
+    previous = {s: signal.signal(s, _stop) for s in stops}
+    try:
+        log(f"started the AivisSpeech Engine ({command})")
+        deadline = time.monotonic() + wait
+        while not (version := _answers(engine)):
+            if proc.poll() is not None:
+                raise EngineError(f"{command} exited with {proc.returncode} before answering")
+            if time.monotonic() > deadline:
+                raise EngineError(f"{command} did not answer within {wait:.0f} s")
+            time.sleep(0.2)
+        yield version
+    finally:
+        if proc.poll() is None:
+            proc.terminate()
+            try:
+                proc.wait(timeout=10)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+                proc.wait()
+            log("stopped the AivisSpeech Engine")
+        for s, handler in previous.items():
+            signal.signal(s, handler)
