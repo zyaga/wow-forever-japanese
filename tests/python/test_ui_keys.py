@@ -122,6 +122,7 @@ DRAFT_SOURCES = {"draft-ui",
                  "draft-ui-review",  # lines the interface text review corrected against their windows
                  "draft-ui-review-role",  # the "role" lines brought to the settled term
                  "draft-repull70170-ui-sg12",  # the keys new on 1.60.1.70170 and the lines it reworded
+                 "draft-b70291-ui-sg12",  # the keys new on 1.60.1.70291 and the lines it reworded
                  # the last interface lines, the tooltip owner / socket / trade lines and the unit lines the
                  # tooltip line kinds surfaced
                  "draft-repull70170-lastui-sg12", "draft-repull70170-kinds-sg12", "draft-repull70170-unitlines-sg12",

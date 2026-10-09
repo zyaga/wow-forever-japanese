@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-09 at commit `76c94965`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-09 at commit `47dafcd9`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -14,10 +14,10 @@
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 428 | 390 | 38 | 100.0% | 0 |
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
-| Item descriptions | 10,196 | 8,668 | 0 | 85.0% | 1,528 |
-| Spell tooltips + auras | 25,648 | 25,401 | 0 | 99.0% | 247 |
+| Item descriptions | 10,196 | 8,669 | 0 | 85.0% | 1,527 |
+| Spell tooltips + auras | 25,648 | 25,402 | 0 | 99.0% | 246 |
 | Interface strings | 15,905 | 15,905 | 0 | 100.0% | 0 |
-| **All** | **85,052** | | | **97.9%** | **1,775** |
+| **All** | **85,052** | | | **97.9%** | **1,773** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 892, spell 300, ui 313.
@@ -39,7 +39,6 @@ professions, internal strings): quest 331, gossip 81, item 892, spell 300, ui 31
 | Surface | Why | Lines |
 |---|---|---|
 | Item descriptions | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 1,525 |
-| Item descriptions | no Japanese yet | 1 |
 | Item descriptions | no Japanese yet: the template uses a code drafting cannot place yet (too_many_variants) | 1 |
 | Item descriptions | no Japanese yet: the template uses a code drafting cannot place yet (branches_indistinguishable) | 1 |
 | Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (unsupported_code:$@spellaura) | 94 |
@@ -72,7 +71,6 @@ professions, internal strings): quest 331, gossip 81, item 892, spell 300, ui 31
 | Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:377950) | 1 |
 | Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:414924) | 1 |
 | Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:1300354) | 1 |
-| Spell tooltips + auras | no Japanese yet | 1 |
 | Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:18425) | 1 |
 | Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:24394) | 1 |
 | Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:19410) | 1 |
@@ -380,10 +378,10 @@ outnumber lines.
 
 | Kind | Lines | Files | In step | Stale | Not made | Read by the narrator |
 |---|---|---|---|---|---|---|
-| Quest offer | 4,303 | 4,372 | 4,372 | 0 | 0 | 885 |
+| Quest offer | 4,304 | 4,373 | 4,373 | 0 | 0 | 885 |
 | Quest progress | 2,917 | 2,940 | 2,940 | 0 | 0 | 85 |
 | Quest turn-in | 4,040 | 4,064 | 4,064 | 0 | 0 | 169 |
-| NPC talk (greetings, gossip, quest text keyed by its English) | 2,077 | 2,823 | 2,823 | 0 | 0 | 15 |
+| NPC talk (greetings, gossip, quest text keyed by its English) | 2,077 | 2,822 | 2,822 | 0 | 0 | 15 |
 | Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
 | The character's error lines (one file per race and sex) | 50 | 900 | 900 | 0 | 0 | 0 |
 
@@ -399,4 +397,3 @@ Shipped Japanese the voice does not read, by reason.
 | HTML book page (keeps the client's layout) | 38 |
 | Collected in game with no known speaker | 18 |
 | A quest log line (the completion text the tracker shows) | 8 |
-| No speaker found for the quest | 1 |

@@ -184,6 +184,20 @@ def test_provenance_rule_against_a_git_base(tmp_path):
     assert validate.rule_provenance(repo / "data", Store(repo / "data"), None) == []
 
 
+def test_the_git_base_skips_the_voice_records(tmp_path):
+    # data/voice holds speaker and audio rows keyed by "key", not translation lines
+    repo = tmp_path / "repo"
+    (repo / "data" / "voice").mkdir(parents=True)
+    subprocess.run(["git", "init", "-q", "-b", "main"], cwd=repo, check=True)
+    (repo / "data" / "voice" / "audio.jsonl").write_text('{"key": "1-description"}\n', encoding="utf-8")
+    _tree(repo, [_q(1, "title", "人", "trusted", "d311f9a5c36057a2")], [])
+    subprocess.run(["git", "add", "-A"], cwd=repo, check=True)
+    subprocess.run(
+        ["git", "-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "-m", "base"], cwd=repo, check=True
+    )
+    assert validate._base_classes(repo, "HEAD") == {("quest", 1, "title"): ("human", "trusted")}
+
+
 def test_collision_rule(tmp_path):
     en = [
         english_line(1, "title", "Alpha", "aaaaaaaaaaaaaaaa", "pfquest@7786596"),
