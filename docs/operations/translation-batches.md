@@ -338,6 +338,37 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70245 → 1.60.1.70291 (2026-10-09)
+
+Quest cache: 2,880 records, 2,809 quests (the finished WFJScan scan: 4 passes, 9,421 ids asked, 2,880 answered);
+5 quests are answered for the first time, and 123 quests an earlier build answered are not answered on 70291 (they
+keep their English and Japanese, [ADR-050](../adr/050-english-is-additive.md)). Client tables: 62, with the build's
+own hotfixes (ItemSparse 15 replaced, 4,697 added; SpellName and Spell 1 replaced; QuestV2 25 replaced;
+BroadcastText 9 added); no layout hash changed, and one table is new to the pipeline, PVPStat (the scoreboard's stat
+names, read as the `PvpStat` family). The wago.tools cross-check: 0 rows differ on all eight tables; ours has only the
+hotfix rows. The UI extract: 4,434 files, 206 changed from 70245 (179 modified, 21 added, 6 removed); the addon was
+changed for the inspect window (its talents button is gone, a PvP pane is new), the pet level line, the tracker's
+quest tags and the new voice chat (Discord) strings. The served-text inventory: 40 columns changed, none added or
+dropped. The English Collector file was imported with the build (364 entries, none rejected); the 181 lines that
+looked reworded were the collector's filled-in numbers set against the client's templates, and the client's text was
+kept.
+
+| Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| quest | 26 (17 descriptions, 6 objectives, 3 titles) | 5 | 123 not answered in the cache (above) | 3 new, 21 redrafted (among them quest 922's line, held back before), all with word lists; quest 5634 left out (Forever does not serve it) |
+| item | 25 | 52 | not recorded | 21 new, 20 redrafted; one hand-written line (9397) ruled out for a number the template fills in and redrafted; the collected item 248008 |
+| spell | 104 (descriptions and auras) | 118 (names, descriptions, auras) | not recorded | 112 new and 36 redrafted descriptions; 19 new and 22 redrafted auras |
+| objective, area | 1 objective, 1 area | 1 objective | not recorded | 1 new and 1 redrafted objective, 1 area |
+| gossip | 0 | 1 | not recorded | 1, with a word list |
+| ui | 18 | 53 (with the beta Legacy achievement, its criteria, the gnome race intro subtitles and 9 PvpStat rows) | not recorded | 72 keys, new and reworded, with word lists; `AchievementReward:684` brought to the settled word レガシーポイント; `HUNTER_AGILITY_TOOLTIP` now has the same English as `ROGUE_AGILITY_TOOLTIP` and shares its Japanese |
+| book | 0 | the 11 picture-only pages left over from earlier builds | not recorded | none |
+
+Voice: 17 files remade, 15 for quest text that changed and 2 for speakers recast by `make voice-speakers`. Left out
+with a reason: quest 5634 (not served on Forever), the two item tooltips whose template the pipeline cannot render yet
+(279976 `too_many_variants`, 286405 `branches_indistinguishable`) and the picture-only book pages. A new step,
+`make family-rows` ([pipeline](../systems/pipeline.md)), now lists every client-table row no key ships;
+nothing had slipped through before this build.
+
 ### 1.60.1.70170 → 1.60.1.70245 (2026-10-07)
 
 Quest cache: 3,003 records, 2,927 quests (the WFJScan known-list scan of 15,850 ids and its slow recheck); 605
