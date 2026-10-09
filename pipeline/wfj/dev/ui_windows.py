@@ -35,6 +35,7 @@ FOREVER_WINDOWS: dict[str, list[str]] = {
         "Blizzard_ObjectiveTracker/Blizzard_QuestObjectiveTracker.lua",
         "Blizzard_ObjectiveTracker/Blizzard_QuestObjectiveTracker.xml",
         "Blizzard_ObjectiveTracker/Camelot/Blizzard_QuestObjectiveTrackerOverride.lua",
+        "Blizzard_FrameXMLUtil/Camelot/QuestUtilsOverrides.lua",
     ],
     "gamemenu": [
         "Blizzard_GameMenu/Shared/GameMenuFrame.lua",
@@ -415,7 +416,6 @@ _OTHER_WINDOWS: dict[str, list[str]] = {
         "Blizzard_ProfessionsTemplates/Blizzard_ProfessionsRecipeLoader.lua",
         "Blizzard_ProfessionsTemplates/Blizzard_ProfessionsTransaction.lua",
         "Blizzard_ProfessionsTemplates/Blizzard_ProfessionsTemplates.lua",
-        "Blizzard_ProfessionsTemplates/Camelot/Blizzard_ProfessionsTemplates.lua",
         "Blizzard_ProfessionsTemplates/Blizzard_ProfessionsTemplates.xml",
         "Blizzard_ProfessionsTemplates/Blizzard_ProfessionsRecipeList.lua",
         "Blizzard_ProfessionsTemplates/Blizzard_ProfessionsRecipeList.xml",
@@ -648,6 +648,7 @@ _OTHER_WINDOWS: dict[str, list[str]] = {
         "Blizzard_GroupFinder_VanillaStyle/Mainline/Blizzard_LFGVanilla_Listing.xml",
         "Blizzard_GroupFinder_VanillaStyle/Blizzard_LFGVanilla_Browse.lua",
         "Blizzard_GroupFinder_VanillaStyle/Mainline/Blizzard_LFGVanilla_Browse.xml",
+        "Blizzard_GroupFinder_VanillaStyle/Blizzard_LFGVanilla_VoiceChat.lua",
     ],
     "grouploot": [
         "Blizzard_UIPanels_Game/Mainline/GroupLootFrame.lua",
@@ -696,12 +697,13 @@ _OTHER_WINDOWS: dict[str, list[str]] = {
     ],
     "inspect": [
         "Blizzard_InspectUI/Camelot/Blizzard_InspectUI.lua",
-        "Blizzard_InspectUI/Camelot/Blizzard_InspectUI_Overrides.lua",
         "Blizzard_InspectUI/Camelot/Blizzard_InspectUI.xml",
         "Blizzard_InspectUI/Mainline/InspectPaperDollFrame.lua",
         "Blizzard_InspectUI/Camelot/InspectPaperDollFrame.xml",
-        "Blizzard_InspectUI/Mainline/InspectGuildFrame.lua",
-        "Blizzard_InspectUI/Mainline/InspectGuildFrame.xml",
+        "Blizzard_InspectUI/Camelot/InspectPVPFrame.lua",
+        "Blizzard_InspectUI/Camelot/InspectPVPFrame.xml",
+        "Blizzard_InspectUI/Camelot/InspectGuildFrame.lua",
+        "Blizzard_InspectUI/Camelot/InspectGuildFrame.xml",
     ],
     "instanceabandon": [
         "Blizzard_FrameXML/Mainline/InstanceAbandon.lua",
@@ -741,6 +743,7 @@ _OTHER_WINDOWS: dict[str, list[str]] = {
         "Blizzard_LegacySystem/Blizzard_LegacyChallenges.lua",
         "Blizzard_LegacySystem/Blizzard_LegacySystem.lua",
         "Blizzard_LegacySystem/Blizzard_LegacySystem.xml",
+        "Blizzard_LegacySystem/Blizzard_LegacyAchievementOverrides.lua",
     ],
     "loot": [
         "Blizzard_UIPanels_Game/Mainline/LootFrame.lua",

@@ -29,6 +29,10 @@ local UI = {
   -- the %s is a layout's name: Core/UIStrings.ARGS names it `text`, so it is kept exactly as written
   HUD_EDIT_MODE_RENAME_LAYOUT_DIALOG_TITLE = { "Enter New Name for Layout %s", "レイアウト%sの新しい名前を入力" },
   SAVE = { "Save", "保存" },
+  -- the gamepad action bar system (editmodesystemtemplates.xml:68–71, editmodesettingdisplayinfo.lua:1517–1553)
+  HUD_EDIT_MODE_GAMEPAD_MAIN_ACTION_BAR_LABEL = { "Gamepad Action Bar", "ゲームパッドのアクションバー" },
+  GAMEPAD_TOGGLE_COMPACT_ACTION_BAR = { "Use Compact Action Bar", "コンパクトなアクションバーを使用" },
+  GAMEPAD_ACTION_BAR_SCALING_TOGGLE = { "Enable Action Bar Scaling", "アクションバーの拡大縮小を有効化" },
   LAYOUT_WORD = { "Layout", "配置" }, -- in the dictionary, never an Edit Mode key: a layout the player called "Layout"
 }
 
@@ -88,6 +92,20 @@ describe("HUD Edit Mode on Forever", function()
       assert.are.equal("Layout", dialog.pool[1].Label:GetText())
       assert.are.equal("Custom Value", dialog.pool[1].Dropdown.Text:GetText())
     end)
+
+  it("the gamepad action bar's settings dialog: its name and checkboxes; Alt shows English", function()
+    dialog:AttachToSystemFrame("Gamepad Action Bar", { { "Use Compact Action Bar", "" },
+      { "Enable Action Bar Scaling", "" }, { "Show Some Addon Thing", "" } })
+    assert.are.equal("ゲームパッドのアクションバー", dialog.Title:GetText())
+    assert.are.equal("コンパクトなアクションバーを使用", dialog.pool[1].Label:GetText())
+    assert.are.equal("アクションバーの拡大縮小を有効化", dialog.pool[2].Label:GetText())
+    assert.are.equal("Show Some Addon Thing", dialog.pool[3].Label:GetText())
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal("Gamepad Action Bar", dialog.Title:GetText())
+    assert.are.equal("Use Compact Action Bar", dialog.pool[1].Label:GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal("コンパクトなアクションバーを使用", dialog.pool[1].Label:GetText())
+  end)
 
   it("selection overlays are hooked once when the manager shows; the label follows hover and selection", function()
     local system = S.system(manager, "Minimap")

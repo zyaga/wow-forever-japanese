@@ -25,7 +25,9 @@
 --   ChannelFrame.ChannelList:Update (mainline/channellist.lua:10–13, 79–86), post-hooked and walked (keyed by widget).
 --   Headset: VOICE_CHAT_JOIN / VOICE_CHAT_LEAVE, or the disabled reasons VOICECHAT_DISABLED /
 --   COMMUNITY_FEATURE_UNAVAILABLE_MUTED / ERR_GROUPS_VOICE_CHAT_DISABLED, and the age-restriction titles
---   AGE_RESTRICTED_VOICE_CHAT_MINOR_TOOLTIP / _UNVERIFIED_TOOLTIP (voicechatheadsetbutton.lua ShowTooltip, :220–245);
+--   AGE_RESTRICTED_VOICE_CHAT_MINOR_TOOLTIP / _UNVERIFIED_TOOLTIP, and on a Discord party channel with text-to-speech
+--   or speech-to-text on, the error line DISCORD_VOICE_TTS_STT_UNSUPPORTED (voicechatheadsetbutton.lua ShowTooltip,
+--   :223–252 [verified: 1.60.1.70291]);
 --   transcription: VOICE_CHAT_TRANSCRIPTION_ENABLE / _DISABLE (blizzard_chatframe/shared/
 --   voicechattranscriptionbutton.lua ShowTooltip, :165–174). Its speech-to-text HelpTip is UI/HelpTips'.
 -- Not here: the channel list's names and counts (channel names stay English), the right-click menus (UI/Menus), the
@@ -71,10 +73,11 @@ local DEAFEN_TIP = { only = { "VOICE_TOOLTIP_DEAFEN", "VOICE_TOOLTIP_UNDEAFEN" }
 local MUTE_TIP = { only = { "VOICE_TOOLTIP_MUTE_MIC", "VOICE_TOOLTIP_UNMUTE_MIC", "VOICE_TOOLTIP_SILENCED_MUTE_MIC",
   "VOICE_TOOLTIP_SILENCED_UNMUTE_MIC", "VOICE_TOOLTIP_PARENTAL_MUTE_MIC", "VOICE_TOOLTIP_PARENTAL_UNMUTE_MIC" } }
 local MEMBER_TIP = { only = { "MUTE", "UNMUTE", "MUTE_SILENCED", "UNMUTE_SILENCED" } }
--- 1.60.1.70009's age-restriction titles come first (voicechatheadsetbutton.lua:228–230)
+-- The age-restriction titles come first (voicechatheadsetbutton.lua:231–233); a Discord party channel adds the
+-- speech-features error line under the title (:248–250)
 local HEADSET_TIP = { only = { "VOICE_CHAT_JOIN", "VOICE_CHAT_LEAVE", "VOICECHAT_DISABLED",
   "COMMUNITY_FEATURE_UNAVAILABLE_MUTED", "ERR_GROUPS_VOICE_CHAT_DISABLED", "AGE_RESTRICTED_VOICE_CHAT_MINOR_TOOLTIP",
-  "AGE_RESTRICTED_VOICE_CHAT_UNVERIFIED_TOOLTIP" } }
+  "AGE_RESTRICTED_VOICE_CHAT_UNVERIFIED_TOOLTIP", "DISCORD_VOICE_TTS_STT_UNSUPPORTED" } }
 local TRANSCRIPTION_TIP = { only = { "VOICE_CHAT_TRANSCRIPTION_ENABLE", "VOICE_CHAT_TRANSCRIPTION_DISABLE" } }
 local LIST_POOLS = { "textChannelButtonPool", "voiceChannelButtonPool", "communityChannelButtonPool" }
 

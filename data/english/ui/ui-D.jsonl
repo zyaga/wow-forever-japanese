@@ -125,6 +125,7 @@
 {"id": "DISCORD_SETUP_OAUTH", "field": "text", "en": "Setup OAuth", "hash": "e24d78666461e7c4", "src": "db2@1.60.1.70291"}
 {"id": "DISCORD_USER_WITH_ID", "field": "text", "en": "Discord Message from %s", "hash": "1c240e8a198af5e0", "src": "db2@1.60.1.70291"}
 {"id": "DISCORD_VALID_SERVER_CHANNEL_LIST", "field": "text", "en": "Channels for server %s:", "hash": "4f6354755abc10df", "src": "db2@1.60.1.70291"}
+{"id": "DISCORD_VOICE_TTS_STT_UNSUPPORTED", "field": "text", "en": "Text-to-Speech and Speech-to-Text are not supported in this channel because it uses the Discord service. If you need these features, ask the party leader to switch voice chat to the Legacy service.", "hash": "fa62395f7021d7b3", "src": "db2@1.60.1.70291"}
 {"id": "DISHONORABLE_KILLS", "field": "text", "en": "Dishonorable Kills", "hash": "2b16af2338722b2e", "src": "db2@1.60.1.69913"}
 {"id": "DISPELS", "field": "text", "en": "Dispels", "hash": "1a8009a9bf489575", "src": "db2@1.60.1.70291"}
 {"id": "DISPEL_AURA_COMBATLOG_TOOLTIP", "field": "text", "en": "Show when an aura is removed, broken, or stolen.", "hash": "34385c2c69d1dbdb", "src": "db2@1.60.1.70291"}

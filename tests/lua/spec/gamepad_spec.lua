@@ -24,6 +24,8 @@ local UI = {
   SKIP = { "Skip", "スキップ" },
   TRAIN = { "Train", "訓練" }, -- the trainer's footer label
   RADIAL_LABEL_TRAIN = { "Train", "汽車" }, -- the radial's emote; owns its Japanese (UIStrings.OWN)
+  -- the combined bag's collapse prompt, its label from SetLabelFunction (containerframe.lua:3318–3324)
+  CONTEXT_ACTION_LABEL_EXPAND = { "Expand", "展開" }, CONTEXT_ACTION_LABEL_COLLAPSE = { "Collapse", "折りたたむ" },
 }
 
 local function fontString(text) return Stub.fontString(text) end
@@ -120,6 +122,22 @@ describe("the gamepad-mode HUD on Forever", function()
     assert.are.equal("OK", prompt.ControlDescText.FontString:GetText())
     prompt:SetPromptText("Issue Reporter") -- a literal the client writes (blizzard_ptrfeedback_gamepad.lua:156)
     assert.are.equal("Issue Reporter", prompt.ControlDescText.FontString:GetText())
+  end)
+
+  it("the combined bag's expand / collapse prompt follows the bag; Alt shows English", function()
+    setup()
+    WFJ.Gamepad.init()
+    local prompt = promptFrame({ ApplyDefaultPromptPositioning = function() end })
+    local fs = prompt.ControlDescText.FontString
+    prompt:SetPromptText("Expand")
+    assert.are.equal("展開", fs:GetText())
+    prompt:SetPromptText("Collapse")
+    assert.are.equal("折りたたむ", fs:GetText())
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    assert.are.equal("Collapse", fs:GetText())
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
   end)
 
   it("the persistent legend's colour-wrapped header keeps its colour around the Japanese", function()

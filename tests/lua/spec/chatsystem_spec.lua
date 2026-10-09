@@ -45,6 +45,10 @@ local UI = {
   -- a friendship's rank points (FriendshipReputation, a client-table family the reputation line names)
   ["FriendshipGain:513"] = { "You gain %d Rank Points.", "ランクポイントを%d獲得した。" },
   ["ServerMessage:1"] = { "[SERVER] Shutdown in %s", "[サーバー] %s後にシャットダウン" },
+  -- the voice-service switch lines (channelframe.lua:320–329)
+  VOICE_CHAT_SERVICE_SWITCHING = { "Switching to voice chat service: %s", "ボイスチャットサービスを切り替えます: %s" },
+  VOICE_CHAT_SERVICE_LEGACY = { "Legacy", "レガシー" },
+  VOICE_CHAT_TTS_STT_ENABLED = { "Text-to-Speech and Speech-to-Text enabled", "読み上げと音声入力を有効にしました" },
   DEATH_RECAP_TEXT = { "You died.", "死亡しました。" }, -- the label of DEATH_RECAP_LINK's death: link
 }
 local NAMES = { "CHAT_FRAMES", "ChatTypeInfo", "ChatFrame1", "ChatFrame2", "FCF_OpenTemporaryWindow",
@@ -379,6 +383,20 @@ describe("SYSTEM chat lines", function()
     -- ChatFrameUtil.DisplayTimePlayed: format(TIME_PLAYED_TOTAL, format(TIME_DAYHOURMINUTESECOND, d, h, m, s))
     system(f, "Total time played: 0 |4day:days;, 14 |4hour:hours;, 17 |4minute:minutes;, 49 |4second:seconds;")
     assert.are.equal("総プレイ時間: 0日、14時間、17分、49秒", f:Last())
+  end)
+
+  it("in game: the voice-service switch fills its service name; an unknown service stays English", function()
+    local f = _G.ChatFrame1
+    system(f, "Switching to voice chat service: Legacy")
+    assert.are.equal("ボイスチャットサービスを切り替えます: レガシー", f:Last())
+    system(f, "Text-to-Speech and Speech-to-Text enabled")
+    assert.are.equal("読み上げと音声入力を有効にしました", f:Last())
+    f:Refresh()
+    alt(WFJ, true)
+    assert.are.equal("Switching to voice chat service: Legacy", f.visibleLines[1]:GetText())
+    alt(WFJ, false)
+    system(f, "Switching to voice chat service: Discord") -- not a dictionary entry here
+    assert.are.equal("Switching to voice chat service: Discord", f:Last())
   end)
 
   it("in game: Blizzard's Lua lines; a role change fills its role word; a line with no chat type is exact only",

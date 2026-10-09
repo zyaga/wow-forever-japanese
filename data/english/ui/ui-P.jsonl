@@ -160,6 +160,7 @@
 {"id": "PLAYER_SPELLS_FRAME_MINIMIZE_TIP", "field": "text", "en": "You can minimize the Spellbook here", "hash": "f7c62c35362bd346", "src": "db2@1.60.1.70291"}
 {"id": "PLAYER_STATUS", "field": "text", "en": "Player Status", "hash": "47487d2dc8c56bb4", "src": "db2@1.60.1.69913"}
 {"id": "PLAYER_TITLE_NONE", "field": "text", "en": "No Title", "hash": "ff4b140804a0d0c3", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_V_PLAYER", "field": "text", "en": "Player vs. Player", "hash": "e05a8e54c9894b2f", "src": "db2@1.60.1.70291"}
 {"id": "PLAYTIME_TIRED", "field": "text", "en": "You have more than 3 hours of online time. You will receive 1/2 money and XP during this period. Your rest state will reset in %d hours of offline time. Please go rest. ", "hash": "2263afa52a9c4f15", "src": "db2@1.60.1.70291"}
 {"id": "PLAYTIME_UNHEALTHY", "field": "text", "en": "You have more than 5 hours of online time. You will not be able to gain loot, XP, or complete quests.  Your rest state will reset in %d hours of offline time. Please log out to get rest and exercise.", "hash": "85ca06b11e7f68e5", "src": "db2@1.60.1.70291"}
 {"id": "PLAY_MOVIE_PREPEND", "field": "text", "en": "(Play Movie)", "hash": "2fa48d929f6c5894", "src": "db2@1.60.1.70291"}

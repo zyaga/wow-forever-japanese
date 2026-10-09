@@ -6,6 +6,7 @@
 {"id": "VIDEO_OPTIONS_ADVANCEDLIGHT_HIGH", "field": "text", "en": "High number of samples used from environment lights.", "hash": "46182ead259d8641", "src": "db2@1.60.1.70291"}
 {"id": "VIDEO_OPTIONS_ADVANCEDLIGHT_LOW", "field": "text", "en": "Low number of samples used from environment lights.", "hash": "fc3f5bc454bb1b4c", "src": "db2@1.60.1.70291"}
 {"id": "VIDEO_OPTIONS_ADVANCEDLIGHT_MEDIUM", "field": "text", "en": "Moderate number of samples used from environment lights.", "hash": "96890bd331d11fd6", "src": "db2@1.60.1.70291"}
+{"id": "VIDEO_OPTIONS_ADVANCEDLIGHT_ULTRA", "field": "text", "en": "Very high number of samples used from environment lights.", "hash": "172fd6fd06e75061", "src": "db2@1.60.1.70291"}
 {"id": "VIDEO_OPTIONS_AGGRESSIVE", "field": "text", "en": "Aggressive", "hash": "2b3203a442eff4fa", "src": "db2@1.60.1.70291"}
 {"id": "VIDEO_OPTIONS_BILINEAR", "field": "text", "en": "Bilinear", "hash": "4656bb1287c269b2", "src": "db2@1.60.1.70291"}
 {"id": "VIDEO_OPTIONS_BUILTIN", "field": "text", "en": "Built-in", "hash": "019288dca515ccbe", "src": "db2@1.60.1.70291"}
@@ -91,12 +92,20 @@
 {"id": "VOICE_CHAT_INPUT_DEVICE_DEFAULT", "field": "text", "en": "System Default", "hash": "0dac7fb2d96ae54f", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_INVALID_DEVICE", "field": "text", "en": "Invalid Device", "hash": "15d27f66b6e4864b", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_JOIN", "field": "text", "en": "Join Voice Chat", "hash": "6ae0295b4c9712de", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_JOIN_GROUP_BUTTON", "field": "text", "en": "Join Voice Chat", "hash": "6ae0295b4c9712de", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT", "field": "text", "en": "Text-to-Speech and Speech-to-Text are not supported in this channel because it uses the Discord service. If you need these features, ask the party leader to switch voice chat to the Legacy service.", "hash": "fa62395f7021d7b3", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_JOIN_GROUP_TEXT", "field": "text", "en": "This group is using voice chat for easier communication.", "hash": "927ac2ebbf67f570", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_LEAVE", "field": "text", "en": "Leave Voice Chat", "hash": "91e5c8ab751ab2c7", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_MIC_DEVICE", "field": "text", "en": "Microphone Device", "hash": "e8668cc2057f757c", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_MIC_SENSITIVITY", "field": "text", "en": "Microphone Sensitivity", "hash": "56bd93efe3f9b2b8", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_MIC_VOLUME", "field": "text", "en": "Microphone Volume", "hash": "45e91ead1feb48f1", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_MODE", "field": "text", "en": "Voice Chat Mode", "hash": "53cc1330461a13f9", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_MODE_CUSTOM", "field": "text", "en": "Other", "hash": "7a61dd1d7a6004c7", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_MODE_DISCORD", "field": "text", "en": "In-Game Voice (Discord)", "hash": "9027b3dbbffcb754", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_MODE_FORMAT", "field": "text", "en": "Voice Chat: |cnHIGHLIGHT_FONT_COLOR:%s|r", "hash": "5796979a5e717a41", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_MODE_KEY", "field": "text", "en": "Push to Talk Key", "hash": "2de44460440464bd", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_MODE_LEGACY", "field": "text", "en": "In-Game Voice (Legacy)", "hash": "72659e7b7b173a9e", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_MODE_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_NOTIFICATION_CHANNEL_ACTIVATED_INSTANCE", "field": "text", "en": "Joined |c%sInstance|r voice chat.", "hash": "5138c0d2342d160e", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_NOTIFICATION_CHANNEL_ACTIVATED_PARTY", "field": "text", "en": "Joined |c%sParty|r voice chat.", "hash": "f5f4cba0a18c8fd1", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_NOTIFICATION_CHANNEL_ACTIVATED_RAID", "field": "text", "en": "Joined |c%sRaid|r voice chat.", "hash": "770d3bf5f64ae081", "src": "db2@1.60.1.70291"}
@@ -109,12 +118,18 @@
 {"id": "VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_INSTANCE", "field": "text", "en": "Join |c%sInstance|r voice chat?", "hash": "1f3c34d299cafca8", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_PARTY", "field": "text", "en": "Join |c%sParty|r voice chat?", "hash": "7b922a5b0e8d99a3", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_RAID", "field": "text", "en": "Join |c%sRaid|r voice chat?", "hash": "c63d562590d3fd75", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_SERVICE", "field": "text", "en": "Preferred Voice Chat Service", "hash": "fd897cd7fd037759", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_SERVICE_CONNECTION_RESTORED", "field": "text", "en": "Restored connection to the voice chat service.", "hash": "9d9a9659bb132730", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_SERVICE_LEGACY", "field": "text", "en": "Legacy", "hash": "a61634768d53f7e2", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_SERVICE_SWITCHING", "field": "text", "en": "Switching to voice chat service: %s", "hash": "a8064ccf472fab78", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_SETTINGS", "field": "text", "en": "Voice Chat Settings", "hash": "02d0388b795052e0", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_TEST_MIC_DEVICE", "field": "text", "en": "Test Microphone", "hash": "c29d04734973aa0f", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_TRANSCRIPTION", "field": "text", "en": "Voice Chat Transcription", "hash": "e09292c0d80750e5", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_TRANSCRIPTION_DISABLE", "field": "text", "en": "Disable Voice Transcription", "hash": "3e5909a915a446f9", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_TRANSCRIPTION_ENABLE", "field": "text", "en": "Enable Voice Transcription", "hash": "a2c447927946a161", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_TTS_STT_DISABLED", "field": "text", "en": "Text-to-Speech and Speech-to-Text disabled", "hash": "6bdd0fd0d82c06f9", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_TTS_STT_ENABLED", "field": "text", "en": "Text-to-Speech and Speech-to-Text enabled", "hash": "effcd64516fa7ae6", "src": "db2@1.60.1.70291"}
+{"id": "VOICE_CHAT_USE_DISCORD_SETTINGS", "field": "text", "en": "Use Your Discord Settings", "hash": "79b9b08b0f0c601c", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_CHAT_VOLUME", "field": "text", "en": "Voice Chat Volume", "hash": "33f028998c3e8eb3", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_COMMAND_SYNTAX", "field": "text", "en": "Syntax: /voice [party|instance|guild|officer|leave|<communityName>[:<channelName>]]", "hash": "5fcffe128f5a2658", "src": "db2@1.60.1.70291"}
 {"id": "VOICE_TOOLTIP_DEAFEN", "field": "text", "en": "Deafen Voice Chat", "hash": "3066eeb28abe871b", "src": "db2@1.60.1.70291"}

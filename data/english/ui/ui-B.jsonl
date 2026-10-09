@@ -27,6 +27,7 @@
 {"id": "BAG_NAME_BAG_2", "field": "text", "en": "Bag 2", "hash": "93a371e2a5bf935c", "src": "db2@1.60.1.70291"}
 {"id": "BAG_NAME_BAG_3", "field": "text", "en": "Bag 3", "hash": "93a371e3a5bf935d", "src": "db2@1.60.1.70291"}
 {"id": "BAG_NAME_BAG_4", "field": "text", "en": "Bag 4", "hash": "93a371e4a5bf935e", "src": "db2@1.60.1.70291"}
+{"id": "BAG_NAME_BAG_REAGENT", "field": "text", "en": "Reagent Bag", "hash": "9b5fb4e7475a4fe8", "src": "db2@1.60.1.70291"}
 {"id": "BANKSLOTPURCHASE", "field": "text", "en": "Purchase", "hash": "c1e4eed345fc3107", "src": "db2@1.60.1.70291"}
 {"id": "BANKSLOTPURCHASE_LABEL", "field": "text", "en": "Do you wish to purchase space for an additional bag?", "hash": "1fd39fc43933b75a", "src": "db2@1.60.1.69913"}
 {"id": "BANK_BAG", "field": "text", "en": "Bag Slot", "hash": "b2265a2ce453f053", "src": "db2@1.60.1.70291"}

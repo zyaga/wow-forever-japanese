@@ -7,7 +7,7 @@
 -- LegacySystemFrame (blizzard_legacysystem.xml:4, PortraitFrameTemplate) has three pages, each a parentKey child:
 --   RewardTrackPage, ChallengesPage, TreePage (xml:40–42). Every widget is parentKey-only (dotted Compat names).
 -- Title: each page's OnShow calls LegacySystemFrame:SetTitle: LEGACY_TRACK_FRAME_TITLE (blizzard_legacyrewardtrack
---   .lua:31), LEGACY_CHALLENGE_FRAME_TITLE (blizzard_legacychallenges.lua:36), LEGACY_TREE_FRAME_TITLE
+--   .lua:24), LEGACY_CHALLENGE_FRAME_TITLE (blizzard_legacychallenges.lua:42), LEGACY_TREE_FRAME_TITLE
 --   (blizzard_legacytree.lua:25), through Labels.title, restricted to those three keys.
 -- Static labels (XML text=, never rewritten; each restricted to its own key):
 --   RewardTrackPage.PointsLabel LEGACY_REWARD_TRACK_POINTS (blizzard_legacyrewardtrack.xml:99);
@@ -25,14 +25,14 @@
 --   LegacyTreePointSummary:RefreshText → AvailablePointsLabel LEGACY_POINTS_AVAILABLE (blizzard_legacytree.lua:
 --     310–318; the number is LEGACY_POINTS_AMOUNT "%d");
 --   ChallengesPage.LegacyChallengePointSummary.PointsBar:Update → Text LEGACY_POINTS_CURR_MAX
---     (blizzard_legacychallenges.lua:250–258);
+--     (blizzard_legacychallenges.lua:309–316);
 --   the challenge cards (ChallengesPage.DetailPane.ScrollBox, pooled LegacyChallengeTemplate): Tracked.Text
 --     TRACK_ACHIEVEMENT (blizzard_legacysystemtemplates.xml:75, 279), walked from the ScrollBox's initialized-frame
 --     callback, keyed by widget. ADR-042: a card is an achievement row (LegacyChallengeTemplate inherits
 --     AchievementTemplateMixin:Init, blizzard_legacychallengebutton.lua:202; blizzard_achievementui.lua:1352, 1373):
 --     its Label and Description are the Achievement table's text, restricted to the achievement families
 --     (UI/Achievement.TEXT_FIELDS, textOnly); its Shield owns the reward tooltip, one line added by
---     AchievementShield_OnEnter (blizzard_legacychallenges.lua:327-336): the AchievementReward family only.
+--     AchievementShield_OnEnter (blizzard_legacyachievementoverrides.lua:39–48): the AchievementReward family only.
 --     Its text criteria are the CriteriaText family (CriteriaTree.Description_lang, GetAchievementCriteriaInfo):
 --     AchievementTemplateMixin:DisplayObjectives hands the one shared LegacyChallengeObjectives frame to the card
 --     (blizzard_legacychallengebutton.lua:256-279), whose Display acquires a pooled criterion per row and calls

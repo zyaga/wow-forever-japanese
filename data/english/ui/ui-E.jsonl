@@ -1203,6 +1203,7 @@
 {"id": "ERR_REAGENTBAG_WRONG_SLOT", "field": "text", "en": "Reagent Bags can only be placed in the reagent bag slot.", "hash": "363c2aeccec159ef", "src": "db2@1.60.1.70291"}
 {"id": "ERR_REAGENT_BANK_FULL", "field": "text", "en": "Your reagent bank is full", "hash": "802c92d2f8360d6a", "src": "db2@1.60.1.70291"}
 {"id": "ERR_REALM_NOT_FOUND", "field": "text", "en": "Cannot find that realm.", "hash": "35a9c81834c141c1", "src": "db2@1.60.1.70291"}
+{"id": "ERR_REAL_ID_FRIEND_REQUESTS_DISABLED", "field": "text", "en": "Requests are only valid with BattleTag or character name.", "hash": "6c2368ffe6ab8812", "src": "db2@1.60.1.70291"}
 {"id": "ERR_RECEIVE_ITEM_S", "field": "text", "en": "%s received.", "hash": "589676d7dbac5ad8", "src": "db2@1.60.1.70291"}
 {"id": "ERR_RECENT_ALLY_PIN_SERVER_ERROR", "field": "text", "en": "An error has occurred. Please try again.", "hash": "2e1f917cd2c42bf2", "src": "db2@1.60.1.70291"}
 {"id": "ERR_RECRUIT_A_FRIEND_ACCOUNT_LIMIT", "field": "text", "en": "You have submitted the maximum number of recruits for this time period. Please try again later.", "hash": "add18e339f6c8b5e", "src": "db2@1.60.1.70291"}

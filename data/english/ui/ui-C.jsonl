@@ -1061,10 +1061,12 @@
 {"id": "CONTEXT_ACTION_LABEL_CAST", "field": "text", "en": "Cast", "hash": "0913f1478354dceb", "src": "db2@1.60.1.70291"}
 {"id": "CONTEXT_ACTION_LABEL_CHARACTER_VIEWER", "field": "text", "en": "Character Viewer", "hash": "250f4fd0808b1b73", "src": "db2@1.60.1.70291"}
 {"id": "CONTEXT_ACTION_LABEL_CHOOSE_REWARD", "field": "text", "en": "Choose Reward", "hash": "db55a72888454ed1", "src": "db2@1.60.1.70291"}
+{"id": "CONTEXT_ACTION_LABEL_COLLAPSE", "field": "text", "en": "Collapse", "hash": "2ce68b7098d82fa8", "src": "db2@1.60.1.70291"}
 {"id": "CONTEXT_ACTION_LABEL_CREATE_ALL", "field": "text", "en": "Hold to Create All", "hash": "0f9c2abd9c9b44a6", "src": "db2@1.60.1.70291"}
 {"id": "CONTEXT_ACTION_LABEL_DESTROY_ITEM", "field": "text", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70291"}
 {"id": "CONTEXT_ACTION_LABEL_DETAILS", "field": "text", "en": "Details", "hash": "3bfb11891ed62f3a", "src": "db2@1.60.1.70291"}
 {"id": "CONTEXT_ACTION_LABEL_EQUIP", "field": "text", "en": "Equip", "hash": "ca753e9c509b1e4b", "src": "db2@1.60.1.70291"}
+{"id": "CONTEXT_ACTION_LABEL_EXPAND", "field": "text", "en": "Expand", "hash": "14316b22d6a0ba3c", "src": "db2@1.60.1.70291"}
 {"id": "CONTEXT_ACTION_LABEL_FEED_TO_PET", "field": "text", "en": "Feed To Pet", "hash": "2d3c670ce7262166", "src": "db2@1.60.1.70291"}
 {"id": "CONTEXT_ACTION_LABEL_FOCUS", "field": "text", "en": "Focus", "hash": "dbb9a93ccd4270a3", "src": "db2@1.60.1.70291"}
 {"id": "CONTEXT_ACTION_LABEL_INSPECT", "field": "text", "en": "Inspect", "hash": "8b92fd5302e8b2bc", "src": "db2@1.60.1.70291"}

@@ -54,7 +54,7 @@
 {"id": "HIGH_DEFINITION_TOOLTIP", "field": "text", "en": "Higher-detail character model fidelity.", "hash": "fc7aa305c6db4afe", "src": "db2@1.60.1.70291"}
 {"id": "HOME", "field": "text", "en": "Home", "hash": "09c31cab7def9652", "src": "db2@1.60.1.70291"}
 {"id": "HONOR", "field": "text", "en": "Honor", "hash": "fed7f42eb6c1999d", "src": "db2@1.60.1.70291"}
-{"id": "HONORABLE_KILLS", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.69913"}
+{"id": "HONORABLE_KILLS", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.70291"}
 {"id": "HONORABLE_KILLS_TOOLTIP", "field": "text", "en": "Enemy players that you or the group you are in did damage to before they died", "hash": "e4ccc64988ba59a6", "src": "db2@1.60.1.70291"}
 {"id": "HONORABLE_KILLS_TOOLTIP_TITLE", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.70291"}
 {"id": "HONOR_BAR", "field": "text", "en": "Honor %d / %d", "hash": "5a4bbb00f13fa639", "src": "db2@1.60.1.70291"}
@@ -63,11 +63,12 @@
 {"id": "HONOR_LASTWEEK", "field": "text", "en": "Last Week", "hash": "de361c818c6c52c8", "src": "db2@1.60.1.69913"}
 {"id": "HONOR_LEVEL_LABEL", "field": "text", "en": "Honor Level %d", "hash": "5841c80d475bc802", "src": "db2@1.60.1.70291"}
 {"id": "HONOR_LEVEL_TOOLTIP", "field": "text", "en": "Honor Level %d", "hash": "5841c80d475bc802", "src": "db2@1.60.1.70291"}
-{"id": "HONOR_LIFETIME", "field": "text", "en": "Lifetime", "hash": "c6441b75194af0a0", "src": "db2@1.60.1.69913"}
+{"id": "HONOR_LIFETIME", "field": "text", "en": "Lifetime", "hash": "c6441b75194af0a0", "src": "db2@1.60.1.70291"}
 {"id": "HONOR_REWARD_ARTIFACT_POWER", "field": "text", "en": "Artifact Power Reward", "hash": "7d0256b6fcc810b2", "src": "db2@1.60.1.70291"}
 {"id": "HONOR_REWARD_MONEY", "field": "text", "en": "Money Reward", "hash": "37f25d297fc7944e", "src": "db2@1.60.1.70291"}
 {"id": "HONOR_REWARD_TITLE_TOOLTIP", "field": "text", "en": "Title", "hash": "d0b03efdf12111e8", "src": "db2@1.60.1.70291"}
 {"id": "HONOR_THIS_SESSION", "field": "text", "en": "Today", "hash": "d179da82020b2f7f", "src": "db2@1.60.1.69913"}
+{"id": "HONOR_TODAY", "field": "text", "en": "Today", "hash": "d179da82020b2f7f", "src": "db2@1.60.1.70291"}
 {"id": "HONOR_YESTERDAY", "field": "text", "en": "Yesterday", "hash": "0ee909e73298ee12", "src": "db2@1.60.1.69913"}
 {"id": "HONOR_YOUVE_REACHED", "field": "text", "en": "You've Reached", "hash": "4a4a8f2204265ced", "src": "db2@1.60.1.70291"}
 {"id": "HORDE_CHEER", "field": "text", "en": "For the Horde!", "hash": "d2b403e1d9b2559e", "src": "db2@1.60.1.70291"}
@@ -131,6 +132,7 @@
 {"id": "HUD_EDIT_MODE_EXTERNAL_DEFENSIVES_LABEL", "field": "text", "en": "External Defensives", "hash": "a64b327afcdc1fdc", "src": "db2@1.60.1.70291"}
 {"id": "HUD_EDIT_MODE_EXTRA_ABILITIES_LABEL", "field": "text", "en": "Extra Abilities", "hash": "dd19a8dca2f65319", "src": "db2@1.60.1.70291"}
 {"id": "HUD_EDIT_MODE_FOCUS_FRAME_LABEL", "field": "text", "en": "Focus Frame", "hash": "aa17f7b00780d85a", "src": "db2@1.60.1.70291"}
+{"id": "HUD_EDIT_MODE_GAMEPAD_MAIN_ACTION_BAR_LABEL", "field": "text", "en": "Gamepad Action Bar", "hash": "79684bfb36621074", "src": "db2@1.60.1.70291"}
 {"id": "HUD_EDIT_MODE_GROUP_AURA_SETTINGS", "field": "text", "en": "Buff Settings", "hash": "dee011b7b18fe50d", "src": "db2@1.60.1.70291"}
 {"id": "HUD_EDIT_MODE_GROUP_FINDER_LABEL", "field": "text", "en": "Group Finder", "hash": "be7119ca58a84a6f", "src": "db2@1.60.1.70291"}
 {"id": "HUD_EDIT_MODE_HUD_TOOLTIP_LABEL", "field": "text", "en": "HUD Tooltip", "hash": "dacf8fcff4844f90", "src": "db2@1.60.1.70291"}

@@ -25,6 +25,7 @@ KNOWN_NAME_COLLISIONS = {
     "Cloth", "Complete Quest", "Fire", "Fishing Pole", "Frost", "Leather", "Libram", "Mace", "Mail", "Shadow",
     "Shield", "Shirt", "Speed", "Sword", "Thrown", "Totem",
     "Learning",  # the group finder playstyle, shown only through its own key list (UI/GroupFinder.lua)
+    "Seals",  # a barber shop choice (CustomizationChoice, restricted); a spell has that name too
     # Stat / resistance labels, the pet command "Attack", the pet tab "Pet", "Reset", "Inactive",
     # "Send Mail". Every one shows on a named window label, a key-restricted widget (`only`) or a help tooltip, none
     # of which is ever an item or spell name line (help tooltips never walk item / spell tooltips; spell names are

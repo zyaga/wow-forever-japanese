@@ -76,6 +76,8 @@
 {"id": "WORLD_MAP_CURSOR_COORDS_INTEGER", "field": "text", "en": "Cursor: %d, %d", "hash": "577e8d02b73fd13f", "src": "db2@1.60.1.70291"}
 {"id": "WORLD_MAP_FILTER_LABEL_SHOW", "field": "text", "en": "Show:", "hash": "befef15a70f6aa29", "src": "db2@1.60.1.70291"}
 {"id": "WORLD_MAP_FILTER_LABEL_WORLD_QUESTS_SUBMENU_TYPE", "field": "text", "en": "Type:", "hash": "d2d408c9b7be641b", "src": "db2@1.60.1.70291"}
+{"id": "WORLD_MAP_FILTER_TITLE_SHOW_MAP", "field": "text", "en": "Show on Map:", "hash": "9a00447e9bcd672c", "src": "db2@1.60.1.70291"}
+{"id": "WORLD_MAP_FILTER_TITLE_SHOW_QUEST_LOG", "field": "text", "en": "Show in Quest Log:", "hash": "4dbe34f609790149", "src": "db2@1.60.1.70291"}
 {"id": "WORLD_MAP_PLAYER_COORDS", "field": "text", "en": "Player: %.1f, %.1f", "hash": "0bc5357cbd9eb124", "src": "db2@1.60.1.70291"}
 {"id": "WORLD_MAP_PLAYER_COORDS_INTEGER", "field": "text", "en": "Player: %d, %d", "hash": "291f458899ca2d17", "src": "db2@1.60.1.70291"}
 {"id": "WORLD_MAP_PLAYER_COORDS_MAP_NAME", "field": "text", "en": "Player: %.1f, %.1f (%s)", "hash": "7ff1bec7008c704d", "src": "db2@1.60.1.70291"}

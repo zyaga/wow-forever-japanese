@@ -35,15 +35,16 @@ local WORLD_MAP_FILTERS = { "SHOW_QUEST_OBJECTIVES_ON_MAP_TEXT", "SHOW_QUEST_LEV
 -- tag → { keys = entries it may show, tooltips = tooltip keys (optional), source = where the generator is,
 --         titleIsName = the menu's title is a name (optional) }
 Menus.TAGS = {
-  -- the bag portrait menus (blizzard_uipanels_game/mainline/containerframe.lua:625–700, 761–770, 2749–2771): the
-  -- bag submenus, filters and cleanup; BAG_NAME_BACKPACK shares its English with BACKPACK_TOOLTIP (excluded)
-  MENU_CONTAINER_FRAME = { source = "containerframe.lua:761", keys = { "BAG_FILTER_ASSIGN_TO", "BAG_FILTER_IGNORE",
+  -- the bag portrait menus (blizzard_uipanels_game/mainline/containerframe.lua:643–730, 777–786, 2767–2787): the
+  -- bag submenus, filters and cleanup; BAG_NAME_BACKPACK shares its English with BACKPACK_TOOLTIP (excluded). In
+  -- gamepad UI mode the combined bag's menu also lists the reagent bag, BAG_NAME_BAG_REAGENT (:35–43, 14–19)
+  MENU_CONTAINER_FRAME = { source = "containerframe.lua:777", keys = { "BAG_FILTER_ASSIGN_TO", "BAG_FILTER_IGNORE",
     "BAG_FILTER_CLEANUP", "BAG_FILTER_EQUIPMENT", "BAG_FILTER_CONSUMABLES", "BAG_FILTER_PROFESSION_GOODS",
     "BAG_FILTER_JUNK", "BAG_FILTER_QUEST_ITEMS", "BAG_FILTER_REAGENTS", "SELL_ALL_JUNK_ITEMS_EXCLUDE_FLAG",
     "BAG_COMMAND_CONVERT_TO_COMBINED", "BAG_COMMAND_CONVERT_TO_INDIVIDUAL" } },
-  MENU_CONTAINER_FRAME_COMBINED = { source = "containerframe.lua:2749", keys = { "BAG_FILTER_TITLE_SORTING",
-    "BAG_NAME_BAG_1", "BAG_NAME_BAG_2", "BAG_NAME_BAG_3", "BAG_NAME_BAG_4", "BAG_FILTER_ASSIGN_TO",
-    "BAG_FILTER_IGNORE", "BAG_FILTER_CLEANUP", "BAG_FILTER_EQUIPMENT", "BAG_FILTER_CONSUMABLES",
+  MENU_CONTAINER_FRAME_COMBINED = { source = "containerframe.lua:2767", keys = { "BAG_FILTER_TITLE_SORTING",
+    "BAG_NAME_BAG_1", "BAG_NAME_BAG_2", "BAG_NAME_BAG_3", "BAG_NAME_BAG_4", "BAG_NAME_BAG_REAGENT",
+    "BAG_FILTER_ASSIGN_TO", "BAG_FILTER_IGNORE", "BAG_FILTER_CLEANUP", "BAG_FILTER_EQUIPMENT", "BAG_FILTER_CONSUMABLES",
     "BAG_FILTER_PROFESSION_GOODS", "BAG_FILTER_JUNK", "BAG_FILTER_QUEST_ITEMS", "BAG_FILTER_REAGENTS",
     "SELL_ALL_JUNK_ITEMS_EXCLUDE_FLAG", "BAG_COMMAND_CONVERT_TO_COMBINED", "BAG_COMMAND_CONVERT_TO_INDIVIDUAL" } },
   -- the bank's expansion filter (bankframetemplates.lua:1678, 1719–1720)
@@ -133,9 +134,12 @@ Menus.TAGS = {
   CONTACTS_MENU = { source = "camelot friendsframe.lua:2485",
     keys = { "CONTACTS_MENU_BROADCAST_BUTTON_NAME", "CONTACTS_MENU_IGNORE_BUTTON_NAME" } },
   -- the world map's filter menu; each filter's hover is its text + a description, owned by the
-  -- element (blizzard_worldmap/blizzard_worldmaptemplates.lua:229–250, 336–344; camelot filters camelot/…:1–3)
+  -- element (blizzard_worldmap/blizzard_worldmaptemplates.lua:229–251, 354–362; camelot filters camelot/…:1–3).
+  -- In gamepad UI mode the menu also carries the quest log's part: the map and quest log titles and the objectives
+  -- checkbox (:234, 325–339; ShouldCombineMapAndQuestMenu, blizzard_worldmap.lua:1081–1083)
   MENU_WORLD_MAP_TRACKING = { source = "blizzard_worldmaptemplates.lua:229",
-    keys = { "WORLD_MAP_FILTER_LABEL_SHOW", unpack(WORLD_MAP_FILTERS) },
+    keys = { "WORLD_MAP_FILTER_LABEL_SHOW", "WORLD_MAP_FILTER_TITLE_SHOW_MAP", "WORLD_MAP_FILTER_TITLE_SHOW_QUEST_LOG",
+      "QUEST_LOG_SHOW_OBJECTIVES", unpack(WORLD_MAP_FILTERS) },
     tooltips = { "QUEST_OBJECTIVES_FILTER_DESCRIPTION", "QUEST_LEVEL_FILTER_DESCRIPTION",
       "QUEST_DIFFICULTY_FILTER_DESCRIPTION", "INSTANCE_ENTRANCES_FILTER_DESCRIPTION",
       "TRACKED_ITEMS_FILTER_DESCRIPTION",

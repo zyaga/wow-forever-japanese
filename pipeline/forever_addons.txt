@@ -37,7 +37,7 @@ blizzard_boosttutorial lod 15
 blizzard_buffframe login 5
 blizzard_buttonpulse login 1
 blizzard_calendar lod 6
-blizzard_catalogshop login 17
+blizzard_catalogshop login 18
 blizzard_catalogshoprefundflow login 6
 blizzard_catalogshopsharedtemplates login 2
 blizzard_catalogshopsharedutil login 2
@@ -111,7 +111,7 @@ blizzard_deprecatedtransmog login 1
 blizzard_deprecatedunitscript login 1
 blizzard_dispatcher lod 1
 blizzard_durabilityframe login 2
-blizzard_editmode login 19
+blizzard_editmode login 20
 blizzard_encounterjournal gated 0
 blizzard_encountertimeline gated 0
 blizzard_encounterwarnings gated 0
@@ -157,7 +157,7 @@ blizzard_gluexml glue 0
 blizzard_gluexmlbase glue 0
 blizzard_gmchatui lod 4
 blizzard_groupfinder gated 0
-blizzard_groupfinder_vanillastyle lod 12
+blizzard_groupfinder_vanillastyle lod 13
 blizzard_guildbankui lod 4
 blizzard_guildcontrolui lod 4
 blizzard_guildrename login 2
@@ -184,7 +184,7 @@ blizzard_housingtutorials gated 0
 blizzard_hudinventorytemplates gated 0
 blizzard_hybridminimap lod 3
 blizzard_ime login 1
-blizzard_inspectui lod 11
+blizzard_inspectui lod 10
 blizzard_islandspartyposeui lod 3
 blizzard_islandsqueueui lod 3
 blizzard_itembeltframe gated 0
@@ -195,7 +195,7 @@ blizzard_itemupgradeui lod 3
 blizzard_kiosk lod 10
 blizzard_landingsoulbinds lod 7
 blizzard_legacychallengetracker login 1
-blizzard_legacysystem lod 18
+blizzard_legacysystem lod 19
 blizzard_lfgutil login 14
 blizzard_loadlocale login 1
 blizzard_loginwarningdialogs glue 0
@@ -245,7 +245,7 @@ blizzard_privateaurasui login 6
 blizzard_professions lod 27
 blizzard_professionsbook lod 5
 blizzard_professionscustomerorders lod 14
-blizzard_professionstemplates lod 33
+blizzard_professionstemplates lod 32
 blizzard_projectconstants login 2
 blizzard_ptrfeedback login 7
 blizzard_ptrfeedbackglue glue 0
@@ -276,8 +276,8 @@ blizzard_scripterrorsframe login 2
 blizzard_securetransferui login 3
 blizzard_selectorui lod 0
 blizzard_settings lod 1
-blizzard_settings_shared login 27
-blizzard_settingsdefinitions_frame login 33
+blizzard_settings_shared login 28
+blizzard_settingsdefinitions_frame login 34
 blizzard_settingsdefinitions_shared login 20
 blizzard_shakeutil login 1
 blizzard_sharedmapdataproviders lod 79
@@ -332,7 +332,7 @@ blizzard_uiparent login 1
 blizzard_uiparentpanelmanager login 5
 blizzard_uiparentutil login 1
 blizzard_uiwidgets login 79
-blizzard_unitframe login 63
+blizzard_unitframe login 71
 blizzard_unitpopup login 10
 blizzard_unitpopupshared login 5
 blizzard_visualalerts login 6

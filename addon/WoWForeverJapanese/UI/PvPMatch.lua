@@ -129,7 +129,8 @@ function PvPMatch.onTable(tableBuilder)
       WFJ.HelpTooltip.register(header, WFJ.Labels.familiesWith(HEADER_TOOLTIP.only, "PvpColumn", "PvpColumnTooltip"))
       local text = header.text
       if type(text) == "table" then
-        n = n + WFJ.Labels.show(SURFACE, headerKey(text), text, nil, WFJ.Labels.familiesWith(HEADER.only, "PvpColumn", "PvpStat"))
+        local only = WFJ.Labels.familiesWith(HEADER.only, "PvpColumn", "PvpStat")
+        n = n + WFJ.Labels.show(SURFACE, headerKey(text), text, nil, only)
       end
     end
   end

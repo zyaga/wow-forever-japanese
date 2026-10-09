@@ -11,11 +11,12 @@
 -- (Index:formatArgs, string.format of each specifier). A player, item or zone name is copied as the English showed
 -- it (names stay in English), never matched out of the text. The line is only rewritten while it still reads
 -- exactly the English the definition and those arguments give; a dialog whose text is computed (dialogInfo.text ==
--- "", a GetExpirationText) or whose text no longer matches stays as written.
+-- "" outside PASS_THROUGH, a GetExpirationText) or whose text no longer matches stays as written.
 -- A dialog whose definition text is "%s" shows its caller's line as written (the party invite, the talent wipe, the
 -- leave-instance question …). That line is translated when it is exactly one key's English, or, for the dialogs in
 -- PASS_THROUGH, when it is one of the templates the caller formats (the inviter's name is the template's argument,
--- as in Labels), with the queue warning the invite may append as a second paragraph.
+-- as in Labels), with the queue warning the invite may append as a second paragraph. A dialog in PASS_THROUGH whose
+-- definition text is "" and whose OnShow writes its own line (the group voice-chat join) goes the same way.
 -- Buttons, the SubText and the extra button: their English is the definition's string; each takes the one key whose
 -- English that is. A button the client writes again after the dialog is shown (the party invite's Decline, locked
 -- for half a second with a countdown and then given its English back, gamedialogdefs.lua:19-52) is shown again from
@@ -85,8 +86,13 @@ local SPECIAL_ONLY = { only = {
 -- PARTY_INVITE: INVITATION with the inviter's name, plus ACCEPTING_INVITE_WILL_REMOVE_QUEUE after "\n\n" while the
 -- player is queued; INVITATION_XREALM for a cross-realm invite, whose own English holds a "\n\n"
 -- [verified: blizzard_game/mainline/eventimplementation.lua:757-779, the camelot family's file].
+-- VOICE_CHAT_JOIN_GROUP: text "", its OnShow writes VOICE_CHAT_JOIN_GROUP_TEXT, plus the Discord speech-features
+-- paragraph after "\n\n" when the group's voice runs on Discord and text-to-speech or speech-to-text is on
+-- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1571–1583, shown from
+-- blizzard_channels/mainline/channelframe.lua:632–633].
 local PASS_THROUGH = {
   PARTY_INVITE = { line = { "INVITATION", "INVITATION_XREALM" }, after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },
+  VOICE_CHAT_JOIN_GROUP = { line = { "VOICE_CHAT_JOIN_GROUP_TEXT" }, after = { "VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT" } },
 }
 
 local CANDIDATES = { show = { "StaticPopup_Show" }, update = { "StaticPopup_OnUpdate" },
@@ -197,7 +203,7 @@ end
 local function showText(dialog, info)
   local fs = type(dialog) == "table" and dialog.Text or nil
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" then return 0 end
-  if info.text == "%s" then return showPassThrough(dialog, fs) end
+  if info.text == "%s" or (info.text == "" and PASS_THROUGH[dialog.which]) then return showPassThrough(dialog, fs) end
   local key, english = keyFor(info.text)
   if not key then return 0 end
   local shown = fs:GetText()

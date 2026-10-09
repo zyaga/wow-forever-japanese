@@ -1,16 +1,22 @@
 -- UI/Achievement.lua: the achievement window on Forever (surface "achievement", area "ui", ADR-016).
--- Blizzard_AchievementUI is load-on-demand and `camelot` loads its mainline files (blizzard_achievementui.toc:5–12).
+-- Blizzard_AchievementUI is load-on-demand and `camelot` loads its mainline files, then its camelot file
+-- (blizzard_achievementui.toc:5–13).
 -- camelot's micro menu does not place AchievementMicroButton (blizzard_micromenu/camelot/
 -- micromenucontaineroverrides.lua:4–17) and bindings_camelot.xml has no TOGGLEACHIEVEMENT, but the window still has
 -- entry points inside the camelot load set: the /achievements command (blizzard_chatframebase/shared/
--- slashcommands.lua:1310–1320), a click on an achievement toast (blizzard_framexml/mainline/alertframesystems.lua:
+-- slashcommands.lua:1357–1371), a click on an achievement toast (blizzard_framexml/mainline/alertframesystems.lua:
 -- 400–417), a tracked achievement's header (blizzard_objectivetracker/blizzard_achievementobjectivetracker.lua:
 -- 59–70), the unit menu's Compare Achievements (blizzard_unitpopup/mainline/unitpopupbuttons.lua:23) and the pet
 -- journal's achievement status (blizzard_collections/shared/blizzard_petcollection.lua:1715). The alert system loads
 -- the addon on ACHIEVEMENT_EARNED (blizzard_framexml/mainline/alertframes.lua:542–546), so it is waited for through
--- WFJ.LoadOnDemand.when. Whether the window really opens on Forever (the game rule AchievementsPanelDisabled,
--- blizzard_achievementui.lua:217; Blizzard_LegacySystem redefines several of its globals, blizzard_legacychallenges
--- .lua:302–344) is an in-game check.
+-- WFJ.LoadOnDemand.when. On camelot, AchievementFrame_ToggleAchievementFrame and ShowAchievementFrameForAchievement
+-- open Legacy Challenges instead (UI/Legacy), when the game rule AchievementsPanelDisabled is off and the Legacy
+-- renown level is above 0 (blizzard_achievementui/camelot/blizzard_achievementui.lua:3–23, which replaces the
+-- bootstrap's ShowAchievementFrameForAchievement, blizzard_achievementui_bootstrap.lua:19); Blizzard_LegacySystem
+-- redefines more of its globals (blizzard_legacysystem/blizzard_legacyachievementoverrides.lua). So the commands,
+-- the toast and the tracker header lead there, and AchievementFrame itself is reached through Compare Achievements:
+-- InspectAchievements → AchievementFrame_DisplayComparison (blizzard_achievementui_bootstrap.lua:7–11,
+-- mainline/blizzard_achievementui.lua:245) [unverified in game].
 -- Static labels (XML text=, blizzard_achievementui/mainline/blizzard_achievementui.xml; each restricted to its key):
 --   AchievementFrameTab1 ACHIEVEMENTS (:2571), Tab2 ACHIEVEMENTS_GUILD_TAB (:2582), Tab3 STATISTICS (:2590);
 --   AchievementFrameSummaryAchievementsEmptyText NO_COMPLETED_ACHIEVEMENTS (:2143),

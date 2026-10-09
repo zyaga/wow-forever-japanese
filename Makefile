@@ -340,6 +340,11 @@ forever-addons: ## regenerate pipeline/forever_addons.txt from the Forever UI ex
 	@test -d "$(FOREVER_UI)" || { echo "forever-addons: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }
 	cd pipeline && $(PY) -m wfj.dev.client_addons "$(FOREVER_UI)" > forever_addons.txt.tmp && mv forever_addons.txt.tmp forever_addons.txt
 
+family-rows: ## regenerate pipeline/family_rows.txt (client-table rows no ui_keys.txt key ships, with reasons) from the pinned Forever tables (commit the result)
+	@test -f "$(call client_dir,forever)/tables-source.txt" || { echo "family-rows: no tables at $(call client_dir,forever) (make tables-extract)"; exit 1; }
+	cd pipeline && $(PY) -m wfj.dev.family_rows "$(call client_dir,forever)" ui_keys.txt family_rows.txt > family_rows.txt.tmp && mv family_rows.txt.tmp family_rows.txt
+	@! grep -n "^[^#].*  ?  " pipeline/family_rows.txt || { echo "family-rows: the rows above are new: list each in ui_keys.txt (then rerun) or give it a reason"; exit 1; }
+
 forever-titles: ## list every SetTitle( call site in the camelot load sets (the input of pipeline/forever_titles.txt): [FOREVER_UI=<Interface/AddOns>]
 	@test -d "$(FOREVER_UI)" || { echo "forever-titles: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }
 	@cd pipeline && $(PY) -m wfj.dev.client_addons --titles "$(FOREVER_UI)"

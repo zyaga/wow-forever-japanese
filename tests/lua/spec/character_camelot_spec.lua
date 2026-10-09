@@ -42,7 +42,20 @@ local UI = {
   INVTYPE_WEAPONMAINHAND_PET = { "Main Attack", "主攻撃" }, DAMAGE = { "Damage", "ダメージ" },
   -- a pet's loyalty rank, C_PetInfo.GetPetLoyalty() (client-table row: no global; ADR-042)
   ["PetLoyalty:3"] = { "Submissive", "従順" },
+  -- the parentheses around the pet's rank (camelot/paperdollframe.lua:537)
+  PARENS_TEMPLATE = { "(%s)", "（%s）" },
 }
+
+-- The pet's level line as camelot/paperdollframe.lua:522–543 writes it: UNIT_TYPE_LEVEL_TEMPLATE, then the rank
+-- (C_PetInfo.GetPetLoyalty()) in HIGHLIGHT_FONT_COLOR around PARENS_TEMPLATE, on PetCharacterLevelText. A client
+-- write is stored as `fs.text`, like the stub's other writers. RC.player.pet = { level, family, loyalty | nil }
+local function setPetLevel()
+  local pet = RC.player.pet
+  if not pet then return end
+  local text = RC.EN.UNIT_TYPE_LEVEL_TEMPLATE:format(pet.level, pet.family or "")
+  if pet.loyalty and pet.loyalty ~= "" then text = text .. " |cffffffff" .. ("(%s)"):format(pet.loyalty) .. "|r" end
+  _G.PetCharacterLevelText.text = text
+end
 
 -- The UIStrings entries this surface needs on camelot are in Core/UIStringKeys.lua (ARGS PLAYER_LEVEL …, the stat
 -- labels' bareColon form); nothing is injected for them.
@@ -64,13 +77,14 @@ describe("the character window on the Forever client", function()
     for k, v in pairs(ARGS) do saved.args[k] = WFJ.UIStrings.ARGS[k]; WFJ.UIStrings.ARGS[k] = v end
     for k, v in pairs(LABELS) do saved.labels[k] = WFJ.UIStrings.LABELS[k]; WFJ.UIStrings.LABELS[k] = v end
     H.uiSetup(WFJ, UI)
-    Stub.namedFontString("PetLoyaltyText", "") -- paperdollframe.xml:457
+    Stub.namedFontString("PetCharacterLevelText", "") -- camelot/paperdollframe.xml:599
+    _G.PaperDollFrame_SetPetLevel = setPetLevel -- before init, so the hook wraps it
     WFJ.Labels.forbidNames(WFJ.Character.NEVER_TOUCH) -- Main registers every list before any init
     WFJ.Character.init()
   end)
 
   after_each(function()
-    _G.PetLoyaltyText = nil
+    _G.PetCharacterLevelText = nil
     for k in pairs(ARGS) do WFJ.UIStrings.ARGS[k] = saved.args[k] end
     for k in pairs(LABELS) do WFJ.UIStrings.LABELS[k] = saved.labels[k] end
     H.uiTeardown()
@@ -110,23 +124,40 @@ describe("the character window on the Forever client", function()
     assert.are.equal("レベル60 |cffc79c6eWarrior|r", _G.CharacterLevelText:GetText())
     RC.player.pet = { level = 58, family = "Wolf" }
     _G.PaperDollFrame_SetPetLevel()
-    assert.are.equal("レベル58 Wolf", _G.CharacterLevelText:GetText())
+    assert.are.equal("レベル58 Wolf", _G.PetCharacterLevelText:GetText())
+    assert.are.equal("レベル60 |cffc79c6eWarrior|r", _G.CharacterLevelText:GetText()) -- the player's line is untouched
+    alt(true)
+    assert.are.equal("Level 58 Wolf", _G.PetCharacterLevelText:GetText())
+    alt(false)
+    assert.are.equal("レベル58 Wolf", _G.PetCharacterLevelText:GetText())
   end)
 
-  it("the pet's loyalty rank is a PetLoyalty row's Japanese after PaperDollFrame_SetPetLevel; Alt shows English;"
-    .. " a dictionary word that is no PetLoyalty row stays English", function()
-    RC.player.pet = { level = 20, family = "Boar" }
-    _G.PetLoyaltyText.text = "Submissive" -- PetLoyaltyText:SetText(C_PetInfo.GetPetLoyalty()), lua:549–552
+  it("the pet's level line with a loyalty rank: the level part and the rank in Japanese, the rank's colour kept;"
+    .. " Alt shows the live English; a rank that is no PetLoyalty row stays as written", function()
+    RC.player.pet = { level = 20, family = "Boar", loyalty = "Submissive" }
     _G.PaperDollFrame_SetPetLevel()
-    assert.are.equal("従順", _G.PetLoyaltyText:GetText())
-    assert.are.equal("レベル20 Boar", _G.CharacterLevelText:GetText())
+    assert.are.equal("レベル20 Boar |cffffffff（従順）|r", _G.PetCharacterLevelText:GetText())
     alt(true)
-    assert.are.equal("Submissive", _G.PetLoyaltyText:GetText())
+    assert.are.equal("Level 20 Boar |cffffffff(Submissive)|r", _G.PetCharacterLevelText:GetText())
     alt(false)
-    assert.are.equal("従順", _G.PetLoyaltyText:GetText())
-    _G.PetLoyaltyText.text = "Damage"
+    assert.are.equal("レベル20 Boar |cffffffff（従順）|r", _G.PetCharacterLevelText:GetText())
+    _G.PaperDollFrame_SetLevel() -- the other writer's hook leaves the pet's line as it is
+    assert.are.equal("レベル20 Boar |cffffffff（従順）|r", _G.PetCharacterLevelText:GetText())
+    RC.player.pet.loyalty = "Damage" -- a dictionary word, but no PetLoyalty row
     _G.PaperDollFrame_SetPetLevel()
-    assert.are.equal("Damage", _G.PetLoyaltyText:GetText())
+    assert.are.equal("レベル20 Boar |cffffffff(Damage)|r", _G.PetCharacterLevelText:GetText())
+    RC.player.pet.loyalty = "Loyal Beyond Words" -- not in the dictionary at all
+    _G.PaperDollFrame_SetPetLevel()
+    assert.are.equal("レベル20 Boar |cffffffff(Loyal Beyond Words)|r", _G.PetCharacterLevelText:GetText())
+  end)
+
+  it("a pet's line that is no UNIT_TYPE_LEVEL_TEMPLATE line stays English, rank and all", function()
+    _G.PetCharacterLevelText.text = "Something Else |cffffffff(Submissive)|r"
+    _G.PaperDollFrame_SetPetLevel()
+    assert.are.equal("Something Else |cffffffff(Submissive)|r", _G.PetCharacterLevelText:GetText())
+    _G.PetCharacterLevelText.text = "Something Else"
+    _G.PaperDollFrame_SetPetLevel()
+    assert.are.equal("Something Else", _G.PetCharacterLevelText:GetText())
   end)
 
   it("the stat pane's headers and stat labels translate on pooled rows; a skill-named row stays English", function()
@@ -195,7 +226,10 @@ describe("the character window on the Forever client", function()
     .. " set (Index:matchOnly retry)", function()
     RC.player.pet = { level = 60, family = "Wind Serpent" }
     _G.PaperDollFrame_SetPetLevel()
-    assert.are.equal("レベル60 Wind Serpent", _G.CharacterLevelText:GetText())
+    assert.are.equal("レベル60 Wind Serpent", _G.PetCharacterLevelText:GetText())
+    RC.player.pet.loyalty = "Submissive"
+    _G.PaperDollFrame_SetPetLevel()
+    assert.are.equal("レベル60 Wind Serpent |cffffffff（従順）|r", _G.PetCharacterLevelText:GetText())
   end)
 
   it("the pet stat pane is followed the same way", function()
