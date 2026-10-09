@@ -26,7 +26,7 @@
 {"id": "INSPECT_GUILD_NUM_MEMBERS", "field": "text", "en": "%d Guild Members", "hash": "84f74a4a257efcd9", "src": "db2@1.60.1.70291"}
 {"id": "INSPECT_REQUIREMENTS", "field": "text", "en": "<Ctrl-Click to view requirements>", "hash": "c24ea6013a70bbdc", "src": "db2@1.60.1.70291"}
 {"id": "INSPECT_TALENTS", "field": "text", "en": "View Talents", "hash": "cb6764bcd89be4a9", "src": "db2@1.60.1.70291"}
-{"id": "INSPECT_TALENTS_BUTTON", "field": "text", "en": "Talents", "hash": "0d31e779843effa2", "src": "db2@1.60.1.70291"}
+{"id": "INSPECT_TALENTS_BUTTON", "field": "text", "en": "Talents", "hash": "0d31e779843effa2", "src": "db2@1.60.1.70245"}
 {"id": "INSTANCE", "field": "text", "en": "Instance", "hash": "b1e81ec92ddcdae5", "src": "db2@1.60.1.70291"}
 {"id": "INSTANCE_BOOT_TIMER", "field": "text", "en": "You are not in this instance's group.  You will be teleported to the nearest graveyard in %d %s.", "hash": "41aaa34ab5606395", "src": "db2@1.60.1.70291"}
 {"id": "INSTANCE_CHAT", "field": "text", "en": "Instance", "hash": "b1e81ec92ddcdae5", "src": "db2@1.60.1.70291"}

@@ -120,7 +120,6 @@ CALENDAR_PLAYER_NAME  # EditBox text the client reads back: the invite box's def
 CALENDAR_TOOLTIP_DATE_RANGE  # permanent: no words of its own: two FormatShortDate dates (blizzard_calendar/mainline/blizzard_calendar.lua:2138)
 CALENDAR_VIEW_EVENTTITLE_LOCKED  # colour / link / texture markup (curation rule): |cff7f7f7f around the event's title (mainline/blizzard_calendar.lua:2848)
 CANNOT_COOPERATE_LABEL  # a constant glyph ("*"), not display text
-CAPPED_LEVEL_TRIAL  # a retail-era system (capped level) with no Classic-content counterpart on Forever [unverified in game]: a system chat line only while GameLimitedMode is active, on TRIAL_CAP_REACHED_LEVEL (blizzard_game/shared/eventimplementation.lua:50–57)
 CAP_REACHED_TRIAL  # permanent: a Free Trial (GameLimitedMode) line at the trial profession cap (blizzard_professionstemplates/blizzard_professionsrankbar.lua:14–19), a retail account system with no Classic counterpart (as CAPPED_LEVEL_TRIAL)
 CAST_BAR_CAST_TIME  # no translatable words (only a number format and the unit letter "s"): "%.1f s" (blizzard_uipanels_game/shared/castingbarframe.lua:869)
 CENSORED_LFG_GROUP_NAME  # a name slot: a listed group's title, colour-wrapped (queuestatusframe.lua:976–993)

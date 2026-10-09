@@ -355,17 +355,20 @@ kept.
 
 | Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
 |---|---|---|---|---|
-| quest | 26 (17 descriptions, 6 objectives, 3 titles) | 5 | 123 not answered in the cache (above) | 3 new, 21 redrafted (among them quest 922's line, held back before), all with word lists; quest 5634 left out (Forever does not serve it) |
+| quest | 18 (15 descriptions, 3 objectives) | 5 | 123 not answered in the cache (above) | 1 new title, 18 redrafted (among them quest 922's line, held back before), all with word lists |
 | item | 25 | 52 | not recorded | 21 new, 20 redrafted; one hand-written line (9397) ruled out for a number the template fills in and redrafted; the collected item 248008 |
 | spell | 104 (descriptions and auras) | 118 (names, descriptions, auras) | not recorded | 112 new and 36 redrafted descriptions; 19 new and 22 redrafted auras |
 | objective, area | 1 objective, 1 area | 1 objective | not recorded | 1 new and 1 redrafted objective, 1 area |
 | gossip | 0 | 1 | not recorded | 1, with a word list |
-| ui | 18 | 53 (with the beta Legacy achievement, its criteria, the gnome race intro subtitles and 9 PvpStat rows) | not recorded | 72 keys, new and reworded, with word lists; `AchievementReward:684` brought to the settled word レガシーポイント; `HUNTER_AGILITY_TOOLTIP` now has the same English as `ROGUE_AGILITY_TOOLTIP` and shares its Japanese |
+| ui | 18 | 54 (with the beta Legacy achievement, its criteria, the gnome race intro subtitles and 9 PvpStat rows) | not recorded | 73 keys, new and reworded, with word lists; `AchievementReward:684` brought to the settled word レガシーポイント; `HUNTER_AGILITY_TOOLTIP` now has the same English as `ROGUE_AGILITY_TOOLTIP` and shares its Japanese |
 | book | 0 | the 11 picture-only pages left over from earlier builds | not recorded | none |
 
 Voice: 17 files remade, 15 for quest text that changed and 2 for speakers recast by `make voice-speakers`. Left out
-with a reason: quest 5634 (not served on Forever), the two item tooltips whose template the pipeline cannot render yet
-(279976 `too_many_variants`, 286405 `branches_indistinguishable`) and the picture-only book pages. A new step,
+with a reason: the two item tooltips whose template the pipeline cannot render yet (279976 `too_many_variants`, 286405
+`branches_indistinguishable`), 59 new spell lines whose template uses a code drafting cannot place yet (mostly the
+`$@spellaura` auras of the new spells; each with its reason in [Coverage](coverage.md)) and the picture-only book
+pages. The quests the 70291 cache did not answer keep the English an earlier Forever build served: the Classic Era
+cache, imported first, now leaves a quest alone when it holds a newer client's English ([Pipeline](../systems/pipeline.md)). A new step,
 `make family-rows` ([pipeline](../systems/pipeline.md)), now lists every client-table row no key ships;
 nothing had slipped through before this build.
 

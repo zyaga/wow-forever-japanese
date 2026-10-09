@@ -107,9 +107,9 @@
 {"id": 6065, "field": "objectives", "en": "Speak with Yaw Sharpmane in Bloodhoof Village.", "hash": "44416cc13fda5956", "src": "wdb@1.60.1.70291"}
 {"id": 6065, "field": "description", "en": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.$B$BYou must see Yaw Sharpmane in Bloodhoof Village. He can put you on the path to earning a pet of your own.", "hash": "cdcddc29d4d241cb", "src": "wdb@1.60.1.70291"}
 {"id": 6065, "field": "completion", "en": "Yes, I do believe you are ready...", "hash": "97654cb40ecd3708", "src": "vmangos@13b49dc"}
-{"id": 6066, "field": "title", "en": "The Hunter's Path", "hash": "e59cef474fca5f3e", "src": "wdb@1.15.9.69722"}
-{"id": 6066, "field": "objectives", "en": "Speak with Yaw Sharpmane in Bloodhoof Village.", "hash": "44416cc13fda5956", "src": "wdb@1.15.9.69722"}
-{"id": 6066, "field": "description", "en": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.$B$BYou must see Yaw Sharpmane in Bloodhoof Village. He can put you on the path to earning a pet of your own.", "hash": "cdcddc29d4d241cb", "src": "wdb@1.15.9.69722"}
+{"id": 6066, "field": "title", "en": "The Hunter's Path", "hash": "e59cef474fca5f3e", "src": "wdb@1.60.1.70245"}
+{"id": 6066, "field": "objectives", "en": "Speak with Yaw Sharpmane in Bloodhoof Village.", "hash": "44416cc13fda5956", "src": "wdb@1.60.1.70245"}
+{"id": 6066, "field": "description", "en": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.$B$BYou must see Yaw Sharpmane in Bloodhoof Village. He can put you on the path to earning a pet of your own.", "hash": "cdcddc29d4d241cb", "src": "wdb@1.60.1.70245"}
 {"id": 6066, "field": "completion", "en": "Yes, I do believe you are ready...", "hash": "97654cb40ecd3708", "src": "vmangos@13b49dc"}
 {"id": 6067, "field": "title", "en": "The Hunter's Path", "hash": "e59cef474fca5f3e", "src": "wdb@1.60.1.70291"}
 {"id": 6067, "field": "objectives", "en": "Speak with Yaw Sharpmane in Bloodhoof Village.", "hash": "44416cc13fda5956", "src": "wdb@1.60.1.70291"}
@@ -123,9 +123,9 @@
 {"id": 6069, "field": "objectives", "en": "Speak with Thotar at Razor Hill.", "hash": "ccc0cc0b840508fb", "src": "wdb@1.60.1.70291"}
 {"id": 6069, "field": "description", "en": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.$B$BYou must see Thotar at Razor Hill. He can put you on the path to earning a pet of your own.", "hash": "a19701ce8f0fe23d", "src": "wdb@1.60.1.70291"}
 {"id": 6069, "field": "completion", "en": "Yes, I believe you are ready to be trained...", "hash": "136d5becaf005b5c", "src": "vmangos@13b49dc"}
-{"id": 6070, "field": "title", "en": "The Hunter's Path", "hash": "e59cef474fca5f3e", "src": "wdb@1.15.9.69722"}
-{"id": 6070, "field": "objectives", "en": "Speak with Thotar at Razor Hill.", "hash": "ccc0cc0b840508fb", "src": "wdb@1.15.9.69722"}
-{"id": 6070, "field": "description", "en": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.$B$BYou must see Thotar at Razor Hill. He can put you on the path to earning a pet of your own.", "hash": "a19701ce8f0fe23d", "src": "wdb@1.15.9.69722"}
+{"id": 6070, "field": "title", "en": "The Hunter's Path", "hash": "e59cef474fca5f3e", "src": "wdb@1.60.1.70245"}
+{"id": 6070, "field": "objectives", "en": "Speak with Thotar at Razor Hill.", "hash": "ccc0cc0b840508fb", "src": "wdb@1.60.1.70245"}
+{"id": 6070, "field": "description", "en": "Hello, young hunter. You look to me like you are skilled enough to handle a beast and train it as your companion.$B$BYou must see Thotar at Razor Hill. He can put you on the path to earning a pet of your own.", "hash": "a19701ce8f0fe23d", "src": "wdb@1.60.1.70245"}
 {"id": 6070, "field": "completion", "en": "Yes, it is time for you to begin your training.", "hash": "2462bb5738963957", "src": "vmangos@13b49dc"}
 {"id": 6071, "field": "title", "en": "The Hunter's Path", "hash": "e59cef474fca5f3e", "src": "wdb@1.60.1.70291"}
 {"id": 6071, "field": "objectives", "en": "Speak with Dazalar in Dolanaar.", "hash": "acb777714d7e66b5", "src": "wdb@1.60.1.70291"}

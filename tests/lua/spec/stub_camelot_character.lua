@@ -59,7 +59,8 @@ local function installPaperDoll()
   end
   CreateFrame("Frame", "PaperDollFrame")
   Stub.namedFontString("CharacterLevelText", "")
-  -- RC.player = { level, color, spec, class, pet = { level, family } | nil }
+  Stub.namedFontString("PetCharacterLevelText", "") -- camelot/paperdollframe.xml:599
+  -- RC.player = { level, color, spec, class, pet = { level, family, loyalty | nil } | nil }
   RC.player = { level = "60", color = "ffc79c6e", spec = "Protection", class = "Warrior" }
   _G.PaperDollFrame_SetLevel = function() -- paperdollframe.lua:497–531
     local p = RC.player
@@ -69,9 +70,14 @@ local function installPaperDoll()
       _G.CharacterLevelText.text = G("PLAYER_LEVEL_NO_SPEC"):format(p.level, p.color, p.class)
     end
   end
-  _G.PaperDollFrame_SetPetLevel = function() -- :533–558
+  -- the pet's line: UNIT_TYPE_LEVEL_TEMPLATE, then its loyalty rank in HIGHLIGHT_FONT_COLOR around PARENS_TEMPLATE
+  -- (camelot/paperdollframe.lua:522–543)
+  _G.PaperDollFrame_SetPetLevel = function()
     local pet = RC.player.pet
-    if pet then _G.CharacterLevelText.text = G("UNIT_TYPE_LEVEL_TEMPLATE"):format(pet.level, pet.family) end
+    if not pet then return end
+    local text = G("UNIT_TYPE_LEVEL_TEMPLATE"):format(pet.level, pet.family or "")
+    if pet.loyalty and pet.loyalty ~= "" then text = text .. " |cffffffff" .. ("(%s)"):format(pet.loyalty) .. "|r" end
+    _G.PetCharacterLevelText.text = text
   end
   _G.PaperDollFrame_UpdateStats = function() end -- the ScrollBox path is driven by RC.setStats
   -- an equipment slot: an empty slot's tooltip is SetText(<SLOT>SLOT) (itemutil.lua:395–414)

@@ -240,6 +240,7 @@
 {"id": "CANCEL_SIGN_UP", "field": "text", "en": "Cancel Sign Up", "hash": "cc4c7d79f39deeec", "src": "db2@1.60.1.70291"}
 {"id": "CAN_NOT_RELEASE_IN_COMBAT", "field": "text", "en": "A member of your group is in combat.", "hash": "ca38e101d60cb722", "src": "db2@1.60.1.70291"}
 {"id": "CAN_NOT_RELEASE_RIGHT_NOW", "field": "text", "en": "You cannot release right now.", "hash": "ab62ecee4013792d", "src": "db2@1.60.1.70291"}
+{"id": "CAPPED_LEVEL_TRIAL", "field": "text", "en": "Free Trial level cap reached.", "hash": "4196b960ea07dd0b", "src": "db2@1.60.1.70291"}
 {"id": "CAPPED_MONEY_TRIAL", "field": "text", "en": "Free Trial money cap reached.", "hash": "6c200ba94de9e08a", "src": "db2@1.60.1.70291"}
 {"id": "CASH_ON_DELIVERY", "field": "text", "en": "C.O.D.", "hash": "05b8aee5bee35d7a", "src": "db2@1.60.1.70291"}
 {"id": "CATEGORIZE", "field": "text", "en": "Categorize", "hash": "d57af3ae3d24e4d5", "src": "db2@1.60.1.70291"}

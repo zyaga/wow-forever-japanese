@@ -68,7 +68,7 @@
 {"id": "GAMEPAD_TALENT_APPLY", "field": "text", "en": "Hold To Apply", "hash": "bf1d27a1de65e509", "src": "db2@1.60.1.70291"}
 {"id": "GAMEPAD_TALENT_REMOVE_POINT", "field": "text", "en": "Remove Point", "hash": "baa7b91c11c8b410", "src": "db2@1.60.1.70291"}
 {"id": "GAMEPAD_TOGGLE_COMPACT_ACTION_BAR", "field": "text", "en": "Use Compact Action Bar", "hash": "93c5fe208805c51b", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_TOGGLE_COMPACT_ACTION_BAR_TOOLTIP", "field": "text", "en": "Enables a more compact action bar layout that only displays the currently active bar.", "hash": "fdfa1da710853bf8", "src": "db2@1.60.1.70291"}
+{"id": "GAMEPAD_TOGGLE_COMPACT_ACTION_BAR_TOOLTIP", "field": "text", "en": "Enables a more compact action bar layout that only displays the currently active bar.", "hash": "fdfa1da710853bf8", "src": "db2@1.60.1.70245"}
 {"id": "GAMEPAD_TURN_WITH_CAMERA", "field": "text", "en": "Turn Player with Camera", "hash": "7e8f64b49f39058d", "src": "db2@1.60.1.70291"}
 {"id": "GAMEPAD_TURN_WITH_CAMERA_OPTION_ALWAYS", "field": "text", "en": "Player always turns with camera", "hash": "dfdf6c49218844bd", "src": "db2@1.60.1.70291"}
 {"id": "GAMEPAD_TURN_WITH_CAMERA_OPTION_MOVING", "field": "text", "en": "Player turns with camera when moving", "hash": "152441fd00a861bd", "src": "db2@1.60.1.70291"}

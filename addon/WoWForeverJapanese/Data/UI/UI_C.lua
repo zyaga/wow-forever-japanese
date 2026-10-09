@@ -243,6 +243,7 @@ WFJ.Data.add("ui", {
   ["CANCEL_SIGN_UP"] = { "申し込みを取り消す", 0xcc4c7d79, "." },
   ["CAN_NOT_RELEASE_IN_COMBAT"] = { "グループのメンバーが戦闘中です。", 0xca38e101, "." },
   ["CAN_NOT_RELEASE_RIGHT_NOW"] = { "今は解放できません。", 0xab62ecee, "." },
+  ["CAPPED_LEVEL_TRIAL"] = { "無料体験のレベル上限に達しました。", 0x4196b960, "." },
   ["CAPPED_MONEY_TRIAL"] = { "無料体験の所持金上限に達しました。", 0x6c200ba9, "." },
   ["CASH_ON_DELIVERY"] = { "代引き", 0x05b8aee5, "." },
   ["CATEGORIZE"] = { "分類", 0xd57af3ae, "." },

@@ -220,7 +220,7 @@ def test_the_committed_area_english_is_the_former_quest_area(root):
     area = english.load("area")
     assert len(area) == 223 and len({ln["hash"] for ln in area}) == 208
     assert {ln["field"] for ln in area} == {"text"}
-    assert {ln["src"] for ln in area} == {"wdb@1.15.9.69722", "wdb@1.60.1.70170", "wdb@1.60.1.70291"}
+    assert {ln["src"] for ln in area} == {"wdb@1.15.9.69722", "wdb@1.60.1.70170", "wdb@1.60.1.70245", "wdb@1.60.1.70291"}
     assert all(ln["hash"] == key(normalize_v1(ln["en"])) for ln in area)
     assert not [ln for ln in english.load("quest") if ln["field"] == "area"]
     titles = {ln["id"] for ln in english.load("quest") if ln["field"] == "title"}

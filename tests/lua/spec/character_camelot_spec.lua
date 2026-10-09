@@ -46,17 +46,6 @@ local UI = {
   PARENS_TEMPLATE = { "(%s)", "（%s）" },
 }
 
--- The pet's level line as camelot/paperdollframe.lua:522–543 writes it: UNIT_TYPE_LEVEL_TEMPLATE, then the rank
--- (C_PetInfo.GetPetLoyalty()) in HIGHLIGHT_FONT_COLOR around PARENS_TEMPLATE, on PetCharacterLevelText. A client
--- write is stored as `fs.text`, like the stub's other writers. RC.player.pet = { level, family, loyalty | nil }
-local function setPetLevel()
-  local pet = RC.player.pet
-  if not pet then return end
-  local text = RC.EN.UNIT_TYPE_LEVEL_TEMPLATE:format(pet.level, pet.family or "")
-  if pet.loyalty and pet.loyalty ~= "" then text = text .. " |cffffffff" .. ("(%s)"):format(pet.loyalty) .. "|r" end
-  _G.PetCharacterLevelText.text = text
-end
-
 -- The UIStrings entries this surface needs on camelot are in Core/UIStringKeys.lua (ARGS PLAYER_LEVEL …, the stat
 -- labels' bareColon form); nothing is injected for them.
 local ARGS = {}
@@ -77,14 +66,11 @@ describe("the character window on the Forever client", function()
     for k, v in pairs(ARGS) do saved.args[k] = WFJ.UIStrings.ARGS[k]; WFJ.UIStrings.ARGS[k] = v end
     for k, v in pairs(LABELS) do saved.labels[k] = WFJ.UIStrings.LABELS[k]; WFJ.UIStrings.LABELS[k] = v end
     H.uiSetup(WFJ, UI)
-    Stub.namedFontString("PetCharacterLevelText", "") -- camelot/paperdollframe.xml:599
-    _G.PaperDollFrame_SetPetLevel = setPetLevel -- before init, so the hook wraps it
     WFJ.Labels.forbidNames(WFJ.Character.NEVER_TOUCH) -- Main registers every list before any init
     WFJ.Character.init()
   end)
 
   after_each(function()
-    _G.PetCharacterLevelText = nil
     for k in pairs(ARGS) do WFJ.UIStrings.ARGS[k] = saved.args[k] end
     for k in pairs(LABELS) do WFJ.UIStrings.LABELS[k] = saved.labels[k] end
     H.uiTeardown()

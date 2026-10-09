@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-09 at commit `47dafcd9`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-09 at commit `01f96159`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -16,8 +16,8 @@
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
 | Item descriptions | 10,196 | 8,669 | 0 | 85.0% | 1,527 |
 | Spell tooltips + auras | 25,648 | 25,402 | 0 | 99.0% | 246 |
-| Interface strings | 15,905 | 15,905 | 0 | 100.0% | 0 |
-| **All** | **85,052** | | | **97.9%** | **1,773** |
+| Interface strings | 15,906 | 15,906 | 0 | 100.0% | 0 |
+| **All** | **85,053** | | | **97.9%** | **1,773** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 892, spell 300, ui 313.
@@ -361,9 +361,9 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 19,000 | 19,000 | 100.0% | 180 | 303,261 | 100.0% |
+| quest | 18,998 | 18,998 | 100.0% | 180 | 303,247 | 100.0% |
 | gossip | 10,831 | 10,831 | 100.0% | 0 | 103,748 | 100.0% |
-| ui | 15,199 | 15,199 | 100.0% | 0 | 46,492 | 100.0% |
+| ui | 15,200 | 15,200 | 100.0% | 0 | 46,497 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages
@@ -381,7 +381,7 @@ outnumber lines.
 | Quest offer | 4,304 | 4,373 | 4,373 | 0 | 0 | 885 |
 | Quest progress | 2,917 | 2,940 | 2,940 | 0 | 0 | 85 |
 | Quest turn-in | 4,040 | 4,064 | 4,064 | 0 | 0 | 169 |
-| NPC talk (greetings, gossip, quest text keyed by its English) | 2,077 | 2,822 | 2,822 | 0 | 0 | 15 |
+| NPC talk (greetings, gossip, quest text keyed by its English) | 2,077 | 2,823 | 2,823 | 0 | 0 | 15 |
 | Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
 | The character's error lines (one file per race and sex) | 50 | 900 | 900 | 0 | 0 | 0 |
 

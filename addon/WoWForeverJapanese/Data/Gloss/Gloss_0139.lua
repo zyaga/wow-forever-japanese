@@ -975,7 +975,6 @@ WFJ.Data.add("gloss", {
   [139976] = "こと\tこと\t(the things)",
   [139977] = "さなか\tさなか\tduring",
   [139978] = "する\tする\t(they) seem to be (doing)",
-  [139979] = "そうだ\tそうだ\t(she) says",
   [139980] = "そうですね\tそうですね\twell",
   [139981] = "そこまで\tそこまで\tonly that much",
   [139982] = "それきり\tそれきり\tsince then",

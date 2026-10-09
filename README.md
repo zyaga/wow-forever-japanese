@@ -28,7 +28,7 @@ Website: [foreverjapanese.com](https://foreverjapanese.com)
 | Letter pages | 209 |
 | Item tooltips | 9,182 |
 | Spell tooltips | 20,061 |
-| UI | 15,905 |
+| UI | 15,906 |
 
 ## Install
 
@@ -237,7 +237,7 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 | 手紙 | 209 ページ |
 | アイテムのツールチップ | 9,182 |
 | 呪文のツールチップ | 20,061 |
-| UI | 15,905 |
+| UI | 15,906 |
 
 ### インストール
 

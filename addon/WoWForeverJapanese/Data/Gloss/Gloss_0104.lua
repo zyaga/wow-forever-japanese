@@ -513,6 +513,7 @@ WFJ.Data.add("gloss", {
   [104510] = "瞑想する\tめいそうする\tmust meditate",
   [104511] = "瞑想する\tめいそうする\treflecting (meditating)",
   [104512] = "瞑想中\tめいそうちゅう\tis meditating",
+  [104513] = "瞑想中\tめいそうちゅう\tmeditating (in the middle of meditation)",
   [104514] = "瞬き\tまばたき\tblink",
   [104515] = "瞬きする\tまばたきする\tblink",
   [104516] = "瞬きする\tまばたきする\tblinking",
